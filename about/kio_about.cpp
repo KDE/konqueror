@@ -57,7 +57,7 @@ void AboutProtocol::mimetype( const KURL& )
 
 extern "C"
 {
-    int kdemain( int argc, char **argv ) {
+    int KDE_EXPORT kdemain( int argc, char **argv ) {
 
         KInstance instance("kio_about");
 
