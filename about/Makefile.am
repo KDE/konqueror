@@ -1,7 +1,7 @@
 ## Makefile.am of kdebase/kioslave/about
 
 INCLUDES= $(all_includes)
-AM_LDFLAGS = $(all_libraries) $(KDE_RPATH)
+LDFLAGS = $(all_libraries) $(KDE_RPATH)
 
 ####### Files
 
