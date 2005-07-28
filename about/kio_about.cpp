@@ -22,12 +22,15 @@
 
 #include <stdlib.h>
 #include <qstring.h>
+//Added by qt3to4:
+#include <QTextStream>
+#include <Q3CString>
 #include <kinstance.h>
 #include <kurl.h>
 
 using namespace KIO;
 
-AboutProtocol::AboutProtocol(const QCString &pool_socket, const QCString &app_socket)
+AboutProtocol::AboutProtocol(const Q3CString &pool_socket, const Q3CString &app_socket)
     : SlaveBase("about", pool_socket, app_socket)
 {
 }
@@ -40,7 +43,7 @@ void AboutProtocol::get( const KURL& )
 {
     QString output;
     
-    QTextStream os(&output, IO_WriteOnly);
+    QTextStream os(&output, QIODevice::WriteOnly);
     os.setEncoding(QTextStream::Locale);
 
     os << "<html><head><title>about:blank</title></head><body></body></html>";
