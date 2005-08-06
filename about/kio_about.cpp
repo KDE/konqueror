@@ -21,10 +21,9 @@
 #include "kio_about.h"
 
 #include <stdlib.h>
-#include <qstring.h>
+#include <QByteArray>
 //Added by qt3to4:
 #include <QTextStream>
-#include <Q3CString>
 #include <kinstance.h>
 #include <kurl.h>
 
@@ -41,14 +40,14 @@ AboutProtocol::~AboutProtocol()
 
 void AboutProtocol::get( const KURL& )
 {
-    QString output;
+    QByteArray output;
     
-    QTextStream os(&output, QIODevice::WriteOnly);
-    os.setEncoding(QTextStream::Locale);
+    QTextStream os( &output, QIODevice::WriteOnly );
+    os.setCodec( "ISO-8859-1" ); // In fact ASCII
 
     os << "<html><head><title>about:blank</title></head><body></body></html>";
     
-    data( output.local8Bit() );
+    data( output );
     finished();
 }
 
