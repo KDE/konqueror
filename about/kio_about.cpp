@@ -29,7 +29,7 @@
 
 using namespace KIO;
 
-AboutProtocol::AboutProtocol(const Q3CString &pool_socket, const Q3CString &app_socket)
+AboutProtocol::AboutProtocol(const QByteArray &pool_socket, const QByteArray &app_socket)
     : SlaveBase("about", pool_socket, app_socket)
 {
 }

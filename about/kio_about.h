@@ -29,7 +29,7 @@
 class AboutProtocol : public KIO::SlaveBase
 {
 public:
-    AboutProtocol(const Q3CString &pool_socket, const Q3CString &app_socket);
+    AboutProtocol(const QByteArray &pool_socket, const QByteArray &app_socket);
     virtual ~AboutProtocol();
 
     virtual void get(const KURL& url);
