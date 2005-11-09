@@ -2,7 +2,7 @@
 
 INCLUDES= $(all_includes)
 AM_LDFLAGS = $(all_libraries) $(KDE_RPATH)
-
+KDE_CXXFLAGS = -UQT3_SUPPORT
 ####### Files
 
 kde_module_LTLIBRARIES = kio_about.la
