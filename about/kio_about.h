@@ -32,8 +32,8 @@ public:
     AboutProtocol(const QByteArray &pool_socket, const QByteArray &app_socket);
     virtual ~AboutProtocol();
 
-    virtual void get(const KURL& url);
-    virtual void mimetype(const KURL& url);
+    virtual void get(const KUrl& url);
+    virtual void mimetype(const KUrl& url);
 };
 
 #endif

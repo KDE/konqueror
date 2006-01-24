@@ -38,7 +38,7 @@ AboutProtocol::~AboutProtocol()
 {
 }
 
-void AboutProtocol::get( const KURL& )
+void AboutProtocol::get( const KUrl& )
 {
     QByteArray output;
     
@@ -51,7 +51,7 @@ void AboutProtocol::get( const KURL& )
     finished();
 }
 
-void AboutProtocol::mimetype( const KURL& )
+void AboutProtocol::mimetype( const KUrl& )
 {
     mimeType("text/html");
     finished();
