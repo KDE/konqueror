@@ -1,4 +1,3 @@
-kde4_header()
 
 project(kioslave-about)
 
@@ -23,7 +22,6 @@ install_targets(${PLUGIN_INSTALL_DIR} kio_about )
 
 install_files( ${SERVICES_INSTALL_DIR} FILES about.protocol )
 
-kde4_footer()
 
 
 
