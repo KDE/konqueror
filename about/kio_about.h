@@ -20,7 +20,7 @@
 #ifndef __kio_about_h__
 #define __kio_about_h__
 
-#include <q3cstring.h>
+#include <QByteArray>
 
 #include <kio/global.h>
 #include <kio/slavebase.h>
