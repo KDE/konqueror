@@ -15,12 +15,12 @@ kde4_install_libtool_file( ${PLUGIN_INSTALL_DIR} kio_about )
 
 target_link_libraries(kio_about  ${KDE4_KIO_LIBS} )
 
-install_targets(${PLUGIN_INSTALL_DIR} kio_about )
+install(TARGETS kio_about  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
 
 ########### install files ###############
 
-install_files( ${SERVICES_INSTALL_DIR} FILES about.protocol )
+install( FILES about.protocol  DESTINATION  ${SERVICES_INSTALL_DIR} )
 
 
 
