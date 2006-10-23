@@ -7,7 +7,7 @@ project(kioslave-about)
 
 set(kio_about_PART_SRCS kio_about.cpp )
 
-kde4_automoc(kio_about ${kio_about_PART_SRCS})
+kde4_automoc(${kio_about_PART_SRCS})
 
 kde4_add_plugin(kio_about ${kio_about_PART_SRCS})
 
