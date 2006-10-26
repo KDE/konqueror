@@ -317,7 +317,12 @@ void ToggleViewGUIClient::slotViewAdded( KonqView *view )
 
   if ( action )
   {
+    disconnect( action, SIGNAL( toggled( bool ) ),
+                this, SLOT( slotToggleView( bool ) ) );
     static_cast<KToggleAction *>( action )->setChecked( true );
+    connect( action, SIGNAL( toggled( bool ) ),
+             this, SLOT( slotToggleView( bool ) ) );
+
     saveConfig( true, name );
 
     // KonqView::isToggleView() is not set yet.. so just check for the orientation
@@ -346,7 +351,11 @@ void ToggleViewGUIClient::slotViewRemoved( KonqView *view )
 
   if ( action )
   {
+    disconnect( action, SIGNAL( toggled( bool ) ),
+             this, SLOT( slotToggleView( bool ) ) );
     static_cast<KToggleAction *>( action )->setChecked( false );
+    connect( action, SIGNAL( toggled( bool ) ),
+             this, SLOT( slotToggleView( bool ) ) );
     saveConfig( false, name );
   }
 }

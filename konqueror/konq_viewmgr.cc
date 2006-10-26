@@ -246,8 +246,8 @@ KonqView* KonqViewManager::splitWindow( Qt::Orientation orientation,
   KonqView* childView = setupView( newContainer, newViewFactory, service, partServiceOffers, appServiceOffers, serviceType, true );
 
   if( newOneFirst ) {
-      static_cast<KonqFrameContainer*>(newContainer)->insertWidget( 0, childView->frame() );
-      static_cast<KonqFrameContainer*>(newContainer)->swapChildren();
+    newContainer->insertWidget( 0, childView->frame() );
+    newContainer->swapChildren();
   }
 
   newContainer->show();
@@ -1194,7 +1194,7 @@ void KonqViewManager::loadViewProfile( KConfig &cfg, const QString & filename,
 
   QString rootItem = cfg.readEntry( "RootItem", "empty" );
 
-  //kDebug(1202) << "KonqViewManager::loadViewProfile : loading RootItem " << rootItem << 
+  //kDebug(1202) << "KonqViewManager::loadViewProfile : loading RootItem " << rootItem <<
   //" forcedURL " << forcedURL.url() << endl;
 
   if ( forcedURL.url() != "about:blank" )
@@ -1574,7 +1574,7 @@ void KonqViewManager::loadItem( KConfig &cfg, KonqFrameContainerBase *parent,
     else if( ostr == "Horizontal" )
       o = Qt::Horizontal;
     else {
-        kWarning() << "Profile Loading Error: No orientation specified in " << name << endl;
+      kWarning() << "Profile Loading Error: No orientation specified in " << name << endl;
       o = Qt::Horizontal;
     }
 
