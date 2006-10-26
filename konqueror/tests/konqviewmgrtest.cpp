@@ -21,8 +21,9 @@
 #include <QApplication>
 #include <QLabel>
 #include <QTimer>
+#include <QSplitter>
 
-MyMainWindow::MyMainWindow( QWidget* parent )
+SCWMainWindow::SCWMainWindow( QWidget* parent )
     : QMainWindow( parent )
 {
     QLabel* widget1 = new QLabel( "widget1" );
@@ -30,19 +31,40 @@ MyMainWindow::MyMainWindow( QWidget* parent )
     QTimer::singleShot( 10, this, SLOT( slotSwitchCentralWidget() ) );
 }
 
-void MyMainWindow::slotSwitchCentralWidget()
+void SCWMainWindow::slotSwitchCentralWidget()
 {
     QLabel* widget2 = new QLabel( "widget2" );
     delete centralWidget(); // ## workaround for the crash
     setCentralWidget( widget2 );
 }
 
+void testSplitterChildren()
+{
+    // OK, it works; the bug was a wrong insertWidget(0,label2) in konqviewmgr.
+
+    QSplitter* container = new QSplitter( 0 );
+
+    QLabel* label0 = new QLabel( "Label0, sidebar, should be on left", container );
+    label0->show();
+
+    QLabel* label1 = new QLabel( "Label1, iconview, should be on the right", container );
+    label1->show();
+    label1->setParent( 0 ); // should be some toplevel, rather, see convertDocContainer
+    label1->hide();
+
+    QLabel* label2 = new QLabel( "Label2, tabwidget, should be on the right", container );
+    label2->show();
+
+    container->show();
+}
+
 int main( int argc, char** argv ) {
     QApplication app( argc, argv );
 
-    MyMainWindow* mw = new MyMainWindow;
+    //SCWMainWindow* mw = new SCWMainWindow;
+    //mw->show();
 
-    mw->show();
+    testSplitterChildren();
 
     return app.exec();
 }

@@ -215,4 +215,12 @@ void KonqFrameContainer::childEvent( QChildEvent *c )
       QSplitter::childEvent(c);
 }
 
+bool KonqFrameContainer::hasWidgetAfter( QWidget* w ) const
+{
+    int idx = QSplitter::indexOf( w );
+    if ( idx == -1 ) // not found
+        return 0; // not found (in qt3)
+    return QSplitter::widget( idx + 1 ) != 0;
+}
+
 #include "konq_framecontainer.moc"
