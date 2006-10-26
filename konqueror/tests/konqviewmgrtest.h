@@ -21,11 +21,12 @@
 
 #include <QMainWindow>
 
-class MyMainWindow : public QMainWindow
+// SCW == Switch (or Set) Central Widget
+class SCWMainWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    MyMainWindow( QWidget* parent = 0 );
+    SCWMainWindow( QWidget* parent = 0 );
 
 private slots:
     void slotSwitchCentralWidget();

@@ -61,7 +61,7 @@ KonqViewManager::KonqViewManager( KonqMainWindow *mainWindow )
 
 KonqView* KonqViewManager::Initialize( const QString &serviceType, const QString &serviceName )
 {
-  //kDebug(1202) << "KonqViewManager::Initialize()" << endl;
+  //kDebug(1202) << "KonqViewManager::Initialize() " << serviceName << endl;
   KService::Ptr service;
   KService::List partServiceOffers, appServiceOffers;
   KonqViewFactory newViewFactory = createView( serviceType, serviceName, service, partServiceOffers, appServiceOffers, true /*forceAutoEmbed*/ );
@@ -120,7 +120,7 @@ KonqView* KonqViewManager::splitView ( Qt::Orientation orientation,
   int index= -1;
 
   if (parentContainer->frameType()=="Container") {
-    moveNewContainer = (static_cast<KonqFrameContainer*>(parentContainer)->idAfter( splitFrame->asQWidget() ) != 0);
+    moveNewContainer = static_cast<KonqFrameContainer*>(parentContainer)->hasWidgetAfter( splitFrame->asQWidget() );
     splitterSizes = static_cast<KonqFrameContainer*>(parentContainer)->sizes();
   }
   else if (parentContainer->frameType()=="Tabs")
@@ -278,7 +278,7 @@ void KonqViewManager::convertDocContainer()
   bool moveNewContainer = false;
   QList<int> splitterSizes;
   if (parentContainer->frameType()=="Container") {
-    moveNewContainer = (static_cast<KonqFrameContainer*>(parentContainer)->idAfter( m_pDocContainer->asQWidget() ) != 0);
+    moveNewContainer = static_cast<KonqFrameContainer*>(parentContainer)->hasWidgetAfter( m_pDocContainer->asQWidget() );
     splitterSizes = static_cast<KonqFrameContainer*>(parentContainer)->sizes();
   }
 
@@ -302,8 +302,10 @@ void KonqViewManager::convertDocContainer()
     static_cast<KonqFrameContainer*>(parentContainer)->insertWidget( 0, newContainer );
     static_cast<KonqFrameContainer*>(parentContainer)->swapChildren();
   }
-  if (parentContainer->frameType()=="Container")
+  if (parentContainer->frameType()=="Container") {
+    kDebug() << k_funcinfo << "convertDocContainer: setting sizes " << splitterSizes << endl;
     static_cast<KonqFrameContainer*>(parentContainer)->setSizes( splitterSizes );
+  }
 
   newContainer->show();
 
@@ -765,7 +767,7 @@ void KonqViewManager::removeView( KonqView *view )
       index = static_cast<KonqFrameTabs*>(grandParentContainer)->indexOf( parentContainer->asQWidget() );
     else if (grandParentContainer->frameType()=="Container")
     {
-      moveOtherChild = (static_cast<KonqFrameContainer*>(grandParentContainer)->idAfter( parentContainer->asQWidget() ) != 0);
+      moveOtherChild = static_cast<KonqFrameContainer*>(grandParentContainer)->hasWidgetAfter( parentContainer->asQWidget() );
       splitterSizes = static_cast<KonqFrameContainer*>(grandParentContainer)->sizes();
     }
 
@@ -983,7 +985,7 @@ KonqViewFactory KonqViewManager::createView( const QString &serviceType,
                                           KService::List &appServiceOffers,
                                           bool forceAutoEmbed )
 {
-  kDebug(1202) << "KonqViewManager::createView" << endl;
+  kDebug(1202) << "KonqViewManager::createView " << serviceName << endl;
   KonqViewFactory viewFactory;
 
   if( serviceType.isEmpty() && m_pMainWindow->currentView() ) {
@@ -1446,7 +1448,7 @@ void KonqViewManager::loadItem( KConfig &cfg, KonqFrameContainerBase *parent,
   if( name != "InitialView" )
     prefix = name + QLatin1Char( '_' );
 
-  //kDebug(1202) << "KonqViewManager::loadItem: begin name " << name << " openUrl " << openURL << endl;
+  //kDebug(1202) << "KonqViewManager::loadItem: begin name " << name << " openUrl " << openUrl << endl;
 
   if( name.startsWith("View") || name == "empty" ) {
     //load view config
@@ -1461,7 +1463,7 @@ void KonqViewManager::loadItem( KConfig &cfg, KonqFrameContainerBase *parent,
         serviceType = cfg.readEntry( QString::fromLatin1( "ServiceType" ).prepend( prefix ), QString("inode/directory"));
         serviceName = cfg.readEntry( QString::fromLatin1( "ServiceName" ).prepend( prefix ), QString() );
     }
-    //kDebug(1202) << "KonqViewManager::loadItem: ServiceType " << serviceType << " " << serviceName << endl;
+    kDebug(1202) << "KonqViewManager::loadItem: ServiceType " << serviceType << " " << serviceName << endl;
 
     KService::Ptr service;
     KService::List partServiceOffers, appServiceOffers;
@@ -1607,6 +1609,7 @@ void KonqViewManager::loadItem( KConfig &cfg, KonqFrameContainerBase *parent,
       loadItem( cfg, newContainer, childList.at(0), defaultURL, openUrl );
       loadItem( cfg, newContainer, childList.at(1), defaultURL, openUrl );
 
+      //kDebug(1202) << "loadItem: setSizes " << sizes << endl;
       newContainer->setSizes( sizes );
 
       if (index == 1)

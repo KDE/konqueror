@@ -111,8 +111,7 @@ public:
   virtual void reparentFrame(QWidget * parent,
                              const QPoint & p );
 
-  //make this one public
-  int idAfter( QWidget* w ){ return QSplitter::indexOf( w ) + 1; }
+  bool hasWidgetAfter( QWidget* w ) const;
 
   void setAboutToBeDeleted() { m_bAboutToBeDeleted = true; }
 
