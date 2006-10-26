@@ -165,18 +165,20 @@ QList<QDBusObjectPath> KonquerorAdaptor::getWindows()
 
 QDBusObjectPath KonquerorAdaptor::windowForTab()
 {
-#ifdef Q_OS_UNIX	
     QList<KonqMainWindow*> *mainWindows = KonqMainWindow::mainWindowList();
     if ( mainWindows ) {
         foreach ( KonqMainWindow* window, *mainWindows ) {
+#ifdef Q_OS_UNIX
             KWin::WindowInfo winfo = KWin::windowInfo( window->winId(), NET::WMDesktop );
             if( winfo.isOnCurrentDesktop() &&
+#else
+	    if(
+#endif		    
                 !KonqMainWindow::isPreloaded() ) { // we want a tab in an already shown window
                 return QDBusObjectPath( '/' + window->objectName() );
             }
         }
     }
-#endif    
     return QDBusObjectPath();
 }
 
