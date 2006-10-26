@@ -125,20 +125,20 @@ KonqFrameBase* KonqFrameContainer::otherChild( KonqFrameBase* child )
 
 void KonqFrameContainer::printFrameInfo( const QString& spaces )
 {
-        kDebug(1202) << spaces << "KonqFrameContainer " << this << " visible=" << QString("%1").arg(isVisible())
-                      << " activeChild=" << m_pActiveChild << endl;
-        if (!m_pActiveChild)
-            kDebug(1202) << "WARNING: " << this << " has a null active child!" << endl;
-        KonqFrameBase* child = firstChild();
-        if (child != 0L)
-            child->printFrameInfo(spaces + "  ");
-        else
-            kDebug(1202) << spaces << "  Null child" << endl;
-        child = secondChild();
-        if (child != 0L)
-            child->printFrameInfo(spaces + "  ");
-        else
-            kDebug(1202) << spaces << "  Null child" << endl;
+    kDebug(1202) << spaces << "KonqFrameContainer " << this << " visible=" << QString("%1").arg(isVisible())
+                 << " activeChild=" << m_pActiveChild << endl;
+    if (!m_pActiveChild)
+        kDebug(1202) << "WARNING: " << this << " has a null active child!" << endl;
+    KonqFrameBase* child = firstChild();
+    if (child != 0L)
+        child->printFrameInfo(spaces + "  ");
+    else
+        kDebug(1202) << spaces << "  Null child" << endl;
+    child = secondChild();
+    if (child != 0L)
+        child->printFrameInfo(spaces + "  ");
+    else
+        kDebug(1202) << spaces << "  Null child" << endl;
 }
 
 void KonqFrameContainer::reparentFrame( QWidget* parent, const QPoint & p )
@@ -149,9 +149,7 @@ void KonqFrameContainer::reparentFrame( QWidget* parent, const QPoint & p )
 
 void KonqFrameContainer::swapChildren()
 {
-  KonqFrameBase *firstCh = m_pFirstChild;
-  m_pFirstChild = m_pSecondChild;
-  m_pSecondChild = firstCh;
+    qSwap( m_pFirstChild, m_pSecondChild );
 }
 
 void KonqFrameContainer::setTitle( const QString &title , QWidget* sender)
