@@ -23,26 +23,29 @@
 class ProgressDialog : public KProgressDialog
 {
     Q_OBJECT
+    Q_PROPERTY(int value READ value WRITE setValue)
+    Q_PROPERTY(int maximum READ maximum WRITE setMaximum)
+    Q_PROPERTY(bool autoClose READ autoClose WRITE setAutoClose)
 
-    public:
-      ProgressDialog(QWidget* parent = 0, const QString& caption = QString(), const QString& text = QString(), int totalSteps = 100);
+ public:
+    ProgressDialog(QWidget* parent = 0, const QString& caption = QString(), const QString& text = QString(), int totalSteps = 100);
       
-      void setMaximum( int );
-      int maximum() const;
+    void setMaximum( int );
+    int maximum() const;
     
-      void setValue( int );
-      int value() const;
+    void setValue( int );
+    int value() const;
       
-      void setLabel(const QString&);
+    void setLabel(const QString&);
     
-      void showCancelButton(bool show);
-      bool wasCancelled() const;
-      void ignoreCancel();
+    void showCancelButton(bool show);
+    bool wasCancelled() const;
+    void ignoreCancel();
 
-      void setAutoClose( bool );
-      bool autoClose() const;
+    void setAutoClose( bool );
+    bool autoClose() const;
                   
-      void close();
+    void close();
 };
 
 #endif // PROGRESSDIALOG_H
