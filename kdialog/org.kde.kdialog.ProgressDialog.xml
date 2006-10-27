@@ -4,8 +4,10 @@
   <interface name="org.kde.kdialog.ProgressDialog">
     <property name="maximum" type="i" access="readwrite"/>
     <property name="value" type="i" access="readwrite"/>
-    <property name="label" type="s" access="write"/>
     <property name="autoClose" type="b" access="readwrite"/>
+    <method name="setLabel">
+      <arg type="s" name="label" direction="in"/>
+    </method>
     <method name="showCancelButton">
       <arg name="value" type="b" direction="in"/>
     </method>
