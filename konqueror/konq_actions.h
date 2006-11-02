@@ -50,7 +50,7 @@ public:
                            bool checkCurrentItem = false,
                            int startPos = 0 );
 
-    virtual QWidget* createToolBarWidget(QToolBar* parent);
+    virtual QWidget* createWidget(QWidget* parent);
 
 protected Q_SLOTS:
     void slotTriggered( QAction* action );
@@ -85,7 +85,7 @@ public:
     void start();
     void stop();
 
-    virtual QWidget* createToolBarWidget(QToolBar* parent);
+    virtual QWidget* createWidget(QWidget* parent);
 
 Q_SIGNALS:
     void startAnimation();
@@ -106,7 +106,7 @@ public:
 
     QString desktopEntryName() const { return m_desktopEntryName; }
 
-    virtual QWidget* createToolBarWidget(QToolBar* parent);
+    virtual QWidget* createWidget(QWidget* parent);
 
 /*private Q_SLOTS:
     void slotPopupAboutToShow();
