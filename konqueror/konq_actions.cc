@@ -102,19 +102,24 @@ KonqBidiHistoryAction::~ KonqBidiHistoryAction( )
   delete menu();
 }
 
-QWidget * KonqBidiHistoryAction::createToolBarWidget( QToolBar * parent )
+QWidget * KonqBidiHistoryAction::createWidget( QWidget * parent )
 {
+  QToolBar *toolbar = qobject_cast<QToolBar*>(parent);
+
+  if (!toolbar)
+    return NULL;
+
   QToolButton* button = new QToolButton(parent);
   button->setAutoRaise(true);
   button->setFocusPolicy(Qt::NoFocus);
-  button->setIconSize(parent->iconSize());
-  button->setToolButtonStyle(parent->toolButtonStyle());
-  QObject::connect(parent, SIGNAL(iconSizeChanged(const QSize&)),
-                   button, SLOT(setIconSize(const QSize&)));
-  QObject::connect(parent, SIGNAL(toolButtonStyleChanged(Qt::ToolButtonStyle)),
+  button->setIconSize(toolbar->iconSize());
+  button->setToolButtonStyle(toolbar->toolButtonStyle());
+  QObject::connect(toolbar, SIGNAL(iconSizeChanged(const QSize&)),
+                   toolbar, SLOT(setIconSize(const QSize&)));
+  QObject::connect(toolbar, SIGNAL(toolButtonStyleChanged(Qt::ToolButtonStyle)),
                    button, SLOT(setToolButtonStyle(Qt::ToolButtonStyle)));
   button->setDefaultAction(this);
-  QObject::connect(button, SIGNAL(triggered(QAction*)), parent, SIGNAL(actionTriggered(QAction*)));
+  QObject::connect(button, SIGNAL(triggered(QAction*)), toolbar, SIGNAL(actionTriggered(QAction*)));
 
   button->setPopupMode(QToolButton::MenuButtonPopup);
 
@@ -234,8 +239,13 @@ void KonqLogoAction::stop()
 }
 
 
-QWidget * KonqLogoAction::createToolBarWidget( QToolBar * parent )
+QWidget * KonqLogoAction::createWidget( QWidget * parent )
 {
+  QToolBar *toolbar = qobject_cast<QToolBar*>(parent);
+
+  // This action should only be used in a toolbar
+  Q_ASSERT(toolbar != NULL);
+
   QWidget* container = new QWidget(parent);
 
   QHBoxLayout* layout = new QHBoxLayout(container);
@@ -246,11 +256,11 @@ QWidget * KonqLogoAction::createToolBarWidget( QToolBar * parent )
   KAnimatedButton *button = new KAnimatedButton(container);
   button->setAutoRaise(true);
   button->setFocusPolicy(Qt::NoFocus);
-  button->setIconSize(parent->iconSize());
+  button->setIconSize(toolbar->iconSize());
   button->setToolButtonStyle(Qt::ToolButtonIconOnly);
-  connect(parent, SIGNAL(iconSizeChanged(const QSize&)), button, SLOT(setIconSize(const QSize&)));
-  connect(parent, SIGNAL(iconSizeChanged(const QSize&)), button, SLOT(updateIcons()));
-  connect(button, SIGNAL(triggered(QAction*)), parent, SIGNAL(actionTriggered(QAction*)));
+  connect(toolbar, SIGNAL(iconSizeChanged(const QSize&)), button, SLOT(setIconSize(const QSize&)));
+  connect(toolbar, SIGNAL(iconSizeChanged(const QSize&)), button, SLOT(updateIcons()));
+  connect(button, SIGNAL(triggered(QAction*)), toolbar, SIGNAL(actionTriggered(QAction*)));
   button->setDefaultAction(this);
 
   connect(this, SIGNAL(startAnimation()), button, SLOT(start()));
@@ -287,19 +297,24 @@ KonqViewModeAction::~KonqViewModeAction()
     delete menu();
 }
 
-QWidget * KonqViewModeAction::createToolBarWidget( QToolBar * parent )
+QWidget * KonqViewModeAction::createWidget( QWidget * parent )
 {
+  QToolBar *toolbar = qobject_cast<QToolBar*>(parent);
+
+  if (!toolbar)
+    return NULL;
+
   QToolButton* button = new QToolButton(parent);
   button->setAutoRaise(true);
   button->setFocusPolicy(Qt::NoFocus);
-  button->setIconSize(parent->iconSize());
-  button->setToolButtonStyle(parent->toolButtonStyle());
-  QObject::connect(parent, SIGNAL(iconSizeChanged(const QSize&)),
-                   button, SLOT(setIconSize(const QSize&)));
-  QObject::connect(parent, SIGNAL(toolButtonStyleChanged(Qt::ToolButtonStyle)),
+  button->setIconSize(toolbar->iconSize());
+  button->setToolButtonStyle(toolbar->toolButtonStyle());
+  QObject::connect(toolbar, SIGNAL(iconSizeChanged(const QSize&)),
+                   toolbar, SLOT(setIconSize(const QSize&)));
+  QObject::connect(toolbar, SIGNAL(toolButtonStyleChanged(Qt::ToolButtonStyle)),
                    button, SLOT(setToolButtonStyle(Qt::ToolButtonStyle)));
   button->setDefaultAction(this);
-  QObject::connect(button, SIGNAL(triggered(QAction*)), parent, SIGNAL(actionTriggered(QAction*)));
+  QObject::connect(button, SIGNAL(triggered(QAction*)), toolbar, SIGNAL(actionTriggered(QAction*)));
 
   //if (menu()->count() > 1)
     button->setPopupMode(QToolButton::InstantPopup);
