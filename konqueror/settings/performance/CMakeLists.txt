@@ -7,7 +7,7 @@ set(kcm_performance_PART_SRCS kcmperformance.cpp konqueror.cpp system.cpp )
 
 kde4_automoc(${kcm_performance_PART_SRCS})
 
-kde4_add_ui3_files(kcm_performance_PART_SRCS konqueror_ui.ui system_ui.ui )
+kde4_add_ui_files(kcm_performance_PART_SRCS konqueror_ui.ui system_ui.ui )
 
 kde4_add_plugin(kcm_performance ${kcm_performance_PART_SRCS})
 

@@ -21,7 +21,16 @@
 
 #include <kcmodule.h>
 
-#include "system_ui.h"
+#include "ui_system_ui.h"
+
+class System_ui : public QWidget, public Ui::System_ui
+{
+public:
+  System_ui( QWidget *parent ) : QWidget( parent ) {
+    setupUi( this );
+  }
+};
+
 
 namespace KCMPerformance
 {

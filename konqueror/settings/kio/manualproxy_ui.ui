@@ -1,304 +1,298 @@
-<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
-<class>ManualProxyDlgUI</class>
-<widget class="QWidget">
-    <property name="name">
-        <cstring>ManualProxyDlgUI</cstring>
+<ui version="4.0" stdsetdef="1" >
+  <author></author>
+  <comment></comment>
+  <exportmacro></exportmacro>
+  <class>ManualProxyDlgUI</class>
+  <widget class="QWidget" name="ManualProxyDlgUI" >
+    <property name="geometry" >
+      <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>489</width>
+        <height>438</height>
+      </rect>
     </property>
-    <property name="geometry">
-        <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>489</width>
-            <height>438</height>
-        </rect>
-    </property>
-    <vbox>
-        <property name="name">
-            <cstring>unnamed</cstring>
-        </property>
-        <property name="margin">
-            <number>0</number>
-        </property>
-        <widget class="QGroupBox">
-            <property name="name">
-                <cstring>gbServers</cstring>
+    <layout class="QVBoxLayout" >
+      <property name="margin" >
+        <number>0</number>
+      </property>
+      <item>
+        <widget class="Q3GroupBox" name="gbServers" >
+          <property name="title" >
+            <string>Ser&amp;vers</string>
+          </property>
+          <layout class="QGridLayout" >
+            <property name="margin" >
+              <number>0</number>
             </property>
-            <property name="title">
-                <string>Ser&amp;vers</string>
-            </property>
-            <grid>
-                <property name="name">
-                    <cstring>unnamed</cstring>
+            <item row="2" column="0" >
+              <widget class="QLabel" name="lbFtp" >
+                <property name="sizePolicy" >
+                  <sizepolicy>
+                    <hsizetype>0</hsizetype>
+                    <vsizetype>5</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                  </sizepolicy>
                 </property>
-                <widget class="QLabel" row="2" column="0">
-                    <property name="name">
-                        <cstring>lbFtp</cstring>
-                    </property>
-                    <property name="sizePolicy">
-                        <sizepolicy>
-                            <hsizetype>0</hsizetype>
-                            <vsizetype>5</vsizetype>
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                        </sizepolicy>
-                    </property>
-                    <property name="text">
-                        <string>&amp;FTP:</string>
-                    </property>
-                    <property name="buddy" stdset="0">
-                        <cstring>leFtp</cstring>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="1" column="0">
-                    <property name="name">
-                        <cstring>lbHttps</cstring>
-                    </property>
-                    <property name="sizePolicy">
-                        <sizepolicy>
-                            <hsizetype>0</hsizetype>
-                            <vsizetype>5</vsizetype>
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                        </sizepolicy>
-                    </property>
-                    <property name="text">
-                        <string>HTTP&amp;S:</string>
-                    </property>
-                    <property name="buddy" stdset="0">
-                        <cstring>leHttps</cstring>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="0" column="0">
-                    <property name="name">
-                        <cstring>lbHttp</cstring>
-                    </property>
-                    <property name="sizePolicy">
-                        <sizepolicy>
-                            <hsizetype>0</hsizetype>
-                            <vsizetype>5</vsizetype>
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                        </sizepolicy>
-                    </property>
-                    <property name="text">
-                        <string>H&amp;TTP:</string>
-                    </property>
-                    <property name="buddy" stdset="0">
-                        <cstring>leHttp</cstring>
-                    </property>
-                </widget>
-                <widget class="KLineEdit" row="0" column="1">
-                    <property name="name">
-                        <cstring>leHttp</cstring>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>Enter the address of the HTTP proxy server.</string>
-                    </property>
-                </widget>
-                <widget class="KLineEdit" row="1" column="1">
-                    <property name="name">
-                        <cstring>leHttps</cstring>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>Enter the address of the HTTPS proxy server.</string>
-                    </property>
-                </widget>
-                <widget class="KLineEdit" row="2" column="1">
-                    <property name="name">
-                        <cstring>leFtp</cstring>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>Enter the address of the FTP proxy server.</string>
-                    </property>
-                </widget>
-                <widget class="KIntSpinBox" row="2" column="2">
-                    <property name="name">
-                        <cstring>sbFtp</cstring>
-                    </property>
-                    <property name="maximum">
-                        <number>65536</number>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>Enter the port number of the FTP proxy server. Default 8080. Another common value is 3128.</string>
-                    </property>
-                </widget>
-                <widget class="KIntSpinBox" row="1" column="2">
-                    <property name="name">
-                        <cstring>sbHttps</cstring>
-                    </property>
-                    <property name="maximum">
-                        <number>65536</number>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>Enter the port number of the HTTP proxy server. Default is 8080. Another common value is 3128.</string>
-                    </property>
-                </widget>
-                <widget class="KIntSpinBox" row="0" column="2">
-                    <property name="name">
-                        <cstring>sbHttp</cstring>
-                    </property>
-                    <property name="maximumSize">
-                        <size>
-                            <width>32767</width>
-                            <height>32767</height>
-                        </size>
-                    </property>
-                    <property name="maximum">
-                        <number>65536</number>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>Enter the port number of the HTTP proxy server. Default is 8080. Another common value is 3128.</string>
-                    </property>
-                </widget>
-                <spacer row="3" column="0">
-                    <property name="name">
-                        <cstring>spacer1</cstring>
-                    </property>
-                    <property name="orientation">
-                        <enum>Horizontal</enum>
-                    </property>
-                    <property name="sizeType">
-                        <enum>Minimum</enum>
-                    </property>
-                    <property name="sizeHint">
-                        <size>
-                            <width>51</width>
-                            <height>20</height>
-                        </size>
-                    </property>
-                </spacer>
-                <widget class="QCheckBox" row="3" column="1" rowspan="1" colspan="2">
-                    <property name="name">
-                        <cstring>cbSameProxy</cstring>
-                    </property>
-                    <property name="text">
-                        <string>&amp;Use the same proxy server for all protocols</string>
-                    </property>
-                </widget>
-                <widget class="QPushButton" row="0" column="3">
-                    <property name="name">
-                        <cstring>pbCopyDown</cstring>
-                    </property>
-                    <property name="text">
-                        <string></string>
-                    </property>
-                </widget>
-            </grid>
-        </widget>
-        <widget class="QGroupBox">
-            <property name="name">
-                <cstring>gbExceptions</cstring>
-            </property>
-            <property name="title">
-                <string>E&amp;xceptions</string>
-            </property>
-            <vbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
+                <property name="text" >
+                  <string>&amp;FTP:</string>
                 </property>
-                <widget class="QCheckBox">
-                    <property name="name">
-                        <cstring>cbReverseProxy</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Use proxy only for entries in this list</string>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>&lt;qt&gt;
-Reverse the use of the exception list. Checking this box will result in the proxy servers being used only when the requested URL matches one of the addresses listed here.&lt;p&gt;This feature is useful if all you want or need is to use a proxy server  for a few specific sites.&lt;p&gt;If you have more complex requirements you might want to use a configuration script.
-&lt;/qt&gt;</string>
-                    </property>
-                </widget>
-                <widget class="QLayoutWidget">
-                    <property name="name">
-                        <cstring>layout2</cstring>
-                    </property>
-                    <grid>
-                        <property name="name">
-                            <cstring>unnamed</cstring>
-                        </property>
-                        <widget class="QPushButton" row="3" column="1">
-                            <property name="name">
-                                <cstring>pbDeleteAll</cstring>
-                            </property>
-                            <property name="enabled">
-                                <bool>false</bool>
-                            </property>
-                            <property name="text">
-                                <string>D&amp;elete All</string>
-                            </property>
-                            <property name="whatsThis" stdset="0">
-                                <string>Remove all proxy exception addresses from the list.</string>
-                            </property>
-                        </widget>
-                        <widget class="QPushButton" row="2" column="1">
-                            <property name="name">
-                                <cstring>pbDelete</cstring>
-                            </property>
-                            <property name="enabled">
-                                <bool>false</bool>
-                            </property>
-                            <property name="text">
-                                <string>De&amp;lete</string>
-                            </property>
-                            <property name="whatsThis" stdset="0">
-                                <string>Remove the selected proxy exception address from the list.</string>
-                            </property>
-                        </widget>
-                        <widget class="QPushButton" row="0" column="1">
-                            <property name="name">
-                                <cstring>pbNew</cstring>
-                            </property>
-                            <property name="text">
-                                <string>&amp;New...</string>
-                            </property>
-                            <property name="whatsThis" stdset="0">
-                                <string>Add new proxy exception address to the list.</string>
-                            </property>
-                        </widget>
-                        <widget class="QPushButton" row="1" column="1">
-                            <property name="name">
-                                <cstring>pbChange</cstring>
-                            </property>
-                            <property name="enabled">
-                                <bool>false</bool>
-                            </property>
-                            <property name="text">
-                                <string>C&amp;hange...</string>
-                            </property>
-                            <property name="whatsThis" stdset="0">
-                                <string>Change the selected proxy exception address.</string>
-                            </property>
-                        </widget>
-                        <spacer row="4" column="1">
-                            <property name="name">
-                                <cstring>spacer2</cstring>
-                            </property>
-                            <property name="orientation">
-                                <enum>Vertical</enum>
-                            </property>
-                            <property name="sizeType">
-                                <enum>Expanding</enum>
-                            </property>
-                            <property name="sizeHint">
-                                <size>
-                                    <width>20</width>
-                                    <height>114</height>
-                                </size>
-                            </property>
-                        </spacer>
-                        <widget class="KListBox" row="0" column="0" rowspan="5" colspan="1">
-                            <property name="name">
-                                <cstring>lbExceptions</cstring>
-                            </property>
-                        </widget>
-                    </grid>
-                </widget>
-            </vbox>
+                <property name="buddy" stdset="0" >
+                  <cstring>leFtp</cstring>
+                </property>
+                <property name="wordWrap" >
+                  <bool>false</bool>
+                </property>
+              </widget>
+            </item>
+            <item row="1" column="0" >
+              <widget class="QLabel" name="lbHttps" >
+                <property name="sizePolicy" >
+                  <sizepolicy>
+                    <hsizetype>0</hsizetype>
+                    <vsizetype>5</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                  </sizepolicy>
+                </property>
+                <property name="text" >
+                  <string>HTTP&amp;S:</string>
+                </property>
+                <property name="buddy" stdset="0" >
+                  <cstring>leHttps</cstring>
+                </property>
+                <property name="wordWrap" >
+                  <bool>false</bool>
+                </property>
+              </widget>
+            </item>
+            <item row="0" column="0" >
+              <widget class="QLabel" name="lbHttp" >
+                <property name="sizePolicy" >
+                  <sizepolicy>
+                    <hsizetype>0</hsizetype>
+                    <vsizetype>5</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                  </sizepolicy>
+                </property>
+                <property name="text" >
+                  <string>H&amp;TTP:</string>
+                </property>
+                <property name="buddy" stdset="0" >
+                  <cstring>leHttp</cstring>
+                </property>
+                <property name="wordWrap" >
+                  <bool>false</bool>
+                </property>
+              </widget>
+            </item>
+            <item row="0" column="1" >
+              <widget class="KLineEdit" name="leHttp" >
+                <property name="whatsThis" stdset="0" >
+                  <string>Enter the address of the HTTP proxy server.</string>
+                </property>
+              </widget>
+            </item>
+            <item row="1" column="1" >
+              <widget class="KLineEdit" name="leHttps" >
+                <property name="whatsThis" stdset="0" >
+                  <string>Enter the address of the HTTPS proxy server.</string>
+                </property>
+              </widget>
+            </item>
+            <item row="2" column="1" >
+              <widget class="KLineEdit" name="leFtp" >
+                <property name="whatsThis" stdset="0" >
+                  <string>Enter the address of the FTP proxy server.</string>
+                </property>
+              </widget>
+            </item>
+            <item row="2" column="2" >
+              <widget class="KIntSpinBox" name="sbFtp" >
+                <property name="maximum" >
+                  <number>65536</number>
+                </property>
+                <property name="whatsThis" stdset="0" >
+                  <string>Enter the port number of the FTP proxy server. Default 8080. Another common value is 3128.</string>
+                </property>
+              </widget>
+            </item>
+            <item row="1" column="2" >
+              <widget class="KIntSpinBox" name="sbHttps" >
+                <property name="maximum" >
+                  <number>65536</number>
+                </property>
+                <property name="whatsThis" stdset="0" >
+                  <string>Enter the port number of the HTTP proxy server. Default is 8080. Another common value is 3128.</string>
+                </property>
+              </widget>
+            </item>
+            <item row="0" column="2" >
+              <widget class="KIntSpinBox" name="sbHttp" >
+                <property name="maximumSize" >
+                  <size>
+                    <width>32767</width>
+                    <height>32767</height>
+                  </size>
+                </property>
+                <property name="maximum" >
+                  <number>65536</number>
+                </property>
+                <property name="whatsThis" stdset="0" >
+                  <string>Enter the port number of the HTTP proxy server. Default is 8080. Another common value is 3128.</string>
+                </property>
+              </widget>
+            </item>
+            <item row="3" column="0" >
+              <spacer name="spacer1" >
+                <property name="sizeHint" >
+                  <size>
+                    <width>51</width>
+                    <height>20</height>
+                  </size>
+                </property>
+                <property name="sizeType" >
+                  <enum>Minimum</enum>
+                </property>
+                <property name="orientation" >
+                  <enum>Horizontal</enum>
+                </property>
+              </spacer>
+            </item>
+            <item rowspan="1" row="3" column="1" colspan="2" >
+              <widget class="QCheckBox" name="cbSameProxy" >
+                <property name="text" >
+                  <string>&amp;Use the same proxy server for all protocols</string>
+                </property>
+              </widget>
+            </item>
+            <item row="0" column="3" >
+              <widget class="QPushButton" name="pbCopyDown" >
+                <property name="text" >
+                  <string/>
+                </property>
+              </widget>
+            </item>
+          </layout>
         </widget>
-    </vbox>
-</widget>
-<tabstops>
+      </item>
+      <item>
+        <widget class="Q3GroupBox" name="gbExceptions" >
+          <property name="title" >
+            <string>E&amp;xceptions</string>
+          </property>
+          <layout class="QVBoxLayout" >
+            <property name="margin" >
+              <number>0</number>
+            </property>
+            <item>
+              <widget class="QCheckBox" name="cbReverseProxy" >
+                <property name="text" >
+                  <string>Use proxy only for entries in this list</string>
+                </property>
+                <property name="whatsThis" stdset="0" >
+                  <string>&lt;qt>
+Reverse the use of the exception list. Checking this box will result in the proxy servers being used only when the requested URL matches one of the addresses listed here.&lt;p>This feature is useful if all you want or need is to use a proxy server  for a few specific sites.&lt;p>If you have more complex requirements you might want to use a configuration script.
+&lt;/qt></string>
+                </property>
+              </widget>
+            </item>
+            <item>
+              <layout class="QGridLayout" >
+                <property name="margin" >
+                  <number>0</number>
+                </property>
+                <item row="3" column="1" >
+                  <widget class="QPushButton" name="pbDeleteAll" >
+                    <property name="enabled" >
+                      <bool>false</bool>
+                    </property>
+                    <property name="text" >
+                      <string>D&amp;elete All</string>
+                    </property>
+                    <property name="whatsThis" stdset="0" >
+                      <string>Remove all proxy exception addresses from the list.</string>
+                    </property>
+                  </widget>
+                </item>
+                <item row="2" column="1" >
+                  <widget class="QPushButton" name="pbDelete" >
+                    <property name="enabled" >
+                      <bool>false</bool>
+                    </property>
+                    <property name="text" >
+                      <string>De&amp;lete</string>
+                    </property>
+                    <property name="whatsThis" stdset="0" >
+                      <string>Remove the selected proxy exception address from the list.</string>
+                    </property>
+                  </widget>
+                </item>
+                <item row="0" column="1" >
+                  <widget class="QPushButton" name="pbNew" >
+                    <property name="text" >
+                      <string>&amp;New...</string>
+                    </property>
+                    <property name="whatsThis" stdset="0" >
+                      <string>Add new proxy exception address to the list.</string>
+                    </property>
+                  </widget>
+                </item>
+                <item row="1" column="1" >
+                  <widget class="QPushButton" name="pbChange" >
+                    <property name="enabled" >
+                      <bool>false</bool>
+                    </property>
+                    <property name="text" >
+                      <string>C&amp;hange...</string>
+                    </property>
+                    <property name="whatsThis" stdset="0" >
+                      <string>Change the selected proxy exception address.</string>
+                    </property>
+                  </widget>
+                </item>
+                <item row="4" column="1" >
+                  <spacer name="spacer2" >
+                    <property name="sizeHint" >
+                      <size>
+                        <width>20</width>
+                        <height>114</height>
+                      </size>
+                    </property>
+                    <property name="sizeType" >
+                      <enum>Expanding</enum>
+                    </property>
+                    <property name="orientation" >
+                      <enum>Vertical</enum>
+                    </property>
+                  </spacer>
+                </item>
+                <item rowspan="5" row="0" column="0" colspan="1" >
+                  <widget class="KListBox" name="lbExceptions" />
+                </item>
+              </layout>
+            </item>
+          </layout>
+        </widget>
+      </item>
+    </layout>
+  </widget>
+  <layoutdefault spacing="6" margin="11" />
+  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+  <customwidgets>
+    <customwidget>
+      <class>KIntSpinBox</class>
+      <header>knuminput.h</header>
+    </customwidget>
+    <customwidget>
+      <class>KListBox</class>
+      <extends>Q3ListBox</extends>
+      <header>klistbox.h</header>
+    </customwidget>
+  </customwidgets>
+  <tabstops>
     <tabstop>leHttp</tabstop>
     <tabstop>sbHttp</tabstop>
     <tabstop>leHttps</tabstop>
@@ -312,12 +306,5 @@ Reverse the use of the exception list. Checking this box will result in the prox
     <tabstop>pbChange</tabstop>
     <tabstop>pbDelete</tabstop>
     <tabstop>pbDeleteAll</tabstop>
-</tabstops>
-<customwidgets>
-    <customwidget>
-	<class>KIntSpinBox</class>
-	<header>knuminput.h</header>
-    </customwidget>
-</customwidgets>
-<layoutdefaults spacing="6" margin="11"/>
-</UI>
+  </tabstops>
+</ui>

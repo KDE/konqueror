@@ -26,7 +26,7 @@ set(kcm_kio_PART_SRCS
 
 kde4_automoc(${kcm_kio_PART_SRCS})
 
-kde4_add_ui_files(kcm_kio_PART_SRCS cache_ui.ui)
+kde4_add_ui_files(kcm_kio_PART_SRCS cache_ui.ui manualproxy_ui.ui envvarproxy_ui.ui)
 
 kde4_add_ui3_files(kcm_kio_PART_SRCS 
    socksbase.ui 
@@ -35,9 +35,7 @@ kde4_add_ui3_files(kcm_kio_PART_SRCS
    kcookiespoliciesdlg_ui.ui 
    policydlg_ui.ui 
    useragentdlg_ui.ui 
-   uagentproviderdlg_ui.ui 
-   manualproxy_ui.ui 
-   envvarproxy_ui.ui)
+   uagentproviderdlg_ui.ui )
 
 kde4_add_plugin(kcm_kio ${kcm_kio_PART_SRCS})
 

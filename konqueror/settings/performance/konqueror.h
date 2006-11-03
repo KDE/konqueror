@@ -19,10 +19,19 @@
 #ifndef _KCM_PERF_KONQUEROR_H
 #define _KCM_PERF_KONQUEROR_H
 
-#include "konqueror_ui.h"
+#include "ui_konqueror_ui.h"
 
 namespace KCMPerformance
 {
+
+class Konqueror_ui : public QWidget, public Ui::Konqueror_ui
+{
+public:
+  Konqueror_ui( QWidget *parent ) : QWidget( parent ) {
+    setupUi( this );
+  }
+};
+
 
 class Konqueror
     : public Konqueror_ui

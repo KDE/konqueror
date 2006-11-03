@@ -32,7 +32,6 @@
 #include <kmessagebox.h>
 #include <kurl.h>
 
-#include "envvarproxy_ui.h"
 #include "kenvvarproxydlg.h"
 
 

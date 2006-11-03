@@ -24,8 +24,16 @@
 #include <QMap>
 
 #include "kproxydlgbase.h"
+#include "ui_envvarproxy_ui.h"
 
-class EnvVarProxyDlgUI;
+class EnvVarProxyDlgUI : public QWidget, public Ui::EnvVarProxyDlgUI
+{
+public:
+  EnvVarProxyDlgUI( QWidget *parent ) : QWidget( parent ) {
+    setupUi( this );
+  }
+};
+
 
 class KEnvVarProxyDlg : public KProxyDialogBase
 {
