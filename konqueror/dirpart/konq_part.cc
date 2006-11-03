@@ -184,10 +184,12 @@ void KonqPart::slotUpdateActions()
 
 void KonqPart::slotPreview( const KFileItem* item, const QPixmap& pixmap )
 {
+#if 0 // TODO: enable after 2006-11-06 (needs a kdelibs api change made in week 44)
     const QModelIndex idx = m_model->indexForItem( item );
     Q_ASSERT( idx.isValid() );
     Q_ASSERT( idx.column() == 0 );
     m_model->setData( idx, pixmap, Qt::DecorationRole );
+#endif
 }
 
 
