@@ -27,7 +27,7 @@ set(kcm_history_PART_SRCS kcmhistory.cpp history_settings.cpp )
 
 kde4_automoc(${kcm_history_PART_SRCS})
 
-kde4_add_ui3_files(kcm_history_PART_SRCS history_dlg.ui )
+kde4_add_ui_files(kcm_history_PART_SRCS history_dlg.ui )
 
 
 kde4_add_plugin(kcm_history ${kcm_history_PART_SRCS})

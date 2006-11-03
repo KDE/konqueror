@@ -22,10 +22,19 @@
 #define __kcmhistory_h__
 
 #include <kcmodule.h>
+#include "ui_history_dlg.h"
 
 class KonqHistoryManager;
 class KonqSidebarHistorySettings;
-class KonqSidebarHistoryDlg;
+
+class KonqSidebarHistoryDlg : public QWidget, public Ui::KonqSidebarHistoryDlg
+{
+public:
+  KonqSidebarHistoryDlg( QWidget *parent ) : QWidget( parent ) {
+    setupUi( this );
+  }
+};
+
 
 class HistorySidebarConfig : public KCModule
 {
