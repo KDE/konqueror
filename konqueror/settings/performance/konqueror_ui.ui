@@ -1,154 +1,137 @@
-<!DOCTYPE UI><UI version="3.1" stdsetdef="1">
-<class>KCMPerformance::Konqueror_ui</class>
-<widget class="QWidget">
-    <property name="name">
-        <cstring>Konqueror_ui</cstring>
+<ui version="4.0" stdsetdef="1" >
+  <author></author>
+  <comment></comment>
+  <exportmacro></exportmacro>
+  <class>KCMPerformance::Konqueror_ui</class>
+  <widget class="QWidget" name="KCMPerformance::Konqueror_ui" >
+    <property name="geometry" >
+      <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>600</width>
+        <height>480</height>
+      </rect>
     </property>
-    <property name="geometry">
-        <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>600</width>
-            <height>480</height>
-        </rect>
-    </property>
-    <vbox>
-        <property name="name">
-            <cstring>unnamed</cstring>
-        </property>
-        <property name="margin">
-            <number>0</number>
-        </property>
-        <widget class="QGroupBox">
-            <property name="name">
-                <cstring>reuse_group</cstring>
+    <layout class="QVBoxLayout" >
+      <property name="margin" >
+        <number>0</number>
+      </property>
+      <item>
+        <widget class="Q3GroupBox" name="reuse_group" >
+          <property name="title" >
+            <string>Minimize Memory Usage</string>
+          </property>
+          <layout class="QVBoxLayout" >
+            <property name="margin" >
+              <number>0</number>
             </property>
-            <property name="title">
-                <string>Minimize Memory Usage</string>
-            </property>
-            <vbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
+            <item>
+              <widget class="QRadioButton" name="rb_never_reuse" >
+                <property name="text" >
+                  <string>&amp;Never</string>
                 </property>
-                <widget class="QRadioButton">
-                    <property name="name">
-                        <cstring>rb_never_reuse</cstring>
-                    </property>
-                    <property name="text">
-                        <string>&amp;Never</string>
-                    </property>
-                </widget>
-                <widget class="QRadioButton">
-                    <property name="name">
-                        <cstring>rb_file_browsing_reuse</cstring>
-                    </property>
-                    <property name="text">
-                        <string>For &amp;file browsing only (recommended)</string>
-                    </property>
-                </widget>
-                <widget class="QRadioButton">
-                    <property name="name">
-                        <cstring>rb_always_reuse</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Alwa&amp;ys (use with care)</string>
-                    </property>
-                </widget>
-            </vbox>
-        </widget>
-        <widget class="QGroupBox">
-            <property name="name">
-                <cstring>groupBox1</cstring>
-            </property>
-            <property name="title">
-                <string>Preloading</string>
-            </property>
-            <vbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
+              </widget>
+            </item>
+            <item>
+              <widget class="QRadioButton" name="rb_file_browsing_reuse" >
+                <property name="text" >
+                  <string>For &amp;file browsing only (recommended)</string>
                 </property>
-                <widget class="QLayoutWidget">
-                    <property name="name">
-                        <cstring>layout2</cstring>
-                    </property>
-                    <hbox>
-                        <property name="name">
-                            <cstring>unnamed</cstring>
-                        </property>
-                        <widget class="QLabel">
-                            <property name="name">
-                                <cstring>lb_preload_count</cstring>
-                            </property>
-                            <property name="text">
-                                <string>Maximum number of instances kept &amp;preloaded:</string>
-                            </property>
-                            <property name="buddy" stdset="0">
-                                <cstring>sb_preload_count</cstring>
-                            </property>
-                        </widget>
-                        <widget class="QSpinBox">
-                            <property name="name">
-                                <cstring>sb_preload_count</cstring>
-                            </property>
-                        </widget>
-                        <spacer>
-                            <property name="name">
-                                <cstring>spacer2</cstring>
-                            </property>
-                            <property name="orientation">
-                                <enum>Qt::Horizontal</enum>
-                            </property>
-                            <property name="sizeType">
-                                <enum>Expanding</enum>
-                            </property>
-                            <property name="sizeHint">
-                                <size>
-                                    <width>40</width>
-                                    <height>20</height>
-                                </size>
-                            </property>
-                        </spacer>
-                    </hbox>
-                </widget>
-                <widget class="QCheckBox">
-                    <property name="name">
-                        <cstring>cb_preload_on_startup</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Preload an instance after KDE startup</string>
-                    </property>
-                </widget>
-                <widget class="QCheckBox">
-                    <property name="name">
-                        <cstring>cb_always_have_preloaded</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Always try to have at least one preloaded instance</string>
-                    </property>
-                </widget>
-            </vbox>
+              </widget>
+            </item>
+            <item>
+              <widget class="QRadioButton" name="rb_always_reuse" >
+                <property name="text" >
+                  <string>Alwa&amp;ys (use with care)</string>
+                </property>
+              </widget>
+            </item>
+          </layout>
         </widget>
-        <spacer>
-            <property name="name">
-                <cstring>spacer1</cstring>
+      </item>
+      <item>
+        <widget class="Q3GroupBox" name="groupBox1" >
+          <property name="title" >
+            <string>Preloading</string>
+          </property>
+          <layout class="QVBoxLayout" >
+            <property name="margin" >
+              <number>0</number>
             </property>
-            <property name="orientation">
-                <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeType">
-                <enum>Expanding</enum>
-            </property>
-            <property name="sizeHint">
-                <size>
-                    <width>20</width>
-                    <height>160</height>
-                </size>
-            </property>
+            <item>
+              <layout class="QHBoxLayout" >
+                <property name="margin" >
+                  <number>0</number>
+                </property>
+                <item>
+                  <widget class="QLabel" name="lb_preload_count" >
+                    <property name="text" >
+                      <string>Maximum number of instances kept &amp;preloaded:</string>
+                    </property>
+                    <property name="buddy" stdset="0" >
+                      <cstring>sb_preload_count</cstring>
+                    </property>
+                    <property name="wordWrap" >
+                      <bool>false</bool>
+                    </property>
+                  </widget>
+                </item>
+                <item>
+                  <widget class="QSpinBox" name="sb_preload_count" />
+                </item>
+                <item>
+                  <spacer name="spacer2" >
+                    <property name="sizeHint" >
+                      <size>
+                        <width>40</width>
+                        <height>20</height>
+                      </size>
+                    </property>
+                    <property name="sizeType" >
+                      <enum>Expanding</enum>
+                    </property>
+                    <property name="orientation" >
+                      <enum>Qt::Horizontal</enum>
+                    </property>
+                  </spacer>
+                </item>
+              </layout>
+            </item>
+            <item>
+              <widget class="QCheckBox" name="cb_preload_on_startup" >
+                <property name="text" >
+                  <string>Preload an instance after KDE startup</string>
+                </property>
+              </widget>
+            </item>
+            <item>
+              <widget class="QCheckBox" name="cb_always_have_preloaded" >
+                <property name="text" >
+                  <string>Always try to have at least one preloaded instance</string>
+                </property>
+              </widget>
+            </item>
+          </layout>
+        </widget>
+      </item>
+      <item>
+        <spacer name="spacer1" >
+          <property name="sizeHint" >
+            <size>
+              <width>20</width>
+              <height>160</height>
+            </size>
+          </property>
+          <property name="sizeType" >
+            <enum>Expanding</enum>
+          </property>
+          <property name="orientation" >
+            <enum>Qt::Vertical</enum>
+          </property>
         </spacer>
-    </vbox>
-</widget>
-<includes>
-    <include location="local" impldecl="in implementation">kdialog.h</include>
-</includes>
-<layoutdefaults spacing="3" margin="6"/>
-</UI>
+      </item>
+    </layout>
+  </widget>
+  <layoutdefault spacing="3" margin="6" />
+  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+</ui>

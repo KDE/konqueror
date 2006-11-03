@@ -1,68 +1,65 @@
-<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>System_ui</class>
-<widget class="QWidget">
-    <property name="name">
-        <cstring>System_ui</cstring>
+<ui version="4.0" stdsetdef="1" >
+  <author></author>
+  <comment></comment>
+  <exportmacro></exportmacro>
+  <class>System_ui</class>
+  <widget class="QWidget" name="System_ui" >
+    <property name="geometry" >
+      <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>600</width>
+        <height>480</height>
+      </rect>
     </property>
-    <property name="geometry">
-        <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>600</width>
-            <height>480</height>
-        </rect>
-    </property>
-    <vbox>
-        <property name="name">
-            <cstring>unnamed</cstring>
-        </property>
-        <widget class="QGroupBox">
-            <property name="name">
-                <cstring>gb_</cstring>
+    <layout class="QVBoxLayout" >
+      <item>
+        <widget class="Q3GroupBox" name="gb_" >
+          <property name="title" >
+            <string>System Configuration</string>
+          </property>
+          <layout class="QVBoxLayout" >
+            <property name="margin" >
+              <number>0</number>
             </property>
-            <property name="title">
-                <string>System Configuration</string>
-            </property>
-            <vbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
+            <item>
+              <widget class="QCheckBox" name="cb_disable_kbuildsycoca" >
+                <property name="text" >
+                  <string>Disable &amp;system configuration startup check</string>
                 </property>
-                <widget class="QCheckBox">
-                    <property name="name">
-                        <cstring>cb_disable_kbuildsycoca</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Disable &amp;system configuration startup check</string>
-                    </property>
-                </widget>
-                <widget class="QLabel">
-                    <property name="name">
-                        <cstring>label_kbuildsycoca</cstring>
-                    </property>
-                    <property name="text">
-                        <string>This option may in rare cases lead to various problems. Consult the What's This (Shift+F1) help for details.</string>
-                    </property>
-                </widget>
-            </vbox>
+              </widget>
+            </item>
+            <item>
+              <widget class="QLabel" name="label_kbuildsycoca" >
+                <property name="text" >
+                  <string>This option may in rare cases lead to various problems. Consult the What's This (Shift+F1) help for details.</string>
+                </property>
+                <property name="wordWrap" >
+                  <bool>false</bool>
+                </property>
+              </widget>
+            </item>
+          </layout>
         </widget>
-        <spacer>
-            <property name="name">
-                <cstring>spacer1</cstring>
-            </property>
-            <property name="orientation">
-                <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeType">
-                <enum>Expanding</enum>
-            </property>
-            <property name="sizeHint">
-                <size>
-                    <width>20</width>
-                    <height>40</height>
-                </size>
-            </property>
+      </item>
+      <item>
+        <spacer name="spacer1" >
+          <property name="sizeHint" >
+            <size>
+              <width>20</width>
+              <height>40</height>
+            </size>
+          </property>
+          <property name="sizeType" >
+            <enum>Expanding</enum>
+          </property>
+          <property name="orientation" >
+            <enum>Qt::Vertical</enum>
+          </property>
         </spacer>
-    </vbox>
-</widget>
-<layoutdefaults spacing="6" margin="11"/>
-</UI>
+      </item>
+    </layout>
+  </widget>
+  <layoutdefault spacing="6" margin="11" />
+  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+</ui>

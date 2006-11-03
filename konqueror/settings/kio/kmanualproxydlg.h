@@ -23,10 +23,18 @@
 #define KMANUAL_PROXY_DIALOG_H
 
 #include "kproxydlgbase.h"
-
+#include "ui_manualproxy_ui.h"
 class QSpinBox;
 class KLineEdit;
-class ManualProxyDlgUI;
+
+class ManualProxyDlgUI : public QWidget, public Ui::ManualProxyDlgUI
+{
+public:
+  ManualProxyDlgUI( QWidget *parent ) : QWidget( parent ) {
+    setupUi( this );
+  }
+};
+
 
 class KManualProxyDlg : public KProxyDialogBase
 {
