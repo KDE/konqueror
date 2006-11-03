@@ -36,7 +36,6 @@
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <knuminput.h>
-#include "history_dlg.h"
 
 #include "konq_historymgr.h"
 
