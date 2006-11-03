@@ -22,10 +22,18 @@
 #include <QString>
 
 #include <kdialog.h>
-
+#include "ui_policydlg_ui.h"
 
 class QPushButton;
-class PolicyDlgUI;
+
+class PolicyDlgUI : public QWidget, public Ui::PolicyDlgUI
+{
+public:
+  PolicyDlgUI( QWidget *parent ) : QWidget( parent ) {
+    setupUi( this );
+  }
+};
+
 
 class KCookieAdvice
 {

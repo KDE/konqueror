@@ -31,7 +31,6 @@
 
 #include "fakeuaprovider.h"
 #include "uagentproviderdlg.h"
-#include "uagentproviderdlg_ui.h"
 
 UALineEdit::UALineEdit( QWidget *parent )
            :KLineEdit( parent )

@@ -27,7 +27,6 @@
 #include <klocale.h>
 
 #include "policydlg.h"
-#include "policydlg_ui.h"
 
 
 class DomainLineValidator : public QValidator
