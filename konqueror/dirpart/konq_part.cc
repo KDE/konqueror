@@ -31,6 +31,7 @@
 #include "konq_selectionmodel.h"
 #include "konq_iconview.h"
 #include "konq_listview.h"
+#include <kglobalsettings.h>
 
 K_EXPORT_COMPONENT_FACTORY( konq_part, KonqFactory )
 
@@ -60,6 +61,8 @@ KonqPart::KonqPart( QWidget* parentWidget, QObject* parent, const QStringList& a
     QColor color = settings->normalTextColor();
     m_view->setFont( font );
 #if 0 // TODO
+    // Well, font and color stuff (including using italics for symlinks)
+    // should be done by a KFileItemDelegate or something, which fredrik is working on AFAIK.
     font.setUnderline( settings->underlineLink() );
     m_model->setItemFont( font );
     m_model->setItemColor( color );
@@ -97,9 +100,14 @@ KAboutData* KonqPart::createAboutData()
 void KonqPart::slotNewItems( const KFileItemList& items )
 {
     newItems( items );
-    KIO::PreviewJob* job = KIO::filePreview( items, 128 );
-    connect( job, SIGNAL( gotPreview(const KFileItem*,const QPixmap&) ),
-                  SLOT( slotPreview(const KFileItem*,const QPixmap&) ) );
+
+    // ## this is too early. To be moved to after delayed mimetype determination.
+    // Also, changing icon sizes must re-trigger previews, hence startImagePreview in the old libkonq code.
+    if ( KGlobalSettings::showFilePreview( url() ) ) {
+        KIO::PreviewJob* job = KIO::filePreview( items, 128 );
+        connect( job, SIGNAL( gotPreview(const KFileItem*,const QPixmap&) ),
+                 SLOT( slotPreview(const KFileItem*,const QPixmap&) ) );
+    }
 }
 
 void KonqPart::slotCompleted()
@@ -176,9 +184,10 @@ void KonqPart::slotUpdateActions()
 
 void KonqPart::slotPreview( const KFileItem* item, const QPixmap& pixmap )
 {
-#if 0 // TODO
-    //m_model->addPreview( item, pixmap );
-#endif
+    const QModelIndex idx = m_model->indexForItem( item );
+    Q_ASSERT( idx.isValid() );
+    Q_ASSERT( idx.column() == 0 );
+    m_model->setData( idx, pixmap, Qt::DecorationRole );
 }
 
 
