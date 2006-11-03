@@ -22,10 +22,18 @@
 
 #include <kdialog.h>
 #include <klineedit.h>
-
+#include "ui_uagentproviderdlg_ui.h"
 
 class FakeUASProvider;
-class UAProviderDlgUI;
+
+class UAProviderDlgUI : public QWidget, public Ui::UAProviderDlgUI
+{
+public:
+  UAProviderDlgUI( QWidget *parent ) : QWidget( parent ) {
+    setupUi( this );
+  }
+};
+
 
 class UALineEdit : public KLineEdit
 {
