@@ -123,9 +123,7 @@ void KonqPart::slotClear()
 
 const KFileItem* KonqPart::currentItem()
 {
-#if 0 // TODO: enable after 2006-11-06 (needs a kdelibs api change made in week 44)
     return m_model->itemForIndex( m_view->currentIndex() );
-#endif
 }
 
 bool KonqPart::doOpenURL( const KUrl& url )
@@ -139,7 +137,6 @@ bool KonqPart::doOpenURL( const KUrl& url )
 
 void KonqPart::slotExecute( const QModelIndex& index, Qt::MouseButton mb )
 {
-#if 0 // TODO: enable after 2006-11-06 (needs a kdelibs api change made in week 44)
     KFileItem* item = m_model->itemForIndex( index );
     if ( !item )
         return;
@@ -148,19 +145,15 @@ void KonqPart::slotExecute( const QModelIndex& index, Qt::MouseButton mb )
         lmbClicked( item );
     else if ( mb == Qt::MidButton )
         mmbClicked( item );
-#endif
 }
 
 void KonqPart::slotToolTip( const QModelIndex& index )
 {
-#if 0 // TODO: enable after 2006-11-06 (needs a kdelibs api change made in week 44)
     m_fileTip->setItem( m_model->itemForIndex( index ) );
-#endif
 }
 
 void KonqPart::slotContextMenu( const QPoint& pos, const QModelIndexList& indexes )
 {
-#if 0 // TODO: enable after 2006-11-06 (needs a kdelibs api change made in week 44)
     KFileItemList items;
     if ( indexes.isEmpty() )
         items.append( m_model->itemForIndex( QModelIndex() ) ); // root item
@@ -169,12 +162,10 @@ void KonqPart::slotContextMenu( const QPoint& pos, const QModelIndexList& indexe
             if ( index.column() == 0 )
                 items.append( m_model->itemForIndex( index ) );
     emit extension()->popupMenu( pos, items );
-#endif
 }
 
 void KonqPart::slotUpdateActions()
 {
-#if 0 // TODO: enable after 2006-11-06 (needs a kdelibs api change made in week 44)
     bool canDelete = true;
 
     QModelIndexList indexes = static_cast<KonqListView*>(m_view)->selectedIndexes(); // ### FIXME
@@ -188,17 +179,15 @@ void KonqPart::slotUpdateActions()
     emit extension()->enableAction( "properties", !indexes.isEmpty() );
     emit extension()->enableAction( "editMimeType", indexes.count() == 1 );
     emit extension()->enableAction( "rename", indexes.count() == 1 );
-#endif
+
 }
 
 void KonqPart::slotPreview( const KFileItem* item, const QPixmap& pixmap )
 {
-#if 0 // TODO: enable after 2006-11-06 (needs a kdelibs api change made in week 44)
     const QModelIndex idx = m_model->indexForItem( item );
     Q_ASSERT( idx.isValid() );
     Q_ASSERT( idx.column() == 0 );
     m_model->setData( idx, pixmap, Qt::DecorationRole );
-#endif
 }
 
 
