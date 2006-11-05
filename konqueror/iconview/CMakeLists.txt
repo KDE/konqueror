@@ -9,7 +9,6 @@ kde4_automoc(${konq_iconview_PART_SRCS})
 
 kde4_add_plugin(konq_iconview ${konq_iconview_PART_SRCS})
 
-kde4_install_libtool_file( ${PLUGIN_INSTALL_DIR} konq_iconview )
 
 target_link_libraries(konq_iconview  ${KDE4_KDECORE_LIBS} konq )
 

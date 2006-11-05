@@ -11,7 +11,6 @@ kde4_automoc(${kcm_filetypes_PART_SRCS})
 
 kde4_add_plugin(kcm_filetypes ${kcm_filetypes_PART_SRCS})
 
-kde4_install_libtool_file( ${PLUGIN_INSTALL_DIR} kcm_filetypes )
 
 target_link_libraries(kcm_filetypes  ${KDE4_KDE3SUPPORT_LIBS} )
 

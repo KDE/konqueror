@@ -14,7 +14,6 @@ kde4_automoc(${konq_sidebartree_history_PART_SRCS})
 
 kde4_add_plugin(konq_sidebartree_history ${konq_sidebartree_history_PART_SRCS})
 
-kde4_install_libtool_file( ${PLUGIN_INSTALL_DIR} konq_sidebartree_history )
 
 target_link_libraries(konq_sidebartree_history  ${KDE4_KDEUI_LIBS} konqsidebarplugin konq )
 
@@ -32,7 +31,6 @@ kde4_add_ui_files(kcm_history_PART_SRCS history_dlg.ui )
 
 kde4_add_plugin(kcm_history ${kcm_history_PART_SRCS})
 
-kde4_install_libtool_file( ${PLUGIN_INSTALL_DIR} kcm_history )
 
 target_link_libraries(kcm_history  ${KDE4_KDEUI_LIBS} konq )
 

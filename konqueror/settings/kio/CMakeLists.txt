@@ -37,7 +37,6 @@ kde4_add_ui3_files(kcm_kio_PART_SRCS
 
 kde4_add_plugin(kcm_kio ${kcm_kio_PART_SRCS})
 
-kde4_install_libtool_file( ${PLUGIN_INSTALL_DIR} kcm_kio )
 
 target_link_libraries(kcm_kio  ${KDE4_KDE3SUPPORT_LIBS} )
 
