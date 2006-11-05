@@ -6,7 +6,6 @@ kde4_add_plugin(kded_favicons ${kded_favicons_SRCS})
 
 target_link_libraries( kded_favicons ${KDE4_KIO_LIBS} )
 
-kde4_install_libtool_file( ${PLUGIN_INSTALL_DIR} kded_favicons )
 
 install(TARGETS kded_favicons  DESTINATION ${PLUGIN_INSTALL_DIR} )
 

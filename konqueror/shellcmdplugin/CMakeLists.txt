@@ -9,7 +9,6 @@ kde4_automoc(${konq_shellcmdplugin_PART_SRCS})
 
 kde4_add_plugin(konq_shellcmdplugin ${konq_shellcmdplugin_PART_SRCS})
 
-kde4_install_libtool_file( ${PLUGIN_INSTALL_DIR} konq_shellcmdplugin )
 
 target_link_libraries(konq_shellcmdplugin  konq ${KDE4_KDESU_LIBS})
 

@@ -13,7 +13,6 @@ kde4_automoc(${konq_sidebartree_dirtree_PART_SRCS})
 
 kde4_add_plugin(konq_sidebartree_dirtree ${konq_sidebartree_dirtree_PART_SRCS})
 
-kde4_install_libtool_file( ${PLUGIN_INSTALL_DIR} konq_sidebartree_dirtree )
 
 target_link_libraries(konq_sidebartree_dirtree  ${KDE4_KDE3SUPPORT_LIBS} konq konqsidebarplugin  )
 

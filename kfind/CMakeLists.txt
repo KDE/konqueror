@@ -13,7 +13,6 @@ kde4_automoc(${kfindpart_PART_SRCS})
 
 kde4_add_plugin(kfindpart WITH_PREFIX ${kfindpart_PART_SRCS})
 
-kde4_install_libtool_file( ${PLUGIN_INSTALL_DIR} kfindpart )
 
 target_link_libraries(kfindpart  ${KDE4_KDE3SUPPORT_LIBS} konq )
 

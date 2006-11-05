@@ -20,7 +20,6 @@ kde4_add_kcfg_files(konq_listview_PART_SRCS konq_listviewsettings.kcfgc )
 
 kde4_add_plugin(konq_listview ${konq_listview_PART_SRCS})
 
-kde4_install_libtool_file( ${PLUGIN_INSTALL_DIR} konq_listview )
 
 target_link_libraries(konq_listview  ${KDE4_KDECORE_LIBS} konq )
 

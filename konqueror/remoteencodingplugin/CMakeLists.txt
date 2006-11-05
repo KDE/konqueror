@@ -9,7 +9,6 @@ kde4_automoc(${konq_remoteencoding_PART_SRCS})
 
 kde4_add_plugin(konq_remoteencoding ${konq_remoteencoding_PART_SRCS})
 
-kde4_install_libtool_file( ${PLUGIN_INSTALL_DIR} konq_remoteencoding )
 
 target_link_libraries(konq_remoteencoding  ${KDE4_KDECORE_LIBS} konq )
 

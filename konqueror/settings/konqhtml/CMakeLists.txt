@@ -24,7 +24,6 @@ kde4_add_ui_files(kcm_konqhtml_PART_SRCS nsconfigwidget.ui advancedTabOptions.ui
 
 kde4_add_plugin(kcm_konqhtml ${kcm_konqhtml_PART_SRCS})
 
-kde4_install_libtool_file( ${PLUGIN_INSTALL_DIR} kcm_konqhtml )
 
 target_link_libraries(kcm_konqhtml  ${KDE4_KDE3SUPPORT_LIBS} ${KDE4_KHTML_LIBS})
 

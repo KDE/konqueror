@@ -15,7 +15,6 @@ kde4_automoc(${konq_part_PART_SRCS})
 
 kde4_add_plugin(konq_part ${konq_part_PART_SRCS})
 
-kde4_install_libtool_file( ${PLUGIN_INSTALL_DIR} konq_part )
 
 target_link_libraries(konq_part  ${KDE4_KDECORE_LIBS} konq )
 

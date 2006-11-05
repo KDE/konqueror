@@ -9,7 +9,6 @@ kde4_automoc(${konq_sidebartest_PART_SRCS})
 
 kde4_add_plugin(konq_sidebartest ${konq_sidebartest_PART_SRCS})
 
-kde4_install_libtool_file( ${PLUGIN_INSTALL_DIR} konq_sidebartest )
 
 target_link_libraries(konq_sidebartest ${KDE4_KPARTS_LIBS} ${KDE4_KIO_LIBS} konqsidebarplugin )
 
