@@ -26,10 +26,20 @@
 #define _USERAGENTDLG_H
 
 #include <kcmodule.h>
+#include "ui_useragentdlg_ui.h"
 
 class KConfig;
 class FakeUASProvider;
-class UserAgentDlgUI;
+
+class UserAgentDlgUI : public QWidget, public Ui::UserAgentDlgUI
+{
+public:
+  UserAgentDlgUI( QWidget *parent ) : QWidget( parent ) {
+    setupUi( this );
+  }
+};
+
+
 
 class UserAgentDlg : public KCModule
 {

@@ -43,7 +43,6 @@
 #include "ksaveioconfig.h"
 
 #include "kcookiespolicies.h"
-#include "kcookiespoliciesdlg_ui.h"
 
 KCookiesPolicies::KCookiesPolicies(KInstance *inst, QWidget *parent)
                  :KCModule(inst, parent)

@@ -30,12 +30,19 @@
 #include <Q3PtrList>
 
 #include <kcmodule.h>
+#include "ui_kcookiesmanagementdlg_ui.h"
 
-
-class DCOPClient;
-class KCookiesManagementDlgUI;
 
 struct CookieProp;
+
+class KCookiesManagementDlgUI : public QWidget, public Ui::KCookiesManagementDlgUI
+{
+public:
+  KCookiesManagementDlgUI( QWidget *parent ) : QWidget( parent ) {
+    setupUi( this );
+  }
+};
+
 
 class CookieListViewItem : public Q3ListViewItem
 {

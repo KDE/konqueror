@@ -1,323 +1,313 @@
-<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>KCookiesManagementDlgUI</class>
-<widget class="QWidget">
-    <property name="name">
-        <cstring>KCookiesManagementDlgUI</cstring>
+<ui version="4.0" stdsetdef="1" >
+  <author></author>
+  <comment></comment>
+  <exportmacro></exportmacro>
+  <class>KCookiesManagementDlgUI</class>
+  <widget class="QWidget" name="KCookiesManagementDlgUI" >
+    <property name="geometry" >
+      <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>294</width>
+        <height>432</height>
+      </rect>
     </property>
-    <property name="geometry">
-        <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>294</width>
-            <height>432</height>
-        </rect>
-    </property>
-    <grid>
-        <property name="name">
-            <cstring>unnamed</cstring>
-        </property>
-        <property name="margin">
+    <layout class="QGridLayout" >
+      <property name="margin" >
+        <number>0</number>
+      </property>
+      <item row="0" column="0" >
+        <layout class="QGridLayout" >
+          <property name="margin" >
             <number>0</number>
-        </property>
-        <widget class="QLayoutWidget" row="0" column="0">
-            <property name="name">
-                <cstring>layout6</cstring>
-            </property>
-            <grid>
-                <property name="name">
-                    <cstring>unnamed</cstring>
+          </property>
+          <item row="1" column="0" >
+            <widget class="K3ListView" name="lvCookies" >
+              <property name="selectionMode" stdset="0" >
+                <enum>Single</enum>
+              </property>
+              <property name="allColumnsShowFocus" >
+                <bool>true</bool>
+              </property>
+              <property name="showSortIndicator" >
+                <bool>true</bool>
+              </property>
+              <property name="rootIsDecorated" >
+                <bool>true</bool>
+              </property>
+              <property name="treeStepSize" >
+                <number>15</number>
+              </property>
+              <column>
+                <property name="text" >
+                  <string>Domain [Group]</string>
                 </property>
-                <widget class="K3ListView" row="1" column="0">
-                    <column>
-                        <property name="text">
-                            <string>Domain [Group]</string>
-                        </property>
-                        <property name="clickable">
-                            <bool>true</bool>
-                        </property>
-                        <property name="resizable">
-                            <bool>true</bool>
-                        </property>
-                    </column>
-                    <column>
-                        <property name="text">
-                            <string>Host [Set By]</string>
-                        </property>
-                        <property name="clickable">
-                            <bool>true</bool>
-                        </property>
-                        <property name="resizable">
-                            <bool>true</bool>
-                        </property>
-                    </column>
-                    <property name="name">
-                        <cstring>lvCookies</cstring>
-                    </property>
-                    <property name="selectionMode" stdset="0">
-                        <enum>Single</enum>
-                    </property>
-                    <property name="allColumnsShowFocus">
-                        <bool>true</bool>
-                    </property>
-                    <property name="showSortIndicator">
-                        <bool>true</bool>
-                    </property>
-                    <property name="rootIsDecorated">
-                        <bool>true</bool>
-                    </property>
-                    <property name="treeStepSize">
-                        <number>15</number>
-                    </property>
-                </widget>
-                <widget class="QLayoutWidget" row="0" column="1" rowspan="2" colspan="1">
-                    <property name="name">
-                        <cstring>layout4</cstring>
-                    </property>
-                    <vbox>
-                        <property name="name">
-                            <cstring>unnamed</cstring>
-                        </property>
-                        <widget class="QPushButton">
-                            <property name="name">
-                                <cstring>pbDelete</cstring>
-                            </property>
-                            <property name="text">
-                                <string>D&amp;elete</string>
-                            </property>
-                        </widget>
-                        <widget class="QPushButton">
-                            <property name="name">
-                                <cstring>pbDeleteAll</cstring>
-                            </property>
-                            <property name="text">
-                                <string>Delete A&amp;ll</string>
-                            </property>
-                        </widget>
-                        <widget class="QPushButton">
-                            <property name="name">
-                                <cstring>pbPolicy</cstring>
-                            </property>
-                            <property name="text">
-                                <string>Change &amp;Policy...</string>
-                            </property>
-                        </widget>
-                        <widget class="QPushButton">
-                            <property name="name">
-                                <cstring>pbReload</cstring>
-                            </property>
-                            <property name="text">
-                                <string>&amp;Reload List</string>
-                            </property>
-                        </widget>
-                        <spacer>
-                            <property name="name">
-                                <cstring>spacer3</cstring>
-                            </property>
-                            <property name="orientation">
-                                <enum>Vertical</enum>
-                            </property>
-                            <property name="sizeType">
-                                <enum>MinimumExpanding</enum>
-                            </property>
-                            <property name="sizeHint">
-                                <size>
-                                    <width>21</width>
-                                    <height>62</height>
-                                </size>
-                            </property>
-                        </spacer>
-                    </vbox>
-                </widget>
-                <widget class="QLayoutWidget" row="0" column="0">
-                    <property name="name">
-                        <cstring>layout3</cstring>
-                    </property>
-                    <hbox>
-                        <property name="name">
-                            <cstring>unnamed</cstring>
-                        </property>
-                        <widget class="QToolButton">
-                            <property name="name">
-                                <cstring>tbClearSearchLine</cstring>
-                            </property>
-                            <property name="text">
-                                <string>...</string>
-                            </property>
-                            <property name="textLabel">
-                                <string>Clear Search</string>
-                            </property>
-                        </widget>
-                        <widget class="QLabel">
-                            <property name="name">
-                                <cstring>textLabel1</cstring>
-                            </property>
-                            <property name="text">
-                                <string>&amp;Search:</string>
-                            </property>
-                            <property name="buddy" stdset="0">
-                                <cstring>kListViewSearchLine</cstring>
-                            </property>
-                        </widget>
-                        <widget class="K3ListViewSearchLine">
-                            <property name="name">
-                                <cstring>kListViewSearchLine</cstring>
-                            </property>
-                            <property name="toolTip" stdset="0">
-                                <string>Search interactively for domains and hosts</string>
-                            </property>
-                            <property name="whatsThis" stdset="0">
-                                <string></string>
-                            </property>
-                        </widget>
-                    </hbox>
-                </widget>
-            </grid>
-        </widget>
-        <widget class="QGroupBox" row="1" column="0">
-            <property name="name">
-                <cstring>gbDetails</cstring>
-            </property>
-            <property name="title">
-                <string>Details</string>
-            </property>
-            <grid>
-                <property name="name">
-                    <cstring>unnamed</cstring>
+                <property name="clickable" >
+                  <bool>true</bool>
                 </property>
-                <widget class="KLineEdit" row="2" column="1">
-                    <property name="name">
-                        <cstring>leDomain</cstring>
-                    </property>
-                    <property name="readOnly">
-                        <bool>true</bool>
-                    </property>
+                <property name="resizable" >
+                  <bool>true</bool>
+                </property>
+              </column>
+              <column>
+                <property name="text" >
+                  <string>Host [Set By]</string>
+                </property>
+                <property name="clickable" >
+                  <bool>true</bool>
+                </property>
+                <property name="resizable" >
+                  <bool>true</bool>
+                </property>
+              </column>
+            </widget>
+          </item>
+          <item rowspan="2" row="0" column="1" colspan="1" >
+            <layout class="QVBoxLayout" >
+              <property name="margin" >
+                <number>0</number>
+              </property>
+              <item>
+                <widget class="QPushButton" name="pbDelete" >
+                  <property name="text" >
+                    <string>D&amp;elete</string>
+                  </property>
                 </widget>
-                <widget class="KLineEdit" row="3" column="1">
-                    <property name="name">
-                        <cstring>lePath</cstring>
-                    </property>
-                    <property name="readOnly">
-                        <bool>true</bool>
-                    </property>
+              </item>
+              <item>
+                <widget class="QPushButton" name="pbDeleteAll" >
+                  <property name="text" >
+                    <string>Delete A&amp;ll</string>
+                  </property>
                 </widget>
-                <widget class="KLineEdit" row="5" column="1">
-                    <property name="name">
-                        <cstring>leSecure</cstring>
-                    </property>
-                    <property name="readOnly">
-                        <bool>true</bool>
-                    </property>
+              </item>
+              <item>
+                <widget class="QPushButton" name="pbPolicy" >
+                  <property name="text" >
+                    <string>Change &amp;Policy...</string>
+                  </property>
                 </widget>
-                <widget class="QLabel" row="0" column="0">
-                    <property name="name">
-                        <cstring>lbName</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Name:</string>
-                    </property>
-                    <property name="buddy" stdset="0">
-                        <cstring>leName</cstring>
-                    </property>
+              </item>
+              <item>
+                <widget class="QPushButton" name="pbReload" >
+                  <property name="text" >
+                    <string>&amp;Reload List</string>
+                  </property>
                 </widget>
-                <widget class="QLabel" row="1" column="0">
-                    <property name="name">
-                        <cstring>lbValue</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Value:</string>
-                    </property>
-                    <property name="buddy" stdset="0">
-                        <cstring>leValue</cstring>
-                    </property>
+              </item>
+              <item>
+                <spacer name="spacer3" >
+                  <property name="sizeHint" >
+                    <size>
+                      <width>21</width>
+                      <height>62</height>
+                    </size>
+                  </property>
+                  <property name="sizeType" >
+                    <enum>MinimumExpanding</enum>
+                  </property>
+                  <property name="orientation" >
+                    <enum>Vertical</enum>
+                  </property>
+                </spacer>
+              </item>
+            </layout>
+          </item>
+          <item row="0" column="0" >
+            <layout class="QHBoxLayout" >
+              <property name="margin" >
+                <number>0</number>
+              </property>
+              <item>
+                <widget class="QToolButton" name="tbClearSearchLine" >
+                  <property name="text" >
+                    <string>...</string>
+                  </property>
+                  <property name="text" >
+                    <string>Clear Search</string>
+                  </property>
                 </widget>
-                <widget class="QLabel" row="2" column="0">
-                    <property name="name">
-                        <cstring>lbDomain</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Domain:</string>
-                    </property>
-                    <property name="buddy" stdset="0">
-                        <cstring>leDomain</cstring>
-                    </property>
+              </item>
+              <item>
+                <widget class="QLabel" name="textLabel1" >
+                  <property name="text" >
+                    <string>&amp;Search:</string>
+                  </property>
+                  <property name="buddy" stdset="0" >
+                    <cstring>kListViewSearchLine</cstring>
+                  </property>
+                  <property name="wordWrap" >
+                    <bool>false</bool>
+                  </property>
                 </widget>
-                <widget class="QLabel" row="3" column="0">
-                    <property name="name">
-                        <cstring>lbPath</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Path:</string>
-                    </property>
-                    <property name="buddy" stdset="0">
-                        <cstring>lePath</cstring>
-                    </property>
+              </item>
+              <item>
+                <widget class="K3ListViewSearchLine" name="kListViewSearchLine" >
+                  <property name="toolTip" stdset="0" >
+                    <string>Search interactively for domains and hosts</string>
+                  </property>
+                  <property name="whatsThis" stdset="0" >
+                    <string/>
+                  </property>
                 </widget>
-                <widget class="QLabel" row="4" column="0">
-                    <property name="name">
-                        <cstring>lbExpires</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Expires:</string>
-                    </property>
-                    <property name="buddy" stdset="0">
-                        <cstring>leExpires</cstring>
-                    </property>
-                </widget>
-                <widget class="QLabel" row="5" column="0">
-                    <property name="name">
-                        <cstring>lbSecure</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Secure:</string>
-                    </property>
-                    <property name="buddy" stdset="0">
-                        <cstring>leSecure</cstring>
-                    </property>
-                </widget>
-                <widget class="KLineEdit" row="1" column="1">
-                    <property name="name">
-                        <cstring>leValue</cstring>
-                    </property>
-                    <property name="readOnly">
-                        <bool>true</bool>
-                    </property>
-                </widget>
-                <widget class="KLineEdit" row="4" column="1">
-                    <property name="name">
-                        <cstring>leExpires</cstring>
-                    </property>
-                    <property name="readOnly">
-                        <bool>true</bool>
-                    </property>
-                </widget>
-                <widget class="KLineEdit" row="0" column="1">
-                    <property name="name">
-                        <cstring>leName</cstring>
-                    </property>
-                    <property name="readOnly">
-                        <bool>true</bool>
-                    </property>
-                </widget>
-            </grid>
+              </item>
+            </layout>
+          </item>
+        </layout>
+      </item>
+      <item row="1" column="0" >
+        <widget class="Q3GroupBox" name="gbDetails" >
+          <property name="title" >
+            <string>Details</string>
+          </property>
+          <layout class="QGridLayout" >
+            <property name="margin" >
+              <number>0</number>
+            </property>
+            <item row="2" column="1" >
+              <widget class="KLineEdit" name="leDomain" >
+                <property name="readOnly" >
+                  <bool>true</bool>
+                </property>
+              </widget>
+            </item>
+            <item row="3" column="1" >
+              <widget class="KLineEdit" name="lePath" >
+                <property name="readOnly" >
+                  <bool>true</bool>
+                </property>
+              </widget>
+            </item>
+            <item row="5" column="1" >
+              <widget class="KLineEdit" name="leSecure" >
+                <property name="readOnly" >
+                  <bool>true</bool>
+                </property>
+              </widget>
+            </item>
+            <item row="0" column="0" >
+              <widget class="QLabel" name="lbName" >
+                <property name="text" >
+                  <string>Name:</string>
+                </property>
+                <property name="buddy" stdset="0" >
+                  <cstring>leName</cstring>
+                </property>
+                <property name="wordWrap" >
+                  <bool>false</bool>
+                </property>
+              </widget>
+            </item>
+            <item row="1" column="0" >
+              <widget class="QLabel" name="lbValue" >
+                <property name="text" >
+                  <string>Value:</string>
+                </property>
+                <property name="buddy" stdset="0" >
+                  <cstring>leValue</cstring>
+                </property>
+                <property name="wordWrap" >
+                  <bool>false</bool>
+                </property>
+              </widget>
+            </item>
+            <item row="2" column="0" >
+              <widget class="QLabel" name="lbDomain" >
+                <property name="text" >
+                  <string>Domain:</string>
+                </property>
+                <property name="buddy" stdset="0" >
+                  <cstring>leDomain</cstring>
+                </property>
+                <property name="wordWrap" >
+                  <bool>false</bool>
+                </property>
+              </widget>
+            </item>
+            <item row="3" column="0" >
+              <widget class="QLabel" name="lbPath" >
+                <property name="text" >
+                  <string>Path:</string>
+                </property>
+                <property name="buddy" stdset="0" >
+                  <cstring>lePath</cstring>
+                </property>
+                <property name="wordWrap" >
+                  <bool>false</bool>
+                </property>
+              </widget>
+            </item>
+            <item row="4" column="0" >
+              <widget class="QLabel" name="lbExpires" >
+                <property name="text" >
+                  <string>Expires:</string>
+                </property>
+                <property name="buddy" stdset="0" >
+                  <cstring>leExpires</cstring>
+                </property>
+                <property name="wordWrap" >
+                  <bool>false</bool>
+                </property>
+              </widget>
+            </item>
+            <item row="5" column="0" >
+              <widget class="QLabel" name="lbSecure" >
+                <property name="text" >
+                  <string>Secure:</string>
+                </property>
+                <property name="buddy" stdset="0" >
+                  <cstring>leSecure</cstring>
+                </property>
+                <property name="wordWrap" >
+                  <bool>false</bool>
+                </property>
+              </widget>
+            </item>
+            <item row="1" column="1" >
+              <widget class="KLineEdit" name="leValue" >
+                <property name="readOnly" >
+                  <bool>true</bool>
+                </property>
+              </widget>
+            </item>
+            <item row="4" column="1" >
+              <widget class="KLineEdit" name="leExpires" >
+                <property name="readOnly" >
+                  <bool>true</bool>
+                </property>
+              </widget>
+            </item>
+            <item row="0" column="1" >
+              <widget class="KLineEdit" name="leName" >
+                <property name="readOnly" >
+                  <bool>true</bool>
+                </property>
+              </widget>
+            </item>
+          </layout>
         </widget>
-    </grid>
-</widget>
-<customwidgets>
-</customwidgets>
-<connections>
+      </item>
+    </layout>
+  </widget>
+  <layoutdefault spacing="6" margin="11" />
+  <layoutfunction spacing="KDialog::spacingHint" margin="KDialog::marginHint" />
+  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+  <customwidgets>
+    <customwidget>
+      <class>K3ListView</class>
+      <extends>Q3ListView</extends>
+      <header>k3listview.h</header>
+    </customwidget>
+  </customwidgets>
+  <includes>
+    <include location="local" >k3listviewsearchline.h</include>
+  </includes>
+  <connections>
     <connection>
-        <sender>tbClearSearchLine</sender>
-        <signal>clicked()</signal>
-        <receiver>kListViewSearchLine</receiver>
-        <slot>clear()</slot>
+      <sender>tbClearSearchLine</sender>
+      <signal>clicked()</signal>
+      <receiver>kListViewSearchLine</receiver>
+      <slot>clear()</slot>
     </connection>
-</connections>
-<includes>
-    <include location="global" impldecl="in implementation">kdialog.h</include>
-</includes>
-<layoutdefaults spacing="6" margin="11"/>
-<layoutfunctions spacing="KDialog::spacingHint" margin="KDialog::marginHint"/>
-<includehints>
-    <includehint>k3listviewsearchline.h</includehint>
-</includehints>
-</UI>
+  </connections>
+</ui>

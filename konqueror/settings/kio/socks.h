@@ -28,10 +28,19 @@
 
 #include <kcmodule.h>
 
-#include "socksbase.h"
+#include "ui_socksbase.h"
 
 
 class QVButtonGroup;
+
+class SocksBase : public QWidget, public Ui::SocksBase
+{
+public:
+  SocksBase( QWidget *parent ) : QWidget( parent ) {
+    setupUi( this );
+  }
+};
+
 
 class KSocksConfig : public KCModule
 {

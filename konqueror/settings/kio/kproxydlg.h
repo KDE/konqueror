@@ -25,11 +25,20 @@
 #include <QString>
 
 #include <kcmodule.h>
+#include "ui_kproxydlg_ui.h"
 
 class QTabWidget;
 
 class KProxyData;
-class KProxyDialogUI;
+
+class KProxyDialogUI : public QWidget, public Ui::KProxyDialogUI
+{
+public:
+  KProxyDialogUI( QWidget *parent ) : QWidget( parent ) {
+    setupUi( this );
+  }
+};
+
 
 class KProxyOptions : public KCModule
 {
