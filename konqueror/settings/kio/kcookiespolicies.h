@@ -30,11 +30,18 @@
 #include <kcmodule.h>
 
 #include "policydlg.h"
-
+#include "ui_kcookiespoliciesdlg_ui.h"
 class Q3ListViewItem;
 
-class DCOPClient;
-class KCookiesPolicyDlgUI;
+
+class KCookiesPolicyDlgUI : public QWidget, public Ui::KCookiesPolicyDlgUI
+{
+public:
+  KCookiesPolicyDlgUI( QWidget *parent ) : QWidget( parent ) {
+    setupUi( this );
+  }
+};
+
 
 class KCookiesPolicies : public KCModule
 {

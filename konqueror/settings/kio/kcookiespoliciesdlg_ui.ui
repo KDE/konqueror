@@ -1,323 +1,301 @@
-<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
-<class>KCookiesPolicyDlgUI</class>
-<widget class="QWidget">
-    <property name="name">
-        <cstring>KCookiesPolicyDlgUI</cstring>
+<ui version="4.0" stdsetdef="1" >
+  <author></author>
+  <comment></comment>
+  <exportmacro></exportmacro>
+  <class>KCookiesPolicyDlgUI</class>
+  <widget class="QWidget" name="KCookiesPolicyDlgUI" >
+    <property name="geometry" >
+      <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>444</width>
+        <height>552</height>
+      </rect>
     </property>
-    <property name="geometry">
-        <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>444</width>
-            <height>552</height>
-        </rect>
-    </property>
-    <grid>
-        <property name="name">
-            <cstring>unnamed</cstring>
-        </property>
-        <widget class="QCheckBox" row="0" column="0">
-            <property name="name">
-                <cstring>cbEnableCookies</cstring>
-            </property>
-            <property name="text">
-                <string>Enable coo&amp;kies</string>
-            </property>
-            <property name="whatsThis" stdset="0">
-                <string>&lt;qt&gt;
-Enable cookie support. Normally you will want to have cookie support enabled and customize it to suit your privacy needs.&lt;p&gt;
+    <layout class="QGridLayout" >
+      <item row="0" column="0" >
+        <widget class="QCheckBox" name="cbEnableCookies" >
+          <property name="text" >
+            <string>Enable coo&amp;kies</string>
+          </property>
+          <property name="whatsThis" stdset="0" >
+            <string>&lt;qt>
+Enable cookie support. Normally you will want to have cookie support enabled and customize it to suit your privacy needs.&lt;p>
 Please note that disabling cookie support might make many web sites unbrowsable.
-&lt;/qt&gt;</string>
-            </property>
+&lt;/qt></string>
+          </property>
         </widget>
-        <widget class="QGroupBox" row="1" column="0">
-            <property name="name">
-                <cstring>bgPreferences</cstring>
+      </item>
+      <item row="1" column="0" >
+        <widget class="Q3GroupBox" name="bgPreferences" >
+          <property name="title" >
+            <string/>
+          </property>
+          <layout class="QVBoxLayout" >
+            <property name="margin" >
+              <number>0</number>
             </property>
-            <property name="title">
-                <string></string>
-            </property>
-            <vbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
+            <item>
+              <widget class="QCheckBox" name="cbRejectCrossDomainCookies" >
+                <property name="text" >
+                  <string>Only acce&amp;pt cookies from originating server</string>
                 </property>
-                <widget class="QCheckBox">
-                    <property name="name">
-                        <cstring>cbRejectCrossDomainCookies</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Only acce&amp;pt cookies from originating server</string>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>&lt;qt&gt;
-Reject the so called third-party cookies. These are cookies that originate from a site other than the one you are currently browsing. For example, if you visit &lt;b&gt;www.foobar.com&lt;/b&gt; while this option is on, only cookies that originate from www.foobar.com will be processed per your settings. Cookies from any other site will be rejected. This reduces the chances of site operators compiling a profile about your daily browsing habits.
-&lt;/qt&gt;</string>
-                    </property>
-                </widget>
-                <widget class="QCheckBox">
-                    <property name="name">
-                        <cstring>cbAutoAcceptSessionCookies</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Automaticall&amp;y accept session cookies</string>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>&lt;qt&gt;
-Automatically accept temporary cookies meant to expire at the end of the current session. Such cookies will not be stored in your computer's hard drive or storage device. Instead, they are deleted when you close all applications (e.g. your browser) that use them.&lt;p&gt;
-&lt;u&gt;NOTE:&lt;/u&gt; Checking this option along with the next one will override your default as well as site specific cookie policies. However, doing so also increases your privacy since all cookies will be removed when the current session ends.
-&lt;/qt&gt;</string>
-                    </property>
-                </widget>
-                <widget class="QCheckBox">
-                    <property name="name">
-                        <cstring>cbIgnoreCookieExpirationDate</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Treat &amp;all cookies as session cookies</string>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>&lt;qt&gt;
-Treat all cookies as session cookies. Session cookies are small pieces of data that are temporarily stored in your computer's memory until you quit or close all applications (e.g. your browser) that use them. Unlike regular cookies, session cookies are never stored on your hard drive or other storage medium.&lt;p&gt;
-&lt;u&gt;NOTE:&lt;/u&gt; Checking this option along with the previous one will override your default as well as site specific cookie policies. However, doing so also increases your privacy since all cookies will be removed when the current session ends.
-&lt;/qt&gt;</string>
-                    </property>
-                </widget>
-            </vbox>
+                <property name="whatsThis" stdset="0" >
+                  <string>&lt;qt>
+Reject the so called third-party cookies. These are cookies that originate from a site other than the one you are currently browsing. For example, if you visit &lt;b>www.foobar.com&lt;/b> while this option is on, only cookies that originate from www.foobar.com will be processed per your settings. Cookies from any other site will be rejected. This reduces the chances of site operators compiling a profile about your daily browsing habits.
+&lt;/qt></string>
+                </property>
+              </widget>
+            </item>
+            <item>
+              <widget class="QCheckBox" name="cbAutoAcceptSessionCookies" >
+                <property name="text" >
+                  <string>Automaticall&amp;y accept session cookies</string>
+                </property>
+                <property name="whatsThis" stdset="0" >
+                  <string>&lt;qt>
+Automatically accept temporary cookies meant to expire at the end of the current session. Such cookies will not be stored in your computer's hard drive or storage device. Instead, they are deleted when you close all applications (e.g. your browser) that use them.&lt;p>
+&lt;u>NOTE:&lt;/u> Checking this option along with the next one will override your default as well as site specific cookie policies. However, doing so also increases your privacy since all cookies will be removed when the current session ends.
+&lt;/qt></string>
+                </property>
+              </widget>
+            </item>
+            <item>
+              <widget class="QCheckBox" name="cbIgnoreCookieExpirationDate" >
+                <property name="text" >
+                  <string>Treat &amp;all cookies as session cookies</string>
+                </property>
+                <property name="whatsThis" stdset="0" >
+                  <string>&lt;qt>
+Treat all cookies as session cookies. Session cookies are small pieces of data that are temporarily stored in your computer's memory until you quit or close all applications (e.g. your browser) that use them. Unlike regular cookies, session cookies are never stored on your hard drive or other storage medium.&lt;p>
+&lt;u>NOTE:&lt;/u> Checking this option along with the previous one will override your default as well as site specific cookie policies. However, doing so also increases your privacy since all cookies will be removed when the current session ends.
+&lt;/qt></string>
+                </property>
+              </widget>
+            </item>
+          </layout>
         </widget>
-        <widget class="QButtonGroup" row="2" column="0">
-            <property name="name">
-                <cstring>bgDefault</cstring>
-            </property>
-            <property name="title">
-                <string>Default Policy</string>
-            </property>
-            <property name="exclusive">
-                <bool>true</bool>
-            </property>
-            <property name="whatsThis" stdset="0">
-                <string>&lt;qt&gt;
+      </item>
+      <item row="2" column="0" >
+        <widget class="Q3ButtonGroup" name="bgDefault" >
+          <property name="title" >
+            <string>Default Policy</string>
+          </property>
+          <property name="exclusive" >
+            <bool>true</bool>
+          </property>
+          <property name="whatsThis" stdset="0" >
+            <string>&lt;qt>
 Determines how cookies received from a remote machine will be handled: 
-&lt;ul&gt;
-&lt;li&gt;&lt;b&gt;Ask&lt;/b&gt; will cause KDE to ask for your confirmation whenever a server wants to set a cookie.&lt;/li&gt;
-&lt;li&gt;&lt;b&gt;Accept&lt;/b&gt; will cause cookies to be accepted without prompting you.&lt;/li&gt;
-&lt;li&gt;&lt;b&gt;Reject&lt;/b&gt; will cause the cookiejar to refuse all cookies it receives.&lt;/li&gt;
-&lt;/ul&gt;&lt;p&gt;
-&lt;u&gt;NOTE:&lt;/u&gt; Domain specific policies, which can be set below, always take precedence over the default policy.
-&lt;/qt&gt;</string>
+&lt;ul>
+&lt;li>&lt;b>Ask&lt;/b> will cause KDE to ask for your confirmation whenever a server wants to set a cookie.&lt;/li>
+&lt;li>&lt;b>Accept&lt;/b> will cause cookies to be accepted without prompting you.&lt;/li>
+&lt;li>&lt;b>Reject&lt;/b> will cause the cookiejar to refuse all cookies it receives.&lt;/li>
+&lt;/ul>&lt;p>
+&lt;u>NOTE:&lt;/u> Domain specific policies, which can be set below, always take precedence over the default policy.
+&lt;/qt></string>
+          </property>
+          <layout class="QVBoxLayout" >
+            <property name="margin" >
+              <number>0</number>
             </property>
-            <vbox>
-                <property name="name">
-                    <cstring>unnamed</cstring>
+            <item>
+              <widget class="QRadioButton" name="rbPolicyAsk" >
+                <property name="text" >
+                  <string>Ask &amp;for confirmation</string>
                 </property>
-                <widget class="QRadioButton">
-                    <property name="name">
-                        <cstring>rbPolicyAsk</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Ask &amp;for confirmation</string>
-                    </property>
-                </widget>
-                <widget class="QRadioButton">
-                    <property name="name">
-                        <cstring>rbPolicyAccept</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Accep&amp;t all cookies</string>
-                    </property>
-                </widget>
-                <widget class="QRadioButton">
-                    <property name="name">
-                        <cstring>rbPolicyReject</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Re&amp;ject all cookies</string>
-                    </property>
-                </widget>
-            </vbox>
+              </widget>
+            </item>
+            <item>
+              <widget class="QRadioButton" name="rbPolicyAccept" >
+                <property name="text" >
+                  <string>Accep&amp;t all cookies</string>
+                </property>
+              </widget>
+            </item>
+            <item>
+              <widget class="QRadioButton" name="rbPolicyReject" >
+                <property name="text" >
+                  <string>Re&amp;ject all cookies</string>
+                </property>
+              </widget>
+            </item>
+          </layout>
         </widget>
-        <widget class="QGroupBox" row="3" column="0">
-            <property name="name">
-                <cstring>gbDomainSpecific</cstring>
+      </item>
+      <item row="3" column="0" >
+        <widget class="Q3GroupBox" name="gbDomainSpecific" >
+          <property name="title" >
+            <string>Site Policy</string>
+          </property>
+          <property name="whatsThis" stdset="0" >
+            <string>&lt;qt>
+To add a new policy, simply click on the &lt;b>Add...&lt;/b> button and supply the necessary information. To change an existing policy, use the &lt;b>Change...&lt;/b> button and choose the new policy from the policy dialog box. Clicking on the &lt;b>Delete&lt;/b> button will remove the currently selected policy causing the default policy setting to be used for that domain, whereas &lt;b>Delete All&lt;/b> will remove all the site specific policies.
+&lt;/qt></string>
+          </property>
+          <layout class="QGridLayout" >
+            <property name="margin" >
+              <number>0</number>
             </property>
-            <property name="title">
-                <string>Site Policy</string>
-            </property>
-            <property name="whatsThis" stdset="0">
-                <string>&lt;qt&gt;
-To add a new policy, simply click on the &lt;b&gt;Add...&lt;/b&gt; button and supply the necessary information. To change an existing policy, use the &lt;b&gt;Change...&lt;/b&gt; button and choose the new policy from the policy dialog box. Clicking on the &lt;b&gt;Delete&lt;/b&gt; button will remove the currently selected policy causing the default policy setting to be used for that domain, whereas &lt;b&gt;Delete All&lt;/b&gt; will remove all the site specific policies.
-&lt;/qt&gt;</string>
-            </property>
-            <grid>
-                <property name="name">
-                    <cstring>unnamed</cstring>
+            <item row="2" column="1" >
+              <spacer name="spacer1" >
+                <property name="sizeHint" >
+                  <size>
+                    <width>20</width>
+                    <height>16</height>
+                  </size>
                 </property>
-                <spacer row="2" column="1">
-                    <property name="name">
-                        <cstring>spacer1</cstring>
+                <property name="sizeType" >
+                  <enum>MinimumExpanding</enum>
+                </property>
+                <property name="orientation" >
+                  <enum>Vertical</enum>
+                </property>
+              </spacer>
+            </item>
+            <item rowspan="2" row="0" column="1" colspan="1" >
+              <layout class="QVBoxLayout" >
+                <property name="margin" >
+                  <number>0</number>
+                </property>
+                <item>
+                  <widget class="QPushButton" name="pbNew" >
+                    <property name="text" >
+                      <string>&amp;New...</string>
                     </property>
-                    <property name="orientation">
-                        <enum>Vertical</enum>
+                  </widget>
+                </item>
+                <item>
+                  <widget class="QPushButton" name="pbChange" >
+                    <property name="text" >
+                      <string>Chan&amp;ge...</string>
                     </property>
-                    <property name="sizeType">
-                        <enum>MinimumExpanding</enum>
+                  </widget>
+                </item>
+                <item>
+                  <widget class="QPushButton" name="pbDelete" >
+                    <property name="text" >
+                      <string>D&amp;elete</string>
                     </property>
-                    <property name="sizeHint">
-                        <size>
-                            <width>20</width>
-                            <height>16</height>
-                        </size>
+                  </widget>
+                </item>
+                <item>
+                  <widget class="QPushButton" name="pbDeleteAll" >
+                    <property name="text" >
+                      <string>Delete A&amp;ll</string>
                     </property>
-                </spacer>
-                <widget class="QLayoutWidget" row="0" column="1" rowspan="2" colspan="1">
-                    <property name="name">
-                        <cstring>layout3</cstring>
-                    </property>
-                    <vbox>
-                        <property name="name">
-                            <cstring>unnamed</cstring>
-                        </property>
-                        <widget class="QPushButton">
-                            <property name="name">
-                                <cstring>pbNew</cstring>
-                            </property>
-                            <property name="text">
-                                <string>&amp;New...</string>
-                            </property>
-                        </widget>
-                        <widget class="QPushButton">
-                            <property name="name">
-                                <cstring>pbChange</cstring>
-                            </property>
-                            <property name="text">
-                                <string>Chan&amp;ge...</string>
-                            </property>
-                        </widget>
-                        <widget class="QPushButton">
-                            <property name="name">
-                                <cstring>pbDelete</cstring>
-                            </property>
-                            <property name="text">
-                                <string>D&amp;elete</string>
-                            </property>
-                        </widget>
-                        <widget class="QPushButton">
-                            <property name="name">
-                                <cstring>pbDeleteAll</cstring>
-                            </property>
-                            <property name="text">
-                                <string>Delete A&amp;ll</string>
-                            </property>
-                        </widget>
-                    </vbox>
-                </widget>
-                <widget class="K3ListView" row="1" column="0" rowspan="2" colspan="1">
-                    <column>
-                        <property name="text">
-                            <string>Domain</string>
-                        </property>
-                        <property name="clickable">
-                            <bool>true</bool>
-                        </property>
-                        <property name="resizable">
-                            <bool>true</bool>
-                        </property>
-                    </column>
-                    <column>
-                        <property name="text">
-                            <string>Policy</string>
-                        </property>
-                        <property name="clickable">
-                            <bool>true</bool>
-                        </property>
-                        <property name="resizable">
-                            <bool>true</bool>
-                        </property>
-                    </column>
-                    <property name="name">
-                        <cstring>lvDomainPolicy</cstring>
-                    </property>
-                    <property name="selectionMode" stdset="0">
-                        <enum>Extended</enum>
-                    </property>
-                    <property name="showSortIndicator">
-                        <bool>true</bool>
-                    </property>
-                    <property name="rootIsDecorated">
-                        <bool>true</bool>
-                    </property>
-                    <property name="treeStepSize">
-                        <number>0</number>
-                    </property>
-                    <property name="whatsThis" stdset="0">
-                        <string>&lt;qt&gt;
+                  </widget>
+                </item>
+              </layout>
+            </item>
+            <item rowspan="2" row="1" column="0" colspan="1" >
+              <widget class="K3ListView" name="lvDomainPolicy" >
+                <property name="selectionMode" stdset="0" >
+                  <enum>Extended</enum>
+                </property>
+                <property name="showSortIndicator" >
+                  <bool>true</bool>
+                </property>
+                <property name="rootIsDecorated" >
+                  <bool>true</bool>
+                </property>
+                <property name="treeStepSize" >
+                  <number>0</number>
+                </property>
+                <property name="whatsThis" stdset="0" >
+                  <string>&lt;qt>
 List of sites for which you have set a specific cookie policy. Specific policies override the default policy setting for these sites.
-&lt;/qt&gt;</string>
+&lt;/qt></string>
+                </property>
+                <column>
+                  <property name="text" >
+                    <string>Domain</string>
+                  </property>
+                  <property name="clickable" >
+                    <bool>true</bool>
+                  </property>
+                  <property name="resizable" >
+                    <bool>true</bool>
+                  </property>
+                </column>
+                <column>
+                  <property name="text" >
+                    <string>Policy</string>
+                  </property>
+                  <property name="clickable" >
+                    <bool>true</bool>
+                  </property>
+                  <property name="resizable" >
+                    <bool>true</bool>
+                  </property>
+                </column>
+              </widget>
+            </item>
+            <item row="0" column="0" >
+              <layout class="QHBoxLayout" >
+                <property name="margin" >
+                  <number>0</number>
+                </property>
+                <item>
+                  <widget class="QToolButton" name="tbClearSearchLine" >
+                    <property name="text" >
+                      <string>...</string>
                     </property>
-                </widget>
-                <widget class="QLayoutWidget" row="0" column="0">
-                    <property name="name">
-                        <cstring>layout2</cstring>
+                    <property name="text" >
+                      <string>Clear Search</string>
                     </property>
-                    <hbox>
-                        <property name="name">
-                            <cstring>unnamed</cstring>
+                  </widget>
+                </item>
+                <item>
+                  <widget class="QLabel" name="textLabel1" >
+                    <property name="text" >
+                      <string>&amp;Search:</string>
                     </property>
-                        <widget class="QToolButton">
-                            <property name="name">
-                                <cstring>tbClearSearchLine</cstring>
+                    <property name="buddy" stdset="0" >
+                      <cstring>kListViewSearchLine</cstring>
                     </property>
-                            <property name="text">
-                                <string>...</string>
-                            </property>
-                            <property name="textLabel">
-                                <string>Clear Search</string>
-                            </property>
-                        </widget>
-                        <widget class="QLabel">
-                            <property name="name">
-                                <cstring>textLabel1</cstring>
-                            </property>
-                            <property name="text">
-                                <string>&amp;Search:</string>
-                            </property>
-                            <property name="buddy" stdset="0">
-                                <cstring>kListViewSearchLine</cstring>
-                            </property>
-                        </widget>
-                        <widget class="K3ListViewSearchLine">
-                            <property name="name">
-                                <cstring>kListViewSearchLine</cstring>
-                            </property>
-                            <property name="text">
-                                <string></string>
-                            </property>
-                            <property name="toolTip" stdset="0">
-                                <string>Search interactively for domains</string>
-                            </property>
-                        </widget>
-                    </hbox>
-                </widget>
-            </grid>
+                    <property name="wordWrap" >
+                      <bool>false</bool>
+                    </property>
+                  </widget>
+                </item>
+                <item>
+                  <widget class="K3ListViewSearchLine" name="kListViewSearchLine" >
+                    <property name="text" >
+                      <string/>
+                    </property>
+                    <property name="toolTip" stdset="0" >
+                      <string>Search interactively for domains</string>
+                    </property>
+                  </widget>
+                </item>
+              </layout>
+            </item>
+          </layout>
         </widget>
-    </grid>
-</widget>
-<customwidgets>
-</customwidgets>
-<connections>
+      </item>
+    </layout>
+  </widget>
+  <layoutdefault spacing="6" margin="11" />
+  <layoutfunction spacing="KDialog::spacingHint" margin="KDialog::marginHint" />
+  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+  <customwidgets>
+    <customwidget>
+      <class>K3ListView</class>
+      <extends>Q3ListView</extends>
+      <header>k3listview.h</header>
+    </customwidget>
+  </customwidgets>
+  <includes>
+    <include location="local" >k3listview.h</include>
+    <include location="local" >k3listviewsearchline.h</include>
+  </includes>
+  <connections>
     <connection>
-        <sender>tbClearSearchLine</sender>
-        <signal>clicked()</signal>
-        <receiver>kListViewSearchLine</receiver>
-        <slot>clear()</slot>
+      <sender>tbClearSearchLine</sender>
+      <signal>clicked()</signal>
+      <receiver>kListViewSearchLine</receiver>
+      <slot>clear()</slot>
     </connection>
-</connections>
-<includes>
-    <include location="global" impldecl="in implementation">kdialog.h</include>
-</includes>
-<layoutdefaults spacing="6" margin="11"/>
-<layoutfunctions spacing="KDialog::spacingHint" margin="KDialog::marginHint"/>
-<includehints>
-    <includehint>k3listview.h</includehint>
-    <includehint>k3listviewsearchline.h</includehint>
-</includehints>
-</UI>
+  </connections>
+</ui>

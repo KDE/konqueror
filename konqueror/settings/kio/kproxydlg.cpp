@@ -38,7 +38,6 @@
 
 #include "socks.h"
 #include "kproxydlg.h"
-#include "kproxydlg_ui.h"
 #include <kgenericfactory.h>
 
 typedef KGenericFactory<KProxyOptions> KProxyOptionsFactory;

@@ -45,7 +45,6 @@
 #include "kcookiesmain.h"
 #include "kcookiespolicies.h"
 #include "kcookiesmanagement.h"
-#include "kcookiesmanagementdlg_ui.h"
 
 #include <assert.h>
 

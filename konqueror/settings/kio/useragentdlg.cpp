@@ -43,7 +43,6 @@
 #include "uagentproviderdlg.h"
 
 #include "useragentdlg.h"
-#include "useragentdlg_ui.h"
 #include <kgenericfactory.h>
 
 typedef KGenericFactory<UserAgentDlg> UserAgentDlgFactory;
