@@ -21,16 +21,25 @@
 #ifndef desktopbehavior_h
 #define desktopbehavior_h
 
-#include "desktopbehavior.h"
+#include "ui_desktopbehavior.h"
 #include <kconfig.h>
 #include <kcmodule.h>
 class QStringList;
+
+class DesktopBehaviorBase : public QWidget, public Ui::DesktopBehaviorBase
+{
+public:
+  DesktopBehaviorBase( QWidget *parent ) : QWidget( parent ) {
+    setupUi( this );
+  }
+};
+
 
 class DesktopBehavior : public DesktopBehaviorBase
 {
         Q_OBJECT
 public:
-        DesktopBehavior(KSharedConfig::Ptr config, QWidget *parent = 0, const char *name = 0);
+        DesktopBehavior(KSharedConfig::Ptr config, QWidget *parent = 0);
         virtual void load();
         virtual void save();
         virtual void defaults();
