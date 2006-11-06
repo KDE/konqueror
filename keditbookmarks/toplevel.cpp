@@ -196,8 +196,8 @@ KEBApp::KEBApp(
     const QString &address, bool browser, const QString &caption,
     const QString &dbusObjectName
 ) : KMainWindow(), m_dcopIface(0), m_bookmarksFilename(bookmarksFile),
-    m_caption(caption), m_readOnly(readonly), m_browser(browser), 
-    m_dbusObjectName(dbusObjectName)
+    m_caption(caption), 
+    m_dbusObjectName(dbusObjectName), m_readOnly(readonly),m_browser(browser)
  {
 
     Q_UNUSED(address);//FIXME sets the current item
