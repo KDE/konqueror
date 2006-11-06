@@ -7,9 +7,8 @@ set(kcm_css_PART_SRCS template.cpp kcmcss.cpp )
 
 kde4_automoc(${kcm_css_PART_SRCS})
 
-kde4_add_ui3_files(kcm_css_PART_SRCS cssconfig.ui preview.ui )
 
-kde4_add_ui_files(kcm_css_PART_SRCS csscustom.ui)
+kde4_add_ui_files(kcm_css_PART_SRCS csscustom.ui cssconfig.ui preview.ui)
 
 kde4_add_plugin(kcm_css ${kcm_css_PART_SRCS})
 

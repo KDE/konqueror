@@ -17,9 +17,7 @@
 #include <kstandarddirs.h>
 #include <kurlrequester.h>
 
-#include "cssconfig.h"
 #include "template.h"
-#include "preview.h"
 
 #include "kcmcss.h"
 
@@ -398,7 +396,7 @@ void CSSConfig::slotPreview()
   text->setFontFamily(customDialog->fontFamily->currentText());
 
   // Show the preview
-  PreviewDialog *dlg = new PreviewDialog(this, 0, true);
+  PreviewDialog *dlg = new PreviewDialog(this);
   dlg->preview->setPaper(back);
   dlg->preview->viewport()->setFont(QFont(KGlobalSettings::generalFont().family(), bfs));
 

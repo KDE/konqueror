@@ -23,10 +23,29 @@
 
 #include <kcmodule.h>
 #include "ui_csscustom.h"
+#include "ui_cssconfig.h"
+#include "ui_preview.h"
 
-class CSSConfigDialog;
-class CSSCustomDialog;
 class KDialog;
+
+class PreviewDialog : public QDialog, public Ui::PreviewDialog
+{
+public:
+  PreviewDialog( QWidget *parent ) : QDialog( parent ) {
+    setModal(true);
+    setupUi( this );
+  }
+};
+
+
+class CSSConfigDialog : public QWidget, public Ui::CSSConfigDialog
+{
+public:
+  CSSConfigDialog( QWidget *parent ) : QWidget( parent ) {
+    setupUi( this );
+  }
+};
+
 
 class CSSCustomDialog : public QWidget, public Ui::CSSCustomDialog
 {
