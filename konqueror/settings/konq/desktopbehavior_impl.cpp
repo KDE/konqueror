@@ -116,8 +116,8 @@ private:
 static const int choiceCount=7;
 static const char * s_choices[7] = { "", "WindowListMenu", "DesktopMenu", "AppMenu", "BookmarksMenu", "CustomMenu1", "CustomMenu2" };
 
-DesktopBehavior::DesktopBehavior(KSharedConfig::Ptr config, QWidget *parent, const char * )
-    : DesktopBehaviorBase( parent, "kcmkonq" ), g_pConfig(config)
+DesktopBehavior::DesktopBehavior(KSharedConfig::Ptr config, QWidget *parent )
+    : DesktopBehaviorBase( parent ), g_pConfig(config)
 {
   QString strMouseButton1, strMouseButton3, strButtonTxt1, strButtonTxt3;
 
