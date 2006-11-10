@@ -96,7 +96,7 @@ void KQuery::start()
   connect(job, SIGNAL(entries(KIO::Job *, const KIO::UDSEntryList &)),
 	  SLOT(slotListEntries(KIO::Job *, const KIO::UDSEntryList &)));
   connect(job, SIGNAL(result(KJob *)), SLOT(slotResult(KJob *)));
-  connect(job, SIGNAL(canceled(KIO::Job *)), SLOT(slotCanceled(KIO::Job *)));
+  connect(job, SIGNAL(canceled(KJob *)), SLOT(slotCanceled(KJob *)));
 }
 
 void KQuery::slotResult( KJob * _job )
@@ -108,7 +108,7 @@ void KQuery::slotResult( KJob * _job )
   checkEntries();
 }
 
-void KQuery::slotCanceled( KIO::Job * _job )
+void KQuery::slotCanceled( KJob * _job )
 {
   if (job != _job) return;
   job = 0;

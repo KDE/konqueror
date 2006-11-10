@@ -53,7 +53,7 @@ class KQuery : public QObject
   /* List of files found using KIO */
   void slotListEntries(KIO::Job *, const KIO::UDSEntryList &);
   void slotResult(KJob *);
-  void slotCanceled(KIO::Job *);
+  void slotCanceled(KJob *);
   void slotreceivedSdtout(KProcess*,char*,int);
   void slotreceivedSdterr(KProcess*,char*,int);
   void slotendProcessLocate(KProcess*);
