@@ -1,7 +1,7 @@
 /*
- * main.cpp for lisa,reslisa,kio_lan and kio_rlan kcm module
+ * main.cpp for lisa and kio_lan kcm module
  *
- *  Copyright (C) 2000 Alexander Neundorf <neundorf@kde.org>
+ *  Copyright (C) 2000, 2006 Alexander Neundorf <neundorf@kde.org>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -39,7 +39,6 @@ class LanBrowser:public KCModule
       QTabWidget tabs;
       KCModule *smbPage;
       KCModule *lisaPage;
-//      KCModule *resLisaPage;
       KCModule *kioLanPage;
 };
 #endif
