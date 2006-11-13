@@ -129,7 +129,9 @@ void Konqueror::save()
     cfg.writeEntry( "PreloadOnStartup", cb_preload_on_startup->isChecked() && count >= 1 );
     cfg.writeEntry( "AlwaysHavePreloaded", cb_always_have_preloaded->isChecked() && count >= 2 );
     cfg.sync();
+#ifdef __GNUC__
 #warning "kde4: port it konqueror*"
+#endif    
 #if 0
     DCOPRef ref1( "konqueror*", "KonquerorIface" );
     ref1.send( "reparseConfiguration()" );

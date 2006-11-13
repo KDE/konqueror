@@ -129,7 +129,9 @@ void ListViewBrowserExtension::updateActions()
     KFileItem* item = *kit;
     canCopy++;
     KUrl url = item->url();
+#ifdef __GNUC__
 #warning hardcoded protocol: find a better way to determine if a url is a trash url.
+#endif    
     if ( url.protocol() == "trash" )
       bInTrash = true;
     if (  KProtocolManager::supportsDeleting(  url ) )

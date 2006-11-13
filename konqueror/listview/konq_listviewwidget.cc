@@ -534,7 +534,9 @@ void KonqBaseListViewWidget::drawRubber()
 
    QPainter p;
    p.begin( viewport() );
+#ifdef __GNUC__   
    #warning FIXME NotROP is not available in qt4
+#endif   
 	//Using black with .5 alpha for now
 	//p.setRasterOp( NotROP );
    QColor c( 0, 0, 0, 127 );
@@ -543,7 +545,9 @@ void KonqBaseListViewWidget::drawRubber()
 
    QPoint pt( m_rubber->x(), m_rubber->y() );
    pt = contentsToViewport( pt );
+#ifdef __GNUC__   
 #warning PE_FocusRect is gone, using PE_FrameFocusRect
+#endif   
    QStyleOptionFocusRect fr;
    fr.backgroundColor = c;
    fr.rect = QRect( pt.x(), pt.y(), m_rubber->width(), m_rubber->height() );
@@ -907,7 +911,9 @@ void KonqBaseListViewWidget::slotReturnPressed( Q3ListViewItem *_item )
 
    KUrl url = fileItem->url();
    url.cleanPath();
+#ifdef __GNUC__
 #warning hardcoded protocol: find a better way to determine if a url is a trash url.
+#endif   
    bool isIntoTrash = url.protocol() == "trash";
    if ( !isIntoTrash || (isIntoTrash && fileItem->isDir()) )
       m_pBrowserView->lmbClicked( fileItem );

@@ -261,7 +261,9 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, bool 
 	m_buttonBar->showActiveTabTexts(true);
 
 	// Ported to QMenu already, just needs to have KMultiTabBar fixed
+#ifdef __GNUC__
 #warning switch to QMenu when KMultiTabBar ported
+#endif	
 	m_menu = new Q3PopupMenu(this);
 	m_menu->setIcon(SmallIconSet("configure"));
 	m_menu->setTitle(i18n("Configure Navigation Panel"));
