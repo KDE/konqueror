@@ -113,7 +113,9 @@ int main(int argc, char** argv)
    parseCommandLine(argc, argv);
 
    kDebug(1430) << "3 - create QXtEventLoop" << endl;
+#ifdef __GNUC__
 #warning QXtEventLoop is missing
+#endif   
    // QXtEventLoop integrator( "nspluginviewer" );
    parseCommandLine(argc, argv);
    KLocale::setMainCatalog("nsplugin");

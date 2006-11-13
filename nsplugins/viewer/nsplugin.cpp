@@ -1600,7 +1600,9 @@ bool NSPluginStreamBase::create( const QString& url, const QString& mimeType, vo
 int NSPluginStreamBase::process( const QByteArray &data, int start )
 {
    int32 max, sent, to_sent, len;
+#ifdef __GNUC__
 #warning added a const_cast
+#endif   
    char *d = const_cast<char*>(data.data()) + start;
 
    to_sent = data.size() - start;
