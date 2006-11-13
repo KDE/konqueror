@@ -234,7 +234,9 @@ void KSaveIOConfig::updateRunningIOSlaves (QWidget *parent)
 {
   // Inform all running io-slaves about the changes...
   // if we cannot update, ioslaves inform the end user...
+#ifdef __GNUC__
 #warning "kde4: port it to new dbus call"
+#endif	
 #if 0
   if (!DCOPRef("*", "KIO::Scheduler").send("reparseSlaveConfiguration", QString()))
   {

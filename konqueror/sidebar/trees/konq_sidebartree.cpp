@@ -1064,8 +1064,9 @@ void KonqSidebarTree::slotCopyLocation()
 
 ///////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////
-
+#ifdef __GNUC__
 #warning KonqSidebarTreeToolTip removed, must implemented in event() function
+#endif
 /*
 void KonqSidebarTreeToolTip::maybeTip( const QPoint &point )
 {

@@ -367,7 +367,9 @@ void KAppearanceOptions::save()
         encodingName = "";
     m_pConfig->writeEntry( "DefaultEncoding", encodingName );
     m_pConfig->sync();
+#ifdef __GNUC__
 #warning "kde4: port to dbus call konqueror*"
+#endif
 #if 0
   kapp->dcopClient()->send( "konqueror*", "KonquerorIface", "reparseConfiguration()", data );
 #endif

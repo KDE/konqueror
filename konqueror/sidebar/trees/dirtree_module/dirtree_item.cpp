@@ -157,8 +157,9 @@ bool KonqSidebarDirTreeItem::populateMimeData( QMimeData* mimeData, bool move )
 void KonqSidebarDirTreeItem::itemSelected()
 {
     bool bInTrash = false;
-
+#ifdef __GNUC__
 #warning hardcoded protocol check: replace with better way to determine if a URL is a trash url
+#endif    
     if ( m_fileItem->url().protocol() == "trash" )
         bInTrash = true;
 

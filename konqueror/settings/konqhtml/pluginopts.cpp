@@ -264,7 +264,9 @@ void KPluginOptions::save()
 
     m_pConfig->sync();	// I need a sync here, otherwise "apply" won't work
     			// instantly
+#ifdef __GNUC__
 #warning "kde4: port to dbus call konqueror*"
+#endif    
 #if 0
   kapp->dcopClient()->send( "konqueror*", "KonquerorIface", "reparseConfiguration()", data );
 #endif
@@ -326,7 +328,9 @@ void KPluginOptions::scan()
 
     KProcIO* nspluginscan = new KProcIO;
     QString scanExe = KGlobal::dirs()->findExe("nspluginscan");
+#ifdef __GNUC__
 #warning !QString? i guess that meant isEmpty?
+#endif    
     if (scanExe.isEmpty()) {
         kDebug() << "can't find nspluginviewer" << endl;
         delete nspluginscan;

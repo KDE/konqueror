@@ -373,7 +373,9 @@ void KMiscHTMLOptions::save()
     config->writeEntry("AdvancedAddBookmarkDialog", m_pAdvancedAddBookmarkCheckBox->isChecked());
     config->writeEntry("FilteredToolbar", m_pOnlyMarkedBookmarksCheckBox->isChecked());
     config->sync();
+#ifdef __GNUC__
 #warning "kde4: port to dbus call konqueror*"
+#endif    
 #if 0
   kapp->dcopClient()->send( "konqueror*", "KonquerorIface", "reparseConfiguration()", data );
 #endif
