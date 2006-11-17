@@ -140,7 +140,7 @@ private:
 /******************************************************************************/
  protected:
   void dirInit();
-  void dirLoad( KSharedConfig::Ptr config );
+  void dirLoad( KSharedConfig::Ptr config, bool useDefault= false );
   void dirSave( KSharedConfig::Ptr config );
 
  protected Q_SLOTS:
