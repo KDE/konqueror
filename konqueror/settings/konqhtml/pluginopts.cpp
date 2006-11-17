@@ -250,7 +250,7 @@ void KPluginOptions::defaults()
     m_widget->dirEdit->setEnabled( false );
     m_widget->dirRemove->setEnabled( false );
 
-    dirLoad( config );
+    dirLoad( config, true );
     pluginLoad( config );
 
     change();
@@ -408,14 +408,14 @@ void KPluginOptions::dirInit()
 }
 
 
-void KPluginOptions::dirLoad( KSharedConfig::Ptr config )
+void KPluginOptions::dirLoad( KSharedConfig::Ptr config, bool useDefault )
 {
     QStringList paths;
 
     // read search paths
 
     config->setGroup("Misc");
-    if ( config->hasKey( "scanPaths" ) )
+    if ( config->hasKey( "scanPaths" ) && !useDefault )
         paths = config->readEntry( "scanPaths" , QStringList() );
     else {//keep sync with kdebase/nsplugins/pluginscan
         paths.append("$HOME/.mozilla/plugins");
