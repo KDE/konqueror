@@ -55,7 +55,6 @@ KCookiesPolicies::KCookiesPolicies(KInstance *inst, QWidget *parent)
     dlg->lvDomainPolicy->header()->setStretchEnabled(true, 0);
     dlg->lvDomainPolicy->setColumnWidthMode(0, K3ListView::Manual);
     dlg->lvDomainPolicy->setColumnWidthMode(1, K3ListView::Maximum);
-    dlg->tbClearSearchLine->setIcon(SmallIconSet(QApplication::isRightToLeft() ? "clear_left" : "locationbar_erase"));
     dlg->kListViewSearchLine->setListView(dlg->lvDomainPolicy);
     QList<int> columns;
     columns.append(0);

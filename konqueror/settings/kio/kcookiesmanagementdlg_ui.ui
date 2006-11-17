@@ -119,16 +119,6 @@
                 <number>0</number>
               </property>
               <item>
-                <widget class="QToolButton" name="tbClearSearchLine" >
-                  <property name="text" >
-                    <string>...</string>
-                  </property>
-                  <property name="text" >
-                    <string>Clear Search</string>
-                  </property>
-                </widget>
-              </item>
-              <item>
                 <widget class="QLabel" name="textLabel1" >
                   <property name="text" >
                     <string>&amp;Search:</string>
@@ -302,12 +292,4 @@
   <includes>
     <include location="local" >k3listviewsearchline.h</include>
   </includes>
-  <connections>
-    <connection>
-      <sender>tbClearSearchLine</sender>
-      <signal>clicked()</signal>
-      <receiver>kListViewSearchLine</receiver>
-      <slot>clear()</slot>
-    </connection>
-  </connections>
 </ui>
