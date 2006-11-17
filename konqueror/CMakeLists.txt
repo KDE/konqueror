@@ -77,7 +77,9 @@ install( FILES konqueror.rc konq-simplebrowser.rc  DESTINATION  ${DATA_INSTALL_D
 
 install(FILES profile_webbrowsing.desktop DESTINATION ${DATA_INSTALL_DIR}/konqueror/profiles/ RENAME webbrowsing)
 install(FILES profile_filemanagement.desktop DESTINATION ${DATA_INSTALL_DIR}/konqueror/profiles/ RENAME filemanagement)
+if(NOT WIN32)
 install(FILES profile_midnightcommander.desktop DESTINATION ${DATA_INSTALL_DIR}/konqueror/profiles/ RENAME midnightcommander)
+endif(NOT WIN32)
 install(FILES profile_tabbedbrowsing.desktop DESTINATION ${DATA_INSTALL_DIR}/konqueror/profiles/ RENAME tabbedbrowsing)
 install(FILES profile_kde_devel.desktop DESTINATION ${DATA_INSTALL_DIR}/konqueror/profiles/ RENAME kde_devel)
 install(FILES profile_simplebrowser.desktop DESTINATION ${DATA_INSTALL_DIR}/konqueror/profiles/ RENAME simplebrowser)
