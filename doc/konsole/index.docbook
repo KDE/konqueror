@@ -44,8 +44,8 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2005-12-19</date>
-<releaseinfo>1.6</releaseinfo>
+<date>2006-08-16</date>
+<releaseinfo>1.6.2</releaseinfo>
 
 <abstract><para>This document is the user handbook for the &konsole;
  application.</para>
@@ -189,9 +189,9 @@ the use of the <keycombo
 action="simul">&Shift;<keycap>Page Up</keycap></keycombo> (to move
 back a page), <keycombo action="simul">&Shift;<keycap>Page
 Down</keycap></keycombo> (to move forward a page), <keycombo
-action="simul">&Shift;<keycap>Up</keycap></keycombo> (to move up a
+action="simul">&Shift;<keycap>Up Arrow</keycap></keycombo> (to move up a
 line) and <keycombo
-action="simul">&Shift;<keycap>Down</keycap></keycombo> (to move down a
+action="simul">&Shift;<keycap>Down Arrow</keycap></keycombo> (to move down a
 line) keys (provided the <link
 linkend="settings-menu">History</link> option is on).</para>
 
@@ -199,7 +199,7 @@ linkend="settings-menu">History</link> option is on).</para>
 <keycap>scroll lock</keycap> is pressed. When scroll lock is on,
 ordinary in- and output from the shell is suspended, and you can
 scroll through the history with <keycap>Page Up</keycap>, <keycap>Page
-down</keycap>, and <keycap>Up Arrow</keycap> and <keycap>Down
+Down</keycap>, and <keycap>Up Arrow</keycap> and <keycap>Down
 Arrow</keycap>.</para>
 
 <para>&konsole;'s history can be configured via
@@ -219,7 +219,7 @@ Arrow</keycap>.</para>
 <para><guimenuitem>Find Next</guimenuitem></para>
 </listitem>
 <listitem>
-<para><guimenuitem>Find Prev</guimenuitem></para>
+<para><guimenuitem>Find Previous</guimenuitem></para>
 </listitem>
 <listitem>
 <para><guimenuitem>Save History As...</guimenuitem></para>
@@ -254,7 +254,7 @@ bar contains a menu if you click and hold on it, and you can choose new session
 types here. We are going to add new entries to this menu.
 
 <orderedlist>
-<listitem><para>Click on the menu entry <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure Konsole</guimenuitem>
+<listitem><para>Click on the menu entry <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &konsole;...</guimenuitem>
 </menuchoice></para></listitem>
 <listitem><para>Choose the <guilabel>Session</guilabel> tab.</para>
 </listitem> 
@@ -468,6 +468,12 @@ shell. <keycombo action="simul">&Alt;&Ctrl;<keycap>N</keycap>
 </para></listitem></varlistentry>
 
 <varlistentry>
+<term><menuchoice><guimenu>Session</guimenu><guimenuitem>New
+Window</guimenuitem></menuchoice></term>
+<listitem><para><action>Open a new &konsole; window</action>.
+</para></listitem></varlistentry>
+
+<varlistentry>
 <term><menuchoice><guimenu>Session</guimenu><guimenuitem>New Linux
 Console</guimenuitem></menuchoice></term>
 <listitem><para><action>Open a new session emulating a text-only &Linux;
@@ -494,25 +500,6 @@ Commander</application> file browser.</para>
 <varlistentry>
 <term>
 <menuchoice><guimenu>Session</guimenu>
-<guimenuitem>New Root Shell</guimenuitem></menuchoice>
-</term>
-<listitem>
-<para><action>Open a new session with a terminal shell</action>, as the
-<systemitem class="username">root</systemitem> user.</para>
-
-<para>After being prompted for the <systemitem
-class="username">root</systemitem> password, the <prompt>#</prompt>
-prompt appears, indicating that the user is working with <systemitem
-class="username">root</systemitem> privileges. This is frequently
-necessary for installing new software and other system maintenance, but
-care should be taken to avoid accidental damage.</para>
-
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term>
-<menuchoice><guimenu>Session</guimenu>
 <guimenuitem>New Root Midnight Commander</guimenuitem></menuchoice>
 </term>
 <listitem>
@@ -531,6 +518,24 @@ should be taken to avoid accidental damage.</para>
 <note><para>This menu entry will only be visible if Midnight Commander 
 (<command>mc</command>) is installed on your system.
 </para></note>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term>
+<menuchoice><guimenu>Session</guimenu>
+<guimenuitem>New Root Shell</guimenuitem></menuchoice>
+</term>
+<listitem>
+<para><action>Open a new session with a terminal shell</action>, as the
+<systemitem class="username">root</systemitem> user.</para>
+
+<para>After being prompted for the <systemitem
+class="username">root</systemitem> password, the <prompt>#</prompt>
+prompt appears, indicating that the user is working with <systemitem
+class="username">root</systemitem> privileges. This is frequently
+necessary for installing new software and other system maintenance, but
+care should be taken to avoid accidental damage.</para>
 </listitem>
 </varlistentry>
 
@@ -604,7 +609,10 @@ menu entry.</para>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Edit</guimenu><guimenuitem>Paste
+<term><menuchoice>
+<shortcut><keycombo
+ action="simul">&Shift;<keycap>Insert</keycap></keycombo></shortcut>
+<guimenu>Edit</guimenu><guimenuitem>Paste
 </guimenuitem></menuchoice></term>
 <listitem><para><action>Paste text from the clipboard at the cursor
 location</action>.</para></listitem>
@@ -663,7 +671,10 @@ signal</option></userinput>.</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Edit</guimenu><guimenuitem>ZModem Upload...</guimenuitem></menuchoice></term>
+<term><menuchoice>
+<shortcut><keycombo
+ action="simul">&Alt;&Ctrl;<keycap>U</keycap></keycombo></shortcut>
+<guimenu>Edit</guimenu><guimenuitem>ZModem Upload...</guimenuitem></menuchoice></term>
 <listitem><para><action>Send a file via ZModem</action>.</para></listitem>
 </varlistentry>
 
@@ -674,7 +685,7 @@ signal</option></userinput>.</para></listitem>
 
 
 <varlistentry>
-<term><menuchoice><guimenu>Edit</guimenu><guimenuitem>Reset and Clear Terminal</guimenuitem></menuchoice></term>
+<term><menuchoice><guimenu>Edit</guimenu><guimenuitem>Reset &amp; Clear Terminal</guimenuitem></menuchoice></term>
 <listitem><para><action>Reset and clear the session window</action>.</para></listitem>
 </varlistentry>
 
@@ -745,7 +756,10 @@ displayed on the titlebar of the new window.</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>View</guimenu><guimenuitem>Rename
+<term><menuchoice>
+<shortcut><keycombo
+ action="simul">&Alt;&Ctrl;<keycap>S</keycap></keycombo></shortcut>
+<guimenu>View</guimenu><guimenuitem>Rename
 Session...</guimenuitem></menuchoice></term>
 <listitem><para><action>Open a dialog box allowing you to change
 the name of the current session</action>. The name is displayed
@@ -785,14 +799,20 @@ for instance, is probably not a good idea.</para></listitem>
 
 
 <varlistentry>
-<term><menuchoice><guimenu>View</guimenu><guimenuitem>Move
+<term><menuchoice>
+<shortcut><keycombo
+ action="simul">&Ctrl;&Shift;<keycap>Left</keycap></keycombo></shortcut>
+<guimenu>View</guimenu><guimenuitem>Move
 Session Left</guimenuitem></menuchoice></term>
 <listitem><para><action>Move the tab of the current session one tab to the
 left</action>.</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>View</guimenu><guimenuitem>Move
+<term><menuchoice>
+<shortcut><keycombo
+ action="simul">&Ctrl;&Shift;<keycap>Right</keycap></keycombo></shortcut>
+<guimenu>View</guimenu><guimenuitem>Move
 Session Right</guimenuitem></menuchoice></term>
 <listitem><para><action>Move the tab of the current session one tab to the
 right</action>.</para>
@@ -878,8 +898,11 @@ Menubar</guimenuitem></menuchoice></term>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Settings</guimenu>
-<guimenuitem>Fullscreen</guimenuitem></menuchoice></term>
+<term><menuchoice>
+<shortcut><keycombo
+ action="simul">&Ctrl;&Shift;<keycap>F</keycap></keycombo></shortcut>
+<guimenu>Settings</guimenu>
+<guimenuitem>Full Screen Mode</guimenuitem></menuchoice></term>
 <listitem><para><action>Toggle window between full-screen and normal
 size</action>.</para></listitem>
 </varlistentry>
@@ -936,7 +959,7 @@ Add to or modify these files to match your needs. The default keytab is taken fr
 describes the <literal role="extension">*.schema</literal> format in more detail. 
 Add to or modify these files to match your needs.  You can also create custom 
 schemas through the preferences dialog at <menuchoice><guisubmenu>Settings</guisubmenu>
-<guimenuitem>Configure Konsole...</guimenuitem></menuchoice>.</para>
+<guimenuitem>Configure &konsole;...</guimenuitem></menuchoice>.</para>
 </listitem>
 </varlistentry>
 
@@ -957,7 +980,7 @@ scrolled off the top of the window.  You can enter the <guilabel>Number
 of lines</guilabel> to remember in the text field, or use the spinner
 buttons to increase or decrease the number in steps of 100 lines.  The
 <guibutton>Defaults</guibutton> button will reset the history to 1000
-lines. Selecting <guilabel>Set Unlimited</guilabel> will cause all history to be saved.
+lines. Selecting <guibutton>Set Unlimited</guibutton> will cause all history to be saved.
 Press <guibutton>OK</guibutton> to save your changes, or
 <guibutton>Cancel</guibutton> to close the dialog without saving your
 settings.</para></listitem>
@@ -1017,7 +1040,7 @@ document</action>.</para></listitem>
 
 <varlistentry>
 <term><menuchoice><guimenu>Help</guimenu>
-<guimenuitem>Tip of the Day...</guimenuitem></menuchoice></term>
+<guimenuitem>Tip of the Day</guimenuitem></menuchoice></term>
 <listitem><para><action>Display a helpful tip about the use of &konsole;.
 </action>Check the <guilabel>Show on start</guilabel> box to display a tip
 each time &konsole; is started.</para></listitem>
@@ -1031,14 +1054,14 @@ Bug...</guimenuitem></menuchoice></term>
 
 <varlistentry>
 <term><menuchoice><guimenu>Help</guimenu><guimenuitem>About
-Konsole...</guimenuitem></menuchoice></term>
+Konsole</guimenuitem></menuchoice></term>
 <listitem><para><action>Information about</action> &konsole;'s
 author</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice><guimenu>Help</guimenu><guimenuitem>About
-KDE...</guimenuitem></menuchoice></term>
+KDE</guimenuitem></menuchoice></term>
 <listitem><para><action>Information about the &kde;
 project</action></para></listitem>
 </varlistentry>
