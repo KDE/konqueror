@@ -88,7 +88,7 @@ KonqBaseListViewWidget::KonqBaseListViewWidget( KonqListView *parent, QWidget *p
    : K3ListView(parentWidget)
    ,sortedByColumn(0)
    ,m_pBrowserView(parent)
-   ,m_dirLister(new KDirLister( true /*m_showIcons==false*/))
+   ,m_dirLister(new KDirLister())
    ,m_dragOverItem(0)
    ,m_activeItem(0)
    ,m_selected(0)
@@ -108,6 +108,7 @@ KonqBaseListViewWidget::KonqBaseListViewWidget( KonqListView *parent, QWidget *p
    kDebug(1202) << "+KonqBaseListViewWidget" << endl;
 
    m_dirLister->setMainWindow(topLevelWidget());
+   m_dirLister->setDelayedMimeTypes(true);
 
    m_bTopLevelComplete  = true;
 
@@ -534,9 +535,9 @@ void KonqBaseListViewWidget::drawRubber()
 
    QPainter p;
    p.begin( viewport() );
-#ifdef __GNUC__   
+#ifdef __GNUC__
    #warning FIXME NotROP is not available in qt4
-#endif   
+#endif
 	//Using black with .5 alpha for now
 	//p.setRasterOp( NotROP );
    QColor c( 0, 0, 0, 127 );
@@ -545,9 +546,9 @@ void KonqBaseListViewWidget::drawRubber()
 
    QPoint pt( m_rubber->x(), m_rubber->y() );
    pt = contentsToViewport( pt );
-#ifdef __GNUC__   
+#ifdef __GNUC__
 #warning PE_FocusRect is gone, using PE_FrameFocusRect
-#endif   
+#endif
    QStyleOptionFocusRect fr;
    fr.backgroundColor = c;
    fr.rect = QRect( pt.x(), pt.y(), m_rubber->width(), m_rubber->height() );
@@ -913,7 +914,7 @@ void KonqBaseListViewWidget::slotReturnPressed( Q3ListViewItem *_item )
    url.cleanPath();
 #ifdef __GNUC__
 #warning hardcoded protocol: find a better way to determine if a url is a trash url.
-#endif   
+#endif
    bool isIntoTrash = url.protocol() == "trash";
    if ( !isIntoTrash || (isIntoTrash && fileItem->isDir()) )
       m_pBrowserView->lmbClicked( fileItem );
