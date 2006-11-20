@@ -201,7 +201,7 @@ KonqKfmIconView::KonqKfmIconView( QWidget *parentWidget, QObject *parent, const 
     connect( this, SIGNAL( findClosed( KonqDirPart * ) ), SLOT( slotKFindClosed() ) );
 
     setWidget( m_pIconView );
-    m_mimeTypeResolver = new KMimeTypeResolver<KFileIVI,KonqKfmIconView>(this);
+    m_mimeTypeResolver = new K3MimeTypeResolver<KFileIVI,KonqKfmIconView>(this);
 
     setInstance( KonqIconViewFactory::instance() );
 
@@ -364,7 +364,8 @@ KonqKfmIconView::KonqKfmIconView( QWidget *parentWidget, QObject *parent, const 
              this, SLOT( slotDragFinished() ) );
 
     // Create the directory lister
-    m_dirLister = new KDirLister( true );
+    m_dirLister = new KDirLister;
+    m_dirLister->setDelayedMimeTypes( true );
     setDirLister( m_dirLister );
     m_dirLister->setMainWindow(m_pIconView->topLevelWidget());
 

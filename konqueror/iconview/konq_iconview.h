@@ -23,7 +23,7 @@
 #include <konq_iconviewwidget.h>
 #include <konq_operations.h>
 #include <konq_dirpart.h>
-#include <kmimetyperesolver.h>
+#include <k3mimetyperesolver.h>
 #include <q3ptrdict.h>
 #include <q3ptrlist.h>
 #include <kfileivi.h>
@@ -68,7 +68,7 @@ public:
   // "Cut" icons : disable those whose URL is in lst, enable the rest
   virtual void disableIcons( const KUrl::List & lst );
 
-  // See KMimeTypeResolver
+  // See K3MimeTypeResolver
   void mimeTypeDeterminationFinished();
   void determineIcon( KFileIVI * item );
   int iconSize() { return m_pIconView->iconSize(); }
@@ -220,7 +220,7 @@ protected:
 
   Q3PtrDict<KFileIVI> m_itemDict; // maps KFileItem * -> KFileIVI *
 
-  KMimeTypeResolver<KFileIVI,KonqKfmIconView> * m_mimeTypeResolver;
+  K3MimeTypeResolver<KFileIVI,KonqKfmIconView> * m_mimeTypeResolver;
 
   QString m_mode;
 

@@ -25,7 +25,7 @@
 #include <konq_operations.h>
 #include <kparts/factory.h>
 #include <konq_dirpart.h>
-#include <kmimetyperesolver.h>
+#include <k3mimetyperesolver.h>
 
 
 #include <QListView>
@@ -81,7 +81,7 @@ public:
   // "Cut" icons : disable those whose URL is in lst, enable the others
   virtual void disableIcons( const KUrl::List & lst );
 
-  // See KMimeTypeResolver
+  // See K3MimeTypeResolver
   void mimeTypeDeterminationFinished() {}
   //int iconSize() { return m_pListView->iconSize(); }
   void determineIcon( KonqBaseListViewItem * item );
@@ -144,7 +144,7 @@ protected Q_SLOTS:
 private:
 
   KonqBaseListViewWidget *m_pListView;
-  KMimeTypeResolver<KonqBaseListViewItem,KonqListView> *m_mimeTypeResolver;
+  K3MimeTypeResolver<KonqBaseListViewItem,KonqListView> *m_mimeTypeResolver;
   QTimer *m_headerTimer;
 
   KAction *m_paSelect;

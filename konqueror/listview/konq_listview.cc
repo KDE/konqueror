@@ -266,7 +266,7 @@ KonqListView::KonqListView( QWidget *parentWidget, QObject *parent, const QStrin
    setWidget( m_pListView );
    setDirLister( m_pListView->m_dirLister );
 
-   m_mimeTypeResolver = new KMimeTypeResolver<KonqBaseListViewItem,KonqListView>(this);
+   m_mimeTypeResolver = new K3MimeTypeResolver<KonqBaseListViewItem,KonqListView>(this);
 
    setXMLFile( xmlFile );
 

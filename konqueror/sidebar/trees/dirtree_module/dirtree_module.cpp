@@ -301,7 +301,8 @@ void KonqSidebarDirTreeModule::openSubFolder( KonqSidebarTreeItem *item )
 
     if ( !m_dirLister ) // created on demand
     {
-        m_dirLister = new KDirLister( true );
+        m_dirLister = new KDirLister();
+        //m_dirLister->setDelayedMimeTypes( true ); // this was set, but it's wrong, without a KMimeTypeResolver...
         //m_dirLister->setDirOnlyMode( true );
 //	QStringList mimetypes;
 //	mimetypes<<QString("inode/directory");
