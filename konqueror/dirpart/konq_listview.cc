@@ -33,6 +33,7 @@ KonqListView::KonqListView( QWidget* parent ) : QTreeView( parent )
     setAcceptDrops( true );
     setEditTriggers( QAbstractItemView::EditKeyPressed );
     setItemDelegate( new KonqItemDelegate( this ) );
+    setUniformRowHeights( true ); // makes visualRect() much faster
     header()->setClickable( true );
     header()->setSortIndicatorShown( true );
 }
@@ -64,20 +65,25 @@ void KonqListView::contextMenuEvent( QContextMenuEvent* ev )
     if ( ev->reason() == QContextMenuEvent::Keyboard )
         emit contextMenu( viewport()->mapToGlobal( visualRect( currentIndex() ).center() ), selectedIndexes() );
     else
-        emit contextMenu( ev->globalPos(), selectedIndexes() ); 
+        emit contextMenu( ev->globalPos(), selectedIndexes() );
 }
 
 void KonqListView::mouseReleaseEvent( QMouseEvent* ev )
 {
-    if ( isExecutableArea( ev->pos() ) )
-        emit execute( indexAt( ev->pos() ), ev->button() );
+    if ( isExecutableArea( ev->pos() ) ) {
+        const QModelIndex index = indexAt( ev->pos() );
+        if ( index.isValid() )
+            emit execute( index, ev->button() );
+    }
     QTreeView::mouseReleaseEvent( ev );
 }
 
 void KonqListView::keyPressEvent( QKeyEvent* ev )
 {
-    if ( ev->key() == Qt::Key_Return )
-        emit execute( currentIndex(), Qt::NoButton );
+    if ( ev->key() == Qt::Key_Return ) {
+        const QModelIndex index = currentIndex();
+        emit execute( index, Qt::NoButton );
+    }
     QTreeView::keyPressEvent( ev );
 }
 
