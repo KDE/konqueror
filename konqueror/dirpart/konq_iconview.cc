@@ -25,7 +25,7 @@
 
 KonqIconView::KonqIconView( QWidget* parent ) : QListView( parent )
 {
-    setViewMode( QListView::IconMode );        
+    setViewMode( QListView::IconMode );
     setSelectionMode( QAbstractItemView::ExtendedSelection );
     setGridSize( QSize( 150, 150 ) );
     setMovement( QListView::Static );
@@ -60,15 +60,20 @@ void KonqIconView::contextMenuEvent( QContextMenuEvent* ev )
 
 void KonqIconView::mouseReleaseEvent( QMouseEvent* ev )
 {
-    if ( state() == QAbstractItemView::NoState )
-        emit execute( indexAt( ev->pos() ), ev->button() );
+    if ( state() == QAbstractItemView::NoState ) {
+        const QModelIndex index = indexAt( ev->pos() );
+        if ( index.isValid() )
+            emit execute( index, ev->button() );
+    }
     QListView::mouseReleaseEvent( ev );
 }
 
 void KonqIconView::keyPressEvent( QKeyEvent* ev )
 {
-    if ( ev->key() == Qt::Key_Return )
-        emit execute( currentIndex(), Qt::NoButton );
+    if ( ev->key() == Qt::Key_Return ) {
+        const QModelIndex index = currentIndex();
+        emit execute( index, Qt::NoButton );
+    }
     QListView::keyPressEvent( ev );
 }
 
