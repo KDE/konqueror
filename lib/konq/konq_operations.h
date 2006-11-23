@@ -23,9 +23,6 @@
 #include <libkonq_export.h>
 
 #include <QObject>
-#include <QEvent>
-//Added by qt3to4:
-#include <QList>
 #include <QDropEvent>
 
 class KJob;
@@ -35,7 +32,7 @@ class KFileItem;
 class KonqMainWindow;
 
 /**
- * Implements file operations (move,del,trash,shred,paste,copy,move,link...)
+ * Implements file operations (move,del,trash,paste,copy,move,link...)
  * for konqueror and kdesktop whatever the view mode is (icon, tree, ...)
  */
 class LIBKONQ_EXPORT KonqOperations : public QObject
@@ -51,46 +48,51 @@ public:
      */
     static void editMimeType( const QString & mimeType );
 
-    enum { TRASH, DEL, SHRED, COPY, MOVE, LINK, EMPTYTRASH, STAT, MKDIR, RESTORE, UNKNOWN };
+    enum Operation { TRASH, DEL, COPY, MOVE, LINK, EMPTYTRASH, STAT, MKDIR, RESTORE, UNKNOWN };
     /**
-     * Delete the @p selectedURLs if possible.
+     * Delete the @p selectedUrls if possible.
      *
      * @param parent parent widget (for error dialog box if any)
-     * @param method should be TRASH, DEL or SHRED
-     * @param selectedURLs the URLs to be deleted
+     * @param method should be TRASH or DEL
+     * @param selectedUrls the URLs to be deleted
      */
-    static void del( QWidget * parent, int method, const KUrl::List & selectedURLs );
+    static void del( QWidget * parent, Operation method, const KUrl::List & selectedUrls );
 
     /**
-     * Copy the @p selectedURLs to the destination @p destURL.
+     * Copy the @p selectedUrls to the destination @p destUrl.
      *
      * @param parent parent widget (for error dialog box if any)
      * @param method should be COPY, MOVE or LINK
-     * @param selectedURLs the URLs to copy
-     * @param destURL destination of the copy
+     * @param selectedUrls the URLs to copy
+     * @param destUrl destination of the copy
      *
      * @todo document restrictions on the kind of destination
      */
-    static void copy( QWidget * parent, int method, const KUrl::List & selectedURLs, const KUrl& destURL );
+    static void copy( QWidget * parent, Operation method, const KUrl::List & selectedUrls, const KUrl& destUrl );
     /**
      * Drop
      * @param destItem destination KFileItem for the drop (background or item)
-     * @param destURL destination URL for the drop.
+     * @param destUrl destination URL for the drop.
      * @param ev the drop event
      * @param parent parent widget (for error dialog box if any)
      *
      * If destItem is 0L, doDrop will stat the URL to determine it.
      */
-    static void doDrop( const KFileItem * destItem, const KUrl & destURL, QDropEvent * ev, QWidget * parent );
+    static void doDrop( const KFileItem * destItem, const KUrl & destUrl, QDropEvent * ev, QWidget * parent );
 
     /**
      * Paste the clipboard contents
      */
-    static void doPaste( QWidget * parent, const KUrl & destURL, const QPoint &pos );
-    static void doPaste( QWidget * parent, const KUrl & destURL );
+    static void doPaste( QWidget * parent, const KUrl & destUrl, const QPoint &pos = QPoint() );
 
-    static void emptyTrash();
-    static void restoreTrashedItems( const KUrl::List& urls );
+    /**
+     * Empty the trash
+     */
+    static void emptyTrash( QWidget* parent );
+    /**
+     * Restore trashed items
+     */
+    static void restoreTrashedItems( const KUrl::List& urls, QWidget* parent );
 
     /**
      * Create a directory
@@ -100,10 +102,10 @@ public:
     /**
      * Get info about a given URL, and when that's done (it's asynchronous!),
      * call a given slot with the KFileItem * as argument.
-     * The KFileItem will be deleted by statURL after calling the slot. Make a copy
+     * The KFileItem will be deleted by statUrl after calling the slot. Make a copy
      * if you need one !
      */
-    static void statURL( const KUrl & url, const QObject *receiver, const char *member );
+    static void statUrl( const KUrl & url, const QObject *receiver, const char *member, QWidget* parent );
 
     /**
      * Do a renaming.
@@ -126,31 +128,33 @@ public:
     /**
      * Ask for the name of a new directory and create it.
      * @param parent the parent widget
-     * @param baseURL the directory to create the new directory in
+     * @param baseUrl the directory to create the new directory in
      */
-    static void newDir( QWidget * parent, const KUrl & baseURL );
+    static void newDir( QWidget * parent, const KUrl & baseUrl );
 
 Q_SIGNALS:
     void statFinished( const KFileItem * item );
     void aboutToCreate(const QPoint &pos, const QList<KIO::CopyInfo> &files);
 
-protected:
+private:
+    QWidget* parentWidget() const;
     enum { DEFAULT_CONFIRMATION, SKIP_CONFIRMATION, FORCE_CONFIRMATION };
-    bool askDeleteConfirmation( const KUrl::List & selectedURLs, int confirmation );
-    void _del( int method, const KUrl::List & selectedURLs, int confirmation );
+    bool askDeleteConfirmation( const KUrl::List & selectedUrls, int confirmation );
+    void _del( Operation method, const KUrl::List & selectedUrls, int confirmation );
     void _restoreTrashedItems( const KUrl::List& urls );
-    void _statURL( const KUrl & url, const QObject *receiver, const char *member );
+    void _statUrl( const KUrl & url, const QObject *receiver, const char *member );
 
     // internal, for COPY/MOVE/LINK/MKDIR
-    void setOperation( KIO::Job * job, int method, const KUrl::List & src, const KUrl & dest );
+    void setOperation( KIO::Job * job, Operation method, const KUrl & dest );
 
     struct DropInfo
     {
-        DropInfo( uint k, const KUrl::List & l, const QMap<QString,QString> &m,
-                  int x, int y, Qt::DropAction a ) :
-            keybstate(k), lst(l), metaData(m), mousePos(x,y), action(a) {}
-        uint keybstate;
-        KUrl::List lst;
+        DropInfo( Qt::KeyboardModifiers k, const KUrl::List & u, const QMap<QString,QString> &m,
+                  const QPoint& pos, Qt::DropAction a ) :
+            keyboardModifiers(k), urls(u), metaData(m), mousePos(pos), action(a)
+        {}
+        Qt::KeyboardModifiers keyboardModifiers;
+        KUrl::List urls;
         QMap<QString,QString> metaData;
         QPoint mousePos;
         Qt::DropAction action;
@@ -160,10 +164,8 @@ protected:
 
     struct KIOPasteInfo // KDE4: remove and use DropInfo instead or a QPoint member
     {
-        QByteArray data;  // unused
-        KUrl destURL;     // unused
+        // Used to position the files at the position where RMB/Paste was used [mostly on the desktop]
         QPoint mousePos;
-        QString dialogText; // unused
     };
     void setPasteInfo( KIOPasteInfo * info ) { m_pasteInfo = info; }
 
@@ -173,12 +175,12 @@ protected Q_SLOTS:
     void slotResult( KJob * job );
     void slotStatResult( KJob * job );
     void asyncDrop( const KFileItem * item );
-    void doFileCopy();
+    void doDropFileCopy();
 
 private:
-    int m_method;
-    //KUrl::List m_srcURLs;
-    KUrl m_destURL;
+    Operation m_method;
+    //KUrl::List m_srcUrls;
+    KUrl m_destUrl;
     // for doDrop
     DropInfo * m_info;
     KIOPasteInfo * m_pasteInfo;

@@ -217,12 +217,7 @@ void KonqSidebarDirTreeItem::del()
     delOperation( KonqOperations::DEL );
 }
 
-void KonqSidebarDirTreeItem::shred()
-{
-    delOperation( KonqOperations::SHRED );
-}
-
-void KonqSidebarDirTreeItem::delOperation( int method )
+void KonqSidebarDirTreeItem::delOperation( KonqOperations::Operation method )
 {
     KUrl::List lst;
     lst.append(m_fileItem->url());

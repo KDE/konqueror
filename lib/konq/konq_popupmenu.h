@@ -67,32 +67,6 @@ public:
          ShowNewWindow = 4 };
          // WARNING: bitfield. Next item is 8
 
-#if 0
-  /**
-   * @deprecated lacks parentWidget pointer, and
-   * uses bool instead of KonqPopupFlags enum,
-   * might do strange things with the 'new window' action.
-   */
-  KonqPopupMenu( KBookmarkManager* manager,
-                 const KFileItemList &items,
-                 KUrl viewURL,
-                 KActionCollection & actions,
-                 KNewMenu * newMenu,
-                 bool showPropertiesAndFileType = true ) KDE_DEPRECATED;
-
-  /**
-   * @deprecated uses bool instead of KonqPopupFlags enum,
-   * might do strange things with the 'new window' action.
-   */
-  KonqPopupMenu( KBookmarkManager* manager,
-                 const KFileItemList &items,
-                 KUrl viewURL,
-                 KActionCollection & actions,
-                 KNewMenu * newMenu,
-		 QWidget * parentWidget,
-		 bool showPropertiesAndFileType = true ) KDE_DEPRECATED;
-#endif
-
   /**
    * Constructor
    * @param manager the bookmark manager for this bookmark

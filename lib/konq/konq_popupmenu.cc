@@ -182,40 +182,13 @@ ServiceList* PopupServices::selectList( const QString& priority, const QString& 
 
 //////////////////
 
-#if 0
-KonqPopupMenu::KonqPopupMenu( KBookmarkManager *mgr, const KFileItemList &items,
-                              KUrl viewURL,
-                              KActionCollection & actions,
-                              KNewMenu * newMenu,
-                              bool showProperties )
-    : QMenu( 0L ),
-      m_actions( actions ), m_ownActions( static_cast<QWidget *>( 0 ) ),
-		  m_pMenuNew( newMenu ), m_sViewURL(viewURL), m_lstItems(items), m_pManager(mgr)
-{
-    KonqPopupFlags kpf = ( showProperties ? ShowProperties : IsLink ) | ShowNewWindow;
-    init(0, kpf, KParts::BrowserExtension::DefaultPopupItems);
-}
-
-KonqPopupMenu::KonqPopupMenu( KBookmarkManager *mgr, const KFileItemList &items,
-                              KUrl viewURL,
-                              KActionCollection & actions,
-                              KNewMenu * newMenu,
-                              QWidget * parentWidget,
-                              bool showProperties )
-    : QMenu( parentWidget ), m_actions( actions ), m_ownActions( static_cast<QWidget *>( 0 ) ), m_pMenuNew( newMenu ), m_sViewURL(viewURL), m_lstItems(items), m_pManager(mgr)
-{
-    KonqPopupFlags kpf = ( showProperties ? ShowProperties : IsLink ) | ShowNewWindow;
-    init(parentWidget, kpf, KParts::BrowserExtension::DefaultPopupItems);
-}
-#endif
-
 KonqPopupMenu::KonqPopupMenu( KBookmarkManager *mgr, const KFileItemList &items,
                               const KUrl& viewURL,
                               KActionCollection & actions,
                               KNewMenu * newMenu,
                               QWidget * parentWidget,
                               KonqPopupFlags kpf,
-                              KParts::BrowserExtension::PopupFlags flags)
+                              KParts::BrowserExtension::PopupFlags flags )
   : QMenu( parentWidget ),
     m_actions( actions ),
     m_ownActions( static_cast<QWidget *>( 0 ) ),
@@ -1023,17 +996,17 @@ void KonqPopupMenu::slotPopupNewDir()
 
 void KonqPopupMenu::slotPopupEmptyTrashBin()
 {
-  KonqOperations::emptyTrash();
+  KonqOperations::emptyTrash( d->m_parentWidget );
 }
 
 void KonqPopupMenu::slotPopupRestoreTrashedItems()
 {
-  KonqOperations::restoreTrashedItems( m_lstPopupURLs );
+  KonqOperations::restoreTrashedItems( m_lstPopupURLs, d->m_parentWidget );
 }
 
 void KonqPopupMenu::slotPopupOpenWith()
 {
-  KRun::displayOpenWithDialog( m_lstPopupURLs, topLevelWidget() );
+  KRun::displayOpenWithDialog( m_lstPopupURLs, d->m_parentWidget );
 }
 
 void KonqPopupMenu::slotPopupAddToBookmark()

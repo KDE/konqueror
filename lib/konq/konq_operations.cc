@@ -16,11 +16,11 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
-#include <QClipboard>
-//Added by qt3to4:
-#include <QDropEvent>
-#include <QList>
 #include "konq_operations.h"
+#include "konq_undo.h"
+#include "konq_defaults.h"
+#include "konqmimedata.h"
+
 #include <ktoolinvocation.h>
 #include <kautomount.h>
 #include <kinputdialog.h>
@@ -30,49 +30,40 @@
 #include <krun.h>
 #include <kshell.h>
 #include <kshortcut.h>
+#include <kprotocolmanager.h>
+#include <kprocess.h>
+#include <kio/job.h>
 #include <kio/jobuidelegate.h>
-
-#include <QtDBus/QtDBus>
+#include <kio/jobclasses.h>
+#include <kio/paste.h>
+#include <kio/renamedlg.h>
 #include <kdirnotify.h>
-#include "konq_undo.h"
-#include "konq_defaults.h"
-#include "konqmimedata.h"
-#include "konqbookmarkmanager.h"
 
 // For doDrop
-#include <QDir>//first
-#include <assert.h>
-#include <kapplication.h>
+#include <kauthorized.h>
+#include <kglobal.h>
 #include <kglobalsettings.h>
 #include <kdebug.h>
 #include <kfileitem.h>
 #include <kdesktopfile.h>
-#include <k3urldrag.h>
 #include <kglobalsettings.h>
 #include <kimageio.h>
-#include <kio/job.h>
-#include <kio/jobclasses.h>
-#include <kio/paste.h>
-#include <kio/netaccess.h>
-#include <kio/renamedlg.h>
-#include <konq_iconviewwidget.h>
-#include <kprotocolmanager.h>
-#include <kprocess.h>
-#include <kstringhandler.h>
-#include <QMenu>
-#include <unistd.h>
-#ifdef Q_WS_X11
-#include <X11/Xlib.h>
-#include <QX11Info>
-#endif
-#include <kauthorized.h>
-#include <kglobal.h>
 
-KBookmarkManager * KonqBookmarkManager::s_bookmarkManager;
+#include <konq_iconviewwidget.h>
+#include <QtDBus/QtDBus>
+#include <QMenu>
+#include <QApplication>
+#include <QClipboard>
+#include <QDropEvent>
+#include <QList>
+#include <QDir>
+
+#include <assert.h>
+#include <unistd.h>
 
 KonqOperations::KonqOperations( QWidget *parent )
     : QObject( parent ),
-      m_method( UNKNOWN ), m_info(0L), m_pasteInfo(0L)
+      m_method( UNKNOWN ), m_info(0), m_pasteInfo(0)
 {
     setObjectName( "KonqOperations" );
 }
@@ -85,51 +76,46 @@ KonqOperations::~KonqOperations()
 
 void KonqOperations::editMimeType( const QString & mimeType )
 {
-  QString keditfiletype = QLatin1String("keditfiletype");
-  KRun::runCommand( keditfiletype + " " + KProcess::quote(mimeType),
-                    keditfiletype, keditfiletype /*unused*/);
+    QString keditfiletype = QLatin1String("keditfiletype");
+    KRun::runCommand( keditfiletype + " " + KProcess::quote(mimeType),
+                      keditfiletype, keditfiletype /*unused*/);
 }
 
-void KonqOperations::del( QWidget * parent, int method, const KUrl::List & selectedURLs )
+void KonqOperations::del( QWidget * parent, Operation method, const KUrl::List & selectedUrls )
 {
-  kDebug(1203) << "KonqOperations::del " << parent->metaObject()->className() << endl;
-  if ( selectedURLs.isEmpty() )
-  {
-    kWarning(1203) << "Empty URL list !" << endl;
-    return;
-  }
+    kDebug(1203) << "KonqOperations::del " << parent->metaObject()->className() << endl;
+    if ( selectedUrls.isEmpty() )
+    {
+        kWarning(1203) << "Empty URL list !" << endl;
+        return;
+    }
 
-  KonqOperations * op = new KonqOperations( parent );
-  int confirmation = DEFAULT_CONFIRMATION;
-  op->_del( method, selectedURLs, confirmation );
+    KonqOperations * op = new KonqOperations( parent );
+    int confirmation = DEFAULT_CONFIRMATION;
+    op->_del( method, selectedUrls, confirmation );
 }
 
-void KonqOperations::emptyTrash()
+void KonqOperations::emptyTrash( QWidget* parent )
 {
-  KonqOperations *op = new KonqOperations( 0L );
-  op->_del( EMPTYTRASH, KUrl("trash:/"), SKIP_CONFIRMATION );
+    KonqOperations *op = new KonqOperations( parent );
+    op->_del( EMPTYTRASH, KUrl("trash:/"), SKIP_CONFIRMATION );
 }
 
-void KonqOperations::restoreTrashedItems( const KUrl::List& urls )
+void KonqOperations::restoreTrashedItems( const KUrl::List& urls, QWidget* parent )
 {
-  KonqOperations *op = new KonqOperations( 0L );
-  op->_restoreTrashedItems( urls );
+    KonqOperations *op = new KonqOperations( parent );
+    op->_restoreTrashedItems( urls );
 }
 
 void KonqOperations::mkdir( QWidget *parent, const KUrl & url )
 {
     KIO::Job * job = KIO::mkdir( url );
     KonqOperations * op = new KonqOperations( parent );
-    op->setOperation( job, MKDIR, KUrl::List(), url );
+    op->setOperation( job, MKDIR, url );
     (void) new KonqCommandRecorder( KonqCommand::MKDIR, KUrl(), url, job ); // no support yet, apparently
 }
 
-void KonqOperations::doPaste( QWidget * parent, const KUrl & destURL )
-{
-   doPaste(parent, destURL, QPoint());
-}
-
-void KonqOperations::doPaste( QWidget * parent, const KUrl & destURL, const QPoint &pos )
+void KonqOperations::doPaste( QWidget * parent, const KUrl & destUrl, const QPoint &pos )
 {
     // move or not move ?
     bool move = false;
@@ -139,7 +125,7 @@ void KonqOperations::doPaste( QWidget * parent, const KUrl & destURL, const QPoi
       kDebug(1203) << "move (from clipboard data) = " << move << endl;
     }
 
-    KIO::Job *job = KIO::pasteClipboard( destURL, parent, move );
+    KIO::Job *job = KIO::pasteClipboard( destUrl, parent, move );
     if ( job )
     {
         KonqOperations * op = new KonqOperations( parent );
@@ -147,102 +133,101 @@ void KonqOperations::doPaste( QWidget * parent, const KUrl & destURL, const QPoi
         KIOPasteInfo * pi = new KIOPasteInfo;
         pi->mousePos = pos;
         op->setPasteInfo( pi );
-        op->setOperation( job, move ? MOVE : COPY, copyJob->srcUrls(), copyJob->destUrl() );
-        (void) new KonqCommandRecorder( move ? KonqCommand::MOVE : KonqCommand::COPY, KUrl::List(), destURL, job );
+        op->setOperation( job, move ? MOVE : COPY, copyJob->destUrl() );
+        (void) new KonqCommandRecorder( move ? KonqCommand::MOVE : KonqCommand::COPY, KUrl::List(), destUrl, job );
     }
 }
 
-void KonqOperations::copy( QWidget * parent, int method, const KUrl::List & selectedURLs, const KUrl& destUrl )
+void KonqOperations::copy( QWidget * parent, Operation method, const KUrl::List & selectedUrls, const KUrl& destUrl )
 {
-  kDebug(1203) << "KonqOperations::copy() " << parent->metaObject()->className() << endl;
-  if ((method!=COPY) && (method!=MOVE) && (method!=LINK))
-  {
-    kWarning(1203) << "Illegal copy method !" << endl;
-    return;
-  }
-  if ( selectedURLs.isEmpty() )
-  {
-    kWarning(1203) << "Empty URL list !" << endl;
-    return;
-  }
-
-  KonqOperations * op = new KonqOperations( parent );
-  KIO::Job* job(0);
-  if (method==LINK)
-     job= KIO::link( selectedURLs, destUrl);
-  else if (method==MOVE)
-     job= KIO::move( selectedURLs, destUrl);
-  else
-     job= KIO::copy( selectedURLs, destUrl);
-
-  op->setOperation( job, method, selectedURLs, destUrl );
-
-  if (method==COPY)
-     (void) new KonqCommandRecorder( KonqCommand::COPY, selectedURLs, destUrl, job );
-  else
-     (void) new KonqCommandRecorder( method==MOVE?KonqCommand::MOVE:KonqCommand::LINK, selectedURLs, destUrl, job );
-}
-
-void KonqOperations::_del( int method, const KUrl::List & _selectedURLs, int confirmation )
-{
-    KUrl::List selectedURLs;
-    for (KUrl::List::ConstIterator it = _selectedURLs.begin(); it != _selectedURLs.end(); ++it)
-        if (KProtocolManager::supportsDeleting(*it))
-            selectedURLs.append(*it);
-    if (selectedURLs.isEmpty()) {
-        delete this;
-        return;
-    }
-
-  m_method = method;
-  if ( confirmation == SKIP_CONFIRMATION || askDeleteConfirmation( selectedURLs, confirmation ) )
-  {
-    //m_srcURLs = selectedURLs;
-    KIO::Job *job;
-    switch( method )
+    kDebug(1203) << "KonqOperations::copy() " << parent->metaObject()->className() << endl;
+    if ((method!=COPY) && (method!=MOVE) && (method!=LINK))
     {
-      case TRASH:
-      {
-        job = KIO::trash( selectedURLs );
-        (void) new KonqCommandRecorder( KonqCommand::TRASH, selectedURLs, KUrl("trash:/"), job );
-         break;
-      }
-      case EMPTYTRASH:
-      {
-        // Same as in ktrash --empty
-        QByteArray packedArgs;
-        QDataStream stream( &packedArgs, QIODevice::WriteOnly );
-        stream << (int)1;
-        job = KIO::special( KUrl("trash:/"), packedArgs );
-       KNotification::event("Trash: emptied", QString() , QPixmap() , 0l /*, QStringList() , KNotification::ContextList() */, KNotification::DefaultEvent );
-       break;
-      }
-      case DEL:
-        job = KIO::del( selectedURLs );
-        break;
-      case SHRED:
-        job = KIO::del( selectedURLs, true );
-        break;
-      default:
-        kWarning() << "Unknown operation: " << method << endl;
+        kWarning(1203) << "Illegal copy method !" << endl;
+        return;
+    }
+    if ( selectedUrls.isEmpty() )
+    {
+        kWarning(1203) << "Empty URL list !" << endl;
+        return;
+    }
+
+    KonqOperations * op = new KonqOperations( parent );
+    KIO::Job* job(0);
+    if (method == LINK)
+        job = KIO::link( selectedUrls, destUrl );
+    else if (method == MOVE)
+        job = KIO::move( selectedUrls, destUrl );
+    else
+        job = KIO::copy( selectedUrls, destUrl );
+
+    op->setOperation( job, method, destUrl );
+
+    if (method == COPY)
+        (void) new KonqCommandRecorder( KonqCommand::COPY, selectedUrls, destUrl, job );
+    else
+        (void) new KonqCommandRecorder( method==MOVE?KonqCommand::MOVE:KonqCommand::LINK, selectedUrls, destUrl, job );
+}
+
+void KonqOperations::_del( Operation method, const KUrl::List & _selectedUrls, int confirmation )
+{
+    KUrl::List selectedUrls;
+    for (KUrl::List::ConstIterator it = _selectedUrls.begin(); it != _selectedUrls.end(); ++it)
+        if (KProtocolManager::supportsDeleting(*it))
+            selectedUrls.append(*it);
+    if (selectedUrls.isEmpty()) {
         delete this;
         return;
     }
-    connect( job, SIGNAL( result( KJob * ) ),
-             SLOT( slotResult( KJob * ) ) );
-  } else
-    delete this;
+
+    m_method = method;
+    if ( confirmation == SKIP_CONFIRMATION || askDeleteConfirmation( selectedUrls, confirmation ) )
+    {
+        //m_srcUrls = selectedUrls;
+        KIO::Job *job;
+        switch( method )
+        {
+        case TRASH:
+        {
+            job = KIO::trash( selectedUrls );
+            (void) new KonqCommandRecorder( KonqCommand::TRASH, selectedUrls, KUrl("trash:/"), job );
+            break;
+        }
+        case EMPTYTRASH:
+        {
+            // Same as in ktrash --empty
+            QByteArray packedArgs;
+            QDataStream stream( &packedArgs, QIODevice::WriteOnly );
+            stream << (int)1;
+            job = KIO::special( KUrl("trash:/"), packedArgs );
+            KNotification::event("Trash: emptied", QString() , QPixmap() , 0l /*, QStringList() , KNotification::ContextList() */, KNotification::DefaultEvent );
+            break;
+        }
+        case DEL:
+            job = KIO::del( selectedUrls );
+            break;
+        default:
+            kWarning() << "Unknown operation: " << method << endl;
+            delete this;
+            return;
+        }
+        job->ui()->setWindow(parentWidget());
+        connect( job, SIGNAL( result( KJob * ) ),
+                 SLOT( slotResult( KJob * ) ) );
+    } else
+        delete this;
 }
 
 void KonqOperations::_restoreTrashedItems( const KUrl::List& urls )
 {
     m_method = RESTORE;
     KonqMultiRestoreJob* job = new KonqMultiRestoreJob( urls, true );
+    job->ui()->setWindow(parentWidget());
     connect( job, SIGNAL( result( KJob * ) ),
              SLOT( slotResult( KJob * ) ) );
 }
 
-bool KonqOperations::askDeleteConfirmation( const KUrl::List & selectedURLs, int confirmation )
+bool KonqOperations::askDeleteConfirmation( const KUrl::List & selectedUrls, int confirmation )
 {
     QString keyName;
     bool ask = ( confirmation == FORCE_CONFIRMATION );
@@ -250,69 +235,62 @@ bool KonqOperations::askDeleteConfirmation( const KUrl::List & selectedURLs, int
     {
         KConfig config("konquerorrc", true, false);
         config.setGroup( "Trash" );
-        keyName = ( m_method == DEL ? "ConfirmDelete" : m_method == SHRED ? "ConfirmShred" : "ConfirmTrash" );
-        bool defaultValue = ( m_method == DEL ? DEFAULT_CONFIRMDELETE : m_method == SHRED ? DEFAULT_CONFIRMSHRED : DEFAULT_CONFIRMTRASH );
+        keyName = ( m_method == DEL ? "ConfirmDelete" : "ConfirmTrash" );
+        bool defaultValue = ( m_method == DEL ? DEFAULT_CONFIRMDELETE : DEFAULT_CONFIRMTRASH );
         ask = config.readEntry( keyName, QVariant(defaultValue )).toBool();
     }
     if ( ask )
     {
-      KUrl::List::ConstIterator it = selectedURLs.begin();
-      QStringList prettyList;
-      for ( ; it != selectedURLs.end(); ++it ) {
-        if ( (*it).protocol() == "trash" ) {
-          QString path = (*it).path();
-          // HACK (#98983): remove "0-foo". Note that it works better than
-	  // displaying KFileItem::name(), for files under a subdir.
-          prettyList.append( path.remove(QRegExp("^/[0-9]*-")) );
-        } else
-          prettyList.append( (*it).pathOrUrl() );
-      }
+        KUrl::List::ConstIterator it = selectedUrls.begin();
+        QStringList prettyList;
+        for ( ; it != selectedUrls.end(); ++it ) {
+            if ( (*it).protocol() == "trash" ) {
+                QString path = (*it).path();
+                // HACK (#98983): remove "0-foo". Note that it works better than
+                // displaying KFileItem::name(), for files under a subdir.
+                prettyList.append( path.remove(QRegExp("^/[0-9]*-")) );
+            } else
+                prettyList.append( (*it).pathOrUrl() );
+        }
 
-      int result;
-      switch(m_method)
-      {
-      case DEL:
-          result = KMessageBox::warningContinueCancelList( 0,
+        int result;
+        switch(m_method)
+        {
+        case DEL:
+            result = KMessageBox::warningContinueCancelList(
+                parentWidget(),
              	i18np( "Do you really want to delete this item?", "Do you really want to delete these %n items?", prettyList.count()),
              	prettyList,
 		i18n( "Delete Files" ),
 		KStdGuiItem::del(),
 		keyName, KMessageBox::Dangerous);
-	 break;
+            break;
 
-      case SHRED:
-          result = KMessageBox::warningContinueCancelList( 0,
-                i18np( "Do you really want to shred this item?", "Do you really want to shred these %n items?", prettyList.count()),
-                prettyList,
-                i18n( "Shred Files" ),
-		KGuiItem( i18n( "Shred" ), "editshred" ),
-		keyName, KMessageBox::Dangerous);
-        break;
-
-      case MOVE:
-      default:
-          result = KMessageBox::warningContinueCancelList( 0,
+        case MOVE:
+        default:
+            result = KMessageBox::warningContinueCancelList(
+                parentWidget(),
                 i18np( "Do you really want to move this item to the trash?", "Do you really want to move these %n items to the trash?", prettyList.count()),
                 prettyList,
 		i18n( "Move to Trash" ),
 		KGuiItem( i18nc( "Verb", "&Trash" ), "edittrash"),
 		keyName, KMessageBox::Dangerous);
-      }
-      if (!keyName.isEmpty())
-      {
-         // Check kmessagebox setting... erase & copy to konquerorrc.
-         KConfig *config = KGlobal::config();
-         KConfigGroup saver(config, "Notification Messages");
-         if (!saver.readEntry(keyName, QVariant(true)).toBool())
-         {
-            saver.writeEntry(keyName, true);
-            saver.sync();
-            KConfig konq_config("konquerorrc", false);
-            konq_config.setGroup( "Trash" );
-            konq_config.writeEntry( keyName, false );
-         }
-      }
-      return (result == KMessageBox::Continue);
+        }
+        if (!keyName.isEmpty())
+        {
+            // Check kmessagebox setting... erase & copy to konquerorrc.
+            KConfig *config = KGlobal::config();
+            KConfigGroup saver(config, "Notification Messages");
+            if (!saver.readEntry(keyName, QVariant(true)).toBool())
+            {
+                saver.writeEntry(keyName, true);
+                saver.sync();
+                KConfig konq_config("konquerorrc", false);
+                konq_config.setGroup( "Trash" );
+                konq_config.writeEntry( keyName, false );
+            }
+        }
+        return (result == KMessageBox::Continue);
     }
     return true;
 }
@@ -348,26 +326,19 @@ void KonqOperations::doDrop( const KFileItem * destItem, const KUrl & dest, QDro
         }
 
         // Check the state of the modifiers key at the time of the drop
-        // TODO port to QApplication::keyboardModifiers()
-#ifdef Q_WS_X11 // removing for now, it should be OK once it uses keyboardModifiers()
-        Window root;
-        Window child;
-        int root_x, root_y, win_x, win_y;
-        uint keybstate;
-        XQueryPointer( QX11Info::display(), QX11Info::appRootWindow(), &root, &child,
-                       &root_x, &root_y, &win_x, &win_y, &keybstate );
+        Qt::KeyboardModifiers modifiers = QApplication::keyboardModifiers();
 
         Qt::DropAction action = ev->dropAction();
         // Check for the drop of a bookmark -> we want a Link action
         if ( ev->provides("application/x-xbel") )
         {
-            keybstate |= ControlMask | ShiftMask;
+            modifiers |= Qt::ControlModifier | Qt::ShiftModifier;
             action = Qt::LinkAction;
             kDebug(1203) << "KonqOperations::doDrop Bookmark -> emulating Link" << endl;
         }
 
         KonqOperations * op = new KonqOperations(parent);
-        op->setDropInfo( new DropInfo( keybstate, lst, metaData, win_x, win_y, action ) );
+        op->setDropInfo( new DropInfo( modifiers, lst, metaData, ev->pos(), action ) );
 
         // Ok, now we need destItem.
         if ( destItem )
@@ -377,16 +348,11 @@ void KonqOperations::doDrop( const KFileItem * destItem, const KUrl & dest, QDro
         else
         {
             // we need to stat to get it.
-            op->_statURL( dest, op, SLOT( asyncDrop( const KFileItem * ) ) );
+            op->_statUrl( dest, op, SLOT( asyncDrop( const KFileItem * ) ) );
         }
         // In both cases asyncDrop will delete op when done
 
         ev->acceptProposedAction();
-#else
-        kDebug(1203) << "we don't handle keyboard modifiers yet, skip check" << endl;
-        ev->setAccepted( false );
-        return;
-#endif
     }
     else
     {
@@ -397,7 +363,7 @@ void KonqOperations::doDrop( const KFileItem * destItem, const KUrl & dest, QDro
                                                   parent );
         if ( job ) // 0 if canceled by user
         {
-            op->setOperation( job, COPY, KUrl::List(), job->destUrl() );
+            op->setOperation( job, COPY, job->destUrl() );
             (void) new KonqCommandRecorder( KonqCommand::COPY, KUrl::List(), dest, job );
         }
         ev->acceptProposedAction();
@@ -407,66 +373,61 @@ void KonqOperations::doDrop( const KFileItem * destItem, const KUrl & dest, QDro
 void KonqOperations::asyncDrop( const KFileItem * destItem )
 {
     assert(m_info); // setDropInfo should have been called before asyncDrop
-    m_destURL = destItem->url();
+    m_destUrl = destItem->url();
 
-    //kDebug(1203) << "KonqOperations::asyncDrop destItem->mode=" << destItem->mode() << " url=" << m_destURL << endl;
+    //kDebug(1203) << "KonqOperations::asyncDrop destItem->mode=" << destItem->mode() << " url=" << m_destUrl << endl;
     // Check what the destination is
     if ( destItem->isDir() )
     {
-        doFileCopy();
+        doDropFileCopy();
         return;
     }
-    if ( !m_destURL.isLocalFile() )
+    if ( !m_destUrl.isLocalFile() )
     {
         // We dropped onto a remote URL that is not a directory!
         // (e.g. an HTTP link in the sidebar).
         // Can't do that, but we can't prevent it before stating the dest....
-        kWarning(1203) << "Cannot drop onto " << m_destURL << endl;
+        kWarning(1203) << "Cannot drop onto " << m_destUrl << endl;
         delete this;
         return;
     }
     if ( destItem->mimetype() == "application/x-desktop")
     {
         // Local .desktop file. What type ?
-        KDesktopFile desktopFile( m_destURL.path() );
+        KDesktopFile desktopFile( m_destUrl.path() );
         if ( desktopFile.hasApplicationType() )
         {
             QString error;
-            QStringList stringList;
-            KUrl::List lst = m_info->lst;
-            KUrl::List::Iterator it = lst.begin();
-            for ( ; it != lst.end() ; it++ )
-            {
-                stringList.append((*it).url());
-            }
-            if ( KToolInvocation::startServiceByDesktopPath( m_destURL.path(), stringList, &error ) > 0 )
-                KMessageBox::error( 0L, error );
+            const QStringList urlStrList = m_info->urls.toStringList();
+            if ( KToolInvocation::startServiceByDesktopPath( m_destUrl.path(), urlStrList, &error ) > 0 )
+                KMessageBox::error( parentWidget(), error );
         }
         else
         {
             // Device or Link -> adjust dest
             if ( desktopFile.hasDeviceType() && desktopFile.hasKey("MountPoint") ) {
                 QString point = desktopFile.readEntry( "MountPoint" );
-                m_destURL.setPath( point );
+                m_destUrl.setPath( point );
                 QString dev = desktopFile.readDevice();
                 QString mp = KIO::findDeviceMountPoint( dev );
                 // Is the device already mounted ?
-                if ( !mp.isNull() )
-                    doFileCopy();
+                if ( !mp.isNull() ) {
+                    doDropFileCopy();
+                }
+#ifndef Q_WS_WIN
                 else
                 {
-                    bool ro = desktopFile.readEntry( "ReadOnly", QVariant(false )).toBool();
-                    QByteArray fstype = desktopFile.readEntry( "FSType" ).toLatin1();
-#ifndef Q_WS_WIN
-                    KAutoMount* am = new KAutoMount( ro, fstype, dev, point, m_destURL.path(), false );
-                    connect( am, SIGNAL( finished() ), this, SLOT( doFileCopy() ) );
-#endif
+                    const bool ro = desktopFile.readEntry( "ReadOnly", false );
+                    const QByteArray fstype = desktopFile.readEntry( "FSType" ).toLatin1();
+                    KAutoMount* am = new KAutoMount( ro, fstype, dev, point, m_destUrl.path(), false );
+                    connect( am, SIGNAL( finished() ), this, SLOT( doDropFileCopy() ) );
                 }
+#endif
                 return;
             }
             else if ( desktopFile.hasLinkType() && desktopFile.hasKey("URL") ) {
-                m_destURL = desktopFile.readPathEntry("URL");
-                doFileCopy();
+                m_destUrl = desktopFile.readPathEntry("URL");
+                doDropFileCopy();
                 return;
             }
             // else, well: mimetype, service, servicetype or .directory. Can't really drop anything on those.
@@ -475,26 +436,26 @@ void KonqOperations::asyncDrop( const KFileItem * destItem )
     else
     {
         // Should be a local executable
-        // (If this fails, there is a bug in KFileItem::acceptsDrops)
-        kDebug(1203) << "KonqOperations::doDrop " << m_destURL.path() << "should be an executable" << endl;
-        Q_ASSERT ( access( QFile::encodeName(m_destURL.path()), X_OK ) == 0 );
+        // (If this fails, there is a bug in KFileItem::acceptsDrops / KDirModel::flags)
+        kDebug(1203) << "KonqOperations::doDrop " << m_destUrl.path() << "should be an executable" << endl;
+        Q_ASSERT ( access( QFile::encodeName(m_destUrl.path()), X_OK ) == 0 );
         KProcess proc;
-        proc << m_destURL.path() ;
+        proc << m_destUrl.path() ;
         // Launch executable for each of the files
-        KUrl::List lst = m_info->lst;
+        KUrl::List lst = m_info->urls;
         KUrl::List::Iterator it = lst.begin();
         for ( ; it != lst.end() ; it++ )
             proc << (*it).path(); // assume local files
-        kDebug(1203) << "starting " << m_destURL.path() << " with " << lst.count() << " arguments" << endl;
+        kDebug(1203) << "starting " << m_destUrl.path() << " with " << lst.count() << " arguments" << endl;
         proc.start( KProcess::DontCare );
     }
     delete this;
 }
 
-void KonqOperations::doFileCopy()
+void KonqOperations::doDropFileCopy()
 {
     assert(m_info); // setDropInfo - and asyncDrop - should have been called before asyncDrop
-    KUrl::List lst = m_info->lst;
+    const KUrl::List lst = m_info->urls;
     Qt::DropAction action = m_info->action;
     bool isDesktopFile = false;
     bool itemIsOnDesktop = false;
@@ -515,12 +476,12 @@ void KonqOperations::doFileCopy()
 
     bool linkOnly = false;
     if (isDesktopFile && !KAuthorized::authorizeKAction("run_desktop_files") &&
-        (m_destURL.path( KUrl::AddTrailingSlash ) == KGlobalSettings::desktopPath()) )
+        (m_destUrl.path( KUrl::AddTrailingSlash ) == KGlobalSettings::desktopPath()) )
     {
        linkOnly = true;
     }
 
-    if ( !mlst.isEmpty() && m_destURL.protocol() == "trash" )
+    if ( !mlst.isEmpty() && m_destUrl.protocol() == "trash" )
     {
         if ( itemIsOnDesktop && !KAuthorized::authorizeKAction("editable_desktop_icons") )
         {
@@ -537,15 +498,17 @@ void KonqOperations::doFileCopy()
             return;
         }
     }
-    else if ( allItemsAreFromTrash || m_destURL.protocol() == "trash" ) {
+    else if ( allItemsAreFromTrash || m_destUrl.protocol() == "trash" ) {
         // No point in asking copy/move/link when using dnd from or to the trash.
         action = Qt::MoveAction;
     }
     else if ( (
-        ((QApplication::keyboardModifiers() & Qt::ControlModifier) == 0) &&
-        ((QApplication::keyboardModifiers() & Qt::ShiftModifier) == 0) ) || linkOnly )
+        ((m_info->keyboardModifiers & Qt::ControlModifier) == 0) &&
+        ((m_info->keyboardModifiers & Qt::ShiftModifier) == 0) ) || linkOnly )
     {
         // Neither control nor shift are pressed => show popup menu
+
+        // TODO move this code out somehow. Allow user of KonqOperations to add his own actions...
         KonqIconViewWidget *iconView = dynamic_cast<KonqIconViewWidget*>(parent());
         bool bSetWallpaper = false;
         if ( iconView && iconView->maySetWallpaper() && lst.count() == 1 )
@@ -565,7 +528,7 @@ void KonqOperations::doFileCopy()
         bool sDeleting = KProtocolManager::supportsDeleting( url );
         bool sMoving = KProtocolManager::supportsMoving( url );
         // Check what the destination can do
-        bool dWriting = KProtocolManager::supportsWriting( m_destURL );
+        bool dWriting = KProtocolManager::supportsWriting( m_destUrl );
         if ( !dWriting )
         {
             delete this;
@@ -629,25 +592,25 @@ void KonqOperations::doFileCopy()
     KIO::Job * job = 0;
     switch ( action ) {
     case Qt::MoveAction :
-        job = KIO::move( lst, m_destURL );
+        job = KIO::move( lst, m_destUrl );
         job->setMetaData( m_info->metaData );
-        setOperation( job, m_method == TRASH ? TRASH : MOVE, lst, m_destURL );
+        setOperation( job, m_method == TRASH ? TRASH : MOVE, m_destUrl );
         (void) new KonqCommandRecorder(
             m_method == TRASH ? KonqCommand::TRASH : KonqCommand::MOVE,
-            lst, m_destURL, job );
+            lst, m_destUrl, job );
         return; // we still have stuff to do -> don't delete ourselves
     case Qt::CopyAction :
-        job = KIO::copy( lst, m_destURL );
+        job = KIO::copy( lst, m_destUrl );
         job->setMetaData( m_info->metaData );
-        setOperation( job, COPY, lst, m_destURL );
-        (void) new KonqCommandRecorder( KonqCommand::COPY, lst, m_destURL, job );
+        setOperation( job, COPY, m_destUrl );
+        (void) new KonqCommandRecorder( KonqCommand::COPY, lst, m_destUrl, job );
         return;
     case Qt::LinkAction :
         kDebug(1203) << "KonqOperations::asyncDrop lst.count=" << lst.count() << endl;
-        job = KIO::link( lst, m_destURL );
+        job = KIO::link( lst, m_destUrl );
         job->setMetaData( m_info->metaData );
-        setOperation( job, LINK, lst, m_destURL );
-        (void) new KonqCommandRecorder( KonqCommand::LINK, lst, m_destURL, job );
+        setOperation( job, LINK, m_destUrl );
+        (void) new KonqCommandRecorder( KonqCommand::LINK, lst, m_destUrl, job );
         return;
     default : kError(1203) << "Unknown action " << (int)action << endl;
     }
@@ -664,7 +627,7 @@ void KonqOperations::rename( QWidget * parent, const KUrl & oldurl, const KUrl& 
     lst.append(oldurl);
     KIO::Job * job = KIO::moveAs( oldurl, newurl, !oldurl.isLocalFile() );
     KonqOperations * op = new KonqOperations( parent );
-    op->setOperation( job, MOVE, lst, newurl );
+    op->setOperation( job, MOVE, newurl );
     (void) new KonqCommandRecorder( KonqCommand::MOVE, lst, newurl, job );
     // if moving the desktop then update config file and emit
     if ( oldurl.isLocalFile() && oldurl.path( KUrl::AddTrailingSlash ) == KGlobalSettings::desktopPath() )
@@ -678,13 +641,13 @@ void KonqOperations::rename( QWidget * parent, const KUrl & oldurl, const KUrl& 
     }
 }
 
-void KonqOperations::setOperation( KIO::Job * job, int method, const KUrl::List & /*src*/, const KUrl & dest )
+void KonqOperations::setOperation( KIO::Job * job, Operation method, const KUrl & dest )
 {
     m_method = method;
-    //m_srcURLs = src;
-    m_destURL = dest;
+    m_destUrl = dest;
     if ( job )
     {
+        job->ui()->setWindow(parentWidget());
         connect( job, SIGNAL( result( KJob * ) ),
                  SLOT( slotResult( KJob * ) ) );
         KIO::CopyJob *copyJob = dynamic_cast<KIO::CopyJob*>(job);
@@ -693,6 +656,7 @@ void KonqOperations::setOperation( KIO::Job * job, int method, const KUrl::List 
         {
             connect(copyJob, SIGNAL(aboutToCreate(KIO::Job *,const QList<KIO::CopyInfo> &)),
                  this, SLOT(slotAboutToCreate(KIO::Job *,const QList<KIO::CopyInfo> &)));
+            // TODO move this connect into the iconview!
             connect(this, SIGNAL(aboutToCreate(const QPoint &, const QList<KIO::CopyInfo> &)),
                  iconView, SLOT(slotAboutToCreate(const QPoint &, const QList<KIO::CopyInfo> &)));
         }
@@ -706,17 +670,18 @@ void KonqOperations::slotAboutToCreate(KIO::Job *, const QList<KIO::CopyInfo> &f
     emit aboutToCreate( m_info ? m_info->mousePos : m_pasteInfo ? m_pasteInfo->mousePos : QPoint(), files);
 }
 
-void KonqOperations::statURL( const KUrl & url, const QObject *receiver, const char *member )
+void KonqOperations::statUrl( const KUrl & url, const QObject *receiver, const char *member, QWidget* parent )
 {
-    KonqOperations * op = new KonqOperations( 0L );
-    op->_statURL( url, receiver, member );
+    KonqOperations * op = new KonqOperations( parent );
     op->m_method = STAT;
+    op->_statUrl( url, receiver, member );
 }
 
-void KonqOperations::_statURL( const KUrl & url, const QObject *receiver, const char *member )
+void KonqOperations::_statUrl( const KUrl & url, const QObject *receiver, const char *member )
 {
     connect( this, SIGNAL( statFinished( const KFileItem * ) ), receiver, member );
     KIO::StatJob * job = KIO::stat( url /*, false?*/ );
+    job->ui()->setWindow(parentWidget());
     connect( job, SIGNAL( result( KJob * ) ),
              SLOT( slotStatResult( KJob * ) ) );
 }
@@ -725,7 +690,6 @@ void KonqOperations::slotStatResult( KJob * job )
 {
     if ( job->error())
     {
-        static_cast<KIO::Job*>( job )->ui()->setWindow((QWidget*)parent());
         static_cast<KIO::Job*>( job )->ui()->showErrorMessage();
     }
     else
@@ -735,7 +699,7 @@ void KonqOperations::slotStatResult( KJob * job )
         emit statFinished( item );
         delete item;
     }
-    // If we're only here for a stat, we're done. But not if we used _statURL internally
+    // If we're only here for a stat, we're done. But not if we used _statUrl internally
     if ( m_method == STAT )
         delete this;
 }
@@ -744,7 +708,6 @@ void KonqOperations::slotResult( KJob * job )
 {
     if (job && job->error())
     {
-        static_cast<KIO::Job*>( job )->ui()->setWindow((QWidget*)parent());
         static_cast<KIO::Job*>( job )->ui()->showErrorMessage();
     }
     if ( m_method == EMPTYTRASH ) {
@@ -762,12 +725,12 @@ void KonqOperations::rename( QWidget * parent, const KUrl & oldurl, const QStrin
     rename( parent, oldurl, newurl );
 }
 
-void KonqOperations::newDir( QWidget * parent, const KUrl & baseURL )
+void KonqOperations::newDir( QWidget * parent, const KUrl & baseUrl )
 {
     bool ok;
     QString name = i18n( "New Folder" );
-    if ( baseURL.isLocalFile() && QFileInfo( baseURL.path( KUrl::AddTrailingSlash ) + name ).exists() )
-        name = KIO::RenameDlg::suggestName( baseURL, i18n( "New Folder" ) );
+    if ( baseUrl.isLocalFile() && QFileInfo( baseUrl.path( KUrl::AddTrailingSlash ) + name ).exists() )
+        name = KIO::RenameDlg::suggestName( baseUrl, i18n( "New Folder" ) );
 
     name = KInputDialog::getText ( i18n( "New Folder" ),
         i18n( "Enter folder name:" ), name, &ok, parent );
@@ -781,10 +744,10 @@ void KonqOperations::newDir( QWidget * parent, const KUrl & baseURL )
         else
         {
            name = KIO::encodeFileName( name );
-           url = baseURL;
+           url = baseUrl;
            url.addPath( name );
         }
-        KonqOperations::mkdir( 0L, url );
+        KonqOperations::mkdir( parent, url );
     }
 }
 
@@ -795,7 +758,7 @@ KonqMultiRestoreJob::KonqMultiRestoreJob( const KUrl::List& urls, bool showProgr
       m_urls( urls ), m_urlsIterator( m_urls.begin() ),
       m_progress( 0 )
 {
-  QTimer::singleShot(0, this, SLOT(slotStart()));
+    QTimer::singleShot(0, this, SLOT(slotStart()));
 }
 
 void KonqMultiRestoreJob::slotStart()
@@ -846,6 +809,11 @@ void KonqMultiRestoreJob::slotResult( KJob *job )
     //emit processedSize( this, m_progress );
     emitPercent( m_progress, m_urls.count() );
     slotStart();
+}
+
+QWidget* KonqOperations::parentWidget() const
+{
+    return static_cast<QWidget *>( parent() );
 }
 
 #include "konq_operations.moc"

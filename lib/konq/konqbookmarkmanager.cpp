@@ -16,27 +16,7 @@
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
-#ifndef KONQBOOKMARKMANAGER_H
-#define KONQBOOKMARKMANAGER_H
+#include "konqbookmarkmanager.h"
 
-#include <kbookmarkmanager.h>
-#include <kstandarddirs.h>
-#include <libkonq_export.h>
+KBookmarkManager * KonqBookmarkManager::s_bookmarkManager;
 
-class LIBKONQ_EXPORT KonqBookmarkManager
-{
-public:
-    static KBookmarkManager * self() {
-        if ( !s_bookmarkManager )
-        {
-            QString bookmarksFile = KStandardDirs::locateLocal("data", QLatin1String("konqueror/bookmarks.xml"));
-            s_bookmarkManager = KBookmarkManager::managerForFile( bookmarksFile, "konqueror" );
-        }
-        return s_bookmarkManager;
-    }
-
-private:
-    static KBookmarkManager *s_bookmarkManager;
-};
-
-#endif

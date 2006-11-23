@@ -32,7 +32,9 @@ set(konq_LIB_SRCS
    kivdirectoryoverlay.cc
    konq_faviconmgr.cc
    konq_filetip.cc
-   konqmimedata.cpp )
+   konqbookmarkmanager.cpp
+   konqmimedata.cpp 
+)
 
 kde4_automoc(${konq_LIB_SRCS})
 
