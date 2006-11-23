@@ -32,7 +32,6 @@ class KonqSidebar_Tree: public KonqSidebarPlugin
 			void paste();
 			void trash();
 			void del();
-			void shred();
 			void rename();
 Q_SIGNALS:
 			void openUrlRequest( const KUrl &url, const KParts::URLArgs &args = KParts::URLArgs() );

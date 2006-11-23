@@ -20,6 +20,7 @@
 #define konq_treetoplevelitem_h
 
 #include "konq_sidebartreeitem.h"
+#include <konq_operations.h>
 
 class QMimeData;
 class QStrList;
@@ -62,7 +63,6 @@ public:
     virtual void paste();
     virtual void trash();
     virtual void del();
-    virtual void shred();
     virtual void rename(); // start a rename operation
     virtual void rename( const QString & name ); // do the actual renaming
 
@@ -92,7 +92,7 @@ public:
     QString path() const { return m_path; }
 
 protected:
-    void delOperation( int method );
+    void delOperation( KonqOperations::Operation method );
     KonqSidebarTreeModule *m_module;
     QString m_path;
     QString m_comment;

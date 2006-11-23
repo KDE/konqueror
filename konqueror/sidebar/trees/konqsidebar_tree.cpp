@@ -101,12 +101,6 @@ void KonqSidebar_Tree::del()
         tree->currentItem()->del();
 }
 
-void KonqSidebar_Tree::shred()
-{
-    if (tree->currentItem())
-        tree->currentItem()->shred();
-}
-
 void KonqSidebar_Tree::rename()
 {
     Q_ASSERT( tree->currentItem() );

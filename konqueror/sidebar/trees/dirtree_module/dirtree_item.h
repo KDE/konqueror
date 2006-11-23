@@ -22,6 +22,8 @@
 #include "konq_sidebartreeitem.h"
 #include <kurl.h>
 #include <QStringList>
+#include <konq_operations.h>
+
 class QDropEvent;
 class KFileItem;
 
@@ -48,7 +50,6 @@ public:
     virtual void paste();
     virtual void trash();
     virtual void del();
-    virtual void shred();
     virtual void rename(); // start a rename operation
     void rename( const QString & name ); // do the actual renaming
 
@@ -66,7 +67,7 @@ public:
     QString id;
 
 private:
-    void delOperation( int method );
+    void delOperation( KonqOperations::Operation method );
     KFileItem *m_fileItem;
 };
 

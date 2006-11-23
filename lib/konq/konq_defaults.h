@@ -45,4 +45,3 @@
 // Confirmations for deletions
 #define DEFAULT_CONFIRMTRASH true
 #define DEFAULT_CONFIRMDELETE true
-#define DEFAULT_CONFIRMSHRED true

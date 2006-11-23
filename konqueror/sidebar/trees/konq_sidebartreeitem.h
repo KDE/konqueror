@@ -65,7 +65,6 @@ public:
     virtual void paste() {}
     virtual void trash() {}
     virtual void del() {}
-    virtual void shred() {}
     virtual void rename() {}
     virtual void rename( const QString& ) {}
 

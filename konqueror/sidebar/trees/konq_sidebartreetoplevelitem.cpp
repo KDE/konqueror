@@ -140,12 +140,7 @@ void KonqSidebarTreeTopLevelItem::del()
     delOperation( KonqOperations::DEL );
 }
 
-void KonqSidebarTreeTopLevelItem::shred()
-{
-    delOperation( KonqOperations::SHRED );
-}
-
-void KonqSidebarTreeTopLevelItem::delOperation( int method )
+void KonqSidebarTreeTopLevelItem::delOperation( KonqOperations::Operation method )
 {
     KUrl url;
     url.setPath( m_path );
