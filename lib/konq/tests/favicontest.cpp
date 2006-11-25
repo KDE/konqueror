@@ -49,7 +49,7 @@ static bool checkNetworkAccess() {
             s_networkAccess = No;
         }
     }
-    return s_networkAccess;
+    return s_networkAccess == Yes;
 }
 
 class TestFavIconMgr : public KonqFavIconMgr
@@ -126,6 +126,9 @@ void FavIconTest::testSetIconForURL()
 void FavIconTest::testIconForURL()
 {
     QString icon = KMimeType::favIconForUrl( KUrl( s_hostUrl ) );
+    if ( icon.isEmpty() && !checkNetworkAccess() )
+        QSKIP( "no network access", SkipAll );
+
     QCOMPARE( icon, QString( "favicons/www.kde.org" ) );
 }
 
