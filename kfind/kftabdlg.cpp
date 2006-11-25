@@ -425,15 +425,15 @@ void KfindTabWidget::setURL( const KUrl & url )
     dirBox->addItems(sl);
     // If the _searchPath already exists in the list we do not
     // want to add it again
-    int indx = sl.indexOf(m_url.url());
+    int indx = sl.indexOf(m_url.prettyUrl());
     if(indx == -1)
-      dirBox->addItem(m_url.url(), 0); // make it the first one
+      dirBox->addItem(m_url.prettyUrl(), 0); // make it the first one
     else
       dirBox->setCurrentIndex(indx);
   }
   else {
     QDir m_dir("/lib");
-    dirBox ->addItem( m_url.url() );
+    dirBox ->addItem( m_url.prettyUrl() );
     dirBox ->addItem( "file:" + QDir::homePath() );
     dirBox ->addItem( "file:/" );
     dirBox ->addItem( "file:/usr" );
@@ -501,15 +501,15 @@ void KfindTabWidget::loadHistory()
     dirBox->addItems(sl);
     // If the _searchPath already exists in the list we do not
     // want to add it again
-    int indx = sl.indexOf(m_url.url());
+    int indx = sl.indexOf(m_url.prettyUrl());
     if(indx == -1)
-      dirBox->addItem(m_url.url(), 0); // make it the first one
+      dirBox->addItem(m_url.prettyUrl(), 0); // make it the first one
     else
       dirBox->setCurrentIndex(indx);
   }
   else {
     QDir m_dir("/lib");
-    dirBox ->addItem( m_url.url() );
+    dirBox ->addItem( m_url.prettyUrl() );
     dirBox ->addItem( "file:" + QDir::homePath() );
     dirBox ->addItem( "file:/" );
     dirBox ->addItem( "file:/usr" );
