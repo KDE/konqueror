@@ -13,7 +13,7 @@ include_directories( ${ZLIB_INCLUDE_DIR}  )
 # Please use .cpp for new files
 set(konq_LIB_SRCS
    konq_popupmenu.cc
-   knewmenu.cc
+   knewmenu.cpp
    konq_xmlguiclient.cc
    kfileivi.cc
    konq_iconviewwidget.cc
