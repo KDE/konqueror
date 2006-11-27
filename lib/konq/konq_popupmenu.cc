@@ -557,6 +557,9 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
     if ( isCurrentTrash )
     {
         act = new KAction( KIcon("emptytrash"), i18n( "&Empty Trash Bin" ), &m_ownActions, "empytrash" );
+        KSimpleConfig trashConfig( "trashrc", true );
+        trashConfig.setGroup( "Status" );
+        act->setEnabled( !trashConfig.readEntry( "Empty", true ) );
         connect(act, SIGNAL(triggered()), this, SLOT(slotPopupEmptyTrashBin()));
         KonqXMLGUIClient::addAction( act );
     }
