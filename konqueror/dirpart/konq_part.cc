@@ -27,11 +27,12 @@
 #include <konq_settings.h>
 #include <kparts/genericfactory.h>
 #include <kdirmodel.h>
+#include <kglobalsettings.h>
+#include <kmimetyperesolver.h>
 
 #include "konq_selectionmodel.h"
 #include "konq_iconview.h"
 #include "konq_listview.h"
-#include <kglobalsettings.h>
 
 K_EXPORT_COMPONENT_FACTORY( konq_part, KonqFactory )
 
@@ -69,6 +70,9 @@ KonqPart::KonqPart( QWidget* parentWidget, QObject* parent, const QStringList& a
 #endif
 
     setWidget( m_view );
+
+    m_model->dirLister()->setDelayedMimeTypes(true);
+    new KMimeTypeResolver( m_view, m_model );
 
     m_model->dirLister()->setMainWindow( widget()->topLevelWidget() );
     m_fileTip->setOptions( settings->showFileTips(), settings->showPreviewsInFileTips(), settings->numFileTips() );
