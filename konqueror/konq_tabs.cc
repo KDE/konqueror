@@ -84,18 +84,18 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
                             i18n("&New Tab"),
                             m_pViewManager->mainWindow(),
                             SLOT( slotAddTab() ),
-                            m_pViewManager->mainWindow()->action("newtab")->shortcut() );
+                            m_pViewManager->mainWindow()->action("newtab")->shortcut().primary() );
   m_pPopupMenu->insertItem( SmallIconSet( "tab_duplicate" ),
                             i18n("&Duplicate Tab"),
                             m_pViewManager->mainWindow(),
                             SLOT( slotDuplicateTabPopup() ),
-                            m_pViewManager->mainWindow()->action("duplicatecurrenttab")->shortcut(),
+                            m_pViewManager->mainWindow()->action("duplicatecurrenttab")->shortcut().primary(),
                             DUPLICATE_ID );
   m_pPopupMenu->insertItem( SmallIconSet( "reload" ),
                             i18n( "&Reload Tab" ),
                             m_pViewManager->mainWindow(),
                             SLOT( slotReloadPopup() ),
-                            m_pViewManager->mainWindow()->action("reload")->shortcut(), RELOAD_ID );
+                            m_pViewManager->mainWindow()->action("reload")->shortcut().primary(), RELOAD_ID );
   m_pPopupMenu->addSeparator();
   m_pSubPopupMenuTab = new QMenu( this );
   m_pPopupMenu->insertItem( i18n("Other Tabs" ), m_pSubPopupMenuTab, OTHERTABS_ID );
@@ -106,14 +106,14 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
                             i18n("D&etach Tab"),
                             m_pViewManager->mainWindow(),
                             SLOT( slotBreakOffTabPopup() ),
-                            m_pViewManager->mainWindow()->action("breakoffcurrenttab")->shortcut(),
+                            m_pViewManager->mainWindow()->action("breakoffcurrenttab")->shortcut().primary(),
                             BREAKOFF_ID );
   m_pPopupMenu->addSeparator();
   m_pPopupMenu->insertItem( SmallIconSet( "tab_remove" ),
                             i18n("&Close Tab"),
                             m_pViewManager->mainWindow(),
                             SLOT( slotRemoveTabPopup() ),
-                            m_pViewManager->mainWindow()->action("removecurrenttab")->shortcut(),
+                            m_pViewManager->mainWindow()->action("removecurrenttab")->shortcut().primary(),
                             CLOSETAB_ID );
   connect( this, SIGNAL( contextMenu( QWidget *, const QPoint & ) ),
            SLOT(slotContextMenu( QWidget *, const QPoint & ) ) );
@@ -408,7 +408,7 @@ void KonqFrameTabs::refreshSubPopupMenuTab()
                                     i18n( "&Reload All Tabs" ),
                                     m_pViewManager->mainWindow(),
                                     SLOT( slotReloadAllTabs() ),
-                                    m_pViewManager->mainWindow()->action("reload_all_tabs")->shortcut() );
+                                    m_pViewManager->mainWindow()->action("reload_all_tabs")->shortcut().primary() );
     m_pSubPopupMenuTab->addSeparator();
     foreach (KonqFrameBase* frameBase, *m_pChildFrameList)
     {
@@ -430,7 +430,7 @@ void KonqFrameTabs::refreshSubPopupMenuTab()
 				      i18n( "Close &Other Tabs" ),
 				      m_pViewManager->mainWindow(),
 				      SLOT( slotRemoveOtherTabsPopup() ),
-				      m_pViewManager->mainWindow()->action("removeothertabs")->shortcut() );
+				      m_pViewManager->mainWindow()->action("removeothertabs")->shortcut().primary() );
 }
 
 void KonqFrameTabs::slotCloseRequest( QWidget *w )

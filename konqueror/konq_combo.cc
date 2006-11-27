@@ -415,7 +415,7 @@ bool KonqCombo::eventFilter( QObject *o, QEvent *ev )
                 return false;
             }
 
-            KShortcut key = e->key() | e->modifiers();
+            KShortcut key( e->key() | e->modifiers() );
 
             if ( key == KStdAccel::deleteWordBack() ||
                  key == KStdAccel::deleteWordForward() ||
@@ -440,7 +440,7 @@ void KonqCombo::keyPressEvent( QKeyEvent *e )
     KHistoryCombo::keyPressEvent( e );
     // we have to set it as temporary, otherwise we wouldn't get our nice
     // pixmap. Yes, QComboBox still sucks.
-    KShortcut key = e->key() | e->modifiers();
+    KShortcut key( e->key() | e->modifiers() );
     if ( key == KStdAccel::rotateUp() ||
          key == KStdAccel::rotateDown() )
          setTemporary( currentText() );

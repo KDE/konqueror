@@ -3349,7 +3349,7 @@ bool KonqMainWindow::eventFilter(QObject*obj,QEvent *ev)
       // prevents the lineedit from getting this event. IMHO the accel
       // should be disabled in favor of the focus-widget.
       KAction *duplicate = actionCollection()->action("duplicate_window");
-      if ( duplicate->shortcut() == QKeySequence(Qt::CTRL+Qt::Key_D) )
+      if ( duplicate->shortcut().contains( QKeySequence(Qt::CTRL+Qt::Key_D) ))
           duplicate->setEnabled( false );
 
       if (slotMetaObject && slotMetaObject->indexOfSlot("cut()") != -1)
@@ -3390,7 +3390,7 @@ bool KonqMainWindow::eventFilter(QObject*obj,QEvent *ev)
       // we use new_window as reference, as it's always in the same state
       // as duplicate_window
       KAction *duplicate = actionCollection()->action("duplicate_window");
-      if ( duplicate->shortcut() == QKeySequence(Qt::CTRL+Qt::Key_D) )
+      if ( duplicate->shortcut().contains( QKeySequence(Qt::CTRL+Qt::Key_D) ) )
           duplicate->setEnabled( actionCollection()->action("new_window")->isEnabled() );
 
       if (slotMetaObject && slotMetaObject->indexOfSlot("cut()") != -1)
@@ -3844,12 +3844,12 @@ void KonqMainWindow::initActions()
 
   m_ptaFullScreen = KStdAction::fullScreen( 0, 0, actionCollection(), this );
   KShortcut fullScreenShortcut = m_ptaFullScreen->shortcut();
-  fullScreenShortcut.append( Qt::Key_F11 );
+  fullScreenShortcut.setAlternate( Qt::Key_F11 );
   m_ptaFullScreen->setShortcut( fullScreenShortcut );
   connect( m_ptaFullScreen, SIGNAL( toggled( bool )), this, SLOT( slotUpdateFullScreen( bool )));
 
   KShortcut reloadShortcut = KStdAccel::shortcut(KStdAccel::Reload);
-  reloadShortcut.append(Qt::CTRL + Qt::Key_R);
+  reloadShortcut.setAlternate(Qt::CTRL + Qt::Key_R);
   m_paReload = new KAction(KIcon("reload"),  i18n( "&Reload" ), actionCollection(), "reload" );
   connect(m_paReload, SIGNAL(triggered(bool)), SLOT( slotReload() ));
   m_paReload->setShortcut(reloadShortcut);
@@ -3884,7 +3884,7 @@ void KonqMainWindow::initActions()
   m_paDelete = new KAction(KIcon("editdelete"),  i18n( "&Delete" ), actionCollection(), "del" );
   m_paDelete->setShortcut(Qt::SHIFT+Qt::Key_Delete);
 
-  m_paAnimatedLogo = new KonqLogoAction( i18n("Animated Logo"), 0, this, SLOT( slotDuplicateWindow() ), actionCollection(), "animated_logo" );
+  m_paAnimatedLogo = new KonqLogoAction( i18n("Animated Logo"), KShortcut(0), this, SLOT( slotDuplicateWindow() ), actionCollection(), "animated_logo" );
 
   // Location bar
   m_locationLabel = new KonqDraggableLabel( this, i18n("L&ocation: ") );
