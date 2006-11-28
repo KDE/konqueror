@@ -191,7 +191,7 @@ private:
 	QHBoxLayout *m_layout;
 	KMenu *m_buttonPopup;
 	QAction* m_buttonPopupTitle;
-	Q3PopupMenu *m_menu;
+	QMenu *m_menu;
 	QPointer<ButtonInfo> m_activeModule;
 	QPointer<ButtonInfo> m_currentButton;
 	

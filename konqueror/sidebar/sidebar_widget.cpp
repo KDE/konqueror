@@ -23,7 +23,7 @@
 #include <QLayout>
 #include <QStringList>
 #include <QSplitter>
-#include <Q3PopupMenu>
+#include <QMenu>
 
 #include <klocale.h>
 #include <ksimpleconfig.h>
@@ -264,7 +264,7 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, bool 
 #ifdef __GNUC__
 #warning switch to QMenu when KMultiTabBar ported
 #endif	
-	m_menu = new Q3PopupMenu(this);
+	m_menu = new QMenu(this);
 	m_menu->setIcon(SmallIconSet("configure"));
 	m_menu->setTitle(i18n("Configure Navigation Panel"));
 
