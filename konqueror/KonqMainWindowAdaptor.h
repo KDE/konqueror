@@ -59,6 +59,9 @@ public slots:
 
     void newTabASN( const QString& url, const QByteArray& startup_id, bool tempFile );
 
+    void splitViewHorizontally();
+    void splitViewVertically();
+
     /**
      * Reloads the current view.
      */

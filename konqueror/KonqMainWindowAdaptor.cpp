@@ -78,4 +78,15 @@ QDBusObjectPath KonqMainWindowAdaptor::currentPart()
   return QDBusObjectPath( view->partObjectPath() );
 }
 
+
+void KonqMainWindowAdaptor::splitViewHorizontally()
+{
+    m_pMainWindow->slotSplitViewHorizontal();
+}
+
+void KonqMainWindowAdaptor::splitViewVertically()
+{
+    m_pMainWindow->slotSplitViewVertical();
+}
+
 #include "KonqMainWindowAdaptor.moc"

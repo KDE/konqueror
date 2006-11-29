@@ -421,6 +421,8 @@ public Q_SLOTS:
   void slotGoHistoryActivated( int steps, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers );
 
   void slotAddTab();
+  void slotSplitViewHorizontal();
+  void slotSplitViewVertical();
 
 protected Q_SLOTS:
   void slotViewCompleted( KonqView * view );
@@ -430,8 +432,6 @@ protected Q_SLOTS:
   void slotFileNewAboutToShow();
   void slotLocationLabelActivated();
 
-  void slotSplitViewHorizontal();
-  void slotSplitViewVertical();
   void slotDuplicateTab();
   void slotDuplicateTabPopup();
 
