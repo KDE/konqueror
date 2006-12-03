@@ -5,7 +5,6 @@
 #include <klocale.h>
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
-#include <kopenwith.h>
 
 #include "kfinddlg.h"
 #include "version.h"

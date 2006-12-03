@@ -31,7 +31,7 @@
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <knotification.h>
-#include <kopenwith.h>
+#include <kopenwithdialog.h>
 
 #include "kservicelistwidget.h"
 #include "kserviceselectdlg.h"
@@ -240,7 +240,7 @@ void KServiceListWidget::addService()
   KService::Ptr service;
   if ( m_kind == SERVICELIST_APPLICATIONS )
   {
-      KOpenWithDlg dlg(m_item->name(), QString(), 0L);
+      KOpenWithDialog dlg(m_item->name(), QString(), 0L);
       dlg.setSaveNewApplications(true);
       if (dlg.exec() != QDialog::Accepted)
           return;
