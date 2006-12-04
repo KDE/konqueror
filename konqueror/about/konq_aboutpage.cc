@@ -412,7 +412,7 @@ KonqAboutPage::KonqAboutPage( //KonqMainWindow *
     else
 	setCharset("iso-8859-1", true);
     // about:blah isn't a kioslave -> disable View source
-    KAction * act = actionCollection()->action("viewDocumentSource");
+    QAction * act = actionCollection()->action("viewDocumentSource");
     if ( act )
       act->setEnabled( false );
 }

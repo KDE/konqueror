@@ -124,7 +124,7 @@ public:
   /**
    * Reimplemented for internal purpose
    */
-  virtual KAction *action( const QDomElement &element ) const;
+  virtual QAction *action( const QDomElement &element ) const;
 
 
   virtual KActionCollection *actionCollection() const;
