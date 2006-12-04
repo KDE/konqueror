@@ -132,9 +132,9 @@ PopupMenuGUIClient::~PopupMenuGUIClient()
 {
 }
 
-KAction *PopupMenuGUIClient::action( const QDomElement &element ) const
+QAction *PopupMenuGUIClient::action( const QDomElement &element ) const
 {
-  KAction *res = KXMLGUIClient::action( element );
+  QAction *res = KXMLGUIClient::action( element );
 
   if ( !res )
     res = m_mainWindow->action( element );
@@ -220,7 +220,7 @@ ToggleViewGUIClient::~ToggleViewGUIClient()
 {
 }
 
-QList<KAction*> ToggleViewGUIClient::actions() const
+QList<QAction*> ToggleViewGUIClient::actions() const
 {
   return m_actions.values();
 }
@@ -313,7 +313,7 @@ void ToggleViewGUIClient::slotViewAdded( KonqView *view )
 {
   QString name = view->service()->desktopEntryName();
 
-  KAction *action = m_actions.value( name );
+  QAction *action = m_actions.value( name );
 
   if ( action )
   {
@@ -347,7 +347,7 @@ void ToggleViewGUIClient::slotViewRemoved( KonqView *view )
 {
   QString name = view->service()->desktopEntryName();
 
-  KAction *action = m_actions.value( name );
+  QAction *action = m_actions.value( name );
 
   if ( action )
   {

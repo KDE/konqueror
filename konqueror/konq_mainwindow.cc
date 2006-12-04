@@ -1874,7 +1874,7 @@ void KonqMainWindow::slotGoAutostart()
 
 void KonqMainWindow::slotGoHistory()
 {
-  KAction *a = m_toggleViewGUIClient->action("konq_sidebartng");
+  QAction *a = m_toggleViewGUIClient->action("konq_sidebartng");
   if (!a) {
     KMessageBox::sorry(0, i18n("Your sidebar is not functional or unavailable."), i18n("Show History Sidebar"));
     return;
@@ -2072,7 +2072,7 @@ void KonqMainWindow::applyKonqMainWindowSettings()
   {
     // Find the action by name
   //    KAction * act = m_toggleViewGUIClient->actionCollection()->action( (*togIt).toLatin1() );
-    KAction *act = m_toggleViewGUIClient->action( *togIt );
+    QAction *act = m_toggleViewGUIClient->action( *togIt );
     if ( act )
       act->trigger();
     else
@@ -2164,7 +2164,7 @@ void KonqMainWindow::slotPartActivated( KParts::Part *part )
 
     for ( ; it != itEnd ; ++it )
     {
-      KAction * act = actionCollection()->action( it.key().data() );
+      QAction * act = actionCollection()->action( it.key().data() );
       Q_ASSERT(act);
       if (act)
         act->setEnabled( false );
@@ -3348,8 +3348,8 @@ bool KonqMainWindow::eventFilter(QObject*obj,QEvent *ev)
       // but the duplicate_window action also has Ctrl-D as accel and
       // prevents the lineedit from getting this event. IMHO the accel
       // should be disabled in favor of the focus-widget.
-      KAction *duplicate = actionCollection()->action("duplicate_window");
-      if ( duplicate->shortcut().contains( QKeySequence(Qt::CTRL+Qt::Key_D) ))
+      QAction *duplicate = actionCollection()->action("duplicate_window");
+      if ( duplicate->shortcuts().contains( QKeySequence(Qt::CTRL+Qt::Key_D) ))
           duplicate->setEnabled( false );
 
       if (slotMetaObject && slotMetaObject->indexOfSlot("cut()") != -1)
@@ -3389,8 +3389,8 @@ bool KonqMainWindow::eventFilter(QObject*obj,QEvent *ev)
       // see above in FocusIn for explanation
       // we use new_window as reference, as it's always in the same state
       // as duplicate_window
-      KAction *duplicate = actionCollection()->action("duplicate_window");
-      if ( duplicate->shortcut().contains( QKeySequence(Qt::CTRL+Qt::Key_D) ) )
+      QAction *duplicate = actionCollection()->action("duplicate_window");
+      if ( duplicate->shortcuts().contains( QKeySequence(Qt::CTRL+Qt::Key_D) ) )
           duplicate->setEnabled( actionCollection()->action("new_window")->isEnabled() );
 
       if (slotMetaObject && slotMetaObject->indexOfSlot("cut()") != -1)
@@ -3492,7 +3492,7 @@ void KonqMainWindow::slotUpdateFullScreen( bool set )
     {
         //Are we plugged here, in a visible toolbar?
         if (bar->isVisible() &&
-            action( "fullscreen" )->isPlugged(bar))
+            action( "fullscreen" )->associatedWidgets().contains(bar))
         {
             haveFullScreenButton = true;
             break;
@@ -3501,7 +3501,7 @@ void KonqMainWindow::slotUpdateFullScreen( bool set )
 
     if (!haveFullScreenButton)
     {
-        QList<KAction*> lst;
+        QList<QAction*> lst;
         lst.append( m_ptaFullScreen );
         plugActionList( "fullscreen", lst );
     }
@@ -3572,7 +3572,7 @@ void KonqMainWindow::setPageSecurity( PageSecurity pageSecurity )
 void KonqMainWindow::showPageSecurity()
 {
     if ( m_currentView && m_currentView->part() ) {
-      KAction *act = m_currentView->part()->action( "security" );
+      QAction *act = m_currentView->part()->action( "security" );
       if ( act )
         act->trigger();
     }
@@ -3920,7 +3920,7 @@ void KonqMainWindow::initActions()
 
   m_pBookmarkMenu = new KonqBookmarkMenu( KonqBookmarkManager::self(), m_pBookmarksOwner, m_pamBookmarks, m_bookmarksActionCollection );
 
-  KAction *addBookmark = actionCollection()->action("add_bookmark");
+  QAction *addBookmark = actionCollection()->action("add_bookmark");
   if (addBookmark)
      addBookmark->setText(i18n("Bookmark This Location"));
 
@@ -4181,7 +4181,7 @@ void KonqMainWindow::updateViewActions()
       connect(m_paNewDir, SIGNAL(triggered(bool) ), SLOT( slotNewDir() ));
       m_paNewDir->setShortcut(Qt::Key_F10);
 
-      QList<KAction*> lst;
+      QList<QAction*> lst;
       lst.append( m_paCopyFiles );
       lst.append( m_paMoveFiles );
       m_paCopyFiles->setEnabled( false );
@@ -4234,7 +4234,7 @@ void KonqMainWindow::connectExtension( KParts::BrowserExtension *ext )
 
   for ( ; it != itEnd ; ++it )
   {
-    KAction * act = actionCollection()->action( it.key().data() );
+    QAction * act = actionCollection()->action( it.key().data() );
     //kDebug(1202) << it.key() << endl;
     if ( act )
     {
@@ -4266,7 +4266,7 @@ void KonqMainWindow::disconnectExtension( KParts::BrowserExtension *ext )
 
   for ( ; it != itEnd ; ++it )
   {
-    KAction * act = actionCollection()->action( it.key().data() );
+    QAction * act = actionCollection()->action( it.key().data() );
     //kDebug(1202) << it.key() << endl;
     if ( act && ext->metaObject()->indexOfSlot( it.key()+"()" ) != -1 )
     {
@@ -4289,7 +4289,7 @@ void KonqMainWindow::slotTrashActivated( Qt::MouseButtons, Qt::KeyboardModifiers
 
 void KonqMainWindow::enableAction( const char * name, bool enabled )
 {
-  KAction * act = actionCollection()->action( name );
+  QAction * act = actionCollection()->action( name );
   if (!act)
     kWarning(1202) << "Unknown action " << name << " - can't enable" << endl;
   else
@@ -4315,7 +4315,7 @@ void KonqMainWindow::enableAction( const char * name, bool enabled )
 
 void KonqMainWindow::setActionText( const char * name, const QString& text )
 {
-  KAction * act = actionCollection()->action( name );
+  QAction * act = actionCollection()->action( name );
   if (!act)
     kWarning(1202) << "Unknown action " << name << " - can't enable" << endl;
   else
@@ -4338,12 +4338,12 @@ void KonqMainWindow::enableAllActions( bool enable )
   kDebug(1202) << "KonqMainWindow::enableAllActions " << enable << endl;
   KParts::BrowserExtension::ActionSlotMap * actionSlotMap = KParts::BrowserExtension::actionSlotMapPtr();
 
-  QList<KAction *> actions = actionCollection()->actions();
-  QList<KAction *>::Iterator it = actions.begin();
-  QList<KAction *>::Iterator end = actions.end();
+  QList<QAction *> actions = actionCollection()->actions();
+  QList<QAction *>::Iterator it = actions.begin();
+  QList<QAction *>::Iterator end = actions.end();
   for (; it != end; ++it )
   {
-    KAction *act = *it;
+    QAction *act = *it;
     if ( !act->objectName().startsWith("options_configure") /* do not touch the configureblah actions */
          && ( !enable || !actionSlotMap->contains( act->objectName().toLatin1() ) ) ) /* don't enable BE actions */
       act->setEnabled( enable );
@@ -4369,7 +4369,7 @@ void KonqMainWindow::enableAllActions( bool enable )
 
       if (m_toggleViewGUIClient)
       {
-          QList<KAction*> actions = m_toggleViewGUIClient->actions();
+          QList<QAction*> actions = m_toggleViewGUIClient->actions();
           for (int i = 0; i < actions.size(); ++i) {
             actions.at(i)->setEnabled( true );
           }
@@ -4397,7 +4397,7 @@ void KonqMainWindow::disableActionsNoView()
     m_paLinkView->setEnabled( false );
     if (m_toggleViewGUIClient)
     {
-        QList<KAction*> actions = m_toggleViewGUIClient->actions();
+        QList<QAction*> actions = m_toggleViewGUIClient->actions();
         for (int i = 0; i < actions.size(); ++i) {
             actions.at(i)->setEnabled( false );
         }
@@ -4413,7 +4413,7 @@ void KonqMainWindow::disableActionsNoView()
                                          "go_url", "go_media", "go_history", "options_configure_extensions", 0 };
     for ( int i = 0 ; s_enActions[i] ; ++i )
     {
-        KAction * act = action(s_enActions[i]);
+        QAction * act = action(s_enActions[i]);
         if (act)
             act->setEnabled( true );
     }
@@ -5138,7 +5138,7 @@ void KonqMainWindow::saveToolBarServicesMap()
 
 void KonqMainWindow::plugViewModeActions()
 {
-  QList<KAction*> lst;
+  QList<QAction*> lst;
   lst.append( m_viewModeMenu );
   plugActionList( "viewmode", lst );
   // display the toolbar viewmode icons only for inode/directory, as here we have dedicated icons
@@ -5316,8 +5316,8 @@ void KonqMainWindow::slotOpenURL( const KUrl& url )
 
 bool KonqMainWindow::sidebarVisible() const
 {
-KAction *a = m_toggleViewGUIClient->action("konq_sidebartng");
-return (a && static_cast<KToggleAction*>(a)->isChecked());
+    QAction *a = m_toggleViewGUIClient->action("konq_sidebartng");
+    return (a && static_cast<KToggleAction*>(a)->isChecked());
 }
 
 void KonqMainWindow::slotAddWebSideBar(const KUrl& url, const QString& name)
@@ -5327,7 +5327,7 @@ void KonqMainWindow::slotAddWebSideBar(const KUrl& url, const QString& name)
 
     kDebug(1202) << "Requested to add URL " << url << " [" << name << "] to the sidebar!" << endl;
 
-    KAction *a = m_toggleViewGUIClient->action("konq_sidebartng");
+    QAction *a = m_toggleViewGUIClient->action("konq_sidebartng");
     if (!a) {
         KMessageBox::sorry(0, i18n("Your sidebar is not functional or unavailable. A new entry cannot be added."), i18n("Web Sidebar"));
         return;

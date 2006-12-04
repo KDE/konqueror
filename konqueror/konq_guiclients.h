@@ -25,7 +25,7 @@
 #include <QHash>
 #include <kservice.h>
 
-class KAction;
+class QAction;
 class KActionCollection;
 class KonqMainWindow;
 class KonqView;
@@ -59,7 +59,7 @@ public:
                       bool isIntoTrash, bool doTabHandling );
   virtual ~PopupMenuGUIClient();
 
-  virtual KAction *action( const QDomElement &element ) const;
+  virtual QAction *action( const QDomElement &element ) const;
 
 private:
   void addEmbeddingService( QDomElement &menu, int idx, const QString &name, const KService::Ptr &service );
@@ -78,8 +78,8 @@ public:
 
   bool empty() const { return m_empty; }
 
-  QList<KAction*> actions() const;
-  KAction *action( const QString &name ) { return m_actions[ name ]; }
+  QList<QAction*> actions() const;
+  QAction *action( const QString &name ) { return m_actions[ name ]; }
 
   void saveConfig( bool add, const QString &serviceName );
 
@@ -89,7 +89,7 @@ private Q_SLOTS:
   void slotViewRemoved( KonqView *view );
 private:
   KonqMainWindow *m_mainWindow;
-  QHash<QString,KAction*> m_actions;
+  QHash<QString,QAction*> m_actions;
   bool m_empty;
   QMap<QString,bool> m_mapOrientation;
 };

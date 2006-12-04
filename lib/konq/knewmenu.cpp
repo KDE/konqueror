@@ -263,8 +263,8 @@ void KNewMenu::fillMenu()
 
             bool bSkip = false;
 
-            QList<KAction*> actions = d->m_actionCollection->actions();
-            QList<KAction*>::Iterator it = actions.begin();
+            QList<QAction*> actions = d->m_actionCollection->actions();
+            QList<QAction*>::Iterator it = actions.begin();
             for( ; it != actions.end() && !bSkip; ++it )
             {
                 if ( (*it)->text() == (*templ).text )

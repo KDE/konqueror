@@ -53,6 +53,7 @@
 #include <ktogglefullscreenaction.h>
 
 class QFile;
+class QAction;
 class KAction;
 class KActionCollection;
 class KActionMenu;
@@ -622,7 +623,7 @@ private: // members
 
   KAction *m_paSaveViewProfile;
   KToggleAction *m_paSaveViewPropertiesLocally;
-  KAction *m_paRemoveLocalProperties;
+  QAction *m_paRemoveLocalProperties;
 
   KAction *m_paSplitViewHor;
   KAction *m_paSplitViewVer;
@@ -734,10 +735,10 @@ private: // members
 
   QString m_initialFrameName;
 
-  QList<KAction *> m_openWithActions;
+  QList<QAction *> m_openWithActions;
   KActionMenu *m_viewModeMenu;
   QActionGroup* m_viewModesGroup;
-  QList<KAction*> m_toolBarViewModeActions; // basically holds three KonqViewActions, one of
+  QList<QAction*> m_toolBarViewModeActions; // basically holds three KonqViewActions, one of
                                               // iconview, one for listview, and one for externals
   QActionGroup* m_toolBarViewModesGroup;
   QList<KToggleAction *> m_viewModeActions;

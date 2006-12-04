@@ -1081,11 +1081,11 @@ KPropertiesDialog* KonqPopupMenu::showPropertiesDialog()
     return new KPropertiesDialog( m_lstItems, d->m_parentWidget );
 }
 
-KAction *KonqPopupMenu::action( const QDomElement &element ) const
+QAction *KonqPopupMenu::action( const QDomElement &element ) const
 {
   QByteArray name = element.attribute( attrName ).toLatin1();
 
-  KAction *res = m_ownActions.action( name.data() );
+  QAction *res = m_ownActions.action( name.data() );
 
   if ( !res )
     res = m_actions.action( name.data() );
