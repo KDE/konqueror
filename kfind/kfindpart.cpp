@@ -135,7 +135,8 @@ void KFindPart::removeFile(KFileItem *item)
       listiter.append(iter);
   }
   
-  emit newItems(listiter);
+  if (listiter.count())
+    emit newItems(listiter);
   emit finished();
 }
 
@@ -145,7 +146,8 @@ void KFindPart::newFiles(const KFileItemList&)
     return;
   emit started();
   emit clear();
-  emit newItems(m_lstFileItems);
+  if (m_lstFileItems.count())
+    emit newItems(m_lstFileItems);
   emit finished();
 }
 
