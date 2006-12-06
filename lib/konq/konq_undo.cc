@@ -60,7 +60,7 @@ public:
     KonqUndoJob() : KIO::Job( true ) { KonqUndoManager::incRef(); };
     virtual ~KonqUndoJob() { KonqUndoManager::decRef(); }
 
-    virtual void kill( bool q) { KonqUndoManager::self()->stopUndo( true ); KIO::Job::doKill(); }
+    virtual void kill( bool ) { KonqUndoManager::self()->stopUndo( true ); KIO::Job::doKill(); }
 };
 
 class KonqCommandRecorder::KonqCommandRecorderPrivate
