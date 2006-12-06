@@ -17,7 +17,7 @@
         <number>0</number>
       </property>
       <item>
-        <widget class="Q3GroupBox" name="gbLimits" >
+        <widget class="QGroupBox" name="gbLimits" >
           <property name="title" >
             <string>Limits</string>
           </property>
@@ -71,7 +71,7 @@
         </widget>
       </item>
       <item>
-        <widget class="Q3GroupBox" name="gbFonts" >
+        <widget class="QGroupBox" name="gbFonts" >
           <property name="title" >
             <string>Custom Fonts For</string>
           </property>
@@ -129,7 +129,7 @@
         </widget>
       </item>
       <item>
-        <widget class="Q3GroupBox" name="gbDetails" >
+        <widget class="QGroupBox" name="gbDetails" >
           <property name="title" >
             <string>Details</string>
           </property>
