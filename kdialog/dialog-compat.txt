@@ -1,0 +1,613 @@
+u	It would be very useful in some circumstances if kdialog 
+could be used as a direct replacement for dialog and/or xdialog.
+
+In general, the differences between the kdialog we shipped with
+KDE3 and the dialog / xdialog options are pretty minor, except
+for two things:
+1. KDE3 kdialog doesn't accept (and doesn't need) the size options
+(height and width). We don't need them because of the use of layouts
+in KDE.
+2. There are some dialog types that aren't supported by KDE3 kdialog.
+
+There is more than one kind of dialog, and they take different options.
+See below for the cdialog options:
+ - - - -
+cdialog (ComeOn Dialog!) version 1.0-20051107
+Copyright (C) 2005 Thomas E. Dickey
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+* Display dialog boxes from shell scripts *
+
+Usage: dialog <options> { --and-widget <options> }
+where options are "common" options, followed by "box" options
+
+Special options:
+  [--create-rc "file"]
+Common options:
+  [--aspect <ratio>] [--backtitle <backtitle>] [--begin <y> <x>]
+  [--cancel-label <str>] [--clear] [--colors] [--cr-wrap]
+  [--default-item <str>] [--defaultno] [--exit-label <str>]
+  [--extra-button] [--extra-label <str>] [--help-button]
+  [--help-label <str>] [--help-status] [--ignore] [--input-fd <fd>]
+  [--insecure] [--item-help] [--keep-window] [--max-input <n>]
+  [--no-cancel] [--no-collapse] [--no-kill] [--no-label <str>]
+  [--no-shadow] [--ok-label <str>] [--output-fd <fd>] [--print-maxsize]
+  [--print-size] [--print-version] [--separate-output]
+  [--separate-widget <str>] [--shadow] [--single-quoted] [--size-err]
+  [--sleep <secs>] [--stderr] [--stdout] [--tab-correct] [--tab-len <n>]
+  [--timeout <secs>] [--title <title>] [--trim] [--visit-items]
+  [--version] [--yes-label <str>]
+Box options:
+  --calendar     <text> <height> <width> <day> <month> <year>
+  --checklist    <text> <height> <width> <list height> <tag1> <item1> <status1>...
+  --form         <text> <height> <width> <form height> <label1> <l_y1> <l_x1> <item1> <i_y1> <i_x1> <flen1> <ilen1>...
+  --fselect      <filepath> <height> <width>
+  --gauge        <text> <height> <width> [<percent>]
+  --infobox      <text> <height> <width>
+  --inputbox     <text> <height> <width> [<init>]
+  --inputmenu    <text> <height> <width> <menu height> <tag1> <item1>...
+  --menu         <text> <height> <width> <menu height> <tag1> <item1>...
+  --msgbox       <text> <height> <width>
+  --passwordbox  <text> <height> <width> [<init>]
+  --pause        <text> <height> <width> <seconds>
+  --radiolist    <text> <height> <width> <list height> <tag1> <item1> <status1>...
+  --tailbox      <file> <height> <width>
+  --tailboxbg    <file> <height> <width>
+  --textbox      <file> <height> <width>
+  --timebox      <text> <height> <width> <hour> <minute> <second>
+  --yesno        <text> <height> <width>
+
+Auto-size with height and width = 0. Maximize with height and width = -1.
+Global-auto-size if also menu_height/list_height = 0.
+
+ - - - -
+
+
+The Dragonfly BSD version (and presumably other BSD flavours)
+takes a different set of options.
+
+NAME
+
+       dialog - display dialog boxes from shell scripts
+
+
+SYNOPSIS
+
+       dialog --clear
+       dialog --create-rc file
+       dialog  [ --title title ] [ --clear ] [ --hline line ] [ --hfile file ]
+       box-options
+
+
+DESCRIPTION
+
+       Dialog is a program which allows you to present a variety of  questions
+       or  display  messages in dialog box form from a shell script.  The fol-
+       lowing types of dialog objects are currently supported:
+
+       yes/no box, menu box, input box,  message  box,  text  box,  info  box,
+       checklist box, program box, ftree and tree boxes.
+
+
+OPTIONS
+
+       --clear
+              The screen will be cleared to the screen attribute on exit.
+
+       --create-rc file
+              Since  dialog  supports run-time configuration, this can be used
+              to dump a sample configuration file to  the  file  specified  by
+              file.
+
+       --title title
+              Specifies  a title string to be displayed at the top of the dia-
+              log box.
+
+       --hline line
+              Specifies a line string to be displayed at  the  bottom  of  the
+              dialog box.
+
+       --hfile file
+              Specifies a file to be displayed by pressing ? or F1.
+
+       Box Options
+
+       --yesno text height width
+              A yes/no dialog box of size height rows by width columns will be
+              displayed. The string specified by text is displayed inside  the
+              dialog  box.  If  this string is too long to fit in one line, it
+              will be automatically divided into multiple lines at the  appro-
+              priate  points.  The text string may also contain the sub-string
+              "\n" or newline characters `\n' to control line breaking explic-
+              itly.   This  dialog  box  is  useful  for asking questions that
+              require the user to answer either yes or no.  The dialog box has
+              a  Yes  button  and  a  No  button, in which the user can switch
+              between by pressing the TAB key.
+
+       --msgbox text height width
+              A message box is very similar to a yes/no box.  The only differ-
+              ence  between  a  message box and a yes/no box is that a message
+              box has only a single OK button. You can use this dialog box  to
+              display  any  message  you like.  After reading the message, the
+              user can press the ENTER key so that dialog will  exit  and  the
+              calling shell script can continue its operation.
+
+       --infobox text height width
+              An  info box is basically a message box.  However, in this case,
+              dialog will exit immediately after displaying the message to the
+              user.  The  screen is not cleared when dialog exits, so that the
+              message will remain on the screen until the calling shell script
+              clears it later. This is useful when you want to inform the user
+              that some operations are carrying on that may require some  time
+              to finish.
+
+       --inputbox text height width
+              An  input  box  is  useful  when  you want to ask questions that
+              require the user to input a string as the answer. When  inputing
+              the  string,  the  BACKSPACE  key  can be used to correct typing
+              errors. If the input string is longer than can be fitted in  the
+              dialog box, the input field will be scrolled. On exit, the input
+              string will be printed on stderr.
+
+       --textbox file height width
+              A text box lets you display the contents of a  text  file  in  a
+              dialog  box.  It is like a simple text file viewer. The user can
+              move through the  file  by  using  the  UP/DOWN,  PGUP/PGDN  and
+              HOME/END keys available on most keyboards.  If the lines are too
+              long to be displayed in the box, the LEFT/RIGHT keys can be used
+              to  scroll  the  text region horizontally. For more convenience,
+              forward and backward searching functions are also provided.
+
+       --menu text height width menu-height [ tag item ] ...
+              As its name suggests, a menu box is a dialog  box  that  can  be
+              used  to present a list of choices in the form of a menu for the
+              user to choose. Each menu entry consists of a tag string and  an
+              item  string.  The  tag gives the entry a name to distinguish it
+              from the other entries in the menu. The item is a short descrip-
+              tion  of the option that the entry represents. The user can move
+              between the menu entries by pressing the UP/DOWN keys, the first
+              letter  of  the  tag as a hot-key, or the number keys 1-9. There
+              are menu-height entries displayed in the menu at one  time,  but
+              the  menu  will be scrolled if there are more entries than that.
+              When dialog exits, the tag of the  chosen  menu  entry  will  be
+              printed on stderr.
+
+       --prgbox command height width
+              A  program box lets you display output of command in dialog box.
+
+       --checklist text height width list-height [ tag item status ] ...
+              A checklist box is similar to a menu box in that there are  mul-
+              tiple entries presented in the form of a menu. Instead of choos-
+              ing one entry among the entries, each entry can be turned on  or
+              off by the user. The initial on/off state of each entry is spec-
+              ified by status.  On exit, a list of the tag  strings  of  those
+              entries that are turned on will be printed on stderr.
+
+       --ftree file FS text height width menu-height
+              ftree box is a dialog box showing the tree described by the data
+              from the file file.  The data  in  the  file  should  look  like
+              find(1)   output.  For  the  find output, the field separator FS
+              will be '/'. If height and width are positive numbers, they  set
+              the  absolute  size  of the whole ftree box. If height and width
+              are negative numbers, the size of the ftree box will be selected
+              automatically.   menu-height sets the height of the tree subwin-
+              dow inside the ftree box and must be set.  text is shown  inside
+              the  ftree  box above the tree subwindow and can contain newline
+              characters '\n' to split lines. One can navigate in the tree  by
+              pressing  UP/DOWN  or  '+'/'-',  PG_UP/PG_DOWN  or 'b'/SPACE and
+              HOME/END or 'g'/'G'.  A leaf of the tree is selected by pressing
+              TAB  or  LEFT/RIGHT  the  OK  button  and  pressing  ENTER.  The
+              selected leaf (to be more exact, the full path to  it  from  the
+              root  of  the  tree)  is  printed to stderr.  If Cancel and then
+              ENTER is pressed, nothing is printed to stderr.  file  may  con-
+              tain  data  like  find(1)  output, as well as like the output of
+              find(1) with -d option. Some  of  the  transient  paths  to  the
+              leaves  of  the  tree may be absent. Such data is corrected when
+              fed from file.
+
+       --tree FS text height width menu-height [ item ] ...
+              tree box is like ftree box with some exceptions. First, the data
+              is  not  entered  from a file, but from the command line as item
+              item ...  Second, the data thus entered is not corrected in  any
+              way.   Thus,  the data like the output of find(1) with -d option
+              will look incorrectly.
+
+RUN-TIME CONFIGURATION
+       1.  Create a sample configuration file by typing:
+
+                 "dialog --create-rc <file>"
+
+       2.  At start, dialog determines the settings to use as follows:
+
+           a)  if environment variable DIALOGRC is set, its  value  determines
+               the name of the configuration file.
+
+           b)  if the file in (a) can't be found, use the file $HOME/.dialogrc
+               as the configuration file.
+
+           c)  if the file in (b) can't be found, use compiled in defaults.
+
+       3.  Edit the sample configuration file and copy it to some  place  that
+           dialog can find, as stated in step 2 above.
+
+
+ENVIRONMENT
+
+       DIALOGRC       Define  this variable if you want to specify the name of
+                      the configuration file to use.
+
+
+FILES
+
+       $HOME/.dialogrc     default configuration file
+
+
+DIAGNOSTICS
+
+       Exit status is 0 if dialog is exited by pressing the Yes or OK  button,
+       and 1 if the No or Cancel button is pressed. Otherwise, if errors occur
+       inside dialog or dialog is exited by pressing the  ESC  key,  the  exit
+       status is -1.
+
+
+ - - - -
+Xdialog has an inordinately large collection of options. As of 2.3.1, the
+help text offers the following:
+[<common options>] [<transient options>] <box option> ...
+
+Common options:
+  --wmclass <name>
+  --rc-file <gtkrc filename>
+  --backtitle <backtitle>
+  --title <title>
+  --allow-close | --no-close
+  --screen-center | --under-mouse | --auto-placement
+  --center | --right | --left | --fill
+  --no-wrap | --wrap
+  --cr-wrap | --no-cr-wrap
+  --stderr | --stdout
+  --separator <character> | --separate-output
+  --buttons-style default|icon|text
+
+Transient options:
+  --fixed-font
+  --password (may be repeated 2 or 3 times before --2inputsbox or --3inputsbox)
+  --password=1|2 (for --2inputsbox or --3inputsbox)
+  --editable
+  --time-stamp | --date-stamp
+  --reverse
+  --keep-colors
+  --interval <timeout>
+  --timeout <timeout> (in seconds)
+  --no-tags
+  --item-help (if used, the {...} parameters are needed in menus/lists widgets)
+  --default-item <tag>
+  --icon <xpm filename>
+  --no-ok
+  --no-cancel
+  --no-buttons
+  --default-no
+  --wizard
+  --help <help>
+  --print <printer> (1)
+  --check <label> [<status>]
+  --ok-label <label>
+  --cancel-label <label>
+  --beep
+  --beep-after
+  --begin <Yorg> <Xorg>
+  --ignore-eof
+  --smooth
+
+Box options:
+  --yesno       <text> <height> <width>
+  --msgbox      <text> <height> <width>
+  --infobox     <text> <height> <width> [<timeout>]
+  --gauge       <text> <height> <width> [<percent>]
+  --progress    <text> <height> <width> [<maxdots> [[-]<msglen>]]
+  --inputbox    <text> <height> <width> [<init>]
+  --2inputsbox  <text> <height> <width> <label1> <init1> <label2> <init2>
+  --3inputsbox  <text> <height> <width> <label1> <init1> <label2> <init2> <label3> <init3>
+  --combobox    <text> <height> <width> <item1> ... <itemN>
+  --rangebox    <text> <height> <width> <min value> <max value> [<default value>]
+  --2rangesbox  <text> <height> <width> <label1> <min1> <max1> <def1> <label2> <min2> <max2> <def2>
+  --3rangesbox  <text> <height> <width> <label1> <min1> <max1> <def1> ... <label3> <min3> <max3> <def3>
+  --spinbox     <text> <height> <width> <min value> <max value> <default value> <label>
+  --2spinsbox   <text> <height> <width> <min1> <max1> <def1> <label1> <min2> <max2> <def2> <label2>
+  --3spinsbox   <text> <height> <width> <min1> <max1> <def1> <label1> ... <min3> <max3> <def3> <label3>
+  --textbox     <file> <height> <width>
+  --editbox     <file> <height> <width>
+  --tailbox     <file> <height> <width>
+  --logbox      <file> <height> <width>
+  --menubox     <text> <height> <width> <menu height> <tag1> <item1> {<help1>}...
+  --checklist   <text> <height> <width> <list height> <tag1> <item1> <status1> {<help1>}...
+  --radiolist   <text> <height> <width> <list height> <tag1> <item1> <status1> {<help1>}...
+  --buildlist   <text> <height> <width> <list height> <tag1> <item1> <status1> {<help1>}...
+  --treeview    <text> <height> <width> <list height> <tag1> <item1> <status1> <item_depth1> {<help1>}...
+  --fselect     <file> <height> <width>
+  --dselect     <directory> <height> <width>
+  --colorsel    <text> <height> <width> [<red> <green> <blue>]
+  --fontsel     <font name> <height> <width>
+  --calendar    <text> <height> <width> [<day> <month> <year>]
+  --timebox     <text> <height> <width> [<hours> <minutes> <seconds>]
+
+Special options:
+  --version             (prints version number to stderr and exits).
+  --print-version       (same as above in a cdialog-compatible way).
+  --print-maxsize       (prints maximum menu size in characters and exits).
+
+Note that <height> and <width> are in characters and may be replaced by a single
+XSIZExYSIZE[+/-XORG+/-YORG] parameter (like the one passed in the -geometry option
+of X) which will represent the size of the Xdialog window in pixels. Specifying
+a size of 0 0 (or 0x0) will auto-size Xdialog, while a size of -1 -1 (or -1x-1)
+will maximize it.
+
+ - - - -
+The KDE3 version of kdialog has yet another set of options:
+
+Usage: kdialog [Qt-options] [KDE-options] [options] [arg]
+
+KDialog can be used to show nice dialog boxes from shell scripts
+
+Generic options:
+  --help                    Show help about options
+  --help-qt                 Show Qt specific options
+  --help-kde                Show KDE specific options
+  --help-all                Show all options
+  --author                  Show author information
+  -v, --version             Show version information
+  --license                 Show license information
+  --                        End of options
+
+Options:
+  --yesno <text>            Question message box with yes/no buttons
+  --yesnocancel <text>      Question message box with yes/no/cancel buttons
+  --warningyesno <text>     Warning message box with yes/no buttons
+  --warningcontinuecancel <text> Warning message box with continue/cancel buttons
+  --warningyesnocancel <text> Warning message box with yes/no/cancel buttons
+  --sorry <text>            'Sorry' message box
+  --error <text>            'Error' message box
+  --msgbox <text>           Message Box dialog
+  --inputbox <text> <init>  Input Box dialog
+  --password <text>         Password dialog
+  --textbox <file> [width] [height] Text Box dialog
+  --textinputbox <text> <init> [width] [height] Text Input Box dialog
+  --combobox <text> [tag item] [tag item] ... ComboBox dialog
+  --menu <text> [tag item] [tag item] ... Menu dialog
+  --checklist <text> [tag item status] ... Check List dialog
+  --radiolist <text> [tag item status] ... Radio List dialog
+  --passivepopup <text> <timeout> Passive Popup
+  --getopenfilename [startDir] [filter] File dialog to open an existing file
+  --getsavefilename [startDir] [filter] File dialog to save a file
+  --getexistingdirectory [startDir] File dialog to select an existing directory
+  --getopenurl [startDir] [filter] File dialog to open an existing URL
+  --getsaveurl [startDir] [filter] File dialog to save a URL
+  --geticon [group] [context] Icon chooser dialog
+  --progressbar <text> [totalsteps] Progress bar dialog, returns a DCOP reference for communication
+  --title <text>            Dialog title
+  --default <text>          Default entry to use for combobox and menu
+  --multiple                Allows the --getopenurl and --getopenfilename options to return multiple files
+  --separate-output         Return list items on separate lines (for checklist option and file open with --multiple)
+  --print-winid             Outputs the winId of each dialog
+  --embed <winid>           Makes the dialog transient for an X app specified by winid
+  --dontagain <file:entry>  Config file and option name for saving the "dont-show/ask-again" state
+
+Arguments:
+  arg                       Arguments - depending on main option
+
+ - - - -
+
+Some of those options are common
+
+So the dialog types we need for KDE4 are:
+  --yesno <text>
+  --yesno <text> <height> <width>
+  --yesnocancel <text>
+  --warningyesno <text>
+  --warningcontinuecancel <text>
+  --warningyesnocancel <text>
+  --sorry <text>
+  --error <text>
+  --msgbox <text>
+  --msgbox <text> <height> <width>
+  --infobox <text> <height> <width> [<timeout>]
+  --inputbox <text> <init>
+  --inputbox <text> <height> <width> [<init>]
+  --inputmenu <text> <height> <width> <menu height> <tag1> <item1>...
+  --textinputbox <text> <init> [width] [height]
+  --password <text>
+  --passwordbox  <text> <height> <width> [<init>]
+  --textbox <file> [width] [height]
+  --combobox <text> [tag item] [tag item] ...
+  --combobox <text> <height> <width> <item1> ... <itemN>
+  --menu <text> [tag item] [tag item] ...
+  --menu <text> <height> <width> <menu height> <tag1> <item1>...
+  --menubox <text> <height> <width> <menu height> <tag1> <item1> {<help1>}...
+  --checklist <text> [tag item status] ...
+  --checklist <text> <height> <width> <list height> <tag1> <item1> <status1> {<help1>}...
+  --checklist <text> <height> <width> <list height> <tag1> <item1> <status1>...
+  --radiolist <text> [tag item status] ...
+  --radiolist <text> <height> <width> <list height> <tag1> <item1> <status1>...
+  --passivepopup <text> <timeout>
+  --getopenfilename [startDir] [filter]
+  --fselect     <file> <height> <width>
+  --getsavefilename [startDir] [filter]
+  --getexistingdirectory [startDir]
+  --dselect     <directory> <height> <width>
+  --getopenurl [startDir] [filter]
+  --getsaveurl [startDir] [filter]
+  --geticon [group] [context]
+  --progressbar <text> [totalsteps]
+  --gauge  <text> <height> <width> [<percent>]
+  (also guage)
+  --progress    <text> <height> <width> [<maxdots> [[-]<msglen>]]
+  --prgbox command height width
+  --2inputsbox  <text> <height> <width> <label1> <init1> <label2> <init2>
+  --3inputsbox  <text> <height> <width> <label1> <init1> <label2> <init2> <label3> <init3>
+  --rangebox    <text> <height> <width> <min value> <max value> [<default value>]
+  --2rangesbox  <text> <height> <width> <label1> <min1> <max1> <def1> <label2> <min2> <max2> <def2>
+  --3rangesbox  <text> <height> <width> <label1> <min1> <max1> <def1> ... <label3> <min3> <max3> <def3>
+  --spinbox     <text> <height> <width> <min value> <max value> <default value> <label>
+  --2spinsbox   <text> <height> <width> <min1> <max1> <def1> <label1> <min2> <max2> <def2> <label2>
+  --3spinsbox   <text> <height> <width> <min1> <max1> <def1> <label1> ... <min3> <max3> <def3> <label3>
+  --editbox     <file> <height> <width>
+  --tailbox     <file> <height> <width>
+  --logbox      <file> <height> <width>
+  --radiolist   <text> <height> <width> <list height> <tag1> <item1> <status1> {<help1>}...
+  --buildlist   <text> <height> <width> <list height> <tag1> <item1> <status1> {<help1>}...
+  --treeview    <text> <height> <width> <list height> <tag1> <item1> <status1> <item_depth1> {<help1>}...
+  --colorsel    <text> <height> <width> [<red> <green> <blue>]
+  --fontsel     <font name> <height> <width>
+  --calendar    <text> <height> <width> [<day> <month> <year>]
+  --timebox     <text> <height> <width> [<hours> <minutes> <seconds>]
+  --ftree file FS text height width menu-height
+  --tree FS text height width menu-height [ item ] ...
+  --calendar     <text> <height> <width> <day> <month> <year>
+  --form         <text> <height> <width> <form height> <label1> <l_y1> <l_x1> <item1> <i_y1> <i_x1> <flen1> <ilen1>...
+  --pause        <text> <height> <width> <seconds>
+  --tailbox      <file> <height> <width>
+  --tailboxbg    <file> <height> <width>
+
+The non-specific options we need to handle include:
+  --title <text>            Dialog title
+  --default <text>          Default entry to use for combobox and menu
+  --multiple                Allows the --getopenurl and --getopenfilename options to return multiple files
+  --separate-output         Return list items on separate lines (for checklist option and file open with --multiple)
+  --print-winid             Outputs the winId of each dialog
+  --embed <winid>           Makes the dialog transient for an X app specified by winid
+  --dontagain <file:entry>  Config file and option name for saving the "dont-show/ask-again" state
+  --caption <caption>       Use 'caption' as name in the titlebar
+  --icon <icon>             Use 'icon' as the application icon
+  --miniicon <icon>         Use 'icon' as the icon in the titlebar
+  --config <filename>       Use alternative configuration file
+  --dcopserver <server>     Use the DCOP Server specified by 'server'
+  --nocrashhandler          Disable crash handler, to get core dumps
+  --waitforwm               Waits for a WM_NET compatible windowmanager
+  --style <style>           sets the application GUI style
+  --geometry <geometry>     sets the client geometry of the main widget - see man X for the argument format
+  --display <displayname>   Use the X-server display 'displayname'
+  --session <sessionId>     Restore the application for the given 'sessionId'
+  --cmap                    Causes the application to install a private color
+                            map on an 8-bit display
+  --ncols <count>           Limits the number of colors allocated in the color
+                            cube on an 8-bit display, if the application is
+                            using the QApplication::ManyColor color
+                            specification
+  --nograb                  tells Qt to never grab the mouse or the keyboard
+  --dograb                  running under a debugger can cause an implicit
+                            -nograb, use -dograb to override
+  --sync                    switches to synchronous mode for debugging
+  --fn, --font <fontname>   defines the application font
+  --bg, --background <color> sets the default background color and an
+                            application palette (light and dark shades are
+                            calculated)
+  --fg, --foreground <color> sets the default foreground color
+  --btn, --button <color>   sets the default button color
+  --name <name>             sets the application name
+  --title <title>           sets the application title (caption)
+  --visual TrueColor        forces the application to use a TrueColor visual on
+                            an 8-bit display
+  --inputstyle <inputstyle> sets XIM (X Input Method) input style. Possible
+                            values are onthespot, overthespot, offthespot and
+                            root
+  --im <XIM server>         set XIM server
+  --noxim                   disable XIM
+  --reverse                 mirrors the whole layout of widgets
+  --version             (prints version number to stderr and exits).
+  --print-version       (same as above in a cdialog-compatible way).
+  --print-maxsize       (prints maximum menu size in characters and exits).
+  --wmclass <name>
+  --rc-file <gtkrc filename>
+  --backtitle <backtitle>
+  --title <title>
+  --allow-close | --no-close
+  --screen-center | --under-mouse | --auto-placement
+  --center | --right | --left | --fill
+  --no-wrap | --wrap
+  --cr-wrap | --no-cr-wrap
+  --stderr | --stdout
+  --separator <character> | --separate-output
+  --buttons-style default|icon|text
+  --fixed-font
+  --password (may be repeated 2 or 3 times before --2inputsbox or --3inputsbox)
+  --password=1|2 (for --2inputsbox or --3inputsbox)
+  --editable
+  --time-stamp | --date-stamp
+  --reverse
+  --keep-colors
+  --interval <timeout>
+  --timeout <timeout> (in seconds)
+  --no-tags
+  --item-help (if used, the {...} parameters are needed in menus/lists widgets)
+  --default-item <tag>
+  --icon <xpm filename>
+  --no-ok
+  --no-cancel
+  --no-buttons
+  --default-no
+  --wizard
+  --help <help>
+  --print <printer> (1)
+  --check <label> [<status>]
+  --ok-label <label>
+  --cancel-label <label>
+  --beep
+  --beep-after
+  --begin <Yorg> <Xorg>
+  --ignore-eof
+  --smooth
+  --clear
+  --create-rc file
+  --title title
+  --hline line
+  --hfile file
+  --aspect <ratio>
+  --backtitle <backtitle>
+  --begin <y> <x>
+  --cancel-label <str>
+  --clear
+  --colors
+  --cr-wrap
+  --default-item <str>
+  --defaultno
+  --exit-label <str>
+  --extra-button
+  --extra-label <str>
+  --help-button
+  --help-label <str>
+  --help-status
+  --ignore
+  --input-fd <fd>
+  --insecure
+  --item-help
+  --keep-window
+  --max-input <n>
+  --no-cancel
+  --no-collapse
+  --no-kill
+  --no-label <str>
+  --no-shadow
+  --ok-label <str>
+  --output-fd <fd>
+  --print-maxsize
+  --print-size
+  --print-version
+  --separate-output
+  --separate-widget <str>
+  --shadow
+  --single-quoted
+  --size-err
+  --sleep <secs>
+  --stderr
+  --stdout
+  --tab-correct
+  --tab-len <n>
+  --timeout <secs>
+  --title <title>
+  --trim
+  --visit-items
+  --version
+  --yes-label <str>
+
+ 
