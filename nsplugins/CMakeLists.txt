@@ -1,4 +1,5 @@
 project(nsplugins)
+
 if (X11_Xt_LIB)
 
   add_subdirectory( viewer ) 
@@ -12,20 +13,16 @@ if (X11_Xt_LIB)
         plugin_part.cpp
         nspluginloader.cpp
         callbackadaptor.cpp
-	viewer_proxy.cpp
+        viewer_proxy.cpp
      )
 
   kde4_automoc(${kcminit_nsplugin_PART_SRCS})
 
-
-
-
   kde4_add_plugin(kcminit_nsplugin WITH_PREFIX ${kcminit_nsplugin_PART_SRCS})
-
 
   target_link_libraries(kcminit_nsplugin  ${KDE4_KIO_LIBS} ${KDE4_KPARTS_LIBS} ${QT_QT3SUPPORT_LIBRARY} ${QT_QTGUI_LIBRARY} )
 
-install(TARGETS kcminit_nsplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
+  install(TARGETS kcminit_nsplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
 
   ########### next target ###############
@@ -39,7 +36,7 @@ install(TARGETS kcminit_nsplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
   target_link_libraries(kcm_nsplugins  ${KDE4_KDECORE_LIBS} )
 
-install(TARGETS kcm_nsplugins  DESTINATION ${PLUGIN_INSTALL_DIR} )
+  install(TARGETS kcm_nsplugins  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
 
   ########### next target ###############
@@ -56,8 +53,8 @@ install(TARGETS kcm_nsplugins  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
   ########### install files ###############
 
-install( FILES khtml_plugins.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
-install( FILES nspluginpart.rc  DESTINATION  ${DATA_INSTALL_DIR}/plugin )
+  install( FILES khtml_plugins.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
+  install( FILES nspluginpart.rc  DESTINATION  ${DATA_INSTALL_DIR}/plugin )
 
 else (X11_Xt_LIB)
 
