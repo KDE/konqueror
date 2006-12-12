@@ -33,7 +33,6 @@
 #include <kgenericfactory.h>
 #include <kglobal.h>
 #include <kicon.h>
-#include <kiconloader.h>
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <knuminput.h>
