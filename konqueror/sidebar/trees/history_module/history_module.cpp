@@ -350,7 +350,7 @@ KonqSidebarHistoryGroupItem * KonqSidebarHistoryModule::getGroupItem( const KUrl
 void KonqSidebarHistoryModule::slotClearHistory()
 {
     KGuiItem guiitem = KStdGuiItem::clear();
-    guiitem.setIcon( SmallIconSet("history_clear"));
+    guiitem.setIcon( KIcon("history_clear"));
 
     if ( KMessageBox::warningContinueCancel( tree(),
 				     i18n("Do you really want to clear "
