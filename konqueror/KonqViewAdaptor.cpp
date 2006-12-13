@@ -117,4 +117,9 @@ bool KonqViewAdaptor::canGoForward()const
     return m_pView->canGoForward();
 }
 
+void KonqViewAdaptor::reload()
+{
+    return m_pView->mainWindow()->slotReload( m_pView );
+}
+
 #include "KonqViewAdaptor.moc"

@@ -78,6 +78,27 @@ QDBusObjectPath KonqMainWindowAdaptor::currentPart()
   return QDBusObjectPath( view->partObjectPath() );
 }
 
+QDBusObjectPath KonqMainWindowAdaptor::view(int viewNumber)
+{
+  KonqMainWindow::MapViews viewMap = m_pMainWindow->viewMap();
+  KonqMainWindow::MapViews::const_iterator it = viewMap.begin();
+  for ( int i = 0; it != viewMap.end() && i < viewNumber; ++i )
+      ++it;
+  if ( it == viewMap.end() )
+      return QDBusObjectPath();
+  return QDBusObjectPath( (*it)->dbusObjectPath() );
+}
+
+QDBusObjectPath KonqMainWindowAdaptor::part(int partNumber)
+{
+  KonqMainWindow::MapViews viewMap = m_pMainWindow->viewMap();
+  KonqMainWindow::MapViews::const_iterator it = viewMap.begin();
+  for ( int i = 0; it != viewMap.end() && i < partNumber; ++i )
+      ++it;
+  if ( it == viewMap.end() )
+      return QDBusObjectPath();
+  return QDBusObjectPath( (*it)->partObjectPath() );
+}
 
 void KonqMainWindowAdaptor::splitViewHorizontally()
 {
