@@ -76,6 +76,10 @@ public slots:
      */
     QDBusObjectPath currentPart();
 
+    QDBusObjectPath view(int viewNumber);
+
+    QDBusObjectPath part(int partNumber);
+
 private:
 
     KonqMainWindow * m_pMainWindow;
