@@ -4959,7 +4959,8 @@ void KonqMainWindow::updateViewModeActions()
   if ( m_viewModeMenu )
   {
     foreach( KToggleAction* action, m_viewModeActions )
-      action->unplugAll();
+      foreach ( QWidget *w, action->associatedWidgets() )
+          w->removeAction( action );
     delete m_viewModeMenu;
   }
 
