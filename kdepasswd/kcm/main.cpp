@@ -167,7 +167,7 @@ void KCMUserAccount::load()
 		if ( _facePixmap.isNull() )
 			_facePerm = userFirst;
 		else
-			_mw->btnChangeFace->setIcon( _facePixmap );
+			_mw->btnChangeFace->setIcon( KIcon(_facePixmap) );
 	}
 
 	if ( _facePerm >= userFirst )
@@ -182,7 +182,7 @@ void KCMUserAccount::load()
 		if ( _facePixmap.isNull() )
 			_facePixmap = QPixmap( _userPicsDir + KCFGUserAccount::defaultFile() );
 
-		_mw->btnChangeFace->setIcon( _facePixmap );
+		_mw->btnChangeFace->setIcon( KIcon(_facePixmap) );
 	}
 	else if ( _facePerm <= adminOnly )
 	{
@@ -190,8 +190,12 @@ void KCMUserAccount::load()
 		_facePixmap = QPixmap( _userPicsDir + _ku->loginName() + ".face.icon" );
 		if ( _facePixmap.isNull() )
 			_facePixmap = QPixmap( _userPicsDir + KCFGUserAccount::defaultFile() );
-		_mw->btnChangeFace->setIcon( _facePixmap );
+		_mw->btnChangeFace->setIcon( KIcon(_facePixmap) );
 	}
+
+        if (!_facePixmap.isNull()) {
+            _mw->btnChangeFace->setIconSize(_facePixmap.size());
+        }
 
 	KCModule::load(); /* KConfigXT */
 
@@ -259,7 +263,8 @@ void KCMUserAccount::changeFace(const QPixmap &pix)
   }
 
   _facePixmap = pix;
-  _mw->btnChangeFace->setIcon( _facePixmap );
+  _mw->btnChangeFace->setIcon( KIcon(_facePixmap) );
+  _mw->btnChangeFace->setIconSize(_facePixmap.size());
   emit changed( true );
 }
 
