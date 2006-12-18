@@ -23,7 +23,8 @@
 #include <kpushbutton.h>
 #include <QRadioButton>
 #include <QSlider>
-
+#include <QDBusMessage>
+#include <QDBusConnection>
 #include <kapplication.h>
 #include <kcolorbutton.h>
 #include <klocale.h>
@@ -101,12 +102,11 @@ void advancedTabDialog::save()
     m_pConfig->setGroup("Notification Messages");
     if ( m_advancedWidget->m_pTabConfirm->isChecked() ) m_pConfig->deleteEntry( "MultipleTabConfirm" );
     else m_pConfig->writeEntry( "MultipleTabConfirm", true );
-#ifdef __GNUC__
-#warning "kde4: port konqueror* dcop call"
-#endif    
-#if 0
-    KApplication::kApplication()->dcopClient()->send( "konqueror*", "KonquerorIface", "reparseConfiguration()", data );
-#endif
+    // Send signal to all konqueror instances
+    QDBusMessage message =
+        QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "reparseConfiguration");
+    QDBusConnection::sessionBus().send(message);
+
     enableButton(Apply, false);
 }
 

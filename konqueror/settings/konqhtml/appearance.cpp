@@ -5,7 +5,8 @@
 #include <QLineEdit>
 #include <QFontComboBox>
 #include <q3groupbox.h>
-
+#include <QDBusMessage>
+#include <QDBusConnection>
 
 #include <kapplication.h>
 #include <kcharsets.h>
@@ -367,12 +368,11 @@ void KAppearanceOptions::save()
         encodingName = "";
     m_pConfig->writeEntry( "DefaultEncoding", encodingName );
     m_pConfig->sync();
-#ifdef __GNUC__
-#warning "kde4: port to dbus call konqueror*"
-#endif
-#if 0
-  kapp->dcopClient()->send( "konqueror*", "KonquerorIface", "reparseConfiguration()", data );
-#endif
+    // Send signal to all konqueror instances
+    QDBusMessage message =
+        QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "reparseConfiguration");
+    QDBusConnection::sessionBus().send(message);
+
   emit changed(false);
 }
 
