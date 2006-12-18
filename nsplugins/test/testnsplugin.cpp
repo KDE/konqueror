@@ -26,7 +26,7 @@
 #include <kapplication.h>
 #include <kcmdlineargs.h>
 #include <kdebug.h>
-#include <kstdaction.h>
+#include <kstandardaction.h>
 #include <kaction.h>
 
 #include "testnsplugin.h"
@@ -44,9 +44,9 @@ TestNSPlugin::TestNSPlugin()
    m_layout = new Q3HBoxLayout( m_client );
 
    // file menu
-   KStdAction::openNew( this, SLOT(newView()), actionCollection());
-   KStdAction::close( this, SLOT(closeView()), actionCollection());
-   KStdAction::quit( kapp, SLOT(quit()), actionCollection());
+   KStandardAction::openNew( this, SLOT(newView()), actionCollection());
+   KStandardAction::close( this, SLOT(closeView()), actionCollection());
+   KStandardAction::quit( kapp, SLOT(quit()), actionCollection());
 
    createGUI( "testnspluginui.rc" );
 }

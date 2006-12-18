@@ -34,7 +34,7 @@
 #include <klocale.h>
 #include <kmimetype.h>
 #include <kpropertiesdialog.h>
-#include <kstdaction.h>
+#include <kstandardaction.h>
 #include <ktoggleaction.h>
 #include <kprotocolmanager.h>
 
@@ -692,7 +692,7 @@ void KonqListView::setupActions()
   m_paUnselect = new KAction( i18n( "Unselect..." ), actionCollection(), "unselect" );
   connect(m_paUnselect, SIGNAL(triggered(bool) ), SLOT( slotUnselect() ));
   m_paUnselect->setShortcut(Qt::CTRL+Qt::Key_Minus);
-  m_paSelectAll = KStdAction::selectAll( this, SLOT( slotSelectAll() ), actionCollection(), "selectall" );
+  m_paSelectAll = KStandardAction::selectAll( this, SLOT( slotSelectAll() ), actionCollection(), "selectall" );
   m_paUnselectAll = new KAction( i18n( "Unselect All" ), actionCollection(), "unselectall" );
   connect(m_paUnselectAll, SIGNAL(triggered(bool) ), SLOT( slotUnselectAll() ));
   m_paUnselectAll->setShortcut(Qt::CTRL+Qt::Key_U);

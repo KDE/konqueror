@@ -34,7 +34,7 @@
 #include <kiconloader.h>
 #include <klineedit.h>
 #include <kmessagebox.h>
-#include <kstdaction.h>
+#include <kstandardaction.h>
 
 #include "bookmark_module.h"
 #include "bookmark_item.h"
@@ -78,7 +78,7 @@ KonqSidebarBookmarkModule::KonqSidebarBookmarkModule( KonqSidebarTree * parentTr
     action = new KAction(KIcon("editcopy"),  i18n("Copy Link Address"), m_collection, "copy_location");
     connect(action, SIGNAL(triggered(bool)), SLOT( slotCopyLocation() ));
 
-    KStdAction::editBookmarks( KonqBookmarkManager::self(), SLOT( slotEditBookmarks() ),
+    KStandardAction::editBookmarks( KonqBookmarkManager::self(), SLOT( slotEditBookmarks() ),
 			       m_collection, "edit_bookmarks" );
 
     connect( KonqBookmarkManager::self(), SIGNAL(changed(const QString &, const QString &) ),
