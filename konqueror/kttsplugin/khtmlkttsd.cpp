@@ -60,7 +60,7 @@ void KHTMLPluginKTTSD::slotReadOut()
                                       "this plugin, sorry." ));
     else
     {
-        if (!QDBusConnection::sessionBus().interface()->isServiceRegistered("kttsd"))
+        if (!QDBusConnection::sessionBus().interface()->isServiceRegistered("org.kde.kttsd"))
         {
             QString error;
             if (KToolInvocation::startServiceByDesktopName("kttsd", QStringList(), &error))
