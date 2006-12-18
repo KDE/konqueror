@@ -18,6 +18,8 @@
 
 #include "kebsearchline.h"
 
+#include <kicon.h>
+
 #include <QHeaderView>
 #include <QHBoxLayout>
 #include <QContextMenuEvent>
@@ -726,7 +728,7 @@ void KViewSearchLineWidget::createWidgets()
     if(!d->clearButton) {
         d->clearButton = new QToolButton();
         d->layout->addWidget(d->clearButton);
-        QIcon icon = SmallIconSet(QApplication::isRightToLeft() ? "clear_left" : "locationbar_erase");
+        KIcon icon(QApplication::isRightToLeft() ? "clear_left" : "locationbar_erase");
         d->clearButton->setIcon(icon);
     }
 
