@@ -99,7 +99,7 @@
 #include <kprotocolmanager.h>
 #include <kseparatoraction.h>
 #include <kstdaccel.h>
-#include <kstdaction.h>
+#include <kstandardaction.h>
 #include <kstandarddirs.h>
 #include <ksycoca.h>
 #include <ktemporaryfile.h>
@@ -3687,8 +3687,8 @@ void KonqMainWindow::initActions()
   connect(m_paFindFiles, SIGNAL(triggered(bool) ), SLOT( slotToolFind() ));
   m_paFindFiles->setShortcut(KStdAccel::shortcut(KStdAccel::Find));
 
-  m_paPrint = KStdAction::print( 0, 0, actionCollection(), "print" );
-  (void) KStdAction::quit( this, SLOT( close() ), actionCollection(), "quit" );
+  m_paPrint = KStandardAction::print( 0, 0, actionCollection(), "print" );
+  (void) KStandardAction::quit( this, SLOT( close() ), actionCollection(), "quit" );
 
   m_ptaUseHTML = new KToggleAction( i18n( "&Use index.html" ), actionCollection(), "usehtml" );
   connect(m_ptaUseHTML, SIGNAL(triggered(bool) ), SLOT( slotShowHTML() ));
@@ -3774,10 +3774,10 @@ void KonqMainWindow::initActions()
 
 
   if (!KAuthorized::authorizeControlModules(configModules()).isEmpty())
-     KStdAction::preferences (this, SLOT (slotConfigure()), actionCollection() );
+     KStandardAction::preferences (this, SLOT (slotConfigure()), actionCollection() );
 
-  KStdAction::keyBindings( guiFactory(), SLOT( configureShortcuts() ), actionCollection() );
-  KStdAction::configureToolbars( this, SLOT( slotConfigureToolbars() ), actionCollection() );
+  KStandardAction::keyBindings( guiFactory(), SLOT( configureShortcuts() ), actionCollection() );
+  KStandardAction::configureToolbars( this, SLOT( slotConfigureToolbars() ), actionCollection() );
 
   m_paConfigureExtensions = new KAction( i18n("Configure Extensions..."), actionCollection(), "options_configure_extensions");
   connect(m_paConfigureExtensions, SIGNAL(triggered(bool) ), SLOT( slotConfigureExtensions()));
@@ -3842,7 +3842,7 @@ void KonqMainWindow::initActions()
 
   m_pViewManager->setProfiles( m_pamLoadViewProfile );
 
-  m_ptaFullScreen = KStdAction::fullScreen( 0, 0, actionCollection(), this );
+  m_ptaFullScreen = KStandardAction::fullScreen( 0, 0, actionCollection(), this );
   KShortcut fullScreenShortcut = m_ptaFullScreen->shortcut();
   fullScreenShortcut.setAlternate( Qt::Key_F11 );
   m_ptaFullScreen->setShortcut( fullScreenShortcut );
@@ -3857,19 +3857,19 @@ void KonqMainWindow::initActions()
   connect(m_paReloadAllTabs, SIGNAL(triggered(bool)), SLOT( slotReloadAllTabs() ));
   m_paReloadAllTabs->setShortcut(Qt::SHIFT+Qt::Key_F5);
 
-  m_paUndo = KStdAction::undo( KonqUndoManager::self(), SLOT( undo() ), actionCollection(), "undo" );
+  m_paUndo = KStandardAction::undo( KonqUndoManager::self(), SLOT( undo() ), actionCollection(), "undo" );
   //m_paUndo->setEnabled( KonqUndoManager::self()->undoAvailable() );
   connect( KonqUndoManager::self(), SIGNAL( undoTextChanged( const QString & ) ),
            this, SLOT( slotUndoTextChanged( const QString & ) ) );
 
   // Those are connected to the browserextension directly
-  m_paCut = KStdAction::cut( 0, 0, actionCollection(), "cut" );
+  m_paCut = KStandardAction::cut( 0, 0, actionCollection(), "cut" );
   KShortcut cutShortCut = m_paCut->shortcut();
   cutShortCut.remove( Qt::SHIFT + Qt::Key_Delete ); // used for deleting files
   m_paCut->setShortcut( cutShortCut );
 
-  m_paCopy = KStdAction::copy( 0, 0, actionCollection(), "copy" );
-  m_paPaste = KStdAction::paste( 0, 0, actionCollection(), "paste" );
+  m_paCopy = KStandardAction::copy( 0, 0, actionCollection(), "copy" );
+  m_paPaste = KStandardAction::paste( 0, 0, actionCollection(), "paste" );
   m_paStop = new KAction(KIcon("stop"),  i18n( "&Stop" ), actionCollection(), "stop" );
   connect(m_paStop, SIGNAL(triggered(bool)), SLOT( slotStop() ));
   m_paStop->setShortcut(Qt::Key_Escape);
@@ -3924,7 +3924,7 @@ void KonqMainWindow::initActions()
   if (addBookmark)
      addBookmark->setText(i18n("Bookmark This Location"));
 
-  m_paShowMenuBar = KStdAction::showMenubar( this, SLOT( slotShowMenuBar() ), actionCollection() );
+  m_paShowMenuBar = KStandardAction::showMenubar( this, SLOT( slotShowMenuBar() ), actionCollection() );
 
   action = new KAction( i18n( "Kon&queror Introduction" ), actionCollection(), "konqintro" );
   connect(action, SIGNAL(triggered(bool) ), SLOT( slotIntro() ));
@@ -4644,7 +4644,7 @@ void KonqMainWindow::slotPopupMenu( KXMLGUIClient *client, const QPoint &_global
   popupMenuCollection.insert( m_paDelete );
 
   // The pasteto action is used when clicking on a dir, to paste into it.
-  KAction *actPaste = KStdAction::paste( this, SLOT( slotPopupPasteTo() ), &popupMenuCollection, "pasteto" );
+  KAction *actPaste = KStandardAction::paste( this, SLOT( slotPopupPasteTo() ), &popupMenuCollection, "pasteto" );
   actPaste->setEnabled( m_paPaste->isEnabled() );
   popupMenuCollection.insert( actPaste );
 

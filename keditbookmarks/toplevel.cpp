@@ -49,7 +49,7 @@
 #include <klineedit.h>
 #include <klocale.h>
 #include <kmessagebox.h>
-#include <kstdaction.h>
+#include <kstandardaction.h>
 
 #include <assert.h>
 #include <qglobal.h>

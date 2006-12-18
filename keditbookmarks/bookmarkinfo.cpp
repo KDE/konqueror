@@ -32,7 +32,7 @@
 #include <kdebug.h>
 
 #include <kapplication.h>
-#include <kstdaction.h>
+#include <kstandardaction.h>
 #include <kaction.h>
 
 #include <kkeydialog.h>

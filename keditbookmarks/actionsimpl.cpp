@@ -46,7 +46,7 @@
 #include <kinputdialog.h>
 #include <kkeydialog.h>
 #include <klocale.h>
-#include <kstdaction.h>
+#include <kstandardaction.h>
 #include <kfiledialog.h>
 #include <kmessagebox.h>
 #include <krun.h>
@@ -75,23 +75,23 @@ void KEBApp::createActions() {
     ActionsImpl *actn = ActionsImpl::self();
 
     // save and quit should probably not be in the toplevel???
-    (void) KStdAction::quit(
+    (void) KStandardAction::quit(
         this, SLOT( close() ), actionCollection());
-    KStdAction::keyBindings(guiFactory(), SLOT(configureShortcuts()), actionCollection());
-    (void) KStdAction::configureToolbars(
+    KStandardAction::keyBindings(guiFactory(), SLOT(configureShortcuts()), actionCollection());
+    (void) KStandardAction::configureToolbars(
         this, SLOT( slotConfigureToolbars() ), actionCollection());
 
     if (m_browser) {
-        (void) KStdAction::open(
+        (void) KStandardAction::open(
             actn, SLOT( slotLoad() ), actionCollection());
-        (void) KStdAction::saveAs(
+        (void) KStandardAction::saveAs(
             actn, SLOT( slotSaveAs() ), actionCollection());
     }
 
-    (void) KStdAction::cut(actn, SLOT( slotCut() ), actionCollection());
-    (void) KStdAction::copy(actn, SLOT( slotCopy() ), actionCollection());
-    (void) KStdAction::paste(actn, SLOT( slotPaste() ), actionCollection());
-    (void) KStdAction::print(actn, SLOT( slotPrint() ), actionCollection());
+    (void) KStandardAction::cut(actn, SLOT( slotCut() ), actionCollection());
+    (void) KStandardAction::copy(actn, SLOT( slotCopy() ), actionCollection());
+    (void) KStandardAction::paste(actn, SLOT( slotPaste() ), actionCollection());
+    (void) KStandardAction::print(actn, SLOT( slotPrint() ), actionCollection());
 
     // actions
     KAction* actnDelete = new KAction(KIcon("editdelete"), i18n("&Delete"), actionCollection(), "delete");
