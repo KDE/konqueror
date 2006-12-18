@@ -136,7 +136,7 @@ void Konqueror::save()
     DCOPRef ref1( "konqueror*", "KonquerorIface" );
     ref1.send( "reparseConfiguration()" );
 #endif
-    QDBusInterface kded("org.kde.kded", "/modules/Konqy_preloader", "org.kde.kded.Konqy_proxy");
+    QDBusInterface kded("org.kde.kded", "/modules/konqy_preloader", "org.kde.konqueror.Preloader");
     kded.call( "reconfigure" );
     }
 
