@@ -129,13 +129,10 @@ void Konqueror::save()
     cfg.writeEntry( "PreloadOnStartup", cb_preload_on_startup->isChecked() && count >= 1 );
     cfg.writeEntry( "AlwaysHavePreloaded", cb_always_have_preloaded->isChecked() && count >= 2 );
     cfg.sync();
-#ifdef __GNUC__
-#warning "kde4: port it konqueror*"
-#endif    
-#if 0
-    DCOPRef ref1( "konqueror*", "KonquerorIface" );
-    ref1.send( "reparseConfiguration()" );
-#endif
+    QDBusMessage message =
+        QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "reparseConfiguration");
+    QDBusConnection::sessionBus().send(message);
+    
     QDBusInterface kded("org.kde.kded", "/modules/konqy_preloader", "org.kde.konqueror.Preloader");
     kded.call( "reconfigure" );
     }
