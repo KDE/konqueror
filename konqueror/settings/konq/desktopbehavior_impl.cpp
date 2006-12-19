@@ -402,6 +402,10 @@ void DesktopBehavior::save()
     QDBusInterface interface( appname, "/Desktop", "org.kde.kdesktop.Desktop" );
     if ( interface.isValid() )
         interface.call( "configure" );
+    // Send signal to all kwin instances
+    QDBusMessage message =
+        QDBusMessage::createSignal("/KWin", "org.kde.KWin", "reloadConfig");
+    QDBusConnection::sessionBus().send(message);
 
 #ifdef __GNUC__
 #warning Emit DBus signal, and commit kicker/kwin/kdesktop/plasma/whatever to it
@@ -410,7 +414,6 @@ void DesktopBehavior::save()
     // for the standalone menubar setting
     kapp->dcopClient()->send( "menuapplet*", "menuapplet", "configure()", data );
     kapp->dcopClient()->send( "kicker", "kicker", "configureMenubar()", data );
-    kapp->dcopClient()->send( "kwin*", "", "reconfigure()", data );
 #endif
 }
 
