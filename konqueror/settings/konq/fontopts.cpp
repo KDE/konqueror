@@ -379,13 +379,13 @@ void KonqFontOptions::save()
     int konq_screen_number = KApplication::desktop()->primaryScreen();
     QByteArray appname;
     if (konq_screen_number == 0)
-        appname = "kdesktop";
+        appname = "org.kde.kdesktop";
     else
-        appname = "kdesktop-screen-" + QByteArray::number( konq_screen_number);
-#ifdef __GNUC__
-#warning TODO Port to kdesktop DBus interface
-#endif
-//    kapp->dcopClient()->send( appname, "KDesktopIface", "configure()", data );
+        appname = "org.kde.kdesktop-screen-" + QByteArray::number( konq_screen_number);
+    QDBusInterface interface( appname, "/Desktop", "org.kde.kdesktop.Desktop" );
+    if ( interface.isValid() )
+        interface.call( "configure" );
+
 }
 
 void KonqFontOptions::slotTextBackgroundClicked()

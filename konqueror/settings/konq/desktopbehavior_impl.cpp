@@ -29,6 +29,7 @@
 #include <QPushButton>
 #include <q3buttongroup.h>
 #include <QTabWidget>
+#include <QDBusInterface>
 
 //Added by qt3to4:
 #include <QVBoxLayout>
@@ -395,14 +396,17 @@ void DesktopBehavior::save()
     int konq_screen_number = KApplication::desktop()->primaryScreen();
     QByteArray appname;
     if (konq_screen_number == 0)
-        appname = "kdesktop";
+        appname = "org.kde.kdesktop";
     else
-        appname = "kdesktop-screen-"+QByteArray::number( konq_screen_number);
+        appname = "org.kde.kdesktop-screen-"+QByteArray::number( konq_screen_number);
+    QDBusInterface interface( appname, "/Desktop", "org.kde.kdesktop.Desktop" );
+    if ( interface.isValid() )
+        interface.call( "configure" );
+
 #ifdef __GNUC__
 #warning Emit DBus signal, and commit kicker/kwin/kdesktop/plasma/whatever to it
 #endif
 #if 0
-    kapp->dcopClient()->send( appname, "KDesktopIface", "configure()", data );
     // for the standalone menubar setting
     kapp->dcopClient()->send( "menuapplet*", "menuapplet", "configure()", data );
     kapp->dcopClient()->send( "kicker", "kicker", "configureMenubar()", data );
