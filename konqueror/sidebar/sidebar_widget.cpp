@@ -265,7 +265,7 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, bool 
 #warning switch to QMenu when KMultiTabBar ported
 #endif	
 	m_menu = new QMenu(this);
-	m_menu->setIcon(SmallIconSet("configure"));
+	m_menu->setIcon(KIcon("configure"));
 	m_menu->setTitle(i18n("Configure Navigation Panel"));
 
 	QMenu *addMenu = m_menu->addMenu(i18n("Add New"));
@@ -275,7 +275,7 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, bool 
 	m_menu->addAction(i18n("Show Configuration Button"), this, SLOT(slotShowConfigurationButton()));
 	if (!m_universalMode) {
 		m_menu->addSeparator();
-		m_menu->addAction(SmallIconSet("remove"), i18n("Close Navigation Panel"),
+		m_menu->addAction(KIcon("remove"), i18n("Close Navigation Panel"),
 				par, SLOT(deleteLater()));
 	}
         connect(m_menu, SIGNAL(aboutToShow()),
@@ -816,11 +816,11 @@ bool Sidebar_Widget::eventFilter(QObject *obj, QEvent *ev)
 				{
 					m_buttonPopup=new KMenu(this);
 					m_buttonPopupTitle = m_buttonPopup->addTitle(SmallIcon("unknown"), "");
-					m_buttonPopup->addAction(SmallIconSet("text"), i18n("Set Name..."), this, SLOT(slotSetName())); // Item to open a dialog to change the name of the sidebar item (by Pupeno)
-					m_buttonPopup->addAction(SmallIconSet("www"), i18n("Set URL..."), this, SLOT(slotSetURL()));
-					m_buttonPopup->addAction(SmallIconSet("icons"), i18n("Set Icon..."), this, SLOT(slotSetIcon()));
+					m_buttonPopup->addAction(KIcon("text"), i18n("Set Name..."), this, SLOT(slotSetName())); // Item to open a dialog to change the name of the sidebar item (by Pupeno)
+					m_buttonPopup->addAction(KIcon("www"), i18n("Set URL..."), this, SLOT(slotSetURL()));
+					m_buttonPopup->addAction(KIcon("icons"), i18n("Set Icon..."), this, SLOT(slotSetIcon()));
 					m_buttonPopup->addSeparator();
-					m_buttonPopup->addAction(SmallIconSet("editdelete"), i18n("Remove"), this, SLOT(slotRemove()));
+					m_buttonPopup->addAction(KIcon("editdelete"), i18n("Remove"), this, SLOT(slotRemove()));
 					m_buttonPopup->addSeparator();
 					m_buttonPopup->addMenu(m_menu);
 				}
