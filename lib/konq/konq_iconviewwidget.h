@@ -273,6 +273,7 @@ Q_SIGNALS:
     void enableAction( const char * name, bool enabled );
 
     void dropped();
+    void dropped( QDropEvent *, const QList<Q3IconDragItem> & );
     void imagePreviewFinished();
 
     void incIconSize();
