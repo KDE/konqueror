@@ -391,7 +391,7 @@ void DesktopBehavior::save()
 
     saveMediaListView();
     g_pConfig->sync();
-
+#ifdef Q_WS_X11
     // Tell kdesktop about the new config file
     int konq_screen_number = KApplication::desktop()->primaryScreen();
     QByteArray appname;
@@ -406,7 +406,7 @@ void DesktopBehavior::save()
     QDBusMessage message =
         QDBusMessage::createSignal("/KWin", "org.kde.KWin", "reloadConfig");
     QDBusConnection::sessionBus().send(message);
-
+#endif
 #ifdef __GNUC__
 #warning Emit DBus signal, and commit kicker/kwin/kdesktop/plasma/whatever to it
 #endif

@@ -374,7 +374,7 @@ void KonqFontOptions::save()
     QDBusMessage message =
         QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "reparseConfiguration");
     QDBusConnection::sessionBus().send(message);
-
+#ifdef Q_WS_X11
     // Tell kdesktop about the new config file
     int konq_screen_number = KApplication::desktop()->primaryScreen();
     QByteArray appname;
@@ -385,7 +385,7 @@ void KonqFontOptions::save()
     QDBusInterface interface( appname, "/Desktop", "org.kde.kdesktop.Desktop" );
     if ( interface.isValid() )
         interface.call( "configure" );
-
+#endif
 }
 
 void KonqFontOptions::slotTextBackgroundClicked()
