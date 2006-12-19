@@ -504,9 +504,10 @@ void KonqAboutPage::urlSelected( const QString &url, int button, int state, cons
 	    QString profile = KStandardDirs::locateLocal("data", "konqueror/profiles/webbrowsing");
 	    KSaveFile file( profile );
 	    if ( file.open() ) {
+		QTextStream stream(&file);
 		QByteArray content = "[Profile]\n"
 			           "Name=Web-Browser";
-		fputs( content.data(), file.fstream() );
+		stream << content.data();
 	    }
 	}
 	return;
