@@ -80,8 +80,6 @@ public:
 protected:
     virtual void contextMenuEvent ( QContextMenuEvent * e );
 private:
-    int min(int a, int b);
-    int max(int a, int b);
     QRect merge(QRect a, QRect b);
     void deselectChildren(const QModelIndex & parent);
     QRect rectForRow(QModelIndex index);

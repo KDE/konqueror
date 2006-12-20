@@ -146,16 +146,6 @@ BookmarkListView::~BookmarkListView()
     saveColumnSetting();
 }
 
-int BookmarkListView::min(int a, int b)
-{
-    return a < b? a : b;
-}
-
-int BookmarkListView::max(int a, int b)
-{
-    return a > b? a : b;
-}
-
 QRect BookmarkListView::merge(QRect a, QRect b)
 {
     if(a.isNull())
@@ -164,10 +154,10 @@ QRect BookmarkListView::merge(QRect a, QRect b)
         return a;
     a.normalized();
     b.normalized();
-    int left = min(a.left(), b.left());
-    int top = min(a.top(), b.top());
-    int width = max(a.right(), b.right()) - left + 1;
-    int height = max(a.bottom(), b.bottom()) - top + 1;
+    int left = qMin(a.left(), b.left());
+    int top = qMin(a.top(), b.top());
+    int width = qMax(a.right(), b.right()) - left + 1;
+    int height = qMax(a.bottom(), b.bottom()) - top + 1;
     return QRect(left, top, width, height);
 }
 
