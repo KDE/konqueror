@@ -14,6 +14,8 @@ set(kcm_konq_PART_SRCS
 
 if(Q_WS_X11)
  set(kcm_konq_PART_SRCS desktop.cpp ${kcm_konq_PART_SRCS})
+ set(kdesktop_xml  ${CMAKE_SOURCE_DIR}/workspace/kdesktop/org.kde.kdesktop.Desktop.xml)
+ QT4_ADD_DBUS_INTERFACE( kcm_konq_PART_SRCS ${kdesktop_xml} kdesktop_interface )
 endif(Q_WS_X11)	
 
 kde4_automoc(${kcm_konq_PART_SRCS})

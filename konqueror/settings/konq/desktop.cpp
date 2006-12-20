@@ -41,6 +41,7 @@
 
 #include "desktop.h"
 #include "desktop.moc"
+#include "kdesktop_interface.h"
 #ifdef Q_WS_X11
 #include <QX11Info>
 #endif
@@ -216,9 +217,10 @@ void KDesktopConfig::save()
       appname = "org.kde.kdesktop";
   else
       appname = "org.kde.kdesktop-screen-" + QByteArray::number( konq_screen_number );
-   QDBusInterface interface( appname, "/Desktop", "org.kde.kdesktop.Desktop" );
-    if ( interface.isValid() )
-        interface.call( "configure" );
+
+   org::kde::kdesktop::Desktop *desktop = new org::kde::kdesktop::Desktop(appname, "/Desktop", QDBusConnection::sessionBus());
+   desktop->configure();
+   delete desktop;
 
   emit changed(false);
 #endif
