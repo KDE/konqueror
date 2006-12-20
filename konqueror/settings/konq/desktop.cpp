@@ -218,9 +218,8 @@ void KDesktopConfig::save()
   else
       appname = "org.kde.kdesktop-screen-" + QByteArray::number( konq_screen_number );
 
-   org::kde::kdesktop::Desktop *desktop = new org::kde::kdesktop::Desktop(appname, "/Desktop", QDBusConnection::sessionBus());
-   desktop->configure();
-   delete desktop;
+  org::kde::kdesktop::Desktop desktop(appname, "/Desktop", QDBusConnection::sessionBus());
+  desktop.configure();
 
   emit changed(false);
 #endif

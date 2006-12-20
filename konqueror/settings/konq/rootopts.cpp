@@ -42,7 +42,9 @@
 
 #include "rootopts.h"
 #include "konqkcmfactory.h"
-
+#ifdef Q_WS_X11
+#include "kdesktop_interface.h"
+#endif
 //-----------------------------------------------------------------------------
 
 typedef KonqKcmFactory<DesktopPathConfig> DesktopPathConfigFactory;
@@ -247,17 +249,16 @@ void DesktopPathConfig::save()
     }
 
     // Tell kdesktop about the new config file
-
+#ifdef Q_WS_X11
     int konq_screen_number = KApplication::desktop()->primaryScreen();
     QByteArray appname;
     if (konq_screen_number == 0)
-        appname = "kdesktop";
+        appname = "org.kde.kdesktop";
     else
-        appname = "kdesktop-screen-" + QByteArray::number(konq_screen_number);
-#ifdef __GNUC__
-#warning TODO Port to kdesktop DBus interface
+        appname = "org.kde.kdesktop-screen-" + QByteArray::number(konq_screen_number);
+    org::kde::kdesktop::Desktop desktop(appname, "/Desktop", QDBusConnection::sessionBus());
+    desktop.configure();
 #endif
-    //kapp->dcopClient()->send( appname, "KDesktopIface", "configure()", data );
 }
 
 bool DesktopPathConfig::moveDir( const KUrl & src, const KUrl & dest, const QString & type )
