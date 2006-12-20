@@ -1,3 +1,4 @@
+#include <fixx11h.h>
 #include <QCheckBox>
 #include <QLayout>
 #include <QRadioButton>
