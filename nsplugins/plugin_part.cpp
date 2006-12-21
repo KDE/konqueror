@@ -175,7 +175,7 @@ PluginPart::PluginPart(QWidget *parentWidget, QObject *parent, const QStringList
     : KParts::ReadOnlyPart(parent), _widget(0), _args(args),
       _destructed(0L)
 {
-    (void) new NsPluginsCallBackAdaptor( this );
+    (void) new CallBackAdaptor( this );
     QDBusConnection::sessionBus().registerObject( s_callBackObjectPath, this );
 
     setInstance(PluginFactory::instance());

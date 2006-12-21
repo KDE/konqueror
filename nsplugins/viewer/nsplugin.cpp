@@ -25,7 +25,10 @@
 
 #include "nsplugin.h"
 #include "resolve.h"
-#include "dbusadaptors.h"
+#include "classadaptor.h"
+#include "instanceadaptor.h"
+#include "vieweradaptor.h"
+
 #include "callback_proxy.h"
 
 #include <stdlib.h>
@@ -1249,7 +1252,7 @@ void NSPluginViewer::shutdown()
 }
 
 
-QString NSPluginViewer::newClass( const QString& plugin, const QString& senderId )
+QDBusObjectPath NSPluginViewer::newClass( const QString& plugin, const QString& senderId )
 {
    kDebug(1431) << "NSPluginViewer::NewClass( " << plugin << ")" << endl;
 
@@ -1262,13 +1265,13 @@ QString NSPluginViewer::newClass( const QString& plugin, const QString& senderId
        if ( cls->error() ) {
            kError(1431) << "Can't create plugin class" << endl;
            delete cls;
-           return QString();
+           return QDBusObjectPath();
        }
 
        _classes.insert( plugin, cls );
    }
 
-   return cls->objectName();
+   return QDBusObjectPath(cls->objectName());
 }
 
 
@@ -1408,14 +1411,14 @@ void NSPluginClass::shutdown()
 }
 
 
-QString NSPluginClass::newInstance( const QString &url, const QString &mimeType, bool embed,
+QDBusObjectPath NSPluginClass::newInstance( const QString &url, const QString &mimeType, bool embed,
                                     const QStringList &argn, const QStringList &argv,
                                     const QString &appId, const QString &callbackId, bool reload )
 {
    kDebug(1431) << "-> NSPluginClass::NewInstance" << endl;
 
    if ( !_constructed )
-       return QString();
+       return QDBusObjectPath();
 
    // copy parameters over
    unsigned int argc = argn.count();
@@ -1474,7 +1477,7 @@ QString NSPluginClass::newInstance( const QString &url, const QString &mimeType,
       delete inst;
       //delete npp;    double delete!
       kDebug(1431) << "<- PluginClass::NewInstance = 0" << endl;
-      return QString();
+      return QDBusObjectPath();
    }
 
    // create source stream
@@ -1482,7 +1485,7 @@ QString NSPluginClass::newInstance( const QString &url, const QString &mimeType,
       inst->requestURL( src, mimeType, QString(), 0, false, reload );
 
    _instances.append( inst );
-   return inst->objectName();
+   return QDBusObjectPath(inst->objectName());
 }
 
 
