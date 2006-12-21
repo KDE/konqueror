@@ -12,9 +12,9 @@ if (X11_Xt_LIB)
   set(kcminit_nsplugin_PART_SRCS
         plugin_part.cpp
         nspluginloader.cpp
-        callbackadaptor.cpp
         viewer_proxy.cpp
      )
+  qt4_add_dbus_adaptor( kcminit_nsplugin_PART_SRCS org.kde.nsplugins.CallBack.xml plugin_part.h PluginPart )
 
   kde4_automoc(${kcminit_nsplugin_PART_SRCS})
 

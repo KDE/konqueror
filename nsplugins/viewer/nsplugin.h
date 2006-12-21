@@ -38,7 +38,7 @@
 
 #include <kparts/browserextension.h>  // for URLArgs
 #include <kio/job.h>
-
+#include <QDBusObjectPath>
 
 #define XP_UNIX
 #include "sdk/npupp.h"
@@ -272,7 +272,7 @@ public:
   ~NSPluginClass();
 
   QString getMIMEDescription();
-  QString newInstance(const QString &url, const QString &mimeType, bool embed,
+  QDBusObjectPath newInstance(const QString &url, const QString &mimeType, bool embed,
                       const QStringList &argn, const QStringList &argv,
                       const QString &appId, const QString &callbackId, bool reload);
   void destroyInstance( NSPluginInstance* inst );
@@ -316,7 +316,7 @@ public:
    virtual ~NSPluginViewer();
 
    void shutdown();
-   QString newClass( const QString& plugin, const QString& senderId );
+   QDBusObjectPath newClass( const QString& plugin, const QString& senderId );
 
 private Q_SLOTS:
    void appUnregistered(const QString& id);
