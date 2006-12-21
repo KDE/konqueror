@@ -679,7 +679,7 @@ int main( int argc, char **argv )
 
     // Tel kded to update sycoca database.
     QDBusInterface kbuildsycoca("org.kde.kded", "/kbuildsycoca",
-                                   "org.kde.kbuildsycoca");
+                                   "org.kde.kded");
     if (kbuildsycoca.isValid())
         kbuildsycoca.call("recreate");
 }
