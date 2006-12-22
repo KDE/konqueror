@@ -132,12 +132,10 @@ bool KonqFMSettings::shouldEmbed( const QString & mimeType ) const
     if ( mimeTypePtr )
     {
         hasLocalProtocolRedirect = !mimeTypePtr->property( "X-KDE-LocalProtocol" ).toString().isEmpty();
-        kDebug(1203) << mimeTypePtr->desktopEntryPath() << endl;
-        KDesktopFile deFile( mimeTypePtr->desktopEntryPath(),
-                             true /*readonly*/, "mime");
-        if ( deFile.hasKey( "X-KDE-AutoEmbed" ) )
+        QVariant autoEmbedProp = mimeTypePtr->property( "X-KDE-AutoEmbed" );
+        if ( autoEmbedProp.isValid() )
         {
-            bool autoEmbed = deFile.readEntry( "X-KDE-AutoEmbed" , QVariant(false)).toBool();
+            bool autoEmbed = autoEmbedProp.toBool();
             kDebug(1203) << "X-KDE-AutoEmbed set to " << (autoEmbed ? "true" : "false") << endl;
             return autoEmbed;
         } else
