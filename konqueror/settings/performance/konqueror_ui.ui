@@ -13,18 +13,12 @@
       </rect>
     </property>
     <layout class="QVBoxLayout" >
-      <property name="margin" >
-        <number>0</number>
-      </property>
       <item>
         <widget class="Q3GroupBox" name="reuse_group" >
           <property name="title" >
             <string>Minimize Memory Usage</string>
           </property>
           <layout class="QVBoxLayout" >
-            <property name="margin" >
-              <number>0</number>
-            </property>
             <item>
               <widget class="QRadioButton" name="rb_never_reuse" >
                 <property name="text" >
@@ -55,9 +49,6 @@
             <string>Preloading</string>
           </property>
           <layout class="QVBoxLayout" >
-            <property name="margin" >
-              <number>0</number>
-            </property>
             <item>
               <layout class="QHBoxLayout" >
                 <property name="margin" >

@@ -114,7 +114,7 @@ void UserAgentDlg::load()
   bool b = m_config->readEntry("SendUserAgent", QVariant(true)).toBool();
   dlg->cbSendUAString->setChecked( b );
   m_ua_keys = m_config->readEntry("UserAgentKeys", DEFAULT_USER_AGENT_KEYS).toLower();
-  dlg->leDefaultId->setSqueezedText( KProtocolManager::defaultUserAgent( m_ua_keys ) );
+  dlg->leDefaultId->setText( KProtocolManager::defaultUserAgent( m_ua_keys ) );
   dlg->cbOS->setChecked( m_ua_keys.contains('o') );
   dlg->cbOSVersion->setChecked( m_ua_keys.contains('v') );
   dlg->cbOSVersion->setEnabled( m_ua_keys.contains('o') );
@@ -138,7 +138,7 @@ void UserAgentDlg::defaults()
 {
   dlg->lvDomainPolicyList->clear();
   m_ua_keys = DEFAULT_USER_AGENT_KEYS;
-  dlg->leDefaultId->setSqueezedText( KProtocolManager::defaultUserAgent(m_ua_keys) );
+  dlg->leDefaultId->setText( KProtocolManager::defaultUserAgent(m_ua_keys) );
   dlg->cbOS->setChecked( m_ua_keys.contains('o') );
   dlg->cbOSVersion->setChecked( m_ua_keys.contains('v') );
   dlg->cbOSVersion->setEnabled( m_ua_keys.contains('o') );
@@ -360,7 +360,7 @@ void UserAgentDlg::changeDefaultUAModifiers( int )
   QString modVal = KProtocolManager::defaultUserAgent( m_ua_keys );
   if ( dlg->leDefaultId->text() != modVal )
   {
-    dlg->leDefaultId->setSqueezedText(modVal);
+    dlg->leDefaultId->setText(modVal);
     configChanged();
   }
 }

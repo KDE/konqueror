@@ -32,9 +32,6 @@ Please note that disabling cookie support might make many web sites unbrowsable.
             <string/>
           </property>
           <layout class="QVBoxLayout" >
-            <property name="margin" >
-              <number>0</number>
-            </property>
             <item>
               <widget class="QCheckBox" name="cbRejectCrossDomainCookies" >
                 <property name="text" >
@@ -96,9 +93,6 @@ Determines how cookies received from a remote machine will be handled:
 &lt;/qt></string>
           </property>
           <layout class="QVBoxLayout" >
-            <property name="margin" >
-              <number>0</number>
-            </property>
             <item>
               <widget class="QRadioButton" name="rbPolicyAsk" >
                 <property name="text" >
@@ -134,9 +128,6 @@ To add a new policy, simply click on the &lt;b>Add...&lt;/b> button and supply t
 &lt;/qt></string>
           </property>
           <layout class="QGridLayout" >
-            <property name="margin" >
-              <number>0</number>
-            </property>
             <item row="2" column="1" >
               <spacer name="spacer1" >
                 <property name="sizeHint" >

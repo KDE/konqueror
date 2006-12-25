@@ -49,7 +49,6 @@ KCMFilter::KCMFilter( QWidget *parent, const QStringList& )
     setButtons(Default|Apply);
 
     QVBoxLayout *topLayout = new QVBoxLayout(this);
-    topLayout->setMargin(0);
     topLayout->setSpacing(KDialog::spacingHint());
 
     mEnableCheck = new QCheckBox(i18n("Enable filters"), this);

@@ -59,7 +59,6 @@ FileTypesView::FileTypesView(QWidget *parent, const QStringList &)
   QString wtstr;
 
   QHBoxLayout *l = new QHBoxLayout(this);
-  l->setMargin(KDialog::marginHint());
   QGridLayout *leftLayout = new QGridLayout((QWidget*)0L);
   leftLayout->setSpacing(KDialog::spacingHint());
   leftLayout->setColumnStretch(1, 1);
@@ -70,6 +69,7 @@ FileTypesView::FileTypesView(QWidget *parent, const QStringList &)
   leftLayout->addWidget(patternFilterLBL, 0, 0, 1, 3);
 
   patternFilterLE = new KLineEdit(this);
+  patternFilterLE->setClearButtonShown(true);
   patternFilterLBL->setBuddy( patternFilterLE );
   leftLayout->addWidget(patternFilterLE, 1, 0, 1, 3);
 

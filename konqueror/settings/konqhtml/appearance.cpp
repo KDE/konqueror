@@ -1,12 +1,11 @@
 
-#include <QFontDatabase>
 #include <QLabel>
 #include <QLayout>
 #include <QLineEdit>
 #include <QFontComboBox>
-#include <q3groupbox.h>
 #include <QDBusMessage>
 #include <QDBusConnection>
+#include <QGroupBox>
 
 #include <kapplication.h>
 #include <kcharsets.h>
@@ -47,7 +46,6 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QStringList&)
 
   QGridLayout *lay = new QGridLayout(this);
   lay->setSpacing(KDialog::spacingHint());
-  lay->setMargin(0);
   int r = 0;
   int E = 0, M = 1, W = 3; //CT 3 (instead 2) allows smaller color buttons
 
@@ -179,7 +177,7 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QStringList&)
   m_pFontSizeAdjust->setRange( -5, 5 );
   m_pFontSizeAdjust->setSingleStep( 1 );
   label->setBuddy( m_pFontSizeAdjust );
-  lay->addWidget( m_pFontSizeAdjust, r, M+1, 1, W-M+2 );
+  lay->addWidget( m_pFontSizeAdjust, r, M+1, 1, W-M );
 
   connect( m_pFontSizeAdjust, SIGNAL( valueChanged( int ) ),
 	   SLOT( slotFontSizeAdjust( int ) ) );

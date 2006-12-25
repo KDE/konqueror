@@ -57,8 +57,6 @@ KPluginOptions::KPluginOptions( QWidget *parent, const QStringList& )
       global_policies(m_pConfig,m_groupname,true)
 {
     QVBoxLayout* toplevel = new QVBoxLayout( this );
-    toplevel->setSpacing( 0 /* KDialog::spacingHint() */ );
-    toplevel->setMargin(0);
 
     /**************************************************************************
      ******************** Global Settings *************************************

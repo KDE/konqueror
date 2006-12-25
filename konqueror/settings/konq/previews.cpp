@@ -68,7 +68,6 @@ KPreviewOptions::KPreviewOptions( QWidget *parent, const QStringList & )
     : KCModule( _globalInstance(), parent )
 {
     QVBoxLayout *lay = new QVBoxLayout(this);
-    lay->setMargin(0);
     lay->setSpacing(KDialog::spacingHint());
 
     lay->addWidget( new QLabel( i18n("<p>Allow previews, \"Folder Icons Reflect Contents\", and "

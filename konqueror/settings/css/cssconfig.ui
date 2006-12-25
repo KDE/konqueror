@@ -16,9 +16,6 @@
       <string>&lt;b>Stylesheets&lt;/b>&lt;p>See http://www.w3.org/Style/CSS for further information on cascading style sheets.&lt;/p></string>
     </property>
     <layout class="QVBoxLayout" >
-      <property name="margin" >
-        <number>0</number>
-      </property>
       <property name="spacing" >
         <number>0</number>
       </property>
@@ -42,9 +39,6 @@
             <string>&lt;b>Stylesheets&lt;/b>&lt;p>Use this groupbox to determine how Konqueror will render style sheets.&lt;/p></string>
           </property>
           <layout class="QVBoxLayout" >
-            <property name="margin" >
-              <number>11</number>
-            </property>
             <property name="spacing" >
               <number>6</number>
             </property>
