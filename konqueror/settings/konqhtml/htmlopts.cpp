@@ -41,8 +41,6 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QStringList&)
     m_pConfig = KSharedConfig::openConfig( "konquerorrc", false, false );
     int row = 0;
     QGridLayout *lay = new QGridLayout(this);
-    lay->setSpacing(KDialog::spacingHint());
-    lay->setMargin(0);
 
     // Bookmarks
     setQuickHelp( i18n("<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "

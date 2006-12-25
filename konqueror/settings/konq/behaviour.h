@@ -1,4 +1,4 @@
-/**
+/*
  *  Copyright (c) 2001 David Faure <david@mandrakesoft.com>
  *
  *  This program is free software; you can redistribute it and/or modify
@@ -16,25 +16,20 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#ifndef __BEHAVIOUR_H__
-#define __BEHAVIOUR_H__
+#ifndef BEHAVIOUR_H
+#define BEHAVIOUR_H
 
 #include <kcmodule.h>
-//Added by qt3to4:
-#include <QLabel>
 #include <kconfig.h>
+
 #include <QStringList>
 
 class QCheckBox;
 class QLabel;
 class QRadioButton;
 class QSpinBox;
-class Q3VButtonGroup;
 
 class KUrlRequester;
-
-//-----------------------------------------------------------------------------
-
 
 class KBehaviourOptions : public KCModule
 {
@@ -62,7 +57,6 @@ private:
 
   KUrlRequester *homeURL;
 
-  Q3VButtonGroup *bgOneProcess;
   //QLabel *fileTips;
   //QSpinBox  *sbToolTip;
   QCheckBox *cbShowTips;
@@ -74,4 +68,4 @@ private:
   QCheckBox *cbShowDeleteCommand;
 };
 
-#endif		// __BEHAVIOUR_H__
+#endif // BEHAVIOUR_H

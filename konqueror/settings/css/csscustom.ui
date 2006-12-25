@@ -30,9 +30,6 @@
             <string>Font Size</string>
           </property>
           <layout class="QGridLayout" >
-            <property name="margin" >
-              <number>0</number>
-            </property>
             <item row="0" column="1" >
               <widget class="QComboBox" name="basefontsize" >
                 <property name="sizePolicy" >
@@ -156,9 +153,6 @@
             <string>&lt;b>Images&lt;/b>&lt;p></string>
           </property>
           <layout class="QGridLayout" >
-            <property name="margin" >
-              <number>0</number>
-            </property>
             <item row="0" column="0" >
               <widget class="QCheckBox" name="hideImages" >
                 <property name="text" >
@@ -194,9 +188,6 @@
             <string>&lt;b>Font family&lt;/b>&lt;p>A font family is a group of fonts that resemble one another, with family members that are e.g. bold, italic, or any number of the above.&lt;/p></string>
           </property>
           <layout class="QGridLayout" >
-            <property name="margin" >
-              <number>0</number>
-            </property>
             <item row="0" column="0" >
               <widget class="QLabel" name="txtBaseFontFamily" >
                 <property name="text" >
@@ -272,9 +263,6 @@
       </item>
       <item rowspan="1" row="3" column="0" colspan="2" >
         <layout class="QHBoxLayout" >
-          <property name="margin" >
-            <number>0</number>
-          </property>
           <property name="spacing" >
             <number>6</number>
           </property>
@@ -318,9 +306,6 @@
             <bool>true</bool>
           </property>
           <layout class="QVBoxLayout" >
-            <property name="margin" >
-              <number>0</number>
-            </property>
             <item>
               <widget class="QRadioButton" name="blackOnWhite" >
                 <property name="text" >

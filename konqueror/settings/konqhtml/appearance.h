@@ -8,8 +8,8 @@
 // Cleanup and modifications for KDE 2.1
 // (c) Daniel Molkentin 2000
 
-#ifndef __APPEARANCE_H__
-#define __APPEARANCE_H__
+#ifndef APPEARANCE_H
+#define APPEARANCE_H
 
 #include <QWidget>
 #include <QMap>
@@ -66,4 +66,4 @@ private:
   QString encodingName;
 };
 
-#endif // __APPEARANCE_H__
+#endif // APPEARANCE_H

@@ -1,9 +1,8 @@
-#ifndef _FILETYPESVIEW_H
-#define _FILETYPESVIEW_H
+#ifndef FILETYPESVIEW_H
+#define FILETYPESVIEW_H
 
 #include <q3ptrlist.h>
 #include <QMap>
-//Added by qt3to4:
 #include <QLabel>
 #include <QStackedWidget>
 
@@ -18,7 +17,7 @@ class Q3ListViewItem;
 class Q3ListBox;
 class QPushButton;
 class KIconButton;
-class QLineEdit;
+class KLineEdit;
 class QComboBox;
 class FileTypeDetails;
 class FileGroupDetails;
@@ -62,7 +61,7 @@ private:
   FileGroupDetails * m_groupDetails;
   QLabel * m_emptyWidget;
 
-  QLineEdit *patternFilterLE;
+  KLineEdit *patternFilterLE;
   QStringList removedList;
   bool m_dirty;
   QMap<QString,TypesListItem*> m_majorMap;
