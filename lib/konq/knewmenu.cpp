@@ -464,7 +464,8 @@ void KNewMenu::slotNewFile()
 
                 KUrl templateURL;
                 templateURL.setPath( entry.templatePath );
-                (void) new KPropertiesDialog( templateURL, *it, text, d->m_parentWidget );
+                KPropertiesDialog* dlg = new KPropertiesDialog( templateURL, *it, text, d->m_parentWidget );
+                dlg->exec();
     	    }
     	    return; // done, exit.
     	}

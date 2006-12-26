@@ -306,8 +306,7 @@ void KfindWindow::fileProperties()
 {
   // This dialog must be modal because it parent dialog is modal as well.
   // Non-modal property dialog will hide behind the main window
-  (void) new KPropertiesDialog( &((KfFileLVI *)currentItem())->fileitem, this,
-				"propDialog", true);
+  KPropertiesDialog::showDialog( &((KfFileLVI *)currentItem())->fileitem, this, true );
 }
 
 void KfindWindow::openFolder()

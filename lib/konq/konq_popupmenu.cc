@@ -965,8 +965,9 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
 
 void KonqPopupMenu::slotOpenShareFileDialog()
 {
-    KPropertiesDialog* dlg = showPropertiesDialog();
+    KPropertiesDialog* dlg = new KPropertiesDialog( m_lstItems, d->m_parentWidget );
     dlg->showFileSharingPage();
+    dlg->exec();
 }
 
 KonqPopupMenu::~KonqPopupMenu()
@@ -1060,25 +1061,7 @@ void KonqPopupMenu::slotPopupMimeType()
 
 void KonqPopupMenu::slotPopupProperties()
 {
-    (void)showPropertiesDialog();
-}
-
-KPropertiesDialog* KonqPopupMenu::showPropertiesDialog()
-{
-    // It may be that the kfileitem was created by hand
-    // (see KonqKfmIconView::slotMouseButtonPressed)
-    // In that case, we can get more precise info in the properties
-    // (like permissions) if we stat the URL.
-    if ( m_lstItems.count() == 1 )
-    {
-        KFileItem * item = m_lstItems.first();
-        if (item->entry().count() == 0) // this item wasn't listed by a slave
-        {
-            // KPropertiesDialog will use stat to get more info on the file
-            return new KPropertiesDialog( item->url(), d->m_parentWidget );
-        }
-    }
-    return new KPropertiesDialog( m_lstItems, d->m_parentWidget );
+    KPropertiesDialog::showDialog( m_lstItems, d->m_parentWidget );
 }
 
 QAction *KonqPopupMenu::action( const QDomElement &element ) const
