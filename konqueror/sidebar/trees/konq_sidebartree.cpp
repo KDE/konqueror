@@ -1030,10 +1030,9 @@ void KonqSidebarTree::slotProperties()
     KUrl url;
     url.setPath(m_currentTopLevelItem->path());
 
-    KPropertiesDialog *dlg = new KPropertiesDialog( url );
+    KPropertiesDialog *dlg = new KPropertiesDialog( url, this );
     dlg->setFileNameReadOnly(true);
     dlg->exec();
-    delete dlg;
 }
 
 void KonqSidebarTree::slotOpenNewWindow()

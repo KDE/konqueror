@@ -215,7 +215,7 @@ void ListViewBrowserExtension::setNameFilter( const QString &nameFilter )
 
 void ListViewBrowserExtension::properties()
 {
-  (void) new KPropertiesDialog( m_listView->selectedFileItems() );
+  KPropertiesDialog::showDialog( m_listView->selectedFileItems(), m_listView->listViewWidget(), true /*modal*/ );
 }
 
 void ListViewBrowserExtension::editMimeType()

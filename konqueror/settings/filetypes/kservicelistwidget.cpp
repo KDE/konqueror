@@ -312,7 +312,7 @@ void KServiceListWidget::editService()
       KUrl serviceURL;
       serviceURL.setPath( path );
       KFileItem item( serviceURL, "application/x-desktop", KFileItem::Unknown );
-      KPropertiesDialog dlg( &item, this, 0, true /*modal*/, false /*no auto-show*/ );
+      KPropertiesDialog dlg( &item, this );
       if ( dlg.exec() != QDialog::Accepted )
         return;
 

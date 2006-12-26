@@ -145,7 +145,7 @@ void IconViewBrowserExtension::trash()
 
 void IconViewBrowserExtension::properties()
 {
-    (void) new KPropertiesDialog( m_iconView->iconViewWidget()->selectedFileItems() );
+    KPropertiesDialog::showDialog( m_iconView->iconViewWidget()->selectedFileItems(), m_iconView->iconViewWidget(), true /*modal*/ );
 }
 
 void IconViewBrowserExtension::editMimeType()
