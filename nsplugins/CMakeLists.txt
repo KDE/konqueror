@@ -55,7 +55,7 @@ if (X11_Xt_LIB)
 
   install( FILES khtml_plugins.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
   install( FILES nspluginpart.rc  DESTINATION  ${DATA_INSTALL_DIR}/plugin )
-
+  install( FILES org.kde.nsplugins.CallBack.xml DESTINATION ${DBUS_INTERFACES_DIR} )
 else (X11_Xt_LIB)
 
   message(STATUS "libXt not found - browser plugin support disabled")
