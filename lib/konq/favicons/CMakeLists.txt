@@ -15,4 +15,4 @@ install( FILES favicons.desktop  DESTINATION  ${SERVICES_INSTALL_DIR}/kded )
 
 install( FILES favicons.upd DESTINATION  ${KCONF_UPDATE_INSTALL_DIR} )
 install( PROGRAMS move_favicons.sh  DESTINATION  ${KCONF_UPDATE_INSTALL_DIR} )
-
+install( FILES org.kde.FavIcon.xml DESTINATION ${DBUS_INTERFACES_DIR} )
