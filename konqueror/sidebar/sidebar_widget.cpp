@@ -531,7 +531,7 @@ void Sidebar_Widget::slotSetIcon( )
 void Sidebar_Widget::slotRemove()
 {
 	if (KMessageBox::warningContinueCancel(this,i18n("<qt>Do you really want to remove the <b>%1</b> tab?</qt>", m_currentButton->displayName),
-		QString(),KStdGuiItem::del())==KMessageBox::Continue)
+		QString(),KStandardGuiItem::del())==KMessageBox::Continue)
 	{
 		QFile f(m_path+m_currentButton->file);
 		if (!f.remove())

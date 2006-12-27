@@ -316,7 +316,7 @@ void KPluginOptions::scan()
         int ret = KMessageBox::warningYesNoCancel( this,
                                                     i18n("Do you want to apply your changes "
                                                          "before the scan? Otherwise the "
-                                                         "changes will be lost."), QString(), KStdGuiItem::save(), KStdGuiItem::discard() );
+                                                         "changes will be lost."), QString(), KStandardGuiItem::save(), KStandardGuiItem::discard() );
         if ( ret==KMessageBox::Cancel ) {
             m_widget->scanButton->setEnabled(true);
             return;
@@ -648,7 +648,7 @@ PluginDomainDialog::PluginDomainDialog(QWidget *parent) :
   hl->setMargin(0);
   hl->addStretch(10);
 
-  QPushButton *closePB = new KPushButton(KStdGuiItem::close(),this);
+  QPushButton *closePB = new KPushButton(KStandardGuiItem::close(),this);
   connect(closePB,SIGNAL(clicked()),SLOT(slotClose()));
   hl->addWidget(closePB);
   thisLayout->addLayout(hl);

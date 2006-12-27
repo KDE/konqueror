@@ -247,11 +247,11 @@ static int directCommand(KCmdLineArgs *args)
 
         if ( type == KMessageBox::WarningContinueCancel ) {
             /* TODO configurable button texts*/
-            ret = KMessageBox::messageBox( 0, type, text, title, KStdGuiItem::cont(),
-                KStdGuiItem::no(), dontagain );
+            ret = KMessageBox::messageBox( 0, type, text, title, KStandardGuiItem::cont(),
+                KStandardGuiItem::no(), dontagain );
         } else {
             ret = KMessageBox::messageBox( 0, type, text, title /*, TODO configurable button texts*/,
-                KStdGuiItem::yes(), KStdGuiItem::no(), dontagain );
+                KStandardGuiItem::yes(), KStandardGuiItem::no(), dontagain );
         }
         delete dontagaincfg;
         // ret is 1 for Ok, 2 for Cancel, 3 for Yes, 4 for No and 5 for Continue.

@@ -30,7 +30,7 @@
 
 #include <k3listview.h>
 #include <kdebug.h>
-#include <kstdguiitem.h>
+#include <kstandardguiitem.h>
 #include <kio/global.h>
 #include <kstandarddirs.h>
 #include <klocale.h>
@@ -83,7 +83,7 @@ KonqProfileDlg::KonqProfileDlg( KonqViewManager *manager, const QString & presel
   showButtonSeparator( true );
   setButtonGuiItem( BTN_RENAME, KGuiItem( i18n( "&Rename Profile" ) ) );
   setButtonGuiItem( BTN_DELETE, KGuiItem( i18n( "&Delete Profile" ), "editdelete" ) );
-  setButtonGuiItem( BTN_SAVE, KStdGuiItem::save() );
+  setButtonGuiItem( BTN_SAVE, KStandardGuiItem::save() );
 
   m_pViewManager = manager;
 

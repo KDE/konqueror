@@ -98,7 +98,7 @@
 #include <kprotocolinfo.h>
 #include <kprotocolmanager.h>
 #include <kseparatoraction.h>
-#include <kstdaccel.h>
+#include <kstandardshortcut.h>
 #include <kstandardaction.h>
 #include <kstandarddirs.h>
 #include <ksycoca.h>
@@ -3665,7 +3665,7 @@ void KonqMainWindow::initActions()
   action->setShortcut(Qt::ALT+Qt::Key_Return);
   action = new KAction(KIcon("window_new"),  i18n( "New &Window" ), actionCollection(), "new_window" );
   connect(action, SIGNAL(triggered(bool)), SLOT( slotNewWindow() ));
-  action->setShortcut(KStdAccel::shortcut(KStdAccel::New));
+  action->setShortcut(KStandardShortcut::shortcut(KStandardShortcut::New));
   action = new KAction(KIcon("window_duplicate"),  i18n( "&Duplicate Window" ), actionCollection(), "duplicate_window" );
   connect(action, SIGNAL(triggered(bool)), SLOT( slotDuplicateWindow() ));
   action->setShortcut(Qt::CTRL+Qt::Key_D);
@@ -3681,11 +3681,11 @@ void KonqMainWindow::initActions()
   }
   action = new KAction(KIcon("fileopen"),  i18n( "&Open Location..." ), actionCollection(), "open_location" );
   connect(action, SIGNAL(triggered(bool)), SLOT( slotOpenLocation() ));
-  action->setShortcut(KStdAccel::shortcut(KStdAccel::Open));
+  action->setShortcut(KStandardShortcut::shortcut(KStandardShortcut::Open));
 
   m_paFindFiles = new KToggleAction(KIcon("filefind"),  i18n( "&Find File..." ), actionCollection(), "findfile" );
   connect(m_paFindFiles, SIGNAL(triggered(bool) ), SLOT( slotToolFind() ));
-  m_paFindFiles->setShortcut(KStdAccel::shortcut(KStdAccel::Find));
+  m_paFindFiles->setShortcut(KStandardShortcut::shortcut(KStandardShortcut::Find));
 
   m_paPrint = KStandardAction::print( 0, 0, actionCollection(), "print" );
   (void) KStandardAction::quit( this, SLOT( close() ), actionCollection(), "quit" );
@@ -3699,23 +3699,23 @@ void KonqMainWindow::initActions()
 
   // Go menu
   m_paUp = new KToolBarPopupAction( KIcon("up"), i18n( "&Up" ), actionCollection(), "up" );
-  m_paUp->setShortcut( KStdAccel::shortcut(KStdAccel::Up) );
+  m_paUp->setShortcut( KStandardShortcut::shortcut(KStandardShortcut::Up) );
   connect( m_paUp, SIGNAL( triggered( Qt::MouseButtons, Qt::KeyboardModifiers) ), this,
 	   SLOT( slotUp(Qt::MouseButtons, Qt::KeyboardModifiers) ) );
   connect( m_paUp->menu(), SIGNAL( aboutToShow() ), this, SLOT( slotUpAboutToShow() ) );
   connect( m_paUp->menu(), SIGNAL( activated( int ) ), this, SLOT( slotUpActivated( int ) ) );
 
-  QPair< KGuiItem, KGuiItem > backForward = KStdGuiItem::backAndForward();
+  QPair< KGuiItem, KGuiItem > backForward = KStandardGuiItem::backAndForward();
 
   m_paBack = new KToolBarPopupAction( KIcon(backForward.first.iconName()), backForward.first.text(), actionCollection(), "back" );
-  m_paBack->setShortcut( KStdAccel::shortcut(KStdAccel::Back) );
+  m_paBack->setShortcut( KStandardShortcut::shortcut(KStandardShortcut::Back) );
   connect( m_paBack, SIGNAL( triggered( Qt::MouseButtons, Qt::KeyboardModifiers) ), this,
 	   SLOT( slotBack(Qt::MouseButtons, Qt::KeyboardModifiers) ) );
   connect( m_paBack->menu(), SIGNAL( aboutToShow() ), this, SLOT( slotBackAboutToShow() ) );
   connect( m_paBack->menu(), SIGNAL( activated( int ) ), this, SLOT( slotBackActivated( int ) ) );
 
   m_paForward = new KToolBarPopupAction( KIcon(backForward.second.iconName()), backForward.second.text(), actionCollection(), "forward" );
-  m_paForward->setShortcut( KStdAccel::shortcut(KStdAccel::Forward) );
+  m_paForward->setShortcut( KStandardShortcut::shortcut(KStandardShortcut::Forward) );
   connect( m_paForward, SIGNAL( triggered( Qt::MouseButtons, Qt::KeyboardModifiers) ), this,
 	   SLOT( slotForward(Qt::MouseButtons, Qt::KeyboardModifiers) ) );
   connect( m_paForward->menu(), SIGNAL( aboutToShow() ), this, SLOT( slotForwardAboutToShow() ) );
@@ -3726,7 +3726,7 @@ void KonqMainWindow::initActions()
   connect( m_paHistory, SIGNAL( step( int ) ), this, SLOT( slotGoHistoryActivated( int ) ) );
 
   m_paHome = new KAction(KIcon("gohome"),  i18n( "Home" ), actionCollection(), "home" );
-  m_paHome->setShortcut(KStdAccel::shortcut(KStdAccel::Home));
+  m_paHome->setShortcut(KStandardShortcut::shortcut(KStandardShortcut::Home));
   connect( m_paHome, SIGNAL( triggered( Qt::MouseButtons, Qt::KeyboardModifiers) ), this,
 	   SLOT( slotHome(Qt::MouseButtons, Qt::KeyboardModifiers) ) );
 
@@ -3812,10 +3812,10 @@ void KonqMainWindow::initActions()
 
   m_paActivateNextTab = new KAction(KIcon("tab_next"),  i18n( "Activate Next Tab" ), actionCollection(), "activatenexttab" );
   connect(m_paActivateNextTab, SIGNAL(triggered(bool)), SLOT( slotActivateNextTab() ));
-  m_paActivateNextTab->setShortcut(QApplication::isRightToLeft() ? KStdAccel::tabPrev() : KStdAccel::tabNext());
+  m_paActivateNextTab->setShortcut(QApplication::isRightToLeft() ? KStandardShortcut::tabPrev() : KStandardShortcut::tabNext());
   m_paActivatePrevTab = new KAction(KIcon("tab_previous"),  i18n( "Activate Previous Tab" ), actionCollection(), "activateprevtab" );
   connect(m_paActivatePrevTab, SIGNAL(triggered(bool)), SLOT( slotActivatePrevTab() ));
-  m_paActivatePrevTab->setShortcut(QApplication::isRightToLeft() ? KStdAccel::tabNext() : KStdAccel::tabPrev());
+  m_paActivatePrevTab->setShortcut(QApplication::isRightToLeft() ? KStandardShortcut::tabNext() : KStandardShortcut::tabPrev());
 
   QString actionname;
   for (int i=1;i<13;i++) {
@@ -3848,7 +3848,7 @@ void KonqMainWindow::initActions()
   m_ptaFullScreen->setShortcut( fullScreenShortcut );
   connect( m_ptaFullScreen, SIGNAL( toggled( bool )), this, SLOT( slotUpdateFullScreen( bool )));
 
-  KShortcut reloadShortcut = KStdAccel::shortcut(KStdAccel::Reload);
+  KShortcut reloadShortcut = KStandardShortcut::shortcut(KStandardShortcut::Reload);
   reloadShortcut.setAlternate(Qt::CTRL + Qt::Key_R);
   m_paReload = new KAction(KIcon("reload"),  i18n( "&Reload" ), actionCollection(), "reload" );
   connect(m_paReload, SIGNAL(triggered(bool)), SLOT( slotReload() ));
@@ -5188,7 +5188,7 @@ void KonqMainWindow::closeEvent( QCloseEvent *e )
                   i18n("You have multiple tabs open in this window, "
                         "are you sure you want to quit?"),
                   i18n("Confirmation"),
-                  KStdGuiItem::quit(),
+                  KStandardGuiItem::quit(),
                   KGuiItem(i18n( "C&lose Current Tab" ), "tab_remove"),
                   "MultipleTabConfirm"
               )

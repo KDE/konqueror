@@ -32,7 +32,7 @@
 #include <kicontheme.h>
 #include <klineedit.h>
 #include <konq_pixmapprovider.h>
-#include <kstdaccel.h>
+#include <kstandardshortcut.h>
 #include <konq_mainwindow.h>
 #include <kstringhandler.h>
 
@@ -417,8 +417,8 @@ bool KonqCombo::eventFilter( QObject *o, QEvent *ev )
 
             KShortcut key( e->key() | e->modifiers() );
 
-            if ( key == KStdAccel::deleteWordBack() ||
-                 key == KStdAccel::deleteWordForward() ||
+            if ( key == KStandardShortcut::deleteWordBack() ||
+                 key == KStandardShortcut::deleteWordForward() ||
                  ((e->modifiers() & Qt::ControlModifier) &&
                    (e->key() == Qt::Key_Left || e->key() == Qt::Key_Right) ) ) {
                 selectWord(e);
@@ -441,8 +441,8 @@ void KonqCombo::keyPressEvent( QKeyEvent *e )
     // we have to set it as temporary, otherwise we wouldn't get our nice
     // pixmap. Yes, QComboBox still sucks.
     KShortcut key( e->key() | e->modifiers() );
-    if ( key == KStdAccel::rotateUp() ||
-         key == KStdAccel::rotateDown() )
+    if ( key == KStandardShortcut::rotateUp() ||
+         key == KStandardShortcut::rotateDown() )
          setTemporary( currentText() );
 }
 

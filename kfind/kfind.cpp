@@ -34,7 +34,7 @@
 #include <kdialog.h>
 #include <kdebug.h>
 #include <klocale.h>
-#include <kstdguiitem.h>
+#include <kstandardguiitem.h>
 #include <kdirlister.h>
 
 #include "kftabdlg.h"
@@ -60,15 +60,15 @@ Kfind::Kfind(QWidget *parent)
   lay->addStretch(1);
   mTopLayout->addWidget(mButtonBox);
 
-  mSearch = new KPushButton( KStdGuiItem::find(), mButtonBox );
+  mSearch = new KPushButton( KStandardGuiItem::find(), mButtonBox );
   mButtonBox->setSpacing( (tabWidget->sizeHint().height()-4*mSearch->sizeHint().height()) / 4);
   connect( mSearch, SIGNAL(clicked()), this, SLOT( startSearch() ) );
-  mStop = new KPushButton( KStdGuiItem::stop(), mButtonBox );
+  mStop = new KPushButton( KStandardGuiItem::stop(), mButtonBox );
   connect( mStop, SIGNAL(clicked()), this, SLOT( stopSearch() ) );
-  mSave = new KPushButton( KStdGuiItem::saveAs(), mButtonBox );
+  mSave = new KPushButton( KStandardGuiItem::saveAs(), mButtonBox );
   connect( mSave, SIGNAL(clicked()), this, SLOT( saveResults() ) );
 
-  KPushButton * mClose = new KPushButton( KStdGuiItem::close(), mButtonBox );
+  KPushButton * mClose = new KPushButton( KStandardGuiItem::close(), mButtonBox );
   connect( mClose, SIGNAL(clicked()), this, SIGNAL( destroyMe() ) );
 
   // react to search requests from widget

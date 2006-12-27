@@ -21,7 +21,7 @@
 #include <QLabel>
 
 #include <klocale.h>
-#include <kstdguiitem.h>
+#include <KStandardGuiItem>
 #include <kpushbutton.h>
 
 #include "kshellcmddialog.h"
@@ -38,8 +38,8 @@ KShellCommandDialog::KShellCommandDialog(const QString& title, const QString& co
    QLabel *label=new QLabel(title,this);
    m_shell=new KShellCommandExecutor(command,this);
 
-   cancelButton= new KPushButton(KStdGuiItem::cancel(), this);
-   closeButton= new KPushButton(KStdGuiItem::close(), this);
+   cancelButton= new KPushButton(KStandardGuiItem::cancel(), this);
+   closeButton= new KPushButton(KStandardGuiItem::close(), this);
    closeButton->setDefault(true);
 
    label->resize(label->sizeHint());

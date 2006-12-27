@@ -28,7 +28,7 @@
 #include <kplugininfo.h>
 #include <kpluginselector.h>
 #include <ksettings/dispatcher.h>
-#include <kstdguiitem.h>
+#include <kstandardguiitem.h>
 
 #include "konq_view.h"
 #include "konq_extensionmanager.h"
@@ -49,7 +49,7 @@ KonqExtensionManager::KonqExtensionManager(QWidget *parent, KonqMainWindow *main
 {
   setCaption( i18n("Configure") );
   setButtons( Default | Cancel | Apply | Ok | User1 );
-  setButtonGuiItem( User1, KStdGuiItem::reset() );
+  setButtonGuiItem( User1, KStandardGuiItem::reset() );
   setObjectName( "extensionmanager" );
   showButtonSeparator( true );
 

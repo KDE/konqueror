@@ -43,7 +43,7 @@
 
 #include <kacceleratormanager.h>
 #include <konq_pixmapprovider.h>
-#include <kstdaccel.h>
+#include <kstandardshortcut.h>
 #include <qtabbar.h>
 
 #include <QStyle>
