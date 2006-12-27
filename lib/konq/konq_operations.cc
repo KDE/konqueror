@@ -262,7 +262,7 @@ bool KonqOperations::askDeleteConfirmation( const KUrl::List & selectedUrls, int
              	i18np( "Do you really want to delete this item?", "Do you really want to delete these %n items?", prettyList.count()),
              	prettyList,
 		i18n( "Delete Files" ),
-		KStdGuiItem::del(),
+		KStandardGuiItem::del(),
 		keyName, KMessageBox::Dangerous);
             break;
 

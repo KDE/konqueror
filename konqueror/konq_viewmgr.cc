@@ -1158,7 +1158,7 @@ void KonqViewManager::loadViewProfile( KConfig &cfg, const QString & filename,
                 if ( KMessageBox::warningContinueCancel( 0,
                    i18n("This tab contains changes that have not been submitted.\nLoading a profile will discard these changes."),
                    i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes")), "discardchangesloadprofile") != KMessageBox::Continue )
-			/* WE: maybe KStdGuiItem(Discard) here? */
+			/* WE: maybe KStandardGuiItem(Discard) here? */
                 {
                     showTab( originalView );
                     return;

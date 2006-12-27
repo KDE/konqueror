@@ -30,7 +30,7 @@
 #include <kiconloader.h>
 #include <klocale.h>
 #include <ksqueezedtextlabel.h>
-#include <kstdaccel.h>
+#include <kstandardshortcut.h>
 
 #include <QPainter>
 #include <QToolButton>

@@ -565,7 +565,7 @@ KUrlDesktopFileDlg::KUrlDesktopFileDlg( const QString& textFileName, const QStri
     : KDialog( parent )
 {
     setButtons( Ok | Cancel | User1 );
-    setButtonGuiItem( User1, KStdGuiItem::clear() );
+    setButtonGuiItem( User1, KStandardGuiItem::clear() );
     showButtonSeparator( true );
 
     initDialog( textFileName, QString(), textUrl, QString() );
