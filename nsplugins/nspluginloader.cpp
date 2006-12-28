@@ -46,7 +46,9 @@
 #include "nspluginloader.h"
 #include "nspluginloader.moc"
 
-#include "viewer_proxy.h"
+#include "nsplugins_class_interface.h"
+#include "nsplugins_instance_interface.h"
+#include "nsplugins_viewer_interface.h"
 
 #include <config.h>
 
@@ -439,7 +441,8 @@ NSPluginInstance *NSPluginLoader::newInstance(QWidget *parent, const QString& ur
    }
 
    // get plugin class object
-   QDBusObjectPath cls_ref = _viewer->newClass( plugin_name );
+#warning "kde4 verify if appId is sendId" 
+   QDBusObjectPath cls_ref = _viewer->newClass( plugin_name, appId ); 
    if ( cls_ref.path().isEmpty() )
    {
       kDebug() << "Couldn't create plugin class" << endl;

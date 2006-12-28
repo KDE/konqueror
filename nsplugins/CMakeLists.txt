@@ -12,9 +12,17 @@ if (X11_Xt_LIB)
   set(kcminit_nsplugin_PART_SRCS
         plugin_part.cpp
         nspluginloader.cpp
-        viewer_proxy.cpp
      )
   qt4_add_dbus_adaptor( kcminit_nsplugin_PART_SRCS org.kde.nsplugins.CallBack.xml plugin_part.h PluginPart )
+
+  set(nsplugins_class_xml  ${CMAKE_SOURCE_DIR}/nsplugins/viewer/org.kde.nsplugins.class.xml)
+  QT4_ADD_DBUS_INTERFACE( kcminit_nsplugin_PART_SRCS ${nsplugins_class_xml} nsplugins_class_interface )
+
+  set(nsplugins_instance_xml  ${CMAKE_SOURCE_DIR}/nsplugins/viewer/org.kde.nsplugins.instance.xml)
+  QT4_ADD_DBUS_INTERFACE( kcminit_nsplugin_PART_SRCS ${nsplugins_instance_xml} nsplugins_instance_interface )
+
+  set(nsplugins_viewer_xml  ${CMAKE_SOURCE_DIR}/nsplugins/viewer/org.kde.nsplugins.viewer.xml)
+  QT4_ADD_DBUS_INTERFACE( kcminit_nsplugin_PART_SRCS ${nsplugins_viewer_xml} nsplugins_viewer_interface )
 
   kde4_automoc(${kcminit_nsplugin_PART_SRCS})
 
