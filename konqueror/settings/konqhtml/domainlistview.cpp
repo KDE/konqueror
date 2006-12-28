@@ -189,6 +189,7 @@ void DomainListView::exportPressed()
 void DomainListView::initialize(const QStringList &domainList)
 {
     domainSpecificLV->clear();
+    domainPolicies.clear();
 //    JavaPolicies pol(m_pConfig,m_groupname,false);
     for (QStringList::ConstIterator it = domainList.begin();
          it != domainList.end(); ++it) {
