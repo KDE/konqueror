@@ -29,7 +29,7 @@
 #include "instanceadaptor.h"
 #include "vieweradaptor.h"
 
-#include "callback_proxy.h"
+#include "nsplugins_callback_interface.h"
 
 #include <stdlib.h>
 #include <unistd.h>

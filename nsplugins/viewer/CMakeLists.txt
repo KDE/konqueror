@@ -3,13 +3,14 @@ include_directories( ${CMAKE_SOURCE_DIR}/nsplugins )
 
 ########### next target ###############
 
-set(nspluginviewer_SRCS nsplugin.cpp viewer.cpp callback_proxy.cpp)
+set(nspluginviewer_SRCS nsplugin.cpp viewer.cpp )
 
 qt4_add_dbus_adaptor( nspluginviewer_SRCS org.kde.nsplugins.class.xml nsplugin.h NSPluginClass )
 qt4_add_dbus_adaptor( nspluginviewer_SRCS org.kde.nsplugins.instance.xml nsplugin.h NSPluginInstance )
 qt4_add_dbus_adaptor( nspluginviewer_SRCS org.kde.nsplugins.viewer.xml nsplugin.h NSPluginViewer )
 
-
+set(nsplugins_callback_xml  ${CMAKE_SOURCE_DIR}/nsplugins/org.kde.nsplugins.CallBack.xml)
+QT4_ADD_DBUS_INTERFACE( nspluginviewer_SRCS ${nsplugins_callback_xml} nsplugins_callback_interface )
 
 kde4_automoc(${nspluginviewer_SRCS})
 
