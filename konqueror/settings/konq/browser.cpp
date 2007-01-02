@@ -55,22 +55,14 @@ KBrowserOptions::KBrowserOptions(QWidget *parent, const QStringList &)
   previews = new KPreviewOptions(tab);
   previews->layout()->setMargin( KDialog::marginHint() );
 
-  kuick = KCModuleLoader::loadModule("kcmkuick", KCModuleLoader::None,tab);
 
   tab->addTab(appearance, i18n("&Appearance"));
   tab->addTab(behavior, i18n("&Behavior"));
   tab->addTab(previews, i18n("&Previews && Meta-Data"));
-  if (kuick)
-  {
-    kuick->layout()->setMargin( KDialog::marginHint() );
-    tab->addTab(kuick, i18n("&Quick Copy && Move"));
-  }
 
   connect(appearance, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)));
   connect(behavior, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)));
   connect(previews, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)));
-  if (kuick)
-     connect(kuick, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)));
 
   connect(tab, SIGNAL(currentChanged(QWidget *)), 
           this, SIGNAL(quickHelpChanged()));
@@ -82,8 +74,6 @@ void KBrowserOptions::load()
   appearance->load();
   behavior->load();
   previews->load();
-  if (kuick)
-     kuick->load();
 }
 
 void KBrowserOptions::defaults()
@@ -91,8 +81,6 @@ void KBrowserOptions::defaults()
   appearance->defaults();
   behavior->defaults();
   previews->defaults();
-  if (kuick)
-     kuick->defaults();
 }
 
 void KBrowserOptions::save()
@@ -100,8 +88,6 @@ void KBrowserOptions::save()
   appearance->save();
   behavior->save();
   previews->save();
-  if (kuick)
-     kuick->save();
 }
 
 QString KBrowserOptions::quickHelp() const

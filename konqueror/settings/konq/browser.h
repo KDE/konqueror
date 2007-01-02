@@ -44,7 +44,6 @@ private:
   KCModule *appearance;
   KCModule *behavior;
   KCModule *previews;
-  KCModule *kuick;
   QTabWidget *m_tab;
 };
 
