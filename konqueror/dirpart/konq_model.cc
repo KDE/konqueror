@@ -115,7 +115,7 @@ QVariant KonqModel::data( const QModelIndex& index, int role ) const
             if ( m_previews.contains( fileItem( index ) ) )
                 return m_previews[ fileItem( index ) ];
             else
-                return QIcon( fileItem( index )->pixmap( KGlobal::iconLoader()->currentSize( K3Icon::Desktop ) ) );
+                return QIcon( fileItem( index )->pixmap( kapp->iconLoader()->currentSize( K3Icon::Desktop ) ) );
         else if ( role == Qt::FontRole )
             return m_font;
         else if ( role == Qt::TextColorRole )

@@ -18,6 +18,7 @@
 */
 
 #include "konq_listview.h"
+#include <kapplication.h>
 #include <konq_settings.h>
 #include <kfilemetainfo.h>
 #include <kdebug.h>
@@ -203,7 +204,7 @@ void KonqInfoListViewItem::setDisabled( bool disabled )
 {
     KonqBaseListViewItem::setDisabled( disabled );
     int iconSize = static_cast<KonqBaseListViewWidget *>(listView())->iconSize();
-    iconSize = iconSize ? iconSize : KGlobal::iconLoader()->currentSize( K3Icon::Small ); // Default = small
+    iconSize = iconSize ? iconSize : kapp->iconLoader()->currentSize( K3Icon::Small ); // Default = small
     setPixmap( 0, m_fileitem->pixmap( iconSize, state() ) );
 }
 

@@ -18,6 +18,7 @@
 */
 
 #include "konq_listview.h"
+#include <kapplication.h>
 #include <konq_settings.h>
 #include <kdebug.h>
 #include <klocale.h>
@@ -150,7 +151,7 @@ void KonqListViewItem::setDisabled( bool disabled )
 {
     KonqBaseListViewItem::setDisabled( disabled );
     int iconSize = m_pListViewWidget->iconSize();
-    iconSize = iconSize ? iconSize : KGlobal::iconLoader()->currentSize( K3Icon::Small ); // Default = small
+    iconSize = iconSize ? iconSize : kapp->iconLoader()->currentSize( K3Icon::Small ); // Default = small
     Q_ASSERT(iconSize >= 0);
     setPixmap( 0, m_fileitem->pixmap( iconSize, state() ) );
 }
@@ -163,7 +164,7 @@ void KonqListViewItem::setActive( bool active )
     //#### Optimize away repaint if possible, like the iconview does?
     KonqBaseListViewItem::setActive( active );
     int iconSize = m_pListViewWidget->iconSize();
-    iconSize = iconSize ? iconSize : KGlobal::iconLoader()->currentSize( K3Icon::Small ); // Default = small
+    iconSize = iconSize ? iconSize : kapp->iconLoader()->currentSize( K3Icon::Small ); // Default = small
     Q_ASSERT(iconSize >= 0);
     setPixmap( 0, m_fileitem->pixmap( iconSize, state() ) );
 }
