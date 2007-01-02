@@ -30,6 +30,7 @@
 #include <QDragMoveEvent>
 #include <QDropEvent>
 
+#include <kapplication.h>
 #include <kdebug.h>
 #include <kiconloader.h>
 #include <klocale.h>
@@ -516,8 +517,8 @@ void KonqFrameTabs::slotInitiateDrag( QWidget *w )
     frame->activeChildView()->url().populateMimeData(md);
     d->setMimeData( md );
     QString iconName = KMimeType::iconNameForUrl(frame->activeChildView()->url());
-    d->setPixmap(KGlobal::iconLoader()->loadIcon(iconName, K3Icon::Small, 0));
-    //d->setPixmap( KGlobal::iconLoader()->loadMimeTypeIcon(KMimeType::pixmapForURL( frame->activeChildView()->url(), 0), K3Icon::Small ) );
+    d->setPixmap(kapp->iconLoader()->loadIcon(iconName, K3Icon::Small, 0));
+    //d->setPixmap( kapp->iconLoader()->loadMimeTypeIcon(KMimeType::pixmapForURL( frame->activeChildView()->url(), 0), K3Icon::Small ) );
     d->start();
   }
 }

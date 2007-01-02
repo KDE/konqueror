@@ -771,7 +771,7 @@ void KonqBaseListViewWidget::startDrag()
    if (( urls.count() > 1 ) || (pixmap0Invalid))
    {
       int iconSize = m_pBrowserView->m_pProps->iconSize();
-      iconSize = iconSize ? iconSize : KGlobal::iconLoader()->currentSize( K3Icon::Small ); // Default = small
+      iconSize = iconSize ? iconSize : kapp->iconLoader()->currentSize( K3Icon::Small ); // Default = small
       pixmap2 = DesktopIcon( "kmultiple", iconSize );
       if ( pixmap2.isNull() )
           kWarning(1202) << "Could not find multiple pixmap" << endl;
