@@ -156,6 +156,10 @@ Q_SIGNALS:
    * Emitted by kcontrol when the global configuration changes
    */
   void reparseConfiguration();
+  /**
+   * Emitted by konqueror when we must update list of profiles
+   */
+  void updateAllProfileList();
 };
 
 #endif
