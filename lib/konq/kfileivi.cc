@@ -30,6 +30,7 @@
 #include <QDropEvent>
 #include <QIcon>
 
+#include <kapplication.h>
 #include <k3urldrag.h>
 #include <kiconeffect.h>
 #include <kfileitem.h>
@@ -107,7 +108,7 @@ void KFileIVI::invalidateThumb( int state, bool redraw )
 	    break;
     }
 
-    const QPixmap newThumb( KGlobal::iconLoader()->iconEffect()->
+    const QPixmap newThumb( kapp->iconLoader()->iconEffect()->
                             apply( d->thumb, K3Icon::Desktop, state ) );
     d->setCachedPixmaps( newThumb, mode );
 
@@ -208,7 +209,7 @@ void KFileIVI::setThumbnailPixmap( const QPixmap & pixmap )
     m_bThumbnail = true;
     d->thumb = pixmap;
 
-    const QPixmap newThumb( KGlobal::iconLoader()->iconEffect()
+    const QPixmap newThumb( kapp->iconLoader()->iconEffect()
                             ->apply( pixmap, K3Icon::Desktop, K3Icon::DefaultState ) );
     d->setCachedPixmaps( newThumb );
 
@@ -245,7 +246,7 @@ void KFileIVI::setEffect( int state )
     }
     // Do not update if the fingerprint is identical (prevents flicker)!
 
-    KIconEffect *effect = KGlobal::iconLoader()->iconEffect();
+    KIconEffect *effect = kapp->iconLoader()->iconEffect();
 
     bool haveEffect = effect->hasEffect( K3Icon::Desktop, m_state ) !=
                       effect->hasEffect( K3Icon::Desktop, state );
@@ -457,7 +458,7 @@ int KFileIVI::compare( Q3IconViewItem *i ) const
 void KFileIVI::updatePixmapSize()
 {
     int size = m_size ? m_size :
-        KGlobal::iconLoader()->currentSize( K3Icon::Desktop );
+        kapp->iconLoader()->currentSize( K3Icon::Desktop );
 
     KonqIconViewWidget* view = static_cast<KonqIconViewWidget*>( iconView() );
 

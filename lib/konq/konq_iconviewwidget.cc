@@ -295,7 +295,7 @@ void KonqIconViewWidget::slotOnItem( Q3IconViewItem *_item )
                 else
                 {
                     delete d->m_movie;
-                    d->m_movie = KGlobal::iconLoader()->loadMovie( d->pActiveItem->mouseOverAnimation(), K3Icon::Desktop, d->pActiveItem->iconSize() );
+                    d->m_movie = kapp->iconLoader()->loadMovie( d->pActiveItem->mouseOverAnimation(), K3Icon::Desktop, d->pActiveItem->iconSize() );
 #if 0
                     if ( d->m_movie && d->m_movie->isValid() )
                     {
@@ -449,7 +449,7 @@ void KonqIconViewWidget::slotMovieUpdate( const QRect& rect )
         // This can happen if the icon was scaled to the desired size, so KIconLoader
         // will happily return a movie with different dimensions than the icon
         int iconSize=d->pActiveItem->iconSize();
-        if (iconSize==0) iconSize = KGlobal::iconLoader()->currentSize( K3Icon::Desktop );
+        if (iconSize==0) iconSize = kapp->iconLoader()->currentSize( K3Icon::Desktop );
         if ( frame.width() != iconSize || frame.height() != iconSize ) {
             d->pActiveItem->setAnimated( false );
             d->m_movie->setPaused(true);
@@ -612,7 +612,7 @@ void KonqIconViewWidget::setIcons( int size, const QStringList& stopImagePreview
 
     if ( sizeChanged || previewSizeChanged )
     {
-        int realSize = size ? size : KGlobal::iconLoader()->currentSize( K3Icon::Desktop );
+        int realSize = size ? size : kapp->iconLoader()->currentSize( K3Icon::Desktop );
         // choose spacing depending on font, but min 5 (due to KFileIVI  move limit)
         setSpacing( ( m_bDesktop || ( realSize > K3Icon::SizeSmall ) ) ?
                     qMax( 5, QFontMetrics(font()).width('n') ) : 0 );
@@ -675,7 +675,7 @@ bool KonqIconViewWidget::mimeTypeMatch( const QString& mimeType, const QStringLi
 void KonqIconViewWidget::setItemTextPos( ItemTextPos pos )
 {
     // can't call gridXValue() because this already would need the new itemTextPos()
-    int sz = m_size ? m_size : KGlobal::iconLoader()->currentSize( K3Icon::Desktop );
+    int sz = m_size ? m_size : kapp->iconLoader()->currentSize( K3Icon::Desktop );
 
     if ( m_bSetGridX )
         if ( pos == Q3IconView::Bottom )
@@ -693,7 +693,7 @@ void KonqIconViewWidget::gridValues( int* x, int* y, int* dx, int* dy,
                                      int* nx, int* ny )
 {
     int previewSize = previewIconSize( m_size );
-    int iconSize = m_size ? m_size : KGlobal::iconLoader()->currentSize( K3Icon::Desktop );
+    int iconSize = m_size ? m_size : kapp->iconLoader()->currentSize( K3Icon::Desktop );
 
     // Grid size
     // as KFileIVI limits to move an icon to x >= 5, y >= 5, we define a grid cell as:
@@ -754,7 +754,7 @@ void KonqIconViewWidget::calculateGridX()
 int KonqIconViewWidget::gridXValue() const
 {
     // this method is only used in konqi as filemanager (not desktop)
-    int sz = m_size ? m_size : KGlobal::iconLoader()->currentSize( K3Icon::Desktop );
+    int sz = m_size ? m_size : kapp->iconLoader()->currentSize( K3Icon::Desktop );
     int newGridX;
 
     if ( itemTextPos() == Q3IconView::Bottom )
@@ -828,7 +828,7 @@ void KonqIconViewWidget::startImagePreview( const QStringList &, bool force )
         return; // don't start the preview job if not really necessary
     }
 
-    int iconSize = m_size ? m_size : KGlobal::iconLoader()->currentSize( K3Icon::Desktop );
+    int iconSize = m_size ? m_size : kapp->iconLoader()->currentSize( K3Icon::Desktop );
     int size;
 
     d->bBoostPreview = boostPreview();
@@ -1548,7 +1548,7 @@ void KonqIconViewWidget::lineupIcons()
         return;
     }
 
-    int iconSize = m_size ? m_size : KGlobal::iconLoader()->currentSize( K3Icon::Desktop );
+    int iconSize = m_size ? m_size : kapp->iconLoader()->currentSize( K3Icon::Desktop );
 
     typedef QList<Q3IconViewItem*> Bin;
     Bin*** bins = new Bin**[nx];
@@ -1793,7 +1793,7 @@ void KonqIconViewWidget::lineupIcons( Q3IconView::Arrangement arrangement )
 
 int KonqIconViewWidget::largestPreviewIconSize( int size ) const
 {
-    int iconSize = size ? size : KGlobal::iconLoader()->currentSize( K3Icon::Desktop );
+    int iconSize = size ? size : kapp->iconLoader()->currentSize( K3Icon::Desktop );
 
     if (iconSize < 28)
         return 48;
@@ -1809,7 +1809,7 @@ int KonqIconViewWidget::largestPreviewIconSize( int size ) const
 
 int KonqIconViewWidget::previewIconSize( int size ) const
 {
-    int iconSize = size ? size : KGlobal::iconLoader()->currentSize( K3Icon::Desktop );
+    int iconSize = size ? size : kapp->iconLoader()->currentSize( K3Icon::Desktop );
 
     if (!d->bBoostPreview)
         return iconSize;
