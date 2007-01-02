@@ -70,7 +70,7 @@ int KDEpasswd1Dialog::getPassword(QByteArray &password)
     KDEpasswd1Dialog *dlg = new KDEpasswd1Dialog();
     int res = dlg->exec();
     if (res == Accepted)
-	password = dlg->password();
+	password = dlg->password().local8Bit();
     delete dlg;
     return res;
 }
