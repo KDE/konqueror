@@ -36,7 +36,7 @@
 #include <kio/jobuidelegate.h>
 #include <kio/jobclasses.h>
 #include <kio/paste.h>
-#include <kio/renamedlg.h>
+#include <kio/renamedialog.h>
 #include <kdirnotify.h>
 
 // For doDrop
@@ -730,7 +730,7 @@ void KonqOperations::newDir( QWidget * parent, const KUrl & baseUrl )
     bool ok;
     QString name = i18n( "New Folder" );
     if ( baseUrl.isLocalFile() && QFileInfo( baseUrl.path( KUrl::AddTrailingSlash ) + name ).exists() )
-        name = KIO::RenameDlg::suggestName( baseUrl, i18n( "New Folder" ) );
+        name = KIO::RenameDialog::suggestName( baseUrl, i18n( "New Folder" ) );
 
     name = KInputDialog::getText ( i18n( "New Folder" ),
         i18n( "Enter folder name:" ), name, &ok, parent );

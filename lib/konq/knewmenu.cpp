@@ -40,7 +40,7 @@
 #include <kseparatoraction.h>
 #include <kio/job.h>
 #include <kio/jobuidelegate.h>
-#include <kio/renamedlg.h>
+#include <kio/renamedialog.h>
 
 #include <kpropertiesdialog.h>
 #include "konq_operations.h"
@@ -460,7 +460,7 @@ void KNewMenu::slotNewFile()
 		KUrl defaultFile( *it );
 		defaultFile.addPath( KIO::encodeFileName( text ) );
 		if ( defaultFile.isLocalFile() && QFile::exists( defaultFile.path() ) )
-		    text = KIO::RenameDlg::suggestName( *it, text);
+		    text = KIO::RenameDialog::suggestName( *it, text);
 
                 KUrl templateURL;
                 templateURL.setPath( entry.templatePath );
@@ -481,7 +481,7 @@ void KNewMenu::slotNewFile()
 	KUrl defaultFile( *(d->popupFiles.begin()) );
 	defaultFile.addPath( KIO::encodeFileName( text ) );
 	if ( defaultFile.isLocalFile() && QFile::exists( defaultFile.path() ) )
-	    text = KIO::RenameDlg::suggestName( *(d->popupFiles.begin()), text);
+	    text = KIO::RenameDialog::suggestName( *(d->popupFiles.begin()), text);
 
         name = KInputDialog::getText( QString(), entry.comment,
                                       text, &ok, d->m_parentWidget );

@@ -104,7 +104,7 @@
 #include <ksycoca.h>
 #include <ktemporaryfile.h>
 #include <ktoolbarpopupaction.h>
-#include <kurlrequesterdlg.h>
+#include <kurlrequesterdialog.h>
 #include <kurlrequester.h>
 #include <kmimetypetrader.h>
 #include <kwin.h>
@@ -1420,7 +1420,7 @@ void KonqMainWindow::slotOpenLocation()
   // Don't pre-fill the url, as it is auto-selected and thus overwrites the
   // X clipboard, making it impossible to paste in the url you really wanted.
   // Another example of why the X clipboard sux
-  KUrlRequesterDlg dlg( QString::null, this );
+  KUrlRequesterDialog dlg( QString::null, this );
   dlg.setCaption( i18n("Open Location") );
   // Set current directory for relative paths.
   // Testcase: konqueror www.kde.org; Ctrl+O; file in $HOME; would open http://$file
@@ -2844,7 +2844,7 @@ bool KonqMainWindow::askForTarget(const KLocalizedString& text, KUrl& url)
 {
    const KUrl initialUrl = (viewCount()==2) ? otherView(m_currentView)->url() : m_currentView->url();
    QString label = text.subs( m_currentView->url().pathOrUrl() ).toString();
-   KUrlRequesterDlg dlg(initialUrl.pathOrUrl(), label, this);
+   KUrlRequesterDialog dlg(initialUrl.pathOrUrl(), label, this);
    dlg.setCaption(i18n("Enter Target"));
    dlg.urlRequester()->setMode( KFile::File | KFile::ExistingOnly | KFile::Directory );
    if (dlg.exec())
