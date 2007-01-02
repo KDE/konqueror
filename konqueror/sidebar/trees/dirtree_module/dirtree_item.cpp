@@ -20,6 +20,7 @@
 //#include "konq_treepart.h"
 #include "dirtree_item.h"
 #include "dirtree_module.h"
+#include <kapplication.h>
 #include <konq_operations.h>
 #include <kdebug.h>
 #include <kglobalsettings.h>
@@ -92,7 +93,7 @@ void KonqSidebarDirTreeItem::setOpen( bool open )
         MYMODULE->openSubFolder( this );
     else if ( hasStandardIcon() )
     {
-        int size = KGlobal::iconLoader()->currentSize( K3Icon::Small );
+        int size = kapp->iconLoader()->currentSize( K3Icon::Small );
         if ( open )
             setPixmap( 0, DesktopIcon( "folder_open", size ) );
         else
