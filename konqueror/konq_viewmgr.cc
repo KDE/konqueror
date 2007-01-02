@@ -27,6 +27,8 @@
 #include "konq_settingsxt.h"
 
 #include <QFileInfo>
+#include <QDBusMessage>
+#include <QDBusConnection>
 
 #include <kaccelgen.h>
 #include <kactionmenu.h>
@@ -1698,10 +1700,11 @@ void KonqViewManager::profileListDirty( bool broadcast )
     return;
   }
 
-#ifdef __GNUC__
-#warning port to DBUS signal updateProfileList
-#endif
-//  kapp->dcopClient()->send( "konqueror*", "KonquerorIface", "updateProfileList()", QByteArray() );
+    // Send signal to all konqueror instances
+    QDBusMessage message =
+        QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "updateAllProfileList");
+    QDBusConnection::sessionBus().send(message);
+
 }
 
 void KonqViewManager::slotProfileActivated( int id )

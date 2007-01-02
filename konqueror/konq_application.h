@@ -39,7 +39,7 @@ public:
 
 public slots:
   void slotReparseConfiguration();
-
+  void slotUpdateProfileList();
 private:
   bool closed_by_sm;
 
