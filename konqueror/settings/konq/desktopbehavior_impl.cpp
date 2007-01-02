@@ -412,7 +412,7 @@ void DesktopBehavior::save()
     QDBusConnection::sessionBus().send(message);
 #endif
 #ifdef __GNUC__
-#warning Emit DBus signal, and commit kicker/kwin/kdesktop/plasma/whatever to it
+#warning Emit DBus signal, and commit kicker/plasma/whatever to it
 #endif
 #if 0
     // for the standalone menubar setting
