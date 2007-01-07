@@ -91,8 +91,8 @@ bool QXtEventLoop::redeliverEvent( XEvent *event )
 {
     // redeliver the event to Xt, NOT through Qt
     if ( static_d->dispatchers[ event->type ]( event ) )
-	return TRUE;
-    return FALSE;
+	return true;
+    return false;
 }
 
 
@@ -106,7 +106,7 @@ XEvent* QXtEventLoop::lastEvent()
 
 QXtEventLoopPrivate::QXtEventLoopPrivate()
     : appContext(NULL), ownContext(NULL),
-      activate_timers(FALSE), timerid(-1)
+      activate_timers(false), timerid(-1)
 {
 }
 
@@ -178,42 +178,42 @@ Boolean qmotif_event_dispatcher( XEvent *event )
 	switch ( event->type ) {
 	case EnterNotify:
 	case LeaveNotify:
-	    event->xcrossing.focus = False;
-	    delivered = FALSE;
+	    event->xcrossing.focus = false;
+	    delivered = false;
 	    break;
 	case XKeyPress:
 	case XKeyRelease:
-	    delivered = TRUE;
+	    delivered = true;
 	    break;
 	case XFocusIn:
 	case XFocusOut:
-	    delivered = FALSE;
+	    delivered = false;
 	    break;
 	default:
-	    delivered = FALSE;
+	    delivered = false;
 	    break;
 	}
     }
 
     if ( delivered )
-	return True;
+	return true;
 
 
     if ( QApplication::activePopupWidget() )
 	// we get all events through the popup grabs.  discard the event
-	return True;
+	return true;
 
     if ( qMotif && QApplication::activeModalWidget() ) {
 	if ( !qt_try_modal(qMotif, event) )
-	    return True;
+	    return true;
 
     }
 
     if ( static_d->dispatchers[ event->type ]( event ) )
 	// Xt handled the event.
-	return True;
+	return true;
 
-    return False;
+    return false;
 }
 
 
@@ -410,7 +410,7 @@ void QXtEventLoop::unregisterSocketNotifier( QSocketNotifier *notifier )
  */
 void qmotif_timeout_handler( XtPointer, XtIntervalId * )
 {
-    static_d->activate_timers = TRUE;
+    static_d->activate_timers = true;
     static_d->timerid = -1;
 }
 
@@ -459,7 +459,7 @@ bool QXtEventLoop::processEvents( ProcessEventsFlags flags )
     if ( d->activate_timers ) {
 	nevents += activateTimers();
     }
-    d->activate_timers = FALSE;
+    d->activate_timers = false;
 
     return ( (flags & WaitForMore) || ( pendingmask != 0 ) || nevents > 0 );
 }
