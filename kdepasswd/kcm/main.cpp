@@ -214,11 +214,9 @@ void KCMUserAccount::save()
 	/* Save realname to /etc/passwd */
 	if ( _mw->leRealname->isModified() )
 	{
-		QByteArray password;
-		int ret = KPasswordDialog::getPassword( _mw, password, i18n("Please enter "
-			"your password in order to save your settings:"));
-
-		if ( !ret )
+		KPasswordDialog dlg( _mw );
+		dlg.setPrompt(i18n("Please enter your password in order to save your settings:"));
+		if ( !dlg.exec() )
 		{
 			KMessageBox::sorry( this, i18n("You must enter "
 				"your password in order to change your information."));
@@ -226,7 +224,7 @@ void KCMUserAccount::save()
 		}
 
 		ChfnProcess *proc = new ChfnProcess();
-		ret = proc->exec(password, _mw->leRealname->text().toAscii() );
+		int ret = proc->exec(dlg.password().toAscii() , _mw->leRealname->text().toAscii() );
 		if ( ret )
 			{
 			if ( ret == ChfnProcess::PasswordError )

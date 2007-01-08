@@ -74,8 +74,7 @@ bool Widgets::inputBox(QWidget *parent, const QString& title, const QString& tex
 
 bool Widgets::passwordBox(QWidget *parent, const QString& title, const QString& text, QString &result)
 {
-  KPasswordDialog dlg( KPasswordDialog::Password, false, 0, parent );
-
+  KPasswordDialog dlg( parent );
   kapp->setTopWidget( &dlg );
   dlg.setCaption(title);
   dlg.setPrompt(text);

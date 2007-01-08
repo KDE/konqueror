@@ -13,7 +13,7 @@
 #include "passwddlg.h"
 
 KDEpasswd1Dialog::KDEpasswd1Dialog()
-    : KPasswordDialog(Password, false, 0)
+    : KPasswordDialog()
 {
     setCaption(i18n("Change Password"));
     setPrompt(i18n("Please enter your current password:"));
@@ -24,12 +24,11 @@ KDEpasswd1Dialog::~KDEpasswd1Dialog()
 {
 }
 
-
-bool KDEpasswd1Dialog::checkPassword(const char *password)
+void KDEpasswd1Dialog::accept()
 {
     PasswdProcess proc(0);
 
-    int ret = proc.checkCurrent(password);
+    int ret = proc.checkCurrent(password().toLocal8Bit());
     switch (ret)
     {
     case -1:
@@ -40,26 +39,26 @@ bool KDEpasswd1Dialog::checkPassword(const char *password)
         msg = "<qt>" + i18n("Conversation with 'passwd' failed.") + msg;
 	KMessageBox::error(this, msg);
 	done(Rejected);
-	return false;
+	return;
     }
 
     case 0:
-	return true;
+        return KPasswordDialog::accept();
 
     case PasswdProcess::PasswdNotFound:
 	KMessageBox::error(this, i18n("Could not find the program 'passwd'."));
 	done(Rejected);
-	return false;
+	return;
 
     case PasswdProcess::PasswordIncorrect:
         KMessageBox::sorry(this, i18n("Incorrect password. Please try again."));
-	return false;
+	return;
 
     default:
 	KMessageBox::error(this, i18n("Internal error: illegal return value "
 		"from PasswdProcess::checkCurrent."));
 	done(Rejected);
-	return false;
+	return;
     }
 }
 
@@ -78,7 +77,7 @@ int KDEpasswd1Dialog::getPassword(QByteArray &password)
 
 
 KDEpasswd2Dialog::KDEpasswd2Dialog(const char *oldpass, QByteArray user)
-    : KPasswordDialog(NewPassword, false, 0)
+    : KNewPasswordDialog()
 {
     m_Pass = oldpass;
     m_User = user;
@@ -96,11 +95,13 @@ KDEpasswd2Dialog::~KDEpasswd2Dialog()
 }
 
 
-bool KDEpasswd2Dialog::checkPassword(const char *password)
+void  KDEpasswd2Dialog::accept()
 {
     PasswdProcess proc(m_User);
+    
+    QString p=password();
 
-    if (strlen(password) > 8)
+    if (p.length() > 8)
     {
 	switch(KMessageBox::warningYesNoCancel(this,
 		m_User.isEmpty() ?
@@ -117,15 +118,15 @@ bool KDEpasswd2Dialog::checkPassword(const char *password)
 		"truncatePassword"))
 	{
 	case KMessageBox::Yes :
-		const_cast<char *>(password)[8] = '\000';
+		p=p.left(8);
 		break;
 	case KMessageBox::No :
 		break;
-	default : return false;
+	default : return;
 	}
     }
 
-    int ret = proc.exec(m_Pass, password);
+    int ret = proc.exec(m_Pass, p.toLocal8Bit());
     switch (ret)
     {
     case 0:
@@ -136,7 +137,7 @@ bool KDEpasswd2Dialog::checkPassword(const char *password)
             msg = "<p>\"<i>" + msg + "</i>\"";
         msg = "<qt>" + i18n("Your password has been changed.") + msg;
         KMessageBox::information(0L, msg);
-        return true;
+        return KNewPasswordDialog::accept();
     }
 
     case PasswdProcess::PasswordNotGood:
@@ -148,7 +149,7 @@ bool KDEpasswd2Dialog::checkPassword(const char *password)
 
         // The pw change did not succeed. Print the error.
         KMessageBox::sorry(this, msg);
-        return false;
+        return;
     }
 
     default:
@@ -158,10 +159,11 @@ bool KDEpasswd2Dialog::checkPassword(const char *password)
         msg = "<qt>" + i18n("Conversation with 'passwd' failed.") + msg;
 	KMessageBox::sorry(this, msg);
 	done(Rejected);
-	return true;
+	return;
     }
 
-    return true;
+    return KNewPasswordDialog::accept();
+
 }
 
 
