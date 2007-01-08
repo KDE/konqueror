@@ -72,9 +72,9 @@ QDomDocument KonqXMLGUIClient::domDocument() const
   return m_doc;
 }
 
-void KonqXMLGUIClient::addAction( KAction *act, const QDomElement &menu )
+void KonqXMLGUIClient::addAction( const QString &name, const QDomElement &menu )
 {
-  addAction( act->objectName().toUtf8(), menu );
+  addAction( name.toUtf8().constData(), menu );
 }
 
 void KonqXMLGUIClient::addAction( const char *name, const QDomElement &menu )

@@ -18,6 +18,7 @@
 
 #include "kshellcmdplugin.h"
 #include <kicon.h>
+#include <kactioncollection.h>
 #include <kinputdialog.h>
 #include <kmessagebox.h>
 #include <konq_dirpart.h>
@@ -34,7 +35,9 @@ KShellCmdPlugin::KShellCmdPlugin( QObject* parent, const QStringList & )
     if (!KAuthorized::authorizeKAction("shell_access"))
        return;
 
-    KAction *action = new KAction(KIcon("run"),  i18n( "&Execute Shell Command..." ), actionCollection(), "executeshellcommand" );
+    QAction *action = actionCollection()->addAction("executeshellcommand");
+    action->setIcon(KIcon("run"));
+    action->setText(i18n( "&Execute Shell Command..." ));
     connect(action, SIGNAL(triggered(bool)), SLOT( slotExecuteShellCommand() ));
     action->setShortcut(Qt::CTRL+Qt::Key_E);
 }
@@ -57,9 +60,9 @@ void KShellCmdPlugin::slotExecuteShellCommand()
    if ( part->currentItem() )
    {
       // Putting the complete path to the selected file isn't really necessary,
-      // since we'll cd to the directory first. But we do need to get the 
+      // since we'll cd to the directory first. But we do need to get the
       // complete relative path.
-      path = KUrl::relativePath( url.path(), 
+      path = KUrl::relativePath( url.path(),
                                  part->currentItem()->url().path() );
    }
    else

@@ -206,11 +206,11 @@ protected:
   Q3PtrList<KToggleAction> m_paPreviewPlugins;
   KActionMenu *m_pamSort;
 
-  KAction *m_paSelect;
-  KAction *m_paUnselect;
-  KAction *m_paSelectAll;
-  KAction *m_paUnselectAll;
-  KAction *m_paInvertSelection;
+  QAction *m_paSelect;
+  QAction *m_paUnselect;
+  QAction *m_paSelectAll;
+  QAction *m_paUnselectAll;
+  QAction *m_paInvertSelection;
 
   KToggleAction *m_paSortDirsFirst;
 

@@ -31,8 +31,7 @@ class KDirLister;
 namespace KParts { class BrowserExtension; }
 class KonqPropsView;
 class Q3ScrollView;
-class KAction;
-class KAction;
+class QAction;
 class KonqDirPartBrowserExtension;
 
 class LIBKONQ_EXPORT KonqDirPart: public KParts::ReadOnlyPart
@@ -299,13 +298,13 @@ protected:
 
     KonqPropsView * m_pProps;
 
-    KAction *m_paIncIconSize;
-    KAction *m_paDecIconSize;
-    KAction *m_paDefaultIcons;
-    KAction *m_paHugeIcons;
-    KAction *m_paLargeIcons;
-    KAction *m_paMediumIcons;
-    KAction *m_paSmallIcons;
+    QAction *m_paIncIconSize;
+    QAction *m_paDecIconSize;
+    QAction *m_paDefaultIcons;
+    QAction *m_paHugeIcons;
+    QAction *m_paLargeIcons;
+    QAction *m_paMediumIcons;
+    QAction *m_paSmallIcons;
 
     KParts::ReadOnlyPart * m_findPart;
     KonqDirPartBrowserExtension * m_extension;

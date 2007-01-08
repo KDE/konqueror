@@ -21,7 +21,6 @@
 #include <QVBoxLayout>
 #include <QList>
 #include <kactioncollection.h>
-#include <kseparatoraction.h>
 #include <kdebug.h>
 #include <kdesktopfile.h>
 #include <kdirwatch.h>
@@ -37,7 +36,6 @@
 #include <kmenu.h>
 #include <krun.h>
 #include <kactioncollection.h>
-#include <kseparatoraction.h>
 #include <kio/job.h>
 #include <kio/jobuidelegate.h>
 #include <kio/renamedialog.h>
@@ -121,7 +119,7 @@ public:
 };
 
 KNewMenu::KNewMenu( KActionCollection *parent, QWidget* parentWidget, const QString& name )
-    : KActionMenu( KIcon("filenew"), i18n( "Create New" ), parent, name )
+    : KActionMenu( KIcon("filenew"), i18n( "Create New" ), parentWidget )
 {
     // Don't fill the menu yet
     // We'll do that in slotCheckUpToDate (should be connected to abouttoshow)
@@ -129,6 +127,9 @@ KNewMenu::KNewMenu( KActionCollection *parent, QWidget* parentWidget, const QStr
     d->m_newMenuGroup = new QActionGroup(this);
     d->m_actionCollection = parent;
     d->m_parentWidget = parentWidget;
+
+    d->m_actionCollection->addAction( name, this );
+
     makeMenus();
 }
 
@@ -140,7 +141,8 @@ KNewMenu::~KNewMenu()
 
 void KNewMenu::makeMenus()
 {
-    d->m_menuDev = new KActionMenu( KIcon("kcmdevices"), i18n( "Link to Device" ), d->m_actionCollection, "devnew" );
+    d->m_menuDev = new KActionMenu( KIcon("kcmdevices"), i18n( "Link to Device" ), this );
+    d->m_actionCollection->addAction( "devnew", d->m_menuDev );
 }
 
 void KNewMenu::slotCheckUpToDate( )
@@ -247,7 +249,7 @@ void KNewMenu::fillMenu()
     menu()->clear();
     d->m_menuDev->menu()->clear();
 
-    KAction *linkURL = 0, *linkApp = 0;  // these shall be put at special positions
+    QAction *linkURL = 0, *linkApp = 0;  // these shall be put at special positions
 
     int i = 1;
     QList<KNewMenuEntry>::Iterator templ = s_templatesList->begin();
@@ -281,17 +283,22 @@ void KNewMenu::fillMenu()
                 // The best way to identify the "Create Directory", "Link to Location", "Link to Application" was the template
                 if ( (*templ).templatePath.endsWith( "emptydir" ) )
                 {
-                    KAction * act = new KAction( KIcon((*templ).icon), (*templ).text, d->m_actionCollection, QString("newmenu%1").arg( i ).toUtf8() );
+                    QAction * act = d->m_actionCollection->addAction( QString("newmenu%1").arg( i ).toUtf8() );
+                    act->setIcon( KIcon((*templ).icon) );
+                    act->setText( (*templ).text );
                     connect(act, SIGNAL(triggered()), this, SLOT(slotNewDir()));
                     act->setActionGroup( d->m_newMenuGroup );
                     menu()->addAction( act );
 
-                    KSeparatorAction *sep = new KSeparatorAction();
+                    QAction *sep = new QAction(this);
+                    sep->setSeparator( true );
                     menu()->addAction( sep );
                 }
                 else
                 {
-                    KAction * act = new KAction( KIcon((*templ).icon), (*templ).text, d->m_actionCollection, QString("newmenu%1").arg( i ).toUtf8() );
+                    QAction * act = d->m_actionCollection->addAction( QString("newmenu%1").arg( i ).toUtf8() );
+                    act->setIcon( KIcon((*templ).icon) );
+                    act->setText( (*templ).text );
                     connect(act, SIGNAL(triggered()), this, SLOT(slotNewFile()));
                     act->setActionGroup( d->m_newMenuGroup );
 
@@ -320,11 +327,15 @@ void KNewMenu::fillMenu()
         } else { // Separate system from personal templates
             Q_ASSERT( (*templ).entryType != 0 );
 
-            menu()->addAction( new KSeparatorAction() );
+            QAction *sep = new QAction( this );
+            sep->setSeparator( true );
+            menu()->addAction( sep );
         }
     }
 
-    menu()->addAction( new KSeparatorAction() );
+    QAction *sep = new QAction( this );
+    sep->setSeparator( true );
+    menu()->addAction( sep );
     if ( linkURL ) menu()->addAction( linkURL );
     if ( linkApp ) menu()->addAction( linkApp );
     menu()->addAction( d->m_menuDev );
@@ -394,7 +405,7 @@ void KNewMenu::slotFillTemplates()
 
 void KNewMenu::slotNewDir()
 {
-    slotTriggered(); // for KDIconView::slotNewMenuActivated()
+    trigger(); // for KDIconView::slotNewMenuActivated()
 
     if (d->popupFiles.isEmpty())
        return;
@@ -412,7 +423,7 @@ void KNewMenu::slotNewFile()
 	return;
     }
 
-    slotTriggered(); // for KDIconView::slotNewMenuActivated()
+    trigger(); // for KDIconView::slotNewMenuActivated()
 
     KNewMenuEntry entry = (s_templatesList->at( id - 1 ));
     //kDebug(1203) << QString("sFile = %1").arg(sFile) << endl;

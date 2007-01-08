@@ -26,6 +26,7 @@
 #include <konqmimedata.h>
 
 #include <kaction.h>
+#include <kactioncollection.h>
 #include <kapplication.h>
 #include <kdebug.h>
 #include <kdirlister.h>
@@ -131,7 +132,7 @@ void ListViewBrowserExtension::updateActions()
     KUrl url = item->url();
 #ifdef __GNUC__
 #warning hardcoded protocol: find a better way to determine if a url is a trash url.
-#endif    
+#endif
     if ( url.protocol() == "trash" )
       bInTrash = true;
     if (  KProtocolManager::supportsDeleting(  url ) )
@@ -653,60 +654,78 @@ void KonqListView::slotKFindClosed()
 
 void KonqListView::setupActions()
 {
-   m_paShowTime = new KToggleAction(i18n("Show &Modification Time"), actionCollection(), "show_time" );
+   m_paShowTime = new KToggleAction(i18n("Show &Modification Time"), this);
+   actionCollection()->addAction( "show_time", m_paShowTime );
    connect(m_paShowTime, SIGNAL(triggered(bool) ), SLOT(slotColumnToggled()));
    m_paShowTime->setCheckedState(KGuiItem(i18n("Hide &Modification Time")));
-   m_paShowType = new KToggleAction(i18n("Show &File Type"), actionCollection(), "show_type" );
+   m_paShowType = new KToggleAction(i18n("Show &File Type"), this);
+   actionCollection()->addAction( "show_type", m_paShowType );
    connect(m_paShowType, SIGNAL(triggered(bool) ), SLOT(slotColumnToggled()));
    m_paShowType->setCheckedState(KGuiItem(i18n("Hide &File Type")));
-   m_paShowMimeType = new KToggleAction(i18n("Show MimeType"), actionCollection(), "show_mimetype" );
+   m_paShowMimeType = new KToggleAction(i18n("Show MimeType"), this);
+   actionCollection()->addAction( "show_mimetype", m_paShowMimeType );
    connect(m_paShowMimeType, SIGNAL(triggered(bool) ), SLOT(slotColumnToggled()));
    m_paShowMimeType->setCheckedState(KGuiItem(i18n("Hide MimeType")));
-   m_paShowAccessTime = new KToggleAction(i18n("Show &Access Time"), actionCollection(), "show_access_time" );
+   m_paShowAccessTime = new KToggleAction(i18n("Show &Access Time"), this);
+   actionCollection()->addAction( "show_access_time", m_paShowAccessTime);
    connect(m_paShowAccessTime, SIGNAL(triggered(bool) ), SLOT(slotColumnToggled()));
    m_paShowAccessTime->setCheckedState(KGuiItem(i18n("Hide &Access Time")));
-   m_paShowCreateTime = new KToggleAction(i18n("Show &Creation Time"), actionCollection(), "show_creation_time" );
+   m_paShowCreateTime = new KToggleAction(i18n("Show &Creation Time"), this);
+   actionCollection()->addAction( "show_creation_time", m_paShowCreateTime );
    connect(m_paShowCreateTime, SIGNAL(triggered(bool) ), SLOT(slotColumnToggled()));
    m_paShowCreateTime->setCheckedState(KGuiItem(i18n("Hide &Creation Time")));
-   m_paShowLinkDest = new KToggleAction(i18n("Show &Link Destination"), actionCollection(), "show_link_dest" );
+   m_paShowLinkDest = new KToggleAction(i18n("Show &Link Destination"), this);
+   actionCollection()->addAction( "show_link_dest", m_paShowLinkDest );
    connect(m_paShowLinkDest, SIGNAL(triggered(bool) ), SLOT(slotColumnToggled()));
    m_paShowLinkDest->setCheckedState(KGuiItem(i18n("Hide &Link Destination")));
-   m_paShowSize = new KToggleAction(i18n("Show Filesize"), actionCollection(), "show_size" );
+   m_paShowSize = new KToggleAction(i18n("Show Filesize"), this);
+   actionCollection()->addAction( "show_size", m_paShowSize );
    connect(m_paShowSize, SIGNAL(triggered(bool) ), SLOT(slotColumnToggled()));
    m_paShowSize->setCheckedState(KGuiItem(i18n("Hide Filesize")));
-   m_paShowOwner = new KToggleAction(i18n("Show Owner"), actionCollection(), "show_owner" );
+   m_paShowOwner = new KToggleAction(i18n("Show Owner"), this);
+   actionCollection()->addAction( "show_owner", m_paShowOwner );
    connect(m_paShowOwner, SIGNAL(triggered(bool) ), SLOT(slotColumnToggled()));
    m_paShowOwner->setCheckedState(KGuiItem(i18n("Hide Owner")));
-   m_paShowGroup = new KToggleAction(i18n("Show Group"), actionCollection(), "show_group" );
+   m_paShowGroup = new KToggleAction(i18n("Show Group"), this);
+   actionCollection()->addAction( "show_group", m_paShowGroup );
    connect(m_paShowGroup, SIGNAL(triggered(bool) ), SLOT(slotColumnToggled()));
    m_paShowGroup->setCheckedState(KGuiItem(i18n("Hide Group")));
-   m_paShowPermissions = new KToggleAction(i18n("Show Permissions"), actionCollection(), "show_permissions" );
+   m_paShowPermissions = new KToggleAction(i18n("Show Permissions"), this);
+   actionCollection()->addAction( "show_permissions", m_paShowPermissions );
    connect(m_paShowPermissions, SIGNAL(triggered(bool) ), SLOT(slotColumnToggled()));
    m_paShowPermissions->setCheckedState(KGuiItem(i18n("Hide Permissions")));
-   m_paShowURL = new KToggleAction(i18n("Show URL"), actionCollection(), "show_url" );
+   m_paShowURL = new KToggleAction(i18n("Show URL"), this);
+   actionCollection()->addAction( "show_url", m_paShowURL );
    connect(m_paShowURL, SIGNAL(triggered(bool) ), SLOT(slotColumnToggled()));
 
-   m_paSelect = new KAction( i18n( "Se&lect..." ), actionCollection(), "select" );
+   m_paSelect = actionCollection()->addAction("select");
+   m_paSelect->setText( i18n( "Se&lect..." ) );
    connect(m_paSelect, SIGNAL(triggered(bool) ), SLOT( slotSelect() ));
    m_paSelect->setShortcut(Qt::CTRL+Qt::Key_Plus);
-  m_paUnselect = new KAction( i18n( "Unselect..." ), actionCollection(), "unselect" );
-  connect(m_paUnselect, SIGNAL(triggered(bool) ), SLOT( slotUnselect() ));
-  m_paUnselect->setShortcut(Qt::CTRL+Qt::Key_Minus);
-  m_paSelectAll = KStandardAction::selectAll( this, SLOT( slotSelectAll() ), actionCollection(), "selectall" );
-  m_paUnselectAll = new KAction( i18n( "Unselect All" ), actionCollection(), "unselectall" );
-  connect(m_paUnselectAll, SIGNAL(triggered(bool) ), SLOT( slotUnselectAll() ));
-  m_paUnselectAll->setShortcut(Qt::CTRL+Qt::Key_U);
-  m_paInvertSelection = new KAction( i18n( "&Invert Selection" ), actionCollection(), "invertselection" );
-  connect(m_paInvertSelection, SIGNAL(triggered(bool) ), SLOT( slotInvertSelection() ));
-  m_paInvertSelection->setShortcut(Qt::CTRL+Qt::Key_Asterisk);
+   m_paUnselect = actionCollection()->addAction("unselect");
+   m_paUnselect->setText( i18n( "Unselect..." ) );
+   connect(m_paUnselect, SIGNAL(triggered(bool) ), SLOT( slotUnselect() ));
+   m_paUnselect->setShortcut(Qt::CTRL+Qt::Key_Minus);
+   m_paSelectAll = KStandardAction::selectAll( this, SLOT( slotSelectAll() ), this );
+   actionCollection()->addAction( "selectall", m_paSelectAll );
+   m_paUnselectAll = actionCollection()->addAction("unselectall");
+   m_paUnselectAll->setText( i18n( "Unselect All" ) );
+   connect(m_paUnselectAll, SIGNAL(triggered(bool) ), SLOT( slotUnselectAll() ));
+   m_paUnselectAll->setShortcut(Qt::CTRL+Qt::Key_U);
+   m_paInvertSelection = actionCollection()->addAction("invertselection");
+   m_paInvertSelection->setText( i18n( "&Invert Selection" ) );
+   connect(m_paInvertSelection, SIGNAL(triggered(bool) ), SLOT( slotInvertSelection() ));
+   m_paInvertSelection->setShortcut(Qt::CTRL+Qt::Key_Asterisk);
 
-  m_paShowDot = new KToggleAction( i18n( "Show &Hidden Files" ), actionCollection(), "show_dot" );
-  connect(m_paShowDot, SIGNAL(triggered(bool) ), SLOT( slotShowDot() ));
+   m_paShowDot = new KToggleAction( i18n( "Show &Hidden Files" ), this );
+   actionCollection()->addAction( "show_dot", m_paShowDot );
+   connect(m_paShowDot, SIGNAL(triggered(bool) ), SLOT( slotShowDot() ));
 //  m_paShowDot->setCheckedState(i18n("Hide &Hidden Files"));
-  m_paCaseInsensitive = new KToggleAction(i18n("Case Insensitive Sort"), actionCollection(), "sort_caseinsensitive" );
-  connect(m_paCaseInsensitive, SIGNAL(triggered(bool) ), SLOT(slotCaseInsensitive()));
+   m_paCaseInsensitive = new KToggleAction(i18n("Case Insensitive Sort"), this );
+   actionCollection()->addAction( "sort_caseinsensitive", m_paCaseInsensitive );
+   connect(m_paCaseInsensitive, SIGNAL(triggered(bool) ), SLOT(slotCaseInsensitive()));
 
-  newIconSize( K3Icon::SizeSmall /* default size */ );
+   newIconSize( K3Icon::SizeSmall /* default size */ );
 }
 
 void KonqListView::slotSelectionChanged()

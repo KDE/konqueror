@@ -35,6 +35,7 @@
 #include "konq_listviewwidget.h"
 
 class KAction;
+class QAction;
 class KToggleAction;
 class ListViewBrowserExtension;
 
@@ -147,11 +148,11 @@ private:
   K3MimeTypeResolver<KonqBaseListViewItem,KonqListView> *m_mimeTypeResolver;
   QTimer *m_headerTimer;
 
-  KAction *m_paSelect;
-  KAction *m_paUnselect;
-  KAction *m_paSelectAll;
-  KAction *m_paUnselectAll;
-  KAction *m_paInvertSelection;
+  QAction *m_paSelect;
+  QAction *m_paUnselect;
+  QAction *m_paSelectAll;
+  QAction *m_paUnselectAll;
+  QAction *m_paInvertSelection;
 
   KToggleAction *m_paCaseInsensitive;
 

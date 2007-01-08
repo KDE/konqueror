@@ -25,6 +25,7 @@
 #include <kfilemetainfo.h>
 #include <kdebug.h>
 #include <kaction.h>
+#include <kactioncollection.h>
 #include <kservicetype.h>
 #include <kselectaction.h>
 #include <kio/metainfojob.h>
@@ -37,7 +38,8 @@ KonqInfoListViewWidget::KonqInfoListViewWidget( KonqListView* parent,
 {
     m_metaInfoJob = 0;
 
-    m_mtSelector = new KSelectAction(i18n("View &As"), parent->actionCollection(), "view_as" );
+    m_mtSelector = new KSelectAction(i18n("View &As"), this);
+    parent->actionCollection()->addAction( "view_as", m_mtSelector );
     connect(m_mtSelector, SIGNAL(triggered(bool)), SLOT(slotSelectMimeType()));
 
     kDebug(1203) << "created info list view\n";

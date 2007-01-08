@@ -928,22 +928,30 @@ void KonqSidebarTree::showToplevelContextMenu()
     if (!m_collection)
     {
         m_collection = new KActionCollection( this);
-	    m_collection->setObjectName("bookmark actions");
-        KAction *action = new KAction(KIcon("folder_new"),  i18n("&Create New Folder..."), m_collection, "create_folder");
+        m_collection->setObjectName("bookmark actions");
+        QAction *action = new KAction(KIcon("folder_new"),  i18n("&Create New Folder..."), this);
+        m_collection->addAction("create_folder", action);
         connect(action, SIGNAL(triggered(bool)), SLOT( slotCreateFolder() ));
-        action = new KAction(KIcon("editdelete"),  i18n("Delete Folder"), m_collection, "delete_folder");
+        action = new KAction(KIcon("editdelete"),  i18n("Delete Folder"), this);
+        m_collection->addAction("delete_folder", action);
         connect(action, SIGNAL(triggered(bool)), SLOT( slotDelete() ));
-        action = new KAction( i18n("Rename"), m_collection, "rename");
+        action = new KAction(i18n("Rename"), this);
+        m_collection->addAction("rename", action);
         connect(action, SIGNAL(triggered(bool) ), SLOT( slotRename() ));
-        action = new KAction(KIcon("editdelete"),  i18n("Delete Link"), m_collection, "delete_link");
+        action = new KAction(KIcon("editdelete"),  i18n("Delete Link"), this);
+        m_collection->addAction("delete_link", action);
         connect(action, SIGNAL(triggered(bool)), SLOT( slotDelete() ));
-        action = new KAction(KIcon("edit"),  i18n("Properties"), m_collection, "item_properties");
+        action = new KAction(KIcon("edit"),  i18n("Properties"), this);
+        m_collection->addAction("item_properties", action);
         connect(action, SIGNAL(triggered(bool)), SLOT( slotProperties() ));
-        action = new KAction(KIcon("window_new"),  i18n("Open in New Window"), m_collection, "open_window");
+        action = new KAction(KIcon("window_new"),  i18n("Open in New Window"), this);
+        m_collection->addAction("open_window", action);
         connect(action, SIGNAL(triggered(bool)), SLOT( slotOpenNewWindow() ));
-        action = new KAction(KIcon("tab_new"),  i18n("Open in New Tab"), m_collection, "open_tab");
+        action = new KAction(KIcon("tab_new"),  i18n("Open in New Tab"), this);
+        m_collection->addAction("open_tab", action);
         connect(action, SIGNAL(triggered(bool)), SLOT( slotOpenTab() ));
-        action = new KAction(KIcon("editcopy"),  i18n("Copy Link Address"), m_collection, "copy_location");
+        action = new KAction(KIcon("editcopy"),  i18n("Copy Link Address"), this);
+        m_collection->addAction("copy_location", action);
         connect(action, SIGNAL(triggered(bool)), SLOT( slotCopyLocation() ));
     }
 

@@ -37,7 +37,7 @@ class KonqBidiHistoryAction : public KAction
 {
   Q_OBJECT
 public:
-    KonqBidiHistoryAction( const QString & text, KActionCollection* parent = 0, const char* name = 0 );
+    KonqBidiHistoryAction( const QString & text, QObject * parent );
     virtual ~KonqBidiHistoryAction();
 
     void fillGoMenu( const QList<HistoryEntry*> &history, int historyIndex );
@@ -71,16 +71,12 @@ class KonqLogoAction : public KAction
 {
   Q_OBJECT
 public:
-    KonqLogoAction( const QString& text, const KShortcut& accel = KShortcut(), KActionCollection* parent = 0, const char* name = 0 );
-    KonqLogoAction( const QString& text, const KShortcut& accel,
-	            QObject* receiver, const char* slot, KActionCollection* parent, const char* name = 0 );
-    KonqLogoAction( const QString& text, const KIcon& pix, const KShortcut& accel = KShortcut(),
-	            KActionCollection* parent = 0, const char* name = 0 );
-    KonqLogoAction( const QString& text, const KIcon& pix, const KShortcut& accel,
-	            QObject* receiver, const char* slot, KActionCollection* parent, const char* name = 0 );
+    KonqLogoAction( const QString& text, QObject* parent );
+    KonqLogoAction( const QString& text, QObject* receiver, const char* slot, QObject* parent );
+    KonqLogoAction( const QString& text, const KIcon& pix, QObject* parent );
+    KonqLogoAction( const QString& text, const KIcon& pix, QObject* receiver, const char* slot, QObject* parent );
     // text missing !
-    KonqLogoAction( const QStringList& icons, QObject* receiver,
-                    const char* slot, KActionCollection* parent, const char* name = 0 );
+    KonqLogoAction( const QStringList& icons, QObject* receiver, const char* slot, QObject* parent );
 
     void start();
     void stop();
@@ -101,7 +97,7 @@ class KonqViewModeAction : public KAction
 public:
     KonqViewModeAction( const QString& desktopEntryName,
                         const QString &text, const KIcon &icon,
-                        KActionCollection *parent, const char *name );
+                        QObject* parent );
     virtual ~KonqViewModeAction();
 
     QString desktopEntryName() const { return m_desktopEntryName; }
@@ -123,8 +119,7 @@ class KonqMostOftenURLSAction : public KActionMenu
     Q_OBJECT
 
 public:
-    KonqMostOftenURLSAction( const QString& text, KActionCollection *parent,
-			     const char *name );
+    KonqMostOftenURLSAction( const QString& text, QObject* parent );
     virtual ~KonqMostOftenURLSAction();
 
     static bool numberOfVisitOrder( const KonqHistoryEntry& lhs, const KonqHistoryEntry& rhs ) {

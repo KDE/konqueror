@@ -610,58 +610,58 @@ private: // members
 
   KNewMenu * m_pMenuNew;
 
-  KAction *m_paPrint;
+  QAction *m_paPrint;
 
   KonqBookmarkActionMenu *m_pamBookmarks;
 
   KToolBarPopupAction *m_paUp;
   KToolBarPopupAction *m_paBack;
   KToolBarPopupAction *m_paForward;
-  KAction *m_paHome;
+  QAction *m_paHome;
 
   KonqBidiHistoryAction *m_paHistory;
 
-  KAction *m_paSaveViewProfile;
+  QAction *m_paSaveViewProfile;
   KToggleAction *m_paSaveViewPropertiesLocally;
   QAction *m_paRemoveLocalProperties;
 
-  KAction *m_paSplitViewHor;
-  KAction *m_paSplitViewVer;
-  KAction *m_paAddTab;
-  KAction *m_paDuplicateTab;
-  KAction *m_paBreakOffTab;
-  KAction *m_paRemoveView;
-  KAction *m_paRemoveTab;
-  KAction *m_paRemoveOtherTabs;
-  KAction *m_paActivateNextTab;
-  KAction *m_paActivatePrevTab;
+  QAction *m_paSplitViewHor;
+  QAction *m_paSplitViewVer;
+  QAction *m_paAddTab;
+  QAction *m_paDuplicateTab;
+  QAction *m_paBreakOffTab;
+  QAction *m_paRemoveView;
+  QAction *m_paRemoveTab;
+  QAction *m_paRemoveOtherTabs;
+  QAction *m_paActivateNextTab;
+  QAction *m_paActivatePrevTab;
 
-  KAction *m_paSaveRemoveViewProfile;
+  QAction *m_paSaveRemoveViewProfile;
   KActionMenu *m_pamLoadViewProfile;
 
   KToggleAction *m_paLockView;
   KToggleAction *m_paLinkView;
-  KAction *m_paReload;
-  KAction *m_paReloadAllTabs;
-  KAction *m_paUndo;
-  KAction *m_paCut;
-  KAction *m_paCopy;
-  KAction *m_paPaste;
-  KAction *m_paStop;
-  KAction *m_paRename;
+  QAction *m_paReload;
+  QAction *m_paReloadAllTabs;
+  QAction *m_paUndo;
+  QAction *m_paCut;
+  QAction *m_paCopy;
+  QAction *m_paPaste;
+  QAction *m_paStop;
+  QAction *m_paRename;
 
-  KAction *m_paTrash;
-  KAction *m_paDelete;
+  QAction *m_paTrash;
+  QAction *m_paDelete;
 
-  KAction *m_paCopyFiles;
-  KAction *m_paMoveFiles;
-  KAction *m_paNewDir;
+  QAction *m_paCopyFiles;
+  QAction *m_paMoveFiles;
+  QAction *m_paNewDir;
 
-  KAction *m_paMoveTabLeft;
-  KAction *m_paMoveTabRight;
+  QAction *m_paMoveTabLeft;
+  QAction *m_paMoveTabRight;
 
-  KAction *m_paConfigureExtensions;
-  KAction *m_paConfigureSpellChecking;
+  QAction *m_paConfigureExtensions;
+  QAction *m_paConfigureSpellChecking;
 
   KonqLogoAction *m_paAnimatedLogo;
 
