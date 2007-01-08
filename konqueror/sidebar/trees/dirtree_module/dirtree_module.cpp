@@ -326,7 +326,7 @@ void KonqSidebarDirTreeModule::openSubFolder( KonqSidebarTreeItem *item )
     if ( !item->isTopLevelItem() &&
          static_cast<KonqSidebarDirTreeItem *>(item)->hasStandardIcon() )
     {
-        int size = kapp->iconLoader()->currentSize( K3Icon::Small );
+        int size = KIconLoader::global()->currentSize( K3Icon::Small );
         QPixmap pix = DesktopIcon( "folder_open", size );
         m_pTree->startAnimation( item, "kde", 6, &pix );
     }
@@ -359,7 +359,7 @@ void KonqSidebarDirTreeModule::listDirectory( KonqSidebarTreeItem *item )
     {
        // We have this directory listed already, just copy the entries as we
        // can't use the dirlister, it would invalidate the old entries
-       int size = kapp->iconLoader()->currentSize( K3Icon::Small );
+       int size = KIconLoader::global()->currentSize( K3Icon::Small );
        KonqSidebarTreeItem * parentItem = item;
        KonqSidebarDirTreeItem *oldItem = static_cast<KonqSidebarDirTreeItem *> (openItem->firstChild());
        while(oldItem)
@@ -427,7 +427,7 @@ void KonqSidebarDirTreeModule::slotNewItems( const KFileItemList& entries )
     }
 
     kDebug()<<"number of additional parent items:"<< (parentItemList?parentItemList->count():0)<<endl;
-    int size = kapp->iconLoader()->currentSize( K3Icon::Small );
+    int size = KIconLoader::global()->currentSize( K3Icon::Small );
     do
     {
     	kDebug()<<"Parent Item URL:"<<parentItem->externalURL()<<endl;
@@ -463,7 +463,7 @@ void KonqSidebarDirTreeModule::slotNewItems( const KFileItemList& entries )
 
 void KonqSidebarDirTreeModule::slotRefreshItems( const KFileItemList &entries )
 {
-    int size = kapp->iconLoader()->currentSize( K3Icon::Small );
+    int size = KIconLoader::global()->currentSize( K3Icon::Small );
 
     kDebug(1201) << "KonqSidebarDirTreeModule::slotRefreshItems " << entries.count() << " entries. First: " << entries.first()->url().url() << endl;
 

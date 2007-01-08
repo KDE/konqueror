@@ -93,7 +93,7 @@ void KonqSidebarDirTreeItem::setOpen( bool open )
         MYMODULE->openSubFolder( this );
     else if ( hasStandardIcon() )
     {
-        int size = kapp->iconLoader()->currentSize( K3Icon::Small );
+        int size = KIconLoader::global()->currentSize( K3Icon::Small );
         if ( open )
             setPixmap( 0, DesktopIcon( "folder_open", size ) );
         else
