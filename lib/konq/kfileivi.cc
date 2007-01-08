@@ -108,7 +108,7 @@ void KFileIVI::invalidateThumb( int state, bool redraw )
 	    break;
     }
 
-    const QPixmap newThumb( kapp->iconLoader()->iconEffect()->
+    const QPixmap newThumb( KIconLoader::global()->iconEffect()->
                             apply( d->thumb, K3Icon::Desktop, state ) );
     d->setCachedPixmaps( newThumb, mode );
 
@@ -209,7 +209,7 @@ void KFileIVI::setThumbnailPixmap( const QPixmap & pixmap )
     m_bThumbnail = true;
     d->thumb = pixmap;
 
-    const QPixmap newThumb( kapp->iconLoader()->iconEffect()
+    const QPixmap newThumb( KIconLoader::global()->iconEffect()
                             ->apply( pixmap, K3Icon::Desktop, K3Icon::DefaultState ) );
     d->setCachedPixmaps( newThumb );
 
@@ -246,7 +246,7 @@ void KFileIVI::setEffect( int state )
     }
     // Do not update if the fingerprint is identical (prevents flicker)!
 
-    KIconEffect *effect = kapp->iconLoader()->iconEffect();
+    KIconEffect *effect = KIconLoader::global()->iconEffect();
 
     bool haveEffect = effect->hasEffect( K3Icon::Desktop, m_state ) !=
                       effect->hasEffect( K3Icon::Desktop, state );
@@ -458,7 +458,7 @@ int KFileIVI::compare( Q3IconViewItem *i ) const
 void KFileIVI::updatePixmapSize()
 {
     int size = m_size ? m_size :
-        kapp->iconLoader()->currentSize( K3Icon::Desktop );
+        KIconLoader::global()->currentSize( K3Icon::Desktop );
 
     KonqIconViewWidget* view = static_cast<KonqIconViewWidget*>( iconView() );
 

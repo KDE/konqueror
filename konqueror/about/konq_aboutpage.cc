@@ -94,7 +94,7 @@ QString KonqAboutPageFactory::launch()
   if ( res.isEmpty() )
     return res;
 
-  KIconLoader *iconloader = kapp->iconLoader();
+  KIconLoader *iconloader = KIconLoader::global();
   int iconSize = iconloader->currentSize(K3Icon::Desktop);
   QString home_icon_path = iconloader->iconPath("folder_home", K3Icon::Desktop );
   QString storage_icon_path = iconloader->iconPath("system", K3Icon::Desktop );
@@ -165,7 +165,7 @@ QString KonqAboutPageFactory::intro()
     if ( res.isEmpty() )
 	return res;
 
-    KIconLoader *iconloader = kapp->iconLoader();
+    KIconLoader *iconloader = KIconLoader::global();
     QString back_icon_path = QApplication::isRightToLeft()?iconloader->iconPath("forward", K3Icon::Small ):iconloader->iconPath("back", K3Icon::Small );
     QString gohome_icon_path = iconloader->iconPath("gohome", K3Icon::Small );
     QString continue_icon_path = QApplication::isRightToLeft()?iconloader->iconPath("1leftarrow", K3Icon::Small ):iconloader->iconPath("1rightarrow", K3Icon::Small );
@@ -219,7 +219,7 @@ QString KonqAboutPageFactory::specs()
     if ( s_specs_html )
         return *s_specs_html;
 
-    KIconLoader *iconloader = kapp->iconLoader();
+    KIconLoader *iconloader = KIconLoader::global();
     QString res = loadFile( KStandardDirs::locate( "data", "konqueror/about/specs.html" ));
     QString continue_icon_path = QApplication::isRightToLeft()?iconloader->iconPath("1leftarrow", K3Icon::Small ):iconloader->iconPath("1rightarrow", K3Icon::Small );
     if ( res.isEmpty() )
@@ -305,7 +305,7 @@ QString KonqAboutPageFactory::tips()
     if ( res.isEmpty() )
 	return res;
 
-    KIconLoader *iconloader = kapp->iconLoader();
+    KIconLoader *iconloader = KIconLoader::global();
     QString viewmag_icon_path =
 	    iconloader->iconPath("viewmag", K3Icon::Small );
     QString history_icon_path =

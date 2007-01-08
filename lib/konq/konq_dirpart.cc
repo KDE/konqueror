@@ -66,7 +66,7 @@ public:
 
 void KonqDirPart::KonqDirPartPrivate::findAvailableIconSizes(void)
 {
-    KIconTheme *root = kapp->iconLoader()->theme();
+    KIconTheme *root = KIconLoader::global()->theme();
     iconSize.resize(1);
     if (root) {
 	QList<int> avSizes = root->querySizes(K3Icon::Desktop);
@@ -108,7 +108,7 @@ void KonqDirPart::KonqDirPartPrivate::findAvailableIconSizes(void)
 int KonqDirPart::KonqDirPartPrivate::findNearestIconSize(int preferred)
 {
     int s1 = iconSize[1];
-    if (preferred == 0) return kapp->iconLoader()->currentSize(K3Icon::Desktop);
+    if (preferred == 0) return KIconLoader::global()->currentSize(K3Icon::Desktop);
     if (preferred <= s1) return s1;
     for (int i = 2; i <= iconSize.count(); i++) {
         if (preferred <= iconSize[i]) {
@@ -186,7 +186,7 @@ KonqDirPart::KonqDirPart( QObject *parent )
     d->iconSize[6] = K3Icon::SizeEnormous; // 128
     d->iconSize[7] = 192;
     d->iconSize[8] = 256;
-    KIconTheme *root = kapp->iconLoader()->theme();
+    KIconTheme *root = KIconLoader::global()->theme();
     if (root)
     {
       QList<int> avSizes = root->querySizes(K3Icon::Desktop);
@@ -564,7 +564,7 @@ void KonqDirPart::slotIconSizeToggled( bool toggleOn )
 void KonqDirPart::slotIncIconSize()
 {
     int s = m_pProps->iconSize();
-    s = s ? s : kapp->iconLoader()->currentSize( K3Icon::Desktop );
+    s = s ? s : KIconLoader::global()->currentSize( K3Icon::Desktop );
     int sizeIndex = 0;
     for ( int idx = 1; idx < d->iconSize.count() ; ++idx )
         if (s == d->iconSize[idx]) {
@@ -580,7 +580,7 @@ void KonqDirPart::slotIncIconSize()
 void KonqDirPart::slotDecIconSize()
 {
     int s = m_pProps->iconSize();
-    s = s ? s : kapp->iconLoader()->currentSize( K3Icon::Desktop );
+    s = s ? s : KIconLoader::global()->currentSize( K3Icon::Desktop );
     uint sizeIndex = 0;
     for ( int idx = 1; idx < d->iconSize.count() ; ++idx )
         if (s == d->iconSize[idx]) {
@@ -596,7 +596,7 @@ void KonqDirPart::slotDecIconSize()
 // Only updates Actions, a GUI update is done in the views by reimplementing this
 void KonqDirPart::newIconSize( int size /*0=default, or 16,32,48....*/ )
 {
-    int realSize = (size==0) ? kapp->iconLoader()->currentSize( K3Icon::Desktop ) : size;
+    int realSize = (size==0) ? KIconLoader::global()->currentSize( K3Icon::Desktop ) : size;
     m_paDecIconSize->setEnabled(realSize > d->iconSize[1]);
     m_paIncIconSize->setEnabled(realSize < d->iconSize.back());
 
