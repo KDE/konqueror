@@ -19,6 +19,7 @@
 #include <kdebug.h>
 #include "khtmlkttsd.h"
 #include <kaction.h>
+#include <kactioncollection.h>
 #include <kgenericfactory.h>
 #include <kicon.h>
 #include <kiconloader.h>
@@ -40,7 +41,9 @@ KHTMLPluginKTTSD::KHTMLPluginKTTSD( QObject* parent, const QStringList& )
     KService::List offers = KServiceTypeTrader::self()->query("DBUS/Text-to-Speech", "Name == 'KTTSD'");
     if (offers.count() > 0)
     {
-        KAction *action = new KAction(KIcon("kttsd"),  i18n("&Speak Text"), actionCollection(), "tools_kttsd" );
+        QAction *action = actionCollection()->addAction( "tools_kttsd" );
+        action->setIcon( KIcon("kttsd") );
+        action->setText( i18n("&Speak Text") );
         connect(action, SIGNAL(triggered(bool) ), SLOT(slotReadOut()));
     }
     else

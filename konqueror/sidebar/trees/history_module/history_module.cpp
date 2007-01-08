@@ -79,25 +79,35 @@ KonqSidebarHistoryModule::KonqSidebarHistoryModule( KonqSidebarTree * parentTree
 	     SLOT( slotItemExpanded( Q3ListViewItem * )));
 
     m_collection = new KActionCollection( this );
-    KAction *action = new KAction(KIcon("window_new"),  i18n("New &Window"), m_collection, "open_new");
+    QAction *action = m_collection->addAction("open_new");
+    action->setIcon( KIcon("window_new") );
+    action->setText( i18n("New &Window") );
     connect(action, SIGNAL(triggered(bool)), SLOT( slotNewWindow() ));
-    action = new KAction(KIcon("editdelete"),  i18n("&Remove Entry"), m_collection, "remove");
+    action = m_collection->addAction("remove");
+    action->setIcon( KIcon("editdelete") );
+    action->setText( i18n("&Remove Entry") );
     connect(action, SIGNAL(triggered(bool)), SLOT( slotRemoveEntry() ));
-    action = new KAction(KIcon("history_clear"),  i18n("C&lear History"), m_collection, "clear");
+    action = m_collection->addAction("clear");
+    action->setIcon( KIcon("history_clear") );
+    action->setText( i18n("C&lear History") );
     connect(action, SIGNAL(triggered(bool)), SLOT( slotClearHistory() ));
-    action = new KAction(KIcon("configure"),  i18n("&Preferences..."), m_collection, "preferences");
+    action = m_collection->addAction("preferences");
+    action->setIcon( KIcon("configure") );
+    action->setText( i18n("&Preferences...") );
     connect(action, SIGNAL(triggered(bool)), SLOT( slotPreferences()));
 
     QActionGroup* sortGroup = new QActionGroup(this);
     sortGroup->setExclusive(true);
 
     KToggleAction *sort;
-    sort = new KToggleAction( i18n("By &Name"), m_collection, "byName");
+    sort = new KToggleAction( i18n("By &Name"), this );
+    m_collection->addAction( "byName", sort );
     connect(sort, SIGNAL(triggered(bool) ), SLOT( slotSortByName() ));
     sort->setActionGroup(sortGroup);
     sort->setChecked( m_sortsByName );
 
-    sort = new KToggleAction( i18n("By &Date"), m_collection, "byDate");
+    sort = new KToggleAction( i18n("By &Date"), this );
+    m_collection->addAction( "byDate", sort );
     connect(sort, SIGNAL(triggered(bool) ), SLOT( slotSortByDate() ));
     sort->setActionGroup(sortGroup);
     sort->setChecked( !m_sortsByName );

@@ -40,7 +40,6 @@
 #include <kmessagebox.h>
 #include <konq_settings.h>
 #include <kpropertiesdialog.h>
-#include <kseparatoraction.h>
 #include <kstaticdeleter.h>
 #include <kstandardaction.h>
 #include <kparts/factory.h>
@@ -210,22 +209,28 @@ KonqKfmIconView::KonqKfmIconView( QWidget *parentWidget, QObject *parent, const 
     // Don't repaint on configuration changes during construction
     m_bInit = true;
 
-    m_paDotFiles = new KToggleAction( i18n( "Show &Hidden Files" ), actionCollection(), "show_dot" );
+    m_paDotFiles = new KToggleAction( i18n( "Show &Hidden Files" ), this );
+    actionCollection()->addAction( "show_dot", m_paDotFiles );
     connect(m_paDotFiles, SIGNAL(triggered(bool) ), SLOT( slotShowDot() ));
 //    m_paDotFiles->setCheckedState(i18n("Hide &Hidden Files"));
     m_paDotFiles->setToolTip( i18n( "Toggle displaying of hidden dot files" ) );
 
-    m_paDirectoryOverlays = new KToggleAction( i18n( "&Folder Icons Reflect Contents" ), actionCollection(), "show_directory_overlays" );
+    m_paDirectoryOverlays = new KToggleAction( i18n( "&Folder Icons Reflect Contents" ), this );
+    actionCollection()->addAction( "show_directory_overlays", m_paDirectoryOverlays );
     connect(m_paDirectoryOverlays, SIGNAL(triggered(bool) ), SLOT( slotShowDirectoryOverlays() ));
 
-    m_pamPreview = new KActionMenu( i18n( "&Preview" ), actionCollection(), "iconview_preview" );
+    m_pamPreview = new KActionMenu( i18n( "&Preview" ), this );
+    actionCollection()->addAction( "iconview_preview", m_pamPreview );
 
-    m_paEnablePreviews = new KToggleAction( i18n("Enable Previews"), actionCollection(), "iconview_preview_all" );
+    m_paEnablePreviews = new KToggleAction( i18n("Enable Previews"), this );
+    actionCollection()->addAction( "iconview_preview_all", m_paEnablePreviews );
     m_paEnablePreviews->setCheckedState( KGuiItem(i18n("Disable Previews")) );
     connect( m_paEnablePreviews, SIGNAL( toggled( bool ) ), this, SLOT( slotPreview( bool ) ) );
     m_paEnablePreviews->setIcon(KIcon("thumbnail"));
     m_pamPreview->addAction( m_paEnablePreviews );
-    m_pamPreview->addAction( new KSeparatorAction(actionCollection()) );
+    QAction *sep_act = new QAction(this);
+    sep_act->setSeparator(true);
+    m_pamPreview->addAction(sep_act);
 
     KService::List plugins = KServiceTypeTrader::self()->query( "ThumbCreator" );
     QMap< QString, KToggleAction* > previewActions;
@@ -236,24 +241,31 @@ KonqKfmIconView::KonqKfmIconView( QWidget *parentWidget, QObject *parent, const 
             preview->QAction::setObjectName( QByteArray( preview->name() ) + ',' + ( *it )->desktopEntryName().toLatin1() );
         else
         {
-            preview = new KToggleAction( (*it)->name(), actionCollection(), (*it)->desktopEntryName().toLatin1() );
+            preview = new KToggleAction( (*it)->name(), this );
+            actionCollection()->addAction( (*it)->desktopEntryName().toLatin1(), preview );
             connect( preview, SIGNAL( toggled( bool ) ), this, SLOT( slotPreview( bool ) ) );
             m_pamPreview->addAction( preview );
             m_paPreviewPlugins.append( preview );
         }
     }
-    KToggleAction *soundPreview = new KToggleAction( i18n("Sound Files"), actionCollection(), "audio/" );
+    KToggleAction *soundPreview = new KToggleAction( i18n("Sound Files"), this );
+    actionCollection()->addAction( "audio/", soundPreview );
     connect( soundPreview, SIGNAL( toggled( bool ) ), this, SLOT( slotPreview( bool ) ) );
     m_pamPreview->addAction( soundPreview );
     m_paPreviewPlugins.append( soundPreview );
 
     //    m_pamSort = new KActionMenu( i18n( "Sort..." ), actionCollection(), "sort" );
 
-    KToggleAction *aSortByNameCS = new KToggleAction( i18n( "By Name (Case Sensitive)" ), actionCollection(), "sort_nc" );
-    KToggleAction *aSortByNameCI = new KToggleAction( i18n( "By Name (Case Insensitive)" ), actionCollection(), "sort_nci" );
-    KToggleAction *aSortBySize = new KToggleAction( i18n( "By Size" ), actionCollection(), "sort_size" );
-    KToggleAction *aSortByType = new KToggleAction( i18n( "By Type" ), actionCollection(), "sort_type" );
-    KToggleAction *aSortByDate = new KToggleAction( i18n( "By Date" ), actionCollection(), "sort_date" );
+    KToggleAction *aSortByNameCS = new KToggleAction( i18n( "By Name (Case Sensitive)" ), this );
+    actionCollection()->addAction( "sort_nc", aSortByNameCS );
+    KToggleAction *aSortByNameCI = new KToggleAction( i18n( "By Name (Case Insensitive)" ), this );
+    actionCollection()->addAction( "sort_nci", aSortByNameCI );
+    KToggleAction *aSortBySize = new KToggleAction( i18n( "By Size" ), this );
+    actionCollection()->addAction( "sort_size", aSortBySize );
+    KToggleAction *aSortByType = new KToggleAction( i18n( "By Type" ), this );
+    actionCollection()->addAction( "sort_type", aSortByType );
+    KToggleAction *aSortByDate = new KToggleAction( i18n( "By Date" ), this );
+    actionCollection()->addAction( "sort_date", aSortByDate );
 
     QActionGroup* sorting = new QActionGroup(this);
     sorting->setExclusive(true);
@@ -280,8 +292,10 @@ KonqKfmIconView::KonqKfmIconView( QWidget *parentWidget, QObject *parent, const 
     KToggleAction *sort_action = dynamic_cast<KToggleAction *>(actionCollection()->action(sortcrit.toLatin1().constData()));
     if(sort_action!=NULL) sort_action->trigger();
 
-    m_paSortDirsFirst = new KToggleAction( i18n( "Folders First" ), actionCollection(), "sort_directoriesfirst" );
-    KToggleAction *aSortDescending = new KToggleAction( i18n( "Descending" ), actionCollection(), "sort_descend" );
+    m_paSortDirsFirst = new KToggleAction( i18n( "Folders First" ), this );
+    actionCollection()->addAction( "sort_directoriesfirst", m_paSortDirsFirst );
+    KToggleAction *aSortDescending = new KToggleAction( i18n( "Descending" ), this );
+    actionCollection()->addAction( "sort_descend", aSortDescending );
 
     m_paSortDirsFirst->setChecked( KonqIconViewFactory::defaultViewProps()->isDirsFirst() );
 
@@ -306,17 +320,22 @@ KonqKfmIconView::KonqKfmIconView( QWidget *parentWidget, QObject *parent, const 
 
     m_pamSort->insert( aSortDescending );
     */
-    m_paSelect = new KAction( i18n( "Se&lect..." ), actionCollection(), "select" );
+    m_paSelect = actionCollection()->addAction("select");
+    m_paSelect->setText( i18n( "Se&lect..." ) );
     connect(m_paSelect, SIGNAL(triggered(bool) ), SLOT( slotSelect() ));
     m_paSelect->setShortcut(Qt::CTRL+Qt::Key_Plus);
-    m_paUnselect = new KAction( i18n( "Unselect..." ), actionCollection(), "unselect" );
+    m_paUnselect = actionCollection()->addAction("unselect");
+    m_paUnselect->setText( i18n( "Unselect..." ) );
     connect(m_paUnselect, SIGNAL(triggered(bool) ), SLOT( slotUnselect() ));
     m_paUnselect->setShortcut(Qt::CTRL+Qt::Key_Minus);
-    m_paSelectAll = KStandardAction::selectAll( this, SLOT( slotSelectAll() ), actionCollection(), "selectall" );
-    m_paUnselectAll = new KAction( i18n( "Unselect All" ), actionCollection(), "unselectall" );
+    m_paSelectAll = KStandardAction::selectAll( this, SLOT( slotSelectAll() ), this );
+    actionCollection()->addAction( "selectall", m_paSelectAll );
+    m_paUnselectAll = actionCollection()->addAction("unselectall");
+    m_paUnselectAll->setText( i18n( "Unselect All" ) );
     connect(m_paUnselectAll, SIGNAL(triggered(bool) ), SLOT( slotUnselectAll() ));
     m_paUnselectAll->setShortcut(Qt::CTRL+Qt::Key_U);
-    m_paInvertSelection = new KAction( i18n( "&Invert Selection" ), actionCollection(), "invertselection" );
+    m_paInvertSelection = actionCollection()->addAction("invertselection");
+    m_paInvertSelection->setText( i18n( "&Invert Selection" ) );
     connect(m_paInvertSelection, SIGNAL(triggered(bool) ), SLOT( slotInvertSelection() ));
     m_paInvertSelection->setShortcut(Qt::CTRL+Qt::Key_Asterisk);
 

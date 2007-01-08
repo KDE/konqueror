@@ -94,106 +94,155 @@ void KEBApp::createActions() {
     (void) KStandardAction::print(actn, SLOT( slotPrint() ), actionCollection());
 
     // actions
-    KAction* actnDelete = new KAction(KIcon("editdelete"), i18n("&Delete"), actionCollection(), "delete");
+    QAction* actnDelete = actionCollection()->addAction("delete");
+    actnDelete->setIcon(KIcon("editdelete"));
+    actnDelete->setText(i18n("&Delete"));
     actnDelete->setShortcut(Qt::Key_Delete);
     connect(actnDelete, SIGNAL( triggered() ), actn, SLOT( slotDelete() ));
 
-    KAction* actnRename = new KAction(KIcon("text"), i18n("Rename"), actionCollection(), "rename");
+    QAction* actnRename = actionCollection()->addAction("rename");
+    actnRename->setIcon(KIcon("text"));
+    actnRename->setText(i18n("Rename"));
     actnRename->setShortcut(Qt::Key_F2);
     connect(actnRename, SIGNAL( triggered() ), actn, SLOT( slotRename() ));
 
-    KAction* actnChangeURL = new KAction(KIcon("text"), i18n("C&hange URL"), actionCollection(), "changeurl");
+    QAction* actnChangeURL = actionCollection()->addAction("changeurl");
+    actnChangeURL->setIcon(KIcon("text"));
+    actnChangeURL->setText(i18n("C&hange URL"));
     actnChangeURL->setShortcut(Qt::Key_F3);
     connect(actnChangeURL, SIGNAL( triggered() ), actn, SLOT( slotChangeURL() ));
 
-    KAction* actnChangeComment = new KAction(KIcon("text"), i18n("C&hange Comment"), actionCollection(), "changecomment");
+    QAction* actnChangeComment = actionCollection()->addAction("changecomment");
+    actnChangeComment->setIcon(KIcon("text"));
+    actnChangeComment->setText(i18n("C&hange Comment"));
     actnChangeComment->setShortcut(Qt::Key_F4);
     connect(actnChangeComment, SIGNAL( triggered() ), actn, SLOT( slotChangeComment() ));
 
-    KAction* actnChangeIcon = new KAction(KIcon("icons"), i18n("Chan&ge Icon..."), actionCollection(), "changeicon");
+    QAction* actnChangeIcon = actionCollection()->addAction("changeicon");
+    actnChangeIcon->setIcon(KIcon("icons"));
+    actnChangeIcon->setText(i18n("Chan&ge Icon..."));
     connect(actnChangeIcon, SIGNAL( triggered() ), actn, SLOT( slotChangeIcon() ));
 
-    KAction* actnUpdateFavIcon = new KAction(i18n("Update Favicon"), actionCollection(), "updatefavicon");
+    QAction* actnUpdateFavIcon = actionCollection()->addAction("updatefavicon");
+    actnUpdateFavIcon->setText(i18n("Update Favicon"));
     connect(actnUpdateFavIcon, SIGNAL( triggered() ), actn, SLOT( slotUpdateFavIcon() ));
 
-    KAction* actnRecursiveSort = new KAction(i18n("Recursive Sort"), actionCollection(), "recursivesort");
+    QAction* actnRecursiveSort = actionCollection()->addAction("recursivesort");
+    actnRecursiveSort->setText(i18n("Recursive Sort"));
     connect(actnRecursiveSort, SIGNAL( triggered() ), actn, SLOT( slotRecursiveSort() ));
 
-    KAction* actnNewFolder = new KAction(KIcon("folder_new"), i18n("&New Folder..."), actionCollection(), "newfolder");
+    QAction* actnNewFolder = actionCollection()->addAction("newfolder");
+    actnNewFolder->setIcon(KIcon("folder_new"));
+    actnNewFolder->setText(i18n("&New Folder..."));
     actnNewFolder->setShortcut(Qt::CTRL+Qt::Key_N);
     connect(actnNewFolder, SIGNAL( triggered() ), actn, SLOT( slotNewFolder() ));
 
-    KAction* actnNewBookmark = new KAction(KIcon("www"), i18n("&New Bookmark"), actionCollection(), "newbookmark");
+    QAction* actnNewBookmark = actionCollection()->addAction("newbookmark");
+    actnNewBookmark->setIcon(KIcon("www"));
+    actnNewBookmark->setText(i18n("&New Bookmark"));
     connect(actnNewBookmark, SIGNAL( triggered() ), actn, SLOT( slotNewBookmark() ));
 
-    KAction* actnInsertSeparator = new KAction(i18n("&Insert Separator"), actionCollection(), "insertseparator");
+    QAction* actnInsertSeparator = actionCollection()->addAction("insertseparator");
+    actnInsertSeparator->setText(i18n("&Insert Separator"));
     actnInsertSeparator->setShortcut(Qt::CTRL+Qt::Key_I);
     connect(actnInsertSeparator, SIGNAL( triggered() ), actn, SLOT( slotInsertSeparator() ));
 
-    KAction* actnSort = new KAction(i18n("&Sort Alphabetically"), actionCollection(), "sort");
+    QAction* actnSort = actionCollection()->addAction("sort");
+    actnSort->setText(i18n("&Sort Alphabetically"));
     connect(actnSort, SIGNAL( triggered() ), actn, SLOT( slotSort() ));
 
-    KAction* actnSetAsToolbar = new KAction(KIcon("bookmark_toolbar"), i18n("Set as T&oolbar Folder"), actionCollection(), "setastoolbar");
+    QAction* actnSetAsToolbar = actionCollection()->addAction("setastoolbar");
+    actnSetAsToolbar->setIcon(KIcon("bookmark_toolbar"));
+    actnSetAsToolbar->setText(i18n("Set as T&oolbar Folder"));
     connect(actnSetAsToolbar, SIGNAL( triggered() ), actn, SLOT( slotSetAsToolbar() ));
 
-    KAction* actnExpandAll = new KAction(i18n("&Expand All Folders"), actionCollection(), "expandall");
+    QAction* actnExpandAll = actionCollection()->addAction("expandall");
+    actnExpandAll->setText(i18n("&Expand All Folders"));
     connect(actnExpandAll, SIGNAL( triggered() ), actn, SLOT( slotExpandAll() ));
 
-    KAction* actnCollapseAll = new KAction(i18n("Collapse &All Folders"), actionCollection(), "collapseall");
+    QAction* actnCollapseAll = actionCollection()->addAction("collapseall");
+    actnCollapseAll->setText(i18n("Collapse &All Folders"));
     connect(actnCollapseAll, SIGNAL( triggered() ), actn, SLOT( slotCollapseAll() ));
 
-    KAction* actnOpenLink = new KAction(KIcon("fileopen"), i18n("&Open in Konqueror"), actionCollection(), "openlink");
+    QAction* actnOpenLink = actionCollection()->addAction("openlink");
+    actnOpenLink->setIcon(KIcon("fileopen"));
+    actnOpenLink->setText(i18n("&Open in Konqueror"));
     connect(actnOpenLink, SIGNAL( triggered() ), actn, SLOT( slotOpenLink() ));
 
-    KAction* actnTestSelection = new KAction(KIcon("bookmark"), i18n("Check &Status"), actionCollection(), "testlink");
+    QAction* actnTestSelection = actionCollection()->addAction("testlink");
+    actnTestSelection->setIcon(KIcon("bookmark"));
+    actnTestSelection->setText(i18n("Check &Status"));
     connect(actnTestSelection, SIGNAL( triggered() ), actn, SLOT( slotTestSelection() ));
 
-    KAction* actnTestAll = new KAction(i18n("Check Status: &All"), actionCollection(), "testall");
+    QAction* actnTestAll = actionCollection()->addAction("testall");
+    actnTestAll->setText(i18n("Check Status: &All"));
     connect(actnTestAll, SIGNAL( triggered() ), actn, SLOT( slotTestAll() ));
 
-    KAction* actnUpdateAllFavIcons = new KAction(i18n("Update All &Favicons"), actionCollection(), "updateallfavicons");
+    QAction* actnUpdateAllFavIcons = actionCollection()->addAction("updateallfavicons");
+    actnUpdateAllFavIcons->setText(i18n("Update All &Favicons"));
     connect(actnUpdateAllFavIcons, SIGNAL( triggered() ), actn, SLOT( slotUpdateAllFavIcons() ));
 
-    KAction* actnCancelAllTests = new KAction(i18n("Cancel &Checks"), actionCollection(), "canceltests");
+    QAction* actnCancelAllTests = actionCollection()->addAction("canceltests");
+    actnCancelAllTests->setText(i18n("Cancel &Checks"));
     connect(actnCancelAllTests, SIGNAL( triggered() ), actn, SLOT( slotCancelAllTests() ));
 
-    KAction* actnCancelFavIconUpdates = new KAction(i18n("Cancel &Favicon Updates"), actionCollection(), "cancelfaviconupdates");
+    QAction* actnCancelFavIconUpdates = actionCollection()->addAction("cancelfaviconupdates");
+    actnCancelFavIconUpdates->setText(i18n("Cancel &Favicon Updates"));
     connect(actnCancelFavIconUpdates, SIGNAL( triggered() ), actn, SLOT( slotCancelFavIconUpdates() ));
 
-    KAction* actnImportNS = new KAction(KIcon("netscape"), i18n("Import &Netscape Bookmarks..."), actionCollection(), "importNS");
+    QAction* actnImportNS = actionCollection()->addAction("importNS");
+    actnImportNS->setIcon(KIcon("netscape"));
+    actnImportNS->setText(i18n("Import &Netscape Bookmarks..."));
     connect(actnImportNS, SIGNAL( triggered() ), actn, SLOT( slotImport() ));
 
-    KAction* actnImportOpera = new KAction(KIcon("opera"), i18n("Import &Opera Bookmarks..."), actionCollection(), "importOpera");
+    QAction* actnImportOpera = actionCollection()->addAction("importOpera");
+    actnImportOpera->setIcon(KIcon("opera"));
+    actnImportOpera->setText(i18n("Import &Opera Bookmarks..."));
     connect(actnImportOpera, SIGNAL( triggered() ), actn, SLOT( slotImport() ));
 
-    KAction* actnImportCrashes = new KAction(i18n("Import All &Crash Sessions as Bookmarks..."), actionCollection(), "importCrashes");
+    QAction* actnImportCrashes = actionCollection()->addAction("importCrashes");
+    actnImportCrashes->setText(i18n("Import All &Crash Sessions as Bookmarks..."));
     connect(actnImportCrashes, SIGNAL( triggered() ), actn, SLOT( slotImport() ));
 
-    KAction* actnImportGaleon = new KAction(i18n("Import &Galeon Bookmarks..."), actionCollection(), "importGaleon");
+    QAction* actnImportGaleon = actionCollection()->addAction("importGaleon");
+    actnImportGaleon->setText(i18n("Import &Galeon Bookmarks..."));
     connect(actnImportGaleon, SIGNAL( triggered() ), actn, SLOT( slotImport() ));
 
-    KAction* actnImportKDE2 = new KAction(i18n("Import &KDE2/KDE3 Bookmarks..."), actionCollection(), "importKDE2");
+    QAction* actnImportKDE2 = actionCollection()->addAction("importKDE2");
+    actnImportKDE2->setText(i18n("Import &KDE2/KDE3 Bookmarks..."));
     connect(actnImportKDE2, SIGNAL( triggered() ), actn, SLOT( slotImport() ));
 
-    KAction* actnImportIE = new KAction(i18n("Import &IE Bookmarks..."), actionCollection(), "importIE");
+    QAction* actnImportIE = actionCollection()->addAction("importIE");
+    actnImportIE->setText(i18n("Import &IE Bookmarks..."));
     connect(actnImportIE, SIGNAL( triggered() ), actn, SLOT( slotImport() ));
 
-    KAction* actnImportMoz = new KAction(KIcon("mozilla"), i18n("Import &Mozilla Bookmarks..."), actionCollection(), "importMoz");
+    QAction* actnImportMoz = actionCollection()->addAction("importMoz");
+    actnImportMoz->setIcon(KIcon("mozilla"));
+    actnImportMoz->setText(i18n("Import &Mozilla Bookmarks..."));
     connect(actnImportMoz, SIGNAL( triggered() ), actn, SLOT( slotImport() ));
 
-    KAction* actnExportNS = new KAction(KIcon("netscape"), i18n("Export to &Netscape Bookmarks"), actionCollection(), "exportNS");
+    QAction* actnExportNS = actionCollection()->addAction("exportNS");
+    actnExportNS->setIcon(KIcon("netscape"));
+    actnExportNS->setText(i18n("Export to &Netscape Bookmarks"));
     connect(actnExportNS, SIGNAL( triggered() ), actn, SLOT( slotExportNS() ));
 
-    KAction* actnExportOpera = new KAction(KIcon("opera"), i18n("Export to &Opera Bookmarks..."), actionCollection(), "exportOpera");
+    QAction* actnExportOpera = actionCollection()->addAction("exportOpera");
+    actnExportOpera->setIcon(KIcon("opera"));
+    actnExportOpera->setText(i18n("Export to &Opera Bookmarks..."));
     connect(actnExportOpera, SIGNAL( triggered() ), actn, SLOT( slotExportOpera() ));
 
-    KAction* actnExportHTML = new KAction(KIcon("html"), i18n("Export to &HTML Bookmarks..."), actionCollection(), "exportHTML");
+    QAction* actnExportHTML = actionCollection()->addAction("exportHTML");
+    actnExportHTML->setIcon(KIcon("html"));
+    actnExportHTML->setText(i18n("Export to &HTML Bookmarks..."));
     connect(actnExportHTML, SIGNAL( triggered() ), actn, SLOT( slotExportHTML() ));
 
-    KAction* actnExportIE = new KAction(i18n("Export to &IE Bookmarks..."), actionCollection(), "exportIE");
+    QAction* actnExportIE = actionCollection()->addAction("exportIE");
+    actnExportIE->setText(i18n("Export to &IE Bookmarks..."));
     connect(actnExportIE, SIGNAL( triggered() ), actn, SLOT( slotExportIE() ));
 
-    KAction* actnExportMoz = new KAction(KIcon("mozilla"), i18n("Export to &Mozilla Bookmarks..."), actionCollection(), "exportMoz");
+    QAction* actnExportMoz = actionCollection()->addAction("exportMoz");
+    actnExportMoz->setIcon(KIcon("mozilla"));
+    actnExportMoz->setText(i18n("Export to &Mozilla Bookmarks..."));
     connect(actnExportMoz, SIGNAL( triggered() ), actn, SLOT( slotExportMoz() ));
 }
 

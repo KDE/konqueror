@@ -61,25 +61,42 @@ KonqSidebarBookmarkModule::KonqSidebarBookmarkModule( KonqSidebarTree * parentTr
             this,  SLOT(slotOpenChange(Q3ListViewItem*)));
 
     m_collection = new KActionCollection( this );
-    KAction *action = new KAction(KIcon("folder_new"),  i18n("&Create New Folder"), m_collection, "create_folder");
+    QAction *action = m_collection->addAction("create_folder");
+    action->setIcon( KIcon("folder_new") );
+    action->setText( i18n("&Create New Folder") );
     connect(action, SIGNAL(triggered(bool)), SLOT( slotCreateFolder() ));
-    action = new KAction(KIcon("editdelete"),  i18n("Delete Folder"), m_collection, "delete_folder");
+    action = m_collection->addAction("delete_folder");
+    action->setIcon( KIcon("editdelete") );
+    action->setText( i18n("Delete Folder") );
     connect(action, SIGNAL(triggered(bool)), SLOT( slotDelete() ));
-    action = new KAction(KIcon("editdelete"),  i18n("Delete Bookmark"), m_collection, "delete_bookmark");
+    action = m_collection->addAction("delete_bookmark");
+    action->setIcon( KIcon("editdelete") );
+    action->setText( i18n("Delete Bookmark") );
     connect(action, SIGNAL(triggered(bool)), SLOT( slotDelete() ));
-    action = new KAction(KIcon("edit"),  i18n("Properties"), m_collection, "item_properties");
+    action = m_collection->addAction("item_properties");
+    action->setIcon( KIcon("edit") );
+    action->setText( i18n("Properties") );
     connect(action, SIGNAL(triggered(bool)), SLOT( slotProperties() ));
-    action = new KAction(KIcon("window_new"),  i18n("Open in New Window"), m_collection, "open_window");
+    action = m_collection->addAction("open_window");
+    action->setIcon( KIcon("window_new") );
+    action->setText( i18n("Open in New Window") );
     connect(action, SIGNAL(triggered(bool)), SLOT( slotOpenNewWindow() ));
-    action = new KAction(KIcon("tab_new"),  i18n("Open in New Tab"), m_collection, "open_tab");
+    action = m_collection->addAction("open_tab");
+    action->setIcon( KIcon("tab_new") );
+    action->setText( i18n("Open in New Tab") );
     connect(action, SIGNAL(triggered(bool)), SLOT( slotOpenTab() ));
-    action = new KAction(KIcon("tab_new"),  i18n("Open Folder in Tabs"), m_collection, "folder_open_tabs");
+    action = m_collection->addAction("folder_open_tabs");
+    action->setIcon( KIcon("tab_new") );
+    action->setText( i18n("Open Folder in Tabs") );
     connect(action, SIGNAL(triggered(bool)), SLOT( slotOpenTab() ));
-    action = new KAction(KIcon("editcopy"),  i18n("Copy Link Address"), m_collection, "copy_location");
+    action = m_collection->addAction("copy_location");
+    action->setIcon( KIcon("editcopy") );
+    action->setText( i18n("Copy Link Address") );
     connect(action, SIGNAL(triggered(bool)), SLOT( slotCopyLocation() ));
 
-    KStandardAction::editBookmarks( KonqBookmarkManager::self(), SLOT( slotEditBookmarks() ),
-			       m_collection, "edit_bookmarks" );
+    m_collection->addAction( "edit_bookmarks",
+                             KStandardAction::editBookmarks( KonqBookmarkManager::self(),
+                                                             SLOT( slotEditBookmarks() ), this ) );
 
     connect( KonqBookmarkManager::self(), SIGNAL(changed(const QString &, const QString &) ),
              SLOT( slotBookmarksChanged(const QString &) ) );

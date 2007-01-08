@@ -24,6 +24,7 @@
 
 #include <QtXml/QDomDocument>
 #include <kaction.h>
+#include <kactioncollection.h>
 #include <kxmlguiclient.h>
 #include <QStringList>
 #include <libkonq_export.h>
@@ -46,7 +47,7 @@ public:
   QDomElement domElement( ) const;
 
 protected:
-  void addAction( KAction *action, const QDomElement &menu = QDomElement() );
+  void addAction( const QString &name, const QDomElement &menu = QDomElement() );
   void addAction( const char *name, const QDomElement &menu = QDomElement() );
   void addSeparator( const QDomElement &menu = QDomElement() );
   /// only add a separator if an action is added afterwards

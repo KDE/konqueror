@@ -97,7 +97,6 @@
 #include <konq_undo.h>
 #include <kprotocolinfo.h>
 #include <kprotocolmanager.h>
-#include <kseparatoraction.h>
 #include <kstandardshortcut.h>
 #include <kstandardaction.h>
 #include <kstandarddirs.h>
@@ -3660,46 +3659,65 @@ void KonqMainWindow::initActions()
   QObject::connect( m_pMenuNew->menu(), SIGNAL(aboutToShow()),
                     this, SLOT(slotFileNewAboutToShow()) );
 
-  KAction *action = new KAction( i18n( "&Edit File Type..." ), actionCollection(), "editMimeType" );
-  action = new KAction( i18n( "Properties" ), actionCollection(), "properties" );
+  QAction *action = actionCollection()->addAction( "editMimeType" );
+  action->setText( i18n( "&Edit File Type..." ) );
+  action = actionCollection()->addAction( "properties" );
+  action->setText( i18n( "Properties" ) );
   action->setShortcut(Qt::ALT+Qt::Key_Return);
-  action = new KAction(KIcon("window_new"),  i18n( "New &Window" ), actionCollection(), "new_window" );
+  action = actionCollection()->addAction("new_window");
+  action->setIcon(KIcon("window_new"));
+  action->setText(i18n( "New &Window" ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotNewWindow() ));
-  action->setShortcut(KStandardShortcut::shortcut(KStandardShortcut::New));
-  action = new KAction(KIcon("window_duplicate"),  i18n( "&Duplicate Window" ), actionCollection(), "duplicate_window" );
+  action->setShortcuts(KStandardShortcut::shortcut(KStandardShortcut::New));
+  action = actionCollection()->addAction("duplicate_window");
+  action->setIcon(KIcon("window_duplicate"));
+  action->setText(i18n( "&Duplicate Window" ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotDuplicateWindow() ));
   action->setShortcut(Qt::CTRL+Qt::Key_D);
-  action = new KAction(KIcon("mail_generic"),  i18n( "Send &Link Address..." ), actionCollection(), "sendURL" );
+  action = actionCollection()->addAction("sendURL");
+  action->setIcon(KIcon("mail_generic"));
+  action->setText(i18n( "Send &Link Address..." ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotSendURL() ));
-  action = new KAction(KIcon("mail_generic"),  i18n( "S&end File..." ), actionCollection(), "sendPage" );
+  action = actionCollection()->addAction("sendPage");
+  action->setIcon(KIcon("mail_generic"));
+  action->setText(i18n( "S&end File..." ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotSendFile() ));
   if (KAuthorized::authorizeKAction("shell_access"))
   {
-     action = new KAction(KIcon("openterm"),  i18n( "Open &Terminal" ), actionCollection(), "open_terminal" );
-     connect(action, SIGNAL(triggered(bool)), SLOT( slotOpenTerminal() ));
-     action->setShortcut(Qt::Key_F4);
+      action = actionCollection()->addAction("open_terminal");
+      action->setIcon(KIcon("openterm"));
+      action->setText(i18n( "Open &Terminal" ));
+      connect(action, SIGNAL(triggered(bool)), SLOT( slotOpenTerminal() ));
+      action->setShortcut(Qt::Key_F4);
   }
-  action = new KAction(KIcon("fileopen"),  i18n( "&Open Location..." ), actionCollection(), "open_location" );
+  action = actionCollection()->addAction("open_location");
+  action->setIcon(KIcon("fileopen"));
+  action->setText(i18n( "&Open Location..." ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotOpenLocation() ));
-  action->setShortcut(KStandardShortcut::shortcut(KStandardShortcut::Open));
+  action->setShortcuts(KStandardShortcut::shortcut(KStandardShortcut::Open));
 
-  m_paFindFiles = new KToggleAction(KIcon("filefind"),  i18n( "&Find File..." ), actionCollection(), "findfile" );
+  m_paFindFiles = new KToggleAction(KIcon("filefind"), i18n( "&Find File..." ), this);
+  actionCollection()->addAction( "findfile", m_paFindFiles );
   connect(m_paFindFiles, SIGNAL(triggered(bool) ), SLOT( slotToolFind() ));
-  m_paFindFiles->setShortcut(KStandardShortcut::shortcut(KStandardShortcut::Find));
+  m_paFindFiles->setShortcuts(KStandardShortcut::shortcut(KStandardShortcut::Find));
 
-  m_paPrint = KStandardAction::print( 0, 0, actionCollection(), "print" );
-  (void) KStandardAction::quit( this, SLOT( close() ), actionCollection(), "quit" );
+  m_paPrint = actionCollection()->addAction( KStandardAction::Print, "print", 0, 0 );
+  actionCollection()->addAction( KStandardAction::Quit, "quit", this, SLOT( close() ) );
 
-  m_ptaUseHTML = new KToggleAction( i18n( "&Use index.html" ), actionCollection(), "usehtml" );
+  m_ptaUseHTML = new KToggleAction( i18n( "&Use index.html" ), this );
+  actionCollection()->addAction( "usehtml", m_ptaUseHTML );
   connect(m_ptaUseHTML, SIGNAL(triggered(bool) ), SLOT( slotShowHTML() ));
-  m_paLockView = new KToggleAction( i18n( "Lock to Current Location"), actionCollection(), "lock" );
+  m_paLockView = new KToggleAction( i18n( "Lock to Current Location"), this );
+  actionCollection()->addAction( "lock", m_paLockView );
   connect(m_paLockView, SIGNAL(triggered(bool) ), SLOT( slotLockView() ));
-  m_paLinkView = new KToggleAction( i18n( "Lin&k View"), actionCollection(), "link" );
+  m_paLinkView = new KToggleAction( i18n( "Lin&k View"), this );
+  actionCollection()->addAction( "link", m_paLinkView );
   connect(m_paLinkView, SIGNAL(triggered(bool) ), SLOT( slotLinkView() ));
 
   // Go menu
-  m_paUp = new KToolBarPopupAction( KIcon("up"), i18n( "&Up" ), actionCollection(), "up" );
-  m_paUp->setShortcut( KStandardShortcut::shortcut(KStandardShortcut::Up) );
+  m_paUp = new KToolBarPopupAction( KIcon("up"), i18n( "&Up" ), this );
+  actionCollection()->addAction( "up", m_paUp );
+  m_paUp->setShortcuts( KStandardShortcut::shortcut(KStandardShortcut::Up) );
   connect( m_paUp, SIGNAL( triggered( Qt::MouseButtons, Qt::KeyboardModifiers) ), this,
 	   SLOT( slotUp(Qt::MouseButtons, Qt::KeyboardModifiers) ) );
   connect( m_paUp->menu(), SIGNAL( aboutToShow() ), this, SLOT( slotUpAboutToShow() ) );
@@ -3707,58 +3725,82 @@ void KonqMainWindow::initActions()
 
   QPair< KGuiItem, KGuiItem > backForward = KStandardGuiItem::backAndForward();
 
-  m_paBack = new KToolBarPopupAction( KIcon(backForward.first.iconName()), backForward.first.text(), actionCollection(), "back" );
-  m_paBack->setShortcut( KStandardShortcut::shortcut(KStandardShortcut::Back) );
+  m_paBack = new KToolBarPopupAction( KIcon(backForward.first.iconName()), backForward.first.text(), this );
+  actionCollection()->addAction( "back", m_paBack );
+  m_paBack->setShortcuts( KStandardShortcut::shortcut(KStandardShortcut::Back) );
   connect( m_paBack, SIGNAL( triggered( Qt::MouseButtons, Qt::KeyboardModifiers) ), this,
 	   SLOT( slotBack(Qt::MouseButtons, Qt::KeyboardModifiers) ) );
   connect( m_paBack->menu(), SIGNAL( aboutToShow() ), this, SLOT( slotBackAboutToShow() ) );
   connect( m_paBack->menu(), SIGNAL( activated( int ) ), this, SLOT( slotBackActivated( int ) ) );
 
-  m_paForward = new KToolBarPopupAction( KIcon(backForward.second.iconName()), backForward.second.text(), actionCollection(), "forward" );
-  m_paForward->setShortcut( KStandardShortcut::shortcut(KStandardShortcut::Forward) );
+  m_paForward = new KToolBarPopupAction( KIcon(backForward.second.iconName()), backForward.second.text(), this );
+  actionCollection()->addAction( "forward", m_paForward );
+  m_paForward->setShortcuts( KStandardShortcut::shortcut(KStandardShortcut::Forward) );
   connect( m_paForward, SIGNAL( triggered( Qt::MouseButtons, Qt::KeyboardModifiers) ), this,
 	   SLOT( slotForward(Qt::MouseButtons, Qt::KeyboardModifiers) ) );
   connect( m_paForward->menu(), SIGNAL( aboutToShow() ), this, SLOT( slotForwardAboutToShow() ) );
   connect( m_paForward->menu(), SIGNAL( activated( int ) ), this, SLOT( slotForwardActivated( int ) ) );
 
-  m_paHistory = new KonqBidiHistoryAction( i18n("History"), actionCollection(), "history" );
+  m_paHistory = new KonqBidiHistoryAction( i18n("History"), this );
+  actionCollection()->addAction( "history", m_paHistory );
   connect( m_paHistory, SIGNAL( menuAboutToShow() ), this, SLOT( slotGoMenuAboutToShow() ) );
   connect( m_paHistory, SIGNAL( step( int ) ), this, SLOT( slotGoHistoryActivated( int ) ) );
 
-  m_paHome = new KAction(KIcon("gohome"),  i18n( "Home" ), actionCollection(), "home" );
-  m_paHome->setShortcut(KStandardShortcut::shortcut(KStandardShortcut::Home));
+  m_paHome = actionCollection()->addAction("home");
+  m_paHome->setIcon(KIcon("gohome"));
+  m_paHome->setText(i18n( "Home" ));
+  m_paHome->setShortcuts(KStandardShortcut::shortcut(KStandardShortcut::Home));
   connect( m_paHome, SIGNAL( triggered( Qt::MouseButtons, Qt::KeyboardModifiers) ), this,
 	   SLOT( slotHome(Qt::MouseButtons, Qt::KeyboardModifiers) ) );
 
-  action = new KAction(KIcon("system"),  i18n( "S&ystem" ), actionCollection(), "go_system" );
+  action = actionCollection()->addAction("go_system");
+  action->setIcon(KIcon("system"));
+  action->setText(i18n( "S&ystem" ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotGoSystem() ));
-  action = new KAction(KIcon("kmenu"),  i18n( "App&lications" ), actionCollection(), "go_applications" );
+  action = actionCollection()->addAction("go_applications");
+  action->setIcon(KIcon("kmenu"));
+  action->setText(i18n( "App&lications" ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotGoApplications() ));
-  action = new KAction(KIcon("system"),  i18n( "&Storage Media" ), actionCollection(), "go_media" );
+  action = actionCollection()->addAction("go_media");
+  action->setIcon(KIcon("system"));
+  action->setText(i18n( "&Storage Media" ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotGoMedia() ));
-  action = new KAction(KIcon("network"),  i18n( "&Network Folders" ), actionCollection(), "go_network_folders" );
+  action = actionCollection()->addAction("go_network_folders");
+  action->setIcon(KIcon("network"));
+  action->setText(i18n( "&Network Folders" ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotGoNetworkFolders() ));
-  action = new KAction(KIcon("kcontrol"),  i18n( "Sett&ings" ), actionCollection(), "go_settings" );
+  action = actionCollection()->addAction("go_settings");
+  action->setIcon(KIcon("kcontrol"));
+  action->setText(i18n( "Sett&ings" ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotGoSettings() ));
   //(void) new KAction( i18n( "Sidebar Configuration" ), 0, this, SLOT( slotGoDirTree() ), actionCollection(), "go_dirtree" );
-  action = new KAction(KIcon("trashcan_full"),  i18n( "Trash" ), actionCollection(), "go_trash" );
+  action = actionCollection()->addAction("go_trash");
+  action->setIcon(KIcon("trashcan_full"));
+  action->setText(i18n( "Trash" ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotGoTrash() ));
-  action = new KAction( i18n( "Autostart" ), actionCollection(), "go_autostart" );
+  action = actionCollection()->addAction("go_autostart");
+  action->setText(i18n( "Autostart" ));
   connect(action, SIGNAL(triggered(bool) ), SLOT( slotGoAutostart() ));
-  KonqMostOftenURLSAction *mostOften = new KonqMostOftenURLSAction( i18n("Most Often Visited"), actionCollection(), "go_most_often" );
+  KonqMostOftenURLSAction *mostOften = new KonqMostOftenURLSAction( i18n("Most Often Visited"), this );
+  actionCollection()->addAction( "go_most_often", mostOften );
   connect( mostOften, SIGNAL( activated( const KUrl& )),
 	   SLOT( slotOpenURL( const KUrl& )));
-  action = new KAction(KIcon("history"),  i18n( "History" ), actionCollection(), "go_history" );
+  action = actionCollection()->addAction("go_history");
+  action->setIcon(KIcon("history"));
+  action->setText(i18n( "History" ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotGoHistory() ));
 
   // Settings menu
 
-  m_paSaveViewProfile = new KAction( i18n( "&Save View Profile..." ), actionCollection(), "saveviewprofile" );
+  m_paSaveViewProfile = actionCollection()->addAction( "saveviewprofile" );
+  m_paSaveViewProfile->setText( i18n( "&Save View Profile..." ) );
   connect(m_paSaveViewProfile, SIGNAL(triggered(bool) ), SLOT( slotSaveViewProfile() ));
-  m_paSaveViewPropertiesLocally = new KToggleAction( i18n( "Save View Changes per &Folder" ), actionCollection(), "saveViewPropertiesLocally" );
+  m_paSaveViewPropertiesLocally = new KToggleAction( i18n( "Save View Changes per &Folder" ), this );
+  actionCollection()->addAction( "saveViewPropertiesLocally", m_paSaveViewPropertiesLocally );
   connect(m_paSaveViewPropertiesLocally, SIGNAL(triggered(bool) ), SLOT( slotSaveViewPropertiesLocally() ));
    // "Remove" ? "Reset" ? The former is more correct, the latter is more kcontrol-like...
-  m_paRemoveLocalProperties = new KAction( i18n( "Remove Folder Properties" ), actionCollection(), "removeLocalProperties" );
+  m_paRemoveLocalProperties = actionCollection()->addAction( "removeLocalProperties" );
+  m_paRemoveLocalProperties->setText( i18n( "Remove Folder Properties" ) );
   connect(m_paRemoveLocalProperties, SIGNAL(triggered(bool) ), SLOT( slotRemoveLocalProperties() ));
 
 
@@ -3774,75 +3816,106 @@ void KonqMainWindow::initActions()
 
 
   if (!KAuthorized::authorizeControlModules(configModules()).isEmpty())
-     KStandardAction::preferences (this, SLOT (slotConfigure()), actionCollection() );
+      actionCollection()->addAction( KStandardAction::Preferences, this, SLOT(slotConfigure()) );
 
-  KStandardAction::keyBindings( guiFactory(), SLOT( configureShortcuts() ), actionCollection() );
-  KStandardAction::configureToolbars( this, SLOT( slotConfigureToolbars() ), actionCollection() );
+  actionCollection()->addAction( KStandardAction::KeyBindings, guiFactory(), SLOT( configureShortcuts() ) );
+  actionCollection()->addAction( KStandardAction::ConfigureToolbars, this, SLOT( slotConfigureToolbars() ) );
 
-  m_paConfigureExtensions = new KAction( i18n("Configure Extensions..."), actionCollection(), "options_configure_extensions");
+  m_paConfigureExtensions = actionCollection()->addAction("options_configure_extensions");
+  m_paConfigureExtensions->setText( i18n("Configure Extensions...") );
   connect(m_paConfigureExtensions, SIGNAL(triggered(bool) ), SLOT( slotConfigureExtensions()));
-  m_paConfigureSpellChecking = new KAction(KIcon("spellcheck"),  i18n("Configure Spell Checking..."), actionCollection(), "configurespellcheck");
+  m_paConfigureSpellChecking = actionCollection()->addAction("configurespellcheck");
+  m_paConfigureSpellChecking->setIcon(KIcon("spellcheck"));
+  m_paConfigureSpellChecking->setText(i18n("Configure Spell Checking..."));
   connect(m_paConfigureSpellChecking, SIGNAL(triggered(bool)), SLOT( slotConfigureSpellChecking()));
 
   // Window menu
-  m_paSplitViewHor = new KAction(KIcon("view_left_right"),  i18n( "Split View &Left/Right" ), actionCollection(), "splitviewh" );
+  m_paSplitViewHor = actionCollection()->addAction("splitviewh");
+  m_paSplitViewHor->setIcon( KIcon("view_left_right") );
+  m_paSplitViewHor->setText( i18n( "Split View &Left/Right" ) );
   connect(m_paSplitViewHor, SIGNAL(triggered(bool)), SLOT( slotSplitViewHorizontal() ));
   m_paSplitViewHor->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_L);
-  m_paSplitViewVer = new KAction(KIcon("view_top_bottom"),  i18n( "Split View &Top/Bottom" ), actionCollection(), "splitviewv" );
+  m_paSplitViewVer = actionCollection()->addAction("splitviewv");
+  m_paSplitViewVer->setIcon( KIcon("view_top_bottom") );
+  m_paSplitViewVer->setText( i18n( "Split View &Top/Bottom" ) );
   connect(m_paSplitViewVer, SIGNAL(triggered(bool)), SLOT( slotSplitViewVertical() ));
   m_paSplitViewVer->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_T);
-  m_paAddTab = new KAction( KIcon("tab_new"), i18n( "&New Tab" ), actionCollection(), "newtab" );
+  m_paAddTab = actionCollection()->addAction("newtab");
+  m_paAddTab->setIcon( KIcon("tab_new") );
+  m_paAddTab->setText( i18n( "&New Tab" ) );
   connect(m_paAddTab, SIGNAL(triggered(bool)), SLOT( slotAddTab() ));
-  m_paAddTab->setShortcut(KShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_N, Qt::CTRL+Qt::Key_T));
+  m_paAddTab->setShortcuts(KShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_N, Qt::CTRL+Qt::Key_T));
 
-  m_paDuplicateTab = new KAction(KIcon("tab_duplicate"),  i18n( "&Duplicate Current Tab" ), actionCollection(), "duplicatecurrenttab" );
+  m_paDuplicateTab = actionCollection()->addAction("duplicatecurrenttab");
+  m_paDuplicateTab->setIcon( KIcon("tab_duplicate") );
+  m_paDuplicateTab->setText( i18n( "&Duplicate Current Tab" ) );
   connect(m_paDuplicateTab, SIGNAL(triggered(bool)), SLOT( slotDuplicateTab() ));
   m_paDuplicateTab->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_D);
-  m_paBreakOffTab = new KAction(KIcon("tab_breakoff"),  i18n( "Detach Current Tab" ), actionCollection(), "breakoffcurrenttab" );
+  m_paBreakOffTab = actionCollection()->addAction("breakoffcurrenttab");
+  m_paBreakOffTab->setIcon( KIcon("tab_breakoff") );
+  m_paBreakOffTab->setText( i18n( "Detach Current Tab" ) );
   connect(m_paBreakOffTab, SIGNAL(triggered(bool)), SLOT( slotBreakOffTab() ));
   m_paBreakOffTab->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_B);
-  m_paRemoveView = new KAction(KIcon("view_remove"),  i18n( "&Close Active View" ), actionCollection(), "removeview" );
+  m_paRemoveView = actionCollection()->addAction("removeview");
+  m_paRemoveView->setIcon( KIcon("view_remove") );
+  m_paRemoveView->setText( i18n( "&Close Active View" ) );
   connect(m_paRemoveView, SIGNAL(triggered(bool)), SLOT( slotRemoveView() ));
   m_paRemoveView->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_R);
-  m_paRemoveTab = new KAction(KIcon("tab_remove"),  i18n( "Close Current Tab" ), actionCollection(), "removecurrenttab" );
+  m_paRemoveTab = actionCollection()->addAction("removecurrenttab");
+  m_paRemoveTab->setIcon( KIcon("tab_remove") );
+  m_paRemoveTab->setText( i18n( "Close Current Tab" ) );
   connect(m_paRemoveTab, SIGNAL(triggered(bool)), SLOT( slotRemoveTab() ));
   m_paRemoveTab->setShortcut(Qt::CTRL+Qt::Key_W);
-  m_paRemoveOtherTabs = new KAction(KIcon("tab_remove"),  i18n( "Close &Other Tabs" ), actionCollection(), "removeothertabs" );
+  m_paRemoveOtherTabs = actionCollection()->addAction("removeothertabs");
+  m_paRemoveOtherTabs->setIcon( KIcon("tab_remove") );
+  m_paRemoveOtherTabs->setText( i18n( "Close &Other Tabs" ) );
   connect(m_paRemoveOtherTabs, SIGNAL(triggered(bool)), SLOT( slotRemoveOtherTabsPopup() ));
 
-  m_paActivateNextTab = new KAction(KIcon("tab_next"),  i18n( "Activate Next Tab" ), actionCollection(), "activatenexttab" );
+  m_paActivateNextTab = actionCollection()->addAction("activatenexttab");
+  m_paActivateNextTab->setIcon( KIcon("tab_next") );
+  m_paActivateNextTab->setText( i18n( "Activate Next Tab" ) );
   connect(m_paActivateNextTab, SIGNAL(triggered(bool)), SLOT( slotActivateNextTab() ));
-  m_paActivateNextTab->setShortcut(QApplication::isRightToLeft() ? KStandardShortcut::tabPrev() : KStandardShortcut::tabNext());
-  m_paActivatePrevTab = new KAction(KIcon("tab_previous"),  i18n( "Activate Previous Tab" ), actionCollection(), "activateprevtab" );
+  m_paActivateNextTab->setShortcuts(QApplication::isRightToLeft() ? KStandardShortcut::tabPrev() : KStandardShortcut::tabNext());
+  m_paActivatePrevTab = actionCollection()->addAction("activateprevtab");
+  m_paActivatePrevTab->setIcon( KIcon("tab_previous") );
+  m_paActivatePrevTab->setText( i18n( "Activate Previous Tab" ) );
   connect(m_paActivatePrevTab, SIGNAL(triggered(bool)), SLOT( slotActivatePrevTab() ));
-  m_paActivatePrevTab->setShortcut(QApplication::isRightToLeft() ? KStandardShortcut::tabNext() : KStandardShortcut::tabPrev());
+  m_paActivatePrevTab->setShortcuts(QApplication::isRightToLeft() ? KStandardShortcut::tabNext() : KStandardShortcut::tabPrev());
 
   QString actionname;
   for (int i=1;i<13;i++) {
     actionname.sprintf("activate_tab_%02d", i);
-    KAction *action = new KAction(i18n("Activate Tab %1", i), actionCollection(), actionname);
+    QAction *action = actionCollection()->addAction( actionname );
+    action->setText( i18n("Activate Tab %1", i) );
     connect(action, SIGNAL(triggered(bool)), SLOT(slotActivateTab()));
   }
 
-  m_paMoveTabLeft = new KAction( i18n("Move Tab Left"), actionCollection(), "tab_move_left");
+  m_paMoveTabLeft = actionCollection()->addAction("tab_move_left");
+  m_paMoveTabLeft->setText( i18n("Move Tab Left") );
   connect(m_paMoveTabLeft, SIGNAL(triggered(bool)), SLOT( slotMoveTabLeft()));
   m_paMoveTabLeft->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_Left);
-  m_paMoveTabRight = new KAction( i18n("Move Tab Right"), actionCollection(), "tab_move_right");
+  m_paMoveTabRight = actionCollection()->addAction("tab_move_right");
+  m_paMoveTabRight->setText( i18n("Move Tab Right") );
   connect(m_paMoveTabRight, SIGNAL(triggered(bool)), SLOT( slotMoveTabRight()));
   m_paMoveTabRight->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_Right);
 
 #ifndef NDEBUG
-  action = new KAction(KIcon("view_dump_debug_info"),  i18n( "Dump Debug Info" ), actionCollection(), "dumpdebuginfo" );
+  action = actionCollection()->addAction("dumpdebuginfo");
+  action->setIcon( KIcon("view_dump_debug_info") );
+  action->setText( i18n( "Dump Debug Info" ) );
   connect(action, SIGNAL(triggered(bool)), SLOT( slotDumpDebugInfo() ));
 #endif
 
-  m_paSaveRemoveViewProfile = new KAction( i18n( "C&onfigure View Profiles..." ), actionCollection(), "saveremoveviewprofile" );
+  m_paSaveRemoveViewProfile = actionCollection()->addAction("saveremoveviewprofile" );
+  m_paSaveRemoveViewProfile->setText( i18n( "C&onfigure View Profiles..." ) );
   connect(m_paSaveRemoveViewProfile, SIGNAL(triggered(bool) ), m_pViewManager, SLOT( slotProfileDlg() ));
-  m_pamLoadViewProfile = new KActionMenu( i18n( "Load &View Profile" ), actionCollection(), "loadviewprofile" );
+  m_pamLoadViewProfile = new KActionMenu( i18n( "Load &View Profile" ), this );
+  actionCollection()->addAction( "loadviewprofile", m_pamLoadViewProfile );
 
   m_pViewManager->setProfiles( m_pamLoadViewProfile );
 
-  m_ptaFullScreen = KStandardAction::fullScreen( 0, 0, actionCollection(), this );
+  m_ptaFullScreen = KStandardAction::fullScreen( 0, 0, this, this );
+  actionCollection()->addAction( m_ptaFullScreen->objectName(), m_ptaFullScreen );
   KShortcut fullScreenShortcut = m_ptaFullScreen->shortcut();
   fullScreenShortcut.setAlternate( Qt::Key_F11 );
   m_ptaFullScreen->setShortcut( fullScreenShortcut );
@@ -3850,58 +3923,80 @@ void KonqMainWindow::initActions()
 
   KShortcut reloadShortcut = KStandardShortcut::shortcut(KStandardShortcut::Reload);
   reloadShortcut.setAlternate(Qt::CTRL + Qt::Key_R);
-  m_paReload = new KAction(KIcon("reload"),  i18n( "&Reload" ), actionCollection(), "reload" );
+  m_paReload = actionCollection()->addAction("reload");
+  m_paReload->setIcon( KIcon("reload") );
+  m_paReload->setText( i18n( "&Reload" ) );
   connect(m_paReload, SIGNAL(triggered(bool)), SLOT( slotReload() ));
-  m_paReload->setShortcut(reloadShortcut);
-  m_paReloadAllTabs = new KAction(KIcon("reload_all_tabs"),  i18n( "&Reload All Tabs" ), actionCollection(), "reload_all_tabs" );
+  m_paReload->setShortcuts(reloadShortcut);
+  m_paReloadAllTabs = actionCollection()->addAction("reload_all_tabs");
+  m_paReloadAllTabs->setIcon( KIcon("reload_all_tabs") );
+  m_paReloadAllTabs->setText( i18n( "&Reload All Tabs" ) );
   connect(m_paReloadAllTabs, SIGNAL(triggered(bool)), SLOT( slotReloadAllTabs() ));
   m_paReloadAllTabs->setShortcut(Qt::SHIFT+Qt::Key_F5);
 
-  m_paUndo = KStandardAction::undo( KonqUndoManager::self(), SLOT( undo() ), actionCollection(), "undo" );
+  m_paUndo = KStandardAction::undo( KonqUndoManager::self(), SLOT( undo() ), this );
+  actionCollection()->addAction( "undo", m_paUndo );
   //m_paUndo->setEnabled( KonqUndoManager::self()->undoAvailable() );
   connect( KonqUndoManager::self(), SIGNAL( undoTextChanged( const QString & ) ),
            this, SLOT( slotUndoTextChanged( const QString & ) ) );
 
   // Those are connected to the browserextension directly
-  m_paCut = KStandardAction::cut( 0, 0, actionCollection(), "cut" );
-  KShortcut cutShortCut = m_paCut->shortcut();
+  m_paCut = KStandardAction::cut( 0, 0, this );
+  actionCollection()->addAction( "cut", m_paCut );
+  KShortcut cutShortCut( m_paCut->shortcut() );
   cutShortCut.remove( Qt::SHIFT + Qt::Key_Delete ); // used for deleting files
-  m_paCut->setShortcut( cutShortCut );
+  m_paCut->setShortcuts( cutShortCut );
 
-  m_paCopy = KStandardAction::copy( 0, 0, actionCollection(), "copy" );
-  m_paPaste = KStandardAction::paste( 0, 0, actionCollection(), "paste" );
-  m_paStop = new KAction(KIcon("stop"),  i18n( "&Stop" ), actionCollection(), "stop" );
+  m_paCopy = KStandardAction::copy( 0, 0, this );
+  actionCollection()->addAction( "copy", m_paCopy );
+  m_paPaste = KStandardAction::paste( 0, 0, this );
+  actionCollection()->addAction( "paste", m_paPaste );
+  m_paStop = actionCollection()->addAction("stop");
+  m_paStop->setIcon( KIcon("stop") );
+  m_paStop->setText( i18n( "&Stop" ) );
   connect(m_paStop, SIGNAL(triggered(bool)), SLOT( slotStop() ));
   m_paStop->setShortcut(Qt::Key_Escape);
 
-  m_paRename = new KAction( i18n( "&Rename" ), actionCollection(), "rename" );
+  m_paRename = actionCollection()->addAction( "rename" );
+  m_paRename->setText( i18n( "&Rename" ) );
   m_paRename->setShortcut(Qt::Key_F2);
-  m_paTrash = new KAction(KIcon("edittrash"),  i18n( "&Move to Trash" ), actionCollection(), "trash" );
+  m_paTrash = actionCollection()->addAction("trash");
+  m_paTrash->setIcon( KIcon("edittrash") );
+  m_paTrash->setText( i18n( "&Move to Trash" ) );
   m_paTrash->setShortcut(Qt::Key_Delete);
   connect( m_paTrash, SIGNAL( triggered( Qt::MouseButtons, Qt::KeyboardModifiers ) ),
            this, SLOT( slotTrashActivated( Qt::MouseButtons, Qt::KeyboardModifiers ) ) );
 
-  m_paDelete = new KAction(KIcon("editdelete"),  i18n( "&Delete" ), actionCollection(), "del" );
+  m_paDelete = actionCollection()->addAction("del");
+  m_paDelete->setIcon( KIcon("editdelete") );
+  m_paDelete->setText( i18n( "&Delete" ) );
   m_paDelete->setShortcut(Qt::SHIFT+Qt::Key_Delete);
 
-  m_paAnimatedLogo = new KonqLogoAction( i18n("Animated Logo"), KShortcut(0), this, SLOT( slotDuplicateWindow() ), actionCollection(), "animated_logo" );
+  m_paAnimatedLogo = new KonqLogoAction( i18n("Animated Logo"), this, SLOT( slotDuplicateWindow() ), this );
+  actionCollection()->addAction( "animated_logo", m_paAnimatedLogo );
 
   // Location bar
   m_locationLabel = new KonqDraggableLabel( this, i18n("L&ocation: ") );
-  KAction *locationAction = new KAction( i18n("L&ocation: "), actionCollection(), "location_label" );
+  KAction *locationAction = new KAction( this );
+  actionCollection()->addAction( "location_label", locationAction );
+  locationAction->setText( i18n("L&ocation: ") );
   connect(locationAction, SIGNAL(triggered(bool)), SLOT( slotLocationLabelActivated() ));
   locationAction->setShortcut(Qt::Key_F6);
   locationAction->setDefaultWidget(m_locationLabel);
   m_locationLabel->setBuddy( m_combo );
 
-  KAction* comboAction = new KAction( i18n( "Location Bar" ), actionCollection(), "toolbar_url_combo" );
+  KAction *comboAction = new KAction( this );
+  actionCollection()->addAction( "toolbar_url_combo", comboAction );
+  comboAction->setText( i18n( "Location Bar" ) );
   comboAction->setDefaultWidget(m_combo);
   comboAction->setShortcutConfigurable( false );
 
   m_combo->setWhatsThis( i18n( "Location Bar<p>"
 				  "Enter a web address or search term." ) );
 
-  KAction *clearLocation = new KAction(KIcon(QApplication::isRightToLeft() ? "clear_left" : "locationbar_erase"),  i18n( "Clear Location Bar" ), actionCollection(), "clear_location" );
+  QAction *clearLocation = actionCollection()->addAction("clear_location");
+  clearLocation->setIcon( KIcon(QApplication::isRightToLeft() ? "clear_left" : "locationbar_erase") );
+  clearLocation->setText( i18n( "Clear Location Bar" ) );
   clearLocation->setShortcut(Qt::CTRL+Qt::Key_L);
   connect( clearLocation, SIGNAL( triggered( Qt::MouseButtons, Qt::KeyboardModifiers ) ),
            SLOT( slotClearLocationBar( Qt::MouseButtons, Qt::KeyboardModifiers ) ) );
@@ -3910,9 +4005,8 @@ void KonqMainWindow::initActions()
 
   // Bookmarks menu
   m_pamBookmarks = new KonqBookmarkActionMenu(KonqBookmarkManager::self()->root(),
-                                              i18n( "&Bookmarks" ),
-                                              actionCollection(),
-                                              "bookmarks" );
+                                              i18n( "&Bookmarks" ), this);
+  actionCollection()->addAction( "bookmarks", m_pamBookmarks );
 
   // The actual menu needs a different action collection, so that the bookmarks
   // don't appear in kedittoolbar
@@ -3924,12 +4018,16 @@ void KonqMainWindow::initActions()
   if (addBookmark)
      addBookmark->setText(i18n("Bookmark This Location"));
 
-  m_paShowMenuBar = KStandardAction::showMenubar( this, SLOT( slotShowMenuBar() ), actionCollection() );
+  m_paShowMenuBar = KStandardAction::showMenubar( this, SLOT( slotShowMenuBar() ), this );
+  actionCollection()->addAction( m_paShowMenuBar->objectName(), m_paShowMenuBar );
 
-  action = new KAction( i18n( "Kon&queror Introduction" ), actionCollection(), "konqintro" );
+  action = actionCollection()->addAction( "konqintro" );
+  action->setText( i18n( "Kon&queror Introduction" ) );
   connect(action, SIGNAL(triggered(bool) ), SLOT( slotIntro() ));
 
-  KAction *goUrl = new KAction(KIcon("key_enter"),  i18n( "Go" ), actionCollection(), "go_url" );
+  QAction *goUrl = actionCollection()->addAction("go_url");
+  goUrl->setIcon( KIcon("key_enter") );
+  goUrl->setText( i18n( "Go" ) );
   connect(goUrl, SIGNAL(triggered(bool)), SLOT( goURL() ));
   goUrl->setWhatsThis( i18n( "Go<p>"
 			     "Goes to the page that has been entered into the location bar." ) );
@@ -4168,16 +4266,19 @@ void KonqMainWindow::updateViewActions()
     {
       // F5 is the default key binding for Reload.... a la Windows.
       // mc users want F5 for Copy and F6 for move, but I can't make that default.
-      m_paCopyFiles = new KAction( i18n("Copy &Files..."), actionCollection(), "copyfiles" );
+      m_paCopyFiles = actionCollection()->addAction( "copyfiles" );
+      m_paCopyFiles->setText( i18n("Copy &Files...") );
       connect(m_paCopyFiles, SIGNAL(triggered(bool) ), SLOT( slotCopyFiles() ));
       m_paCopyFiles->setShortcut(Qt::Key_F7);
-      m_paMoveFiles = new KAction( i18n("M&ove Files..."), actionCollection(), "movefiles" );
+      m_paMoveFiles = actionCollection()->addAction( "movefiles" );
+      m_paMoveFiles->setText( i18n("M&ove Files...") );
       connect(m_paMoveFiles, SIGNAL(triggered(bool) ), SLOT( slotMoveFiles() ));
       m_paMoveFiles->setShortcut(Qt::Key_F8);
 
       // This action doesn't appear in the GUI, it's for the shortcut only.
       // KNewMenu takes care of the GUI stuff.
-      m_paNewDir = new KAction( i18n("Create Folder..." ), actionCollection(), "konq_create_dir" );
+      m_paNewDir = actionCollection()->addAction( "konq_create_dir" );
+      m_paNewDir->setText( i18n("Create Folder..." ) );
       connect(m_paNewDir, SIGNAL(triggered(bool) ), SLOT( slotNewDir() ));
       m_paNewDir->setShortcut(Qt::Key_F10);
 
@@ -4628,25 +4729,25 @@ void KonqMainWindow::slotPopupMenu( KXMLGUIClient *client, const QPoint &_global
   // It has to be a KActionCollection instead of a KActionPtrList because we need
   // the actionStatusText signal...
   KActionCollection popupMenuCollection( (QWidget*)0 );
-  popupMenuCollection.insert( m_paBack );
-  popupMenuCollection.insert( m_paForward );
-  popupMenuCollection.insert( m_paUp );
-  popupMenuCollection.insert( m_paReload );
+  popupMenuCollection.addAction( m_paBack->objectName(), m_paBack );
+  popupMenuCollection.addAction( m_paForward->objectName(), m_paForward );
+  popupMenuCollection.addAction( m_paUp->objectName(), m_paUp );
+  popupMenuCollection.addAction( m_paReload->objectName(), m_paReload );
 
-  popupMenuCollection.insert( m_paFindFiles );
+  popupMenuCollection.addAction( m_paFindFiles->objectName(), m_paFindFiles );
 
-  popupMenuCollection.insert( m_paUndo );
-  popupMenuCollection.insert( m_paCut );
-  popupMenuCollection.insert( m_paCopy );
-  popupMenuCollection.insert( m_paPaste );
-  popupMenuCollection.insert( m_paTrash );
-  popupMenuCollection.insert( m_paRename );
-  popupMenuCollection.insert( m_paDelete );
+  popupMenuCollection.addAction( m_paUndo->objectName(), m_paUndo );
+  popupMenuCollection.addAction( m_paCut->objectName(), m_paCut );
+  popupMenuCollection.addAction( m_paCopy->objectName(), m_paCopy );
+  popupMenuCollection.addAction( m_paPaste->objectName(), m_paPaste );
+  popupMenuCollection.addAction( m_paTrash->objectName(), m_paTrash );
+  popupMenuCollection.addAction( m_paRename->objectName(), m_paRename );
+  popupMenuCollection.addAction( m_paDelete->objectName(), m_paDelete );
 
   // The pasteto action is used when clicking on a dir, to paste into it.
-  KAction *actPaste = KStandardAction::paste( this, SLOT( slotPopupPasteTo() ), &popupMenuCollection, "pasteto" );
+  KAction *actPaste = KStandardAction::paste( this, SLOT( slotPopupPasteTo() ), this );
   actPaste->setEnabled( m_paPaste->isEnabled() );
-  popupMenuCollection.insert( actPaste );
+  popupMenuCollection.addAction( "pasteto", actPaste );
 
   bool sReading = false;
   if ( _items.count() > 0 )
@@ -4712,18 +4813,23 @@ void KonqMainWindow::slotPopupMenu( KXMLGUIClient *client, const QPoint &_global
 
 
   // Those actions go into the PopupMenuGUIClient, since that's the one defining them.
-  KAction *actNewWindow = 0, *actNewTab = 0;
+  QAction *actNewWindow = 0, *actNewTab = 0;
   if( doTabHandling )
   {
       if (_args.forcesNewWindow()) {
-        actNewWindow = new KAction( i18n( "Open in T&his Window" ), konqyMenuClient->actionCollection(), "sameview" );
+        actNewWindow = konqyMenuClient->actionCollection()->addAction( "sameview" );
+        actNewWindow->setText( i18n( "Open in T&his Window" ) );
         connect(actNewWindow, SIGNAL(triggered(bool) ), SLOT( slotPopupThisWindow() ));
         actNewWindow->setToolTip( i18n( "Open the document in current window" ) );
       }
-      actNewWindow = new KAction(KIcon("window_new"),  i18n( "Open in New &Window" ), konqyMenuClient->actionCollection(), "newview" );
+      actNewWindow = konqyMenuClient->actionCollection()->addAction( "newview" );
+      actNewWindow->setIcon( KIcon("window_new") );
+      actNewWindow->setText( i18n( "Open in New &Window" ) );
       connect(actNewWindow, SIGNAL(triggered(bool)), SLOT( slotPopupNewWindow() ));
       actNewWindow->setToolTip( i18n( "Open the document in a new window" ) );
-      actNewTab = new KAction(KIcon("tab_new"),  i18n( "Open in &New Tab" ), konqyMenuClient->actionCollection(), "openintab" );
+      actNewTab = konqyMenuClient->actionCollection()->addAction( "openintab" );
+      actNewTab->setIcon( KIcon("tab_new") );
+      actNewTab->setText( i18n( "Open in &New Tab" ) );
       connect(actNewTab, SIGNAL(triggered(bool)), SLOT( slotPopupNewTab() ));
       actNewTab->setToolTip( i18n( "Open the document in a new tab" ) );
       doTabHandling = true;
@@ -4928,7 +5034,8 @@ void KonqMainWindow::updateOpenWithActions()
   KService::List::ConstIterator end = services.end();
   for (; it != end; ++it )
   {
-    KAction *action = new KAction( i18n( "Open with %1", (*it)->name() ), actionCollection(), (*it)->desktopEntryName().toLatin1() );
+    QAction *action = actionCollection()->addAction( (*it)->desktopEntryName().toLatin1() );
+    action->setText( i18n( "Open with %1", (*it)->name() ) );
     action->setIcon( KIcon( (*it)->icon() ) );
 
     connect( action, SIGNAL( activated() ),
@@ -4938,7 +5045,9 @@ void KonqMainWindow::updateOpenWithActions()
   }
   if ( services.count() > 0 )
   {
-      m_openWithActions.append( new KSeparatorAction );
+      QAction *sep = new QAction( this );
+      sep->setSeparator( true );
+      m_openWithActions.append( sep );
       plugActionList( "openwith", m_openWithActions );
   }
 }
@@ -4985,7 +5094,8 @@ void KonqMainWindow::updateViewModeActions()
   if ( services.count() <= 1 )
     return;
 
-  m_viewModeMenu = new KActionMenu( i18n( "&View Mode" ), actionCollection(), "viewModeMenu" );
+  m_viewModeMenu = new KActionMenu( i18n( "&View Mode" ), this );
+  actionCollection()->addAction( "viewModeMenu", m_viewModeMenu );
 
   // a temporary map, just like the m_viewModeToolBarServices map, but
   // mapping to a KonqViewModeAction object. It's just temporary as we
@@ -5016,7 +5126,8 @@ void KonqMainWindow::updateViewModeActions()
       QString icon = (*it)->icon();
       // Create a KToggleAction for each view mode, and plug it into the menu
       // we *have* to specify a parent qobject, otherwise the exclusive group stuff doesn't work!(Simon)
-      KToggleAction* action = new KToggleAction( KIcon(icon), itname, actionCollection(), (*it)->desktopEntryName() );
+      KToggleAction* action = new KToggleAction( KIcon(icon), itname, this );
+      actionCollection()->addAction( (*it)->desktopEntryName(), action );
       action->setActionGroup( m_viewModesGroup );
 
       connect( action, SIGNAL( toggled( bool ) ),
@@ -5067,8 +5178,8 @@ void KonqMainWindow::updateViewModeActions()
           KonqViewModeAction *tbAction = new KonqViewModeAction( desktopEntryName,
                                                                  text,
                                                                  KIcon(icon),
-                                                                 actionCollection(),
-                                                                 desktopEntryName.prepend( "viewmode_" ).toLatin1() ); // prefix to avoid conflicts in the actioncollection
+                                                                 this );
+          actionCollection()->addAction( desktopEntryName.prepend( "viewmode_" ).toLatin1(), tbAction ); // prefix to avoid conflicts in the actioncollection
 
           tbAction->setActionGroup( m_toolBarViewModesGroup );
 

@@ -22,6 +22,7 @@
 #include <kiconloader.h>
 #include <klocale.h>
 #include <kmenubar.h>
+#include <kactioncollection.h>
 #include <kservicetypetrader.h>
 
 #include "konq_view.h"
@@ -154,7 +155,8 @@ void PopupMenuGUIClient::addEmbeddingService( QDomElement &menu, int idx, const 
 
   action.setAttribute( "group", "preview" );
 
-  KAction *act = new KAction( name, actionCollection(), actName );
+  QAction *act = actionCollection()->addAction( actName );
+  act->setText( name );
   act->setIcon( KIcon(service->icon()) );
   QObject::connect(act, SIGNAL(triggered(bool)), m_mainWindow, SLOT( slotOpenEmbedded() ));
 }
@@ -193,7 +195,8 @@ ToggleViewGUIClient::ToggleViewGUIClient( KonqMainWindow *mainWindow )
     QString description = i18n( "Show %1" ,  (*cIt)->name() );
     QString name = (*cIt)->desktopEntryName();
     //kDebug(1202) << "ToggleViewGUIClient: name=" << name << endl;
-    KToggleAction *action = new KToggleAction( description, mainWindow->actionCollection(), name.toLatin1() );
+    KToggleAction *action = new KToggleAction( description, this );
+    mainWindow->actionCollection()->addAction( name.toLatin1(), action );
     action->setCheckedState( KGuiItem(i18n( "Hide %1" ,  (*cIt)->name() )) );
 
     // HACK

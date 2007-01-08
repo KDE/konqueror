@@ -26,6 +26,7 @@
 #include <kio/paste.h>
 #include <kapplication.h>
 #include <kaction.h>
+#include <kactioncollection.h>
 #include <kdebug.h>
 #include <kdirlister.h>
 #include <kicon.h>
@@ -52,8 +53,8 @@ class KonqDirPart::KonqDirPartPrivate
 public:
     KonqDirPartPrivate() : dirLister( 0 ) {}
     QStringList mimeFilters;
-    KAction *aEnormousIcons;
-    KAction *aSmallMediumIcons;
+    QAction *aEnormousIcons;
+    QAction *aSmallMediumIcons;
     QVector<int> iconSize;
 
     KDirLister* dirLister;
@@ -137,19 +138,30 @@ KonqDirPart::KonqDirPart( QObject *parent )
 
     connect( QApplication::clipboard(), SIGNAL(dataChanged()), this, SLOT(slotClipboardDataChanged()) );
 
-    m_paIncIconSize = new KAction( KIcon( "viewmag+" ), i18n( "Enlarge Icons" ), actionCollection(), "incIconSize" );
+    m_paIncIconSize = actionCollection()->addAction( "incIconSize" );
+    m_paIncIconSize->setIcon( KIcon( "viewmag+" ) );
+    m_paIncIconSize->setText( i18n( "Enlarge Icons" ) );
     connect( m_paIncIconSize, SIGNAL( triggered() ), this, SLOT( slotIncIconSize() ) );
-    m_paDecIconSize = new KAction( KIcon( "viewmag-" ), i18n( "Shrink Icons" ), actionCollection(), "decIconSize" );
+    m_paDecIconSize = actionCollection()->addAction( "decIconSize" );
+    m_paDecIconSize->setIcon( KIcon( "viewmag-" ) );
+    m_paDecIconSize->setText( i18n( "Shrink Icons" ) );
     connect( m_paDecIconSize, SIGNAL( triggered() ), this, SLOT( slotDecIconSize() ) );
 
 
-    m_paDefaultIcons = new KAction( i18n( "&Default Size" ), actionCollection(), "modedefault" );
-    d->aEnormousIcons = new KAction( i18n( "&Huge" ), actionCollection(), "modeenormous" );
-    m_paHugeIcons = new KAction( i18n( "&Very Large" ), actionCollection(), "modehuge" );
-    m_paLargeIcons = new KAction( i18n( "&Large" ), actionCollection(), "modelarge" );
-    m_paMediumIcons = new KAction( i18n( "&Medium" ), actionCollection(), "modemedium" );
-    d->aSmallMediumIcons = new KAction( i18n( "&Small" ), actionCollection(), "modesmallmedium" );
-    m_paSmallIcons = new KAction( i18n( "&Tiny" ), actionCollection(), "modesmall" );
+    m_paDefaultIcons = actionCollection()->addAction( "modedefault" );
+    m_paDefaultIcons->setText( i18n( "&Default Size" ) );
+    d->aEnormousIcons = actionCollection()->addAction( "modeenormous" );
+    d->aEnormousIcons->setText( i18n( "&Huge" ) );
+    m_paHugeIcons = actionCollection()->addAction( "modehuge" );
+    m_paHugeIcons->setText( i18n( "&Very Large" ) );
+    m_paLargeIcons = actionCollection()->addAction( "modelarge" );
+    m_paLargeIcons->setText( i18n( "&Large" ) );
+    m_paMediumIcons = actionCollection()->addAction( "modemedium" );
+    m_paMediumIcons->setText( i18n( "&Medium" ) );
+    d->aSmallMediumIcons = actionCollection()->addAction( "modesmallmedium" );
+    d->aSmallMediumIcons->setText( i18n( "&Small" ) );
+    m_paSmallIcons = actionCollection()->addAction( "modesmall" );
+    m_paSmallIcons->setText( i18n( "&Tiny" ) );
 
     QActionGroup* viewModeGroup = new QActionGroup(this);
     viewModeGroup->setExclusive(true);
@@ -214,7 +226,9 @@ KonqDirPart::KonqDirPart( QObject *parent )
     adjustIconSizes();
 #endif
 
-    KAction *a = new KAction( KIcon( "background" ), i18n( "Configure Background..." ), actionCollection(), "bgsettings" );
+    QAction *a = actionCollection()->addAction( "bgsettings" );
+    a->setIcon( KIcon( "background" ) );
+    a->setText( i18n( "Configure Background..." ) );
     connect( a, SIGNAL( triggered() ), this, SLOT( slotBackgroundSettings() ) );
 
     a->setToolTip( i18n( "Allows choosing of background settings for this view" ) );
@@ -278,11 +292,11 @@ void KonqDirPart::slotBackgroundSettings()
     QColor defaultColor = KGlobalSettings::baseColor();
     // dlg must be created on the heap as widget() can get deleted while dlg.exec(),
     // trying to delete dlg as its child then (#124210) - Frank Osterfeld
-    QPointer<KonqBgndDialog> dlg = new KonqBgndDialog( widget(), 
+    QPointer<KonqBgndDialog> dlg = new KonqBgndDialog( widget(),
                                               m_pProps->bgPixmapFile(),
                                               bgndColor,
                                               defaultColor );
-    
+
     if ( dlg->exec() == KonqBgndDialog::Accepted )
     {
         if ( dlg->color().isValid() )
@@ -298,7 +312,7 @@ void KonqDirPart::slotBackgroundSettings()
         m_pProps->applyColors( scrollWidget()->viewport() );
         scrollWidget()->viewport()->repaint();
     }
-    
+
     delete dlg;
 }
 

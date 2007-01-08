@@ -26,6 +26,7 @@
 
 #include <kdebug.h>
 #include <kactionmenu.h>
+#include <kactioncollection.h>
 #include <kicon.h>
 #include <klocale.h>
 #include <kglobal.h>
@@ -49,8 +50,9 @@ KRemoteEncodingPlugin::KRemoteEncodingPlugin(QObject * parent,
 					     const QStringList &)
   : KParts::Plugin(parent), m_loaded(false), m_idDefault(0)
 {
-  m_menu = new KActionMenu(KIcon("charset"), i18n("Select Remote Charset"),
-			   actionCollection(), "changeremoteencoding"); connect(m_menu->menu(), SIGNAL(aboutToShow()),
+  m_menu = new KActionMenu(KIcon("charset"), i18n("Select Remote Charset"), this);
+  actionCollection()->addAction("changeremoteencoding", m_menu);
+  connect(m_menu->menu(), SIGNAL(aboutToShow()),
 	  this, SLOT(slotAboutToShow()));
   m_menu->setEnabled(false);
   m_menu->setDelayed(false);
