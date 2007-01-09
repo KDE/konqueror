@@ -327,9 +327,6 @@ void KPluginOptions::scan()
 
     KProcIO* nspluginscan = new KProcIO;
     QString scanExe = KGlobal::dirs()->findExe("nspluginscan");
-#ifdef __GNUC__
-#warning !QString? i guess that meant isEmpty?
-#endif    
     if (scanExe.isEmpty()) {
         kDebug() << "can't find nspluginviewer" << endl;
         delete nspluginscan;
