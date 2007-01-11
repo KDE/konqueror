@@ -69,7 +69,9 @@ void KHTMLPluginKTTSD::slotReadOut()
             if (KToolInvocation::startServiceByDesktopName("kttsd", QStringList(), &error))
                 QMessageBox::warning(0, i18n( "Starting KTTSD Failed"), error );
         }
+#ifdef __GNUC__
 #warning "kde4: kspeech dbus doesn't have supportsMarkup function"
+#endif
         // Find out if KTTSD supports xhtml (rich speak).
         bool supportsXhtml = false;
 		QDBusInterface kttsd( "org.kde.KSpeech", "/KSpeech", "org.kde.KSpeech" );

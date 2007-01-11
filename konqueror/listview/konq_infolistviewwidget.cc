@@ -356,7 +356,7 @@ void KonqInfoListViewWidget::determineCounts(const KFileItemList& list)
     {
         // look if there is a plugin for this mimetype
         // and look for the "favorite" mimetype
-#ifdef _GNUC
+#ifdef __GNUC__
 #warning ### change this
 #endif
         // this will load the plugin which we don't need because we delegate

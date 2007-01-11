@@ -441,7 +441,9 @@ NSPluginInstance *NSPluginLoader::newInstance(QWidget *parent, const QString& ur
    }
 
    // get plugin class object
+#ifdef __GNUC__
 #warning "kde4 verify if appId is sendId" 
+#endif
    QDBusObjectPath cls_ref = _viewer->newClass( plugin_name, appId ); 
    if ( cls_ref.path().isEmpty() )
    {
