@@ -1289,8 +1289,8 @@ void KonqViewManager::loadViewProfile( KConfig &cfg, const QString & filename,
          QSize size = readConfigSize( cfg, m_pMainWindow );
          if ( size.isValid() )
              m_pMainWindow->resize( size );
-         else if( resetWindow )
-             m_pMainWindow->resize( 700, 480 ); // size from KonqMainWindow ctor
+         else  // no size in the profile; use last known size
+             m_pMainWindow->restoreWindowSize();
      }
   }
 

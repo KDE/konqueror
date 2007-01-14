@@ -329,6 +329,9 @@ public:
 
   QStringList configModules() const;
 
+  void saveWindowSize() const;
+  void restoreWindowSize();
+
 Q_SIGNALS:
   void viewAdded( KonqView *view );
   void viewRemoved( KonqView *view );
