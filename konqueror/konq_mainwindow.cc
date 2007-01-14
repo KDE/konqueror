@@ -5358,6 +5358,9 @@ void KonqMainWindow::closeEvent( QCloseEvent *e )
          }
     }
 
+    // save size to have something to restore if the profile does not contain size
+    saveWindowSize();
+
     hide();
     qApp->flush();
   }
@@ -6005,6 +6008,28 @@ KonqView * KonqMainWindow::currentView() const
 {
      return m_currentView;
 }
+
+void KonqMainWindow::saveWindowSize() const
+{
+    QString savedGroup = KGlobal::config()->group();
+    KGlobal::config()->setGroup( "KonqMainWindow_Size" );
+
+    KParts::MainWindow::saveWindowSize( KGlobal::config() );
+
+    KGlobal::config()->setGroup( savedGroup );
+    KGlobal::config()->sync();
+}
+
+void KonqMainWindow::restoreWindowSize()
+{
+    QString savedGroup = KGlobal::config()->group();
+    KGlobal::config()->setGroup( "KonqMainWindow_Size" );
+
+    KParts::MainWindow::restoreWindowSize( KGlobal::config() );
+
+    KGlobal::config()->setGroup( savedGroup );
+}
+
 
 #include "konq_mainwindow.moc"
 #include "konq_mainwindow_p.moc"
