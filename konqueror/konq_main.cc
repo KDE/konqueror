@@ -59,6 +59,7 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
   KCmdLineArgs::addTempFileOption();
 
   KonquerorApplication app;
+  app.setQuitOnLastWindowClosed(false);
 
   KGlobal::locale()->insertCatalog("libkonq"); // needed for apps using libkonq
 
