@@ -374,7 +374,7 @@ protected Q_SLOTS:
   void slotCompleted( bool );
   void slotCanceled( const QString & errMsg );
   void slotPercent( KJob *, unsigned long percent );
-  void slotSpeed( KIO::Job *, unsigned long bytesPerSecond );
+  void slotSpeed( KJob *, unsigned long bytesPerSecond );
 
   /**
    * Connected to the BrowserExtension
