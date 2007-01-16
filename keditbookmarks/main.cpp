@@ -34,9 +34,11 @@
 
 #include <kmessagebox.h>
 #include <kwin.h>
+#include <unistd.h>
 
 #include <kbookmarkmanager.h>
 #include <kbookmarkexporter.h>
+#include <toplevel_interface.h>
 
 static KCmdLineOptions options[] = {
     {"importmoz <filename>", I18N_NOOP("Import bookmarks from a file in Mozilla format"), 0},
@@ -60,60 +62,53 @@ static KCmdLineOptions options[] = {
     KCmdLineLastOption
 };
 
-#ifdef __GNUC__
-#warning TODO port to dbus
-#endif
-#if 0
-static void continueInWindow(QString _wname) {
-    DCOPCString wname = _wname.toLatin1();
-    int id = -1;
-
-    DCOPCStringList apps = kapp->dcopClient()->registeredApplications();
-    for (DCOPCStringList::Iterator it = apps.begin(); it != apps.end(); ++it) {
-        DCOPCString &clientId = *it;
-
-        if (qstrncmp(clientId, wname, wname.length()) != 0)
-            continue;
-
-        DCOPRef client(clientId.data(), wname + "-mainwindow#1");
-        DCOPReply result = client.call("getWinID()");
-
-        if (result.isValid()) {
-            id = (int)result;
-            break;
-        }
-    }
-
-    KWin::activateWindow(id);
-}
-#endif
-
 // TODO - make this register() or something like that and move dialog into main
-static int askUser(KApplication &app, QString filename, bool &readonly) {
-#if 0 // TODO port to DBUS
+static bool askUser(QString filename, bool &readonly) {
+
     QString requestedName("keditbookmarks");
+    QString interfaceName = "org.kde.keditbookmarks";
+    QString appId = interfaceName + '-' +QString().setNum(getpid());
 
-    if (!filename.isEmpty())
-        requestedName += '-' + filename.toUtf8();
-
-    if (app.dcopClient()->registerAs(requestedName, false) == requestedName)
+    QDBusConnection dbus = QDBusConnection::sessionBus();
+    QDBusReply<QStringList> reply = dbus.interface()->registeredServiceNames();
+    if ( !reply.isValid() )
         return true;
-
-    int ret = KMessageBox::warningYesNo(0,
-            i18n("Another instance of %1 is already running, do you really "
+    const QStringList allServices = reply;
+    for ( QStringList::const_iterator it = allServices.begin(), end = allServices.end() ; it != end ; ++it ) {
+        const QString service = *it;
+        if ( service.startsWith( interfaceName ) && service != appId ) {
+            org::kde::keditbookmarks keditbookmarks(service,"/keditbookmarks", dbus);
+            QDBusReply<QString> bookmarks = keditbookmarks.bookmarkFilename();
+            QString name;
+            if( bookmarks.isValid())
+                name = bookmarks;
+            if( name == filename)
+            {
+                int ret = KMessageBox::warningYesNo(0,
+                i18n("Another instance of %1 is already running, do you really "
                 "want to open another instance or continue work in the same instance?\n"
                 "Please note that, unfortunately, duplicate views are read-only.", kapp->caption()),
-            i18n("Warning"),
-            i18n("Run Another"),    /* yes */
-            i18n("Continue in Same") /*  no */);
-
-    if (ret == KMessageBox::No) {
-        continueInWindow(requestedName);
-        return false;
-    } else if (ret == KMessageBox::Yes) {
-        readonly = true;
+                i18n("Warning"),
+                KGuiItem(i18n("Run Another")),    /* yes */
+                KGuiItem(i18n("Continue in Same")) /*  no */);
+                if (ret == KMessageBox::No) {
+                    QDBusInterface keditinterface(service, "/keditbookmarks/MainWindow_1");
+                    //TODO fix me
+                    QDBusReply<qlonglong> value = keditinterface.call(QDBus::NoBlock, "winId");
+                    qlonglong id = 0;
+                    if( value.isValid())
+                        id = value;
+                    //kdDebug()<<" id !!!!!!!!!!!!!!!!!!! :"<<id<<endl;
+#ifdef Q_WS_X11                 
+                    KWin::activateWindow(id);
+#endif                    
+                    return false;
+                } else if (ret == KMessageBox::Yes) {
+                    readonly = true;
+                }
+            }
+        }
     }
-#endif
     return true;
 }
 
@@ -208,7 +203,7 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv) {
 
     bool readonly = false; // passed by ref
 
-    if (askUser(app, (gotFilenameArg ? filename : QString()), readonly)) {
+    if (askUser((gotFilenameArg ? filename : QString()), readonly)) {
         KEBApp *toplevel = new KEBApp(filename, readonly, address, browser, caption, dbusObjectName);
         toplevel->show();
         return app.exec();

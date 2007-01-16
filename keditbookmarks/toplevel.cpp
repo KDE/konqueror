@@ -188,7 +188,7 @@ QString CurrentMgr::makeTimeStr(int b)
 }
 
 /* -------------------------- */
-
+#include <QDBusConnection>
 KEBApp *KEBApp::s_topLevel = 0;
 
 KEBApp::KEBApp(
@@ -199,7 +199,7 @@ KEBApp::KEBApp(
     m_caption(caption), 
     m_dbusObjectName(dbusObjectName), m_readOnly(readonly),m_browser(browser)
  {
-
+    QDBusConnection::sessionBus().registerObject("/keditbookmarks", this, QDBusConnection::ExportScriptableSlots);
     Q_UNUSED(address);//FIXME sets the current item
 
     m_cmdHistory = new CmdHistory(actionCollection());
@@ -261,6 +261,11 @@ KEBApp::KEBApp(
     setCancelFavIconUpdatesEnabled(false);
     setCancelTestsEnabled(false);
     updateActions();
+}
+
+QString KEBApp::bookmarkFilename()
+{
+   return m_bookmarksFilename;
 }
 
 void KEBApp::reset(const QString & caption, const QString & bookmarksFileName)
