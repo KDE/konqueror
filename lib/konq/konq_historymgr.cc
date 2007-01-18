@@ -18,7 +18,7 @@
 */
 
 #include "konq_historymgr.h"
-#include "konq_historymgr_adaptor.h"
+#include "konqhistorymanageradaptor.h"
 #include "konqbookmarkmanager.h"
 
 #include <QtDBus/QtDBus>
