@@ -24,7 +24,6 @@ set(konq_LIB_SRCS
    konq_events.cc
    konq_bgnddlg.cc
    konq_undo.cc
-   konq_undoadaptor.cpp
    konq_historymgr.cc
    konq_historyentry.cpp
    konq_pixmapprovider.cc
@@ -36,6 +35,8 @@ set(konq_LIB_SRCS
 )
 
 qt4_add_dbus_adaptor( konq_LIB_SRCS org.kde.libkonq.KonqHistoryManager.xml konq_historymgr.h KonqHistoryManager )
+qt4_add_dbus_adaptor( konq_LIB_SRCS org.kde.libkonq.UndoManager.xml konq_undo.h KonqUndoManager) 
+
 
 kde4_automoc(${konq_LIB_SRCS})
 
