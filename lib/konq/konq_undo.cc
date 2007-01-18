@@ -19,7 +19,7 @@
 */
 
 #include "konq_undo.h"
-#include "konq_undoadaptor.h"
+#include "undomanageradaptor.h"
 #include "kio/observer.h"
 #include <kio/jobuidelegate.h>
 #include <QtDBus/QtDBus>
@@ -184,7 +184,7 @@ public:
 
 KonqUndoManager::KonqUndoManager()
 {
-  (void) new KonqUndoManagerAdaptor( this );
+  (void) new UndoManagerAdaptor( this );
   const QString dbusPath = "/KonqUndoManager";
   const QString dbusInterface = "org.kde.libkonq.UndoManager";
 
