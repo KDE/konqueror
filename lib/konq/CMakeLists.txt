@@ -71,7 +71,6 @@ install( FILES
  konq_events.h
  konq_undo.h
  konq_historymgr.h
- konq_historymgr_adaptor.h
  konq_historyentry.h
  konq_pixmapprovider.h
  kivdirectoryoverlay.h
