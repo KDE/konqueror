@@ -524,7 +524,7 @@ void KNewMenu::slotNewFile()
         	     SLOT( slotRenamed( KIO::Job *, const KUrl&, const KUrl& ) ) );
     	KUrl::List lst;
     	lst.append( uSrc );
-    	(void)new KonqCommandRecorder( KonqCommand::COPY, lst, dest, job );
+        KonqUndoManager::self()->recordJob( KonqUndoManager::COPY, lst, dest, job );
     }
 }
 
