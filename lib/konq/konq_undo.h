@@ -21,80 +21,24 @@
 #define __konq_undo_h__
 
 #include <QObject>
-#include <QString>
-#include <qstack.h>
-
 #include <kurl.h>
+
 #include <libkonq_export.h>
 
 namespace KIO
 {
   class Job;
 }
-
+class KonqBasicOperation;
+class KonqCommand;
 class KonqUndoJob;
 class KJob;
-
-struct KonqBasicOperation
-{
-  typedef QStack<KonqBasicOperation> Stack;
-
-  KonqBasicOperation()
-  { m_valid = false; }
-
-  bool m_valid;
-  bool m_directory;
-  bool m_renamed;
-  bool m_link;
-  KUrl m_src;
-  KUrl m_dst;
-  QString m_target;
-};
-
-struct KonqCommand
-{
-  typedef QStack<KonqCommand> Stack;
-
-  enum Type { COPY, MOVE, LINK, MKDIR, TRASH };
-
-  KonqCommand()
-  { m_valid = false; }
-  //KonqCommand( Type type, KonqBasicOperation::Stack& opStack, const KUrl::List& src, const KUrl& dest )
-  //  : m_type( type ), m_opStack( opStack ), m_src( src ), m_dest( dest ) {}
-
-  bool m_valid;
-
-  Type m_type;
-  KonqBasicOperation::Stack m_opStack;
-  KUrl::List m_src;
-  KUrl m_dst;
-};
-
-class KonqCommandRecorder : public QObject
-{
-  Q_OBJECT
-public:
-  KonqCommandRecorder( KonqCommand::Type op, const KUrl::List &src, const KUrl &dst, KIO::Job *job );
-  virtual ~KonqCommandRecorder();
-
-private Q_SLOTS:
-  void slotResult( KJob *job );
-
-  void slotCopyingDone( KIO::Job *, const KUrl &from, const KUrl &to, bool directory, bool renamed );
-  void slotCopyingLinkDone( KIO::Job *, const KUrl &from, const QString &target, const KUrl &to );
-
-private:
-  class KonqCommandRecorderPrivate;
-  KonqCommandRecorderPrivate *d;
-};
 
 class LIBKONQ_EXPORT KonqUndoManager : public QObject
 {
   Q_OBJECT
   friend class KonqUndoJob;
 public:
-  enum UndoState { MAKINGDIRS, MOVINGFILES, REMOVINGDIRS, REMOVINGFILES };
-
   KonqUndoManager();
   virtual ~KonqUndoManager();
 
@@ -102,7 +46,16 @@ public:
   static void decRef();
   static KonqUndoManager *self();
 
-  void addCommand( const KonqCommand &cmd );
+  enum CommandType { COPY, MOVE, LINK, MKDIR, TRASH };
+
+  /**
+   * Record this job while it's happening and add a command for it so that the user can undo it.
+   * @param op the type of job - which is also the type of command that will be created for it
+   * @param src list of source urls
+   * @param dst destination url
+   * @param job the job to record
+   */
+  void recordJob( CommandType op, const KUrl::List &src, const KUrl &dst, KIO::Job *job );
 
   bool undoAvailable() const;
   QString undoText() const;
@@ -140,6 +93,12 @@ private Q_SLOTS:
   void slotResult( KJob *job );
 
 private:
+  enum UndoState { MAKINGDIRS, MOVINGFILES, REMOVINGDIRS, REMOVINGFILES };
+
+  // called by KonqCommandRecorder
+  friend class KonqCommandRecorder;
+  void addCommand( const KonqCommand &cmd );
+
   void pushCommand( const KonqCommand& cmd );
   void undoStep();
 
