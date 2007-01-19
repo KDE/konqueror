@@ -1,6 +1,7 @@
 /* -*- c-basic-offset:2 -*- */
 /* This file is part of the KDE project
    Copyright (C) 2000 Simon Hausmann <hausmann@kde.org>
+   Copyright (C) 2006 David Faure <faure@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -34,12 +35,14 @@ class KonqCommand;
 class KonqUndoJob;
 class KJob;
 
+/**
+ * KonqUndoManager: makes it possible to undo kio jobs.
+ * This class is a singleton, use self() to access its only instance.
+ */
 class LIBKONQ_EXPORT KonqUndoManager : public QObject
 {
   Q_OBJECT
-  friend class KonqUndoJob;
 public:
-  KonqUndoManager();
   virtual ~KonqUndoManager();
 
   static void incRef();
@@ -61,26 +64,27 @@ public:
   QString undoText() const;
 
 public Q_SLOTS:
+  /// Undoes the current
   void undo();
 
-  // public for KonqUndoManagerAdaptor
+  /// @internal called by KonqUndoManagerAdaptor
   QByteArray get() const;
 
 Q_SIGNALS:
-  // The four signals below are emitted to dbus
+  /// Emitted when the value of undoAvailable() changes
+  void undoAvailable( bool avail );
+
+  /// Emitted when the value of undoText() changes
+  void undoTextChanged( const QString &text );
+
+  /// Emitted when an undo job finishes. Used for unit testing.
+  void undoJobFinished();
+
+  // The four signals below are emitted to DBus
   void push( const QByteArray &command );
   void pop();
   void lock();
   void unlock();
-
-  void undoAvailable( bool avail );
-  void undoTextChanged( const QString &text );
-
-protected:
-  /**
-   * @internal
-   */
-  void stopUndo( bool step );
 
 private Q_SLOTS:
   // Those four are connected to DBUS signals
@@ -93,10 +97,16 @@ private Q_SLOTS:
   void slotResult( KJob *job );
 
 private:
+  KonqUndoManager();
+
   enum UndoState { MAKINGDIRS, MOVINGFILES, REMOVINGDIRS, REMOVINGFILES };
 
-  // called by KonqCommandRecorder
+  friend class KonqUndoJob;
+  /// called by KonqUndoJob
+  void stopUndo( bool step );
+
   friend class KonqCommandRecorder;
+  /// called by KonqCommandRecorder
   void addCommand( const KonqCommand &cmd );
 
   void pushCommand( const KonqCommand& cmd );
