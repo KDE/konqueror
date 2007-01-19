@@ -84,7 +84,7 @@ static KCmdLineOptions options[] =
     { "getopenurl [startDir] [filter]", I18N_NOOP("File dialog to open an existing URL"), 0 },
     { "getsaveurl [startDir] [filter]", I18N_NOOP("File dialog to save a URL"), 0 },
     { "geticon [group] [context]", I18N_NOOP("Icon chooser dialog"), 0 },
-    { "progressbar <text> [totalsteps]", I18N_NOOP("Progress bar dialog, returns a DCOP reference for communication"), 0},
+    { "progressbar <text> [totalsteps]", I18N_NOOP("Progress bar dialog, returns a D-Bus reference for communication"), 0},
 
     // TODO gauge stuff, reading values from stdin
 
