@@ -22,6 +22,7 @@
 #define KONQ_UNDO_P_H
 
 #include <qstack.h>
+#include <QUndoCommand>
 
 struct KonqBasicOperation
 {
@@ -39,23 +40,37 @@ struct KonqBasicOperation
   QString m_target;
 };
 
-struct KonqCommand
+// ### I considered inheriting this from QUndoCommand.
+// ### but since it is being copied by value in the code, we can't use that.
+// ### also it would need to implement undo() itself (well, it can call the undomanager for it)
+class KonqCommand
 {
-  typedef QStack<KonqCommand> Stack;
+public:
+    typedef QStack<KonqCommand> Stack;
 
-  KonqCommand()
-  { m_valid = false; }
-  //KonqCommand( Type type, KonqBasicOperation::Stack& opStack, const KUrl::List& src, const KUrl& dest )
-  //  : m_type( type ), m_opStack( opStack ), m_src( src ), m_dest( dest ) {}
+    KonqCommand()
+    { m_valid = false; }
 
-  bool m_valid;
+    // TODO
+    //KonqCommand( Type type, KonqBasicOperation::Stack& opStack, const KUrl::List& src, const KUrl& dest )
+    //  : m_type( type ), m_opStack( opStack ), m_src( src ), m_dest( dest )
+    // {
+    //     // if using QUndoCommand: setText(...); // see code in KonqUndoManager::undoText()
+    // }
 
-  KonqUndoManager::CommandType m_type;
-  KonqBasicOperation::Stack m_opStack;
-  KUrl::List m_src;
-  KUrl m_dst;
+    //virtual void undo() {} // TODO
+    //virtual void redo() {} // TODO
+
+    bool m_valid;
+
+    KonqUndoManager::CommandType m_type;
+    KonqBasicOperation::Stack m_opStack;
+    KUrl::List m_src;
+    KUrl m_dst;
 };
 
+// This class listens to a job, collects info while it's running (for copyjobs)
+// and when the job terminates, on success, it calls addCommand in the undomanager.
 class KonqCommandRecorder : public QObject
 {
   Q_OBJECT

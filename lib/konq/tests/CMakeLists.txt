@@ -16,6 +16,16 @@ if(KDE4_BUILD_TESTS)
 
   add_test(libkonq-konqmimedatatest konqmimedatatest)
 
+  ########### konqundomanager ###############
+
+  kde4_automoc(konqundomanagertest.cpp)
+
+  kde4_add_executable(konqundomanagertest RUN_UNINSTALLED konqundomanagertest.cpp)
+
+  target_link_libraries(konqundomanagertest konq ${QT_QTTEST_LIBRARY})
+
+  add_test(libkonq-konqundomanagertest konqundomanagertest)
+
   ########### favicontest ###############
 
   kde4_automoc(favicontest.cpp)

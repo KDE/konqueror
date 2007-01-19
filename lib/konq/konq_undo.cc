@@ -1,5 +1,6 @@
 /* This file is part of the KDE project
    Copyright (C) 2000 Simon Hausmann <hausmann@kde.org>
+   Copyright (C) 2006 David Faure <faure@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -235,7 +236,7 @@ bool KonqUndoManager::undoAvailable() const
 
 QString KonqUndoManager::undoText() const
 {
-  if ( d->m_commands.count() == 0 )
+  if ( d->m_commands.isEmpty() )
     return i18n( "Und&o" );
 
   KonqUndoManager::CommandType t = d->m_commands.top().m_type;
@@ -345,11 +346,8 @@ void KonqUndoManager::slotResult( KJob *job )
     static_cast<KIO::Job*>( job )->ui()->showErrorMessage();
     d->m_currentJob = 0;
     stopUndo( false );
-    if ( d->m_undoJob )
-    {
-        delete d->m_undoJob;
-        d->m_undoJob = 0;
-    }
+    delete d->m_undoJob;
+    d->m_undoJob = 0;
   }
 
   undoStep();
@@ -495,6 +493,7 @@ void KonqUndoManager::undoRemovingDirectories()
           kDebug() << "Notifying FilesAdded for " << *it << endl;
 		  org::kde::KDirNotify::emitFilesAdded( (*it).url() );
       }
+      emit undoJobFinished();
       broadcastUnlock();
     }
 }
