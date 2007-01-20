@@ -32,6 +32,8 @@ private slots:
     void testMoveFiles();
     //void testCopyFilesOverwrite();
     void testCopyDirectory();
+    void testMoveDirectory();
+    // TODO testRenameFile/testRenameDir
     // TODO testTrashFiles
 
 private:

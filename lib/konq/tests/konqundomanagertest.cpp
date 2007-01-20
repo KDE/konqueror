@@ -258,4 +258,25 @@ void KonqUndomanagerTest::testCopyDirectory()
     QVERIFY( !QFile::exists( destSubDir() ) );
 }
 
+void KonqUndomanagerTest::testMoveDirectory()
+{
+    const QString destdir = destDir();
+    KUrl::List lst; lst << srcSubDir();
+    const KUrl d( destdir );
+    KIO::CopyJob* job = KIO::move( lst, d, 0 );
+    job->setUiDelegate( 0 );
+    KonqUndoManager::self()->recordJob( KonqUndoManager::MOVE, lst, d, job );
+
+    bool ok = KIO::NetAccess::synchronousRun( job, 0 );
+    QVERIFY( ok );
+
+    QVERIFY( !QFile::exists( srcSubDir() ) );
+    checkTestDirectory( destSubDir() );
+
+    doUndo();
+
+    checkTestDirectory( srcSubDir() );
+    QVERIFY( !QFile::exists( destSubDir() ) );
+}
+
 // TODO: add test for undoing after a partial move (http://bugs.kde.org/show_bug.cgi?id=91579)
