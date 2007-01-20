@@ -99,8 +99,6 @@ private Q_SLOTS:
 private:
   KonqUndoManager();
 
-  enum UndoState { MAKINGDIRS, MOVINGFILES, REMOVINGDIRS, REMOVINGFILES };
-
   friend class KonqUndoJob;
   /// called by KonqUndoJob
   void stopUndo( bool step );

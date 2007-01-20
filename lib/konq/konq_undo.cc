@@ -63,6 +63,12 @@
  *
  */
 
+enum UndoState { MAKINGDIRS = 0, MOVINGFILES, REMOVINGDIRS, REMOVINGFILES };
+static const char* undoStateToString( UndoState state ) {
+    static const char* s_undoStateToString[] = { "MAKINGDIRS", "MOVINGFILES", "REMOVINGDIRS", "REMOVINGFILES" };
+    return s_undoStateToString[state];
+}
+
 class KonqUndoJob : public KIO::Job
 {
 public:
@@ -238,99 +244,87 @@ void KonqUndoManager::addCommand( const KonqCommand &cmd )
 
 bool KonqUndoManager::undoAvailable() const
 {
-  return ( d->m_commands.count() > 0 ) && !d->m_lock;
+    return ( d->m_commands.count() > 0 ) && !d->m_lock;
 }
 
 QString KonqUndoManager::undoText() const
 {
-  if ( d->m_commands.isEmpty() )
-    return i18n( "Und&o" );
+    if ( d->m_commands.isEmpty() )
+        return i18n( "Und&o" );
 
-  KonqUndoManager::CommandType t = d->m_commands.top().m_type;
-  if ( t == KonqUndoManager::COPY )
-    return i18n( "Und&o: Copy" );
-  else if ( t == KonqUndoManager::LINK )
-    return i18n( "Und&o: Link" );
-  else if ( t == KonqUndoManager::MOVE )
-    return i18n( "Und&o: Move" );
-  // distinguish renaming from moving - #61442
-  else if ( t == KonqUndoManager::RENAME )
-    return i18n( "Und&o: Rename" );
-  else if ( t == KonqUndoManager::TRASH )
-    return i18n( "Und&o: Trash" );
-  else if ( t == KonqUndoManager::MKDIR )
-    return i18n( "Und&o: Create Folder" );
-  else
-    assert( false );
-  /* NOTREACHED */
-  return QString();
+    KonqUndoManager::CommandType t = d->m_commands.top().m_type;
+    if ( t == KonqUndoManager::COPY )
+        return i18n( "Und&o: Copy" );
+    else if ( t == KonqUndoManager::LINK )
+        return i18n( "Und&o: Link" );
+    else if ( t == KonqUndoManager::MOVE )
+        return i18n( "Und&o: Move" );
+    else if ( t == KonqUndoManager::RENAME )
+        return i18n( "Und&o: Rename" );
+    else if ( t == KonqUndoManager::TRASH )
+        return i18n( "Und&o: Trash" );
+    else if ( t == KonqUndoManager::MKDIR )
+        return i18n( "Und&o: Create Folder" );
+    else
+        assert( false );
+    /* NOTREACHED */
+    return QString();
 }
 
 void KonqUndoManager::undo()
 {
-  KonqCommand cmd = d->m_commands.top();
-  broadcastPop();
-  broadcastLock();
+    // Make a copy of the command to undo before broadcastPop() pops it.
+    KonqCommand cmd = d->m_commands.top();
+    broadcastPop();
+    broadcastLock();
 
-  assert( cmd.m_valid );
+    assert( cmd.m_valid );
 
-  d->m_current = cmd;
-  d->m_dirCleanupStack.clear();
-  d->m_dirStack.clear();
-  d->m_dirsToUpdate.clear();
-
-  d->m_undoState = MOVINGFILES;
-  kDebug(1203) << "KonqUndoManager::undo MOVINGFILES" << endl;
-
-  KonqBasicOperation::Stack& opStack = d->m_current.m_opStack;
-  assert( !opStack.isEmpty() );
-
-  QStack<KonqBasicOperation>::Iterator it = opStack.begin();
-  while ( it != opStack.end() )
-  {
-    bool removeBasicOperation = false;
-    if ( (*it).m_directory && !(*it).m_renamed )
-    {
-      d->m_dirStack.push( (*it).m_src );
-      d->m_dirCleanupStack.prepend( (*it).m_dst );
-      removeBasicOperation = true;
-      d->m_undoState = MAKINGDIRS;
-      kDebug(1203) << "KonqUndoManager::undo MAKINGDIRS" << endl;
-    }
-    else if ( (*it).m_link )
-    {
-      if ( !d->m_fileCleanupStack.contains( (*it).m_dst ) )
-        d->m_fileCleanupStack.prepend( (*it).m_dst );
-
-      removeBasicOperation = !d->m_current.isMoveCommand();
-    }
-
-    if ( removeBasicOperation )
-      it = opStack.erase( it );
-    else
-      ++it;
-  }
-
-  /* this shouldn't be necessary at all:
-   * 1) the source list may contain files, we don't want to
-   *    create those as... directories
-   * 2) all directories that need creation should already be in the
-   *    directory stack
-  if ( d->m_undoState == MAKINGDIRS )
-  {
-    KUrl::List::ConstIterator it = d->m_current.m_src.begin();
-    KUrl::List::ConstIterator end = d->m_current.m_src.end();
-    for (; it != end; ++it )
-      if ( !d->m_dirStack.contains( *it) )
-        d->m_dirStack.push( *it );
-  }
-  */
-
-  if ( !d->m_current.isMoveCommand() )
+    d->m_current = cmd;
+    d->m_dirCleanupStack.clear();
     d->m_dirStack.clear();
+    d->m_dirsToUpdate.clear();
 
-  d->m_undoJob = new KonqUndoJob;
-  undoStep();
+    d->m_undoState = MOVINGFILES;
+    // Let's have a look at the basic operations we need to undo.
+    // While we're at it, collect all links that should be deleted.
+
+    KonqBasicOperation::Stack& opStack = d->m_current.m_opStack;
+    assert( !opStack.isEmpty() );
+
+    QStack<KonqBasicOperation>::Iterator it = opStack.begin();
+    while ( it != opStack.end() ) // don't cache end() here, erase modifies it
+    {
+        bool removeBasicOperation = false;
+        if ( (*it).m_directory && !(*it).m_renamed )
+        {
+            // If any directory has to be created/deleted, we'll start with that
+            d->m_undoState = MAKINGDIRS;
+            // Collect all the dirs that have to be created in case of a move undo.
+            if ( d->m_current.isMoveCommand() )
+                d->m_dirStack.push( (*it).m_src );
+            // Collect all dirs that have to be deleted
+            // from the destination in both cases (copy and move).
+            d->m_dirCleanupStack.prepend( (*it).m_dst );
+            removeBasicOperation = true;
+        }
+        else if ( (*it).m_link )
+        {
+            if ( !d->m_fileCleanupStack.contains( (*it).m_dst ) )
+                d->m_fileCleanupStack.prepend( (*it).m_dst );
+
+            removeBasicOperation = !d->m_current.isMoveCommand();
+        }
+
+        if ( removeBasicOperation )
+            it = opStack.erase( it );
+        else
+            ++it;
+    }
+
+    kDebug(1203) << "KonqUndoManager::undo starting with " << undoStateToString(d->m_undoState) << endl;
+    d->m_undoJob = new KonqUndoJob;
+    undoStep();
 }
 
 void KonqUndoManager::stopUndo( bool step )
