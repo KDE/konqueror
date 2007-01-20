@@ -29,7 +29,13 @@ private slots:
     void initTestCase();
     void cleanupTestCase();
     void testCopyFiles();
+    void testMoveFiles();
+    //void testCopyFilesOverwrite();
+    void testCopyDirectory();
+    // TODO testTrashFiles
+
 private:
+    void doUndo();
     QEventLoop m_eventLoop;
 };
 

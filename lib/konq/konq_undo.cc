@@ -49,11 +49,18 @@
  * copy files -> works
  * move files -> works (TODO: optimize (change FileCopyJob to use the renamed arg for copyingDone)
  *
- * copy files -> overwrite -> works
- * move files -> overwrite -> works
+ * copy files -> overwrite -> works (sorry for your overwritten file...)
+ * move files -> overwrite -> works (sorry for your overwritten file...)
  *
  * copy files -> rename -> works
  * move files -> rename -> works
+ *
+ * -> see also konqundomanagertest, which aims at testing all the above.
+ *
+ * TODO: fix http://bugs.kde.org/show_bug.cgi?id=20532
+ *    (Undoing a copy operation might delete a modified file causing loss of data)
+ *   by storing+comparing modification time.
+ *
  */
 
 class KonqUndoJob : public KIO::Job
@@ -246,6 +253,9 @@ QString KonqUndoManager::undoText() const
     return i18n( "Und&o: Link" );
   else if ( t == KonqUndoManager::MOVE )
     return i18n( "Und&o: Move" );
+  // distinguish renaming from moving - #61442
+  else if ( t == KonqUndoManager::RENAME )
+    return i18n( "Und&o: Rename" );
   else if ( t == KonqUndoManager::TRASH )
     return i18n( "Und&o: Trash" );
   else if ( t == KonqUndoManager::MKDIR )
@@ -272,15 +282,18 @@ void KonqUndoManager::undo()
   d->m_undoState = MOVINGFILES;
   kDebug(1203) << "KonqUndoManager::undo MOVINGFILES" << endl;
 
-  QStack<KonqBasicOperation>::Iterator it = d->m_current.m_opStack.begin();
-  QStack<KonqBasicOperation>::Iterator end = d->m_current.m_opStack.end();
-  while ( it != end )
+  KonqBasicOperation::Stack& opStack = d->m_current.m_opStack;
+  assert( !opStack.isEmpty() );
+
+  QStack<KonqBasicOperation>::Iterator it = opStack.begin();
+  while ( it != opStack.end() )
   {
+    bool removeBasicOperation = false;
     if ( (*it).m_directory && !(*it).m_renamed )
     {
       d->m_dirStack.push( (*it).m_src );
       d->m_dirCleanupStack.prepend( (*it).m_dst );
-      it = d->m_current.m_opStack.erase( it );
+      removeBasicOperation = true;
       d->m_undoState = MAKINGDIRS;
       kDebug(1203) << "KonqUndoManager::undo MAKINGDIRS" << endl;
     }
@@ -289,11 +302,11 @@ void KonqUndoManager::undo()
       if ( !d->m_fileCleanupStack.contains( (*it).m_dst ) )
         d->m_fileCleanupStack.prepend( (*it).m_dst );
 
-      if ( d->m_current.m_type != KonqUndoManager::MOVE )
-        it = d->m_current.m_opStack.erase( it );
-      else
-        ++it;
+      removeBasicOperation = !d->m_current.isMoveCommand();
     }
+
+    if ( removeBasicOperation )
+      it = opStack.erase( it );
     else
       ++it;
   }
@@ -313,7 +326,7 @@ void KonqUndoManager::undo()
   }
   */
 
-  if ( d->m_current.m_type != KonqUndoManager::MOVE )
+  if ( !d->m_current.isMoveCommand() )
     d->m_dirStack.clear();
 
   d->m_undoJob = new KonqUndoJob;
@@ -422,7 +435,7 @@ void KonqUndoManager::undoMovingFiles()
         d->m_currentJob = KIO::file_delete( op.m_dst );
         Observer::self()->slotDeleting( d->m_undoJob, op.m_dst );
       }
-      else if ( d->m_current.m_type == KonqUndoManager::MOVE
+      else if ( d->m_current.isMoveCommand()
                 || d->m_current.m_type == KonqUndoManager::TRASH )
       {
         kDebug(1203) << "KonqUndoManager::undoStep file_move " << op.m_dst.prettyUrl() << " " << op.m_src.prettyUrl() << endl;

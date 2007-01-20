@@ -30,17 +30,36 @@
 
 QTEST_KDEMAIN( KonqUndomanagerTest, NoGUI )
 
-static QString homeTmpDir()
+static QString homeTmpDir() { return QFile::decodeName( getenv( "KDEHOME" ) ) + "/jobtest/"; }
+static QString destDir() { return homeTmpDir() + "destdir/"; }
+
+static QString srcFile() { return homeTmpDir() + "testfile"; }
+static QString destFile() { return destDir() + "testfile"; }
+
+#ifndef Q_WS_WIN
+static QString srcLink() { return homeTmpDir() + "symlink"; }
+static QString destLink() { return destDir() + "symlink"; }
+#endif
+
+static QString srcSubDir() { return homeTmpDir() + "subdir"; }
+static QString destSubDir() { return destDir() + "subdir"; }
+
+static KUrl::List sourceList()
 {
-    return QFile::decodeName( getenv( "KDEHOME" ) ) + "/jobtest/";
+    KUrl::List lst;
+    lst << KUrl( srcFile() );
+#ifndef Q_WS_WIN
+    lst << KUrl( srcLink() );
+#endif
+    return lst;
 }
 
-static void createTestFile( const QString& path )
+static void createTestFile( const QString& path, const char* contents )
 {
     QFile f( path );
     if ( !f.open( QIODevice::WriteOnly ) )
         kFatal() << "Can't create " << path << endl;
-    f.write( QByteArray( "Hello world" ) );
+    f.write( QByteArray( contents ) );
     f.close();
 }
 
@@ -61,17 +80,32 @@ static void createTestSymlink( const QString& path )
     QVERIFY( QFileInfo( path ).isSymLink() );
 }
 
+static void checkTestDirectory( const QString& path )
+{
+    QVERIFY( QFileInfo( path ).isDir() );
+    QVERIFY( QFileInfo( path + "/fileindir" ).isFile() );
+#ifndef Q_WS_WIN
+    QVERIFY( QFileInfo( path + "/testlink" ).isSymLink() );
+#endif
+    QVERIFY( QFileInfo( path + "/dirindir" ).isDir() );
+    QVERIFY( QFileInfo( path + "/dirindir/nested" ).isFile() );
+}
+
 static void createTestDirectory( const QString& path )
 {
     QDir dir;
     bool ok = dir.mkdir( path );
-    if ( !ok && !dir.exists() )
+    if ( !ok )
         kFatal() << "couldn't create " << path << endl;
-    createTestFile( path + "/testfile" );
+    createTestFile( path + "/fileindir", "File in dir" );
 #ifndef Q_WS_WIN
     createTestSymlink( path + "/testlink" );
-    QVERIFY( QFileInfo( path + "/testlink" ).isSymLink() );
 #endif
+    ok = dir.mkdir( path + "/dirindir" );
+    if ( !ok )
+        kFatal() << "couldn't create " << path << endl;
+    createTestFile( path + "/dirindir/nested", "Nested" );
+    checkTestDirectory( path );
 }
 
 void KonqUndomanagerTest::initTestCase()
@@ -87,6 +121,15 @@ void KonqUndomanagerTest::initTestCase()
             kFatal() << "Couldn't create " << homeTmpDir() << endl;
     }
 
+    createTestFile( srcFile(), "Hello world" );
+#ifndef Q_WS_WIN
+    createTestSymlink( srcLink() );
+#endif
+    createTestDirectory( srcSubDir() );
+
+    QDir().mkdir( destDir() );
+    QVERIFY( QFileInfo( destDir() ).isDir() );
+
     QVERIFY( !KonqUndoManager::self()->undoAvailable() );
 }
 
@@ -95,25 +138,25 @@ void KonqUndomanagerTest::cleanupTestCase()
     KIO::NetAccess::del( KUrl::fromPath( homeTmpDir() ), 0 );
 }
 
+void KonqUndomanagerTest::doUndo()
+{
+    bool ok = connect( KonqUndoManager::self(), SIGNAL( undoJobFinished() ),
+                  &m_eventLoop, SLOT( quit() ) );
+    QVERIFY( ok );
+
+    KonqUndoManager::self()->undo();
+    m_eventLoop.exec(QEventLoop::ExcludeUserInputEvents); // wait for undo job to finish
+}
+
 void KonqUndomanagerTest::testCopyFiles()
 {
     kDebug() << k_funcinfo << endl;
-    // See JobTest::copyFileToSamePartition()
-    const QString filePath = homeTmpDir() + "fileFromHome";
-    createTestFile( filePath );
-#ifndef Q_WS_WIN
-    const QString linkPath = homeTmpDir() + "symlink";
-    createTestSymlink( linkPath );
-#endif
-    const QString destdir = homeTmpDir() + "destdir";
-    QDir().mkdir( destdir );
-    KUrl::List lst;
-    lst << KUrl( filePath );
-#ifndef Q_WS_WIN
-    lst << KUrl( linkPath );
-#endif
+    // Initially inspired from JobTest::copyFileToSamePartition()
+    const QString destdir = destDir();
+    KUrl::List lst = sourceList();
     const KUrl d( destdir );
     KIO::CopyJob* job = KIO::copy( lst, d, 0 );
+    job->setUiDelegate( 0 );
     KonqUndoManager::self()->recordJob( KonqUndoManager::COPY, lst, d, job );
 
     QSignalSpy spyUndoAvailable( KonqUndoManager::self(), SIGNAL(undoAvailable(bool)) );
@@ -123,35 +166,96 @@ void KonqUndomanagerTest::testCopyFiles()
 
     bool ok = KIO::NetAccess::synchronousRun( job, 0 );
     QVERIFY( ok );
-    QVERIFY( QFile::exists( destdir + "/fileFromHome" ) );
+
+    QVERIFY( QFile::exists( destFile() ) );
 #ifndef Q_WS_WIN
     // Don't use QFile::exists, it's a broken symlink...
-    QVERIFY( QFileInfo( destdir + "/symlink" ).isSymLink() );
+    QVERIFY( QFileInfo( destLink() ).isSymLink() );
 #endif
 
     // might have to wait for dbus signal here... but this is currently disabled.
     //QTest::qWait( 20 );
-
     QVERIFY( KonqUndoManager::self()->undoAvailable() );
     QCOMPARE( spyUndoAvailable.count(), 1 );
     QCOMPARE( spyTextChanged.count(), 1 );
 
-    ok = connect( KonqUndoManager::self(), SIGNAL( undoJobFinished() ),
-                  &m_eventLoop, SLOT( quit() ) );
-    QVERIFY( ok );
-
-    // Now undo
-    KonqUndoManager::self()->undo();
-    m_eventLoop.exec(QEventLoop::ExcludeUserInputEvents); // wait for undo job to finish
+    doUndo();
 
     QVERIFY( !KonqUndoManager::self()->undoAvailable() );
     QVERIFY( spyUndoAvailable.count() >= 2 ); // it's in fact 3, due to lock/unlock emitting it as well
     QCOMPARE( spyTextChanged.count(), 2 );
 
     // Check that undo worked
-    QVERIFY( !QFile::exists( destdir + "/fileFromHome" ) );
+    QVERIFY( !QFile::exists( destFile() ) );
 #ifndef Q_WS_WIN
-    QVERIFY( !QFile::exists( destdir + "/symlink" ) );
-    QVERIFY( !QFileInfo( destdir + "/symlink" ).isSymLink() );
+    QVERIFY( !QFile::exists( destLink() ) );
+    QVERIFY( !QFileInfo( destLink() ).isSymLink() );
 #endif
 }
+
+void KonqUndomanagerTest::testMoveFiles()
+{
+    kDebug() << k_funcinfo << endl;
+    const QString destdir = destDir();
+    KUrl::List lst = sourceList();
+    const KUrl d( destdir );
+    KIO::CopyJob* job = KIO::move( lst, d, 0 );
+    job->setUiDelegate( 0 );
+    KonqUndoManager::self()->recordJob( KonqUndoManager::MOVE, lst, d, job );
+
+    bool ok = KIO::NetAccess::synchronousRun( job, 0 );
+    QVERIFY( ok );
+
+    QVERIFY( !QFile::exists( srcFile() ) ); // the source moved
+    QVERIFY( QFile::exists( destFile() ) );
+#ifndef Q_WS_WIN
+    QVERIFY( !QFileInfo( srcLink() ).isSymLink() );
+    // Don't use QFile::exists, it's a broken symlink...
+    QVERIFY( QFileInfo( destLink() ).isSymLink() );
+#endif
+
+    doUndo();
+
+    QVERIFY( QFile::exists( srcFile() ) ); // the source is back
+    QVERIFY( !QFile::exists( destFile() ) );
+#ifndef Q_WS_WIN
+    QVERIFY( QFileInfo( srcLink() ).isSymLink() );
+    QVERIFY( !QFileInfo( destLink() ).isSymLink() );
+#endif
+}
+
+// Testing for overwrite isn't possible, because non-interactive jobs never overwrite.
+// And nothing different happens anyway, the dest is removed...
+#if 0
+void KonqUndomanagerTest::testCopyFilesOverwrite()
+{
+    kDebug() << k_funcinfo << endl;
+    // Create a different file in the destdir
+    createTestFile( destFile(), "An old file already in the destdir" );
+
+    testCopyFiles();
+}
+#endif
+
+void KonqUndomanagerTest::testCopyDirectory()
+{
+    const QString destdir = destDir();
+    KUrl::List lst; lst << srcSubDir();
+    const KUrl d( destdir );
+    KIO::CopyJob* job = KIO::copy( lst, d, 0 );
+    job->setUiDelegate( 0 );
+    KonqUndoManager::self()->recordJob( KonqUndoManager::COPY, lst, d, job );
+
+    bool ok = KIO::NetAccess::synchronousRun( job, 0 );
+    QVERIFY( ok );
+
+    checkTestDirectory( srcSubDir() ); // src untouched
+    checkTestDirectory( destSubDir() );
+
+    doUndo();
+
+    checkTestDirectory( srcSubDir() );
+    QVERIFY( !QFile::exists( destSubDir() ) );
+}
+
+// TODO: add test for undoing after a partial move (http://bugs.kde.org/show_bug.cgi?id=91579)
