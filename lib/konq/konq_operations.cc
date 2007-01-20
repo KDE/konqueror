@@ -628,7 +628,7 @@ void KonqOperations::rename( QWidget * parent, const KUrl & oldurl, const KUrl& 
     KIO::Job * job = KIO::moveAs( oldurl, newurl, !oldurl.isLocalFile() );
     KonqOperations * op = new KonqOperations( parent );
     op->setOperation( job, MOVE, newurl );
-    KonqUndoManager::self()->recordJob( KonqUndoManager::MOVE, lst, newurl, job );
+    KonqUndoManager::self()->recordJob( KonqUndoManager::RENAME, lst, newurl, job );
     // if moving the desktop then update config file and emit
     if ( oldurl.isLocalFile() && oldurl.path( KUrl::AddTrailingSlash ) == KGlobalSettings::desktopPath() )
     {

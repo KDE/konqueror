@@ -49,7 +49,7 @@ public:
   static void decRef();
   static KonqUndoManager *self();
 
-  enum CommandType { COPY, MOVE, LINK, MKDIR, TRASH };
+  enum CommandType { COPY, MOVE, RENAME, LINK, MKDIR, TRASH };
 
   /**
    * Record this job while it's happening and add a command for it so that the user can undo it.

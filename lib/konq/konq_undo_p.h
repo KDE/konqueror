@@ -42,6 +42,9 @@ struct KonqBasicOperation
 
 // ### I considered inheriting this from QUndoCommand.
 // ### but since it is being copied by value in the code, we can't use that.
+// Alternatively the data here should be contained into the QUndoCommand-subclass.
+// This way we could copy the data in the manager code.
+//
 // ### also it would need to implement undo() itself (well, it can call the undomanager for it)
 class KonqCommand
 {
@@ -60,6 +63,9 @@ public:
 
     //virtual void undo() {} // TODO
     //virtual void redo() {} // TODO
+
+    // TODO: is ::TRASH missing?
+    bool isMoveCommand() const { return m_type == KonqUndoManager::MOVE || m_type == KonqUndoManager::RENAME; }
 
     bool m_valid;
 
