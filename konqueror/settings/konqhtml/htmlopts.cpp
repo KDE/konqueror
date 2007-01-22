@@ -24,6 +24,7 @@
 
 #include <kapplication.h>
 
+#include "khtml_settings.h"
 
 #include "htmlopts.moc"
 
@@ -191,6 +192,13 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QStringList&)
     lay->addWidget( m_pAutoRedirectCheckBox, row, 0, 1, 2 );
     row++;
 
+    // Checkbox to enable/disable Access Key activation through the Ctrl key.
+
+    m_pAccessKeys = new QCheckBox( i18n( "Enable/disable Access Ke&y activation with Ctrl key"), this );
+    m_pAccessKeys->setWhatsThis( i18n( "Pressing the Ctrl key when viewing webpages activates KDE's Access Keys. Unchecking this box will disable this accessibility feature. (Konqueror needs to be restarted for changes to take effect)" ) );
+    connect(m_pAccessKeys, SIGNAL(clicked()), SLOT(slotChanged()));
+    lay->addMultiCellWidget( m_pAccessKeys, row, row, 0, 1 );
+    row++;
 
     // More misc
 
@@ -306,6 +314,12 @@ void KMiscHTMLOptions::load()
     m_pShowMMBInTabs->setChecked( m_pConfig->readEntry( "MMBOpensTab", false ) );
     m_pDynamicTabbarHide->setChecked( ! (m_pConfig->readEntry( "AlwaysTabbedMode", false )) );
 
+    // Writes the value of m_pAccessKeys into khtmlrc to affect all applications using KHTML
+    KConfig khtmlconfig("khtmlrc", false, false);
+    khtmlconfig.setGroup("Access Keys");
+    khtmlconfig.writeEntry( "Enabled", m_pAccessKeys->isChecked() );
+    khtmlconfig.sync();
+
     KSharedConfig::Ptr config = KSharedConfig::openConfig("kbookmarkrc", true, false);
     config->setGroup("Bookmarks");
     m_pAdvancedAddBookmarkCheckBox->setChecked( config->readEntry("AdvancedAddBookmarkDialog", false) );
@@ -367,6 +381,10 @@ void KMiscHTMLOptions::save()
     m_pConfig->writeEntry( "MMBOpensTab", m_pShowMMBInTabs->isChecked() );
     m_pConfig->writeEntry( "AlwaysTabbedMode", !(m_pDynamicTabbarHide->isChecked()) );
     m_pConfig->sync();
+
+    // Reads in the value of m_accessKeysEnabled by calling accessKeysEnabled() in khtml_settings.cpp
+    KHTMLSettings settings;
+    m_pAccessKeys->setChecked( settings.accessKeysEnabled() );
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig("kbookmarkrc", false, false);
     config->setGroup("Bookmarks");

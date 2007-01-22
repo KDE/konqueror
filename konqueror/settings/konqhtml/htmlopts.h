@@ -60,6 +60,7 @@ private:
     QCheckBox* m_pDynamicTabbarHide;
     QCheckBox* m_pAdvancedAddBookmarkCheckBox;
     QCheckBox* m_pOnlyMarkedBookmarksCheckBox;
+    QCheckBox* m_pAccessKeys;
     KIntNumInput* m_pMaxFormCompletionItems;
 };
 
