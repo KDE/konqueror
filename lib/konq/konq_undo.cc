@@ -125,7 +125,6 @@ void KonqCommandRecorder::slotCopyingDone( KIO::Job *job, const KUrl &from, cons
 
   if ( m_cmd.m_type == KonqUndoManager::TRASH )
   {
-      Q_ASSERT( from.isLocalFile() );
       Q_ASSERT( to.protocol() == "trash" );
       QMap<QString, QString> metaData = job->metaData();
       QMap<QString, QString>::ConstIterator it = metaData.find( "trashURL-" + from.path() );
@@ -152,7 +151,7 @@ void KonqCommandRecorder::slotCopyingLinkDone( KIO::Job *, const KUrl &from, con
 }
 
 KonqUndoManager *KonqUndoManager::s_self = 0;
-unsigned long KonqUndoManager::s_refCnt = 0;
+static unsigned long s_undoManagerRefCnt = 0;
 
 class KonqUndoManager::KonqUndoManagerPrivate
 {
@@ -207,13 +206,13 @@ KonqUndoManager::~KonqUndoManager()
 
 void KonqUndoManager::incRef()
 {
-  s_refCnt++;
+  s_undoManagerRefCnt++;
 }
 
 void KonqUndoManager::decRef()
 {
-  s_refCnt--;
-  if ( s_refCnt == 0 && s_self )
+  s_undoManagerRefCnt--;
+  if ( s_undoManagerRefCnt == 0 && s_self )
   {
     delete s_self;
     s_self = 0;
@@ -224,8 +223,8 @@ KonqUndoManager *KonqUndoManager::self()
 {
   if ( !s_self )
   {
-    if ( s_refCnt == 0 )
-      s_refCnt++; // someone forgot to call incRef
+    if ( s_undoManagerRefCnt == 0 )
+      s_undoManagerRefCnt++; // someone forgot to call incRef
     s_self = new KonqUndoManager;
   }
   return s_self;
@@ -621,33 +620,6 @@ bool KonqUndoManager::initializeFromKDesky()
   d->m_commands = DCOPRef( "kdesktop", "KonqUndoManager" ).call( "get" );
   return true;
 #endif
-}
-
-QDataStream &operator<<( QDataStream &stream, const KonqBasicOperation &op )
-{
-    stream << op.m_valid << op.m_directory << op.m_renamed << op.m_link
-           << op.m_src << op.m_dst << op.m_target;
-  return stream;
-}
-QDataStream &operator>>( QDataStream &stream, KonqBasicOperation &op )
-{
-  stream >> op.m_valid >> op.m_directory >> op.m_renamed >> op.m_link
-         >> op.m_src >> op.m_dst >> op.m_target;
-  return stream;
-}
-
-QDataStream &operator<<( QDataStream &stream, const KonqCommand &cmd )
-{
-  stream << cmd.m_valid << (qint8)cmd.m_type << cmd.m_opStack << cmd.m_src << cmd.m_dst;
-  return stream;
-}
-
-QDataStream &operator>>( QDataStream &stream, KonqCommand &cmd )
-{
-  qint8 type;
-  stream >> cmd.m_valid >> type >> cmd.m_opStack >> cmd.m_src >> cmd.m_dst;
-  cmd.m_type = static_cast<KonqUndoManager::CommandType>( type );
-  return stream;
 }
 
 #include "konq_undo.moc"

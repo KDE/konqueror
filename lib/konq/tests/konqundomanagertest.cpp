@@ -25,6 +25,7 @@
 #include "konqundomanagertest.h"
 #include <kio/netaccess.h>
 #include <errno.h>
+#include <ksimpleconfig.h>
 
 #include "konqundomanagertest.moc"
 
@@ -111,6 +112,10 @@ static void createTestDirectory( const QString& path )
 void KonqUndomanagerTest::initTestCase()
 {
     qDebug( "initTestCase" );
+
+    // Get kio_trash to share our environment so that it writes trashrc to the right kdehome
+    setenv( "KDE_FORK_SLAVES", "yes", true );
+
     // Start with a clean base dir
     cleanupTestCase();
 
@@ -323,5 +328,63 @@ void KonqUndomanagerTest::testRenameDir()
     QVERIFY( !QFileInfo( newUrl.path() ).isDir() );
 }
 
-// TODO: add test for undoing after a partial move (http://bugs.kde.org/show_bug.cgi?id=91579)
+void KonqUndomanagerTest::testTrashFiles()
+{
+    // Trash it all at once: the file, the symlink, the subdir.
+    KUrl::List lst = sourceList();
+    lst.append( srcSubDir() );
+    KIO::Job* job = KIO::trash( lst );
+    job->setUiDelegate( 0 );
+    KonqUndoManager::self()->recordJob( KonqUndoManager::TRASH, lst, KUrl("trash:/"), job );
+
+    bool ok = KIO::NetAccess::synchronousRun( job, 0 );
+    QVERIFY( ok );
+
+    // Check that things got removed
+    QVERIFY( !QFile::exists( srcFile() ) );
+#ifndef Q_WS_WIN
+    QVERIFY( !QFileInfo( srcLink() ).isSymLink() );
+#endif
+    QVERIFY( !QFile::exists( srcSubDir() ) );
+
+    // check trash?
+    // Let's just check that it's not empty. kio_trash has its own unit tests anyway.
+    KSimpleConfig cfg( "trashrc", true );
+    QVERIFY( cfg.hasGroup( "Status" ) );
+    cfg.setGroup( "Status" );
+    QCOMPARE( cfg.readEntry( "Empty", true ), false );
+
+    doUndo();
+
+    QVERIFY( QFile::exists( srcFile() ) );
+#ifndef Q_WS_WIN
+    QVERIFY( QFileInfo( srcLink() ).isSymLink() );
+#endif
+    QVERIFY( QFile::exists( srcSubDir() ) );
+
+    // We can't check that the trash is empty; other partitions might have their own trash
+}
+
+void KonqUndomanagerTest::testModifyFileBeforeUndo()
+{
+    // based on testCopyDirectory (so that we check that it works for files in subdirs too)
+    const QString destdir = destDir();
+    KUrl::List lst; lst << srcSubDir();
+    const KUrl d( destdir );
+    KIO::CopyJob* job = KIO::copy( lst, d, 0 );
+    job->setUiDelegate( 0 );
+    KonqUndoManager::self()->recordJob( KonqUndoManager::COPY, lst, d, job );
+
+    bool ok = KIO::NetAccess::synchronousRun( job, 0 );
+    QVERIFY( ok );
+
+    checkTestDirectory( srcSubDir() ); // src untouched
+    checkTestDirectory( destSubDir() );
+
+    doUndo();
+
+    checkTestDirectory( srcSubDir() );
+    QVERIFY( !QFile::exists( destSubDir() ) );
+
+}
 

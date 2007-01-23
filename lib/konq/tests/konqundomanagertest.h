@@ -30,12 +30,18 @@ private slots:
     void cleanupTestCase();
     void testCopyFiles();
     void testMoveFiles();
-    //void testCopyFilesOverwrite();
     void testCopyDirectory();
     void testMoveDirectory();
     void testRenameFile();
     void testRenameDir();
-    // TODO testTrashFiles
+    void testTrashFiles();
+    void testModifyFileBeforeUndo();
+
+    // TODO test renaming during a CopyJob.
+    // Doesn't seem possible though, requires user interaction...
+
+    // TODO: add test for undoing after a partial move (http://bugs.kde.org/show_bug.cgi?id=91579)
+    // Difficult too.
 
 private:
     void doUndo();

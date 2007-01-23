@@ -126,13 +126,6 @@ private:
   class KonqUndoManagerPrivate;
   KonqUndoManagerPrivate *d;
   static KonqUndoManager *s_self;
-  static unsigned long s_refCnt;
 };
-
-QDataStream &operator<<( QDataStream &stream, const KonqBasicOperation &op );
-QDataStream &operator>>( QDataStream &stream, KonqBasicOperation &op );
-
-QDataStream &operator<<( QDataStream &stream, const KonqCommand &cmd );
-QDataStream &operator>>( QDataStream &stream, KonqCommand &cmd );
 
 #endif
