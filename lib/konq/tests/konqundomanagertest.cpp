@@ -279,4 +279,49 @@ void KonqUndomanagerTest::testMoveDirectory()
     QVERIFY( !QFile::exists( destSubDir() ) );
 }
 
+void KonqUndomanagerTest::testRenameFile()
+{
+    const KUrl oldUrl( srcFile() );
+    const KUrl newUrl( srcFile() + ".new" );
+    KUrl::List lst;
+    lst.append(oldUrl);
+    KIO::Job* job = KIO::moveAs( oldUrl, newUrl );
+    job->setUiDelegate( 0 );
+    KonqUndoManager::self()->recordJob( KonqUndoManager::RENAME, lst, newUrl, job );
+
+    bool ok = KIO::NetAccess::synchronousRun( job, 0 );
+    QVERIFY( ok );
+
+    QVERIFY( !QFile::exists( srcFile() ) );
+    QVERIFY( QFileInfo( newUrl.path() ).isFile() );
+
+    doUndo();
+
+    QVERIFY( QFile::exists( srcFile() ) );
+    QVERIFY( !QFileInfo( newUrl.path() ).isFile() );
+}
+
+void KonqUndomanagerTest::testRenameDir()
+{
+    const KUrl oldUrl( srcSubDir() );
+    const KUrl newUrl( srcSubDir() + ".new" );
+    KUrl::List lst;
+    lst.append(oldUrl);
+    KIO::Job* job = KIO::moveAs( oldUrl, newUrl );
+    job->setUiDelegate( 0 );
+    KonqUndoManager::self()->recordJob( KonqUndoManager::RENAME, lst, newUrl, job );
+
+    bool ok = KIO::NetAccess::synchronousRun( job, 0 );
+    QVERIFY( ok );
+
+    QVERIFY( !QFile::exists( srcSubDir() ) );
+    QVERIFY( QFileInfo( newUrl.path() ).isDir() );
+
+    doUndo();
+
+    QVERIFY( QFile::exists( srcSubDir() ) );
+    QVERIFY( !QFileInfo( newUrl.path() ).isDir() );
+}
+
 // TODO: add test for undoing after a partial move (http://bugs.kde.org/show_bug.cgi?id=91579)
+
