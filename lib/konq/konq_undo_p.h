@@ -94,6 +94,32 @@ private:
   KonqCommand m_cmd;
 };
 
+QDataStream &operator<<( QDataStream &stream, const KonqBasicOperation &op )
+{
+    stream << op.m_valid << op.m_directory << op.m_renamed << op.m_link
+           << op.m_src << op.m_dst << op.m_target;
+  return stream;
+}
+QDataStream &operator>>( QDataStream &stream, KonqBasicOperation &op )
+{
+  stream >> op.m_valid >> op.m_directory >> op.m_renamed >> op.m_link
+         >> op.m_src >> op.m_dst >> op.m_target;
+  return stream;
+}
+
+QDataStream &operator<<( QDataStream &stream, const KonqCommand &cmd )
+{
+  stream << cmd.m_valid << (qint8)cmd.m_type << cmd.m_opStack << cmd.m_src << cmd.m_dst;
+  return stream;
+}
+
+QDataStream &operator>>( QDataStream &stream, KonqCommand &cmd )
+{
+  qint8 type;
+  stream >> cmd.m_valid >> type >> cmd.m_opStack >> cmd.m_src >> cmd.m_dst;
+  cmd.m_type = static_cast<KonqUndoManager::CommandType>( type );
+  return stream;
+}
 
 #endif /* KONQ_UNDO_P_H */
 
