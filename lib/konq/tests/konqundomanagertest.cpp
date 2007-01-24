@@ -18,18 +18,24 @@
 
 #include <qtest_kde.h>
 
-#include <kdebug.h>
-#include <konq_undo.h>
-#include <kio/job.h>
-#include <kde_file.h>
 #include "konqundomanagertest.h"
+#include <konq_undo.h>
+
+#include <kio/job.h>
 #include <kio/netaccess.h>
-#include <errno.h>
+
+#include <kde_file.h>
+#include <kdebug.h>
 #include <ksimpleconfig.h>
+
+#include <errno.h>
+#include <utime.h>
+#include <time.h>
+#include <sys/time.h>
 
 #include "konqundomanagertest.moc"
 
-QTEST_KDEMAIN( KonqUndomanagerTest, NoGUI )
+QTEST_KDEMAIN( KonqUndoManagerTest, NoGUI )
 
 static QString homeTmpDir() { return QFile::decodeName( getenv( "KDEHOME" ) ) + "/jobtest/"; }
 static QString destDir() { return homeTmpDir() + "destdir/"; }
@@ -109,7 +115,26 @@ static void createTestDirectory( const QString& path )
     checkTestDirectory( path );
 }
 
-void KonqUndomanagerTest::initTestCase()
+class TestUiInterface : public KonqUndoManager::UiInterface
+{
+public:
+    TestUiInterface() {}
+    virtual void jobError( KIO::Job* job ) {
+        kFatal() << job->errorString() << endl;
+    }
+    virtual bool copiedFileWasModified( const KUrl& src, const KUrl& dest, time_t srcTime, time_t destTime ) {
+        Q_UNUSED( src );
+        m_dest = dest;
+        Q_UNUSED( srcTime );
+        Q_UNUSED( destTime );
+        return true;
+    }
+    KUrl dest() const { return m_dest; }
+private:
+    KUrl m_dest;
+};
+
+void KonqUndoManagerTest::initTestCase()
 {
     qDebug( "initTestCase" );
 
@@ -136,14 +161,16 @@ void KonqUndomanagerTest::initTestCase()
     QVERIFY( QFileInfo( destDir() ).isDir() );
 
     QVERIFY( !KonqUndoManager::self()->undoAvailable() );
+    m_uiInterface = new TestUiInterface; // owned by KonqUndoManager
+    KonqUndoManager::self()->setUiInterface( m_uiInterface );
 }
 
-void KonqUndomanagerTest::cleanupTestCase()
+void KonqUndoManagerTest::cleanupTestCase()
 {
     KIO::NetAccess::del( KUrl::fromPath( homeTmpDir() ), 0 );
 }
 
-void KonqUndomanagerTest::doUndo()
+void KonqUndoManagerTest::doUndo()
 {
     bool ok = connect( KonqUndoManager::self(), SIGNAL( undoJobFinished() ),
                   &m_eventLoop, SLOT( quit() ) );
@@ -153,7 +180,7 @@ void KonqUndomanagerTest::doUndo()
     m_eventLoop.exec(QEventLoop::ExcludeUserInputEvents); // wait for undo job to finish
 }
 
-void KonqUndomanagerTest::testCopyFiles()
+void KonqUndoManagerTest::testCopyFiles()
 {
     kDebug() << k_funcinfo << endl;
     // Initially inspired from JobTest::copyFileToSamePartition()
@@ -198,7 +225,7 @@ void KonqUndomanagerTest::testCopyFiles()
 #endif
 }
 
-void KonqUndomanagerTest::testMoveFiles()
+void KonqUndoManagerTest::testMoveFiles()
 {
     kDebug() << k_funcinfo << endl;
     const QString destdir = destDir();
@@ -232,7 +259,7 @@ void KonqUndomanagerTest::testMoveFiles()
 // Testing for overwrite isn't possible, because non-interactive jobs never overwrite.
 // And nothing different happens anyway, the dest is removed...
 #if 0
-void KonqUndomanagerTest::testCopyFilesOverwrite()
+void KonqUndoManagerTest::testCopyFilesOverwrite()
 {
     kDebug() << k_funcinfo << endl;
     // Create a different file in the destdir
@@ -242,7 +269,7 @@ void KonqUndomanagerTest::testCopyFilesOverwrite()
 }
 #endif
 
-void KonqUndomanagerTest::testCopyDirectory()
+void KonqUndoManagerTest::testCopyDirectory()
 {
     const QString destdir = destDir();
     KUrl::List lst; lst << srcSubDir();
@@ -263,7 +290,7 @@ void KonqUndomanagerTest::testCopyDirectory()
     QVERIFY( !QFile::exists( destSubDir() ) );
 }
 
-void KonqUndomanagerTest::testMoveDirectory()
+void KonqUndoManagerTest::testMoveDirectory()
 {
     const QString destdir = destDir();
     KUrl::List lst; lst << srcSubDir();
@@ -284,7 +311,7 @@ void KonqUndomanagerTest::testMoveDirectory()
     QVERIFY( !QFile::exists( destSubDir() ) );
 }
 
-void KonqUndomanagerTest::testRenameFile()
+void KonqUndoManagerTest::testRenameFile()
 {
     const KUrl oldUrl( srcFile() );
     const KUrl newUrl( srcFile() + ".new" );
@@ -306,7 +333,7 @@ void KonqUndomanagerTest::testRenameFile()
     QVERIFY( !QFileInfo( newUrl.path() ).isFile() );
 }
 
-void KonqUndomanagerTest::testRenameDir()
+void KonqUndoManagerTest::testRenameDir()
 {
     const KUrl oldUrl( srcSubDir() );
     const KUrl newUrl( srcSubDir() + ".new" );
@@ -328,7 +355,7 @@ void KonqUndomanagerTest::testRenameDir()
     QVERIFY( !QFileInfo( newUrl.path() ).isDir() );
 }
 
-void KonqUndomanagerTest::testTrashFiles()
+void KonqUndoManagerTest::testTrashFiles()
 {
     // Trash it all at once: the file, the symlink, the subdir.
     KUrl::List lst = sourceList();
@@ -365,7 +392,22 @@ void KonqUndomanagerTest::testTrashFiles()
     // We can't check that the trash is empty; other partitions might have their own trash
 }
 
-void KonqUndomanagerTest::testModifyFileBeforeUndo()
+static void setTimeStamp( const QString& path )
+{
+#ifdef Q_OS_UNIX
+    // Put timestamp in the past so that we can check that the
+    // copy actually preserves it.
+    struct timeval tp;
+    gettimeofday( &tp, 0 );
+    struct utimbuf utbuf;
+    utbuf.actime = tp.tv_sec + 30; // 30 seconds in the future
+    utbuf.modtime = tp.tv_sec + 60; // 60 second in the future
+    utime( QFile::encodeName( path ), &utbuf );
+    qDebug( "Time changed for %s", qPrintable( path ) );
+#endif
+}
+
+void KonqUndoManagerTest::testModifyFileBeforeUndo()
 {
     // based on testCopyDirectory (so that we check that it works for files in subdirs too)
     const QString destdir = destDir();
@@ -380,8 +422,13 @@ void KonqUndomanagerTest::testModifyFileBeforeUndo()
 
     checkTestDirectory( srcSubDir() ); // src untouched
     checkTestDirectory( destSubDir() );
+    const QString destFile =  destSubDir() + "/fileindir";
+    setTimeStamp( destFile ); // simulate a modification of the file
 
     doUndo();
+
+    // Check that TestUiInterface::copiedFileWasModified got called
+    QCOMPARE( m_uiInterface->dest().path(), destFile );
 
     checkTestDirectory( srcSubDir() );
     QVERIFY( !QFile::exists( destSubDir() ) );
