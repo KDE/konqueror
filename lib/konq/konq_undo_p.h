@@ -26,18 +26,21 @@
 
 struct KonqBasicOperation
 {
-  typedef QStack<KonqBasicOperation> Stack;
+    typedef QStack<KonqBasicOperation> Stack;
 
-  KonqBasicOperation()
-  { m_valid = false; }
+    KonqBasicOperation()
+    { m_valid = false; }
 
-  bool m_valid;
-  bool m_directory;
-  bool m_renamed;
-  bool m_link;
-  KUrl m_src;
-  KUrl m_dst;
-  QString m_target;
+    bool m_valid;
+    bool m_renamed;
+
+    enum Type { File, Link, Directory };
+    Type m_type:2;
+
+    KUrl m_src;
+    KUrl m_dst;
+    QString m_target;
+    time_t m_mtime;
 };
 
 // ### I considered inheriting this from QUndoCommand.
@@ -87,7 +90,7 @@ public:
 private Q_SLOTS:
   void slotResult( KJob *job );
 
-  void slotCopyingDone( KIO::Job *, const KUrl &from, const KUrl &to, bool directory, bool renamed );
+  void slotCopyingDone( KIO::Job *, const KUrl &from, const KUrl &to, time_t, bool directory, bool renamed );
   void slotCopyingLinkDone( KIO::Job *, const KUrl &from, const QString &target, const KUrl &to );
 
 private:
@@ -96,29 +99,33 @@ private:
 
 QDataStream &operator<<( QDataStream &stream, const KonqBasicOperation &op )
 {
-    stream << op.m_valid << op.m_directory << op.m_renamed << op.m_link
-           << op.m_src << op.m_dst << op.m_target;
-  return stream;
+    stream << op.m_valid << (qint8)op.m_type << op.m_renamed
+           << op.m_src << op.m_dst << op.m_target << (qint64)op.m_mtime;
+    return stream;
 }
 QDataStream &operator>>( QDataStream &stream, KonqBasicOperation &op )
 {
-  stream >> op.m_valid >> op.m_directory >> op.m_renamed >> op.m_link
-         >> op.m_src >> op.m_dst >> op.m_target;
-  return stream;
+    qint8 type;
+    qint64 mtime;
+    stream >> op.m_valid >> type >> op.m_renamed
+           >> op.m_src >> op.m_dst >> op.m_target >> mtime;
+    op.m_type = static_cast<KonqBasicOperation::Type>(type);
+    op.m_mtime = mtime;
+    return stream;
 }
 
 QDataStream &operator<<( QDataStream &stream, const KonqCommand &cmd )
 {
-  stream << cmd.m_valid << (qint8)cmd.m_type << cmd.m_opStack << cmd.m_src << cmd.m_dst;
-  return stream;
+    stream << cmd.m_valid << (qint8)cmd.m_type << cmd.m_opStack << cmd.m_src << cmd.m_dst;
+    return stream;
 }
 
 QDataStream &operator>>( QDataStream &stream, KonqCommand &cmd )
 {
-  qint8 type;
-  stream >> cmd.m_valid >> type >> cmd.m_opStack >> cmd.m_src >> cmd.m_dst;
-  cmd.m_type = static_cast<KonqUndoManager::CommandType>( type );
-  return stream;
+    qint8 type;
+    stream >> cmd.m_valid >> type >> cmd.m_opStack >> cmd.m_src >> cmd.m_dst;
+    cmd.m_type = static_cast<KonqUndoManager::CommandType>( type );
+    return stream;
 }
 
 #endif /* KONQ_UNDO_P_H */

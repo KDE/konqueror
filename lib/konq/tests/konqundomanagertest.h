@@ -21,8 +21,9 @@
 
 #include <QObject>
 #include <QEventLoop>
+class TestUiInterface;
 
-class KonqUndomanagerTest : public QObject
+class KonqUndoManagerTest : public QObject
 {
     Q_OBJECT
 private slots:
@@ -35,7 +36,9 @@ private slots:
     void testRenameFile();
     void testRenameDir();
     void testTrashFiles();
-    void testModifyFileBeforeUndo();
+    void testModifyFileBeforeUndo(); // #20532
+
+    // TODO find tests that would lead to kio job errors
 
     // TODO test renaming during a CopyJob.
     // Doesn't seem possible though, requires user interaction...
@@ -46,6 +49,7 @@ private slots:
 private:
     void doUndo();
     QEventLoop m_eventLoop;
+    TestUiInterface* m_uiInterface;
 };
 
 #endif

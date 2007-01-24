@@ -23,6 +23,7 @@
 
 #include <QObject>
 #include <kurl.h>
+#include <sys/types.h> // time_t
 
 #include <libkonq_export.h>
 
@@ -49,6 +50,27 @@ public:
   static void decRef();
   static KonqUndoManager *self();
 
+  // Interface for the gui handling of KonqUndoManager
+  class LIBKONQ_EXPORT UiInterface
+  {
+  public:
+    virtual ~UiInterface() {}
+
+    virtual void jobError( KIO::Job* job ) = 0;
+
+    /**
+     * Called when dest was modified since it was copied from src.
+     * Return true if we should proceed with deleting dest.
+     */
+    virtual bool copiedFileWasModified( const KUrl& src, const KUrl& dest, time_t srcTime, time_t destTime ) = 0;
+  };
+
+  /**
+   * Set a new UiInterface implementation.
+   * This deletes the previous one.
+   */
+  void setUiInterface( UiInterface* ui );
+
   enum CommandType { COPY, MOVE, RENAME, LINK, MKDIR, TRASH };
 
   /**
@@ -64,7 +86,8 @@ public:
   QString undoText() const;
 
 public Q_SLOTS:
-  /// Undoes the current
+  // TODO: add QWidget* parameter for error boxes
+  /// Undoes the last command
   void undo();
 
   /// @internal called by KonqUndoManagerAdaptor
@@ -110,10 +133,10 @@ private:
   void pushCommand( const KonqCommand& cmd );
   void undoStep();
 
-  void undoMakingDirectories();
-  void undoMovingFiles();
-  void undoRemovingFiles();
-  void undoRemovingDirectories();
+  void stepMakingDirectories();
+  void stepMovingFiles();
+  void stepRemovingLinks();
+  void stepRemovingDirectories();
 
   void broadcastPush( const KonqCommand &cmd );
   void broadcastPop();
