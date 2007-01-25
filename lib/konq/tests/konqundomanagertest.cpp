@@ -118,7 +118,7 @@ static void createTestDirectory( const QString& path )
 class TestUiInterface : public KonqUndoManager::UiInterface
 {
 public:
-    TestUiInterface() {}
+    TestUiInterface() : KonqUndoManager::UiInterface(0) {}
     virtual void jobError( KIO::Job* job ) {
         kFatal() << job->errorString() << endl;
     }

@@ -54,15 +54,19 @@ public:
   class LIBKONQ_EXPORT UiInterface
   {
   public:
+    UiInterface( QWidget* );
     virtual ~UiInterface() {}
 
-    virtual void jobError( KIO::Job* job ) = 0;
+    /**
+     * Called when an undo job errors; default implementation displays a message box.
+     */
+    virtual void jobError( KIO::Job* job );
 
     /**
      * Called when dest was modified since it was copied from src.
      * Return true if we should proceed with deleting dest.
      */
-    virtual bool copiedFileWasModified( const KUrl& src, const KUrl& dest, time_t srcTime, time_t destTime ) = 0;
+    virtual bool copiedFileWasModified( const KUrl& src, const KUrl& dest, time_t srcTime, time_t destTime );
   };
 
   /**
