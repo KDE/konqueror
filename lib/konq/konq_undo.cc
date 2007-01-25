@@ -153,38 +153,11 @@ void KonqCommandRecorder::slotCopyingLinkDone( KIO::Job *, const KUrl &from, con
 KonqUndoManager *KonqUndoManager::s_self = 0;
 static unsigned long s_undoManagerRefCnt = 0;
 
-class KonqUndoUiInterface : public KonqUndoManager::UiInterface
-{
-public:
-    KonqUndoUiInterface() {} // TODO pass and store QWidget*
-
-    virtual void jobError( KIO::Job* job ) {
-        job->ui()->showErrorMessage();
-    }
-
-    virtual bool copiedFileWasModified( const KUrl& src, const KUrl& dest, time_t srcTime, time_t destTime ) {
-        Q_UNUSED( srcTime ); // not sure it should appear in the msgbox
-        //const QDateTime srcDt = QDateTime::fromTime_t( srcTime );
-        const QDateTime destDt = QDateTime::fromTime_t( destTime );
-        // Possible improvement: only show the time if date is today
-        const QString timeStr = KGlobal::locale()->formatDateTime( destDt, true /*short*/ );
-        return KMessageBox::warningContinueCancel(
-            0 /*TODO parent*/,
-            i18n( "The file %1 was copied from %2, but since then it has apparently been modified at %3.\n"
-                  "Undoing the copy will delete the file, and all modifications will be lost.\n"
-                  "Are you sure you want to delete %4?", dest.pathOrUrl(), src.pathOrUrl(), timeStr, dest.pathOrUrl() ),
-            i18n( "Undo File Copy Confirmation" ),
-            KStandardGuiItem::cont(),
-            QString(),
-            KMessageBox::Notify | KMessageBox::Dangerous ) == KMessageBox::Continue;
-    }
-};
-
 class KonqUndoManager::KonqUndoManagerPrivate
 {
 public:
     KonqUndoManagerPrivate()
-        : m_uiInterface( new KonqUndoUiInterface ),
+        : m_uiInterface( new KonqUndoManager::UiInterface( 0 /*TODO*/ ) ),
           m_undoJob( 0 )
     {
     }
@@ -683,6 +656,33 @@ void KonqUndoManager::setUiInterface( UiInterface* ui )
 {
     delete d->m_uiInterface;
     d->m_uiInterface = ui;
+}
+
+KonqUndoManager::UiInterface::UiInterface( QWidget* )
+{
+    // TODO store widget
+}
+
+void KonqUndoManager::UiInterface::jobError( KIO::Job* job )
+{
+    job->ui()->showErrorMessage();
+}
+
+bool KonqUndoManager::UiInterface::copiedFileWasModified( const KUrl& src, const KUrl& dest, time_t srcTime, time_t destTime ) {
+    Q_UNUSED( srcTime ); // not sure it should appear in the msgbox
+    //const QDateTime srcDt = QDateTime::fromTime_t( srcTime );
+    const QDateTime destDt = QDateTime::fromTime_t( destTime );
+    // Possible improvement: only show the time if date is today
+    const QString timeStr = KGlobal::locale()->formatDateTime( destDt, true /*short*/ );
+    return KMessageBox::warningContinueCancel(
+        0 /*TODO parent*/,
+        i18n( "The file %1 was copied from %2, but since then it has apparently been modified at %3.\n"
+              "Undoing the copy will delete the file, and all modifications will be lost.\n"
+              "Are you sure you want to delete %4?", dest.pathOrUrl(), src.pathOrUrl(), timeStr, dest.pathOrUrl() ),
+        i18n( "Undo File Copy Confirmation" ),
+        KStandardGuiItem::cont(),
+        QString(),
+        KMessageBox::Notify | KMessageBox::Dangerous ) == KMessageBox::Continue;
 }
 
 #include "konq_undo.moc"
