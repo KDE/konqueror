@@ -35,7 +35,6 @@
 #include <kprotocolmanager.h>
 #include <kmenu.h>
 #include <krun.h>
-#include <kactioncollection.h>
 #include <kio/job.h>
 #include <kio/jobuidelegate.h>
 #include <kio/renamedialog.h>
@@ -671,15 +670,9 @@ void KUrlDesktopFileDlg::slotURLTextChanged( const QString& )
 }
 
 
-void KNewMenu::setPopupFiles(const KUrl::List & files)
+void KNewMenu::setPopupFiles(const KUrl::List& files)
 {
     d->popupFiles = files;
-}
-
-void KNewMenu::setPopupFiles(const KUrl & file)
-{
-    d->popupFiles.clear();
-    d->popupFiles.append( file );
 }
 
 #include "knewmenu.moc"
