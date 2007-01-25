@@ -29,7 +29,7 @@ QTEST_KDEMAIN( FavIconTest, NoGUI )
 
 static const char* s_hostUrl = "http://www.kde.org";
 static const char* s_iconUrl = "http://www.kde.org/favicon.ico";
-static const char* s_altIconUrl = "http://www.koffice.org/favicon.ico";
+static const char* s_altIconUrl = "http://www.ibm.com/favicon.ico";
 
 static int s_downloadTime; // in ms
 
@@ -90,7 +90,7 @@ void FavIconTest::initTestCase()
     cfg.writeEntry("Enabled", false);
 }
 
-// To avoid hitting the cache, we first set the icon to s_altIconUrl (koffice.org),
+// To avoid hitting the cache, we first set the icon to s_altIconUrl (ibm.com),
 // then back to s_iconUrl (kde.org) (to avoid messing up the favicons for the user ;)
 void FavIconTest::testSetIconForURL()
 {
@@ -110,7 +110,7 @@ void FavIconTest::testSetIconForURL()
     QCOMPARE( spy.count(), 1 );
     QCOMPARE( mgr.m_isHost, false );
     QCOMPARE( mgr.m_hostOrURL, QString( s_hostUrl ) );
-    QCOMPARE( mgr.m_iconName, QString( "favicons/www.koffice.org" ) );
+    QCOMPARE( mgr.m_iconName, QString( "favicons/www.ibm.com" ) );
 
     KonqFavIconMgr::setIconForURL( KUrl( s_hostUrl ), KUrl( s_iconUrl ) );
 
