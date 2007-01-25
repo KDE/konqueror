@@ -60,8 +60,7 @@ public:
      * Set the files the popup is shown for
      * Call this before showing up the menu
      */
-    void setPopupFiles(const KUrl::List & _files);
-    void setPopupFiles(const KUrl & _file);
+    void setPopupFiles(const KUrl::List& files);
 
 public Q_SLOTS:
     /**
@@ -71,6 +70,14 @@ public Q_SLOTS:
     void slotCheckUpToDate();
 
 protected Q_SLOTS:
+    /**
+     * Called when the job that copied the template has finished.
+     * This method is virtual so that error handling can be reimplemented.
+     * Make sure to call the base class slotResult when !job->error() though.
+     */
+    virtual void slotResult( KJob* job );
+
+private Q_SLOTS:
     /**
      * Called when New->Directory... is clicked
      */
@@ -86,7 +93,6 @@ protected Q_SLOTS:
      */
     void slotFillTemplates();
 
-    void slotResult( KJob * );
     // Special case (filename conflict when creating a link=url file)
     void slotRenamed( KIO::Job *, const KUrl&, const KUrl& );
 
