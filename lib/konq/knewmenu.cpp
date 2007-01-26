@@ -17,6 +17,10 @@
    Boston, MA 02110-1301, USA.
 */
 
+#include "knewmenu.h"
+#include "konq_operations.h"
+#include "konq_undo.h"
+
 #include <QDir>
 #include <QVBoxLayout>
 #include <QList>
@@ -40,9 +44,6 @@
 #include <kio/renamedialog.h>
 
 #include <kpropertiesdialog.h>
-#include "konq_operations.h"
-#include "konq_undo.h"
-#include "knewmenu.h"
 #include "knewmenu_p.h"
 #include <utime.h>
 
