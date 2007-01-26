@@ -28,6 +28,7 @@ class KJob;
 namespace KIO { class Job; }
 
 class KDirWatch;
+class KActionCollection;
 
 /**
  * The 'New' submenu, both for the File menu and the RMB popup menu.
