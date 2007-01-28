@@ -80,7 +80,7 @@ void TreeItem::insertChildren(int first, int last)
     // Find child number last
     KBookmarkGroup parent = bookmark().toGroup();
     KBookmark child = parent.first();
-    for(int i=0; i < last; ++i)
+    for(int j=0; j < last; ++j)
         child = parent.next(child);
     
     //insert children
