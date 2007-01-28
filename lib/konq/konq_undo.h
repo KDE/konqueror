@@ -31,7 +31,7 @@ namespace KIO
 {
   class Job;
 }
-class KonqBasicOperation;
+struct KonqBasicOperation;
 class KonqCommand;
 class KonqUndoJob;
 class KJob;
