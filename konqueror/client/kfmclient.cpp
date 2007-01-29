@@ -60,7 +60,7 @@ QByteArray ClientApp::startup_id_str;
 bool ClientApp::m_ok = true;
 bool s_interactive = true;
 
-K_GLOBAL_STATIC(KComponentData, s_instance);
+K_GLOBAL_STATIC(KComponentData, s_instance)
 
 static const KCmdLineOptions options[] =
 {
