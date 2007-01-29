@@ -24,7 +24,7 @@
 #include <QByteArray>
 //Added by qt3to4:
 #include <QTextStream>
-#include <kinstance.h>
+#include <kcomponentdata.h>
 #include <kurl.h>
 
 using namespace KIO;
@@ -61,7 +61,7 @@ extern "C"
 {
     int KDE_EXPORT kdemain( int argc, char **argv ) {
 
-        KInstance instance("kio_about");
+        KComponentData componentData("kio_about");
 
         if (argc != 4)
         {
