@@ -13,7 +13,7 @@
 #include <kstatusbar.h>
 #include <kmessagebox.h>
 #include <kdebug.h>
-#include <kaboutapplication.h>
+#include <kaboutapplicationdialog.h>
 #include <kstandarddirs.h>
 
 #include "kftabdlg.h"
@@ -232,7 +232,7 @@ void KfindDlg::copySelection()
 
 void  KfindDlg::about ()
 {
-  KAboutApplication dlg(0, this, true);
+  KAboutApplicationDialog dlg(0, this);
   dlg.exec ();
 }
 
