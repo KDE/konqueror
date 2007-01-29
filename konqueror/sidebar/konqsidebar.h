@@ -87,7 +87,7 @@ public:
     virtual bool openUrl(const KUrl &url);
     KonqSidebarBrowserExtension* extension() const
        { return m_extension; }
-    KInstance *getInstance();
+    const KComponentData &getInstance();
     virtual bool universalMode() {return m_universalMode;}
 protected:
     /**
@@ -103,7 +103,7 @@ private:
      bool m_universalMode;
 };
 
-class KInstance;
+class KComponentData;
 class KAboutData;
 
 class KonqSidebarFactory : public KParts::Factory
@@ -114,10 +114,10 @@ public:
     virtual ~KonqSidebarFactory();
     virtual KParts::Part* createPartObject( QWidget *parentWidget, QObject *parent,
                                             const char *classname, const QStringList &args );
-    static KInstance* instance();
+    static const KComponentData &componentData();
 
 private:
-    static KInstance* s_instance;
+    static KComponentData *s_instance;
     static KAboutData* s_about;
 };
 

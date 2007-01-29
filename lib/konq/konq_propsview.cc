@@ -30,10 +30,11 @@
 #include <QFile>
 #include <iostream>
 #include <kservicetypetrader.h>
-#include <kinstance.h>
+#include <kcomponentdata.h>
 #include <assert.h>
 
 #include <ksimpleconfig.h>
+#include <kconfiggroup.h>
 
 static QPixmap wallpaperPixmap( const QString & _wallpaper )
 {
@@ -72,15 +73,15 @@ struct KonqPropsView::Private
    QString sortcriterion;
 };
 
-KonqPropsView::KonqPropsView( KInstance * instance, KonqPropsView * defaultProps )
+KonqPropsView::KonqPropsView(const KComponentData &componentData, KonqPropsView *defaultProps)
     : m_bSaveViewPropertiesLocally( false ), // will be overridden by setSave... anyway
     // if this is the default properties instance, then keep config object for saving
     m_dotDirExists( true ), // HACK so that enterDir returns true initially
-    m_currentConfig( defaultProps ? 0L : instance->config() ),
+    m_currentConfig( defaultProps ? KSharedConfig::Ptr() : componentData.config() ),
     m_defaultProps( defaultProps )
 {
 
-  KConfig *config = instance->config();
+  KSharedConfig::Ptr config = componentData.config();
   KConfigGroup cgs(config, "Settings");
 
   d = new Private;
@@ -147,7 +148,7 @@ bool KonqPropsView::isDescending() const
    return d->descending;
 }
 
-KConfigBase * KonqPropsView::currentConfig()
+KSharedConfigPtr KonqPropsView::currentConfig()
 {
     if ( !m_currentConfig )
     {
@@ -156,13 +157,13 @@ KConfigBase * KonqPropsView::currentConfig()
         assert ( !isDefaultProperties() );
 
         if (!dotDirectory.isEmpty())
-            m_currentConfig = new KSimpleConfig( dotDirectory );
+            m_currentConfig = KSharedConfig::openConfig(dotDirectory);
         // the "else" is when we want to save locally but this is a remote URL -> no save
     }
     return m_currentConfig;
 }
 
-KConfigBase * KonqPropsView::currentColorConfig()
+KSharedConfigPtr KonqPropsView::currentColorConfig()
 {
     // Saving locally ?
     if ( m_bSaveViewPropertiesLocally && !isDefaultProperties() )
@@ -257,7 +258,7 @@ bool KonqPropsView::enterDir( const KUrl & dir )
   //if there is or was a .directory then the settings probably have changed
   bool configChanged=(m_dotDirExists|| dotDirExists);
   m_dotDirExists = dotDirExists;
-  m_currentConfig = 0L; // new dir, not current config for saving yet
+  m_currentConfig.clear(); // new dir, not current config for saving yet
   //kDebug(1203) << "KonqPropsView::enterDir returning " << configChanged << endl;
   return configChanged;
 }
@@ -267,11 +268,8 @@ void KonqPropsView::setSaveViewPropertiesLocally( bool value )
     assert( !isDefaultProperties() );
     //kDebug(1203) << "KonqPropsView::setSaveViewPropertiesLocally " << value << endl;
 
-    if ( m_bSaveViewPropertiesLocally )
-        delete m_currentConfig; // points to a KSimpleConfig
-
+    m_currentConfig.clear();
     m_bSaveViewPropertiesLocally = value;
-    m_currentConfig = 0L; // mark as dirty
 }
 
 void KonqPropsView::setIconSize( int size )
@@ -461,7 +459,7 @@ void KonqPropsView::setBgColor( const QColor & color )
     }
     else
     {
-        KConfigBase * colorConfig = currentColorConfig();
+        KSharedConfig::Ptr colorConfig = currentColorConfig();
         if (colorConfig) // 0L when saving locally but remote URL
         {
             KConfigGroup cgs(colorConfig, currentGroup());
@@ -488,7 +486,7 @@ void KonqPropsView::setTextColor( const QColor & color )
     }
     else
     {
-        KConfigBase * colorConfig = currentColorConfig();
+        KSharedConfig::Ptr colorConfig = currentColorConfig();
         if (colorConfig) // 0L when saving locally but remote URL
         {
             KConfigGroup cgs(colorConfig, currentGroup());
@@ -516,7 +514,7 @@ void KonqPropsView::setBgPixmapFile( const QString & file )
     }
     else
     {
-        KConfigBase * colorConfig = currentColorConfig();
+        KSharedConfig::Ptr colorConfig = currentColorConfig();
         if (colorConfig) // 0L when saving locally but remote URL
         {
             KConfigGroup cgs(colorConfig, currentGroup());

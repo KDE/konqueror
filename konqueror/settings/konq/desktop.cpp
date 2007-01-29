@@ -36,6 +36,7 @@
 #include <knuminput.h>
 #include <kconfig.h>
 #include "konqkcmfactory.h"
+#include <kconfiggroup.h>
 
 #include <netwm.h>
 
@@ -55,7 +56,7 @@ K_EXPORT_COMPONENT_FACTORY(ddesktop, KDesktopConfigFactory)
 // asking why I did not implement a more intelligent/smaller GUI.
 
 KDesktopConfig::KDesktopConfig(QWidget *parent, const QStringList &)
-  : KCModule(_globalInstance(), parent)
+  : KCModule(KonqKcmFactory<KDesktopConfig>::componentData(), parent)
 {
 
   setQuickHelp( i18n("<h1>Multiple Desktops</h1>In this module, you can configure how many virtual desktops you want and how these should be labeled."));

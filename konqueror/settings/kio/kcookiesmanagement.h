@@ -72,7 +72,7 @@ class KCookiesManagement : public KCModule
     Q_OBJECT
 
 public:
-    KCookiesManagement( KInstance *inst, QWidget *parent );
+    KCookiesManagement(const KComponentData &componentData, QWidget *parent );
     ~KCookiesManagement();
 
     virtual void load();

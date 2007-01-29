@@ -5,7 +5,7 @@
 #include <khtml_part.h>
 
 class KHTMLPart;
-class KInstance;
+class KComponentData;
 
 class KonqAboutPageFactory : public KParts::Factory
 {
@@ -16,7 +16,7 @@ public:
     virtual KParts::Part *createPartObject( QWidget *parentWidget, QObject *parent,
                                             const char *classname, const QStringList &args );
 
-    static KInstance *instance() { return s_instance; }
+    static const KComponentData &componentData() { return *s_instance; }
 
     static QString launch();
     static QString intro();
@@ -27,7 +27,7 @@ public:
 private:
     static QString loadFile( const QString& file );
 
-    static KInstance *s_instance;
+    static KComponentData *s_instance;
     static QString *s_launch_html, *s_intro_html, *s_specs_html, *s_tips_html, *s_plugins_html;
 };
 

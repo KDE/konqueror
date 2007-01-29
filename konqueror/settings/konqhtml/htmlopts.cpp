@@ -37,7 +37,7 @@ enum AnimationsType { AnimationsAlways=0, AnimationsNever=1, AnimationsLoopOnce=
 //-----------------------------------------------------------------------------
 
 KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QStringList&)
-    : KCModule( KMiscHTMLOptionsFactory::instance(), parent ), m_groupname("HTML Settings")
+    : KCModule( KMiscHTMLOptionsFactory::componentData(), parent ), m_groupname("HTML Settings")
 {
     m_pConfig = KSharedConfig::openConfig( "konquerorrc", false, false );
     int row = 0;

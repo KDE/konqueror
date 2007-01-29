@@ -36,8 +36,8 @@ PopupMenuGUIClient::PopupMenuGUIClient( KonqMainWindow *mainWindow,
                                         bool showEmbeddingServices, bool doTabHandling )
 {
     //giving a name to each guiclient: just for debugging
-    // (needs delete instance() in the dtor if enabled for good)
-    //setInstance( new KInstance( "PopupMenuGUIClient" ) );
+    // (needs delete componentData() in the dtor if enabled for good)
+    //setComponentData( KComponentData( "PopupMenuGUIClient" ) );
 
     m_mainWindow = mainWindow;
 

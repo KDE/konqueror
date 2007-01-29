@@ -27,6 +27,7 @@
 #include <kio/job.h>
 #include <QPointer>
 #include <kfileitem.h>
+#include <kcomponentdata.h>
 
 class KonqSidebarPluginPrivate;
 
@@ -34,17 +35,17 @@ class KDE_EXPORT KonqSidebarPlugin : public QObject
 {
 	Q_OBJECT
 	public:
-		KonqSidebarPlugin(KInstance *instance,QObject *parent,QWidget *widgetParent,QString &desktopName_, const char* name=0);
+		KonqSidebarPlugin(const KComponentData &componentData,QObject *parent,QWidget *widgetParent,QString &desktopName_, const char* name=0);
 		~KonqSidebarPlugin();
 		virtual QWidget *getWidget()=0;
 		virtual void *provides(const QString &)=0;
-		KInstance *parentInstance();
+		const KComponentData &parentInstance();
 	protected:
 		virtual void handleURL(const KUrl &url)=0;
 		virtual void handlePreview(const KFileItemList & items);
 		virtual void handlePreviewOnMouseOver(const KFileItem &items); //not used yet, perhaps in KDE 3.1
 		QString desktopName;
-		KInstance* m_parentInstance;
+		KComponentData m_parentInstance;
 
 	private:
 		KonqSidebarPluginPrivate *d;

@@ -116,7 +116,7 @@ extern "C"
  * We need one static instance of the factory for our C 'main'
  * function
  */
-KInstance *PluginFactory::s_instance = 0L;
+KComponentData *PluginFactory::s_instance = 0L;
 
 
 PluginFactory::PluginFactory()
@@ -135,11 +135,11 @@ PluginFactory::~PluginFactory()
 
    _loader->release();
 
-   if ( s_instance ) {
+   if (s_instance) {
        delete s_instance->aboutData();
        delete s_instance;
+       s_instance = 0;
    }
-   s_instance = 0;
 }
 
 KParts::Part * PluginFactory::createPartObject(QWidget *parentWidget, QObject *parent,
@@ -152,13 +152,14 @@ KParts::Part * PluginFactory::createPartObject(QWidget *parentWidget, QObject *p
 }
 
 
-KInstance *PluginFactory::instance()
+const KComponentData &PluginFactory::componentData()
 {
     kDebug(1432) << "PluginFactory::instance" << endl;
 
-    if ( !s_instance )
-        s_instance = new KInstance( aboutData() );
-    return s_instance;
+    if (!s_instance) {
+        s_instance = new KComponentData(aboutData());
+    }
+    return *s_instance;
 }
 
 KAboutData *PluginFactory::aboutData()
@@ -179,7 +180,7 @@ PluginPart::PluginPart(QWidget *parentWidget, QObject *parent, const QStringList
     (void) new CallBackAdaptor( this );
     QDBusConnection::sessionBus().registerObject( s_callBackObjectPath, this );
 
-    setInstance(PluginFactory::instance());
+    setComponentData(PluginFactory::componentData());
     kDebug(1432) << "PluginPart::PluginPart" << endl;
 
     // we have to keep the class name of KParts::PluginBrowserExtension

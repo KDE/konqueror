@@ -32,7 +32,7 @@
 #include <QPointer>
 
 class KAboutData;
-class KInstance;
+class KComponentData;
 class PluginBrowserExtension;
 class PluginLiveConnectExtension;
 class QLabel;
@@ -51,12 +51,12 @@ public:
   			            const char *classname = "KParts::Part",
    			            const QStringList &args = QStringList());
 
-  static KInstance *instance();
+  static const KComponentData &componentData();
   static KAboutData *aboutData();
 
 private:
 
-  static KInstance *s_instance;
+  static KComponentData *s_instance;
   class NSPluginLoader *_loader;
 };
 

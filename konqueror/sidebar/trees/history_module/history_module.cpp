@@ -37,6 +37,7 @@
 
 #include "history_module.h"
 #include "history_settings.h"
+#include <kconfiggroup.h>
 
 static KStaticDeleter<KonqSidebarHistorySettings> sd;
 KonqSidebarHistorySettings * KonqSidebarHistoryModule::s_settings = 0L;
@@ -60,7 +61,7 @@ KonqSidebarHistoryModule::KonqSidebarHistoryModule( KonqSidebarTree * parentTree
     m_dict.setAutoDelete( true );
     m_currentTime = QDateTime::currentDateTime();
 
-    KConfig *kc = KGlobal::config();
+    KSharedConfig::Ptr kc = KGlobal::config();
     KConfigGroup cs( kc, "HistorySettings" );
     m_sortsByName = cs.readEntry( "SortHistory", "byDate" ) == "byName";
 
@@ -128,7 +129,7 @@ KonqSidebarHistoryModule::~KonqSidebarHistoryModule()
 	++it;
     }
 
-    KConfig *kc = KGlobal::config();
+    KSharedConfig::Ptr kc = KGlobal::config();
     KConfigGroup cs( kc, "HistorySettings" );
     cs.writeEntry("OpenGroups", openGroups);
     kc->sync();
@@ -158,7 +159,7 @@ void KonqSidebarHistoryModule::slotCreateItems()
 	item = new KonqSidebarHistoryItem( (*it), group, m_topLevelItem );
     }
 
-    KConfig *kc = KGlobal::config();
+    KSharedConfig::Ptr kc = KGlobal::config();
     KConfigGroup cs( kc, "HistorySettings" );
     QStringList openGroups = cs.readEntry("OpenGroups",QStringList());
     QStringList::Iterator it2 = openGroups.begin();
@@ -312,7 +313,7 @@ void KonqSidebarHistoryModule::sortingChanged()
 {
     m_topLevelItem->sort();
 
-    KConfig *kc = KGlobal::config();
+    KSharedConfig::Ptr kc = KGlobal::config();
     KConfigGroup cs( kc, "HistorySettings" );
     cs.writeEntry( "SortHistory", m_sortsByName ? "byName" : "byDate" );
     kc->sync();

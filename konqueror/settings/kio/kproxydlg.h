@@ -64,7 +64,7 @@ class KProxyDialog : public KCModule
   Q_OBJECT
 
 public:
-  KProxyDialog( KInstance *inst, QWidget* parent );
+  KProxyDialog(const KComponentData &componentData, QWidget* parent );
   ~KProxyDialog();
 
   virtual void load();

@@ -26,7 +26,7 @@
 #include <klocale.h>
 #include <kfileitem.h>
 #include <kdirlister.h>
-#include <kinstance.h>
+#include <kcomponentdata.h>
 
 #include <QDir>
 
@@ -38,7 +38,7 @@ K_EXPORT_COMPONENT_FACTORY( libkfindpart, KFindFactory )
 KFindPart::KFindPart( QWidget * parentWidget, QObject *parent, const QStringList & /*args*/ )
     : KonqDirPart (parent)/*KParts::ReadOnlyPart*/
 {
-    setInstance( KFindFactory::instance() );
+    setComponentData( KFindFactory::componentData() );
 
     setBrowserExtension( new KonqDirPartBrowserExtension( this ) );
 

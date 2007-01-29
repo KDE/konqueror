@@ -33,8 +33,8 @@
 
 // == class KJavaScriptOptions =====
 
-KJavaScriptOptions::KJavaScriptOptions( KSharedConfig::Ptr config, QString group, KInstance *inst, QWidget *parent) :
-  KCModule( inst, parent ),
+KJavaScriptOptions::KJavaScriptOptions( KSharedConfig::Ptr config, QString group, const KComponentData &componentData, QWidget *parent) :
+  KCModule(componentData, parent),
   _removeJavaScriptDomainAdvice(false),
    m_pConfig( config ), m_groupname( group ),
   js_global_policies(config,group,true,QString()),

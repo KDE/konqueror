@@ -487,7 +487,7 @@ void KEBApp::notifyCommandExecuted() {
 /* -------------------------- */
 
 void KEBApp::slotConfigureToolbars() {
-    saveMainWindowSettings(KGlobal::config(), "MainWindow");
+    saveMainWindowSettings(KGlobal::config().data(), "MainWindow");
     KEditToolbar dlg(actionCollection());
     connect(&dlg, SIGNAL( newToolbarConfig() ),
                   SLOT( slotNewToolbarConfig() ));
@@ -497,7 +497,7 @@ void KEBApp::slotConfigureToolbars() {
 void KEBApp::slotNewToolbarConfig() {
     // called when OK or Apply is clicked
     createGUI();
-    applyMainWindowSettings(KGlobal::config(), "MainWindow");
+    applyMainWindowSettings(KGlobal::config().data(), "MainWindow");
 }
 
 /* -------------------------- */

@@ -49,7 +49,7 @@
 #include <sys/stat.h>
 #include <time.h>
 #include <unistd.h>
-#include <kinstance.h>
+#include <kcomponentdata.h>
 
 KonqListViewFactory::KonqListViewFactory()
 {
@@ -75,23 +75,23 @@ KParts::Part* KonqListViewFactory::createPartObject( QWidget *parentWidget, QObj
   return obj;
 }
 
-KInstance *KonqListViewFactory::instance()
+const KComponentData &KonqListViewFactory::componentData()
 {
   if ( !s_instance )
-    s_instance = new KInstance( "konqlistview" );
-  return s_instance;
+    s_instance = new KComponentData( "konqlistview" );
+  return *s_instance;
 }
 
 KonqPropsView *KonqListViewFactory::defaultViewProps()
 {
   if ( !s_defaultViewProps )
-    s_defaultViewProps = new KonqPropsView( instance(),0L );
-    //s_defaultViewProps = KonqPropsView::defaultProps( instance() );
+    s_defaultViewProps = new KonqPropsView( componentData(),0L );
+    //s_defaultViewProps = KonqPropsView::defaultProps( componentData() );
 
   return s_defaultViewProps;
 }
 
-KInstance *KonqListViewFactory::s_instance = 0;
+KComponentData *KonqListViewFactory::s_instance = 0;
 KonqPropsView *KonqListViewFactory::s_defaultViewProps = 0;
 
 K_EXPORT_COMPONENT_FACTORY( konq_listview, KonqListViewFactory )
@@ -230,11 +230,11 @@ KonqListView::KonqListView( QWidget *parentWidget, QObject *parent, const QStrin
  : KonqDirPart( parent )
 ,m_headerTimer(0)
 {
-   setInstance( KonqListViewFactory::instance(), false );
+   setComponentData( KonqListViewFactory::componentData(), false );
 
    // Create a properties instance for this view
    // All the listview view modes inherit the same properties defaults...
-   m_pProps = new KonqPropsView( KonqListViewFactory::instance(), KonqListViewFactory::defaultViewProps() );
+   m_pProps = new KonqPropsView( KonqListViewFactory::componentData(), KonqListViewFactory::defaultViewProps() );
 
    setBrowserExtension( new ListViewBrowserExtension( this ) );
 
@@ -303,7 +303,7 @@ KonqListView::KonqListView( QWidget *parentWidget, QObject *parent, const QStrin
    connect( this, SIGNAL( findOpened( KonqDirPart * ) ), SLOT( slotKFindOpened() ) );
    connect( this, SIGNAL( findClosed( KonqDirPart * ) ), SLOT( slotKFindClosed() ) );
 
-   loadPlugins( this, this, instance() );
+   loadPlugins( this, this, componentData() );
 }
 
 KonqListView::~KonqListView()

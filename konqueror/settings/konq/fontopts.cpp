@@ -63,7 +63,7 @@ K_EXPORT_COMPONENT_FACTORY(dappearance, KonqFontOptionsDesktopFactory)
 //-----------------------------------------------------------------------------
 
 KonqFontOptions::KonqFontOptions(QWidget *parent, const QStringList &, bool desktop)
-    : KCModule( _globalInstance(), parent )
+    : KCModule( KonqKcmFactory<KonqFontOptions>::componentData(), parent )
     , groupname("FMSettings")
     , m_bDesktop(desktop)
 {

@@ -47,11 +47,11 @@ public:
 
   virtual KParts::Part* createPartObject( QWidget *parentWidget, QObject *parent, const char*, const QStringList &args );
 
-  static KInstance *instance();
+  static const KComponentData &componentData();
   static KonqPropsView *defaultViewProps();
 
 private:
-  static KInstance *s_instance;
+  static KComponentData *s_instance;
   static KonqPropsView *s_defaultViewProps;
 };
 

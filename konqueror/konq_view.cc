@@ -1307,17 +1307,17 @@ bool KonqView::eventFilter( QObject *obj, QEvent *e )
 
     if ( e->type() == QEvent::FocusIn )
     {
-        setActiveInstance();
+        setActiveComponent();
     }
     return false;
 }
 
-void KonqView::setActiveInstance()
+void KonqView::setActiveComponent()
 {
-  if ( m_bBuiltinView || !m_pPart->instance() /*never!*/)
-      KGlobal::setActiveInstance( KGlobal::instance() );
+  if ( m_bBuiltinView || !m_pPart->componentData().isValid() /*never!*/)
+      KGlobal::setActiveComponent( KGlobal::mainComponent() );
   else
-      KGlobal::setActiveInstance( m_pPart->instance() );
+      KGlobal::setActiveComponent( m_pPart->componentData() );
 }
 
 bool KonqView::prepareReload( KParts::URLArgs& args )

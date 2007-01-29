@@ -30,7 +30,7 @@ typedef KGenericFactory<FileTypesView> FileTypesViewFactory;
 K_EXPORT_COMPONENT_FACTORY(filetypes, FileTypesViewFactory("filetypes"))
 
 FileTypesView::FileTypesView(QWidget *parent, const QStringList &)
-  : KCModule(FileTypesViewFactory::instance(), parent)
+  : KCModule(FileTypesViewFactory::componentData(), parent)
 {
   m_konqConfig = KSharedConfig::openConfig("konquerorrc", false, false);
 

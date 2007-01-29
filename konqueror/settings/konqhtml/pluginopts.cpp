@@ -51,7 +51,7 @@ typedef KGenericFactory<KPluginOptions, QWidget> KPluginOptionsFactory;
 K_EXPORT_COMPONENT_FACTORY( khtml_plugins, KPluginOptionsFactory("kcmkonqhtml") )
 
 KPluginOptions::KPluginOptions( QWidget *parent, const QStringList& )
-    : KCModule( KPluginOptionsFactory::instance(), parent ),
+    : KCModule( KPluginOptionsFactory::componentData(), parent ),
       m_pConfig( KSharedConfig::openConfig( "konquerorrc", false, false ) ),
       m_groupname( "Java/JavaScript Settings" ),
       global_policies(m_pConfig,m_groupname,true)

@@ -40,6 +40,7 @@
 
 #include "previews.h"
 #include "konqkcmfactory.h"
+#include <kconfiggroup.h>
 
 //-----------------------------------------------------------------------------
 
@@ -65,7 +66,7 @@ typedef KonqKcmFactory<KPreviewOptions> KPreviewOptionsFactory;
 K_EXPORT_COMPONENT_FACTORY(previews, KPreviewOptionsFactory)
 
 KPreviewOptions::KPreviewOptions( QWidget *parent, const QStringList & )
-    : KCModule( _globalInstance(), parent )
+    : KCModule( KonqKcmFactory<KPreviewOptions>::componentData(), parent )
 {
     QVBoxLayout *lay = new QVBoxLayout(this);
     lay->setSpacing(KDialog::spacingHint());

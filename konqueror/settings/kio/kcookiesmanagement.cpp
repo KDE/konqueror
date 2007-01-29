@@ -100,8 +100,8 @@ QString CookieListViewItem::text(int f) const
         return f == 0 ? KIDNA::toUnicode(mDomain) : QString();
 }
 
-KCookiesManagement::KCookiesManagement(KInstance *inst, QWidget *parent)
-                   : KCModule(inst, parent)
+KCookiesManagement::KCookiesManagement(const KComponentData &componentData, QWidget *parent)
+                   : KCModule(componentData, parent)
 {
   // Toplevel layout
   QVBoxLayout* mainLayout = new QVBoxLayout(this);

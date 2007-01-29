@@ -314,8 +314,8 @@ public:
 
   void goHistory( int steps );
 
-  // Set the KGlobal active instance (the one used by KBugReport)
-  void setActiveInstance();
+  // Set the KGlobal active componentData(the one used by KBugReport)
+  void setActiveComponent();
 
   // Called before reloading this view. Sets args.reload to true, and offers to repost form data.
   // Returns false in case the reload must be canceled.

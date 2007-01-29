@@ -39,6 +39,7 @@
 #include <kstandarddirs.h>
 #include <konq_defaults.h> // include default values directly from libkonq
 #include <kurlrequester.h>
+#include <kconfiggroup.h>
 
 #include "rootopts.h"
 #include "konqkcmfactory.h"
@@ -51,7 +52,7 @@ typedef KonqKcmFactory<DesktopPathConfig> DesktopPathConfigFactory;
 K_EXPORT_COMPONENT_FACTORY(dpath, DesktopPathConfigFactory)
 
 DesktopPathConfig::DesktopPathConfig(QWidget *parent, const QStringList &)
-    : KCModule( _globalInstance(), parent )
+    : KCModule( KonqKcmFactory<DesktopPathConfig>::componentData(), parent )
 {
   QLabel * tmpLabel;
 
@@ -146,7 +147,7 @@ void DesktopPathConfig::defaults()
 
 void DesktopPathConfig::save()
 {
-    KConfig *config = KGlobal::config();
+    KSharedConfig::Ptr config = KGlobal::config();
     KConfigGroup configGroup( config, "Paths" );
 
     bool pathChanged = false;

@@ -43,7 +43,7 @@ typedef KGenericFactory<KCacheConfigDialog> KCacheConfigDialogFactory;
 K_EXPORT_COMPONENT_FACTORY(cache, KCacheConfigDialogFactory("kcmkio"))
 
 KCacheConfigDialog::KCacheConfigDialog(QWidget *parent, const QStringList &)
-    : KCModule(KCacheConfigDialogFactory::instance(), parent)
+    : KCModule(KCacheConfigDialogFactory::componentData(), parent)
 {
   QVBoxLayout* mainLayout = new QVBoxLayout(this);
   mainLayout->setMargin(0);

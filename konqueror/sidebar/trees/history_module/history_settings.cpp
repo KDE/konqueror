@@ -41,7 +41,7 @@ KonqSidebarHistorySettings::~KonqSidebarHistorySettings()
 
 void KonqSidebarHistorySettings::readSettings(bool global)
 {
-    KConfig *config;
+    KSharedConfigPtr config;
     QString oldgroup;
 
     if (global) {
@@ -49,7 +49,7 @@ void KonqSidebarHistorySettings::readSettings(bool global)
       oldgroup= config->group();
     }
     else
-      config = new KConfig("konquerorrc");
+      config = KSharedConfig::openConfig("konquerorrc");
 
     config->setGroup("HistorySettings");
     m_valueYoungerThan = config->readEntry("Value youngerThan", 1 );
@@ -70,8 +70,6 @@ void KonqSidebarHistorySettings::readSettings(bool global)
 					       m_fontOlderThan );
     if (global)
       config->setGroup( oldgroup );
-    else
-      delete config;
 }
 
 void KonqSidebarHistorySettings::applySettings()

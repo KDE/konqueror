@@ -313,7 +313,7 @@ protected:
                  const QString &name, const KUrl & defaultURL, bool openUrl, bool openAfterCurrentPage = false );
 
   // Disabled - we do it ourselves
-  virtual void setActiveInstance( KInstance * ) {}
+  virtual void setActiveComponent(const KComponentData &) {}
 
 private:
 

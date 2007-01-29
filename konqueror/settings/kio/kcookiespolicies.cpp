@@ -44,8 +44,8 @@
 
 #include "kcookiespolicies.h"
 
-KCookiesPolicies::KCookiesPolicies(KInstance *inst, QWidget *parent)
-                 :KCModule(inst, parent)
+KCookiesPolicies::KCookiesPolicies(const KComponentData &componentData, QWidget *parent)
+                 :KCModule(componentData, parent)
 {
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mainLayout->setMargin(0);

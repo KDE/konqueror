@@ -22,17 +22,17 @@
 #include <kdebug.h>
 
 
-KonqSidebarPlugin::KonqSidebarPlugin(KInstance *instance,QObject *parent,
+KonqSidebarPlugin::KonqSidebarPlugin(const KComponentData &componentData,QObject *parent,
 	QWidget * /*widgetParent*/, QString &desktopName_, const char* name)
 	: QObject(parent), desktopName(desktopName_)
 {
   setObjectName( name );
-  m_parentInstance=instance;
+  m_parentInstance=componentData;
 }
 
 KonqSidebarPlugin::~KonqSidebarPlugin() { }
 
-KInstance *KonqSidebarPlugin::parentInstance(){return m_parentInstance;}
+const KComponentData &KonqSidebarPlugin::parentInstance(){return m_parentInstance;}
 
 void KonqSidebarPlugin::openUrl(const KUrl& url){handleURL(url);}
 

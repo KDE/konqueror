@@ -25,7 +25,7 @@ typedef KGenericFactory<CSSConfig, QWidget> CSSFactory;
 K_EXPORT_COMPONENT_FACTORY( css, CSSFactory("kcmcss") )
 
 CSSConfig::CSSConfig(QWidget *parent, const QStringList &)
-  : KCModule(CSSFactory::instance(), parent)
+  : KCModule(CSSFactory::componentData(), parent)
 {
   customDialogBase = new KDialog(this);
   customDialogBase->setObjectName( "customCSSDialog" );
@@ -194,7 +194,7 @@ void CSSConfig::save()
     {
       CSSTemplate css(templ);
 
-      dest = kapp->dirs()->saveLocation("data", "kcmcss");
+      dest = KGlobal::mainComponent().dirs()->saveLocation("data", "kcmcss");
       dest += "/override.css";
 
       css.expand(dest, cssDict());

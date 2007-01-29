@@ -29,7 +29,7 @@
 #include <kdesktopfile.h>
 #include <kdirwatch.h>
 #include <kicon.h>
-#include <kinstance.h>
+#include <kcomponentdata.h>
 #include <kinputdialog.h>
 #include <klocale.h>
 #include <kmessagebox.h>
@@ -348,7 +348,7 @@ void KNewMenu::slotFillTemplates()
     if ( ! s_pDirWatch )
     {
         s_pDirWatchStaticDeleter.setObject( s_pDirWatch, new KDirWatch );
-        QStringList dirs = d->m_actionCollection->instance()->dirs()->resourceDirs("templates");
+        QStringList dirs = d->m_actionCollection->componentData().dirs()->resourceDirs("templates");
         for ( QStringList::Iterator it = dirs.begin() ; it != dirs.end() ; ++it )
         {
             //kDebug(1203) << "Templates resource dir: " << *it << endl;
@@ -368,7 +368,7 @@ void KNewMenu::slotFillTemplates()
     s_templatesList->clear();
 
     // Look into "templates" dirs.
-    QStringList files = d->m_actionCollection->instance()->dirs()->findAllResources("templates");
+    QStringList files = d->m_actionCollection->componentData().dirs()->findAllResources("templates");
     QMap<QString, KNewMenuEntry> slist; // used for sorting
     for ( QStringList::Iterator it = files.begin() ; it != files.end() ; ++it )
     {

@@ -415,7 +415,7 @@ KfindTabWidget::~KfindTabWidget()
 
 void KfindTabWidget::setURL( const KUrl & url )
 {
-  KConfig *conf = KGlobal::config();
+  KSharedConfig::Ptr conf = KGlobal::config();
   conf->setGroup("History");
   m_url = url;
   QStringList sl = conf->readPathListEntry("Directories");
@@ -488,7 +488,7 @@ void KfindTabWidget::saveHistory()
 void KfindTabWidget::loadHistory()
 {
   // Load pattern history
-  KConfig *conf = KGlobal::config();
+  KSharedConfig::Ptr conf = KGlobal::config();
   conf->setGroup("History");
   QStringList sl = conf->readEntry("Patterns", QStringList());
   if(!sl.isEmpty())
@@ -882,7 +882,7 @@ static void save_pattern(QComboBox *obj,
     }
   }
 
-  KConfig *conf = KGlobal::config();
+  KSharedConfig::Ptr conf = KGlobal::config();
   conf->setGroup(group);
   conf->writePathEntry(entry, sl);
 }

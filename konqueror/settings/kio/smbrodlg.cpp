@@ -38,8 +38,8 @@
 typedef KGenericFactory<SMBRoOptions> SMBRoOptionsFactory;
 K_EXPORT_COMPONENT_FACTORY(smb, SMBRoOptionsFactory("kcmkio"))
 
-SMBRoOptions::SMBRoOptions(QWidget *parent, const QStringList &, KInstance* inst)
-  : KCModule(inst ? inst : SMBRoOptionsFactory::instance(), parent)
+SMBRoOptions::SMBRoOptions(QWidget *parent, const QStringList &, const KComponentData &componentData)
+  : KCModule(componentData.isValid() ? componentData : SMBRoOptionsFactory::componentData(), parent)
 {
    QGridLayout *layout = new QGridLayout(this );
    layout->setMargin( KDialog::marginHint() );

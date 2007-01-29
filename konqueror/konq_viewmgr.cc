@@ -1077,7 +1077,7 @@ void KonqViewManager::saveViewProfile( const QString & fileName, const QString &
 {
 
   QString path = KStandardDirs::locateLocal( "data", QString::fromLatin1( "konqueror/profiles/" ) +
-                                          fileName, KGlobal::instance() );
+                                          fileName, KGlobal::mainComponent() );
 
   if ( QFile::exists( path ) )
     QFile::remove( path );
@@ -1296,7 +1296,7 @@ void KonqViewManager::loadViewProfile( KConfig &cfg, const QString & filename,
 
   if( resetWindow )
   { // force default settings for the GUI
-     m_pMainWindow->applyMainWindowSettings( KGlobal::config(), "KonqMainWindow", true );
+     m_pMainWindow->applyMainWindowSettings( KGlobal::config().data(), "KonqMainWindow", true );
   }
 
   // Apply menu/toolbar settings saved in profile. Read from a separate group
@@ -1693,7 +1693,7 @@ void KonqViewManager::profileListDirty( bool broadcast )
     m_bProfileListDirty = true;
 #if 0
   // There's always one profile at least, now...
-  QStringList profiles = KonqFactory::instance()->dirs()->findAllResources( "data", "konqueror/profiles/*", false, true );
+  QStringList profiles = KonqFactory::componentData().dirs()->findAllResources( "data", "konqueror/profiles/*", false, true );
   if ( m_pamProfiles )
       m_pamProfiles->setEnabled( profiles.count() > 0 );
 #endif

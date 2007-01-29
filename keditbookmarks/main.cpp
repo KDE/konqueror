@@ -87,7 +87,7 @@ static bool askUser(QString filename, bool &readonly) {
                 int ret = KMessageBox::warningYesNo(0,
                 i18n("Another instance of %1 is already running, do you really "
                 "want to open another instance or continue work in the same instance?\n"
-                "Please note that, unfortunately, duplicate views are read-only.", kapp->caption()),
+                "Please note that, unfortunately, duplicate views are read-only.", KGlobal::caption()),
                 i18n("Warning"),
                 KGuiItem(i18n("Run Another")),    /* yes */
                 KGuiItem(i18n("Continue in Same")) /*  no */);

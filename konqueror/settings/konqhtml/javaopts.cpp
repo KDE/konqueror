@@ -48,8 +48,8 @@ JavaPolicies::~JavaPolicies() {
 // == class KJavaOptions =====
 
 KJavaOptions::KJavaOptions( KSharedConfig::Ptr config, QString group,
-                            KInstance *inst, QWidget *parent )
-    : KCModule( inst, parent ),
+                            const KComponentData &componentData, QWidget *parent )
+    : KCModule( componentData, parent ),
       _removeJavaScriptDomainAdvice(false),
       m_pConfig( config ),
       m_groupname( group ),

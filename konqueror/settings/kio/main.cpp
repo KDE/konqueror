@@ -27,7 +27,7 @@
 
 #include <kcmoduleloader.h>
 #include <klocale.h>
-#include <kinstance.h>
+#include <kcomponentdata.h>
 
 #include "kcookiesmain.h"
 #include "netpref.h"
@@ -43,7 +43,7 @@ typedef KGenericFactory<LanBrowser> LanBrowserFactory;
 K_EXPORT_COMPONENT_FACTORY(lanbrowser, LanBrowserFactory("kcmkio"))
 
 LanBrowser::LanBrowser(QWidget *parent, const QStringList &)
-    : KCModule(LanBrowserFactory::instance(), parent)
+    : KCModule(LanBrowserFactory::componentData(), parent)
     , layout(this)
     , tabs(this)
 {
@@ -66,7 +66,7 @@ LanBrowser::LanBrowser(QWidget *parent, const QStringList &)
    
    layout.addWidget(&tabs);
 
-   smbPage = new SMBRoOptions(&tabs, QStringList(), instance());
+   smbPage = new SMBRoOptions(&tabs, QStringList(), componentData());
    tabs.addTab(smbPage, i18n("&Windows Shares"));
    connect(smbPage,SIGNAL(changed(bool)), SLOT( changed() ));
 
