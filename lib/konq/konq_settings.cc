@@ -26,6 +26,7 @@
 #include <kdebug.h>
 #include <assert.h>
 #include <QFontMetrics>
+#include <kconfiggroup.h>
 
 struct KonqFMSettingsPrivate
 {
@@ -48,7 +49,7 @@ KonqFMSettings * KonqFMSettings::settings()
 {
   if (!s_pSettings)
   {
-    KConfig *config = KGlobal::config();
+    KSharedConfig::Ptr config = KGlobal::config();
     KConfigGroup cgs(config, "FMSettings");
     s_pSettings = new KonqFMSettings(config);
   }
@@ -60,16 +61,16 @@ void KonqFMSettings::reparseConfiguration()
 {
   if (s_pSettings)
   {
-    KConfig *config = KGlobal::config();
+    KSharedConfig::Ptr config = KGlobal::config();
     KConfigGroup cgs(config, "FMSettings");
     s_pSettings->init( config );
   }
 }
 
-KonqFMSettings::KonqFMSettings( KConfig * config )
+KonqFMSettings::KonqFMSettings(const KSharedConfigPtr &config)
 {
   d = new KonqFMSettingsPrivate;
-  init( config );
+  init(config);
 }
 
 KonqFMSettings::~KonqFMSettings()
@@ -77,7 +78,7 @@ KonqFMSettings::~KonqFMSettings()
   delete d;
 }
 
-void KonqFMSettings::init( KConfig * config )
+void KonqFMSettings::init(const KSharedConfigPtr &config)
 {
   // Fonts and colors
   m_standardFont = config->readEntry( "StandardFont", QFont() );

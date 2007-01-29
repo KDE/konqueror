@@ -21,7 +21,7 @@ typedef KGenericFactory<KCookiesMain> KCookiesMainFactory;
 K_EXPORT_COMPONENT_FACTORY(cookie, KCookiesMainFactory("kcmkio"))
 
 KCookiesMain::KCookiesMain(QWidget *parent, const QStringList &)
-  : KCModule(KCookiesMainFactory::instance(), parent)
+  : KCModule(KCookiesMainFactory::componentData(), parent)
 {
     management = 0;
     bool managerOK = true;
@@ -42,13 +42,13 @@ KCookiesMain::KCookiesMain(QWidget *parent, const QStringList &)
     tab = new QTabWidget(this);
     layout->addWidget(tab);
 
-    policies = new KCookiesPolicies(instance(), this);
+    policies = new KCookiesPolicies(componentData(), this);
     tab->addTab(policies, i18n("&Policy"));
     connect(policies, SIGNAL(changed(bool)), SIGNAL(changed(bool)));
 
     if( managerOK )
     {
-        management = new KCookiesManagement(instance(), this);
+        management = new KCookiesManagement(componentData(), this);
         tab->addTab(management, i18n("&Management"));
         connect(management, SIGNAL(changed(bool)), SIGNAL(changed(bool)));
     }

@@ -21,7 +21,7 @@ typedef KGenericFactory<KIOPreferences> KIOPreferencesFactory;
 K_EXPORT_COMPONENT_FACTORY(netpref, KIOPreferencesFactory("kcmkio"))
 
 KIOPreferences::KIOPreferences(QWidget *parent, const QStringList &)
-    : KCModule(KIOPreferencesFactory::instance(), parent)
+    : KCModule(KIOPreferencesFactory::componentData(), parent)
 {
     QVBoxLayout* mainLayout = new QVBoxLayout( this );
     mainLayout->setMargin( 0 );

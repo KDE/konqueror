@@ -44,6 +44,7 @@
 #include <QtDBus/QtDBus>
 #include <QDir>
 #include <QPixmap>
+#include <kconfiggroup.h>
 
 /*
  Test cases:

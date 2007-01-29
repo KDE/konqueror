@@ -13,8 +13,8 @@
 #include <QToolButton>
 #include <QApplication>
 
-KonqSidebar_Tree::KonqSidebar_Tree(KInstance *instance,QObject *parent,QWidget *widgetParent, QString &desktopName_, const char* name):
-                   KonqSidebarPlugin(instance,parent,widgetParent,desktopName_,name)
+KonqSidebar_Tree::KonqSidebar_Tree(const KComponentData &componentData,QObject *parent,QWidget *widgetParent, QString &desktopName_, const char* name):
+                   KonqSidebarPlugin(componentData,parent,widgetParent,desktopName_,name)
 {
 	KSimpleConfig ksc(desktopName_);
 	ksc.setGroup("Desktop Entry");
@@ -115,9 +115,9 @@ void KonqSidebar_Tree::rename()
 
 extern "C"
 {
-    KDE_EXPORT void*  create_konqsidebar_tree(KInstance *inst,QObject *par,QWidget *widp,QString &desktopname,const char *name)
+    KDE_EXPORT void*  create_konqsidebar_tree(const KComponentData &componentData,QObject *par,QWidget *widp,QString &desktopname,const char *name)
     {
-        return new KonqSidebar_Tree(inst,par,widp,desktopname,name);
+        return new KonqSidebar_Tree(componentData,par,widp,desktopname,name);
     }
 }
 

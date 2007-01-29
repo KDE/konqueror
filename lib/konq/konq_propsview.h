@@ -25,10 +25,9 @@
 
 #include <kurl.h>
 #include <libkonq_export.h>
+#include <kconfig.h>
 
-class KInstance;
-class KConfigBase;
-class KConfig;
+class KComponentData;
 
 /**
  * The class KonqPropsView holds the properties for a Konqueror View
@@ -51,7 +50,7 @@ public:
    * is the one used by a view, and its value can differ from the default ones.
    * The instance parameter should be the same for both...
    */
-  KonqPropsView( KInstance * instance, KonqPropsView * defaultProps /*= 0L*/ );
+  KonqPropsView(const KComponentData &instance, KonqPropsView *defaultProps /*= 0L*/);
 
   /** Destructor */
   virtual ~KonqPropsView();
@@ -126,10 +125,10 @@ protected:
   QPixmap loadPixmap() const;
 
   // Current config object for _saving_
-  KConfigBase * currentConfig();
+  KSharedConfigPtr currentConfig();
 
   // Current config object for _saving_ settings related to colors
-  KConfigBase * currentColorConfig();
+  KSharedConfigPtr currentColorConfig();
 
   QString currentGroup() const {
       return isDefaultProperties() ? 
@@ -161,7 +160,7 @@ private:
   // It is set to 0L to mark it as "needs to be constructed".
   // This is to be used for SAVING only.
   // Can be a KConfig or a KSimpleConfig
-  KConfigBase * m_currentConfig;
+  KSharedConfigPtr m_currentConfig;
 
   // If this is not a "default properties" instance (but one used by a view)
   // then m_defaultProps points to the "default properties" instance

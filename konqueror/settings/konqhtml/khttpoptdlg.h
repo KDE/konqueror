@@ -19,7 +19,7 @@ class KHTTPOptions : public KCModule
 {
 Q_OBJECT
   public:
-    KHTTPOptions(KSharedConfig::Ptr config, QString group, KInstance *inst, QWidget *parent);
+    KHTTPOptions(KSharedConfig::Ptr config, QString group, const KComponentData &componentData, QWidget *parent);
 
     virtual void load();
     virtual void save();

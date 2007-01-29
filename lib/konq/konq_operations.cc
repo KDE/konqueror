@@ -60,6 +60,7 @@
 
 #include <assert.h>
 #include <unistd.h>
+#include <kconfiggroup.h>
 
 KonqOperations::KonqOperations( QWidget *parent )
     : QObject( parent ),
@@ -279,7 +280,7 @@ bool KonqOperations::askDeleteConfirmation( const KUrl::List & selectedUrls, int
         if (!keyName.isEmpty())
         {
             // Check kmessagebox setting... erase & copy to konquerorrc.
-            KConfig *config = KGlobal::config();
+            KSharedConfig::Ptr config = KGlobal::config();
             KConfigGroup saver(config, "Notification Messages");
             if (!saver.readEntry(keyName, QVariant(true)).toBool())
             {
@@ -633,7 +634,7 @@ void KonqOperations::rename( QWidget * parent, const KUrl & oldurl, const KUrl& 
     if ( oldurl.isLocalFile() && oldurl.path( KUrl::AddTrailingSlash ) == KGlobalSettings::desktopPath() )
     {
         kDebug(1203) << "That rename was the Desktop path, updating config files" << endl;
-        KConfig *globalConfig = KGlobal::config();
+        KSharedConfig::Ptr globalConfig = KGlobal::config();
         KConfigGroup cgs( globalConfig, "Paths" );
         cgs.writePathEntry("Desktop" , newurl.path(), KConfigBase::Persistent|KConfigBase::Global );
         cgs.sync();

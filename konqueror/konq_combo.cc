@@ -38,6 +38,7 @@
 
 #include "konq_view.h"
 #include "konq_combo.h"
+#include <kconfiggroup.h>
 
 KConfig * KonqCombo::s_config = 0L;
 const int KonqCombo::temporary = 0;

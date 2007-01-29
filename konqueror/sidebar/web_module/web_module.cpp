@@ -32,8 +32,8 @@
 #include <khbox.h>
 
 
-KonqSideBarWebModule::KonqSideBarWebModule(KInstance *instance, QObject *parent, QWidget *widgetParent, QString &desktopName, const char* name)
-	: KonqSidebarPlugin(instance, parent, widgetParent, desktopName, name)
+KonqSideBarWebModule::KonqSideBarWebModule(const KComponentData &componentData, QObject *parent, QWidget *widgetParent, QString &desktopName, const char* name)
+	: KonqSidebarPlugin(componentData, parent, widgetParent, desktopName, name)
 {
 	_htmlPart = new KHTMLSideBar(universalMode());
 	connect(_htmlPart, SIGNAL(reload()), this, SLOT(reload()));
@@ -187,8 +187,8 @@ void KonqSideBarWebModule::pageLoaded() {
 
 
 extern "C" {
-	KDE_EXPORT KonqSidebarPlugin* create_konqsidebar_web(KInstance *instance, QObject *parent, QWidget *widget, QString &desktopName, const char *name) {
-		return new KonqSideBarWebModule(instance, parent, widget, desktopName, name);
+	KDE_EXPORT KonqSidebarPlugin* create_konqsidebar_web(const KComponentData &componentData, QObject *parent, QWidget *widget, QString &desktopName, const char *name) {
+		return new KonqSideBarWebModule(componentData, parent, widget, desktopName, name);
 	}
 }
 

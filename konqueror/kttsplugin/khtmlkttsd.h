@@ -19,7 +19,6 @@
 #include <kparts/plugin.h>
 
 class KUrl;
-class KInstance;
 
 /**
  * KHTML KParts Plugin

@@ -22,7 +22,7 @@
 
 K_EXPORT_COMPONENT_FACTORY( konq_aboutpage, KonqAboutPageFactory )
 
-KInstance *KonqAboutPageFactory::s_instance = 0;
+KComponentData *KonqAboutPageFactory::s_instance = 0;
 QString *KonqAboutPageFactory::s_launch_html = 0;
 QString *KonqAboutPageFactory::s_intro_html = 0;
 QString *KonqAboutPageFactory::s_specs_html = 0;
@@ -32,7 +32,7 @@ QString *KonqAboutPageFactory::s_plugins_html = 0;
 KonqAboutPageFactory::KonqAboutPageFactory( QObject *parent )
     : KParts::Factory( parent )
 {
-    s_instance = new KInstance( "konqaboutpage" );
+    s_instance = new KComponentData("konqaboutpage");
 }
 
 KonqAboutPageFactory::~KonqAboutPageFactory()

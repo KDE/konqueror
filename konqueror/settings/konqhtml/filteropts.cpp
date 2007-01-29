@@ -41,7 +41,7 @@ typedef KGenericFactory<KCMFilter, QWidget> KCMFilterFactory;
 K_EXPORT_COMPONENT_FACTORY( khtml_filter, KCMFilterFactory("kcmkonqhtml") )
 
 KCMFilter::KCMFilter( QWidget *parent, const QStringList& )
-    : KCModule( KCMFilterFactory::instance(), parent ),
+    : KCModule( KCMFilterFactory::componentData(), parent ),
       mGroupname( "Filter Settings" ),
       mSelCount(0)
 {

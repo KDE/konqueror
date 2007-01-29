@@ -46,7 +46,7 @@ typedef KGenericFactory<KJSParts, QWidget> KJSPartsFactory;
 K_EXPORT_COMPONENT_FACTORY( khtml_java_js, KJSPartsFactory("kcmkonqhtml") )
 
 KJSParts::KJSParts(QWidget *parent, const QStringList&)
-	: KCModule(KJSPartsFactory::instance(), parent)
+	: KCModule(KJSPartsFactory::componentData(), parent)
 {
   mConfig = KSharedConfig::openConfig( "konquerorrc", false, false );
   KAboutData *about =
@@ -73,11 +73,11 @@ KJSParts::KJSParts(QWidget *parent, const QStringList&)
   layout->addWidget(tab);
 
   // ### the groupname is duplicated in KJSParts::save
-  java = new KJavaOptions( mConfig, "Java/JavaScript Settings", instance(), this );
+  java = new KJavaOptions( mConfig, "Java/JavaScript Settings", componentData(), this );
   tab->addTab( java, i18n( "&Java" ) );
   connect( java, SIGNAL( changed( bool ) ), SIGNAL( changed( bool ) ) );
 
-  javascript = new KJavaScriptOptions( mConfig, "Java/JavaScript Settings", instance(), this );
+  javascript = new KJavaScriptOptions( mConfig, "Java/JavaScript Settings", componentData(), this );
   tab->addTab( javascript, i18n( "Java&Script" ) );
   connect( javascript, SIGNAL( changed( bool ) ), SIGNAL( changed( bool ) ) );
 }

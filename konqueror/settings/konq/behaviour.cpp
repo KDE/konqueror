@@ -34,7 +34,7 @@ typedef KonqKcmFactory<KBehaviourOptions> KBehaviourOptionsFactory;
 K_EXPORT_COMPONENT_FACTORY(behavior, KBehaviourOptionsFactory)
 
 KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QStringList &)
-    : KCModule(_globalInstance(), parent)
+    : KCModule(KonqKcmFactory<KBehaviourOptions>::componentData(), parent)
     , g_pConfig(KSharedConfig::openConfig("konquerorrc", false, true))
     , groupname("FMSettings")
 {

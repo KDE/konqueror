@@ -55,7 +55,7 @@ typedef KonqKcmFactory<DesktopBehaviorModule> DesktopBehaviorModuleFactory;
 K_EXPORT_COMPONENT_FACTORY(dbehavior, DesktopBehaviorModuleFactory)
 
 DesktopBehaviorModule::DesktopBehaviorModule(QWidget *parent, const QStringList &)
-    : KCModule( _globalInstance(), parent )
+    : KCModule( KonqKcmFactory<DesktopBehaviorModule>::componentData(), parent )
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig(_desktopConfigName(), false, false);
     QVBoxLayout* layout = new QVBoxLayout(this);

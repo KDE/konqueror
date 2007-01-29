@@ -1,5 +1,5 @@
 /*  This file is part of the KDE project
-    Copyright (C) 2006 Matthias Kretz <kretz@kde.org>
+    Copyright (C) 2006-2007 Matthias Kretz <kretz@kde.org>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Library General Public
@@ -18,19 +18,9 @@
 */
 
 #include "konqkcmfactory.h"
-#include <kinstance.h>
+#include <kcomponentdata.h>
 #include <QDesktopWidget>
 #include <kapplication.h>
-
-static KInstance *_kcmkonq = 0;
-
-KInstance* _globalInstance()
-{
-    if (_kcmkonq)
-        return _kcmkonq;
-    _kcmkonq = new KInstance("kcmkonq");
-    return _kcmkonq;
-}
 
 QString _desktopConfigName()
 {
@@ -44,4 +34,4 @@ QString _desktopConfigName()
     return name;
 }
 
-// vim: sw=4 ts=4 noet
+// vim: sw=4 ts=4 et

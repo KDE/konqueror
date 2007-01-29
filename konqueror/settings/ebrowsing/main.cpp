@@ -43,7 +43,7 @@ K_EXPORT_COMPONENT_FACTORY( kurifilt, KURIFactory("kcmkurifilt") )
 class FilterOptions;
 
 KURIFilterModule::KURIFilterModule(QWidget *parent, const QStringList &)
-                 :KCModule(KURIFactory::instance(), parent)
+                 :KCModule(KURIFactory::componentData(), parent)
 {
 
     filter = KUriFilter::self();

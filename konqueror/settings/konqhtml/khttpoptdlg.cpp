@@ -8,8 +8,8 @@
 #include "khttpoptdlg.h"
 
 
-KHTTPOptions::KHTTPOptions(KSharedConfig::Ptr config, QString group, KInstance *inst, QWidget *parent)
-  : KCModule( inst, parent ), m_pConfig(config), m_groupname(group)
+KHTTPOptions::KHTTPOptions(KSharedConfig::Ptr config, QString group, const KComponentData &componentData, QWidget *parent)
+  : KCModule( componentData, parent ), m_pConfig(config), m_groupname(group)
 {
   QVBoxLayout *lay = new QVBoxLayout(this);
   lay->setMargin(10);

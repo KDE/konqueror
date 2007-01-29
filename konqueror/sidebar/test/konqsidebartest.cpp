@@ -15,12 +15,12 @@
  *                                                                         *
  ***************************************************************************/
 #include "konqsidebartest.moc"
-#include <kinstance.h>
+#include <kcomponentdata.h>
 
 extern "C"
 {
-    KDE_EXPORT void* create_konq_sidebartest(KInstance *instance,QObject *par,QWidget *widp,QString &desktopname,const char *name)
+    KDE_EXPORT void* create_konq_sidebartest(const KComponentData &componentData,QObject *par,QWidget *widp,QString &desktopname,const char *name)
     {
-        return new SidebarTest(instance,par,widp,desktopname,name);
+        return new SidebarTest(componentData,par,widp,desktopname,name);
     }
 };

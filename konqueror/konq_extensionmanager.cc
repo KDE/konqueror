@@ -22,7 +22,7 @@
 #include <kconfig.h>
 #include <kdebug.h>
 #include <klocale.h>
-#include <kinstance.h>
+#include <kcomponentdata.h>
 #include <kparts/componentfactory.h>
 #include <kparts/plugin.h>
 #include <kplugininfo.h>
@@ -78,9 +78,9 @@ KonqExtensionManager::KonqExtensionManager(QWidget *parent, KonqMainWindow *main
 	// have their config in the same KConfig[Group]. So we can't show konqueror extensions and khtml extensions in the same tab.
 	d->pluginSelector->addPlugins("konqueror", i18n("Extensions"), "Extensions", KGlobal::config());
 	if ( activePart ) {
-		KInstance* instance = activePart->instance();
-		d->pluginSelector->addPlugins(instance->instanceName(), i18n("Tools"), "Tools", instance->config());
-		d->pluginSelector->addPlugins(instance->instanceName(), i18n("Statusbar"), "Statusbar", instance->config());
+		KComponentData componentData = activePart->componentData();
+		d->pluginSelector->addPlugins(componentData.componentName(), i18n("Tools"), "Tools", componentData.config());
+		d->pluginSelector->addPlugins(componentData.componentName(), i18n("Statusbar"), "Statusbar", componentData.config());
 	}
 
   connect( this, SIGNAL( okClicked() ), SLOT( slotOk() ) );
@@ -108,7 +108,7 @@ void KonqExtensionManager::apply()
   	setChanged(false);
 	  if( d->mainWindow )
  		{
-  		KParts::Plugin::loadPlugins(d->mainWindow, d->mainWindow, KGlobal::instance());
+  		KParts::Plugin::loadPlugins(d->mainWindow, d->mainWindow, KGlobal::mainComponent());
 	  	QList<KParts::Plugin*> plugins = KParts::Plugin::pluginObjects(d->mainWindow);
                          for (int i = 0; i < plugins.size(); ++i) {
  			d->mainWindow->factory()->addClient(plugins.at(i));
@@ -116,7 +116,7 @@ void KonqExtensionManager::apply()
  		}
   	if ( d->activePart )
 	  {
- 			KParts::Plugin::loadPlugins( d->activePart, d->activePart, d->activePart->instance() );
+ 			KParts::Plugin::loadPlugins( d->activePart, d->activePart, d->activePart->componentData() );
   		QList<KParts::Plugin*> plugins = KParts::Plugin::pluginObjects( d->activePart );
 	  	for (int i = 0; i < plugins.size(); ++i) {
 		  	d->activePart->factory()->addClient(plugins.at(i));

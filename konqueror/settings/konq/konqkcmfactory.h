@@ -1,5 +1,5 @@
 /*  This file is part of the KDE project
-    Copyright (C) 2006 Matthias Kretz <kretz@kde.org>
+    Copyright (C) 2006-2007 Matthias Kretz <kretz@kde.org>
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Library General Public
@@ -21,9 +21,8 @@
 #define KONQKCMFACTORY_H
 
 #include <kgenericfactory.h>
-class KInstance;
+#include <kcomponentdata.h>
 
-KInstance* _globalInstance();
 QString _desktopConfigName();
 
 template<class T>
@@ -31,6 +30,9 @@ class KonqKcmFactory : public KGenericFactory<T>
 {
     public:
         KonqKcmFactory() : KGenericFactory<T>("kcmkonq") {}
+
+    protected:
+        virtual KComponentData *createComponentData() { return new KComponentData("kcmkonq"); }
 };
 
 #endif // KONQKCMFACTORY_H

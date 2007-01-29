@@ -44,15 +44,15 @@ typedef KGenericFactory<KProxyOptions> KProxyOptionsFactory;
 K_EXPORT_COMPONENT_FACTORY(proxy, KProxyOptionsFactory("kcmkio"))
 
 KProxyOptions::KProxyOptions(QWidget *parent, const QStringList &)
-    : KCModule(KProxyOptionsFactory::instance(), parent)
+    : KCModule(KProxyOptionsFactory::componentData(), parent)
 {
   QVBoxLayout *layout = new QVBoxLayout(this);
   
   mTab = new QTabWidget(this);
   layout->addWidget(mTab);
 
-  mProxy  = new KProxyDialog(instance(), mTab);
-  mSocks = new KSocksConfig(instance(), mTab);
+  mProxy  = new KProxyDialog(componentData(), mTab);
+  mSocks = new KSocksConfig(componentData(), mTab);
 
   mTab->addTab(mProxy, i18n("&Proxy"));
   mTab->addTab(mSocks, i18n("&SOCKS"));
@@ -98,8 +98,8 @@ QString KProxyOptions::quickHelp() const
 }
 
 
-KProxyDialog::KProxyDialog( KInstance *inst, QWidget* parent)
-             :KCModule( inst, parent )
+KProxyDialog::KProxyDialog(const KComponentData &componentData, QWidget* parent)
+             :KCModule(componentData, parent)
 {
   QVBoxLayout* mainLayout = new QVBoxLayout( this );
   mainLayout->setMargin( KDialog::marginHint() );

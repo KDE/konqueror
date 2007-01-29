@@ -28,6 +28,8 @@ class KConfig;
 
 #include <libkonq_export.h>
 
+class KSharedConfigPtr;
+
 /**
  * The class KonqFMSettings holds the general settings for the
  * icon/tree views in konqueror/kdesktop.
@@ -48,7 +50,7 @@ protected:
    * @internal
    * Constructs a KonqFMSettings instance from a config file.
    */
-  KonqFMSettings( KConfig * config );
+  KonqFMSettings(const KSharedConfigPtr &config);
 
   /** Destructor. Don't delete any instance by yourself. */
   virtual ~KonqFMSettings();
@@ -128,7 +130,7 @@ private:
   int m_iconTransparency;
 
   /** Called by constructor and reparseConfiguration */
-  void init( KConfig * config );
+  void init(const KSharedConfigPtr &config);
 
   struct KonqFMSettingsPrivate * d;
 

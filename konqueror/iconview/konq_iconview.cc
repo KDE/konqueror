@@ -82,27 +82,27 @@ public:
       return obj;
    }
 
-   static KInstance *instance()
+   static const KComponentData &componentData()
    {
       if ( !s_instance )
-         s_instance = new KInstance( "konqiconview" );
-      return s_instance;
+         s_instance = new KComponentData("konqiconview");
+      return *s_instance;
    }
 
    static KonqPropsView *defaultViewProps()
    {
       if ( !s_defaultViewProps )
-         s_defaultViewProps = new KonqPropsView( instance(), 0L );
+         s_defaultViewProps = new KonqPropsView( componentData(), 0L );
 
       return s_defaultViewProps;
    }
 
    private:
-      static KInstance *s_instance;
+      static KComponentData *s_instance;
       static KonqPropsView *s_defaultViewProps;
 };
 
-KInstance *KonqIconViewFactory::s_instance = 0;
+KComponentData *KonqIconViewFactory::s_instance = 0;
 KonqPropsView *KonqIconViewFactory::s_defaultViewProps = 0;
 
 
@@ -177,7 +177,7 @@ KonqKfmIconView::KonqKfmIconView( QWidget *parentWidget, QObject *parent, const 
     setBrowserExtension( new IconViewBrowserExtension( this ) );
 
     // Create a properties instance for this view
-    m_pProps = new KonqPropsView( KonqIconViewFactory::instance(), KonqIconViewFactory::defaultViewProps() );
+    m_pProps = new KonqPropsView( KonqIconViewFactory::componentData(), KonqIconViewFactory::defaultViewProps() );
 
     m_pIconView = new KonqIconViewWidget( parentWidget );
     m_pIconView->initConfig( true );
@@ -202,7 +202,7 @@ KonqKfmIconView::KonqKfmIconView( QWidget *parentWidget, QObject *parent, const 
     setWidget( m_pIconView );
     m_mimeTypeResolver = new K3MimeTypeResolver<KFileIVI,KonqKfmIconView>(this);
 
-    setInstance( KonqIconViewFactory::instance() );
+    setComponentData( KonqIconViewFactory::componentData() );
 
     setXMLFile( "konq_iconview.rc" );
 

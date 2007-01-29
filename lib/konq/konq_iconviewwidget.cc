@@ -62,6 +62,7 @@
 #include <assert.h>
 #include <unistd.h>
 #include <klocale.h>
+#include <kconfiggroup.h>
 
 
 struct KonqIconViewWidgetPrivate
@@ -348,6 +349,7 @@ void KonqIconViewWidget::slotOnItem( Q3IconViewItem *_item )
     }
 
     // ## shouldn't this be disabled during rectangular selection too ?
+    kDebug(1203) << "about to start sound preview: bSoundPreviews=" << d->bSoundPreviews << ", pSoundPlayer=" << d->pSoundPlayer << ", isMimeTypeKnown=" << d->pSoundPlayer->isMimeTypeKnown(item->item()->mimetype()) << ", showFilePreview=" << KGlobalSettings::showFilePreview(item->item()->url()) << ", activeWindow=" << (window() == qApp->activeWindow()) << endl;
     if (d->bSoundPreviews && d->pSoundPlayer &&
         d->pSoundPlayer->isMimeTypeKnown(item->item()->mimetype())
         && KGlobalSettings::showFilePreview(item->item()->url())

@@ -46,7 +46,7 @@ typedef KGenericFactory<HistorySidebarConfig, QWidget > KCMHistoryFactory;
 K_EXPORT_COMPONENT_FACTORY (history, KCMHistoryFactory("kcmhistory") )
 
 HistorySidebarConfig::HistorySidebarConfig( QWidget *parent, const QStringList & )
-    : KCModule (KCMHistoryFactory::instance(), parent, QStringList())
+    : KCModule (KCMHistoryFactory::componentData(), parent, QStringList())
 {
     KGlobal::locale()->insertCatalog("konqueror");
 

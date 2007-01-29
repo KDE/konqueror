@@ -42,7 +42,7 @@ KonqPart::KonqPart( QWidget* parentWidget, QObject* parent, const QStringList& a
         ,m_fileTip( new KonqFileTip( 0 /* m_view*/ ) )
 {
     KonqFMSettings* settings = KonqFMSettings::settings();
-    setInstance( KonqFactory::instance() );
+    setComponentData( KonqFactory::componentData() );
     setBrowserExtension( new KonqDirPartBrowserExtension( this ) );
     setDirLister( m_model->dirLister() );
 

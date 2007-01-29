@@ -49,7 +49,7 @@ typedef KGenericFactory<UserAgentDlg> UserAgentDlgFactory;
 K_EXPORT_COMPONENT_FACTORY(useragent, UserAgentDlgFactory("kcmkio"))
 
 UserAgentDlg::UserAgentDlg(QWidget *parent, const QStringList &)
-    : KCModule(UserAgentDlgFactory::instance(), parent)
+    : KCModule(UserAgentDlgFactory::componentData(), parent)
 {
   QVBoxLayout *mainLayout = new QVBoxLayout(this);
   mainLayout->setMargin(0);

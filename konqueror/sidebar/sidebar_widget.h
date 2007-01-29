@@ -141,7 +141,7 @@ Q_SIGNALS:
 
 public:
 	/* interface KonqSidebar_PluginInterface*/
-	KInstance  *getInstance();
+	const KComponentData &getInstance();
 //        virtual void showError(QString &);      for later extension
 //        virtual void showMessage(QString &);    for later extension
 	/* end of interface implementation */

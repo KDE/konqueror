@@ -137,6 +137,7 @@
 #include <kstaticdeleter.h>
 #include "konq_mainwindow_p.h"
 #include <QtDBus/QtDBus>
+#include <kconfiggroup.h>
 
 template class QList<QPixmap*>;
 template class QList<KToggleAction*>;
@@ -237,7 +238,7 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, bool openInitialURL, con
   initCombo();
   initActions();
 
-  setInstance( KGlobal::instance() );
+  setComponentData( KGlobal::mainComponent() );
 
   connect( KSycoca::self(), SIGNAL( databaseChanged() ),
            this, SLOT( slotDatabaseChanged() ) );
@@ -1945,7 +1946,7 @@ void KonqMainWindow::slotConfigureSpellChecking()
 void KonqMainWindow::slotConfigureToolbars()
 {
   if ( autoSaveSettings() )
-    saveMainWindowSettings( KGlobal::config(), "KonqMainWindow" );
+    saveMainWindowSettings( KGlobal::config().data(), "KonqMainWindow" );
   KEditToolbar dlg(factory());
   connect(&dlg,SIGNAL(newToolbarConfig()),this,SLOT(slotNewToolbarConfig()));
   connect(&dlg,SIGNAL(newToolbarConfig()),this,SLOT(initBookmarkBar()));
@@ -1961,7 +1962,7 @@ void KonqMainWindow::slotNewToolbarConfig() // This is called when OK or Apply i
 
     plugViewModeActions();
 
-    applyMainWindowSettings( KGlobal::config(), "KonqMainWindow" );
+    applyMainWindowSettings( KGlobal::config().data(), "KonqMainWindow" );
 }
 
 void KonqMainWindow::slotUndoAvailable( bool avail )
@@ -2105,7 +2106,7 @@ void KonqMainWindow::slotViewCompleted( KonqView * view )
 void KonqMainWindow::slotPartActivated( KParts::Part *part )
 {
   kDebug(1202) << "KonqMainWindow::slotPartActivated " << part << " "
-                <<  ( part && part->instance() && part->instance()->aboutData() ? part->instance()->aboutData()->appName() : "" ) << endl;
+                <<  ( part && part->componentData().isValid() && part->componentData().aboutData() ? part->componentData().aboutData()->appName() : "" ) << endl;
 
   KonqView *newView = 0;
   KonqView *oldView = m_currentView;
@@ -2235,7 +2236,7 @@ void KonqMainWindow::slotPartActivated( KParts::Part *part )
 
   updateToolBarActions();
 
-  m_currentView->setActiveInstance();
+  m_currentView->setActiveComponent();
 }
 
 void KonqMainWindow::insertChildView( KonqView *childView )
@@ -3462,7 +3463,7 @@ void KonqMainWindow::slotForceSaveMainWindowSettings()
 //  kDebug(1202)<<"slotForceSaveMainWindowSettings()"<<endl;
   if ( autoSaveSettings() ) // don't do it on e.g. JS window.open windows with no toolbars!
   {
-      saveMainWindowSettings( KGlobal::config(), "KonqMainWindow" );
+      saveMainWindowSettings( KGlobal::config().data(), "KonqMainWindow" );
       KGlobal::config()->sync();
   }
 }
@@ -4534,7 +4535,7 @@ void KonqMainWindow::setCaption( const QString &caption )
   {
     kDebug(1202) << "KonqMainWindow::setCaption(" << caption << ")" << endl;
 
-    // Keep an unmodified copy of the caption (before KInstance::makeStdCaption is applied)
+    // Keep an unmodified copy of the caption (before KComponentData::makeStdCaption is applied)
     m_currentView->setCaption( caption );
     KParts::MainWindow::setCaption( m_currentView->caption() );
   }
@@ -5108,7 +5109,7 @@ void KonqMainWindow::updateViewModeActions()
   // Another temporary map, the preferred service for each library (2 entries in our example)
   QMap<QString,QString> preferredServiceMap;
 
-  KConfig * config = KGlobal::config();
+  KSharedConfig::Ptr config = KGlobal::config();
   KConfigGroup barServicesGroup( config, "ModeToolBarServices" );
 
   KService::List::ConstIterator it = services.begin();
@@ -5241,7 +5242,7 @@ void KonqMainWindow::saveToolBarServicesMap()
 {
     QMap<QString,KService::Ptr>::ConstIterator serviceIt = m_viewModeToolBarServices.begin();
     QMap<QString,KService::Ptr>::ConstIterator serviceEnd = m_viewModeToolBarServices.end();
-    KConfig * config = KGlobal::config();
+    KSharedConfig::Ptr config = KGlobal::config();
     KConfigGroup barServicesGroup( config, "ModeToolBarServices" );
     for ( ; serviceIt != serviceEnd ; ++serviceIt )
         barServicesGroup.writeEntry( serviceIt.key(), serviceIt.value()->desktopEntryName() );
@@ -5288,7 +5289,7 @@ void KonqMainWindow::closeEvent( QCloseEvent *e )
       KonqFrameTabs* tabContainer = static_cast<KonqFrameTabs*>(viewManager()->docContainer());
       if ( tabContainer->count() > 1 )
       {
-        KConfig *config = KGlobal::config();
+        KSharedConfig::Ptr config = KGlobal::config();
         KConfigGroup cs( config, QLatin1String("Notification Messages") );
 
         if ( !config->hasKey( "MultipleTabConfirm" ) )
@@ -6014,7 +6015,7 @@ void KonqMainWindow::saveWindowSize() const
     QString savedGroup = KGlobal::config()->group();
     KGlobal::config()->setGroup( "KonqMainWindow_Size" );
 
-    KParts::MainWindow::saveWindowSize( KGlobal::config() );
+    KParts::MainWindow::saveWindowSize( KGlobal::config().data() );
 
     KGlobal::config()->setGroup( savedGroup );
     KGlobal::config()->sync();
@@ -6025,7 +6026,7 @@ void KonqMainWindow::restoreWindowSize()
     QString savedGroup = KGlobal::config()->group();
     KGlobal::config()->setGroup( "KonqMainWindow_Size" );
 
-    KParts::MainWindow::restoreWindowSize( KGlobal::config() );
+    KParts::MainWindow::restoreWindowSize( KGlobal::config().data() );
 
     KGlobal::config()->setGroup( savedGroup );
 }

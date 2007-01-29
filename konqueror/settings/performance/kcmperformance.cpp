@@ -38,7 +38,7 @@ namespace KCMPerformance
 {
 
 Config::Config( QWidget* parent_P, const QStringList & )
-    : KCModule( KCMPerformanceConfigFactory::instance(), parent_P )
+    : KCModule( KCMPerformanceConfigFactory::componentData(), parent_P )
     {
     setQuickHelp( i18n( "<h1>KDE Performance</h1>"
         " You can configure settings that improve KDE performance here." ));
@@ -76,7 +76,7 @@ void Config::defaults()
     }
 
 KonquerorConfig::KonquerorConfig( QWidget* parent_P, const QStringList & )
-    : KCModule( KCMPerformanceKonquerorConfigFactory::instance(), parent_P )
+    : KCModule( KCMPerformanceKonquerorConfigFactory::componentData(), parent_P )
     {
     setQuickHelp( i18n( "<h1>Konqueror Performance</h1>"
         " You can configure several settings that improve Konqueror performance here."

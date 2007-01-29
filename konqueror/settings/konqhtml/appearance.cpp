@@ -30,7 +30,7 @@ typedef KGenericFactory<KAppearanceOptions, QWidget> KAppearanceOptionsFactory;
 K_EXPORT_COMPONENT_FACTORY( khtml_fonts, KAppearanceOptionsFactory("kcmkonqhtml") )
 
 KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QStringList&)
-    : KCModule( KAppearanceOptionsFactory::instance(), parent ), m_groupname("HTML Settings"),
+    : KCModule( KAppearanceOptionsFactory::componentData(), parent ), m_groupname("HTML Settings"),
       fSize( 10 ), fMinSize( HTML_DEFAULT_MIN_FONT_SIZE )
 
 {

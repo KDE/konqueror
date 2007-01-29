@@ -26,7 +26,7 @@ KonqSidebar::KonqSidebar( QWidget *parentWidget, QObject *parent, bool universal
 : KParts::ReadOnlyPart(parent),KonqSidebarIface()
 {
 	// we need an instance
-	setInstance( KonqSidebarFactory::instance() );
+	setComponentData(KonqSidebarFactory::componentData());
 	m_extension = 0;
 	// this should be your custom internal widget
 	m_widget = new Sidebar_Widget( parentWidget, this, universalMode, parentWidget->topLevelWidget()->property("currentProfile").toString() );
@@ -40,10 +40,10 @@ KonqSidebar::KonqSidebar( QWidget *parentWidget, QObject *parent, bool universal
 	setWidget(m_widget);
 }
 
-KInstance *KonqSidebar::getInstance()
+const KComponentData &KonqSidebar::getInstance()
 {
 	kDebug() << "KonqSidebar::getInstance()" << endl;
-	return KonqSidebarFactory::instance(); 
+	return KonqSidebarFactory::componentData(); 
 }
 
 KonqSidebar::~KonqSidebar()
@@ -78,9 +78,9 @@ void KonqSidebar::customEvent(QCustomEvent* ev)
 // notable exception of the KAboutData data
 #include <kaboutdata.h>
 #include <klocale.h>
-#include <kinstance.h>
+#include <kcomponentdata.h>
 
-KInstance*  KonqSidebarFactory::s_instance = 0L;
+KComponentData *KonqSidebarFactory::s_instance = 0L;
 KAboutData* KonqSidebarFactory::s_about = 0L;
 
 KonqSidebarFactory::KonqSidebarFactory()
@@ -109,15 +109,15 @@ KParts::Part* KonqSidebarFactory::createPartObject( QWidget *parentWidget, QObje
     return obj;
 }
 
-KInstance* KonqSidebarFactory::instance()
+const KComponentData &KonqSidebarFactory::componentData()
 {
 	if( !s_instance )
 	{
 		s_about = new KAboutData("konqsidebartng", I18N_NOOP("Extended Sidebar"), "0.1");
 		s_about->addAuthor("Joseph WENNINGER", 0, "jowenn@bigfoot.com");
-		s_instance = new KInstance(s_about);
+		s_instance = new KComponentData(s_about);
 	}
-	return s_instance;
+	return *s_instance;
 }
 
 K_EXPORT_COMPONENT_FACTORY( konq_sidebar, KonqSidebarFactory )

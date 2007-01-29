@@ -30,6 +30,7 @@
 #include <kcompletion.h>
 
 #include <zlib.h> // for crc32
+#include <kconfiggroup.h>
 
 
 const int KonqHistoryManager::s_historyVersion = 4;
@@ -40,7 +41,7 @@ KonqHistoryManager::KonqHistoryManager( QObject *parent )
     m_updateTimer = new QTimer( this );
 
     // defaults
-    KConfig *config = KGlobal::config();
+    KSharedConfig::Ptr config = KGlobal::config();
     KConfigGroup cs( config, "HistorySettings" );
     m_maxCount = cs.readEntry( "Maximum of History entries", 500 );
     m_maxCount = qMax( 1, m_maxCount );
@@ -501,7 +502,7 @@ void KonqHistoryManager::slotNotifyMaxCount( int count, const QDBusMessage& msg 
     clearPending();
     adjustSize();
 
-    KConfig *config = KGlobal::config();
+    KSharedConfig::Ptr config = KGlobal::config();
     KConfigGroup cs( config, "HistorySettings" );
     cs.writeEntry( "Maximum of History entries", m_maxCount );
 
@@ -517,7 +518,7 @@ void KonqHistoryManager::slotNotifyMaxAge( int days, const QDBusMessage& msg  )
     clearPending();
     adjustSize();
 
-    KConfig *config = KGlobal::config();
+    KSharedConfig::Ptr config = KGlobal::config();
     KConfigGroup cs( config, "HistorySettings" );
     cs.writeEntry( "Maximum age of History entries", m_maxAgeDays );
 

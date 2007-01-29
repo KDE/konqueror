@@ -32,7 +32,7 @@
 #include <kdebug.h>
 #include <kservice.h>
 #include <krun.h>
-#include <kinstance.h>
+#include <kcomponentdata.h>
 #include <kstaticdeleter.h>
 
 #include <konq_mainwindow_interface.h>
@@ -60,8 +60,7 @@ QByteArray ClientApp::startup_id_str;
 bool ClientApp::m_ok = true;
 bool s_interactive = true;
 
-static KInstance* s_instance = 0;
-static KStaticDeleter<KInstance> s_instanceSd;
+K_GLOBAL_STATIC(KComponentData, s_instance);
 
 static const KCmdLineOptions options[] =
 {
@@ -112,9 +111,8 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
 // Call needInstance before any use of KConfig
 static void needInstance()
 {
-    if ( !s_instance ) {
-        s_instanceSd.setObject( s_instance, new KInstance( appName ) );
-    }
+    KComponentData *tmp = s_instance; // inits the global static if referenced for the first time
+    Q_UNUSED(tmp);
 }
 
 /*

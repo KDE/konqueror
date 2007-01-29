@@ -48,9 +48,10 @@
 
 #include <kaboutdata.h>
 #include <kglobal.h>
+#include <kconfiggroup.h>
 
-KSocksConfig::KSocksConfig(KInstance *inst, QWidget *parent)
-  : KCModule(inst, parent)
+KSocksConfig::KSocksConfig(const KComponentData &componentData, QWidget *parent)
+  : KCModule(componentData, parent)
 {
 
   KAboutData *about =

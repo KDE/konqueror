@@ -37,7 +37,7 @@ typedef KonqKcmFactory<KBrowserOptions> KBrowserOptionsFactory;
 K_EXPORT_COMPONENT_FACTORY(browser, KBrowserOptionsFactory)
 
 KBrowserOptions::KBrowserOptions(QWidget *parent, const QStringList &)
-    : KCModule( _globalInstance(), parent )
+    : KCModule( KonqKcmFactory<KBrowserOptions>::componentData(), parent )
 {
   KSharedConfig::Ptr config = KSharedConfig::openConfig("konquerorrc", false, true);
   QString group = "FMSettings";

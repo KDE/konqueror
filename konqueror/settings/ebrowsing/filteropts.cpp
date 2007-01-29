@@ -28,8 +28,8 @@
 
 #include "filteropts.h"
 
-FilterOptions::FilterOptions(KInstance *inst, QWidget *parent)
-    		  :KCModule(inst, parent)
+FilterOptions::FilterOptions(const KComponentData &componentData, QWidget *parent)
+    		  :KCModule(componentData, parent)
 {
 
     QGridLayout *lay = new QGridLayout(this);
