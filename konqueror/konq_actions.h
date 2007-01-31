@@ -26,7 +26,7 @@
 #include <QToolBar>
 #include <QList>
 
-class HistoryEntry;
+struct HistoryEntry;
 class QMenu;
 
 /**
