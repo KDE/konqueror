@@ -31,6 +31,16 @@
 #include "konqsidebarplugin.h"
 #include "konqsidebariface_p.h"
 
+#ifdef Q_OS_WIN
+# ifdef MAKE_KONQ_SIDEBAR_LIB
+#  define KONQSIDEBAR_EXPORT KDE_EXPORT
+# else
+#  define KONQSIDEBAR_EXPORT KDE_IMPORT
+# endif
+#else
+# define KONQSIDEBAR_EXPORT KDE_EXPORT
+#endif
+
 class QHBoxLayout;
 class QSplitter;
 class QStringList;
@@ -90,7 +100,7 @@ private:
 	QWidget *m_parent;
 };
 
-class KDE_EXPORT Sidebar_Widget: public QWidget
+class KONQSIDEBAR_EXPORT Sidebar_Widget: public QWidget
 {
 	Q_OBJECT
 public:

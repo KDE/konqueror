@@ -29,9 +29,19 @@
 #include <kfileitem.h>
 #include <kcomponentdata.h>
 
+#ifdef Q_OS_WIN
+# ifdef MAKE_KONQSIDEBARPLUGIN_LIB
+#  define KONQSIDEBARPLUGIN_EXPORT KDE_EXPORT
+# else
+#  define KONQSIDEBARPLUGIN_EXPORT KDE_IMPORT
+# endif
+#else
+# define KONQSIDEBARPLUGIN_EXPORT KDE_EXPORT
+#endif
+
 class KonqSidebarPluginPrivate;
 
-class KDE_EXPORT KonqSidebarPlugin : public QObject
+class KONQSIDEBARPLUGIN_EXPORT KonqSidebarPlugin : public QObject
 {
 	Q_OBJECT
 	public:
