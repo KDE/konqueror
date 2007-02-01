@@ -676,7 +676,7 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
             if ( cfg.hasKey( "X-KDE-ShowIfRunning" ) )
             {
                 const QString app = cfg.readEntry( "X-KDE-ShowIfRunning" );
-                if ( QDBusConnection::sessionBus().interface()->serviceOwner( app ).value().isEmpty() )
+                if ( QDBusConnection::sessionBus().interface()->isServiceRegistered( app ) )
                     continue;
             }
             if ( cfg.hasKey( "X-KDE-ShowIfDBusCall" ) )
