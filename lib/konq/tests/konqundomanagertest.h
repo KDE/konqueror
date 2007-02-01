@@ -48,7 +48,6 @@ private slots:
 
 private:
     void doUndo();
-    QEventLoop m_eventLoop;
     TestUiInterface* m_uiInterface;
 };
 

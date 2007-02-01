@@ -172,12 +172,13 @@ void KonqUndoManagerTest::cleanupTestCase()
 
 void KonqUndoManagerTest::doUndo()
 {
+    QEventLoop eventLoop;
     bool ok = connect( KonqUndoManager::self(), SIGNAL( undoJobFinished() ),
-                  &m_eventLoop, SLOT( quit() ) );
+                  &eventLoop, SLOT( quit() ) );
     QVERIFY( ok );
 
     KonqUndoManager::self()->undo();
-    m_eventLoop.exec(QEventLoop::ExcludeUserInputEvents); // wait for undo job to finish
+    eventLoop.exec(QEventLoop::ExcludeUserInputEvents); // wait for undo job to finish
 }
 
 void KonqUndoManagerTest::testCopyFiles()
