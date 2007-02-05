@@ -161,7 +161,8 @@ int main(int argc, char ** argv)
 	QString type = arg.mid( 3 ).prepend( arg[2].toUpper() );
         comment = i18n( "%1 File", type );
     }
-    mime = new KMimeType( loc, mimeString.arg( inc ), QString(), comment, patterns );
+    // TODO see filetypesview.cpp
+    //mime = new KMimeType( loc, mimeString.arg( inc ), QString(), comment, patterns );
   }
   else {
     mime = KMimeType::mimeType( arg );
