@@ -32,6 +32,8 @@
 #include <kglobalsettings.h>
 #include <k3listview.h>
 #include <kio/job.h>
+#include <kio/copyjob.h>
+#include <kio/deletejob.h>
 #include <kio/jobuidelegate.h>
 #include <klocale.h>
 #include <kmessagebox.h>
