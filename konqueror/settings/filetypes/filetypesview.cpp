@@ -250,6 +250,10 @@ void FileTypesView::addType()
 
   NewTypeDialog m(allGroups, this);
 
+  // TODO write out a kde-user-mimetypes.xml - or a file per mimetype
+  // in locateLocal("xdgdata-mime", "packages")
+  // And make the code for creating it useable from keditfiletype.cpp
+#if 0
   if (m.exec()) {
     Q3ListViewItemIterator it(typesLV);
     QString loc = m.group() + "/" + m.text() + ".desktop";
@@ -288,6 +292,7 @@ void FileTypesView::addType()
 
     setDirty(true);
   }
+#endif
 }
 
 void FileTypesView::removeType()
