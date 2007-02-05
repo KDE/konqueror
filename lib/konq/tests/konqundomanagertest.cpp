@@ -21,7 +21,7 @@
 #include "konqundomanagertest.h"
 #include <konq_undo.h>
 
-#include <kio/job.h>
+#include <kio/copyjob.h>
 #include <kio/netaccess.h>
 
 #include <kde_file.h>

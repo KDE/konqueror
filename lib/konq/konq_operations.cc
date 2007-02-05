@@ -33,6 +33,7 @@
 #include <kprotocolmanager.h>
 #include <kprocess.h>
 #include <kio/job.h>
+#include <kio/deletejob.h>
 #include <kio/jobuidelegate.h>
 #include <kio/jobclasses.h>
 #include <kio/paste.h>

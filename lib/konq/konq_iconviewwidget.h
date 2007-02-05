@@ -36,7 +36,7 @@
 #include <QDragEnterEvent>
 #include <QMouseEvent>
 #include <kfileitem.h>
-#include <kio/jobclasses.h>
+#include <kio/copyjob.h>
 #include <libkonq_export.h>
 
 class KonqFMSettings;
