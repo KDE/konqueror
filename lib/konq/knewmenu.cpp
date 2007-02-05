@@ -39,7 +39,7 @@
 #include <kprotocolmanager.h>
 #include <kmenu.h>
 #include <krun.h>
-#include <kio/job.h>
+#include <kio/copyjob.h>
 #include <kio/jobuidelegate.h>
 #include <kio/renamedialog.h>
 
