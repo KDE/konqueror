@@ -77,7 +77,7 @@ void TypesListItem::setup()
 {
   if (m_mimetype)
   {
-     setPixmap(0, m_mimetype->pixmap(K3Icon::Small, IconSize(K3Icon::Small)));
+     setPixmap(0, KIconLoader::global()->loadMimeTypeIcon(m_mimetype->iconName(),K3Icon::Small, IconSize(K3Icon::Small)));
   }
   Q3ListViewItem::setup();
 }
