@@ -86,7 +86,7 @@ KonqPropsView::KonqPropsView(const KComponentData &componentData, KonqPropsView 
 
   d = new Private;
   d->previewsToShow = 0;
-  d->caseInsensitiveSort=cgs.readEntry( "CaseInsensitiveSort", QVariant(true )).toBool();
+  d->caseInsensitiveSort=cgs.readEntry( "CaseInsensitiveSort", true);
 
   m_iIconSize = cgs.readEntry( "IconSize", 0 );
   m_iItemTextPos = cgs.readEntry( "ItemTextPos", int(Qt::DockBottom) );
@@ -94,7 +94,7 @@ KonqPropsView::KonqPropsView(const KComponentData &componentData, KonqPropsView 
   d->dirsfirst = cgs.readEntry( "SortDirsFirst", true );
   d->descending = cgs.readEntry( "SortDescending", false );
   m_bShowDot = cgs.readEntry( "ShowDotFiles", false );
-  m_bShowDirectoryOverlays = cgs.readEntry( "ShowDirectoryOverlays", QVariant(false )).toBool();
+  m_bShowDirectoryOverlays = cgs.readEntry( "ShowDirectoryOverlays", false);
 
   m_dontPreview = cgs.readEntry( "DontPreview" , QStringList() );
   m_dontPreview.removeAll("audio/"); //Use the separate setting.
@@ -102,13 +102,13 @@ KonqPropsView::KonqPropsView(const KComponentData &componentData, KonqPropsView 
 
   //The setting for sound previews is stored separately, so we can force
   //the default-to-off bias to propagate up.
-  if (!cgs.readEntry("EnableSoundPreviews", QVariant(false)).toBool())
+  if (!cgs.readEntry("EnableSoundPreviews", false))
   {
     if (!m_dontPreview.contains("audio/"))
       m_dontPreview.append("audio/");
   }
 
-  d->previewsEnabled = cgs.readEntry( "PreviewsEnabled", QVariant(true )).toBool();
+  d->previewsEnabled = cgs.readEntry( "PreviewsEnabled", true);
 
   QColor tc = KonqFMSettings::settings()->normalTextColor();
   m_textColor = cgs.readEntry( "TextColor", tc );
@@ -218,11 +218,11 @@ bool KonqPropsView::enterDir( const KUrl & dir )
     m_iIconSize = config->readEntry( "IconSize", m_iIconSize );
     m_iItemTextPos = config->readEntry( "ItemTextPos", m_iItemTextPos );
     d->sortcriterion = config->readEntry( "SortingCriterion" , d->sortcriterion );
-    d->dirsfirst = config->readEntry( "SortDirsFirst", QVariant(d->dirsfirst )).toBool();
-    d->descending = config->readEntry( "SortDescending", QVariant(d->descending )).toBool();
-    m_bShowDot = config->readEntry( "ShowDotFiles", QVariant(m_bShowDot )).toBool();
-    d->caseInsensitiveSort=config->readEntry("CaseInsensitiveSort", QVariant(d->caseInsensitiveSort)).toBool();
-    m_bShowDirectoryOverlays = config->readEntry( "ShowDirectoryOverlays", QVariant(m_bShowDirectoryOverlays )).toBool();
+    d->dirsfirst = config->readEntry( "SortDirsFirst", d->dirsfirst);
+    d->descending = config->readEntry( "SortDescending", d->descending);
+    m_bShowDot = config->readEntry( "ShowDotFiles", m_bShowDot);
+    d->caseInsensitiveSort=config->readEntry("CaseInsensitiveSort", d->caseInsensitiveSort);
+    m_bShowDirectoryOverlays = config->readEntry( "ShowDirectoryOverlays", m_bShowDirectoryOverlays);
     if (config->hasKey( "DontPreview" ))
     {
         m_dontPreview = config->readEntry( "DontPreview" , QStringList() );
@@ -234,7 +234,7 @@ bool KonqPropsView::enterDir( const KUrl & dir )
         if (config->hasKey("EnableSoundPreviews"))
         {
 
-            if (!config->readEntry("EnableSoundPreviews", QVariant(false)).toBool())
+            if (!config->readEntry("EnableSoundPreviews", false))
                 if (!m_dontPreview.contains("audio/"))
                     m_dontPreview.append("audio/");
         }
@@ -252,7 +252,7 @@ bool KonqPropsView::enterDir( const KUrl & dir )
     m_bgColor = config->readEntry( "BgColor", m_bgColor );
     m_bgPixmapFile = config->readPathEntry( "BgImage", m_bgPixmapFile );
     //kDebug(1203) << "KonqPropsView::enterDir m_bgPixmapFile=" << m_bgPixmapFile << endl;
-    d->previewsEnabled = config->readEntry( "PreviewsEnabled", QVariant(d->previewsEnabled )).toBool();
+    d->previewsEnabled = config->readEntry( "PreviewsEnabled", d->previewsEnabled);
     delete config;
   }
   //if there is or was a .directory then the settings probably have changed

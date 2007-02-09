@@ -95,27 +95,27 @@ void KonqFMSettings::init(const KSharedConfigPtr &config)
 
   m_iconTextHeight = config->readEntry( "TextHeight", 0 );
   if ( m_iconTextHeight == 0 ) {
-    if ( config->readEntry( "WordWrapText", QVariant(true )).toBool() )
+    if ( config->readEntry( "WordWrapText", true ) )
       m_iconTextHeight = DEFAULT_TEXTHEIGHT;
     else
       m_iconTextHeight = 1;
   }
   m_bWordWrapText = ( m_iconTextHeight > 1 );
 
-  m_underlineLink = config->readEntry( "UnderlineLinks", QVariant(DEFAULT_UNDERLINELINKS )).toBool();
-  d->m_renameIconDirectly = config->readEntry( "RenameIconDirectly", QVariant(DEFAULT_RENAMEICONDIRECTLY )).toBool();
-  m_fileSizeInBytes = config->readEntry( "DisplayFileSizeInBytes", QVariant(DEFAULT_FILESIZEINBYTES )).toBool();
+  m_underlineLink = config->readEntry( "UnderlineLinks", bool(DEFAULT_UNDERLINELINKS ));
+  d->m_renameIconDirectly = config->readEntry( "RenameIconDirectly", bool(DEFAULT_RENAMEICONDIRECTLY ));
+  m_fileSizeInBytes = config->readEntry( "DisplayFileSizeInBytes", bool(DEFAULT_FILESIZEINBYTES ));
   m_iconTransparency = config->readEntry( "TextpreviewIconOpacity", DEFAULT_TEXTPREVIEW_ICONTRANSPARENCY );
   if ( m_iconTransparency < 0 || m_iconTransparency > 255 )
       m_iconTransparency = DEFAULT_TEXTPREVIEW_ICONTRANSPARENCY;
 
   // Behaviour
-  m_alwaysNewWin = config->readEntry( "AlwaysNewWin", QVariant(false )).toBool();
+  m_alwaysNewWin = config->readEntry( "AlwaysNewWin", false);
 
   m_homeURL = config->readPathEntry("HomeURL", "~");
 
-  m_showFileTips = config->readEntry("ShowFileTips", QVariant(true)).toBool();
-  d->showPreviewsInFileTips = config->readEntry("ShowPreviewsInFileTips", QVariant(true)).toBool();
+  m_showFileTips = config->readEntry("ShowFileTips", true);
+  d->showPreviewsInFileTips = config->readEntry("ShowPreviewsInFileTips", true);
   m_numFileTips = config->readEntry("FileTipsItems", 6);
 
   m_embedMap = config->entryMap( "EmbedSettings" );
