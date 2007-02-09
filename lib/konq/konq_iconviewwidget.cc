@@ -239,7 +239,7 @@ void KonqIconViewWidget::slotIconChanged( int group )
 void KonqIconViewWidget::readAnimatedIconsConfig()
 {
     KConfigGroup cfgGroup( KGlobal::config(), "DesktopIcons" );
-    d->doAnimations = cfgGroup.readEntry( "Animated", QVariant(true /*default*/ )).toBool();
+    d->doAnimations = cfgGroup.readEntry( "Animated", true /*default*/);
 }
 
 void KonqIconViewWidget::slotOnItem( Q3IconViewItem *_item )
@@ -591,7 +591,7 @@ bool KonqIconViewWidget::boostPreview() const
     if ( m_bDesktop ) return false;
 
     KConfigGroup group( KGlobal::config(), "PreviewSettings" );
-    return group.readEntry( "BoostSize", QVariant(false )).toBool();
+    return group.readEntry( "BoostSize", false);
 }
 
 void KonqIconViewWidget::disableSoundPreviews()
