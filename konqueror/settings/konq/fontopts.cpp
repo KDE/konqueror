@@ -291,7 +291,7 @@ void KonqFontOptions::load()
     {
         int n = g_pConfig->readEntry( "TextHeight", 0 );
         if ( n == 0 ) {
-            if ( g_pConfig->readEntry( "WordWrapText", QVariant(true )).toBool() )
+            if ( g_pConfig->readEntry( "WordWrapText", true) )
                 n = DEFAULT_TEXTHEIGHT;
             else
                 n = 1;
@@ -301,9 +301,9 @@ void KonqFontOptions::load()
         n = g_pConfig->readEntry( "TextWidth", DEFAULT_TEXTWIDTH_MULTICOLUMN );
         m_pNbWidth->setValue( n );
 
-        m_pSizeInBytes->setChecked( g_pConfig->readEntry( "DisplayFileSizeInBytes", QVariant(DEFAULT_FILESIZEINBYTES )).toBool() );
+        m_pSizeInBytes->setChecked( g_pConfig->readEntry( "DisplayFileSizeInBytes", bool(DEFAULT_FILESIZEINBYTES )) );
     }
-    cbUnderline->setChecked( g_pConfig->readEntry("UnderlineLinks", QVariant(DEFAULT_UNDERLINELINKS )).toBool() );
+    cbUnderline->setChecked( g_pConfig->readEntry("UnderlineLinks", bool(DEFAULT_UNDERLINELINKS )));
 
     KSharedConfig::Ptr cfg = KSharedConfig::openConfig("kdeglobals");
     cfg->setGroup("DesktopIcons");

@@ -116,7 +116,7 @@ void CSSConfig::load()
 
   c->setGroup("Font");
   customDialog->basefontsize->setEditText(QString::number(c->readEntry("BaseSize", 12)));
-  customDialog->dontScale->setChecked(c->readEntry("DontScale", QVariant(false)).toBool());
+  customDialog->dontScale->setChecked(c->readEntry("DontScale", false));
 
   QString fname = c->readEntry("Family", "Arial");
   for (int i=0; i < customDialog->fontFamily->count(); ++i)
@@ -126,7 +126,7 @@ void CSSConfig::load()
 	break;
       }
 
-  customDialog->sameFamily->setChecked(c->readEntry("SameFamily", QVariant(false)).toBool());
+  customDialog->sameFamily->setChecked(c->readEntry("SameFamily", false));
 
   c->setGroup("Colors");
   QString m = c->readEntry("Mode", "black-on-white");
@@ -142,8 +142,8 @@ void CSSConfig::load()
 
   // Images
   c->setGroup("Images");
-  customDialog->hideImages->setChecked(c->readEntry("Hide", QVariant(false)).toBool());
-  customDialog->hideBackground->setChecked(c->readEntry("HideBackground", QVariant(true)).toBool());
+  customDialog->hideImages->setChecked(c->readEntry("Hide", false));
+  customDialog->hideBackground->setChecked(c->readEntry("HideBackground", true));
 
   delete c;
 }

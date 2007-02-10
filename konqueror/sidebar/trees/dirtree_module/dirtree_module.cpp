@@ -44,7 +44,7 @@ KonqSidebarDirTreeModule::KonqSidebarDirTreeModule( KonqSidebarTree * parentTree
 
     KConfig * config = new KConfig( universalMode ? "konqsidebartng_kicker.rc" : "konqsidebartng.rc" );
     config->setGroup("");
-    m_showArchivesAsFolders = config->readEntry("ShowArchivesAsFolders", QVariant(true)).toBool();
+    m_showArchivesAsFolders = config->readEntry("ShowArchivesAsFolders", true);
     delete config;
 }
 

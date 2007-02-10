@@ -194,23 +194,23 @@ void KBehaviourOptions::slotShowTips(bool b)
 void KBehaviourOptions::load()
 {
     g_pConfig->setGroup( groupname );
-    cbNewWin->setChecked( g_pConfig->readEntry("AlwaysNewWin", QVariant(false)).toBool() );
+    cbNewWin->setChecked( g_pConfig->readEntry("AlwaysNewWin", false) );
     updateWinPixmap(cbNewWin->isChecked());
 
     homeURL->setUrl(g_pConfig->readEntry("HomeURL", "~"));
 
-    bool stips = g_pConfig->readEntry( "ShowFileTips", QVariant(true )).toBool();
+    bool stips = g_pConfig->readEntry( "ShowFileTips", true);
     cbShowTips->setChecked( stips );
     slotShowTips( stips );
 
-    bool showPreviewsIntips = g_pConfig->readEntry( "ShowPreviewsInFileTips", QVariant(true )).toBool();
+    bool showPreviewsIntips = g_pConfig->readEntry( "ShowPreviewsInFileTips", true);
     cbShowPreviewsInTips->setChecked( showPreviewsIntips );
 
-    cbRenameDirectlyIcon->setChecked( g_pConfig->readEntry("RenameIconDirectly", QVariant(DEFAULT_RENAMEICONDIRECTLY )).toBool() );
+    cbRenameDirectlyIcon->setChecked( g_pConfig->readEntry("RenameIconDirectly", bool(DEFAULT_RENAMEICONDIRECTLY )) );
 
     KSharedConfig::Ptr globalconfig = KSharedConfig::openConfig("kdeglobals", true, false);
     globalconfig->setGroup( "KDE" );
-    cbShowDeleteCommand->setChecked( globalconfig->readEntry("ShowDeleteCommand", QVariant(false)).toBool() );
+    cbShowDeleteCommand->setChecked( globalconfig->readEntry("ShowDeleteCommand", false) );
 
 //    if (!stips) sbToolTip->setEnabled( false );
     if (!stips) cbShowPreviewsInTips->setEnabled( false );
@@ -220,11 +220,11 @@ void KBehaviourOptions::load()
     KSharedConfig::Ptr config = KSharedConfig::openConfig("uiserverrc");
     config->setGroup( "UIServer" );
 
-    cbListProgress->setChecked( config->readEntry( "ShowList", QVariant(false )).toBool() );
+    cbListProgress->setChecked( config->readEntry( "ShowList", false) );
 
     g_pConfig->setGroup( "Trash" );
-    cbMoveToTrash->setChecked( g_pConfig->readEntry("ConfirmTrash", QVariant(DEFAULT_CONFIRMTRASH)).toBool() );
-    cbDelete->setChecked( g_pConfig->readEntry("ConfirmDelete", QVariant(DEFAULT_CONFIRMDELETE)).toBool() );
+    cbMoveToTrash->setChecked( g_pConfig->readEntry("ConfirmTrash", bool(DEFAULT_CONFIRMTRASH)) );
+    cbDelete->setChecked( g_pConfig->readEntry("ConfirmDelete", bool(DEFAULT_CONFIRMDELETE)) );
 }
 
 void KBehaviourOptions::defaults()

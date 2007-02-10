@@ -739,7 +739,7 @@ void KonqSidebarTree::loadTopLevelGroup( KonqSidebarTreeItem *parent, const QStr
         name = cfg.readEntry( "Name", name );
         icon = cfg.readEntry( "Icon", icon );
         //stripIcon( icon );
-        open = cfg.readEntry( "Open", QVariant(open )).toBool();
+        open = cfg.readEntry( "Open", open);
     }
 
     KonqSidebarTreeTopLevelItem *item;
@@ -816,7 +816,7 @@ void KonqSidebarTree::loadTopLevelItem( KonqSidebarTreeItem *parent, const QStri
     m_topLevelItems.append( item );
     m_lstModules.append( module );
 
-    bool open = cfg.readEntry( "Open", QVariant(false )).toBool();
+    bool open = cfg.readEntry( "Open", false);
     if ( open && item->isExpandable() )
         item->setOpen( true );
 }

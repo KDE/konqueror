@@ -149,7 +149,7 @@ NSPluginLoader::NSPluginLoader()
   // load configuration
   KConfig cfg("kcmnspluginrc", false);
   cfg.setGroup("Misc");
-  _useArtsdsp = cfg.readEntry( "useArtsdsp", QVariant(false )).toBool();
+  _useArtsdsp = cfg.readEntry( "useArtsdsp", false);
 }
 
 

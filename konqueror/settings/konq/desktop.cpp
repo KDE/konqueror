@@ -177,7 +177,7 @@ void KDesktopConfig::load()
 
   KSharedConfig::Ptr desktopConfig = KSharedConfig::openConfig("kdesktoprc", false, false);
   desktopConfig->setGroup("Mouse Buttons");
-  _wheelOption->setChecked(desktopConfig->readEntry("WheelSwitchesWorkspace", QVariant(false)).toBool());
+  _wheelOption->setChecked(desktopConfig->readEntry("WheelSwitchesWorkspace", false));
 
   _wheelOptionImmutable = desktopConfig->entryIsImmutable("WheelSwitchesWorkspace");
 

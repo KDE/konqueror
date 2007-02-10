@@ -55,7 +55,7 @@ void SystemWidget::load()
     {
     KConfig cfg( "kdedrc", true );
     cfg.setGroup( "General" );
-    cb_disable_kbuildsycoca->setChecked( cfg.readEntry( "DelayedCheck", QVariant(false )).toBool());
+    cb_disable_kbuildsycoca->setChecked( cfg.readEntry( "DelayedCheck", false));
     }
 
 void SystemWidget::save()
