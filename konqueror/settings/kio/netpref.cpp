@@ -98,8 +98,8 @@ void KIOPreferences::load()
   sb_proxyConnect->setValue( proto.proxyConnectTimeout() );
 
   KConfig config( "kio_ftprc", true, false );
-  cb_ftpEnablePasv->setChecked( !config.readEntry( "DisablePassiveMode", QVariant(false )).toBool() );
-  cb_ftpMarkPartial->setChecked( config.readEntry( "MarkPartial", QVariant(true )).toBool() );
+  cb_ftpEnablePasv->setChecked( !config.readEntry( "DisablePassiveMode", false) );
+  cb_ftpMarkPartial->setChecked( config.readEntry( "MarkPartial", true) );
   emit changed( false );
 }
 

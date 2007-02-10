@@ -614,10 +614,10 @@ void Sidebar_Widget::slotShowConfigurationButton( )
 }
 void Sidebar_Widget::readConfig()
 {
-	m_singleWidgetMode = m_config->readEntry("SingleWidgetMode", QVariant(true)).toBool();
-	m_showExtraButtons = m_config->readEntry("ShowExtraButtons", QVariant(false)).toBool();
-	m_showTabsLeft = m_config->readEntry("ShowTabsLeft", QVariant(true)).toBool();
-	m_hideTabs = m_config->readEntry("HideTabs", QVariant(false)).toBool();
+	m_singleWidgetMode = m_config->readEntry("SingleWidgetMode", true);
+	m_showExtraButtons = m_config->readEntry("ShowExtraButtons", false);
+	m_showTabsLeft = m_config->readEntry("ShowTabsLeft", true);
+	m_hideTabs = m_config->readEntry("HideTabs", false);
 	if (m_initial) {
 		m_openViews = m_config->readEntry("OpenViews",QStringList());
 		m_savedWidth = m_config->readEntry("SavedWidth",200);

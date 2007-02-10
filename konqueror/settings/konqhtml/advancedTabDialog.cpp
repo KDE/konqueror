@@ -74,12 +74,12 @@ advancedTabDialog::~advancedTabDialog()
 void advancedTabDialog::load()
 {
     m_pConfig->setGroup("FMSettings");
-    m_advancedWidget->m_pNewTabsInBackground->setChecked( ! (m_pConfig->readEntry( "NewTabsInFront", QVariant(false )).toBool()) );
-    m_advancedWidget->m_pOpenAfterCurrentPage->setChecked( m_pConfig->readEntry( "OpenAfterCurrentPage", QVariant(false )).toBool() );
-    m_advancedWidget->m_pPermanentCloseButton->setChecked( m_pConfig->readEntry( "PermanentCloseButton", QVariant(false )).toBool() );
-    m_advancedWidget->m_pKonquerorTabforExternalURL->setChecked( m_pConfig->readEntry( "KonquerorTabforExternalURL", QVariant(false )).toBool() );
-    m_advancedWidget->m_pPopupsWithinTabs->setChecked( m_pConfig->readEntry( "PopupsWithinTabs", QVariant(false )).toBool() );
-    m_advancedWidget->m_pTabCloseActivatePrevious->setChecked( m_pConfig->readEntry( "TabCloseActivatePrevious", QVariant(false )).toBool() );
+    m_advancedWidget->m_pNewTabsInBackground->setChecked( ! (m_pConfig->readEntry( "NewTabsInFront", false)) );
+    m_advancedWidget->m_pOpenAfterCurrentPage->setChecked( m_pConfig->readEntry( "OpenAfterCurrentPage", false) );
+    m_advancedWidget->m_pPermanentCloseButton->setChecked( m_pConfig->readEntry( "PermanentCloseButton", false) );
+    m_advancedWidget->m_pKonquerorTabforExternalURL->setChecked( m_pConfig->readEntry( "KonquerorTabforExternalURL", false) );
+    m_advancedWidget->m_pPopupsWithinTabs->setChecked( m_pConfig->readEntry( "PopupsWithinTabs", false) );
+    m_advancedWidget->m_pTabCloseActivatePrevious->setChecked( m_pConfig->readEntry( "TabCloseActivatePrevious", false) );
 
     m_pConfig->setGroup("Notification Messages");
     m_advancedWidget->m_pTabConfirm->setChecked( !m_pConfig->hasKey("MultipleTabConfirm") );

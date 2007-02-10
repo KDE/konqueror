@@ -105,8 +105,8 @@ void Konqueror::load()
     else
         rb_file_browsing_reuse->setChecked( true );
     sb_preload_count->setValue( cfg.readEntry( "MaxPreloadCount", 1 ));
-    cb_always_have_preloaded->setChecked( cfg.readEntry( "AlwaysHavePreloaded", QVariant(false )).toBool());
-    cb_preload_on_startup->setChecked( cfg.readEntry( "PreloadOnStartup", QVariant(false )).toBool());
+    cb_always_have_preloaded->setChecked( cfg.readEntry( "AlwaysHavePreloaded", false));
+    cb_preload_on_startup->setChecked( cfg.readEntry( "PreloadOnStartup", false));
     }
 
 void Konqueror::save()

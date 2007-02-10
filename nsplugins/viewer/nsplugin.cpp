@@ -846,7 +846,7 @@ QString NSPluginInstance::normalizedURL(const QString& url) const {
     KConfig cfg("kcmnspluginrc", true);
     cfg.setGroup("Misc");
 
-    if (!cfg.readEntry("HTTP URLs Only", QVariant(false)).toBool() ||
+    if (!cfg.readEntry("HTTP URLs Only", false) ||
 	inURL.protocol() == "http" ||
         inURL.protocol() == "https" ||
         inURL.protocol() == "javascript") {

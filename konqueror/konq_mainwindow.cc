@@ -772,7 +772,7 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
               f.close();
               KSimpleConfig config( urlDotDir.path(), true );
               config.setGroup( "URL properties" );
-              HTMLAllowed = config.readEntry( "HTMLAllowed", QVariant(m_bHTMLAllowed )).toBool();
+              HTMLAllowed = config.readEntry( "HTMLAllowed", m_bHTMLAllowed);
               serviceName = config.readEntry( "ViewMode", serviceName );
               kDebug(1202) << "serviceName=" << serviceName << endl;
             }
