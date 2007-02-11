@@ -63,10 +63,19 @@ public:
     virtual void jobError( KIO::Job* job );
 
     /**
+     * Called when we are about to remove those files.
+     * Return true if we should proceed with deleting them.
+     */
+    virtual bool confirmDeletion( const KUrl::List& files );
+
+    /**
      * Called when dest was modified since it was copied from src.
+     * Note that this is called after confirmDeletion.
      * Return true if we should proceed with deleting dest.
      */
     virtual bool copiedFileWasModified( const KUrl& src, const KUrl& dest, time_t srcTime, time_t destTime );
+  private:
+    QWidget* m_parentWidget;
   };
 
   /**

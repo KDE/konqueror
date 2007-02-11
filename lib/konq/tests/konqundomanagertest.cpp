@@ -118,7 +118,7 @@ static void createTestDirectory( const QString& path )
 class TestUiInterface : public KonqUndoManager::UiInterface
 {
 public:
-    TestUiInterface() : KonqUndoManager::UiInterface(0) {}
+    TestUiInterface() : KonqUndoManager::UiInterface(0), m_nextReplyToConfirmDeletion(true) {}
     virtual void jobError( KIO::Job* job ) {
         kFatal() << job->errorString() << endl;
     }
@@ -129,9 +129,23 @@ public:
         Q_UNUSED( destTime );
         return true;
     }
+    virtual bool confirmDeletion( const KUrl::List& files ) {
+        m_files = files;
+        return m_nextReplyToConfirmDeletion;
+    }
+    void setNextReplyToConfirmDeletion( bool b ) {
+        m_nextReplyToConfirmDeletion = b;
+    }
+    KUrl::List files() const { return m_files; }
     KUrl dest() const { return m_dest; }
+    void clear() {
+        m_dest = KUrl();
+        m_files.clear();
+    }
 private:
+    bool m_nextReplyToConfirmDeletion;
     KUrl m_dest;
+    KUrl::List m_files;
 };
 
 void KonqUndoManagerTest::initTestCase()
@@ -211,12 +225,23 @@ void KonqUndoManagerTest::testCopyFiles()
     QVERIFY( KonqUndoManager::self()->undoAvailable() );
     QCOMPARE( spyUndoAvailable.count(), 1 );
     QCOMPARE( spyTextChanged.count(), 1 );
+    m_uiInterface->clear();
 
+    m_uiInterface->setNextReplyToConfirmDeletion( false ); // act like the user didn't confirm
+    KonqUndoManager::self()->undo();
+    QCOMPARE( m_uiInterface->files().count(), 1 ); // confirmDeletion was called
+    QCOMPARE( m_uiInterface->files()[0].url(), KUrl(destFile()).url() );
+    QVERIFY( QFile::exists( destFile() ) ); // nothing happened yet
+
+    // OK, now do it
+    m_uiInterface->setNextReplyToConfirmDeletion( true );
     doUndo();
 
     QVERIFY( !KonqUndoManager::self()->undoAvailable() );
     QVERIFY( spyUndoAvailable.count() >= 2 ); // it's in fact 3, due to lock/unlock emitting it as well
     QCOMPARE( spyTextChanged.count(), 2 );
+    QCOMPARE( m_uiInterface->files().count(), 1 ); // confirmDeletion was called
+    QCOMPARE( m_uiInterface->files()[0].url(), KUrl(destFile()).url() );
 
     // Check that undo worked
     QVERIFY( !QFile::exists( destFile() ) );
