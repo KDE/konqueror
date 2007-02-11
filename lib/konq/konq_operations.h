@@ -132,15 +132,24 @@ public:
      */
     static void newDir( QWidget * parent, const KUrl & baseUrl );
 
+    enum ConfirmationType { DEFAULT_CONFIRMATION, SKIP_CONFIRMATION, FORCE_CONFIRMATION };
+    /**
+     * Ask for confirmation before deleting/trashing @p selectedUrls.
+     * @param selectedUrls the urls about to be deleted
+     * @param method the type of deletion (DEL for real deletion, anything else for trash)
+     * @param confirmation default (based on config file), skip (no confirmation) or force (always confirm)
+     * @param widget parent widget for message boxes
+     * @return true if confirmed
+     */
+    static bool askDeleteConfirmation( const KUrl::List & selectedUrls, int method, ConfirmationType confirmation, QWidget* widget );
+
 Q_SIGNALS:
     void statFinished( const KFileItem * item );
     void aboutToCreate(const QPoint &pos, const QList<KIO::CopyInfo> &files);
 
 private:
     QWidget* parentWidget() const;
-    enum { DEFAULT_CONFIRMATION, SKIP_CONFIRMATION, FORCE_CONFIRMATION };
-    bool askDeleteConfirmation( const KUrl::List & selectedUrls, int confirmation );
-    void _del( Operation method, const KUrl::List & selectedUrls, int confirmation );
+    void _del( Operation method, const KUrl::List & selectedUrls, ConfirmationType confirmation );
     void _restoreTrashedItems( const KUrl::List& urls );
     void _statUrl( const KUrl & url, const QObject *receiver, const char *member );
 

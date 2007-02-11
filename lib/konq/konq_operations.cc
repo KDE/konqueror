@@ -93,7 +93,7 @@ void KonqOperations::del( QWidget * parent, Operation method, const KUrl::List &
     }
 
     KonqOperations * op = new KonqOperations( parent );
-    int confirmation = DEFAULT_CONFIRMATION;
+    ConfirmationType confirmation = DEFAULT_CONFIRMATION;
     op->_del( method, selectedUrls, confirmation );
 }
 
@@ -171,7 +171,7 @@ void KonqOperations::copy( QWidget * parent, Operation method, const KUrl::List 
         KonqUndoManager::self()->recordJob( method==MOVE?KonqUndoManager::MOVE:KonqUndoManager::LINK, selectedUrls, destUrl, job );
 }
 
-void KonqOperations::_del( Operation method, const KUrl::List & _selectedUrls, int confirmation )
+void KonqOperations::_del( Operation method, const KUrl::List & _selectedUrls, ConfirmationType confirmation )
 {
     KUrl::List selectedUrls;
     for (KUrl::List::ConstIterator it = _selectedUrls.begin(); it != _selectedUrls.end(); ++it)
@@ -182,11 +182,11 @@ void KonqOperations::_del( Operation method, const KUrl::List & _selectedUrls, i
         return;
     }
 
-    m_method = method;
-    if ( confirmation == SKIP_CONFIRMATION || askDeleteConfirmation( selectedUrls, confirmation ) )
+    if ( askDeleteConfirmation( selectedUrls, method, confirmation, parentWidget() ) )
     {
         //m_srcUrls = selectedUrls;
         KIO::Job *job;
+        m_method = method;
         switch( method )
         {
         case TRASH:
@@ -229,16 +229,18 @@ void KonqOperations::_restoreTrashedItems( const KUrl::List& urls )
              SLOT( slotResult( KJob * ) ) );
 }
 
-bool KonqOperations::askDeleteConfirmation( const KUrl::List & selectedUrls, int confirmation )
+bool KonqOperations::askDeleteConfirmation( const KUrl::List & selectedUrls, int method, ConfirmationType confirmation, QWidget* widget )
 {
+    if ( confirmation == SKIP_CONFIRMATION )
+        return true;
     QString keyName;
     bool ask = ( confirmation == FORCE_CONFIRMATION );
     if ( !ask )
     {
         KConfig config("konquerorrc", true, false);
         config.setGroup( "Trash" );
-        keyName = ( m_method == DEL ? "ConfirmDelete" : "ConfirmTrash" );
-        bool defaultValue = ( m_method == DEL ? DEFAULT_CONFIRMDELETE : DEFAULT_CONFIRMTRASH );
+        keyName = ( method == DEL ? "ConfirmDelete" : "ConfirmTrash" );
+        bool defaultValue = ( method == DEL ? DEFAULT_CONFIRMDELETE : DEFAULT_CONFIRMTRASH );
         ask = config.readEntry( keyName, QVariant(defaultValue )).toBool();
     }
     if ( ask )
@@ -256,11 +258,11 @@ bool KonqOperations::askDeleteConfirmation( const KUrl::List & selectedUrls, int
         }
 
         int result;
-        switch(m_method)
+        switch(method)
         {
         case DEL:
             result = KMessageBox::warningContinueCancelList(
-                parentWidget(),
+                widget,
              	i18np( "Do you really want to delete this item?", "Do you really want to delete these %n items?", prettyList.count()),
              	prettyList,
 		i18n( "Delete Files" ),
@@ -271,7 +273,7 @@ bool KonqOperations::askDeleteConfirmation( const KUrl::List & selectedUrls, int
         case MOVE:
         default:
             result = KMessageBox::warningContinueCancelList(
-                parentWidget(),
+                widget,
                 i18np( "Do you really want to move this item to the trash?", "Do you really want to move these %n items to the trash?", prettyList.count()),
                 prettyList,
 		i18n( "Move to Trash" ),
@@ -492,7 +494,7 @@ void KonqOperations::doDropFileCopy()
         }
 
         m_method = TRASH;
-        if ( askDeleteConfirmation( mlst, DEFAULT_CONFIRMATION ) )
+        if ( askDeleteConfirmation( mlst, TRASH, DEFAULT_CONFIRMATION, parentWidget() ) )
             action = Qt::MoveAction;
         else
         {

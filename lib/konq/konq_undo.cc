@@ -21,8 +21,9 @@
 #include "konq_undo.h"
 #include "konq_undo_p.h"
 #include "undomanageradaptor.h"
+#include "konq_operations.h"
 
-#include "kio/observer.h"
+#include <kio/observer.h>
 #include <kio/job.h>
 #include <kio/jobuidelegate.h>
 #include <QtDBus/QtDBus>
@@ -277,24 +278,40 @@ void KonqUndoManager::undo()
 {
     // Make a copy of the command to undo before broadcastPop() pops it.
     KonqCommand cmd = d->m_commands.top();
+    assert( cmd.m_valid );
+    d->m_current = cmd;
+
+    KonqBasicOperation::Stack& opStack = d->m_current.m_opStack;
+    assert( !opStack.isEmpty() );
+
+    // Let's first ask for confirmation if we need to delete any file (#99898)
+    KUrl::List fileCleanupStack;
+    QStack<KonqBasicOperation>::Iterator it = opStack.begin();
+    for ( ; it != opStack.end() ; ++it ) {
+        KonqBasicOperation::Type type = (*it).m_type;
+        if ( type == KonqBasicOperation::File && d->m_current.m_type == KonqUndoManager::COPY ) {
+            fileCleanupStack.append( (*it).m_dst );
+        }
+    }
+    if ( !fileCleanupStack.isEmpty() ) {
+        if ( !d->m_uiInterface->confirmDeletion( fileCleanupStack ) ) {
+            return;
+        }
+    }
+
     broadcastPop();
     broadcastLock();
 
-    assert( cmd.m_valid );
-
-    d->m_current = cmd;
     d->m_dirCleanupStack.clear();
     d->m_dirStack.clear();
     d->m_dirsToUpdate.clear();
 
     d->m_undoState = MOVINGFILES;
+
     // Let's have a look at the basic operations we need to undo.
     // While we're at it, collect all links that should be deleted.
 
-    KonqBasicOperation::Stack& opStack = d->m_current.m_opStack;
-    assert( !opStack.isEmpty() );
-
-    QStack<KonqBasicOperation>::Iterator it = opStack.begin();
+    it = opStack.begin();
     while ( it != opStack.end() ) // don't cache end() here, erase modifies it
     {
         bool removeBasicOperation = false;
@@ -396,9 +413,11 @@ void KonqUndoManager::undoStep()
     if ( d->m_undoState == REMOVINGDIRS )
         stepRemovingDirectories();
 
-    if ( d->m_currentJob )
+    if ( d->m_currentJob ) {
+        //TODO d->m_currentJob->setWindow(...);
         connect( d->m_currentJob, SIGNAL( result( KJob * ) ),
                  this, SLOT( slotResult( KJob * ) ) );
+    }
 }
 
 void KonqUndoManager::stepMakingDirectories()
@@ -658,9 +677,9 @@ void KonqUndoManager::setUiInterface( UiInterface* ui )
     d->m_uiInterface = ui;
 }
 
-KonqUndoManager::UiInterface::UiInterface( QWidget* )
+KonqUndoManager::UiInterface::UiInterface( QWidget* w )
+    : m_parentWidget( w )
 {
-    // TODO store widget
 }
 
 void KonqUndoManager::UiInterface::jobError( KIO::Job* job )
@@ -675,7 +694,7 @@ bool KonqUndoManager::UiInterface::copiedFileWasModified( const KUrl& src, const
     // Possible improvement: only show the time if date is today
     const QString timeStr = KGlobal::locale()->formatDateTime( destDt, true /*short*/ );
     return KMessageBox::warningContinueCancel(
-        0 /*TODO parent*/,
+        m_parentWidget,
         i18n( "The file %1 was copied from %2, but since then it has apparently been modified at %3.\n"
               "Undoing the copy will delete the file, and all modifications will be lost.\n"
               "Are you sure you want to delete %4?", dest.pathOrUrl(), src.pathOrUrl(), timeStr, dest.pathOrUrl() ),
@@ -683,6 +702,14 @@ bool KonqUndoManager::UiInterface::copiedFileWasModified( const KUrl& src, const
         KStandardGuiItem::cont(),
         QString(),
         KMessageBox::Notify | KMessageBox::Dangerous ) == KMessageBox::Continue;
+}
+
+bool KonqUndoManager::UiInterface::confirmDeletion( const KUrl::List& files )
+{
+    // Because undo can happen with an accidental Ctrl-Z, we want to always confirm.
+    return KonqOperations::askDeleteConfirmation( files, KonqOperations::DEL,
+                                                  KonqOperations::FORCE_CONFIRMATION,
+                                                  m_parentWidget );
 }
 
 #include "konq_undo.moc"
