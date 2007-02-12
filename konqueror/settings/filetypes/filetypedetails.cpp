@@ -2,6 +2,7 @@
 #include <QCheckBox>
 #include <QLayout>
 #include <QRadioButton>
+#include <QListWidget>
 
 //Added by qt3to4:
 #include <QVBoxLayout>
@@ -53,7 +54,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   grid->setSpacing(KDialog::spacingHint());
   grid->addItem(new QSpacerItem(0,fontMetrics().lineSpacing()), 0, 0);
 
-  extensionLB = new Q3ListBox(gb);
+  extensionLB = new QListWidget(gb);
   connect(extensionLB, SIGNAL(highlighted(int)), SLOT(enableExtButtons(int)));
   grid->addWidget(extensionLB, 1, 0, 2, 1);
   grid->setRowStretch(0, 0);
@@ -172,7 +173,7 @@ void FileTypeDetails::addExtension()
   QString ext = KInputDialog::getText( i18n( "Add New Extension" ),
     i18n( "Extension:" ), "*.", &ok, this );
   if (ok) {
-    extensionLB->insertItem(ext);
+    extensionLB->addItem(ext);
     QStringList patt = m_item->patterns();
     patt += ext;
     m_item->setPatterns(patt);
@@ -183,14 +184,14 @@ void FileTypeDetails::addExtension()
 
 void FileTypeDetails::removeExtension()
 {
-  if (extensionLB->currentItem() == -1)
+  if (extensionLB->currentRow() == -1)
     return;
   if ( !m_item )
     return;
   QStringList patt = m_item->patterns();
-  patt.removeAll(extensionLB->text(extensionLB->currentItem()));
+  patt.removeAll(extensionLB->currentItem()->text());
   m_item->setPatterns(patt);
-  extensionLB->removeItem(extensionLB->currentItem());
+  delete extensionLB->takeItem(extensionLB->currentRow());
   updateRemoveButton();
   emit changed(true);
 }
@@ -290,7 +291,7 @@ void FileTypeDetails::setTypeItem( TypesListItem * tlitem )
   m_autoEmbed->setButton( tlitem->autoEmbed() );
   m_rbGroupSettings->setEnabled( tlitem->canUseGroupSetting() );
 
-  extensionLB->insertStringList(tlitem->patterns());
+  extensionLB->addItems(tlitem->patterns());
 
   updateAskSave();
 }

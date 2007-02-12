@@ -395,12 +395,12 @@ void KPluginOptions::dirInit()
              SLOT(dirEdited(const QString &)) );
 
     connect( m_widget->dirList,
-             SIGNAL(executed(Q3ListBoxItem*)),
-             SLOT(dirSelect(Q3ListBoxItem*)) );
+             SIGNAL(executed(QListWidgetItem*)),
+             SLOT(dirSelect(QListWidgetItem*)) );
 
     connect( m_widget->dirList,
-             SIGNAL(selectionChanged(Q3ListBoxItem*)),
-             SLOT(dirSelect(Q3ListBoxItem*)) );
+             SIGNAL(selectionChanged(QListWidgetItem*)),
+             SLOT(dirSelect(QListWidgetItem*)) );
 }
 
 
@@ -435,7 +435,7 @@ void KPluginOptions::dirLoad( KSharedConfig::Ptr config, bool useDefault )
 
     // fill list
     m_widget->dirList->clear();
-    m_widget->dirList->insertStringList( paths );
+    m_widget->dirList->addItems( paths );
 
     // setup other widgets
     bool useArtsdsp = config->readEntry( "useArtsdsp", false);
@@ -447,10 +447,11 @@ void KPluginOptions::dirSave( KSharedConfig::Ptr config )
 {
     // create stringlist
     QStringList paths;
-    Q3ListBoxItem *item = m_widget->dirList->firstItem();
-    for ( ; item!=0; item=item->next() )
-        if ( !item->text().isEmpty() )
-            paths << item->text();
+    
+    for ( int rowIndex = 0 ; rowIndex < m_widget->dirList->count() ; rowIndex++ ) {
+        if ( !m_widget->dirList->item(rowIndex)->text().isEmpty() )
+            paths << m_widget->dirList->item(rowIndex)->text();
+    }
 
     // write entry
     config->setGroup( "Misc" );
@@ -459,12 +460,12 @@ void KPluginOptions::dirSave( KSharedConfig::Ptr config )
 }
 
 
-void KPluginOptions::dirSelect( Q3ListBoxItem *item )
+void KPluginOptions::dirSelect( QListWidgetItem *item )
 {
     m_widget->dirEdit->setEnabled( item!=0 );
     m_widget->dirRemove->setEnabled( item!=0 );
 
-    unsigned cur = m_widget->dirList->index(m_widget->dirList->selectedItem());
+    int cur = m_widget->dirList->currentRow();
     m_widget->dirDown->setEnabled( item!=0 && cur<m_widget->dirList->count()-1 );
     m_widget->dirUp->setEnabled( item!=0 && cur>0 );
     m_widget->dirEdit->setUrl( item!=0 ? item->text() : QString() );
@@ -473,9 +474,9 @@ void KPluginOptions::dirSelect( Q3ListBoxItem *item )
 
 void KPluginOptions::dirNew()
 {
-    m_widget->dirList->insertItem( QString(), 0 );
-    m_widget->dirList->setCurrentItem( 0 );
-    dirSelect( m_widget->dirList->selectedItem() );
+    m_widget->dirList->insertItem( 0 , QString() );
+    m_widget->dirList->setCurrentRow( 0 );
+    dirSelect( m_widget->dirList->currentItem() );
     m_widget->dirEdit->setUrl(QString());
     m_widget->dirEdit->setFocus();
     change();
@@ -485,7 +486,7 @@ void KPluginOptions::dirNew()
 void KPluginOptions::dirRemove()
 {
     m_widget->dirEdit->setUrl(QString());
-    delete m_widget->dirList->selectedItem();
+    delete m_widget->dirList->currentItem();
     m_widget->dirRemove->setEnabled( false );
     m_widget->dirUp->setEnabled( false );
     m_widget->dirDown->setEnabled( false );
@@ -496,11 +497,11 @@ void KPluginOptions::dirRemove()
 
 void KPluginOptions::dirUp()
 {
-    unsigned cur = m_widget->dirList->index(m_widget->dirList->selectedItem());
+    int cur = m_widget->dirList->currentRow();
     if ( cur>0 ) {
-        QString txt = m_widget->dirList->text(cur-1);
-        m_widget->dirList->removeItem( cur-1 );
-        m_widget->dirList->insertItem( txt, cur );
+        QString txt = m_widget->dirList->item(cur-1)->text();
+        delete m_widget->dirList->takeItem( cur-1 );
+        m_widget->dirList->insertItem( cur , txt );
 
         m_widget->dirUp->setEnabled( cur-1>0 );
         m_widget->dirDown->setEnabled( true );
@@ -511,11 +512,11 @@ void KPluginOptions::dirUp()
 
 void KPluginOptions::dirDown()
 {
-    unsigned cur = m_widget->dirList->index(m_widget->dirList->selectedItem());
+    int cur = m_widget->dirList->currentRow();
     if ( cur < m_widget->dirList->count()-1 ) {
-        QString txt = m_widget->dirList->text(cur+1);
-        m_widget->dirList->removeItem( cur+1 );
-        m_widget->dirList->insertItem( txt, cur );
+        QString txt = m_widget->dirList->item(cur+1)->text();
+        delete m_widget->dirList->takeItem( cur+1 );
+        m_widget->dirList->insertItem( cur , txt );
 
         m_widget->dirUp->setEnabled( true );
         m_widget->dirDown->setEnabled( cur+1<m_widget->dirList->count()-1 );
@@ -526,9 +527,9 @@ void KPluginOptions::dirDown()
 
 void KPluginOptions::dirEdited(const QString &txt )
 {
-    if ( m_widget->dirList->currentText() != txt ) {
+    if ( m_widget->dirList->currentItem()->text() != txt ) {
         m_widget->dirList->blockSignals(true);
-        m_widget->dirList->changeItem( txt, m_widget->dirList->currentItem() );
+        m_widget->dirList->currentItem()->setText(txt);
         m_widget->dirList->blockSignals(false);
         change();
     }

@@ -20,7 +20,7 @@
 #define __kserviceselectdlg_h
 #include <kdialog.h>
 #include <kservice.h>
-#include <klistbox.h>
+#include <klistwidget.h>
 class KServiceSelectDlg : public KDialog
 {
     Q_OBJECT
@@ -43,7 +43,7 @@ public:
 protected slots:
     void slotOk();	
 private:
-    KListBox * m_listbox;
+    KListWidget * m_listbox;
 };
 
 #endif

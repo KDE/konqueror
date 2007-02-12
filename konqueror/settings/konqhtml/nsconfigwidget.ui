@@ -141,7 +141,7 @@
            </widget>
           </item>
           <item rowspan="4" row="1" column="0" colspan="2" >
-           <widget class="KListBox" name="dirList" >
+           <widget class="KListWidget" name="dirList" >
             <property name="sizePolicy" >
              <sizepolicy>
               <hsizetype>7</hsizetype>
@@ -248,9 +248,9 @@
  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
  <customwidgets>
   <customwidget>
-   <class>KListBox</class>
-   <extends>Q3ListBox</extends>
-   <header>klistbox.h</header>
+   <class>KListWidget</class>
+   <extends>QListWidget</extends>
+   <header>klistwidget.h</header>
   </customwidget>
   <customwidget>
    <class>Q3ListView</class>
