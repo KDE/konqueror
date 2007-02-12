@@ -263,7 +263,7 @@ bool KonqOperations::askDeleteConfirmation( const KUrl::List & selectedUrls, int
         case DEL:
             result = KMessageBox::warningContinueCancelList(
                 widget,
-             	i18np( "Do you really want to delete this item?", "Do you really want to delete these %n items?", prettyList.count()),
+             	i18np( "Do you really want to delete this item?", "Do you really want to delete these %1 items?", prettyList.count()),
              	prettyList,
 		i18n( "Delete Files" ),
 		KStandardGuiItem::del(),
@@ -274,7 +274,7 @@ bool KonqOperations::askDeleteConfirmation( const KUrl::List & selectedUrls, int
         default:
             result = KMessageBox::warningContinueCancelList(
                 widget,
-                i18np( "Do you really want to move this item to the trash?", "Do you really want to move these %n items to the trash?", prettyList.count()),
+                i18np( "Do you really want to move this item to the trash?", "Do you really want to move these %1 items to the trash?", prettyList.count()),
                 prettyList,
 		i18n( "Move to Trash" ),
 		KGuiItem( i18nc( "Verb", "&Trash" ), "edittrash"),
