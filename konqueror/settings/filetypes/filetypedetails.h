@@ -5,7 +5,7 @@
 class TypesListItem;
 class KIconButton;
 class QLineEdit;
-class Q3ListBox;
+class QListWidget;
 class Q3ButtonGroup;
 class QCheckBox;
 class QRadioButton;
@@ -48,7 +48,7 @@ private:
 
   // First tab - General
   KIconButton *iconButton;
-  Q3ListBox *extensionLB;
+  QListWidget *extensionLB;
   QPushButton *addExtButton, *removeExtButton;
   QLineEdit *description;
   KServiceListWidget *serviceListWidget;

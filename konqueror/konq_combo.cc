@@ -55,7 +55,7 @@ static QString titleOfURL( const QString& urlStr )
     return ( historyentry != historylist.end() ? (*historyentry).title : QString() );
 }
 
-class KonqComboListBoxPixmap : public Q3ListBoxItem
+class KonqComboListBoxPixmap : public QListWidgetItem
 {
 public:
     KonqComboListBoxPixmap( const QString& text );
@@ -63,8 +63,8 @@ public:
 
     const QPixmap *pixmap() const { return &pm; }
 
-    int height( const Q3ListBox * ) const;
-    int width( const Q3ListBox * )  const;
+    int height( const QListWidget * ) const;
+    int width( const QListWidget * )  const;
 
     int rtti() const;
     static int RTTI;
@@ -699,14 +699,14 @@ bool KonqCombo::hasSufficientContrast(const QColor &c1, const QColor &c2)
 ///////////////////////////////////////////////////////////////////////////////
 
 KonqComboListBoxPixmap::KonqComboListBoxPixmap( const QString& text )
-    : Q3ListBoxItem()
+    : QListWidgetItem()
 {
     setText( text );
     lookup_pending = true;
 }
 
 KonqComboListBoxPixmap::KonqComboListBoxPixmap( const QPixmap & pix, const QString& text, const QString& _title )
-  : Q3ListBoxItem()
+  : QListWidgetItem()
 {
     pm = pix;
     title = _title;
@@ -732,7 +732,7 @@ void KonqComboListBoxPixmap::paint( QPainter *painter )
         lookup_pending = false;
     }
 
-    int itemHeight = height( listBox() );
+    int itemHeight = listWidget()->visualItemRect(this).height();
     int yPos, pmWidth = 0;
     const QPixmap *pm = pixmap();
 
@@ -742,18 +742,18 @@ void KonqComboListBoxPixmap::paint( QPainter *painter )
         pmWidth = pm->width() + 5;
     }
 
-    int entryWidth = listBox()->width() - listBox()->style()->pixelMetric( QStyle::PM_ScrollBarExtent ) -
-                     2 * listBox()->style()->pixelMetric( QStyle::PM_DefaultFrameWidth );
+    int entryWidth = listWidget()->width() - listWidget()->style()->pixelMetric( QStyle::PM_ScrollBarExtent ) -
+                     2 * listWidget()->style()->pixelMetric( QStyle::PM_DefaultFrameWidth );
     int titleWidth = ( entryWidth / 3 ) - 1;
     int urlWidth = entryWidth - titleWidth - pmWidth - 2;
 
     if ( !text().isEmpty() ) {
-        QString squeezedText = listBox()->fontMetrics().elidedText( text(), Qt::ElideRight, urlWidth );
+        QString squeezedText = listWidget()->fontMetrics().elidedText( text(), Qt::ElideRight, urlWidth );
         painter->drawText( pmWidth, 0, urlWidth + pmWidth, itemHeight,
                            Qt::AlignLeft | Qt::AlignTop, squeezedText );
 
         painter->setPen( KGlobalSettings::inactiveTextColor() );
-        squeezedText = listBox()->fontMetrics().elidedText( title, Qt::ElideRight, titleWidth );
+        squeezedText = listWidget()->fontMetrics().elidedText( title, Qt::ElideRight, titleWidth );
         QFont font = painter->font();
         font.setItalic( true );
         painter->setFont( font );
@@ -762,7 +762,7 @@ void KonqComboListBoxPixmap::paint( QPainter *painter )
     }
 }
 
-int KonqComboListBoxPixmap::height( const Q3ListBox* lb ) const
+int KonqComboListBoxPixmap::height( const QListWidget* lb ) const
 {
     int h;
     if ( text().isEmpty() )
@@ -772,7 +772,7 @@ int KonqComboListBoxPixmap::height( const Q3ListBox* lb ) const
     return qMax( h, QApplication::globalStrut().height() );
 }
 
-int KonqComboListBoxPixmap::width( const Q3ListBox* lb ) const
+int KonqComboListBoxPixmap::width( const QListWidget* lb ) const
 {
     if ( text().isEmpty() )
         return qMax( pm.width() + 6, QApplication::globalStrut().width() );
@@ -820,10 +820,22 @@ void KonqComboLineEdit::setCompletedItems( const QStringList& items )
         }
 
         if ( completionbox->isVisible() ) {
-            bool wasSelected = completionbox->isSelected( completionbox->currentItem() );
-            const QString currentSelection = completionbox->currentText();
+
+            QListWidgetItem* currentItem = completionbox->currentItem();
+            bool wasSelected = false;
+            QString currentSelection;
+
+            if ( currentItem != 0 ) {
+                wasSelected = currentItem->isSelected();
+                currentSelection = currentItem->text();
+            }
+
             completionbox->setItems( items );
-            Q3ListBoxItem* item = completionbox->findItem( currentSelection, Q3ListBox::ExactMatch );
+            QList<QListWidgetItem*> matchedItems = completionbox->findItems
+                                ( currentSelection, Qt::MatchExactly );
+
+            QListWidgetItem* item = matchedItems.isEmpty() ? 0 : matchedItems.first();
+
             if( !item || !wasSelected )
             {
                 wasSelected = false;
@@ -832,7 +844,7 @@ void KonqComboLineEdit::setCompletedItems( const QStringList& items )
             if ( item ) {
                 completionbox->blockSignals( true );
                 completionbox->setCurrentItem( item );
-                completionbox->setSelected( item, wasSelected );
+                item->setSelected(wasSelected);
                 completionbox->blockSignals( false );
             }
         }
@@ -864,9 +876,10 @@ void KonqComboCompletionBox::setItems( const QStringList& items )
     bool block = signalsBlocked();
     blockSignals( true );
 
-    Q3ListBoxItem* item = firstItem();
-    if ( !item )
-        insertStringList( items );
+    int rowIndex = 0;
+    
+    if ( count() == 0 )
+        addItems( items );
     else {
         //Keep track of whether we need to change anything,
         //so we can avoid a repaint for identical updates,
@@ -877,30 +890,29 @@ void KonqComboCompletionBox::setItems( const QStringList& items )
         const QStringList::ConstIterator itEnd = items.constEnd();
 
         for ( ; it != itEnd; ++it) {
-            if ( item ) {
-                const bool changed = ((KonqComboListBoxPixmap*)item)->reuse( *it );
+            if ( rowIndex < count() ) {
+                const bool changed = ((KonqComboListBoxPixmap*)item(rowIndex))->reuse( *it );
                 dirty = dirty || changed;
-                item = item->next();
+                rowIndex++;
             }
             else {
                 dirty = true;
                 //Inserting an item is a way of making this dirty
-                insertItem( new KonqComboListBoxPixmap( *it ) );
+                addItem( new KonqComboListBoxPixmap( *it ) );
             }
         }
 
         //If there is an unused item, mark as dirty -> less items now
-        if ( item )
+        if ( rowIndex < count() )
             dirty = true;
 
-        Q3ListBoxItem* tmp = item;
-        while ( (item = tmp ) ) {
-            tmp = item->next();
-            delete item;
+        while ( rowIndex < count() ) {
+            delete item(rowIndex);
         }
 
-        if ( dirty )
-            triggerUpdate( false );
+        //TODO KDE 4 - Port this
+        //if ( dirty )
+        //    triggerUpdate( false );
     }
 
     if ( isVisible() && size().height() != sizeHint().height() )
@@ -917,7 +929,8 @@ void KonqComboCompletionBox::insertStringList( const QStringList & list, int ind
 {
     if ( index < 0 )
         index = count();
-    for ( QStringList::ConstIterator it = list.begin(); it != list.end(); ++it )
-        insertItem( new KonqComboListBoxPixmap( *it ), index++ );
+    for ( QStringList::ConstIterator it = list.begin(); it != list.end(); ++it ) {
+        insertItem( index++ , new KonqComboListBoxPixmap( *it ) );
+    }
 }
 #include "konq_combo.moc"

@@ -36,7 +36,7 @@ KServiceSelectDlg::KServiceSelectDlg( const QString& /*serviceType*/, const QStr
 
     vbox->setSpacing( KDialog::spacingHint() );
     new QLabel( i18n( "Select service:" ), vbox );
-    m_listbox=new KListBox( vbox );
+    m_listbox=new KListWidget( vbox );
 
     // Can't make a KTrader query since we don't have a servicetype to give,
     // we want all services that are not applications.......
@@ -47,13 +47,13 @@ KServiceSelectDlg::KServiceSelectDlg( const QString& /*serviceType*/, const QStr
     for ( ; it != allServices.end() ; ++it )
       if ( (*it)->hasServiceType( "KParts/ReadOnlyPart" ) )
       {
-          m_listbox->insertItem( new KServiceListItem( (*it), KServiceListWidget::SERVICELIST_SERVICES ) );
+          m_listbox->addItem( new KServiceListItem( (*it), KServiceListWidget::SERVICELIST_SERVICES ) );
       }
 
-    m_listbox->sort();
+    m_listbox->model()->sort(0);
     m_listbox->setMinimumHeight(350);
     m_listbox->setMinimumWidth(300);
-    connect(m_listbox,SIGNAL(doubleClicked ( Q3ListBoxItem * )),SLOT(slotOk()));
+    connect(m_listbox,SIGNAL(doubleClicked ( QListWidgetItem * )),SLOT(slotOk()));
     connect( this, SIGNAL( okClicked() ), this, SLOT( slotOk() ) );
     setMainWidget(vbox);
 }
@@ -69,7 +69,7 @@ void KServiceSelectDlg::slotOk()
 
 KService::Ptr KServiceSelectDlg::service()
 {
-    unsigned int selIndex = m_listbox->currentItem();
+    int selIndex = m_listbox->currentRow();
     KServiceListItem *selItem = static_cast<KServiceListItem *>(m_listbox->item(selIndex));
     return KService::serviceByDesktopPath( selItem->desktopPath );
 }

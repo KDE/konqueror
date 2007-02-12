@@ -20,10 +20,10 @@
 
 #include <kcmodule.h>
 
-class Q3ListBox;
+class QListWidget;
 class QPushButton;
 class QLineEdit;
-class Q3ListBoxItem;
+class QListWidgetItem;
 class QCheckBox;
 
 class KCMFilter : public KCModule
@@ -53,7 +53,7 @@ protected Q_SLOTS:
 
 private:
     void updateButton();
-    Q3ListBox *mListBox;
+    QListWidget *mListBox;
     QLineEdit *mString;
     QCheckBox *mEnableCheck;
     QCheckBox *mKillCheck;

@@ -21,7 +21,7 @@
 #include <kglobal.h>
 #include <kaboutdata.h>
 #include <kfiledialog.h>
-#include <Q3ListBox>
+#include <QListWidget>
 #include <QLayout>
 #include <QPushButton>
 #include <q3groupbox.h>
@@ -62,8 +62,8 @@ KCMFilter::KCMFilter( QWidget *parent, const QStringList& )
 
     QVBoxLayout *vbox = new QVBoxLayout;
 
-    mListBox = new Q3ListBox;
-    mListBox->setSelectionMode(Q3ListBox::Extended);
+    mListBox = new QListWidget;
+    mListBox->setSelectionMode(QListWidget::ExtendedSelection);
     vbox->addWidget(mListBox);
     vbox->addWidget(new QLabel( i18n("Expression (e.g. http://www.site.com/ad/*):")));
     mString = new QLineEdit;
@@ -127,10 +127,10 @@ void KCMFilter::slotEnableChecked()
 void KCMFilter::slotItemSelected()
 {
     int currentId=-1;
-    unsigned int i;
+    int i;
     for( i=0,mSelCount=0; i < mListBox->count() && mSelCount<2; ++i )
     {
-        if (mListBox->isSelected(i))
+        if (mListBox->item(i)->isSelected())
         {
             currentId=i;
             mSelCount++;
@@ -139,7 +139,7 @@ void KCMFilter::slotItemSelected()
 
     if ( currentId >= 0 )
     {
-        mString->setText(mListBox->text(currentId));
+        mString->setText(mListBox->item(currentId)->text());
     }
     updateButton();
 }
@@ -196,12 +196,15 @@ void KCMFilter::importFilters()
                     }
                 }
 
-                if (!line.isEmpty() && mListBox->findItem(line, Q3ListBox::CaseSensitive|Q3ListBox::ExactMatch) == 0)
+                if (!line.isEmpty() && 
+                     mListBox->findItems(line, 
+                                        Qt::MatchCaseSensitive|Qt::MatchExactly).isEmpty()) {
                     paths.append(line);
+                }
             }
             f.close();
 
-            mListBox->insertStringList( paths );
+            mListBox->addItems( paths );
             emit changed(true);
         }
     }
@@ -219,9 +222,9 @@ void KCMFilter::exportFilters()
       ts.setCodec( "UTF-8" );
       ts << "[AdBlock]" << endl;
 
-      uint i;
+      int i;
       for( i = 0; i < mListBox->count(); ++i )
-        ts << mListBox->text(i) << endl;
+        ts << mListBox->item(i)->text() << endl;
 
       f.close();
     }
@@ -242,11 +245,11 @@ void KCMFilter::save()
     mConfig->writeEntry("Enabled",mEnableCheck->isChecked());
     mConfig->writeEntry("Shrink",mKillCheck->isChecked());
 
-    uint i;
+    int i;
     for( i = 0; i < mListBox->count(); ++i )
     {
         QString key = "Filter-" + QString::number(i);
-        mConfig->writeEntry(key, mListBox->text(i));
+        mConfig->writeEntry(key, mListBox->item(i)->text());
     }
     mConfig->writeEntry("Count",mListBox->count());
 
@@ -276,19 +279,21 @@ void KCMFilter::load()
             paths.append(it.value());
     }
 
-    mListBox->insertStringList( paths );
+    mListBox->addItems( paths );
 }
 
 void KCMFilter::insertFilter()
 {
     if ( !mString->text().isEmpty() )
     {
-        mListBox->insertItem( mString->text() );
+        mListBox->addItem( mString->text() );
         int id=mListBox->count()-1;
         mListBox->clearSelection();
-        mListBox->setSelected(id,true);
-        mListBox->setCurrentItem(id);
-        mListBox->ensureCurrentVisible();
+        mListBox->item(id)->setSelected(true);
+        mListBox->setCurrentRow(id);
+        
+#warning "KDE 4 - Port ensureCurrentVisible() call"
+        //mListBox->ensureCurrentVisible();
         emit changed( true );
     }
     updateButton();
@@ -298,8 +303,8 @@ void KCMFilter::removeFilter()
 {
     for( int i = mListBox->count(); i >= 0; --i )
     {
-        if (mListBox->isSelected(i))
-            mListBox->removeItem(i);
+        if (mListBox->item(i)->isSelected())
+            delete mListBox->takeItem(i);
     }
     emit changed( true );
     updateButton();
@@ -309,10 +314,10 @@ void KCMFilter::updateFilter()
 {
     if ( !mString->text().isEmpty() )
     {
-        int index = mListBox->currentItem();
+        int index = mListBox->currentRow();
         if ( index >= 0 )
         {
-            mListBox->changeItem( mString->text(), index );
+            mListBox->item(index)->setText(mString->text());
             emit changed( true );
         }
     }

@@ -14,7 +14,7 @@
 class QLabel;
 class K3ListView;
 class Q3ListViewItem;
-class Q3ListBox;
+class QListWidget;
 class QPushButton;
 class KIconButton;
 class KLineEdit;

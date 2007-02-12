@@ -28,7 +28,7 @@
 #include <kdebug.h>
 #include <klocale.h>
 #include <knuminput.h>
-#include <klistbox.h>
+#include <klistwidget.h>
 #include <klineedit.h>
 #include <kicontheme.h>
 #include <kurifilter.h>
@@ -67,7 +67,7 @@ void KManualProxyDlg::init()
     connect( mDlg->pbDeleteAll, SIGNAL( clicked() ), SLOT( deleteAllPressed() ) );
 
     connect( mDlg->lbExceptions, SIGNAL(selectionChanged()), SLOT(updateButtons()) );
-    connect( mDlg->lbExceptions, SIGNAL(doubleClicked (Q3ListBoxItem *)), SLOT(changePressed()));
+    connect( mDlg->lbExceptions, SIGNAL(doubleClicked (QListWidgetItem *)), SLOT(changePressed()));
 
     connect( mDlg->cbSameProxy, SIGNAL( toggled(bool) ), SLOT( sameProxy(bool) ) );
     connect( mDlg->pbCopyDown, SIGNAL( clicked() ), SLOT( copyDown() ) );
@@ -151,7 +151,7 @@ void KManualProxyDlg::setProxyData( const KProxyData &data )
         // a valid or legitimate URL. NOTE: needed to catch manual manipulation
         // of the proxy config files...
         if( isValidURL( *it ) || ((*it).length() >= 3 && (*it).startsWith(".")) )
-          mDlg->lbExceptions->insertItem( *it );
+          mDlg->lbExceptions->addItem( *it );
       }
     }
 
@@ -180,9 +180,9 @@ const KProxyData KManualProxyDlg::data() const
 
     if ( mDlg->lbExceptions->count() )
     {
-        Q3ListBoxItem* item = mDlg->lbExceptions->firstItem();
-        for( ; item != 0L; item = item->next() )
-            data.noProxyFor << item->text();
+        for ( int rowIndex = 0 ; rowIndex < mDlg->lbExceptions->count() ; rowIndex++ ) {
+            data.noProxyFor << mDlg->lbExceptions->item(rowIndex)->text();
+        }
     }
 
     data.type = KProtocolManager::ManualProxy;
@@ -328,11 +328,12 @@ void KManualProxyDlg::slotOk()
 
 bool KManualProxyDlg::handleDuplicate( const QString& site )
 {
-    Q3ListBoxItem* item = mDlg->lbExceptions->firstItem();
-    while ( item != 0 )
+    for ( int rowIndex = 0 ; rowIndex < mDlg->lbExceptions->count() ; rowIndex++ )
     {
+        QListWidgetItem* item = mDlg->lbExceptions->item(rowIndex);
+
         if ( item->text().lastIndexOf( site ) != -1 &&
-             item != mDlg->lbExceptions->selectedItem() )
+             item != mDlg->lbExceptions->currentItem() )
         {
             QString msg = i18n("You entered a duplicate address. "
                                "Please try again.");
@@ -341,8 +342,6 @@ bool KManualProxyDlg::handleDuplicate( const QString& site )
             KMessageBox::detailedError( this, msg, details, i18n("Duplicate Entry") );
             return true;
         }
-
-        item = item->next();
     }
     return false;
 }
@@ -351,22 +350,22 @@ void KManualProxyDlg::newPressed()
 {
   QString result;
   if( getException(result, i18n("New Exception")) && !handleDuplicate(result) )
-    mDlg->lbExceptions->insertItem( result );
+    mDlg->lbExceptions->addItem( result );
 }
 
 void KManualProxyDlg::changePressed()
 {
   QString result;
   if( getException( result, i18n("Change Exception"),
-                    mDlg->lbExceptions->currentText() ) &&
-      !handleDuplicate( result ) )
-      mDlg->lbExceptions->changeItem( result, mDlg->lbExceptions->currentItem() );
+                    mDlg->lbExceptions->currentItem()->text() ) &&
+      !handleDuplicate( result ) ) 
+      mDlg->lbExceptions->currentItem()->setText(result); 
 }
 
 void KManualProxyDlg::deletePressed()
 {
-    mDlg->lbExceptions->removeItem( mDlg->lbExceptions->currentItem() );
-    mDlg->lbExceptions->setSelected( mDlg->lbExceptions->currentItem(), true );
+    delete mDlg->lbExceptions->takeItem( mDlg->lbExceptions->currentRow() );
+    mDlg->lbExceptions->currentItem()->setSelected(true); 
     updateButtons();
 }
 
@@ -379,7 +378,7 @@ void KManualProxyDlg::deleteAllPressed()
 void KManualProxyDlg::updateButtons()
 {
     bool hasItems = mDlg->lbExceptions->count() > 0;
-    bool itemSelected = (hasItems && mDlg->lbExceptions->selectedItem()!=0);
+    bool itemSelected = (hasItems && mDlg->lbExceptions->currentItem()!=0);
 
     mDlg->pbDeleteAll->setEnabled( hasItems );
     mDlg->pbDelete->setEnabled( itemSelected );

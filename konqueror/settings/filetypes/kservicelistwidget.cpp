@@ -40,7 +40,7 @@
 #include <kstandarddirs.h>
 
 KServiceListItem::KServiceListItem( KService::Ptr pService, int kind )
-    : Q3ListBoxText(), desktopPath(pService->desktopEntryPath())
+    : QListWidgetItem(), desktopPath(pService->desktopEntryPath())
 {
     if ( kind == KServiceListWidget::SERVICELIST_APPLICATIONS )
         setText( pService->name() );
@@ -76,10 +76,10 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *na
   grid->setRowStretch(5, 1);
   grid->setRowStretch(6, 1);
 
-  servicesLB = new Q3ListBox(gb);
+  servicesLB = new QListWidget(gb);
   connect(servicesLB, SIGNAL(highlighted(int)), SLOT(enableMoveButtons(int)));
   grid->addWidget(servicesLB, 1, 0, 6, 1);
-  connect( servicesLB, SIGNAL( doubleClicked ( Q3ListBoxItem * )), this, SLOT( editService()));
+  connect( servicesLB, SIGNAL( doubleClicked ( QListWidgetItem * )), this, SLOT( editService()));
 
   QString wtstr =
     (kind == SERVICELIST_APPLICATIONS ?
@@ -171,7 +171,7 @@ void KServiceListWidget::setTypeItem( TypesListItem * item )
       : item->embedServices();
 
     if (services.count() == 0) {
-      servicesLB->insertItem(i18n("None"));
+      servicesLB->addItem(i18n("None"));
     } else {
       for ( QStringList::Iterator it = services.begin();
             it != services.end(); it++ )
@@ -179,7 +179,7 @@ void KServiceListWidget::setTypeItem( TypesListItem * item )
         KService::Ptr pService = KService::serviceByDesktopPath( *it );
 
         if (pService)
-          servicesLB->insertItem( new KServiceListItem(pService, m_kind) );
+          servicesLB->addItem( new KServiceListItem(pService, m_kind) );
       }
       servicesLB->setEnabled(true);
     }
@@ -193,16 +193,16 @@ void KServiceListWidget::promoteService()
     return;
   }
 
-  unsigned int selIndex = servicesLB->currentItem();
+  int selIndex = servicesLB->currentRow();
   if (selIndex == 0) {
     KNotification::beep();
     return;
   }
 
-  Q3ListBoxItem *selItem = servicesLB->item(selIndex);
-  servicesLB->takeItem(selItem);
-  servicesLB->insertItem(selItem, selIndex-1);
-  servicesLB->setCurrentItem(selIndex - 1);
+  QListWidgetItem *selItem = servicesLB->item(selIndex);
+  servicesLB->takeItem(selIndex);
+  servicesLB->insertItem(selIndex-1,selItem);
+  servicesLB->setCurrentRow(selIndex - 1);
 
   updatePreferredServices();
 
@@ -216,16 +216,16 @@ void KServiceListWidget::demoteService()
     return;
   }
 
-  unsigned int selIndex = servicesLB->currentItem();
+  int selIndex = servicesLB->currentRow();
   if (selIndex == servicesLB->count() - 1) {
     KNotification::beep();
     return;
   }
 
-  Q3ListBoxItem *selItem = servicesLB->item(selIndex);
-  servicesLB->takeItem(selItem);
-  servicesLB->insertItem(selItem, selIndex+1);
-  servicesLB->setCurrentItem(selIndex + 1);
+  QListWidgetItem *selItem = servicesLB->item(selIndex);
+  servicesLB->takeItem(selIndex);
+  servicesLB->insertItem(selIndex + 1, selItem);
+  servicesLB->setCurrentRow(selIndex + 1);
 
   updatePreferredServices();
 
@@ -263,20 +263,20 @@ void KServiceListWidget::addService()
   }
 
   // if None is the only item, then there currently is no default
-  if (servicesLB->text(0) == i18n("None")) {
-      servicesLB->removeItem(0);
+  if (servicesLB->item(0)->text() == i18n("None")) {
+      delete servicesLB->takeItem(0);
       servicesLB->setEnabled(true);
   }
   else
   {
       // check if it is a duplicate entry
-      for (unsigned int index = 0; index < servicesLB->count(); index++)
+      for (int index = 0; index < servicesLB->count(); index++)
         if (static_cast<KServiceListItem*>( servicesLB->item(index) )->desktopPath
             == service->desktopEntryPath())
           return;
   }
 
-  servicesLB->insertItem( new KServiceListItem(service, m_kind), 0 );
+  servicesLB->insertItem( 0 , new KServiceListItem(service, m_kind) );
   servicesLB->setCurrentItem(0);
 
   updatePreferredServices();
@@ -288,7 +288,7 @@ void KServiceListWidget::editService()
 {
   if (!m_item)
       return;
-  int selected = servicesLB->currentItem();
+  int selected = servicesLB->currentRow();
   if ( selected >= 0 ) {
 
     // Only edit applications, not services as
@@ -297,7 +297,7 @@ void KServiceListWidget::editService()
     {
       // Just like popping up an add dialog except that we
       // pass the current command line as a default
-      Q3ListBoxItem *selItem = servicesLB->item(selected);
+      QListWidgetItem *selItem = servicesLB->item(selected);
 
       KService::Ptr service = KService::serviceByDesktopPath(
           ((KServiceListItem*)selItem)->desktopPath );
@@ -323,21 +323,22 @@ void KServiceListWidget::editService()
         return;
 
       // Remove the old one...
-      servicesLB->removeItem( selected );
+      delete servicesLB->takeItem( selected );
 
       // ...check that it's not a duplicate entry...
       bool addIt = true;
-      for (unsigned int index = 0; index < servicesLB->count(); index++)
+      for ( int index = 0; index < servicesLB->count(); index++ ) {
         if (static_cast<KServiceListItem*>( servicesLB->item(index) )->desktopPath
                 == service->desktopEntryPath()) {
           addIt = false;
           break;
         }
+      }
 
       // ...and add it in the same place as the old one:
       if ( addIt ) {
-        servicesLB->insertItem( new KServiceListItem(service, m_kind), selected );
-        servicesLB->setCurrentItem(selected);
+        servicesLB->insertItem( selected , new KServiceListItem(service, m_kind) );
+        servicesLB->setCurrentRow(selected);
       }
 
       updatePreferredServices();
@@ -351,7 +352,7 @@ void KServiceListWidget::removeService()
 {
   if (!m_item) return;
 
-  int selected = servicesLB->currentItem();
+  int selected = servicesLB->currentRow();
 
   if ( selected >= 0 ) {
     // Check if service is associated with this mimetype or with one of its parents
@@ -381,17 +382,17 @@ void KServiceListWidget::removeService()
     }
     else
     {
-       servicesLB->removeItem( selected );
+       delete servicesLB->takeItem( selected );
        updatePreferredServices();
 
        emit changed(true);
     }
   }
 
-  if ( servRemoveButton && servicesLB->currentItem() == -1 )
+  if ( servRemoveButton && servicesLB->currentRow() == -1 )
     servRemoveButton->setEnabled(false);
 
-  if ( servEditButton && servicesLB->currentItem() == -1 )
+  if ( servEditButton && servicesLB->currentRow() == -1 )
     servEditButton->setEnabled(false);
 }
 
@@ -419,7 +420,7 @@ void KServiceListWidget::enableMoveButtons(int index)
     servUpButton->setEnabled(false);
     servDownButton->setEnabled(false);
   }
-  else if ((uint) index == (servicesLB->count() - 1))
+  else if ( index == (servicesLB->count() - 1))
   {
     servUpButton->setEnabled(true);
     servDownButton->setEnabled(false);

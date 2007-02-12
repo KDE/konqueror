@@ -22,14 +22,14 @@
 #define _KSERVICELISTWIDGET_H
 
 #include <q3groupbox.h>
-#include <q3listbox.h>
+#include <qlistwidget.h>
 #include <kservice.h>
 class TypesListItem;
 class QLineEdit;
 class QPushButton;
 class KService;
 
-class KServiceListItem : public Q3ListBoxText
+class KServiceListItem : public QListWidgetItem
 {
 public:
     KServiceListItem( /*TODO const &*/ KService::Ptr pService, int kind );
@@ -69,7 +69,7 @@ protected:
 
 private:
   int m_kind;
-  Q3ListBox *servicesLB;
+  QListWidget *servicesLB;
   QPushButton *servUpButton, *servDownButton;
   QPushButton *servNewButton, *servEditButton, *servRemoveButton;
   TypesListItem *m_item;

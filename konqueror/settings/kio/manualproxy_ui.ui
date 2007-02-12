@@ -270,7 +270,7 @@ Reverse the use of the exception list. Checking this box will result in the prox
                   </spacer>
                 </item>
                 <item rowspan="5" row="0" column="0" colspan="1" >
-                  <widget class="KListBox" name="lbExceptions" />
+                  <widget class="KListWidget" name="lbExceptions" />
                 </item>
               </layout>
             </item>
@@ -287,9 +287,9 @@ Reverse the use of the exception list. Checking this box will result in the prox
       <header>knuminput.h</header>
     </customwidget>
     <customwidget>
-      <class>KListBox</class>
-      <extends>Q3ListBox</extends>
-      <header>klistbox.h</header>
+      <class>KListWidget</class>
+      <extends>QListWidget</extends>
+      <header>klistwidget.h</header>
     </customwidget>
   </customwidgets>
   <tabstops>
