@@ -659,8 +659,7 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
         // findAllResources() also removes duplicates
         const QStringList entries = KGlobal::dirs()->findAllResources( "data",
                                                                        "konqueror/servicemenus/*.desktop",
-                                                                       false /* recursive */,
-                                                                       true /* unique */ );
+                                                                       KStandardDirs::NoDuplicates );
         QStringList::ConstIterator eIt = entries.begin();
         const QStringList::ConstIterator eEnd = entries.end();
         for (; eIt != eEnd; ++eIt )

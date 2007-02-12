@@ -95,7 +95,7 @@ void KonqSidebarTree::loadModuleFactories()
   pluginFactories.clear();
   pluginInfo.clear();
   KStandardDirs *dirs=KGlobal::dirs();
-  QStringList list=dirs->findAllResources("data","konqsidebartng/dirtree/*.desktop",false,true);
+  QStringList list=dirs->findAllResources("data","konqsidebartng/dirtree/*.desktop",KStandardDirs::NoDuplicates);
 
 
   for (QStringList::ConstIterator it=list.begin();it!=list.end();++it)
