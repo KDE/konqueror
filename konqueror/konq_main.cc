@@ -88,7 +88,7 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
   {
      if (args->isSet("profiles"))
      {
-       QStringList profiles = KGlobal::dirs()->findAllResources("data", "konqueror/profiles/*", false, true);
+       QStringList profiles = KGlobal::dirs()->findAllResources("data", "konqueror/profiles/*", KStandardDirs::NoDuplicates);
        profiles.sort();
        for(QStringList::ConstIterator it = profiles.begin();
            it != profiles.end(); ++it)

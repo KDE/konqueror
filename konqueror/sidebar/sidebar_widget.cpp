@@ -65,7 +65,9 @@ void addBackEnd::aboutToShowAddMenu()
 	if (!menu)
 		return;
 	KStandardDirs *dirs = KGlobal::dirs();
-	QStringList list = dirs->findAllResources("data","konqsidebartng/add/*.desktop",true,true);
+	QStringList list = dirs->findAllResources("data","konqsidebartng/add/*.desktop",
+						KStandardDirs::Recursive |
+						KStandardDirs::NoDuplicates);
 	menu->clear();
 	int i = 0;
 
