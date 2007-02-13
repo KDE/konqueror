@@ -88,7 +88,7 @@ KCMFilter::KCMFilter( QWidget *parent, const QStringList& )
 
     connect( mEnableCheck, SIGNAL( clicked()), this, SLOT( slotEnableChecked()));
     connect( mKillCheck, SIGNAL( clicked()), this, SLOT( slotKillChecked()));
-    connect( mListBox, SIGNAL( selectionChanged ()),this, SLOT( slotItemSelected()));
+    connect( mListBox, SIGNAL(itemSelectionChanged()),this, SLOT(slotItemSelected()));
 
 /*
  * Whats this items
