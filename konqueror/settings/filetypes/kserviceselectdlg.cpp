@@ -53,8 +53,8 @@ KServiceSelectDlg::KServiceSelectDlg( const QString& /*serviceType*/, const QStr
     m_listbox->model()->sort(0);
     m_listbox->setMinimumHeight(350);
     m_listbox->setMinimumWidth(300);
-    connect(m_listbox,SIGNAL(doubleClicked ( QListWidgetItem * )),SLOT(slotOk()));
-    connect( this, SIGNAL( okClicked() ), this, SLOT( slotOk() ) );
+    connect(m_listbox,SIGNAL(itemDoubleClicked(QListWidgetItem*)),SLOT(slotOk()));
+    connect( this, SIGNAL(okClicked()), this, SLOT(slotOk()) );
     setMainWidget(vbox);
 }
 
