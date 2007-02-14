@@ -291,8 +291,10 @@ void KCMFilter::insertFilter()
         mListBox->clearSelection();
         mListBox->item(id)->setSelected(true);
         mListBox->setCurrentRow(id);
-        
+
+#ifdef __GNUC__
 #warning "KDE 4 - Port ensureCurrentVisible() call"
+#endif
         //mListBox->ensureCurrentVisible();
         emit changed( true );
     }
