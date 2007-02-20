@@ -47,8 +47,7 @@ KServiceListItem::KServiceListItem( KService::Ptr pService, int kind )
     else
         setText( i18n( "%1 (%2)", pService->name(), pService->desktopEntryName() ) );
 
-    bool isApplication = pService->type() == "Application";
-    if (!isApplication)
+    if (!pService->isApplication())
       localPath = KStandardDirs::locateLocal("services", desktopPath);
     else
       localPath = pService->locateLocal();
