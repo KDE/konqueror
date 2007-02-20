@@ -2,12 +2,12 @@
 ########### next target ###############
 
 set(kateinterfaces_LIB_SRCS kateappadaptor.cpp katemainwindowadaptor.cpp
-   ${CMAKE_SOURCE_DIR}/kate/interfaces/application.cpp
-   ${CMAKE_SOURCE_DIR}/kate/interfaces/mainwindow.cpp
-   ${CMAKE_SOURCE_DIR}/kate/interfaces/documentmanager.cpp
-   ${CMAKE_SOURCE_DIR}/kate/interfaces/pluginmanager.cpp
-   ${CMAKE_SOURCE_DIR}/kate/interfaces/plugin.cpp
-   ${CMAKE_SOURCE_DIR}/kate/interfaces/pluginconfigpageinterface.cpp
+   ../interfaces/application.cpp
+   ../interfaces/mainwindow.cpp
+   ../interfaces/documentmanager.cpp
+   ../interfaces/pluginmanager.cpp
+   ../interfaces/plugin.cpp
+   ../interfaces/pluginconfigpageinterface.cpp
    kateapp.cpp
    kateconfigdialog.cpp
    kateconfigplugindialogpage.cpp
