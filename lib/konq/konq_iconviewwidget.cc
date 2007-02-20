@@ -1393,64 +1393,6 @@ void KonqIconViewWidget::contentsMouseReleaseEvent( QMouseEvent *e )
     m_bMousePressed = false;
 }
 
-void KonqIconViewWidget::slotSaveIconPositions()
-{
-  // WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
-  // This code is currently not used but left in for compatibility reasons.
-  // It can be removed in KDE 4.0
-  // Saving of desktop icon positions is now done in KDIconView::saveIconPositions()
-  // in kdebase/kdesktop/kdiconview.cc
-  // WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
-
-  if ( m_dotDirectoryPath.isEmpty() )
-    return;
-  if ( !m_bDesktop )
-    return; // Currently not available in Konqueror
-  kDebug(1214) << "KonqIconViewWidget::slotSaveIconPositions" << endl;
-  KSimpleConfig dotDirectory( m_dotDirectoryPath );
-  Q3IconViewItem *it = firstItem();
-  if ( !it )
-    return; // No more icons. Maybe we're closing and they've been removed already
-  while ( it )
-  {
-    KFileIVI *ivi = static_cast<KFileIVI *>( it );
-    KFileItem *item = ivi->item();
-
-    dotDirectory.setGroup( QString( m_iconPositionGroupPrefix ).append( item->url().fileName() ) );
-    kDebug(1214) << "KonqIconViewWidget::slotSaveIconPositions " << item->url().fileName() << " " << it->x() << " " << it->y() << endl;
-    dotDirectory.writeEntry( QString( "X %1" ).arg( width() ), it->x() );
-    dotDirectory.writeEntry( QString( "Y %1" ).arg( height() ), it->y() );
-    dotDirectory.writeEntry( "Exists", true );
-
-    it = it->nextItem();
-  }
-
-  QStringList groups = dotDirectory.groupList();
-  QStringList::ConstIterator gIt = groups.begin();
-  QStringList::ConstIterator gEnd = groups.end();
-  for (; gIt != gEnd; ++gIt )
-    if ( (*gIt).left( m_iconPositionGroupPrefix.length() ) == m_iconPositionGroupPrefix )
-    {
-      dotDirectory.setGroup( *gIt );
-      if ( dotDirectory.hasKey( "Exists" ) )
-        dotDirectory.deleteEntry( "Exists", false );
-      else
-      {
-        kDebug(1214) << "KonqIconViewWidget::slotSaveIconPositions deleting group " << *gIt << endl;
-        dotDirectory.deleteGroup( *gIt );
-      }
-    }
-
-  dotDirectory.sync();
-
-  // WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
-  // This code is currently not used but left in for compatibility reasons.
-  // It can be removed in KDE 4.0
-  // Saving of desktop icon positions is now done in KDIconView::saveIconPositions()
-  // in kdebase/kdesktop/kdiconview.cc
-  // WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
-}
-
 // Adapted version of QIconView::insertInGrid, that works relative to
 // m_IconRect, instead of the entire viewport.
 

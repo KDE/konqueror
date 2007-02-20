@@ -36,15 +36,17 @@
 #include <kstandarddirs.h>
 #include <kxmlguifactory.h>
 #include <kxmlguibuilder.h>
+#include <kconfiggroup.h>
+#include <kdesktopfile.h>
 #include <kparts/componentfactory.h>
 #include <kfileshare.h>
 #include <kprocess.h>
 #include <kauthorized.h>
 #include <kglobal.h>
+
 #include <QtDBus/QtDBus>
 #include <QDir>
 #include <QPixmap>
-#include <kconfiggroup.h>
 
 /*
  Test cases:
@@ -403,8 +405,8 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
         //kDebug(1203) << "First popup path is " << firstPopupURL.url() << endl;
         currentDir = firstPopupURL.equals( url, KUrl::CompareWithoutTrailingSlash );
         if ( isLocal && m_sMimeType == "application/x-desktop" ) {
-            KSimpleConfig cfg( firstPopupURL.path(), true );
-            cfg.setDesktopGroup();
+            KDesktopFile desktopFile( firstPopupURL.path() );
+            const KConfigGroup cfg = desktopFile.desktopGroup();
             isTrashLink = ( cfg.readEntry("Type") == "Link" && cfg.readEntry("URL") == "trash:/" );
         }
 
@@ -566,9 +568,8 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
         act = m_ownActions.addAction( "emptytrash" );
         act->setIcon( KIcon("emptytrash") );
         act->setText( i18n( "&Empty Trash Bin" ) );
-        KSimpleConfig trashConfig( "trashrc", true );
-        trashConfig.setGroup( "Status" );
-        act->setEnabled( !trashConfig.readEntry( "Empty", true ) );
+        KConfig trashConfig( "trashrc", KConfig::OnlyLocal);
+        act->setEnabled( !trashConfig.group("Status").readEntry( "Empty", true ) );
         connect(act, SIGNAL(triggered()), this, SLOT(slotPopupEmptyTrashBin()));
         KonqXMLGUIClient::addAction( "emptytrash" );
     }
@@ -622,8 +623,8 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
         // get builtin services, like mount/unmount
         s.builtin = KDEDesktopMimeType::builtinServices( m_lstItems.first()->url() );
         const QString path = m_lstItems.first()->url().path();
-        KSimpleConfig cfg( path, true );
-        cfg.setDesktopGroup();
+        KDesktopFile desktopFile( path );
+        KConfigGroup cfg = desktopFile.desktopGroup();
         const QString priority = cfg.readEntry("X-KDE-Priority");
         const QString submenuName = cfg.readEntry( "X-KDE-Submenu" );
         if ( cfg.readEntry("Type") == "Link" ) {
@@ -632,7 +633,7 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
            // of the .desktop file instead of the .desktop file itself?
         }
         ServiceList* list = s.selectList( priority, submenuName );
-        (*list) = KDEDesktopMimeType::userDefinedServices( path, cfg, url.isLocalFile() );
+        (*list) = KDEDesktopMimeType::userDefinedServices( path, desktopFile, url.isLocalFile() );
     }
 
     if ( sReading )
@@ -644,15 +645,15 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
         if (isDirectory && isSingleLocal)
         {
             QString dotDirectoryFile = m_lstItems.first()->url().path( KUrl::AddTrailingSlash ).append(".directory");
-            KSimpleConfig cfg( dotDirectoryFile, true );
-            cfg.setDesktopGroup();
+            KDesktopFile desktopFile(  dotDirectoryFile );
+            const KConfigGroup cfg = desktopFile.desktopGroup();
 
-            if (KIOSKAuthorizedAction(cfg))
+            if (KIOSKAuthorizedAction(desktopFile))
             {
                 const QString priority = cfg.readEntry("X-KDE-Priority");
                 const QString submenuName = cfg.readEntry( "X-KDE-Submenu" );
                 ServiceList* list = s.selectList( priority, submenuName );
-                (*list) += KDEDesktopMimeType::userDefinedServices( dotDirectoryFile, cfg, true );
+                (*list) += KDEDesktopMimeType::userDefinedServices( dotDirectoryFile, desktopFile, true );
             }
         }
 
@@ -664,10 +665,10 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
         const QStringList::ConstIterator eEnd = entries.end();
         for (; eIt != eEnd; ++eIt )
         {
-            KSimpleConfig cfg( *eIt, true );
-            cfg.setDesktopGroup();
+            KDesktopFile desktopFile( *eIt );
+            const KConfigGroup cfg = desktopFile.desktopGroup();
 
-            if (!KIOSKAuthorizedAction(cfg))
+            if (!KIOSKAuthorizedAction(desktopFile))
             {
                 continue;
             }
@@ -786,7 +787,7 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
                     const QString submenuName = cfg.readEntry( "X-KDE-Submenu" );
 
                     ServiceList* list = s.selectList( priority, submenuName );
-                    (*list) += KDEDesktopMimeType::userDefinedServices( *eIt, cfg, url.isLocalFile(), m_lstPopupURLs );
+                    (*list) += KDEDesktopMimeType::userDefinedServices( *eIt, desktopFile, url.isLocalFile(), m_lstPopupURLs );
                 }
             }
         }

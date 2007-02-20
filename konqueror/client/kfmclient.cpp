@@ -142,8 +142,8 @@ static void needInstance()
 static bool startNewKonqueror( QString url, QString mimetype, const QString& profile )
 {
     needInstance();
-    KConfig cfg( QLatin1String( "konquerorrc" ), true );
-    cfg.setGroup( "Reusing" );
+    KConfig konqCfg( QLatin1String( "konquerorrc" ) );
+    const KConfigGroup reusingGroup( &konqCfg, "Reusing" );
     QStringList allowed_parts;
     // is duplicated in ../KonquerorAdaptor.cpp
     allowed_parts << QLatin1String( "konq_iconview.desktop" )
@@ -152,9 +152,9 @@ static bool startNewKonqueror( QString url, QString mimetype, const QString& pro
                   << QLatin1String( "konq_infolistview.desktop" )
                   << QLatin1String( "konq_treeview.desktop" )
                   << QLatin1String( "konq_detailedlistview.desktop" );
-    if( cfg.hasKey( "SafeParts" )
-        && cfg.readEntry( "SafeParts" ) != QLatin1String( "SAFE" ))
-        allowed_parts = cfg.readEntry( "SafeParts",QStringList() );
+    if( reusingGroup.hasKey( "SafeParts" )
+        && reusingGroup.readEntry( "SafeParts" ) != QLatin1String( "SAFE" ))
+        allowed_parts = reusingGroup.readEntry( "SafeParts",QStringList() );
     if( allowed_parts.count() == 1 && allowed_parts.first() == QLatin1String( "ALL" ))
 	return false; // all parts allowed
     if( url.isEmpty())
@@ -164,10 +164,10 @@ static bool startNewKonqueror( QString url, QString mimetype, const QString& pro
 	QString profilepath = KStandardDirs::locate( "data", QLatin1String("konqueror/profiles/") + profile );
 	if( profilepath.isEmpty())
 	    return true;
-	KConfig cfg( profilepath, true );
+	KConfig cfg(  profilepath );
 	cfg.setDollarExpansion( true );
-        cfg.setGroup( "Profile" );
-	QMap< QString, QString > entries = cfg.entryMap( QLatin1String( "Profile" ));
+        KConfigGroup profileGroup( &cfg, "Profile" );
+	const QMap< QString, QString > entries = profileGroup.entryMap();
 	QRegExp urlregexp( QLatin1String( "^View[0-9]*_URL$" ));
 	QStringList urls;
 	for( QMap< QString, QString >::ConstIterator it = entries.begin();
@@ -175,7 +175,7 @@ static bool startNewKonqueror( QString url, QString mimetype, const QString& pro
 	     ++it )
 	{
             // don't read value from map, dollar expansion is needed
-            QString value = cfg.readEntry( it.key(), QString());
+            QString value = profileGroup.readEntry( it.key(), QString());
 	    if( urlregexp.indexIn( it.key()) >= 0 && !value.isEmpty())
 		urls << value;
 	}
@@ -228,9 +228,9 @@ static void needDBus()
 static QString getPreloadedKonqy()
 {
     needInstance();
-    KConfig cfg( QLatin1String( "konquerorrc" ), true );
-    cfg.setGroup( "Reusing" );
-    if( cfg.readEntry( "MaxPreloadCount", 1 ) == 0 )
+    KConfig konqCfg( QLatin1String( "konquerorrc" ) );
+    const KConfigGroup reusingGroup( &konqCfg, "Reusing" );
+    if( reusingGroup.readEntry( "MaxPreloadCount", 1 ) == 0 )
         return QString();
     needDBus();
     QDBusInterface ref( "org.kde.kded", "/modules/konqy_preloader", "org.kde.konqueror.Preloader", QDBusConnection::sessionBus() );
@@ -297,11 +297,11 @@ bool ClientApp::createNewWindow(const KUrl & url, bool newTab, bool tempFile, co
 
     if (url.protocol().startsWith(QLatin1String("http")))
     {
-        KConfig config( QLatin1String("kfmclientrc"));
-        config.setGroup("General");
-        if (!config.readEntry("BrowserApplication").isEmpty())
+        KConfig config(QLatin1String("kfmclientrc"));
+        KConfigGroup generalGroup(&config, "General");
+        if (!generalGroup.readEntry("BrowserApplication").isEmpty())
         {
-            kDebug() << config.readEntry( "BrowserApplication" ) << endl;
+            kDebug() << generalGroup.readEntry( "BrowserApplication" ) << endl;
             Q_ASSERT( qApp );
             //ClientApp app;
 #ifdef Q_WS_X11
@@ -318,9 +318,9 @@ bool ClientApp::createNewWindow(const KUrl & url, bool newTab, bool tempFile, co
 
     needDBus();
     QDBusConnection dbus = QDBusConnection::sessionBus();
-    KConfig cfg( QLatin1String( "konquerorrc" ), true );
-    cfg.setGroup( "FMSettings" );
-    if ( newTab || cfg.readEntry( "KonquerorTabforExternalURL", false) ) {
+    KConfig cfg( QLatin1String( "konquerorrc" ) );
+    KConfigGroup fmSettings = cfg.group( "FMSettings" );
+    if ( newTab || fmSettings.readEntry( "KonquerorTabforExternalURL", false) ) {
 
         QString foundApp;
         QDBusObjectPath foundObj;

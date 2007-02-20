@@ -34,7 +34,7 @@
 #include <kio/global.h>
 #include <kstandarddirs.h>
 #include <klocale.h>
-#include <ksimpleconfig.h>
+#include <kconfig.h>
 #include <kseparator.h>
 #include <kpushbutton.h>
 
@@ -49,7 +49,7 @@ KonqProfileMap KonqProfileDlg::readAllProfiles()
   {
     QFileInfo info( *pIt );
     QString profileName = KIO::decodeFileName( info.baseName() );
-    KSimpleConfig cfg( *pIt, true );
+    KConfig cfg( *pIt, KConfig::OnlyLocal);
     if ( cfg.hasGroup( "Profile" ) )
     {
       cfg.setGroup( "Profile" );
@@ -221,8 +221,8 @@ void KonqProfileDlg::slotItemRenamed( Q3ListViewItem * item )
     if ( it != m_mapEntries.end() )
     {
       QString fileName = it.value();
-      KSimpleConfig cfg( fileName );
-      cfg.setGroup( "Profile" );
+      KConfig _cfg( fileName, KConfig::OnlyLocal );
+      KConfigGroup cfg(&_cfg, "Profile" );
       cfg.writeEntry( "Name", newName );
       cfg.sync();
       // Didn't find how to change a key...

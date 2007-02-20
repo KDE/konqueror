@@ -24,7 +24,7 @@
 
 #include <QString>
 #include <kcmodule.h>
-#include <kconfig.h>
+#include <ksharedconfig.h>
 class QRadioButton;
 class KIntNumInput;
 

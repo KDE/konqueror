@@ -282,7 +282,7 @@ void KCookiesPolicies::load()
   d_itemsSelected = 0;
   d_configChanged = false;
 
-  KConfig cfg ("kcookiejarrc", true);
+  KConfig cfg ("kcookiejarrc");
   cfg.setGroup ("Cookie Policy");
 
   bool enableCookies = cfg.readEntry("Cookies", true);

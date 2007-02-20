@@ -20,6 +20,7 @@
 #include "konq_settings.h"
 #include "konq_defaults.h"
 #include "kglobalsettings.h"
+#include <ksharedconfig.h>
 #include <kglobal.h>
 #include <kmimetype.h>
 #include <kdesktopfile.h>

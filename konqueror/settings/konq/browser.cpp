@@ -39,7 +39,7 @@ K_EXPORT_COMPONENT_FACTORY(browser, KBrowserOptionsFactory)
 KBrowserOptions::KBrowserOptions(QWidget *parent, const QStringList &)
     : KCModule( KonqKcmFactory<KBrowserOptions>::componentData(), parent )
 {
-  KSharedConfig::Ptr config = KSharedConfig::openConfig("konquerorrc", false, true);
+  KSharedConfig::Ptr config = KSharedConfig::openConfig("konquerorrc");
   QString group = "FMSettings";
 
   QVBoxLayout *layout = new QVBoxLayout(this);
@@ -64,7 +64,7 @@ KBrowserOptions::KBrowserOptions(QWidget *parent, const QStringList &)
   connect(behavior, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)));
   connect(previews, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)));
 
-  connect(tab, SIGNAL(currentChanged(QWidget *)), 
+  connect(tab, SIGNAL(currentChanged(QWidget *)),
           this, SIGNAL(quickHelpChanged()));
   m_tab = tab;
 }

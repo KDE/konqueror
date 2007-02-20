@@ -35,7 +35,7 @@ K_EXPORT_COMPONENT_FACTORY(behavior, KBehaviourOptionsFactory)
 
 KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QStringList &)
     : KCModule(KonqKcmFactory<KBehaviourOptions>::componentData(), parent)
-    , g_pConfig(KSharedConfig::openConfig("konquerorrc", false, true))
+    , g_pConfig(KSharedConfig::openConfig("konquerorrc", KConfig::IncludeGlobals))
     , groupname("FMSettings")
 {
     setQuickHelp(i18n("<h1>Konqueror Behavior</h1> You can configure how Konqueror behaves as a file manager here."));
@@ -208,7 +208,7 @@ void KBehaviourOptions::load()
 
     cbRenameDirectlyIcon->setChecked( g_pConfig->readEntry("RenameIconDirectly", bool(DEFAULT_RENAMEICONDIRECTLY )) );
 
-    KSharedConfig::Ptr globalconfig = KSharedConfig::openConfig("kdeglobals", true, false);
+    KSharedConfig::Ptr globalconfig = KSharedConfig::openConfig("kdeglobals", KConfig::NoGlobals);
     globalconfig->setGroup( "KDE" );
     cbShowDeleteCommand->setChecked( globalconfig->readEntry("ShowDeleteCommand", false) );
 
@@ -262,7 +262,7 @@ void KBehaviourOptions::save()
 
     g_pConfig->writeEntry( "RenameIconDirectly", cbRenameDirectlyIcon->isChecked());
 
-    KSharedConfig::Ptr globalconfig = KSharedConfig::openConfig("kdeglobals", false, false);
+    KSharedConfig::Ptr globalconfig = KSharedConfig::openConfig("kdeglobals", KConfig::NoGlobals);
     globalconfig->setGroup( "KDE" );
     globalconfig->writeEntry( "ShowDeleteCommand", cbShowDeleteCommand->isChecked());
     globalconfig->sync();

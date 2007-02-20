@@ -23,6 +23,7 @@
 
 #include <kio/copyjob.h>
 #include <kio/netaccess.h>
+#include <kprotocolinfo.h>
 
 #include <kde_file.h>
 #include <kdebug.h>
@@ -383,6 +384,9 @@ void KonqUndoManagerTest::testRenameDir()
 
 void KonqUndoManagerTest::testTrashFiles()
 {
+    if ( !KProtocolInfo::isKnownProtocol( "trash" ) )
+        QSKIP( "kio_trash not installed", SkipAll );
+
     // Trash it all at once: the file, the symlink, the subdir.
     KUrl::List lst = sourceList();
     lst.append( srcSubDir() );
@@ -402,10 +406,9 @@ void KonqUndoManagerTest::testTrashFiles()
 
     // check trash?
     // Let's just check that it's not empty. kio_trash has its own unit tests anyway.
-    KSimpleConfig cfg( "trashrc", true );
+    KSimpleConfig cfg( "trashrc" );
     QVERIFY( cfg.hasGroup( "Status" ) );
-    cfg.setGroup( "Status" );
-    QCOMPARE( cfg.readEntry( "Empty", true ), false );
+    QCOMPARE( cfg.group("Status").readEntry( "Empty", true ), false );
 
     doUndo();
 

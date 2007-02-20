@@ -77,7 +77,7 @@ void KonqSidebarDirTreeModule::addTopLevelItem( KonqSidebarTreeTopLevelItem * it
     if(m_topLevelItem) // We can handle only one at a time !
         kError() << "KonqSidebarDirTreeModule::addTopLevelItem: Impossible, we can have only one toplevel item !" << endl;
 
-    KDesktopFile cfg( item->path(), true );
+    KDesktopFile cfg( item->path() );
     cfg.setDollarExpansion(true);
 
     KUrl targetURL;

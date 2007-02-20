@@ -1082,12 +1082,12 @@ void KonqViewManager::saveViewProfile( const QString & fileName, const QString &
   if ( QFile::exists( path ) )
     QFile::remove( path );
 
-  KSimpleConfig cfg( path );
-  cfg.setGroup( "Profile" );
+  KConfig _cfg( path, KConfig::OnlyLocal );
+  KConfigGroup cfg(&_cfg, "Profile" );
   if ( !profileName.isEmpty() )
       cfg.writePathEntry( "Name", profileName );
 
-  saveViewProfile( cfg, saveURLs, saveWindowSize );
+  saveViewProfile( _cfg, saveURLs, saveWindowSize );
 
 }
 
@@ -1111,12 +1111,11 @@ void KonqViewManager::saveViewProfile( KConfig & cfg, bool saveURLs, bool saveWi
   }
 
   // Save menu/toolbar settings in profile. Relys on konq_mainwindow calling
-  // setAutoSaveSetting( "KongMainWindow", false ). The false is important,
+  // setAutoSaveSetting( "KonqMainWindow", false ). The false is important,
   // we do not want this call save size settings in the profile, because we
   // do it ourselves. Save in a separate group than the rest of the profile.
-  QString savedGroup = cfg.group();
-  m_pMainWindow->saveMainWindowSettings( &cfg, "Main Window Settings" );
-  cfg.setGroup( savedGroup );
+  KConfigGroup cg = cfg.group( "Main Window Settings" );
+  m_pMainWindow->saveMainWindowSettings( cg );
 
   cfg.sync();
 }
@@ -1125,7 +1124,7 @@ void KonqViewManager::loadViewProfile( const QString & path, const QString & fil
                                        const KUrl & forcedURL, const KonqOpenURLRequest &req,
                                        bool resetWindow, bool openUrl )
 {
-  KConfig cfg( path, true );
+  KConfig cfg( path );
   cfg.setDollarExpansion( true );
   cfg.setGroup( "Profile" );
   loadViewProfile( cfg, filename, forcedURL, req, resetWindow, openUrl );
@@ -1296,16 +1295,14 @@ void KonqViewManager::loadViewProfile( KConfig &cfg, const QString & filename,
 
   if( resetWindow )
   { // force default settings for the GUI
-     m_pMainWindow->applyMainWindowSettings( KGlobal::config().data(), "KonqMainWindow", true );
+     m_pMainWindow->applyMainWindowSettings( KConfigGroup( KGlobal::config(), "KonqMainWindow" ), true );
   }
 
   // Apply menu/toolbar settings saved in profile. Read from a separate group
   // so that the window doesn't try to change the size stored in the Profile group.
   // (If applyMainWindowSettings finds a "Width" or "Height" entry, it
   // sets them to 0,0)
-  QString savedGroup = cfg.group();
-  m_pMainWindow->applyMainWindowSettings( &cfg, "Main Window Settings" );
-  cfg.setGroup( savedGroup );
+  m_pMainWindow->applyMainWindowSettings( KConfigGroup(&cfg, "Main Window Settings") );
 
 #ifdef DEBUG_VIEWMGR
   printFullHierarchy( m_pMainWindow );

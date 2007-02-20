@@ -191,8 +191,8 @@ void KNewMenu::parseFiles()
             // If a desktop file, then read the name from it.
             // Otherwise (or if no name in it?) use file name
             if ( KDesktopFile::isDesktopFile( filePath ) ) {
-                KSimpleConfig config( filePath, true );
-                config.setDesktopGroup();
+                KDesktopFile desktopFile(  filePath );
+                const KConfigGroup config = desktopFile.desktopGroup();
                 text = config.readEntry("Name");
                 (*templ).icon = config.readEntry("Icon");
                 (*templ).comment = config.readEntry("Comment");
@@ -385,12 +385,11 @@ void KNewMenu::slotFillTemplates()
                 s_templatesList->prepend( e );
             else
             {
-                KSimpleConfig config( *it, true );
-                config.setDesktopGroup();
+                KDesktopFile config(  *it );
 
                 // tricky solution to ensure that TextFile is at the beginning
                 // because this filetype is the most used (according kde-core discussion)
-                QString key = config.readEntry("Name");
+                QString key = config.desktopGroup().readEntry("Name");
                 if ( (*it).endsWith( "TextFile.desktop" ) )
                     key.prepend( '1' );
                 else

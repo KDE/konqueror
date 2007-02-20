@@ -95,8 +95,8 @@ void Konqueror::preload_count_changed( int count )
 
 void Konqueror::load()
     {
-    KConfig cfg( "konquerorrc", true );
-    cfg.setGroup( "Reusing" );
+    KConfig _cfg( "konquerorrc" );
+    KConfigGroup cfg(&_cfg, "Reusing" );
     allowed_parts = cfg.readEntry( "SafeParts", "SAFE" );
     if( allowed_parts == "ALL" )
         rb_always_reuse->setChecked( true );
@@ -111,8 +111,8 @@ void Konqueror::load()
 
 void Konqueror::save()
     {
-    KConfig cfg( "konquerorrc" );
-    cfg.setGroup( "Reusing" );
+    KConfig _cfg( "konquerorrc" );
+    KConfigGroup cfg(&_cfg, "Reusing" );
     if( rb_always_reuse->isChecked())
         allowed_parts = "ALL";
     else if( rb_never_reuse->isChecked())
@@ -132,7 +132,7 @@ void Konqueror::save()
     QDBusMessage message =
         QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "reparseConfiguration");
     QDBusConnection::sessionBus().send(message);
-    
+
     QDBusInterface kded("org.kde.kded", "/modules/konqy_preloader", "org.kde.konqueror.Preloader");
     kded.call( "reconfigure" );
     }

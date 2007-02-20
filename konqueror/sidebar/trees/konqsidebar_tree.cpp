@@ -4,7 +4,7 @@
 #include <kvbox.h>
 #include <kdebug.h>
 #include <kstandarddirs.h>
-#include <ksimpleconfig.h>
+#include <kconfig.h>
 #include <kinputdialog.h>
 #include <kiconloader.h>
 #include <k3listviewsearchline.h>
@@ -16,8 +16,8 @@
 KonqSidebar_Tree::KonqSidebar_Tree(const KComponentData &componentData,QObject *parent,QWidget *widgetParent, QString &desktopName_, const char* name):
                    KonqSidebarPlugin(componentData,parent,widgetParent,desktopName_,name)
 {
-	KSimpleConfig ksc(desktopName_);
-	ksc.setGroup("Desktop Entry");
+	KConfig _ksc( desktopName_, KConfig::OnlyLocal );
+	KConfigGroup ksc(&_ksc, "Desktop Entry");
 	int virt= ( (ksc.readEntry("X-KDE-TreeModule","")=="Virtual") ?VIRT_Folder:VIRT_Link);
 	if (virt==1) desktopName_=ksc.readEntry("X-KDE-RelURL","");
 
@@ -130,8 +130,8 @@ extern "C"
 	  QStringList names;
 	  for (QStringList::ConstIterator it=list.begin();it!=list.end();++it)
 	  {
-		KSimpleConfig sc(*it);
-		sc.setGroup("Desktop Entry");
+		KConfig _sc( *it, KConfig::OnlyLocal );
+		KConfigGroup sc(&_sc, "Desktop Entry");
 		names<<sc.readEntry("Name");
 	  }
 
@@ -141,7 +141,7 @@ extern "C"
 		{
 			int id=names.indexOf( item );
 			if (id==-1) return false;
-			KSimpleConfig ksc2(QString(list.at(id)));
+			KConfig ksc2(QString(list.at(id)), KConfig::OnlyLocal);
 			ksc2.setGroup("Desktop Entry");
 		        map->insert("Type","Link");
 			map->insert("Icon",ksc2.readEntry("Icon"));

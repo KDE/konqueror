@@ -19,7 +19,7 @@
 
 */
 
-#include <kconfig.h>
+#include <ksharedconfig.h>
 #include <kdebug.h>
 
 #include "policies.h"

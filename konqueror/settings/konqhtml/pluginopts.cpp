@@ -52,7 +52,7 @@ K_EXPORT_COMPONENT_FACTORY( khtml_plugins, KPluginOptionsFactory("kcmkonqhtml") 
 
 KPluginOptions::KPluginOptions( QWidget *parent, const QStringList& )
     : KCModule( KPluginOptionsFactory::componentData(), parent ),
-      m_pConfig( KSharedConfig::openConfig( "konquerorrc", false, false ) ),
+      m_pConfig( KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals) ),
       m_groupname( "Java/JavaScript Settings" ),
       global_policies(m_pConfig,m_groupname,true)
 {
@@ -211,7 +211,7 @@ void KPluginOptions::load()
 
 /****************************************************************************/
 
-  KSharedConfig::Ptr config = KSharedConfig::openConfig("kcmnspluginrc", true);
+  KSharedConfig::Ptr config = KSharedConfig::openConfig("kcmnspluginrc");
 
   config->setGroup("Misc");
   m_widget->scanAtStartup->setChecked( config->readEntry( "startkdeScan", false) );
@@ -242,7 +242,7 @@ void KPluginOptions::defaults()
 
 /*****************************************************************************/
 
-    KSharedConfig::Ptr config = KSharedConfig::openConfig( QString(), true, false );
+    KSharedConfig::Ptr config = KSharedConfig::openConfig( QString(), KConfig::NoGlobals );
 
     m_widget->scanAtStartup->setChecked( false );
 
@@ -271,7 +271,7 @@ void KPluginOptions::save()
 
 /*****************************************************************************/
 
-    KSharedConfig::Ptr config = KSharedConfig::openConfig("kcmnspluginrc", false);
+    KSharedConfig::Ptr config = KSharedConfig::openConfig("kcmnspluginrc");
 
     dirSave( config );
     pluginSave( config );

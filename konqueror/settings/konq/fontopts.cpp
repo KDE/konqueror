@@ -32,7 +32,7 @@
 
 #include <kapplication.h>
 #include <kcolorbutton.h>
-#include <kconfig.h>
+#include <ksharedconfig.h>
 #include <kdebug.h>
 #include <kfontdialog.h>
 #include <klocale.h>
@@ -68,9 +68,9 @@ KonqFontOptions::KonqFontOptions(QWidget *parent, const QStringList &, bool desk
     , m_bDesktop(desktop)
 {
     if (m_bDesktop) {
-        g_pConfig = KSharedConfig::openConfig(_desktopConfigName(), false, false);
+        g_pConfig = KSharedConfig::openConfig(_desktopConfigName(), KConfig::NoGlobals);
     } else {
-        g_pConfig = KSharedConfig::openConfig("konquerorrc", false, true);
+        g_pConfig = KSharedConfig::openConfig("konquerorrc");
     }
     QLabel *label;
     QString wtstr;

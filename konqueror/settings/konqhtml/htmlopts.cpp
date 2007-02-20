@@ -39,7 +39,7 @@ enum AnimationsType { AnimationsAlways=0, AnimationsNever=1, AnimationsLoopOnce=
 KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QStringList&)
     : KCModule( KMiscHTMLOptionsFactory::componentData(), parent ), m_groupname("HTML Settings")
 {
-    m_pConfig = KSharedConfig::openConfig( "konquerorrc", false, false );
+    m_pConfig = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
     int row = 0;
     QGridLayout *lay = new QGridLayout(this);
 
@@ -54,18 +54,18 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QStringList&)
 
     QGroupBox *bgBookmarks = new QGroupBox( i18n("Boo&kmarks"));
     QVBoxLayout *laygroup1 = new QVBoxLayout;
-    
+
     laygroup1->setSpacing(KDialog::spacingHint());
-    
+
     m_pAdvancedAddBookmarkCheckBox = new QCheckBox(i18n( "Ask for name and folder when adding bookmarks" ));
     laygroup1->addWidget(m_pAdvancedAddBookmarkCheckBox);
-    
+
     m_pAdvancedAddBookmarkCheckBox->setWhatsThis( i18n( "If this box is checked, Konqueror will allow you to"
                                                         " change the title of the bookmark and choose a folder"
 							" in which to store it when you add a new bookmark." ) );
     connect(m_pAdvancedAddBookmarkCheckBox, SIGNAL(clicked()), SLOT(slotChanged()));
     bgBookmarks->setLayout(laygroup1);
-    
+
     m_pOnlyMarkedBookmarksCheckBox = new QCheckBox(i18n( "Show only marked bookmarks in bookmark toolbar" ), bgBookmarks);
     laygroup1->addWidget(m_pOnlyMarkedBookmarksCheckBox);
     m_pOnlyMarkedBookmarksCheckBox->setWhatsThis( i18n( "If this box is checked, Konqueror will show only those"
@@ -78,13 +78,13 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QStringList&)
      // Form completion
 
     QGroupBox *bgForm = new QGroupBox( i18n("Form Com&pletion") );
-    
+
     QVBoxLayout *laygroup2 = new QVBoxLayout();
     laygroup2->setSpacing(KDialog::spacingHint());
-    
+
     m_pFormCompletionCheckBox = new QCheckBox(i18n( "Enable completion of &forms" ));
     laygroup2->addWidget( m_pFormCompletionCheckBox );
-    
+
     m_pFormCompletionCheckBox->setWhatsThis( i18n( "If this box is checked, Konqueror will remember"
                   " the data you enter in web forms and suggest it in similar fields for all forms." ) );
     connect(m_pFormCompletionCheckBox, SIGNAL(clicked()), SLOT(slotChanged()));
@@ -97,7 +97,7 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QStringList&)
         i18n( "Here you can select how many values Konqueror will remember for a form field." ) );
     connect(m_pMaxFormCompletionItems, SIGNAL(valueChanged(int)), SLOT(slotChanged()));
     bgForm->setLayout(laygroup2);
-    
+
     lay->addWidget( bgForm, row, 0, 1, 2 );
     row++;
 
@@ -105,7 +105,7 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QStringList&)
 
     QGroupBox *bgTabbedBrowsing = new QGroupBox( i18n("Tabbed Browsing") );
     QVBoxLayout *laygroup = new QVBoxLayout();
-    
+
     laygroup->setSpacing(KDialog::spacingHint());
 
     m_pShowMMBInTabs = new QCheckBox( i18n( "Open &links in new tab instead of in new window" ) );
@@ -257,7 +257,7 @@ KMiscHTMLOptions::~KMiscHTMLOptions()
 
 void KMiscHTMLOptions::load()
 {
-    KSharedConfig::Ptr khtmlrc = KSharedConfig::openConfig("khtmlrc", true, false);
+    KSharedConfig::Ptr khtmlrc = KSharedConfig::openConfig("khtmlrc", KConfig::NoGlobals);
 #define SET_GROUP(x) m_pConfig->setGroup(x); khtmlrc->setGroup(x)
 #define READ_BOOL(x,y) m_pConfig->readEntry(x, khtmlrc->readEntry(x, y))
 #define READ_ENTRY(x) m_pConfig->readEntry(x, khtmlrc->readEntry(x))
@@ -315,12 +315,12 @@ void KMiscHTMLOptions::load()
     m_pDynamicTabbarHide->setChecked( ! (m_pConfig->readEntry( "AlwaysTabbedMode", false )) );
 
     // Writes the value of m_pAccessKeys into khtmlrc to affect all applications using KHTML
-    KConfig khtmlconfig("khtmlrc", false, false);
-    khtmlconfig.setGroup("Access Keys");
+    KConfig _khtmlconfig("khtmlrc", KConfig::NoGlobals);
+    KConfigGroup khtmlconfig(&_khtmlconfig, "Access Keys");
     khtmlconfig.writeEntry( "Enabled", m_pAccessKeys->isChecked() );
     khtmlconfig.sync();
 
-    KSharedConfig::Ptr config = KSharedConfig::openConfig("kbookmarkrc", true, false);
+    KSharedConfig::Ptr config = KSharedConfig::openConfig("kbookmarkrc", KConfig::NoGlobals);
     config->setGroup("Bookmarks");
     m_pAdvancedAddBookmarkCheckBox->setChecked( config->readEntry("AdvancedAddBookmarkDialog", false) );
     m_pOnlyMarkedBookmarksCheckBox->setChecked( config->readEntry("FilteredToolbar", false) );
@@ -386,7 +386,7 @@ void KMiscHTMLOptions::save()
     KHTMLSettings settings;
     m_pAccessKeys->setChecked( settings.accessKeysEnabled() );
 
-    KSharedConfig::Ptr config = KSharedConfig::openConfig("kbookmarkrc", false, false);
+    KSharedConfig::Ptr config = KSharedConfig::openConfig("kbookmarkrc", KConfig::NoGlobals);
     config->setGroup("Bookmarks");
     config->writeEntry("AdvancedAddBookmarkDialog", m_pAdvancedAddBookmarkCheckBox->isChecked());
     config->writeEntry("FilteredToolbar", m_pOnlyMarkedBookmarksCheckBox->isChecked());

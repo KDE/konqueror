@@ -33,7 +33,7 @@
 #include <kcomponentdata.h>
 #include <assert.h>
 
-#include <ksimpleconfig.h>
+#include <kdesktopfile.h>
 #include <kconfiggroup.h>
 
 static QPixmap wallpaperPixmap( const QString & _wallpaper )
@@ -212,29 +212,29 @@ bool KonqPropsView::enterDir( const KUrl & dir )
   if (dotDirExists)
   {
     //kDebug(1203) << "Found .directory file" << endl;
-    KSimpleConfig * config = new KSimpleConfig( dotDirectory, true );
-    config->setGroup("URL properties");
+    KDesktopFile desktopFile(  dotDirectory );
+    const KConfigGroup config = desktopFile.group("URL properties");
 
-    m_iIconSize = config->readEntry( "IconSize", m_iIconSize );
-    m_iItemTextPos = config->readEntry( "ItemTextPos", m_iItemTextPos );
-    d->sortcriterion = config->readEntry( "SortingCriterion" , d->sortcriterion );
-    d->dirsfirst = config->readEntry( "SortDirsFirst", d->dirsfirst);
-    d->descending = config->readEntry( "SortDescending", d->descending);
-    m_bShowDot = config->readEntry( "ShowDotFiles", m_bShowDot);
-    d->caseInsensitiveSort=config->readEntry("CaseInsensitiveSort", d->caseInsensitiveSort);
-    m_bShowDirectoryOverlays = config->readEntry( "ShowDirectoryOverlays", m_bShowDirectoryOverlays);
-    if (config->hasKey( "DontPreview" ))
+    m_iIconSize = config.readEntry( "IconSize", m_iIconSize );
+    m_iItemTextPos = config.readEntry( "ItemTextPos", m_iItemTextPos );
+    d->sortcriterion = config.readEntry( "SortingCriterion" , d->sortcriterion );
+    d->dirsfirst = config.readEntry( "SortDirsFirst", d->dirsfirst);
+    d->descending = config.readEntry( "SortDescending", d->descending);
+    m_bShowDot = config.readEntry( "ShowDotFiles", m_bShowDot);
+    d->caseInsensitiveSort=config.readEntry("CaseInsensitiveSort", d->caseInsensitiveSort);
+    m_bShowDirectoryOverlays = config.readEntry( "ShowDirectoryOverlays", m_bShowDirectoryOverlays);
+    if (config.hasKey( "DontPreview" ))
     {
-        m_dontPreview = config->readEntry( "DontPreview" , QStringList() );
+        m_dontPreview = config.readEntry( "DontPreview" , QStringList() );
 
         //If the .directory file says something about sound previews,
         //obey it, otherwise propagate the setting up from the defaults
         //All this really should be split into a per-thumbnail setting,
         //but that's too invasive at this point
-        if (config->hasKey("EnableSoundPreviews"))
+        if (config.hasKey("EnableSoundPreviews"))
         {
 
-            if (!config->readEntry("EnableSoundPreviews", false))
+            if (!config.readEntry("EnableSoundPreviews", false))
                 if (!m_dontPreview.contains("audio/"))
                     m_dontPreview.append("audio/");
         }
@@ -248,12 +248,11 @@ bool KonqPropsView::enterDir( const KUrl & dir )
 
 
 
-    m_textColor = config->readEntry( "TextColor", m_textColor );
-    m_bgColor = config->readEntry( "BgColor", m_bgColor );
-    m_bgPixmapFile = config->readPathEntry( "BgImage", m_bgPixmapFile );
+    m_textColor = config.readEntry( "TextColor", m_textColor );
+    m_bgColor = config.readEntry( "BgColor", m_bgColor );
+    m_bgPixmapFile = config.readPathEntry( "BgImage", m_bgPixmapFile );
     //kDebug(1203) << "KonqPropsView::enterDir m_bgPixmapFile=" << m_bgPixmapFile << endl;
-    d->previewsEnabled = config->readEntry( "PreviewsEnabled", d->previewsEnabled);
-    delete config;
+    d->previewsEnabled = config.readEntry( "PreviewsEnabled", d->previewsEnabled);
   }
   //if there is or was a .directory then the settings probably have changed
   bool configChanged=(m_dotDirExists|| dotDirExists);

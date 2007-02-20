@@ -100,8 +100,8 @@ void KonqSidebarTree::loadModuleFactories()
 
   for (QStringList::ConstIterator it=list.begin();it!=list.end();++it)
   {
-    KSimpleConfig ksc(*it);
-    ksc.setGroup("Desktop Entry");
+    KConfig _ksc( *it, KConfig::OnlyLocal );
+    KConfigGroup ksc(&_ksc, "Desktop Entry");
     QString name    = ksc.readEntry("X-KDE-TreeModule");
     QString libName = ksc.readEntry("X-KDE-TreeModule-Lib");
     if ((name.isEmpty()) || (libName.isEmpty()))
@@ -629,7 +629,7 @@ void KonqSidebarTree::scanDir( KonqSidebarTreeItem *parent, const QString &path,
             // Version 6 includes the printmanager and lan browser
             const int currentVersion = 6;
             QString key = QString::fromLatin1("X-KDE-DirTreeVersionNumber");
-            KSimpleConfig versionCfg( path + "/.directory" );
+            KConfig versionCfg( path + "/.directory", KConfig::OnlyLocal);
             int versionNumber = versionCfg.readEntry( key, 1 );
             kDebug(1201) << "KonqSidebarTree::scanDir found version " << versionNumber << endl;
             if ( versionNumber < currentVersion )
@@ -734,12 +734,12 @@ void KonqSidebarTree::loadTopLevelGroup( KonqSidebarTreeItem *parent, const QStr
     if ( QFile::exists( dotDirectoryFile ) )
     {
         kDebug(1201) << "Reading the .directory" << endl;
-        KSimpleConfig cfg( dotDirectoryFile, true );
-        cfg.setDesktopGroup();
-        name = cfg.readEntry( "Name", name );
-        icon = cfg.readEntry( "Icon", icon );
+        KDesktopFile cfg(  dotDirectoryFile );
+        const KConfigGroup group = cfg.desktopGroup();
+        name = group.readEntry( "Name", name );
+        icon = group.readEntry( "Icon", icon );
         //stripIcon( icon );
-        open = cfg.readEntry( "Open", open);
+        open = group.readEntry( "Open", open);
     }
 
     KonqSidebarTreeTopLevelItem *item;
@@ -769,7 +769,7 @@ void KonqSidebarTree::loadTopLevelGroup( KonqSidebarTreeItem *parent, const QStr
 
 void KonqSidebarTree::loadTopLevelItem( KonqSidebarTreeItem *parent, const QString &filename )
 {
-    KDesktopFile cfg( filename, true );
+    KDesktopFile cfg( filename );
     cfg.setDollarExpansion(true);
 
     QFileInfo inf( filename );

@@ -66,8 +66,8 @@ NSPluginInstance::NSPluginInstance(QWidget *parent, const QString& app, const QS
     QGridLayout *_layout = new QGridLayout(this);
     _layout->setMargin(1);
     _layout->setSpacing(1);
-    KConfig cfg("kcmnspluginrc", false);
-    cfg.setGroup("Misc");
+    KConfig _cfg( "kcmnspluginrc" );
+    KConfigGroup cfg(&_cfg, "Misc");
     if ( cfg.readEntry("demandLoad", false) ) {
         _button = new QPushButton(i18n("Start Plugin"), dynamic_cast<EMBEDCLASS*>(this));
         _layout->addWidget(_button, 0, 0);
@@ -147,8 +147,8 @@ NSPluginLoader::NSPluginLoader()
                    this, SLOT(applicationRegistered(const QString&)));
 
   // load configuration
-  KConfig cfg("kcmnspluginrc", false);
-  cfg.setGroup("Misc");
+  KConfig _cfg( "kcmnspluginrc" );
+  KConfigGroup cfg(&_cfg, "Misc");
   _useArtsdsp = cfg.readEntry( "useArtsdsp", false);
 }
 

@@ -17,7 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include <kconfig.h>
+#include <ksharedconfig.h>
 #include <kdebug.h>
 #include <kiconloader.h>
 #include <kstandarddirs.h>
@@ -61,10 +61,9 @@ void TypesListItem::initMeta( const QString & major )
   m_bFullInit = true;
   m_mimetype = 0L;
   m_major = major;
-  KSharedConfig::Ptr config = KSharedConfig::openConfig("konquerorrc", false, false);
-  config->setGroup("EmbedSettings");
+  KSharedConfig::Ptr config = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
   bool defaultValue = defaultEmbeddingSetting( major );
-  m_autoEmbed = config->readEntry( QLatin1String("embed-")+m_major, defaultValue ) ? 0 : 1;
+  m_autoEmbed = config->group("EmbedSettings").readEntry( QLatin1String("embed-")+m_major, defaultValue ) ? 0 : 1;
 }
 
 bool TypesListItem::defaultEmbeddingSetting( const QString& major )
@@ -218,10 +217,9 @@ bool TypesListItem::isDirty() const
   }
   else
   {
-    KSharedConfig::Ptr config = KSharedConfig::openConfig("konquerorrc", false, false);
-    config->setGroup("EmbedSettings");
+    KSharedConfig::Ptr config = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
     bool defaultValue = defaultEmbeddingSetting(m_major);
-    unsigned int oldAutoEmbed = config->readEntry( QLatin1String("embed-")+m_major, defaultValue ) ? 0 : 1;
+    unsigned int oldAutoEmbed = config->group("EmbedSettings").readEntry( QLatin1String("embed-")+m_major, defaultValue ) ? 0 : 1;
     if ( m_autoEmbed != oldAutoEmbed )
       return true;
   }
@@ -238,27 +236,26 @@ void TypesListItem::sync()
   Q_ASSERT(m_bFullInit);
   if ( isMeta() )
   {
-    KSharedConfig::Ptr config = KSharedConfig::openConfig("konquerorrc", false, false);
-    config->setGroup("EmbedSettings");
-    config->writeEntry( QLatin1String("embed-")+m_major, m_autoEmbed == 0 );
+    KSharedConfig::Ptr config = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
+    config->group("EmbedSettings").writeEntry( QLatin1String("embed-")+m_major, m_autoEmbed == 0 );
     return;
   }
 
   if (m_askSave != 2)
   {
-    KSharedConfig::Ptr config = KSharedConfig::openConfig("konquerorrc", false, false);
-    config->setGroup("Notification Messages");
+    KSharedConfig::Ptr config = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
+    KConfigGroup cg = config->group("Notification Messages");
     if (m_askSave == 0)
     {
        // Ask
-       config->deleteEntry("askSave"+name());
-       config->deleteEntry("askEmbedOrSave"+name());
+       cg.deleteEntry("askSave"+name());
+       cg.deleteEntry("askEmbedOrSave"+name());
     }
     else
     {
        // Do not ask, open
-       config->writeEntry("askSave"+name(), "no" );
-       config->writeEntry("askEmbedOrSave"+name(), "no" );
+       cg.writeEntry("askSave"+name(), "no" );
+       cg.writeEntry("askEmbedOrSave"+name(), "no" );
     }
   }
 
@@ -266,42 +263,42 @@ void TypesListItem::sync()
   {
     // We must use KConfig otherwise config.deleteEntry doesn't
     // properly cancel out settings already present in system files.
-    KConfig config( m_mimetype->desktopEntryPath(), false, false, "mime" );
-    config.setDesktopGroup();
+    KDesktopFile config( "mime", m_mimetype->desktopEntryPath() );
+    KConfigGroup cg = config.desktopGroup();
 
-    config.writeEntry("Type", "MimeType");
-    config.writeEntry("MimeType", name());
-    config.writeEntry("Icon", m_icon);
-    config.writeEntry("Patterns", m_patterns, ';');
-    config.writeEntry("Comment", m_comment);
-    config.writeEntry("Hidden", false);
+    cg.writeEntry("Type", "MimeType");
+    cg.writeEntry("MimeType", name());
+    cg.writeEntry("Icon", m_icon);
+    cg.writeEntry("Patterns", m_patterns, ';');
+    cg.writeEntry("Comment", m_comment);
+    cg.writeEntry("Hidden", false);
 
     if ( m_autoEmbed == 2 )
-      config.deleteEntry( QLatin1String("X-KDE-AutoEmbed"), false );
+      cg.deleteEntry( QLatin1String("X-KDE-AutoEmbed"), false );
     else
-      config.writeEntry( QLatin1String("X-KDE-AutoEmbed"), m_autoEmbed == 0 );
+      cg.writeEntry( QLatin1String("X-KDE-AutoEmbed"), m_autoEmbed == 0 );
 
     m_bNewItem = false;
   }
 
-  KConfig profile("profilerc", false, false);
+  KConfig profile("profilerc", KConfig::NoGlobals);
 
   // Deleting current contents in profilerc relating to
   // this service type
   //
-  QStringList groups = profile.groupList();
-  QStringList::Iterator it;
+  const QStringList groups = profile.groupList();
+  QStringList::const_iterator it;
   for (it = groups.begin(); it != groups.end(); it++ )
   {
-    profile.setGroup(*it);
+      KConfigGroup group = profile.group( *it );
 
     // Entries with Preference <= 0 or AllowAsDefault == false
     // are not in m_services
-    if ( profile.readEntry( "ServiceType" ) == name()
-         && profile.readEntry( "Preference" ) > 0
-         && profile.readEntry( "AllowAsDefault",false ) )
+    if ( group.readEntry( "ServiceType" ) == name()
+         && group.readEntry( "Preference" ) > 0
+         && group.readEntry( "AllowAsDefault",false ) )
     {
-      profile.deleteGroup( *it );
+      group.deleteGroup();
     }
   }
 
@@ -324,7 +321,7 @@ void TypesListItem::sync()
   for (; it_srv != offerList.end(); ++it_srv) {
       KService::Ptr pService = (*it_srv);
 
-      bool isApplication = pService->type() == "Application";
+      bool isApplication = pService->isApplication();
       if (isApplication && !pService->allowAsDefault())
           continue; // Only those which were added in init()
 
@@ -343,26 +340,26 @@ void TypesListItem::sync()
         if ( mimeTypeList.contains( name() ) ) {
           // The mimetype is listed explicitly in the .desktop files, so
           // just remove it and we're done
-          KConfig *desktop;
+          KDesktopFile *desktop;
           if ( !isApplication )
           {
-            desktop = new KConfig(pService->desktopEntryPath(), false, false, "services");
+            desktop = new KDesktopFile("services", pService->desktopEntryPath());
           }
           else
           {
             QString path = pService->locateLocal();
-            KConfig orig(pService->desktopEntryPath(), true, false, "apps");
+            KDesktopFile orig("apps", pService->desktopEntryPath());
             desktop = orig.copyTo(path);
           }
-          desktop->setDesktopGroup();
 
+          KConfigGroup group = desktop->desktopGroup();
           mimeTypeList = s_changedServices->contains( pService->desktopEntryPath())
-            ? (*s_changedServices)[ pService->desktopEntryPath() ] : desktop->readEntry("MimeType",QStringList(), ';');
+            ? (*s_changedServices)[ pService->desktopEntryPath() ] : group.readEntry("MimeType",QStringList(), ';');
 
           // Remove entry and the number that might follow.
           for(int i=0;(i = mimeTypeList.indexOf(name())) != -1;)
           {
-             it = mimeTypeList.begin()+i;
+             QStringList::iterator it = mimeTypeList.begin()+i;
              it = mimeTypeList.erase(it);
              if (it != mimeTypeList.end())
              {
@@ -374,7 +371,7 @@ void TypesListItem::sync()
              }
           }
 
-          desktop->writeEntry("MimeType", mimeTypeList, ';');
+          group.writeEntry("MimeType", mimeTypeList, ';');
 
           // if two or more types have been modified, and they use the same service,
           // accumulate the changes
@@ -394,12 +391,12 @@ void TypesListItem::sync()
                   name() + " - " + QString::number(groupCount) ) )
               groupCount++;
 
-          profile.setGroup( name() + " - " + QString::number(groupCount) );
+          KConfigGroup cg = profile.group( name() + " - " + QString::number(groupCount) );
 
-          profile.writeEntry("Application", pService->storageId());
-          profile.writeEntry("ServiceType", name());
-          profile.writeEntry("AllowAsDefault", true);
-          profile.writeEntry("Preference", 0);
+          cg.writeEntry("Application", pService->storageId());
+          cg.writeEntry("ServiceType", name());
+          cg.writeEntry("AllowAsDefault", true);
+          cg.writeEntry("Preference", 0);
         }
       }
   }
@@ -452,13 +449,13 @@ void TypesListItem::saveServices( KConfig & profile, QStringList services, const
     while ( profile.hasGroup( name() + " - " + QString::number(groupCount) ) )
         groupCount++;
 
-    profile.setGroup( name() + " - " + QString::number(groupCount) );
+    KConfigGroup group = profile.group( name() + " - " + QString::number(groupCount) );
 
-    profile.writeEntry("ServiceType", name());
-    profile.writeEntry("GenericServiceType", genericServiceType);
-    profile.writeEntry("Application", pService->storageId());
-    profile.writeEntry("AllowAsDefault", true);
-    profile.writeEntry("Preference", i);
+    group.writeEntry("ServiceType", name());
+    group.writeEntry("GenericServiceType", genericServiceType);
+    group.writeEntry("Application", pService->storageId());
+    group.writeEntry("AllowAsDefault", true);
+    group.writeEntry("Preference", i);
 
     // merge new mimetype
     if( s_changedServices == NULL )
@@ -468,24 +465,24 @@ void TypesListItem::saveServices( KConfig & profile, QStringList services, const
 
     if (!mimeTypeList.contains(name()) && !inheritsMimetype(m_mimetype, mimeTypeList))
     {
-      KConfig *desktop;
-      if ( pService->type() == QString("Service") )
+      KDesktopFile *desktop;
+      if ( !pService->isApplication() )
       {
-        desktop = new KConfig(pService->desktopEntryPath(), false, false, "services");
+        desktop = new KDesktopFile("services", pService->desktopEntryPath());
       }
       else
       {
         QString path = pService->locateLocal();
-        KConfig orig(pService->desktopEntryPath(), true, false, "apps");
+        KDesktopFile orig("apps", pService->desktopEntryPath());
         desktop = orig.copyTo(path);
       }
 
-      desktop->setDesktopGroup();
+      KConfigGroup group = desktop->desktopGroup();
       mimeTypeList = s_changedServices->contains( pService->desktopEntryPath())
-            ? (*s_changedServices)[ pService->desktopEntryPath() ] : desktop->readEntry("MimeType", QStringList(),';');
+            ? (*s_changedServices)[ pService->desktopEntryPath() ] : group.readEntry("MimeType", QStringList(),';');
       mimeTypeList.append(name());
 
-      desktop->writeEntry("MimeType", mimeTypeList, ';');
+      group.writeEntry("MimeType", mimeTypeList, ';');
       desktop->sync();
       delete desktop;
 

@@ -25,7 +25,7 @@
 
 #include <kurl.h>
 #include <libkonq_export.h>
-#include <kconfig.h>
+#include <ksharedconfig.h>
 
 class KComponentData;
 
