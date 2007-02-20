@@ -261,8 +261,6 @@ public Q_SLOTS:
      */
     virtual void slotSelectionChanged();
 
-    void slotSaveIconPositions();
-
     void renameSelectedItem();
     void renameCurrentItem();
 

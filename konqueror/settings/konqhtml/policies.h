@@ -23,7 +23,7 @@
 #define __POLICIES_H__
 
 #include <QString>
-#include <kconfig.h>
+#include <ksharedconfig.h>
 
 // special value for inheriting a global policy
 #define INHERIT_POLICY		32767

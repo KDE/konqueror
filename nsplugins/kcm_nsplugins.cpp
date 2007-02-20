@@ -24,6 +24,7 @@
 #include <QLayout>
 #include <kstandarddirs.h>
 #include <klocale.h>
+#include <ksharedconfig.h>
 #include <kiconloader.h>
 #include <kfiledialog.h>
 #include <kurlrequester.h>
@@ -37,11 +38,9 @@ extern "C"
 {
     KDE_EXPORT void init_nsplugin()
     {
-        KConfig *config = new KConfig("kcmnspluginrc", true /* readonly */, false /* no globals*/);
-        config->setGroup("Misc");
-        bool scan = config->readEntry( "startkdeScan", false);
-        bool firstTime = config->readEntry( "firstTime", true);
-        delete config;
+        KConfigGroup config(KSharedConfig::openConfig( "kcmnspluginrc", KConfig::NoGlobals ), "Misc");
+        bool scan = config.readEntry( "startkdeScan", false);
+        bool firstTime = config.readEntry( "firstTime", true);
 
         if ( scan || firstTime )
         {
@@ -49,11 +48,8 @@ extern "C"
         }
 
         if (firstTime) {
-            config= new KConfig("kcmnspluginrc", false);
-            config->setGroup("Misc");
-            config->writeEntry( "firstTime", false );
-            config->sync();
-            delete config;
+            config.writeEntry( "firstTime", false );
+            config.sync();
         }
     }
 }

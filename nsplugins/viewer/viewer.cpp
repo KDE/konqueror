@@ -115,7 +115,7 @@ int main(int argc, char** argv)
    kDebug(1430) << "3 - create QXtEventLoop" << endl;
 #ifdef __GNUC__
 #warning QXtEventLoop is missing
-#endif   
+#endif
    // QXtEventLoop integrator( "nspluginviewer" );
    parseCommandLine(argc, argv);
    KLocale::setMainCatalog("nsplugin");
@@ -126,8 +126,8 @@ int main(int argc, char** argv)
    KApplication app;
 
    {
-      KConfig cfg("kcmnspluginrc", true);
-      cfg.setGroup("Misc");
+      KConfig _cfg( "kcmnspluginrc" );
+      KConfigGroup cfg(&_cfg, "Misc");
       int v = qBound(0, cfg.readEntry("Nice Level", 0), 19);
       if (v > 0) {
          nice(v);

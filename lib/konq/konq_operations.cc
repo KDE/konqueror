@@ -237,11 +237,10 @@ bool KonqOperations::askDeleteConfirmation( const KUrl::List & selectedUrls, int
     bool ask = ( confirmation == FORCE_CONFIRMATION );
     if ( !ask )
     {
-        KConfig config("konquerorrc", true, false);
-        config.setGroup( "Trash" );
+        KConfig config( "konquerorrc", KConfig::NoGlobals );
         keyName = ( method == DEL ? "ConfirmDelete" : "ConfirmTrash" );
         bool defaultValue = ( method == DEL ? DEFAULT_CONFIRMDELETE : DEFAULT_CONFIRMTRASH );
-        ask = config.readEntry( keyName, QVariant(defaultValue )).toBool();
+        ask = config.group("Trash").readEntry( keyName, defaultValue );
     }
     if ( ask )
     {
@@ -289,9 +288,8 @@ bool KonqOperations::askDeleteConfirmation( const KUrl::List & selectedUrls, int
             {
                 saver.writeEntry(keyName, true);
                 saver.sync();
-                KConfig konq_config("konquerorrc", false);
-                konq_config.setGroup( "Trash" );
-                konq_config.writeEntry( keyName, false );
+                KConfig konq_config("konquerorrc", KConfig::NoGlobals);
+                konq_config.group("Trash").writeEntry( keyName, false );
             }
         }
         return (result == KMessageBox::Continue);

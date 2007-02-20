@@ -50,7 +50,7 @@
 // Terminates fullscreen-mode for any full-screen window on the current desktop
 void KonqMisc::abortFullScreenMode()
 {
-#ifdef Q_OS_UNIX	
+#ifdef Q_OS_UNIX
   QList<KonqMainWindow*> *mainWindows = KonqMainWindow::mainWindowList();
   if ( mainWindows )
   {
@@ -64,7 +64,7 @@ void KonqMisc::abortFullScreenMode()
       }
     }
   }
-#endif  
+#endif
 }
 
 // #### this can probably be removed
@@ -150,7 +150,7 @@ KonqMainWindow * KonqMisc::createBrowserWindowFromProfile( const QString &path, 
   }
   else
   {
-      KConfig cfg( path, true );
+      KConfig cfg( path );
       cfg.setDollarExpansion( true );
       cfg.setGroup( "Profile" );
       QString xmluiFile=cfg.readEntry("XMLUIFile","konqueror.rc");

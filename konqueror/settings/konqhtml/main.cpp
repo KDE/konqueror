@@ -48,7 +48,7 @@ K_EXPORT_COMPONENT_FACTORY( khtml_java_js, KJSPartsFactory("kcmkonqhtml") )
 KJSParts::KJSParts(QWidget *parent, const QStringList&)
 	: KCModule(KJSPartsFactory::componentData(), parent)
 {
-  mConfig = KSharedConfig::openConfig( "konquerorrc", false, false );
+  mConfig = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
   KAboutData *about =
   new KAboutData(I18N_NOOP("kcmkonqhtml"), I18N_NOOP("Konqueror Browsing Control Module"),
                 0, 0, KAboutData::License_GPL,

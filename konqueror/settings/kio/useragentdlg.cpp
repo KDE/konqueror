@@ -35,7 +35,6 @@
 #include <klocale.h>
 #include <k3listview.h>
 #include <kmessagebox.h>
-#include <ksimpleconfig.h>
 #include <kio/http_slave_defaults.h>
 
 #include "ksaveioconfig.h"
@@ -91,7 +90,7 @@ void UserAgentDlg::load()
   d_itemsSelected = 0;
   dlg->lvDomainPolicyList->clear();
 
-  m_config = new KConfig("kio_httprc", false, false);
+  m_config = new KConfig("kio_httprc", KConfig::NoGlobals);
   m_provider = new FakeUASProvider();
 
   QStringList list = m_config->groupList();
@@ -190,7 +189,7 @@ void UserAgentDlg::save()
   if (!deleteList.isEmpty())
   {
      // Remove entries from local file.
-     KSimpleConfig cfg("kio_httprc");
+     KConfig cfg("kio_httprc", KConfig::OnlyLocal);
      for ( QStringList::Iterator it = deleteList.begin();
            it != deleteList.end(); ++it )
      {

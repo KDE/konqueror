@@ -30,7 +30,7 @@ namespace KCMPerformance
 SystemWidget::SystemWidget( QWidget* parent_P )
     : System_ui( parent_P )
     {
-    QString tmp = 
+    QString tmp =
         i18n( "<p>During startup KDE needs to perform a check of its system configuration"
               " (mimetypes, installed applications, etc.), and in case the configuration"
               " has changed since the last time, the system configuration cache (KSyCoCa)"
@@ -53,15 +53,15 @@ SystemWidget::SystemWidget( QWidget* parent_P )
 
 void SystemWidget::load()
     {
-    KConfig cfg( "kdedrc", true );
-    cfg.setGroup( "General" );
+    KConfig _cfg( "kdedrc" );
+    KConfigGroup cfg(&_cfg, "General" );
     cb_disable_kbuildsycoca->setChecked( cfg.readEntry( "DelayedCheck", false));
     }
 
 void SystemWidget::save()
     {
-    KConfig cfg( "kdedrc" );
-    cfg.setGroup( "General" );
+    KConfig _cfg( "kdedrc" );
+    KConfigGroup cfg(&_cfg, "General" );
     cfg.writeEntry( "DelayedCheck", cb_disable_kbuildsycoca->isChecked());
     }
 

@@ -228,7 +228,7 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, bool openInitialURL, con
 
   KonqPixmapProvider *prov = KonqPixmapProvider::self();
   if ( !s_comboConfig ) {
-      s_comboConfig = new KConfig( "konq_history", false, false );
+      s_comboConfig = new KConfig("konq_history", KConfig::NoGlobals);
       KonqCombo::setConfig( s_comboConfig );
       KConfigGroup locationBarGroup( s_comboConfig, "Location Bar" );
       prov->load( locationBarGroup, "ComboIconCache" );
@@ -770,7 +770,7 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
           if ( f.open(QIODevice::ReadOnly) )
             {
               f.close();
-              KSimpleConfig config( urlDotDir.path(), true );
+              KConfig config( urlDotDir.path(), KConfig::OnlyLocal);
               config.setGroup( "URL properties" );
               HTMLAllowed = config.readEntry( "HTMLAllowed", m_bHTMLAllowed);
               serviceName = config.readEntry( "ViewMode", serviceName );
@@ -1175,7 +1175,7 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url, const KParts::URLArgs
     }
 
     QString profileName = QLatin1String( url.isLocalFile() ? "konqueror/profiles/filemanagement" : "konqueror/profiles/webbrowsing" );
-    KSimpleConfig cfg( KStandardDirs::locate( "data", profileName ), true );
+    KConfig cfg( KStandardDirs::locate( "data", profileName ) );
     cfg.setGroup( "Profile" );
 
     if ( windowArgs.x != -1 )
@@ -1647,7 +1647,7 @@ void KonqMainWindow::slotViewModeToggle( bool toggle )
       u.addPath(".directory");
       if ( u.isLocalFile() )
       {
-          KSimpleConfig config( u.path() ); // if we have no write access, just drop it
+          KConfig config( u.path(), KConfig::OnlyLocal ); // if we have no write access, just drop it
           config.setGroup( "URL properties" );
           config.writeEntry( "ViewMode", modeName );
           config.sync();
@@ -1673,7 +1673,7 @@ void KonqMainWindow::showHTML( KonqView * _view, bool b, bool _activateView )
       u.addPath(".directory");
       if ( u.isLocalFile() )
       {
-          KSimpleConfig config( u.path() ); // No checks for access
+          KConfig config( u.path(), KConfig::OnlyLocal ); // No checks for access
           config.setGroup( "URL properties" );
           config.writeEntry( "HTMLAllowed", b );
           config.sync();
@@ -1945,12 +1945,14 @@ void KonqMainWindow::slotConfigureSpellChecking()
 
 void KonqMainWindow::slotConfigureToolbars()
 {
-  if ( autoSaveSettings() )
-    saveMainWindowSettings( KGlobal::config().data(), "KonqMainWindow" );
-  KEditToolbar dlg(factory());
-  connect(&dlg,SIGNAL(newToolbarConfig()),this,SLOT(slotNewToolbarConfig()));
-  connect(&dlg,SIGNAL(newToolbarConfig()),this,SLOT(initBookmarkBar()));
-  dlg.exec();
+    if ( autoSaveSettings() ) {
+        KConfigGroup cg = KGlobal::config()->group( "KonqMainWindow" );
+        saveMainWindowSettings( cg );
+    }
+    KEditToolbar dlg(factory());
+    connect(&dlg,SIGNAL(newToolbarConfig()),this,SLOT(slotNewToolbarConfig()));
+    connect(&dlg,SIGNAL(newToolbarConfig()),this,SLOT(initBookmarkBar()));
+    dlg.exec();
 }
 
 void KonqMainWindow::slotNewToolbarConfig() // This is called when OK or Apply is clicked
@@ -1962,7 +1964,8 @@ void KonqMainWindow::slotNewToolbarConfig() // This is called when OK or Apply i
 
     plugViewModeActions();
 
-    applyMainWindowSettings( KGlobal::config().data(), "KonqMainWindow" );
+    KConfigGroup cg = KGlobal::config()->group( "KonqMainWindow" );
+    applyMainWindowSettings( cg );
 }
 
 void KonqMainWindow::slotUndoAvailable( bool avail )
@@ -2826,7 +2829,7 @@ void KonqMainWindow::slotRemoveLocalProperties()
       if ( f.open(QIODevice::ReadWrite) )
       {
           f.close();
-          KSimpleConfig config( u.path() );
+          KConfig config( u.path(), KConfig::OnlyLocal);
           config.deleteGroup( "URL properties" ); // Bye bye
           config.sync();
           // TODO: Notify the view...
@@ -3463,7 +3466,8 @@ void KonqMainWindow::slotForceSaveMainWindowSettings()
 //  kDebug(1202)<<"slotForceSaveMainWindowSettings()"<<endl;
   if ( autoSaveSettings() ) // don't do it on e.g. JS window.open windows with no toolbars!
   {
-      saveMainWindowSettings( KGlobal::config().data(), "KonqMainWindow" );
+      KConfigGroup cg = KGlobal::config()->group( "KonqMainWindow" );
+      saveMainWindowSettings( cg );
       KGlobal::config()->sync();
   }
 }
@@ -6015,23 +6019,15 @@ KonqView * KonqMainWindow::currentView() const
 
 void KonqMainWindow::saveWindowSize() const
 {
-    QString savedGroup = KGlobal::config()->group();
-    KGlobal::config()->setGroup( "KonqMainWindow_Size" );
-
-    KParts::MainWindow::saveWindowSize( KGlobal::config().data() );
-
-    KGlobal::config()->setGroup( savedGroup );
+    KConfigGroup cg( KGlobal::config()->group( "KonqMainWindow_Size" ) );
+    KParts::MainWindow::saveWindowSize( cg );
     KGlobal::config()->sync();
 }
 
 void KonqMainWindow::restoreWindowSize()
 {
-    QString savedGroup = KGlobal::config()->group();
-    KGlobal::config()->setGroup( "KonqMainWindow_Size" );
-
-    KParts::MainWindow::restoreWindowSize( KGlobal::config().data() );
-
-    KGlobal::config()->setGroup( savedGroup );
+    const KConfigGroup cg( KGlobal::config()->group( "KonqMainWindow_Size" ) );
+    KParts::MainWindow::restoreWindowSize( cg );
 }
 
 

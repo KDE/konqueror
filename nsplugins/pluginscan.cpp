@@ -98,9 +98,8 @@ KConfig *infoConfig = 0;
 
 bool isPluginMimeType( QString fname )
 {
-    KDesktopFile cfg( fname, true );
-    cfg.setDesktopGroup();
-    return cfg.hasKey( "X-KDE-nsplugin" );
+    KDesktopFile cfg(  fname );
+    return cfg.desktopGroup().hasKey( "X-KDE-nsplugin" );
 }
 
 
@@ -197,16 +196,16 @@ void registerPlugin( const QString &name, const QString &description,
                      const QString &file, const QString &mimeInfo )
 {
     // global stuff
-    infoConfig->setGroup( QString() );
-    int num = infoConfig->readEntry( "number", 0 );
-    infoConfig->writeEntry( "number", num+1 );
+    KConfigGroup cg( infoConfig, QString() );
+    int num = cg.readEntry( "number", 0 );
+    cg.writeEntry( "number", num+1 );
 
     // create plugin info
-    infoConfig->setGroup( QString::number(num) );
-    infoConfig->writeEntry( "name", name );
-    infoConfig->writeEntry( "description", description );
-    infoConfig->writeEntry( "file", file );
-    infoConfig->writeEntry( "mime", mimeInfo );
+    cg.changeGroup( QString::number(num) );
+    cg.writeEntry( "name", name );
+    cg.writeEntry( "description", description );
+    cg.writeEntry( "file", file );
+    cg.writeEntry( "mime", mimeInfo );
 }
 
 int tryCheck(int write_fd, const QString &absFile)
@@ -436,12 +435,10 @@ void scanDirectory( QString dir, QStringList &mimeInfoList,
 QStringList getSearchPaths()
 {
     QStringList searchPaths;
-
-    KConfig *config = new KConfig("kcmnspluginrc", false);
-    config->setGroup("Misc");
+    KConfigGroup config(KSharedConfig::openConfig( "kcmnspluginrc", KConfig::NoGlobals ), "Misc");
 
     // setup default paths
-    if ( !config->hasKey("scanPaths") ) {
+    if ( !config.hasKey("scanPaths") ) {
         QStringList paths;
         paths.append("$HOME/.mozilla/plugins");
         paths.append("$HOME/.netscape/plugins");
@@ -460,13 +457,12 @@ QStringList getSearchPaths()
 	paths.append("/usr/lib64/netscape/plugins");
 	paths.append("/usr/lib64/mozilla/plugins");
         paths.append("$MOZILLA_HOME/plugins");
-        config->writeEntry( "scanPaths", paths );
+        config.writeEntry( "scanPaths", paths );
     }
 
     // read paths
-    config->setDollarExpansion( true );
-    searchPaths = config->readEntry( "scanPaths",QStringList() );
-    delete config;
+    config.config()->setDollarExpansion( true );
+    searchPaths = config.readEntry( "scanPaths",QStringList() );
 
     // append environment variable NPX_PLUGIN_PATH
     QStringList envs = QString( getenv("NPX_PLUGIN_PATH") ).split(':');

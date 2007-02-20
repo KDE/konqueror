@@ -843,8 +843,8 @@ void NSPluginInstance::timer()
 QString NSPluginInstance::normalizedURL(const QString& url) const {
     KUrl bu( _baseURL );
     KUrl inURL(bu, url);
-    KConfig cfg("kcmnspluginrc", true);
-    cfg.setGroup("Misc");
+    KConfig _cfg( "kcmnspluginrc" );
+    KConfigGroup cfg(&_cfg, "Misc");
 
     if (!cfg.readEntry("HTTP URLs Only", false) ||
 	inURL.protocol() == "http" ||
@@ -1605,7 +1605,7 @@ int NSPluginStreamBase::process( const QByteArray &data, int start )
    int32 max, sent, to_sent, len;
 #ifdef __GNUC__
 #warning added a const_cast
-#endif   
+#endif
    char *d = const_cast<char*>(data.data()) + start;
 
    to_sent = data.size() - start;

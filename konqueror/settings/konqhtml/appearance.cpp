@@ -9,7 +9,7 @@
 
 #include <kapplication.h>
 #include <kcharsets.h>
-#include <kconfig.h>
+#include <ksharedconfig.h>
 #include <kdebug.h>
 #include <kdialog.h>
 #include <kglobal.h>
@@ -34,7 +34,7 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QStringList&)
       fSize( 10 ), fMinSize( HTML_DEFAULT_MIN_FONT_SIZE )
 
 {
-  m_pConfig = KSharedConfig::openConfig( "konquerorrc", false, false );
+  m_pConfig = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
   setQuickHelp( i18n("<h1>Konqueror Fonts</h1>On this page, you can configure "
               "which fonts Konqueror should use to display the web "
               "pages you view."));
@@ -286,7 +286,7 @@ void KAppearanceOptions::slotEncoding(const QString& n)
 
 void KAppearanceOptions::load()
 {
-    KSharedConfig::Ptr khtmlrc = KSharedConfig::openConfig("khtmlrc", true, false);
+    KSharedConfig::Ptr khtmlrc = KSharedConfig::openConfig("khtmlrc", KConfig::NoGlobals);
 #define SET_GROUP(x) m_pConfig->setGroup(x); khtmlrc->setGroup(x)
 #define READ_NUM(x,y) m_pConfig->readEntry(x, khtmlrc->readEntry(x, y))
 #define READ_ENTRY(x,y) m_pConfig->readEntry(x, khtmlrc->readEntry(x, y))

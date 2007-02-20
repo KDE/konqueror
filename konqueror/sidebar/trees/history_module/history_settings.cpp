@@ -1,6 +1,7 @@
 
 #include <kapplication.h>
 #include <kconfig.h>
+#include <ksharedconfig.h>
 #include <kglobal.h>
 
 #include "history_settings.h"
@@ -42,57 +43,49 @@ KonqSidebarHistorySettings::~KonqSidebarHistorySettings()
 void KonqSidebarHistorySettings::readSettings(bool global)
 {
     KSharedConfigPtr config;
-    QString oldgroup;
 
-    if (global) {
+    if (global)
       config = KGlobal::config();
-      oldgroup= config->group();
-    }
     else
       config = KSharedConfig::openConfig("konquerorrc");
 
-    config->setGroup("HistorySettings");
-    m_valueYoungerThan = config->readEntry("Value youngerThan", 1 );
-    m_valueOlderThan = config->readEntry("Value olderThan", 2 );
+    KConfigGroup cg( config, "HistorySettings");
+    m_valueYoungerThan = cg.readEntry("Value youngerThan", 1 );
+    m_valueOlderThan = cg.readEntry("Value olderThan", 2 );
 
     QString minutes = QLatin1String("minutes");
     QString days = QLatin1String("days");
-    QString metric = config->readEntry("Metric youngerThan", days );
+    QString metric = cg.readEntry("Metric youngerThan", days );
     m_metricYoungerThan = (metric == days) ? DAYS : MINUTES;
-    metric = config->readEntry("Metric olderThan", days );
+    metric = cg.readEntry("Metric olderThan", days );
     m_metricOlderThan = (metric == days) ? DAYS : MINUTES;
 
-    m_detailedTips = config->readEntry("Detailed Tooltips", true);
+    m_detailedTips = cg.readEntry("Detailed Tooltips", true);
 
-    m_fontYoungerThan = config->readEntry( "Font youngerThan",
+    m_fontYoungerThan = cg.readEntry( "Font youngerThan",
 					       m_fontYoungerThan );
-    m_fontOlderThan   = config->readEntry( "Font olderThan",
+    m_fontOlderThan   = cg.readEntry( "Font olderThan",
 					       m_fontOlderThan );
-    if (global)
-      config->setGroup( oldgroup );
 }
 
 void KonqSidebarHistorySettings::applySettings()
 {
-    KConfig *config = new KConfig("konquerorrc");
-    config->setGroup("HistorySettings");
+    KConfigGroup config(KSharedConfig::openConfig("konquerorrc"), "HistorySettings");
 
-    config->writeEntry("Value youngerThan", m_valueYoungerThan );
-    config->writeEntry("Value olderThan", m_valueOlderThan );
+    config.writeEntry("Value youngerThan", m_valueYoungerThan );
+    config.writeEntry("Value olderThan", m_valueOlderThan );
 
     QString minutes = QLatin1String("minutes");
     QString days = QLatin1String("days");
-    config->writeEntry("Metric youngerThan", m_metricYoungerThan == DAYS ?
+    config.writeEntry("Metric youngerThan", m_metricYoungerThan == DAYS ?
 			  days : minutes );
-    config->writeEntry("Metric olderThan", m_metricOlderThan == DAYS ?
+    config.writeEntry("Metric olderThan", m_metricOlderThan == DAYS ?
  	 	 	   days : minutes );
 
-    config->writeEntry("Detailed Tooltips", m_detailedTips);
+    config.writeEntry("Detailed Tooltips", m_detailedTips);
 
-    config->writeEntry("Font youngerThan", m_fontYoungerThan );
-    config->writeEntry("Font olderThan", m_fontOlderThan );
-
-    delete config;
+    config.writeEntry("Font youngerThan", m_fontYoungerThan );
+    config.writeEntry("Font olderThan", m_fontOlderThan );
 
     // notify konqueror instances about the new configuration
     emit notifySettingsChanged();

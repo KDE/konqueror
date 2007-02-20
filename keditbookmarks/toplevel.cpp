@@ -196,7 +196,7 @@ KEBApp::KEBApp(
     const QString &address, bool browser, const QString &caption,
     const QString &dbusObjectName
 ) : KMainWindow(), m_dcopIface(0), m_bookmarksFilename(bookmarksFile),
-    m_caption(caption), 
+    m_caption(caption),
     m_dbusObjectName(dbusObjectName), m_readOnly(readonly),m_browser(browser)
  {
     QDBusConnection::sessionBus().registerObject("/keditbookmarks", this, QDBusConnection::ExportScriptableSlots);
@@ -462,7 +462,7 @@ void  KEBApp::selectionChanged()
 
 void KEBApp::updateActions() {
     // FIXME if nothing is selected in the item view, the folder in the group view
-    // is selected. 
+    // is selected.
     // Change setActionsEnabled() and firstSelected() to match that
     resetActions();
     setActionsEnabled(mBookmarkListView->getSelectionAbilities());
@@ -487,7 +487,7 @@ void KEBApp::notifyCommandExecuted() {
 /* -------------------------- */
 
 void KEBApp::slotConfigureToolbars() {
-    saveMainWindowSettings(KGlobal::config().data(), "MainWindow");
+    saveMainWindowSettings(KConfigGroup( KGlobal::config(), "MainWindow") );
     KEditToolbar dlg(actionCollection());
     connect(&dlg, SIGNAL( newToolbarConfig() ),
                   SLOT( slotNewToolbarConfig() ));
@@ -497,7 +497,7 @@ void KEBApp::slotConfigureToolbars() {
 void KEBApp::slotNewToolbarConfig() {
     // called when OK or Apply is clicked
     createGUI();
-    applyMainWindowSettings(KGlobal::config().data(), "MainWindow");
+    applyMainWindowSettings(KConfigGroup(KGlobal::config(), "MainWindow") );
 }
 
 /* -------------------------- */

@@ -25,7 +25,7 @@
 #include <kapplication.h>
 #include <kdebug.h>
 #include <ksavefile.h>
-#include <ksimpleconfig.h>
+#include <kconfig.h>
 #include <kstandarddirs.h>
 #include <kcompletion.h>
 
@@ -600,10 +600,10 @@ bool KonqHistoryManager::loadFallback()
     if ( file.isEmpty() )
 	return false;
 
-    KSimpleConfig config( file );
-    config.setGroup("History");
-    QStringList items = config.readEntry( "CompletionItems" , QStringList() );
-    QStringList::Iterator it = items.begin();
+    KConfig config(  file, KConfig::OnlyLocal);
+    const KConfigGroup group = config.group("History");
+    const QStringList items = group.readEntry( "CompletionItems", QStringList() );
+    QStringList::const_iterator it = items.begin();
 
     while ( it != items.end() ) {
 	KonqHistoryEntry entry = createFallbackEntry( *it );

@@ -26,7 +26,7 @@
 #include <QMenu>
 
 #include <klocale.h>
-#include <ksimpleconfig.h>
+#include <kconfig.h>
 #include <kstandarddirs.h>
 #include <kdebug.h>
 #include <kiconloader.h>
@@ -73,7 +73,7 @@ void addBackEnd::aboutToShowAddMenu()
 
 	for (QStringList::Iterator it = list.begin(); it != list.end(); ++it, i++ )
 	{
-		KDesktopFile confFile(*it, true);
+		KDesktopFile confFile( *it );
 		if (!confFile.tryExec()) {
 			i--;
 			continue;
@@ -190,8 +190,8 @@ void addBackEnd::triggeredAddMenu(QAction* action)
 				if (!myFile.isEmpty())
 				{
 					kDebug() <<"trying to save to file: "<<myFile << endl;
-					KSimpleConfig scf(myFile,false);
-					scf.setGroup("Desktop Entry");
+					KConfig _scf( myFile, KConfig::OnlyLocal );
+					KConfigGroup scf(&_scf, "Desktop Entry");
 					for (QMap<QString,QString>::ConstIterator it = map.begin(); it != map.end(); ++it) {
 						kDebug() <<"writing:"<<it.key()<<" / "<<it.value()<<endl;
 						scf.writePathEntry(it.key(), it.value());
@@ -265,7 +265,7 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, bool 
 	// Ported to QMenu already, just needs to have KMultiTabBar fixed
 #ifdef __GNUC__
 #warning switch to QMenu when KMultiTabBar ported
-#endif	
+#endif
 	m_menu = new QMenu(this);
 	m_menu->setIcon(KIcon("configure"));
 	m_menu->setTitle(i18n("Configure Navigation Panel"));
@@ -324,8 +324,8 @@ void Sidebar_Widget::addWebSideBar(const KUrl& url, const QString& /*name*/) {
 	// Go through list to see which ones exist.  Check them for the URL
 	QStringList files = QDir(list).entryList("websidebarplugin*.desktop");
 	for (QStringList::Iterator it = files.begin(); it != files.end(); ++it){
-		KSimpleConfig scf(list + *it, false);
-		scf.setGroup("Desktop Entry");
+		KConfig _scf( list + *it, KConfig::OnlyLocal );
+		KConfigGroup scf(&_scf, "Desktop Entry");
 		if (scf.readPathEntry("URL", QString()) == url.url()) {
 			// We already have this one!
 			KMessageBox::information(this,
@@ -338,8 +338,8 @@ void Sidebar_Widget::addWebSideBar(const KUrl& url, const QString& /*name*/) {
 	QString myFile = findFileName(&tmpl,m_universalMode,m_currentProfile);
 
 	if (!myFile.isEmpty()) {
-		KSimpleConfig scf(myFile, false);
-		scf.setGroup("Desktop Entry");
+		KConfig _scf( myFile, KConfig::OnlyLocal );
+		KConfigGroup scf(&_scf, "Desktop Entry");
 		scf.writeEntry("Type", "Link");
 		scf.writePathEntry("URL", url.url());
 		scf.writeEntry("Icon", "netscape");
@@ -415,7 +415,7 @@ void Sidebar_Widget::initialCopy()
 		return; //oups;
 
 	int nVersion=-1;
-	KSimpleConfig lcfg(m_path+".version");
+	KConfig lcfg(m_path+".version", KConfig::OnlyLocal);
 	int lVersion=lcfg.readEntry("Version",0);
 
 
@@ -428,7 +428,7 @@ void Sidebar_Widget::initialCopy()
 
 	        if ( !dirtree_dir.isEmpty() && dirtree_dir != m_path )
         	{
-			KSimpleConfig gcfg(dirtree_dir+".version");
+			KConfig gcfg(dirtree_dir+".version", KConfig::OnlyLocal);
 			int gversion = gcfg.readEntry("Version", 1);
 			nVersion=(nVersion>gversion)?nVersion:gversion;
 			if (lVersion >= gversion)
@@ -481,8 +481,8 @@ void Sidebar_Widget::slotSetName( )
 	if(ok)
 	{
 		// Write the name in the .desktop file of this side button.
-		KSimpleConfig ksc(m_path+m_currentButton->file);
-		ksc.setGroup("Desktop Entry");
+		KConfig _ksc( m_path+m_currentButton->file, KConfig::OnlyLocal );
+		KConfigGroup ksc(&_ksc, "Desktop Entry");
 		ksc.writeEntry("Name", name, KConfigBase::NLS /*localized*/ );
 		ksc.sync();
 
@@ -497,8 +497,8 @@ void Sidebar_Widget::slotSetURL( )
 	dlg.fileDialog()->setMode( KFile::Directory );
 	if (dlg.exec())
 	{
-		KSimpleConfig ksc(m_path+m_currentButton->file);
-		ksc.setGroup("Desktop Entry");
+		KConfig _ksc( m_path+m_currentButton->file, KConfig::OnlyLocal );
+		KConfigGroup ksc(&_ksc, "Desktop Entry");
 		if ( !dlg.selectedUrl().isValid())
 		{
 			KMessageBox::error(this, i18n("<qt><b>%1</b> does not exist</qt>", dlg.selectedUrl().url()));
@@ -522,8 +522,8 @@ void Sidebar_Widget::slotSetIcon( )
 	kDebug()<<"New Icon Name:"<<iconname<<endl;
 	if (!iconname.isEmpty())
 	{
-		KSimpleConfig ksc(m_path+m_currentButton->file);
-		ksc.setGroup("Desktop Entry");
+		KConfig _ksc( m_path+m_currentButton->file, KConfig::OnlyLocal );
+		KConfigGroup ksc(&_ksc, "Desktop Entry");
 		ksc.writeEntry("Icon",iconname);
 		ksc.sync();
 		QTimer::singleShot(0,this,SLOT(updateButtons()));
@@ -758,11 +758,11 @@ bool Sidebar_Widget::addButton(const QString &desktoppath,int pos)
 	int lastbtn = m_buttons.count();
 	m_buttons.resize(m_buttons.size()+1);
 
-  	KSimpleConfig *confFile;
+  	KConfig *confFile;
 
 	kDebug() << "addButton:" << (m_path+desktoppath) << endl;
 
-	confFile = new KSimpleConfig(m_path+desktoppath,true);
+	confFile = new KConfig(m_path+desktoppath, KConfig::OnlyLocal);
 	confFile->setGroup("Desktop Entry");
 
     	QString icon = confFile->readEntry("Icon");
@@ -879,8 +879,8 @@ KParts::BrowserExtension *Sidebar_Widget::getExtension()
 bool Sidebar_Widget::createView( ButtonInfo *data)
 {
 	bool ret = true;
-	KSimpleConfig *confFile;
-	confFile = new KSimpleConfig(data->file,true);
+	KConfig *confFile;
+	confFile = new KConfig(data->file, KConfig::OnlyLocal);
 	confFile->setGroup("Desktop Entry");
 
 	data->dock = m_area->createDockWidget(confFile->readEntry("Name",i18n("Unknown")),QString());

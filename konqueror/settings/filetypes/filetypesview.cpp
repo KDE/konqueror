@@ -32,7 +32,7 @@ K_EXPORT_COMPONENT_FACTORY(filetypes, FileTypesViewFactory("filetypes"))
 FileTypesView::FileTypesView(QWidget *parent, const QStringList &)
   : KCModule(FileTypesViewFactory::componentData(), parent)
 {
-  m_konqConfig = KSharedConfig::openConfig("konquerorrc", false, false);
+  m_konqConfig = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
 
   setQuickHelp( i18n("<h1>File Associations</h1>"
     " This module allows you to choose which applications are associated"
@@ -374,7 +374,7 @@ bool FileTypesView::sync( QList<TypesListItem *>& itemsModified )
     loc = m_ptr->desktopEntryPath();
     loc = KStandardDirs::locate("mime", loc);
 
-    KDesktopFile config(loc, false, "mime");
+    KDesktopFile config("mime", loc);
     config.writeEntry("Type", "MimeType");
     config.writeEntry("MimeType", m_ptr->name());
     config.writeEntry("Hidden", true);

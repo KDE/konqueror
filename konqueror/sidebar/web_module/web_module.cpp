@@ -63,8 +63,8 @@ KonqSideBarWebModule::KonqSideBarWebModule(const KComponentData &componentData, 
 
 	_desktopName = desktopName;
 
-	KSimpleConfig ksc(_desktopName);
-	ksc.setGroup("Desktop Entry");
+	KConfig _ksc( _desktopName, KConfig::OnlyLocal );
+	KConfigGroup ksc(&_ksc, "Desktop Entry");
         reloadTimeout = ksc.readEntry("Reload", 0);
 	_url = ksc.readPathEntry("URL");
 	_htmlPart->openUrl(_url );
@@ -107,8 +107,8 @@ void KonqSideBarWebModule::setAutoReload(){
 	if( dlg.exec() == KDialog::Accepted ) {
 		int msec = ( mins->value() * 60 + secs->value() ) * 1000;
 		reloadTimeout = msec;
-		KSimpleConfig ksc(_desktopName);
-		ksc.setGroup("Desktop Entry");
+		KConfig _ksc( _desktopName, KConfig::OnlyLocal );
+		KConfigGroup ksc(&_ksc, "Desktop Entry");
 		ksc.writeEntry("Reload", reloadTimeout);
 		reload();
 	}
@@ -152,8 +152,8 @@ void KonqSideBarWebModule::loadFavicon() {
 	if (!icon.isEmpty()) {
 		emit setIcon(icon);
 
-		KSimpleConfig ksc(_desktopName);
-		ksc.setGroup("Desktop Entry");
+		KConfig _ksc( _desktopName, KConfig::OnlyLocal );
+		KConfigGroup ksc(&_ksc, "Desktop Entry");
 		if (icon != ksc.readPathEntry("Icon")) {
 			ksc.writePathEntry("Icon", icon);
 		}
@@ -170,8 +170,8 @@ void KonqSideBarWebModule::setTitle(const QString& title) {
 	if (!title.isEmpty()) {
 		emit setCaption(title);
 
-		KSimpleConfig ksc(_desktopName);
-		ksc.setGroup("Desktop Entry");
+		KConfig _ksc( _desktopName, KConfig::OnlyLocal );
+		KConfigGroup ksc(&_ksc, "Desktop Entry");
 		if (title != ksc.readPathEntry("Name")) {
 			ksc.writePathEntry("Name", title);
 		}

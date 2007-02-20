@@ -175,7 +175,7 @@ void KDesktopConfig::load()
     _nameInput[i-1]->setEnabled(i <= n);
   emit changed(false);
 
-  KSharedConfig::Ptr desktopConfig = KSharedConfig::openConfig("kdesktoprc", false, false);
+  KSharedConfig::Ptr desktopConfig = KSharedConfig::openConfig("kdesktoprc", KConfig::NoGlobals);
   desktopConfig->setGroup("Mouse Buttons");
   _wheelOption->setChecked(desktopConfig->readEntry("WheelSwitchesWorkspace", false));
 

@@ -114,8 +114,8 @@ void HistorySidebarConfig::configChanged()
 
 void HistorySidebarConfig::load()
 {
-    KConfig config("konquerorrc");
-    config.setGroup("HistorySettings");
+    KConfig _config( "konquerorrc" );
+    KConfigGroup config(&_config, "HistorySettings");
     dialog->spinExpire->setValue( config.readEntry( "Maximum age of History entries", 90) );
     dialog->spinEntries->setValue( config.readEntry( "Maximum of History entries", 500 ) );
     dialog->cbExpire->setChecked( dialog->spinExpire->value() > 0 );

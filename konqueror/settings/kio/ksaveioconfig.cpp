@@ -57,7 +57,7 @@ KConfig* KSaveIOConfig::config()
      d = new KSaveIOConfigPrivate;
 
   if (!d->config)
-     d->config = new KConfig("kioslaverc", false, false);
+     d->config = new KConfig("kioslaverc", KConfig::NoGlobals);
 
   return d->config;
 }
@@ -68,7 +68,7 @@ KConfig* KSaveIOConfig::http_config()
      d = new KSaveIOConfigPrivate;
 
   if (!d->http_config)
-     d->http_config = new KConfig("kio_httprc", false, false);
+     d->http_config = new KConfig("kio_httprc", KConfig::NoGlobals);
 
   return d->http_config;
 }

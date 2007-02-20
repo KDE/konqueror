@@ -28,7 +28,7 @@
 #include <QImageReader>
 
 #include <kicontheme.h>
-#include <ksimpleconfig.h>
+#include <kconfig.h>
 #include <kstandarddirs.h>
 #include <kio/job.h>
 #include "favicons_adaptor.h"
@@ -48,7 +48,7 @@ struct FavIconsModulePrivate
     };
     QMap<KJob *, DownloadInfo> downloads;
     QStringList failedDownloads;
-    KSimpleConfig *config;
+    KConfig *config;
     QList<KIO::Job*> killJobs;
     KIO::MetaData metaData;
     QString faviconsDir;
@@ -67,7 +67,7 @@ FavIconsModule::FavIconsModule()
     d->metaData.insert("UseCache", "false");
     d->metaData.insert("cookies", "none");
     d->metaData.insert("no-auth", "true");
-    d->config = new KSimpleConfig(KStandardDirs::locateLocal("data", "konqueror/faviconrc"));
+    d->config = new KConfig(KStandardDirs::locateLocal("data", "konqueror/faviconrc"));
 
     new FavIconsAdaptor( this );
 }

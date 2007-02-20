@@ -416,10 +416,9 @@ KfindTabWidget::~KfindTabWidget()
 
 void KfindTabWidget::setURL( const KUrl & url )
 {
-  KSharedConfig::Ptr conf = KGlobal::config();
-  conf->setGroup("History");
+  KConfigGroup conf(KGlobal::config(), "History");
   m_url = url;
-  QStringList sl = conf->readPathListEntry("Directories");
+  QStringList sl = conf.readPathListEntry("Directories");
   dirBox->clear(); // make sure there is no old Stuff in there
 
   if(!sl.isEmpty()) {
@@ -489,15 +488,14 @@ void KfindTabWidget::saveHistory()
 void KfindTabWidget::loadHistory()
 {
   // Load pattern history
-  KSharedConfig::Ptr conf = KGlobal::config();
-  conf->setGroup("History");
-  QStringList sl = conf->readEntry("Patterns", QStringList());
+  KConfigGroup conf(KGlobal::config(), "History");
+  QStringList sl = conf.readEntry("Patterns", QStringList());
   if(!sl.isEmpty())
     nameBox->addItems(sl);
   else
     nameBox->addItem("*");
 
-  sl = conf->readPathListEntry("Directories");
+  sl = conf.readPathListEntry("Directories");
   if(!sl.isEmpty()) {
     dirBox->addItems(sl);
     // If the _searchPath already exists in the list we do not
@@ -883,9 +881,8 @@ static void save_pattern(QComboBox *obj,
     }
   }
 
-  KSharedConfig::Ptr conf = KGlobal::config();
-  conf->setGroup(group);
-  conf->writePathEntry(entry, sl);
+  KConfigGroup conf(KGlobal::config(), group);
+  conf.writePathEntry(entry, sl);
 }
 
 QSize KfindTabWidget::sizeHint() const

@@ -57,7 +57,7 @@ K_EXPORT_COMPONENT_FACTORY(dbehavior, DesktopBehaviorModuleFactory)
 DesktopBehaviorModule::DesktopBehaviorModule(QWidget *parent, const QStringList &)
     : KCModule( KonqKcmFactory<DesktopBehaviorModule>::componentData(), parent )
 {
-    KSharedConfig::Ptr config = KSharedConfig::openConfig(_desktopConfigName(), false, false);
+    KSharedConfig::Ptr config = KSharedConfig::openConfig(_desktopConfigName(), KConfig::NoGlobals);
     QVBoxLayout* layout = new QVBoxLayout(this);
     m_behavior = new DesktopBehavior(config, this);
     layout->addWidget(m_behavior);
@@ -470,7 +470,7 @@ void DesktopBehavior::editButtonPressed()
       return;
 
    KCustomMenuEditor editor(this);
-   KSharedConfig::Ptr cfg = KSharedConfig::openConfig(cfgFile, false, false);
+   KSharedConfig::Ptr cfg = KSharedConfig::openConfig(cfgFile, KConfig::NoGlobals);
 
    editor.load(cfg.data());
    if (editor.exec())

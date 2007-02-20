@@ -30,15 +30,15 @@
 #include <QCursor>
 #include <qmimedata.h>
 #include <konqmimedata.h>
+#include <kdesktopfile.h>
 
 void KonqSidebarTreeTopLevelItem::init()
 {
     QString desktopFile = m_path;
     if ( isTopLevelGroup() )
         desktopFile += "/.directory";
-    KSimpleConfig cfg( desktopFile, true );
-    cfg.setDesktopGroup();
-    m_comment = cfg.readEntry( "Comment" );
+    KDesktopFile cfg(  desktopFile );
+    m_comment = cfg.desktopGroup().readEntry( "Comment" );
 }
 
 void KonqSidebarTreeTopLevelItem::setOpen( bool open )
@@ -186,9 +186,8 @@ void KonqSidebarTreeTopLevelItem::rename( const QString & name )
     QString desktopFile = m_path;
     if ( isTopLevelGroup() )
         desktopFile += "/.directory";
-    KSimpleConfig cfg( desktopFile );
-    cfg.setDesktopGroup();
-    cfg.writeEntry( "Name", name );
+    KDesktopFile cfg( desktopFile );
+    cfg.desktopGroup().writeEntry( "Name", name );
     cfg.sync();
 
     // Notify about the change

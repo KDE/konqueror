@@ -105,7 +105,7 @@ CSSConfig::CSSConfig(QWidget *parent, const QStringList &)
 
 void CSSConfig::load()
 {
-  KConfig *c = new KConfig("kcmcssrc", false, false);
+  KConfig *c = new KConfig("kcmcssrc", KConfig::NoGlobals);
 
   c->setGroup("Stylesheet");
   QString u = c->readEntry("Use", "default");
@@ -152,7 +152,7 @@ void CSSConfig::load()
 void CSSConfig::save()
 {
   // write to config file
-  KConfig *c = new KConfig("kcmcssrc", false, false);
+  KConfig *c = new KConfig("kcmcssrc", KConfig::NoGlobals);
 
   c->setGroup("Stylesheet");
   if (configDialog->useDefault->isChecked())
@@ -201,7 +201,7 @@ void CSSConfig::save()
     }
 
   // make konqueror use the right stylesheet
-  c = new KConfig("konquerorrc", false, false);
+  c = new KConfig("konquerorrc", KConfig::NoGlobals);
 
   c->setGroup("HTML Settings");
   c->writeEntry("UserStyleSheetEnabled", !configDialog->useDefault->isChecked());
