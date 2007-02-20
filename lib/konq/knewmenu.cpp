@@ -556,8 +556,9 @@ void KNewMenu::slotResult( KJob * job )
                 // But in case of a renaming (due to a conflict), the real path is in m_destPath
                 kDebug(1203) << " destUrl=" << destUrl.path() << " " << " d->m_destPath=" << d->m_destPath << endl;
                 KDesktopFile df( d->m_destPath );
-                df.writeEntry( "Icon", KProtocolInfo::icon( d->m_linkURL.protocol() ) );
-                df.writePathEntry( "URL", d->m_linkURL.prettyUrl() );
+                KConfigGroup group = df.desktopGroup();
+                group.writeEntry( "Icon", KProtocolInfo::icon( d->m_linkURL.protocol() ) );
+                group.writePathEntry( "URL", d->m_linkURL.prettyUrl() );
                 df.sync();
             }
             else

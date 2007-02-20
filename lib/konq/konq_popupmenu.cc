@@ -284,7 +284,7 @@ int KonqPopupMenu::insertServices(const ServiceList& list,
     return count;
 }
 
-bool KonqPopupMenu::KIOSKAuthorizedAction(KConfig& cfg)
+bool KonqPopupMenu::KIOSKAuthorizedAction(const KConfigGroup& cfg)
 {
     if ( !cfg.hasKey( "X-KDE-AuthorizeAction") )
     {
@@ -648,7 +648,7 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
             KDesktopFile desktopFile(  dotDirectoryFile );
             const KConfigGroup cfg = desktopFile.desktopGroup();
 
-            if (KIOSKAuthorizedAction(desktopFile))
+            if (KIOSKAuthorizedAction(cfg))
             {
                 const QString priority = cfg.readEntry("X-KDE-Priority");
                 const QString submenuName = cfg.readEntry( "X-KDE-Submenu" );
@@ -668,7 +668,7 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
             KDesktopFile desktopFile( *eIt );
             const KConfigGroup cfg = desktopFile.desktopGroup();
 
-            if (!KIOSKAuthorizedAction(desktopFile))
+            if (!KIOSKAuthorizedAction(cfg))
             {
                 continue;
             }
