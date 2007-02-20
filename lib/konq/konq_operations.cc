@@ -397,6 +397,7 @@ void KonqOperations::asyncDrop( const KFileItem * destItem )
     {
         // Local .desktop file. What type ?
         KDesktopFile desktopFile( m_destUrl.path() );
+        KConfigGroup desktopGroup = desktopFile.desktopGroup();
         if ( desktopFile.hasApplicationType() )
         {
             QString error;
@@ -407,8 +408,8 @@ void KonqOperations::asyncDrop( const KFileItem * destItem )
         else
         {
             // Device or Link -> adjust dest
-            if ( desktopFile.hasDeviceType() && desktopFile.hasKey("MountPoint") ) {
-                QString point = desktopFile.readEntry( "MountPoint" );
+            if ( desktopFile.hasDeviceType() && desktopGroup.hasKey("MountPoint") ) {
+                QString point = desktopGroup.readEntry( "MountPoint" );
                 m_destUrl.setPath( point );
                 QString dev = desktopFile.readDevice();
                 QString mp = KIO::findDeviceMountPoint( dev );
@@ -419,16 +420,16 @@ void KonqOperations::asyncDrop( const KFileItem * destItem )
 #ifndef Q_WS_WIN
                 else
                 {
-                    const bool ro = desktopFile.readEntry( "ReadOnly", false );
-                    const QByteArray fstype = desktopFile.readEntry( "FSType" ).toLatin1();
+                    const bool ro = desktopGroup.readEntry( "ReadOnly", false );
+                    const QByteArray fstype = desktopGroup.readEntry( "FSType" ).toLatin1();
                     KAutoMount* am = new KAutoMount( ro, fstype, dev, point, m_destUrl.path(), false );
                     connect( am, SIGNAL( finished() ), this, SLOT( doDropFileCopy() ) );
                 }
 #endif
                 return;
             }
-            else if ( desktopFile.hasLinkType() && desktopFile.hasKey("URL") ) {
-                m_destUrl = desktopFile.readPathEntry("URL");
+            else if ( desktopFile.hasLinkType() && desktopGroup.hasKey("URL") ) {
+                m_destUrl = desktopGroup.readPathEntry("URL");
                 doDropFileCopy();
                 return;
             }

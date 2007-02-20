@@ -154,7 +154,7 @@ private:
   void addPlugins( );
   int  insertServicesSubmenus(const QMap<QString, ServiceList>& list, QDomElement& menu, bool isBuiltin);
   int  insertServices(const ServiceList& list, QDomElement& menu, bool isBuiltin);
-  bool KIOSKAuthorizedAction(KConfig& cfg);
+  bool KIOSKAuthorizedAction(const KConfigGroup& cfg);
 
   class KonqPopupMenuPrivate;
   KonqPopupMenuPrivate *d;
