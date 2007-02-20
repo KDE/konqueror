@@ -27,7 +27,7 @@
 
 #include <kde_file.h>
 #include <kdebug.h>
-#include <ksimpleconfig.h>
+#include <kconfig.h>
 
 #include <errno.h>
 #include <utime.h>
@@ -406,7 +406,7 @@ void KonqUndoManagerTest::testTrashFiles()
 
     // check trash?
     // Let's just check that it's not empty. kio_trash has its own unit tests anyway.
-    KSimpleConfig cfg( "trashrc" );
+    KConfig cfg( "trashrc", KConfig::OnlyLocal );
     QVERIFY( cfg.hasGroup( "Status" ) );
     QCOMPARE( cfg.group("Status").readEntry( "Empty", true ), false );
 
