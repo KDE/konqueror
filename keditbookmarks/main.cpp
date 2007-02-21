@@ -24,6 +24,7 @@
 
 #include <klocale.h>
 #include <kdebug.h>
+#include <kdeversion.h>
 #include <kstandarddirs.h>
 
 #include <kcmdlineargs.h>
@@ -114,7 +115,7 @@ static bool askUser(QString filename, bool &readonly) {
 
 extern "C" KDE_EXPORT int kdemain(int argc, char **argv) {
     KLocale::setMainCatalog("konqueror");
-    KAboutData aboutData("keditbookmarks", I18N_NOOP("Bookmark Editor"), VERSION,
+    KAboutData aboutData("keditbookmarks", I18N_NOOP("Bookmark Editor"), KDE_VERSION_STRING,
             I18N_NOOP("Konqueror Bookmarks Editor"),
             KAboutData::License_GPL,
             I18N_NOOP("(c) 2000 - 2003, KDE developers") );
