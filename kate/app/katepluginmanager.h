@@ -23,10 +23,11 @@
 
 #include "katemain.h"
 
-#include "../interfaces/plugin.h"
-#include "../interfaces/pluginmanager.h"
+#include <kate/plugin.h>
+#include <kate/pluginmanager.h>
 
 #include <KService>
+#include <KConfigBase>
 
 #include <QObject>
 #include <QLinkedList>
