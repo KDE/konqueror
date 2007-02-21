@@ -23,10 +23,7 @@
 
 /**
  * This header has some global forward declarations for the whole application
- * and includes the config.h
  */
-
-#include <config.h>
 
 #include <QPixmap>
 #include <QLabel>

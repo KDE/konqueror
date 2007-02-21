@@ -19,8 +19,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include <config.h>
-
 #include "toplevel.h"
 #include "importers.h"
 
@@ -99,9 +97,9 @@ static bool askUser(QString filename, bool &readonly) {
                     if( value.isValid())
                         id = value;
                     //kdDebug()<<" id !!!!!!!!!!!!!!!!!!! :"<<id<<endl;
-#ifdef Q_WS_X11                 
+#ifdef Q_WS_X11
                     KWin::activateWindow(id);
-#endif                    
+#endif
                     return false;
                 } else if (ret == KMessageBox::Yes) {
                     readonly = true;
