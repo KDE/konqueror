@@ -36,7 +36,7 @@
 #include "katemainwindowadaptor.h"
 #include "kateviewdocumentproxymodel.h"
 
-#include "../interfaces/mainwindow.h"
+#include <kate/mainwindow.h>
 
 #include <KAboutApplicationDialog>
 #include <KComponentData>

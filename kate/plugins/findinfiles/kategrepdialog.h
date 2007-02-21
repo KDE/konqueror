@@ -22,7 +22,7 @@
 #ifndef _GREPDIALOG_H_
 #define _GREPDIALOG_H_
 
-#include <kate/interfaces/mainwindow.h>
+#include <kate/mainwindow.h>
 
 #include "kategrepthread.h"
 #include "ui_findwidget.h"

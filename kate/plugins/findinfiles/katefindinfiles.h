@@ -22,8 +22,8 @@
 #ifndef __KATE_FINDINFILES_H__
 #define __KATE_FINDINFILES_H__
 
-#include <kate/interfaces/plugin.h>
-#include <kate/interfaces/mainwindow.h>
+#include <kate/plugin.h>
+#include <kate/mainwindow.h>
 #include <kurl.h>
 #include <kxmlguiclient.h>
 

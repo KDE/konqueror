@@ -27,7 +27,7 @@
 #include "kateviewspacecontainer.h"
 #include "katetabwidget.h"
 
-#include "../interfaces/mainwindow.h"
+#include <kate/mainwindow.h>
 
 #include <KAction>
 #include <KActionCollection>

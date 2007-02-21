@@ -24,7 +24,7 @@
 #include "kateapp.h"
 #include "katemainwindow.h"
 
-#include "../interfaces/application.h"
+#include <kate/application.h>
 
 #include <KConfig>
 #include <QStringList>

@@ -1,5 +1,7 @@
 project(kate)
 
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/interfaces)
+
 add_subdirectory( interfaces )
 add_subdirectory( app )
 add_subdirectory( plugins )

@@ -1,13 +1,12 @@
-
 ########### next target ###############
 
 set(kateinterfaces_LIB_SRCS kateappadaptor.cpp katemainwindowadaptor.cpp
-   ../interfaces/application.cpp
-   ../interfaces/mainwindow.cpp
-   ../interfaces/documentmanager.cpp
-   ../interfaces/pluginmanager.cpp
-   ../interfaces/plugin.cpp
-   ../interfaces/pluginconfigpageinterface.cpp
+   ../interfaces/kate/application.cpp
+   ../interfaces/kate/mainwindow.cpp
+   ../interfaces/kate/documentmanager.cpp
+   ../interfaces/kate/pluginmanager.cpp
+   ../interfaces/kate/plugin.cpp
+   ../interfaces/kate/pluginconfigpageinterface.cpp
    kateapp.cpp
    kateconfigdialog.cpp
    kateconfigplugindialogpage.cpp

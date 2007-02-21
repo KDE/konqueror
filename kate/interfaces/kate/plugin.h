@@ -40,19 +40,19 @@ namespace Kate
    * \brief Kate plugin interface.
    *
    * Topics:
-   *  - \ref plugin_intro
-   *  - \ref plugin_config
-   *  - \ref plugin_views
-   *  - \ref plugin_configpages
+   *  - \ref intro
+   *  - \ref config
+   *  - \ref views
+   *  - \ref configpages
    *
-   * \section plugin_intro Introduction
+   * \section intro Introduction
    *
    * The Plugin class is the central part of a Kate plugin. It is possible to
    * represent your plugin in the GUI with a subclass of PluginView. Furthermore
    * if the plugin is configurable (and thus has config pages) you have to
    * additionally derive your plugin from PluginConfigPageInterface.
    *
-   * \section plugin_config Configuration Management
+   * \section config Configuration Management
    *
    * When Kate loads a session it calls readSessionConfig(), so if you have
    * config settings use this function to load them. To save config settings
@@ -66,7 +66,7 @@ namespace Kate
    * KConfig* myConfig = new KConfig("katemypluginrc");
    * \endcode
    *
-   * \section plugin_views Plugin Views
+   * \section views Plugin Views
    *
    * If your plugin needs to be present in the GUI (e.g. menu or toolbar
    * entries) you have to subclass PluginView and return a new instance of your
@@ -98,7 +98,7 @@ namespace Kate
    * The Kate application takes care and deletes all plugin views. Further
    * information can be found in the class documentation of PluginView.
    *
-   * \section plugin_configpages Config Pages
+   * \section configpages Config Pages
    *
    * If your plugin is configurable it makes sense to have config pages which
    * appear in Kate's settings dialog. To tell the plugin loader that your

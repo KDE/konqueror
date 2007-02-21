@@ -26,7 +26,7 @@
 #include "katesession.h"
 #include "katemainwindow.h"
 
-#include "../interfaces/application.h"
+#include <kate/application.h>
 
 #include <kdeversion.h>
 #include <KCmdLineArgs>
