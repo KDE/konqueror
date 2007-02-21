@@ -114,9 +114,9 @@ KateMainWindow::KateMainWindow (KConfig *sconfig, const QString &sgroup)
     // try to load size
     if (sconfig)
     {
-      sconfig->setGroup (sgroup);
-      size.setWidth (sconfig->readEntry( QString::fromLatin1("Width %1").arg(desk.width()), 0 ));
-      size.setHeight (sconfig->readEntry( QString::fromLatin1("Height %1").arg(desk.height()), 0 ));
+      KConfigGroup cg( sconfig, sgroup );
+      size.setWidth (cg.readEntry( QString::fromLatin1("Width %1").arg(desk.width()), 0 ));
+      size.setHeight (cg.readEntry( QString::fromLatin1("Height %1").arg(desk.height()), 0 ));
     }
 
     // if thats fails, try to reuse size
@@ -135,9 +135,9 @@ KateMainWindow::KateMainWindow (KConfig *sconfig, const QString &sgroup)
       else // now fallback to hard defaults ;)
       {
         // first try global app config
-        KGlobal::config()->setGroup ("MainWindow");
-        size.setWidth (KGlobal::config()->readEntry( QString::fromLatin1("Width %1").arg(desk.width()), 0 ));
-        size.setHeight (KGlobal::config()->readEntry( QString::fromLatin1("Height %1").arg(desk.height()), 0 ));
+        KConfigGroup cg( KGlobal::config(), "MainWindow" );
+        size.setWidth (cg.readEntry( QString::fromLatin1("Width %1").arg(desk.width()), 0 ));
+        size.setHeight (cg.readEntry( QString::fromLatin1("Height %1").arg(desk.height()), 0 ));
 
         if (size.isEmpty())
           size = QSize (qMin (700, desk.width()), qMin(480, desk.height()));
@@ -896,8 +896,8 @@ void KateMainWindow::saveGlobalProperties( KConfig* sessionConfig )
 {
   KateDocManager::self()->saveDocumentList (sessionConfig);
 
-  sessionConfig->setGroup("General");
-  sessionConfig->writeEntry ("Last Session", KateApp::self()->sessionManager()->activeSession()->sessionFileRelative());
+  KConfigGroup cg( sessionConfig, "General");
+  cg.writeEntry ("Last Session", KateApp::self()->sessionManager()->activeSession()->sessionFileRelative());
 }
 
 void KateMainWindow::showFileListPopup(const QPoint& pos)

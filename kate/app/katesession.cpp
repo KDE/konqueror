@@ -78,8 +78,7 @@ void KateSession::init ()
     KConfig config (sessionFile (), KConfig::OnlyLocal);
 
     // get the document count
-    config.setGroup ("Open Documents");
-    m_documents = config.readEntry("Count", 0);
+    m_documents = config.group("Open Documents").readEntry("Count", 0);
 
     return;
   }
@@ -140,8 +139,7 @@ bool KateSession::create (const QString &name, bool force)
 
   // create the file, write name to it!
   KConfig config (sessionFile (), KConfig::OnlyLocal);
-  config.setGroup ("General");
-  config.writeEntry ("Name", m_sessionName);
+  config.group("General").writeEntry ("Name", m_sessionName);
   config.sync ();
 
   // reinit ourselfs ;)
@@ -194,8 +192,7 @@ KConfig *KateSession::configWrite ()
     return m_writeConfig;
 
   m_writeConfig = new KConfig (sessionFile (), KConfig::OnlyLocal);
-  m_writeConfig->setGroup ("General");
-  m_writeConfig->writeEntry ("Name", m_sessionName);
+  m_writeConfig->group("General").writeEntry ("Name", m_sessionName);
 
   return m_writeConfig;
 }
@@ -303,8 +300,7 @@ void KateSessionManager::activateSession (KateSession::Ptr session, bool closeLa
       if ( ! sc->hasGroup("Open MainWindows") )
         sc = new KConfig( sessionsDir() + "/default.katesession", KConfig::OnlyLocal );
 
-      sc->setGroup ("Open MainWindows");
-      int wCount = sc->readEntry("Count", 1);
+      int wCount = sc->group("Open MainWindows").readEntry("Count", 1);
 
       for (int i = 0; i < wCount; ++i)
       {
