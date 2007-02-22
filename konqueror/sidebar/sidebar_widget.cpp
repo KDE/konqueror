@@ -294,11 +294,14 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, bool 
 	initialCopy();
 
 	if (universalMode)
-		m_config = new KConfig("konqsidebartng_kicker.rc");
+	{
+	    m_config = new KConfigGroup(KSharedConfig::openConfig("konqsidebartng_kicker.rc"),
+					QByteArray());
+	}
 	else
 	{
-		m_config = new KConfig("konqsidebartng.rc");
-		m_config->setGroup(currentProfile);
+	    m_config = new KConfigGroup(KSharedConfig::openConfig("konqsidebartng.rc"),
+					currentProfile);
 	}
 	m_configTimer.setSingleShot(true);
 	connect(&m_configTimer, SIGNAL(timeout()),
@@ -758,12 +761,13 @@ bool Sidebar_Widget::addButton(const QString &desktoppath,int pos)
 	int lastbtn = m_buttons.count();
 	m_buttons.resize(m_buttons.size()+1);
 
-  	KConfig *confFile;
+  	KConfigGroup *confFile;
 
 	kDebug() << "addButton:" << (m_path+desktoppath) << endl;
 
-	confFile = new KConfig(m_path+desktoppath, KConfig::OnlyLocal);
-	confFile->setGroup("Desktop Entry");
+	confFile = new KConfigGroup(
+	    KSharedConfig::openConfig(m_path+desktoppath, KConfig::OnlyLocal),
+	    "Desktop Entry");
 
     	QString icon = confFile->readEntry("Icon");
 	QString name = confFile->readEntry("Name");
@@ -879,9 +883,10 @@ KParts::BrowserExtension *Sidebar_Widget::getExtension()
 bool Sidebar_Widget::createView( ButtonInfo *data)
 {
 	bool ret = true;
-	KConfig *confFile;
-	confFile = new KConfig(data->file, KConfig::OnlyLocal);
-	confFile->setGroup("Desktop Entry");
+	KConfigGroup *confFile;
+	confFile = new KConfigGroup(
+	    KSharedConfig::openConfig(data->file, KConfig::OnlyLocal),
+	    "Desktop Entry");
 
 	data->dock = m_area->createDockWidget(confFile->readEntry("Name",i18n("Unknown")),QString());
 	data->module = loadModule(data->dock,data->file,data->libName,data);

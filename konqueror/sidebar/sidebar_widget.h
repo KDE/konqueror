@@ -205,7 +205,7 @@ private:
 	QPointer<ButtonInfo> m_activeModule;
 	QPointer<ButtonInfo> m_currentButton;
 	
-	KConfig *m_config;
+	KConfigGroup *m_config;
 	QTimer m_configTimer;
 	
 	KUrl m_storedUrl;
