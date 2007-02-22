@@ -30,7 +30,7 @@ public:
         if ( !s_bookmarkManager )
         {
             QString bookmarksFile = KStandardDirs::locateLocal("data", QLatin1String("konqueror/bookmarks.xml"));
-            s_bookmarkManager = KBookmarkManager::managerForFile( bookmarksFile, "konqueror" );
+            s_bookmarkManager = KBookmarkManager::managerForFile( bookmarksFile, QLatin1String("konqueror") );
         }
         return s_bookmarkManager;
     }
