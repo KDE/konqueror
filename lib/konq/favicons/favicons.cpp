@@ -102,7 +102,7 @@ QString FavIconsModule::iconForUrl(const KUrl &url)
     if (iconURL)
         icon = *iconURL;
     else
-        icon = d->config->readEntry( removeSlash(simplifiedURL), QString() );
+        icon = d->config->group(QString()).readEntry( removeSlash(simplifiedURL), QString() );
 
     if (!icon.isEmpty())
         icon = iconNameFromURL(KUrl( icon ));
@@ -240,7 +240,7 @@ void FavIconsModule::slotResult(KJob *job)
                 if( !img.save( d->faviconsDir + iconName + ".png", "PNG" ) )
                     iconName.clear();
                 else if (!download.isHost)
-                    d->config->writeEntry( removeSlash(download.hostOrURL), iconURL.url());
+                    d->config->group(QString()).writeEntry( removeSlash(download.hostOrURL), iconURL.url());
             }
         }
     }
