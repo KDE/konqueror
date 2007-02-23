@@ -25,7 +25,7 @@
 #include <kdemacros.h>
 
 /* needed, because e.g. Q_OS_UNIX is so frequently used */
-#include <qglobal.h>
+#include <QtCore/qglobal.h>
 
 #ifdef MAKE_KONQ_LIB
 # define LIBKONQ_EXPORT KDE_EXPORT
