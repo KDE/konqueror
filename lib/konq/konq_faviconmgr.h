@@ -51,13 +51,13 @@ public:
      */
     static void downloadHostIcon(const KUrl &url);
 
-private slots:
+private Q_SLOTS:
     /**
      * an icon changed, updates the combo box
      */
     virtual void notifyChange( bool isHost, QString hostOrURL, QString iconName ) = 0;
 
-signals:
+Q_SIGNALS:
     void changed();
 
 private:
