@@ -23,7 +23,6 @@
 #include "undomanageradaptor.h"
 #include "konq_operations.h"
 
-#include <kio/observer.h>
 #include <kio/job.h>
 #include <kio/jobuidelegate.h>
 #include <QtDBus/QtDBus>
@@ -76,6 +75,8 @@ public:
     virtual ~KonqUndoJob() { KonqUndoManager::decRef(); }
 
     virtual void kill( bool ) { KonqUndoManager::self()->stopUndo( true ); KIO::Job::doKill(); }
+
+    void emitFinished() { emit finished(this, progressId()); }
 };
 
 KonqCommandRecorder::KonqCommandRecorder( KonqUndoManager::CommandType op, const KUrl::List &src, const KUrl &dst, KIO::Job *job )
@@ -365,7 +366,7 @@ void KonqUndoManager::stopUndo( bool step )
 
 void KonqUndoManager::slotResult( KJob *job )
 {
-    Observer::self()->jobFinished( d->m_undoJob->progressId() );
+    d->m_undoJob->emitFinished();
     d->m_currentJob = 0;
     if ( job->error() )
     {
@@ -539,7 +540,7 @@ void KonqUndoManager::stepRemovingDirectories()
         if ( d->m_undoJob )
         {
             kDebug(1203) << "KonqUndoManager::stepRemovingDirectories deleting undojob" << endl;
-            Observer::self()->jobFinished( d->m_undoJob->progressId() );
+            d->m_undoJob->emitFinished();
             delete d->m_undoJob;
             d->m_undoJob = 0;
         }
