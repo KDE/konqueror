@@ -179,7 +179,7 @@ void KPreviewOptions::load(bool useDefaults)
           // than preview's lost when size is changed from default one
           it.current()->setOn( true );
         else
-          it.current()->setOn( group.readEntry( protocol, QVariant(false )).toBool() );
+          it.current()->setOn( group.readEntry( protocol, false ));
     }
     // config key is in bytes (default value 1MB), numinput is in MB
     m_maxSize->setValue( ((double)group.readEntry( "MaximumSize", DEFAULT_MAXSIZE )) / (1024*1024) );
