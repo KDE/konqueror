@@ -150,6 +150,7 @@ KonqIconViewWidget::KonqIconViewWidget( QWidget * parent, const char * name, Qt:
     // hardcoded settings
     setSelectionMode( Q3IconView::Extended );
     setItemTextPos( Q3IconView::Bottom );
+    setFrameStyle( QFrame::NoFrame );
     d->releaseMouseEvent = false;
     d->pFileTip = new KonqFileTip(this);
     d->firstClick = false;

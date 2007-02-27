@@ -32,6 +32,8 @@ KonqIconView::KonqIconView( QWidget* parent ) : QListView( parent )
     setResizeMode( QListView::Adjust );
     setDragEnabled( true );
     setAcceptDrops( true );
+    setFrameStyle( QFrame::NoFrame );
+
 //    setItemDelegate( new KonqIconViewItemDelegate( this ) );
     setEditTriggers( QAbstractItemView::EditKeyPressed );
 }
