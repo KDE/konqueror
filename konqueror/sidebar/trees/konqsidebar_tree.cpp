@@ -142,15 +142,15 @@ extern "C"
 			int id=names.indexOf( item );
 			if (id==-1) return false;
 			KConfig ksc2(QString(list.at(id)), KConfig::OnlyLocal);
-			ksc2.setGroup("Desktop Entry");
+			KConfigGroup desktopGroup(&ksc2, "Desktop Entry");
 		        map->insert("Type","Link");
-			map->insert("Icon",ksc2.readEntry("Icon"));
-			map->insert("Name",ksc2.readEntry("Name"));
+			map->insert("Icon",desktopGroup.readEntry("Icon"));
+			map->insert("Name",desktopGroup.readEntry("Name"));
 		 	map->insert("Open","false");
-			map->insert("URL",ksc2.readEntry("X-KDE-Default-URL"));
+			map->insert("URL",desktopGroup.readEntry("X-KDE-Default-URL"));
 			map->insert("X-KDE-KonqSidebarModule","konqsidebar_tree");
-			map->insert("X-KDE-TreeModule",ksc2.readEntry("X-KDE-TreeModule"));
-			map->insert("X-KDE-TreeModule-ShowHidden",ksc2.readEntry("X-KDE-TreeModule-ShowHidden"));
+			map->insert("X-KDE-TreeModule",desktopGroup.readEntry("X-KDE-TreeModule"));
+			map->insert("X-KDE-TreeModule-ShowHidden",desktopGroup.readEntry("X-KDE-TreeModule-ShowHidden"));
 			fn->setLatin1("dirtree%1.desktop");
 			return true;
 		}

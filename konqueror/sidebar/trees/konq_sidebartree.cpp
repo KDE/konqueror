@@ -402,7 +402,8 @@ void KonqSidebarTree::addUrl(KonqSidebarTreeTopLevelItem* item, const KUrl & url
        QString filename = findUniqueFilename(path, name);
        destUrl.setPath(filename);
 
-       KDesktopFile cfg(filename);
+       KDesktopFile desktopFile(filename);
+       KConfigGroup cfg = desktopFile.desktopGroup();
        cfg.writeEntry("Encoding", "UTF-8");
        cfg.writeEntry("Type","Link");
        cfg.writeEntry("URL", url.url());
@@ -630,11 +631,12 @@ void KonqSidebarTree::scanDir( KonqSidebarTreeItem *parent, const QString &path,
             const int currentVersion = 6;
             QString key = QString::fromLatin1("X-KDE-DirTreeVersionNumber");
             KConfig versionCfg( path + "/.directory", KConfig::OnlyLocal);
-            int versionNumber = versionCfg.readEntry( key, 1 );
+            KConfigGroup generalGroup( &versionCfg, "General" );
+            int versionNumber = generalGroup.readEntry( key, 1 );
             kDebug(1201) << "KonqSidebarTree::scanDir found version " << versionNumber << endl;
             if ( versionNumber < currentVersion )
             {
-                versionCfg.writeEntry( key, currentVersion );
+                generalGroup.writeEntry( key, currentVersion );
                 versionCfg.sync();
                 copyConfig = true;
             }
@@ -771,6 +773,7 @@ void KonqSidebarTree::loadTopLevelItem( KonqSidebarTreeItem *parent, const QStri
 {
     KDesktopFile cfg( filename );
     cfg.setDollarExpansion(true);
+    KConfigGroup desktopGroup = cfg.desktopGroup();
 
     QFileInfo inf( filename );
 
@@ -781,13 +784,13 @@ void KonqSidebarTree::loadTopLevelItem( KonqSidebarTreeItem *parent, const QStri
     if ( name.length() > 7 && name.right( 7 ) == ".kdelnk" )
         name.truncate( name.length() - 7 );
 
-    name = cfg.readEntry( "Name", name );
+    name = cfg.readName();
     KonqSidebarTreeModule * module = 0L;
 
     // Here's where we need to create the right module...
     // ### TODO: make this KTrader/KLibrary based.
-    QString moduleName = cfg.readEntry( "X-KDE-TreeModule" );
-    QString showHidden=cfg.readEntry("X-KDE-TreeModule-ShowHidden");
+    QString moduleName = desktopGroup.readEntry( "X-KDE-TreeModule" );
+    QString showHidden = desktopGroup.readEntry("X-KDE-TreeModule-ShowHidden");
 
     if (moduleName.isEmpty()) moduleName="Directory";
     kDebug(1201) << "##### Loading module: " << moduleName << " file: " << filename << endl;
@@ -816,7 +819,7 @@ void KonqSidebarTree::loadTopLevelItem( KonqSidebarTreeItem *parent, const QStri
     m_topLevelItems.append( item );
     m_lstModules.append( module );
 
-    bool open = cfg.readEntry( "Open", false);
+    bool open = desktopGroup.readEntry( "Open", false);
     if ( open && item->isExpandable() )
         item->setOpen( true );
 }

@@ -52,9 +52,9 @@ KonqProfileMap KonqProfileDlg::readAllProfiles()
     KConfig cfg( *pIt, KConfig::OnlyLocal);
     if ( cfg.hasGroup( "Profile" ) )
     {
-      cfg.setGroup( "Profile" );
-      if ( cfg.hasKey( "Name" ) )
-        profileName = cfg.readEntry( "Name" );
+      KConfigGroup profileGroup( &cfg, "Profile" );
+      if ( profileGroup.hasKey( "Name" ) )
+        profileName = profileGroup.readEntry( "Name" );
 
       mapProfiles.insert( profileName, *pIt );
     }

@@ -152,8 +152,8 @@ KonqMainWindow * KonqMisc::createBrowserWindowFromProfile( const QString &path, 
   {
       KConfig cfg( path );
       cfg.setDollarExpansion( true );
-      cfg.setGroup( "Profile" );
-      QString xmluiFile=cfg.readEntry("XMLUIFile","konqueror.rc");
+      KConfigGroup profileGroup( &cfg, "Profile" );
+      QString xmluiFile = profileGroup.readEntry("XMLUIFile","konqueror.rc");
 
       mainWindow = new KonqMainWindow( KUrl(), false, xmluiFile );
       if ( forbidUseHTML )

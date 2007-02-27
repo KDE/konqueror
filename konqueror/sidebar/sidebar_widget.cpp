@@ -74,29 +74,30 @@ void addBackEnd::aboutToShowAddMenu()
 	for (QStringList::Iterator it = list.begin(); it != list.end(); ++it, i++ )
 	{
 		KDesktopFile confFile( *it );
+		KConfigGroup desktopGroup = confFile.desktopGroup();
 		if (!confFile.tryExec()) {
 			i--;
 			continue;
 		}
 		if (m_universal) {
-			if (confFile.readEntry("X-KDE-KonqSidebarUniversal").toUpper()!="TRUE") {
+			if (desktopGroup.readEntry("X-KDE-KonqSidebarUniversal").toUpper()!="TRUE") {
 				i--;
 				continue;
 			}
 		} else {
-			if (confFile.readEntry("X-KDE-KonqSidebarBrowser").toUpper()=="FALSE") {
+			if (desktopGroup.readEntry("X-KDE-KonqSidebarBrowser").toUpper()=="FALSE") {
 				i--;
 				continue;
 			}
 		}
 		QString icon = confFile.readIcon();
 		QStringList libs;
-		libs << confFile.readEntry("X-KDE-KonqSidebarAddModule") << confFile.readEntry("X-KDE-KonqSidebarAddParam");
+		libs << desktopGroup.readEntry("X-KDE-KonqSidebarAddModule") << desktopGroup.readEntry("X-KDE-KonqSidebarAddParam");
 		if (!icon.isEmpty())
 		{
-			menu->addAction(QIcon(SmallIcon(icon)), confFile.readEntry("Name"))->setData(libs);
+			menu->addAction(QIcon(SmallIcon(icon)), confFile.readName())->setData(libs);
 		} else {
-			menu->addAction(confFile.readEntry("Name"))->setData(libs);
+			menu->addAction(confFile.readName())->setData(libs);
 		}
 	}
 
@@ -419,7 +420,8 @@ void Sidebar_Widget::initialCopy()
 
 	int nVersion=-1;
 	KConfig lcfg(m_path+".version", KConfig::OnlyLocal);
-	int lVersion=lcfg.readEntry("Version",0);
+	KConfigGroup generalGroup( &lcfg, "General" );
+	int lVersion = generalGroup.readEntry("Version",0);
 
 
 	for (QStringList::const_iterator ddit=dirtree_dirs.begin();ddit!=dirtree_dirs.end();++ddit) {
@@ -432,7 +434,8 @@ void Sidebar_Widget::initialCopy()
 	        if ( !dirtree_dir.isEmpty() && dirtree_dir != m_path )
         	{
 			KConfig gcfg(dirtree_dir+".version", KConfig::OnlyLocal);
-			int gversion = gcfg.readEntry("Version", 1);
+			KConfigGroup dirGeneralGroup( &gcfg, "General" );
+			int gversion = dirGeneralGroup.readEntry("Version", 1);
 			nVersion=(nVersion>gversion)?nVersion:gversion;
 			if (lVersion >= gversion)
 				continue;
@@ -466,7 +469,7 @@ void Sidebar_Widget::initialCopy()
 			}
 		}
 
-			lcfg.writeEntry("Version",(nVersion>lVersion)?nVersion:lVersion);
+			generalGroup.writeEntry("Version",(nVersion>lVersion)?nVersion:lVersion);
 			lcfg.sync();
 
 	}

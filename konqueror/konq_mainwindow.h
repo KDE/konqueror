@@ -153,8 +153,8 @@ public:
   virtual QWidget *createContainer( QWidget *parent, int index, const QDomElement &element, int &id );
   virtual void removeContainer( QWidget *container, QWidget *parent, QDomElement &element, int id );
 
-  virtual void saveProperties( KConfig *config );
-  virtual void readProperties( KConfig *config );
+  virtual void saveProperties( KConfig& config );
+  virtual void readProperties( KConfig& config );
 
   void setInitialFrameName( const QString &name );
 
@@ -284,7 +284,7 @@ public:
    */
   void removeChildFrame( KonqFrameBase * frame );
 
-  void saveConfig( KConfig* config, const QString &prefix, bool saveURLs, KonqFrameBase* docContainer, int id = 0, int depth = 0 );
+  void saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs, KonqFrameBase* docContainer, int id = 0, int depth = 0 );
 
   void copyHistory( KonqFrameBase *other );
 

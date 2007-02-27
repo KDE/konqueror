@@ -56,7 +56,7 @@ set(konqueror_KDEINIT_SRCS  ${libkonqueror_intern_SRCS}
 )
 
 kde4_automoc(${konqueror_KDEINIT_SRCS})
-
+QT4_ADD_DBUS_INTERFACE(konqueror_KDEINIT_SRCS org.kde.Konqueror.Main.xml konqueror_interface)
 
 kde4_add_kdeinit_executable( konqueror ${konqueror_KDEINIT_SRCS})
 

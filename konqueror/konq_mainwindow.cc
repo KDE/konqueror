@@ -23,6 +23,7 @@
 #include "konq_application.h"
 #include "konq_guiclients.h"
 #include "KonqMainWindowAdaptor.h"
+#include "KonquerorAdaptor.h"
 #include "konq_view.h"
 #include "konq_run.h"
 #include "konq_misc.h"
@@ -33,6 +34,7 @@
 #include "konq_actions.h"
 #include "konq_settingsxt.h"
 #include "konq_extensionmanager.h"
+#include "konqueror_interface.h"
 #include "delayedinitializer.h"
 #include <konq_pixmapprovider.h>
 #include <konq_operations.h>
@@ -771,9 +773,9 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
             {
               f.close();
               KConfig config( urlDotDir.path(), KConfig::OnlyLocal);
-              config.setGroup( "URL properties" );
-              HTMLAllowed = config.readEntry( "HTMLAllowed", m_bHTMLAllowed);
-              serviceName = config.readEntry( "ViewMode", serviceName );
+              KConfigGroup urlProperties( &config, "URL properties" );
+              HTMLAllowed = urlProperties.readEntry( "HTMLAllowed", m_bHTMLAllowed);
+              serviceName = urlProperties.readEntry( "ViewMode", serviceName );
               kDebug(1202) << "serviceName=" << serviceName << endl;
             }
           if ( HTMLAllowed &&
@@ -1175,15 +1177,15 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url, const KParts::URLArgs
     }
 
     QString profileName = QLatin1String( url.isLocalFile() ? "konqueror/profiles/filemanagement" : "konqueror/profiles/webbrowsing" );
-    KConfig cfg( KStandardDirs::locate( "data", profileName ) );
-    cfg.setGroup( "Profile" );
 
     if ( windowArgs.x != -1 )
         mainWindow->move( windowArgs.x, mainWindow->y() );
     if ( windowArgs.y != -1 )
         mainWindow->move( mainWindow->x(), windowArgs.y );
 
-    QSize size = KonqViewManager::readConfigSize( cfg, mainWindow );
+    KConfig cfg( KStandardDirs::locate( "data", profileName ) );
+    KConfigGroup profileGroup( &cfg, "Profile" );
+    QSize size = KonqViewManager::readConfigSize( profileGroup, mainWindow );
 
     int width;
     if ( windowArgs.width != -1 )
@@ -1293,7 +1295,6 @@ void KonqMainWindow::slotDuplicateWindow()
   KTemporaryFile tempFile;
   tempFile.open();
   KConfig config( tempFile.fileName() );
-  config.setGroup( "View Profile" );
   m_pViewManager->saveViewProfile( config, true, true );
 
   KonqMainWindow *mainWindow = new KonqMainWindow( KUrl(), false, xmlFile());
@@ -1648,8 +1649,8 @@ void KonqMainWindow::slotViewModeToggle( bool toggle )
       if ( u.isLocalFile() )
       {
           KConfig config( u.path(), KConfig::OnlyLocal ); // if we have no write access, just drop it
-          config.setGroup( "URL properties" );
-          config.writeEntry( "ViewMode", modeName );
+          KConfigGroup urlProperties( &config, "URL properties" );
+          urlProperties.writeEntry( "ViewMode", modeName );
           config.sync();
       }
   } else
@@ -1674,8 +1675,8 @@ void KonqMainWindow::showHTML( KonqView * _view, bool b, bool _activateView )
       if ( u.isLocalFile() )
       {
           KConfig config( u.path(), KConfig::OnlyLocal ); // No checks for access
-          config.setGroup( "URL properties" );
-          config.writeEntry( "HTMLAllowed", b );
+          KConfigGroup urlProperties( &config, "URL properties" );
+          urlProperties.writeEntry( "HTMLAllowed", b );
           config.sync();
       }
   } else
@@ -2017,17 +2018,10 @@ void KonqMainWindow::slotRunFinished()
   }
 
   if ( run->hasError() ) { // we had an error
-#ifdef __GNUC__
-#warning port to DBUS signal removeFromCombo (and move to KonqCombo)
-#endif
-#if 0
-      QByteArray data;
-      QDataStream s( &data, QIODevice::WriteOnly );
-      s.setVersion(QDataStream::Qt_3_1);
-      s << run->url().prettyUrl() << kapp->dcopClient()->defaultObject();
-      kapp->dcopClient()->send( "konqueror*", "KonquerorIface",
-				"removeFromCombo(QString,QCString)", data);
-#endif
+      org::kde::Konqueror::Main dbus( "org.kde.konqueror",
+                                      KONQ_MAIN_PATH,
+                                      QDBusConnection::sessionBus() );
+      dbus.removeFromCombo( run->url().prettyUrl() );
   }
 
   KonqView *childView = run->childView();
@@ -5009,15 +5003,15 @@ void KonqMainWindow::reparseConfiguration()
       (*it)->reparseConfiguration();
 }
 
-void KonqMainWindow::saveProperties( KConfig *config )
+void KonqMainWindow::saveProperties( KConfig& config )
 {
-  m_pViewManager->saveViewProfile( *config, true /* save URLs */, false );
+  m_pViewManager->saveViewProfile( config, true /* save URLs */, false );
 }
 
-void KonqMainWindow::readProperties( KConfig *config )
+void KonqMainWindow::readProperties( KConfig& config )
 {
   kDebug(1202) << "KonqMainWindow::readProperties( KConfig *config )" << endl;
-  m_pViewManager->loadViewProfile( *config, QString() /*no profile name*/ );
+  m_pViewManager->loadViewProfile( config, QString() /*no profile name*/ );
 }
 
 void KonqMainWindow::setInitialFrameName( const QString &name )
@@ -5730,7 +5724,7 @@ void KonqMainWindow::removeChildFrame( KonqFrameBase * /*frame*/ )
   m_pActiveChild = 0;
 }
 
-void KonqMainWindow::saveConfig( KConfig* config, const QString &prefix, bool saveURLs, KonqFrameBase* docContainer, int id, int depth ) { if( m_pChildFrame ) m_pChildFrame->saveConfig( config, prefix, saveURLs, docContainer, id, depth); }
+void KonqMainWindow::saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs, KonqFrameBase* docContainer, int id, int depth ) { if( m_pChildFrame ) m_pChildFrame->saveConfig( config, prefix, saveURLs, docContainer, id, depth); }
 
 void KonqMainWindow::copyHistory( KonqFrameBase *other ) { if( m_pChildFrame ) m_pChildFrame->copyHistory( other ); }
 
@@ -6032,6 +6026,5 @@ void KonqMainWindow::restoreWindowSize()
 
 
 #include "konq_mainwindow.moc"
-#include "konq_mainwindow_p.moc"
 /* vim: et sw=4 ts=4
  */

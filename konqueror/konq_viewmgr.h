@@ -27,7 +27,8 @@
 #include <QMap>
 #include <QPointer>
 
-#include <kservice.h>
+#include <KService>
+#include <KConfig>
 
 #include <kparts/partmanager.h>
 #include "konq_openurlrequest.h"
@@ -201,7 +202,7 @@ public:
    * @param resetWindow if the profile doesn't have attributes like size or toolbar
    * settings, they will be reset to the defaults
    */
-  void loadViewProfile( KConfig &cfg, const QString & filename,
+  void loadViewProfile( KConfig& cfg, const QString & filename,
                         const KUrl & forcedURL = KUrl(),
                         const KonqOpenURLRequest &req = KonqOpenURLRequest(),
                         bool resetWindow = false, bool openUrl = true );
@@ -274,7 +275,7 @@ public:
   /**
    *   The widget is the one which you are referring to.
    */
-  static QSize readConfigSize( KConfig &cfg, QWidget *widget = NULL);
+  static QSize readConfigSize( KConfigGroup &cfg, QWidget *widget = NULL);
 
 #ifndef NDEBUG
   void printFullHierarchy( KonqFrameContainerBase * container );
@@ -309,7 +310,7 @@ protected:
    * @param openUrl whether to open urls at all (from the profile or using @p defaultURL).
    *  (this is set to false when we have a forcedURL to open)
    */
-  void loadItem( KConfig &cfg, KonqFrameContainerBase *parent,
+  void loadItem( KConfigGroup &cfg, KonqFrameContainerBase *parent,
                  const QString &name, const KUrl & defaultURL, bool openUrl, bool openAfterCurrentPage = false );
 
   // Disabled - we do it ourselves
