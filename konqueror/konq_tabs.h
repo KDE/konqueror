@@ -57,7 +57,7 @@ public:
 
   virtual void listViews( ChildViewList *viewList );
 
-  virtual void saveConfig( KConfig* config, const QString &prefix, bool saveURLs,
+  virtual void saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs,
 			   KonqFrameBase* docContainer, int id = 0, int depth = 0 );
   virtual void copyHistory( KonqFrameBase *other );
 

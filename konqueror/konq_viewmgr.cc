@@ -430,14 +430,14 @@ void KonqViewManager::duplicateTab( KonqFrameBase* tab, bool openAfterCurrentPag
   KTemporaryFile tempFile;
   tempFile.open();
   KConfig config( tempFile.fileName() );
-  config.setGroup( "View Profile" );
+  KConfigGroup profileGroup( &config, "Profile" );
 
   QString prefix = QString::fromLatin1( currentFrame->frameType() ) + QString::number(0);
-  config.writeEntry( "RootItem", prefix );
+  profileGroup.writeEntry( "RootItem", prefix );
   prefix.append( QLatin1Char( '_' ) );
-  currentFrame->saveConfig( &config, prefix, true, 0L, 0, 1);
+  currentFrame->saveConfig( profileGroup, prefix, true, 0L, 0, 1);
 
-  QString rootItem = config.readEntry( "RootItem", "empty" );
+  QString rootItem = profileGroup.readEntry( "RootItem", "empty" );
 
   if (rootItem.isNull() || rootItem == "empty") return;
 
@@ -445,7 +445,7 @@ void KonqViewManager::duplicateTab( KonqFrameBase* tab, bool openAfterCurrentPag
   // from profile loading (e.g. in switchView)
   m_bLoadingProfile = true;
 
-  loadItem( config, tabContainer, rootItem, KUrl(""), true, openAfterCurrentPage );
+  loadItem( profileGroup, tabContainer, rootItem, KUrl(""), true, openAfterCurrentPage );
 
   m_bLoadingProfile = false;
 
@@ -500,13 +500,13 @@ void KonqViewManager::breakOffTab( KonqFrameBase* tab )
   KTemporaryFile tempFile;
   tempFile.open();
   KConfig config( tempFile.fileName() );
-  config.setGroup( "View Profile" );
+  KConfigGroup profileGroup( &config, "Profile" );
 
   QString prefix = QString::fromLatin1( currentFrame->frameType() ) + QString::number(0);
-  config.writeEntry( "RootItem", prefix );
+  profileGroup.writeEntry( "RootItem", prefix );
   prefix.append( QLatin1Char( '_' ) );
-  config.writeEntry( QString::fromLatin1( "docContainer" ).prepend( prefix ), true );
-  currentFrame->saveConfig( &config, prefix, true, 0L, 0, 1);
+  profileGroup.writeEntry( QString::fromLatin1( "docContainer" ).prepend( prefix ), true );
+  currentFrame->saveConfig( profileGroup, prefix, true, 0L, 0, 1);
 
   KonqMainWindow *mainWindow = new KonqMainWindow( KUrl(), false );
   if (mainWindow == 0L) return;
@@ -1094,20 +1094,21 @@ void KonqViewManager::saveViewProfile( const QString & fileName, const QString &
 void KonqViewManager::saveViewProfile( KConfig & cfg, bool saveURLs, bool saveWindowSize )
 {
   //kDebug(1202) << "KonqViewManager::saveViewProfile" << endl;
+  KConfigGroup profileGroup(&cfg, "Profile");
   if( m_pMainWindow->childFrame() != 0L ) {
     QString prefix = QString::fromLatin1( m_pMainWindow->childFrame()->frameType() )
                      + QString::number(0);
-    cfg.writeEntry( "RootItem", prefix );
+    profileGroup.writeEntry( "RootItem", prefix );
     prefix.append( QLatin1Char( '_' ) );
-    m_pMainWindow->saveConfig( &cfg, prefix, saveURLs, m_pDocContainer, 0, 1);
+    m_pMainWindow->saveConfig( profileGroup, prefix, saveURLs, m_pDocContainer, 0, 1);
   }
 
-  cfg.writeEntry( "FullScreen", m_pMainWindow->fullScreenMode());
-  cfg.writeEntry("XMLUIFile", m_pMainWindow->xmlFile());
+  profileGroup.writeEntry( "FullScreen", m_pMainWindow->fullScreenMode());
+  profileGroup.writeEntry("XMLUIFile", m_pMainWindow->xmlFile());
   if ( saveWindowSize )
   {
-    cfg.writeEntry( "Width", m_pMainWindow->width() );
-    cfg.writeEntry( "Height", m_pMainWindow->height() );
+    profileGroup.writeEntry( "Width", m_pMainWindow->width() );
+    profileGroup.writeEntry( "Height", m_pMainWindow->height() );
   }
 
   // Save menu/toolbar settings in profile. Relys on konq_mainwindow calling
@@ -1125,8 +1126,6 @@ void KonqViewManager::loadViewProfile( const QString & path, const QString & fil
                                        bool resetWindow, bool openUrl )
 {
   KConfig cfg( path );
-  cfg.setDollarExpansion( true );
-  cfg.setGroup( "Profile" );
   loadViewProfile( cfg, filename, forcedURL, req, resetWindow, openUrl );
 }
 
@@ -1134,6 +1133,9 @@ void KonqViewManager::loadViewProfile( KConfig &cfg, const QString & filename,
                                        const KUrl & forcedURL, const KonqOpenURLRequest &req,
                                        bool resetWindow, bool openUrl )
 {
+  cfg.setDollarExpansion( true );
+  KConfigGroup profileGroup( &cfg, "Profile" );
+
   if ( docContainer() && docContainer()->frameType()=="Tabs" )
   {
       KonqFrameTabs* tabContainer = static_cast<KonqFrameTabs*>(docContainer());
@@ -1185,8 +1187,8 @@ void KonqViewManager::loadViewProfile( KConfig &cfg, const QString & filename,
   bool alwaysTabbedMode = KonqSettings::alwaysTabbedMode();
 
   m_currentProfile = filename;
-  m_currentProfileText = cfg.readPathEntry("Name",filename);
-  m_profileHomeURL = cfg.readEntry("HomeURL", QString());
+  m_currentProfileText = profileGroup.readPathEntry("Name",filename);
+  m_profileHomeURL = profileGroup.readEntry("HomeURL", QString());
 
   m_pMainWindow->currentProfileChanged();
   KUrl defaultURL;
@@ -1195,7 +1197,7 @@ void KonqViewManager::loadViewProfile( KConfig &cfg, const QString & filename,
 
   clear();
 
-  QString rootItem = cfg.readEntry( "RootItem", "empty" );
+  QString rootItem = profileGroup.readEntry( "RootItem", "empty" );
 
   //kDebug(1202) << "KonqViewManager::loadViewProfile : loading RootItem " << rootItem <<
   //" forcedURL " << forcedURL.url() << endl;
@@ -1206,7 +1208,7 @@ void KonqViewManager::loadViewProfile( KConfig &cfg, const QString & filename,
     // from profile loading (e.g. in switchView)
     m_bLoadingProfile = true;
 
-    loadItem( cfg, m_pMainWindow, rootItem, defaultURL, openUrl && forcedURL.isEmpty() );
+    loadItem( profileGroup, m_pMainWindow, rootItem, defaultURL, openUrl && forcedURL.isEmpty() );
 
     m_bLoadingProfile = false;
 
@@ -1274,7 +1276,7 @@ void KonqViewManager::loadViewProfile( KConfig &cfg, const QString & filename,
   // Window size
   if ( !m_pMainWindow->initialGeometrySet() )
   {
-     if (cfg.readEntry( "FullScreen",false ))
+     if (profileGroup.readEntry( "FullScreen",false ))
      {
          // Full screen on
          m_pMainWindow->showFullScreen();
@@ -1285,7 +1287,7 @@ void KonqViewManager::loadViewProfile( KConfig &cfg, const QString & filename,
          if( m_pMainWindow->isFullScreen())
              m_pMainWindow->showNormal();
 
-         QSize size = readConfigSize( cfg, m_pMainWindow );
+         QSize size = readConfigSize( profileGroup, m_pMainWindow );
          if ( size.isValid() )
              m_pMainWindow->resize( size );
          else  // no size in the profile; use last known size
@@ -1395,7 +1397,7 @@ void KonqViewManager::emitActivePartChanged()
 }
 
 
-QSize KonqViewManager::readConfigSize( KConfig &cfg, QWidget *widget )
+QSize KonqViewManager::readConfigSize( KConfigGroup &cfg, QWidget *widget )
 {
     bool ok;
 
@@ -1440,7 +1442,7 @@ QSize KonqViewManager::readConfigSize( KConfig &cfg, QWidget *widget )
     return QSize( width, height );
 }
 
-void KonqViewManager::loadItem( KConfig &cfg, KonqFrameContainerBase *parent,
+void KonqViewManager::loadItem( KConfigGroup &cfg, KonqFrameContainerBase *parent,
                                 const QString &name, const KUrl & defaultURL, bool openUrl, bool openAfterCurrentPage )
 {
   QString prefix;
@@ -1525,7 +1527,7 @@ void KonqViewManager::loadItem( KConfig &cfg, KonqFrameContainerBase *parent,
         }
       }
     }
-    KonqConfigEvent ev( &cfg, prefix+"_", false/*load*/);
+    KonqConfigEvent ev( cfg.config(), prefix+"_", false/*load*/);
     QApplication::sendEvent( childView->part(), &ev );
 
     childView->frame()->show();

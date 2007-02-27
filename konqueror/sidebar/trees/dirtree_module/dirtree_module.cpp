@@ -42,10 +42,9 @@ KonqSidebarDirTreeModule::KonqSidebarDirTreeModule( KonqSidebarTree * parentTree
         universalMode = ksi ? ksi->universalMode() : false;
     } */
 
-    KConfig * config = new KConfig( universalMode ? "konqsidebartng_kicker.rc" : "konqsidebartng.rc" );
-    config->setGroup("");
-    m_showArchivesAsFolders = config->readEntry("ShowArchivesAsFolders", true);
-    delete config;
+    KConfig config( universalMode ? "konqsidebartng_kicker.rc" : "konqsidebartng.rc" );
+    KConfigGroup generalGroup( &config, "General" );
+    m_showArchivesAsFolders = generalGroup.readEntry( "ShowArchivesAsFolders", true );
 }
 
 KonqSidebarDirTreeModule::~KonqSidebarDirTreeModule()
@@ -78,6 +77,7 @@ void KonqSidebarDirTreeModule::addTopLevelItem( KonqSidebarTreeTopLevelItem * it
         kError() << "KonqSidebarDirTreeModule::addTopLevelItem: Impossible, we can have only one toplevel item !" << endl;
 
     KDesktopFile cfg( item->path() );
+    KConfigGroup desktopGroup = cfg.desktopGroup();
     cfg.setDollarExpansion(true);
 
     KUrl targetURL;
@@ -86,22 +86,22 @@ void KonqSidebarDirTreeModule::addTopLevelItem( KonqSidebarTreeTopLevelItem * it
     if ( cfg.hasLinkType() )
     {
         targetURL = cfg.readUrl();
-		// some services might want to make their URL configurable in kcontrol
-		QString configured = cfg.readEntry("X-KDE-ConfiguredURL");
-		if (!configured.isEmpty()) {
-			QStringList list = configured.split( ':');
-			KConfig config(list[0]);
-			if (list[1] != "noGroup") config.setGroup(list[1]);
-			QString conf_url = config.readEntry(list[2], QString());
-			if (!conf_url.isEmpty()) {
-				targetURL = conf_url;
-			}
-		}
+        // some services might want to make their URL configurable in kcontrol
+        QString configured = desktopGroup.readEntry("X-KDE-ConfiguredURL");
+        if (!configured.isEmpty()) {
+            QStringList list = configured.split( ':');
+            KConfig config(list[0]);
+            KConfigGroup urlGroup(&config, list[1] != "noGroup" ? list[1] : "General") ;
+            QString conf_url = urlGroup.readEntry(list[2], QString());
+            if (!conf_url.isEmpty()) {
+                targetURL = conf_url;
+            }
+        }
     }
     else if ( cfg.hasDeviceType() )
     {
         // Determine the mountpoint
-        QString mp = cfg.readEntry("MountPoint");
+        QString mp = desktopGroup.readEntry("MountPoint");
         if ( mp.isEmpty() )
             return;
 
@@ -139,35 +139,35 @@ void KonqSidebarDirTreeModule::addSubDir( KonqSidebarTreeItem *item )
 
     KonqSidebarDirTreeItem *ditem = dynamic_cast<KonqSidebarDirTreeItem*>(item);
     if (ditem)
-       m_ptrdictSubDirs.insert(ditem->fileItem(), item);
+        m_ptrdictSubDirs.insert(ditem->fileItem(), item);
 }
 
 // Remove <key, item> from dict, taking into account that there maybe
 // other items with the same key.
 static void remove(Q3Dict<KonqSidebarTreeItem> &dict, const QString &key, KonqSidebarTreeItem *item)
 {
-   Q3PtrList<KonqSidebarTreeItem> *otherItems = 0;
-   while(true) {
-      KonqSidebarTreeItem *takeItem = dict.take(key);
-      if (!takeItem || (takeItem == item))
-      {
-         if (!otherItems)
+    Q3PtrList<KonqSidebarTreeItem> *otherItems = 0;
+    while(true) {
+        KonqSidebarTreeItem *takeItem = dict.take(key);
+        if (!takeItem || (takeItem == item))
+        {
+            if (!otherItems)
+                return;
+
+            // Insert the otherItems back in
+            for(KonqSidebarTreeItem *otherItem; (otherItem = otherItems->take(0));)
+            {
+                dict.insert(key, otherItem);
+            }
+            delete otherItems;
             return;
+        }
+        // Not the item we are looking for
+        if (!otherItems)
+            otherItems = new Q3PtrList<KonqSidebarTreeItem>();
 
-         // Insert the otherItems back in
-         for(KonqSidebarTreeItem *otherItem; (otherItem = otherItems->take(0));)
-         {
-            dict.insert(key, otherItem);
-         }
-         delete otherItems;
-         return;
-      }
-      // Not the item we are looking for
-      if (!otherItems)
-         otherItems = new Q3PtrList<KonqSidebarTreeItem>();
-
-      otherItems->prepend(takeItem);
-   }
+        otherItems->prepend(takeItem);
+    }
 }
 
 // Looks up key in dict and returns it in item, if there are multiple items
@@ -175,59 +175,59 @@ static void remove(Q3Dict<KonqSidebarTreeItem> &dict, const QString &key, KonqSi
 // be deleted by the caller.
 static void lookupItems(Q3Dict<KonqSidebarTreeItem> &dict, const QString &key, KonqSidebarTreeItem *&item, Q3PtrList<KonqSidebarTreeItem> *&itemList)
 {
-   itemList = 0;
-   item = dict.take(key);
-   if (!item)
-       return;
+    itemList = 0;
+    item = dict.take(key);
+    if (!item)
+        return;
 
-   while(true)
-   {
-       KonqSidebarTreeItem *takeItem = dict.take(key);
-       if (!takeItem)
-       {
-           //
-           // Insert itemList back in
-           if (itemList)
-           {
-               for(KonqSidebarTreeItem *otherItem = itemList->first(); otherItem; otherItem = itemList->next())
-                   dict.insert(key, otherItem);
-           }
-           dict.insert(key, item);
-           return;
-       }
-       if (!itemList)
-          itemList = new Q3PtrList<KonqSidebarTreeItem>();
+    while(true)
+    {
+        KonqSidebarTreeItem *takeItem = dict.take(key);
+        if (!takeItem)
+        {
+            //
+            // Insert itemList back in
+            if (itemList)
+            {
+                for(KonqSidebarTreeItem *otherItem = itemList->first(); otherItem; otherItem = itemList->next())
+                    dict.insert(key, otherItem);
+            }
+            dict.insert(key, item);
+            return;
+        }
+        if (!itemList)
+            itemList = new Q3PtrList<KonqSidebarTreeItem>();
 
-       itemList->prepend(takeItem);
-   }
+        itemList->prepend(takeItem);
+    }
 }
 
 // Remove <key, item> from dict, taking into account that there maybe
 // other items with the same key.
 static void remove(Q3PtrDict<KonqSidebarTreeItem> &dict, void *key, KonqSidebarTreeItem *item)
 {
-   Q3PtrList<KonqSidebarTreeItem> *otherItems = 0;
-   while(true) {
-      KonqSidebarTreeItem *takeItem = dict.take(key);
-      if (!takeItem || (takeItem == item))
-      {
-         if (!otherItems)
+    Q3PtrList<KonqSidebarTreeItem> *otherItems = 0;
+    while(true) {
+        KonqSidebarTreeItem *takeItem = dict.take(key);
+        if (!takeItem || (takeItem == item))
+        {
+            if (!otherItems)
+                return;
+
+            // Insert the otherItems back in
+            for(KonqSidebarTreeItem *otherItem; (otherItem = otherItems->take(0));)
+            {
+                dict.insert(key, otherItem);
+            }
+            delete otherItems;
             return;
+        }
+        // Not the item we are looking for
+        if (!otherItems)
+            otherItems = new Q3PtrList<KonqSidebarTreeItem>();
 
-         // Insert the otherItems back in
-         for(KonqSidebarTreeItem *otherItem; (otherItem = otherItems->take(0));)
-         {
-            dict.insert(key, otherItem);
-         }
-	 delete otherItems;
-         return;
-      }
-      // Not the item we are looking for
-      if (!otherItems)
-         otherItems = new Q3PtrList<KonqSidebarTreeItem>();
-
-      otherItems->prepend(takeItem);
-   }
+        otherItems->prepend(takeItem);
+    }
 }
 
 // Looks up key in dict and returns it in item, if there are multiple items
@@ -235,31 +235,31 @@ static void remove(Q3PtrDict<KonqSidebarTreeItem> &dict, void *key, KonqSidebarT
 // be deleted by the caller.
 static void lookupItems(Q3PtrDict<KonqSidebarTreeItem> &dict, void *key, KonqSidebarTreeItem *&item, Q3PtrList<KonqSidebarTreeItem> *&itemList)
 {
-   itemList = 0;
-   item = dict.take(key);
-   if (!item)
-       return;
+    itemList = 0;
+    item = dict.take(key);
+    if (!item)
+        return;
 
-   while(true)
-   {
-       KonqSidebarTreeItem *takeItem = dict.take(key);
-       if (!takeItem)
-       {
-           //
-           // Insert itemList back in
-           if (itemList)
-           {
-               for(KonqSidebarTreeItem *otherItem = itemList->first(); otherItem; otherItem = itemList->next())
-                   dict.insert(key, otherItem);
-           }
-           dict.insert(key, item);
-           return;
-       }
-       if (!itemList)
-          itemList = new Q3PtrList<KonqSidebarTreeItem>();
+    while(true)
+    {
+        KonqSidebarTreeItem *takeItem = dict.take(key);
+        if (!takeItem)
+        {
+            //
+            // Insert itemList back in
+            if (itemList)
+            {
+                for(KonqSidebarTreeItem *otherItem = itemList->first(); otherItem; otherItem = itemList->next())
+                    dict.insert(key, otherItem);
+            }
+            dict.insert(key, item);
+            return;
+        }
+        if (!itemList)
+            itemList = new Q3PtrList<KonqSidebarTreeItem>();
 
-       itemList->prepend(takeItem);
-   }
+        itemList->prepend(takeItem);
+    }
 }
 
 
@@ -282,8 +282,8 @@ void KonqSidebarDirTreeModule::removeSubDir( KonqSidebarTreeItem *item, bool chi
     {
         QString id = item->externalURL().url( KUrl::RemoveTrailingSlash );
         remove(m_dictSubDirs, id, item);
-	while (!(item->alias.isEmpty()))
-	{
+        while (!(item->alias.isEmpty()))
+        {
 	        remove(m_dictSubDirs, item->alias.front(), item);
 		item->alias.pop_front();
 	}

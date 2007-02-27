@@ -34,8 +34,9 @@
 #include <QResizeEvent>
 #include <QMouseEvent>
 
-#include <kpixmapeffect.h>
-#include <kstatusbar.h>
+#include <KConfig>
+#include <KPixmapEffect>
+#include <KStatusBar>
 
 class QPixmap;
 class QVBoxLayout;
@@ -159,7 +160,7 @@ class KonqFrameBase
  public:
   virtual ~KonqFrameBase() {}
 
-  virtual void saveConfig( KConfig* config, const QString &prefix, bool saveURLs, KonqFrameBase* docContainer, int id = 0, int depth = 0) = 0;
+  virtual void saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs, KonqFrameBase* docContainer, int id = 0, int depth = 0) = 0;
 
   virtual void copyHistory( KonqFrameBase *other ) = 0;
 
@@ -246,7 +247,7 @@ public:
   void setView( KonqView* child );
   virtual void listViews( ChildViewList *viewList );
 
-  virtual void saveConfig( KConfig* config, const QString &prefix, bool saveURLs, KonqFrameBase* docContainer, int id = 0, int depth = 0 );
+  virtual void saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs, KonqFrameBase* docContainer, int id = 0, int depth = 0 );
   virtual void copyHistory( KonqFrameBase *other );
 
   virtual void printFrameInfo( const QString& spaces );

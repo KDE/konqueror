@@ -190,7 +190,7 @@ void KonqFrameTabs::listViews( ChildViewList *viewList ) {
     frame->listViews(viewList);
 }
 
-void KonqFrameTabs::saveConfig( KConfig* config, const QString &prefix, bool saveURLs,
+void KonqFrameTabs::saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs,
                                 KonqFrameBase* docContainer, int id, int depth )
 {
   //write children
@@ -206,9 +206,9 @@ void KonqFrameTabs::saveConfig( KConfig* config, const QString &prefix, bool sav
       i++;
     }
 
-  config->writeEntry( QString::fromLatin1( "Children" ).prepend( prefix ), strlst );
+  config.writeEntry( QString::fromLatin1( "Children" ).prepend( prefix ), strlst );
 
-  config->writeEntry( QString::fromLatin1( "activeChildIndex" ).prepend( prefix ),
+  config.writeEntry( QString::fromLatin1( "activeChildIndex" ).prepend( prefix ),
                       currentIndex() );
 }
 

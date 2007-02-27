@@ -26,6 +26,7 @@
 #include <QMouseEvent>
 #include <kapplication.h>
 #include <kconfig.h>
+#include <kconfiggroup.h>
 #include <kcompletionbox.h>
 #include <kdebug.h>
 #include <kiconloader.h>
@@ -38,7 +39,8 @@
 
 #include "konq_view.h"
 #include "konq_combo.h"
-#include <kconfiggroup.h>
+#include "KonquerorAdaptor.h"
+#include "konqueror_interface.h"
 
 KConfig * KonqCombo::s_config = 0L;
 const int KonqCombo::temporary = 0;
@@ -153,17 +155,10 @@ void KonqCombo::setURL( const QString& url )
 
     if ( m_returnPressed ) { // Really insert...
         m_returnPressed = false;
-#ifdef __GNUC__
-#warning port to DBUS signal addToCombo
-#endif
-#if 0
-        QByteArray data;
-        QDataStream s( &data, QIODevice::WriteOnly );
-        s.setVersion(QDataStream::Qt_3_1);
-        s << url << kapp->dcopClient()->defaultObject();
-        kapp->dcopClient()->send( "konqueror*", "KonquerorIface",
-                                  "addToCombo(QString,QCString)", data);
-#endif
+        org::kde::Konqueror::Main dbus( "org.kde.konqueror",
+                                        KONQ_MAIN_PATH,
+                                        QDBusConnection::sessionBus() );
+        dbus.addToCombo( url );
     }
 }
 
@@ -255,6 +250,8 @@ void KonqCombo::insertItem( const QPixmap &pixmap, const QString& text, int inde
 
 void KonqCombo::updateItem( const QPixmap& pix, const QString& t, int index, const QString& title )
 {
+    Q_UNUSED( title )
+
     // No need to flicker
     if (itemText( index ) == t &&
         (!pixmap(index).isNull() && pixmap(index).serialNumber() == pix.serialNumber()))
@@ -517,16 +514,10 @@ void KonqCombo::selectWord(QKeyEvent *e)
 
 void KonqCombo::slotCleared()
 {
-#ifdef __GNUC__
-#warning port to DBUS signal comboCleared
-#endif
-#if 0
-    QByteArray data;
-    QDataStream s( &data, QIODevice::WriteOnly );
-    s.setVersion(QDataStream::Qt_3_1);
-    s << kapp->dcopClient()->defaultObject();
-    kapp->dcopClient()->send( "konqueror*", "KonquerorIface", "comboCleared(QCString)", data);
-#endif
+    org::kde::Konqueror::Main dbus( "org.kde.konqueror",
+                                    KONQ_MAIN_PATH,
+                                    QDBusConnection::sessionBus() );
+    dbus.comboCleared( );
 }
 
 void KonqCombo::removeURL( const QString& url )
