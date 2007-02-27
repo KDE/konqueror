@@ -34,6 +34,8 @@ KonqListView::KonqListView( QWidget* parent ) : QTreeView( parent )
     setEditTriggers( QAbstractItemView::EditKeyPressed );
     setItemDelegate( new KonqItemDelegate( this ) );
     setUniformRowHeights( true ); // makes visualRect() much faster
+    setFrameStyle( QFrame::NoFrame );
+
     header()->setClickable( true );
     header()->setSortIndicatorShown( true );
 }
