@@ -221,8 +221,7 @@ void DomainListView::save(const QString &group, const QString &domainListKey) {
 	pol->save();
 	domainList.append(current->text(0));
     }
-    config->setGroup(group);
-    config->writeEntry(domainListKey, domainList);
+    config->group(group).writeEntry(domainListKey, domainList);
 }
 
 void DomainListView::setupPolicyDlg(PushButton /*trigger*/,
