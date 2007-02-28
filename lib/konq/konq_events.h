@@ -51,9 +51,9 @@ private:
 class LIBKONQ_EXPORT KonqConfigEvent : public KParts::Event
 {
 public:
-  KonqConfigEvent( KConfig *config, const QString &prefix, bool save ) : KParts::Event( s_configEventName ), m_config( config ), m_prefix( prefix ), m_save( save ) {}
+  KonqConfigEvent( KConfigBase *config, const QString &prefix, bool save ) : KParts::Event( s_configEventName ), m_config( config ), m_prefix( prefix ), m_save( save ) {}
 
-  KConfig * config() const { return m_config; }
+  KConfigBase * config() const { return m_config; }
   QString prefix() const { return m_prefix; }
   bool save() const { return m_save; }
 
@@ -62,7 +62,7 @@ public:
 private:
   static const char *s_configEventName;
 
-  KConfig *m_config;
+  KConfigBase *m_config;
   QString m_prefix;
   bool m_save;
 };
