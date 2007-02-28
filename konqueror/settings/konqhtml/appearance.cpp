@@ -286,11 +286,13 @@ void KAppearanceOptions::slotEncoding(const QString& n)
 
 void KAppearanceOptions::load()
 {
-    KSharedConfig::Ptr khtmlrc = KSharedConfig::openConfig("khtmlrc", KConfig::NoGlobals);
-#define SET_GROUP(x) m_pConfig->setGroup(x); khtmlrc->setGroup(x)
-#define READ_NUM(x,y) m_pConfig->readEntry(x, khtmlrc->readEntry(x, y))
-#define READ_ENTRY(x,y) m_pConfig->readEntry(x, khtmlrc->readEntry(x, y))
-#define READ_LIST(x) m_pConfig->readEntry(x, khtmlrc->readEntry(x, QStringList() ))
+    KConfigGroup khtmlrc(KSharedConfig::openConfig("khtmlrc", KConfig::NoGlobals),
+			 QByteArray(""));
+    KConfigGroup cg(m_pConfig, QByteArray(""));
+#define SET_GROUP(x) cg.changeGroup(x); khtmlrc.changeGroup(x)
+#define READ_NUM(x,y) cg.readEntry(x, khtmlrc.readEntry(x, y))
+#define READ_ENTRY(x,y) cg.readEntry(x, khtmlrc.readEntry(x, y))
+#define READ_LIST(x) cg.readEntry(x, khtmlrc.readEntry(x, QStringList() ))
 
     SET_GROUP(m_groupname);
     fSize = READ_NUM( "MediumFontSize", 12 );
@@ -307,10 +309,10 @@ void KAppearanceOptions::load()
     defaultFonts.append( READ_ENTRY( "FantasyFont", HTML_DEFAULT_VIEW_FANTASY_FONT ) );
     defaultFonts.append( QString("0") ); // default font size adjustment
 
-    if (m_pConfig->hasKey("Fonts"))
-       fonts = m_pConfig->readEntry( "Fonts" , QStringList() );
+    if (cg.hasKey("Fonts"))
+       fonts = cg.readEntry( "Fonts" , QStringList() );
     else
-       fonts = khtmlrc->readEntry( "Fonts" , QStringList() );
+       fonts = khtmlrc.readEntry( "Fonts" , QStringList() );
     while (fonts.count() < 7)
        fonts.append(QString());
 
@@ -356,16 +358,16 @@ void KAppearanceOptions::updateGUI()
 
 void KAppearanceOptions::save()
 {
-    m_pConfig->setGroup(m_groupname);
-    m_pConfig->writeEntry( "MediumFontSize", fSize );
-    m_pConfig->writeEntry( "MinimumFontSize", fMinSize );
-    m_pConfig->writeEntry( "Fonts", fonts );
+    KConfigGroup cg(m_pConfig, m_groupname);
+    cg.writeEntry( "MediumFontSize", fSize );
+    cg.writeEntry( "MinimumFontSize", fMinSize );
+    cg.writeEntry( "Fonts", fonts );
 
     // If the user chose "Use language encoding", write an empty string
     if (encodingName == i18n("Use Language Encoding"))
         encodingName = "";
-    m_pConfig->writeEntry( "DefaultEncoding", encodingName );
-    m_pConfig->sync();
+    cg.writeEntry( "DefaultEncoding", encodingName );
+    cg.sync();
     // Send signal to all konqueror instances
     QDBusMessage message =
         QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "reparseConfiguration");

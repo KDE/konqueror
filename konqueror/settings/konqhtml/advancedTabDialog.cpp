@@ -73,35 +73,35 @@ advancedTabDialog::~advancedTabDialog()
 
 void advancedTabDialog::load()
 {
-    m_pConfig->setGroup("FMSettings");
-    m_advancedWidget->m_pNewTabsInBackground->setChecked( ! (m_pConfig->readEntry( "NewTabsInFront", false)) );
-    m_advancedWidget->m_pOpenAfterCurrentPage->setChecked( m_pConfig->readEntry( "OpenAfterCurrentPage", false) );
-    m_advancedWidget->m_pPermanentCloseButton->setChecked( m_pConfig->readEntry( "PermanentCloseButton", false) );
-    m_advancedWidget->m_pKonquerorTabforExternalURL->setChecked( m_pConfig->readEntry( "KonquerorTabforExternalURL", false) );
-    m_advancedWidget->m_pPopupsWithinTabs->setChecked( m_pConfig->readEntry( "PopupsWithinTabs", false) );
-    m_advancedWidget->m_pTabCloseActivatePrevious->setChecked( m_pConfig->readEntry( "TabCloseActivatePrevious", false) );
+    KConfigGroup cg(m_pConfig, "FMSettings");
+    m_advancedWidget->m_pNewTabsInBackground->setChecked( ! (cg.readEntry( "NewTabsInFront", false)) );
+    m_advancedWidget->m_pOpenAfterCurrentPage->setChecked( cg.readEntry( "OpenAfterCurrentPage", false) );
+    m_advancedWidget->m_pPermanentCloseButton->setChecked( cg.readEntry( "PermanentCloseButton", false) );
+    m_advancedWidget->m_pKonquerorTabforExternalURL->setChecked( cg.readEntry( "KonquerorTabforExternalURL", false) );
+    m_advancedWidget->m_pPopupsWithinTabs->setChecked( cg.readEntry( "PopupsWithinTabs", false) );
+    m_advancedWidget->m_pTabCloseActivatePrevious->setChecked( cg.readEntry( "TabCloseActivatePrevious", false) );
 
-    m_pConfig->setGroup("Notification Messages");
-    m_advancedWidget->m_pTabConfirm->setChecked( !m_pConfig->hasKey("MultipleTabConfirm") );
+    cg.changeGroup("Notification Messages");
+    m_advancedWidget->m_pTabConfirm->setChecked( !cg.hasKey("MultipleTabConfirm") );
 
     enableButton(Apply, false);
 }
 
 void advancedTabDialog::save()
 {
-    m_pConfig->setGroup("FMSettings");
-    m_pConfig->writeEntry( "NewTabsInFront", !(m_advancedWidget->m_pNewTabsInBackground->isChecked()) );
-    m_pConfig->writeEntry( "OpenAfterCurrentPage", m_advancedWidget->m_pOpenAfterCurrentPage->isChecked() );
-    m_pConfig->writeEntry( "PermanentCloseButton", m_advancedWidget->m_pPermanentCloseButton->isChecked() );
-    m_pConfig->writeEntry( "KonquerorTabforExternalURL", m_advancedWidget->m_pKonquerorTabforExternalURL->isChecked() );
-    m_pConfig->writeEntry( "PopupsWithinTabs", m_advancedWidget->m_pPopupsWithinTabs->isChecked() );
-    m_pConfig->writeEntry( "TabCloseActivatePrevious", m_advancedWidget->m_pTabCloseActivatePrevious->isChecked() );
-    m_pConfig->sync();
+    KConfigGroup cg(m_pConfig, "FMSettings");
+    cg.writeEntry( "NewTabsInFront", !(m_advancedWidget->m_pNewTabsInBackground->isChecked()) );
+    cg.writeEntry( "OpenAfterCurrentPage", m_advancedWidget->m_pOpenAfterCurrentPage->isChecked() );
+    cg.writeEntry( "PermanentCloseButton", m_advancedWidget->m_pPermanentCloseButton->isChecked() );
+    cg.writeEntry( "KonquerorTabforExternalURL", m_advancedWidget->m_pKonquerorTabforExternalURL->isChecked() );
+    cg.writeEntry( "PopupsWithinTabs", m_advancedWidget->m_pPopupsWithinTabs->isChecked() );
+    cg.writeEntry( "TabCloseActivatePrevious", m_advancedWidget->m_pTabCloseActivatePrevious->isChecked() );
+    cg.sync();
 
     // It only matters wether the key is present, its value has no meaning
-    m_pConfig->setGroup("Notification Messages");
-    if ( m_advancedWidget->m_pTabConfirm->isChecked() ) m_pConfig->deleteEntry( "MultipleTabConfirm" );
-    else m_pConfig->writeEntry( "MultipleTabConfirm", true );
+    cg.changeGroup("Notification Messages");
+    if ( m_advancedWidget->m_pTabConfirm->isChecked() ) cg.deleteEntry( "MultipleTabConfirm" );
+    else cg.writeEntry( "MultipleTabConfirm", true );
     // Send signal to all konqueror instances
     QDBusMessage message =
         QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "reparseConfiguration");

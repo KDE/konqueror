@@ -112,15 +112,15 @@ KJavaScriptOptions::KJavaScriptOptions( KSharedConfig::Ptr config, QString group
 void KJavaScriptOptions::load()
 {
     // *** load ***
-    m_pConfig->setGroup(m_groupname);
+    KConfigGroup cg(m_pConfig, m_groupname);
 
-    if( m_pConfig->hasKey( "ECMADomains" ) )
-	domainSpecific->initialize(m_pConfig->readEntry("ECMADomains", QStringList() ));
-    else if( m_pConfig->hasKey( "ECMADomainSettings" ) ) {
-        domainSpecific->updateDomainListLegacy( m_pConfig->readEntry( "ECMADomainSettings" , QStringList() ) );
+    if( cg.hasKey( "ECMADomains" ) )
+	domainSpecific->initialize(cg.readEntry("ECMADomains", QStringList() ));
+    else if( cg.hasKey( "ECMADomainSettings" ) ) {
+        domainSpecific->updateDomainListLegacy( cg.readEntry( "ECMADomainSettings" , QStringList() ) );
 	_removeECMADomainSettings = true;
     } else {
-        domainSpecific->updateDomainListLegacy(m_pConfig->readEntry("JavaScriptDomainAdvice", QStringList() ) );
+        domainSpecific->updateDomainListLegacy(cg.readEntry("JavaScriptDomainAdvice", QStringList() ) );
 	_removeJavaScriptDomainAdvice = true;
     }
 
@@ -128,8 +128,8 @@ void KJavaScriptOptions::load()
     js_policies_frame->load();
     enableJavaScriptGloballyCB->setChecked(
     		js_global_policies.isFeatureEnabled());
-    reportErrorsCB->setChecked( m_pConfig->readEntry("ReportJavaScriptErrors", false));
-    jsDebugWindow->setChecked( m_pConfig->readEntry( "EnableJavaScriptDebug", false) );
+    reportErrorsCB->setChecked( cg.readEntry("ReportJavaScriptErrors", false));
+    jsDebugWindow->setChecked( cg.readEntry( "EnableJavaScriptDebug", false) );
 //    js_popup->setButton( m_pConfig->readUnsignedNumEntry("WindowOpenPolicy", 0) );
     emit changed(false);
 }
@@ -146,20 +146,20 @@ void KJavaScriptOptions::defaults()
 
 void KJavaScriptOptions::save()
 {
-    m_pConfig->setGroup(m_groupname);
-    m_pConfig->writeEntry( "ReportJavaScriptErrors", reportErrorsCB->isChecked() );
-    m_pConfig->writeEntry( "EnableJavaScriptDebug", jsDebugWindow->isChecked() );
+    KConfigGroup cg(m_pConfig, m_groupname);
+    cg.writeEntry( "ReportJavaScriptErrors", reportErrorsCB->isChecked() );
+    cg.writeEntry( "EnableJavaScriptDebug", jsDebugWindow->isChecked() );
 
     domainSpecific->save(m_groupname,"ECMADomains");
     js_policies_frame->save();
 
     if (_removeECMADomainSettings) {
-      m_pConfig->deleteEntry("ECMADomainSettings");
+      cg.deleteEntry("ECMADomainSettings");
       _removeECMADomainSettings = false;
     }
 
     // sync moved to KJSParts::save
-//    m_pConfig->sync();
+//    cg.sync();
     emit changed(false);
 }
 

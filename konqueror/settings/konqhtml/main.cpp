@@ -97,8 +97,7 @@ void KJSParts::save()
   // delete old keys after they have been migrated
   if (javascript->_removeJavaScriptDomainAdvice
       || java->_removeJavaScriptDomainAdvice) {
-    mConfig->setGroup("Java/JavaScript Settings");
-    mConfig->deleteEntry("JavaScriptDomainAdvice");
+    mConfig->group("Java/JavaScript Settings").deleteEntry("JavaScriptDomainAdvice");
     javascript->_removeJavaScriptDomainAdvice = false;
     java->_removeJavaScriptDomainAdvice = false;
   }

@@ -212,18 +212,18 @@ void KPluginOptions::load()
 /****************************************************************************/
 
   KSharedConfig::Ptr config = KSharedConfig::openConfig("kcmnspluginrc");
+  KConfigGroup cg(config, "Misc");
 
-  config->setGroup("Misc");
-  m_widget->scanAtStartup->setChecked( config->readEntry( "startkdeScan", false) );
+  m_widget->scanAtStartup->setChecked( cg.readEntry( "startkdeScan", false) );
 
   m_widget->dirEdit->setUrl(KUrl());
   m_widget->dirEdit->setEnabled( false );
   m_widget->dirRemove->setEnabled( false );
   m_widget->dirUp->setEnabled( false );
   m_widget->dirDown->setEnabled( false );
-  enableHTTPOnly->setChecked( config->readEntry("HTTP URLs Only", false) );
-  enableUserDemand->setChecked( config->readEntry("demandLoad", false) );
-  priority->setValue(100 - qBound(0, config->readEntry("Nice Level", 0), 19) * 5);
+  enableHTTPOnly->setChecked( cg.readEntry("HTTP URLs Only", false) );
+  enableUserDemand->setChecked( cg.readEntry("demandLoad", false) );
+  priority->setValue(100 - qBound(0, cg.readEntry("Nice Level", 0), 19) * 5);
   updatePLabel(priority->value());
 
   dirLoad( config );
@@ -276,12 +276,12 @@ void KPluginOptions::save()
     dirSave( config );
     pluginSave( config );
 
-    config->setGroup("Misc");
-    config->writeEntry( "startkdeScan", m_widget->scanAtStartup->isChecked() );
-    config->writeEntry( "HTTP URLs Only", enableHTTPOnly->isChecked() );
-    config->writeEntry( "demandLoad", enableUserDemand->isChecked() );
-    config->writeEntry("Nice Level", (int)(100 - priority->value()) / 5);
-    config->sync();
+    KConfigGroup cg(config, "Misc");
+    cg.writeEntry( "startkdeScan", m_widget->scanAtStartup->isChecked() );
+    cg.writeEntry( "HTTP URLs Only", enableHTTPOnly->isChecked() );
+    cg.writeEntry( "demandLoad", enableUserDemand->isChecked() );
+    cg.writeEntry("Nice Level", (int)(100 - priority->value()) / 5);
+    cg.sync();
 
     change( false );
 }
@@ -410,9 +410,9 @@ void KPluginOptions::dirLoad( KSharedConfig::Ptr config, bool useDefault )
 
     // read search paths
 
-    config->setGroup("Misc");
-    if ( config->hasKey( "scanPaths" ) && !useDefault )
-        paths = config->readEntry( "scanPaths" , QStringList() );
+    KConfigGroup cg(config, "Misc");
+    if ( cg.hasKey( "scanPaths" ) && !useDefault )
+        paths = cg.readEntry( "scanPaths" , QStringList() );
     else {//keep sync with kdebase/nsplugins/pluginscan
         paths.append("$HOME/.mozilla/plugins");
         paths.append("$HOME/.netscape/plugins");
@@ -438,7 +438,7 @@ void KPluginOptions::dirLoad( KSharedConfig::Ptr config, bool useDefault )
     m_widget->dirList->addItems( paths );
 
     // setup other widgets
-    bool useArtsdsp = config->readEntry( "useArtsdsp", false);
+    bool useArtsdsp = cg.readEntry( "useArtsdsp", false);
     m_widget->useArtsdsp->setChecked( useArtsdsp );
 }
 
@@ -454,9 +454,9 @@ void KPluginOptions::dirSave( KSharedConfig::Ptr config )
     }
 
     // write entry
-    config->setGroup( "Misc" );
-    config->writeEntry( "scanPaths", paths );
-    config->writeEntry( "useArtsdsp", m_widget->useArtsdsp->isChecked() );
+    KConfigGroup cg(config, "Misc");
+    cg.writeEntry( "scanPaths", paths );
+    cg.writeEntry( "useArtsdsp", m_widget->useArtsdsp->isChecked() );
 }
 
 

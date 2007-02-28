@@ -48,11 +48,11 @@ void Policies::setDomain(const QString &domain) {
 }
 
 void Policies::load() {
-  config->setGroup(groupname);
+  KConfigGroup cg(config, groupname);
 
   QString key = prefix + feature_key;
-  if (config->hasKey(key))
-    feature_enabled = config->readEntry(key, false);
+  if (cg.hasKey(key))
+    feature_enabled = cg.readEntry(key, false);
   else
     feature_enabled = is_global ? true : INHERIT_POLICY;
 }
@@ -62,13 +62,13 @@ void Policies::defaults() {
 }
 
 void Policies::save() {
-  config->setGroup(groupname);
+  KConfigGroup cg(config, groupname);
 
   QString key = prefix + feature_key;
   if (feature_enabled != INHERIT_POLICY)
-    config->writeEntry(key, (bool)feature_enabled);
+    cg.writeEntry(key, (bool)feature_enabled);
   else
-    config->deleteEntry(key);
+    cg.deleteEntry(key);
 
   // don't do a config->sync() here for sake of efficiency
 }

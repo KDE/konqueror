@@ -239,21 +239,22 @@ void KCMFilter::defaults()
 
 void KCMFilter::save()
 {
-    mConfig->deleteGroup(mGroupname);
-    mConfig->setGroup(mGroupname);
+    KConfigGroup cg(mConfig, mGroupname);
+    cg.deleteGroup();
+    cg.changeGroup(mGroupname);
 
-    mConfig->writeEntry("Enabled",mEnableCheck->isChecked());
-    mConfig->writeEntry("Shrink",mKillCheck->isChecked());
+    cg.writeEntry("Enabled",mEnableCheck->isChecked());
+    cg.writeEntry("Shrink",mKillCheck->isChecked());
 
     int i;
     for( i = 0; i < mListBox->count(); ++i )
     {
         QString key = "Filter-" + QString::number(i);
-        mConfig->writeEntry(key, mListBox->item(i)->text());
+        cg.writeEntry(key, mListBox->item(i)->text());
     }
-    mConfig->writeEntry("Count",mListBox->count());
+    cg.writeEntry("Count",mListBox->count());
 
-    mConfig->sync();
+    cg.sync();
 
     QDBusMessage message =
         QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "reparseConfiguration");
@@ -264,13 +265,13 @@ void KCMFilter::load()
 {
     QStringList paths;
 
-    mConfig->setGroup( mGroupname );
-    mEnableCheck->setChecked( mConfig->readEntry("Enabled", false));
-    mKillCheck->setChecked( mConfig->readEntry("Shrink", false));
+    KConfigGroup cg(mConfig, mGroupname);
+    mEnableCheck->setChecked( cg.readEntry("Enabled", false));
+    mKillCheck->setChecked( cg.readEntry("Shrink", false));
 
-    QMap<QString,QString> entryMap = mConfig->entryMap( mGroupname );
+    QMap<QString,QString> entryMap = cg.entryMap();
     QMap<QString,QString>::ConstIterator it;
-    int num = mConfig->readEntry("Count",0);
+    int num = cg.readEntry("Count",0);
     for (int i=0; i<num; ++i)
     {
         QString key = "Filter-" + QString::number(i);

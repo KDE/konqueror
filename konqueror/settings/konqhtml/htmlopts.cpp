@@ -257,10 +257,12 @@ KMiscHTMLOptions::~KMiscHTMLOptions()
 
 void KMiscHTMLOptions::load()
 {
-    KSharedConfig::Ptr khtmlrc = KSharedConfig::openConfig("khtmlrc", KConfig::NoGlobals);
-#define SET_GROUP(x) m_pConfig->setGroup(x); khtmlrc->setGroup(x)
-#define READ_BOOL(x,y) m_pConfig->readEntry(x, khtmlrc->readEntry(x, y))
-#define READ_ENTRY(x) m_pConfig->readEntry(x, khtmlrc->readEntry(x))
+    KConfigGroup khtmlrc(KSharedConfig::openConfig("khtmlrc", KConfig::NoGlobals),
+			 QByteArray(""));
+    KConfigGroup cg(m_pConfig, QByteArray(""));
+#define SET_GROUP(x) cg.changeGroup(x); khtmlrc.changeGroup(x)
+#define READ_BOOL(x,y) cg.readEntry(x, khtmlrc.readEntry(x, y))
+#define READ_ENTRY(x) cg.readEntry(x, khtmlrc.readEntry(x))
 
 
     // *** load ***
@@ -275,7 +277,7 @@ void KMiscHTMLOptions::load()
     bool bUnfinishedImageFrame = READ_BOOL( "UnfinishedImageFrame", true );
     QString strAnimations = READ_ENTRY( "ShowAnimations" ).toLower();
 
-    bool bAutoRedirect = m_pConfig->readEntry( "AutoDelayedActions", true );
+    bool bAutoRedirect = cg.readEntry( "AutoDelayedActions", true );
 
     // *** apply to GUI ***
     m_cbCursor->setChecked( changeCursor );
@@ -306,13 +308,13 @@ void KMiscHTMLOptions::load()
     else
        m_pAnimationsCombo->setCurrentIndex( AnimationsAlways );
 
-    m_pFormCompletionCheckBox->setChecked( m_pConfig->readEntry( "FormCompletion", true ) );
-    m_pMaxFormCompletionItems->setValue( m_pConfig->readEntry( "MaxFormCompletionItems", 10 ) );
+    m_pFormCompletionCheckBox->setChecked( cg.readEntry( "FormCompletion", true ) );
+    m_pMaxFormCompletionItems->setValue( cg.readEntry( "MaxFormCompletionItems", 10 ) );
     m_pMaxFormCompletionItems->setEnabled( m_pFormCompletionCheckBox->isChecked() );
 
-    m_pConfig->setGroup("FMSettings");
-    m_pShowMMBInTabs->setChecked( m_pConfig->readEntry( "MMBOpensTab", false ) );
-    m_pDynamicTabbarHide->setChecked( ! (m_pConfig->readEntry( "AlwaysTabbedMode", false )) );
+    cg.changeGroup("FMSettings");
+    m_pShowMMBInTabs->setChecked( cg.readEntry( "MMBOpensTab", false ) );
+    m_pDynamicTabbarHide->setChecked( ! (cg.readEntry( "AlwaysTabbedMode", false )) );
 
     // Writes the value of m_pAccessKeys into khtmlrc to affect all applications using KHTML
     KConfig _khtmlconfig("khtmlrc", KConfig::NoGlobals);
@@ -320,10 +322,9 @@ void KMiscHTMLOptions::load()
     khtmlconfig.writeEntry( "Enabled", m_pAccessKeys->isChecked() );
     khtmlconfig.sync();
 
-    KSharedConfig::Ptr config = KSharedConfig::openConfig("kbookmarkrc", KConfig::NoGlobals);
-    config->setGroup("Bookmarks");
-    m_pAdvancedAddBookmarkCheckBox->setChecked( config->readEntry("AdvancedAddBookmarkDialog", false) );
-    m_pOnlyMarkedBookmarksCheckBox->setChecked( config->readEntry("FilteredToolbar", false) );
+    KConfigGroup config(KSharedConfig::openConfig("kbookmarkrc", KConfig::NoGlobals), "Bookmarks");
+    m_pAdvancedAddBookmarkCheckBox->setChecked( config.readEntry("AdvancedAddBookmarkDialog", false) );
+    m_pOnlyMarkedBookmarksCheckBox->setChecked( config.readEntry("FilteredToolbar", false) );
 }
 
 void KMiscHTMLOptions::defaults()
@@ -338,59 +339,58 @@ void KMiscHTMLOptions::defaults()
 
 void KMiscHTMLOptions::save()
 {
-    m_pConfig->setGroup( "MainView Settings" );
-    m_pConfig->writeEntry( "OpenMiddleClick", m_pOpenMiddleClick->isChecked() );
-    m_pConfig->writeEntry( "BackRightClick", m_pBackRightClick->isChecked() );
-    m_pConfig->setGroup( "HTML Settings" );
-    m_pConfig->writeEntry( "ChangeCursor", m_cbCursor->isChecked() );
-    m_pConfig->writeEntry( "AutoLoadImages", m_pAutoLoadImagesCheckBox->isChecked() );
-    m_pConfig->writeEntry( "UnfinishedImageFrame", m_pUnfinishedImageFrameCheckBox->isChecked() );
-    m_pConfig->writeEntry( "AutoDelayedActions", m_pAutoRedirectCheckBox->isChecked() );
+    KConfigGroup cg(m_pConfig, "MainView Settings");
+    cg.writeEntry( "OpenMiddleClick", m_pOpenMiddleClick->isChecked() );
+    cg.writeEntry( "BackRightClick", m_pBackRightClick->isChecked() );
+    cg.changeGroup( "HTML Settings" );
+    cg.writeEntry( "ChangeCursor", m_cbCursor->isChecked() );
+    cg.writeEntry( "AutoLoadImages", m_pAutoLoadImagesCheckBox->isChecked() );
+    cg.writeEntry( "UnfinishedImageFrame", m_pUnfinishedImageFrameCheckBox->isChecked() );
+    cg.writeEntry( "AutoDelayedActions", m_pAutoRedirectCheckBox->isChecked() );
     switch(m_pUnderlineCombo->currentIndex())
     {
       case UnderlineAlways:
-        m_pConfig->writeEntry( "UnderlineLinks", true );
-        m_pConfig->writeEntry( "HoverLinks", false );
+        cg.writeEntry( "UnderlineLinks", true );
+        cg.writeEntry( "HoverLinks", false );
         break;
       case UnderlineNever:
-        m_pConfig->writeEntry( "UnderlineLinks", false );
-        m_pConfig->writeEntry( "HoverLinks", false );
+        cg.writeEntry( "UnderlineLinks", false );
+        cg.writeEntry( "HoverLinks", false );
         break;
       case UnderlineHover:
-        m_pConfig->writeEntry( "UnderlineLinks", false );
-        m_pConfig->writeEntry( "HoverLinks", true );
+        cg.writeEntry( "UnderlineLinks", false );
+        cg.writeEntry( "HoverLinks", true );
         break;
     }
     switch(m_pAnimationsCombo->currentIndex())
     {
       case AnimationsAlways:
-        m_pConfig->writeEntry( "ShowAnimations", "Enabled" );
+        cg.writeEntry( "ShowAnimations", "Enabled" );
         break;
       case AnimationsNever:
-        m_pConfig->writeEntry( "ShowAnimations", "Disabled" );
+        cg.writeEntry( "ShowAnimations", "Disabled" );
         break;
       case AnimationsLoopOnce:
-        m_pConfig->writeEntry( "ShowAnimations", "LoopOnce" );
+        cg.writeEntry( "ShowAnimations", "LoopOnce" );
         break;
     }
 
-    m_pConfig->writeEntry( "FormCompletion", m_pFormCompletionCheckBox->isChecked() );
-    m_pConfig->writeEntry( "MaxFormCompletionItems", m_pMaxFormCompletionItems->value() );
+    cg.writeEntry( "FormCompletion", m_pFormCompletionCheckBox->isChecked() );
+    cg.writeEntry( "MaxFormCompletionItems", m_pMaxFormCompletionItems->value() );
 
-    m_pConfig->setGroup("FMSettings");
-    m_pConfig->writeEntry( "MMBOpensTab", m_pShowMMBInTabs->isChecked() );
-    m_pConfig->writeEntry( "AlwaysTabbedMode", !(m_pDynamicTabbarHide->isChecked()) );
-    m_pConfig->sync();
+    cg.changeGroup("FMSettings");
+    cg.writeEntry( "MMBOpensTab", m_pShowMMBInTabs->isChecked() );
+    cg.writeEntry( "AlwaysTabbedMode", !(m_pDynamicTabbarHide->isChecked()) );
+    cg.sync();
 
     // Reads in the value of m_accessKeysEnabled by calling accessKeysEnabled() in khtml_settings.cpp
     KHTMLSettings settings;
     m_pAccessKeys->setChecked( settings.accessKeysEnabled() );
 
-    KSharedConfig::Ptr config = KSharedConfig::openConfig("kbookmarkrc", KConfig::NoGlobals);
-    config->setGroup("Bookmarks");
-    config->writeEntry("AdvancedAddBookmarkDialog", m_pAdvancedAddBookmarkCheckBox->isChecked());
-    config->writeEntry("FilteredToolbar", m_pOnlyMarkedBookmarksCheckBox->isChecked());
-    config->sync();
+    KConfigGroup config(KSharedConfig::openConfig("kbookmarkrc", KConfig::NoGlobals), "Bookmarks");
+    config.writeEntry("AdvancedAddBookmarkDialog", m_pAdvancedAddBookmarkCheckBox->isChecked());
+    config.writeEntry("FilteredToolbar", m_pOnlyMarkedBookmarksCheckBox->isChecked());
+    config.sync();
     // Send signal to all konqueror instances
     QDBusMessage message =
         QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "reparseConfiguration");
