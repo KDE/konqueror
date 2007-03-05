@@ -427,7 +427,7 @@ void KonqUndoManager::stepMakingDirectories()
         KUrl dir = d->m_dirStack.pop();
         kDebug(1203) << "KonqUndoManager::stepMakingDirectories creatingDir " << dir << endl;
         d->m_currentJob = KIO::mkdir( dir );
-        d->m_undoJob->ui()->creatingDir( dir );
+        d->m_undoJob->emitCreatingDir( dir );
     }
     else
         d->m_undoState = MOVINGFILES;
@@ -450,7 +450,7 @@ void KonqUndoManager::stepMovingFiles()
             {
                 kDebug(1203) << "KonqUndoManager::stepMovingFiles rename " << op.m_dst << " " << op.m_src << endl;
                 d->m_currentJob = KIO::rename( op.m_dst, op.m_src, false );
-                d->m_undoJob->ui()->moving( op.m_dst, op.m_src );
+                d->m_undoJob->emitMoving( op.m_dst, op.m_src );
             }
             else
                 assert( 0 ); // this should not happen!
@@ -473,7 +473,7 @@ void KonqUndoManager::stepMovingFiles()
             else // dest was stat'ed, and the deletion was approved in slotResult
             {
                 d->m_currentJob = KIO::file_delete( op.m_dst );
-                d->m_undoJob->ui()->deleting( op.m_dst );
+                d->m_undoJob->emitDeleting( op.m_dst );
                 d->m_undoState = MOVINGFILES;
             }
         }
@@ -482,7 +482,7 @@ void KonqUndoManager::stepMovingFiles()
         {
             kDebug(1203) << "KonqUndoManager::stepMovingFiles file_move " << op.m_dst << " " << op.m_src << endl;
             d->m_currentJob = KIO::file_move( op.m_dst, op.m_src, -1, true );
-            d->m_undoJob->ui()->moving( op.m_dst, op.m_src );
+            d->m_undoJob->emitMoving( op.m_dst, op.m_src );
         }
 
         d->m_current.m_opStack.pop();
@@ -508,7 +508,7 @@ void KonqUndoManager::stepRemovingLinks()
       KUrl file = d->m_linkCleanupStack.pop();
       kDebug(1203) << "KonqUndoManager::stepRemovingLinks file_delete " << file << endl;
       d->m_currentJob = KIO::file_delete( file );
-      d->m_undoJob->ui()->deleting( file );
+      d->m_undoJob->emitDeleting( file );
 
       KUrl url( file );
       url.setPath( url.directory() );
@@ -530,7 +530,7 @@ void KonqUndoManager::stepRemovingDirectories()
         KUrl dir = d->m_dirCleanupStack.pop();
         kDebug(1203) << "KonqUndoManager::stepRemovingDirectories rmdir " << dir << endl;
         d->m_currentJob = KIO::rmdir( dir );
-        d->m_undoJob->ui()->deleting( dir );
+        d->m_undoJob->emitDeleting( dir );
         addDirToUpdate( dir );
     }
     else
