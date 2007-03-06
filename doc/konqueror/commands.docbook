@@ -678,6 +678,108 @@ shown in Tree, Detailed List and Text views.</para></listitem>
 
 </sect2>
 
+<sect2 id="menu-go">
+<title>The <guimenu>Go</guimenu> Menu</title>
+
+<variablelist>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Alt;<keysym>Up Arrow</keysym></keycombo>
+</shortcut><guimenu>Go</guimenu>
+<guimenuitem>Up</guimenuitem>
+</menuchoice></term>
+<listitem><para>Go up a level in the folder
+hierarchy.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Alt;<keysym>Left Arrow</keysym></keycombo>
+</shortcut><guimenu>Go</guimenu>
+<guimenuitem>Back</guimenuitem>
+</menuchoice></term>
+<listitem><para>Go back to the previous
+view.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Alt;<keysym>Right Arrow</keysym></keycombo>
+</shortcut><guimenu>Go</guimenu>
+<guimenuitem>Forward</guimenuitem>
+</menuchoice></term>
+<listitem><para>You can only go forward if you've just gone 
+back.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>Home</keycap></keycombo>
+</shortcut><guimenu>Go</guimenu>
+<guimenuitem>Home URL</guimenuitem>
+</menuchoice></term>
+<listitem><para>Go to your home folder.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Go</guimenu>
+<guimenuitem>Applications</guimenuitem>
+</menuchoice></term>
+<listitem><para>Open the folder holding your
+applications.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Go</guimenu>
+<guimenuitem>Trash</guimenuitem>
+</menuchoice></term>
+<listitem><para>Open your <filename
+ class="directory">Trash</filename>
+folder in a separate window.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Go</guimenu>
+<guimenuitem>Templates</guimenuitem>
+</menuchoice></term>
+<listitem><para>Open the <filename
+class="directory">Templates</filename> folder  in a separate
+window.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Go</guimenu>
+<guimenuitem>Autostart</guimenuitem>
+</menuchoice></term>
+<listitem><para>Open your <filename
+class="directory">Autostart</filename> folder in a separate
+window.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Go</guimenu>
+<guisubmenu>Most Often Visited</guisubmenu>
+</menuchoice></term>
+<listitem>
+<para>Displays a submenu showing the &URL;s you visit most often. Selecting one
+of these will make &konqueror; open that &URL;.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
 <sect2 id="menu-bookmarks">
 <title>The <guimenu>Bookmarks</guimenu> Menu</title>
 
@@ -899,6 +1001,129 @@ change settings associated with spell checking in &konqueror;.</para>
 </listitem>
 </varlistentry>
 
+
+</variablelist>
+
+</sect2>
+
+<sect2 id="menu-window">
+<title>The <guimenu>Window</guimenu> Menu</title>
+
+<variablelist>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;&Shift;<keycap>L</keycap></keycombo></shortcut>
+<guimenu>Window</guimenu>
+<guimenuitem>Split View Left/Right</guimenuitem>
+</menuchoice></term>
+<listitem><para>Split View Left/Right.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo
+action="simul">&Ctrl;&Shift;<keycap>T</keycap></keycombo></shortcut>
+<guimenu>Window</guimenu>
+<guimenuitem>Split View Top/Bottom</guimenuitem>
+</menuchoice></term>
+<listitem><para>Split View Top/Bottom.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo
+action="simul">&Ctrl;&Shift;<keycap>R</keycap></keycombo></shortcut>
+<guimenu>Window</guimenu>
+<guimenuitem>Remove Active View</guimenuitem>
+</menuchoice></term>
+<listitem><para>Remove Active View.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;&Shift;<keycap>N</keycap></keycombo></shortcut>
+<guimenu>Window</guimenu>
+<guimenuitem>New Tab</guimenuitem>
+</menuchoice></term>
+<listitem><para>Open a new, empty, tab page.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;&Shift;<keycap>D</keycap></keycombo></shortcut>
+<guimenu>Window</guimenu>
+<guimenuitem>Duplicate Current Tab</guimenuitem>
+</menuchoice></term>
+<listitem><para>Open a duplicate tab page.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;&Shift;<keycap>B</keycap></keycombo></shortcut>
+<guimenu>Window</guimenu>
+<guimenuitem>Detach Current Tab</guimenuitem>
+</menuchoice></term>
+<listitem><para>Show the current tab page in a new instance of 
+&konqueror;.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>W</keycap></keycombo></shortcut>
+<guimenu>Window</guimenu>
+<guimenuitem>Close Current Tab</guimenuitem>
+</menuchoice></term>
+<listitem><para>Close the current tab page.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;&Shift;<keycap>Left</keycap></keycombo></shortcut>
+<guimenu>Window</guimenu>
+<guimenuitem>Move Tab Left</guimenuitem>
+</menuchoice></term>
+<listitem><para>Move the current tab one place left in the list of tabs.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;&Shift;<keycap>Left</keycap></keycombo></shortcut>
+<guimenu>Window</guimenu>
+<guimenuitem>Move Tab Right</guimenuitem>
+</menuchoice></term>
+<listitem><para>Move the current tab one place right in the list of tabs.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Window</guimenu>
+<guimenuitem>Show Terminal Emulator</guimenuitem>
+</menuchoice></term>
+<listitem><para>Open a small text terminal view at the bottom of the
+ main 
+window.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul"><keycap>F9</keycap></keycombo></shortcut>
+<guimenu>Window</guimenu>
+<guimenuitem>Show Navigation Panel</guimenuitem>
+</menuchoice></term>
+<listitem><para>Toggles the display of the &konqueror; navigation panel. See
+<xref linkend="sidebar"/>.</para></listitem>
+</varlistentry>
 
 </variablelist>
 
