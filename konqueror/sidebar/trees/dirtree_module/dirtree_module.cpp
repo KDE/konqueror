@@ -327,7 +327,7 @@ void KonqSidebarDirTreeModule::openSubFolder( KonqSidebarTreeItem *item )
          static_cast<KonqSidebarDirTreeItem *>(item)->hasStandardIcon() )
     {
         int size = KIconLoader::global()->currentSize( K3Icon::Small );
-        QPixmap pix = DesktopIcon( "folder_open", size );
+        QPixmap pix = DesktopIcon( "folder-open", size );
         m_pTree->startAnimation( item, "kde", 6, &pix );
     }
     else

@@ -50,7 +50,7 @@ KRemoteEncodingPlugin::KRemoteEncodingPlugin(QObject * parent,
 					     const QStringList &)
   : KParts::Plugin(parent), m_loaded(false), m_idDefault(0)
 {
-  m_menu = new KActionMenu(KIcon("charset"), i18n("Select Remote Charset"), this);
+  m_menu = new KActionMenu(KIcon("character-set"), i18n("Select Remote Charset"), this);
   actionCollection()->addAction("changeremoteencoding", m_menu);
   connect(m_menu->menu(), SIGNAL(aboutToShow()),
 	  this, SLOT(slotAboutToShow()));

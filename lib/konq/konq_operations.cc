@@ -276,7 +276,7 @@ bool KonqOperations::askDeleteConfirmation( const KUrl::List & selectedUrls, int
                 i18np( "Do you really want to move this item to the trash?", "Do you really want to move these %1 items to the trash?", prettyList.count()),
                 prettyList,
 		i18n( "Move to Trash" ),
-		KGuiItem( i18nc( "Verb", "&Trash" ), "edittrash"),
+		KGuiItem( i18nc( "Verb", "&Trash" ), "edit-trash"),
 		keyName, KMessageBox::Notify | KMessageBox::Dangerous);
         }
         if (!keyName.isEmpty())
@@ -542,11 +542,11 @@ void KonqOperations::doDropFileCopy()
         QString seq = QKeySequence( Qt::ShiftModifier ).toString();
         seq.chop(1); // chop superfluous '+'
         QAction* popupMoveAction = new QAction(i18n( "&Move Here" ) + "\t" + seq, this);
-        popupMoveAction->setIcon(KIcon("goto"));
+        popupMoveAction->setIcon(KIcon("goto-page"));
         seq = QKeySequence( Qt::ControlModifier ).toString();
         seq.chop(1);
         QAction* popupCopyAction = new QAction(i18n( "&Copy Here" ) + "\t" + seq, this);
-        popupCopyAction->setIcon(KIcon("editcopy"));
+        popupCopyAction->setIcon(KIcon("edit-copy"));
         seq = QKeySequence( Qt::ControlModifier + Qt::ShiftModifier ).toString();
         seq.chop(1);
         QAction* popupLinkAction = new QAction(i18n( "&Link Here" ) + "\t" + seq, this);

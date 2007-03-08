@@ -451,7 +451,7 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
     {
         QString openStr = isKDesktop ? i18n( "&Open" ) : i18n( "Open in New &Window" );
         actNewWindow = m_ownActions.addAction( "newview" );
-        actNewWindow->setIcon( KIcon("window_new") );
+        actNewWindow->setIcon( KIcon("window-new") );
         actNewWindow->setText( openStr );
         connect(actNewWindow, SIGNAL(triggered()), this, SLOT(slotPopupNewView()));
     }
@@ -483,7 +483,7 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
             if (d->m_itemFlags & KParts::BrowserExtension::ShowCreateDirectory)
             {
                 QAction *actNewDir = m_ownActions.addAction( "newdir" );
-                actNewDir->setIcon( KIcon("folder_new") );
+                actNewDir->setIcon( KIcon("folder-new") );
                 actNewDir->setText( i18n( "Create &Folder..." ) );
                 connect(actNewDir, SIGNAL(triggered()), this, SLOT(slotPopupNewDir()));
                 KonqXMLGUIClient::addAction( "newdir" );
@@ -601,7 +601,7 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
            caption = i18n("&Bookmark This File");
 
         act = m_ownActions.addAction( "bookmark_add" );
-        act->setIcon( KIcon("bookmark_add") );
+        act->setIcon( KIcon("bookmark-new") );
         act->setText( caption );
         connect(act, SIGNAL(triggered()), this, SLOT(slotPopupAddToBookmark()));
         if (m_lstItems.count() > 1)

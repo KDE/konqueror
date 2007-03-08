@@ -36,7 +36,7 @@ KShellCmdPlugin::KShellCmdPlugin( QObject* parent, const QStringList & )
        return;
 
     QAction *action = actionCollection()->addAction("executeshellcommand");
-    action->setIcon(KIcon("run"));
+    action->setIcon(KIcon("system-run"));
     action->setText(i18n( "&Execute Shell Command..." ));
     connect(action, SIGNAL(triggered(bool)), SLOT( slotExecuteShellCommand() ));
     action->setShortcut(Qt::CTRL+Qt::Key_E);

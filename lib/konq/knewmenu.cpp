@@ -119,7 +119,7 @@ public:
 };
 
 KNewMenu::KNewMenu( KActionCollection *parent, QWidget* parentWidget, const QString& name )
-    : KActionMenu( KIcon("filenew"), i18n( "Create New" ), parentWidget )
+    : KActionMenu( KIcon("document-new"), i18n( "Create New" ), parentWidget )
 {
     // Don't fill the menu yet
     // We'll do that in slotCheckUpToDate (should be connected to abouttoshow)

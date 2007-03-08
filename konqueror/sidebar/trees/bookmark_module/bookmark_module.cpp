@@ -62,15 +62,15 @@ KonqSidebarBookmarkModule::KonqSidebarBookmarkModule( KonqSidebarTree * parentTr
 
     m_collection = new KActionCollection( this );
     QAction *action = m_collection->addAction("create_folder");
-    action->setIcon( KIcon("folder_new") );
+    action->setIcon( KIcon("folder-new") );
     action->setText( i18n("&Create New Folder") );
     connect(action, SIGNAL(triggered(bool)), SLOT( slotCreateFolder() ));
     action = m_collection->addAction("delete_folder");
-    action->setIcon( KIcon("editdelete") );
+    action->setIcon( KIcon("edit-delete") );
     action->setText( i18n("Delete Folder") );
     connect(action, SIGNAL(triggered(bool)), SLOT( slotDelete() ));
     action = m_collection->addAction("delete_bookmark");
-    action->setIcon( KIcon("editdelete") );
+    action->setIcon( KIcon("edit-delete") );
     action->setText( i18n("Delete Bookmark") );
     connect(action, SIGNAL(triggered(bool)), SLOT( slotDelete() ));
     action = m_collection->addAction("item_properties");
@@ -78,19 +78,19 @@ KonqSidebarBookmarkModule::KonqSidebarBookmarkModule( KonqSidebarTree * parentTr
     action->setText( i18n("Properties") );
     connect(action, SIGNAL(triggered(bool)), SLOT( slotProperties() ));
     action = m_collection->addAction("open_window");
-    action->setIcon( KIcon("window_new") );
+    action->setIcon( KIcon("window-new") );
     action->setText( i18n("Open in New Window") );
     connect(action, SIGNAL(triggered(bool)), SLOT( slotOpenNewWindow() ));
     action = m_collection->addAction("open_tab");
-    action->setIcon( KIcon("tab_new") );
+    action->setIcon( KIcon("tab-new") );
     action->setText( i18n("Open in New Tab") );
     connect(action, SIGNAL(triggered(bool)), SLOT( slotOpenTab() ));
     action = m_collection->addAction("folder_open_tabs");
-    action->setIcon( KIcon("tab_new") );
+    action->setIcon( KIcon("tab-new") );
     action->setText( i18n("Open Folder in Tabs") );
     connect(action, SIGNAL(triggered(bool)), SLOT( slotOpenTab() ));
     action = m_collection->addAction("copy_location");
-    action->setIcon( KIcon("editcopy") );
+    action->setIcon( KIcon("edit-copy") );
     action->setText( i18n("Copy Link Address") );
     connect(action, SIGNAL(triggered(bool)), SLOT( slotCopyLocation() ));
 

@@ -82,7 +82,7 @@ KonqProfileDlg::KonqProfileDlg( KonqViewManager *manager, const QString & presel
   setDefaultButton( BTN_SAVE );
   showButtonSeparator( true );
   setButtonGuiItem( BTN_RENAME, KGuiItem( i18n( "&Rename Profile" ) ) );
-  setButtonGuiItem( BTN_DELETE, KGuiItem( i18n( "&Delete Profile" ), "editdelete" ) );
+  setButtonGuiItem( BTN_DELETE, KGuiItem( i18n( "&Delete Profile" ), "edit-delete" ) );
   setButtonGuiItem( BTN_SAVE, KStandardGuiItem::save() );
 
   m_pViewManager = manager;

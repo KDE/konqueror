@@ -95,7 +95,7 @@ void KEBApp::createActions() {
 
     // actions
     QAction* actnDelete = actionCollection()->addAction("delete");
-    actnDelete->setIcon(KIcon("editdelete"));
+    actnDelete->setIcon(KIcon("edit-delete"));
     actnDelete->setText(i18n("&Delete"));
     actnDelete->setShortcut(Qt::Key_Delete);
     connect(actnDelete, SIGNAL( triggered() ), actn, SLOT( slotDelete() ));
@@ -132,7 +132,7 @@ void KEBApp::createActions() {
     connect(actnRecursiveSort, SIGNAL( triggered() ), actn, SLOT( slotRecursiveSort() ));
 
     QAction* actnNewFolder = actionCollection()->addAction("newfolder");
-    actnNewFolder->setIcon(KIcon("folder_new"));
+    actnNewFolder->setIcon(KIcon("folder-new"));
     actnNewFolder->setText(i18n("&New Folder..."));
     actnNewFolder->setShortcut(Qt::CTRL+Qt::Key_N);
     connect(actnNewFolder, SIGNAL( triggered() ), actn, SLOT( slotNewFolder() ));
@@ -165,7 +165,7 @@ void KEBApp::createActions() {
     connect(actnCollapseAll, SIGNAL( triggered() ), actn, SLOT( slotCollapseAll() ));
 
     QAction* actnOpenLink = actionCollection()->addAction("openlink");
-    actnOpenLink->setIcon(KIcon("fileopen"));
+    actnOpenLink->setIcon(KIcon("document-open"));
     actnOpenLink->setText(i18n("&Open in Konqueror"));
     connect(actnOpenLink, SIGNAL( triggered() ), actn, SLOT( slotOpenLink() ));
 

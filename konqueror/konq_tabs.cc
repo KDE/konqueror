@@ -81,7 +81,7 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
            this, SLOT( slotCurrentChanged( QWidget* ) ) );
 
   m_pPopupMenu = new QMenu( this );
-  m_pPopupMenu->insertItem( SmallIcon( "tab_new" ),
+  m_pPopupMenu->insertItem( SmallIcon( "tab-new" ),
                             i18n("&New Tab"),
                             m_pViewManager->mainWindow(),
                             SLOT( slotAddTab() ),
@@ -92,7 +92,7 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
                             SLOT( slotDuplicateTabPopup() ),
                             m_pViewManager->mainWindow()->action("duplicatecurrenttab")->shortcut(),
                             DUPLICATE_ID );
-  m_pPopupMenu->insertItem( KIcon( "reload" ),
+  m_pPopupMenu->insertItem( KIcon( "view-refresh" ),
                             i18n( "&Reload Tab" ),
                             m_pViewManager->mainWindow(),
                             SLOT( slotReloadPopup() ),
@@ -110,7 +110,7 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
                             m_pViewManager->mainWindow()->action("breakoffcurrenttab")->shortcut(),
                             BREAKOFF_ID );
   m_pPopupMenu->addSeparator();
-  m_pPopupMenu->insertItem( KIcon( "tab_remove" ),
+  m_pPopupMenu->insertItem( KIcon( "tab-remove" ),
                             i18n("&Close Tab"),
                             m_pViewManager->mainWindow(),
                             SLOT( slotRemoveTabPopup() ),
@@ -141,7 +141,7 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
     m_leftWidget = new QToolButton( this );
     connect( m_leftWidget, SIGNAL( clicked() ),
              m_pViewManager->mainWindow(), SLOT( slotAddTab() ) );
-    m_leftWidget->setIcon( SmallIcon( "tab_new" ) );
+    m_leftWidget->setIcon( SmallIcon( "tab-new" ) );
     m_leftWidget->adjustSize();
     m_leftWidget->setToolTip( i18n("Open a new tab"));
     setCornerWidget( m_leftWidget, Qt::TopLeftCorner );
@@ -150,7 +150,7 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
     m_rightWidget = new QToolButton( this );
     connect( m_rightWidget, SIGNAL( clicked() ),
              m_pViewManager->mainWindow(), SLOT( slotRemoveTab() ) );
-    m_rightWidget->setIcon( KIcon( "tab_remove" ) );
+    m_rightWidget->setIcon( KIcon( "tab-remove" ) );
     m_rightWidget->adjustSize();
     m_rightWidget->setToolTip( i18n("Close the current tab"));
     setCornerWidget( m_rightWidget, Qt::TopRightCorner );
@@ -268,7 +268,7 @@ void KonqFrameTabs::setTabIcon( const KUrl &url, QWidget* sender )
   //kDebug(1202) << "KonqFrameTabs::setTabIcon( " << url << " , " << sender << " )" << endl;
   QIcon iconSet;
   if (m_permanentCloseButtons)
-    iconSet =  SmallIcon( "fileclose" );
+    iconSet =  SmallIcon( "window-close" );
   else
     iconSet =  KIcon( KonqPixmapProvider::self()->iconNameFor( url ) );
   if (tabIcon( indexOf( sender ) ).pixmap().serialNumber() != iconSet.pixmap().serialNumber())
@@ -427,7 +427,7 @@ void KonqFrameTabs::refreshSubPopupMenuTab()
     }
     m_pSubPopupMenuTab->addSeparator();
     m_closeOtherTabsId =
-      m_pSubPopupMenuTab->insertItem( KIcon( "tab_remove" ),
+      m_pSubPopupMenuTab->insertItem( KIcon( "tab-remove" ),
 				      i18n( "Close &Other Tabs" ),
 				      m_pViewManager->mainWindow(),
 				      SLOT( slotRemoveOtherTabsPopup() ),

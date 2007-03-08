@@ -278,7 +278,7 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, bool 
 	m_menu->addAction(i18n("Show Configuration Button"), this, SLOT(slotShowConfigurationButton()));
 	if (!m_universalMode) {
 		m_menu->addSeparator();
-		m_menu->addAction(KIcon("remove"), i18n("Close Navigation Panel"),
+		m_menu->addAction(KIcon("list-remove"), i18n("Close Navigation Panel"),
 				par, SLOT(deleteLater()));
 	}
         connect(m_menu, SIGNAL(aboutToShow()),
@@ -829,7 +829,7 @@ bool Sidebar_Widget::eventFilter(QObject *obj, QEvent *ev)
 					m_buttonPopup->addAction(KIcon("www"), i18n("Set URL..."), this, SLOT(slotSetURL()));
 					m_buttonPopup->addAction(KIcon("icons"), i18n("Set Icon..."), this, SLOT(slotSetIcon()));
 					m_buttonPopup->addSeparator();
-					m_buttonPopup->addAction(KIcon("editdelete"), i18n("Remove"), this, SLOT(slotRemove()));
+					m_buttonPopup->addAction(KIcon("edit-delete"), i18n("Remove"), this, SLOT(slotRemove()));
 					m_buttonPopup->addSeparator();
 					m_buttonPopup->addMenu(m_menu);
 				}

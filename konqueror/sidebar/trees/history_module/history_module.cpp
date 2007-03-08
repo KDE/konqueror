@@ -81,15 +81,15 @@ KonqSidebarHistoryModule::KonqSidebarHistoryModule( KonqSidebarTree * parentTree
 
     m_collection = new KActionCollection( this );
     QAction *action = m_collection->addAction("open_new");
-    action->setIcon( KIcon("window_new") );
+    action->setIcon( KIcon("window-new") );
     action->setText( i18n("New &Window") );
     connect(action, SIGNAL(triggered(bool)), SLOT( slotNewWindow() ));
     action = m_collection->addAction("remove");
-    action->setIcon( KIcon("editdelete") );
+    action->setIcon( KIcon("edit-delete") );
     action->setText( i18n("&Remove Entry") );
     connect(action, SIGNAL(triggered(bool)), SLOT( slotRemoveEntry() ));
     action = m_collection->addAction("clear");
-    action->setIcon( KIcon("history_clear") );
+    action->setIcon( KIcon("history-clear") );
     action->setText( i18n("C&lear History") );
     connect(action, SIGNAL(triggered(bool)), SLOT( slotClearHistory() ));
     action = m_collection->addAction("preferences");
@@ -114,7 +114,7 @@ KonqSidebarHistoryModule::KonqSidebarHistoryModule( KonqSidebarTree * parentTree
     sort->setChecked( !m_sortsByName );
 
     m_folderClosed = SmallIcon( "folder" );
-    m_folderOpen = SmallIcon( "folder_open" );
+    m_folderOpen = SmallIcon( "folder-open" );
 
     slotSettingsChanged(); // read the settings
 }
@@ -361,7 +361,7 @@ KonqSidebarHistoryGroupItem * KonqSidebarHistoryModule::getGroupItem( const KUrl
 void KonqSidebarHistoryModule::slotClearHistory()
 {
     KGuiItem guiitem = KStandardGuiItem::clear();
-    guiitem.setIcon( KIcon("history_clear"));
+    guiitem.setIcon( KIcon("history-clear"));
 
     if ( KMessageBox::warningContinueCancel( tree(),
 				     i18n("Do you really want to clear "

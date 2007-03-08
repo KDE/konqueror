@@ -1772,7 +1772,7 @@ void KonqMainWindow::slotReload( KonqView* reloadView )
     if (prop.isValid() && prop.toBool())
       if ( KMessageBox::warningContinueCancel( this,
            i18n("This page contains changes that have not been submitted.\nReloading the page will discard these changes."),
-           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"reload"), "discardchangesreload") != KMessageBox::Continue )
+           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"view-refresh"), "discardchangesreload") != KMessageBox::Continue )
         return;
   }
 
@@ -2674,7 +2674,7 @@ void KonqMainWindow::slotRemoveTab()
     if (prop.isValid() && prop.toBool())
       if ( KMessageBox::warningContinueCancel( this,
            i18n("This tab contains changes that have not been submitted.\nClosing the tab will discard these changes."),
-           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab_remove"), "discardchangesclose") != KMessageBox::Continue )
+           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-remove"), "discardchangesclose") != KMessageBox::Continue )
         return;
   }
 
@@ -2691,7 +2691,7 @@ void KonqMainWindow::slotRemoveTabPopup()
       m_pViewManager->showTab( view );
       if ( KMessageBox::warningContinueCancel( this,
            i18n("This tab contains changes that have not been submitted.\nClosing the tab will discard these changes."),
-           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab_remove"), "discardchangesclose") != KMessageBox::Continue )
+           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-remove"), "discardchangesclose") != KMessageBox::Continue )
       {
         m_pViewManager->showTab( originalView );
         return;
@@ -2713,7 +2713,7 @@ void KonqMainWindow::slotRemoveOtherTabsPopup()
 {
   if ( KMessageBox::warningContinueCancel( this,
        i18n("Do you really want to close all other tabs?"),
-       i18n("Close Other Tabs Confirmation"), KGuiItem(i18n("Close &Other Tabs"),"tab_remove"),
+       i18n("Close Other Tabs Confirmation"), KGuiItem(i18n("Close &Other Tabs"),"tab-remove"),
        "CloseOtherTabConfirm") != KMessageBox::Continue )
     return;
 
@@ -2728,7 +2728,7 @@ void KonqMainWindow::slotRemoveOtherTabsPopup()
         m_pViewManager->showTab( view );
         if ( KMessageBox::warningContinueCancel( this,
            i18n("This tab contains changes that have not been submitted.\nClosing other tabs will discard these changes."),
-           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab_remove"), "discardchangescloseother") != KMessageBox::Continue )
+           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-remove"), "discardchangescloseother") != KMessageBox::Continue )
         {
            m_pViewManager->showTab( originalView );
            return;
@@ -2761,7 +2761,7 @@ void KonqMainWindow::slotReloadAllTabs()
         m_pViewManager->showTab( view );
         if ( KMessageBox::warningContinueCancel( this,
            i18n("This tab contains changes that have not been submitted.\nReloading all tabs will discard these changes."),
-           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"reload"), "discardchangesreload") != KMessageBox::Continue )
+           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"view-refresh"), "discardchangesreload") != KMessageBox::Continue )
         {
             m_pViewManager->showTab( originalView );
             return;
@@ -3664,7 +3664,7 @@ void KonqMainWindow::initActions()
   action->setText( i18n( "Properties" ) );
   action->setShortcut(Qt::ALT+Qt::Key_Return);
   action = actionCollection()->addAction("new_window");
-  action->setIcon(KIcon("window_new"));
+  action->setIcon(KIcon("window-new"));
   action->setText(i18n( "New &Window" ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotNewWindow() ));
   action->setShortcuts(KStandardShortcut::shortcut(KStandardShortcut::New));
@@ -3674,11 +3674,11 @@ void KonqMainWindow::initActions()
   connect(action, SIGNAL(triggered(bool)), SLOT( slotDuplicateWindow() ));
   action->setShortcut(Qt::CTRL+Qt::Key_D);
   action = actionCollection()->addAction("sendURL");
-  action->setIcon(KIcon("mail_generic"));
+  action->setIcon(KIcon("mail"));
   action->setText(i18n( "Send &Link Address..." ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotSendURL() ));
   action = actionCollection()->addAction("sendPage");
-  action->setIcon(KIcon("mail_generic"));
+  action->setIcon(KIcon("mail"));
   action->setText(i18n( "S&end File..." ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotSendFile() ));
   if (KAuthorized::authorizeKAction("shell_access"))
@@ -3690,12 +3690,12 @@ void KonqMainWindow::initActions()
       action->setShortcut(Qt::Key_F4);
   }
   action = actionCollection()->addAction("open_location");
-  action->setIcon(KIcon("fileopen"));
+  action->setIcon(KIcon("document-open"));
   action->setText(i18n( "&Open Location..." ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotOpenLocation() ));
   action->setShortcuts(KStandardShortcut::shortcut(KStandardShortcut::Open));
 
-  m_paFindFiles = new KToggleAction(KIcon("filefind"), i18n( "&Find File..." ), this);
+  m_paFindFiles = new KToggleAction(KIcon("file-find"), i18n( "&Find File..." ), this);
   actionCollection()->addAction( "findfile", m_paFindFiles );
   connect(m_paFindFiles, SIGNAL(triggered(bool) ), SLOT( slotToolFind() ));
   m_paFindFiles->setShortcuts(KStandardShortcut::shortcut(KStandardShortcut::Find));
@@ -3714,7 +3714,7 @@ void KonqMainWindow::initActions()
   connect(m_paLinkView, SIGNAL(triggered(bool) ), SLOT( slotLinkView() ));
 
   // Go menu
-  m_paUp = new KToolBarPopupAction( KIcon("up"), i18n( "&Up" ), this );
+  m_paUp = new KToolBarPopupAction( KIcon("go-up"), i18n( "&Up" ), this );
   actionCollection()->addAction( "up", m_paUp );
   m_paUp->setShortcuts( KStandardShortcut::shortcut(KStandardShortcut::Up) );
   connect( m_paUp, SIGNAL( triggered( Qt::MouseButtons, Qt::KeyboardModifiers) ), this,
@@ -3746,7 +3746,7 @@ void KonqMainWindow::initActions()
   connect( m_paHistory, SIGNAL( step( int ) ), this, SLOT( slotGoHistoryActivated( int ) ) );
 
   m_paHome = actionCollection()->addAction("home");
-  m_paHome->setIcon(KIcon("gohome"));
+  m_paHome->setIcon(KIcon("go-home"));
   m_paHome->setText(i18n( "Home" ));
   m_paHome->setShortcuts(KStandardShortcut::shortcut(KStandardShortcut::Home));
   connect( m_paHome, SIGNAL( triggered( Qt::MouseButtons, Qt::KeyboardModifiers) ), this,
@@ -3765,7 +3765,7 @@ void KonqMainWindow::initActions()
   action->setText(i18n( "&Storage Media" ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotGoMedia() ));
   action = actionCollection()->addAction("go_network_folders");
-  action->setIcon(KIcon("network"));
+  action->setIcon(KIcon("network-wired"));
   action->setText(i18n( "&Network Folders" ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotGoNetworkFolders() ));
   action = actionCollection()->addAction("go_settings");
@@ -3774,7 +3774,7 @@ void KonqMainWindow::initActions()
   connect(action, SIGNAL(triggered(bool)), SLOT( slotGoSettings() ));
   //(void) new KAction( i18n( "Sidebar Configuration" ), 0, this, SLOT( slotGoDirTree() ), actionCollection(), "go_dirtree" );
   action = actionCollection()->addAction("go_trash");
-  action->setIcon(KIcon("trashcan_full"));
+  action->setIcon(KIcon("user-trash-full"));
   action->setText(i18n( "Trash" ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotGoTrash() ));
   action = actionCollection()->addAction("go_autostart");
@@ -3824,7 +3824,7 @@ void KonqMainWindow::initActions()
   m_paConfigureExtensions->setText( i18n("Configure Extensions...") );
   connect(m_paConfigureExtensions, SIGNAL(triggered(bool) ), SLOT( slotConfigureExtensions()));
   m_paConfigureSpellChecking = actionCollection()->addAction("configurespellcheck");
-  m_paConfigureSpellChecking->setIcon(KIcon("spellcheck"));
+  m_paConfigureSpellChecking->setIcon(KIcon("tools-check-spelling"));
   m_paConfigureSpellChecking->setText(i18n("Configure Spell Checking..."));
   connect(m_paConfigureSpellChecking, SIGNAL(triggered(bool)), SLOT( slotConfigureSpellChecking()));
 
@@ -3840,7 +3840,7 @@ void KonqMainWindow::initActions()
   connect(m_paSplitViewVer, SIGNAL(triggered(bool)), SLOT( slotSplitViewVertical() ));
   m_paSplitViewVer->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_T);
   m_paAddTab = actionCollection()->addAction("newtab");
-  m_paAddTab->setIcon( KIcon("tab_new") );
+  m_paAddTab->setIcon( KIcon("tab-new") );
   m_paAddTab->setText( i18n( "&New Tab" ) );
   connect(m_paAddTab, SIGNAL(triggered(bool)), SLOT( slotAddTab() ));
   m_paAddTab->setShortcuts(KShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_N, Qt::CTRL+Qt::Key_T));
@@ -3861,12 +3861,12 @@ void KonqMainWindow::initActions()
   connect(m_paRemoveView, SIGNAL(triggered(bool)), SLOT( slotRemoveView() ));
   m_paRemoveView->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_R);
   m_paRemoveTab = actionCollection()->addAction("removecurrenttab");
-  m_paRemoveTab->setIcon( KIcon("tab_remove") );
+  m_paRemoveTab->setIcon( KIcon("tab-remove") );
   m_paRemoveTab->setText( i18n( "Close Current Tab" ) );
   connect(m_paRemoveTab, SIGNAL(triggered(bool)), SLOT( slotRemoveTab() ));
   m_paRemoveTab->setShortcut(Qt::CTRL+Qt::Key_W);
   m_paRemoveOtherTabs = actionCollection()->addAction("removeothertabs");
-  m_paRemoveOtherTabs->setIcon( KIcon("tab_remove") );
+  m_paRemoveOtherTabs->setIcon( KIcon("tab-remove") );
   m_paRemoveOtherTabs->setText( i18n( "Close &Other Tabs" ) );
   connect(m_paRemoveOtherTabs, SIGNAL(triggered(bool)), SLOT( slotRemoveOtherTabsPopup() ));
 
@@ -3923,7 +3923,7 @@ void KonqMainWindow::initActions()
   KShortcut reloadShortcut = KStandardShortcut::shortcut(KStandardShortcut::Reload);
   reloadShortcut.setAlternate(Qt::CTRL + Qt::Key_R);
   m_paReload = actionCollection()->addAction("reload");
-  m_paReload->setIcon( KIcon("reload") );
+  m_paReload->setIcon( KIcon("view-refresh") );
   m_paReload->setText( i18n( "&Reload" ) );
   connect(m_paReload, SIGNAL(triggered(bool)), SLOT( slotReload() ));
   m_paReload->setShortcuts(reloadShortcut);
@@ -3951,7 +3951,7 @@ void KonqMainWindow::initActions()
   m_paPaste = KStandardAction::paste( 0, 0, this );
   actionCollection()->addAction( "paste", m_paPaste );
   m_paStop = actionCollection()->addAction("stop");
-  m_paStop->setIcon( KIcon("stop") );
+  m_paStop->setIcon( KIcon("process-stop") );
   m_paStop->setText( i18n( "&Stop" ) );
   connect(m_paStop, SIGNAL(triggered(bool)), SLOT( slotStop() ));
   m_paStop->setShortcut(Qt::Key_Escape);
@@ -3960,14 +3960,14 @@ void KonqMainWindow::initActions()
   m_paRename->setText( i18n( "&Rename" ) );
   m_paRename->setShortcut(Qt::Key_F2);
   m_paTrash = actionCollection()->addAction("trash");
-  m_paTrash->setIcon( KIcon("edittrash") );
+  m_paTrash->setIcon( KIcon("edit-trash") );
   m_paTrash->setText( i18n( "&Move to Trash" ) );
   m_paTrash->setShortcut(Qt::Key_Delete);
   connect( m_paTrash, SIGNAL( triggered( Qt::MouseButtons, Qt::KeyboardModifiers ) ),
            this, SLOT( slotTrashActivated( Qt::MouseButtons, Qt::KeyboardModifiers ) ) );
 
   m_paDelete = actionCollection()->addAction("del");
-  m_paDelete->setIcon( KIcon("editdelete") );
+  m_paDelete->setIcon( KIcon("edit-delete") );
   m_paDelete->setText( i18n( "&Delete" ) );
   m_paDelete->setShortcut(Qt::SHIFT+Qt::Key_Delete);
 
@@ -4025,7 +4025,7 @@ void KonqMainWindow::initActions()
   connect(action, SIGNAL(triggered(bool) ), SLOT( slotIntro() ));
 
   QAction *goUrl = actionCollection()->addAction("go_url");
-  goUrl->setIcon( KIcon("key_enter") );
+  goUrl->setIcon( KIcon("browser-go") );
   goUrl->setText( i18n( "Go" ) );
   connect(goUrl, SIGNAL(triggered(bool)), SLOT( goURL() ));
   goUrl->setWhatsThis( i18n( "Go<p>"
@@ -4822,12 +4822,12 @@ void KonqMainWindow::slotPopupMenu( KXMLGUIClient *client, const QPoint &_global
         actNewWindow->setToolTip( i18n( "Open the document in current window" ) );
       }
       actNewWindow = konqyMenuClient->actionCollection()->addAction( "newview" );
-      actNewWindow->setIcon( KIcon("window_new") );
+      actNewWindow->setIcon( KIcon("window-new") );
       actNewWindow->setText( i18n( "Open in New &Window" ) );
       connect(actNewWindow, SIGNAL(triggered(bool)), SLOT( slotPopupNewWindow() ));
       actNewWindow->setToolTip( i18n( "Open the document in a new window" ) );
       actNewTab = konqyMenuClient->actionCollection()->addAction( "openintab" );
-      actNewTab->setIcon( KIcon("tab_new") );
+      actNewTab->setIcon( KIcon("tab-new") );
       actNewTab->setText( i18n( "Open in &New Tab" ) );
       connect(actNewTab, SIGNAL(triggered(bool)), SLOT( slotPopupNewTab() ));
       actNewTab->setToolTip( i18n( "Open the document in a new tab" ) );
@@ -5299,7 +5299,7 @@ void KonqMainWindow::closeEvent( QCloseEvent *e )
                         "are you sure you want to quit?"),
                   i18n("Confirmation"),
                   KStandardGuiItem::quit(),
-                  KGuiItem(i18n( "C&lose Current Tab" ), "tab_remove"),
+                  KGuiItem(i18n( "C&lose Current Tab" ), "tab-remove"),
                   "MultipleTabConfirm"
               )
             ) {
@@ -5332,7 +5332,7 @@ void KonqMainWindow::closeEvent( QCloseEvent *e )
             m_pViewManager->showTab( view );
             if ( KMessageBox::warningContinueCancel( this,
               i18n("This tab contains changes that have not been submitted.\nClosing the window will discard these changes."),
-              i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"exit"), "discardchangesclose") != KMessageBox::Continue )
+              i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"application-exit"), "discardchangesclose") != KMessageBox::Continue )
             {
               e->ignore();
               m_pViewManager->showTab( originalView );
@@ -5350,7 +5350,7 @@ void KonqMainWindow::closeEvent( QCloseEvent *e )
       if (prop.isValid() && prop.toBool())
          if ( KMessageBox::warningContinueCancel( this,
            i18n("This page contains changes that have not been submitted.\nClosing the window will discard these changes."),
-           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"exit"), "discardchangesclose") != KMessageBox::Continue )
+           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"application-exit"), "discardchangesclose") != KMessageBox::Continue )
          {
            e->ignore();
            return;
