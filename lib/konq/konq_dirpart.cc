@@ -139,11 +139,11 @@ KonqDirPart::KonqDirPart( QObject *parent )
     connect( QApplication::clipboard(), SIGNAL(dataChanged()), this, SLOT(slotClipboardDataChanged()) );
 
     m_paIncIconSize = actionCollection()->addAction( "incIconSize" );
-    m_paIncIconSize->setIcon( KIcon( "viewmag+" ) );
+    m_paIncIconSize->setIcon( KIcon( "zoom-in" ) );
     m_paIncIconSize->setText( i18n( "Enlarge Icons" ) );
     connect( m_paIncIconSize, SIGNAL( triggered() ), this, SLOT( slotIncIconSize() ) );
     m_paDecIconSize = actionCollection()->addAction( "decIconSize" );
-    m_paDecIconSize->setIcon( KIcon( "viewmag-" ) );
+    m_paDecIconSize->setIcon( KIcon( "zoom-out" ) );
     m_paDecIconSize->setText( i18n( "Shrink Icons" ) );
     connect( m_paDecIconSize, SIGNAL( triggered() ), this, SLOT( slotDecIconSize() ) );
 

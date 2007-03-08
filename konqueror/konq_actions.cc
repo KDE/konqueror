@@ -353,7 +353,7 @@ uint KonqMostOftenURLSAction::s_maxEntries = 0;
 
 KonqMostOftenURLSAction::KonqMostOftenURLSAction( const QString& text,
 						  QObject* parent )
-    : KActionMenu( KIcon("goto"), text, parent )
+    : KActionMenu( KIcon("goto-page"), text, parent )
 {
     setDelayed( false );
 

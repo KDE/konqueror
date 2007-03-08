@@ -58,9 +58,9 @@ class KHTMLSideBar : public KHTMLPart
 						this, SLOT(loadPage()));
 			}
 			_menu = new KMenu(widget());
-			_menu->insertItem(SmallIcon("reload"), i18n("&Reload"),
+			_menu->insertItem(SmallIcon("view-refresh"), i18n("&Reload"),
 					this, SIGNAL(reload()));
-			_menu->insertItem(SmallIcon("reload"), i18n("Set &Automatic Reload"),                                                  this, SIGNAL(setAutoReload()));
+			_menu->insertItem(SmallIcon("view-refresh"), i18n("Set &Automatic Reload"),                                                  this, SIGNAL(setAutoReload()));
 
 			connect(this,
 				SIGNAL(popupMenu(const QString&,const QPoint&)),

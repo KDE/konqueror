@@ -95,7 +95,7 @@ void KonqSidebarDirTreeItem::setOpen( bool open )
     {
         int size = KIconLoader::global()->currentSize( K3Icon::Small );
         if ( open )
-            setPixmap( 0, DesktopIcon( "folder_open", size ) );
+            setPixmap( 0, DesktopIcon( "folder-open", size ) );
         else
             setPixmap( 0, m_fileItem->pixmap( size ) );
     }
