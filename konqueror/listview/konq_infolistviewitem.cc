@@ -128,13 +128,13 @@ void KonqInfoListViewItem::gotMetaInfo()
     {
         KFileMetaInfoItem kfmii = info.item(*it);
 
-        m_columnTypes.append(kfmii.type());
+        m_columnTypes.append(kfmii.value().type());
         m_columnValues.append(kfmii.value());
 
         if (!kfmii.isValid())
             continue;
 
-        QString s = kfmii.string().simplified();
+        QString s = kfmii.value().toString().simplified();
         setText(i, s.isNull() ? QString("") : s);
     }
 }

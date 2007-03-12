@@ -87,7 +87,8 @@ void KonqInfoListViewWidget::createFavoriteColumns()
         kDebug(1203) << "removing column " << columnText(columns()-1) << endl;
         removeColumn(columns()-1);
     }
-
+#warning port this
+/*
     // we need to get the preferred keys of the favorite
     const KFileMimeTypeInfo* mimeTypeInfo;
 
@@ -130,9 +131,9 @@ void KonqInfoListViewWidget::createFavoriteColumns()
         }
     }
     else
-    {
+    {*/
         KonqBaseListViewWidget::createColumns();
-    }
+ //   }
 
 }
 
@@ -347,6 +348,8 @@ void KonqInfoListViewWidget::determineCounts(const KFileItemList& list)
     // and look for the plugins
     kDebug(1203) << "counts are:\n";
 
+#warning port this
+/*
     KFileMetaInfoProvider* prov = KFileMetaInfoProvider::self();
 
     QStringList mtlist;
@@ -388,7 +391,7 @@ void KonqInfoListViewWidget::determineCounts(const KFileItemList& list)
     {
           m_mtSelector->setCurrentItem(mtlist.indexOf(m_favorite.mimetype->comment()));
           kDebug(1203) << "favorite mimetype is " << m_favorite.mimetype->name() << endl;
-    }
+    }*/
     createFavoriteColumns();
 }
 

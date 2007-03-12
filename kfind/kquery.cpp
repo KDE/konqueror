@@ -271,20 +271,15 @@ void KQuery::processQuery( KFileItem* file)
           return;
 
        KFileMetaInfo metadatas(filename);
-       KFileMetaInfoItem metaitem;
        QStringList metakeys;
        QString strmetakeycontent;
 
-       if(metadatas.isEmpty())
-          return;
-
-       metakeys=metadatas.supportedKeys();
-       for ( QStringList::Iterator it = metakeys.begin(); it != metakeys.end(); ++it )
+       metakeys = metadatas.supportedKeys();
+       for (QStringList::Iterator it = metakeys.begin(); it != metakeys.end(); ++it )
        {
           if (!metaKeyRx->exactMatch(*it))
              continue;
-          metaitem=metadatas.item(*it);
-          strmetakeycontent=metaitem.string();
+          strmetakeycontent=metadatas.item(*it).value().toString();
           if(strmetakeycontent.indexOf(m_metainfo)!=-1)
           {
              foundmeta=true;
