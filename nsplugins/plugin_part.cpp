@@ -227,7 +227,7 @@ bool PluginPart::openUrl(const KUrl &url)
     closeUrl();
     kDebug(1432) << "-> PluginPart::openUrl" << endl;
 
-    m_url = url;
+    setUrl(url);
     QString surl = url.url();
     QString smime = _extension->urlArgs().serviceType;
     bool reload = _extension->urlArgs().reload;
@@ -382,7 +382,7 @@ void PluginPart::changeSrc(const QString& url) {
 
 void PluginPart::saveAs() {
     KUrl savefile = KFileDialog::getSaveUrl(QString(), QString(), _widget);
-    KIO::NetAccess::file_copy(m_url, savefile, _widget);
+    KIO::NetAccess::file_copy(url(), savefile, _widget);
 }
 
 

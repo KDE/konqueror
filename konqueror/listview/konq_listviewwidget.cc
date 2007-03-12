@@ -1253,7 +1253,7 @@ void KonqBaseListViewWidget::slotRedirection( const KUrl & url )
    const QString prettyURL = url.pathOrUrl();
    emit m_pBrowserView->extension()->setLocationBarUrl( prettyURL );
    emit m_pBrowserView->setWindowCaption( prettyURL );
-   m_pBrowserView->m_url = url;
+   m_pBrowserView->setUrl( url );
    m_url = url;
 }
 

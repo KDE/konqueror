@@ -1211,7 +1211,7 @@ void KonqKfmIconView::slotRedirection( const KUrl & url )
     emit m_extension->setLocationBarUrl( prettyURL );
     emit setWindowCaption( prettyURL );
     m_pIconView->setUrl( url );
-    m_url = url;
+    setUrl(url);
 }
 
 void KonqKfmIconView::slotSelectionChanged()
