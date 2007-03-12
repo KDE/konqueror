@@ -397,7 +397,7 @@ void KonqDirPart::saveFindState( QDataStream& stream )
 
     // When we have a find part, our own URL wasn't saved (see KonqDirPartBrowserExtension)
     // So let's do it here
-    stream << m_url;
+    stream << url();
 
     KParts::BrowserExtension* ext = KParts::BrowserExtension::childObject( m_findPart );
     if( !ext )
@@ -409,7 +409,9 @@ void KonqDirPart::saveFindState( QDataStream& stream )
 void KonqDirPart::restoreFindState( QDataStream& stream )
 {
     // Restore our own URL
-    stream >> m_url;
+    KUrl u;
+    stream >> u;
+    setUrl(u);
 
     emit findOpen( this );
 
@@ -647,7 +649,7 @@ bool KonqDirPart::openUrl(const KUrl& url)
         emit findClosed( this );
     }
 
-    m_url = url;
+    setUrl(url);
     emit aboutToOpenURL ();
 
     return doOpenURL(url);
