@@ -76,7 +76,7 @@ public:
 
     virtual void kill( bool ) { KonqUndoManager::self()->stopUndo( true ); KIO::Job::doKill(); }
 
-    void emitFinished() { emit finished(this, progressId()); }
+    void emitResult() { KIO::Job::emitResult(); }
 };
 
 KonqCommandRecorder::KonqCommandRecorder( KonqUndoManager::CommandType op, const KUrl::List &src, const KUrl &dst, KIO::Job *job )
@@ -366,7 +366,6 @@ void KonqUndoManager::stopUndo( bool step )
 
 void KonqUndoManager::slotResult( KJob *job )
 {
-    d->m_undoJob->emitFinished();
     d->m_currentJob = 0;
     if ( job->error() )
     {
@@ -540,8 +539,7 @@ void KonqUndoManager::stepRemovingDirectories()
         if ( d->m_undoJob )
         {
             kDebug(1203) << "KonqUndoManager::stepRemovingDirectories deleting undojob" << endl;
-            d->m_undoJob->emitFinished();
-            delete d->m_undoJob;
+            d->m_undoJob->emitResult();
             d->m_undoJob = 0;
         }
         QList<KUrl>::ConstIterator it = d->m_dirsToUpdate.begin();
