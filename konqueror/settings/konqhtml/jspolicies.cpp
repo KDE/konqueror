@@ -52,28 +52,29 @@ JSPolicies::~JSPolicies() {
 void JSPolicies::load() {
   Policies::load();
 
+  KConfigGroup cg(config, groupname);
   QString key;
 
 //  enableJavaScriptDebugCB->setChecked( m_pConfig->readEntry("EnableJavaScriptDebug", QVariant(false)).toBool());
 //  enableDebugOutputCB->setChecked( m_pConfig->readEntry("EnableJSDebugOutput", QVariant(false)).toBool() );
   key = prefix + "WindowOpenPolicy";
-  window_open = config->readEntry(key,
+  window_open = cg.readEntry(key,
   	is_global ? KHTMLSettings::KJSWindowOpenSmart : INHERIT_POLICY);
 
   key = prefix + "WindowResizePolicy";
-  window_resize = config->readEntry(key,
+  window_resize = cg.readEntry(key,
   	is_global ? KHTMLSettings::KJSWindowResizeAllow : INHERIT_POLICY);
 
   key = prefix + "WindowMovePolicy";
-  window_move = config->readEntry(key,
+  window_move = cg.readEntry(key,
   	is_global ? KHTMLSettings::KJSWindowMoveAllow : INHERIT_POLICY);
 
   key = prefix + "WindowFocusPolicy";
-  window_focus = config->readEntry(key,
+  window_focus = cg.readEntry(key,
   	is_global ? KHTMLSettings::KJSWindowFocusAllow : INHERIT_POLICY);
 
   key = prefix + "WindowStatusPolicy";
-  window_status = config->readEntry(key,
+  window_status = cg.readEntry(key,
   	is_global ? KHTMLSettings::KJSWindowStatusAllow : INHERIT_POLICY);
 }
 
