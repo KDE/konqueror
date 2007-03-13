@@ -100,17 +100,17 @@ void SMBRoOptions::load()
    KConfig *cfg = new KConfig("kioslaverc");
 
    QString tmp;
-   cfg->setGroup( "Browser Settings/SMBro" );
-   m_userLe->setText(cfg->readEntry("User"));
-//   m_workgroupLe->setText(cfg->readEntry("Workgroup"));
-//   m_showHiddenShares->setChecked(cfg->readEntry("ShowHiddenShares", QVariant(false)).toBool());
+   KConfigGroup group = cfg->group("Browser Settings/SMBro" );
+   m_userLe->setText(group.readEntry("User"));
+//   m_workgroupLe->setText(group.readEntry("Workgroup"));
+//   m_showHiddenShares->setChecked(group.readEntry("ShowHiddenShares", QVariant(false)).toBool());
 
    QStringList _strList = KGlobal::charsets()->availableEncodingNames();
    QString m_encoding = QTextCodec::codecForLocale()->name();
-   m_encodingList->setCurrentIndex( _strList.indexOf( cfg->readEntry( "Encoding", m_encoding.toLower() ) ) );
+   m_encodingList->setCurrentIndex( _strList.indexOf( group.readEntry( "Encoding", m_encoding.toLower() ) ) );
 
    // unscramble
-   QString scrambled = cfg->readEntry( "Password" );
+   QString scrambled = group.readEntry( "Password" );
    QString password = "";
    for (int i=0; i<scrambled.length()/3; i++)
    {
@@ -132,11 +132,11 @@ void SMBRoOptions::save()
 {
    KConfig *cfg = new KConfig("kioslaverc");
 
-   cfg->setGroup( "Browser Settings/SMBro" );
-   cfg->writeEntry( "User", m_userLe->text());
-//   cfg->writeEntry( "Workgroup", m_workgroupLe->text());
-//   cfg->writeEntry( "ShowHiddenShares", m_showHiddenShares->isChecked());
-   cfg->writeEntry( "Encoding", m_encodingList->currentText() );
+   KConfigGroup group = cfg->group("Browser Settings/SMBro" );
+   group.writeEntry( "User", m_userLe->text());
+//   group.writeEntry( "Workgroup", m_workgroupLe->text());
+//   group.writeEntry( "ShowHiddenShares", m_showHiddenShares->isChecked());
+   group.writeEntry( "Encoding", m_encodingList->currentText() );
 
    //taken from Nicola Brodu's smb ioslave
    //it's not really secure, but at
@@ -154,7 +154,7 @@ void SMBRoOptions::save()
       scrambled += (char)(a2+'A');
       scrambled += (char)(a3+'0');
    }
-   cfg->writeEntry( "Password", scrambled);
+   group.writeEntry( "Password", scrambled);
 
    delete cfg;
 }

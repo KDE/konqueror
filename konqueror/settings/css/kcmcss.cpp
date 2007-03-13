@@ -106,19 +106,18 @@ CSSConfig::CSSConfig(QWidget *parent, const QStringList &)
 void CSSConfig::load()
 {
   KConfig *c = new KConfig("kcmcssrc", KConfig::NoGlobals);
-
-  c->setGroup("Stylesheet");
-  QString u = c->readEntry("Use", "default");
+  KConfigGroup group = c->group("Stylesheet");
+  QString u = group.readEntry("Use", "default");
   configDialog->useDefault->setChecked(u == "default");
   configDialog->useUser->setChecked(u == "user");
   configDialog->useAccess->setChecked(u == "access");
-  configDialog->urlRequester->setUrl(c->readEntry("SheetName"));
+  configDialog->urlRequester->setUrl(group.readEntry("SheetName"));
 
-  c->setGroup("Font");
-  customDialog->basefontsize->setEditText(QString::number(c->readEntry("BaseSize", 12)));
-  customDialog->dontScale->setChecked(c->readEntry("DontScale", false));
+  group = c->group("Font");
+  customDialog->basefontsize->setEditText(QString::number(group.readEntry("BaseSize", 12)));
+  customDialog->dontScale->setChecked(group.readEntry("DontScale", false));
 
-  QString fname = c->readEntry("Family", "Arial");
+  QString fname = group.readEntry("Family", "Arial");
   for (int i=0; i < customDialog->fontFamily->count(); ++i)
     if (customDialog->fontFamily->itemText(i) == fname)
       {
@@ -126,24 +125,24 @@ void CSSConfig::load()
 	break;
       }
 
-  customDialog->sameFamily->setChecked(c->readEntry("SameFamily", false));
+  customDialog->sameFamily->setChecked(group.readEntry("SameFamily", false));
 
-  c->setGroup("Colors");
-  QString m = c->readEntry("Mode", "black-on-white");
+  group = c->group("Colors");
+  QString m = group.readEntry("Mode", "black-on-white");
   customDialog->blackOnWhite->setChecked(m == "black-on-white");
   customDialog->whiteOnBlack->setChecked(m == "white-on-black");
   customDialog->customColor->setChecked(m == "custom");
 
   QColor white (Qt::white);
   QColor black (Qt::black);
-  customDialog->backgroundColorButton->setColor(c->readEntry("BackColor", white));
-  customDialog->foregroundColorButton->setColor(c->readEntry("ForeColor", black));
-  customDialog->sameColor->setChecked(c->readEntry("SameColor", false));
+  customDialog->backgroundColorButton->setColor(group.readEntry("BackColor", white));
+  customDialog->foregroundColorButton->setColor(group.readEntry("ForeColor", black));
+  customDialog->sameColor->setChecked(group.readEntry("SameColor", false));
 
   // Images
-  c->setGroup("Images");
-  customDialog->hideImages->setChecked(c->readEntry("Hide", false));
-  customDialog->hideBackground->setChecked(c->readEntry("HideBackground", true));
+  group = c->group("Images");
+  customDialog->hideImages->setChecked(group.readEntry("Hide", false));
+  customDialog->hideBackground->setChecked(group.readEntry("HideBackground", true));
 
   delete c;
 }
@@ -153,36 +152,35 @@ void CSSConfig::save()
 {
   // write to config file
   KConfig *c = new KConfig("kcmcssrc", KConfig::NoGlobals);
-
-  c->setGroup("Stylesheet");
+  KConfigGroup group = c->group("Stylesheet");
   if (configDialog->useDefault->isChecked())
-    c->writeEntry("Use", "default");
+    group.writeEntry("Use", "default");
   if (configDialog->useUser->isChecked())
-    c->writeEntry("Use", "user");
+    group.writeEntry("Use", "user");
   if (configDialog->useAccess->isChecked())
-    c->writeEntry("Use", "access");
-  c->writeEntry("SheetName", configDialog->urlRequester->url().url());
+    group.writeEntry("Use", "access");
+  group.writeEntry("SheetName", configDialog->urlRequester->url().url());
 
-  c->setGroup("Font");
-  c->writeEntry("BaseSize", customDialog->basefontsize->currentText());
-  c->writeEntry("DontScale", customDialog->dontScale->isChecked());
-  c->writeEntry("SameFamily", customDialog->sameFamily->isChecked());
-  c->writeEntry("Family", customDialog->fontFamily->currentText());
+  group = c->group("Font");
+  group.writeEntry("BaseSize", customDialog->basefontsize->currentText());
+  group.writeEntry("DontScale", customDialog->dontScale->isChecked());
+  group.writeEntry("SameFamily", customDialog->sameFamily->isChecked());
+  group.writeEntry("Family", customDialog->fontFamily->currentText());
 
-  c->setGroup("Colors");
+  group = c->group("Colors");
   if (customDialog->blackOnWhite->isChecked())
-    c->writeEntry("Mode", "black-on-white");
+    group.writeEntry("Mode", "black-on-white");
   if (customDialog->whiteOnBlack->isChecked())
-    c->writeEntry("Mode", "white-on-black");
+    group.writeEntry("Mode", "white-on-black");
   if (customDialog->customColor->isChecked())
-    c->writeEntry("Mode", "custom");
-  c->writeEntry("BackColor", customDialog->backgroundColorButton->color());
-  c->writeEntry("ForeColor", customDialog->foregroundColorButton->color());
-  c->writeEntry("SameColor", customDialog->sameColor->isChecked());
+    group.writeEntry("Mode", "custom");
+  group.writeEntry("BackColor", customDialog->backgroundColorButton->color());
+  group.writeEntry("ForeColor", customDialog->foregroundColorButton->color());
+  group.writeEntry("SameColor", customDialog->sameColor->isChecked());
 
-  c->setGroup("Images");
-  c->writeEntry("Hide", customDialog->hideImages->isChecked());
-  c->writeEntry("HideBackground", customDialog->hideBackground->isChecked());
+  group = c->group("Images");
+  group.writeEntry("Hide", customDialog->hideImages->isChecked());
+  group.writeEntry("HideBackground", customDialog->hideBackground->isChecked());
 
   c->sync();
   delete c;
@@ -202,14 +200,13 @@ void CSSConfig::save()
 
   // make konqueror use the right stylesheet
   c = new KConfig("konquerorrc", KConfig::NoGlobals);
-
-  c->setGroup("HTML Settings");
-  c->writeEntry("UserStyleSheetEnabled", !configDialog->useDefault->isChecked());
+  group = c->group("HTML Settings");
+  group.writeEntry("UserStyleSheetEnabled", !configDialog->useDefault->isChecked());
 
   if (configDialog->useUser->isChecked())
-    c->writeEntry("UserStyleSheet", configDialog->urlRequester->url().url());
+    group.writeEntry("UserStyleSheet", configDialog->urlRequester->url().url());
   if (configDialog->useAccess->isChecked())
-    c->writeEntry("UserStyleSheet", dest);
+    group.writeEntry("UserStyleSheet", dest);
 
   c->sync();
   delete c;
