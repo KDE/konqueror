@@ -87,7 +87,9 @@ void KonqInfoListViewWidget::createFavoriteColumns()
         kDebug(1203) << "removing column " << columnText(columns()-1) << endl;
         removeColumn(columns()-1);
     }
+#ifdef __GNUC__
 #warning port this
+#endif
 /*
     // we need to get the preferred keys of the favorite
     const KFileMimeTypeInfo* mimeTypeInfo;
@@ -348,7 +350,9 @@ void KonqInfoListViewWidget::determineCounts(const KFileItemList& list)
     // and look for the plugins
     kDebug(1203) << "counts are:\n";
 
+#ifdef __GNUC__
 #warning port this
+#endif
 /*
     KFileMetaInfoProvider* prov = KFileMetaInfoProvider::self();
 
