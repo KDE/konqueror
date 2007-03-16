@@ -24,7 +24,6 @@
 #include <ktoolbar.h>
 #include <kanimatedbutton.h>
 #include <kdebug.h>
-#include <kstringhandler.h>
 
 #include <konq_pixmapprovider.h>
 #include <kicon.h>
@@ -64,11 +63,12 @@ void KonqBidiHistoryAction::fillHistoryPopup( const QList<HistoryEntry*> &histor
   } else if ( startPos )
       index += startPos; // Jump to specified start pos
 
+  QFontMetrics fm = popup->fontMetrics();
   uint i = 0;
   while ( index < history.count() && index >= 0 )
   {
       QString text = history[ index ]->title;
-      text = KStringHandler::cEmSqueeze(text, popup->fontMetrics(), 30); //CT: squeeze
+      text = fm.elidedText(text, Qt::ElideMiddle, fm.maxWidth() * 30);
       text.replace( "&", "&&" );
       if ( checkCurrentItem && history[ index ] == current )
       {
