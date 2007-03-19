@@ -29,7 +29,6 @@
 
 #include <kdebug.h>
 
-#include <krfcdate.h>
 #include <kcharsets.h>
 #include <kbookmarkmanager.h>
 
