@@ -344,8 +344,7 @@ void KQuery::processQuery( KFileItem* file)
          }
        } else if( !m_search_binary && !file->mimetype().startsWith("text/") &&
            file->url().isLocalFile() ) {
-         KMimeType::Format f = KMimeType::findFormatByFileContent(file->url().path());
-         if ( !f.text ) {
+         if ( KMimeType::isBinaryData(file->url().path()) ) {
            kDebug() << "ignoring, not a text file: " << file->url() << endl;
            return;
          }
