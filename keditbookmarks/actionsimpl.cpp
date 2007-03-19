@@ -32,6 +32,7 @@
 #include <stdlib.h>
 
 #include <QClipboard>
+#include <QMimeData>
 #include <QPainter>
 
 #include <kdebug.h>
