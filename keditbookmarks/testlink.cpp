@@ -29,6 +29,7 @@
 
 #include <kdebug.h>
 
+#include <kdatetime.h>
 #include <kcharsets.h>
 #include <kbookmarkmanager.h>
 
@@ -125,7 +126,7 @@ void TestLinkItr::slotJobData(KIO::Job *job, const QByteArray &data) {
     } else {
         QString modDate = transfer->queryMetaData("modified");
         if (!modDate.isEmpty()) {
-            //FIXME curItem()->nsPut(QString::number(KRFCDate::parseDate(modDate)));
+            //FIXME curItem()->nsPut(QString::number(KDateTime::fromString(modDate, KDateTime::RFCDate).toTime_t()));
         }
     }
 
@@ -152,7 +153,7 @@ void TestLinkItr::slotJobResult(KJob *job) {
 
     if (chkErr) {
         if (!modDate.isEmpty()) {
-            //FIXME curItem()->nsPut(QString::number(KRFCDate::parseDate(modDate)));
+            //FIXME curItem()->nsPut(QString::number(KDateTime::fromString(modDate, KDateTime::RFCDate).toTime_t()));
         } else if (!m_errSet) {
             //FIXME curItem()->nsPut(QString::number(KRFCDate::parseDate("0")));
         }
