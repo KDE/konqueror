@@ -248,7 +248,7 @@ void FileTypeDetails::updateAskSave()
     // - multipart/* ("server push", see kmultipart)
     // - other strange 'internal' mimetypes like print/manager...
     if ( mime->is( "text/html" ) ||
-         mime->is( "text/xml" ) ||
+         mime->is( "application/xml" ) ||
          mime->is( "inode/directory" ) ||
          mimeType.startsWith( "image" ) ||
          mime->is( "multipart/x-mixed-replace" ) ||
