@@ -40,7 +40,7 @@ class KQuery : public QObject
 
   void start();
   void kill();
-  const KUrl& url()              {return m_url;};
+  const KUrl& url()              {return m_url;}
 
  private:
   /* Check if file meets the find's requirements*/

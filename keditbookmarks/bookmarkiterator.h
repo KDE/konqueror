@@ -62,7 +62,7 @@ public:
    void insertItr(BookmarkIterator*);
 protected:
    BookmarkIteratorHolder();
-   virtual ~BookmarkIteratorHolder() {};
+   virtual ~BookmarkIteratorHolder() {}
    virtual void doItrListChanged() = 0;
    int count() const { return m_itrs.count(); }
 private:

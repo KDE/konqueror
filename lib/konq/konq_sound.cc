@@ -91,8 +91,8 @@ class KonqSoundFactory : public KLibFactory
 {
 public:
 	KonqSoundFactory(QObject *parent = 0)
-		: KLibFactory(parent) {};
-	virtual ~KonqSoundFactory() {};
+		: KLibFactory(parent) {}
+	virtual ~KonqSoundFactory() {}
 
 protected:
 	virtual QObject *createObject(QObject * = 0,

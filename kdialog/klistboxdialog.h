@@ -32,9 +32,9 @@ class KListBoxDialog : public KDialog
 public:
 
   KListBoxDialog(const QString &text, QWidget *parent=0);
-  ~KListBoxDialog() {};
+  ~KListBoxDialog() {}
 
-  Q3ListBox &getTable() { return *table; };
+  Q3ListBox &getTable() { return *table; }
 
   void insertItem( const QString& text );
   void setCurrentItem ( const QString& text );

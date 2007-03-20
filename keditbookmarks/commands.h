@@ -35,8 +35,8 @@
 class IKEBCommand
 {
 public:
-   IKEBCommand() {};
-   virtual ~IKEBCommand() {};
+   IKEBCommand() {}
+   virtual ~IKEBCommand() {}
    virtual QString affectedBookmarks() const = 0;
 };
 
@@ -44,8 +44,8 @@ class KEBMacroCommand : public KMacroCommand, public IKEBCommand
 {
 public:
    KEBMacroCommand(const QString &name)
-      : KMacroCommand(name) {};
-   virtual ~KEBMacroCommand() {};
+      : KMacroCommand(name) {}
+   virtual ~KEBMacroCommand() {}
    virtual QString affectedBookmarks() const;
 };
 
@@ -53,7 +53,7 @@ class DeleteManyCommand : public KEBMacroCommand
 {
 public:
    DeleteManyCommand(const QString &name, const QList<KBookmark> & bookmarks);
-   virtual ~DeleteManyCommand() {};
+   virtual ~DeleteManyCommand() {}
 };
 
 class CreateCommand : public KCommand, public IKEBCommand
@@ -111,7 +111,7 @@ class EditCommand : public KCommand, public IKEBCommand
 {
 public:
    EditCommand(const QString & address, int col, const QString & newValue);
-   virtual ~EditCommand() {};
+   virtual ~EditCommand() {}
    virtual void execute();
    virtual void unexecute();
    virtual QString name() const;
@@ -139,7 +139,7 @@ public:
    virtual QString name() const { 
       // NOTE - DeleteCommand needs no name, its always embedded in a macrocommand
       return QString();
-   };
+   }
    virtual QString affectedBookmarks() const;
    static KEBMacroCommand* deleteAll(const KBookmarkGroup &parentGroup);
 private:
