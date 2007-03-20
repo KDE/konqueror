@@ -49,7 +49,7 @@ public:
      */
     PolicyDialog(Policies *policies, QWidget *parent = 0, const char *name = 0 );
 
-    virtual ~PolicyDialog() {};
+    virtual ~PolicyDialog() {}
 
     /*
     * @return whether this feature should be activated, deactivated or

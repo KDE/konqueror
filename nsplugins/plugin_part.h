@@ -97,7 +97,7 @@ public:
 protected:
   virtual bool openUrl(const KUrl &url);
   virtual bool closeUrl();
-  virtual bool openFile() { return false; };
+  virtual bool openFile() { return false; }
 
 protected Q_SLOTS:
   void pluginResized(int,int);
