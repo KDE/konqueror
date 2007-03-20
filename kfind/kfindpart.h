@@ -59,8 +59,8 @@ public:
     virtual void restoreState( QDataStream &stream );
 
   // "Cut" icons : disable those whose URL is in lst, enable the rest //added for konqdirpart
-  virtual void disableIcons( const KUrl::List & ){};
-  virtual const KFileItem * currentItem(){return 0;};
+  virtual void disableIcons( const KUrl::List & ){}
+  virtual const KFileItem * currentItem(){return 0;}
 
 Q_SIGNALS:
     // Konqueror connects directly to those signals
@@ -82,13 +82,13 @@ protected Q_SLOTS:
     void newFiles(const KFileItemList&);
   // slots connected to the directory lister  //added for konqdirpart
 //  virtual void slotStarted();
-  virtual void slotCanceled(){};
-  virtual void slotCompleted(){};
-  virtual void slotNewItems( const KFileItemList& ){};
-  virtual void slotDeleteItem( KFileItem * ){};
-  virtual void slotRefreshItems( const KFileItemList& ){};
-  virtual void slotClear(){};
-  virtual void slotRedirection( const KUrl & ){};
+  virtual void slotCanceled(){}
+  virtual void slotCompleted(){}
+  virtual void slotNewItems( const KFileItemList& ){}
+  virtual void slotDeleteItem( KFileItem * ){}
+  virtual void slotRefreshItems( const KFileItemList& ){}
+  virtual void slotClear(){}
+  virtual void slotRedirection( const KUrl & ){}
 
 private:
     Kfind * m_kfindWidget;

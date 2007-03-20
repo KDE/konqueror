@@ -34,7 +34,7 @@ public:
   };
 
   FakeUASProvider();
-  ~FakeUASProvider(){};
+  ~FakeUASProvider(){}
 
   StatusCode createNewUAProvider( const QString& );
   QString aliasStr( const QString& );

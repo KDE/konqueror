@@ -42,7 +42,7 @@ class KManualProxyDlg : public KProxyDialogBase
   
 public:
   KManualProxyDlg( QWidget* parent = 0, const char* name = 0 );
-  ~KManualProxyDlg() {};
+  ~KManualProxyDlg() {}
   
   virtual void setProxyData( const KProxyData &data );
   virtual const KProxyData data() const;

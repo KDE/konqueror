@@ -78,7 +78,7 @@ class PolicyDlg : public KDialog
 public:
   PolicyDlg (const QString& caption, QWidget *parent = 0,
                     const char *name = 0);
-  ~PolicyDlg (){};
+  ~PolicyDlg (){}
 
   int advice() const;
   QString domain() const;

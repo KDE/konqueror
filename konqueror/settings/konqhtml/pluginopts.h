@@ -121,8 +121,8 @@ private:
  protected Q_SLOTS:
   void progress(KProcIO *);
   void updatePLabel(int);
-  void change() { change( true ); };
-  void change( bool c ) { emit changed(c); m_changed = c; };
+  void change() { change( true ); }
+  void change( bool c ) { emit changed(c); m_changed = c; }
 
   void scan();
   void scanDone();

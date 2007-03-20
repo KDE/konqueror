@@ -44,7 +44,7 @@ class KonqyPreloader
         void updateCount();
         struct KonqyData
             {
-            KonqyData() {}; // for QValueList
+            KonqyData() {} // for QValueList
             KonqyData( const QString& id_P, int screen_P )
                 : id( id_P ), screen( screen_P ) {}
             QString id;
