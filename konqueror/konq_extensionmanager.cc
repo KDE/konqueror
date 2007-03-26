@@ -149,11 +149,11 @@ void KonqExtensionManager::slotUser1()
   setChanged(false);
 }
 
-void KonqExtensionManager::show()
+void KonqExtensionManager::showEvent(QShowEvent *event)
 {
 	d->pluginSelector->load();
 
-	KDialog::show();
+	KDialog::showEvent(event);
 }
 
 #include "konq_extensionmanager.moc"

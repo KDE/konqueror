@@ -200,11 +200,6 @@ public:
   virtual void setCaption( const QString &caption );
 
   /**
-   * Reimplemented for internal reasons. The API is not affected.
-   */
-  virtual void show();
-
-  /**
    * Change URL displayed in the location bar
    */
   void setLocationBarURL( const QString &url );
@@ -522,7 +517,12 @@ protected Q_SLOTS:
 
 protected:
   virtual bool eventFilter(QObject*obj,QEvent *ev);
-
+  
+  /**
+   * Reimplemented for internal reasons. The API is not affected.
+   */
+  virtual void showEvent(QShowEvent *event);
+  
   void fillHistoryPopup( QMenu *menu, const QList<HistoryEntry*> &history );
 
   bool makeViewsFollow( const KUrl & url, const KParts::URLArgs &args, const QString & serviceType,

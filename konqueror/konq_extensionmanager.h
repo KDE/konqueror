@@ -48,7 +48,9 @@ class KonqExtensionManager : public KDialog
 		void slotApply();
 		void slotDefault();
 		void slotUser1();
-		virtual void show();
+
+        protected:
+		virtual void showEvent(QShowEvent *event);
 
 	private:
 		KonqExtensionManagerPrivate *d;
