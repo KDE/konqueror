@@ -31,7 +31,7 @@
 #include <kdebug.h>
 
 #include <kapplication.h>
-#include <kprocio.h>
+#include <k3procio.h>
 #include <ktoolinvocation.h>
 
 extern "C"

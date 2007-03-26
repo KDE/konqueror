@@ -24,7 +24,7 @@
 #include <kio/jobuidelegate.h>
 #include <kcmdlineargs.h>
 #include <klocale.h>
-#include <kprocess.h>
+#include <k3process.h>
 #include <kstandarddirs.h>
 #include <kmessagebox.h>
 #include <kmimetypetrader.h>
@@ -376,18 +376,18 @@ bool ClientApp::createNewWindow(const KUrl & url, bool newTab, bool tempFile, co
             id.initId( startup_id_str );
             id.setupStartupEnv();
 #endif
-            KProcess proc;
+            K3Process proc;
             proc << "kshell" << "konqueror";
             if ( !mimetype.isEmpty() )
                 proc << "-mimetype" << mimetype;
             if ( tempFile )
                 proc << "-tempfile";
             proc << url.url();
-            proc.start( KProcess::DontCare );
+            proc.start( K3Process::DontCare );
 #ifdef Q_WS_X11
             KStartupInfo::resetStartupEnv();
 #endif
-            kDebug( 1202 ) << "ClientApp::createNewWindow KProcess started" << endl;
+            kDebug( 1202 ) << "ClientApp::createNewWindow K3Process started" << endl;
         //}
     }
     return true;

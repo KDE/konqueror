@@ -51,7 +51,7 @@
 #include <kprotocolmanager.h>
 #include <klibloader.h>
 #include <klocale.h>
-#include <kprocess.h>
+#include <k3process.h>
 #include <kstandarddirs.h>
 #include <ktemporaryfile.h>
 #include <kurl.h>
@@ -507,20 +507,20 @@ void g_NPN_ReloadPlugins(NPBool reloadPages)
 {
    // http://devedge.netscape.com/library/manuals/2002/plugin/1.0/npn_api15.html#999713
    kDebug(1431) << "g_NPN_ReloadPlugins()" << endl;
-   KProcess p;
+   K3Process p;
    p << KGlobal::dirs()->findExe("nspluginscan");
 
    if (reloadPages) {
       // This is the proper way, but it cannot be done because we have no
       // handle to the caller!  How stupid!  We cannot force all konqi windows
       // to reload - that would be evil.
-      //p.start(KProcess::Block);
+      //p.start(K3Process::Block);
       // Let's only allow the caller to be reloaded, not everything.
       //if (_callback)
       //   _callback->reloadPage();
-      p.start(KProcess::DontCare);
+      p.start(K3Process::DontCare);
    } else {
-      p.start(KProcess::DontCare);
+      p.start(K3Process::DontCare);
    }
 }
 

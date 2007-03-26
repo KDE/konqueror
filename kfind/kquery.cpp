@@ -20,10 +20,10 @@ KQuery::KQuery(QObject *parent)
     m_timeFrom(0), m_timeTo(0),
     job(0), m_insideCheckEntries(false), m_result(0)
 {
-  processLocate = new KProcess(this);
-  connect(processLocate,SIGNAL(receivedStdout(KProcess*, char*, int)),this,SLOT(slotreceivedSdtout(KProcess*,char*,int)));
-  connect(processLocate,SIGNAL(receivedStderr(KProcess*, char*, int)),this,SLOT(slotreceivedSdterr(KProcess*,char*,int)));
-  connect(processLocate,SIGNAL(processExited(KProcess*)),this,SLOT(slotendProcessLocate(KProcess*)));
+  processLocate = new K3Process(this);
+  connect(processLocate,SIGNAL(receivedStdout(K3Process*, char*, int)),this,SLOT(slotreceivedSdtout(K3Process*,char*,int)));
+  connect(processLocate,SIGNAL(receivedStderr(K3Process*, char*, int)),this,SLOT(slotreceivedSdterr(K3Process*,char*,int)));
+  connect(processLocate,SIGNAL(processExited(K3Process*)),this,SLOT(slotendProcessLocate(K3Process*)));
 
   // Files with these mime types can be ignored, even if
   // findFormatByFileContent() in some cases may claim that
@@ -84,7 +84,7 @@ void KQuery::start()
     *processLocate << m_url.path( KUrl::AddTrailingSlash ).toLatin1();
     bufferLocate=NULL;
     bufferLocateLength=0;
-    processLocate->start(KProcess::NotifyOnExit,KProcess::AllOutput);
+    processLocate->start(K3Process::NotifyOnExit,K3Process::AllOutput);
     return;
   }
 
@@ -488,12 +488,12 @@ void KQuery::setUseFileIndex(bool useLocate)
   m_useLocate=useLocate;
 }
 
-void KQuery::slotreceivedSdterr(KProcess* ,char* str,int)
+void KQuery::slotreceivedSdterr(K3Process* ,char* str,int)
 {
   KMessageBox::error(NULL, QString(str), i18n("Error while using locate"));
 }
 
-void KQuery::slotreceivedSdtout(KProcess*,char* str,int l)
+void KQuery::slotreceivedSdtout(K3Process*,char* str,int l)
 {
   int i;
 
@@ -504,7 +504,7 @@ void KQuery::slotreceivedSdtout(KProcess*,char* str,int l)
     bufferLocate[bufferLocateLength-l+i]=str[i];
 }
 
-void KQuery::slotendProcessLocate(KProcess*)
+void KQuery::slotendProcessLocate(K3Process*)
 {
   QString qstr;
   QStringList strlist;
