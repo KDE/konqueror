@@ -30,7 +30,7 @@
 
 
 #include <kapplication.h>
-#include <kprocess.h>
+#include <k3process.h>
 #include <kdebug.h>
 #include <kglobal.h>
 #include <klocale.h>
@@ -271,7 +271,7 @@ bool NSPluginLoader::loadViewer()
    kDebug() << "NSPluginLoader::loadViewer" << endl;
 
    _running = false;
-   _process = new KProcess;
+   _process = new K3Process;
 
    // get the dcop app id
    int pid = (int)getpid();
@@ -279,8 +279,8 @@ bool NSPluginLoader::loadViewer()
    tmp.sprintf("org.kde.nspluginviewer-%d",pid);
    _dbusService =tmp.toLatin1();
 
-   connect( _process, SIGNAL(processExited(KProcess*)),
-            this, SLOT(processTerminated(KProcess*)) );
+   connect( _process, SIGNAL(processExited(K3Process*)),
+            this, SLOT(processTerminated(K3Process*)) );
 
    // find the external viewer process
    QString viewer = KGlobal::dirs()->findExe("nspluginviewer");
@@ -383,7 +383,7 @@ void NSPluginLoader::applicationRegistered( const QString& appId )
 }
 
 
-void NSPluginLoader::processTerminated(KProcess *proc)
+void NSPluginLoader::processTerminated(K3Process *proc)
 {
    if ( _process == proc)
    {

@@ -29,7 +29,7 @@
 
 #include <kdebug.h>
 #include <klocale.h>
-#include <kprocess.h>
+#include <k3process.h>
 #include <knuminput.h>
 
 #include "ksaveioconfig.h"
@@ -127,9 +127,9 @@ void KCacheConfigDialog::configChanged()
 
 void KCacheConfigDialog::slotClearCache()
 {
-  KProcess process;
+  K3Process process;
   process << "kio_http_cache_cleaner" << "--clear-all";
-  process.start(KProcess::DontCare);
+  process.start(K3Process::DontCare);
   // Cleaning up might take a while. Better detach.
   process.detach();
 }

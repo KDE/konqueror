@@ -47,7 +47,7 @@
 #include <kinputdialog.h>
 #include <kio/netaccess.h>
 #include <kmimetype.h>
-#include <kprocess.h>
+#include <k3process.h>
 #include <kpropertiesdialog.h>
 #include <kprotocolinfo.h>
 #include <kstandarddirs.h>
@@ -679,9 +679,9 @@ void KonqSidebarTree::scanDir( KonqSidebarTreeItem *parent, const QString &path,
                 	         && !entries.contains( *eIt ) && !dirEntries.contains( *eIt ) )
 	                    { // we don't have that one yet -> copy it.
                 	        QString cp("cp -R -- ");
-        	                cp += KProcess::quote(dirtree_dir + *eIt);
+        	                cp += K3Process::quote(dirtree_dir + *eIt);
 	                        cp += " ";
-        	                cp += KProcess::quote(path);
+        	                cp += K3Process::quote(path);
                 	        kDebug(1201) << "KonqSidebarTree::scanDir executing " << cp << endl;
                         	::system( QFile::encodeName(cp) );
 	                    }

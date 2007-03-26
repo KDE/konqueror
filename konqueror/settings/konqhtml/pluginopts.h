@@ -28,7 +28,7 @@ class QProgressDialog;
 class QSlider;
 class KDialog;
 class KPluginOptions;
-class KProcIO;
+class K3ProcIO;
 namespace Ui {
 class NSConfigWidget;
 }
@@ -119,7 +119,7 @@ private:
 
 
  protected Q_SLOTS:
-  void progress(KProcIO *);
+  void progress(K3ProcIO *);
   void updatePLabel(int);
   void change() { change( true ); }
   void change( bool c ) { emit changed(c); m_changed = c; }

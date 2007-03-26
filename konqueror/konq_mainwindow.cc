@@ -114,7 +114,7 @@
 #include <kicon.h>
 #include <kiconloader.h>
 #include <kmenu.h>
-#include <kprocess.h>
+#include <k3process.h>
 #include <kio/scheduler.h>
 #include <kio/netaccess.h>
 #include <kacceleratormanager.h>
@@ -1403,7 +1403,7 @@ void KonqMainWindow::slotOpenTerminal()
       }
   }
 
-  KProcess cmd;
+  K3Process cmd;
   cmd.setWorkingDirectory(dir);
 
   // Compensate for terminal having arguments.
@@ -1413,7 +1413,7 @@ void KonqMainWindow::slotOpenTerminal()
 
   kDebug(1202) << "slotOpenTerminal: directory " << dir
 		<< ", terminal:" << term << endl;
-  cmd.start(KProcess::DontCare);
+  cmd.start(K3Process::DontCare);
 }
 
 void KonqMainWindow::slotOpenLocation()

@@ -42,7 +42,7 @@
 #define EMBEDCLASS QX11EmbedWidget
 
 class OrgKdeNspluginsViewerInterface;
-class KProcess;
+class K3Process;
 class QPushButton;
 class QGridLayout;
 class OrgKdeNspluginsInstanceInterface;
@@ -99,13 +99,13 @@ protected:
 
 protected Q_SLOTS:
   void applicationRegistered( const QString& appId );
-  void processTerminated( KProcess *proc );
+  void processTerminated( K3Process *proc );
 
 private:
   QStringList _searchPaths;
   Q3Dict<QString> _mapping, _filetype;
 
-  KProcess *_process;
+  K3Process *_process;
   bool _running;
   QString _dbusService;
   OrgKdeNspluginsViewerInterface *_viewer;

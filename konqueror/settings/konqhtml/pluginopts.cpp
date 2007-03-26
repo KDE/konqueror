@@ -24,7 +24,7 @@
 #include <k3listview.h>
 #include <klocale.h>
 #include <kmessagebox.h>
-#include <kprocio.h>
+#include <k3procio.h>
 #include <kstandarddirs.h>
 #include <kurlrequester.h>
 
@@ -325,7 +325,7 @@ void KPluginOptions::scan()
              save();
     }
 
-    KProcIO* nspluginscan = new KProcIO;
+    K3ProcIO* nspluginscan = new K3ProcIO;
     QString scanExe = KGlobal::dirs()->findExe("nspluginscan");
     if (scanExe.isEmpty()) {
         kDebug() << "can't find nspluginviewer" << endl;
@@ -345,9 +345,9 @@ void KPluginOptions::scan()
     // start nspluginscan
     *nspluginscan << scanExe << "--verbose";
     kDebug() << "Running nspluginscan" << endl;
-    connect(nspluginscan, SIGNAL(readReady(KProcIO*)),
-            this, SLOT(progress(KProcIO*)));
-    connect(nspluginscan, SIGNAL(processExited(KProcess *)),
+    connect(nspluginscan, SIGNAL(readReady(K3ProcIO*)),
+            this, SLOT(progress(K3ProcIO*)));
+    connect(nspluginscan, SIGNAL(processExited(K3Process *)),
             this, SLOT(scanDone()));
     connect(m_progress, SIGNAL(canceled()), this, SLOT(scanDone()));
 
@@ -366,7 +366,7 @@ void KPluginOptions::scan()
     m_widget->scanButton->setEnabled(true);
 }
 
-void KPluginOptions::progress(KProcIO *proc)
+void KPluginOptions::progress(K3ProcIO *proc)
 {
     QString line;
     while(proc->readln(line) > 0)

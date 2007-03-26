@@ -32,7 +32,7 @@
 #include <kshell.h>
 #include <kshortcut.h>
 #include <kprotocolmanager.h>
-#include <kprocess.h>
+#include <k3process.h>
 #include <kio/job.h>
 #include <kio/deletejob.h>
 #include <kio/jobuidelegate.h>
@@ -80,7 +80,7 @@ KonqOperations::~KonqOperations()
 void KonqOperations::editMimeType( const QString & mimeType )
 {
     QString keditfiletype = QLatin1String("keditfiletype");
-    KRun::runCommand( keditfiletype + " " + KProcess::quote(mimeType),
+    KRun::runCommand( keditfiletype + " " + K3Process::quote(mimeType),
                       keditfiletype, keditfiletype /*unused*/);
 }
 
@@ -443,7 +443,7 @@ void KonqOperations::asyncDrop( const KFileItem * destItem )
         // (If this fails, there is a bug in KFileItem::acceptsDrops / KDirModel::flags)
         kDebug(1203) << "KonqOperations::doDrop " << m_destUrl.path() << "should be an executable" << endl;
         Q_ASSERT ( access( QFile::encodeName(m_destUrl.path()), X_OK ) == 0 );
-        KProcess proc;
+        K3Process proc;
         proc << m_destUrl.path() ;
         // Launch executable for each of the files
         KUrl::List lst = m_info->urls;
@@ -451,7 +451,7 @@ void KonqOperations::asyncDrop( const KFileItem * destItem )
         for ( ; it != lst.end() ; it++ )
             proc << (*it).path(); // assume local files
         kDebug(1203) << "starting " << m_destUrl.path() << " with " << lst.count() << " arguments" << endl;
-        proc.start( KProcess::DontCare );
+        proc.start( K3Process::DontCare );
     }
     delete this;
 }
