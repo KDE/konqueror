@@ -4539,7 +4539,7 @@ void KonqMainWindow::setCaption( const QString &caption )
   }
 }
 
-void KonqMainWindow::show()
+void KonqMainWindow::showEvent(QShowEvent *event)
 {
   // We need to check if our toolbars are shown/hidden here, and set
   // our menu items accordingly. We can't do it in the constructor because
@@ -4549,7 +4549,7 @@ void KonqMainWindow::show()
   updateBookmarkBar(); // hide if empty
 
   // Call parent method
-  KParts::MainWindow::show();
+  KParts::MainWindow::showEvent(event);
 }
 
 QString KonqExtendedBookmarkOwner::currentUrl() const
