@@ -23,6 +23,7 @@
 
 #include <ktoolinvocation.h>
 #include <kautomount.h>
+#include <kmountpoint.h>
 #include <kinputdialog.h>
 #include <klocale.h>
 #include <kmessagebox.h>
@@ -412,9 +413,9 @@ void KonqOperations::asyncDrop( const KFileItem * destItem )
                 QString point = desktopGroup.readEntry( "MountPoint" );
                 m_destUrl.setPath( point );
                 QString dev = desktopFile.readDevice();
-                QString mp = KIO::findDeviceMountPoint( dev );
+                KMountPoint::Ptr mp = KMountPoint::currentMountPoints().findByDevice( dev );
                 // Is the device already mounted ?
-                if ( !mp.isNull() ) {
+                if ( mp ) {
                     doDropFileCopy();
                 }
 #ifndef Q_WS_WIN

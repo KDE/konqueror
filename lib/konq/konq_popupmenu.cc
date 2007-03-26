@@ -621,7 +621,7 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
     if ( m_sMimeType == "application/x-desktop" && isSingleLocal ) // .desktop file
     {
         // get builtin services, like mount/unmount
-        s.builtin = KDEDesktopMimeType::builtinServices( m_lstItems.first()->url() );
+        s.builtin = KDesktopFileActions::builtinServices( m_lstItems.first()->url() );
         const QString path = m_lstItems.first()->url().path();
         KDesktopFile desktopFile( path );
         KConfigGroup cfg = desktopFile.desktopGroup();
@@ -633,7 +633,7 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
            // of the .desktop file instead of the .desktop file itself?
         }
         ServiceList* list = s.selectList( priority, submenuName );
-        (*list) = KDEDesktopMimeType::userDefinedServices( path, desktopFile, url.isLocalFile() );
+        (*list) = KDesktopFileActions::userDefinedServices( path, desktopFile, url.isLocalFile() );
     }
 
     if ( sReading )
@@ -653,7 +653,7 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
                 const QString priority = cfg.readEntry("X-KDE-Priority");
                 const QString submenuName = cfg.readEntry( "X-KDE-Submenu" );
                 ServiceList* list = s.selectList( priority, submenuName );
-                (*list) += KDEDesktopMimeType::userDefinedServices( dotDirectoryFile, desktopFile, true );
+                (*list) += KDesktopFileActions::userDefinedServices( dotDirectoryFile, desktopFile, true );
             }
         }
 
@@ -787,7 +787,7 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
                     const QString submenuName = cfg.readEntry( "X-KDE-Submenu" );
 
                     ServiceList* list = s.selectList( priority, submenuName );
-                    (*list) += KDEDesktopMimeType::userDefinedServices( *eIt, desktopFile, url.isLocalFile(), m_lstPopupURLs );
+                    (*list) += KDesktopFileActions::userDefinedServices( *eIt, desktopFile, url.isLocalFile(), m_lstPopupURLs );
                 }
             }
         }
@@ -1062,10 +1062,10 @@ void KonqPopupMenu::slotRunService()
   }
 
   // Is it a service specific to desktop entry files ?
-  QMap<int,KDEDesktopMimeType::Service>::Iterator it2 = m_mapPopupServices.find( id );
+  QMap<int,KDesktopFileActions::Service>::Iterator it2 = m_mapPopupServices.find( id );
   if ( it2 != m_mapPopupServices.end() )
   {
-      KDEDesktopMimeType::executeService( m_lstPopupURLs, it2.value() );
+      KDesktopFileActions::executeService( m_lstPopupURLs, it2.value() );
   }
 
   return;
