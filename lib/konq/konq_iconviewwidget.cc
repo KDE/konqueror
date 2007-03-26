@@ -25,6 +25,7 @@
 
 #include <QClipboard>
 #include <QLayout>
+#include <QApplication>
 #include <QTimer>
 #include <QPainter>
 #include <QToolTip>
