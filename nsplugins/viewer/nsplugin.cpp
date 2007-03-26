@@ -38,6 +38,7 @@
 #include <QDir>
 #include <QFile>
 #include <QTimer>
+#include <QApplication>
 
 #ifdef Bool
 #undef Bool
