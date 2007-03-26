@@ -29,7 +29,7 @@
 
 #include <kaction.h>
 #include <kactioncollection.h>
-#include <kdedesktopmimetype.h>
+#include <kdesktopfileactions.h>
 #include <kfileitem.h>
 #include <kparts/browserextension.h>
 #include <kservice.h>
@@ -38,7 +38,7 @@
 
 #include "konq_xmlguiclient.h"
 
-typedef QList<KDEDesktopMimeType::Service> ServiceList;
+typedef QList<KDesktopFileActions::Service> ServiceList;
 
 class KNewMenu;
 class KonqPopupMenuPlugin;
@@ -164,7 +164,7 @@ private:
   KFileItemList m_lstItems;
   KUrl::List m_lstPopupURLs;
   QMap<int,KService::Ptr> m_mapPopup;
-  QMap<int,KDEDesktopMimeType::Service> m_mapPopupServices;
+  QMap<int,KDesktopFileActions::Service> m_mapPopupServices;
   bool m_bHandleEditOperations;
   KXMLGUIFactory *m_factory;
   KXMLGUIBuilder *m_builder;
