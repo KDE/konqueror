@@ -260,7 +260,7 @@ QWidget * KonqLogoAction::createWidget( QWidget * parent )
   connect(this, SIGNAL(startAnimation()), button, SLOT(start()));
   connect(this, SIGNAL(stopAnimation()), button, SLOT(stop()));
 
-  button->setIcons(QString("kde"));
+  button->setIcons(QString("about-kde"));
 
   layout->addWidget(button);
 
