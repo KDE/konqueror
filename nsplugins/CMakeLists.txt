@@ -3,17 +3,16 @@ project(nsplugins)
 if (X11_Xt_LIB)
 
   add_subdirectory( viewer ) 
-  message(STATUS "TODO: fix nsplugintest linking (cmake problem)")
-  #add_subdirectory( test ) 
+  set(nsplugins_SRCS ${CMAKE_SOURCE_DIR}/nsplugins/plugin_part.cpp ${CMAKE_SOURCE_DIR}/nsplugins/nspluginloader.cpp )
 
 
   ########### next target ###############
 
-  set(kcminit_nsplugin_PART_SRCS
-        plugin_part.cpp
-        nspluginloader.cpp
+  set(kcminit_nsplugin_PART_SRCS 
+	${nsplugins_SRCS}
      )
-  qt4_add_dbus_adaptor( kcminit_nsplugin_PART_SRCS org.kde.nsplugins.CallBack.xml plugin_part.h PluginPart )
+
+  qt4_add_dbus_adaptor( kcminit_nsplugin_PART_SRCS org.kde.nsplugins.CallBack.xml ${CMAKE_SOURCE_DIR}/nsplugins/plugin_part.h PluginPart )
 
   set(nsplugins_class_xml  ${CMAKE_SOURCE_DIR}/nsplugins/viewer/org.kde.nsplugins.class.xml)
   QT4_ADD_DBUS_INTERFACE( kcminit_nsplugin_PART_SRCS ${nsplugins_class_xml} nsplugins_class_interface )
@@ -23,6 +22,8 @@ if (X11_Xt_LIB)
 
   set(nsplugins_viewer_xml  ${CMAKE_SOURCE_DIR}/nsplugins/viewer/org.kde.nsplugins.viewer.xml)
   QT4_ADD_DBUS_INTERFACE( kcminit_nsplugin_PART_SRCS ${nsplugins_viewer_xml} nsplugins_viewer_interface )
+
+
 
   kde4_automoc(${kcminit_nsplugin_PART_SRCS})
 
@@ -64,6 +65,9 @@ if (X11_Xt_LIB)
   install( FILES khtml_plugins.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
   install( FILES nspluginpart.rc  DESTINATION  ${DATA_INSTALL_DIR}/plugin )
   install( FILES org.kde.nsplugins.CallBack.xml DESTINATION ${DBUS_INTERFACES_DIR} )
+
+  add_subdirectory( test )
+
 else (X11_Xt_LIB)
 
   message(STATUS "libXt not found - browser plugin support disabled")

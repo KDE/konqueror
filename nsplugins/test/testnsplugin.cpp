@@ -21,6 +21,7 @@
 #include <stdio.h>
 
 #include <QString>
+#include <kactioncollection.h>
 //Added by qt3to4:
 #include <Q3HBoxLayout>
 #include <kapplication.h>
@@ -44,9 +45,9 @@ TestNSPlugin::TestNSPlugin()
    m_layout = new Q3HBoxLayout( m_client );
 
    // file menu
-   KStandardAction::openNew( this, SLOT(newView()), actionCollection());
-   KStandardAction::close( this, SLOT(closeView()), actionCollection());
-   KStandardAction::quit( kapp, SLOT(quit()), actionCollection());
+   actionCollection()->addAction(KStandardAction::Open, m_client, SLOT(newView()));
+   actionCollection()->addAction(KStandardAction::Close,m_client,SLOT(closeView()));
+   actionCollection()->addAction(KStandardAction::Quit,kapp,SLOT(quit()));
 
    createGUI( "testnspluginui.rc" );
 }
