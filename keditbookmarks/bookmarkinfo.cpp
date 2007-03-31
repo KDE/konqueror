@@ -35,7 +35,6 @@
 #include <kstandardaction.h>
 #include <kaction.h>
 
-#include <kkeydialog.h>
 #include <kedittoolbar.h>
 #include <kmessagebox.h>
 #include <klineedit.h>

@@ -45,7 +45,6 @@
 #include <kicondialog.h>
 #include <kiconloader.h>
 #include <kinputdialog.h>
-#include <kkeydialog.h>
 #include <klocale.h>
 #include <kstandardaction.h>
 #include <kfiledialog.h>

@@ -88,7 +88,6 @@
 #include <kcmultidialog.h>
 #include <kdebug.h>
 #include <kedittoolbar.h>
-#include <kkeydialog.h>
 #include <kmenubar.h>
 #include <kmessagebox.h>
 #include <knewmenu.h>
