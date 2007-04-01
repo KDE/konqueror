@@ -115,6 +115,7 @@ void  KDEpasswd2Dialog::accept()
 		i18n("Password Too Long"),
 		KGuiItem(i18n("Truncate")),
 		KGuiItem(i18n("Use as Is")),
+		KStandardGuiItem::cancel(),
 		"truncatePassword"))
 	{
 	case KMessageBox::Yes :
