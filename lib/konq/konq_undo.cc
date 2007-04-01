@@ -699,6 +699,7 @@ bool KonqUndoManager::UiInterface::copiedFileWasModified( const KUrl& src, const
               "Are you sure you want to delete %4?", dest.pathOrUrl(), src.pathOrUrl(), timeStr, dest.pathOrUrl() ),
         i18n( "Undo File Copy Confirmation" ),
         KStandardGuiItem::cont(),
+        KStandardGuiItem::cancel(),
         QString(),
         KMessageBox::Notify | KMessageBox::Dangerous ) == KMessageBox::Continue;
 }
