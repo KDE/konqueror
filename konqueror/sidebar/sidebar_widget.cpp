@@ -175,7 +175,7 @@ void addBackEnd::triggeredAddMenu(QAction* action)
 		// get the create_ function
 		QString factory("add_");
 		factory = factory+ libname;
-		void *add = lib->symbol(QFile::encodeName(factory));
+                KLibrary::void_function_ptr add = lib->resolveFunction(QFile::encodeName(factory));
 
 		if (add)
 		{
@@ -861,7 +861,7 @@ KonqSidebarPlugin *Sidebar_Widget::loadModule(QWidget *par,QString &desktopName,
 	{
 		// get the create_ function
 		QString factory("create_%1");
-		void *create = lib->symbol(QFile::encodeName(factory.arg(lib_name)));
+                KLibrary::void_function_ptr create = lib->resolveFunction(QFile::encodeName(factory.arg(lib_name)));
 
 		if (create)
 		{
