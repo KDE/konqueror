@@ -1949,7 +1949,7 @@ void KonqMainWindow::slotConfigureToolbars()
         KConfigGroup cg = KGlobal::config()->group( "KonqMainWindow" );
         saveMainWindowSettings( cg );
     }
-    KEditToolbar dlg(factory());
+    KEditToolBar dlg(factory());
     connect(&dlg,SIGNAL(newToolbarConfig()),this,SLOT(slotNewToolbarConfig()));
     connect(&dlg,SIGNAL(newToolbarConfig()),this,SLOT(initBookmarkBar()));
     dlg.exec();
