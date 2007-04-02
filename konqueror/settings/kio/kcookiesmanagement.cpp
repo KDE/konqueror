@@ -31,8 +31,8 @@
 #include <QList>
 
 #include <QtDBus/QtDBus>
+#include <QtCore/QUrl>
 
-#include <kidna.h>
 #include <kdebug.h>
 #include <klocale.h>
 #include <kdialog.h>
@@ -95,9 +95,9 @@ CookieProp* CookieListViewItem::leaveCookie()
 QString CookieListViewItem::text(int f) const
 {
     if (mCookie)
-        return f == 0 ? QString() : KIDNA::toUnicode(mCookie->host);
+        return f == 0 ? QString() : QUrl::fromAce(mCookie->host.toLatin1());
     else
-        return f == 0 ? KIDNA::toUnicode(mDomain) : QString();
+        return f == 0 ? QUrl::fromAce(mDomain.toLatin1()) : QString();
 }
 
 KCookiesManagement::KCookiesManagement(const KComponentData &componentData, QWidget *parent)

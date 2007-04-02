@@ -31,9 +31,9 @@
 //Added by qt3to4:
 #include <QVBoxLayout>
 #include <QtDBus/QtDBus>
+#include <QtCore/QUrl>
 
 #include <kiconloader.h>
-#include <kidna.h>
 #include <kmessagebox.h>
 #include <k3listview.h>
 #include <k3listviewsearchline.h>
@@ -118,7 +118,7 @@ void KCookiesPolicies::addNewPolicy(const QString& domain)
 
   if (pdlg.exec() && !pdlg.domain().isEmpty())
   {
-    QString domain = KIDNA::toUnicode(pdlg.domain());
+    QString domain = QUrl::fromAce(pdlg.domain().toLatin1());
     int advice = pdlg.advice();
 
     if ( !handleDuplicate(domain, advice) )
@@ -153,7 +153,7 @@ void KCookiesPolicies::changePressed()
 
   if( pdlg.exec() && !pdlg.domain().isEmpty())
   {
-    QString newDomain = KIDNA::toUnicode(pdlg.domain());
+    QString newDomain = QUrl::fromAce(pdlg.domain().toLatin1());
     int advice = pdlg.advice();
     if (newDomain == oldDomain || !handleDuplicate(newDomain, advice))
     {
@@ -254,7 +254,7 @@ void KCookiesPolicies::updateDomainList(const QStringList &domainConfig)
 
     if (!domain.isEmpty())
     {
-        Q3ListViewItem* index = new Q3ListViewItem( dlg->lvDomainPolicy, KIDNA::toUnicode(domain),
+        Q3ListViewItem* index = new Q3ListViewItem( dlg->lvDomainPolicy, QUrl::fromAce(domain.toLatin1()),
                                                   i18n(KCookieAdvice::adviceToStr(advice)) );
         m_pDomainPolicy[index] = KCookieAdvice::adviceToStr(advice);
     }
@@ -391,7 +391,7 @@ void KCookiesPolicies::save()
 
   while( at )
   {
-    domainConfig.append(QString::fromLatin1("%1:%2").arg(KIDNA::toAscii(at->text(0))).arg(m_pDomainPolicy[at]));
+    domainConfig.append(QString::fromLatin1("%1:%2").arg(QString(QUrl::toAce(at->text(0)))).arg(m_pDomainPolicy[at]));
     at = at->nextSibling();
   }
 
