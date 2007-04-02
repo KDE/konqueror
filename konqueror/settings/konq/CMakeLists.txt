@@ -10,7 +10,8 @@ set(kcm_konq_PART_SRCS
    previews.cpp
    browser.cpp
    konqkcmfactory.cpp
-   desktopbehavior_impl.cpp )
+   desktopbehavior_impl.cpp
+   kcustommenueditor.cpp)
 
 if(Q_WS_X11)
  set(kcm_konq_PART_SRCS desktop.cpp ${kcm_konq_PART_SRCS})
