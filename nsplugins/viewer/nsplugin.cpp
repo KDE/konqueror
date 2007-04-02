@@ -1309,9 +1309,9 @@ NSPluginClass::NSPluginClass( const QString &library,
     }
 
     // get exported lib functions
-    _NP_GetMIMEDescription = (NP_GetMIMEDescriptionUPP *)_handle->symbol("NP_GetMIMEDescription");
-    _NP_Initialize = (NP_InitializeUPP *)_handle->symbol("NP_Initialize");
-    _NP_Shutdown = (NP_ShutdownUPP *)_handle->symbol("NP_Shutdown");
+    _NP_GetMIMEDescription = (NP_GetMIMEDescriptionUPP *)_handle->resolveFunction("NP_GetMIMEDescription");
+    _NP_Initialize = (NP_InitializeUPP *)_handle->resolveFunction("NP_Initialize");
+    _NP_Shutdown = (NP_ShutdownUPP *)_handle->resolveFunction("NP_Shutdown");
 
     // check for valid returned ptrs
     if (!_NP_GetMIMEDescription) {

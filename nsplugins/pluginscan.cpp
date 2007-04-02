@@ -223,7 +223,7 @@ int tryCheck(int write_fd, const QString &absFile)
 
     NPError (*func_GetValue)(void *, NPPVariable, void *) =
         (NPError(*)(void *, NPPVariable, void *))
-        _handle->symbol("NP_GetValue");
+        _handle->resolveFunction("NP_GetValue");
     if ( func_GetValue ) {
 
         // get name
@@ -246,7 +246,7 @@ int tryCheck(int write_fd, const QString &absFile)
 
     // get mime description function pointer
     char* (*func_GetMIMEDescription)() =
-        (char *(*)())_handle->symbol("NP_GetMIMEDescription");
+        (char *(*)())_handle->resolveFunction("NP_GetMIMEDescription");
     if ( !func_GetMIMEDescription ) {
         kDebug(1433) << " - no GetMIMEDescription, skipping" << endl;
         KLibLoader::self()->unloadLibrary( QFile::encodeName(absFile) );

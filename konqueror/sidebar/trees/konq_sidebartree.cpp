@@ -71,7 +71,7 @@ getModule KonqSidebarTree::getPluginFactory(QString name)
     {
       // get the create_ function
       QString factory = "create_" + libName;
-      void *create    = lib->symbol(QFile::encodeName(factory));
+      KLibrary::void_function_ptr create    = lib->resolveFunction(QFile::encodeName(factory));
       if (create)
       {
         getModule func = (getModule)create;
