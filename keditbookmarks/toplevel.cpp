@@ -488,7 +488,7 @@ void KEBApp::notifyCommandExecuted() {
 
 void KEBApp::slotConfigureToolbars() {
     saveMainWindowSettings(KConfigGroup( KGlobal::config(), "MainWindow") );
-    KEditToolbar dlg(actionCollection());
+    KEditToolBar dlg(actionCollection());
     connect(&dlg, SIGNAL( newToolbarConfig() ),
                   SLOT( slotNewToolbarConfig() ));
     dlg.exec();
