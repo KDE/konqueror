@@ -159,7 +159,7 @@ void FileTypesView::init()
   show();
   setEnabled( false );
 
-  setCursor( KCursor::waitCursor() );
+  setCursor( Qt::WaitCursor );
   readFileTypes();
   unsetCursor();
 

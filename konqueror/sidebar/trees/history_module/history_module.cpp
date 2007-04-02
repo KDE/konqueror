@@ -143,7 +143,7 @@ void KonqSidebarHistoryModule::slotSettingsChanged()
 
 void KonqSidebarHistoryModule::slotCreateItems()
 {
-    QApplication::setOverrideCursor( KCursor::waitCursor() );
+    QApplication::setOverrideCursor( Qt::WaitCursor );
     clear();
 
     KonqSidebarHistoryItem *item;

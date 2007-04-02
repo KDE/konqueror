@@ -1207,9 +1207,9 @@ void KonqKfmIconView::slotClear()
 
 void KonqKfmIconView::slotRedirection( const KUrl & url )
 {
-    const QString prettyURL = url.pathOrUrl();
-    emit m_extension->setLocationBarUrl( prettyURL );
-    emit setWindowCaption( prettyURL );
+    const QString prettyUrl = url.pathOrUrl();
+    emit m_extension->setLocationBarUrl( prettyUrl );
+    emit setWindowCaption( prettyUrl );
     m_pIconView->setUrl( url );
     setUrl(url);
 }
@@ -1347,8 +1347,8 @@ bool KonqKfmIconView::doOpenURL( const KUrl & url )
       }
     }
 
-    const QString prettyURL = url.pathOrUrl();
-    emit setWindowCaption( prettyURL );
+    const QString prettyUrl = url.pathOrUrl();
+    emit setWindowCaption( prettyUrl );
 
     return true;
 }
@@ -1512,8 +1512,8 @@ void SpringLoadingManager::springLoadTrigger(KonqKfmIconView *view,
     // Open the folder URL, we don't want to modify the browser
     // history, hence the use of openUrl and setLocationBarURL
     view->openUrl(url);
-    const QString prettyURL = url.pathOrUrl();
-    emit view->extension()->setLocationBarUrl( prettyURL );
+    const QString prettyUrl = url.pathOrUrl();
+    emit view->extension()->setLocationBarUrl( prettyUrl );
 }
 
 void SpringLoadingManager::dragLeft(KonqKfmIconView */*view*/)
@@ -1556,8 +1556,8 @@ void SpringLoadingManager::finished()
 
     KonqKfmIconView *view = static_cast<KonqKfmIconView*>(part);
     view->openUrl(url);
-    const QString prettyURL = url.pathOrUrl();
-    emit view->extension()->setLocationBarUrl( prettyURL );
+    const QString prettyUrl = url.pathOrUrl();
+    emit view->extension()->setLocationBarUrl( prettyUrl );
 
     deleteLater();
     s_self = 0L;
