@@ -899,7 +899,7 @@ void KonqView::setRun( KonqRun * run )
         frame()->unsetCursor();
   }
   else if ( run )
-      frame()->setCursor( KCursor::workingCursor() );
+      frame()->setCursor( Qt::BusyCursor );
   m_pRun = run;
 }
 

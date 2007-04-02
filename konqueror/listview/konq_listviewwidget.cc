@@ -1250,9 +1250,9 @@ void KonqBaseListViewWidget::slotRedirection( const KUrl & url )
       readProtocolConfig( url );
       createColumns();
    }
-   const QString prettyURL = url.pathOrUrl();
-   emit m_pBrowserView->extension()->setLocationBarUrl( prettyURL );
-   emit m_pBrowserView->setWindowCaption( prettyURL );
+   const QString prettyUrl = url.pathOrUrl();
+   emit m_pBrowserView->extension()->setLocationBarUrl( prettyUrl );
+   emit m_pBrowserView->setWindowCaption( prettyUrl );
    m_pBrowserView->setUrl( url );
    m_url = url;
 }
