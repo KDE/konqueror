@@ -16,7 +16,8 @@ kde4_automoc(${kdialog_SRCS})
 
 kde4_add_executable(kdialog ${kdialog_SRCS})
 
-target_link_libraries(kdialog  ${KDE4_KIO_LIBS} )
+# Need libkfile due to the code that adjusts the geometry of the KDirSelectDialog
+target_link_libraries(kdialog  ${KDE4_KFILE_LIBS} )
 
 install(TARGETS kdialog DESTINATION ${BIN_INSTALL_DIR})
 install(FILES org.kde.kdialog.ProgressDialog.xml DESTINATION ${DBUS_INTERFACES_DIR} )
