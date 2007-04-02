@@ -107,7 +107,7 @@
 #include <kurlrequesterdialog.h>
 #include <kurlrequester.h>
 #include <kmimetypetrader.h>
-#include <kwin.h>
+#include <kwm.h>
 #include <kfiledialog.h>
 #include <klocale.h>
 #include <kicon.h>
@@ -1244,7 +1244,7 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url, const KParts::URLArgs
         // Avoid Qt's support for user time by setting it to 0, and
         // set the property ourselves.
             QX11Info::setAppUserTime( 0 );
-            KWin::setUserTime( mainWindow->winId(), 0 );
+            KWM::setUserTime( mainWindow->winId(), 0 );
         }
         // Put below the current window before showing, in case that actually works with the WM.
         // First do complete lower(), then stackUnder(), because the latter may not work with many WMs.
@@ -5398,7 +5398,7 @@ void KonqMainWindow::setIcon( const QPixmap& pix )
   if ( !url.isEmpty() )
     big = KonqPixmapProvider::self()->pixmapFor( url, K3Icon::SizeMedium );
 
-  KWin::setIcons( winId(), big, pix );
+  KWM::setIcons( winId(), big, pix );
 #endif
 }
 

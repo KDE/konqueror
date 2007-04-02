@@ -32,7 +32,7 @@
 #include <kuniqueapplication.h>
 
 #include <kmessagebox.h>
-#include <kwin.h>
+#include <kwm.h>
 #include <unistd.h>
 
 #include <kbookmarkmanager.h>
@@ -99,7 +99,7 @@ static bool askUser(QString filename, bool &readonly) {
                         id = value;
                     //kdDebug()<<" id !!!!!!!!!!!!!!!!!!! :"<<id<<endl;
 #ifdef Q_WS_X11
-                    KWin::activateWindow(id);
+                    KWM::activateWindow(id);
 #endif
                     return false;
                 } else if (ret == KMessageBox::Yes) {
