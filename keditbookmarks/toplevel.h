@@ -21,7 +21,7 @@
 #define __toplevel_h
 
 #include <kmainwindow.h>
-#include <kcommand.h>
+#include <k3command.h>
 #include <kbookmark.h>
 #include <QMenu>
 #include <kxmlguifactory.h>
@@ -45,19 +45,19 @@ public:
     void notifyDocSaved();
 
     void clearHistory();
-    void addCommand(KCommand *);
-    void didCommand(KCommand *);
+    void addCommand(K3Command *);
+    void didCommand(K3Command *);
     
     //For an explanation see bookmarkInfo::commitChanges()
-    void addInFlightCommand(KCommand *);
+    void addInFlightCommand(K3Command *);
 
     static CmdHistory *self();
 
 protected Q_SLOTS:
-    void slotCommandExecuted(KCommand *k);
+    void slotCommandExecuted(K3Command *k);
 
 private:
-    KCommandHistory m_commandHistory;
+    K3CommandHistory m_commandHistory;
     static CmdHistory *s_self;
 };
 

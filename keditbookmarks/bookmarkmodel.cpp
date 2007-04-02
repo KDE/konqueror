@@ -20,7 +20,7 @@
 #include "toplevel.h"
 #include "commands.h"
 
-#include <kcommand.h>
+#include <k3command.h>
 #include <kiconloader.h>
 #include <kdebug.h>
 #include <klocale.h>
@@ -368,12 +368,12 @@ bool BookmarkModel::dropMimeData(const QMimeData * data, Qt::DropAction action, 
         addr += "/0"; //FIXME internal representation
     if(dropEvent)
     {
-        KCommand * mcmd = CmdGen::itemsMoved(KEBApp::self()->selectedBookmarks() , addr, false);
+        K3Command * mcmd = CmdGen::itemsMoved(KEBApp::self()->selectedBookmarks() , addr, false);
         CmdHistory::self()->didCommand(mcmd);
     }
     else
     {
-        KCommand * mcmd = CmdGen::insertMimeSource("FIXME", data, addr);
+        K3Command * mcmd = CmdGen::insertMimeSource("FIXME", data, addr);
         CmdHistory::self()->didCommand(mcmd);
     }
     kDebug()<<"resetting dropEvent"<<endl;

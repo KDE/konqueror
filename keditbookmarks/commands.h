@@ -21,7 +21,7 @@
 #ifndef __commands_h
 #define __commands_h
 
-#include <kcommand.h>
+#include <k3command.h>
 #include <kbookmark.h>
 //Added by qt3to4:
 #include <QMap>
@@ -40,11 +40,11 @@ public:
    virtual QString affectedBookmarks() const = 0;
 };
 
-class KEBMacroCommand : public KMacroCommand, public IKEBCommand
+class KEBMacroCommand : public K3MacroCommand, public IKEBCommand
 {
 public:
    KEBMacroCommand(const QString &name)
-      : KMacroCommand(name) {}
+      : K3MacroCommand(name) {}
    virtual ~KEBMacroCommand() {}
    virtual QString affectedBookmarks() const;
 };
@@ -56,12 +56,12 @@ public:
    virtual ~DeleteManyCommand() {}
 };
 
-class CreateCommand : public KCommand, public IKEBCommand
+class CreateCommand : public K3Command, public IKEBCommand
 {
 public:
    // separator
    CreateCommand(const QString &address)
-      : KCommand(), m_to(address),
+      : K3Command(), m_to(address),
         m_group(false), m_separator(true), m_originalBookmark(QDomElement())
    { ; }
 
@@ -69,7 +69,7 @@ public:
    CreateCommand(const QString &address,
                  const QString &text, const QString &iconPath, 
                  const KUrl &url)
-      : KCommand(), m_to(address), m_text(text), m_iconPath(iconPath), m_url(url),
+      : K3Command(), m_to(address), m_text(text), m_iconPath(iconPath), m_url(url),
         m_group(false), m_separator(false), m_originalBookmark(QDomElement())
    { ; }
 
@@ -77,14 +77,14 @@ public:
    CreateCommand(const QString &address,
                  const QString &text, const QString &iconPath, 
                  bool open)
-      : KCommand(), m_to(address), m_text(text), m_iconPath(iconPath),
+      : K3Command(), m_to(address), m_text(text), m_iconPath(iconPath),
         m_group(true), m_separator(false), m_open(open), m_originalBookmark(QDomElement())
    { ; }
 
    // clone existing bookmark
    CreateCommand(const QString &address,
                  const KBookmark &original, const QString &name = QString())
-      : KCommand(), m_to(address), m_group(false), m_separator(false),
+      : K3Command(), m_to(address), m_group(false), m_separator(false),
         m_open(false), m_originalBookmark(original), m_mytext(name)
    { ; }
 
@@ -107,7 +107,7 @@ private:
    QString m_mytext;
 };
 
-class EditCommand : public KCommand, public IKEBCommand
+class EditCommand : public K3Command, public IKEBCommand
 {
 public:
    EditCommand(const QString & address, int col, const QString & newValue);
@@ -127,11 +127,11 @@ private:
    QString mOldValue;
 };
 
-class DeleteCommand : public KCommand, public IKEBCommand
+class DeleteCommand : public K3Command, public IKEBCommand
 {
 public:
    DeleteCommand(const QString &from, bool contentOnly = false)
-      : KCommand(), m_from(from), m_cmd(0), m_subCmd(0), m_contentOnly(contentOnly)
+      : K3Command(), m_from(from), m_cmd(0), m_subCmd(0), m_contentOnly(contentOnly)
    { ; }
    virtual ~DeleteCommand() { delete m_cmd; delete m_subCmd; }
    virtual void execute();
@@ -144,18 +144,18 @@ public:
    static KEBMacroCommand* deleteAll(const KBookmarkGroup &parentGroup);
 private:
    QString m_from;
-   KCommand *m_cmd;
+   K3Command *m_cmd;
    KEBMacroCommand *m_subCmd;
    bool m_contentOnly;
 };
 
-class MoveCommand : public KCommand, public IKEBCommand
+class MoveCommand : public K3Command, public IKEBCommand
 {
 public:
    // "Create it with itemsAlreadyMoved=true since 
    // "K3ListView moves the item before telling us about it."
    MoveCommand(const QString &from, const QString &to, const QString &name = QString())
-      : KCommand(), m_from(from), m_to(to), m_mytext(name)
+      : K3Command(), m_from(from), m_to(to), m_mytext(name)
    { ; }
    QString finalAddress() const;
    virtual ~MoveCommand() { ; }

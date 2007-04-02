@@ -60,8 +60,8 @@ CmdHistory* CmdHistory::s_self = 0;
 
 CmdHistory::CmdHistory(KActionCollection *collection)
     : m_commandHistory(collection) {
-    connect(&m_commandHistory, SIGNAL( commandExecuted(KCommand *) ),
-            SLOT( slotCommandExecuted(KCommand *) ));
+    connect(&m_commandHistory, SIGNAL( commandExecuted(K3Command *) ),
+            SLOT( slotCommandExecuted(K3Command *) ));
     assert(!s_self);
     s_self = this; // this is hacky
 }
@@ -71,7 +71,7 @@ CmdHistory* CmdHistory::self() {
     return s_self;
 }
 
-void CmdHistory::slotCommandExecuted(KCommand *k) {
+void CmdHistory::slotCommandExecuted(K3Command *k) {
     KEBApp::self()->notifyCommandExecuted();
 
     IKEBCommand * cmd = dynamic_cast<IKEBCommand *>(k);
@@ -86,20 +86,20 @@ void CmdHistory::notifyDocSaved() {
     m_commandHistory.documentSaved();
 }
 
-void CmdHistory::didCommand(KCommand *cmd) {
+void CmdHistory::didCommand(K3Command *cmd) {
     if (!cmd)
         return;
     m_commandHistory.addCommand(cmd, false);
     CmdHistory::slotCommandExecuted(cmd);
 }
 
-void CmdHistory::addCommand(KCommand *cmd) {
+void CmdHistory::addCommand(K3Command *cmd) {
     if (!cmd)
         return;
     m_commandHistory.addCommand(cmd);
 }
 
-void CmdHistory::addInFlightCommand(KCommand *cmd)
+void CmdHistory::addInFlightCommand(K3Command *cmd)
 {
     if(!cmd)
         return;

@@ -24,7 +24,7 @@
 #include "commands.h"
 #include <klocale.h>
 
-#include <kcommand.h>
+#include <k3command.h>
 
 #include <QObject>
 #include <QString>
@@ -32,12 +32,12 @@
 class KBookmark;
 
 // part pure
-class ImportCommand : public QObject, public KCommand, public IKEBCommand
+class ImportCommand : public QObject, public K3Command, public IKEBCommand
 {
    Q_OBJECT
 public:
    ImportCommand()
-      : KCommand(), m_utf8(false), m_folder(false), m_cleanUpCmd(0L)
+      : K3Command(), m_utf8(false), m_folder(false), m_cleanUpCmd(0L)
    { ; }
 
    virtual void import(const QString &fileName, bool folder) = 0;
@@ -86,7 +86,7 @@ protected:
 
 private:
    bool m_folder;
-   KMacroCommand *m_cleanUpCmd;
+   K3MacroCommand *m_cleanUpCmd;
 };
 
 // part pure

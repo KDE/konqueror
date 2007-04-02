@@ -105,7 +105,7 @@ void ImportCommand::execute() {
         delete m_cleanUpCmd;
         m_cleanUpCmd = DeleteCommand::deleteAll(bkGroup);
 
-        KMacroCommand *mcmd = (KMacroCommand*) m_cleanUpCmd;
+        K3MacroCommand *mcmd = (K3MacroCommand*) m_cleanUpCmd;
         mcmd->addCommand(new DeleteCommand(bkGroup.address(),
                     true /* contentOnly */));
         m_cleanUpCmd->execute();
@@ -126,7 +126,7 @@ void ImportCommand::unexecute() {
     } else {
         // we imported at the root -> delete everything
         KBookmarkGroup root = CurrentMgr::self()->root();
-        KCommand *cmd = DeleteCommand::deleteAll(root);
+        K3Command *cmd = DeleteCommand::deleteAll(root);
 
         cmd->execute();
         delete cmd;

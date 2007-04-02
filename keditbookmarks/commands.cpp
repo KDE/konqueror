@@ -35,8 +35,8 @@
 
 QString KEBMacroCommand::affectedBookmarks() const
 {
-    const QList<KCommand *> commandList = commands();
-    QList<KCommand*>::const_iterator it = commandList.constBegin();
+    const QList<K3Command *> commandList = commands();
+    QList<K3Command*>::const_iterator it = commandList.constBegin();
     if ( it == commandList.constEnd() )
         return QString();
     // Need to use dynamic_cast here due to going cross-hierarchy, but it should never return 0.
@@ -148,7 +148,7 @@ QString CreateCommand::affectedBookmarks() const
 /* -------------------------------------- */
 
 EditCommand::EditCommand(const QString & address, int col, const QString & newValue)
-      : KCommand(), mAddress(address), mCol(col)
+      : K3Command(), mAddress(address), mCol(col)
 {
     if(mCol == 1)
     {
