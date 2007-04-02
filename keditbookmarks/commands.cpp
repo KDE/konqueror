@@ -35,13 +35,14 @@
 
 QString KEBMacroCommand::affectedBookmarks() const
 {
-    QList<KCommand*>::const_iterator it = m_commands.constBegin();
-    if ( it == m_commands.constEnd() )
+    const QList<KCommand *> commandList = commands();
+    QList<KCommand*>::const_iterator it = commandList.constBegin();
+    if ( it == commandList.constEnd() )
         return QString();
     // Need to use dynamic_cast here due to going cross-hierarchy, but it should never return 0.
     QString affectBook = dynamic_cast<IKEBCommand *>(*it)->affectedBookmarks();
     ++it;
-    for( ; it != m_commands.constEnd() ; ++it )
+    for( ; it != commandList.constEnd() ; ++it )
     {
         affectBook = KBookmark::commonParent( affectBook, dynamic_cast<IKEBCommand *>(*it)->affectedBookmarks());
     }
@@ -480,7 +481,7 @@ class SortByName {
 /* -------------------------------------- */
 
 void SortCommand::execute() {
-    if (m_commands.isEmpty()) {
+    if (commands().isEmpty()) {
         KBookmarkGroup grp = CurrentMgr::bookmarkAt(m_groupAddress).toGroup();
         Q_ASSERT(!grp.isNull());
         SortItem firstChild(grp.first());
