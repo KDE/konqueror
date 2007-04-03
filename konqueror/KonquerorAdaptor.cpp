@@ -168,7 +168,7 @@ QDBusObjectPath KonquerorAdaptor::windowForTab()
     QList<KonqMainWindow*> *mainWindows = KonqMainWindow::mainWindowList();
     if ( mainWindows ) {
         foreach ( KonqMainWindow* window, *mainWindows ) {
-#ifdef Q_OS_UNIX
+#ifdef Q_WS_X11
             KWM::WindowInfo winfo = KWM::windowInfo( window->winId(), NET::WMDesktop );
             if( winfo.isOnCurrentDesktop() &&
 #else
