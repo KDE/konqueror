@@ -5388,7 +5388,7 @@ bool KonqMainWindow::queryExit()
 
 void KonqMainWindow::setIcon( const QPixmap& pix )
 {
-#ifdef Q_OS_UNIX
+#ifdef Q_WS_X11
     KParts::MainWindow::setWindowIcon( pix );
 
   QPixmap big = pix;
