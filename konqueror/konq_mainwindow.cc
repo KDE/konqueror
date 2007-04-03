@@ -5388,9 +5388,9 @@ bool KonqMainWindow::queryExit()
 
 void KonqMainWindow::setIcon( const QPixmap& pix )
 {
-#ifdef Q_WS_X11
     KParts::MainWindow::setWindowIcon( pix );
 
+#ifdef Q_WS_X11
   QPixmap big = pix;
 
   QString url = m_combo->currentText();
