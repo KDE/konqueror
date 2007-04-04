@@ -3,6 +3,7 @@ project(kfind)
 
 include_directories( ${CMAKE_SOURCE_DIR}/libkonq )
 
+add_definitions (-DQT3_SUPPORT)
 
 ########### next target ###############
 

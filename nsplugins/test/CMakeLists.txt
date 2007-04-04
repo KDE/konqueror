@@ -1,6 +1,8 @@
 if(KDE4_BUILD_TESTS)
 include_directories( ${CMAKE_SOURCE_DIR}/libltdl ${CMAKE_CURRENT_BINARY_DIR}/.. ${CMAKE_CURRENT_SOURCE_DIR}/../ )
 
+add_definitions (-DQT3_SUPPORT)
+
 ########### next target ###############
 
 set(testnsplugin_SRCS testnsplugin.cpp ${nsplugins_SRCS} )

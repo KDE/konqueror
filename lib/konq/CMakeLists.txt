@@ -7,6 +7,7 @@ add_subdirectory( tests )
 
 include_directories( ${ZLIB_INCLUDE_DIR}  )
 
+add_definitions (-DQT3_SUPPORT)
 
 ########### next target ###############
 
