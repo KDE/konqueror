@@ -5390,7 +5390,6 @@ void KonqMainWindow::setIcon( const QPixmap& pix )
 {
     KParts::MainWindow::setWindowIcon( pix );
 
-#ifdef Q_WS_X11
   QPixmap big = pix;
 
   QString url = m_combo->currentText();
@@ -5399,7 +5398,6 @@ void KonqMainWindow::setIcon( const QPixmap& pix )
     big = KonqPixmapProvider::self()->pixmapFor( url, K3Icon::SizeMedium );
 
   KWM::setIcons( winId(), big, pix );
-#endif
 }
 
 void KonqMainWindow::slotIntro()
