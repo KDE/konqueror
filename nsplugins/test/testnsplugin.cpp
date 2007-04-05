@@ -23,7 +23,6 @@
 #include <QString>
 #include <kactioncollection.h>
 //Added by qt3to4:
-#include <Q3HBoxLayout>
 #include <kapplication.h>
 #include <kcmdlineargs.h>
 #include <kdebug.h>
@@ -42,11 +41,13 @@ TestNSPlugin::TestNSPlugin()
    m_client = new QWidget( this );
    setCentralWidget( m_client );
    m_client->show();
-   m_layout = new Q3HBoxLayout( m_client );
+   m_layout = new QHBoxLayout( m_client );
+   m_layout->setMargin( 0 );
+   m_layout->setSpacing( 0 );
 
    // file menu
-   actionCollection()->addAction(KStandardAction::Open, m_client, SLOT(newView()));
-   actionCollection()->addAction(KStandardAction::Close,m_client,SLOT(closeView()));
+   actionCollection()->addAction(KStandardAction::Open, this, SLOT(newView()));
+   actionCollection()->addAction(KStandardAction::Close, this, SLOT(closeView()));
    actionCollection()->addAction(KStandardAction::Quit,kapp,SLOT(quit()));
 
    createGUI( "testnspluginui.rc" );
