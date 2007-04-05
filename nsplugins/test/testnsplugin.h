@@ -23,15 +23,12 @@
 #ifndef __TESTNSPLUGIN_H__
 #define __TESTNSPLUGIN_H__
 
-#include <QString>
 #include <QWidget>
-//Added by qt3to4:
 #include <Q3PtrList>
-#include <Q3BoxLayout>
 #include <kmainwindow.h>
-#include <QLayout>
 #include <QList>
 
+class QBoxLayout;
 class NSPluginLoader;
 class NSPluginInstance;
 
@@ -52,7 +49,7 @@ protected:
   NSPluginLoader *m_loader;
   Q3PtrList<QWidget> m_plugins;
   QWidget *m_client;
-  Q3BoxLayout *m_layout;
+  QBoxLayout *m_layout;
 };
 
 
