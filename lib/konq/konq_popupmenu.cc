@@ -851,13 +851,13 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
                     // use service->noDisplay() here.
                     const QString onlyShowIn = service->property("OnlyShowIn", QVariant::String).toString();
                     if ( !onlyShowIn.isEmpty() ) {
-                        const QStringList aList = QStringList::split(';', onlyShowIn);
+                        const QStringList aList = onlyShowIn.split(';', QString::SkipEmptyParts);
                         if (!aList.contains("KDE"))
                             continue;
                     }
                     const QString notShowIn = service->property("NotShowIn", QVariant::String).toString();
                     if ( !notShowIn.isEmpty() ) {
-                        const QStringList aList = QStringList::split(';', notShowIn);
+                        const QStringList aList = notShowIn.split(';', QString::SkipEmptyParts);
                         if (aList.contains("KDE"))
                             continue;
                     }
