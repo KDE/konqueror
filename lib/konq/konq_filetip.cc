@@ -43,7 +43,7 @@
 //--------------------------------------------------------------------------------
 
 KonqFileTip::KonqFileTip( Q3ScrollView* parent )
-  : Q3Frame( 0, 0, Qt::WStyle_Customize | Qt::WStyle_NoBorder | Qt::WStyle_Tool | Qt::WStyle_StaysOnTop | Qt::WX11BypassWM ),
+  : Q3Frame( 0, 0, Qt::FramelessWindowHint | Qt::Tool | Qt::WindowStaysOnTopHint | Qt::X11BypassWindowManagerHint ),
     m_on( false ),
     m_preview( false ),
     m_filter( false ),
@@ -66,7 +66,7 @@ KonqFileTip::KonqFileTip( Q3ScrollView* parent )
 
     setPalette( QToolTip::palette() );
     setMargin( 1 );
-    setFrameStyle( Q3Frame::Plain | Q3Frame::Box );
+    setFrameStyle( QFrame::Plain | QFrame::Box );
 
     m_timer = new QTimer(this);
 
