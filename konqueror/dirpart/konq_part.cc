@@ -159,8 +159,12 @@ void KonqPart::slotToolTip( const QModelIndex& index )
 void KonqPart::slotContextMenu( const QPoint& pos, const QModelIndexList& indexes )
 {
     KFileItemList items;
-    if ( indexes.isEmpty() )
-        items.append( m_model->itemForIndex( QModelIndex() ) ); // root item
+    if ( indexes.isEmpty() ) {
+        KFileItem* item = m_model->itemForIndex( QModelIndex() );  // root item
+        if ( item ) {
+            items.append( item );
+        }
+    }
     else
         foreach( QModelIndex index, indexes )
             if ( index.column() == 0 )
