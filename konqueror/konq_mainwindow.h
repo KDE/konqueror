@@ -407,7 +407,6 @@ public Q_SLOTS:
   void slotPartChanged( KonqView *childView, KParts::ReadOnlyPart *oldPart, KParts::ReadOnlyPart *newPart );
 
   void slotRunFinished();
-  void slotClearLocationBar( Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers );
 
   // reimplement from KParts::MainWindow
   virtual void slotSetStatusBarText( const QString &text );

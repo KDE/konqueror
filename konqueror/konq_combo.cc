@@ -790,7 +790,10 @@ bool KonqComboListBoxPixmap::reuse( const QString& newText )
 ///////////////////////////////////////////////////////////////////////////////
 
 KonqComboLineEdit::KonqComboLineEdit( QWidget *parent )
-                  :KLineEdit( parent ) {}
+                  :KLineEdit( parent )
+{
+    setClearButtonShown( true );
+}
 
 void KonqComboLineEdit::setCompletedItems( const QStringList& items )
 {

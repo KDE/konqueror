@@ -3444,16 +3444,6 @@ void KonqMainWindow::slotCheckComboSelection()
   m_paCut->setEnabled( hasSelection );
 }
 
-void KonqMainWindow::slotClearLocationBar( Qt::MouseButtons buttons, Qt::KeyboardModifiers )
-{
-  kDebug(1202) << "slotClearLocationBar" << endl;
-  slotStop();
-  m_combo->clearTemporary();
-  focusLocationBar();
-  if ( buttons & Qt::MidButton )
-      m_combo->setURL( QApplication::clipboard()->text( QClipboard::Selection ) );
-}
-
 void KonqMainWindow::slotForceSaveMainWindowSettings()
 {
 //  kDebug(1202)<<"slotForceSaveMainWindowSettings()"<<endl;
@@ -3991,15 +3981,6 @@ void KonqMainWindow::initActions()
 
   m_combo->setWhatsThis( i18n( "Location Bar<p>"
 				  "Enter a web address or search term." ) );
-
-  QAction *clearLocation = actionCollection()->addAction("clear_location");
-  clearLocation->setIcon( KIcon(QApplication::isRightToLeft() ? "clear-left" : "locationbar-erase") );
-  clearLocation->setText( i18n( "Clear Location Bar" ) );
-  clearLocation->setShortcut(Qt::CTRL+Qt::Key_L);
-  connect( clearLocation, SIGNAL( triggered( Qt::MouseButtons, Qt::KeyboardModifiers ) ),
-           SLOT( slotClearLocationBar( Qt::MouseButtons, Qt::KeyboardModifiers ) ) );
-  clearLocation->setWhatsThis( i18n( "Clear Location bar<p>"
-				     "Clears the content of the location bar." ) );
 
   // Bookmarks menu
   m_pamBookmarks = new KonqBookmarkActionMenu(KonqBookmarkManager::self()->root(),
