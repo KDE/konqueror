@@ -60,7 +60,9 @@ QByteArray ClientApp::startup_id_str;
 bool ClientApp::m_ok = true;
 bool s_interactive = true;
 
-K_GLOBAL_STATIC(KComponentData, s_instance)
+K_GLOBAL_STATIC_WITH_ARGS(KComponentData, s_instance, ("kfmclient"))
+
+static void needInstance();
 
 static const KCmdLineOptions options[] =
 {
@@ -105,6 +107,8 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
     return 0;
   }
 
+  // ClientApp internally uses KConfig and hence needs a valid KComponentData
+  needInstance();
   return ClientApp::doIt() ? 0 /*no error*/ : 1 /*error*/;
 }
 
