@@ -111,16 +111,21 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   secondLayout->addWidget( m_autoEmbed, 1 );
 
   m_autoEmbed->setSizePolicy( QSizePolicy::Preferred, QSizePolicy::Fixed );
-  m_autoEmbed->sizePolicy().setHeightForWidth(m_autoEmbed->sizePolicy().hasHeightForWidth());
 
-  // The order of those three items is very important. If you change it, fix typeslistitem.cpp !
-  new QRadioButton( i18n("Show file in embedded viewer"), m_autoEmbed );
-  new QRadioButton( i18n("Show file in separate viewer"), m_autoEmbed );
-  m_rbGroupSettings = new QRadioButton( QString("Use settings for '%1' group"), m_autoEmbed );
+  QRadioButton *embViewerRadio = new QRadioButton( i18n("Show file in embedded viewer") );
+  QRadioButton *sepViewerRadio = new QRadioButton( i18n("Show file in separate viewer") );
+  m_rbGroupSettings = new QRadioButton( QString("Use settings for '%1' group") );
   connect(m_autoEmbed, SIGNAL( clicked( int ) ), SLOT( slotAutoEmbedClicked( int ) ));
 
-  m_chkAskSave = new QCheckBox( i18n("Ask whether to save to disk instead"), m_autoEmbed);
+  m_chkAskSave = new QCheckBox( i18n("Ask whether to save to disk instead") );
   connect(m_chkAskSave, SIGNAL( toggled(bool) ), SLOT( slotAskSaveToggled(bool) ));
+
+  QVBoxLayout *vbox = new QVBoxLayout;
+  vbox->addWidget(embViewerRadio);
+  vbox->addWidget(sepViewerRadio);
+  vbox->addWidget(m_rbGroupSettings);
+  vbox->addWidget(m_chkAskSave);
+  m_autoEmbed->setLayout(vbox);
 
   m_autoEmbed->setWhatsThis( i18n("Here you can configure what the Konqueror file manager"
     " will do when you click on a file of this type. Konqueror can display the file in"
