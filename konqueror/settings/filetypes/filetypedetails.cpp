@@ -3,12 +3,10 @@
 #include <QLayout>
 #include <QRadioButton>
 #include <QListWidget>
-
-//Added by qt3to4:
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QGridLayout>
-#include <Q3ButtonGroup>
+#include <QButtonGroup>
 
 #include <kapplication.h>
 #include <kconfig.h>
@@ -46,12 +44,10 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   iconButton->setWhatsThis( i18n("This button displays the icon associated"
     " with the selected file type. Click on it to choose a different icon.") );
 
-  Q3GroupBox *gb = new Q3GroupBox(i18n("Filename Patterns"), firstWidget);
+  QGroupBox *gb = new QGroupBox(i18n("Filename Patterns"), firstWidget);
   hBox->addWidget(gb);
 
   QGridLayout *grid = new QGridLayout(gb);
-  grid->setMargin(KDialog::marginHint());
-  grid->setSpacing(KDialog::spacingHint());
   grid->addItem(new QSpacerItem(0,fontMetrics().lineSpacing()), 0, 0);
 
   extensionLB = new QListWidget(gb);
@@ -82,13 +78,16 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
 
   removeExtButton->setWhatsThis( i18n("Remove the selected filename pattern.") );
 
-  gb = new Q3GroupBox(i18n("Description"), firstWidget);
+  gb = new QGroupBox(i18n("Description"), firstWidget);
   firstLayout->addWidget(gb);
 
-  gb->setColumnLayout(1, Qt::Horizontal);
   description = new KLineEdit(gb);
   connect(description, SIGNAL(textChanged(const QString &)),
           SLOT(updateDescription(const QString &)));
+
+  QVBoxLayout *descriptionBox = new QVBoxLayout;
+  descriptionBox->addWidget(description);
+  gb->setLayout(descriptionBox);
 
   wtstr = i18n("You can enter a short description for files of the selected"
     " file type (e.g. 'HTML Page'). This description will be used by applications"
@@ -106,28 +105,33 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   secondLayout->setMargin(KDialog::marginHint());
   secondLayout->setSpacing(KDialog::spacingHint());
 
-  m_autoEmbed = new Q3ButtonGroup( i18n("Left Click Action"), secondWidget );
+  m_autoEmbedBox = new QGroupBox( i18n("Left Click Action"), secondWidget );
   secondLayout->setSpacing( KDialog::spacingHint() );
-  secondLayout->addWidget( m_autoEmbed, 1 );
+  secondLayout->addWidget( m_autoEmbedBox, 1 );
 
-  m_autoEmbed->setSizePolicy( QSizePolicy::Preferred, QSizePolicy::Fixed );
+  m_autoEmbedBox->setSizePolicy( QSizePolicy::Preferred, QSizePolicy::Fixed );
 
   QRadioButton *embViewerRadio = new QRadioButton( i18n("Show file in embedded viewer") );
   QRadioButton *sepViewerRadio = new QRadioButton( i18n("Show file in separate viewer") );
   m_rbGroupSettings = new QRadioButton( QString("Use settings for '%1' group") );
-  connect(m_autoEmbed, SIGNAL( clicked( int ) ), SLOT( slotAutoEmbedClicked( int ) ));
+  connect(m_autoEmbedBox, SIGNAL( clicked( int ) ), SLOT( slotAutoEmbedClicked( int ) ));
 
   m_chkAskSave = new QCheckBox( i18n("Ask whether to save to disk instead") );
   connect(m_chkAskSave, SIGNAL( toggled(bool) ), SLOT( slotAskSaveToggled(bool) ));
+
+  m_autoEmbedGroup = new QButtonGroup(this);
+  m_autoEmbedGroup->addButton(embViewerRadio, 0);
+  m_autoEmbedGroup->addButton(sepViewerRadio, 1);
+  m_autoEmbedGroup->addButton(m_rbGroupSettings, 2);
 
   QVBoxLayout *vbox = new QVBoxLayout;
   vbox->addWidget(embViewerRadio);
   vbox->addWidget(sepViewerRadio);
   vbox->addWidget(m_rbGroupSettings);
   vbox->addWidget(m_chkAskSave);
-  m_autoEmbed->setLayout(vbox);
+  m_autoEmbedBox->setLayout(vbox);
 
-  m_autoEmbed->setWhatsThis( i18n("Here you can configure what the Konqueror file manager"
+  m_autoEmbedBox->setWhatsThis( i18n("Here you can configure what the Konqueror file manager"
     " will do when you click on a file of this type. Konqueror can display the file in"
     " an embedded viewer or start up a separate application. If set to 'Use settings for G group',"
     " Konqueror will behave according to the settings of the group G this type belongs to,"
@@ -292,7 +296,7 @@ void FileTypeDetails::setTypeItem( TypesListItem * tlitem )
 
   serviceListWidget->setTypeItem( tlitem );
   embedServiceListWidget->setTypeItem( tlitem );
-  m_autoEmbed->setButton( tlitem->autoEmbed() );
+  m_autoEmbedGroup->button(tlitem->autoEmbed())->setChecked(true);
   m_rbGroupSettings->setEnabled( tlitem->canUseGroupSetting() );
 
   extensionLB->addItems(tlitem->patterns());
