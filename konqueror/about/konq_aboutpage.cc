@@ -96,7 +96,7 @@ QString KonqAboutPageFactory::launch()
 
   KIconLoader *iconloader = KIconLoader::global();
   int iconSize = iconloader->currentSize(K3Icon::Desktop);
-  QString home_icon_path = iconloader->iconPath("user-home", K3Icon::Desktop );
+  QString home_icon_path = iconloader->iconPath("go-home", K3Icon::Desktop );
   QString storage_icon_path = iconloader->iconPath("system", K3Icon::Desktop );
   QString remote_icon_path = iconloader->iconPath("network-wired", K3Icon::Desktop );
   QString wastebin_icon_path = iconloader->iconPath("user-trash-full", K3Icon::Desktop );
@@ -313,13 +313,13 @@ QString KonqAboutPageFactory::tips()
     QString openterm_icon_path =
 	    iconloader->iconPath("openterm", K3Icon::Small );
     QString locationbar_erase_rtl_icon_path =
-	    iconloader->iconPath("clear_left", K3Icon::Small );
+	    iconloader->iconPath("clear-left", K3Icon::Small );
     QString locationbar_erase_icon_path =
-	    iconloader->iconPath("locationbar_erase", K3Icon::Small );
+	    iconloader->iconPath("locationbar-erase", K3Icon::Small );
     QString window_fullscreen_icon_path =
 	    iconloader->iconPath("view-fullscreen", K3Icon::Small );
     QString view_left_right_icon_path =
-	    iconloader->iconPath("view_left_right", K3Icon::Small );
+	    iconloader->iconPath("view-left-right", K3Icon::Small );
     QString continue_icon_path = QApplication::isRightToLeft()?iconloader->iconPath("arrow-left", K3Icon::Small ):iconloader->iconPath("arrow-right", K3Icon::Small );
 
     res = res.arg( KStandardDirs::locate( "data", "kdeui/about/kde_infopage.css" ) );

@@ -3658,7 +3658,7 @@ void KonqMainWindow::initActions()
   connect(action, SIGNAL(triggered(bool)), SLOT( slotNewWindow() ));
   action->setShortcuts(KStandardShortcut::shortcut(KStandardShortcut::New));
   action = actionCollection()->addAction("duplicate_window");
-  action->setIcon(KIcon("window_duplicate"));
+  action->setIcon(KIcon("window-duplicate"));
   action->setText(i18n( "&Duplicate Window" ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotDuplicateWindow() ));
   action->setShortcut(Qt::CTRL+Qt::Key_D);
@@ -3819,12 +3819,12 @@ void KonqMainWindow::initActions()
 
   // Window menu
   m_paSplitViewHor = actionCollection()->addAction("splitviewh");
-  m_paSplitViewHor->setIcon( KIcon("view_left_right") );
+  m_paSplitViewHor->setIcon( KIcon("view-left-right") );
   m_paSplitViewHor->setText( i18n( "Split View &Left/Right" ) );
   connect(m_paSplitViewHor, SIGNAL(triggered(bool)), SLOT( slotSplitViewHorizontal() ));
   m_paSplitViewHor->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_L);
   m_paSplitViewVer = actionCollection()->addAction("splitviewv");
-  m_paSplitViewVer->setIcon( KIcon("view_top_bottom") );
+  m_paSplitViewVer->setIcon( KIcon("view-top-bottom") );
   m_paSplitViewVer->setText( i18n( "Split View &Top/Bottom" ) );
   connect(m_paSplitViewVer, SIGNAL(triggered(bool)), SLOT( slotSplitViewVertical() ));
   m_paSplitViewVer->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_T);
@@ -3835,17 +3835,17 @@ void KonqMainWindow::initActions()
   m_paAddTab->setShortcuts(KShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_N, Qt::CTRL+Qt::Key_T));
 
   m_paDuplicateTab = actionCollection()->addAction("duplicatecurrenttab");
-  m_paDuplicateTab->setIcon( KIcon("tab_duplicate") );
+  m_paDuplicateTab->setIcon( KIcon("tab-duplicate") );
   m_paDuplicateTab->setText( i18n( "&Duplicate Current Tab" ) );
   connect(m_paDuplicateTab, SIGNAL(triggered(bool)), SLOT( slotDuplicateTab() ));
   m_paDuplicateTab->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_D);
   m_paBreakOffTab = actionCollection()->addAction("breakoffcurrenttab");
-  m_paBreakOffTab->setIcon( KIcon("tab_breakoff") );
+  m_paBreakOffTab->setIcon( KIcon("tab-breakoff") );
   m_paBreakOffTab->setText( i18n( "Detach Current Tab" ) );
   connect(m_paBreakOffTab, SIGNAL(triggered(bool)), SLOT( slotBreakOffTab() ));
   m_paBreakOffTab->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_B);
   m_paRemoveView = actionCollection()->addAction("removeview");
-  m_paRemoveView->setIcon( KIcon("view_remove") );
+  m_paRemoveView->setIcon( KIcon("view-remove") );
   m_paRemoveView->setText( i18n( "&Close Active View" ) );
   connect(m_paRemoveView, SIGNAL(triggered(bool)), SLOT( slotRemoveView() ));
   m_paRemoveView->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_R);
@@ -3860,12 +3860,12 @@ void KonqMainWindow::initActions()
   connect(m_paRemoveOtherTabs, SIGNAL(triggered(bool)), SLOT( slotRemoveOtherTabsPopup() ));
 
   m_paActivateNextTab = actionCollection()->addAction("activatenexttab");
-  m_paActivateNextTab->setIcon( KIcon("tab_next") );
+  m_paActivateNextTab->setIcon( KIcon("tab-next") );
   m_paActivateNextTab->setText( i18n( "Activate Next Tab" ) );
   connect(m_paActivateNextTab, SIGNAL(triggered(bool)), SLOT( slotActivateNextTab() ));
   m_paActivateNextTab->setShortcuts(QApplication::isRightToLeft() ? KStandardShortcut::tabPrev() : KStandardShortcut::tabNext());
   m_paActivatePrevTab = actionCollection()->addAction("activateprevtab");
-  m_paActivatePrevTab->setIcon( KIcon("tab_previous") );
+  m_paActivatePrevTab->setIcon( KIcon("tab-previous") );
   m_paActivatePrevTab->setText( i18n( "Activate Previous Tab" ) );
   connect(m_paActivatePrevTab, SIGNAL(triggered(bool)), SLOT( slotActivatePrevTab() ));
   m_paActivatePrevTab->setShortcuts(QApplication::isRightToLeft() ? KStandardShortcut::tabNext() : KStandardShortcut::tabPrev());
@@ -3889,7 +3889,7 @@ void KonqMainWindow::initActions()
 
 #ifndef NDEBUG
   action = actionCollection()->addAction("dumpdebuginfo");
-  action->setIcon( KIcon("view_dump_debug_info") );
+  action->setIcon( KIcon("view-dump-debug-info") );
   action->setText( i18n( "Dump Debug Info" ) );
   connect(action, SIGNAL(triggered(bool)), SLOT( slotDumpDebugInfo() ));
 #endif
@@ -3917,7 +3917,7 @@ void KonqMainWindow::initActions()
   connect(m_paReload, SIGNAL(triggered(bool)), SLOT( slotReload() ));
   m_paReload->setShortcuts(reloadShortcut);
   m_paReloadAllTabs = actionCollection()->addAction("reload_all_tabs");
-  m_paReloadAllTabs->setIcon( KIcon("reload_all_tabs") );
+  m_paReloadAllTabs->setIcon( KIcon("reload-all-tabs") );
   m_paReloadAllTabs->setText( i18n( "&Reload All Tabs" ) );
   connect(m_paReloadAllTabs, SIGNAL(triggered(bool)), SLOT( slotReloadAllTabs() ));
   m_paReloadAllTabs->setShortcut(Qt::SHIFT+Qt::Key_F5);
