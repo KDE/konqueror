@@ -27,7 +27,7 @@
 #include <QKeyEvent>
 #include <QPaintEvent>
 
-#include <kcombobox.h>
+#include <khistorycombobox.h>
 #include <konq_historymgr.h>
 
 class KCompletion;
@@ -35,7 +35,7 @@ class KConfig;
 
 // we use KHistoryCombo _only_ for the up/down keyboard handling, otherwise
 // KComboBox would do fine.
-class KonqCombo : public KHistoryCombo
+class KonqCombo : public KHistoryComboBox
 {
     Q_OBJECT
 

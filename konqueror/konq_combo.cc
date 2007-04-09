@@ -98,7 +98,7 @@ public:
 };
 
 KonqCombo::KonqCombo( QWidget *parent )
-          : KHistoryCombo( parent ),
+          : KHistoryComboBox( parent ),
             m_returnPressed( false ),
             m_permanent( false ),
             m_modifier( Qt::NoButton ),
@@ -239,13 +239,13 @@ void KonqCombo::applyPermanent()
 void KonqCombo::insertItem( const QString &text, int index, const QString& title )
 {
     KonqComboListBoxPixmap* item = new KonqComboListBoxPixmap( QPixmap(), text, title );
-    KHistoryCombo::insertItem( index, text, item );
+    KHistoryComboBox::insertItem( index, text, item );
 }
 
 void KonqCombo::insertItem( const QPixmap &pixmap, const QString& text, int index, const QString& title )
 {
     KonqComboListBoxPixmap* item = new KonqComboListBoxPixmap( pixmap, text, title );
-    KHistoryCombo::insertItem( index, pixmap, text, item );
+    KHistoryComboBox::insertItem( index, pixmap, text, item );
 }
 
 void KonqCombo::updateItem( const QPixmap& pix, const QString& t, int index, const QString& title )
@@ -372,7 +372,7 @@ void KonqCombo::popup()
                         K3Icon::SizeSmall), itemText( i ), i, titleOfURL( itemText( i ) ) );
         }
     }
-    KHistoryCombo::showPopup();
+    KHistoryComboBox::showPopup();
 }
 
 void KonqCombo::saveItems()
@@ -435,7 +435,7 @@ bool KonqCombo::eventFilter( QObject *o, QEvent *ev )
 
 void KonqCombo::keyPressEvent( QKeyEvent *e )
 {
-    KHistoryCombo::keyPressEvent( e );
+    KHistoryComboBox::keyPressEvent( e );
     // we have to set it as temporary, otherwise we wouldn't get our nice
     // pixmap. Yes, QComboBox still sucks.
     KShortcut key( e->key() | e->modifiers() );

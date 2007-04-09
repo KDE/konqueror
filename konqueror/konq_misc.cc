@@ -58,7 +58,7 @@ void KonqMisc::abortFullScreenMode()
     {
       if ( window->fullScreenMode() )
       {
-	KWM::WindowInfo info = KWM::windowInfo( window->winId(), NET::WMDesktop );
+	KWindowInfo info = KWM::windowInfo( window->winId(), NET::WMDesktop );
 	if ( info.valid() && info.isOnCurrentDesktop() )
           window->showNormal();
       }
