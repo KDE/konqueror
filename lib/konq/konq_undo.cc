@@ -691,7 +691,7 @@ bool KonqUndoManager::UiInterface::copiedFileWasModified( const KUrl& src, const
     //const QDateTime srcDt = QDateTime::fromTime_t( srcTime );
     const QDateTime destDt = QDateTime::fromTime_t( destTime );
     // Possible improvement: only show the time if date is today
-    const QString timeStr = KGlobal::locale()->formatDateTime( destDt, true /*short*/ );
+    const QString timeStr = KGlobal::locale()->formatDateTime( destDt, KLocale::ShortDate );
     return KMessageBox::warningContinueCancel(
         m_parentWidget,
         i18n( "The file %1 was copied from %2, but since then it has apparently been modified at %3.\n"
