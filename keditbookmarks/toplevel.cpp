@@ -183,8 +183,8 @@ QString CurrentMgr::makeTimeStr(int b)
     QDateTime dt;
     dt.setTime_t(b);
     return (dt.daysTo(QDateTime::currentDateTime()) > 31)
-        ? KGlobal::locale()->formatDate(dt.date(), false)
-        : KGlobal::locale()->formatDateTime(dt, false);
+        ? KGlobal::locale()->formatDate(dt.date(), KLocale::LongDate)
+        : KGlobal::locale()->formatDateTime(dt, KLocale::LongDate);
 }
 
 /* -------------------------- */

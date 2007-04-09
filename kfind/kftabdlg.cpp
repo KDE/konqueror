@@ -756,7 +756,7 @@ void KfindTabWidget::setQuery(KQuery *query)
 }
 
 QString KfindTabWidget::date2String(const QDate & date) {
-  return(KGlobal::locale()->formatDate(date, true));
+  return(KGlobal::locale()->formatDate(date, KLocale::ShortDate));
 }
 
 QDate &KfindTabWidget::string2Date(const QString & str, QDate *qd) {
