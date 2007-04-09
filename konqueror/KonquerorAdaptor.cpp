@@ -169,7 +169,7 @@ QDBusObjectPath KonquerorAdaptor::windowForTab()
     if ( mainWindows ) {
         foreach ( KonqMainWindow* window, *mainWindows ) {
 #ifdef Q_WS_X11
-            KWM::WindowInfo winfo = KWM::windowInfo( window->winId(), NET::WMDesktop );
+            KWindowInfo winfo = KWM::windowInfo( window->winId(), NET::WMDesktop );
             if( winfo.isOnCurrentDesktop() &&
 #else
 	    if(
