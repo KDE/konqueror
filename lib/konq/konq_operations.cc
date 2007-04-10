@@ -40,7 +40,7 @@
 #include <kio/paste.h>
 #include <kio/renamedialog.h>
 #include <kdirnotify.h>
-
+#include <kuiserverjobtracker.h>
 // For doDrop
 #include <kauthorized.h>
 #include <kglobal.h>
@@ -759,11 +759,14 @@ void KonqOperations::newDir( QWidget * parent, const KUrl & baseUrl )
 
 ////
 
-KonqMultiRestoreJob::KonqMultiRestoreJob( const KUrl::List& urls, bool /*showProgressInfo*/ )
-    : KIO::Job( /*showProgressInfo*/ ),
+KonqMultiRestoreJob::KonqMultiRestoreJob( const KUrl::List& urls, bool showProgressInfo )
+    : KIO::Job(  ),
       m_urls( urls ), m_urlsIterator( m_urls.begin() ),
       m_progress( 0 )
 {
+    if(showProgressInfo)
+       KIO::getJobTracker()->registerJob(this);
+
     QTimer::singleShot(0, this, SLOT(slotStart()));
 }
 
