@@ -224,8 +224,9 @@ void KonqOperations::_del( Operation method, const KUrl::List & _selectedUrls, C
 void KonqOperations::_restoreTrashedItems( const KUrl::List& urls )
 {
     m_method = RESTORE;
-    KonqMultiRestoreJob* job = new KonqMultiRestoreJob( urls, true );
+    KonqMultiRestoreJob* job = new KonqMultiRestoreJob( urls );
     job->ui()->setWindow(parentWidget());
+    KIO::getJobTracker()->registerJob(job);
     connect( job, SIGNAL( result( KJob * ) ),
              SLOT( slotResult( KJob * ) ) );
 }
@@ -759,22 +760,18 @@ void KonqOperations::newDir( QWidget * parent, const KUrl & baseUrl )
 
 ////
 
-KonqMultiRestoreJob::KonqMultiRestoreJob( const KUrl::List& urls, bool showProgressInfo )
-    : KIO::Job(  ),
+KonqMultiRestoreJob::KonqMultiRestoreJob( const KUrl::List& urls )
+    : KIO::Job(),
       m_urls( urls ), m_urlsIterator( m_urls.begin() ),
       m_progress( 0 )
 {
-    if(showProgressInfo)
-       KIO::getJobTracker()->registerJob(this);
-
     QTimer::singleShot(0, this, SLOT(slotStart()));
 }
 
 void KonqMultiRestoreJob::slotStart()
 {
-    // Well, it's not a total in bytes, so this would look weird
-    //if ( m_urlsIterator == m_urls.begin() ) // first time: emit total
-    //    emit totalSize( m_urls.count() );
+    if ( m_urlsIterator == m_urls.begin() ) // first time: emit total
+        setTotalAmount( KJob::Files, m_urls.count() );
 
     if ( m_urlsIterator != m_urls.end() )
     {
@@ -796,6 +793,7 @@ void KonqMultiRestoreJob::slotStart()
         stream << (int)3 << new_url;
         KIO::Job* job = KIO::special( new_url, packedArgs );
         addSubjob( job );
+        setProcessedAmount(KJob::Files, processedAmount(KJob::Files) + 1);
     }
     else // done!
     {
