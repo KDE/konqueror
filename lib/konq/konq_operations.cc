@@ -759,8 +759,8 @@ void KonqOperations::newDir( QWidget * parent, const KUrl & baseUrl )
 
 ////
 
-KonqMultiRestoreJob::KonqMultiRestoreJob( const KUrl::List& urls, bool showProgressInfo )
-    : KIO::Job( showProgressInfo ),
+KonqMultiRestoreJob::KonqMultiRestoreJob( const KUrl::List& urls, bool /*showProgressInfo*/ )
+    : KIO::Job( /*showProgressInfo*/ ),
       m_urls( urls ), m_urlsIterator( m_urls.begin() ),
       m_progress( 0 )
 {
