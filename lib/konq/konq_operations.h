@@ -203,7 +203,7 @@ class KonqMultiRestoreJob : public KIO::Job
     Q_OBJECT
 
 public:
-    KonqMultiRestoreJob( const KUrl::List& urls, bool showProgressInfo );
+    KonqMultiRestoreJob( const KUrl::List& urls );
 
 protected Q_SLOTS:
     virtual void slotStart();
