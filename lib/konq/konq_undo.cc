@@ -33,6 +33,7 @@
 #include <kconfig.h>
 #include <kmessagebox.h>
 #include <kglobal.h>
+#include <kuiserverjobtracker.h>
 
 #include <QDateTime>
 
@@ -71,7 +72,7 @@ static const char* undoStateToString( UndoState state ) {
 class KonqUndoJob : public KIO::Job
 {
 public:
-    KonqUndoJob() : KIO::Job( ) { KonqUndoManager::incRef(); }
+    KonqUndoJob() : KIO::Job( ) { KIO::getJobTracker()->registerJob(this); KonqUndoManager::incRef(); }
     virtual ~KonqUndoJob() { KonqUndoManager::decRef(); }
 
     virtual void kill( bool ) { KonqUndoManager::self()->stopUndo( true ); KIO::Job::doKill(); }
