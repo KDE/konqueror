@@ -715,12 +715,6 @@ private: // members
 
   KCMultiDialog* m_configureDialog;
 
-  /**
-   * A list of the modules to be shown in
-   * the configure dialog.
-   */
-  QStringList m_configureModules;
-
   QLabel* m_locationLabel;
   QPointer<KonqCombo> m_combo;
   static KConfig *s_comboConfig;

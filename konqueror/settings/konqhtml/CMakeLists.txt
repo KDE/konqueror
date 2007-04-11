@@ -4,7 +4,7 @@ include_directories( ${CMAKE_SOURCE_DIR}/libkonq )
 ########### next target ###############
 
 set(kcm_konqhtml_PART_SRCS 
-   advancedTabDialog.cpp 
+   generalopts.cpp
    htmlopts.cpp 
    jsopts.cpp 
    javaopts.cpp 
@@ -32,4 +32,4 @@ install(TARGETS kcm_konqhtml  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
 ########### install files ###############
 
-install( FILES khtml_behavior.desktop khtml_java_js.desktop khtml_fonts.desktop khtml_filter.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
+install( FILES khtml_general.desktop khtml_behavior.desktop khtml_java_js.desktop khtml_fonts.desktop khtml_filter.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )

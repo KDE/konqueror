@@ -34,6 +34,7 @@ KHTTPOptions::KHTTPOptions(KSharedConfig::Ptr config, QString group, const KComp
 
   // defaultCharsets = QString("utf-8 ")+klocale->charset()+" iso-8859-1";
   defaultCharsets = QString("utf-8 ")+" iso-8859-1"; // TODO
+  // if lang=ru or uk then +cp1251+koi8u - these are most used encodings (though locale may/should be utf8) --nick shaforostoff
 
   // finaly read the options
   load();

@@ -1,0 +1,21 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Service
+ServiceTypes=KCModule
+DocPath=kcontrol/khtml/index.html#kbrowse-html
+Icon=konqueror
+Exec=kcmshell khtml_general
+X-KDE-ParentApp=kcontrol
+
+
+X-KDE-Library=konqhtml
+X-KDE-FactoryName=khtml_general
+
+Name=General
+Name[x-test]=xxGeneralxx
+Comment=Configure the browser behavior
+Comment[x-test]=xxConfigure the browser behaviorxx
+Keywords=konqueror,kfm,browser,html,web,www,fonts,colours,colors,java,javascript,cursor,links,images,charsets,character sets,encoding
+Keywords[x-test]=xxkonqueror,kfm,browser,html,web,www,fonts,colours,colors,java,javascript,cursor,links,images,charsets,character sets,encodingxx
+
+Categories=Qt;KDE;X-KDE-settings-webbrowsing;
