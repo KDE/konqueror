@@ -13,9 +13,9 @@ X-KDE-FactoryName=khtml_general
 
 Name=General
 Name[x-test]=xxGeneralxx
-Comment=Configure the browser behavior
-Comment[x-test]=xxConfigure the browser behaviorxx
-Keywords=konqueror,kfm,browser,html,web,www,fonts,colours,colors,java,javascript,cursor,links,images,charsets,character sets,encoding
-Keywords[x-test]=xxkonqueror,kfm,browser,html,web,www,fonts,colours,colors,java,javascript,cursor,links,images,charsets,character sets,encodingxx
+Comment=Configure general konqueror behavior
+Comment[x-test]=xxConfigure general konqueror behaviorxx
+Keywords=konqueror,tabs
+Keywords[x-test]=xxkonqueror,tabsxx
 
-Categories=Qt;KDE;X-KDE-settings-webbrowsing;
+Categories=Qt;KDE;
