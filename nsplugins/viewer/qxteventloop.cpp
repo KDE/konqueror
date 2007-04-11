@@ -32,9 +32,12 @@
 ** not clear to you.
 **
 **********************************************************************/
+
+#include <config.h>
+
 #include <QApplication>
 #include "qxteventloop.h"
-
+#include <kglobal.h>
 
 #include <qwidgetintdict.h>
 //Added by qt3to4:
@@ -53,6 +56,8 @@ const int XKeyRelease = KeyRelease;
 #undef KeyRelease
 
 Boolean qmotif_event_dispatcher( XEvent *event );
+
+static void handle_xquerykeymap( Display* dpy, XEvent* event );
 
 class QXtEventLoopPrivate
 {
@@ -149,6 +154,7 @@ void QXtEventLoopPrivate::unhook()
 extern bool qt_try_modal( QWidget *, XEvent * ); // defined in qapplication_x11.cpp
 Boolean qmotif_event_dispatcher( XEvent *event )
 {
+    handle_xquerykeymap( qt_xdisplay(), event );
     QApplication::sendPostedEvents();
 
     QWidgetIntDict *mapper = &static_d->mapper;
@@ -463,6 +469,29 @@ bool QXtEventLoop::processEvents( ProcessEventsFlags flags )
 
     return ( (flags & WaitForMore) || ( pendingmask != 0 ) || nevents > 0 );
 }
+
+#include <dlfcn.h>
+
+static char xquerykeymap_data[ 32 ];
+static int (*real_xquerykeymap)( Display*, char[32] ) = NULL;
+
+static void handle_xquerykeymap( Display* dpy, XEvent* event )
+{
+    if( real_xquerykeymap == NULL )
+        real_xquerykeymap = (int (*)( Display*, char[32] )) dlsym( RTLD_NEXT, "XQueryKeymap" );
+    if( event->type == XFocusIn || event->type == XKeyPress || event->type == XKeyRelease )
+        real_xquerykeymap( dpy, xquerykeymap_data );
+    if( event->type == XFocusOut )
+        memset( xquerykeymap_data, 0, 32 );
+}
+
+extern "C" KDE_EXPORT
+int XQueryKeymap( Display* , char k[32] )
+{
+    memcpy( k, xquerykeymap_data, 32 );
+    return 1;
+}
+
 
 #include "qxteventloop.moc"
 
