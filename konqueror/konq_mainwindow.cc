@@ -1902,11 +1902,6 @@ void KonqMainWindow::slotGoHistory()
   }
 }
 
-QStringList KonqMainWindow::configModules() const
-{
-    return m_configureModules;
-}
-
 void KonqMainWindow::slotConfigureExtensions()
 {
     KonqExtensionManager extensionManager(0, this, m_currentView ? m_currentView->part() : 0);
@@ -1920,16 +1915,44 @@ void KonqMainWindow::slotConfigure()
         m_configureDialog = new KCMultiDialog( this );
         m_configureDialog->setObjectName( "configureDialog" );
 
-        QStringList modules = configModules();
-        QStringList::ConstIterator end( modules.end() );
+        if (KAuthorized::authorizeControlModule("khtml_general") )
+                m_configureDialog->addModule("khtml_general");
 
-        for( QStringList::ConstIterator it = modules.begin();
-                it != end; ++it )
+        if (KAuthorized::authorizeControlModule("kcmkonqyperformance") )
+                m_configureDialog->addModule("kcmkonqyperformance");
+
+        if (KAuthorized::authorizeControlModule("filebehavior") )
         {
-            if ( KAuthorized::authorizeControlModule( *it ) )
-            {
-                m_configureDialog->addModule( *it );
-            }
+            KPageWidgetItem * fileManagementGroup = m_configureDialog->addModule("filebehavior");
+            fileManagementGroup->setName(i18n("File Management"));
+#define ADD_MODULE(name)    if (KAuthorized::authorizeControlModule(name))\
+                                m_configureDialog->addModule(KCModuleInfo(name),fileManagementGroup);
+
+            ADD_MODULE("fileappearance")
+            ADD_MODULE("filepreviews")
+            ADD_MODULE("filetypes")
+#undef ADD_MODULE
+        }
+
+        if (KAuthorized::authorizeControlModule("khtml_behavior"))
+        {
+            KPageWidgetItem * webGroup = m_configureDialog->addModule("khtml_behavior");
+            webGroup->setName(i18n("Web Browsing"));
+#define ADD_MODULE(name)    if (KAuthorized::authorizeControlModule(name))\
+                                m_configureDialog->addModule(KCModuleInfo(name),webGroup);
+            ADD_MODULE("khtml_filter")
+            ADD_MODULE("ebrowsing")
+            ADD_MODULE("cache")
+            ADD_MODULE("proxy")
+            ADD_MODULE("khtml_fonts")
+            ADD_MODULE("kcmcss")
+            ADD_MODULE("kcmhistory")
+            ADD_MODULE("cookies")
+            ADD_MODULE("crypto")
+            ADD_MODULE("useragent")
+            ADD_MODULE("khtml_java_js")
+            ADD_MODULE("khtml_plugins")
+#undef ADD_MODULE
         }
 
     }
@@ -3791,8 +3814,8 @@ void KonqMainWindow::initActions()
   m_paRemoveLocalProperties->setText( i18n( "Remove Folder Properties" ) );
   connect(m_paRemoveLocalProperties, SIGNAL(triggered(bool) ), SLOT( slotRemoveLocalProperties() ));
 
-
-  m_configureModules << "filebehavior" << "fileappearance" <<
+  QStringList configureModules;
+  configureModules << "khtml_general" "filebehavior" << "fileappearance" <<
       "filepreviews" << "filetypes" <<
       "khtml_behavior" << "khtml_java_js" <<
       "khtml_filter" <<
@@ -3802,8 +3825,7 @@ void KonqMainWindow::initActions()
       "crypto" << "useragent" <<
       "khtml_plugins" << "kcmkonqyperformance";
 
-
-  if (!KAuthorized::authorizeControlModules(configModules()).isEmpty())
+  if (!KAuthorized::authorizeControlModules(configureModules).isEmpty())
       actionCollection()->addAction( KStandardAction::Preferences, this, SLOT(slotConfigure()) );
 
   actionCollection()->addAction( KStandardAction::KeyBindings, guiFactory(), SLOT( configureShortcuts() ) );

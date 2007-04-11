@@ -13,7 +13,6 @@
 #include <QDBusConnection>
 
 #include "htmlopts.h"
-#include "advancedTabDialog.h"
 
 #include <konq_defaults.h> // include default values directly from konqueror
 #include <kglobalsettings.h> // get default for DEFAULT_CHANGECURSOR
@@ -99,37 +98,6 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QStringList&)
     bgForm->setLayout(laygroup2);
 
     lay->addWidget( bgForm, row, 0, 1, 2 );
-    row++;
-
-    // Tabbed Browsing
-
-    QGroupBox *bgTabbedBrowsing = new QGroupBox( i18n("Tabbed Browsing") );
-    QVBoxLayout *laygroup = new QVBoxLayout();
-
-    laygroup->setSpacing(KDialog::spacingHint());
-
-    m_pShowMMBInTabs = new QCheckBox( i18n( "Open &links in new tab instead of in new window" ) );
-    m_pShowMMBInTabs->setWhatsThis( i18n("This will open a new tab instead of a new window in various situations, "
-                          "such as choosing a link or a folder with the middle mouse button.") );
-    connect(m_pShowMMBInTabs, SIGNAL(clicked()), SLOT(slotChanged()));
-    laygroup->addWidget(m_pShowMMBInTabs);
-
-    m_pDynamicTabbarHide = new QCheckBox( i18n( "Hide the tab bar when only one tab is open" ) );
-    m_pDynamicTabbarHide->setWhatsThis( i18n("This will display the tab bar only if there are two or more tabs. Otherwise it will always be displayed.") );
-    connect(m_pDynamicTabbarHide, SIGNAL(clicked()), SLOT(slotChanged()));
-    laygroup->addWidget(m_pDynamicTabbarHide);
-
-    QHBoxLayout *laytab = new QHBoxLayout();
-    laygroup->addItem(laytab);
-    laytab->setSpacing(KDialog::spacingHint());
-    QPushButton *advancedTabButton = new QPushButton( i18n( "Advanced Options") );
-    laytab->addWidget(advancedTabButton);
-    laytab->addStretch();
-    connect(advancedTabButton, SIGNAL(clicked()), this, SLOT(launchAdvancedTabDialog()));
-
-    bgTabbedBrowsing->setLayout(laygroup);
-
-    lay->addWidget( bgTabbedBrowsing, row, 0, 1, 2 );
     row++;
 
     // Mouse behavior
@@ -312,10 +280,6 @@ void KMiscHTMLOptions::load()
     m_pMaxFormCompletionItems->setValue( cg.readEntry( "MaxFormCompletionItems", 10 ) );
     m_pMaxFormCompletionItems->setEnabled( m_pFormCompletionCheckBox->isChecked() );
 
-    cg.changeGroup("FMSettings");
-    m_pShowMMBInTabs->setChecked( cg.readEntry( "MMBOpensTab", false ) );
-    m_pDynamicTabbarHide->setChecked( ! (cg.readEntry( "AlwaysTabbedMode", false )) );
-
     // Writes the value of m_pAccessKeys into khtmlrc to affect all applications using KHTML
     KConfig _khtmlconfig("khtmlrc", KConfig::NoGlobals);
     KConfigGroup khtmlconfig(&_khtmlconfig, "Access Keys");
@@ -378,9 +342,6 @@ void KMiscHTMLOptions::save()
     cg.writeEntry( "FormCompletion", m_pFormCompletionCheckBox->isChecked() );
     cg.writeEntry( "MaxFormCompletionItems", m_pMaxFormCompletionItems->value() );
 
-    cg.changeGroup("FMSettings");
-    cg.writeEntry( "MMBOpensTab", m_pShowMMBInTabs->isChecked() );
-    cg.writeEntry( "AlwaysTabbedMode", !(m_pDynamicTabbarHide->isChecked()) );
     cg.sync();
 
     // Reads in the value of m_accessKeysEnabled by calling accessKeysEnabled() in khtml_settings.cpp
@@ -405,12 +366,4 @@ void KMiscHTMLOptions::slotChanged()
     m_pMaxFormCompletionItems->setEnabled( m_pFormCompletionCheckBox->isChecked() );
     emit changed(true);
 }
-
-
-void KMiscHTMLOptions::launchAdvancedTabDialog()
-{
-    advancedTabDialog* dialog = new advancedTabDialog(this, m_pConfig, "advancedTabDialog");
-    dialog->exec();
-}
-
 

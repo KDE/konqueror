@@ -17,30 +17,30 @@
         <number>0</number>
       </property>
       <item>
-        <widget class="QLabel" name="TextLabel3" >
-          <property name="text" >
-            <string>&lt;b>Advanced Options&lt;/b></string>
-          </property>
-          <property name="wordWrap" >
-            <bool>false</bool>
-          </property>
-        </widget>
-      </item>
-      <item>
-        <widget class="Line" name="Line1" >
-          <property name="frameShape" >
-            <enum>QFrame::HLine</enum>
-          </property>
-          <property name="frameShadow" >
-            <enum>QFrame::Sunken</enum>
-          </property>
-        </widget>
-      </item>
-      <item>
         <layout class="QVBoxLayout" >
           <property name="margin" >
             <number>0</number>
           </property>
+          <item>
+            <widget class="QCheckBox" name="m_pShowMMBInTabs" >
+              <property name="text" >
+                <string>Open &amp;links in new tab instead of in new window</string>
+              </property>
+              <property name="whatsThis" stdset="0" >
+                <string>This will open a new tab instead of a new window in various situations, such as choosing a link or a folder with the middle mouse button.</string>
+              </property>
+            </widget>
+          </item>
+          <item>
+            <widget class="QCheckBox" name="m_pDynamicTabbarHide" >
+              <property name="text" >
+                <string>Hide the tab bar when only one tab is open</string>
+              </property>
+              <property name="whatsThis" stdset="0" >
+                <string>This will display the tab bar only if there are two or more tabs. Otherwise it will always be displayed.</string>
+              </property>
+            </widget>
+          </item>
           <item>
             <widget class="QCheckBox" name="m_pNewTabsInBackground" >
               <property name="text" >

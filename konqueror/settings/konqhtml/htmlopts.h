@@ -41,7 +41,6 @@ public:
 
 private Q_SLOTS:
     void slotChanged();
-    void launchAdvancedTabDialog();
 
 private:
     KSharedConfig::Ptr m_pConfig;
@@ -55,9 +54,7 @@ private:
     QCheckBox* m_pAutoRedirectCheckBox;
     QCheckBox* m_pOpenMiddleClick;
     QCheckBox* m_pBackRightClick;
-    QCheckBox* m_pShowMMBInTabs;
     QCheckBox* m_pFormCompletionCheckBox;
-    QCheckBox* m_pDynamicTabbarHide;
     QCheckBox* m_pAdvancedAddBookmarkCheckBox;
     QCheckBox* m_pOnlyMarkedBookmarksCheckBox;
     QCheckBox* m_pAccessKeys;
