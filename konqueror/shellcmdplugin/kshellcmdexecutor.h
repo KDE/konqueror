@@ -21,7 +21,7 @@
 #define SHELLCOMMANDEXECUTOR_H
 
 #include <QString>
-#include <q3textview.h>
+#include <Qt3Support/Q3TextView>
 
 class PtyProcess;
 class QSocketNotifier;

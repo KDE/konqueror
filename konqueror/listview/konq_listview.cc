@@ -41,7 +41,7 @@
 
 #include <QApplication>
 #include <QClipboard>
-#include <q3header.h>
+#include <Qt3Support/Q3Header>
 #include <QRegExp>
 
 #include <assert.h>

@@ -12,7 +12,7 @@
 // (c) Leo Savernik 2002-2003
 
 #include <QLayout>
-#include <q3groupbox.h>
+#include <Qt3Support/Q3GroupBox>
 #include <kconfig.h>
 #include <k3listview.h>
 #include <kdebug.h>

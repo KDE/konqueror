@@ -22,7 +22,7 @@
 
 #include <kdialog.h>
 
-#include <q3listview.h>
+#include <Qt3Support/Q3CheckListItem>
 #include <QMap>
 //Added by qt3to4:
 #include <QGridLayout>

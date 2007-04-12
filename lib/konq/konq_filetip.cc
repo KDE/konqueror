@@ -30,7 +30,7 @@
 #include <QToolTip>
 #include <QLayout>
 #include <QPainter>
-#include <q3scrollview.h>
+#include <Qt3Support/Q3ScrollView>
 #include <QTimer>
 //Added by qt3to4:
 #include <QPixmap>

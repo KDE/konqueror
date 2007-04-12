@@ -34,9 +34,9 @@
 
 #include <QPainter>
 #include <QToolButton>
-#include <qtabbar.h>
+#include <QtGui/QTabBar>
 #include <QMenu>
-#include <qkeysequence.h>
+#include <QtGui/QKeySequence>
 #include <QProgressBar>
 //Added by qt3to4:
 #include <QPixmap>

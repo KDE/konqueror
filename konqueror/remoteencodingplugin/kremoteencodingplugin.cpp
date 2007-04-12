@@ -36,7 +36,6 @@
 #include <kgenericfactory.h>
 #include <kprotocolinfo.h>
 #include <kprotocolmanager.h>
-#include <kprotocolmanager.h>
 #include <kio/slaveconfig.h>
 #include <kio/scheduler.h>
 #include <konq_dirpart.h>

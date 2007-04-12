@@ -19,7 +19,7 @@
 
 */
 
-#include <q3buttongroup.h>
+#include <Qt3Support/Q3ButtonGroup>
 #include <QLabel>
 #include <QLayout>
 #include <QRadioButton>

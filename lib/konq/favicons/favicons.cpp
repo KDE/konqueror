@@ -22,7 +22,7 @@
 
 #include <QBuffer>
 #include <QFile>
-#include <qcache.h>
+#include <QtCore/QCache>
 #include <QImage>
 #include <QTimer>
 #include <QImageReader>

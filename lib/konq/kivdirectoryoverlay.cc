@@ -17,7 +17,7 @@
     Boston, MA 02110-1301, USA.
 */
 
-#include <q3dict.h>
+#include <Qt3Support/Q3Dict>
 #include <QPixmap>
 #include <QPainter>
 #include <QBitmap>

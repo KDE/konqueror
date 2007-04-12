@@ -28,7 +28,7 @@
 #include <QApplication>
 #include <QClipboard>
 #include <QCursor>
-#include <qmimedata.h>
+#include <QtCore/QMimeData>
 #include <konqmimedata.h>
 #include <kdesktopfile.h>
 

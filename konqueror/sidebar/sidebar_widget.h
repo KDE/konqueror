@@ -17,7 +17,7 @@
 #ifndef _SIDEBAR_WIDGET_
 #define _SIDEBAR_WIDGET_
 
-#include <q3ptrvector.h>
+#include <Qt3Support/Q3PtrVector>
 #include <QTimer>
 #include <QString>
 #include <QPointer>

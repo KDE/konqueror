@@ -22,7 +22,7 @@
 #include <khbox.h>
 
 #include <QLayout>
-#include <q3groupbox.h>
+#include <Qt3Support/Q3GroupBox>
 #include <QLabel>
 
 #include "htmlopts.h"

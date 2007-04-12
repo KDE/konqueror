@@ -23,7 +23,7 @@
 #include <kfileitem.h>
 #include <libkonq_export.h>
 
-#include <q3dict.h>
+#include <Qt3Support/Q3Dict>
 //Added by qt3to4:
 #include <QTimerEvent>
 

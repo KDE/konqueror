@@ -24,8 +24,8 @@
 #include <konq_operations.h>
 #include <konq_dirpart.h>
 #include <k3mimetyperesolver.h>
-#include <q3ptrdict.h>
-#include <q3ptrlist.h>
+#include <Qt3Support/Q3PtrDict>
+#include <Qt3Support/Q3PtrList>
 #include <kfileivi.h>
 
 class KonqPropsView;

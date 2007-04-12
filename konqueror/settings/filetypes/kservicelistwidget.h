@@ -21,8 +21,8 @@
 #ifndef _KSERVICELISTWIDGET_H
 #define _KSERVICELISTWIDGET_H
 
-#include <q3groupbox.h>
-#include <qlistwidget.h>
+#include <Qt3Support/Q3GroupBox>
+#include <QtGui/QListWidget>
 #include <kservice.h>
 class TypesListItem;
 class QLineEdit;

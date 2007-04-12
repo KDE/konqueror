@@ -1,7 +1,7 @@
 #ifndef FILETYPESVIEW_H
 #define FILETYPESVIEW_H
 
-#include <q3ptrlist.h>
+#include <Qt3Support/Q3PtrList>
 #include <QMap>
 #include <QLabel>
 #include <QStackedWidget>

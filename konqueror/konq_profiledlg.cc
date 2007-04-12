@@ -25,7 +25,7 @@
 #include <QDir>
 #include <kvbox.h>
 #include <QLabel>
-#include <q3header.h>
+#include <Qt3Support/Q3Header>
 #include <QLineEdit>
 
 #include <k3listview.h>

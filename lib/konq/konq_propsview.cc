@@ -22,8 +22,8 @@
 
 #include <kdebug.h>
 #include <kstandarddirs.h>
-#include <qpixmapcache.h>
-#include <q3iconview.h>
+#include <QtGui/QPixmapCache>
+#include <Qt3Support/Q3IconDrag>
 //Added by qt3to4:
 #include <QPixmap>
 #include <unistd.h>

@@ -25,7 +25,7 @@
 #include <assert.h>
 #include <stdio.h>
 #include <QPainter>
-#include <q3header.h>
+#include <Qt3Support/Q3Header>
 #include <kiconloader.h>
 #include <QDateTime>
 

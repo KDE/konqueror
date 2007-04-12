@@ -30,10 +30,10 @@
 
 #include <QString>
 #include <QStringList>
-#include <q3dict.h>
+#include <Qt3Support/Q3Dict>
 #include <QObject>
 #include <QWidget>
-#include <qx11embed_x11.h>
+#include <QtGui/QX11EmbedContainer>
 //Added by qt3to4:
 #include <QGridLayout>
 #include <QResizeEvent>
