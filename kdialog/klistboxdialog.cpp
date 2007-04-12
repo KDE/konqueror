@@ -18,7 +18,7 @@
 //
 
 #include <QLabel>
-#include <q3listbox.h>
+#include <Qt3Support/Q3ListBox>
 #include <kvbox.h>
 
 #include "klistboxdialog.h"

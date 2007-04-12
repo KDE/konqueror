@@ -24,9 +24,9 @@
 #ifndef __KCOOKIESMANAGEMENT_H
 #define __KCOOKIESMANAGEMENT_H
 
-#include <q3dict.h>
+#include <Qt3Support/Q3Dict>
 #include <QStringList>
-#include <q3listview.h>
+#include <Qt3Support/Q3CheckListItem>
 #include <Q3PtrList>
 
 #include <kcmodule.h>

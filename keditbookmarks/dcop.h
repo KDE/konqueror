@@ -21,7 +21,7 @@
 #ifndef __dcop_h
 #define __dcop_h
 
-#include <qobject.h>
+#include <QtCore/QObject>
 
 class KBookmarkEditorIface : public QObject
 {

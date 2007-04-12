@@ -34,7 +34,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-#include <q3dict.h>
+#include <Qt3Support/Q3Dict>
 #include <QDir>
 #include <QFile>
 #include <QTimer>

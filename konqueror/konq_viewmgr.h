@@ -22,7 +22,7 @@
 
 #include "konq_factory.h"
 
-#include <qnamespace.h>
+#include <QtCore/QCOORD>
 #include <QObject>
 #include <QMap>
 #include <QPointer>

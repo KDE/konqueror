@@ -23,7 +23,7 @@
 
 #include <kdialog.h>
 
-#include <q3listbox.h>
+#include <Qt3Support/Q3ListBox>
 
 class KListBoxDialog : public KDialog
 {

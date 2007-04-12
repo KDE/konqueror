@@ -18,7 +18,6 @@
 
 #include <kdesu/process.h>
 #include <kdebug.h>
-#include <kdebug.h>
 #include "chfnprocess.h"
 
 

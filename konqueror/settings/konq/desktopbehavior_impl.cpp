@@ -27,7 +27,7 @@
 #include <QLabel>
 #include <QComboBox>
 #include <QPushButton>
-#include <q3buttongroup.h>
+#include <Qt3Support/Q3ButtonGroup>
 #include <QTabWidget>
 #include <QDBusInterface>
 

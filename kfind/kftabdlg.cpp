@@ -31,7 +31,6 @@
 #include <kiconloader.h>
 #include "kquery.h"
 #include "kftabdlg.h"
-#include <kservicetypetrader.h>
 // Static utility functions
 static void save_pattern(QComboBox *, const QString &, const QString &);
 

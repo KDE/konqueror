@@ -28,7 +28,6 @@
 #include <QPixmap>
 #include <QStringList>
 #include <QMimeData>
-#include <kdebug.h>
 
 int BookmarkModel::count = 0;
 BookmarkModel* BookmarkModel::s_bookmarkModel = 0L;

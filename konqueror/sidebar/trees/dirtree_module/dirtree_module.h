@@ -22,8 +22,8 @@
 #include <konq_sidebartreemodule.h>
 #include <kfileitem.h>
 #include <QPixmap>
-#include <q3dict.h>
-#include <q3ptrdict.h>
+#include <Qt3Support/Q3Dict>
+#include <Qt3Support/Q3PtrDict>
 
 class KDirLister;
 class KonqSidebarTree;

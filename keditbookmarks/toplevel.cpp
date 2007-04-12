@@ -52,7 +52,7 @@
 #include <kstandardaction.h>
 
 #include <assert.h>
-#include <qglobal.h>
+#include <QtCore/QBool>
 
 
 

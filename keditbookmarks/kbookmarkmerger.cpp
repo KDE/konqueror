@@ -33,7 +33,7 @@
 
 
 #include <QDir>
-#include <qdom.h>
+#include <Qt/qdom.h>
 #include <QFile>
 
 #ifdef Q_WS_X11

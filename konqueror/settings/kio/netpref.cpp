@@ -1,7 +1,7 @@
 #include <QLayout>
 #include <QCheckBox>
 
-#include <q3groupbox.h>
+#include <Qt3Support/Q3GroupBox>
 //Added by qt3to4:
 #include <QVBoxLayout>
 

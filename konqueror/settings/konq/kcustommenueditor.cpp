@@ -18,10 +18,10 @@
 */
 
 #include <khbox.h>
-#include <qregexp.h>
-#include <qimage.h>
-#include <qpushbutton.h>
-#include <qdir.h>
+#include <QtCore/QRegExp>
+#include <QtGui/QImage>
+#include <QtGui/QPushButton>
+#include <QtCore/QDir>
 
 #include <kdialogbuttonbox.h>
 #include <klocale.h>

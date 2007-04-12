@@ -9,10 +9,10 @@
 
 #include <QLabel>
 #include <QLayout>
-#include <qprogressdialog.h>
+#include <QtGui/QProgressDialog>
 #include <QRegExp>
 #include <QSlider>
-#include <q3groupbox.h>
+#include <Qt3Support/Q3GroupBox>
 #include <QTextStream>
 #include <QDBusMessage>
 #include <QDBusConnection>

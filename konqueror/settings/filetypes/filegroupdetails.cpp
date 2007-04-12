@@ -19,7 +19,7 @@
 #include "typeslistitem.h"
 #include <QLayout>
 #include <QRadioButton>
-#include <q3buttongroup.h>
+#include <Qt3Support/Q3ButtonGroup>
 #include <QWhatsThis>
 #include <kdialog.h>
 #include <klocale.h>

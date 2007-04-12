@@ -22,7 +22,7 @@
 #ifndef __DOMAINLISTVIEW_H__
 #define __DOMAINLISTVIEW_H__
 
-#include <q3groupbox.h>
+#include <Qt3Support/Q3GroupBox>
 #include <QMap>
 #include <kconfig.h>
 

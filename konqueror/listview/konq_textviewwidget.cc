@@ -20,7 +20,7 @@
 #include "konq_listview.h"
 #include "konq_textviewitem.h"
 
-#include <q3header.h>
+#include <Qt3Support/Q3Header>
 
 #include <kdebug.h>
 #include <kdirlister.h>

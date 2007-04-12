@@ -24,7 +24,7 @@
 #include <kparts/part.h>
 #include <kfileitem.h>
 #include <kdebug.h>
-#include <q3ptrlist.h>
+#include <Qt3Support/Q3PtrList>
 #include <konq_dirpart.h>
 
 class KQuery;

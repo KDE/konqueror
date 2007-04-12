@@ -6,7 +6,7 @@
 // (c) 2001 Waldo Bastian <bastian@kde.org>
 
 #include <QLayout>//CT - 12Nov1998
-#include <q3groupbox.h>
+#include <Qt3Support/Q3GroupBox>
 #include <QLabel>
 #include <QPushButton>
 #include <QDBusMessage>

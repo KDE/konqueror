@@ -22,7 +22,7 @@
 #ifndef KONQ_FILETIP_H
 #define KONQ_FILETIP_H
 
-#include <q3frame.h>
+#include <Qt3Support/Q3Frame>
 #include <QPixmap>
 //Added by qt3to4:
 #include <QLabel>

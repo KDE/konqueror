@@ -34,7 +34,7 @@
 #include <ktextedit.h>
 #include <kvbox.h>
 #include <QFile>
-#include <qdesktopwidget.h>
+#include <QtGui/QDesktopWidget>
 #include <QTextStream>
 #include <QTextCursor>
 

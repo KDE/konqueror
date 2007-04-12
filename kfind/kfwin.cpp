@@ -19,9 +19,9 @@
 #include <QDir>
 #include <QClipboard>
 #include <QPixmap>
-#include <q3dragobject.h>
+#include <Qt3Support/Q3ColorDrag>
 #include <QTextDocument>
-#include <q3ptrlist.h>
+#include <Qt3Support/Q3PtrList>
 #include <QDateTime>
 
 #include <kfiledialog.h>

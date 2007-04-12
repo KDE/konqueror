@@ -24,7 +24,7 @@
 #include <QListWidget>
 #include <QLayout>
 #include <QPushButton>
-#include <q3groupbox.h>
+#include <Qt3Support/Q3GroupBox>
 #include <khbox.h>
 #include <QLineEdit>
 #include <QLabel>

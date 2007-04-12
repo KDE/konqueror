@@ -23,7 +23,7 @@
 #include <QClipboard>
 #include <QCursor>
 #include <QDir>
-#include <q3header.h>
+#include <Qt3Support/Q3Header>
 #include <QMenu>
 #include <QTimer>
 //Added by qt3to4:

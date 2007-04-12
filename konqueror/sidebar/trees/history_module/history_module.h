@@ -21,7 +21,7 @@
 
 #include <QDateTime>
 #include <QObject>
-#include <q3dict.h>
+#include <Qt3Support/Q3Dict>
 #include <QPixmap>
 
 #include <kglobal.h>

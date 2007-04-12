@@ -48,7 +48,6 @@
 #include <kdebug.h>
 #include <kfileitem.h>
 #include <kdesktopfile.h>
-#include <kglobalsettings.h>
 #include <kimageio.h>
 
 #include <konq_iconviewwidget.h>

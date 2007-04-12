@@ -3,7 +3,7 @@
 #include <QComboBox>
 #include <QLayout>
 #include <QRadioButton>
-#include <q3textbrowser.h>
+#include <Qt3Support/Q3TextBrowser>
 //Added by qt3to4:
 #include <QVBoxLayout>
 

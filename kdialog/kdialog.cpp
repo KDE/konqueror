@@ -29,7 +29,7 @@
 #include <QRegExp>
 #include <QTimer>
 #include <QFileDialog>
-#include <qdesktopwidget.h>
+#include <QtGui/QDesktopWidget>
 #include <kmessagebox.h>
 #include <kapplication.h>
 #include <kdebug.h>
@@ -37,7 +37,6 @@
 #include <kmainwindow.h>
 #include <kpassivepopup.h>
 #include <krecentdocument.h>
-#include <kapplication.h>
 
 #include "widgets.h"
 

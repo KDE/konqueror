@@ -22,7 +22,7 @@
 #ifndef __JSPOLICIES_H__
 #define __JSPOLICIES_H__
 
-#include <q3groupbox.h>
+#include <Qt3Support/Q3GroupBox>
 #include <QString>
 
 #include <khtml_settings.h>

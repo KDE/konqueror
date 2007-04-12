@@ -21,7 +21,7 @@
 
 #include "konq_listviewwidget.h"
 #include "konq_treeviewitem.h"
-#include <q3dict.h>
+#include <Qt3Support/Q3Dict>
 #include <kurl.h>
 #include <k3listview.h>
 

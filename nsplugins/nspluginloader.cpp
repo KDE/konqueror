@@ -39,7 +39,7 @@
 #include <QLayout>
 #include <QObject>
 #include <QPushButton>
-#include <qx11embed_x11.h>
+#include <QtGui/QX11EmbedContainer>
 #include <QTextStream>
 #include <QRegExp>
 

@@ -39,7 +39,6 @@
 #include <kmenu.h>
 #include <k3process.h>
 #include <kurlrequesterdialog.h>
-#include <kinputdialog.h>
 #include <kfiledialog.h>
 #include <kdesktopfile.h>
 #include "konqsidebar.h"

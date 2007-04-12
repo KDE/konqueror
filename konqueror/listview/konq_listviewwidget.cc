@@ -33,14 +33,14 @@
 #include <kmessagebox.h>
 #include <ktoggleaction.h>
 
-#include <q3header.h>
+#include <Qt3Support/Q3Header>
 #include <QPainter>
 #include <QStyle>
 #include <QTimer>
 #include <QEvent>
 #include <QCursor>
 #include <QToolTip>
-#include <qdrag.h>
+#include <QtGui/QDrag>
 
 #include <stdlib.h>
 #include <assert.h>

@@ -21,7 +21,7 @@
 #ifndef KONQ_UNDO_P_H
 #define KONQ_UNDO_P_H
 
-#include <qstack.h>
+#include <QtCore/QStack>
 #include <QUndoCommand>
 
 struct KonqBasicOperation

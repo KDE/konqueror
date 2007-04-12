@@ -22,7 +22,7 @@
 #include <QApplication>
 #include <QLayout>
 #include <QPushButton>
-#include <q3groupbox.h>
+#include <Qt3Support/Q3GroupBox>
 #include <QLabel>
 #include <QTimer>
 #include <QDateTime>

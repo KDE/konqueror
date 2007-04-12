@@ -29,9 +29,9 @@
 #include <QObject>
 #include <QString>
 #include <QStringList>
-#include <q3ptrqueue.h>
+#include <Qt3Support/Q3PtrQueue>
 #include <QMap>
-#include <q3intdict.h>
+#include <Qt3Support/Q3IntDict>
 #include <QPointer>
 //Added by qt3to4:
 #include <Q3PtrList>
