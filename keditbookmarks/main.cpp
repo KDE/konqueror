@@ -98,7 +98,7 @@ static bool askUser(QString filename, bool &readonly) {
                     if( value.isValid())
                         id = value;
                     //kdDebug()<<" id !!!!!!!!!!!!!!!!!!! :"<<id<<endl;
-                    KWM::activateWindow(id);
+                    KWM::activateWindow((WId)id);
                     return false;
                 } else if (ret == KMessageBox::Yes) {
                     readonly = true;
