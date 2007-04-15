@@ -59,6 +59,7 @@ KKonqGeneralOptions::KKonqGeneralOptions(QWidget *parent, const QStringList&)
 
 KKonqGeneralOptions::~KKonqGeneralOptions()
 {
+    delete tabOptions;
 }
 
 void KKonqGeneralOptions::load()
