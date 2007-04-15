@@ -115,6 +115,8 @@ KViewSearchLine::KViewSearchLine(QWidget *parent, QAbstractItemView *v) :
 {
     d = new KViewSearchLinePrivate;
 
+    setClearButtonShown(true);
+
     d->treeView = dynamic_cast<QTreeView *>(v);
     d->listView = dynamic_cast<QListView *>(v);
 
@@ -144,6 +146,8 @@ KViewSearchLine::KViewSearchLine(QWidget *parent) :
     KLineEdit(parent)
 {
     d = new KViewSearchLinePrivate;
+
+    setClearButtonShown(true);
 
     d->treeView = 0;
     d->listView = 0;
@@ -690,10 +694,9 @@ bool KViewSearchLine::checkItemParentsVisible(QModelIndex index)
 class KViewSearchLineWidget::KViewSearchLineWidgetPrivate
 {
 public:
-    KViewSearchLineWidgetPrivate() : view(0), searchLine(0), clearButton(0), layout(0) {}
+    KViewSearchLineWidgetPrivate() : view(0), searchLine(0), layout(0) {}
     QAbstractItemView *view;
     KViewSearchLine *searchLine;
-    QToolButton *clearButton;
     QHBoxLayout *layout;
 };
 
@@ -723,16 +726,7 @@ KViewSearchLine *KViewSearchLineWidget::createSearchLine(QAbstractItemView *view
 void KViewSearchLineWidget::createWidgets()
 {
     d->layout = new QHBoxLayout(this);
-    d->layout->setSpacing(5);
-
-    if(!d->clearButton) {
-        d->clearButton = new QToolButton();
-        d->layout->addWidget(d->clearButton);
-        KIcon icon(QApplication::isRightToLeft() ? "clear_left" : "locationbar_erase");
-        d->clearButton->setIcon(icon);
-    }
-
-    d->clearButton->show();
+    d->layout->setMargin(0);
 
     QLabel *label = new QLabel(i18n("S&earch:"));
     label->setObjectName("kde toolbar widget");
@@ -744,8 +738,6 @@ void KViewSearchLineWidget::createWidgets()
 
     label->setBuddy(d->searchLine);
     label->show();
-
-    connect(d->clearButton, SIGNAL(clicked()), d->searchLine, SLOT(clear()));
 }
 
 KViewSearchLine *KViewSearchLineWidget::searchLine() const

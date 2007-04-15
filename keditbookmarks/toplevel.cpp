@@ -230,16 +230,20 @@ KEBApp::KEBApp(
     mBookmarkListView->setSelectionMode(QAbstractItemView::ExtendedSelection);
     mBookmarkListView->loadColumnSetting();
 
-    KToolBar * toolbar = new KToolBar(0L, "search toolbar");
-    new KViewSearchLineWidget(mBookmarkListView, toolbar);
+    KViewSearchLineWidget *searchline = new KViewSearchLineWidget(mBookmarkListView);
 
     mBookmarkFolderView = new BookmarkFolderView(mBookmarkListView);
+
+    QWidget *listLayoutWidget = new QWidget;
+
+    QVBoxLayout *listLayout = new QVBoxLayout(listLayoutWidget);
+    listLayout->addWidget(searchline);
+    listLayout->addWidget(mBookmarkListView);
 
     m_bkinfo = new BookmarkInfoWidget(mBookmarkListView);
 
     vsplitter->setOrientation(Qt::Vertical);
-    vsplitter->addWidget(toolbar);
-    vsplitter->addWidget(mBookmarkListView);
+    vsplitter->addWidget(listLayoutWidget);
     vsplitter->addWidget(m_bkinfo);
 
     QSplitter *hsplitter = new QSplitter(this);
