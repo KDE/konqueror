@@ -534,7 +534,7 @@ KEBMacroCommand* CmdGen::setAsToolbar(const KBookmark &bk)
     }
 
     mcmd->addCommand( new EditCommand(bk.address(), -2, "yes"));
-    mcmd->addCommand( new EditCommand(bk.address(), -1, "bookmark_toolbar"));
+    mcmd->addCommand( new EditCommand(bk.address(), -1, "bookmark-toolbar"));
 
     return mcmd;
 }
