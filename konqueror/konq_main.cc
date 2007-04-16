@@ -76,7 +76,7 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
     int n = 1;
     while ( KonqMainWindow::canBeRestored( n ) )
     {
-      QString className = KMainWindow::classNameOfToplevel( n );
+      QString className = KXmlGuiWindow::classNameOfToplevel( n );
       if( className == QLatin1String( "KonqMainWindow" ))
           (new KonqMainWindow( KUrl(), false ) )->restore( n );
       else
