@@ -2567,7 +2567,7 @@ void KonqMainWindow::slotBreakOffTab()
     if (prop.isValid() && prop.toBool())
       if ( KMessageBox::warningContinueCancel( this,
            i18n("This tab contains changes that have not been submitted.\nDetaching the tab will discard these changes."),
-           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab_breakoff"), KStandardGuiItem::cancel(), "discardchangesdetach") != KMessageBox::Continue )
+           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-breakoff"), KStandardGuiItem::cancel(), "discardchangesdetach") != KMessageBox::Continue )
         return;
   }
 
@@ -2585,7 +2585,7 @@ void KonqMainWindow::slotBreakOffTabPopup()
       m_pViewManager->showTab( view );
       if ( KMessageBox::warningContinueCancel( this,
            i18n("This tab contains changes that have not been submitted.\nDetaching the tab will discard these changes."),
-           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab_breakoff"), KStandardGuiItem::cancel(), "discardchangesdetach") != KMessageBox::Continue )
+           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-breakoff"), KStandardGuiItem::cancel(), "discardchangesdetach") != KMessageBox::Continue )
       {
         m_pViewManager->showTab( originalView );
         return;
@@ -2680,7 +2680,7 @@ void KonqMainWindow::slotRemoveView()
     if (prop.isValid() && prop.toBool())
       if ( KMessageBox::warningContinueCancel( this,
            i18n("This view contains changes that have not been submitted.\nClosing the view will discard these changes."),
-           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"view_remove"), KStandardGuiItem::cancel(), "discardchangesclose") != KMessageBox::Continue )
+           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"view-remove"), KStandardGuiItem::cancel(), "discardchangesclose") != KMessageBox::Continue )
         return;
   }
 
