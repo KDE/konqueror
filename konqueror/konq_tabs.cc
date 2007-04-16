@@ -86,7 +86,7 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
                             m_pViewManager->mainWindow(),
                             SLOT( slotAddTab() ),
                             m_pViewManager->mainWindow()->action("newtab")->shortcut() );
-  m_pPopupMenu->insertItem( KIcon( "tab_duplicate" ),
+  m_pPopupMenu->insertItem( KIcon( "tab-duplicate" ),
                             i18n("&Duplicate Tab"),
                             m_pViewManager->mainWindow(),
                             SLOT( slotDuplicateTabPopup() ),
@@ -103,7 +103,7 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
   connect( m_pSubPopupMenuTab, SIGNAL( activated ( int ) ),
            this, SLOT( slotSubPopupMenuTabActivated( int ) ) );
   m_pPopupMenu->addSeparator();
-  m_pPopupMenu->insertItem( KIcon( "tab_breakoff" ),
+  m_pPopupMenu->insertItem( KIcon( "tab-breakoff" ),
                             i18n("D&etach Tab"),
                             m_pViewManager->mainWindow(),
                             SLOT( slotBreakOffTabPopup() ),
