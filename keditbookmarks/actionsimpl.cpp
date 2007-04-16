@@ -152,7 +152,7 @@ void KEBApp::createActions() {
     connect(actnSort, SIGNAL( triggered() ), actn, SLOT( slotSort() ));
 
     QAction* actnSetAsToolbar = actionCollection()->addAction("setastoolbar");
-    actnSetAsToolbar->setIcon(KIcon("bookmark_toolbar"));
+    actnSetAsToolbar->setIcon(KIcon("bookmark-toolbar"));
     actnSetAsToolbar->setText(i18n("Set as T&oolbar Folder"));
     connect(actnSetAsToolbar, SIGNAL( triggered() ), actn, SLOT( slotSetAsToolbar() ));
 
