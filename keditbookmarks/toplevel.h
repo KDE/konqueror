@@ -20,7 +20,7 @@
 #ifndef __toplevel_h
 #define __toplevel_h
 
-#include <kmainwindow.h>
+#include <kxmlguiwindow.h>
 #include <k3command.h>
 #include <kbookmark.h>
 #include <QMenu>
@@ -47,7 +47,7 @@ public:
     void clearHistory();
     void addCommand(K3Command *);
     void didCommand(K3Command *);
-    
+
     //For an explanation see bookmarkInfo::commitChanges()
     void addInFlightCommand(K3Command *);
 
@@ -99,7 +99,7 @@ private:
     uint ignorenext;
 };
 
-class KEBApp : public KMainWindow {
+class KEBApp : public KXmlGuiWindow {
     Q_OBJECT
     Q_CLASSINFO("D-Bus Interface", "org.kde.keditbookmarks")
 public:
@@ -130,7 +130,7 @@ public:
 
     QString caption() const { return m_caption; }
     bool readonly() const { return m_readOnly; }
-    bool browser() const { return m_browser; } 
+    bool browser() const { return m_browser; }
     bool nsShown() const;
 
     BookmarkInfoWidget *bkInfo() { return m_bkinfo; }
@@ -138,7 +138,7 @@ public:
     void collapseAll();
     void expandAll();
 
-    enum Column { 
+    enum Column {
       NameColumn = 0,
       UrlColumn = 1,
       CommentColumn = 2,

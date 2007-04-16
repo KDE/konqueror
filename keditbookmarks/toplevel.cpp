@@ -195,7 +195,7 @@ KEBApp::KEBApp(
     const QString &bookmarksFile, bool readonly,
     const QString &address, bool browser, const QString &caption,
     const QString &dbusObjectName
-) : KMainWindow(), m_dcopIface(0), m_bookmarksFilename(bookmarksFile),
+) : KXmlGuiWindow(), m_dcopIface(0), m_bookmarksFilename(bookmarksFile),
     m_caption(caption),
     m_dbusObjectName(dbusObjectName), m_readOnly(readonly),m_browser(browser)
  {
