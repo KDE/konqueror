@@ -58,21 +58,21 @@
 typedef unsigned short uint16;
 #endif
 #ifndef _UINT32
-#if defined(__alpha)
+#if defined(__alpha) || defined(_AIX) || defined(__x86_64__) || defined(__LP64__)
 typedef unsigned int uint32;
-#else /* __alpha */
+#else /* __alpha || _AIX || __x86_64__ || __LP64__ */
 typedef unsigned long uint32;
-#endif /* __alpha */
+#endif /* __alpha || _AIX || __x86_64__ || __LP64__ */
 #endif
 #ifndef _INT16
 typedef short int16;
 #endif
 #ifndef _INT32
-#if defined(__alpha) || defined(_AIX)
+#if defined(__alpha) || defined(_AIX) || defined(__x86_64__) || defined(__LP64__)
 typedef int int32;
-#else /* __alpha || _AIX */
+#else /* __alpha || _AIX || __x86_64__ || __LP64__ */
 typedef long int32;
-#endif /* __alpha || _AIX */
+#endif /* __alpha || _AIX || __x86_64__ || __LP64__ */
 #endif
 
 #ifndef FALSE
