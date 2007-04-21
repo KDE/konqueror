@@ -26,7 +26,7 @@
 #include <QMap>
 #include <QPoint>
 #include <Qt3Support/Q3StrIList>
-#include <QToolTip>
+
 //Added by qt3to4:
 #include <QPixmap>
 #include <QByteArray>

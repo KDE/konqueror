@@ -28,7 +28,7 @@
 #include <QApplication>
 #include <QTimer>
 #include <QPainter>
-#include <QToolTip>
+
 #include <QLabel>
 #include <QMovie>
 #include <QRegExp>

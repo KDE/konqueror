@@ -39,7 +39,7 @@
 #include <QTimer>
 #include <QEvent>
 #include <QCursor>
-#include <QToolTip>
+
 #include <QtGui/QDrag>
 
 #include <stdlib.h>
