@@ -97,7 +97,7 @@ static bool askUser(QString filename, bool &readonly) {
                     qlonglong id = 0;
                     if( value.isValid())
                         id = value;
-                    //kdDebug()<<" id !!!!!!!!!!!!!!!!!!! :"<<id<<endl;
+                    //kDebug()<<" id !!!!!!!!!!!!!!!!!!! :"<<id<<endl;
                     KWM::activateWindow((WId)id);
                     return false;
                 } else if (ret == KMessageBox::Yes) {
