@@ -25,7 +25,7 @@
 #include <QClipboard>
 #include <QMenu>
 #include <QToolButton>
-#include <QToolTip>
+
 //Added by qt3to4:
 #include <QDragMoveEvent>
 #include <QDropEvent>

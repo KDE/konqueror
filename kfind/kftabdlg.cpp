@@ -10,7 +10,7 @@
 #include <QLayout>
 #include <QCheckBox>
 #include <QWhatsThis>
-#include <QToolTip>
+
 #include <QComboBox>
 #include <QSpinBox>
 #include <QPushButton>
