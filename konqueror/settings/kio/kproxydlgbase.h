@@ -23,7 +23,7 @@
 #define KPROXY_DIALOG_BASE_H
 
 #include <QMap>
-#include <QString>
+
 #include <QStringList>
 
 #include <kdialog.h>

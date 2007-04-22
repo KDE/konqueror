@@ -5,7 +5,7 @@
 #include <QLabel>
 #include <QLineEdit>
 #include <QCheckBox>
-#include <QString>
+
 
 #include <kcmodule.h>
 #include <kconfig.h>

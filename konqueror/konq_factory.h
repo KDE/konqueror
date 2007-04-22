@@ -22,7 +22,7 @@
 #ifndef __konq_factory_h__
 #define __konq_factory_h__
 
-#include <QString>
+
 #include <QStringList>
 
 #include <klibloader.h>

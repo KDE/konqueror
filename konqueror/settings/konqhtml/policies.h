@@ -22,7 +22,7 @@
 #ifndef __POLICIES_H__
 #define __POLICIES_H__
 
-#include <QString>
+
 #include <ksharedconfig.h>
 
 // special value for inheriting a global policy

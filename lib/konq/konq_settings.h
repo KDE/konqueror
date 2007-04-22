@@ -22,7 +22,7 @@
 
 class KConfig;
 #include <QColor>
-#include <QString>
+
 #include <QFont>
 #include <QMap>
 

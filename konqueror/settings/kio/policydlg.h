@@ -19,7 +19,7 @@
 #ifndef _POLICYDLG_H
 #define _POLICYDLG_H
 
-#include <QString>
+
 
 #include <kdialog.h>
 #include "ui_policydlg_ui.h"

@@ -20,7 +20,7 @@
 #ifndef SHELLCOMMANDDIALOG_H
 #define SHELLCOMMANDDIALOG_H
 
-#include <QString>
+
 
 #include <kpushbutton.h>
 #include <kdialog.h>

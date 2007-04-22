@@ -19,7 +19,7 @@
 
 #include <Qt3Support/Q3PtrVector>
 #include <QTimer>
-#include <QString>
+
 #include <QPointer>
 
 #include <k3dockwidget.h>

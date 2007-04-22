@@ -28,7 +28,7 @@
 #define __NS_PLUGINLOADER_H__
 
 
-#include <QString>
+
 #include <QStringList>
 #include <Qt3Support/Q3Dict>
 #include <QObject>
