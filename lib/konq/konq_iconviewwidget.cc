@@ -1322,8 +1322,8 @@ void KonqIconViewWidget::wheelEvent(QWheelEvent* e)
 
 void KonqIconViewWidget::leaveEvent( QEvent *e )
 {
-    // when leaving the widget, stop possible pending filetip
-    d->pFileTip->setItem( 0 );
+    // when leaving the widget, stop possible pending filetip and icon effect
+    slotOnViewport();
 
     K3IconView::leaveEvent(e);
 }
