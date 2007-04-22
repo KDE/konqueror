@@ -27,7 +27,7 @@
 #define __NS_PLUGIN_H__
 
 #include <QObject>
-#include <QString>
+
 #include <QStringList>
 #include <Qt3Support/Q3PtrQueue>
 #include <QMap>

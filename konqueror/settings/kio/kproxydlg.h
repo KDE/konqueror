@@ -22,7 +22,7 @@
 #ifndef _KPROXYDIALOG_H
 #define _KPROXYDIALOG_H
 
-#include <QString>
+
 
 #include <kcmodule.h>
 #include "ui_kproxydlg_ui.h"

@@ -22,7 +22,7 @@
 // ... there is room for others :))
 
 
-#include <QString>
+
 #include <kcmodule.h>
 #include <ksharedconfig.h>
 class QRadioButton;

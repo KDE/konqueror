@@ -20,7 +20,7 @@
 */
 #include <stdio.h>
 
-#include <QString>
+
 #include <kactioncollection.h>
 //Added by qt3to4:
 #include <kapplication.h>

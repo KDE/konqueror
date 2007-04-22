@@ -2,7 +2,7 @@
 #define __TEMPLATE_H__
 
 
-#include <QString>
+
 #include <QMap>
 
 class CSSTemplate

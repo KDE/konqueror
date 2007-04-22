@@ -21,7 +21,7 @@
 #include <QWidget>
 #include <QObject>
 #include <kurl.h>
-#include <QString>
+
 #include <kparts/part.h>
 #include <kparts/browserextension.h>
 #include <kio/job.h>

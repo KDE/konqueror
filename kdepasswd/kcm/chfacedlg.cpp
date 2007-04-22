@@ -25,7 +25,7 @@
  * @author Braden MacDonald
  */
 
-#include <QString>
+
 #include <QLayout>
 #include <QLabel>
 #include <QPixmap>

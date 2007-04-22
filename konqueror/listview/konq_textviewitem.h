@@ -21,7 +21,7 @@
 #define __konq_textviewitem_h__
 
 #include <QListView>
-#include <QString>
+
 #include <kio/global.h>
 #include <klocale.h>
 #include "konq_listviewitems.h"

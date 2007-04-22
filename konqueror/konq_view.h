@@ -26,7 +26,7 @@
 #include <kservice.h>
 
 #include <QList>
-#include <QString>
+
 #include <QObject>
 #include <QStringList>
 #include <QPointer>

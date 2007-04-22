@@ -27,7 +27,7 @@
 #include <k3command.h>
 
 #include <QObject>
-#include <QString>
+
 
 class KBookmark;
 

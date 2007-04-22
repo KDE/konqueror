@@ -11,7 +11,7 @@
 
 #include <QCheckBox>
 #include <QComboBox>
-#include <QString>
+
 
 #include <kcmodule.h>
 #include <ksharedconfig.h>
