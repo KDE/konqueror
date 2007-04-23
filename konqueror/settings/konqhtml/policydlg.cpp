@@ -7,7 +7,6 @@
 #include <QComboBox>
 
 #include <klocale.h>
-#include <kbuttonbox.h>
 #include <kmessagebox.h>
 
 #include <QPushButton>
