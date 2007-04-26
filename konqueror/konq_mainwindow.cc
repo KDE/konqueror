@@ -217,8 +217,8 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, bool openInitialURL, con
 
   // init history-manager, load history, get completion object
   if ( !s_pCompletion ) {
-    konqHistoryManagerSd.setObject( s_konqHistoryManager, new KonqHistoryManager );
-    s_pCompletion = s_konqHistoryManager->completionObject();
+      KonqHistoryManager* mgr = new KonqHistoryManager;
+      s_pCompletion = mgr->completionObject();
 
     // setup the completion object before createGUI(), so that the combo
     // picks up the correct mode from the HistoryManager (in slotComboPlugged)
