@@ -53,7 +53,7 @@ class KonqInfoListViewWidget : public KonqBaseListViewWidget
       virtual void slotClear();
       virtual void slotSelectMimeType();
       
-      void slotMetaInfo(const KFileItem*);
+      void slotMetaInfo(const KFileItem&);
       void slotMetaInfoResult();
       
    protected:
