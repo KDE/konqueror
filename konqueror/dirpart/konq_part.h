@@ -61,7 +61,7 @@ private Q_SLOTS:
     void slotToolTip( const QModelIndex& index );
     void slotContextMenu( const QPoint& pos, const QModelIndexList& indexes );
     void slotUpdateActions();
-    void slotPreview( const KFileItem* item, const QPixmap& pixmap );
+    void slotPreview( const KFileItem& item, const QPixmap& pixmap );
 };
 
 namespace KParts { template<typename T> class GenericFactory; }

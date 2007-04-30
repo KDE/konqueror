@@ -108,9 +108,14 @@ void KonqPart::slotNewItems( const KFileItemList& items )
     // ## this is too early. To be moved to after delayed mimetype determination.
     // Also, changing icon sizes must re-trigger previews, hence startImagePreview in the old libkonq code.
     if ( KGlobalSettings::showFilePreview( url() ) ) {
-        KIO::PreviewJob* job = KIO::filePreview( items, 128 );
-        connect( job, SIGNAL( gotPreview(const KFileItem*,const QPixmap&) ),
-                 SLOT( slotPreview(const KFileItem*,const QPixmap&) ) );
+        // Must turn QList<KFileItem *> to QList<KFileItem>...
+        QList<KFileItem> itemsToPreview;
+        foreach( KFileItem* it, items )
+            itemsToPreview.append( *it );
+
+        KIO::PreviewJob* job = KIO::filePreview( itemsToPreview, 128 );
+        connect( job, SIGNAL( gotPreview(const KFileItem&,const QPixmap&) ),
+                 SLOT( slotPreview(const KFileItem&,const QPixmap&) ) );
     }
 }
 
@@ -190,7 +195,7 @@ void KonqPart::slotUpdateActions()
 
 }
 
-void KonqPart::slotPreview( const KFileItem* item, const QPixmap& pixmap )
+void KonqPart::slotPreview( const KFileItem& item, const QPixmap& pixmap )
 {
     const QModelIndex idx = m_model->indexForItem( item );
     Q_ASSERT( idx.isValid() );
