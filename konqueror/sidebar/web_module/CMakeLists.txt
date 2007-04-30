@@ -1,4 +1,4 @@
-include_directories(  ${CMAKE_SOURCE_DIR}/konqueror/sidebar/ ${CMAKE_SOURCE_DIR}/libkonq  )
+include_directories(  ${CMAKE_SOURCE_DIR}/apps/konqueror/sidebar/ ${CMAKE_SOURCE_DIR}/libkonq  )
 
 
 ########### next target ###############
