@@ -170,10 +170,10 @@ void KonqFileTip::reposition()
     update();
 }
 
-void KonqFileTip::gotPreview( const KFileItem* item, const QPixmap& pixmap )
+void KonqFileTip::gotPreview( const KFileItem& item, const QPixmap& pixmap )
 {
     m_previewJob = 0;
-    if (item != m_item) return;
+    if (item.url() != m_item->url()) return;
 
     m_iconLabel -> setPixmap(pixmap);
 }
@@ -265,12 +265,12 @@ void KonqFileTip::hideTip()
 void KonqFileTip::startDelayed()
 {
     if ( m_preview ) {
-        KFileItemList oneItem;
-        oneItem.append( m_item );
+        QList<KFileItem> oneItem;
+        oneItem.append( * m_item );
 
         m_previewJob = KIO::filePreview( oneItem, 256, 256, 64, 70, true, true, 0);
-        connect( m_previewJob, SIGNAL( gotPreview( const KFileItem *, const QPixmap & ) ),
-                 this, SLOT( gotPreview( const KFileItem *, const QPixmap & ) ) );
+        connect( m_previewJob, SIGNAL( gotPreview(const KFileItem &, const QPixmap &) ),
+                 this, SLOT( gotPreview(const KFileItem &, const QPixmap &) ) );
         connect( m_previewJob, SIGNAL( result( KJob * ) ),
                  this, SLOT( gotPreviewResult() ) );
     }
