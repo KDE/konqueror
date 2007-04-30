@@ -31,7 +31,7 @@
 #include <kurifilter.h>
 #include <klocale.h>
 #include <kstandarddirs.h>
-#include <kwm.h>
+#include <kwindowsystem.h>
 #include <kprotocolmanager.h>
 #include <kstartupinfo.h>
 #include <kiconloader.h>
@@ -58,7 +58,7 @@ void KonqMisc::abortFullScreenMode()
     {
       if ( window->fullScreenMode() )
       {
-	KWindowInfo info = KWM::windowInfo( window->winId(), NET::WMDesktop );
+	KWindowInfo info = KWindowSystem::windowInfo( window->winId(), NET::WMDesktop );
 	if ( info.valid() && info.isOnCurrentDesktop() )
           window->showNormal();
       }
