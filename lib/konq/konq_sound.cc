@@ -49,8 +49,8 @@ KonqSoundPlayerImpl::KonqSoundPlayerImpl()
 
 bool KonqSoundPlayerImpl::isMimeTypeKnown(const QString& mimeType)
 {
-	kDebug() << k_funcinfo << mimeType << Phonon::BackendCapabilities::isMimeTypeKnown(mimeType) << endl;
-	return Phonon::BackendCapabilities::isMimeTypeKnown(mimeType);
+	kDebug() << k_funcinfo << mimeType << Phonon::BackendCapabilities::isMimeTypeAvailable(mimeType) << endl;
+	return Phonon::BackendCapabilities::isMimeTypeAvailable(mimeType);
 }
 
 void KonqSoundPlayerImpl::setUrl(const KUrl &url)
