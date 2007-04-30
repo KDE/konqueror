@@ -5,7 +5,7 @@
     <property name="maximum" type="i" access="readwrite"/>
     <property name="value" type="i" access="readwrite"/>
     <property name="autoClose" type="b" access="readwrite"/>
-    <method name="setLabel">
+    <method name="setLabelText">
       <arg type="s" name="label" direction="in"/>
     </method>
     <method name="showCancelButton">

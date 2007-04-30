@@ -36,7 +36,7 @@ class ProgressDialog : public KProgressDialog
     void setValue( int );
     int value() const;
       
-    void setLabel(const QString&);
+    void setLabelText(const QString&);
     
     void showCancelButton(bool show);
     bool wasCancelled() const;

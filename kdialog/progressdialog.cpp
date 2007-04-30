@@ -44,22 +44,22 @@ int ProgressDialog::maximum() const
 {
     return progressBar()->maximum();
 }
-    
+
 void ProgressDialog::setValue( int progress )
 {
     progressBar()->setValue( progress );
     if (progress>=maximum() )
       showCancelButton( false );
-}      
-      
+}
+
 int ProgressDialog::value() const
 {
     return progressBar()->value();
 }
 
-void ProgressDialog::setLabel(const QString& label)
+void ProgressDialog::setLabelText(const QString& label)
 {
-    KProgressDialog::setLabel( label );
+    KProgressDialog::setLabelText( label );
 }
 
 void ProgressDialog::showCancelButton( bool show )
@@ -71,18 +71,18 @@ void ProgressDialog::showCancelButton( bool show )
 bool ProgressDialog::wasCancelled() const
 {
     return KProgressDialog::wasCancelled();
-}   
+}
 
 void ProgressDialog::ignoreCancel() 
-{ 
+{
     KProgressDialog::ignoreCancel(); 
-} 
+}
 
 void ProgressDialog::setAutoClose( bool close )
 {
     KProgressDialog::setAutoClose( close );
-}      
-      
+}
+
 bool ProgressDialog::autoClose() const
 {
     return KProgressDialog::autoClose();
