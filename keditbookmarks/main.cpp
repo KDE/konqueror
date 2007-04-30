@@ -32,7 +32,7 @@
 #include <kuniqueapplication.h>
 
 #include <kmessagebox.h>
-#include <kwm.h>
+#include <kwindowsystem.h>
 #include <unistd.h>
 
 #include <kbookmarkmanager.h>
@@ -98,7 +98,7 @@ static bool askUser(QString filename, bool &readonly) {
                     if( value.isValid())
                         id = value;
                     //kDebug()<<" id !!!!!!!!!!!!!!!!!!! :"<<id<<endl;
-                    KWM::activateWindow((WId)id);
+                    KWindowSystem::activateWindow((WId)id);
                     return false;
                 } else if (ret == KMessageBox::Yes) {
                     readonly = true;

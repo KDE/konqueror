@@ -29,7 +29,7 @@
 
 #include <kapplication.h>
 #include <kdebug.h>
-#include <kwm.h>
+#include <kwindowsystem.h>
 
 #include <QFile>
 #ifdef Q_WS_X11
@@ -169,7 +169,7 @@ QDBusObjectPath KonquerorAdaptor::windowForTab()
     if ( mainWindows ) {
         foreach ( KonqMainWindow* window, *mainWindows ) {
 #ifdef Q_WS_X11
-            KWindowInfo winfo = KWM::windowInfo( window->winId(), NET::WMDesktop );
+            KWindowInfo winfo = KWindowSystem::windowInfo( window->winId(), NET::WMDesktop );
             if( winfo.isOnCurrentDesktop() &&
 #else
 	    if(
