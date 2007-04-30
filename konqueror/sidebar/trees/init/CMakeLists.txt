@@ -1,8 +1,5 @@
-
-add_subdirectory( remote ) 
-add_subdirectory( services ) 
-
-
+add_subdirectory( remote )
+add_subdirectory( services )
 
 ########### install files ###############
 
