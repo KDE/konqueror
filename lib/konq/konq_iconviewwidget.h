@@ -299,7 +299,7 @@ protected Q_SLOTS:
     void slotOnItem(Q3IconViewItem *);
     void slotOnViewport();
     void slotStartSoundPreview();
-    void slotPreview(const KFileItem *, const QPixmap &);
+    void slotPreview(const KFileItem&, const QPixmap &);
     void slotPreviewResult();
 
     void slotMovieUpdate( const QRect& rect );

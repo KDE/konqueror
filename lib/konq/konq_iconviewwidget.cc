@@ -414,15 +414,15 @@ void KonqIconViewWidget::slotStartSoundPreview()
 }
 
 
-void KonqIconViewWidget::slotPreview(const KFileItem *item, const QPixmap &pix)
+void KonqIconViewWidget::slotPreview(const KFileItem& item, const QPixmap &pix)
 {
     // ### slow. Idea: move KonqKfmIconView's m_itemDict into this class
     for (Q3IconViewItem *it = firstItem(); it; it = it->nextItem())
     {
         KFileIVI* current = static_cast<KFileIVI *>(it);
-        if (current->item() == item)
+        if (current->item()->url() == item.url())
         {
-            if (item->overlays() & K3Icon::HiddenOverlay) {
+            if (item.overlays() & K3Icon::HiddenOverlay) {
                 QPixmap p(pix);
 
                 KIconEffect::semiTransparent(p);
@@ -507,7 +507,7 @@ void KonqIconViewWidget::takeItem( Q3IconViewItem *item )
     }
 
     if ( d->pPreviewJob )
-      d->pPreviewJob->removeItem( static_cast<KFileIVI *>(item)->item() );
+      d->pPreviewJob->removeItem( static_cast<KFileIVI *>(item)->item()->url() );
 
     K3IconView::takeItem( item );
 }
@@ -814,10 +814,10 @@ void KonqIconViewWidget::startImagePreview( const QStringList &, bool force )
       d->bSoundPreviews = (d->pSoundPlayer != 0L);
     }
 
-    KFileItemList items;
+    QList<KFileItem> items;
     for ( Q3IconViewItem *it = firstItem(); it; it = it->nextItem() )
         if ( force || !static_cast<KFileIVI *>( it )->hasValidThumbnail() )
-            items.append( static_cast<KFileIVI *>( it )->item() );
+            items.append( * static_cast<KFileIVI *>( it )->item() );
 
     bool onlyAudio = true;
     for ( QStringList::ConstIterator it = d->previewSettings.begin(); it != d->previewSettings.end(); ++it ) {
@@ -844,8 +844,8 @@ void KonqIconViewWidget::startImagePreview( const QStringList &, bool force )
     d->pPreviewJob = KIO::filePreview( items, size, size, iconSize,
         m_pSettings->textPreviewIconTransparency(), true /* scale */,
         true /* save */, &(d->previewSettings) );
-    connect( d->pPreviewJob, SIGNAL( gotPreview( const KFileItem *, const QPixmap & ) ),
-             this, SLOT( slotPreview( const KFileItem *, const QPixmap & ) ) );
+    connect( d->pPreviewJob, SIGNAL( gotPreview( const KFileItem &, const QPixmap & ) ),
+             this, SLOT( slotPreview( const KFileItem &, const QPixmap & ) ) );
     connect( d->pPreviewJob, SIGNAL( result( KJob * ) ),
              this, SLOT( slotPreviewResult() ) );
 }
