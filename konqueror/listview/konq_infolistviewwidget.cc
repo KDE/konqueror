@@ -246,8 +246,8 @@ void KonqInfoListViewWidget::slotNewItems( const KFileItemList& entries )
     else
     {
         m_metaInfoJob = KIO::fileMetaInfo( entries );
-        connect( m_metaInfoJob, SIGNAL( gotMetaInfo( const KFileItem*)),
-             this, SLOT( slotMetaInfo( const KFileItem*)));
+        connect( m_metaInfoJob, SIGNAL( gotMetaInfo( const KFileItem&)),
+             this, SLOT( slotMetaInfo( const KFileItem&)));
         connect( m_metaInfoJob, SIGNAL( result( KJob*)),
              this, SLOT( slotMetaInfoResult()));
     }
@@ -268,8 +268,8 @@ void KonqInfoListViewWidget::slotRefreshItems( const KFileItemList& entries )
     else
     {
         m_metaInfoJob = KIO::fileMetaInfo( entries );
-        connect( m_metaInfoJob, SIGNAL( gotMetaInfo( const KFileItem*)),
-             this, SLOT( slotMetaInfo( const KFileItem*)));
+        connect( m_metaInfoJob, SIGNAL( gotMetaInfo( const KFileItem&)),
+             this, SLOT( slotMetaInfo( const KFileItem&)));
         connect( m_metaInfoJob, SIGNAL( result( KJob*)),
              this, SLOT( slotMetaInfoResult()));
     }
@@ -295,13 +295,13 @@ void KonqInfoListViewWidget::slotClear()
     KonqBaseListViewWidget::slotClear();
 }
 
-void KonqInfoListViewWidget::slotMetaInfo(const KFileItem* item)
+void KonqInfoListViewWidget::slotMetaInfo(const KFileItem& item)
 {
     // need to search for the item (any better way?)
     Q3ListViewItemIterator it(this);
     for (; it.current(); ++it)
     {
-        if (static_cast<KonqInfoListViewItem*>(it.current())->item()==item)
+        if (static_cast<KonqInfoListViewItem*>(it.current())->item().url()==item.url())
         {
             static_cast<KonqInfoListViewItem*>(it.current())->gotMetaInfo();
             return;
@@ -324,10 +324,10 @@ void KonqInfoListViewWidget::slotMetaInfoResult()
     else
     {
         m_metaInfoJob = KIO::fileMetaInfo(m_metaInfoTodo);
-        connect( m_metaInfoJob, SIGNAL( gotMetaInfo( const KFileItem*)),
-             this, SLOT( slotMetaInfo( const KFileItem*)));
-        connect( m_metaInfoJob, SIGNAL( result( KJob*)),
-             this, SLOT( slotMetaInfoResult()));
+        connect( m_metaInfoJob, SIGNAL(gotMetaInfo(const KFileItem&)),
+             this, SLOT(slotMetaInfo(const KFileItem&)));
+        connect( m_metaInfoJob, SIGNAL(result( KJob*)),
+             this, SLOT(slotMetaInfoResult()));
         m_metaInfoTodo.clear();
     }
 }
