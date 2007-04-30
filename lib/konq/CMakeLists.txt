@@ -53,7 +53,7 @@ install(TARGETS konq  DESTINATION ${LIB_INSTALL_DIR} )
 set(konq_sound_LIB_SRCS konq_sound.cc)
 kde4_automoc(${konq_sound_LIB_SRCS})
 kde4_add_plugin(konq_sound ${konq_sound_LIB_SRCS})
-target_link_libraries(konq_sound ${KDE4_KDECORE_LIBS} ${KDE4_PHONONCORE_LIBRARY})
+target_link_libraries(konq_sound ${KDE4_KDECORE_LIBS} ${KDE4_PHONON_LIBS})
 install(TARGETS konq_sound  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
 ########### install files ###############
