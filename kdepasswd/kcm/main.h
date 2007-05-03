@@ -20,6 +20,7 @@
 #define MAIN_H
 
 #include <kcmodule.h>
+#include <kemailsettings.h>
 
 #include "ui_main_widget.h"
 //Added by qt3to4:
@@ -27,9 +28,10 @@
 #include <QEvent>
 #include <QDropEvent>
 
+#include "chfacedlg.h"
+
 class KAboutData;
 class KUser;
-class KEmailSettings;
 class QEvent;
 class QObject;
 class KUrl;

@@ -26,7 +26,7 @@ public:
 
     void accept();
 };
-    
+
 
 class KDEpasswd2Dialog
     : public KNewPasswordDialog
@@ -42,12 +42,12 @@ public:
 
 protected:
     bool checkPassword(const char *password);
-    
+
 private:
     const char *m_Pass;
     QByteArray m_User;
 };
-    
+
 
 
 #endif // __PasswdDlg_h_Incluced__

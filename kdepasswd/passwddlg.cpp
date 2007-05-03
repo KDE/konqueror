@@ -6,11 +6,11 @@
  * Copyright (C) 2000 Geert Jansen <jansen@kde.org>
  */
 
+#include "passwddlg.h"
+#include "passwd.h"
+
 #include <klocale.h>
 #include <kmessagebox.h>
-
-#include "passwd.h"
-#include "passwddlg.h"
 
 KDEpasswd1Dialog::KDEpasswd1Dialog()
     : KPasswordDialog()

@@ -4,9 +4,11 @@
  *
  * This file is part of the KDE project, module kdesu.
  * Copyright (C) 1999,2000 Geert Jansen <jansen@kde.org>
- * 
+ *
  * passwd.cpp: Change a user's password.
  */
+
+#include "passwd.h"
 
 #include <config.h> // setenv
 
@@ -27,7 +29,6 @@
 #include <kstandarddirs.h>
 
 #include <kdesu/process.h>
-#include "passwd.h"
 
 
 PasswdProcess::PasswdProcess(QByteArray user)

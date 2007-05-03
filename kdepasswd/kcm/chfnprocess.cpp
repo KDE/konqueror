@@ -13,12 +13,13 @@
  * derived from kdepasswd.
  */
 
+#include "chfnprocess.h"
+
 #include <unistd.h>
 #include <stdlib.h>
 
 #include <kdesu/process.h>
 #include <kdebug.h>
-#include "chfnprocess.h"
 
 
 int ChfnProcess::exec(const char *pass, const char *name)

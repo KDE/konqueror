@@ -20,13 +20,14 @@
  *
  */
 
+#include "main.h"
+
 #include <QLayout>
 #include <QLabel>
 #include <QLineEdit>
 #include <QEvent>
 #include <QPixmap>
 #include <QStringList>
-#include <QLayout>
 //Added by qt3to4:
 #include <QDragEnterEvent>
 #include <QVBoxLayout>
@@ -34,7 +35,6 @@
 
 #include <kpushbutton.h>
 #include <kguiitem.h>
-#include <kemailsettings.h>
 #include <kpassworddialog.h>
 #include <kuser.h>
 #include <kdialog.h>
@@ -52,8 +52,6 @@
 #include "settings.h"
 #include "pass.h"
 #include "chfnprocess.h"
-#include "chfacedlg.h"
-#include "main.h"
 
 typedef KGenericFactory<KCMUserAccount, QWidget> Factory;
 K_EXPORT_COMPONENT_FACTORY( useraccount, Factory("useraccount") )

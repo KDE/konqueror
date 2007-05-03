@@ -1,6 +1,6 @@
 /**
- *  Copyright 2003 Braden MacDonald <bradenm_k@shaw.ca>                   
- *  Copyright 2003 Ravikiran Rajagopal <ravi@ee.eng.ohio-state.edu>       
+ *  Copyright 2003 Braden MacDonald <bradenm_k@shaw.ca>
+ *  Copyright 2003 Ravikiran Rajagopal <ravi@ee.eng.ohio-state.edu>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -31,10 +31,10 @@
 #include <QObject>
 #include <QPixmap>
 
-#include <kdialog.h>
-#include <k3iconview.h> // declaration below
+#include <KDialog>
+#include <K3IconView> // declaration below
 
-enum FacePerm { adminOnly = 1, adminFirst = 2, userFirst = 3, userOnly = 4}; 
+enum FacePerm { adminOnly = 1, adminFirst = 2, userFirst = 3, userOnly = 4};
 
 class ChFaceDlg : public KDialog
 {
@@ -45,7 +45,7 @@ public:
   ChFaceDlg(const QString& picsdirs, QWidget *parent=0, const char *name=0, bool modal=true);
 
 
-  QPixmap getFaceImage() const 
+  QPixmap getFaceImage() const
   {
     if(m_FacesWidget->currentItem())
       return *(m_FacesWidget->currentItem()->pixmap());

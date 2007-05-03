@@ -25,6 +25,7 @@
  * @author Braden MacDonald
  */
 
+#include "chfacedlg.h"
 
 #include <QLayout>
 #include <QLabel>
@@ -46,7 +47,6 @@
 #include <konq_operations.h>
 #include <kurl.h>
 
-#include "chfacedlg.h"
 #include "settings.h" // KConfigXT
 
 
