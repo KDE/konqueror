@@ -41,7 +41,7 @@
 #include <konqbookmarkmanager.h>
 #include <kinputdialog.h>
 #include <kzip.h>
-#include <config.h>
+#include <config-konqueror.h>
 #include <pwd.h>
 // we define STRICT_ANSI to get rid of some warnings in glibc
 #ifndef __STRICT_ANSI__
@@ -154,8 +154,8 @@ time_t KonqMainWindow::s_startupTime;
 int KonqMainWindow::s_preloadUsageCount;
 
 KonqOpenURLRequest KonqOpenURLRequest::null;
-static KStaticDeleter<KonqHistoryManager> konqHistoryManagerSd;
-static KonqHistoryManager* s_konqHistoryManager;
+//static KStaticDeleter<KonqHistoryManager> konqHistoryManagerSd;
+//static KonqHistoryManager* s_konqHistoryManager;
 
 static int current_memory_usage( int* limit = NULL );
 

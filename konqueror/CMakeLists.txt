@@ -5,6 +5,13 @@ add_definitions(-D_LARGEFILE64_SOURCE )
 
 add_definitions (-DQT3_SUPPORT)
 
+check_symbol_exists(mallinfo        "malloc.h"                 KDE_MALLINFO_MALLOC)
+check_symbol_exists(mallinfo        "stdlib.h"                 KDE_MALLINFO_STDLIB)
+# TODO KDE_MALLINFO_FIELD_hblkhd
+# TODO KDE_MALLINFO_FIELD_uordblks
+# TODO KDE_MALLINFO_FIELD_usmblks
+configure_file(config-konqueror.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-konqueror.h )
+
 set(libkonqueror_intern_KCFG_SRCS  ${CMAKE_CURRENT_SOURCE_DIR}/konq_settingsxt.kcfgc)
 kde4_add_kcfg_files(libkonqueror_intern_SRCS ${libkonqueror_intern_KCFG_SRCS})
 

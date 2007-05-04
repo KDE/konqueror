@@ -6,8 +6,7 @@
  * Copyright (C) 2000 Geert Jansen <jansen@kde.org>
  */
 
-#include <config.h>
-
+#include <kdeversion.h>
 #include <kuniqueapplication.h>
 #include <klocale.h>
 #include <kaboutdata.h>
@@ -29,7 +28,7 @@ static KCmdLineOptions options[] =
 int main(int argc, char **argv)
 {
     KAboutData aboutData("kdepasswd", I18N_NOOP("KDE passwd"),
-            VERSION, I18N_NOOP("Changes a UNIX password."),
+            KDE_VERSION_STRING, I18N_NOOP("Changes a UNIX password."),
             KAboutData::License_Artistic, "Copyright (c) 2000 Geert Jansen");
     aboutData.addAuthor("Geert Jansen", I18N_NOOP("Maintainer"),
             "jansen@kde.org", "http://www.stack.nl/~geertj/");
