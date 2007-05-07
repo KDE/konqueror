@@ -76,11 +76,13 @@ KonqOperations::~KonqOperations()
     delete m_pasteInfo;
 }
 
-void KonqOperations::editMimeType( const QString & mimeType )
+void KonqOperations::editMimeType( const QString & mimeType, QWidget* parent )
 {
     QString keditfiletype = QLatin1String("keditfiletype");
-    KRun::runCommand( keditfiletype + " " + K3Process::quote(mimeType),
-                      keditfiletype, keditfiletype /*unused*/);
+    KRun::runCommand( keditfiletype
+                      + " --parent " + QString::number( parent->winId())
+                      + " " + K3Process::quote(mimeType),
+                      keditfiletype, keditfiletype /*unused*/, parent );
 }
 
 void KonqOperations::del( QWidget * parent, Operation method, const KUrl::List & selectedUrls )
