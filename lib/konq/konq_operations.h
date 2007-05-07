@@ -45,8 +45,9 @@ protected:
 public:
     /**
      * Pop up properties dialog for mimetype @p mimeType.
+     * @param parent parent widget (for dialogs)
      */
-    static void editMimeType( const QString & mimeType );
+    static void editMimeType( const QString & mimeType, QWidget* parent );
 
     enum Operation { TRASH, DEL, COPY, MOVE, LINK, EMPTYTRASH, STAT, MKDIR, RESTORE, UNKNOWN };
     /**

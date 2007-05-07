@@ -1073,7 +1073,7 @@ void KonqPopupMenu::slotRunService()
 
 void KonqPopupMenu::slotPopupMimeType()
 {
-    KonqOperations::editMimeType( m_sMimeType );
+    KonqOperations::editMimeType( m_sMimeType, d->m_parentWidget );
 }
 
 void KonqPopupMenu::slotPopupProperties()
