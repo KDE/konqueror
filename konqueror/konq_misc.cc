@@ -197,7 +197,7 @@ QString KonqMisc::konqFilteredURL( QWidget* parent, const QString& _url, const Q
 {
   if ( !_url.startsWith( "about:" ) ) // Don't filter "about:" URLs
   {
-    KUriFilterData data = _url;
+    KUriFilterData data(_url);
 
     if( !_path.isEmpty() )
       data.setAbsolutePath(_path);
