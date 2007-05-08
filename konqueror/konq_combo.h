@@ -79,10 +79,10 @@ protected:
     void selectWord(QKeyEvent *e);
 
 Q_SIGNALS:
-    /** 
+    /**
       Specialized signal that emits the state of the modifier
       keys along with the actual activated text.
-     */    
+     */
     void activated( const QString &, int );
 
     /**
