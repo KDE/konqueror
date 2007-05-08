@@ -871,7 +871,7 @@ void KonqComboCompletionBox::setItems( const QStringList& items )
     blockSignals( true );
 
     int rowIndex = 0;
-    
+
     if ( count() == 0 )
         addItems( items );
     else {
