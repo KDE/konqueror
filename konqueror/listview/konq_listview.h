@@ -28,8 +28,8 @@
 #include <k3mimetyperesolver.h>
 
 
-#include <QListView>
-#include <QStringList>
+#include <QtGui/QListView>
+#include <QtCore/QStringList>
 
 #include <konq_propsview.h>
 #include "konq_listviewwidget.h"

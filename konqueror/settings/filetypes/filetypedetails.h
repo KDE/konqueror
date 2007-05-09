@@ -1,7 +1,7 @@
 #ifndef _FILETYPEDETAILS_H
 #define _FILETYPEDETAILS_H
 
-#include <QTabWidget>
+#include <QtGui/QTabWidget>
 class TypesListItem;
 class KIconButton;
 class QLineEdit;

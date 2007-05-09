@@ -1,7 +1,7 @@
 #ifndef __konqopenurlrequest_h
 #define __konqopenurlrequest_h
 
-#include <QStringList>
+#include <QtCore/QStringList>
 
 #include <kparts/browserextension.h>
 

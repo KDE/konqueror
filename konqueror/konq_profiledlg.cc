@@ -21,12 +21,12 @@
 #include "konq_viewmgr.h"
 #include "konq_settingsxt.h"
 
-#include <QCheckBox>
-#include <QDir>
+#include <QtGui/QCheckBox>
+#include <QtCore/QDir>
 #include <kvbox.h>
-#include <QLabel>
+#include <QtGui/QLabel>
 #include <Qt3Support/Q3Header>
-#include <QLineEdit>
+#include <QtGui/QLineEdit>
 
 #include <k3listview.h>
 #include <kdebug.h>

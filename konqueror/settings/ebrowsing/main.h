@@ -26,7 +26,7 @@
 #define __MAIN_H__
 
 #include <kcmodule.h>
-#include <QList>
+#include <QtCore/QList>
 
 class KUriFilter;
 

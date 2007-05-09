@@ -30,7 +30,7 @@
 #include <kselectaction.h>
 #include <kio/metainfojob.h>
 
-#include <QStringList>
+#include <QtCore/QStringList>
 
 KonqInfoListViewWidget::KonqInfoListViewWidget( KonqListView* parent,
                                                 QWidget* parentWidget)

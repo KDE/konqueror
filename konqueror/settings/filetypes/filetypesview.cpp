@@ -1,12 +1,12 @@
 /* Missing license header */
 
-#include <QLabel>
-#include <QLayout>
-#include <QPushButton>
-#include <QTimer>
+#include <QtGui/QLabel>
+#include <QtGui/QLayout>
+#include <QtGui/QPushButton>
+#include <QtCore/QTimer>
 //Added by qt3to4:
-#include <QGridLayout>
-#include <QHBoxLayout>
+#include <QtGui/QGridLayout>
+#include <QtGui/QBoxLayout>
 
 #include <kapplication.h>
 #include <kbuildsycocaprogressdialog.h>

@@ -38,8 +38,8 @@
 #include <konq_mainwindow_interface.h>
 #include <konq_main_interface.h>
 
-#include <QDir>
-#include <QRegExp>
+#include <QtCore/QDir>
+#include <QtCore/QRegExp>
 
 #include <stdlib.h>
 #include <stdio.h>

@@ -20,7 +20,7 @@
 #define KONQ_FRAMECONTAINER_H
 
 #include "konq_frame.h"
-#include <QSplitter>
+#include <QtGui/QSplitter>
 
 class KonqFrameContainerBase : public KonqFrameBase
 {

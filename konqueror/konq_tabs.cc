@@ -21,14 +21,13 @@
 
 #include "konq_tabs.h"
 
-#include <QApplication>
-#include <QClipboard>
-#include <QMenu>
-#include <QToolButton>
+#include <QtGui/QApplication>
+#include <QtGui/QClipboard>
+#include <QtGui/QMenu>
+#include <QtGui/QToolButton>
 
 //Added by qt3to4:
-#include <QDragMoveEvent>
-#include <QDropEvent>
+#include <QtGui/QKeyEvent>
 
 #include <kapplication.h>
 #include <kdebug.h>
@@ -47,7 +46,7 @@
 #include <kstandardshortcut.h>
 #include <QtGui/QTabBar>
 
-#include <QStyle>
+#include <QtGui/QStyle>
 
 #define DUPLICATE_ID 3
 #define RELOAD_ID 4

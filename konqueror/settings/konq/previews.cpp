@@ -19,13 +19,12 @@
 // File previews configuration
 //
 
-#include <QCheckBox>
-#include <QLabel>
-#include <QLayout>
+#include <QtGui/QCheckBox>
+#include <QtGui/QLabel>
+#include <QtGui/QLayout>
 
 //Added by qt3to4:
-#include <QVBoxLayout>
-#include <QHBoxLayout>
+#include <QtGui/QBoxLayout>
 
 #include <QtDBus/QtDBus>
 

@@ -26,8 +26,8 @@
 #include <unistd.h>
 
 #include <kapplication.h>
-#include <QTabWidget>
-#include <QLayout>
+#include <QtGui/QTabWidget>
+#include <QtGui/QLayout>
 #include <QtDBus/QtDBus>
 
 #include "jsopts.h"

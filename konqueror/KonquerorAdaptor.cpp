@@ -31,7 +31,7 @@
 #include <kdebug.h>
 #include <kwindowsystem.h>
 
-#include <QFile>
+#include <QtCore/QFile>
 #ifdef Q_WS_X11
 #include <QX11Info>
 #include <X11/Xlib.h>

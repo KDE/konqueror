@@ -21,18 +21,15 @@
 
 #include "konq_factory.h"
 
-#include <QPointer>
-#include <QColor>
-#include <QWidget>
-#include <QCheckBox>
-#include <QLabel>
-#include <QPixmap>
-#include <QPaintEvent>
-#include <QChildEvent>
-#include <QList>
-#include <QEvent>
-#include <QResizeEvent>
-#include <QMouseEvent>
+#include <QtCore/QPointer>
+#include <QtGui/QColor>
+#include <QtGui/QWidget>
+#include <QtGui/QCheckBox>
+#include <QtGui/QLabel>
+#include <QtGui/QPixmap>
+#include <QtGui/QKeyEvent>
+#include <QtCore/QEvent>
+#include <QtCore/QList>
 
 #include <KConfig>
 #include <KPixmapEffect>

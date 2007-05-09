@@ -19,8 +19,8 @@
 
 #include "konq_listview.h"
 
-#include <QHelpEvent>
-#include <QHeaderView>
+#include <QtGui/QKeyEvent>
+#include <QtGui/QHeaderView>
 
 #include "konq_itemdelegate.h"
 

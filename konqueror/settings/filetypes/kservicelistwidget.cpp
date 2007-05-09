@@ -20,11 +20,11 @@
 
 #include <unistd.h>
 
-#include <QPushButton>
-#include <QLayout>
+#include <QtGui/QPushButton>
+#include <QtGui/QLayout>
 
 //Added by qt3to4:
-#include <QGridLayout>
+#include <QtGui/QGridLayout>
 
 #include <kapplication.h>
 #include <kdebug.h>

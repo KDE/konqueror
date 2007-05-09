@@ -17,9 +17,9 @@
 */
 
 #include "web_module.h"
-#include <QFileInfo>
-#include <QSpinBox>
-#include <QTimer>
+#include <QtCore/QFileInfo>
+#include <QtGui/QSpinBox>
+#include <QtCore/QTimer>
 
 #include <dom/html_inline.h>
 #include <kdebug.h>

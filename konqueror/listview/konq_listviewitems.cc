@@ -24,10 +24,10 @@
 #include <klocale.h>
 #include <assert.h>
 #include <stdio.h>
-#include <QPainter>
+#include <QtGui/QPainter>
 #include <Qt3Support/Q3Header>
 #include <kiconloader.h>
-#include <QDateTime>
+#include <QtCore/QDate>
 
 static QString retrieveExtraEntry( KFileItem* fileitem, int numExtra )
 {

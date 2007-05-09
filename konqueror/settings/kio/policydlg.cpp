@@ -16,11 +16,11 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#include <QPushButton>
-#include <QWhatsThis>
-#include <QLayout>
-#include <QLabel>
-#include <QValidator>
+#include <QtGui/QPushButton>
+#include <QtGui/QWhatsThis>
+#include <QtGui/QLayout>
+#include <QtGui/QLabel>
+#include <QtGui/QValidator>
 
 #include <klineedit.h>
 #include <kcombobox.h>

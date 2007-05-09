@@ -25,7 +25,7 @@
 #include <klocale.h>
 #include <konqsidebarplugin.h>
 #include <kmenu.h>
-#include <QObject>
+#include <QtCore/QObject>
 
 
 // A wrapper for KHTMLPart to make it behave the way we want it to.

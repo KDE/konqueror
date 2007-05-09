@@ -25,9 +25,9 @@
 #define __KCOOKIESMANAGEMENT_H
 
 #include <Qt3Support/Q3Dict>
-#include <QStringList>
-#include <Qt3Support/Q3CheckListItem>
-#include <Q3PtrList>
+#include <QtCore/QStringList>
+#include <Qt3Support/Q3ListView>
+#include <Qt3Support/Q3PtrList>
 
 #include <kcmodule.h>
 #include "ui_kcookiesmanagementdlg_ui.h"

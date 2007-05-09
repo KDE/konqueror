@@ -22,9 +22,9 @@
 
 #include <konq_historymgr.h>
 #include <kactionmenu.h>
-#include <QWidget>
-#include <QToolBar>
-#include <QList>
+#include <QtGui/QWidget>
+#include <QtGui/QToolBar>
+#include <QtCore/QList>
 
 struct HistoryEntry;
 class QMenu;

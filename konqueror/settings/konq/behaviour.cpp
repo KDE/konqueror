@@ -19,9 +19,9 @@
 // Behaviour options for konqueror
 
 #include <QtDBus/QtDBus>
-#include <QCheckBox>
-#include <QLayout>
-#include <QLabel>
+#include <QtGui/QCheckBox>
+#include <QtGui/QLayout>
+#include <QtGui/QLabel>
 
 #include <konq_defaults.h>
 #include <kstandarddirs.h>

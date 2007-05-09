@@ -20,7 +20,7 @@
 #ifndef __konq_itemdelegate_h__
 #define __konq_itemdelegate_h__
 
-#include <QItemDelegate>
+#include <QtGui/QItemDelegate>
 
 class KonqItemDelegate : public QItemDelegate {
     Q_OBJECT

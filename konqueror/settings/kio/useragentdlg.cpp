@@ -22,13 +22,13 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include <QLayout>
-#include <QCheckBox>
-#include <QLineEdit>
+#include <QtGui/QLayout>
+#include <QtGui/QCheckBox>
+#include <QtGui/QLineEdit>
 
-#include <QPushButton>
+#include <QtGui/QPushButton>
 //Added by qt3to4:
-#include <QVBoxLayout>
+#include <QtGui/QBoxLayout>
 
 #include <kdebug.h>
 #include <kconfig.h>

@@ -2,14 +2,14 @@
 // (C) 2002 Leo Savernik <l.savernik@aon.at>
 //	Generalizing the policy dialog
 
-#include <QLayout>
-#include <QLabel>
-#include <QComboBox>
+#include <QtGui/QLayout>
+#include <QtGui/QLabel>
+#include <QtGui/QComboBox>
 
 #include <klocale.h>
 #include <kmessagebox.h>
 
-#include <QPushButton>
+#include <QtGui/QPushButton>
 
 #include "policydlg.h"
 #include "policies.h"

@@ -3,8 +3,8 @@
 // First version of cookies configuration by Waldo Bastian <bastian@kde.org>
 // This dialog box created by David Faure <faure@kde.org>
 
-#include <QLayout>
-#include <QTabWidget>
+#include <QtGui/QLayout>
+#include <QtGui/QTabWidget>
 #include <QtDBus/QtDBus>
 
 #include <klocale.h>

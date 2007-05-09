@@ -20,11 +20,11 @@
  */
 
 
-#include <QLayout>
-#include <QLabel>
-#include <QCheckBox>
+#include <QtGui/QLayout>
+#include <QtGui/QLabel>
+#include <QtGui/QCheckBox>
 //Added by qt3to4:
-#include <QVBoxLayout>
+#include <QtGui/QBoxLayout>
 
 #include <kfiledialog.h>
 #include <k3listview.h>

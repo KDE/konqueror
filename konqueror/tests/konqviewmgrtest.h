@@ -19,7 +19,7 @@
 #ifndef KONQVIEWMGRTEST_H
 #define KONQVIEWMGRTEST_H
 
-#include <QMainWindow>
+#include <QtGui/QMainWindow>
 
 // SCW == Switch (or Set) Central Widget
 class SCWMainWindow : public QMainWindow

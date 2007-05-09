@@ -19,7 +19,7 @@
 #include "typeslistitem.h"
 #include "keditfiletype.h"
 
-#include <QFile>
+#include <QtCore/QFile>
 
 #include <kapplication.h>
 #include <kaboutdata.h>

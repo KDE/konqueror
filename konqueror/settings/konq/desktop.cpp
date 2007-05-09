@@ -17,16 +17,15 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#include <QLabel>
+#include <QtGui/QLabel>
 #include <Qt3Support/Q3GroupBox>
-#include <QLayout>
+#include <QtGui/QLayout>
 
-#include <QCheckBox>
-#include <QSlider>
+#include <QtGui/QCheckBox>
+#include <QtGui/QSlider>
 //Added by qt3to4:
-#include <QVBoxLayout>
-#include <QHBoxLayout>
-#include <QDBusInterface>
+#include <QtGui/QBoxLayout>
+#include <QtDBus/QDBusInterface>
 
 #include <kapplication.h>
 #include <kglobal.h>

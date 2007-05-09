@@ -34,11 +34,11 @@
 #include <ktoggleaction.h>
 
 #include <Qt3Support/Q3Header>
-#include <QPainter>
-#include <QStyle>
-#include <QTimer>
-#include <QEvent>
-#include <QCursor>
+#include <QtGui/QPainter>
+#include <QtGui/QStyle>
+#include <QtCore/QTimer>
+#include <QtCore/QEvent>
+#include <QtGui/QCursor>
 
 #include <QtGui/QDrag>
 

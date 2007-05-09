@@ -21,7 +21,7 @@
 #define __kfm_run_h__
 
 #include <kparts/browserrun.h>
-#include <QPointer>
+#include <QtCore/QPointer>
 #include <kservice.h>
 #include "konq_openurlrequest.h"
 

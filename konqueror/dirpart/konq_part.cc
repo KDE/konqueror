@@ -19,7 +19,7 @@
 
 #include "konq_part.h"
 
-#include <QApplication>
+#include <QtGui/QApplication>
 
 #include <kaboutdata.h>
 #include <kdirlister.h>

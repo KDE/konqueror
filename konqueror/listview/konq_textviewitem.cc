@@ -23,7 +23,7 @@
 #include <assert.h>
 #include <stdio.h>
 #include <kglobal.h>
-#include <QDateTime>
+#include <QtCore/QDate>
 
 int KonqTextViewItem::compare( Q3ListViewItem *item, int col, bool ascending ) const
 {

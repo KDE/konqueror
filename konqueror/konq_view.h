@@ -25,12 +25,12 @@
 
 #include <kservice.h>
 
-#include <QList>
+#include <QtCore/QList>
 
-#include <QObject>
-#include <QStringList>
-#include <QPointer>
-#include <QEvent>
+#include <QtCore/QObject>
+#include <QtCore/QStringList>
+#include <QtCore/QPointer>
+#include <QtCore/QEvent>
 
 class KonqRun;
 class KonqFrame;

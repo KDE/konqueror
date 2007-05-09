@@ -19,10 +19,10 @@
 #ifndef HISTORY_MODULE_H
 #define HISTORY_MODULE_H
 
-#include <QDateTime>
-#include <QObject>
+#include <QtCore/QDate>
+#include <QtCore/QObject>
 #include <Qt3Support/Q3Dict>
-#include <QPixmap>
+#include <QtGui/QPixmap>
 
 #include <kglobal.h>
 #include <klocale.h>

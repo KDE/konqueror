@@ -17,13 +17,11 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include <QPainter>
-#include <QStyle>
-#include <QPixmap>
-#include <QPaintEvent>
-#include <QEvent>
-#include <QKeyEvent>
-#include <QMouseEvent>
+#include <QtGui/QPainter>
+#include <QtGui/QStyle>
+#include <QtGui/QPixmap>
+#include <QtGui/QKeyEvent>
+#include <QtCore/QEvent>
 #include <kapplication.h>
 #include <kconfig.h>
 #include <kconfiggroup.h>

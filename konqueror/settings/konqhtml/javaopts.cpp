@@ -21,9 +21,9 @@
 #include <knuminput.h>
 #include <khbox.h>
 
-#include <QLayout>
+#include <QtGui/QLayout>
 #include <Qt3Support/Q3GroupBox>
-#include <QLabel>
+#include <QtGui/QLabel>
 
 #include "htmlopts.h"
 #include "policydlg.h"

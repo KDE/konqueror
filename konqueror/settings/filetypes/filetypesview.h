@@ -2,9 +2,9 @@
 #define FILETYPESVIEW_H
 
 #include <Qt3Support/Q3PtrList>
-#include <QMap>
-#include <QLabel>
-#include <QStackedWidget>
+#include <QtCore/QMap>
+#include <QtGui/QLabel>
+#include <QtGui/QStackedWidget>
 
 #include <kconfig.h>
 #include <kcmodule.h>

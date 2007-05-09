@@ -62,24 +62,21 @@
 #include <time.h>
 #include <unistd.h>
 
-#include <QFile>
-#include <QClipboard>
-#include <QMetaObject>
-#include <QLayout>
-#include <QFileInfo>
+#include <QtCore/QFile>
+#include <QtGui/QClipboard>
+#include <QtCore/QArgument>
+#include <QtGui/QLayout>
+#include <QtCore/QFileInfo>
 #ifdef Q_WS_X11
 #include <QX11Info>
 #endif
 //Added by qt3to4:
-#include <QCustomEvent>
-#include <QFocusEvent>
-#include <QKeyEvent>
-#include <QEvent>
-#include <QByteArray>
-#include <QList>
-#include <QCloseEvent>
-#include <QPixmap>
-#include <QLineEdit>
+#include <QtCore/QEvent>
+#include <QtGui/QKeyEvent>
+#include <QtCore/QByteRef>
+#include <QtCore/QList>
+#include <QtGui/QPixmap>
+#include <QtGui/QLineEdit>
 
 #include <kaboutdata.h>
 #include <kbookmarkbar.h>

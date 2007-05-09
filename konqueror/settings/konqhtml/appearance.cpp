@@ -1,11 +1,11 @@
 
-#include <QLabel>
-#include <QLayout>
-#include <QLineEdit>
-#include <QFontComboBox>
-#include <QDBusMessage>
-#include <QDBusConnection>
-#include <QGroupBox>
+#include <QtGui/QLabel>
+#include <QtGui/QLayout>
+#include <QtGui/QLineEdit>
+#include <QtGui/QFontComboBox>
+#include <QtDBus/QDBusMessage>
+#include <QtDBus/QDBusConnection>
+#include <QtGui/QGroupBox>
 
 #include <kapplication.h>
 #include <kcharsets.h>

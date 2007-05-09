@@ -23,9 +23,9 @@
 #include "konq_factory.h"
 
 #include <QtCore/QCOORD>
-#include <QObject>
-#include <QMap>
-#include <QPointer>
+#include <QtCore/QObject>
+#include <QtCore/QMap>
+#include <QtCore/QPointer>
 
 #include <KService>
 #include <KConfig>

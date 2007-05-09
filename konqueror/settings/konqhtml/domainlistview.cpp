@@ -19,11 +19,11 @@
 
 */
 
-#include <QLayout>
-#include <QPushButton>
+#include <QtGui/QLayout>
+#include <QtGui/QPushButton>
 
 //Added by qt3to4:
-#include <QGridLayout>
+#include <QtGui/QGridLayout>
 
 #include <kconfig.h>
 #include <k3listview.h>

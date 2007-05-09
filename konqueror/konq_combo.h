@@ -20,12 +20,10 @@
 #ifndef KONQ_COMBO_H
 #define KONQ_COMBO_H
 
-#include <QEvent>
+#include <QtCore/QEvent>
 //Added by qt3to4:
-#include <QPixmap>
-#include <QMouseEvent>
-#include <QKeyEvent>
-#include <QPaintEvent>
+#include <QtGui/QPixmap>
+#include <QtGui/QKeyEvent>
 
 #include <khistorycombobox.h>
 #include <konq_historymgr.h>

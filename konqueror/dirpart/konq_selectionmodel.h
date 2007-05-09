@@ -20,7 +20,7 @@
 #ifndef __konq_selectionmodel_h__
 #define __konq_selectionmodel_h__
 
-#include <QItemSelectionModel>
+#include <QtGui/QItemSelection>
 
 class KonqSelectionModel : public QItemSelectionModel
 {

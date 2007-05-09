@@ -36,7 +36,7 @@
 #include <kauthorized.h>
 
 #include <algorithm>
-#include <QHBoxLayout>
+#include <QtGui/QBoxLayout>
 
 template class QList<KonqHistoryEntry*>;
 

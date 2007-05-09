@@ -19,7 +19,7 @@
 #define __KCMCSS_H__
 
 
-#include <QMap>
+#include <QtCore/QMap>
 
 #include <kcmodule.h>
 #include "ui_csscustom.h"

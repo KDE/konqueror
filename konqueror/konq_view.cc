@@ -43,17 +43,14 @@
 #include <krandom.h>
 #include <kio/jobuidelegate.h>
 
-#include <QApplication>
-#include <QMetaObject>
-#include <QObject>
-#include <QByteArray>
-#include <QEvent>
-#include <QDropEvent>
-#include <QContextMenuEvent>
-#include <QDragEnterEvent>
-#include <QMouseEvent>
-#include <QFile>
-#include <QScrollArea>
+#include <QtGui/QApplication>
+#include <QtCore/QArgument>
+#include <QtCore/QObject>
+#include <QtCore/QByteRef>
+#include <QtCore/QEvent>
+#include <QtGui/QKeyEvent>
+#include <QtCore/QFile>
+#include <QtGui/QScrollArea>
 #include <kjobuidelegate.h>
 
 //#define DEBUG_HISTORY

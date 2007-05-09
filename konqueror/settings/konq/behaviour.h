@@ -22,7 +22,7 @@
 #include <kcmodule.h>
 #include <kconfig.h>
 
-#include <QStringList>
+#include <QtCore/QStringList>
 
 class QCheckBox;
 class QLabel;

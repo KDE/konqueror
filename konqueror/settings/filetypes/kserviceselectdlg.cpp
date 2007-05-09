@@ -22,7 +22,7 @@
 
 #include <klocale.h>
 #include <kvbox.h>
-#include <QLabel>
+#include <QtGui/QLabel>
 
 KServiceSelectDlg::KServiceSelectDlg( const QString& /*serviceType*/, const QString& /*value*/, QWidget *parent )
     : KDialog( parent )

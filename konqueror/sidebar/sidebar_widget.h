@@ -18,9 +18,9 @@
 #define _SIDEBAR_WIDGET_
 
 #include <Qt3Support/Q3PtrVector>
-#include <QTimer>
+#include <QtCore/QTimer>
 
-#include <QPointer>
+#include <QtCore/QPointer>
 
 #include <k3dockwidget.h>
 #include <kurl.h>
