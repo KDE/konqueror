@@ -40,7 +40,7 @@ protected Q_SLOTS:
   void updateDescription(const QString &desc);
   void addExtension();
   void removeExtension();
-  void enableExtButtons(int index);
+  void enableExtButtons();
   void slotAutoEmbedClicked(int button);
   void slotAskSaveToggled(bool);
 

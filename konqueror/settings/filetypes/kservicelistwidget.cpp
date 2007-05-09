@@ -78,7 +78,7 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *na
   servicesLB = new QListWidget(gb);
   connect(servicesLB, SIGNAL(highlighted(int)), SLOT(enableMoveButtons(int)));
   grid->addWidget(servicesLB, 1, 0, 6, 1);
-  connect( servicesLB, SIGNAL( doubleClicked ( QListWidgetItem * )), this, SLOT( editService()));
+  connect( servicesLB, SIGNAL( itemDoubleClicked(QListWidgetItem*)), this, SLOT( editService()));
 
   QString wtstr =
     (kind == SERVICELIST_APPLICATIONS ?
