@@ -25,12 +25,12 @@
 #include <klocale.h>
 #include <assert.h>
 #include <stdio.h>
-#include <QPainter>
+#include <QtGui/QPainter>
 #include <Qt3Support/Q3Header>
 #include <kiconloader.h>
 #include "konq_infolistviewitem.h"
 #include "konq_infolistviewwidget.h"
-#include <QDateTime>
+#include <QtCore/QDate>
 
 /**************************************************************
  *

@@ -23,13 +23,13 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#include <QLayout>
-#include <QCheckBox>
-#include <QPushButton>
-#include <QRadioButton>
-#include <QToolButton>
+#include <QtGui/QLayout>
+#include <QtGui/QCheckBox>
+#include <QtGui/QPushButton>
+#include <QtGui/QRadioButton>
+#include <QtGui/QToolButton>
 //Added by qt3to4:
-#include <QVBoxLayout>
+#include <QtGui/QBoxLayout>
 #include <QtDBus/QtDBus>
 #include <QtCore/QUrl>
 

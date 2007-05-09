@@ -14,14 +14,14 @@
 
 #include <config.h>
 
-#include <QCheckBox>
-#include <QComboBox>
-#include <QLabel>
-#include <QLayout>
+#include <QtGui/QCheckBox>
+#include <QtGui/QComboBox>
+#include <QtGui/QLabel>
+#include <QtGui/QLayout>
 
 //Added by qt3to4:
-#include <QGridLayout>
-#include <QDesktopWidget>
+#include <QtGui/QGridLayout>
+#include <QtGui/QDesktopWidget>
 
 #include <QtDBus/QtDBus>
 

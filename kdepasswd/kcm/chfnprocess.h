@@ -11,7 +11,7 @@
 #ifndef CHFNPROC_H
 #define CHFNPROC_H
 
-#include <QByteArray>
+#include <QtCore/QByteRef>
 #include <kdesu/process.h>
 
 class ChfnProcess : public PtyProcess

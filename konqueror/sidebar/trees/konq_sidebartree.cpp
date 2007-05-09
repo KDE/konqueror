@@ -20,20 +20,17 @@
 
 #include "konq_sidebartreemodule.h"
 
-#include <QClipboard>
-#include <QCursor>
-#include <QDir>
+#include <QtGui/QClipboard>
+#include <QtGui/QCursor>
+#include <QtCore/QDir>
 #include <Qt3Support/Q3Header>
-#include <QMenu>
-#include <QTimer>
+#include <QtGui/QMenu>
+#include <QtCore/QTimer>
 //Added by qt3to4:
-#include <QPixmap>
-#include <QDragLeaveEvent>
-#include <QDragMoveEvent>
-#include <QEvent>
-#include <QFrame>
-#include <QDropEvent>
-#include <QDragEnterEvent>
+#include <QtGui/QPixmap>
+#include <QtGui/QKeyEvent>
+#include <QtCore/QEvent>
+#include <QtGui/QFrame>
 
 #include <kaction.h>
 #include <kactioncollection.h>

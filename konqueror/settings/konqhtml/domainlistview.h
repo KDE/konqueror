@@ -23,7 +23,7 @@
 #define __DOMAINLISTVIEW_H__
 
 #include <Qt3Support/Q3GroupBox>
-#include <QMap>
+#include <QtCore/QMap>
 #include <kconfig.h>
 
 class Q3ListViewItem;

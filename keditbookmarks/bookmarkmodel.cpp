@@ -24,10 +24,10 @@
 #include <kiconloader.h>
 #include <kdebug.h>
 #include <klocale.h>
-#include <QIcon>
-#include <QPixmap>
-#include <QStringList>
-#include <QMimeData>
+#include <QtGui/QIcon>
+#include <QtGui/QPixmap>
+#include <QtCore/QStringList>
+#include <QtCore/QMimeData>
 
 int BookmarkModel::count = 0;
 BookmarkModel* BookmarkModel::s_bookmarkModel = 0L;

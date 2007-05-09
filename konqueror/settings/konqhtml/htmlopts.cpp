@@ -5,12 +5,12 @@
 // (c) David Faure 1998
 // (c) 2001 Waldo Bastian <bastian@kde.org>
 
-#include <QLayout>//CT - 12Nov1998
+#include <QtGui/QLayout>//CT - 12Nov1998
 #include <Qt3Support/Q3GroupBox>
-#include <QLabel>
-#include <QPushButton>
-#include <QDBusMessage>
-#include <QDBusConnection>
+#include <QtGui/QLabel>
+#include <QtGui/QPushButton>
+#include <QtDBus/QDBusMessage>
+#include <QtDBus/QDBusConnection>
 
 #include "htmlopts.h"
 

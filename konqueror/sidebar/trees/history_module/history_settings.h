@@ -20,8 +20,8 @@
 #ifndef HISTORY_SETTINGS_H
 #define HISTORY_SETTINGS_H
 
-#include <QFont>
-#include <QObject>
+#include <QtGui/QFont>
+#include <QtCore/QObject>
 #include <QtDBus/QtDBus>
 
 class KonqSidebarHistorySettings : public QObject

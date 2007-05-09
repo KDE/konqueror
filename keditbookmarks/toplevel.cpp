@@ -32,10 +32,10 @@
 
 #include <stdlib.h>
 
-#include <QClipboard>
-#include <QSplitter>
-#include <QLayout>
-#include <QLabel>
+#include <QtGui/QClipboard>
+#include <QtGui/QSplitter>
+#include <QtGui/QLayout>
+#include <QtGui/QLabel>
 
 #include <kaction.h>
 #include <kactioncollection.h>
@@ -188,7 +188,7 @@ QString CurrentMgr::makeTimeStr(int b)
 }
 
 /* -------------------------- */
-#include <QDBusConnection>
+#include <QtDBus/QDBusConnection>
 KEBApp *KEBApp::s_topLevel = 0;
 
 KEBApp::KEBApp(

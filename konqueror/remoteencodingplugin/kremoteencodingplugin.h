@@ -21,7 +21,7 @@
 #ifndef REMOTEENCODING_PLUGIN_H
 #define REMOTEENCODING_PLUGIN_H
 
-#include <QStringList>
+#include <QtCore/QStringList>
 #include <kurl.h>
 #include <klibloader.h>
 #include <kparts/plugin.h>

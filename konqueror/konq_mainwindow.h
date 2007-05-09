@@ -22,18 +22,17 @@
 #ifndef __konq_mainwindow_h__
 #define __konq_mainwindow_h__
 
-#include <QMap>
-#include <QPoint>
-#include <QTimer>
-#include <QPointer>
+#include <QtCore/QMap>
+#include <QtCore/QPoint>
+#include <QtCore/QTimer>
+#include <QtCore/QPointer>
 //Added by qt3to4:
-#include <QPixmap>
-#include <QByteArray>
-#include <QCloseEvent>
-#include <QList>
-#include <QEvent>
-#include <QLabel>
-#include <QCustomEvent>
+#include <QtGui/QPixmap>
+#include <QtCore/QByteRef>
+#include <QtGui/QKeyEvent>
+#include <QtCore/QList>
+#include <QtCore/QEvent>
+#include <QtGui/QLabel>
 
 #include <kfileitem.h>
 #include <klocale.h>

@@ -23,19 +23,16 @@
 #include <k3listview.h>
 #include "konq_sidebartreetoplevelitem.h"
 #include "konqsidebar_tree.h"
-#include <QMap>
-#include <QPoint>
-#include <Qt3Support/Q3StrIList>
+#include <QtCore/QMap>
+#include <QtCore/QPoint>
+#include <Qt3Support/Q3StrList>
 
 //Added by qt3to4:
-#include <QPixmap>
-#include <QByteArray>
-#include <QDragLeaveEvent>
-#include <Q3PtrList>
-#include <QDragMoveEvent>
-#include <QEvent>
-#include <QDropEvent>
-#include <QDragEnterEvent>
+#include <QtGui/QPixmap>
+#include <QtCore/QByteRef>
+#include <QtGui/QKeyEvent>
+#include <Qt3Support/Q3PtrList>
+#include <QtCore/QEvent>
 
 class KonqSidebarTreeModule;
 class KonqSidebarTreeItem;

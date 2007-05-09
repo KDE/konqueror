@@ -7,9 +7,9 @@
 #ifndef KDATECOMBO_H
 #define KDATECOMBO_H
 
-#include <QWidget>
-#include <QComboBox>
-#include <QDateTime>
+#include <QtGui/QWidget>
+#include <QtGui/QComboBox>
+#include <QtCore/QDate>
 
 /**
   *@author Beppe Grimaldi

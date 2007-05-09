@@ -6,10 +6,10 @@
 // (c) 2001 Waldo Bastian <bastian@kde.org>
 // (c) 2007 Nick Shaforostoff <shafff@ukr.net>
 
-#include <QLayout>//CT - 12Nov1998
-#include <QGroupBox>
-#include <QDBusMessage>
-#include <QDBusConnection>
+#include <QtGui/QLayout>//CT - 12Nov1998
+#include <QtGui/QGroupBox>
+#include <QtDBus/QDBusMessage>
+#include <QtDBus/QDBusConnection>
 
 #include "generalopts.h"
 #include "ui_advancedTabOptions.h"

@@ -4,18 +4,18 @@
  *
  **********************************************************************/
 
-#include <QButtonGroup>
-#include <QRadioButton>
-#include <QLabel>
-#include <QLayout>
-#include <QCheckBox>
-#include <QWhatsThis>
+#include <QtGui/QButtonGroup>
+#include <QtGui/QRadioButton>
+#include <QtGui/QLabel>
+#include <QtGui/QLayout>
+#include <QtGui/QCheckBox>
+#include <QtGui/QWhatsThis>
 
-#include <QComboBox>
-#include <QSpinBox>
-#include <QPushButton>
-#include <QApplication>
-#include <QDesktopWidget>
+#include <QtGui/QComboBox>
+#include <QtGui/QSpinBox>
+#include <QtGui/QPushButton>
+#include <QtGui/QApplication>
+#include <QtGui/QDesktopWidget>
 
 #include <kcalendarsystem.h>
 #include <kglobal.h>

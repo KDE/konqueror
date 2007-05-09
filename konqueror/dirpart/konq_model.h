@@ -20,12 +20,12 @@
 #ifndef __konq_model_h__
 #define __konq_model_h__
 
-#include <QAbstractTableModel>
+#include <QtCore/QModelIndex>
 
 #include <kfileitem.h>
 
-#include <QHash>
-#include <QFont>
+#include <QtCore/QHash>
+#include <QtGui/QFont>
 
 
 // ####### NOT COMPILED ANYMORE, REPLACED WITH KDIRMODEL

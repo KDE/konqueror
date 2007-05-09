@@ -24,8 +24,8 @@
 #include "commands.h"
 #include "bookmarkiterator.h"
 
-#include <QTimer>
-#include <QPainter>
+#include <QtCore/QTimer>
+#include <QtGui/QPainter>
 
 #include <kdebug.h>
 

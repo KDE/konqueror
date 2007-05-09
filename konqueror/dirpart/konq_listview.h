@@ -20,7 +20,7 @@
 #ifndef __konq_listview_h__
 #define __konq_listview_h__
 
-#include <QTreeView>
+#include <QtGui/QTreeView>
 
 class KonqFileTip;
 

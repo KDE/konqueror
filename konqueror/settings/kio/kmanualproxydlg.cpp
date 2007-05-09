@@ -19,11 +19,11 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include <QLabel>
-#include <QLayout>
-#include <QSpinBox>
-#include <QCheckBox>
-#include <QPushButton>
+#include <QtGui/QLabel>
+#include <QtGui/QLayout>
+#include <QtGui/QSpinBox>
+#include <QtGui/QCheckBox>
+#include <QtGui/QPushButton>
 
 #include <kdebug.h>
 #include <klocale.h>

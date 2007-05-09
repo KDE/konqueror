@@ -14,15 +14,15 @@
 #include <sys/stat.h>
 #include <time.h>
 
-#include <QTextStream>
-#include <QFileInfo>
-#include <QDir>
-#include <QClipboard>
-#include <QPixmap>
-#include <Qt3Support/Q3ColorDrag>
-#include <QTextDocument>
+#include <QtCore/QTextStream>
+#include <QtCore/QFileInfo>
+#include <QtCore/QDir>
+#include <QtGui/QClipboard>
+#include <QtGui/QPixmap>
+#include <Qt3Support/Q3UriDrag>
+#include <QtGui/QTextDocument>
 #include <Qt3Support/Q3PtrList>
-#include <QDateTime>
+#include <QtCore/QDate>
 
 #include <kfiledialog.h>
 #include <klocale.h>

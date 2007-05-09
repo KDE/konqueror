@@ -21,8 +21,8 @@
 
 #include "konq_model.h"
 
-#include <QMimeData>
-#include <QIcon>
+#include <QtCore/QMimeData>
+#include <QtGui/QIcon>
 
 #include <kdebug.h>
 #include <kglobal.h>

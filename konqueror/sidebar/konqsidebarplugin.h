@@ -18,14 +18,14 @@
 */
 #ifndef _konqsidebarplugin_h_
 #define _konqsidebarplugin_h_
-#include <QWidget>
-#include <QObject>
+#include <QtGui/QWidget>
+#include <QtCore/QObject>
 #include <kurl.h>
 
 #include <kparts/part.h>
 #include <kparts/browserextension.h>
 #include <kio/job.h>
-#include <QPointer>
+#include <QtCore/QPointer>
 #include <kfileitem.h>
 #include <kcomponentdata.h>
 

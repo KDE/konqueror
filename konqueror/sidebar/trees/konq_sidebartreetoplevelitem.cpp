@@ -25,9 +25,9 @@
 #include <kprotocolinfo.h>
 #include <k3urldrag.h>
 #include <kmimetype.h>
-#include <QApplication>
-#include <QClipboard>
-#include <QCursor>
+#include <QtGui/QApplication>
+#include <QtGui/QClipboard>
+#include <QtGui/QCursor>
 #include <QtCore/QMimeData>
 #include <konqmimedata.h>
 #include <kdesktopfile.h>

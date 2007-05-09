@@ -33,10 +33,10 @@ Configuration of the maximum image size
 
 
 //Added by qt3to4:
-#include <Q3PtrList>
+#include <Qt3Support/Q3PtrList>
 
 #include <kcmodule.h>
-#include <QStringList>
+#include <QtCore/QStringList>
 
 class KSharedConfig;
 class QCheckBox;

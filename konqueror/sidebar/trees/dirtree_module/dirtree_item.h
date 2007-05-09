@@ -21,7 +21,7 @@
 
 #include "konq_sidebartreeitem.h"
 #include <kurl.h>
-#include <QStringList>
+#include <QtCore/QStringList>
 #include <konq_operations.h>
 
 class QDropEvent;

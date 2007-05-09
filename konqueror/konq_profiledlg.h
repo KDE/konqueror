@@ -22,10 +22,10 @@
 
 #include <kdialog.h>
 
-#include <Qt3Support/Q3CheckListItem>
-#include <QMap>
+#include <Qt3Support/Q3ListView>
+#include <QtCore/QMap>
 //Added by qt3to4:
-#include <QGridLayout>
+#include <QtGui/QGridLayout>
 
 class KonqViewManager;
 class Q3ListViewItem;

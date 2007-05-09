@@ -17,7 +17,7 @@
 //  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 //
 
-#include <QLabel>
+#include <QtGui/QLabel>
 #include <Qt3Support/Q3ListBox>
 #include <kvbox.h>
 

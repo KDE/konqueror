@@ -20,10 +20,10 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#include <QFile>
-#include <QLabel>
-#include <QLayout>
-#include <QTabWidget>
+#include <QtCore/QFile>
+#include <QtGui/QLabel>
+#include <QtGui/QLayout>
+#include <QtGui/QTabWidget>
 
 #include <kcmoduleloader.h>
 #include <klocale.h>

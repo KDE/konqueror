@@ -16,9 +16,9 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#include <QLayout>
-#include <QTabWidget>
-#include <QVBoxLayout>
+#include <QtGui/QLayout>
+#include <QtGui/QTabWidget>
+#include <QtGui/QBoxLayout>
 
 #include <klocale.h>
 #include <kdialog.h>

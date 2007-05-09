@@ -22,8 +22,8 @@
 #include "konq_listviewwidget.h"
 
 #include <kurl.h>
-#include <QMap>
-#include <QPair>
+#include <QtCore/QMap>
+#include <QtCore/QPair>
 
 namespace KIO {class MetaInfoJob;}
 class KonqListView;

@@ -32,22 +32,18 @@
 #include <ksqueezedtextlabel.h>
 #include <kstandardshortcut.h>
 
-#include <QPainter>
-#include <QToolButton>
+#include <QtGui/QPainter>
+#include <QtGui/QToolButton>
 #include <QtGui/QTabBar>
-#include <QMenu>
+#include <QtGui/QMenu>
 #include <QtGui/QKeySequence>
-#include <QProgressBar>
+#include <QtGui/QProgressBar>
 //Added by qt3to4:
-#include <QPixmap>
-#include <QPaintEvent>
-#include <QChildEvent>
-#include <QEvent>
-#include <QKeyEvent>
-#include <QLabel>
-#include <QResizeEvent>
-#include <QVBoxLayout>
-#include <QMouseEvent>
+#include <QtGui/QPixmap>
+#include <QtGui/QKeyEvent>
+#include <QtCore/QEvent>
+#include <QtGui/QLabel>
+#include <QtGui/QBoxLayout>
 
 #include <assert.h>
 

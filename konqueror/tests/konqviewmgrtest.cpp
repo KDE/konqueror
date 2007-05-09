@@ -18,10 +18,10 @@
 
 #include "konqviewmgrtest.h"
 
-#include <QApplication>
-#include <QLabel>
-#include <QTimer>
-#include <QSplitter>
+#include <QtGui/QApplication>
+#include <QtGui/QLabel>
+#include <QtCore/QTimer>
+#include <QtGui/QSplitter>
 
 SCWMainWindow::SCWMainWindow( QWidget* parent )
     : QMainWindow( parent )

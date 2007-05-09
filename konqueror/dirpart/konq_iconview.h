@@ -20,7 +20,7 @@
 #ifndef __konq_iconview_h__
 #define __konq_iconview_h__
 
-#include <QListView>
+#include <QtGui/QListView>
 
 class KonqFileTip;
 

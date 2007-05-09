@@ -23,7 +23,7 @@
 #define __konq_factory_h__
 
 
-#include <QStringList>
+#include <QtCore/QStringList>
 
 #include <klibloader.h>
 #include <kservice.h>

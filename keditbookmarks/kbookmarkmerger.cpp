@@ -32,9 +32,9 @@
 #include <klocale.h>
 
 
-#include <QDir>
+#include <QtCore/QDir>
 #include <Qt/qdom.h>
-#include <QFile>
+#include <QtCore/QFile>
 
 #ifdef Q_WS_X11
 #include <X11/Xlib.h>

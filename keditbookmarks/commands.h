@@ -24,7 +24,7 @@
 #include <k3command.h>
 #include <kbookmark.h>
 //Added by qt3to4:
-#include <QMap>
+#include <QtCore/QMap>
 
 
 // Interface adds the affectedBookmarks method

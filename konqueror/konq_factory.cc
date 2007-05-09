@@ -33,8 +33,8 @@
 #include <kmimetypetrader.h> 
 #include <kservicetypetrader.h>
 
-#include <QWidget>
-#include <QFile>
+#include <QtGui/QWidget>
+#include <QtCore/QFile>
 
 #include <assert.h>
 

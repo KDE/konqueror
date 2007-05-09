@@ -39,10 +39,10 @@
 #include <ktoggleaction.h>
 #include <kprotocolmanager.h>
 
-#include <QApplication>
-#include <QClipboard>
+#include <QtGui/QApplication>
+#include <QtGui/QClipboard>
 #include <Qt3Support/Q3Header>
-#include <QRegExp>
+#include <QtCore/QRegExp>
 
 #include <assert.h>
 #include <string.h>

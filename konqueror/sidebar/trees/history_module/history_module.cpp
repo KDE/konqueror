@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include <QApplication>
-#include <QMenu>
+#include <QtGui/QApplication>
+#include <QtGui/QMenu>
 
 #include <kaction.h>
 #include <kactioncollection.h>

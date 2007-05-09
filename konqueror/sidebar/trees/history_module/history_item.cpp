@@ -19,7 +19,7 @@
 #include <kbookmark.h>
 #include <kprotocolinfo.h>
 #include <konq_faviconmgr.h>
-#include <QPainter>
+#include <QtGui/QPainter>
 
 #include <assert.h>
 

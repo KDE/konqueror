@@ -21,7 +21,7 @@
 #ifndef __KonqViewAdaptor_h__
 #define __KonqViewAdaptor_h__
 
-#include <QStringList>
+#include <QtCore/QStringList>
 #include <QtDBus/QtDBus>
 
 class KonqView;

@@ -19,8 +19,8 @@
 
 #include "konq_itemdelegate.h"
 
-#include <QModelIndex>
-#include <QPainter>
+#include <QtCore/QModelIndex>
+#include <QtGui/QPainter>
 
 KonqItemDelegate::KonqItemDelegate( QObject* parent ) : QItemDelegate( parent )
 {

@@ -4,8 +4,8 @@
  *
  **********************************************************************/
 
-#include <QLayout>
-#include <QPushButton>
+#include <QtGui/QLayout>
+#include <QtGui/QPushButton>
 
 #include <klocale.h>
 #include <kglobal.h>

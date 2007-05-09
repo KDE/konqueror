@@ -1,8 +1,8 @@
 
 
-#include <QFile>
+#include <QtCore/QFile>
 //Added by qt3to4:
-#include <QTextStream>
+#include <QtCore/QTextStream>
 
 
 #include "template.h"

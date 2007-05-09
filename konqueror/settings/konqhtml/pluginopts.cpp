@@ -7,15 +7,15 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-#include <QLabel>
-#include <QLayout>
+#include <QtGui/QLabel>
+#include <QtGui/QLayout>
 #include <QtGui/QProgressDialog>
-#include <QRegExp>
-#include <QSlider>
+#include <QtCore/QRegExp>
+#include <QtGui/QSlider>
 #include <Qt3Support/Q3GroupBox>
-#include <QTextStream>
-#include <QDBusMessage>
-#include <QDBusConnection>
+#include <QtCore/QTextStream>
+#include <QtDBus/QDBusMessage>
+#include <QtDBus/QDBusConnection>
 
 #include <kapplication.h>
 #include <kdebug.h>

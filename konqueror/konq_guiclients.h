@@ -21,8 +21,8 @@
 #define __konq_guiclients_h__
 
 #include <kxmlguiclient.h>
-#include <QObject>
-#include <QHash>
+#include <QtCore/QObject>
+#include <QtCore/QHash>
 #include <kservice.h>
 
 class QAction;

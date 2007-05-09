@@ -21,8 +21,8 @@
 
 #include <unistd.h>
 
-#include <QLayout>
-#include <QLabel>
+#include <QtGui/QLayout>
+#include <QtGui/QLabel>
 
 #include <klocale.h>
 

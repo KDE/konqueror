@@ -30,13 +30,13 @@
 #include <kdebug.h>
 #include <kapplication.h>
 #include <kcmdlineargs.h>
-#include <QLabel>
+#include <QtGui/QLabel>
 #include <ktextedit.h>
 #include <kvbox.h>
-#include <QFile>
+#include <QtCore/QFile>
 #include <QtGui/QDesktopWidget>
-#include <QTextStream>
-#include <QTextCursor>
+#include <QtCore/QTextStream>
+#include <QtGui/QTextCursor>
 
 #if defined Q_WS_X11 && ! defined K_WS_QTONLY
 #include <netwm.h>

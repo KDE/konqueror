@@ -20,10 +20,10 @@
 #ifndef konq_treeitem_h
 #define konq_treeitem_h
 
-#include <QListView>
-#include <QStringList>
-#include <Q3ListViewItem>
-#include <Q3DragObject>
+#include <QtGui/QListView>
+#include <QtCore/QStringList>
+#include <Qt3Support/Q3ListView>
+#include <Qt3Support/Q3UriDrag>
 #include <kurl.h>
 
 class QPainter;

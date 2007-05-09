@@ -20,7 +20,7 @@
 #ifndef __konq_textviewitem_h__
 #define __konq_textviewitem_h__
 
-#include <QListView>
+#include <QtGui/QListView>
 
 #include <kio/global.h>
 #include <klocale.h>

@@ -24,9 +24,9 @@
 
 #include "ui_main_widget.h"
 //Added by qt3to4:
-#include <QPixmap>
-#include <QEvent>
-#include <QDropEvent>
+#include <QtGui/QPixmap>
+#include <QtCore/QEvent>
+#include <QtGui/QKeyEvent>
 
 #include "chfacedlg.h"
 

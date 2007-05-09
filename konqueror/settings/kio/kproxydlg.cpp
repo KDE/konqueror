@@ -19,14 +19,14 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include <QLabel>
-#include <QLayout>
-#include <QRegExp>
-#include <QCheckBox>
-#include <QRadioButton>
-#include <QTabWidget>
+#include <QtGui/QLabel>
+#include <QtGui/QLayout>
+#include <QtCore/QRegExp>
+#include <QtGui/QCheckBox>
+#include <QtGui/QRadioButton>
+#include <QtGui/QTabWidget>
 //Added by qt3to4:
-#include <QVBoxLayout>
+#include <QtGui/QBoxLayout>
 
 #include <klocale.h>
 #include <klineedit.h>

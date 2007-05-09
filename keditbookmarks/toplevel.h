@@ -23,7 +23,7 @@
 #include <kxmlguiwindow.h>
 #include <k3command.h>
 #include <kbookmark.h>
-#include <QMenu>
+#include <QtGui/QMenu>
 #include <kxmlguifactory.h>
 #include "bookmarklistview.h"
 

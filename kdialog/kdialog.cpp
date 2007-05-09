@@ -24,11 +24,11 @@
 #include <stdlib.h>
 #include <iostream>
 
-#include <QFile>
-#include <QDataStream>
-#include <QRegExp>
-#include <QTimer>
-#include <QFileDialog>
+#include <QtCore/QFile>
+#include <QtCore/QDataStream>
+#include <QtCore/QRegExp>
+#include <QtCore/QTimer>
+#include <QtGui/QFileDialog>
 #include <QtGui/QDesktopWidget>
 #include <kmessagebox.h>
 #include <kapplication.h>
@@ -41,7 +41,7 @@
 #include "widgets.h"
 
 #include <klocale.h>
-#include <QDialog>
+#include <QtGui/QDialog>
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
 #include <kfiledialog.h>

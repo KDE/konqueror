@@ -22,18 +22,18 @@
 
 #include "desktopbehavior_impl.h"
 
-#include <QLayout>
-#include <QCheckBox>
-#include <QLabel>
-#include <QComboBox>
-#include <QPushButton>
+#include <QtGui/QLayout>
+#include <QtGui/QCheckBox>
+#include <QtGui/QLabel>
+#include <QtGui/QComboBox>
+#include <QtGui/QPushButton>
 #include <Qt3Support/Q3ButtonGroup>
-#include <QTabWidget>
-#include <QDBusInterface>
+#include <QtGui/QTabWidget>
+#include <QtDBus/QDBusInterface>
 
 //Added by qt3to4:
-#include <QVBoxLayout>
-#include <QDesktopWidget>
+#include <QtGui/QBoxLayout>
+#include <QtGui/QDesktopWidget>
 
 #include <k3listview.h>
 #include <kservice.h>

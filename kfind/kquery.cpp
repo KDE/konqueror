@@ -1,8 +1,8 @@
 #include <stdlib.h>
 
-#include <QFileInfo>
-#include <QTextStream>
-#include <QListIterator>
+#include <QtCore/QFileInfo>
+#include <QtCore/QTextStream>
+#include <QtCore/QList>
 #include <kdebug.h>
 #include <kfileitem.h>
 #include <kfilemetainfo.h>

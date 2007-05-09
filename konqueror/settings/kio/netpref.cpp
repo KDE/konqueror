@@ -1,9 +1,9 @@
-#include <QLayout>
-#include <QCheckBox>
+#include <QtGui/QLayout>
+#include <QtGui/QCheckBox>
 
 #include <Qt3Support/Q3GroupBox>
 //Added by qt3to4:
-#include <QVBoxLayout>
+#include <QtGui/QBoxLayout>
 
 #include <kio/ioslave_defaults.h>
 #include <knuminput.h>

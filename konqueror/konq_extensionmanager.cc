@@ -14,10 +14,10 @@
     *************************************************************************
 */
 
-#include <QLayout>
-#include <QTimer>
+#include <QtGui/QLayout>
+#include <QtCore/QTimer>
 //Added by qt3to4:
-#include <QVBoxLayout>
+#include <QtGui/QBoxLayout>
 
 #include <kconfig.h>
 #include <kdebug.h>

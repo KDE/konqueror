@@ -28,8 +28,8 @@
 #ifndef CHFACEDLG_H
 #define CHFACEDLG_H
 
-#include <QObject>
-#include <QPixmap>
+#include <QtCore/QObject>
+#include <QtGui/QPixmap>
 
 #include <KDialog>
 #include <K3IconView> // declaration below

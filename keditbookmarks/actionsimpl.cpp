@@ -31,9 +31,9 @@
 
 #include <stdlib.h>
 
-#include <QClipboard>
-#include <QMimeData>
-#include <QPainter>
+#include <QtGui/QClipboard>
+#include <QtCore/QMimeData>
+#include <QtGui/QPainter>
 
 #include <kdebug.h>
 #include <kapplication.h>

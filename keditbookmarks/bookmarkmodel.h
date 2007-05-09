@@ -19,10 +19,9 @@
 #ifndef __bookmarkmodel_h
 #define __bookmarkmodel_h
 
-#include <QAbstractItemModel>
-#include <QModelIndex>
-#include <QVariant>
-#include <QVector>
+#include <QtCore/QModelIndex>
+#include <QtCore/QVariant>
+#include <QtCore/QVector>
 #include <kbookmark.h>
 #include "toplevel.h"
 #include "treeitem.h"

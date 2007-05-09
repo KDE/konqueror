@@ -11,7 +11,7 @@
 #ifndef __PLUGINOPTS_H__
 #define __PLUGINOPTS_H__
 
-#include <QWidget>
+#include <QtGui/QWidget>
 
 #include "domainlistview.h"
 #include "policies.h"

@@ -9,8 +9,8 @@
 #ifndef __KONQGENERAL_OPTIONS_H
 #define __KONQGENERAL_OPTIONS_H
 
-#include <QCheckBox>
-#include <QComboBox>
+#include <QtGui/QCheckBox>
+#include <QtGui/QComboBox>
 
 
 #include <kcmodule.h>

@@ -8,9 +8,9 @@
 #ifndef __KMISCHTML_OPTIONS_H
 #define __KMISCHTML_OPTIONS_H
 
-#include <QCheckBox>
-#include <QLineEdit>
-#include <QComboBox>
+#include <QtGui/QCheckBox>
+#include <QtGui/QLineEdit>
+#include <QtGui/QComboBox>
 
 
 //-----------------------------------------------------------------------------

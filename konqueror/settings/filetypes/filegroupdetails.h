@@ -18,7 +18,7 @@
 #ifndef _FILEGROUPDETAILS_H
 #define _FILEGROUPDETAILS_H
 
-#include <QWidget>
+#include <QtGui/QWidget>
 class TypesListItem;
 class Q3ButtonGroup;
 

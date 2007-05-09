@@ -20,7 +20,7 @@
 #ifndef __kfmclient_h
 #define __kfmclient_h
 
-#include <QApplication>
+#include <QtGui/QApplication>
 class KJob;
 class KUrl;
 

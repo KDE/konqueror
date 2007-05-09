@@ -20,11 +20,11 @@
  *  along with this program; if not, write to the Free Software
  */
 
-#include <QCheckBox>
-#include <QComboBox>
-#include <QLayout>
-#include <QPushButton>
-#include <QRadioButton>
+#include <QtGui/QCheckBox>
+#include <QtGui/QComboBox>
+#include <QtGui/QLayout>
+#include <QtGui/QPushButton>
+#include <QtGui/QRadioButton>
 
 #include <kapplication.h>
 #include <kconfig.h>

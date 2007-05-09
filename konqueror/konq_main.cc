@@ -29,9 +29,9 @@
 #include <kstandarddirs.h>
 #include <kdebug.h>
 #include <kcmdlineargs.h>
-#include <QFile>
-#include <QApplication>
-#include <QWidget>
+#include <QtCore/QFile>
+#include <QtGui/QApplication>
+#include <QtGui/QWidget>
 
 #ifdef Q_WS_X11
 #include <QX11Info>

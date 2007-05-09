@@ -23,10 +23,10 @@
 
 #include <unistd.h>
 
-#include <QLayout>
-#include <QMap>
-#include <QTabWidget>
-#include <QVBoxLayout>
+#include <QtGui/QLayout>
+#include <QtCore/QMap>
+#include <QtGui/QTabWidget>
+#include <QtGui/QBoxLayout>
 #include <kservice.h>
 #include <kservicetypetrader.h>
 

@@ -20,7 +20,7 @@
 #ifndef _TYPESLISTITEM_H
 #define _TYPESLISTITEM_H
 
-#include <Qt3Support/Q3CheckListItem>
+#include <Qt3Support/Q3ListView>
 
 #include <kmimetype.h>
 

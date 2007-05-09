@@ -20,12 +20,12 @@
 */
 
 #include <Qt3Support/Q3ButtonGroup>
-#include <QLabel>
-#include <QLayout>
-#include <QRadioButton>
+#include <QtGui/QLabel>
+#include <QtGui/QLayout>
+#include <QtGui/QRadioButton>
 
 //Added by qt3to4:
-#include <QGridLayout>
+#include <QtGui/QGridLayout>
 
 #include <kconfig.h>
 #include <kdebug.h>

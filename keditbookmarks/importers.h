@@ -26,7 +26,7 @@
 
 #include <k3command.h>
 
-#include <QObject>
+#include <QtCore/QObject>
 
 
 class KBookmark;

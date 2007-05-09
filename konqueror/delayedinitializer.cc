@@ -19,9 +19,9 @@
 
 
 #include "delayedinitializer.h"
-#include <QTimer>
+#include <QtCore/QTimer>
 //Added by qt3to4:
-#include <QEvent>
+#include <QtCore/QEvent>
 
 DelayedInitializer::DelayedInitializer( int eventType, QObject *parent, const char *name )
     : QObject( parent ), m_eventType( eventType ), m_signalEmitted( false )

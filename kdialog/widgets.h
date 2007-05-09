@@ -21,9 +21,9 @@
 #ifndef WIDGETS_H
 #define WIDGETS_H
 
-#include <QByteArray>
-#include <QWidget>
-#include <QStringList>
+#include <QtCore/QByteRef>
+#include <QtGui/QWidget>
+#include <QtCore/QStringList>
 
 namespace Widgets
 {

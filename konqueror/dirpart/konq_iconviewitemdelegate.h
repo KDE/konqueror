@@ -20,7 +20,7 @@
 #ifndef __konq_iconviewitemdelegate_h__
 #define __konq_iconviewitemdelegate_h__
 
-#include <QItemDelegate>
+#include <QtGui/QItemDelegate>
 
 class KonqIconViewItemDelegate : public QItemDelegate {
     Q_OBJECT

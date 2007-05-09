@@ -23,12 +23,12 @@
 #include <kgenericfactory.h>
 #include <kicon.h>
 #include <kiconloader.h>
-#include <QMessageBox>
+#include <QtGui/QMessageBox>
 #include <klocale.h>
 
-#include <QTimer>
+#include <QtCore/QTimer>
 #include <kspeech.h>
-#include <QBuffer>
+#include <QtCore/QBuffer>
 #include <QtDBus>
 #include <kapplication.h>
 #include <kservicetypetrader.h>

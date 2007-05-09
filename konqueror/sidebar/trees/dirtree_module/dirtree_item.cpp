@@ -25,13 +25,13 @@
 #include <kdebug.h>
 #include <kglobalsettings.h>
 #include <kmimetypetrader.h>
-#include <QApplication>
-#include <QClipboard>
+#include <QtGui/QApplication>
+#include <QtGui/QClipboard>
 #include <kio/paste.h>
-#include <QFile>
-#include <QPainter>
+#include <QtCore/QFile>
+#include <QtGui/QPainter>
 #include <kiconloader.h>
-#include <QCursor>
+#include <QtGui/QCursor>
 #include <konqmimedata.h>
 
 #define MYMODULE static_cast<KonqSidebarDirTreeModule*>(module())

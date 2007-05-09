@@ -21,16 +21,16 @@
 #include <kglobal.h>
 #include <kaboutdata.h>
 #include <kfiledialog.h>
-#include <QListWidget>
-#include <QLayout>
-#include <QPushButton>
+#include <QtGui/QListWidget>
+#include <QtGui/QLayout>
+#include <QtGui/QPushButton>
 #include <Qt3Support/Q3GroupBox>
 #include <khbox.h>
-#include <QLineEdit>
-#include <QLabel>
-#include <QCheckBox>
-#include <QTextStream>
-#include <QRegExp>
+#include <QtGui/QLineEdit>
+#include <QtGui/QLabel>
+#include <QtGui/QCheckBox>
+#include <QtCore/QTextStream>
+#include <QtCore/QRegExp>
 #include <QtDBus/QtDBus>
 
 #include "filteropts.h"

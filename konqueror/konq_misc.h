@@ -26,9 +26,7 @@
 #include <krun.h>
 #include <kparts/browserextension.h>
 //Added by qt3to4:
-#include <QMouseEvent>
-#include <QDragEnterEvent>
-#include <QDropEvent>
+#include <QtGui/QKeyEvent>
 class KonqMainWindow;
 class KonqView;
 
@@ -111,7 +109,7 @@ public:
 
 };
 
-#include <QLabel>
+#include <QtGui/QLabel>
 
 class KonqDraggableLabel : public QLabel
 {

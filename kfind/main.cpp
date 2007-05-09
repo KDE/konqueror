@@ -1,5 +1,5 @@
-#include <QDir>
-#include <QFile>
+#include <QtCore/QDir>
+#include <QtCore/QFile>
 
 #include <kapplication.h>
 #include <klocale.h>

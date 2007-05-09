@@ -21,7 +21,7 @@
 #include <kparts/factory.h>
 #include <kparts/event.h>
 #include <kparts/browserextension.h>
-#include <QPointer>
+#include <QtCore/QPointer>
 #include "sidebar_widget.h"
 #include "konqsidebariface_p.h"
 

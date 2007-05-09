@@ -17,13 +17,11 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include <QStyle>
-#include <QDir>
+#include <QtGui/QStyle>
+#include <QtCore/QDir>
 //Added by qt3to4:
-#include <QMouseEvent>
-#include <QDragEnterEvent>
-#include <QLabel>
-#include <QDropEvent>
+#include <QtGui/QKeyEvent>
+#include <QtGui/QLabel>
 
 #include <kapplication.h>
 #include <kdebug.h>

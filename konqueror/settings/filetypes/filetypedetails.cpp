@@ -1,12 +1,11 @@
 #include <fixx11h.h>
-#include <QCheckBox>
-#include <QLayout>
-#include <QRadioButton>
-#include <QListWidget>
-#include <QVBoxLayout>
-#include <QHBoxLayout>
-#include <QGridLayout>
-#include <QButtonGroup>
+#include <QtGui/QCheckBox>
+#include <QtGui/QLayout>
+#include <QtGui/QRadioButton>
+#include <QtGui/QListWidget>
+#include <QtGui/QBoxLayout>
+#include <QtGui/QGridLayout>
+#include <QtGui/QButtonGroup>
 
 #include <kapplication.h>
 #include <kconfig.h>

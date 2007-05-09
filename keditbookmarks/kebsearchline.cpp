@@ -20,9 +20,9 @@
 
 #include <kicon.h>
 
-#include <QHeaderView>
-#include <QHBoxLayout>
-#include <QContextMenuEvent>
+#include <QtGui/QHeaderView>
+#include <QtGui/QBoxLayout>
+#include <QtGui/QKeyEvent>
 
 
 KEBSearchLine::KEBSearchLine(QWidget *parent, K3ListView *listView)

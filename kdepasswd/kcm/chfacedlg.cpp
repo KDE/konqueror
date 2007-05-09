@@ -27,16 +27,15 @@
 
 #include "chfacedlg.h"
 
-#include <QLayout>
-#include <QLabel>
-#include <QPixmap>
-#include <QImage>
-#include <QPushButton>
-#include <QDir>
-#include <QCheckBox>
+#include <QtGui/QLayout>
+#include <QtGui/QLabel>
+#include <QtGui/QPixmap>
+#include <QtGui/QImage>
+#include <QtGui/QPushButton>
+#include <QtCore/QDir>
+#include <QtGui/QCheckBox>
 //Added by qt3to4:
-#include <QVBoxLayout>
-#include <QHBoxLayout>
+#include <QtGui/QBoxLayout>
 
 #include <klocale.h>
 #include <kfiledialog.h>

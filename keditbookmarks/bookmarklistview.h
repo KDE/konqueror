@@ -19,7 +19,7 @@
 #ifndef __bookmarklistview_h
 #define __bookmarklistview_h
 
-#include <QTreeView>
+#include <QtGui/QTreeView>
 
 struct SelcAbilities {
     bool itemSelected:1;

@@ -21,7 +21,7 @@
 
 #include "konq_iconviewitemdelegate.h"
 
-#include <QHelpEvent>
+#include <QtGui/QKeyEvent>
 
 KonqIconView::KonqIconView( QWidget* parent ) : QListView( parent )
 {

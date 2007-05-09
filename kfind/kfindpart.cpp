@@ -28,7 +28,7 @@
 #include <kdirlister.h>
 #include <kcomponentdata.h>
 
-#include <QDir>
+#include <QtCore/QDir>
 
 class KonqDirPart;
 

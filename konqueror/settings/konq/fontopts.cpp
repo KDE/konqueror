@@ -19,14 +19,14 @@
 
 #include <assert.h>
 
-#include <QCheckBox>
-#include <QLabel>
-#include <QLayout>
+#include <QtGui/QCheckBox>
+#include <QtGui/QLabel>
+#include <QtGui/QLayout>
 
 //Added by qt3to4:
-#include <QGridLayout>
-#include <QDesktopWidget>
-#include <QFontComboBox>
+#include <QtGui/QGridLayout>
+#include <QtGui/QDesktopWidget>
+#include <QtGui/QFontComboBox>
 
 #include <QtDBus/QtDBus>
 

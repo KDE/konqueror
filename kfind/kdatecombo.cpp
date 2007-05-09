@@ -4,11 +4,10 @@
  *
  ***********************************************************************/
 
-#include <QTimer>
+#include <QtCore/QTimer>
 //Added by qt3to4:
-#include <QMouseEvent>
-#include <QKeyEvent>
-#include <QEvent>
+#include <QtGui/QKeyEvent>
+#include <QtCore/QEvent>
 
 #include <kglobal.h>
 #include <klocale.h>

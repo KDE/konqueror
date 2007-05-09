@@ -19,8 +19,8 @@
 
 #include "konq_iconviewitemdelegate.h"
 
-#include <QModelIndex>
-#include <QPainter>
+#include <QtCore/QModelIndex>
+#include <QtGui/QPainter>
 
 KonqIconViewItemDelegate::KonqIconViewItemDelegate( QObject* parent ) : QItemDelegate( parent )
 {

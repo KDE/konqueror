@@ -21,7 +21,7 @@
 #ifndef __KonquerorAdaptor_h__
 #define __KonquerorAdaptor_h__
 
-#include <QStringList>
+#include <QtCore/QStringList>
 #include <QtDBus/QtDBus>
 
 #define KONQ_MAIN_PATH "/KonqMain"

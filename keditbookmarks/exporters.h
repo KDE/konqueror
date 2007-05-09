@@ -21,7 +21,7 @@
 
 #include <kbookmark.h>
 //Added by qt3to4:
-#include <QTextStream>
+#include <QtCore/QTextStream>
 
 class HTMLExporter : private KBookmarkGroupTraverser {
 public:

@@ -26,16 +26,16 @@
 #include <kiconloader.h>
 #include <kdebug.h>
 
-#include <QTimer>
-#include <QAbstractItemView>
-#include <QListView>
-#include <QTreeView>
-#include <QMenu>
-#include <QAction>
-#include <QToolButton>
-#include <QApplication>
-#include <QLabel>
-#include <QLinkedList>
+#include <QtCore/QTimer>
+#include <QtGui/QAbstractItemView>
+#include <QtGui/QListView>
+#include <QtGui/QTreeView>
+#include <QtGui/QMenu>
+#include <QtGui/QAction>
+#include <QtGui/QToolButton>
+#include <QtGui/QApplication>
+#include <QtGui/QLabel>
+#include <QtCore/QLinkedList>
 
 
 

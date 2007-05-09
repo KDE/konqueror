@@ -19,7 +19,7 @@
 
 #include "konqkcmfactory.h"
 #include <kcomponentdata.h>
-#include <QDesktopWidget>
+#include <QtGui/QDesktopWidget>
 #include <kapplication.h>
 
 QString _desktopConfigName()

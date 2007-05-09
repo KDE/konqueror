@@ -1,12 +1,12 @@
 
-#include <QLayout>
-#include <QLabel>
+#include <QtGui/QLayout>
+#include <QtGui/QLabel>
 
-#include <QComboBox>
+#include <QtGui/QComboBox>
 //Added by qt3to4:
-#include <QVBoxLayout>
-#include <QFrame>
-#include <QGridLayout>
+#include <QtGui/QBoxLayout>
+#include <QtGui/QFrame>
+#include <QtGui/QGridLayout>
 
 #include <klocale.h>
 #include <klineedit.h>

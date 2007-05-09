@@ -16,11 +16,11 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include <QLayout>
-#include <QTabWidget>
-#include <QFile>
+#include <QtGui/QLayout>
+#include <QtGui/QTabWidget>
+#include <QtCore/QFile>
 //Added by qt3to4:
-#include <QVBoxLayout>
+#include <QtGui/QBoxLayout>
 
 #include <klocale.h>
 #include <kdialog.h>

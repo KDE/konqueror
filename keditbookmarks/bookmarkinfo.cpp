@@ -24,9 +24,9 @@
 
 #include <stdlib.h>
 
-#include <QTimer>
-#include <QLabel>
-#include <QGridLayout>
+#include <QtCore/QTimer>
+#include <QtGui/QLabel>
+#include <QtGui/QGridLayout>
 
 #include <klocale.h>
 #include <kdebug.h>
@@ -42,7 +42,7 @@
 
 #include <kbookmark.h>
 #include <kbookmarkmanager.h>
-#include <QEvent>
+#include <QtCore/QEvent>
 
 // SHUFFLE all these functions around, the order is just plain stupid
 void BookmarkInfoWidget::showBookmark(const KBookmark &bk) {

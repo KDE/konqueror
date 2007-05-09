@@ -2,7 +2,7 @@
 #define _NEWTYPEDLG_H
 
 
-#include <QStringList>
+#include <QtCore/QStringList>
 
 #include <kdialog.h>
 

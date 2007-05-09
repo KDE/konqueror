@@ -3,7 +3,7 @@
 
 
 
-#include <QMap>
+#include <QtCore/QMap>
 
 class CSSTemplate
 {

@@ -26,9 +26,9 @@
 #include "konq_events.h"
 #include "konq_settingsxt.h"
 
-#include <QFileInfo>
-#include <QDBusMessage>
-#include <QDBusConnection>
+#include <QtCore/QFileInfo>
+#include <QtDBus/QDBusMessage>
+#include <QtDBus/QDBusConnection>
 
 #include <kaccelgen.h>
 #include <kactionmenu.h>

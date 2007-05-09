@@ -19,7 +19,7 @@
 #ifndef __treeitem_h
 #define __treeitem_h
 
-#include <QList>
+#include <QtCore/QList>
 #include <kbookmark.h>
 
 //#define DEBUG_STUPID_QT

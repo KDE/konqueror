@@ -7,7 +7,7 @@
 #ifndef KFIND_H
 #define KFIND_H
 
-#include <QWidget>
+#include <QtGui/QWidget>
 
 class QString;
 class KPushButton;

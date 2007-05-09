@@ -24,9 +24,9 @@
 #include <klocale.h>
 #include <kapplication.h>
 
-#include <QFile>
+#include <QtCore/QFile>
 //Added by qt3to4:
-#include <QTextStream>
+#include <QtCore/QTextStream>
 
 HTMLExporter::HTMLExporter() 
     : m_out(&m_string, QIODevice::WriteOnly) {

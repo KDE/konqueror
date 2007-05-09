@@ -20,9 +20,9 @@
 #ifndef __delayedinitializer_h__
 #define __delayedinitializer_h__
 
-#include <QObject>
+#include <QtCore/QObject>
 //Added by qt3to4:
-#include <QEvent>
+#include <QtCore/QEvent>
 
 class DelayedInitializer : public QObject
 {

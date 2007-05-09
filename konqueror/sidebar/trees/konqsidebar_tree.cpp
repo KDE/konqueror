@@ -9,9 +9,9 @@
 #include <kiconloader.h>
 #include <k3listviewsearchline.h>
 
-#include <QClipboard>
-#include <QToolButton>
-#include <QApplication>
+#include <QtGui/QClipboard>
+#include <QtGui/QToolButton>
+#include <QtGui/QApplication>
 
 KonqSidebar_Tree::KonqSidebar_Tree(const KComponentData &componentData,QObject *parent,QWidget *widgetParent, QString &desktopName_, const char* name):
                    KonqSidebarPlugin(componentData,parent,widgetParent,desktopName_,name)

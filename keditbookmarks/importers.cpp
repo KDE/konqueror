@@ -24,7 +24,7 @@
 #include "commands.h"
 #include "toplevel.h"
 
-#include <QRegExp>
+#include <QtCore/QRegExp>
 #include <kdebug.h>
 #include <klocale.h>
 

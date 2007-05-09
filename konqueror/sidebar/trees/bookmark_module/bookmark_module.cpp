@@ -16,14 +16,14 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include <QClipboard>
-#include <QCursor>
-#include <QMenu>
+#include <QtGui/QClipboard>
+#include <QtGui/QCursor>
+#include <QtGui/QMenu>
 //Added by qt3to4:
-#include <QGridLayout>
-#include <QDropEvent>
-#include <QLabel>
-#include <QList>
+#include <QtGui/QGridLayout>
+#include <QtGui/QKeyEvent>
+#include <QtGui/QLabel>
+#include <QtCore/QList>
 
 #include <kaction.h>
 #include <kactioncollection.h>

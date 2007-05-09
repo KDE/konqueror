@@ -22,13 +22,12 @@
 #include "bookmarkmodel.h"
 #include "toplevel.h"
 #include "settings.h"
-#include <QHeaderView>
-#include <QItemSelectionModel>
-#include <QMenu>
-#include <QContextMenuEvent>
-#include <QBrush>
-#include <QPalette>
-#include <QItemSelectionModel>
+#include <QtGui/QHeaderView>
+#include <QtGui/QItemSelection>
+#include <QtGui/QMenu>
+#include <QtGui/QKeyEvent>
+#include <QtGui/QBrush>
+#include <QtGui/QPalette>
 
 #include <kdebug.h>
 

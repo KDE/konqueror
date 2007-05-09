@@ -18,9 +18,9 @@
     Boston, MA 02110-1301, USA.
 */
 
-#include <QLayout>
-#include <QLabel>
-#include <QTextCodec>
+#include <QtGui/QLayout>
+#include <QtGui/QLabel>
+#include <QtCore/QTextCodec>
 
 #include <klocale.h>
 #include <kconfig.h>

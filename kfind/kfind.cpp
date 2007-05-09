@@ -25,9 +25,9 @@
 
  **********************************************************************/
 
-#include <QLayout>
-#include <QLineEdit>
-#include <QCheckBox>
+#include <QtGui/QLayout>
+#include <QtGui/QLineEdit>
+#include <QtGui/QCheckBox>
 
 #include <kpushbutton.h>
 #include <kvbox.h>

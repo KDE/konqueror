@@ -17,10 +17,10 @@
 */
 #include "filegroupdetails.h"
 #include "typeslistitem.h"
-#include <QLayout>
-#include <QRadioButton>
+#include <QtGui/QLayout>
+#include <QtGui/QRadioButton>
 #include <Qt3Support/Q3ButtonGroup>
-#include <QWhatsThis>
+#include <QtGui/QWhatsThis>
 #include <kdialog.h>
 #include <klocale.h>
 

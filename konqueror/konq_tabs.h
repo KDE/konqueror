@@ -26,10 +26,9 @@
 
 #include <ktabwidget.h>
 //Added by qt3to4:
-#include <QPixmap>
-#include <QDragMoveEvent>
-#include <QDropEvent>
-#include <QList>
+#include <QtGui/QPixmap>
+#include <QtGui/QKeyEvent>
+#include <QtCore/QList>
 
 class QPixmap;
 class QMenu;

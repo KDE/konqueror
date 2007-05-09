@@ -22,16 +22,15 @@
 
 #include "main.h"
 
-#include <QLayout>
-#include <QLabel>
-#include <QLineEdit>
-#include <QEvent>
-#include <QPixmap>
-#include <QStringList>
+#include <QtGui/QLayout>
+#include <QtGui/QLabel>
+#include <QtGui/QLineEdit>
+#include <QtCore/QEvent>
+#include <QtGui/QPixmap>
+#include <QtCore/QStringList>
 //Added by qt3to4:
-#include <QDragEnterEvent>
-#include <QVBoxLayout>
-#include <QDropEvent>
+#include <QtGui/QKeyEvent>
+#include <QtGui/QBoxLayout>
 
 #include <kpushbutton.h>
 #include <kguiitem.h>

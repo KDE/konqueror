@@ -1,11 +1,11 @@
 
-#include <QCheckBox>
-#include <QComboBox>
-#include <QLayout>
-#include <QRadioButton>
+#include <QtGui/QCheckBox>
+#include <QtGui/QComboBox>
+#include <QtGui/QLayout>
+#include <QtGui/QRadioButton>
 #include <Qt3Support/Q3TextBrowser>
 //Added by qt3to4:
-#include <QVBoxLayout>
+#include <QtGui/QBoxLayout>
 
 #include <kapplication.h>
 #include <kcolorbutton.h>

@@ -18,12 +18,12 @@
 
 #include <limits.h>
 
-#include <QDir>
-#include <QPushButton>
-#include <QLayout>
-#include <QStringList>
-#include <QSplitter>
-#include <QMenu>
+#include <QtCore/QDir>
+#include <QtGui/QPushButton>
+#include <QtGui/QLayout>
+#include <QtCore/QStringList>
+#include <QtGui/QSplitter>
+#include <QtGui/QMenu>
 
 #include <klocale.h>
 #include <kconfig.h>
