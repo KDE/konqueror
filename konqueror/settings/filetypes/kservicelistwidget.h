@@ -62,7 +62,7 @@ protected Q_SLOTS:
   void addService();
   void editService();
   void removeService();
-  void enableMoveButtons(int index);
+  void enableMoveButtons();
 
 protected:
   void updatePreferredServices();

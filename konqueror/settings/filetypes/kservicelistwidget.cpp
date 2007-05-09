@@ -76,7 +76,7 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *na
   grid->setRowStretch(6, 1);
 
   servicesLB = new QListWidget(gb);
-  connect(servicesLB, SIGNAL(highlighted(int)), SLOT(enableMoveButtons(int)));
+  connect(servicesLB, SIGNAL(itemSelectionChanged()), SLOT(enableMoveButtons()));
   grid->addWidget(servicesLB, 1, 0, 6, 1);
   connect( servicesLB, SIGNAL( itemDoubleClicked(QListWidgetItem*)), this, SLOT( editService()));
 
@@ -412,19 +412,20 @@ void KServiceListWidget::updatePreferredServices()
     m_item->setEmbedServices(sl);
 }
 
-void KServiceListWidget::enableMoveButtons(int index)
+void KServiceListWidget::enableMoveButtons()
 {
-  if (servicesLB->count() <= 1)
+  int idx = servicesLB->currentRow();
+  if (servicesLB->model()->rowCount() <= 1)
   {
     servUpButton->setEnabled(false);
     servDownButton->setEnabled(false);
   }
-  else if ( index == (servicesLB->count() - 1))
+  else if ( idx == (servicesLB->model()->rowCount() - 1) )
   {
     servUpButton->setEnabled(true);
     servDownButton->setEnabled(false);
   }
-  else if (index == 0)
+  else if (idx == 0)
   {
     servUpButton->setEnabled(false);
     servDownButton->setEnabled(true);
