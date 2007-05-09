@@ -51,7 +51,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   grid->addItem(new QSpacerItem(0,fontMetrics().lineSpacing()), 0, 0);
 
   extensionLB = new QListWidget(gb);
-  connect(extensionLB, SIGNAL(highlighted(int)), SLOT(enableExtButtons(int)));
+  connect(extensionLB, SIGNAL(itemSelectionChanged()), SLOT(enableExtButtons()));
   grid->addWidget(extensionLB, 1, 0, 2, 1);
   grid->setRowStretch(0, 0);
   grid->setRowStretch(1, 1);
@@ -304,7 +304,7 @@ void FileTypeDetails::setTypeItem( TypesListItem * tlitem )
   updateAskSave();
 }
 
-void FileTypeDetails::enableExtButtons(int /*index*/)
+void FileTypeDetails::enableExtButtons()
 {
   removeExtButton->setEnabled(true);
 }
