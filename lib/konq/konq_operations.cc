@@ -80,7 +80,7 @@ void KonqOperations::editMimeType( const QString & mimeType, QWidget* parent )
 {
     QString keditfiletype = QLatin1String("keditfiletype");
     KRun::runCommand( keditfiletype
-                      + " --parent " + QString::number( parent->winId())
+                      + " --parent " + QString::number( (long)parent->winId())
                       + " " + K3Process::quote(mimeType),
                       keditfiletype, keditfiletype /*unused*/, parent );
 }
