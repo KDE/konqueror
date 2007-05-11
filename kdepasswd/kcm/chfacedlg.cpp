@@ -80,8 +80,8 @@ ChFaceDlg::ChFaceDlg(const QString& picsdir, QWidget *parent, const char *name, 
 
   connect( m_FacesWidget, SIGNAL( selectionChanged( Q3IconViewItem * ) ), SLOT( slotFaceWidgetSelectionChanged( Q3IconViewItem * ) ) );
 
-  connect( m_FacesWidget, SIGNAL( doubleClicked( Q3IconViewItem *, const QPoint & ) ), SLOT( slotOk() ) );
-  connect( this, SIGNAL(okClicked()),this,SLOT(slotOk()));
+  connect( m_FacesWidget, SIGNAL( doubleClicked( Q3IconViewItem *, const QPoint & ) ), SLOT(accept()) );
+  connect( this, SIGNAL(okClicked()),this,SLOT(accept()));
 
   top->addWidget( m_FacesWidget );
 
