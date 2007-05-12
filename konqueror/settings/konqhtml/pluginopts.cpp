@@ -399,7 +399,7 @@ void KPluginOptions::dirInit()
              SLOT(dirSelect(QListWidgetItem*)) );
 
     connect( m_widget->dirList,
-             SIGNAL(selectionChanged(QListWidgetItem*)),
+             SIGNAL(itemChanged(QListWidgetItem*)),
              SLOT(dirSelect(QListWidgetItem*)) );
 }
 
