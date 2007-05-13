@@ -81,7 +81,7 @@ void KonqOperations::editMimeType( const QString & mimeType, QWidget* parent )
     QString keditfiletype = QLatin1String("keditfiletype");
     KRun::runCommand( keditfiletype
                       + " --parent " + QString::number( (long)parent->winId())
-                      + " " + K3Process::quote(mimeType),
+                      + ' ' + K3Process::quote(mimeType),
                       keditfiletype, keditfiletype /*unused*/, parent );
 }
 
@@ -546,19 +546,19 @@ void KonqOperations::doDropFileCopy()
         QMenu popup;
         QString seq = QKeySequence( Qt::ShiftModifier ).toString();
         seq.chop(1); // chop superfluous '+'
-        QAction* popupMoveAction = new QAction(i18n( "&Move Here" ) + "\t" + seq, this);
+        QAction* popupMoveAction = new QAction(i18n( "&Move Here" ) + '\t' + seq, this);
         popupMoveAction->setIcon(KIcon("goto-page"));
         seq = QKeySequence( Qt::ControlModifier ).toString();
         seq.chop(1);
-        QAction* popupCopyAction = new QAction(i18n( "&Copy Here" ) + "\t" + seq, this);
+        QAction* popupCopyAction = new QAction(i18n( "&Copy Here" ) + '\t' + seq, this);
         popupCopyAction->setIcon(KIcon("edit-copy"));
         seq = QKeySequence( Qt::ControlModifier + Qt::ShiftModifier ).toString();
         seq.chop(1);
-        QAction* popupLinkAction = new QAction(i18n( "&Link Here" ) + "\t" + seq, this);
+        QAction* popupLinkAction = new QAction(i18n( "&Link Here" ) + '\t' + seq, this);
         popupLinkAction->setIcon(KIcon("www"));
         QAction* popupWallAction = new QAction( i18n( "Set as &Wallpaper" ), this );
         popupWallAction->setIcon(KIcon("background"));
-        QAction* popupCancelAction = new QAction(i18n( "C&ancel" ) + "\t" + QKeySequence( Qt::Key_Escape ).toString(), this);
+        QAction* popupCancelAction = new QAction(i18n( "C&ancel" ) + '\t' + QKeySequence( Qt::Key_Escape ).toString(), this);
         popupCancelAction->setIcon(KIcon("cancel"));
 
         if ( sReading && !linkOnly)

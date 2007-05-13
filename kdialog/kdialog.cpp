@@ -136,14 +136,14 @@ bool WinIdEmbedder::eventFilter(QObject *o, QEvent *e)
     return QObject::eventFilter(o, e);
 }
 
-static void outputStringList(QStringList list, bool separateOutput)
+static void outputStringList(const QStringList &list, bool separateOutput)
 {
     if ( separateOutput) {
-	for ( QStringList::Iterator it = list.begin(); it != list.end(); ++it ) {
+	for ( QStringList::ConstIterator it = list.begin(); it != list.end(); ++it ) {
 	    cout << (*it).toLocal8Bit().data() << endl;
 	}
     } else {
-	for ( QStringList::Iterator it = list.begin(); it != list.end(); ++it ) {
+	for ( QStringList::ConstIterator it = list.begin(); it != list.end(); ++it ) {
 	    cout << (*it).toLocal8Bit().data() << " ";
 	}
 	cout << endl;

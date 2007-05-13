@@ -33,8 +33,8 @@ class KQuery : public QObject
   void setMimeType( const QStringList & mimetype );
   void setContext( const QString & context, bool casesensitive,
   bool search_binary, bool useRegexp );
-  void setUsername( QString username );
-  void setGroupname( QString groupname );
+  void setUsername( const QString &username );
+  void setGroupname( const QString &groupname );
   void setMetaInfo(const QString &metainfo, const QString &metainfokey);
   void setUseFileIndex(bool);
 

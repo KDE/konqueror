@@ -446,12 +446,12 @@ void KQuery::setTimeRange(time_t from, time_t to)
   m_timeTo = to;
 }
 
-void KQuery::setUsername(QString username)
+void KQuery::setUsername(const QString &username)
 {
    m_username = username;
 }
 
-void KQuery::setGroupname(QString groupname)
+void KQuery::setGroupname(const QString &groupname)
 {
    m_groupname = groupname;
 }
