@@ -168,7 +168,7 @@ void addBackEnd::triggeredAddMenu(QAction* action)
         // try to load the library
 	QString libname = libs[0];
 	QString libparam = libs[1];
-        KLibrary *lib = loader->library(QFile::encodeName(libname));
+        KLibrary *lib = loader->library(libname);
         if (lib)
        	{
 		// get the create_ function
@@ -855,7 +855,7 @@ KonqSidebarPlugin *Sidebar_Widget::loadModule(QWidget *par,QString &desktopName,
 	KLibLoader *loader = KLibLoader::self();
 
 	// try to load the library
-      	KLibrary *lib = loader->library(QFile::encodeName(lib_name));
+      	KLibrary *lib = loader->library(lib_name);
 	if (lib)
 	{
 		// get the create_ function
