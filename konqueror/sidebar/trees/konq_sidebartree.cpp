@@ -63,7 +63,7 @@ getModule KonqSidebarTree::getPluginFactory(QString name)
   {
     KLibLoader *loader = KLibLoader::self();
     QString libName    = pluginInfo[name];
-    KLibrary *lib      = loader->library(QFile::encodeName(libName));
+    KLibrary *lib      = loader->library(libName);
     if (lib)
     {
       // get the create_ function
