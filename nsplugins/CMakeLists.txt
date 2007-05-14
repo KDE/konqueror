@@ -3,7 +3,7 @@ project(nsplugins)
 if (X11_Xt_LIB)
 
   add_subdirectory( viewer ) 
-  set(nsplugins_SRCS ${CMAKE_SOURCE_DIR}/nsplugins/plugin_part.cpp ${CMAKE_SOURCE_DIR}/nsplugins/nspluginloader.cpp )
+  set(nsplugins_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/plugin_part.cpp ${CMAKE_CURRENT_SOURCE_DIR}/nspluginloader.cpp )
 
 
   ########### next target ###############
@@ -12,15 +12,15 @@ if (X11_Xt_LIB)
 	${nsplugins_SRCS}
      )
 
-  qt4_add_dbus_adaptor( kcminit_nsplugin_PART_SRCS org.kde.nsplugins.CallBack.xml ${CMAKE_SOURCE_DIR}/nsplugins/plugin_part.h PluginPart )
+  qt4_add_dbus_adaptor( kcminit_nsplugin_PART_SRCS org.kde.nsplugins.CallBack.xml ${CMAKE_CURRENT_SOURCE_DIR}/plugin_part.h PluginPart )
 
-  set(nsplugins_class_xml  ${CMAKE_SOURCE_DIR}/nsplugins/viewer/org.kde.nsplugins.class.xml)
+  set(nsplugins_class_xml  ${CMAKE_CURRENT_SOURCE_DIR}/viewer/org.kde.nsplugins.class.xml)
   QT4_ADD_DBUS_INTERFACE( kcminit_nsplugin_PART_SRCS ${nsplugins_class_xml} nsplugins_class_interface )
 
-  set(nsplugins_instance_xml  ${CMAKE_SOURCE_DIR}/nsplugins/viewer/org.kde.nsplugins.instance.xml)
+  set(nsplugins_instance_xml  ${CMAKE_CURRENT_SOURCE_DIR}/viewer/org.kde.nsplugins.instance.xml)
   QT4_ADD_DBUS_INTERFACE( kcminit_nsplugin_PART_SRCS ${nsplugins_instance_xml} nsplugins_instance_interface )
 
-  set(nsplugins_viewer_xml  ${CMAKE_SOURCE_DIR}/nsplugins/viewer/org.kde.nsplugins.viewer.xml)
+  set(nsplugins_viewer_xml  ${CMAKE_CURRENT_SOURCE_DIR}/viewer/org.kde.nsplugins.viewer.xml)
   QT4_ADD_DBUS_INTERFACE( kcminit_nsplugin_PART_SRCS ${nsplugins_viewer_xml} nsplugins_viewer_interface )
 
 
