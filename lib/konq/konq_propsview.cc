@@ -23,8 +23,8 @@
 #include <kdebug.h>
 #include <kstandarddirs.h>
 #include <QtGui/QPixmapCache>
-#include <Qt3Support/Q3IconDrag>
-//Added by qt3to4:
+#include <QtGui/QWidget>
+#include <QtGui/QBrush>
 #include <QPixmap>
 #include <unistd.h>
 #include <QFile>

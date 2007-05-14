@@ -464,3 +464,4 @@ void KonqUndoManagerTest::testModifyFileBeforeUndo()
 
 }
 
+// TODO: add test (and fix bug) for  DND of remote urls / "Link here" (creates .desktop files) // Undo (doesn't do anything)
