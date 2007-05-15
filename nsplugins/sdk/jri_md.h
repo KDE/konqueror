@@ -1,13 +1,49 @@
-/* -*- Mode: C; tab-width: 4; -*- */
+/* -*- Mode: C; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: NPL 1.1/GPL 2.0/LGPL 2.1
+ *
+ * The contents of this file are subject to the Netscape Public License
+ * Version 1.1 (the "License"); you may not use this file except in
+ * compliance with the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/NPL/
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * The Original Code is mozilla.org code.
+ *
+ * The Initial Developer of the Original Code is 
+ * Netscape Communications Corporation.
+ * Portions created by the Initial Developer are Copyright (C) 1998
+ * the Initial Developer. All Rights Reserved.
+ *
+ * Contributor(s):
+ *
+ * Alternatively, the contents of this file may be used under the terms of
+ * either the GNU General Public License Version 2 or later (the "GPL"), or 
+ * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+ * in which case the provisions of the GPL or the LGPL are applicable instead
+ * of those above. If you wish to allow use of your version of this file only
+ * under the terms of either the GPL or the LGPL, and not to allow others to
+ * use your version of this file under the terms of the NPL, indicate your
+ * decision by deleting the provisions above and replace them with the notice
+ * and other provisions required by the GPL or the LGPL. If you do not delete
+ * the provisions above, a recipient may use your version of this file under
+ * the terms of any one of the NPL, the GPL or the LGPL.
+ *
+ * ***** END LICENSE BLOCK ***** */
+
 /*******************************************************************************
  * Java Runtime Interface - Machine Dependent Types
- * Copyright (c) 1996 Netscape Communications Corporation. All rights reserved.
  ******************************************************************************/
  
 #ifndef JRI_MD_H
 #define JRI_MD_H
 
 #include <assert.h>
+#include "prtypes.h" /* Needed for HAS_LONG_LONG ifdefs & _declspec */
 
 #ifdef __cplusplus
 extern "C" {
@@ -33,23 +69,39 @@ extern "C" {
 /* DLL Entry modifiers... */
 
 /* PC */
-#if defined(XP_PC) || defined(_WINDOWS) || defined(WIN32) || defined(_WIN32)
+#if defined(XP_OS2)
+#  ifdef XP_OS2_VACPP
+#	  define JRI_PUBLIC_API(ResultType)	    ResultType _Optlink
+#	  define JRI_PUBLIC_VAR(VarType)        VarType
+#     define JRI_CALLBACK
+#  else
+#	  define JRI_PUBLIC_API(ResultType)	    ResultType
+#	  define JRI_PUBLIC_VAR(VarType)        VarType
+#     define JRI_CALLBACK
+#  endif
+#elif defined(XP_WIN) || defined(_WINDOWS) || defined(WIN32) || defined(_WIN32)
 #	include <windows.h>
-#	if defined(_MSC_VER)
+#	if defined(_MSC_VER) || defined(__GNUC__)
 #		if defined(WIN32) || defined(_WIN32)
 #			define JRI_PUBLIC_API(ResultType)	_declspec(dllexport) ResultType
 #			define JRI_PUBLIC_VAR(VarType)		VarType
+#			define JRI_PUBLIC_VAR_EXP(VarType)	_declspec(dllexport) VarType
+#			define JRI_PUBLIC_VAR_IMP(VarType)	_declspec(dllimport) VarType
 #			define JRI_NATIVE_STUB(ResultType)	_declspec(dllexport) ResultType
 #			define JRI_CALLBACK
 #		else /* !_WIN32 */
 #		    if defined(_WINDLL)
 #			define JRI_PUBLIC_API(ResultType)	ResultType __cdecl __export __loadds 
 #			define JRI_PUBLIC_VAR(VarType)		VarType
+#			define JRI_PUBLIC_VAR_EXP(VarType)	JRI_PUBLIC_VAR(VarType)
+#			define JRI_PUBLIC_VAR_IMP(VarType)	JRI_PUBLIC_VAR(VarType)
 #			define JRI_NATIVE_STUB(ResultType)	ResultType __cdecl __loadds
 #			define JRI_CALLBACK			__loadds
 #		else /* !WINDLL */
 #			define JRI_PUBLIC_API(ResultType)	ResultType __cdecl __export
 #			define JRI_PUBLIC_VAR(VarType)		VarType
+#			define JRI_PUBLIC_VAR_EXP(VarType)	JRI_PUBLIC_VAR(VarType)
+#			define JRI_PUBLIC_VAR_IMP(VarType)	JRI_PUBLIC_VAR(VarType)
 #			define JRI_NATIVE_STUB(ResultType)	ResultType __cdecl __export
 #			define JRI_CALLBACK			__export
 #                   endif /* !WINDLL */
@@ -58,11 +110,15 @@ extern "C" {
 #		if defined(WIN32) || defined(_WIN32)
 #			define JRI_PUBLIC_API(ResultType)	__export ResultType
 #			define JRI_PUBLIC_VAR(VarType)		VarType
+#			define JRI_PUBLIC_VAR_EXP(VarType)	__export VarType
+#			define JRI_PUBLIC_VAR_IMP(VarType)	__import VarType
 #			define JRI_NATIVE_STUB(ResultType)	 __export ResultType
 #			define JRI_CALLBACK
 #		else /* !_WIN32 */
 #			define JRI_PUBLIC_API(ResultType)	ResultType _cdecl _export _loadds 
 #			define JRI_PUBLIC_VAR(VarType)		VarType
+#			define JRI_PUBLIC_VAR_EXP(VarType)	__cdecl __export VarType
+#			define JRI_PUBLIC_VAR_IMP(VarType)	__cdecl __import VarType
 #			define JRI_NATIVE_STUB(ResultType)	ResultType _cdecl _loadds
 #			define JRI_CALLBACK			_loadds
 #		endif
@@ -74,18 +130,20 @@ extern "C" {
 #	endif
 
 /* Mac */
-#elif defined(macintosh) || defined(Macintosh) || defined(THINK_C)
+#elif defined (macintosh) || defined(Macintosh) || defined(THINK_C)
 #	if defined(__MWERKS__)				/* Metrowerks */
 #		if !__option(enumsalwaysint)
 #			error You need to define 'Enums Always Int' for your project.
 #		endif
-#		if defined(GENERATING68K) && !GENERATINGCFM 
+#		if defined(TARGET_CPU_68K) && !TARGET_RT_MAC_CFM 
 #			if !__option(fourbyteints) 
 #				error You need to define 'Struct Alignment: 68k' for your project.
 #			endif
 #		endif /* !GENERATINGCFM */
 #		define JRI_PUBLIC_API(ResultType)	__declspec(export) ResultType
 #		define JRI_PUBLIC_VAR(VarType)		JRI_PUBLIC_API(VarType)
+#		define JRI_PUBLIC_VAR_EXP(VarType)	JRI_PUBLIC_API(VarType)
+#		define JRI_PUBLIC_VAR_IMP(VarType)	JRI_PUBLIC_API(VarType)
 #		define JRI_NATIVE_STUB(ResultType)	JRI_PUBLIC_API(ResultType)
 #	elif defined(__SC__)				/* Symantec */
 #		error What are the Symantec defines? (warren@netscape.com)
@@ -100,7 +158,9 @@ extern "C" {
 #else
 #	define JRI_PUBLIC_API(ResultType)		ResultType
 #   define JRI_PUBLIC_VAR(VarType)          VarType
-#       define JRI_NATIVE_STUB(ResultType)                  ResultType
+#   define JRI_PUBLIC_VAR_EXP(VarType)		JRI_PUBLIC_VAR(VarType)
+#   define JRI_PUBLIC_VAR_IMP(VarType)		JRI_PUBLIC_VAR(VarType)
+#   define JRI_NATIVE_STUB(ResultType)		ResultType
 #	define JRI_CALLBACK
 #endif
 
@@ -120,8 +180,15 @@ typedef double			jdouble;
 typedef juint			jsize;
 #endif
 
+/* moved from jni.h -- Sun's new jni.h doesn't have this anymore */
+#ifdef __cplusplus
+typedef class _jobject *jref;
+#else
+typedef struct _jobject *jref;
+#endif
+
 typedef unsigned char	jbool;
-typedef char			jbyte;
+typedef signed char	jbyte;
 #ifdef IS_64 /* XXX ok for alpha, but not right on all 64-bit architectures */
 typedef unsigned int	juint;
 typedef int				jint;
@@ -142,21 +209,30 @@ typedef long			jint;
 
 #ifdef HAVE_LONG_LONG
 
-#if !(defined(WIN32) || defined(_WIN32))
-typedef long long			jlong;
-typedef unsigned long long	julong;
+#ifdef OSF1
 
-#define jlong_MAXINT		0x7fffffffffffffffLL
-#define jlong_MININT		0x8000000000000000LL
-#define jlong_ZERO			0x0LL
+/* long is default 64-bit on OSF1, -std1 does not allow long long */
+typedef long                  jlong;
+typedef unsigned long         julong;
+#define jlong_MAXINT          0x7fffffffffffffffL
+#define jlong_MININT          0x8000000000000000L
+#define jlong_ZERO            0x0L
+
+#elif (defined(WIN32) || defined(_WIN32))
+
+typedef LONGLONG              jlong;
+typedef DWORDLONG             julong;
+#define jlong_MAXINT          0x7fffffffffffffffi64
+#define jlong_MININT          0x8000000000000000i64
+#define jlong_ZERO            0x0i64
 
 #else
-typedef LONGLONG			jlong;
-typedef DWORDLONG			julong;
 
-#define jlong_MAXINT		0x7fffffffffffffffi64
-#define jlong_MININT		0x8000000000000000i64
-#define jlong_ZERO			0x0i64
+typedef long long             jlong;
+typedef unsigned long long    julong;
+#define jlong_MAXINT          0x7fffffffffffffffLL
+#define jlong_MININT          0x8000000000000000LL
+#define jlong_ZERO            0x0LL
 
 #endif
 

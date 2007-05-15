@@ -41,6 +41,7 @@
 #include <QDBusObjectPath>
 
 #define XP_UNIX
+#define MOZ_X11
 #include "sdk/npupp.h"
 
 typedef char* NP_GetMIMEDescriptionUPP(void);
