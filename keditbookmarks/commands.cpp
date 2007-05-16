@@ -231,7 +231,7 @@ void EditCommand::unexecute()
     BookmarkModel::self()->emitDataChanged(bk);
 }
 
-void EditCommand::modify(QString newValue)
+void EditCommand::modify(const QString &newValue)
 {
     if(mCol == 1)
     {

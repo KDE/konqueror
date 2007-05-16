@@ -432,7 +432,7 @@ void KEBApp::selectedBookmarksExpandedHelper(KBookmark bk, KBookmark::List & boo
     }
 }
 
-void KEBApp::updateStatus(QString url)
+void KEBApp::updateStatus(const QString &url)
 {
     if(m_bkinfo->bookmark().url() == url)
         m_bkinfo->updateStatus();

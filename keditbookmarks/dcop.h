@@ -29,7 +29,7 @@ class KBookmarkEditorIface : public QObject
 public:
    KBookmarkEditorIface();
 private Q_SLOTS:
-   void slotDcopUpdatedAccessMetadata(QString filename, QString url);
+   void slotDcopUpdatedAccessMetadata(const QString &filename, const QString &url);
 };
 
 #endif

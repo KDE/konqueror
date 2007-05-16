@@ -36,9 +36,9 @@ KBookmarkEditorIface::KBookmarkEditorIface()
                                  this, SLOT(slotDcopUpdatedAccessMetadata(QString,QString)) );
 }
 
-void KBookmarkEditorIface::slotDcopUpdatedAccessMetadata(QString filename, QString url) {
+void KBookmarkEditorIface::slotDcopUpdatedAccessMetadata(const QString &filename, const QString &url) {
     // evil hack, konqi gets updates by way of historymgr,
-    // therefore konqi does'nt want "save" notification,
+    // therefore konqi doesn't want "save" notification,
     // unfortunately to stop konqi getting it is difficult
     // and probably not needed until more notifier events
     // are added. therefore, we always updateaccessmetadata

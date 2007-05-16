@@ -111,7 +111,7 @@ public:
     void reset(const QString & caption, const QString & bookmarksFileName);
 
     void updateActions();
-    void updateStatus(QString url);
+    void updateStatus(const QString &url);
     void setActionsEnabled(SelcAbilities);
 
     void setCancelFavIconUpdatesEnabled(bool);
