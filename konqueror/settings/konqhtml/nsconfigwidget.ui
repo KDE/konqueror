@@ -76,7 +76,7 @@
         </layout>
        </item>
        <item>
-        <widget class="Q3GroupBox" name="GroupBox1" >
+        <widget class="QGroupBox" name="GroupBox1" >
          <property name="minimumSize" >
           <size>
            <width>300</width>
@@ -85,9 +85,6 @@
          </property>
          <property name="title" >
           <string>Scan Folders</string>
-         </property>
-         <property name="orientation" >
-          <enum>Qt::Vertical</enum>
          </property>
          <layout class="QGridLayout" >
           <property name="margin" >
@@ -256,12 +253,6 @@
    <class>Q3ListView</class>
    <extends>Q3Frame</extends>
    <header>q3listview.h</header>
-  </customwidget>
-  <customwidget>
-   <class>Q3GroupBox</class>
-   <extends>QGroupBox</extends>
-   <header>Qt3Support/Q3GroupBox</header>
-   <container>1</container>
   </customwidget>
   <customwidget>
    <class>KUrlRequester</class>
