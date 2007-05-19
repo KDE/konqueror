@@ -143,12 +143,9 @@
     </layout>
    </item>
    <item row="1" column="0" >
-    <widget class="Q3GroupBox" name="gbDetails" >
+    <widget class="QGroupBox" name="gbDetails" >
      <property name="title" >
       <string>Details</string>
-     </property>
-     <property name="orientation" >
-      <enum>Qt::Vertical</enum>
      </property>
      <layout class="QGridLayout" >
       <property name="margin" >
@@ -290,12 +287,6 @@
    <class>K3ListView</class>
    <extends>Q3ListView</extends>
    <header>k3listview.h</header>
-  </customwidget>
-  <customwidget>
-   <class>Q3GroupBox</class>
-   <extends>QGroupBox</extends>
-   <header>Qt3Support/Q3GroupBox</header>
-   <container>1</container>
   </customwidget>
   <customwidget>
    <class>K3ListViewSearchLine</class>

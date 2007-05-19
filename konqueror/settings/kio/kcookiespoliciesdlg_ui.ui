@@ -27,7 +27,7 @@ Please note that disabling cookie support might make many web sites unbrowsable.
         </widget>
       </item>
       <item row="1" column="0" >
-        <widget class="Q3GroupBox" name="bgPreferences" >
+        <widget class="QGroupBox" name="bgPreferences" >
           <property name="title" >
             <string/>
           </property>
@@ -118,7 +118,7 @@ Determines how cookies received from a remote machine will be handled:
         </widget>
       </item>
       <item row="3" column="0" >
-        <widget class="Q3GroupBox" name="gbDomainSpecific" >
+        <widget class="QGroupBox" name="gbDomainSpecific" >
           <property name="title" >
             <string>Site Policy</string>
           </property>
