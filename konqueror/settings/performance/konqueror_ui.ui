@@ -14,7 +14,7 @@
     </property>
     <layout class="QVBoxLayout" >
       <item>
-        <widget class="Q3GroupBox" name="reuse_group" >
+        <widget class="QGroupBox" name="reuse_group" >
           <property name="title" >
             <string>Minimize Memory Usage</string>
           </property>
@@ -44,7 +44,7 @@
         </widget>
       </item>
       <item>
-        <widget class="Q3GroupBox" name="groupBox1" >
+        <widget class="QGroupBox" name="groupBox1" >
           <property name="title" >
             <string>Preloading</string>
           </property>
