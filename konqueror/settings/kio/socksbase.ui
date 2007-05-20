@@ -123,7 +123,7 @@
     </widget>
    </item>
    <item>
-    <widget class="Q3GroupBox" name="_c_addPaths" >
+    <widget class="QGroupBox" name="_c_addPaths" >
      <property name="enabled" >
       <bool>false</bool>
      </property>
@@ -140,9 +140,6 @@
      </property>
      <property name="title" >
       <string>Additional Library Search Paths</string>
-     </property>
-     <property name="orientation" >
-      <enum>Qt::Vertical</enum>
      </property>
      <layout class="QVBoxLayout" >
       <item>
@@ -279,12 +276,6 @@
    <class>KUrlRequester</class>
    <extends>QFrame</extends>
    <header>kurlrequester.h</header>
-  </customwidget>
-  <customwidget>
-   <class>Q3GroupBox</class>
-   <extends>QGroupBox</extends>
-   <header>Qt3Support/Q3GroupBox</header>
-   <container>1</container>
   </customwidget>
  </customwidgets>
  <includes>
