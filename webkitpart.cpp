@@ -48,6 +48,7 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
 
 bool WebKitPart::openUrl(const KUrl &url)
 {
+    setUrl(url);
     webPage->open(url);
     return true;
 }
