@@ -32,6 +32,18 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
 {
     webPage = new QWebPage(parentWidget);
     setWidget(webPage);
+
+    connect(webPage, SIGNAL(loadStarted(QWebFrame *)),
+            this, SLOT(frameStarted(QWebFrame *)));
+    connect(webPage, SIGNAL(loadFinished(QWebFrame *)),
+            this, SLOT(frameFinished(QWebFrame *)));
+    connect(webPage, SIGNAL(titleChanged(const QString &)),
+            this, SIGNAL(setWindowCaption(const QString &)));
+
+    browserExtension = new WebKitBrowserExtension(this);
+
+    connect(webPage, SIGNAL(loadProgressChanged(int)),
+            browserExtension, SIGNAL(loadingProgress(int)));
 }
 
 bool WebKitPart::openUrl(const KUrl &url)
@@ -46,12 +58,29 @@ bool WebKitPart::openFile()
     return false;
 }
 
+void WebKitPart::frameStarted(QWebFrame *frame)
+{
+    if (frame == webPage->mainFrame())
+        emit started(0);
+}
+
+void WebKitPart::frameFinished(QWebFrame *frame)
+{
+    if (frame == webPage->mainFrame())
+        emit completed();
+}
+
 KAboutData *WebKitPart::createAboutData()
 {
     return new KAboutData("webkitpart", I18N_NOOP("Webkit HTML Component"),
                           /*version*/ "1.0", /*shortDescription*/ "",
                           KAboutData::License_LGPL,
                           I18N_NOOP("Copyright (c) 2007 Trolltech ASA"));
+}
+
+WebKitBrowserExtension::WebKitBrowserExtension(WebKitPart *parent)
+    : KParts::BrowserExtension(parent)
+{
 }
 
 typedef KParts::GenericFactory<WebKitPart> Factory;

@@ -23,9 +23,12 @@
 #define WEBKITPART_H
 
 #include <KDE/KParts/ReadOnlyPart>
+#include <KDE/KParts/BrowserExtension>
 
 class QWebPage;
+class QWebFrame;
 class KAboutData;
+class WebKitBrowserExtension;
 
 class WebKitPart : public KParts::ReadOnlyPart
 {
@@ -40,8 +43,20 @@ public:
 protected:
     virtual bool openFile();
 
+private slots:
+    void frameStarted(QWebFrame *frame);
+    void frameFinished(QWebFrame *frame);
+
 private:
     QWebPage *webPage;
+    WebKitBrowserExtension *browserExtension;
+};
+
+class WebKitBrowserExtension : public KParts::BrowserExtension
+{
+    Q_OBJECT
+public:
+    WebKitBrowserExtension(WebKitPart *parent);
 };
 
 #endif // WEBKITPART_H
