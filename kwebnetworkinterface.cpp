@@ -50,6 +50,9 @@ void KWebNetworkInterface::addJob(QWebNetworkJob *job)
     kioJob->addMetaData("accept", request.value("Accept"));
     request.removeValue("Accept");
 
+    request.removeValue("content-length");
+    request.removeValue("Connection");
+
     kioJob->addMetaData("customHTTPHeader", request.toString());
 
     kioJob->setProperty("qwebnetworkjob", QVariant::fromValue(job));
