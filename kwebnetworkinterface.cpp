@@ -21,6 +21,16 @@ void KWebNetworkInterface::addJob(QWebNetworkJob *job)
 
     kioJob->addMetaData("PropagateHttpHeader", "true");
 
+    QHttpRequestHeader request = job->request();
+
+    kioJob->addMetaData("UserAgent", request.value("User-Agent"));
+    request.removeValue("User-Agent");
+
+    kioJob->addMetaData("accept", request.value("Accept"));
+    request.removeValue("Accept");
+
+    kioJob->addMetaData("customHTTPHeader", request.toString());
+
     kioJob->setProperty("qwebnetworkjob", QVariant::fromValue(job));
     m_jobs.insert(job, kioJob);
 
