@@ -27,9 +27,14 @@
 
 #include <qwebpage.h>
 
+#include "kwebnetworkinterface.h"
+
 WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList &/*args*/)
     : KParts::ReadOnlyPart(parent)
 {
+    // ####
+    QWebNetworkInterface::setDefaultInterface(new KWebNetworkInterface);
+
     webPage = new QWebPage(parentWidget);
     setWidget(webPage);
 
