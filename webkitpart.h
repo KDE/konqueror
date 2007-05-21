@@ -37,6 +37,7 @@ public:
     WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList &/*args*/);
 
     virtual bool openUrl(const KUrl &url);
+    virtual bool closeUrl();
 
     static KAboutData *createAboutData();
 

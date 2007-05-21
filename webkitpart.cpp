@@ -53,6 +53,12 @@ bool WebKitPart::openUrl(const KUrl &url)
     return true;
 }
 
+bool WebKitPart::closeUrl()
+{
+    webPage->stop();
+    return true;
+}
+
 bool WebKitPart::openFile()
 {
     // never reached
