@@ -30,9 +30,9 @@ public:
   virtual bool supportsTabs() const;
   virtual QList<QPair<QString, QString> > currentBookmarkList() const;
   virtual void openBookmark(const KBookmark & bm, Qt::MouseButtons mb, Qt::KeyboardModifiers km);
-  virtual void openInNewTab(KBookmark bm);
-  virtual void openInNewWindow(KBookmark bm);
-  virtual void openFolderinTabs(KBookmark bm);
+  virtual void openInNewTab(const KBookmark &bm);
+  virtual void openInNewWindow(const KBookmark &bm);
+  virtual void openFolderinTabs(const KBookmark &bm);
 
 private:
   KonqMainWindow *m_pKonqMainWindow;

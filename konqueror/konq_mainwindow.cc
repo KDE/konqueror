@@ -4610,7 +4610,7 @@ QString KonqExtendedBookmarkOwner::currentTitle() const
    return m_pKonqMainWindow->currentTitle();
 }
 
-void KonqExtendedBookmarkOwner::openInNewTab(KBookmark bm)
+void KonqExtendedBookmarkOwner::openInNewTab(const KBookmark &bm)
 {
   bool newTabsInFront = KonqSettings::newTabsInFront();
   if (QApplication::keyboardModifiers() & Qt::ShiftModifier)
@@ -4625,7 +4625,7 @@ void KonqExtendedBookmarkOwner::openInNewTab(KBookmark bm)
   m_pKonqMainWindow->openUrl( 0, bm.url(), QString(), req );
 }
 
-void KonqExtendedBookmarkOwner::openFolderinTabs(KBookmark bm)
+void KonqExtendedBookmarkOwner::openFolderinTabs(const KBookmark &bm)
 {
   bool newTabsInFront = KonqSettings::newTabsInFront();
   if (QApplication::keyboardModifiers() & Qt::ShiftModifier)
@@ -4652,7 +4652,7 @@ void KonqExtendedBookmarkOwner::openFolderinTabs(KBookmark bm)
   m_pKonqMainWindow->openUrl( 0, *end, QString(), req );
 }
 
-void KonqExtendedBookmarkOwner::openInNewWindow(KBookmark bm)
+void KonqExtendedBookmarkOwner::openInNewWindow(const KBookmark &bm)
 {
   KonqMisc::createNewWindow( bm.url(), KParts::URLArgs() );
 }
