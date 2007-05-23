@@ -198,7 +198,7 @@ void KonqFrameTabs::saveConfig( KConfigGroup& config, const QString &prefix, boo
   QString newPrefix;
   foreach (KonqFrameBase* frame, *m_pChildFrameList)
     {
-      newPrefix = QString::fromLatin1( frame->frameType() ) + "T" + QString::number(i);
+      newPrefix = QString::fromLatin1( frame->frameType() ) + 'T' + QString::number(i);
       strlst.append( newPrefix );
       newPrefix.append( QLatin1Char( '_' ) );
       frame->saveConfig( config, newPrefix, saveURLs, docContainer, id, depth + i );

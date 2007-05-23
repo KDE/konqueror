@@ -20,12 +20,17 @@
  *  along with this program; if not, write to the Free Software
  */
 
+// Own
+#include "kcmhistory.h"
+
+// Qt
 #include <QtGui/QCheckBox>
 #include <QtGui/QComboBox>
 #include <QtGui/QLayout>
 #include <QtGui/QPushButton>
 #include <QtGui/QRadioButton>
 
+// KDE
 #include <kapplication.h>
 #include <kconfig.h>
 #include <kdialog.h>
@@ -37,9 +42,8 @@
 #include <kmessagebox.h>
 #include <knuminput.h>
 
+// Local
 #include "konq_historymgr.h"
-
-#include "kcmhistory.h"
 #include "history_settings.h"
 
 typedef KGenericFactory<HistorySidebarConfig, QWidget > KCMHistoryFactory;

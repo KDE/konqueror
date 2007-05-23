@@ -19,25 +19,28 @@
    Boston, MA 02110-1301, USA.
 */
 
+// Own
+#include "cache.h"
+
+// Qt
+#include <QtGui/QBoxLayout>
+#include <QtGui/QCheckBox>
 #include <QtGui/QLabel>
 #include <QtGui/QLayout>
-#include <QtGui/QCheckBox>
 #include <QtGui/QPushButton>
 #include <QtGui/QRadioButton>
-//Added by qt3to4:
-#include <QtGui/QBoxLayout>
 
-#include <kdebug.h>
-#include <klocale.h>
+// KDE
 #include <k3process.h>
+#include <kdebug.h>
+#include <kgenericfactory.h>
+#include <kio/http_slave_defaults.h>
+#include <klocale.h>
 #include <knuminput.h>
 
+// Local
 #include "ksaveioconfig.h"
-#include <kio/http_slave_defaults.h>
-
-#include "cache.h"
 #include "ui_cache_ui.h"
-#include <kgenericfactory.h>
 
 typedef KGenericFactory<KCacheConfigDialog> KCacheConfigDialogFactory;
 K_EXPORT_COMPONENT_FACTORY(cache, KCacheConfigDialogFactory("kcmkio"))

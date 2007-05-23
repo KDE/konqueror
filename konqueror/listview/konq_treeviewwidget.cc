@@ -18,11 +18,15 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "konq_listview.h"
+// Own
 #include "konq_treeviewwidget.h"
 
+// KDE
 #include <kdirlister.h>
 #include <kdebug.h>
+
+// Local
+#include "konq_listview.h"
 
 template class Q3Dict<KonqListViewDir>;
 

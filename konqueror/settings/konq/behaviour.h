@@ -21,7 +21,7 @@
 
 #include <kcmodule.h>
 #include <kconfig.h>
-
+#include <ksharedconfig.h>
 #include <QtCore/QStringList>
 
 class QCheckBox;
@@ -35,7 +35,7 @@ class KBehaviourOptions : public KCModule
 {
   Q_OBJECT
 public:
-  KBehaviourOptions(QWidget *parent, const QStringList &args = QStringList());
+  explicit KBehaviourOptions(QWidget *parent, const QStringList &args = QStringList());
     ~KBehaviourOptions();
   virtual void load();
   virtual void save();

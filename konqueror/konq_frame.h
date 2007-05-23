@@ -204,7 +204,7 @@ class KonqFrame : public QWidget, public KonqFrameBase
   Q_OBJECT
 
 public:
-  KonqFrame( QWidget* parent, KonqFrameContainerBase *parentContainer = 0L );
+  explicit KonqFrame( QWidget* parent, KonqFrameContainerBase *parentContainer = 0L );
   virtual ~KonqFrame();
 
   /**

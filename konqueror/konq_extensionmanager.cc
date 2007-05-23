@@ -14,11 +14,15 @@
     *************************************************************************
 */
 
+// Own
+#include "konq_extensionmanager.h"
+
+// Qt
 #include <QtGui/QLayout>
 #include <QtCore/QTimer>
-//Added by qt3to4:
 #include <QtGui/QBoxLayout>
 
+// KDE
 #include <kconfig.h>
 #include <kdebug.h>
 #include <klocale.h>
@@ -30,8 +34,8 @@
 #include <ksettings/dispatcher.h>
 #include <kstandardguiitem.h>
 
+// Local
 #include "konq_view.h"
-#include "konq_extensionmanager.h"
 #include "konq_mainwindow.h"
 
 

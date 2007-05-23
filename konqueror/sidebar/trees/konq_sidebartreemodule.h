@@ -34,7 +34,7 @@ class KonqSidebarTree;
 class KonqSidebarTreeModule
 {
 public:
-    KonqSidebarTreeModule( KonqSidebarTree * parentTree , bool showHidden=false)
+    explicit KonqSidebarTreeModule( KonqSidebarTree * parentTree , bool showHidden=false)
         : m_pTree( parentTree ), m_showHidden(showHidden) {}
     virtual ~KonqSidebarTreeModule() {}
 

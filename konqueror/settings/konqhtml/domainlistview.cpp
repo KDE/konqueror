@@ -19,18 +19,21 @@
 
 */
 
+// Own
+#include "domainlistview.h"
+
+// Qt
 #include <QtGui/QLayout>
 #include <QtGui/QPushButton>
-
-//Added by qt3to4:
 #include <QtGui/QGridLayout>
 
+// KDE
 #include <kconfig.h>
 #include <k3listview.h>
 #include <klocale.h>
 #include <kmessagebox.h>
 
-#include "domainlistview.h"
+// Local
 #include "policies.h"
 #include "policydlg.h"
 

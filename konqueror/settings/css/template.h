@@ -1,8 +1,7 @@
 #ifndef __TEMPLATE_H__
 #define __TEMPLATE_H__
 
-
-
+#include <QtCore/QString>
 #include <QtCore/QMap>
 
 class CSSTemplate

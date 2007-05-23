@@ -17,6 +17,10 @@
    Boston, MA 02110-1301, USA.
 */
 
+// Own
+#include "typeslistitem.h"
+
+// KDE
 #include <ksharedconfig.h>
 #include <kdebug.h>
 #include <kiconloader.h>
@@ -25,7 +29,6 @@
 #include <kmimetypetrader.h>
 #include <kstaticdeleter.h>
 
-#include "typeslistitem.h"
 
 QMap< QString, QStringList >* TypesListItem::s_changedServices;
 static KStaticDeleter< QMap< QString, QStringList > > deleter;

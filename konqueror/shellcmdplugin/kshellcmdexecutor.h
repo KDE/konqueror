@@ -30,7 +30,7 @@ class KShellCommandExecutor:public Q3TextView
 {
    Q_OBJECT
    public:
-      KShellCommandExecutor(const QString& command, QWidget* parent=0);
+      explicit KShellCommandExecutor(const QString& command, QWidget* parent=0);
       virtual ~KShellCommandExecutor();
       int exec();
    Q_SIGNALS:

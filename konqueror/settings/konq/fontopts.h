@@ -39,6 +39,7 @@
 
 #include <kcmodule.h>
 #include <kconfig.h>
+#include <ksharedconfig.h>
 
 class QCheckBox;
 class QRadioButton;
@@ -53,7 +54,9 @@ class KonqFontOptions : public KCModule
 {
   Q_OBJECT
 public:
-  KonqFontOptions(QWidget *parent, const QStringList &args = QStringList(), bool desktop = false);
+  explicit KonqFontOptions(QWidget *parent, 
+                           const QStringList &args = QStringList(), 
+                           bool desktop = false);
   QString quickHelp() const;
 
   virtual void load();

@@ -28,6 +28,8 @@
 #include <kcmodule.h>
 #include <QtCore/QList>
 
+#include "filteropts.h"
+
 class KUriFilter;
 
 class KURIFilterModule : public KCModule {

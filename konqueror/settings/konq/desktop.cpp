@@ -17,16 +17,23 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#include <QtGui/QLabel>
+// Own
+#include "desktop.h"
+
+// Qt
 #include <Qt3Support/Q3GroupBox>
-#include <QtGui/QLayout>
-
-#include <QtGui/QCheckBox>
-#include <QtGui/QSlider>
-//Added by qt3to4:
-#include <QtGui/QBoxLayout>
 #include <QtDBus/QDBusInterface>
+#include <QtGui/QBoxLayout>
+#include <QtGui/QCheckBox>
+#include <QtGui/QLabel>
+#include <QtGui/QLayout>
+#include <QtGui/QSlider>
 
+#ifdef Q_WS_X11
+#include <QX11Info>
+#endif
+
+// KDE
 #include <kapplication.h>
 #include <kglobal.h>
 #include <klocale.h>
@@ -39,12 +46,7 @@
 
 #include <netwm.h>
 
-#include "desktop.h"
-#include "desktop.moc"
 #include "kdesktop_interface.h"
-#ifdef Q_WS_X11
-#include <QX11Info>
-#endif
 
 typedef KonqKcmFactory<KDesktopConfig> KDesktopConfigFactory;
 K_EXPORT_COMPONENT_FACTORY(ddesktop, KDesktopConfigFactory)
@@ -255,4 +257,6 @@ void KDesktopConfig::slotValueChanged(int n)
     _wheelOption->setEnabled(n>1);
   emit changed(true);
 }
+
+#include "desktop.moc"
 

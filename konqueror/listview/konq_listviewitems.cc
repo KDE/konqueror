@@ -106,9 +106,9 @@ void KonqListViewItem::updateContents()
             break;
          case KIO::UDS_SIZE:
             if ( m_pListViewWidget->m_pSettings->fileSizeInBytes() )
-                setText(tmpColumn->displayInColumn,KGlobal::locale()->formatNumber( m_fileitem->size(),0)+" ");
+                setText(tmpColumn->displayInColumn,KGlobal::locale()->formatNumber( m_fileitem->size(),0)+' ');
             else
-                setText(tmpColumn->displayInColumn,KIO::convertSize(m_fileitem->size())+" ");
+                setText(tmpColumn->displayInColumn,KIO::convertSize(m_fileitem->size())+' ');
             break;
          case KIO::UDS_ACCESS:
             setText(tmpColumn->displayInColumn,makeAccessString(m_fileitem->permissions()));

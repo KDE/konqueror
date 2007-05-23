@@ -18,26 +18,30 @@
    Boston, MA 02110-1301, USA.
 */
 
+// Own
+#include "kservicelistwidget.h"
+
+// std
 #include <unistd.h>
 
+// Qt
 #include <QtGui/QPushButton>
 #include <QtGui/QLayout>
-
-//Added by qt3to4:
 #include <QtGui/QGridLayout>
 
+// KDE
 #include <kapplication.h>
 #include <kdebug.h>
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <knotification.h>
 #include <kopenwithdialog.h>
-
-#include "kservicelistwidget.h"
-#include "kserviceselectdlg.h"
-#include "typeslistitem.h"
 #include <kpropertiesdialog.h>
 #include <kstandarddirs.h>
+
+// Local
+#include "kserviceselectdlg.h"
+#include "typeslistitem.h"
 
 KServiceListItem::KServiceListItem( KService::Ptr pService, int kind )
     : QListWidgetItem(), desktopPath(pService->desktopEntryPath())

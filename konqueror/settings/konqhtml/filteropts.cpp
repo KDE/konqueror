@@ -16,27 +16,31 @@
    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
-#include <kconfig.h>
-#include <klocale.h>
-#include <kglobal.h>
-#include <kaboutdata.h>
-#include <kfiledialog.h>
-#include <QtGui/QListWidget>
-#include <QtGui/QLayout>
-#include <QtGui/QPushButton>
-#include <Qt3Support/Q3GroupBox>
-#include <khbox.h>
-#include <QtGui/QLineEdit>
-#include <QtGui/QLabel>
-#include <QtGui/QCheckBox>
-#include <QtCore/QTextStream>
-#include <QtCore/QRegExp>
-#include <QtDBus/QtDBus>
-
+// Own
 #include "filteropts.h"
-#include "filteropts.moc"
 
+// Qt
+#include <Qt3Support/Q3GroupBox>
+#include <QtCore/QRegExp>
+#include <QtCore/QTextStream>
+#include <QtDBus/QtDBus>
+#include <QtGui/QCheckBox>
+#include <QtGui/QLabel>
+#include <QtGui/QLayout>
+#include <QtGui/QLineEdit>
+#include <QtGui/QListWidget>
+#include <QtGui/QPushButton>
+
+// KDE
+#include <kaboutdata.h>
+#include <kconfig.h>
+#include <kfiledialog.h>
 #include <kgenericfactory.h>
+#include <kglobal.h>
+#include <khbox.h>
+#include <klocale.h>
+
+
 typedef KGenericFactory<KCMFilter, QWidget> KCMFilterFactory;
 K_EXPORT_COMPONENT_FACTORY( khtml_filter, KCMFilterFactory("kcmkonqhtml") )
 
@@ -333,3 +337,7 @@ QString KCMFilter::quickHelp() const
                 " that are checked against linked images and frames. URL's that match are either discarded or"
                 " replaced with a placeholder image. ");
 }
+
+
+#include "filteropts.moc"
+

@@ -19,6 +19,13 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
+// Own
+#include "kcookiesmanagement.h"
+
+// std
+#include <assert.h>
+
+// Qt
 #include <QtGui/QApplication>
 #include <QtGui/QLayout>
 #include <QtGui/QPushButton>
@@ -31,8 +38,8 @@
 #include <QtCore/QList>
 
 #include <QtDBus/QtDBus>
-#include <QtCore/QUrl>
 
+// KDE
 #include <kdebug.h>
 #include <klocale.h>
 #include <kdialog.h>
@@ -41,12 +48,11 @@
 #include <k3listview.h>
 #include <k3listviewsearchline.h>
 #include <kmessagebox.h>
+#include <kurl.h>
 
+// Local
 #include "kcookiesmain.h"
 #include "kcookiespolicies.h"
-#include "kcookiesmanagement.h"
-
-#include <assert.h>
 
 struct CookieProp
 {
@@ -95,9 +101,9 @@ CookieProp* CookieListViewItem::leaveCookie()
 QString CookieListViewItem::text(int f) const
 {
     if (mCookie)
-        return f == 0 ? QString() : QUrl::fromAce(mCookie->host.toLatin1());
+        return f == 0 ? QString() : KUrl::fromAce(mCookie->host.toLatin1());
     else
-        return f == 0 ? QUrl::fromAce(mDomain.toLatin1()) : QString();
+        return f == 0 ? KUrl::fromAce(mDomain.toLatin1()) : QString();
 }
 
 KCookiesManagement::KCookiesManagement(const KComponentData &componentData, QWidget *parent)

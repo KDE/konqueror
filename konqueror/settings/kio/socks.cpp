@@ -19,19 +19,10 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
+// Own
+#include "socks.h"
 
-#include <QtGui/QLayout>
-#include <QtGui/QLabel>
-#include <QtGui/QCheckBox>
-//Added by qt3to4:
-#include <QtGui/QBoxLayout>
-
-#include <kfiledialog.h>
-#include <k3listview.h>
-#include <kmessagebox.h>
-
-#include "config.h"
-
+// std
 #ifdef HAVE_SYS_TYPES_H
 #include <sys/types.h>
 #endif
@@ -40,15 +31,27 @@
 #include <sys/socket.h>
 #endif
 
-#include "socks.h"
-#include "unistd.h"
+#include <unistd.h>
 
-#include <kapplication.h>
-#include <klocale.h>
+// Qt
+#include <QtGui/QLayout>
+#include <QtGui/QLabel>
+#include <QtGui/QCheckBox>
+#include <QtGui/QBoxLayout>
 
+// KDE
+#include <k3listview.h>
 #include <kaboutdata.h>
-#include <kglobal.h>
+#include <kapplication.h>
 #include <kconfiggroup.h>
+#include <kfiledialog.h>
+#include <kglobal.h>
+#include <klocale.h>
+#include <kmessagebox.h>
+
+#include <config.h>
+
+
 
 KSocksConfig::KSocksConfig(const KComponentData &componentData, QWidget *parent)
   : KCModule(componentData, parent)

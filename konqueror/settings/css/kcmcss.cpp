@@ -1,12 +1,16 @@
 
+// Own
+#include "kcmcss.h"
+
+// Qt
 #include <QtGui/QCheckBox>
 #include <QtGui/QComboBox>
 #include <QtGui/QLayout>
 #include <QtGui/QRadioButton>
 #include <Qt3Support/Q3TextBrowser>
-//Added by qt3to4:
 #include <QtGui/QBoxLayout>
 
+// KDE
 #include <kapplication.h>
 #include <kcolorbutton.h>
 #include <kconfig.h>
@@ -17,9 +21,8 @@
 #include <kstandarddirs.h>
 #include <kurlrequester.h>
 
+// Local
 #include "template.h"
-
-#include "kcmcss.h"
 
 typedef KGenericFactory<CSSConfig, QWidget> CSSFactory;
 K_EXPORT_COMPONENT_FACTORY( css, CSSFactory("kcmcss") )

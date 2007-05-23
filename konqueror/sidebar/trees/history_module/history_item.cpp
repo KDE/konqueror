@@ -16,17 +16,24 @@
    Boston, MA 02110-1301, USA.
 */
 
+// Own
+#include "history_item.h"
+
+// std
+#include <assert.h>
+
+// Qt
+#include <QtGui/QPainter>
+
+// KDE
 #include <kbookmark.h>
 #include <kprotocolinfo.h>
 #include <konq_faviconmgr.h>
-#include <QtGui/QPainter>
+#include <kiconloader.h>
 
-#include <assert.h>
-
-#include "history_item.h"
+// Local
 #include "history_module.h"
 #include "history_settings.h"
-#include <kiconloader.h>
 
 #define MYMODULE static_cast<KonqSidebarHistoryModule*>(module())
 #define MYGROUP static_cast<KonqSidebarHistoryGroupItem*>(parent())

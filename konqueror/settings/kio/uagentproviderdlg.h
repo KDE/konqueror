@@ -51,7 +51,7 @@ class UAProviderDlg : public KDialog
   Q_OBJECT
 
 public:
-  UAProviderDlg( const QString& caption, QWidget *parent = 0,
+  explicit UAProviderDlg( const QString& caption, QWidget *parent = 0,
                  FakeUASProvider* provider = 0 );
   ~UAProviderDlg();
 

@@ -6,8 +6,9 @@
 #include <QtGui/QLabel>
 #include <QtGui/QStackedWidget>
 
-#include <kconfig.h>
-#include <kcmodule.h>
+#include <KConfig>
+#include <KSharedConfig>
+#include <KCModule>
 
 #include "typeslistitem.h"
 

@@ -11,6 +11,15 @@
 // Big changes to accommodate per-domain settings
 // (c) Leo Savernik 2002-2003
 
+// Own
+#include "javaopts.h"
+
+// Qt
+#include <QtGui/QLayout>
+#include <Qt3Support/Q3GroupBox>
+#include <QtGui/QLabel>
+
+// KDE
 #include <config.h>
 #include <k3listview.h>
 #include <kurlrequester.h>
@@ -21,13 +30,9 @@
 #include <knuminput.h>
 #include <khbox.h>
 
-#include <QtGui/QLayout>
-#include <Qt3Support/Q3GroupBox>
-#include <QtGui/QLabel>
-
+// Local
 #include "htmlopts.h"
 #include "policydlg.h"
-#include "javaopts.h"
 
 // == class JavaPolicies =====
 

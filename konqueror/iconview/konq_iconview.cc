@@ -469,7 +469,7 @@ void KonqKfmIconView::slotPreview( bool toggle )
             bool previewRunning = m_pIconView->isPreviewRunning();
             if ( previewRunning )
                 m_pIconView->stopImagePreview();
-            m_pIconView->setIcons( m_pIconView->iconSize(), QStringList() += "*" );
+            m_pIconView->setIcons( m_pIconView->iconSize(), QStringList() += '*' );
         }
         else
         {

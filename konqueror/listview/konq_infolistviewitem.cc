@@ -17,20 +17,29 @@
 
 */
 
-#include "konq_listview.h"
-#include <kapplication.h>
-#include <konq_settings.h>
-#include <kfilemetainfo.h>
-#include <kdebug.h>
-#include <klocale.h>
+// Own
+#include "konq_infolistviewitem.h"
+
+// std
 #include <assert.h>
 #include <stdio.h>
-#include <QtGui/QPainter>
+
+// Qt
 #include <Qt3Support/Q3Header>
-#include <kiconloader.h>
-#include "konq_infolistviewitem.h"
-#include "konq_infolistviewwidget.h"
 #include <QtCore/QDate>
+#include <QtGui/QPainter>
+
+// KDE
+#include <kapplication.h>
+#include <kdebug.h>
+#include <kfilemetainfo.h>
+#include <klocale.h>
+#include <konq_settings.h>
+#include <kiconloader.h>
+
+// Local
+#include "konq_listview.h"
+#include "konq_infolistviewwidget.h"
 
 /**************************************************************
  *

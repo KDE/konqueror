@@ -19,15 +19,17 @@
 // File previews configuration
 //
 
+// Own
+#include "previews.h"
+
+// Qt
 #include <QtGui/QCheckBox>
 #include <QtGui/QLabel>
 #include <QtGui/QLayout>
-
-//Added by qt3to4:
 #include <QtGui/QBoxLayout>
-
 #include <QtDBus/QtDBus>
 
+// KDE
 #include <kapplication.h>
 #include <kconfig.h>
 #include <kdialog.h>
@@ -36,10 +38,10 @@
 #include <klocale.h>
 #include <knuminput.h>
 #include <kprotocolmanager.h>
-
-#include "previews.h"
-#include "konqkcmfactory.h"
 #include <kconfiggroup.h>
+
+// Local
+#include "konqkcmfactory.h"
 
 //-----------------------------------------------------------------------------
 

@@ -12,26 +12,31 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <khtml_part.h> // this plugin applies to a khtml part
+// Own
+#include "khtmlkttsd.h"
+
+// Qt
+#include <QtCore/QBuffer>
+#include <QtCore/QTimer>
+#include <QtDBus>
+#include <QtGui/QMessageBox>
+
+// KDE
+#include <dom/dom_string.h>
 #include <dom/html_document.h>
 #include <dom/html_element.h>
-#include <dom/dom_string.h>
-#include <kdebug.h>
-#include "khtmlkttsd.h"
 #include <kaction.h>
 #include <kactioncollection.h>
+#include <kapplication.h>
+#include <kdebug.h>
 #include <kgenericfactory.h>
+#include <khtml_part.h> // this plugin applies to a khtml part
 #include <kicon.h>
 #include <kiconloader.h>
-#include <QtGui/QMessageBox>
 #include <klocale.h>
-
-#include <QtCore/QTimer>
-#include <kspeech.h>
-#include <QtCore/QBuffer>
-#include <QtDBus>
-#include <kapplication.h>
+#include <kmessagebox.h>
 #include <kservicetypetrader.h>
+#include <kspeech.h>
 #include <ktoolinvocation.h>
 
 KHTMLPluginKTTSD::KHTMLPluginKTTSD( QObject* parent, const QStringList& )

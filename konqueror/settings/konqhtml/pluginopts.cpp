@@ -3,34 +3,40 @@
 // (c) 2000 Stefan Schimanski <1Stein@gmx.de>, Netscape parts
 
 
+// Own
+#include "pluginopts.h"
+
+// std
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 
+// Qt
+#include <Qt3Support/Q3GroupBox>
+#include <QtCore/QRegExp>
+#include <QtCore/QTextStream>
+#include <QtDBus/QDBusConnection>
+#include <QtDBus/QDBusMessage>
 #include <QtGui/QLabel>
 #include <QtGui/QLayout>
-#include <QtGui/QProgressDialog>
-#include <QtCore/QRegExp>
 #include <QtGui/QSlider>
-#include <Qt3Support/Q3GroupBox>
-#include <QtCore/QTextStream>
-#include <QtDBus/QDBusMessage>
-#include <QtDBus/QDBusConnection>
+#include <QtGui/QProgressDialog>
 
+// KDE
+#include <k3listview.h>
+#include <k3procio.h>
 #include <kapplication.h>
 #include <kdebug.h>
 #include <kfiledialog.h>
 #include <kiconloader.h>
-#include <k3listview.h>
 #include <klocale.h>
 #include <kmessagebox.h>
-#include <k3procio.h>
 #include <kstandarddirs.h>
 #include <kurlrequester.h>
 
+// Local
 #include "htmlopts.h"
 #include "ui_nsconfigwidget.h"
-#include "pluginopts.h"
 #include "policydlg.h"
 
 

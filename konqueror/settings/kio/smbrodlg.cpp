@@ -18,21 +18,25 @@
     Boston, MA 02110-1301, USA.
 */
 
-#include <QtGui/QLayout>
-#include <QtGui/QLabel>
-#include <QtCore/QTextCodec>
+// Own
+#include "smbrodlg.h"
 
-#include <klocale.h>
-#include <kconfig.h>
-#include <kglobal.h>
+// Qt
+#include <QtCore/QTextCodec>
+#include <QtGui/QLabel>
+#include <QtGui/QLayout>
+
+// KDE
 #include <kcharsets.h>
 #include <kcombobox.h>
+#include <kconfig.h>
 #include <kdialog.h>
 #include <kgenericfactory.h>
+#include <kglobal.h>
+#include <klocale.h>
 
-#include "smbrodlg.h"
 #ifdef HAVE_CONFIG_H
-#include "config.h"
+#include <config.h>
 #endif
 
 typedef KGenericFactory<SMBRoOptions> SMBRoOptionsFactory;

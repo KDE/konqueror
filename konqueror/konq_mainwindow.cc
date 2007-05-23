@@ -1347,7 +1347,7 @@ void KonqMainWindow::slotSendFile()
         }
 
         QDir().mkdir(zipFileName);
-        zipFileName = zipFileName+"/"+(*it).fileName()+".zip";
+        zipFileName = zipFileName+'/'+(*it).fileName()+".zip";
         KZip zip( zipFileName );
         if ( !zip.open( QIODevice::WriteOnly ) )
             continue; // TODO error message
@@ -6024,5 +6024,6 @@ void KonqMainWindow::restoreWindowSize()
 
 
 #include "konq_mainwindow.moc"
+
 /* vim: et sw=4 ts=4
  */

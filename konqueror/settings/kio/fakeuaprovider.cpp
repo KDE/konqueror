@@ -16,16 +16,18 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
+// Own
+#include "fakeuaprovider.h"
+
+// std
 #include <time.h>
 #include <sys/utsname.h>
 
-
+// KDE
 #include <kdebug.h>
 #include <klocale.h>
 #include <kservicetypetrader.h>
 #include <kstandarddirs.h>
-
-#include "fakeuaprovider.h"
 
 #define UA_PTOS(x) (*it)->property(x).toString()
 #define QFL(x) QLatin1String(x)

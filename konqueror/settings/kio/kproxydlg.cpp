@@ -19,26 +19,29 @@
    Boston, MA 02110-1301, USA.
 */
 
+// Own
+#include "kproxydlg.h"
+
+// Qt
+#include <QtCore/QRegExp>
+#include <QtGui/QBoxLayout>
+#include <QtGui/QCheckBox>
 #include <QtGui/QLabel>
 #include <QtGui/QLayout>
-#include <QtCore/QRegExp>
-#include <QtGui/QCheckBox>
 #include <QtGui/QRadioButton>
 #include <QtGui/QTabWidget>
-//Added by qt3to4:
-#include <QtGui/QBoxLayout>
 
-#include <klocale.h>
+// KDE
+#include <kgenericfactory.h>
 #include <klineedit.h>
+#include <klocale.h>
 #include <kmessagebox.h>
 
-#include "ksaveioconfig.h"
+// Local
 #include "kenvvarproxydlg.h"
 #include "kmanualproxydlg.h"
-
+#include "ksaveioconfig.h"
 #include "socks.h"
-#include "kproxydlg.h"
-#include <kgenericfactory.h>
 
 typedef KGenericFactory<KProxyOptions> KProxyOptionsFactory;
 K_EXPORT_COMPONENT_FACTORY(proxy, KProxyOptionsFactory("kcmkio"))

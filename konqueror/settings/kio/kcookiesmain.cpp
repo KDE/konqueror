@@ -3,19 +3,24 @@
 // First version of cookies configuration by Waldo Bastian <bastian@kde.org>
 // This dialog box created by David Faure <faure@kde.org>
 
+// Own
+#include "kcookiesmain.h"
+
+// Qt
 #include <QtGui/QLayout>
 #include <QtGui/QTabWidget>
 #include <QtDBus/QtDBus>
 
+// KDE
 #include <klocale.h>
 #include <kapplication.h>
 #include <kmessagebox.h>
 #include <kdebug.h>
+#include <kgenericfactory.h>
 
-#include "kcookiesmain.h"
+// Local
 #include "kcookiespolicies.h"
 #include "kcookiesmanagement.h"
-#include <kgenericfactory.h>
 
 typedef KGenericFactory<KCookiesMain> KCookiesMainFactory;
 K_EXPORT_COMPONENT_FACTORY(cookie, KCookiesMainFactory("kcmkio"))

@@ -22,14 +22,22 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
+// Own
+#include "main.h"
 
+// std
 #include <unistd.h>
 
-#include <kapplication.h>
+// Qt
 #include <QtGui/QTabWidget>
 #include <QtGui/QLayout>
 #include <QtDBus/QtDBus>
 
+// KDE
+#include <kapplication.h>
+#include <kaboutdata.h>
+
+// Local
 #include "jsopts.h"
 #include "javaopts.h"
 #include "pluginopts.h"
@@ -37,9 +45,6 @@
 #include "htmlopts.h"
 #include "filteropts.h"
 
-#include "main.h"
-#include <kaboutdata.h>
-#include "main.moc"
 
 #include <kgenericfactory.h>
 typedef KGenericFactory<KJSParts, QWidget> KJSPartsFactory;
@@ -132,4 +137,5 @@ QString KJSParts::quickHelp() const
               "JavaScript programs." );
 }
 
+#include "main.moc"
 

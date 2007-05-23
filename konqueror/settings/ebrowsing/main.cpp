@@ -21,8 +21,13 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
+// Own
+#include "main.h"
+
+// std
 #include <unistd.h>
 
+// Qt
 #include <QtGui/QLayout>
 #include <QtCore/QMap>
 #include <QtGui/QTabWidget>
@@ -30,12 +35,13 @@
 #include <kservice.h>
 #include <kservicetypetrader.h>
 
+// KDE
 #include <kdialog.h>
 #include <kurifilter.h>
 #include <kgenericfactory.h>
 
+// Local
 #include "filteropts.h"
-#include "main.h"
 
 typedef KGenericFactory<KURIFilterModule, QWidget> KURIFactory;
 K_EXPORT_COMPONENT_FACTORY( kurifilt, KURIFactory("kcmkurifilt") )

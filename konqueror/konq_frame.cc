@@ -16,12 +16,27 @@
    the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
    Boston, MA 02110-1301, USA.
 */
-#include "konq_events.h"
-#include "konq_frame.h"
-#include "konq_tabs.h"
-#include "konq_view.h"
-#include "konq_viewmgr.h"
 
+// Own
+#include "konq_frame.h"
+
+// std
+#include <assert.h>
+
+// Qt
+#include <QtGui/QPainter>
+#include <QtGui/QToolButton>
+#include <QtGui/QTabBar>
+#include <QtGui/QMenu>
+#include <QtGui/QKeySequence>
+#include <QtGui/QProgressBar>
+#include <QtGui/QPixmap>
+#include <QtGui/QKeyEvent>
+#include <QtCore/QEvent>
+#include <QtGui/QLabel>
+#include <QtGui/QBoxLayout>
+
+// KDE
 #include <konq_pixmapprovider.h>
 #include <kactioncollection.h>
 #include <kapplication.h>
@@ -32,20 +47,12 @@
 #include <ksqueezedtextlabel.h>
 #include <kstandardshortcut.h>
 
-#include <QtGui/QPainter>
-#include <QtGui/QToolButton>
-#include <QtGui/QTabBar>
-#include <QtGui/QMenu>
-#include <QtGui/QKeySequence>
-#include <QtGui/QProgressBar>
-//Added by qt3to4:
-#include <QtGui/QPixmap>
-#include <QtGui/QKeyEvent>
-#include <QtCore/QEvent>
-#include <QtGui/QLabel>
-#include <QtGui/QBoxLayout>
+// Local
+#include "konq_events.h"
+#include "konq_tabs.h"
+#include "konq_view.h"
+#include "konq_viewmgr.h"
 
-#include <assert.h>
 
 #define DEFAULT_HEADER_HEIGHT 13
 
@@ -334,7 +341,7 @@ void KonqFrame::saveConfig( KConfigGroup& config, const QString &prefix, bool sa
   //config.writeEntry( QString::fromLatin1( "ShowStatusBar" ).prepend( prefix ), statusbar()->isVisible() );
   if (this == docContainer) config.writeEntry( QString::fromLatin1( "docContainer" ).prepend( prefix ), true );
 
-  KonqConfigEvent ev( config.config(), prefix+"_", true/*save*/);
+  KonqConfigEvent ev( config.config(), prefix+'_', true/*save*/);
   QApplication::sendEvent( childView()->part(), &ev );
 }
 

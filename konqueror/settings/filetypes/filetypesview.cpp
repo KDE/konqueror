@@ -1,13 +1,17 @@
 /* Missing license header */
 
+// Own
+#include "filetypesview.h"
+
+// Qt
 #include <QtGui/QLabel>
 #include <QtGui/QLayout>
 #include <QtGui/QPushButton>
 #include <QtCore/QTimer>
-//Added by qt3to4:
 #include <QtGui/QGridLayout>
 #include <QtGui/QBoxLayout>
 
+// KDE
 #include <kapplication.h>
 #include <kbuildsycocaprogressdialog.h>
 #include <kcursor.h>
@@ -19,12 +23,12 @@
 #include <kservicetypeprofile.h>
 #include <kstandarddirs.h>
 #include <kgenericfactory.h>
+#include <ksycoca.h>
 
+// Local
 #include "newtypedlg.h"
 #include "filetypedetails.h"
 #include "filegroupdetails.h"
-#include "filetypesview.h"
-#include <ksycoca.h>
 
 typedef KGenericFactory<FileTypesView> FileTypesViewFactory;
 K_EXPORT_COMPONENT_FACTORY(filetypes, FileTypesViewFactory("filetypes"))

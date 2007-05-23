@@ -1,11 +1,15 @@
 // File khttpoptdlg.cpp by Jacek Konieczny <jajcus@zeus.posl.gliwice.pl>
 // Port to KControl by David Faure <faure@kde.org>
 
+// Own
+#include "khttpoptdlg.h"
+
+// Qt
 #include <QtGui/QLayout> //CT
 
+// KDE
 #include <klocale.h>
 #include <kglobal.h>
-#include "khttpoptdlg.h"
 
 
 KHTTPOptions::KHTTPOptions(KSharedConfig::Ptr config, QString group, const KComponentData &componentData, QWidget *parent)

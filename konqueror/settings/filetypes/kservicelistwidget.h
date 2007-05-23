@@ -49,7 +49,7 @@ class KServiceListWidget : public Q3GroupBox
   Q_OBJECT
 public:
   enum { SERVICELIST_APPLICATIONS, SERVICELIST_SERVICES };
-  KServiceListWidget(int kind, QWidget *parent = 0, const char *name = 0);
+  explicit KServiceListWidget(int kind, QWidget *parent = 0, const char *name = 0);
 
   void setTypeItem( TypesListItem * item );
 

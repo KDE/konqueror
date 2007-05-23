@@ -16,21 +16,25 @@
    Boston, MA 02110-1301, USA.
 */
 
+// Own
+#include "browser.h"
+
+// Qt
 #include <QtGui/QLayout>
 #include <QtGui/QTabWidget>
 #include <QtCore/QFile>
-//Added by qt3to4:
 #include <QtGui/QBoxLayout>
 
+// KDE
 #include <klocale.h>
 #include <kdialog.h>
 #include <fixx11h.h>
 #include <kcmoduleloader.h>
 
+// Local
 #include "behaviour.h"
 #include "fontopts.h"
 #include "previews.h"
-#include "browser.h"
 #include "konqkcmfactory.h"
 
 typedef KonqKcmFactory<KBrowserOptions> KBrowserOptionsFactory;

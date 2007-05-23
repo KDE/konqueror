@@ -17,16 +17,21 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include <kdebug.h>
-
+// Own
 #include "konq_run.h"
-#include "konq_view.h"
+
+// std
+#include <assert.h>
+
+// KDE
+#include <kdebug.h>
 #include <kmessagebox.h>
 #include <klocale.h>
 
+// Local
+#include "konq_view.h"
 #include <konq_historymgr.h>
 
-#include <assert.h>
 
 #define HINT_UTF8	106
 

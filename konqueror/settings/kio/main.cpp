@@ -20,24 +20,29 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
+// Own
+#include "main.h"
+
+// Qt
 #include <QtCore/QFile>
 #include <QtGui/QLabel>
 #include <QtGui/QLayout>
 #include <QtGui/QTabWidget>
 
+// KDE
 #include <kcmoduleloader.h>
 #include <klocale.h>
 #include <kcomponentdata.h>
+#include <kgenericfactory.h>
 
+// Local
 #include "kcookiesmain.h"
 #include "netpref.h"
 #include "smbrodlg.h"
 #include "useragentdlg.h"
 #include "kproxydlg.h"
 #include "cache.h"
-#include <kgenericfactory.h>
 
-#include "main.h"
 
 typedef KGenericFactory<LanBrowser> LanBrowserFactory;
 K_EXPORT_COMPONENT_FACTORY(lanbrowser, LanBrowserFactory("kcmkio"))

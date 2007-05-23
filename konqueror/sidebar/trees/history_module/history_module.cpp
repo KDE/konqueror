@@ -17,9 +17,14 @@
    Boston, MA 02110-1301, USA.
 */
 
+// Own
+#include "history_module.h"
+
+// Qt
 #include <QtGui/QApplication>
 #include <QtGui/QMenu>
 
+// KDE
 #include <kaction.h>
 #include <kactioncollection.h>
 #include <kapplication.h>
@@ -32,12 +37,12 @@
 #include <krun.h>
 #include <kstaticdeleter.h>
 #include <ktoggleaction.h>
+#include <kconfiggroup.h>
 
 #include <konq_faviconmgr.h>
 
-#include "history_module.h"
+// Local
 #include "history_settings.h"
-#include <kconfiggroup.h>
 
 static KStaticDeleter<KonqSidebarHistorySettings> sd;
 KonqSidebarHistorySettings * KonqSidebarHistoryModule::s_settings = 0L;

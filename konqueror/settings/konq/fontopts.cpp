@@ -17,19 +17,22 @@
    Boston, MA 02110-1301, USA.
 */
 
+// Own
+#include "fontopts.h"
+
+// std
 #include <assert.h>
 
+// Qt
 #include <QtGui/QCheckBox>
 #include <QtGui/QLabel>
 #include <QtGui/QLayout>
-
-//Added by qt3to4:
 #include <QtGui/QGridLayout>
 #include <QtGui/QDesktopWidget>
 #include <QtGui/QFontComboBox>
-
 #include <QtDBus/QtDBus>
 
+// KDE
 #include <kapplication.h>
 #include <kcolorbutton.h>
 #include <ksharedconfig.h>
@@ -39,7 +42,7 @@
 #include <kglobalsettings.h>
 #include <konq_defaults.h> // include default values directly from konqueror
 
-#include "fontopts.h"
+// Local
 #include "konqkcmfactory.h"
 
 #ifdef Q_WS_X11

@@ -16,15 +16,20 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
+// Own
+#include "kcmperformance.h"
+
+// Qt
 #include <QtGui/QLayout>
 #include <QtGui/QTabWidget>
 #include <QtGui/QBoxLayout>
 
+// KDE
 #include <klocale.h>
 #include <kdialog.h>
 #include <kgenericfactory.h>
 
-#include "kcmperformance.h"
+// Local
 #include "konqueror.h"
 #include "system.h"
 

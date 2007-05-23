@@ -6,22 +6,24 @@
 // (c) 2001 Waldo Bastian <bastian@kde.org>
 // (c) 2007 Nick Shaforostoff <shafff@ukr.net>
 
-#include <QtGui/QLayout>//CT - 12Nov1998
-#include <QtGui/QGroupBox>
-#include <QtDBus/QDBusMessage>
-#include <QtDBus/QDBusConnection>
-
+// Own
 #include "generalopts.h"
-#include "ui_advancedTabOptions.h"
 
+// Qt
+#include <QtDBus/QDBusConnection>
+#include <QtDBus/QDBusMessage>
+#include <QtGui/QGroupBox>
+#include <QtGui/QLayout>
+
+// KDE
 #include <konq_defaults.h> // include default values directly from konqueror
 #include <kapplication.h>
+#include <kgenericfactory.h>
 
+// Local
+#include "ui_advancedTabOptions.h"
 #include "khtml_settings.h"
 
-#include "generalopts.moc"
-
-#include <kgenericfactory.h>
 typedef KGenericFactory<KKonqGeneralOptions, QWidget> KKonqGeneralOptionsFactory;
 K_EXPORT_COMPONENT_FACTORY( khtml_general, KKonqGeneralOptionsFactory("kcmkonqgeneral") )
 
@@ -125,3 +127,6 @@ void KKonqGeneralOptions::slotChanged()
 {
     emit changed(true);
 }
+
+#include "generalopts.moc"
+
