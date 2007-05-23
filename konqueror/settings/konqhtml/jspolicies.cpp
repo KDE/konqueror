@@ -19,19 +19,21 @@
 
 */
 
+// Own
+#include "jspolicies.h"
+
+// Qt
 #include <Qt3Support/Q3ButtonGroup>
 #include <QtGui/QLabel>
 #include <QtGui/QLayout>
 #include <QtGui/QRadioButton>
-
-//Added by qt3to4:
 #include <QtGui/QGridLayout>
 
+// KDE
 #include <kconfig.h>
 #include <kdebug.h>
 #include <klocale.h>
 
-#include "jspolicies.h"
 
 // == class JSPolicies ==
 

@@ -14,10 +14,14 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-#include <config.h>
 
+// Own
+#include "sidebar_widget.h"
+
+// std
 #include <limits.h>
 
+// Qt
 #include <QtCore/QDir>
 #include <QtGui/QPushButton>
 #include <QtGui/QLayout>
@@ -25,6 +29,7 @@
 #include <QtGui/QSplitter>
 #include <QtGui/QMenu>
 
+// KDE
 #include <klocale.h>
 #include <kconfig.h>
 #include <kstandarddirs.h>
@@ -43,8 +48,9 @@
 #include <kdesktopfile.h>
 #include "konqsidebar.h"
 
-#include "sidebar_widget.h"
-#include "sidebar_widget.moc"
+// Local
+#include <config.h>
+
 
 
 addBackEnd::addBackEnd(QWidget *parent,class QMenu *addmenu,bool universal,const QString &currentProfile, const char *name)
@@ -1273,3 +1279,7 @@ void Sidebar_Widget::userMovedSplitter()
 {
 	m_userMovedSplitter = true;
 }
+
+
+#include "sidebar_widget.moc"
+

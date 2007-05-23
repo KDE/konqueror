@@ -18,17 +18,22 @@
 
 // Behaviour options for konqueror
 
+// Own
+#include "behaviour.h"
+
+// Qt
 #include <QtDBus/QtDBus>
 #include <QtGui/QCheckBox>
 #include <QtGui/QLayout>
 #include <QtGui/QLabel>
 
+// KDE
 #include <konq_defaults.h>
 #include <kstandarddirs.h>
 #include <kurlrequester.h>
 
+// Local
 #include "konqkcmfactory.h"
-#include "behaviour.h"
 
 typedef KonqKcmFactory<KBehaviourOptions> KBehaviourOptionsFactory;
 K_EXPORT_COMPONENT_FACTORY(behavior, KBehaviourOptionsFactory)

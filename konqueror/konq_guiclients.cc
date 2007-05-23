@@ -17,6 +17,10 @@
    Boston, MA 02110-1301, USA.
 */
 
+// Own
+#include "konq_guiclients.h"
+
+// KDE
 #include <kdebug.h>
 #include <kicon.h>
 #include <kiconloader.h>
@@ -25,10 +29,10 @@
 #include <kactioncollection.h>
 #include <kservicetypetrader.h>
 
+// Local
 #include "konq_view.h"
 #include "konq_settingsxt.h"
 #include "konq_frame.h"
-#include "konq_guiclients.h"
 #include "konq_viewmgr.h"
 
 PopupMenuGUIClient::PopupMenuGUIClient( KonqMainWindow *mainWindow,

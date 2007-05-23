@@ -18,12 +18,24 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "konq_listview.h"
-#include "konq_listviewsettings.h"
+// Own
 #include "konq_listviewwidget.h"
-#include <konq_filetip.h>
-#include <konq_settings.h>
 
+// std
+#include <stdlib.h>
+#include <assert.h>
+
+// Qt
+#include <Qt3Support/Q3Header>
+#include <QtGui/QPainter>
+#include <QtGui/QStyle>
+#include <QtCore/QTimer>
+#include <QtCore/QEvent>
+#include <QtGui/QCursor>
+#include <QtGui/QDrag>
+
+
+// KDE
 #include <kdebug.h>
 #include <kdirlister.h>
 #include <kiconloader.h>
@@ -33,18 +45,13 @@
 #include <kmessagebox.h>
 #include <ktoggleaction.h>
 
-#include <Qt3Support/Q3Header>
-#include <QtGui/QPainter>
-#include <QtGui/QStyle>
-#include <QtCore/QTimer>
-#include <QtCore/QEvent>
-#include <QtGui/QCursor>
-
-#include <QtGui/QDrag>
-
-#include <stdlib.h>
-#include <assert.h>
+// Local
+#include "konq_listview.h"
+#include "konq_listviewsettings.h"
+#include <konq_filetip.h>
+#include <konq_settings.h>
 #include <konqmimedata.h>
+
 
 ColumnInfo::ColumnInfo()
    :displayInColumn(-1)

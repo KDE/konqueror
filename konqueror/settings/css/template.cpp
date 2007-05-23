@@ -1,12 +1,10 @@
 
-
-#include <QtCore/QFile>
-//Added by qt3to4:
-#include <QtCore/QTextStream>
-
-
+// Own
 #include "template.h"
 
+// Qt
+#include <QtCore/QFile>
+#include <QtCore/QTextStream>
 
 bool CSSTemplate::expand(QString destname, const QMap<QString,QString> &dict)
 {

@@ -32,7 +32,9 @@ public:
      * @param value is the initial service to select (not implemented currently)
      * @param parent parent widget
      */
-    KServiceSelectDlg( const QString& serviceType, const QString& value = QString(), QWidget *parent = 0L );
+    explicit KServiceSelectDlg( const QString& serviceType, 
+                                const QString& value = QString(), 
+                                QWidget *parent = 0L );
 
     ~KServiceSelectDlg();
 

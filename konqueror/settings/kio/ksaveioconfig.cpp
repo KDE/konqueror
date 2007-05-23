@@ -17,14 +17,18 @@
    Boston, MA 02110-1301, USA.
 */
 
+// Own
+#include "ksaveioconfig.h"
+
+// Qt
+#include <QtDBus/QtDBus>
+
+// KDE
 #include <kconfig.h>
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <kstaticdeleter.h>
 #include <kio/ioslave_defaults.h>
-#include <QtDBus/QtDBus>
-
-#include "ksaveioconfig.h"
 
 class KSaveIOConfigPrivate
 {

@@ -1,17 +1,19 @@
 
-#include <QtGui/QLayout>
-#include <QtGui/QLabel>
+// Own
+#include "newtypedlg.h"
 
-#include <QtGui/QComboBox>
-//Added by qt3to4:
+// Qt
 #include <QtGui/QBoxLayout>
+#include <QtGui/QComboBox>
 #include <QtGui/QFrame>
 #include <QtGui/QGridLayout>
+#include <QtGui/QLabel>
+#include <QtGui/QLayout>
 
-#include <klocale.h>
+// KDE
 #include <klineedit.h>
+#include <klocale.h>
 
-#include "newtypedlg.h"
 
 NewTypeDialog::NewTypeDialog(QStringList groups,
 			     QWidget *parent, const char *name)

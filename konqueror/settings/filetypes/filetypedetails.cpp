@@ -1,22 +1,28 @@
-#include <fixx11h.h>
-#include <QtGui/QCheckBox>
-#include <QtGui/QLayout>
-#include <QtGui/QRadioButton>
-#include <QtGui/QListWidget>
-#include <QtGui/QBoxLayout>
-#include <QtGui/QGridLayout>
-#include <QtGui/QButtonGroup>
 
+// Own
+#include "filetypedetails.h"
+
+// Qt
+#include <QtGui/QBoxLayout>
+#include <QtGui/QButtonGroup>
+#include <QtGui/QCheckBox>
+#include <QtGui/QGridLayout>
+#include <QtGui/QLayout>
+#include <QtGui/QListWidget>
+#include <QtGui/QRadioButton>
+#include <fixx11h.h>
+
+// KDE
 #include <kapplication.h>
 #include <kconfig.h>
 #include <kdebug.h>
 #include <kicondialog.h>
-#include <klineedit.h>
 #include <kinputdialog.h>
+#include <klineedit.h>
 #include <klocale.h>
 
+// Local
 #include "kservicelistwidget.h"
-#include "filetypedetails.h"
 #include "typeslistitem.h"
 
 FileTypeDetails::FileTypeDetails( QWidget * parent )

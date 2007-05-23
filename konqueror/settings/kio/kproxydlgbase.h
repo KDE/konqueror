@@ -52,7 +52,7 @@ private:
 class KProxyDialogBase : public KDialog
 {
 public:
-  KProxyDialogBase( QWidget* parent = 0, const char* name = 0,
+  explicit KProxyDialogBase( QWidget* parent = 0, const char* name = 0,
                     bool modal = false, const QString &caption = QString());
 
   virtual ~KProxyDialogBase() {}

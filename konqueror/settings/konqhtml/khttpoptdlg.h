@@ -9,7 +9,7 @@
 
 #include <kcmodule.h>
 #include <kconfig.h>
-
+#include <ksharedconfig.h>
 
 /**
 *  Dialog for configuring HTTP Options like charset and language negotiation

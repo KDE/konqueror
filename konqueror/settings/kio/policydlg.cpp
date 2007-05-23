@@ -16,18 +16,20 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
+// Own
+#include "policydlg.h"
+
+// Qt
 #include <QtGui/QPushButton>
 #include <QtGui/QWhatsThis>
 #include <QtGui/QLayout>
 #include <QtGui/QLabel>
 #include <QtGui/QValidator>
 
+// KDE
 #include <klineedit.h>
 #include <kcombobox.h>
 #include <klocale.h>
-
-#include "policydlg.h"
-
 
 class DomainLineValidator : public QValidator
 {

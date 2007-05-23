@@ -17,24 +17,28 @@
     Boston, MA 02110-1301, USA.
 */
 
-#include <khbox.h>
+// Own
+#include "kcustommenueditor.h"
+
+// Qt
+#include <QtCore/QDir>
 #include <QtCore/QRegExp>
 #include <QtGui/QImage>
 #include <QtGui/QPushButton>
-#include <QtCore/QDir>
 
-#include <kdialogbuttonbox.h>
-#include <klocale.h>
-#include <kglobal.h>
-#include <kiconloader.h>
+// KDE
 #include <k3listview.h>
-#include <kservice.h>
-#include <kconfiggroup.h>
-#include <kstandarddirs.h>
 #include <kconfigbase.h>
+#include <kconfiggroup.h>
+#include <kdialogbuttonbox.h>
+#include <kglobal.h>
+#include <khbox.h>
+#include <kiconloader.h>
+#include <klocale.h>
 #include <kopenwithdialog.h>
+#include <kservice.h>
+#include <kstandarddirs.h>
 
-#include "kcustommenueditor.h"
 
 class KCustomMenuEditor::Item : public Q3ListViewItem
 {

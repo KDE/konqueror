@@ -1,19 +1,23 @@
+
+// Own
+#include "netpref.h"
+
+// Qt
 #include <QtGui/QLayout>
 #include <QtGui/QCheckBox>
-
 #include <Qt3Support/Q3GroupBox>
-//Added by qt3to4:
 #include <QtGui/QBoxLayout>
 
+// KDE
 #include <kio/ioslave_defaults.h>
 #include <knuminput.h>
 #include <klocale.h>
 #include <kdialog.h>
 #include <kconfig.h>
-
-#include "ksaveioconfig.h"
-#include "netpref.h"
 #include <kgenericfactory.h>
+
+// Local
+#include "ksaveioconfig.h"
 
 #define MAX_TIMEOUT_VALUE  3600
 

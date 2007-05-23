@@ -19,6 +19,7 @@
 #define FILTEROPTS_H
 
 #include <kcmodule.h>
+#include <ksharedconfig.h>
 
 class QListWidget;
 class QPushButton;

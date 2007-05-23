@@ -1,10 +1,13 @@
 
+// Own
+#include "history_settings.h"
+
+// KDE
 #include <kapplication.h>
 #include <kconfig.h>
 #include <ksharedconfig.h>
 #include <kglobal.h>
 
-#include "history_settings.h"
 
 KonqSidebarHistorySettings::KonqSidebarHistorySettings( QObject *parent )
     : QObject( parent )

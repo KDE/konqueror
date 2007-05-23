@@ -16,30 +16,34 @@
    Boston, MA 02110-1301, USA.
 */
 
+// Own
+#include "bookmark_module.h"
+
+// Qt
+#include <QtCore/QList>
 #include <QtGui/QClipboard>
 #include <QtGui/QCursor>
-#include <QtGui/QMenu>
-//Added by qt3to4:
 #include <QtGui/QGridLayout>
 #include <QtGui/QKeyEvent>
 #include <QtGui/QLabel>
-#include <QtCore/QList>
+#include <QtGui/QMenu>
 
+// KDE
+#include <k3bookmarkdrag.h>
 #include <kaction.h>
 #include <kactioncollection.h>
 #include <kapplication.h>
 #include <kbookmark.h>
-#include <k3bookmarkdrag.h>
+#include <kdebug.h>
 #include <kicon.h>
 #include <kiconloader.h>
 #include <klineedit.h>
 #include <kmessagebox.h>
 #include <kstandardaction.h>
 
-#include "bookmark_module.h"
+// Local
 #include "bookmark_item.h"
 #include <konqbookmarkmanager.h>
-#include <kdebug.h>
 
 KonqSidebarBookmarkModule::KonqSidebarBookmarkModule( KonqSidebarTree * parentTree )
     : QObject( 0L ), KonqSidebarTreeModule( parentTree ),

@@ -11,21 +11,24 @@
 // Big changes to accommodate per-domain settings
 // (c) Leo Savernik 2002-2003
 
+// Own
+#include "jsopts.h"
+
+// Qt
 #include <QtGui/QLayout>
 #include <Qt3Support/Q3GroupBox>
+
+// KDE
 #include <kconfig.h>
 #include <k3listview.h>
 #include <kdebug.h>
 #include <kurlrequester.h>
+#include <klocale.h>
 
+// Local
 #include "htmlopts.h"
 #include "policydlg.h"
 
-#include <klocale.h>
-
-#include "jsopts.h"
-
-#include "jsopts.moc"
 
 #if defined Q_WS_X11 && !defined K_WS_QTONLY
 #include <X11/Xlib.h>
@@ -232,4 +235,5 @@ JSPolicies *JSDomainListView::copyPolicies(Policies *pol) {
   return new JSPolicies(*static_cast<JSPolicies *>(pol));
 }
 
+#include "jsopts.moc"
 

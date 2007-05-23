@@ -19,14 +19,19 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
+// Own
+#include "filteropts.h"
+
+// std
 #include <unistd.h>
 
+// Qt
 #include <QtGui/QLayout>
 #include <QtGui/QLabel>
 
+// KDE
 #include <klocale.h>
 
-#include "filteropts.h"
 
 FilterOptions::FilterOptions(const KComponentData &componentData, QWidget *parent)
     		  :KCModule(componentData, parent)

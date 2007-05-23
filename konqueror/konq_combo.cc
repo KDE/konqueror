@@ -17,11 +17,17 @@
    Boston, MA 02110-1301, USA.
 */
 
+// Own
+#include "konq_combo.h"
+
+// Qt
 #include <QtGui/QPainter>
 #include <QtGui/QStyle>
 #include <QtGui/QPixmap>
 #include <QtGui/QKeyEvent>
 #include <QtCore/QEvent>
+
+// KDE
 #include <kapplication.h>
 #include <kconfig.h>
 #include <kconfiggroup.h>
@@ -35,8 +41,8 @@
 #include <konq_mainwindow.h>
 #include <kstringhandler.h>
 
+// Local
 #include "konq_view.h"
-#include "konq_combo.h"
 #include "KonquerorAdaptor.h"
 #include "konqueror_interface.h"
 

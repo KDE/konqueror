@@ -19,10 +19,13 @@
 
 */
 
+// Own
+#include "policies.h"
+
+// KDE
 #include <ksharedconfig.h>
 #include <kdebug.h>
 
-#include "policies.h"
 
 // == class Policies ==
 

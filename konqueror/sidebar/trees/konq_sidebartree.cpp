@@ -176,7 +176,7 @@ KonqSidebarTree::KonqSidebarTree( KonqSidebar_Tree *parent, QWidget *parentWidge
 
     if (virt==VIRT_Folder)
 		{
-		  m_dirtreeDir.dir.setPath(KGlobal::dirs()->saveLocation("data","konqsidebartng/virtual_folders/"+path+"/"));
+		  m_dirtreeDir.dir.setPath(KGlobal::dirs()->saveLocation("data","konqsidebartng/virtual_folders/"+path+'/'));
 		  m_dirtreeDir.relDir=path;
 		}
 	else
@@ -641,7 +641,7 @@ void KonqSidebarTree::scanDir( KonqSidebarTreeItem *parent, const QString &path,
         if (copyConfig)
         {
             // We will copy over the configuration for the dirtree, from the global directory
-            QStringList dirtree_dirs = KGlobal::dirs()->findDirs("data","konqsidebartng/virtual_folders/"+m_dirtreeDir.relDir+"/");
+            QStringList dirtree_dirs = KGlobal::dirs()->findDirs("data","konqsidebartng/virtual_folders/"+m_dirtreeDir.relDir+'/');
 
 
 //            QString dirtree_dir = KGlobal::dirs()->findDirs("data","konqsidebartng/virtual_folders/"+m_dirtreeDir.relDir+"/").last();  // most global
@@ -677,7 +677,7 @@ void KonqSidebarTree::scanDir( KonqSidebarTreeItem *parent, const QString &path,
 	                    { // we don't have that one yet -> copy it.
                 	        QString cp("cp -R -- ");
         	                cp += K3Process::quote(dirtree_dir + *eIt);
-	                        cp += " ";
+	                        cp += ' ';
         	                cp += K3Process::quote(path);
                 	        kDebug(1201) << "KonqSidebarTree::scanDir executing " << cp << endl;
                         	::system( QFile::encodeName(cp) );
@@ -1004,7 +1004,7 @@ void KonqSidebarTree::slotCreateFolder()
             path = m_dirtreeDir.dir.path();
 
         if (!path.endsWith("/"))
-            path += "/";
+            path += '/';
 
         path = path + name;
 

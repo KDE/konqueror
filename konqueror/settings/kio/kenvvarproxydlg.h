@@ -40,7 +40,7 @@ class KEnvVarProxyDlg : public KProxyDialogBase
     Q_OBJECT
 
 public:
-    KEnvVarProxyDlg( QWidget* parent = 0, const char* name = 0 );
+    explicit KEnvVarProxyDlg( QWidget* parent = 0, const char* name = 0 );
     ~KEnvVarProxyDlg();
 
     virtual const KProxyData data() const;

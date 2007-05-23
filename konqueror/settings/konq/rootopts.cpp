@@ -12,42 +12,46 @@
 // Desktop menus, paths
 // (c) David Faure 2000
 
-#include <config.h>
 
+// Own
+#include "rootopts.h"
+
+// Qt
 #include <QtGui/QCheckBox>
 #include <QtGui/QComboBox>
 #include <QtGui/QLabel>
 #include <QtGui/QLayout>
-
-//Added by qt3to4:
 #include <QtGui/QGridLayout>
 #include <QtGui/QDesktopWidget>
-
 #include <QtDBus/QtDBus>
 
+// KDE
+#include <k3listview.h>
 #include <kapplication.h>
+#include <kconfiggroup.h>
 #include <kcustommenueditor.h>
 #include <kdebug.h>
 #include <kfileitem.h>
 #include <kglobalsettings.h>
-#include <k3listview.h>
-#include <kio/job.h>
 #include <kio/copyjob.h>
 #include <kio/deletejob.h>
+#include <kio/job.h>
 #include <kio/jobuidelegate.h>
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <kmimetype.h>
-#include <kstandarddirs.h>
 #include <konq_defaults.h> // include default values directly from libkonq
+#include <kstandarddirs.h>
 #include <kurlrequester.h>
-#include <kconfiggroup.h>
 
-#include "rootopts.h"
 #include "konqkcmfactory.h"
 #ifdef Q_WS_X11
 #include "kdesktop_interface.h"
 #endif
+
+// Local
+#include <config.h>
+
 //-----------------------------------------------------------------------------
 
 typedef KonqKcmFactory<DesktopPathConfig> DesktopPathConfigFactory;

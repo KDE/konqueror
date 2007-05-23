@@ -24,7 +24,9 @@
 
 #include <Qt3Support/Q3GroupBox>
 #include <QtCore/QMap>
+
 #include <kconfig.h>
+#include <ksharedconfig.h>
 
 class Q3ListViewItem;
 class QPushButton;

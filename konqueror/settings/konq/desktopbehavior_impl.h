@@ -39,7 +39,7 @@ class DesktopBehavior : public DesktopBehaviorBase
 {
         Q_OBJECT
 public:
-        DesktopBehavior(KSharedConfig::Ptr config, QWidget *parent = 0);
+        explicit DesktopBehavior(KSharedConfig::Ptr config, QWidget *parent = 0);
         virtual void load();
         virtual void save();
         virtual void defaults();

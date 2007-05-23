@@ -47,7 +47,7 @@ class KPreviewOptions : public KCModule
 {
     Q_OBJECT
 public:
-    KPreviewOptions( QWidget *parent, const QStringList &args = QStringList() );
+    explicit KPreviewOptions( QWidget *parent, const QStringList &args = QStringList() );
     virtual void load();
     virtual void save();
     virtual void defaults();

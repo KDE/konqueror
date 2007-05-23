@@ -20,9 +20,11 @@
 #ifndef __konq_guiclients_h__
 #define __konq_guiclients_h__
 
-#include <kxmlguiclient.h>
 #include <QtCore/QObject>
 #include <QtCore/QHash>
+#include <QtXml/QDomDocument>
+
+#include <kxmlguiclient.h>
 #include <kservice.h>
 
 class QAction;

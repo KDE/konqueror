@@ -45,7 +45,7 @@ public:
         EntryContextMenu  = 2
     };
 
-    KonqSidebarHistoryModule( KonqSidebarTree * parentTree, const char * name = 0 );
+    explicit KonqSidebarHistoryModule( KonqSidebarTree * parentTree, const char * name = 0 );
     virtual ~KonqSidebarHistoryModule();
 
     virtual void addTopLevelItem( KonqSidebarTreeTopLevelItem * item );

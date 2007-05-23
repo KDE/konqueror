@@ -19,24 +19,31 @@
 
 */
 
-#include <kparts/factory.h>
+// Own
 #include "konq_factory.h"
-#include "version.h"
 
-#include <konq_view.h>
-#include <konq_settings.h>
-#include <konq_mainwindow.h>
-#include <kdebug.h>
-#include <kaboutdata.h>
-#include <klocale.h>
-#include <kmessagebox.h>
-#include <kmimetypetrader.h> 
-#include <kservicetypetrader.h>
+// std
+#include <assert.h>
 
+// Qt
 #include <QtGui/QWidget>
 #include <QtCore/QFile>
 
-#include <assert.h>
+// KDE
+#include <kaboutdata.h>
+#include <kdebug.h>
+#include <klocale.h>
+#include <kmessagebox.h>
+#include <kmimetypetrader.h> 
+#include <kparts/factory.h>
+#include <kservicetypetrader.h>
+
+// Local
+#include "version.h"
+#include <konq_view.h>
+#include <konq_settings.h>
+#include <konq_mainwindow.h>
+
 
 KAboutData *KonqFactory::s_aboutData = 0;
 

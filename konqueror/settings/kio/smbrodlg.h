@@ -27,6 +27,7 @@
 
 #include <kcmodule.h>
 
+class KComponentData;
 class KComboBox;
 
 class SMBRoOptions : public KCModule

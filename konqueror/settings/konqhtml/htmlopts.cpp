@@ -5,29 +5,31 @@
 // (c) David Faure 1998
 // (c) 2001 Waldo Bastian <bastian@kde.org>
 
-#include <QtGui/QLayout>//CT - 12Nov1998
+// Own
+#include "htmlopts.h"
+
+// Qt
+#include <QtGui/QLayout>
 #include <Qt3Support/Q3GroupBox>
 #include <QtGui/QLabel>
 #include <QtGui/QPushButton>
 #include <QtDBus/QDBusMessage>
 #include <QtDBus/QDBusConnection>
 
-#include "htmlopts.h"
-
+// KDE
 #include <konq_defaults.h> // include default values directly from konqueror
 #include <kglobalsettings.h> // get default for DEFAULT_CHANGECURSOR
 #include <klocale.h>
 #include <kdialog.h>
 #include <knuminput.h>
 #include <kseparator.h>
-
 #include <kapplication.h>
+#include <kgenericfactory.h>
 
+// Local
 #include "khtml_settings.h"
 
-#include "htmlopts.moc"
 
-#include <kgenericfactory.h>
 typedef KGenericFactory<KMiscHTMLOptions, QWidget> KMiscHTMLOptionsFactory;
 K_EXPORT_COMPONENT_FACTORY( khtml_behavior, KMiscHTMLOptionsFactory("kcmkonqhtml") )
 
@@ -366,4 +368,6 @@ void KMiscHTMLOptions::slotChanged()
     m_pMaxFormCompletionItems->setEnabled( m_pFormCompletionCheckBox->isChecked() );
     emit changed(true);
 }
+
+#include "htmlopts.moc"
 

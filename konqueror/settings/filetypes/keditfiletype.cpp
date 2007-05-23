@@ -15,12 +15,14 @@
    the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
    Boston, MA 02110-1301, USA.
 */
-#include "filetypedetails.h"
-#include "typeslistitem.h"
+
+// Own
 #include "keditfiletype.h"
 
+// Qt
 #include <QtCore/QFile>
 
+// KDE
 #include <kapplication.h>
 #include <kaboutdata.h>
 #include <kbuildsycocaprogressdialog.h>
@@ -31,7 +33,12 @@
 #include <kstandarddirs.h>
 #include <klocale.h>
 
-#ifdef Q_WS_X11
+// Local
+#include "filetypedetails.h"
+#include "typeslistitem.h"
+
+
+#if defined Q_WS_X11
 #include <QX11Info>
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
@@ -191,3 +198,4 @@ int main(int argc, char ** argv)
 
   return app.exec();
 }
+

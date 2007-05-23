@@ -22,27 +22,30 @@
    Boston, MA 02110-1301, USA.
 */
 
+// Own
+#include "useragentdlg.h"
+
+// Qt
 #include <QtGui/QLayout>
 #include <QtGui/QCheckBox>
 #include <QtGui/QLineEdit>
-
 #include <QtGui/QPushButton>
-//Added by qt3to4:
 #include <QtGui/QBoxLayout>
 
+// KDE
 #include <kdebug.h>
 #include <kconfig.h>
 #include <klocale.h>
 #include <k3listview.h>
 #include <kmessagebox.h>
 #include <kio/http_slave_defaults.h>
+#include <kgenericfactory.h>
 
+// Local
 #include "ksaveioconfig.h"
 #include "fakeuaprovider.h"
 #include "uagentproviderdlg.h"
 
-#include "useragentdlg.h"
-#include <kgenericfactory.h>
 
 typedef KGenericFactory<UserAgentDlg> UserAgentDlgFactory;
 K_EXPORT_COMPONENT_FACTORY(useragent, UserAgentDlgFactory("kcmkio"))

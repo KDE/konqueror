@@ -27,6 +27,7 @@
 #define __MAIN_H__
 
 #include <kcmodule.h>
+#include <ksharedconfig.h>
 
 class KJavaOptions;
 class KJavaScriptOptions;

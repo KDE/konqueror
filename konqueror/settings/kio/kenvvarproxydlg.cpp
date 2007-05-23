@@ -19,21 +19,24 @@
    Boston, MA 02110-1301, USA.
 */
 
+// Local
+#include "kenvvarproxydlg.h"
+
+// std
 #include <stdlib.h>
 
+// Qt
 #include <QtGui/QLabel>
 #include <QtGui/QLayout>
 #include <QtGui/QCheckBox>
 #include <QtGui/QPushButton>
 
+// KDE
 #include <kdebug.h>
 #include <klocale.h>
 #include <klineedit.h>
 #include <kmessagebox.h>
 #include <kurl.h>
-
-#include "kenvvarproxydlg.h"
-
 
 #define ENV_FTP_PROXY     "FTP_PROXY,ftp_proxy,FTPPROXY,ftpproxy,PROXY,proxy"
 #define ENV_HTTP_PROXY    "HTTP_PROXY,http_proxy,HTTPPROXY,httpproxy,PROXY,proxy"

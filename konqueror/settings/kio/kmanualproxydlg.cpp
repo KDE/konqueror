@@ -19,25 +19,29 @@
    Boston, MA 02110-1301, USA.
 */
 
+// Own
+#include "kmanualproxydlg.h"
+
+// Qt
+#include <QtGui/QCheckBox>
 #include <QtGui/QLabel>
 #include <QtGui/QLayout>
-#include <QtGui/QSpinBox>
-#include <QtGui/QCheckBox>
 #include <QtGui/QPushButton>
+#include <QtGui/QSpinBox>
 
+// KDE
 #include <kdebug.h>
-#include <klocale.h>
-#include <knuminput.h>
-#include <klistwidget.h>
-#include <klineedit.h>
-#include <kicontheme.h>
-#include <kurifilter.h>
-#include <kmessagebox.h>
 #include <kiconloader.h>
+#include <kicontheme.h>
 #include <kinputdialog.h>
 #include <kio/ioslave_defaults.h>
+#include <klineedit.h>
+#include <klistwidget.h>
+#include <klocale.h>
+#include <kmessagebox.h>
+#include <knuminput.h>
+#include <kurifilter.h>
 
-#include "kmanualproxydlg.h"
 
 
 KManualProxyDlg::KManualProxyDlg( QWidget* parent, const char* name )

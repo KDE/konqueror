@@ -17,14 +17,19 @@
     Boston, MA 02110-1301, USA.
 */
 
+// Own
+#include "kshellcmddialog.h"
+
+// Qt
 #include <QtGui/QLayout>
 #include <QtGui/QLabel>
 
+// KDE
 #include <klocale.h>
 #include <KStandardGuiItem>
 #include <kpushbutton.h>
 
-#include "kshellcmddialog.h"
+// Local
 #include "kshellcmdexecutor.h"
 
 KShellCommandDialog::KShellCommandDialog(const QString& title, const QString& command, QWidget* parent, bool modal)

@@ -23,26 +23,29 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
+// Own
+#include "kcookiespolicies.h"
+
+// Qt
 #include <QtGui/QLayout>
 #include <QtGui/QCheckBox>
 #include <QtGui/QPushButton>
 #include <QtGui/QRadioButton>
 #include <QtGui/QToolButton>
-//Added by qt3to4:
 #include <QtGui/QBoxLayout>
 #include <QtDBus/QtDBus>
-#include <QtCore/QUrl>
 
+// KDE
 #include <kiconloader.h>
 #include <kmessagebox.h>
 #include <k3listview.h>
 #include <k3listviewsearchline.h>
 #include <klocale.h>
 #include <kconfig.h>
+#include <kurl.h>
 
 #include "ksaveioconfig.h"
 
-#include "kcookiespolicies.h"
 
 KCookiesPolicies::KCookiesPolicies(const KComponentData &componentData, QWidget *parent)
                  :KCModule(componentData, parent)
@@ -118,7 +121,7 @@ void KCookiesPolicies::addNewPolicy(const QString& domain)
 
   if (pdlg.exec() && !pdlg.domain().isEmpty())
   {
-    QString domain = QUrl::fromAce(pdlg.domain().toLatin1());
+    QString domain = KUrl::fromAce(pdlg.domain().toLatin1());
     int advice = pdlg.advice();
 
     if ( !handleDuplicate(domain, advice) )
@@ -153,7 +156,7 @@ void KCookiesPolicies::changePressed()
 
   if( pdlg.exec() && !pdlg.domain().isEmpty())
   {
-    QString newDomain = QUrl::fromAce(pdlg.domain().toLatin1());
+    QString newDomain = KUrl::fromAce(pdlg.domain().toLatin1());
     int advice = pdlg.advice();
     if (newDomain == oldDomain || !handleDuplicate(newDomain, advice))
     {
@@ -254,7 +257,7 @@ void KCookiesPolicies::updateDomainList(const QStringList &domainConfig)
 
     if (!domain.isEmpty())
     {
-        Q3ListViewItem* index = new Q3ListViewItem( dlg->lvDomainPolicy, QUrl::fromAce(domain.toLatin1()),
+        Q3ListViewItem* index = new Q3ListViewItem( dlg->lvDomainPolicy, KUrl::fromAce(domain.toLatin1()),
                                                   i18n(KCookieAdvice::adviceToStr(advice)) );
         m_pDomainPolicy[index] = KCookieAdvice::adviceToStr(advice);
     }
@@ -391,7 +394,7 @@ void KCookiesPolicies::save()
 
   while( at )
   {
-    domainConfig.append(QString::fromLatin1("%1:%2").arg(QString(QUrl::toAce(at->text(0)))).arg(m_pDomainPolicy[at]));
+    domainConfig.append(QString::fromLatin1("%1:%2").arg(QString(KUrl::toAce(at->text(0)))).arg(m_pDomainPolicy[at]));
     at = at->nextSibling();
   }
 

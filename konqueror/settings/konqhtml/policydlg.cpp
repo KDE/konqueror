@@ -2,16 +2,20 @@
 // (C) 2002 Leo Savernik <l.savernik@aon.at>
 //	Generalizing the policy dialog
 
+// Own
+#include "policydlg.h"
+
+// Qt
 #include <QtGui/QLayout>
 #include <QtGui/QLabel>
 #include <QtGui/QComboBox>
+#include <QtGui/QPushButton>
 
+// KDE
 #include <klocale.h>
 #include <kmessagebox.h>
 
-#include <QtGui/QPushButton>
-
-#include "policydlg.h"
+// Local
 #include "policies.h"
 
 PolicyDialog::PolicyDialog( Policies *policies, QWidget *parent, const char *name )
@@ -129,7 +133,7 @@ void PolicyDialog::accept()
     } else {
       policies->setFeatureEnabled(true);
     }
-    QDialog::accept();
+    KDialog::accept();
 }
 
 #include "policydlg.moc"

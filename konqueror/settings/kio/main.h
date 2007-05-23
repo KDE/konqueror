@@ -21,6 +21,11 @@
 #ifndef MYMAIN_H
 #define MYMAIN_H
 
+// Qt
+#include <QtGui/QTabWidget>
+#include <QtGui/QVBoxLayout>
+
+// KDE
 #include <kcmodule.h>
 #include <kglobal.h>
 
