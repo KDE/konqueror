@@ -26,8 +26,8 @@
 #include <QtGui/QCheckBox>
 
 #include <kcmodule.h>
+#include <kcomponentdata.h>
 
-class KComponentData;
 class KComboBox;
 
 class SMBRoOptions : public KCModule
