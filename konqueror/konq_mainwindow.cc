@@ -1655,7 +1655,7 @@ void KonqMainWindow::slotViewModeToggle( bool toggle )
       if ( m_currentView->isBuiltinView() )
       {
           KonqSettings::setMainViewViewMode( modeName );
-          KonqSettings::writeConfig();
+          KonqSettings::self()->writeConfig();
       }
   }
 }
@@ -1678,7 +1678,7 @@ void KonqMainWindow::showHTML( KonqView * _view, bool b, bool _activateView )
   } else
   {
       KonqSettings::setHtmlAllowed( b );
-      KonqSettings::writeConfig();
+      KonqSettings::self()->writeConfig();
       if ( _activateView )
           m_bHTMLAllowed = b;
   }
@@ -2823,7 +2823,7 @@ void KonqMainWindow::slotSaveViewPropertiesLocally()
   m_bSaveViewPropertiesLocally = !m_bSaveViewPropertiesLocally;
   // And this is a main-view setting, so save it
   KonqSettings::setSaveViewPropertiesLocally( m_bSaveViewPropertiesLocally );
-  KonqSettings::writeConfig();
+  KonqSettings::self()->writeConfig();
   // Now tell the views
   MapViews::ConstIterator it = m_mapViews.begin();
   MapViews::ConstIterator end = m_mapViews.end();
@@ -3198,7 +3198,7 @@ void KonqMainWindow::slotCompletionModeChanged( KGlobalSettings::Completion m )
   s_pCompletion->setCompletionMode( m );
 
   KonqSettings::setSettingsCompletionMode( (int)m_combo->completionMode() );
-  KonqSettings::writeConfig();
+  KonqSettings::self()->writeConfig();
 
   // tell the other windows too (only this instance currently)
   foreach ( KonqMainWindow* window, *s_lstViews ) {
