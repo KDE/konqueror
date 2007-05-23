@@ -112,8 +112,12 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
 
   QRadioButton *embViewerRadio = new QRadioButton( i18n("Show file in embedded viewer") );
   QRadioButton *sepViewerRadio = new QRadioButton( i18n("Show file in separate viewer") );
+  QButtonGroup *buttonGroup = new QButtonGroup;
+  buttonGroup->addButton(embViewerRadio,0);
+  buttonGroup->addButton( sepViewerRadio,1);
   m_rbGroupSettings = new QRadioButton( QString("Use settings for '%1' group") );
-  connect(m_autoEmbedBox, SIGNAL( clicked( int ) ), SLOT( slotAutoEmbedClicked( int ) ));
+  buttonGroup->addButton(m_rbGroupSettings,2);
+  connect(buttonGroup, SIGNAL( buttonClicked( int ) ), SLOT( slotAutoEmbedClicked( int ) ));
 
   m_chkAskSave = new QCheckBox( i18n("Ask whether to save to disk instead") );
   connect(m_chkAskSave, SIGNAL( toggled(bool) ), SLOT( slotAskSaveToggled(bool) ));
