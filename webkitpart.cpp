@@ -32,10 +32,8 @@
 WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList &/*args*/)
     : KParts::ReadOnlyPart(parent)
 {
-    // ####
-    QWebNetworkInterface::setDefaultInterface(new KWebNetworkInterface);
-
     webPage = new QWebPage(parentWidget);
+    webPage->setNetworkInterface(new KWebNetworkInterface(this));
     setWidget(webPage);
 
     connect(webPage, SIGNAL(loadStarted(QWebFrame *)),
@@ -49,6 +47,10 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
 
     connect(webPage, SIGNAL(loadProgressChanged(int)),
             browserExtension, SIGNAL(loadingProgress(int)));
+}
+
+WebKitPart::~WebKitPart()
+{
 }
 
 bool WebKitPart::openUrl(const KUrl &url)

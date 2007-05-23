@@ -27,7 +27,8 @@
 Q_DECLARE_METATYPE(QWebNetworkJob *);
 Q_DECLARE_METATYPE(KJob *);
 
-KWebNetworkInterface::KWebNetworkInterface()
+KWebNetworkInterface::KWebNetworkInterface(QObject *parent)
+    : QWebNetworkInterface(parent)
 {
 }
 

@@ -29,12 +29,14 @@ class QWebPage;
 class QWebFrame;
 class KAboutData;
 class WebKitBrowserExtension;
+class KWebNetworkInterface;
 
 class WebKitPart : public KParts::ReadOnlyPart
 {
     Q_OBJECT
 public:
     WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList &/*args*/);
+    ~WebKitPart();
 
     virtual bool openUrl(const KUrl &url);
     virtual bool closeUrl();

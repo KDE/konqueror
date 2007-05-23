@@ -35,7 +35,7 @@ class KWebNetworkInterface : public QWebNetworkInterface
 {
     Q_OBJECT
 public:
-    KWebNetworkInterface();
+    KWebNetworkInterface(QObject *parent);
 
     virtual void addJob(QWebNetworkJob *job);
     virtual void cancelJob(QWebNetworkJob *job);
