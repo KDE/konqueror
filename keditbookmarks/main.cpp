@@ -62,7 +62,7 @@ static KCmdLineOptions options[] = {
 };
 
 // TODO - make this register() or something like that and move dialog into main
-static bool askUser(QString filename, bool &readonly) {
+static bool askUser(const QString& filename, bool &readonly) {
 
     QString requestedName("keditbookmarks");
     QString interfaceName = "org.kde.keditbookmarks";

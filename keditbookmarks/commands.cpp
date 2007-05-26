@@ -242,7 +242,7 @@ void EditCommand::modify(const QString &newValue)
         mNewValue = newValue;
 }
 
-QString EditCommand::getNodeText(KBookmark bk, const QStringList &nodehier) 
+QString EditCommand::getNodeText(const KBookmark& bk, const QStringList &nodehier) 
 {
     QDomNode subnode = bk.internalElement();
     for (QStringList::ConstIterator it = nodehier.begin(); 
@@ -257,8 +257,8 @@ QString EditCommand::getNodeText(KBookmark bk, const QStringList &nodehier)
          : subnode.firstChild().toText().data();
 }
 
-QString EditCommand::setNodeText(KBookmark bk, const QStringList &nodehier,
-                                     const QString newValue) 
+QString EditCommand::setNodeText(const KBookmark& bk, const QStringList &nodehier,
+                                     const QString& newValue) 
 {
     QDomNode subnode = bk.internalElement();
     for (QStringList::ConstIterator it = nodehier.begin(); 

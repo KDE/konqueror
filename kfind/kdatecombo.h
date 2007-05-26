@@ -23,7 +23,7 @@ class KDateCombo : public QComboBox  {
 
 public:
 	KDateCombo(QWidget *parent=0);
-	KDateCombo(const QDate & date, QWidget *parent=0);
+	explicit KDateCombo(const QDate & date, QWidget *parent=0);
 	~KDateCombo();
 
 	QDate & getDate(QDate *currentDate);

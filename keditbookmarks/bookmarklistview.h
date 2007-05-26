@@ -57,7 +57,7 @@ class BookmarkFolderView : public BookmarkView
 {
     Q_OBJECT
 public:
-    BookmarkFolderView( BookmarkListView * view, QWidget * parent = 0 );
+    explicit BookmarkFolderView( BookmarkListView * view, QWidget * parent = 0 );
     virtual ~BookmarkFolderView();
     virtual void selectionChanged ( const QItemSelection & selected, const QItemSelection & deselected );
 private:
@@ -80,7 +80,7 @@ public:
 protected:
     virtual void contextMenuEvent ( QContextMenuEvent * e );
 private:
-    QRect merge(QRect a, QRect b);
+    QRect merge(const QRect& a, const QRect& b);
     void deselectChildren(const QModelIndex & parent);
     QRect rectForRow(QModelIndex index);
     QRect rectForRowWithChildren(QModelIndex index);

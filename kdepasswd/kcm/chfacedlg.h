@@ -42,7 +42,10 @@ class ChFaceDlg : public KDialog
 public:
 
 
-  ChFaceDlg(const QString& picsdirs, QWidget *parent=0, const char *name=0, bool modal=true);
+  explicit ChFaceDlg(const QString& picsdirs, 
+                     QWidget *parent=0, 
+                     const char *name=0, 
+                     bool modal=true);
 
 
   QPixmap getFaceImage() const

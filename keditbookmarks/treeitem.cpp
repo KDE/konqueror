@@ -20,7 +20,7 @@
 #include <kdebug.h>
 #include <QtCore/QVector>
 
-TreeItem::TreeItem(KBookmark bk, TreeItem * parent)
+TreeItem::TreeItem(const KBookmark& bk, TreeItem * parent)
     : mparent(parent), mbk(bk)
 {
     init = false;
@@ -176,7 +176,7 @@ void TreeItem::initChildren()
     }
 }
 
-TreeItem * TreeItem::treeItemForBookmark(KBookmark bk)
+TreeItem * TreeItem::treeItemForBookmark(const KBookmark& bk)
 {
     if(bk.address() == mbk.address())
         return this;

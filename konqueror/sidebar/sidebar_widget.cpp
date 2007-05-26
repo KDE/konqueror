@@ -466,7 +466,7 @@ void Sidebar_Widget::initialCopy()
 				{ // we don't have that one yet -> copy it.
 					QString cp("cp -R -- ");
 					cp += K3Process::quote(dirtree_dir + *eIt);
-					cp += " ";
+					cp += ' ';
 					cp += K3Process::quote(m_path);
 					kDebug() << "SidebarWidget::intialCopy executing " << cp << endl;
 					::system( QFile::encodeName(cp) );

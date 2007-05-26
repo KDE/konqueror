@@ -112,7 +112,9 @@ void FavIconUpdater::setIconURL(const KUrl &iconURL) {
     setIconForURL(m_bk.url(), iconURL);
 }
 
-void FavIconUpdater::notifyChange(bool isHost, QString hostOrURL, QString iconName) {
+void FavIconUpdater::notifyChange(bool isHost, 
+                                  const QString& hostOrURL, 
+                                  const QString& iconName) {
     // kDebug() << "FavIconUpdater::notifyChange()" << endl;
 
     Q_UNUSED(isHost);

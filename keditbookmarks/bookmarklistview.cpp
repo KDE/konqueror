@@ -145,7 +145,7 @@ BookmarkListView::~BookmarkListView()
     saveColumnSetting();
 }
 
-QRect BookmarkListView::merge(QRect a, QRect b)
+QRect BookmarkListView::merge(const QRect& a, const QRect& b)
 {
     if(a.isNull())
         return b;

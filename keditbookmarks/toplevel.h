@@ -77,7 +77,7 @@ public:
     QString path() const;
 
     void createManager(const QString &filename, const QString &dbusObjectName);
-    void notifyManagers(KBookmarkGroup grp);
+    void notifyManagers(const KBookmarkGroup& grp);
     void notifyManagers();
     bool managerSave();
     void saveAs(const QString &fileName);
@@ -163,7 +163,8 @@ protected Q_SLOTS:
     void selectionChanged();
 
 private:
-    void selectedBookmarksExpandedHelper(KBookmark bk, KBookmark::List & bookmarks) const;
+    void selectedBookmarksExpandedHelper(const KBookmark& bk, 
+                                         KBookmark::List & bookmarks) const;
     void collapseAllHelper( QModelIndex index );
     void expandAllHelper(QTreeView * view, QModelIndex index);
 

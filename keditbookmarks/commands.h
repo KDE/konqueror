@@ -116,9 +116,9 @@ public:
    virtual void unexecute();
    virtual QString name() const;
    virtual QString affectedBookmarks() const { return KBookmark::parentAddress(mAddress); }
-   static QString getNodeText(KBookmark bk, const QStringList &nodehier);
-   static QString setNodeText(KBookmark bk, const QStringList &nodehier,
-                                     const QString newValue);
+   static QString getNodeText(const KBookmark& bk, const QStringList &nodehier);
+   static QString setNodeText(const KBookmark& bk, const QStringList &nodehier,
+                                     const QString& newValue);
    void modify(const QString &newValue);
 private:
    QString mAddress;
@@ -130,7 +130,7 @@ private:
 class DeleteCommand : public K3Command, public IKEBCommand
 {
 public:
-   DeleteCommand(const QString &from, bool contentOnly = false)
+   explicit DeleteCommand(const QString &from, bool contentOnly = false)
       : K3Command(), m_from(from), m_cmd(0), m_subCmd(0), m_contentOnly(contentOnly)
    { ; }
    virtual ~DeleteCommand() { delete m_cmd; delete m_subCmd; }

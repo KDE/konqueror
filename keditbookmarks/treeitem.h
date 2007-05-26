@@ -27,7 +27,7 @@
 class TreeItem
 {
 public:
-    TreeItem(KBookmark bk, TreeItem * parent);
+    TreeItem(const KBookmark& bk, TreeItem * parent);
     ~TreeItem();
     TreeItem * child(int row);
     TreeItem * parent();
@@ -37,7 +37,7 @@ public:
     void moveChildren(int first, int last, TreeItem * newParent, int position);
     KBookmark bookmark();
     int childCount();
-    TreeItem * treeItemForBookmark(KBookmark bk);
+    TreeItem * treeItemForBookmark(const KBookmark& bk);
 private:
 #ifdef DEBUG_STUPID_QT
     void markDelete();

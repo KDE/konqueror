@@ -52,8 +52,8 @@ public:
     virtual int columnCount(const QModelIndex &parent = QModelIndex()) const;
     virtual void resetModel();
 
-    QModelIndex bookmarkToIndex(KBookmark bk);
-    void emitDataChanged(KBookmark bk);
+    QModelIndex bookmarkToIndex(const KBookmark& bk);
+    void emitDataChanged(const KBookmark& bk);
 
     //drag and drop
     virtual bool dropMimeData ( const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent );
@@ -75,7 +75,7 @@ private:
     void endMoveRows();
 
     TreeItem * rootItem;
-    BookmarkModel(KBookmark root);
+    BookmarkModel(const KBookmark& root);
     static BookmarkModel *s_bookmarkModel;
     static int count;
     KBookmark mRoot;

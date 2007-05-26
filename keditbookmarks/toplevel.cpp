@@ -154,7 +154,7 @@ void CurrentMgr::slotBookmarksChanged(const QString &, const QString &) {
     KEBApp::self()->updateActions();
 }
 
-void CurrentMgr::notifyManagers(KBookmarkGroup grp)
+void CurrentMgr::notifyManagers(const KBookmarkGroup& grp)
 {
     ++ignorenext;
     mgr()->emitChanged(grp);
@@ -334,8 +334,11 @@ QString KEBApp::insertAddress() const
         : KBookmark::nextAddress(current.address());
 }
 
-bool lessAddress(QString a, QString b)
+bool lessAddress(const QString& first, const QString& second)
 {
+    QString a = first;
+    QString b = second;
+
     if(a == b)
          return false;
 
@@ -417,7 +420,7 @@ KBookmark::List KEBApp::selectedBookmarksExpanded() const
     return result;
 }
 
-void KEBApp::selectedBookmarksExpandedHelper(KBookmark bk, KBookmark::List & bookmarks) const
+void KEBApp::selectedBookmarksExpandedHelper(const KBookmark& bk, KBookmark::List & bookmarks) const
 {
     bookmarks.push_back( bk );
     if(bk.isGroup())

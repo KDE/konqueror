@@ -72,7 +72,7 @@ public:
      * If \a view is null then the widget will be disabled until a listview
      * is set with setListView().
      */
-    KViewSearchLine(QWidget *parent = 0, QAbstractItemView *view = 0);
+    explicit KViewSearchLine(QWidget *parent = 0, QAbstractItemView *view = 0);
 
     /**
      * Constructs a KViewSearchLine without any QListView/QTreeView to filter. The
@@ -278,7 +278,7 @@ public:
      * Creates a KListViewSearchLineWidget for \a view with \a parent as the
      * parent
      */
-    KViewSearchLineWidget(QAbstractItemView *view = 0, QWidget *parent = 0);
+    explicit KViewSearchLineWidget(QAbstractItemView *view = 0, QWidget *parent = 0);
 
     /**
      * Destroys the KListViewSearchLineWidget
@@ -315,7 +315,7 @@ private:
 class KEBSearchLine : public K3ListViewSearchLine
 {
 public:
-    KEBSearchLine(QWidget *parent = 0, K3ListView *listView = 0);
+    explicit KEBSearchLine(QWidget *parent = 0, K3ListView *listView = 0);
 
     KEBSearchLine(QWidget *parent);
 

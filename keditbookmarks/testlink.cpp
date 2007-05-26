@@ -19,14 +19,14 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "toplevel.h"
+// Own
 #include "testlink.h"
-#include "commands.h"
-#include "bookmarkiterator.h"
 
+// Qt
 #include <QtCore/QTimer>
 #include <QtGui/QPainter>
 
+// KDE
 #include <kdebug.h>
 
 #include <kdatetime.h>
@@ -35,6 +35,11 @@
 
 #include <kaction.h>
 #include <klocale.h>
+
+// Local
+#include "toplevel.h"
+#include "commands.h"
+#include "bookmarkiterator.h"
 
 TestLinkItrHolder *TestLinkItrHolder::s_self = 0;
 

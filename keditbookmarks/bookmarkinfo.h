@@ -34,7 +34,7 @@ class QTimer;
 class BookmarkInfoWidget : public QWidget {
     Q_OBJECT
 public:
-    BookmarkInfoWidget(BookmarkListView * lv, QWidget * = 0);
+    explicit BookmarkInfoWidget(BookmarkListView * lv, QWidget * = 0);
     
     KBookmark bookmark() { return m_bk; }
     void updateStatus(); //FIXME where was this called?

@@ -181,7 +181,7 @@ void DesktopPathConfig::save()
         kDebug() << "desktopURL=" << desktopURL << endl;
         QString urlDesktop = urDesktop->url().path();
         if ( !urlDesktop.endsWith( "/" ))
-            urlDesktop+="/";
+            urlDesktop+='/';
 
         if ( desktopURL.isParentOf( autostartURL ) )
         {

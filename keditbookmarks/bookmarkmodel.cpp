@@ -39,7 +39,7 @@ BookmarkModel* BookmarkModel::self()
     return s_bookmarkModel;
 }
 
-BookmarkModel::BookmarkModel(KBookmark root)
+BookmarkModel::BookmarkModel(const KBookmark& root)
     :QAbstractItemModel(), mRoot(root)
 {
     rootItem = new TreeItem(root, 0);
@@ -307,12 +307,12 @@ int BookmarkModel::columnCount(const QModelIndex &) const
     return 4;
 }
 
-QModelIndex BookmarkModel::bookmarkToIndex(KBookmark bk)
+QModelIndex BookmarkModel::bookmarkToIndex(const KBookmark& bk)
 {
     return createIndex( KBookmark::positionInParent(bk.address()), 0, rootItem->treeItemForBookmark(bk));
 }
 
-void BookmarkModel::emitDataChanged(KBookmark bk)
+void BookmarkModel::emitDataChanged(const KBookmark& bk)
 {
     QModelIndex index = bookmarkToIndex(bk);
     emit dataChanged(index, index );

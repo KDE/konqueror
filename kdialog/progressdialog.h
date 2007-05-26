@@ -28,7 +28,9 @@ class ProgressDialog : public KProgressDialog
     Q_PROPERTY(bool autoClose READ autoClose WRITE setAutoClose)
 
  public:
-    ProgressDialog(QWidget* parent = 0, const QString& caption = QString(), const QString& text = QString(), int totalSteps = 100);
+    explicit ProgressDialog(QWidget* parent = 0, 
+                            const QString& caption = QString(), 
+                            const QString& text = QString(), int totalSteps = 100);
       
     void setMaximum( int );
     int maximum() const;

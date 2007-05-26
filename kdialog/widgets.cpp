@@ -18,25 +18,32 @@
 //
 
 
+// Own
+#include "widgets.h"
+
+// Qt
+#include <QtCore/QFile>
+#include <QtGui/QDesktopWidget>
+#include <QtCore/QTextStream>
+#include <QtGui/QTextCursor>
+#include <QtGui/QLabel>
+
+// KDE
 #include <klocale.h>
 #include <kmessagebox.h>
-
-#include "widgets.h"
-#include "klistboxdialog.h"
-#include "progressdialog.h"
 #include <kinputdialog.h>
 #include <kpassworddialog.h>
 #include <kcombobox.h>
 #include <kdebug.h>
 #include <kapplication.h>
 #include <kcmdlineargs.h>
-#include <QtGui/QLabel>
 #include <ktextedit.h>
 #include <kvbox.h>
-#include <QtCore/QFile>
-#include <QtGui/QDesktopWidget>
-#include <QtCore/QTextStream>
-#include <QtGui/QTextCursor>
+
+// Local
+#include "klistboxdialog.h"
+#include "progressdialog.h"
+
 
 #if defined Q_WS_X11 && ! defined K_WS_QTONLY
 #include <netwm.h>
