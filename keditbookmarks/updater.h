@@ -55,9 +55,8 @@ public:
     void downloadIcon(const KBookmark &bk);
     void downloadIconActual(const KBookmark &bk);
 
-    virtual void notifyChange(bool isHost, const QString& hostOrURL, 
-                              const QString& iconName);
-
+    virtual void notifyChange(bool isHost, QString hostOrURL, 
+                              QString iconName);
 protected Q_SLOTS:
     void setIconURL(const KUrl &iconURL);
     void slotCompleted();
