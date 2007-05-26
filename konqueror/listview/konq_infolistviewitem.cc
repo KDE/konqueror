@@ -98,7 +98,7 @@ void KonqInfoListViewItem::updateContents()
             break;
          case KIO::UDS_SIZE:
             if ( static_cast<KonqBaseListViewWidget *>(listView())->m_pSettings->fileSizeInBytes() )
-                setText(tmpColumn->displayInColumn,KGlobal::locale()->formatNumber( m_fileitem->size(),0)+" ");
+                setText(tmpColumn->displayInColumn,KGlobal::locale()->formatNumber( m_fileitem->size(),0)+' ');
             else
                 setText(tmpColumn->displayInColumn,KIO::convertSize(m_fileitem->size())+" ");
             break;

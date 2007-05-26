@@ -58,7 +58,7 @@ class KONQSIDEBARPLUGIN_EXPORT KonqSidebarPlugin : public QObject
 		KComponentData m_parentInstance;
 
 	private:
-		const KonqSidebarPluginPrivate *d;
+		KonqSidebarPluginPrivate const *d;
 
 	Q_SIGNALS:
 		void requestURL(KUrl&);

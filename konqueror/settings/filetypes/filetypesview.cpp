@@ -260,10 +260,10 @@ void FileTypesView::addType()
 #if 0
   if (m.exec()) {
     Q3ListViewItemIterator it(typesLV);
-    QString loc = m.group() + "/" + m.text() + ".desktop";
+    QString loc = m.group() + '/' + m.text() + ".desktop";
     loc = KStandardDirs::locate("mime", loc);
     KMimeType::Ptr mimetype(new KMimeType(loc,
-                                          m.group() + "/" + m.text(),
+                                          m.group() + '/' + m.text(),
                                           QString(), QString(),
                                           QStringList()));
 
