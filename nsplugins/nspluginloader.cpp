@@ -23,6 +23,8 @@
 
 */
 
+#include "nspluginloader.h"
+#include "nspluginloader.moc"
 
 #include <QDir>
 #include <QGridLayout>
@@ -42,9 +44,6 @@
 #include <QtGui/QX11EmbedContainer>
 #include <QTextStream>
 #include <QRegExp>
-
-#include "nspluginloader.h"
-#include "nspluginloader.moc"
 
 #include "nsplugins_class_interface.h"
 #include "nsplugins_instance_interface.h"

@@ -16,6 +16,7 @@
    the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
    Boston, MA 02110-1301, USA.
 */
+#include "konq_misc.h"
 
 #include <QtGui/QStyle>
 #include <QtCore/QDir>
@@ -34,7 +35,6 @@
 #include <kstartupinfo.h>
 #include <kiconloader.h>
 
-#include "konq_misc.h"
 #include "konq_mainwindow.h"
 #include "konq_viewmgr.h"
 #include "konq_view.h"

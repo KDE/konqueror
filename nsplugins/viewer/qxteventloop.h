@@ -52,7 +52,7 @@ class QXtEventLoop : public QEventLoop
     Q_OBJECT
 
 public:
-    QXtEventLoop( const char *applicationClass, XtAppContext context = NULL, XrmOptionDescRec *options = 0, int numOptions = 0);
+    explicit QXtEventLoop( const char *applicationClass, XtAppContext context = NULL, XrmOptionDescRec *options = 0, int numOptions = 0);
     ~QXtEventLoop();
 
     XtAppContext applicationContext() const;

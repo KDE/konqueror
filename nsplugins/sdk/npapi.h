@@ -130,7 +130,7 @@
 
 
 /* The OS/2 version of Netscape uses RC_DATA to define the
-   mime types, file extentions, etc that are required.
+   mime types, file extensions, etc that are required.
    Use a vertical bar to separate types, end types with \0.
    FileVersion and ProductVersion are 32bit ints, all other
    entries are strings the MUST be terminated wwith a \0.
@@ -428,7 +428,7 @@ typedef struct _NPWindow
   NPRect clipRect; /* Clipping rectangle in port coordinates */
                    /* Used by MAC only.			  */
 #if defined(XP_UNIX) && !defined(XP_MACOSX)
-  void * ws_info; /* Platform-dependent additonal data */
+  void * ws_info; /* Platform-dependent additional data */
 #endif /* XP_UNIX */
   NPWindowType type; /* Is this a window or a drawable? */
 } NPWindow;
