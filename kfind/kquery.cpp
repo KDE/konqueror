@@ -1,3 +1,5 @@
+#include "kquery.h"
+
 #include <stdlib.h>
 
 #include <QtCore/QFileInfo>
@@ -11,8 +13,6 @@
 #include <klocale.h>
 #include <kstandarddirs.h>
 #include <kzip.h>
-
-#include "kquery.h"
 
 KQuery::KQuery(QObject *parent)
   : QObject(parent),

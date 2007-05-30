@@ -3,6 +3,7 @@
  *  kftabdlg.cpp
  *
  **********************************************************************/
+#include "kftabdlg.h"
 
 #include <QtGui/QButtonGroup>
 #include <QtGui/QRadioButton>
@@ -30,7 +31,6 @@
 #include <kstandarddirs.h>
 #include <kiconloader.h>
 #include "kquery.h"
-#include "kftabdlg.h"
 // Static utility functions
 static void save_pattern(QComboBox *, const QString &, const QString &);
 

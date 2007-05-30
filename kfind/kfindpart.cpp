@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "kfind.h"
 #include "kfindpart.h"
+#include "kfind.h"
 #include "kquery.h"
 
 #include <kparts/genericfactory.h>

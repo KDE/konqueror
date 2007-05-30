@@ -33,10 +33,11 @@
 **
 **********************************************************************/
 
+#include "qxteventloop.h"
+
 #include <config.h>
 
 #include <QApplication>
-#include "qxteventloop.h"
 #include <kglobal.h>
 
 #include <qwidgetintdict.h>

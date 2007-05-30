@@ -37,6 +37,7 @@ class KActionMenu;
 class QIconViewItem;
 class IconViewBrowserExtension;
 //end added
+class Kfind;
 
 class KFindPart : public KonqDirPart//KParts::ReadOnlyPart
 {

@@ -3,6 +3,9 @@
  *  Kfwin.cpp
  *
  **********************************************************************/
+#include "kfwin.h"
+
+#include "kfwin.moc"
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -39,10 +42,6 @@
 #include <k3urldrag.h>
 #include <kdebug.h>
 #include <kiconloader.h>
-
-#include "kfwin.h"
-
-#include "kfwin.moc"
 
 template class Q3PtrList<KfFileLVI>;
 

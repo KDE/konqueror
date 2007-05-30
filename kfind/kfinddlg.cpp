@@ -3,6 +3,8 @@
  *  Kfinddlg.cpp
  *
  **********************************************************************/
+#include "kfinddlg.h"
+#include "kfinddlg.moc"
 
 #include <QtGui/QLayout>
 #include <QtGui/QPushButton>
@@ -19,9 +21,6 @@
 #include "kftabdlg.h"
 #include "kquery.h"
 #include "kfwin.h"
-
-#include "kfinddlg.h"
-#include "kfinddlg.moc"
 
 KfindDlg::KfindDlg(const KUrl & url, QWidget *parent)
   : KDialog( parent )

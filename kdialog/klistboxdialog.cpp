@@ -16,13 +16,12 @@
 //  along with this program; if not, write to the Free Software
 //  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 //
+#include "klistboxdialog.h"
+#include "klistboxdialog.moc"
 
 #include <QtGui/QLabel>
 #include <Qt3Support/Q3ListBox>
 #include <kvbox.h>
-
-#include "klistboxdialog.h"
-#include "klistboxdialog.moc"
 
 #include "klocale.h"
 

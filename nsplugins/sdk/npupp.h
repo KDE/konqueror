@@ -1166,7 +1166,7 @@ typedef NPError (* NP_LOADDS NPP_MainEntryUPP)(NPNetscapeFuncs*, NPPluginFuncs*,
 
 /*
  * Mac version(s) of NP_GetMIMEDescription(const char *)
- * These can be called to retreive MIME information from the plugin dynamically
+ * These can be called to retrieve MIME information from the plugin dynamically
  *
  * Note: For compatibility with Quicktime, BPSupportedMIMEtypes is another way
  *       to get mime info from the plugin only on OSX and may not be supported 

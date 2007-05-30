@@ -25,6 +25,8 @@
 
 #include <Qt3Support/Q3ListBox>
 
+class QLabel;
+
 class KListBoxDialog : public KDialog
 {
   Q_OBJECT

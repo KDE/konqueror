@@ -24,6 +24,8 @@
  * Distributed under the same terms.
  */
 
+#include "kremoteencodingplugin.h"
+
 #include <kdebug.h>
 #include <kactionmenu.h>
 #include <kactioncollection.h>
@@ -40,8 +42,6 @@
 #include <kio/scheduler.h>
 #include <konq_dirpart.h>
 #include <kparts/browserextension.h>
-
-#include "kremoteencodingplugin.h"
 
 #define DATA_KEY	QLatin1String("Charset")
 

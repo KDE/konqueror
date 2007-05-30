@@ -3,6 +3,9 @@
  *  kdatecombo.cpp
  *
  ***********************************************************************/
+#include "kdatecombo.h"
+
+#include "kdatecombo.moc"
 
 #include <QtCore/QTimer>
 //Added by qt3to4:
@@ -14,10 +17,6 @@
 #include <kdatepicker.h>
 #include <kdatetable.h>
 #include <kdebug.h>
-
-#include "kdatecombo.h"
-
-#include "kdatecombo.moc"
 
 KDateCombo::KDateCombo(QWidget *parent) : QComboBox(parent)
 {

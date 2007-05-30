@@ -12,6 +12,7 @@
 #include <kdirwatch.h>
 
 class QString;
+class QDir;
 
 class KQuery;
 class KUrl;
