@@ -5196,7 +5196,9 @@ void KonqMainWindow::updateViewModeActions()
       if ( bIsCurrentView )
       {
           (*mapIt)->setChecked( true );
+          action->blockSignals( true );
           action->setChecked( true );
+          action->blockSignals( false );
       }
 
       // Set the contents of the button from the current service, either if it's the current view
