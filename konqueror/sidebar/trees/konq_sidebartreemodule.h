@@ -21,8 +21,6 @@
 
 #include <QtCore/QObject>
 #include "konq_sidebartree.h"
-class QDragObject;
-class KonqSidebarTreeItem;
 class KonqSidebarTreeTopLevelItem;
 class KonqSidebarTree;
 

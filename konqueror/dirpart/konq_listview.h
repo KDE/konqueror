@@ -22,7 +22,6 @@
 
 #include <QtGui/QTreeView>
 
-class KonqFileTip;
 
 class KonqListView : public QTreeView
 {

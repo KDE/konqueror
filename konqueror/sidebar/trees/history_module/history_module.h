@@ -33,7 +33,6 @@
 class KActionCollection;
 class KonqSidebarHistorySettings;
 class KonqSidebarTree;
-class KonqSidebarTreeItem;
 
 class KonqSidebarHistoryModule : public QObject, public KonqSidebarTreeModule
 {

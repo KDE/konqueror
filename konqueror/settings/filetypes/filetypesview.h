@@ -15,11 +15,8 @@
 class QLabel;
 class K3ListView;
 class Q3ListViewItem;
-class QListWidget;
 class QPushButton;
-class KIconButton;
 class KLineEdit;
-class QComboBox;
 class FileTypeDetails;
 class FileGroupDetails;
 class QStackedWidget;

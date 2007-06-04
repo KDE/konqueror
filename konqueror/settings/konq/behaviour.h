@@ -26,7 +26,6 @@
 
 class QCheckBox;
 class QLabel;
-class QRadioButton;
 class QSpinBox;
 
 class KUrlRequester;

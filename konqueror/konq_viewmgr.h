@@ -34,16 +34,13 @@
 #include "konq_openurlrequest.h"
 
 class QString;
-class QStringList;
 class QTimer;
 class KConfig;
 class KonqMainWindow;
 class KonqFrameBase;
 class KonqFrameContainer;
 class KonqFrameContainerBase;
-class KonqFrameTabs;
 class KonqView;
-class BrowserView;
 class KActionMenu;
 
 namespace KParts

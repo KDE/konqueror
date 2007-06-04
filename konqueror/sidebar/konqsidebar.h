@@ -26,7 +26,6 @@
 #include "konqsidebariface_p.h"
 
 class QWidget;
-class QPainter;
 class QCustomEvent;
 class KUrl;
 

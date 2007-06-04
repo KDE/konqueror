@@ -27,7 +27,6 @@ template<typename T> class QList;
 class QModelIndex;
 typedef QList<QModelIndex> QModelIndexList;
 class KAboutData;
-class KDirLister;
 class KDirModel;
 class KonqFileTip;
 

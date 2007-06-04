@@ -28,7 +28,6 @@
 #include <kservice.h>
 
 class QAction;
-class KActionCollection;
 class KonqMainWindow;
 class KonqView;
 

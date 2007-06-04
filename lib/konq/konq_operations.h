@@ -29,7 +29,6 @@ class KJob;
 namespace KIO { class Job; struct CopyInfo; }
 class QWidget;
 class KFileItem;
-class KonqMainWindow;
 
 /**
  * Implements file operations (move,del,trash,paste,copy,move,link...)

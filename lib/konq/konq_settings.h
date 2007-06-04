@@ -20,7 +20,6 @@
 #ifndef __konq_settings_h__
 #define __konq_settings_h__
 
-class KConfig;
 #include <QColor>
 
 #include <QFont>

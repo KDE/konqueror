@@ -24,7 +24,6 @@
 #include <kdialog.h>
 #include "ui_policydlg_ui.h"
 
-class QPushButton;
 
 class PolicyDlgUI : public QWidget, public Ui::PolicyDlgUI
 {

@@ -23,7 +23,6 @@
 //Added by qt3to4:
 #include <QtGui/QLabel>
 
-class QSpinBox;
 class QLabel;
 class QCheckBox;
 class KLineEdit;

@@ -18,7 +18,6 @@
 
 #include <kparts/plugin.h>
 
-class KUrl;
 
 /**
  * KHTML KParts Plugin

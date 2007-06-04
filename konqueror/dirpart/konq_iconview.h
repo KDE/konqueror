@@ -22,7 +22,6 @@
 
 #include <QtGui/QListView>
 
-class KonqFileTip;
 
 class KonqIconView : public QListView
 {

@@ -31,7 +31,6 @@
 #include "ui_socksbase.h"
 
 
-class QVButtonGroup;
 
 class SocksBase : public QWidget, public Ui::SocksBase
 {

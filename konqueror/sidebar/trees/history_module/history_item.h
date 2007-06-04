@@ -27,6 +27,7 @@
 class QDropEvent;
 class QPainter;
 class KonqSidebarHistorySettings;
+class QStrList;
 
 class KonqSidebarHistoryItem : public KonqSidebarTreeItem
 {

@@ -23,8 +23,6 @@
 #include <konq_operations.h>
 
 class QMimeData;
-class QStrList;
-class Q3DragObject;
 class KonqSidebarTreeModule;
 
 /**

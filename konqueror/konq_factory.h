@@ -30,8 +30,6 @@
 
 #include <kparts/part.h>
 
-class BrowserView;
-class KonqMainWindow;
 class KAboutData;
 
 class KonqViewFactory

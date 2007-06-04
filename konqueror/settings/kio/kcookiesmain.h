@@ -9,7 +9,6 @@
 #include <kcmodule.h>
 
 class QTabWidget;
-class DCOPClient;
 class KCookiesPolicies;
 class KCookiesManagement;
 
