@@ -24,7 +24,7 @@
 
 class QWidget;
 class KSaveIOConfigPrivate;
-
+class KConfig;
 class KSaveIOConfig
 {
 public:
