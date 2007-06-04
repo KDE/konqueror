@@ -11,8 +11,6 @@
 #include <kfileitem.h>
 #include <kurl.h>
 
-class KfArchiver;
-class QPixmap;
 class QFileInfo;
 class KMenu;
 class KfindWindow;

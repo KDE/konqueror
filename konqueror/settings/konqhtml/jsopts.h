@@ -15,14 +15,7 @@
 #include "domainlistview.h"
 #include "jspolicies.h"
 
-class KColorButton;
-class KUrlRequester;
 class QCheckBox;
-class QComboBox;
-class QLineEdit;
-class QRadioButton;
-class QSpinBox;
-class QButtonGroup;
 
 class PolicyDialog;
 

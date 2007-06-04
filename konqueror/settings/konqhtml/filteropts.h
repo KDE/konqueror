@@ -24,7 +24,6 @@
 class QListWidget;
 class QPushButton;
 class QLineEdit;
-class QListWidgetItem;
 class QCheckBox;
 
 class KCMFilter : public KCModule

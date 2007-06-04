@@ -30,12 +30,10 @@
 
 #include "chfacedlg.h"
 
-class KAboutData;
 class KUser;
 class QEvent;
 class QObject;
 class KUrl;
-class Config;
 
 class MainWidget : public QWidget, public Ui::MainWidget
 {

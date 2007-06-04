@@ -19,6 +19,7 @@
 
 class QSpinBox;
 class QFontComboBox;
+class QComboBox;
 
 class KAppearanceOptions : public KCModule
 {

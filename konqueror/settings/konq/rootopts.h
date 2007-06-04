@@ -19,11 +19,7 @@
 #include <kio/global.h>
 #include <kurl.h>
 
-class QCheckBox;
-class QComboBox;
-class QPushButton;
 
-class K3ListView;
 class KJob;
 class KUrlRequester;
 class QStringList;

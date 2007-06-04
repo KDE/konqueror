@@ -41,7 +41,6 @@
 
 class KonqFMSettings;
 class KFileIVI;
-class KonqIconDrag;
 namespace KIO { class Job; }
 
 /**

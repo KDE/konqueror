@@ -30,12 +30,7 @@
 class KQuery;
 class KAboutData;
 //added
-class KonqPropsView;
 class KAction;
-class KToggleAction;
-class KActionMenu;
-class QIconViewItem;
-class IconViewBrowserExtension;
 //end added
 class Kfind;
 

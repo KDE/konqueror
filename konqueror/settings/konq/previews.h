@@ -38,7 +38,6 @@ Configuration of the maximum image size
 #include <kcmodule.h>
 #include <QtCore/QStringList>
 
-class KSharedConfig;
 class QCheckBox;
 class Q3CheckListItem;
 class KDoubleNumInput;

@@ -32,17 +32,14 @@
 
 namespace KIO { class Job; }
 
-class QCursor;
 class QRect;
 class KDirLister;
 class KonqFMSettings;
-class ListViewPropertiesExtension;
 class KToggleAction;
 class KonqListView;
 class KonqFileTip;
 class ListViewBrowserExtension;
 class QTimer;
-class QFocusEvent;
 class QDragMoveEvent;
 class QDragEnterEvent;
 class QDragLeaveEvent;

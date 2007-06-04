@@ -37,10 +37,6 @@
 
 class QPixmap;
 class QVBoxLayout;
-class QHBoxLayout;
-class QTimer;
-class QPushButton;
-class QToolButton;
 class QProgressBar;
 
 class KonqView;
@@ -49,10 +45,8 @@ class KonqFrameBase;
 class KonqFrame;
 class KonqFrameContainerBase;
 class KonqFrameContainer;
-class KonqFrameTabs;
 class KConfig;
 class KSeparator;
-class KAction;
 class KSqueezedTextLabel;
 
 namespace KParts

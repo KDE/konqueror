@@ -41,8 +41,6 @@ class KonqFrame;
 class KonqFrameContainerBase;
 class KonqFrameContainer;
 class KConfig;
-class KSeparator;
-class KAction;
 
 class KonqFrameTabs : public KTabWidget, public KonqFrameContainerBase
 {

@@ -29,7 +29,6 @@
 
 #include "policies.h"
 
-class QRadioButton;
 class Q3ButtonGroup;
 
 // special value for inheriting a global policy

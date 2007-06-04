@@ -24,7 +24,6 @@
 #include <QtCore/QList>
 #include <kbookmark.h>
 
-class KEBListViewItem;
 class BookmarkIteratorHolder;
 
 class BookmarkIterator : public QObject

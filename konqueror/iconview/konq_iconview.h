@@ -28,7 +28,6 @@
 #include <Qt3Support/Q3PtrList>
 #include <kfileivi.h>
 
-class KonqPropsView;
 class KFileItem;
 class KDirLister;
 class KAction;

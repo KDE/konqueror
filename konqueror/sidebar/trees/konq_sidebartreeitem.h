@@ -26,9 +26,6 @@
 #include <Qt3Support/Q3UriDrag>
 #include <kurl.h>
 
-class QPainter;
-class Q3DragObject;
-class QStrList;
 class KonqSidebarTree;
 class KonqSidebarTreeItem;
 class KonqSidebarTreeModule;

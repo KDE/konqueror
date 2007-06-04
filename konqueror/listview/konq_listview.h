@@ -34,7 +34,6 @@
 #include <konq_propsview.h>
 #include "konq_listviewwidget.h"
 
-class KAction;
 class QAction;
 class KToggleAction;
 class ListViewBrowserExtension;

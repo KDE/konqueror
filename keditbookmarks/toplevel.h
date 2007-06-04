@@ -30,10 +30,7 @@
 class KBookmarkManager;
 class KToggleAction;
 class KBookmarkEditorIface;
-class ImportCommand;
 class BookmarkInfoWidget;
-class IKEBCommand;
-class BookmarkModel;
 class BookmarkListView;
 
 class CmdHistory : public QObject {

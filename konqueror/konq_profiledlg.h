@@ -32,7 +32,6 @@ class Q3ListViewItem;
 class QGridLayout;
 class QCheckBox;
 class QLineEdit;
-class KPushButton;
 class K3ListView;
 
 typedef QMap<QString, QString> KonqProfileMap;

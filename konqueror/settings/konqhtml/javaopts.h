@@ -20,15 +20,11 @@
 #include "domainlistview.h"
 #include "policies.h"
 
-class KColorButton;
-class K3ListView;
 class KUrlRequester;
 class KIntNumInput;
 
 class QCheckBox;
-class QComboBox;
 class QLineEdit;
-class QRadioButton;
 
 class KJavaOptions;
 

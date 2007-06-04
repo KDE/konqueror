@@ -29,7 +29,6 @@ class KDirLister;
 class KonqSidebarTree;
 class KonqSidebarTreeItem;
 class KonqSidebarDirTreeItem;
-class KonqPropsView;
 
 class KonqSidebarDirTreeModule : public QObject, public KonqSidebarTreeModule
 {

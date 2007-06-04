@@ -25,7 +25,6 @@
 #include <QtGui/QListWidget>
 #include <kservice.h>
 class TypesListItem;
-class QLineEdit;
 class QPushButton;
 class KService;
 

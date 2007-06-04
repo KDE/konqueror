@@ -9,7 +9,6 @@
 
 #include <QtGui/QWidget>
 
-class QString;
 class KPushButton;
 
 class KQuery;
