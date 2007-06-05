@@ -32,6 +32,7 @@
 // KDE
 #include <kaboutdata.h>
 #include <kdebug.h>
+#include <kdeversion.h>
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <kmimetypetrader.h> 
@@ -225,6 +226,7 @@ void KonqFactory::getOffers( const QString & serviceType,
     }
 }
 
+#define KONQUEROR_VERSION KDE_VERSION_STRING
 
 const KAboutData *KonqFactory::aboutData()
 {
