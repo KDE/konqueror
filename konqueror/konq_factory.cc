@@ -37,9 +37,9 @@
 #include <kmimetypetrader.h> 
 #include <kparts/factory.h>
 #include <kservicetypetrader.h>
+#include <kdeversion.h>
 
 // Local
-#include "version.h"
 #include <konq_view.h>
 #include <konq_settings.h>
 #include <konq_mainwindow.h>
@@ -231,7 +231,7 @@ const KAboutData *KonqFactory::aboutData()
   if (!s_aboutData)
   {
     s_aboutData = new KAboutData( "konqueror", I18N_NOOP("Konqueror"),
-                        KONQUEROR_VERSION,
+                        KDE_VERSION_STRING,
                         I18N_NOOP("Web browser, file manager and document viewer."),
                         KAboutData::License_GPL,
                         I18N_NOOP("(C) 1999-2007, The Konqueror developers"),
