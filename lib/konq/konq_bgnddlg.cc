@@ -138,9 +138,7 @@ QColor KonqBgndDialog::color() const
 
 void KonqBgndDialog::initPictures()
 {
-    KGlobal::dirs()->addResourceType( "tiles",
-        KGlobal::dirs()->kde_default("data") + "konqueror/tiles/");
-    kDebug(1203) << KGlobal::dirs()->kde_default("data") + "konqueror/tiles/" << endl;
+    KGlobal::dirs()->addResourceType( "tiles", "data", "konqueror/tiles/");
 
     QStringList list = KGlobal::dirs()->findAllResources("tiles");
 
