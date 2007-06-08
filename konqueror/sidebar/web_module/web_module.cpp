@@ -196,7 +196,7 @@ extern "C" {
 extern "C" {
 	KDE_EXPORT bool add_konqsidebar_web(QString* fn, QString* param, QMap<QString,QString> *map) {
 		Q_UNUSED(param);
-		KGlobal::dirs()->addResourceType("websidebardata", KStandardDirs::kde_default("data") + "konqsidebartng/websidebar");
+		KGlobal::dirs()->addResourceType("websidebardata", "data", "konqsidebartng/websidebar");
 		KUrl url;
 		url.setProtocol("file");
 		QStringList paths = KGlobal::dirs()->resourceDirs("websidebardata");

@@ -129,8 +129,7 @@ KonqPropsView::KonqPropsView(const KComponentData &componentData, KonqPropsView 
       //kDebug(1203) << "KonqPropsView::KonqPropsView from KGlobal : BgImage=" << m_bgPixmapFile << endl;
   }
 
-  KGlobal::dirs()->addResourceType("tiles",
-                                   KGlobal::dirs()->kde_default("data") + "konqueror/tiles/");
+  KGlobal::dirs()->addResourceType("tiles", "data", "konqueror/tiles/");
 }
 
 bool KonqPropsView::isCaseInsensitiveSort() const
