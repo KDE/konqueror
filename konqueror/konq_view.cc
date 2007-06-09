@@ -30,6 +30,7 @@
 #include "konq_browseriface.h"
 #include <kparts/statusbarextension.h>
 #include <kparts/browserextension.h>
+#include <konq_dirpart.h>
 
 #include <konq_historymgr.h>
 #include <konq_pixmapprovider.h>
@@ -471,13 +472,15 @@ void KonqView::connectPart(  )
 
   m_pPart->widget()->installEventFilter( this );
 
-  if (m_bBackRightClick && m_pPart->widget()->inherits("QScrollView") )
-  {
-    (static_cast<QScrollArea *>(m_pPart->widget()))->viewport()->installEventFilter( this );
+  if (m_bBackRightClick) {
+      QAbstractScrollArea* scrollArea = ::qobject_cast<QAbstractScrollArea *>( m_pPart->widget() );
+      if ( scrollArea ) {
+          scrollArea->viewport()->installEventFilter( this );
+      }
   }
 
   // KonqDirPart signal
-  if ( m_pPart->inherits("KonqDirPart") )
+  if ( ::qobject_cast<KonqDirPart *>(m_pPart) )
   {
       connect( m_pPart, SIGNAL( findOpen( KonqDirPart * ) ),
                m_pMainWindow, SLOT( slotFindOpen( KonqDirPart * ) ) );
@@ -1187,12 +1190,15 @@ void KonqView::enableBackRightClick( bool b )
 void KonqView::reparseConfiguration()
 {
     callExtensionMethod( "reparseConfiguration()" );
-    bool b = KonqSettings::backRightClick();
-    if ( m_bBackRightClick != b )
-    {
-        if (m_bBackRightClick && m_pPart->widget()->inherits("QScrollView") )
-        {
-            (static_cast<QScrollArea *>(m_pPart->widget()))->viewport()->installEventFilter( this );
+    const bool b = KonqSettings::backRightClick();
+    if ( m_bBackRightClick != b ) {
+        QAbstractScrollArea* scrollArea = ::qobject_cast<QAbstractScrollArea *>( m_pPart->widget() );
+        if (scrollArea) {
+            if ( m_bBackRightClick ) {
+                scrollArea->viewport()->installEventFilter( this );
+            } else {
+                scrollArea->viewport()->removeEventFilter( this );
+            }
         }
         enableBackRightClick( b );
     }

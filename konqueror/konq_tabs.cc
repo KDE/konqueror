@@ -25,8 +25,6 @@
 #include <QtGui/QClipboard>
 #include <QtGui/QMenu>
 #include <QtGui/QToolButton>
-
-//Added by qt3to4:
 #include <QtGui/QKeyEvent>
 
 #include <kapplication.h>
@@ -58,7 +56,10 @@
 
 KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentContainer,
                              KonqViewManager* viewManager)
-  : KTabWidget(parent), m_rightWidget(0), m_leftWidget(0), m_alwaysTabBar(false),
+  : KTabWidget(parent),
+    m_pPopupMenu(0),
+    m_pSubPopupMenuTab(0),
+    m_rightWidget(0), m_leftWidget(0), m_alwaysTabBar(false),
     m_closeOtherTabsId(0)
 {
   KAcceleratorManager::setNoAccel(this);
@@ -72,53 +73,11 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
   //kDebug(1202) << "KonqFrameTabs::KonqFrameTabs()" << endl;
 
   m_pParentContainer = parentContainer;
-  m_pChildFrameList = new QList<KonqFrameBase*>;
   m_pActiveChild = 0L;
   m_pViewManager = viewManager;
 
   connect( this, SIGNAL( currentChanged ( QWidget * ) ),
            this, SLOT( slotCurrentChanged( QWidget* ) ) );
-
-  m_pPopupMenu = new QMenu( this );
-  m_pPopupMenu->insertItem( SmallIcon( "tab-new" ),
-                            i18n("&New Tab"),
-                            m_pViewManager->mainWindow(),
-                            SLOT( slotAddTab() ),
-                            m_pViewManager->mainWindow()->action("newtab")->shortcut() );
-  m_pPopupMenu->insertItem( KIcon( "tab-duplicate" ),
-                            i18n("&Duplicate Tab"),
-                            m_pViewManager->mainWindow(),
-                            SLOT( slotDuplicateTabPopup() ),
-                            m_pViewManager->mainWindow()->action("duplicatecurrenttab")->shortcut(),
-                            DUPLICATE_ID );
-  m_pPopupMenu->insertItem( KIcon( "view-refresh" ),
-                            i18n( "&Reload Tab" ),
-                            m_pViewManager->mainWindow(),
-                            SLOT( slotReloadPopup() ),
-                            m_pViewManager->mainWindow()->action("reload")->shortcut(), RELOAD_ID );
-  m_pPopupMenu->addSeparator();
-  m_pSubPopupMenuTab = new QMenu( this );
-  m_pPopupMenu->insertItem( i18n("Other Tabs" ), m_pSubPopupMenuTab, OTHERTABS_ID );
-  connect( m_pSubPopupMenuTab, SIGNAL( activated ( int ) ),
-           this, SLOT( slotSubPopupMenuTabActivated( int ) ) );
-  m_pPopupMenu->addSeparator();
-  m_pPopupMenu->insertItem( KIcon( "tab-breakoff" ),
-                            i18n("D&etach Tab"),
-                            m_pViewManager->mainWindow(),
-                            SLOT( slotBreakOffTabPopup() ),
-                            m_pViewManager->mainWindow()->action("breakoffcurrenttab")->shortcut(),
-                            BREAKOFF_ID );
-  m_pPopupMenu->addSeparator();
-  m_pPopupMenu->insertItem( KIcon( "tab-remove" ),
-                            i18n("&Close Tab"),
-                            m_pViewManager->mainWindow(),
-                            SLOT( slotRemoveTabPopup() ),
-                            m_pViewManager->mainWindow()->action("removecurrenttab")->shortcut(),
-                            CLOSETAB_ID );
-  connect( this, SIGNAL( contextMenu( QWidget *, const QPoint & ) ),
-           SLOT(slotContextMenu( QWidget *, const QPoint & ) ) );
-  connect( this, SIGNAL( contextMenu( const QPoint & ) ),
-           SLOT(slotContextMenu( const QPoint & ) ) );
 
   m_MouseMiddleClickClosesTab = KonqSettings::mouseMiddleClickClosesTab();
 
@@ -140,7 +99,7 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
     m_leftWidget = new QToolButton( this );
     connect( m_leftWidget, SIGNAL( clicked() ),
              m_pViewManager->mainWindow(), SLOT( slotAddTab() ) );
-    m_leftWidget->setIcon( SmallIcon( "tab-new" ) );
+    m_leftWidget->setIcon( KIcon( "tab-new" ) );
     m_leftWidget->adjustSize();
     m_leftWidget->setToolTip( i18n("Open a new tab"));
     setCornerWidget( m_leftWidget, Qt::TopLeftCorner );
@@ -179,13 +138,12 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
 KonqFrameTabs::~KonqFrameTabs()
 {
   //kDebug(1202) << "KonqFrameTabs::~KonqFrameTabs() " << this << " - " << className() << endl;
-  qDeleteAll( *m_pChildFrameList );
-  m_pChildFrameList->clear();
-  delete m_pChildFrameList;
+  qDeleteAll( m_childFrameList );
+  m_childFrameList.clear();
 }
 
 void KonqFrameTabs::listViews( ChildViewList *viewList ) {
-  foreach ( KonqFrameBase* frame, *m_pChildFrameList )
+  foreach ( KonqFrameBase* frame, m_childFrameList )
     frame->listViews(viewList);
 }
 
@@ -196,7 +154,7 @@ void KonqFrameTabs::saveConfig( KConfigGroup& config, const QString &prefix, boo
   QStringList strlst;
   int i = 0;
   QString newPrefix;
-  foreach (KonqFrameBase* frame, *m_pChildFrameList)
+  foreach (KonqFrameBase* frame, m_childFrameList)
     {
       newPrefix = QString::fromLatin1( frame->frameType() ) + 'T' + QString::number(i);
       strlst.append( newPrefix );
@@ -224,9 +182,9 @@ void KonqFrameTabs::copyHistory( KonqFrameBase *other )
     return;
   }
 
-  for (int i = 0; i < m_pChildFrameList->count(); i++ )
+  for (int i = 0; i < m_childFrameList.count(); i++ )
     {
-      m_pChildFrameList->at(i)->copyHistory( static_cast<KonqFrameTabs *>( other )->m_pChildFrameList->at(i) );
+      m_childFrameList.at(i)->copyHistory( static_cast<KonqFrameTabs *>( other )->m_childFrameList.at(i) );
     }
 }
 
@@ -240,9 +198,9 @@ void KonqFrameTabs::printFrameInfo( const QString& spaces )
       kDebug(1202) << "WARNING: " << this << " has a null active child!" << endl;
 
   KonqFrameBase* child;
-  int childFrameCount = m_pChildFrameList->count();
+  int childFrameCount = m_childFrameList.count();
   for (int i = 0 ; i < childFrameCount ; i++) {
-    child = m_pChildFrameList->at(i);
+    child = m_childFrameList.at(i);
     if (child != 0L)
       child->printFrameInfo(spaces + "  ");
     else
@@ -267,7 +225,7 @@ void KonqFrameTabs::setTabIcon( const KUrl &url, QWidget* sender )
   //kDebug(1202) << "KonqFrameTabs::setTabIcon( " << url << " , " << sender << " )" << endl;
   QIcon iconSet;
   if (m_permanentCloseButtons)
-    iconSet =  SmallIcon( "window-close" );
+    iconSet =  KIcon( "window-close" );
   else
     iconSet =  KIcon( KonqPixmapProvider::self()->iconNameFor( url ) );
   if (tabIcon( indexOf( sender ) ).pixmap().serialNumber() != iconSet.pixmap().serialNumber())
@@ -285,18 +243,18 @@ void KonqFrameTabs::activateChild()
 
 void KonqFrameTabs::insertChildFrame( KonqFrameBase* frame, int index )
 {
-  //kDebug(1202) << "KonqFrameTabs " << this << ": insertChildFrame " << frame << endl;
+    //kDebug(1202) << "KonqFrameTabs " << this << ": insertChildFrame " << frame << endl;
 
-  if (frame)
+    if (frame)
     {
       //kDebug(1202) << "Adding frame" << endl;
       bool showTabBar = (count() == 1);
       insertTab(index, frame->asQWidget(), "");
       frame->setParentContainer(this);
-      if (index == -1) m_pChildFrameList->append(frame);
-      else m_pChildFrameList->insert(index, frame);
+      if (index == -1) m_childFrameList.append(frame);
+      else m_childFrameList.insert(index, frame);
       if (m_rightWidget)
-        m_rightWidget->setEnabled( m_pChildFrameList->count()>1 );
+        m_rightWidget->setEnabled( m_childFrameList.count()>1 );
       KonqView* activeChildView = frame->activeChildView();
       if (activeChildView != 0L) {
         activeChildView->setCaption( activeChildView->caption() );
@@ -307,8 +265,8 @@ void KonqFrameTabs::insertChildFrame( KonqFrameBase* frame, int index )
       else if ( count() == 1 )
           this->hideTabBar();//the first frame inserted (initialization)
     }
-  else
-    kWarning(1202) << "KonqFrameTabs " << this << ": insertChildFrame(0L) !" << endl;
+    else
+        kWarning(1202) << "KonqFrameTabs " << this << ": insertChildFrame(0) !" << endl;
 }
 
 void KonqFrameTabs::removeChildFrame( KonqFrameBase * frame )
@@ -316,9 +274,9 @@ void KonqFrameTabs::removeChildFrame( KonqFrameBase * frame )
   //kDebug(1202) << "KonqFrameTabs::RemoveChildFrame " << this << ". Child " << frame << " removed" << endl;
   if (frame) {
     removePage(frame->asQWidget());
-    m_pChildFrameList->removeAll(frame);
+    m_childFrameList.removeAll(frame);
     if (m_rightWidget)
-      m_rightWidget->setEnabled( m_pChildFrameList->count()>1 );
+      m_rightWidget->setEnabled( m_childFrameList.count()>1 );
     if (count() == 1)
       hideTabBar();
   }
@@ -355,9 +313,9 @@ void KonqFrameTabs::moveTabForward( int index )
 
 void KonqFrameTabs::slotMovedTab( int from, int to )
 {
-  KonqFrameBase* fromFrame = m_pChildFrameList->at( from );
-  m_pChildFrameList->removeAll( fromFrame );
-  m_pChildFrameList->insert( to, fromFrame );
+  KonqFrameBase* fromFrame = m_childFrameList.at( from );
+  m_childFrameList.removeAll( fromFrame );
+  m_childFrameList.insert( to, fromFrame );
 
   KonqFrameBase* currentFrame = dynamic_cast<KonqFrameBase*>( currentWidget() );
   if ( currentFrame && !m_pViewManager->isLoadingProfile() ) {
@@ -368,8 +326,8 @@ void KonqFrameTabs::slotMovedTab( int from, int to )
 
 void KonqFrameTabs::slotContextMenu( const QPoint &p )
 {
+  initPopupMenu();
   refreshSubPopupMenuTab();
-
   m_pPopupMenu->setItemEnabled( RELOAD_ID, false );
   m_pPopupMenu->setItemEnabled( DUPLICATE_ID, false );
   m_pPopupMenu->setItemEnabled( BREAKOFF_ID, false );
@@ -382,9 +340,9 @@ void KonqFrameTabs::slotContextMenu( const QPoint &p )
 
 void KonqFrameTabs::slotContextMenu( QWidget *w, const QPoint &p )
 {
+  initPopupMenu();
   refreshSubPopupMenuTab();
-
-  uint tabCount = m_pChildFrameList->count();
+  uint tabCount = m_childFrameList.count();
   m_pPopupMenu->setItemEnabled( RELOAD_ID, true );
   m_pPopupMenu->setItemEnabled( DUPLICATE_ID, true );
   m_pPopupMenu->setItemEnabled( BREAKOFF_ID, tabCount>1 );
@@ -404,13 +362,13 @@ void KonqFrameTabs::refreshSubPopupMenuTab()
 {
     m_pSubPopupMenuTab->clear();
     int i=0;
-    m_pSubPopupMenuTab->insertItem( SmallIcon( "reload_all_tabs" ),
+    m_pSubPopupMenuTab->insertItem( KIcon( "reload_all_tabs" ),
                                     i18n( "&Reload All Tabs" ),
                                     m_pViewManager->mainWindow(),
                                     SLOT( slotReloadAllTabs() ),
                                     m_pViewManager->mainWindow()->action("reload_all_tabs")->shortcut() );
     m_pSubPopupMenuTab->addSeparator();
-    foreach (KonqFrameBase* frameBase, *m_pChildFrameList)
+    foreach (KonqFrameBase* frameBase, m_childFrameList)
     {
         KonqFrame* frame = dynamic_cast<KonqFrame *>(frameBase);
         if ( frame && frame->activeChildView() )
@@ -435,7 +393,7 @@ void KonqFrameTabs::refreshSubPopupMenuTab()
 
 void KonqFrameTabs::slotCloseRequest( QWidget *w )
 {
-  if ( m_pChildFrameList->count() > 1 ) {
+  if ( m_childFrameList.count() > 1 ) {
     // Yes, I know this is an unchecked dynamic_cast - I'm casting sideways in a class hierarchy and it could crash one day, but I haven't checked setWorkingTab so I don't know if it can handle nulls.
     m_pViewManager->mainWindow()->setWorkingTab( dynamic_cast<KonqFrameBase*>(w) );
     emit ( removeTabPopup() );
@@ -462,7 +420,7 @@ void KonqFrameTabs::slotMouseMiddleClick()
 void KonqFrameTabs::slotMouseMiddleClick( QWidget *w )
 {
   if ( m_MouseMiddleClickClosesTab ) {
-    if ( m_pChildFrameList->count() > 1 ) {
+    if ( m_childFrameList.count() > 1 ) {
       // Yes, I know this is an unchecked dynamic_cast - I'm casting sideways in a class hierarchy and it could crash one day, but I haven't checked setWorkingTab so I don't know if it can handle nulls.
       m_pViewManager->mainWindow()->setWorkingTab( dynamic_cast<KonqFrameBase*>(w) );
       emit ( removeTabPopup() );
@@ -527,8 +485,6 @@ void KonqFrameTabs::hideTabBar()
   if ( !m_alwaysTabBar ) {
     setTabBarHidden(true);
   }
-  m_pPopupMenu->setItemEnabled( BREAKOFF_ID, false );
-  m_pPopupMenu->setItemEnabled( CLOSETAB_ID, false );
 }
 
 void KonqFrameTabs::setAlwaysTabbedMode( bool enable )
@@ -542,6 +498,51 @@ void KonqFrameTabs::setAlwaysTabbedMode( bool enable )
     else
       hideTabBar();
   }
+}
+
+void KonqFrameTabs::initPopupMenu()
+{
+  m_pPopupMenu = new QMenu( this );
+  m_pPopupMenu->insertItem( KIcon( "tab-new" ),
+                            i18n("&New Tab"),
+                            m_pViewManager->mainWindow(),
+                            SLOT( slotAddTab() ),
+                            m_pViewManager->mainWindow()->action("newtab")->shortcut() );
+  m_pPopupMenu->insertItem( KIcon( "tab-duplicate" ),
+                            i18n("&Duplicate Tab"),
+                            m_pViewManager->mainWindow(),
+                            SLOT( slotDuplicateTabPopup() ),
+                            m_pViewManager->mainWindow()->action("duplicatecurrenttab")->shortcut(),
+                            DUPLICATE_ID );
+  m_pPopupMenu->insertItem( KIcon( "view-refresh" ),
+                            i18n( "&Reload Tab" ),
+                            m_pViewManager->mainWindow(),
+                            SLOT( slotReloadPopup() ),
+                            m_pViewManager->mainWindow()->action("reload")->shortcut(), RELOAD_ID );
+  m_pPopupMenu->addSeparator();
+  m_pSubPopupMenuTab = new QMenu( this );
+  m_pPopupMenu->insertItem( i18n("Other Tabs" ), m_pSubPopupMenuTab, OTHERTABS_ID );
+  connect( m_pSubPopupMenuTab, SIGNAL( activated ( int ) ),
+           this, SLOT( slotSubPopupMenuTabActivated( int ) ) );
+  m_pPopupMenu->addSeparator();
+  m_pPopupMenu->insertItem( KIcon( "tab-breakoff" ),
+                            i18n("D&etach Tab"),
+                            m_pViewManager->mainWindow(),
+                            SLOT( slotBreakOffTabPopup() ),
+                            m_pViewManager->mainWindow()->action("breakoffcurrenttab")->shortcut(),
+                            BREAKOFF_ID );
+  m_pPopupMenu->addSeparator();
+  m_pPopupMenu->insertItem( KIcon( "tab-remove" ),
+                            i18n("&Close Tab"),
+                            m_pViewManager->mainWindow(),
+                            SLOT( slotRemoveTabPopup() ),
+                            m_pViewManager->mainWindow()->action("removecurrenttab")->shortcut(),
+                            CLOSETAB_ID );
+  connect( this, SIGNAL( contextMenu( QWidget *, const QPoint & ) ),
+           SLOT(slotContextMenu( QWidget *, const QPoint & ) ) );
+  connect( this, SIGNAL( contextMenu( const QPoint & ) ),
+           SLOT(slotContextMenu( const QPoint & ) ) );
+
 }
 
 #include "konq_tabs.moc"

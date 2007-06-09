@@ -34,7 +34,7 @@
 #include <kdebug.h>
 #include <klocale.h>
 #include <kmessagebox.h>
-#include <kmimetypetrader.h> 
+#include <kmimetypetrader.h>
 #include <kparts/factory.h>
 #include <kservicetypetrader.h>
 #include <kdeversion.h>
@@ -62,13 +62,14 @@ KParts::ReadOnlyPart *KonqViewFactory::create( QWidget *parentWidget, QObject * 
 
   QObject *obj = 0L;
 
-  if ( m_factory->inherits( "KParts::Factory" ) )
+  KParts::Factory* kpartsFactory = ::qobject_cast<KParts::Factory *>( m_factory );
+  if ( kpartsFactory )
   {
     if ( m_createBrowser )
-      obj = static_cast<KParts::Factory *>(m_factory)->createPart( parentWidget, parent, "Browser/View", m_args );
+      obj = kpartsFactory->createPart( parentWidget, parent, "Browser/View", m_args );
 
     if ( !obj )
-      obj = static_cast<KParts::Factory *>(m_factory)->createPart( parentWidget, parent, "KParts::ReadOnlyPart", m_args );
+      obj = kpartsFactory->createPart( parentWidget, parent, "KParts::ReadOnlyPart", m_args );
   }
   else
   {
@@ -79,10 +80,10 @@ KParts::ReadOnlyPart *KonqViewFactory::create( QWidget *parentWidget, QObject * 
       obj = m_factory->create( parentWidget, "KParts::ReadOnlyPart", m_args );
   }
 
-  if ( !obj->inherits( "KParts::ReadOnlyPart" ) ) {
+  KParts::ReadOnlyPart* part = ::qobject_cast<KParts::ReadOnlyPart *>( obj );
+  if ( !part ) {
     kError(1202) << "Part " << obj << " (" << obj->metaObject()->className() << ") doesn't inherit KParts::ReadOnlyPart !" << endl;
   } else {
-    KParts::ReadOnlyPart* part = static_cast<KParts::ReadOnlyPart *>( obj );
     QFrame* frame = qobject_cast<QFrame*>( part->widget() );
     if ( frame ) {
       frame->setFrameStyle( QFrame::NoFrame );
@@ -206,9 +207,9 @@ void KonqFactory::getOffers( const QString & serviceType,
 {
 #ifdef __GNUC__
 #warning Temporary hack
-#endif	
+#endif
     if ( partServiceOffers && serviceType[0].isUpper() ) {
-        *partServiceOffers = KServiceTypeTrader::self()->query( serviceType, 
+        *partServiceOffers = KServiceTypeTrader::self()->query( serviceType,
                     "DesktopEntryName != 'kfmclient' and DesktopEntryName != 'kfmclient_dir' and DesktopEntryName != 'kfmclient_html'");
         return;
 

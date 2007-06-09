@@ -28,7 +28,7 @@ public:
   virtual ~KonqFrameContainerBase() {}
 
   /**
-   * Call this after inserting a new frame into the splitter.
+   * Call this after inserting a new frame into the container.
    */
   virtual void insertChildFrame( KonqFrameBase * frame, int index = -1 ) = 0;
   /**
@@ -52,7 +52,7 @@ public:
   virtual void activateChild() { if (m_pActiveChild) m_pActiveChild->activateChild(); }
 
   virtual KonqView* activeChildView() { if (m_pActiveChild) return m_pActiveChild->activeChildView();
-                                        else return 0L; }
+                                        else return 0; }
 
 protected:
   KonqFrameContainerBase() {}

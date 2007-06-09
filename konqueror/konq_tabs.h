@@ -60,7 +60,7 @@ public:
 
   virtual void printFrameInfo( const QString& spaces );
 
-  QList<KonqFrameBase*>* childFrameList() { return m_pChildFrameList; }
+  const QList<KonqFrameBase*>& childFrameList() const { return m_childFrameList; }
 
   virtual void setTitle( const QString &title, QWidget* sender );
   virtual void setTabIcon( const KUrl &url, QWidget* sender );
@@ -71,7 +71,7 @@ public:
   void activateChild();
 
   /**
-   * Call this after inserting a new frame into the splitter.
+   * Call this after inserting a new frame into the container.
    */
   void insertChildFrame( KonqFrameBase * frame, int index = -1);
 
@@ -96,11 +96,10 @@ Q_SIGNALS:
   void ctrlTabPressed();
   void removeTabPopup();
 
-protected:
+private:
   void refreshSubPopupMenuTab();
   void hideTabBar();
-
-  QList<KonqFrameBase*>* m_pChildFrameList;
+    void initPopupMenu();
 
 private Q_SLOTS:
   void slotContextMenu( const QPoint& );
@@ -117,6 +116,8 @@ private Q_SLOTS:
   void slotSubPopupMenuTabActivated( int );
 
 private:
+  QList<KonqFrameBase*> m_childFrameList;
+
   KonqViewManager* m_pViewManager;
   QMenu* m_pPopupMenu;
   QMenu* m_pSubPopupMenuTab;

@@ -242,8 +242,11 @@ void ToggleViewGUIClient::slotToggleView( bool toggle )
 
   if ( toggle )
   {
-
-    KonqView *childView = viewManager->splitWindow( horizontal ? Qt::Vertical : Qt::Horizontal,
+    // Don't crash when doing things too quickly.
+    if ( !m_mainWindow->currentView() )
+        return;
+    KonqView *childView = viewManager->splitMainContainer( m_mainWindow->currentView(),
+                                                    horizontal ? Qt::Vertical : Qt::Horizontal,
                                                     QLatin1String( "Browser/View" ),
                                                     serviceName,
                                                     !horizontal /* vertical = make it first */);

@@ -33,6 +33,7 @@
 #include <kparts/partmanager.h>
 #include "konq_openurlrequest.h"
 
+class KonqFrameTabs;
 class QString;
 class QTimer;
 class KConfig;
@@ -55,7 +56,7 @@ public:
   KonqViewManager( KonqMainWindow *mainWindow );
   ~KonqViewManager();
 
-  KonqView* Initialize( const QString &serviceType, const QString &serviceName );
+  KonqView* createFirstView( const QString &serviceType, const QString &serviceName );
 
   /**
    * Splits the view, depending on orientation, either horizontally or
@@ -63,32 +64,29 @@ public:
    * view, the other will be a new one, constructed from the given
    * Service Type.
    * If no Service Type was provided it takes the one from the current view.
-   * Returns the newly created view or 0L if the view couldn't be created.
+   * Returns the newly created view or 0 if the view couldn't be created.
    *
    * @param newOneFirst if true, move the new view as the first one (left or top)
    */
-  KonqView* splitView( Qt::Orientation orientation,
+  KonqView* splitView( KonqView* view,
+                       Qt::Orientation orientation,
                        const QString & serviceType = QString(),
                        const QString & serviceName = QString(),
                        bool newOneFirst = false, bool forceAutoEmbed = false );
 
   /**
-   * Does basically the same as splitView() but inserts the new view at the top
-   * of the view tree.
-   * Returns the newly created view or 0L if the view couldn't be created.
+   * Does basically the same as splitView() but inserts the new view inside the
+   * specified container (usually used with the main container, to insert
+   * the new view at the top of the view tree).
+   * Returns the newly created view or 0 if the view couldn't be created.
    *
    * @param newOneFirst if true, move the new view as the first one (left or top)
    */
-  KonqView* splitWindow( Qt::Orientation orientation,
-                         const QString & serviceType = QString(),
-                         const QString & serviceName = QString(),
-                         bool newOneFirst = false);
-
-  /**
-   * Converts a Container or View docContainer into a Tabs
-   */
-  void convertDocContainer();
-
+  KonqView* splitMainContainer( KonqView* currentView,
+                            Qt::Orientation orientation,
+                            const QString & serviceType = QString(),
+                            const QString & serviceName = QString(),
+                            bool newOneFirst = false );
 
   /**
    * Adds a tab to m_pMainContainer
@@ -102,19 +100,19 @@ public:
   /**
    * Duplicates the specified tab, or else the current one if none is specified
    */
-  void duplicateTab( KonqFrameBase* tab = 0L, bool openAfterCurrentPage = false );
+  void duplicateTab( KonqFrameBase* tab, bool openAfterCurrentPage = false );
 
   /**
-   * creates a new tab from a history entry  
+   * creates a new tab from a history entry
    * used for MMB on back/forward
    */
-  KonqView* addTabFromHistory( int steps, bool openAfterCurrentPage );
+  KonqView* addTabFromHistory( KonqView* currentView, int steps, bool openAfterCurrentPage );
 
   /**
    * Break the current tab off into a new window,
    * if none is specified, the current one is used
    */
-  void breakOffTab( KonqFrameBase* tab = 0L );
+  void breakOffTab( KonqFrameBase* tab, const QSize& windowSize );
 
   /**
    * Guess!:-)
@@ -123,16 +121,16 @@ public:
   void removeView( KonqView *view );
 
   /**
-   * Removes specified tab, if none is specified it remvoe the current tab
+   * Removes specified tab
    * Also takes care of setting another view as active if the active view was in this tab
    */
-  void removeTab( KonqFrameBase* tab = 0L );
+  void removeTab( KonqFrameBase* tab );
 
   /**
-   * Removes all, but the specified tab. If no tab is specified every tab, but the current will be removed
+   * Removes all, but the specified tab.
    * Also takes care of setting the specified tab as active if the active view was not in this tab
    */
-  void removeOtherTabs( KonqFrameBase* tab = 0L );
+  void removeOtherTabs( KonqFrameBase* tab );
 
   /**
    * Locates and activates the next tab
@@ -156,6 +154,9 @@ public:
     void moveTabForward();
 
     void reloadAllTabs();
+
+
+    KonqFrameTabs *tabContainer();
 
   /**
    * Brings the tab specified by @p view to the front of the stack
@@ -250,8 +251,8 @@ public:
 
   void profileListDirty( bool broadcast = true );
 
-  KonqFrameBase *docContainer() const { return m_pDocContainer; }
-  void setDocContainer( KonqFrameBase* docContainer ) { m_pDocContainer = docContainer; }
+//  KonqFrameBase *docContainer() const { return m_pDocContainer; }
+//  void setDocContainer( KonqFrameBase* docContainer ) { m_pDocContainer = docContainer; }
 
   KonqMainWindow *mainWindow() const { return m_pMainWindow; }
 
@@ -263,7 +264,7 @@ public:
   /**
    * Reimplemented from PartManager
    */
-  virtual void setActivePart( KParts::Part *part, QWidget *widget = 0L );
+  virtual void setActivePart( KParts::Part *part, QWidget *widget = 0 );
 
   void setActivePart( KParts::Part *part, bool immediate );
 
@@ -279,7 +280,7 @@ public:
 #endif
 
   void setLoading( KonqView *view, bool loading );
-  
+
   void showHTML(bool b);
 
   QString profileHomeURL() const { return m_profileHomeURL; }
@@ -314,7 +315,6 @@ protected:
   virtual void setActiveComponent(const KComponentData &) {}
 
 private:
-
   /**
    * Creates a new View based on the given ServiceType. If serviceType is empty
    * it clones the current view.
@@ -348,7 +348,7 @@ private:
 
   KonqMainWindow *m_pMainWindow;
 
-  KonqFrameBase *m_pDocContainer;
+  KonqFrameTabs *m_tabContainer;
 
   QPointer<KActionMenu> m_pamProfiles;
   bool m_bProfileListDirty;
