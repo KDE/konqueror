@@ -63,9 +63,10 @@ class KonqCheckBox : public QCheckBox
 {
     Q_OBJECT // for classname
 public:
-    KonqCheckBox(QWidget *parent=0)
-      :QCheckBox( parent ) {}
+    explicit KonqCheckBox(QWidget *parent=0)
+      : QCheckBox( parent ) {}
 protected:
+    // ######## Qt4 TODO: not called anymore!
     void drawButton( QPainter * );
 };
 
@@ -77,70 +78,70 @@ protected:
  */
 class KonqFrameStatusBar : public KStatusBar
 {
-  Q_OBJECT
+    Q_OBJECT
 
-   public:
-      KonqFrameStatusBar( KonqFrame *_parent = 0 );
-      virtual ~KonqFrameStatusBar();
+public:
+    KonqFrameStatusBar( KonqFrame *_parent = 0 );
+    virtual ~KonqFrameStatusBar();
 
-      /**
-       * Checks/unchecks the linked-view checkbox
-       */
-      void setLinkedView( bool b );
-      /**
-       * Shows/hides the active-view indicator
-       */
-      void showActiveViewIndicator( bool b );
-      /**
-       * Shows/hides the linked-view indicator
-       */
-      void showLinkedViewIndicator( bool b );
-      /**
-       * Updates the active-view indicator and the statusbar color.
-       */
-      void updateActiveStatus();
+    /**
+     * Checks/unchecks the linked-view checkbox
+     */
+    void setLinkedView( bool b );
+    /**
+     * Shows/hides the active-view indicator
+     */
+    void showActiveViewIndicator( bool b );
+    /**
+     * Shows/hides the linked-view indicator
+     */
+    void showLinkedViewIndicator( bool b );
+    /**
+     * Updates the active-view indicator and the statusbar color.
+     */
+    void updateActiveStatus();
 
-   public Q_SLOTS:
-      void slotConnectToNewView(KonqView *, KParts::ReadOnlyPart *oldOne,KParts::ReadOnlyPart *newOne);
-      void slotLoadingProgress( int percent );
-      void slotSpeedProgress( int bytesPerSecond );
-      void slotDisplayStatusText(const QString& text);
+public Q_SLOTS:
+    void slotConnectToNewView(KonqView *, KParts::ReadOnlyPart *oldOne,KParts::ReadOnlyPart *newOne);
+    void slotLoadingProgress( int percent );
+    void slotSpeedProgress( int bytesPerSecond );
+    void slotDisplayStatusText(const QString& text);
 
-      void slotClear();
-      void message ( const QString & message );
+    void slotClear();
+    void message ( const QString & message );
 
-   Q_SIGNALS:
-      /**
-       * This signal is emitted when the user clicked the bar.
-       */
-      void clicked();
+Q_SIGNALS:
+    /**
+     * This signal is emitted when the user clicked the bar.
+     */
+    void clicked();
 
-      /**
-       * The "linked view" checkbox was clicked
-       */
-      void linkedViewClicked( bool mode );
+    /**
+     * The "linked view" checkbox was clicked
+     */
+    void linkedViewClicked( bool mode );
 
-   protected:
-      virtual bool eventFilter(QObject*,QEvent *);
-      virtual void resizeEvent( QResizeEvent* );
-      virtual void mousePressEvent( QMouseEvent* );
-      /**
-       * Brings up the context menu for this frame
-       */
-      virtual void splitFrameMenu();
+protected:
+    virtual bool eventFilter(QObject*,QEvent *);
+    virtual void resizeEvent( QResizeEvent* );
+    virtual void mousePressEvent( QMouseEvent* );
+    /**
+     * Brings up the context menu for this frame
+     */
+    virtual void splitFrameMenu();
 
-      /**
-       * Takes care of the statusbars size
-       **/
-      virtual void fontChange(const QFont &oldFont);
+    /**
+     * Takes care of the statusbars size
+     **/
+    virtual void fontChange(const QFont &oldFont);
 
-   private:
-      KonqFrame* m_pParentKonqFrame;
-      QCheckBox *m_pLinkedViewCheckBox;
-      QProgressBar *m_progressBar;
-      KSqueezedTextLabel *m_pStatusLabel;
-      QLabel* m_led;
-      QString m_savedMessage;
+private:
+    KonqFrame* m_pParentKonqFrame;
+    QCheckBox *m_pLinkedViewCheckBox;
+    QProgressBar *m_progressBar;
+    KSqueezedTextLabel *m_pStatusLabel;
+    QLabel* m_led;
+    QString m_savedMessage;
 };
 
 
@@ -186,11 +187,7 @@ protected:
  * widget handling i.e. it attaches/detaches the view widget and activates
  * them on click at the statusbar.
  *
- * KonqFrame makes the difference between built-in views and remote ones.
- * We create a layout in it (with the KonqFrameStatusBar as top item in the layout)
- * For builtin views we have the view as direct child widget of the layout
- * For remote views we have an OPFrame, having the view attached, as child
- * widget of the layout
+ * We create a vertical layout in the frame, with the view and the KonqFrameStatusBar.
  */
 
 class KonqFrame : public QWidget, public KonqFrameBase
@@ -198,7 +195,7 @@ class KonqFrame : public QWidget, public KonqFrameBase
   Q_OBJECT
 
 public:
-  explicit KonqFrame( QWidget* parent, KonqFrameContainerBase *parentContainer = 0L );
+  explicit KonqFrame( QWidget* parent, KonqFrameContainerBase *parentContainer = 0 );
   virtual ~KonqFrame();
 
   /**
@@ -211,12 +208,12 @@ public:
    * Filters the CTRL+Tab event from the views and emits ctrlTabPressed to
    make KonqMainWindow switch to the next view
    */
-  virtual bool eventFilter(QObject*obj,QEvent *ev);
+  virtual bool eventFilter(QObject*obj, QEvent *ev);
 
   /**
-   * Inserts the part's widget and the statusbar into the layout
+   * Inserts the widget and the statusbar into the layout
    */
-  void attachInternal();
+  void attachWidget(QWidget* widget);
 
   /**
    * Inserts a widget at the top of the part's widget, in the layout
@@ -249,7 +246,6 @@ public:
   virtual void reparentFrame(QWidget * parent,
                      const QPoint & p );
 
-  //virtual KonqFrameContainerBase* parentContainer();
   virtual QWidget* asQWidget() { return this; }
   virtual QByteArray frameType() { return QByteArray("View"); }
 
@@ -284,8 +280,6 @@ protected:
   QPointer<KonqView> m_pView;
 
   QPointer<KParts::ReadOnlyPart> m_pPart;
-
-  KonqViewManager* m_pViewManager;
 
   KSeparator *m_separator;
   KonqFrameStatusBar* m_pStatusBar;

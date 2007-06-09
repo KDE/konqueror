@@ -334,10 +334,9 @@ void KonqViewModeAction::slotPopupAboutToHide()
         for (; i < containerCount(); ++i )
         {
             QWidget *widget = container( i );
-            if ( !widget->inherits( "KToolBar" ) )
+            KToolBar *tb = ::qobject_cast<KToolBar *>( widget );
+            if ( !tb )
                 continue;
-
-            KToolBar *tb = static_cast<KToolBar *>( widget );
 
             KToolBarButton *button = tb->getButton( itemId( i ) );
 

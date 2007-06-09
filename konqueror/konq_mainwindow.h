@@ -103,8 +103,8 @@ public:
   enum ComboAction { ComboClear, ComboAdd, ComboRemove };
   enum PageSecurity { NotCrypted, Encrypted, Mixed };
 
-  explicit KonqMainWindow( const KUrl &initialURL = KUrl(), 
-                           bool openInitialURL = true, 
+  explicit KonqMainWindow( const KUrl &initialURL = KUrl(),
+                           bool openInitialURL = true,
                            const QString& xmluiFile="konqueror.rc");
   ~KonqMainWindow();
 
@@ -264,7 +264,7 @@ public:
   // KonqFrameContainerBase implementation BEGIN
 
   /**
-   * Call this after inserting a new frame into the splitter.
+   * Call this after inserting a new frame into the container.
    */
   void insertChildFrame( KonqFrameBase * frame, int index = -1 );
   /**
@@ -509,12 +509,12 @@ protected Q_SLOTS:
 
 protected:
   virtual bool eventFilter(QObject*obj,QEvent *ev);
-  
+
   /**
    * Reimplemented for internal reasons. The API is not affected.
    */
   virtual void showEvent(QShowEvent *event);
-  
+
   void fillHistoryPopup( QMenu *menu, const QList<HistoryEntry*> &history );
 
   bool makeViewsFollow( const KUrl & url, const KParts::URLArgs &args, const QString & serviceType,

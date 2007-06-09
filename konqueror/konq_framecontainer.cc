@@ -48,8 +48,8 @@ KonqFrameContainer::KonqFrameContainer( Qt::Orientation o,
 KonqFrameContainer::~KonqFrameContainer()
 {
     //kDebug(1202) << "KonqFrameContainer::~KonqFrameContainer() " << this << " - " << className() << endl;
-	delete m_pFirstChild;
-	delete m_pSecondChild;
+    delete m_pFirstChild;
+    delete m_pSecondChild;
 }
 
 void KonqFrameContainer::listViews( ChildViewList *viewList )

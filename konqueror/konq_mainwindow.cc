@@ -66,6 +66,7 @@
 #include <QtGui/QClipboard>
 #include <QtCore/QArgument>
 #include <QtGui/QLayout>
+#include <QStackedWidget>
 #include <QtCore/QFileInfo>
 #ifdef Q_WS_X11
 #include <QX11Info>
@@ -360,7 +361,7 @@ QWidget * KonqMainWindow::createContainer( QWidget *parent, int index, const QDo
 
   if ( res && (element.tagName() == tagToolBar) && (element.attribute( "name" ) == nameBookmarkBar) )
   {
-    assert( res->inherits( "KToolBar" ) );
+    assert( ::qobject_cast<KToolBar*>( res ) );
     if (!KAuthorized::authorizeKAction("bookmarks"))
     {
         delete res;
@@ -401,7 +402,7 @@ void KonqMainWindow::removeContainer( QWidget *container, QWidget *parent, QDomE
 
   if ( element.tagName() == tagToolBar && element.attribute( "name" ) == nameBookmarkBar )
   {
-    assert( container->inherits( "KToolBar" ) );
+    assert( ::qobject_cast<KToolBar*>( container ) );
     if (m_paBookmarkBar)
       m_paBookmarkBar->clear();
   }
@@ -793,19 +794,12 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
   {
       if (req.newTab)
       {
-          KonqFrameTabs* tabContainer = 0;
-          int index = 0;
-          if ( m_pViewManager->docContainer() && m_pViewManager->docContainer()->frameType() == "Tabs")
-          {
-              tabContainer = static_cast<KonqFrameTabs*>(m_pViewManager->docContainer());
-              index = tabContainer->currentIndex();
-          }
+          KonqFrameTabs* tabContainer = m_pViewManager->tabContainer();
+          int index = tabContainer->currentIndex();
           childView = m_pViewManager->addTab( mimeType, serviceName, false, req.openAfterCurrentPage );
 
           if (req.newTabInFront && childView)
           {
-              if ( !tabContainer )
-                  tabContainer = static_cast<KonqFrameTabs*>(m_pViewManager->docContainer());
               if ( req.openAfterCurrentPage )
                   tabContainer->setCurrentIndex( index + 1 );
               else
@@ -816,10 +810,10 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
       else
       {
         // Create a new view
-        // Initialize always uses force auto-embed even if user setting is "separate viewer",
+        // createFirstView always uses force auto-embed even if user setting is "separate viewer",
         // since this window has no view yet - we don't want to keep an empty mainwindow.
         // This can happen with e.g. application/pdf from a target="_blank" link, or window.open.
-        childView = m_pViewManager->Initialize( mimeType, serviceName );
+        childView = m_pViewManager->createFirstView( mimeType, serviceName );
 
         if ( childView )
         {
@@ -887,8 +881,9 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
       childView->setTypedURL( req.typedUrl );
       if ( childView->browserExtension() )
           childView->browserExtension()->setUrlArgs( req.args );
-      if ( childView->part()->inherits("KonqDirPart") )
-          static_cast<KonqDirPart *>(childView->part())->setFilesToSelect( req.filesToSelect );
+      KonqDirPart* dirPart = ::qobject_cast<KonqDirPart*>( childView->part() );
+      if ( dirPart )
+          dirPart->setFilesToSelect( req.filesToSelect );
       if ( !url.isEmpty() )
           childView->openUrl( url, originalURL, req.nameFilter, req.tempFile );
   }
@@ -986,7 +981,7 @@ QObject *KonqMainWindow::lastFrame( KonqView *view )
   QObject *nextFrame, *viewFrame;
   nextFrame = view->frame();
   viewFrame = 0;
-  while ( nextFrame != 0 && ! nextFrame->inherits( "QWidgetStack" ) ) {
+  while ( nextFrame != 0 && !::qobject_cast<QStackedWidget*>(nextFrame) ) {
     viewFrame = nextFrame;
     nextFrame = nextFrame->parent();
   }
@@ -1319,7 +1314,7 @@ void KonqMainWindow::slotSendURL()
     fileNameList += (*it).fileName();
   }
   QString subject;
-  if ( m_currentView && !m_currentView->part()->inherits("KonqDirPart") )
+  if ( m_currentView && !::qobject_cast<KonqDirPart*>( m_currentView->part() ) )
     subject = m_currentView->caption();
   else
     subject = fileNameList;
@@ -1363,7 +1358,7 @@ void KonqMainWindow::slotSendFile()
     }
   }
   QString subject;
-  if ( m_currentView && !m_currentView->part()->inherits("KonqDirPart") )
+  if ( m_currentView && !::qobject_cast<KonqDirPart*>( m_currentView->part() ) )
     subject = m_currentView->caption();
   else
     subject = fileNameList;
@@ -1436,7 +1431,7 @@ void KonqMainWindow::slotToolFind()
 {
   kDebug(1202) << "KonqMainWindow::slotToolFind sender:" << sender()->metaObject()->className() << endl;
 
-  if ( m_currentView && m_currentView->part()->inherits("KonqDirPart") )
+  if ( m_currentView && ::qobject_cast<KonqDirPart*>( m_currentView->part() ) )
   {
     KonqDirPart* dirPart = static_cast<KonqDirPart *>(m_currentView->part());
 
@@ -1464,7 +1459,7 @@ void KonqMainWindow::slotToolFind()
     connect( dirPart, SIGNAL( findClosed(KonqDirPart *) ),
              this, SLOT( slotFindClosed(KonqDirPart *) ) );
   }
-  else if ( sender()->inherits( "KAction" ) ) // don't go there if called by the singleShot below
+  else if ( ::qobject_cast<KAction*>(sender()) ) // don't go there if called by the singleShot below
   {
       KUrl url;
       if ( m_currentView && m_currentView->url().isLocalFile() )
@@ -1549,8 +1544,9 @@ void KonqMainWindow::slotViewModeToggle( bool toggle )
   KUrl url = m_currentView->url();
   QString locationBarURL = m_currentView->locationBarURL();
   QStringList filesToSelect;
-  if( m_currentView->part()->inherits( "KonqDirPart" ) ) {
-     const KFileItemList fileItemsToSelect = static_cast<KonqDirPart*>(m_currentView->part())->selectedFileItems();
+  KonqDirPart* dirPart = ::qobject_cast<KonqDirPart *>(m_currentView->part());
+  if( dirPart ) {
+     const KFileItemList fileItemsToSelect = dirPart->selectedFileItems();
      KFileItemList::const_iterator it = fileItemsToSelect.begin();
      const KFileItemList::const_iterator end = fileItemsToSelect.end();
      for ( ; it != end; ++it ) {
@@ -1601,7 +1597,7 @@ void KonqMainWindow::slotViewModeToggle( bool toggle )
               for (int i = 0; i < m_toolBarViewModeActions.size(); ++i)
                   if ( m_toolBarViewModeActions.at(i)->objectName() == oldService->desktopEntryName() )
                   {
-                      assert( m_toolBarViewModeActions.at(i)->inherits( "KonqViewModeAction" ) );
+                      assert( ::qobject_cast<KonqViewModeAction *>( m_toolBarViewModeActions.at(i) ) );
 
                       KonqViewModeAction *action = static_cast<KonqViewModeAction *>( m_toolBarViewModeActions.at(i) );
 
@@ -1630,8 +1626,9 @@ void KonqMainWindow::slotViewModeToggle( bool toggle )
     m_currentView->changeViewMode( m_currentView->serviceType(), modeName );
     KUrl locURL( locationBarURL );
     QString nameFilter = detectNameFilter( locURL );
-    if( m_currentView->part()->inherits( "KonqDirPart" ) )
-       static_cast<KonqDirPart*>( m_currentView->part() )->setFilesToSelect( filesToSelect );
+    KonqDirPart* dirPart = ::qobject_cast<KonqDirPart *>(m_currentView->part());
+    if( dirPart )
+       dirPart->setFilesToSelect( filesToSelect );
     m_currentView->openUrl( locURL, locationBarURL, nameFilter );
   }
 
@@ -2521,16 +2518,20 @@ void KonqMainWindow::slotFileNewAboutToShow()
 
 void KonqMainWindow::slotSplitViewHorizontal()
 {
-  KonqView * newView = m_pViewManager->splitView( Qt::Horizontal );
-  if (newView == 0) return;
-  newView->openUrl( m_currentView->url(), m_currentView->locationBarURL() );
+    if ( !m_currentView )
+        return;
+    KonqView * newView = m_pViewManager->splitView( m_currentView, Qt::Horizontal );
+    if (newView == 0) return;
+    newView->openUrl( m_currentView->url(), m_currentView->locationBarURL() );
 }
 
 void KonqMainWindow::slotSplitViewVertical()
 {
-  KonqView * newView = m_pViewManager->splitView( Qt::Vertical );
-  if (newView == 0) return;
-  newView->openUrl( m_currentView->url(), m_currentView->locationBarURL() );
+    if ( !m_currentView )
+        return;
+    KonqView * newView = m_pViewManager->splitView( m_currentView, Qt::Vertical );
+    if (newView == 0) return;
+    newView->openUrl( m_currentView->url(), m_currentView->locationBarURL() );
 }
 
 void KonqMainWindow::slotAddTab()
@@ -2548,7 +2549,9 @@ void KonqMainWindow::slotAddTab()
 
 void KonqMainWindow::slotDuplicateTab()
 {
-  m_pViewManager->duplicateTab( 0, KonqSettings::openAfterCurrentPage() );
+    if ( !m_currentView )
+        return;
+    m_pViewManager->duplicateTab( m_currentView->frame(), KonqSettings::openAfterCurrentPage() );
 }
 
 void KonqMainWindow::slotDuplicateTabPopup()
@@ -2558,7 +2561,9 @@ void KonqMainWindow::slotDuplicateTabPopup()
 
 void KonqMainWindow::slotBreakOffTab()
 {
-  if (m_currentView && m_currentView->part() &&
+    if ( !m_currentView )
+        return;
+  if (m_currentView->part() &&
       (m_currentView->part()->metaObject()->indexOfProperty("modified") != -1) ) {
     QVariant prop = m_currentView->part()->property("modified");
     if (prop.isValid() && prop.toBool())
@@ -2568,7 +2573,7 @@ void KonqMainWindow::slotBreakOffTab()
         return;
   }
 
-  m_pViewManager->breakOffTab();
+  m_pViewManager->breakOffTab( m_currentView->frame(), size() );
   updateViewActions();
 }
 
@@ -2598,7 +2603,7 @@ void KonqMainWindow::slotBreakOffTabPopup()
 
 void KonqMainWindow::slotBreakOffTabPopupDelayed()
 {
-  m_pViewManager->breakOffTab( m_pWorkingTab );
+  m_pViewManager->breakOffTab( m_pWorkingTab, size() );
   updateViewActions();
 }
 
@@ -2697,7 +2702,7 @@ void KonqMainWindow::slotRemoveTab()
         return;
   }
 
-  m_pViewManager->removeTab();
+  m_pViewManager->removeTab( m_currentView->frame() );
 }
 
 void KonqMainWindow::slotRemoveTabPopup()
@@ -2912,14 +2917,12 @@ void KonqMainWindow::slotNewDir()
 KUrl::List KonqMainWindow::currentURLs() const
 {
   KUrl::List urls;
-  if ( m_currentView )
-  {
+  if ( m_currentView ) {
     urls.append( m_currentView->url() );
-    if ( m_currentView->part()->inherits("KonqDirPart") )
-    {
-      const KFileItemList itemList = static_cast<KonqDirPart *>(m_currentView->part())->selectedFileItems();
-      if (!itemList.isEmpty()) // Return list of selected items only if we have a selection
-      {
+    KonqDirPart* dirPart = ::qobject_cast<KonqDirPart *>(m_currentView->part());
+    if ( dirPart ) {
+      const KFileItemList itemList = dirPart->selectedFileItems();
+      if (!itemList.isEmpty()) { // Return list of selected items only if we have a selection
         urls = itemList.urlList();
       }
     }
@@ -3071,7 +3074,7 @@ void KonqMainWindow::slotGoHistoryDelayed()
 
   if(m_goKeyboardState & Qt::ControlModifier)
   {
-      KonqView * newView = m_pViewManager->addTabFromHistory( m_goBuffer, openAfterCurrentPage );
+      KonqView * newView = m_pViewManager->addTabFromHistory( m_currentView, m_goBuffer, openAfterCurrentPage );
       if (newView && inFront)
 	  m_pViewManager->showTab( newView );
   }
@@ -3079,7 +3082,7 @@ void KonqMainWindow::slotGoHistoryDelayed()
   {
       if(mmbOpensTab)
       {
-	  KonqView * newView = m_pViewManager->addTabFromHistory( m_goBuffer, openAfterCurrentPage );
+	  KonqView * newView = m_pViewManager->addTabFromHistory( m_currentView, m_goBuffer, openAfterCurrentPage );
 	  if (newView && inFront)
 	      m_pViewManager->showTab( newView );
       }
@@ -4199,52 +4202,35 @@ void KonqMainWindow::updateViewActions()
   m_paRemoveView->setEnabled( mainViewsCount() > 1 ||
                               ( m_currentView && m_currentView->isToggleView() ) );
 
-  KonqFrameBase* docContainer = m_pViewManager->docContainer();
-
-  if ( docContainer == 0 && !(currentView() && currentView()->frame()))
-  {
-    m_paAddTab->setEnabled( false );
-    m_paDuplicateTab->setEnabled( false );
-    m_paRemoveTab->setEnabled( false );
-    m_paRemoveOtherTabs->setEnabled( false );
-    m_paBreakOffTab->setEnabled( false );
-    m_paActivateNextTab->setEnabled( false );
-    m_paActivatePrevTab->setEnabled( false );
-    m_paMoveTabLeft->setEnabled( false );
-    m_paMoveTabRight->setEnabled( false );
-  }
-  else
-  {
-    m_paAddTab->setEnabled( true );
-    m_paDuplicateTab->setEnabled( true );
-    if ( docContainer && docContainer->frameType() == "Tabs" )
+    if ( !currentView() || !currentView()->frame())
     {
-        KonqFrameTabs* tabContainer = static_cast<KonqFrameTabs*>(docContainer);
+        m_paAddTab->setEnabled( false );
+        m_paDuplicateTab->setEnabled( false );
+        m_paRemoveTab->setEnabled( false );
+        m_paRemoveOtherTabs->setEnabled( false );
+        m_paBreakOffTab->setEnabled( false );
+        m_paActivateNextTab->setEnabled( false );
+        m_paActivatePrevTab->setEnabled( false );
+        m_paMoveTabLeft->setEnabled( false );
+        m_paMoveTabRight->setEnabled( false );
+    } else {
+        m_paAddTab->setEnabled( true );
+        m_paDuplicateTab->setEnabled( true );
+        KonqFrameTabs* tabContainer = m_pViewManager->tabContainer();
         bool state = (tabContainer->count()>1);
         m_paRemoveTab->setEnabled( state );
-	m_paRemoveOtherTabs->setEnabled( state );
+        m_paRemoveOtherTabs->setEnabled( state );
         m_paBreakOffTab->setEnabled( state );
         m_paActivateNextTab->setEnabled( state );
         m_paActivatePrevTab->setEnabled( state );
 
-        QList<KonqFrameBase*>* childFrameList = tabContainer->childFrameList();
+        QList<KonqFrameBase*> childFrameList = tabContainer->childFrameList();
+        Q_ASSERT( !childFrameList.isEmpty() );
         m_paMoveTabLeft->setEnabled( currentView() ? currentView()->frame()!=
-	    (QApplication::isRightToLeft() ? childFrameList->last() : childFrameList->first()) : false );
+           (QApplication::isRightToLeft() ? childFrameList.last() : childFrameList.first()) : false );
         m_paMoveTabRight->setEnabled( currentView() ? currentView()->frame()!=
-	    (QApplication::isRightToLeft() ? childFrameList->first() : childFrameList->last()) : false );
+           (QApplication::isRightToLeft() ? childFrameList.first() : childFrameList.last()) : false );
     }
-    else
-    {
-      m_paRemoveTab->setEnabled( false );
-      m_paRemoveOtherTabs->setEnabled( false );
-      m_paBreakOffTab->setEnabled( false );
-      m_paActivateNextTab->setEnabled( false );
-      m_paActivatePrevTab->setEnabled( false );
-      m_paMoveTabLeft->setEnabled( false );
-      m_paMoveTabRight->setEnabled( false );
-
-    }
-  }
 
   // Can split a view if it's not a toggle view (because a toggle view can be here only once)
   bool isNotToggle = m_currentView && !m_currentView->isToggleView();
@@ -4254,7 +4240,7 @@ void KonqMainWindow::updateViewActions()
   m_paLinkView->setChecked( m_currentView && m_currentView->isLinkedView() );
 
   if ( m_currentView && m_currentView->part() &&
-       m_currentView->part()->inherits("KonqDirPart") )
+       ::qobject_cast<KonqDirPart*>( m_currentView->part() ) )
   {
     KonqDirPart * dirPart = static_cast<KonqDirPart *>(m_currentView->part());
     m_paFindFiles->setEnabled( dirPart->findPart() == 0 );
@@ -4563,20 +4549,22 @@ QString KonqMainWindow::currentProfile() const
 
 QString KonqMainWindow::currentURL() const
 {
-  if ( !m_currentView )
-    return QString();
-  QString url = m_currentView->url().prettyUrl();
-  if ( m_currentView->part() && m_currentView->part()->inherits("KonqDirPart") )
-  {
-      QString nameFilter = static_cast<KonqDirPart *>(m_currentView->part())->nameFilter();
-      if ( !nameFilter.isEmpty() )
-      {
-          if (!url.endsWith("/"))
-              url += '/';
-          url += nameFilter;
-      }
-  }
-  return url;
+    if ( !m_currentView )
+        return QString();
+    QString url = m_currentView->url().prettyUrl();
+
+    if ( m_currentView->part() ) {
+        KonqDirPart* dirPart = ::qobject_cast<KonqDirPart *>(m_currentView->part());
+        if ( dirPart ) {
+            const QString nameFilter = dirPart->nameFilter();
+            if ( !nameFilter.isEmpty() ) {
+                if (!url.endsWith("/"))
+                    url += '/';
+                url += nameFilter;
+            }
+        }
+    }
+    return url;
 }
 
 bool KonqExtendedBookmarkOwner::supportsTabs() const
@@ -4587,13 +4575,9 @@ bool KonqExtendedBookmarkOwner::supportsTabs() const
 QList<QPair<QString, QString> > KonqExtendedBookmarkOwner::currentBookmarkList() const
 {
   QList<QPair<QString, QString> > list;
-  KonqFrameBase *docContainer = m_pKonqMainWindow->viewManager()->docContainer();
-  if (docContainer == 0) return QList<QPair<QString, QString> >();
-  if (docContainer->frameType() != "Tabs") return QList<QPair<QString, QString> >();
+  KonqFrameTabs* tabContainer = m_pKonqMainWindow->viewManager()->tabContainer();
 
-  KonqFrameTabs* tabContainer = static_cast<KonqFrameTabs*>(docContainer);
-
-  foreach ( KonqFrameBase* frame, *tabContainer->childFrameList() )
+  foreach ( KonqFrameBase* frame, tabContainer->childFrameList() )
   {
     if ( !frame || !frame->activeChildView() )
       continue;
@@ -5283,9 +5267,7 @@ void KonqMainWindow::closeEvent( QCloseEvent *e )
   // so let's do this only when closed by the user.
   if ( static_cast<KonquerorApplication *>(kapp)->closedByUser() )
   {
-    if ( viewManager()->docContainer() && viewManager()->docContainer()->frameType()=="Tabs" )
-    {
-      KonqFrameTabs* tabContainer = static_cast<KonqFrameTabs*>(viewManager()->docContainer());
+      KonqFrameTabs* tabContainer = m_pViewManager->tabContainer();
       if ( tabContainer->count() > 1 )
       {
         KSharedConfig::Ptr config = KGlobal::config();
@@ -5332,6 +5314,8 @@ void KonqMainWindow::closeEvent( QCloseEvent *e )
           QVariant prop = view->part()->property("modified");
           if (prop.isValid() && prop.toBool()) {
             m_pViewManager->showTab( view );
+            // TODO if tabbar is not shown, use this instead:
+            //i18n("This page contains changes that have not been submitted.\nClosing the window will discard these changes."),
             if ( KMessageBox::warningContinueCancel( this,
               i18n("This tab contains changes that have not been submitted.\nClosing the window will discard these changes."),
               i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"application-exit"), KStandardGuiItem::cancel(), "discardchangesclose") != KMessageBox::Continue )
@@ -5343,21 +5327,6 @@ void KonqMainWindow::closeEvent( QCloseEvent *e )
           }
         }
       }
-//      m_pViewManager->showTab( originalView );
-    }
-    else if ( m_currentView && m_currentView->part() &&
-             (m_currentView->part()->metaObject()->indexOfProperty("modified") != -1) )
-    {
-      QVariant prop = m_currentView->part()->property("modified");
-      if (prop.isValid() && prop.toBool())
-         if ( KMessageBox::warningContinueCancel( this,
-           i18n("This page contains changes that have not been submitted.\nClosing the window will discard these changes."),
-           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"application-exit"), KStandardGuiItem::cancel(), "discardchangesclose") != KMessageBox::Continue )
-         {
-           e->ignore();
-           return;
-         }
-    }
 
     // save size to have something to restore if the profile does not contain size
     saveWindowSize();

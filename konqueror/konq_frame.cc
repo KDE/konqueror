@@ -235,7 +235,7 @@ void KonqFrameStatusBar::slotSpeedProgress( int bytesPerSecond )
   QString sizeStr;
 
   if ( bytesPerSecond > 0 )
-    sizeStr = i18n( "%1/s" ,  KIO::convertSize( bytesPerSecond ) );
+    sizeStr = i18n( "%1/s", KIO::convertSize( bytesPerSecond ) );
   else
     sizeStr = i18n( "Stalled" );
 
@@ -244,7 +244,7 @@ void KonqFrameStatusBar::slotSpeedProgress( int bytesPerSecond )
 
 void KonqFrameStatusBar::slotConnectToNewView(KonqView *, KParts::ReadOnlyPart *,KParts::ReadOnlyPart *newOne)
 {
-   if (newOne!=0)
+   if (newOne)
       connect(newOne,SIGNAL(setStatusBarText(const QString &)),this,SLOT(slotDisplayStatusText(const QString&)));
    slotDisplayStatusText( QString() );
 }
@@ -372,14 +372,14 @@ KParts::ReadOnlyPart *KonqFrame::attach( const KonqViewFactory &viewFactory )
 
    assert( m_pPart->widget() );
 
-   attachInternal();
+   attachWidget(m_pPart->widget());
 
-   m_pStatusBar->slotConnectToNewView(0, 0,m_pPart);
+   m_pStatusBar->slotConnectToNewView(0, 0, m_pPart);
 
    return m_pPart;
 }
 
-void KonqFrame::attachInternal()
+void KonqFrame::attachWidget(QWidget* widget)
 {
    //kDebug(1202) << "KonqFrame::attachInternal()" << endl;
    delete m_pLayout;
@@ -389,14 +389,13 @@ void KonqFrame::attachInternal()
    m_pLayout->setMargin( 0 );
    m_pLayout->setSpacing( 0 );
 
-   m_pLayout->addWidget( m_pPart->widget(), 1 );
-
+   m_pLayout->addWidget( widget, 1 );
    m_pLayout->addWidget( m_pStatusBar, 0 );
-   m_pPart->widget()->show();
+   widget->show();
 
    m_pLayout->activate();
 
-   m_pPart->widget()->installEventFilter(this);
+   widget->installEventFilter(this);
 }
 
 bool KonqFrame::eventFilter(QObject* /*obj*/, QEvent *ev)
@@ -416,9 +415,9 @@ bool KonqFrame::eventFilter(QObject* /*obj*/, QEvent *ev)
 void KonqFrame::insertTopWidget( QWidget * widget )
 {
     assert(m_pLayout);
+    assert(widget);
     m_pLayout->insertWidget( 0, widget );
-    if (widget!=0)
-       widget->installEventFilter(this);
+    widget->installEventFilter(this);
 }
 
 void KonqFrame::setView( KonqView* child )
