@@ -25,6 +25,8 @@
 #include <qwebnetworkinterface.h>
 #include <qhash.h>
 
+#include <KIO/MetaData>
+
 namespace KIO
 {
     class Job;
@@ -39,6 +41,8 @@ public:
 
     virtual void addJob(QWebNetworkJob *job);
     virtual void cancelJob(QWebNetworkJob *job);
+
+    static KIO::MetaData metaDataForRequest(QHttpRequestHeader request);
 
 private slots:
     void forwardJobData(KIO::Job *kioJob, const QByteArray &data);

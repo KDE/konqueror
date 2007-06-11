@@ -41,20 +41,7 @@ void KWebNetworkInterface::addJob(QWebNetworkJob *job)
     else
         kioJob = KIO::http_post(job->url(), postData);
 
-    kioJob->addMetaData("PropagateHttpHeader", "true");
-
-    QHttpRequestHeader request = job->request();
-
-    kioJob->addMetaData("UserAgent", request.value("User-Agent"));
-    request.removeValue("User-Agent");
-
-    kioJob->addMetaData("accept", request.value("Accept"));
-    request.removeValue("Accept");
-
-    request.removeValue("content-length");
-    request.removeValue("Connection");
-
-    kioJob->addMetaData("customHTTPHeader", request.toString());
+    kioJob->addMetaData(metaDataForRequest(job->request()));
 
     kioJob->setProperty("qwebnetworkjob", QVariant::fromValue(job));
     m_jobs.insert(job, kioJob);
@@ -70,6 +57,25 @@ void KWebNetworkInterface::cancelJob(QWebNetworkJob *job)
     KJob *kjob = m_jobs.take(job);
     if (kjob)
         kjob->kill();
+}
+
+KIO::MetaData KWebNetworkInterface::metaDataForRequest(QHttpRequestHeader request)
+{
+    KIO::MetaData metaData;
+
+    metaData.insert("PropagateHttpHeader", "true");
+
+    metaData.insert("UserAgent", request.value("User-Agent"));
+    request.removeValue("User-Agent");
+
+    metaData.insert("accept", request.value("Accept"));
+    request.removeValue("Accept");
+
+    request.removeValue("content-length");
+    request.removeValue("Connection");
+
+    metaData.insert("customHTTPHeader", request.toString());
+    return metaData;
 }
 
 void KWebNetworkInterface::forwardJobData(KIO::Job *kioJob, const QByteArray &data)
