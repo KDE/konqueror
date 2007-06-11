@@ -41,6 +41,9 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
     connect(webPage, SIGNAL(titleChanged(const QString &)),
             this, SIGNAL(setWindowCaption(const QString &)));
 
+    connect(webPage, SIGNAL(hoveringOverLink(const QString &, const QString &)),
+            this, SIGNAL(setStatusBarText(const QString &)));
+
     browserExtension = new WebKitBrowserExtension(this);
 
     connect(webPage, SIGNAL(loadProgressChanged(int)),
