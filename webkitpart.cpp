@@ -25,14 +25,12 @@
 #include <KDE/KParts/GenericFactory>
 #include <KDE/KAboutData>
 
-#include <qwebpage.h>
-
 #include "kwebnetworkinterface.h"
 
 WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList &/*args*/)
     : KParts::ReadOnlyPart(parent)
 {
-    webPage = new QWebPage(parentWidget);
+    webPage = new WebPage(this, parentWidget);
     webPage->setNetworkInterface(new KWebNetworkInterface(this));
     setWidget(webPage);
 
@@ -84,12 +82,38 @@ void WebKitPart::frameFinished(QWebFrame *frame)
         emit completed();
 }
 
+QWebPage::NavigationRequestResponse WebKitPart::navigationRequested(const QUrl &url, const QHttpRequestHeader &request, const QByteArray &postData)
+{
+    KParts::URLArgs args;
+    args.postData = postData;
+    if (!postData.isEmpty())
+        args.setDoPost(true);
+
+    args.metaData().unite(KWebNetworkInterface::metaDataForRequest(request));
+
+    emit browserExtension->openUrlRequest(url, args);
+
+    return QWebPage::IgnoreNavigationRequest;
+}
+
 KAboutData *WebKitPart::createAboutData()
 {
     return new KAboutData("webkitpart", I18N_NOOP("Webkit HTML Component"),
                           /*version*/ "1.0", /*shortDescription*/ "",
                           KAboutData::License_LGPL,
                           I18N_NOOP("Copyright (c) 2007 Trolltech ASA"));
+}
+
+WebPage::WebPage(WebKitPart *wpart, QWidget *parent)
+    : QWebPage(parent), part(wpart)
+{
+}
+
+QWebPage::NavigationRequestResponse WebPage::navigationRequested(QWebFrame *frame, const QUrl &url, const QHttpRequestHeader &request, const QByteArray &postData)
+{
+    if (frame != mainFrame())
+        return AcceptNavigationRequest;
+    return part->navigationRequested(url, request, postData);
 }
 
 WebKitBrowserExtension::WebKitBrowserExtension(WebKitPart *parent)

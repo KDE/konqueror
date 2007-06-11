@@ -25,7 +25,9 @@
 #include <KDE/KParts/ReadOnlyPart>
 #include <KDE/KParts/BrowserExtension>
 
-class QWebPage;
+#include <qwebpage.h>
+
+class WebPage;
 class QWebFrame;
 class KAboutData;
 class WebKitBrowserExtension;
@@ -41,6 +43,8 @@ public:
     virtual bool openUrl(const KUrl &url);
     virtual bool closeUrl();
 
+    QWebPage::NavigationRequestResponse navigationRequested(const QUrl &url, const QHttpRequestHeader &request, const QByteArray &postData);
+
     static KAboutData *createAboutData();
 
 protected:
@@ -51,8 +55,20 @@ private slots:
     void frameFinished(QWebFrame *frame);
 
 private:
-    QWebPage *webPage;
+    WebPage *webPage;
     WebKitBrowserExtension *browserExtension;
+};
+
+class WebPage : public QWebPage
+{
+public:
+    WebPage(WebKitPart *wpart, QWidget *parent);
+
+protected:
+    virtual NavigationRequestResponse navigationRequested(QWebFrame *frame, const QUrl &url, const QHttpRequestHeader &request, const QByteArray &postData);
+
+private:
+    WebKitPart *part;
 };
 
 class WebKitBrowserExtension : public KParts::BrowserExtension
