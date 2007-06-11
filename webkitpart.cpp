@@ -54,7 +54,17 @@ WebKitPart::~WebKitPart()
 bool WebKitPart::openUrl(const KUrl &url)
 {
     setUrl(url);
-    webPage->open(url);
+
+    KParts::URLArgs args = browserExtension->urlArgs();
+
+    QString headerString = args.doPost() ? "POST" : "GET";
+    headerString += QLatin1Char(' ');
+    headerString += url.toEncoded(QUrl::RemoveScheme|QUrl::RemoveAuthority);
+    headerString += QLatin1String(" HTTP/1.1\n\n"); // ### does it matter?
+    headerString += args.metaData().value("customHTTPHeader");
+
+    webPage->open(url, QHttpRequestHeader(headerString), args.postData);
+
     return true;
 }
 
