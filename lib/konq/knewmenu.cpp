@@ -418,7 +418,7 @@ void KNewMenu::slotNewFile()
     if (id == 0)
     {
 	// run the command for the templates
-	KRun::runCommand(QString(sender()->objectName()));
+	KRun::runCommand(QString(sender()->objectName()), d->m_parentWidget);
 	return;
     }
 
