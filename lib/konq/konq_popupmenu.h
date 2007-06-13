@@ -25,7 +25,6 @@
 
 #include <QMap>
 #include <QMenu>
-#include <QStringList>
 
 #include <kaction.h>
 #include <kactioncollection.h>

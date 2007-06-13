@@ -23,6 +23,7 @@
 #include <QObject>
 #include <QMap>
 #include <QTimer>
+#include <QStringList>
 
 #include <kurl.h>
 #include <kparts/historyprovider.h>

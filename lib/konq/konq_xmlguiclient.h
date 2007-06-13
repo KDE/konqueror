@@ -26,7 +26,6 @@
 #include <kaction.h>
 #include <kactioncollection.h>
 #include <kxmlguiclient.h>
-#include <QStringList>
 #include <libkonq_export.h>
 
 /**
