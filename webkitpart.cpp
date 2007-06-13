@@ -65,8 +65,15 @@ bool WebKitPart::openUrl(const KUrl &url)
     headerString += url.toEncoded(QUrl::RemoveScheme|QUrl::RemoveAuthority);
     headerString += QLatin1String(" HTTP/1.1\n\n"); // ### does it matter?
     headerString += args.metaData().value("customHTTPHeader");
+    QHttpRequestHeader header(headerString);
 
-    webPage->open(url, QHttpRequestHeader(headerString), args.postData);
+    QWebNetworkRequest request(url, args.doPost() ? QWebNetworkRequest::Post : QWebNetworkRequest::Get,
+                               args.postData);
+
+    foreach (QString key, header.keys())
+        request.setHttpHeaderField(key, header.value(key));
+
+    webPage->open(request);
 
     return true;
 }
@@ -95,16 +102,16 @@ void WebKitPart::frameFinished(QWebFrame *frame)
         emit completed();
 }
 
-QWebPage::NavigationRequestResponse WebKitPart::navigationRequested(const QUrl &url, const QHttpRequestHeader &request, const QByteArray &postData)
+QWebPage::NavigationRequestResponse WebKitPart::navigationRequested(const QWebNetworkRequest &request)
 {
     KParts::URLArgs args;
-    args.postData = postData;
-    if (!postData.isEmpty())
+    args.postData = request.postData();
+    if (!args.postData.isEmpty())
         args.setDoPost(true);
 
-    args.metaData().unite(KWebNetworkInterface::metaDataForRequest(request));
+    args.metaData().unite(KWebNetworkInterface::metaDataForRequest(request.httpHeader()));
 
-    emit browserExtension->openUrlRequest(url, args);
+    emit browserExtension->openUrlRequest(request.url(), args);
 
     return QWebPage::IgnoreNavigationRequest;
 }
@@ -122,11 +129,11 @@ WebPage::WebPage(WebKitPart *wpart, QWidget *parent)
 {
 }
 
-QWebPage::NavigationRequestResponse WebPage::navigationRequested(QWebFrame *frame, const QUrl &url, const QHttpRequestHeader &request, const QByteArray &postData)
+QWebPage::NavigationRequestResponse WebPage::navigationRequested(QWebFrame *frame, const QWebNetworkRequest &request)
 {
     if (frame != mainFrame())
         return AcceptNavigationRequest;
-    return part->navigationRequested(url, request, postData);
+    return part->navigationRequested(request);
 }
 
 WebKitBrowserExtension::WebKitBrowserExtension(WebKitPart *parent)

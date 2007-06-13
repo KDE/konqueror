@@ -43,7 +43,7 @@ public:
     virtual bool openUrl(const KUrl &url);
     virtual bool closeUrl();
 
-    QWebPage::NavigationRequestResponse navigationRequested(const QUrl &url, const QHttpRequestHeader &request, const QByteArray &postData);
+    QWebPage::NavigationRequestResponse navigationRequested(const QWebNetworkRequest &request);
 
     static KAboutData *createAboutData();
 
@@ -65,7 +65,7 @@ public:
     WebPage(WebKitPart *wpart, QWidget *parent);
 
 protected:
-    virtual NavigationRequestResponse navigationRequested(QWebFrame *frame, const QUrl &url, const QHttpRequestHeader &request, const QByteArray &postData);
+    virtual NavigationRequestResponse navigationRequested(QWebFrame *frame, const QWebNetworkRequest &request);
 
 private:
     WebKitPart *part;

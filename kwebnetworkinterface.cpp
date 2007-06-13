@@ -41,7 +41,7 @@ void KWebNetworkInterface::addJob(QWebNetworkJob *job)
     else
         kioJob = KIO::http_post(job->url(), postData);
 
-    kioJob->addMetaData(metaDataForRequest(job->request()));
+    kioJob->addMetaData(metaDataForRequest(job->request().httpHeader()));
 
     kioJob->setProperty("qwebnetworkjob", QVariant::fromValue(job));
     m_jobs.insert(job, kioJob);
