@@ -22,7 +22,6 @@
 
 #include <QDateTime>
 #include <QVariant>
-#include <QStringList>
 
 #include <kurl.h>
 

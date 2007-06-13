@@ -29,7 +29,6 @@
 
 
 
-#include <QStringList>
 #include <Qt3Support/Q3Dict>
 #include <QObject>
 #include <QWidget>

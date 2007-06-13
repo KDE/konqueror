@@ -28,7 +28,6 @@
 
 #include <QObject>
 
-#include <QStringList>
 #include <Qt3Support/Q3PtrQueue>
 #include <QMap>
 #include <Qt3Support/Q3IntDict>

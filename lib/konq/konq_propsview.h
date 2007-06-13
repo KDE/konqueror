@@ -21,7 +21,6 @@
 #define __konq_viewprops_h__
 
 #include <QPixmap>
-#include <QStringList>
 
 #include <kurl.h>
 #include <libkonq_export.h>
