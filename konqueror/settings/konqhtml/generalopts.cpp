@@ -25,7 +25,7 @@
 #include "khtml_settings.h"
 
 typedef KGenericFactory<KKonqGeneralOptions, QWidget> KKonqGeneralOptionsFactory;
-K_EXPORT_COMPONENT_FACTORY( khtml_general, KKonqGeneralOptionsFactory("kcmkonqgeneral") )
+K_EXPORT_COMPONENT_FACTORY( khtml_general, KKonqGeneralOptionsFactory("kcmkonqhtml") )
 
 //-----------------------------------------------------------------------------
 
