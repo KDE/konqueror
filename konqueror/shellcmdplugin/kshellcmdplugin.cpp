@@ -22,7 +22,7 @@
 #include <kinputdialog.h>
 #include <kmessagebox.h>
 #include <konq_dirpart.h>
-#include <k3process.h>
+#include <kshell.h>
 #include <kapplication.h>
 #include "kshellcmddialog.h"
 #include <kgenericfactory.h>
@@ -72,12 +72,12 @@ void KShellCmdPlugin::slotExecuteShellCommand()
    bool ok;
    QString cmd = KInputDialog::getText( i18n("Execute Shell Command"),
       i18n( "Execute shell command in current directory:" ),
-      K3Process::quote( path ), &ok, part->widget() );
+      KShell::quoteArg( path ), &ok, part->widget() );
    if ( ok )
    {
       QString chDir;
       chDir="cd ";
-      chDir+=K3Process::quote(part->url().path());
+      chDir+=KShell::quoteArg(part->url().path());
       chDir+="; ";
       chDir+=cmd;
 
