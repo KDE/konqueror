@@ -49,6 +49,7 @@
 #include <kfileitem.h>
 #include <kdesktopfile.h>
 #include <kimageio.h>
+#include <kshell.h>
 
 #include <konq_iconviewwidget.h>
 #include <QtDBus/QtDBus>
@@ -81,7 +82,7 @@ void KonqOperations::editMimeType( const QString & mimeType, QWidget* parent )
     QString keditfiletype = QLatin1String("keditfiletype");
     KRun::runCommand( keditfiletype
                       + " --parent " + QString::number( (long)parent->winId())
-                      + ' ' + K3Process::quote(mimeType),
+                      + ' ' + KShell::quoteArg(mimeType),
                       keditfiletype, keditfiletype /*unused*/, parent );
 }
 

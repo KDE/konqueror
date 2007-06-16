@@ -42,7 +42,7 @@
 #include <kfileitem.h>
 #include <kio/netaccess.h>
 #include <kmenu.h>
-#include <k3process.h>
+#include <kshell.h>
 #include <kurlrequesterdialog.h>
 #include <kfiledialog.h>
 #include <kdesktopfile.h>
@@ -465,9 +465,9 @@ void Sidebar_Widget::initialCopy()
 					!dirEntries.contains( *eIt ) )
 				{ // we don't have that one yet -> copy it.
 					QString cp("cp -R -- ");
-					cp += K3Process::quote(dirtree_dir + *eIt);
+					cp += KShell::quoteArg(dirtree_dir + *eIt);
 					cp += ' ';
-					cp += K3Process::quote(m_path);
+					cp += KShell::quoteArg(m_path);
 					kDebug() << "SidebarWidget::intialCopy executing " << cp << endl;
 					::system( QFile::encodeName(cp) );
 				}
