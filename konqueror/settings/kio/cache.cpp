@@ -31,7 +31,7 @@
 #include <QtGui/QRadioButton>
 
 // KDE
-#include <k3process.h>
+#include <kprocess.h>
 #include <kdebug.h>
 #include <kgenericfactory.h>
 #include <kio/http_slave_defaults.h>
@@ -130,11 +130,8 @@ void KCacheConfigDialog::configChanged()
 
 void KCacheConfigDialog::slotClearCache()
 {
-  K3Process process;
-  process << "kio_http_cache_cleaner" << "--clear-all";
-  process.start(K3Process::DontCare);
-  // Cleaning up might take a while. Better detach.
-  process.detach();
+  KProcess::startDetached(QLatin1String("kio_http_cache_cleaner"),
+              QStringList(QLatin1String("--clear-all")));
 }
 
 #include "cache.moc"

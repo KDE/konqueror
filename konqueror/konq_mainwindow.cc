@@ -111,7 +111,7 @@
 #include <kicon.h>
 #include <kiconloader.h>
 #include <kmenu.h>
-#include <k3process.h>
+#include <kprocess.h>
 #include <kio/scheduler.h>
 #include <kio/netaccess.h>
 #include <kacceleratormanager.h>
@@ -133,7 +133,6 @@
 #endif
 #include <kauthorized.h>
 #include <ktoolinvocation.h>
-#include <kstaticdeleter.h>
 #include "konq_mainwindow_p.h"
 #include <QtDBus/QtDBus>
 #include <kconfiggroup.h>
@@ -1394,17 +1393,16 @@ void KonqMainWindow::slotOpenTerminal()
       }
   }
 
-  K3Process cmd;
-  cmd.setWorkingDirectory(dir);
-
   // Compensate for terminal having arguments.
   QStringList args = term.split(' ', QString::SkipEmptyParts);
-  for ( QStringList::iterator it = args.begin(); it != args.end(); ++it )
-    cmd << *it;
+  if(args.count() == 0)
+    return;
+  QString prog = args.takeFirst();
+  
+  KProcess::startDetached(prog, args, dir, NULL);
 
   kDebug(1202) << "slotOpenTerminal: directory " << dir
 		<< ", terminal:" << term << endl;
-  cmd.start(K3Process::DontCare);
 }
 
 void KonqMainWindow::slotOpenLocation()
