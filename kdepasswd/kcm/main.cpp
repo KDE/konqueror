@@ -116,6 +116,7 @@ void KCMUserAccount::slotChangePassword()
 			"not be able to change your password."));
 
 		_mw->btnChangePassword->setEnabled(false);
+		delete proc;
 		return;
 	}
 
