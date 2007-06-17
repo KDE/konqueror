@@ -112,6 +112,7 @@
 #include <kiconloader.h>
 #include <kmenu.h>
 #include <kprocess.h>
+#include <kshell.h>
 #include <kio/scheduler.h>
 #include <kio/netaccess.h>
 #include <kacceleratormanager.h>
@@ -1394,7 +1395,7 @@ void KonqMainWindow::slotOpenTerminal()
   }
 
   // Compensate for terminal having arguments.
-  QStringList args = term.split(' ', QString::SkipEmptyParts);
+  QStringList args = KShell::splitArgs(term);
   if(args.count() == 0)
     return;
   QString prog = args.takeFirst();
