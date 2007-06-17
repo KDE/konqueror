@@ -51,11 +51,11 @@
 #include <kprotocolmanager.h>
 #include <klibloader.h>
 #include <klocale.h>
-#include <k3process.h>
 #include <kstandarddirs.h>
 #include <ktemporaryfile.h>
 #include <kurl.h>
 #include <QX11Info>
+#include <QProcess>
 
 #include <X11/Intrinsic.h>
 #include <X11/Composite.h>
@@ -507,8 +507,7 @@ void g_NPN_ReloadPlugins(NPBool reloadPages)
 {
    // http://devedge.netscape.com/library/manuals/2002/plugin/1.0/npn_api15.html#999713
    kDebug(1431) << "g_NPN_ReloadPlugins()" << endl;
-   K3Process p;
-   p << KGlobal::dirs()->findExe("nspluginscan");
+   QString prog = KGlobal::dirs()->findExe("nspluginscan");
 
    if (reloadPages) {
       // This is the proper way, but it cannot be done because we have no
@@ -518,9 +517,9 @@ void g_NPN_ReloadPlugins(NPBool reloadPages)
       // Let's only allow the caller to be reloaded, not everything.
       //if (_callback)
       //   _callback->reloadPage();
-      p.start(K3Process::DontCare);
+      QProcess::startDetached(prog);
    } else {
-      p.start(K3Process::DontCare);
+      QProcess::startDetached(prog);
    }
 }
 

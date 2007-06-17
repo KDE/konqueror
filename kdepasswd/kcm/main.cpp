@@ -43,7 +43,7 @@
 #include <kaboutdata.h>
 #include <kgenericfactory.h>
 #include <kmessagebox.h>
-#include <k3process.h>
+#include <QProcess>
 #include <kio/netaccess.h>
 #include <kurl.h>
 #include <k3urldrag.h>
@@ -106,7 +106,6 @@ KCMUserAccount::KCMUserAccount( QWidget *parent, const QStringList &)
 
 void KCMUserAccount::slotChangePassword()
 {
-	K3Process *proc = new K3Process;
 	QString bin = KGlobal::dirs()->findExe("kdepasswd");
 	if ( bin.isNull() )
 	{
@@ -116,14 +115,11 @@ void KCMUserAccount::slotChangePassword()
 			"not be able to change your password."));
 
 		_mw->btnChangePassword->setEnabled(false);
-		delete proc;
 		return;
 	}
-
-	*proc << bin << _ku->loginName() ;
-	proc->start(K3Process::DontCare);
-
-	delete proc;
+	QStringList lst;
+	lst << _ku->loginName();
+	QProcess::startDetached(bin,lst);
 
 }
 
