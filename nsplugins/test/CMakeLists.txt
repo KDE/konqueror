@@ -1,4 +1,3 @@
-if(KDE4_BUILD_TESTS)
 include_directories( ${CMAKE_SOURCE_DIR}/libltdl ${CMAKE_CURRENT_BINARY_DIR}/.. ${CMAKE_CURRENT_SOURCE_DIR}/../ )
 
 ########### next target ###############
@@ -20,9 +19,8 @@ QT4_ADD_DBUS_INTERFACE( testnsplugin_SRCS ${nsplugins_viewer_xml} nsplugins_view
 
 kde4_automoc(${testnsplugin_SRCS})
 
-kde4_add_executable(testnsplugin ${testnsplugin_SRCS})
+kde4_add_test_executable(testnsplugin ${testnsplugin_SRCS})
 
 target_link_libraries(testnsplugin  ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS} ${KDE4_KPARTS_LIBS} ${QT_QT3SUPPORT_LIBRARY} ${QT_QTGUI_LIBRARY}  )
 
-endif(KDE4_BUILD_TESTS)
 
