@@ -1,20 +1,14 @@
 
-if(KDE4_BUILD_TESTS)
+include_directories( ${CMAKE_SOURCE_DIR}/libkonq ${KDE4_INCLUDES} )
 
-  include_directories( ${CMAKE_SOURCE_DIR}/libkonq ${KDE4_INCLUDES} )
+########### konqviewmgrtest ###############
 
-  # Tests don't need to go into toplevel/bin, they are fine in the current dir.
-  set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR} )
+kde4_automoc(konqviewmgrtest.cpp)
 
-  ########### konqviewmgrtest ###############
+kde4_add_test_executable(konqviewmgrtest konqviewmgrtest.cpp)
 
-  kde4_automoc(konqviewmgrtest.cpp)
+target_link_libraries(konqviewmgrtest konq ${KDE4_KDECORE_LIBS} ${QT_QTTEST_LIBRARY})
 
-  kde4_add_executable(konqviewmgrtest RUN_UNINSTALLED konqviewmgrtest.cpp)
+############################################
 
-  target_link_libraries(konqviewmgrtest konq ${KDE4_KDECORE_LIBS} ${QT_QTTEST_LIBRARY})
-
-  ############################################
-
-endif(KDE4_BUILD_TESTS)
 

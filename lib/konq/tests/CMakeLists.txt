@@ -1,52 +1,35 @@
+include_directories( ${CMAKE_SOURCE_DIR}/libkonq )
 
-if(KDE4_BUILD_TESTS)
+########### konqmimedatatest ###############
 
-  include_directories( ${CMAKE_SOURCE_DIR}/libkonq )
+kde4_automoc(konqmimedatatest.cpp)
 
-  # Tests don't need to go into toplevel/bin, they are fine in the current dir.
-  set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR} )
+kde4_add_unit_test(konqmimedatatest konqmimedatatest.cpp)
 
-  ########### konqmimedatatest ###############
+target_link_libraries(konqmimedatatest konq ${QT_QTTEST_LIBRARY})
 
-  kde4_automoc(konqmimedatatest.cpp)
+########### konqundomanager ###############
 
-  kde4_add_executable(konqmimedatatest RUN_UNINSTALLED konqmimedatatest.cpp)
+kde4_automoc(konqundomanagertest.cpp)
 
-  target_link_libraries(konqmimedatatest konq ${QT_QTTEST_LIBRARY})
+kde4_add_unit_test(konqundomanagertest konqundomanagertest.cpp)
 
-  add_test(libkonq-konqmimedatatest konqmimedatatest)
+target_link_libraries(konqundomanagertest konq ${QT_QTTEST_LIBRARY})
 
-  ########### konqundomanager ###############
+########### favicontest ###############
 
-  kde4_automoc(konqundomanagertest.cpp)
+kde4_automoc(favicontest.cpp)
 
-  kde4_add_executable(konqundomanagertest RUN_UNINSTALLED konqundomanagertest.cpp)
+kde4_add_unit_test(favicontest favicontest.cpp)
 
-  target_link_libraries(konqundomanagertest konq ${QT_QTTEST_LIBRARY})
+target_link_libraries(favicontest konq ${QT_QTTEST_LIBRARY})
 
-  add_test(libkonq-konqundomanagertest konqundomanagertest)
+########### historymgrtest ###############
 
-  ########### favicontest ###############
+kde4_automoc(historymgrtest.cpp)
 
-  kde4_automoc(favicontest.cpp)
+kde4_add_unit_test(historymgrtest historymgrtest.cpp)
 
-  kde4_add_executable(favicontest RUN_UNINSTALLED favicontest.cpp)
+target_link_libraries(historymgrtest konq ${QT_QTTEST_LIBRARY})
 
-  target_link_libraries(favicontest konq ${QT_QTTEST_LIBRARY})
-
-  add_test(libkonq-favicontest favicontest)
-
-  ########### historymgrtest ###############
-
-  kde4_automoc(historymgrtest.cpp)
-
-  kde4_add_executable(historymgrtest RUN_UNINSTALLED historymgrtest.cpp)
-
-  target_link_libraries(historymgrtest konq ${QT_QTTEST_LIBRARY})
-
-  add_test(libkonq-historymgrtest historymgrtest)
-
-  ############################################
-
-endif(KDE4_BUILD_TESTS)
-
+############################################
