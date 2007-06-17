@@ -1,7 +1,10 @@
 
 add_subdirectory( ebrowsing ) 
 add_subdirectory( konq ) 
-add_subdirectory( konqhtml ) 
+# k3process
+if(NOT WIN32)
+  add_subdirectory( konqhtml ) 
+endif(NOT WIN32)
 add_subdirectory( performance ) 
 add_subdirectory( kio ) 
 add_subdirectory( filetypes ) 
