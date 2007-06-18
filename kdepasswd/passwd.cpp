@@ -136,8 +136,8 @@ int PasswdProcess::ConversePasswd(const char *oldpass, const char *newpass,
 	    if (isPrompt(line, "password")) 
 	    {
 		WaitSlave();
-		write(m_Fd, oldpass, strlen(oldpass));
-		write(m_Fd, "\n", 1);
+		write(fd(), oldpass, strlen(oldpass));
+		write(fd(), "\n", 1);
 		state++; 
 		break;
 	    }
@@ -180,8 +180,8 @@ int PasswdProcess::ConversePasswd(const char *oldpass, const char *newpass,
 		    return 0;
 			}
 			WaitSlave();
-			write(m_Fd, newpass, strlen(newpass));
-			write(m_Fd, "\n", 1);
+			write(fd(), newpass, strlen(newpass));
+			write(fd(), "\n", 1);
 			state++;
 			break;
 
@@ -190,8 +190,8 @@ int PasswdProcess::ConversePasswd(const char *oldpass, const char *newpass,
 	    if (isPrompt(line, "re")) 
 	    {
 		WaitSlave();
-		write(m_Fd, newpass, strlen(newpass));
-		write(m_Fd, "\n", 1);
+		write(fd(), newpass, strlen(newpass));
+		write(fd(), "\n", 1);
 		state += 2;
 		break;
 	    }
@@ -207,8 +207,8 @@ int PasswdProcess::ConversePasswd(const char *oldpass, const char *newpass,
 	    if (isPrompt(line, "re"))
 	    {
 		WaitSlave();
-		write(m_Fd, newpass, strlen(newpass));
-		write(m_Fd, "\n", 1);
+		write(fd(), newpass, strlen(newpass));
+		write(fd(), "\n", 1);
 		state++;
 		break;
 	    }
