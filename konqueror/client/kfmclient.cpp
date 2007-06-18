@@ -391,7 +391,7 @@ bool ClientApp::createNewWindow(const KUrl & url, bool newTab, bool tempFile, co
 #ifdef Q_WS_X11
             KStartupInfo::resetStartupEnv();
 #endif
-            kDebug( 1202 ) << "ClientApp::createNewWindow K3Process started" << endl;
+            kDebug( 1202 ) << "ClientApp::createNewWindow KProcess started" << endl;
         //}
     }
     return true;
