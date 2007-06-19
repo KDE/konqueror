@@ -34,6 +34,7 @@
 #include <krun.h>
 #include <kcomponentdata.h>
 #include <kstaticdeleter.h>
+#include <KStartupInfoId>
 
 #include <konq_mainwindow_interface.h>
 #include <konq_main_interface.h>
