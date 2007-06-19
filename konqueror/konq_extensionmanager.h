@@ -43,7 +43,7 @@ class KonqExtensionManager : public KDialog
 
 	public Q_SLOTS:
 		void setChanged(bool c);
-
+                void reparseConfiguration(const QByteArray &);
 		void slotOk();
 		void slotApply();
 		void slotDefault();

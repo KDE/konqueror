@@ -73,7 +73,7 @@ KonqExtensionManager::KonqExtensionManager(QWidget *parent, KonqMainWindow *main
 	setMainWidget(d->pluginSelector);
 	connect(d->pluginSelector, SIGNAL(changed(bool)), this, SLOT(setChanged(bool)));
 	connect(d->pluginSelector, SIGNAL(configCommitted(const QByteArray &)),
-	        KSettings::Dispatcher::self(), SLOT(reparseConfiguration(const QByteArray &)));
+	        this, SLOT(reparseConfiguration(const QByteArray &)));
 
 	d->mainWindow = mainWindow;
 	d->activePart = activePart;
@@ -94,6 +94,11 @@ KonqExtensionManager::KonqExtensionManager(QWidget *parent, KonqMainWindow *main
 KonqExtensionManager::~KonqExtensionManager()
 {
 	delete d;
+}
+
+void KonqExtensionManager::reparseConfiguration(const QByteArray &conf)
+{
+   KSettings::Dispatcher::reparseConfiguration(conf);
 }
 
 void KonqExtensionManager::setChanged(bool c)
