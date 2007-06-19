@@ -38,6 +38,7 @@
 #endif
 
 #include <QtDBus/QtDBus>
+#include <QDir>
 
 static const KCmdLineOptions options[] =
 {
@@ -78,7 +79,7 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
     {
       QString className = KXmlGuiWindow::classNameOfToplevel( n );
       if( className == QLatin1String( "KonqMainWindow" ))
-          (new KonqMainWindow( KUrl(), false ) )->restore( n );
+          (new KonqMainWindow() )->restore( n );
       else
           kWarning() << "Unknown class " << className << " in session saved data!" << endl;
       n++;
@@ -138,7 +139,7 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
                      QDBusReply<bool> retVal = ref.call( QDBus::Block, "registerPreloadedKonqy", QDBusConnection::sessionBus().baseService(), info.screen());
                      if( !retVal )
                          return 0; // too many preloaded or failed
-		     KonqMainWindow* win = new KonqMainWindow( KUrl(), false ); // prepare an empty window too
+		     KonqMainWindow* win = new KonqMainWindow; // prepare an empty window too
 		     // KonqMainWindow ctor sets always the preloaded flag to false, so create the window before this
                      KonqMainWindow::setPreloadedFlag( true );
 		     KonqMainWindow::setPreloadedWindow( win );
@@ -160,7 +161,7 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
                  if ( !profilePath.isEmpty() ) {
                      KonqMisc::createBrowserWindowFromProfile( profilePath, profile );
                  } else {
-                     KonqMainWindow *mainWindow = new KonqMainWindow;
+                     KonqMainWindow *mainWindow = new KonqMainWindow( KUrl( QDir::homePath() ) );
                      mainWindow->show();
                  }
              }

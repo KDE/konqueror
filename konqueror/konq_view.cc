@@ -327,7 +327,8 @@ bool KonqView::changeViewMode( const QString &serviceType,
   kDebug(1202) << "Switching view modes..." << endl;
   KService::List partServiceOffers, appServiceOffers;
   KService::Ptr service;
-  KonqViewFactory viewFactory = KonqFactory::createView( serviceType, serviceName, &service, &partServiceOffers, &appServiceOffers, forceAutoEmbed );
+  KonqFactory konqFactory;
+  KonqViewFactory viewFactory = konqFactory.createView( serviceType, serviceName, &service, &partServiceOffers, &appServiceOffers, forceAutoEmbed );
 
   if ( viewFactory.isNull() )
   {

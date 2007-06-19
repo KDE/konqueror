@@ -16,57 +16,152 @@
    Boston, MA 02110-1301, USA.
 */
 
+#include <qtest_kde.h>
 #include "konqviewmgrtest.h"
 
-#include <QtGui/QApplication>
-#include <QtGui/QLabel>
-#include <QtCore/QTimer>
-#include <QtGui/QSplitter>
+#include <konq_mainwindow.h>
+#include <konq_viewmgr.h>
+#include <konq_view.h>
+#include <kstandarddirs.h>
+#include <konq_framevisitor.h>
 
-SCWMainWindow::SCWMainWindow( QWidget* parent )
-    : QMainWindow( parent )
+QTEST_KDEMAIN_WITH_COMPONENTNAME( ViewMgrTest, GUI, "konqueror" )
+
+#if 0
+class KonqTestFactory : public KonqAbstractFactory
 {
-    QLabel* widget1 = new QLabel( "widget1" );
-    setCentralWidget( widget1 );
-    QTimer::singleShot( 10, this, SLOT( slotSwitchCentralWidget() ) );
+public:
+    virtual KonqViewFactory createView( const QString &serviceType,
+                                        const QString &serviceName = QString(),
+                                        KService::Ptr *serviceImpl = 0,
+                                        KService::List *partServiceOffers = 0,
+                                        KService::List *appServiceOffers = 0,
+                                        bool forceAutoEmbed = false );
+
+};
+#endif
+
+class DebugFrameVisitor : public KonqFrameVisitor
+{
+public:
+    DebugFrameVisitor() {}
+    QString output() const { return m_output; }
+    virtual bool visit(KonqFrame*) { m_output += 'F'; return true; }
+    virtual bool visit(KonqFrameContainer*) { m_output += "C("; return true; }
+    virtual bool visit(KonqFrameTabs*) { m_output += "T["; return true; }
+    virtual bool visit(KonqMainWindow*) { m_output += 'M'; return true; }
+    virtual bool endVisit(KonqFrameContainer*) { m_output += ')'; return true; }
+    virtual bool endVisit(KonqFrameTabs*) { m_output += ']'; return true; }
+    virtual bool endVisit(KonqMainWindow*) { m_output += '.'; return true; }
+
+    static QString inspect(KonqMainWindow* mainWindow) {
+        DebugFrameVisitor dfv;
+        bool ok = mainWindow->accept( &dfv );
+        if ( !ok )
+            return QString("ERROR: visitor returned false");
+        return dfv.output();
+    }
+
+private:
+    QString m_output;
+};
+
+void ViewMgrTest::initTestCase()
+{
+    QVERIFY( KGlobal::mainComponent().componentName() == "konqueror" );
 }
 
-void SCWMainWindow::slotSwitchCentralWidget()
+void ViewMgrTest::testCreateFirstView()
 {
-    QLabel* widget2 = new QLabel( "widget2" );
-    delete centralWidget(); // ## workaround for the crash
-    setCentralWidget( widget2 );
+    KonqMainWindow mainWindow;
+    KonqViewManager viewMgr( &mainWindow );
+    KonqView* view = viewMgr.createFirstView( "KonqAboutPage", "konq_aboutpage" );
+    QVERIFY( view );
+    QVERIFY( viewMgr.tabContainer() );
+
+    // Use DebugFrameVisitor to find out the structure of the frame hierarchy
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, one tab, one frame
 }
 
-void testSplitterChildren()
+void ViewMgrTest::testRemoveFirstView()
 {
-    // OK, it works; the bug was a wrong insertWidget(0,label2) in konqviewmgr.
-
-    QSplitter* container = new QSplitter( 0 );
-
-    QLabel* label0 = new QLabel( "Label0, sidebar, should be on left", container );
-    label0->show();
-
-    QLabel* label1 = new QLabel( "Label1, iconview, should be on the right", container );
-    label1->show();
-    label1->setParent( 0 ); // should be some toplevel, rather, see convertDocContainer
-    label1->hide();
-
-    QLabel* label2 = new QLabel( "Label2, tabwidget, should be on the right", container );
-    label2->show();
-
-    container->show();
+    KonqMainWindow mainWindow;
+    KonqViewManager viewMgr( &mainWindow );
+    KonqView* view = viewMgr.createFirstView( "KonqAboutPage", "konq_aboutpage" );
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, tab widget, one frame
+    viewMgr.removeView( view );
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // removing not allowed
+    // real test for removeView is part of testSplitView
 }
 
-int main( int argc, char** argv ) {
-    QApplication app( argc, argv );
+void ViewMgrTest::testSplitView()
+{
+    KonqMainWindow mainWindow;
+    KonqViewManager viewMgr( &mainWindow );
+    KonqView* view = viewMgr.createFirstView( "KonqAboutPage", "konq_aboutpage" );
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, tab widget, one frame
+    // TODO also test newOneFirst after improving the visitor... using 'F' + frame->objectName()[0]?
+    // Or registring views to the visitor... or to a registry used by the visitor, rather.
+    KonqView* view2 = viewMgr.splitView( view, Qt::Vertical );
+    QVERIFY( view2 );
+    QCOMPARE( view->frame()->parentContainer(), view2->frame()->parentContainer() );
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, one splitter, two frames
 
-    //SCWMainWindow* mw = new SCWMainWindow;
-    //mw->show();
+    // Split again
+    KonqView* view3 = viewMgr.splitView( view, Qt::Horizontal );
+    QVERIFY( view3 );
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(C(FF)F)].") );
 
-    testSplitterChildren();
+    // Now test removing the first view
+    viewMgr.removeView( view );
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, one splitter, two frames
 
-    return app.exec();
+    // Now test removing the last view
+    viewMgr.removeView( view3 );
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, tab widget, one frame
+}
+
+void ViewMgrTest::testAddTab()
+{
+    KonqMainWindow mainWindow;
+    KonqViewManager viewMgr( &mainWindow );
+    KonqView* view = viewMgr.createFirstView( "KonqAboutPage", "konq_aboutpage" );
+    QVERIFY( view );
+    KonqView* viewTab2 = viewMgr.addTab("text/html");
+    QVERIFY( viewTab2 );
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].") ); // mainWindow, tab widget, two tabs
+
+}
+
+void ViewMgrTest::testDuplicateTab()
+{
+    KonqMainWindow mainWindow;
+    KonqViewManager viewMgr( &mainWindow );
+    KonqView* view = viewMgr.createFirstView( "KonqAboutPage", "konq_aboutpage" );
+    viewMgr.duplicateTab(view->frame()); // should return a KonqFrameBase?
+
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].") ); // mainWindow, tab widget, two tabs
+    // TODO check serviceType and serviceName of the new view
+}
+
+void ViewMgrTest::testDuplicateSplittedTab()
+{
+    KonqMainWindow mainWindow;
+    KonqViewManager viewMgr( &mainWindow );
+    KonqView* view = viewMgr.createFirstView( "KonqAboutPage", "konq_aboutpage" );
+    KonqView* view2 = viewMgr.splitView( view, Qt::Vertical );
+    QVERIFY( view2 );
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, one splitter, two frames
+
+    KonqFrameContainer* container = static_cast<KonqFrameContainer *>(view->frame()->parentContainer());
+    QVERIFY( container );
+    QVERIFY( container->parentContainer()->frameType() == "Tabs" ); // TODO enum instead
+
+    viewMgr.duplicateTab(container); // TODO shouldn't it return a KonqFrameBase?
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)C(FF)].") ); // mainWindow, tab widget, two tabs
+
+    viewMgr.removeTab(container);
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, one tab
 }
 
 #include "konqviewmgrtest.moc"

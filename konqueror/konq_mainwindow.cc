@@ -71,7 +71,6 @@
 #ifdef Q_WS_X11
 #include <QX11Info>
 #endif
-//Added by qt3to4:
 #include <QtCore/QEvent>
 #include <QtGui/QKeyEvent>
 #include <QtCore/QByteRef>
@@ -134,7 +133,8 @@
 #endif
 #include <kauthorized.h>
 #include <ktoolinvocation.h>
-#include "konq_mainwindow_p.h"
+#include "konq_mainwindow_p.h" // TODO rename to konq_extendedbookmarkowner.h
+#include "konq_framevisitor.h"
 #include <QtDBus/QtDBus>
 #include <kconfiggroup.h>
 
@@ -162,7 +162,7 @@ KonqExtendedBookmarkOwner::KonqExtendedBookmarkOwner(KonqMainWindow *w)
    m_pKonqMainWindow = w;
 }
 
-KonqMainWindow::KonqMainWindow( const KUrl &initialURL, bool openInitialURL, const QString& xmluiFile)
+KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile)
  : KParts::MainWindow()
 {
   setPreloadedFlag( false );
@@ -281,19 +281,12 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, bool openInitialURL, con
            this, SLOT( slotUndoAvailable( bool ) ) );
   m_bNeedApplyKonqMainWindowSettings = true;
 
-  if ( !initialURL.isEmpty() )
-  {
-    openFilteredUrl( initialURL.url() );
-  }
-  else if ( openInitialURL )
-  {
-    KUrl homeURL;
-    homeURL.setPath( QDir::homePath() );
-    openUrl( 0, homeURL );
-  }
-  else
+  if ( !initialURL.isEmpty() ) {
+      openFilteredUrl( initialURL.url() );
+  } else {
       // silent
       m_bNeedApplyKonqMainWindowSettings = false;
+  }
 
   // Read basic main-view settings, and set to autosave
   setAutoSaveSettings( "KonqMainWindow", false );
@@ -524,7 +517,7 @@ void KonqMainWindow::openUrl( KonqView *_view, const KUrl &_url,
   if ( !view  && !req.newTab )
     view = m_currentView; /* Note, this can be 0, e.g. on startup */
   else if ( !view && req.newTab ) {
-    view = m_pViewManager->addTab(QString(),
+    view = m_pViewManager->addTab("text/html",
                                   QString(),
                                   false,
                                   req.openAfterCurrentPage);
@@ -1117,25 +1110,25 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url, const KParts::URLArgs
     }
 
     if ( KonqSettings::popupsWithinTabs() || ( KonqSettings::mmbOpensTab() && windowArgs.lowerWindow ) ) {
-      bool aftercurrentpage = KonqSettings::openAfterCurrentPage();
-      bool newtabsinfront = KonqSettings::newTabsInFront();
+        const bool aftercurrentpage = KonqSettings::openAfterCurrentPage();
+        bool newtabsinfront = KonqSettings::newTabsInFront();
         if ( windowArgs.lowerWindow )
-           newtabsinfront =! newtabsinfront;
+           newtabsinfront = !newtabsinfront;
 
-        KonqView* newView = m_pViewManager->addTab(QString(), QString(), false, aftercurrentpage);
+        KonqView* newView = m_pViewManager->addTab("text/html", QString(), false, aftercurrentpage);
         if (newView == 0) return;
 
         if (newtabsinfront)
-          m_pViewManager->showTab( newView );
+            m_pViewManager->showTab( newView );
 
-        openUrl( newView, url.isEmpty() ? KUrl("about:blank") : url, QString());
+        openUrl( newView, url.isEmpty() ? KUrl("about:blank") : url, QString() );
         newView->setViewName( args.frameName );
         part=newView->part();
 
         return;
     }
 
-    mainWindow = new KonqMainWindow( KUrl(), false );
+    mainWindow = new KonqMainWindow;
     mainWindow->setInitialFrameName( args.frameName );
     mainWindow->resetAutoSaveSettings(); // Don't autosave
 
@@ -1288,7 +1281,7 @@ void KonqMainWindow::slotDuplicateWindow()
   KConfig config( tempFile.fileName() );
   m_pViewManager->saveViewProfile( config, true, true );
 
-  KonqMainWindow *mainWindow = new KonqMainWindow( KUrl(), false, xmlFile());
+  KonqMainWindow *mainWindow = new KonqMainWindow( KUrl(), xmlFile() );
   mainWindow->viewManager()->loadViewProfile( config, m_pViewManager->currentProfile() );
   if (mainWindow->currentView())
   {
@@ -1399,7 +1392,7 @@ void KonqMainWindow::slotOpenTerminal()
   if(args.count() == 0)
     return;
   QString prog = args.takeFirst();
-  
+
   KProcess::startDetached(prog, args, dir, NULL);
 
   kDebug(1202) << "slotOpenTerminal: directory " << dir
@@ -1440,7 +1433,8 @@ void KonqMainWindow::slotToolFind()
         return;
     }
 
-    KonqViewFactory factory = KonqFactory::createView( "Konqueror/FindPart" );
+    KonqFactory konqFactory;
+    KonqViewFactory factory = konqFactory.createView( "Konqueror/FindPart" );
     if ( factory.isNull() )
     {
         KMessageBox::error( this, i18n("Cannot create the find part, check your installation.") );
@@ -2535,21 +2529,23 @@ void KonqMainWindow::slotSplitViewVertical()
 
 void KonqMainWindow::slotAddTab()
 {
-  KonqView* newView = m_pViewManager->addTab(QString(),
-                                             QString(),
-                                             false,
-                                             KonqSettings::openAfterCurrentPage());
-  if (newView == 0) return;
-  openUrl( newView, KUrl("about:blank"),QString());
-  m_pViewManager->showTab( newView );
-  focusLocationBar();
-  m_pWorkingTab = 0;
+    KonqView* newView = m_pViewManager->addTab("text/html", // this is what about:blank will use anyway
+                                               QString(),
+                                               false,
+                                               KonqSettings::openAfterCurrentPage());
+    if (newView == 0) return;
+    openUrl( newView, KUrl("about:blank"), QString() );
+    m_pViewManager->showTab( newView );
+    focusLocationBar();
+    m_pWorkingTab = 0;
 }
 
 void KonqMainWindow::slotDuplicateTab()
 {
     if ( !m_currentView )
         return;
+    // TODO does this work with splitted views? sounds like I'll get only the current view
+    // in the new tab, not the whole contents of the current tab...
     m_pViewManager->duplicateTab( m_currentView->frame(), KonqSettings::openAfterCurrentPage() );
 }
 
@@ -2657,16 +2653,16 @@ void KonqMainWindow::popupNewTab(bool infront, bool openAfterCurrentPage)
   }
 }
 
-void KonqMainWindow::openMultiURL( KUrl::List url )
+void KonqMainWindow::openMultiURL( const KUrl::List& url )
 {
     KUrl::List::ConstIterator it = url.begin();
-    KUrl::List::ConstIterator end = url.end();
+    const KUrl::List::ConstIterator end = url.end();
     for (; it != end; ++it )
     {
-        KonqView* newView = m_pViewManager->addTab();
+        KonqView* newView = m_pViewManager->addTab("text/html");
         Q_ASSERT( newView );
         if (newView == 0) continue;
-        openUrl( newView, *it,QString());
+        openUrl( newView, *it, QString() );
         m_pViewManager->showTab( newView );
         focusLocationBar();
         m_pWorkingTab = 0;
@@ -5655,13 +5651,13 @@ QStringList KonqMainWindow::historyPopupCompletionItems( const QString& s)
 #ifndef NDEBUG
 void KonqMainWindow::dumpViewList()
 {
+  kDebug(1202) << m_mapViews.count() << " views:" << endl;
+
   MapViews::Iterator end = m_mapViews.end();
-
-  kDebug(1202) << m_mapViews.count() << "Views" << endl;
-
   for (MapViews::Iterator it = m_mapViews.begin(); it != end; it++)
   {
-    kDebug(1202) << it.value() << endl;
+      KonqView* view = it.value();
+      kDebug(1202) << view << " " << view->part() << endl;
   }
 }
 #endif
@@ -5696,13 +5692,8 @@ void KonqMainWindow::saveConfig( KConfigGroup& config, const QString &prefix, bo
 
 void KonqMainWindow::copyHistory( KonqFrameBase *other ) { if( m_pChildFrame ) m_pChildFrame->copyHistory( other ); }
 
-void KonqMainWindow::printFrameInfo( const QString &spaces ) { if( m_pChildFrame ) m_pChildFrame->printFrameInfo( spaces ); }
-
 void KonqMainWindow::reparentFrame( QWidget* /*parent*/,
                                     const QPoint & /*p*/ ) { return; }
-
-KonqFrameContainerBase* KonqMainWindow::parentContainer()const { return 0; }
-void KonqMainWindow::setParentContainer(KonqFrameContainerBase* /*parent*/) { return; }
 
 void KonqMainWindow::setTitle( const QString &/*title*/ , QWidget* /*sender*/) { return; }
 void KonqMainWindow::setTabIcon( const KUrl &/*url*/, QWidget* /*sender*/ ) { return; }
@@ -5992,8 +5983,15 @@ void KonqMainWindow::restoreWindowSize()
     KParts::MainWindow::restoreWindowSize( cg );
 }
 
+bool KonqMainWindow::accept( KonqFrameVisitor* visitor )
+{
+    if ( !visitor->visit( this ) )
+        return false;
+    if ( m_pChildFrame && !m_pChildFrame->accept( visitor ) )
+        return false;
+    if ( !visitor->endVisit( this ) )
+        return false;
+    return true;
+}
 
 #include "konq_mainwindow.moc"
-
-/* vim: et sw=4 ts=4
- */

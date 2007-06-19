@@ -12,9 +12,6 @@ check_symbol_exists(mallinfo        "stdlib.h"                 KDE_MALLINFO_STDL
 # TODO KDE_MALLINFO_FIELD_usmblks
 configure_file(config-konqueror.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-konqueror.h )
 
-set(libkonqueror_intern_KCFG_SRCS  ${CMAKE_CURRENT_SOURCE_DIR}/konq_settingsxt.kcfgc)
-kde4_add_kcfg_files(libkonqueror_intern_SRCS ${libkonqueror_intern_KCFG_SRCS})
-
 add_subdirectory( client )
 # on the way out
 #add_subdirectory( iconview )
@@ -41,8 +38,7 @@ add_subdirectory( tests )
 
 ########### next target ###############
 
-set(konqueror_KDEINIT_SRCS  ${libkonqueror_intern_SRCS}
-   konq_main.cc
+set(konquerorprivate_SRCS
    konq_application.cpp
    konq_guiclients.cc
    konq_run.cc
@@ -64,17 +60,19 @@ set(konqueror_KDEINIT_SRCS  ${libkonqueror_intern_SRCS}
    KonqMainWindowAdaptor.cpp
    KonqViewAdaptor.cpp
 )
+kde4_add_kcfg_files(konquerorprivate_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/konq_settingsxt.kcfgc)
 
-kde4_automoc(${konqueror_KDEINIT_SRCS})
-QT4_ADD_DBUS_INTERFACE(konqueror_KDEINIT_SRCS org.kde.Konqueror.Main.xml konqueror_interface)
+kde4_automoc(${konquerorprivate_SRCS})
 
-kde4_add_kdeinit_executable( konqueror ${konqueror_KDEINIT_SRCS})
+qt4_add_dbus_interface(konquerorprivate_SRCS org.kde.Konqueror.Main.xml konqueror_interface)
 
-target_link_libraries(kdeinit_konqueror  ${KDE4_KDE3SUPPORT_LIBS} ${KDE4_KUTILS_LIBS} konq )
+kde4_add_library(konquerorprivate ${konquerorprivate_SRCS})
+target_link_libraries(konquerorprivate ${KDE4_KDE3SUPPORT_LIBS} ${KDE4_KUTILS_LIBS} konq)
 
-install(TARGETS kdeinit_konqueror  DESTINATION ${LIB_INSTALL_DIR} )
-
+kde4_add_kdeinit_executable( konqueror konq_main.cc)
+target_link_libraries(kdeinit_konqueror konquerorprivate )
 target_link_libraries( konqueror kdeinit_konqueror )
+install(TARGETS kdeinit_konqueror  DESTINATION ${LIB_INSTALL_DIR} )
 install(TARGETS konqueror DESTINATION ${BIN_INSTALL_DIR})
 
 

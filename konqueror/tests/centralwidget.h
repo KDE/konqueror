@@ -16,31 +16,20 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef KONQVIEWMGRTEST_H
-#define KONQVIEWMGRTEST_H
+#ifndef CENTRALWIDGET_H
+#define CENTRALWIDGET_H
 
 #include <QtGui/QMainWindow>
 
-#include <QObject>
-#include <kcomponentdata.h>
-
-class ViewMgrTest : public QObject
+// SCW == Switch (or Set) Central Widget
+class SCWMainWindow : public QMainWindow
 {
     Q_OBJECT
+public:
+    SCWMainWindow( QWidget* parent = 0 );
 
-private Q_SLOTS:
-    void initTestCase();
-
-    void testCreateFirstView();
-    void testRemoveFirstView();
-    void testSplitView();
-
-    void testAddTab();
-    void testDuplicateTab();
-    void testDuplicateSplittedTab();
-
-private:
-    KComponentData m_konqComponentData;
+private slots:
+    void slotSwitchCentralWidget();
 };
 
 #endif

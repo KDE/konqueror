@@ -25,12 +25,9 @@
 #include "konq_framecontainer.h"
 
 #include <ktabwidget.h>
-//Added by qt3to4:
-#include <QtGui/QPixmap>
 #include <QtGui/QKeyEvent>
 #include <QtCore/QList>
 
-class QPixmap;
 class QMenu;
 class QToolButton;
 
@@ -52,13 +49,13 @@ public:
 		KonqViewManager* viewManager);
   virtual ~KonqFrameTabs();
 
+    virtual bool accept( KonqFrameVisitor* visitor );
+
   virtual void listViews( ChildViewList *viewList );
 
   virtual void saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs,
 			   KonqFrameBase* docContainer, int id = 0, int depth = 0 );
   virtual void copyHistory( KonqFrameBase *other );
-
-  virtual void printFrameInfo( const QString& spaces );
 
   const QList<KonqFrameBase*>& childFrameList() const { return m_childFrameList; }
 

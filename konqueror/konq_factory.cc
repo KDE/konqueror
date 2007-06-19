@@ -32,20 +32,21 @@
 // KDE
 #include <kaboutdata.h>
 #include <kdebug.h>
+#include <klibloader.h>
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <kmimetypetrader.h>
 #include <kparts/factory.h>
+#include <kparts/part.h>
 #include <kservicetypetrader.h>
 #include <kdeversion.h>
 
 // Local
-#include <konq_view.h>
-#include <konq_settings.h>
-#include <konq_mainwindow.h>
+#include "konq_settings.h"
+#include "konq_mainwindow.h"
 
 
-KAboutData *KonqFactory::s_aboutData = 0;
+static KAboutData *s_aboutData = 0;
 
 KonqViewFactory::KonqViewFactory( KLibFactory *factory, const QStringList &args,
                                   bool createBrowser )
@@ -58,9 +59,9 @@ KonqViewFactory::KonqViewFactory( KLibFactory *factory, const QStringList &args,
 KParts::ReadOnlyPart *KonqViewFactory::create( QWidget *parentWidget, QObject * parent )
 {
   if ( !m_factory )
-    return 0L;
+    return 0;
 
-  QObject *obj = 0L;
+  QObject *obj = 0;
 
   KParts::Factory* kpartsFactory = ::qobject_cast<KParts::Factory *>( m_factory );
   if ( kpartsFactory )
@@ -146,7 +147,7 @@ KonqViewFactory KonqFactory::createView( const QString &serviceType,
       }
   }
 
-  KLibFactory *factory = 0L;
+  KLibFactory *factory = 0;
 
   if ( service )
   {

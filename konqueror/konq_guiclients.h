@@ -74,7 +74,7 @@ class ToggleViewGUIClient : public QObject
 {
   Q_OBJECT
 public:
-  ToggleViewGUIClient( KonqMainWindow *mainWindow );
+  explicit ToggleViewGUIClient( KonqMainWindow *mainWindow );
   virtual ~ToggleViewGUIClient();
 
   bool empty() const { return m_empty; }
