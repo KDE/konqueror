@@ -22,14 +22,7 @@
 #include <kconfig.h>
 #include <math.h> // pow()
 
-//###################################################################
-
-void KonqFrameContainerBase::printFrameInfo(const QString& spaces)
-{
-  kDebug(1202) << spaces << "KonqFrameContainerBase " << this << ", this shouldn't happen!" << endl;
-}
-
-//###################################################################
+#include "konq_framevisitor.h"
 
 KonqFrameContainer::KonqFrameContainer( Qt::Orientation o,
                                         QWidget* parent,
@@ -123,24 +116,6 @@ KonqFrameBase* KonqFrameContainer::otherChild( KonqFrameBase* child )
    return 0L;
 }
 
-void KonqFrameContainer::printFrameInfo( const QString& spaces )
-{
-    kDebug(1202) << spaces << "KonqFrameContainer " << this << " visible=" << QString("%1").arg(isVisible())
-                 << " activeChild=" << m_pActiveChild << endl;
-    if (!m_pActiveChild)
-        kDebug(1202) << "WARNING: " << this << " has a null active child!" << endl;
-    KonqFrameBase* child = firstChild();
-    if (child != 0L)
-        child->printFrameInfo(spaces + "  ");
-    else
-        kDebug(1202) << spaces << "  Null child" << endl;
-    child = secondChild();
-    if (child != 0L)
-        child->printFrameInfo(spaces + "  ");
-    else
-        kDebug(1202) << spaces << "  Null child" << endl;
-}
-
 void KonqFrameContainer::reparentFrame( QWidget* parent, const QPoint & p )
 {
     setParent( parent );
@@ -221,6 +196,21 @@ bool KonqFrameContainer::hasWidgetAfter( QWidget* w ) const
     if ( idx == -1 ) // not found
         return 0; // not found (in qt3)
     return QSplitter::widget( idx + 1 ) != 0;
+}
+
+bool KonqFrameContainer::accept( KonqFrameVisitor* visitor )
+{
+    if ( !visitor->visit( this ) )
+        return false;
+    Q_ASSERT( m_pFirstChild );
+    if ( m_pFirstChild && !m_pFirstChild->accept( visitor ) )
+        return false;
+    Q_ASSERT( m_pSecondChild );
+    if ( m_pSecondChild && !m_pSecondChild->accept( visitor ) )
+        return false;
+    if ( !visitor->endVisit( this ) )
+        return false;
+    return true;
 }
 
 #include "konq_framecontainer.moc"

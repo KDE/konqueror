@@ -25,17 +25,16 @@
 
 #include <QtCore/QStringList>
 
-#include <klibloader.h>
 #include <kservice.h>
 
-#include <kparts/part.h>
-
 class KAboutData;
+class KLibFactory;
+namespace KParts { class ReadOnlyPart; }
 
-class KonqViewFactory
+class KonqViewFactory // TODO rename to KonqPartFactory?
 {
 public:
-  KonqViewFactory() : m_factory( 0L ), m_createBrowser( false ) {}
+  KonqViewFactory() : m_factory( 0 ), m_createBrowser( false ) {}
 
   KonqViewFactory( KLibFactory *factory, const QStringList &args, bool createBrowser );
 
@@ -60,24 +59,34 @@ private:
   bool m_createBrowser;
 };
 
+/**
+ * Factory for creating (loading) parts when creating a view.
+ */
 class KonqFactory
 {
 public:
-  static KonqViewFactory createView( const QString &serviceType,
-				     const QString &serviceName = QString(),
-				     KService::Ptr *serviceImpl = 0,
-				     KService::List *partServiceOffers = 0,
-				     KService::List *appServiceOffers = 0,
-				     bool forceAutoEmbed = false );
+    /**
+     * Return the factory that can be used to actually create the part inside a view.
+     *
+     * The implementation locates the part module (library), using the trader
+     * and opens it (using klibfactory), which gives us a factory that can be used to
+     * actually create the part (later on, when the KonqView exists).
+     *
+     * Not a static method so that we can define an abstract base class
+     * with another implementation, for unit tests, if wanted.
+     */
+    KonqViewFactory createView( const QString &serviceType,
+                                const QString &serviceName = QString(),
+                                KService::Ptr *serviceImpl = 0,
+                                KService::List *partServiceOffers = 0,
+                                KService::List *appServiceOffers = 0,
+                                bool forceAutoEmbed = false );
 
-  static void getOffers( const QString & serviceType,
-                         KService::List *partServiceOffers = 0,
-                         KService::List *appServiceOffers = 0);
+    static void getOffers( const QString & serviceType,
+                           KService::List *partServiceOffers = 0,
+                           KService::List *appServiceOffers = 0);
 
-  static const KAboutData* aboutData();
-
-private:
-  static KAboutData *s_aboutData;
+    static const KAboutData* aboutData();
 };
 
 #endif

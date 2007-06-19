@@ -52,6 +52,7 @@
 #include "konq_tabs.h"
 #include "konq_view.h"
 #include "konq_viewmgr.h"
+#include "konq_framevisitor.h"
 
 
 #define DEFAULT_HEADER_HEIGHT 13
@@ -287,13 +288,6 @@ void KonqFrameStatusBar::updateActiveStatus()
 
 //###################################################################
 
-void KonqFrameBase::printFrameInfo(const QString& spaces)
-{
-    kDebug(1202) << spaces << "KonqFrameBase " << this << " printFrameInfo not implemented in derived class!" << endl;
-}
-
-//###################################################################
-
 KonqFrame::KonqFrame( QWidget* parent, KonqFrameContainerBase *parentContainer )
     : QWidget ( parent )
 {
@@ -351,16 +345,7 @@ void KonqFrame::copyHistory( KonqFrameBase *other )
     childView()->copyHistory( static_cast<KonqFrame *>( other )->childView() );
 }
 
-void KonqFrame::printFrameInfo( const QString& spaces )
-{
-   QString className = "NoPart";
-   if (part()) className = part()->widget()->metaObject()->className();
-   kDebug(1202) << spaces << "KonqFrame " << this << " visible=" << QString("%1").arg(isVisible()) << " containing view "
-                 << childView() << " visible=" << QString("%1").arg(isVisible())
-                 << " and part " << part() << " whose widget is a " << className << endl;
-}
-
-KParts::ReadOnlyPart *KonqFrame::attach( const KonqViewFactory &viewFactory )
+ KParts::ReadOnlyPart *KonqFrame::attach( const KonqViewFactory &viewFactory )
 {
    KonqViewFactory factory( viewFactory );
 
@@ -491,6 +476,11 @@ KonqView* KonqFrame::childView() const
 KonqView* KonqFrame::activeChildView()
 {
   return m_pView;
+}
+
+bool KonqFrame::accept( KonqFrameVisitor* visitor )
+{
+    return visitor->visit( this );
 }
 
 #include "konq_frame.moc"

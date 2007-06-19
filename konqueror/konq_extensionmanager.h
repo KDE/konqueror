@@ -1,4 +1,4 @@
-/* -*- indent-tabs-mode: t; tab-width: 4; c-basic-offset:4 -*-
+/*
 
     konq_extensionmanager.h - Extension Manager for Konqueror
 

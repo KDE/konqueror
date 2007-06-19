@@ -39,7 +39,7 @@ class KonqMainWindowAdaptor : public QDBusAbstractAdaptor
 
 public:
 
-    KonqMainWindowAdaptor( KonqMainWindow * mainWindow );
+    explicit KonqMainWindowAdaptor( KonqMainWindow * mainWindow );
     ~KonqMainWindowAdaptor();
 
 public slots:

@@ -22,8 +22,6 @@
 
 #include "konq_factory.h"
 
-#include <QtCore/QCOORD>
-#include <QtCore/QObject>
 #include <QtCore/QMap>
 #include <QtCore/QPointer>
 
@@ -51,27 +49,24 @@ namespace KParts
 
 class KonqViewManager : public KParts::PartManager
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  KonqViewManager( KonqMainWindow *mainWindow );
-  ~KonqViewManager();
+    explicit KonqViewManager( KonqMainWindow *mainWindow );
+    ~KonqViewManager();
 
-  KonqView* createFirstView( const QString &serviceType, const QString &serviceName );
+    KonqView* createFirstView( const QString &serviceType, const QString &serviceName );
 
   /**
    * Splits the view, depending on orientation, either horizontally or
-   * vertically. The first of the resulting views will contain the initial
-   * view, the other will be a new one, constructed from the given
-   * Service Type.
-   * If no Service Type was provided it takes the one from the current view.
+   * vertically. The first view in the splitter will contain the initial
+   * view, the other will be a new one, constructed from the same service
+   * (part) as the first view.
    * Returns the newly created view or 0 if the view couldn't be created.
    *
    * @param newOneFirst if true, move the new view as the first one (left or top)
    */
   KonqView* splitView( KonqView* view,
                        Qt::Orientation orientation,
-                       const QString & serviceType = QString(),
-                       const QString & serviceName = QString(),
                        bool newOneFirst = false, bool forceAutoEmbed = false );
 
   /**
@@ -89,9 +84,9 @@ public:
                             bool newOneFirst = false );
 
   /**
-   * Adds a tab to m_pMainContainer
+   * Adds a tab to m_tabContainer
    */
-  KonqView* addTab(const QString &serviceType = QString(),
+  KonqView* addTab(const QString &serviceType,
                    const QString &serviceName = QString(),
                    bool passiveMode = false, bool openAfterCurrentPage = false );
 

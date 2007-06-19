@@ -36,7 +36,7 @@ class KonqViewAdaptor : public QObject
 
 public:
 
-    KonqViewAdaptor( KonqView * view );
+    explicit KonqViewAdaptor( KonqView * view );
     ~KonqViewAdaptor();
 
 public slots:

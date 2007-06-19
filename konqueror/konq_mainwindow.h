@@ -1,4 +1,4 @@
-/* -*- c-basic-offset:2 -*-
+/*
    This file is part of the KDE project
    Copyright (C) 1998, 1999 Simon Hausmann <hausmann@kde.org>
    Copyright (C) 2000-2004 David Faure <faure@kde.org>
@@ -104,7 +104,6 @@ public:
   enum PageSecurity { NotCrypted, Encrypted, Mixed };
 
   explicit KonqMainWindow( const KUrl &initialURL = KUrl(),
-                           bool openInitialURL = true,
                            const QString& xmluiFile="konqueror.rc");
   ~KonqMainWindow();
 
@@ -136,7 +135,7 @@ public:
 
   void abortLoading();
 
-    void openMultiURL( KUrl::List url );
+    void openMultiURL( const KUrl::List& url );
 
   KonqViewManager *viewManager() const { return m_pViewManager; }
 
@@ -263,6 +262,8 @@ public:
 
   // KonqFrameContainerBase implementation BEGIN
 
+  virtual bool accept( KonqFrameVisitor* visitor );
+
   /**
    * Call this after inserting a new frame into the container.
    */
@@ -276,13 +277,8 @@ public:
 
   void copyHistory( KonqFrameBase *other );
 
-  void printFrameInfo( const QString &spaces );
-
   void reparentFrame( QWidget* parent,
                       const QPoint & p );
-
-  KonqFrameContainerBase* parentContainer()const;
-  void setParentContainer(KonqFrameContainerBase* parent);
 
   void setTitle( const QString &title , QWidget* sender);
   void setTabIcon( const KUrl &url, QWidget* sender );

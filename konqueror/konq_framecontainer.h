@@ -22,6 +22,10 @@
 #include "konq_frame.h"
 #include <QtGui/QSplitter>
 
+/**
+ * Base class for containers
+ * This implements the Composite pattern: a composite is a type of base element.
+ */
 class KonqFrameContainerBase : public KonqFrameBase
 {
 public:
@@ -36,15 +40,12 @@ public:
    */
   virtual void removeChildFrame( KonqFrameBase * frame ) = 0;
 
-  //inherited
-  virtual void printFrameInfo( const QString& spaces );
-
   virtual QByteArray frameType() { return QByteArray("ContainerBase"); }
 
   virtual void reparentFrame(QWidget * parent,
                              const QPoint & p ) = 0;
 
-  virtual KonqFrameBase* activeChild() { return m_pActiveChild; }
+  KonqFrameBase* activeChild() const { return m_pActiveChild; }
 
   virtual void setActiveChild( KonqFrameBase* activeChild ) { m_pActiveChild = activeChild;
                                                               m_pParentContainer->setActiveChild( this ); }
@@ -68,8 +69,7 @@ protected:
  * That means that they always have two children. Which are either again
  * KonqFrameContainers or, as leaves, KonqFrames.
  */
-
-class KonqFrameContainer : public QSplitter, public KonqFrameContainerBase
+class KonqFrameContainer : public QSplitter, public KonqFrameContainerBase   // TODO rename to KonqFrameContainerSplitter?
 {
   Q_OBJECT
   friend class KonqFrame; //for emitting ctrlTabPressed() only, aleXXX
@@ -79,6 +79,8 @@ public:
                       KonqFrameContainerBase* parentContainer );
   virtual ~KonqFrameContainer();
 
+    virtual bool accept( KonqFrameVisitor* visitor );
+
   virtual void listViews( ChildViewList *viewList );
 
   virtual void saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs, KonqFrameBase* docContainer, int id = 0, int depth = 0 );
@@ -87,8 +89,6 @@ public:
   KonqFrameBase* firstChild() { return m_pFirstChild; }
   KonqFrameBase* secondChild() { return m_pSecondChild; }
   KonqFrameBase* otherChild( KonqFrameBase* child );
-
-  virtual void printFrameInfo( const QString& spaces );
 
   void swapChildren();
 

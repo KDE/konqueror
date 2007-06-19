@@ -16,31 +16,35 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef KONQVIEWMGRTEST_H
-#define KONQVIEWMGRTEST_H
+#include "centralwidget.h"
 
-#include <QtGui/QMainWindow>
+#include <QtGui/QApplication>
+#include <QtGui/QLabel>
+#include <QtCore/QTimer>
+#include <QtGui/QSplitter>
 
-#include <QObject>
-#include <kcomponentdata.h>
-
-class ViewMgrTest : public QObject
+SCWMainWindow::SCWMainWindow( QWidget* parent )
+    : QMainWindow( parent )
 {
-    Q_OBJECT
+    QLabel* widget1 = new QLabel( "widget1" );
+    setCentralWidget( widget1 );
+    QTimer::singleShot( 10, this, SLOT( slotSwitchCentralWidget() ) );
+}
 
-private Q_SLOTS:
-    void initTestCase();
+void SCWMainWindow::slotSwitchCentralWidget()
+{
+    QLabel* widget2 = new QLabel( "widget2" );
+    delete centralWidget(); // ## workaround for the crash
+    setCentralWidget( widget2 );
+}
 
-    void testCreateFirstView();
-    void testRemoveFirstView();
-    void testSplitView();
+int main( int argc, char** argv ) {
+    QApplication app( argc, argv );
 
-    void testAddTab();
-    void testDuplicateTab();
-    void testDuplicateSplittedTab();
+    SCWMainWindow* mw = new SCWMainWindow;
+    mw->show();
 
-private:
-    KComponentData m_konqComponentData;
-};
+    return app.exec();
+}
 
-#endif
+#include "centralwidget.moc"

@@ -77,7 +77,7 @@ KonqMainWindow * KonqMisc::createSimpleWindow( const KUrl & _url, const QString 
   else
      url = _url;
 
-  KonqMainWindow *win = new KonqMainWindow( KUrl(), false );
+  KonqMainWindow *win = new KonqMainWindow;
   win->setInitialFrameName( frameName );
   win->openUrl( 0L, url );
   win->show();
@@ -92,7 +92,7 @@ KonqMainWindow * KonqMisc::createSimpleWindow( const KUrl & url, const KParts::U
   KonqOpenURLRequest req;
   req.args = args;
   req.tempFile = tempFile;
-  KonqMainWindow *win = new KonqMainWindow( KUrl(), false );
+  KonqMainWindow *win = new KonqMainWindow;
   win->openUrl( 0L, url, QString(), req );
   win->show();
 
@@ -153,7 +153,7 @@ KonqMainWindow * KonqMisc::createBrowserWindowFromProfile( const QString &path, 
       KConfigGroup profileGroup( &cfg, "Profile" );
       QString xmluiFile = profileGroup.readEntry("XMLUIFile","konqueror.rc");
 
-      mainWindow = new KonqMainWindow( KUrl(), false, xmluiFile );
+      mainWindow = new KonqMainWindow( KUrl(), xmluiFile );
       if ( forbidUseHTML )
           mainWindow->setShowHTML( false );
       KonqOpenURLRequest req;

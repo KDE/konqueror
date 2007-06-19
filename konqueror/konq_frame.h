@@ -20,6 +20,7 @@
 #define __konq_frame_h__
 
 #include "konq_factory.h"
+#include <kparts/part.h> // for the inline QPointer usage
 
 #include <QtCore/QPointer>
 #include <QtGui/QColor>
@@ -35,6 +36,7 @@
 #include <KPixmapEffect>
 #include <KStatusBar>
 
+class KonqFrameVisitor;
 class QPixmap;
 class QVBoxLayout;
 class QProgressBar;
@@ -81,7 +83,7 @@ class KonqFrameStatusBar : public KStatusBar
     Q_OBJECT
 
 public:
-    KonqFrameStatusBar( KonqFrame *_parent = 0 );
+    explicit KonqFrameStatusBar( KonqFrame *_parent = 0 );
     virtual ~KonqFrameStatusBar();
 
     /**
@@ -152,17 +154,17 @@ class KonqFrameBase
  public:
   virtual ~KonqFrameBase() {}
 
+    virtual bool accept( KonqFrameVisitor* visitor ) = 0;
+
   virtual void saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs, KonqFrameBase* docContainer, int id = 0, int depth = 0) = 0;
 
   virtual void copyHistory( KonqFrameBase *other ) = 0;
 
-  virtual void printFrameInfo( const QString& spaces );
-
   virtual void reparentFrame( QWidget* parent,
                               const QPoint & p ) = 0;
 
-  virtual KonqFrameContainerBase* parentContainer() const { return m_pParentContainer; }
-  virtual void setParentContainer(KonqFrameContainerBase* parent) { m_pParentContainer = parent; }
+  KonqFrameContainerBase* parentContainer() const { return m_pParentContainer; }
+  void setParentContainer(KonqFrameContainerBase* parent) { m_pParentContainer = parent; }
 
   virtual void setTitle( const QString &title , QWidget* sender) = 0;
   virtual void setTabIcon( const KUrl &url, QWidget* sender ) = 0;
@@ -197,6 +199,8 @@ class KonqFrame : public QWidget, public KonqFrameBase
 public:
   explicit KonqFrame( QWidget* parent, KonqFrameContainerBase *parentContainer = 0 );
   virtual ~KonqFrame();
+
+    virtual bool accept( KonqFrameVisitor* visitor );
 
   /**
    * Attach a view to the KonqFrame.
@@ -237,8 +241,6 @@ public:
 
   virtual void saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs, KonqFrameBase* docContainer, int id = 0, int depth = 0 );
   virtual void copyHistory( KonqFrameBase *other );
-
-  virtual void printFrameInfo( const QString& spaces );
 
   virtual void setTitle( const QString &title, QWidget* sender );
   virtual void setTabIcon( const KUrl &url, QWidget* sender );

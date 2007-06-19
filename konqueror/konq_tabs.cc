@@ -38,6 +38,7 @@
 #include "konq_viewmgr.h"
 #include "konq_misc.h"
 #include "konq_settingsxt.h"
+#include "konq_framevisitor.h"
 
 #include <kacceleratormanager.h>
 #include <konq_pixmapprovider.h>
@@ -186,26 +187,6 @@ void KonqFrameTabs::copyHistory( KonqFrameBase *other )
     {
       m_childFrameList.at(i)->copyHistory( static_cast<KonqFrameTabs *>( other )->m_childFrameList.at(i) );
     }
-}
-
-void KonqFrameTabs::printFrameInfo( const QString& spaces )
-{
-  kDebug(1202) << spaces << "KonqFrameTabs " << this << " visible="
-                << QString("%1").arg(isVisible()) << " activeChild="
-                << m_pActiveChild << endl;
-
-  if (!m_pActiveChild)
-      kDebug(1202) << "WARNING: " << this << " has a null active child!" << endl;
-
-  KonqFrameBase* child;
-  int childFrameCount = m_childFrameList.count();
-  for (int i = 0 ; i < childFrameCount ; i++) {
-    child = m_childFrameList.at(i);
-    if (child != 0L)
-      child->printFrameInfo(spaces + "  ");
-    else
-      kDebug(1202) << spaces << "  Null child" << endl;
-  }
 }
 
 void KonqFrameTabs::reparentFrame( QWidget* parent, const QPoint & p )
@@ -409,7 +390,7 @@ void KonqFrameTabs::slotMouseMiddleClick()
 {
   KUrl filteredURL ( KonqMisc::konqFilteredURL( this, QApplication::clipboard()->text(QClipboard::Selection) ) );
   if ( !filteredURL.isEmpty() ) {
-    KonqView* newView = m_pViewManager->addTab(QString(), QString(), false, false);
+    KonqView* newView = m_pViewManager->addTab("text/html", QString(), false, false);
     if (newView == 0L) return;
     m_pViewManager->mainWindow()->openUrl( newView, filteredURL, QString() );
     m_pViewManager->showTab( newView );
@@ -444,9 +425,9 @@ void KonqFrameTabs::slotTestCanDecode(const QDragMoveEvent *e, bool &accept /* r
 
 void KonqFrameTabs::slotReceivedDropEvent( QDropEvent *e )
 {
-  KUrl::List lstDragURLs = KUrl::List::fromMimeData( e->mimeData() );
-  if ( lstDragURLs.count() ) {
-    KonqView* newView = m_pViewManager->addTab(QString(), QString(), false, false);
+  const KUrl::List lstDragURLs = KUrl::List::fromMimeData( e->mimeData() );
+  if ( !lstDragURLs.isEmpty() ) {
+    KonqView* newView = m_pViewManager->addTab("text/html", QString(), false, false);
     if (newView == 0L) return;
     m_pViewManager->mainWindow()->openUrl( newView, lstDragURLs.first(), QString() );
     m_pViewManager->showTab( newView );
@@ -543,6 +524,20 @@ void KonqFrameTabs::initPopupMenu()
   connect( this, SIGNAL( contextMenu( const QPoint & ) ),
            SLOT(slotContextMenu( const QPoint & ) ) );
 
+}
+
+bool KonqFrameTabs::accept( KonqFrameVisitor* visitor )
+{
+    if ( !visitor->visit( this ) )
+        return false;
+    foreach( KonqFrameBase* frame, m_childFrameList ) {
+        Q_ASSERT( frame );
+        if ( !frame->accept( visitor ) )
+            return false;
+    }
+    if ( !visitor->endVisit( this ) )
+        return false;
+    return true;
 }
 
 #include "konq_tabs.moc"
