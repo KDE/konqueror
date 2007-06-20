@@ -19,12 +19,13 @@
 #ifndef KONQ_APPLICATION_H
 #define KONQ_APPLICATION_H
 
+#include "konqprivate_export.h"
 #include <kapplication.h>
 
 // This is used to know if we are being closed by session management
 // or by the user. See KonqMainWindow::~KonqMainWindow.
 // Credits to Matthias Ettrich for the idea.
-class KonquerorApplication : public KApplication
+class KONQPRIVATE_EXPORT KonquerorApplication : public KApplication
 {
   Q_OBJECT
 public:

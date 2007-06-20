@@ -347,7 +347,7 @@ void KonqViewModeAction::slotPopupAboutToHide()
 
 
 KonqHistoryList* KonqMostOftenURLSAction::s_mostEntries = 0;
-uint KonqMostOftenURLSAction::s_maxEntries = 0;
+static int s_maxEntries = 0;
 
 KonqMostOftenURLSAction::KonqMostOftenURLSAction( const QString& text,
 						  QObject* parent )

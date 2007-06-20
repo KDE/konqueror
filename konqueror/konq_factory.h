@@ -22,6 +22,7 @@
 #ifndef __konq_factory_h__
 #define __konq_factory_h__
 
+#include "konqprivate_export.h"
 
 #include <QtCore/QStringList>
 
@@ -31,7 +32,7 @@ class KAboutData;
 class KLibFactory;
 namespace KParts { class ReadOnlyPart; }
 
-class KonqViewFactory // TODO rename to KonqPartFactory?
+class KonqViewFactory // TODO rename to KonqPartFactory? confusing though due to KParts::PartFactory (in the part itself)
 {
 public:
   KonqViewFactory() : m_factory( 0 ), m_createBrowser( false ) {}
@@ -62,7 +63,7 @@ private:
 /**
  * Factory for creating (loading) parts when creating a view.
  */
-class KonqFactory
+class KONQPRIVATE_EXPORT KonqFactory
 {
 public:
     /**

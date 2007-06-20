@@ -66,8 +66,11 @@ kde4_automoc(${konquerorprivate_SRCS})
 
 qt4_add_dbus_interface(konquerorprivate_SRCS org.kde.Konqueror.Main.xml konqueror_interface)
 
-kde4_add_library(konquerorprivate ${konquerorprivate_SRCS})
+kde4_add_library(konquerorprivate SHARED ${konquerorprivate_SRCS})
 target_link_libraries(konquerorprivate ${KDE4_KDE3SUPPORT_LIBS} ${KDE4_KUTILS_LIBS} konq)
+set_target_properties(konquerorprivate PROPERTIES VERSION 1.0.0 SOVERSION 1 )
+install(TARGETS konquerorprivate DESTINATION ${LIB_INSTALL_DIR})
+
 
 kde4_add_kdeinit_executable( konqueror konq_main.cc)
 target_link_libraries(kdeinit_konqueror konquerorprivate )

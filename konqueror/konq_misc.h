@@ -20,17 +20,14 @@
 #ifndef _konq_misc_h
 #define _konq_misc_h
 
-// This file can hold every global class for konqueror that used to pollute
-// konq_main.cc
+#include "konqprivate_export.h"
 
 #include <krun.h>
 #include <kparts/browserextension.h>
-//Added by qt3to4:
-#include <QtGui/QKeyEvent>
 class KonqMainWindow;
 class KonqView;
 
-class KonqMisc
+class KONQPRIVATE_EXPORT KonqMisc
 {
 public:
     /*
@@ -61,7 +58,7 @@ public:
     /**
      * Create a new window with a single view, showing @p url, using @p args
      */
-    static KonqMainWindow * createSimpleWindow( const KUrl &url, const KParts::URLArgs &args, 
+    static KonqMainWindow * createSimpleWindow( const KUrl &url, const KParts::URLArgs &args,
 						bool tempFile = false);
 
     /**

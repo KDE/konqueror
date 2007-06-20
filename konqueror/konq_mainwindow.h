@@ -22,20 +22,17 @@
 #ifndef __konq_mainwindow_h__
 #define __konq_mainwindow_h__
 
+#include "konqprivate_export.h"
+
 #include <QtCore/QMap>
-#include <QtCore/QPoint>
-#include <QtCore/QTimer>
 #include <QtCore/QPointer>
-//Added by qt3to4:
-#include <QtGui/QPixmap>
-#include <QtCore/QByteRef>
 #include <QtGui/QKeyEvent>
 #include <QtCore/QList>
 #include <QtCore/QEvent>
 #include <QtGui/QLabel>
 
 #include <kfileitem.h>
-#include <klocale.h>
+
 #include "konq_openurlrequest.h"
 
 #include <kparts/mainwindow.h>
@@ -53,6 +50,7 @@
 
 class QFile;
 class QAction;
+class QPixmap;
 class KAction;
 class KActionCollection;
 class KActionMenu;
@@ -87,7 +85,7 @@ namespace KParts {
 
 class KonqExtendedBookmarkOwner;
 
-class KonqMainWindow : public KParts::MainWindow, public KonqFrameContainerBase
+class KONQPRIVATE_EXPORT KonqMainWindow : public KParts::MainWindow, public KonqFrameContainerBase
 {
   Q_OBJECT
   Q_PROPERTY( int viewCount READ viewCount )
