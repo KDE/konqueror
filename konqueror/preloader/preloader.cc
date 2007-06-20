@@ -18,7 +18,7 @@
 */
 
 #include "preloader.h"
-#include "konq_settingsxt.h"
+#include "konqsettingsxt.h"
 #include "preloaderadaptor.h"
 
 #include <kconfig.h>
