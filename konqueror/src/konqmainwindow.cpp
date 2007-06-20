@@ -308,9 +308,10 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
 
 KonqMainWindow::~KonqMainWindow()
 {
-  kDebug(1202) << "KonqMainWindow::~KonqMainWindow " << this << endl;
+    //kDebug(1202) << "KonqMainWindow::~KonqMainWindow " << this << endl;
 
-  delete m_pViewManager;
+    delete m_pViewManager;
+    m_pViewManager = 0;
 
   if ( s_lstViews )
   {
@@ -323,8 +324,6 @@ KonqMainWindow::~KonqMainWindow()
   }
 
   saveToolBarServicesMap();
-
-  //  createShellGUI( false );
 
   delete m_pBookmarkMenu;
   delete m_paBookmarkBar;
@@ -345,7 +344,7 @@ KonqMainWindow::~KonqMainWindow()
   delete m_locationLabel;
   m_locationLabel = 0;
 
-  kDebug(1202) << "KonqMainWindow::~KonqMainWindow " << this << " done" << endl;
+  //kDebug(1202) << "KonqMainWindow::~KonqMainWindow " << this << " done" << endl;
 }
 
 QWidget * KonqMainWindow::createContainer( QWidget *parent, int index, const QDomElement &element, int &id )
@@ -2250,7 +2249,7 @@ void KonqMainWindow::slotPartActivated( KParts::Part *part )
 
 void KonqMainWindow::insertChildView( KonqView *childView )
 {
-  kDebug(1202) << "KonqMainWindow::insertChildView " << childView << endl;
+    //kDebug(1202) << "KonqMainWindow::insertChildView " << childView << endl;
   m_mapViews.insert( childView->part(), childView );
 
   connect( childView, SIGNAL( viewCompleted( KonqView * ) ),
@@ -2264,26 +2263,26 @@ void KonqMainWindow::insertChildView( KonqView *childView )
 // Called by KonqViewManager, internal
 void KonqMainWindow::removeChildView( KonqView *childView )
 {
-  kDebug(1202) << "KonqMainWindow::removeChildView childView " << childView << endl;
+    //kDebug(1202) << "KonqMainWindow::removeChildView childView " << childView << endl;
 
   disconnect( childView, SIGNAL( viewCompleted( KonqView * ) ),
               this, SLOT( slotViewCompleted( KonqView * ) ) );
 
 #ifndef NDEBUG
-  dumpViewList();
+    //dumpViewList();
 #endif
 
   MapViews::Iterator it = m_mapViews.begin();
-  MapViews::Iterator end = m_mapViews.end();
+  const MapViews::Iterator end = m_mapViews.end();
 
   // find it in the map - can't use the key since childView->part() might be 0
 
-  kDebug(1202) << "Searching map" << endl;
+  //kDebug(1202) << "Searching map" << endl;
 
   while ( it != end && it.value() != childView )
       ++it;
 
-  kDebug(1202) << "Verifying search results" << endl;
+  //kDebug(1202) << "Verifying search results" << endl;
 
   if ( it == m_mapViews.end() )
   {
@@ -2310,7 +2309,7 @@ void KonqMainWindow::removeChildView( KonqView *childView )
 void KonqMainWindow::viewCountChanged()
 {
   // This is called when the number of views changes.
-  kDebug(1202) << "KonqMainWindow::viewCountChanged" << endl;
+  //kDebug(1202) << "KonqMainWindow::viewCountChanged" << endl;
 
   int lvc = linkableViewsCount();
   m_paLinkView->setEnabled( lvc > 1 );
