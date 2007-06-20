@@ -37,7 +37,7 @@
 #include "konqview.h"
 #include "konqviewmanager.h"
 #include "konqmisc.h"
-#include "konq_settingsxt.h"
+#include "konqsettingsxt.h"
 #include "konqframevisitor.h"
 
 #include <kacceleratormanager.h>

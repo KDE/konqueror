@@ -31,7 +31,7 @@
 
 // Local
 #include "konqview.h"
-#include "konq_settingsxt.h"
+#include "konqsettingsxt.h"
 #include "konqframe.h"
 #include "konqframestatusbar.h"
 #include "konqviewmanager.h"
