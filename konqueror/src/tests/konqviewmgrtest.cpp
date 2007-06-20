@@ -22,8 +22,10 @@
 #include <konqmainwindow.h>
 #include <konqviewmanager.h>
 #include <konqview.h>
+#include <konqtabs.h>
 #include <konqframevisitor.h>
 #include <kstandarddirs.h>
+#include <QLayout>
 
 QTEST_KDEMAIN_WITH_COMPONENTNAME( ViewMgrTest, GUI, "konqueror" )
 
@@ -40,6 +42,30 @@ public:
 
 };
 #endif
+
+static void sendAllPendingResizeEvents( QWidget* mainWindow )
+{
+    bool foundOne = true;
+    while ( foundOne ) {
+        foundOne = false;
+        QList<QWidget *> allChildWidgets = mainWindow->findChildren<QWidget *>();
+        allChildWidgets.prepend( mainWindow );
+        foreach( QWidget* w, allChildWidgets ) {
+            if (w->testAttribute(Qt::WA_PendingResizeEvent)) {
+                //qDebug() << "Resizing" << w << " to " << w->size() << endl;
+                QResizeEvent e(w->size(), QSize());
+                QApplication::sendEvent(w, &e);
+                w->setAttribute(Qt::WA_PendingResizeEvent, false);
+                // hack: make QTabWidget think it's visible; no layout otherwise
+                w->setAttribute(Qt::WA_WState_Visible, true);
+                foundOne = true;
+            }
+        }
+        // Process LayoutRequest events, in particular
+        qApp->sendPostedEvents();
+        //qDebug() << "Loop done, checking again";
+    }
+}
 
 class DebugFrameVisitor : public KonqFrameVisitor
 {
@@ -81,6 +107,31 @@ void ViewMgrTest::testCreateFirstView()
 
     // Use DebugFrameVisitor to find out the structure of the frame hierarchy
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, one tab, one frame
+
+    // Check widget parents:  part's widget -> frame -> [tabwidget's stack] -> tabwidget -> mainwindow
+    QWidget* partWidget = view->part()->widget();
+    QCOMPARE( partWidget->topLevelWidget(), &mainWindow );
+    QWidget* frame = view->frame()->asQWidget();
+    QCOMPARE( partWidget->parentWidget(), frame );
+    QWidget* tabWidget = viewMgr.tabContainer()->asQWidget();
+    QCOMPARE( frame->parentWidget()->parentWidget(), tabWidget );
+
+    // Check frame geometry, to check that all layouts are there
+    // (the mainwindow is resized to 700x480 in its constructor)
+    // But pending resize events are only sent by show(), and we don't want to see
+    // widgets from unit tests.
+    // So we iterate over all widgets and ensure the pending resize events are sent.
+    sendAllPendingResizeEvents( &mainWindow );
+    //for ( QWidget* w = partWidget; w; w = w->parentWidget() )
+    //    qDebug() << w << w->geometry();
+    QVERIFY( frame->width() > 680 );
+    QVERIFY( frame->height() > 300 );
+    //qDebug() << "partWidget geom:" << partWidget->geometry();
+    QVERIFY( partWidget->width() > 680 );
+    QVERIFY( partWidget->height() > 300 );
+    //qDebug() << "tabWidget geom: " << tabWidget->geometry();
+    QVERIFY( tabWidget->width() > 680 );
+    QVERIFY( tabWidget->height() > 300 );
 }
 
 void ViewMgrTest::testRemoveFirstView()
@@ -99,13 +150,49 @@ void ViewMgrTest::testSplitView()
     KonqMainWindow mainWindow;
     KonqViewManager viewMgr( &mainWindow );
     KonqView* view = viewMgr.createFirstView( "KonqAboutPage", "konq_aboutpage" );
+
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, tab widget, one frame
     // TODO also test newOneFirst after improving the visitor... using 'F' + frame->objectName()[0]?
     // Or registring views to the visitor... or to a registry used by the visitor, rather.
-    KonqView* view2 = viewMgr.splitView( view, Qt::Vertical );
+    KonqView* view2 = viewMgr.splitView( view, Qt::Horizontal );
     QVERIFY( view2 );
     QCOMPARE( view->frame()->parentContainer(), view2->frame()->parentContainer() );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, one splitter, two frames
+
+    // Check widget parents
+    //mainWindow.dumpObjectTree();
+    QWidget* partWidget = view->part()->widget();
+    QCOMPARE( partWidget->topLevelWidget(), &mainWindow );
+    QWidget* frame = view->frame()->asQWidget();
+    QCOMPARE( partWidget->parentWidget(), frame );
+
+    QWidget* part2Widget = view2->part()->widget();
+    QCOMPARE( part2Widget->topLevelWidget(), &mainWindow );
+    QWidget* frame2 = view2->frame()->asQWidget();
+    QCOMPARE( part2Widget->parentWidget(), frame2 );
+
+    // Check frame geometries
+    sendAllPendingResizeEvents( &mainWindow );
+    //for ( QWidget* w = partWidget; w; w = w->parentWidget() )
+    //    qDebug() << w << w->geometry();
+
+    //qDebug() << "view geom:" << frame->geometry();
+    QVERIFY( frame->width() > 300 && frame->width() < 400 ); // horiz split, so half the mainwindow width
+    QVERIFY( frame->height() > 300 );
+    //qDebug() << "view2 geom:" << frame2->geometry();
+    QVERIFY( frame2->width() > 300 && frame2->width() < 400 ); // horiz split, so half the mainwindow width
+    QVERIFY( frame2->height() > 300 );
+    QCOMPARE( frame->size(), frame2->size() );
+    //qDebug() << "partWidget geom:" << partWidget->geometry();
+    QVERIFY( partWidget->width() > 300 && partWidget->width() < 400 ); // horiz split, so half the mainwindow width
+    QVERIFY( partWidget->height() > 300 );
+    QVERIFY( part2Widget->width() > 300 && part2Widget->width() < 400 ); // horiz split, so half the mainwindow width
+    QVERIFY( part2Widget->height() > 300 );
+
+    //KonqFrameContainerBase* container = view->frame()->parentContainer();
+    //QVERIFY( container );
+    //qDebug() << "container geom: " << container->asQWidget()->geometry();
+
 
     // Split again
     KonqView* view3 = viewMgr.splitView( view, Qt::Horizontal );
