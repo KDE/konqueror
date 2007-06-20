@@ -33,7 +33,7 @@
 #include "konqframestatusbar.h"
 #include "konqtabs.h"
 #include "konqactions.h"
-#include "konq_settingsxt.h"
+#include "konqsettingsxt.h"
 #include "konqextensionmanager.h"
 #include "konqueror_interface.h"
 #include "delayedinitializer.h"

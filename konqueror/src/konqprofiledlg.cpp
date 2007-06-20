@@ -19,7 +19,7 @@
 
 #include "konqprofiledlg.h"
 #include "konqviewmanager.h"
-#include "konq_settingsxt.h"
+#include "konqsettingsxt.h"
 
 #include <QtGui/QCheckBox>
 #include <QtCore/QDir>

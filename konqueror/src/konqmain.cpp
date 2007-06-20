@@ -22,7 +22,7 @@
 #include "konqfactory.h"
 #include "konqmainwindow.h"
 #include "konqview.h"
-#include "konq_settingsxt.h"
+#include "konqsettingsxt.h"
 
 #include <ktemporaryfile.h>
 #include <klocale.h>
