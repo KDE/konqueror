@@ -20,13 +20,13 @@
 #ifndef __konq_viewmgr_h__
 #define __konq_viewmgr_h__
 
+#include "konqprivate_export.h"
 #include "konq_factory.h"
 
 #include <QtCore/QMap>
 #include <QtCore/QPointer>
 
 #include <KService>
-#include <KConfig>
 
 #include <kparts/partmanager.h>
 #include "konq_openurlrequest.h"
@@ -35,6 +35,7 @@ class KonqFrameTabs;
 class QString;
 class QTimer;
 class KConfig;
+class KConfigGroup;
 class KonqMainWindow;
 class KonqFrameBase;
 class KonqFrameContainer;
@@ -47,7 +48,7 @@ namespace KParts
   class ReadOnlyPart;
 }
 
-class KonqViewManager : public KParts::PartManager
+class KONQPRIVATE_EXPORT KonqViewManager : public KParts::PartManager
 {
     Q_OBJECT
 public:

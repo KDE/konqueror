@@ -2,3 +2,5 @@ File=konqueror.kcfg
 ClassName=KonqSettings
 Singleton=true 
 Mutators=true
+Visibility=KONQPRIVATE_EXPORT
+IncludeFiles=konqprivate_export.h

@@ -145,7 +145,6 @@ private:
     static void inSort( const KonqHistoryEntry& entry );
 
     static KonqHistoryList *s_mostEntries;
-    static uint s_maxEntries;
     KUrl::List m_popupList;
 };
 
