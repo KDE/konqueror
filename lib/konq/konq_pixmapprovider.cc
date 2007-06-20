@@ -68,7 +68,9 @@ QString KonqPixmapProvider::iconNameFor( const KUrl& url )
 
     if ( url.url().isEmpty() ) {
         // Use the folder icon for the empty URL
-        icon = KMimeType::mimeType( "inode/directory" )->iconName();
+        const KMimeType::Ptr directoryType = KMimeType::mimeType( "inode/directory" );
+        Q_ASSERT( !directoryType.isNull() );
+        icon = directoryType->iconName();
         Q_ASSERT( !icon.isEmpty() );
     }
     else
