@@ -1405,7 +1405,7 @@ void KonqViewManager::loadItem( KConfigGroup &cfg, KonqFrameContainerBase *paren
     QStringList childList = cfg.readEntry( QString::fromLatin1( "Children" ).prepend( prefix ),QStringList() );
     for ( QStringList::Iterator it = childList.begin(); it != childList.end(); ++it )
     {
-        loadItem( cfg, m_tabContainer, *it, defaultURL, openUrl );
+        loadItem( cfg, tabContainer(), *it, defaultURL, openUrl );
         QWidget* currentPage = m_tabContainer->currentWidget();
         if (currentPage != 0L) {
           KonqView* activeChildView = dynamic_cast<KonqFrameBase*>(currentPage)->activeChildView();
