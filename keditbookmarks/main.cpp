@@ -112,7 +112,6 @@ static bool askUser(const QString& filename, bool &readonly) {
 #include <kactioncollection.h>
 
 extern "C" KDE_EXPORT int kdemain(int argc, char **argv) {
-    KLocale::setMainCatalog("konqueror");
     KAboutData aboutData("keditbookmarks", I18N_NOOP("Bookmark Editor"), KDE_VERSION_STRING,
             I18N_NOOP("Konqueror Bookmarks Editor"),
             KAboutData::License_GPL,
