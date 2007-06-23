@@ -15,7 +15,7 @@
 #include <klocale.h>
 
 
-NewTypeDialog::NewTypeDialog(QStringList groups,
+NewTypeDialog::NewTypeDialog(const QStringList &groups,
 			     QWidget *parent, const char *name)
   : KDialog( parent )
 {

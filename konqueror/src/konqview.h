@@ -293,7 +293,7 @@ public:
   // return true if the method was found, false if the execution failed
   bool callExtensionMethod( const char *methodName );
   bool callExtensionBoolMethod( const char *methodName, bool value );
-  bool callExtensionStringMethod( const char *methodName, QString value );
+  bool callExtensionStringMethod( const char *methodName, const QString &value );
   bool callExtensionURLMethod( const char *methodName, const KUrl& value );
 
   void setViewName( const QString &name );

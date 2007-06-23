@@ -61,7 +61,7 @@ protected Q_SLOTS:
 
 protected:
     void fillListView();
-    void fillGroup( KonqSidebarTreeItem * parentItem, KBookmarkGroup group );
+    void fillGroup( KonqSidebarTreeItem * parentItem, const KBookmarkGroup &group );
     KonqSidebarBookmarkItem * findByAddress( const QString & address ) const;
 
 private Q_SLOTS:

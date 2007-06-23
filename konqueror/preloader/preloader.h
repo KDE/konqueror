@@ -32,9 +32,9 @@ class KonqyPreloader
         virtual ~KonqyPreloader();
 	
     public Q_SLOTS:
-        bool registerPreloadedKonqy( QString id, int screen );
+        bool registerPreloadedKonqy( const QString &id, int screen );
         QString getPreloadedKonqy( int screen );
-        void unregisterPreloadedKonqy( QString id );
+        void unregisterPreloadedKonqy( const QString &id );
         void reconfigure();
         void unloadAllPreloaded();
     private Q_SLOTS:

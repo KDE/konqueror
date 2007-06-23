@@ -47,7 +47,7 @@ public:
 class CookieListViewItem : public Q3ListViewItem
 {
 public:
-    CookieListViewItem(Q3ListView *parent, QString dom);
+    CookieListViewItem(Q3ListView *parent, const QString &dom);
     CookieListViewItem(Q3ListViewItem *parent, CookieProp *cookie);
     ~CookieListViewItem();
 
@@ -60,7 +60,7 @@ public:
 
 private:
     void init( CookieProp* cookie,
-               QString domain = QString(),
+               const QString &domain = QString(),
                bool cookieLoaded=false );
     CookieProp *mCookie;
     QString mDomain;

@@ -86,7 +86,7 @@ public:
   // CallBack interface (DBus-exported)
   void postURL(const QString& url, const QString& target, const QByteArray& data, const QString& mime);
   void requestURL(const QString& url, const QString& target);
-  void statusMessage( QString msg );
+  void statusMessage( const QString &msg );
   void evalJavaScript( int id, const QString& script );
   void reloadPage();
 

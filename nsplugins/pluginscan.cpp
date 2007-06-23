@@ -96,7 +96,7 @@ extern "C" void __pure_virtual()
 KConfig *infoConfig = 0;
 
 
-bool isPluginMimeType( QString fname )
+bool isPluginMimeType( const QString &fname )
 {
     KDesktopFile cfg(  fname );
     return cfg.desktopGroup().hasKey( "X-KDE-nsplugin" );
@@ -140,7 +140,7 @@ void deletePluginMimeTypes()
 }
 
 
-void generateMimeType( QString mime, QString extensions, QString pluginName, QString description )
+void generateMimeType( const QString &mime, const QString &extensions, const QString &pluginName, const QString &description )
 {
     kDebug(1433) << "-> generateMimeType mime=" << mime << " ext="<< extensions << endl;
 
@@ -283,7 +283,7 @@ int tryCheck(int write_fd, const QString &absFile)
     return 0;
 }
 
-void scanDirectory( QString dir, QStringList &mimeInfoList,
+void scanDirectory( const QString &dir, QStringList &mimeInfoList,
                     QTextStream &cache )
 {
     kDebug(1433) << "-> scanDirectory dir=" << dir << endl;
@@ -474,7 +474,7 @@ QStringList getSearchPaths()
 }
 
 
-void writeServicesFile( QStringList mimeTypes )
+void writeServicesFile( const QStringList &mimeTypes )
 {
     QString fname = KGlobal::dirs()->saveLocation("services", "")
                     + "/nsplugin.desktop";

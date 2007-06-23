@@ -17,7 +17,7 @@ class QComboBox;
 class NewTypeDialog : public KDialog
 {
 public:
-  explicit NewTypeDialog(QStringList groups, QWidget *parent = 0, 
+  explicit NewTypeDialog(const QStringList &groups, QWidget *parent = 0, 
 		const char *name = 0);
   QString group() const;
   QString text() const;

@@ -6,7 +6,7 @@
 #include <QtCore/QFile>
 #include <QtCore/QTextStream>
 
-bool CSSTemplate::expand(QString destname, const QMap<QString,QString> &dict)
+bool CSSTemplate::expand(const QString &destname, const QMap<QString,QString> &dict)
 {
   QFile inf(_filename);
   if (!inf.open(QIODevice::ReadOnly))

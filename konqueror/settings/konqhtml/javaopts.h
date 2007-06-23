@@ -83,7 +83,7 @@ class KJavaOptions : public KCModule
     Q_OBJECT
 
 public:
-    KJavaOptions( KSharedConfig::Ptr config, QString group, const KComponentData &componentData, QWidget* parent );
+    KJavaOptions( KSharedConfig::Ptr config, const QString &group, const KComponentData &componentData, QWidget* parent );
 
     virtual void load();
     virtual void save();

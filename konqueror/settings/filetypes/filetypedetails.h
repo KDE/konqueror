@@ -36,7 +36,7 @@ Q_SIGNALS:
   void changed(bool);
 
 protected Q_SLOTS:
-  void updateIcon(QString icon);
+  void updateIcon(const QString &icon);
   void updateDescription(const QString &desc);
   void addExtension();
   void removeExtension();

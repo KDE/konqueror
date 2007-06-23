@@ -12,7 +12,7 @@
 #include <kglobal.h>
 
 
-KHTTPOptions::KHTTPOptions(KSharedConfig::Ptr config, QString group, const KComponentData &componentData, QWidget *parent)
+KHTTPOptions::KHTTPOptions(KSharedConfig::Ptr config, const QString &group, const KComponentData &componentData, QWidget *parent)
   : KCModule( componentData, parent ), m_pConfig(config), m_groupname(group)
 {
   QVBoxLayout *lay = new QVBoxLayout(this);

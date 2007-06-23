@@ -69,7 +69,7 @@ public:
     static KonqMainWindow * createNewWindow( const KUrl &url,
                                              const KParts::URLArgs &args = KParts::URLArgs(),
                                              bool forbidUseHTML = false,
-                                             QStringList filesToSelect = QStringList(),
+                                             const QStringList &filesToSelect = QStringList(),
                                              bool tempFile = false,
 					     bool openUrl = true);
 
