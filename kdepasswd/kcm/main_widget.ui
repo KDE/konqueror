@@ -220,51 +220,6 @@
           </property>
         </spacer>
       </item>
-      <item rowspan="1" row="2" column="0" colspan="4" >
-        <widget class="Q3ButtonGroup" name="kcfg_EchoMode" >
-          <property name="title" >
-            <string>At Password Prompt</string>
-          </property>
-          <property name="flat" >
-            <bool>false</bool>
-          </property>
-          <property name="checkable" >
-            <bool>false</bool>
-          </property>
-          <property name="checked" >
-            <bool>false</bool>
-          </property>
-          <property name="selectedId" stdset="0" >
-            <number>0</number>
-          </property>
-          <layout class="QGridLayout" >
-            <property name="margin" >
-              <number>0</number>
-            </property>
-            <item row="0" column="0" >
-              <widget class="QRadioButton" name="rdbOneStar" >
-                <property name="text" >
-                  <string>Show one star for each letter</string>
-                </property>
-              </widget>
-            </item>
-            <item row="1" column="0" >
-              <widget class="QRadioButton" name="rdbThreeStars" >
-                <property name="text" >
-                  <string>Show three stars for each letter</string>
-                </property>
-              </widget>
-            </item>
-            <item row="2" column="0" >
-              <widget class="QRadioButton" name="rdbShowPassword" >
-                <property name="text" >
-                  <string>Show nothing</string>
-                </property>
-              </widget>
-            </item>
-          </layout>
-        </widget>
-      </item>
     </layout>
   </widget>
   <layoutdefault spacing="6" margin="11" />
@@ -276,9 +231,6 @@
     <tabstop>leOrganization</tabstop>
     <tabstop>leEmail</tabstop>
     <tabstop>leSMTP</tabstop>
-    <tabstop>rdbOneStar</tabstop>
-    <tabstop>rdbThreeStars</tabstop>
-    <tabstop>rdbShowPassword</tabstop>
     <tabstop>btnChangePassword</tabstop>
   </tabstops>
 </ui>
