@@ -76,7 +76,7 @@ int KDEpasswd1Dialog::getPassword(QByteArray &password)
 
 
 
-KDEpasswd2Dialog::KDEpasswd2Dialog(const char *oldpass, QByteArray user)
+KDEpasswd2Dialog::KDEpasswd2Dialog(const char *oldpass, const QByteArray &user)
     : KNewPasswordDialog()
 {
     m_Pass = oldpass;

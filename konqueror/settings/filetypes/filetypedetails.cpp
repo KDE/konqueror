@@ -162,7 +162,7 @@ void FileTypeDetails::updateRemoveButton()
     removeExtButton->setEnabled(extensionLB->count()>0);
 }
 
-void FileTypeDetails::updateIcon(QString icon)
+void FileTypeDetails::updateIcon(const QString &icon)
 {
   if (!m_item)
     return;

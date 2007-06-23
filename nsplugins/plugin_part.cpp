@@ -357,7 +357,7 @@ void PluginPart::evalJavaScript(int id, const QString & script)
     }
 }
 
-void PluginPart::statusMessage(QString msg)
+void PluginPart::statusMessage(const QString &msg)
 {
     kDebug(1422) << "PluginPart::statusMessage " << msg << endl;
     emit setStatusBarText(msg);

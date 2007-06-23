@@ -57,7 +57,7 @@
 static const int autoOpenTimeout = 750;
 
 
-getModule KonqSidebarTree::getPluginFactory(QString name)
+getModule KonqSidebarTree::getPluginFactory(const QString &name)
 {
   if (!pluginFactories.contains(name))
   {
@@ -361,18 +361,19 @@ void KonqSidebarTree::contentsDropEvent( QDropEvent *ev )
     }
 }
 
-static QString findUniqueFilename(const QString &path, QString filename)
+static QString findUniqueFilename(const QString &path, const QString &filename)
 {
-    if (filename.endsWith(".desktop"))
-       filename.truncate(filename.length()-8);
+    QString tempFilename = filename;
+    if (tempFilename.endsWith(".desktop"))
+       tempFilename.truncate(tempFilename.length()-8);
 
-    QString name = filename;
+    QString name = tempFilename;
     int n = 2;
-    while(QFile::exists(path + filename + ".desktop"))
+    while(QFile::exists(path + tempFilename + ".desktop"))
     {
-       filename = QString("%2_%1").arg(n++).arg(name);
+       tempFilename = QString("%2_%1").arg(n++).arg(name);
     }
-    return path+filename+".desktop";
+    return path+tempFilename+".desktop";
 }
 
 void KonqSidebarTree::addUrl(KonqSidebarTreeTopLevelItem* item, const KUrl & url)

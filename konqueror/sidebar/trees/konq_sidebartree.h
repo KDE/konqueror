@@ -190,7 +190,7 @@ private:
 
     bool m_scrollingLocked;
 
-    getModule getPluginFactory(QString name);
+    getModule getPluginFactory(const QString &name);
     
     QMap<QString, QString>   pluginInfo;
     QMap<QString, getModule> pluginFactories;

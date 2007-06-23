@@ -31,7 +31,7 @@
 #include <kdesu/process.h>
 
 
-PasswdProcess::PasswdProcess(QByteArray user)
+PasswdProcess::PasswdProcess(const QByteArray &user)
 {
     struct passwd *pw;
 
@@ -251,7 +251,7 @@ int PasswdProcess::ConversePasswd(const char *oldpass, const char *newpass,
 }
     
 
-bool PasswdProcess::isPrompt(QByteArray line, const char *word)
+bool PasswdProcess::isPrompt(const QByteArray &line, const char *word)
 {
     unsigned i, j, colon;
     unsigned int lineLength(line.length());

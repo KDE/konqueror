@@ -1082,7 +1082,7 @@ bool KonqView::callExtensionBoolMethod( const char *methodName, bool value )
   return true;
 }
 
-bool KonqView::callExtensionStringMethod( const char *methodName, QString value )
+bool KonqView::callExtensionStringMethod( const char *methodName, const QString &value )
 {
   QObject *obj = KParts::BrowserExtension::childObject( m_pPart );
   if ( !obj ) // not all views have a browser extension !

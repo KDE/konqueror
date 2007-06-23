@@ -49,7 +49,7 @@ class KJavaScriptOptions : public KCModule
 {
   Q_OBJECT
 public:
-  KJavaScriptOptions( KSharedConfig::Ptr config, QString group, const KComponentData &componentData, QWidget* parent );
+  KJavaScriptOptions( KSharedConfig::Ptr config, const QString &group, const KComponentData &componentData, QWidget* parent );
 
   virtual void load();
   virtual void save();

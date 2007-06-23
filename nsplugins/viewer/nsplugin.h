@@ -157,8 +157,8 @@ public:
 
   // constructor, destructor
   NSPluginInstance( NPP privateData, NPPluginFuncs *pluginFuncs, KLibrary *handle,
-		    int width, int height, QString src, QString mime,
-                    QString appId, QString callbackId, bool embed,
+		    int width, int height, const QString &src, const QString &mime,
+                    const QString &appId, const QString &callbackId, bool embed,
 		    QObject *parent );
   ~NSPluginInstance();
 
@@ -167,7 +167,7 @@ public:
   int winId() { return XtWindow(_form); }
   int setWindow(int remove=0);
   void resizePlugin(int w, int h);
-  void javascriptResult(int id, QString result);
+  void javascriptResult(int id, const QString &result);
   void displayPlugin();
 
   // value handling
@@ -185,7 +185,7 @@ public:
   int32 NPWriteReady(NPStream *stream);
 
   // URL functions
-  void NPURLNotify(QString url, NPReason reason, void *notifyData);
+  void NPURLNotify(const QString &url, NPReason reason, void *notifyData);
 
   // Event handling
   uint16 HandleEvent(void *event);

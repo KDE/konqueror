@@ -182,7 +182,7 @@ private:
 	QSplitter *splitter() const;
 	bool addButton(const QString &desktoppath,int pos=-1);
 	bool createView(ButtonInfo *data);
-	KonqSidebarPlugin *loadModule(QWidget *par,QString &desktopName,QString lib_name,ButtonInfo *bi);
+	KonqSidebarPlugin *loadModule(QWidget *par,QString &desktopName,const QString &lib_name,ButtonInfo *bi);
 	void readConfig();
 	void initialCopy();
 	void doLayout();

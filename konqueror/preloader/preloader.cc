@@ -45,7 +45,7 @@ KonqyPreloader::~KonqyPreloader()
     updateCount();
     }
 
-bool KonqyPreloader::registerPreloadedKonqy( QString id, int screen )
+bool KonqyPreloader::registerPreloadedKonqy( const QString &id, int screen )
     {
     if( instances.count() >= KonqSettings::maxPreloadCount() )
         return false;
@@ -72,7 +72,7 @@ QString KonqyPreloader::getPreloadedKonqy( int screen )
     return "";
     }
 
-void KonqyPreloader::unregisterPreloadedKonqy( QString id_P )
+void KonqyPreloader::unregisterPreloadedKonqy( const QString &id_P )
     {
     for( InstancesList::Iterator it = instances.begin();
          it != instances.end();

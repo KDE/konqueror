@@ -128,7 +128,7 @@ ChFaceDlg::ChFaceDlg(const QString& picsdir, QWidget *parent, const char *name, 
   resize( 420, 400 );
 }
 
-void ChFaceDlg::addCustomPixmap( QString imPath, bool saveCopy )
+void ChFaceDlg::addCustomPixmap( const QString &imPath, bool saveCopy )
 {
   QImage pix( imPath );
   // TODO: save pix to TMPDIR/userinfo-tmp,

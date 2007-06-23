@@ -582,8 +582,8 @@ static int s_instanceCounter = 0;
 
 NSPluginInstance::NSPluginInstance(NPP privateData, NPPluginFuncs *pluginFuncs,
                                    KLibrary *handle, int width, int height,
-                                   QString src, QString /*mime*/,
-                                   QString appId, QString callbackId,
+                                   const QString &src, const QString &/*mime*/,
+                                   const QString &appId, const QString &callbackId,
                                    bool embed,
                                    QObject *parent )
    : QObject( parent )
@@ -1006,7 +1006,7 @@ void NSPluginInstance::resizePlugin(int w, int h)
 }
 
 
-void NSPluginInstance::javascriptResult(int id, QString result) {
+void NSPluginInstance::javascriptResult(int id, const QString &result) {
     QMap<int, Request*>::iterator i = _jsrequests.find( id );
     if (i != _jsrequests.end()) {
         Request *req = i.value();
@@ -1175,7 +1175,7 @@ int32 NSPluginInstance::NPWriteReady(NPStream *stream)
 }
 
 
-void NSPluginInstance::NPURLNotify(QString url, NPReason reason, void *notifyData)
+void NSPluginInstance::NPURLNotify(const QString &url, NPReason reason, void *notifyData)
 {
    if (!_pluginFuncs.urlnotify)
       return;

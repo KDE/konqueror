@@ -80,12 +80,13 @@ bool KDateCombo::setDate(const QDate & newDate)
   return false;
 }
 
-void KDateCombo::dateEnteredEvent(QDate newDate)
+void KDateCombo::dateEnteredEvent(const QDate &newDate)
 {
-  if (!newDate.isValid())
-     newDate = datePicker->date();
+  QDate tempDate = newDate;
+  if (!tempDate.isValid())
+     tempDate = datePicker->date();
   popupFrame->hide();
-  setDate(newDate);
+  setDate(tempDate);
 }
 
 void KDateCombo::mousePressEvent (QMouseEvent * e)

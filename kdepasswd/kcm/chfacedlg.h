@@ -64,7 +64,7 @@ private Q_SLOTS:
   //void slotSaveCustomImage();
 
 private:
-  void addCustomPixmap( QString imPath, bool saveCopy );
+  void addCustomPixmap( const QString &imPath, bool saveCopy );
 
   K3IconView *m_FacesWidget;
 };

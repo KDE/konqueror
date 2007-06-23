@@ -99,7 +99,7 @@ KonqMainWindow * KonqMisc::createSimpleWindow( const KUrl & url, const KParts::U
   return win;
 }
 
-KonqMainWindow * KonqMisc::createNewWindow( const KUrl &url, const KParts::URLArgs &args, bool forbidUseHTML, QStringList filesToSelect, bool tempFile, bool openUrl )
+KonqMainWindow * KonqMisc::createNewWindow( const KUrl &url, const KParts::URLArgs &args, bool forbidUseHTML, const QStringList &filesToSelect, bool tempFile, bool openUrl )
 {
   kDebug() << "KonqMisc::createNewWindow url=" << url << endl;
 

@@ -66,7 +66,7 @@ struct CookieProp
     bool allLoaded;
 };
 
-CookieListViewItem::CookieListViewItem(Q3ListView *parent, QString dom)
+CookieListViewItem::CookieListViewItem(Q3ListView *parent, const QString &dom)
                    :Q3ListViewItem(parent)
 {
     init( 0, dom );
@@ -83,7 +83,7 @@ CookieListViewItem::~CookieListViewItem()
     delete mCookie;
 }
 
-void CookieListViewItem::init( CookieProp* cookie, QString domain,
+void CookieListViewItem::init( CookieProp* cookie, const QString &domain,
                                bool cookieLoaded )
 {
     mCookie = cookie;

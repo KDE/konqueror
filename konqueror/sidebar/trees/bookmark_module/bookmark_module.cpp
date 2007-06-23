@@ -346,7 +346,7 @@ void KonqSidebarBookmarkModule::slotDelete()
     KonqBookmarkManager::self()->emitChanged( parentBookmark );
 }
 
-void makeTextNodeMod(KBookmark bk, const QString &m_nodename, const QString &m_newText) {
+void makeTextNodeMod(const KBookmark &bk, const QString &m_nodename, const QString &m_newText) {
     QDomNode subnode = bk.internalElement().namedItem(m_nodename);
     if (subnode.isNull()) {
         subnode = bk.internalElement().ownerDocument().createElement(m_nodename);
@@ -503,7 +503,7 @@ void KonqSidebarBookmarkModule::fillListView()
     m_ignoreOpenChange = false;
 }
 
-void KonqSidebarBookmarkModule::fillGroup( KonqSidebarTreeItem * parentItem, KBookmarkGroup group )
+void KonqSidebarBookmarkModule::fillGroup( KonqSidebarTreeItem * parentItem, const KBookmarkGroup &group )
 {
     int n = 0;
     for ( KBookmark bk = group.first() ; !bk.isNull() ; bk = group.next(bk), ++n )

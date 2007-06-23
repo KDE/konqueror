@@ -34,7 +34,7 @@ class KDEpasswd2Dialog
     Q_OBJECT
 
 public:
-    KDEpasswd2Dialog(const char *oldpass, QByteArray user);
+    KDEpasswd2Dialog(const char *oldpass, const QByteArray &user);
     ~KDEpasswd2Dialog();
 
     void accept();

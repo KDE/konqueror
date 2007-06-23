@@ -52,7 +52,7 @@ JavaPolicies::~JavaPolicies() {
 
 // == class KJavaOptions =====
 
-KJavaOptions::KJavaOptions( KSharedConfig::Ptr config, QString group,
+KJavaOptions::KJavaOptions( KSharedConfig::Ptr config, const QString &group,
                             const KComponentData &componentData, QWidget *parent )
     : KCModule( componentData, parent ),
       _removeJavaScriptDomainAdvice(false),
