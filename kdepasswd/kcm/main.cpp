@@ -49,7 +49,6 @@
 #include <k3urldrag.h>
 
 #include "settings.h"
-#include "pass.h"
 #include "chfnprocess.h"
 
 typedef KGenericFactory<KCMUserAccount, QWidget> Factory;
