@@ -39,6 +39,7 @@
 #include "delayedinitializer.h"
 #include "konqextendedbookmarkowner.h"
 #include "konqframevisitor.h"
+#include "konqbookmarkbar.h"
 #include <config-konqueror.h>
 
 #include <konq_events.h>
@@ -84,7 +85,6 @@
 #include <QtGui/QLineEdit>
 
 #include <kaboutdata.h>
-#include <kbookmarkbar.h>
 #include <ktoolbar.h>
 #include <konqbookmarkmenu.h>
 #include <kcmultidialog.h>
