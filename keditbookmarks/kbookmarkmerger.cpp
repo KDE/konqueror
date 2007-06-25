@@ -117,14 +117,14 @@ int main( int argc, char**argv )
 		}
 
 		const QString absPath = extraBookmarksDir.filePath( fileName );
-		KBookmarkManager *mgr = KBookmarkManager::managerForFile( absPath, "keditbookmarks" );
+		KBookmarkManager *mgr = KBookmarkManager::managerForFile( absPath, QString() );
 		KBookmarkGroup root = mgr->root();
 		for ( KBookmark bm = root.first(); !bm.isNull(); bm = root.next( bm ) ) {
 			if ( bm.isGroup() ) {
 				continue;
 			}
 			bm.setMetaDataItem( "merged_from", fileName );
-			konqBookmarks->root().addBookmark( konqBookmarks, bm , false );
+			konqBookmarks->root().addBookmark( konqBookmarks, bm, false );
 			didMergeBookmark = true;
 		}
 	}

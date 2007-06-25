@@ -231,7 +231,7 @@ void XBELImportCommand::doCreateHoldingFolder(KBookmarkGroup &) {
 
 void XBELImportCommand::doExecute(const KBookmarkGroup &/*bkGroup*/) {
     // check if already open first???
-    KBookmarkManager *pManager = KBookmarkManager::managerForFile(m_fileName, "xbelimport");
+    KBookmarkManager *pManager = KBookmarkManager::managerForFile(m_fileName, QString());
 
     QDomDocument doc = CurrentMgr::self()->mgr()->internalDocument();
 
