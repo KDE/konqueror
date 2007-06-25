@@ -1,8 +1,9 @@
 
+include_directories (${CMAKE_CURRENT_SOURCE_DIR})
+
 add_subdirectory( trees ) 
 add_subdirectory( web_module ) 
 
-include_directories( ${CMAKE_SOURCE_DIR}/libkonq ${CMAKE_SOURCE_DIR}/kate/lib  )
 
 
 ########### next target ###############

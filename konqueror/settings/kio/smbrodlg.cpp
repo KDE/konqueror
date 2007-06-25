@@ -35,9 +35,7 @@
 #include <kglobal.h>
 #include <klocale.h>
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
+#include <config-apps.h>
 
 typedef KGenericFactory<SMBRoOptions> SMBRoOptionsFactory;
 K_EXPORT_COMPONENT_FACTORY(smb, SMBRoOptionsFactory("kcmkio"))

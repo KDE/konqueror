@@ -35,7 +35,7 @@
 
 #include "qxteventloop.h"
 
-#include <config.h>
+#include <config-apps.h>
 
 #include <QApplication>
 #include <kglobal.h>
