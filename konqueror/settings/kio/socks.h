@@ -22,9 +22,7 @@
 #ifndef _SOCKS_H
 #define _SOCKS_H
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
+#include <config-apps.h>
 
 #include <kcmodule.h>
 

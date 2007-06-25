@@ -5,12 +5,10 @@ set(libkonq_sidebar_tree_SRCS
 	${CMAKE_CURRENT_SOURCE_DIR}/konq_sidebartreetoplevelitem.cpp
 	)
 
-add_subdirectory( init ) 
-add_subdirectory( dirtree_module ) 
-add_subdirectory( history_module ) 
-add_subdirectory( bookmark_module ) 
-include_directories( ${CMAKE_SOURCE_DIR}/libkonq ${CMAKE_SOURCE_DIR}/apps/konqueror ${CMAKE_SOURCE_DIR}/apps/konqueror/sidebar/ )
-
+add_subdirectory( init )
+add_subdirectory( dirtree_module )
+add_subdirectory( history_module )
+add_subdirectory( bookmark_module )
 
 ########### next target ###############
 

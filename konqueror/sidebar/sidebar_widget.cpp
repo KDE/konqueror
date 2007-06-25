@@ -49,7 +49,7 @@
 #include "konqsidebar.h"
 
 // Local
-#include <config.h>
+#include <config-apps.h>
 
 
 

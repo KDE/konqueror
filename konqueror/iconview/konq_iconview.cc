@@ -49,7 +49,7 @@
 #include <QtCore/QRegExp>
 #include <QtCore/QDate>
 
-#include <config.h>
+#include <config-apps.h>
 
 class KonqIconViewFactory : public KParts::Factory
 {

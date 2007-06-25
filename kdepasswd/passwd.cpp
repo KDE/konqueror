@@ -10,7 +10,7 @@
 
 #include "passwd.h"
 
-#include <config.h> // setenv
+#include <config-apps.h> // setenv
 
 #include <stdio.h>
 #include <stdlib.h>

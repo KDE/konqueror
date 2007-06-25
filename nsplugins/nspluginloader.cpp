@@ -49,7 +49,7 @@
 #include "nsplugins_instance_interface.h"
 #include "nsplugins_viewer_interface.h"
 
-#include <config.h>
+#include <config-apps.h>
 
 NSPluginLoader *NSPluginLoader::s_instance = 0;
 int NSPluginLoader::s_refCount = 0;

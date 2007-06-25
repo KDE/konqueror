@@ -20,7 +20,7 @@
 #include <QtGui/QLabel>
 
 // KDE
-#include <config.h>
+#include <config-apps.h>
 #include <k3listview.h>
 #include <kurlrequester.h>
 #include <kdebug.h>
