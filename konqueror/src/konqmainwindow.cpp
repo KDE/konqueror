@@ -1395,7 +1395,7 @@ void KonqMainWindow::slotOpenTerminal()
     return;
   QString prog = args.takeFirst();
 
-  KProcess::startDetached(prog, args, dir, NULL);
+  QProcess::startDetached(prog, args, dir, NULL);
 
   kDebug(1202) << "slotOpenTerminal: directory " << dir
 		<< ", terminal:" << term << endl;
