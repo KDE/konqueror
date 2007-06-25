@@ -30,6 +30,7 @@ set(konquerorprivate_SRCS
    delayedinitializer.cpp
    konqmainwindow.cpp
    konqextensionmanager.cpp
+   konqbookmarkbar.cpp
    KonquerorAdaptor.cpp
    KonqMainWindowAdaptor.cpp
    KonqViewAdaptor.cpp
