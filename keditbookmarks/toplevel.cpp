@@ -137,7 +137,7 @@ void CurrentMgr::createManager(const QString &filename, const QString &dbusObjec
     }
 
     kDebug()<<"DBus Object name: "<<dbusObjectName<<endl;
-    m_mgr = KBookmarkManager::managerForFile(filename, dbusObjectName, false);
+    m_mgr = KBookmarkManager::managerForFile(filename, dbusObjectName);
 
     connect(m_mgr, SIGNAL( changed(const QString &, const QString &) ),
             SLOT( slotBookmarksChanged(const QString &, const QString &) ));
