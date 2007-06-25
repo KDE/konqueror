@@ -39,6 +39,8 @@ private Q_SLOTS:
     void testDuplicateTab();
     void testDuplicateSplittedTab();
 
+    void testLoadProfile();
+
 private:
     KComponentData m_konqComponentData;
 };

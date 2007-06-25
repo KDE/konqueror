@@ -251,4 +251,9 @@ void ViewMgrTest::testDuplicateSplittedTab()
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, one tab
 }
 
+void ViewMgrTest::testLoadProfile()
+{
+    // TODO
+}
+
 #include "konqviewmgrtest.moc"
