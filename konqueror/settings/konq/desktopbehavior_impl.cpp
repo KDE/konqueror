@@ -41,7 +41,6 @@
 #include <kglobalsettings.h>
 #include <kmimetype.h>
 #include <kservicetypetrader.h>
-#include <kapplication.h>
 #include <kcustommenueditor.h>
 #include <konq_defaults.h> // include default values directly from libkonq
 #include <kprotocolinfo.h>

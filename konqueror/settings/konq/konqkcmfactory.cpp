@@ -17,10 +17,10 @@
 
 */
 
+#if 0
 #include "konqkcmfactory.h"
 #include <kcomponentdata.h>
 #include <QtGui/QDesktopWidget>
-#include <kapplication.h>
 
 QString _desktopConfigName()
 {
@@ -33,5 +33,6 @@ QString _desktopConfigName()
 
     return name;
 }
+#endif
 
 // vim: sw=4 ts=4 et

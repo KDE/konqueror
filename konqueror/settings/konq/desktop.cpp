@@ -34,7 +34,6 @@
 #endif
 
 // KDE
-#include <kapplication.h>
 #include <kglobal.h>
 #include <klocale.h>
 #include <kdialog.h>

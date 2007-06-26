@@ -23,7 +23,9 @@
 #include <kgenericfactory.h>
 #include <kcomponentdata.h>
 
+#if 0
 QString _desktopConfigName();
+#endif
 
 template<class T>
 class KonqKcmFactory : public KGenericFactory<T>

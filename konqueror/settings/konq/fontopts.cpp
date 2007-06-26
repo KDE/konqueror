@@ -24,6 +24,7 @@
 #include <assert.h>
 
 // Qt
+#include <QtGui/QApplication>
 #include <QtGui/QCheckBox>
 #include <QtGui/QLabel>
 #include <QtGui/QLayout>
@@ -33,7 +34,6 @@
 #include <QtDBus/QtDBus>
 
 // KDE
-#include <kapplication.h>
 #include <kcolorbutton.h>
 #include <ksharedconfig.h>
 #include <kdebug.h>
@@ -70,9 +70,12 @@ KonqFontOptions::KonqFontOptions(QWidget *parent, const QStringList &, bool desk
     , groupname("FMSettings")
     , m_bDesktop(desktop)
 {
+#if 0
     if (m_bDesktop) {
         g_pConfig = KSharedConfig::openConfig(_desktopConfigName(), KConfig::NoGlobals);
-    } else {
+    } else
+#endif
+    {
         g_pConfig = KSharedConfig::openConfig("konquerorrc");
     }
     QLabel *label;

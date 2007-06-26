@@ -30,7 +30,6 @@
 #include <QtDBus/QtDBus>
 
 // KDE
-#include <kapplication.h>
 #include <kconfig.h>
 #include <kdialog.h>
 #include <kglobal.h>
