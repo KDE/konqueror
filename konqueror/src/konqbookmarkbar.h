@@ -40,7 +40,7 @@ class KBookmarkBarPrivate;
  * there.
  */
 //FIXME rename KonqBookmarkBar
-class KIO_EXPORT KBookmarkBar : public QObject
+class KBookmarkBar : public QObject
 {
     Q_OBJECT
 public:
