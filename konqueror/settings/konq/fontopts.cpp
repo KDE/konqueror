@@ -45,9 +45,9 @@
 // Local
 #include "konqkcmfactory.h"
 
-#ifdef Q_WS_X11
-#include "kdesktop_interface.h"
-#endif
+//#ifdef Q_WS_X11
+//include "kdesktop_interface.h"
+//endif
 
 class KonqFontOptionsDesktop : public KonqFontOptions
 {
@@ -381,6 +381,7 @@ void KonqFontOptions::save()
     QDBusMessage message =
         QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "reparseConfiguration");
     QDBusConnection::sessionBus().send(message);
+#if 0 // replace with DBUS signal
 #ifdef Q_WS_X11
     // Tell kdesktop about the new config file
     int konq_screen_number = KApplication::desktop()->primaryScreen();
@@ -391,6 +392,7 @@ void KonqFontOptions::save()
         appname = "org.kde.kdesktop-screen-" + QByteArray::number( konq_screen_number);
     org::kde::kdesktop::Desktop desktop(appname, "/Desktop", QDBusConnection::sessionBus());
     desktop.configure();
+#endif
 #endif
 }
 

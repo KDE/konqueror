@@ -14,7 +14,7 @@
 
 
 // Own
-#include "rootopts.h"
+#include "globalpaths.h"
 
 // Qt
 #include <QtGui/QCheckBox>
@@ -45,9 +45,6 @@
 #include <kurlrequester.h>
 
 #include "konqkcmfactory.h"
-#ifdef Q_WS_X11
-#include "kdesktop_interface.h"
-#endif
 
 // Local
 #include <config-apps.h>
@@ -255,7 +252,9 @@ void DesktopPathConfig::save()
         KGlobalSettings::self()->emitChange(KGlobalSettings::SettingsChanged, KGlobalSettings::SETTINGS_PATHS);
     }
 
+    // TODO connect the apps to the settingsChanged() signal from KGlobalSettings instead
     // Tell kdesktop about the new config file
+#if 0
 #ifdef Q_WS_X11
     int konq_screen_number = KApplication::desktop()->primaryScreen();
     QByteArray appname;
@@ -265,6 +264,7 @@ void DesktopPathConfig::save()
         appname = "org.kde.kdesktop-screen-" + QByteArray::number(konq_screen_number);
     org::kde::kdesktop::Desktop desktop(appname, "/Desktop", QDBusConnection::sessionBus());
     desktop.configure();
+#endif
 #endif
 }
 
@@ -296,6 +296,7 @@ bool DesktopPathConfig::moveDir( const KUrl & src, const KUrl & dest, const QStr
         else
         {
             KIO::Job * job = KIO::move( src, dest );
+            job->ui()->setWindow(this);
             connect( job, SIGNAL( result( KJob * ) ), this, SLOT( slotResult( KJob * ) ) );
             // wait for job
             qApp->enter_loop();
@@ -324,6 +325,7 @@ void DesktopPathConfig::slotEntries( KIO::Job * job, const KIO::UDSEntryList& li
         }
 
         KIO::Job * moveJob = KIO::move( file.url(), m_copyToDest );
+        moveJob->ui()->setWindow(this);
         connect( moveJob, SIGNAL( result( KJob * ) ), this, SLOT( slotResult( KJob * ) ) );
         qApp->enter_loop();
     }
@@ -339,10 +341,9 @@ void DesktopPathConfig::slotResult( KJob * job )
         // If the source doesn't exist, no wonder we couldn't move the dir.
         // In that case, trust the user and set the new setting in any case.
 
-        static_cast<KIO::Job*>(job)->ui()->setWindow(this);
         static_cast<KIO::Job*>(job)->ui()->showErrorMessage();
     }
     qApp->exit_loop();
 }
 
-#include "rootopts.moc"
+#include "globalpaths.moc"
