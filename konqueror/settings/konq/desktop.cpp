@@ -46,7 +46,9 @@
 
 #include <netwm.h>
 
+#if 0
 #include "kdesktop_interface.h"
+#endif
 
 typedef KonqKcmFactory<KDesktopConfig> KDesktopConfigFactory;
 K_EXPORT_COMPONENT_FACTORY(ddesktop, KDesktopConfigFactory)
@@ -118,10 +120,12 @@ KDesktopConfig::KDesktopConfig(QWidget *parent, const QStringList &)
 
   layout->addWidget(name_group);
 
+#if 0
   _wheelOption = new QCheckBox(i18n("Mouse wheel over desktop background switches desktop"), this);
   connect(_wheelOption,SIGNAL(toggled(bool)), SLOT( changed() ));
 
   layout->addWidget(_wheelOption);
+#endif
   layout->addStretch(1);
 
   // Begin check for immutable
@@ -176,6 +180,7 @@ void KDesktopConfig::load()
     _nameInput[i-1]->setEnabled(i <= n);
   emit changed(false);
 
+#if 0
   KSharedConfig::Ptr desktopConfig = KSharedConfig::openConfig("kdesktoprc", KConfig::NoGlobals);
   desktopConfig->setGroup("Mouse Buttons");
   _wheelOption->setChecked(desktopConfig->readEntry("WheelSwitchesWorkspace", false));
@@ -184,6 +189,7 @@ void KDesktopConfig::load()
 
   if (_wheelOptionImmutable || n<2)
      _wheelOption->setEnabled(false);
+#endif
 #else
   _numInput->setValue(1);
 #endif
@@ -205,6 +211,7 @@ void KDesktopConfig::save()
 
   XSync(QX11Info::display(), false);
 
+#if 0
   KSharedConfig::Ptr desktopConfig = KSharedConfig::openConfig("kdesktoprc");
   desktopConfig->setGroup("Mouse Buttons");
   desktopConfig->writeEntry("WheelSwitchesWorkspace", _wheelOption->isChecked());
@@ -222,6 +229,7 @@ void KDesktopConfig::save()
 
   org::kde::kdesktop::Desktop desktop(appname, "/Desktop", QDBusConnection::sessionBus());
   desktop.configure();
+#endif
 
   emit changed(false);
 #endif
@@ -238,9 +246,11 @@ void KDesktopConfig::defaults()
   for(int i = 0; i < maxDesktops; i++)
     _nameInput[i]->setEnabled(i < n);
 
+#if 0
   _wheelOption->setChecked(false);
   if (!_wheelOptionImmutable)
     _wheelOption->setEnabled(true);
+#endif
 
   emit changed(false);
 }
@@ -253,8 +263,10 @@ void KDesktopConfig::slotValueChanged(int n)
     if(i<n && _nameInput[i]->text().isEmpty())
       _nameInput[i]->setText(i18n("Desktop %1", i+1));
   }
+#if 0
   if (!_wheelOptionImmutable)
     _wheelOption->setEnabled(n>1);
+#endif
   emit changed(true);
 }
 

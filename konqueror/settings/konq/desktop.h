@@ -20,8 +20,6 @@
 #define __desktop_h__
 
 #include <kcmodule.h>
-//Added by qt3to4:
-#include <QtGui/QLabel>
 
 class QLabel;
 class QCheckBox;
@@ -35,23 +33,25 @@ static const int maxDesktops = 20;
 class KDesktopConfig : public KCModule
 {
   Q_OBJECT
-  
+
  public:
   KDesktopConfig(QWidget *parent, const QStringList &args);
 
   void load();
   void save();
   void defaults();
-  
+
  protected Q_SLOTS:
   void slotValueChanged(int);
-    
+
  private:
   KIntNumInput *_numInput;
   QLabel       *_nameLabel[maxDesktops];
   KLineEdit    *_nameInput[maxDesktops];
+#if 0
   QCheckBox    *_wheelOption;
   bool         _wheelOptionImmutable;
+#endif
 };
 
 #endif
