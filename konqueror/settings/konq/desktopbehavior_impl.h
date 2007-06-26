@@ -1,7 +1,7 @@
 /**
- * (c) Martin R. Jones 1996
- * (c) David Faure 1998, 2000
- * (c) John Firebaugh 2003
+ *  Copyright (c) Martin R. Jones 1996
+ *  Copyright (c) David Faure 1998, 2000
+ *  Copyright (c) John Firebaugh 2003
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
