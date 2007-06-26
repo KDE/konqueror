@@ -2,6 +2,8 @@ include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/../src ${CMAKE_CURRENT_BINARY_D
 
 
 ########### next target ###############
+add_definitions(-DKONQPRIVATE_EXPORT=)
+
 set(kded_konqy_preloader_PART_SRCS preloader.cc )
 
 kde4_add_kcfg_files(kded_konqy_preloader_PART_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../src/konqsettingsxt.kcfgc)
