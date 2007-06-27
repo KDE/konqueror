@@ -85,7 +85,7 @@ namespace KParts {
 
 class KonqExtendedBookmarkOwner;
 
-class KONQPRIVATE_EXPORT KonqMainWindow : public KParts::MainWindow, public KonqFrameContainerBase
+class KONQ_TESTS_EXPORT KonqMainWindow : public KParts::MainWindow, public KonqFrameContainerBase
 {
   Q_OBJECT
   Q_PROPERTY( int viewCount READ viewCount )

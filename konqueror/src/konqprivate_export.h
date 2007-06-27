@@ -23,27 +23,18 @@
 /* needed for KDE_EXPORT and KDE_IMPORT macros */
 #include <kdemacros.h>
 
-/* We use _WIN32/_WIN64 instead of Q_OS_WIN so that this header can be used from C files too */
-#if defined _WIN32 || defined _WIN64
-
-#ifndef KONQPRIVATE_EXPORT
-# if defined(MAKE_KONQUERORPRIVATE_LIB)
+#ifndef KONQ_TESTS_EXPORT
+# if defined(MAKE_KDEINIT_KONQUEROR_LIB)
    /* We are building this library */ 
-#  define KONQPRIVATE_EXPORT KDE_EXPORT
+#  define KONQ_TESTS_EXPORT KDE_EXPORT
 # else
    /* We are using this library */ 
-#  define KONQPRIVATE_EXPORT KDE_IMPORT
+#  define KONQ_TESTS_EXPORT KDE_IMPORT
 # endif
 #endif
 
-#else /* UNIX */
-
-#define KONQPRIVATE_EXPORT KDE_EXPORT
-
-#endif
-
-# ifndef KONQPRIVATE_EXPORT_DEPRECATED
-#  define KONQPRIVATE_EXPORT_DEPRECATED KDE_DEPRECATED KONQPRIVATE_EXPORT
+# ifndef KONQ_TESTS_EXPORT_DEPRECATED
+#  define KONQ_TESTS_EXPORT_DEPRECATED KDE_DEPRECATED KONQ_TESTS_EXPORT
 # endif
 
 #endif

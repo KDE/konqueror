@@ -25,7 +25,7 @@
 // This is used to know if we are being closed by session management
 // or by the user. See KonqMainWindow::~KonqMainWindow.
 // Credits to Matthias Ettrich for the idea.
-class KONQPRIVATE_EXPORT KonquerorApplication : public KApplication
+class KONQ_TESTS_EXPORT KonquerorApplication : public KApplication
 {
   Q_OBJECT
 public:
