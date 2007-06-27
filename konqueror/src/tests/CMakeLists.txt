@@ -14,7 +14,7 @@ kde4_automoc(konqviewmgrtest.cpp)
 
 kde4_add_test_executable(konqviewmgrtest konqviewmgrtest.cpp)
 
-target_link_libraries(konqviewmgrtest konquerorprivate ${QT_QTTEST_LIBRARY})
+target_link_libraries(konqviewmgrtest kdeinit_konqueror ${QT_QTTEST_LIBRARY})
 
 add_test(konqueror-viewmgrtest ${CMAKE_CURRENT_BINARY_DIR}/konqviewmgrtest)
 

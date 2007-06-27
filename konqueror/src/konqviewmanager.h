@@ -48,7 +48,7 @@ namespace KParts
   class ReadOnlyPart;
 }
 
-class KONQPRIVATE_EXPORT KonqViewManager : public KParts::PartManager
+class KONQ_TESTS_EXPORT KonqViewManager : public KParts::PartManager
 {
     Q_OBJECT
 public:

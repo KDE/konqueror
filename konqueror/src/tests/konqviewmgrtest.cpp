@@ -30,6 +30,8 @@
 QTEST_KDEMAIN_WITH_COMPONENTNAME( ViewMgrTest, GUI, "konqueror" )
 
 #if 0
+// could be used to load dummy parts; or to check that the right parts are being loaded
+// (and to detect the case where a part is loaded and then replacd with another one for no good reason)
 class KonqTestFactory : public KonqAbstractFactory
 {
 public:

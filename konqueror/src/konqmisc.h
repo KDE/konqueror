@@ -27,7 +27,7 @@
 class KonqMainWindow;
 class KonqView;
 
-class KONQPRIVATE_EXPORT KonqMisc
+class KONQ_TESTS_EXPORT KonqMisc
 {
 public:
     /*

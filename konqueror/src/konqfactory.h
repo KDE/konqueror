@@ -63,7 +63,7 @@ private:
 /**
  * Factory for creating (loading) parts when creating a view.
  */
-class KONQPRIVATE_EXPORT KonqFactory
+class KONQ_TESTS_EXPORT KonqFactory
 {
 public:
     /**
