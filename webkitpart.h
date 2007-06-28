@@ -45,6 +45,8 @@ public:
 
     QWebPage::NavigationRequestResponse navigationRequested(const QWebNetworkRequest &request);
 
+    inline QWebPage *page() const { return webPage; }
+
     static KAboutData *createAboutData();
 
 protected:
@@ -76,6 +78,14 @@ class WebKitBrowserExtension : public KParts::BrowserExtension
     Q_OBJECT
 public:
     WebKitBrowserExtension(WebKitPart *parent);
+
+public slots:
+    void cut();
+    void copy();
+    void paste();
+
+private:
+    WebKitPart *part;
 };
 
 #endif // WEBKITPART_H

@@ -137,8 +137,23 @@ QWebPage::NavigationRequestResponse WebPage::navigationRequested(QWebFrame *fram
 }
 
 WebKitBrowserExtension::WebKitBrowserExtension(WebKitPart *parent)
-    : KParts::BrowserExtension(parent)
+    : KParts::BrowserExtension(parent), part(parent)
 {
+}
+
+void WebKitBrowserExtension::cut()
+{
+    part->page()->cut();
+}
+
+void WebKitBrowserExtension::copy()
+{
+    part->page()->copy();
+}
+
+void WebKitBrowserExtension::paste()
+{
+    part->page()->paste();
 }
 
 typedef KParts::GenericFactory<WebKitPart> Factory;
