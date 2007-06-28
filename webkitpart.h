@@ -45,7 +45,7 @@ public:
 
     QWebPage::NavigationRequestResponse navigationRequested(const QWebNetworkRequest &request);
 
-    inline QWebPage *page() const { return webPage; }
+    inline WebPage *page() { return webPage; }
 
     static KAboutData *createAboutData();
 
@@ -83,6 +83,9 @@ public slots:
     void cut();
     void copy();
     void paste();
+
+private slots:
+    void updateEditActions();
 
 private:
     WebKitPart *part;

@@ -139,6 +139,12 @@ QWebPage::NavigationRequestResponse WebPage::navigationRequested(QWebFrame *fram
 WebKitBrowserExtension::WebKitBrowserExtension(WebKitPart *parent)
     : KParts::BrowserExtension(parent), part(parent)
 {
+    connect(part->page(), SIGNAL(selectionChanged()),
+            this, SLOT(updateEditActions()));
+
+    enableAction("cut", false);
+    enableAction("copy", false);
+    enableAction("paste", false);
 }
 
 void WebKitBrowserExtension::cut()
@@ -154,6 +160,14 @@ void WebKitBrowserExtension::copy()
 void WebKitBrowserExtension::paste()
 {
     part->page()->paste();
+}
+
+void WebKitBrowserExtension::updateEditActions()
+{
+    QWebPage *page = part->page();
+    enableAction("cut", page->canCut());
+    enableAction("copy", page->canCopy());
+    enableAction("paste", page->canPaste());
 }
 
 typedef KParts::GenericFactory<WebKitPart> Factory;
