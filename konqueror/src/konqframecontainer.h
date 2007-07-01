@@ -40,6 +40,8 @@ public:
    */
   virtual void removeChildFrame( KonqFrameBase * frame ) = 0;
 
+    virtual bool isContainer() const { return true; }
+
   virtual QByteArray frameType() { return QByteArray("ContainerBase"); }
 
   virtual void reparentFrame(QWidget * parent,
@@ -52,7 +54,7 @@ public:
 
   virtual void activateChild() { if (m_pActiveChild) m_pActiveChild->activateChild(); }
 
-  virtual KonqView* activeChildView() { if (m_pActiveChild) return m_pActiveChild->activeChildView();
+  virtual KonqView* activeChildView() const { if (m_pActiveChild) return m_pActiveChild->activeChildView();
                                         else return 0; }
 
 protected:

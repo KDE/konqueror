@@ -84,6 +84,7 @@ public:
   void moveTabBackward(int index);
   void moveTabForward(int index);
 
+  void setLoading(KonqFrameBase* frame, bool loading);
 
 public Q_SLOTS:
   void slotCurrentChanged( QWidget* newPage );
@@ -97,6 +98,12 @@ private:
   void refreshSubPopupMenuTab();
   void hideTabBar();
     void initPopupMenu();
+   /**
+    * Returns the index position of the tab where the frame @p frame is, assuming that
+    * it's the active frame in that tab,
+    * or -1 if the frame is not in the tab widget or it's not active.
+    */
+    int tabWhereActive(KonqFrameBase* frame) const;
 
 private Q_SLOTS:
   void slotContextMenu( const QPoint& );

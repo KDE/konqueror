@@ -63,6 +63,8 @@ class KonqFrameBase
  public:
   virtual ~KonqFrameBase() {}
 
+    virtual bool isContainer() const = 0;
+
     virtual bool accept( KonqFrameVisitor* visitor ) = 0;
 
   virtual void saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs, KonqFrameBase* docContainer, int id = 0, int depth = 0) = 0;
@@ -85,7 +87,7 @@ class KonqFrameBase
 
   virtual void activateChild() = 0;
 
-  virtual KonqView* activeChildView() = 0;
+  virtual KonqView* activeChildView() const = 0;
 
 protected:
   KonqFrameBase() {}
@@ -108,6 +110,8 @@ class KonqFrame : public QWidget, public KonqFrameBase
 public:
   explicit KonqFrame( QWidget* parent, KonqFrameContainerBase *parentContainer = 0 );
   virtual ~KonqFrame();
+
+    virtual bool isContainer() const { return false; }
 
     virtual bool accept( KonqFrameVisitor* visitor );
 
@@ -166,7 +170,7 @@ public:
 
   virtual void activateChild();
 
-  virtual KonqView* activeChildView();
+  virtual KonqView* activeChildView() const;
 
   QString title() const { return m_title; }
 

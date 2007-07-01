@@ -240,7 +240,7 @@ KonqView* KonqFrame::childView() const
   return m_pView;
 }
 
-KonqView* KonqFrame::activeChildView()
+KonqView* KonqFrame::activeChildView() const
 {
   return m_pView;
 }

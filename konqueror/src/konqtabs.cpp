@@ -32,6 +32,7 @@
 #include <kiconloader.h>
 #include <klocale.h>
 #include <kstringhandler.h>
+#include <kcolorscheme.h>
 
 #include "konqframe.h"
 #include "konqview.h"
@@ -204,21 +205,21 @@ void KonqFrameTabs::setTitle( const QString &title , QWidget* sender)
 void KonqFrameTabs::setTabIcon( const KUrl &url, QWidget* sender )
 {
   //kDebug(1202) << "KonqFrameTabs::setTabIcon( " << url << " , " << sender << " )" << endl;
-  QIcon iconSet;
+  KIcon iconSet;
   if (m_permanentCloseButtons)
-    iconSet =  KIcon( "window-close" );
+    iconSet = KIcon( "window-close" );
   else
-    iconSet =  KIcon( KonqPixmapProvider::self()->iconNameFor( url ) );
-  if (tabIcon( indexOf( sender ) ).pixmap().serialNumber() != iconSet.pixmap().serialNumber())
-    KTabWidget::setTabIcon( indexOf( sender ), iconSet );
+    iconSet = KIcon( KonqPixmapProvider::self()->iconNameFor( url ) );
+  const int pos = indexOf(sender);
+  if (tabIcon(pos).pixmap().serialNumber() != iconSet.pixmap().serialNumber())
+    KTabWidget::setTabIcon( pos, iconSet );
 }
 
 void KonqFrameTabs::activateChild()
 {
-  if (m_pActiveChild)
-    {
-      setCurrentIndex( indexOf( m_pActiveChild->asQWidget() ) );
-      m_pActiveChild->activateChild();
+    if (m_pActiveChild) {
+        setCurrentIndex( indexOf( m_pActiveChild->asQWidget() ) );
+        m_pActiveChild->activateChild();
     }
 }
 
@@ -265,17 +266,6 @@ void KonqFrameTabs::removeChildFrame( KonqFrameBase * frame )
     kWarning(1202) << "KonqFrameTabs " << this << ": removeChildFrame(0L) !" << endl;
 
   //kDebug(1202) << "KonqFrameTabs::RemoveChildFrame finished" << endl;
-}
-
-void KonqFrameTabs::slotCurrentChanged( QWidget* newPage )
-{
-  setTabTextColor( indexOf( newPage ), KGlobalSettings::textColor() );
-  KonqFrameBase* currentFrame = dynamic_cast<KonqFrameBase*>(newPage);
-
-  if (currentFrame && !m_pViewManager->isLoadingProfile()) {
-    m_pActiveChild = currentFrame;
-    currentFrame->activateChild();
-  }
 }
 
 void KonqFrameTabs::moveTabBackward( int index )
@@ -539,5 +529,67 @@ bool KonqFrameTabs::accept( KonqFrameVisitor* visitor )
         return false;
     return true;
 }
+
+void KonqFrameTabs::slotCurrentChanged( QWidget* newPage )
+{
+    const KColorScheme colorScheme(KColorScheme::Window);
+    setTabTextColor(indexOf(newPage), colorScheme.foreground(KColorScheme::NormalText));
+
+    KonqFrameBase* currentFrame = dynamic_cast<KonqFrameBase*>(newPage);
+    if (currentFrame && !m_pViewManager->isLoadingProfile()) {
+        m_pActiveChild = currentFrame;
+        currentFrame->activateChild();
+    }
+}
+
+#if 0
+/**
+ * Returns the index position of the tab that contains (directly or indirectly) the frame @p frame,
+ * or -1 if the frame is not in the tab widget.
+ */
+int KonqFrameTabs::tabContaining(KonqFrameBase* frame) const
+{
+    KonqFrameBase* frameBase = frame;
+    while (frameBase && frameBase->parentContainer() != this)
+        frameBase = frameBase->parentContainer();
+    if (frameBase)
+        return indexOf(frameBase->asQWidget());
+    else
+        return -1;
+}
+#endif
+
+int KonqFrameTabs::tabWhereActive(KonqFrameBase* frame) const
+{
+    for (int i = 0; i < m_childFrameList.count(); i++ ) {
+        KonqFrameBase* f = m_childFrameList.at(i);
+        while (f && f != frame) {
+            f = f->isContainer() ? static_cast<KonqFrameContainerBase *>(f)->activeChild() : 0;
+        }
+        if (f == frame)
+            return i;
+    }
+    return -1;
+}
+
+void KonqFrameTabs::setLoading(KonqFrameBase* frame, bool loading)
+{
+    int pos = tabWhereActive(frame);
+    if (pos == -1)
+        return;
+
+    const KColorScheme colorScheme(KColorScheme::Window);
+    QColor color;
+    if (loading) {
+        color = colorScheme.foreground(KColorScheme::LinkText); // a tab is currently loading
+    } else {
+        if (currentIndex() != pos)
+            color = colorScheme.foreground(KColorScheme::ActiveText); // another tab has newly loaded contents
+        else
+            color = colorScheme.foreground(KColorScheme::NormalText); // this tab has finished loading
+    }
+    setTabTextColor(pos, color);
+}
+
 
 #include "konqtabs.moc"
