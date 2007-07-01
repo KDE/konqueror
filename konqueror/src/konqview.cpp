@@ -234,7 +234,7 @@ void KonqView::openUrl( const KUrl &url, const QString & locationBarURL,
 
 void KonqView::switchView( KonqViewFactory &viewFactory )
 {
-  kDebug(1202) << "KonqView::switchView" << endl;
+    //kDebug(1202) << "KonqView::switchView" << endl;
   if ( m_pPart )
     m_pPart->widget()->hide();
 

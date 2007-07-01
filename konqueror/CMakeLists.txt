@@ -13,7 +13,8 @@ add_subdirectory( sidebar )
 add_subdirectory( preloader )
 add_subdirectory( quickprint )
 add_subdirectory( remoteencodingplugin )
-add_subdirectory( dirpart )
+# Replaced by dolphinpart
+#add_subdirectory( dirpart )
 add_subdirectory( settings )
 add_subdirectory( kttsplugin )
 

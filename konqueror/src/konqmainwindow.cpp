@@ -4417,7 +4417,7 @@ void KonqMainWindow::currentProfileChanged()
 
 void KonqMainWindow::enableAllActions( bool enable )
 {
-  kDebug(1202) << "KonqMainWindow::enableAllActions " << enable << endl;
+    //kDebug(1202) << "KonqMainWindow::enableAllActions " << enable << endl;
   KParts::BrowserExtension::ActionSlotMap * actionSlotMap = KParts::BrowserExtension::actionSlotMapPtr();
 
   QList<QAction *> actions = actionCollection()->actions();
