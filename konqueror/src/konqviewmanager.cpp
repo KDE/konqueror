@@ -940,44 +940,8 @@ void KonqViewManager::loadViewProfile( KConfig &cfg, const QString & filename,
   cfg.setDollarExpansion( true );
   KConfigGroup profileGroup( &cfg, "Profile" );
 
-  if ( tabContainer()->count() > 1 )
-  {
-      if ( KMessageBox::warningContinueCancel( 0,
-                                               i18n("You have multiple tabs open in this window.\n"
-                                                    "Loading a view profile will close them."),
-                                               i18n("Confirmation"),
-                                               KGuiItem(i18n("Load View Profile")),
-                                               KStandardGuiItem::cancel(),
-                                               "LoadProfileTabsConfirm" ) == KMessageBox::Cancel )
-          return;
-  }
-
-  KonqView *originalView = m_pMainWindow->currentView();
-  bool showTabCalled = false;
-  foreach ( KonqFrameBase* frame, m_tabContainer->childFrameList() )
-  {
-      KonqView *view = frame->activeChildView();
-      if (view && view->part() && (view->part()->metaObject()->indexOfProperty("modified") != -1)) {
-          QVariant prop = view->part()->property("modified");
-          if (prop.isValid() && prop.toBool()) {
-              showTab( view );
-              showTabCalled = true;
-              if ( KMessageBox::warningContinueCancel( 0,
-                                                       i18n("This tab contains changes that have not been submitted.\nLoading a profile will discard these changes."),
-                                                       i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes")), KStandardGuiItem::cancel(), "discardchangesloadprofile") != KMessageBox::Continue )
-                  /* WE: maybe KStandardGuiItem(Discard) here? */
-              {
-                  showTab( originalView );
-                  return;
-              }
-          }
-      }
-  }
-  if ( showTabCalled && originalView )
-      showTab( originalView );
-
   m_currentProfile = filename;
-  m_currentProfileText = profileGroup.readPathEntry("Name",filename);
+  m_currentProfileText = profileGroup.readPathEntry("Name", filename);
   m_profileHomeURL = profileGroup.readEntry("HomeURL", QString());
 
   m_pMainWindow->currentProfileChanged();
@@ -1391,7 +1355,8 @@ void KonqViewManager::setProfiles( KActionMenu *profiles )
   if ( m_pamProfiles )
   {
     connect( m_pamProfiles->menu(), SIGNAL( activated( int ) ),
-             this, SLOT( slotProfileActivated( int ) ) ); connect( m_pamProfiles->menu(), SIGNAL( aboutToShow() ),
+             this, SLOT( slotProfileActivated( int ) ) );
+    connect( m_pamProfiles->menu(), SIGNAL( aboutToShow() ),
              this, SLOT( slotProfileListAboutToShow() ) );
   }
   //KonqMainWindow::enableAllActions will call it anyway
@@ -1434,18 +1399,53 @@ void KonqViewManager::profileListDirty( bool broadcast )
 
 void KonqViewManager::slotProfileActivated( int id )
 {
-
-  QMap<QString, QString>::ConstIterator iter = m_mapProfileNames.begin();
-  QMap<QString, QString>::ConstIterator end = m_mapProfileNames.end();
-
-  for(int i=0; iter != end; ++iter, ++i) {
-    if( i == id ) {
-      KUrl u;
-      u.setPath( *iter );
-      loadViewProfile( *iter, u.fileName() );
-      break;
+    if ( tabContainer()->count() > 1 )
+    {
+        if ( KMessageBox::warningContinueCancel( m_pMainWindow,
+                                                 i18n("You have multiple tabs open in this window.\n"
+                                                      "Loading a view profile will close them."),
+                                                 i18n("Confirmation"),
+                                                 KGuiItem(i18n("Load View Profile")),
+                                                 KStandardGuiItem::cancel(),
+                                                 "LoadProfileTabsConfirm" ) == KMessageBox::Cancel )
+            return;
     }
-  }
+    KonqView *originalView = m_pMainWindow->currentView();
+    bool showTabCalled = false;
+    foreach ( KonqFrameBase* frame, m_tabContainer->childFrameList() )
+    {
+        KonqView *view = frame->activeChildView();
+        if (view && view->part() && (view->part()->metaObject()->indexOfProperty("modified") != -1)) {
+            QVariant prop = view->part()->property("modified");
+            if (prop.isValid() && prop.toBool()) {
+                showTab( view );
+                showTabCalled = true;
+                if ( KMessageBox::warningContinueCancel( 0,
+                                                         i18n("This tab contains changes that have not been submitted.\nLoading a profile will discard these changes."),
+                                                         i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes")), KStandardGuiItem::cancel(), "discardchangesloadprofile") != KMessageBox::Continue )
+                    /* WE: maybe KStandardGuiItem(Discard) here? */
+                {
+                    showTab( originalView );
+                    return;
+                }
+            }
+        }
+    }
+    if ( showTabCalled && originalView )
+        showTab( originalView );
+
+
+
+    QMap<QString, QString>::ConstIterator iter = m_mapProfileNames.begin();
+    QMap<QString, QString>::ConstIterator end = m_mapProfileNames.end();
+
+    for(int i=0; iter != end; ++iter, ++i) {
+        if( i == id ) {
+            KUrl u( *iter );
+            loadViewProfile( *iter, u.fileName() );
+            break;
+        }
+    }
 }
 
 void KonqViewManager::slotProfileListAboutToShow()
@@ -1476,23 +1476,7 @@ void KonqViewManager::slotProfileListAboutToShow()
 
 void KonqViewManager::setLoading( KonqView *view, bool loading )
 {
-  KonqFrameContainerBase* parentContainer = view->frame()->parentContainer();
-  if ( parentContainer->frameType() == "Tabs" ) {
-    QColor color;
-    KonqFrameTabs* konqframetabs = static_cast<KonqFrameTabs*>( parentContainer );
-    if ( loading )
-      color = QColor( (KGlobalSettings::linkColor().red()  + KGlobalSettings::inactiveTextColor().red())/2,
-                      (KGlobalSettings::linkColor().green()+ KGlobalSettings::inactiveTextColor().green())/2,
-                      (KGlobalSettings::linkColor().blue() + KGlobalSettings::inactiveTextColor().blue())/2 );
-    else
-    {
-      if ( konqframetabs->currentWidget() != view->frame() )
-        color = KGlobalSettings::linkColor();
-      else
-        color = KGlobalSettings::textColor();
-    }
-    konqframetabs->setTabTextColor( konqframetabs->indexOf( view->frame() ), color );
-  }
+    m_tabContainer->setLoading(view->frame(), loading);
 }
 
 void KonqViewManager::showHTML(bool b)
