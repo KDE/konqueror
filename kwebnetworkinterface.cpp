@@ -44,6 +44,7 @@ void KWebNetworkInterface::addJob(QWebNetworkJob *job)
     kioJob->addMetaData(metaDataForRequest(job->request().httpHeader()));
 
     kioJob->setProperty("qwebnetworkjob", QVariant::fromValue(job));
+    kioJob->setProperty("startedSignalEmitted", false);
     m_jobs.insert(job, kioJob);
 
     connect(kioJob, SIGNAL(data(KIO::Job *, const QByteArray &)),
@@ -84,11 +85,14 @@ void KWebNetworkInterface::forwardJobData(KIO::Job *kioJob, const QByteArray &da
     if (!job)
         return;
 
-    QString headers = kioJob->queryMetaData("HTTP-Headers");
-    if (!headers.isEmpty()) {
-        job->setResponse(QHttpResponseHeader(kioJob->queryMetaData("HTTP-Headers")));
+    bool startedEmitted = kioJob->property("startedSignalEmitted").toBool();
+    if (!startedEmitted) {
+        QString headers = kioJob->queryMetaData("HTTP-Headers");
+        if (!headers.isEmpty())
+            job->setResponse(QHttpResponseHeader(kioJob->queryMetaData("HTTP-Headers")));
         emit started(job);
     }
+    kioJob->setProperty("startedSignalEmitted", true);
 
     emit this->data(job, data);
 }
