@@ -136,6 +136,17 @@ QWebPage::NavigationRequestResponse WebPage::navigationRequested(QWebFrame *fram
     return part->navigationRequested(request);
 }
 
+void WebPage::contextMenuEvent(QContextMenuEvent *e)
+{
+    KParts::BrowserExtension::PopupFlags flags = KParts::BrowserExtension::DefaultPopupItems;
+    flags |= KParts::BrowserExtension::ShowReload;
+    flags |= KParts::BrowserExtension::ShowBookmark;
+    flags |= KParts::BrowserExtension::ShowNavigationItems;
+    emit part->browserExt()->popupMenu(/*guiclient */0,
+                                       e->globalPos(), part->url(), KParts::URLArgs(),
+                                       flags);
+}
+
 WebKitBrowserExtension::WebKitBrowserExtension(WebKitPart *parent)
     : KParts::BrowserExtension(parent), part(parent)
 {

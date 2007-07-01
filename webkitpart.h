@@ -46,6 +46,7 @@ public:
     QWebPage::NavigationRequestResponse navigationRequested(const QWebNetworkRequest &request);
 
     inline WebPage *page() { return webPage; }
+    inline WebKitBrowserExtension *browserExt() const { return browserExtension; }
 
     static KAboutData *createAboutData();
 
@@ -68,6 +69,8 @@ public:
 
 protected:
     virtual NavigationRequestResponse navigationRequested(QWebFrame *frame, const QWebNetworkRequest &request);
+
+    virtual void contextMenuEvent(QContextMenuEvent *e);
 
 private:
     WebKitPart *part;
