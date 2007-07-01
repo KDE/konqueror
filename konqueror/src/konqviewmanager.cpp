@@ -410,9 +410,6 @@ void KonqViewManager::breakOffTab( KonqFrameBase* currentFrame, const QSize& win
   m_pMainWindow->dumpViewList();
   printFullHierarchy( m_pMainWindow );
 
-  mainWindow->dumpViewList();
-  mainWindow->viewManager()->printFullHierarchy( mainWindow );
-
   kDebug(1202) << "------------- KonqViewManager::breakOffTab done --------------" << endl;
 #endif
 }
@@ -740,7 +737,7 @@ void KonqViewManager::clear()
 
     KonqFrameBase* frame = m_pMainWindow->childFrame();
     Q_ASSERT( frame );
-    kDebug(1202) << "deleting mainFrame " << endl;
+    //kDebug(1202) << "deleting mainFrame " << endl;
     m_pMainWindow->removeChildFrame( frame ); // will set childFrame() to NULL
     delete frame;
     // tab container was deleted by the above
@@ -835,7 +832,7 @@ KonqView *KonqViewManager::setupView( KonqFrameContainerBase *parentContainer,
                                       bool passiveMode,
                                       bool openAfterCurrentPage )
 {
-  kDebug(1202) << "KonqViewManager::setupView passiveMode=" << passiveMode << endl;
+    //kDebug(1202) << "KonqViewManager::setupView passiveMode=" << passiveMode << endl;
 
   QString sType = serviceType;
 
@@ -859,7 +856,7 @@ KonqView *KonqViewManager::setupView( KonqFrameContainerBase *parentContainer,
 
   int index = -1;
   if ( openAfterCurrentPage )
-    index = m_tabContainer->currentIndex() +1 ;
+    index = m_tabContainer->currentIndex() + 1;
 
   parentContainer->insertChildFrame( newViewFrame, index );
 
@@ -1001,7 +998,7 @@ void KonqViewManager::loadViewProfile( KConfig &cfg, const QString & filename,
     // from profile loading (e.g. in switchView)
     m_bLoadingProfile = true;
 
-    loadItem( profileGroup, m_pMainWindow, rootItem, defaultURL, openUrl && forcedURL.isEmpty() );
+    loadItem( profileGroup, tabContainer(), rootItem, defaultURL, openUrl && forcedURL.isEmpty() );
 
     m_bLoadingProfile = false;
 
@@ -1265,47 +1262,6 @@ void KonqViewManager::loadItem( KConfigGroup &cfg, KonqFrameContainerBase *paren
     if( !cfg.readEntry( QString::fromLatin1( "ShowStatusBar" ).prepend( prefix ), true ) )
       childView->frame()->statusbar()->hide();
 
-#if 0 // dead code
-    if (!m_pDocContainer)
-    {
-      if (parent->frameType() == "MainWindow")
-        m_pDocContainer = childView->frame(); // Child view of mainWindow
-
-      else if (parent->frameType() == "Container")
-      {
-        KonqFrameContainer* parentContainer = static_cast<KonqFrameContainer*>(parent);
-        KonqFrameBase* otherFrame = parentContainer->otherChild( childView->frame() );
-        if (otherFrame)
-        {
-          if (childView->isPassiveMode())
-          {
-            if (otherFrame->frameType() == "View")
-            {
-              KonqFrame* viewFrame = static_cast<KonqFrame*>(otherFrame);
-              if (viewFrame->childView()->isPassiveMode())
-                m_pDocContainer = parentContainer; // Both views are passive, shouldn't happen
-              else
-                m_pDocContainer = viewFrame; // This one is passive, the other is active
-            }
-          }
-          else
-          {
-            if (otherFrame->frameType() == "View")
-            {
-              KonqFrame* viewFrame = static_cast<KonqFrame*>(otherFrame);
-              if (viewFrame->childView()->isPassiveMode())
-                m_pDocContainer = childView->frame(); // This one is active, the other is passive
-              else
-                m_pDocContainer = parentContainer; // Both views are active
-            }
-            else
-              m_pDocContainer = parentContainer; // This one is active, the other is a Container
-          }
-        }
-      }
-    }
-#endif // dead code
-
     KonqConfigEvent ev( cfg.config(), prefix+'_', false/*load*/);
     QApplication::sendEvent( childView->part(), &ev );
 
@@ -1331,7 +1287,7 @@ void KonqViewManager::loadItem( KConfigGroup &cfg, KonqFrameContainerBase *paren
 
       if ( !url.isEmpty() )
       {
-        //kDebug(1202) << "KonqViewManager::loadItem: calling openUrl " << url.prettyUrl() << endl;
+        //kDebug(1202) << "KonqViewManager::loadItem: calling openUrl " << url << endl;
         //childView->openUrl( url, url.prettyUrl() );
         // We need view-follows-view (for the dirtree, for instance)
         KonqOpenURLRequest req;
@@ -1416,7 +1372,9 @@ void KonqViewManager::loadItem( KConfigGroup &cfg, KonqFrameContainerBase *paren
         }
     }
 
-    m_tabContainer->setActiveChild( dynamic_cast<KonqFrameBase*>(m_tabContainer->widget(index)) );
+    QWidget* w = m_tabContainer->widget(index);
+    Q_ASSERT(w);
+    m_tabContainer->setActiveChild( dynamic_cast<KonqFrameBase*>(w) );
     m_tabContainer->setCurrentIndex( index );
     m_tabContainer->show();
   }
