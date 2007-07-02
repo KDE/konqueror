@@ -58,47 +58,6 @@ using namespace std;
 extern "C" { int XSetTransientForHint( Display *, unsigned long, unsigned long ); }
 #endif // Q_WS_X11
 
-static KCmdLineOptions options[] =
-{
-    { "yesno <text>", I18N_NOOP("Question message box with yes/no buttons"), 0 },
-    { "yesnocancel <text>", I18N_NOOP("Question message box with yes/no/cancel buttons"), 0 },
-    { "warningyesno <text>", I18N_NOOP("Warning message box with yes/no buttons"), 0 },
-    { "warningcontinuecancel <text>", I18N_NOOP("Warning message box with continue/cancel buttons"), 0 },
-    { "warningyesnocancel <text>", I18N_NOOP("Warning message box with yes/no/cancel buttons"), 0 },
-    { "sorry <text>", I18N_NOOP("'Sorry' message box"), 0 },
-    { "error <text>", I18N_NOOP("'Error' message box"), 0 },
-    { "msgbox <text>", I18N_NOOP("Message Box dialog"), 0 },
-    { "inputbox <text> <init>", I18N_NOOP("Input Box dialog"), 0 },
-    { "password <text>", I18N_NOOP("Password dialog"), 0 },
-    { "textbox <file> [width] [height]", I18N_NOOP("Text Box dialog"), 0 },
-    { "textinputbox <text> <init> [width] [height]", I18N_NOOP("Text Input Box dialog"), 0 },
-    { "combobox <text> [tag item] [tag item] ...", I18N_NOOP("ComboBox dialog"), 0 },
-    { "menu <text> [tag item] [tag item] ...", I18N_NOOP("Menu dialog"), 0 },
-    { "checklist <text> [tag item status] ...", I18N_NOOP("Check List dialog"), 0 },
-    { "radiolist <text> [tag item status] ...", I18N_NOOP("Radio List dialog"), 0 },
-    { "passivepopup <text> <timeout>", I18N_NOOP("Passive Popup"), 0 },
-    { "getopenfilename [startDir] [filter]", I18N_NOOP("File dialog to open an existing file"), 0 },
-    { "getsavefilename [startDir] [filter]", I18N_NOOP("File dialog to save a file"), 0 },
-    { "getexistingdirectory [startDir]", I18N_NOOP("File dialog to select an existing directory"), 0 },
-    { "getopenurl [startDir] [filter]", I18N_NOOP("File dialog to open an existing URL"), 0 },
-    { "getsaveurl [startDir] [filter]", I18N_NOOP("File dialog to save a URL"), 0 },
-    { "geticon [group] [context]", I18N_NOOP("Icon chooser dialog"), 0 },
-    { "progressbar <text> [totalsteps]", I18N_NOOP("Progress bar dialog, returns a D-Bus reference for communication"), 0},
-
-    // TODO gauge stuff, reading values from stdin
-
-    { "title <text>", I18N_NOOP("Dialog title"), 0 },
-    { "default <text>", I18N_NOOP("Default entry to use for combobox and menu"), 0 },
-    { "multiple", I18N_NOOP("Allows the --getopenurl and --getopenfilename options to return multiple files"), 0 },
-    { "separate-output", I18N_NOOP("Return list items on separate lines (for checklist option and file open with --multiple)"), 0 },
-    { "print-winid", I18N_NOOP("Outputs the winId of each dialog"), 0 },
-    { "embed <winid>", I18N_NOOP("Makes the dialog transient for an X app specified by winid"), 0 },
-    { "dontagain <file:entry>", I18N_NOOP("Config file and option name for saving the \"don't-show/ask-again\" state"), 0 },
-
-    { "+[arg]", I18N_NOOP("Arguments - depending on main option"), 0 },
-    KCmdLineLastOption
-};
-
 // this class hooks into the eventloop and outputs the id
 // of shown dialogs or makes the dialog transient for other winids.
 // Will destroy itself on app exit.
@@ -161,7 +120,7 @@ static int directCommand(KCmdLineArgs *args)
     // --title text
     KCmdLineArgs *qtargs = KCmdLineArgs::parsedArgs("qt"); // --title is a qt option
     if(qtargs->isSet("title")) {
-      title = QFile::decodeName(qtargs->getOption("title"));
+      title = qtargs->getOption("title");
     }
 
     // --separate-output
@@ -237,7 +196,7 @@ static int directCommand(KCmdLineArgs *args)
         }
         int ret;
 
-        QString text = QString::fromLocal8Bit(args->getOption( option ));
+        QString text = args->getOption( option );
         int pos;
         while ((pos = text.indexOf( QLatin1String("\\n") )) >= 0)
         {
@@ -266,9 +225,9 @@ static int directCommand(KCmdLineArgs *args)
       QString init;
 
       if (args->count() > 0)
-          init = QString::fromLocal8Bit(args->arg(0));
+          init = args->arg(0);
 
-      bool retcode = Widgets::inputBox(0, title, QString::fromLocal8Bit(args->getOption("inputbox")), init, result);
+      bool retcode = Widgets::inputBox(0, title, args->getOption("inputbox"), init, result);
       cout << result.toLocal8Bit().data() << endl;
       return retcode ? 0 : 1;
     }
@@ -278,7 +237,7 @@ static int directCommand(KCmdLineArgs *args)
     if (args->isSet("password"))
     {
       QString result;
-      bool retcode = Widgets::passwordBox(0, title, QString::fromLocal8Bit(args->getOption("password")), result);
+      bool retcode = Widgets::passwordBox(0, title, args->getOption("password"), result);
       cout << result.data() << endl;
       return retcode ? 0 : 1;
     }
@@ -288,12 +247,12 @@ static int directCommand(KCmdLineArgs *args)
       {
         int duration = 0;
         if (args->count() > 0)
-            duration = 1000 * QString::fromLocal8Bit(args->arg(0)).toInt();
+            duration = 1000 * args->arg(0).toInt();
         if (duration == 0)
             duration = 10000;
 	KPassivePopup *popup = KPassivePopup::message( KPassivePopup::Balloon, // style
 						       title,
-						       QString::fromLocal8Bit( args->getOption("passivepopup") ),
+						       args->getOption("passivepopup"),
 						       QPixmap() /* don't crash 0*/, // icon
 						       (QWidget*)0UL, // parent
 						       duration );
@@ -330,11 +289,11 @@ static int directCommand(KCmdLineArgs *args)
         int h = 0;
 
         if (args->count() == 2) {
-            w = QString::fromLocal8Bit(args->arg(0)).toInt();
-            h = QString::fromLocal8Bit(args->arg(1)).toInt();
+            w = args->arg(0).toInt();
+            h = args->arg(1).toInt();
         }
 
-        return Widgets::textBox(0, w, h, title, QString::fromLocal8Bit(args->getOption("textbox")));
+        return Widgets::textBox(0, w, h, title, args->getOption("textbox"));
     }
 
     // --textinputbox file [width] [height]
@@ -344,16 +303,16 @@ static int directCommand(KCmdLineArgs *args)
       int h = 200;
 
       if (args->count() == 4) {
-	w = QString::fromLocal8Bit(args->arg(2)).toInt();
-	h = QString::fromLocal8Bit(args->arg(3)).toInt();
+	w = args->arg(2).toInt();
+	h = args->arg(3).toInt();
       }
 
       QStringList list;
-      list.append(QString::fromLocal8Bit(args->getOption("textinputbox")));
+      list.append(args->getOption("textinputbox"));
 
       if (args->count() >= 1) {
 	for (int i = 0; i < args->count(); i++)
-	  list.append(QString::fromLocal8Bit(args->arg(i)));
+	  list.append(args->arg(i));
       }
 
       QString result;
@@ -367,9 +326,9 @@ static int directCommand(KCmdLineArgs *args)
         QStringList list;
         if (args->count() >= 2) {
             for (int i = 0; i < args->count(); i++) {
-                list.append(QString::fromLocal8Bit(args->arg(i)));
+                list.append(args->arg(i));
             }
-            QString text = QString::fromLocal8Bit(args->getOption("combobox"));
+            QString text = args->getOption("combobox");
 	    if (args->isSet("default")) {
 	        defaultEntry = args->getOption("default");
 	    }
@@ -386,9 +345,9 @@ static int directCommand(KCmdLineArgs *args)
         QStringList list;
         if (args->count() >= 2) {
             for (int i = 0; i < args->count(); i++) {
-                list.append(QString::fromLocal8Bit(args->arg(i)));
+                list.append(args->arg(i));
             }
-            QString text = QString::fromLocal8Bit(args->getOption("menu"));
+            QString text = args->getOption("menu");
 	    if (args->isSet("default")) {
 	        defaultEntry = args->getOption("default");
 	    }
@@ -407,10 +366,10 @@ static int directCommand(KCmdLineArgs *args)
         QStringList list;
         if (args->count() >= 3) {
             for (int i = 0; i < args->count(); i++) {
-                list.append(QString::fromLocal8Bit(args->arg(i)));
+                list.append(args->arg(i));
             }
 
-            QString text = QString::fromLocal8Bit(args->getOption("checklist"));
+            QString text = args->getOption("checklist");
             QStringList result;
 
             bool retcode = Widgets::checkList(0, title, text, list, separateOutput, result);
@@ -429,10 +388,10 @@ static int directCommand(KCmdLineArgs *args)
         QStringList list;
         if (args->count() >= 3) {
             for (int i = 0; i < args->count(); i++) {
-                list.append(QString::fromLocal8Bit(args->arg(i)));
+                list.append(args->arg(i));
             }
 
-            QString text = QString::fromLocal8Bit(args->getOption("radiolist"));
+            QString text = args->getOption("radiolist");
             QString result;
             bool retcode = Widgets::radioBox(0, title, text, list, result);
             cout << result.toLocal8Bit().data() << endl;
@@ -445,9 +404,9 @@ static int directCommand(KCmdLineArgs *args)
     if (args->isSet("getopenfilename")) {
         QString startDir;
         QString filter;
-        startDir = QString::fromLocal8Bit(args->getOption("getopenfilename"));
+        startDir = args->getOption("getopenfilename");
         if (args->count() >= 1)  {
-            filter = QString::fromLocal8Bit(args->arg(0));
+            filter = args->arg(0);
         }
 	KFileDialog dlg( startDir, filter, 0 );
 	dlg.setOperationMode( KFileDialog::Opening );
@@ -485,12 +444,12 @@ static int directCommand(KCmdLineArgs *args)
         QString startDir;
         QString filter;
 	if ( args->isSet("getsavefilename") ) {
-	    startDir = QString::fromLocal8Bit(args->getOption("getsavefilename"));
+	    startDir = args->getOption("getsavefilename");
 	} else {
-	    startDir = QString::fromLocal8Bit(args->getOption("getsaveurl"));
+	    startDir = args->getOption("getsaveurl");
 	}
         if (args->count() >= 1)  {
-            filter = QString::fromLocal8Bit(args->arg(0));
+            filter = args->arg(0);
         }
 	// copied from KFileDialog::getSaveFileName(), so we can add geometry
 	bool specialDir = ( startDir.at(0) == ':' );
@@ -524,7 +483,7 @@ static int directCommand(KCmdLineArgs *args)
     // getexistingdirectory [startDir]
     if (args->isSet("getexistingdirectory")) {
         QString startDir;
-        startDir = QString::fromLocal8Bit(args->getOption("getexistingdirectory"));
+        startDir = args->getOption("getexistingdirectory");
 	QString result;
 #ifdef Q_WS_WIN
 	result = QFileDialog::getExistingDirectory( 0, title, startDir,
@@ -557,9 +516,9 @@ static int directCommand(KCmdLineArgs *args)
     if (args->isSet("getopenurl")) {
         QString startDir;
         QString filter;
-        startDir = QString::fromLocal8Bit(args->getOption("getopenurl"));
+        startDir = args->getOption("getopenurl");
         if (args->count() >= 1)  {
-            filter = QString::fromLocal8Bit(args->arg(0));
+            filter = args->arg(0);
         }
 	KFileDialog dlg( startDir, filter, 0 );
 	dlg.setOperationMode( KFileDialog::Opening );
@@ -593,9 +552,9 @@ static int directCommand(KCmdLineArgs *args)
     // geticon [group] [context]
     if (args->isSet("geticon")) {
         QString groupStr, contextStr;
-        groupStr = QString::fromLocal8Bit(args->getOption("geticon"));
+        groupStr = args->getOption("geticon");
         if (args->count() >= 1)  {
-            contextStr = QString::fromLocal8Bit(args->arg(0));
+            contextStr = args->arg(0);
         }
         K3Icon::Group group = K3Icon::NoGroup;
         if ( groupStr == QLatin1String( "Desktop" ) )
@@ -648,10 +607,10 @@ static int directCommand(KCmdLineArgs *args)
        close(1);
 
        int totalsteps = 100;
-       QString text = QString::fromLocal8Bit(args->getOption("progressbar"));
+       QString text = args->getOption("progressbar");
 
        if (args->count() == 1)
-           totalsteps = QString::fromLocal8Bit(args->arg(0)).toInt();
+           totalsteps = args->arg(0).toInt();
 
        return Widgets::progressBar(0, title, text, totalsteps) ? 1 : 0;
     }
@@ -663,19 +622,54 @@ static int directCommand(KCmdLineArgs *args)
 
 int main(int argc, char *argv[])
 {
-  KAboutData aboutData( "kdialog", I18N_NOOP("KDialog"),
-                        "1.0", I18N_NOOP( "KDialog can be used to show nice dialog boxes from shell scripts" ),
+  KAboutData aboutData( "kdialog", 0, ki18n("KDialog"),
+                        "1.0", ki18n( "KDialog can be used to show nice dialog boxes from shell scripts" ),
 			KAboutData::License_GPL,
-                        "(C) 2000, Nick Thompson");
-  aboutData.addAuthor("David Faure", I18N_NOOP("Current maintainer"),"faure@kde.org");
-  aboutData.addAuthor("Brad Hards", 0, "bradh@frogmouth.net");
-  aboutData.addAuthor("Nick Thompson",0, 0/*"nickthompson@lucent.com" bounces*/);
-  aboutData.addAuthor("Matthias Hölzer",0,"hoelzer@kde.org");
-  aboutData.addAuthor("David Gümbel",0,"david.guembel@gmx.net");
-  aboutData.addAuthor("Richard Moore",0,"rich@kde.org");
-  aboutData.addAuthor("Dawit Alemayehu",0,"adawit@kde.org");
+                        ki18n("(C) 2000, Nick Thompson"));
+  aboutData.addAuthor(ki18n("David Faure"), ki18n("Current maintainer"),"faure@kde.org");
+  aboutData.addAuthor(ki18n("Brad Hards"), KLocalizedString(), "bradh@frogmouth.net");
+  aboutData.addAuthor(ki18n("Nick Thompson"),KLocalizedString(), 0/*"nickthompson@lucent.com" bounces*/);
+  aboutData.addAuthor(ki18n("Matthias Hölzer"),KLocalizedString(),"hoelzer@kde.org");
+  aboutData.addAuthor(ki18n("David Gümbel"),KLocalizedString(),"david.guembel@gmx.net");
+  aboutData.addAuthor(ki18n("Richard Moore"),KLocalizedString(),"rich@kde.org");
+  aboutData.addAuthor(ki18n("Dawit Alemayehu"),KLocalizedString(),"adawit@kde.org");
 
   KCmdLineArgs::init(argc, argv, &aboutData);
+
+  KCmdLineOptions options;
+  options.add("yesno <text>", ki18n("Question message box with yes/no buttons"));
+  options.add("yesnocancel <text>", ki18n("Question message box with yes/no/cancel buttons"));
+  options.add("warningyesno <text>", ki18n("Warning message box with yes/no buttons"));
+  options.add("warningcontinuecancel <text>", ki18n("Warning message box with continue/cancel buttons"));
+  options.add("warningyesnocancel <text>", ki18n("Warning message box with yes/no/cancel buttons"));
+  options.add("sorry <text>", ki18n("'Sorry' message box"));
+  options.add("error <text>", ki18n("'Error' message box"));
+  options.add("msgbox <text>", ki18n("Message Box dialog"));
+  options.add("inputbox <text> <init>", ki18n("Input Box dialog"));
+  options.add("password <text>", ki18n("Password dialog"));
+  options.add("textbox <file> [width] [height]", ki18n("Text Box dialog"));
+  options.add("textinputbox <text> <init> [width] [height]", ki18n("Text Input Box dialog"));
+  options.add("combobox <text> [tag item] [tag item] ...", ki18n("ComboBox dialog"));
+  options.add("menu <text> [tag item] [tag item] ...", ki18n("Menu dialog"));
+  options.add("checklist <text> [tag item status] ...", ki18n("Check List dialog"));
+  options.add("radiolist <text> [tag item status] ...", ki18n("Radio List dialog"));
+  options.add("passivepopup <text> <timeout>", ki18n("Passive Popup"));
+  options.add("getopenfilename [startDir] [filter]", ki18n("File dialog to open an existing file"));
+  options.add("getsavefilename [startDir] [filter]", ki18n("File dialog to save a file"));
+  options.add("getexistingdirectory [startDir]", ki18n("File dialog to select an existing directory"));
+  options.add("getopenurl [startDir] [filter]", ki18n("File dialog to open an existing URL"));
+  options.add("getsaveurl [startDir] [filter]", ki18n("File dialog to save a URL"));
+  options.add("geticon [group] [context]", ki18n("Icon chooser dialog"));
+  options.add("progressbar <text> [totalsteps]", ki18n("Progress bar dialog, returns a D-Bus reference for communication"));
+  // TODO gauge stuff, reading values from stdin
+  options.add("title <text>", ki18n("Dialog title"));
+  options.add("default <text>", ki18n("Default entry to use for combobox and menu"));
+  options.add("multiple", ki18n("Allows the --getopenurl and --getopenfilename options to return multiple files"));
+  options.add("separate-output", ki18n("Return list items on separate lines (for checklist option and file open with --multiple)"));
+  options.add("print-winid", ki18n("Outputs the winId of each dialog"));
+  options.add("embed <winid>", ki18n("Makes the dialog transient for an X app specified by winid"));
+  options.add("dontagain <file:entry>", ki18n("Config file and option name for saving the \"don't-show/ask-again\" state"));
+  options.add("+[arg]", ki18n("Arguments - depending on main option"));
   KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 
   KApplication app;

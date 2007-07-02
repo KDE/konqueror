@@ -78,7 +78,7 @@ KFindPart::~KFindPart()
 
 KAboutData *KFindPart::createAboutData()
 {
-    return new KAboutData( "kfindpart", I18N_NOOP( "Find Component" ), "1.0" );
+    return new KAboutData( "kfindpart", 0, ki18n( "Find Component" ), "1.0" );
 }
 
 bool KFindPart::doOpenURL( const KUrl &url )

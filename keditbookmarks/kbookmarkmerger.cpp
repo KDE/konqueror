@@ -40,12 +40,6 @@
 #include <X11/Xlib.h>
 #endif
 
-static const KCmdLineOptions cmdLineOptions[] =
-{
-	{ "+directory", I18N_NOOP( "Directory to scan for extra bookmarks" ), 0 },
-	KCmdLineLastOption
-};
-
 // The code for this function was taken from kdesktop/kcheckrunning.cpp
 static bool kdeIsRunning()
 {
@@ -66,14 +60,17 @@ int main( int argc, char**argv )
 {
 	const bool kdeRunning = kdeIsRunning();
 
-	KAboutData aboutData( "kbookmarkmerger", I18N_NOOP( "KBookmarkMerger" ),
-	                      "1.0", I18N_NOOP( "Merges bookmarks installed by 3rd parties into the user's bookmarks" ),
+	KAboutData aboutData( "kbookmarkmerger", 0, ki18n( "KBookmarkMerger" ),
+	                      "1.0", ki18n( "Merges bookmarks installed by 3rd parties into the user's bookmarks" ),
 	                      KAboutData::License_BSD,
-	                      I18N_NOOP(  "Copyright © 2005 Frerich Raabe" ) );
-	aboutData.addAuthor( "Frerich Raabe", I18N_NOOP( "Original author" ),
+	                      ki18n(  "Copyright © 2005 Frerich Raabe" ) );
+	aboutData.addAuthor( ki18n("Frerich Raabe"), ki18n( "Original author" ),
 	                     "raabe@kde.org" );
 
 	KCmdLineArgs::init( argc, argv, &aboutData );
+
+	KCmdLineOptions cmdLineOptions;
+	cmdLineOptions.add("+directory", ki18n( "Directory to scan for extra bookmarks" ));
 	KCmdLineArgs::addCmdLineOptions( cmdLineOptions );
 
 	KApplication app( false );
@@ -103,7 +100,7 @@ int main( int argc, char**argv )
 
 	bool didMergeBookmark = false;
 
-	QString extraBookmarksDirName = QFile::decodeName( args->arg( 0 ) );
+	QString extraBookmarksDirName = args->arg( 0 );
 	QDir extraBookmarksDir( extraBookmarksDirName, "*.xml" );
 	if ( !extraBookmarksDir.isReadable() ) {
 		kError() << "Failed to read files in directory " << extraBookmarksDirName << endl;

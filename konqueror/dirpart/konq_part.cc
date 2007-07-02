@@ -98,7 +98,7 @@ KonqPart::~KonqPart()
 
 KAboutData* KonqPart::createAboutData()
 {
-    return new KAboutData( "konq_part", I18N_NOOP( "KonqPart" ), "0.1" );
+    return new KAboutData( "konq_part", 0, ki18n( "KonqPart" ), "0.1" );
 }
 
 void KonqPart::slotNewItems( const KFileItemList& items )

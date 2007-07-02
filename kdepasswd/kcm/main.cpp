@@ -76,23 +76,23 @@ KCMUserAccount::KCMUserAccount( QWidget *parent, const QStringList &)
 	_mw->lblUsername->setText( _ku->loginName() );
 	_mw->lblUID->setText( QString().number(_ku->uid()) );
 
-	KAboutData *about = new KAboutData(I18N_NOOP("kcm_useraccount"),
-		I18N_NOOP("Password & User Information"), 0, 0,
+	KAboutData *about = new KAboutData(I18N_NOOP("kcm_useraccount"), 0,
+		ki18n("Password & User Information"), 0, KLocalizedString(),
 		KAboutData::License_GPL,
-		I18N_NOOP("(C) 2002, Braden MacDonald, "
+		ki18n("(C) 2002, Braden MacDonald, "
 			"(C) 2004 Ravikiran Rajagopal"));
 
-	about->addAuthor("Frans Englich", I18N_NOOP("Maintainer"), "frans.englich@telia.com");
-	about->addAuthor("Ravikiran Rajagopal", 0, "ravi@kde.org");
-	about->addAuthor("Michael H\303\244ckel", "haeckel@kde.org" );
+	about->addAuthor(ki18n("Frans Englich"), ki18n("Maintainer"), "frans.englich@telia.com");
+	about->addAuthor(ki18n("Ravikiran Rajagopal"), KLocalizedString(), "ravi@kde.org");
+	about->addAuthor(ki18n("Michael H\303\244ckel"), ki18n("haeckel@kde.org") );
 
-	about->addAuthor("Braden MacDonald", I18N_NOOP("Face editor"), "bradenm_k@shaw.ca");
-	about->addAuthor("Geert Jansen", I18N_NOOP("Password changer"), "jansen@kde.org",
+	about->addAuthor(ki18n("Braden MacDonald"), ki18n("Face editor"), "bradenm_k@shaw.ca");
+	about->addAuthor(ki18n("Geert Jansen"), ki18n("Password changer"), "jansen@kde.org",
 			"http://www.stack.nl/~geertj/");
-	about->addAuthor("Daniel Molkentin");
-	about->addAuthor("Alex Zepeda");
-	about->addAuthor("Hans Karlsson", I18N_NOOP("Icons"), "karlsson.h@home.se");
-	about->addAuthor("Hermann Thomas", I18N_NOOP("Icons"), "h.thomas@gmx.de");
+	about->addAuthor(ki18n("Daniel Molkentin"));
+	about->addAuthor(ki18n("Alex Zepeda"));
+	about->addAuthor(ki18n("Hans Karlsson"), ki18n("Icons"), "karlsson.h@home.se");
+	about->addAuthor(ki18n("Hermann Thomas"), ki18n("Icons"), "h.thomas@gmx.de");
 	setAboutData(about);
 
 	setQuickHelp( i18n("<qt>Here you can change your personal information, which "

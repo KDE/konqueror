@@ -164,7 +164,7 @@ const KComponentData &PluginFactory::componentData()
 
 KAboutData *PluginFactory::aboutData()
 {
-    KAboutData *about = new KAboutData("plugin", I18N_NOOP("plugin"), "1.99");
+    KAboutData *about = new KAboutData("plugin", 0, ki18n("plugin"), "1.99");
     return about;
 }
 

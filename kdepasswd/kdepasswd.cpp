@@ -18,22 +18,19 @@
 #include "passwd.h"
 #include "passwddlg.h"
 
-static KCmdLineOptions options[] = 
-{
-    { "+[user]", I18N_NOOP("Change password of this user"), 0 },
-    KCmdLineLastOption
-};
-
 
 int main(int argc, char **argv)
 {
-    KAboutData aboutData("kdepasswd", I18N_NOOP("KDE passwd"),
-            KDE_VERSION_STRING, I18N_NOOP("Changes a UNIX password."),
-            KAboutData::License_Artistic, "Copyright (c) 2000 Geert Jansen");
-    aboutData.addAuthor("Geert Jansen", I18N_NOOP("Maintainer"),
+    KAboutData aboutData("kdepasswd", 0, ki18n("KDE passwd"),
+            KDE_VERSION_STRING, ki18n("Changes a UNIX password."),
+            KAboutData::License_Artistic, ki18n("Copyright (c) 2000 Geert Jansen"));
+    aboutData.addAuthor(ki18n("Geert Jansen"), ki18n("Maintainer"),
             "jansen@kde.org", "http://www.stack.nl/~geertj/");
  
     KCmdLineArgs::init(argc, argv, &aboutData);
+
+    KCmdLineOptions options;
+    options.add("+[user]", ki18n("Change password of this user"));
     KCmdLineArgs::addCmdLineOptions(options);
     KUniqueApplication::addCmdLineOptions();
 
@@ -46,7 +43,7 @@ int main(int argc, char **argv)
     KUniqueApplication app;
 
     KUser ku;
-    QByteArray user;
+    QString user;
     bool bRoot = ku.isSuperUser();
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
@@ -54,7 +51,7 @@ int main(int argc, char **argv)
 	user = args->arg(0);
 
     /* You must be able to run "kdepasswd loginName" */
-    if ( !user.isEmpty() && user!=KUser().loginName().toUtf8() && !bRoot)
+    if ( !user.isEmpty() && user!=KUser().loginName() && !bRoot)
     {
         KMessageBox::sorry(0, i18n("You need to be root to change the password of other users."));
         return 0;
@@ -68,7 +65,7 @@ int main(int argc, char **argv)
 	    return 0;
     }
 
-    KDEpasswd2Dialog *dlg = new KDEpasswd2Dialog(oldpass, user);
+    KDEpasswd2Dialog *dlg = new KDEpasswd2Dialog(oldpass, user.toLocal8Bit());
 
 
     dlg->exec();

@@ -126,7 +126,7 @@ int main(int argc, char *argv[])
 {
    kDebug() << "main" << endl;
    setvbuf( stderr, NULL, _IONBF, 0 );
-   KCmdLineArgs::init(argc, argv, "nsplugin", "testnsplugin", "A Netscape Plugin test program", "0.1");
+   KCmdLineArgs::init(argc, argv, "nsplugin", 0, ki18n("testnsplugin"), "0.1", ki18n("A Netscape Plugin test program"));
 
    KApplication app("nsplugin");
 

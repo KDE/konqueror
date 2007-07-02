@@ -39,28 +39,6 @@
 #include <kbookmarkexporter.h>
 #include <toplevel_interface.h>
 
-static KCmdLineOptions options[] = {
-    {"importmoz <filename>", I18N_NOOP("Import bookmarks from a file in Mozilla format"), 0},
-    {"importns <filename>", I18N_NOOP("Import bookmarks from a file in Netscape (4.x and earlier) format"), 0},
-    {"importie <filename>", I18N_NOOP("Import bookmarks from a file in Internet Explorer's Favorites format"), 0},
-    {"importopera <filename>", I18N_NOOP("Import bookmarks from a file in Opera format"), 0},
-
-    {"exportmoz <filename>", I18N_NOOP("Export bookmarks to a file in Mozilla format"), 0},
-    {"exportns <filename>", I18N_NOOP("Export bookmarks to a file in Netscape (4.x and earlier) format"), 0},
-    {"exporthtml <filename>", I18N_NOOP("Export bookmarks to a file in a printable HTML format"), 0},
-    {"exportie <filename>", I18N_NOOP("Export bookmarks to a file in Internet Explorer's Favorites format"), 0},
-    {"exportopera <filename>", I18N_NOOP("Export bookmarks to a file in Opera format"), 0},
-
-    {"address <address>", I18N_NOOP("Open at the given position in the bookmarks file"), 0},
-    {"customcaption <caption>", I18N_NOOP("Set the user readable caption for example \"Konsole\""), 0},
-    {"nobrowser", I18N_NOOP("Hide all browser related functions"), 0},
-    {"dbusObjectName <name>", I18N_NOOP("A unique name that represents this bookmark collection, usually the kinstance name.\n"
-                                 "This should be \"konqueror\" for the konqueror bookmarks, \"kfile\" for KFileDialog bookmarks, etc.\n"
-                                 "The final DBus object path is /KBookmarkManager/dbusObjectName"), 0},
-    {"+[file]", I18N_NOOP("File to edit"), 0},
-    KCmdLineLastOption
-};
-
 // TODO - make this register() or something like that and move dialog into main
 static bool askUser(const QString& filename, bool &readonly) {
 
@@ -112,15 +90,33 @@ static bool askUser(const QString& filename, bool &readonly) {
 #include <kactioncollection.h>
 
 extern "C" KDE_EXPORT int kdemain(int argc, char **argv) {
-    KAboutData aboutData("keditbookmarks", I18N_NOOP("Bookmark Editor"), KDE_VERSION_STRING,
-            I18N_NOOP("Konqueror Bookmarks Editor"),
+    KAboutData aboutData("keditbookmarks", 0, ki18n("Bookmark Editor"), KDE_VERSION_STRING,
+            ki18n("Konqueror Bookmarks Editor"),
             KAboutData::License_GPL,
-            I18N_NOOP("(c) 2000 - 2003, KDE developers") );
-    aboutData.addAuthor("David Faure", I18N_NOOP("Initial author"), "faure@kde.org");
-    aboutData.addAuthor("Alexander Kellett", I18N_NOOP("Author"), "lypanov@kde.org");
+            ki18n("(c) 2000 - 2003, KDE developers") );
+    aboutData.addAuthor(ki18n("David Faure"), ki18n("Initial author"), "faure@kde.org");
+    aboutData.addAuthor(ki18n("Alexander Kellett"), ki18n("Author"), "lypanov@kde.org");
 
     KCmdLineArgs::init(argc, argv, &aboutData);
     KCmdLineArgs::addStdCmdLineOptions();
+
+    KCmdLineOptions options;
+    options.add("importmoz <filename>", ki18n("Import bookmarks from a file in Mozilla format"));
+    options.add("importns <filename>", ki18n("Import bookmarks from a file in Netscape (4.x and earlier) format"));
+    options.add("importie <filename>", ki18n("Import bookmarks from a file in Internet Explorer's Favorites format"));
+    options.add("importopera <filename>", ki18n("Import bookmarks from a file in Opera format"));
+    options.add("exportmoz <filename>", ki18n("Export bookmarks to a file in Mozilla format"));
+    options.add("exportns <filename>", ki18n("Export bookmarks to a file in Netscape (4.x and earlier) format"));
+    options.add("exporthtml <filename>", ki18n("Export bookmarks to a file in a printable HTML format"));
+    options.add("exportie <filename>", ki18n("Export bookmarks to a file in Internet Explorer's Favorites format"));
+    options.add("exportopera <filename>", ki18n("Export bookmarks to a file in Opera format"));
+    options.add("address <address>", ki18n("Open at the given position in the bookmarks file"));
+    options.add("customcaption <caption>", ki18n("Set the user readable caption for example \"Konsole\""));
+    options.add("nobrowser", ki18n("Hide all browser related functions"));
+    options.add("dbusObjectName <name>", ki18n("A unique name that represents this bookmark collection, usually the kinstance name.\n"
+                                 "This should be \"konqueror\" for the konqueror bookmarks, \"kfile\" for KFileDialog bookmarks, etc.\n"
+                                 "The final DBus object path is /KBookmarkManager/dbusObjectName"));
+    options.add("+[file]", ki18n("File to edit"));
     KCmdLineArgs::addCmdLineOptions(options);
 
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
@@ -137,7 +133,7 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv) {
     bool gotFilenameArg = (args->count() == 1);
 
     QString filename = gotFilenameArg
-        ? QLatin1String(args->arg(0))
+        ? args->arg(0)
         : KStandardDirs::locateLocal("data", QLatin1String("konqueror/bookmarks.xml"));
 
     if (!isGui) {
@@ -159,12 +155,12 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv) {
             // TODO - maybe an xbel export???
             if (got > 1) // got == 0 isn't possible as !isGui is dependant on "export.*"
                 KCmdLineArgs::usage(I18N_NOOP("You may only specify a single --export option."));
-            QString path = QString::fromLocal8Bit(args->getOption(arg2));
+            QString path = args->getOption(arg2);
             CurrentMgr::self()->doExport(exportType, path);
         } else if (importType) {
             if (got > 1) // got == 0 isn't possible as !isGui is dependant on "import.*"
                 KCmdLineArgs::usage(I18N_NOOP("You may only specify a single --import option."));
-            QString path = QString::fromLocal8Bit(args->getOption(arg2));
+            QString path = args->getOption(arg2);
             ImportCommand *importer = ImportCommand::importerFactory(importType);
             importer->import(path, true);
             importer->execute();
@@ -175,17 +171,17 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv) {
     }
 
     QString address = args->isSet("address")
-        ? QString::fromLocal8Bit(args->getOption("address"))
+        ? args->getOption("address")
         : QString("/0");
 
     QString caption = args->isSet("customcaption")
-        ? QString::fromLocal8Bit(args->getOption("customcaption"))
+        ? args->getOption("customcaption")
         : QString();
 
     QString dbusObjectName;
     if(args->isSet("dbusObjectName"))
     {
-        dbusObjectName = QString::fromLocal8Bit(args->getOption("dbusObjectName"));
+        dbusObjectName = args->getOption("dbusObjectName");
     }
     else
     {

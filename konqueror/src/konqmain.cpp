@@ -40,21 +40,26 @@
 #include <QtDBus/QtDBus>
 #include <QDir>
 
-static const KCmdLineOptions options[] =
-{
-  { "silent", I18N_NOOP("Start without a default window"), 0 },
-  { "preload", I18N_NOOP("Preload for later use"), 0 },
-  { "profile <profile>",   I18N_NOOP("Profile to open"), 0 },
-  { "profiles", I18N_NOOP("List available profiles"), 0 },
-  { "mimetype <mimetype>",   I18N_NOOP("Mimetype to use for this URL (e.g. text/html or inode/directory)"), 0 },
-  { "select", I18N_NOOP("For URLs that point to files, opens the directory and selects the file, instead of opening the actual file"), 0 },
-  { "+[URL]",   I18N_NOOP("Location to open"), 0 },
-  KCmdLineLastOption
-};
-
 extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
 {
   KCmdLineArgs::init( argc, argv, KonqFactory::aboutData() );
+
+
+  KCmdLineOptions options;
+
+  options.add("silent", ki18n("Start without a default window"));
+
+  options.add("preload", ki18n("Preload for later use"));
+
+  options.add("profile <profile>", ki18n("Profile to open"));
+
+  options.add("profiles", ki18n("List available profiles"));
+
+  options.add("mimetype <mimetype>", ki18n("Mimetype to use for this URL (e.g. text/html or inode/directory)"));
+
+  options.add("select", ki18n("For URLs that point to files, opens the directory and selects the file, instead of opening the actual file"));
+
+  options.add("+[URL]", ki18n("Location to open"));
 
   KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
   KCmdLineArgs::addTempFileOption();
@@ -103,18 +108,18 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
      }
      if (args->isSet("profile"))
      {
-       QString profile = QString::fromLocal8Bit(args->getOption("profile"));
+       QString profile = args->getOption("profile");
        QString profilePath = profile;
        if (profile[0] != '/')
            profilePath = KStandardDirs::locate( "data", QLatin1String("konqueror/profiles/")+profile );
        QString url;
        QStringList filesToSelect;
        if (args->count() == 1)
-           url = QString::fromLocal8Bit(args->arg(0));
+           url = args->arg(0);
        KUrl kurl(url);
        KParts::URLArgs urlargs;
        if (args->isSet("mimetype"))
-           urlargs.serviceType = QString::fromLocal8Bit(args->getOption("mimetype"));
+           urlargs.serviceType = args->getOption("mimetype");
        if (args->isSet("select")) {
            QString fn = kurl.fileName(KUrl::ObeyTrailingSlash);
            if( !fn.isEmpty() ){
@@ -181,13 +186,13 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
                  if (url.isLocalFile() && QFile::exists(url.path())) // "konqueror index.html"
                      urlToOpen = url;
                  else
-                     urlToOpen = KUrl( KonqMisc::konqFilteredURL(0L, QString::fromLocal8Bit(args->arg(i))) ); // "konqueror slashdot.org"
+                     urlToOpen = KUrl( KonqMisc::konqFilteredURL(0L, args->arg(i)) ); // "konqueror slashdot.org"
 
                  if ( !mainwin ) {
                      KParts::URLArgs urlargs;
                      if (args->isSet("mimetype"))
                      {
-                         urlargs.serviceType = QString::fromLocal8Bit(args->getOption("mimetype"));
+                         urlargs.serviceType = args->getOption("mimetype");
                          kDebug(1202) << "main() : setting serviceType to " << urlargs.serviceType << endl;
                      }
                      if (args->isSet("select"))
