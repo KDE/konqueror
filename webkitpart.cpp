@@ -118,10 +118,10 @@ QWebPage::NavigationRequestResponse WebKitPart::navigationRequested(const QWebNe
 
 KAboutData *WebKitPart::createAboutData()
 {
-    return new KAboutData("webkitpart", I18N_NOOP("Webkit HTML Component"),
-                          /*version*/ "1.0", /*shortDescription*/ "",
+    return new KAboutData("webkitpart", 0, ki18n("Webkit HTML Component"),
+                          /*version*/ "1.0", ki18n(/*shortDescription*/ ""),
                           KAboutData::License_LGPL,
-                          I18N_NOOP("Copyright (c) 2007 Trolltech ASA"));
+                          ki18n("Copyright (c) 2007 Trolltech ASA"));
 }
 
 WebPage::WebPage(WebKitPart *wpart, QWidget *parent)
