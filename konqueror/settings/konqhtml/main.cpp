@@ -55,19 +55,19 @@ KJSParts::KJSParts(QWidget *parent, const QStringList&)
 {
   mConfig = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
   KAboutData *about =
-  new KAboutData(I18N_NOOP("kcmkonqhtml"), I18N_NOOP("Konqueror Browsing Control Module"),
-                0, 0, KAboutData::License_GPL,
-                I18N_NOOP("(c) 1999 - 2001 The Konqueror Developers"));
+  new KAboutData(I18N_NOOP("kcmkonqhtml"), 0, ki18n("Konqueror Browsing Control Module"),
+                0, KLocalizedString(), KAboutData::License_GPL,
+                ki18n("(c) 1999 - 2001 The Konqueror Developers"));
 
-  about->addAuthor("Waldo Bastian",0,"bastian@kde.org");
-  about->addAuthor("David Faure",0,"faure@kde.org");
-  about->addAuthor("Matthias Kalle Dalheimer",0,"kalle@kde.org");
-  about->addAuthor("Lars Knoll",0,"knoll@kde.org");
-  about->addAuthor("Dirk Mueller",0,"mueller@kde.org");
-  about->addAuthor("Daniel Molkentin",0,"molkentin@kde.org");
-  about->addAuthor("Wynn Wilkes",0,"wynnw@caldera.com");
+  about->addAuthor(ki18n("Waldo Bastian"),KLocalizedString(),"bastian@kde.org");
+  about->addAuthor(ki18n("David Faure"),KLocalizedString(),"faure@kde.org");
+  about->addAuthor(ki18n("Matthias Kalle Dalheimer"),KLocalizedString(),"kalle@kde.org");
+  about->addAuthor(ki18n("Lars Knoll"),KLocalizedString(),"knoll@kde.org");
+  about->addAuthor(ki18n("Dirk Mueller"),KLocalizedString(),"mueller@kde.org");
+  about->addAuthor(ki18n("Daniel Molkentin"),KLocalizedString(),"molkentin@kde.org");
+  about->addAuthor(ki18n("Wynn Wilkes"),KLocalizedString(),"wynnw@caldera.com");
 
-  about->addCredit("Leo Savernik",I18N_NOOP("JavaScript access controls\n"
+  about->addCredit(ki18n("Leo Savernik"),ki18n("JavaScript access controls\n"
     			"Per-domain policies extensions"),
 			"l.savernik@aon.at");
 

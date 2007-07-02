@@ -65,18 +65,20 @@ K_GLOBAL_STATIC_WITH_ARGS(KComponentData, s_instance, ("kfmclient"))
 
 static void needInstance();
 
-static const KCmdLineOptions options[] =
-{
-   { "noninteractive", I18N_NOOP("Non interactive use: no message boxes"), 0},
-   { "commands", I18N_NOOP("Show available commands"), 0},
-   { "+command", I18N_NOOP("Command (see --commands)"), 0},
-   { "+[URL(s)]", I18N_NOOP("Arguments for command"), 0},
-   KCmdLineLastOption
-};
-
 extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
 {
-  KCmdLineArgs::init(argc, argv, appName, programName, description, version, false);
+  KCmdLineArgs::init(argc, argv, appName, 0, ki18n(programName), version, ki18n(description), false);
+
+
+  KCmdLineOptions options;
+
+  options.add("noninteractive", ki18n("Non interactive use: no message boxes"));
+
+  options.add("commands", ki18n("Show available commands"));
+
+  options.add("+command", ki18n("Command (see --commands)"));
+
+  options.add("+[URL(s)]", ki18n("Arguments for command"));
 
   KCmdLineArgs::addCmdLineOptions( options );
   KCmdLineArgs::addTempFileOption();
@@ -468,7 +470,7 @@ bool ClientApp::doIt()
   if ( !args->isSet( "ninteractive" ) ) {
       s_interactive = false;
   }
-  QByteArray command = args->arg(0);
+  QString command = args->arg(0);
 
 #ifdef Q_WS_X11
   // read ASN env. variable for non-KApp cases
@@ -497,7 +499,7 @@ bool ClientApp::doIt()
     }
     if ( argc == 3 )
     {
-      return createNewWindow( args->url(1), command == "newTab", tempFile, QLatin1String(args->arg(2)) );
+      return createNewWindow( args->url(1), command == "newTab", tempFile, args->arg(2) );
     }
   }
   else if ( command == "openProfile" )
@@ -506,11 +508,11 @@ bool ClientApp::doIt()
     QString url;
     if ( argc == 3 )
       url = args->url(2).url();
-    return openProfile( QString::fromLocal8Bit(args->arg(1)), url );
+    return openProfile( args->arg(1), url );
   }
   else
   {
-    fprintf( stderr, "%s", i18n("Syntax Error: Unknown command '%1'\n", QString::fromLocal8Bit(command)).toLocal8Bit().data() );
+    fprintf( stderr, "%s", i18n("Syntax Error: Unknown command '%1'\n", command).toLocal8Bit().data() );
     return false;
   }
   return true;

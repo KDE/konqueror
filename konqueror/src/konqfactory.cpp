@@ -232,48 +232,48 @@ const KAboutData *KonqFactory::aboutData()
 {
   if (!s_aboutData)
   {
-    s_aboutData = new KAboutData( "konqueror", I18N_NOOP("Konqueror"),
+    s_aboutData = new KAboutData( "konqueror", 0, ki18n("Konqueror"),
                         KDE_VERSION_STRING,
-                        I18N_NOOP("Web browser, file manager and document viewer."),
+                        ki18n("Web browser, file manager and document viewer."),
                         KAboutData::License_GPL,
-                        I18N_NOOP("(C) 1999-2007, The Konqueror developers"),
-                        0,
+                        ki18n("(C) 1999-2007, The Konqueror developers"),
+                        KLocalizedString(),
                         I18N_NOOP("http://konqueror.kde.org") );
-    s_aboutData->addAuthor( "David Faure", I18N_NOOP("Developer (framework, parts, JavaScript, I/O library) and maintainer"), "faure@kde.org" );
-    s_aboutData->addAuthor( "Simon Hausmann", I18N_NOOP("Developer (framework, parts)"), "hausmann@kde.org" );
-    s_aboutData->addAuthor( "Michael Reiher", I18N_NOOP("Developer (framework)"), "michael.reiher@gmx.de" );
-    s_aboutData->addAuthor( "Matthias Welk", I18N_NOOP("Developer"), "welk@fokus.gmd.de" );
-    s_aboutData->addAuthor( "Alexander Neundorf", I18N_NOOP("Developer (List views)"), "neundorf@kde.org" );
-    s_aboutData->addAuthor( "Michael Brade", I18N_NOOP("Developer (List views, I/O library)"), "brade@kde.org" );
-    s_aboutData->addAuthor( "Lars Knoll", I18N_NOOP("Developer (HTML rendering engine)"), "knoll@kde.org" );
-    s_aboutData->addAuthor( "Dirk Mueller", I18N_NOOP("Developer (HTML rendering engine)"), "mueller@kde.org" );
-    s_aboutData->addAuthor( "Peter Kelly", I18N_NOOP("Developer (HTML rendering engine)"), "pmk@post.com" );
-    s_aboutData->addAuthor( "Waldo Bastian", I18N_NOOP("Developer (HTML rendering engine, I/O library)"), "bastian@kde.org" );
-    s_aboutData->addAuthor( "Germain Garand", I18N_NOOP("Developer (HTML rendering engine)"), "germain@ebooksfrance.org" );
-    s_aboutData->addAuthor( "Leo Savernik", I18N_NOOP("Developer (HTML rendering engine)"), "l.savernik@aon.at" );
-    s_aboutData->addAuthor( "Stephan Kulow", I18N_NOOP("Developer (HTML rendering engine, I/O library, regression test framework)"), "coolo@kde.org" );
-    s_aboutData->addAuthor( "Antti Koivisto", I18N_NOOP("Developer (HTML rendering engine)"), "koivisto@kde.org" );
-    s_aboutData->addAuthor( "Zack Rusin",  I18N_NOOP("Developer (HTML rendering engine)"), "zack@kde.org" );
-    s_aboutData->addAuthor( "Tobias Anton", I18N_NOOP( "Developer (HTML rendering engine)" ), "anton@stud.fbi.fh-darmstadt.de" );
-    s_aboutData->addAuthor( "Lubos Lunak", I18N_NOOP( "Developer (HTML rendering engine)" ), "l.lunak@kde.org" );
-    s_aboutData->addAuthor( "Allan Sandfeld Jensen", I18N_NOOP( "Developer (HTML rendering engine)" ), "kde@carewolf.com" );
-    s_aboutData->addAuthor( "Apple Safari Developers", I18N_NOOP("Developer (HTML rendering engine, JavaScript)"), "" );
-    s_aboutData->addAuthor( "Harri Porten", I18N_NOOP("Developer (JavaScript)"), "porten@kde.org" );
-    s_aboutData->addAuthor( "Koos Vriezen", I18N_NOOP("Developer (Java applets and other embedded objects)"), "koos.vriezen@xs4all.nl" );
-    s_aboutData->addAuthor( "Matt Koss", I18N_NOOP("Developer (I/O library)"), "koss@miesto.sk" );
-    s_aboutData->addAuthor( "Alex Zepeda", I18N_NOOP("Developer (I/O library)"), "zipzippy@sonic.net" );
-    s_aboutData->addAuthor( "Richard Moore", I18N_NOOP("Developer (Java applet support)"), "rich@kde.org" );
-    s_aboutData->addAuthor( "Dima Rogozin", I18N_NOOP("Developer (Java applet support)"), "dima@mercury.co.il" );
-    s_aboutData->addAuthor( "Wynn Wilkes", I18N_NOOP("Developer (Java 2 security manager support,\n and other major improvements to applet support)"), "wynnw@calderasystems.com" );
-    s_aboutData->addAuthor( "Stefan Schimanski", I18N_NOOP("Developer (Netscape plugin support)"), "schimmi@kde.org" );
-    s_aboutData->addAuthor( "George Staikos", I18N_NOOP("Developer (SSL, Netscape plugins)"), "staikos@kde.org" );
-    s_aboutData->addAuthor( "Dawit Alemayehu",I18N_NOOP("Developer (I/O library, Authentication support)"), "adawit@kde.org" );
-    s_aboutData->addAuthor( "Carsten Pfeiffer",I18N_NOOP("Developer (framework)"), "pfeiffer@kde.org" );
-    s_aboutData->addAuthor( "Torsten Rahn", I18N_NOOP("Graphics/icons"), "torsten@kde.org" );
-    s_aboutData->addAuthor( "Torben Weis", I18N_NOOP("KFM author"), "weis@kde.org" );
-    s_aboutData->addAuthor( "Joseph Wenninger", I18N_NOOP("Developer (navigation panel framework)"),"jowenn@kde.org");
-    s_aboutData->addAuthor( "Stephan Binner", I18N_NOOP("Developer (misc stuff)"),"binner@kde.org");
-    s_aboutData->addAuthor( "Ivor Hewitt", I18N_NOOP("Developer (AdBlock filter)"),"ivor@ivor.org");
+    s_aboutData->addAuthor( ki18n("David Faure"), ki18n("Developer (framework, parts, JavaScript, I/O library) and maintainer"), "faure@kde.org" );
+    s_aboutData->addAuthor( ki18n("Simon Hausmann"), ki18n("Developer (framework, parts)"), "hausmann@kde.org" );
+    s_aboutData->addAuthor( ki18n("Michael Reiher"), ki18n("Developer (framework)"), "michael.reiher@gmx.de" );
+    s_aboutData->addAuthor( ki18n("Matthias Welk"), ki18n("Developer"), "welk@fokus.gmd.de" );
+    s_aboutData->addAuthor( ki18n("Alexander Neundorf"), ki18n("Developer (List views)"), "neundorf@kde.org" );
+    s_aboutData->addAuthor( ki18n("Michael Brade"), ki18n("Developer (List views, I/O library)"), "brade@kde.org" );
+    s_aboutData->addAuthor( ki18n("Lars Knoll"), ki18n("Developer (HTML rendering engine)"), "knoll@kde.org" );
+    s_aboutData->addAuthor( ki18n("Dirk Mueller"), ki18n("Developer (HTML rendering engine)"), "mueller@kde.org" );
+    s_aboutData->addAuthor( ki18n("Peter Kelly"), ki18n("Developer (HTML rendering engine)"), "pmk@post.com" );
+    s_aboutData->addAuthor( ki18n("Waldo Bastian"), ki18n("Developer (HTML rendering engine, I/O library)"), "bastian@kde.org" );
+    s_aboutData->addAuthor( ki18n("Germain Garand"), ki18n("Developer (HTML rendering engine)"), "germain@ebooksfrance.org" );
+    s_aboutData->addAuthor( ki18n("Leo Savernik"), ki18n("Developer (HTML rendering engine)"), "l.savernik@aon.at" );
+    s_aboutData->addAuthor( ki18n("Stephan Kulow"), ki18n("Developer (HTML rendering engine, I/O library, regression test framework)"), "coolo@kde.org" );
+    s_aboutData->addAuthor( ki18n("Antti Koivisto"), ki18n("Developer (HTML rendering engine)"), "koivisto@kde.org" );
+    s_aboutData->addAuthor( ki18n("Zack Rusin"),  ki18n("Developer (HTML rendering engine)"), "zack@kde.org" );
+    s_aboutData->addAuthor( ki18n("Tobias Anton"), ki18n( "Developer (HTML rendering engine)" ), "anton@stud.fbi.fh-darmstadt.de" );
+    s_aboutData->addAuthor( ki18n("Lubos Lunak"), ki18n( "Developer (HTML rendering engine)" ), "l.lunak@kde.org" );
+    s_aboutData->addAuthor( ki18n("Allan Sandfeld Jensen"), ki18n( "Developer (HTML rendering engine)" ), "kde@carewolf.com" );
+    s_aboutData->addAuthor( ki18n("Apple Safari Developers"), ki18n("Developer (HTML rendering engine, JavaScript)"));
+    s_aboutData->addAuthor( ki18n("Harri Porten"), ki18n("Developer (JavaScript)"), "porten@kde.org" );
+    s_aboutData->addAuthor( ki18n("Koos Vriezen"), ki18n("Developer (Java applets and other embedded objects)"), "koos.vriezen@xs4all.nl" );
+    s_aboutData->addAuthor( ki18n("Matt Koss"), ki18n("Developer (I/O library)"), "koss@miesto.sk" );
+    s_aboutData->addAuthor( ki18n("Alex Zepeda"), ki18n("Developer (I/O library)"), "zipzippy@sonic.net" );
+    s_aboutData->addAuthor( ki18n("Richard Moore"), ki18n("Developer (Java applet support)"), "rich@kde.org" );
+    s_aboutData->addAuthor( ki18n("Dima Rogozin"), ki18n("Developer (Java applet support)"), "dima@mercury.co.il" );
+    s_aboutData->addAuthor( ki18n("Wynn Wilkes"), ki18n("Developer (Java 2 security manager support,\n and other major improvements to applet support)"), "wynnw@calderasystems.com" );
+    s_aboutData->addAuthor( ki18n("Stefan Schimanski"), ki18n("Developer (Netscape plugin support)"), "schimmi@kde.org" );
+    s_aboutData->addAuthor( ki18n("George Staikos"), ki18n("Developer (SSL, Netscape plugins)"), "staikos@kde.org" );
+    s_aboutData->addAuthor( ki18n("Dawit Alemayehu"),ki18n("Developer (I/O library, Authentication support)"), "adawit@kde.org" );
+    s_aboutData->addAuthor( ki18n("Carsten Pfeiffer"),ki18n("Developer (framework)"), "pfeiffer@kde.org" );
+    s_aboutData->addAuthor( ki18n("Torsten Rahn"), ki18n("Graphics/icons"), "torsten@kde.org" );
+    s_aboutData->addAuthor( ki18n("Torben Weis"), ki18n("KFM author"), "weis@kde.org" );
+    s_aboutData->addAuthor( ki18n("Joseph Wenninger"), ki18n("Developer (navigation panel framework)"),"jowenn@kde.org");
+    s_aboutData->addAuthor( ki18n("Stephan Binner"), ki18n("Developer (misc stuff)"),"binner@kde.org");
+    s_aboutData->addAuthor( ki18n("Ivor Hewitt"), ki18n("Developer (AdBlock filter)"),"ivor@ivor.org");
   }
   return s_aboutData;
 }

@@ -118,11 +118,10 @@ int main(int argc, char** argv)
 #endif
    // QXtEventLoop integrator( "nspluginviewer" );
    parseCommandLine(argc, argv);
-   KLocale::setMainCatalog("nsplugin");
 
    kDebug(1430) << "4 - create KApplication" << endl;
 
-   KCmdLineArgs::init(argc, argv, "nspluginviewer", "nspluginviewer", "", "");
+   KCmdLineArgs::init(argc, argv, "nspluginviewer", "nsplugin", ki18n("nspluginviewer"), "");
    KApplication app;
 
    {

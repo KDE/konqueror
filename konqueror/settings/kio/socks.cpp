@@ -58,11 +58,11 @@ KSocksConfig::KSocksConfig(const KComponentData &componentData, QWidget *parent)
 {
 
   KAboutData *about =
-  new KAboutData(I18N_NOOP("kcmsocks"), I18N_NOOP("KDE SOCKS Control Module"),
-                0, 0, KAboutData::License_GPL,
-                I18N_NOOP("(c) 2001 George Staikos"));
+  new KAboutData(I18N_NOOP("kcmsocks"), 0, ki18n("KDE SOCKS Control Module"),
+                0, KLocalizedString(), KAboutData::License_GPL,
+                ki18n("(c) 2001 George Staikos"));
 
-  about->addAuthor("George Staikos", 0, "staikos@kde.org");
+  about->addAuthor(ki18n("George Staikos"), KLocalizedString(), "staikos@kde.org");
 
   setAboutData( about );
 

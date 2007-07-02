@@ -537,21 +537,17 @@ void sigChildHandler(int)
    errno = saved_errno;
 }
 
-static KCmdLineOptions options[] =
-{
-   { "verbose",    I18N_NOOP("Show progress output for GUI"), 0 },
-   KCmdLineLastOption
-};
-
 
 int main( int argc, char **argv )
 {
-    KAboutData aboutData( "nspluginscan", I18N_NOOP("nspluginscan"),
-                          "0.3", "nspluginscan", KAboutData::License_GPL,
-                          "(c) 2000,2001 by Stefan Schimanski" );
+    KAboutData aboutData( "nspluginscan", "nsplugin", ki18n("nspluginscan"),
+                          "0.3", ki18n("nspluginscan"), KAboutData::License_GPL,
+                          ki18n("(c) 2000,2001 by Stefan Schimanski") );
 
-    KLocale::setMainCatalog("nsplugin");
     KCmdLineArgs::init( argc, argv, &aboutData );
+
+    KCmdLineOptions options;
+    options.add("verbose", ki18n("Show progress output for GUI"));
     KCmdLineArgs::addCmdLineOptions( options );
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 

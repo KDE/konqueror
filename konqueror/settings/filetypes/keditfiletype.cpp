@@ -118,25 +118,21 @@ void FileTypeDialog::slotDatabaseChanged()
 
 #include "keditfiletype.moc"
 
-static KCmdLineOptions options[] =
-{
-  { "parent <winid>", I18N_NOOP("Makes the dialog transient for the window specified by winid"), 0 },
-  { "+mimetype",  I18N_NOOP("File type to edit (e.g. text/html)"), 0 },
-  KCmdLineLastOption
-};
-
 int main(int argc, char ** argv)
 {
   KServiceTypeProfile::setConfigurationMode();
-  KLocale::setMainCatalog("filetypes");
-  KAboutData aboutData( "keditfiletype", I18N_NOOP("KEditFileType"), "1.0",
-                        I18N_NOOP("KDE file type editor - simplified version for editing a single file type"),
+  KAboutData aboutData( "keditfiletype", "filetypes", ki18n("KEditFileType"), "1.0",
+                        ki18n("KDE file type editor - simplified version for editing a single file type"),
                         KAboutData::License_GPL,
-                        I18N_NOOP("(c) 2000, KDE developers") );
-  aboutData.addAuthor("Preston Brown",0, "pbrown@kde.org");
-  aboutData.addAuthor("David Faure",0, "faure@kde.org");
+                        ki18n("(c) 2000, KDE developers") );
+  aboutData.addAuthor(ki18n("Preston Brown"),KLocalizedString(), "pbrown@kde.org");
+  aboutData.addAuthor(ki18n("David Faure"),KLocalizedString(), "faure@kde.org");
 
   KCmdLineArgs::init( argc, argv, &aboutData );
+
+  KCmdLineOptions options;
+  options.add("parent <winid>", ki18n("Makes the dialog transient for the window specified by winid"));
+  options.add("+mimetype", ki18n("File type to edit (e.g. text/html)"));
   KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
   KApplication app;
   KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
