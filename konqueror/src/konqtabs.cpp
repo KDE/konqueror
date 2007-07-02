@@ -24,10 +24,11 @@
 #include <QtGui/QApplication>
 #include <QtGui/QClipboard>
 #include <QtGui/QMenu>
-#include <QtGui/QToolButton>
+#include <QtGui/QPushButton>
 #include <QtGui/QKeyEvent>
 
 #include <kapplication.h>
+#include <kcolorscheme.h>
 #include <kdebug.h>
 #include <kiconloader.h>
 #include <klocale.h>
@@ -65,6 +66,7 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
     m_closeOtherTabsId(0)
 {
   KAcceleratorManager::setNoAccel(this);
+  setStyleSheet("QTabWidget { border: none; }");
 
   tabBar()->setWhatsThis(i18n( "This bar contains the list of currently open tabs. Click on a tab to make it "
 			  "active. The option to show a close button instead of the website icon in the left "
@@ -98,7 +100,8 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
            m_pViewManager->mainWindow(), SLOT( slotRemoveTabPopup() ) );
 
   if ( KonqSettings::addTabButton() ) {
-    m_leftWidget = new QToolButton( this );
+    m_leftWidget = new QPushButton( this );
+    m_leftWidget->setFlat(true);
     connect( m_leftWidget, SIGNAL( clicked() ),
              m_pViewManager->mainWindow(), SLOT( slotAddTab() ) );
     m_leftWidget->setIcon( KIcon( "tab-new" ) );
@@ -107,7 +110,8 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
     setCornerWidget( m_leftWidget, Qt::TopLeftCorner );
   }
   if ( KonqSettings::closeTabButton() ) {
-    m_rightWidget = new QToolButton( this );
+    m_rightWidget = new QPushButton( this );
+    m_rightWidget->setFlat(true);
     connect( m_rightWidget, SIGNAL( clicked() ),
              m_pViewManager->mainWindow(), SLOT( slotRemoveTab() ) );
     m_rightWidget->setIcon( KIcon( "tab-remove" ) );
