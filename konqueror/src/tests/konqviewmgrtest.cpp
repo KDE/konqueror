@@ -127,13 +127,13 @@ void ViewMgrTest::testCreateFirstView()
     //for ( QWidget* w = partWidget; w; w = w->parentWidget() )
     //    qDebug() << w << w->geometry();
     QVERIFY( frame->width() > 680 );
-    QVERIFY( frame->height() > 300 );
+    QVERIFY( frame->height() > 300 ); // 325
     //qDebug() << "partWidget geom:" << partWidget->geometry();
     QVERIFY( partWidget->width() > 680 );
-    QVERIFY( partWidget->height() > 300 );
+    QVERIFY( partWidget->height() > 290 ); // 295 (325 - statusbar)
     //qDebug() << "tabWidget geom: " << tabWidget->geometry();
     QVERIFY( tabWidget->width() > 680 );
-    QVERIFY( tabWidget->height() > 300 );
+    QVERIFY( tabWidget->height() > 300 ); // 329
 }
 
 void ViewMgrTest::testRemoveFirstView()
@@ -158,7 +158,6 @@ void ViewMgrTest::testSplitView()
     // Or registring views to the visitor... or to a registry used by the visitor, rather.
     KonqView* view2 = viewMgr.splitView( view, Qt::Horizontal );
     QVERIFY( view2 );
-    QCOMPARE( view->frame()->parentContainer(), view2->frame()->parentContainer() );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, one splitter, two frames
 
     // Check widget parents
@@ -167,16 +166,29 @@ void ViewMgrTest::testSplitView()
     QCOMPARE( partWidget->topLevelWidget(), &mainWindow );
     QWidget* frame = view->frame()->asQWidget();
     QCOMPARE( partWidget->parentWidget(), frame );
+    QVERIFY(!frame->isHidden());
 
     QWidget* part2Widget = view2->part()->widget();
     QCOMPARE( part2Widget->topLevelWidget(), &mainWindow );
     QWidget* frame2 = view2->frame()->asQWidget();
     QCOMPARE( part2Widget->parentWidget(), frame2 );
+    QVERIFY(!frame2->isHidden());
+
+    // Check container
+    QVERIFY(view->frame()->parentContainer()->frameType() == "Container");
+    KonqFrameContainer* container = static_cast<KonqFrameContainer *>(view->frame()->parentContainer());
+    QVERIFY(container);
+    QCOMPARE(container->count(), 2);
+    QCOMPARE(container, view2->frame()->parentContainer());
+    QCOMPARE(container->firstChild(), view->frame());
+    QCOMPARE(container->secondChild(), view2->frame());
+    QCOMPARE(container->widget(0), view->frame()->asQWidget());
+    QCOMPARE(container->widget(1), view2->frame()->asQWidget());
 
     // Check frame geometries
     sendAllPendingResizeEvents( &mainWindow );
     //for ( QWidget* w = partWidget; w; w = w->parentWidget() )
-    //    qDebug() << w << w->geometry();
+    //    qDebug() << w << w->geometry() << "visible:" << w->isVisible();
 
     //qDebug() << "view geom:" << frame->geometry();
     QVERIFY( frame->width() > 300 && frame->width() < 400 ); // horiz split, so half the mainwindow width
@@ -187,9 +199,9 @@ void ViewMgrTest::testSplitView()
     QCOMPARE( frame->size(), frame2->size() );
     //qDebug() << "partWidget geom:" << partWidget->geometry();
     QVERIFY( partWidget->width() > 300 && partWidget->width() < 400 ); // horiz split, so half the mainwindow width
-    QVERIFY( partWidget->height() > 300 );
+    QVERIFY( partWidget->height() > 290 );
     QVERIFY( part2Widget->width() > 300 && part2Widget->width() < 400 ); // horiz split, so half the mainwindow width
-    QVERIFY( part2Widget->height() > 300 );
+    QVERIFY( part2Widget->height() > 290 );
 
     //KonqFrameContainerBase* container = view->frame()->parentContainer();
     //QVERIFY( container );

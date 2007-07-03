@@ -5666,9 +5666,6 @@ void KonqMainWindow::dumpViewList()
 
 // KonqFrameContainerBase implementation BEGIN
 
-/**
- * Call this after inserting a new frame into the splitter.
- */
 void KonqMainWindow::insertChildFrame( KonqFrameBase * frame, int /*index*/ )
 {
   m_pChildFrame = frame;
@@ -5681,13 +5678,11 @@ void KonqMainWindow::insertChildFrame( KonqFrameBase * frame, int /*index*/ )
   setCentralWidget( frame->asQWidget() );
 }
 
-/**
- * Call this before deleting one of our children.
- */
-void KonqMainWindow::removeChildFrame( KonqFrameBase * /*frame*/ )
+void KonqMainWindow::removeChildFrame(KonqFrameBase* frame)
 {
-  m_pChildFrame = 0;
-  m_pActiveChild = 0;
+    Q_ASSERT(frame == m_pChildFrame);
+    m_pChildFrame = 0;
+    m_pActiveChild = 0;
 }
 
 void KonqMainWindow::saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs, KonqFrameBase* docContainer, int id, int depth ) { if( m_pChildFrame ) m_pChildFrame->saveConfig( config, prefix, saveURLs, docContainer, id, depth); }

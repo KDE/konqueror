@@ -259,7 +259,7 @@ void KonqFrameTabs::removeChildFrame( KonqFrameBase * frame )
 {
   //kDebug(1202) << "KonqFrameTabs::RemoveChildFrame " << this << ". Child " << frame << " removed" << endl;
   if (frame) {
-    removePage(frame->asQWidget());
+    removeTab(indexOf(frame->asQWidget()));
     m_childFrameList.removeAll(frame);
     if (m_rightWidget)
       m_rightWidget->setEnabled( m_childFrameList.count()>1 );
@@ -371,7 +371,7 @@ void KonqFrameTabs::slotCloseRequest( QWidget *w )
   if ( m_childFrameList.count() > 1 ) {
     // Yes, I know this is an unchecked dynamic_cast - I'm casting sideways in a class hierarchy and it could crash one day, but I haven't checked setWorkingTab so I don't know if it can handle nulls.
     m_pViewManager->mainWindow()->setWorkingTab( dynamic_cast<KonqFrameBase*>(w) );
-    emit ( removeTabPopup() );
+    emit removeTabPopup();
   }
 }
 
@@ -398,7 +398,7 @@ void KonqFrameTabs::slotMouseMiddleClick( QWidget *w )
     if ( m_childFrameList.count() > 1 ) {
       // Yes, I know this is an unchecked dynamic_cast - I'm casting sideways in a class hierarchy and it could crash one day, but I haven't checked setWorkingTab so I don't know if it can handle nulls.
       m_pViewManager->mainWindow()->setWorkingTab( dynamic_cast<KonqFrameBase*>(w) );
-      emit ( removeTabPopup() );
+      emit removeTabPopup();
     }
   }
   else {
@@ -578,22 +578,32 @@ int KonqFrameTabs::tabWhereActive(KonqFrameBase* frame) const
 
 void KonqFrameTabs::setLoading(KonqFrameBase* frame, bool loading)
 {
-    int pos = tabWhereActive(frame);
+    const int pos = tabWhereActive(frame);
     if (pos == -1)
         return;
 
     const KColorScheme colorScheme(KColorScheme::Window);
     QColor color;
     if (loading) {
-        color = colorScheme.foreground(KColorScheme::LinkText); // a tab is currently loading
+        color = colorScheme.foreground(KColorScheme::NeutralText); // a tab is currently loading
     } else {
-        if (currentIndex() != pos)
-            color = colorScheme.foreground(KColorScheme::ActiveText); // another tab has newly loaded contents
-        else
-            color = colorScheme.foreground(KColorScheme::NormalText); // this tab has finished loading
+        if (currentIndex() != pos) {
+            // another tab has newly loaded contents. Use "link" because you can click on it to read it.
+            color = colorScheme.foreground(KColorScheme::LinkText);
+        } else {
+            // the current tab has finished loading.
+            color = colorScheme.foreground(KColorScheme::NormalText);
+        }
     }
     setTabTextColor(pos, color);
 }
 
+void KonqFrameTabs::replaceChildFrame(KonqFrameBase* oldFrame, KonqFrameBase* newFrame)
+{
+    const int index = indexOf(oldFrame->asQWidget());
+    removeChildFrame(oldFrame);
+    insertChildFrame(newFrame, index);
+    setCurrentIndex(index);
+}
 
 #include "konqtabs.moc"
