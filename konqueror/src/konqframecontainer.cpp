@@ -24,6 +24,22 @@
 
 #include "konqframevisitor.h"
 
+void KonqFrameContainerBase::replaceChildFrame(KonqFrameBase* oldFrame, KonqFrameBase* newFrame)
+{
+    removeChildFrame(oldFrame);
+    insertChildFrame(newFrame);
+}
+
+KonqFrameContainer* KonqFrameContainerBase::splitChildFrame(KonqFrameBase* splitFrame, Qt::Orientation orientation)
+{
+    KonqFrameContainer *newContainer = new KonqFrameContainer(orientation, asQWidget(), this);
+    replaceChildFrame(splitFrame, newContainer);
+    newContainer->insertChildFrame(splitFrame);
+    return newContainer;
+}
+
+////
+
 KonqFrameContainer::KonqFrameContainer( Qt::Orientation o,
                                         QWidget* parent,
                                         KonqFrameContainerBase* parentContainer )
@@ -141,50 +157,49 @@ void KonqFrameContainer::setTabIcon( const KUrl &url, QWidget* sender )
       m_pParentContainer->setTabIcon( url, this );
 }
 
-void KonqFrameContainer::insertChildFrame( KonqFrameBase* frame, int /*index*/  )
+void KonqFrameContainer::insertChildFrame(KonqFrameBase* frame, int index)
 {
-  //kDebug(1202) << "KonqFrameContainer " << this << ": insertChildFrame " << frame << endl;
-
-  if (frame)
-  {
-      if( !m_pFirstChild )
-      {
-          m_pFirstChild = frame;
-          frame->setParentContainer(this);
-          //kDebug(1202) << "Setting as first child" << endl;
-      }
-      else if( !m_pSecondChild )
-      {
-          m_pSecondChild = frame;
-          frame->setParentContainer(this);
-          //kDebug(1202) << "Setting as second child" << endl;
-      }
-      else
-        kWarning(1202) << this << " already has two children..."
-                        << m_pFirstChild << " and " << m_pSecondChild << endl;
-  } else
-    kWarning(1202) << "KonqFrameContainer " << this << ": insertChildFrame(0L) !" << endl;
+    //kDebug(1202) << "KonqFrameContainer " << this << ": insertChildFrame " << frame << endl;
+    if (frame) {
+        QSplitter::insertWidget(index, frame->asQWidget());
+        // Insert before existing child? Move first to second.
+        if (index == 0 && m_pFirstChild && !m_pSecondChild) {
+            qSwap( m_pFirstChild, m_pSecondChild );
+        }
+        if( !m_pFirstChild ) {
+            m_pFirstChild = frame;
+            frame->setParentContainer(this);
+            //kDebug(1202) << "Setting as first child" << endl;
+        } else if( !m_pSecondChild ) {
+            m_pSecondChild = frame;
+            frame->setParentContainer(this);
+            //kDebug(1202) << "Setting as second child" << endl;
+        } else {
+            kWarning(1202) << this << " already has two children..."
+                           << m_pFirstChild << " and " << m_pSecondChild << endl;
+        }
+    } else {
+        kWarning(1202) << "KonqFrameContainer " << this << ": insertChildFrame(NULL) !" << endl;
+    }
 }
 
-void KonqFrameContainer::removeChildFrame( KonqFrameBase * frame )
+void KonqFrameContainer::removeChildFrame(KonqFrameBase * frame)
 {
-  //kDebug(1202) << "KonqFrameContainer::RemoveChildFrame " << this << ". Child " << frame << " removed" << endl;
+    //kDebug(1202) << "KonqFrameContainer::RemoveChildFrame " << this << ". Child " << frame << " removed" << endl;
 
-  if( m_pFirstChild == frame )
-  {
-    m_pFirstChild = m_pSecondChild;
-    m_pSecondChild = 0L;
-  }
-  else if( m_pSecondChild == frame )
-    m_pSecondChild = 0L;
-
-  else
-    kWarning(1202) << this << " Can't find this child:" << frame << endl;
+    if( m_pFirstChild == frame ) {
+        m_pFirstChild = m_pSecondChild;
+        m_pSecondChild = 0;
+    } else if( m_pSecondChild == frame ) {
+        m_pSecondChild = 0;
+    } else {
+        kWarning(1202) << this << " Can't find this child:" << frame << endl;
+    }
 }
 
 void KonqFrameContainer::childEvent( QChildEvent *c )
 {
-  // Child events cause layout changes. These are unnecassery if we are going
+  // Child events cause layout changes. These are unnecessary if we are going
   // to be deleted anyway.
   if (!m_bAboutToBeDeleted)
       QSplitter::childEvent(c);
@@ -211,6 +226,15 @@ bool KonqFrameContainer::accept( KonqFrameVisitor* visitor )
     if ( !visitor->endVisit( this ) )
         return false;
     return true;
+}
+
+void KonqFrameContainer::replaceChildFrame(KonqFrameBase* oldFrame, KonqFrameBase* newFrame)
+{
+    const int idx = QSplitter::indexOf(oldFrame->asQWidget());
+    const QList<int> splitterSizes = sizes();
+    removeChildFrame(oldFrame);
+    insertChildFrame(newFrame, idx);
+    setSizes(splitterSizes);
 }
 
 #include "konqframecontainer.moc"

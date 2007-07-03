@@ -112,53 +112,14 @@ KonqView* KonqViewManager::splitView( KonqView* currentView,
   KonqViewFactory newViewFactory = createView( serviceType, currentView->service()->desktopEntryName(), service, partServiceOffers, appServiceOffers, forceAutoEmbed );
 
   if( newViewFactory.isNull() )
-    return 0L; //do not split at all if we can't create the new view
+    return 0; //do not split at all if we can't create the new view
 
   assert( splitFrame );
 
   KonqFrameContainerBase* parentContainer = splitFrame->parentContainer();
 
-  bool moveNewContainer = false;
-  QList<int> splitterSizes;
-  int index= -1;
-
-  if (parentContainer->frameType()=="Container") {
-    moveNewContainer = static_cast<KonqFrameContainer*>(parentContainer)->hasWidgetAfter( splitFrame->asQWidget() );
-    splitterSizes = static_cast<KonqFrameContainer*>(parentContainer)->sizes();
-  }
-  else if (parentContainer->frameType()=="Tabs")
-    index = static_cast<KonqFrameTabs*>(parentContainer)->indexOf( splitFrame->asQWidget() );
-
-#ifndef NDEBUG
-  //printSizeInfo( splitFrame, parentContainer, "before split");
-#endif
-
-  parentContainer->asQWidget()->setUpdatesEnabled( false );
-
-  //kDebug(1202) << "Move out child" << endl;
-  QPoint pos = splitFrame->asQWidget()->pos();
-  parentContainer->removeChildFrame( splitFrame );
-  splitFrame->asQWidget()->setParent( parentContainer->asQWidget()->topLevelWidget() );
-  splitFrame->asQWidget()->move( pos );
-
-  //kDebug(1202) << "Create new Container" << endl;
-  KonqFrameContainer *newContainer = new KonqFrameContainer( orientation, parentContainer->asQWidget(), parentContainer );
+  KonqFrameContainer* newContainer = parentContainer->splitChildFrame(splitFrame, orientation);
   connect(newContainer, SIGNAL(ctrlTabPressed()), m_pMainWindow, SLOT(slotCtrlTabPressed()));
-
-  parentContainer->insertChildFrame( newContainer, index );
-  if ( moveNewContainer ) {
-    static_cast<KonqFrameContainer*>(parentContainer)->insertWidget( 0, newContainer );
-    static_cast<KonqFrameContainer*>(parentContainer)->swapChildren();
-  }
-
-  //kDebug(1202) << "Move in child" << endl;
-  splitFrame->asQWidget()->setParent( newContainer );
-  splitFrame->asQWidget()->move( pos );
-  newContainer->insertChildFrame( splitFrame );
-
-#ifndef NDEBUG
-  //printSizeInfo( splitFrame, parentContainer, "after reparent" );
-#endif
 
   //kDebug(1202) << "Create new child" << endl;
   KonqView *newView = setupView( newContainer, newViewFactory, service, partServiceOffers, appServiceOffers, serviceType, false );
@@ -167,29 +128,17 @@ KonqView* KonqViewManager::splitView( KonqView* currentView,
   //printSizeInfo( splitFrame, parentContainer, "after child insert" );
 #endif
 
-  if ( newOneFirst )
-  {
-    newContainer->addWidget( splitFrame->asQWidget() );
+  newContainer->insertWidget(newOneFirst ? 0 : 1, newView->frame());
+  if ( newOneFirst ) {
     newContainer->swapChildren();
   }
 
+  Q_ASSERT(newContainer->count() == 2);
   QList<int> newSplitterSizes;
   newSplitterSizes << 50 << 50;
   newContainer->setSizes( newSplitterSizes );
-
-  if (parentContainer->frameType()=="Container") {
-    static_cast<KonqFrameContainer*>(parentContainer)->setSizes( splitterSizes );
-  }
-  else if (parentContainer->frameType()=="Tabs") {
-    KonqFrameTabs* pc = static_cast<KonqFrameTabs*>(parentContainer);
-    pc->setCurrentIndex( pc->indexOf( newContainer ) );
-  }
-
   splitFrame->show();
-  //newView->frame()->show();
   newContainer->show();
-
-  parentContainer->asQWidget()->setUpdatesEnabled( true );
 
   assert( newView->frame() );
   assert( newView->part() );
@@ -575,6 +524,7 @@ void KonqViewManager::removeView( KonqView *view )
       index = static_cast<KonqFrameTabs*>(grandParentContainer)->indexOf( parentContainer->asQWidget() );
     else if (grandParentContainer->frameType()=="Container")
     {
+        // TODO remove hasWidgetAfter after refactoring this line away.
       moveOtherChild = static_cast<KonqFrameContainer*>(grandParentContainer)->hasWidgetAfter( parentContainer->asQWidget() );
       splitterSizes = static_cast<KonqFrameContainer*>(grandParentContainer)->sizes();
     }

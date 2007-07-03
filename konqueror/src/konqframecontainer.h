@@ -29,16 +29,25 @@
 class KonqFrameContainerBase : public KonqFrameBase
 {
 public:
-  virtual ~KonqFrameContainerBase() {}
+    virtual ~KonqFrameContainerBase() {}
 
-  /**
-   * Call this after inserting a new frame into the container.
-   */
-  virtual void insertChildFrame( KonqFrameBase * frame, int index = -1 ) = 0;
-  /**
-   * Call this before deleting one of our children.
-   */
-  virtual void removeChildFrame( KonqFrameBase * frame ) = 0;
+    /**
+     * Insert a new frame into the container.
+     */
+    virtual void insertChildFrame(KonqFrameBase * frame, int index = -1 ) = 0;
+    /**
+     * Call this before deleting one of our children.
+     */
+    virtual void removeChildFrame( KonqFrameBase * frame ) = 0;
+
+    /**
+     * Replace a child frame with another
+     */
+    virtual void replaceChildFrame(KonqFrameBase* oldFrame, KonqFrameBase* newFrame);
+    /**
+     * Split one of our child frames
+     */
+    KonqFrameContainer* splitChildFrame(KonqFrameBase* frame, Qt::Orientation orientation);
 
     virtual bool isContainer() const { return true; }
 
@@ -100,14 +109,16 @@ public:
   virtual QWidget* asQWidget() { return this; }
   virtual QByteArray frameType() { return QByteArray("Container"); }
 
-  /**
-   * Call this after inserting a new frame into the splitter.
-   */
-  void insertChildFrame( KonqFrameBase * frame, int index = -1 );
-  /**
-   * Call this before deleting one of our children.
-   */
-  void removeChildFrame( KonqFrameBase * frame );
+    /**
+     * Insert a new frame into the splitter.
+     */
+    void insertChildFrame(KonqFrameBase * frame, int index = -1);
+    /**
+     * Call this before deleting one of our children.
+     */
+    void removeChildFrame(KonqFrameBase * frame);
+
+    virtual void replaceChildFrame(KonqFrameBase* oldFrame, KonqFrameBase* newFrame);
 
   //inherited
   virtual void reparentFrame(QWidget * parent,

@@ -67,15 +67,17 @@ public:
 
   void activateChild();
 
-  /**
-   * Call this after inserting a new frame into the container.
-   */
-  void insertChildFrame( KonqFrameBase * frame, int index = -1);
+    /**
+     * Insert a new frame into the container.
+     */
+    void insertChildFrame(KonqFrameBase * frame, int index = -1);
 
-  /**
-   * Call this before deleting one of our children.
-   */
-  void removeChildFrame( KonqFrameBase * frame );
+    /**
+     * Call this before deleting one of our children.
+     */
+    void removeChildFrame( KonqFrameBase * frame );
+
+    virtual void replaceChildFrame(KonqFrameBase* oldFrame, KonqFrameBase* newFrame);
 
   //inherited
   virtual void reparentFrame(QWidget * parent,

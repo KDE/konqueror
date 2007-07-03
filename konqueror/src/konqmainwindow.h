@@ -152,8 +152,9 @@ public:
 
   void reparseConfiguration();
 
-  void insertChildView( KonqView *childView );
-  void removeChildView( KonqView *childView );
+    virtual void insertChildView(KonqView *childView);
+    virtual void removeChildView(KonqView *childView);
+
   KonqView *childView( KParts::ReadOnlyPart *view );
   KonqView *childView( KParts::ReadOnlyPart *callingPart, const QString &name, KParts::BrowserHostExtension **hostExtension, KParts::ReadOnlyPart **part );
 
@@ -258,18 +259,18 @@ public:
   void dumpViewList();
 #endif
 
-  // KonqFrameContainerBase implementation BEGIN
+    // KonqFrameContainerBase implementation BEGIN
 
-  virtual bool accept( KonqFrameVisitor* visitor );
+    virtual bool accept( KonqFrameVisitor* visitor );
 
-  /**
-   * Call this after inserting a new frame into the container.
-   */
-  void insertChildFrame( KonqFrameBase * frame, int index = -1 );
-  /**
-   * Call this before deleting one of our children.
-   */
-  void removeChildFrame( KonqFrameBase * frame );
+    /**
+     * Insert a new frame as the mainwindow's child
+     */
+    virtual void insertChildFrame(KonqFrameBase * frame, int index = -1 );
+    /**
+     * Call this before deleting one of our children.
+     */
+    virtual void removeChildFrame( KonqFrameBase * frame );
 
   void saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs, KonqFrameBase* docContainer, int id = 0, int depth = 0 );
 
