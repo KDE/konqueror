@@ -104,10 +104,10 @@ KonqView* KonqViewManager::splitView( KonqView* currentView,
 #endif
 
   KonqFrame* splitFrame = currentView->frame();
+  const QString serviceType = currentView->serviceType();
 
   KService::Ptr service;
   KService::List partServiceOffers, appServiceOffers;
-  const QString serviceType = currentView->serviceType();
 
   KonqViewFactory newViewFactory = createView( serviceType, currentView->service()->desktopEntryName(), service, partServiceOffers, appServiceOffers, forceAutoEmbed );
 
@@ -160,61 +160,42 @@ KonqView* KonqViewManager::splitMainContainer( KonqView* currentView,
                                                const QString &serviceName,
                                                bool newOneFirst )
 {
-  kDebug(1202) << "KonqViewManager::splitMainContainer()" << endl;
+    kDebug(1202) << "KonqViewManager::splitMainContainer()" << endl;
 
-  KUrl url = currentView->url();
-  QString locationBarURL = currentView->locationBarURL();
+    KService::Ptr service;
+    KService::List partServiceOffers, appServiceOffers;
 
-  KService::Ptr service;
-  KService::List partServiceOffers, appServiceOffers;
+    KonqViewFactory newViewFactory = createView( serviceType, serviceName, service, partServiceOffers, appServiceOffers );
 
-  KonqViewFactory newViewFactory = createView( serviceType, serviceName, service, partServiceOffers, appServiceOffers );
+    if( newViewFactory.isNull() )
+      return 0; //do not split at all if we can't create the new view
 
-  if( newViewFactory.isNull() )
-    return 0L; //do not split at all if we can't create the new view
+    // Get main frame. Note: this is NOT necessarily m_tabContainer!
+    // When having tabs plus a konsole, the main frame is a splitter (KonqFrameContainer).
+    KonqFrameBase* mainFrame = m_pMainWindow->childFrame();
 
-  // Get main frame. Note: this is NOT necessarily m_tabContainer!
-  // When having tabs plus a konsole, the main frame is a splitter (KonqFrameContainer).
-  KonqFrameBase* mainFrame = m_pMainWindow->childFrame();
+    KonqFrameContainer* newContainer = m_pMainWindow->splitChildFrame(mainFrame, orientation);
+    connect(newContainer, SIGNAL(ctrlTabPressed()), m_pMainWindow, SLOT(slotCtrlTabPressed()));
 
-  mainFrame->asQWidget()->setUpdatesEnabled( false );
+    KonqView* childView = setupView( newContainer, newViewFactory, service, partServiceOffers, appServiceOffers, serviceType, true );
 
-  //kDebug(1202) << "Move out child" << endl;
-  QPoint pos = mainFrame->asQWidget()->pos();
-  m_pMainWindow->childFrameRemoved( mainFrame );
+    newContainer->insertWidget(newOneFirst ? 0 : 1, childView->frame());
+    if( newOneFirst ) {
+        newContainer->swapChildren();
+    }
 
-  KonqFrameContainer *newContainer = new KonqFrameContainer( orientation, m_pMainWindow, 0L);
-  connect(newContainer,SIGNAL(ctrlTabPressed()),m_pMainWindow,SLOT(slotCtrlTabPressed()));
+    newContainer->show();
+    newContainer->setActiveChild( mainFrame );
 
-  m_pMainWindow->insertChildFrame( newContainer );
-
-  newContainer->insertChildFrame( mainFrame );
-  mainFrame->asQWidget()->setParent( newContainer );
-  mainFrame->asQWidget()->move( pos );
-
-  KonqView* childView = setupView( newContainer, newViewFactory, service, partServiceOffers, appServiceOffers, serviceType, true );
-
-  if( newOneFirst ) {
-    newContainer->insertWidget( 0, childView->frame() );
-    newContainer->swapChildren();
-  }
-
-  newContainer->show();
-  mainFrame->asQWidget()->show();
-
-  mainFrame->asQWidget()->setUpdatesEnabled( true );
-
-  childView->openUrl( url, locationBarURL );
-
-  newContainer->setActiveChild( mainFrame );
+    childView->openUrl( currentView->url(), currentView->locationBarURL() );
 
 #ifdef DEBUG_VIEWMGR
-  m_pMainWindow->dumpViewList();
-  printFullHierarchy( m_pMainWindow );
-  kDebug(1202) << "KonqViewManager::splitMainContainer() done" << endl;
+    m_pMainWindow->dumpViewList();
+    printFullHierarchy( m_pMainWindow );
+    kDebug(1202) << "KonqViewManager::splitMainContainer() done" << endl;
 #endif
 
-  return childView;
+    return childView;
 }
 
 KonqView* KonqViewManager::addTab(const QString &serviceType, const QString &serviceName, bool passiveMode, bool openAfterCurrentPage  )

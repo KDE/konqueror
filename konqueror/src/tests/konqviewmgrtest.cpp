@@ -154,8 +154,6 @@ void ViewMgrTest::testSplitView()
     KonqView* view = viewMgr.createFirstView( "KonqAboutPage", "konq_aboutpage" );
 
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, tab widget, one frame
-    // TODO also test newOneFirst after improving the visitor... using 'F' + frame->objectName()[0]?
-    // Or registring views to the visitor... or to a registry used by the visitor, rather.
     KonqView* view2 = viewMgr.splitView( view, Qt::Horizontal );
     QVERIFY( view2 );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, one splitter, two frames
@@ -219,6 +217,47 @@ void ViewMgrTest::testSplitView()
 
     // Now test removing the last view
     viewMgr.removeView( view3 );
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, tab widget, one frame
+}
+
+void ViewMgrTest::testSplitMainContainer()
+{
+    KonqMainWindow mainWindow;
+    KonqViewManager viewMgr( &mainWindow );
+    KonqView* view = viewMgr.createFirstView( "KonqAboutPage", "konq_aboutpage" );
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, tab widget, one frame
+    KonqFrameContainerBase* tabContainer = view->frame()->parentContainer();
+    KonqView* view2 = viewMgr.splitMainContainer( view, Qt::Horizontal, "KonqAboutPage", "konq_aboutpage", true );
+    QVERIFY( view2 );
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MC(FT[F]).") ); // mainWindow, splitter, frame, tab widget, one frame
+
+    // Check widget parents
+    QWidget* partWidget = view->part()->widget();
+    QCOMPARE( partWidget->topLevelWidget(), &mainWindow );
+    QWidget* frame = view->frame()->asQWidget();
+    QCOMPARE( partWidget->parentWidget(), frame );
+    QVERIFY(!frame->isHidden());
+
+    QWidget* part2Widget = view2->part()->widget();
+    QCOMPARE( part2Widget->topLevelWidget(), &mainWindow );
+    QWidget* frame2 = view2->frame()->asQWidget();
+    QCOMPARE( part2Widget->parentWidget(), frame2 );
+    QVERIFY(!frame2->isHidden());
+
+    // Check container
+    QVERIFY(view->frame()->parentContainer()->frameType() == "Tabs");
+    QVERIFY(view2->frame()->parentContainer()->frameType() == "Container");
+    KonqFrameContainer* container = static_cast<KonqFrameContainer *>(view2->frame()->parentContainer());
+    QVERIFY(container);
+    QCOMPARE(container->count(), 2);
+    QCOMPARE(container, view2->frame()->parentContainer());
+    QCOMPARE(container->firstChild(), view2->frame());
+    QCOMPARE(container->secondChild(), tabContainer);
+    QCOMPARE(container->widget(0), view2->frame()->asQWidget());
+    QCOMPARE(container->widget(1), tabContainer->asQWidget());
+
+    // Now test removing the view we added last
+    viewMgr.removeView( view2 );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, tab widget, one frame
 }
 
