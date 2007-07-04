@@ -1,5 +1,6 @@
 /*  This file is part of the KDE project
     Copyright (C) 1998, 1999 Michael Reiher <michael.reiher@gmx.de>
+    Copyright 2007 David Faure <faure@kde.org>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -34,12 +35,7 @@ public:
     /**
      * Insert a new frame into the container.
      */
-    virtual void insertChildFrame(KonqFrameBase * frame, int index = -1 ) = 0;
-    /**
-     * Call this before deleting one of our children.
-     */
-    virtual void removeChildFrame( KonqFrameBase * frame ) = 0;
-
+    virtual void insertChildFrame(KonqFrameBase * frame, int index = -1) = 0;
     /**
      * Replace a child frame with another
      */
@@ -49,12 +45,14 @@ public:
      */
     KonqFrameContainer* splitChildFrame(KonqFrameBase* frame, Qt::Orientation orientation);
 
+    /**
+     * Call this before deleting one of our children.
+     */
+    virtual void childFrameRemoved( KonqFrameBase * frame ) = 0;
+
     virtual bool isContainer() const { return true; }
 
   virtual QByteArray frameType() { return QByteArray("ContainerBase"); }
-
-  virtual void reparentFrame(QWidget * parent,
-                             const QPoint & p ) = 0;
 
   KonqFrameBase* activeChild() const { return m_pActiveChild; }
 
@@ -116,20 +114,14 @@ public:
     /**
      * Call this before deleting one of our children.
      */
-    void removeChildFrame(KonqFrameBase * frame);
+    void childFrameRemoved(KonqFrameBase * frame);
 
     virtual void replaceChildFrame(KonqFrameBase* oldFrame, KonqFrameBase* newFrame);
 
-  //inherited
-  virtual void reparentFrame(QWidget * parent,
-                             const QPoint & p );
+    void setAboutToBeDeleted() { m_bAboutToBeDeleted = true; }
 
-  bool hasWidgetAfter( QWidget* w ) const;
-
-  void setAboutToBeDeleted() { m_bAboutToBeDeleted = true; }
-
-  //inherited
-  virtual void childEvent( QChildEvent * );
+protected:
+    virtual void childEvent( QChildEvent * );
 
 Q_SIGNALS:
   void ctrlTabPressed();

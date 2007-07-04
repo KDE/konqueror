@@ -1,5 +1,6 @@
 /*  This file is part of the KDE project
     Copyright (C) 1998, 1999 Michael Reiher <michael.reiher@gmx.de>
+    Copyright 2007 David Faure <faure@kde.org>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -26,7 +27,7 @@
 
 void KonqFrameContainerBase::replaceChildFrame(KonqFrameBase* oldFrame, KonqFrameBase* newFrame)
 {
-    removeChildFrame(oldFrame);
+    childFrameRemoved(oldFrame);
     insertChildFrame(newFrame);
 }
 
@@ -125,17 +126,11 @@ void KonqFrameContainer::copyHistory( KonqFrameBase *other )
 
 KonqFrameBase* KonqFrameContainer::otherChild( KonqFrameBase* child )
 {
-   if( firstChild() == child )
-      return secondChild();
-   else if( secondChild() == child )
-      return firstChild();
-   return 0L;
-}
-
-void KonqFrameContainer::reparentFrame( QWidget* parent, const QPoint & p )
-{
-    setParent( parent );
-    move( p );
+    if( m_pFirstChild == child )
+        return m_pSecondChild;
+    else if( m_pSecondChild == child )
+        return m_pFirstChild;
+    return 0;
 }
 
 void KonqFrameContainer::swapChildren()
@@ -183,7 +178,7 @@ void KonqFrameContainer::insertChildFrame(KonqFrameBase* frame, int index)
     }
 }
 
-void KonqFrameContainer::removeChildFrame(KonqFrameBase * frame)
+void KonqFrameContainer::childFrameRemoved(KonqFrameBase * frame)
 {
     //kDebug(1202) << "KonqFrameContainer::RemoveChildFrame " << this << ". Child " << frame << " removed" << endl;
 
@@ -199,18 +194,10 @@ void KonqFrameContainer::removeChildFrame(KonqFrameBase * frame)
 
 void KonqFrameContainer::childEvent( QChildEvent *c )
 {
-  // Child events cause layout changes. These are unnecessary if we are going
-  // to be deleted anyway.
-  if (!m_bAboutToBeDeleted)
-      QSplitter::childEvent(c);
-}
-
-bool KonqFrameContainer::hasWidgetAfter( QWidget* w ) const
-{
-    int idx = QSplitter::indexOf( w );
-    if ( idx == -1 ) // not found
-        return 0; // not found (in qt3)
-    return QSplitter::widget( idx + 1 ) != 0;
+    // Child events cause layout changes. These are unnecessary if we are going
+    // to be deleted anyway.
+    if (!m_bAboutToBeDeleted)
+        QSplitter::childEvent(c);
 }
 
 bool KonqFrameContainer::accept( KonqFrameVisitor* visitor )
@@ -232,9 +219,11 @@ void KonqFrameContainer::replaceChildFrame(KonqFrameBase* oldFrame, KonqFrameBas
 {
     const int idx = QSplitter::indexOf(oldFrame->asQWidget());
     const QList<int> splitterSizes = sizes();
-    removeChildFrame(oldFrame);
+    childFrameRemoved(oldFrame);
     insertChildFrame(newFrame, idx);
     setSizes(splitterSizes);
 }
+
+// TODO remove hasWidgetAfter
 
 #include "konqframecontainer.moc"

@@ -270,14 +270,11 @@ public:
     /**
      * Call this before deleting one of our children.
      */
-    virtual void removeChildFrame( KonqFrameBase * frame );
+    virtual void childFrameRemoved( KonqFrameBase * frame );
 
   void saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs, KonqFrameBase* docContainer, int id = 0, int depth = 0 );
 
   void copyHistory( KonqFrameBase *other );
-
-  void reparentFrame( QWidget* parent,
-                      const QPoint & p );
 
   void setTitle( const QString &title , QWidget* sender);
   void setTabIcon( const KUrl &url, QWidget* sender );

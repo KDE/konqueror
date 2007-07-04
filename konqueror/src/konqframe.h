@@ -71,9 +71,6 @@ class KonqFrameBase
 
   virtual void copyHistory( KonqFrameBase *other ) = 0;
 
-  virtual void reparentFrame( QWidget* parent,
-                              const QPoint & p ) = 0;
-
   KonqFrameContainerBase* parentContainer() const { return m_pParentContainer; }
   void setParentContainer(KonqFrameContainerBase* parent) { m_pParentContainer = parent; }
 
@@ -157,9 +154,6 @@ public:
 
   virtual void setTitle( const QString &title, QWidget* sender );
   virtual void setTabIcon( const KUrl &url, QWidget* sender );
-
-  virtual void reparentFrame(QWidget * parent,
-                     const QPoint & p );
 
   virtual QWidget* asQWidget() { return this; }
   virtual QByteArray frameType() { return QByteArray("View"); }
