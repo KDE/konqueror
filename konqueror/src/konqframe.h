@@ -79,7 +79,6 @@ class KonqFrameBase
 
   virtual QWidget* asQWidget() = 0;
 
-  virtual void listViews( ChildViewList *viewList ) = 0;
   virtual QByteArray frameType() = 0;
 
   virtual void activateChild() = 0;
@@ -147,7 +146,6 @@ public:
   bool isActivePart();
 
   void setView( KonqView* child );
-  virtual void listViews( ChildViewList *viewList );
 
   virtual void saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs, KonqFrameBase* docContainer, int id = 0, int depth = 0 );
   virtual void copyHistory( KonqFrameBase *other );

@@ -997,7 +997,7 @@ bool KonqMainWindow::makeViewsFollow( const KUrl & url, const KParts::URLArgs &a
   req.args = args;
   // We can't iterate over the map here, and openUrl for each, because the map can get modified
   // (e.g. by part changes). Better copy the views into a list.
-  QList<KonqView*> listViews = m_mapViews.values();
+  const QList<KonqView*> listViews = m_mapViews.values();
 
   QObject *senderFrame = lastFrame( senderView );
 
@@ -5693,8 +5693,6 @@ void KonqMainWindow::setTitle( const QString &/*title*/ , QWidget* /*sender*/) {
 void KonqMainWindow::setTabIcon( const KUrl &/*url*/, QWidget* /*sender*/ ) { return; }
 
 QWidget* KonqMainWindow::asQWidget() { return this; }
-
-void KonqMainWindow::listViews( ChildViewList *viewList ) { if( m_pChildFrame ) m_pChildFrame->listViews( viewList ); }
 
 QByteArray KonqMainWindow::frameType() { return QByteArray("MainWindow"); }
 

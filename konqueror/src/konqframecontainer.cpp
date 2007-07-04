@@ -62,15 +62,6 @@ KonqFrameContainer::~KonqFrameContainer()
     delete m_pSecondChild;
 }
 
-void KonqFrameContainer::listViews( ChildViewList *viewList )
-{
-   if( m_pFirstChild )
-      m_pFirstChild->listViews( viewList );
-
-   if( m_pSecondChild )
-      m_pSecondChild->listViews( viewList );
-}
-
 void KonqFrameContainer::saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs, KonqFrameBase* docContainer, int id, int depth )
 {
   int idSecond = id + (int)pow( 2.0, depth );

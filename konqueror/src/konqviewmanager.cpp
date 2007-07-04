@@ -379,9 +379,7 @@ void KonqViewManager::removeTab( KonqFrameBase* currentFrame )
 
   m_tabContainer->childFrameRemoved(currentFrame);
 
-  QList<KonqView*> viewList;
-  currentFrame->listViews( &viewList );
-
+  const QList<KonqView*> viewList = KonqViewCollector::collect(currentFrame);
   foreach ( KonqView* view, viewList )
   {
     if (view == m_pMainWindow->currentView())
@@ -485,10 +483,9 @@ void KonqViewManager::showTab( KonqView *view )
 
 void KonqViewManager::updatePixmaps()
 {
-  QList<KonqView*> viewList;
-  tabContainer()->listViews( &viewList );
-  foreach ( KonqView* view, viewList )
-    view->setTabIcon( KUrl( view->locationBarURL() ) );
+    const QList<KonqView*> viewList = KonqViewCollector::collect(tabContainer());
+    foreach ( KonqView* view, viewList )
+        view->setTabIcon( KUrl( view->locationBarURL() ) );
 }
 
 void KonqViewManager::removeView( KonqView *view )
@@ -563,7 +560,6 @@ void KonqViewManager::removePart( KParts::Part * part )
   // This is called when a part auto-deletes itself (case 1), or when
   // the "delete view" above deletes, in turn, the part (case 2)
 
-  kDebug(1202) << "Calling KParts::PartManager::removePart " << part << endl;
   KParts::PartManager::removePart( part );
 
   // If we were called by PartManager::slotObjectDestroyed, then the inheritance has
@@ -628,8 +624,7 @@ void KonqViewManager::clear()
 
     if (m_pMainWindow->childFrame() == 0) return;
 
-    QList<KonqView*> viewList;
-    m_pMainWindow->listViews( &viewList );
+    const QList<KonqView*> viewList = KonqViewCollector::collect(m_pMainWindow);
     if ( !viewList.isEmpty() ) {
         kDebug(1202) << viewList.count() << " items" << endl;
 

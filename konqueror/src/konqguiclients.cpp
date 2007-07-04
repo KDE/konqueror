@@ -33,6 +33,7 @@
 #include "konqview.h"
 #include "konqsettingsxt.h"
 #include "konqframe.h"
+#include "konqframevisitor.h"
 #include "konqframestatusbar.h"
 #include "konqviewmanager.h"
 
@@ -290,14 +291,12 @@ void ToggleViewGUIClient::slotToggleView( bool toggle )
   }
   else
   {
-    QList<KonqView*> viewList;
-
-    m_mainWindow->listViews( &viewList );
-
-    foreach ( KonqView* view, viewList )
+    const QList<KonqView*> viewList = KonqViewCollector::collect(m_mainWindow);
+    foreach ( KonqView* view, viewList ) {
       if ( view->service() && view->service()->desktopEntryName() == serviceName )
         // takes care of choosing the new active view, and also calls slotViewRemoved
         viewManager->removeView( view );
+    }
   }
 
 }

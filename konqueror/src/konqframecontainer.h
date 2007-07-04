@@ -90,8 +90,6 @@ public:
 
     virtual bool accept( KonqFrameVisitor* visitor );
 
-  virtual void listViews( ChildViewList *viewList );
-
   virtual void saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs, KonqFrameBase* docContainer, int id = 0, int depth = 0 );
   virtual void copyHistory( KonqFrameBase *other );
 

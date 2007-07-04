@@ -148,11 +148,6 @@ KonqFrameTabs::~KonqFrameTabs()
   m_childFrameList.clear();
 }
 
-void KonqFrameTabs::listViews( ChildViewList *viewList ) {
-  foreach ( KonqFrameBase* frame, m_childFrameList )
-    frame->listViews(viewList);
-}
-
 void KonqFrameTabs::saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs,
                                 KonqFrameBase* docContainer, int id, int depth )
 {

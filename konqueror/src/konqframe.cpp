@@ -83,11 +83,6 @@ bool KonqFrame::isActivePart()
            static_cast<KonqView*>(m_pView) == m_pView->mainWindow()->currentView() );
 }
 
-void KonqFrame::listViews( ChildViewList *viewList )
-{
-  viewList->append( childView() );
-}
-
 void KonqFrame::saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs, KonqFrameBase* docContainer, int /*id*/, int /*depth*/ )
 {
   if (saveURLs)
