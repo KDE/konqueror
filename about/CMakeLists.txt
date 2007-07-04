@@ -1,5 +1,4 @@
 
-project(kioslave-about)
 
 
 
