@@ -194,12 +194,6 @@ void KonqFrameTabs::copyHistory( KonqFrameBase *other )
     }
 }
 
-void KonqFrameTabs::reparentFrame( QWidget* parent, const QPoint & p )
-{
-    setParent( parent );
-    move( p );
-}
-
 void KonqFrameTabs::setTitle( const QString &title , QWidget* sender)
 {
   // kDebug(1202) << "KonqFrameTabs::setTitle( " << title << " , " << sender << " )" << endl;
@@ -255,7 +249,7 @@ void KonqFrameTabs::insertChildFrame( KonqFrameBase* frame, int index )
         kWarning(1202) << "KonqFrameTabs " << this << ": insertChildFrame(0) !" << endl;
 }
 
-void KonqFrameTabs::removeChildFrame( KonqFrameBase * frame )
+void KonqFrameTabs::childFrameRemoved( KonqFrameBase * frame )
 {
   //kDebug(1202) << "KonqFrameTabs::RemoveChildFrame " << this << ". Child " << frame << " removed" << endl;
   if (frame) {
@@ -267,7 +261,7 @@ void KonqFrameTabs::removeChildFrame( KonqFrameBase * frame )
       hideTabBar();
   }
   else
-    kWarning(1202) << "KonqFrameTabs " << this << ": removeChildFrame(0L) !" << endl;
+    kWarning(1202) << "KonqFrameTabs " << this << ": childFrameRemoved(0L) !" << endl;
 
   //kDebug(1202) << "KonqFrameTabs::RemoveChildFrame finished" << endl;
 }
@@ -601,7 +595,7 @@ void KonqFrameTabs::setLoading(KonqFrameBase* frame, bool loading)
 void KonqFrameTabs::replaceChildFrame(KonqFrameBase* oldFrame, KonqFrameBase* newFrame)
 {
     const int index = indexOf(oldFrame->asQWidget());
-    removeChildFrame(oldFrame);
+    childFrameRemoved(oldFrame);
     insertChildFrame(newFrame, index);
     setCurrentIndex(index);
 }

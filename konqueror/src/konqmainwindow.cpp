@@ -5678,7 +5678,7 @@ void KonqMainWindow::insertChildFrame( KonqFrameBase * frame, int /*index*/ )
   setCentralWidget( frame->asQWidget() );
 }
 
-void KonqMainWindow::removeChildFrame(KonqFrameBase* frame)
+void KonqMainWindow::childFrameRemoved(KonqFrameBase* frame)
 {
     Q_ASSERT(frame == m_pChildFrame);
     m_pChildFrame = 0;
@@ -5688,9 +5688,6 @@ void KonqMainWindow::removeChildFrame(KonqFrameBase* frame)
 void KonqMainWindow::saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs, KonqFrameBase* docContainer, int id, int depth ) { if( m_pChildFrame ) m_pChildFrame->saveConfig( config, prefix, saveURLs, docContainer, id, depth); }
 
 void KonqMainWindow::copyHistory( KonqFrameBase *other ) { if( m_pChildFrame ) m_pChildFrame->copyHistory( other ); }
-
-void KonqMainWindow::reparentFrame( QWidget* /*parent*/,
-                                    const QPoint & /*p*/ ) { return; }
 
 void KonqMainWindow::setTitle( const QString &/*title*/ , QWidget* /*sender*/) { return; }
 void KonqMainWindow::setTabIcon( const KUrl &/*url*/, QWidget* /*sender*/ ) { return; }

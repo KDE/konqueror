@@ -181,7 +181,7 @@ KonqView* KonqViewManager::splitMainContainer( KonqView* currentView,
 
   //kDebug(1202) << "Move out child" << endl;
   QPoint pos = mainFrame->asQWidget()->pos();
-  m_pMainWindow->removeChildFrame( mainFrame );
+  m_pMainWindow->childFrameRemoved( mainFrame );
 
   KonqFrameContainer *newContainer = new KonqFrameContainer( orientation, m_pMainWindow, 0L);
   connect(newContainer,SIGNAL(ctrlTabPressed()),m_pMainWindow,SLOT(slotCtrlTabPressed()));
@@ -377,7 +377,7 @@ void KonqViewManager::removeTab( KonqFrameBase* currentFrame )
   if (currentFrame->asQWidget() == m_tabContainer->currentWidget())
     setActivePart( 0L, true );
 
-  m_tabContainer->removeChildFrame(currentFrame);
+  m_tabContainer->childFrameRemoved(currentFrame);
 
   QList<KonqView*> viewList;
   currentFrame->listViews( &viewList );
@@ -509,79 +509,34 @@ void KonqViewManager::removeView( KonqView *view )
 
   if (parentContainer->frameType()=="Container")
   {
+    setActivePart( 0L, true );
+
     kDebug(1202) << "parentContainer is a KonqFrameContainer" << endl;
 
     KonqFrameContainerBase* grandParentContainer = parentContainer->parentContainer();
     kDebug(1202) << "grandParentContainer=" << grandParentContainer << endl;
 
-    setActivePart( 0L, true );
-
-    int index = -1;
-    QList<int> splitterSizes;
-    bool moveOtherChild = false;
-
-    if (grandParentContainer->frameType()=="Tabs")
-      index = static_cast<KonqFrameTabs*>(grandParentContainer)->indexOf( parentContainer->asQWidget() );
-    else if (grandParentContainer->frameType()=="Container")
-    {
-        // TODO remove hasWidgetAfter after refactoring this line away.
-      moveOtherChild = static_cast<KonqFrameContainer*>(grandParentContainer)->hasWidgetAfter( parentContainer->asQWidget() );
-      splitterSizes = static_cast<KonqFrameContainer*>(grandParentContainer)->sizes();
-    }
-
     KonqFrameBase* otherFrame = static_cast<KonqFrameContainer*>(parentContainer)->otherChild( frame );
-    kDebug(1202) << "otherFrame=" << otherFrame << endl;
-
-    if( otherFrame == 0L )
-    {
+    if( !otherFrame ) {
         kWarning(1202) << "KonqViewManager::removeView: This shouldn't happen!" << endl;
         return;
     }
 
-    grandParentContainer->asQWidget()->setUpdatesEnabled( false );
     static_cast<KonqFrameContainer*>(parentContainer)->setAboutToBeDeleted();
 
-    QWidget* mainWindow = otherFrame->asQWidget()->topLevelWidget();
-    //kDebug(1202) << "--- Reparenting otherFrame to mainWindow " << mainWindow << endl;
-    QPoint pos = otherFrame->asQWidget()->pos();
-    otherFrame->reparentFrame( mainWindow, pos );
+    grandParentContainer->replaceChildFrame(parentContainer, otherFrame);
 
     //kDebug(1202) << "--- Removing otherFrame from parentContainer" << endl;
-    parentContainer->removeChildFrame( otherFrame );
+    parentContainer->childFrameRemoved( otherFrame );
 
-    //kDebug(1202) << "--- Removing parentContainer from grandParentContainer" << endl;
-    grandParentContainer->removeChildFrame( parentContainer );
-
-    //kDebug(1202) << "--- Removing view from view list" << endl;
     m_pMainWindow->removeChildView(view);
     //kDebug(1202) << "--- Deleting view " << view << endl;
     delete view; // This deletes the view, which deletes the part, which deletes its widget
 
-    //kDebug(1202) << "--- Deleting parentContainer " << parentContainer
-    //              << ". Its parent is " << parentContainer->asQWidget()->parent() << endl;
     delete parentContainer;
-
-    //kDebug(1202) << "--- Reparenting otherFrame to grandParentContainer" << grandParentContainer << endl;
-    otherFrame->reparentFrame( grandParentContainer->asQWidget(), pos );
-
-    //kDebug(1202) << "--- Inserting otherFrame into grandParentContainer" << grandParentContainer << endl;
-    grandParentContainer->insertChildFrame( otherFrame, index );
-
-    if( moveOtherChild )
-    {
-      static_cast<KonqFrameContainer*>(grandParentContainer)->insertWidget( 0, otherFrame->asQWidget() );
-      static_cast<KonqFrameContainer*>(grandParentContainer)->swapChildren();
-    }
-
-    if (grandParentContainer->frameType()=="Container")
-      static_cast<KonqFrameContainer*>(grandParentContainer)->setSizes( splitterSizes );
-
-    otherFrame->asQWidget()->show();
 
     grandParentContainer->setActiveChild( otherFrame );
     grandParentContainer->activateChild();
-
-    grandParentContainer->asQWidget()->setUpdatesEnabled( true );
   }
   else if (parentContainer->frameType()=="Tabs") {
     kDebug(1202) << "parentContainer " << parentContainer << " is a KonqFrameTabs" << endl;
@@ -688,7 +643,7 @@ void KonqViewManager::clear()
     KonqFrameBase* frame = m_pMainWindow->childFrame();
     Q_ASSERT( frame );
     //kDebug(1202) << "deleting mainFrame " << endl;
-    m_pMainWindow->removeChildFrame( frame ); // will set childFrame() to NULL
+    m_pMainWindow->childFrameRemoved( frame ); // will set childFrame() to NULL
     delete frame;
     // tab container was deleted by the above
     m_tabContainer = 0;

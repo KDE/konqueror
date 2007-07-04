@@ -195,12 +195,6 @@ void KonqFrame::setTabIcon( const KUrl &url, QWidget* /*sender*/ )
   if (m_pParentContainer) m_pParentContainer->setTabIcon( url, this );
 }
 
-void KonqFrame::reparentFrame( QWidget* parent, const QPoint & p )
-{
-    setParent( parent );
-    move( p );
-}
-
 void KonqFrame::slotStatusBarClicked()
 {
   if ( !isActivePart() && m_pView && !m_pView->isPassiveMode() )

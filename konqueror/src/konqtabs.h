@@ -75,13 +75,9 @@ public:
     /**
      * Call this before deleting one of our children.
      */
-    void removeChildFrame( KonqFrameBase * frame );
+    void childFrameRemoved( KonqFrameBase * frame );
 
     virtual void replaceChildFrame(KonqFrameBase* oldFrame, KonqFrameBase* newFrame);
-
-  //inherited
-  virtual void reparentFrame(QWidget * parent,
-                             const QPoint & pos );
 
   void moveTabBackward(int index);
   void moveTabForward(int index);
