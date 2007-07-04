@@ -21,6 +21,10 @@
 #ifndef KONQ_FRAMEVISITOR_H
 #define KONQ_FRAMEVISITOR_H
 
+#include <QList>
+
+class KonqFrameBase;
+class KonqView;
 class KonqFrame;
 class KonqFrameContainer;
 class KonqFrameTabs;
@@ -39,6 +43,15 @@ public:
     virtual bool endVisit(KonqFrameContainer*) { return true; }
     virtual bool endVisit(KonqFrameTabs*) { return true; }
     virtual bool endVisit(KonqMainWindow*) { return true; }
+};
+
+class KonqViewCollector : public KonqFrameVisitor
+{
+public:
+    static QList<KonqView *> collect(KonqFrameBase* topLevel);
+    virtual bool visit(KonqFrame* frame);
+private:
+    QList<KonqView *> m_views;
 };
 
 #endif /* KONQ_FRAMEVISITOR_H */

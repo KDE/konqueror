@@ -19,6 +19,7 @@ set(konqueror_KDEINIT_SRCS
    konqviewmanager.cpp
    konqmisc.cpp
    konqframe.cpp
+   konqframevisitor.cpp
    konqframestatusbar.cpp
    konqframecontainer.cpp
    konqtabs.cpp
