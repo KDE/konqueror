@@ -1,5 +1,4 @@
 
-project(libkonq)
 
 add_subdirectory( pics )
 add_subdirectory( favicons )

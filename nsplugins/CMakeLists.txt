@@ -1,4 +1,3 @@
-project(nsplugins)
 
 if (X11_Xt_LIB)
 

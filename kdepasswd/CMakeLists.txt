@@ -1,5 +1,4 @@
 
-project(kdepasswd)
 
 add_subdirectory( kcm ) 
 

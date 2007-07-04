@@ -1,4 +1,3 @@
-project(konqueror)
 
 add_definitions(-D_LARGEFILE64_SOURCE )
 
