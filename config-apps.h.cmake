@@ -84,15 +84,6 @@
 /* Define to 1 if you can safely include both <sys/time.h> and <time.h>. */
 #cmakedefine TIME_WITH_SYS_TIME 1
 
-/* Define the file for utmp entries */
-#define UTMP "${UTMP_FILE}"
-
-/* X binaries directory */
-#define XBINDIR "/usr/X11R6/bin"
-
-/* X libraries directory */
-#define XLIBDIR "/usr/X11R6/lib/X11"
-
 /* Number of bits in a file offset, on hosts where this is settable. */
 #define _FILE_OFFSET_BITS 64
 
