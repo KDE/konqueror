@@ -20,7 +20,7 @@
 #include "bookmarklistview.h"
 #include "commands.h"
 #include "toplevel.h"
-#include "treeitem.h"
+#include "bookmarkmodel.h"
 
 #include <stdlib.h>
 
@@ -214,7 +214,7 @@ void BookmarkInfoWidget::slotUpdate()
     {
         const QModelIndexList & list = mBookmarkListView->selectionModel()->selectedIndexes();
         QModelIndex index = *list.constBegin();
-        showBookmark( static_cast<TreeItem *>(index.internalPointer())->bookmark());
+        showBookmark( mBookmarkListView->model()->bookmarkForIndex(index) );
     }
     else
         showBookmark( KBookmark() );

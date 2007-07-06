@@ -109,6 +109,13 @@ void BookmarkView::setModel(QAbstractItemModel * model)
     QTreeView::setModel(model);
 }
 
+KBookmarkModel* BookmarkView::model() const
+{
+    return dynamic_cast<KBookmarkModel*>(model());
+}
+
+////
+
 BookmarkFolderView::BookmarkFolderView( BookmarkListView * view, QWidget * parent )
     :BookmarkView( parent ), mview(view)
 {
@@ -226,6 +233,7 @@ void BookmarkListView::selectionChanged ( const QItemSelection & selected, const
     }
 
     // ensure that drawRow is called for all children
+    KBookmarkModel* model = this->model();
     const QModelIndexList & sellist = selected.indexes();
     end = sellist.constEnd();
     QRect rect;
@@ -233,7 +241,7 @@ void BookmarkListView::selectionChanged ( const QItemSelection & selected, const
     {
         if((*it).column() != 0)
             continue;
-        if( static_cast<TreeItem *>((*it).internalPointer())->bookmark().address().isEmpty() ) //FIXME
+        if( model->bookmarkForIndex(*it).address().isEmpty() ) //FIXME
             continue;
         rect = merge(rect, rectForRowWithChildren(*it));
     }
@@ -243,7 +251,7 @@ void BookmarkListView::selectionChanged ( const QItemSelection & selected, const
     {
         if((*it).column() != 0)
             continue;
-        if( static_cast<TreeItem *>((*it).internalPointer())->bookmark().address().isEmpty() ) //FIXME
+        if( model->bookmarkForIndex(*it).address().isEmpty() ) //FIXME
             continue;
         rect = merge(rect, rectForRowWithChildren(*it));
     }
@@ -265,7 +273,7 @@ void BookmarkListView::contextMenuEvent ( QContextMenuEvent * e )
     QModelIndex index = indexAt(e->pos());
     KBookmark bk;
     if(index.isValid())
-        bk = static_cast<TreeItem *>(index.internalPointer())->bookmark();
+        bk = model()->bookmarkForIndex(index);
 
     QMenu* popup;
     if( !index.isValid()
@@ -333,7 +341,7 @@ SelcAbilities BookmarkListView::getSelectionAbilities() const
 
     if ( sel .count() > 0)
     {
-        KBookmark nbk     = static_cast<TreeItem *>((*sel.constBegin()).internalPointer())->bookmark();
+        KBookmark nbk     = model()->bookmarkForIndex(sel.first());
         selctionAbilities.itemSelected   = true;
         selctionAbilities.group          = nbk.isGroup();
         selctionAbilities.separator      = nbk.isSeparator();

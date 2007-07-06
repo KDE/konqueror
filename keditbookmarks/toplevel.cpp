@@ -336,7 +336,7 @@ KBookmark KEBApp::firstSelected() const
 {
     const QModelIndexList & list = mBookmarkListView->selectionModel()->selectedIndexes();
     QModelIndex index = *list.constBegin();
-    return static_cast<TreeItem *>(index.internalPointer())->bookmark();
+    return mBookmarkListView->model()->bookmarkForIndex(index);
 }
 
 QString KEBApp::insertAddress() const
@@ -412,7 +412,7 @@ KBookmark::List KEBApp::selectedBookmarks() const
     {
         if((*it).column() != 0)
             continue;
-        KBookmark bk = static_cast<TreeItem *>((*it).internalPointer())->bookmark();;
+        KBookmark bk = mBookmarkListView->model()->bookmarkForIndex(*it);;
         if(bk.address() != CurrentMgr::self()->root().address())
             bookmarks.push_back( bk );
     }

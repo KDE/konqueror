@@ -33,6 +33,8 @@
 #include <kbookmarkmanager.h>
 #include <kdesktopfile.h>
 
+#include "treeitem_p.h" // TODO REMOVEME
+
 class KBookmarkModelInsertSentry
 {
 public:
@@ -41,6 +43,7 @@ public:
         QModelIndex mParent = CurrentMgr::self()->model()->bookmarkToIndex(parent);
         CurrentMgr::self()->model()->beginInsertRows( mParent, first, last);
 
+        // TODO REMOVEME use of internal class TreeItem!
         mt = static_cast<TreeItem *>(mParent.internalPointer());
         mf = first;
         ml = last;

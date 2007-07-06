@@ -16,7 +16,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "treeitem.h"
+#include "treeitem_p.h"
 #include <kdebug.h>
 #include <QtCore/QVector>
 
@@ -43,7 +43,7 @@ TreeItem * TreeItem::child(int row)
 #endif
     if(!init)
         initChildren();
-    return children[row];
+    return children.at(row);
 }
 
 int TreeItem::childCount()
@@ -53,7 +53,7 @@ int TreeItem::childCount()
     return children.count();
 }
 
-TreeItem * TreeItem::parent()
+TreeItem * TreeItem::parent() const
 {
 #ifdef DEBUG_STUPID_QT
     if(deleted)
@@ -67,8 +67,8 @@ void TreeItem::markDelete()
 {
     deleted = true;
     QList<TreeItem *>::iterator it, end;
-    end = children.end();
-    for(it = children.begin(); it != end; ++it)
+    end = children.constEnd();
+    for(it = children.constBegin(); it != end; ++it)
     {
         (*it)->markDelete();
     }
@@ -82,7 +82,7 @@ void TreeItem::insertChildren(int first, int last)
     KBookmark child = parent.first();
     for(int j=0; j < last; ++j)
         child = parent.next(child);
-    
+
     //insert children
     int i = last;
     do
@@ -132,7 +132,7 @@ void TreeItem::moveChildren(int first, int last, TreeItem * newParent, int posit
     {
         if(first > position)
         {
-            // swap around 
+            // swap around
             int tempPos = position;
             position = last + 1;
             last = first - 1;
@@ -142,7 +142,7 @@ void TreeItem::moveChildren(int first, int last, TreeItem * newParent, int posit
         QVector<TreeItem *> temp;
         for(int i=first; i<=last; ++i)
             temp.append(children[i]);
-        
+
         int count = (last-first + 1);
         for(int i=first; i+count<position; ++i)
             children[i] = children[i+count];
@@ -153,7 +153,7 @@ void TreeItem::moveChildren(int first, int last, TreeItem * newParent, int posit
     }
 }
 
-KBookmark TreeItem::bookmark()
+KBookmark TreeItem::bookmark() const
 {
 #ifdef DEBUG_STUPID_QT
     if(deleted)

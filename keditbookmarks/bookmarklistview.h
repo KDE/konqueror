@@ -32,6 +32,7 @@ struct SelcAbilities {
     bool notEmpty:1;
 };
 
+class KBookmarkModel;
 class KBookmark;
 class BookmarkListView;
 
@@ -42,6 +43,7 @@ public:
     BookmarkView( QWidget * parent = 0 );
     virtual ~BookmarkView();
     virtual void setModel(QAbstractItemModel * view);
+    KBookmarkModel* model() const;
     virtual void dragEnterEvent(QDragEnterEvent *event);
     virtual void dragMoveEvent(QDragMoveEvent *event);
 public Q_SLOTS:

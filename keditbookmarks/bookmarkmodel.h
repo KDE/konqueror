@@ -20,10 +20,8 @@
 #define __bookmarkmodel_h
 
 #include <QtCore/QAbstractItemModel>
-#include "treeitem.h"
 
 class KBookmark;
-class QDropEvent;
 
 class KBookmarkModelRemoveSentry;
 class KBookmarkModelMoveSentry;
@@ -55,6 +53,7 @@ public:
     virtual void resetModel();
 
     QModelIndex bookmarkToIndex(const KBookmark& bk) const;
+    KBookmark bookmarkForIndex(const QModelIndex& index) const;
     void emitDataChanged(const KBookmark& bk);
 
     //drag and drop

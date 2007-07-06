@@ -17,6 +17,7 @@
 */
 
 #include "bookmarkmodel.h"
+#include "treeitem_p.h"
 
 #include <KIcon>
 #include <kdebug.h>
@@ -177,7 +178,7 @@ QVariant KBookmarkModel::data(const QModelIndex &index, int role) const
     //Text
     if(index.isValid() && (role == Qt::DisplayRole || role == Qt::EditRole))
     {
-        KBookmark bk = static_cast<TreeItem *>(index.internalPointer())->bookmark();
+        KBookmark bk = bookmarkForIndex(index);
         if(bk.address().isEmpty())
             if(index.column() == 0)
                 return QVariant( i18n("Bookmarks") );
@@ -206,7 +207,7 @@ QVariant KBookmarkModel::data(const QModelIndex &index, int role) const
     //Icon
     if(index.isValid() && role == Qt::DecorationRole && index.column() == 0)
     {
-        KBookmark bk = static_cast<TreeItem *>(index.internalPointer())->bookmark();
+        KBookmark bk = bookmarkForIndex(index);
         if(bk.address().isEmpty())
             return KIcon("bookmark");
         return KIcon(bk.icon());
@@ -222,7 +223,7 @@ Qt::ItemFlags KBookmarkModel::flags(const QModelIndex &index) const
     if (!index.isValid())
         return Qt::ItemIsEnabled;
 
-    KBookmark bk = static_cast<TreeItem *>(index.internalPointer())->bookmark();
+    KBookmark bk = bookmarkForIndex(index);
     if( !bk.address().isEmpty() ) // non root
     {
         if( bk.isGroup())
@@ -245,7 +246,7 @@ bool KBookmarkModel::setData(const QModelIndex &index, const QVariant &value, in
     {
         //FIXME don't create a command if still the same
         // and ignore if name column is empty
-        emit textEdited(static_cast<TreeItem *>(index.internalPointer())->bookmark(),
+        emit textEdited(bookmarkForIndex(index),
                         index.column(), value.toString());
         return true;
     }
@@ -296,7 +297,7 @@ QModelIndex KBookmarkModel::parent(const QModelIndex &index) const
         return index;
 
     }
-    KBookmark bk = static_cast<TreeItem *>(index.internalPointer())->bookmark();
+    KBookmark bk = bookmarkForIndex(index);;
     const QString rootAddress = d->mRoot.address();
 
     if(bk.address() == rootAddress)
@@ -345,7 +346,7 @@ QMimeData * KBookmarkModel::mimeData( const QModelIndexList & indexes ) const
     QModelIndexList::const_iterator it, end;
     end = indexes.constEnd();
     for( it = indexes.constBegin(); it!= end; ++it)
-        bookmarks.push_back( static_cast<TreeItem *>((*it).internalPointer())->bookmark());
+        bookmarks.push_back( bookmarkForIndex(*it) );
     bookmarks.populateMimeData(mimeData);
     return mimeData;
 }
@@ -374,11 +375,16 @@ bool KBookmarkModel::dropMimeData(const QMimeData * data, Qt::DropAction action,
         idx = parent;
     else
         idx = index(row, column, parent);
-    KBookmark bk = static_cast<TreeItem *>(idx.internalPointer())->bookmark();
+    KBookmark bk = bookmarkForIndex(idx);
 
     emit dropped(data, bk);
 
     return true;
+}
+
+KBookmark KBookmarkModel::bookmarkForIndex(const QModelIndex& index) const
+{
+    return static_cast<TreeItem *>(index.internalPointer())->bookmark();
 }
 
 #include "bookmarkmodel.moc"
