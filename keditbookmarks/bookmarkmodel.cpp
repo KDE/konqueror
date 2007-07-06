@@ -327,7 +327,7 @@ int KBookmarkModel::columnCount(const QModelIndex &) const
     return 4;
 }
 
-QModelIndex KBookmarkModel::bookmarkToIndex(const KBookmark& bk) const
+QModelIndex KBookmarkModel::indexForBookmark(const KBookmark& bk) const
 {
     // TODO replace first argument with bk.positionInParent()
     return createIndex( KBookmark::positionInParent(bk.address()), 0, d->mRootItem->treeItemForBookmark(bk));
@@ -335,7 +335,7 @@ QModelIndex KBookmarkModel::bookmarkToIndex(const KBookmark& bk) const
 
 void KBookmarkModel::emitDataChanged(const KBookmark& bk)
 {
-    QModelIndex index = bookmarkToIndex(bk);
+    QModelIndex index = indexForBookmark(bk);
     emit dataChanged(index, index );
 }
 

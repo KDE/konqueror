@@ -52,7 +52,7 @@ public:
     virtual int columnCount(const QModelIndex &parent = QModelIndex()) const;
     virtual void resetModel();
 
-    QModelIndex bookmarkToIndex(const KBookmark& bk) const;
+    QModelIndex indexForBookmark(const KBookmark& bk) const;
     KBookmark bookmarkForIndex(const QModelIndex& index) const;
     void emitDataChanged(const KBookmark& bk);
 

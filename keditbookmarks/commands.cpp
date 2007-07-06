@@ -40,7 +40,7 @@ class KBookmarkModelInsertSentry
 public:
     KBookmarkModelInsertSentry(const KBookmark& parent, int first, int last)
     {
-        QModelIndex mParent = CurrentMgr::self()->model()->bookmarkToIndex(parent);
+        QModelIndex mParent = CurrentMgr::self()->model()->indexForBookmark(parent);
         CurrentMgr::self()->model()->beginInsertRows( mParent, first, last);
 
         // TODO REMOVEME use of internal class TreeItem!
@@ -62,7 +62,7 @@ class KBookmarkModelRemoveSentry
 public:
     KBookmarkModelRemoveSentry(const KBookmark& parent, int first, int last)
     {
-        QModelIndex mParent = CurrentMgr::self()->model()->bookmarkToIndex(parent);
+        QModelIndex mParent = CurrentMgr::self()->model()->indexForBookmark(parent);
         //FIXME remove this once Qt fixes their really stupid bugs
         for(int i = first; i <= last; ++i)
         {
@@ -92,8 +92,8 @@ public:
     {
         //FIXME need to decide how to handle selections and moving.
         KEBApp::self()->mBookmarkListView->selectionModel()->clear();
-        QModelIndex mOldParent = CurrentMgr::self()->model()->bookmarkToIndex(oldParent);
-        QModelIndex mNewParent = CurrentMgr::self()->model()->bookmarkToIndex(newParent);
+        QModelIndex mOldParent = CurrentMgr::self()->model()->indexForBookmark(oldParent);
+        QModelIndex mNewParent = CurrentMgr::self()->model()->indexForBookmark(newParent);
 
         CurrentMgr::self()->model()->beginMoveRows( mOldParent, first, last, mNewParent, position);
 
