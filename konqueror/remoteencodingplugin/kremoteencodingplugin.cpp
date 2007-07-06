@@ -214,7 +214,7 @@ KRemoteEncodingPlugin::slotDefault()
 	}
 
       for (QStringList::Iterator it = domains.begin(); it != domains.end();
-	   it++)
+	   ++it)
 	{
 	  kDebug() << k_funcinfo << "Domain to remove: " << *it << endl;
 	  if (config.hasGroup(*it))

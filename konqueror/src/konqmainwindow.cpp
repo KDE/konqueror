@@ -5656,7 +5656,7 @@ void KonqMainWindow::dumpViewList()
   kDebug(1202) << m_mapViews.count() << " views:" << endl;
 
   MapViews::Iterator end = m_mapViews.end();
-  for (MapViews::Iterator it = m_mapViews.begin(); it != end; it++)
+  for (MapViews::Iterator it = m_mapViews.begin(); it != end; ++it)
   {
       KonqView* view = it.value();
       kDebug(1202) << view << " " << view->part() << endl;
