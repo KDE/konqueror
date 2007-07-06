@@ -24,7 +24,7 @@
 #include <kdemacros.h>
 
 #ifndef KONQ_TESTS_EXPORT
-# if defined(MAKE_KDEINIT_KONQUEROR_LIB)
+# if defined(MAKE_KDEINIT_KONQUEROR_LIB) || defined(MAKE_KDED_KONQY_PRELOADER_LIB)
    /* We are building this library */ 
 #  define KONQ_TESTS_EXPORT KDE_EXPORT
 # else
