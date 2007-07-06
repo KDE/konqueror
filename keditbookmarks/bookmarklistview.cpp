@@ -22,6 +22,7 @@
 #include "bookmarkmodel.h"
 #include "toplevel.h"
 #include "settings.h"
+#include "commands.h"
 #include <QtGui/QHeaderView>
 #include <QtGui/QItemSelection>
 #include <QtGui/QMenu>
@@ -35,6 +36,7 @@ BookmarkView::BookmarkView( QWidget * parent )
     :QTreeView( parent )
 {
     setAcceptDrops(true);
+    mDropEvent = 0;
 }
 
 BookmarkView::~BookmarkView()
@@ -75,12 +77,9 @@ void BookmarkView::dragMoveEvent(QDragMoveEvent *event)
 
 void BookmarkView::dropEvent ( QDropEvent * event )
 {
-    // This is ugly. I need the drop event pointer inside
-    // BookmarkModel::dropMimeData() to decide
-    // if the drop was internal
-    // so we save it here and retrieve it inside
-    // BookmarkModel::dropMimeData()
-    static_cast<BookmarkModel *>(model())->saveDropEventPointer(event);
+    // This is ugly. I need the drop event pointer inside dropped()
+    // to decide if the drop was internal
+    mDropEvent = event;
     QTreeView::dropEvent(event);
 }
 
@@ -103,6 +102,10 @@ void BookmarkView::setModel(QAbstractItemModel * model)
             this, SLOT(aboutToMoveRows(const QModelIndex &, int, int, const QModelIndex &, int)));
     connect( model, SIGNAL(rowsMoved(const QModelIndex &, int, int, const QModelIndex &, int)),
             this, SLOT(rowsMoved(const QModelIndex &, int, int, const QModelIndex &, int)));
+    connect(model, SIGNAL(dropped(const QMimeData*, const KBookmark&)),
+            this, SLOT(dropped(const QMimeData*, const KBookmark&)));
+    connect(model, SIGNAL(textEdited(const KBookmark&, int, const QString&)),
+            this, SLOT(textEdited(const KBookmark&, int, const QString&)));
     QTreeView::setModel(model);
 }
 
@@ -336,7 +339,7 @@ SelcAbilities BookmarkListView::getSelectionAbilities() const
         selctionAbilities.separator      = nbk.isSeparator();
         selctionAbilities.urlIsEmpty     = nbk.url().isEmpty();
         selctionAbilities.root           = nbk.address() == CurrentMgr::self()->root().address();
-        selctionAbilities.multiSelect    = (sel.count() > BookmarkModel::self()->columnCount());
+        selctionAbilities.multiSelect    = (sel.count() > CurrentMgr::self()->model()->columnCount());
         selctionAbilities.singleSelect   = (!selctionAbilities.multiSelect && selctionAbilities.itemSelected);
     }
     //FIXME check next line, if it actually works
@@ -364,6 +367,29 @@ void BookmarkListView::saveColumnSetting()
     KEBSettings::setComment( header()->sectionSize(KEBApp::CommentColumn));
     KEBSettings::setStatus( header()->sectionSize(KEBApp::StatusColumn));
     KEBSettings::self()->writeConfig();
+}
+
+void BookmarkView::dropped(const QMimeData* data, const KBookmark& bk)
+{
+    QString addr = bk.address();
+    if(bk.isGroup())
+        addr += "/0"; //FIXME internal representation
+    if(mDropEvent)
+    {
+        K3Command * mcmd = CmdGen::itemsMoved(KEBApp::self()->selectedBookmarks(), addr, false);
+        CmdHistory::self()->didCommand(mcmd);
+    }
+    else
+    {
+        K3Command * mcmd = CmdGen::insertMimeSource("FIXME", data, addr);
+        CmdHistory::self()->didCommand(mcmd);
+    }
+    mDropEvent = 0;
+}
+
+void BookmarkView::textEdited(const KBookmark& bookmark, int column, const QString& text)
+{
+    CmdHistory::self()->addCommand(new EditCommand(bookmark.address(), column, text));
 }
 
 #include "bookmarklistview.moc"

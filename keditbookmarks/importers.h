@@ -38,7 +38,7 @@ class ImportCommand : public QObject, public K3Command, public IKEBCommand
 public:
    ImportCommand()
       : K3Command(), m_utf8(false), m_folder(false), m_cleanUpCmd(0L)
-   { ; }
+   {}
 
    virtual void import(const QString &fileName, bool folder) = 0;
 
@@ -50,7 +50,7 @@ public:
    static ImportCommand* importerFactory(const QString &);
 
    virtual ~ImportCommand()
-   { ; }
+   {}
 
    virtual void execute();
    virtual void unexecute();
@@ -93,7 +93,7 @@ private:
 class XBELImportCommand : public ImportCommand
 {
 public:
-   XBELImportCommand() : ImportCommand() { ; }
+   XBELImportCommand() : ImportCommand() {}
    virtual void import(const QString &fileName, bool folder) = 0;
    virtual QString requestFilename() const = 0;
 private:
@@ -125,7 +125,7 @@ public:
 class HTMLImportCommand : public ImportCommand
 {
 public:
-   HTMLImportCommand() : ImportCommand() { ; }
+   HTMLImportCommand() : ImportCommand() {}
    virtual void import(const QString &fileName, bool folder) = 0;
    virtual QString requestFilename() const = 0;
 private:

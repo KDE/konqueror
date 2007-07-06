@@ -557,9 +557,9 @@ public:
     KBookmarkGroupList(KBookmarkManager *);
     QList<KBookmark> getList(const KBookmarkGroup &);
 private:
-    virtual void visit(const KBookmark &) { ; }
+    virtual void visit(const KBookmark &) {}
     virtual void visitEnter(const KBookmarkGroup &);
-    virtual void visitLeave(const KBookmarkGroup &) { ; }
+    virtual void visitLeave(const KBookmarkGroup &) {}
 private:
     KBookmarkManager *m_manager;
     QList<KBookmark> m_list;

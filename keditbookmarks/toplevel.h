@@ -27,6 +27,7 @@
 #include <kxmlguifactory.h>
 #include "bookmarklistview.h"
 
+class BookmarkModel;
 class KBookmarkManager;
 class KToggleAction;
 class KBookmarkEditorIface;
@@ -37,7 +38,7 @@ class CmdHistory : public QObject {
     Q_OBJECT
 public:
     CmdHistory(KActionCollection *collection);
-    virtual ~CmdHistory() { ; }
+    virtual ~CmdHistory() {}
 
     void notifyDocSaved();
 
@@ -67,9 +68,11 @@ public:
     typedef enum {HTMLExport, OperaExport, IEExport, MozillaExport, NetscapeExport} ExportType;
 
     static CurrentMgr* self() { if (!s_mgr) { s_mgr = new CurrentMgr(); } return s_mgr; }
+    ~CurrentMgr();
     KBookmarkGroup root();
     static KBookmark bookmarkAt(const QString & a);
 
+    BookmarkModel* model() const { return m_model; }
     KBookmarkManager* mgr() const { return m_mgr; }
     QString path() const;
 
@@ -90,8 +93,9 @@ protected Q_SLOTS:
     void slotBookmarksChanged(const QString &, const QString &);
 
 private:
-    CurrentMgr() : m_mgr(0), ignorenext(0) { ; }
+    CurrentMgr();
     KBookmarkManager *m_mgr;
+    BookmarkModel *m_model;
     static CurrentMgr *s_mgr;
     uint ignorenext;
 };
@@ -160,7 +164,7 @@ protected Q_SLOTS:
     void selectionChanged();
 
 private:
-    void selectedBookmarksExpandedHelper(const KBookmark& bk, 
+    void selectedBookmarksExpandedHelper(const KBookmark& bk,
                                          KBookmark::List & bookmarks) const;
     void collapseAllHelper( QModelIndex index );
     void expandAllHelper(QTreeView * view, QModelIndex index);

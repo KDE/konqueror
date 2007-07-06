@@ -17,11 +17,8 @@
 */
 
 #include "bookmarkmodel.h"
-#include "toplevel.h"
-#include "commands.h"
 
-#include <k3command.h>
-#include <kiconloader.h>
+#include <KIcon>
 #include <kdebug.h>
 #include <klocale.h>
 #include <QtGui/QIcon>
@@ -29,21 +26,10 @@
 #include <QtCore/QStringList>
 #include <QtCore/QMimeData>
 
-int BookmarkModel::count = 0;
-BookmarkModel* BookmarkModel::s_bookmarkModel = 0L;
-
-BookmarkModel* BookmarkModel::self()
-{
-    if(!s_bookmarkModel)
-        s_bookmarkModel = new BookmarkModel(CurrentMgr::self()->root());    
-    return s_bookmarkModel;
-}
-
 BookmarkModel::BookmarkModel(const KBookmark& root)
     :QAbstractItemModel(), mRoot(root)
 {
     rootItem = new TreeItem(root, 0);
-    dropEvent = 0;
 }
 
 BookmarkModel::~BookmarkModel()
@@ -83,7 +69,7 @@ void BookmarkModel::beginMoveRows(const QModelIndex & oldParent, int first, int 
         int columnsCount = columnCount(QModelIndex());
         if(first > position)
         {
-            // swap around 
+            // swap around
             int tempPos = position;
             position = last + 1;
             last = first - 1;
@@ -112,8 +98,8 @@ void BookmarkModel::endMoveRows()
         int delta = mPosition - mFirst;
         for(int i=0; i <count; ++i)
         {
-            QModelIndex idx = createIndex(movedIndexes[i].row()+delta, 
-                                          movedIndexes[i].column(), 
+            QModelIndex idx = createIndex(movedIndexes[i].row()+delta,
+                                          movedIndexes[i].column(),
                                           movedIndexes[i].internalPointer());
             changePersistentIndex( movedIndexes[i], idx);
         }
@@ -122,8 +108,8 @@ void BookmarkModel::endMoveRows()
         delta = mLast - mFirst + 1;
         for(int i=0; i<count; ++i)
         {
-            QModelIndex idx = createIndex( oldParentIndexes[i].row()-delta, 
-                                           oldParentIndexes[i].column(), 
+            QModelIndex idx = createIndex( oldParentIndexes[i].row()-delta,
+                                           oldParentIndexes[i].column(),
                                            oldParentIndexes[i].internalPointer());
             changePersistentIndex( oldParentIndexes[i], idx);
         }
@@ -133,7 +119,7 @@ void BookmarkModel::endMoveRows()
         {
             int delta = (mLast-mFirst+1);
             QModelIndex idx = createIndex( newParentIndexes[i].row() + delta,
-                                           newParentIndexes[i].column(), 
+                                           newParentIndexes[i].column(),
                                            newParentIndexes[i].internalPointer());
             changePersistentIndex( newParentIndexes[i], idx);
         }
@@ -147,7 +133,7 @@ void BookmarkModel::endMoveRows()
             QModelIndex idx = createIndex(movedIndexes[i].row()+delta, movedIndexes[i].column(), movedIndexes[i].internalPointer());
             changePersistentIndex(movedIndexes[i], idx);
         }
-        
+
         count = oldParentIndexes.count();
         delta = mLast-mFirst + 1;
         for(int i=0; i<count; ++i)
@@ -176,9 +162,13 @@ QVariant BookmarkModel::data(const QModelIndex &index, int role) const
             case 0:
                 return QVariant( bk.fullText() );
             case 1:
-                return QVariant( bk.url().pathOrUrl() ); 
-            case 2:
-                return QVariant( EditCommand::getNodeText(bk, QStringList() << QString("desc")) );
+                return QVariant( bk.url().pathOrUrl() );
+            case 2:{
+                QDomNode subnode = bk.internalElement().namedItem("desc");
+                return (subnode.firstChild().isNull())
+                    ? QString()
+                    : subnode.firstChild().toText().data();
+            }
             case 3:
                 return QVariant( QString() ); //FIXME status column
             default:
@@ -191,8 +181,8 @@ QVariant BookmarkModel::data(const QModelIndex &index, int role) const
     {
         KBookmark bk = static_cast<TreeItem *>(index.internalPointer())->bookmark();
         if(bk.address().isEmpty())
-            return QVariant( QIcon(SmallIcon("bookmark")));
-        return QVariant( QIcon(SmallIcon(bk.icon())));
+            return KIcon("bookmark");
+        return KIcon(bk.icon());
     }
     return QVariant();
 }
@@ -228,8 +218,8 @@ bool BookmarkModel::setData(const QModelIndex &index, const QVariant &value, int
     {
         //FIXME don't create a command if still the same
         // and ignore if name column is empty
-        QString addr = static_cast<TreeItem *>(index.internalPointer())->bookmark().address();
-        CmdHistory::self()->addCommand(new EditCommand( addr, index.column(), value.toString()) );
+        emit textEdited(static_cast<TreeItem *>(index.internalPointer())->bookmark(),
+                        index.column(), value.toString());
         return true;
     }
     return false;
@@ -341,12 +331,6 @@ QStringList BookmarkModel::mimeTypes () const
     return KBookmark::List::mimeDataTypes();
 }
 
-void BookmarkModel::saveDropEventPointer(QDropEvent * event)
-{
-    kDebug()<<"saving event "<<event<<endl;
-    dropEvent = event;
-}
-
 bool BookmarkModel::dropMimeData(const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent)
 {
     Q_UNUSED(action)
@@ -360,23 +344,10 @@ bool BookmarkModel::dropMimeData(const QMimeData * data, Qt::DropAction action, 
         idx = parent;
     else
         idx = index(row, column, parent);
-
     KBookmark bk = static_cast<TreeItem *>(idx.internalPointer())->bookmark();
-    QString addr = bk.address();
-    if(bk.isGroup())
-        addr += "/0"; //FIXME internal representation
-    if(dropEvent)
-    {
-        K3Command * mcmd = CmdGen::itemsMoved(KEBApp::self()->selectedBookmarks() , addr, false);
-        CmdHistory::self()->didCommand(mcmd);
-    }
-    else
-    {
-        K3Command * mcmd = CmdGen::insertMimeSource("FIXME", data, addr);
-        CmdHistory::self()->didCommand(mcmd);
-    }
-    kDebug()<<"resetting dropEvent"<<endl;
-    dropEvent = 0;
+
+    emit dropped(data, bk);
+
     return true;
 }
 

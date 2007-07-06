@@ -28,7 +28,7 @@
 
 
 // Interface adds the affectedBookmarks method
-// Any class should on call add those bookmarks which are 
+// Any class should on call add those bookmarks which are
 // affected by executing or unexecuting the command
 // Or a common parent of the affected bookmarks
 // see KBookmarkManager::notifyChange(KBookmarkGroup)
@@ -63,34 +63,34 @@ public:
    CreateCommand(const QString &address)
       : K3Command(), m_to(address),
         m_group(false), m_separator(true), m_originalBookmark(QDomElement())
-   { ; }
+   {}
 
    // bookmark
    CreateCommand(const QString &address,
-                 const QString &text, const QString &iconPath, 
+                 const QString &text, const QString &iconPath,
                  const KUrl &url)
       : K3Command(), m_to(address), m_text(text), m_iconPath(iconPath), m_url(url),
         m_group(false), m_separator(false), m_originalBookmark(QDomElement())
-   { ; }
+   {}
 
    // folder
    CreateCommand(const QString &address,
-                 const QString &text, const QString &iconPath, 
+                 const QString &text, const QString &iconPath,
                  bool open)
       : K3Command(), m_to(address), m_text(text), m_iconPath(iconPath),
         m_group(true), m_separator(false), m_open(open), m_originalBookmark(QDomElement())
-   { ; }
+   {}
 
    // clone existing bookmark
    CreateCommand(const QString &address,
                  const KBookmark &original, const QString &name = QString())
       : K3Command(), m_to(address), m_group(false), m_separator(false),
         m_open(false), m_originalBookmark(original), m_mytext(name)
-   { ; }
+   {}
 
    QString finalAddress() const;
 
-   virtual ~CreateCommand() { ; }
+   virtual ~CreateCommand() {}
    virtual void execute();
    virtual void unexecute();
    virtual QString name() const;
@@ -132,11 +132,11 @@ class DeleteCommand : public K3Command, public IKEBCommand
 public:
    explicit DeleteCommand(const QString &from, bool contentOnly = false)
       : K3Command(), m_from(from), m_cmd(0), m_subCmd(0), m_contentOnly(contentOnly)
-   { ; }
+   {}
    virtual ~DeleteCommand() { delete m_cmd; delete m_subCmd; }
    virtual void execute();
    virtual void unexecute();
-   virtual QString name() const { 
+   virtual QString name() const {
       // NOTE - DeleteCommand needs no name, its always embedded in a macrocommand
       return QString();
    }
@@ -152,13 +152,13 @@ private:
 class MoveCommand : public K3Command, public IKEBCommand
 {
 public:
-   // "Create it with itemsAlreadyMoved=true since 
+   // "Create it with itemsAlreadyMoved=true since
    // "K3ListView moves the item before telling us about it."
    MoveCommand(const QString &from, const QString &to, const QString &name = QString())
       : K3Command(), m_from(from), m_to(to), m_mytext(name)
-   { ; }
+   {}
    QString finalAddress() const;
-   virtual ~MoveCommand() { ; }
+   virtual ~MoveCommand() {}
    virtual void execute();
    virtual void unexecute();
    virtual QString name() const;
@@ -175,10 +175,10 @@ class SortCommand : public KEBMacroCommand
 {
 public:
    SortCommand(const QString &name, const QString &groupAddress)
-      : KEBMacroCommand(name), m_groupAddress(groupAddress) 
-   { ; }
-   virtual ~SortCommand() 
-   { ; }
+      : KEBMacroCommand(name), m_groupAddress(groupAddress)
+   {}
+   virtual ~SortCommand()
+   {}
    virtual void execute();
    virtual void unexecute();
    virtual QString affectedBookmarks() const;
@@ -197,7 +197,7 @@ public:
    static KEBMacroCommand* insertMimeSource(const QString &cmdName, const QMimeData *data, const QString &addr);
    static KEBMacroCommand* itemsMoved(const QList<KBookmark> & items, const QString &newAddress, bool copy);
 private:
-   CmdGen() { ; }
+   CmdGen() {}
 };
 
 #endif

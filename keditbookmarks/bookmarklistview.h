@@ -32,6 +32,7 @@ struct SelcAbilities {
     bool notEmpty:1;
 };
 
+class KBookmark;
 class BookmarkListView;
 
 class BookmarkView : public QTreeView
@@ -46,11 +47,14 @@ public:
 public Q_SLOTS:
     void aboutToMoveRows(const QModelIndex & oldParent, int first, int last, const QModelIndex & newParent, int position);
     void rowsMoved(const QModelIndex & oldParent, int first, int last, const QModelIndex & newParent, int position);
+    void dropped(const QMimeData* data, const KBookmark& bookmark);
+    void textEdited(const KBookmark& bookmark, int column, const QString& text);
 protected:
     virtual void dropEvent ( QDropEvent * event );
 private:
     QPersistentModelIndex moveOldParent;
     QPersistentModelIndex moveNewParent;
+    QDropEvent* mDropEvent;
 };
 
 class BookmarkFolderView : public BookmarkView

@@ -114,6 +114,17 @@ void CmdHistory::clearHistory() {
 
 CurrentMgr *CurrentMgr::s_mgr = 0;
 
+CurrentMgr::CurrentMgr()
+    : QObject(0),
+      m_mgr(0), m_model(0), ignorenext(0)
+{
+}
+
+CurrentMgr::~CurrentMgr()
+{
+    delete m_model;
+}
+
 KBookmarkGroup CurrentMgr::root()
 {
     return mgr()->root();
@@ -134,10 +145,12 @@ void CurrentMgr::createManager(const QString &filename, const QString &dbusObjec
         kDebug()<<"ERROR calling createManager twice"<<endl;
         disconnect(m_mgr, 0, 0, 0);
         // still todo - delete old m_mgr
+        delete m_model;
     }
 
     kDebug()<<"DBus Object name: "<<dbusObjectName<<endl;
     m_mgr = KBookmarkManager::managerForFile(filename, dbusObjectName);
+    m_model = new BookmarkModel(root());
 
     connect(m_mgr, SIGNAL( changed(const QString &, const QString &) ),
             SLOT( slotBookmarksChanged(const QString &, const QString &) ));
@@ -226,7 +239,7 @@ KEBApp::KEBApp(
     CurrentMgr::self()->createManager(m_bookmarksFilename, m_dbusObjectName);
 
     mBookmarkListView = new BookmarkListView();
-    mBookmarkListView->setModel( BookmarkModel::self() );
+    mBookmarkListView->setModel( CurrentMgr::self()->model() );
     mBookmarkListView->setSelectionMode(QAbstractItemView::ExtendedSelection);
     mBookmarkListView->loadColumnSetting();
 
@@ -277,14 +290,14 @@ void KEBApp::reset(const QString & caption, const QString & bookmarksFileName)
     m_caption = caption;
     m_bookmarksFilename = bookmarksFileName;
     CurrentMgr::self()->createManager(m_bookmarksFilename, m_dbusObjectName); //FIXME this is still a memory leak (iff called by slotLoad)
-    BookmarkModel::self()->resetModel();
+    CurrentMgr::self()->model()->resetModel();
     expandAll();
     updateActions();
 }
 
 void KEBApp::collapseAll()
 {
-    collapseAllHelper( BookmarkModel::self()->index(0, 0, QModelIndex()));
+    collapseAllHelper( CurrentMgr::self()->model()->index(0, 0, QModelIndex()));
 }
 
 void KEBApp::collapseAllHelper( QModelIndex index )
@@ -297,8 +310,8 @@ void KEBApp::collapseAllHelper( QModelIndex index )
 
 void KEBApp::expandAll()
 {
-    expandAllHelper( mBookmarkListView, BookmarkModel::self()->index(0, 0, QModelIndex()));
-    expandAllHelper( mBookmarkFolderView, BookmarkModel::self()->index(0, 0, QModelIndex()));
+    expandAllHelper( mBookmarkListView, CurrentMgr::self()->model()->index(0, 0, QModelIndex()));
+    expandAllHelper( mBookmarkFolderView, CurrentMgr::self()->model()->index(0, 0, QModelIndex()));
 }
 
 void KEBApp::expandAllHelper(QTreeView * view, QModelIndex index)
@@ -315,7 +328,7 @@ void KEBApp::startEdit( Column c )
     QModelIndexList::const_iterator it, end;
     end = list.constEnd();
     for(it = list.constBegin(); it != end; ++it)
-        if( (*it).column() == int(c) && (BookmarkModel::self()->flags(*it) & Qt::ItemIsEditable) )
+        if( (*it).column() == int(c) && (CurrentMgr::self()->model()->flags(*it) & Qt::ItemIsEditable) )
             return mBookmarkListView->edit( *it );
 }
 
@@ -447,7 +460,7 @@ KEBApp::~KEBApp() {
     delete m_dcopIface;
     delete ActionsImpl::self();
     delete mBookmarkListView;
-    delete BookmarkModel::self();
+    delete CurrentMgr::self();
 }
 
 KToggleAction* KEBApp::getToggleAction(const char *action) const {

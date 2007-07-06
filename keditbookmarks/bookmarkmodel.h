@@ -19,26 +19,29 @@
 #ifndef __bookmarkmodel_h
 #define __bookmarkmodel_h
 
-#include <QtCore/QModelIndex>
-#include <QtCore/QVariant>
+#include <QtCore/QAbstractItemModel>
 #include <QtCore/QVector>
 #include <kbookmark.h>
-#include "toplevel.h"
 #include "treeitem.h"
 
 class QDropEvent;
+
+class KBookmarkModelRemoveSentry;
+class KBookmarkModelMoveSentry;
+class KBookmarkModelInsertSentry;
 
 class BookmarkModel : public QAbstractItemModel
 {
     Q_OBJECT
 
 public:
-    class insertSentry;
-    friend class insertSentry;
-    class removeSentry;
-    friend class removeSentry;
+    // Those keditbookmarks classes need to access beginInsertRows etc.
+    friend class KBookmarkModelInsertSentry;
+    friend class KBookmarkModelRemoveSentry;
+    friend class KBookmarkModelMoveSentry;
 
-    static BookmarkModel* self();
+    BookmarkModel(const KBookmark& root);
+
     virtual ~BookmarkModel();
 
     //reimplemented functions
@@ -61,23 +64,19 @@ public:
     virtual QMimeData * mimeData ( const QModelIndexList & indexes ) const;
     virtual Qt::DropActions supportedDropActions () const;
 
-    // Called by BookmarkListView::dropEvent to save the pointer
-    // The pointer to the event is retrieved in dropMimeData()
-    void saveDropEventPointer(QDropEvent * event);
-
 Q_SIGNALS:
     //FIXME searchline should respond too
     void aboutToMoveRows(const QModelIndex &, int, int, const QModelIndex &, int);
     void rowsMoved(const QModelIndex &, int, int, const QModelIndex &, int);
+
+    void dropped(const QMimeData* data, const KBookmark& bookmark);
+    void textEdited(const KBookmark& bookmark, int column, const QString& text);
 
 private:
     void beginMoveRows(const QModelIndex & oldParent, int first, int last, const QModelIndex & newParent, int position);
     void endMoveRows();
 
     TreeItem * rootItem;
-    BookmarkModel(const KBookmark& root);
-    static BookmarkModel *s_bookmarkModel;
-    static int count;
     KBookmark mRoot;
 
     // for move support
@@ -89,88 +88,6 @@ private:
     QVector<QModelIndex> movedIndexes;
     QVector<QModelIndex> oldParentIndexes;
     QVector<QModelIndex> newParentIndexes;
-
-    QDropEvent * dropEvent;
-
-//Sentry
-public:
-    class insertSentry
-    {
-        public:
-        insertSentry(KBookmark parent, int first, int last)
-            {
-                QModelIndex mParent = BookmarkModel::self()->bookmarkToIndex(parent);
-                BookmarkModel::self()->beginInsertRows( mParent, first, last);
-
-                mt = static_cast<TreeItem *>(mParent.internalPointer());
-                mf = first;
-                ml = last;
-            }
-        ~insertSentry()
-            {
-                mt->insertChildren(mf, ml);
-                BookmarkModel::self()->endInsertRows(); 
-            }
-        private:
-            TreeItem * mt;
-            int mf, ml;
-    };
-    class removeSentry
-    {
-        public:
-        removeSentry(KBookmark parent, int first, int last)
-            { 
-                QModelIndex mParent = BookmarkModel::self()->bookmarkToIndex(parent);
-                //FIXME remove this once Qt fixes their really stupid bugs
-                for(int i = first; i <= last; ++i)
-                {
-                    KEBApp::self()->mBookmarkListView->selectionModel()->select(mParent.child(i, 0), QItemSelectionModel::Deselect);
-                }
-
-                BookmarkModel::self()->beginRemoveRows( mParent, first, last); 
-
-                mt = static_cast<TreeItem *>(mParent.internalPointer());
-                mf = first;
-                ml = last;
-            }
-        ~removeSentry()
-            {
-               mt->deleteChildren(mf, ml);
-               BookmarkModel::self()->endRemoveRows(); 
-            }
-        private:
-            TreeItem * mt;
-            int mf, ml;
-    };
-
-    class moveSentry
-    {
-        public:
-        moveSentry(KBookmark oldParent, int first, int last, KBookmark newParent, int position)
-            {
-                //FIXME need to decide how to handle selections and moving.
-                KEBApp::self()->mBookmarkListView->selectionModel()->clear();
-                QModelIndex mOldParent = BookmarkModel::self()->bookmarkToIndex(oldParent);
-                QModelIndex mNewParent = BookmarkModel::self()->bookmarkToIndex(newParent);
-
-                BookmarkModel::self()->beginMoveRows( mOldParent, first, last, mNewParent, position); 
-
-                mop = static_cast<TreeItem *>(mOldParent.internalPointer());
-                mf = first;
-                ml = last;
-                mnp = static_cast<TreeItem *>(mNewParent.internalPointer());
-                mp = position;
-            }
-        ~moveSentry()
-            {
-               mop->moveChildren(mf, ml, mnp, mp);
-               BookmarkModel::self()->endMoveRows(); 
-            }
-        private:
-            TreeItem * mop, *mnp;
-            int mf, ml, mp;
-    };
-
 };
 
 #endif
