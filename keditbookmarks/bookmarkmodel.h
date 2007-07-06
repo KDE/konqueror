@@ -20,17 +20,16 @@
 #define __bookmarkmodel_h
 
 #include <QtCore/QAbstractItemModel>
-#include <QtCore/QVector>
-#include <kbookmark.h>
 #include "treeitem.h"
 
+class KBookmark;
 class QDropEvent;
 
 class KBookmarkModelRemoveSentry;
 class KBookmarkModelMoveSentry;
 class KBookmarkModelInsertSentry;
 
-class BookmarkModel : public QAbstractItemModel
+class KBookmarkModel : public QAbstractItemModel
 {
     Q_OBJECT
 
@@ -40,9 +39,9 @@ public:
     friend class KBookmarkModelRemoveSentry;
     friend class KBookmarkModelMoveSentry;
 
-    BookmarkModel(const KBookmark& root);
+    KBookmarkModel(const KBookmark& root);
 
-    virtual ~BookmarkModel();
+    virtual ~KBookmarkModel();
 
     //reimplemented functions
     virtual QVariant data(const QModelIndex &index, int role) const;
@@ -55,7 +54,7 @@ public:
     virtual int columnCount(const QModelIndex &parent = QModelIndex()) const;
     virtual void resetModel();
 
-    QModelIndex bookmarkToIndex(const KBookmark& bk);
+    QModelIndex bookmarkToIndex(const KBookmark& bk) const;
     void emitDataChanged(const KBookmark& bk);
 
     //drag and drop
@@ -76,18 +75,8 @@ private:
     void beginMoveRows(const QModelIndex & oldParent, int first, int last, const QModelIndex & newParent, int position);
     void endMoveRows();
 
-    TreeItem * rootItem;
-    KBookmark mRoot;
-
-    // for move support
-    QModelIndex mOldParent;
-    int mFirst;
-    int mLast;
-    QModelIndex mNewParent;
-    int mPosition;
-    QVector<QModelIndex> movedIndexes;
-    QVector<QModelIndex> oldParentIndexes;
-    QVector<QModelIndex> newParentIndexes;
+    class Private;
+    Private * const d;
 };
 
 #endif

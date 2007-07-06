@@ -27,7 +27,7 @@
 #include <kxmlguifactory.h>
 #include "bookmarklistview.h"
 
-class BookmarkModel;
+class KBookmarkModel;
 class KBookmarkManager;
 class KToggleAction;
 class KBookmarkEditorIface;
@@ -72,7 +72,7 @@ public:
     KBookmarkGroup root();
     static KBookmark bookmarkAt(const QString & a);
 
-    BookmarkModel* model() const { return m_model; }
+    KBookmarkModel* model() const { return m_model; }
     KBookmarkManager* mgr() const { return m_mgr; }
     QString path() const;
 
@@ -95,7 +95,7 @@ protected Q_SLOTS:
 private:
     CurrentMgr();
     KBookmarkManager *m_mgr;
-    BookmarkModel *m_model;
+    KBookmarkModel *m_model;
     static CurrentMgr *s_mgr;
     uint ignorenext;
 };

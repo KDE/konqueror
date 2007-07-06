@@ -36,7 +36,7 @@
 class KBookmarkModelInsertSentry
 {
 public:
-    KBookmarkModelInsertSentry(KBookmark parent, int first, int last)
+    KBookmarkModelInsertSentry(const KBookmark& parent, int first, int last)
     {
         QModelIndex mParent = CurrentMgr::self()->model()->bookmarkToIndex(parent);
         CurrentMgr::self()->model()->beginInsertRows( mParent, first, last);
@@ -57,7 +57,7 @@ private:
 class KBookmarkModelRemoveSentry
 {
 public:
-    KBookmarkModelRemoveSentry(KBookmark parent, int first, int last)
+    KBookmarkModelRemoveSentry(const KBookmark& parent, int first, int last)
     {
         QModelIndex mParent = CurrentMgr::self()->model()->bookmarkToIndex(parent);
         //FIXME remove this once Qt fixes their really stupid bugs
@@ -85,7 +85,7 @@ private:
 class KBookmarkModelMoveSentry
 {
 public:
-    KBookmarkModelMoveSentry(KBookmark oldParent, int first, int last, KBookmark newParent, int position)
+    KBookmarkModelMoveSentry(const KBookmark& oldParent, int first, int last, KBookmark newParent, int position)
     {
         //FIXME need to decide how to handle selections and moving.
         KEBApp::self()->mBookmarkListView->selectionModel()->clear();
@@ -169,6 +169,7 @@ void CreateCommand::execute()
         : CurrentMgr::bookmarkAt(previousSibling);
 
     KBookmark bk = KBookmark(QDomElement());
+    // TODO use m_to.positionInParent()
     KBookmarkModelInsertSentry guard(parentGroup, KBookmark::positionInParent(m_to), KBookmark::positionInParent(m_to));
     if (m_separator) {
         bk = parentGroup.createNewSeparator();
@@ -214,6 +215,7 @@ void CreateCommand::unexecute() {
     KBookmark bk = CurrentMgr::bookmarkAt(m_to);
     Q_ASSERT(!bk.isNull() && !bk.parentGroup().isNull());
 
+    // TODO use bk.positionInParent()
     KBookmarkModelRemoveSentry(bk.parentGroup(), KBookmark::positionInParent(bk.address()), KBookmark::positionInParent(bk.address()));
     bk.parentGroup().deleteBookmark(bk);
 }
@@ -457,6 +459,7 @@ void MoveCommand::execute() {
     // look for m_from in the QDom tree
     KBookmark oldParent =
         CurrentMgr::bookmarkAt(KBookmark::parentAddress(m_from));
+    // TODO use m_from.positionInParent(), or better, compare with the first child!
     bool wasFirstChild = (KBookmark::positionInParent(m_from) == 0);
 
     KBookmark oldPreviousSibling = wasFirstChild
@@ -473,6 +476,7 @@ void MoveCommand::execute() {
 
     bool isFirstChild = (KBookmark::positionInParent(m_to) == 0);
 
+    // TODO use {m_from,m_to}.positionInParent()
     KBookmarkModelMoveSentry sentry(oldParent, KBookmark::positionInParent(m_from), KBookmark::positionInParent(m_from),
                                     newParent, KBookmark::positionInParent(m_to));
 
