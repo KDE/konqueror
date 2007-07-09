@@ -17,14 +17,14 @@
 */
 
 #include "kshellcmdplugin.h"
+#include "kshellcmddialog.h"
+#include <kparts/part.h>
 #include <kicon.h>
 #include <kactioncollection.h>
 #include <kinputdialog.h>
 #include <kmessagebox.h>
-#include <konq_dirpart.h>
 #include <kshell.h>
 #include <kapplication.h>
-#include "kshellcmddialog.h"
 #include <kgenericfactory.h>
 #include <kauthorized.h>
 #include <kio/netaccess.h>
@@ -44,31 +44,33 @@ KShellCmdPlugin::KShellCmdPlugin( QObject* parent, const QStringList & )
 
 void KShellCmdPlugin::slotExecuteShellCommand()
 {
-   KonqDirPart * part = dynamic_cast<KonqDirPart *>(parent());
-   if ( !part )
-   {
-      KMessageBox::sorry(0L, "KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug.");
-      return;
-   }
-   KUrl url = KIO::NetAccess::mostLocalUrl(part->url(),NULL);
-   if ( !url.isLocalFile() )
-   {
-      KMessageBox::sorry(part->widget(),i18n("Executing shell commands works only on local directories."));
-      return;
-   }
-   QString path;
-   if ( part->currentItem() )
-   {
-      // Putting the complete path to the selected file isn't really necessary,
-      // since we'll cd to the directory first. But we do need to get the
-      // complete relative path.
-      path = KUrl::relativePath( url.path(),
-                                 part->currentItem()->url().path() );
-   }
-   else
-   {
-      path = url.path();
-   }
+    KParts::ReadOnlyPart * part = dynamic_cast<KParts::ReadOnlyPart *>(parent());
+    if ( !part )
+    {
+        KMessageBox::sorry(0L, "KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug.");
+        return;
+    }
+    KUrl url = KIO::NetAccess::mostLocalUrl(part->url(),NULL);
+    if ( !url.isLocalFile() )
+    {
+        KMessageBox::sorry(part->widget(),i18n("Executing shell commands works only on local directories."));
+        return;
+    }
+    QString path;
+#if 0 // to be ported if still needed
+    if ( part->currentItem() )
+    {
+        // Putting the complete path to the selected file isn't really necessary,
+        // since we'll cd to the directory first. But we do need to get the
+        // complete relative path.
+        path = KUrl::relativePath( url.path(),
+                                   part->currentItem()->url().path() );
+    }
+    else
+#endif
+    {
+        path = url.path();
+    }
    bool ok;
    QString cmd = KInputDialog::getText( i18n("Execute Shell Command"),
       i18n( "Execute shell command in current directory:" ),

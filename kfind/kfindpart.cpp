@@ -30,26 +30,27 @@
 
 #include <QtCore/QDir>
 
-class KonqDirPart;
-
 typedef KParts::GenericFactory<KFindPart> KFindFactory;
 K_EXPORT_COMPONENT_FACTORY( libkfindpart, KFindFactory )
 
 KFindPart::KFindPart( QWidget * parentWidget, QObject *parent, const QStringList & /*args*/ )
-    : KonqDirPart (parent)/*KParts::ReadOnlyPart*/
+    : KParts::ReadOnlyPart(parent)
 {
     setComponentData( KFindFactory::componentData() );
 
-    setBrowserExtension( new KonqDirPartBrowserExtension( this ) );
+//    setBrowserExtension( new KonqDirPartBrowserExtension( this ) );
 
     kDebug() << "KFindPart::KFindPart " << this << endl;
     m_kfindWidget = new Kfind( parentWidget );
     m_kfindWidget->setMaximumHeight(m_kfindWidget->minimumSizeHint().height());
+
+#if 0 // TODO port?
     const KFileItem *item = ((KonqDirPart*)parent)->currentItem();
     kDebug() << "Kfind: currentItem:  " << ( item ? item->url().path().toLocal8Bit() : QString("null") ) << endl;
     QDir d;
     if( item && d.exists( item->url().path() ))
         m_kfindWidget->setURL( item->url() );
+#endif
 
     setWidget( m_kfindWidget );
 
@@ -106,7 +107,7 @@ void KFindPart::addFile(const KFileItem *item, const QString& /*matchingLine*/)
     KFileItemList lstNewItems;
     lstNewItems.append(clonedItem);
     emit newItems(lstNewItems);
-   
+
   /*
   win->insertItem(item);
 
@@ -134,7 +135,7 @@ void KFindPart::removeFile(KFileItem *item)
     if(iter->url()!=item->url())
       listiter.append(iter);
   }
-  
+
   if (listiter.count())
     emit newItems(listiter);
   emit finished();
@@ -176,7 +177,7 @@ void KFindPart::slotDestroyMe()
 
 void KFindPart::saveState( QDataStream& stream )
 {
-  KonqDirPart::saveState(stream); 
+    //KonqDirPart::saveState(stream);
 
   m_kfindWidget->saveState( &stream );
   //Now we'll save the search result
@@ -189,7 +190,7 @@ void KFindPart::saveState( QDataStream& stream )
 
 void KFindPart::restoreState( QDataStream& stream )
 {
-  KonqDirPart::restoreState(stream); 
+    //KonqDirPart::restoreState(stream);
   int nbitems;
   KUrl itemUrl;
 

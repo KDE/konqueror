@@ -17,7 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "konq_settings.h"
+#include "konqsettings.h"
 #include "konq_defaults.h"
 #include "kglobalsettings.h"
 #include <ksharedconfig.h>
@@ -29,19 +29,6 @@
 #include <QFontMetrics>
 #include <kconfiggroup.h>
 
-struct KonqFMSettingsPrivate
-{
-    KonqFMSettingsPrivate() {
-        showPreviewsInFileTips = true;
-        m_renameIconDirectly = false;
-    }
-
-    bool showPreviewsInFileTips;
-    bool m_renameIconDirectly;
-    bool localeAwareCompareIsCaseSensitive;
-    int m_iconTextWidth;
-};
-
 //static
 KonqFMSettings * KonqFMSettings::s_pSettings = 0L;
 
@@ -52,7 +39,7 @@ KonqFMSettings * KonqFMSettings::settings()
   {
     KSharedConfig::Ptr config = KGlobal::config();
     KConfigGroup cgs(config, "FMSettings");
-    s_pSettings = new KonqFMSettings(config);
+    s_pSettings = new KonqFMSettings(cgs);
   }
   return s_pSettings;
 }
@@ -64,65 +51,23 @@ void KonqFMSettings::reparseConfiguration()
   {
     KSharedConfig::Ptr config = KGlobal::config();
     KConfigGroup cgs(config, "FMSettings");
-    s_pSettings->init( config );
+    s_pSettings->init(cgs);
   }
 }
 
-KonqFMSettings::KonqFMSettings(const KSharedConfigPtr &config)
+KonqFMSettings::KonqFMSettings(const KConfigGroup &config)
 {
-  d = new KonqFMSettingsPrivate;
-  init(config);
+    init(config);
 }
 
 KonqFMSettings::~KonqFMSettings()
 {
-  delete d;
 }
 
-void KonqFMSettings::init(const KSharedConfigPtr &config)
+void KonqFMSettings::init(const KConfigGroup &config)
 {
-  // Fonts and colors
-  m_standardFont = config->readEntry( "StandardFont", QFont() );
-
-  m_normalTextColor = KGlobalSettings::textColor();
-  m_normalTextColor = config->readEntry( "NormalTextColor", m_normalTextColor );
-  m_highlightedTextColor = KGlobalSettings::highlightedTextColor();
-  m_highlightedTextColor = config->readEntry( "HighlightedTextColor", m_highlightedTextColor );
-  m_itemTextBackground = config->readEntry( "ItemTextBackground", QColor() );
-
-  d->m_iconTextWidth = config->readEntry( "TextWidth", DEFAULT_TEXTWIDTH );
-  if ( d->m_iconTextWidth == DEFAULT_TEXTWIDTH )
-    d->m_iconTextWidth = QFontMetrics(m_standardFont).width("0000000000");
-
-  m_iconTextHeight = config->readEntry( "TextHeight", 0 );
-  if ( m_iconTextHeight == 0 ) {
-    if ( config->readEntry( "WordWrapText", true ) )
-      m_iconTextHeight = DEFAULT_TEXTHEIGHT;
-    else
-      m_iconTextHeight = 1;
-  }
-  m_bWordWrapText = ( m_iconTextHeight > 1 );
-
-  m_underlineLink = config->readEntry( "UnderlineLinks", bool(DEFAULT_UNDERLINELINKS ));
-  d->m_renameIconDirectly = config->readEntry( "RenameIconDirectly", bool(DEFAULT_RENAMEICONDIRECTLY ));
-  m_fileSizeInBytes = config->readEntry( "DisplayFileSizeInBytes", bool(DEFAULT_FILESIZEINBYTES ));
-  m_iconTransparency = config->readEntry( "TextpreviewIconOpacity", DEFAULT_TEXTPREVIEW_ICONTRANSPARENCY );
-  if ( m_iconTransparency < 0 || m_iconTransparency > 255 )
-      m_iconTransparency = DEFAULT_TEXTPREVIEW_ICONTRANSPARENCY;
-
-  // Behaviour
-  m_alwaysNewWin = config->readEntry( "AlwaysNewWin", false);
-
-  m_homeURL = config->readPathEntry("HomeURL", "~");
-
-  m_showFileTips = config->readEntry("ShowFileTips", true);
-  d->showPreviewsInFileTips = config->readEntry("ShowPreviewsInFileTips", true);
-  m_numFileTips = config->readEntry("FileTipsItems", 6);
-
-  m_embedMap = config->entryMap( "EmbedSettings" );
-
-  /// true if QString::localeAwareCompare is case sensitive (it usually isn't, when LC_COLLATE is set)
-  d->localeAwareCompareIsCaseSensitive = QString( "a" ).localeAwareCompare( "B" ) > 0; // see #40131
+    m_homeURL = config.readPathEntry("HomeURL", "~");
+    m_embedMap = config.config()->entryMap("EmbedSettings");
 }
 
 bool KonqFMSettings::shouldEmbed( const QString & mimeType ) const
@@ -161,26 +106,7 @@ bool KonqFMSettings::shouldEmbed( const QString & mimeType ) const
     return false;
 }
 
-bool KonqFMSettings::showPreviewsInFileTips() const
+QString KonqFMSettings::homeUrl() const
 {
-    return d->showPreviewsInFileTips;
-}
-
-bool KonqFMSettings::renameIconDirectly() const
-{
-    return d->m_renameIconDirectly;
-}
-
-int KonqFMSettings::caseSensitiveCompare( const QString& a, const QString& b ) const
-{
-    if ( d->localeAwareCompareIsCaseSensitive ) {
-        return a.localeAwareCompare( b );
-    }
-    else // can't use localeAwareCompare, have to fallback to normal QString compare
-        return a.compare( b );
-}
-
-int KonqFMSettings::iconTextWidth() const
-{
-    return d->m_iconTextWidth;
+    return m_homeURL;
 }

@@ -25,16 +25,13 @@
 #include <kfileitem.h>
 #include <kdebug.h>
 #include <Qt3Support/Q3PtrList>
-#include <konq_dirpart.h>
 
 class KQuery;
 class KAboutData;
-//added
 class KAction;
-//end added
 class Kfind;
 
-class KFindPart : public KonqDirPart//KParts::ReadOnlyPart
+class KFindPart : public KParts::ReadOnlyPart
 {
   friend class KFindPartBrowserExtension;
     Q_OBJECT
@@ -50,13 +47,13 @@ public:
     virtual bool openFile() { return false; }
 
     bool showsResult() const { return m_bShowsResult; }
-    
+
     virtual void saveState( QDataStream &stream );
     virtual void restoreState( QDataStream &stream );
 
   // "Cut" icons : disable those whose URL is in lst, enable the rest //added for konqdirpart
-  virtual void disableIcons( const KUrl::List & ){}
-  virtual const KFileItem * currentItem(){return 0;}
+  //virtual void disableIcons( const KUrl::List & ){}
+  //virtual const KFileItem * currentItem(){return 0;}
 
 Q_SIGNALS:
     // Konqueror connects directly to those signals
@@ -76,6 +73,7 @@ protected Q_SLOTS:
     void removeFile(KFileItem *item);
     void slotResult(int errorCode);
     void newFiles(const KFileItemList&);
+#if 0
   // slots connected to the directory lister  //added for konqdirpart
 //  virtual void slotStarted();
   virtual void slotCanceled(){}
@@ -85,6 +83,7 @@ protected Q_SLOTS:
   virtual void slotRefreshItems( const KFileItemList& ){}
   virtual void slotClear(){}
   virtual void slotRedirection( const KUrl & ){}
+#endif
 
 private:
     Kfind * m_kfindWidget;

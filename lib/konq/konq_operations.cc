@@ -38,6 +38,7 @@
 #include <kio/deletejob.h>
 #include <kio/jobuidelegate.h>
 #include <kio/jobclasses.h>
+#include <kio/copyjob.h>
 #include <kio/paste.h>
 #include <kio/renamedialog.h>
 #include <kdirnotify.h>
@@ -52,7 +53,7 @@
 #include <kimageio.h>
 #include <kshell.h>
 
-#include <konq_iconviewwidget.h>
+//#include <konq_iconviewwidget.h>
 #include <QtDBus/QtDBus>
 #include <QMenu>
 #include <QApplication>
@@ -518,6 +519,7 @@ void KonqOperations::doDropFileCopy()
         // Neither control nor shift are pressed => show popup menu
 
         // TODO move this code out somehow. Allow user of KonqOperations to add his own actions...
+#if 0
         KonqIconViewWidget *iconView = dynamic_cast<KonqIconViewWidget*>(parent());
         bool bSetWallpaper = false;
         if ( iconView && iconView->maySetWallpaper() && lst.count() == 1 )
@@ -530,6 +532,7 @@ void KonqOperations::doDropFileCopy()
                 bSetWallpaper = true;
             }
         }
+#endif
 
         // Check what the source can do
         KUrl url = lst.first(); // we'll assume it's the same for all URLs (hack)
@@ -570,8 +573,10 @@ void KonqOperations::doDropFileCopy()
 
         popup.addAction(popupLinkAction);
 
+#if 0
         if (bSetWallpaper)
             popup.addAction(popupWallAction);
+#endif
 
         popup.addSeparator();
         popup.addAction(popupCancelAction);
@@ -584,6 +589,7 @@ void KonqOperations::doDropFileCopy()
             action = Qt::MoveAction;
         else if(result == popupLinkAction)
             action = Qt::LinkAction;
+#if 0
         else if(result == popupWallAction)
         {
             kDebug(1203) << "setWallpaper iconView=" << iconView << " url=" << lst.first().url() << endl;
@@ -591,6 +597,7 @@ void KonqOperations::doDropFileCopy()
             delete this;
             return;
         }
+#endif
         else if(result == popupCancelAction || !result)
         {
             delete this;
@@ -659,6 +666,7 @@ void KonqOperations::setOperation( KIO::Job * job, Operation method, const KUrl 
         job->ui()->setWindow(parentWidget());
         connect( job, SIGNAL( result( KJob * ) ),
                  SLOT( slotResult( KJob * ) ) );
+#if 0
         KIO::CopyJob *copyJob = dynamic_cast<KIO::CopyJob*>(job);
         KonqIconViewWidget *iconView = dynamic_cast<KonqIconViewWidget*>(parent());
         if (copyJob && iconView)
@@ -669,6 +677,7 @@ void KonqOperations::setOperation( KIO::Job * job, Operation method, const KUrl 
             connect(this, SIGNAL(aboutToCreate(const QPoint &, const QList<KIO::CopyInfo> &)),
                  iconView, SLOT(slotAboutToCreate(const QPoint &, const QList<KIO::CopyInfo> &)));
         }
+#endif
     }
     else // for link
         slotResult( 0L );

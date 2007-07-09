@@ -25,7 +25,7 @@
 #include "konqviewmanager.h"
 #include "konqview.h"
 #include "konqsettingsxt.h"
-#include <konq_settings.h>
+#include "konqsettings.h"
 
 #include <kapplication.h>
 #include <kdebug.h>

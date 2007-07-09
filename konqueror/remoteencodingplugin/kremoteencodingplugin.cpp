@@ -40,7 +40,6 @@
 #include <kprotocolmanager.h>
 #include <kio/slaveconfig.h>
 #include <kio/scheduler.h>
-#include <konq_dirpart.h>
 #include <kparts/browserextension.h>
 
 #define DATA_KEY	QLatin1String("Charset")
@@ -56,11 +55,7 @@ KRemoteEncodingPlugin::KRemoteEncodingPlugin(QObject * parent,
   m_menu->setEnabled(false);
   m_menu->setDelayed(false);
 
-  m_part = dynamic_cast<KonqDirPart*>(parent);
-  if (m_part)
-    // if parent is not a KonqDirPart, our menu will never show
-    QObject::connect(m_part, SIGNAL(aboutToOpenURL()),
-		     this, SLOT(slotAboutToOpenURL()));
+  m_part->installEventFilter(this);
 }
 
 KRemoteEncodingPlugin::~KRemoteEncodingPlugin()
@@ -235,13 +230,26 @@ KRemoteEncodingPlugin::updateBrowser()
   KIO::Scheduler::emitReparseSlaveConfiguration();
 
   // Reload the page with the new charset
-  KParts::URLArgs args = m_part->extension()->urlArgs();
+  KParts::URLArgs args = m_part->browserExtension()->urlArgs();
   args.reload = true;
-  m_part->extension()->setUrlArgs(args);
+  m_part->browserExtension()->setUrlArgs(args);
   m_part->openUrl(m_currentURL);
+}
+
+bool KRemoteEncodingPlugin::eventFilter(QObject*obj, QEvent *ev)
+{
+    if (obj == m_part && KParts::OpenURLEvent::test(ev)) {
+#if 0 // TODO enable after 15 July 2007 (once KParts::ReadOnlyPart has the arguments() method)
+        const QString mimeType = m_part->arguments().mimeType();
+        if (!mimeType.isEmpty() && KMimeType::mimeType(mimeType)->is("inode/directory"))
+#endif
+            slotAboutToOpenURL();
+    }
+    return KParts::Plugin::eventFilter(obj, ev);
 }
 
 typedef KGenericFactory < KRemoteEncodingPlugin > KRemoteEncodingPluginFactory;
 K_EXPORT_COMPONENT_FACTORY(konq_remoteencoding,
 			   KRemoteEncodingPluginFactory("kremoteencodingplugin"))
+
 #include "kremoteencodingplugin.moc"

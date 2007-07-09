@@ -42,7 +42,7 @@
 #include <kdeversion.h>
 
 // Local
-#include "konq_settings.h"
+#include "konqsettings.h"
 #include "konqmainwindow.h"
 
 

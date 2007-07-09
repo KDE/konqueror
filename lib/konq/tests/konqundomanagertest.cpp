@@ -465,3 +465,4 @@ void KonqUndoManagerTest::testModifyFileBeforeUndo()
 }
 
 // TODO: add test (and fix bug) for  DND of remote urls / "Link here" (creates .desktop files) // Undo (doesn't do anything)
+// TODO: add test for interrupting a moving operation and then using Undo - bug:91579

@@ -17,7 +17,7 @@
 */
 
 #include "konqapplication.h"
-#include <konq_settings.h>
+#include "konqsettings.h"
 #include <QtDBus/QtDBus>
 #include "konqmainwindow.h"
 #include "KonquerorAdaptor.h"

@@ -27,7 +27,7 @@
 #include <kparts/plugin.h>
 
 class KActionMenu;
-class KonqDirPart;
+namespace KParts { class ReadOnlyPart; }
 
 class KRemoteEncodingPlugin: public KParts::Plugin
 {
@@ -43,13 +43,16 @@ protected Q_SLOTS:
   void slotReload();
   void slotDefault();
 
+protected:
+    virtual bool eventFilter(QObject*obj, QEvent *ev);
+
 private:
   void updateBrowser();
   void loadSettings();
   void fillMenu();
   void updateMenu();
 
-  KonqDirPart *m_part;
+  KParts::ReadOnlyPart *m_part;
   KActionMenu *m_menu;
   QStringList m_encodingDescriptions;
   KUrl m_currentURL;

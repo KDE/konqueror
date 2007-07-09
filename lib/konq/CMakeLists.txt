@@ -12,22 +12,16 @@ add_definitions (-DQT3_SUPPORT)
 
 # Please use .cpp for new files
 set(konq_LIB_SRCS
-   konq_popupmenu.cc
-   knewmenu.cpp
-   konq_xmlguiclient.cc
-   kfileivi.cc
-   konq_iconviewwidget.cc
-   konq_settings.cc
+   konq_popupmenu.cc        # OK to remain in libkonq, needed by konqpopupmenu plugins.
+   konq_xmlguiclient.cc     # used by KonqPopupMenu
+   knewmenu.cpp             # used by dolphin, KonqPopupMenu, and konqueror (File menu)
    konq_operations.cc
-   konq_dirpart.cc
-   konq_propsview.cc
    konq_events.cc
    konq_bgnddlg.cc
    konq_undo.cc
    konq_historymgr.cc
    konq_historyentry.cpp
    konq_pixmapprovider.cc
-   kivdirectoryoverlay.cc
    konq_faviconmgr.cc
    konq_filetip.cc
    konqbookmarkmanager.cpp
@@ -61,20 +55,14 @@ install( FILES directory_bookmarkbar.desktop   DESTINATION  ${DATA_INSTALL_DIR}/
 install( FILES
  konq_popupmenu.h
  knewmenu.h
- kfileivi.h
- konq_iconviewwidget.h
  konq_defaults.h
- konq_settings.h
  konq_operations.h
  libkonq_export.h
- konq_dirpart.h
- konq_propsview.h
  konq_events.h
  konq_undo.h
  konq_historymgr.h
  konq_historyentry.h
  konq_pixmapprovider.h
- kivdirectoryoverlay.h
  konq_faviconmgr.h
  konq_xmlguiclient.h
  konqbookmarkmanager.h
