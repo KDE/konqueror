@@ -350,7 +350,6 @@ public Q_SLOTS:
   void slotNewDir();
   void slotOpenTerminal();
   void slotOpenLocation();
-  void slotToolFind();
 
   // View menu
   void slotViewModeToggle( bool toggle );
@@ -484,8 +483,11 @@ protected Q_SLOTS:
 
   void slotOpenURL( const KUrl& );
 
+#if 0
+  void slotToolFind();
   void slotFindOpen( KonqDirPart * dirPart );
   void slotFindClosed( KonqDirPart * dirPart );
+#endif
 
   void slotIconsChanged();
 
@@ -653,7 +655,9 @@ private: // members
 
   KBookmarkBar *m_paBookmarkBar;
 
+#if 0
   KToggleAction * m_paFindFiles;
+#endif
   KToggleAction *m_ptaUseHTML;
 
   KToggleAction *m_paShowMenuBar;

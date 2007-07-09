@@ -31,7 +31,7 @@
 #include "konqbrowseriface.h"
 #include <kparts/statusbarextension.h>
 #include <kparts/browserextension.h>
-#include <konq_dirpart.h>
+//#include <konq_dirpart.h>
 
 #include <konq_historymgr.h>
 #include <konq_pixmapprovider.h>
@@ -481,12 +481,14 @@ void KonqView::connectPart(  )
       }
   }
 
+#if 0
   // KonqDirPart signal
   if ( ::qobject_cast<KonqDirPart *>(m_pPart) )
   {
       connect( m_pPart, SIGNAL( findOpen( KonqDirPart * ) ),
                m_pMainWindow, SLOT( slotFindOpen( KonqDirPart * ) ) );
   }
+#endif
 }
 
 void KonqView::slotEnableAction( const char * name, bool enabled )

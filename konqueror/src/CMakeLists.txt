@@ -36,6 +36,7 @@ set(konqueror_KDEINIT_SRCS
    konqmainwindow.cpp
    konqextensionmanager.cpp
    konqbookmarkbar.cpp
+   konqsettings.cpp
    KonquerorAdaptor.cpp
    KonqMainWindowAdaptor.cpp
    KonqViewAdaptor.cpp

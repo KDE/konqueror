@@ -94,9 +94,8 @@
 #include <kmessagebox.h>
 #include <knewmenu.h>
 #include <konq_defaults.h>
-#include <konq_dirpart.h>
 #include <konq_popupmenu.h>
-#include <konq_settings.h>
+#include "konqsettings.h"
 #include <konq_undo.h>
 #include <kprotocolinfo.h>
 #include <kprotocolmanager.h>
@@ -876,9 +875,11 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
       childView->setTypedURL( req.typedUrl );
       if ( childView->browserExtension() )
           childView->browserExtension()->setUrlArgs( req.args );
+#if 0
       KonqDirPart* dirPart = ::qobject_cast<KonqDirPart*>( childView->part() );
       if ( dirPart )
           dirPart->setFilesToSelect( req.filesToSelect );
+#endif
       if ( !url.isEmpty() )
           childView->openUrl( url, originalURL, req.nameFilter, req.tempFile );
   }
@@ -1309,10 +1310,10 @@ void KonqMainWindow::slotSendURL()
     fileNameList += (*it).fileName();
   }
   QString subject;
-  if ( m_currentView && !::qobject_cast<KonqDirPart*>( m_currentView->part() ) )
+  if ( m_currentView && !m_currentView->supportsServiceType( "inode/directory" ) )
     subject = m_currentView->caption();
-  else
-    subject = fileNameList;
+  else // directory view
+      subject = fileNameList;
   KToolInvocation::invokeMailer(QString(),QString(),QString(),
                      subject, body);
 }
@@ -1353,7 +1354,7 @@ void KonqMainWindow::slotSendFile()
     }
   }
   QString subject;
-  if ( m_currentView && !::qobject_cast<KonqDirPart*>( m_currentView->part() ) )
+  if ( m_currentView && !m_currentView->supportsServiceType( "inode/directory" ) )
     subject = m_currentView->caption();
   else
     subject = fileNameList;
@@ -1381,8 +1382,7 @@ void KonqMainWindow::slotOpenTerminal()
       //If the URL is local after the above conversion, set the directory.
       if ( u.isLocalFile() )
       {
-          QString mime = m_currentView->serviceType();
-          if ( KMimeType::mimeType(mime)->is("inode/directory") )
+          if ( m_currentView->supportsServiceType( "inode/directory" ) )
               dir = u.path();
           else
               dir = u.directory();
@@ -1421,6 +1421,7 @@ void KonqMainWindow::slotOpenLocation()
      openFilteredUrl( url.url().trimmed() );
 }
 
+#if 0
 void KonqMainWindow::slotToolFind()
 {
   kDebug(1202) << "KonqMainWindow::slotToolFind sender:" << sender()->metaObject()->className() << endl;
@@ -1470,7 +1471,9 @@ void KonqMainWindow::slotToolFind()
       m_paFindFiles->setChecked(false);
   }
 }
+#endif
 
+#if 0
 void KonqMainWindow::slotFindOpen( KonqDirPart * dirPart )
 {
     kDebug(1202) << "KonqMainWindow::slotFindOpen " << dirPart << endl;
@@ -1489,6 +1492,7 @@ void KonqMainWindow::slotFindClosed( KonqDirPart * dirPart )
         m_paFindFiles->setEnabled( true );
     m_paFindFiles->setChecked(false);
 }
+#endif
 
 void KonqMainWindow::slotIconsChanged()
 {
@@ -1538,6 +1542,7 @@ void KonqMainWindow::slotViewModeToggle( bool toggle )
   // Save those, because changeViewMode will lose them
   KUrl url = m_currentView->url();
   QString locationBarURL = m_currentView->locationBarURL();
+#if 0
   QStringList filesToSelect;
   KonqDirPart* dirPart = ::qobject_cast<KonqDirPart *>(m_currentView->part());
   if( dirPart ) {
@@ -1548,7 +1553,7 @@ void KonqMainWindow::slotViewModeToggle( bool toggle )
          filesToSelect += (*it)->name();
      }
   }
-
+#endif
 
   bool bQuickViewModeChange = false;
 
@@ -1621,9 +1626,11 @@ void KonqMainWindow::slotViewModeToggle( bool toggle )
     m_currentView->changeViewMode( m_currentView->serviceType(), modeName );
     KUrl locURL( locationBarURL );
     QString nameFilter = detectNameFilter( locURL );
+#if 0
     KonqDirPart* dirPart = ::qobject_cast<KonqDirPart *>(m_currentView->part());
     if( dirPart )
        dirPart->setFilesToSelect( filesToSelect );
+#endif
     m_currentView->openUrl( locURL, locationBarURL, nameFilter );
   }
 
@@ -1786,7 +1793,7 @@ void KonqMainWindow::slotHome(Qt::MouseButtons buttons, Qt::KeyboardModifiers mo
     QString homeURL = m_pViewManager->profileHomeURL();
 
     if (homeURL.isEmpty())
-	homeURL = KonqFMSettings::settings()->homeURL();
+	homeURL = KonqFMSettings::settings()->homeUrl();
 
     KonqOpenURLRequest req;
     req.newTab = true;
@@ -2916,6 +2923,7 @@ KUrl::List KonqMainWindow::currentURLs() const
   KUrl::List urls;
   if ( m_currentView ) {
     urls.append( m_currentView->url() );
+#if 0
     KonqDirPart* dirPart = ::qobject_cast<KonqDirPart *>(m_currentView->part());
     if ( dirPart ) {
       const KFileItemList itemList = dirPart->selectedFileItems();
@@ -2923,6 +2931,7 @@ KUrl::List KonqMainWindow::currentURLs() const
         urls = itemList.urlList();
       }
     }
+#endif
   }
   return urls;
 }
@@ -3704,10 +3713,12 @@ void KonqMainWindow::initActions()
   connect(action, SIGNAL(triggered(bool)), SLOT( slotOpenLocation() ));
   action->setShortcuts(KStandardShortcut::shortcut(KStandardShortcut::Open));
 
+#if 0
   m_paFindFiles = new KToggleAction(KIcon("file-find"), i18n( "&Find File..." ), this);
   actionCollection()->addAction( "findfile", m_paFindFiles );
   connect(m_paFindFiles, SIGNAL(triggered(bool) ), SLOT( slotToolFind() ));
   m_paFindFiles->setShortcuts(KStandardShortcut::shortcut(KStandardShortcut::Find));
+#endif
 
   m_paPrint = actionCollection()->addAction( KStandardAction::Print, "print", 0, 0 );
   actionCollection()->addAction( KStandardAction::Quit, "quit", this, SLOT( close() ) );
@@ -4236,6 +4247,7 @@ void KonqMainWindow::updateViewActions()
 
   m_paLinkView->setChecked( m_currentView && m_currentView->isLinkedView() );
 
+#if 0
   if ( m_currentView && m_currentView->part() &&
        ::qobject_cast<KonqDirPart*>( m_currentView->part() ) )
   {
@@ -4247,6 +4259,8 @@ void KonqMainWindow::updateViewActions()
     {
       // F5 is the default key binding for Reload.... a la Windows.
       // mc users want F5 for Copy and F6 for move, but I can't make that default.
+
+
       m_paCopyFiles = actionCollection()->addAction( "copyfiles" );
       m_paCopyFiles->setText( i18n("Copy &Files...") );
       connect(m_paCopyFiles, SIGNAL(triggered(bool) ), SLOT( slotCopyFiles() ));
@@ -4258,6 +4272,7 @@ void KonqMainWindow::updateViewActions()
 
       // This action doesn't appear in the GUI, it's for the shortcut only.
       // KNewMenu takes care of the GUI stuff.
+      // TODO: move this shortcut to dolphin
       m_paNewDir = actionCollection()->addAction( "konq_create_dir" );
       m_paNewDir->setText( i18n("Create Folder..." ) );
       connect(m_paNewDir, SIGNAL(triggered(bool) ), SLOT( slotNewDir() ));
@@ -4286,6 +4301,7 @@ void KonqMainWindow::updateViewActions()
           m_paNewDir = 0;
       }
   }
+#endif
 }
 
 QString KonqMainWindow::findIndexFile( const QString &dir )
@@ -4550,6 +4566,9 @@ QString KonqMainWindow::currentURL() const
         return QString();
     QString url = m_currentView->url().prettyUrl();
 
+#if 0
+    // TODO implement support for nameFilter in dolphin if it doesn't have it,
+    // or add that feature from konqueror (with a new KonqDirPart that encapsulates directory parts locally?).
     if ( m_currentView->part() ) {
         KonqDirPart* dirPart = ::qobject_cast<KonqDirPart *>(m_currentView->part());
         if ( dirPart ) {
@@ -4561,6 +4580,7 @@ QString KonqMainWindow::currentURL() const
             }
         }
     }
+#endif
     return url;
 }
 
@@ -4713,7 +4733,9 @@ void KonqMainWindow::slotPopupMenu( KXMLGUIClient *client, const QPoint &_global
   popupMenuCollection.addAction( m_paUp->objectName(), m_paUp );
   popupMenuCollection.addAction( m_paReload->objectName(), m_paReload );
 
+#if 0
   popupMenuCollection.addAction( m_paFindFiles->objectName(), m_paFindFiles );
+#endif
 
   popupMenuCollection.addAction( m_paUndo->objectName(), m_paUndo );
   popupMenuCollection.addAction( m_paCut->objectName(), m_paCut );
