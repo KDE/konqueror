@@ -27,7 +27,7 @@ set(konq_sidebar_PART_SRCS konqsidebar.cpp sidebar_widget.cpp )
 kde4_add_plugin(konq_sidebar ${konq_sidebar_PART_SRCS})
 
 
-target_link_libraries(konq_sidebar  ${KDE4_KPARTS_LIBS} ${KDE4_KIO_LIBS} konq konqsidebarplugin ${KDE4_KUTILS_LIBS} )
+target_link_libraries(konq_sidebar  ${KDE4_KPARTS_LIBS} konq konqsidebarplugin ${KDE4_KUTILS_LIBS} )
 
 install(TARGETS konq_sidebar  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
