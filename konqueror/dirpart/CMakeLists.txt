@@ -11,7 +11,6 @@ set(konq_part_PART_SRCS
    konq_itemdelegate.cc 
    konq_iconviewitemdelegate.cc )
 
-kde4_automoc(${konq_part_PART_SRCS})
 
 kde4_add_plugin(konq_part ${konq_part_PART_SRCS})
 

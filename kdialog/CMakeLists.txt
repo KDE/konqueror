@@ -11,7 +11,6 @@ set(kdialog_SRCS
 
 qt4_add_dbus_adaptor( kdialog_SRCS org.kde.kdialog.ProgressDialog.xml progressdialog.h KProgressDialog )
 
-kde4_automoc(${kdialog_SRCS})
 
 
 kde4_add_executable(kdialog ${kdialog_SRCS})

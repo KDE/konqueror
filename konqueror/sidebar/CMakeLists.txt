@@ -10,7 +10,6 @@ add_subdirectory( web_module )
 
 set(konqsidebarplugin_LIB_SRCS konqsidebarplugin.cpp )
 
-kde4_automoc(${konqsidebarplugin_LIB_SRCS})
 
 kde4_add_library(konqsidebarplugin SHARED ${konqsidebarplugin_LIB_SRCS})
 
@@ -24,7 +23,6 @@ install(TARGETS konqsidebarplugin  DESTINATION ${LIB_INSTALL_DIR} )
 
 set(konq_sidebar_PART_SRCS konqsidebar.cpp sidebar_widget.cpp )
 
-kde4_automoc(${konq_sidebar_PART_SRCS})
 
 kde4_add_plugin(konq_sidebar ${konq_sidebar_PART_SRCS})
 

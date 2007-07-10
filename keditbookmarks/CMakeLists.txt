@@ -5,7 +5,6 @@ include_directories( ${CMAKE_SOURCE_DIR}/libkonq  )
 
 set(kbookmarkmerger_SRCS kbookmarkmerger.cpp )
 
-kde4_automoc(${kbookmarkmerger_SRCS})
 
 kde4_add_executable(kbookmarkmerger ${kbookmarkmerger_SRCS})
 
@@ -42,7 +41,6 @@ ADD_CUSTOM_COMMAND(OUTPUT ${toplevel_xml}
 QT4_ADD_DBUS_INTERFACE( keditbookmarks_KDEINIT_SRCS ${toplevel_xml} toplevel_interface )
 
 
-kde4_automoc(${keditbookmarks_KDEINIT_SRCS})
 
 
 

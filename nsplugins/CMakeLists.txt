@@ -24,7 +24,6 @@ if (X11_Xt_LIB)
 
 
 
-  kde4_automoc(${kcminit_nsplugin_PART_SRCS})
 
   kde4_add_plugin(kcminit_nsplugin WITH_PREFIX ${kcminit_nsplugin_PART_SRCS})
 
@@ -37,7 +36,6 @@ if (X11_Xt_LIB)
 
   set(kcm_nsplugins_PART_SRCS kcm_nsplugins.cpp )
 
-  kde4_automoc(${kcm_nsplugins_PART_SRCS})
 
   kde4_add_plugin(kcm_nsplugins ${kcm_nsplugins_PART_SRCS})
 
@@ -51,7 +49,6 @@ if (X11_Xt_LIB)
 
   set(nspluginscan_SRCS pluginscan.cpp )
 
-  kde4_automoc(${nspluginscan_SRCS})
 
   kde4_add_executable(nspluginscan ${nspluginscan_SRCS})
 

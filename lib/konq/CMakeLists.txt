@@ -32,7 +32,6 @@ qt4_add_dbus_adaptor( konq_LIB_SRCS org.kde.libkonq.KonqHistoryManager.xml konq_
 qt4_add_dbus_adaptor( konq_LIB_SRCS org.kde.libkonq.UndoManager.xml konq_undo.h KonqUndoManager) 
 
 
-kde4_automoc(${konq_LIB_SRCS})
 
 kde4_add_library(konq SHARED ${konq_LIB_SRCS})
 
@@ -44,7 +43,6 @@ install(TARGETS konq  DESTINATION ${LIB_INSTALL_DIR} )
 ########### next target ###############
 
 set(konq_sound_LIB_SRCS konq_sound.cc)
-kde4_automoc(${konq_sound_LIB_SRCS})
 kde4_add_plugin(konq_sound ${konq_sound_LIB_SRCS})
 target_link_libraries(konq_sound ${KDE4_KDECORE_LIBS} ${KDE4_PHONON_LIBS})
 install(TARGETS konq_sound  DESTINATION ${PLUGIN_INSTALL_DIR} )
