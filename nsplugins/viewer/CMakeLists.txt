@@ -12,7 +12,6 @@ qt4_add_dbus_adaptor( nspluginviewer_SRCS org.kde.nsplugins.viewer.xml nsplugin.
 set(nsplugins_callback_xml  ${CMAKE_CURRENT_SOURCE_DIR}/../org.kde.nsplugins.CallBack.xml)
 QT4_ADD_DBUS_INTERFACE( nspluginviewer_SRCS ${nsplugins_callback_xml} nsplugins_callback_interface )
 
-kde4_automoc(${nspluginviewer_SRCS})
 
 
 

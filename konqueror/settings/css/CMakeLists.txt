@@ -5,7 +5,6 @@
 
 set(kcm_css_PART_SRCS template.cpp kcmcss.cpp )
 
-kde4_automoc(${kcm_css_PART_SRCS})
 
 
 kde4_add_ui_files(kcm_css_PART_SRCS csscustom.ui cssconfig.ui preview.ui)

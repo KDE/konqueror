@@ -5,7 +5,6 @@ set(kfmclient_SRCS kfmclient.cpp )
 qt4_add_dbus_interface( kfmclient_SRCS ../src/org.kde.Konqueror.Main.xml konq_main_interface )
 qt4_add_dbus_interface( kfmclient_SRCS ../src/org.kde.Konqueror.MainWindow.xml konq_mainwindow_interface )
 
-kde4_automoc(${kfmclient_SRCS})
 
 add_definitions(-DQT_NO_CAST_ASCII)
 

@@ -20,7 +20,6 @@ set(kcm_konq_PART_SRCS
 #endif(Q_WS_X11)
 #kde4_add_ui_files(kcm_konq_PART_SRCS desktopbehavior.ui )
 
-kde4_automoc(${kcm_konq_PART_SRCS})
 
 
 

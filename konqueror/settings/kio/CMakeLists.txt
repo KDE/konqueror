@@ -24,7 +24,6 @@ set(kcm_kio_PART_SRCS
    ksaveioconfig.cpp 
    socks.cpp )
 
-kde4_automoc(${kcm_kio_PART_SRCS})
 
 kde4_add_ui_files(kcm_kio_PART_SRCS cache_ui.ui manualproxy_ui.ui envvarproxy_ui.ui policydlg_ui.ui uagentproviderdlg_ui.ui kcookiesmanagementdlg_ui.ui useragentdlg_ui.ui socksbase.ui kproxydlg_ui.ui kcookiespoliciesdlg_ui.ui kcookiesmanagementdlg_ui.ui)
 

@@ -2,7 +2,6 @@ include_directories( ${CMAKE_SOURCE_DIR}/libkonq ${CMAKE_CURRENT_SOURCE_DIR}/.. 
 
 ########### centralwidget ###############
 
-kde4_automoc(centralwidget.cpp)
 
 kde4_add_test_executable(centralwidget centralwidget.cpp)
 
@@ -10,7 +9,6 @@ target_link_libraries(centralwidget konq ${KDE4_KDECORE_LIBS} ${QT_QTTEST_LIBRAR
 
 ########### konqviewmgrtest ###############
 
-kde4_automoc(konqviewmgrtest.cpp)
 
 kde4_add_test_executable(konqviewmgrtest konqviewmgrtest.cpp)
 

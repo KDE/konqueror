@@ -5,7 +5,6 @@
 
 set(khtmlkttsdplugin_PART_SRCS khtmlkttsd.cpp )
 
-kde4_automoc(${khtmlkttsdplugin_PART_SRCS})
 
 kde4_add_plugin(khtmlkttsdplugin WITH_PREFIX ${khtmlkttsdplugin_PART_SRCS})
 

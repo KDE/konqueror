@@ -45,7 +45,6 @@ kde4_add_kcfg_files(konqueror_KDEINIT_SRCS konqsettingsxt.kcfgc)
 
 qt4_add_dbus_interface(konqueror_KDEINIT_SRCS org.kde.Konqueror.Main.xml konqueror_interface)
 
-kde4_automoc(${konqueror_KDEINIT_SRCS})
 
 kde4_add_kdeinit_executable(konqueror ${konqueror_KDEINIT_SRCS} konqmain.cpp)
 

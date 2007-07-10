@@ -17,7 +17,6 @@ set(nsplugins_viewer_xml  ${CMAKE_CURRENT_SOURCE_DIR}/../viewer/org.kde.nsplugin
 QT4_ADD_DBUS_INTERFACE( testnsplugin_SRCS ${nsplugins_viewer_xml} nsplugins_viewer_interface )
 
 
-kde4_automoc(${testnsplugin_SRCS})
 
 kde4_add_test_executable(testnsplugin ${testnsplugin_SRCS})
 
