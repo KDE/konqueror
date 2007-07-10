@@ -31,7 +31,6 @@
 #include <klocale.h>
 #include <kapplication.h>
 #include <krun.h>
-#include <k3process.h>
 #include <kpropertiesdialog.h>
 #include <kstandarddirs.h>
 #include <kmessagebox.h>

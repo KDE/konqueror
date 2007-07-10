@@ -12,7 +12,7 @@
 
 #include <kio/job.h>
 #include <kurl.h>
-#include <k3process.h>
+#include <kprocess.h>
 
 class KFileItem;
 
@@ -54,9 +54,9 @@ class KQuery : public QObject
   void slotListEntries(KIO::Job *, const KIO::UDSEntryList &);
   void slotResult(KJob *);
   void slotCanceled(KJob *);
-  void slotreceivedSdtout(K3Process*,char*,int);
-  void slotreceivedSdterr(K3Process*,char*,int);
-  void slotendProcessLocate(K3Process*);
+  void slotreadyReadStandardOutput();
+  void slotreadyReadStandardError();
+  void slotendProcessLocate(int, QProcess::ExitStatus);
 
  Q_SIGNALS:
   void addFile(const KFileItem *filename, const QString& matchingLine);
@@ -84,10 +84,9 @@ class KQuery : public QObject
   bool m_search_binary;
   bool m_regexpForContent;
   bool m_useLocate;
-  char* bufferLocate;
-  int bufferLocateLength;
+  QByteArray bufferLocate;
   QStringList locateList;
-  K3Process *processLocate;
+  KProcess *processLocate;
   QList<QRegExp*> m_regexps;// regexps for file name
 //  QValueList<bool> m_regexpsContainsGlobs;  // what should this be good for ? Alex
   KIO::ListJob *job;

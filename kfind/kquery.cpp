@@ -20,10 +20,10 @@ KQuery::KQuery(QObject *parent)
     m_timeFrom(0), m_timeTo(0),
     job(0), m_insideCheckEntries(false), m_result(0)
 {
-  processLocate = new K3Process(this);
-  connect(processLocate,SIGNAL(receivedStdout(K3Process*, char*, int)),this,SLOT(slotreceivedSdtout(K3Process*,char*,int)));
-  connect(processLocate,SIGNAL(receivedStderr(K3Process*, char*, int)),this,SLOT(slotreceivedSdterr(K3Process*,char*,int)));
-  connect(processLocate,SIGNAL(processExited(K3Process*)),this,SLOT(slotendProcessLocate(K3Process*)));
+  processLocate = new KProcess(this);
+  connect(processLocate,SIGNAL(readyReadStandardOutput()),this,SLOT(slotreadyReadStandardOutput()));
+  connect(processLocate,SIGNAL(readyReadStandardError()),this,SLOT(slotreadyReadStandardError()));
+  connect(processLocate,SIGNAL(finished(int, QProcess::ExitStatus)),this,SLOT(slotendProcessLocate(int, QProcess::ExitStatus)));
 
   // Files with these mime types can be ignored, even if
   // findFormatByFileContent() in some cases may claim that
@@ -66,7 +66,7 @@ void KQuery::kill()
 {
   if (job)
      job->doKill();
-  if (processLocate->isRunning())
+  if (processLocate->state() == QProcess::Running)
      processLocate->kill();
   while (!m_fileItems.isEmpty())
       delete m_fileItems.dequeue();
@@ -79,12 +79,13 @@ void KQuery::start()
   if(m_useLocate) //use "locate" instead of the internal search method
   {
     m_url.cleanPath();
-    processLocate->clearArguments();
+    processLocate->clearProgram();
     *processLocate << "locate";
     *processLocate << m_url.path( KUrl::AddTrailingSlash ).toLatin1();
-    bufferLocate=NULL;
-    bufferLocateLength=0;
-    processLocate->start(K3Process::NotifyOnExit,K3Process::AllOutput);
+    bufferLocate.clear();
+    processLocate->setNextOpenMode(QIODevice::Text);
+    processLocate->setOutputChannelMode(KProcess::SeparateChannels);
+    processLocate->start();
     return;
   }
 
@@ -488,54 +489,27 @@ void KQuery::setUseFileIndex(bool useLocate)
   m_useLocate=useLocate;
 }
 
-void KQuery::slotreceivedSdterr(K3Process* ,char* str,int)
+void KQuery::slotreadyReadStandardError()
 {
-  KMessageBox::error(NULL, QString(str), i18n("Error while using locate"));
+  KMessageBox::error(NULL, QString::fromLocal8Bit(processLocate->readAllStandardOutput()), i18n("Error while using locate"));
 }
 
-void KQuery::slotreceivedSdtout(K3Process*,char* str,int l)
+void KQuery::slotreadyReadStandardOutput()
 {
-  int i;
-
-  bufferLocateLength+=l;
-  str[l]='\0';
-  bufferLocate=(char*)realloc(bufferLocate,sizeof(char)*(bufferLocateLength));
-  for (i=0;i<l;i++)
-    bufferLocate[bufferLocateLength-l+i]=str[i];
+  bufferLocate += processLocate->readAllStandardOutput();
 }
 
-void KQuery::slotendProcessLocate(K3Process*)
+void KQuery::slotendProcessLocate(int, QProcess::ExitStatus)
 {
-  QString qstr;
-  QStringList strlist;
-  int i,j,k;
-
-  if((bufferLocateLength==0)||(bufferLocate==NULL))
+  if(bufferLocate.isEmpty())
   {
     emit result(0);
     return;
   }
 
-  i=0;
-  do
-  {
-  	j=1;
-  	while(bufferLocate[i]!='\n')
-   {
-   	i++;
-    j++;
-   }
-   qstr="";
-   for(k=0;k<j-1;k++)
-   	qstr.append(bufferLocate[k+i-j+1]);
-   strlist.append(qstr);
-   i++;
-
-  }while(i<bufferLocateLength);
-  bufferLocateLength=0;
-  free(bufferLocate);
-  bufferLocate=NULL;
-  slotListEntries(strlist );
+  QString str = QString::fromLocal8Bit(bufferLocate);
+  bufferLocate.clear();
+  slotListEntries(str.split('\n'));
   emit result(0);
 }
 
