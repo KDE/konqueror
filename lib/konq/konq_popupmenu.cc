@@ -40,7 +40,6 @@
 #include <kdesktopfile.h>
 #include <kparts/componentfactory.h>
 #include <kfileshare.h>
-#include <k3process.h>
 #include <kauthorized.h>
 #include <kglobal.h>
 
