@@ -6,7 +6,7 @@
 
 int main(int argc, char** argv)
 {
-  KCmdLineArgs::init(argc, argv, "kcustommenueditortest", "kdelibs", ki18n("kcustommenueditortest"),"0",ki18n("test app"));
+  KCmdLineArgs::init(argc, argv, "kcustommenueditortest", "kdelibs4", ki18n("kcustommenueditortest"),"0",ki18n("test app"));
   KApplication app;
   app.setQuitOnLastWindowClosed(false);
   KCustomMenuEditor editor(0);
