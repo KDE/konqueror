@@ -20,8 +20,8 @@
 #ifndef KONQ_HISTORYENTRY_H
 #define KONQ_HISTORYENTRY_H
 
-#include <QDateTime>
-#include <QVariant>
+#include <QtCore/QDateTime>
+#include <QtCore/QVariant>
 
 #include <kurl.h>
 

@@ -2,8 +2,7 @@
 #define __konq_events_h__
 
 #include <kparts/event.h>
-#include <QList>
-#include <QEvent>
+#include <QtCore/QList>
 #include <libkonq_export.h>
 #include <kfileitem.h>
 

@@ -20,10 +20,10 @@
 #ifndef KONQ_HISTORY_H
 #define KONQ_HISTORY_H
 
-#include <QObject>
-#include <QMap>
-#include <QTimer>
-#include <QStringList>
+#include <QtCore/QObject>
+#include <QtCore/QMap>
+#include <QtCore/QTimer>
+#include <QtCore/QStringList>
 
 #include <kurl.h>
 #include <kparts/historyprovider.h>

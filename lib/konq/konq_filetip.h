@@ -23,11 +23,9 @@
 #define KONQ_FILETIP_H
 
 #include <Qt3Support/Q3Frame>
-#include <QPixmap>
-//Added by qt3to4:
-#include <QLabel>
-#include <QResizeEvent>
-#include <QEvent>
+#include <QtGui/QPixmap>
+#include <QtGui/QLabel>
+#include <QtGui/QResizeEvent>
 #include <kio/previewjob.h>
 
 #include <libkonq_export.h>
