@@ -22,8 +22,8 @@
 #include <kurl.h>
 #include <libkonq_export.h>
 
-#include <QObject>
-#include <QDropEvent>
+#include <QtCore/QObject>
+#include <QtGui/QDropEvent>
 
 class KJob;
 namespace KIO { class Job; struct CopyInfo; }

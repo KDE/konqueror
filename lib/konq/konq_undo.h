@@ -21,7 +21,7 @@
 #ifndef __konq_undo_h__
 #define __konq_undo_h__
 
-#include <QObject>
+#include <QtCore/QObject>
 #include <kurl.h>
 #include <sys/types.h> // time_t
 
