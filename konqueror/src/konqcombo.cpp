@@ -164,6 +164,7 @@ void KonqCombo::setURL( const QString& url )
                                         QDBusConnection::sessionBus() );
         dbus.addToCombo( url );
     }
+    lineEdit()->setCursorPosition( 0 );
 }
 
 void KonqCombo::setTemporary( const QString& text )
