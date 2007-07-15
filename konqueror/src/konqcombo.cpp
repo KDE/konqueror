@@ -164,6 +164,8 @@ void KonqCombo::setURL( const QString& url )
                                         QDBusConnection::sessionBus() );
         dbus.addToCombo( url );
     }
+    // important security consideration: always display the beginning
+    // of the url rather than its end to prevent spoofing attempts.
     lineEdit()->setCursorPosition( 0 );
 }
 
