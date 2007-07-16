@@ -37,7 +37,7 @@ kde4_add_library(konq SHARED ${konq_LIB_SRCS})
 
 target_link_libraries(konq ${KDE4_KDE3SUPPORT_LIBS} ${QT_QTXML_LIBRARY} ${KDE4_KDEFX_LIBS} ${KDE4_KDESU_LIBS})
 
-set_target_properties(konq PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION} )
+set_target_properties(konq PROPERTIES VERSION ${KDE_NON_GENERIC_LIB_VERSION} SOVERSION ${KDE_NON_GENERIC_LIB_SOVERSION} )
 install(TARGETS konq  DESTINATION ${LIB_INSTALL_DIR} )
 
 ########### next target ###############
