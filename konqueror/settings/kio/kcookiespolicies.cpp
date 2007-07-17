@@ -286,13 +286,13 @@ void KCookiesPolicies::load()
   d_configChanged = false;
 
   KConfig cfg ("kcookiejarrc");
-  cfg.setGroup ("Cookie Policy");
+  KConfigGroup group = cfg.group ("Cookie Policy");
 
-  bool enableCookies = cfg.readEntry("Cookies", true);
+  bool enableCookies = group.readEntry("Cookies", true);
   dlg->cbEnableCookies->setChecked (enableCookies);
   cookiesEnabled( enableCookies );
 
-  KCookieAdvice::Value advice = KCookieAdvice::strToAdvice (cfg.readEntry(
+  KCookieAdvice::Value advice = KCookieAdvice::strToAdvice (group.readEntry(
                                                "CookieGlobalAdvice", "Ask"));
   switch (advice)
   {
@@ -308,19 +308,19 @@ void KCookiesPolicies::load()
       dlg->rbPolicyAsk->setChecked (true);
   }
 
-  bool enable = cfg.readEntry("RejectCrossDomainCookies", true);
+  bool enable = group.readEntry("RejectCrossDomainCookies", true);
   dlg->cbRejectCrossDomainCookies->setChecked (enable);
 
-  bool sessionCookies = cfg.readEntry("AcceptSessionCookies", true);
+  bool sessionCookies = group.readEntry("AcceptSessionCookies", true);
   dlg->cbAutoAcceptSessionCookies->setChecked (sessionCookies);
-  bool cookieExpiration = cfg.readEntry("IgnoreExpirationDate", false);
+  bool cookieExpiration = group.readEntry("IgnoreExpirationDate", false);
   dlg->cbIgnoreCookieExpirationDate->setChecked (cookieExpiration);
 
   if (enableCookies)
   {
     ignoreCookieExpirationDate( cookieExpiration );
     autoAcceptSessionCookies( sessionCookies );
-    updateDomainList(cfg.readEntry("CookieDomainAdvice", QStringList() ));
+    updateDomainList(group.readEntry("CookieDomainAdvice", QStringList() ));
     updateButtons();
   }
 
@@ -368,16 +368,16 @@ void KCookiesPolicies::save()
     return;
 
   KConfig cfg ( "kcookiejarrc" );
-  cfg.setGroup( "Cookie Policy" );
+  KConfigGroup group = cfg.group( "Cookie Policy" );
 
   bool state = dlg->cbEnableCookies->isChecked();
-  cfg.writeEntry( "Cookies", state );
+  group.writeEntry( "Cookies", state );
   state = dlg->cbRejectCrossDomainCookies->isChecked();
-  cfg.writeEntry( "RejectCrossDomainCookies", state );
+  group.writeEntry( "RejectCrossDomainCookies", state );
   state = dlg->cbAutoAcceptSessionCookies->isChecked();
-  cfg.writeEntry( "AcceptSessionCookies", state );
+  group.writeEntry( "AcceptSessionCookies", state );
   state = dlg->cbIgnoreCookieExpirationDate->isChecked();
-  cfg.writeEntry( "IgnoreExpirationDate", state );
+  group.writeEntry( "IgnoreExpirationDate", state );
 
   QString advice;
   if (dlg->rbPolicyAccept->isChecked())
@@ -387,7 +387,7 @@ void KCookiesPolicies::save()
   else
       advice = KCookieAdvice::adviceToStr(KCookieAdvice::Ask);
 
-  cfg.writeEntry("CookieGlobalAdvice", advice);
+  group.writeEntry("CookieGlobalAdvice", advice);
 
   QStringList domainConfig;
   Q3ListViewItem *at = dlg->lvDomainPolicy->firstChild();
@@ -398,8 +398,8 @@ void KCookiesPolicies::save()
     at = at->nextSibling();
   }
 
-  cfg.writeEntry("CookieDomainAdvice", domainConfig);
-  cfg.sync();
+  group.writeEntry("CookieDomainAdvice", domainConfig);
+  group.sync();
 
   // Update the cookiejar...
   if (!dlg->cbEnableCookies->isChecked())
