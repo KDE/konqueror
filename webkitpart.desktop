@@ -4,5 +4,6 @@ Type=Service
 Comment=Embeddable HTML component
 MimeType=text/html;application/xml;application/xhtml+xml;
 Name=WebKit
-ServiceTypes=KParts/ReadOnlyPart
+ServiceTypes=KParts/ReadOnlyPart,Browser/View
 X-KDE-Library=libwebkitkde
+InitialPreference=11
