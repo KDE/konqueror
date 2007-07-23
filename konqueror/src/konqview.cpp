@@ -171,7 +171,7 @@ void KonqView::openUrl( const KUrl &url, const QString & locationBarURL,
   // Typing "Enter" again after the URL of an aborted view, triggers a reload.
   if ( m_bAborted && m_pPart && m_pPart->url() == url && !args.doPost())
   {
-    if ( !prepareReload( args ) )
+    if ( !prepareReload( args, false /* not softReload */ ) )
       return;
     if ( ext )
       ext->setUrlArgs( args );
@@ -1327,9 +1327,12 @@ void KonqView::setActiveComponent()
       KGlobal::setActiveComponent( m_pPart->componentData() );
 }
 
-bool KonqView::prepareReload( KParts::URLArgs& args )
+bool KonqView::prepareReload( KParts::URLArgs& args, bool softReload )
 {
     args.reload = true;
+    if ( softReload )
+        args.softReload = true;
+
     // Repost form data if this URL is the result of a POST HTML form.
     if ( m_doPost && !args.redirectedRequest() )
     {

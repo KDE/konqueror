@@ -1773,7 +1773,7 @@ void KonqMainWindow::slotReload( KonqView* reloadView )
 
   KonqOpenURLRequest req( reloadView->typedUrl() );
   req.userRequestedReload = true;
-  if ( reloadView->prepareReload( req.args ) )
+  if ( reloadView->prepareReload( req.args, true /* softReload */ ) )
   {
       reloadView->lockHistory();
       // Reuse current servicetype for local files, but not for remote files (it could have changed, e.g. over HTTP)
