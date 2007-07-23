@@ -16,5 +16,5 @@ install(TARGETS kdepasswd DESTINATION ${BIN_INSTALL_DIR})
 
 ########### install files ###############
 
-install( FILES kdepasswd.desktop  DESTINATION  ${XDG_APPS_DIR} )
+install( FILES kdepasswd.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
 

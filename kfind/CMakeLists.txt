@@ -32,7 +32,7 @@ install(TARGETS kfind DESTINATION ${BIN_INSTALL_DIR})
 
 ########### install files ###############
 
-install( FILES kfind.desktop  DESTINATION  ${XDG_APPS_DIR} )
+install( FILES kfind.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
 install( FILES findpart.desktop  DESTINATION  ${SERVICETYPES_INSTALL_DIR} )
 install( FILES kfindpart.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
 

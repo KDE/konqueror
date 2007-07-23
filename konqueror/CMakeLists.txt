@@ -23,7 +23,7 @@ endif(UNIX)
 
 ########### install files ###############
 install( FILES konqfilemgr.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
-install( FILES kfmclient.desktop kfmclient_dir.desktop kfmclient_html.desktop  	kfmclient_war.desktop konqbrowser.desktop konquerorsu.desktop Home.desktop  DESTINATION  ${XDG_APPS_DIR} )
+install( FILES kfmclient.desktop kfmclient_dir.desktop kfmclient_html.desktop  	kfmclient_war.desktop konqbrowser.desktop konquerorsu.desktop Home.desktop  DESTINATION  ${XDG_APPS_INSTALL_DIR} )
 install( FILES konqueror.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
 
 install(FILES profile_webbrowsing.desktop DESTINATION ${DATA_INSTALL_DIR}/konqueror/profiles/ RENAME webbrowsing)
