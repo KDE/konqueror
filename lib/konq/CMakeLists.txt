@@ -70,5 +70,5 @@ DESTINATION ${INCLUDE_INSTALL_DIR}
 )
 install( FILES konqpopupmenuplugin.desktop  DESTINATION  ${SERVICETYPES_INSTALL_DIR} )
 
-install( FILES org.kde.libkonq.KonqHistoryManager.xml org.kde.libkonq.UndoManager.xml DESTINATION ${DBUS_INTERFACES_DIR} )
+install( FILES org.kde.libkonq.KonqHistoryManager.xml org.kde.libkonq.UndoManager.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR} )
 

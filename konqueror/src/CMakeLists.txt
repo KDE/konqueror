@@ -57,4 +57,4 @@ install(TARGETS konqueror DESTINATION ${BIN_INSTALL_DIR})
 ########### install files ###############
 install( FILES konqueror.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
 install( FILES konqueror.rc konq-simplebrowser.rc  DESTINATION  ${DATA_INSTALL_DIR}/konqueror )
-install(FILES org.kde.Konqueror.Main.xml org.kde.Konqueror.MainWindow.xml DESTINATION ${DBUS_INTERFACES_DIR} )
+install(FILES org.kde.Konqueror.Main.xml org.kde.Konqueror.MainWindow.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR} )

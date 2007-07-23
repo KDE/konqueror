@@ -22,5 +22,5 @@ install(TARGETS kded_konqy_preloader DESTINATION ${PLUGIN_INSTALL_DIR})
 
 install(FILES konqy_preload.desktop DESTINATION ${AUTOSTART_INSTALL_DIR})
 install(FILES konqy_preloader.desktop DESTINATION ${SERVICES_INSTALL_DIR}/kded)
-install(FILES org.kde.konqueror.Preloader.xml DESTINATION ${DBUS_INTERFACES_DIR} )
+install(FILES org.kde.konqueror.Preloader.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR} )
 

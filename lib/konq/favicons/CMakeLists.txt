@@ -16,4 +16,4 @@ if(NOT WIN32)
   install( PROGRAMS move_favicons.sh  DESTINATION  ${KCONF_UPDATE_INSTALL_DIR} )
 endif(NOT WIN32)
 
-install( FILES org.kde.FavIcon.xml DESTINATION ${DBUS_INTERFACES_DIR} )
+install( FILES org.kde.FavIcon.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR} )

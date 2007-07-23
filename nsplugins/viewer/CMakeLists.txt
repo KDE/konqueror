@@ -20,6 +20,6 @@ kde4_add_executable(nspluginviewer ${nspluginviewer_SRCS})
 target_link_libraries(nspluginviewer  ${KDE4_KPARTS_LIBS} ${X11_Xt_LIB} ${QT_QT3SUPPORT_LIBRARY} )
 
 install(TARGETS nspluginviewer DESTINATION ${BIN_INSTALL_DIR})
-install(FILES org.kde.nsplugins.class.xml org.kde.nsplugins.instance.xml org.kde.nsplugins.viewer.xml DESTINATION ${DBUS_INTERFACES_DIR} )
+install(FILES org.kde.nsplugins.class.xml org.kde.nsplugins.instance.xml org.kde.nsplugins.viewer.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR} )
 
 
