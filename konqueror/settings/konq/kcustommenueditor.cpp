@@ -66,7 +66,7 @@ public:
       serviceName.replace("&", "&&");
 
       QPixmap normal = KIconLoader::global()->loadIcon(s->icon(), K3Icon::Small,
-                              0, K3Icon::DefaultState, 0L, true);
+                              0, K3Icon::DefaultState, QStringList(), 0L, true);
 
       // make sure they are not larger than 16x16
       if (normal.width() > 16 || normal.height() > 16) {
