@@ -216,9 +216,9 @@ void KQuery::processQuery( KFileItem* file)
 
     // make sure it's in the correct date range
     // what about 0 times?
-    if ( m_timeFrom && m_timeFrom > file->time(KIO::UDS_MODIFICATION_TIME) )
+    if ( m_timeFrom && m_timeFrom > file->time(KIO::UDSEntry::UDS_MODIFICATION_TIME) )
       return;
-    if ( m_timeTo && m_timeTo < file->time(KIO::UDS_MODIFICATION_TIME) )
+    if ( m_timeTo && m_timeTo < file->time(KIO::UDSEntry::UDS_MODIFICATION_TIME) )
       return;
 
     // username / group match
