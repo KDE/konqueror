@@ -32,6 +32,7 @@
 
 #include <kcmodule.h>
 #include <kio/global.h>
+#include <kio/udsentry.h>
 #include <kurl.h>
 
 class KJob;
