@@ -3768,6 +3768,7 @@ void KonqMainWindow::initActions()
   m_paHome = actionCollection()->addAction("home");
   m_paHome->setIcon(KIcon("go-home"));
   m_paHome->setText(i18n( "Home" ));
+  m_paHome->setEnabled( true );
   m_paHome->setShortcuts(KStandardShortcut::shortcut(KStandardShortcut::Home));
   connect( m_paHome, SIGNAL( triggered( Qt::MouseButtons, Qt::KeyboardModifiers) ), this,
 	   SLOT( slotHome(Qt::MouseButtons, Qt::KeyboardModifiers) ) );
