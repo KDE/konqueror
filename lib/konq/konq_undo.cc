@@ -379,7 +379,7 @@ void KonqUndoManager::slotResult( KJob *job )
         KonqBasicOperation op = d->m_current.m_opStack.top();
         //kDebug(1203) << "KonqUndoManager::slotResult stat result for " << op.m_dst << endl;
         KIO::StatJob* statJob = static_cast<KIO::StatJob*>( job );
-        time_t mtime = statJob->statResult().numberValue( KIO::UDS_MODIFICATION_TIME, -1 );
+        time_t mtime = statJob->statResult().numberValue( KIO::UDSEntry::UDS_MODIFICATION_TIME, -1 );
         if ( mtime != op.m_mtime ) {
             kDebug(1203) << op.m_dst << " was modified after being copied!" << endl;
             if ( !d->m_uiInterface->copiedFileWasModified( op.m_src, op.m_dst, op.m_mtime, mtime ) ) {
