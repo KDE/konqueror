@@ -357,7 +357,7 @@ void KonqUndoManager::stopUndo( bool step )
     d->m_undoJob = 0;
 
     if ( d->m_currentJob )
-        d->m_currentJob->doKill();
+        d->m_currentJob->kill();
 
     d->m_currentJob = 0;
 
