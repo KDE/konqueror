@@ -80,7 +80,7 @@ TestLinkItr::~TestLinkItr() {
     if (m_job) {
         // kDebug() << "JOB kill\n";
         m_job->disconnect();
-        m_job->doKill();
+        m_job->kill();
     }
 }
 
@@ -135,7 +135,7 @@ void TestLinkItr::slotJobData(KIO::Job *job, const QByteArray &data) {
         }
     }
 
-    transfer->doKill();
+    transfer->kill();
 }
 
 void TestLinkItr::slotJobResult(KJob *job) {
