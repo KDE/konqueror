@@ -111,7 +111,7 @@ void BookmarkView::setModel(QAbstractItemModel * model)
 
 KBookmarkModel* BookmarkView::model() const
 {
-    return dynamic_cast<KBookmarkModel*>(model());
+    return dynamic_cast<KBookmarkModel*>(QTreeView::model());
 }
 
 ////
