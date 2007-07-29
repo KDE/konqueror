@@ -65,7 +65,7 @@ KQuery::~KQuery()
 void KQuery::kill()
 {
   if (job)
-     job->doKill();
+     job->kill();
   if (processLocate->state() == QProcess::Running)
      processLocate->kill();
   while (!m_fileItems.isEmpty())
@@ -216,9 +216,9 @@ void KQuery::processQuery( KFileItem* file)
 
     // make sure it's in the correct date range
     // what about 0 times?
-    if ( m_timeFrom && m_timeFrom > file->time(KIO::UDSEntry::UDS_MODIFICATION_TIME) )
+    if ( m_timeFrom && m_timeFrom > file->time(KFileItem::ModificationTime).toTime_t() )
       return;
-    if ( m_timeTo && m_timeTo < file->time(KIO::UDSEntry::UDS_MODIFICATION_TIME) )
+    if ( m_timeTo && m_timeTo < file->time(KFileItem::ModificationTime).toTime_t() )
       return;
 
     // username / group match

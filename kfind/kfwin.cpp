@@ -63,9 +63,7 @@ KfFileLVI::KfFileLVI(KfindWindow* lv, const KFileItem &item, const QString& matc
 
   QString size = KGlobal::locale()->formatNumber(item.size(), 0);
 
-  QDateTime dt;
-  dt.setTime_t(item.time(KIO::UDSEntry::UDS_MODIFICATION_TIME));
-  QString date = KGlobal::locale()->formatDateTime(dt);
+  QString date = item.timeString(KFileItem::ModificationTime);
 
   int perm_index;
   if(fileInfo->isReadable())
@@ -98,7 +96,7 @@ QString KfFileLVI::key(int column, bool) const
     return QString().sprintf("%010ld", (long int)fileInfo->size());
   case 3:
     // Returns time in secs from 1/1/1970. Used for sorting
-    return QString().sprintf("%010ld", fileitem.time(KIO::UDSEntry::UDS_MODIFICATION_TIME));
+    return QString().sprintf("%010ld", fileitem.time(KFileItem::ModificationTime).toTime_t());
   }
 
   return text(column);
