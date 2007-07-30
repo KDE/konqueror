@@ -137,13 +137,15 @@
   <Action name="removeview" />
 </ToolBar>
 <ToolBar fullWidth="true" name="locationToolBar" newline="true"><text>Location Toolbar</text>
-  <Action name="clear_location" />
   <Action name="location_label" />
   <Action name="toolbar_url_combo" />
   <Action name="go_url" />
 </ToolBar>
 <ToolBar noEdit="true" iconText="icontextright" fullWidth="true" name="bookmarkToolBar" newline="true"><text>Bookmark Toolbar</text>
 </ToolBar>
+<MainWindow>
+  <Action name="clear_location" />
+</MainWindow>
 <ActionProperties>
   <Action shortcut="F9" name="konq_sidebartng" />
 </ActionProperties>
