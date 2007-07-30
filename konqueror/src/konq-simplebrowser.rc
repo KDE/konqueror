@@ -84,7 +84,6 @@
   <Action name="reload" />
   <Action name="stop" />
   <Action name="security" />
-  <Action name="clear_location" />
   <Action name="location_label" />
   <Action name="toolbar_url_combo" />
   <Action name="go_url" />
@@ -93,6 +92,9 @@
  <ToolBar newline="true" noEdit="true" iconText="icontextright" name="bookmarkToolBar" fullWidth="true" >
   <text>Bookmark Toolbar</text>
  </ToolBar>
+ <MainWindow>
+  <Action name="clear_location" />
+ </MainWindow>
  <ActionProperties>
   <Action shortcut="F9" name="konq_sidebartng" />
  </ActionProperties>
