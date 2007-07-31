@@ -138,7 +138,7 @@ void KEBApp::createActions() {
     connect(actnNewFolder, SIGNAL( triggered() ), actn, SLOT( slotNewFolder() ));
 
     QAction* actnNewBookmark = actionCollection()->addAction("newbookmark");
-    actnNewBookmark->setIcon(KIcon("www"));
+    actnNewBookmark->setIcon(KIcon("bookmark-new"));
     actnNewBookmark->setText(i18n("&New Bookmark"));
     connect(actnNewBookmark, SIGNAL( triggered() ), actn, SLOT( slotNewBookmark() ));
 
