@@ -27,6 +27,7 @@
 
 #include <kdebug.h>
 #include <kstandarddirs.h>
+#include <kdefakes.h>
 
 #include <kdesu/process.h>
 
