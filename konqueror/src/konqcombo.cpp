@@ -154,7 +154,7 @@ void KonqCombo::init( KCompletion *completion )
 
 void KonqCombo::setURL( const QString& url )
 {
-    //kDebug(1202) << "KonqCombo::setURL: " << url << ", returnPressed ? " << m_returnPressed << endl;
+    //kDebug(1202) << "KonqCombo::setURL: " << url << ", returnPressed ? " << m_returnPressed;
     setTemporary( url );
 
     if ( m_returnPressed ) { // Really insert...
@@ -176,7 +176,7 @@ void KonqCombo::setTemporary( const QString& text )
 
 void KonqCombo::setTemporary( const QString& url, const QPixmap& pix )
 {
-    //kDebug(1202) << "KonqCombo::setTemporary: " << url << ", temporary = " << temporary << endl;
+    //kDebug(1202) << "KonqCombo::setTemporary: " << url << ", temporary = " << temporary;
 
     // Insert a temporary item when we don't have one yet
     if ( count() == 0 )
@@ -194,7 +194,7 @@ void KonqCombo::setTemporary( const QString& url, const QPixmap& pix )
 
 void KonqCombo::removeDuplicates( int index )
 {
-    //kDebug(1202) << "KonqCombo::removeDuplicates: Starting index =  " << index << endl;
+    //kDebug(1202) << "KonqCombo::removeDuplicates: Starting index =  " << index;
 
     QString url (temporaryItem());
     if (url.endsWith("/"))
@@ -215,7 +215,7 @@ void KonqCombo::removeDuplicates( int index )
 // called via DBUS in all instances
 void KonqCombo::insertPermanent( const QString& url )
 {
-    //kDebug(1202) << "KonqCombo::insertPermanent: URL = " << url << endl;
+    //kDebug(1202) << "KonqCombo::insertPermanent: URL = " << url;
     saveState();
     setTemporary( url );
     m_permanent = true;
@@ -235,7 +235,7 @@ void KonqCombo::applyPermanent()
 
         QString item = temporaryItem();
         insertItem( KonqPixmapProvider::self()->pixmapFor( item ), item, 1, titleOfURL( item ) );
-        //kDebug(1202) << "KonqCombo::applyPermanent: " << url << endl;
+        //kDebug(1202) << "KonqCombo::applyPermanent: " << url;
 
         // Remove all duplicates starting from index = 2
         removeDuplicates( 2 );
@@ -594,7 +594,7 @@ void KonqCombo::mouseMoveEvent( QMouseEvent *e )
 
 void KonqCombo::slotActivated( const QString& text )
 {
-    //kDebug(1202) << "KonqCombo::slotActivated: " << text << endl;
+    //kDebug(1202) << "KonqCombo::slotActivated: " << text;
     applyPermanent();
     m_returnPressed = true;
     emit activated( text, m_modifier );

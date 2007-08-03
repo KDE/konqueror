@@ -91,7 +91,7 @@ int KShellCommandDialog::executeCommand()
 {
    if (m_shell==0)
       return 0;
-   //kDebug()<<"---------- KShellCommandDialog::executeCommand()"<<endl;
+   //kDebug()<<"---------- KShellCommandDialog::executeCommand()";
    m_shell->exec();
    return exec();
 }

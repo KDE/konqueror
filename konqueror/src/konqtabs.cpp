@@ -74,7 +74,7 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
 			  "navigate through tabs. The text on the tab is the title of the website "
 			  "currently open in it, put your mouse over the tab too see the full title in "
 			  "case it was truncated to fit the tab size." ) );
-  //kDebug(1202) << "KonqFrameTabs::KonqFrameTabs()" << endl;
+  //kDebug(1202) << "KonqFrameTabs::KonqFrameTabs()";
 
   m_pParentContainer = parentContainer;
   m_pActiveChild = 0L;
@@ -143,7 +143,7 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
 
 KonqFrameTabs::~KonqFrameTabs()
 {
-  //kDebug(1202) << "KonqFrameTabs::~KonqFrameTabs() " << this << " - " << className() << endl;
+  //kDebug(1202) << "KonqFrameTabs::~KonqFrameTabs() " << this << " - " << className();
   qDeleteAll( m_childFrameList );
   m_childFrameList.clear();
 }
@@ -174,12 +174,12 @@ void KonqFrameTabs::copyHistory( KonqFrameBase *other )
 {
 
   if( !other ) {
-    kDebug(1202) << "The Frame does not exist" << endl;
+    kDebug(1202) << "The Frame does not exist";
     return;
   }
 
   if( other->frameType() != "Tabs" ) {
-    kDebug(1202) << "Frame types are not the same" << endl;
+    kDebug(1202) << "Frame types are not the same";
     return;
   }
 
@@ -191,13 +191,13 @@ void KonqFrameTabs::copyHistory( KonqFrameBase *other )
 
 void KonqFrameTabs::setTitle( const QString &title , QWidget* sender)
 {
-  // kDebug(1202) << "KonqFrameTabs::setTitle( " << title << " , " << sender << " )" << endl;
+  // kDebug(1202) << "KonqFrameTabs::setTitle( " << title << " , " << sender << " )";
   setTabText( indexOf( sender ), title );
 }
 
 void KonqFrameTabs::setTabIcon( const KUrl &url, QWidget* sender )
 {
-  //kDebug(1202) << "KonqFrameTabs::setTabIcon( " << url << " , " << sender << " )" << endl;
+  //kDebug(1202) << "KonqFrameTabs::setTabIcon( " << url << " , " << sender << " )";
   KIcon iconSet;
   if (m_permanentCloseButtons)
     iconSet = KIcon( "window-close" );
@@ -218,11 +218,11 @@ void KonqFrameTabs::activateChild()
 
 void KonqFrameTabs::insertChildFrame( KonqFrameBase* frame, int index )
 {
-    //kDebug(1202) << "KonqFrameTabs " << this << ": insertChildFrame " << frame << endl;
+    //kDebug(1202) << "KonqFrameTabs " << this << ": insertChildFrame " << frame;
 
     if (frame)
     {
-      //kDebug(1202) << "Adding frame" << endl;
+      //kDebug(1202) << "Adding frame";
       bool showTabBar = (count() == 1);
       insertTab(index, frame->asQWidget(), "");
       frame->setParentContainer(this);
@@ -241,12 +241,12 @@ void KonqFrameTabs::insertChildFrame( KonqFrameBase* frame, int index )
           this->hideTabBar();//the first frame inserted (initialization)
     }
     else
-        kWarning(1202) << "KonqFrameTabs " << this << ": insertChildFrame(0) !" << endl;
+        kWarning(1202) << "KonqFrameTabs " << this << ": insertChildFrame(0) !" ;
 }
 
 void KonqFrameTabs::childFrameRemoved( KonqFrameBase * frame )
 {
-  //kDebug(1202) << "KonqFrameTabs::RemoveChildFrame " << this << ". Child " << frame << " removed" << endl;
+  //kDebug(1202) << "KonqFrameTabs::RemoveChildFrame " << this << ". Child " << frame << " removed";
   if (frame) {
     removeTab(indexOf(frame->asQWidget()));
     m_childFrameList.removeAll(frame);
@@ -256,9 +256,9 @@ void KonqFrameTabs::childFrameRemoved( KonqFrameBase * frame )
       hideTabBar();
   }
   else
-    kWarning(1202) << "KonqFrameTabs " << this << ": childFrameRemoved(0L) !" << endl;
+    kWarning(1202) << "KonqFrameTabs " << this << ": childFrameRemoved(0L) !" ;
 
-  //kDebug(1202) << "KonqFrameTabs::RemoveChildFrame finished" << endl;
+  //kDebug(1202) << "KonqFrameTabs::RemoveChildFrame finished";
 }
 
 void KonqFrameTabs::moveTabBackward( int index )

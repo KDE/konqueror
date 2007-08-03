@@ -52,7 +52,7 @@ void KonqBidiHistoryAction::fillHistoryPopup( const QList<HistoryEntry*> &histor
 {
   assert ( popup ); // kill me if this 0... :/
 
-  //kDebug(1202) << "fillHistoryPopup position: " << history.at() << endl;
+  //kDebug(1202) << "fillHistoryPopup position: " << history.at();
   HistoryEntry * current = history[ historyIndex ];
   int index = 0;
   if (onlyBack || onlyForward)
@@ -80,7 +80,7 @@ void KonqBidiHistoryAction::fillHistoryPopup( const QList<HistoryEntry*> &histor
           break;
       if ( !onlyForward ) --index; else ++index;
   }
-  //kDebug(1202) << "After fillHistoryPopup position: " << history.at() << endl;
+  //kDebug(1202) << "After fillHistoryPopup position: " << history.at();
 }
 
 ///////////////////////////////
@@ -132,7 +132,7 @@ void KonqBidiHistoryAction::fillGoMenu( const QList<HistoryEntry*> & history, in
     if (history.isEmpty())
         return; // nothing to do
 
-    //kDebug(1202) << "fillGoMenu position: " << history.at() << endl;
+    //kDebug(1202) << "fillGoMenu position: " << history.at();
     if ( m_firstIndex == 0 ) // should never happen since done in plug
         m_firstIndex = menu()->actions().count();
     else
@@ -161,7 +161,7 @@ void KonqBidiHistoryAction::fillGoMenu( const QList<HistoryEntry*> & history, in
     Q_ASSERT( m_startPos >= 0 && m_startPos < history.count() );
     if ( m_startPos < 0 || m_startPos >= history.count() )
     {
-        kWarning() << "m_startPos=" << m_startPos << " history.count()=" << history.count() << endl;
+        kWarning() << "m_startPos=" << m_startPos << " history.count()=" << history.count() ;
         return;
     }
     m_currentPos = historyIndex; // for slotActivated
@@ -174,10 +174,10 @@ void KonqBidiHistoryAction::slotTriggered( QAction* action )
   int index = menu()->actions().indexOf(action) - m_firstIndex + 1;
   if ( index > 0 )
   {
-      kDebug(1202) << "Item clicked has index " << index << endl;
+      kDebug(1202) << "Item clicked has index " << index;
       // -1 for one step back, 0 for don't move, +1 for one step forward, etc.
       int steps = ( m_startPos+1 ) - index - m_currentPos; // make a drawing to understand this :-)
-      kDebug(1202) << "Emit activated with steps = " << steps << endl;
+      kDebug(1202) << "Emit activated with steps = " << steps;
       emit step( steps );
   }
 }
@@ -488,7 +488,7 @@ void KonqMostOftenURLSAction::slotActivated( int id )
     if ( url.isValid() )
 	emit activated( url );
     else
-	kWarning() << "Invalid url: " << url.prettyUrl() << endl;
+	kWarning() << "Invalid url: " << url.prettyUrl() ;
     m_popupList.clear();
 }
 

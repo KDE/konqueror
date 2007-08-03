@@ -73,7 +73,7 @@ static int x_errhandler(Display *dpy, XErrorEvent *error)
 {
   char errstr[256];
   XGetErrorText(dpy, error->error_code, errstr, 256);
-  kDebug(1430) << "Detected X Error: " << errstr << endl;
+  kDebug(1430) << "Detected X Error: " << errstr;
   return 1;
 }
 
@@ -106,21 +106,21 @@ int main(int argc, char** argv)
    setenv( "SESSION_MANAGER", "", 1 );
 
    // trap X errors
-   kDebug(1430) << "1 - XSetErrorHandler" << endl;
+   kDebug(1430) << "1 - XSetErrorHandler";
    XSetErrorHandler(x_errhandler);
    setvbuf( stderr, NULL, _IONBF, 0 );
 
-   kDebug(1430) << "2 - parseCommandLine" << endl;
+   kDebug(1430) << "2 - parseCommandLine";
    parseCommandLine(argc, argv);
 
-   kDebug(1430) << "3 - create QXtEventLoop" << endl;
+   kDebug(1430) << "3 - create QXtEventLoop";
 #ifdef __GNUC__
 #warning QXtEventLoop is missing
 #endif
    // QXtEventLoop integrator( "nspluginviewer" );
    parseCommandLine(argc, argv);
 
-   kDebug(1430) << "4 - create KApplication" << endl;
+   kDebug(1430) << "4 - create KApplication";
 
    KCmdLineArgs::init(argc, argv, "nspluginviewer", "nsplugin", ki18n("nspluginviewer"), "");
    KApplication app;
@@ -143,7 +143,7 @@ int main(int argc, char** argv)
       }
    }
 
-   kDebug(1430) << "5 - dbus requestName" << endl;
+   kDebug(1430) << "5 - dbus requestName";
    if (!g_dbusServiceName.isEmpty()) {
        QDBusConnectionInterface* bus = QDBusConnection::sessionBus().interface(); // already null-checked by KApplication
        if ( bus->registerService(g_dbusServiceName, QDBusConnectionInterface::DontQueueService) == QDBusConnectionInterface::ServiceNotRegistered ) {
@@ -153,11 +153,11 @@ int main(int argc, char** argv)
    }
 
    // create dcop interface
-   kDebug(1430) << "6 - new NSPluginViewer" << endl;
+   kDebug(1430) << "6 - new NSPluginViewer";
    NSPluginViewer *viewer = new NSPluginViewer( 0 );
 
    // start main loop
-   kDebug(1430) << "7 - app.exec()" << endl;
+   kDebug(1430) << "7 - app.exec()";
    app.exec();
 
    // delete viewer

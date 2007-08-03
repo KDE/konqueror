@@ -86,7 +86,7 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
       if( className == QLatin1String( "KonqMainWindow" ))
           (new KonqMainWindow() )->restore( n );
       else
-          kWarning() << "Unknown class " << className << " in session saved data!" << endl;
+          kWarning() << "Unknown class " << className << " in session saved data!" ;
       n++;
     }
   }
@@ -127,7 +127,7 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
               kurl.setFileName("");
            }
        }
-       kDebug(1202) << "main() -> createBrowserWindowFromProfile servicetype=" << urlargs.serviceType << endl;
+       kDebug(1202) << "main() -> createBrowserWindowFromProfile servicetype=" << urlargs.serviceType;
        KonqMisc::createBrowserWindowFromProfile( profilePath, profile, kurl, urlargs, false, filesToSelect );
      }
      else
@@ -148,7 +148,7 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
 		     // KonqMainWindow ctor sets always the preloaded flag to false, so create the window before this
                      KonqMainWindow::setPreloadedFlag( true );
 		     KonqMainWindow::setPreloadedWindow( win );
-                     kDebug(1202) << "Konqy preloaded :" << QDBusConnection::sessionBus().baseService() << endl;
+                     kDebug(1202) << "Konqy preloaded :" << QDBusConnection::sessionBus().baseService();
                  }
                  else
                  {
@@ -170,7 +170,7 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
                      mainWindow->show();
                  }
              }
-             kDebug(1202) << "main() -> no args" << endl;
+             kDebug(1202) << "main() -> no args";
          }
          else
          {
@@ -193,7 +193,7 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
                      if (args->isSet("mimetype"))
                      {
                          urlargs.serviceType = args->getOption("mimetype");
-                         kDebug(1202) << "main() : setting serviceType to " << urlargs.serviceType << endl;
+                         kDebug(1202) << "main() : setting serviceType to " << urlargs.serviceType;
                      }
                      if (args->isSet("select"))
                      {

@@ -400,8 +400,8 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
     {
         KUrl firstPopupURL( m_lstItems.first()->url() );
         firstPopupURL.cleanPath();
-        //kDebug(1203) << "View path is " << url.url() << endl;
-        //kDebug(1203) << "First popup path is " << firstPopupURL.url() << endl;
+        //kDebug(1203) << "View path is " << url.url();
+        //kDebug(1203) << "First popup path is " << firstPopupURL.url();
         currentDir = firstPopupURL.equals( url, KUrl::CompareWithoutTrailingSlash );
         if ( isLocal && m_sMimeType == "application/x-desktop" ) {
             KDesktopFile desktopFile( firstPopupURL.path() );
@@ -424,7 +424,7 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
     // isCurrentTrash: popup on trash:/ itself, or on the trash.desktop link
     bool isCurrentTrash = ( m_lstItems.count() == 1 && bTrashIncluded ) || isTrashLink;
     bool isIntoTrash = ( url.protocol() == "trash" || url.url().startsWith( "system:/trash" ) ) && !isCurrentTrash; // trashed file, not trash:/ itself
-    //kDebug() << "isLocal=" << isLocal << " url=" << url << " isCurrentTrash=" << isCurrentTrash << " isIntoTrash=" << isIntoTrash << " bTrashIncluded=" << bTrashIncluded << endl;
+    //kDebug() << "isLocal=" << isLocal << " url=" << url << " isCurrentTrash=" << isCurrentTrash << " isIntoTrash=" << isIntoTrash << " bTrashIncluded=" << bTrashIncluded;
     bool isSingleMedium = m_lstItems.count() == 1 && mediaFiles;
     clear();
 
@@ -974,7 +974,7 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
     }
 
     KonqXMLGUIClient::addMerge( 0 );
-    //kDebug() << k_funcinfo << domDocument().toString() << endl;
+    //kDebug() << k_funcinfo << domDocument().toString();
 
     m_factory->addClient( this );
 }
@@ -991,7 +991,7 @@ KonqPopupMenu::~KonqPopupMenu()
   delete m_factory;
   delete m_builder;
   delete d;
-  //kDebug(1203) << "~KonqPopupMenu leave" << endl;
+  //kDebug(1203) << "~KonqPopupMenu leave";
 }
 
 void KonqPopupMenu::setURLTitle( const QString& urlTitle )
@@ -1126,7 +1126,7 @@ void KonqPopupMenu::addPlugins()
     addGroup( "plugins" );
     // travers the offerlist
     for(; iterator != end; ++iterator, ++pluginCount ) {
-        //kDebug() << (*iterator)->library() << endl;
+        //kDebug() << (*iterator)->library();
         KonqPopupMenuPlugin *plugin =
             KLibLoader::createInstance<KonqPopupMenuPlugin>( QFile::encodeName( (*iterator)->library() ),
                                                             this );

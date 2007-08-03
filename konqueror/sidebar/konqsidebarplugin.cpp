@@ -60,6 +60,6 @@ bool KonqSidebarPlugin::universalMode() {
 	if (!parent()) return false;
 	KonqSidebarIface *ksi=dynamic_cast<KonqSidebarIface*>(parent());
 	if (!ksi) return false;
-	kDebug()<<"calling KonqSidebarIface->universalMode()"<<endl;
+	kDebug()<<"calling KonqSidebarIface->universalMode()";
 	return ksi->universalMode();
 }

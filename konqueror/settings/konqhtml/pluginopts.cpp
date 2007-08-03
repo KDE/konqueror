@@ -334,7 +334,7 @@ void KPluginOptions::scan()
     K3ProcIO* nspluginscan = new K3ProcIO;
     QString scanExe = KGlobal::dirs()->findExe("nspluginscan");
     if (scanExe.isEmpty()) {
-        kDebug() << "can't find nspluginviewer" << endl;
+        kDebug() << "can't find nspluginviewer";
         delete nspluginscan;
 
         KMessageBox::sorry ( this,
@@ -350,7 +350,7 @@ void KPluginOptions::scan()
 
     // start nspluginscan
     *nspluginscan << scanExe << "--verbose";
-    kDebug() << "Running nspluginscan" << endl;
+    kDebug() << "Running nspluginscan";
     connect(nspluginscan, SIGNAL(readReady(K3ProcIO*)),
             this, SLOT(progress(K3ProcIO*)));
     connect(nspluginscan, SIGNAL(processExited(K3Process *)),
@@ -552,14 +552,14 @@ void KPluginOptions::pluginInit()
 
 void KPluginOptions::pluginLoad( KSharedConfig::Ptr /*config*/ )
 {
-    kDebug() << "-> KPluginOptions::fillPluginList" << endl;
+    kDebug() << "-> KPluginOptions::fillPluginList";
     m_widget->pluginList->clear();
     QRegExp version(";version=[^:]*:");
 
     // open the cache file
     QFile cachef( KStandardDirs::locate("data", "nsplugins/cache") );
     if ( !cachef.exists() || !cachef.open(QIODevice::ReadOnly) ) {
-        kDebug() << "Could not load plugin cache file!" << endl;
+        kDebug() << "Could not load plugin cache file!";
         return;
     }
 
@@ -579,14 +579,14 @@ void KPluginOptions::pluginLoad( KSharedConfig::Ptr /*config*/ )
     while ( !cache.atEnd() ) {
 
         line = cache.readLine();
-        //kDebug() << line << endl;
+        //kDebug() << line;
         if (line.isEmpty() || (line.left(1) == "#"))
             continue;
 
         if (line.left(1) == "[") {
 
             plugin = line.mid(1,line.length()-2);
-            //kDebug() << "plugin=" << plugin << endl;
+            //kDebug() << "plugin=" << plugin;
 
             // add plugin root item
             next = new Q3ListViewItem( root, i18n("Plugin"), plugin );
@@ -605,7 +605,7 @@ void KPluginOptions::pluginLoad( KSharedConfig::Ptr /*config*/ )
         QString suffixes = desc[1];
 
         if (!mime.isEmpty() && next) {
-            //kDebug() << "mime=" << mime << " desc=" << name << " suffix=" << suffixes << endl;
+            //kDebug() << "mime=" << mime << " desc=" << name << " suffix=" << suffixes;
             lastMIME = new Q3ListViewItem( next, lastMIME, i18n("MIME type"), mime );
             lastMIME->setOpen( false );
             lastMIME->setSelectable( false );
@@ -623,7 +623,7 @@ void KPluginOptions::pluginLoad( KSharedConfig::Ptr /*config*/ )
         }
     }
 
-    //kDebug() << "<- KPluginOptions::fillPluginList" << endl;
+    //kDebug() << "<- KPluginOptions::fillPluginList";
 }
 
 

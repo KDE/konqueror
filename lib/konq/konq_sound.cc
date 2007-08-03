@@ -49,15 +49,15 @@ KonqSoundPlayerImpl::KonqSoundPlayerImpl()
 
 bool KonqSoundPlayerImpl::isMimeTypeKnown(const QString& mimeType)
 {
-	kDebug() << k_funcinfo << mimeType << Phonon::BackendCapabilities::isMimeTypeAvailable(mimeType) << endl;
+	kDebug() << k_funcinfo << mimeType << Phonon::BackendCapabilities::isMimeTypeAvailable(mimeType);
 	return Phonon::BackendCapabilities::isMimeTypeAvailable(mimeType);
 }
 
 void KonqSoundPlayerImpl::setUrl(const KUrl &url)
 {
-	kDebug() << k_funcinfo << endl;
+	kDebug() << k_funcinfo;
 	if (!m_player) {
-		kDebug() << "create AudioPlayer" << endl;
+		kDebug() << "create AudioPlayer";
 		m_player = new Phonon::AudioPlayer(Phonon::MusicCategory, this);
 	}
 	m_player->load(url);
@@ -65,14 +65,14 @@ void KonqSoundPlayerImpl::setUrl(const KUrl &url)
 
 void KonqSoundPlayerImpl::play()
 {
-	kDebug() << k_funcinfo << endl;
+	kDebug() << k_funcinfo;
 	if (m_player)
 		m_player->play();
 }
 
 void KonqSoundPlayerImpl::stop()
 {
-	kDebug() << k_funcinfo << endl;
+	kDebug() << k_funcinfo;
 	if (m_player)
 		m_player->stop();
 }
@@ -80,10 +80,10 @@ void KonqSoundPlayerImpl::stop()
 bool KonqSoundPlayerImpl::isPlaying()
 {
 	if (m_player) {
-		kDebug() << k_funcinfo << m_player->isPlaying() << endl;
+		kDebug() << k_funcinfo << m_player->isPlaying();
 		return m_player->isPlaying();
 	}
-	kDebug() << k_funcinfo << false << endl;
+	kDebug() << k_funcinfo << false;
 	return false;
 }
 

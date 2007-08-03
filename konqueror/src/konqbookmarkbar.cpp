@@ -160,7 +160,7 @@ void KBookmarkBar::clear()
 void KBookmarkBar::slotBookmarksChanged( const QString & group )
 {
     KBookmarkGroup tb = getToolbar(); // heavy for non cached toolbar version
-    kDebug(7043) << "slotBookmarksChanged( " << group << " )" << endl;
+    kDebug(7043) << "slotBookmarksChanged( " << group << " )";
 
     if ( tb.isNull() )
         return;
@@ -403,13 +403,13 @@ static bool showInToolbar( const KBookmark &bk ) {
 }
 
 void ToolbarFilter::visit( const KBookmark &bk ) {
-    //kDebug() << "visit(" << bk.text() << ")" << endl;
+    //kDebug() << "visit(" << bk.text() << ")";
     if ( m_visible || showInToolbar(bk) )
         KXBELBookmarkImporterImpl::visit(bk);
 }
 
 void ToolbarFilter::visitEnter( const KBookmarkGroup &grp ) {
-    //kDebug() << "visitEnter(" << grp.text() << ")" << endl;
+    //kDebug() << "visitEnter(" << grp.text() << ")";
     if ( !m_visible && showInToolbar(grp) )
     {
         m_visibleStart = grp;
@@ -420,7 +420,7 @@ void ToolbarFilter::visitEnter( const KBookmarkGroup &grp ) {
 }
 
 void ToolbarFilter::visitLeave( const KBookmarkGroup &grp ) {
-    //kDebug() << "visitLeave()" << endl;
+    //kDebug() << "visitLeave()";
     if ( m_visible )
         KXBELBookmarkImporterImpl::visitLeave(grp);
     if ( m_visible && grp.address() == m_visibleStart.address() )

@@ -158,17 +158,17 @@ bool TypesListItem::isMimeTypeDirty() const
   if ((m_mimetype->name() != name()) &&
       (name() != "application/octet-stream"))
   {
-    kDebug() << "Mimetype Name Dirty: old=" << m_mimetype->name() << " name()=" << name() << endl;
+    kDebug() << "Mimetype Name Dirty: old=" << m_mimetype->name() << " name()=" << name();
     return true;
   }
   if (m_mimetype->comment(QString()) != m_comment)
   {
-    kDebug() << "Mimetype Comment Dirty: old=" << m_mimetype->comment(QString()) << " m_comment=" << m_comment << endl;
+    kDebug() << "Mimetype Comment Dirty: old=" << m_mimetype->comment(QString()) << " m_comment=" << m_comment;
     return true;
   }
   if (m_mimetype->iconName(QString()) != m_icon)
   {
-    kDebug() << "Mimetype Icon Dirty: old=" << m_mimetype->iconName(QString()) << " m_icon=" << m_icon << endl;
+    kDebug() << "Mimetype Icon Dirty: old=" << m_mimetype->iconName(QString()) << " m_icon=" << m_icon;
     return true;
   }
 
@@ -193,7 +193,7 @@ bool TypesListItem::isDirty() const
 
   if ( m_bNewItem )
   {
-    kDebug() << "New item, need to save it" << endl;
+    kDebug() << "New item, need to save it";
     return true;
   }
 
@@ -530,7 +530,7 @@ bool TypesListItem::isEssential() const
 
 void TypesListItem::refresh()
 {
-    kDebug() << "TypesListItem refresh " << name() << endl;
+    kDebug() << "TypesListItem refresh " << name();
     m_mimetype = KMimeType::mimeType( name() );
 }
 

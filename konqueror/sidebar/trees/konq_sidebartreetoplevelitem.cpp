@@ -50,7 +50,7 @@ void KonqSidebarTreeTopLevelItem::setOpen( bool open )
 
 void KonqSidebarTreeTopLevelItem::itemSelected()
 {
-    kDebug() << "KonqSidebarTreeTopLevelItem::itemSelected" << endl;
+    kDebug() << "KonqSidebarTreeTopLevelItem::itemSelected";
     QMimeSource *data = QApplication::clipboard()->data();
     bool paste = m_bTopLevelGroup && data->provides("text/uri-list");
     tree()->enableActions( true, true, paste, true, true, true /*rename*/ );
@@ -157,7 +157,7 @@ void KonqSidebarTreeTopLevelItem::paste()
     const QMimeData *data = QApplication::clipboard()->mimeData();
     if ( data->hasFormat( "application/x-kde-cutselection" ) ) {
         move = KonqMimeData::decodeIsCutSelection( data );
-        kDebug(1201) << "move (from clipboard data) = " << move << endl;
+        kDebug(1201) << "move (from clipboard data) = " << move;
     }
 
     KUrl destURL;
