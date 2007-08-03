@@ -52,7 +52,7 @@ KHTMLPluginKTTSD::KHTMLPluginKTTSD( QObject* parent, const QStringList& )
         connect(action, SIGNAL(triggered(bool) ), SLOT(slotReadOut()));
     }
     else
-        kDebug() << "KHTMLPLuginKTTSD::KHTMLPluginKTTSD: KTrader did not find KTTSD." << endl;
+        kDebug() << "KHTMLPLuginKTTSD::KHTMLPluginKTTSD: KTrader did not find KTTSD.";
 }
 
 KHTMLPluginKTTSD::~KHTMLPluginKTTSD()
@@ -94,7 +94,7 @@ void KHTMLPluginKTTSD::slotReadOut()
         QString query;
         if (supportsXhtml)
         {
-            kDebug() << "KTTS claims to support rich speak (XHTML to SSML)." << endl;
+            kDebug() << "KTTS claims to support rich speak (XHTML to SSML).";
             if (part->hasSelection())
                 query = part->selectedTextAsHTML();
             else
@@ -114,7 +114,7 @@ void KHTMLPluginKTTSD::slotReadOut()
             else
                 query = part->htmlDocument().body().innerText().string();
         }
-        // kDebug() << "KHTMLPluginKTTSD::slotReadOut: query = " << query << endl;
+        // kDebug() << "KHTMLPluginKTTSD::slotReadOut: query = " << query;
 
 		reply = kttsd.call("setText", query, "");
         if ( !reply.isValid())

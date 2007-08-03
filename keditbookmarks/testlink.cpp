@@ -52,7 +52,7 @@ void TestLinkItrHolder::doItrListChanged() {
     KEBApp::self()->setCancelTestsEnabled(count() > 0);
     if(count() == 0)
     {
-        kDebug()<<"Notifing managers "<<m_affectedBookmark<<endl;
+        kDebug()<<"Notifing managers "<<m_affectedBookmark;
         CurrentMgr::self()->notifyManagers(CurrentMgr::bookmarkAt(m_affectedBookmark).toGroup());
         m_affectedBookmark.clear();
     }
@@ -60,12 +60,12 @@ void TestLinkItrHolder::doItrListChanged() {
 
 void TestLinkItrHolder::addAffectedBookmark( const QString & address )
 {
-    kDebug()<<"addAffectedBookmark "<<address<<endl;
+    kDebug()<<"addAffectedBookmark "<<address;
     if(m_affectedBookmark.isNull())
         m_affectedBookmark = address;
     else
         m_affectedBookmark = KBookmark::commonParent(m_affectedBookmark, address);
-    kDebug()<<" m_affectedBookmark is now "<<m_affectedBookmark<<endl;
+    kDebug()<<" m_affectedBookmark is now "<<m_affectedBookmark;
 }
 
 /* -------------------------- */
@@ -386,13 +386,13 @@ void KEBListViewItem::modUpdate() {
 // KEBListViewItem !!!!!!!!!!!
 /*
 void KEBListViewItem::setOldStatus(const QString &oldStatus) {
-    // kDebug() << "KEBListViewItem::setOldStatus" << endl;
+    // kDebug() << "KEBListViewItem::setOldStatus";
     m_oldStatus = oldStatus;
 }
 
 // KEBListViewItem !!!!!!!!!!!
 void KEBListViewItem::setTmpStatus(const QString &status) {
-    // kDebug() << "KEBListViewItem::setTmpStatus" << endl;
+    // kDebug() << "KEBListViewItem::setTmpStatus";
     m_paintStyle = KEBListViewItem::BoldStyle;
     setText(KEBListView::StatusColumn, status);
 }
@@ -400,7 +400,7 @@ void KEBListViewItem::setTmpStatus(const QString &status) {
 // KEBListViewItem !!!!!!!!!!!
 void KEBListViewItem::restoreStatus() {
     if (!m_oldStatus.isNull()) {
-        // kDebug() << "KEBListViewItem::restoreStatus" << endl;
+        // kDebug() << "KEBListViewItem::restoreStatus";
         TestLinkItrHolder::self()->resetToValue(m_bookmark.url().url(), m_oldStatus);
         modUpdate();
     }

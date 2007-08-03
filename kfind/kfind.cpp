@@ -45,7 +45,7 @@
 Kfind::Kfind(QWidget *parent)
   : QWidget( parent )
 {
-  kDebug() << "Kfind::Kfind " << this << endl;
+  kDebug() << "Kfind::Kfind " << this;
   QBoxLayout * mTopLayout = new QBoxLayout( QBoxLayout::LeftToRight, this );
   mTopLayout->setMargin( KDialog::marginHint() );
   mTopLayout->setSpacing( KDialog::spacingHint() );
@@ -86,7 +86,7 @@ Kfind::~Kfind()
   stopSearch();
   dirlister->stop();
   delete dirlister;
-  kDebug() << "Kfind::~Kfind" << endl;
+  kDebug() << "Kfind::~Kfind";
 }
 
 void Kfind::setURL( const KUrl &url )

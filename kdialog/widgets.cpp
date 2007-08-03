@@ -65,7 +65,7 @@ void Widgets::handleXGeometry(QWidget * dlg)
 	if ( (m & YNegative) )
 	    y = KApplication::desktop()->height() + y - h;
 	dlg->setGeometry(x, y, w, h);
-	// kDebug() << "x: " << x << "  y: " << y << "  w: " << w << "  h: " << h << endl;
+	// kDebug() << "x: " << x << "  y: " << y << "  w: " << w << "  h: " << h;
     }
 #endif
 }

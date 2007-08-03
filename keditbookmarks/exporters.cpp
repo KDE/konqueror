@@ -59,7 +59,7 @@ QString HTMLExporter::toString(const KBookmarkGroup &grp, bool showAddress)
 }
 
 void HTMLExporter::visit(const KBookmark &bk) {
-    // kDebug() << "visit(" << bk.text() << ")" << endl;
+    // kDebug() << "visit(" << bk.text() << ")";
     if(bk.isSeparator())
     {
         m_out << bk.fullText() << "<br>"<<endl;
@@ -80,13 +80,13 @@ void HTMLExporter::visit(const KBookmark &bk) {
 }
 
 void HTMLExporter::visitEnter(const KBookmarkGroup &grp) {
-    // kDebug() << "visitEnter(" << grp.text() << ")" << endl;
+    // kDebug() << "visitEnter(" << grp.text() << ")";
     m_out << "<b>" << grp.fullText() << "</b><br>" << endl;
     m_out << "<div style=\"margin-left: 2em\">"<< endl;
 } 
 
 void HTMLExporter::visitLeave(const KBookmarkGroup &) {
-    // kDebug() << "visitLeave()" << endl;
+    // kDebug() << "visitLeave()";
     m_out << "</div>" << endl;
 }
 

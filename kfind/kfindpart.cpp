@@ -40,13 +40,13 @@ KFindPart::KFindPart( QWidget * parentWidget, QObject *parent, const QStringList
 
 //    setBrowserExtension( new KonqDirPartBrowserExtension( this ) );
 
-    kDebug() << "KFindPart::KFindPart " << this << endl;
+    kDebug() << "KFindPart::KFindPart " << this;
     m_kfindWidget = new Kfind( parentWidget );
     m_kfindWidget->setMaximumHeight(m_kfindWidget->minimumSizeHint().height());
 
 #if 0 // TODO port?
     const KFileItem *item = ((KonqDirPart*)parent)->currentItem();
-    kDebug() << "Kfind: currentItem:  " << ( item ? item->url().path().toLocal8Bit() : QString("null") ) << endl;
+    kDebug() << "Kfind: currentItem:  " << ( item ? item->url().path().toLocal8Bit() : QString("null") );
     QDir d;
     if( item && d.exists( item->url().path() ))
         m_kfindWidget->setURL( item->url() );
@@ -90,7 +90,7 @@ bool KFindPart::doOpenURL( const KUrl &url )
 
 void KFindPart::slotStarted()
 {
-    kDebug() << "KFindPart::slotStarted" << endl;
+    kDebug() << "KFindPart::slotStarted";
     m_bShowsResult = true;
     m_lstFileItems.clear(); // clear our internal list
     emit started();

@@ -142,13 +142,13 @@ QString CurrentMgr::path() const { return mgr()->path(); }
 
 void CurrentMgr::createManager(const QString &filename, const QString &dbusObjectName) {
     if (m_mgr) {
-        kDebug()<<"ERROR calling createManager twice"<<endl;
+        kDebug()<<"ERROR calling createManager twice";
         disconnect(m_mgr, 0, 0, 0);
         // still todo - delete old m_mgr
         delete m_model;
     }
 
-    kDebug()<<"DBus Object name: "<<dbusObjectName<<endl;
+    kDebug()<<"DBus Object name: "<<dbusObjectName;
     m_mgr = KBookmarkManager::managerForFile(filename, dbusObjectName);
     m_model = new KBookmarkModel(root());
 
@@ -489,7 +489,7 @@ void KEBApp::updateActions() {
 }
 
 void KEBApp::slotClipboardDataChanged() {
-    // kDebug() << "KEBApp::slotClipboardDataChanged" << endl;
+    // kDebug() << "KEBApp::slotClipboardDataChanged";
     if (!m_readOnly) {
         m_canPaste = KBookmark::List::canDecode(
                         QApplication::clipboard()->mimeData());
@@ -500,7 +500,7 @@ void KEBApp::slotClipboardDataChanged() {
 /* -------------------------- */
 
 void KEBApp::notifyCommandExecuted() {
-    // kDebug() << "KEBApp::notifyCommandExecuted()" << endl;
+    // kDebug() << "KEBApp::notifyCommandExecuted()";
     updateActions();
 }
 

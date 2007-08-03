@@ -83,19 +83,19 @@ bool KonqFMSettings::shouldEmbed( const QString & mimeType ) const
         if ( autoEmbedProp.isValid() )
         {
             bool autoEmbed = autoEmbedProp.toBool();
-            kDebug(1203) << "X-KDE-AutoEmbed set to " << (autoEmbed ? "true" : "false") << endl;
+            kDebug(1203) << "X-KDE-AutoEmbed set to " << (autoEmbed ? "true" : "false");
             return autoEmbed;
         } else
-            kDebug(1203) << "No X-KDE-AutoEmbed, looking for group" << endl;
+            kDebug(1203) << "No X-KDE-AutoEmbed, looking for group";
     }
     // 2 - in the configuration for the group if nothing was found in the mimetype
     QString mimeTypeGroup = mimeType.left(mimeType.indexOf("/"));
-    kDebug(1203) << "KonqFMSettings::shouldEmbed : mimeTypeGroup=" << mimeTypeGroup << endl;
+    kDebug(1203) << "KonqFMSettings::shouldEmbed : mimeTypeGroup=" << mimeTypeGroup;
     if ( mimeTypeGroup == "inode" || mimeTypeGroup == "Browser" || mimeTypeGroup == "Konqueror" )
         return true; //always embed mimetype inode/*, Browser/* and Konqueror/*
     QMap<QString, QString>::ConstIterator it = m_embedMap.find( QString::fromLatin1("embed-")+mimeTypeGroup );
     if ( it != m_embedMap.end() ) {
-        kDebug(1203) << "KonqFMSettings::shouldEmbed: " << it.value() << endl;
+        kDebug(1203) << "KonqFMSettings::shouldEmbed: " << it.value();
         return it.value() == QString::fromLatin1("true");
     }
     // 3 - if no config found, use default.

@@ -36,7 +36,7 @@ int main(int argc, char **argv)
 
 
     if (!KUniqueApplication::start()) {
-	kDebug() << "kdepasswd is already running" << endl;
+	kDebug() << "kdepasswd is already running";
 	return 0;
     }
 

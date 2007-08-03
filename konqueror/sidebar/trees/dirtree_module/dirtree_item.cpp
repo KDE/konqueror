@@ -69,7 +69,7 @@ void KonqSidebarDirTreeItem::reset()
             struct stat buff;
             if ( ::stat( path.data(), &buff ) != -1 )
             {
-                //kDebug() << "KonqSidebarDirTreeItem::init " << path << " : " << buff.st_nlink << endl;
+                //kDebug() << "KonqSidebarDirTreeItem::init " << path << " : " << buff.st_nlink;
                 // The link count for a directory is generally subdir_count + 2.
                 // One exception is if there are hard links to the directory, in this case
                 // the link count can be > 2 even if no subdirs exist.
@@ -88,7 +88,7 @@ void KonqSidebarDirTreeItem::reset()
 
 void KonqSidebarDirTreeItem::setOpen( bool open )
 {
-    kDebug(1201) << "KonqSidebarDirTreeItem::setOpen " << open << endl;
+    kDebug(1201) << "KonqSidebarDirTreeItem::setOpen " << open;
     if ( open && !childCount() && m_bListable )
         MYMODULE->openSubFolder( this );
     else if ( hasStandardIcon() )
@@ -176,10 +176,10 @@ void KonqSidebarDirTreeItem::middleButtonClicked()
     // Optimisation to avoid KRun to call kfmclient that then tells us
     // to open a window :-)
     KService::Ptr offer = KMimeTypeTrader::self()->preferredService(m_fileItem->mimetype(), "Application");
-    if (offer) kDebug(1201) << "KonqDirPart::mmbClicked: got service " << offer->desktopEntryName() << endl;
+    if (offer) kDebug(1201) << "KonqDirPart::mmbClicked: got service " << offer->desktopEntryName();
     if ( offer && offer->desktopEntryName().startsWith("kfmclient") )
     {
-        kDebug(1201)<<"Emitting createNewWindow"<<endl;
+        kDebug(1201)<<"Emitting createNewWindow";
         KParts::URLArgs args;
         args.serviceType = m_fileItem->mimetype();
         emit tree()->createNewWindow( m_fileItem->url(), args );
@@ -202,7 +202,7 @@ void KonqSidebarDirTreeItem::paste()
     const QMimeData *data = QApplication::clipboard()->mimeData();
     if ( data->hasFormat( "application/x-kde-cutselection" ) ) {
         move = KonqMimeData::decodeIsCutSelection( data );
-        kDebug(1201) << "move (from clipboard data) = " << move << endl;
+        kDebug(1201) << "move (from clipboard data) = " << move;
     }
 
     KIO::pasteClipboard( m_fileItem->url(), listView(), move );

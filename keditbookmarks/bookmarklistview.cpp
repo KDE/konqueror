@@ -97,7 +97,7 @@ void BookmarkView::rowsMoved(const QModelIndex & oldParent, int, int, const QMod
 void BookmarkView::setModel(QAbstractItemModel * model)
 {
     if( !dynamic_cast<KBookmarkModel *>(model))
-        kFatal()<<"BookmarkView needs a KBookmarkModel"<<endl;
+        kFatal()<<"BookmarkView needs a KBookmarkModel";
     connect( model, SIGNAL(aboutToMoveRows(const QModelIndex &, int, int, const QModelIndex &, int)),
             this, SLOT(aboutToMoveRows(const QModelIndex &, int, int, const QModelIndex &, int)));
     connect( model, SIGNAL(rowsMoved(const QModelIndex &, int, int, const QModelIndex &, int)),

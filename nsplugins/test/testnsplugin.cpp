@@ -56,9 +56,9 @@ TestNSPlugin::TestNSPlugin()
 
 TestNSPlugin::~TestNSPlugin()
 {
-   kDebug() << "-> TestNSPlugin::~TestNSPlugin" << endl;
+   kDebug() << "-> TestNSPlugin::~TestNSPlugin";
    m_loader->release();
-   kDebug() << "<- TestNSPlugin::~TestNSPlugin" << endl;
+   kDebug() << "<- TestNSPlugin::~TestNSPlugin";
 }
 
 
@@ -96,13 +96,13 @@ void TestNSPlugin::newView()
       win->show();
    } else
    {
-      kDebug() << "No widget created" << endl;
+      kDebug() << "No widget created";
    }
 }
 
 void TestNSPlugin::closeView()
 {
-   kDebug() << "closeView" << endl;
+   kDebug() << "closeView";
    QWidget *win = m_plugins.last();
    if ( win )
    {
@@ -110,21 +110,21 @@ void TestNSPlugin::closeView()
       delete win;
    } else
    {
-      kDebug() << "No widget available" << endl;
+      kDebug() << "No widget available";
    }
 }
 
 
 void TestNSPlugin::viewDestroyed( NSPluginInstance *inst )
 {
-   kDebug() << "TestNSPlugin::viewDestroyed" << endl;
+   kDebug() << "TestNSPlugin::viewDestroyed";
    m_plugins.remove( inst );
 }
 
 
 int main(int argc, char *argv[])
 {
-   kDebug() << "main" << endl;
+   kDebug() << "main";
    setvbuf( stderr, NULL, _IONBF, 0 );
    KCmdLineArgs::init(argc, argv, "nsplugin", 0, ki18n("testnsplugin"), "0.1", ki18n("A Netscape Plugin test program"));
 

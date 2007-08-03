@@ -53,7 +53,7 @@ KShellCommandExecutor::~KShellCommandExecutor()
 
 int KShellCommandExecutor::exec()
 {
-   //kDebug()<<"---------- KShellCommandExecutor::exec()"<<endl;
+   //kDebug()<<"---------- KShellCommandExecutor::exec()";
    setText("");
    if (m_shellProcess!=0)
    {
@@ -71,7 +71,7 @@ int KShellCommandExecutor::exec()
    QList<QByteArray> args;
    args+="-c";
    args+=m_command.toLocal8Bit();
-   //kDebug()<<"------- executing: "<<m_command.toLocal8Bit()<<endl;
+   //kDebug()<<"------- executing: "<<m_command.toLocal8Bit();
 
    QByteArray shell( getenv("SHELL") );
    if (shell.isEmpty())
@@ -80,7 +80,7 @@ int KShellCommandExecutor::exec()
    int ret = m_shellProcess->exec(shell, args);
    if (ret < 0)
    {
-      //kDebug()<<"could not execute"<<endl;
+      //kDebug()<<"could not execute";
       return 0;
    }
 
@@ -95,7 +95,7 @@ int KShellCommandExecutor::exec()
 
 void KShellCommandExecutor::readDataFromShell()
 {
-   //kDebug()<<"--------- reading ------------"<<endl;
+   //kDebug()<<"--------- reading ------------";
    char buffer[16*1024];
    int bytesRead=::read(m_shellProcess->fd(), buffer, 16*1024-1);
    //0-terminate the buffer
@@ -106,7 +106,7 @@ void KShellCommandExecutor::readDataFromShell()
    }
    else if (bytesRead>0)
    {
-      //kDebug()<<"***********************\n"<<buffer<<"###################\n"<<endl;
+      //kDebug()<<"***********************\n"<<buffer<<"###################\n";
       buffer[bytesRead]='\0';
       this->append(QString::fromLocal8Bit(buffer));
       setTextFormat(Qt::PlainText);
@@ -115,7 +115,7 @@ void KShellCommandExecutor::readDataFromShell()
 
 void KShellCommandExecutor::writeDataToShell()
 {
-   //kDebug()<<"--------- writing ------------"<<endl;
+   //kDebug()<<"--------- writing ------------";
    bool ok;
    QString str = KInputDialog::getText( QString(),
       i18n( "Input Required:" ), QString(), &ok, this );
@@ -144,7 +144,7 @@ void KShellCommandExecutor::slotFinished()
       delete m_writeNotifier;
       m_writeNotifier = 0;
 
-      //kDebug()<<"slotFinished: pid: "<<m_shellProcess->pid()<<endl;
+      //kDebug()<<"slotFinished: pid: "<<m_shellProcess->pid();
       ::kill(m_shellProcess->pid()+1, SIGTERM);
       ::kill(m_shellProcess->pid(), SIGTERM);
    };

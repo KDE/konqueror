@@ -58,7 +58,7 @@
 KonqFrame::KonqFrame( QWidget* parent, KonqFrameContainerBase *parentContainer )
     : QWidget ( parent )
 {
-   //kDebug(1202) << "KonqFrame::KonqFrame()" << endl;
+   //kDebug(1202) << "KonqFrame::KonqFrame()";
 
    m_pLayout = 0L;
    m_pView = 0L;
@@ -74,7 +74,7 @@ KonqFrame::KonqFrame( QWidget* parent, KonqFrameContainerBase *parentContainer )
 
 KonqFrame::~KonqFrame()
 {
-   //kDebug(1202) << "KonqFrame::~KonqFrame() " << this << endl;
+   //kDebug(1202) << "KonqFrame::~KonqFrame() " << this;
 }
 
 bool KonqFrame::isActivePart()
@@ -128,7 +128,7 @@ void KonqFrame::copyHistory( KonqFrameBase *other )
 
 void KonqFrame::attachWidget(QWidget* widget)
 {
-   //kDebug(1202) << "KonqFrame::attachInternal()" << endl;
+   //kDebug(1202) << "KonqFrame::attachInternal()";
    delete m_pLayout;
 
    m_pLayout = new QVBoxLayout( this );
@@ -179,14 +179,14 @@ void KonqFrame::setView( KonqView* child )
 
 void KonqFrame::setTitle( const QString &title , QWidget* /*sender*/)
 {
-  //kDebug(1202) << "KonqFrame::setTitle( " << title << " )" << endl;
+  //kDebug(1202) << "KonqFrame::setTitle( " << title << " )";
   m_title = title;
   if (m_pParentContainer) m_pParentContainer->setTitle( title , this);
 }
 
 void KonqFrame::setTabIcon( const KUrl &url, QWidget* /*sender*/ )
 {
-  //kDebug(1202) << "KonqFrame::setTabIcon( " << url << " )" << endl;
+  //kDebug(1202) << "KonqFrame::setTabIcon( " << url << " )";
   if (m_pParentContainer) m_pParentContainer->setTabIcon( url, this );
 }
 

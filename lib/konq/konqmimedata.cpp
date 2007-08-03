@@ -47,7 +47,7 @@ void KonqMimeData::populateMimeData( QMimeData* mimeData,
 	application_x_qiconlist+=tmp;
     }
     mimeData->setData("application/x-qiconlist",application_x_qiconlist.toLatin1());
-    kDebug(1203)<<"setting application/x-qiconlist to "<<application_x_qiconlist<<endl;
+    kDebug(1203)<<"setting application/x-qiconlist to "<<application_x_qiconlist;
 
 }
 
@@ -58,7 +58,7 @@ bool KonqMimeData::decodeIsCutSelection( const QMimeData *mimeData )
         return false;
     else
     {
-        kDebug(1203) << "KonqDrag::decodeIsCutSelection : a=" << a << endl;
+        kDebug(1203) << "KonqDrag::decodeIsCutSelection : a=" << a;
         return (a.at(0) == '1'); // true if 1
     }
 }

@@ -66,7 +66,7 @@ static void createTestFile( const QString& path, const char* contents )
 {
     QFile f( path );
     if ( !f.open( QIODevice::WriteOnly ) )
-        kFatal() << "Can't create " << path << endl;
+        kFatal() << "Can't create " << path ;
     f.write( QByteArray( contents ) );
     f.close();
 }
@@ -78,7 +78,7 @@ static void createTestSymlink( const QString& path )
     if ( KDE_lstat( QFile::encodeName( path ), &buf ) != 0 ) {
         bool ok = symlink( "/IDontExist", QFile::encodeName( path ) ) == 0; // broken symlink
         if ( !ok )
-            kFatal() << "couldn't create symlink: " << strerror( errno ) << endl;
+            kFatal() << "couldn't create symlink: " << strerror( errno ) ;
         QVERIFY( KDE_lstat( QFile::encodeName( path ), &buf ) == 0 );
         QVERIFY( S_ISLNK( buf.st_mode ) );
     } else {
@@ -104,14 +104,14 @@ static void createTestDirectory( const QString& path )
     QDir dir;
     bool ok = dir.mkdir( path );
     if ( !ok )
-        kFatal() << "couldn't create " << path << endl;
+        kFatal() << "couldn't create " << path ;
     createTestFile( path + "/fileindir", "File in dir" );
 #ifndef Q_WS_WIN
     createTestSymlink( path + "/testlink" );
 #endif
     ok = dir.mkdir( path + "/dirindir" );
     if ( !ok )
-        kFatal() << "couldn't create " << path << endl;
+        kFatal() << "couldn't create " << path ;
     createTestFile( path + "/dirindir/nested", "Nested" );
     checkTestDirectory( path );
 }
@@ -121,7 +121,7 @@ class TestUiInterface : public KonqUndoManager::UiInterface
 public:
     TestUiInterface() : KonqUndoManager::UiInterface(0), m_nextReplyToConfirmDeletion(true) {}
     virtual void jobError( KIO::Job* job ) {
-        kFatal() << job->errorString() << endl;
+        kFatal() << job->errorString() ;
     }
     virtual bool copiedFileWasModified( const KUrl& src, const KUrl& dest, time_t srcTime, time_t destTime ) {
         Q_UNUSED( src );
@@ -163,7 +163,7 @@ void KonqUndoManagerTest::initTestCase()
     if ( !QFile::exists( homeTmpDir() ) ) {
         bool ok = dir.mkdir( homeTmpDir() );
         if ( !ok )
-            kFatal() << "Couldn't create " << homeTmpDir() << endl;
+            kFatal() << "Couldn't create " << homeTmpDir() ;
     }
 
     createTestFile( srcFile(), "Hello world" );
@@ -198,7 +198,7 @@ void KonqUndoManagerTest::doUndo()
 
 void KonqUndoManagerTest::testCopyFiles()
 {
-    kDebug() << k_funcinfo << endl;
+    kDebug() << k_funcinfo;
     // Initially inspired from JobTest::copyFileToSamePartition()
     const QString destdir = destDir();
     KUrl::List lst = sourceList();
@@ -254,7 +254,7 @@ void KonqUndoManagerTest::testCopyFiles()
 
 void KonqUndoManagerTest::testMoveFiles()
 {
-    kDebug() << k_funcinfo << endl;
+    kDebug() << k_funcinfo;
     const QString destdir = destDir();
     KUrl::List lst = sourceList();
     const KUrl d( destdir );
@@ -288,7 +288,7 @@ void KonqUndoManagerTest::testMoveFiles()
 #if 0
 void KonqUndoManagerTest::testCopyFilesOverwrite()
 {
-    kDebug() << k_funcinfo << endl;
+    kDebug() << k_funcinfo;
     // Create a different file in the destdir
     createTestFile( destFile(), "An old file already in the destdir" );
 

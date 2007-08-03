@@ -75,7 +75,7 @@ static bool askUser(const QString& filename, bool &readonly) {
                     qlonglong id = 0;
                     if( value.isValid())
                         id = value;
-                    //kDebug()<<" id !!!!!!!!!!!!!!!!!!! :"<<id<<endl;
+                    //kDebug()<<" id !!!!!!!!!!!!!!!!!!! :"<<id;
                     KWindowSystem::activateWindow((WId)id);
                     return false;
                 } else if (ret == KMessageBox::Yes) {

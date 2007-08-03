@@ -225,7 +225,7 @@ static void needDBus()
         extern void qDBusBindToApplication();
         qDBusBindToApplication();
         if (!QDBusConnection::sessionBus().isConnected())
-            kFatal(101) << "Session bus not found" << endl;
+            kFatal(101) << "Session bus not found" ;
         s_dbus_initialized = true;
     }
 }
@@ -299,7 +299,7 @@ static bool krun_has_error = false;
 
 bool ClientApp::createNewWindow(const KUrl & url, bool newTab, bool tempFile, const QString & mimetype)
 {
-    kDebug( 1202 ) << "ClientApp::createNewWindow " << url.url() << " mimetype=" << mimetype << endl;
+    kDebug( 1202 ) << "ClientApp::createNewWindow " << url.url() << " mimetype=" << mimetype;
     needInstance();
 
     if (url.protocol().startsWith(QLatin1String("http")))
@@ -308,7 +308,7 @@ bool ClientApp::createNewWindow(const KUrl & url, bool newTab, bool tempFile, co
         KConfigGroup generalGroup(&config, "General");
         if (!generalGroup.readEntry("BrowserApplication").isEmpty())
         {
-            kDebug() << generalGroup.readEntry( "BrowserApplication" ) << endl;
+            kDebug() << generalGroup.readEntry( "BrowserApplication" );
             Q_ASSERT( qApp );
             //ClientApp app;
 #ifdef Q_WS_X11
@@ -363,7 +363,7 @@ bool ClientApp::createNewWindow(const KUrl & url, bool newTab, bool tempFile, co
     QString appId = konqyToReuse( url.url(), mimetype, QString() );
     if( !appId.isEmpty())
     {
-        kDebug( 1202 ) << "ClientApp::createNewWindow using existing konqueror" << endl;
+        kDebug( 1202 ) << "ClientApp::createNewWindow using existing konqueror";
         org::kde::Konqueror::Main konq( appId, "/KonqMain", dbus );
         konq.createNewWindow( url.url(), mimetype, startup_id_str, tempFile );
         sendASNChange();
@@ -394,7 +394,7 @@ bool ClientApp::createNewWindow(const KUrl & url, bool newTab, bool tempFile, co
 #ifdef Q_WS_X11
             KStartupInfo::resetStartupEnv();
 #endif
-            kDebug( 1202 ) << "ClientApp::createNewWindow KProcess started" << endl;
+            kDebug( 1202 ) << "ClientApp::createNewWindow KProcess started";
         //}
     }
     return true;
@@ -477,7 +477,7 @@ bool ClientApp::doIt()
   startup_id_str = KStartupInfo::currentStartupIdEnv().id();
 #endif
 
-  kDebug() << "Creating ClientApp" << endl;
+  kDebug() << "Creating ClientApp";
   int fake_argc = 0;
   char** fake_argv = 0;
   ClientApp app( fake_argc, fake_argv );

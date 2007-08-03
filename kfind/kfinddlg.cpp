@@ -190,7 +190,7 @@ void KfindDlg::slotResult(int errorCode)
   }
   else
   {
-     kDebug()<<"KIO error code: "<<errorCode<<endl;
+     kDebug()<<"KIO error code: "<<errorCode;
      setStatusMsg(i18n("Error."));
   };
 
@@ -237,7 +237,7 @@ void  KfindDlg::about ()
 
 void KfindDlg::slotDeleteItem(const QString& file)
 {
-  kDebug()<<QString("Will remove one item: %1").arg(file)<<endl;
+  kDebug()<<QString("Will remove one item: %1").arg(file);
   Q3ListViewItem *iter;
   QString iterwithpath;
 
@@ -256,14 +256,14 @@ void KfindDlg::slotDeleteItem(const QString& file)
 
 void KfindDlg::slotNewItems( const QString& file )
 {
-  kDebug()<<QString("Will add this item")<<endl;
+  kDebug()<<QString("Will add this item");
   QStringList newfiles;
   Q3ListViewItem *checkiter;
   QString checkiterwithpath;
 
   if(file.indexOf(query->url().path(KUrl::AddTrailingSlash))==0)
   {
-    kDebug()<<QString("Can be added, path OK")<<endl;
+    kDebug()<<QString("Can be added, path OK");
     checkiter=win->firstChild();
     while( checkiter ) {
       checkiterwithpath=query->url().path(KUrl::AddTrailingSlash)+checkiter->text(1)+checkiter->text(0);

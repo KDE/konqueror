@@ -100,7 +100,7 @@ KonqViewFactory KonqFactory::createView( const QString &serviceType,
                                          KService::List *appServiceOffers,
 					 bool forceAutoEmbed )
 {
-  kDebug(1202) << "Trying to create view for \"" << serviceType << "\"" << endl;
+  kDebug(1202) << "Trying to create view for \"" << serviceType << "\"";
 
   // We need to get those in any case
   KService::List offers, appOffers;
@@ -126,7 +126,7 @@ KonqViewFactory KonqFactory::createView( const QString &serviceType,
   {
     if ( ! KonqFMSettings::settings()->shouldEmbed( serviceType ) )
     {
-      kDebug(1202) << "KonqFMSettings says: don't embed this servicetype" << endl;
+      kDebug(1202) << "KonqFMSettings says: don't embed this servicetype";
       return KonqViewFactory();
     }
   }
@@ -141,7 +141,7 @@ KonqViewFactory KonqFactory::createView( const QString &serviceType,
       {
           if ( (*it)->desktopEntryName() == serviceName )
           {
-              kDebug(1202) << "Found requested service " << serviceName << endl;
+              kDebug(1202) << "Found requested service " << serviceName;
               service = *it;
           }
       }
@@ -151,7 +151,7 @@ KonqViewFactory KonqFactory::createView( const QString &serviceType,
 
   if ( service )
   {
-    kDebug(1202) << "Trying to open lib for requested service " << service->desktopEntryName() << endl;
+    kDebug(1202) << "Trying to open lib for requested service " << service->desktopEntryName();
     factory = KLibLoader::self()->factory( QFile::encodeName(service->library()) );
     if ( !factory )
         KMessageBox::error(0,
@@ -165,10 +165,10 @@ KonqViewFactory KonqFactory::createView( const QString &serviceType,
     service = (*it);
     // Allowed as default ?
     QVariant prop = service->property( "X-KDE-BrowserView-AllowAsDefault" );
-    kDebug(1202) << service->desktopEntryName() << " : X-KDE-BrowserView-AllowAsDefault is valid : " << prop.isValid() << endl;
+    kDebug(1202) << service->desktopEntryName() << " : X-KDE-BrowserView-AllowAsDefault is valid : " << prop.isValid();
     if ( !prop.isValid() || prop.toBool() ) // defaults to true
     {
-      //kDebug(1202) << "Trying to open lib for service " << service->name() << endl;
+      //kDebug(1202) << "Trying to open lib for service " << service->name();
       // Try loading factory
       factory = KLibLoader::self()->factory( QFile::encodeName(service->library()) );
       if ( !factory )
@@ -177,7 +177,7 @@ KonqViewFactory KonqFactory::createView( const QString &serviceType,
                             service->name(), KLibLoader::self()->lastErrorMessage()));
       // If this works, we exit the loop.
     } else
-      kDebug(1202) << "Not allowed as default " << service->desktopEntryName() << endl;
+      kDebug(1202) << "Not allowed as default " << service->desktopEntryName();
   }
 
   if ( serviceImpl )
@@ -185,7 +185,7 @@ KonqViewFactory KonqFactory::createView( const QString &serviceType,
 
   if ( !factory )
   {
-    kWarning(1202) << "KonqFactory::createView : no factory" << endl;
+    kWarning(1202) << "KonqFactory::createView : no factory" ;
     return KonqViewFactory();
   }
 

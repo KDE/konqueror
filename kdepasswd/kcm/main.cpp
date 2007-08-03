@@ -107,7 +107,7 @@ void KCMUserAccount::slotChangePassword()
 	QString bin = KGlobal::dirs()->findExe("kdepasswd");
 	if ( bin.isNull() )
 	{
-		kDebug() << "kcm_useraccount: kdepasswd was not found." << endl;
+		kDebug() << "kcm_useraccount: kdepasswd was not found.";
 		KMessageBox::sorry ( this, i18n( "A program error occurred: the internal "
 			"program 'kdepasswd' could not be found. You will "
 			"not be able to change your password."));

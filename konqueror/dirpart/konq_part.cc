@@ -126,7 +126,7 @@ void KonqPart::slotCompleted()
 
 void KonqPart::slotClear()
 {
-    kDebug() << k_funcinfo << endl;
+    kDebug() << k_funcinfo;
     resetCount();
 }
 

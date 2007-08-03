@@ -141,10 +141,10 @@ KRemoteEncodingPlugin::updateMenu()
 	if ((*it).indexOf(charset) != -1)
 	  break;
 
-      kDebug() << k_funcinfo << "URL=" << m_currentURL << " charset=" << charset << endl;
+      kDebug() << k_funcinfo << "URL=" << m_currentURL << " charset=" << charset;
 
       if (it == m_encodingDescriptions.end())
-	kWarning() << k_funcinfo << "could not find entry for charset=" << charset << endl;
+	kWarning() << k_funcinfo << "could not find entry for charset=" << charset ;
       else
 	m_menu->menu()->setItemChecked(id, true);
     }
@@ -211,7 +211,7 @@ KRemoteEncodingPlugin::slotDefault()
       for (QStringList::Iterator it = domains.begin(); it != domains.end();
 	   ++it)
 	{
-	  kDebug() << k_funcinfo << "Domain to remove: " << *it << endl;
+	  kDebug() << k_funcinfo << "Domain to remove: " << *it;
 	  if (config.hasGroup(*it))
 	    config.deleteGroup(*it);
 	  else if (config.hasKey(*it))

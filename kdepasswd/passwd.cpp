@@ -94,7 +94,7 @@ int PasswdProcess::exec(const char *oldpass, const char *newpass,
 
     ret = ConversePasswd(oldpass, newpass, check);
     if (ret < 0)
-        kDebug(1512) << k_lineinfo << "Conversation with passwd failed. pid = " << pid() << endl;
+        kDebug(1512) << k_lineinfo << "Conversation with passwd failed. pid = " << pid();
 
     if ((waitForChild() != 0) && !check)
         return PasswordNotGood;

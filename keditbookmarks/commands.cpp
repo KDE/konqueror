@@ -213,7 +213,7 @@ QString CreateCommand::finalAddress() const {
 }
 
 void CreateCommand::unexecute() {
-    // kDebug() << "CreateCommand::unexecute deleting " << m_to << endl;
+    // kDebug() << "CreateCommand::unexecute deleting " << m_to;
 
     KBookmark bk = CurrentMgr::bookmarkAt(m_to);
     Q_ASSERT(!bk.isNull() && !bk.parentGroup().isNull());
@@ -370,7 +370,7 @@ QString EditCommand::setNodeText(const KBookmark& bk, const QStringList &nodehie
 /* -------------------------------------- */
 
 void DeleteCommand::execute() {
-    kDebug() << "DeleteCommand::execute " << m_from << endl;
+    kDebug() << "DeleteCommand::execute " << m_from;
 
     KBookmark bk = CurrentMgr::bookmarkAt(m_from);
     Q_ASSERT(!bk.isNull());
@@ -382,7 +382,7 @@ void DeleteCommand::execute() {
         while (!n.isNull()) {
             QDomElement e = n.toElement();
             if (!e.isNull()) {
-                // kDebug() << e.tagName() << endl;
+                // kDebug() << e.tagName();
             }
             QDomNode next = n.nextSibling();
             groupRoot.removeChild(n);
@@ -414,7 +414,7 @@ void DeleteCommand::execute() {
 }
 
 void DeleteCommand::unexecute() {
-    // kDebug() << "DeleteCommand::unexecute " << m_from << endl;
+    // kDebug() << "DeleteCommand::unexecute " << m_from;
 
     if (m_contentOnly) {
         // TODO - recover saved metadata

@@ -102,8 +102,8 @@ QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfile( const QString&
 #ifdef Q_WS_X11
     QX11Info::setAppUserTime( 0 );
 #endif
-    kDebug(1202) << "void KonquerorAdaptor::createBrowserWindowFromProfile( path, filename ) " << endl;
-    kDebug(1202) << path << "," << filename << endl;
+    kDebug(1202) << "void KonquerorAdaptor::createBrowserWindowFromProfile( path, filename ) ";
+    kDebug(1202) << path << "," << filename;
     KonqMainWindow *res = KonqMisc::createBrowserWindowFromProfile( path, filename );
     if ( !res )
         return QDBusObjectPath();
@@ -232,11 +232,11 @@ bool KonquerorAdaptor::processCanBeReused( int screen )
         return true;
     foreach ( KonqMainWindow* window, *windows )
     {
-        kDebug(1202) << "processCanBeReused: count=" << window->viewCount() << endl;
+        kDebug(1202) << "processCanBeReused: count=" << window->viewCount();
         const KonqMainWindow::MapViews& views = window->viewMap();
         foreach ( KonqView* view, views )
         {
-            kDebug(1202) << "processCanBeReused: part=" << view->service()->desktopEntryPath() << ", URL=" << view->url().prettyUrl() << endl;
+            kDebug(1202) << "processCanBeReused: part=" << view->service()->desktopEntryPath() << ", URL=" << view->url().prettyUrl();
             if( !allowed_parts.contains( view->service()->desktopEntryPath()))
                 return false;
         }

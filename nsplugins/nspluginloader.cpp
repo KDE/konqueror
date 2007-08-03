@@ -96,11 +96,11 @@ void NSPluginInstance::doLoadPlugin() {
 
 NSPluginInstance::~NSPluginInstance()
 {
-   kDebug() << "-> NSPluginInstance::~NSPluginInstance" << endl;
+   kDebug() << "-> NSPluginInstance::~NSPluginInstance";
    _instanceInterface->shutdown();
-   kDebug() << "release" << endl;
+   kDebug() << "release";
    _loader->release();
-   kDebug() << "<- NSPluginInstance::~NSPluginInstance" << endl;
+   kDebug() << "<- NSPluginInstance::~NSPluginInstance";
 }
 
 
@@ -121,7 +121,7 @@ void NSPluginInstance::resizeEvent(QResizeEvent *event)
   if (isVisible()) {
     _instanceInterface->resizePlugin(width(), height());
   }
-  kDebug() << "NSPluginInstance(client)::resizeEvent" << endl;
+  kDebug() << "NSPluginInstance(client)::resizeEvent";
 }
 
 void NSPluginInstance::javascriptResult(int id, const QString &result)
@@ -158,7 +158,7 @@ NSPluginLoader *NSPluginLoader::instance()
     s_instance = new NSPluginLoader;
 
   s_refCount++;
-  kDebug() << "NSPluginLoader::instance -> " <<  s_refCount << endl;
+  kDebug() << "NSPluginLoader::instance -> " <<  s_refCount;
 
   return s_instance;
 }
@@ -167,7 +167,7 @@ NSPluginLoader *NSPluginLoader::instance()
 void NSPluginLoader::release()
 {
    s_refCount--;
-   kDebug() << "NSPluginLoader::release -> " <<  s_refCount << endl;
+   kDebug() << "NSPluginLoader::release -> " <<  s_refCount;
 
    if (s_refCount==0)
    {
@@ -179,9 +179,9 @@ void NSPluginLoader::release()
 
 NSPluginLoader::~NSPluginLoader()
 {
-   kDebug() << "-> NSPluginLoader::~NSPluginLoader" << endl;
+   kDebug() << "-> NSPluginLoader::~NSPluginLoader";
    unloadViewer();
-   kDebug() << "<- NSPluginLoader::~NSPluginLoader" << endl;
+   kDebug() << "<- NSPluginLoader::~NSPluginLoader";
 }
 
 
@@ -192,7 +192,7 @@ void NSPluginLoader::scanPlugins()
   // open the cache file
   QFile cachef(KStandardDirs::locate("data", "nsplugins/cache"));
   if (!cachef.open(QIODevice::ReadOnly)) {
-      kDebug() << "Could not load plugin cache file!" << endl;
+      kDebug() << "Could not load plugin cache file!";
       return;
   }
 
@@ -259,7 +259,7 @@ QString NSPluginLoader::lookup(const QString &mimeType)
     if (  _mapping[mimeType] )
         plugin = *_mapping[mimeType];
 
-  kDebug() << "Looking up plugin for mimetype " << mimeType << ": " << plugin << endl;
+  kDebug() << "Looking up plugin for mimetype " << mimeType << ": " << plugin;
 
   return plugin;
 }
@@ -267,7 +267,7 @@ QString NSPluginLoader::lookup(const QString &mimeType)
 
 bool NSPluginLoader::loadViewer()
 {
-   kDebug() << "NSPluginLoader::loadViewer" << endl;
+   kDebug() << "NSPluginLoader::loadViewer";
 
    _running = false;
    _process = new K3Process;
@@ -285,25 +285,25 @@ bool NSPluginLoader::loadViewer()
    QString viewer = KGlobal::dirs()->findExe("nspluginviewer");
    if (viewer.isEmpty())
    {
-      kDebug() << "can't find nspluginviewer" << endl;
+      kDebug() << "can't find nspluginviewer";
       delete _process;
       return false;
    }
 
    // find the external artsdsp process
    if( !_useArtsdsp ) {
-       kDebug() << "trying to use artsdsp" << endl;
+       kDebug() << "trying to use artsdsp";
        QString artsdsp = KGlobal::dirs()->findExe("artsdsp");
        if (artsdsp.isEmpty())
        {
-           kDebug() << "can't find artsdsp" << endl;
+           kDebug() << "can't find artsdsp";
        } else
        {
-           kDebug() << artsdsp << endl;
+           kDebug() << artsdsp;
            *_process << artsdsp;
        }
    } else
-       kDebug() << "don't using artsdsp" << endl;
+       kDebug() << "don't using artsdsp";
 
    *_process << viewer;
 
@@ -312,7 +312,7 @@ bool NSPluginLoader::loadViewer()
    *_process << _dbusService;
 
    // run the process
-   kDebug() << "Running nspluginviewer" << endl;
+   kDebug() << "Running nspluginviewer";
    _process->start();
 
    // wait for the process to run
@@ -323,7 +323,7 @@ bool NSPluginLoader::loadViewer()
 #ifdef HAVE_USLEEP
        usleep( 50*1000 );
 #else
-      sleep(1); kDebug() << "sleep" << endl;
+      sleep(1); kDebug() << "sleep";
 #endif
       cnt++;
 #ifdef HAVE_USLEEP
@@ -332,14 +332,14 @@ bool NSPluginLoader::loadViewer()
       if (cnt >= 10)
 #endif
       {
-         kDebug() << "timeout" << endl;
+         kDebug() << "timeout";
          delete _process;
          return false;
       }
 
       if (!_process->isRunning())
       {
-         kDebug() << "nspluginviewer terminated" << endl;
+         kDebug() << "nspluginviewer terminated";
          delete _process;
          return false;
       }
@@ -354,30 +354,30 @@ bool NSPluginLoader::loadViewer()
 
 void NSPluginLoader::unloadViewer()
 {
-   kDebug() << "-> NSPluginLoader::unloadViewer" << endl;
+   kDebug() << "-> NSPluginLoader::unloadViewer";
 
    if ( _viewer )
    {
       _viewer->shutdown();
-      kDebug() << "Shutdown viewer" << endl;
+      kDebug() << "Shutdown viewer";
       delete _viewer;
       delete _process;
       _viewer = 0;
       _process = 0;
    }
 
-   kDebug() << "<- NSPluginLoader::unloadViewer" << endl;
+   kDebug() << "<- NSPluginLoader::unloadViewer";
 }
 
 
 void NSPluginLoader::applicationRegistered( const QString& appId )
 {
-   kDebug() << "DCOP application " << appId << " just registered!" << endl;
+   kDebug() << "DCOP application " << appId << " just registered!";
 
    if ( _dbusService == appId )
    {
       _running = true;
-      kDebug() << "plugin now running" << endl;
+      kDebug() << "plugin now running";
    }
 }
 
@@ -386,7 +386,7 @@ void NSPluginLoader::processTerminated(K3Process *proc)
 {
    if ( _process == proc)
    {
-      kDebug() << "Viewer process  terminated" << endl;
+      kDebug() << "Viewer process  terminated";
       delete _viewer;
       delete _process;
       _viewer = 0;
@@ -400,7 +400,7 @@ NSPluginInstance *NSPluginLoader::newInstance(QWidget *parent, const QString& ur
                                               const QStringList& _argn, const QStringList& _argv,
                                               const QString& appId, const QString& callbackId, bool reload )
 {
-   kDebug() << "-> NSPluginLoader::NewInstance( parent=" << (void*)parent << ", url=" << url << ", mime=" << mimeType << ", ...)" << endl;
+   kDebug() << "-> NSPluginLoader::NewInstance( parent=" << (void*)parent << ", url=" << url << ", mime=" << mimeType << ", ...)";
 
    if ( !_viewer )
    {
@@ -409,7 +409,7 @@ NSPluginInstance *NSPluginLoader::newInstance(QWidget *parent, const QString& ur
 
       if ( !_viewer )
       {
-         kDebug() << "No viewer dcop stub found" << endl;
+         kDebug() << "No viewer dcop stub found";
          return 0;
       }
    }
@@ -427,7 +427,7 @@ NSPluginInstance *NSPluginLoader::newInstance(QWidget *parent, const QString& ur
    }
    if (mime.isEmpty())
    {
-      kDebug() << "Unknown MimeType" << endl;
+      kDebug() << "Unknown MimeType";
       return 0;
    }
 
@@ -435,7 +435,7 @@ NSPluginInstance *NSPluginLoader::newInstance(QWidget *parent, const QString& ur
    QString plugin_name = lookup(mime);
    if (plugin_name.isEmpty())
    {
-      kDebug() << "No suitable plugin" << endl;
+      kDebug() << "No suitable plugin";
       return 0;
    }
 
@@ -446,7 +446,7 @@ NSPluginInstance *NSPluginLoader::newInstance(QWidget *parent, const QString& ur
    QDBusObjectPath cls_ref = _viewer->newClass( plugin_name, appId ); 
    if ( cls_ref.path().isEmpty() )
    {
-      kDebug() << "Couldn't create plugin class" << endl;
+      kDebug() << "Couldn't create plugin class";
       return 0;
    }
    org::kde::nsplugins::Class* cls = new org::kde::nsplugins::Class( appId, cls_ref.path(), QDBusConnection::sessionBus() );
@@ -460,14 +460,14 @@ NSPluginInstance *NSPluginLoader::newInstance(QWidget *parent, const QString& ur
    QDBusObjectPath inst_ref = cls->newInstance( url, mime, embed, argn, argv, appId, callbackId, reload );
    if ( inst_ref.path().isEmpty() )
    {
-      kDebug() << "Couldn't create plugin instance" << endl;
+      kDebug() << "Couldn't create plugin instance";
       delete cls;
       return 0;
    }
 
    NSPluginInstance *plugin = new NSPluginInstance( parent, appId, inst_ref.path() );
 
-   kDebug() << "<- NSPluginLoader::NewInstance = " << (void*)plugin << endl;
+   kDebug() << "<- NSPluginLoader::NewInstance = " << (void*)plugin;
 
    delete cls;
    return plugin;
