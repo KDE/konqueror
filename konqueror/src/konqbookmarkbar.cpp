@@ -82,6 +82,8 @@ KBookmarkBar::KBookmarkBar( KBookmarkManager* mgr,
 
     connect( mgr, SIGNAL( changed(const QString &, const QString &) ),
              SLOT( slotBookmarksChanged(const QString &) ) );
+    connect( mgr, SIGNAL( configChanged() ),
+             SLOT( slotConfigChanged() ) );
 
     KBookmarkGroup toolbar = getToolbar();
     fillBookmarkBar( toolbar );
@@ -99,7 +101,10 @@ QString KBookmarkBar::parentAddress()
 
 KBookmarkGroup KBookmarkBar::getToolbar()
 {
-    return m_pManager->toolbar();
+    if(d->m_filteredToolbar)
+        return m_pManager->root();
+    else
+        return m_pManager->toolbar();
 }
 
 KBookmarkBar::~KBookmarkBar()
@@ -146,6 +151,16 @@ void KBookmarkBar::slotBookmarksChanged( const QString & group )
             (*smit)->slotBookmarksChanged( group );
         }
     }
+}
+
+void KBookmarkBar::slotConfigChanged()
+{
+    KConfig config("kbookmarkrc", KConfig::NoGlobals);
+    KConfigGroup cg(&config, "Bookmarks");
+    d->m_filteredToolbar = cg.readEntry( "FilteredToolbar", false );
+    d->m_contextMenu = cg.readEntry( "ContextMenuActions", true );
+    clear();
+    fillBookmarkBar(getToolbar());
 }
 
 void KBookmarkBar::fillBookmarkBar(const KBookmarkGroup & parent)

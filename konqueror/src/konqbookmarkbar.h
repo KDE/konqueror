@@ -68,6 +68,7 @@ public Q_SLOTS:
     void contextMenu( const QPoint & );
 
     void slotBookmarksChanged( const QString & );
+    void slotConfigChanged();
 
 protected:
     void fillBookmarkBar( const KBookmarkGroup & parent );
