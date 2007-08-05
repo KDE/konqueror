@@ -45,7 +45,6 @@ class KBookmarkBarPrivate
 {
 public:
     QList<KAction *> m_actions;
-    KBookmarkManager* m_filteredMgr;
     int m_sepIndex;
     QList<int> widgetPositions; //right edge, bottom edge
     QString tempLabel;
@@ -53,7 +52,6 @@ public:
     bool m_contextMenu;
 
     KBookmarkBarPrivate() :
-        m_filteredMgr( 0 ),
         m_sepIndex( -1 )
     {
         // see KBookmarkSettings::readSettings in kio
@@ -64,20 +62,8 @@ public:
     }
 };
 
-// usage of KXBELBookmarkImporterImpl is just plain evil, but it reduces code dup. so...
-class ToolbarFilter : public KXBELBookmarkImporterImpl
-{
-public:
-    ToolbarFilter() : m_visible(false) { ; }
-    void filter( const KBookmarkGroup &grp ) { traverse(grp); }
-private:
-    virtual void visit( const KBookmark & );
-    virtual void visitEnter( const KBookmarkGroup & );
-    virtual void visitLeave( const KBookmarkGroup & );
-private:
-    bool m_visible;
-    KBookmarkGroup m_visibleStart;
-};
+static bool showInToolbar( const KBookmark &bk );
+
 
 KBookmarkBar::KBookmarkBar( KBookmarkManager* mgr,
                             KonqBookmarkOwner *_owner, KToolBar *_toolBar,
@@ -104,40 +90,16 @@ KBookmarkBar::KBookmarkBar( KBookmarkManager* mgr,
 
 QString KBookmarkBar::parentAddress()
 {
-    return d->m_filteredMgr ? QString() : m_pManager->toolbar().address();
+    if(d->m_filteredToolbar)
+	return "";
+    else
+	m_pManager->toolbar().address();
 }
 
-#define CURRENT_TOOLBAR() ( \
-    d->m_filteredMgr ? d->m_filteredMgr->root()  \
-                          : m_pManager->toolbar() )
-
-#define CURRENT_MANAGER() ( \
-    d->m_filteredMgr ? d->m_filteredMgr  \
-                          : m_pManager )
 
 KBookmarkGroup KBookmarkBar::getToolbar()
 {
-    if ( d->m_filteredToolbar )
-    {
-        if ( !d->m_filteredMgr ) {
-            d->m_filteredMgr = KBookmarkManager::createTempManager();
-        } else {
-            KBookmarkGroup bkRoot = d->m_filteredMgr->root();
-            QList<KBookmark> bks;
-            for (KBookmark bm = bkRoot.first(); !bm.isNull(); bm = bkRoot.next(bm))
-                bks.append( bm );
-            for ( QList<KBookmark>::const_iterator bkit = bks.begin(), bkend = bks.end() ; bkit != bkend ; ++bkit ) {
-                bkRoot.deleteBookmark( (*bkit) );
-            }
-        }
-        ToolbarFilter filter;
-        KBookmarkDomBuilder builder( d->m_filteredMgr->root(),
-                                     d->m_filteredMgr );
-        builder.connectImporter( &filter );
-        filter.filter( m_pManager->root() );
-    }
-
-    return CURRENT_TOOLBAR();
+    return m_pManager->toolbar();
 }
 
 KBookmarkBar::~KBookmarkBar()
@@ -160,13 +122,17 @@ void KBookmarkBar::clear()
 void KBookmarkBar::slotBookmarksChanged( const QString & group )
 {
     KBookmarkGroup tb = getToolbar(); // heavy for non cached toolbar version
-    kDebug(7043) << "slotBookmarksChanged( " << group << " )";
+    kDebug(7043) << "KBookmarkBar::slotBookmarksChanged( " << group << " )";
 
     if ( tb.isNull() )
         return;
-
-    if ( KBookmark::commonParent(group, tb.address()) == group  // Is group a parent of tb.address?
-         || d->m_filteredToolbar )
+    
+    if( d->m_filteredToolbar )
+    {
+        clear();
+        fillBookmarkBar( tb );
+    }
+    else if ( KBookmark::commonParent(group, tb.address()) == group)  // Is group a parent of tb.address?
     {
         clear();
         fillBookmarkBar( tb );
@@ -182,16 +148,27 @@ void KBookmarkBar::slotBookmarksChanged( const QString & group )
     }
 }
 
-void KBookmarkBar::fillBookmarkBar(KBookmarkGroup & parent)
+void KBookmarkBar::fillBookmarkBar(const KBookmarkGroup & parent)
 {
     if (parent.isNull())
         return;
 
     for (KBookmark bm = parent.first(); !bm.isNull(); bm = parent.next(bm))
     {
+        // Filtered special cases
+        if(d->m_filteredToolbar)
+        {
+            if(bm.isGroup() && !showInToolbar(bm) )
+		fillBookmarkBar(bm.toGroup());	       
+
+	    if(!showInToolbar(bm))
+		continue;
+        }
+
+
         if (!bm.isGroup())
         {
-            if ( bm.isSeparator() )
+	    if ( bm.isSeparator() )
                 m_toolBar->addSeparator();
             else
             {
@@ -206,7 +183,7 @@ void KBookmarkBar::fillBookmarkBar(KBookmarkGroup & parent)
             action->setDelayed( false );
             m_toolBar->addAction(action);
             d->m_actions.append( action );
-            KBookmarkMenu *menu = new KonqBookmarkMenu(CURRENT_MANAGER(), m_pOwner, action, bm.address());
+            KBookmarkMenu *menu = new KonqBookmarkMenu(m_pManager, m_pOwner, action, bm.address());
             m_lstSubMenus.append( menu );
         }
     }
@@ -216,6 +193,7 @@ void KBookmarkBar::removeTempSep()
 {
     if (m_toolBarSeparator)
         m_toolBar->removeAction(m_toolBarSeparator);
+	    
 }
 
 /**
@@ -228,6 +206,8 @@ void KBookmarkBar::removeTempSep()
  */
 bool KBookmarkBar::handleToolbarDragMoveEvent(const QPoint& p, const QList<KAction *>& actions, const QString &text)
 {
+    if(d->m_filteredToolbar)
+        return false;
     int pos = m_toolBar->orientation() == Qt::Horizontal ? p.x() : p.y();
     Q_ASSERT( actions.isEmpty() || (m_toolBar == qobject_cast<KToolBar*>(actions.first()->associatedWidgets().value(0))) );
     m_toolBar->setUpdatesEnabled(false);
@@ -313,8 +293,7 @@ void KBookmarkBar::contextMenu(const QPoint & pos)
 // open submenus on drop interactions
 bool KBookmarkBar::eventFilter( QObject *, QEvent *e )
 {
-    if (d->m_filteredMgr) // note, we assume m_pManager in various places,
-                          // this shouldn't really be the case
+    if (d->m_filteredToolbar) 
         return false; // todo: make this limit the actions
 
     if ( e->type() == QEvent::DragLeave )
@@ -400,31 +379,6 @@ bool KBookmarkBar::eventFilter( QObject *, QEvent *e )
 
 static bool showInToolbar( const KBookmark &bk ) {
     return (bk.internalElement().attributes().namedItem("showintoolbar").toAttr().value() == "yes");
-}
-
-void ToolbarFilter::visit( const KBookmark &bk ) {
-    //kDebug() << "visit(" << bk.text() << ")";
-    if ( m_visible || showInToolbar(bk) )
-        KXBELBookmarkImporterImpl::visit(bk);
-}
-
-void ToolbarFilter::visitEnter( const KBookmarkGroup &grp ) {
-    //kDebug() << "visitEnter(" << grp.text() << ")";
-    if ( !m_visible && showInToolbar(grp) )
-    {
-        m_visibleStart = grp;
-        m_visible = true;
-    }
-    if ( m_visible )
-        KXBELBookmarkImporterImpl::visitEnter(grp);
-}
-
-void ToolbarFilter::visitLeave( const KBookmarkGroup &grp ) {
-    //kDebug() << "visitLeave()";
-    if ( m_visible )
-        KXBELBookmarkImporterImpl::visitLeave(grp);
-    if ( m_visible && grp.address() == m_visibleStart.address() )
-        m_visible = false;
 }
 
 #include "konqbookmarkbar.moc"
