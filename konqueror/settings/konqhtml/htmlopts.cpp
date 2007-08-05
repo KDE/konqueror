@@ -359,6 +359,9 @@ void KMiscHTMLOptions::save()
         QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "reparseConfiguration");
     QDBusConnection::sessionBus().send(message);
 
+    message = QDBusMessage::createSignal("/KBookmarkManager/konqueror", "org.kde.KIO.KBookmarkManager", "bookmarkConfigChanged" );
+    QDBusConnection::sessionBus().send(message);
+
     emit changed(false);
 }
 
