@@ -70,7 +70,7 @@ public Q_SLOTS:
     void slotBookmarksChanged( const QString & );
 
 protected:
-    void fillBookmarkBar( KBookmarkGroup & parent );
+    void fillBookmarkBar( const KBookmarkGroup & parent );
     virtual bool eventFilter( QObject *o, QEvent *e );
 
 private:
