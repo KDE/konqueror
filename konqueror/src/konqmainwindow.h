@@ -698,8 +698,6 @@ private: // members
   KFileItemList popupItems;
   KParts::URLArgs popupUrlArgs;
 
-  KonqRun *m_initialKonqRun;
-
   QString m_title;
 
   KCMultiDialog* m_configureDialog;

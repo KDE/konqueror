@@ -985,6 +985,7 @@ void KonqViewManager::setActivePart( KParts::Part *part, bool immediate )
         // This is not done with right-clicking so that the part is activated before the
         // popup appears (#75201)
     } else {
+        m_activePartChangedTimer->stop();
         emitActivePartChanged();
     }
 }
