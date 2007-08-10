@@ -17,7 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include <phonon/audioplayer.h>
+#include <phonon/mediaobject.h>
 #include <phonon/backendcapabilities.h>
 #include <kdebug.h>
 
@@ -39,7 +39,7 @@ public:
 	virtual bool isPlaying();
 
 private:
-	Phonon::AudioPlayer *m_player;
+	Phonon::MediaObject *m_player;
 };
 
 KonqSoundPlayerImpl::KonqSoundPlayerImpl()
@@ -58,9 +58,10 @@ void KonqSoundPlayerImpl::setUrl(const KUrl &url)
 	kDebug() << k_funcinfo;
 	if (!m_player) {
 		kDebug() << "create AudioPlayer";
-		m_player = new Phonon::AudioPlayer(Phonon::MusicCategory, this);
+		m_player = Phonon::createPlayer(Phonon::MusicCategory);
+		m_player->setParent(this);
 	}
-	m_player->load(url);
+	m_player->setCurrentSource(url);
 }
 
 void KonqSoundPlayerImpl::play()
@@ -80,8 +81,9 @@ void KonqSoundPlayerImpl::stop()
 bool KonqSoundPlayerImpl::isPlaying()
 {
 	if (m_player) {
-		kDebug() << k_funcinfo << m_player->isPlaying();
-		return m_player->isPlaying();
+		const bool isPlaying = (m_player->state() == Phonon::PlayingState || m_player->state() == Phonon::BufferingState);
+		kDebug() << k_funcinfo << isPlaying;
+		return isPlaying;
 	}
 	kDebug() << k_funcinfo << false;
 	return false;
