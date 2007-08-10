@@ -156,7 +156,7 @@ void KCookiesManagement::save()
       QDBusReply<void> reply = kded.call( "deleteAllCookies" );
     if (!reply.isValid())
     {
-      QString caption = i18n ("DBUS Communication Error");
+      QString caption = i18n ("D-Bus Communication Error");
       QString message = i18n ("Unable to delete all the cookies as requested.");
       KMessageBox::sorry (this, caption, message);
       return;
@@ -173,7 +173,7 @@ void KCookiesManagement::save()
     QDBusReply<void> reply = kded.call( "deleteCookiesFromDomain",( *dIt ) );
     if( !reply.isValid() )
     {
-      QString caption = i18n ("DBUS Communication Error");
+      QString caption = i18n ("D-Bus Communication Error");
       QString message = i18n ("Unable to delete cookies as requested.");
       KMessageBox::sorry (this, caption, message);
       return;

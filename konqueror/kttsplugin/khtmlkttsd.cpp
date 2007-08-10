@@ -82,8 +82,8 @@ void KHTMLPluginKTTSD::slotReadOut()
 		QDBusInterface kttsd( "org.kde.KSpeech", "/KSpeech", "org.kde.KSpeech" );
 		QDBusReply<bool> reply = kttsd.call("supportsMarkup", "", KSpeech::soHtml);
         if ( !reply.isValid())
-            QMessageBox::warning( 0, i18n( "DBUS Call Failed" ),
-                                     i18n( "The DBUS call supportsMarkup failed." ));
+            QMessageBox::warning( 0, i18n( "D-Bus Call Failed" ),
+                                     i18n( "The D-Bus call supportsMarkup failed." ));
         else
         {
 			supportsXhtml = reply;
@@ -118,12 +118,12 @@ void KHTMLPluginKTTSD::slotReadOut()
 
 		reply = kttsd.call("setText", query, "");
         if ( !reply.isValid())
-            QMessageBox::warning( 0, i18n( "DBUS Call Failed" ),
-                                     i18n( "The DBUS call setText failed." ));
+            QMessageBox::warning( 0, i18n( "D-Bus Call Failed" ),
+                                     i18n( "The D-Bus call setText failed." ));
 		reply = kttsd.call("startText", 0);
         if ( !reply.isValid())
-            QMessageBox::warning( 0, i18n( "DBUS Call Failed" ),
-                                     i18n( "The DBUS call startText failed." ));
+            QMessageBox::warning( 0, i18n( "D-Bus Call Failed" ),
+                                     i18n( "The D-Bus call startText failed." ));
     }
 }
 
