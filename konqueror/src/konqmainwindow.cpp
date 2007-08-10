@@ -180,7 +180,6 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
   m_pChildFrame = 0;
   m_pActiveChild = 0;
   m_pWorkingTab = 0;
-  m_initialKonqRun = 0;
   m_pBookmarkMenu = 0;
   (void) new KonqMainWindowAdaptor( this );
   m_combo = 0;
@@ -611,8 +610,7 @@ void KonqMainWindow::openUrl( KonqView *_view, const KUrl &_url,
   }
   else // no known mimeType, use KonqRun
   {
-      if ( ( view && view == m_currentView ) ||
-              ( !view && !req.newTab ) ) // startup with argument
+      if ( ( !view || view->url().isEmpty() ) && !req.newTab ) // startup with argument
       {
           // Show it for now in the location bar, but we'll need to store it in the view
           // later on (can't do it yet since either view == 0 or updateHistoryEntry will be called).
@@ -629,12 +627,6 @@ void KonqMainWindow::openUrl( KonqView *_view, const KUrl &_url,
 
       if ( view )
         view->setRun( run );
-      else if ( !req.newTab )
-      {
-        // there can be only one :) (when not a new tab)
-          delete m_initialKonqRun;
-          m_initialKonqRun = run;
-      }
 
       if ( view == m_currentView )
         startAnimation();
@@ -812,8 +804,6 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
         if ( childView )
         {
             enableAllActions( true );
-
-            m_pViewManager->setActivePart( childView->part() );
             m_currentView = childView;
         }
       }
@@ -2026,9 +2016,6 @@ void KonqMainWindow::slotRunFinished()
 {
   kDebug(1202) << "KonqMainWindow::slotRunFinished()";
   const KonqRun *run = static_cast<const KonqRun *>( sender() );
-
-  if ( run == m_initialKonqRun )
-      m_initialKonqRun = 0;
 
   if ( !run->mailtoURL().isEmpty() )
   {

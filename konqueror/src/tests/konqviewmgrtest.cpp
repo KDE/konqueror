@@ -307,6 +307,7 @@ void ViewMgrTest::testDuplicateSplittedTab()
 void ViewMgrTest::testLoadProfile()
 {
     // TODO
+    // TODO check view->locationBarUrl() and mainWindow.locationBarUrl() too
 }
 
 #include "konqviewmgrtest.moc"
