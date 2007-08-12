@@ -31,7 +31,7 @@
 #include "filegroupdetails.h"
 
 typedef KGenericFactory<FileTypesView> FileTypesViewFactory;
-K_EXPORT_COMPONENT_FACTORY(filetypes, FileTypesViewFactory("filetypes"))
+K_EXPORT_COMPONENT_FACTORY(kcm_filetypes, FileTypesViewFactory("filetypes"))
 
 FileTypesView::FileTypesView(QWidget *parent, const QStringList &)
   : KCModule(FileTypesViewFactory::componentData(), parent)

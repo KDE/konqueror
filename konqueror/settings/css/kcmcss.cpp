@@ -25,7 +25,7 @@
 #include "template.h"
 
 typedef KGenericFactory<CSSConfig, QWidget> CSSFactory;
-K_EXPORT_COMPONENT_FACTORY( css, CSSFactory("kcmcss") )
+K_EXPORT_COMPONENT_FACTORY( kcm_css, CSSFactory("kcmcss") )
 
 CSSConfig::CSSConfig(QWidget *parent, const QStringList &)
   : KCModule(CSSFactory::componentData(), parent)
