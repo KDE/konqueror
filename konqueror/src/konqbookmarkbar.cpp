@@ -94,8 +94,8 @@ QString KBookmarkBar::parentAddress()
 {
     if(d->m_filteredToolbar)
 	return "";
-    else
-	m_pManager->toolbar().address();
+
+    return m_pManager->toolbar().address();
 }
 
 
