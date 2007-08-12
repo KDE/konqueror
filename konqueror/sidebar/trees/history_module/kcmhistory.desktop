@@ -5,7 +5,7 @@ Type=Service
 ServiceTypes=KCModule
 Exec=kcmshell kcmhistory
 
-X-KDE-Library=history
+X-KDE-Library=kcm_history
 X-KDE-FactoryName=history
 X-KDE-ParentApp=kcontrol
 
