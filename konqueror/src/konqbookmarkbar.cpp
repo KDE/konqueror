@@ -93,9 +93,9 @@ KBookmarkBar::KBookmarkBar( KBookmarkManager* mgr,
 QString KBookmarkBar::parentAddress()
 {
     if(d->m_filteredToolbar)
-	return "";
-
-    return m_pManager->toolbar().address();
+        return "";
+    else
+        return m_pManager->toolbar().address();
 }
 
 
@@ -187,18 +187,18 @@ void KBookmarkBar::fillBookmarkBar(const KBookmarkGroup & parent)
                 m_toolBar->addSeparator();
             else
             {
-                KAction *action = new KonqBookmarkAction( bm, m_pOwner, 0 );
+                KAction *action = new KBookmarkAction( bm, m_pOwner, 0 );
                 m_toolBar->addAction(action);
                 d->m_actions.append( action );
             }
         }
         else
         {
-            KonqBookmarkActionMenu *action = new KonqBookmarkActionMenu(bm, 0);
+            KBookmarkActionMenu *action = new KBookmarkActionMenu(bm, 0);
             action->setDelayed( false );
             m_toolBar->addAction(action);
             d->m_actions.append( action );
-            KBookmarkMenu *menu = new KonqBookmarkMenu(m_pManager, m_pOwner, action, bm.address());
+            KBookmarkMenu *menu = new KBookmarkMenu(m_pManager, m_pOwner, action->menu(), bm.address());
             m_lstSubMenus.append( menu );
         }
     }
@@ -301,7 +301,9 @@ void KBookmarkBar::contextMenu(const QPoint & pos)
     KBookmarkActionInterface * action = dynamic_cast<KBookmarkActionInterface *>( m_toolBar->actionAt(pos) );
     if(!action)
         return;
-    action->contextMenu(m_toolBar->mapToGlobal(pos), m_pManager, m_pOwner);
+    KMenu * menu = new KBookmarkContextMenu(action->bookmark(), m_pManager, m_pOwner);
+    menu->setAttribute(Qt::WA_DeleteOnClose);
+    menu->popup(m_toolBar->mapToGlobal(pos));
 }
 
 // TODO    *** drop improvements ***

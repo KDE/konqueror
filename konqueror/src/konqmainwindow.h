@@ -55,7 +55,7 @@ class KAction;
 class KActionCollection;
 class KActionMenu;
 class KBookmarkMenu;
-class KonqBookmarkActionMenu;
+class KBookmarkActionMenu;
 class KCMultiDialog;
 class KNewMenu;
 class KToggleAction;
@@ -602,7 +602,7 @@ private: // members
 
   QAction *m_paPrint;
 
-  KonqBookmarkActionMenu *m_pamBookmarks;
+  KBookmarkActionMenu *m_pamBookmarks;
 
   KToolBarPopupAction *m_paUp;
   KToolBarPopupAction *m_paBack;
