@@ -32,6 +32,7 @@
 #include <kicon.h>
 #include <klocale.h>
 #include <kglobal.h>
+#include <kmimetype.h>
 #include <kconfig.h>
 #include <kcharsets.h>
 #include <kmenu.h>
@@ -239,10 +240,8 @@ KRemoteEncodingPlugin::updateBrowser()
 bool KRemoteEncodingPlugin::eventFilter(QObject*obj, QEvent *ev)
 {
     if (obj == m_part && KParts::OpenUrlEvent::test(ev)) {
-#if 0 // TODO enable after 15 July 2007 (once KParts::ReadOnlyPart has the arguments() method)
         const QString mimeType = m_part->arguments().mimeType();
         if (!mimeType.isEmpty() && KMimeType::mimeType(mimeType)->is("inode/directory"))
-#endif
             slotAboutToOpenURL();
     }
     return KParts::Plugin::eventFilter(obj, ev);
