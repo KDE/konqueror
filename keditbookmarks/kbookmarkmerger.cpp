@@ -121,7 +121,7 @@ int main( int argc, char**argv )
 				continue;
 			}
 			bm.setMetaDataItem( "merged_from", fileName );
-			konqBookmarks->root().addBookmark( konqBookmarks, bm, false );
+			konqBookmarks->root().addBookmark( bm );
 			didMergeBookmark = true;
 		}
 	}

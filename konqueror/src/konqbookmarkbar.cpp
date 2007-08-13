@@ -332,9 +332,7 @@ bool KBookmarkBar::eventFilter( QObject *, QEvent *e )
 
         if(d->m_sepIndex == 0)
         {
-            KBookmark newBookmark = parentBookmark.addBookmark(
-                m_pManager, toInsert.fullText(),
-                toInsert.url() );
+            KBookmark newBookmark = parentBookmark.addBookmark(toInsert.fullText(), toInsert.url() );
 
             parentBookmark.moveItem( newBookmark, KBookmark() );
             m_pManager->emitChanged( parentBookmark );
@@ -346,9 +344,7 @@ bool KBookmarkBar::eventFilter( QObject *, QEvent *e )
 
             for(int i=0; i < d->m_sepIndex - 1 ; ++i)
                 after = parentBookmark.next(after);
-            KBookmark newBookmark = parentBookmark.addBookmark(
-                    m_pManager, toInsert.fullText(),
-                    toInsert.url() );
+            KBookmark newBookmark = parentBookmark.addBookmark(toInsert.fullText(), toInsert.url() );
 
             parentBookmark.moveItem( newBookmark, after );
             m_pManager->emitChanged( parentBookmark );

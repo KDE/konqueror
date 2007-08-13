@@ -88,7 +88,7 @@ ImportCommand* ImportCommand::performImport(const QString &type, QWidget *top) {
 
 void ImportCommand::doCreateHoldingFolder(KBookmarkGroup &bkGroup) {
     bkGroup = CurrentMgr::self()->mgr()
-        ->root().createNewFolder(CurrentMgr::self()->mgr(), folder(), false);
+        ->root().createNewFolder(folder());
     bkGroup.internalElement().setAttribute("icon", m_icon);
     m_group = bkGroup.address();
 }

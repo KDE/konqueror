@@ -179,11 +179,10 @@ void CreateCommand::execute()
 
     } else if (m_group) {
         Q_ASSERT(!m_text.isEmpty());
-        bk = parentGroup.createNewFolder(CurrentMgr::self()->mgr(),
-                m_text, false);
+        bk = parentGroup.createNewFolder(m_text);
         bk.internalElement().setAttribute("folded", (m_open ? "no" : "yes"));
         if (!m_iconPath.isEmpty()) {
-            bk.internalElement().setAttribute("icon", m_iconPath);
+            bk.setIcon(m_iconPath);
         }
 
     } else if (!m_originalBookmark.isNull()) {
@@ -191,9 +190,7 @@ void CreateCommand::execute()
         bk = m_originalBookmark;
 
     } else {
-        bk = parentGroup.addBookmark(CurrentMgr::self()->mgr(),
-                m_text, m_url,
-                m_iconPath, false);
+        bk = parentGroup.addBookmark(m_text, m_url, m_iconPath);
     }
 
     // move to right position
@@ -266,18 +263,18 @@ void EditCommand::execute()
     }
     else if(mCol==-1)
     {
-        mOldValue = bk.internalElement().attribute("icon");
-        bk.internalElement().setAttribute("icon", mNewValue);
+        mOldValue = bk.icon();
+        bk.setIcon(mNewValue);
     }
     else if(mCol==0)
     {
         mOldValue = bk.fullText();
-        setNodeText(bk, QStringList()<< "title", mNewValue);
+        bk.setFullText(mNewValue);
     }
     else if(mCol==1)
     {
-        mOldValue = bk.internalElement().attribute("href");
-        bk.internalElement().setAttribute("href", mNewValue);
+        mOldValue = bk.url().prettyUrl();
+        bk.setUrl(KUrl(mNewValue));
     }
     else if(mCol==2)
     {
@@ -297,15 +294,15 @@ void EditCommand::unexecute()
     }
     else if(mCol==-1)
     {
-        bk.internalElement().setAttribute("icon", mOldValue);
+        bk.setIcon(mOldValue);
     }
     else if(mCol==0)
     {
-        setNodeText(bk, QStringList()<<"title", mOldValue);
+        bk.setFullText(mOldValue);
     }
     else if(mCol==1)
     {
-        bk.internalElement().setAttribute("href", mOldValue );
+        bk.setUrl(KUrl(mOldValue));
     }
     else if(mCol==2)
     {
