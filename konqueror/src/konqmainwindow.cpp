@@ -1097,7 +1097,7 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
 
         const bool aftercurrentpage = KonqSettings::openAfterCurrentPage();
         bool newtabsinfront = KonqSettings::newTabsInFront();
-        if ( windowArgs.lowerWindow || (QApplication::keyboardModifiers() & Qt::ShiftModifier))
+        if ( windowArgs.lowerWindow() || (QApplication::keyboardModifiers() & Qt::ShiftModifier))
            newtabsinfront = !newtabsinfront;
 
         KonqView* newView = m_pViewManager->addTab("text/html", QString(), false, aftercurrentpage);
@@ -1147,24 +1147,24 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
 
     QString profileName = QLatin1String( url.isLocalFile() ? "konqueror/profiles/filemanagement" : "konqueror/profiles/webbrowsing" );
 
-    if ( windowArgs.x != -1 )
-        mainWindow->move( windowArgs.x, mainWindow->y() );
-    if ( windowArgs.y != -1 )
-        mainWindow->move( mainWindow->x(), windowArgs.y );
+    if ( windowArgs.x() != -1 )
+        mainWindow->move( windowArgs.x(), mainWindow->y() );
+    if ( windowArgs.y() != -1 )
+        mainWindow->move( mainWindow->x(), windowArgs.y() );
 
     KConfig cfg( KStandardDirs::locate( "data", profileName ) );
     KConfigGroup profileGroup( &cfg, "Profile" );
     QSize size = KonqViewManager::readConfigSize( profileGroup, mainWindow );
 
     int width;
-    if ( windowArgs.width != -1 )
-        width = windowArgs.width;
+    if ( windowArgs.width() != -1 )
+        width = windowArgs.width();
     else
         width = size.isValid() ? size.width() : mainWindow->width();
 
     int height;
-    if ( windowArgs.height != -1 )
-        height = windowArgs.height;
+    if ( windowArgs.height() != -1 )
+        height = windowArgs.height();
     else
         height = size.isValid() ? size.height() : mainWindow->height();
 
@@ -1172,26 +1172,26 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
 
     // process the window args
 
-    if ( !windowArgs.menuBarVisible )
+    if ( !windowArgs.isMenuBarVisible() )
     {
         mainWindow->menuBar()->hide();
         mainWindow->m_paShowMenuBar->setChecked( false );
     }
 
-    if ( !windowArgs.toolBarsVisible )
+    if ( !windowArgs.toolBarsVisible() )
     {
       foreach (KToolBar* bar, mainWindow->findChildren<KToolBar*>())
         bar->hide();
     }
 
     if ( view ) {
-        if ( !windowArgs.scrollBarsVisible )
+        if ( !windowArgs.scrollBarsVisible() )
             view->disableScrolling();
-        if ( !windowArgs.statusBarVisible )
+        if ( !windowArgs.isStatusBarVisible() )
             view->frame()->statusbar()->hide();
     }
 
-    if ( !windowArgs.resizable )
+    if ( !windowArgs.isResizable() )
         // ### this doesn't seem to work :-(
         mainWindow->setSizePolicy( QSizePolicy( QSizePolicy::Fixed, QSizePolicy::Fixed ) );
 
@@ -1204,7 +1204,7 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
 
 #ifdef Q_WS_X11
     Time saved_last_input_time = QX11Info::appUserTime();
-    if ( windowArgs.lowerWindow )
+    if ( windowArgs.lowerWindow() )
     {
         NETRootInfo wm_info( QX11Info::display(), NET::Supported );
         wm_usertime_support = wm_info.isSupported( NET::WM2UserTime );
@@ -1224,7 +1224,7 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
 
     mainWindow->show();
 
-    if ( windowArgs.lowerWindow )
+    if ( windowArgs.lowerWindow() )
     {
         QX11Info::setAppUserTime( saved_last_input_time );
         if( !wm_usertime_support )
@@ -1239,7 +1239,7 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
     mainWindow->show();
 #endif
 
-    if ( windowArgs.fullscreen )
+    if ( windowArgs.isFullScreen() )
         mainWindow->action( "fullscreen" )->trigger();
 }
 
