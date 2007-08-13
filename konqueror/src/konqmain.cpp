@@ -117,9 +117,9 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
        if (args->count() == 1)
            url = args->arg(0);
        KUrl kurl(url);
-       KParts::URLArgs urlargs;
+       KParts::OpenUrlArguments urlargs;
        if (args->isSet("mimetype"))
-           urlargs.serviceType = args->getOption("mimetype");
+           urlargs.setMimeType( args->getOption("mimetype") );
        if (args->isSet("select")) {
            QString fn = kurl.fileName(KUrl::ObeyTrailingSlash);
            if( !fn.isEmpty() ){
@@ -127,8 +127,8 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
               kurl.setFileName("");
            }
        }
-       kDebug(1202) << "main() -> createBrowserWindowFromProfile servicetype=" << urlargs.serviceType;
-       KonqMisc::createBrowserWindowFromProfile( profilePath, profile, kurl, urlargs, false, filesToSelect );
+       kDebug(1202) << "main() -> createBrowserWindowFromProfile mimeType=" << urlargs.mimeType();
+       KonqMisc::createBrowserWindowFromProfile( profilePath, profile, kurl, urlargs, KParts::BrowserArguments(), false, filesToSelect );
      }
      else
      {
@@ -189,11 +189,11 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
                      urlToOpen = KUrl( KonqMisc::konqFilteredURL(0L, args->arg(i)) ); // "konqueror slashdot.org"
 
                  if ( !mainwin ) {
-                     KParts::URLArgs urlargs;
+                     KParts::OpenUrlArguments urlargs;
                      if (args->isSet("mimetype"))
                      {
-                         urlargs.serviceType = args->getOption("mimetype");
-                         kDebug(1202) << "main() : setting serviceType to " << urlargs.serviceType;
+                         urlargs.setMimeType( args->getOption("mimetype") );
+                         kDebug(1202) << "main() : setting mimeType to " << urlargs.mimeType();
                      }
                      if (args->isSet("select"))
                      {
@@ -204,7 +204,7 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
                         }
                      }
                      const bool tempFile = KCmdLineArgs::isTempFileSet();
-                     mainwin = KonqMisc::createNewWindow( urlToOpen, urlargs, false, filesToSelect, tempFile );
+                     mainwin = KonqMisc::createNewWindow( urlToOpen, urlargs, KParts::BrowserArguments(), false, filesToSelect, tempFile );
                  } else
                      urlList += urlToOpen;
              }

@@ -32,11 +32,11 @@ KonqSidebar_Tree::KonqSidebar_Tree(const KComponentData &componentData,QObject *
 		tree=new KonqSidebarTree(this,widget,virt,desktopName_);
 	}
 
-	connect(tree, SIGNAL( openUrlRequest( const KUrl &, const KParts::URLArgs &)),
-		this,SIGNAL( openUrlRequest( const KUrl &, const KParts::URLArgs &)));
+	connect(tree, SIGNAL( openUrlRequest(const KUrl &, const KParts::OpenUrlArguments&, const KParts::BrowserArguments &)),
+		this,SIGNAL( openUrlRequest(const KUrl &, const KParts::OpenUrlArguments&, const KParts::BrowserArguments &)));
 
-	connect(tree,SIGNAL(createNewWindow( const KUrl &, const KParts::URLArgs &)),
-		this,SIGNAL(createNewWindow( const KUrl &, const KParts::URLArgs &)));
+	connect(tree,SIGNAL(createNewWindow(const KUrl &, const KParts::OpenUrlArguments &, const KParts::BrowserArguments &, const KParts::WindowArgs &, KParts::ReadOnlyPart**)),
+		this,SIGNAL(createNewWindow(const KUrl &, const KParts::OpenUrlArguments &, const KParts::BrowserArguments &, const KParts::WindowArgs &, KParts::ReadOnlyPart**)));
 
 	connect(tree,SIGNAL(popupMenu( const QPoint &, const KUrl &, const QString &, mode_t )),
 		this,SIGNAL(popupMenu( const QPoint &, const KUrl &, const QString &, mode_t )));

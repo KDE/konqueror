@@ -107,14 +107,14 @@ public:
 	friend class ButtonInfo;
 public:
 	Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par,
-						bool universalMode, 
+						bool universalMode,
 						const QString &currentProfile);
 	~Sidebar_Widget();
 	bool openUrl(const class KUrl &url);
 	void stdAction(const char *handlestd);
 	//virtual KParts::ReadOnlyPart *getPart();
 	KParts::BrowserExtension *getExtension();
-        virtual QSize sizeHint() const;	
+        virtual QSize sizeHint() const;
 
 public Q_SLOTS:
 	void addWebSideBar(const KUrl& url, const QString& name);
@@ -159,14 +159,13 @@ public:
 
  /* The following public slots are wrappers for browserextension fields */
 public Q_SLOTS:
-	void openUrlRequest( const KUrl &url, const KParts::URLArgs &args = KParts::URLArgs() );
+	void openUrlRequest( const KUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs );
 	/* @internal
 	 * ### KDE4 remove me
 	 */
 	void submitFormRequest(const char*,const QString&,const QByteArray&,const QString&,const QString&,const QString&);
-  	void createNewWindow( const KUrl &url, const KParts::URLArgs &args = KParts::URLArgs() );
-	void createNewWindow( const KUrl &url, const KParts::URLArgs &args,
-             const KParts::WindowArgs &windowArgs, KParts::ReadOnlyPart *&part );
+	void createNewWindow( const KUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs,
+             const KParts::WindowArgs &windowArgs, KParts::ReadOnlyPart **part );
 
 	void popupMenu( const QPoint &global, const KFileItemList &items );
   	void popupMenu( KXMLGUIClient *client, const QPoint &global, const KFileItemList &items );
@@ -177,7 +176,7 @@ public Q_SLOTS:
 		const QString &mimeType, mode_t mode = (mode_t)-1 );
 	void enableAction( const char * name, bool enabled );
 	void userMovedSplitter();
-	
+
 private:
 	QSplitter *splitter() const;
 	bool addButton(const QString &desktoppath,int pos=-1);
@@ -204,10 +203,10 @@ private:
 	QMenu *m_menu;
 	QPointer<ButtonInfo> m_activeModule;
 	QPointer<ButtonInfo> m_currentButton;
-	
+
 	KConfigGroup *m_config;
 	QTimer m_configTimer;
-	
+
 	KUrl m_storedUrl;
 	int m_savedWidth;
 	int m_latestViewed;

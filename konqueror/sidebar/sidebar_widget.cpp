@@ -1066,29 +1066,24 @@ void Sidebar_Widget::submitFormRequest(const char *action,
 					const QString& contentType,
 					const QString& /*boundary*/ )
 {
-KParts::URLArgs args;
-
-	args.setContentType("Content-Type: " + contentType);
-	args.postData = formData;
-	args.setDoPost(QByteArray(action).toLower() == "post");
+        KParts::OpenUrlArguments arguments;
+        KParts::BrowserArguments browserArguments;
+	browserArguments.setContentType("Content-Type: " + contentType);
+	browserArguments.postData = formData;
+	browserArguments.setDoPost(QByteArray(action).toLower() == "post");
 	// boundary?
-	emit getExtension()->openUrlRequest(KUrl( url ), args);
+	emit getExtension()->openUrlRequest(KUrl( url ), arguments, browserArguments);
 }
 
-void Sidebar_Widget::openUrlRequest( const KUrl &url, const KParts::URLArgs &args)
+void Sidebar_Widget::openUrlRequest( const KUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs)
 {
-	getExtension()->openUrlRequest(url,args);
+	getExtension()->openUrlRequest(url,args, browserArgs);
 }
 
-void Sidebar_Widget::createNewWindow( const KUrl &url, const KParts::URLArgs &args)
+void Sidebar_Widget::createNewWindow( const KUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs,
+	const KParts::WindowArgs &windowArgs, KParts::ReadOnlyPart **part )
 {
-	getExtension()->createNewWindow(url,args);
-}
-
-void Sidebar_Widget::createNewWindow( const KUrl &url, const KParts::URLArgs &args,
-	const KParts::WindowArgs &windowArgs, KParts::ReadOnlyPart *&part )
-{
-	getExtension()->createNewWindow(url,args,windowArgs,part);
+	getExtension()->createNewWindow(url,args,browserArgs, windowArgs,part);
 }
 
 void Sidebar_Widget::enableAction( const char * name, bool enabled )
@@ -1191,9 +1186,9 @@ void Sidebar_Widget::connectModule(QObject *mod)
 			this,SLOT(popupMenu( const QPoint &, const KFileItemList & )));
 	}
 
-	if (mod->metaObject()->indexOfSignal("openUrlRequest(KUrl,KParts::URLArgs)") != -1) {
-		connect(mod,SIGNAL(openUrlRequest( const KUrl &, const KParts::URLArgs &)),
-			this,SLOT(openUrlRequest( const KUrl &, const KParts::URLArgs &)));
+	if (mod->metaObject()->indexOfSignal("openUrlRequest(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)") != -1) {
+		connect(mod,SIGNAL(openUrlRequest( const KUrl &, const KParts::OpenUrlArguments&, const KParts::BrowserArguments&)),
+			this,SLOT(openUrlRequest( const KUrl &, const KParts::OpenUrlArguments&, const KParts::BrowserArguments&)));
 	}
 
 	if (mod->metaObject()->indexOfSignal("submitFormRequest(const char*,QString,QByteArray,QString,QString,QString)") != -1) {
@@ -1208,9 +1203,9 @@ void Sidebar_Widget::connectModule(QObject *mod)
 			this,SLOT(enableAction(const char *, bool)));
 	}
 
-	if (mod->metaObject()->indexOfSignal("createNewWindow(KUrl,KParts::URLArgs)") != -1) {
-		connect(mod,SIGNAL(createNewWindow( const KUrl &, const KParts::URLArgs &)),
-			this,SLOT(createNewWindow( const KUrl &, const KParts::URLArgs &)));
+	if (mod->metaObject()->indexOfSignal("createNewWindow(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::WindowArgs,KParts::ReadOnlyPart**)") != -1) {
+            connect(mod,SIGNAL(createNewWindow(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::WindowArgs,KParts::ReadOnlyPart**)),
+                    this,SLOT(createNewWindow(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::WindowArgs,KParts::ReadOnlyPart**)));
 	}
 }
 

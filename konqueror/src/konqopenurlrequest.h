@@ -20,8 +20,8 @@ struct KonqOpenURLRequest {
   QString debug() const {
 #ifndef NDEBUG
       QStringList s;
-      if ( !args.frameName.isEmpty() )
-          s << "frameName=" + args.frameName;
+      if ( !browserArgs.frameName.isEmpty() )
+          s << "frameName=" + browserArgs.frameName;
       if ( !nameFilter.isEmpty() )
           s << "nameFilter=" + nameFilter;
       if ( !typedUrl.isEmpty() )
@@ -55,7 +55,8 @@ struct KonqOpenURLRequest {
   bool forceAutoEmbed; // if true, override the user's FMSettings for embedding
   bool tempFile; // if true, the url should be deleted after use
   bool userRequestedReload; // args.reload because the user requested it, not a website
-  KParts::URLArgs args;
+  KParts::OpenUrlArguments args;
+  KParts::BrowserArguments browserArgs;
   QStringList filesToSelect; // files to select in a konqdirpart
 
   static KonqOpenURLRequest null;

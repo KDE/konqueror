@@ -62,7 +62,7 @@ QDBusObjectPath KonquerorAdaptor::openBrowserWindow( const QString& url, const Q
 #ifdef Q_WS_X11
     QX11Info::setAppUserTime( 0 );
 #endif
-    KonqMainWindow *res = KonqMisc::createSimpleWindow( KUrl(url) );
+    KonqMainWindow *res = KonqMisc::createSimpleWindow( KUrl(url), KParts::OpenUrlArguments() );
     if ( !res )
         return QDBusObjectPath();
     return QDBusObjectPath( '/' + res->objectName() ); // this is what KMainWindow sets as the dbus object path
@@ -74,11 +74,11 @@ QDBusObjectPath KonquerorAdaptor::createNewWindow( const QString& url, const QSt
 #ifdef Q_WS_X11
     QX11Info::setAppUserTime( 0 );
 #endif
-    KParts::URLArgs args;
-    args.serviceType = mimetype;
+    KParts::OpenUrlArguments args;
+    args.setMimeType( mimetype );
     // Filter the URL, so that "kfmclient openURL gg:foo" works also when konq is already running
     KUrl finalURL = KonqMisc::konqFilteredURL( 0, url );
-    KonqMainWindow *res = KonqMisc::createNewWindow( finalURL, args, false, QStringList(), tempFile );
+    KonqMainWindow *res = KonqMisc::createNewWindow( finalURL, args, KParts::BrowserArguments(), false, QStringList(), tempFile );
     if ( !res )
         return QDBusObjectPath();
     return QDBusObjectPath( '/' + res->objectName() ); // this is what KMainWindow sets as the dbus object path
@@ -90,7 +90,7 @@ QDBusObjectPath KonquerorAdaptor::createNewWindowWithSelection( const QString& u
 #ifdef Q_WS_X11
     QX11Info::setAppUserTime( 0 );
 #endif
-    KonqMainWindow *res = KonqMisc::createNewWindow( KUrl(url), KParts::URLArgs(), false, filesToSelect );
+    KonqMainWindow *res = KonqMisc::createNewWindow( KUrl(url), KParts::OpenUrlArguments(), KParts::BrowserArguments(), false, filesToSelect );
     if ( !res )
         return QDBusObjectPath();
     return QDBusObjectPath( '/' + res->objectName() ); // this is what KMainWindow sets as the dbus object path
@@ -128,8 +128,8 @@ QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfileUrlAndMimeType( 
 #ifdef Q_WS_X11
     QX11Info::setAppUserTime( 0 );
 #endif
-    KParts::URLArgs args;
-    args.serviceType = mimetype;
+    KParts::OpenUrlArguments args;
+    args.setMimeType( mimetype );
     KonqMainWindow *res = KonqMisc::createBrowserWindowFromProfile( path, filename, KUrl(url), args );
     if ( !res )
         return QDBusObjectPath();

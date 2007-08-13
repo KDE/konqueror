@@ -46,7 +46,9 @@ public:
     virtual void restoreState( QDataStream &stream );
 
 protected:
-    virtual void urlSelected( const QString &url, int button, int state, const QString &target, KParts::URLArgs args = KParts::URLArgs() );
+    virtual bool urlSelected( const QString &url, int button, int state, const QString &target,
+                              const KParts::OpenUrlArguments& args = KParts::OpenUrlArguments(),
+                              const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments() );
 
 private:
     void serve( const QString&, const QString& );
