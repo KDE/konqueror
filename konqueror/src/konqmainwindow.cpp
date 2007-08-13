@@ -4015,7 +4015,7 @@ void KonqMainWindow::initActions()
                                      "Clears the content of the location bar." ) );
 
   // Bookmarks menu
-  m_pamBookmarks = new KonqBookmarkActionMenu(KonqBookmarkManager::self()->root(),
+  m_pamBookmarks = new KBookmarkActionMenu(KonqBookmarkManager::self()->root(),
                                               i18n( "&Bookmarks" ), this);
   actionCollection()->addAction( "bookmarks", m_pamBookmarks );
 
