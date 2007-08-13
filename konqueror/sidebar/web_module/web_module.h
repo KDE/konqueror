@@ -72,47 +72,28 @@ class KHTMLSideBar : public KHTMLPart
 
 	Q_SIGNALS:
 		void submitFormRequest(const char*,const QString&,const QByteArray&,const QString&,const QString&,const QString&);
-		void openUrlRequest(const QString& url, KParts::URLArgs args);
-		void openUrlNewWindow(const QString& url, KParts::URLArgs args);
+		void openUrlRequest(const QString& url,
+                                    const KParts::OpenUrlArguments& args = KParts::OpenUrlArguments(),
+                                    const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments() );
+		void openUrlNewWindow(const QString& url,
+                                      const KParts::OpenUrlArguments& args = KParts::OpenUrlArguments(),
+                                      const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments() );
 		void reload();
 		void setAutoReload();
 
 	protected:
-		virtual void urlSelected( const QString &url, int button,
-				int state, const QString &_target,
-				KParts::URLArgs args = KParts::URLArgs()) {
-			if (button == Qt::LeftButton ){
-				if (_target.toLower() == "_self") {
-					openUrl(url);
-				} else if (_target.toLower() == "_blank") {
-					emit openUrlNewWindow(completeURL(url).url(), args);
-				} else { // isEmpty goes here too
-					emit openUrlRequest(completeURL(url).url(), args);
-				}
-				return;
-			}
-			if (button == Qt::MidButton) {
-				emit openUrlNewWindow(completeURL(url).url(),
-						args);
-				return;
-			}
-			// A refresh
-			if (button == 0 && _target.toLower() == "_self") {
-				openUrl(completeURL(url));
-				return;
-			}
-			KHTMLPart::urlSelected(url,button,state,_target,args);
-		}
+    virtual bool urlSelected( const QString &url, int button,
+                              int state, const QString &_target,
+                              const KParts::OpenUrlArguments& args = KParts::OpenUrlArguments(),
+                              const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments() );
 
 	protected Q_SLOTS:
 		void loadPage() {
-			emit openUrlRequest(completeURL(_lastUrl).url(),
-						KParts::URLArgs());
+			emit openUrlRequest(completeURL(_lastUrl).url());
 		}
 
 		void loadNewWindow() {
-			emit openUrlNewWindow(completeURL(_lastUrl).url(),
-						KParts::URLArgs());
+			emit openUrlNewWindow(completeURL(_lastUrl).url());
 		}
 
 		void showMenu(const QString& url, const QPoint& pos) {
@@ -175,15 +156,15 @@ class KonqSideBarWebModule : public KonqSidebarPlugin
 
 	Q_SIGNALS:
 		void submitFormRequest(const char*,const QString&,const QByteArray&,const QString&,const QString&,const QString&);
-		void openUrlRequest(const KUrl &url, const KParts::URLArgs &args);
-		void createNewWindow(const KUrl &url, const KParts::URLArgs &args);
+		void openUrlRequest(const KUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs);
+		void createNewWindow(const KUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs);
 	protected:
 		virtual void handleURL(const KUrl &url);
 
 	private Q_SLOTS:
-		void urlClicked(const QString& url, KParts::URLArgs args);
-		void formClicked(const KUrl& url, const KParts::URLArgs& args);
-		void urlNewWindow(const QString& url, KParts::URLArgs args);
+		void urlClicked(const QString& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs);
+    void formClicked(const KUrl& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs);
+		void urlNewWindow(const QString& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs);
 		void pageLoaded();
 		void loadFavicon();
 		void setTitle(const QString&);

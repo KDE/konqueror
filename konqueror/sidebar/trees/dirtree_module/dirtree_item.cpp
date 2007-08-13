@@ -160,7 +160,7 @@ void KonqSidebarDirTreeItem::itemSelected()
     bool bInTrash = false;
 #ifdef __GNUC__
 #warning hardcoded protocol check: replace with better way to determine if a URL is a trash url
-#endif    
+#endif
     if ( m_fileItem->url().protocol() == "trash" )
         bInTrash = true;
 
@@ -180,8 +180,8 @@ void KonqSidebarDirTreeItem::middleButtonClicked()
     if ( offer && offer->desktopEntryName().startsWith("kfmclient") )
     {
         kDebug(1201)<<"Emitting createNewWindow";
-        KParts::URLArgs args;
-        args.serviceType = m_fileItem->mimetype();
+        KParts::OpenUrlArguments args;
+        args.setMimeType( m_fileItem->mimetype() );
         emit tree()->createNewWindow( m_fileItem->url(), args );
     }
     else

@@ -869,8 +869,8 @@ void KonqViewManager::loadViewProfile( KConfig &cfg, const QString & filename,
   setActivePart( nextChildView ? nextChildView->part() : 0L, true /* immediate */);
 
   // #71164
-  if ( !req.args.frameName.isEmpty() && nextChildView ) {
-      nextChildView->setViewName( req.args.frameName );
+  if ( !req.browserArgs.frameName.isEmpty() && nextChildView ) {
+      nextChildView->setViewName( req.browserArgs.frameName );
   }
 
   if ( openUrl && !forcedURL.isEmpty())
@@ -880,7 +880,7 @@ void KonqViewManager::loadViewProfile( KConfig &cfg, const QString & filename,
       _req.forceAutoEmbed = true; // it's a new window, let's use it
 
       m_pMainWindow->openUrl( nextChildView /* can be 0 for an empty profile */,
-                              forcedURL, _req.args.serviceType, _req, _req.args.trustedSource );
+                              forcedURL, _req.args.mimeType(), _req, _req.browserArgs.trustedSource );
 
       // TODO choose a linked view if any (instead of just the first one),
       // then open the same URL in any non-linked one

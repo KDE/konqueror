@@ -277,7 +277,8 @@ NPError g_NPN_PostURLNotify(NPP instance, const char* url, const char* target,
    kDebug(1431) << "g_NPN_PostURLNotify() [incomplete]";
    kDebug(1431) << "url=[" << url << "] target=[" << target << "]";
    QByteArray postdata;
-   KParts::URLArgs args;
+   KParts::OpenUrlArguments args;
+   KParts::BrowserArguments browserArgs;
 
    if (len == 0) {
       return NPERR_NO_DATA;
@@ -320,7 +321,7 @@ NPError g_NPN_PostURLNotify(NPP instance, const char* url, const char* target,
 
             kDebug(1431) << "Found header line: [" << thisLine << "]";
             if (thisLine.startsWith("Content-Type: ")) {
-               args.setContentType(thisLine);
+               browserArgs.setContentType(thisLine);
             }
          } else {
             previousCR = false;
@@ -356,8 +357,8 @@ NPError g_NPN_PostURLNotify(NPP instance, const char* url, const char* target,
 
    NSPluginInstance *inst = static_cast<NSPluginInstance*>(instance->ndata);
    if (inst && !inst->normalizedURL(QString::fromLatin1(url)).isNull()) {
-      inst->postURL( QString::fromLatin1(url), postdata, args.contentType(),
-                     QString::fromLatin1(target), notifyData, args, true );
+      inst->postURL( QString::fromLatin1(url), postdata, browserArgs.contentType(),
+                     QString::fromLatin1(target), notifyData, args, browserArgs, true );
    } else {
       // Unsupported / insecure
       return NPERR_INVALID_URL;
@@ -374,7 +375,8 @@ NPError g_NPN_PostURL(NPP instance, const char* url, const char* target,
    kDebug(1431) << "g_NPN_PostURL()";
    kDebug(1431) << "url=[" << url << "] target=[" << target << "]";
    QByteArray postdata;
-   KParts::URLArgs args;
+   KParts::OpenUrlArguments args;
+   KParts::BrowserArguments browserArgs;
 
    if (len == 0) {
       return NPERR_NO_DATA;
@@ -417,7 +419,7 @@ NPError g_NPN_PostURL(NPP instance, const char* url, const char* target,
 
             kDebug(1431) << "Found header line: [" << thisLine << "]";
             if (thisLine.startsWith("Content-Type: ")) {
-               args.setContentType(thisLine);
+               browserArgs.setContentType(thisLine);
             }
          } else {
             previousCR = false;
@@ -453,8 +455,8 @@ NPError g_NPN_PostURL(NPP instance, const char* url, const char* target,
 
    NSPluginInstance *inst = static_cast<NSPluginInstance*>(instance->ndata);
    if (inst && !inst->normalizedURL(QString::fromLatin1(url)).isNull()) {
-      inst->postURL( QString::fromLatin1(url), postdata, args.contentType(),
-                     QString::fromLatin1(target), 0L, args, false );
+      inst->postURL( QString::fromLatin1(url), postdata, browserArgs.contentType(),
+                     QString::fromLatin1(target), 0L, args, browserArgs, false );
    } else {
       // Unsupported / insecure
       return NPERR_INVALID_URL;
@@ -811,7 +813,7 @@ void NSPluginInstance::timer()
                     kDebug() << "posting to " << url;
 
                     emitStatus( i18n("Submitting data to %1", url) );
-                    s->post( url, req.data, req.mime, req.notify, req.args );
+                    s->post( url, req.data, req.mime, req.notify, req.args, req.browserArgs );
                 } else if (url.toLower().startsWith("javascript:")){
                     if (_callback) {
                         static int _jsrequestid = 0;
@@ -878,7 +880,9 @@ void NSPluginInstance::requestURL( const QString &url, const QString &mime,
 void NSPluginInstance::postURL( const QString &url, const QByteArray& data,
                                 const QString &mime,
                                 const QString &target, void *notify,
-                                const KParts::URLArgs& args, bool forceNotify )
+                                const KParts::OpenUrlArguments& args,
+                                const KParts::BrowserArguments& browserArgs,
+                                bool forceNotify )
 {
     // Generally this should already be done, but let's be safe for now.
     QString nurl = normalizedURL(url);
@@ -887,7 +891,7 @@ void NSPluginInstance::postURL( const QString &url, const QByteArray& data,
     }
 
     kDebug(1431) << "NSPluginInstance::postURL url=" << nurl << " target=" << target << " notify=" << notify;
-    _waitingRequests.enqueue( new Request( nurl, data, mime, target, notify, args, forceNotify) );
+    _waitingRequests.enqueue( new Request( nurl, data, mime, target, notify, args, browserArgs, forceNotify) );
     _timer->setSingleShot( true );
     _timer->start( 100 );
 }
@@ -1833,13 +1837,15 @@ bool NSPluginStream::get( const QString& url, const QString& mimeType,
 
 
 bool NSPluginStream::post( const QString& url, const QByteArray& data,
-           const QString& mimeType, void *notify, const KParts::URLArgs& args )
+                           const QString& mimeType, void *notify, const KParts::OpenUrlArguments& args,
+                           const KParts::BrowserArguments& browserArgs )
 {
+    Q_UNUSED( args )
     // create new stream
     if ( create( url, mimeType, notify ) ) {
         // start the kio job
         _job = KIO::http_post(KUrl( url ), data, false);
-        _job->addMetaData("content-type", args.contentType());
+        _job->addMetaData("content-type", browserArgs.contentType());
         _job->addMetaData("errorPage", "false");
         _job->addMetaData("AllowCompressedPage", "false");
         connect(_job, SIGNAL(data(KIO::Job *, const QByteArray &)),

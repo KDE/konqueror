@@ -141,7 +141,7 @@ void KonqView::openUrl( const KUrl &url, const QString & locationBarURL,
                         const QString & nameFilter, bool tempFile )
 {
   kDebug(1202) << "KonqView::openUrl url=" << url << " locationBarURL=" << locationBarURL;
-  setServiceTypeInExtension();
+  setPartMimeType();
 
   if (KonqMainWindow::s_crashlog_file) {
      QString part_url;
@@ -163,24 +163,24 @@ void KonqView::openUrl( const KUrl &url, const QString & locationBarURL,
      KonqMainWindow::s_crashlog_file->flush();
   }
 
+  KParts::OpenUrlArguments args = m_pPart->arguments();
   KParts::BrowserExtension *ext = browserExtension();
-  KParts::URLArgs args;
+  KParts::BrowserArguments browserArgs;
   if ( ext )
-    args = ext->urlArgs();
+    browserArgs = ext->browserArguments();
 
   // Typing "Enter" again after the URL of an aborted view, triggers a reload.
-  if ( m_bAborted && m_pPart && m_pPart->url() == url && !args.doPost())
+  if ( m_bAborted && m_pPart && m_pPart->url() == url && !browserArgs.doPost())
   {
-    if ( !prepareReload( args, false /* not softReload */ ) )
+    if ( !prepareReload( args, browserArgs, false /* not softReload */ ) )
       return;
-    if ( ext )
-      ext->setUrlArgs( args );
+    m_pPart->setArguments( args );
   }
 
 #ifdef DEBUG_HISTORY
-  kDebug(1202) << "m_bLockedLocation=" << m_bLockedLocation << " args.lockHistory()=" << args.lockHistory();
+  kDebug(1202) << "m_bLockedLocation=" << m_bLockedLocation << " browserArgs.lockHistory()=" << browserArgs.lockHistory();
 #endif
-  if ( args.lockHistory() )
+  if ( browserArgs.lockHistory() )
     lockHistory();
 
   if ( !m_bLockHistory )
@@ -198,13 +198,13 @@ void KonqView::openUrl( const KUrl &url, const QString & locationBarURL,
   setLocationBarURL( locationBarURL );
   setPageSecurity(KonqMainWindow::NotCrypted);
 
-  if ( !args.reload )
+  if ( !args.reload() )
   {
     // Save the POST data that is necessary to open this URL
     // (so that reload can re-post it)
-    m_doPost = args.doPost();
-    m_postContentType = args.contentType();
-    m_postData = args.postData;
+    m_doPost = browserArgs.doPost();
+    m_postContentType = browserArgs.contentType();
+    m_postData = browserArgs.postData;
     // Save the referrer
     m_pageReferrer = args.metaData()["referrer"];
   }
@@ -391,7 +391,7 @@ void KonqView::connectPart(  )
   {
       ext->setBrowserInterface( m_browserIface );
 
-      connect( ext, SIGNAL( openUrlRequestDelayed( const KUrl &, const KParts::URLArgs &) ),
+      connect( ext, SIGNAL( openUrlRequestDelayed(const KUrl &, const KParts::OpenUrlArguments&, const KParts::BrowserArguments &) ),
                m_pMainWindow, SLOT( slotOpenURLRequest( const KUrl &, const KParts::URLArgs & ) ) );
 
       if ( m_bPopupMenuEnabled )
@@ -409,11 +409,8 @@ void KonqView::connectPart(  )
       connect( ext, SIGNAL( setPageSecurity( int ) ),
                this, SLOT( setPageSecurity( int ) ) );
 
-      connect( ext, SIGNAL( createNewWindow( const KUrl &, const KParts::URLArgs & ) ),
-               m_pMainWindow, SLOT( slotCreateNewWindow( const KUrl &, const KParts::URLArgs & ) ) );
-
-      connect( ext, SIGNAL( createNewWindow( const KUrl &, const KParts::URLArgs &, const KParts::WindowArgs &, KParts::ReadOnlyPart *& ) ),
-               m_pMainWindow, SLOT( slotCreateNewWindow( const KUrl &, const KParts::URLArgs &, const KParts::WindowArgs &, KParts::ReadOnlyPart *& ) ) );
+      connect( ext, SIGNAL( createNewWindow(const KUrl &, const KParts::OpenUrlArguments &, const KParts::BrowserArguments &, const KParts::WindowArgs &, KParts::ReadOnlyPart**) ),
+               m_pMainWindow, SLOT( slotCreateNewWindow( const KUrl &, const KParts::OpenUrlArguments &, const KParts::BrowserArguments &, const KParts::WindowArgs &, KParts::ReadOnlyPart**) ) );
 
       connect( ext, SIGNAL( loadingProgress( int ) ),
                m_pKonqFrame->statusbar(), SLOT( slotLoadingProgress( int ) ) );
@@ -831,7 +828,7 @@ void KonqView::restoreHistory()
     return /*false*/;
   }
 
-  setServiceTypeInExtension();
+  setPartMimeType();
 
   aboutToOpenURL( h.url );
 
@@ -988,7 +985,7 @@ void KonqView::setLockedLocation( bool b )
   m_bLockedLocation = b;
 }
 
-void KonqView::aboutToOpenURL( const KUrl &url, const KParts::URLArgs &args )
+void KonqView::aboutToOpenURL( const KUrl &url, const KParts::OpenUrlArguments &args )
 {
   KParts::OpenURLEvent ev( m_pPart, url, args );
   QApplication::sendEvent( m_pMainWindow, &ev );
@@ -997,15 +994,11 @@ void KonqView::aboutToOpenURL( const KUrl &url, const KParts::URLArgs &args )
   m_bAborted = false;
 }
 
-void KonqView::setServiceTypeInExtension()
+void KonqView::setPartMimeType()
 {
-  KParts::BrowserExtension *ext = browserExtension();
-  if ( !ext )
-    return;
-
-  KParts::URLArgs args( ext->urlArgs() );
-  args.serviceType = m_serviceType;
-  ext->setUrlArgs( args );
+  KParts::OpenUrlArguments args( m_pPart->arguments() );
+  args.setMimeType( m_serviceType );
+  m_pPart->setArguments( args );
 }
 
 QStringList KonqView::frameNames() const
@@ -1151,13 +1144,13 @@ void KonqView::enablePopupMenu( bool b )
     connect( ext, SIGNAL( popupMenu( KXMLGUIClient *, const QPoint &, const KFileItemList & ) ),
              m_pMainWindow, SLOT( slotPopupMenu( KXMLGUIClient *, const QPoint &, const KFileItemList & ) ) );
 
-    connect( ext, SIGNAL( popupMenu( KXMLGUIClient *, const QPoint &, const KFileItemList &, const KParts::URLArgs &, KParts::BrowserExtension::PopupFlags ) ),
+    connect( ext, SIGNAL( popupMenu(KXMLGUIClient *, const QPoint &, const KFileItemList &, const KParts::OpenUrlArguments &, const KParts::BrowserArguments &, KParts::BrowserExtension::PopupFlags) ),
              m_pMainWindow, SLOT( slotPopupMenu( KXMLGUIClient *, const QPoint &, const KFileItemList &, const KParts::URLArgs &, KParts::BrowserExtension::PopupFlags ) ) );
 
     connect( ext, SIGNAL( popupMenu( KXMLGUIClient *, const QPoint &, const KUrl &, const QString &, mode_t ) ),
              m_pMainWindow, SLOT( slotPopupMenu( KXMLGUIClient *, const QPoint &, const KUrl &, const QString &, mode_t ) ) );
 
-    connect( ext, SIGNAL( popupMenu( KXMLGUIClient *, const QPoint &, const KUrl &, const KParts::URLArgs &, KParts::BrowserExtension::PopupFlags, mode_t ) ),
+    connect( ext, SIGNAL( popupMenu(KXMLGUIClient *, const QPoint &, const KUrl &, const KParts::OpenUrlArguments &, const KParts::BrowserArguments &, KParts::BrowserExtension::PopupFlags, mode_t) ),
              m_pMainWindow, SLOT( slotPopupMenu( KXMLGUIClient *, const QPoint &, const KUrl &, const KParts::URLArgs &, KParts::BrowserExtension::PopupFlags, mode_t ) ) );
   }
   else // disable context popup
@@ -1327,23 +1320,23 @@ void KonqView::setActiveComponent()
       KGlobal::setActiveComponent( m_pPart->componentData() );
 }
 
-bool KonqView::prepareReload( KParts::URLArgs& args, bool softReload )
+bool KonqView::prepareReload( KParts::OpenUrlArguments& args, KParts::BrowserArguments& browserArgs, bool softReload )
 {
-    args.reload = true;
+    args.setReload( true );
     if ( softReload )
-        args.softReload = true;
+        browserArgs.softReload = true;
 
     // Repost form data if this URL is the result of a POST HTML form.
-    if ( m_doPost && !args.redirectedRequest() )
+    if ( m_doPost && !browserArgs.redirectedRequest() )
     {
         if ( KMessageBox::warningContinueCancel( 0, i18n(
             "The page you are trying to view is the result of posted form data. "
             "If you resend the data, any action the form carried out (such as search or online purchase) will be repeated. "),
             i18n( "Warning" ), KGuiItem(i18n( "Resend" )) ) == KMessageBox::Continue )
         {
-            args.setDoPost( true );
-            args.setContentType( m_postContentType );
-            args.postData = m_postData;
+            browserArgs.setDoPost( true );
+            browserArgs.setContentType( m_postContentType );
+            browserArgs.postData = m_postData;
         }
         else
             return false;

@@ -456,41 +456,43 @@ void KonqAboutPage::serve( const QString& html, const QString& what )
     m_htmlDoc = html;
 }
 
-void KonqAboutPage::urlSelected( const QString &url, int button, int state, const QString &target, KParts::URLArgs _args )
+bool KonqAboutPage::urlSelected( const QString &url, int button, int state, const QString &target,
+                                 const KParts::OpenUrlArguments& args,
+                                 const KParts::BrowserArguments& browserArgs )
 {
     KUrl u( url );
     if ( u.protocol() == "exec" )
     {
-        QStringList args = url.mid( 6 ).split(QChar( ' ' ), QString::SkipEmptyParts );
-        QString executable = args[ 0 ];
-        args.erase( args.begin() );
-        KToolInvocation::kdeinitExec( executable, args );
-        return;
+        QStringList execArgs = url.mid( 6 ).split(QChar( ' ' ), QString::SkipEmptyParts );
+        QString executable = execArgs.first();
+        execArgs.erase( execArgs.begin() );
+        KToolInvocation::kdeinitExec( executable, execArgs );
+        return true;
     }
 
     if ( url == QLatin1String("launch.html") )
     {
         emit browserExtension()->openUrlNotify();
 	serve( KonqAboutPageFactory::launch(), "konqueror" );
-        return;
+        return true;
     }
     else if ( url == QLatin1String("intro.html") )
     {
         emit browserExtension()->openUrlNotify();
         serve( KonqAboutPageFactory::intro(), "konqueror" );
-        return;
+        return true;
     }
     else if ( url == QLatin1String("specs.html") )
     {
         emit browserExtension()->openUrlNotify();
 	serve( KonqAboutPageFactory::specs(), "konqueror" );
-        return;
+        return true;
     }
     else if ( url == QLatin1String("tips.html") )
     {
         emit browserExtension()->openUrlNotify();
         serve( KonqAboutPageFactory::tips(), "konqueror" );
-        return;
+        return true;
     }
 
     else if ( url == QLatin1String("config:/disable_overview") )
@@ -505,15 +507,14 @@ void KonqAboutPage::urlSelected( const QString &url, int button, int state, cons
 	    KSaveFile file( profile );
 	    if ( file.open() ) {
 		QTextStream stream(&file);
-		QByteArray content = "[Profile]\n"
-			           "Name=Web-Browser";
-		stream << content.data();
+		stream << "[Profile]\n"
+                    "Name=Web-Browser";
 	    }
 	}
-	return;
+	return true;
     }
 
-    KHTMLPart::urlSelected( url, button, state, target, _args );
+    return KHTMLPart::urlSelected( url, button, state, target, args, browserArgs );
 }
 
 #include "konq_aboutpage.moc"

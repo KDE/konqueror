@@ -77,10 +77,11 @@ class KUrlRequester;
 struct HistoryEntry;
 
 namespace KParts {
- class BrowserExtension;
- class BrowserHostExtension;
- class ReadOnlyPart;
- struct URLArgs;
+    class BrowserExtension;
+    class BrowserHostExtension;
+    class ReadOnlyPart;
+    class OpenUrlArguments;
+    class BrowserArguments;
 }
 
 class KonqExtendedBookmarkOwner;
@@ -319,27 +320,25 @@ Q_SIGNALS:
 public Q_SLOTS:
   void slotCtrlTabPressed();
 
-  void slotPopupMenu( const QPoint &_global, const KUrl &_url, const QString &_mimeType, mode_t mode );
-  void slotPopupMenu( KXMLGUIClient *client, const QPoint &_global, const KUrl &_url, const QString &_mimeType, mode_t mode );
-  void slotPopupMenu( KXMLGUIClient *client, const QPoint &_global, const KUrl &_url, const KParts::URLArgs &_args, KParts::BrowserExtension::PopupFlags f, mode_t mode );
-
-  void slotPopupMenu( const QPoint &_global, const KFileItemList &_items );
-  void slotPopupMenu( KXMLGUIClient *client, const QPoint &_global, const KFileItemList &_items );
-  void slotPopupMenu( KXMLGUIClient *client, const QPoint &_global, const KFileItemList &_items, const KParts::URLArgs &_args, KParts::BrowserExtension::PopupFlags _flags );
+    void slotPopupMenu( const QPoint &global, const KFileItemList &items );
+    void slotPopupMenu( KXMLGUIClient *client, const QPoint &global, const KFileItemList &items, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments& browserArgs, KParts::BrowserExtension::PopupFlags flags );
+    void slotPopupMenu( const QPoint &global, const KUrl &url, const QString &mimeType, mode_t mode );
+    void slotPopupMenu( KXMLGUIClient *client, const QPoint &global, const KUrl &url, const QString &mimeType, mode_t mode );
+    void slotPopupMenu( KXMLGUIClient *client, const QPoint &global, const KUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments& browserArgs, KParts::BrowserExtension::PopupFlags f, mode_t mode );
 
 
-  void slotPopupMenu( KXMLGUIClient *client, const QPoint &_global, const KFileItemList &_items, const KParts::URLArgs &_args, KParts::BrowserExtension::PopupFlags f, bool showProperties );
+    void slotPopupMenuHelper( KXMLGUIClient *client, const QPoint &global, const KFileItemList &items, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments& browserArgs, KParts::BrowserExtension::PopupFlags f, bool showProperties );
 
   /**
    * __NEEEEVER__ call this method directly. It relies on sender() (the part)
    */
-  void slotOpenURLRequest( const KUrl &url, const KParts::URLArgs &args );
+    void slotOpenURLRequest( const KUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments &browserArgs );
 
-  void openUrl( KonqView *childView, const KUrl &url, const KParts::URLArgs &args );
+  void openUrlRequestHelper( KonqView *childView, const KUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments &browserArgs );
 
-  void slotCreateNewWindow( const KUrl &url, const KParts::URLArgs &args );
-  void slotCreateNewWindow( const KUrl &url, const KParts::URLArgs &args,
-                            const KParts::WindowArgs &windowArgs, KParts::ReadOnlyPart *&part );
+  void slotCreateNewWindow( const KUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments &browserArgs,
+                            const KParts::WindowArgs &windowArgs = KParts::WindowArgs(),
+                            KParts::ReadOnlyPart **part = 0 );
 
   void slotNewWindow();
   void slotDuplicateWindow();
@@ -511,7 +510,9 @@ protected:
 
   void fillHistoryPopup( QMenu *menu, const QList<HistoryEntry*> &history );
 
-  bool makeViewsFollow( const KUrl & url, const KParts::URLArgs &args, const QString & serviceType,
+  bool makeViewsFollow( const KUrl & url,
+                        const KParts::OpenUrlArguments& args,
+                        const KParts::BrowserArguments &browserArgs, const QString & serviceType,
                         KonqView * senderView );
 
   void applyKonqMainWindowSettings();
@@ -696,7 +697,8 @@ private: // members
   KonqFrameBase* m_pWorkingTab;
 
   KFileItemList popupItems;
-  KParts::URLArgs popupUrlArgs;
+  KParts::OpenUrlArguments popupUrlArgs;
+  KParts::BrowserArguments popupUrlBrowserArgs;
 
   QString m_title;
 

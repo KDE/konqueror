@@ -65,32 +65,15 @@ void KonqMisc::abortFullScreenMode()
 #endif
 }
 
-// #### this can probably be removed
-KonqMainWindow * KonqMisc::createSimpleWindow( const KUrl & _url, const QString &frameName )
-{
-  abortFullScreenMode();
-
-  // If _url is 0L, open $HOME [this doesn't happen anymore]
-  KUrl url;
-  if (_url.isEmpty())
-     url.setPath(QDir::homePath());
-  else
-     url = _url;
-
-  KonqMainWindow *win = new KonqMainWindow;
-  win->setInitialFrameName( frameName );
-  win->openUrl( 0L, url );
-  win->show();
-
-  return win;
-}
-
-KonqMainWindow * KonqMisc::createSimpleWindow( const KUrl & url, const KParts::URLArgs &args, bool tempFile )
+KonqMainWindow * KonqMisc::createSimpleWindow( const KUrl & url, const KParts::OpenUrlArguments &args,
+                                               const KParts::BrowserArguments& browserArgs,
+                                               bool tempFile )
 {
   abortFullScreenMode();
 
   KonqOpenURLRequest req;
   req.args = args;
+  req.browserArgs = browserArgs;
   req.tempFile = tempFile;
   KonqMainWindow *win = new KonqMainWindow;
   win->openUrl( 0L, url, QString(), req );
@@ -99,7 +82,9 @@ KonqMainWindow * KonqMisc::createSimpleWindow( const KUrl & url, const KParts::U
   return win;
 }
 
-KonqMainWindow * KonqMisc::createNewWindow( const KUrl &url, const KParts::URLArgs &args, bool forbidUseHTML, const QStringList &filesToSelect, bool tempFile, bool openUrl )
+KonqMainWindow * KonqMisc::createNewWindow( const KUrl &url, const KParts::OpenUrlArguments &args,
+                                            const KParts::BrowserArguments& browserArgs,
+                                            bool forbidUseHTML, const QStringList &filesToSelect, bool tempFile, bool openUrl )
 {
   kDebug() << "KonqMisc::createNewWindow url=" << url;
 
@@ -110,23 +95,31 @@ KonqMainWindow * KonqMisc::createNewWindow( const KUrl &url, const KParts::URLAr
 
   QString profile = KStandardDirs::locate( "data", QLatin1String("konqueror/profiles/") + profileName );
   return createBrowserWindowFromProfile(profile, profileName,
-					url, args,
+					url, args, browserArgs,
 					forbidUseHTML, filesToSelect, tempFile, openUrl );
 }
 
-KonqMainWindow * KonqMisc::createBrowserWindowFromProfile( const QString &path, const QString &filename, const KUrl &url, const KParts::URLArgs &args, bool forbidUseHTML, const QStringList& filesToSelect, bool tempFile, bool openUrl )
+KonqMainWindow * KonqMisc::createBrowserWindowFromProfile( const QString &path, const QString &filename, const KUrl &url,
+                                                           const KParts::OpenUrlArguments &args,
+                                                           const KParts::BrowserArguments& browserArgs,
+                                                           bool forbidUseHTML, const QStringList& filesToSelect, bool tempFile, bool openUrl )
 {
   kDebug(1202) << "void KonqMisc::createBrowserWindowFromProfile() ";
   kDebug(1202) << "path=" << path << ",filename=" << filename << ",url=" << url.prettyUrl();
   abortFullScreenMode();
 
+  KonqOpenURLRequest req;
+  req.args = args;
+  req.browserArgs = browserArgs;
+  req.filesToSelect = filesToSelect;
+  req.tempFile = tempFile;
+
   KonqMainWindow * mainWindow;
   if ( path.isEmpty() )
   {
       // The profile doesn't exit -> creating a simple window
-      mainWindow = createSimpleWindow( url, args, tempFile );
-      if ( forbidUseHTML )
-          mainWindow->setShowHTML( false );
+      mainWindow = new KonqMainWindow;
+      mainWindow->openUrl( 0, url, QString(), req );
   }
   else if( KonqMainWindow::isPreloaded() && KonqMainWindow::preloadedWindow() != NULL )
   {
@@ -138,12 +131,6 @@ KonqMainWindow * KonqMisc::createBrowserWindowFromProfile( const QString &path, 
       KonqMainWindow::setPreloadedFlag( false );
       mainWindow->resetWindow();
       mainWindow->reparseConfiguration();
-      if( forbidUseHTML )
-          mainWindow->setShowHTML( false );
-      KonqOpenURLRequest req;
-      req.args = args;
-      req.filesToSelect = filesToSelect;
-      req.tempFile = tempFile;
       mainWindow->viewManager()->loadViewProfile( path, filename, url, req, true );
   }
   else
@@ -154,15 +141,11 @@ KonqMainWindow * KonqMisc::createBrowserWindowFromProfile( const QString &path, 
       QString xmluiFile = profileGroup.readEntry("XMLUIFile","konqueror.rc");
 
       mainWindow = new KonqMainWindow( KUrl(), xmluiFile );
-      if ( forbidUseHTML )
-          mainWindow->setShowHTML( false );
-      KonqOpenURLRequest req;
-      req.args = args;
-      req.filesToSelect = filesToSelect;
-      req.tempFile = tempFile;
       mainWindow->viewManager()->loadViewProfile( cfg, filename, url, req, false, openUrl );
   }
-  mainWindow->setInitialFrameName( args.frameName );
+  if ( forbidUseHTML )
+      mainWindow->setShowHTML( false );
+  mainWindow->setInitialFrameName( browserArgs.frameName );
   mainWindow->show();
   return mainWindow;
 }
@@ -176,7 +159,8 @@ KonqMainWindow * KonqMisc::newWindowFromHistory( KonqView* view, int steps )
   if(!he)
       return 0L;
 
-  KonqMainWindow* mainwindow = createNewWindow(he->url, KParts::URLArgs(),
+  KonqMainWindow* mainwindow = createNewWindow(he->url, KParts::OpenUrlArguments(),
+                                               KParts::BrowserArguments(),
 					       false, QStringList(), false, /*openUrl*/false);
   if(!mainwindow)
       return 0L;

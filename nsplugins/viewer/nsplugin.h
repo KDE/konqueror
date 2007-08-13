@@ -35,7 +35,7 @@
 //Added by qt3to4:
 #include <Q3PtrList>
 
-#include <kparts/browserextension.h>  // for URLArgs
+#include <kparts/browserextension.h>  // for OpenUrlArguments
 #include <kio/job.h>
 #include <QDBusObjectPath>
 
@@ -114,8 +114,10 @@ public:
   NSPluginStream( class NSPluginInstance *instance );
   ~NSPluginStream();
 
-  bool get(const QString& url, const QString& mimeType, void *notifyData, bool reload = false);
-  bool post(const QString& url, const QByteArray& data, const QString& mimeType, void *notifyData, const KParts::URLArgs& args);
+    bool get(const QString& url, const QString& mimeType, void *notifyData, bool reload = false);
+    bool post(const QString& url, const QByteArray& data, const QString& mimeType, void *notifyData,
+              const KParts::OpenUrlArguments& args,
+              const KParts::BrowserArguments& browserArgs);
 
 protected Q_SLOTS:
   void data(KIO::Job *job, const QByteArray &data);
@@ -195,7 +197,8 @@ public:
   void requestURL( const QString &url, const QString &mime,
 		   const QString &target, void *notify, bool forceNotify = false, bool reload = false );
   void postURL( const QString &url, const QByteArray& data, const QString &mime,
-             const QString &target, void *notify, const KParts::URLArgs& args, bool forceNotify = false );
+                const QString &target, void *notify, const KParts::OpenUrlArguments& args,
+                const KParts::BrowserArguments& browserArgs, bool forceNotify = false );
 
   QString normalizedURL(const QString& url) const;
 
@@ -240,10 +243,14 @@ private:
       // A POST request
       Request( const QString &_url, const QByteArray& _data,
                const QString &_mime, const QString &_target, void *_notify,
-               const KParts::URLArgs& _args, bool _forceNotify = false)
-	  { url=_url; mime=_mime; target=_target;
-            notify=_notify; post=true; data=_data; args=_args;
-            forceNotify = _forceNotify; }
+               const KParts::OpenUrlArguments& _args,
+               const KParts::BrowserArguments& _browserArgs,
+               bool _forceNotify = false)
+      {
+          url=_url; mime=_mime; target=_target;
+          notify=_notify; post=true; data=_data; args=_args; browserArgs=_browserArgs;
+          forceNotify = _forceNotify;
+      }
 
       QString url;
       QString mime;
@@ -253,7 +260,8 @@ private:
       bool forceNotify;
       bool reload;
       void *notify;
-      KParts::URLArgs args;
+      KParts::OpenUrlArguments args;
+      KParts::BrowserArguments browserArgs;
   };
 
   NPWindow _win;

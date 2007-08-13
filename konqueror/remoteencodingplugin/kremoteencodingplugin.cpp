@@ -230,9 +230,9 @@ KRemoteEncodingPlugin::updateBrowser()
   KIO::Scheduler::emitReparseSlaveConfiguration();
 
   // Reload the page with the new charset
-  KParts::URLArgs args = m_part->browserExtension()->urlArgs();
-  args.reload = true;
-  m_part->browserExtension()->setUrlArgs(args);
+  KParts::OpenUrlArguments args = m_part->arguments();
+  args.setReload( true );
+  m_part->setArguments( args );
   m_part->openUrl(m_currentURL);
 }
 

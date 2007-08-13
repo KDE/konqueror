@@ -45,7 +45,7 @@ class KonqSidebarTree_Internal;
 #define VIRT_Link 0
 #define VIRT_Folder 1 // A directory which is parsed for .desktop files
 
-typedef KonqSidebarTreeModule*(*getModule)(KonqSidebarTree*, const bool); 
+typedef KonqSidebarTreeModule*(*getModule)(KonqSidebarTree*, const bool);
 
 typedef struct DirTreeConfigData_
 {
@@ -87,14 +87,14 @@ public:
     void lockScrolling( bool lock ) { m_scrollingLocked = lock; }
 
     bool isOpeningFirstChild() const { return m_bOpeningFirstChild; }
- 
+
     void enableActions( bool copy, bool cut, bool paste,
                         bool trash, bool del, bool rename = false );
 
     void itemDestructed( KonqSidebarTreeItem *item );
 
     void setDropFormats( const QStringList &formats ); // used in K3ListView mode
-    
+
     // Show context menu for toplevel items
     void showToplevelContextMenu();
 
@@ -153,7 +153,7 @@ private:
     void loadTopLevelItem( KonqSidebarTreeItem *parent, const QString &filename );
 
     void loadModuleFactories();
-    
+
 
 private:
     Q3PtrList<KonqSidebarTreeTopLevelItem> m_topLevelItems;
@@ -191,7 +191,7 @@ private:
     bool m_scrollingLocked;
 
     getModule getPluginFactory(const QString &name);
-    
+
     QMap<QString, QString>   pluginInfo;
     QMap<QString, getModule> pluginFactories;
 
@@ -209,8 +209,10 @@ signals:
 #undef signals
 #define signals protected
 #endif
-    void openUrlRequest( const KUrl &url, const KParts::URLArgs &args = KParts::URLArgs() );
-    void createNewWindow( const KUrl &url, const KParts::URLArgs &args = KParts::URLArgs() );
+    void openUrlRequest( const KUrl &url, const KParts::OpenUrlArguments& args = KParts::OpenUrlArguments(),
+                          const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments() );
+    void createNewWindow( const KUrl &url, const KParts::OpenUrlArguments& args = KParts::OpenUrlArguments(),
+                          const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments() );
     void popupMenu( const QPoint &global, const KUrl &url,
          const QString &mimeType, mode_t mode = (mode_t)-1 );
     void popupMenu( const QPoint &global, const KFileItemList &items );

@@ -43,19 +43,19 @@ KonqSideBarWebModule::KonqSideBarWebModule(const KComponentData &componentData, 
 		this,
 		SLOT(setTitle(const QString&)));
 	connect(_htmlPart,
-		SIGNAL(openUrlRequest(const QString&, KParts::URLArgs)),
+		SIGNAL(openUrlRequest(QString, KParts::OpenUrlArguments, KParts::BrowserArguments)),
 		this,
-		SLOT(urlClicked(const QString&, KParts::URLArgs)));
+		SLOT(urlClicked(QString, KParts::OpenUrlArguments, KParts::BrowserArguments)));
 	connect(_htmlPart->browserExtension(),
-		SIGNAL(openUrlRequest(const KUrl&, const KParts::URLArgs&)),
+		SIGNAL(openUrlRequest(QString, const KParts::OpenUrlArguments&, const KParts::BrowserArguments &)),
 		this,
-		SLOT(formClicked(const KUrl&, const KParts::URLArgs&)));
+		SLOT(formClicked(QString, const KParts::OpenUrlArguments&, const KParts::BrowserArguments &)) );
 	connect(_htmlPart,
 		SIGNAL(setAutoReload()), this, SLOT( setAutoReload() ));
 	connect(_htmlPart,
-		SIGNAL(openUrlNewWindow(const QString&, KParts::URLArgs)),
+		SIGNAL(openUrlNewWindow(const QString&, KParts::OpenUrlArguments, KParts::BrowserArguments)),
 		this,
-		SLOT(urlNewWindow(const QString&, KParts::URLArgs)));
+		SLOT(urlNewWindow(const QString&, KParts::OpenUrlArguments, KParts::BrowserArguments)));
 	connect(_htmlPart,
 		SIGNAL(submitFormRequest(const char*,const QString&,const QByteArray&,const QString&,const QString&,const QString&)),
 		this,
@@ -123,24 +123,24 @@ void KonqSideBarWebModule::handleURL(const KUrl &) {
 }
 
 
-void KonqSideBarWebModule::urlNewWindow(const QString& url, KParts::URLArgs args)
+void KonqSideBarWebModule::urlNewWindow(const QString& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs)
 {
-	emit createNewWindow(KUrl(url), args);
+	emit createNewWindow(KUrl(url), args, browserArgs);
 }
 
 
-void KonqSideBarWebModule::urlClicked(const QString& url, KParts::URLArgs args)
+void KonqSideBarWebModule::urlClicked(const QString& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs)
 {
-	emit openUrlRequest(KUrl(url), args);
+    emit openUrlRequest(KUrl(url), args, browserArgs);
 }
 
 
-void KonqSideBarWebModule::formClicked(const KUrl& url, const KParts::URLArgs& args)
+void KonqSideBarWebModule::formClicked(const KUrl& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs)
 {
-	_htmlPart->browserExtension()->setUrlArgs(args);
-	_htmlPart->openUrl(url);
+    _htmlPart->setArguments( args );
+    _htmlPart->browserExtension()->setBrowserArguments(browserArgs);
+    _htmlPart->openUrl(url);
 }
-
 
 void KonqSideBarWebModule::loadFavicon() {
 	QString icon = KMimeType::favIconForUrl(_url);
@@ -220,6 +220,34 @@ extern "C" {
 	}
 }
 
+
+bool KHTMLSideBar::urlSelected( const QString &url, int button,
+                                int state, const QString &_target,
+                                const KParts::OpenUrlArguments& args,
+                                const KParts::BrowserArguments& browserArgs )
+{
+    if (button == Qt::LeftButton ){
+        if (_target.toLower() == "_self") {
+            openUrl(url);
+        } else if (_target.toLower() == "_blank") {
+            emit openUrlNewWindow(completeURL(url).url(), args);
+        } else { // isEmpty goes here too
+            emit openUrlRequest(completeURL(url).url(), args);
+        }
+        return true;
+    }
+    if (button == Qt::MidButton) {
+        emit openUrlNewWindow(completeURL(url).url(),
+                              args);
+        return true;
+    }
+    // A refresh
+    if (button == 0 && _target.toLower() == "_self") {
+        openUrl(completeURL(url));
+        return true;
+    }
+    return KHTMLPart::urlSelected(url, button, state, _target, args, browserArgs);
+}
 
 #include "web_module.moc"
 

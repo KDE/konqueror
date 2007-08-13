@@ -489,13 +489,13 @@ void KonqSidebarTree::slotExecuted( Q3ListViewItem *item )
 
     KonqSidebarTreeItem *dItem = static_cast<KonqSidebarTreeItem *>( item );
 
-    KParts::URLArgs args;
-
-    args.serviceType = dItem->externalMimeType();
-    args.trustedSource = true;
+    KParts::OpenUrlArguments args;
+    args.setMimeType(dItem->externalMimeType());
+    KParts::BrowserArguments browserArgs;
+    browserArgs.trustedSource = true; // is this needed?
     KUrl externalURL = dItem->externalURL();
     if ( !externalURL.isEmpty() )
-	openUrlRequest( externalURL, args );
+	openUrlRequest( externalURL, args, browserArgs );
 }
 
 void KonqSidebarTree::slotMouseButtonPressed( int _button, Q3ListViewItem* _item, const QPoint&, int col )

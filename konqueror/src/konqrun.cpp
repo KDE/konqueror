@@ -37,13 +37,13 @@
 
 KonqRun::KonqRun( KonqMainWindow* mainWindow, KonqView *_childView,
                   const KUrl & _url, const KonqOpenURLRequest & req, bool trustedSource )
-    : KParts::BrowserRun( _url, req.args, _childView ? _childView->part() : 0L, mainWindow,
+    : KParts::BrowserRun( _url, req.args, req.browserArgs, _childView ? _childView->part() : 0L, mainWindow,
                           //remove referrer if request was typed in manually.
                           // ### TODO: turn this off optionally.
                           !req.typedUrl.isEmpty(), trustedSource,
                           // Don't use inline errors on reloading due to auto-refresh sites, but use them in all other cases
                           // (no reload or user-requested reload)
-                          !req.args.reload || req.userRequestedReload ),
+                          !req.args.reload() || req.userRequestedReload ),
     m_pMainWindow( mainWindow ), m_pView( _childView ), m_bFoundMimeType( false ), m_req( req )
 {
   //kDebug(1202) << "KonqRun::KonqRun() " << this;
@@ -82,7 +82,8 @@ void KonqRun::foundMimeType( const QString & _type )
   }
 
   // Grab the args back from BrowserRun
-  m_req.args = m_args;
+  m_req.args = arguments();
+  m_req.browserArgs = browserArguments();
 
   bool tryEmbed = true;
   // One case where we shouldn't try to embed, is when the server asks us to save
@@ -193,13 +194,13 @@ void KonqRun::slotRedirection( KIO::Job *job, const KUrl& redirectedToURL )
     // Do not post data on reload if we were redirected to a new URL when
     // doing a POST request.
     if (redirectFromURL != redirectedToURL)
-        m_args.setDoPost (false);
-    m_args.setRedirectedRequest(true);
+        browserArguments().setDoPost (false);
+    browserArguments().setRedirectedRequest(true);
 }
 
 KonqView * KonqRun::childView() const
 {
-  return m_pView;
+    return m_pView;
 }
 
 #include "konqrun.moc"

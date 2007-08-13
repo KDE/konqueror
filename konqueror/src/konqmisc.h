@@ -51,14 +51,10 @@ public:
     static void abortFullScreenMode();
 
     /**
-     * Create a new window with a single view, showing @p url
-     */
-    static KonqMainWindow * createSimpleWindow( const KUrl &url, const QString &frameName = QString() );
-
-    /**
      * Create a new window with a single view, showing @p url, using @p args
      */
-    static KonqMainWindow * createSimpleWindow( const KUrl &url, const KParts::URLArgs &args,
+    static KonqMainWindow * createSimpleWindow( const KUrl &url, const KParts::OpenUrlArguments &args,
+                                                const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments(),
 						bool tempFile = false);
 
     /**
@@ -67,7 +63,8 @@ public:
      * @param openUrl If it is false, no url is openend in the new window. The url is used to guess the profile
      */
     static KonqMainWindow * createNewWindow( const KUrl &url,
-                                             const KParts::URLArgs &args = KParts::URLArgs(),
+                                             const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
+                                             const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments(),
                                              bool forbidUseHTML = false,
                                              const QStringList &filesToSelect = QStringList(),
                                              bool tempFile = false,
@@ -82,7 +79,8 @@ public:
     static KonqMainWindow * createBrowserWindowFromProfile( const QString &path,
                                                             const QString &filename,
                                                             const KUrl &url = KUrl(),
-                                                            const KParts::URLArgs &args = KParts::URLArgs(),
+                                                            const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
+                                                            const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments(),
                                                             bool forbidUseHTML = false,
                                                             const QStringList& filesToSelect = QStringList(),
                                                             bool tempFile = false,

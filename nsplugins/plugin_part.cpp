@@ -229,8 +229,8 @@ bool PluginPart::openUrl(const KUrl &url)
 
     setUrl(url);
     QString surl = url.url();
-    QString smime = _extension->urlArgs().serviceType;
-    bool reload = _extension->urlArgs().reload;
+    QString smime = arguments().mimeType();
+    bool reload = arguments().reload();
     bool embed = false;
 
     // handle arguments
@@ -317,13 +317,14 @@ void PluginPart::postURL(const QString& url, const QString& target, const QByteA
                   << ", target=" << target << endl;
 
     KUrl new_url(this->url(), url);
-    KParts::URLArgs args;
-    args.setDoPost(true);
-    args.frameName = target;
-    args.postData = data;
-    args.setContentType(mime);
+    KParts::OpenUrlArguments arguments;
+    KParts::BrowserArguments browserArguments;
+    browserArguments.setDoPost(true);
+    browserArguments.frameName = target;
+    browserArguments.postData = data;
+    browserArguments.setContentType(mime);
 
-    emit _extension->openUrlRequest(new_url, args);
+    emit _extension->openUrlRequest(new_url, arguments, browserArguments);
 }
 
 void PluginPart::requestURL(const QString& url, const QString& target)
@@ -332,11 +333,12 @@ void PluginPart::requestURL(const QString& url, const QString& target)
                   << ", target=" << target << endl;
 
     KUrl new_url(this->url(), url);
-    KParts::URLArgs args;
-    args.frameName = target;
-    args.setDoPost(false);
+    KParts::OpenUrlArguments arguments;
+    KParts::BrowserArguments browserArguments;
+    browserArguments.frameName = target;
+    browserArguments.setDoPost(false);
 
-    emit _extension->openUrlRequest(new_url, args);
+    emit _extension->openUrlRequest(new_url, arguments, browserArguments);
 }
 
 void PluginPart::evalJavaScript(int id, const QString & script)
