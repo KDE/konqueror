@@ -238,7 +238,7 @@ KRemoteEncodingPlugin::updateBrowser()
 
 bool KRemoteEncodingPlugin::eventFilter(QObject*obj, QEvent *ev)
 {
-    if (obj == m_part && KParts::OpenURLEvent::test(ev)) {
+    if (obj == m_part && KParts::OpenUrlEvent::test(ev)) {
 #if 0 // TODO enable after 15 July 2007 (once KParts::ReadOnlyPart has the arguments() method)
         const QString mimeType = m_part->arguments().mimeType();
         if (!mimeType.isEmpty() && KMimeType::mimeType(mimeType)->is("inode/directory"))

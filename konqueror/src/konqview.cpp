@@ -987,7 +987,7 @@ void KonqView::setLockedLocation( bool b )
 
 void KonqView::aboutToOpenURL( const KUrl &url, const KParts::OpenUrlArguments &args )
 {
-  KParts::OpenURLEvent ev( m_pPart, url, args );
+  KParts::OpenUrlEvent ev( m_pPart, url, args );
   QApplication::sendEvent( m_pMainWindow, &ev );
 
   m_bGotIconURL = false;

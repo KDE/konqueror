@@ -5823,9 +5823,9 @@ bool KonqMainWindow::event( QEvent* e )
             QApplication::sendEvent( (*it)->part(), e );
         return true;
     }
-    if ( KParts::OpenURLEvent::test( e ) )
+    if ( KParts::OpenUrlEvent::test( e ) )
     {
-        KParts::OpenURLEvent * ev = static_cast<KParts::OpenURLEvent*>(e);
+        KParts::OpenUrlEvent * ev = static_cast<KParts::OpenUrlEvent*>(e);
         KonqView * senderChildView = childView(ev->part());
 
         // Enable/disable local properties actions if current view
