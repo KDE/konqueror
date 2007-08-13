@@ -1042,7 +1042,7 @@ void KonqPopupMenu::slotPopupAddToBookmark()
     root = m_pManager->root();
     KUrl::List::ConstIterator it = m_lstPopupURLs.begin();
     for ( ; it != m_lstPopupURLs.end(); it++ )
-      root.addBookmark( m_pManager, (*it).prettyUrl(), (*it) );
+      root.addBookmark( (*it).prettyUrl(), (*it) );
   }
   m_pManager->emitChanged( root );
 }
