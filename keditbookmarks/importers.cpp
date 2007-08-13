@@ -39,6 +39,7 @@
 #include <kbookmarkimporter_opera.h>
 #include <kbookmarkimporter_crash.h>
 #include <kbookmarkdombuilder.h>
+#include <kbookmarkimporter_ns.h>
 
 QString ImportCommand::name() const {
     return i18n("Import %1 Bookmarks", visibleName());

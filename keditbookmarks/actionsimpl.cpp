@@ -63,6 +63,7 @@
 
 #include <kbookmarkimporter_ie.h>
 #include <kbookmarkimporter_opera.h>
+#include <kbookmarkimporter_ns.h>
 #include <kbookmarkexporter.h>
 
 ActionsImpl* ActionsImpl::s_self = 0;
