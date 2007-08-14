@@ -31,29 +31,30 @@ namespace KParts { class ReadOnlyPart; }
  * @author Martijn Klingens <klingens@kde.org>
  * @author Arend van Beelen jr. <arend@auton.nl>
  */
-class KonqExtensionManager : public KDialog
+class KonqExtensionManager
+    : public KDialog
 {
-	Q_OBJECT
+    Q_OBJECT
 
-	public:
-		KonqExtensionManager(QWidget *parent, KonqMainWindow *mainWindow, KParts::ReadOnlyPart* activePart);
-		~KonqExtensionManager();
+    public:
+        KonqExtensionManager(QWidget *parent, KonqMainWindow *mainWindow, KParts::ReadOnlyPart* activePart);
+        ~KonqExtensionManager();
 
-		void apply();
+        void apply();
 
-	public Q_SLOTS:
-		void setChanged(bool c);
-                void reparseConfiguration(const QByteArray &);
-		void slotOk();
-		void slotApply();
-		void slotDefault();
-		void slotUser1();
+    public Q_SLOTS:
+        void setChanged(bool c);
+        void reparseConfiguration(const QByteArray &);
+        void slotOk();
+        void slotApply();
+        void slotDefault();
+        void slotUser1();
 
-        protected:
-		virtual void showEvent(QShowEvent *event);
+    protected:
+        virtual void showEvent(QShowEvent *event);
 
-	private:
-		KonqExtensionManagerPrivate *d;
+    private:
+        KonqExtensionManagerPrivate *d;
 };
 
 #endif // KONQEXTENSIONMANAGER_H
