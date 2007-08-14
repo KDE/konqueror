@@ -47,8 +47,6 @@ Kfind::Kfind(QWidget *parent)
 {
   kDebug() << "Kfind::Kfind " << this;
   QBoxLayout * mTopLayout = new QBoxLayout( QBoxLayout::LeftToRight, this );
-  mTopLayout->setMargin( KDialog::marginHint() );
-  mTopLayout->setSpacing( KDialog::spacingHint() );
 
   // create tabwidget
   tabWidget = new KfindTabWidget( this );

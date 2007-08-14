@@ -425,14 +425,16 @@ void KfindTabWidget::setURL( const KUrl & url )
     // If the _searchPath already exists in the list we do not
     // want to add it again
     int indx = sl.indexOf(m_url.prettyUrl());
-    if(indx == -1)
-      dirBox->addItem(m_url.prettyUrl(), 0); // make it the first one
+    if(indx == -1) {
+      dirBox->insertItem(0, m_url.prettyUrl()); // make it the first one
+      dirBox->setCurrentIndex(0);
+    }
     else
       dirBox->setCurrentIndex(indx);
   }
   else {
     QDir m_dir("/lib");
-    dirBox ->addItem( m_url.prettyUrl() );
+    dirBox ->insertItem( 0, m_url.prettyUrl() );
     dirBox ->addItem( "file:" + QDir::homePath() );
     dirBox ->addItem( "file:/" );
     dirBox ->addItem( "file:/usr" );
@@ -442,6 +444,7 @@ void KfindTabWidget::setURL( const KUrl & url )
     dirBox ->addItem( "file:/etc" );
     dirBox ->addItem( "file:/var" );
     dirBox ->addItem( "file:/mnt" );
+    dirBox->setCurrentIndex(0);
   }
 }
 
@@ -500,14 +503,16 @@ void KfindTabWidget::loadHistory()
     // If the _searchPath already exists in the list we do not
     // want to add it again
     int indx = sl.indexOf(m_url.prettyUrl());
-    if(indx == -1)
-      dirBox->addItem(m_url.prettyUrl(), 0); // make it the first one
+    if(indx == -1) {
+      dirBox->insertItem(0, m_url.prettyUrl()); // make it the first one
+      dirBox->setCurrentIndex(0);
+    }
     else
       dirBox->setCurrentIndex(indx);
   }
   else {
     QDir m_dir("/lib");
-    dirBox ->addItem( m_url.prettyUrl() );
+    dirBox ->insertItem( 0, m_url.prettyUrl() );
     dirBox ->addItem( "file:" + QDir::homePath() );
     dirBox ->addItem( "file:/" );
     dirBox ->addItem( "file:/usr" );
@@ -517,6 +522,7 @@ void KfindTabWidget::loadHistory()
     dirBox ->addItem( "file:/etc" );
     dirBox ->addItem( "file:/var" );
     dirBox ->addItem( "file:/mnt" );
+    dirBox ->setCurrentIndex(0);
   }
 }
 
@@ -775,7 +781,7 @@ void KfindTabWidget::getDirectory()
 	dirBox->setCurrentIndex(i);
 	return;
       }
-    dirBox->addItem(result, 0);
+    dirBox->insertItem(0, result);
     dirBox->setCurrentIndex(0);
   }
 }
