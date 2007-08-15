@@ -392,7 +392,7 @@ void KonqView::connectPart(  )
       ext->setBrowserInterface( m_browserIface );
 
       connect( ext, SIGNAL( openUrlRequestDelayed(const KUrl &, const KParts::OpenUrlArguments&, const KParts::BrowserArguments &) ),
-               m_pMainWindow, SLOT( slotOpenURLRequest( const KUrl &, const KParts::URLArgs & ) ) );
+               m_pMainWindow, SLOT( slotOpenURLRequest( const KUrl &, const KParts::OpenUrlArguments&, const KParts::BrowserArguments & ) ) );
 
       if ( m_bPopupMenuEnabled )
       {
@@ -1145,13 +1145,13 @@ void KonqView::enablePopupMenu( bool b )
              m_pMainWindow, SLOT( slotPopupMenu( KXMLGUIClient *, const QPoint &, const KFileItemList & ) ) );
 
     connect( ext, SIGNAL( popupMenu(KXMLGUIClient *, const QPoint &, const KFileItemList &, const KParts::OpenUrlArguments &, const KParts::BrowserArguments &, KParts::BrowserExtension::PopupFlags) ),
-             m_pMainWindow, SLOT( slotPopupMenu( KXMLGUIClient *, const QPoint &, const KFileItemList &, const KParts::URLArgs &, KParts::BrowserExtension::PopupFlags ) ) );
+             m_pMainWindow, SLOT( slotPopupMenu( KXMLGUIClient *, const QPoint &, const KFileItemList &, const KParts::OpenUrlArguments &, const KParts::BrowserArguments &, KParts::BrowserExtension::PopupFlags ) ) );
 
     connect( ext, SIGNAL( popupMenu( KXMLGUIClient *, const QPoint &, const KUrl &, const QString &, mode_t ) ),
              m_pMainWindow, SLOT( slotPopupMenu( KXMLGUIClient *, const QPoint &, const KUrl &, const QString &, mode_t ) ) );
 
     connect( ext, SIGNAL( popupMenu(KXMLGUIClient *, const QPoint &, const KUrl &, const KParts::OpenUrlArguments &, const KParts::BrowserArguments &, KParts::BrowserExtension::PopupFlags, mode_t) ),
-             m_pMainWindow, SLOT( slotPopupMenu( KXMLGUIClient *, const QPoint &, const KUrl &, const KParts::URLArgs &, KParts::BrowserExtension::PopupFlags, mode_t ) ) );
+             m_pMainWindow, SLOT( slotPopupMenu( KXMLGUIClient *, const QPoint &, const KUrl &, const KParts::OpenUrlArguments &, const KParts::BrowserArguments &, KParts::BrowserExtension::PopupFlags, mode_t ) ) );
   }
   else // disable context popup
   {
