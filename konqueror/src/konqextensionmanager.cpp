@@ -150,7 +150,6 @@ void KonqExtensionManager::slotApply()
 void KonqExtensionManager::slotDefault()
 {
     d->pluginSelector->defaults();
-    setChanged(false);
 }
 
 void KonqExtensionManager::slotUser1()
