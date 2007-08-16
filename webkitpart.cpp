@@ -58,17 +58,17 @@ bool WebKitPart::openUrl(const KUrl &url)
 {
     setUrl(url);
 
-    KParts::URLArgs args = browserExtension->urlArgs();
-
-    QString headerString = args.doPost() ? "POST" : "GET";
+    KParts::OpenUrlArguments arguments;
+    KParts::BrowserArguments browserArguments = browserExtension->browserArguments();
+    QString headerString = browserArguments.doPost() ? "POST" : "GET";
     headerString += QLatin1Char(' ');
     headerString += url.toEncoded(QUrl::RemoveScheme|QUrl::RemoveAuthority);
     headerString += QLatin1String(" HTTP/1.1\n\n"); // ### does it matter?
-    headerString += args.metaData().value("customHTTPHeader");
+    headerString += arguments.metaData().value("customHTTPHeader");
     QHttpRequestHeader header(headerString);
 
-    QWebNetworkRequest request(url, args.doPost() ? QWebNetworkRequest::Post : QWebNetworkRequest::Get,
-                               args.postData);
+    QWebNetworkRequest request(url, browserArguments.doPost() ? QWebNetworkRequest::Post : QWebNetworkRequest::Get,
+                               browserArguments.postData);
 
     foreach (QString key, header.keys())
         request.setHttpHeaderField(key, header.value(key));
@@ -104,14 +104,15 @@ void WebKitPart::frameFinished(QWebFrame *frame)
 
 QWebPage::NavigationRequestResponse WebKitPart::navigationRequested(const QWebNetworkRequest &request)
 {
-    KParts::URLArgs args;
-    args.postData = request.postData();
-    if (!args.postData.isEmpty())
-        args.setDoPost(true);
+    KParts::OpenUrlArguments arguments;
+    KParts::BrowserArguments browserArguments;
+    browserArguments.postData = request.postData();
+    if (!browserArguments.postData.isEmpty())
+        browserArguments.setDoPost(true);
 
-    args.metaData().unite(KWebNetworkInterface::metaDataForRequest(request.httpHeader()));
+    arguments.metaData().unite(KWebNetworkInterface::metaDataForRequest(request.httpHeader()));
 
-    emit browserExtension->openUrlRequest(request.url(), args);
+    emit browserExtension->openUrlRequest(request.url(), arguments, browserArguments);
 
     return QWebPage::IgnoreNavigationRequest;
 }
@@ -143,7 +144,7 @@ void WebPage::contextMenuEvent(QContextMenuEvent *e)
     flags |= KParts::BrowserExtension::ShowBookmark;
     flags |= KParts::BrowserExtension::ShowNavigationItems;
     emit part->browserExt()->popupMenu(/*guiclient */0,
-                                       e->globalPos(), part->url(), KParts::URLArgs(),
+                                       e->globalPos(), part->url(), KParts::OpenUrlArguments(), KParts::BrowserArguments(),
                                        flags);
 }
 
