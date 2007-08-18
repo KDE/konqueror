@@ -427,7 +427,7 @@ QString KonqMainWindow::detectNameFilter( KUrl & url )
         if ( fileName.indexOf( '*' ) != -1 || fileName.indexOf( '[' ) != -1 || fileName.indexOf( '?' ) != -1 )
         {
             // Check that a file or dir with all the special chars in the filename doesn't exist
-            if ( url.isLocalFile() ? !QFile::exists( path ) : !KIO::NetAccess::exists( url, false, this ) )
+            if ( url.isLocalFile() ? !QFile::exists( path ) : !KIO::NetAccess::exists( url, KIO::NetAccess::DestinationSide, this ) )
             {
                 nameFilter = fileName;
                 url.setFileName( QString() );
