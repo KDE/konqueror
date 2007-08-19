@@ -238,14 +238,10 @@ void KSaveIOConfig::updateRunningIOSlaves (QWidget *parent)
 {
   // Inform all running io-slaves about the changes...
   // if we cannot update, ioslaves inform the end user...
-#ifdef __GNUC__
-#warning "kde4: Verify it"
-#endif
-    QDBusMessage message =
-            QDBusMessage::createSignal("/KIO/Scheduler", "org.kde.KIO.Scheduler", "reparseSlaveConfiguration");
-    QDBusConnection::sessionBus().send(message);
-#if 0
-  if (!DCOPRef("*", "KIO::Scheduler").send("reparseSlaveConfiguration", QString()))
+  QDBusMessage message =
+          QDBusMessage::createSignal("/KIO/Scheduler", "org.kde.KIO.Scheduler", "reparseSlaveConfiguration");
+  message << QString();
+  if (!QDBusConnection::sessionBus().send(message))
   {
     QString caption = i18n("Update Failed");
     QString message = i18n("You have to restart the running applications "
@@ -253,7 +249,6 @@ void KSaveIOConfig::updateRunningIOSlaves (QWidget *parent)
     KMessageBox::information (parent, message, caption);
     return;
   }
-#endif
 }
 
 void KSaveIOConfig::updateProxyScout( QWidget * parent )
