@@ -26,7 +26,7 @@
 #include <QtGui/QDropEvent>
 
 class KJob;
-namespace KIO { class Job; struct CopyInfo; }
+namespace KIO { class Job; class SimpleJob; struct CopyInfo; }
 class QWidget;
 class KFileItem;
 
@@ -95,9 +95,19 @@ public:
     static void restoreTrashedItems( const KUrl::List& urls, QWidget* parent );
 
     /**
-     * Create a directory
+     * Create a directory. Same as KIO::mkdir but records job into KonqUndoManager for undo/redo purposes.
      */
-    static void mkdir( QWidget *parent, const KUrl & url );
+    static KIO::SimpleJob* mkdir( QWidget *parent, const KUrl & url );
+
+    /**
+     * Ask for the name of a new directory and create it.
+     * Calls KonqOperations::mkdir.
+     *
+     * @param parent the parent widget
+     * @param baseUrl the directory to create the new directory in
+     * @return the job used to create the directory or 0 if the creation was cancelled by the user
+     */
+    static KIO::SimpleJob* newDir( QWidget * parent, const KUrl & baseUrl );
 
     /**
      * Get info about a given URL, and when that's done (it's asynchronous!),
@@ -124,13 +134,6 @@ public:
      * be a relative path, including a '/').
      */
     static void rename( QWidget * parent, const KUrl & oldurl, const KUrl & newurl );
-
-    /**
-     * Ask for the name of a new directory and create it.
-     * @param parent the parent widget
-     * @param baseUrl the directory to create the new directory in
-     */
-    static void newDir( QWidget * parent, const KUrl & baseUrl );
 
     enum ConfirmationType { DEFAULT_CONFIRMATION, SKIP_CONFIRMATION, FORCE_CONFIRMATION };
     /**
