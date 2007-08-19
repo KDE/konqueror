@@ -114,12 +114,13 @@ void KonqOperations::restoreTrashedItems( const KUrl::List& urls, QWidget* paren
     op->_restoreTrashedItems( urls );
 }
 
-void KonqOperations::mkdir( QWidget *parent, const KUrl & url )
+KIO::SimpleJob* KonqOperations::mkdir( QWidget *parent, const KUrl & url )
 {
-    KIO::Job * job = KIO::mkdir( url );
-    KonqOperations * op = new KonqOperations( parent );
-    op->setOperation( job, MKDIR, url );
+    KIO::SimpleJob * job = KIO::mkdir(url);
+    job->ui()->setWindow(parent);
+    job->ui()->setAutoErrorHandlingEnabled(true);
     KonqUndoManager::self()->recordJob( KonqUndoManager::MKDIR, KUrl(), url, job );
+    return job;
 }
 
 void KonqOperations::doPaste( QWidget * parent, const KUrl & destUrl, const QPoint &pos )
@@ -743,7 +744,7 @@ void KonqOperations::rename( QWidget * parent, const KUrl & oldurl, const QStrin
     rename( parent, oldurl, newurl );
 }
 
-void KonqOperations::newDir( QWidget * parent, const KUrl & baseUrl )
+KIO::SimpleJob* KonqOperations::newDir( QWidget * parent, const KUrl & baseUrl )
 {
     bool ok;
     QString name = i18n( "New Folder" );
@@ -765,8 +766,9 @@ void KonqOperations::newDir( QWidget * parent, const KUrl & baseUrl )
            url = baseUrl;
            url.addPath( name );
         }
-        KonqOperations::mkdir( parent, url );
+        return KonqOperations::mkdir( parent, url );
     }
+    return 0;
 }
 
 ////

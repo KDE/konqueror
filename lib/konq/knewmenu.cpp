@@ -409,7 +409,14 @@ void KNewMenu::slotNewDir()
     if (d->popupFiles.isEmpty())
        return;
 
-    KonqOperations::newDir(d->m_parentWidget, d->popupFiles.first());
+    KIO::SimpleJob* job = KonqOperations::newDir(d->m_parentWidget, d->popupFiles.first());
+    if (job) {
+        // We want the error handling to be done by slotResult so that subclasses can reimplement it
+        job->ui()->setAutoErrorHandlingEnabled(false);
+        connect( job, SIGNAL( result( KJob * ) ),
+                 SLOT( slotResult( KJob * ) ) );
+    }
+
 }
 
 void KNewMenu::slotNewFile()
@@ -541,30 +548,30 @@ void KNewMenu::slotRenamed( KIO::Job *, const KUrl& from , const KUrl& to )
 
 void KNewMenu::slotResult( KJob * job )
 {
-    if (job->error())
-    {
+    if (job->error()) {
         static_cast<KIO::Job*>( job )->ui()->showErrorMessage();
-    }
-    else
-    {
-        KUrl destUrl = static_cast<KIO::CopyJob*>(job)->destUrl();
-        if ( destUrl.isLocalFile() )
-        {
-            if ( d->m_isURLDesktopFile )
-            {
-                // destURL is the original destination for the new file.
-                // But in case of a renaming (due to a conflict), the real path is in m_destPath
-                kDebug(1203) << " destUrl=" << destUrl.path() << " " << " d->m_destPath=" << d->m_destPath;
-                KDesktopFile df( d->m_destPath );
-                KConfigGroup group = df.desktopGroup();
-                group.writeEntry( "Icon", KProtocolInfo::icon( d->m_linkURL.protocol() ) );
-                group.writePathEntry( "URL", d->m_linkURL.prettyUrl() );
-                df.sync();
-            }
-            else
-            {
-                // Normal (local) file. Need to "touch" it, kio_file copied the mtime.
-                (void) ::utime( QFile::encodeName( destUrl.path() ), 0 );
+    } else {
+        // Was this a copy or a mkdir?
+        KIO::CopyJob* copyJob = ::qobject_cast<KIO::CopyJob*>(job);
+        if (copyJob) {
+            KUrl destUrl = copyJob->destUrl();
+            if ( destUrl.isLocalFile() ) {
+                if ( d->m_isURLDesktopFile )
+                {
+                    // destURL is the original destination for the new file.
+                    // But in case of a renaming (due to a conflict), the real path is in m_destPath
+                    kDebug(1203) << " destUrl=" << destUrl.path() << " " << " d->m_destPath=" << d->m_destPath;
+                    KDesktopFile df( d->m_destPath );
+                    KConfigGroup group = df.desktopGroup();
+                    group.writeEntry( "Icon", KProtocolInfo::icon( d->m_linkURL.protocol() ) );
+                    group.writePathEntry( "URL", d->m_linkURL.prettyUrl() );
+                    df.sync();
+                }
+                else
+                {
+                    // Normal (local) file. Need to "touch" it, kio_file copied the mtime.
+                    (void) ::utime( QFile::encodeName( destUrl.path() ), 0 );
+                }
             }
         }
     }
