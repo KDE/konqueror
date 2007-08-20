@@ -61,7 +61,7 @@ void KonqMainWindowAdaptor::reload()
 
 QDBusObjectPath KonqMainWindowAdaptor::currentView()
 {
-  kDebug() << k_funcinfo;
+  kDebug() ;
   KonqView *view = m_pMainWindow->currentView();
   if ( !view )
     return QDBusObjectPath();

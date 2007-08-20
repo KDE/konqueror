@@ -130,7 +130,7 @@ PopupMenuGUIClient::PopupMenuGUIClient( KonqMainWindow *mainWindow,
         menu.appendChild( separatorElement );
     }
 
-    //kDebug() << k_funcinfo << m_doc.toString();
+    //kDebug() << m_doc.toString();
 
     setDOMDocument( m_doc );
 }

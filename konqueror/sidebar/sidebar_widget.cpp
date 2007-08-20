@@ -162,7 +162,7 @@ static QString findFileName(const QString* tmpl,bool universal, const QString &p
 
 void addBackEnd::triggeredAddMenu(QAction* action)
 {
-	kDebug() << k_funcinfo << action->text();
+	kDebug() << action->text();
 
 	if (!action->data().canConvert(QVariant::StringList))
 		return;
