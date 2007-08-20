@@ -540,7 +540,7 @@ void KNewMenu::slotRenamed( KIO::Job *, const KUrl& from , const KUrl& to )
 {
     if ( from.isLocalFile() )
     {
-        kDebug() << k_funcinfo << from.prettyUrl() << " -> " << to.prettyUrl() << " ( m_destPath=" << d->m_destPath << ")";
+        kDebug() << from.prettyUrl() << " -> " << to.prettyUrl() << " ( m_destPath=" << d->m_destPath << ")";
         Q_ASSERT( from.path() == d->m_destPath );
         d->m_destPath = to.path();
     }
@@ -655,7 +655,7 @@ void KUrlDesktopFileDlg::slotClear()
 
 void KUrlDesktopFileDlg::slotNameTextChanged( const QString& )
 {
-    kDebug() << k_funcinfo;
+    kDebug() ;
     m_fileNameEdited = true;
     enableButtonOk( !m_leFileName->text().isEmpty() && !m_urlRequester->url().isEmpty() );
 }

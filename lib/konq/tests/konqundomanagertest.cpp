@@ -198,7 +198,7 @@ void KonqUndoManagerTest::doUndo()
 
 void KonqUndoManagerTest::testCopyFiles()
 {
-    kDebug() << k_funcinfo;
+    kDebug() ;
     // Initially inspired from JobTest::copyFileToSamePartition()
     const QString destdir = destDir();
     KUrl::List lst = sourceList();
@@ -254,7 +254,7 @@ void KonqUndoManagerTest::testCopyFiles()
 
 void KonqUndoManagerTest::testMoveFiles()
 {
-    kDebug() << k_funcinfo;
+    kDebug() ;
     const QString destdir = destDir();
     KUrl::List lst = sourceList();
     const KUrl d( destdir );
@@ -288,7 +288,7 @@ void KonqUndoManagerTest::testMoveFiles()
 #if 0
 void KonqUndoManagerTest::testCopyFilesOverwrite()
 {
-    kDebug() << k_funcinfo;
+    kDebug() ;
     // Create a different file in the destdir
     createTestFile( destFile(), "An old file already in the destdir" );
 

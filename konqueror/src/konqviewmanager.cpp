@@ -999,7 +999,7 @@ void KonqViewManager::slotActivePartChanged ( KParts::Part *newPart )
     }
     KonqView * view = m_pMainWindow->childView( static_cast<KParts::ReadOnlyPart *>(newPart) );
     if (view == 0L) {
-      kDebug(1202) << k_funcinfo << "No view associated with this part";
+      kDebug(1202) << "No view associated with this part";
       return;
     }
     if (view->frame()->parentContainer() == 0L) return;

@@ -974,7 +974,7 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
     }
 
     KonqXMLGUIClient::addMerge( 0 );
-    //kDebug() << k_funcinfo << domDocument().toString();
+    //kDebug() << domDocument().toString();
 
     m_factory->addClient( this );
 }
