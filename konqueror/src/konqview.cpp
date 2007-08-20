@@ -1141,9 +1141,6 @@ void KonqView::enablePopupMenu( bool b )
     connect( ext, SIGNAL( popupMenu( const QPoint &, const KUrl &, const QString &, mode_t ) ),
              m_pMainWindow, SLOT( slotPopupMenu( const QPoint &, const KUrl &, const QString &, mode_t ) ) );
 
-    connect( ext, SIGNAL( popupMenu( KXMLGUIClient *, const QPoint &, const KFileItemList & ) ),
-             m_pMainWindow, SLOT( slotPopupMenu( KXMLGUIClient *, const QPoint &, const KFileItemList & ) ) );
-
     connect( ext, SIGNAL( popupMenu(KXMLGUIClient *, const QPoint &, const KFileItemList &, const KParts::OpenUrlArguments &, const KParts::BrowserArguments &, KParts::BrowserExtension::PopupFlags) ),
              m_pMainWindow, SLOT( slotPopupMenu( KXMLGUIClient *, const QPoint &, const KFileItemList &, const KParts::OpenUrlArguments &, const KParts::BrowserArguments &, KParts::BrowserExtension::PopupFlags ) ) );
 
@@ -1162,9 +1159,6 @@ void KonqView::enablePopupMenu( bool b )
 
     disconnect( ext, SIGNAL( popupMenu( const QPoint &, const KUrl &, const QString &, mode_t ) ),
              m_pMainWindow, SLOT( slotPopupMenu( const QPoint &, const KUrl &, const QString &, mode_t ) ) );
-
-    disconnect( ext, SIGNAL( popupMenu( KXMLGUIClient *, const QPoint &, const KFileItemList & ) ),
-             m_pMainWindow, SLOT( slotPopupMenu( KXMLGUIClient *, const QPoint &, const KFileItemList & ) ) );
 
     disconnect( ext, SIGNAL( popupMenu( KXMLGUIClient *, const QPoint &, const KUrl &, const QString &, mode_t ) ),
              m_pMainWindow, SLOT( slotPopupMenu( KXMLGUIClient *, const QPoint &, const KUrl &, const QString &, mode_t ) ) );
