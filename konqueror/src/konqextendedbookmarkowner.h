@@ -22,9 +22,8 @@
 #define KONQEXTENDEDBOOKMARKOWNER_H
 
 #include <konqbookmarkmenu.h>
-#include <QObject>
 
-class KonqExtendedBookmarkOwner : public QObject, public KonqBookmarkOwner
+class KonqExtendedBookmarkOwner : public KonqBookmarkOwner
 {
   Q_OBJECT
 

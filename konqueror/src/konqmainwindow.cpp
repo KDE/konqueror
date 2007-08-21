@@ -20,7 +20,6 @@
 */
 
 #include "konqmainwindow.h"
-#include "konqextendedbookmarkowner.moc"
 #include "konqapplication.h"
 #include "konqguiclients.h"
 #include "KonqMainWindowAdaptor.h"
@@ -211,8 +210,7 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
   m_paDelete = 0;
   m_paNewDir = 0;
   m_bookmarkBarInitialized = false;
-  KonqExtendedBookmarkOwner *extOwner = new KonqExtendedBookmarkOwner( this );
-  m_pBookmarksOwner = extOwner;
+  m_pBookmarksOwner = new KonqExtendedBookmarkOwner(this);
 
   // init history-manager, load history, get completion object
   if ( !s_pCompletion ) {
