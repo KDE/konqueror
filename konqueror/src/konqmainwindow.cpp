@@ -20,7 +20,7 @@
 */
 
 #include "konqmainwindow.h"
-
+#include "konqextendedbookmarkowner.moc"
 #include "konqapplication.h"
 #include "konqguiclients.h"
 #include "KonqMainWindowAdaptor.h"
