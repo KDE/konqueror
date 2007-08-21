@@ -16,11 +16,12 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef konq_treemodule_h
-#define konq_treemodule_h
+#ifndef KONQ_SIDEBARTREEMODULE_H
+#define KONQ_SIDEBARTREEMODULE_H
 
 #include <QtCore/QObject>
 #include "konq_sidebartree.h"
+
 class KonqSidebarTreeTopLevelItem;
 class KonqSidebarTree;
 
@@ -58,6 +59,4 @@ protected:
     bool m_showHidden;
 };
 
-
-
-#endif
+#endif // KONQ_SIDEBARTREEMODULE_H

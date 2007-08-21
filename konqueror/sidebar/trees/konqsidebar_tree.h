@@ -1,5 +1,6 @@
-#ifndef _konq_sidebar_test_h_
-#define _konq_sidebar_test_h_
+#ifndef KONQSIDEBAR_TREE_H
+#define KONQSIDEBAR_TREE_H
+
 #include <konqsidebarplugin.h>
 #include <QtGui/QLabel>
 #include <QtGui/QLayout>
@@ -11,6 +12,7 @@
 #include <QtCore/QStringList>
 #include <klocale.h>
 #include <QtGui/QLineEdit>
+
 class KonqSidebarTree;
 
 class KonqSidebar_Tree: public KonqSidebarPlugin
@@ -44,4 +46,4 @@ Q_SIGNALS:
 			void enableAction( const char * name, bool enabled );
         };
 
-#endif
+#endif // KONQSIDEBAR_TREE_H

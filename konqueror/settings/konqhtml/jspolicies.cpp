@@ -200,7 +200,7 @@ JSPoliciesFrame::JSPoliciesFrame(JSPolicies *policies, const QString &title,
                "JavaScript command. This is useful if you "
                "regularly visit sites that make extensive use "
                "of this command to pop up ad banners.<br>"
-               "<br><b>Note:</b> Disabling this option might "
+               "<br /><b>Note:</b> Disabling this option might "
                "also break certain sites that require <i>"
                "window.open()</i> for proper operation. Use "
                "this feature carefully.");

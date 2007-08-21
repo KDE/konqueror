@@ -139,7 +139,7 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QStringList&)
 			    " automatically load any images that are embedded in a web page."
 			    " Otherwise, it will display placeholders for the images, and"
 			    " you can then manually load the images by clicking on the image"
-			    " button.<br>Unless you have a very slow network connection, you"
+			    " button.<br />Unless you have a very slow network connection, you"
 			    " will probably want to check this box to enhance your browsing"
 			    " experience." ) );
     connect(m_pAutoLoadImagesCheckBox, SIGNAL(clicked()), SLOT(slotChanged()));
@@ -149,7 +149,7 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QStringList&)
     m_pUnfinishedImageFrameCheckBox = new QCheckBox( i18n( "Dra&w frame around not completely loaded images"), this );
     m_pUnfinishedImageFrameCheckBox->setWhatsThis( i18n( "If this box is checked, Konqueror will draw"
 			    " a frame as placeholder around not yet fully loaded images that are embedded"
-			    " in a web page.<br>Especially if you have a slow network connection, you will"
+			    " in a web page.<br />Especially if you have a slow network connection, you will"
 			    " probably want to check this box to enhance your browsing experience." ) );
     connect(m_pUnfinishedImageFrameCheckBox, SIGNAL(clicked()), SLOT(slotChanged()));
     lay->addWidget( m_pUnfinishedImageFrameCheckBox, row, 0, 1, 2 );
@@ -186,11 +186,11 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QStringList&)
     lay->addWidget(label, row, 0);
     lay->addWidget(m_pUnderlineCombo, row, 1);
     row++;
-    QString whatsThis = i18n("Controls how Konqueror handles underlining hyperlinks:<br>"
+    QString whatsThis = i18n("Controls how Konqueror handles underlining hyperlinks:<br />"
 	    "<ul><li><b>Enabled</b>: Always underline links</li>"
 	    "<li><b>Disabled</b>: Never underline links</li>"
 	    "<li><b>Only on Hover</b>: Underline when the mouse is moved over the link</li>"
-	    "</ul><br><i>Note: The site's CSS definitions can override this value</i>");
+	    "</ul><br /><i>Note: The site's CSS definitions can override this value</i>");
     label->setWhatsThis(whatsThis);
     m_pUnderlineCombo->setWhatsThis(whatsThis);
     connect(m_pUnderlineCombo, SIGNAL(activated(int)), SLOT(slotChanged()));
@@ -207,7 +207,7 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QStringList&)
     lay->addWidget(label, row, 0);
     lay->addWidget(m_pAnimationsCombo, row, 1);
     row++;
-    whatsThis = i18n("Controls how Konqueror shows animated images:<br>"
+    whatsThis = i18n("Controls how Konqueror shows animated images:<br />"
 	    "<ul><li><b>Enabled</b>: Show all animations completely.</li>"
 	    "<li><b>Disabled</b>: Never show animations, show the start image only.</li>"
 	    "<li><b>Show only once</b>: Show all animations completely but do not repeat them.</li></ul>");

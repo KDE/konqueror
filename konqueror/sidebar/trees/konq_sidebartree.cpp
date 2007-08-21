@@ -1004,7 +1004,7 @@ void KonqSidebarTree::slotCreateFolder()
         else
             path = m_dirtreeDir.dir.path();
 
-        if (!path.endsWith("/"))
+        if (!path.endsWith("/"))	//krazy:exclude=doublequote_chars
             path += '/';
 
         path = path + name;

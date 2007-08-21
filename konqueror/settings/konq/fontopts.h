@@ -31,8 +31,8 @@
 // Port to KControl 2 by MHK
 // konqy adaptations by David
 
-#ifndef __KONQFONT_OPTIONS_H__
-#define __KONQFONT_OPTIONS_H__
+#ifndef FONTOPTS_H
+#define FONTOPTS_H
 
 #include <QtCore/QStringList>
 #include <QtGui/QSpinBox>
@@ -111,4 +111,4 @@ private:
   QCheckBox* m_pSizeInBytes;
 };
 
-#endif
+#endif // FONTOPTS_H

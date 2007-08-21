@@ -189,15 +189,15 @@ QString KonqAboutPageFactory::intro()
                       "such as the powerful sidebar and file previews."
 		      ) )
           .arg( i18n( "Konqueror is also a full featured and easy to use web browser which you "
-                      "can  use to explore the Internet. "
-                      "Enter the address (e.g. <a href=\"http://www.kde.org\">http://www.kde.org</A>) "
+                      "can use to explore the Internet. "
+                      "Enter the address (e.g. <a href=\"http://www.kde.org\">http://www.kde.org</a>) "
                       "of a web page you would like to visit in the location bar and press Enter, "
                       "or choose an entry from the Bookmarks menu.") )
           .arg( i18n( "To return to the previous "
-		      "location, press the back button  <img width='16' height='16' src=\"%1\"> "
+		      "location, press the back button <img width='16' height='16' src=\"%1\"></img> "
                       "in the toolbar. ",  back_icon_path ) )
           .arg( i18n( "To quickly go to your Home folder press the "
-                      " home button <img width='16' height='16' src=\"%1\">." , gohome_icon_path) )
+                      " home button <img width='16' height='16' src=\"%1\"></img>." , gohome_icon_path) )
           .arg( i18n( "For more detailed documentation on Konqueror click <a href=\"%1\">here</a>." ,
                       QString("exec:/khelpcenter")) )
           .arg( i18n( "<em>Tuning Tip:</em> If you want the Konqueror web browser to start faster,"
@@ -342,11 +342,11 @@ QString KonqAboutPageFactory::tips()
 		      "Web-Shortcuts predefined to make searching for software or looking "
 		      "up certain words in an encyclopedia a breeze. You can even "
                       "<a href=\"%1\">create your own</a> Web-Shortcuts." , QString("exec:/kcmshell ebrowsing")) )
-	  .arg( i18n( "Use the magnifier button <img width='16' height='16' src=\"%1\"> in the"
+	  .arg( i18n( "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in the"
 		      " toolbar to increase the font size on your web page.", viewmag_icon_path) )
 	  .arg( i18n( "When you want to paste a new address into the Location toolbar you might want to "
 		      "clear the current entry by pressing the black arrow with the white cross "
-		      "<img width='16' height='16' src=\"%1\"> in the toolbar.",
+		      "<img width='16' height='16' src=\"%1\"></img> in the toolbar.",
                QApplication::isRightToLeft() ? locationbar_erase_rtl_icon_path : locationbar_erase_icon_path))
 	  .arg( i18n( "To create a link on your desktop pointing to the current page, "
 		      "simply drag the \"Location\" label that is to the left of the Location toolbar, drop it on to "
@@ -362,16 +362,16 @@ QString KonqAboutPageFactory::tips()
 	  .arg( i18n( "Use the <a href=\"%1\">user-agent</a> feature if the website you are visiting "
                       "asks you to use a different browser "
 		      "(and do not forget to send a complaint to the webmaster!)" , QString("exec:/kcmshell useragent")) )
-	  .arg( i18n( "The <img width='16' height='16' src=\"%1\"> History in your SideBar ensures "
+	  .arg( i18n( "The <img width='16' height='16' src=\"%1\"></img> History in your SideBar ensures "
 		      "that you can keep track of the pages you have visited recently.", history_icon_path) )
 	  .arg( i18n( "Use a caching <a href=\"%1\">proxy</a> to speed up your"
 		      " Internet connection.", QString("exec:/kcmshell proxy")) )
 	  .arg( i18n( "Advanced users will appreciate the Konsole which you can embed into "
-		      "Konqueror (Window -> <img width='16' height='16' SRC=\"%1\"> Show "
+		      "Konqueror (Window -> <img width='16' height='16' SRC=\"%1\"></img> Show "
  		      "Terminal Emulator).", openterm_icon_path))
 	  .arg( i18n( "Thanks to <a href=\"%1\">DCOP</a> you can have full control over Konqueror using a script."
 , QString("exec:/kdcop")) )
-	  .arg( i18n( "<img width='16' height='16' src=\"%1\">" ,  continue_icon_path ) )
+	  .arg( i18n( "<img width='16' height='16' src=\"%1\"></img>" ,  continue_icon_path ) )
 	  .arg( i18n( "Next: Specifications" ) )
           ;
 

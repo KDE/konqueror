@@ -718,7 +718,7 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
   QString originalURL = url.pathOrUrl();
   if ( !req.nameFilter.isEmpty() ) // keep filter in location bar
   {
-    if (!originalURL.endsWith("/"))
+    if (!originalURL.endsWith("/"))	//krazy:exclude=doublequote_chars
         originalURL += '/';
     originalURL += req.nameFilter;
   }
@@ -3241,7 +3241,7 @@ void KonqMainWindow::slotMakeCompletion( const QString& text )
 
 void KonqMainWindow::slotSubstringcompletion( const QString& text )
 {
-    bool filesFirst = currentURL().startsWith( "/" ) ||
+    bool filesFirst = currentURL().startsWith( "/" ) ||	//krazy:exclude=doublequote_chars
                       currentURL().startsWith( "file:/" );
     QStringList items;
     if ( filesFirst && m_pURLCompletion )
@@ -4002,7 +4002,7 @@ void KonqMainWindow::initActions()
   comboAction->setDefaultWidget(m_combo);
   comboAction->setShortcutConfigurable( false );
 
-  m_combo->setWhatsThis( i18n( "Location Bar<p>"
+  m_combo->setWhatsThis( i18n( "Location Bar<br /><br />"
 				  "Enter a web address or search term." ) );
 
   QAction *clearLocation = actionCollection()->addAction("clear_location");
@@ -4011,7 +4011,7 @@ void KonqMainWindow::initActions()
   clearLocation->setShortcut(Qt::CTRL+Qt::Key_L);
   connect( clearLocation, SIGNAL( triggered(bool) ),
            SLOT( slotClearLocationBar() ) );
-  clearLocation->setWhatsThis( i18n( "Clear Location bar<p>"
+  clearLocation->setWhatsThis( i18n( "Clear Location bar<br /><br />"
                                      "Clears the content of the location bar." ) );
 
   // Bookmarks menu
@@ -4040,64 +4040,64 @@ void KonqMainWindow::initActions()
   goUrl->setIcon( KIcon("browser-go") );
   goUrl->setText( i18n( "Go" ) );
   connect(goUrl, SIGNAL(triggered(bool)), SLOT( goURL() ));
-  goUrl->setWhatsThis( i18n( "Go<p>"
+  goUrl->setWhatsThis( i18n( "Go<br /><br />"
 			     "Goes to the page that has been entered into the location bar." ) );
 
   enableAllActions( false );
 
   // help stuff
-  m_paUp->setWhatsThis( i18n( "Enter the parent folder<p>"
+  m_paUp->setWhatsThis( i18n( "Enter the parent folder<br /><br />"
                               "For instance, if the current location is file:/home/%1 clicking this "
                               "button will take you to file:/home." ,  KUser().loginName() ) );
   m_paUp->setToolTip( i18n( "Enter the parent folder" ) );
 
-  m_paBack->setWhatsThis( i18n( "Move backwards one step in the browsing history<p>" ) );
+  m_paBack->setWhatsThis( i18n( "Move backwards one step in the browsing history<br /><br />" ) );
   m_paBack->setToolTip( i18n( "Move backwards one step in the browsing history" ) );
 
-  m_paForward->setWhatsThis( i18n( "Move forward one step in the browsing history<p>" ) );
+  m_paForward->setWhatsThis( i18n( "Move forward one step in the browsing history<br /><br />" ) );
   m_paForward->setToolTip( i18n( "Move forward one step in the browsing history" ) );
 
-  m_paHome->setWhatsThis( i18n( "Navigate to your 'Home Location'<p>"
+  m_paHome->setWhatsThis( i18n( "Navigate to your 'Home Location'<br /><br />"
                                 "You can configure the location this button takes you to in the "
                                 "<b>KDE Control Center</b>, under <b>File Manager</b>/<b>Behavior</b>." ) );
   m_paHome->setToolTip( i18n( "Navigate to your 'Home Location'" ) );
 
-  m_paReload->setWhatsThis( i18n( "Reload the currently displayed document<p>"
+  m_paReload->setWhatsThis( i18n( "Reload the currently displayed document<br /><br />"
                                   "This may, for example, be needed to refresh webpages that have been "
                                   "modified since they were loaded, in order to make the changes visible." ) );
   m_paReload->setToolTip( i18n( "Reload the currently displayed document" ) );
 
-  m_paReloadAllTabs->setWhatsThis( i18n( "Reload all currently displayed documents in tabs<p>"
+  m_paReloadAllTabs->setWhatsThis( i18n( "Reload all currently displayed documents in tabs<br /><br />"
                                   "This may, for example, be needed to refresh webpages that have been "
                                   "modified since they were loaded, in order to make the changes visible." ) );
   m_paReloadAllTabs->setToolTip( i18n( "Reload all currently displayed document in tabs" ) );
 
-  m_paStop->setWhatsThis( i18n( "Stop loading the document<p>"
+  m_paStop->setWhatsThis( i18n( "Stop loading the document<br /><br />"
                                 "All network transfers will be stopped and Konqueror will display the content "
                                 "that has been received so far." ) );
   m_paStop->setToolTip( i18n( "Stop loading the document" ) );
 
   m_paCut->setWhatsThis( i18n( "Cut the currently selected text or item(s) and move it "
-                               "to the system clipboard<p> "
+                               "to the system clipboard<br /><br />"
                                "This makes it available to the <b>Paste</b> command in Konqueror "
                                "and other KDE applications." ) );
   m_paCut->setToolTip( i18n( "Move the selected text or item(s) to the clipboard" ) );
 
   m_paCopy->setWhatsThis( i18n( "Copy the currently selected text or item(s) to the "
-                                "system clipboard<p>"
+                                "system clipboard<br /><br />"
                                 "This makes it available to the <b>Paste</b> command in Konqueror "
                                 "and other KDE applications." ) );
   m_paCopy->setToolTip( i18n( "Copy the selected text or item(s) to the clipboard" ) );
 
   m_paPaste->setWhatsThis( i18n( "Paste the previously cut or copied clipboard "
-                                 "contents<p>"
+                                 "contents<br /><br />"
                                  "This also works for text copied or cut from other KDE applications." ) );
   m_paPaste->setToolTip( i18n( "Paste the clipboard contents" ) );
 
-  m_paPrint->setWhatsThis( i18n( "Print the currently displayed document<p>"
+  m_paPrint->setWhatsThis( i18n( "Print the currently displayed document<br /><br />"
                                  "You will be presented with a dialog where you can set various "
                                  "options, such as the number of copies to print and which printer "
-                                 "to use.<p>"
+                                 "to use.<br /><br />"
                                  "This dialog also provides access to special KDE printing "
                                  "services such as creating a PDF file from the current document." ) );
   m_paPrint->setToolTip( i18n( "Print the current document" ) );
@@ -4576,7 +4576,7 @@ QString KonqMainWindow::currentURL() const
         if ( dirPart ) {
             const QString nameFilter = dirPart->nameFilter();
             if ( !nameFilter.isEmpty() ) {
-                if (!url.endsWith("/"))
+                if (!url.endsWith("/"))	//krazy:exclude=doublequote_chars
                     url += '/';
                 url += nameFilter;
             }

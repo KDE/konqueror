@@ -23,6 +23,8 @@
 
 class KonqSoundPlayer : public QObject
 {
+	Q_OBJECT
+
 public:
 	virtual bool isMimeTypeKnown(const QString& mimeType) = 0;
 	virtual void setUrl(const KUrl &url) = 0;

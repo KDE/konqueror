@@ -87,11 +87,11 @@ KJavaScriptOptions::KJavaScriptOptions( KSharedConfig::Ptr config, const QString
                                      "button allows you to easily share your policies with other people by allowing "
                                      "you to save and retrieve them from a zipped file.") );
 
-  QString wtstr = i18n("This box contains the domains and hosts you have set "
+  QString wtstr = i18n("<p>This box contains the domains and hosts you have set "
                        "a specific JavaScript policy for. This policy will be used "
                        "instead of the default policy for enabling or disabling JavaScript on pages sent by these "
-                       "domains or hosts. <p>Select a policy and use the controls on "
-                       "the right to modify it.");
+                       "domains or hosts.</p><p>Select a policy and use the controls on "
+                       "the right to modify it.</p>");
   domainSpecific->listView()->setWhatsThis( wtstr );
 
   domainSpecific->importButton()->setWhatsThis( i18n("Click this button to choose the file that contains "

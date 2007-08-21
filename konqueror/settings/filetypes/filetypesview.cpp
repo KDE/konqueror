@@ -38,11 +38,11 @@ FileTypesView::FileTypesView(QWidget *parent, const QStringList &)
 {
   m_konqConfig = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
 
-  setQuickHelp( i18n("<h1>File Associations</h1>"
+  setQuickHelp( i18n("<p><h1>File Associations</h1>"
     " This module allows you to choose which applications are associated"
     " with a given type of file. File types are also referred to MIME types"
     " (MIME is an acronym which stands for \"Multipurpose Internet Mail"
-    " Extensions\".)<p> A file association consists of the following:"
+    " Extensions\".)</p><p> A file association consists of the following:"
     " <ul><li>Rules for determining the MIME-type of a file, for example"
     " the filename pattern *.kwd, which means 'all files with names that end"
     " in .kwd', is associated with the MIME type \"x-kword\";</li>"
@@ -56,7 +56,7 @@ FileTypesView::FileTypesView(QWidget *parent, const QStringList &)
     " list is ordered by priority.</li></ul>"
     " You may be surprised to find that some MIME types have no associated"
     " filename patterns; in these cases, Konqueror is able to determine the"
-    " MIME-type by directly examining the contents of the file."));
+    " MIME-type by directly examining the contents of the file.</p>"));
 
   KServiceTypeProfile::setConfigurationMode();
   setButtons(Help | Apply);

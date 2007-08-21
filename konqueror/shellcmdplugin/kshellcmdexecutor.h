@@ -17,8 +17,8 @@
     Boston, MA 02110-1301, USA.
 */
 
-#ifndef SHELLCOMMANDEXECUTOR_H
-#define SHELLCOMMANDEXECUTOR_H
+#ifndef KSHELLCMDEXECUTOR_H
+#define KSHELLCMDEXECUTOR_H
 
 
 #include <Qt3Support/Q3TextView>
@@ -47,4 +47,4 @@ class KShellCommandExecutor:public Q3TextView
       void writeDataToShell();
 };
 
-#endif
+#endif // KSHELLCMDEXECUTOR_H

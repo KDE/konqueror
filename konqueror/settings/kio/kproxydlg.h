@@ -19,10 +19,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef _KPROXYDIALOG_H
-#define _KPROXYDIALOG_H
-
-
+#ifndef KPROXYDLG_H
+#define KPROXYDLG_H
 
 #include <kcmodule.h>
 #include "ui_kproxydlg_ui.h"
@@ -88,4 +86,4 @@ private:
   bool mDefaultData;
 };
 
-#endif
+#endif // KPROXYDLG_H

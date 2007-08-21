@@ -142,7 +142,7 @@ int main(int argc, char ** argv)
 
   QString arg = args->arg(0);
 
-  bool createType = arg.startsWith( "*" );
+  bool createType = arg.startsWith( "*" );	//krazy:exclude=duoblequote_chars
 
   KMimeType::Ptr mime;
 

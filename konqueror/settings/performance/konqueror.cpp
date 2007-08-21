@@ -36,46 +36,46 @@ Konqueror::Konqueror( QWidget* parent_P )
         i18n( "Disables the minimization of memory usage and allows you "
               "to make each browsing activity independent from the others" ));
     rb_file_browsing_reuse->setWhatsThis(
-        i18n( "With this option activated, only one instance of Konqueror "
+        i18n( "<p>With this option activated, only one instance of Konqueror "
               "used for file browsing will exist in the memory of your computer "
               "at any moment, "
               "no matter how many file browsing windows you open, "
-              "thus reducing resource requirements."
+              "thus reducing resource requirements.</p>"
               "<p>Be aware that this also means that, if something goes wrong, "
-              "all your file browsing windows will be closed simultaneously" ));
+              "all your file browsing windows will be closed simultaneously</p>" ));
     rb_always_reuse->setWhatsThis(
-        i18n( "With this option activated, only one instance of Konqueror "
+        i18n( "<p>With this option activated, only one instance of Konqueror "
               "will exist in the memory of your computer at any moment, "
               "no matter how many browsing windows you open, "
-              "thus reducing resource requirements."
+              "thus reducing resource requirements.</p>"
               "<p>Be aware that this also means that, if something goes wrong, "
-              "all your browsing windows will be closed simultaneously." ));
+              "all your browsing windows will be closed simultaneously.</p>" ));
     connect( rb_never_reuse, SIGNAL( clicked()), SIGNAL( changed()));
     connect( rb_file_browsing_reuse, SIGNAL( clicked()), SIGNAL( changed()));
     connect( rb_always_reuse, SIGNAL( clicked()), SIGNAL( changed()));
     rb_file_browsing_reuse->setChecked( true );
 
     QString tmp =
-        i18n( "If non-zero, this option allows keeping Konqueror instances "
+        i18n( "<p>If non-zero, this option allows keeping Konqueror instances "
               "in memory after all their windows have been closed, up to the "
-              "number specified in this option."
+              "number specified in this option.</p>"
               "<p>When a new Konqueror instance is needed, one of these preloaded "
               "instances will be reused instead, improving responsiveness at "
-              "the expense of the memory required by the preloaded instances." );
+              "the expense of the memory required by the preloaded instances.</p>" );
     sb_preload_count->setWhatsThis( tmp );
     lb_preload_count->setWhatsThis( tmp );
     cb_preload_on_startup->setWhatsThis(
-        i18n( "If enabled, an instance of Konqueror will be preloaded after the ordinary KDE "
-              "startup sequence."
+        i18n( "<p>If enabled, an instance of Konqueror will be preloaded after the ordinary KDE "
+              "startup sequence.</p>"
               "<p>This will make the first Konqueror window open faster, but "
               "at the expense of longer KDE startup times (but you will be able to work "
-              "while it is loading, so you may not even notice that it is taking longer)." ));
+              "while it is loading, so you may not even notice that it is taking longer).</p>" ));
     cb_always_have_preloaded->setWhatsThis(
-        i18n( "If enabled, KDE will always try to have one preloaded Konqueror instance ready; "
+        i18n( "<p>If enabled, KDE will always try to have one preloaded Konqueror instance ready; "
               "preloading a new instance in the background whenever there is not one available, "
-              "so that windows will always open quickly."
+              "so that windows will always open quickly.</p>"
               "<p><b>Warning:</b> In some cases, it is actually possible that this will "
-              "reduce perceived performance." ));
+              "reduce perceived performance.</p>" ));
     connect( sb_preload_count, SIGNAL( valueChanged( int )), SLOT( preload_count_changed( int )));
     connect( sb_preload_count, SIGNAL( valueChanged( int )), SIGNAL( changed()));
     connect( cb_preload_on_startup, SIGNAL( clicked()), SIGNAL( changed()));

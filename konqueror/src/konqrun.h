@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef __kfm_run_h__
-#define __kfm_run_h__
+#ifndef KONQRUN_H
+#define KONQRUN_H
 
 #include <kparts/browserrun.h>
 #include <QtCore/QPointer>
@@ -70,4 +70,4 @@ protected:
   KUrl m_mailto;
 };
 
-#endif
+#endif // KONQRUN_H

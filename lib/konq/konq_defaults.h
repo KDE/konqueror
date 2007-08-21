@@ -22,6 +22,9 @@
 // This file is used by konqueror kdesktop, and kcmkonq,
 // to share the same defaults
 
+#ifndef KONQ_DEFAULTS_H
+#define KONQ_DEFAULTS_H
+
 // appearance tab
 #define DEFAULT_UNDERLINELINKS true
 #define DEFAULT_WORDWRAPTEXT true // kfm-like, sorry Reggie :-)
@@ -45,3 +48,5 @@
 // Confirmations for deletions
 #define DEFAULT_CONFIRMTRASH true
 #define DEFAULT_CONFIRMDELETE true
+
+#endif // KONQ_DEFAULTS_H

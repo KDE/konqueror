@@ -16,8 +16,8 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#ifndef __FAKE_UAS_PROVIDER_H___
-#define __FAKE_UAS_PROVIDER_H___
+#ifndef FAKEUAPROVIDER_H
+#define FAKEUAPROVIDER_H
 
 #include <kservice.h>
 
@@ -54,4 +54,5 @@ private:
   QStringList m_lstAlias;
   bool m_bIsDirty;
 };
-#endif
+
+#endif // FAKEUAPROVIDER_H

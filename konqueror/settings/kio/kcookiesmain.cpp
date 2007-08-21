@@ -89,20 +89,20 @@ void KCookiesMain::defaults()
 
 QString KCookiesMain::quickHelp() const
 {
-  return i18n("<h1>Cookies</h1> Cookies contain information that Konqueror"
+  return i18n("<p><h1>Cookies</h1> Cookies contain information that Konqueror"
     " (or other KDE applications using the HTTP protocol) stores on your"
     " computer, initiated by a remote Internet server. This means that"
     " a web server can store information about you and your browsing activities"
     " on your machine for later use. You might consider this an invasion of"
-    " privacy. <p> However, cookies are useful in certain situations. For example, they"
+    " privacy.</p><p> However, cookies are useful in certain situations. For example, they"
     " are often used by Internet shops, so you can 'put things into a shopping basket'."
-    " Some sites require you have a browser that supports cookies. <p>"
+    " Some sites require you have a browser that supports cookies.</p><p>"
     " Because most people want a compromise between privacy and the benefits cookies offer,"
     " KDE offers you the ability to customize the way it handles cookies. So you might want"
     " to set KDE's default policy to ask you whenever a server wants to set a cookie,"
     " allowing you to decide. For your favorite shopping web sites that you trust, you might"
     " want to set the policy to accept, then you can access the web sites without being prompted"
-    " every time KDE receives a cookie." );
+    " every time KDE receives a cookie.</p>" );
 }
 
 #include "kcookiesmain.moc"

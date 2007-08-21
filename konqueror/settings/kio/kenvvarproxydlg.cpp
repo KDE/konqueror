@@ -132,8 +132,8 @@ void KEnvVarProxyDlg::verifyPressed()
 
     QString details = i18n("<qt>Make sure you entered the actual environment "
                            "variable name rather than its value. For "
-                           "example, if the environment variable is <br><b>"
-                           "HTTP_PROXY=http://localhost:3128</b><br> you need "
+                           "example, if the environment variable is <br /><b>"
+                           "HTTP_PROXY=http://localhost:3128</b><br /> you need "
                            "to enter <b>HTTP_PROXY</b> here instead of the "
                            "actual value http://localhost:3128.</qt>");
 
@@ -294,8 +294,8 @@ void KEnvVarProxyDlg::accept()
 
     QString details = i18n("<qt>Make sure you entered the actual environment "
                            "variable name rather than its value. For "
-                           "example, if the environment variable is <br><b>"
-                           "HTTP_PROXY=http://localhost:3128</b><br> you need "
+                           "example, if the environment variable is <br /><b>"
+                           "HTTP_PROXY=http://localhost:3128</b><br /> you need "
                            "to enter <b>HTTP_PROXY</b> here instead of the "
                            "actual value http://localhost:3128.</qt>");
 

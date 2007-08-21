@@ -19,8 +19,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef KPROXY_DIALOG_BASE_H
-#define KPROXY_DIALOG_BASE_H
+#ifndef KPROXYDLGBASE_H
+#define KPROXYDLGBASE_H
 
 #include <QtCore/QMap>
 
@@ -65,4 +65,5 @@ protected:
   void setHighLight (QWidget* widget = 0, bool highlight = false);
   bool m_bHasValidData;
 };
-#endif
+
+#endif // KPROXYDLGBASE_H
