@@ -33,7 +33,6 @@
 #include <kprocess.h>
 #include <kshortcut.h>
 #include <kprotocolmanager.h>
-#include <kshell.h>
 #include <kio/job.h>
 #include <kio/deletejob.h>
 #include <kio/jobuidelegate.h>
@@ -51,7 +50,6 @@
 #include <kfileitem.h>
 #include <kdesktopfile.h>
 #include <kimageio.h>
-#include <kshell.h>
 
 //#include <konq_iconviewwidget.h>
 #include <QtDBus/QtDBus>

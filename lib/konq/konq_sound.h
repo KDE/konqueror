@@ -21,6 +21,8 @@
 
 #include <klibloader.h>
 
+class KUrl;
+
 class KonqSoundPlayer : public QObject
 {
 	Q_OBJECT
