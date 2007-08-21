@@ -25,8 +25,6 @@
 
 class KonqExtendedBookmarkOwner : public KonqBookmarkOwner
 {
-  Q_OBJECT
-
 public:
   KonqExtendedBookmarkOwner(KonqMainWindow *);
   virtual QString currentTitle() const;
