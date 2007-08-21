@@ -18,8 +18,8 @@
    the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
    Boston, MA 02110-1301, USA.
 */
-#ifndef KENVVAR_PROXY_DIALOG_H
-#define KENVVAR_PROXY_DIALOG_H
+#ifndef KENVVARPROXYDLG_H
+#define KENVVARPROXYDLG_H
 
 #include <QtCore/QMap>
 
@@ -67,4 +67,5 @@ private:
 
     QMap<QString, EnvVarPair> mEnvVarsMap;
 };
-#endif
+
+#endif // KENVVARPROXYDLG_H

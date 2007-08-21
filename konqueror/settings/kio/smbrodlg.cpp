@@ -176,7 +176,7 @@ void SMBRoOptions::changed()
 
 QString SMBRoOptions::quickHelp() const
 {
-   return i18n("<h1>Windows Shares</h1>Konqueror is able to access shared "
+   return i18n("<p><h1>Windows Shares</h1>Konqueror is able to access shared "
         "windows filesystems if properly configured. If there is a "
         "specific computer from which you want to browse, fill in "
         "the <em>Browse server</em> field. This is mandatory if you "
@@ -186,14 +186,14 @@ QString SMBRoOptions::quickHelp() const
         "from which the options are read, when using Samba. In any case, the "
         "broadcast address (interfaces in smb.conf) must be set up if it "
         "is guessed incorrectly or you have multiple cards. A WINS server "
-        "usually improves performance, and reduces the network load a lot.<p>"
+        "usually improves performance, and reduces the network load a lot.</p><p>"
         "The bindings are used to assign a default user for a given server, "
         "possibly with the corresponding password, or for accessing specific "
         "shares. If you choose to, new bindings will be created for logins and "
         "shares accessed during browsing. You can edit all of them from here. "
         "Passwords will be stored locally, and scrambled so as to render them "
         "unreadable to the human eye. For security reasons, you may not want to "
-        "do that, as entries with passwords are clearly indicated as such.<p>");
+        "do that, as entries with passwords are clearly indicated as such.</p>");
 }
 
 #include "smbrodlg.moc"

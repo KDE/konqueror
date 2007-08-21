@@ -386,11 +386,11 @@ void UserAgentDlg::selectionChanged ()
 
 QString UserAgentDlg::quickHelp() const
 {
-  return i18n( "<h1>Browser Identification</h1> "
+  return i18n( "<p><h1>Browser Identification</h1> "
                "The browser-identification module allows you to have full "
                "control over how Konqueror will identify itself to web "
-               "sites you browse."
-               "<P>This ability to fake identification is necessary because "
+               "sites you browse.</p>"
+               "<p>This ability to fake identification is necessary because "
                "some web sites do not display properly when they detect that "
                "they are not talking to current versions of either Netscape "
                "Navigator or Internet Explorer, even if the browser actually "
@@ -399,11 +399,11 @@ QString UserAgentDlg::quickHelp() const
                "For such sites, you can use this feature to try to browse "
                "them. Please understand that this might not always work, since "
                "such sites might be using non-standard web protocols and or "
-               "specifications."
-               "<P><u>NOTE:</u> To obtain specific help on a particular section "
+               "specifications.</p>"
+               "<p><u>NOTE:</u> To obtain specific help on a particular section "
                "of the dialog box, simply click on the quick help button on "
                "the window title bar, then click on the section "
-               "for which you are seeking help." );
+               "for which you are seeking help.</p>" );
 }
 
 #include "useragentdlg.moc"

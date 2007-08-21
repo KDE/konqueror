@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef konq_tree_h
-#define konq_tree_h
+#ifndef KONQ_SIDEBARTREE_H
+#define KONQ_SIDEBARTREE_H
 
 #include <k3listview.h>
 #include "konq_sidebartreetoplevelitem.h"
@@ -219,4 +219,4 @@ signals:
     void enableAction( const char * name, bool enabled );
 };
 
-#endif
+#endif // KONQ_SIDEBARTREE_H

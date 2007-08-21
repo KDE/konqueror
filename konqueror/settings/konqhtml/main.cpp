@@ -131,7 +131,7 @@ QString KJSParts::quickHelp() const
               "<h2>Java</h2>On this page, you can configure "
               "whether Java applets embedded in web pages should "
               "be allowed to be executed by Konqueror."
-              "<br><br><b>Note:</b> Active content is always a "
+              "<br /><br /><b>Note:</b> Active content is always a "
               "security risk, which is why Konqueror allows you to specify very "
               "fine-grained from which hosts you want to execute Java and/or "
               "JavaScript programs." );

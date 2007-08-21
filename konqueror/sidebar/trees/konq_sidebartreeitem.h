@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef konq_treeitem_h
-#define konq_treeitem_h
+#ifndef KONQ_SIDEBARTREEITEM_H
+#define KONQ_SIDEBARTREEITEM_H
 
 #include <QtGui/QListView>
 #include <QtCore/QStringList>
@@ -111,4 +111,4 @@ protected:
     bool m_bClickable:1;
 };
 
-#endif
+#endif // KONQ_SIDEBARTREEITEM_H

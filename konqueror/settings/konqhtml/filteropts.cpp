@@ -182,7 +182,7 @@ void KCMFilter::importFilters()
 
                 // Treat leading ! as filter comment, otherwise check expressions
                 // are valid.
-                if (!line.startsWith("!"))
+                if (!line.startsWith("!"))	//krazy:exclude=doublequote_chars
                 {
                     if (line.length()>2 && line[0]=='/' && line[line.length()-1] == '/')
                     {

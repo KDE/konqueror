@@ -19,8 +19,8 @@
     MA  02110-1301, USA.
 */
 
-#ifndef __konq_tabs_h__
-#define __konq_tabs_h__
+#ifndef KONQTABS_H
+#define KONQTABS_H
 
 #include "konqframecontainer.h"
 
@@ -129,4 +129,4 @@ private:
   int m_closeOtherTabsId;
 };
 
-#endif
+#endif // KONQTABS_H

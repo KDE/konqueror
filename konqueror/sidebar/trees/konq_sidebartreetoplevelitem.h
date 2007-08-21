@@ -16,8 +16,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef konq_treetoplevelitem_h
-#define konq_treetoplevelitem_h
+#ifndef KONQ_SIDEBARTREETOPLEVELITEM_H
+#define KONQ_SIDEBARTREETOPLEVELITEM_H
 
 #include "konq_sidebartreeitem.h"
 #include <konq_operations.h>
@@ -98,4 +98,4 @@ protected:
     bool m_bTopLevelGroup;
 };
 
-#endif
+#endif // KONQ_SIDEBARTREETOPLEVELITEM_H

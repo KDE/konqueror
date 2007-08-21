@@ -89,16 +89,16 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     dirBox->setInsertPolicy(QComboBox::AtTop);
 
     const QString nameWhatsThis
-      = i18n("<qt>Enter the filename you are looking for. <br>"
-	     "Alternatives may be separated by a semicolon \";\".<br>"
-	     "<br>"
+      = i18n("<qt>Enter the filename you are looking for. <br />"
+	     "Alternatives may be separated by a semicolon \";\".<br />"
+	     "<br />"
 	     "The filename may contain the following special characters:"
 	     "<ul>"
 	     "<li><b>?</b> matches any single character</li>"
 	     "<li><b>*</b> matches zero or more of any characters</li>"
 	     "<li><b>[...]</b> matches any of the characters in braces</li>"
 	     "</ul>"
-	     "<br>"
+	     "<br />"
 	     "Example searches:"
 	     "<ul>"
 	     "<li><b>*.kwd;*.txt</b> finds all files ending with .kwd or .txt</li>"
@@ -381,15 +381,15 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
 
     // Setup
     const QString whatsmetainfo
-      = i18n("<qt>Search within files' specific comments/metainfo<br>"
-	     "These are some examples:<br>"
+      = i18n("<qt>Search within files' specific comments/metainfo<br />"
+	     "These are some examples:<br />"
 	     "<ul>"
 	     "<li><b>Audio files (mp3...)</b> Search in id3 tag for a title, an album</li>"
 	     "<li><b>Images (png...)</b> Search images with a special resolution, comment...</li>"
 	     "</ul>"
 	     "</qt>");
     const QString whatsmetainfokey
-      = i18n("<qt>If specified, search only in this field<br>"
+      = i18n("<qt>If specified, search only in this field<br />"
 	     "<ul>"
 	     "<li><b>Audio files (mp3...)</b> This can be Title, Album...</li>"
 	     "<li><b>Images (png...)</b> Search only in Resolution, Bitdepth...</li>"

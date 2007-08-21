@@ -54,7 +54,7 @@ static QString titleOfURL( const QString& urlStr )
     KUrl url( urlStr );
     KonqHistoryList historylist = KonqHistoryManager::kself()->entries();
     KonqHistoryList::iterator historyentry = historylist.findEntry( url );
-    if ( historyentry == historylist.end() && !url.url().endsWith( "/" ) ) {
+    if ( historyentry == historylist.end() && !url.url().endsWith( "/" ) ) {	//krazy:exclude=doublequote_chars
         url.setPath( url.path()+'/' );
         historyentry = historylist.findEntry( url );
     }
@@ -197,14 +197,14 @@ void KonqCombo::removeDuplicates( int index )
     //kDebug(1202) << "KonqCombo::removeDuplicates: Starting index =  " << index;
 
     QString url (temporaryItem());
-    if (url.endsWith("/"))
+    if (url.endsWith("/"))	//krazy:exclude=doublequote_chars
       url.truncate(url.length()-1);
 
     // Remove all dupes, if available...
     for ( int i = index; i < count(); i++ )
     {
         QString item (itemText(i));
-        if (item.endsWith("/"))
+        if (item.endsWith("/"))	//krazy:exclude=doublequote_chars
           item.truncate(item.length()-1);
 
         if ( item == url )

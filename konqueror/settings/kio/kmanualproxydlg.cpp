@@ -154,7 +154,7 @@ void KManualProxyDlg::setProxyData( const KProxyData &data )
         // Validate the NOPROXYFOR entries and use only hostnames if the entry is
         // a valid or legitimate URL. NOTE: needed to catch manual manipulation
         // of the proxy config files...
-        if( isValidURL( *it ) || ((*it).length() >= 3 && (*it).startsWith(".")) )
+        if( isValidURL( *it ) || ((*it).length() >= 3 && (*it).startsWith(".")) )	//krazy:exclude=duoblequote_chars
           mDlg->lbExceptions->addItem( *it );
       }
     }
@@ -443,11 +443,11 @@ void KManualProxyDlg::showErrorMsg( const QString& caption,
 
   QString details = i18n("<qt>Make sure none of the addresses or URLs you "
                           "specified contain invalid or wildcard characters "
-                          "such as spaces, asterisks (*), or question marks(?).<p>"
-                          "<u>Examples of VALID entries:</u><br/>"
+                          "such as spaces, asterisks (*), or question marks(?).<br /><br />"
+                          "<u>Examples of VALID entries:</u><br />"
                           "<code>http://mycompany.com, 192.168.10.1, "
                           "mycompany.com, localhost, http://localhost</code><p>"
-                          "<u>Examples of INVALID entries:</u><br/>"
+                          "<u>Examples of INVALID entries:</u><br />"
                           "<code>http://my company.com, http:/mycompany,com "
                           "file:/localhost</code></qt>");
 
@@ -468,7 +468,7 @@ bool KManualProxyDlg::getException ( QString& result,
       label = i18n("Enter the address or URL that should be excluded from "
                    "using the above proxy settings:");
 
-    QString whatsThis = i18n("<qt>Enter a valid address or url.<p>"
+    QString whatsThis = i18n("<qt>Enter a valid address or url.<br /><br />"
                             "<b><u>NOTE:</u></b> Wildcard matching such as "
                             "<code>*.kde.org</code> is not supported. If you want "
                             "to match any host in the <code>.kde.org</code> domain, "
@@ -485,7 +485,7 @@ bool KManualProxyDlg::getException ( QString& result,
 
     // If the typed URL is malformed, and the filters cannot filter it
     // then it must be an invalid entry,
-    if( isValidURL(result) || (result.length() >= 3 && result.startsWith(".")))
+    if( isValidURL(result) || (result.length() >= 3 && result.startsWith(".")))	//krazy:exclude=duoblequote_chars
       return true;
 
     showErrorMsg();

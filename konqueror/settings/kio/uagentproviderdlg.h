@@ -16,8 +16,8 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#ifndef __UAPROVIDERDLG_H___
-#define __UAPROVIDERDLG_H___
+#ifndef UAGENTPROVIDERDLG_H
+#define UAGENTPROVIDERDLG_H
 
 
 #include <kdialog.h>
@@ -73,4 +73,5 @@ private:
   FakeUASProvider* m_provider;
   UAProviderDlgUI* dlg;
 };
-#endif
+
+#endif // UAGENTPROVIDERDLG_H

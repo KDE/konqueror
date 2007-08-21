@@ -5,13 +5,12 @@
 // (c) Sven Radej 1998
 // (c) David Faure 1998
 
-#ifndef __KMISCHTML_OPTIONS_H
-#define __KMISCHTML_OPTIONS_H
+#ifndef HTMLOPTS_H
+#define HTMLOPTS_H
 
 #include <QtGui/QCheckBox>
 #include <QtGui/QLineEdit>
 #include <QtGui/QComboBox>
-
 
 //-----------------------------------------------------------------------------
 // The "Misc Options" Tab for the HTML view contains :
@@ -60,4 +59,4 @@ private:
     KIntNumInput* m_pMaxFormCompletionItems;
 };
 
-#endif
+#endif // HTMLOPTS_H

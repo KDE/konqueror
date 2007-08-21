@@ -19,8 +19,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef __konq_mainwindow_h__
-#define __konq_mainwindow_h__
+#ifndef KONQMAINWINDOW_H
+#define KONQMAINWINDOW_H
 
 #include "konqprivate_export.h"
 
@@ -750,5 +750,4 @@ public:
   static QFile *s_crashlog_file;
 };
 
-#endif
-
+#endif // KONQMAINWINDOW_H

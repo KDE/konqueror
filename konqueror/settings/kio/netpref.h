@@ -1,5 +1,5 @@
-#ifndef KIOPREFERENCES_H
-#define KIOPREFERENCES_H
+#ifndef NETPREF_H
+#define NETPREF_H
 
 #include <kcmodule.h>
 
@@ -37,4 +37,4 @@ private:
     KIntNumInput* sb_serverResponse;
 };
 
-#endif // KIOPREFERENCES_H
+#endif // NETPREF_H

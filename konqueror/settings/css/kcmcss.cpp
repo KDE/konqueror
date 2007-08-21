@@ -44,13 +44,12 @@ CSSConfig::CSSConfig(QWidget *parent, const QStringList &)
               " and font settings to Konqueror by using"
               " stylesheets (CSS). You can either specify"
               " options or apply your own self-written"
-              " stylesheet by pointing to its location.<br>"
+              " stylesheet by pointing to its location.<br />"
               " Note that these settings will always have"
               " precedence before all other settings made"
               " by the site author. This can be useful to"
               " visually impaired people or for web pages"
               " that are unreadable due to bad design."));
-
 
   QStringList fonts;
   KFontChooser::getFontList(fonts, 0);

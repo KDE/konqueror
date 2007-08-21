@@ -288,7 +288,7 @@ QString KSocksConfig::quickHelp() const
 {
   return i18n("<h1>SOCKS</h1><p>This module allows you to configure KDE support"
      " for a SOCKS server or proxy.</p><p>SOCKS is a protocol to traverse firewalls"
-     " as described in <a href=\"http://rfc.net/rfc1928.html\">RFC 1928</a>."
+     " as described in <a href=\"http://rfc.net/rfc1928.html\">RFC 1928</a>.</p>"
      " <p>If you have no idea what this is and if your system administrator does not"
      " tell you to use it, leave it disabled.</p>");
 }

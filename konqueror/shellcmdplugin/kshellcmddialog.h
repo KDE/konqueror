@@ -17,13 +17,12 @@
     Boston, MA 02110-1301, USA.
 */
 
-#ifndef SHELLCOMMANDDIALOG_H
-#define SHELLCOMMANDDIALOG_H
-
-
+#ifndef KSHELLCMDDIALOG_H
+#define KSHELLCMDDIALOG_H
 
 #include <kpushbutton.h>
 #include <kdialog.h>
+
 class KShellCommandExecutor;
 
 class KShellCommandDialog:public KDialog
@@ -44,4 +43,4 @@ class KShellCommandDialog:public KDialog
       void slotClose();
 };
 
-#endif
+#endif // KSHELLCMDDIALOG_H

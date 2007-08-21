@@ -164,7 +164,7 @@ KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QStringList &)
                           " <ul><li><em>Move To Trash:</em> moves the file to your trash folder,"
                           " from where it can be recovered very easily.</li>"
                           " <li><em>Delete:</em> simply deletes the file.</li>"
-                          " </li></ul>"));
+                          " </ul>"));
 
     cbMoveToTrash = new QCheckBox(i18n("&Move to trash"), bg);
     connect(cbMoveToTrash, SIGNAL(clicked()), this, SLOT(changed()));

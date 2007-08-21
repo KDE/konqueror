@@ -6,12 +6,11 @@
 // (c) David Faure 1998
 // (c) Nick Shaforostoff 2007
 
-#ifndef __KONQGENERAL_OPTIONS_H
-#define __KONQGENERAL_OPTIONS_H
+#ifndef GENERALOPTS_H
+#define GENERALOPTS_H
 
 #include <QtGui/QCheckBox>
 #include <QtGui/QComboBox>
-
 
 #include <kcmodule.h>
 #include <ksharedconfig.h>
@@ -38,4 +37,4 @@ private:
     Ui_advancedTabOptions* tabOptions;
 };
 
-#endif
+#endif // GENERALOPTS_H

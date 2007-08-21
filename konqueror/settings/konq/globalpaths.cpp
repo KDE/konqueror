@@ -196,7 +196,7 @@ void DesktopPathConfig::save()
         // !!!
         kDebug() << "desktopURL=" << desktopURL;
         QString urlDesktop = urDesktop->url().path();
-        if ( !urlDesktop.endsWith( "/" ))
+        if ( !urlDesktop.endsWith( "/" ))	//krazy:exclude=doublequote_chars
             urlDesktop+='/';
 
         if ( desktopURL.isParentOf( autostartURL ) )

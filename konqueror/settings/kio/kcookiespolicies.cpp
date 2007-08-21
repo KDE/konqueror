@@ -453,12 +453,12 @@ void KCookiesPolicies::splitDomainAdvice (const QString& cfg, QString &domain,
 
 QString KCookiesPolicies::quickHelp() const
 {
-  return i18n("<h1>Cookies</h1> Cookies contain information that Konqueror"
+  return i18n("<p><h1>Cookies</h1> Cookies contain information that Konqueror"
               " (or any other KDE application using the HTTP protocol) stores"
               " on your computer from a remote Internet server. This means"
               " that a web server can store information about you and your"
               " browsing activities on your machine for later use. You might"
-              " consider this an invasion of privacy.<p>However, cookies are"
+              " consider this an invasion of privacy.</p><p>However, cookies are"
               " useful in certain situations. For example, they are often used"
               " by Internet shops, so you can 'put things into a shopping"
               " basket'. Some sites require you have a browser that supports"
@@ -474,7 +474,7 @@ QString KCookiesPolicies::quickHelp() const
               " the 'apply to' tab and choose accept or simply specify the name"
               " of the site in the <i> Domain Specific Policy </i> tab and set"
               " it to accept. This enables you to receive cookies from trusted"
-              " web sites without being asked every time KDE receives a cookie."
+              " web sites without being asked every time KDE receives a cookie.</p>"
              );
 }
 
