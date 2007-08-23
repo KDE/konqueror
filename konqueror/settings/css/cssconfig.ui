@@ -1,208 +1,239 @@
-<ui version="4.0" stdsetdef="1" >
-  <author></author>
-  <comment></comment>
-  <exportmacro></exportmacro>
-  <class>CSSConfigDialog</class>
-  <widget class="QWidget" name="CSSConfigDialog" >
-    <property name="geometry" >
-      <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>487</width>
-        <height>195</height>
-      </rect>
-    </property>
-    <property name="whatsThis" stdset="0" >
-      <string>&lt;b>Stylesheets&lt;/b>&lt;p>See http://www.w3.org/Style/CSS for further information on cascading style sheets.&lt;/p></string>
-    </property>
-    <layout class="QVBoxLayout" >
-      <property name="spacing" >
-        <number>0</number>
-      </property>
+<ui version="4.0" >
+ <class>CSSConfigDialog</class>
+ <widget class="QWidget" name="CSSConfigDialog" >
+  <property name="whatsThis" >
+   <string>&lt;b>Stylesheets&lt;/b>&lt;p>See http://www.w3.org/Style/CSS for further information on cascading style sheets.&lt;/p></string>
+  </property>
+  <layout class="QVBoxLayout" >
+   <item>
+    <widget class="Q3ButtonGroup" name="ButtonGroup1" >
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Preferred" hsizetype="MinimumExpanding" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="whatsThis" >
+      <string>&lt;b>Stylesheets&lt;/b>&lt;p>Use this groupbox to determine how Konqueror will render style sheets.&lt;/p></string>
+     </property>
+     <property name="title" >
+      <string>Stylesheets</string>
+     </property>
+     <property name="exclusive" >
+      <bool>true</bool>
+     </property>
+     <layout class="QVBoxLayout" >
       <item>
-        <widget class="Q3ButtonGroup" name="ButtonGroup1" >
-          <property name="sizePolicy" >
-            <sizepolicy>
-              <hsizetype>3</hsizetype>
-              <vsizetype>5</vsizetype>
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-            </sizepolicy>
-          </property>
-          <property name="title" >
-            <string>Stylesheets</string>
-          </property>
-          <property name="exclusive" >
-            <bool>true</bool>
-          </property>
-          <property name="whatsThis" stdset="0" >
-            <string>&lt;b>Stylesheets&lt;/b>&lt;p>Use this groupbox to determine how Konqueror will render style sheets.&lt;/p></string>
-          </property>
-          <layout class="QVBoxLayout" >
-            <property name="spacing" >
-              <number>6</number>
-            </property>
-            <item>
-              <widget class="QRadioButton" name="useDefault" >
-                <property name="text" >
-                  <string>Us&amp;e default stylesheet</string>
-                </property>
-                <property name="checked" >
-                  <bool>true</bool>
-                </property>
-                <property name="whatsThis" stdset="0" >
-                  <string>&lt;b>Use default stylesheet&lt;/b>&lt;p>Select this option to use the default stylesheet.&lt;/p></string>
-                </property>
-              </widget>
-            </item>
-            <item>
-              <widget class="QRadioButton" name="useUser" >
-                <property name="text" >
-                  <string>Use &amp;user-defined stylesheet</string>
-                </property>
-                <property name="whatsThis" stdset="0" >
-                  <string>&lt;b>Use user-defined stylesheet&lt;/b>&lt;p>If this box is checked, Konqueror will try to load a user-defined style sheet as specified in the location below. The style sheet allows you to completely override the way web pages are rendered in your browser. The file specified should contain a valid style sheet (see http://www.w3.org/Style/CSS for further information on cascading style sheets).&lt;/p></string>
-                </property>
-              </widget>
-            </item>
-            <item>
-              <layout class="QHBoxLayout" >
-                <property name="margin" >
-                  <number>0</number>
-                </property>
-                <item>
-                  <spacer name="spacer9_2" >
-                    <property name="sizeHint" >
-                      <size>
-                        <width>16</width>
-                        <height>20</height>
-                      </size>
-                    </property>
-                    <property name="sizeType" >
-                      <enum>Fixed</enum>
-                    </property>
-                    <property name="orientation" >
-                      <enum>Qt::Horizontal</enum>
-                    </property>
-                  </spacer>
-                </item>
-                <item>
-                  <widget class="KUrlRequester" name="urlRequester" >
-                    <property name="enabled" >
-                      <bool>false</bool>
-                    </property>
-                  </widget>
-                </item>
-              </layout>
-            </item>
-            <item>
-              <widget class="QRadioButton" name="useAccess" >
-                <property name="sizePolicy" >
-                  <sizepolicy>
-                    <hsizetype>3</hsizetype>
-                    <vsizetype>0</vsizetype>
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                  </sizepolicy>
-                </property>
-                <property name="text" >
-                  <string>U&amp;se accessibility stylesheet</string>
-                </property>
-                <property name="whatsThis" stdset="0" >
-                  <string>&lt;b>Use accessibility stylesheet&lt;/b>&lt;p>Selecting this option will allow you to define a default font, font size, and font color with a few simple clicks of the mouse. Simply wander over to the Customize... dialog and pick out your desired options.&lt;/p></string>
-                </property>
-              </widget>
-            </item>
-            <item>
-              <layout class="QHBoxLayout" >
-                <property name="margin" >
-                  <number>0</number>
-                </property>
-                <item>
-                  <spacer name="spacer9" >
-                    <property name="sizeHint" >
-                      <size>
-                        <width>16</width>
-                        <height>20</height>
-                      </size>
-                    </property>
-                    <property name="sizeType" >
-                      <enum>Fixed</enum>
-                    </property>
-                    <property name="orientation" >
-                      <enum>Qt::Horizontal</enum>
-                    </property>
-                  </spacer>
-                </item>
-                <item>
-                  <widget class="QPushButton" name="customize" >
-                    <property name="enabled" >
-                      <bool>false</bool>
-                    </property>
-                    <property name="text" >
-                      <string>Custom&amp;ize...</string>
-                    </property>
-                  </widget>
-                </item>
-                <item>
-                  <spacer name="spacer3" >
-                    <property name="sizeHint" >
-                      <size>
-                        <width>451</width>
-                        <height>20</height>
-                      </size>
-                    </property>
-                    <property name="sizeType" >
-                      <enum>Expanding</enum>
-                    </property>
-                    <property name="orientation" >
-                      <enum>Qt::Horizontal</enum>
-                    </property>
-                  </spacer>
-                </item>
-              </layout>
-            </item>
-          </layout>
-        </widget>
+       <widget class="QRadioButton" name="useDefault" >
+        <property name="whatsThis" >
+         <string>&lt;b>Use default stylesheet&lt;/b>&lt;p>Select this option to use the default stylesheet.&lt;/p></string>
+        </property>
+        <property name="text" >
+         <string>Us&amp;e default stylesheet</string>
+        </property>
+        <property name="checked" >
+         <bool>true</bool>
+        </property>
+       </widget>
       </item>
       <item>
-        <spacer name="spacer11" >
-          <property name="sizeHint" >
-            <size>
-              <width>20</width>
-              <height>50</height>
-            </size>
+       <widget class="QRadioButton" name="useUser" >
+        <property name="whatsThis" >
+         <string>&lt;b>Use user-defined stylesheet&lt;/b>&lt;p>If this box is checked, Konqueror will try to load a user-defined style sheet as specified in the location below. The style sheet allows you to completely override the way web pages are rendered in your browser. The file specified should contain a valid style sheet (see http://www.w3.org/Style/CSS for further information on cascading style sheets).&lt;/p></string>
+        </property>
+        <property name="text" >
+         <string>Use &amp;user-defined stylesheet</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" >
+        <property name="leftMargin" >
+         <number>0</number>
+        </property>
+        <property name="topMargin" >
+         <number>0</number>
+        </property>
+        <property name="rightMargin" >
+         <number>0</number>
+        </property>
+        <property name="bottomMargin" >
+         <number>0</number>
+        </property>
+        <item>
+         <spacer>
+          <property name="orientation" >
+           <enum>Qt::Horizontal</enum>
           </property>
           <property name="sizeType" >
-            <enum>Expanding</enum>
+           <enum>QSizePolicy::Fixed</enum>
           </property>
-          <property name="orientation" >
-            <enum>Qt::Vertical</enum>
+          <property name="sizeHint" >
+           <size>
+            <width>14</width>
+            <height>20</height>
+           </size>
           </property>
-        </spacer>
+         </spacer>
+        </item>
+        <item>
+         <widget class="KUrlRequester" name="urlRequester" >
+          <property name="enabled" >
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
-    </layout>
-  </widget>
-  <layoutdefault spacing="6" margin="11" />
-  <layoutfunction spacing="KDialog::spacingHint" margin="KDialog::marginHint" />
-  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
-  <includes>
-    <include location="local" >kurlrequester.h</include>
-    <include location="local" >klineedit.h</include>
-    <include location="local" >kpushbutton.h</include>
-  </includes>
-  <connections>
-    <connection>
-      <sender>useAccess</sender>
-      <signal>toggled(bool)</signal>
-      <receiver>customize</receiver>
-      <slot>setEnabled(bool)</slot>
-    </connection>
-    <connection>
-      <sender>useUser</sender>
-      <signal>toggled(bool)</signal>
-      <receiver>urlRequester</receiver>
-      <slot>setEnabled(bool)</slot>
-    </connection>
-  </connections>
+      <item>
+       <widget class="QRadioButton" name="useAccess" >
+        <property name="sizePolicy" >
+         <sizepolicy vsizetype="Fixed" hsizetype="MinimumExpanding" >
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="whatsThis" >
+         <string>&lt;b>Use accessibility stylesheet&lt;/b>&lt;p>Selecting this option will allow you to define a default font, font size, and font color with a few simple clicks of the mouse. Simply wander over to the Customize... dialog and pick out your desired options.&lt;/p></string>
+        </property>
+        <property name="text" >
+         <string>U&amp;se accessibility stylesheet</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" >
+        <property name="leftMargin" >
+         <number>0</number>
+        </property>
+        <property name="topMargin" >
+         <number>0</number>
+        </property>
+        <property name="rightMargin" >
+         <number>0</number>
+        </property>
+        <property name="bottomMargin" >
+         <number>0</number>
+        </property>
+        <item>
+         <spacer>
+          <property name="orientation" >
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType" >
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" >
+           <size>
+            <width>14</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="customize" >
+          <property name="enabled" >
+           <bool>false</bool>
+          </property>
+          <property name="text" >
+           <string>Custom&amp;ize...</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer>
+          <property name="orientation" >
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType" >
+           <enum>QSizePolicy::Expanding</enum>
+          </property>
+          <property name="sizeHint" >
+           <size>
+            <width>451</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType" >
+      <enum>QSizePolicy::Expanding</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>20</width>
+       <height>50</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+ <layoutfunction spacing="KDialog::spacingHint" margin="KDialog::marginHint" />
+ <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+ <customwidgets>
+  <customwidget>
+   <class>Q3ButtonGroup</class>
+   <extends>Q3GroupBox</extends>
+   <header>Qt3Support/Q3ButtonGroup</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>KUrlRequester</class>
+   <extends>QFrame</extends>
+   <header>kurlrequester.h</header>
+  </customwidget>
+ </customwidgets>
+ <includes>
+  <include location="local" >kurlrequester.h</include>
+  <include location="local" >klineedit.h</include>
+  <include location="local" >kpushbutton.h</include>
+ </includes>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>useAccess</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>customize</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>useUser</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>urlRequester</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

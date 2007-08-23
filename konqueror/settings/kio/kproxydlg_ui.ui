@@ -1,14 +1,6 @@
 <ui version="4.0" >
  <class>KProxyDialogUI</class>
  <widget class="QWidget" name="KProxyDialogUI" >
-  <property name="geometry" >
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>418</width>
-    <height>519</height>
-   </rect>
-  </property>
   <property name="whatsThis" >
    <string>&lt;qt>
 Setup proxy configuration.
@@ -19,17 +11,8 @@ If you are uncertain whether or not you need to use a proxy server to connect to
 &lt;/qt></string>
   </property>
   <layout class="QVBoxLayout" >
-   <property name="spacing" >
-    <number>0</number>
-   </property>
    <item>
     <widget class="Q3ButtonGroup" name="gbConfigure" >
-     <property name="title" >
-      <string/>
-     </property>
-     <property name="flat" >
-      <bool>true</bool>
-     </property>
      <property name="orientation" >
       <enum>Qt::Vertical</enum>
      </property>
@@ -37,11 +20,17 @@ If you are uncertain whether or not you need to use a proxy server to connect to
       <bool>true</bool>
      </property>
      <layout class="QVBoxLayout" >
-      <property name="margin" >
+      <property name="leftMargin" >
        <number>0</number>
       </property>
-      <property name="spacing" >
-       <number>6</number>
+      <property name="topMargin" >
+       <number>0</number>
+      </property>
+      <property name="rightMargin" >
+       <number>0</number>
+      </property>
+      <property name="bottomMargin" >
+       <number>0</number>
       </property>
       <item>
        <widget class="QRadioButton" name="rbNoProxy" >
@@ -88,11 +77,20 @@ Automatic detection is performed using the &lt;b>Web Proxy Auto-Discovery Protoc
       </item>
       <item>
        <layout class="QHBoxLayout" >
-        <property name="margin" >
-         <number>0</number>
-        </property>
         <property name="spacing" >
          <number>6</number>
+        </property>
+        <property name="leftMargin" >
+         <number>0</number>
+        </property>
+        <property name="topMargin" >
+         <number>0</number>
+        </property>
+        <property name="rightMargin" >
+         <number>0</number>
+        </property>
+        <property name="bottomMargin" >
+         <number>0</number>
         </property>
         <item>
          <spacer>
@@ -116,9 +114,7 @@ Automatic detection is performed using the &lt;b>Web Proxy Auto-Discovery Protoc
            <bool>false</bool>
           </property>
           <property name="sizePolicy" >
-           <sizepolicy>
-            <hsizetype>7</hsizetype>
-            <vsizetype>5</vsizetype>
+           <sizepolicy vsizetype="Preferred" hsizetype="Expanding" >
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -132,11 +128,20 @@ Automatic detection is performed using the &lt;b>Web Proxy Auto-Discovery Protoc
       </item>
       <item>
        <layout class="QHBoxLayout" >
-        <property name="margin" >
-         <number>0</number>
-        </property>
         <property name="spacing" >
          <number>6</number>
+        </property>
+        <property name="leftMargin" >
+         <number>0</number>
+        </property>
+        <property name="topMargin" >
+         <number>0</number>
+        </property>
+        <property name="rightMargin" >
+         <number>0</number>
+        </property>
+        <property name="bottomMargin" >
+         <number>0</number>
         </property>
         <item>
          <widget class="QRadioButton" name="rbEnvVar" >
@@ -144,9 +149,7 @@ Automatic detection is performed using the &lt;b>Web Proxy Auto-Discovery Protoc
            <bool>true</bool>
           </property>
           <property name="sizePolicy" >
-           <sizepolicy>
-            <hsizetype>3</hsizetype>
-            <vsizetype>0</vsizetype>
+           <sizepolicy vsizetype="Fixed" hsizetype="MinimumExpanding" >
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -179,11 +182,20 @@ Environment variables such as &lt;b>HTTP_PROXY&lt;/b> and &lt;b>NO_PROXY&lt;/b> 
       </item>
       <item>
        <layout class="QHBoxLayout" >
-        <property name="margin" >
-         <number>0</number>
-        </property>
         <property name="spacing" >
          <number>6</number>
+        </property>
+        <property name="leftMargin" >
+         <number>0</number>
+        </property>
+        <property name="topMargin" >
+         <number>0</number>
+        </property>
+        <property name="rightMargin" >
+         <number>0</number>
+        </property>
+        <property name="bottomMargin" >
+         <number>0</number>
         </property>
         <item>
          <widget class="QRadioButton" name="rbManual" >
@@ -191,9 +203,7 @@ Environment variables such as &lt;b>HTTP_PROXY&lt;/b> and &lt;b>NO_PROXY&lt;/b> 
            <bool>true</bool>
           </property>
           <property name="sizePolicy" >
-           <sizepolicy>
-            <hsizetype>3</hsizetype>
-            <vsizetype>0</vsizetype>
+           <sizepolicy vsizetype="Fixed" hsizetype="MinimumExpanding" >
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -236,9 +246,6 @@ Environment variables such as &lt;b>HTTP_PROXY&lt;/b> and &lt;b>NO_PROXY&lt;/b> 
       <enum>Qt::Vertical</enum>
      </property>
      <layout class="QVBoxLayout" >
-      <property name="spacing" >
-       <number>6</number>
-      </property>
       <item>
        <widget class="QRadioButton" name="rbPrompt" >
         <property name="whatsThis" >
@@ -267,10 +274,22 @@ Environment variables such as &lt;b>HTTP_PROXY&lt;/b> and &lt;b>NO_PROXY&lt;/b> 
       </item>
       <item>
        <layout class="QGridLayout" >
-        <property name="margin" >
+        <property name="leftMargin" >
          <number>0</number>
         </property>
-        <property name="spacing" >
+        <property name="topMargin" >
+         <number>0</number>
+        </property>
+        <property name="rightMargin" >
+         <number>0</number>
+        </property>
+        <property name="bottomMargin" >
+         <number>0</number>
+        </property>
+        <property name="horizontalSpacing" >
+         <number>6</number>
+        </property>
+        <property name="verticalSpacing" >
          <number>6</number>
         </property>
         <item rowspan="2" row="0" column="0" >
@@ -361,9 +380,6 @@ Environment variables such as &lt;b>HTTP_PROXY&lt;/b> and &lt;b>NO_PROXY&lt;/b> 
       <enum>Qt::Vertical</enum>
      </property>
      <layout class="QVBoxLayout" >
-      <property name="spacing" >
-       <number>0</number>
-      </property>
       <item>
        <widget class="QCheckBox" name="cbPersConn" >
         <property name="whatsThis" >
@@ -406,14 +422,14 @@ Although a persistent proxy connection is faster, note that it only works correc
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>KUrlRequester</class>
-   <extends>QFrame</extends>
-   <header>kurlrequester.h</header>
-  </customwidget>
-  <customwidget>
    <class>KLineEdit</class>
    <extends>QLineEdit</extends>
    <header>klineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KUrlRequester</class>
+   <extends>QFrame</extends>
+   <header>kurlrequester.h</header>
   </customwidget>
  </customwidgets>
  <includes>

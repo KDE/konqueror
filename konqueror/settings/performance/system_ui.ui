@@ -1,65 +1,53 @@
-<ui version="4.0" stdsetdef="1" >
-  <author></author>
-  <comment></comment>
-  <exportmacro></exportmacro>
-  <class>System_ui</class>
-  <widget class="QWidget" name="System_ui" >
-    <property name="geometry" >
-      <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>600</width>
-        <height>480</height>
-      </rect>
-    </property>
-    <layout class="QVBoxLayout" >
+<ui version="4.0" >
+ <class>System_ui</class>
+ <widget class="QWidget" name="System_ui" >
+  <layout class="QVBoxLayout" >
+   <item>
+    <widget class="QGroupBox" name="gb_" >
+     <property name="title" >
+      <string>System Configuration</string>
+     </property>
+     <layout class="QVBoxLayout" >
       <item>
-        <widget class="QGroupBox" name="gb_" >
-          <property name="title" >
-            <string>System Configuration</string>
-          </property>
-          <layout class="QVBoxLayout" >
-            <property name="margin" >
-              <number>0</number>
-            </property>
-            <item>
-              <widget class="QCheckBox" name="cb_disable_kbuildsycoca" >
-                <property name="text" >
-                  <string>Disable &amp;system configuration startup check</string>
-                </property>
-              </widget>
-            </item>
-            <item>
-              <widget class="QLabel" name="label_kbuildsycoca" >
-                <property name="text" >
-                  <string>This option may in rare cases lead to various problems. Consult the What's This (Shift+F1) help for details.</string>
-                </property>
-                <property name="wordWrap" >
-                  <bool>true</bool>
-                </property>
-              </widget>
-            </item>
-          </layout>
-        </widget>
+       <widget class="QCheckBox" name="cb_disable_kbuildsycoca" >
+        <property name="text" >
+         <string>Disable &amp;system configuration startup check</string>
+        </property>
+       </widget>
       </item>
       <item>
-        <spacer name="spacer1" >
-          <property name="sizeHint" >
-            <size>
-              <width>20</width>
-              <height>40</height>
-            </size>
-          </property>
-          <property name="sizeType" >
-            <enum>Expanding</enum>
-          </property>
-          <property name="orientation" >
-            <enum>Qt::Vertical</enum>
-          </property>
-        </spacer>
+       <widget class="QLabel" name="label_kbuildsycoca" >
+        <property name="text" >
+         <string>This option may in rare cases lead to various problems. Consult the What's This (Shift+F1) help for details.</string>
+        </property>
+        <property name="wordWrap" >
+         <bool>true</bool>
+        </property>
+       </widget>
       </item>
-    </layout>
-  </widget>
-  <layoutdefault spacing="6" margin="11" />
-  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType" >
+      <enum>QSizePolicy::Expanding</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+ <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+ <resources/>
+ <connections/>
 </ui>
