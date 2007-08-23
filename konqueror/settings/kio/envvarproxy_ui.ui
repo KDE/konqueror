@@ -1,174 +1,214 @@
-<ui version="4.0" stdsetdef="1" >
-  <author></author>
-  <comment></comment>
-  <exportmacro></exportmacro>
-  <class>EnvVarProxyDlgUI</class>
-  <widget class="QWidget" name="EnvVarProxyDlgUI" >
-    <property name="geometry" >
-      <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>438</width>
-        <height>133</height>
-      </rect>
-    </property>
-    <layout class="QGridLayout" >
-      <property name="margin" >
-        <number>0</number>
-      </property>
-      <item row="2" column="1" >
-        <widget class="KLineEdit" name="leFtp" >
-          <property name="whatsThis" stdset="0" >
-            <string>&lt;qt>
-Enter the name of the environment variable, e.g. &lt;b>FTP_PROXY&lt;/b>, used to store the address of the FTP proxy server.&lt;p>
-Alternatively, you can click on the &lt;b>"Auto Detect"&lt;/b> button to attempt an automatic discovery of this variable.
-&lt;/qt></string>
-          </property>
-        </widget>
-      </item>
-      <item row="0" column="1" >
-        <widget class="KLineEdit" name="leHttp" >
-          <property name="whatsThis" stdset="0" >
-            <string>&lt;qt>
-Enter the name of the environment variable, e.g. &lt;b>HTTP_PROXY&lt;/b>, used to store the address of the HTTP proxy server.&lt;p>
-Alternatively, you can click on the &lt;b>"Auto Detect"&lt;/b> button to attempt automatic discovery of this variable.
-&lt;/qt></string>
-          </property>
-        </widget>
-      </item>
-      <item row="2" column="0" >
-        <widget class="QLabel" name="lbFtp" >
-          <property name="text" >
-            <string>&amp;FTP:</string>
-          </property>
-          <property name="buddy" stdset="0" >
-            <cstring>leFtp</cstring>
-          </property>
-          <property name="whatsThis" stdset="0" >
-            <string>&lt;qt>
-Enter the name of the environment variable, e.g. &lt;b>FTP_PROXY&lt;/b>, used to store the address of the FTP proxy server.&lt;p>
-Alternatively, you can click on the &lt;b>"Auto Detect"&lt;/b> button to attempt an automatic discovery of this variable.
-&lt;/qt></string>
-          </property>
-          <property name="wordWrap" >
-            <bool>false</bool>
-          </property>
-        </widget>
-      </item>
-      <item row="1" column="0" >
-        <widget class="QLabel" name="lbHttps" >
-          <property name="text" >
-            <string>HTTP&amp;S:</string>
-          </property>
-          <property name="buddy" stdset="0" >
-            <cstring>leHttps</cstring>
-          </property>
-          <property name="whatsThis" stdset="0" >
-            <string>&lt;qt>
-Enter the name of the environment variable, e.g. &lt;b>HTTPS_PROXY&lt;/b>, used to store the address of the HTTPS proxy server.&lt;p>
-Alternatively, you can click on the &lt;b>"Auto Detect"&lt;/b> button to attempt an automatic discovery of this variable.
-&lt;/qt></string>
-          </property>
-          <property name="wordWrap" >
-            <bool>false</bool>
-          </property>
-        </widget>
-      </item>
-      <item row="4" column="1" >
-        <widget class="QCheckBox" name="cbShowValue" >
-          <property name="text" >
-            <string>Show the &amp;value of the environment variables</string>
-          </property>
-        </widget>
-      </item>
-      <item row="0" column="2" >
-        <widget class="QPushButton" name="pbVerify" >
-          <property name="text" >
-            <string>&amp;Verify</string>
-          </property>
-          <property name="whatsThis" stdset="0" >
-            <string>&lt;qt>Verify whether or not the environment variable names you supplied are valid. If an environment variable is not found, the associated labels will be &lt;b>highlighted&lt;/b> to indicate that they are invalid.&lt;/qt></string>
-          </property>
-        </widget>
-      </item>
-      <item row="1" column="2" >
-        <widget class="QPushButton" name="pbDetect" >
-          <property name="text" >
-            <string>Auto &amp;Detect</string>
-          </property>
-          <property name="whatsThis" stdset="0" >
-            <string>&lt;qt>Attempt automatic discovery of the environment variables used for setting system wide proxy information.&lt;p> This feature works by searching for commonly used variable names such as HTTP_PROXY, FTP_PROXY and NO_PROXY.&lt;/qt></string>
-          </property>
-        </widget>
-      </item>
-      <item row="0" column="0" >
+<ui version="4.0" >
+ <class>EnvVarProxyDlgUI</class>
+ <widget class="QWidget" name="EnvVarProxyDlgUI" >
+  <layout class="QVBoxLayout" >
+   <item>
+    <layout class="QHBoxLayout" >
+     <item>
+      <layout class="QGridLayout" >
+       <item row="0" column="0" >
         <widget class="QLabel" name="lbHttp" >
-          <property name="text" >
-            <string>H&amp;TTP:</string>
-          </property>
-          <property name="buddy" stdset="0" >
-            <cstring>leHttp</cstring>
-          </property>
-          <property name="whatsThis" stdset="0" >
-            <string>&lt;qt>
+         <property name="whatsThis" >
+          <string>&lt;qt>
 Enter the name of the environment variable, e.g. &lt;b>HTTP_PROXY&lt;/b>, used to store the address of the HTTP proxy server.&lt;p>
 Alternatively, you can click on the &lt;b>"Auto Detect"&lt;/b> button to attempt automatic discovery of this variable.
 &lt;/qt></string>
-          </property>
-          <property name="wordWrap" >
-            <bool>false</bool>
-          </property>
+         </property>
+         <property name="text" >
+          <string>H&amp;TTP:</string>
+         </property>
+         <property name="wordWrap" >
+          <bool>false</bool>
+         </property>
+         <property name="buddy" >
+          <cstring>leHttp</cstring>
+         </property>
         </widget>
-      </item>
-      <item row="1" column="1" >
-        <widget class="KLineEdit" name="leHttps" >
-          <property name="whatsThis" stdset="0" >
-            <string>&lt;qt>
+       </item>
+       <item row="0" column="1" >
+        <widget class="KLineEdit" name="leHttp" >
+         <property name="whatsThis" >
+          <string>&lt;qt>
+Enter the name of the environment variable, e.g. &lt;b>HTTP_PROXY&lt;/b>, used to store the address of the HTTP proxy server.&lt;p>
+Alternatively, you can click on the &lt;b>"Auto Detect"&lt;/b> button to attempt automatic discovery of this variable.
+&lt;/qt></string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" >
+        <widget class="QLabel" name="lbHttps" >
+         <property name="whatsThis" >
+          <string>&lt;qt>
 Enter the name of the environment variable, e.g. &lt;b>HTTPS_PROXY&lt;/b>, used to store the address of the HTTPS proxy server.&lt;p>
 Alternatively, you can click on the &lt;b>"Auto Detect"&lt;/b> button to attempt an automatic discovery of this variable.
 &lt;/qt></string>
-          </property>
+         </property>
+         <property name="text" >
+          <string>HTTP&amp;S:</string>
+         </property>
+         <property name="wordWrap" >
+          <bool>false</bool>
+         </property>
+         <property name="buddy" >
+          <cstring>leHttps</cstring>
+         </property>
         </widget>
-      </item>
-      <item row="3" column="1" >
-        <widget class="KLineEdit" name="leNoProxy" >
-          <property name="whatsThis" stdset="0" >
-            <string>&lt;qt>
-Enter the environment variable, e.g. &lt;b>NO_PROXY&lt;/b>, used to store the addresses of sites for which the proxy server should not be used.&lt;p>
+       </item>
+       <item row="1" column="1" >
+        <widget class="KLineEdit" name="leHttps" >
+         <property name="whatsThis" >
+          <string>&lt;qt>
+Enter the name of the environment variable, e.g. &lt;b>HTTPS_PROXY&lt;/b>, used to store the address of the HTTPS proxy server.&lt;p>
 Alternatively, you can click on the &lt;b>"Auto Detect"&lt;/b> button to attempt an automatic discovery of this variable.
 &lt;/qt></string>
-          </property>
+         </property>
         </widget>
-      </item>
-      <item row="3" column="0" >
+       </item>
+       <item row="2" column="0" >
+        <widget class="QLabel" name="lbFtp" >
+         <property name="whatsThis" >
+          <string>&lt;qt>
+Enter the name of the environment variable, e.g. &lt;b>FTP_PROXY&lt;/b>, used to store the address of the FTP proxy server.&lt;p>
+Alternatively, you can click on the &lt;b>"Auto Detect"&lt;/b> button to attempt an automatic discovery of this variable.
+&lt;/qt></string>
+         </property>
+         <property name="text" >
+          <string>&amp;FTP:</string>
+         </property>
+         <property name="wordWrap" >
+          <bool>false</bool>
+         </property>
+         <property name="buddy" >
+          <cstring>leFtp</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1" >
+        <widget class="KLineEdit" name="leFtp" >
+         <property name="whatsThis" >
+          <string>&lt;qt>
+Enter the name of the environment variable, e.g. &lt;b>FTP_PROXY&lt;/b>, used to store the address of the FTP proxy server.&lt;p>
+Alternatively, you can click on the &lt;b>"Auto Detect"&lt;/b> button to attempt an automatic discovery of this variable.
+&lt;/qt></string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" >
         <widget class="QLabel" name="lnNoProxy" >
-          <property name="text" >
-            <string>NO &amp;PROXY:</string>
-          </property>
-          <property name="buddy" stdset="0" >
-            <cstring>leNoProxy</cstring>
-          </property>
-          <property name="whatsThis" stdset="0" >
-            <string>&lt;qt>
+         <property name="whatsThis" >
+          <string>&lt;qt>
 Enter the environment variable, e.g. &lt;b>NO_PROXY&lt;/b>, used to store the addresses of sites for which the proxy server should not be used.&lt;p>
 Alternatively, you can click on the &lt;b>"Auto Detect"&lt;/b> button to attempt an automatic discovery of this variable.
 &lt;/qt></string>
-          </property>
-          <property name="wordWrap" >
-            <bool>false</bool>
-          </property>
+         </property>
+         <property name="text" >
+          <string>NO &amp;PROXY:</string>
+         </property>
+         <property name="wordWrap" >
+          <bool>false</bool>
+         </property>
+         <property name="buddy" >
+          <cstring>leNoProxy</cstring>
+         </property>
         </widget>
-      </item>
+       </item>
+       <item row="3" column="1" >
+        <widget class="KLineEdit" name="leNoProxy" >
+         <property name="whatsThis" >
+          <string>&lt;qt>
+Enter the environment variable, e.g. &lt;b>NO_PROXY&lt;/b>, used to store the addresses of sites for which the proxy server should not be used.&lt;p>
+Alternatively, you can click on the &lt;b>"Auto Detect"&lt;/b> button to attempt an automatic discovery of this variable.
+&lt;/qt></string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1" >
+        <widget class="QCheckBox" name="cbShowValue" >
+         <property name="text" >
+          <string>Show the &amp;value of the environment variables</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" >
+       <item>
+        <layout class="QVBoxLayout" >
+         <item>
+          <widget class="QPushButton" name="pbVerify" >
+           <property name="whatsThis" >
+            <string>&lt;qt>Verify whether or not the environment variable names you supplied are valid. If an environment variable is not found, the associated labels will be &lt;b>highlighted&lt;/b> to indicate that they are invalid.&lt;/qt></string>
+           </property>
+           <property name="text" >
+            <string>&amp;Verify</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pbDetect" >
+           <property name="whatsThis" >
+            <string>&lt;qt>Attempt automatic discovery of the environment variables used for setting system wide proxy information.&lt;p> This feature works by searching for commonly used variable names such as HTTP_PROXY, FTP_PROXY and NO_PROXY.&lt;/qt></string>
+           </property>
+           <property name="text" >
+            <string>Auto &amp;Detect</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>20</width>
+           <height>73</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
     </layout>
-  </widget>
-  <layoutdefault spacing="6" margin="11" />
-  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
-  <tabstops>
-    <tabstop>leHttp</tabstop>
-    <tabstop>leHttps</tabstop>
-    <tabstop>leFtp</tabstop>
-    <tabstop>leNoProxy</tabstop>
-    <tabstop>pbVerify</tabstop>
-    <tabstop>pbDetect</tabstop>
-  </tabstops>
+   </item>
+   <item>
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType" >
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>20</width>
+       <height>61</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+ <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+ <customwidgets>
+  <customwidget>
+   <class>KLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>klineedit.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>leHttp</tabstop>
+  <tabstop>leHttps</tabstop>
+  <tabstop>leFtp</tabstop>
+  <tabstop>leNoProxy</tabstop>
+  <tabstop>pbVerify</tabstop>
+  <tabstop>pbDetect</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
 </ui>

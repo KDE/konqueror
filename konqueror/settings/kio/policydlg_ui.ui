@@ -1,110 +1,116 @@
-<ui version="4.0" stdsetdef="1" >
-  <author></author>
-  <comment></comment>
-  <exportmacro></exportmacro>
-  <class>PolicyDlgUI</class>
-  <widget class="QWidget" name="PolicyDlgUI" >
-    <property name="geometry" >
-      <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>291</width>
-        <height>120</height>
-      </rect>
-    </property>
-    <layout class="QVBoxLayout" >
-      <property name="margin" >
-        <number>0</number>
+<ui version="4.0" >
+ <class>PolicyDlgUI</class>
+ <widget class="QWidget" name="PolicyDlgUI" >
+  <layout class="QVBoxLayout" >
+   <item>
+    <widget class="QLabel" name="lbDomain" >
+     <property name="whatsThis" >
+      <string>&lt;qt>
+Enter the host or domain to which this policy applies, e.g. &lt;b>www.kde.org&lt;/b> or &lt;b>.kde.org&lt;/b>.
+&lt;/qt></string>
+     </property>
+     <property name="text" >
+      <string>&amp;Domain name:</string>
+     </property>
+     <property name="wordWrap" >
+      <bool>false</bool>
+     </property>
+     <property name="buddy" >
+      <cstring>leDomain</cstring>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="KLineEdit" name="leDomain" >
+     <property name="whatsThis" >
+      <string>&lt;qt>
+Enter the host or domain to which this policy applies, e.g. &lt;b>www.kde.org&lt;/b> or &lt;b>.kde.org&lt;/b>.
+&lt;/qt></string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="lbPolicy" >
+     <property name="whatsThis" >
+      <string>&lt;qt>
+Select the desired policy:
+&lt;ul>
+&lt;li>&lt;b>Accept&lt;/b> - Allows this site to set cookies&lt;/li>
+&lt;li>&lt;b>Reject&lt;/b> - Refuse all cookies sent from this site&lt;/li>
+&lt;li>&lt;b>Ask&lt;/b> - Prompt when cookies are received from this site&lt;/li>
+&lt;/ul>
+&lt;/qt></string>
+     </property>
+     <property name="text" >
+      <string>&amp;Policy:</string>
+     </property>
+     <property name="wordWrap" >
+      <bool>false</bool>
+     </property>
+     <property name="buddy" >
+      <cstring>cbPolicy</cstring>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="KComboBox" name="cbPolicy" >
+     <property name="whatsThis" >
+      <string>&lt;qt>
+Select the desired policy:
+&lt;ul>
+&lt;li>&lt;b>Accept&lt;/b> - Allows this site to set cookies&lt;/li>
+&lt;li>&lt;b>Reject&lt;/b> - Refuse all cookies sent from this site&lt;/li>
+&lt;li>&lt;b>Ask&lt;/b> - Prompt when cookies are received from this site&lt;/li>
+&lt;/ul>
+&lt;/qt></string>
+     </property>
+     <item>
+      <property name="text" >
+       <string>Accept</string>
       </property>
-      <item>
-        <widget class="QLabel" name="lbDomain" >
-          <property name="text" >
-            <string>&amp;Domain name:</string>
-          </property>
-          <property name="buddy" stdset="0" >
-            <cstring>leDomain</cstring>
-          </property>
-          <property name="whatsThis" stdset="0" >
-            <string>&lt;qt>
-Enter the host or domain to which this policy applies, e.g. &lt;b>www.kde.org&lt;/b> or &lt;b>.kde.org&lt;/b>.
-&lt;/qt></string>
-          </property>
-          <property name="wordWrap" >
-            <bool>false</bool>
-          </property>
-        </widget>
-      </item>
-      <item>
-        <widget class="KLineEdit" name="leDomain" >
-          <property name="whatsThis" stdset="0" >
-            <string>&lt;qt>
-Enter the host or domain to which this policy applies, e.g. &lt;b>www.kde.org&lt;/b> or &lt;b>.kde.org&lt;/b>.
-&lt;/qt></string>
-          </property>
-        </widget>
-      </item>
-      <item>
-        <widget class="QLabel" name="lbPolicy" >
-          <property name="text" >
-            <string>&amp;Policy:</string>
-          </property>
-          <property name="buddy" stdset="0" >
-            <cstring>cbPolicy</cstring>
-          </property>
-          <property name="whatsThis" stdset="0" >
-            <string>&lt;qt>
-Select the desired policy:
-&lt;ul>
-&lt;li>&lt;b>Accept&lt;/b> - Allows this site to set cookies&lt;/li>
-&lt;li>&lt;b>Reject&lt;/b> - Refuse all cookies sent from this site&lt;/li>
-&lt;li>&lt;b>Ask&lt;/b> - Prompt when cookies are received from this site&lt;/li>
-&lt;/ul>
-&lt;/qt></string>
-          </property>
-          <property name="wordWrap" >
-            <bool>false</bool>
-          </property>
-        </widget>
-      </item>
-      <item>
-        <widget class="KComboBox" name="cbPolicy" >
-          <property name="whatsThis" stdset="0" >
-            <string>&lt;qt>
-Select the desired policy:
-&lt;ul>
-&lt;li>&lt;b>Accept&lt;/b> - Allows this site to set cookies&lt;/li>
-&lt;li>&lt;b>Reject&lt;/b> - Refuse all cookies sent from this site&lt;/li>
-&lt;li>&lt;b>Ask&lt;/b> - Prompt when cookies are received from this site&lt;/li>
-&lt;/ul>
-&lt;/qt></string>
-          </property>
-          <item>
-            <property name="text" >
-              <string>Accept</string>
-            </property>
-          </item>
-          <item>
-            <property name="text" >
-              <string>Reject</string>
-            </property>
-          </item>
-          <item>
-            <property name="text" >
-              <string>Ask</string>
-            </property>
-          </item>
-        </widget>
-      </item>
-    </layout>
-  </widget>
-  <layoutdefault spacing="6" margin="11" />
-  <layoutfunction spacing="KDialog::spacingHint" margin="KDialog::marginHint" />
-  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
-  <customwidgets>
-    <customwidget>
-      <class>KComboBox</class>
-      <extends>QComboBox</extends>
-      <header>kcombobox.h</header>
-    </customwidget>
-  </customwidgets>
+     </item>
+     <item>
+      <property name="text" >
+       <string>Reject</string>
+      </property>
+     </item>
+     <item>
+      <property name="text" >
+       <string>Ask</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item>
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+ <layoutfunction spacing="KDialog::spacingHint" margin="KDialog::marginHint" />
+ <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+ <customwidgets>
+  <customwidget>
+   <class>KComboBox</class>
+   <extends>QComboBox</extends>
+   <header>kcombobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>klineedit.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
 </ui>

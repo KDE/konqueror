@@ -6,76 +6,11 @@
     <x>0</x>
     <y>0</y>
     <width>424</width>
-    <height>172</height>
+    <height>279</height>
    </rect>
   </property>
-  <layout class="QGridLayout" >
-   <property name="spacing" >
-    <number>6</number>
-   </property>
-   <item row="2" column="0" >
-    <spacer>
-     <property name="orientation" >
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeType" >
-      <enum>QSizePolicy::Fixed</enum>
-     </property>
-     <property name="sizeHint" >
-      <size>
-       <width>16</width>
-       <height>21</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="2" column="1" >
-    <widget class="QLabel" name="lbMaxCacheSize" >
-     <property name="enabled" >
-      <bool>false</bool>
-     </property>
-     <property name="text" >
-      <string>Disk cache &amp;size:</string>
-     </property>
-     <property name="buddy" >
-      <cstring>sbMaxCacheSize</cstring>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="2" >
-    <widget class="KIntNumInput" name="sbMaxCacheSize" >
-     <property name="enabled" >
-      <bool>false</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="3" >
-    <widget class="QPushButton" name="pbClearCache" >
-     <property name="enabled" >
-      <bool>false</bool>
-     </property>
-     <property name="text" >
-      <string>C&amp;lear Cache</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="4" >
-    <spacer>
-     <property name="orientation" >
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeType" >
-      <enum>QSizePolicy::MinimumExpanding</enum>
-     </property>
-     <property name="sizeHint" >
-      <size>
-       <width>0</width>
-       <height>21</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="0" column="0" colspan="5" >
+  <layout class="QVBoxLayout" >
+   <item>
     <widget class="QCheckBox" name="cbUseCache" >
      <property name="whatsThis" >
       <string>Check this box if you want the web pages you visit to be stored on your hard disk for quicker access. The stored pages will only be updated as needed instead of on every visit to that site. This is especially useful if you have a slow connection to the Internet.</string>
@@ -85,7 +20,7 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="0" colspan="5" >
+   <item>
     <widget class="QGroupBox" name="bgCachePolicy" >
      <property name="enabled" >
       <bool>false</bool>
@@ -94,9 +29,6 @@
       <string>Policy</string>
      </property>
      <layout class="QVBoxLayout" >
-      <property name="spacing" >
-       <number>6</number>
-      </property>
       <item>
        <widget class="QRadioButton" name="rbVerifyCache" >
         <property name="whatsThis" >
@@ -129,6 +61,69 @@
       </item>
      </layout>
     </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" >
+     <item>
+      <widget class="QLabel" name="lbMaxCacheSize" >
+       <property name="enabled" >
+        <bool>false</bool>
+       </property>
+       <property name="text" >
+        <string>Disk cache &amp;size:</string>
+       </property>
+       <property name="buddy" >
+        <cstring>sbMaxCacheSize</cstring>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="KIntNumInput" name="sbMaxCacheSize" >
+       <property name="enabled" >
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pbClearCache" >
+       <property name="enabled" >
+        <bool>false</bool>
+       </property>
+       <property name="text" >
+        <string>C&amp;lear Cache</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer>
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType" >
+        <enum>QSizePolicy::MinimumExpanding</enum>
+       </property>
+       <property name="sizeHint" >
+        <size>
+         <width>0</width>
+         <height>21</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
    </item>
   </layout>
  </widget>

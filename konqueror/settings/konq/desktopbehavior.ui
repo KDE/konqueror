@@ -1,401 +1,378 @@
-<ui version="4.0" stdsetdef="1" >
-  <author></author>
-  <comment></comment>
-  <exportmacro></exportmacro>
-  <class>DesktopBehaviorBase</class>
-  <widget class="QWidget" name="DesktopBehaviorBase" >
-    <property name="geometry" >
-      <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>791</width>
-        <height>501</height>
-      </rect>
-    </property>
-    <layout class="QVBoxLayout" >
-      <property name="margin" >
-        <number>0</number>
-      </property>
-      <property name="spacing" >
-        <number>0</number>
-      </property>
-      <item>
-        <widget class="QTabWidget" name="behaviorTab" >
-          <widget class="QWidget" name="tab" >
-            <attribute name="title" >
-              <string>General</string>
-            </attribute>
-            <layout class="QGridLayout" >
-              <property name="margin" >
-                <number>0</number>
-              </property>
-              <item row="0" column="0" >
-                <widget class="QCheckBox" name="iconsEnabledBox" >
-                  <property name="sizePolicy" >
-                    <sizepolicy>
-                      <hsizetype>7</hsizetype>
-                      <vsizetype>0</vsizetype>
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                    </sizepolicy>
-                  </property>
-                  <property name="text" >
-                    <string>&amp;Show icons on desktop</string>
-                  </property>
-                  <property name="whatsThis" stdset="0" >
-                    <string>Uncheck this option if you do not want to have icons on the desktop. Without icons the desktop will be somewhat faster but you will no longer be able to drag files to the desktop.</string>
-                  </property>
-                </widget>
-              </item>
-              <item row="1" column="0" >
-                <layout class="QHBoxLayout" >
-                  <property name="margin" >
-                    <number>0</number>
-                  </property>
-                  <item>
-                    <spacer name="spacer3" >
-                      <property name="sizeHint" >
-                        <size>
-                          <width>20</width>
-                          <height>0</height>
-                        </size>
-                      </property>
-                      <property name="sizeType" >
-                        <enum>Fixed</enum>
-                      </property>
-                      <property name="orientation" >
-                        <enum>Qt::Horizontal</enum>
-                      </property>
-                    </spacer>
-                  </item>
-                  <item>
-                    <widget class="QCheckBox" name="vrootBox" >
-                      <property name="enabled" >
-                        <bool>false</bool>
-                      </property>
-                      <property name="text" >
-                        <string>Allow pro&amp;grams in desktop window</string>
-                      </property>
-                      <property name="whatsThis" stdset="0" >
-                        <string>Check this option if you want to run X11 programs that draw into the desktop such as xsnow, xpenguin or xmountain. If you have problems with applications like netscape that check the root window for running instances, disable this option.</string>
-                      </property>
-                    </widget>
-                  </item>
-                </layout>
-              </item>
-              <item row="2" column="0" >
-                <widget class="QCheckBox" name="toolTipBox" >
-                  <property name="text" >
-                    <string>Show &amp;tooltips</string>
-                  </property>
-                </widget>
-              </item>
-              <item row="3" column="0" >
-                <widget class="Q3ButtonGroup" name="desktopMenuGroup" >
-                  <property name="title" >
-                    <string>Menu Bar at top of Screen</string>
-                  </property>
-                  <layout class="QVBoxLayout" >
-                    <property name="margin" >
-                      <number>0</number>
-                    </property>
-                    <item>
-                      <widget class="QRadioButton" name="radioButton1" >
-                        <property name="text" >
-                          <string>&amp;None</string>
-                        </property>
-                        <property name="whatsThis" stdset="0" >
-                          <string>If this option is selected, there is no menu bar at the top of the screen.</string>
-                        </property>
-                      </widget>
-                    </item>
-                    <item>
-                      <widget class="QRadioButton" name="radioButton1_2" >
-                        <property name="text" >
-                          <string>&amp;Desktop menu bar</string>
-                        </property>
-                        <property name="whatsThis" stdset="0" >
-                          <string>If this option is selected, there is one menu bar at the top of the screen which shows the desktop menus.</string>
-                        </property>
-                      </widget>
-                    </item>
-                    <item>
-                      <widget class="QRadioButton" name="radioButton1_3" >
-                        <property name="text" >
-                          <string>&amp;Current application's menu bar (Mac OS-style)</string>
-                        </property>
-                        <property name="whatsThis" stdset="0" >
-                          <string>If this option is selected, applications will not have their menu bar attached to their own window anymore. Instead, there is one menu bar at the top of the screen which shows the menus of the currently active application. You might recognize this behavior from Mac OS.</string>
-                        </property>
-                      </widget>
-                    </item>
-                  </layout>
-                </widget>
-              </item>
-              <item row="4" column="0" >
-                <widget class="QGroupBox" name="groupBox3" >
-                  <property name="title" >
-                    <string>Mouse Button Actions</string>
-                  </property>
-                  <layout class="QGridLayout" >
-                    <property name="margin" >
-                      <number>0</number>
-                    </property>
-                    <item row="1" column="0" >
-                      <widget class="QLabel" name="middleLabel" >
-                        <property name="text" >
-                          <string>Middle button:</string>
-                        </property>
-                        <property name="wordWrap" >
-                          <bool>false</bool>
-                        </property>
-                      </widget>
-                    </item>
-                    <item row="0" column="0" >
-                      <widget class="QLabel" name="leftLabel" >
-                        <property name="text" >
-                          <string>Left button:</string>
-                        </property>
-                        <property name="wordWrap" >
-                          <bool>false</bool>
-                        </property>
-                      </widget>
-                    </item>
-                    <item row="2" column="0" >
-                      <widget class="QLabel" name="rightLabel" >
-                        <property name="text" >
-                          <string>Right button:</string>
-                        </property>
-                        <property name="wordWrap" >
-                          <bool>false</bool>
-                        </property>
-                      </widget>
-                    </item>
-                    <item row="2" column="1" >
-                      <widget class="QComboBox" name="rightComboBox" >
-                        <property name="sizePolicy" >
-                          <sizepolicy>
-                            <hsizetype>1</hsizetype>
-                            <vsizetype>0</vsizetype>
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                          </sizepolicy>
-                        </property>
-                      </widget>
-                    </item>
-                    <item row="0" column="1" >
-                      <widget class="QComboBox" name="leftComboBox" >
-                        <property name="sizePolicy" >
-                          <sizepolicy>
-                            <hsizetype>1</hsizetype>
-                            <vsizetype>0</vsizetype>
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                          </sizepolicy>
-                        </property>
-                      </widget>
-                    </item>
-                    <item row="0" column="2" >
-                      <widget class="QPushButton" name="leftEditButton" >
-                        <property name="enabled" >
-                          <bool>false</bool>
-                        </property>
-                        <property name="text" >
-                          <string>Edit...</string>
-                        </property>
-                      </widget>
-                    </item>
-                    <item row="1" column="1" >
-                      <widget class="QComboBox" name="middleComboBox" >
-                        <property name="sizePolicy" >
-                          <sizepolicy>
-                            <hsizetype>1</hsizetype>
-                            <vsizetype>0</vsizetype>
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                          </sizepolicy>
-                        </property>
-                      </widget>
-                    </item>
-                    <item row="1" column="2" >
-                      <widget class="QPushButton" name="middleEditButton" >
-                        <property name="enabled" >
-                          <bool>false</bool>
-                        </property>
-                        <property name="text" >
-                          <string>Edit...</string>
-                        </property>
-                      </widget>
-                    </item>
-                    <item row="2" column="2" >
-                      <widget class="QPushButton" name="rightEditButton" >
-                        <property name="enabled" >
-                          <bool>false</bool>
-                        </property>
-                        <property name="text" >
-                          <string>Edit...</string>
-                        </property>
-                      </widget>
-                    </item>
-                    <item rowspan="3" row="0" column="3" colspan="1" >
-                      <spacer name="spacer5" >
-                        <property name="sizeHint" >
-                          <size>
-                            <width>191</width>
-                            <height>80</height>
-                          </size>
-                        </property>
-                        <property name="sizeType" >
-                          <enum>Expanding</enum>
-                        </property>
-                        <property name="orientation" >
-                          <enum>Qt::Horizontal</enum>
-                        </property>
-                      </spacer>
-                    </item>
-                  </layout>
-                </widget>
-              </item>
-              <item row="5" column="0" >
-                <spacer name="spacer8" >
-                  <property name="sizeHint" >
-                    <size>
-                      <width>20</width>
-                      <height>16</height>
-                    </size>
-                  </property>
-                  <property name="sizeType" >
-                    <enum>Expanding</enum>
-                  </property>
-                  <property name="orientation" >
-                    <enum>Qt::Vertical</enum>
-                  </property>
-                </spacer>
-              </item>
-            </layout>
-          </widget>
-          <widget class="QWidget" name="tab" >
-            <attribute name="title" >
-              <string>File Icons</string>
-            </attribute>
-            <layout class="QGridLayout" >
-              <property name="margin" >
-                <number>0</number>
-              </property>
-              <item row="0" column="0" >
-                <widget class="QCheckBox" name="autoLineupIconsBox" >
-                  <property name="text" >
-                    <string>Automatically &amp;line up icons</string>
-                  </property>
-                  <property name="whatsThis" stdset="0" >
-                    <string>Check this option if you want to see your icons automatically aligned to the grid when you move them.</string>
-                  </property>
-                </widget>
-              </item>
-              <item row="1" column="0" >
-                <widget class="QCheckBox" name="showHiddenBox" >
-                  <property name="text" >
-                    <string>Show &amp;hidden files</string>
-                  </property>
-                  <property name="whatsThis" stdset="0" >
-                    <string>&lt;p>If you check this option, any files in your desktop directory that begin with a period (.) will be shown. Usually, such files contain configuration information, and remain hidden from view.&lt;/p>
-&lt;p>For example, files which are named ".directory" are plain text files which contain information for Konqueror, such as the icon to use in displaying a directory, the order in which files should be sorted, etc. You should not change or delete these files unless you know what you are doing.&lt;/p></string>
-                  </property>
-                </widget>
-              </item>
-              <item row="2" column="0" >
-                <widget class="K3ListView" name="previewListView" >
-                  <property name="fullWidth" >
-                    <bool>true</bool>
-                  </property>
-                  <property name="whatsThis" stdset="0" >
-                    <string>Select for which types of files you want to enable preview images.</string>
-                  </property>
-                  <column>
-                    <property name="text" >
-                      <string>Show Icon Previews For</string>
-                    </property>
-                    <property name="clickable" >
-                      <bool>false</bool>
-                    </property>
-                    <property name="resizable" >
-                      <bool>false</bool>
-                    </property>
-                  </column>
-                </widget>
-              </item>
-            </layout>
-          </widget>
-          <widget class="QWidget" name="tab" >
-            <attribute name="title" >
-              <string>Device Icons</string>
-            </attribute>
-            <layout class="QVBoxLayout" >
-              <property name="margin" >
-                <number>0</number>
-              </property>
-              <item>
-                <widget class="QCheckBox" name="enableMediaBox" >
-                  <property name="text" >
-                    <string>&amp;Show device icons:</string>
-                  </property>
-                </widget>
-              </item>
-              <item>
-                <widget class="K3ListView" name="mediaListView" >
-                  <property name="enabled" >
-                    <bool>false</bool>
-                  </property>
-                  <property name="fullWidth" >
-                    <bool>true</bool>
-                  </property>
-                  <property name="whatsThis" stdset="0" >
-                    <string>Deselect the device types which you do not want to see on the desktop.</string>
-                  </property>
-                  <column>
-                    <property name="text" >
-                      <string>Device Types to Display</string>
-                    </property>
-                    <property name="clickable" >
-                      <bool>false</bool>
-                    </property>
-                    <property name="resizable" >
-                      <bool>false</bool>
-                    </property>
-                  </column>
-                </widget>
-              </item>
-            </layout>
-          </widget>
+<ui version="4.0" >
+ <class>DesktopBehaviorBase</class>
+ <widget class="QWidget" name="DesktopBehaviorBase" >
+  <layout class="QVBoxLayout" >
+   <item>
+    <widget class="QTabWidget" name="behaviorTab" >
+     <property name="currentIndex" >
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab" >
+      <attribute name="title" >
+       <string>General</string>
+      </attribute>
+      <layout class="QGridLayout" >
+       <item row="0" column="0" >
+        <widget class="QCheckBox" name="iconsEnabledBox" >
+         <property name="sizePolicy" >
+          <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="whatsThis" >
+          <string>Uncheck this option if you do not want to have icons on the desktop. Without icons the desktop will be somewhat faster but you will no longer be able to drag files to the desktop.</string>
+         </property>
+         <property name="text" >
+          <string>&amp;Show icons on desktop</string>
+         </property>
         </widget>
-      </item>
-    </layout>
-  </widget>
-  <layoutdefault spacing="6" margin="11" />
-  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
-  <customwidgets>
-    <customwidget>
-      <class>K3ListView</class>
-      <extends>Q3ListView</extends>
-      <header>k3listview.h</header>
-    </customwidget>
-  </customwidgets>
-  <tabstops>
-    <tabstop>autoLineupIconsBox</tabstop>
-    <tabstop>showHiddenBox</tabstop>
-    <tabstop>previewListView</tabstop>
-    <tabstop>enableMediaBox</tabstop>
-    <tabstop>mediaListView</tabstop>
-  </tabstops>
-  <includes>
-    <include location="local" >k3listview.h</include>
-  </includes>
-  <connections>
-    <connection>
-      <sender>enableMediaBox</sender>
-      <signal>toggled(bool)</signal>
-      <receiver>mediaListView</receiver>
-      <slot>setEnabled(bool)</slot>
-    </connection>
-  </connections>
+       </item>
+       <item row="1" column="0" >
+        <layout class="QHBoxLayout" >
+         <property name="leftMargin" >
+          <number>0</number>
+         </property>
+         <property name="topMargin" >
+          <number>0</number>
+         </property>
+         <property name="rightMargin" >
+          <number>0</number>
+         </property>
+         <property name="bottomMargin" >
+          <number>0</number>
+         </property>
+         <item>
+          <spacer>
+           <property name="orientation" >
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeType" >
+            <enum>QSizePolicy::Expanding</enum>
+           </property>
+           <property name="sizeHint" >
+            <size>
+             <width>20</width>
+             <height>0</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="vrootBox" >
+           <property name="enabled" >
+            <bool>false</bool>
+           </property>
+           <property name="whatsThis" >
+            <string>Check this option if you want to run X11 programs that draw into the desktop such as xsnow, xpenguin or xmountain. If you have problems with applications like netscape that check the root window for running instances, disable this option.</string>
+           </property>
+           <property name="text" >
+            <string>Allow pro&amp;grams in desktop window</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="2" column="0" >
+        <widget class="QCheckBox" name="toolTipBox" >
+         <property name="text" >
+          <string>Show &amp;tooltips</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" >
+        <widget class="Q3ButtonGroup" name="desktopMenuGroup" >
+         <property name="title" >
+          <string>Menu Bar at top of Screen</string>
+         </property>
+         <layout class="QVBoxLayout" >
+          <item>
+           <widget class="QRadioButton" name="radioButton1" >
+            <property name="whatsThis" >
+             <string>If this option is selected, there is no menu bar at the top of the screen.</string>
+            </property>
+            <property name="text" >
+             <string>&amp;None</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioButton1_2" >
+            <property name="whatsThis" >
+             <string>If this option is selected, there is one menu bar at the top of the screen which shows the desktop menus.</string>
+            </property>
+            <property name="text" >
+             <string>&amp;Desktop menu bar</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioButton1_3" >
+            <property name="whatsThis" >
+             <string>If this option is selected, applications will not have their menu bar attached to their own window anymore. Instead, there is one menu bar at the top of the screen which shows the menus of the currently active application. You might recognize this behavior from Mac OS.</string>
+            </property>
+            <property name="text" >
+             <string>&amp;Current application's menu bar (Mac OS-style)</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="4" column="0" >
+        <widget class="QGroupBox" name="groupBox3" >
+         <property name="title" >
+          <string>Mouse Button Actions</string>
+         </property>
+         <layout class="QGridLayout" >
+          <item row="1" column="0" >
+           <widget class="QLabel" name="middleLabel" >
+            <property name="text" >
+             <string>Middle button:</string>
+            </property>
+            <property name="wordWrap" >
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0" >
+           <widget class="QLabel" name="leftLabel" >
+            <property name="text" >
+             <string>Left button:</string>
+            </property>
+            <property name="wordWrap" >
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0" >
+           <widget class="QLabel" name="rightLabel" >
+            <property name="text" >
+             <string>Right button:</string>
+            </property>
+            <property name="wordWrap" >
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1" >
+           <widget class="QComboBox" name="rightComboBox" >
+            <property name="sizePolicy" >
+             <sizepolicy vsizetype="Fixed" hsizetype="Minimum" >
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1" >
+           <widget class="QComboBox" name="leftComboBox" >
+            <property name="sizePolicy" >
+             <sizepolicy vsizetype="Fixed" hsizetype="Minimum" >
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2" >
+           <widget class="QPushButton" name="leftEditButton" >
+            <property name="enabled" >
+             <bool>false</bool>
+            </property>
+            <property name="text" >
+             <string>Edit...</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1" >
+           <widget class="QComboBox" name="middleComboBox" >
+            <property name="sizePolicy" >
+             <sizepolicy vsizetype="Fixed" hsizetype="Minimum" >
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2" >
+           <widget class="QPushButton" name="middleEditButton" >
+            <property name="enabled" >
+             <bool>false</bool>
+            </property>
+            <property name="text" >
+             <string>Edit...</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2" >
+           <widget class="QPushButton" name="rightEditButton" >
+            <property name="enabled" >
+             <bool>false</bool>
+            </property>
+            <property name="text" >
+             <string>Edit...</string>
+            </property>
+           </widget>
+          </item>
+          <item rowspan="3" row="0" column="3" >
+           <spacer>
+            <property name="orientation" >
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType" >
+             <enum>QSizePolicy::Expanding</enum>
+            </property>
+            <property name="sizeHint" >
+             <size>
+              <width>191</width>
+              <height>80</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="5" column="0" >
+        <spacer>
+         <property name="orientation" >
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType" >
+          <enum>QSizePolicy::Expanding</enum>
+         </property>
+         <property name="sizeHint" >
+          <size>
+           <width>20</width>
+           <height>16</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab" >
+      <attribute name="title" >
+       <string>File Icons</string>
+      </attribute>
+      <layout class="QGridLayout" >
+       <item row="0" column="0" >
+        <widget class="QCheckBox" name="autoLineupIconsBox" >
+         <property name="whatsThis" >
+          <string>Check this option if you want to see your icons automatically aligned to the grid when you move them.</string>
+         </property>
+         <property name="text" >
+          <string>Automatically &amp;line up icons</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" >
+        <widget class="QCheckBox" name="showHiddenBox" >
+         <property name="whatsThis" >
+          <string>&lt;p>If you check this option, any files in your desktop directory that begin with a period (.) will be shown. Usually, such files contain configuration information, and remain hidden from view.&lt;/p>
+&lt;p>For example, files which are named ".directory" are plain text files which contain information for Konqueror, such as the icon to use in displaying a directory, the order in which files should be sorted, etc. You should not change or delete these files unless you know what you are doing.&lt;/p></string>
+         </property>
+         <property name="text" >
+          <string>Show &amp;hidden files</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" >
+        <widget class="K3ListView" name="previewListView" >
+         <property name="whatsThis" >
+          <string>Select for which types of files you want to enable preview images.</string>
+         </property>
+         <property name="fullWidth" >
+          <bool>true</bool>
+         </property>
+         <column>
+          <property name="text" >
+           <string>Show Icon Previews For</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab" >
+      <attribute name="title" >
+       <string>Device Icons</string>
+      </attribute>
+      <layout class="QVBoxLayout" >
+       <item>
+        <widget class="QCheckBox" name="enableMediaBox" >
+         <property name="text" >
+          <string>&amp;Show device icons:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="K3ListView" name="mediaListView" >
+         <property name="enabled" >
+          <bool>false</bool>
+         </property>
+         <property name="whatsThis" >
+          <string>Deselect the device types which you do not want to see on the desktop.</string>
+         </property>
+         <property name="fullWidth" >
+          <bool>true</bool>
+         </property>
+         <column>
+          <property name="text" >
+           <string>Device Types to Display</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+ <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+ <customwidgets>
+  <customwidget>
+   <class>Q3ButtonGroup</class>
+   <extends>Q3GroupBox</extends>
+   <header>Qt3Support/Q3ButtonGroup</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>K3ListView</class>
+   <extends>Q3ListView</extends>
+   <header>k3listview.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>autoLineupIconsBox</tabstop>
+  <tabstop>showHiddenBox</tabstop>
+  <tabstop>previewListView</tabstop>
+  <tabstop>enableMediaBox</tabstop>
+  <tabstop>mediaListView</tabstop>
+ </tabstops>
+ <includes>
+  <include location="local" >k3listview.h</include>
+ </includes>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>enableMediaBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>mediaListView</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

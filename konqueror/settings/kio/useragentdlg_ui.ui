@@ -1,306 +1,308 @@
-<ui version="4.0" stdsetdef="1" >
-  <author></author>
-  <comment></comment>
-  <exportmacro></exportmacro>
-  <class>UserAgentDlgUI</class>
-  <widget class="QWidget" name="UserAgentDlgUI" >
-    <property name="geometry" >
-      <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>395</width>
-        <height>470</height>
-      </rect>
-    </property>
-    <property name="whatsThis" stdset="0" >
-      <string>&lt;qt>
+<ui version="4.0" >
+ <class>UserAgentDlgUI</class>
+ <widget class="QWidget" name="UserAgentDlgUI" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>242</width>
+    <height>417</height>
+   </rect>
+  </property>
+  <property name="whatsThis" >
+   <string>&lt;qt>
 Here you can modify the default browser-identification text or set a site &lt;code>(eg. www.kde.org)&lt;/code> or a domain &lt;code>(eg. kde.org)&lt;/code> specific identification text.&lt;p>
 To add a new site specific identification text, click the &lt;code>New&lt;/code> button and supply the necessary information. To change an existing site specific entry, click on the &lt;code>Change&lt;/code> button. The &lt;code>Delete&lt;/code> button will remove the selected site specific identification text, causing the default setting to be used for that site or domain.
 &lt;/qt></string>
-    </property>
-    <layout class="QVBoxLayout" >
-      <item>
-        <widget class="QCheckBox" name="cbSendUAString" >
-          <property name="text" >
-            <string>&amp;Send identification</string>
-          </property>
-          <property name="checked" >
-            <bool>true</bool>
-          </property>
-          <property name="whatsThis" stdset="0" >
-            <string>&lt;qt>
+  </property>
+  <layout class="QVBoxLayout" >
+   <item>
+    <widget class="QCheckBox" name="cbSendUAString" >
+     <property name="whatsThis" >
+      <string>&lt;qt>
 Send the browser identification to web sites.&lt;p>
 &lt;u>NOTE:&lt;/u> Many sites rely on this information to display pages properly, hence, it is highly recommended that you do not totally disable this feature but rather customize it.&lt;p>
 By default, only minimal identification information is sent to remote sites. The identification text that will be sent is shown below.
 &lt;/qt></string>
-          </property>
-        </widget>
+     </property>
+     <property name="text" >
+      <string>&amp;Send identification</string>
+     </property>
+     <property name="checked" >
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="Q3ButtonGroup" name="gbDefaultId" >
+     <property name="enabled" >
+      <bool>true</bool>
+     </property>
+     <property name="whatsThis" >
+      <string>The browser identification text sent to the sites you visit. Use the provided options to customize it.</string>
+     </property>
+     <property name="title" >
+      <string>Default Identification</string>
+     </property>
+     <layout class="QVBoxLayout" >
+      <item>
+       <widget class="QLabel" name="leDefaultId" >
+        <property name="whatsThis" >
+         <string>The browser identification text sent to the sites you visit. You can customize it using the options provided below.</string>
+        </property>
+        <property name="textInteractionFlags" >
+         <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse|Qt::NoTextInteraction|Qt::TextBrowserInteraction|Qt::TextEditable|Qt::TextEditorInteraction|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+        </property>
+       </widget>
       </item>
       <item>
-        <widget class="Q3ButtonGroup" name="gbDefaultId" >
-          <property name="enabled" >
-            <bool>true</bool>
-          </property>
-          <property name="title" >
-            <string>Default Identification</string>
-          </property>
-          <property name="whatsThis" stdset="0" >
-            <string>The browser identification text sent to the sites you visit. Use the provided options to customize it.</string>
-          </property>
-          <layout class="QVBoxLayout" >
-            <item>
-              <widget class="QLabel" name="leDefaultId" >
-                <property name="textInteractionFlags" >
-                  <enum>Qt::TextSelectableByMouse|Qt::TextSelectableByKeyboard</enum>
-                </property>
-                <property name="whatsThis" stdset="0" >
-                  <string>The browser identification text sent to the sites you visit. You can customize it using the options provided below.</string>
-                </property>
-              </widget>
-            </item>
-            <item>
-              <widget class="QCheckBox" name="cbOS" >
-                <property name="text" >
-                  <string>Add operating s&amp;ystem name</string>
-                </property>
-                <property name="whatsThis" stdset="0" >
-                  <string>Includes your operating system's name in the browser identification text.</string>
-                </property>
-              </widget>
-            </item>
-            <item>
-              <layout class="QHBoxLayout" >
-                <property name="margin" >
-                  <number>0</number>
-                </property>
-                <item>
-                  <spacer name="spacer2" >
-                    <property name="sizeHint" >
-                      <size>
-                        <width>16</width>
-                        <height>20</height>
-                      </size>
-                    </property>
-                    <property name="sizeType" >
-                      <enum>Fixed</enum>
-                    </property>
-                    <property name="orientation" >
-                      <enum>Horizontal</enum>
-                    </property>
-                  </spacer>
-                </item>
-                <item>
-                  <widget class="QCheckBox" name="cbOSVersion" >
-                    <property name="enabled" >
-                      <bool>false</bool>
-                    </property>
-                    <property name="text" >
-                      <string>Add operating system &amp;version</string>
-                    </property>
-                    <property name="whatsThis" stdset="0" >
-                      <string>Includes your operating system's version number in the browser identification text.</string>
-                    </property>
-                  </widget>
-                </item>
-              </layout>
-            </item>
-            <item>
-              <widget class="QCheckBox" name="cbPlatform" >
-                <property name="text" >
-                  <string>Add &amp;platform name</string>
-                </property>
-                <property name="whatsThis" stdset="0" >
-                  <string>Includes your platform type in the browser identification text</string>
-                </property>
-              </widget>
-            </item>
-            <item>
-              <widget class="QCheckBox" name="cbProcessorType" >
-                <property name="text" >
-                  <string>Add &amp;machine (processor) type</string>
-                </property>
-                <property name="whatsThis" stdset="0" >
-                  <string>Includes your machine's CPU type in the browser identification text.</string>
-                </property>
-              </widget>
-            </item>
-            <item>
-              <widget class="QCheckBox" name="cbLanguage" >
-                <property name="text" >
-                  <string>Add lang&amp;uage information</string>
-                </property>
-                <property name="whatsThis" stdset="0" >
-                  <string>Includes your language settings in the browser identification text to obtain localised versions of the page.</string>
-                </property>
-              </widget>
-            </item>
-          </layout>
-        </widget>
+       <widget class="QCheckBox" name="cbOS" >
+        <property name="whatsThis" >
+         <string>Includes your operating system's name in the browser identification text.</string>
+        </property>
+        <property name="text" >
+         <string>Add operating s&amp;ystem name</string>
+        </property>
+       </widget>
       </item>
       <item>
-        <widget class="QGroupBox" name="gbDomainPolicy" >
-          <property name="enabled" >
-            <bool>true</bool>
-          </property>
-          <property name="title" >
-            <string>Site Specific Identification</string>
-          </property>
-          <layout class="QHBoxLayout" >
-            <item>
-              <widget class="K3ListView" name="lvDomainPolicyList" >
-                <property name="selectionMode" stdset="0" >
-                  <enum>Extended</enum>
-                </property>
-                <property name="allColumnsShowFocus" >
-                  <bool>true</bool>
-                </property>
-                <property name="showSortIndicator" >
-                  <bool>true</bool>
-                </property>
-                <property name="resizeMode" >
-                  <enum>AllColumns</enum>
-                </property>
-                <property name="treeStepSize" >
-                  <number>0</number>
-                </property>
-                <property name="whatsThis" stdset="0" >
-                  <string>List of sites for which the specified identification text will be used instead of the default one.</string>
-                </property>
-                <column>
-                  <property name="text" >
-                    <string>Site Name</string>
-                  </property>
-                  <property name="clickable" >
-                    <bool>true</bool>
-                  </property>
-                  <property name="resizable" >
-                    <bool>true</bool>
-                  </property>
-                </column>
-                <column>
-                  <property name="text" >
-                    <string>Identification</string>
-                  </property>
-                  <property name="clickable" >
-                    <bool>true</bool>
-                  </property>
-                  <property name="resizable" >
-                    <bool>true</bool>
-                  </property>
-                </column>
-                <column>
-                  <property name="text" >
-                    <string>User Agent</string>
-                  </property>
-                  <property name="clickable" >
-                    <bool>true</bool>
-                  </property>
-                  <property name="resizable" >
-                    <bool>true</bool>
-                  </property>
-                </column>
-              </widget>
-            </item>
-            <item>
-              <layout class="QVBoxLayout" >
-                <property name="margin" >
-                  <number>0</number>
-                </property>
-                <item>
-                  <widget class="QPushButton" name="pbNew" >
-                    <property name="text" >
-                      <string>&amp;New...</string>
-                    </property>
-                    <property name="whatsThis" stdset="0" >
-                      <string>Add new identification text for a site.</string>
-                    </property>
-                  </widget>
-                </item>
-                <item>
-                  <widget class="QPushButton" name="pbChange" >
-                    <property name="text" >
-                      <string>Chan&amp;ge...</string>
-                    </property>
-                    <property name="whatsThis" stdset="0" >
-                      <string>Change the selected identifier text.</string>
-                    </property>
-                  </widget>
-                </item>
-                <item>
-                  <widget class="QPushButton" name="pbDelete" >
-                    <property name="text" >
-                      <string>D&amp;elete</string>
-                    </property>
-                    <property name="whatsThis" stdset="0" >
-                      <string>Delete the selected identifier text.</string>
-                    </property>
-                  </widget>
-                </item>
-                <item>
-                  <widget class="QPushButton" name="pbDeleteAll" >
-                    <property name="text" >
-                      <string>Delete A&amp;ll</string>
-                    </property>
-                    <property name="whatsThis" stdset="0" >
-                      <string>Delete all identifiers.</string>
-                    </property>
-                  </widget>
-                </item>
-                <item>
-                  <spacer name="spacer1" >
-                    <property name="sizeHint" >
-                      <size>
-                        <width>21</width>
-                        <height>16</height>
-                      </size>
-                    </property>
-                    <property name="sizeType" >
-                      <enum>Expanding</enum>
-                    </property>
-                    <property name="orientation" >
-                      <enum>Vertical</enum>
-                    </property>
-                  </spacer>
-                </item>
-              </layout>
-            </item>
-          </layout>
-        </widget>
+       <widget class="QCheckBox" name="cbOSVersion" >
+        <property name="enabled" >
+         <bool>false</bool>
+        </property>
+        <property name="whatsThis" >
+         <string>Includes your operating system's version number in the browser identification text.</string>
+        </property>
+        <property name="text" >
+         <string>Add operating system &amp;version</string>
+        </property>
+       </widget>
       </item>
-    </layout>
-  </widget>
-  <layoutdefault spacing="6" margin="11" />
-  <layoutfunction spacing="KDialog::spacingHint" margin="KDialog::marginHint" />
-  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
-  <customwidgets>
-    <customwidget>
-      <class>K3ListView</class>
-      <extends>Q3ListView</extends>
-      <header>k3listview.h</header>
-    </customwidget>
-  </customwidgets>
-  <includes>
-    <include location="local" >klineedit.h</include>
-    <include location="local" >k3listview.h</include>
-  </includes>
-  <connections>
-    <connection>
-      <sender>cbOS</sender>
-      <signal>toggled(bool)</signal>
-      <receiver>cbOSVersion</receiver>
-      <slot>setEnabled(bool)</slot>
-    </connection>
-    <connection>
-      <sender>cbSendUAString</sender>
-      <signal>toggled(bool)</signal>
-      <receiver>gbDefaultId</receiver>
-      <slot>setEnabled(bool)</slot>
-    </connection>
-    <connection>
-      <sender>cbSendUAString</sender>
-      <signal>toggled(bool)</signal>
-      <receiver>gbDomainPolicy</receiver>
-      <slot>setEnabled(bool)</slot>
-    </connection>
-  </connections>
+      <item>
+       <widget class="QCheckBox" name="cbPlatform" >
+        <property name="whatsThis" >
+         <string>Includes your platform type in the browser identification text</string>
+        </property>
+        <property name="text" >
+         <string>Add &amp;platform name</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="cbProcessorType" >
+        <property name="whatsThis" >
+         <string>Includes your machine's CPU type in the browser identification text.</string>
+        </property>
+        <property name="text" >
+         <string>Add &amp;machine (processor) type</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="cbLanguage" >
+        <property name="whatsThis" >
+         <string>Includes your language settings in the browser identification text to obtain localised versions of the page.</string>
+        </property>
+        <property name="text" >
+         <string>Add lang&amp;uage information</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="gbDomainPolicy" >
+     <property name="enabled" >
+      <bool>true</bool>
+     </property>
+     <property name="title" >
+      <string>Site Specific Identification</string>
+     </property>
+     <layout class="QHBoxLayout" >
+      <item>
+       <widget class="K3ListView" name="lvDomainPolicyList" >
+        <property name="whatsThis" >
+         <string>List of sites for which the specified identification text will be used instead of the default one.</string>
+        </property>
+        <property name="selectionMode" >
+         <enum>Q3ListView::Single</enum>
+        </property>
+        <property name="allColumnsShowFocus" >
+         <bool>true</bool>
+        </property>
+        <property name="showSortIndicator" >
+         <bool>true</bool>
+        </property>
+        <property name="resizeMode" >
+         <enum>Q3ListView::NoColumn</enum>
+        </property>
+        <property name="treeStepSize" >
+         <number>0</number>
+        </property>
+        <column>
+         <property name="text" >
+          <string>Site Name</string>
+         </property>
+        </column>
+        <column>
+         <property name="text" >
+          <string>Identification</string>
+         </property>
+        </column>
+        <column>
+         <property name="text" >
+          <string>User Agent</string>
+         </property>
+        </column>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" >
+        <property name="leftMargin" >
+         <number>0</number>
+        </property>
+        <property name="topMargin" >
+         <number>0</number>
+        </property>
+        <property name="rightMargin" >
+         <number>0</number>
+        </property>
+        <property name="bottomMargin" >
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QPushButton" name="pbNew" >
+          <property name="whatsThis" >
+           <string>Add new identification text for a site.</string>
+          </property>
+          <property name="text" >
+           <string>&amp;New...</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pbChange" >
+          <property name="whatsThis" >
+           <string>Change the selected identifier text.</string>
+          </property>
+          <property name="text" >
+           <string>Chan&amp;ge...</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pbDelete" >
+          <property name="whatsThis" >
+           <string>Delete the selected identifier text.</string>
+          </property>
+          <property name="text" >
+           <string>D&amp;elete</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pbDeleteAll" >
+          <property name="whatsThis" >
+           <string>Delete all identifiers.</string>
+          </property>
+          <property name="text" >
+           <string>Delete A&amp;ll</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer>
+          <property name="orientation" >
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType" >
+           <enum>QSizePolicy::Expanding</enum>
+          </property>
+          <property name="sizeHint" >
+           <size>
+            <width>21</width>
+            <height>16</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+ <layoutfunction spacing="KDialog::spacingHint" margin="KDialog::marginHint" />
+ <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+ <customwidgets>
+  <customwidget>
+   <class>Q3ButtonGroup</class>
+   <extends>Q3GroupBox</extends>
+   <header>Qt3Support/Q3ButtonGroup</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>K3ListView</class>
+   <extends>Q3ListView</extends>
+   <header>k3listview.h</header>
+  </customwidget>
+ </customwidgets>
+ <includes>
+  <include location="local" >klineedit.h</include>
+  <include location="local" >k3listview.h</include>
+ </includes>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>cbOS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cbOSVersion</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cbSendUAString</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>gbDefaultId</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cbSendUAString</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>gbDomainPolicy</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

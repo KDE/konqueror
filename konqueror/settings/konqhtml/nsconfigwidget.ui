@@ -14,12 +14,6 @@
    <string>Netscape Plugin Config</string>
   </property>
   <layout class="QVBoxLayout" >
-   <property name="margin" >
-    <number>0</number>
-   </property>
-   <property name="spacing" >
-    <number>6</number>
-   </property>
    <item>
     <widget class="QTabWidget" name="TabWidget2" >
      <property name="enabled" >
@@ -33,19 +27,22 @@
        <string>Scan</string>
       </attribute>
       <layout class="QVBoxLayout" >
-       <property name="margin" >
-        <number>9</number>
-       </property>
-       <property name="spacing" >
-        <number>6</number>
-       </property>
        <item>
         <layout class="QHBoxLayout" >
-         <property name="margin" >
-          <number>0</number>
-         </property>
          <property name="spacing" >
           <number>3</number>
+         </property>
+         <property name="leftMargin" >
+          <number>0</number>
+         </property>
+         <property name="topMargin" >
+          <number>0</number>
+         </property>
+         <property name="rightMargin" >
+          <number>0</number>
+         </property>
+         <property name="bottomMargin" >
+          <number>0</number>
          </property>
          <item>
           <widget class="QPushButton" name="scanButton" >
@@ -87,12 +84,6 @@
           <string>Scan Folders</string>
          </property>
          <layout class="QGridLayout" >
-          <property name="margin" >
-           <number>6</number>
-          </property>
-          <property name="spacing" >
-           <number>3</number>
-          </property>
           <item row="1" column="2" >
            <widget class="QPushButton" name="dirRemove" >
             <property name="enabled" >
@@ -140,9 +131,7 @@
           <item rowspan="4" row="1" column="0" colspan="2" >
            <widget class="KListWidget" name="dirList" >
             <property name="sizePolicy" >
-             <sizepolicy>
-              <hsizetype>7</hsizetype>
-              <vsizetype>7</vsizetype>
+             <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -187,54 +176,48 @@
       <attribute name="title" >
        <string>Plugins</string>
       </attribute>
-      <layout class="QHBoxLayout" >
-       <property name="margin" >
-        <number>9</number>
+      <widget class="QCheckBox" name="useArtsdsp" >
+       <property name="enabled" >
+        <bool>true</bool>
        </property>
-       <property name="spacing" >
-        <number>6</number>
+       <property name="geometry" >
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>481</width>
+         <height>22</height>
+        </rect>
        </property>
-       <item>
-        <layout class="QVBoxLayout" >
-         <property name="margin" >
-          <number>0</number>
-         </property>
-         <property name="spacing" >
-          <number>6</number>
-         </property>
-         <item>
-          <widget class="QCheckBox" name="useArtsdsp" >
-           <property name="enabled" >
-            <bool>true</bool>
-           </property>
-           <property name="text" >
-            <string>Use a&amp;rtsdsp to pipe plugin sound through aRts</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="Q3ListView" name="pluginList" >
-           <property name="whatsThis" >
-            <string>Here you can see a list of the Netscape plugins KDE has found.</string>
-           </property>
-           <property name="allColumnsShowFocus" >
-            <bool>true</bool>
-           </property>
-           <column>
-            <property name="text" >
-             <string>Information</string>
-            </property>
-           </column>
-           <column>
-            <property name="text" >
-             <string>Value</string>
-            </property>
-           </column>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
+       <property name="text" >
+        <string>Use a&amp;rtsdsp to pipe plugin sound through aRts</string>
+       </property>
+      </widget>
+      <widget class="Q3ListView" name="pluginList" >
+       <property name="geometry" >
+        <rect>
+         <x>10</x>
+         <y>38</y>
+         <width>481</width>
+         <height>305</height>
+        </rect>
+       </property>
+       <property name="whatsThis" >
+        <string>Here you can see a list of the Netscape plugins KDE has found.</string>
+       </property>
+       <property name="allColumnsShowFocus" >
+        <bool>true</bool>
+       </property>
+       <column>
+        <property name="text" >
+         <string>Information</string>
+        </property>
+       </column>
+       <column>
+        <property name="text" >
+         <string>Value</string>
+        </property>
+       </column>
+      </widget>
      </widget>
     </widget>
    </item>
@@ -245,14 +228,14 @@
  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
  <customwidgets>
   <customwidget>
-   <class>KListWidget</class>
-   <extends>QListWidget</extends>
-   <header>klistwidget.h</header>
-  </customwidget>
-  <customwidget>
    <class>Q3ListView</class>
    <extends>Q3Frame</extends>
    <header>q3listview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KListWidget</class>
+   <extends>QListWidget</extends>
+   <header>klistwidget.h</header>
   </customwidget>
   <customwidget>
    <class>KUrlRequester</class>

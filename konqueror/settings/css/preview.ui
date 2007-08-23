@@ -1,44 +1,22 @@
-<ui version="4.0" stdsetdef="1" >
-  <author></author>
-  <comment></comment>
-  <exportmacro></exportmacro>
-  <class>PreviewDialog</class>
-  <widget class="QDialog" name="PreviewDialog" >
-    <property name="geometry" >
-      <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>558</width>
-        <height>349</height>
-      </rect>
-    </property>
-    <property name="windowTitle" >
-      <string>Preview</string>
-    </property>
-    <layout class="QGridLayout" >
-      <item rowspan="1" row="1" column="0" colspan="2" >
-        <widget class="KSeparator" name="Line1" />
-      </item>
-      <item row="2" column="0" >
-        <spacer name="Spacer1" >
-          <property name="sizeHint" >
-            <size>
-              <width>20</width>
-              <height>20</height>
-            </size>
-          </property>
-          <property name="sizeType" >
-            <enum>Expanding</enum>
-          </property>
-          <property name="orientation" >
-            <enum>Qt::Horizontal</enum>
-          </property>
-        </spacer>
-      </item>
-      <item rowspan="1" row="0" column="0" colspan="2" >
-        <widget class="Q3TextBrowser" name="preview" >
-          <property name="text" >
-            <string>&lt;qt>
+<ui version="4.0" >
+ <class>PreviewDialog</class>
+ <widget class="QDialog" name="PreviewDialog" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>558</width>
+    <height>349</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Preview</string>
+  </property>
+  <layout class="QVBoxLayout" >
+   <item>
+    <widget class="Q3TextBrowser" name="preview" >
+     <property name="text" >
+      <string>&lt;qt>
 
 &lt;h1>Heading 1&lt;/h1>&lt;br/>
 &lt;h2>Heading 2&lt;/h2>&lt;br/>
@@ -49,34 +27,72 @@ accessibility for visually handicapped
 people.&lt;/p>
 
 &lt;/qt></string>
-          </property>
-        </widget>
-      </item>
-      <item row="2" column="1" >
-        <widget class="QPushButton" name="PushButton2" >
-          <property name="text" >
-            <string>&amp;OK</string>
-          </property>
-          <property name="default" >
-            <bool>true</bool>
-          </property>
-        </widget>
-      </item>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" >
+     <item>
+      <spacer>
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType" >
+        <enum>QSizePolicy::Expanding</enum>
+       </property>
+       <property name="sizeHint" >
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="PushButton2" >
+       <property name="text" >
+        <string>&amp;OK</string>
+       </property>
+       <property name="default" >
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
     </layout>
-  </widget>
-  <layoutdefault spacing="6" margin="11" />
-  <layoutfunction spacing="KDialog::spacingHint" margin="KDialog::marginHint" />
-  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
-  <includes>
-    <include location="global" >kseparator.h</include>
-    <include location="local" >kseparator.h</include>
-  </includes>
-  <connections>
-    <connection>
-      <sender>PushButton2</sender>
-      <signal>clicked()</signal>
-      <receiver>PreviewDialog</receiver>
-      <slot>accept()</slot>
-    </connection>
-  </connections>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+ <layoutfunction spacing="KDialog::spacingHint" margin="KDialog::marginHint" />
+ <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+ <customwidgets>
+  <customwidget>
+   <class>Q3TextBrowser</class>
+   <extends>Q3TextEdit</extends>
+   <header>Qt3Support/Q3TextBrowser</header>
+  </customwidget>
+ </customwidgets>
+ <includes>
+  <include location="global" >kseparator.h</include>
+  <include location="local" >kseparator.h</include>
+ </includes>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>PushButton2</sender>
+   <signal>clicked()</signal>
+   <receiver>PreviewDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
