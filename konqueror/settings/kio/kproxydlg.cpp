@@ -105,8 +105,6 @@ KProxyDialog::KProxyDialog(const KComponentData &componentData, QWidget* parent)
              :KCModule(componentData, parent)
 {
   QVBoxLayout* mainLayout = new QVBoxLayout( this );
-  mainLayout->setMargin( KDialog::marginHint() );
-  mainLayout->setSpacing( KDialog::spacingHint() );
   
   mDlg = new KProxyDialogUI( this );
   mainLayout->addWidget( mDlg );
