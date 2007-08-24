@@ -20,18 +20,6 @@ If you are uncertain whether or not you need to use a proxy server to connect to
       <bool>true</bool>
      </property>
      <layout class="QVBoxLayout" >
-      <property name="leftMargin" >
-       <number>0</number>
-      </property>
-      <property name="topMargin" >
-       <number>0</number>
-      </property>
-      <property name="rightMargin" >
-       <number>0</number>
-      </property>
-      <property name="bottomMargin" >
-       <number>0</number>
-      </property>
       <item>
        <widget class="QRadioButton" name="rbNoProxy" >
         <property name="whatsThis" >
@@ -403,8 +391,8 @@ Although a persistent proxy connection is faster, note that it only works correc
      </property>
      <property name="sizeHint" >
       <size>
-       <width>20</width>
-       <height>40</height>
+       <width>369</width>
+       <height>16</height>
       </size>
      </property>
     </spacer>

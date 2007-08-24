@@ -1,14 +1,6 @@
 <ui version="4.0" >
  <class>UserAgentDlgUI</class>
  <widget class="QWidget" name="UserAgentDlgUI" >
-  <property name="geometry" >
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>242</width>
-    <height>417</height>
-   </rect>
-  </property>
   <property name="whatsThis" >
    <string>&lt;qt>
 Here you can modify the default browser-identification text or set a site &lt;code>(eg. www.kde.org)&lt;/code> or a domain &lt;code>(eg. kde.org)&lt;/code> specific identification text.&lt;p>
@@ -66,17 +58,37 @@ By default, only minimal identification information is sent to remote sites. The
        </widget>
       </item>
       <item>
-       <widget class="QCheckBox" name="cbOSVersion" >
-        <property name="enabled" >
-         <bool>false</bool>
-        </property>
-        <property name="whatsThis" >
-         <string>Includes your operating system's version number in the browser identification text.</string>
-        </property>
-        <property name="text" >
-         <string>Add operating system &amp;version</string>
-        </property>
-       </widget>
+       <layout class="QHBoxLayout" >
+        <item>
+         <spacer>
+          <property name="orientation" >
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType" >
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" >
+           <size>
+            <width>14</width>
+            <height>10</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="cbOSVersion" >
+          <property name="enabled" >
+           <bool>false</bool>
+          </property>
+          <property name="whatsThis" >
+           <string>Includes your operating system's version number in the browser identification text.</string>
+          </property>
+          <property name="text" >
+           <string>Add operating system &amp;version</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
       <item>
        <widget class="QCheckBox" name="cbPlatform" >
