@@ -99,33 +99,33 @@ void JSPolicies::save() {
   QString key;
   key = prefix + "WindowOpenPolicy";
   if (window_open != INHERIT_POLICY)
-    config->writeEntry(key, window_open);
+    config->group(groupname).writeEntry(key, window_open);
   else
-    config->deleteEntry(key);
+    config->group(groupname).deleteEntry(key);
 
   key = prefix + "WindowResizePolicy";
   if (window_resize != INHERIT_POLICY)
-    config->writeEntry(key, window_resize);
+    config->group(groupname).writeEntry(key, window_resize);
   else
-    config->deleteEntry(key);
+    config->group(groupname).deleteEntry(key);
 
   key = prefix + "WindowMovePolicy";
   if (window_move != INHERIT_POLICY)
-    config->writeEntry(key, window_move);
+    config->group(groupname).writeEntry(key, window_move);
   else
-    config->deleteEntry(key);
+    config->group(groupname).deleteEntry(key);
 
   key = prefix + "WindowFocusPolicy";
   if (window_focus != INHERIT_POLICY)
-    config->writeEntry(key, window_focus);
+    config->group(groupname).writeEntry(key, window_focus);
   else
-    config->deleteEntry(key);
+    config->group(groupname).deleteEntry(key);
 
   key = prefix + "WindowStatusPolicy";
   if (window_status != INHERIT_POLICY)
-    config->writeEntry(key, window_status);
+    config->group(groupname).writeEntry(key, window_status);
   else
-    config->deleteEntry(key);
+    config->group(groupname).deleteEntry(key);
 
   // don't do a config->sync() here for sake of efficiency
 }

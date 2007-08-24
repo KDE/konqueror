@@ -171,8 +171,8 @@ KRemoteEncodingPlugin::slotItemSelected(int id)
     {
       QString charset = KGlobal::charsets()->encodingForName(m_encodingDescriptions[id - 1]);
 
-      config.setGroup(host);
-      config.writeEntry(DATA_KEY, charset);
+	  KConfigGroup cg(&config, host);
+      cg.writeEntry(DATA_KEY, charset);
       config.sync();
 
       // Update the io-slaves...
@@ -216,7 +216,7 @@ KRemoteEncodingPlugin::slotDefault()
 	  if (config.hasGroup(*it))
 	    config.deleteGroup(*it);
 	  else if (config.hasKey(*it))
-	    config.deleteEntry(*it);
+	    config.group("").deleteEntry(*it); //don't know what group name is supposed to be XXX
 	}
     }
   config.sync();

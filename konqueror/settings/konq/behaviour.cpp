@@ -198,24 +198,24 @@ void KBehaviourOptions::slotShowTips(bool b)
 
 void KBehaviourOptions::load()
 {
-    g_pConfig->setGroup( groupname );
-    cbNewWin->setChecked( g_pConfig->readEntry("AlwaysNewWin", false) );
+	KConfigGroup cg(g_pConfig, groupname);
+    cbNewWin->setChecked( cg.readEntry("AlwaysNewWin", false) );
     updateWinPixmap(cbNewWin->isChecked());
 
-    homeURL->setUrl(g_pConfig->readEntry("HomeURL", "~"));
+    homeURL->setUrl(cg.readEntry("HomeURL", "~"));
 
-    bool stips = g_pConfig->readEntry( "ShowFileTips", true);
+    bool stips = cg.readEntry( "ShowFileTips", true);
     cbShowTips->setChecked( stips );
     slotShowTips( stips );
 
-    bool showPreviewsIntips = g_pConfig->readEntry( "ShowPreviewsInFileTips", true);
+    bool showPreviewsIntips = cg.readEntry( "ShowPreviewsInFileTips", true);
     cbShowPreviewsInTips->setChecked( showPreviewsIntips );
 
-    cbRenameDirectlyIcon->setChecked( g_pConfig->readEntry("RenameIconDirectly", bool(DEFAULT_RENAMEICONDIRECTLY )) );
+    cbRenameDirectlyIcon->setChecked( cg.readEntry("RenameIconDirectly", bool(DEFAULT_RENAMEICONDIRECTLY )) );
 
     KSharedConfig::Ptr globalconfig = KSharedConfig::openConfig("kdeglobals", KConfig::NoGlobals);
-    globalconfig->setGroup( "KDE" );
-    cbShowDeleteCommand->setChecked( globalconfig->readEntry("ShowDeleteCommand", false) );
+	KConfigGroup cg2(globalconfig, "KDE");
+    cbShowDeleteCommand->setChecked( cg2.readEntry("ShowDeleteCommand", false) );
 
 //    if (!stips) sbToolTip->setEnabled( false );
     if (!stips) cbShowPreviewsInTips->setEnabled( false );
@@ -223,13 +223,13 @@ void KBehaviourOptions::load()
 //    sbToolTip->setValue( g_pConfig->readEntry( "FileTipItems", 6 ) );
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig("uiserverrc");
-    config->setGroup( "UIServer" );
+	KConfigGroup cg3(config, "UIServer");
 
-    cbListProgress->setChecked( config->readEntry( "ShowList", false) );
+    cbListProgress->setChecked( cg3.readEntry( "ShowList", false) );
 
-    g_pConfig->setGroup( "Trash" );
-    cbMoveToTrash->setChecked( g_pConfig->readEntry("ConfirmTrash", bool(DEFAULT_CONFIRMTRASH)) );
-    cbDelete->setChecked( g_pConfig->readEntry("ConfirmDelete", bool(DEFAULT_CONFIRMDELETE)) );
+	KConfigGroup cg4(g_pConfig, "Trash");
+    cbMoveToTrash->setChecked( cg4.readEntry("ConfirmTrash", bool(DEFAULT_CONFIRMTRASH)) );
+    cbDelete->setChecked( cg4.readEntry("ConfirmDelete", bool(DEFAULT_CONFIRMDELETE)) );
 }
 
 void KBehaviourOptions::defaults()
@@ -256,32 +256,31 @@ void KBehaviourOptions::defaults()
 
 void KBehaviourOptions::save()
 {
-    g_pConfig->setGroup( groupname );
+	KConfigGroup cg(g_pConfig, groupname);
 
-    g_pConfig->writeEntry( "AlwaysNewWin", cbNewWin->isChecked() );
-    g_pConfig->writeEntry( "HomeURL", homeURL->url().isEmpty()? QString("~") : homeURL->url().url() );
-
-    g_pConfig->writeEntry( "ShowFileTips", cbShowTips->isChecked() );
-    g_pConfig->writeEntry( "ShowPreviewsInFileTips", cbShowPreviewsInTips->isChecked() );
+    cg.writeEntry( "AlwaysNewWin", cbNewWin->isChecked() );
+    cg.writeEntry( "HomeURL", homeURL->url().isEmpty()? QString("~") : homeURL->url().url() );
+    cg.writeEntry( "ShowFileTips", cbShowTips->isChecked() );
+    cg.writeEntry( "ShowPreviewsInFileTips", cbShowPreviewsInTips->isChecked() );
 //    g_pConfig->writeEntry( "FileTipsItems", sbToolTip->value() );
 
-    g_pConfig->writeEntry( "RenameIconDirectly", cbRenameDirectlyIcon->isChecked());
+    cg.writeEntry( "RenameIconDirectly", cbRenameDirectlyIcon->isChecked());
 
     KSharedConfig::Ptr globalconfig = KSharedConfig::openConfig("kdeglobals", KConfig::NoGlobals);
-    globalconfig->setGroup( "KDE" );
-    globalconfig->writeEntry( "ShowDeleteCommand", cbShowDeleteCommand->isChecked());
-    globalconfig->sync();
+	KConfigGroup cg2(globalconfig, "KDE");
+    cg2.writeEntry( "ShowDeleteCommand", cbShowDeleteCommand->isChecked());
+    cg2.sync();
 
-    g_pConfig->setGroup( "Trash" );
-    g_pConfig->writeEntry( "ConfirmTrash", cbMoveToTrash->isChecked());
-    g_pConfig->writeEntry( "ConfirmDelete", cbDelete->isChecked());
-    g_pConfig->sync();
+	KConfigGroup cg3(globalconfig, "Trash");
+    cg3.writeEntry( "ConfirmTrash", cbMoveToTrash->isChecked());
+    cg3.writeEntry( "ConfirmDelete", cbDelete->isChecked());
+    cg3.sync();
 
     // UIServer setting
     KSharedConfig::Ptr config = KSharedConfig::openConfig("uiserverrc");
-    config->setGroup( "UIServer" );
-    config->writeEntry( "ShowList", cbListProgress->isChecked() );
-    config->sync();
+	KConfigGroup cg4(config, "UIServer");
+    cg4.writeEntry( "ShowList", cbListProgress->isChecked() );
+    cg4.sync();
     // Tell the running server
     if ( QDBusConnection::sessionBus().interface()->isServiceRegistered( "org.kde.kio_uiserver" ) )
     {

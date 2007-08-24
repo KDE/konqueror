@@ -102,8 +102,8 @@ void UserAgentDlg::load()
       if ( (*it) == "<default>")
          continue;
       QString domain = *it;
-      m_config->setGroup(*it);
-      QString agentStr = m_config->readEntry("UserAgent");
+	  KConfigGroup cg(m_config, *it);
+      QString agentStr = cg.readEntry("UserAgent");
       if (!agentStr.isEmpty())
       {
          QString realName = m_provider->aliasStr(agentStr);
@@ -112,10 +112,10 @@ void UserAgentDlg::load()
   }
 
   // Update buttons and checkboxes...
-  m_config->setGroup(QString());
-  bool b = m_config->readEntry("SendUserAgent", true);
+  KConfigGroup cg2(m_config, QString());
+  bool b = cg2.readEntry("SendUserAgent", true);
   dlg->cbSendUAString->setChecked( b );
-  m_ua_keys = m_config->readEntry("UserAgentKeys", DEFAULT_USER_AGENT_KEYS).toLower();
+  m_ua_keys = cg2.readEntry("UserAgentKeys", DEFAULT_USER_AGENT_KEYS).toLower();
   dlg->leDefaultId->setText( KProtocolManager::defaultUserAgent( m_ua_keys ) );
   dlg->cbOS->setChecked( m_ua_keys.contains('o') );
   dlg->cbOSVersion->setChecked( m_ua_keys.contains('v') );
@@ -164,8 +164,8 @@ void UserAgentDlg::save()
       if ( (*it) == "<default>")
          continue;
       QString domain = *it;
-      m_config->setGroup(*it);
-      if (m_config->hasKey("UserAgent"))
+	  KConfigGroup cg(m_config, *it);
+      if (cg.hasKey("UserAgent"))
          deleteList.append(*it);
   }
 
@@ -176,17 +176,17 @@ void UserAgentDlg::save()
     if (domain[0] == '.')
       domain = domain.mid(1);
     QString userAgent = it->text(2);
-    m_config->setGroup(domain);
-    m_config->writeEntry("UserAgent", userAgent);
+	KConfigGroup cg2(m_config, domain);
+    cg2.writeEntry("UserAgent", userAgent);
     deleteList.removeAll(domain);
 
     it = it->nextSibling();
   }
 
-  m_config->setGroup(QString());
-  m_config->writeEntry("SendUserAgent", dlg->cbSendUAString->isChecked());
-  m_config->writeEntry("UserAgentKeys", m_ua_keys );
-  m_config->sync();
+  KConfigGroup cg3(m_config, QString());
+  cg3.writeEntry("SendUserAgent", dlg->cbSendUAString->isChecked());
+  cg3.writeEntry("UserAgentKeys", m_ua_keys );
+  cg3.sync();
 
   // Delete all entries from deleteList.
   if (!deleteList.isEmpty())
@@ -196,9 +196,9 @@ void UserAgentDlg::save()
      for ( QStringList::Iterator it = deleteList.begin();
            it != deleteList.end(); ++it )
      {
-        cfg.setGroup(*it);
-        cfg.deleteEntry("UserAgent", false);
-        cfg.deleteGroup(*it, false); // Delete if empty.
+		KConfigGroup gcfg(&cfg, *it);
+        gcfg.deleteEntry("UserAgent", false);
+        gcfg.deleteGroup(); // Delete if empty. //XXX mm : I think the "if empty" condition has been severely perverted over time, needs checking
      }
      cfg.sync();
 
@@ -207,9 +207,9 @@ void UserAgentDlg::save()
      for ( QStringList::Iterator it = deleteList.begin();
            it != deleteList.end(); ++it )
      {
-        m_config->setGroup(*it);
-        if (m_config->hasKey("UserAgent"))
-           m_config->writeEntry("UserAgent", QString());
+		KConfigGroup gcfg(m_config, *it);
+        if (gcfg.hasKey("UserAgent"))
+           gcfg.writeEntry("UserAgent", QString());
      }
      m_config->sync();
   }
