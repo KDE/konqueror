@@ -265,9 +265,9 @@ void KonqFontOptions::slotPNbWidthChanged(int value)
 
 void KonqFontOptions::load()
 {
-    g_pConfig->setGroup(groupname);
+	KConfigGroup cg(g_pConfig, groupname);
 
-    QFont stdFont = g_pConfig->readEntry( "StandardFont", QFont() );
+    QFont stdFont = cg.readEntry( "StandardFont", QFont() );
     m_stdName = stdFont.family();
     m_fSize = stdFont.pointSize();
     // we have to use QFontInfo, in case the font was specified with a pixel size
@@ -275,7 +275,7 @@ void KonqFontOptions::load()
         m_fSize = QFontInfo(stdFont).pointSize();
 
     normalTextColor = KGlobalSettings::textColor();
-    normalTextColor = g_pConfig->readEntry( "NormalTextColor", normalTextColor );
+    normalTextColor = cg.readEntry( "NormalTextColor", normalTextColor );
     m_pNormalText->setColor( normalTextColor );
 
     /* highlightedTextColor = KGlobalSettings::highlightedTextColor();
@@ -285,7 +285,7 @@ void KonqFontOptions::load()
 
     if ( m_bDesktop )
     {
-        textBackgroundColor = g_pConfig->readEntry( "ItemTextBackground" );
+        textBackgroundColor = cg.readEntry( "ItemTextBackground" );
         m_cbTextBackground->setChecked(textBackgroundColor.isValid());
         m_pTextBackground->setEnabled(textBackgroundColor.isValid());
         m_pTextBackground->setColor( textBackgroundColor );
@@ -295,24 +295,24 @@ void KonqFontOptions::load()
     }
     else
     {
-        int n = g_pConfig->readEntry( "TextHeight", 0 );
+        int n = cg.readEntry( "TextHeight", 0 );
         if ( n == 0 ) {
-            if ( g_pConfig->readEntry( "WordWrapText", true) )
+            if ( cg.readEntry( "WordWrapText", true) )
                 n = DEFAULT_TEXTHEIGHT;
             else
                 n = 1;
         }
         m_pNbLines->setValue( n );
 
-        n = g_pConfig->readEntry( "TextWidth", DEFAULT_TEXTWIDTH_MULTICOLUMN );
+        n = cg.readEntry( "TextWidth", DEFAULT_TEXTWIDTH_MULTICOLUMN );
         m_pNbWidth->setValue( n );
 
-        m_pSizeInBytes->setChecked( g_pConfig->readEntry( "DisplayFileSizeInBytes", bool(DEFAULT_FILESIZEINBYTES )) );
+        m_pSizeInBytes->setChecked( cg.readEntry( "DisplayFileSizeInBytes", bool(DEFAULT_FILESIZEINBYTES )) );
     }
-    cbUnderline->setChecked( g_pConfig->readEntry("UnderlineLinks", bool(DEFAULT_UNDERLINELINKS )));
+    cbUnderline->setChecked( cg.readEntry("UnderlineLinks", bool(DEFAULT_UNDERLINELINKS )));
 
     KSharedConfig::Ptr cfg = KSharedConfig::openConfig("kdeglobals");
-    cfg->setGroup("DesktopIcons");
+	KConfigGroup (cfg, "DesktopIcons");
 
     updateGUI();
     emit KCModule::changed( false );
@@ -358,26 +358,26 @@ void KonqFontOptions::updateGUI()
 
 void KonqFontOptions::save()
 {
-    g_pConfig->setGroup(groupname);
+	KConfigGroup cg(g_pConfig,groupname);
 
     QFont stdFont( m_stdName, m_fSize );
-    g_pConfig->writeEntry( "StandardFont", stdFont );
+    cg.writeEntry( "StandardFont", stdFont );
 
-    g_pConfig->writeEntry( "NormalTextColor", normalTextColor );
+    cg.writeEntry( "NormalTextColor", normalTextColor );
     //g_pConfig->writeEntry( "HighlightedTextColor", highlightedTextColor );
     if ( m_bDesktop )
-        g_pConfig->writeEntry( "ItemTextBackground", m_cbTextBackground->isChecked() ? textBackgroundColor : QColor());
+        cg.writeEntry( "ItemTextBackground", m_cbTextBackground->isChecked() ? textBackgroundColor : QColor());
     else
     {
-        g_pConfig->writeEntry( "TextHeight", m_pNbLines->value() );
-        g_pConfig->writeEntry( "TextWidth", m_pNbWidth->value() );
-        g_pConfig->writeEntry( "DisplayFileSizeInBytes", m_pSizeInBytes->isChecked() );
+        cg.writeEntry( "TextHeight", m_pNbLines->value() );
+        cg.writeEntry( "TextWidth", m_pNbWidth->value() );
+        cg.writeEntry( "DisplayFileSizeInBytes", m_pSizeInBytes->isChecked() );
     }
-    g_pConfig->writeEntry( "UnderlineLinks", cbUnderline->isChecked() );
-    g_pConfig->sync();
+    cg.writeEntry( "UnderlineLinks", cbUnderline->isChecked() );
+    cg.sync();
 
     KSharedConfig::Ptr cfg = KSharedConfig::openConfig("kdeglobals");
-    cfg->setGroup("DesktopIcons");
+	KConfigGroup (cfg, "DesktopIcons");
 
     // Send signal to konqueror
     // Warning. In case something is added/changed here, keep kfmclient in sync

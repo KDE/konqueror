@@ -208,26 +208,26 @@ void KJavaOptions::load()
     // *** load ***
     java_global_policies.load();
     bool bJavaGlobal      = java_global_policies.isFeatureEnabled();
-    bool bSecurityManager = m_pConfig->readEntry( "UseSecurityManager", true);
-    bool bUseKio = m_pConfig->readEntry( "UseKio", false);
-    bool bServerShutdown  = m_pConfig->readEntry( "ShutdownAppletServer", true);
-    int  serverTimeout    = m_pConfig->readEntry( "AppletServerTimeout", 60 );
+    bool bSecurityManager = m_pConfig->group(m_groupname).readEntry( "UseSecurityManager", true);
+    bool bUseKio = m_pConfig->group(m_groupname).readEntry( "UseKio", false);
+    bool bServerShutdown  = m_pConfig->group(m_groupname).readEntry( "ShutdownAppletServer", true);
+    int  serverTimeout    = m_pConfig->group(m_groupname).readEntry( "AppletServerTimeout", 60 );
 #if defined(PATH_JAVA)
-    QString sJavaPath     = m_pConfig->readPathEntry( "JavaPath", PATH_JAVA );
+    QString sJavaPath     = m_pConfig->group(m_groupname).readPathEntry( "JavaPath", PATH_JAVA );
 #else
-    QString sJavaPath     = m_pConfig->readPathEntry( "JavaPath", "java" );
+    QString sJavaPath     = m_pConfig->group(m_groupname).readPathEntry( "JavaPath", "java" );
 #endif
 
     if( sJavaPath == "/usr/lib/jdk" )
         sJavaPath = "java";
 
     if( m_pConfig->hasKey( "JavaDomains" ) )
-    	domainSpecific->initialize(m_pConfig->readEntry("JavaDomains", QStringList() ));
+    	domainSpecific->initialize(m_pConfig->group(m_groupname).readEntry("JavaDomains", QStringList() ));
     else if( m_pConfig->hasKey( "JavaDomainSettings" ) ) {
-        domainSpecific->updateDomainListLegacy( m_pConfig->readEntry("JavaDomainSettings", QStringList() ) );
+        domainSpecific->updateDomainListLegacy( m_pConfig->group(m_groupname).readEntry("JavaDomainSettings", QStringList() ) );
 	_removeJavaDomainSettings = true;
     } else {
-        domainSpecific->updateDomainListLegacy( m_pConfig->readEntry("JavaScriptDomainAdvice", QStringList() ) );
+        domainSpecific->updateDomainListLegacy( m_pConfig->group(m_groupname).readEntry("JavaScriptDomainAdvice", QStringList() ) );
 	_removeJavaScriptDomainAdvice = true;
     }
 
@@ -236,7 +236,7 @@ void KJavaOptions::load()
     javaSecurityManagerCB->setChecked( bSecurityManager );
     useKioCB->setChecked( bUseKio );
 
-    addArgED->setText( m_pConfig->readEntry( "JavaArgs" ) );
+    addArgED->setText( m_pConfig->group(m_groupname).readEntry( "JavaArgs" ) );
     pathED->lineEdit()->setText( sJavaPath );
 
     enableShutdownCB->setChecked( bServerShutdown );
@@ -263,17 +263,17 @@ void KJavaOptions::defaults()
 void KJavaOptions::save()
 {
     java_global_policies.save();
-    m_pConfig->writeEntry( "JavaArgs", addArgED->text() );
-    m_pConfig->writePathEntry( "JavaPath", pathED->lineEdit()->text() );
-    m_pConfig->writeEntry( "UseSecurityManager", javaSecurityManagerCB->isChecked() );
-    m_pConfig->writeEntry( "UseKio", useKioCB->isChecked() );
-    m_pConfig->writeEntry( "ShutdownAppletServer", enableShutdownCB->isChecked() );
-    m_pConfig->writeEntry( "AppletServerTimeout", serverTimeoutSB->value() );
+    m_pConfig->group(m_groupname).writeEntry( "JavaArgs", addArgED->text() );
+    m_pConfig->group(m_groupname).writePathEntry( "JavaPath", pathED->lineEdit()->text() );
+    m_pConfig->group(m_groupname).writeEntry( "UseSecurityManager", javaSecurityManagerCB->isChecked() );
+    m_pConfig->group(m_groupname).writeEntry( "UseKio", useKioCB->isChecked() );
+    m_pConfig->group(m_groupname).writeEntry( "ShutdownAppletServer", enableShutdownCB->isChecked() );
+    m_pConfig->group(m_groupname).writeEntry( "AppletServerTimeout", serverTimeoutSB->value() );
 
     domainSpecific->save(m_groupname,"JavaDomains");
 
     if (_removeJavaDomainSettings) {
-      m_pConfig->deleteEntry("JavaDomainSettings");
+      m_pConfig->group(m_groupname).deleteEntry("JavaDomainSettings");
       _removeJavaDomainSettings = false;
     }
 

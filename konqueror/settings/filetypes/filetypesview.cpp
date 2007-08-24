@@ -379,9 +379,9 @@ bool FileTypesView::sync( QList<TypesListItem *>& itemsModified )
     loc = KStandardDirs::locate("mime", loc);
 
     KDesktopFile config("mime", loc);
-    config.writeEntry("Type", "MimeType");
-    config.writeEntry("MimeType", m_ptr->name());
-    config.writeEntry("Hidden", true);
+    config.desktopGroup().writeEntry("Type", "MimeType");
+    config.desktopGroup().writeEntry("MimeType", m_ptr->name());
+    config.desktopGroup().writeEntry("Hidden", true);
   }
 
   // now go through all entries and sync those which are dirty.

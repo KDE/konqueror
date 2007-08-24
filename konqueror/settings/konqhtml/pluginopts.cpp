@@ -213,7 +213,7 @@ void KPluginOptions::load()
     // *** apply to GUI ***
     enablePluginsGloballyCB->setChecked( bPluginGlobal );
 
-    domainSpecific->initialize(m_pConfig->readEntry("PluginDomains", QStringList() ));
+    domainSpecific->initialize(m_pConfig->group(m_groupname).readEntry("PluginDomains", QStringList() ));
 
 /****************************************************************************/
 

@@ -102,8 +102,8 @@ void KIOPreferences::load()
   sb_proxyConnect->setValue( proto.proxyConnectTimeout() );
 
   KConfig config( "kio_ftprc", KConfig::NoGlobals );
-  cb_ftpEnablePasv->setChecked( !config.readEntry( "DisablePassiveMode", false) );
-  cb_ftpMarkPartial->setChecked( config.readEntry( "MarkPartial", true) );
+  cb_ftpEnablePasv->setChecked( !config.group("").readEntry( "DisablePassiveMode", false) );
+  cb_ftpMarkPartial->setChecked( config.group("").readEntry( "MarkPartial", true) );
   emit changed( false );
 }
 
@@ -115,8 +115,8 @@ void KIOPreferences::save()
   KSaveIOConfig::setProxyConnectTimeout( sb_proxyConnect->value() );
 
   KConfig config("kio_ftprc", KConfig::NoGlobals);
-  config.writeEntry( "DisablePassiveMode", !cb_ftpEnablePasv->isChecked() );
-  config.writeEntry( "MarkPartial", cb_ftpMarkPartial->isChecked() );
+  config.group("").writeEntry( "DisablePassiveMode", !cb_ftpEnablePasv->isChecked() );
+  config.group("").writeEntry( "MarkPartial", cb_ftpMarkPartial->isChecked() );
   config.sync();
 
   KSaveIOConfig::updateRunningIOSlaves (this);
