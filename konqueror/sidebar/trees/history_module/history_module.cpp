@@ -35,7 +35,7 @@
 #include <kiconloader.h>
 #include <kmessagebox.h>
 #include <krun.h>
-#include <kstaticdeleter.h>
+#include <k3staticdeleter.h>
 #include <ktoggleaction.h>
 #include <kconfiggroup.h>
 
@@ -44,7 +44,7 @@
 // Local
 #include "history_settings.h"
 
-static KStaticDeleter<KonqSidebarHistorySettings> sd;
+static K3StaticDeleter<KonqSidebarHistorySettings> sd;
 KonqSidebarHistorySettings * KonqSidebarHistoryModule::s_settings = 0L;
 
 KonqSidebarHistoryModule::KonqSidebarHistoryModule( KonqSidebarTree * parentTree, const char *name )

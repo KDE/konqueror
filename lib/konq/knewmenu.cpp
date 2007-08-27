@@ -34,7 +34,7 @@
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <kstandarddirs.h>
-#include <kstaticdeleter.h>
+#include <k3staticdeleter.h>
 #include <kprotocolinfo.h>
 #include <kprotocolmanager.h>
 #include <kmenu.h>
@@ -70,7 +70,7 @@ struct KNewMenuEntry {
  */
 typedef QList<KNewMenuEntry> KNewMenuEntryList;
 static KNewMenuEntryList * s_templatesList = 0;
-static KStaticDeleter<KNewMenuEntryList> s_templatesListStaticDeleter;
+static K3StaticDeleter<KNewMenuEntryList> s_templatesListStaticDeleter;
 
 /**
  * Is increased when templatesList has been updated and
@@ -85,7 +85,7 @@ static int s_templatesVersion = 0;
  */
 static bool s_filesParsed = false;
 static KDirWatch * s_pDirWatch = 0;
-static KStaticDeleter<KDirWatch> s_pDirWatchStaticDeleter;
+static K3StaticDeleter<KDirWatch> s_pDirWatchStaticDeleter;
 
 class KNewMenu::KNewMenuPrivate
 {

@@ -27,7 +27,7 @@
 #include <kconfig.h>
 #include <klocale.h>
 #include <kmessagebox.h>
-#include <kstaticdeleter.h>
+#include <k3staticdeleter.h>
 #include <kio/ioslave_defaults.h>
 
 class KSaveIOConfigPrivate
@@ -41,7 +41,7 @@ public:
 };
 
 static KSaveIOConfigPrivate *ksiocpref = 0;
-static KStaticDeleter<KSaveIOConfigPrivate> ksiocp;
+static K3StaticDeleter<KSaveIOConfigPrivate> ksiocp;
 
 KSaveIOConfigPrivate::KSaveIOConfigPrivate (): config(0), http_config(0)
 {

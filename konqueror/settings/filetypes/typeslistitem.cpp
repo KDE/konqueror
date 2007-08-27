@@ -27,11 +27,11 @@
 #include <kstandarddirs.h>
 #include <kdesktopfile.h>
 #include <kmimetypetrader.h>
-#include <kstaticdeleter.h>
+#include <k3staticdeleter.h>
 
 
 QMap< QString, QStringList >* TypesListItem::s_changedServices;
-static KStaticDeleter< QMap< QString, QStringList > > deleter;
+static K3StaticDeleter< QMap< QString, QStringList > > deleter;
 
 TypesListItem::TypesListItem(Q3ListView *parent, const QString & major)
   : Q3ListViewItem(parent), metaType(true), m_bNewItem(false), m_askSave(2)

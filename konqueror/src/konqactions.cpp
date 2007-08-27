@@ -393,7 +393,7 @@ void KonqMostOftenURLSAction::parseHistory() // only ever called once
              SLOT( slotEntryRemoved( const KonqHistoryEntry& )));
     connect( mgr, SIGNAL( cleared() ), SLOT( slotHistoryCleared() ));
 
-    s_mostEntries = new KonqHistoryList; // TODO KStaticDeleter
+    s_mostEntries = new KonqHistoryList; // TODO K3StaticDeleter
     const KonqHistoryList mgrEntries = mgr->entries();
     KonqHistoryList::const_iterator it = mgrEntries.begin();
     const KonqHistoryList::const_iterator end = mgrEntries.end();
