@@ -34,7 +34,7 @@ if (X11_Xt_LIB)
 
   ########### next target ###############
 
-  set(kcm_nsplugins_PART_SRCS kcm_nsplugins.cpp )
+  set(kcm_nsplugins_PART_SRCS kcm_nsplugins.cpp plugin_paths.cpp)
 
 
   kde4_add_plugin(kcm_nsplugins ${kcm_nsplugins_PART_SRCS})
@@ -47,7 +47,7 @@ if (X11_Xt_LIB)
 
   ########### next target ###############
 
-  set(nspluginscan_SRCS pluginscan.cpp )
+  set(nspluginscan_SRCS pluginscan.cpp plugin_paths.cpp)
 
 
   kde4_add_executable(nspluginscan ${nspluginscan_SRCS})

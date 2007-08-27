@@ -173,7 +173,6 @@ KPluginOptions::KPluginOptions( QWidget *parent, const QStringList& )
     netscapeGB->setLayout(vbox);
 
     // setup widgets
-    connect( m_widget->scanAtStartup, SIGNAL(clicked()), SLOT(change()) );
     connect( m_widget->scanButton, SIGNAL(clicked()), SLOT(scan()) );
 
     m_changed = false;
@@ -220,8 +219,6 @@ void KPluginOptions::load()
   KSharedConfig::Ptr config = KSharedConfig::openConfig("kcmnspluginrc");
   KConfigGroup cg(config, "Misc");
 
-  m_widget->scanAtStartup->setChecked( cg.readEntry( "startkdeScan", false) );
-
   m_widget->dirEdit->setUrl(KUrl());
   m_widget->dirEdit->setEnabled( false );
   m_widget->dirRemove->setEnabled( false );
@@ -249,8 +246,6 @@ void KPluginOptions::defaults()
 /*****************************************************************************/
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig( QString(), KConfig::NoGlobals );
-
-    m_widget->scanAtStartup->setChecked( false );
 
     m_widget->dirEdit->setUrl(KUrl());
     m_widget->dirEdit->setEnabled( false );
@@ -283,7 +278,6 @@ void KPluginOptions::save()
     pluginSave( config );
 
     KConfigGroup cg(config, "Misc");
-    cg.writeEntry( "startkdeScan", m_widget->scanAtStartup->isChecked() );
     cg.writeEntry( "HTTP URLs Only", enableHTTPOnly->isChecked() );
     cg.writeEntry( "demandLoad", enableUserDemand->isChecked() );
     cg.writeEntry("Nice Level", (int)(100 - priority->value()) / 5);
@@ -419,7 +413,7 @@ void KPluginOptions::dirLoad( KSharedConfig::Ptr config, bool useDefault )
     KConfigGroup cg(config, "Misc");
     if ( cg.hasKey( "scanPaths" ) && !useDefault )
         paths = cg.readEntry( "scanPaths" , QStringList() );
-    else {//keep sync with kdebase/nsplugins/pluginscan
+    else {//keep sync with kdebase/apps/nsplugins
         paths.append("$HOME/.mozilla/plugins");
         paths.append("$HOME/.netscape/plugins");
 	paths.append("/usr/lib/firefox/plugins");
