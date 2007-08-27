@@ -157,19 +157,6 @@
          </layout>
         </widget>
        </item>
-       <item>
-        <widget class="QCheckBox" name="scanAtStartup" >
-         <property name="whatsThis" >
-          <string>If this option is enabled, KDE will look for new Netscape plugins every time it starts up. This makes it easier for you if you often install new plugins, but it may also slow down KDE startup. You might want to disable this option, especially if you seldom install plugins.</string>
-         </property>
-         <property name="layoutDirection" >
-          <enum>Qt::LeftToRight</enum>
-         </property>
-         <property name="text" >
-          <string>Scan for new plugins at &amp;KDE startup</string>
-         </property>
-        </widget>
-       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="tab" >
@@ -241,6 +228,7 @@
    <class>KUrlRequester</class>
    <extends>QFrame</extends>
    <header>kurlrequester.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <includes>

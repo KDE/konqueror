@@ -55,6 +55,8 @@
 
 #include "sdk/npupp.h"
 
+#include "plugin_paths.h"
+
 static int showProgress=0;
 
 // provide these symbols when compiling with gcc 3.x
@@ -429,48 +431,6 @@ void scanDirectory( const QString &dir, QStringList &mimeInfoList,
     depth--;
 
     kDebug() << "<- scanDirectory dir=" << dir;
-}
-
-
-QStringList getSearchPaths()
-{
-    QStringList searchPaths;
-    KConfigGroup config(KSharedConfig::openConfig( "kcmnspluginrc", KConfig::NoGlobals ), "Misc");
-
-    // setup default paths
-    if ( !config.hasKey("scanPaths") ) {
-        QStringList paths;
-        paths.append("$HOME/.mozilla/plugins");
-        paths.append("$HOME/.netscape/plugins");
-        paths.append("/usr/lib/firefox/plugins");
-        paths.append("/usr/lib64/browser-plugins");
-        paths.append("/usr/lib/browser-plugins");
-        paths.append("/usr/local/netscape/plugins");
-        paths.append("/opt/mozilla/plugins");
-	paths.append("/opt/mozilla/lib/plugins");
-        paths.append("/opt/netscape/plugins");
-        paths.append("/opt/netscape/communicator/plugins");
-        paths.append("/usr/lib/netscape/plugins");
-        paths.append("/usr/lib/netscape/plugins-libc5");
-        paths.append("/usr/lib/netscape/plugins-libc6");
-        paths.append("/usr/lib/mozilla/plugins");
-	paths.append("/usr/lib64/netscape/plugins");
-	paths.append("/usr/lib64/mozilla/plugins");
-        paths.append("$MOZILLA_HOME/plugins");
-        config.writeEntry( "scanPaths", paths );
-    }
-
-    // read paths
-    config.config()->setDollarExpansion( true );
-    searchPaths = config.readEntry( "scanPaths",QStringList() );
-
-    // append environment variable NPX_PLUGIN_PATH
-    QStringList envs = QString( getenv("NPX_PLUGIN_PATH") ).split(':');
-    QStringList::Iterator it;
-    for (it = envs.begin(); it != envs.end(); ++it)
-        searchPaths.append(*it);
-
-    return searchPaths;
 }
 
 
