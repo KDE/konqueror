@@ -28,11 +28,11 @@
 #include <kshell.h>
 #include <kprotocolinfo.h>
 
-#include <kstaticdeleter.h>
+#include <k3staticdeleter.h>
 #include <kconfiggroup.h>
 
 KonqPixmapProvider * KonqPixmapProvider::s_self = 0;
-static KStaticDeleter<KonqPixmapProvider> s_konqPixmapProviderSd;
+static K3StaticDeleter<KonqPixmapProvider> s_konqPixmapProviderSd;
 
 KonqPixmapProvider * KonqPixmapProvider::self()
 {

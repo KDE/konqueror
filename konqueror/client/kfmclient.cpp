@@ -33,7 +33,6 @@
 #include <kservice.h>
 #include <krun.h>
 #include <kcomponentdata.h>
-#include <kstaticdeleter.h>
 #include <KStartupInfoId>
 
 #include <konq_mainwindow_interface.h>
