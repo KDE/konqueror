@@ -19,8 +19,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef KMANUAL_PROXY_DIALOG_H
-#define KMANUAL_PROXY_DIALOG_H
+#ifndef KMANUALPROXYDLG_H
+#define KMANUALPROXYDLG_H
 
 #include "kproxydlgbase.h"
 #include "ui_manualproxy_ui.h"
@@ -82,4 +82,5 @@ private:
   QString mOldFtpText;
   QString mOldHttpsText;
 };
-#endif
+
+#endif // KMANUALPROXYDLG_H

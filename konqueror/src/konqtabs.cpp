@@ -33,7 +33,6 @@
 #include <kiconloader.h>
 #include <klocale.h>
 #include <kstringhandler.h>
-#include <kcolorscheme.h>
 
 #include "konqframe.h"
 #include "konqview.h"
