@@ -19,7 +19,9 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#define KDE3_SUPPORT
 #include <kcmodule.h>
+#undef KDE3_SUPPORT
 #include <kemailsettings.h>
 
 #include "ui_main_widget.h"

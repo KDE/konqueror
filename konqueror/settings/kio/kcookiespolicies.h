@@ -27,7 +27,9 @@
 #define __KCOOKIESPOLICIES_H
 
 #include <QtCore/QMap>
+#define KDE3_SUPPORT
 #include <kcmodule.h>
+#undef KDE3_SUPPORT
 
 #include "policydlg.h"
 #include "ui_kcookiespoliciesdlg_ui.h"

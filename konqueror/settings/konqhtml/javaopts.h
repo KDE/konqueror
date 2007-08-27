@@ -15,7 +15,9 @@
 #ifndef __JAVAOPTS_H__
 #define __JAVAOPTS_H__
 
+#define KDE3_SUPPORT
 #include <kcmodule.h>
+#undef KDE3_SUPPORT
 
 #include "domainlistview.h"
 #include "policies.h"

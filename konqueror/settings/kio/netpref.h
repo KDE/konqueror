@@ -1,7 +1,9 @@
 #ifndef NETPREF_H
 #define NETPREF_H
 
+#define KDE3_SUPPORT
 #include <kcmodule.h>
+#undef KDE3_SUPPORT
 
 class Q3GroupBox;
 class QCheckBox;

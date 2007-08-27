@@ -12,7 +12,9 @@
 #include <QtGui/QCheckBox>
 #include <QtGui/QComboBox>
 
+#define KDE3_SUPPORT
 #include <kcmodule.h>
+#undef KDE3_SUPPORT
 #include <ksharedconfig.h>
 
 class Ui_advancedTabOptions;

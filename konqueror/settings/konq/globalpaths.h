@@ -30,7 +30,9 @@
 #ifndef __GLOBALPATHS_H
 #define __GLOBALPATHS_H
 
+#define KDE3_SUPPORT
 #include <kcmodule.h>
+#undef KDE3_SUPPORT
 #include <kio/global.h>
 #include <kio/udsentry.h>
 #include <kurl.h>

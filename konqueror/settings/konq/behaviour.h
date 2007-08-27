@@ -19,7 +19,9 @@
 #ifndef BEHAVIOUR_H
 #define BEHAVIOUR_H
 
+#define KDE3_SUPPORT
 #include <kcmodule.h>
+#undef KDE3_SUPPORT
 #include <kconfig.h>
 #include <ksharedconfig.h>
 #include <QtCore/QStringList>

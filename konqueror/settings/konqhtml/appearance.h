@@ -14,7 +14,9 @@
 #include <QtGui/QWidget>
 #include <QtCore/QMap>
 
+#define KDE3_SUPPORT
 #include <kcmodule.h>
+#undef KDE3_SUPPORT
 #include <kconfig.h>
 
 class QSpinBox;

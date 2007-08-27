@@ -22,7 +22,9 @@
 
 
 
+#define KDE3_SUPPORT
 #include <kcmodule.h>
+#undef KDE3_SUPPORT
 #include <ksharedconfig.h>
 class KIntNumInput;
 

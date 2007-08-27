@@ -6,7 +6,9 @@
 #ifndef __KCOOKIESMAIN_H
 #define __KCOOKIESMAIN_H
 
+#define KDE3_SUPPORT
 #include <kcmodule.h>
+#undef KDE3_SUPPORT
 
 class QTabWidget;
 class KCookiesPolicies;
