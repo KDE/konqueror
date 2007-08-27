@@ -446,7 +446,7 @@ void KManualProxyDlg::showErrorMsg( const QString& caption,
                           "such as spaces, asterisks (*), or question marks(?).<br /><br />"
                           "<u>Examples of VALID entries:</u><br />"
                           "<code>http://mycompany.com, 192.168.10.1, "
-                          "mycompany.com, localhost, http://localhost</code><p>"
+                          "mycompany.com, localhost, http://localhost</code><br /><br />"
                           "<u>Examples of INVALID entries:</u><br />"
                           "<code>http://my company.com, http:/mycompany,com "
                           "file:/localhost</code></qt>");

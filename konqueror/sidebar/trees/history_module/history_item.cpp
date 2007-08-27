@@ -119,7 +119,7 @@ QString KonqSidebarHistoryItem::toolTipText() const
 {
     if ( s_settings->m_detailedTips ) {
 	return i18n("<qt><center><b>%1</b></center><hr />Last visited: %2<br />"
-                    "First visited: %3<br>Number of times visited: %4</qt>",
+                    "First visited: %3<br />Number of times visited: %4</qt>",
                     m_entry.url.url(),
                     KGlobal::locale()->formatDateTime( m_entry.lastVisited ),
                     KGlobal::locale()->formatDateTime( m_entry.firstVisited ),

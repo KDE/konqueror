@@ -351,11 +351,11 @@ QString KonqAboutPageFactory::tips()
 	  .arg( i18n( "To create a link on your desktop pointing to the current page, "
 		      "simply drag the \"Location\" label that is to the left of the Location toolbar, drop it on to "
 		      "the desktop, and choose \"Link\"." ) )
-	  .arg( i18n( "You can also find <img width='16' height='16' src=\"%1\"> \"Full-Screen Mode\" "
+	  .arg( i18n( "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen Mode\" "
 		      "in the Settings menu. This feature is very useful for \"Talk\" "
 		      "sessions.", window_fullscreen_icon_path) )
 	  .arg( i18n( "Divide et impera (lat. \"Divide and conquer\") - by splitting a window "
-		      "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\"> Split View "
+		      "into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> Split View "
 		      "Left/Right) you can make Konqueror appear the way you like. You"
 		      " can even load some example view-profiles (e.g. Midnight Commander)"
 		      ", or create your own ones." , view_left_right_icon_path))

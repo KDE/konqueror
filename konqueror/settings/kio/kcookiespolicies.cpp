@@ -462,7 +462,7 @@ QString KCookiesPolicies::quickHelp() const
               " useful in certain situations. For example, they are often used"
               " by Internet shops, so you can 'put things into a shopping"
               " basket'. Some sites require you have a browser that supports"
-              " cookies.<p>Because most people want a compromise between privacy"
+              " cookies.</p><p>Because most people want a compromise between privacy"
               " and the benefits cookies offer, KDE offers you the ability to"
               " customize the way it handles cookies. You might, for example"
               " want to set KDE's default policy to ask you whenever a server"
