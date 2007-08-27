@@ -31,9 +31,8 @@
 #include <kstandarddirs.h>
 #include <klocale.h>
 
-
 #include <QtCore/QDir>
-#include <Qt/qdom.h>
+#include <QtXml/qdom.h>
 #include <QtCore/QFile>
 
 #ifdef Q_WS_X11
