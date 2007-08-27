@@ -79,14 +79,9 @@ protected Q_SLOTS:
 
 private Q_SLOTS:
     /**
-     * Called when New->Directory... is clicked
-     */
-    void slotNewDir();
-
-    /**
      * Called when New->* is clicked
      */
-    void slotNewFile();
+    void slotActionTriggered(QAction*);
 
     /**
      * Fills the templates list.
@@ -97,6 +92,7 @@ private Q_SLOTS:
     void slotRenamed( KIO::Job *, const KUrl&, const KUrl& );
 
 private:
+    void newDir();
 
     /**
      * Fills the menu from the templates list.
