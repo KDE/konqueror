@@ -26,7 +26,9 @@
 #include <QtGui/QVBoxLayout>
 
 // KDE
+#define KDE3_SUPPORT
 #include <kcmodule.h>
+#undef KDE3_SUPPORT
 #include <kglobal.h>
 
 class QTabWidget;

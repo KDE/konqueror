@@ -22,7 +22,9 @@
 #ifndef CACHE_H
 #define CACHE_H
 
+#define KDE3_SUPPORT
 #include <kcmodule.h>
+#undef KDE3_SUPPORT
 #include "ui_cache_ui.h"
 
 class CacheDlgUI : public QWidget, public Ui::CacheDlgUI

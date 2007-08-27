@@ -29,7 +29,7 @@
 #include <kservice.h>
 
 class KAboutData;
-class KLibFactory;
+class KPluginFactory;
 namespace KParts { class ReadOnlyPart; }
 
 class KonqViewFactory // TODO rename to KonqPartFactory? confusing though due to KParts::PartFactory (in the part itself)
@@ -37,7 +37,7 @@ class KonqViewFactory // TODO rename to KonqPartFactory? confusing though due to
 public:
   KonqViewFactory() : m_factory( 0 ), m_createBrowser( false ) {}
 
-  KonqViewFactory( KLibFactory *factory, const QStringList &args, bool createBrowser );
+  KonqViewFactory( KPluginFactory *factory, const QStringList &args, bool createBrowser );
 
   KonqViewFactory( const KonqViewFactory &factory )
   { (*this) = factory; }
@@ -55,7 +55,7 @@ public:
   bool isNull() const { return m_factory ? false : true; }
 
 private:
-  KLibFactory *m_factory;
+  KPluginFactory *m_factory;
   QStringList m_args;
   bool m_createBrowser;
 };

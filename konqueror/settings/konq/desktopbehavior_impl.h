@@ -23,7 +23,9 @@
 
 #include "ui_desktopbehavior.h"
 #include <kconfig.h>
+#define KDE3_SUPPORT
 #include <kcmodule.h>
+#undef KDE3_SUPPORT
 class QStringList;
 
 class DesktopBehaviorBase : public QWidget, public Ui::DesktopBehaviorBase

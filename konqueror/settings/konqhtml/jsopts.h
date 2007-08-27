@@ -10,7 +10,9 @@
 #ifndef __JSOPTS_H__
 #define __JSOPTS_H__
 
+#define KDE3_SUPPORT
 #include <kcmodule.h>
+#undef KDE3_SUPPORT
 
 #include "domainlistview.h"
 #include "jspolicies.h"

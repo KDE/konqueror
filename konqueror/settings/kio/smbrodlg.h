@@ -25,7 +25,9 @@
 #include <QtGui/QLineEdit>
 #include <QtGui/QCheckBox>
 
+#define KDE3_SUPPORT
 #include <kcmodule.h>
+#undef KDE3_SUPPORT
 #include <kcomponentdata.h>
 
 class KComboBox;

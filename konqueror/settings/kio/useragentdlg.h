@@ -25,7 +25,9 @@
 #ifndef _USERAGENTDLG_H
 #define _USERAGENTDLG_H
 
+#define KDE3_SUPPORT
 #include <kcmodule.h>
+#undef KDE3_SUPPORT
 #include "ui_useragentdlg_ui.h"
 
 class KConfig;

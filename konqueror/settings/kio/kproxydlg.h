@@ -22,7 +22,9 @@
 #ifndef KPROXYDLG_H
 #define KPROXYDLG_H
 
+#define KDE3_SUPPORT
 #include <kcmodule.h>
+#undef KDE3_SUPPORT
 #include "ui_kproxydlg_ui.h"
 
 class QTabWidget;

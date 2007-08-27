@@ -21,7 +21,9 @@
 
 #include <QtCore/QMap>
 
+#define KDE3_SUPPORT
 #include <kcmodule.h>
+#undef KDE3_SUPPORT
 #include "ui_csscustom.h"
 #include "ui_cssconfig.h"
 #include "ui_preview.h"

@@ -37,7 +37,9 @@
 #include <QtCore/QStringList>
 #include <QtGui/QSpinBox>
 
+#define KDE3_SUPPORT
 #include <kcmodule.h>
+#undef KDE3_SUPPORT
 #include <kconfig.h>
 #include <ksharedconfig.h>
 

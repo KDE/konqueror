@@ -18,7 +18,9 @@
 
 class QCheckBox;
 
+#define KDE3_SUPPORT
 #include <kcmodule.h>
+#undef KDE3_SUPPORT
 #include <kconfig.h>
 #include "ui_nsconfigwidget.h"
 

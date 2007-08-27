@@ -19,7 +19,9 @@
 #ifndef _KCM_PERFORMANCE_H
 #define _KCM_PERFORMANCE_H
 
+#define KDE3_SUPPORT
 #include <kcmodule.h>
+#undef KDE3_SUPPORT
 class QStringList;
 
 namespace KCMPerformance

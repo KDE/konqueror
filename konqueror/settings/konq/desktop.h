@@ -19,7 +19,9 @@
 #ifndef __desktop_h__
 #define __desktop_h__
 
+#define KDE3_SUPPORT
 #include <kcmodule.h>
+#undef KDE3_SUPPORT
 
 class QLabel;
 class QCheckBox;
