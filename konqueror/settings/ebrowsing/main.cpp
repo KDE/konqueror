@@ -32,23 +32,27 @@
 #include <QtCore/QMap>
 #include <QtGui/QTabWidget>
 #include <QtGui/QBoxLayout>
+#include <klocale.h>
 #include <kservice.h>
 #include <kservicetypetrader.h>
 
 // KDE
 #include <kdialog.h>
 #include <kurifilter.h>
-#include <kgenericfactory.h>
 
 // Local
 #include "filteropts.h"
+#include <KPluginFactory>
+#include <KPluginLoader>
 
-typedef KGenericFactory<KURIFilterModule, QWidget> KURIFactory;
-K_EXPORT_COMPONENT_FACTORY( kurifilt, KURIFactory("kcmkurifilt") )
+K_PLUGIN_FACTORY(KURIFactory,
+        registerPlugin<KURIFilterModule>();
+        )
+K_EXPORT_PLUGIN(KURIFactory("kcmkurifilt"))
 
 class FilterOptions;
 
-KURIFilterModule::KURIFilterModule(QWidget *parent, const QStringList &)
+KURIFilterModule::KURIFilterModule(QWidget *parent, const QVariantList &)
                  :KCModule(KURIFactory::componentData(), parent)
 {
 

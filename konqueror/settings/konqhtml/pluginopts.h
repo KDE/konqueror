@@ -18,9 +18,7 @@
 
 class QCheckBox;
 
-#define KDE3_SUPPORT
 #include <kcmodule.h>
-#undef KDE3_SUPPORT
 #include <kconfig.h>
 #include "ui_nsconfigwidget.h"
 
@@ -100,7 +98,7 @@ class KPluginOptions : public KCModule
     Q_OBJECT
 
 public:
-    KPluginOptions( QWidget* parent, const QStringList& );
+    KPluginOptions( QWidget* parent, const QVariantList& );
 
     virtual void load();
     virtual void save();

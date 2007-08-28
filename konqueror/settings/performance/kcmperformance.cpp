@@ -27,22 +27,23 @@
 // KDE
 #include <klocale.h>
 #include <kdialog.h>
-#include <kgenericfactory.h>
 
 // Local
 #include "konqueror.h"
 #include "system.h"
+#include <KPluginFactory>
+#include <KPluginLoader>
 
-typedef KGenericFactory<KCMPerformance::Config> KCMPerformanceConfigFactory;
-K_EXPORT_COMPONENT_FACTORY(performance, KCMPerformanceConfigFactory("kcmperformance"))
-
-typedef KGenericFactory<KCMPerformance::KonquerorConfig> KCMPerformanceKonquerorConfigFactory;
-K_EXPORT_COMPONENT_FACTORY(konqueror, KCMPerformanceKonquerorConfigFactory("kcmperformance"))
+K_PLUGIN_FACTORY(KCMPerformanceConfigFactory,
+        registerPlugin<KCMPerformance::Config>("performance");
+        registerPlugin<KCMPerformance::KonquerorConfig>("konqueror");
+        )
+K_EXPORT_PLUGIN(KCMPerformanceConfigFactory("kcmperformance"))
 
 namespace KCMPerformance
 {
 
-Config::Config( QWidget* parent_P, const QStringList & )
+Config::Config( QWidget* parent_P, const QVariantList & )
     : KCModule( KCMPerformanceConfigFactory::componentData(), parent_P )
     {
     setQuickHelp( i18n( "<h1>KDE Performance</h1>"
@@ -80,8 +81,8 @@ void Config::defaults()
     system_widget->defaults();
     }
 
-KonquerorConfig::KonquerorConfig( QWidget* parent_P, const QStringList & )
-    : KCModule( KCMPerformanceKonquerorConfigFactory::componentData(), parent_P )
+KonquerorConfig::KonquerorConfig( QWidget* parent_P, const QVariantList & )
+    : KCModule( KCMPerformanceConfigFactory::componentData(), parent_P )
     {
     setQuickHelp( i18n( "<h1>Konqueror Performance</h1>"
         " You can configure several settings that improve Konqueror performance here."

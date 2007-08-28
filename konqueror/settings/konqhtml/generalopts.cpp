@@ -18,19 +18,19 @@
 // KDE
 #include <konq_defaults.h> // include default values directly from konqueror
 #include <kapplication.h>
-#include <kgenericfactory.h>
 
 // Local
 #include "ui_advancedTabOptions.h"
 #include "khtml_settings.h"
+#include <KPluginFactory>
+#include <KPluginLoader>
 
-typedef KGenericFactory<KKonqGeneralOptions, QWidget> KKonqGeneralOptionsFactory;
-K_EXPORT_COMPONENT_FACTORY( khtml_general, KKonqGeneralOptionsFactory("kcmkonqhtml") )
+K_PLUGIN_FACTORY_DECLARATION(KcmKonqHtmlFactory)
 
 //-----------------------------------------------------------------------------
 
-KKonqGeneralOptions::KKonqGeneralOptions(QWidget *parent, const QStringList&)
-    : KCModule( KKonqGeneralOptionsFactory::componentData(), parent )
+KKonqGeneralOptions::KKonqGeneralOptions(QWidget *parent, const QVariantList&)
+    : KCModule( KcmKonqHtmlFactory::componentData(), parent )
 {
     m_pConfig = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
     int row = 0;

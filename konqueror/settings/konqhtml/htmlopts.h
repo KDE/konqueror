@@ -22,9 +22,7 @@
 
 
 
-#define KDE3_SUPPORT
 #include <kcmodule.h>
-#undef KDE3_SUPPORT
 #include <ksharedconfig.h>
 class KIntNumInput;
 
@@ -33,7 +31,7 @@ class KMiscHTMLOptions : public KCModule
     Q_OBJECT
 
 public:
-    KMiscHTMLOptions( QWidget *parent, const QStringList& );
+    KMiscHTMLOptions( QWidget *parent, const QVariantList& );
     ~KMiscHTMLOptions();
     virtual void load();
     virtual void save();

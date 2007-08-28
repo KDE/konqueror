@@ -19,10 +19,7 @@
 #ifndef _KCM_PERFORMANCE_H
 #define _KCM_PERFORMANCE_H
 
-#define KDE3_SUPPORT
 #include <kcmodule.h>
-#undef KDE3_SUPPORT
-class QStringList;
 
 namespace KCMPerformance
 {
@@ -35,7 +32,7 @@ class Config
     {
     Q_OBJECT
     public:
-        Config( QWidget* parent_P, const QStringList &args );
+        Config( QWidget* parent_P, const QVariantList &args );
         virtual void load();
         virtual void save();
         virtual void defaults();
@@ -49,7 +46,7 @@ class KonquerorConfig
     {
     Q_OBJECT
     public:
-        KonquerorConfig( QWidget* parent_P, const QStringList &args );
+        KonquerorConfig( QWidget* parent_P, const QVariantList &args );
         virtual void load();
         virtual void save();
         virtual void defaults();

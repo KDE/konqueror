@@ -25,9 +25,7 @@
 #ifndef __MAIN_H__
 #define __MAIN_H__
 
-#define KDE3_SUPPORT
 #include <kcmodule.h>
-#undef KDE3_SUPPORT
 #include <QtCore/QList>
 
 #include "filteropts.h"
@@ -38,7 +36,7 @@ class KURIFilterModule : public KCModule {
     Q_OBJECT
 
 public:
-    KURIFilterModule(QWidget *parent, const QStringList &);
+    KURIFilterModule(QWidget *parent, const QVariantList &);
     ~KURIFilterModule();
 
     void load();

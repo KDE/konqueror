@@ -41,7 +41,6 @@
 #include <kmimetype.h>
 #include <kstandarddirs.h>
 #include <kaboutdata.h>
-#include <kgenericfactory.h>
 #include <kmessagebox.h>
 #include <QProcess>
 #include <kio/netaccess.h>
@@ -50,11 +49,15 @@
 
 #include "settings.h"
 #include "chfnprocess.h"
+#include <KPluginFactory>
+#include <KPluginLoader>
 
-typedef KGenericFactory<KCMUserAccount, QWidget> Factory;
-K_EXPORT_COMPONENT_FACTORY( useraccount, Factory("useraccount") )
+K_PLUGIN_FACTORY(Factory,
+        registerPlugin<KCMUserAccount>();
+        )
+K_EXPORT_PLUGIN(Factory("useraccount"))
 
-KCMUserAccount::KCMUserAccount( QWidget *parent, const QStringList &)
+KCMUserAccount::KCMUserAccount( QWidget *parent, const QVariantList &)
 	: KCModule( Factory::componentData(), parent)
 {
 	QVBoxLayout *topLayout = new QVBoxLayout(this);

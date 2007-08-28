@@ -17,6 +17,8 @@
 #include <klocale.h>
 #include <knuminput.h>
 #include <kglobalsettings.h>
+#include <KPluginFactory>
+#include <KPluginLoader>
 
 #if defined Q_WS_X11 && !defined K_WS_QTONLY
 #include <X11/Xlib.h>
@@ -25,12 +27,10 @@
 
 #include "appearance.moc"
 
-#include <kgenericfactory.h>
-typedef KGenericFactory<KAppearanceOptions, QWidget> KAppearanceOptionsFactory;
-K_EXPORT_COMPONENT_FACTORY( khtml_fonts, KAppearanceOptionsFactory("kcmkonqhtml") )
+K_PLUGIN_FACTORY_DECLARATION(KcmKonqHtmlFactory)
 
-KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QStringList&)
-    : KCModule( KAppearanceOptionsFactory::componentData(), parent ), m_groupname("HTML Settings"),
+KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList&)
+    : KCModule( KcmKonqHtmlFactory::componentData(), parent ), m_groupname("HTML Settings"),
       fSize( 10 ), fMinSize( HTML_DEFAULT_MIN_FONT_SIZE )
 
 {

@@ -19,9 +19,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#define KDE3_SUPPORT
 #include <kcmodule.h>
-#undef KDE3_SUPPORT
 #include <kemailsettings.h>
 
 #include "ui_main_widget.h"
@@ -54,7 +52,7 @@ class KCMUserAccount : public KCModule
 	Q_OBJECT
 
 public:
-	explicit KCMUserAccount(QWidget* parent, const QStringList& list=QStringList());
+	explicit KCMUserAccount(QWidget* parent, const QVariantList& list=QVariantList());
 	~KCMUserAccount();
 
 	/**

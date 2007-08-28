@@ -36,6 +36,8 @@
 // KDE
 #include <kapplication.h>
 #include <kaboutdata.h>
+#include <KPluginFactory>
+#include <KPluginLoader>
 
 // Local
 #include "jsopts.h"
@@ -44,14 +46,20 @@
 #include "appearance.h"
 #include "htmlopts.h"
 #include "filteropts.h"
+#include "generalopts.h"
 
+K_PLUGIN_FACTORY(KcmKonqHtmlFactory,
+        registerPlugin<KJSParts>("khtml_java_js");
+        registerPlugin<KPluginOptions>("khtml_plugins");
+        registerPlugin<KMiscHTMLOptions>("khtml_behavior");
+        registerPlugin<KKonqGeneralOptions>("khtml_general");
+        registerPlugin<KCMFilter>("khtml_filter");
+        registerPlugin<KAppearanceOptions>("khtml_fonts");
+        )
+K_EXPORT_PLUGIN(KcmKonqHtmlFactory("kcmkonqhtml"))
 
-#include <kgenericfactory.h>
-typedef KGenericFactory<KJSParts, QWidget> KJSPartsFactory;
-K_EXPORT_COMPONENT_FACTORY( khtml_java_js, KJSPartsFactory("kcmkonqhtml") )
-
-KJSParts::KJSParts(QWidget *parent, const QStringList&)
-	: KCModule(KJSPartsFactory::componentData(), parent)
+KJSParts::KJSParts(QWidget *parent, const QVariantList&)
+	: KCModule(KcmKonqHtmlFactory::componentData(), parent)
 {
   mConfig = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
   KAboutData *about =

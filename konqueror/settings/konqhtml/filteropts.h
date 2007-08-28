@@ -18,9 +18,7 @@
 #ifndef FILTEROPTS_H
 #define FILTEROPTS_H
 
-#define KDE3_SUPPORT
 #include <kcmodule.h>
-#undef KDE3_SUPPORT
 #include <ksharedconfig.h>
 
 class QListWidget;
@@ -32,7 +30,7 @@ class KCMFilter : public KCModule
 {
     Q_OBJECT
 public:
-    KCMFilter( QWidget* parent, const QStringList& );
+    KCMFilter( QWidget* parent, const QVariantList& );
     ~KCMFilter();
     
     void load();
