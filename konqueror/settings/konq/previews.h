@@ -35,9 +35,7 @@ Configuration of the maximum image size
 //Added by qt3to4:
 #include <Qt3Support/Q3PtrList>
 
-#define KDE3_SUPPORT
 #include <kcmodule.h>
-#undef KDE3_SUPPORT
 #include <QtCore/QStringList>
 
 class QCheckBox;
@@ -48,7 +46,7 @@ class KPreviewOptions : public KCModule
 {
     Q_OBJECT
 public:
-    explicit KPreviewOptions( QWidget *parent, const QStringList &args = QStringList() );
+    explicit KPreviewOptions( QWidget *parent, const QVariantList &args = QVariantList() );
     virtual void load();
     virtual void save();
     virtual void defaults();

@@ -70,11 +70,8 @@
 
 //-----------------------------------------------------------------------------
 
-typedef KonqKcmFactory<DesktopPathConfig> DesktopPathConfigFactory;
-K_EXPORT_COMPONENT_FACTORY(dpath, DesktopPathConfigFactory)
-
-DesktopPathConfig::DesktopPathConfig(QWidget *parent, const QStringList &)
-    : KCModule( KonqKcmFactory<DesktopPathConfig>::componentData(), parent )
+DesktopPathConfig::DesktopPathConfig(QWidget *parent, const QVariantList &)
+    : KCModule( KonqKcmFactory::componentData(), parent )
 {
   QLabel * tmpLabel;
 

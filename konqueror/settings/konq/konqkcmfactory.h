@@ -20,21 +20,8 @@
 #ifndef KONQKCMFACTORY_H
 #define KONQKCMFACTORY_H
 
-#include <kgenericfactory.h>
-#include <kcomponentdata.h>
+#include <KPluginFactory>
 
-#if 0
-QString _desktopConfigName();
-#endif
-
-template<class T>
-class KonqKcmFactory : public KGenericFactory<T>
-{
-    public:
-        KonqKcmFactory() : KGenericFactory<T>("kcmkonq") {}
-
-    protected:
-        virtual KComponentData *createComponentData() { return new KComponentData("kcmkonq"); }
-};
+K_PLUGIN_FACTORY_DECLARATION(KonqKcmFactory)
 
 #endif // KONQKCMFACTORY_H

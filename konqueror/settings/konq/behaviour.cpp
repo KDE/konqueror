@@ -28,6 +28,7 @@
 #include <QtGui/QLabel>
 
 // KDE
+#include <klocale.h>
 #include <konq_defaults.h>
 #include <kstandarddirs.h>
 #include <kurlrequester.h>
@@ -35,11 +36,8 @@
 // Local
 #include "konqkcmfactory.h"
 
-typedef KonqKcmFactory<KBehaviourOptions> KBehaviourOptionsFactory;
-K_EXPORT_COMPONENT_FACTORY(behavior, KBehaviourOptionsFactory)
-
-KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QStringList &)
-    : KCModule(KonqKcmFactory<KBehaviourOptions>::componentData(), parent)
+KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
+    : KCModule(KonqKcmFactory::componentData(), parent)
     , g_pConfig(KSharedConfig::openConfig("konquerorrc", KConfig::IncludeGlobals))
     , groupname("FMSettings")
 {

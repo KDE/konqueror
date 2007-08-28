@@ -19,9 +19,7 @@
 #ifndef __desktop_h__
 #define __desktop_h__
 
-#define KDE3_SUPPORT
 #include <kcmodule.h>
-#undef KDE3_SUPPORT
 
 class QLabel;
 class QCheckBox;
@@ -37,7 +35,7 @@ class KDesktopConfig : public KCModule
   Q_OBJECT
 
  public:
-  KDesktopConfig(QWidget *parent, const QStringList &args);
+  KDesktopConfig(QWidget *parent, const QVariantList &args);
 
   void load();
   void save();

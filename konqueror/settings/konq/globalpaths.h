@@ -30,9 +30,7 @@
 #ifndef __GLOBALPATHS_H
 #define __GLOBALPATHS_H
 
-#define KDE3_SUPPORT
 #include <kcmodule.h>
-#undef KDE3_SUPPORT
 #include <kio/global.h>
 #include <kio/udsentry.h>
 #include <kurl.h>
@@ -51,7 +49,7 @@ class DesktopPathConfig : public KCModule
 {
     Q_OBJECT
 public:
-    DesktopPathConfig( QWidget *parent, const QStringList &args );
+    DesktopPathConfig( QWidget *parent, const QVariantList &args );
     virtual void load();
     virtual void save();
     virtual void defaults();

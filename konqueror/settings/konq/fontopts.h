@@ -37,9 +37,7 @@
 #include <QtCore/QStringList>
 #include <QtGui/QSpinBox>
 
-#define KDE3_SUPPORT
 #include <kcmodule.h>
-#undef KDE3_SUPPORT
 #include <kconfig.h>
 #include <ksharedconfig.h>
 
@@ -57,7 +55,7 @@ class KonqFontOptions : public KCModule
   Q_OBJECT
 public:
   explicit KonqFontOptions(QWidget *parent, 
-                           const QStringList &args = QStringList(), 
+                           const QVariantList &args = QVariantList(), 
                            bool desktop = false);
   QString quickHelp() const;
 
@@ -111,6 +109,14 @@ private:
   QSpinBox* m_pNbWidth;
   QCheckBox* cbUnderline;
   QCheckBox* m_pSizeInBytes;
+};
+
+class KonqFontOptionsDesktop : public KonqFontOptions
+{
+    public:
+        KonqFontOptionsDesktop(QWidget *parent, const QVariantList &args)
+            : KonqFontOptions(parent, args, true)
+        {}
 };
 
 #endif // FONTOPTS_H

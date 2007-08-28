@@ -23,9 +23,7 @@
 
 #include "ui_desktopbehavior.h"
 #include <kconfig.h>
-#define KDE3_SUPPORT
 #include <kcmodule.h>
-#undef KDE3_SUPPORT
 class QStringList;
 
 class DesktopBehaviorBase : public QWidget, public Ui::DesktopBehaviorBase
@@ -75,7 +73,7 @@ class DesktopBehaviorModule : public KCModule
         Q_OBJECT
 
 public:
-        DesktopBehaviorModule(QWidget *parent, const QStringList &);
+        DesktopBehaviorModule(QWidget *parent, const QVariantList &);
         virtual void load() { m_behavior->load(); emit KCModule::changed( false ); }
         virtual void save() { m_behavior->save(); emit KCModule::changed( false ); }
         virtual void defaults() { m_behavior->defaults(); emit KCModule::changed( true ); }

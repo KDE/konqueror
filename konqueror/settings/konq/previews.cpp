@@ -62,11 +62,8 @@ class PreviewCheckListItem : public Q3CheckListItem
     }
 };
 
-typedef KonqKcmFactory<KPreviewOptions> KPreviewOptionsFactory;
-K_EXPORT_COMPONENT_FACTORY(previews, KPreviewOptionsFactory)
-
-KPreviewOptions::KPreviewOptions( QWidget *parent, const QStringList & )
-    : KCModule( KonqKcmFactory<KPreviewOptions>::componentData(), parent )
+KPreviewOptions::KPreviewOptions( QWidget *parent, const QVariantList & )
+    : KCModule( KonqKcmFactory::componentData(), parent )
 {
     QVBoxLayout *lay = new QVBoxLayout(this);
     lay->setSpacing(KDialog::spacingHint());
