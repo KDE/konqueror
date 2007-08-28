@@ -20,7 +20,6 @@
 #include "konqkcmfactory.h"
 #include "behaviour.h"
 #include "browser.h"
-#include "desktopbehavior_impl.h"
 #include "desktop.h"
 #include "fontopts.h"
 #include "globalpaths.h"
