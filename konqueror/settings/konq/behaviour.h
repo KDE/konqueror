@@ -19,9 +19,7 @@
 #ifndef BEHAVIOUR_H
 #define BEHAVIOUR_H
 
-#define KDE3_SUPPORT
 #include <kcmodule.h>
-#undef KDE3_SUPPORT
 #include <kconfig.h>
 #include <ksharedconfig.h>
 #include <QtCore/QStringList>
@@ -36,7 +34,7 @@ class KBehaviourOptions : public KCModule
 {
   Q_OBJECT
 public:
-  explicit KBehaviourOptions(QWidget *parent, const QStringList &args = QStringList());
+  explicit KBehaviourOptions(QWidget *parent, const QVariantList &args = QVariantList());
     ~KBehaviourOptions();
   virtual void load();
   virtual void save();

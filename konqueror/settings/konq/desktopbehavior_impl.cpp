@@ -50,11 +50,8 @@
 #include "kdesktop_interface.h"
 #endif
 
-typedef KonqKcmFactory<DesktopBehaviorModule> DesktopBehaviorModuleFactory;
-K_EXPORT_COMPONENT_FACTORY(dbehavior, DesktopBehaviorModuleFactory)
-
-DesktopBehaviorModule::DesktopBehaviorModule(QWidget *parent, const QStringList &)
-    : KCModule( KonqKcmFactory<DesktopBehaviorModule>::componentData(), parent )
+DesktopBehaviorModule::DesktopBehaviorModule(QWidget *parent, const QVariantList &)
+    : KCModule( KonqKcmFactory::componentData(), parent )
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig(_desktopConfigName(), KConfig::NoGlobals);
     QVBoxLayout* layout = new QVBoxLayout(this);

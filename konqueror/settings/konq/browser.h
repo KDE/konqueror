@@ -20,9 +20,7 @@
 #ifndef __KBROWSER_OPTIONS_H__
 #define __KBROWSER_OPTIONS_H__
 
-#define KDE3_SUPPORT
 #include <kcmodule.h>
-#undef KDE3_SUPPORT
 #include <kconfig.h>
 
 class QTabWidget;
@@ -34,7 +32,7 @@ class KBrowserOptions : public KCModule
 {
   Q_OBJECT
 public:
-  KBrowserOptions(QWidget *parent, const QStringList &args);
+  KBrowserOptions(QWidget *parent, const QVariantList &args);
 
   virtual void load();
   virtual void save();

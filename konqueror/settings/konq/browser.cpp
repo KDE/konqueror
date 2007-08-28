@@ -37,11 +37,8 @@
 #include "previews.h"
 #include "konqkcmfactory.h"
 
-typedef KonqKcmFactory<KBrowserOptions> KBrowserOptionsFactory;
-K_EXPORT_COMPONENT_FACTORY(browser, KBrowserOptionsFactory)
-
-KBrowserOptions::KBrowserOptions(QWidget *parent, const QStringList &)
-    : KCModule( KonqKcmFactory<KBrowserOptions>::componentData(), parent )
+KBrowserOptions::KBrowserOptions(QWidget *parent, const QVariantList &)
+    : KCModule( KonqKcmFactory::componentData(), parent )
 {
   KSharedConfig::Ptr config = KSharedConfig::openConfig("konquerorrc");
   QString group = "FMSettings";

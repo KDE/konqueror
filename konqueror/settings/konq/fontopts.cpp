@@ -49,24 +49,10 @@
 //include "kdesktop_interface.h"
 //endif
 
-class KonqFontOptionsDesktop : public KonqFontOptions
-{
-    public:
-        KonqFontOptionsDesktop(QWidget *parent, const QStringList &args)
-            : KonqFontOptions(parent, args, true)
-        {}
-};
-
-typedef KonqKcmFactory<KonqFontOptions> KonqFontOptionsFactory;
-K_EXPORT_COMPONENT_FACTORY(appearance, KonqFontOptionsFactory)
-
-typedef KonqKcmFactory<KonqFontOptionsDesktop> KonqFontOptionsDesktopFactory;
-K_EXPORT_COMPONENT_FACTORY(dappearance, KonqFontOptionsDesktopFactory)
-
 //-----------------------------------------------------------------------------
 
-KonqFontOptions::KonqFontOptions(QWidget *parent, const QStringList &, bool desktop)
-    : KCModule( KonqKcmFactory<KonqFontOptions>::componentData(), parent )
+KonqFontOptions::KonqFontOptions(QWidget *parent, const QVariantList &, bool desktop)
+    : KCModule( KonqKcmFactory::componentData(), parent )
     , groupname("FMSettings")
     , m_bDesktop(desktop)
 {

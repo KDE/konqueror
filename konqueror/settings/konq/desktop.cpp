@@ -49,16 +49,13 @@
 #include "kdesktop_interface.h"
 #endif
 
-typedef KonqKcmFactory<KDesktopConfig> KDesktopConfigFactory;
-K_EXPORT_COMPONENT_FACTORY(ddesktop, KDesktopConfigFactory)
-
 // I'm using lineedits by intention as it makes sence to be able
 // to see all desktop names at the same time. It also makes sense to
 // be able to TAB through those line edits fast. So don't send me mails
 // asking why I did not implement a more intelligent/smaller GUI.
 
-KDesktopConfig::KDesktopConfig(QWidget *parent, const QStringList &)
-  : KCModule(KonqKcmFactory<KDesktopConfig>::componentData(), parent)
+KDesktopConfig::KDesktopConfig(QWidget *parent, const QVariantList &)
+  : KCModule(KonqKcmFactory::componentData(), parent)
 {
 
   setQuickHelp( i18n("<h1>Multiple Desktops</h1>In this module, you can configure how many virtual desktops you want and how these should be labeled."));

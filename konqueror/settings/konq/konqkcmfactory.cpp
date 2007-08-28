@@ -17,22 +17,26 @@
 
 */
 
-#if 0
 #include "konqkcmfactory.h"
-#include <kcomponentdata.h>
-#include <QtGui/QDesktopWidget>
+#include "behaviour.h"
+#include "browser.h"
+#include "desktopbehavior_impl.h"
+#include "desktop.h"
+#include "fontopts.h"
+#include "globalpaths.h"
+#include "previews.h"
 
-QString _desktopConfigName()
-{
-    int desktop = KApplication::desktop()->primaryScreen();
-    QString name;
-    if (desktop == 0)
-        name = "kdesktoprc";
-    else
-        name.sprintf("kdesktop-screen-%drc", desktop);
+#include <KPluginFactory>
+#include <KPluginLoader>
 
-    return name;
-}
-#endif
-
-// vim: sw=4 ts=4 et
+K_PLUGIN_FACTORY_DEFINITION(KonqKcmFactory,
+        registerPlugin<KBehaviourOptions>("behavior");
+        registerPlugin<KBrowserOptions>("browser");
+        //registerPlugin<DesktopBehaviorModule>("dbehavior");
+        //registerPlugin<KDesktopConfig>("ddesktop");
+        registerPlugin<KonqFontOptions>("appearance");
+        registerPlugin<KonqFontOptionsDesktop>("dappearance");
+        registerPlugin<DesktopPathConfig>("dpath");
+        registerPlugin<KPreviewOptions>("previews");
+        )
+K_EXPORT_PLUGIN(KonqKcmFactory("kcmkonq"))
