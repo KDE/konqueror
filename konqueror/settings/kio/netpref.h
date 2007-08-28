@@ -1,9 +1,7 @@
 #ifndef NETPREF_H
 #define NETPREF_H
 
-#define KDE3_SUPPORT
 #include <kcmodule.h>
-#undef KDE3_SUPPORT
 
 class Q3GroupBox;
 class QCheckBox;
@@ -15,7 +13,7 @@ class KIOPreferences : public KCModule
     Q_OBJECT
 
 public:
-    KIOPreferences(QWidget *parent, const QStringList &args);
+    KIOPreferences(QWidget *parent, const QVariantList &args);
     ~KIOPreferences();
 
     void load();

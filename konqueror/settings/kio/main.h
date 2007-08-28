@@ -26,9 +26,7 @@
 #include <QtGui/QVBoxLayout>
 
 // KDE
-#define KDE3_SUPPORT
 #include <kcmodule.h>
-#undef KDE3_SUPPORT
 #include <kglobal.h>
 
 class QTabWidget;
@@ -37,7 +35,7 @@ class LanBrowser:public KCModule
 {
    Q_OBJECT
    public:
-      LanBrowser(QWidget *parent, const QStringList &args);
+      LanBrowser(QWidget *parent, const QVariantList &args);
       virtual void load();
       virtual void save();
 

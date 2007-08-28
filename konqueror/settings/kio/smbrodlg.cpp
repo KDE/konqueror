@@ -37,11 +37,10 @@
 
 #include <config-apps.h>
 
-typedef KGenericFactory<SMBRoOptions> SMBRoOptionsFactory;
-K_EXPORT_COMPONENT_FACTORY(smb, SMBRoOptionsFactory("kcmkio"))
+K_PLUGIN_FACTORY_DECLARATION(KioConfigFactory)
 
-SMBRoOptions::SMBRoOptions(QWidget *parent, const QStringList &, const KComponentData &componentData)
-  : KCModule(componentData.isValid() ? componentData : SMBRoOptionsFactory::componentData(), parent)
+SMBRoOptions::SMBRoOptions(QWidget *parent, const QVariantList &, const KComponentData &componentData)
+  : KCModule(componentData.isValid() ? componentData : KioConfigFactory::componentData(), parent)
 {
    QGridLayout *layout = new QGridLayout(this );
    layout->setMargin( KDialog::marginHint() );

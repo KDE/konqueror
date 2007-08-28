@@ -22,11 +22,10 @@
 #include "kcookiespolicies.h"
 #include "kcookiesmanagement.h"
 
-typedef KGenericFactory<KCookiesMain> KCookiesMainFactory;
-K_EXPORT_COMPONENT_FACTORY(cookie, KCookiesMainFactory("kcmkio"))
+K_PLUGIN_FACTORY_DECLARATION(KioConfigFactory)
 
-KCookiesMain::KCookiesMain(QWidget *parent, const QStringList &)
-  : KCModule(KCookiesMainFactory::componentData(), parent)
+KCookiesMain::KCookiesMain(QWidget *parent, const QVariantList &)
+  : KCModule(KioConfigFactory::componentData(), parent)
 {
     management = 0;
     bool managerOK = true;

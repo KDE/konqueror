@@ -44,11 +44,19 @@
 #include "cache.h"
 
 
-typedef KGenericFactory<LanBrowser> LanBrowserFactory;
-K_EXPORT_COMPONENT_FACTORY(lanbrowser, LanBrowserFactory("kcmkio"))
+K_PLUGIN_FACTORY(KioConfigFactory,
+        registerPlugin<LanBrowser>("lanbrowser");
+        registerPlugin<UserAgentDlg>("useragent");
+        registerPlugin<SMBRoOptions>("smb");
+        registerPlugin<KIOPreferences>("netpref");
+        registerPlugin<KProxyOptions>("proxy");
+        registerPlugin<KCookiesMain>("cookie");
+        registerPlugin<KCacheConfigDialog>("cache");
+        )
+K_EXPORT_PLUGIN(KioConfigFactory("kcmkio"))
 
-LanBrowser::LanBrowser(QWidget *parent, const QStringList &)
-    : KCModule(LanBrowserFactory::componentData(), parent)
+LanBrowser::LanBrowser(QWidget *parent, const QVariantList &)
+    : KCModule(KioConfigFactory::componentData(), parent)
     , layout(this)
     , tabs(this)
 {
@@ -71,7 +79,7 @@ LanBrowser::LanBrowser(QWidget *parent, const QStringList &)
    
    layout.addWidget(&tabs);
 
-   smbPage = new SMBRoOptions(&tabs, QStringList(), componentData());
+   smbPage = new SMBRoOptions(&tabs, QVariantList(), componentData());
    tabs.addTab(smbPage, i18n("&Windows Shares"));
    connect(smbPage,SIGNAL(changed(bool)), SLOT( changed() ));
 
