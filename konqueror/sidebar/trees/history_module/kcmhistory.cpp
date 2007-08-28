@@ -35,22 +35,25 @@
 #include <kconfig.h>
 #include <kdialog.h>
 #include <kfontdialog.h>
-#include <kgenericfactory.h>
 #include <kglobal.h>
 #include <kicon.h>
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <knuminput.h>
+#include <KPluginFactory>
+#include <KPluginLoader>
 
 // Local
 #include "konq_historymgr.h"
 #include "history_settings.h"
 
-typedef KGenericFactory<HistorySidebarConfig, QWidget > KCMHistoryFactory;
-K_EXPORT_COMPONENT_FACTORY (history, KCMHistoryFactory("kcmhistory") )
+K_PLUGIN_FACTORY(KCMHistoryFactory,
+        registerPlugin<HistorySidebarConfig>();
+        )
+K_EXPORT_PLUGIN(KCMHistoryFactory("kcmhistory"))
 
-HistorySidebarConfig::HistorySidebarConfig( QWidget *parent, const QStringList & )
-    : KCModule (KCMHistoryFactory::componentData(), parent, QStringList())
+HistorySidebarConfig::HistorySidebarConfig( QWidget *parent, const QVariantList & )
+    : KCModule (KCMHistoryFactory::componentData(), parent, QVariantList())
 {
     KGlobal::locale()->insertCatalog("konqueror");
 
