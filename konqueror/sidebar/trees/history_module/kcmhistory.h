@@ -21,9 +21,7 @@
 #ifndef __kcmhistory_h__
 #define __kcmhistory_h__
 
-#define KDE3_SUPPORT
 #include <kcmodule.h>
-#undef KDE3_SUPPORT
 #include "ui_history_dlg.h"
 
 class KonqHistoryManager;
@@ -43,7 +41,7 @@ class HistorySidebarConfig : public KCModule
   Q_OBJECT
 
 public:
-  explicit HistorySidebarConfig( QWidget *parent=0, const QStringList &list=QStringList() );
+  explicit HistorySidebarConfig( QWidget *parent=0, const QVariantList &list=QVariantList() );
 
   void load();
   void save();
