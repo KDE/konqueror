@@ -21,11 +21,10 @@
 
 #define MAX_TIMEOUT_VALUE  3600
 
-typedef KGenericFactory<KIOPreferences> KIOPreferencesFactory;
-K_EXPORT_COMPONENT_FACTORY(netpref, KIOPreferencesFactory("kcmkio"))
+K_PLUGIN_FACTORY_DECLARATION(KioConfigFactory)
 
-KIOPreferences::KIOPreferences(QWidget *parent, const QStringList &)
-    : KCModule(KIOPreferencesFactory::componentData(), parent)
+KIOPreferences::KIOPreferences(QWidget *parent, const QVariantList &)
+    : KCModule(KioConfigFactory::componentData(), parent)
 {
     QVBoxLayout* mainLayout = new QVBoxLayout( this );
     mainLayout->setMargin( 0 );

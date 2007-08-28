@@ -25,9 +25,7 @@
 #include <QtGui/QLineEdit>
 #include <QtGui/QCheckBox>
 
-#define KDE3_SUPPORT
 #include <kcmodule.h>
-#undef KDE3_SUPPORT
 #include <kcomponentdata.h>
 
 class KComboBox;
@@ -36,7 +34,7 @@ class SMBRoOptions : public KCModule
 {
    Q_OBJECT
    public:
-      SMBRoOptions(QWidget *parent, const QStringList &args, const KComponentData &componentData = KComponentData());
+      SMBRoOptions(QWidget *parent, const QVariantList &args, const KComponentData &componentData = KComponentData());
       ~SMBRoOptions();
 
       virtual void load();

@@ -22,9 +22,7 @@
 #ifndef KPROXYDLG_H
 #define KPROXYDLG_H
 
-#define KDE3_SUPPORT
 #include <kcmodule.h>
-#undef KDE3_SUPPORT
 #include "ui_kproxydlg_ui.h"
 
 class QTabWidget;
@@ -45,7 +43,7 @@ class KProxyOptions : public KCModule
   Q_OBJECT
 
 public:
-  KProxyOptions(QWidget *parent, const QStringList &args);
+  KProxyOptions(QWidget *parent, const QVariantList &args);
   ~KProxyOptions();
 
   virtual void load();

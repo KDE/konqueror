@@ -25,9 +25,7 @@
 #ifndef _USERAGENTDLG_H
 #define _USERAGENTDLG_H
 
-#define KDE3_SUPPORT
 #include <kcmodule.h>
-#undef KDE3_SUPPORT
 #include "ui_useragentdlg_ui.h"
 
 class KConfig;
@@ -48,7 +46,7 @@ class UserAgentDlg : public KCModule
   Q_OBJECT
 
 public:
-  UserAgentDlg(QWidget *parent, const QStringList &args);
+  UserAgentDlg(QWidget *parent, const QVariantList &args);
   ~UserAgentDlg();
 
   virtual void load();

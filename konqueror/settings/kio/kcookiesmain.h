@@ -6,9 +6,7 @@
 #ifndef __KCOOKIESMAIN_H
 #define __KCOOKIESMAIN_H
 
-#define KDE3_SUPPORT
 #include <kcmodule.h>
-#undef KDE3_SUPPORT
 
 class QTabWidget;
 class KCookiesPolicies;
@@ -18,7 +16,7 @@ class KCookiesMain : public KCModule
 {
     Q_OBJECT
 public:
-    KCookiesMain(QWidget *parent, const QStringList &args);
+    KCookiesMain(QWidget *parent, const QVariantList &args);
     ~KCookiesMain();
 
     KCookiesPolicies* policyDlg() { return policies; }

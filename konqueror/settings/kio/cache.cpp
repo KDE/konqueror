@@ -42,11 +42,10 @@
 #include "ksaveioconfig.h"
 #include "ui_cache_ui.h"
 
-typedef KGenericFactory<KCacheConfigDialog> KCacheConfigDialogFactory;
-K_EXPORT_COMPONENT_FACTORY(cache, KCacheConfigDialogFactory("kcmkio"))
+K_PLUGIN_FACTORY_DECLARATION(KioConfigFactory)
 
-KCacheConfigDialog::KCacheConfigDialog(QWidget *parent, const QStringList &)
-    : KCModule(KCacheConfigDialogFactory::componentData(), parent)
+KCacheConfigDialog::KCacheConfigDialog(QWidget *parent, const QVariantList &)
+    : KCModule(KioConfigFactory::componentData(), parent)
 {
   QVBoxLayout* mainLayout = new QVBoxLayout(this);
   mainLayout->setMargin(0);

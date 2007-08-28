@@ -47,11 +47,10 @@
 #include "uagentproviderdlg.h"
 
 
-typedef KGenericFactory<UserAgentDlg> UserAgentDlgFactory;
-K_EXPORT_COMPONENT_FACTORY(useragent, UserAgentDlgFactory("kcmkio"))
+K_PLUGIN_FACTORY_DECLARATION(KioConfigFactory)
 
-UserAgentDlg::UserAgentDlg(QWidget *parent, const QStringList &)
-    : KCModule(UserAgentDlgFactory::componentData(), parent)
+UserAgentDlg::UserAgentDlg(QWidget *parent, const QVariantList &)
+    : KCModule(KioConfigFactory::componentData(), parent)
 {
   QVBoxLayout *mainLayout = new QVBoxLayout(this);
   mainLayout->setMargin(0);

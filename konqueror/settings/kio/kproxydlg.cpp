@@ -43,11 +43,10 @@
 #include "ksaveioconfig.h"
 #include "socks.h"
 
-typedef KGenericFactory<KProxyOptions> KProxyOptionsFactory;
-K_EXPORT_COMPONENT_FACTORY(proxy, KProxyOptionsFactory("kcmkio"))
+K_PLUGIN_FACTORY_DECLARATION(KioConfigFactory)
 
-KProxyOptions::KProxyOptions(QWidget *parent, const QStringList &)
-    : KCModule(KProxyOptionsFactory::componentData(), parent)
+KProxyOptions::KProxyOptions(QWidget *parent, const QVariantList &)
+    : KCModule(KioConfigFactory::componentData(), parent)
 {
   QVBoxLayout *layout = new QVBoxLayout(this);
   
