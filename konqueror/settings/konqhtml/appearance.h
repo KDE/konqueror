@@ -14,9 +14,7 @@
 #include <QtGui/QWidget>
 #include <QtCore/QMap>
 
-#define KDE3_SUPPORT
 #include <kcmodule.h>
-#undef KDE3_SUPPORT
 #include <kconfig.h>
 
 class QSpinBox;
@@ -27,7 +25,7 @@ class KAppearanceOptions : public KCModule
 {
   Q_OBJECT
 public:
-  KAppearanceOptions(QWidget *parent, const QStringList&);
+  KAppearanceOptions(QWidget *parent, const QVariantList&);
   ~KAppearanceOptions();
 
   virtual void load();

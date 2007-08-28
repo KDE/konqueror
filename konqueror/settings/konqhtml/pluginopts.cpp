@@ -33,12 +33,13 @@
 #include <kmessagebox.h>
 #include <kstandarddirs.h>
 #include <kurlrequester.h>
+#include <KPluginFactory>
+#include <KPluginLoader>
 
 // Local
 #include "htmlopts.h"
 #include "ui_nsconfigwidget.h"
 #include "policydlg.h"
-
 
 // == class PluginPolicies =====
 
@@ -52,12 +53,10 @@ PluginPolicies::~PluginPolicies() {
 
 // == class KPluginOptions =====
 
-#include <kgenericfactory.h>
-typedef KGenericFactory<KPluginOptions, QWidget> KPluginOptionsFactory;
-K_EXPORT_COMPONENT_FACTORY( khtml_plugins, KPluginOptionsFactory("kcmkonqhtml") )
+K_PLUGIN_FACTORY_DECLARATION(KcmKonqHtmlFactory)
 
-KPluginOptions::KPluginOptions( QWidget *parent, const QStringList& )
-    : KCModule( KPluginOptionsFactory::componentData(), parent ),
+KPluginOptions::KPluginOptions( QWidget *parent, const QVariantList& )
+    : KCModule( KcmKonqHtmlFactory::componentData(), parent ),
       m_pConfig( KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals) ),
       m_groupname( "Java/JavaScript Settings" ),
       global_policies(m_pConfig,m_groupname,true)

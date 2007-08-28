@@ -12,9 +12,7 @@
 #include <QtGui/QCheckBox>
 #include <QtGui/QComboBox>
 
-#define KDE3_SUPPORT
 #include <kcmodule.h>
-#undef KDE3_SUPPORT
 #include <ksharedconfig.h>
 
 class Ui_advancedTabOptions;
@@ -24,7 +22,7 @@ class KKonqGeneralOptions : public KCModule
     Q_OBJECT
 
 public:
-    KKonqGeneralOptions( QWidget *parent, const QStringList& );
+    KKonqGeneralOptions( QWidget *parent, const QVariantList& );
     ~KKonqGeneralOptions();
     virtual void load();
     virtual void save();

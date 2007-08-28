@@ -24,21 +24,20 @@
 #include <knuminput.h>
 #include <kseparator.h>
 #include <kapplication.h>
-#include <kgenericfactory.h>
 
 // Local
 #include "khtml_settings.h"
+#include <KPluginFactory>
+#include <KPluginLoader>
 
-
-typedef KGenericFactory<KMiscHTMLOptions, QWidget> KMiscHTMLOptionsFactory;
-K_EXPORT_COMPONENT_FACTORY( khtml_behavior, KMiscHTMLOptionsFactory("kcmkonqhtml") )
+K_PLUGIN_FACTORY_DECLARATION(KcmKonqHtmlFactory)
 
 enum UnderlineLinkType { UnderlineAlways=0, UnderlineNever=1, UnderlineHover=2 };
 enum AnimationsType { AnimationsAlways=0, AnimationsNever=1, AnimationsLoopOnce=2 };
 //-----------------------------------------------------------------------------
 
-KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QStringList&)
-    : KCModule( KMiscHTMLOptionsFactory::componentData(), parent ), m_groupname("HTML Settings")
+KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
+    : KCModule( KcmKonqHtmlFactory::componentData(), parent ), m_groupname("HTML Settings")
 {
     m_pConfig = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
     int row = 0;

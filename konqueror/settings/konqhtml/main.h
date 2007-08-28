@@ -26,9 +26,7 @@
 #ifndef __MAIN_H__
 #define __MAIN_H__
 
-#define KDE3_SUPPORT
 #include <kcmodule.h>
-#undef KDE3_SUPPORT
 #include <ksharedconfig.h>
 
 class KJavaOptions;
@@ -42,7 +40,7 @@ class KJSParts : public KCModule
 
 public:
 
-  KJSParts(QWidget *parent, const QStringList&);
+  KJSParts(QWidget *parent, const QVariantList&);
 
   void load();
   void save();

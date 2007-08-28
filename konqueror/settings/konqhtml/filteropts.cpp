@@ -35,17 +35,16 @@
 #include <kaboutdata.h>
 #include <kconfig.h>
 #include <kfiledialog.h>
-#include <kgenericfactory.h>
 #include <kglobal.h>
 #include <khbox.h>
 #include <klocale.h>
+#include <KPluginFactory>
+#include <KPluginLoader>
 
+K_PLUGIN_FACTORY_DECLARATION(KcmKonqHtmlFactory)
 
-typedef KGenericFactory<KCMFilter, QWidget> KCMFilterFactory;
-K_EXPORT_COMPONENT_FACTORY( khtml_filter, KCMFilterFactory("kcmkonqhtml") )
-
-KCMFilter::KCMFilter( QWidget *parent, const QStringList& )
-    : KCModule( KCMFilterFactory::componentData(), parent ),
+KCMFilter::KCMFilter( QWidget *parent, const QVariantList& )
+    : KCModule( KcmKonqHtmlFactory::componentData(), parent ),
       mGroupname( "Filter Settings" ),
       mSelCount(0)
 {

@@ -100,17 +100,7 @@ QString PluginLiveConnectExtension::evalJavaScript( const QString & script )
     return nsplugin;
 }
 
-extern "C"
-{
-  /**
-   * This function is the 'main' function of this part.  It takes
-   * the form 'void *init_lib<library name>()  It always returns a
-   * new factory object
-   */
-
-   K_EXPORT_COMPONENT_FACTORY(libnsplugin,PluginFactory)
-}
-
+K_EXPORT_PLUGIN(PluginFactory)
 
 /**
  * We need one static instance of the factory for our C 'main'
