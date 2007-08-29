@@ -39,6 +39,10 @@
 #include "konqviewmanager.h"
 #include "konqview.h"
 
+#ifdef Q_WS_WIN
+// windows defines ERROR 
+#undef ERROR 
+#endif
 /**********************************************
  *
  * KonqMisc
