@@ -53,7 +53,8 @@ K_EXPORT_PLUGIN(KURIFactory("kcmkurifilt"))
 class FilterOptions;
 
 KURIFilterModule::KURIFilterModule(QWidget *parent, const QVariantList &)
-                 :KCModule(KURIFactory::componentData(), parent)
+    : KCModule(KURIFactory::componentData(), parent),
+    m_widget(0)
 {
 
     filter = KUriFilter::self();
@@ -84,12 +85,13 @@ KURIFilterModule::KURIFilterModule(QWidget *parent, const QVariantList &)
     for (; it != end; ++it )
     {
         KUriFilterPlugin *plugin = KService::createInstance<KUriFilterPlugin>( *it );
-        KCModule *module = plugin->configModule(this, 0);
-        if (module)
-        {
-            modules.append(module);
-            helper.insert(plugin->configName(), module);
-            connect(module, SIGNAL(changed(bool)), SIGNAL(changed(bool)));
+        if (plugin) {
+            KCModule *module = plugin->configModule(this, 0);
+            if (module) {
+                modules.append(module);
+                helper.insert(plugin->configName(), module);
+                connect(module, SIGNAL(changed(bool)), SIGNAL(changed(bool)));
+            }
         }
     }
 
@@ -104,16 +106,18 @@ KURIFilterModule::KURIFilterModule(QWidget *parent, const QVariantList &)
         }
 
         tab->showPage(modules.first());
-        widget = tab;
+        m_widget = tab;
     }
     else if (modules.count() == 1)
     {
-        widget = modules.first();
+        m_widget = modules.first();
         // Huh? A negative margin?
         //        layout->setMargin(-KDialog::marginHint());
     }
 
-    layout->addWidget(widget);
+    if (m_widget) {
+        layout->addWidget(m_widget);
+    }
 }
 
 void KURIFilterModule::load()
