@@ -46,7 +46,7 @@ public:
 private:
     KUriFilter *filter;
 
-    QWidget *widget;
+    QWidget *m_widget;
     FilterOptions *opts;
     QList<KCModule *> modules;
 };
