@@ -18,6 +18,7 @@ target_link_libraries( kfmclient kdeinit_kfmclient )
 install(TARGETS kfmclient DESTINATION ${BIN_INSTALL_DIR})
 
 ########### install files ###############
-
-install( FILES kfmclient_3_2.upd  DESTINATION  ${KCONF_UPDATE_INSTALL_DIR} )
-install( PROGRAMS kfmclient_3_2_update.sh  DESTINATION  ${KCONF_UPDATE_INSTALL_DIR} )
+if( NOT WIN32)
+  install( FILES kfmclient_3_2.upd  DESTINATION  ${KCONF_UPDATE_INSTALL_DIR} )
+  install( PROGRAMS kfmclient_3_2_update.sh  DESTINATION  ${KCONF_UPDATE_INSTALL_DIR} )
+endif( NOT WIN32)
