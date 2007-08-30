@@ -1,0 +1,297 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % English "INCLUDE" > <!-- change language only here -->
+]>
+
+<article lang="&language;">
+<articleinfo>
+
+<authorgroup>
+<author>&Mike.McBride; &Mike.McBride.mail;</author>
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+</authorgroup>
+
+<date>2002-10-16</date>
+<releaseinfo>3.1</releaseinfo>
+
+<keywordset>
+<keyword>KDE</keyword>
+<keyword>KControl</keyword>
+<keyword>file manager</keyword>
+</keywordset>
+</articleinfo>
+<sect1 id="file-manager">
+<title>File Manager</title>
+
+<para>In this module, you can configure various aspects of
+&konqueror;'s file manager functionality. </para>
+
+<note><para>&konqueror;'s web browser functionality has its <ulink
+url="help:/kcontrol/khtml/index.html">own configuration
+modules</ulink>.</para></note>
+
+<sect2 id="fileman-use">
+<title>Use</title>
+
+<para> The configuration options for the file manager are
+organized under tabs as follows:</para>
+
+<variablelist>
+<varlistentry>
+<term><guilabel>Appearance</guilabel></term>
+<listitem><para>This tab contains options for customizing the appearance of
+&konqueror; windows, such as the default font
+text color.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Behavior</guilabel></term>
+<listitem><para>This tab contains a couple of &konqueror;
+global options.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Previews</guilabel></term>
+<listitem>
+<para>On this tab, you can customize when &konqueror; should show
+previews.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<sect3 id="fileman-appearance">
+<title>Appearance</title>
+
+<para>The following settings determine how text and colors are displayed in
+&konqueror; File Manager mode windows.</para>
+
+<variablelist>
+<varlistentry>
+<term><guilabel>Standard font:</guilabel></term>
+<listitem>
+<para>This is the font used to display text such as file names in
+&konqueror; windows.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Font size:</guilabel></term>
+<listitem>
+
+<para>Lets you control the size of text, while the <guilabel>Standard
+Font</guilabel> setting determines the font face used.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Normal text color:</guilabel></term>
+<listitem>
+<para>Determines the standard text color.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Height for icon text:</guilabel></term>
+<listitem>
+<para>The maximum number of lines that can be used to draw icon text.  Long lines are truncated at the end of the last line.</para>
+<tip> <para>You can still see word-wrapped filenames by pausing the mouse pointer over the icon.</para></tip>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Width for icon text:</guilabel></term>
+<listitem>
+<para>The maximum width for the icon text when &konqueror; is in multi-column view mode.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Underline filenames:</guilabel></term>
+<listitem>
+<para>When <guilabel>Underline filenames</guilabel> is checked,
+ filenames will be underlined so that they look like links on a web
+ page.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Display file sizes in bytes:</guilabel></term>
+<listitem>
+<para>The final check box on this page determines how &konqueror;
+displays file sizes, when you are in one of the file manager modes
+that normally shows this information.  If you check the
+<guilabel>Display file sizes in bytes</guilabel> box then file sizes
+are always shown in bytes.  If you leave it unchecked then file sizes
+are shown in bytes, kilobytes or megabytes, depending on their
+size.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect3>
+
+<sect3 id="fileman-behav">
+<title>Behavior</title>
+
+<variablelist>
+<title><guilabel>Misc Options</guilabel></title>
+<varlistentry>
+<term>Open folders in separate windows</term>
+<listitem> <para>If this option is checked, a new
+&konqueror; window will be created when you open a
+folder, rather than simply showing that folder's contents in the
+ current
+window.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term>Show network operations in a single window</term>
+<listitem>
+<para>If unchecked, and you download a
+file, a dialog box will appear that shows the status of the
+download.</para>
+
+<screenshot>
+  <screeninfo>Download Dialog Box</screeninfo>
+  <mediaobject>
+  <imageobject><imagedata fileref="kfileman2.png"
+ format="PNG"/></imageobject>
+  <textobject> <phrase>Download Dialog Box</phrase> </textobject>
+  <caption>
+  <para>Individual Download Dialog Box</para>
+  </caption>
+  </mediaobject>
+</screenshot>
+
+<para>If you start a new transfer, another dialog box will
+appear. (&Netscape; users will be familiar with
+this behavior) </para>
+
+<para>If checked, all transfer status windows will be grouped
+together under a single dialog box.</para>
+<screenshot>
+  <screeninfo>Download Dialog Box</screeninfo>
+  <mediaobject>
+  <imageobject><imagedata fileref="kfileman1.png"
+ format="PNG"/></imageobject>
+  <textobject><phrase>Download Dialog Box</phrase></textobject>
+  <caption>
+  <para>Collected Download Dialog Box</para>
+  </caption>
+  </mediaobject>
+</screenshot>
+
+<para>If you choose to use the Collected download dialog box, you can
+delete transfers by clicking once on the transfer you want to cancel,
+then clicking the <guibutton>Delete</guibutton> Button on the
+left.</para>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Show file tips</guilabel></term>
+<listitem>
+<para> Here you can control if, when moving the mouse over a file, you
+want to see a small popup window with additional information about
+that file.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Show previews in file tips</guilabel></term>
+<listitem>
+<para>Here you can control if the file tip should show a
+thumbnail preview of the file.
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Home URL</guilabel></term>
+<listitem><para>This is the &URL; (&eg; a
+folder or a web page) where &konqueror; will jump to
+when the <guibutton>Home</guibutton> button is pressed.</para><para>The
+default is the users home folder, indicated with a
+<literal>~</literal>.</para></listitem>
+</varlistentry>
+</variablelist>
+
+<para>You can set a path that is your <guilabel>Home URL</guilabel> by
+typing into the text field, or using the <guiicon>browse</guiicon>
+icon.  The default is <literal>~</literal> which is a standard
+shortcut for your $<envar>HOME</envar> folder.  When you choose the
+<guiicon>home</guiicon> icon on your panel, in a file open or save
+dialog, or from within &konqueror; in file manager mode, this is the
+folder you will be shown.</para>
+
+<para>The <guilabel>Ask confirmation for</guilabel> setting tells
+&konqueror; what to do when you choose to <quote>Delete</quote>,
+<quote>Trash</quote>, or <quote>Shred</quote> a file in a &konqueror;
+window.  If any box is checked, &konqueror; asks for confirmation before
+performing the corresponding action.</para>
+
+</sect3>
+
+<sect3>
+<title>Previews</title>
+
+<para>&konqueror; has a
+preview feature for many file types, including <acronym>HTML</acronym>
+files, images, &PostScript; and <acronym>PDF</acronym>, sound, web
+archives (if you have the appropriate &konqueror; plugin installed)
+and text files.</para>
+
+<para>If you enable previews for one of these, files of that particular
+file type will not be represented by standard icons in the filemanager, but
+will instead be shown as miniature previews.  On slow computers, the
+previews can take some time to show up, so you might not want to enable
+this feature.</para>
+
+<para>In this module you can specify which <quote>protocols</quote>
+you wish the previews to be available for.  Creating the previews
+requires that &konqueror; download at least part of the file, in order
+to create the preview.  &konqueror;, like the rest of &kde; is
+entirely network transparent, and will treat a remote &FTP; folder
+just as if it was on your local hard drive.  This can result in a
+delay, especially if you are viewing, for example, a folder full of
+images over a slow network connection.</para>
+
+<para>For each protocol, you can independently enable or disable
+previews.  For example, you might enable previews for
+<acronym>NFS</acronym> mounted drives if you have a fast network, but
+disable them for &FTP; because your Internet connection is via a
+modem.</para>
+
+<para>You can further refine the maximum size file that &konqueror;
+will attempt to show a preview for.  The default is 1 MB.  In other
+words, by default, if a file is 900 kB in size, and the protocol you
+are viewing the folder with is enabled, then &konqueror; will
+create a preview icon for it.  If the file is 1.1 MB in size,
+&konqueror; will not make a preview, even if the protocol is
+enabled.</para>
+
+<para>You can turn on and off previews <quote>on the fly</quote> from
+within &konqueror;, using the <guimenu>View</guimenu> menu. For
+example, if you normally want to see image previews on every protocol,
+but find a particular server is very slow to send you the data, you
+might turn it off for the present, and turn it on again later.</para>
+
+<para>You may also like to enable the checkbox <guilabel>Increase size
+of previews relative to icons</guilabel>, in order to see more
+information in the thumbnails.</para>
+
+<para>Many image files already contain a thumbnail.  You can enable
+the <guilabel>Use thumbnails embedded in files</guilabel> to make use
+of these. This will save time waiting for thumbnails to be created
+when viewing a folder full of images you have not previously seen in
+&konqueror;.</para>
+
+</sect3>
+
+</sect2>
+
+</sect1>
+
+</article>

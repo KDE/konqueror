@@ -1,0 +1,257 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % English "INCLUDE" > <!-- change language only here -->
+]>
+
+<article>
+<articleinfo>
+
+<authorgroup>
+<author>&Lauri.Watts; &Lauri.Watts.mail;</author>
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+</authorgroup>
+
+<date>2003-10-12</date>
+<releaseinfo>3.2</releaseinfo>
+
+<keywordset>
+<keyword>KDE</keyword>
+<keyword>CSS</keyword>
+<keyword>Stylesheets</keyword>
+<keyword>Accessibility</keyword>
+</keywordset>
+
+</articleinfo>
+
+<sect1 id="stylesheets">
+
+<title>Stylesheets</title>
+
+<sect2>
+<title>Introduction</title>
+
+<para><acronym>CSS</acronym> style sheets affect the way web pages
+appear.  <acronym>CSS</acronym> stands for
+<emphasis>C</emphasis>ascading <emphasis>S</emphasis>tyle
+<emphasis>S</emphasis>heets.</para>
+
+<para>&kde; can use its own stylesheet, based on simple defaults and
+the color scheme you are using for your desktop.  &kde; can also use a
+stylesheet that you have written yourself.  Finally, you can specify a
+stylesheet in this module.  The options presented in this module are
+tuned for accessibility purposes, especially for people with reduced
+vision.</para>
+
+<para>Your choices here affect every &kde; application that renders HTML
+with &kde;'s own renderer, which is called khtml.  These include
+&kmail;, &khelpcenter; and of course &konqueror;.  Choices here do not
+affect other browsers such as &Netscape;.</para>
+
+<para>The module has two pages, <guilabel>General</guilabel>, where you
+can choose which stylesheet to use, and <guilabel>Customize</guilabel>
+where you can design an accessibility stylesheet.</para>
+
+</sect2>
+
+<sect2 id="css-general">
+<title>General</title>
+
+<para>This page contains the following options:</para>
+
+<variablelist>
+<varlistentry>
+<term><guilabel>Use default stylesheet</guilabel></term>
+<listitem>
+<para>&kde; will use the default stylesheet.  Some of the colors will
+default to those defined in your chosen color scheme.  Most settings are
+easily overridden by the page you are viewing.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Use user-defined stylesheet</guilabel></term>
+<listitem>
+<para>&kde; will use a stylesheet that you have written yourself. You
+can use the browse button to locate the stylesheet on your system.
+<acronym>CSS</acronym> files traditionally have a <literal
+role="extension">.css</literal> extension, but this is not
+required.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Use accessibility stylesheet defined in
+&quot;Customize&quot;-tab</guilabel></term>
+<listitem>
+<para>Use the settings defined in the <guilabel>Customize</guilabel>
+tab.  Enabling this option will enable the options on the
+<guilabel>Customize</guilabel> page.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2 id="css-customize">
+<title>Customize</title>
+
+<para>Here you can set up a user stylesheet.  The options available are
+only a subset of the instructions you can add in a stylesheet, and they
+are geared towards people with reduced vision, to allow users to create
+a stylesheet that makes web pages and the &kde; help files more
+readable.</para>
+
+<para>The options on this page are disabled unless you chose
+<guilabel>Use accessibility stylesheet defined in
+&quot;Customize&quot;-tab</guilabel> on the previous page.</para>
+
+<sect3>
+<title><guilabel>Font Family</guilabel></title>
+
+<variablelist>
+<varlistentry>
+<term><guilabel>Base family</guilabel></term>
+<listitem>
+<para>Choose a font family to use for body text.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Use same family for all text</guilabel></term>
+<listitem>
+<para>If you enable this, then the same font family will be used for all
+text, regardless of the settings on the page you are viewing.  This is
+useful for pages which have used a decorative or hard to read font for
+headlines.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect3>
+
+<sect3>
+<title>Font Size</title>
+
+<variablelist>
+<varlistentry>
+<term><guilabel>Base Font Size</guilabel></term>
+<listitem>
+<para>This is the default size for text on the page.  Many web sites set
+their font sizes relative to this default, using <quote>larger</quote>
+or <quote>+1</quote> to make the text bigger, and <quote>smaller</quote>
+or <quote>-1</quote> to make the text smaller.</para>
+<para>Many people design their web pages on platforms where the ordinary
+default text size is too large for the average user to read, so it is
+very common to come across web pages that have forced the font smaller
+in this way.</para>
+<para>This setting will allow you to set the default font to a
+comfortable size, so that the relative sizes are also enlarged enough to
+be comfortable.</para>
+<para>Do not forget you can also have &konqueror; enforce a minimum size,
+so that text is <emphasis>never</emphasis> too small to read.  Set that
+under Behavior, in the Web Browser section in &kcontrol;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Use same size for all elements</guilabel></term>
+<listitem>
+<para>If you enable this option, then all text will be rendered at your
+specified font size, regardless of the instructions the page contains.
+Relative font sizes as discussed earlier, and even specific instructions
+that text should be rendered at a certain size will be overridden
+here.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect3>
+
+<sect3>
+<title>Colors</title>
+
+<variablelist>
+<varlistentry>
+<term><guilabel>Black on White</guilabel></term>
+<listitem>
+<para>Many people with reduced vision find black text on a white screen
+gives the most contrast, and is easiest to read.  If this applies to
+you, you can set this here.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>White on Black</guilabel></term>
+<listitem>
+<para>Many other people with reduced vision find the opposite to be
+true, that white text on a black screen is easier to read.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Custom</guilabel></term>
+<listitem>
+<para>Still other people find that pure black and white, in either
+order, is difficult to read.  You can set custom colors here for both
+the <guilabel>Background</guilabel> and the
+<guilabel>Foreground</guilabel>.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Use same color for all text</guilabel></term>
+<listitem>
+<para>Many web sites use a different, often contrasting color for
+headings or other flourishes.  If this interferes with your ability to
+read the content, you can enable this checkbox to have &kde; use the
+colors you have set above for all text.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect3>
+
+<sect3>
+<title>Images</title>
+
+<variablelist>
+<varlistentry>
+<term><guilabel>Suppress images</guilabel></term>
+<listitem>
+<para>If you do not want to view images, you can turn this off
+here.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Suppress background images</guilabel></term>
+<listitem>
+<para>One major problem for reduced vision users is that background
+images do not give sufficient contrast to allow them to read the text.
+You can disable background images here, independently of your choice
+above to view all images.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect3>
+
+<sect3>
+<title>Preview</title>
+
+<para>The <guibutton>Preview</guibutton> allows you to see the effect of
+your changes.  A window will pop up, showing how several types of
+headings will appear with your stylesheet, and a sentence in the default
+body text.</para>
+
+<para>This should allow you to fine tune your stylesheet until you have
+something that you can comfortably read.</para>
+
+<para>Happy surfing!</para>
+
+</sect3>
+
+</sect2>
+
+</sect1>
+
+</article>
