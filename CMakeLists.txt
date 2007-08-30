@@ -34,4 +34,5 @@ if ( Q_WS_X11 )
   add_subdirectory( kdepasswd )
 endif ( Q_WS_X11 )
 
+add_subdirectory( doc )
 

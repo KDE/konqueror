@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
+<!ENTITY % English "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<author><personname><firstname>Jan</firstname><surname>Schaumann</surname></personname>
+<email>jschauma@netmeister.org</email></author>
+<date>April 8, 2003</date>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle><command>kappfinder</command></refentrytitle>
+<manvolnum>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname><command>kappfinder</command></refname>
+<refpurpose>An app to add installed applications to the &kde; menu.</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis>
+<command>kappfinder</command>
+<group><option>--dir</option> <replaceable> directory</replaceable></group>
+<group><option>KDE Generic Options</option></group>
+<group><option>Qt Generic Options</option></group>
+
+</cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title>Description</title>
+
+<para>The KDE application findern (&kappfinder;) looks for legacy and
+third party applications that are installed on your system and adds
+them to the KDE menu system. </para>
+
+</refsect1>
+
+<refsect1>
+<title>Options</title>
+
+<variablelist>
+<varlistentry>
+<term><option>--dir</option> <replaceable>directory</replaceable></term>
+<listitem>
+<para>
+Install <filename>.desktop</filename> files into directory <replaceable>directory</replaceable>
+</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</refsect1>
+
+<refsect1>
+<title>See Also</title>
+
+<para>More detailed user documentation is available from <ulink
+url="help:/kappfinder">help:/kappfinder</ulink> (either enter this
+<acronym>URL</acronym> into &konqueror;, or run
+<userinput><command>khelpcenter</command>
+<parameter>help:/kappfinder</parameter></userinput>).</para>
+
+</refsect1>
+
+<refsect1>
+<title>Authors</title>
+
+<para>&kappfinder; was written by &Matthias.Hoelzer-Kluepfel; &Matthias.Hoelzer-Kluepfel.mail;</para>
+
+<para>This man page was prepared by Jan Schaumann
+<email>jschauma@netmeister.org</email> for the <quote>Missing Man
+Pages Project</quote> ( <ulink
+url="http://www.netmeister.org/misc/m2p2/index.html">http://www.netmeister.org/misc/m2p2/index.html</ulink>.</para>
+
+</refsect1>
+
+</refentry>
