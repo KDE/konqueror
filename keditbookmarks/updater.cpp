@@ -31,8 +31,8 @@
 
 #include <kmimetype.h>
 #include <kparts/part.h>
-#include <kparts/componentfactory.h>
 #include <kparts/browserextension.h>
+#include <kservicetypetrader.h>
 #include <assert.h>
 
 FavIconUpdater::FavIconUpdater(QObject *parent)
@@ -79,8 +79,8 @@ void FavIconUpdater::downloadIconActual(const KBookmark &bk) {
 
     if (!m_part) {
         KParts::ReadOnlyPart *part
-            = KParts::ComponentFactory
-            ::createPartInstanceFromQuery<KParts::ReadOnlyPart>("text/html", QString());
+            = KServiceTypeTrader
+            ::createInstanceFromQuery<KParts::ReadOnlyPart>("text/html", QString());
 
         part->setProperty("pluginsEnabled", QVariant(false));
         part->setProperty("javaScriptEnabled", QVariant(false));

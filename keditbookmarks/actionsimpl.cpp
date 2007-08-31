@@ -55,7 +55,7 @@
 #include <ktoggleaction.h>
 
 #include <kparts/part.h>
-#include <kparts/componentfactory.h>
+#include <kservicetypetrader.h>
 
 #include <kbookmark.h>
 #include <kbookmarkmanager.h>
@@ -470,8 +470,8 @@ static KParts::ReadOnlyPart *s_part;
 
 void ActionsImpl::slotPrint() {
     KEBApp::self()->bkInfo()->commitChanges();
-    s_part = KParts::ComponentFactory
-                        ::createPartInstanceFromQuery<KParts::ReadOnlyPart>(
+    s_part = KServiceTypeTrader
+                        ::createInstanceFromQuery<KParts::ReadOnlyPart>(
                                 "text/html", QString());
     s_part->setProperty("pluginsEnabled", QVariant(false));
     s_part->setProperty("javaScriptEnabled", QVariant(false));
