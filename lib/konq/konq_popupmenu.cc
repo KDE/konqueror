@@ -33,12 +33,12 @@
 #include <kiconloader.h>
 #include <kinputdialog.h>
 #include <kglobalsettings.h>
+#include <kmimetypetrader.h>
 #include <kstandarddirs.h>
 #include <kxmlguifactory.h>
 #include <kxmlguibuilder.h>
 #include <kconfiggroup.h>
 #include <kdesktopfile.h>
-#include <kparts/componentfactory.h>
 #include <kfileshare.h>
 #include <kauthorized.h>
 #include <kglobal.h>
