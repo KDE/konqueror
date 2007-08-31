@@ -238,7 +238,7 @@ static int directCommand(KCmdLineArgs *args)
     {
       QString result;
       bool retcode = Widgets::passwordBox(0, title, args->getOption("password"), result);
-      cout << result.data() << endl;
+      cout << qPrintable(result) << endl;
       return retcode ? 0 : 1;
     }
 
@@ -317,7 +317,7 @@ static int directCommand(KCmdLineArgs *args)
 
       QString result;
       int ret = Widgets::textInputBox(0, w, h, title, list, result);
-      cout << result.data() << endl;
+      cout << qPrintable(result) << endl;
       return ret;
     }
 
