@@ -67,7 +67,7 @@ public:
   static void setNoProxyFor( const QString& );
 
 
-  /** Miscelaneous Settings */
+  /** Miscellaneous Settings */
   static void setMarkPartial( bool );
 
   static void setMinimumKeepSize( int );

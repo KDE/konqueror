@@ -173,7 +173,7 @@ void KonqSidebarDirTreeItem::itemSelected()
 void KonqSidebarDirTreeItem::middleButtonClicked()
 {
     // Duplicated from KonqDirPart :(
-    // Optimisation to avoid KRun to call kfmclient that then tells us
+    // Optimization to avoid KRun to call kfmclient that then tells us
     // to open a window :-)
     KService::Ptr offer = KMimeTypeTrader::self()->preferredService(m_fileItem->mimetype(), "Application");
     if (offer) kDebug(1201) << "KonqDirPart::mmbClicked: got service " << offer->desktopEntryName();
