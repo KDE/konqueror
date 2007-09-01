@@ -524,7 +524,7 @@ bool KonqFrameTabs::accept( KonqFrameVisitor* visitor )
 
 void KonqFrameTabs::slotCurrentChanged( QWidget* newPage )
 {
-    const KColorScheme colorScheme(KColorScheme::Window);
+    const KColorScheme colorScheme(QPalette::Active, KColorScheme::Window);
     setTabTextColor(indexOf(newPage), colorScheme.foreground(KColorScheme::NormalText));
 
     KonqFrameBase* currentFrame = dynamic_cast<KonqFrameBase*>(newPage);
@@ -570,7 +570,7 @@ void KonqFrameTabs::setLoading(KonqFrameBase* frame, bool loading)
     if (pos == -1)
         return;
 
-    const KColorScheme colorScheme(KColorScheme::Window);
+    const KColorScheme colorScheme(QPalette::Active, KColorScheme::Window);
     QColor color;
     if (loading) {
         color = colorScheme.foreground(KColorScheme::NeutralText); // a tab is currently loading
