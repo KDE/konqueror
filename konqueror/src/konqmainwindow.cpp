@@ -1064,11 +1064,14 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
                                           const KParts::BrowserArguments &browserArgs,
                                           const KParts::WindowArgs &windowArgs, KParts::ReadOnlyPart **part )
 {
+    // NOTE: 'part' may be null
+
     kDebug(1202) << "KonqMainWindow::slotCreateNewWindow url=" << url
                   << " args.mimeType()=" << args.mimeType()
                   << " browserArgs.frameName=" << browserArgs.frameName << endl;
 
-    *part = 0; // Make sure to be initialized in case of failure...
+    if ( part )
+        *part = 0; // Make sure to be initialized in case of failure...
 
     KonqMainWindow *mainWindow = 0;
     if ( !browserArgs.frameName.isEmpty() && browserArgs.frameName.toLower() != "_blank" ) {
@@ -1106,7 +1109,10 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
 
         openUrl( newView, url.isEmpty() ? KUrl("about:blank") : url, QString() );
         newView->setViewName( browserArgs.frameName );
-        *part = newView->part();
+
+        if ( part )
+            *part = newView->part();
+
         return;
     }
 
@@ -1124,7 +1130,9 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
     {
       // we have problems. abort.
       delete mainWindow;
-      *part = 0;
+
+      if ( part )
+        *part = 0;
       return;
     }
 
@@ -1135,11 +1143,13 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
     {
       MapViews::ConstIterator it = mainWindow->viewMap().begin();
       view = it.value();
-      *part = it.key();
+
+      if ( part )
+        *part = it.key();
     }
 
     // activate the view _now_ in order to make the menuBar() hide call work
-    if ( *part ) {
+    if ( part && *part ) {
        mainWindow->viewManager()->setActivePart( *part, true );
     }
 
