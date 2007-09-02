@@ -10,11 +10,11 @@
   <Action name="file_print"/>
   <Separator/>
   <Menu name="import" noMerge="1"><text>&amp;Import</text>
+    <Action name="importKDE2"/>
     <Action name="importIE"/>
     <Action name="importOpera"/>
     <Action name="importMoz"/>
     <Action name="importNS"/>
-    <Action name="importKDE2"/>
     <Action name="importGaleon"/>
     <Separator/>
     <Action name="importCrashes"/>

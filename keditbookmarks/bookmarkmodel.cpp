@@ -39,19 +39,22 @@ public:
     ~Private()
     {
         delete mRootItem;
+        
+        //TESTING
+        mRootItem = 0;
     }
     TreeItem * mRootItem;
     KBookmark mRoot;
 
     // for move support
-    QModelIndex mOldParent;
+    QPersistentModelIndex mOldParent;
     int mFirst;
     int mLast;
-    QModelIndex mNewParent;
+    QPersistentModelIndex mNewParent;
     int mPosition;
-    QVector<QModelIndex> mMovedIndexes;
-    QVector<QModelIndex> mOldParentIndexes;
-    QVector<QModelIndex> mNewParentIndexes;
+    QVector<QPersistentModelIndex> mMovedIndexes;
+    QVector<QPersistentModelIndex> mOldParentIndexes;
+    QVector<QPersistentModelIndex> mNewParentIndexes;
 };
 
 KBookmarkModel::KBookmarkModel(const KBookmark& root)
@@ -59,17 +62,22 @@ KBookmarkModel::KBookmarkModel(const KBookmark& root)
 {
 }
 
+void KBookmarkModel::setRoot(const KBookmark& root)
+{
+    d->mRoot = root;
+    resetModel();
+}
 KBookmarkModel::~KBookmarkModel()
 {
+    qDebug() << "Deleting model" << this << "with private" << d;
     delete d;
 }
 
 void KBookmarkModel::resetModel()
 {
     delete d->mRootItem;
-    d->mRootItem = 0;
-    reset();
     d->mRootItem = new TreeItem(d->mRoot, 0);
+    reset();
 }
 
 void KBookmarkModel::beginMoveRows(const QModelIndex & oldParent, int first, int last, const QModelIndex & newParent, int position)

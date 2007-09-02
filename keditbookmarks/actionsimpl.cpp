@@ -192,32 +192,41 @@ void KEBApp::createActions() {
     connect(actnCancelFavIconUpdates, SIGNAL( triggered() ), actn, SLOT( slotCancelFavIconUpdates() ));
 
     QAction* actnImportNS = actionCollection()->addAction("importNS");
+    actnImportNS->setObjectName("NS");
     actnImportNS->setIcon(KIcon("netscape"));
     actnImportNS->setText(i18n("Import &Netscape Bookmarks..."));
     connect(actnImportNS, SIGNAL( triggered() ), actn, SLOT( slotImport() ));
 
     QAction* actnImportOpera = actionCollection()->addAction("importOpera");
+    actnImportOpera->setObjectName("Opera");
     actnImportOpera->setIcon(KIcon("opera"));
     actnImportOpera->setText(i18n("Import &Opera Bookmarks..."));
     connect(actnImportOpera, SIGNAL( triggered() ), actn, SLOT( slotImport() ));
 
     QAction* actnImportCrashes = actionCollection()->addAction("importCrashes");
+    actnImportCrashes->setObjectName("Crashes");
     actnImportCrashes->setText(i18n("Import All &Crash Sessions as Bookmarks..."));
     connect(actnImportCrashes, SIGNAL( triggered() ), actn, SLOT( slotImport() ));
 
     QAction* actnImportGaleon = actionCollection()->addAction("importGaleon");
+    actnImportGaleon->setObjectName("Galeon");
     actnImportGaleon->setText(i18n("Import &Galeon Bookmarks..."));
     connect(actnImportGaleon, SIGNAL( triggered() ), actn, SLOT( slotImport() ));
 
     QAction* actnImportKDE2 = actionCollection()->addAction("importKDE2");
-    actnImportKDE2->setText(i18n("Import &KDE2/KDE3 Bookmarks..."));
+    actnImportKDE2->setObjectName("KDE2");
+    actnImportKDE2->setIcon(KIcon("kmenu"));
+    actnImportKDE2->setText(i18n("Import &KDE 2 or KDE 3 Bookmarks..."));
+
     connect(actnImportKDE2, SIGNAL( triggered() ), actn, SLOT( slotImport() ));
 
     QAction* actnImportIE = actionCollection()->addAction("importIE");
-    actnImportIE->setText(i18n("Import &IE Bookmarks..."));
+    actnImportIE->setObjectName("IE");
+    actnImportIE->setText(i18n("Import &Internet Explorer Bookmarks..."));
     connect(actnImportIE, SIGNAL( triggered() ), actn, SLOT( slotImport() ));
 
     QAction* actnImportMoz = actionCollection()->addAction("importMoz");
+    actnImportMoz->setObjectName("Moz");
     actnImportMoz->setIcon(KIcon("mozilla"));
     actnImportMoz->setText(i18n("Import &Mozilla Bookmarks..."));
     connect(actnImportMoz, SIGNAL( triggered() ), actn, SLOT( slotImport() ));
@@ -433,10 +442,10 @@ void ActionsImpl::slotInsertSeparator()
 
 void ActionsImpl::slotImport() {
     KEBApp::self()->bkInfo()->commitChanges();
-    // kDebug() << "ActionsImpl::slotImport() where sender()->name() == "
-    //           << sender()->name() << endl;
+    qDebug() << "ActionsImpl::slotImport() where sender()->name() == "
+               << sender()->objectName() << endl;
     ImportCommand* import
-        = ImportCommand::performImport(sender()->objectName()+6, KEBApp::self());
+        = ImportCommand::performImport(sender()->objectName(), KEBApp::self());
     if (!import)
         return;
     CmdHistory::self()->addCommand(import);

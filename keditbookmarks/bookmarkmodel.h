@@ -38,6 +38,7 @@ public:
     friend class KBookmarkModelMoveSentry;
 
     KBookmarkModel(const KBookmark& root);
+    void setRoot(const KBookmark& root);
 
     virtual ~KBookmarkModel();
 

@@ -123,6 +123,9 @@ CurrentMgr::CurrentMgr()
 CurrentMgr::~CurrentMgr()
 {
     delete m_model;
+
+    //TESTING
+    m_model=0;
 }
 
 KBookmarkGroup CurrentMgr::root()
@@ -145,12 +148,16 @@ void CurrentMgr::createManager(const QString &filename, const QString &dbusObjec
         kDebug()<<"ERROR calling createManager twice";
         disconnect(m_mgr, 0, 0, 0);
         // still todo - delete old m_mgr
-        delete m_model;
     }
 
     kDebug()<<"DBus Object name: "<<dbusObjectName;
     m_mgr = KBookmarkManager::managerForFile(filename, dbusObjectName);
-    m_model = new KBookmarkModel(root());
+   
+    if ( m_model ) {
+        m_model->setRoot(root());
+    } else { 
+        m_model = new KBookmarkModel(root());
+    }
 
     connect(m_mgr, SIGNAL( changed(const QString &, const QString &) ),
             SLOT( slotBookmarksChanged(const QString &, const QString &) ));

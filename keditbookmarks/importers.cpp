@@ -23,6 +23,7 @@
 
 #include "commands.h"
 #include "toplevel.h"
+#include "bookmarkmodel.h"
 
 #include <QtCore/QRegExp>
 #include <kdebug.h>
@@ -65,6 +66,8 @@ ImportCommand* ImportCommand::importerFactory(const QString &type) {
 
 ImportCommand* ImportCommand::performImport(const QString &type, QWidget *top) {
     ImportCommand *importer = ImportCommand::importerFactory(type);
+
+    Q_ASSERT(importer);
 
     QString mydirname = importer->requestFilename();
     if (mydirname.isEmpty()) {
@@ -116,6 +119,13 @@ void ImportCommand::execute() {
     }
 
     doExecute(bkGroup);
+
+    // notify the model that the data has changed
+    // 
+    // FIXME Resetting the model completely has the unwanted
+    // side-effect of collapsing all items in tree views 
+    // (and possibly other side effects)
+    CurrentMgr::self()->model()->resetModel();
 }
 
 void ImportCommand::unexecute() {
