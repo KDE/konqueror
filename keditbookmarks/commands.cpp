@@ -194,7 +194,7 @@ void CreateCommand::execute()
     }
 
     // move to right position
-    parentGroup.moveItem(bk, prev);
+    parentGroup.moveBookmark(bk, prev);
     if (!(name().isEmpty()) && !parentAddress.isEmpty() ) {
         // open the parent (useful if it was empty) - only for manual commands
         Q_ASSERT( parentGroup.internalElement().tagName() != "xbel" );
@@ -481,7 +481,7 @@ void MoveCommand::execute() {
                                     newParent, KBookmark::positionInParent(m_to));
 
     if (isFirstChild) {
-        newParent.toGroup().moveItem(bk, QDomElement());
+        newParent.toGroup().moveBookmark(bk, KBookmark());
 
     } else {
         QString afterAddress = KBookmark::previousAddress(m_to);
@@ -491,7 +491,7 @@ void MoveCommand::execute() {
         KBookmark afterNow = CurrentMgr::bookmarkAt(afterAddress);
         Q_ASSERT(!afterNow.isNull());
 
-        bool movedOkay = newParent.toGroup().moveItem(bk, afterNow);
+        bool movedOkay = newParent.toGroup().moveBookmark(bk, afterNow);
         Q_ASSERT(movedOkay);
 
         // kDebug() << "MoveCommand::execute after moving in the dom tree"
@@ -662,8 +662,8 @@ KEBMacroCommand* CmdGen::itemsMoved(const QList<KBookmark> & items,
             CreateCommand *cmd;
             cmd = new CreateCommand(
                     bkInsertAddr,
-                    (*it).internalElement()
-                    .cloneNode(true).toElement(),
+                    KBookmark((*it).internalElement()
+                    .cloneNode(true).toElement()),
                     (*it).text());
 
             cmd->execute();
