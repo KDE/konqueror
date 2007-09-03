@@ -199,7 +199,7 @@ void KBookmarkBar::fillBookmarkBar(const KBookmarkGroup & parent)
             action->setDelayed( false );
             m_toolBar->addAction(action);
             d->m_actions.append( action );
-            KBookmarkMenu *menu = new KBookmarkMenu(m_pManager, m_pOwner, action->menu(), bm.address());
+            KBookmarkMenu *menu = new KonqBookmarkMenu(m_pManager, m_pOwner, action, bm.address());
             m_lstSubMenus.append( menu );
         }
     }
