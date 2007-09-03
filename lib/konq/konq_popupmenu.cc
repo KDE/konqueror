@@ -26,6 +26,7 @@
 #include <klocale.h>
 #include <kapplication.h>
 #include <kbookmarkmanager.h>
+#include <kbookmarkdialog.h>
 #include <kdebug.h>
 #include <krun.h>
 #include <kprotocolmanager.h>
@@ -1035,7 +1036,8 @@ void KonqPopupMenu::slotPopupAddToBookmark()
   if ( m_lstPopupURLs.count() == 1 ) {
     KUrl url = m_lstPopupURLs.first();
     QString title = d->m_urlTitle.isEmpty() ? url.prettyUrl() : d->m_urlTitle;
-    root = m_pManager->addBookmarkDialog( url.prettyUrl(), title );
+    KBookmarkDialog dlg( m_pManager, this);
+    dlg.addBookmark( title, url.url());
   }
   else
   {
@@ -1043,8 +1045,8 @@ void KonqPopupMenu::slotPopupAddToBookmark()
     KUrl::List::ConstIterator it = m_lstPopupURLs.begin();
     for ( ; it != m_lstPopupURLs.end(); it++ )
       root.addBookmark( (*it).prettyUrl(), (*it) );
+    m_pManager->emitChanged( root );
   }
-  m_pManager->emitChanged( root );
 }
 
 void KonqPopupMenu::slotRunService()
