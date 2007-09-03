@@ -4635,7 +4635,7 @@ void KonqExtendedBookmarkOwner::openInNewTab(const KBookmark &bm)
   m_pKonqMainWindow->openUrl( 0, bm.url(), QString(), req );
 }
 
-void KonqExtendedBookmarkOwner::openFolderinTabs(const KBookmark &bm)
+void KonqExtendedBookmarkOwner::openFolderinTabs(const KBookmarkGroup &grp)
 {
   bool newTabsInFront = KonqSettings::newTabsInFront();
   if (QApplication::keyboardModifiers() & Qt::ShiftModifier)
@@ -4645,7 +4645,6 @@ void KonqExtendedBookmarkOwner::openFolderinTabs(const KBookmark &bm)
   req.newTabInFront = false;
   req.openAfterCurrentPage = false;
 
-  KBookmarkGroup grp = bm.toGroup();
   QList<KUrl> list = grp.groupUrlList();
   QList<KUrl>::Iterator it = list.begin();
   QList<KUrl>::Iterator end = list.end();

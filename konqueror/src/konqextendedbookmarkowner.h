@@ -34,7 +34,7 @@ public:
   virtual void openBookmark(const KBookmark & bm, Qt::MouseButtons mb, Qt::KeyboardModifiers km);
   virtual void openInNewTab(const KBookmark &bm);
   virtual void openInNewWindow(const KBookmark &bm);
-  virtual void openFolderinTabs(const KBookmark &bm);
+  virtual void openFolderinTabs(const KBookmarkGroup &grp);
 
 private:
   KonqMainWindow *m_pKonqMainWindow;
