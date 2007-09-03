@@ -315,12 +315,12 @@ void KCookiesPolicies::load()
   dlg->cbAutoAcceptSessionCookies->setChecked (sessionCookies);
   bool cookieExpiration = group.readEntry("IgnoreExpirationDate", false);
   dlg->cbIgnoreCookieExpirationDate->setChecked (cookieExpiration);
+  updateDomainList(group.readEntry("CookieDomainAdvice", QStringList()));
 
   if (enableCookies)
   {
     ignoreCookieExpirationDate( cookieExpiration );
     autoAcceptSessionCookies( sessionCookies );
-    updateDomainList(group.readEntry("CookieDomainAdvice", QStringList() ));
     updateButtons();
   }
 
