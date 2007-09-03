@@ -337,7 +337,7 @@ bool KBookmarkBar::eventFilter( QObject *, QEvent *e )
         {
             KBookmark newBookmark = parentBookmark.addBookmark(toInsert.fullText(), toInsert.url() );
 
-            parentBookmark.moveItem( newBookmark, KBookmark() );
+            parentBookmark.moveBookmark( newBookmark, KBookmark() );
             m_pManager->emitChanged( parentBookmark );
             return true;
         }
@@ -349,7 +349,7 @@ bool KBookmarkBar::eventFilter( QObject *, QEvent *e )
                 after = parentBookmark.next(after);
             KBookmark newBookmark = parentBookmark.addBookmark(toInsert.fullText(), toInsert.url() );
 
-            parentBookmark.moveItem( newBookmark, after );
+            parentBookmark.moveBookmark( newBookmark, after );
             m_pManager->emitChanged( parentBookmark );
             return true;
         }
