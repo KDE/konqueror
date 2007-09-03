@@ -194,7 +194,7 @@ QString KonqMisc::konqFilteredURL( QWidget* parent, const QString& _url, const Q
 
     if( KUriFilter::self()->filterUri( data ) )
     {
-      if( data.uriType() == KUriFilterData::ERROR && !data.errorMsg().isEmpty() )
+      if( data.uriType() == KUriFilterData::Error && !data.errorMsg().isEmpty() )
       {
         KMessageBox::sorry( parent, i18n( data.errorMsg().toUtf8() ) );
         return QString();
