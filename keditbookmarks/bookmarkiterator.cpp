@@ -46,7 +46,6 @@ void BookmarkIterator::slotCancelTest(BookmarkIterator *test) {
 }
 
 const KBookmark BookmarkIterator::curBk() const {
-    assert(m_bk.hasParent());
     return m_bk;
 }
 

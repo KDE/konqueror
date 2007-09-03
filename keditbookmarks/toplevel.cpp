@@ -447,7 +447,7 @@ void KEBApp::selectedBookmarksExpandedHelper(const KBookmark& bk, KBookmark::Lis
     {
         KBookmarkGroup parent = bk.toGroup();
         KBookmark child = parent.first();
-        while(child.hasParent())
+        while(!child.isNull())
         {
             selectedBookmarksExpandedHelper(child, bookmarks);
             child = parent.next(child);

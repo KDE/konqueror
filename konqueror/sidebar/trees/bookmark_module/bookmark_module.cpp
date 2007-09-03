@@ -313,7 +313,7 @@ void KonqSidebarBookmarkModule::slotCreateFolder()
     else
 	return;
 
-    KBookmark bookmark = parentGroup.createNewFolder();
+    KBookmark bookmark = parentGroup.createNewFolder("");//TODO use Dialog
     if(bi && !(bi->bookmark().isGroup()))
 	parentGroup.moveItem(bookmark, bi->bookmark());
 

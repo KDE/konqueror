@@ -26,7 +26,7 @@
 #include <qfile.h>
 #include <qevent.h>
 #include <qapplication.h>
-
+#include <qdebug.h>
 
 #include <ktoolbar.h>
 #include <kactionmenu.h>
@@ -61,8 +61,6 @@ public:
         m_contextMenu = cg.readEntry( "ContextMenuActions", true );
     }
 };
-
-static bool showInToolbar( const KBookmark &bk );
 
 
 KBookmarkBar::KBookmarkBar( KBookmarkManager* mgr,
@@ -168,15 +166,18 @@ void KBookmarkBar::fillBookmarkBar(const KBookmarkGroup & parent)
     if (parent.isNull())
         return;
 
+    qDebug()<<"fillBookmarkBar"<<parent.text();
+
     for (KBookmark bm = parent.first(); !bm.isNull(); bm = parent.next(bm))
     {
+        qDebug()<<"bm is "<<bm.text();
         // Filtered special cases
         if(d->m_filteredToolbar)
         {
-            if(bm.isGroup() && !showInToolbar(bm) )
+            if(bm.isGroup() && !bm.showInToolbar() )
 		fillBookmarkBar(bm.toGroup());	       
 
-	    if(!showInToolbar(bm))
+	    if(!bm.showInToolbar())
 		continue;
         }
 
@@ -301,7 +302,7 @@ void KBookmarkBar::contextMenu(const QPoint & pos)
     KBookmarkActionInterface * action = dynamic_cast<KBookmarkActionInterface *>( m_toolBar->actionAt(pos) );
     if(!action)
         return;
-    KMenu * menu = new KBookmarkContextMenu(action->bookmark(), m_pManager, m_pOwner);
+    KMenu * menu = new KonqBookmarkContextMenu(action->bookmark(), m_pManager, m_pOwner);
     menu->setAttribute(Qt::WA_DeleteOnClose);
     menu->popup(m_toolBar->mapToGlobal(pos));
 }
@@ -388,10 +389,6 @@ bool KBookmarkBar::eventFilter( QObject *, QEvent *e )
         }
     }
     return false;
-}
-
-static bool showInToolbar( const KBookmark &bk ) {
-    return (bk.internalElement().attributes().namedItem("showintoolbar").toAttr().value() == "yes");
 }
 
 #include "konqbookmarkbar.moc"
