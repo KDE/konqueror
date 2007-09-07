@@ -509,6 +509,17 @@ bool ClientApp::doIt()
       url = args->url(2).url();
     return openProfile( args->arg(1), url );
   }
+  else if ( command == "exec" && argc >= 2)
+  {
+    // compatibility with KDE 3 and xdg-open
+    QStringList kioclientArgs;
+    kioclientArgs << "exec" << args->arg(1);
+    if (argc == 3)
+        kioclientArgs << args->arg(2);
+
+    int ret = KProcess::execute("kioclient", kioclientArgs);
+    return ret == 0;
+  }
   else
   {
     fprintf( stderr, "%s", i18n("Syntax Error: Unknown command '%1'\n", command).toLocal8Bit().data() );
