@@ -40,6 +40,7 @@
 #include <kfontdialog.h>
 #include <klocale.h>
 #include <kglobalsettings.h>
+#include <kcolorscheme.h>
 #include <konq_defaults.h> // include default values directly from konqueror
 
 // Local
@@ -260,7 +261,7 @@ void KonqFontOptions::load()
     if ( m_fSize == -1 )
         m_fSize = QFontInfo(stdFont).pointSize();
 
-    normalTextColor = KGlobalSettings::textColor();
+    normalTextColor = KColorScheme(QPalette::Active, KColorScheme::View).foreground().color();
     normalTextColor = cg.readEntry( "NormalTextColor", normalTextColor );
     m_pNormalText->setColor( normalTextColor );
 
@@ -313,7 +314,7 @@ void KonqFontOptions::defaults()
     if ( m_fSize == -1 )
         m_fSize = QFontInfo(stdFont).pointSize();
 
-    normalTextColor = KGlobalSettings::textColor();
+    normalTextColor = KColorScheme(QPalette::Active, KColorScheme::View).foreground().color();
     m_pNormalText->setColor( normalTextColor );
 
     //highlightedTextColor = KGlobalSettings::highlightedTextColor();
