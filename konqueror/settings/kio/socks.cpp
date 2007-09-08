@@ -119,7 +119,7 @@ void KSocksConfig::enableChanged()
 
 void KSocksConfig::methodChanged(int id)
 {
-  if (id == 4) {
+  if (id == 2) {
     base->_c_customLabel->setEnabled(true);
     base->_c_customPath->setEnabled(true);
   } else {
