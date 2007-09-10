@@ -345,7 +345,7 @@ bool KonqView::changeViewMode( const QString &serviceType,
 
   // Check if that's already the kind of part we have -> no need to recreate it
   // Note: we should have an operator= for KService...
-  if ( m_service && m_service->desktopEntryPath() == service->desktopEntryPath() )
+  if ( m_service && m_service->entryPath() == service->entryPath() )
   {
     kDebug( 1202 ) << "KonqView::changeViewMode. Reusing service. Service type set to " << m_serviceType;
     if (  m_pMainWindow->currentView() == this )

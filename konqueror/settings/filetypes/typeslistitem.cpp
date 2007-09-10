@@ -144,11 +144,11 @@ void TypesListItem::getServiceOffers( QStringList & appServices, QStringList & e
   KService::List::ConstIterator it(offerList.begin());
   for (; it != offerList.constEnd(); ++it)
     if ((*it)->allowAsDefault())
-      appServices.append((*it)->desktopEntryPath());
+      appServices.append((*it)->entryPath());
 
   offerList = KMimeTypeTrader::self()->query(m_mimetype->name(), "KParts/ReadOnlyPart");
   for ( it = offerList.begin(); it != offerList.constEnd(); ++it)
-    embedServices.append((*it)->desktopEntryPath());
+    embedServices.append((*it)->entryPath());
 }
 
 bool TypesListItem::isMimeTypeDirty() const
@@ -266,7 +266,7 @@ void TypesListItem::sync()
   {
     // We must use KConfig otherwise config.deleteEntry doesn't
     // properly cancel out settings already present in system files.
-    KDesktopFile config( "mime", m_mimetype->desktopEntryPath() );
+    KDesktopFile config( "mime", m_mimetype->entryPath() );
     KConfigGroup cg = config.desktopGroup();
 
     cg.writeEntry("Type", "MimeType");
@@ -329,16 +329,16 @@ void TypesListItem::sync()
           continue; // Only those which were added in init()
 
       // Look in the correct list...
-      if ( (isApplication && ! m_appServices.contains( pService->desktopEntryPath() ))
-           || (!isApplication && !m_embedServices.contains( pService->desktopEntryPath() ))
+      if ( (isApplication && ! m_appServices.contains( pService->entryPath() ))
+           || (!isApplication && !m_embedServices.contains( pService->entryPath() ))
           ) {
         // The service was in m_appServices but has been removed
         // create a new .desktop file without this mimetype
 
         if( s_changedServices == NULL )
             deleter.setObject( s_changedServices, new QMap< QString, QStringList > );
-        QStringList mimeTypeList = s_changedServices->contains( pService->desktopEntryPath())
-            ? (*s_changedServices)[ pService->desktopEntryPath() ] : pService->serviceTypes();
+        QStringList mimeTypeList = s_changedServices->contains( pService->entryPath())
+            ? (*s_changedServices)[ pService->entryPath() ] : pService->serviceTypes();
 
         if ( mimeTypeList.contains( name() ) ) {
           // The mimetype is listed explicitly in the .desktop files, so
@@ -346,18 +346,18 @@ void TypesListItem::sync()
           KDesktopFile *desktop;
           if ( !isApplication )
           {
-            desktop = new KDesktopFile("services", pService->desktopEntryPath());
+            desktop = new KDesktopFile("services", pService->entryPath());
           }
           else
           {
             QString path = pService->locateLocal();
-            KDesktopFile orig("apps", pService->desktopEntryPath());
+            KDesktopFile orig("apps", pService->entryPath());
             desktop = orig.copyTo(path);
           }
 
           KConfigGroup group = desktop->desktopGroup();
-          mimeTypeList = s_changedServices->contains( pService->desktopEntryPath())
-            ? (*s_changedServices)[ pService->desktopEntryPath() ] : group.readEntry("MimeType",QStringList(), ';');
+          mimeTypeList = s_changedServices->contains( pService->entryPath())
+            ? (*s_changedServices)[ pService->entryPath() ] : group.readEntry("MimeType",QStringList(), ';');
 
           // Remove entry and the number that might follow.
           for(int i=0;(i = mimeTypeList.indexOf(name())) != -1;)
@@ -378,7 +378,7 @@ void TypesListItem::sync()
 
           // if two or more types have been modified, and they use the same service,
           // accumulate the changes
-          (*s_changedServices)[ pService->desktopEntryPath() ] = mimeTypeList;
+          (*s_changedServices)[ pService->entryPath() ] = mimeTypeList;
 
           desktop->sync();
           delete desktop;
@@ -424,8 +424,8 @@ KMimeType::Ptr TypesListItem::findImplicitAssociation(const QString &desktop)
 
     if( s_changedServices == NULL )
        deleter.setObject( s_changedServices, new QMap< QString, QStringList > );
-    QStringList mimeTypeList = s_changedServices->contains( s->desktopEntryPath())
-       ? (*s_changedServices)[ s->desktopEntryPath() ] : s->serviceTypes();
+    QStringList mimeTypeList = s_changedServices->contains( s->entryPath())
+       ? (*s_changedServices)[ s->entryPath() ] : s->serviceTypes();
 
     for(QStringList::ConstIterator it = mimeTypeList.begin();
        it != mimeTypeList.end(); ++it)
@@ -463,26 +463,26 @@ void TypesListItem::saveServices( KConfig & profile, QStringList services, const
     // merge new mimetype
     if( s_changedServices == NULL )
        deleter.setObject( s_changedServices, new QMap< QString, QStringList > );
-    QStringList mimeTypeList = s_changedServices->contains( pService->desktopEntryPath())
-       ? (*s_changedServices)[ pService->desktopEntryPath() ] : pService->serviceTypes();
+    QStringList mimeTypeList = s_changedServices->contains( pService->entryPath())
+       ? (*s_changedServices)[ pService->entryPath() ] : pService->serviceTypes();
 
     if (!mimeTypeList.contains(name()) && !inheritsMimetype(m_mimetype, mimeTypeList))
     {
       KDesktopFile *desktop;
       if ( !pService->isApplication() )
       {
-        desktop = new KDesktopFile("services", pService->desktopEntryPath());
+        desktop = new KDesktopFile("services", pService->entryPath());
       }
       else
       {
         QString path = pService->locateLocal();
-        KDesktopFile orig("apps", pService->desktopEntryPath());
+        KDesktopFile orig("apps", pService->entryPath());
         desktop = orig.copyTo(path);
       }
 
       KConfigGroup group = desktop->desktopGroup();
-      mimeTypeList = s_changedServices->contains( pService->desktopEntryPath())
-            ? (*s_changedServices)[ pService->desktopEntryPath() ] : group.readEntry("MimeType", QStringList(),';');
+      mimeTypeList = s_changedServices->contains( pService->entryPath())
+            ? (*s_changedServices)[ pService->entryPath() ] : group.readEntry("MimeType", QStringList(),';');
       mimeTypeList.append(name());
 
       group.writeEntry("MimeType", mimeTypeList, ';');
@@ -491,7 +491,7 @@ void TypesListItem::saveServices( KConfig & profile, QStringList services, const
 
       // if two or more types have been modified, and they use the same service,
       // accumulate the changes
-      (*s_changedServices)[ pService->desktopEntryPath() ] = mimeTypeList;
+      (*s_changedServices)[ pService->entryPath() ] = mimeTypeList;
     }
   }
 }
