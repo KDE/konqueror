@@ -44,7 +44,7 @@
 #include "typeslistitem.h"
 
 KServiceListItem::KServiceListItem( KService::Ptr pService, int kind )
-    : QListWidgetItem(), desktopPath(pService->desktopEntryPath())
+    : QListWidgetItem(), desktopPath(pService->entryPath())
 {
     if ( kind == KServiceListWidget::SERVICELIST_APPLICATIONS )
         setText( pService->name() );
@@ -275,7 +275,7 @@ void KServiceListWidget::addService()
       // check if it is a duplicate entry
       for (int index = 0; index < servicesLB->count(); index++)
         if (static_cast<KServiceListItem*>( servicesLB->item(index) )->desktopPath
-            == service->desktopEntryPath())
+            == service->entryPath())
           return;
   }
 
@@ -307,7 +307,7 @@ void KServiceListWidget::editService()
       if (!service)
         return;
 
-      QString path = service->desktopEntryPath();
+      QString path = service->entryPath();
 
       // If the path to the desktop file is relative, try to get the full
       // path from KStdDirs.
@@ -332,7 +332,7 @@ void KServiceListWidget::editService()
       bool addIt = true;
       for ( int index = 0; index < servicesLB->count(); index++ ) {
         if (static_cast<KServiceListItem*>( servicesLB->item(index) )->desktopPath
-                == service->desktopEntryPath()) {
+                == service->entryPath()) {
           addIt = false;
           break;
         }

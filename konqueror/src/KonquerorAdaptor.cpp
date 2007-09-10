@@ -236,8 +236,8 @@ bool KonquerorAdaptor::processCanBeReused( int screen )
         const KonqMainWindow::MapViews& views = window->viewMap();
         foreach ( KonqView* view, views )
         {
-            kDebug(1202) << "processCanBeReused: part=" << view->service()->desktopEntryPath() << ", URL=" << view->url().prettyUrl();
-            if( !allowed_parts.contains( view->service()->desktopEntryPath()))
+            kDebug(1202) << "processCanBeReused: part=" << view->service()->entryPath() << ", URL=" << view->url().prettyUrl();
+            if( !allowed_parts.contains( view->service()->entryPath()))
                 return false;
         }
     }

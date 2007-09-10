@@ -171,7 +171,7 @@ KCustomMenuEditor::save(KConfigBase *cfg)
    while(item)
    {
       i++;
-      QString path = item->s->desktopEntryPath();
+      QString path = item->s->entryPath();
       if (QDir::isRelativePath(path) || QDir::isRelativePath(KGlobal::dirs()->relativeLocation("xdgdata-apps", path)))
          path = item->s->desktopEntryName();
       cg.writePathEntry(QString("Item%1").arg(i), path);
