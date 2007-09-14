@@ -233,26 +233,26 @@ void KEBApp::createActions() {
 
     QAction* actnExportNS = actionCollection()->addAction("exportNS");
     actnExportNS->setIcon(KIcon("netscape"));
-    actnExportNS->setText(i18n("Export to &Netscape Bookmarks"));
+    actnExportNS->setText(i18n("Export &Netscape Bookmarks"));
     connect(actnExportNS, SIGNAL( triggered() ), actn, SLOT( slotExportNS() ));
 
     QAction* actnExportOpera = actionCollection()->addAction("exportOpera");
     actnExportOpera->setIcon(KIcon("opera"));
-    actnExportOpera->setText(i18n("Export to &Opera Bookmarks..."));
+    actnExportOpera->setText(i18n("Export &Opera Bookmarks..."));
     connect(actnExportOpera, SIGNAL( triggered() ), actn, SLOT( slotExportOpera() ));
 
     QAction* actnExportHTML = actionCollection()->addAction("exportHTML");
     actnExportHTML->setIcon(KIcon("html"));
-    actnExportHTML->setText(i18n("Export to &HTML Bookmarks..."));
+    actnExportHTML->setText(i18n("Export &HTML Bookmarks..."));
     connect(actnExportHTML, SIGNAL( triggered() ), actn, SLOT( slotExportHTML() ));
 
     QAction* actnExportIE = actionCollection()->addAction("exportIE");
-    actnExportIE->setText(i18n("Export to &IE Bookmarks..."));
+    actnExportIE->setText(i18n("Export &Internet Explorer Bookmarks..."));
     connect(actnExportIE, SIGNAL( triggered() ), actn, SLOT( slotExportIE() ));
 
     QAction* actnExportMoz = actionCollection()->addAction("exportMoz");
     actnExportMoz->setIcon(KIcon("mozilla"));
-    actnExportMoz->setText(i18n("Export to &Mozilla Bookmarks..."));
+    actnExportMoz->setText(i18n("Export &Mozilla Bookmarks..."));
     connect(actnExportMoz, SIGNAL( triggered() ), actn, SLOT( slotExportMoz() ));
 }
 
