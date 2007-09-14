@@ -91,9 +91,9 @@ static bool askUser(const QString& filename, bool &readonly) {
 
 extern "C" KDE_EXPORT int kdemain(int argc, char **argv) {
     KAboutData aboutData("keditbookmarks", 0, ki18n("Bookmark Editor"), KDE_VERSION_STRING,
-            ki18n("Konqueror Bookmarks Editor"),
+            ki18n("Bookmark Organizer and Editor"),
             KAboutData::License_GPL,
-            ki18n("(c) 2000 - 2003, KDE developers") );
+            ki18n("Copyright 2000-2007, KDE developers") );
     aboutData.addAuthor(ki18n("David Faure"), ki18n("Initial author"), "faure@kde.org");
     aboutData.addAuthor(ki18n("Alexander Kellett"), ki18n("Author"), "lypanov@kde.org");
 
