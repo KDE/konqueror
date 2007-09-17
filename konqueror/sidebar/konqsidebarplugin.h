@@ -52,7 +52,7 @@ class KONQSIDEBARPLUGIN_EXPORT KonqSidebarPlugin : public QObject
 		const KComponentData &parentInstance();
 	protected:
 		virtual void handleURL(const KUrl &url)=0;
-		virtual void handlePreview(const KFileItemList & items);
+		virtual void handlePreview(const QList<KFileItem> & items);
 		virtual void handlePreviewOnMouseOver(const KFileItem &items); //not used yet, perhaps in KDE 3.1
 		QString desktopName;
 		KComponentData m_parentInstance;
@@ -73,7 +73,7 @@ class KONQSIDEBARPLUGIN_EXPORT KonqSidebarPlugin : public QObject
 	public Q_SLOTS:
 	  void openUrl(const KUrl& url);
 
-	  void openPreview(const KFileItemList& items);
+	  void openPreview(const QList<KFileItem>& items);
 
 	  void openPreviewOnMouseOver(const KFileItem& item); // not used yet, perhaps KDE 3.1
 	/*

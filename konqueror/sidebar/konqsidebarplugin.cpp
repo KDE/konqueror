@@ -41,7 +41,7 @@ const KComponentData &KonqSidebarPlugin::parentInstance(){return m_parentInstanc
 
 void KonqSidebarPlugin::openUrl(const KUrl& url){handleURL(url);}
 
-void KonqSidebarPlugin::openPreview(const KFileItemList& items)
+void KonqSidebarPlugin::openPreview(const QList<KFileItem>& items)
 {
   handlePreview(items);
 }
@@ -51,7 +51,7 @@ void KonqSidebarPlugin::openPreviewOnMouseOver(const KFileItem& item)
   handlePreviewOnMouseOver(item);
 }
 
-void KonqSidebarPlugin::handlePreview(const KFileItemList & /*items*/) {}
+void KonqSidebarPlugin::handlePreview(const QList<KFileItem>& /*items*/) {}
 
 void KonqSidebarPlugin::handlePreviewOnMouseOver(const KFileItem& /*items*/) {}
 
