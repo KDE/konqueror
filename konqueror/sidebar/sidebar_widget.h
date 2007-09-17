@@ -146,7 +146,7 @@ protected Q_SLOTS:
 Q_SIGNALS:
 	void started(KIO::Job *);
 	void completed();
-	void fileSelection(const KFileItemList& iems);
+	void fileSelection(const QList<KFileItem>& iems);
 	void fileMouseOver(const KFileItem& item);
 
 public:

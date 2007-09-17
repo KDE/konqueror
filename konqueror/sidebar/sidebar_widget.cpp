@@ -910,8 +910,8 @@ bool Sidebar_Widget::createView( ButtonInfo *data)
 		K3DockWidget::DockBottom/*|K3DockWidget::DockDesktop*/);
 		data->dock->setDockSite(K3DockWidget::DockTop|K3DockWidget::DockBottom);
 		connectModule(data->module);
-		connect(this, SIGNAL(fileSelection(const KFileItemList&)),
-			data->module, SLOT(openPreview(const KFileItemList&)));
+		connect(this, SIGNAL(fileSelection(const QList<KFileItem>&)),
+			data->module, SLOT(openPreview(const QList<KFileItem>&)));
 
 		connect(this, SIGNAL(fileMouseOver(const KFileItem&)),
 			data->module, SLOT(openPreviewOnMouseOver(const KFileItem&)));

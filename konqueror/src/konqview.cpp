@@ -418,8 +418,8 @@ void KonqView::connectPart(  )
       connect( ext, SIGNAL( speedProgress( int ) ),
                m_pKonqFrame->statusbar(), SLOT( slotSpeedProgress( int ) ) );
 
-      connect( ext, SIGNAL( selectionInfo( const KFileItemList & ) ),
-               this, SLOT( slotSelectionInfo( const KFileItemList & ) ) );
+      connect( ext, SIGNAL( selectionInfo( const QList<KFileItem>& ) ),
+               this, SLOT( slotSelectionInfo( const QList<KFileItem>& ) ) );
 
       connect( ext, SIGNAL( mouseOverInfo( const KFileItem * ) ),
                this, SLOT( slotMouseOverInfo( const KFileItem * ) ) );
@@ -616,7 +616,7 @@ void KonqView::slotCanceled( const QString & errorMsg )
   slotCompleted();
 }
 
-void KonqView::slotSelectionInfo( const KFileItemList &items )
+void KonqView::slotSelectionInfo( const QList<KFileItem> &items )
 {
   KonqFileSelectionEvent ev( items, m_pPart );
   QApplication::sendEvent( m_pMainWindow, &ev );
