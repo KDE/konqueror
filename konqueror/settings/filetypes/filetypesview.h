@@ -25,7 +25,7 @@ class FileTypesView : public KCModule
 {
   Q_OBJECT
 public:
-  FileTypesView(QWidget *parent, const QStringList &args);
+  FileTypesView(QWidget *parent, const QVariantList &args);
   ~FileTypesView();
 
   void load();

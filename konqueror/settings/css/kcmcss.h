@@ -21,9 +21,7 @@
 
 #include <QtCore/QMap>
 
-#define KDE3_SUPPORT
 #include <kcmodule.h>
-#undef KDE3_SUPPORT
 #include "ui_csscustom.h"
 #include "ui_cssconfig.h"
 #include "ui_preview.h"
@@ -65,7 +63,7 @@ class CSSConfig : public KCModule
 
 public:
 	  
-  explicit CSSConfig(QWidget *parent = 0L, const QStringList &list =QStringList() );
+  explicit CSSConfig(QWidget *parent = 0L, const QVariantList &list =QVariantList() );
 
   void load();
   void save();

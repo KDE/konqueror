@@ -22,18 +22,21 @@
 #include <klocale.h>
 #include <kservicetypeprofile.h>
 #include <kstandarddirs.h>
-#include <kgenericfactory.h>
 #include <ksycoca.h>
+#include <kpluginfactory.h>
+#include <kpluginloader.h>
 
 // Local
 #include "newtypedlg.h"
 #include "filetypedetails.h"
 #include "filegroupdetails.h"
 
-typedef KGenericFactory<FileTypesView> FileTypesViewFactory;
-K_EXPORT_COMPONENT_FACTORY(kcm_filetypes, FileTypesViewFactory("filetypes"))
 
-FileTypesView::FileTypesView(QWidget *parent, const QStringList &)
+K_PLUGIN_FACTORY(FileTypesViewFactory, registerPlugin<FileTypesView>();)
+K_EXPORT_PLUGIN(FileTypesViewFactory("filetypes"))
+
+
+FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
   : KCModule(FileTypesViewFactory::componentData(), parent)
 {
   m_konqConfig = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
