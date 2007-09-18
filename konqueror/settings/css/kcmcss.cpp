@@ -16,18 +16,20 @@
 #include <kconfig.h>
 #include <kdialog.h>
 #include <kfontdialog.h>
-#include <kgenericfactory.h>
 #include <kglobalsettings.h>
 #include <kstandarddirs.h>
 #include <kurlrequester.h>
+#include <kpluginfactory.h>
+#include <kpluginloader.h>
 
 // Local
 #include "template.h"
 
-typedef KGenericFactory<CSSConfig, QWidget> CSSFactory;
-K_EXPORT_COMPONENT_FACTORY( kcm_css, CSSFactory("kcmcss") )
+K_PLUGIN_FACTORY(CSSFactory, registerPlugin<CSSConfig>();)
+K_EXPORT_PLUGIN(CSSFactory("kcmcss"))
 
-CSSConfig::CSSConfig(QWidget *parent, const QStringList &)
+
+CSSConfig::CSSConfig(QWidget *parent, const QVariantList &)
   : KCModule(CSSFactory::componentData(), parent)
 {
   customDialogBase = new KDialog(this);
