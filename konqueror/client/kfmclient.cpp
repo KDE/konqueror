@@ -389,7 +389,7 @@ bool ClientApp::createNewWindow(const KUrl & url, bool newTab, bool tempFile, co
             if ( tempFile )
                 args << "-tempfile";
             args << url.url();
-            KProcess::startDetached(QLatin1String("kshell"), args);
+            KProcess::startDetached(QLatin1String("kshell4"), args);
 #ifdef Q_WS_X11
             KStartupInfo::resetStartupEnv();
 #endif
