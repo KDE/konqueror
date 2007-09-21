@@ -78,6 +78,8 @@ void KManualProxyDlg::init()
 
     connect( mDlg->leHttp, SIGNAL(textChanged(const QString&)), SLOT(textChanged(const QString&)) );
     connect( mDlg->sbHttp, SIGNAL(valueChanged(int)), SLOT(valueChanged (int)) );
+
+    connect( this, SIGNAL(okClicked()), this, SLOT(slotOk()));
 }
 
 void KManualProxyDlg::setProxyData( const KProxyData &data )
@@ -93,7 +95,7 @@ void KManualProxyDlg::setProxyData( const KProxyData &data )
         if ( port <= 0 )
             port = DEFAULT_PROXY_PORT;
 
-        url.setPort( 0 );
+        url.setPort( -1 );
         mDlg->leHttp->setText( url.url() );
         mDlg->sbHttp->setValue( port );
     }
@@ -124,7 +126,7 @@ void KManualProxyDlg::setProxyData( const KProxyData &data )
           if ( port <= 0 )
               port = DEFAULT_PROXY_PORT;
 
-          url.setPort( 0 );
+          url.setPort( -1 );
           mDlg->leHttps->setText( url.url() );
           mDlg->sbHttps->setValue( port );
       }
@@ -138,7 +140,7 @@ void KManualProxyDlg::setProxyData( const KProxyData &data )
           if ( port <= 0 )
               port = DEFAULT_PROXY_PORT;
 
-          url.setPort( 0 );
+          url.setPort( -1 );
           mDlg->leFtp->setText( url.url() );
           mDlg->sbFtp->setValue( port );
       }
@@ -412,8 +414,8 @@ bool KManualProxyDlg::isValidURL( const QString& _url, KUrl* result ) const
 
     // If the typed URL is malformed, and the filters cannot filter it
     // then it must be an invalid entry.
-    if( !(url.isValid() || KUriFilter::self()->filterUri(url, filters)) &&
-        !url.hasHost() )
+    if( !(url.isValid() && KUriFilter::self()->filterUri(url, filters) &&
+        url.hasHost()) )
       return false;
 
     QString host (url.host());
