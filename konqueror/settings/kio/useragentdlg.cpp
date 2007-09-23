@@ -168,18 +168,18 @@ void UserAgentDlg::save()
          deleteList.append(*it);
   }
 
-  Q3ListViewItem* it = dlg->lvDomainPolicyList->firstChild();
-  while(it)
+  Q3ListViewItem* it2 = dlg->lvDomainPolicyList->firstChild();
+  while(it2)
   {
-    QString domain = it->text(0);
+    QString domain = it2->text(0);
     if (domain[0] == '.')
       domain = domain.mid(1);
-    QString userAgent = it->text(2);
+    QString userAgent = it2->text(2);
 	KConfigGroup cg2(m_config, domain);
     cg2.writeEntry("UserAgent", userAgent);
     deleteList.removeAll(domain);
 
-    it = it->nextSibling();
+    it2 = it2->nextSibling();
   }
 
   KConfigGroup cg3(m_config, QString());

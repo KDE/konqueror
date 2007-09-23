@@ -81,7 +81,7 @@ namespace KParts {
     class BrowserHostExtension;
     class ReadOnlyPart;
     class OpenUrlArguments;
-    class BrowserArguments;
+    struct BrowserArguments;
 }
 
 class KonqExtendedBookmarkOwner;
