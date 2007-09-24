@@ -20,7 +20,7 @@
       <bool>true</bool>
      </property>
      <property name="currentIndex" >
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab" >
       <attribute name="title" >
@@ -163,29 +163,13 @@
       <attribute name="title" >
        <string>Plugins</string>
       </attribute>
-      <widget class="QCheckBox" name="useArtsdsp" >
-       <property name="enabled" >
-        <bool>true</bool>
-       </property>
-       <property name="geometry" >
-        <rect>
-         <x>10</x>
-         <y>10</y>
-         <width>481</width>
-         <height>22</height>
-        </rect>
-       </property>
-       <property name="text" >
-        <string>Use a&amp;rtsdsp to pipe plugin sound through aRts</string>
-       </property>
-      </widget>
       <widget class="Q3ListView" name="pluginList" >
        <property name="geometry" >
         <rect>
          <x>10</x>
-         <y>38</y>
+         <y>12</y>
          <width>481</width>
-         <height>305</height>
+         <height>331</height>
         </rect>
        </property>
        <property name="whatsThis" >
