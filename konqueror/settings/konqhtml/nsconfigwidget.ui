@@ -163,32 +163,28 @@
       <attribute name="title" >
        <string>Plugins</string>
       </attribute>
-      <widget class="Q3ListView" name="pluginList" >
-       <property name="geometry" >
-        <rect>
-         <x>10</x>
-         <y>12</y>
-         <width>481</width>
-         <height>331</height>
-        </rect>
-       </property>
-       <property name="whatsThis" >
-        <string>Here you can see a list of the Netscape plugins KDE has found.</string>
-       </property>
-       <property name="allColumnsShowFocus" >
-        <bool>true</bool>
-       </property>
-       <column>
-        <property name="text" >
-         <string>Information</string>
-        </property>
-       </column>
-       <column>
-        <property name="text" >
-         <string>Value</string>
-        </property>
-       </column>
-      </widget>
+      <layout class="QHBoxLayout" >
+       <item>
+        <widget class="Q3ListView" name="pluginList" >
+         <property name="whatsThis" >
+          <string>Here you can see a list of the Netscape plugins KDE has found.</string>
+         </property>
+         <property name="allColumnsShowFocus" >
+          <bool>true</bool>
+         </property>
+         <column>
+          <property name="text" >
+           <string>Information</string>
+          </property>
+         </column>
+         <column>
+          <property name="text" >
+           <string>Value</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
    </item>
