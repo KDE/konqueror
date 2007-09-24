@@ -54,8 +54,6 @@ private:
 
   QLabel *winPixmap;
 
-  KUrlRequester *homeURL;
-
   //QLabel *fileTips;
   //QSpinBox  *sbToolTip;
   QCheckBox *cbShowTips;

@@ -15,6 +15,7 @@
 #include <kcmodule.h>
 #include <ksharedconfig.h>
 
+class KUrlRequester;
 class Ui_advancedTabOptions;
 
 class KKonqGeneralOptions : public KCModule
@@ -34,6 +35,7 @@ private Q_SLOTS:
 private:
     KSharedConfig::Ptr m_pConfig;
 
+    KUrlRequester *homeURL;
     Ui_advancedTabOptions* tabOptions;
 };
 

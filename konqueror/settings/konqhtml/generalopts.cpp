@@ -14,10 +14,13 @@
 #include <QtDBus/QDBusMessage>
 #include <QtGui/QGroupBox>
 #include <QtGui/QLayout>
+#include <QtGui/QVBoxLayout>
+#include <QtGui/QLabel>
 
 // KDE
 #include <konq_defaults.h> // include default values directly from konqueror
 #include <kapplication.h>
+#include <kurlrequester.h>
 
 // Local
 #include "ui_advancedTabOptions.h"
@@ -33,8 +36,30 @@ KKonqGeneralOptions::KKonqGeneralOptions(QWidget *parent, const QVariantList&)
     : KCModule( KcmKonqHtmlFactory::componentData(), parent )
 {
     m_pConfig = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
-    int row = 0;
     QGridLayout *lay = new QGridLayout(this);
+
+    //HOME URL
+    QHBoxLayout *homeLayout = new QHBoxLayout;
+
+    QLabel *label = new QLabel(i18n("Home &URL:"), this);
+    homeLayout->addWidget(label);
+
+    homeURL = new KUrlRequester(this);
+    homeURL->setMode(KFile::Directory);
+    homeURL->setWindowTitle(i18n("Select Home Folder"));
+    homeLayout->addWidget(homeURL);
+    connect(homeURL, SIGNAL(textChanged(const QString &)), SLOT(slotChanged()));
+    label->setBuddy(homeURL);
+
+    lay->addLayout(homeLayout, 0, 0);
+
+    QString homestr = i18n("This is the URL (e.g. a folder or a web page) where "
+                           "Konqueror will jump to when the \"Home\" button is pressed. "
+                           "This is usually your home folder, symbolized by a 'tilde' (~).");
+    label->setWhatsThis(homestr);
+    homeURL->setWhatsThis(homestr);
+    //HOME URL
+
     QGroupBox* tabsGroup = new QGroupBox(i18n("Tabbed Browsing"));
 
     tabOptions = new Ui_advancedTabOptions;
@@ -50,10 +75,9 @@ KKonqGeneralOptions::KKonqGeneralOptions(QWidget *parent, const QVariantList&)
     connect(tabOptions->m_pKonquerorTabforExternalURL, SIGNAL(clicked()), SLOT(slotChanged()));
     connect(tabOptions->m_pPopupsWithinTabs, SIGNAL(clicked()), SLOT(slotChanged()));
 
-    lay->addWidget( tabsGroup, row, 0, 1, 2 );
-//    row++;
+    lay->addWidget( tabsGroup, 1, 0, 1, 2 );
 
-    lay->setRowStretch(row, 1);
+    lay->setRowStretch(1, 1);
 
     load();
     emit changed(false);
@@ -69,6 +93,7 @@ void KKonqGeneralOptions::load()
     KConfigGroup cg(m_pConfig, QByteArray(""));
 
     cg.changeGroup("FMSettings");
+    homeURL->setUrl(cg.readEntry("HomeURL", "~"));
     tabOptions->m_pShowMMBInTabs->setChecked( cg.readEntry( "MMBOpensTab", false ) );
     tabOptions->m_pDynamicTabbarHide->setChecked( ! (cg.readEntry( "AlwaysTabbedMode", false )) );
 
@@ -86,6 +111,8 @@ void KKonqGeneralOptions::load()
 
 void KKonqGeneralOptions::defaults()
 {
+    homeURL->setUrl(KUrl("~"));
+
     bool old = m_pConfig->readDefaults();
     m_pConfig->setReadDefaults(true);
     load();
@@ -95,6 +122,7 @@ void KKonqGeneralOptions::defaults()
 void KKonqGeneralOptions::save()
 {
     KConfigGroup cg(m_pConfig, "FMSettings");
+    cg.writeEntry( "HomeURL", homeURL->url().isEmpty()? QString("~") : homeURL->url().url() );
     cg.writeEntry( "MMBOpensTab", tabOptions->m_pShowMMBInTabs->isChecked() );
     cg.writeEntry( "AlwaysTabbedMode", !(tabOptions->m_pDynamicTabbarHide->isChecked()) );
 
