@@ -1232,11 +1232,7 @@ void Sidebar_Widget::customEvent(QEvent* ev)
 	{
 		emit fileSelection(static_cast<KonqFileSelectionEvent*>(ev)->selection());
 	} else if (KonqFileMouseOverEvent::test(ev)) {
-		if (!(static_cast<KonqFileMouseOverEvent*>(ev)->item())) {
-			emit fileMouseOver(KFileItem(KUrl(),QString(),KFileItem::Unknown));
-		} else {
-			emit fileMouseOver(*static_cast<KonqFileMouseOverEvent*>(ev)->item());
-		}
+		emit fileMouseOver(static_cast<KonqFileMouseOverEvent*>(ev)->item());
 	}
 }
 
