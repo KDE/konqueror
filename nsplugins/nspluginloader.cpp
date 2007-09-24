@@ -293,7 +293,7 @@ bool NSPluginLoader::loadViewer()
    *_process << viewer;
 
    // tell the process it's parameters
-   *_process << "-dcopid";
+   *_process << "-dbusservice";
    *_process << _dbusService;
 
    // run the process

@@ -92,7 +92,7 @@ void parseCommandLine(int argc, char *argv[])
 {
    for (int i=0; i<argc; i++)
    {
-      if (!strcmp(argv[i], "-dcopid") && (i+1 < argc)) // ## TODO rename option
+      if (!strcmp(argv[i], "-dbusservice") && (i+1 < argc)) 
       {
          g_dbusServiceName = argv[i+1];
          i++;
