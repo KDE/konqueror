@@ -25,10 +25,8 @@
 #include <QtCore/QDir>
 #include <kvbox.h>
 #include <QtGui/QLabel>
-#include <Qt3Support/Q3Header>
 #include <QtGui/QLineEdit>
 
-#include <k3listview.h>
 #include <kdebug.h>
 #include <kstandardguiitem.h>
 #include <kio/global.h>
@@ -36,6 +34,7 @@
 #include <klocale.h>
 #include <kconfig.h>
 #include <kseparator.h>
+#include <klistwidget.h>
 #include <kpushbutton.h>
 
 KonqProfileMap KonqProfileDlg::readAllProfiles()
@@ -63,9 +62,10 @@ KonqProfileMap KonqProfileDlg::readAllProfiles()
   return mapProfiles;
 }
 
-KonqProfileItem::KonqProfileItem( K3ListView *parent, const QString & text )
-    : Q3ListViewItem( parent, text ), m_profileName( text )
+KonqProfileItem::KonqProfileItem( KListWidget *parent, const QString & text )
+    : QListWidgetItem( text, parent ), m_profileName( text )
 {
+    setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 }
 
 #define BTN_RENAME KDialog::User1
@@ -98,16 +98,14 @@ KonqProfileDlg::KonqProfileDlg( KonqViewManager *manager, const QString & presel
 
   lblName->setBuddy( m_pProfileNameLineEdit );
 
-  m_pListView = new K3ListView( box );
-  m_pListView->setAllColumnsShowFocus(true);
-  m_pListView->header()->hide();
-  m_pListView->addColumn("");
-  m_pListView->setRenameable( 0 );
+  m_pListView = new KListWidget( box );
+  m_pListView->setSelectionBehavior(QAbstractItemView::SelectItems);
+  m_pListView->setSelectionMode(QAbstractItemView::SingleSelection);
 
   box->setStretchFactor( m_pListView, 1 );
 
-  connect( m_pListView, SIGNAL( itemRenamed( Q3ListViewItem * ) ),
-            SLOT( slotItemRenamed( Q3ListViewItem * ) ) );
+  connect( m_pListView, SIGNAL( itemChanged( QListWidgetItem * ) ),
+            SLOT( slotItemRenamed( QListWidgetItem * ) ) );
 
   loadAllProfiles( preselectProfile );
   m_pListView->setMinimumSize( m_pListView->sizeHint() );
@@ -118,14 +116,14 @@ KonqProfileDlg::KonqProfileDlg( KonqViewManager *manager, const QString & presel
   m_cbSaveSize = new QCheckBox( i18n("Save &window size in profile"), box );
   m_cbSaveSize->setChecked( KonqSettings::saveWindowSizeInProfile() );
 
-  connect( m_pListView, SIGNAL( selectionChanged( Q3ListViewItem * ) ),
-           this, SLOT( slotSelectionChanged( Q3ListViewItem * ) ) );
+  connect( m_pListView, SIGNAL( itemSelectionChanged() ),
+           this, SLOT( slotSelectionChanged() ) );
 
-  connect( m_pProfileNameLineEdit, SIGNAL( textChanged( const QString & ) ),
+  connect( m_pProfileNameLineEdit, SIGNAL( textEdited( const QString & ) ),
            this, SLOT( slotTextChanged( const QString & ) ) );
 
-  enableButton( BTN_RENAME, m_pListView->selectedItem ()!=0 );
-  enableButton( BTN_DELETE, m_pListView->selectedItem ()!=0 );
+  enableButton( BTN_RENAME, m_pListView->currentItem() != 0 );
+  enableButton( BTN_DELETE, m_pListView->currentItem() != 0 );
 
   connect( this,SIGNAL(user1Clicked()),SLOT(slotUser1()));
   connect( this,SIGNAL(user2Clicked()),SLOT(slotUser2()));
@@ -150,14 +148,14 @@ void KonqProfileDlg::loadAllProfiles(const QString & preselectProfile)
     KonqProfileMap::ConstIterator eEnd = m_mapEntries.end();
     for (; eIt != eEnd; ++eIt )
     {
-        Q3ListViewItem *item = new KonqProfileItem( m_pListView, eIt.key() );
+        QListWidgetItem *item = new KonqProfileItem( m_pListView, eIt.key() );
         QString filename = eIt.value().mid( eIt.value().lastIndexOf( '/' ) + 1 );
         kDebug(1202) << filename;
         if ( filename == preselectProfile )
         {
             profileFound = true;
             m_pProfileNameLineEdit->setText( eIt.key() );
-            m_pListView->setSelected( item, true );
+            m_pListView->setCurrentItem( item );
         }
     }
     if (!profileFound)
@@ -169,9 +167,9 @@ void KonqProfileDlg::slotUser3() // Save button
   QString name = KIO::encodeFileName( m_pProfileNameLineEdit->text() ); // in case of '/'
 
   // Reuse filename of existing item, if any
-  if ( m_pListView->selectedItem() )
+  if ( m_pListView->currentItem() )
   {
-    KonqProfileMap::Iterator it = m_mapEntries.find( m_pListView->selectedItem()->text(0) );
+    KonqProfileMap::Iterator it = m_mapEntries.find( m_pListView->currentItem()->text() );
     if ( it != m_mapEntries.end() )
     {
       QFileInfo info( it.value() );
@@ -188,30 +186,30 @@ void KonqProfileDlg::slotUser3() // Save button
 
 void KonqProfileDlg::slotUser2() // Delete button
 {
-    if(!m_pListView->selectedItem())
+    if(!m_pListView->currentItem())
         return;
-  KonqProfileMap::Iterator it = m_mapEntries.find( m_pListView->selectedItem()->text(0) );
+  KonqProfileMap::Iterator it = m_mapEntries.find( m_pListView->currentItem()->text() );
 
   if ( it != m_mapEntries.end() && QFile::remove( it.value() ) )
       loadAllProfiles();
 
-  enableButton( BTN_RENAME, m_pListView->selectedItem() != 0 );
-  enableButton( BTN_DELETE, m_pListView->selectedItem() != 0 );
+  enableButton( BTN_RENAME, m_pListView->currentItem() != 0 );
+  enableButton( BTN_DELETE, m_pListView->currentItem() != 0 );
 }
 
 void KonqProfileDlg::slotUser1() // Rename button
 {
-  Q3ListViewItem *item = m_pListView->selectedItem();
+  QListWidgetItem *item = m_pListView->currentItem();
 
   if ( item )
-    m_pListView->rename( item, 0 );
+    m_pListView->editItem( item );
 }
 
-void KonqProfileDlg::slotItemRenamed( Q3ListViewItem * item )
+void KonqProfileDlg::slotItemRenamed( QListWidgetItem * item )
 {
   KonqProfileItem * profileItem = static_cast<KonqProfileItem *>( item );
 
-  QString newName = profileItem->text(0);
+  QString newName = profileItem->text();
   QString oldName = profileItem->m_profileName;
 
   if (!newName.isEmpty())
@@ -234,9 +232,9 @@ void KonqProfileDlg::slotItemRenamed( Q3ListViewItem * item )
   }
 }
 
-void KonqProfileDlg::slotSelectionChanged( Q3ListViewItem * item )
+void KonqProfileDlg::slotSelectionChanged()
 {
-    m_pProfileNameLineEdit->setText( item ? item->text(0) : QString() );
+    m_pProfileNameLineEdit->setText( m_pListView->currentItem() ? m_pListView->currentItem()->text() : QString() );
 }
 
 void KonqProfileDlg::slotTextChanged( const QString & text )
@@ -245,23 +243,14 @@ void KonqProfileDlg::slotTextChanged( const QString & text )
 
   // If we type the name of a profile, select it in the list
 
-  bool itemSelected = false;
-  Q3ListViewItem * item;
+  QList<QListWidgetItem*> items = m_pListView->findItems(text, Qt::MatchCaseSensitive);
+  QListWidgetItem * item = !items.isEmpty() ? items.first() : 0;
+  m_pListView->setCurrentItem(item);
 
-  for ( item = m_pListView->firstChild() ; item ; item = item->nextSibling() )
-      if ( item->text(0) == text /*only full text, not partial*/ )
-      {
-          itemSelected = true;
-          m_pListView->setSelected( item, true );
-          break;
-      }
-
-  if ( !itemSelected ) // otherwise, clear selection
-    m_pListView->clearSelection();
-
+  bool itemSelected = item;
   if ( itemSelected )
   {
-    QFileInfo fi( m_mapEntries[ item->text( 0 ) ] );
+    QFileInfo fi( m_mapEntries[ item->text() ] );
     itemSelected = itemSelected && fi.isWritable();
   }
 

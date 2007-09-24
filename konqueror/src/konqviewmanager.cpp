@@ -37,6 +37,8 @@
 
 #include <assert.h>
 
+#include "konqmisc.h"
+
 #include "konqview.h"
 #include "konqframe.h"
 #include "konqframestatusbar.h"
@@ -1324,7 +1326,22 @@ void KonqViewManager::slotProfileActivated( int id )
     for(int i=0; iter != end; ++iter, ++i) {
         if( i == id ) {
             KUrl u( *iter );
-            loadViewProfile( *iter, u.fileName() );
+
+            KConfig cfg( *iter );
+            KConfigGroup profileGroup( &cfg, "Profile" );
+            QString xmluiFile = profileGroup.readEntry("XMLUIFile","konqueror.rc");
+
+            //If the profile specifies an xmlgui file that differs from the currently
+            //loaded one, then we have no choice but to recreate the window.  I've
+            //experimented with trying to get xmlgui to recreate the gui, but it is
+            //too brittle.  The only other choice is to ignore the profile which is
+            //not very nice.
+            if (xmluiFile != m_pMainWindow->xmlFile()) {
+                m_pMainWindow->deleteLater();
+                KonqMisc::createBrowserWindowFromProfile( *iter, u.fileName(), m_pMainWindow->currentView()->url() );
+            } else {
+                loadViewProfile( *iter, u.fileName() );
+            }
             break;
         }
     }
