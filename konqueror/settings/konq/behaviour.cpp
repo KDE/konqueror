@@ -124,37 +124,6 @@ KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
 
     mainLayout->addWidget(miscGb);
 
-    QHBoxLayout *homeLayout = new QHBoxLayout;
-
-    QLabel *label = new QLabel(i18n("Home &URL:"), this);
-    homeLayout->addWidget(label);
-
-    homeURL = new KUrlRequester(this);
-    homeURL->setMode(KFile::Directory);
-    homeURL->setWindowTitle(i18n("Select Home Folder"));
-    homeLayout->addWidget(homeURL);
-    connect(homeURL, SIGNAL(textChanged(const QString &)), this, SLOT(changed()));
-    label->setBuddy(homeURL);
-
-    mainLayout->addLayout(homeLayout);
-
-    QString homestr = i18n("This is the URL (e.g. a folder or a web page) where "
-                           "Konqueror will jump to when the \"Home\" button is pressed. "
-                           "This is usually your home folder, symbolized by a 'tilde' (~).");
-    label->setWhatsThis(homestr);
-    homeURL->setWhatsThis(homestr);
-
-    mainLayout->addItem(new QSpacerItem(0,20,QSizePolicy::Fixed,QSizePolicy::Fixed));
-
-    cbShowDeleteCommand = new QCheckBox(i18n("Show 'Delete' context me&nu entries which bypass the trashcan"), this);
-    mainLayout->addWidget(cbShowDeleteCommand);
-    connect(cbShowDeleteCommand, SIGNAL(clicked()), this, SLOT(changed()));
-
-    cbShowDeleteCommand->setWhatsThis(i18n("Check this if you want 'Delete' menu commands to be displayed "
-                                           "on the desktop and in the file manager's context menus. "
-                                           "You can always delete files by holding the Shift key "
-                                           "while calling 'Move to Trash'."));
-
     QGroupBox *bg = new QGroupBox(this);
     bg->setTitle(i18n("Ask Confirmation For"));
     bg->setWhatsThis(i18n("This option tells Konqueror whether to ask"
@@ -176,6 +145,15 @@ KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
     bg->setLayout(confirmationLayout);
 
     mainLayout->addWidget(bg);
+
+    cbShowDeleteCommand = new QCheckBox(i18n("Show 'Delete' context me&nu entries which bypass the trashcan"), this);
+    mainLayout->addWidget(cbShowDeleteCommand);
+    connect(cbShowDeleteCommand, SIGNAL(clicked()), this, SLOT(changed()));
+
+    cbShowDeleteCommand->setWhatsThis(i18n("Check this if you want 'Delete' menu commands to be displayed "
+                                           "on the desktop and in the file manager's context menus. "
+                                           "You can always delete files by holding the Shift key "
+                                           "while calling 'Move to Trash'."));
 
     mainLayout->addStretch();
 
@@ -199,8 +177,6 @@ void KBehaviourOptions::load()
 	KConfigGroup cg(g_pConfig, groupname);
     cbNewWin->setChecked( cg.readEntry("AlwaysNewWin", false) );
     updateWinPixmap(cbNewWin->isChecked());
-
-    homeURL->setUrl(cg.readEntry("HomeURL", "~"));
 
     bool stips = cg.readEntry( "ShowFileTips", true);
     cbShowTips->setChecked( stips );
@@ -234,8 +210,6 @@ void KBehaviourOptions::defaults()
 {
     cbNewWin->setChecked(false);
 
-    homeURL->setUrl(KUrl("~"));
-
     cbListProgress->setChecked( false );
 
     cbShowTips->setChecked( true );
@@ -257,7 +231,6 @@ void KBehaviourOptions::save()
 	KConfigGroup cg(g_pConfig, groupname);
 
     cg.writeEntry( "AlwaysNewWin", cbNewWin->isChecked() );
-    cg.writeEntry( "HomeURL", homeURL->url().isEmpty()? QString("~") : homeURL->url().url() );
     cg.writeEntry( "ShowFileTips", cbShowTips->isChecked() );
     cg.writeEntry( "ShowPreviewsInFileTips", cbShowPreviewsInTips->isChecked() );
 //    g_pConfig->writeEntry( "FileTipsItems", sbToolTip->value() );
