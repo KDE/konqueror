@@ -290,21 +290,6 @@ bool NSPluginLoader::loadViewer()
       return false;
    }
 
-   // find the external artsdsp process
-   if( !_useArtsdsp ) {
-       kDebug() << "trying to use artsdsp";
-       QString artsdsp = KGlobal::dirs()->findExe("artsdsp");
-       if (artsdsp.isEmpty())
-       {
-           kDebug() << "can't find artsdsp";
-       } else
-       {
-           kDebug() << artsdsp;
-           *_process << artsdsp;
-       }
-   } else
-       kDebug() << "don't using artsdsp";
-
    *_process << viewer;
 
    // tell the process it's parameters
