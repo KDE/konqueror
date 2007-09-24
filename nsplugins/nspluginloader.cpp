@@ -272,7 +272,7 @@ bool NSPluginLoader::loadViewer()
    _running = false;
    _process = new K3Process;
 
-   // get the dcop app id
+   // get the dbus app id
    int pid = (int)getpid();
    QString tmp;
    tmp.sprintf("org.kde.nspluginviewer-%d",pid);
@@ -357,7 +357,7 @@ void NSPluginLoader::unloadViewer()
 
 void NSPluginLoader::applicationRegistered( const QString& appId )
 {
-   kDebug() << "DCOP application " << appId << " just registered!";
+   kDebug() << "D-Bus application " << appId << " just registered!";
 
    if ( _dbusService == appId )
    {
