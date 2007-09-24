@@ -115,7 +115,8 @@ KBookmarkBar::~KBookmarkBar()
 
 void KBookmarkBar::clear()
 {
-    m_toolBar->clear();
+    if (m_toolBar)
+        m_toolBar->clear();
     qDeleteAll(d->m_actions);
     d->m_actions.clear();
     qDeleteAll( m_lstSubMenus );
