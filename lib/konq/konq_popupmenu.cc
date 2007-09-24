@@ -865,16 +865,17 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
 
                     QByteArray nam;
                     nam.setNum( id );
+                    nam.prepend( "appservice_" );
 
                     QString actionName( service->name().replace( "&", "&&" ) );
                     if ( menu == domElement() ) // no submenu -> prefix single offer
                         actionName = i18n( "Open with %1" ,  actionName );
 
-                    act = m_ownActions.addAction( nam.prepend( "appservice_" ) );
+                    act = m_ownActions.addAction( nam );
                     act->setIcon( KIcon( service->icon() ) );
                     act->setText( actionName );
                     connect(act, SIGNAL(triggered()), this, SLOT(slotRunService()));
-                    KonqXMLGUIClient::addAction( nam.prepend( "appservice_" ).constData(), menu );
+                    KonqXMLGUIClient::addAction( nam.constData(), menu );
 
                     m_mapPopup[ id++ ] = *it;
                 }
