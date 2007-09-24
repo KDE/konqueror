@@ -388,7 +388,6 @@ void KPluginOptions::dirInit()
     connect( m_widget->dirRemove, SIGNAL(clicked()), SLOT(dirRemove()));
     connect( m_widget->dirUp, SIGNAL(clicked()), SLOT(dirUp()));
     connect( m_widget->dirDown, SIGNAL(clicked()), SLOT(dirDown()) );
-    connect( m_widget->useArtsdsp, SIGNAL(clicked()),SLOT(change()));
     connect( m_widget->dirEdit,
              SIGNAL(textChanged(const QString&)),
              SLOT(dirEdited(const QString &)) );
@@ -436,9 +435,6 @@ void KPluginOptions::dirLoad( KSharedConfig::Ptr config, bool useDefault )
     m_widget->dirList->clear();
     m_widget->dirList->addItems( paths );
 
-    // setup other widgets
-    bool useArtsdsp = cg.readEntry( "useArtsdsp", false);
-    m_widget->useArtsdsp->setChecked( useArtsdsp );
 }
 
 
@@ -455,7 +451,6 @@ void KPluginOptions::dirSave( KSharedConfig::Ptr config )
     // write entry
     KConfigGroup cg(config, "Misc");
     cg.writeEntry( "scanPaths", paths );
-    cg.writeEntry( "useArtsdsp", m_widget->useArtsdsp->isChecked() );
 }
 
 
