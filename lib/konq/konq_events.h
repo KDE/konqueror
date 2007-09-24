@@ -33,9 +33,9 @@ private:
 class LIBKONQ_EXPORT KonqFileMouseOverEvent : public KParts::Event
 {
 public:
-  KonqFileMouseOverEvent( const KFileItem *item, KParts::ReadOnlyPart *part ) : KParts::Event( s_fileItemMouseOverEventName ), m_item( item ), m_part( part ) {}
+  KonqFileMouseOverEvent( const KFileItem& item, KParts::ReadOnlyPart *part ) : KParts::Event( s_fileItemMouseOverEventName ), m_item( item ), m_part( part ) {}
 
-  const KFileItem* item() const { return m_item; }
+  const KFileItem& item() const { return m_item; }
   KParts::ReadOnlyPart *part() const { return m_part; }
 
   static bool test( const QEvent *event ) { return KParts::Event::test( event, s_fileItemMouseOverEventName ); }
@@ -43,7 +43,7 @@ public:
 private:
   static const char *s_fileItemMouseOverEventName;
 
-  const KFileItem* m_item;
+  KFileItem m_item;
   KParts::ReadOnlyPart *m_part;
 };
 
