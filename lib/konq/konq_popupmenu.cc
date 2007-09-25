@@ -313,8 +313,6 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
 {
     Q_ASSERT( m_lstItems.count() >= 1 );
 
-    m_ownActions.setAssociatedWidget( this );
-
     const bool bIsLink  = (kpf & IsLink);
     bool currentDir     = false;
     bool sReading       = true;
