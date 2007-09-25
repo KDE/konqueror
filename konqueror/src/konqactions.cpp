@@ -21,8 +21,9 @@
 
 #include <assert.h>
 
+#include <QToolButton>
+
 #include <ktoolbar.h>
-#include <kanimatedbutton.h>
 #include <kdebug.h>
 
 #include <konq_pixmapprovider.h>
@@ -184,89 +185,6 @@ void KonqBidiHistoryAction::slotTriggered( QAction* action )
 
 ///////////////////////////////
 
-KonqLogoAction::KonqLogoAction( const QString& text, QObject* parent )
-  : KAction( text, parent )
-{
-  //setToolBarWidgetFactory(this);
-}
-
-KonqLogoAction::KonqLogoAction( const QString& text, QObject* receiver, const char* slot, QObject* parent )
-  : KAction( text, parent )
-{
-  connect(this, SIGNAL(triggered(bool)), receiver, slot);
-  //setToolBarWidgetFactory(this);
-}
-
-KonqLogoAction::KonqLogoAction( const QString& text, const KIcon& pix, QObject* parent )
-  : KAction( text, parent )
-{
-  setIcon(pix);
-  //setToolBarWidgetFactory(this);
-}
-
-KonqLogoAction::KonqLogoAction( const QString& text, const KIcon& pix, QObject* receiver, const char* slot, QObject* parent )
-  : KAction( text, parent )
-{
-  setIcon(pix);
-  connect(this, SIGNAL(triggered(bool)), receiver, slot);
-  //setToolBarWidgetFactory(this);
-}
-
-KonqLogoAction::KonqLogoAction( const QStringList& icons, QObject* receiver,
-                                const char* slot, QObject* parent )
-    : KAction( QString(), parent ) // text missing !
-{
-  iconList = icons;
-  connect(this, SIGNAL(toggled(bool)), receiver, slot);
-  //setToolBarWidgetFactory(this);
-}
-
-void KonqLogoAction::start()
-{
-  emit startAnimation();
-}
-
-void KonqLogoAction::stop()
-{
-  emit stopAnimation();
-}
-
-
-QWidget * KonqLogoAction::createWidget( QWidget * parent )
-{
-  QToolBar *toolbar = qobject_cast<QToolBar*>(parent);
-
-  // This action should only be used in a toolbar
-  Q_ASSERT(toolbar != NULL);
-
-  QWidget* container = new QWidget(parent);
-
-  QHBoxLayout* layout = new QHBoxLayout(container);
-  layout->setMargin(0);
-  layout->setSpacing(0);
-  layout->addStretch();
-
-  KAnimatedButton *button = new KAnimatedButton(container);
-  button->setAutoRaise(true);
-  button->setFocusPolicy(Qt::NoFocus);
-  button->setIconSize(toolbar->iconSize());
-  button->setToolButtonStyle(Qt::ToolButtonIconOnly);
-  connect(toolbar, SIGNAL(iconSizeChanged(const QSize&)), button, SLOT(setIconSize(const QSize&)));
-  connect(toolbar, SIGNAL(iconSizeChanged(const QSize&)), button, SLOT(updateIcons()));
-  connect(button, SIGNAL(triggered(QAction*)), toolbar, SIGNAL(actionTriggered(QAction*)));
-  button->setDefaultAction(this);
-
-  connect(this, SIGNAL(startAnimation()), button, SLOT(start()));
-  connect(this, SIGNAL(stopAnimation()), button, SLOT(stop()));
-
-  button->setIcons(QString("kde"));
-
-  layout->addWidget(button);
-
-  return container;
-}
-
-///////////
 
 KonqViewModeAction::KonqViewModeAction( const QString& desktopEntryName,
                                         const QString &text, const KIcon &icon,

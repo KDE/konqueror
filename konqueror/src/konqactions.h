@@ -67,30 +67,6 @@ private:
 
 /////
 
-class KonqLogoAction : public KAction
-{
-  Q_OBJECT
-public:
-    KonqLogoAction( const QString& text, QObject* parent );
-    KonqLogoAction( const QString& text, QObject* receiver, const char* slot, QObject* parent );
-    KonqLogoAction( const QString& text, const KIcon& pix, QObject* parent );
-    KonqLogoAction( const QString& text, const KIcon& pix, QObject* receiver, const char* slot, QObject* parent );
-    // text missing !
-    KonqLogoAction( const QStringList& icons, QObject* receiver, const char* slot, QObject* parent );
-
-    void start();
-    void stop();
-
-    virtual QWidget* createWidget(QWidget* parent);
-
-Q_SIGNALS:
-    void startAnimation();
-    void stopAnimation();
-
-private:
-    QStringList iconList;
-};
-
 class KonqViewModeAction : public KAction
 {
     Q_OBJECT
