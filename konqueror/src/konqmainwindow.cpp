@@ -3995,9 +3995,12 @@ void KonqMainWindow::initActions()
   m_paAnimatedLogo = new KAnimatedButton( this );
   m_paAnimatedLogo->setAutoRaise(true);
   m_paAnimatedLogo->setFocusPolicy(Qt::NoFocus);
-  m_paAnimatedLogo->setIconSize(QSize(22,22));
   m_paAnimatedLogo->setToolButtonStyle(Qt::ToolButtonIconOnly);
   m_paAnimatedLogo->setIcons("kde");
+
+  int size = style()->pixelMetric(QStyle::PM_SmallIconSize, NULL, m_paAnimatedLogo);
+  m_paAnimatedLogo->setIconSize(QSize(size, size));
+
   menuBar()->setCornerWidget(m_paAnimatedLogo);
 
   // Location bar
