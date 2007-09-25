@@ -67,7 +67,7 @@ class KonqFrameBase;
 class KonqFrameContainerBase;
 class KonqFrameContainer;
 class KToolBarPopupAction;
-class KonqLogoAction;
+class KAnimatedButton;
 class KonqViewManager;
 class ToggleViewGUIClient;
 class KonqMainWindowIface;
@@ -653,7 +653,7 @@ private: // members
   QAction *m_paConfigureExtensions;
   QAction *m_paConfigureSpellChecking;
 
-  KonqLogoAction *m_paAnimatedLogo;
+  KAnimatedButton *m_paAnimatedLogo;
 
   KBookmarkBar *m_paBookmarkBar;
 

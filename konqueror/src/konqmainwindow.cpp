@@ -46,6 +46,7 @@
 #include <konq_operations.h>
 #include <konqbookmarkmanager.h>
 #include <kinputdialog.h>
+#include <kanimatedbutton.h>
 #include <kzip.h>
 #include <pwd.h>
 // we define STRICT_ANSI to get rid of some warnings in glibc
@@ -3991,8 +3992,13 @@ void KonqMainWindow::initActions()
   m_paDelete->setText( i18n( "&Delete" ) );
   m_paDelete->setShortcut(Qt::SHIFT+Qt::Key_Delete);
 
-  m_paAnimatedLogo = new KonqLogoAction( i18n("Animated Logo"), this, SLOT( slotDuplicateWindow() ), this );
-  actionCollection()->addAction( "animated_logo", m_paAnimatedLogo );
+  m_paAnimatedLogo = new KAnimatedButton( this );
+  m_paAnimatedLogo->setAutoRaise(true);
+  m_paAnimatedLogo->setFocusPolicy(Qt::NoFocus);
+  m_paAnimatedLogo->setIconSize(QSize(22,22));
+  m_paAnimatedLogo->setToolButtonStyle(Qt::ToolButtonIconOnly);
+  m_paAnimatedLogo->setIcons("kde");
+  menuBar()->setCornerWidget(m_paAnimatedLogo);
 
   // Location bar
   m_locationLabel = new KonqDraggableLabel( this, i18n("L&ocation: ") );
