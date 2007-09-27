@@ -3,6 +3,7 @@ project(KDEBASE_APPS)
 #search packages used by KDE
 find_package(KDE4 REQUIRED)
 find_package(Strigi REQUIRED)
+find_package(Blitz REQUIRED)
 include (KDE4Defaults)
 include (MacroLibrary)
 include(MacroOptionalAddSubdirectory)
