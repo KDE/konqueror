@@ -114,7 +114,7 @@
  </Menu>
  <Merge/>
 </MenuBar>
-<ToolBar fullWidth="true" name="mainToolBar" newline="true"><text>Main Toolbar</text>
+<ToolBar iconText="icononly" name="mainToolBar" newline="true"><text>Main Toolbar</text>
  <Action name="back"/>
  <Action name="forward"/>
  <Action name="up"/>
@@ -131,8 +131,7 @@
   <Action name="splitviewh" />
   <Action name="removeview" />
 </ToolBar>
-<ToolBar fullWidth="true" name="locationToolBar" newline="true"><text>Location Toolbar</text>
-  <Action name="location_label" />
+<ToolBar fullWidth="true" iconText="icononly" name="locationToolBar" newline="false"><text>Location Toolbar</text>
   <Action name="toolbar_url_combo" />
   <Action name="go_url" />
 </ToolBar>
