@@ -33,7 +33,6 @@
 #include <QtCore/QList>
 
 #include <KConfig>
-#include <KPixmapEffect>
 
 class KonqFrameStatusBar;
 class KonqFrameVisitor;
