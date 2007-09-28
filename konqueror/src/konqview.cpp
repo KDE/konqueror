@@ -191,9 +191,9 @@ void KonqView::openUrl( const KUrl &url, const QString & locationBarURL,
   } else
     m_bLockHistory = false;
 
-  callExtensionStringMethod( "setNameFilter(const QString&)", nameFilter );
+  callExtensionStringMethod( "setNameFilter", nameFilter );
   if ( m_bDisableScrolling )
-    callExtensionMethod( "disableScrolling()" );
+    callExtensionMethod( "disableScrolling" );
 
   setLocationBarURL( locationBarURL );
   setPageSecurity(KonqMainWindow::NotCrypted);
@@ -452,7 +452,7 @@ void KonqView::connectPart(  )
                    SLOT( slotAddWebSideBar(const KUrl&, const QString&) ) );
       }
 
-      callExtensionBoolMethod( "setSaveViewPropertiesLocally(bool)", m_pMainWindow->saveViewPropertiesLocally() );
+      callExtensionBoolMethod( "setSaveViewPropertiesLocally", m_pMainWindow->saveViewPropertiesLocally() );
   }
 
   QVariant urlDropHandling;
@@ -1054,12 +1054,7 @@ bool KonqView::callExtensionMethod( const char *methodName )
   if ( !obj ) // not all views have a browser extension !
     return false;
 
-  int id = obj->metaObject()->indexOfSlot( methodName );
-  if ( id == -1 )
-    return false;
-  QMetaObject::invokeMethod( obj, methodName,  Qt::DirectConnection);
-
-  return true;
+  return QMetaObject::invokeMethod( obj, methodName,  Qt::DirectConnection);
 }
 
 bool KonqView::callExtensionBoolMethod( const char *methodName, bool value )
@@ -1068,13 +1063,7 @@ bool KonqView::callExtensionBoolMethod( const char *methodName, bool value )
   if ( !obj ) // not all views have a browser extension !
     return false;
 
-  int id = obj->metaObject()->indexOfSlot( methodName );
-  if ( id == -1 )
-    return false;
-
-  QMetaObject::invokeMethod( obj, methodName,  Qt::DirectConnection, Q_ARG(bool,value));
-
-  return true;
+  return QMetaObject::invokeMethod( obj, methodName,  Qt::DirectConnection, Q_ARG(bool,value));
 }
 
 bool KonqView::callExtensionStringMethod( const char *methodName, const QString &value )
@@ -1083,13 +1072,7 @@ bool KonqView::callExtensionStringMethod( const char *methodName, const QString 
   if ( !obj ) // not all views have a browser extension !
     return false;
 
-  int id = obj->metaObject()->indexOfSlot( methodName );
-  if ( id == -1 )
-    return false;
-
-  QMetaObject::invokeMethod( obj, methodName,  Qt::DirectConnection, Q_ARG(QString, value));
-
-  return true;
+  return QMetaObject::invokeMethod( obj, methodName,  Qt::DirectConnection, Q_ARG(QString, value));
 }
 
 bool KonqView::callExtensionURLMethod( const char *methodName, const KUrl& value )
@@ -1098,13 +1081,7 @@ bool KonqView::callExtensionURLMethod( const char *methodName, const KUrl& value
   if ( !obj ) // not all views have a browser extension !
     return false;
 
-  int id = obj->metaObject()->indexOfSlot( methodName );
-  if ( id == -1 )
-    return false;
-
-  QMetaObject::invokeMethod( obj, methodName,  Qt::DirectConnection, Q_ARG(KUrl, value));
-
-  return true;
+  return QMetaObject::invokeMethod( obj, methodName,  Qt::DirectConnection, Q_ARG(KUrl, value));
 }
 
 void KonqView::setViewName( const QString &name )
@@ -1180,7 +1157,7 @@ void KonqView::enableBackRightClick( bool b )
 
 void KonqView::reparseConfiguration()
 {
-    callExtensionMethod( "reparseConfiguration()" );
+    callExtensionMethod( "reparseConfiguration" );
     const bool b = KonqSettings::backRightClick();
     if ( m_bBackRightClick != b ) {
         QAbstractScrollArea* scrollArea = ::qobject_cast<QAbstractScrollArea *>( m_pPart->widget() );
@@ -1198,7 +1175,7 @@ void KonqView::reparseConfiguration()
 void KonqView::disableScrolling()
 {
     m_bDisableScrolling = true;
-    callExtensionMethod( "disableScrolling()" );
+    callExtensionMethod( "disableScrolling" );
 }
 
 QString KonqView::dbusObjectPath()

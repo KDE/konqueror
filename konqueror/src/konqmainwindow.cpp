@@ -2826,7 +2826,7 @@ void KonqMainWindow::slotSaveViewPropertiesLocally()
   MapViews::ConstIterator it = m_mapViews.begin();
   MapViews::ConstIterator end = m_mapViews.end();
   for (; it != end; ++it )
-    (*it)->callExtensionBoolMethod( "setSaveViewPropertiesLocally(bool)", m_bSaveViewPropertiesLocally );
+    (*it)->callExtensionBoolMethod( "setSaveViewPropertiesLocally", m_bSaveViewPropertiesLocally );
 }
 
 void KonqMainWindow::slotRemoveLocalProperties()
@@ -4399,9 +4399,9 @@ void KonqMainWindow::slotTrashActivated( Qt::MouseButtons, Qt::KeyboardModifiers
     return;
   // FIXME KAction port - not supported any more
   if ( /*reason == KAction::PopupMenuActivation &&*/ ( modifiers & Qt::ShiftModifier ) )
-      m_currentView->callExtensionMethod( "del()" );
+      m_currentView->callExtensionMethod( "del" );
   else
-      m_currentView->callExtensionMethod( "trash()" );
+      m_currentView->callExtensionMethod( "trash" );
 }
 
 void KonqMainWindow::enableAction( const char * name, bool enabled )
@@ -4986,7 +4986,7 @@ void KonqMainWindow::slotDatabaseChanged()
     MapViews::ConstIterator it = m_mapViews.begin();
     MapViews::ConstIterator end = m_mapViews.end();
     for (; it != end; ++it )
-      (*it)->callExtensionMethod( "refreshMimeTypes()" );
+      (*it)->callExtensionMethod( "refreshMimeTypes" );
   }
 }
 
@@ -4994,7 +4994,7 @@ void KonqMainWindow::slotPopupPasteTo()
 {
     if ( !m_currentView || m_popupUrl.isEmpty() )
         return;
-    m_currentView->callExtensionURLMethod( "pasteTo(const KUrl&)", m_popupUrl );
+    m_currentView->callExtensionURLMethod( "pasteTo", m_popupUrl );
 }
 
 void KonqMainWindow::slotReconfigure()
