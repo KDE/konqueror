@@ -3709,7 +3709,8 @@ void KonqMainWindow::initActions()
   }
   action = actionCollection()->addAction("open_location");
   action->setIcon(KIcon("document-open"));
-  action->setText(i18n( "&Open Location..." ));
+  action->setText(i18n( "&Open Location" ));
+  action->setShortcut(Qt::ALT+Qt::Key_O);
   connect(action, SIGNAL(triggered(bool)), SLOT( slotOpenLocation() ));
 
   action = actionCollection()->addAction("open_file");
