@@ -138,6 +138,9 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
            SLOT( slotReceivedDropEvent( QWidget *, QDropEvent * ) ) );
   connect( this, SIGNAL( initiateDrag( QWidget * )),
            SLOT( slotInitiateDrag( QWidget * ) ) );
+
+
+  initPopupMenu();
 }
 
 KonqFrameTabs::~KonqFrameTabs()
@@ -289,7 +292,6 @@ void KonqFrameTabs::slotMovedTab( int from, int to )
 
 void KonqFrameTabs::slotContextMenu( const QPoint &p )
 {
-  initPopupMenu();
   refreshSubPopupMenuTab();
   m_pPopupMenu->setItemEnabled( RELOAD_ID, false );
   m_pPopupMenu->setItemEnabled( DUPLICATE_ID, false );
@@ -303,7 +305,6 @@ void KonqFrameTabs::slotContextMenu( const QPoint &p )
 
 void KonqFrameTabs::slotContextMenu( QWidget *w, const QPoint &p )
 {
-  initPopupMenu();
   refreshSubPopupMenuTab();
   uint tabCount = m_childFrameList.count();
   m_pPopupMenu->setItemEnabled( RELOAD_ID, true );
