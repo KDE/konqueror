@@ -4009,13 +4009,14 @@ void KonqMainWindow::initActions()
   actionCollection()->addAction( "location_label", locationAction );
   locationAction->setText( i18n("L&ocation: ") );
   connect(locationAction, SIGNAL(triggered(bool)), SLOT( slotLocationLabelActivated() ));
-  locationAction->setShortcut(Qt::Key_F6);
   locationAction->setDefaultWidget(m_locationLabel);
   m_locationLabel->setBuddy( m_combo );
 
   KAction *comboAction = new KAction( this );
   actionCollection()->addAction( "toolbar_url_combo", comboAction );
   comboAction->setText( i18n( "Location Bar" ) );
+  comboAction->setShortcut(Qt::Key_F6);
+  connect(comboAction, SIGNAL(triggered(bool)), SLOT( slotLocationLabelActivated() ));
   comboAction->setDefaultWidget(m_combo);
   comboAction->setShortcutConfigurable( false );
 
