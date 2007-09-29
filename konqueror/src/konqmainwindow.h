@@ -349,6 +349,7 @@ public Q_SLOTS:
   void slotNewDir();
   void slotOpenTerminal();
   void slotOpenLocation();
+  void slotOpenFile();
 
   // View menu
   void slotViewModeToggle( bool toggle );
