@@ -5,8 +5,9 @@
  <Menu name="file" noMerge="1"><text>&amp;File</text>
   <Action name="new_window"/>
   <Action name="newtab"/>
-  <Action name="duplicate_window"/>
+  <Separator/>
   <Action name="open_location"/>
+  <Action name="open_file"/>
   <Separator/>
   <Action name="sendURL"/>
   <Action name="sendPage"/>
@@ -95,6 +96,9 @@
   <Action name="splitviewh"/>
   <Action name="splitviewv"/>
   <Action name="removeview"/>
+  <Separator/>
+  <Action name="new_window"/>
+  <Action name="duplicate_window"/>
   <Separator/>
   <Action name="newtab"/>
   <Action name="duplicatecurrenttab"/>

@@ -1394,22 +1394,21 @@ void KonqMainWindow::slotOpenTerminal()
 
 void KonqMainWindow::slotOpenLocation()
 {
-  // Don't pre-fill the url, as it is auto-selected and thus overwrites the
-  // X clipboard, making it impossible to paste in the url you really wanted.
-  // Another example of why the X clipboard sux
-  QString currentDir;
-  KUrlRequesterDialog dlg( currentDir, this );
-  dlg.setCaption( i18n("Open Location") );
-  // Set current directory for relative paths.
-  // Testcase: konqueror www.kde.org; Ctrl+O; file in $HOME; would open http://$file
-  if (m_currentView && m_currentView->url().isLocalFile())
-      currentDir = m_currentView->url().path( KUrl::AddTrailingSlash );
-  dlg.urlRequester()->completionObject()->setDir( currentDir );
-  dlg.urlRequester()->setMode( KFile::File | KFile::Directory | KFile::ExistingOnly );
-  dlg.exec();
-  const KUrl& url = dlg.selectedUrl();
-  if (!url.isEmpty())
-     openFilteredUrl( url.url().trimmed() );
+    focusLocationBar();
+    m_combo->lineEdit()->selectAll();
+}
+
+void KonqMainWindow::slotOpenFile()
+{
+    KUrl currentUrl;
+    if (m_currentView && m_currentView->url().isLocalFile())
+        currentUrl = m_currentView->url();
+    else
+        currentUrl = KUrl::fromPath(QDir::homePath());
+
+    KUrl url = KFileDialog::getOpenUrl(currentUrl, QString(), this);
+    if (!url.isEmpty())
+      openFilteredUrl( url.url().trimmed() );
 }
 
 #if 0
@@ -3712,6 +3711,11 @@ void KonqMainWindow::initActions()
   action->setIcon(KIcon("document-open"));
   action->setText(i18n( "&Open Location..." ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotOpenLocation() ));
+
+  action = actionCollection()->addAction("open_file");
+  action->setIcon(KIcon("document-open"));
+  action->setText(i18n( "&Open File..." ));
+  connect(action, SIGNAL(triggered(bool)), SLOT( slotOpenFile() ));
   action->setShortcuts(KStandardShortcut::shortcut(KStandardShortcut::Open));
 
 #if 0
