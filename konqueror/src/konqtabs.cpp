@@ -251,7 +251,7 @@ void KonqFrameTabs::insertChildFrame( KonqFrameBase* frame, int index )
       activeChildView->setTabIcon( activeChildView->url() );
     }
 
-    tabBar()->setVisible(count() > 1);
+    setTabBarHidden(count() <= 1);
 
     setUpdatesEnabled(true);
 }
