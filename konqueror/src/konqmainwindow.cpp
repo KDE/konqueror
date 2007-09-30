@@ -2525,11 +2525,14 @@ void KonqMainWindow::slotSplitViewVertical()
 
 void KonqMainWindow::slotAddTab()
 {
-    KonqView* newView = m_pViewManager->addTab("text/html", // this is what about:blank will use anyway
+    // this is what about:blank will use anyway
+    KonqView* newView = m_pViewManager->addTab("text/html",
                                                QString(),
                                                false,
                                                KonqSettings::openAfterCurrentPage());
-    if (newView == 0) return;
+    if (!newView)
+      return;
+
     openUrl( newView, KUrl("about:blank"), QString() );
     m_pViewManager->showTab( newView );
     focusLocationBar();

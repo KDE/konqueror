@@ -222,28 +222,38 @@ void KonqFrameTabs::insertChildFrame( KonqFrameBase* frame, int index )
 {
     //kDebug(1202) << "KonqFrameTabs " << this << ": insertChildFrame " << frame;
 
-    if (frame)
-    {
-      //kDebug(1202) << "Adding frame";
-      bool showTabBar = (count() == 1);
-      insertTab(index, frame->asQWidget(), "");
-      frame->setParentContainer(this);
-      if (index == -1) m_childFrameList.append(frame);
-      else m_childFrameList.insert(index, frame);
-      if (m_rightWidget)
-        m_rightWidget->setEnabled( m_childFrameList.count()>1 );
-      KonqView* activeChildView = frame->activeChildView();
-      if (activeChildView != 0L) {
-        activeChildView->setCaption( activeChildView->caption() );
-        activeChildView->setTabIcon( activeChildView->url() );
-      }
-      if (showTabBar)
-          setTabBarHidden(false);
-      else if ( count() == 1 )
-          this->hideTabBar();//the first frame inserted (initialization)
-    }
-    else
+    if (!frame) {
         kWarning(1202) << "KonqFrameTabs " << this << ": insertChildFrame(0) !" ;
+        return;
+    }
+
+    //kDebug(1202) << "Adding frame";
+
+    //QTabWidget docs say that inserting tabs while already shown causes
+    //flicker...
+    setUpdatesEnabled(false);
+
+    insertTab(index, frame->asQWidget(), "");
+
+    frame->setParentContainer(this);
+    if (index == -1) {
+        m_childFrameList.append(frame);
+    } else {
+        m_childFrameList.insert(index, frame);
+    }
+
+    if (m_rightWidget) {
+      m_rightWidget->setEnabled( m_childFrameList.count() > 1 );
+    }
+
+    if (KonqView* activeChildView = frame->activeChildView()) {
+      activeChildView->setCaption( activeChildView->caption() );
+      activeChildView->setTabIcon( activeChildView->url() );
+    }
+
+    tabBar()->setVisible(count() > 1);
+
+    setUpdatesEnabled(true);
 }
 
 void KonqFrameTabs::childFrameRemoved( KonqFrameBase * frame )
