@@ -52,6 +52,7 @@ public:
 
     /**
      * Constructor
+     * @param name action name, when adding the action to the collection
      */
     KNewMenu( KActionCollection * parent, QWidget* parentWidget, const QString& name );
     virtual ~KNewMenu();

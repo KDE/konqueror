@@ -1136,26 +1136,15 @@ void Sidebar_Widget::popupMenu( const QPoint &global, const KFileItemList &items
 		getExtension()->popupMenu(global,items);
 }
 
-
-void Sidebar_Widget::popupMenu( KXMLGUIClient *client, const QPoint &global, const KFileItemList &items )
-{
-	if (doEnableActions())
-		getExtension()->popupMenu(client,global,items);
-}
-
-void Sidebar_Widget::popupMenu( const QPoint &global, const KUrl &url,
-	const QString &mimeType, mode_t mode)
-{
-	if (doEnableActions())
-		getExtension()->popupMenu(global,url,mimeType,mode);
-}
-
-void Sidebar_Widget::popupMenu( KXMLGUIClient *client,
+void Sidebar_Widget::popupMenu(
 	const QPoint &global, const KUrl &url,
 	const QString &mimeType, mode_t mode )
 {
-	if (doEnableActions())
-		getExtension()->popupMenu(client,global,url,mimeType,mode);
+    if (doEnableActions()) {
+        KParts::OpenUrlArguments args;
+        args.setMimeType(mimeType);
+		getExtension()->popupMenu(global,url,mode, args);
+        }
 }
 
 void Sidebar_Widget::connectModule(QObject *mod)
@@ -1174,8 +1163,8 @@ void Sidebar_Widget::connectModule(QObject *mod)
 			QPoint &, const KUrl&, const QString &, mode_t)));
 	}
 
-	if (mod->metaObject()->indexOfSignal("popupMenu(KXMLGUIClient*,QPoint,KUrl,QString,mode_t)") != -1) {
-		connect(mod,SIGNAL(popupMenu( KXMLGUIClient *, const QPoint &,
+	if (mod->metaObject()->indexOfSignal("popupMenu(QPoint,KUrl,QString,mode_t)") != -1) {
+		connect(mod,SIGNAL(popupMenu( const QPoint &,
 			const KUrl &,const QString &, mode_t)),this,
 			SLOT(popupMenu( KXMLGUIClient *, const QPoint &,
 			const KUrl &,const QString &, mode_t)));

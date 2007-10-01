@@ -24,7 +24,6 @@
 #include "konq_operations.h"
 
 #include <klocale.h>
-#include <kapplication.h>
 #include <kbookmarkmanager.h>
 #include <kbookmarkdialog.h>
 #include <kdebug.h>
@@ -36,8 +35,6 @@
 #include <kglobalsettings.h>
 #include <kmimetypetrader.h>
 #include <kstandarddirs.h>
-#include <kxmlguifactory.h>
-#include <kxmlguibuilder.h>
 #include <kconfiggroup.h>
 #include <kdesktopfile.h>
 #include <kfileshare.h>
@@ -46,6 +43,7 @@
 
 #include <QtDBus/QtDBus>
 #include <QDir>
+#include <QApplication>
 #include <QPixmap>
 
 /*
@@ -70,43 +68,58 @@
  Then the same after uninstalling kdeaddons/konq-plugins (kuick and arkplugin in particular)
 */
 
-class KonqPopupMenuGUIBuilder : public KXMLGUIBuilder
+class KonqPopupMenuPrivate
 {
 public:
-  KonqPopupMenuGUIBuilder( QMenu *menu )
-  : KXMLGUIBuilder( 0 )
-  {
-    m_menu = menu;
-  }
-  virtual ~KonqPopupMenuGUIBuilder()
-  {
-  }
+    KonqPopupMenuPrivate(KonqPopupMenu* qq, KActionCollection & actions)
+        : q(qq),
+          m_parentWidget(0),
+          m_itemFlags(KParts::BrowserExtension::DefaultPopupItems),
+          m_actions(actions),
+          m_ownActions(static_cast<QWidget *>(0)),
+          m_runServiceActionGroup(q)
+    {
+    }
+    void addNamedAction(const QString& name);
+    void addGroup(const QString& name);
+    void addPlugins();
+    void setup(KonqPopupMenu::Flags kpf);
+    int insertServicesSubmenus(const QMap<QString, ServiceList>& list, QMenu* menu, bool isBuiltin);
+    int insertServices(const ServiceList& list, QMenu* menu, bool isBuiltin);
 
-  virtual QWidget *createContainer( QWidget *parent, int index,
-          const QDomElement &element,
-          int &id )
-  {
-    if ( !parent && element.attribute( "name" ) == "popupmenu" )
-      return m_menu;
+    void slotPopupNewDir();
+    void slotPopupNewView();
+    void slotPopupEmptyTrashBin();
+    void slotPopupRestoreTrashedItems();
+    void slotPopupOpenWith();
+    void slotPopupAddToBookmark();
+    void slotRunService(QAction*);
+    void slotPopupMimeType();
+    void slotPopupProperties();
+    void slotOpenShareFileDialog();
 
-    return KXMLGUIBuilder::createContainer( parent, index, element, id );
-  }
-
-  QMenu *m_menu;
+    KonqPopupMenu* q;
+    QString m_urlTitle;
+    QWidget *m_parentWidget;
+    KParts::BrowserExtension::PopupFlags m_itemFlags;
+    KNewMenu *m_pMenuNew;
+    KUrl m_sViewURL;
+    QString m_sMimeType;
+    KFileItemList m_lstItems;
+    KUrl::List m_lstPopupURLs;
+    QMap<int,KService::Ptr> m_mapPopup;
+    QMap<int,KDesktopFileActions::Service> m_mapPopupServices;
+    bool m_bHandleEditOperations;
+    QString m_attrName;
+//    KonqPopupMenu::ProtocolInfo m_info;
+    KBookmarkManager* m_bookmarkManager;
+    KActionCollection &m_actions;
+    KActionCollection m_ownActions;
+    QActionGroup m_runServiceActionGroup;
+    KParts::BrowserExtension::ActionGroupMap m_actionGroups;
 };
 
-class KonqPopupMenu::KonqPopupMenuPrivate
-{
-public:
-  KonqPopupMenuPrivate() : m_parentWidget( 0 ),
-                           m_itemFlags( KParts::BrowserExtension::DefaultPopupItems )
-  {
-  }
-  QString m_urlTitle;
-  QWidget *m_parentWidget;
-  KParts::BrowserExtension::PopupFlags m_itemFlags;
-};
-
+#if 0
 KonqPopupMenu::ProtocolInfo::ProtocolInfo()
 {
   m_Reading = false;
@@ -140,6 +153,7 @@ bool KonqPopupMenu::ProtocolInfo::trashIncluded() const
 {
   return m_TrashIncluded;
 }
+#endif
 
 // This helper class stores the .desktop-file actions and the servicemenus
 // in order to support X-KDE-Priority and X-KDE-Submenu.
@@ -185,96 +199,87 @@ ServiceList* PopupServices::selectList( const QString& priority, const QString& 
 
 //////////////////
 
-KonqPopupMenu::KonqPopupMenu( KBookmarkManager *mgr, const KFileItemList &items,
-                              const KUrl& viewURL,
-                              KActionCollection & actions,
-                              KNewMenu * newMenu,
-                              QWidget * parentWidget,
-                              KonqPopupFlags kpf,
-                              KParts::BrowserExtension::PopupFlags flags )
+KonqPopupMenu::KonqPopupMenu(const KFileItemList &items,
+                             const KUrl& viewURL,
+                             KActionCollection & actions,
+                             KNewMenu * newMenu,
+                             Flags kpf,
+                             KParts::BrowserExtension::PopupFlags flags,
+                             QWidget * parentWidget,
+                             KBookmarkManager *mgr,
+                             const KParts::BrowserExtension::ActionGroupMap& actionGroups)
   : QMenu( parentWidget ),
-    m_actions( actions ),
-    m_ownActions( static_cast<QWidget *>( 0 ) ),
-    m_pMenuNew( newMenu ),
-    m_sViewURL(viewURL),
-    m_lstItems(items),
-    m_pManager(mgr)
+    d(new KonqPopupMenuPrivate(this, actions))
 {
+    d->m_actionGroups = actionGroups;
+    d->m_pMenuNew = newMenu;
+    d->m_sViewURL = viewURL;
+    d->m_lstItems = items;
+    d->m_bookmarkManager = mgr;
     init(parentWidget, kpf, flags);
 }
 
-void KonqPopupMenu::init (QWidget * parentWidget, KonqPopupFlags kpf, KParts::BrowserExtension::PopupFlags flags)
+void KonqPopupMenu::init (QWidget * parentWidget, Flags kpf, KParts::BrowserExtension::PopupFlags flags)
 {
-    m_ownActions.setObjectName("KonqPopupMenu::m_ownActions");
-    d = new KonqPopupMenuPrivate;
+    d->m_ownActions.setObjectName("KonqPopupMenu::m_ownActions");
     d->m_parentWidget = parentWidget;
     d->m_itemFlags = flags;
-    setup(kpf);
+    setFont(KGlobalSettings::menuFont());
+    d->setup(kpf);
 }
 
-int KonqPopupMenu::insertServicesSubmenus(const QMap<QString, ServiceList>& submenus,
-                                          QDomElement& menu,
-                                          bool isBuiltin)
+int KonqPopupMenuPrivate::insertServicesSubmenus(const QMap<QString, ServiceList>& submenus,
+                                                 QMenu* menu,
+                                                 bool isBuiltin)
 {
     int count = 0;
     QMap<QString, ServiceList>::ConstIterator it;
-
-    for (it = submenus.begin(); it != submenus.end(); ++it)
-    {
-        if (it.value().isEmpty())
-        {
+    for (it = submenus.begin(); it != submenus.end(); ++it) {
+        if (it.value().isEmpty()) {
             //avoid empty sub-menus
             continue;
         }
 
-        QDomElement actionSubmenu = domDocument().createElement( "menu" );
-        actionSubmenu.setAttribute( "name", "actions " + it.key() );
-        menu.appendChild( actionSubmenu );
-        QDomElement subtext = domDocument().createElement( "text" );
-        actionSubmenu.appendChild( subtext );
-        subtext.appendChild( domDocument().createTextNode( it.key() ) );
+        QMenu* actionSubmenu = new QMenu(menu);
+        menu->menuAction()->setObjectName("services_submenu"); // for the unittest
+        menu->addMenu(actionSubmenu);
         count += insertServices(it.value(), actionSubmenu, isBuiltin);
     }
 
     return count;
 }
 
-int KonqPopupMenu::insertServices(const ServiceList& list,
-                                  QDomElement& menu,
-                                  bool isBuiltin)
+int KonqPopupMenuPrivate::insertServices(const ServiceList& list,
+                                         QMenu* menu,
+                                         bool isBuiltin)
 {
+    QObject::connect(&m_runServiceActionGroup, SIGNAL(triggered(QAction*)), q, SLOT(slotRunService(QAction*)));
     static int id = 1000;
     int count = 0;
 
     ServiceList::const_iterator it = list.begin();
-    for( ; it != list.end(); ++it )
-    {
-        if ((*it).isEmpty())
-        {
-            if (!menu.firstChild().isNull() &&
-                menu.lastChild().toElement().tagName().toLower() != "separator")
-            {
-                QDomElement separator = domDocument().createElement( "separator" );
-                menu.appendChild(separator);
+    for( ; it != list.end(); ++it ) {
+        if ((*it).isEmpty()) {
+            const QList<QAction*> actions = menu->actions();
+            if (!actions.isEmpty() && !actions.last()->isSeparator()) {
+                menu->addSeparator();
             }
             continue;
         }
 
-        if (isBuiltin || (*it).m_display == true)
-        {
-            QString name;
-            name.setNum( id );
-            name.prepend( isBuiltin ? "builtinservice_" : "userservice_" );
-            QAction* act = m_ownActions.addAction( name.toLatin1() );
-            act->setText( QString((*it).m_strName).replace('&',"&&") );
-            connect(act, SIGNAL(triggered()), this, SLOT(slotRunService()));
-
-            if ( !(*it).m_strIcon.isEmpty() )
-            {
+        if (isBuiltin || (*it).m_display == true) {
+            const QString name = QString( isBuiltin ? "builtinservice_" : "userservice_" ) + QString::number(id);
+            QAction* act = m_ownActions.addAction( name );
+            QString text = (*it).m_strName;
+            text.replace('&',"&&");
+            act->setText( text );
+            if ( !(*it).m_strIcon.isEmpty() ) {
                 act->setIcon( KIcon((*it).m_strIcon) );
             }
+            act->setData(id);
+            m_runServiceActionGroup.addAction(act);
 
-            KonqXMLGUIClient::addAction( name, menu ); // Add to toplevel menu
+            menu->addAction( act ); // Add to toplevel menu
 
             m_mapPopupServices[ id++ ] = *it;
             ++count;
@@ -284,7 +289,7 @@ int KonqPopupMenu::insertServices(const ServiceList& list,
     return count;
 }
 
-bool KonqPopupMenu::KIOSKAuthorizedAction(const KConfigGroup& cfg)
+static bool KIOSKAuthorizedAction(const KConfigGroup& cfg)
 {
     if ( !cfg.hasKey( "X-KDE-AuthorizeAction") )
     {
@@ -292,7 +297,7 @@ bool KonqPopupMenu::KIOSKAuthorizedAction(const KConfigGroup& cfg)
     }
 
     QStringList list = cfg.readEntry("X-KDE-AuthorizeAction", QStringList() );
-    if (kapp && !list.isEmpty())
+    if (!list.isEmpty())
     {
         for(QStringList::ConstIterator it = list.begin();
             it != list.end();
@@ -308,15 +313,21 @@ bool KonqPopupMenu::KIOSKAuthorizedAction(const KConfigGroup& cfg)
     return true;
 }
 
+void KonqPopupMenuPrivate::addNamedAction(const QString& name)
+{
+    QAction* act = m_actions.action(name);
+    if (act)
+        q->addAction(act);
+}
 
-void KonqPopupMenu::setup(KonqPopupFlags kpf)
+void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
 {
     Q_ASSERT( m_lstItems.count() >= 1 );
 
-    const bool bIsLink  = (kpf & IsLink);
+    const bool bIsLink  = (m_itemFlags & KParts::BrowserExtension::IsLink);
     bool currentDir     = false;
     bool sReading       = true;
-    bool sDeleting      = ( d->m_itemFlags & KParts::BrowserExtension::NoDeletion ) == 0;
+    bool sDeleting      = (m_itemFlags & KParts::BrowserExtension::NoDeletion) == 0;
     bool sMoving        = sDeleting;
     bool sWriting       = sDeleting && m_lstItems.first().isWritable();
     m_sMimeType         = m_lstItems.first().mimetype();
@@ -331,13 +342,8 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
     bool isTrashLink     = false;
     m_lstPopupURLs.clear();
     int id = 0;
-    setFont(KGlobalSettings::menuFont());
 
-    attrName = QLatin1String( "name" );
-
-    prepareXMLGUIStuff();
-    m_builder = new KonqPopupMenuGUIBuilder( this );
-    m_factory = new KXMLGUIFactory( m_builder );
+    m_attrName = QLatin1String( "name" );
 
     KUrl url;
     KFileItemList::const_iterator it = m_lstItems.begin();
@@ -414,44 +420,46 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
     }
     const bool isSingleLocal = m_lstItems.count() == 1 && isLocal;
 
+#if 0
     m_info.m_Reading = sReading;
     m_info.m_Writing = sWriting;
     m_info.m_Deleting = sDeleting;
     m_info.m_Moving = sMoving;
     m_info.m_TrashIncluded = bTrashIncluded;
+#endif
 
     // isCurrentTrash: popup on trash:/ itself, or on the trash.desktop link
     bool isCurrentTrash = ( m_lstItems.count() == 1 && bTrashIncluded ) || isTrashLink;
     bool isIntoTrash = ( url.protocol() == "trash" || url.url().startsWith( "system:/trash" ) ) && !isCurrentTrash; // trashed file, not trash:/ itself
     //kDebug() << "isLocal=" << isLocal << " url=" << url << " isCurrentTrash=" << isCurrentTrash << " isIntoTrash=" << isIntoTrash << " bTrashIncluded=" << bTrashIncluded;
     bool isSingleMedium = m_lstItems.count() == 1 && mediaFiles;
-    clear();
 
     //////////////////////////////////////////////////////////////////////////
 
+    addGroup( "topactions" ); // used e.g. for ShowMenuBar. includes a separator at the end
+
     QAction * act;
 
-    if (!isCurrentTrash)
-        addMerge( "konqueror" );
-
-    bool isKDesktop = QByteArray( kapp->objectName().toUtf8() ) == "kdesktop";
+    bool isKDesktop = false; //QByteArray( kapp->objectName().toUtf8() ) == "kdesktop";
     QAction *actNewWindow = 0;
 
-    if (( kpf & ShowProperties ) && isKDesktop &&
+#if 0
+    if (( flags & KParts::BrowserExtension::ShowProperties ) && isKDesktop &&
         !KAuthorized::authorizeKAction("editable_desktop_icons"))
     {
-        kpf &= ~ShowProperties; // remove flag
+        flags &= ~KParts::BrowserExtension::ShowProperties; // remove flag
     }
+#endif
 
     // Either 'newview' is in the actions we're given (probably in the tabhandling group)
     // or we need to insert it ourselves (e.g. for kdesktop). In the first case, actNewWindow must remain 0.
-    if ( ((kpf & ShowNewWindow) != 0) && sReading )
+    if ( ((kpf & KonqPopupMenu::ShowNewWindow) != 0) && sReading )
     {
         QString openStr = isKDesktop ? i18n( "&Open" ) : i18n( "Open in New &Window" );
         actNewWindow = m_ownActions.addAction( "newview" );
         actNewWindow->setIcon( KIcon("window-new") );
         actNewWindow->setText( openStr );
-        connect(actNewWindow, SIGNAL(triggered()), this, SLOT(slotPopupNewView()));
+        QObject::connect(actNewWindow, SIGNAL(triggered()), q, SLOT(slotPopupNewView()));
     }
 
     if ( actNewWindow && !isKDesktop )
@@ -472,68 +480,65 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
             m_pMenuNew->slotCheckUpToDate();
             m_pMenuNew->setPopupFiles( m_lstPopupURLs );
 
-            KonqXMLGUIClient::addAction( m_pMenuNew->objectName() );
-
-            KonqXMLGUIClient::addSeparator();
+            q->addAction( m_pMenuNew );
+            q->addSeparator();
         }
         else
         {
-            if (d->m_itemFlags & KParts::BrowserExtension::ShowCreateDirectory)
+            if (m_itemFlags & KParts::BrowserExtension::ShowCreateDirectory)
             {
                 QAction *actNewDir = m_ownActions.addAction( "newdir" );
                 actNewDir->setIcon( KIcon("folder-new") );
                 actNewDir->setText( i18n( "Create &Folder..." ) );
-                connect(actNewDir, SIGNAL(triggered()), this, SLOT(slotPopupNewDir()));
-                KonqXMLGUIClient::addAction( "newdir" );
-                KonqXMLGUIClient::addSeparator();
+                QObject::connect(actNewDir, SIGNAL(triggered()), q, SLOT(slotPopupNewDir()));
+                q->addAction( actNewDir );
+                q->addSeparator();
             }
         }
     } else if ( isIntoTrash ) {
         // Trashed item, offer restoring
         act = m_ownActions.addAction( "restore" );
         act->setText( i18n( "&Restore" ) );
-        connect(act, SIGNAL(triggered()), this, SLOT(slotPopupRestoreTrashedItems()));
-        KonqXMLGUIClient::addAction( "restore" );
+        QObject::connect(act, SIGNAL(triggered()), q, SLOT(slotPopupRestoreTrashedItems()));
+        q->addAction(act);
     }
 
-    if (d->m_itemFlags & KParts::BrowserExtension::ShowNavigationItems)
+    if (m_itemFlags & KParts::BrowserExtension::ShowNavigationItems)
     {
-        if (d->m_itemFlags & KParts::BrowserExtension::ShowUp)
-            KonqXMLGUIClient::addAction( "up" );
-        KonqXMLGUIClient::addAction( "back" );
-        KonqXMLGUIClient::addAction( "forward" );
-        if (d->m_itemFlags & KParts::BrowserExtension::ShowReload)
-            KonqXMLGUIClient::addAction( "reload" );
-        KonqXMLGUIClient::addSeparator();
+        if (m_itemFlags & KParts::BrowserExtension::ShowUp)
+            addNamedAction( "up" );
+        addNamedAction( "back" );
+        addNamedAction( "forward" );
+        if (m_itemFlags & KParts::BrowserExtension::ShowReload)
+            addNamedAction( "reload" );
+        q->addSeparator();
     }
 
     // "open in new window" is either provided by us, or by the tabhandling group
-    if (actNewWindow)
-    {
-        KonqXMLGUIClient::addAction( "newview" );
-        KonqXMLGUIClient::addSeparator();
+    if (actNewWindow) {
+        q->addAction(actNewWindow);
+        q->addSeparator();
     }
-    KonqXMLGUIClient::addGroup( "tabhandling" ); // includes a separator
+    addGroup( "tabhandling" ); // includes a separator at the end
 
-    if ( !bIsLink )
-    {
+    if (m_itemFlags & KParts::BrowserExtension::ShowUrlOperations) {
         if ( !currentDir && sReading ) {
             if ( sDeleting ) {
-                KonqXMLGUIClient::addAction( "cut" );
+                addNamedAction( "cut" );
             }
-            KonqXMLGUIClient::addAction( "copy" );
+            addNamedAction( "copy" );
         }
 
         if ( S_ISDIR(mode) && sWriting ) {
             if ( currentDir )
-                KonqXMLGUIClient::addAction( "paste" );
+                addNamedAction( "paste" );
             else
-                KonqXMLGUIClient::addAction( "pasteto" );
+                addNamedAction( "pasteto" );
         }
         if ( !currentDir )
         {
             if ( m_lstItems.count() == 1 && sMoving )
-                KonqXMLGUIClient::addAction( "rename" );
+                addNamedAction( "rename" );
 
             bool addTrash = false;
             bool addDel = false;
@@ -556,9 +561,9 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
             }
 
             if ( addTrash )
-                KonqXMLGUIClient::addAction( "trash" );
+                addNamedAction( "trash" );
             if ( addDel )
-                KonqXMLGUIClient::addAction( "del" );
+                addNamedAction( "del" );
         }
     }
     if ( isCurrentTrash )
@@ -568,24 +573,30 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
         act->setText( i18n( "&Empty Trash Bin" ) );
         KConfig trashConfig( "trashrc", KConfig::OnlyLocal);
         act->setEnabled( !trashConfig.group("Status").readEntry( "Empty", true ) );
-        connect(act, SIGNAL(triggered()), this, SLOT(slotPopupEmptyTrashBin()));
-        KonqXMLGUIClient::addAction( "emptytrash" );
+        QObject::connect(act, SIGNAL(triggered()), q, SLOT(slotPopupEmptyTrashBin()));
+        q->addAction(act);
     }
-    KonqXMLGUIClient::addGroup( "editactions" );
+    // This is used by KHTML, see khtml_popupmenu.rc (copy, selectAll, searchProvider etc.)
+    // TODO: move cut/copy/paste/etc. to konqueror or dolphinpart, as "editactions" too...
+    // Ideally in dolphinpart but the popupmenu code is in konq...
+    // Then we can remove ShowUrlOperations from PopupFlag
+    // We need a BrowserExtension::setActions(const QString& group, QList<QAction *> actions)?
+    addGroup( "editactions" ); // see khtml
 
-    if (d->m_itemFlags & KParts::BrowserExtension::ShowTextSelectionItems) {
-      KonqXMLGUIClient::addMerge( 0 );
-      m_factory->addClient( this );
-      return;
+    if (m_itemFlags & KParts::BrowserExtension::ShowTextSelectionItems) {
+        // OK, we have to stop here.
+
+        // Anything else that is provided by the part
+        addGroup( "partactions" );
+        return;
     }
 
-    if ( !isCurrentTrash && !isIntoTrash && (d->m_itemFlags & KParts::BrowserExtension::ShowBookmark))
+    if ( !isCurrentTrash && !isIntoTrash && (m_itemFlags & KParts::BrowserExtension::ShowBookmark))
     {
-        KonqXMLGUIClient::addSeparator();
         QString caption;
         if (currentDir)
         {
-           bool httpPage = (m_sViewURL.protocol().indexOf("http", 0, Qt::CaseInsensitive) == 0);
+           const bool httpPage = m_sViewURL.protocol().startsWith("http", Qt::CaseInsensitive);
            if (httpPage)
               caption = i18n("&Bookmark This Page");
            else
@@ -601,13 +612,13 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
         act = m_ownActions.addAction( "bookmark_add" );
         act->setIcon( KIcon("bookmark-new") );
         act->setText( caption );
-        connect(act, SIGNAL(triggered()), this, SLOT(slotPopupAddToBookmark()));
+        QObject::connect(act, SIGNAL(triggered()), q, SLOT(slotPopupAddToBookmark()));
         if (m_lstItems.count() > 1)
             act->setEnabled(false);
         if (KAuthorized::authorizeKAction("bookmarks"))
-            KonqXMLGUIClient::addAction( "bookmark_add" );
+            q->addAction( act );
         if (bIsLink)
-            KonqXMLGUIClient::addGroup( "linkactions" );
+            addGroup( "linkactions" ); // see khtml
     }
 
     //////////////////////////////////////////////////////
@@ -792,8 +803,7 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
 
         KService::List offers;
 
-        if (KAuthorized::authorizeKAction("openwith"))
-        {
+        if (KAuthorized::authorizeKAction("openwith")) {
             QString constraint = "DesktopEntryName != 'kfmclient' and DesktopEntryName != 'kfmclient_dir' and DesktopEntryName != 'kfmclient_html'";
             QString subConstraint = " and '%1' in ServiceTypes";
 
@@ -816,31 +826,25 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
         m_mapPopupServices.clear();
         // "Open With..." for folders is really not very useful, especially for remote folders.
         // (media:/something, or trash:/, or ftp://...)
-        if ( !isDirectory || isLocal )
-        {
-            if ( hasAction() )
-                KonqXMLGUIClient::addSeparator();
+        if ( !isDirectory || isLocal ) {
+            if ( !q->actions().isEmpty() )
+                q->addSeparator();
 
-            if ( !offers.isEmpty() )
-            {
+            if ( !offers.isEmpty() ) {
                 // First block, app and preview offers
                 id = 1;
 
-                QDomElement menu = domElement();
+                QMenu* menu = q;
 
-                if ( offers.count() > 1 ) // submenu 'open with'
-                {
-                    menu = domDocument().createElement( "menu" );
-                    menu.setAttribute( "name", "openwith submenu" );
-                    domElement().appendChild( menu );
-                    QDomElement text = domDocument().createElement( "text" );
-                    menu.appendChild( text );
-                    text.appendChild( domDocument().createTextNode( i18n("&Open With") ) );
+                if ( offers.count() > 1 ) { // submenu 'open with'
+                    menu = new QMenu(i18n("&Open With"), q);
+                    menu->menuAction()->setObjectName("openWith_submenu"); // for the unittest
+                    q->addMenu(menu);
                 }
+                kDebug() << offers.count() << "offers" << q << menu;
 
                 KService::List::ConstIterator it = offers.begin();
-                for( ; it != offers.end(); it++ )
-                {
+                for( ; it != offers.end(); it++ ) {
                     KService::Ptr service = (*it);
 
                     // Skip OnlyShowIn=Foo and NotShowIn=KDE entries,
@@ -865,59 +869,64 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
                     nam.setNum( id );
                     nam.prepend( "appservice_" );
 
-                    QString actionName( service->name().replace( "&", "&&" ) );
-                    if ( menu == domElement() ) // no submenu -> prefix single offer
-                        actionName = i18n( "Open with %1" ,  actionName );
+                    QString actionName( service->name().replace( '&', "&&" ) );
+                    if ( menu == q ) // no submenu -> prefix single offer
+                        actionName = i18n( "Open with %1", actionName );
 
                     act = m_ownActions.addAction( nam );
                     act->setIcon( KIcon( service->icon() ) );
                     act->setText( actionName );
-                    connect(act, SIGNAL(triggered()), this, SLOT(slotRunService()));
-                    KonqXMLGUIClient::addAction( nam.constData(), menu );
+                    act->setData(id);
+                    m_runServiceActionGroup.addAction(act);
+                    menu->addAction(act);
 
-                    m_mapPopup[ id++ ] = *it;
+                    m_mapPopup.insert(id++, *it);
                 }
 
                 QString openWithActionName;
-                if ( menu != domElement() ) // submenu
-                {
-                    KonqXMLGUIClient::addSeparator( menu );
+                if ( menu != q ) { // submenu
+                    menu->addSeparator();
                     openWithActionName = i18n( "&Other..." );
-                }
-                else
-                {
+                } else {
                     openWithActionName = i18n( "&Open With..." );
                 }
                 QAction *openWithAct = m_ownActions.addAction( "openwith" );
                 openWithAct->setText( openWithActionName );
-                connect(openWithAct, SIGNAL(triggered()), this, SLOT(slotPopupOpenWith()));
-                KonqXMLGUIClient::addAction( "openwith", menu );
+                QObject::connect(openWithAct, SIGNAL(triggered()), q, SLOT(slotPopupOpenWith()));
+                menu->addAction(openWithAct);
             }
             else // no app offers -> Open With...
             {
                 act = m_ownActions.addAction( "openwith" );
                 act->setText( i18n( "&Open With..." ) );
-                connect(act, SIGNAL(triggered()), this, SLOT(slotPopupOpenWith()));
-                KonqXMLGUIClient::addAction( "openwith" );
+                QObject::connect(act, SIGNAL(triggered()), q, SLOT(slotPopupOpenWith()));
+                q->addAction(act);
             }
 
         }
-        KonqXMLGUIClient::addGroup( "preview" );
+        QList<QAction *> previewActions = m_actionGroups.value("preview");
+        if (!previewActions.isEmpty()) {
+            if (previewActions.count() == 1) {
+                q->addAction(previewActions.first());
+            } else {
+                QMenu* subMenu = new QMenu(i18n("Preview In"), q);
+                subMenu->menuAction()->setObjectName("preview_submenu"); // for the unittest
+                q->addMenu(subMenu);
+                subMenu->addActions(previewActions);
+            }
+        }
     }
 
     // Second block, builtin + user
-    QDomElement actionMenu = domElement();
+    QMenu* actionMenu = q;
     int userItemCount = 0;
     if (s.user.count() + s.userSubmenus.count() +
         s.userPriority.count() + s.userPrioritySubmenus.count() > 1)
     {
         // we have more than one item, so let's make a submenu
-        actionMenu = domDocument().createElement( "menu" );
-        actionMenu.setAttribute( "name", "actions submenu" );
-        domElement().appendChild( actionMenu );
-        QDomElement text = domDocument().createElement( "text" );
-        actionMenu.appendChild( text );
-        text.appendChild( domDocument().createTextNode( i18n("Ac&tions") ) );
+        actionMenu = new QMenu(i18n("Ac&tions"), q);
+        actionMenu->menuAction()->setObjectName("actions_submenu"); // for the unittest
+        q->addMenu(actionMenu);
     }
 
     userItemCount += insertServicesSubmenus(s.userPrioritySubmenus, actionMenu, false);
@@ -928,68 +937,57 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
         (s.user.count() > 0 ||
          s.userSubmenus.count() > 0 ||
          s.builtin.count() > 0) &&
-         actionMenu.lastChild().toElement().tagName().toLower() != "separator")
+         !actionMenu->actions().last()->isSeparator())
     {
-        QDomElement separator = domDocument().createElement( "separator" );
-        actionMenu.appendChild(separator);
+        actionMenu->addSeparator();
     }
-	QDomElement element = domElement( );
     userItemCount += insertServicesSubmenus(s.userSubmenus, actionMenu, false);
     userItemCount += insertServices(s.user, actionMenu, false);
-    userItemCount += insertServices(s.builtin, element, true);
+    userItemCount += insertServices(s.builtin, q, true);
+    userItemCount += insertServicesSubmenus(s.userToplevelSubmenus, q, false);
+    userItemCount += insertServices(s.userToplevel, q, false);
 
-    userItemCount += insertServicesSubmenus(s.userToplevelSubmenus, element, false);
-    userItemCount += insertServices(s.userToplevel, element, false);
-
-    if ( userItemCount > 0 )
-    {
-        addPendingSeparator();
+    if ( userItemCount > 0 ) {
+        q->addSeparator();
     }
 
     if ( !isCurrentTrash && !isIntoTrash && !mediaFiles && sReading )
         addPlugins(); // now it's time to add plugins
 
-    if ( KPropertiesDialog::canDisplay( m_lstItems ) && (kpf & ShowProperties) )
-    {
+    if ( (m_itemFlags & KParts::BrowserExtension::ShowProperties) && KPropertiesDialog::canDisplay( m_lstItems ) ) {
         act = m_ownActions.addAction( "properties" );
         act->setText( i18n( "&Properties" ) );
-        connect(act, SIGNAL(triggered()), this, SLOT(slotPopupProperties()));
-        KonqXMLGUIClient::addAction( "properties" );
+        QObject::connect(act, SIGNAL(triggered()), q, SLOT(slotPopupProperties()));
+        q->addAction(act);
     }
 
-    while ( !domElement().lastChild().isNull() &&
-            domElement().lastChild().toElement().tagName().toLower() == "separator" )
-        domElement().removeChild( domElement().lastChild() );
+    while ( !q->actions().isEmpty() &&
+            q->actions().last()->isSeparator() )
+        delete q->actions().last();
 
-    if ( isDirectory && isLocal )
-    {
-        if ( KFileShare::authorization() == KFileShare::Authorized )
-        {
-            KonqXMLGUIClient::addSeparator();
+    if ( isDirectory && isLocal ) {
+        if ( KFileShare::authorization() == KFileShare::Authorized ) {
+            q->addSeparator();
             act = m_ownActions.addAction( "sharefile" );
             act->setText( i18n("Share") );
-            connect(act, SIGNAL(triggered()), this, SLOT(slotOpenShareFileDialog()));
-            KonqXMLGUIClient::addAction( "sharefile" );
+            QObject::connect(act, SIGNAL(triggered()), q, SLOT(slotOpenShareFileDialog()));
+            q->addAction(act);
         }
     }
 
-    KonqXMLGUIClient::addMerge( 0 );
-    //kDebug() << domDocument().toString();
-
-    m_factory->addClient( this );
+    // Anything else that is provided by the part
+    addGroup( "partactions" );
 }
 
-void KonqPopupMenu::slotOpenShareFileDialog()
+void KonqPopupMenuPrivate::slotOpenShareFileDialog()
 {
-    KPropertiesDialog* dlg = new KPropertiesDialog( m_lstItems, d->m_parentWidget );
+    KPropertiesDialog* dlg = new KPropertiesDialog( m_lstItems, m_parentWidget );
     dlg->showFileSharingPage();
     dlg->exec();
 }
 
 KonqPopupMenu::~KonqPopupMenu()
 {
-  delete m_factory;
-  delete m_builder;
   delete d;
   //kDebug(1203) << "~KonqPopupMenu leave";
 }
@@ -999,65 +997,64 @@ void KonqPopupMenu::setURLTitle( const QString& urlTitle )
     d->m_urlTitle = urlTitle;
 }
 
-void KonqPopupMenu::slotPopupNewView()
+void KonqPopupMenuPrivate::slotPopupNewView()
 {
   KUrl::List::ConstIterator it = m_lstPopupURLs.begin();
   for ( ; it != m_lstPopupURLs.end(); it++ )
-    (void) new KRun(*it,this);
+    (void) new KRun(*it, m_parentWidget);
 }
 
-void KonqPopupMenu::slotPopupNewDir()
+void KonqPopupMenuPrivate::slotPopupNewDir()
 {
   if (m_lstPopupURLs.empty())
     return;
 
-  KonqOperations::newDir(d->m_parentWidget, m_lstPopupURLs.first());
+  KonqOperations::newDir(m_parentWidget, m_lstPopupURLs.first());
 }
 
-void KonqPopupMenu::slotPopupEmptyTrashBin()
+void KonqPopupMenuPrivate::slotPopupEmptyTrashBin()
 {
-  KonqOperations::emptyTrash( d->m_parentWidget );
+  KonqOperations::emptyTrash( m_parentWidget );
 }
 
-void KonqPopupMenu::slotPopupRestoreTrashedItems()
+void KonqPopupMenuPrivate::slotPopupRestoreTrashedItems()
 {
-  KonqOperations::restoreTrashedItems( m_lstPopupURLs, d->m_parentWidget );
+  KonqOperations::restoreTrashedItems( m_lstPopupURLs, m_parentWidget );
 }
 
-void KonqPopupMenu::slotPopupOpenWith()
+void KonqPopupMenuPrivate::slotPopupOpenWith()
 {
-  KRun::displayOpenWithDialog( m_lstPopupURLs, d->m_parentWidget );
+  KRun::displayOpenWithDialog( m_lstPopupURLs, m_parentWidget );
 }
 
-void KonqPopupMenu::slotPopupAddToBookmark()
+void KonqPopupMenuPrivate::slotPopupAddToBookmark()
 {
   KBookmarkGroup root;
   if ( m_lstPopupURLs.count() == 1 ) {
     KUrl url = m_lstPopupURLs.first();
-    QString title = d->m_urlTitle.isEmpty() ? url.prettyUrl() : d->m_urlTitle;
-    KBookmarkDialog dlg( m_pManager, this);
-    dlg.addBookmark( title, url.url());
+    QString title = m_urlTitle.isEmpty() ? url.prettyUrl() : m_urlTitle;
+    KBookmarkDialog dlg(m_bookmarkManager, m_parentWidget);
+    dlg.addBookmark(title, url.url());
   }
   else
   {
-    root = m_pManager->root();
+    root = m_bookmarkManager->root();
     KUrl::List::ConstIterator it = m_lstPopupURLs.begin();
     for ( ; it != m_lstPopupURLs.end(); it++ )
       root.addBookmark( (*it).prettyUrl(), (*it) );
-    m_pManager->emitChanged( root );
+    m_bookmarkManager->emitChanged( root );
   }
 }
 
-void KonqPopupMenu::slotRunService()
+void KonqPopupMenuPrivate::slotRunService(QAction* act)
 {
-  QByteArray senderName = sender()->objectName().toUtf8();
-  int id = senderName.mid( senderName.indexOf( '_' ) + 1 ).toInt();
+  const int id = act->data().toInt();
 
   // Is it a usual service (application)
   QMap<int,KService::Ptr>::Iterator it = m_mapPopup.find( id );
   if ( it != m_mapPopup.end() )
   {
-    KRun::run( **it, m_lstPopupURLs, topLevelWidget() );
+    KRun::run( **it, m_lstPopupURLs, m_parentWidget );
     return;
   }
 
@@ -1071,49 +1068,37 @@ void KonqPopupMenu::slotRunService()
   return;
 }
 
-void KonqPopupMenu::slotPopupMimeType()
+void KonqPopupMenuPrivate::slotPopupMimeType()
 {
-    KonqOperations::editMimeType( m_sMimeType, d->m_parentWidget );
+    KonqOperations::editMimeType( m_sMimeType, m_parentWidget );
 }
 
-void KonqPopupMenu::slotPopupProperties()
+void KonqPopupMenuPrivate::slotPopupProperties()
 {
-    KPropertiesDialog::showDialog( m_lstItems, d->m_parentWidget );
-}
-
-QAction *KonqPopupMenu::action( const QDomElement &element ) const
-{
-  QByteArray name = element.attribute( attrName ).toLatin1();
-
-  QAction *res = m_ownActions.action( name.data() );
-
-  if ( !res )
-    res = m_actions.action( name.data() );
-
-  if ( !res && m_pMenuNew && strcmp( name.data(), m_pMenuNew->objectName().toUtf8() ) == 0 )
-    return m_pMenuNew;
-
-  return res;
-}
-
-KActionCollection *KonqPopupMenu::actionCollection() const
-{
-    return const_cast<KActionCollection *>( &m_ownActions );
+    KPropertiesDialog::showDialog( m_lstItems, m_parentWidget );
 }
 
 QString KonqPopupMenu::mimeType() const
 {
-    return m_sMimeType;
+    return d->m_sMimeType;
 }
 
+#if 0
 KonqPopupMenu::ProtocolInfo KonqPopupMenu::protocolInfo() const
 {
-    return m_info;
+    return d->m_info;
+}
+#endif
+
+void KonqPopupMenuPrivate::addGroup(const QString& name)
+{
+    QList<QAction *> actions = m_actionGroups.value(name);
+    q->addActions(actions);
 }
 
-void KonqPopupMenu::addPlugins()
+void KonqPopupMenuPrivate::addPlugins()
 {
-    // search for Konq_PopupMenuPlugins inspired by simons kpropsdlg
+#if 0
     //search for a plugin with the right protocol
     KService::List plugin_offers;
     unsigned int pluginCount = 0;
@@ -1122,43 +1107,45 @@ void KonqPopupMenu::addPlugins()
         return; // no plugins installed do not bother about it
 
     KService::List::ConstIterator iterator = plugin_offers.begin();
-    KService::List::ConstIterator end = plugin_offers.end();
+    const KService::List::ConstIterator end = plugin_offers.end();
 
-    addGroup( "plugins" );
+    //addGroup( "plugins" );
     // travers the offerlist
     for(; iterator != end; ++iterator, ++pluginCount ) {
         //kDebug() << (*iterator)->library();
         KonqPopupMenuPlugin *plugin =
             KLibLoader::createInstance<KonqPopupMenuPlugin>( QFile::encodeName( (*iterator)->library() ),
-                                                            this );
+                                                            q );
         if ( !plugin )
             continue;
         plugin->setObjectName( (*iterator)->name() );
+        // This made the kuick plugin insert its items at the right place
+        // ### TODO replace with new mechanism (e.g. addAction(QAction *) in the plugin code),
+        // if plugins are kept
         QString pluginClientName = QString::fromLatin1( "Plugin%1" ).arg( pluginCount );
         addMerge( pluginClientName );
         plugin->domDocument().documentElement().setAttribute( "name", pluginClientName );
         insertChildClient( plugin );
     }
-
-    // ## Where is this used?
-    addMerge( "plugins" );
+#endif
 }
 
 KUrl KonqPopupMenu::url() const // ### should be viewURL()
 {
-  return m_sViewURL;
+  return d->m_sViewURL;
 }
 
 KFileItemList KonqPopupMenu::fileItemList() const
 {
-  return m_lstItems;
+  return d->m_lstItems;
 }
 
 KUrl::List KonqPopupMenu::popupURLList() const
 {
-  return m_lstPopupURLs;
+  return d->m_lstPopupURLs;
 }
 
+#if 0
 /**
         Plugin
 */
@@ -1171,5 +1158,6 @@ KonqPopupMenuPlugin::KonqPopupMenuPlugin( KonqPopupMenu *parent )
 KonqPopupMenuPlugin::~KonqPopupMenuPlugin()
 {
 }
+#endif
 
 #include "konq_popupmenu.moc"

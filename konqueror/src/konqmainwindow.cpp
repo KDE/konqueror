@@ -4069,7 +4069,7 @@ void KonqMainWindow::initActions()
      addBookmark->setText(i18n("Bookmark This Location"));
 
   m_paShowMenuBar = KStandardAction::showMenubar( this, SLOT( slotShowMenuBar() ), this );
-  actionCollection()->addAction( m_paShowMenuBar->objectName(), m_paShowMenuBar );
+  actionCollection()->addAction( KStandardAction::name(KStandardAction::ShowMenubar), m_paShowMenuBar );
 
   action = actionCollection()->addAction( "konqintro" );
   action->setText( i18n( "Kon&queror Introduction" ) );
@@ -4701,42 +4701,20 @@ QString KonqMainWindow::currentTitle() const
   return m_currentView ? m_currentView->caption() : QString();
 }
 
-void KonqMainWindow::slotPopupMenu( const QPoint &global, const KUrl &url, const QString &mimeType, mode_t mode )
-{
-  slotPopupMenu( 0, global, url, mimeType, mode );
-}
-
-void KonqMainWindow::slotPopupMenu( KXMLGUIClient *client, const QPoint &global, const KUrl &url, const QString &mimeType, mode_t mode )
-{
-  KFileItem item( url, mimeType, mode );
-  KFileItemList items;
-  items.append( item );
-  slotPopupMenuHelper( client, global, items, KParts::OpenUrlArguments(), KParts::BrowserArguments(), KParts::BrowserExtension::DefaultPopupItems, false ); //BE CAREFUL WITH sender() !
-}
-
-void KonqMainWindow::slotPopupMenu( KXMLGUIClient *client, const QPoint &global, const KUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments& browserArgs, KParts::BrowserExtension::PopupFlags f, mode_t mode )
+void KonqMainWindow::slotPopupMenu( const QPoint &global, const KUrl &url, mode_t mode, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments& browserArgs, KParts::BrowserExtension::PopupFlags flags, const KParts::BrowserExtension::ActionGroupMap& actionGroups )
 {
     KFileItem item( url, args.mimeType(), mode );
     KFileItemList items;
     items.append( item );
-    slotPopupMenuHelper( client, global, items, args, browserArgs, f, false ); //BE CAREFUL WITH sender() !
+    slotPopupMenu( global, items, args, browserArgs, flags, actionGroups );
 }
 
-void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &items )
+void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &items, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments& browserArgs, KParts::BrowserExtension::PopupFlags itemFlags, const KParts::BrowserExtension::ActionGroupMap& _actionGroups )
 {
-    slotPopupMenuHelper( 0, global, items, KParts::OpenUrlArguments(), KParts::BrowserArguments(), KParts::BrowserExtension::DefaultPopupItems, true );
-}
+    KParts::BrowserExtension::ActionGroupMap actionGroups = _actionGroups;
 
-void KonqMainWindow::slotPopupMenu( KXMLGUIClient *client, const QPoint &global, const KFileItemList &items, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments& browserArgs, KParts::BrowserExtension::PopupFlags flags )
-{
-  slotPopupMenuHelper( client, global, items, args, browserArgs, flags, true );
-}
-
-void KonqMainWindow::slotPopupMenuHelper( KXMLGUIClient *client, const QPoint &_global, const KFileItemList &_items, const KParts::OpenUrlArguments &_args, const KParts::BrowserArguments& browserArgs, KParts::BrowserExtension::PopupFlags itemFlags, bool showProperties )
-{
-  KonqView * m_oldView = m_currentView;
-
-  KonqView * currentView = childView( static_cast<KParts::ReadOnlyPart *>( sender()->parent() ) );
+    KonqView * m_oldView = m_currentView;
+    KonqView * currentView = childView( static_cast<KParts::ReadOnlyPart *>( sender()->parent() ) );
 
   //kDebug() << "KonqMainWindow::slotPopupMenu m_oldView=" << m_oldView << " new currentView=" << currentView << " passive:" << currentView->isPassiveMode();
 
@@ -4761,22 +4739,22 @@ void KonqMainWindow::slotPopupMenuHelper( KXMLGUIClient *client, const QPoint &_
   // It has to be a KActionCollection instead of a KActionPtrList because we need
   // the actionStatusText signal...
   KActionCollection popupMenuCollection( (QWidget*)0 );
-  popupMenuCollection.addAction( m_paBack->objectName(), m_paBack );
-  popupMenuCollection.addAction( m_paForward->objectName(), m_paForward );
-  popupMenuCollection.addAction( m_paUp->objectName(), m_paUp );
-  popupMenuCollection.addAction( m_paReload->objectName(), m_paReload );
+  popupMenuCollection.addAction( "back", m_paBack );
+  popupMenuCollection.addAction( "forward", m_paForward );
+  popupMenuCollection.addAction( "up", m_paUp );
+  popupMenuCollection.addAction( "reload", m_paReload );
 
 #if 0
-  popupMenuCollection.addAction( m_paFindFiles->objectName(), m_paFindFiles );
+  popupMenuCollection.addAction( "find", m_paFindFiles );
 #endif
 
-  popupMenuCollection.addAction( m_paUndo->objectName(), m_paUndo );
-  popupMenuCollection.addAction( m_paCut->objectName(), m_paCut );
-  popupMenuCollection.addAction( m_paCopy->objectName(), m_paCopy );
-  popupMenuCollection.addAction( m_paPaste->objectName(), m_paPaste );
-  popupMenuCollection.addAction( m_paTrash->objectName(), m_paTrash );
-  popupMenuCollection.addAction( m_paRename->objectName(), m_paRename );
-  popupMenuCollection.addAction( m_paDelete->objectName(), m_paDelete );
+  popupMenuCollection.addAction( "undo", m_paUndo );
+  popupMenuCollection.addAction( "cut", m_paCut );
+  popupMenuCollection.addAction( "copy", m_paCopy );
+  popupMenuCollection.addAction( "paste", m_paPaste );
+  popupMenuCollection.addAction( "trash", m_paTrash );
+  popupMenuCollection.addAction( "rename", m_paRename );
+  popupMenuCollection.addAction( "del", m_paDelete );
 
   // The pasteto action is used when clicking on a dir, to paste into it.
   KAction *actPaste = KStandardAction::paste( this, SLOT( slotPopupPasteTo() ), this );
@@ -4784,12 +4762,12 @@ void KonqMainWindow::slotPopupMenuHelper( KXMLGUIClient *client, const QPoint &_
   popupMenuCollection.addAction( "pasteto", actPaste );
 
   bool sReading = false;
-  if ( _items.count() > 0 )
+  if ( items.count() > 0 )
   {
-    m_popupUrl = _items.first().url();
+    m_popupUrl = items.first().url();
     sReading = KProtocolManager::supportsReading( m_popupUrl );
     if (sReading)
-      m_popupServiceType = _items.first().mimetype();
+      m_popupServiceType = items.first().mimetype();
   }
   else
   {
@@ -4797,20 +4775,6 @@ void KonqMainWindow::slotPopupMenuHelper( KXMLGUIClient *client, const QPoint &_
     m_popupServiceType.clear();
   }
 
-  if ( (_items.count() == 1) && !m_popupServiceType.isEmpty() ) {
-      QString currentServiceName = currentView->service()->desktopEntryName();
-
-      // List of services for the "Preview In" submenu.
-      m_popupEmbeddingServices = KMimeTypeTrader::self()->query(
-          m_popupServiceType,
-          "KParts/ReadOnlyPart",
-          // Obey "HideFromMenus". It defaults to false so we want "absent or true"
-          // (wow, testing for 'true' if absent doesn't work, so order matters)
-          "(not exist [X-KDE-BrowserView-HideFromMenus] or not [X-KDE-BrowserView-HideFromMenus]) "
-          "and DesktopEntryName != '"+currentServiceName+"' "
-          // I had an old local dirtree.desktop without lib, no need for invalid entries
-          "and exist [Library]");
-  }
 
 
   // Don't set the view URL for a toggle view.
@@ -4823,98 +4787,129 @@ void KonqMainWindow::slotPopupMenuHelper( KXMLGUIClient *client, const QPoint &_
   //bool dirsSelected = false;
   bool devicesFile = false;
 
-  if ( _items.count() == 1 )
-  {
-      const KUrl firstURL = _items.first().url();
+    if ( items.count() == 1 )
+    {
+      const KUrl firstURL = items.first().url();
       if ( !viewURL.isEmpty() )
       {
 	  //firstURL.cleanPath();
           openedForViewURL = firstURL.equals( viewURL, KUrl::CompareWithoutTrailingSlash );
       }
       devicesFile = firstURL.protocol().indexOf("device", 0, Qt::CaseInsensitive) == 0;
-      //dirsSelected = S_ISDIR( _items.first()->mode() );
-  }
-    //check if current url is trash
-  KUrl url = viewURL;
-  url.cleanPath();
-  bool isIntoTrash = url.protocol() == "trash" || url.url().startsWith( "system:/trash" );
-  bool doTabHandling = !openedForViewURL && !isIntoTrash && sReading;
-  bool showEmbeddingServices = !isIntoTrash && !devicesFile && (itemFlags & KParts::BrowserExtension::ShowTextSelectionItems) == 0;
-  PopupMenuGUIClient *konqyMenuClient = new PopupMenuGUIClient( this, m_popupEmbeddingServices,
-                                                                showEmbeddingServices, doTabHandling );
+      //dirsSelected = S_ISDIR( items.first()->mode() );
+    }
 
-  //kDebug(1202) << "KonqMainWindow::slotPopupMenu " << viewURL;
+    KUrl url = viewURL;
+    url.cleanPath();
+    bool isIntoTrash = url.protocol() == "trash" || url.url().startsWith( "system:/trash" );
+    const bool doTabHandling = !openedForViewURL && !isIntoTrash && sReading;
+    const bool showEmbeddingServices = items.count() == 1 && !m_popupServiceType.isEmpty() &&
+                                       !isIntoTrash && !devicesFile &&
+                                       (itemFlags & KParts::BrowserExtension::ShowTextSelectionItems) == 0;
+
+    KService::List embeddingServices;
+    if ( showEmbeddingServices ) {
+        const QString currentServiceName = currentView->service()->desktopEntryName();
+
+        // List of services for the "Preview In" submenu.
+        embeddingServices = KMimeTypeTrader::self()->query(
+            m_popupServiceType,
+            "KParts/ReadOnlyPart",
+            // Obey "HideFromMenus". It defaults to false so we want "absent or true"
+            // (wow, testing for 'true' if absent doesn't work, so order matters)
+            "(not exist [X-KDE-BrowserView-HideFromMenus] or not [X-KDE-BrowserView-HideFromMenus]) "
+            "and DesktopEntryName != '"+currentServiceName+"' "
+            // I had an old local dirtree.desktop without lib, no need for invalid entries
+            "and exist [Library]");
+    }
+
+    PopupMenuGUIClient *konqyMenuClient = new PopupMenuGUIClient( embeddingServices,
+                                                                  actionGroups,
+                                                                  !menuBar()->isVisible() ? m_paShowMenuBar : 0,
+                                                                  fullScreenMode() ? m_ptaFullScreen : 0
+        );
+    qRegisterMetaType<KService::Ptr>("KService::Ptr");
+    connect(konqyMenuClient, SIGNAL(openEmbedded(KService::Ptr)),
+            this, SLOT(slotOpenEmbedded(KService::Ptr)), Qt::QueuedConnection);
+
+    //kDebug(1202) << "KonqMainWindow::slotPopupMenu " << viewURL;
 
 
-  // Those actions go into the PopupMenuGUIClient, since that's the one defining them.
-  QAction *actNewWindow = 0, *actNewTab = 0;
-  if( doTabHandling )
-  {
-      if (browserArgs.forcesNewWindow()) {
-        actNewWindow = konqyMenuClient->actionCollection()->addAction( "sameview" );
-        actNewWindow->setText( i18n( "Open in T&his Window" ) );
-        connect(actNewWindow, SIGNAL(triggered(bool) ), SLOT( slotPopupThisWindow() ));
-        actNewWindow->setToolTip( i18n( "Open the document in current window" ) );
-      }
-      actNewWindow = konqyMenuClient->actionCollection()->addAction( "newview" );
-      actNewWindow->setIcon( KIcon("window-new") );
-      actNewWindow->setText( i18n( "Open in New &Window" ) );
-      connect(actNewWindow, SIGNAL(triggered(bool)), SLOT( slotPopupNewWindow() ));
-      actNewWindow->setToolTip( i18n( "Open the document in a new window" ) );
-      actNewTab = konqyMenuClient->actionCollection()->addAction( "openintab" );
-      actNewTab->setIcon( KIcon("tab-new") );
-      actNewTab->setText( i18n( "Open in &New Tab" ) );
-      connect(actNewTab, SIGNAL(triggered(bool)), SLOT( slotPopupNewTab() ));
-      actNewTab->setToolTip( i18n( "Open the document in a new tab" ) );
-      doTabHandling = true;
-  }
+    // Those actions go into the PopupMenuGUIClient, since that's the one defining them.
+    QList<QAction *> tabHandlingActions;
+    if( doTabHandling )
+    {
+        if (browserArgs.forcesNewWindow()) {
+            QAction* act = konqyMenuClient->actionCollection()->addAction( "sameview" );
+            act->setText( i18n( "Open in T&his Window" ) );
+            act->setToolTip( i18n( "Open the document in current window" ) );
+            connect(act, SIGNAL(triggered(bool) ), SLOT( slotPopupThisWindow() ));
+            tabHandlingActions.append(act);
+        }
+        QAction* actNewWindow = konqyMenuClient->actionCollection()->addAction( "newview" );
+        actNewWindow->setIcon( KIcon("window-new") );
+        actNewWindow->setText( i18n( "Open in New &Window" ) );
+        actNewWindow->setToolTip( i18n( "Open the document in a new window" ) );
+        connect(actNewWindow, SIGNAL(triggered(bool)), SLOT( slotPopupNewWindow() ));
+        tabHandlingActions.append(actNewWindow);
 
-  if (currentView->isHierarchicalView())
-    itemFlags |= KParts::BrowserExtension::ShowCreateDirectory;
+        QAction* actNewTab = konqyMenuClient->actionCollection()->addAction( "openintab" );
+        actNewTab->setIcon( KIcon("tab-new") );
+        actNewTab->setText( i18n( "Open in &New Tab" ) );
+        connect(actNewTab, SIGNAL(triggered(bool)), SLOT( slotPopupNewTab() ));
+        actNewTab->setToolTip( i18n( "Open the document in a new tab" ) );
+        tabHandlingActions.append(actNewTab);
 
-  KonqPopupMenu::KonqPopupFlags kpf = 0;
-  if ( showProperties )
-      kpf |= KonqPopupMenu::ShowProperties;
-  else
-      kpf |= KonqPopupMenu::IsLink; // HACK
+        QAction* separator = new QAction(konqyMenuClient->actionCollection());
+        separator->setSeparator(true);
+        tabHandlingActions.append(separator);
+    }
 
-  QPointer<KonqPopupMenu> pPopupMenu = new KonqPopupMenu(
-      KonqBookmarkManager::self(), _items,
-      viewURL,
-      popupMenuCollection,
-      m_pMenuNew,
-      // This parent ensures that if the part destroys itself (e.g. KHTML redirection),
-      // it will close the popupmenu
-      currentView->part()->widget(),
-      kpf,
-      itemFlags );
+    if (currentView->isHierarchicalView())
+        itemFlags |= KParts::BrowserExtension::ShowCreateDirectory;
 
-  if ( openedForViewURL && !viewURL.isLocalFile() )
-      pPopupMenu->setURLTitle( currentView->caption() );
+    KonqPopupMenu::Flags kpf = 0;
 
-  // We will need these if we call the newTab slot
-  popupItems = _items;
-  popupUrlArgs = _args;
-  popupUrlArgs.setMimeType( QString() ); // Reset so that Open in New Window/Tab does mimetype detection
-  popupUrlBrowserArgs = browserArgs;
+    if (doTabHandling)
+        actionGroups.insert("tabhandling", tabHandlingActions);
+    //if (kpf & KonqPopupMenu::IsLink)
+    //    actionGroups.insert("linkactions", linkActions);
+    // TODO actionGroups.insert("partactions", partActions);
 
-  pPopupMenu->factory()->addClient( konqyMenuClient );
+    QPointer<KonqPopupMenu> pPopupMenu = new KonqPopupMenu(
+        items,
+        viewURL,
+        popupMenuCollection,
+        m_pMenuNew,
+        kpf,
+        itemFlags,
+        // This parent ensures that if the part destroys itself (e.g. KHTML redirection),
+        // it will close the popupmenu
+        currentView->part()->widget(),
+        KonqBookmarkManager::self(),
+        actionGroups );
 
-  if ( client )
-    pPopupMenu->factory()->addClient( client );
+    if ( openedForViewURL && !viewURL.isLocalFile() )
+        pPopupMenu->setURLTitle( currentView->caption() );
 
-  KParts::BrowserExtension *be = ::qobject_cast<KParts::BrowserExtension *>(sender());
+    // We will need these if we call the newTab slot
+    popupItems = items;
+    popupUrlArgs = args;
+    popupUrlArgs.setMimeType( QString() ); // Reset so that Open in New Window/Tab does mimetype detection
+    popupUrlBrowserArgs = browserArgs;
 
-  if (be) {
-    QObject::connect( this, SIGNAL(popupItemsDisturbed()), pPopupMenu, SLOT(close()) );
-    QObject::connect( be, SIGNAL(itemsRemoved(const KFileItemList &)),
-                      this, SLOT(slotItemsRemoved(const KFileItemList &)) );
-  }
+    KParts::BrowserExtension *be = ::qobject_cast<KParts::BrowserExtension *>(sender());
+
+    if (be) {
+        QObject::connect( this, SIGNAL(popupItemsDisturbed()), pPopupMenu, SLOT(close()) );
+        QObject::connect( be, SIGNAL(itemsRemoved(const KFileItemList &)),
+                          this, SLOT(slotItemsRemoved(const KFileItemList &)) );
+    }
 
   QObject::disconnect( m_pMenuNew->menu(), SIGNAL(aboutToShow()),
                        this, SLOT(slotFileNewAboutToShow()) );
 
-  pPopupMenu->exec( _global );
+  pPopupMenu->exec( global );
 
   QObject::connect( m_pMenuNew->menu(), SIGNAL(aboutToShow()),
                        this, SLOT(slotFileNewAboutToShow()) );
@@ -4928,7 +4923,6 @@ void KonqMainWindow::slotPopupMenuHelper( KXMLGUIClient *client, const QPoint &_
   delete pPopupMenu;
 
   delete konqyMenuClient;
-  m_popupEmbeddingServices.clear();
   popupItems.clear();
 
   // Deleted by konqyMenuClient's actioncollection
@@ -4980,25 +4974,15 @@ void KonqMainWindow::slotItemsRemoved(const KFileItemList &items)
     }
 }
 
-void KonqMainWindow::slotOpenEmbedded()
+Q_DECLARE_METATYPE(KService::Ptr)
+void KonqMainWindow::slotOpenEmbedded(KService::Ptr service)
 {
-  QString name = sender()->objectName();
-
-  m_popupService = m_popupEmbeddingServices[ name.toInt() ]->desktopEntryName();
-
-  m_popupEmbeddingServices.clear();
-
-  QTimer::singleShot( 0, this, SLOT( slotOpenEmbeddedDoIt() ) );
-}
-
-void KonqMainWindow::slotOpenEmbeddedDoIt()
-{
-  m_currentView->stop();
-  m_currentView->setLocationBarURL(m_popupUrl);
-  m_currentView->setTypedURL(QString());
-  if ( m_currentView->changeViewMode( m_popupServiceType,
-                                      m_popupService ) )
-      m_currentView->openUrl( m_popupUrl, m_popupUrl.pathOrUrl() );
+    m_currentView->stop();
+    m_currentView->setLocationBarURL(m_popupUrl);
+    m_currentView->setTypedURL(QString());
+    if ( m_currentView->changeViewMode( m_popupServiceType,
+                                        service->desktopEntryName() ) )
+        m_currentView->openUrl( m_popupUrl, m_popupUrl.pathOrUrl() );
 }
 
 void KonqMainWindow::slotDatabaseChanged()

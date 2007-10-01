@@ -37,135 +37,68 @@
 #include "konqframestatusbar.h"
 #include "konqviewmanager.h"
 
-PopupMenuGUIClient::PopupMenuGUIClient( KonqMainWindow *mainWindow,
-                                        const KService::List &embeddingServices,
-                                        bool showEmbeddingServices, bool doTabHandling )
+PopupMenuGUIClient::PopupMenuGUIClient( const KService::List &embeddingServices,
+                                        KParts::BrowserExtension::ActionGroupMap& actionGroups,
+                                        QAction* showMenuBar, QAction* stopFullScreen )
+    : m_actionCollection(this),
+      m_embeddingServices(embeddingServices)
 {
-    //giving a name to each guiclient: just for debugging
-    // (needs delete componentData() in the dtor if enabled for good)
-    //setComponentData( KComponentData( "PopupMenuGUIClient" ) );
-
-    m_mainWindow = mainWindow;
-
-    m_doc = QDomDocument( "kpartgui" );
-    QDomElement root = m_doc.createElement( "kpartgui" );
-    root.setAttribute( "name", "konqueror" );
-    m_doc.appendChild( root );
-
-    QDomElement menu = m_doc.createElement( "Menu" );
-    root.appendChild( menu );
-    menu.setAttribute( "name", "popupmenu" );
-
-    if ( !mainWindow->menuBar()->isVisible() )
-    {
-        QDomElement showMenuBarElement = m_doc.createElement( "action" );
-        showMenuBarElement.setAttribute( "name", "options_show_menubar" );
-        menu.appendChild( showMenuBarElement );
-
-        menu.appendChild( m_doc.createElement( "separator" ) );
+    QList<QAction *> topActions;
+    if (showMenuBar) {
+        topActions.append(showMenuBar);
+        QAction* separator = new QAction(&m_actionCollection);
+        separator->setSeparator(true);
+        topActions.append(separator);
     }
 
-    if ( mainWindow->fullScreenMode() )
-    {
-        QDomElement stopFullScreenElement = m_doc.createElement( "action" );
-        stopFullScreenElement.setAttribute( "name", "fullscreen" );
-        menu.appendChild( stopFullScreenElement );
-
-        menu.appendChild( m_doc.createElement( "separator" ) );
+    if (stopFullScreen) {
+        topActions.append(stopFullScreen);
+        QAction* separator = new QAction(&m_actionCollection);
+        separator->setSeparator(true);
+        topActions.append(separator);
     }
 
-    if ( showEmbeddingServices )
-    {
-        KService::List::ConstIterator it = embeddingServices.begin();
-        KService::List::ConstIterator end = embeddingServices.end();
-
-        if ( embeddingServices.count() == 1 )
-        {
-            KService::Ptr service = *embeddingServices.begin();
-            addEmbeddingService( menu, 0, i18n( "Preview in %1" ,  service->name() ), service );
-        }
-        else if ( embeddingServices.count() > 1 )
-        {
+    if (!embeddingServices.isEmpty()) {
+        QList<QAction *> previewActions;
+        if (embeddingServices.count() == 1) {
+            KService::Ptr service = embeddingServices.first();
+            QAction* act = addEmbeddingService( 0, i18n( "Preview in %1", service->name() ), service );
+            previewActions.append(act);
+        } else if (embeddingServices.count() > 1) {
+            KService::List::ConstIterator it = embeddingServices.begin();
+            const KService::List::ConstIterator end = embeddingServices.end();
             int idx = 0;
-            QDomElement subMenu = m_doc.createElement( "menu" );
-            menu.appendChild( subMenu );
-            QDomElement text = m_doc.createElement( "text" );
-            subMenu.appendChild( text );
-            text.appendChild( m_doc.createTextNode( i18n( "Preview In" ) ) );
-            subMenu.setAttribute( "group", "preview" );
-            subMenu.setAttribute( "name", "preview submenu" );
-
-            bool inserted = false;
-
-            for (; it != end; ++it, ++idx )
-            {
-                addEmbeddingService( subMenu, idx, (*it)->name(), *it );
-                inserted = true;
+            for (; it != end; ++it, ++idx ) {
+                QAction* act = addEmbeddingService( idx, (*it)->name(), *it );
+                previewActions.append(act);
             }
-
-            if ( !inserted ) // oops, if empty then remove the menu :-]
-                menu.removeChild( menu.namedItem( "menu" ) );
         }
+        actionGroups.insert("preview", previewActions);
     }
-
-    if ( doTabHandling )
-    {
-        QDomElement openInSameWindow = m_doc.createElement( "action" );
-        openInSameWindow.setAttribute( "name", "sameview" );
-        openInSameWindow.setAttribute( "group", "tabhandling" );
-        menu.appendChild( openInSameWindow );
-
-	QDomElement openInWindow = m_doc.createElement( "action" );
-        openInWindow.setAttribute( "name", "newview" );
-        openInWindow.setAttribute( "group", "tabhandling" );
-        menu.appendChild( openInWindow );
-
-        QDomElement openInTabElement = m_doc.createElement( "action" );
-        openInTabElement.setAttribute( "name", "openintab" );
-        openInTabElement.setAttribute( "group", "tabhandling" );
-        menu.appendChild( openInTabElement );
-
-        QDomElement separatorElement = m_doc.createElement( "separator" );
-        separatorElement.setAttribute( "group", "tabhandling" );
-        menu.appendChild( separatorElement );
-    }
-
-    //kDebug() << m_doc.toString();
-
-    setDOMDocument( m_doc );
+    actionGroups.insert("topactions", topActions);
 }
 
 PopupMenuGUIClient::~PopupMenuGUIClient()
 {
 }
 
-QAction *PopupMenuGUIClient::action( const QDomElement &element ) const
+QAction* PopupMenuGUIClient::addEmbeddingService( int idx, const QString &name, const KService::Ptr &service )
 {
-  QAction *res = KXMLGUIClient::action( element );
-
-  if ( !res )
-    res = m_mainWindow->action( element );
-
-  return res;
+    QAction *act = m_actionCollection.addAction( QByteArray::number( idx ) );
+    act->setText( name );
+    act->setIcon( KIcon(service->icon()) );
+    QObject::connect(act, SIGNAL(triggered(bool)), this, SLOT( slotOpenEmbedded() ));
+    return act;
 }
 
-void PopupMenuGUIClient::addEmbeddingService( QDomElement &menu, int idx, const QString &name, const KService::Ptr &service )
+void PopupMenuGUIClient::slotOpenEmbedded()
 {
-  QDomElement action = m_doc.createElement( "action" );
-  menu.appendChild( action );
-
-  QByteArray actName;
-  actName.setNum( idx );
-
-  action.setAttribute( "name", QString::number( idx ) );
-
-  action.setAttribute( "group", "preview" );
-
-  QAction *act = actionCollection()->addAction( actName );
-  act->setText( name );
-  act->setIcon( KIcon(service->icon()) );
-  QObject::connect(act, SIGNAL(triggered(bool)), m_mainWindow, SLOT( slotOpenEmbedded() ));
+    int idx = sender()->objectName().toInt();
+    // This calls KonqMainWindow::slotOpenEmbedded(service) (delayed so that the menu is closed first)
+    emit openEmbedded(m_embeddingServices.at(idx));
 }
+
+////
 
 ToggleViewGUIClient::ToggleViewGUIClient( KonqMainWindow *mainWindow )
 : QObject( mainWindow )
