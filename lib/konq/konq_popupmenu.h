@@ -35,21 +35,22 @@
 
 #include <libkonq_export.h>
 
-#include "konq_xmlguiclient.h"
-
 typedef QList<KDesktopFileActions::Service> ServiceList;
 
 class KNewMenu;
-class KonqPopupMenuPlugin;
+//class KonqPopupMenuPlugin;
 class KBookmarkManager;
+class KonqPopupMenuPrivate;
 
 /**
  * This class implements the popup menu for URLs in konqueror and kdesktop
  * It's usage is very simple : on right click, create the KonqPopupMenu instance
  * with the correct arguments, then exec() to make it appear, then destroy it.
  *
+ * Users of KonqPopupMenu include: konqueror, the media applet, the trash applet
+ * (and the desktop icons, in kde3)
  */
-class LIBKONQ_EXPORT KonqPopupMenu : public QMenu, public KonqXMLGUIClient
+class LIBKONQ_EXPORT KonqPopupMenu : public QMenu
 {
   Q_OBJECT
 public:
@@ -58,24 +59,23 @@ public:
    * Flags set by the calling application (konqueror/kdesktop), unlike
    * KParts::BrowserExtension::PopupFlags, which are set by the calling part
    */
-  typedef uint KonqPopupFlags;
+  typedef uint Flags;
   enum { NoFlags = 0,
-         ShowProperties = 1,  ///< whether to show the "Properties" menu item
-         IsLink = 2,          ///< HTML link. If set, we won't have cut/copy/paste, and we'll say "bookmark this link"
-         ShowNewWindow = 4 };
-         // WARNING: bitfield. Next item is 8
+         ShowNewWindow = 1 };
+         // WARNING: bitfield. Next item is 2
 
   /**
    * Constructor
-   * @param manager the bookmark manager for this bookmark
+   * @param manager the bookmark manager for the "add to bookmark" action
+   * Only used if KParts::BrowserExtension::ShowBookmark is set
    * @param items the list of file items the popupmenu should be shown for
    * @param viewURL the URL shown in the view, to test for RMB click on view background
    * @param actions list of actions the caller wants to see in the menu
    * @param newMenu "New" menu, shared with the File menu, in konqueror
    * @param parentWidget the widget we're showing this popup for. Helps destroying
    * the popup if the widget is destroyed before the popup.
-   * @param kpf flags from the KonqPopupFlags enum, set by the calling application
-   * @param f flags from the BrowserExtension enum, set by the calling part
+   * @param appFlags flags from the KonqPopupMenu::Flags enum, set by the calling application
+   * @param partFlags flags from the BrowserExtension enum, set by the calling part
    *
    * The actions to pass in include :
    * showmenubar, back, forward, up, cut, copy, paste, pasteto, trash, rename, del
@@ -83,14 +83,16 @@ public:
    *
    * @todo that list is probably not be up-to-date
    */
-  KonqPopupMenu( KBookmarkManager* manager,
-                 const KFileItemList &items,
+  KonqPopupMenu( const KFileItemList &items,
                  const KUrl& viewURL,
                  KActionCollection & actions,
                  KNewMenu * newMenu,
+                 Flags appFlags,
+                 KParts::BrowserExtension::PopupFlags partFlags /*= KParts::BrowserExtension::DefaultPopupItems*/,
                  QWidget * parentWidget,
-                 KonqPopupFlags kpf,
-                 KParts::BrowserExtension::PopupFlags f /*= KParts::BrowserExtension::DefaultPopupItems*/);
+                 KBookmarkManager *manager = 0,
+                 const KParts::BrowserExtension::ActionGroupMap& actionGroups = KParts::BrowserExtension::ActionGroupMap()
+      );
 
   /**
    * Don't forget to destroy the object
@@ -103,6 +105,7 @@ public:
    */
   void setURLTitle( const QString& urlTitle );
 
+#if 0 // was only used by plugins
   class LIBKONQ_EXPORT ProtocolInfo {
    public:
     ProtocolInfo();
@@ -112,67 +115,42 @@ public:
     bool supportsMoving()   const;
     bool trashIncluded()    const;
    private:
-    friend class KonqPopupMenu;
+    friend class KonqPopupMenuPrivate;
     bool m_Reading:1;
     bool m_Writing:1;
     bool m_Deleting:1;
     bool m_Moving:1;
     bool m_TrashIncluded:1;
   };
-  /**
-   * Reimplemented for internal purpose
-   */
-  virtual QAction *action( const QDomElement &element ) const;
+#endif
 
-
-  virtual KActionCollection *actionCollection() const;
+  KActionCollection *actionCollection() const;
   QString mimeType( ) const;
   KUrl url( ) const;
   KFileItemList fileItemList() const;
   KUrl::List popupURLList( ) const;
-  ProtocolInfo protocolInfo() const;
-
-public Q_SLOTS: // KDE4: why public?
-  void slotPopupNewDir();
-  void slotPopupNewView();
-  void slotPopupEmptyTrashBin();
-  void slotPopupRestoreTrashedItems();
-  void slotPopupOpenWith();
-  void slotPopupAddToBookmark();
-  void slotRunService();
-  void slotPopupMimeType();
-  void slotPopupProperties();
-  void slotOpenShareFileDialog();
-protected:
-  KActionCollection &m_actions;
-  KActionCollection m_ownActions;
+    //ProtocolInfo protocolInfo() const;
 
 private:
-  void init (QWidget * parentWidget, KonqPopupFlags kpf, KParts::BrowserExtension::PopupFlags itemFlags);
-  void setup(KonqPopupFlags kpf);
-  void addPlugins( );
-  int  insertServicesSubmenus(const QMap<QString, ServiceList>& list, QDomElement& menu, bool isBuiltin);
-  int  insertServices(const ServiceList& list, QDomElement& menu, bool isBuiltin);
-  bool KIOSKAuthorizedAction(const KConfigGroup& cfg);
+  Q_PRIVATE_SLOT(d, void slotPopupNewDir())
+  Q_PRIVATE_SLOT(d, void slotPopupNewView())
+  Q_PRIVATE_SLOT(d, void slotPopupEmptyTrashBin())
+  Q_PRIVATE_SLOT(d, void slotPopupRestoreTrashedItems())
+  Q_PRIVATE_SLOT(d, void slotPopupOpenWith())
+  Q_PRIVATE_SLOT(d, void slotPopupAddToBookmark())
+  Q_PRIVATE_SLOT(d, void slotRunService(QAction*))
+  Q_PRIVATE_SLOT(d, void slotPopupMimeType())
+  Q_PRIVATE_SLOT(d, void slotPopupProperties())
+  Q_PRIVATE_SLOT(d, void slotOpenShareFileDialog())
 
-  class KonqPopupMenuPrivate;
+private:
+  void init (QWidget * parentWidget, Flags kpf, KParts::BrowserExtension::PopupFlags itemFlags);
+
   KonqPopupMenuPrivate *d;
-  KNewMenu *m_pMenuNew;
-  KUrl m_sViewURL;
-  QString m_sMimeType;
-  KFileItemList m_lstItems;
-  KUrl::List m_lstPopupURLs;
-  QMap<int,KService::Ptr> m_mapPopup;
-  QMap<int,KDesktopFileActions::Service> m_mapPopupServices;
-  bool m_bHandleEditOperations;
-  KXMLGUIFactory *m_factory;
-  KXMLGUIBuilder *m_builder;
-  QString attrName;
-  ProtocolInfo m_info;
-  KBookmarkManager* m_pManager;
 };
 
-class LIBKONQ_EXPORT KonqPopupMenuPlugin : public QObject, public KonqXMLGUIClient {
+#if 0
+class LIBKONQ_EXPORT KonqPopupMenuPlugin : public QObject {
 	Q_OBJECT
 public:
   /**
@@ -185,6 +163,7 @@ public:
   KonqPopupMenuPlugin( KonqPopupMenu *_popup); // this should also be the parent
   virtual ~KonqPopupMenuPlugin ( );
 };
+#endif
 
 #endif
 

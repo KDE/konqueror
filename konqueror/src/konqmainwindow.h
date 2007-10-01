@@ -318,20 +318,14 @@ Q_SIGNALS:
   void popupItemsDisturbed();
 
 public Q_SLOTS:
-  void slotCtrlTabPressed();
+    void slotCtrlTabPressed();
 
-    void slotPopupMenu( const QPoint &global, const KFileItemList &items );
-    void slotPopupMenu( KXMLGUIClient *client, const QPoint &global, const KFileItemList &items, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments& browserArgs, KParts::BrowserExtension::PopupFlags flags );
-    void slotPopupMenu( const QPoint &global, const KUrl &url, const QString &mimeType, mode_t mode );
-    void slotPopupMenu( KXMLGUIClient *client, const QPoint &global, const KUrl &url, const QString &mimeType, mode_t mode );
-    void slotPopupMenu( KXMLGUIClient *client, const QPoint &global, const KUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments& browserArgs, KParts::BrowserExtension::PopupFlags f, mode_t mode );
+    void slotPopupMenu( const QPoint &global, const KFileItemList &items, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments& browserArgs, KParts::BrowserExtension::PopupFlags flags, const KParts::BrowserExtension::ActionGroupMap& );
+    void slotPopupMenu( const QPoint &global, const KUrl &url, mode_t mode, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments& browserArgs, KParts::BrowserExtension::PopupFlags f, const KParts::BrowserExtension::ActionGroupMap& );
 
-
-    void slotPopupMenuHelper( KXMLGUIClient *client, const QPoint &global, const KFileItemList &items, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments& browserArgs, KParts::BrowserExtension::PopupFlags f, bool showProperties );
-
-  /**
-   * __NEEEEVER__ call this method directly. It relies on sender() (the part)
-   */
+    /**
+     * __NEEEEVER__ call this method directly. It relies on sender() (the part)
+     */
     void slotOpenURLRequest( const KUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments &browserArgs );
 
   void openUrlRequestHelper( KonqView *childView, const KUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments &browserArgs );
@@ -446,8 +440,7 @@ protected Q_SLOTS:
   void slotSaveViewPropertiesLocally();
   void slotRemoveLocalProperties();
 
-  void slotOpenEmbedded();
-  void slotOpenEmbeddedDoIt();
+    void slotOpenEmbedded(KService::Ptr);
 
   // Connected to KSycoca
   void slotDatabaseChanged();
@@ -713,8 +706,6 @@ private: // members
 
   ToggleViewGUIClient *m_toggleViewGUIClient;
 
-  KService::List m_popupEmbeddingServices;
-  QString m_popupService;
   QString m_popupServiceType;
   KUrl m_popupUrl;
 

@@ -13,7 +13,6 @@ add_definitions (-DQT3_SUPPORT)
 # Please use .cpp for new files
 set(konq_LIB_SRCS
    konq_popupmenu.cc        # OK to remain in libkonq, needed by konqpopupmenu plugins.
-   konq_xmlguiclient.cc     # used by KonqPopupMenu
    knewmenu.cpp             # used by dolphin, KonqPopupMenu, and konqueror (File menu)
    konq_operations.cc
    konq_events.cc
@@ -62,7 +61,6 @@ install( FILES
  konq_historyentry.h
  konq_pixmapprovider.h
  konq_faviconmgr.h
- konq_xmlguiclient.h
  konqbookmarkmanager.h
  konq_filetip.h
  konqmimedata.h

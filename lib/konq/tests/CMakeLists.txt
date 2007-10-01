@@ -3,13 +3,17 @@ include_directories( ${CMAKE_SOURCE_DIR}/libkonq )
 
 ########### konqmimedatatest ###############
 
-
 kde4_add_unit_test(konqmimedatatest konqmimedatatest.cpp)
 
 target_link_libraries(konqmimedatatest konq ${QT_QTTEST_LIBRARY})
 
-########### konqundomanager ###############
+########### konqpopupmenutest ###############
 
+kde4_add_unit_test(konqpopupmenutest konqpopupmenutest.cpp)
+
+target_link_libraries(konqpopupmenutest konq ${QT_QTTEST_LIBRARY})
+
+########### konqundomanager ###############
 
 kde4_add_unit_test(konqundomanagertest konqundomanagertest.cpp)
 
@@ -17,13 +21,11 @@ target_link_libraries(konqundomanagertest konq ${QT_QTTEST_LIBRARY})
 
 ########### favicontest ###############
 
-
 kde4_add_unit_test(favicontest favicontest.cpp)
 
 target_link_libraries(favicontest konq ${QT_QTTEST_LIBRARY})
 
 ########### historymgrtest ###############
-
 
 kde4_add_unit_test(historymgrtest historymgrtest.cpp)
 

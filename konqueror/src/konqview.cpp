@@ -1112,33 +1112,21 @@ void KonqView::enablePopupMenu( bool b )
   if ( b ) {
     m_bPopupMenuEnabled = true;
 
-    connect( ext, SIGNAL( popupMenu( const QPoint &, const KFileItemList & ) ),
-             m_pMainWindow, SLOT( slotPopupMenu( const QPoint &, const KFileItemList & ) ) );
+    connect( ext, SIGNAL(popupMenu(QPoint,KFileItemList,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)),
+             m_pMainWindow, SLOT(slotPopupMenu(QPoint,KFileItemList,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)) );
 
-    connect( ext, SIGNAL( popupMenu( const QPoint &, const KUrl &, const QString &, mode_t ) ),
-             m_pMainWindow, SLOT( slotPopupMenu( const QPoint &, const KUrl &, const QString &, mode_t ) ) );
-
-    connect( ext, SIGNAL( popupMenu(KXMLGUIClient *, const QPoint &, const KFileItemList &, const KParts::OpenUrlArguments &, const KParts::BrowserArguments &, KParts::BrowserExtension::PopupFlags) ),
-             m_pMainWindow, SLOT( slotPopupMenu( KXMLGUIClient *, const QPoint &, const KFileItemList &, const KParts::OpenUrlArguments &, const KParts::BrowserArguments &, KParts::BrowserExtension::PopupFlags ) ) );
-
-    connect( ext, SIGNAL( popupMenu( KXMLGUIClient *, const QPoint &, const KUrl &, const QString &, mode_t ) ),
-             m_pMainWindow, SLOT( slotPopupMenu( KXMLGUIClient *, const QPoint &, const KUrl &, const QString &, mode_t ) ) );
-
-    connect( ext, SIGNAL( popupMenu(KXMLGUIClient *, const QPoint &, const KUrl &, const KParts::OpenUrlArguments &, const KParts::BrowserArguments &, KParts::BrowserExtension::PopupFlags, mode_t) ),
-             m_pMainWindow, SLOT( slotPopupMenu( KXMLGUIClient *, const QPoint &, const KUrl &, const KParts::OpenUrlArguments &, const KParts::BrowserArguments &, KParts::BrowserExtension::PopupFlags, mode_t ) ) );
+    connect( ext, SIGNAL(popupMenu(QPoint,KUrl,mode_t,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)),
+             m_pMainWindow, SLOT(slotPopupMenu(QPoint,KUrl,mode_t,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)) );
   }
   else // disable context popup
   {
     m_bPopupMenuEnabled = false;
 
-    disconnect( ext, SIGNAL( popupMenu( const QPoint &, const KFileItemList & ) ),
-             m_pMainWindow, SLOT( slotPopupMenu( const QPoint &, const KFileItemList & ) ) );
+    disconnect( ext, SIGNAL(popupMenu(QPoint,KFileItemList,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)),
+             m_pMainWindow, SLOT(slotPopupMenu(QPoint,KFileItemList,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)) );
 
-    disconnect( ext, SIGNAL( popupMenu( const QPoint &, const KUrl &, const QString &, mode_t ) ),
-             m_pMainWindow, SLOT( slotPopupMenu( const QPoint &, const KUrl &, const QString &, mode_t ) ) );
-
-    disconnect( ext, SIGNAL( popupMenu( KXMLGUIClient *, const QPoint &, const KUrl &, const QString &, mode_t ) ),
-             m_pMainWindow, SLOT( slotPopupMenu( KXMLGUIClient *, const QPoint &, const KUrl &, const QString &, mode_t ) ) );
+    disconnect( ext, SIGNAL(popupMenu(QPoint,KUrl,mode_t,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)),
+             m_pMainWindow, SLOT(slotPopupMenu(QPoint,KUrl,mode_t,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)) );
   }
   enableBackRightClick( m_bBackRightClick );
 }
