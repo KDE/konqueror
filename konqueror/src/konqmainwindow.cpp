@@ -2526,7 +2526,7 @@ void KonqMainWindow::slotSplitViewVertical()
 
 void KonqMainWindow::slotAddTab()
 {
-    // this is what about:blank will use anyway
+    // we can hardcode text/html because this is what about:blank will use anyway
     KonqView* newView = m_pViewManager->addTab("text/html",
                                                QString(),
                                                false,
