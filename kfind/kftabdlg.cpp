@@ -335,7 +335,7 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
           it != m_types.end(); ++it )
     {
       KMimeType::Ptr typ = *it;
-      typeBox->addItem(KIconLoader::global()->loadMimeTypeIcon( typ->iconName(), K3Icon::Small ), typ->comment());
+      typeBox->addItem(KIconLoader::global()->loadMimeTypeIcon( typ->iconName(), KIconLoader::Small ), typ->comment());
     }
 
     if ( editRegExp ) {

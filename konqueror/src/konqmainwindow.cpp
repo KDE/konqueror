@@ -5419,7 +5419,7 @@ void KonqMainWindow::setIcon( const QPixmap& pix )
   QString url = m_combo->currentText();
 
   if ( !url.isEmpty() )
-    big = KonqPixmapProvider::self()->pixmapFor( url, K3Icon::SizeMedium );
+    big = KonqPixmapProvider::self()->pixmapFor( url, KIconLoader::SizeMedium );
 
   KWindowSystem::setIcons( winId(), big, pix );
 }
