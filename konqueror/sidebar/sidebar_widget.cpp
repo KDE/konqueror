@@ -529,7 +529,7 @@ void Sidebar_Widget::slotSetURL( )
 void Sidebar_Widget::slotSetIcon( )
 {
 //	kicd.setStrictIconSize(true);
-        QString iconname=KIconDialog::getIcon(K3Icon::Small);
+        QString iconname=KIconDialog::getIcon(KIconLoader::Small);
 	kDebug()<<"New Icon Name:"<<iconname;
 	if (!iconname.isEmpty())
 	{

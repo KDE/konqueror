@@ -246,7 +246,7 @@ void KonqDraggableLabel::mouseMoveEvent( QMouseEvent * ev )
       drag->setMimeData( md );
       QString iconName = KMimeType::iconNameForUrl( lst.first() );
 
-      drag->setPixmap(KIconLoader::global()->loadMimeTypeIcon(iconName, K3Icon::Small));
+      drag->setPixmap(KIconLoader::global()->loadMimeTypeIcon(iconName, KIconLoader::Small));
 
       drag->start();
     }

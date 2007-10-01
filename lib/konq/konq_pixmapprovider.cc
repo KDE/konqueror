@@ -159,7 +159,7 @@ void KonqPixmapProvider::clear()
 QPixmap KonqPixmapProvider::loadIcon( const QString& url, const QString& icon,
 				      int size )
 {
-    if ( size <= K3Icon::SizeSmall )
+    if ( size <= KIconLoader::SizeSmall )
 	return SmallIcon( icon, size );
 
     KUrl u;
@@ -174,7 +174,7 @@ QPixmap KonqPixmapProvider::loadIcon( const QString& url, const QString& icon,
     if ( url.startsWith( "http:/" ) && icon.startsWith("favicons/") ) {
 	QPixmap small = SmallIcon( icon, size );
 	big = KIconLoader::global()->loadIcon( KProtocolInfo::icon("http"),
-					       K3Icon::Panel, size );
+					       KIconLoader::Panel, size );
 
 	int x = big.width()  - small.width();
 	int y = 0;
@@ -206,7 +206,7 @@ QPixmap KonqPixmapProvider::loadIcon( const QString& url, const QString& icon,
     }
 
     else // not a favicon..
-	big = KIconLoader::global()->loadIcon( icon, K3Icon::Panel, size );
+	big = KIconLoader::global()->loadIcon( icon, KIconLoader::Panel, size );
 
     return big;
 }
