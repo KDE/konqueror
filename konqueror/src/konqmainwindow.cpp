@@ -2179,6 +2179,7 @@ void KonqMainWindow::slotPartActivated( KParts::Part *part )
     if ( m_paNewDir )
       m_paNewDir->setEnabled( false );
   }
+
   createGUI( part );
 
   // View-dependent GUI
@@ -2534,8 +2535,20 @@ void KonqMainWindow::slotAddTab()
       return;
 
     openUrl( newView, KUrl("about:blank"), QString() );
+
+    //HACK!! QTabBar likes to steal focus when changing widgets.  This can result
+    //in a flicker since we don't want it to get focus we want the combo to get
+    //or keep focus...
+    QWidget *widget = newView->frame() && newView->frame()->part() ?
+                      newView->frame()->part()->widget() : 0;
+    if (widget)
+        widget->setFocusProxy(m_combo);
+
     m_pViewManager->showTab( newView );
-    focusLocationBar();
+
+    if (widget)
+        widget->setFocusProxy(0);
+
     m_pWorkingTab = 0;
 }
 
