@@ -184,7 +184,7 @@ bool KonqFrameStatusBar::eventFilter(QObject* o, QEvent *e)
       return true;
    }
 
-   return false;
+   return KStatusBar::eventFilter(o, e);
 }
 
 void KonqFrameStatusBar::message( const QString &msg )
