@@ -664,7 +664,6 @@ private: // members
   KToggleAction *m_ptaUseHTML;
 
   KToggleAction *m_paShowMenuBar;
-  KToggleAction *m_paShowStatusBar;
 
   KToggleFullScreenAction *m_ptaFullScreen;
 
