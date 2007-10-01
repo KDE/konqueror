@@ -318,16 +318,16 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
     bool sReading       = true;
     bool sDeleting      = ( d->m_itemFlags & KParts::BrowserExtension::NoDeletion ) == 0;
     bool sMoving        = sDeleting;
-    bool sWriting       = sDeleting && m_lstItems.first()->isWritable();
-    m_sMimeType         = m_lstItems.first()->mimetype();
+    bool sWriting       = sDeleting && m_lstItems.first().isWritable();
+    m_sMimeType         = m_lstItems.first().mimetype();
     QString mimeGroup   = m_sMimeType.left(m_sMimeType.indexOf('/'));
-    mode_t mode         = m_lstItems.first()->mode();
+    mode_t mode         = m_lstItems.first().mode();
     bool isDirectory    = S_ISDIR(mode);
     bool bTrashIncluded = false;
     bool mediaFiles     = false;
-    bool isLocal        = m_lstItems.first()->isLocalFile()
-                       || m_lstItems.first()->url().protocol()=="media"
-                       || m_lstItems.first()->url().protocol()=="system";
+    bool isLocal        = m_lstItems.first().isLocalFile()
+                       || m_lstItems.first().url().protocol()=="media"
+                       || m_lstItems.first().url().protocol()=="system";
     bool isTrashLink     = false;
     m_lstPopupURLs.clear();
     int id = 0;
@@ -346,26 +346,26 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
     // Check whether all URLs are correct
     for ( ; it != kend; ++it )
     {
-        url = (*it)->url();
+        url = (*it).url();
 
         // Build the list of URLs
         m_lstPopupURLs.append( url );
 
         // Determine if common mode among all URLs
-        if ( mode != (*it)->mode() )
+        if ( mode != (*it).mode() )
             mode = 0; // modes are different => reset to 0
 
         // Determine if common mimetype among all URLs
-        if ( m_sMimeType != (*it)->mimetype() )
+        if ( m_sMimeType != (*it).mimetype() )
         {
             m_sMimeType.clear(); // mimetypes are different => null
 
-            if ( mimeGroup != (*it)->mimetype().left((*it)->mimetype().indexOf('/')))
+            if ( mimeGroup != (*it).mimetype().left((*it).mimetype().indexOf('/')))
                 mimeGroup.clear(); // mimetype groups are different as well!
         }
 
-        if ( mimeTypeList.indexOf( (*it)->mimetype() ) == -1 )
-            mimeTypeList << (*it)->mimetype();
+        if ( mimeTypeList.indexOf( (*it).mimetype() ) == -1 )
+            mimeTypeList << (*it).mimetype();
 
         if ( isLocal && !url.isLocalFile() && url.protocol() != "media" && url.protocol() != "system" )
             isLocal = false;
@@ -381,14 +381,14 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
             sReading = KProtocolManager::supportsReading( url );
 
         if ( sWriting )
-            sWriting = KProtocolManager::supportsWriting( url ) && (*it)->isWritable();
+            sWriting = KProtocolManager::supportsWriting( url ) && (*it).isWritable();
 
         if ( sDeleting )
             sDeleting = KProtocolManager::supportsDeleting( url );
 
         if ( sMoving )
             sMoving = KProtocolManager::supportsMoving( url );
-        if ( (*it)->mimetype().startsWith("media/") )
+        if ( (*it).mimetype().startsWith("media/") )
             mediaFiles = true;
     }
     url = m_sViewURL;
@@ -397,7 +397,7 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
     //check if url is current directory
     if ( m_lstItems.count() == 1 )
     {
-        KUrl firstPopupURL( m_lstItems.first()->url() );
+        KUrl firstPopupURL( m_lstItems.first().url() );
         firstPopupURL.cleanPath();
         //kDebug(1203) << "View path is " << url.url();
         //kDebug(1203) << "First popup path is " << firstPopupURL.url();
@@ -613,14 +613,14 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
     //////////////////////////////////////////////////////
 
     PopupServices s;
-    KUrl urlForServiceMenu( m_lstItems.first()->url() );
+    KUrl urlForServiceMenu( m_lstItems.first().url() );
 
     // 1 - Look for builtin and user-defined services
     if ( m_sMimeType == "application/x-desktop" && isSingleLocal ) // .desktop file
     {
         // get builtin services, like mount/unmount
-        s.builtin = KDesktopFileActions::builtinServices( m_lstItems.first()->url() );
-        const QString path = m_lstItems.first()->url().path();
+        s.builtin = KDesktopFileActions::builtinServices( m_lstItems.first().url() );
+        const QString path = m_lstItems.first().url().path();
         KDesktopFile desktopFile( path );
         KConfigGroup cfg = desktopFile.desktopGroup();
         const QString priority = cfg.readEntry("X-KDE-Priority");
@@ -642,7 +642,7 @@ void KonqPopupMenu::setup(KonqPopupFlags kpf)
         // first check the .directory if this is a directory
         if (isDirectory && isSingleLocal)
         {
-            QString dotDirectoryFile = m_lstItems.first()->url().path( KUrl::AddTrailingSlash ).append(".directory");
+            QString dotDirectoryFile = m_lstItems.first().url().path( KUrl::AddTrailingSlash ).append(".directory");
             KDesktopFile desktopFile(  dotDirectoryFile );
             const KConfigGroup cfg = desktopFile.desktopGroup();
 

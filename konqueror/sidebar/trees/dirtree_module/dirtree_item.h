@@ -20,21 +20,21 @@
 #define dirtree_item_h
 
 #include "konq_sidebartreeitem.h"
+#include <kfileitem.h>
 #include <kurl.h>
 #include <QtCore/QStringList>
 #include <konq_operations.h>
 
 class QDropEvent;
-class KFileItem;
 
 class KonqSidebarDirTreeItem : public KonqSidebarTreeItem
 {
 public:
-    KonqSidebarDirTreeItem( KonqSidebarTreeItem *parentItem, KonqSidebarTreeTopLevelItem *topLevelItem, KFileItem *fileItem );
-    KonqSidebarDirTreeItem( KonqSidebarTree *parent, KonqSidebarTreeTopLevelItem *topLevelItem, KFileItem *fileItem );
+    KonqSidebarDirTreeItem( KonqSidebarTreeItem *parentItem, KonqSidebarTreeTopLevelItem *topLevelItem, const KFileItem &fileItem );
+    KonqSidebarDirTreeItem( KonqSidebarTree *parent, KonqSidebarTreeTopLevelItem *topLevelItem, const KFileItem &fileItem );
     ~KonqSidebarDirTreeItem();
 
-    KFileItem *fileItem() const { return m_fileItem; }
+    KFileItem fileItem() const { return m_fileItem; }
 
     virtual void setOpen( bool open );
 
@@ -68,7 +68,7 @@ public:
 
 private:
     void delOperation( KonqOperations::Operation method );
-    KFileItem *m_fileItem;
+    KFileItem m_fileItem;
 };
 
 #endif

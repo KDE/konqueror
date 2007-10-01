@@ -304,7 +304,7 @@ bool KonqOperations::askDeleteConfirmation( const KUrl::List & selectedUrls, int
     return true;
 }
 
-void KonqOperations::doDrop( const KFileItem * destItem, const KUrl & dest, QDropEvent * ev, QWidget * parent )
+void KonqOperations::doDrop( const KFileItem & destItem, const KUrl & dest, QDropEvent * ev, QWidget * parent )
 {
     kDebug(1203) << "doDrop: dest : " << dest.url();
     QMap<QString, QString> metaData;
@@ -350,14 +350,14 @@ void KonqOperations::doDrop( const KFileItem * destItem, const KUrl & dest, QDro
         op->setDropInfo( new DropInfo( modifiers, lst, metaData, ev->pos(), action ) );
 
         // Ok, now we need destItem.
-        if ( destItem )
+        if ( !destItem.isNull() )
         {
             op->asyncDrop( destItem ); // we have it already
         }
         else
         {
             // we need to stat to get it.
-            op->_statUrl( dest, op, SLOT( asyncDrop( const KFileItem * ) ) );
+            op->_statUrl( dest, op, SLOT( asyncDrop( const KFileItem & ) ) );
         }
         // In both cases asyncDrop will delete op when done
 
@@ -379,14 +379,14 @@ void KonqOperations::doDrop( const KFileItem * destItem, const KUrl & dest, QDro
     }
 }
 
-void KonqOperations::asyncDrop( const KFileItem * destItem )
+void KonqOperations::asyncDrop( const KFileItem & destItem )
 {
     assert(m_info); // setDropInfo should have been called before asyncDrop
-    m_destUrl = destItem->url();
+    m_destUrl = destItem.url();
 
     //kDebug(1203) << "KonqOperations::asyncDrop destItem->mode=" << destItem->mode() << " url=" << m_destUrl;
     // Check what the destination is
-    if ( destItem->isDir() )
+    if ( destItem.isDir() )
     {
         doDropFileCopy();
         return;
@@ -400,7 +400,7 @@ void KonqOperations::asyncDrop( const KFileItem * destItem )
         delete this;
         return;
     }
-    if ( destItem->mimetype() == "application/x-desktop")
+    if ( destItem.mimetype() == "application/x-desktop")
     {
         // Local .desktop file. What type ?
         KDesktopFile desktopFile( m_destUrl.path() );
@@ -696,7 +696,7 @@ void KonqOperations::statUrl( const KUrl & url, const QObject *receiver, const c
 
 void KonqOperations::_statUrl( const KUrl & url, const QObject *receiver, const char *member )
 {
-    connect( this, SIGNAL( statFinished( const KFileItem * ) ), receiver, member );
+    connect( this, SIGNAL( statFinished( const KFileItem & ) ), receiver, member );
     KIO::StatJob * job = KIO::stat( url /*, false?*/ );
     job->ui()->setWindow(parentWidget());
     connect( job, SIGNAL( result( KJob * ) ),
@@ -712,9 +712,8 @@ void KonqOperations::slotStatResult( KJob * job )
     else
     {
         KIO::StatJob * statJob = static_cast<KIO::StatJob*>(job);
-        KFileItem * item = new KFileItem( statJob->statResult(), statJob->url() );
+        KFileItem item( statJob->statResult(), statJob->url() );
         emit statFinished( item );
-        delete item;
     }
     // If we're only here for a stat, we're done. But not if we used _statUrl internally
     if ( m_method == STAT )

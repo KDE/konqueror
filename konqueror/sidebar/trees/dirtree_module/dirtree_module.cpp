@@ -67,7 +67,7 @@ KUrl::List KonqSidebarDirTreeModule::selectedUrls()
         kError() << "KonqSidebarDirTreeModule::selectedUrls: no selection!" << endl;
         return lst;
     }
-    lst.append(selection->fileItem()->url());
+    lst.append(selection->fileItem().url());
     return lst;
 }
 
@@ -204,7 +204,7 @@ static void lookupItems(Q3Dict<KonqSidebarTreeItem> &dict, const QString &key, K
 
 // Remove <key, item> from dict, taking into account that there maybe
 // other items with the same key.
-static void remove(Q3PtrDict<KonqSidebarTreeItem> &dict, void *key, KonqSidebarTreeItem *item)
+static void remove(QHash<KFileItem, KonqSidebarTreeItem*> &dict, const KFileItem &key, KonqSidebarTreeItem *item)
 {
     Q3PtrList<KonqSidebarTreeItem> *otherItems = 0;
     while(true) {
@@ -233,7 +233,7 @@ static void remove(Q3PtrDict<KonqSidebarTreeItem> &dict, void *key, KonqSidebarT
 // Looks up key in dict and returns it in item, if there are multiple items
 // with the same key, additional items are returned in itemList which should
 // be deleted by the caller.
-static void lookupItems(Q3PtrDict<KonqSidebarTreeItem> &dict, void *key, KonqSidebarTreeItem *&item, Q3PtrList<KonqSidebarTreeItem> *&itemList)
+static void lookupItems(QHash<KFileItem, KonqSidebarTreeItem*> &dict, const KFileItem &key, KonqSidebarTreeItem *&item, Q3PtrList<KonqSidebarTreeItem> *&itemList)
 {
     itemList = 0;
     item = dict.take(key);
@@ -310,10 +310,10 @@ void KonqSidebarDirTreeModule::openSubFolder( KonqSidebarTreeItem *item )
 
         connect( m_dirLister, SIGNAL( newItems( const KFileItemList & ) ),
                  this, SLOT( slotNewItems( const KFileItemList & ) ) );
-        connect( m_dirLister, SIGNAL( refreshItems( const KFileItemList & ) ),
-                 this, SLOT( slotRefreshItems( const KFileItemList & ) ) );
-        connect( m_dirLister, SIGNAL( deleteItem( KFileItem * ) ),
-                 this, SLOT( slotDeleteItem( KFileItem * ) ) );
+        connect( m_dirLister, SIGNAL( refreshItems( const QList<QPair<KFileItem, KFileItem> > & ) ),
+                 this, SLOT( slotRefreshItems( const QList<QPair<KFileItem, KFileItem> > & ) ) );
+        connect( m_dirLister, SIGNAL( deleteItem( const KFileItem & ) ),
+                 this, SLOT( slotDeleteItem( const KFileItem & ) ) );
         connect( m_dirLister, SIGNAL( completed( const KUrl & ) ),
                  this, SLOT( slotListingStopped( const KUrl & ) ) );
         connect( m_dirLister, SIGNAL( canceled( const KUrl & ) ),
@@ -364,12 +364,12 @@ void KonqSidebarDirTreeModule::listDirectory( KonqSidebarTreeItem *item )
        KonqSidebarDirTreeItem *oldItem = static_cast<KonqSidebarDirTreeItem *> (openItem->firstChild());
        while(oldItem)
        {
-          KFileItem * fileItem = oldItem->fileItem();
-          if (! fileItem->isDir() )
+          const KFileItem fileItem = oldItem->fileItem();
+          if (! fileItem.isDir() )
           {
-              if ( !fileItem->url().isLocalFile() )
+              if ( !fileItem.url().isLocalFile() )
                   continue;
-	      KMimeType::Ptr ptr = fileItem->determineMimeType();
+	      KMimeType::Ptr ptr = fileItem.determineMimeType();
               if ( ptr && (ptr->is("inode/directory") || m_showArchivesAsFolders)
                        && ((!ptr->property("X-KDE-LocalProtocol").toString().isEmpty())) ) {
 		kDebug()<<"Something not really a directory";
@@ -380,8 +380,8 @@ void KonqSidebarDirTreeModule::listDirectory( KonqSidebarTreeItem *item )
           }
 
           KonqSidebarDirTreeItem *dirTreeItem = new KonqSidebarDirTreeItem( parentItem, m_topLevelItem, fileItem );
-          dirTreeItem->setPixmap( 0, fileItem->pixmap( size ) );
-          dirTreeItem->setText( 0, KIO::decodeFileName( fileItem->name() ) );
+          dirTreeItem->setPixmap( 0, fileItem.pixmap( size ) );
+          dirTreeItem->setText( 0, KIO::decodeFileName( fileItem.name() ) );
 
           oldItem = static_cast<KonqSidebarDirTreeItem *> (oldItem->nextSibling());
        }
@@ -403,10 +403,10 @@ void KonqSidebarDirTreeModule::slotNewItems( const KFileItemList& entries )
     kDebug(1201) << this << " KonqSidebarDirTreeModule::slotNewItems " << entries.count();
 
     Q_ASSERT(entries.count());
-    KFileItem * firstItem = entries.first();
+    const KFileItem firstItem = entries.first();
 
     // Find parent item - it's the same for all the items
-    KUrl dir( firstItem->url().url( KUrl::RemoveTrailingSlash ) );
+    KUrl dir( firstItem.url().url( KUrl::RemoveTrailingSlash ) );
     dir.setFileName( "" );
     kDebug(1201) << this << " KonqSidebarDirTreeModule::slotNewItems dir=" << dir.url( KUrl::RemoveTrailingSlash );
 
@@ -435,13 +435,13 @@ void KonqSidebarDirTreeModule::slotNewItems( const KFileItemList& entries )
         const KFileItemList::const_iterator kend = entries.end();
         for (; kit != kend; ++kit )
         {
-            KFileItem * fileItem = *kit;
+            const KFileItem fileItem = *kit;
 
-            if (! fileItem->isDir() )
+            if (! fileItem.isDir() )
             {
-              if ( !fileItem->url().isLocalFile() )
+              if ( !fileItem.url().isLocalFile() )
                   continue;
-	      KMimeType::Ptr ptr = fileItem->determineMimeType();
+	      KMimeType::Ptr ptr = fileItem.determineMimeType();
 
 	      if ( ptr && (ptr->is("inode/directory") || m_showArchivesAsFolders)
                        && ((!ptr->property("X-KDE-LocalProtocol").toString().isEmpty())) ) {
@@ -453,25 +453,23 @@ void KonqSidebarDirTreeModule::slotNewItems( const KFileItemList& entries )
             }
 
             KonqSidebarDirTreeItem *dirTreeItem = new KonqSidebarDirTreeItem( parentItem, m_topLevelItem, fileItem );
-            dirTreeItem->setPixmap( 0, fileItem->pixmap( size ) );
-            dirTreeItem->setText( 0, KIO::decodeFileName( fileItem->name() ) );
+            dirTreeItem->setPixmap( 0, fileItem.pixmap( size ) );
+            dirTreeItem->setText( 0, KIO::decodeFileName( fileItem.name() ) );
         }
 
     } while ((parentItem = parentItemList ? parentItemList->take(0) : 0));
     delete parentItemList;
 }
 
-void KonqSidebarDirTreeModule::slotRefreshItems( const KFileItemList &entries )
+void KonqSidebarDirTreeModule::slotRefreshItems( const QList<QPair<KFileItem, KFileItem> >&entries )
 {
     int size = KIconLoader::global()->currentSize( K3Icon::Small );
 
-    kDebug(1201) << "KonqSidebarDirTreeModule::slotRefreshItems " << entries.count() << " entries. First: " << entries.first()->url().url();
+    kDebug(1201) << "KonqSidebarDirTreeModule::slotRefreshItems " << entries.count() << " entries. First: " << entries.first().second.url().url();
 
-    KFileItemList::const_iterator kit = entries.begin();
-    const KFileItemList::const_iterator kend = entries.end();
-    for (; kit != kend; ++kit )
+    for ( int i = 0; i < entries.count(); ++i )
     {
-        KFileItem *fileItem = *kit;
+        const KFileItem fileItem = entries[ i ].second;
 
         Q3PtrList<KonqSidebarTreeItem> *itemList;
         KonqSidebarTreeItem * item;
@@ -479,7 +477,7 @@ void KonqSidebarDirTreeModule::slotRefreshItems( const KFileItemList &entries )
 
         if (!item)
         {
-            kWarning(1201) << "KonqSidebarDirTreeModule::slotRefreshItems can't find old entry for " << (*kit)->url().url( KUrl::RemoveTrailingSlash ) ;
+            kWarning(1201) << "KonqSidebarDirTreeModule::slotRefreshItems can't find old entry for " << fileItem.url().url( KUrl::RemoveTrailingSlash ) ;
             continue;
         }
 
@@ -487,13 +485,13 @@ void KonqSidebarDirTreeModule::slotRefreshItems( const KFileItemList &entries )
         {
             if ( item->isTopLevelItem() ) // we only have dirs and one toplevel item in the dict
             {
-                kWarning(1201) << "KonqSidebarDirTreeModule::slotRefreshItems entry for " << (*kit)->url().url( KUrl::RemoveTrailingSlash ) << " matches against toplevel." ;
+                kWarning(1201) << "KonqSidebarDirTreeModule::slotRefreshItems entry for " << fileItem.url().url( KUrl::RemoveTrailingSlash ) << " matches against toplevel." ;
                 break;
             }
 
             KonqSidebarDirTreeItem * dirTreeItem = static_cast<KonqSidebarDirTreeItem *>(item);
             // Item renamed ?
-            if ( dirTreeItem->id != fileItem->url().url( KUrl::RemoveTrailingSlash ) )
+            if ( dirTreeItem->id != fileItem.url().url( KUrl::RemoveTrailingSlash ) )
             {
                 // We need to update the URL in m_dictSubDirs, and to get rid of the child items, so remove and add.
                 // Then remove + delete
@@ -501,8 +499,8 @@ void KonqSidebarDirTreeModule::slotRefreshItems( const KFileItemList &entries )
                 remove(m_dictSubDirs, dirTreeItem->id, dirTreeItem);
 
                 dirTreeItem->reset(); // Reset id
-                dirTreeItem->setPixmap( 0, fileItem->pixmap( size ) );
-                dirTreeItem->setText( 0, KIO::decodeFileName( fileItem->name() ) );
+                dirTreeItem->setPixmap( 0, fileItem.pixmap( size ) );
+                dirTreeItem->setText( 0, KIO::decodeFileName( fileItem.name() ) );
 
                 // Make sure the item doesn't get inserted twice!
                 // dirTreeItem->id points to the new name
@@ -511,8 +509,8 @@ void KonqSidebarDirTreeModule::slotRefreshItems( const KFileItemList &entries )
             }
             else
             {
-                dirTreeItem->setPixmap( 0, fileItem->pixmap( size ) );
-                dirTreeItem->setText( 0, KIO::decodeFileName( fileItem->name() ) );
+                dirTreeItem->setPixmap( 0, fileItem.pixmap( size ) );
+                dirTreeItem->setText( 0, KIO::decodeFileName( fileItem.name() ) );
             }
 
         } while ((item = itemList ? itemList->take(0) : 0));
@@ -520,9 +518,9 @@ void KonqSidebarDirTreeModule::slotRefreshItems( const KFileItemList &entries )
     }
 }
 
-void KonqSidebarDirTreeModule::slotDeleteItem( KFileItem *fileItem )
+void KonqSidebarDirTreeModule::slotDeleteItem( const KFileItem &fileItem )
 {
-    kDebug(1201) << "KonqSidebarDirTreeModule::slotDeleteItem( " << fileItem->url().url( KUrl::RemoveTrailingSlash ) << " )";
+    kDebug(1201) << "KonqSidebarDirTreeModule::slotDeleteItem( " << fileItem.url().url( KUrl::RemoveTrailingSlash ) << " )";
 
     // All items are in m_ptrdictSubDirs, so look it up fast
     Q3PtrList<KonqSidebarTreeItem> *itemList;

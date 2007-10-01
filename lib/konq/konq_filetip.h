@@ -59,7 +59,7 @@ class LIBKONQ_EXPORT KonqFileTip : public Q3Frame
       @param rect the rectangle around which the tip will be shown
       @param pixmap the pixmap to be shown. If 0, no pixmap is shown
       */
-    void setItem( KFileItem *item, const QRect &rect = QRect(),
+    void setItem( const KFileItem &item, const QRect &rect = QRect(),
                   const QPixmap *pixmap = 0 );
 
     virtual bool eventFilter( QObject *, QEvent *e );
@@ -90,7 +90,7 @@ class LIBKONQ_EXPORT KonqFileTip : public Q3Frame
     int        m_corner;
     int        m_num;
     Q3ScrollView* m_view;
-    KFileItem* m_item;
+    KFileItem  m_item;
     KIO::PreviewJob* m_previewJob;
     QRect      m_rect;
     QTimer*    m_timer;

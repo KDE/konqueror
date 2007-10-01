@@ -50,8 +50,8 @@ public:
 
 private Q_SLOTS:
     void slotNewItems( const KFileItemList & );
-    void slotRefreshItems( const KFileItemList & );
-    void slotDeleteItem( KFileItem *item );
+    void slotRefreshItems( const QList<QPair<KFileItem, KFileItem> >& );
+    void slotDeleteItem( const KFileItem &item );
     void slotRedirection( const KUrl & oldUrl, const KUrl & newUrl );
     void slotListingStopped( const KUrl & url );
 
@@ -66,7 +66,7 @@ private:
     Q3Dict<KonqSidebarTreeItem> m_dictSubDirs;
 
     // KFileItem -> item
-    Q3PtrDict<KonqSidebarTreeItem> m_ptrdictSubDirs;
+    QHash<KFileItem, KonqSidebarTreeItem*> m_ptrdictSubDirs;
 
     KDirLister * m_dirLister;
 
