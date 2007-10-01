@@ -50,7 +50,6 @@ KonqFileTip::KonqFileTip( Q3ScrollView* parent )
     m_corner( 0 ),
     m_num( 0 ),
     m_view( parent ),
-    m_item( 0 ),
     m_previewJob( 0 )
 {
     m_iconLabel = new QLabel(this);
@@ -97,7 +96,7 @@ void KonqFileTip::setOptions( bool on, bool preview, int num )
     m_num = num;
 }
 
-void KonqFileTip::setItem( KFileItem *item, const QRect &rect, const QPixmap *pixmap )
+void KonqFileTip::setItem( const KFileItem &item, const QRect &rect, const QPixmap *pixmap )
 {
     hideTip();
 
@@ -111,7 +110,7 @@ void KonqFileTip::setItem( KFileItem *item, const QRect &rect, const QPixmap *pi
     m_rect = rect;
     m_item = item;
 
-    if ( m_item ) {
+    if ( !m_item.isNull() ) {
         if (m_preview) {
             if ( pixmap )
               m_iconLabel->setPixmap( *pixmap );
@@ -173,7 +172,7 @@ void KonqFileTip::reposition()
 void KonqFileTip::gotPreview( const KFileItem& item, const QPixmap& pixmap )
 {
     m_previewJob = 0;
-    if (item.url() != m_item->url()) return;
+    if (item.url() != m_item.url()) return;
 
     m_iconLabel -> setPixmap(pixmap);
 }
@@ -236,7 +235,7 @@ void KonqFileTip::setFilter( bool enable )
 
 void KonqFileTip::showTip()
 {
-    QString text = m_item->getToolTipText(m_num);
+    QString text = m_item.getToolTipText(m_num);
 
     if ( text.isEmpty() ) return;
 
@@ -266,7 +265,7 @@ void KonqFileTip::startDelayed()
 {
     if ( m_preview ) {
         QList<KFileItem> oneItem;
-        oneItem.append( * m_item );
+        oneItem.append( m_item );
 
         m_previewJob = KIO::filePreview( oneItem, 256, 256, 64, 70, true, true, 0);
         connect( m_previewJob, SIGNAL( gotPreview(const KFileItem &, const QPixmap &) ),

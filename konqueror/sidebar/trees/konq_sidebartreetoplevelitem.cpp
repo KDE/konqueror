@@ -82,7 +82,7 @@ void KonqSidebarTreeTopLevelItem::drop( QDropEvent * ev )
     else // Top level item, not group
     {
         if ( !externalURL().isEmpty() )
-            KonqOperations::doDrop( 0L, externalURL(), ev, tree() );
+            KonqOperations::doDrop( KFileItem(), externalURL(), ev, tree() );
     }
 }
 

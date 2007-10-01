@@ -63,14 +63,14 @@ Q_SIGNALS:
     void finished(); // finished searching
     void canceled(); // the user canceled the search
     void findClosed(); // close us
-    void deleteItem( KFileItem *item);
+    void deleteItem( const KFileItem &item);
 
 protected Q_SLOTS:
     void slotStarted();
     void slotDestroyMe();
-    void addFile(const KFileItem *item, const QString& matchingLine);
+    void addFile(const KFileItem &item, const QString& matchingLine);
     /* An item has been removed, so update konqueror's view */
-    void removeFile(KFileItem *item);
+    void removeFile(const KFileItem &item);
     void slotResult(int errorCode);
     void newFiles(const KFileItemList&);
 #if 0
@@ -79,8 +79,8 @@ protected Q_SLOTS:
   virtual void slotCanceled(){}
   virtual void slotCompleted(){}
   virtual void slotNewItems( const KFileItemList& ){}
-  virtual void slotDeleteItem( KFileItem * ){}
-  virtual void slotRefreshItems( const KFileItemList& ){}
+  virtual void slotDeleteItem( const KFileItem& ){}
+  virtual void slotRefreshItems( const QList<QPair<KFileItem, KFileItem> >& ){}
   virtual void slotClear(){}
   virtual void slotRedirection( const KUrl & ){}
 #endif

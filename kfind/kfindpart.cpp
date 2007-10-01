@@ -45,11 +45,11 @@ KFindPart::KFindPart( QWidget * parentWidget, QObject *parent, const QStringList
     m_kfindWidget->setMaximumHeight(m_kfindWidget->minimumSizeHint().height());
 
 #if 0 // TODO port?
-    const KFileItem *item = ((KonqDirPart*)parent)->currentItem();
-    kDebug() << "Kfind: currentItem:  " << ( item ? item->url().path().toLocal8Bit() : QString("null") );
+    const KFileItem item = ((KonqDirPart*)parent)->currentItem();
+    kDebug() << "Kfind: currentItem:  " << ( !item.isNull() ? item.url().path().toLocal8Bit() : QString("null") );
     QDir d;
-    if( item && d.exists( item->url().path() ))
-        m_kfindWidget->setURL( item->url() );
+    if( !item.isNull() && d.exists( item.url().path() ))
+        m_kfindWidget->setURL( item.url() );
 #endif
 
     setWidget( m_kfindWidget );
@@ -58,12 +58,12 @@ KFindPart::KFindPart( QWidget * parentWidget, QObject *parent, const QStringList
              this, SLOT(slotStarted()) );
     connect( m_kfindWidget, SIGNAL(destroyMe()),
              this, SLOT(slotDestroyMe()) );
-    connect(m_kfindWidget->dirlister,SIGNAL(deleteItem(KFileItem*)), this, SLOT(removeFile(KFileItem*)));
+    connect(m_kfindWidget->dirlister,SIGNAL(deleteItem(const KFileItem&)), this, SLOT(removeFile(const KFileItem&)));
     connect(m_kfindWidget->dirlister,SIGNAL(newItems(const KFileItemList&)), this, SLOT(newFiles(const KFileItemList&)));
     //setXMLFile( "kfind.rc" );
     query = new KQuery(this);
-    connect(query, SIGNAL(addFile(const KFileItem *, const QString&)),
-            SLOT(addFile(const KFileItem *, const QString&)));
+    connect(query, SIGNAL(addFile(const KFileItem &, const QString&)),
+            SLOT(addFile(const KFileItem &, const QString&)));
     connect(query, SIGNAL(result(int)),
             SLOT(slotResult(int)));
 
@@ -73,7 +73,6 @@ KFindPart::KFindPart( QWidget * parentWidget, QObject *parent, const QStringList
 
 KFindPart::~KFindPart()
 {
-    qDeleteAll(m_lstFileItems);
     m_lstFileItems.clear();
 }
 
@@ -97,15 +96,12 @@ void KFindPart::slotStarted()
     emit clear();
 }
 
-void KFindPart::addFile(const KFileItem *item, const QString& /*matchingLine*/)
+void KFindPart::addFile(const KFileItem &item, const QString& /*matchingLine*/)
 {
-    // item is deleted by caller
-    // we need to clone it
-    KFileItem *clonedItem = new KFileItem(*item);
-    m_lstFileItems.append( clonedItem );
+    m_lstFileItems.append( item );
 
     KFileItemList lstNewItems;
-    lstNewItems.append(clonedItem);
+    lstNewItems.append(item);
     emit newItems(lstNewItems);
 
   /*
@@ -121,9 +117,8 @@ void KFindPart::addFile(const KFileItem *item, const QString& /*matchingLine*/)
 }
 
 /* An item has been removed, so update konqueror's view */
-void KFindPart::removeFile(KFileItem *item)
+void KFindPart::removeFile(const KFileItem &item)
 {
-  KFileItem *iter;
   KFileItemList listiter;
 
   emit started();
@@ -131,8 +126,8 @@ void KFindPart::removeFile(KFileItem *item)
 
   m_lstFileItems.removeAll( item );  //not working ?
 
-  foreach(iter, m_lstFileItems) {
-    if(iter->url()!=item->url())
+  foreach(const KFileItem iter, m_lstFileItems) {
+    if(iter.url() != item.url())
       listiter.append(iter);
   }
 
@@ -182,9 +177,9 @@ void KFindPart::saveState( QDataStream& stream )
   m_kfindWidget->saveState( &stream );
   //Now we'll save the search result
   stream << m_lstFileItems.count();
-  foreach(KFileItem *fileitem, m_lstFileItems)
+  foreach(const KFileItem fileitem, m_lstFileItems)
   {
-        stream << *fileitem;
+        stream << fileitem;
   }
 }
 
@@ -200,8 +195,8 @@ void KFindPart::restoreState( QDataStream& stream )
   slotStarted();
   for(int i=0;i<nbitems;i++)
   {
-    KFileItem* item = new KFileItem( KFileItem::Unknown, KFileItem::Unknown, KUrl() );
-    stream >> *item;
+    KFileItem item( KFileItem::Unknown, KFileItem::Unknown, KUrl() );
+    stream >> item;
     m_lstFileItems.append(item);
   }
   if (nbitems)

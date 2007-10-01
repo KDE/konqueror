@@ -59,7 +59,7 @@ KQuery::~KQuery()
   while (!m_regexps.isEmpty())
       delete m_regexps.takeFirst();
   while (!m_fileItems.isEmpty())
-      delete m_fileItems.dequeue();
+      m_fileItems.dequeue();
 }
 
 void KQuery::kill()
@@ -69,13 +69,13 @@ void KQuery::kill()
   if (processLocate->state() == QProcess::Running)
      processLocate->kill();
   while (!m_fileItems.isEmpty())
-      delete m_fileItems.dequeue();
+      m_fileItems.dequeue();
 }
 
 void KQuery::start()
 {
     while (!m_fileItems.isEmpty())
-      delete m_fileItems.dequeue();
+      m_fileItems.dequeue();
   if(m_useLocate) //use "locate" instead of the internal search method
   {
     m_url.cleanPath();
@@ -115,7 +115,7 @@ void KQuery::slotCanceled( KJob * _job )
   job = 0;
 
   while (!m_fileItems.isEmpty())
-      delete m_fileItems.dequeue();
+      m_fileItems.dequeue();
 
   m_result=KIO::ERR_USER_CANCELED;
   checkEntries();
@@ -123,12 +123,10 @@ void KQuery::slotCanceled( KJob * _job )
 
 void KQuery::slotListEntries(KIO::Job*, const KIO::UDSEntryList& list)
 {
-  KFileItem * file = 0;
   const KIO::UDSEntryList::ConstIterator end = list.end();
   for (KIO::UDSEntryList::ConstIterator it = list.begin(); it != end; ++it)
   {
-    file = new KFileItem(*it, m_url, true, true);
-    m_fileItems.enqueue(file);
+    m_fileItems.enqueue(KFileItem(*it, m_url, true, true));
   }
   checkEntries();
 }
@@ -140,12 +138,9 @@ void KQuery::checkEntries()
   m_insideCheckEntries=true;
   metaKeyRx=new QRegExp(m_metainfokey);
   metaKeyRx->setPatternSyntax( QRegExp::Wildcard );
-  KFileItem * file = 0;
   while ( !m_fileItems.isEmpty() )
   {
-      file=m_fileItems.dequeue();
-      processQuery( file );
-      delete file;
+      processQuery( m_fileItems.dequeue() );
   }
 
   delete metaKeyRx;
@@ -157,7 +152,6 @@ void KQuery::checkEntries()
 /* List of files found using slocate */
 void KQuery::slotListEntries( QStringList  list )
 {
-  KFileItem * file = 0;
   metaKeyRx=new QRegExp(m_metainfokey);
   metaKeyRx->setPatternSyntax( QRegExp::Wildcard );
 
@@ -166,19 +160,17 @@ void KQuery::slotListEntries( QStringList  list )
 
   for (; it != end; ++it)
   {
-    file = new KFileItem( KFileItem::Unknown, KFileItem::Unknown, KUrl(*it));
-    processQuery(file);
-    delete file;
+    processQuery( KFileItem( KFileItem::Unknown, KFileItem::Unknown, KUrl(*it)) );
   }
 
   delete metaKeyRx;
 }
 
 /* Check if file meets the find's requirements*/
-void KQuery::processQuery( KFileItem* file)
+void KQuery::processQuery( const KFileItem &file)
 {
 
-    if ( file->name() == "." || file->name() == ".." )
+    if ( file.name() == "." || file.name() == ".." )
       return;
 
     bool matched=false;
@@ -187,7 +179,7 @@ void KQuery::processQuery( KFileItem* file)
     while ( nextItem.hasNext() )
     {
         QRegExp *reg = nextItem.next();
-        matched = matched || ( reg == 0L ) || ( reg->exactMatch( file->url().fileName( KUrl::IgnoreTrailingSlash ) ) ) ;
+        matched = matched || ( reg == 0L ) || ( reg->exactMatch( file.url().fileName( KUrl::IgnoreTrailingSlash ) ) ) ;
     }
 
     if (!matched)
@@ -197,17 +189,17 @@ void KQuery::processQuery( KFileItem* file)
     switch( m_sizemode )
 	{
 		case 1: // "at least"
-				if ( file->size() < m_sizeboundary1 ) return;
+				if ( file.size() < m_sizeboundary1 ) return;
 				break;
 		case 2: // "at most"
-				if ( file->size() > m_sizeboundary1 ) return;
+				if ( file.size() > m_sizeboundary1 ) return;
 				break;
 		case 3: // "equal"
-				if ( file->size() != m_sizeboundary1 ) return;
+				if ( file.size() != m_sizeboundary1 ) return;
 				break;
 		case 4: // "between"
-				if ( (file->size() < m_sizeboundary1) ||
-		 				(file->size() > m_sizeboundary2) ) return;
+				if ( (file.size() < m_sizeboundary1) ||
+		 				(file.size() > m_sizeboundary2) ) return;
 				break;
 		case 0: // "none" -> Fall to default
         default:
@@ -216,15 +208,15 @@ void KQuery::processQuery( KFileItem* file)
 
     // make sure it's in the correct date range
     // what about 0 times?
-    if ( m_timeFrom && m_timeFrom > file->time(KFileItem::ModificationTime).toTime_t() )
+    if ( m_timeFrom && m_timeFrom > file.time(KFileItem::ModificationTime).toTime_t() )
       return;
-    if ( m_timeTo && m_timeTo < file->time(KFileItem::ModificationTime).toTime_t() )
+    if ( m_timeTo && m_timeTo < file.time(KFileItem::ModificationTime).toTime_t() )
       return;
 
     // username / group match
-    if ( (!m_username.isEmpty()) && (m_username != file->user()) )
+    if ( (!m_username.isEmpty()) && (m_username != file.user()) )
        return;
-    if ( (!m_groupname.isEmpty()) && (m_groupname != file->group()) )
+    if ( (!m_groupname.isEmpty()) && (m_groupname != file.group()) )
        return;
 
     // file type
@@ -233,32 +225,32 @@ void KQuery::processQuery( KFileItem* file)
       case 0:
         break;
       case 1: // plain file
-        if ( !S_ISREG( file->mode() ) )
+        if ( !S_ISREG( file.mode() ) )
           return;
         break;
       case 2:
-        if ( !file->isDir() )
+        if ( !file.isDir() )
           return;
         break;
       case 3:
-        if ( !file->isLink() )
+        if ( !file.isLink() )
           return;
         break;
       case 4:
-        if ( !S_ISCHR ( file->mode() ) && !S_ISBLK ( file->mode() ) &&
-              !S_ISFIFO( file->mode() ) && !S_ISSOCK( file->mode() ) )
+        if ( !S_ISCHR ( file.mode() ) && !S_ISBLK ( file.mode() ) &&
+              !S_ISFIFO( file.mode() ) && !S_ISSOCK( file.mode() ) )
               return;
         break;
       case 5: // binary
-        if ( (file->permissions() & 0111) != 0111 || file->isDir() )
+        if ( (file.permissions() & 0111) != 0111 || file.isDir() )
           return;
         break;
       case 6: // suid
-        if ( (file->permissions() & 04000) != 04000 ) // fixme
+        if ( (file.permissions() & 04000) != 04000 ) // fixme
           return;
         break;
       default:
-        if (!m_mimetype.isEmpty() && !m_mimetype.contains(file->mimetype()))
+        if (!m_mimetype.isEmpty() && !m_mimetype.contains(file.mimetype()))
           return;
     }
 
@@ -266,7 +258,7 @@ void KQuery::processQuery( KFileItem* file)
     if ((!m_metainfo.isEmpty())  && (!m_metainfokey.isEmpty()))
     {
        bool foundmeta=false;
-       QString filename = file->url().path();
+       QString filename = file.url().path();
 
        if(filename.startsWith("/dev/"))
           return;
@@ -296,8 +288,8 @@ void KQuery::processQuery( KFileItem* file)
     if (!m_context.isEmpty())
     {
 
-       if( !m_search_binary && ignore_mimetypes.indexOf(file->mimetype()) != -1 ) {
-         kDebug() << "ignoring, mime type is in exclusion list: " << file->url();
+       if( !m_search_binary && ignore_mimetypes.indexOf(file.mimetype()) != -1 ) {
+         kDebug() << "ignoring, mime type is in exclusion list: " << file.url();
          return;
        }
 
@@ -314,23 +306,23 @@ void KQuery::processQuery( KFileItem* file)
        QByteArray zippedXmlFileContent;
 
        // KWord's and OpenOffice.org's files are zipped...
-       if( ooo_mimetypes.indexOf(file->mimetype()) != -1 ||
-           koffice_mimetypes.indexOf(file->mimetype()) != -1 )
+       if( ooo_mimetypes.indexOf(file.mimetype()) != -1 ||
+           koffice_mimetypes.indexOf(file.mimetype()) != -1 )
        {
-         KZip zipfile(file->url().path());
+         KZip zipfile(file.url().path());
          KZipFileEntry *zipfileEntry;
 
          if(zipfile.open(QIODevice::ReadOnly))
          {
            const KArchiveDirectory *zipfileContent = zipfile.directory();
 
-           if( koffice_mimetypes.indexOf(file->mimetype()) != -1 )
+           if( koffice_mimetypes.indexOf(file.mimetype()) != -1 )
              zipfileEntry = (KZipFileEntry*)zipfileContent->entry("maindoc.xml");
            else
              zipfileEntry = (KZipFileEntry*)zipfileContent->entry("content.xml"); //for OpenOffice.org
 
            if(!zipfileEntry) {
-             kWarning() << "Expected XML file not found in ZIP archive " << file->url() ;
+             kWarning() << "Expected XML file not found in ZIP archive " << file.url() ;
              return;
            }
 
@@ -341,19 +333,19 @@ void KQuery::processQuery( KFileItem* file)
            stream->setCodec("UTF-8");
            isZippedOfficeDocument = true;
          } else {
-           kWarning() << "Cannot open supposed ZIP file " << file->url() ;
+           kWarning() << "Cannot open supposed ZIP file " << file.url() ;
          }
-       } else if( !m_search_binary && !file->mimetype().startsWith("text/") &&
-           file->url().isLocalFile() ) {
-         if ( KMimeType::isBinaryData(file->url().path()) ) {
-           kDebug() << "ignoring, not a text file: " << file->url();
+       } else if( !m_search_binary && !file.mimetype().startsWith("text/") &&
+           file.url().isLocalFile() ) {
+         if ( KMimeType::isBinaryData(file.url().path()) ) {
+           kDebug() << "ignoring, not a text file: " << file.url();
            return;
          }
        }
 
        if(!isZippedOfficeDocument) //any other file or non-compressed KWord
        {
-         filename = file->url().path();
+         filename = file.url().path();
          if(filename.startsWith("/dev/"))
             return;
          qf.setFileName(filename);

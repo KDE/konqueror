@@ -78,7 +78,7 @@ public:
      *
      * If destItem is 0L, doDrop will stat the URL to determine it.
      */
-    static void doDrop( const KFileItem * destItem, const KUrl & destUrl, QDropEvent * ev, QWidget * parent );
+    static void doDrop( const KFileItem & destItem, const KUrl & destUrl, QDropEvent * ev, QWidget * parent );
 
     /**
      * Paste the clipboard contents
@@ -111,7 +111,7 @@ public:
 
     /**
      * Get info about a given URL, and when that's done (it's asynchronous!),
-     * call a given slot with the KFileItem * as argument.
+     * call a given slot with the KFileItem& as argument.
      * The KFileItem will be deleted by statUrl after calling the slot. Make a copy
      * if you need one !
      */
@@ -147,7 +147,7 @@ public:
     static bool askDeleteConfirmation( const KUrl::List & selectedUrls, int method, ConfirmationType confirmation, QWidget* widget );
 
 Q_SIGNALS:
-    void statFinished( const KFileItem * item );
+    void statFinished( const KFileItem & item );
     void aboutToCreate(const QPoint &pos, const QList<KIO::CopyInfo> &files);
 
 private:
@@ -186,7 +186,7 @@ protected Q_SLOTS:
     void slotAboutToCreate(KIO::Job *job, const QList<KIO::CopyInfo> &files);
     void slotResult( KJob * job );
     void slotStatResult( KJob * job );
-    void asyncDrop( const KFileItem * item );
+    void asyncDrop( const KFileItem & item );
     void doDropFileCopy();
 
 private:

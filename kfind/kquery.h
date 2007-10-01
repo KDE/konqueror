@@ -44,7 +44,7 @@ class KQuery : public QObject
 
  private:
   /* Check if file meets the find's requirements*/
-  inline void processQuery(KFileItem*);
+  inline void processQuery(const KFileItem &);
 
  public Q_SLOTS:
   /* List of files found using slocate */
@@ -59,7 +59,7 @@ class KQuery : public QObject
   void slotendProcessLocate(int, QProcess::ExitStatus);
 
  Q_SIGNALS:
-  void addFile(const KFileItem *filename, const QString& matchingLine);
+  void addFile(const KFileItem &filename, const QString& matchingLine);
   void result(int);
 
  private:
@@ -91,7 +91,7 @@ class KQuery : public QObject
 //  QValueList<bool> m_regexpsContainsGlobs;  // what should this be good for ? Alex
   KIO::ListJob *job;
   bool m_insideCheckEntries;
-  QQueue<KFileItem *> m_fileItems;
+  QQueue<KFileItem> m_fileItems;
   QRegExp* metaKeyRx;
   int m_result;
   QStringList ignore_mimetypes;

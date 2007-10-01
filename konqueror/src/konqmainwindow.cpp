@@ -2622,7 +2622,7 @@ void KonqMainWindow::slotPopupNewWindow()
     const KFileItemList::const_iterator end = popupItems.end();
     for ( ; it != end; ++it )
     {
-        KonqMisc::createNewWindow( (*it)->url(), popupUrlArgs, popupUrlBrowserArgs );
+        KonqMisc::createNewWindow( (*it).url(), popupUrlArgs, popupUrlBrowserArgs );
     }
 }
 
@@ -2630,7 +2630,7 @@ void KonqMainWindow::slotPopupThisWindow()
 {
     kDebug(1202) << "KonqMainWindow::slotPopupThisWindow()";
 
-    openUrl( 0, popupItems.first()->url() );
+    openUrl( 0, popupItems.first().url() );
 }
 
 void KonqMainWindow::slotPopupNewTab()
@@ -2662,7 +2662,7 @@ void KonqMainWindow::popupNewTab(bool infront, bool openAfterCurrentPage)
     {
       req.newTabInFront = true;
     }
-    openUrl( 0, popupItems[i]->url(), QString(), req );
+    openUrl( 0, popupItems[i].url(), QString(), req );
   }
 }
 
@@ -4710,7 +4710,7 @@ void KonqMainWindow::slotPopupMenu( KXMLGUIClient *client, const QPoint &global,
 {
   KFileItem item( url, mimeType, mode );
   KFileItemList items;
-  items.append( &item );
+  items.append( item );
   slotPopupMenuHelper( client, global, items, KParts::OpenUrlArguments(), KParts::BrowserArguments(), KParts::BrowserExtension::DefaultPopupItems, false ); //BE CAREFUL WITH sender() !
 }
 
@@ -4718,7 +4718,7 @@ void KonqMainWindow::slotPopupMenu( KXMLGUIClient *client, const QPoint &global,
 {
     KFileItem item( url, args.mimeType(), mode );
     KFileItemList items;
-    items.append( &item );
+    items.append( item );
     slotPopupMenuHelper( client, global, items, args, browserArgs, f, false ); //BE CAREFUL WITH sender() !
 }
 
@@ -4786,10 +4786,10 @@ void KonqMainWindow::slotPopupMenuHelper( KXMLGUIClient *client, const QPoint &_
   bool sReading = false;
   if ( _items.count() > 0 )
   {
-    m_popupUrl = _items.first()->url();
+    m_popupUrl = _items.first().url();
     sReading = KProtocolManager::supportsReading( m_popupUrl );
     if (sReading)
-      m_popupServiceType = _items.first()->mimetype();
+      m_popupServiceType = _items.first().mimetype();
   }
   else
   {
@@ -4825,7 +4825,7 @@ void KonqMainWindow::slotPopupMenuHelper( KXMLGUIClient *client, const QPoint &_
 
   if ( _items.count() == 1 )
   {
-      const KUrl firstURL = _items.first()->url();
+      const KUrl firstURL = _items.first().url();
       if ( !viewURL.isEmpty() )
       {
 	  //firstURL.cleanPath();
@@ -4971,7 +4971,7 @@ void KonqMainWindow::slotPopupMenuHelper( KXMLGUIClient *client, const QPoint &_
 
 void KonqMainWindow::slotItemsRemoved(const KFileItemList &items)
 {
-    QListIterator<KFileItem *> it(items);
+    QListIterator<KFileItem> it(items);
     while (it.hasNext()) {
         if (popupItems.contains(it.next())) {
             emit popupItemsDisturbed();
