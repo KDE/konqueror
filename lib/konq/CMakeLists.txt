@@ -4,15 +4,13 @@ add_subdirectory( pics )
 add_subdirectory( favicons )
 add_subdirectory( tests )
 
-include_directories( ${ZLIB_INCLUDE_DIR}  )
-
-add_definitions (-DQT3_SUPPORT)
+#include_directories( ${ZLIB_INCLUDE_DIR}  )
 
 ########### next target ###############
 
 # Please use .cpp for new files
 set(konq_LIB_SRCS
-   konq_popupmenu.cc        # OK to remain in libkonq, needed by konqpopupmenu plugins.
+   konq_popupmenu.cc        # OK to remain in libkonq, was needed by kicker applets like the trash applet
    knewmenu.cpp             # used by dolphin, KonqPopupMenu, and konqueror (File menu)
    konq_operations.cc
    konq_events.cc
@@ -24,17 +22,15 @@ set(konq_LIB_SRCS
    konq_faviconmgr.cc
    konq_filetip.cc
    konqbookmarkmanager.cpp
-   konqmimedata.cpp 
+   konqmimedata.cpp
 )
 
 qt4_add_dbus_adaptor( konq_LIB_SRCS org.kde.libkonq.KonqHistoryManager.xml konq_historymgr.h KonqHistoryManager )
 qt4_add_dbus_adaptor( konq_LIB_SRCS org.kde.libkonq.UndoManager.xml konq_undo.h KonqUndoManager) 
 
-
-
 kde4_add_library(konq SHARED ${konq_LIB_SRCS})
 
-target_link_libraries(konq ${KDE4_KDE3SUPPORT_LIBS} ${QT_QTXML_LIBRARY} ${KDE4_KDESU_LIBS})
+target_link_libraries(konq ${QT_QTXML_LIBRARY} ${KDE4_KPARTS_LIBS})
 
 set_target_properties(konq PROPERTIES VERSION ${KDE_NON_GENERIC_LIB_VERSION} SOVERSION ${KDE_NON_GENERIC_LIB_SOVERSION} )
 install(TARGETS konq  DESTINATION ${LIB_INSTALL_DIR} )
