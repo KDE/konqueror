@@ -22,24 +22,23 @@
 #include <QBitmap>
 #include <QPainter>
 
-#include <kapplication.h>
 #include <kiconloader.h>
 #include <kmimetype.h>
 #include <kshell.h>
 #include <kprotocolinfo.h>
 
-#include <k3staticdeleter.h>
 #include <kconfiggroup.h>
 
-KonqPixmapProvider * KonqPixmapProvider::s_self = 0;
-static K3StaticDeleter<KonqPixmapProvider> s_konqPixmapProviderSd;
+class KonqPixmapProviderSingleton
+{
+public:
+    KonqPixmapProvider self;
+};
+K_GLOBAL_STATIC( KonqPixmapProviderSingleton, globalPixmapProvider )
 
 KonqPixmapProvider * KonqPixmapProvider::self()
 {
-    if ( !s_self )
-        s_konqPixmapProviderSd.setObject( s_self, new KonqPixmapProvider );
-
-    return s_self;
+    return &globalPixmapProvider->self;
 }
 
 KonqPixmapProvider::KonqPixmapProvider()
@@ -193,16 +192,17 @@ QPixmap KonqPixmapProvider::loadIcon( const QString& url, const QString& icon,
 */
 	QBitmap mask( big.mask() );
 	if( !mask.isNull() ) {
-		QBitmap sm( small.mask() );
-        QPainter pt(&mask);
+            QBitmap sm( small.mask() );
+            QPainter pt(&mask);
 #ifdef __GNUC__
 		#warning
 #endif
-        pt.setCompositionMode( QPainter::CompositionMode_Source );
-  pt.drawPixmap(QPoint(x,y), sm.isNull() ? small : QPixmap(sm), QRect(0,0,small.width(), small.height()));
+            pt.setCompositionMode( QPainter::CompositionMode_Source );
+            pt.drawPixmap(QPoint(x,y), sm.isNull() ? small : QPixmap(sm), QRect(0,0,small.width(), small.height()));
 	    big.setMask( mask );
 	}
-	bitBlt( &big, x, y, &small );
+        QPainter painterOnBig( &big );
+        painterOnBig.drawPixmap( x, y, small );
     }
 
     else // not a favicon..

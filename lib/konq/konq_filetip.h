@@ -32,17 +32,17 @@
 
 class KFileItem;
 class QLabel;
-class Q3ScrollView;
+class QScrollArea;
 class QTimer;
 
 //--------------------------------------------------------------------------------
 
-class LIBKONQ_EXPORT KonqFileTip : public Q3Frame
+class LIBKONQ_EXPORT KonqFileTip : public QFrame
 {
   Q_OBJECT
 
   public:
-    KonqFileTip( Q3ScrollView *parent );
+    KonqFileTip( QScrollArea *parent );
     ~KonqFileTip();
 
     void setPreview(bool on);
@@ -65,7 +65,7 @@ class LIBKONQ_EXPORT KonqFileTip : public Q3Frame
     virtual bool eventFilter( QObject *, QEvent *e );
 
   protected:
-    virtual void drawContents( QPainter *p );
+    virtual void paintEvent( QPaintEvent *ev );
     virtual void resizeEvent( QResizeEvent * );
 
   private Q_SLOTS:
@@ -89,7 +89,7 @@ class LIBKONQ_EXPORT KonqFileTip : public Q3Frame
     QPixmap    m_corners[4];
     int        m_corner;
     int        m_num;
-    Q3ScrollView* m_view;
+    QScrollArea* m_view;
     KFileItem  m_item;
     KIO::PreviewJob* m_previewJob;
     QRect      m_rect;

@@ -24,26 +24,26 @@
 #include <kfileitem.h>
 #include <kglobalsettings.h>
 #include <kstandarddirs.h>
-#include <kapplication.h>
 
 #include <QLabel>
 #include <QToolTip>
+#include <QApplication>
+#include <QScrollBar>
 #include <QLayout>
 #include <QPainter>
-#include <Qt3Support/Q3ScrollView>
+#include <QScrollArea>
 #include <QTimer>
-//Added by qt3to4:
 #include <QPixmap>
 #include <QGridLayout>
 #include <QEvent>
-#include <Q3Frame>
+#include <QFrame>
 #include <QResizeEvent>
 
 #include <fixx11h.h>
 //--------------------------------------------------------------------------------
 
-KonqFileTip::KonqFileTip( Q3ScrollView* parent )
-  : Q3Frame( 0, 0, Qt::FramelessWindowHint | Qt::Tool | Qt::WindowStaysOnTopHint | Qt::X11BypassWindowManagerHint ),
+KonqFileTip::KonqFileTip( QScrollArea* parent )
+  : QFrame( 0 ),
     m_on( false ),
     m_preview( false ),
     m_filter( false ),
@@ -52,6 +52,7 @@ KonqFileTip::KonqFileTip( Q3ScrollView* parent )
     m_view( parent ),
     m_previewJob( 0 )
 {
+    setWindowFlags( Qt::FramelessWindowHint | Qt::Tool | Qt::WindowStaysOnTopHint | Qt::X11BypassWindowManagerHint );
     m_iconLabel = new QLabel(this);
     m_textLabel = new QLabel(this);
     m_textLabel->setAlignment(Qt::AlignLeft | Qt::AlignTop);
@@ -64,7 +65,7 @@ KonqFileTip::KonqFileTip( Q3ScrollView* parent )
     layout->setSizeConstraint(QLayout::SetFixedSize);
 
     setPalette( QToolTip::palette() );
-    setMargin( 1 );
+    setContentsMargins( 1, 1, 1, 1 );
     setFrameStyle( QFrame::Plain | QFrame::Box );
 
     m_timer = new QTimer(this);
@@ -132,7 +133,10 @@ void KonqFileTip::reposition()
     if ( m_rect.isEmpty() || !m_view || !m_view->viewport() ) return;
 
     QRect rect = m_rect;
-    QPoint off = m_view->viewport()->mapToGlobal( m_view->contentsToViewport( rect.topRight() ) );
+    //QPoint off = m_view->viewport()->mapToGlobal( m_view->contentsToViewport( rect.topRight() ) );
+    int xOffset = m_view->horizontalScrollBar()->value();
+    int yOffset = m_view->verticalScrollBar()->value();
+    QPoint off = m_view->viewport()->mapToGlobal( QPoint( rect.x() - xOffset, rect.y() - yOffset ) );
     rect.moveTopRight( off );
 
     QPoint pos = rect.center();
@@ -182,8 +186,9 @@ void KonqFileTip::gotPreviewResult()
     m_previewJob = 0;
 }
 
-void KonqFileTip::drawContents( QPainter *p )
+void KonqFileTip::paintEvent(QPaintEvent *)
 {
+    QPainter p( this );
     static const char * const names[] = {
         "arrow_topleft",
         "arrow_topright",
@@ -192,7 +197,6 @@ void KonqFileTip::drawContents( QPainter *p )
     };
 
     if (m_corner >= 4) {  // 4 is empty, so don't draw anything
-        Q3Frame::drawContents( p );
         return;
     }
 
@@ -204,20 +208,18 @@ void KonqFileTip::drawContents( QPainter *p )
     switch ( m_corner )
     {
         case 0:
-            p->drawPixmap( 3, 3, pix );
+            p.drawPixmap( 3, 3, pix );
             break;
         case 1:
-            p->drawPixmap( width() - pix.width() - 3, 3, pix );
+            p.drawPixmap( width() - pix.width() - 3, 3, pix );
             break;
         case 2:
-            p->drawPixmap( 3, height() - pix.height() - 3, pix );
+            p.drawPixmap( 3, height() - pix.height() - 3, pix );
             break;
         case 3:
-            p->drawPixmap( width() - pix.width() - 3, height() - pix.height() - 3, pix );
+            p.drawPixmap( width() - pix.width() - 3, height() - pix.height() - 3, pix );
             break;
     }
-
-    Q3Frame::drawContents( p );
 }
 
 void KonqFileTip::setFilter( bool enable )
@@ -225,10 +227,10 @@ void KonqFileTip::setFilter( bool enable )
     if ( enable == m_filter ) return;
 
     if ( enable ) {
-        kapp->installEventFilter( this );
+        qApp->installEventFilter( this );
     }
     else {
-        kapp->removeEventFilter( this );
+        qApp->removeEventFilter( this );
     }
     m_filter = enable;
 }
@@ -282,7 +284,7 @@ void KonqFileTip::startDelayed()
 
 void KonqFileTip::resizeEvent( QResizeEvent* event )
 {
-    Q3Frame::resizeEvent(event);
+    QFrame::resizeEvent(event);
     reposition();
 }
 
