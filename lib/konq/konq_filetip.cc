@@ -266,7 +266,7 @@ void KonqFileTip::hideTip()
 void KonqFileTip::startDelayed()
 {
     if ( m_preview ) {
-        QList<KFileItem> oneItem;
+        KFileItemList oneItem;
         oneItem.append( m_item );
 
         m_previewJob = KIO::filePreview( oneItem, 256, 256, 64, 70, true, true, 0);

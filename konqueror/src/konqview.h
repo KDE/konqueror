@@ -379,7 +379,7 @@ protected Q_SLOTS:
   /**
    * Connected to the BrowserExtension
    */
-  void slotSelectionInfo( const QList<KFileItem> &items );
+  void slotSelectionInfo( const KFileItemList &items );
   void slotMouseOverInfo( const KFileItem& item );
   void slotOpenURLNotify();
   void slotEnableAction( const char * name, bool enabled );

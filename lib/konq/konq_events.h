@@ -16,9 +16,9 @@ class KConfig;
 class LIBKONQ_EXPORT KonqFileSelectionEvent : public KParts::Event
 {
 public:
-  KonqFileSelectionEvent( const QList<KFileItem>&selection, KParts::ReadOnlyPart *part ) : KParts::Event( s_fileItemSelectionEventName ), m_selection( selection ), m_part( part ) {}
+  KonqFileSelectionEvent( const KFileItemList&selection, KParts::ReadOnlyPart *part ) : KParts::Event( s_fileItemSelectionEventName ), m_selection( selection ), m_part( part ) {}
 
-  QList<KFileItem> selection() const { return m_selection; }
+  KFileItemList selection() const { return m_selection; }
   KParts::ReadOnlyPart *part() const { return m_part; }
 
   static bool test( const QEvent *event ) { return KParts::Event::test( event, s_fileItemSelectionEventName ); }
@@ -26,7 +26,7 @@ public:
 private:
   static const char *s_fileItemSelectionEventName;
 
-  QList<KFileItem> m_selection;
+  KFileItemList m_selection;
   KParts::ReadOnlyPart *m_part;
 };
 
