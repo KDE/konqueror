@@ -48,7 +48,8 @@ qt4_add_dbus_interface(konqueror_KDEINIT_SRCS org.kde.Konqueror.Main.xml konquer
 
 kde4_add_kdeinit_executable(konqueror ${konqueror_KDEINIT_SRCS} konqmain.cpp)
 
-target_link_libraries(kdeinit_konqueror ${KDE4_KDE3SUPPORT_LIBS} ${KDE4_KUTILS_LIBS} konq)
+# KDE4_KUTILS_LIBS used for KCMultiDialog, KCModuleInfo, and KPluginSelector
+target_link_libraries(kdeinit_konqueror ${KDE4_KPARTS_LIBS} ${KDE4_KUTILS_LIBS} konq)
 target_link_libraries(konqueror kdeinit_konqueror)
 
 install(TARGETS kdeinit_konqueror  DESTINATION ${LIB_INSTALL_DIR} )

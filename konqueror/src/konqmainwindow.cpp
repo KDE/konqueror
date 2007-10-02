@@ -154,8 +154,6 @@ time_t KonqMainWindow::s_startupTime;
 int KonqMainWindow::s_preloadUsageCount;
 
 KonqOpenURLRequest KonqOpenURLRequest::null;
-//static K3StaticDeleter<KonqHistoryManager> konqHistoryManagerSd;
-//static KonqHistoryManager* s_konqHistoryManager;
 
 static int current_memory_usage( int* limit = NULL );
 
