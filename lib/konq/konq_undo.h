@@ -57,6 +57,9 @@ public:
     UiInterface( QWidget* );
     virtual ~UiInterface() {}
 
+    void setShowProgressInfo( bool b ) { m_showProgressInfo = b; }
+    bool showProgressInfo() const { return m_showProgressInfo; }
+
     /**
      * Called when an undo job errors; default implementation displays a message box.
      */
@@ -76,6 +79,7 @@ public:
     virtual bool copiedFileWasModified( const KUrl& src, const KUrl& dest, time_t srcTime, time_t destTime );
   private:
     QWidget* m_parentWidget;
+    bool m_showProgressInfo;
   };
 
   /**
