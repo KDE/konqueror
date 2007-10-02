@@ -20,6 +20,7 @@
 #include "favicontest.h"
 #include <qtest_kde.h>
 #include <konq_faviconmgr.h>
+#include <kio/job.h>
 #include <kio/netaccess.h>
 #include <QDateTime>
 #include <kmimetype.h>
@@ -37,11 +38,10 @@ static int s_downloadTime; // in ms
 enum NetworkAccess { Unknown, Yes, No } s_networkAccess = Unknown;
 static bool checkNetworkAccess() {
     if ( s_networkAccess == Unknown ) {
-        QString tmpFile;
         QTime tm;
         tm.start();
-        if( KIO::NetAccess::download( KUrl( s_iconUrl ), tmpFile, 0 ) ) {
-            KIO::NetAccess::removeTempFile( tmpFile );
+        KIO::Job* job = KIO::get( KUrl( s_iconUrl ), false, false /*HideProgressInfo*/ );
+        if( KIO::NetAccess::synchronousRun( job, 0 ) ) {
             s_networkAccess = Yes;
             s_downloadTime = tm.elapsed();
 	    qDebug( "Network access OK. Download time %d", s_downloadTime );
