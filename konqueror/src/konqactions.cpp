@@ -264,7 +264,6 @@ void KonqViewModeAction::slotPopupAboutToHide()
 }*/
 
 
-KonqHistoryList* KonqMostOftenURLSAction::s_mostEntries = 0;
 static int s_maxEntries = 0;
 
 KonqMostOftenURLSAction::KonqMostOftenURLSAction( const QString& text,
@@ -293,6 +292,8 @@ void KonqMostOftenURLSAction::init()
     setEnabled( !mgr->entries().isEmpty() && s_maxEntries > 0 );
 }
 
+K_GLOBAL_STATIC( KonqHistoryList, s_mostEntries )
+
 void KonqMostOftenURLSAction::inSort( const KonqHistoryEntry& entry ) {
     KonqHistoryList::iterator it = std::lower_bound( s_mostEntries->begin(),
                                                      s_mostEntries->end(),
@@ -311,7 +312,6 @@ void KonqMostOftenURLSAction::parseHistory() // only ever called once
              SLOT( slotEntryRemoved( const KonqHistoryEntry& )));
     connect( mgr, SIGNAL( cleared() ), SLOT( slotHistoryCleared() ));
 
-    s_mostEntries = new KonqHistoryList; // TODO K3StaticDeleter
     const KonqHistoryList mgrEntries = mgr->entries();
     KonqHistoryList::const_iterator it = mgrEntries.begin();
     const KonqHistoryList::const_iterator end = mgrEntries.end();

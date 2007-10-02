@@ -120,7 +120,6 @@ private:
     void parseHistory();
     static void inSort( const KonqHistoryEntry& entry );
 
-    static KonqHistoryList *s_mostEntries;
     KUrl::List m_popupList;
 };
 
