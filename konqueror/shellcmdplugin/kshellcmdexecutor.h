@@ -23,7 +23,7 @@
 
 #include <Qt3Support/Q3TextView>
 
-class PtyProcess;
+namespace KDESu {class PtyProcess; }
 class QSocketNotifier;
 
 class KShellCommandExecutor:public Q3TextView
@@ -38,7 +38,7 @@ class KShellCommandExecutor:public Q3TextView
    public Q_SLOTS:
       void slotFinished();
    protected:
-      PtyProcess *m_shellProcess;
+	   KDESu::PtyProcess *m_shellProcess;
       QString m_command;
       QSocketNotifier *m_readNotifier;
       QSocketNotifier *m_writeNotifier;

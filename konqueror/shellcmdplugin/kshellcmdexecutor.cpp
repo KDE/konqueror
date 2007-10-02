@@ -31,6 +31,8 @@
 #include <kdesu/process.h>
 #include <klocale.h>
 
+using namespace KDESu;
+
 KShellCommandExecutor::KShellCommandExecutor(const QString& command, QWidget* parent)
 :Q3TextView(parent)
 ,m_shellProcess(0)
