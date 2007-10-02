@@ -21,6 +21,6 @@ QT4_ADD_DBUS_INTERFACE( testnsplugin_SRCS ${nsplugins_viewer_xml} nsplugins_view
 
 kde4_add_executable(testnsplugin TEST ${testnsplugin_SRCS})
 
-target_link_libraries(testnsplugin   ${KDE4_KPARTS_LIBS} ${QT_QT3SUPPORT_LIBRARY} ${QT_QTGUI_LIBRARY}  )
+target_link_libraries(testnsplugin   ${KDE4_KDE3SUPPORT_LIBS} ${QT_QT3SUPPORT_LIBRARY} ${QT_QTGUI_LIBRARY}  )
 
 
