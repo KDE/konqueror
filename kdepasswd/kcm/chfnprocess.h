@@ -14,7 +14,7 @@
 #include <QtCore/QByteRef>
 #include <kdesu/process.h>
 
-class ChfnProcess : public PtyProcess
+class ChfnProcess : public KDESu::PtyProcess
 {
 public:
 

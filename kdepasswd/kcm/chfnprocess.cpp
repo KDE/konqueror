@@ -21,7 +21,6 @@
 #include <kdesu/process.h>
 #include <kdebug.h>
 
-
 int ChfnProcess::exec(const char *pass, const char *name)
 {
   // Try to set the default locale to make the parsing of the output
@@ -31,7 +30,7 @@ int ChfnProcess::exec(const char *pass, const char *name)
   QList<QByteArray> args;
       args += "-f";
       args += name;
-  int ret = PtyProcess::exec("chfn", args);
+  int ret = KDESu::PtyProcess::exec("chfn", args);
   if (ret < 0)
       return ChfnNotFound;
 

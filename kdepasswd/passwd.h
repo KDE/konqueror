@@ -17,7 +17,7 @@
  */
 
 class PasswdProcess
-    : public PtyProcess
+    : public KDESu::PtyProcess
 {
 public:
     PasswdProcess(const QByteArray &user = QByteArray());

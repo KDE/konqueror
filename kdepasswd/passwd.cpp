@@ -85,7 +85,7 @@ int PasswdProcess::exec(const char *oldpass, const char *newpass,
     QList<QByteArray> args;
     if(bOtherUser)
         args += m_User;
-    int ret = PtyProcess::exec("passwd", args);
+    int ret = KDESu::PtyProcess::exec("passwd", args);
     if (ret < 0)
     {
 	kDebug(1512) << k_lineinfo << "Passwd not found!\n";
