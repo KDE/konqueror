@@ -23,6 +23,7 @@
 #include <konq_undo.h>
 
 #include <kio/copyjob.h>
+#include <kio/deletejob.h>
 #include <kio/netaccess.h>
 #include <kprotocolinfo.h>
 
@@ -120,7 +121,9 @@ static void createTestDirectory( const QString& path )
 class TestUiInterface : public KonqUndoManager::UiInterface
 {
 public:
-    TestUiInterface() : KonqUndoManager::UiInterface(0), m_nextReplyToConfirmDeletion(true) {}
+    TestUiInterface() : KonqUndoManager::UiInterface(0), m_nextReplyToConfirmDeletion(true) {
+        setShowProgressInfo( false );
+    }
     virtual void jobError( KIO::Job* job ) {
         kFatal() << job->errorString() ;
     }
@@ -183,7 +186,8 @@ void KonqUndoManagerTest::initTestCase()
 
 void KonqUndoManagerTest::cleanupTestCase()
 {
-    KIO::NetAccess::del( KUrl::fromPath( homeTmpDir() ), 0 );
+    KIO::Job* job = KIO::del( KUrl::fromPath( homeTmpDir() ), false, false );
+    KIO::NetAccess::synchronousRun( job, 0 );
 }
 
 void KonqUndoManagerTest::doUndo()
@@ -345,7 +349,7 @@ void KonqUndoManagerTest::testRenameFile()
     const KUrl newUrl( srcFile() + ".new" );
     KUrl::List lst;
     lst.append(oldUrl);
-    KIO::Job* job = KIO::moveAs( oldUrl, newUrl );
+    KIO::Job* job = KIO::moveAs( oldUrl, newUrl, false );
     job->setUiDelegate( 0 );
     KonqUndoManager::self()->recordJob( KonqUndoManager::RENAME, lst, newUrl, job );
 
@@ -367,7 +371,7 @@ void KonqUndoManagerTest::testRenameDir()
     const KUrl newUrl( srcSubDir() + ".new" );
     KUrl::List lst;
     lst.append(oldUrl);
-    KIO::Job* job = KIO::moveAs( oldUrl, newUrl );
+    KIO::Job* job = KIO::moveAs( oldUrl, newUrl, false );
     job->setUiDelegate( 0 );
     KonqUndoManager::self()->recordJob( KonqUndoManager::RENAME, lst, newUrl, job );
 
@@ -391,7 +395,7 @@ void KonqUndoManagerTest::testTrashFiles()
     // Trash it all at once: the file, the symlink, the subdir.
     KUrl::List lst = sourceList();
     lst.append( srcSubDir() );
-    KIO::Job* job = KIO::trash( lst );
+    KIO::Job* job = KIO::trash( lst, false );
     job->setUiDelegate( 0 );
     KonqUndoManager::self()->recordJob( KonqUndoManager::TRASH, lst, KUrl("trash:/"), job );
 
@@ -443,7 +447,7 @@ void KonqUndoManagerTest::testModifyFileBeforeUndo()
     const QString destdir = destDir();
     KUrl::List lst; lst << srcSubDir();
     const KUrl d( destdir );
-    KIO::CopyJob* job = KIO::copy( lst, d, 0 );
+    KIO::CopyJob* job = KIO::copy( lst, d, false );
     job->setUiDelegate( 0 );
     KonqUndoManager::self()->recordJob( KonqUndoManager::COPY, lst, d, job );
 

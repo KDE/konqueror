@@ -72,7 +72,11 @@ static const char* undoStateToString( UndoState state ) {
 class KonqUndoJob : public KIO::Job
 {
 public:
-    KonqUndoJob() : KIO::Job( ) { KIO::getJobTracker()->registerJob(this); KonqUndoManager::incRef(); }
+    KonqUndoJob( bool showProgressInfo ) : KIO::Job() {
+        if ( showProgressInfo )
+            KIO::getJobTracker()->registerJob(this);
+        KonqUndoManager::incRef();
+    }
     virtual ~KonqUndoJob() { KonqUndoManager::decRef(); }
 
     virtual void kill( bool ) { KonqUndoManager::self()->stopUndo( true ); KIO::Job::doKill(); }
@@ -353,8 +357,8 @@ void KonqUndoManager::undo()
             ++it;
     }
 
-    kDebug(1203) << "KonqUndoManager::undo starting with " << undoStateToString(d->m_undoState);
-    d->m_undoJob = new KonqUndoJob;
+    kDebug(1203) << "starting with" << undoStateToString(d->m_undoState);
+    d->m_undoJob = new KonqUndoJob( d->m_uiInterface->showProgressInfo() );
     undoStep();
 }
 
@@ -387,7 +391,7 @@ void KonqUndoManager::slotResult( KJob *job )
     else if ( d->m_undoState == STATINGFILE )
     {
         KonqBasicOperation op = d->m_current.m_opStack.top();
-        //kDebug(1203) << "KonqUndoManager::slotResult stat result for " << op.m_dst;
+        //kDebug(1203) << "stat result for " << op.m_dst;
         KIO::StatJob* statJob = static_cast<KIO::StatJob*>( job );
         time_t mtime = statJob->statResult().numberValue( KIO::UDSEntry::UDS_MODIFICATION_TIME, -1 );
         if ( mtime != op.m_mtime ) {
@@ -435,7 +439,7 @@ void KonqUndoManager::stepMakingDirectories()
 {
     if ( !d->m_dirStack.isEmpty() ) {
         KUrl dir = d->m_dirStack.pop();
-        kDebug(1203) << "KonqUndoManager::stepMakingDirectories creatingDir " << dir;
+        kDebug(1203) << "creatingDir" << dir;
         d->m_currentJob = KIO::mkdir( dir );
         d->m_undoJob->emitCreatingDir( dir );
     }
@@ -458,7 +462,7 @@ void KonqUndoManager::stepMovingFiles()
         {
             if ( op.m_renamed )
             {
-                kDebug(1203) << "KonqUndoManager::stepMovingFiles rename " << op.m_dst << " " << op.m_src;
+                kDebug(1203) << "rename" << op.m_dst << op.m_src;
                 d->m_currentJob = KIO::rename( op.m_dst, op.m_src, false );
                 d->m_undoJob->emitMoving( op.m_dst, op.m_src );
             }
@@ -467,7 +471,7 @@ void KonqUndoManager::stepMovingFiles()
         }
         else if ( type == KonqBasicOperation::Link )
         {
-            kDebug(1203) << "KonqUndoManager::stepMovingFiles symlink " << op.m_target << " " << op.m_src;
+            kDebug(1203) << "symlink" << op.m_target << op.m_src;
             d->m_currentJob = KIO::symlink( op.m_target, op.m_src, true, false );
         }
         else if ( d->m_current.m_type == KonqUndoManager::COPY )
@@ -475,14 +479,14 @@ void KonqUndoManager::stepMovingFiles()
             if ( d->m_undoState == MOVINGFILES ) // dest not stat'ed yet
             {
                 // Before we delete op.m_dst, let's check if it was modified (#20532)
-                kDebug(1203) << "KonqUndoManager::stepMovingFiles stat " << op.m_dst;
-                d->m_currentJob = KIO::stat( op.m_dst );
+                kDebug(1203) << "stat" << op.m_dst;
+                d->m_currentJob = KIO::stat( op.m_dst, false );
                 d->m_undoState = STATINGFILE; // temporarily
                 return; // no pop() yet, we'll finish the work in slotResult
             }
             else // dest was stat'ed, and the deletion was approved in slotResult
             {
-                d->m_currentJob = KIO::file_delete( op.m_dst );
+                d->m_currentJob = KIO::file_delete( op.m_dst, false );
                 d->m_undoJob->emitDeleting( op.m_dst );
                 d->m_undoState = MOVINGFILES;
             }
@@ -490,8 +494,8 @@ void KonqUndoManager::stepMovingFiles()
         else if ( d->m_current.isMoveCommand()
                   || d->m_current.m_type == KonqUndoManager::TRASH )
         {
-            kDebug(1203) << "KonqUndoManager::stepMovingFiles file_move " << op.m_dst << " " << op.m_src;
-            d->m_currentJob = KIO::file_move( op.m_dst, op.m_src, -1, true );
+            kDebug(1203) << "file_move" << op.m_dst << op.m_src;
+            d->m_currentJob = KIO::file_move( op.m_dst, op.m_src, -1, true, false, false /*HideProgressInfo*/ );
             d->m_undoJob->emitMoving( op.m_dst, op.m_src );
         }
 
@@ -512,12 +516,12 @@ void KonqUndoManager::stepMovingFiles()
 
 void KonqUndoManager::stepRemovingLinks()
 {
-    kDebug(1203) << "KonqUndoManager::stepRemovingLinks REMOVINGLINKS";
+    kDebug(1203) << "REMOVINGLINKS";
     if ( !d->m_linkCleanupStack.isEmpty() )
     {
       KUrl file = d->m_linkCleanupStack.pop();
-      kDebug(1203) << "KonqUndoManager::stepRemovingLinks file_delete " << file;
-      d->m_currentJob = KIO::file_delete( file );
+      kDebug(1203) << "file_delete" << file;
+      d->m_currentJob = KIO::file_delete( file, false );
       d->m_undoJob->emitDeleting( file );
 
       KUrl url( file );
@@ -538,7 +542,7 @@ void KonqUndoManager::stepRemovingDirectories()
     if ( !d->m_dirCleanupStack.isEmpty() )
     {
         KUrl dir = d->m_dirCleanupStack.pop();
-        kDebug(1203) << "KonqUndoManager::stepRemovingDirectories rmdir " << dir;
+        kDebug(1203) << "rmdir" << dir;
         d->m_currentJob = KIO::rmdir( dir );
         d->m_undoJob->emitDeleting( dir );
         addDirToUpdate( dir );
@@ -549,7 +553,7 @@ void KonqUndoManager::stepRemovingDirectories()
         d->m_currentJob = 0;
         if ( d->m_undoJob )
         {
-            kDebug(1203) << "KonqUndoManager::stepRemovingDirectories deleting undojob";
+            kDebug(1203) << "deleting undojob";
             d->m_undoJob->emitResult();
             d->m_undoJob = 0;
         }
@@ -688,7 +692,7 @@ void KonqUndoManager::setUiInterface( UiInterface* ui )
 }
 
 KonqUndoManager::UiInterface::UiInterface( QWidget* w )
-    : m_parentWidget( w )
+    : m_parentWidget( w ), m_showProgressInfo( true )
 {
 }
 
