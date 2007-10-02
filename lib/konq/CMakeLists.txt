@@ -10,11 +10,10 @@ add_subdirectory( tests )
 
 # Please use .cpp for new files
 set(konq_LIB_SRCS
-   konq_popupmenu.cc        # OK to remain in libkonq, was needed by kicker applets like the trash applet
+   konq_popupmenu.cpp       # OK to remain in libkonq, was needed by kicker applets like the trash applet
    knewmenu.cpp             # used by dolphin, KonqPopupMenu, and konqueror (File menu)
-   konq_operations.cc
-   konq_events.cc
-   konq_bgnddlg.cc
+   konq_operations.cpp
+   konq_events.cpp
    konq_undo.cc
    konq_historymgr.cc
    konq_historyentry.cpp
