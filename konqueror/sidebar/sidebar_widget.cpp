@@ -265,8 +265,7 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, bool 
 	m_mainDockWidget->setDockSite(K3DockWidget::DockTop);
 	m_mainDockWidget->setEnableDocking(K3DockWidget::DockNone);
 
-   	m_buttonBar = new KMultiTabBar(KMultiTabBar::Vertical,this);
-	m_buttonBar->showActiveTabTexts(true);
+   	m_buttonBar = new KMultiTabBar(KMultiTabBar::Left,this);
 
 	// Ported to QMenu already, just needs to have KMultiTabBar fixed
 #ifdef __GNUC__
