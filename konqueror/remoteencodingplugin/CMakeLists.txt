@@ -1,6 +1,3 @@
-include_directories( ${CMAKE_SOURCE_DIR}/libkonq )
-
-
 ########### next target ###############
 
 set(konq_remoteencoding_PART_SRCS kremoteencodingplugin.cpp )

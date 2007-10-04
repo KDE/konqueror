@@ -1,6 +1,3 @@
-include_directories( ${CMAKE_SOURCE_DIR}/libkonq  )
-
-
 ########### next target ###############
 
 set(kbookmarkmerger_SRCS kbookmarkmerger.cpp )

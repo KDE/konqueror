@@ -1,5 +1,4 @@
 include_directories(
-  ${CMAKE_SOURCE_DIR}/libkonq 
   ${CMAKE_CURRENT_SOURCE_DIR}/../.. # sidebar dir
   ${CMAKE_CURRENT_SOURCE_DIR}/..    # trees dir
  )
