@@ -395,7 +395,7 @@ void KonqSidebarDirTreeModule::listDirectory( KonqSidebarTreeItem *item )
     if (tree()->isOpeningFirstChild()) m_dirLister->setAutoErrorHandlingEnabled(false,0);
 	else m_dirLister->setAutoErrorHandlingEnabled(true,tree());
 
-    m_dirLister->openUrl( url, true /*keep*/ );
+    m_dirLister->openUrl( url, KDirLister::Keep );
 }
 
 void KonqSidebarDirTreeModule::slotNewItems( const KFileItemList& entries )
