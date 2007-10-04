@@ -4896,7 +4896,7 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
     popupUrlArgs.setMimeType( QString() ); // Reset so that Open in New Window/Tab does mimetype detection
     popupUrlBrowserArgs = browserArgs;
 
-    KParts::BrowserExtension *be = ::qobject_cast<KParts::BrowserExtension *>(sender());
+    QPointer<KParts::BrowserExtension> be = ::qobject_cast<KParts::BrowserExtension *>(sender());
 
     if (be) {
         QObject::connect( this, SIGNAL(popupItemsDisturbed()), pPopupMenu, SLOT(close()) );
@@ -4907,18 +4907,29 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
   QObject::disconnect( m_pMenuNew->menu(), SIGNAL(aboutToShow()),
                        this, SLOT(slotFileNewAboutToShow()) );
 
+  QPointer<QObject> guard( this ); // #149736, window could be deleted inside popupmenu event loop
   pPopupMenu->exec( global );
+
+  delete pPopupMenu;
+
+  // We're sort of misusing KActionCollection here, but we need it for the actionStatusText signal...
+  // Anyway. If the action belonged to the view, and the view got deleted, we don't want ~KActionCollection
+  // to iterate over those deleted actions
+  /*KActionPtrList lst = popupMenuCollection.actions();
+  KActionPtrList::iterator it = lst.begin();
+  for ( ; it != lst.end() ; ++it )
+      popupMenuCollection.take( *it );*/
+
+  if ( guard.isNull() ) // the placement of this test is very important, double-check #149736 if moving stuff around
+      return;
 
   QObject::connect( m_pMenuNew->menu(), SIGNAL(aboutToShow()),
                        this, SLOT(slotFileNewAboutToShow()) );
 
   if (be) {
-    QObject::disconnect( this, SIGNAL(popupItemsDisturbed()), pPopupMenu, SLOT(close()) );
     QObject::disconnect( be, SIGNAL(itemsRemoved(const KFileItemList &)),
                          this, SLOT(slotItemsRemoved(const KFileItemList &)) );
   }
-
-  delete pPopupMenu;
 
   delete konqyMenuClient;
   popupItems.clear();
@@ -4928,14 +4939,6 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
   //delete actNewWindow;
 
   delete actPaste;
-
-  // We're sort of misusing KActionCollection here, but we need it for the actionStatusText signal...
-  // Anyway. If the action belonged to the view, and the view got deleted, we don't want ~KActionCollection
-  // to iterate over those deleted actions
-  /*KActionPtrList lst = popupMenuCollection.actions();
-  KActionPtrList::iterator it = lst.begin();
-  for ( ; it != lst.end() ; ++it )
-      popupMenuCollection.take( *it );*/
 
   //kDebug(1202) << "-------- KonqMainWindow::slotPopupMenu() - m_oldView = " << m_oldView << ", currentView = " << currentView
   //<< ", m_currentView = " << m_currentView << endl;
@@ -5819,7 +5822,7 @@ bool KonqMainWindow::event( QEvent* e )
         // since the preloading code tries to reuse KonqMainWindow,
         // the last window shouldn't be really deleted, but only hidden
         // deleting WDestructiveClose windows is done using deleteLater(),
-        // so catch QEvent::DefferedDelete and check if this window should stay
+        // so catch QEvent::DeferredDelete and check if this window should stay
         if( stayPreloaded())
         {
             setAttribute(Qt::WA_DeleteOnClose); // was reset before deleteLater()
