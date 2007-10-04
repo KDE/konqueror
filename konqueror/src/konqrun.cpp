@@ -51,7 +51,7 @@ KonqRun::KonqRun( KonqMainWindow* mainWindow, KonqView *_childView,
   if (m_pView)
     m_pView->setLoading(true);
 
-  m_timer.setSingleShot(true);
+  timer().setSingleShot(true);
 }
 
 KonqRun::~KonqRun()
@@ -75,9 +75,9 @@ void KonqRun::foundMimeType( const QString & _type )
   // Check if the main window wasn't deleted meanwhile
   if( !m_pMainWindow )
   {
-    m_bFinished = true;
-    m_bFault = true;
-    m_timer.start( 0 );
+    setFinished(true);
+    setError(true);
+    timer().start( 0 );
     return;
   }
 
@@ -96,39 +96,39 @@ void KonqRun::foundMimeType( const QString & _type )
       m_req.forceAutoEmbed = true;
 
   if ( tryEmbed )
-      m_bFinished = m_pMainWindow->openView( mimeType, m_strURL, m_pView, m_req );
+      setFinished(m_pMainWindow->openView( mimeType, KRun::url(), m_pView, m_req ));
 
-  if ( m_bFinished ) {
+  if ( hasFinished() ) {
     m_pMainWindow = 0L;
-    m_timer.start( 0 );
+    timer().start( 0 );
     return;
   }
 
   // If we were following another view, do nothing if opening didn't work.
   if ( m_req.followMode )
-    m_bFinished = true;
+    setFinished(true);
 
-  if ( !m_bFinished ) {
+  if ( !hasFinished() ) {
     // If we couldn't embed the mimetype, call BrowserRun::handleNonEmbeddable()
     KParts::BrowserRun::NonEmbeddableResult res = handleNonEmbeddable( mimeType );
     if ( res == KParts::BrowserRun::Delayed )
       return;
-    m_bFinished = ( res == KParts::BrowserRun::Handled );
+    setFinished( res == KParts::BrowserRun::Handled );
   }
 
   // make Konqueror think there was an error, in order to stop the spinning wheel
   // (we saved, canceled, or we're starting another app... in any case the current view should stop loading).
-  m_bFault = true;
+  setError(true);
 
-  if ( !m_bFinished && // only if we're going to open
+  if ( !hasFinished() && // only if we're going to open
        KonqMainWindow::isMimeTypeAssociatedWithSelf( mimeType ) ) {
     KMessageBox::error( m_pMainWindow, i18n( "There appears to be a configuration error. You have associated Konqueror with %1, but it cannot handle this file type." ,  mimeType ) );
-    m_bFinished = true;
+    setFinished(true);
   }
 
-  if ( m_bFinished ) {
+  if ( hasFinished() ) {
     m_pMainWindow = 0L;
-    m_timer.start( 0 );
+    timer().start( 0 );
     return;
   }
 
@@ -141,9 +141,9 @@ void KonqRun::handleError( KIO::Job *job )
   kDebug(1202) << "KonqRun::handleError error:" << job->errorString();
   if (!m_mailto.isEmpty())
   {
-     m_job = 0;
-     m_bFinished = true;
-     m_timer.start( 0 );
+     setJob(0);
+     setFinished(true);
+     timer().start( 0 );
      return;
   }
   KParts::BrowserRun::handleError( job );
@@ -154,7 +154,7 @@ void KonqRun::init()
     KParts::BrowserRun::init();
     // Maybe init went to the "let's try stat'ing" part. Then connect to info messages.
     // (in case it goes to scanFile, this will be done below)
-    KIO::StatJob *job = dynamic_cast<KIO::StatJob*>( m_job );
+    KIO::StatJob *job = dynamic_cast<KIO::StatJob*>( KRun::job() );
     if ( job && !job->error() && m_pView ) {
         connect( job, SIGNAL( infoMessage( KJob*, const QString&, const QString& ) ),
                  m_pView, SLOT( slotInfoMessage(KJob*, const QString& ) ) );
@@ -166,14 +166,14 @@ void KonqRun::scanFile()
     KParts::BrowserRun::scanFile();
     // could be a static cast as of now, but who would notify when
     // BrowserRun changes
-    KIO::TransferJob *job = dynamic_cast<KIO::TransferJob*>( m_job );
+    KIO::TransferJob *job = dynamic_cast<KIO::TransferJob*>( KRun::job() );
     if ( job && !job->error() ) {
         connect( job, SIGNAL( redirection( KIO::Job *, const KUrl& )),
                  SLOT( slotRedirection( KIO::Job *, const KUrl& ) ));
         if ( m_pView && m_pView->service()->desktopEntryName() != "konq_sidebartng") {
             connect( job, SIGNAL( infoMessage( KJob*, const QString&, const QString& ) ),
                      m_pView, SLOT( slotInfoMessage(KJob*, const QString& ) ) );
-	}
+        }
     }
 }
 
