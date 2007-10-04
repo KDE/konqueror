@@ -103,7 +103,7 @@ QString KonqAboutPageFactory::launch()
   QString applications_icon_path = iconloader->iconPath("kmenu", KIconLoader::Desktop );
   QString settings_icon_path = iconloader->iconPath("kcontrol", KIconLoader::Desktop );
   QString home_folder = QDir::homePath();
-  QString continue_icon_path = QApplication::isRightToLeft()?iconloader->iconPath("arrow-left", KIconLoader::Small ):iconloader->iconPath("arrow-right", KIconLoader::Small );
+  QString continue_icon_path = QApplication::isRightToLeft()?iconloader->iconPath("go-next-rtl", KIconLoader::Small ):iconloader->iconPath("go-next", KIconLoader::Small );
 
   res = res.arg( KStandardDirs::locate( "data", "kdeui/about/kde_infopage.css" ) );
   if ( kapp->layoutDirection() == Qt::RightToLeft )
@@ -166,9 +166,9 @@ QString KonqAboutPageFactory::intro()
 	return res;
 
     KIconLoader *iconloader = KIconLoader::global();
-    QString back_icon_path = QApplication::isRightToLeft()?iconloader->iconPath("go-next", KIconLoader::Small ):iconloader->iconPath("go-previous", KIconLoader::Small );
+    QString back_icon_path = QApplication::isRightToLeft()?iconloader->iconPath("go-previous-rtl", KIconLoader::Small ):iconloader->iconPath("go-previous", KIconLoader::Small );
     QString gohome_icon_path = iconloader->iconPath("go-home", KIconLoader::Small );
-    QString continue_icon_path = QApplication::isRightToLeft()?iconloader->iconPath("arrow-left", KIconLoader::Small ):iconloader->iconPath("arrow-right", KIconLoader::Small );
+    QString continue_icon_path = QApplication::isRightToLeft()?iconloader->iconPath("go-next-rtl", KIconLoader::Small ):iconloader->iconPath("go-next", KIconLoader::Small );
 
     res = res.arg( KStandardDirs::locate( "data", "kdeui/about/kde_infopage.css" ) );
     if ( kapp->layoutDirection() == Qt::RightToLeft )
@@ -221,7 +221,7 @@ QString KonqAboutPageFactory::specs()
 
     KIconLoader *iconloader = KIconLoader::global();
     QString res = loadFile( KStandardDirs::locate( "data", "konqueror/about/specs.html" ));
-    QString continue_icon_path = QApplication::isRightToLeft()?iconloader->iconPath("arrow-left", KIconLoader::Small ):iconloader->iconPath("arrow-right", KIconLoader::Small );
+    QString continue_icon_path = QApplication::isRightToLeft()?iconloader->iconPath("go-next-rtl", KIconLoader::Small ):iconloader->iconPath("go-next", KIconLoader::Small );
     if ( res.isEmpty() )
 	return res;
 
@@ -320,7 +320,7 @@ QString KonqAboutPageFactory::tips()
 	    iconloader->iconPath("view-fullscreen", KIconLoader::Small );
     QString view_left_right_icon_path =
 	    iconloader->iconPath("view-left-right", KIconLoader::Small );
-    QString continue_icon_path = QApplication::isRightToLeft()?iconloader->iconPath("arrow-left", KIconLoader::Small ):iconloader->iconPath("arrow-right", KIconLoader::Small );
+    QString continue_icon_path = QApplication::isRightToLeft()?iconloader->iconPath("go-next-rtl", KIconLoader::Small ):iconloader->iconPath("go-next", KIconLoader::Small );
 
     res = res.arg( KStandardDirs::locate( "data", "kdeui/about/kde_infopage.css" ) );
     if ( kapp->layoutDirection() == Qt::RightToLeft )
