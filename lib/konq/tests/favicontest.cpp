@@ -40,7 +40,7 @@ static bool checkNetworkAccess() {
     if ( s_networkAccess == Unknown ) {
         QTime tm;
         tm.start();
-        KIO::Job* job = KIO::get( KUrl( s_iconUrl ), false, false /*HideProgressInfo*/ );
+        KIO::Job* job = KIO::get( KUrl( s_iconUrl ), KIO::NoReload, KIO::HideProgressInfo );
         if( KIO::NetAccess::synchronousRun( job, 0 ) ) {
             s_networkAccess = Yes;
             s_downloadTime = tm.elapsed();

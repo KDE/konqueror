@@ -463,7 +463,7 @@ void KonqUndoManager::stepMovingFiles()
             if ( op.m_renamed )
             {
                 kDebug(1203) << "rename" << op.m_dst << op.m_src;
-                d->m_currentJob = KIO::rename( op.m_dst, op.m_src, false );
+                d->m_currentJob = KIO::rename( op.m_dst, op.m_src, KIO::HideProgressInfo );
                 d->m_undoJob->emitMoving( op.m_dst, op.m_src );
             }
             else
@@ -472,7 +472,7 @@ void KonqUndoManager::stepMovingFiles()
         else if ( type == KonqBasicOperation::Link )
         {
             kDebug(1203) << "symlink" << op.m_target << op.m_src;
-            d->m_currentJob = KIO::symlink( op.m_target, op.m_src, true, false );
+            d->m_currentJob = KIO::symlink( op.m_target, op.m_src, KIO::Overwrite | KIO::HideProgressInfo );
         }
         else if ( d->m_current.m_type == KonqUndoManager::COPY )
         {
@@ -480,13 +480,13 @@ void KonqUndoManager::stepMovingFiles()
             {
                 // Before we delete op.m_dst, let's check if it was modified (#20532)
                 kDebug(1203) << "stat" << op.m_dst;
-                d->m_currentJob = KIO::stat( op.m_dst, false );
+                d->m_currentJob = KIO::stat( op.m_dst, KIO::HideProgressInfo );
                 d->m_undoState = STATINGFILE; // temporarily
                 return; // no pop() yet, we'll finish the work in slotResult
             }
             else // dest was stat'ed, and the deletion was approved in slotResult
             {
-                d->m_currentJob = KIO::file_delete( op.m_dst, false );
+                d->m_currentJob = KIO::file_delete( op.m_dst, KIO::HideProgressInfo );
                 d->m_undoJob->emitDeleting( op.m_dst );
                 d->m_undoState = MOVINGFILES;
             }
@@ -495,7 +495,7 @@ void KonqUndoManager::stepMovingFiles()
                   || d->m_current.m_type == KonqUndoManager::TRASH )
         {
             kDebug(1203) << "file_move" << op.m_dst << op.m_src;
-            d->m_currentJob = KIO::file_move( op.m_dst, op.m_src, -1, true, false, false /*HideProgressInfo*/ );
+            d->m_currentJob = KIO::file_move( op.m_dst, op.m_src, -1, KIO::Overwrite | KIO::HideProgressInfo );
             d->m_undoJob->emitMoving( op.m_dst, op.m_src );
         }
 
@@ -521,7 +521,7 @@ void KonqUndoManager::stepRemovingLinks()
     {
       KUrl file = d->m_linkCleanupStack.pop();
       kDebug(1203) << "file_delete" << file;
-      d->m_currentJob = KIO::file_delete( file, false );
+      d->m_currentJob = KIO::file_delete( file, KIO::HideProgressInfo );
       d->m_undoJob->emitDeleting( file );
 
       KUrl url( file );

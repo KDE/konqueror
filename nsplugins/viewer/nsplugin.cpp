@@ -1817,7 +1817,7 @@ bool NSPluginStream::get( const QString& url, const QString& mimeType,
     // create new stream
     if ( create( url, mimeType, notify ) ) {
         // start the kio job
-        _job = KIO::get(KUrl( url ), false, false);
+        _job = KIO::get(KUrl( url ), KIO::NoReload, KIO::HideProgressInfo);
         _job->addMetaData("errorPage", "false");
         _job->addMetaData("AllowCompressedPage", "false");
         if (reload) {
@@ -1844,7 +1844,7 @@ bool NSPluginStream::post( const QString& url, const QByteArray& data,
     // create new stream
     if ( create( url, mimeType, notify ) ) {
         // start the kio job
-        _job = KIO::http_post(KUrl( url ), data, false);
+        _job = KIO::http_post(KUrl( url ), data, KIO::HideProgressInfo);
         _job->addMetaData("content-type", browserArgs.contentType());
         _job->addMetaData("errorPage", "false");
         _job->addMetaData("AllowCompressedPage", "false");
