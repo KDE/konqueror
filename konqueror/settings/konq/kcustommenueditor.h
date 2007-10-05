@@ -41,12 +41,12 @@ public:
     /**
      * load the custom menu
      */
-    void load(KConfigBase *);
+    void load(KConfig *);
 
     /**
      * save the custom menu
      */
-    void save(KConfigBase *);
+    void save(KConfig *);
 
 public Q_SLOTS:
     void slotNewItem();

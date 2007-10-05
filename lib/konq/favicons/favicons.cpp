@@ -33,6 +33,7 @@
 #include <kio/job.h>
 #include "favicons_adaptor.h"
 #include <ktemporaryfile.h>
+#include <kconfiggroup.h>
 
 #include "favicons.moc"
 

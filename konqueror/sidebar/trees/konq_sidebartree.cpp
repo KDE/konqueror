@@ -770,7 +770,6 @@ void KonqSidebarTree::loadTopLevelGroup( KonqSidebarTreeItem *parent, const QStr
 void KonqSidebarTree::loadTopLevelItem( KonqSidebarTreeItem *parent, const QString &filename )
 {
     KDesktopFile cfg( filename );
-    cfg.setDollarExpansion(true);
     KConfigGroup desktopGroup = cfg.desktopGroup();
 
     QFileInfo inf( filename );
@@ -787,7 +786,7 @@ void KonqSidebarTree::loadTopLevelItem( KonqSidebarTreeItem *parent, const QStri
 
     // Here's where we need to create the right module...
     // ### TODO: make this KTrader/KLibrary based.
-    QString moduleName = desktopGroup.readEntry( "X-KDE-TreeModule" );
+    QString moduleName = desktopGroup.readPathEntry( "X-KDE-TreeModule" );
     QString showHidden = desktopGroup.readEntry("X-KDE-TreeModule-ShowHidden");
 
     if (moduleName.isEmpty()) moduleName="Directory";

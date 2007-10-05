@@ -24,6 +24,7 @@
 #include <QDir>
 #include <kparts/browserextension.h>
 #include <knewmenu.h>
+#include <kdebug.h>
 #include <konq_popupmenu.h>
 
 QTEST_KDEMAIN(KonqPopupMenuTest, GUI)

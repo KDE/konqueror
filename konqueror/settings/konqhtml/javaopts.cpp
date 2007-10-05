@@ -27,6 +27,7 @@
 #include <klineedit.h>
 #include <klocale.h>
 #include <khtml_settings.h>
+#include <kdebug.h>
 #include <knuminput.h>
 #include <khbox.h>
 
@@ -221,9 +222,9 @@ void KJavaOptions::load()
     if( sJavaPath == "/usr/lib/jdk" )
         sJavaPath = "java";
 
-    if( m_pConfig->hasKey( "JavaDomains" ) )
+    if( m_pConfig->group(m_groupname).hasKey( "JavaDomains" ) )
     	domainSpecific->initialize(m_pConfig->group(m_groupname).readEntry("JavaDomains", QStringList() ));
-    else if( m_pConfig->hasKey( "JavaDomainSettings" ) ) {
+    else if( m_pConfig->group(m_groupname).hasKey( "JavaDomainSettings" ) ) {
         domainSpecific->updateDomainListLegacy( m_pConfig->group(m_groupname).readEntry("JavaDomainSettings", QStringList() ) );
 	_removeJavaDomainSettings = true;
     } else {

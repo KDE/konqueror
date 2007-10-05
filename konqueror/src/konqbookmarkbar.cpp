@@ -34,6 +34,7 @@
 #include <kglobal.h>
 #include <kmenu.h>
 #include <kdebug.h>
+#include <kconfiggroup.h>
 
 #include "konqbookmarkmenu.h"
 #include "kbookmarkimporter.h"

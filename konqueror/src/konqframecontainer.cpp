@@ -22,6 +22,7 @@
 #include <kglobalsettings.h>
 #include <kconfig.h>
 #include <math.h> // pow()
+#include <kconfiggroup.h>
 
 #include "konqframevisitor.h"
 

@@ -46,6 +46,7 @@
 #include <kstandarddirs.h>
 #include <klibloader.h>
 #include <kconfig.h>
+#include <kconfiggroup.h>
 #include <kdesktopfile.h>
 #include <kservicetype.h>
 #include <kmimetype.h>
@@ -544,7 +545,7 @@ int main( int argc, char **argv )
 
     infoConfig = new KConfig( KGlobal::dirs()->saveLocation("data", "nsplugins") +
                               "/pluginsinfo" );
-    infoConfig->writeEntry( "number", 0 );
+    infoConfig->group("<default>").writeEntry( "number", 0 );
 
     // open the cache file for the mime information
     QString cacheName = KGlobal::dirs()->saveLocation("data", "nsplugins")+"/cache";

@@ -21,6 +21,7 @@
 #include <qtest_kde.h>
 #include <konq_faviconmgr.h>
 #include <kio/job.h>
+#include <kconfiggroup.h>
 #include <kio/netaccess.h>
 #include <QDateTime>
 #include <kmimetype.h>

@@ -30,6 +30,7 @@
 #include <kde_file.h>
 #include <kdebug.h>
 #include <kconfig.h>
+#include <kconfiggroup.h>
 
 #include <errno.h>
 #include <utime.h>

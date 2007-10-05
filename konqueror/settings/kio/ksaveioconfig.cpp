@@ -29,6 +29,7 @@
 #include <kmessagebox.h>
 #include <k3staticdeleter.h>
 #include <kio/ioslave_defaults.h>
+#include <kconfiggroup.h>
 
 class KSaveIOConfigPrivate
 {

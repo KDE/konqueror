@@ -820,12 +820,11 @@ void KonqViewManager::loadViewProfile( KConfig &cfg, const QString & filename,
                                        const KUrl & forcedURL, const KonqOpenURLRequest &req,
                                        bool resetWindow, bool openUrl )
 {
-  cfg.setDollarExpansion( true );
   KConfigGroup profileGroup( &cfg, "Profile" );
 
   m_currentProfile = filename;
   m_currentProfileText = profileGroup.readPathEntry("Name", filename);
-  m_profileHomeURL = profileGroup.readEntry("HomeURL", QString());
+  m_profileHomeURL = profileGroup.readPathEntry("HomeURL", QString());
 
   m_pMainWindow->currentProfileChanged();
   KUrl defaultURL;
@@ -834,7 +833,7 @@ void KonqViewManager::loadViewProfile( KConfig &cfg, const QString & filename,
 
   clear();
 
-  QString rootItem = profileGroup.readEntry( "RootItem", "empty" );
+  QString rootItem = profileGroup.readPathEntry( "RootItem", "empty" );
 
   //kDebug(1202) << "KonqViewManager::loadViewProfile : loading RootItem " << rootItem <<
   //" forcedURL " << forcedURL.url() << endl;

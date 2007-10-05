@@ -34,6 +34,7 @@
 #include <kprotocolmanager.h>
 #include <kstartupinfo.h>
 #include <kiconloader.h>
+#include <kconfiggroup.h>
 
 #include "konqmainwindow.h"
 #include "konqviewmanager.h"
@@ -140,9 +141,8 @@ KonqMainWindow * KonqMisc::createBrowserWindowFromProfile( const QString &path, 
   else
   {
       KConfig cfg( path );
-      cfg.setDollarExpansion( true );
       KConfigGroup profileGroup( &cfg, "Profile" );
-      QString xmluiFile = profileGroup.readEntry("XMLUIFile","konqueror.rc");
+      QString xmluiFile = profileGroup.readPathEntry("XMLUIFile","konqueror.rc");
 
       mainWindow = new KonqMainWindow( KUrl(), xmluiFile );
       mainWindow->viewManager()->loadViewProfile( cfg, filename, url, req, false, openUrl );

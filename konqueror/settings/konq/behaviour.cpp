@@ -32,6 +32,7 @@
 #include <konq_defaults.h>
 #include <kstandarddirs.h>
 #include <kurlrequester.h>
+#include <kconfiggroup.h>
 
 // Local
 #include "konqkcmfactory.h"

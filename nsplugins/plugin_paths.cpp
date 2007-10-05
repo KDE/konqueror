@@ -26,6 +26,7 @@
 #include "plugin_paths.h"
 
 #include <ksharedconfig.h>
+#include <kconfiggroup.h>
 #include <stdlib.h>
 
 QStringList getSearchPaths()
@@ -58,8 +59,7 @@ QStringList getSearchPaths()
     }
 
     // read paths
-    config.config()->setDollarExpansion( true );
-    searchPaths = config.readEntry( "scanPaths",QStringList() );
+    searchPaths = config.readPathListEntry( "scanPaths" );
 
     // append environment variable NPX_PLUGIN_PATH
     QStringList envs = QString( getenv("NPX_PLUGIN_PATH") ).split(':');

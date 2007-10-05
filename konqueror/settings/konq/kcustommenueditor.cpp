@@ -127,7 +127,7 @@ void KCustomMenuEditor::refreshButton()
 }
 
 void
-KCustomMenuEditor::load(KConfigBase *cfg)
+KCustomMenuEditor::load(KConfig *cfg)
 {
    KConfigGroup cg(cfg, QString());
    int count = cg.readEntry("NrOfItems", 0);
@@ -155,7 +155,7 @@ KCustomMenuEditor::load(KConfigBase *cfg)
 }
 
 void
-KCustomMenuEditor::save(KConfigBase *cfg)
+KCustomMenuEditor::save(KConfig *cfg)
 {
    // First clear the whole config file.
    QStringList groups = cfg->groupList();

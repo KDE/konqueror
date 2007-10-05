@@ -42,6 +42,7 @@
 #include <kio/slaveconfig.h>
 #include <kio/scheduler.h>
 #include <kparts/browserextension.h>
+#include <kconfiggroup.h>
 
 #define DATA_KEY	QLatin1String("Charset")
 
@@ -215,7 +216,7 @@ KRemoteEncodingPlugin::slotDefault()
 	  kDebug() << "Domain to remove: " << *it;
 	  if (config.hasGroup(*it))
 	    config.deleteGroup(*it);
-	  else if (config.hasKey(*it))
+	  else if (config.group("").hasKey(*it))
 	    config.group("").deleteEntry(*it); //don't know what group name is supposed to be XXX
 	}
     }
