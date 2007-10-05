@@ -640,7 +640,7 @@ void KonqOperations::rename( QWidget * parent, const KUrl & oldurl, const KUrl& 
 
     KUrl::List lst;
     lst.append(oldurl);
-    KIO::Job * job = KIO::moveAs( oldurl, newurl, !oldurl.isLocalFile() );
+    KIO::Job * job = KIO::moveAs( oldurl, newurl, oldurl.isLocalFile() ? KIO::HideProgressInfo : KIO::DefaultFlags );
     KonqOperations * op = new KonqOperations( parent );
     op->setOperation( job, MOVE, newurl );
     KonqUndoManager::self()->recordJob( KonqUndoManager::RENAME, lst, newurl, job );
@@ -697,7 +697,7 @@ void KonqOperations::statUrl( const KUrl & url, const QObject *receiver, const c
 void KonqOperations::_statUrl( const KUrl & url, const QObject *receiver, const char *member )
 {
     connect( this, SIGNAL( statFinished( const KFileItem & ) ), receiver, member );
-    KIO::StatJob * job = KIO::stat( url /*, false?*/ );
+    KIO::StatJob * job = KIO::stat( url /*, KIO::HideProgressInfo?*/ );
     job->ui()->setWindow(parentWidget());
     connect( job, SIGNAL( result( KJob * ) ),
              SLOT( slotStatResult( KJob * ) ) );

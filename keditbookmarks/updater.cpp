@@ -135,7 +135,7 @@ FavIconWebGrabber::FavIconWebGrabber(KParts::ReadOnlyPart *part, const KUrl &url
 
     // the use of KIO rather than directly using KHTML is to allow silently abort on error
 
-    KIO::Job *job = KIO::get(m_url, false, false);
+    KIO::Job *job = KIO::get(m_url, KIO::NoReload, KIO::HideProgressInfo);
     job->addMetaData( QString("cookies"), QString("none") );
     connect(job, SIGNAL( result( KJob *)),
             this, SLOT( slotFinished(KJob *) ));

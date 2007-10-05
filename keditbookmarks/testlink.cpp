@@ -91,7 +91,7 @@ bool TestLinkItr::isApplicable(const KBookmark &bk) const {
 void TestLinkItr::doAction() {
     m_errSet = false;
 
-    m_job = KIO::get(curBk().url(), true, false);
+    m_job = KIO::get(curBk().url(), KIO::Reload, KIO::HideProgressInfo);
     m_job->addMetaData("errorPage", "true");
     m_job->addMetaData( QString("cookies"), QString("none") );
 

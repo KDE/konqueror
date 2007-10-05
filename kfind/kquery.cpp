@@ -90,9 +90,9 @@ void KQuery::start()
   }
 
   if (m_recursive)
-    job = KIO::listRecursive( m_url, false );
+    job = KIO::listRecursive( m_url, KIO::HideProgressInfo );
   else
-    job = KIO::listDir( m_url, false );
+    job = KIO::listDir( m_url, KIO::HideProgressInfo );
 
   connect(job, SIGNAL(entries(KIO::Job *, const KIO::UDSEntryList &)),
 	  SLOT(slotListEntries(KIO::Job *, const KIO::UDSEntryList &)));
