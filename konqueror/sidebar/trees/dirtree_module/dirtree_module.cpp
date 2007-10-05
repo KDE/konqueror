@@ -78,7 +78,6 @@ void KonqSidebarDirTreeModule::addTopLevelItem( KonqSidebarTreeTopLevelItem * it
 
     KDesktopFile cfg( item->path() );
     KConfigGroup desktopGroup = cfg.desktopGroup();
-    cfg.setDollarExpansion(true);
 
     KUrl targetURL;
     targetURL.setPath(item->path());
@@ -87,7 +86,7 @@ void KonqSidebarDirTreeModule::addTopLevelItem( KonqSidebarTreeTopLevelItem * it
     {
         targetURL = cfg.readUrl();
         // some services might want to make their URL configurable in kcontrol
-        QString configured = desktopGroup.readEntry("X-KDE-ConfiguredURL");
+        QString configured = desktopGroup.readPathEntry("X-KDE-ConfiguredURL");
         if (!configured.isEmpty()) {
             QStringList list = configured.split( ':');
             KConfig config(list[0]);
@@ -101,7 +100,7 @@ void KonqSidebarDirTreeModule::addTopLevelItem( KonqSidebarTreeTopLevelItem * it
     else if ( cfg.hasDeviceType() )
     {
         // Determine the mountpoint
-        QString mp = desktopGroup.readEntry("MountPoint");
+        QString mp = desktopGroup.readPathEntry("MountPoint");
         if ( mp.isEmpty() )
             return;
 

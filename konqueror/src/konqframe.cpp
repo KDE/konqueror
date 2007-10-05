@@ -54,6 +54,7 @@
 #include <ksqueezedtextlabel.h>
 #include <kstandardshortcut.h>
 #include <konq_events.h>
+#include <kconfiggroup.h>
 
 KonqFrame::KonqFrame( QWidget* parent, KonqFrameContainerBase *parentContainer )
     : QWidget ( parent )

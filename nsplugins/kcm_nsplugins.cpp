@@ -74,9 +74,9 @@ static bool checkSearchPathTimestamps( QStringList paths, QStringList timestamps
     if( changed )
     {
         KConfig config("kcmnspluginrc");
-        config.setGroup("Misc");
-        config.writeEntry( "lastSearchPaths", paths );
-        config.writeEntry( "lastSearchTimestamps", currentTimestamps );
+	KConfigGroup cg(&config, "Misc");
+        cg.writeEntry( "lastSearchPaths", paths );
+        cg.writeEntry( "lastSearchTimestamps", currentTimestamps );
         return true;
     }
     return false;

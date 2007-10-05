@@ -171,7 +171,6 @@ static bool startNewKonqueror( QString url, QString mimetype, const QString& pro
 	if( profilepath.isEmpty())
 	    return true;
 	KConfig cfg(  profilepath );
-	cfg.setDollarExpansion( true );
         KConfigGroup profileGroup( &cfg, "Profile" );
 	const QMap< QString, QString > entries = profileGroup.entryMap();
 	QRegExp urlregexp( QLatin1String( "^View[0-9]*_URL$" ));

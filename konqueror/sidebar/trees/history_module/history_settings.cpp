@@ -7,6 +7,7 @@
 #include <kconfig.h>
 #include <ksharedconfig.h>
 #include <kglobal.h>
+#include <kconfiggroup.h>
 
 
 KonqSidebarHistorySettings::KonqSidebarHistorySettings( QObject *parent )

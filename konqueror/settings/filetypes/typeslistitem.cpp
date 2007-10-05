@@ -28,6 +28,7 @@
 #include <kdesktopfile.h>
 #include <kmimetypetrader.h>
 #include <k3staticdeleter.h>
+#include <kconfiggroup.h>
 
 
 QMap< QString, QStringList >* TypesListItem::s_changedServices;

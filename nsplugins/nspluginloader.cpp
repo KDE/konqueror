@@ -38,6 +38,7 @@
 #include <klocale.h>
 #include <kstandarddirs.h>
 #include <kconfig.h>
+#include <kconfiggroup.h>
 #include <QLayout>
 #include <QObject>
 #include <QPushButton>

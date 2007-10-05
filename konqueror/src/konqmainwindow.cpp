@@ -5311,7 +5311,7 @@ void KonqMainWindow::closeEvent( QCloseEvent *e )
         KSharedConfig::Ptr config = KGlobal::config();
         KConfigGroup cs( config, QLatin1String("Notification Messages") );
 
-        if ( !config->hasKey( "MultipleTabConfirm" ) )
+        if ( !cs.hasKey( "MultipleTabConfirm" ) )
         {
           switch (
               KMessageBox::warningYesNoCancel(

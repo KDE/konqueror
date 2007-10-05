@@ -10,6 +10,7 @@
 // KDE
 #include <klocale.h>
 #include <kglobal.h>
+#include <kconfiggroup.h>
 
 
 KHTTPOptions::KHTTPOptions(KSharedConfig::Ptr config, const QString &group, const KComponentData &componentData, QWidget *parent)

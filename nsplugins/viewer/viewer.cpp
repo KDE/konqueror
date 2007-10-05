@@ -30,6 +30,7 @@
 
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
+#include <kconfiggroup.h>
 #include <kdebug.h>
 #include <kglobal.h>
 #include <klocale.h>
