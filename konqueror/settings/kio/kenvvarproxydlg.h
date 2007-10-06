@@ -24,7 +24,7 @@
 #include <QtCore/QMap>
 
 #include "kproxydlgbase.h"
-#include "ui_envvarproxy_ui.h"
+#include "ui_envvarproxy.h"
 
 class EnvVarProxyDlgUI : public QWidget, public Ui::EnvVarProxyDlgUI
 {

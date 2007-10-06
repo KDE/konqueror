@@ -26,7 +26,7 @@
 #define _USERAGENTDLG_H
 
 #include <kcmodule.h>
-#include "ui_useragentdlg_ui.h"
+#include "ui_useragentdlg.h"
 
 class KConfig;
 class FakeUASProvider;

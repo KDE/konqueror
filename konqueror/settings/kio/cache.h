@@ -23,7 +23,7 @@
 #define CACHE_H
 
 #include <kcmodule.h>
-#include "ui_cache_ui.h"
+#include "ui_cache.h"
 
 class CacheDlgUI : public QWidget, public Ui::CacheDlgUI
 {

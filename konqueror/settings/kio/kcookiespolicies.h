@@ -30,7 +30,7 @@
 #include <kcmodule.h>
 
 #include "policydlg.h"
-#include "ui_kcookiespoliciesdlg_ui.h"
+#include "ui_kcookiespoliciesdlg.h"
 class Q3ListViewItem;
 
 
