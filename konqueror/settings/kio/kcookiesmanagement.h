@@ -30,7 +30,7 @@
 #include <Qt3Support/Q3PtrList>
 
 #include <kcmodule.h>
-#include "ui_kcookiesmanagementdlg_ui.h"
+#include "ui_kcookiesmanagementdlg.h"
 
 
 struct CookieProp;

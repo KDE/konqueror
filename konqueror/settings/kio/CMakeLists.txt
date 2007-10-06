@@ -25,7 +25,7 @@ set(kcm_kio_PART_SRCS
    socks.cpp )
 
 
-kde4_add_ui_files(kcm_kio_PART_SRCS cache_ui.ui manualproxy_ui.ui envvarproxy_ui.ui policydlg_ui.ui uagentproviderdlg_ui.ui kcookiesmanagementdlg_ui.ui useragentdlg_ui.ui socksbase.ui kproxydlg_ui.ui kcookiespoliciesdlg_ui.ui kcookiesmanagementdlg_ui.ui)
+kde4_add_ui_files(kcm_kio_PART_SRCS cache.ui manualproxy.ui envvarproxy.ui policydlg.ui uagentproviderdlg.ui kcookiesmanagementdlg.ui useragentdlg.ui socksbase.ui kproxydlg.ui kcookiespoliciesdlg.ui kcookiesmanagementdlg.ui)
 
 
 kde4_add_plugin(kcm_kio ${kcm_kio_PART_SRCS})

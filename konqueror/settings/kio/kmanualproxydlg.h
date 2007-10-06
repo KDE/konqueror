@@ -23,7 +23,7 @@
 #define KMANUALPROXYDLG_H
 
 #include "kproxydlgbase.h"
-#include "ui_manualproxy_ui.h"
+#include "ui_manualproxy.h"
 class QSpinBox;
 class KLineEdit;
 

@@ -40,7 +40,7 @@
 
 // Local
 #include "ksaveioconfig.h"
-#include "ui_cache_ui.h"
+#include "ui_cache.h"
 
 K_PLUGIN_FACTORY_DECLARATION(KioConfigFactory)
 

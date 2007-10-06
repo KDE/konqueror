@@ -23,7 +23,7 @@
 #define KPROXYDLG_H
 
 #include <kcmodule.h>
-#include "ui_kproxydlg_ui.h"
+#include "ui_kproxydlg.h"
 
 class QTabWidget;
 

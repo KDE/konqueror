@@ -22,7 +22,7 @@
 
 #include <kdialog.h>
 #include <klineedit.h>
-#include "ui_uagentproviderdlg_ui.h"
+#include "ui_uagentproviderdlg.h"
 
 class FakeUASProvider;
 

@@ -22,7 +22,7 @@
 
 
 #include <kdialog.h>
-#include "ui_policydlg_ui.h"
+#include "ui_policydlg.h"
 
 
 class PolicyDlgUI : public QWidget, public Ui::PolicyDlgUI
