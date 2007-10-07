@@ -28,14 +28,11 @@
 
 #include <kaction.h>
 #include <kactioncollection.h>
-#include <kdesktopfileactions.h>
 #include <kfileitem.h>
 #include <kparts/browserextension.h>
 #include <kservice.h>
 
 #include <libkonq_export.h>
-
-typedef QList<KDesktopFileActions::Service> ServiceList;
 
 class KNewMenu;
 //class KonqPopupMenuPlugin;

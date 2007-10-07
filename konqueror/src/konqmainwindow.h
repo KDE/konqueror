@@ -36,7 +36,6 @@
 #include "konqopenurlrequest.h"
 
 #include <kparts/mainwindow.h>
-#include <kbookmarkmanager.h>
 #include <kcompletion.h>
 #include <kurlcompletion.h>
 #include <kglobalsettings.h>
@@ -54,6 +53,7 @@ class QPixmap;
 class KAction;
 class KActionCollection;
 class KActionMenu;
+class KBookmarkGroup;
 class KBookmarkMenu;
 class KBookmarkActionMenu;
 class KCMultiDialog;
@@ -74,6 +74,7 @@ class KonqMainWindowIface;
 class KonqDirPart;
 class KonqRun;
 class KUrlRequester;
+class KBookmarkManager;
 struct HistoryEntry;
 
 namespace KParts {

@@ -18,6 +18,7 @@
 
 // Own
 #include "bookmark_module.h"
+#include "bookmark_item.h"
 
 // Qt
 #include <QtCore/QList>
@@ -34,6 +35,7 @@
 #include <kactioncollection.h>
 #include <kapplication.h>
 #include <kbookmark.h>
+#include <kbookmarkmanager.h>
 #include <kdebug.h>
 #include <kicon.h>
 #include <kiconloader.h>
@@ -41,14 +43,15 @@
 #include <kmessagebox.h>
 #include <kstandardaction.h>
 
-// Local
-#include "bookmark_item.h"
-#include <konqbookmarkmanager.h>
+KBookmarkManager* s_bookmarkManager = 0;
 
 KonqSidebarBookmarkModule::KonqSidebarBookmarkModule( KonqSidebarTree * parentTree )
     : QObject( 0L ), KonqSidebarTreeModule( parentTree ),
       m_topLevelItem( 0L ), m_ignoreOpenChange(true)
 {
+    if (!s_bookmarkManager)
+        s_bookmarkManager = KBookmarkManager::userBookmarksManager();
+
     // formats handled by K3BookmarkDrag:
     QStringList formats;
     formats << "text/uri-list" << "application/x-xbel" << "text/plain";
@@ -99,10 +102,10 @@ KonqSidebarBookmarkModule::KonqSidebarBookmarkModule( KonqSidebarTree * parentTr
     connect(action, SIGNAL(triggered(bool)), SLOT( slotCopyLocation() ));
 
     m_collection->addAction( "edit_bookmarks",
-                             KStandardAction::editBookmarks( KonqBookmarkManager::self(),
+                             KStandardAction::editBookmarks( s_bookmarkManager,
                                                              SLOT( slotEditBookmarks() ), this ) );
 
-    connect( KonqBookmarkManager::self(), SIGNAL(changed(const QString &, const QString &) ),
+    connect( s_bookmarkManager, SIGNAL(changed(const QString &, const QString &) ),
              SLOT( slotBookmarksChanged(const QString &) ) );
 }
 
@@ -201,12 +204,12 @@ void KonqSidebarBookmarkModule::slotMoved(Q3ListViewItem *i, Q3ListViewItem*, Q3
         }
 
         if (error)
-            parentGroup = KonqBookmarkManager::self()->root();
+            parentGroup = s_bookmarkManager->root();
     } else {
         // No parent! This means the user dropped it before the top level item
         // And K3ListView has moved the item there, we need to correct it
         tree()->moveItem(item, m_topLevelItem, 0L);
-        parentGroup = KonqBookmarkManager::self()->root();
+        parentGroup = s_bookmarkManager->root();
     }
 
     // remove the old reference.
@@ -220,7 +223,7 @@ void KonqSidebarBookmarkModule::slotMoved(Q3ListViewItem *i, Q3ListViewItem*, Q3
     QString oldAddress = oldParentGroup.address();
     QString newAddress = parentGroup.address();
     if (oldAddress == newAddress) {
-        KonqBookmarkManager::self()->emitChanged( parentGroup );
+        s_bookmarkManager->emitChanged( parentGroup );
     } else {
         int i = 0;
         while (true) {
@@ -228,11 +231,11 @@ void KonqSidebarBookmarkModule::slotMoved(Q3ListViewItem *i, Q3ListViewItem*, Q3
             QChar c2 = newAddress[i];
             if (c1 == QChar::null) {
                 // oldParentGroup is probably parent of parentGroup.
-                KonqBookmarkManager::self()->emitChanged( oldParentGroup );
+                s_bookmarkManager->emitChanged( oldParentGroup );
                 break;
             } else if (c2 == QChar::null) {
                 // parentGroup is probably parent of oldParentGroup.
-                KonqBookmarkManager::self()->emitChanged( parentGroup );
+                s_bookmarkManager->emitChanged( parentGroup );
                 break;
             } else {
                 if (c1 == c2) {
@@ -240,8 +243,8 @@ void KonqSidebarBookmarkModule::slotMoved(Q3ListViewItem *i, Q3ListViewItem*, Q3
                     ++i;
                 } else {
                     // ugh... need to update both groups separately.
-                    KonqBookmarkManager::self()->emitChanged( oldParentGroup );
-                    KonqBookmarkManager::self()->emitChanged( parentGroup );
+                    s_bookmarkManager->emitChanged( oldParentGroup );
+                    s_bookmarkManager->emitChanged( parentGroup );
                     break;
                 }
             }
@@ -276,11 +279,11 @@ void KonqSidebarBookmarkModule::slotDropped(K3ListView *, QDropEvent *e, Q3ListV
         }
         else if(parent == m_topLevelItem)
         {
-            parentGroup = KonqBookmarkManager::self()->root();
+            parentGroup = s_bookmarkManager->root();
         }
     } else {
         // it's most probably the root...
-        parentGroup = KonqBookmarkManager::self()->root();
+        parentGroup = s_bookmarkManager->root();
     }
 
     KBookmark::List bookmarks = KBookmark::List::fromMimeData(e->mimeData());
@@ -292,7 +295,7 @@ void KonqSidebarBookmarkModule::slotDropped(K3ListView *, QDropEvent *e, Q3ListV
         parentGroup.moveItem(*it, afterBookmark);
     }
 
-    KonqBookmarkManager::self()->emitChanged( parentGroup );
+    s_bookmarkManager->emitChanged( parentGroup );
 }
 
 void KonqSidebarBookmarkModule::slotCreateFolder()
@@ -308,7 +311,7 @@ void KonqSidebarBookmarkModule::slotCreateFolder()
     }
     else if(tree()->selectedItem() == m_topLevelItem)
     {
-	parentGroup = KonqBookmarkManager::self()->root();
+	parentGroup = s_bookmarkManager->root();
     }
     else
 	return;
@@ -317,7 +320,7 @@ void KonqSidebarBookmarkModule::slotCreateFolder()
     if(bi && !(bi->bookmark().isGroup()))
 	parentGroup.moveItem(bookmark, bi->bookmark());
 
-    KonqBookmarkManager::self()->emitChanged( parentGroup );
+    s_bookmarkManager->emitChanged( parentGroup );
 }
 
 void KonqSidebarBookmarkModule::slotDelete()
@@ -343,7 +346,7 @@ void KonqSidebarBookmarkModule::slotDelete()
     KBookmarkGroup parentBookmark = bookmark.parentGroup();
     parentBookmark.deleteBookmark( bookmark );
 
-    KonqBookmarkManager::self()->emitChanged( parentBookmark );
+    s_bookmarkManager->emitChanged( parentBookmark );
 }
 
 void makeTextNodeMod(const KBookmark &bk, const QString &m_nodename, const QString &m_newText) {
@@ -388,7 +391,7 @@ void KonqSidebarBookmarkModule::slotProperties(KonqSidebarBookmarkItem *bi)
     }
 
     KBookmarkGroup parentBookmark = bookmark.parentGroup();
-    KonqBookmarkManager::self()->emitChanged( parentBookmark );
+    s_bookmarkManager->emitChanged( parentBookmark );
 }
 
 void KonqSidebarBookmarkModule::slotOpenNewWindow()
@@ -409,7 +412,7 @@ void KonqSidebarBookmarkModule::slotOpenTab()
 	bookmark = bi->bookmark();
     }
     else if(tree()->selectedItem() == m_topLevelItem)
-	bookmark = KonqBookmarkManager::self()->root();
+	bookmark = s_bookmarkManager->root();
     else
 	return;
 
@@ -443,9 +446,9 @@ void KonqSidebarBookmarkModule::slotCopyLocation()
 
     if ( !bookmark.isGroup() )
     {
-        kapp->clipboard()->setData( K3BookmarkDrag::newDrag(bookmark, 0),
+        qApp->clipboard()->setData( K3BookmarkDrag::newDrag(bookmark, 0),
                                     QClipboard::Selection );
-        kapp->clipboard()->setData( K3BookmarkDrag::newDrag(bookmark, 0),
+        qApp->clipboard()->setData( K3BookmarkDrag::newDrag(bookmark, 0),
                                     QClipboard::Clipboard );
     }
 }
@@ -474,7 +477,7 @@ void KonqSidebarBookmarkModule::slotBookmarksChanged( const QString & groupAddre
     m_ignoreOpenChange = true;
 
     // update the right part of the tree
-    KBookmarkGroup group = KonqBookmarkManager::self()->findByAddress( groupAddress ).toGroup();
+    KBookmarkGroup group = s_bookmarkManager->findByAddress( groupAddress ).toGroup();
     KonqSidebarBookmarkItem * item = findByAddress( groupAddress );
     Q_ASSERT(!group.isNull());
     Q_ASSERT(item);
@@ -497,7 +500,7 @@ void KonqSidebarBookmarkModule::fillListView()
 {
     m_ignoreOpenChange = true;
 
-    KBookmarkGroup root = KonqBookmarkManager::self()->root();
+    KBookmarkGroup root = s_bookmarkManager->root();
     fillGroup( m_topLevelItem, root );
 
     m_ignoreOpenChange = false;

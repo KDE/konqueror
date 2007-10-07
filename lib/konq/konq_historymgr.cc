@@ -19,7 +19,7 @@
 
 #include "konq_historymgr.h"
 #include "konqhistorymanageradaptor.h"
-#include "konqbookmarkmanager.h"
+#include <kbookmarkmanager.h>
 
 #include <QtDBus/QtDBus>
 #include <kapplication.h>
@@ -35,8 +35,9 @@
 
 const int KonqHistoryManager::s_historyVersion = 4;
 
-KonqHistoryManager::KonqHistoryManager( QObject *parent )
-    : KParts::HistoryProvider( parent )
+KonqHistoryManager::KonqHistoryManager( KBookmarkManager* bookmarkManager, QObject *parent )
+    : KParts::HistoryProvider( parent ),
+      m_bookmarkManager(bookmarkManager)
 {
     m_updateTimer = new QTimer( this );
 
@@ -47,8 +48,7 @@ KonqHistoryManager::KonqHistoryManager( QObject *parent )
     m_maxCount = qMax( 1, m_maxCount );
     m_maxAgeDays = cs.readEntry( "Maximum age of History entries", 90);
 
-    m_filename = KStandardDirs::locateLocal( "data",
-			      QLatin1String("konqueror/konq_history" ));
+    m_filename = KStandardDirs::locateLocal( "data", QLatin1String("konqueror/konq_history"));
 
     // take care of the completion object
     m_pCompletion = new KCompletion;
@@ -482,14 +482,14 @@ void KonqHistoryManager::slotNotifyHistoryEntry( const QByteArray & data,
     // note, no need to do the updateBookmarkMetadata for every
     // history object, only need to for the broadcast sender as
     // the history object itself keeps the data consistant.
-    bool updated = KonqBookmarkManager::self()->updateAccessMetadata( urlString );
+    bool updated = m_bookmarkManager ? m_bookmarkManager->updateAccessMetadata( urlString ) : false;
 
     if ( isSenderOfSignal( msg ) ) {
 	// we are the sender of the broadcast, so we save
 	saveHistory();
 	// note, bk save does not notify, and we don't want to!
 	if (updated)
-	    KonqBookmarkManager::self()->save();
+	    m_bookmarkManager->save();
     }
 
     addToUpdateList( urlString );

@@ -19,6 +19,7 @@
 */
 
 #include "konq_popupmenu.h"
+#include "konq_menuactions.h"
 #include "kpropertiesdialog.h"
 #include "knewmenu.h"
 #include "konq_operations.h"
@@ -41,7 +42,6 @@
 #include <kauthorized.h>
 #include <kglobal.h>
 
-#include <QtDBus/QtDBus>
 #include <QDir>
 #include <QApplication>
 #include <QPixmap>
@@ -84,8 +84,6 @@ public:
     void addGroup(const QString& name);
     void addPlugins();
     void setup(KonqPopupMenu::Flags kpf);
-    int insertServicesSubmenus(const QMap<QString, ServiceList>& list, QMenu* menu, bool isBuiltin);
-    int insertServices(const ServiceList& list, QMenu* menu, bool isBuiltin);
 
     void slotPopupNewDir();
     void slotPopupNewView();
@@ -107,14 +105,14 @@ public:
     QString m_sMimeType;
     KFileItemList m_lstItems;
     KUrl::List m_lstPopupURLs;
-    QMap<int,KService::Ptr> m_mapPopup;
-    QMap<int,KDesktopFileActions::Service> m_mapPopupServices;
+    QMap<QAction*,KService::Ptr> m_mapPopup;
+    KonqMenuActions m_menuActions;
     bool m_bHandleEditOperations;
     QString m_attrName;
 //    KonqPopupMenu::ProtocolInfo m_info;
     KBookmarkManager* m_bookmarkManager;
     KActionCollection &m_actions;
-    KActionCollection m_ownActions;
+    KActionCollection m_ownActions; // TODO connect to statusbar for help on actions
     QActionGroup m_runServiceActionGroup;
     KParts::BrowserExtension::ActionGroupMap m_actionGroups;
 };
@@ -155,48 +153,6 @@ bool KonqPopupMenu::ProtocolInfo::trashIncluded() const
 }
 #endif
 
-// This helper class stores the .desktop-file actions and the servicemenus
-// in order to support X-KDE-Priority and X-KDE-Submenu.
-class PopupServices
-{
-public:
-    ServiceList* selectList( const QString& priority, const QString& submenuName );
-
-    ServiceList builtin;
-    ServiceList user, userToplevel, userPriority;
-    QMap<QString, ServiceList> userSubmenus, userToplevelSubmenus, userPrioritySubmenus;
-};
-
-ServiceList* PopupServices::selectList( const QString& priority, const QString& submenuName )
-{
-    // we use the categories .desktop entry to define submenus
-    // if none is defined, we just pop it in the main menu
-    if (submenuName.isEmpty())
-    {
-        if (priority == "TopLevel")
-        {
-            return &userToplevel;
-        }
-        else if (priority == "Important")
-        {
-            return &userPriority;
-        }
-    }
-    else if (priority == "TopLevel")
-    {
-        return &(userToplevelSubmenus[submenuName]);
-    }
-    else if (priority == "Important")
-    {
-        return &(userPrioritySubmenus[submenuName]);
-    }
-    else
-    {
-        return &(userSubmenus[submenuName]);
-    }
-    return &user;
-}
-
 //////////////////
 
 KonqPopupMenu::KonqPopupMenu(const KFileItemList &items,
@@ -225,92 +181,9 @@ void KonqPopupMenu::init (QWidget * parentWidget, Flags kpf, KParts::BrowserExte
     d->m_parentWidget = parentWidget;
     d->m_itemFlags = flags;
     setFont(KGlobalSettings::menuFont());
+    QObject::connect(&d->m_runServiceActionGroup, SIGNAL(triggered(QAction*)),
+                     this, SLOT(slotRunService(QAction*)));
     d->setup(kpf);
-}
-
-int KonqPopupMenuPrivate::insertServicesSubmenus(const QMap<QString, ServiceList>& submenus,
-                                                 QMenu* menu,
-                                                 bool isBuiltin)
-{
-    int count = 0;
-    QMap<QString, ServiceList>::ConstIterator it;
-    for (it = submenus.begin(); it != submenus.end(); ++it) {
-        if (it.value().isEmpty()) {
-            //avoid empty sub-menus
-            continue;
-        }
-
-        QMenu* actionSubmenu = new QMenu(menu);
-        menu->menuAction()->setObjectName("services_submenu"); // for the unittest
-        menu->addMenu(actionSubmenu);
-        count += insertServices(it.value(), actionSubmenu, isBuiltin);
-    }
-
-    return count;
-}
-
-int KonqPopupMenuPrivate::insertServices(const ServiceList& list,
-                                         QMenu* menu,
-                                         bool isBuiltin)
-{
-    QObject::connect(&m_runServiceActionGroup, SIGNAL(triggered(QAction*)), q, SLOT(slotRunService(QAction*)));
-    static int id = 1000;
-    int count = 0;
-
-    ServiceList::const_iterator it = list.begin();
-    for( ; it != list.end(); ++it ) {
-        if ((*it).isEmpty()) {
-            const QList<QAction*> actions = menu->actions();
-            if (!actions.isEmpty() && !actions.last()->isSeparator()) {
-                menu->addSeparator();
-            }
-            continue;
-        }
-
-        if (isBuiltin || (*it).m_display == true) {
-            const QString name = QString( isBuiltin ? "builtinservice_" : "userservice_" ) + QString::number(id);
-            QAction* act = m_ownActions.addAction( name );
-            QString text = (*it).m_strName;
-            text.replace('&',"&&");
-            act->setText( text );
-            if ( !(*it).m_strIcon.isEmpty() ) {
-                act->setIcon( KIcon((*it).m_strIcon) );
-            }
-            act->setData(id);
-            m_runServiceActionGroup.addAction(act);
-
-            menu->addAction( act ); // Add to toplevel menu
-
-            m_mapPopupServices[ id++ ] = *it;
-            ++count;
-        }
-    }
-
-    return count;
-}
-
-static bool KIOSKAuthorizedAction(const KConfigGroup& cfg)
-{
-    if ( !cfg.hasKey( "X-KDE-AuthorizeAction") )
-    {
-        return true;
-    }
-
-    QStringList list = cfg.readEntry("X-KDE-AuthorizeAction", QStringList() );
-    if (!list.isEmpty())
-    {
-        for(QStringList::ConstIterator it = list.begin();
-            it != list.end();
-            ++it)
-        {
-            if (!KAuthorized::authorize((*it).trimmed()))
-            {
-                return false;
-            }
-        }
-    }
-
-    return true;
 }
 
 void KonqPopupMenuPrivate::addNamedAction(const QString& name)
@@ -333,7 +206,6 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
     m_sMimeType         = m_lstItems.first().mimetype();
     QString mimeGroup   = m_sMimeType.left(m_sMimeType.indexOf('/'));
     mode_t mode         = m_lstItems.first().mode();
-    bool isDirectory    = S_ISDIR(mode);
     bool bTrashIncluded = false;
     bool mediaFiles     = false;
     bool isLocal        = m_lstItems.first().isLocalFile()
@@ -349,7 +221,6 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
     KFileItemList::const_iterator it = m_lstItems.begin();
     const KFileItemList::const_iterator kend = m_lstItems.end();
     QStringList mimeTypeList;
-    // Check whether all URLs are correct
     for ( ; it != kend; ++it )
     {
         url = (*it).url();
@@ -397,6 +268,7 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
         if ( (*it).mimetype().startsWith("media/") )
             mediaFiles = true;
     }
+    const bool isDirectory = S_ISDIR(mode);
     url = m_sViewURL;
     url.cleanPath();
 
@@ -418,7 +290,6 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
             sDeleting = false;
         }
     }
-    const bool isSingleLocal = m_lstItems.count() == 1 && isLocal;
 
 #if 0
     m_info.m_Reading = sReading;
@@ -472,7 +343,7 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
             actNewWindow->setToolTip( i18n( "Open the document in a new window" ) );
     }
 
-    if ( S_ISDIR(mode) && sWriting && !isCurrentTrash ) // A dir, and we can create things into it
+    if ( isDirectory && sWriting && !isCurrentTrash ) // A dir, and we can create things into it
     {
         if ( currentDir && m_pMenuNew ) // Current dir -> add the "new" menu
         {
@@ -529,7 +400,7 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
             addNamedAction( "copy" );
         }
 
-        if ( S_ISDIR(mode) && sWriting ) {
+        if ( isDirectory && sWriting ) {
             if ( currentDir )
                 addNamedAction( "paste" );
             else
@@ -602,7 +473,7 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
            else
               caption = i18n("&Bookmark This Location");
         }
-        else if (S_ISDIR(mode))
+        else if (isDirectory)
            caption = i18n("&Bookmark This Folder");
         else if (bIsLink)
            caption = i18n("&Bookmark This Link");
@@ -623,186 +494,8 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
 
     //////////////////////////////////////////////////////
 
-    PopupServices s;
-    KUrl urlForServiceMenu( m_lstItems.first().url() );
-
-    // 1 - Look for builtin and user-defined services
-    if ( m_sMimeType == "application/x-desktop" && isSingleLocal ) // .desktop file
-    {
-        // get builtin services, like mount/unmount
-        s.builtin = KDesktopFileActions::builtinServices( m_lstItems.first().url() );
-        const QString path = m_lstItems.first().url().path();
-        KDesktopFile desktopFile( path );
-        KConfigGroup cfg = desktopFile.desktopGroup();
-        const QString priority = cfg.readEntry("X-KDE-Priority");
-        const QString submenuName = cfg.readEntry( "X-KDE-Submenu" );
-        if ( cfg.readEntry("Type") == "Link" ) {
-           urlForServiceMenu = cfg.readEntry("URL");
-           // TODO: Do we want to make all the actions apply on the target
-           // of the .desktop file instead of the .desktop file itself?
-        }
-        ServiceList* list = s.selectList( priority, submenuName );
-        (*list) = KDesktopFileActions::userDefinedServices( path, desktopFile, url.isLocalFile() );
-    }
-
-    if ( sReading )
-    {
-
-        // 2 - Look for "servicesmenus" bindings (konqueror-specific user-defined services)
-
-        // first check the .directory if this is a directory
-        if (isDirectory && isSingleLocal)
-        {
-            QString dotDirectoryFile = m_lstItems.first().url().path( KUrl::AddTrailingSlash ).append(".directory");
-            KDesktopFile desktopFile(  dotDirectoryFile );
-            const KConfigGroup cfg = desktopFile.desktopGroup();
-
-            if (KIOSKAuthorizedAction(cfg))
-            {
-                const QString priority = cfg.readEntry("X-KDE-Priority");
-                const QString submenuName = cfg.readEntry( "X-KDE-Submenu" );
-                ServiceList* list = s.selectList( priority, submenuName );
-                (*list) += KDesktopFileActions::userDefinedServices( dotDirectoryFile, desktopFile, true );
-            }
-        }
-
-        // findAllResources() also removes duplicates
-        const QStringList entries = KGlobal::dirs()->findAllResources( "data",
-                                                                       "konqueror/servicemenus/*.desktop",
-                                                                       KStandardDirs::NoDuplicates );
-        QStringList::ConstIterator eIt = entries.begin();
-        const QStringList::ConstIterator eEnd = entries.end();
-        for (; eIt != eEnd; ++eIt )
-        {
-            KDesktopFile desktopFile( *eIt );
-            const KConfigGroup cfg = desktopFile.desktopGroup();
-
-            if (!KIOSKAuthorizedAction(cfg))
-            {
-                continue;
-            }
-
-            if ( cfg.hasKey( "X-KDE-ShowIfRunning" ) )
-            {
-                const QString app = cfg.readEntry( "X-KDE-ShowIfRunning" );
-                if ( QDBusConnection::sessionBus().interface()->isServiceRegistered( app ) )
-                    continue;
-            }
-            if ( cfg.hasKey( "X-KDE-ShowIfDBusCall" ) )
-            {
-                QString calldata = cfg.readEntry( "X-KDE-ShowIfDBusCall" );
-                QStringList parts = calldata.split(' ');
-                const QString &app = parts.at(0);
-                const QString &obj = parts.at(1);
-                QString interface = parts.at(2);
-                QString method;
-                int pos = interface.lastIndexOf( QLatin1Char( '.' ) );
-                if ( pos != -1 ) {
-                    method = interface.mid(pos + 1);
-                    interface.truncate(pos);
-                }
-
-                //if ( !QDBus::sessionBus().busService()->nameHasOwner( app ) )
-                //    continue; //app does not exist so cannot send call
-
-                QDBusMessage reply = QDBusInterface( app, obj, interface ).
-                                     call( method, m_lstPopupURLs.toStringList() );
-                if ( reply.arguments().count() < 1 || reply.arguments().at(0).type() != QVariant::Bool || !reply.arguments().at(0).toBool() )
-                    continue;
-
-            }
-            if ( cfg.hasKey( "X-KDE-Protocol" ) )
-            {
-                const QString protocol = cfg.readEntry( "X-KDE-Protocol" );
-                if ( protocol != urlForServiceMenu.protocol() )
-                    continue;
-            }
-            else if ( cfg.hasKey( "X-KDE-Protocols" ) )
-            {
-                const QStringList protocols = cfg.readEntry( "X-KDE-Protocols" ).split( ',' );
-                if ( !protocols.contains( urlForServiceMenu.protocol() ) )
-                    continue;
-            }
-            else if ( urlForServiceMenu.protocol() == "trash" || urlForServiceMenu.url().startsWith( "system:/trash" ) )
-            {
-                // Require servicemenus for the trash to ask for protocol=trash explicitly.
-                // Trashed files aren't supposed to be available for actions.
-                // One might want a servicemenu for trash.desktop itself though.
-                continue;
-            }
-
-            if ( cfg.hasKey( "X-KDE-Require" ) )
-            {
-                const QStringList capabilities = cfg.readEntry( "X-KDE-Require" , QStringList() );
-                if ( capabilities.contains( "Write" ) && !sWriting )
-                    continue;
-            }
-            if ( (cfg.hasKey( "Actions" ) || cfg.hasKey( "X-KDE-GetActionMenu") ) && cfg.hasKey( "ServiceTypes" ) )
-            {
-                const QStringList types = cfg.readEntry( "ServiceTypes" , QStringList() );
-                const QStringList excludeTypes = cfg.readEntry( "ExcludeServiceTypes" , QStringList() );
-                bool ok = false;
-
-                // check for exact matches or a typeglob'd mimetype if we have a mimetype
-                for (QStringList::ConstIterator it = types.begin();
-                     it != types.end() && !ok;
-                     ++it)
-                {
-                    // first check if we have an all mimetype
-                    bool checkTheMimetypes = false;
-                    if (*it == "all/all" ||
-                        *it == "allfiles" /*compat with KDE up to 3.0.3*/)
-                    {
-                        checkTheMimetypes = true;
-                    }
-
-                    // next, do we match all files?
-                    if (!ok &&
-                        !isDirectory &&
-                        *it == "all/allfiles")
-                    {
-                        checkTheMimetypes = true;
-                    }
-
-                    // if we have a mimetype, see if we have an exact or a type globbed match
-                    if (!ok &&
-                        (!m_sMimeType.isEmpty() &&
-                         *it == m_sMimeType) ||
-                        (!mimeGroup.isEmpty() &&
-                         ((*it).right(1) == "*" &&
-                          (*it).left((*it).indexOf('/')) == mimeGroup)))
-                    {
-                        checkTheMimetypes = true;
-                    }
-
-                    if (checkTheMimetypes)
-                    {
-                        ok = true;
-                        for (QStringList::ConstIterator itex = excludeTypes.begin(); itex != excludeTypes.end(); ++itex)
-                        {
-                            if( ((*itex).right(1) == "*" && (*itex).left((*itex).indexOf('/')) == mimeGroup) ||
-                                ((*itex) == m_sMimeType) )
-                            {
-                                ok = false;
-                                break;
-                            }
-                        }
-                    }
-                }
-
-                if ( ok )
-                {
-                    const QString priority = cfg.readEntry("X-KDE-Priority");
-                    const QString submenuName = cfg.readEntry( "X-KDE-Submenu" );
-
-                    ServiceList* list = s.selectList( priority, submenuName );
-                    (*list) += KDesktopFileActions::userDefinedServices( *eIt, desktopFile, url.isLocalFile(), m_lstPopupURLs );
-                }
-            }
-        }
-
+    if ( sReading ) {
         KService::List offers;
-
         if (KAuthorized::authorizeKAction("openwith")) {
             QString constraint = "DesktopEntryName != 'kfmclient' and DesktopEntryName != 'kfmclient_dir' and DesktopEntryName != 'kfmclient_html'";
             QString subConstraint = " and '%1' in ServiceTypes";
@@ -823,7 +516,6 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
         //// Ok, we have everything, now insert
 
         m_mapPopup.clear();
-        m_mapPopupServices.clear();
         // "Open With..." for folders is really not very useful, especially for remote folders.
         // (media:/something, or trash:/, or ftp://...)
         if ( !isDirectory || isLocal ) {
@@ -864,23 +556,17 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
                             continue;
                     }
 
-
-                    QByteArray nam;
-                    nam.setNum( id );
-                    nam.prepend( "appservice_" );
-
                     QString actionName( service->name().replace( '&', "&&" ) );
                     if ( menu == q ) // no submenu -> prefix single offer
                         actionName = i18n( "Open with %1", actionName );
 
-                    act = m_ownActions.addAction( nam );
+                    act = new QAction(&m_ownActions);
                     act->setIcon( KIcon( service->icon() ) );
                     act->setText( actionName );
-                    act->setData(id);
                     m_runServiceActionGroup.addAction(act);
                     menu->addAction(act);
 
-                    m_mapPopup.insert(id++, *it);
+                    m_mapPopup.insert(act, *it);
                 }
 
                 QString openWithActionName;
@@ -918,36 +604,8 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
     }
 
     // Second block, builtin + user
-    QMenu* actionMenu = q;
-    int userItemCount = 0;
-    if (s.user.count() + s.userSubmenus.count() +
-        s.userPriority.count() + s.userPrioritySubmenus.count() > 1)
-    {
-        // we have more than one item, so let's make a submenu
-        actionMenu = new QMenu(i18n("Ac&tions"), q);
-        actionMenu->menuAction()->setObjectName("actions_submenu"); // for the unittest
-        q->addMenu(actionMenu);
-    }
-
-    userItemCount += insertServicesSubmenus(s.userPrioritySubmenus, actionMenu, false);
-    userItemCount += insertServices(s.userPriority, actionMenu, false);
-
-    // see if we need to put a separator between our priority items and our regular items
-    if (userItemCount > 0 &&
-        (s.user.count() > 0 ||
-         s.userSubmenus.count() > 0 ||
-         s.builtin.count() > 0) &&
-         !actionMenu->actions().last()->isSeparator())
-    {
-        actionMenu->addSeparator();
-    }
-    userItemCount += insertServicesSubmenus(s.userSubmenus, actionMenu, false);
-    userItemCount += insertServices(s.user, actionMenu, false);
-    userItemCount += insertServices(s.builtin, q, true);
-    userItemCount += insertServicesSubmenus(s.userToplevelSubmenus, q, false);
-    userItemCount += insertServices(s.userToplevel, q, false);
-
-    if ( userItemCount > 0 ) {
+    m_menuActions.setItems(m_lstItems);
+    if ( m_menuActions.addActionsTo(q) > 0 ) {
         q->addSeparator();
     }
 
@@ -1048,24 +706,11 @@ void KonqPopupMenuPrivate::slotPopupAddToBookmark()
 
 void KonqPopupMenuPrivate::slotRunService(QAction* act)
 {
-  const int id = act->data().toInt();
-
   // Is it a usual service (application)
-  QMap<int,KService::Ptr>::Iterator it = m_mapPopup.find( id );
-  if ( it != m_mapPopup.end() )
-  {
-    KRun::run( **it, m_lstPopupURLs, m_parentWidget );
-    return;
+  QMap<QAction*,KService::Ptr>::Iterator it = m_mapPopup.find(act);
+  if (it != m_mapPopup.end()) {
+    KRun::run(**it, m_lstPopupURLs, m_parentWidget);
   }
-
-  // Is it a service specific to desktop entry files ?
-  QMap<int,KDesktopFileActions::Service>::Iterator it2 = m_mapPopupServices.find( id );
-  if ( it2 != m_mapPopupServices.end() )
-  {
-      KDesktopFileActions::executeService( m_lstPopupURLs, it2.value() );
-  }
-
-  return;
 }
 
 void KonqPopupMenuPrivate::slotPopupMimeType()

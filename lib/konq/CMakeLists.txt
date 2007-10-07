@@ -4,6 +4,7 @@ add_subdirectory( pics )
 add_subdirectory( favicons )
 add_subdirectory( tests )
 
+# For crc32 in konq_historymgr.cc
 include_directories( ${ZLIB_INCLUDE_DIR}  )
 
 ########### next target ###############
@@ -12,15 +13,15 @@ include_directories( ${ZLIB_INCLUDE_DIR}  )
 set(konq_LIB_SRCS
    konq_popupmenu.cpp       # OK to remain in libkonq, was needed by kicker applets like the trash applet
    knewmenu.cpp             # used by dolphin, KonqPopupMenu, and konqueror (File menu)
+   konq_menuactions.cpp     # used by dolphin, KonqPopupMenu
    konq_operations.cpp
    konq_events.cpp
    konq_undo.cc
-   konq_historymgr.cc
+   konq_historymgr.cc       # used by sidebar/trees/history_module and konqueror
    konq_historyentry.cpp
-   konq_pixmapprovider.cc
-   konq_faviconmgr.cc
+   konq_pixmapprovider.cc   # TODO who else than konqueror uses this? -> move to konq?
+   konq_faviconmgr.cc       # used by konq_pixmapprovider [and web module but the call could be replaced with 2-liner]
    konq_filetip.cc
-   konqbookmarkmanager.cpp
    konqmimedata.cpp
 )
 
@@ -47,6 +48,7 @@ install( FILES directory_bookmarkbar.desktop   DESTINATION  ${DATA_INSTALL_DIR}/
 install( FILES
  konq_popupmenu.h
  knewmenu.h
+ konq_menuactions.h
  konq_defaults.h
  konq_operations.h
  libkonq_export.h
@@ -56,7 +58,6 @@ install( FILES
  konq_historyentry.h
  konq_pixmapprovider.h
  konq_faviconmgr.h
- konqbookmarkmanager.h
  konq_filetip.h
  konqmimedata.h
 DESTINATION ${INCLUDE_INSTALL_DIR}

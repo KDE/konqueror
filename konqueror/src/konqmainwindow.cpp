@@ -44,7 +44,7 @@
 #include <konq_events.h>
 #include <konq_pixmapprovider.h>
 #include <konq_operations.h>
-#include <konqbookmarkmanager.h>
+#include <kbookmarkmanager.h>
 #include <kinputdialog.h>
 #include <kanimatedbutton.h>
 #include <kzip.h>
@@ -143,6 +143,7 @@
 template class QList<QPixmap*>;
 template class QList<KToggleAction*>;
 
+KBookmarkManager* s_bookmarkManager = 0;
 QList<KonqMainWindow*> *KonqMainWindow::s_lstViews = 0;
 KConfig * KonqMainWindow::s_comboConfig = 0;
 KCompletion * KonqMainWindow::s_pCompletion = 0;
@@ -213,7 +214,9 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
 
   // init history-manager, load history, get completion object
   if ( !s_pCompletion ) {
-      KonqHistoryManager* mgr = new KonqHistoryManager;
+      s_bookmarkManager = KBookmarkManager::userBookmarksManager();
+
+      KonqHistoryManager* mgr = new KonqHistoryManager(s_bookmarkManager);
       s_pCompletion = mgr->completionObject();
 
     // setup the completion object before createGUI(), so that the combo
@@ -378,7 +381,7 @@ void KonqMainWindow::initBookmarkBar()
   if (!bar) return;
 
   delete m_paBookmarkBar;
-  m_paBookmarkBar = new KBookmarkBar( KonqBookmarkManager::self(), m_pBookmarksOwner, bar, this );
+  m_paBookmarkBar = new KBookmarkBar( s_bookmarkManager, m_pBookmarksOwner, bar, this );
 
   // hide if empty
   if (bar->actions().count() == 0 )
@@ -3204,7 +3207,7 @@ void KonqMainWindow::initCombo()
 void KonqMainWindow::bookmarksIntoCompletion()
 {
     // add all bookmarks to the completion list for easy access
-    bookmarksIntoCompletion( KonqBookmarkManager::self()->root() );
+    bookmarksIntoCompletion( s_bookmarkManager->root() );
 }
 
 // the user changed the completion mode in the combo
@@ -4052,7 +4055,7 @@ void KonqMainWindow::initActions()
                                      "Clears the content of the location bar." ) );
 
   // Bookmarks menu
-  m_pamBookmarks = new KBookmarkActionMenu(KonqBookmarkManager::self()->root(),
+  m_pamBookmarks = new KBookmarkActionMenu(s_bookmarkManager->root(),
                                               i18n( "&Bookmarks" ), this);
   actionCollection()->addAction( "bookmarks", m_pamBookmarks );
 
@@ -4060,7 +4063,7 @@ void KonqMainWindow::initActions()
   // don't appear in kedittoolbar
   m_bookmarksActionCollection = new KActionCollection( static_cast<QWidget*>( this ) );
 
-  m_pBookmarkMenu = new KonqBookmarkMenu( KonqBookmarkManager::self(), m_pBookmarksOwner, m_pamBookmarks, m_bookmarksActionCollection );
+  m_pBookmarkMenu = new KonqBookmarkMenu( s_bookmarkManager, m_pBookmarksOwner, m_pamBookmarks, m_bookmarksActionCollection );
 
   QAction *addBookmark = actionCollection()->action("add_bookmark");
   if (addBookmark)
@@ -4884,7 +4887,7 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
         // This parent ensures that if the part destroys itself (e.g. KHTML redirection),
         // it will close the popupmenu
         currentView->part()->widget(),
-        KonqBookmarkManager::self(),
+        s_bookmarkManager,
         actionGroups );
 
     if ( openedForViewURL && !viewURL.isLocalFile() )

@@ -24,11 +24,11 @@
 #include <QtCore/QObject>
 
 #include <konq_sidebartreemodule.h>
-#include <kbookmark.h>
 #include <kdialog.h>
 
 class KActionCollection;
 class KLineEdit;
+class KBookmarkGroup;
 class KonqSidebarBookmarkItem;
 
 /**
