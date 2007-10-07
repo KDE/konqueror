@@ -4,7 +4,7 @@ add_subdirectory( pics )
 add_subdirectory( favicons )
 add_subdirectory( tests )
 
-#include_directories( ${ZLIB_INCLUDE_DIR}  )
+include_directories( ${ZLIB_INCLUDE_DIR}  )
 
 ########### next target ###############
 
