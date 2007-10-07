@@ -32,6 +32,7 @@
 
 #include <libkonq_export.h>
 
+class KBookmarkManager;
 class QDBusMessage;
 class KCompletion;
 
@@ -67,11 +68,17 @@ class LIBKONQ_EXPORT KonqHistoryManager : public KParts::HistoryProvider
     Q_OBJECT
 
 public:
+    /**
+     * Returns the KonqHistoryManager instance. This relies on a KonqHistoryManager instance
+     * being created first!
+     * This is a bit like "qApp": you can access the instance anywhere, but you need to
+     * create it first.
+     */
     static KonqHistoryManager *kself() {
-	return static_cast<KonqHistoryManager*>( KParts::HistoryProvider::self() );
+        return static_cast<KonqHistoryManager*>( KParts::HistoryProvider::self() );
     }
 
-    KonqHistoryManager( QObject *parent = 0 );
+    KonqHistoryManager( KBookmarkManager* bookmarkManager, QObject *parent = 0 );
     ~KonqHistoryManager();
 
     /**
@@ -378,6 +385,8 @@ private:
      * thru the slotEmitUpdated slot.
      */
     QTimer *m_updateTimer;
+
+    KBookmarkManager* m_bookmarkManager;
 
     static const int s_historyVersion;
 };

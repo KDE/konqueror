@@ -29,7 +29,7 @@ QTEST_KDEMAIN( HistoryMgrTest, NoGUI )
 
 void HistoryMgrTest::testGetSetMaxCount()
 {
-    KonqHistoryManager mgr;
+    KonqHistoryManager mgr(0);
     const int oldMaxCount = mgr.maxCount();
     qDebug( "oldMaxCount=%d", oldMaxCount );
     mgr.emitSetMaxCount( 4242 );
@@ -45,7 +45,7 @@ void HistoryMgrTest::testGetSetMaxCount()
 
 void HistoryMgrTest::testGetSetMaxAge()
 {
-    KonqHistoryManager mgr;
+    KonqHistoryManager mgr(0);
     const int oldMaxAge = mgr.maxAge();
     qDebug( "oldMaxAge=%d", oldMaxAge );
     mgr.emitSetMaxAge( 4242 );
@@ -72,7 +72,7 @@ static void waitForRemovedSignal( KonqHistoryManager* mgr )
 
 void HistoryMgrTest::testAddHistoryEntry()
 {
-    KonqHistoryManager mgr;
+    KonqHistoryManager mgr(0);
     qRegisterMetaType<KonqHistoryEntry>("KonqHistoryEntry");
     QSignalSpy addedSpy( &mgr, SIGNAL(entryAdded(KonqHistoryEntry)) );
     QSignalSpy removedSpy( &mgr, SIGNAL(entryRemoved(KonqHistoryEntry)) );
