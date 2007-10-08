@@ -7,8 +7,6 @@ check_symbol_exists(mallinfo        "stdlib.h"                 KDE_MALLINFO_STDL
 # TODO KDE_MALLINFO_FIELD_usmblks
 configure_file(config-konqueror.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-konqueror.h )
 
-include_directories( ${CMAKE_SOURCE_DIR}/workspace/kcontrol/input )
-
 if (WIN32)
     add_definitions(-DMAKE_KDEINIT_KONQUEROR_LIB)
 endif(WIN32)
