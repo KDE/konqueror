@@ -10,7 +10,7 @@ add_definitions(-DQT_NO_CAST_ASCII)
 
 kde4_add_kdeinit_executable( kfmclient NOGUI ${kfmclient_SRCS})
 
-target_link_libraries(kdeinit_kfmclient  ${KDE4_KDE3SUPPORT_LIBS} )
+target_link_libraries(kdeinit_kfmclient  ${KDE4_KIO_LIBS} )
 
 install(TARGETS kdeinit_kfmclient  DESTINATION ${LIB_INSTALL_DIR} )
 
