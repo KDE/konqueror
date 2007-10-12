@@ -67,9 +67,10 @@ KPreviewOptions::KPreviewOptions( QWidget *parent, const QVariantList & )
 {
     QVBoxLayout *lay = new QVBoxLayout(this);
     lay->setSpacing(KDialog::spacingHint());
-
-    lay->addWidget( new QLabel( i18n("<p>Allow previews, \"Folder Icons Reflect Contents\", and "
-                                     "retrieval of meta-data on protocols:</p>"), this ) );
+    QLabel *label = new QLabel( i18n("<p>Allow previews, \"Folder Icons Reflect Contents\", and "
+                                     "retrieval of meta-data on protocols:</p>"), this );
+    label->setWordWrap(true);
+    lay->addWidget(label);
 
     setQuickHelp( i18n("<h1>Preview Options</h1> Here you can modify the behavior "
                 "of Konqueror when it shows the files in a folder."
@@ -128,7 +129,7 @@ KPreviewOptions::KPreviewOptions( QWidget *parent, const QVariantList & )
                           "In the list of protocols that appear, select which ones are fast "
                           "enough for you to allow previews to be generated.") );
 
-    QLabel *label = new QLabel( i18n( "&Maximum file size:" ), this );
+    label = new QLabel( i18n( "&Maximum file size:" ), this );
     lay->addWidget( label );
 
     m_maxSize = new KDoubleNumInput( this );
