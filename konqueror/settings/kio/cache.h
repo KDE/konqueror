@@ -23,18 +23,10 @@
 #define CACHE_H
 
 #include <kcmodule.h>
-#include "ui_cache.h"
 
-class CacheDlgUI : public QWidget, public Ui::CacheDlgUI
-{
-    public:
-        CacheDlgUI(QWidget *parent = 0)
-        : QWidget(parent)
-        {
-            setupUi(this);
-        }
-};
-
+namespace Ui {
+class CacheDlgUI;
+}
 
 class KCacheConfigDialog : public KCModule
 {
@@ -42,7 +34,7 @@ class KCacheConfigDialog : public KCModule
 
 public:
   KCacheConfigDialog(QWidget *parent, const QVariantList &args);
-  ~KCacheConfigDialog() {}
+  ~KCacheConfigDialog();
 
   virtual void load();
   virtual void save();
@@ -54,7 +46,7 @@ protected Q_SLOTS:
   void slotClearCache();
 
 private:
-  CacheDlgUI* m_dlg;
+  Ui::CacheDlgUI* m_dlg;
 };
 
 #endif // CACHE_H

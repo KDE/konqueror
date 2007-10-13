@@ -47,14 +47,15 @@ K_PLUGIN_FACTORY_DECLARATION(KioConfigFactory)
 KCacheConfigDialog::KCacheConfigDialog(QWidget *parent, const QVariantList &)
     : KCModule(KioConfigFactory::componentData(), parent)
 {
-  QVBoxLayout* mainLayout = new QVBoxLayout(this);
-  mainLayout->setMargin(0);
-  mainLayout->setSpacing(0);
-  m_dlg = new CacheDlgUI(this);
-  mainLayout->addWidget(m_dlg);
-  mainLayout->addStretch();
+  m_dlg = new Ui::CacheDlgUI();
+  m_dlg->setupUi(this);
 
   load();
+}
+
+KCacheConfigDialog::~KCacheConfigDialog()
+{
+  delete m_dlg;
 }
 
 void KCacheConfigDialog::load()
