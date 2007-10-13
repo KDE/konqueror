@@ -6,7 +6,7 @@
     <x>0</x>
     <y>0</y>
     <width>424</width>
-    <height>279</height>
+    <height>204</height>
    </rect>
   </property>
   <layout class="QVBoxLayout" >
@@ -21,94 +21,102 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="bgCachePolicy" >
-     <property name="enabled" >
-      <bool>false</bool>
-     </property>
-     <property name="title" >
-      <string>Policy</string>
-     </property>
-     <layout class="QVBoxLayout" >
-      <item>
-       <widget class="QRadioButton" name="rbVerifyCache" >
-        <property name="whatsThis" >
-         <string>Verify whether the cached web page is valid before attempting to fetch the web page again.</string>
-        </property>
-        <property name="text" >
-         <string>&amp;Keep cache in sync</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="rbCacheIfPossible" >
-        <property name="whatsThis" >
-         <string>Always use documents from the cache when available. You can still use the reload button to synchronize the cache with the remote host.</string>
-        </property>
-        <property name="text" >
-         <string>Use cache whenever &amp;possible</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="rbOfflineMode" >
-        <property name="whatsThis" >
-         <string>Do not fetch web pages that are not already stored in the cache. Offline mode prevents you from viewing pages that you have not previously visited.</string>
-        </property>
-        <property name="text" >
-         <string>O&amp;ffline browsing mode</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item>
     <layout class="QHBoxLayout" >
-     <item>
-      <widget class="QLabel" name="lbMaxCacheSize" >
-       <property name="enabled" >
-        <bool>false</bool>
-       </property>
-       <property name="text" >
-        <string>Disk cache &amp;size:</string>
-       </property>
-       <property name="buddy" >
-        <cstring>sbMaxCacheSize</cstring>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="KIntNumInput" name="sbMaxCacheSize" >
-       <property name="enabled" >
-        <bool>false</bool>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pbClearCache" >
-       <property name="enabled" >
-        <bool>false</bool>
-       </property>
-       <property name="text" >
-        <string>C&amp;lear Cache</string>
-       </property>
-      </widget>
-     </item>
      <item>
       <spacer>
        <property name="orientation" >
         <enum>Qt::Horizontal</enum>
        </property>
        <property name="sizeType" >
-        <enum>QSizePolicy::MinimumExpanding</enum>
+        <enum>QSizePolicy::Fixed</enum>
        </property>
        <property name="sizeHint" >
         <size>
-         <width>0</width>
-         <height>21</height>
+         <width>16</width>
+         <height>20</height>
         </size>
        </property>
       </spacer>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" >
+       <item>
+        <widget class="QGroupBox" name="bgCachePolicy" >
+         <property name="enabled" >
+          <bool>false</bool>
+         </property>
+         <property name="title" >
+          <string>Policy</string>
+         </property>
+         <layout class="QVBoxLayout" >
+          <item>
+           <widget class="QRadioButton" name="rbVerifyCache" >
+            <property name="whatsThis" >
+             <string>Verify whether the cached web page is valid before attempting to fetch the web page again.</string>
+            </property>
+            <property name="text" >
+             <string>&amp;Keep cache in sync</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="rbCacheIfPossible" >
+            <property name="whatsThis" >
+             <string>Always use documents from the cache when available. You can still use the reload button to synchronize the cache with the remote host.</string>
+            </property>
+            <property name="text" >
+             <string>Use cache whenever &amp;possible</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="rbOfflineMode" >
+            <property name="whatsThis" >
+             <string>Do not fetch web pages that are not already stored in the cache. Offline mode prevents you from viewing pages that you have not previously visited.</string>
+            </property>
+            <property name="text" >
+             <string>O&amp;ffline browsing mode</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" >
+         <item>
+          <widget class="QLabel" name="lbMaxCacheSize" >
+           <property name="enabled" >
+            <bool>false</bool>
+           </property>
+           <property name="text" >
+            <string>Disk cache &amp;size:</string>
+           </property>
+           <property name="buddy" >
+            <cstring>sbMaxCacheSize</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="KIntNumInput" name="sbMaxCacheSize" >
+           <property name="enabled" >
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pbClearCache" >
+           <property name="enabled" >
+            <bool>false</bool>
+           </property>
+           <property name="text" >
+            <string>C&amp;lear Cache</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
      </item>
     </layout>
    </item>
@@ -120,7 +128,7 @@
      <property name="sizeHint" >
       <size>
        <width>20</width>
-       <height>40</height>
+       <height>10</height>
       </size>
      </property>
     </spacer>
