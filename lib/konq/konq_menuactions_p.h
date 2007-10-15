@@ -24,9 +24,9 @@
 #include <kactioncollection.h>
 #include <QActionGroup>
 #include <QObject>
-#include <kdesktopfileactions.h>
+#include <kserviceaction.h>
 
-typedef QList<KDesktopFileActions::Service> ServiceList;
+typedef QList<KServiceAction> ServiceList;
 
 class KonqMenuActionsPrivate : public QObject
 {
@@ -50,7 +50,7 @@ public:
     bool m_readOnly;
 
     // TODO try action->setData(QVariant::fromValue(service))
-    QMap<QAction *, KDesktopFileActions::Service> m_mapPopupServices;
+    QMap<QAction *, KServiceAction> m_mapPopupServices;
     QActionGroup m_executeServiceActionGroup;
     KActionCollection m_ownActions; // TODO connect to statusbar for help on actions
 };

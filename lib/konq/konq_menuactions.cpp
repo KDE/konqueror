@@ -19,6 +19,7 @@
 
 #include "konq_menuactions.h"
 #include "konq_menuactions_p.h"
+#include <kdesktopfileactions.h>
 #include <kmenu.h>
 #include <klocale.h>
 #include <kauthorized.h>
@@ -118,7 +119,7 @@ int KonqMenuActionsPrivate::insertServices(const ServiceList& list,
     int count = 0;
     ServiceList::const_iterator it = list.begin();
     for( ; it != list.end(); ++it ) {
-        if ((*it).isEmpty()) {
+        if ((*it).isSeparator()) {
             const QList<QAction*> actions = menu->actions();
             if (!actions.isEmpty() && !actions.last()->isSeparator()) {
                 menu->addSeparator();
@@ -126,13 +127,13 @@ int KonqMenuActionsPrivate::insertServices(const ServiceList& list,
             continue;
         }
 
-        if (isBuiltin || (*it).m_display == true) {
+        if (isBuiltin || !(*it).noDisplay()) {
             QAction* act = new QAction(&m_ownActions);
-            QString text = (*it).m_strName;
+            QString text = (*it).text();
             text.replace('&',"&&");
             act->setText( text );
-            if ( !(*it).m_strIcon.isEmpty() ) {
-                act->setIcon( KIcon((*it).m_strIcon) );
+            if ( !(*it).icon().isEmpty() ) {
+                act->setIcon( KIcon((*it).icon()) );
             }
             // act->setData(...);
             m_executeServiceActionGroup.addAction(act);
@@ -149,7 +150,7 @@ int KonqMenuActionsPrivate::insertServices(const ServiceList& list,
 
 void KonqMenuActionsPrivate::slotExecuteService(QAction* act)
 {
-    QMap<QAction *,KDesktopFileActions::Service>::Iterator it = m_mapPopupServices.find(act);
+    QMap<QAction *,KServiceAction>::Iterator it = m_mapPopupServices.find(act);
     Q_ASSERT(it != m_mapPopupServices.end());
     if (it != m_mapPopupServices.end()) {
         KDesktopFileActions::executeService(m_urlList, it.value());
