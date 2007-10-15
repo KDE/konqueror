@@ -5,7 +5,7 @@ ServiceTypes=KCModule
 
 DocPath=kcontrol/khtml/index.html#khtml-adblock
 Icon=filter
-Exec=kcmshell khtml_filter
+Exec=kcmshell4 khtml_filter
 
 X-KDE-Library=kcm_konqhtml
 X-KDE-PluginKeyword=khtml_filter

@@ -256,12 +256,12 @@ QString KonqAboutPageFactory::specs()
           .arg( i18n("<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)", QString("http://www.w3.org/Style/CSS/")) )
           .arg( i18n("built-in") )
           .arg( i18n("<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)", QString("http://www.ecma.ch/ecma1/STAND/ECMA-262.HTM")) )
-          .arg( i18n("JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>.", QString("exec:/kcmshell khtml_java_js")) )
-          .arg( i18n("JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\\">here</A>.", QString("exec:/kcmshell khtml_java_js")) ) // leave the double backslashes here, they are necessary for javascript !
+          .arg( i18n("JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>.", QString("exec:/kcmshell4 khtml_java_js")) )
+          .arg( i18n("JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\\">here</A>.", QString("exec:/kcmshell4 khtml_java_js")) ) // leave the double backslashes here, they are necessary for javascript !
           .arg( i18n("Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support", QString("http://java.sun.com")) )
           .arg( i18n("JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">Blackdown</A>, <A HREF=\"%2\">IBM</A> or <A HREF=\"%3\">Sun</A>)",
                        QString("http://www.blackdown.org"), QString("http://www.ibm.com"), QString("http://java.sun.com")) )
-          .arg( i18n("Enable Java (globally) <A HREF=\"%1\">here</A>.", QString("exec:/kcmshell khtml_java_js")) ) // TODO Maybe test if Java is enabled ?
+          .arg( i18n("Enable Java (globally) <A HREF=\"%1\">here</A>.", QString("exec:/kcmshell4 khtml_java_js")) ) // TODO Maybe test if Java is enabled ?
           .arg( i18n("Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF=\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</SUP></A>Video, etc.)",
                        QString("http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"),
                        QString("http://www.real.com"), QString("http://www.real.com"),
@@ -281,7 +281,7 @@ QString KonqAboutPageFactory::specs()
           .arg( i18n("Transfer protocols") )
           .arg( i18n("HTTP 1.1 (including gzip/bzip2 compression)") )
           .arg( i18n("FTP") )
-          .arg( i18n("and <A HREF=\"%1\">many more...</A>", QString("exec:/kcmshell ioslaveinfo")) )
+          .arg( i18n("and <A HREF=\"%1\">many more...</A>", QString("exec:/kcmshell4 ioslaveinfo")) )
           .arg( i18n("URL-Completion") )
           .arg( i18n("Manual"))
 	  .arg( i18n("Popup"))
@@ -341,7 +341,7 @@ QString KonqAboutPageFactory::tips()
 		      "using Google, for the search phrase \"KDE\". There are a lot of "
 		      "Web-Shortcuts predefined to make searching for software or looking "
 		      "up certain words in an encyclopedia a breeze. You can even "
-                      "<a href=\"%1\">create your own</a> Web-Shortcuts." , QString("exec:/kcmshell ebrowsing")) )
+                      "<a href=\"%1\">create your own</a> Web-Shortcuts." , QString("exec:/kcmshell4 ebrowsing")) )
 	  .arg( i18n( "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in the"
 		      " toolbar to increase the font size on your web page.", viewmag_icon_path) )
 	  .arg( i18n( "When you want to paste a new address into the Location toolbar you might want to "
@@ -361,11 +361,11 @@ QString KonqAboutPageFactory::tips()
 		      ", or create your own ones." , view_left_right_icon_path))
 	  .arg( i18n( "Use the <a href=\"%1\">user-agent</a> feature if the website you are visiting "
                       "asks you to use a different browser "
-		      "(and do not forget to send a complaint to the webmaster!)" , QString("exec:/kcmshell useragent")) )
+		      "(and do not forget to send a complaint to the webmaster!)" , QString("exec:/kcmshell4 useragent")) )
 	  .arg( i18n( "The <img width='16' height='16' src=\"%1\"></img> History in your SideBar ensures "
 		      "that you can keep track of the pages you have visited recently.", history_icon_path) )
 	  .arg( i18n( "Use a caching <a href=\"%1\">proxy</a> to speed up your"
-		      " Internet connection.", QString("exec:/kcmshell proxy")) )
+		      " Internet connection.", QString("exec:/kcmshell4 proxy")) )
 	  .arg( i18n( "Advanced users will appreciate the Konsole which you can embed into "
 		      "Konqueror (Window -> <img width='16' height='16' SRC=\"%1\"></img> Show "
  		      "Terminal Emulator).", openterm_icon_path))

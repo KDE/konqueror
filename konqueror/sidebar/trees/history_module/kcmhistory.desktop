@@ -3,7 +3,7 @@ Encoding=UTF-8
 Icon=history
 Type=Service
 ServiceTypes=KCModule
-Exec=kcmshell kcmhistory
+Exec=kcmshell4 kcmhistory
 
 X-KDE-Library=kcm_history
 X-KDE-ParentApp=kcontrol

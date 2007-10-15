@@ -4,7 +4,7 @@ Type=Service
 ServiceTypes=KCModule
 DocPath=kcontrol/khtml/index.html#kbrowse-html
 Icon=konqueror
-Exec=kcmshell khtml_general
+Exec=kcmshell4 khtml_general
 X-KDE-ParentApp=kcontrol
 
 X-KDE-Library=kcm_konqhtml

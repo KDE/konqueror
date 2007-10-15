@@ -5,7 +5,7 @@ ServiceTypes=KCModule
 
 DocPath=kcontrol/khtml/index.html#kbrowse-appearance
 Icon=preferences-desktop-font
-Exec=kcmshell khtml_fonts
+Exec=kcmshell4 khtml_fonts
 X-KDE-ParentApp=kcontrol
 
 X-KDE-Library=kcm_konqhtml

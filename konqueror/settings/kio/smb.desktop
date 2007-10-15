@@ -4,7 +4,7 @@ Type=Service
 ServiceTypes=KCModule
 DocPath=kcontrol/smb/index.html
 Icon=preferences-system-network-share-windows
-Exec=kcmshell smb
+Exec=kcmshell4 smb
 
 X-KDE-Library=kcm_kio
 X-KDE-PluginKeyword=smb

@@ -4,7 +4,7 @@ Type=Service
 ServiceTypes=KCModule
 DocPath=kcontrol/filemanager/index.html
 Icon=kfm
-Exec=kcmshell filepreviews
+Exec=kcmshell4 filepreviews
 
 X-KDE-Library=kcm_konq
 X-KDE-PluginKeyword=previews

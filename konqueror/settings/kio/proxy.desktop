@@ -4,7 +4,7 @@ Type=Service
 ServiceTypes=KCModule
 DocPath=kcontrol/proxy/index.html
 Icon=preferences-system-network-proxy
-Exec=kcmshell proxy
+Exec=kcmshell4 proxy
 
 X-KDE-Library=kcm_kio
 X-KDE-PluginKeyword=proxy
