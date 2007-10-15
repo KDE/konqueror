@@ -90,13 +90,7 @@ class KONQSIDEBARPLUGIN_EXPORT KonqSidebarPlugin : public QObject
 
 		void enableAction( const char * name, bool enabled );
 
-		void popupMenu( const QPoint &global, const KFileItemList &items );
-  		void popupMenu( KXMLGUIClient *client, const QPoint &global, const KFileItemList &items );
-		void popupMenu( const QPoint &global, const KUrl &url,
-			const QString &mimeType, mode_t mode = (mode_t)-1 );
-		void popupMenu( KXMLGUIClient *client,
-			const QPoint &global, const KUrl &url,
-			const QString &mimeType, mode_t mode = (mode_t)-1 );
+		void popupMenu( ... );
 
 		void showError(QString &);	//for later extension
 		void showMessage(QString &);	//for later extension
