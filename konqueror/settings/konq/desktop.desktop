@@ -4,7 +4,7 @@ Type=Service
 ServiceTypes=KCModule
 DocPath=kcontrol/desktop/index.html#desktop-number
 Icon=desktop
-Exec=kcmshell desktop
+Exec=kcmshell4 desktop
 
 X-KDE-Library=kcm_konq
 X-KDE-PluginKeyword=ddesktop

@@ -4,7 +4,7 @@ Type=Service
 ServiceTypes=KCModule
 DocPath=kcontrol/ebrowsing/index.html
 Icon=enhanced_browsing
-Exec=kcmshell ebrowsing
+Exec=kcmshell4 ebrowsing
 
 X-KDE-Library=kcm_kurifilt
 X-KDE-ParentApp=kcontrol

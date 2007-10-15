@@ -299,7 +299,7 @@ void KonqSidebarHistoryModule::slotRemoveEntry()
 void KonqSidebarHistoryModule::slotPreferences()
 {
     // Run the history sidebar settings.
-    KRun::run( "kcmshell kcmhistory", KUrl::List(), tree());
+    KRun::run( "kcmshell4 kcmhistory", KUrl::List(), tree());
 }
 
 void KonqSidebarHistoryModule::slotSortByName()

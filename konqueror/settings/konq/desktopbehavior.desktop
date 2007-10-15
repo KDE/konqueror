@@ -4,7 +4,7 @@ Type=Service
 ServiceType=KCModule
 DocPath=kcontrol/desktopbehavior/index.html
 Icon=desktop
-Exec=kcmshell desktopbehavior
+Exec=kcmshell4 desktopbehavior
 
 X-KDE-Library=kcm_konq
 X-KDE-PluginKeyword=dbehavior

@@ -4,7 +4,7 @@ Type=Service
 ServiceTypes=KCModule,KCModuleInit
 DocPath=kcontrol/khtml/index.html#kbrowse-plugins
 Icon=konqueror
-Exec=kcmshell khtml_plugins
+Exec=kcmshell4 khtml_plugins
 
 X-KDE-Library=kcm_konqhtml
 X-KDE-PluginKeyword=khtml_plugins

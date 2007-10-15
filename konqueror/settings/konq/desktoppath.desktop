@@ -4,7 +4,7 @@ Type=Service
 ServiceTypes=KCModule
 DocPath=kcontrol/desktop/index.html#desktop-desktop-path
 Icon=kfm
-Exec=kcmshell desktoppath
+Exec=kcmshell4 desktoppath
 
 X-KDE-Library=kcm_konq
 X-KDE-PluginKeyword=dpath

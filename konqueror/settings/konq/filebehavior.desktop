@@ -4,7 +4,7 @@ Type=Service
 ServiceTypes=KCModule
 DocPath=kcontrol/filemanager/index.html
 Icon=kfm
-Exec=kcmshell filebehavior
+Exec=kcmshell4 filebehavior
 
 X-KDE-Library=kcm_konq
 X-KDE-PluginKeyword=behavior

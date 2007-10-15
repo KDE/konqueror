@@ -4,7 +4,7 @@ Type=Service
 ServiceTypes=KCModule
 DocPath=kcontrol/filemanager/index.html
 Icon=kfm
-Exec=kcmshell filebrowser
+Exec=kcmshell4 filebrowser
 
 X-KDE-Library=kcm_konq
 X-KDE-PluginKeyword=browser
