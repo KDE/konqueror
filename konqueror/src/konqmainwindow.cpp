@@ -838,11 +838,14 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
               QString suggestedFilename;
 
               KonqRun* run = childView->run();
-              if (run)
+              int attachment = 0;
+              if (run) {
                   suggestedFilename = run->suggestedFileName();
+                  attachment = (run->serverSuggestsSave()) ? KParts::BrowserRun::AttachmentDisposition : KParts::BrowserRun::InlineDisposition;
+              }
 
               KParts::BrowserRun::AskSaveResult res = KParts::BrowserRun::askEmbedOrSave(
-                  url, mimeType, suggestedFilename );
+                  url, mimeType, suggestedFilename, attachment );
               if ( res == KParts::BrowserRun::Open )
                   forceAutoEmbed = true;
               else if ( res == KParts::BrowserRun::Cancel )

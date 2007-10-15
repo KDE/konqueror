@@ -87,11 +87,9 @@ void KonqRun::foundMimeType( const QString & _type )
 
   bool tryEmbed = true;
   // One case where we shouldn't try to embed, is when the server asks us to save
-  // ####### only if content-disposition doesn't say inline
-#if 0
-  if ( !m_suggestedFilename.isEmpty() )
-     tryEmbed = false;
-#endif
+  if ( serverSuggestsSave() )
+    tryEmbed = false;
+
   if ( KonqMainWindow::isMimeTypeAssociatedWithSelf( mimeType ) )
       m_req.forceAutoEmbed = true;
 
@@ -114,6 +112,8 @@ void KonqRun::foundMimeType( const QString & _type )
     if ( res == KParts::BrowserRun::Delayed )
       return;
     setFinished( res == KParts::BrowserRun::Handled );
+    if (!hasFinished() && !tryEmbed) // Open selected for a serverSuggestsSave() file
+        setFinished( m_pMainWindow->openView( mimeType, KRun::url(), m_pView, m_req ) );
   }
 
   // make Konqueror think there was an error, in order to stop the spinning wheel
