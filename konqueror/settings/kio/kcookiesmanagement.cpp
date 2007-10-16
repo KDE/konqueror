@@ -291,10 +291,12 @@ void KCookiesManagement::getCookies(Q3ListViewItem *cookieDom)
   if ( ckd->cookiesLoaded() )
     return;
 
-  QList<QVariant> fields;
-  fields << QVariant(0) << QVariant(1) << QVariant(2) << QVariant(3);
+  QList<int> fields;
+  fields << 0 << 1 << 2 << 3;
   QDBusInterface kded("org.kde.kded", "/modules/kcookiejar", "org.kde.KCookieServer", QDBusConnection::sessionBus());
-  QDBusReply<QStringList> reply = kded.call( "findCookies", fields, ckd->domain(),
+  QDBusReply<QStringList> reply = kded.call( "findCookies",
+                                             QVariant::fromValue( fields ),
+                                             ckd->domain(),
                                           QString(),
                                           QString(),
                                           QString() );
@@ -321,11 +323,12 @@ void KCookiesManagement::getCookies(Q3ListViewItem *cookieDom)
 
 bool KCookiesManagement::cookieDetails(CookieProp *cookie)
 {
-  QList<QVariant> fields;
-  fields << QVariant(4) << QVariant(5) << QVariant(7);
+  QList<int> fields;
+  fields << 4 << 5 << 7;
 
   QDBusInterface kded("org.kde.kded", "/modules/kcookiejar", "org.kde.KCookieServer", QDBusConnection::sessionBus());
-  QDBusReply<QStringList> reply = kded.call( "findCookies", fields,
+  QDBusReply<QStringList> reply = kded.call( "findCookies",
+					     QVariant::fromValue( fields ),
                                           cookie->domain,
                                           cookie->host,
                                           cookie->path,
