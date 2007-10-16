@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE gui SYSTEM "kpartgui.dtd">
-<gui name="Konqueror" version="59">
+<gui name="Konqueror" version="60">
 <MenuBar>
  <Menu name="file" noMerge="1"><text>&amp;File</text>
   <Action name="new_window"/>
@@ -47,11 +47,11 @@
   <WeakSeparator/>
   <Merge/>
  </Menu>
- <Menu name="go"><text>&amp;Go</text>
-  <Action name="back"/>
-  <Action name="forward"/>
-  <!--<Action name="up"/>-->
-  <Action name="home"/>
+ <Menu name="go_web" noMerge="1"><text>&amp;Go</text>
+  <!--<Action name="go_up"/>-->
+  <Action name="go_back"/>
+  <Action name="go_forward"/>
+  <Action name="go_home"/>
   <Separator/>
   <Action name="go_system"/>
   <Action name="go_applications"/>
@@ -119,12 +119,12 @@
  <Merge/>
 </MenuBar>
 <ToolBar iconText="icononly" name="mainToolBar" newline="true"><text>Main Toolbar</text>
- <Action name="back"/>
- <Action name="forward"/>
- <Action name="up"/>
+ <Action name="go_back"/>
+ <Action name="go_forward"/>
+ <Action name="go_up"/>
  <Action name="reload"/>
  <Action name="stop"/>
- <Action name="home"/>
+ <Action name="go_home"/>
  <WeakSeparator/>
  <Merge/>
 </ToolBar>

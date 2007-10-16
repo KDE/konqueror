@@ -3761,7 +3761,7 @@ void KonqMainWindow::initActions()
 
   // Go menu
   m_paUp = new KToolBarPopupAction( KIcon("go-up"), i18n( "&Up" ), this );
-  actionCollection()->addAction( "up", m_paUp );
+  actionCollection()->addAction( "go_up", m_paUp );
   m_paUp->setShortcuts( KStandardShortcut::shortcut(KStandardShortcut::Up) );
   connect( m_paUp, SIGNAL( triggered( Qt::MouseButtons, Qt::KeyboardModifiers) ), this,
 	   SLOT( slotUp(Qt::MouseButtons, Qt::KeyboardModifiers) ) );
@@ -3771,7 +3771,7 @@ void KonqMainWindow::initActions()
   QPair< KGuiItem, KGuiItem > backForward = KStandardGuiItem::backAndForward();
 
   m_paBack = new KToolBarPopupAction( KIcon(backForward.first.iconName()), backForward.first.text(), this );
-  actionCollection()->addAction( "back", m_paBack );
+  actionCollection()->addAction( "go_back", m_paBack );
   m_paBack->setShortcuts( KStandardShortcut::shortcut(KStandardShortcut::Back) );
   connect( m_paBack, SIGNAL( triggered( Qt::MouseButtons, Qt::KeyboardModifiers) ), this,
 	   SLOT( slotBack(Qt::MouseButtons, Qt::KeyboardModifiers) ) );
@@ -3779,7 +3779,7 @@ void KonqMainWindow::initActions()
   connect( m_paBack->menu(), SIGNAL( activated( int ) ), this, SLOT( slotBackActivated( int ) ) );
 
   m_paForward = new KToolBarPopupAction( KIcon(backForward.second.iconName()), backForward.second.text(), this );
-  actionCollection()->addAction( "forward", m_paForward );
+  actionCollection()->addAction( "go_forward", m_paForward );
   m_paForward->setShortcuts( KStandardShortcut::shortcut(KStandardShortcut::Forward) );
   connect( m_paForward, SIGNAL( triggered( Qt::MouseButtons, Qt::KeyboardModifiers) ), this,
 	   SLOT( slotForward(Qt::MouseButtons, Qt::KeyboardModifiers) ) );
@@ -4740,9 +4740,9 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
   // It has to be a KActionCollection instead of a KActionPtrList because we need
   // the actionStatusText signal...
   KActionCollection popupMenuCollection( (QWidget*)0 );
-  popupMenuCollection.addAction( "back", m_paBack );
-  popupMenuCollection.addAction( "forward", m_paForward );
-  popupMenuCollection.addAction( "up", m_paUp );
+  popupMenuCollection.addAction( "go_back", m_paBack );
+  popupMenuCollection.addAction( "go_forward", m_paForward );
+  popupMenuCollection.addAction( "go_up", m_paUp );
   popupMenuCollection.addAction( "reload", m_paReload );
 
 #if 0
