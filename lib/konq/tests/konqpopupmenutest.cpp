@@ -41,6 +41,7 @@ static QStringList extractActionNames(const QMenu& menu)
         if (action->isSeparator()) {
             ret.append("separator");
         } else if (action->objectName().isEmpty()) {
+            //qDebug() << action->metaObject()->className();
             Q_ASSERT(action->menu());
             ret.append("submenu");
         } else {
@@ -66,11 +67,11 @@ void KonqPopupMenuTest::initTestCase()
     m_pasteTo = KStandardAction::paste(0, 0, this);
     m_actionCollection.addAction("pasteto", m_pasteTo);
     m_back = new QAction(this);
-    m_actionCollection.addAction("back", m_back);
+    m_actionCollection.addAction("go_back", m_back);
     m_forward = new QAction(this);
-    m_actionCollection.addAction("forward", m_forward);
+    m_actionCollection.addAction("go_forward", m_forward);
     m_up = new QAction(this);
-    m_actionCollection.addAction("up", m_up);
+    m_actionCollection.addAction("go_up", m_up);
     m_reload = new QAction(this);
     m_actionCollection.addAction("reload", m_reload);
     m_properties = new QAction(this);
@@ -122,7 +123,7 @@ void KonqPopupMenuTest::initTestCase()
     subMenu->addAction(m_up);
     QStringList actions = extractActionNames(popup);
     kDebug() << actions;
-    QCOMPARE(actions, QStringList() << "back" << "submenu");
+    QCOMPARE(actions, QStringList() << "go_back" << "submenu");
 }
 
 void KonqPopupMenuTest::testFile()
@@ -237,7 +238,7 @@ void KonqPopupMenuTest::testViewDirectory()
     actions.replaceInStrings("openwith", "openWith_submenu");
     QCOMPARE(actions, QStringList()
              << "newmenu" << "separator"
-             << "up" << "back" << "forward" << "separator"
+             << "go_up" << "go_back" << "go_forward" << "separator"
              << "paste" << "separator"
              << "openWith_submenu"
              << "preview_submenu"
@@ -307,7 +308,7 @@ void KonqPopupMenuTest::testHtmlPage()
     QStringList actions = extractActionNames(popup);
     kDebug() << actions;
     QCOMPARE(actions, QStringList()
-             << "back" << "forward" << "reload" << "separator"
+             << "go_back" << "go_forward" << "reload" << "separator"
              << "bookmark_add"
              << "separator"
              << "openWith_submenu"
