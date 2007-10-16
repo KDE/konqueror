@@ -1,4 +1,5 @@
 <?xml version = '1.0'?>
+<!-- This file is used by the simplebrowser profile -->
 <!DOCTYPE gui SYSTEM "kpartgui.dtd">
 <gui version="52" name="Konqueror" >
  <MenuBar>
@@ -77,10 +78,10 @@
  </ToolBar>
  <ToolBar newline="true" noMerge="1" name="locationToolBar" fullWidth="true" >
   <text>Location Toolbar</text>
-  <Action name="back" />
-  <Action name="forward" />
-  <Action name="up" />
-  <Action name="home" />
+  <Action name="go_back" />
+  <Action name="go_forward" />
+  <Action name="go_up" />
+  <Action name="go_home" />
   <Action name="reload" />
   <Action name="stop" />
   <Action name="security" />

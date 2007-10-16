@@ -377,9 +377,9 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
     if (m_itemFlags & KParts::BrowserExtension::ShowNavigationItems)
     {
         if (m_itemFlags & KParts::BrowserExtension::ShowUp)
-            addNamedAction( "up" );
-        addNamedAction( "back" );
-        addNamedAction( "forward" );
+            addNamedAction( "go_up" );
+        addNamedAction( "go_back" );
+        addNamedAction( "go_forward" );
         if (m_itemFlags & KParts::BrowserExtension::ShowReload)
             addNamedAction( "reload" );
         q->addSeparator();

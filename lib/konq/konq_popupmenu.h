@@ -75,7 +75,7 @@ public:
    * @param partFlags flags from the BrowserExtension enum, set by the calling part
    *
    * The actions to pass in include :
-   * showmenubar, back, forward, up, cut, copy, paste, pasteto, trash, rename, del
+   * showmenubar, go_back, go_forward, go_up, cut, copy, paste, pasteto, trash, rename, del
    * The others items are automatically inserted.
    *
    * @todo that list is probably not be up-to-date
