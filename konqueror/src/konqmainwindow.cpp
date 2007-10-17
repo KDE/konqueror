@@ -3866,10 +3866,10 @@ void KonqMainWindow::initActions()
   m_paConfigureExtensions = actionCollection()->addAction("options_configure_extensions");
   m_paConfigureExtensions->setText( i18n("Configure Extensions...") );
   connect(m_paConfigureExtensions, SIGNAL(triggered(bool) ), SLOT( slotConfigureExtensions()));
-  m_paConfigureSpellChecking = actionCollection()->addAction("configurespellcheck");
-  m_paConfigureSpellChecking->setIcon(KIcon("tools-check-spelling"));
-  m_paConfigureSpellChecking->setText(i18n("Configure Spell Checking..."));
-  connect(m_paConfigureSpellChecking, SIGNAL(triggered(bool)), SLOT( slotConfigureSpellChecking()));
+  //m_paConfigureSpellChecking = actionCollection()->addAction("configurespellcheck");
+  //m_paConfigureSpellChecking->setIcon(KIcon("tools-check-spelling"));
+  //m_paConfigureSpellChecking->setText(i18n("Configure Spell Checking..."));
+  //connect(m_paConfigureSpellChecking, SIGNAL(triggered(bool)), SLOT( slotConfigureSpellChecking()));
 
   // Window menu
   m_paSplitViewHor = actionCollection()->addAction("splitviewh");
