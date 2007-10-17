@@ -646,7 +646,7 @@ private: // members
   QAction *m_paMoveTabRight;
 
   QAction *m_paConfigureExtensions;
-  QAction *m_paConfigureSpellChecking;
+  //QAction *m_paConfigureSpellChecking;
 
   KAnimatedButton *m_paAnimatedLogo;
 
