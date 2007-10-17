@@ -369,8 +369,6 @@ QString KonqAboutPageFactory::tips()
 	  .arg( i18n( "Advanced users will appreciate the Konsole which you can embed into "
 		      "Konqueror (Window -> <img width='16' height='16' SRC=\"%1\"></img> Show "
  		      "Terminal Emulator).", openterm_icon_path))
-	  .arg( i18n( "Thanks to <a href=\"%1\">DCOP</a> you can have full control over Konqueror using a script."
-, QString("exec:/kdcop")) )
 	  .arg( i18n( "<img width='16' height='16' src=\"%1\"></img>" ,  continue_icon_path ) )
 	  .arg( i18n( "Next: Specifications" ) )
           ;
