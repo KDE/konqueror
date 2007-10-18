@@ -229,7 +229,7 @@ void KMiscHTMLOptions::load()
     KConfigGroup khtmlrc(KSharedConfig::openConfig("khtmlrc", KConfig::NoGlobals),
 			 QByteArray(""));
     KConfigGroup cg(m_pConfig, QByteArray(""));
-#define SET_GROUP(x) cg.changeGroup(x); khtmlrc.changeGroup(x)
+#define SET_GROUP(x) cg = KConfigGroup(m_pConfig, x); khtmlrc = KConfigGroup(KSharedConfig::openConfig("khtmlrc", KConfig::NoGlobals),x)
 #define READ_BOOL(x,y) cg.readEntry(x, khtmlrc.readEntry(x, y))
 #define READ_ENTRY(x) cg.readEntry(x, khtmlrc.readEntry(x))
 
@@ -307,7 +307,7 @@ void KMiscHTMLOptions::save()
     KConfigGroup cg(m_pConfig, "MainView Settings");
     cg.writeEntry( "OpenMiddleClick", m_pOpenMiddleClick->isChecked() );
     cg.writeEntry( "BackRightClick", m_pBackRightClick->isChecked() );
-    cg.changeGroup( "HTML Settings" );
+    cg = KConfigGroup(m_pConfig, "HTML Settings" );
     cg.writeEntry( "ChangeCursor", m_cbCursor->isChecked() );
     cg.writeEntry( "AutoLoadImages", m_pAutoLoadImagesCheckBox->isChecked() );
     cg.writeEntry( "UnfinishedImageFrame", m_pUnfinishedImageFrameCheckBox->isChecked() );
