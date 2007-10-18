@@ -4098,8 +4098,8 @@ void KonqMainWindow::initActions()
   m_paForward->setToolTip( i18n( "Move forward one step in the browsing history" ) );
 
   m_paHome->setWhatsThis( i18n( "Navigate to your 'Home Location'<br /><br />"
-                                "You can configure the location this button takes you to in the "
-                                "<b>KDE Control Center</b>, under <b>File Manager</b>/<b>Behavior</b>." ) );
+                                "You can configure the location this button takes you to "
+                                "under <b>Settings -> Configure Konqueror -> General</b>." ) );
   m_paHome->setToolTip( i18n( "Navigate to your 'Home Location'" ) );
 
   m_paReload->setWhatsThis( i18n( "Reload the currently displayed document<br /><br />"
