@@ -309,7 +309,7 @@ void KCMFilter::removeFilter()
 {
     for( int i = mListBox->count(); i >= 0; --i )
     {
-        if (mListBox->item(i)->isSelected())
+        if (mListBox->item(i) && mListBox->item(i)->isSelected())
             delete mListBox->takeItem(i);
     }
     emit changed( true );
