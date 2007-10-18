@@ -244,7 +244,7 @@ void KCMFilter::save()
 {
     KConfigGroup cg(mConfig, mGroupname);
     cg.deleteGroup();
-    cg.changeGroup(mGroupname);
+    cg = KConfigGroup(mConfig, mGroupname);
 
     cg.writeEntry("Enabled",mEnableCheck->isChecked());
     cg.writeEntry("Shrink",mKillCheck->isChecked());

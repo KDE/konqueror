@@ -90,9 +90,8 @@ KKonqGeneralOptions::~KKonqGeneralOptions()
 
 void KKonqGeneralOptions::load()
 {
-    KConfigGroup cg(m_pConfig, QByteArray(""));
-
-    cg.changeGroup("FMSettings");
+    KConfigGroup cg(m_pConfig, "FMSettings");
+    
     homeURL->setUrl(cg.readEntry("HomeURL", "~"));
     tabOptions->m_pShowMMBInTabs->setChecked( cg.readEntry( "MMBOpensTab", false ) );
     tabOptions->m_pDynamicTabbarHide->setChecked( ! (cg.readEntry( "AlwaysTabbedMode", false )) );
@@ -104,7 +103,7 @@ void KKonqGeneralOptions::load()
     tabOptions->m_pPopupsWithinTabs->setChecked( cg.readEntry( "PopupsWithinTabs", false) );
     tabOptions->m_pTabCloseActivatePrevious->setChecked( cg.readEntry( "TabCloseActivatePrevious", false) );
 
-    cg.changeGroup("Notification Messages");
+    cg = KConfigGroup(m_pConfig, "Notification Messages");
     tabOptions->m_pTabConfirm->setChecked( !cg.hasKey("MultipleTabConfirm") );
 
 }
@@ -136,7 +135,7 @@ void KKonqGeneralOptions::save()
     cg.sync();
 
     // It only matters wether the key is present, its value has no meaning
-    cg.changeGroup("Notification Messages");
+    cg = KConfigGroup(m_pConfig,"Notification Messages");
     if ( tabOptions->m_pTabConfirm->isChecked() )
         cg.deleteEntry( "MultipleTabConfirm" );
     else
