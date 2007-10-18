@@ -70,13 +70,13 @@
 #cmakedefine HAVE_VSNPRINTF 1
 
 /* KDE's binaries directory */
-#define KDE_BINDIR "${CMAKE_INSTALL_PREFIX}/bin"
+#define KDE_BINDIR "${BIN_INSTALL_PREFIX}"
 
 /* KDE's configuration directory */
-#define KDE_CONFDIR "${CMAKE_INSTALL_PREFIX}/share/config"
+#define KDE_CONFDIR "${CONFIG_INSTALL_DIR}/"
 
 /* KDE's static data directory */
-#define KDE_DATADIR "${CMAKE_INSTALL_PREFIX}/share/apps"
+#define KDE_DATADIR "${DATA_INSTALL_DIR}/"
 
 /* Define where your java executable is */
 #undef PATH_JAVA
