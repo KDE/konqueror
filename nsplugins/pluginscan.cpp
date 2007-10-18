@@ -203,8 +203,8 @@ void registerPlugin( const QString &name, const QString &description,
     int num = cg.readEntry( "number", 0 );
     cg.writeEntry( "number", num+1 );
 
+    cg = KConfigGroup(infoConfig,QString::number(num));
     // create plugin info
-    cg.changeGroup( QString::number(num) );
     cg.writeEntry( "name", name );
     cg.writeEntry( "description", description );
     cg.writeEntry( "file", file );
