@@ -237,6 +237,8 @@ void KCMFilter::exportFilters()
 void KCMFilter::defaults()
 {
     mListBox->clear();
+    mEnableCheck->setChecked(false);
+    mKillCheck->setChecked(false);
     updateButton();
 }
 
