@@ -4046,7 +4046,7 @@ void KonqMainWindow::initActions()
 				  "Enter a web address or search term." ) );
 
   QAction *clearLocation = actionCollection()->addAction("clear_location");
-  clearLocation->setIcon( KIcon(QApplication::isRightToLeft() ? "clear-left" : "locationbar-erase") );
+  clearLocation->setIcon( KIcon(QApplication::isRightToLeft() ? "edit-clear-locationbar-rtl" : "edit-clear-locationbar") );
   clearLocation->setText( i18n( "Clear Location Bar" ) );
   clearLocation->setShortcut(Qt::CTRL+Qt::Key_L);
   connect( clearLocation, SIGNAL( triggered(bool) ),

@@ -313,9 +313,9 @@ QString KonqAboutPageFactory::tips()
     QString openterm_icon_path =
 	    iconloader->iconPath("openterm", KIconLoader::Small );
     QString locationbar_erase_rtl_icon_path =
-	    iconloader->iconPath("clear-left", KIconLoader::Small );
+	    iconloader->iconPath("edit-clear-locationbar-rtl", KIconLoader::Small );
     QString locationbar_erase_icon_path =
-	    iconloader->iconPath("locationbar-erase", KIconLoader::Small );
+	    iconloader->iconPath("edit-clear-locationbar", KIconLoader::Small );
     QString window_fullscreen_icon_path =
 	    iconloader->iconPath("view-fullscreen", KIconLoader::Small );
     QString view_left_right_icon_path =
