@@ -4077,7 +4077,7 @@ void KonqMainWindow::initActions()
   connect(action, SIGNAL(triggered(bool) ), SLOT( slotIntro() ));
 
   QAction *goUrl = actionCollection()->addAction("go_url");
-  goUrl->setIcon( KIcon("browser-go") );
+  goUrl->setIcon( KIcon("go-jump-locationbar") );
   goUrl->setText( i18n( "Go" ) );
   connect(goUrl, SIGNAL(triggered(bool)), SLOT( goURL() ));
   goUrl->setWhatsThis( i18n( "Go<br /><br />"
