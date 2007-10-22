@@ -345,24 +345,21 @@ KonqMainWindow::~KonqMainWindow()
   //kDebug(1202) << "KonqMainWindow::~KonqMainWindow " << this << " done";
 }
 
-QWidget * KonqMainWindow::createContainer( QWidget *parent, int index, const QDomElement &element, int &id )
+QWidget * KonqMainWindow::createContainer( QWidget *parent, int index, const QDomElement &element, QAction* &containerAction )
 {
+  QWidget *res = KParts::MainWindow::createContainer( parent, index, element, containerAction );
+
   static QString nameBookmarkBar = QLatin1String( "bookmarkToolBar" );
   static QString tagToolBar = QLatin1String( "ToolBar" );
-
-  QWidget *res = KParts::MainWindow::createContainer( parent, index, element, id );
-
   if ( res && (element.tagName() == tagToolBar) && (element.attribute( "name" ) == nameBookmarkBar) )
   {
     assert( ::qobject_cast<KToolBar*>( res ) );
-    if (!KAuthorized::authorizeKAction("bookmarks"))
-    {
+    if (!KAuthorized::authorizeKAction("bookmarks")) {
         delete res;
         return 0;
     }
 
-    if ( !m_bookmarkBarInitialized )
-    {
+    if ( !m_bookmarkBarInitialized ) {
         // The actual menu needs a different action collection, so that the bookmarks
         // don't appear in kedittoolbar
         m_bookmarkBarInitialized = true;
@@ -388,7 +385,7 @@ void KonqMainWindow::initBookmarkBar()
      bar->hide();
 }
 
-void KonqMainWindow::removeContainer( QWidget *container, QWidget *parent, QDomElement &element, int id )
+void KonqMainWindow::removeContainer( QWidget *container, QWidget *parent, QDomElement &element, QAction* containerAction )
 {
   static QString nameBookmarkBar = QLatin1String( "bookmarkToolBar" );
   static QString tagToolBar = QLatin1String( "ToolBar" );
@@ -400,7 +397,7 @@ void KonqMainWindow::removeContainer( QWidget *container, QWidget *parent, QDomE
       m_paBookmarkBar->clear();
   }
 
-  KParts::MainWindow::removeContainer( container, parent, element, id );
+  KParts::MainWindow::removeContainer( container, parent, element, containerAction );
 }
 
 // Detect a name filter (e.g. *.txt) in the url.
