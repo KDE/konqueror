@@ -2580,7 +2580,7 @@ void KonqMainWindow::slotBreakOffTab()
     if (prop.isValid() && prop.toBool())
       if ( KMessageBox::warningContinueCancel( this,
            i18n("This tab contains changes that have not been submitted.\nDetaching the tab will discard these changes."),
-           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-breakoff"), KStandardGuiItem::cancel(), "discardchangesdetach") != KMessageBox::Continue )
+           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-detach"), KStandardGuiItem::cancel(), "discardchangesdetach") != KMessageBox::Continue )
         return;
   }
 
@@ -2598,7 +2598,7 @@ void KonqMainWindow::slotBreakOffTabPopup()
       m_pViewManager->showTab( view );
       if ( KMessageBox::warningContinueCancel( this,
            i18n("This tab contains changes that have not been submitted.\nDetaching the tab will discard these changes."),
-           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-breakoff"), KStandardGuiItem::cancel(), "discardchangesdetach") != KMessageBox::Continue )
+           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-detach"), KStandardGuiItem::cancel(), "discardchangesdetach") != KMessageBox::Continue )
       {
         m_pViewManager->showTab( originalView );
         return;
@@ -2710,7 +2710,7 @@ void KonqMainWindow::slotRemoveTab()
     if (prop.isValid() && prop.toBool())
       if ( KMessageBox::warningContinueCancel( this,
            i18n("This tab contains changes that have not been submitted.\nClosing the tab will discard these changes."),
-           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-remove"), KStandardGuiItem::cancel(), "discardchangesclose") != KMessageBox::Continue )
+           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-close"), KStandardGuiItem::cancel(), "discardchangesclose") != KMessageBox::Continue )
         return;
   }
 
@@ -2727,7 +2727,7 @@ void KonqMainWindow::slotRemoveTabPopup()
       m_pViewManager->showTab( view );
       if ( KMessageBox::warningContinueCancel( this,
            i18n("This tab contains changes that have not been submitted.\nClosing the tab will discard these changes."),
-           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-remove"), KStandardGuiItem::cancel(), "discardchangesclose") != KMessageBox::Continue )
+           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-close"), KStandardGuiItem::cancel(), "discardchangesclose") != KMessageBox::Continue )
       {
         m_pViewManager->showTab( originalView );
         return;
@@ -2749,7 +2749,7 @@ void KonqMainWindow::slotRemoveOtherTabsPopup()
 {
   if ( KMessageBox::warningContinueCancel( this,
        i18n("Do you really want to close all other tabs?"),
-       i18n("Close Other Tabs Confirmation"), KGuiItem(i18n("Close &Other Tabs"),"tab-remove"),
+       i18n("Close Other Tabs Confirmation"), KGuiItem(i18n("Close &Other Tabs"),"tab-close"),
        KStandardGuiItem::cancel(), "CloseOtherTabConfirm") != KMessageBox::Continue )
     return;
 
@@ -2764,7 +2764,7 @@ void KonqMainWindow::slotRemoveOtherTabsPopup()
         m_pViewManager->showTab( view );
         if ( KMessageBox::warningContinueCancel( this,
            i18n("This tab contains changes that have not been submitted.\nClosing other tabs will discard these changes."),
-           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-remove"), KStandardGuiItem::cancel(), "discardchangescloseother") != KMessageBox::Continue )
+           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-close"), KStandardGuiItem::cancel(), "discardchangescloseother") != KMessageBox::Continue )
         {
            m_pViewManager->showTab( originalView );
            return;
@@ -3894,7 +3894,7 @@ void KonqMainWindow::initActions()
   connect(m_paDuplicateTab, SIGNAL(triggered(bool)), SLOT( slotDuplicateTab() ));
   m_paDuplicateTab->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_D);
   m_paBreakOffTab = actionCollection()->addAction("breakoffcurrenttab");
-  m_paBreakOffTab->setIcon( KIcon("tab-breakoff") );
+  m_paBreakOffTab->setIcon( KIcon("tab-detach") );
   m_paBreakOffTab->setText( i18n( "Detach Current Tab" ) );
   connect(m_paBreakOffTab, SIGNAL(triggered(bool)), SLOT( slotBreakOffTab() ));
   m_paBreakOffTab->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_B);
@@ -3904,12 +3904,12 @@ void KonqMainWindow::initActions()
   connect(m_paRemoveView, SIGNAL(triggered(bool)), SLOT( slotRemoveView() ));
   m_paRemoveView->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_R);
   m_paRemoveTab = actionCollection()->addAction("removecurrenttab");
-  m_paRemoveTab->setIcon( KIcon("tab-remove") );
+  m_paRemoveTab->setIcon( KIcon("tab-close") );
   m_paRemoveTab->setText( i18n( "Close Current Tab" ) );
   connect(m_paRemoveTab, SIGNAL(triggered(bool)), SLOT( slotRemoveTab() ));
   m_paRemoveTab->setShortcut(Qt::CTRL+Qt::Key_W);
   m_paRemoveOtherTabs = actionCollection()->addAction("removeothertabs");
-  m_paRemoveOtherTabs->setIcon( KIcon("tab-remove") );
+  m_paRemoveOtherTabs->setIcon( KIcon("tab-close") );
   m_paRemoveOtherTabs->setText( i18n( "Close &Other Tabs" ) );
   connect(m_paRemoveOtherTabs, SIGNAL(triggered(bool)), SLOT( slotRemoveOtherTabsPopup() ));
 
@@ -5323,7 +5323,7 @@ void KonqMainWindow::closeEvent( QCloseEvent *e )
                         "are you sure you want to quit?"),
                   i18n("Confirmation"),
                   KStandardGuiItem::quit(),
-                  KGuiItem(i18n( "C&lose Current Tab" ), "tab-remove"),
+                  KGuiItem(i18n( "C&lose Current Tab" ), "tab-close"),
                   KStandardGuiItem::cancel(),
                   "MultipleTabConfirm"
               )

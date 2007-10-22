@@ -113,7 +113,7 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
     m_rightWidget->setFlat(true);
     connect( m_rightWidget, SIGNAL( clicked() ),
              m_pViewManager->mainWindow(), SLOT( slotRemoveTab() ) );
-    m_rightWidget->setIcon( KIcon( "tab-remove" ) );
+    m_rightWidget->setIcon( KIcon( "tab-close" ) );
     m_rightWidget->adjustSize();
     m_rightWidget->setToolTip( i18n("Close the current tab"));
     setCornerWidget( m_rightWidget, Qt::TopRightCorner );
@@ -358,7 +358,7 @@ void KonqFrameTabs::refreshSubPopupMenuTab()
     }
     m_pSubPopupMenuTab->addSeparator();
     m_closeOtherTabsId =
-      m_pSubPopupMenuTab->insertItem( KIcon( "tab-remove" ),
+      m_pSubPopupMenuTab->insertItem( KIcon( "tab-close" ),
 				      i18n( "Close &Other Tabs" ),
 				      m_pViewManager->mainWindow(),
 				      SLOT( slotRemoveOtherTabsPopup() ),
@@ -499,14 +499,14 @@ void KonqFrameTabs::initPopupMenu()
   connect( m_pSubPopupMenuTab, SIGNAL( activated ( int ) ),
            this, SLOT( slotSubPopupMenuTabActivated( int ) ) );
   m_pPopupMenu->addSeparator();
-  m_pPopupMenu->insertItem( KIcon( "tab-breakoff" ),
+  m_pPopupMenu->insertItem( KIcon( "tab-detach" ),
                             i18n("D&etach Tab"),
                             m_pViewManager->mainWindow(),
                             SLOT( slotBreakOffTabPopup() ),
                             m_pViewManager->mainWindow()->action("breakoffcurrenttab")->shortcut(),
                             BREAKOFF_ID );
   m_pPopupMenu->addSeparator();
-  m_pPopupMenu->insertItem( KIcon( "tab-remove" ),
+  m_pPopupMenu->insertItem( KIcon( "tab-close" ),
                             i18n("&Close Tab"),
                             m_pViewManager->mainWindow(),
                             SLOT( slotRemoveTabPopup() ),
