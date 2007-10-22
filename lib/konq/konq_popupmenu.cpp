@@ -440,7 +440,7 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
     if ( isCurrentTrash )
     {
         act = m_ownActions.addAction( "emptytrash" );
-        act->setIcon( KIcon("emptytrash") );
+        act->setIcon( KIcon("trash-empty") );
         act->setText( i18n( "&Empty Trash Bin" ) );
         KConfig trashConfig( "trashrc", KConfig::OnlyLocal);
         act->setEnabled( !trashConfig.group("Status").readEntry( "Empty", true ) );

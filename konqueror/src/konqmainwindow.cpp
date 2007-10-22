@@ -4003,7 +4003,7 @@ void KonqMainWindow::initActions()
   m_paRename->setText( i18n( "&Rename" ) );
   m_paRename->setShortcut(Qt::Key_F2);
   m_paTrash = actionCollection()->addAction("trash");
-  m_paTrash->setIcon( KIcon("edit-trash") );
+  m_paTrash->setIcon( KIcon("user-trash") );
   m_paTrash->setText( i18n( "&Move to Trash" ) );
   m_paTrash->setShortcut(Qt::Key_Delete);
   connect( m_paTrash, SIGNAL( triggered( Qt::MouseButtons, Qt::KeyboardModifiers ) ),

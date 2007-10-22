@@ -282,7 +282,7 @@ bool KonqOperations::askDeleteConfirmation( const KUrl::List & selectedUrls, int
                 i18np( "Do you really want to move this item to the trash?", "Do you really want to move these %1 items to the trash?", prettyList.count()),
                 prettyList,
 		i18n( "Move to Trash" ),
-		KGuiItem( i18nc( "Verb", "&Trash" ), "edit-trash"),
+		KGuiItem( i18nc( "Verb", "&Trash" ), "user-trash"),
 		KStandardGuiItem::cancel(),
 		keyName, KMessageBox::Notify | KMessageBox::Dangerous);
         }
