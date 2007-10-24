@@ -271,9 +271,9 @@ void TypesListItem::sync()
     KConfigGroup cg = config.desktopGroup();
 
     cg.writeEntry("Type", "MimeType");
-    cg.writeEntry("MimeType", name());
+    cg.writeEntry("MimeType", name()); // XXX shouldn't this be a XdgListEntry?
     cg.writeEntry("Icon", m_icon);
-    cg.writeEntry("Patterns", m_patterns, ';');
+    cg.writeXdgListEntry("Patterns", m_patterns);
     cg.writeEntry("Comment", m_comment);
     cg.writeEntry("Hidden", false);
 
@@ -358,7 +358,7 @@ void TypesListItem::sync()
 
           KConfigGroup group = desktop->desktopGroup();
           mimeTypeList = s_changedServices->contains( pService->entryPath())
-            ? (*s_changedServices)[ pService->entryPath() ] : group.readEntry("MimeType",QStringList(), ';');
+            ? (*s_changedServices)[ pService->entryPath() ] : group.readXdgListEntry("MimeType");
 
           // Remove entry and the number that might follow.
           for(int i=0;(i = mimeTypeList.indexOf(name())) != -1;)
@@ -375,7 +375,7 @@ void TypesListItem::sync()
              }
           }
 
-          group.writeEntry("MimeType", mimeTypeList, ';');
+          group.writeXdgListEntry("MimeType", mimeTypeList);
 
           // if two or more types have been modified, and they use the same service,
           // accumulate the changes
@@ -483,10 +483,10 @@ void TypesListItem::saveServices( KConfig & profile, QStringList services, const
 
       KConfigGroup group = desktop->desktopGroup();
       mimeTypeList = s_changedServices->contains( pService->entryPath())
-            ? (*s_changedServices)[ pService->entryPath() ] : group.readEntry("MimeType", QStringList(),';');
+            ? (*s_changedServices)[ pService->entryPath() ] : group.readXdgListEntry("MimeType");
       mimeTypeList.append(name());
 
-      group.writeEntry("MimeType", mimeTypeList, ';');
+      group.writeXdgListEntry("MimeType", mimeTypeList);
       desktop->sync();
       delete desktop;
 

@@ -97,7 +97,7 @@ void KonqSidebarTree::loadModuleFactories()
 
   for (QStringList::ConstIterator it=list.begin();it!=list.end();++it)
   {
-    KConfig _ksc( *it, KConfig::OnlyLocal );
+    KConfig _ksc( *it, KConfig::SimpleConfig );
     KConfigGroup ksc(&_ksc, "Desktop Entry");
     QString name    = ksc.readEntry("X-KDE-TreeModule");
     QString libName = ksc.readEntry("X-KDE-TreeModule-Lib");
@@ -628,7 +628,7 @@ void KonqSidebarTree::scanDir( KonqSidebarTreeItem *parent, const QString &path,
             // Version 6 includes the printmanager and lan browser
             const int currentVersion = 6;
             QString key = QString::fromLatin1("X-KDE-DirTreeVersionNumber");
-            KConfig versionCfg( path + "/.directory", KConfig::OnlyLocal);
+            KConfig versionCfg( path + "/.directory", KConfig::SimpleConfig);
             KConfigGroup generalGroup( &versionCfg, "General" );
             int versionNumber = generalGroup.readEntry( key, 1 );
             kDebug(1201) << "KonqSidebarTree::scanDir found version " << versionNumber;
@@ -786,7 +786,7 @@ void KonqSidebarTree::loadTopLevelItem( KonqSidebarTreeItem *parent, const QStri
 
     // Here's where we need to create the right module...
     // ### TODO: make this KTrader/KLibrary based.
-    QString moduleName = desktopGroup.readPathEntry( "X-KDE-TreeModule" );
+    QString moduleName = desktopGroup.readPathEntry( "X-KDE-TreeModule", QString() );
     QString showHidden = desktopGroup.readEntry("X-KDE-TreeModule-ShowHidden");
 
     if (moduleName.isEmpty()) moduleName="Directory";

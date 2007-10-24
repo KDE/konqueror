@@ -134,7 +134,7 @@ KCustomMenuEditor::load(KConfig *cfg)
    Q3ListViewItem *last = 0;
    for(int i = 0; i < count; i++)
    {
-      QString entry = cg.readPathEntry(QString("Item%1").arg(i+1));
+      QString entry = cg.readPathEntry(QString("Item%1").arg(i+1), QString());
       if (entry.isEmpty())
          continue;
 

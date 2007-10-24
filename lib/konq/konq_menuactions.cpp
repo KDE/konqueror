@@ -294,7 +294,7 @@ int KonqMenuActions::addActionsTo(QMenu* mainMenu)
                 continue;
         }
         else if ( cfg.hasKey( "X-KDE-Protocols" ) ) {
-            const QStringList protocols = cfg.readEntry( "X-KDE-Protocols" ).split( ',' );
+            const QStringList protocols = cfg.readEntry( "X-KDE-Protocols", QStringList() );
             if ( !protocols.contains( d->m_url.protocol() ) )
                 continue;
         }

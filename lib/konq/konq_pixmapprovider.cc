@@ -93,7 +93,7 @@ void KonqPixmapProvider::load( KConfigGroup& kc, const QString& key )
 {
     iconMap.clear();
     QStringList list;
-    list = kc.readPathListEntry( key );
+    list = kc.readPathEntry( key, QStringList() );
     QStringList::Iterator it = list.begin();
     QString url, icon;
     while ( it != list.end() ) {

@@ -436,7 +436,7 @@ void KonqOperations::asyncDrop( const KFileItem & destItem )
                 return;
             }
             else if ( desktopFile.hasLinkType() && desktopGroup.hasKey("URL") ) {
-                m_destUrl = desktopGroup.readPathEntry("URL");
+                m_destUrl = desktopGroup.readPathEntry("URL", QString());
                 doDropFileCopy();
                 return;
             }

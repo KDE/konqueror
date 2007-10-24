@@ -86,7 +86,7 @@ void KonqSidebarDirTreeModule::addTopLevelItem( KonqSidebarTreeTopLevelItem * it
     {
         targetURL = cfg.readUrl();
         // some services might want to make their URL configurable in kcontrol
-        QString configured = desktopGroup.readPathEntry("X-KDE-ConfiguredURL");
+        QString configured = desktopGroup.readPathEntry("X-KDE-ConfiguredURL", QString());
         if (!configured.isEmpty()) {
             QStringList list = configured.split( ':');
             KConfig config(list[0]);
@@ -100,7 +100,7 @@ void KonqSidebarDirTreeModule::addTopLevelItem( KonqSidebarTreeTopLevelItem * it
     else if ( cfg.hasDeviceType() )
     {
         // Determine the mountpoint
-        QString mp = desktopGroup.readPathEntry("MountPoint");
+        QString mp = desktopGroup.readPathEntry("MountPoint", QString());
         if ( mp.isEmpty() )
             return;
 

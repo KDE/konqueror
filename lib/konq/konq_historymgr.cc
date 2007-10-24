@@ -600,7 +600,7 @@ bool KonqHistoryManager::loadFallback()
     if ( file.isEmpty() )
 	return false;
 
-    KConfig config(  file, KConfig::OnlyLocal);
+    KConfig config(  file, KConfig::SimpleConfig);
     const KConfigGroup group = config.group("History");
     const QStringList items = group.readEntry( "CompletionItems", QStringList() );
     QStringList::const_iterator it = items.begin();

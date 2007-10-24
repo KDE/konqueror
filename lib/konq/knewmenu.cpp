@@ -217,7 +217,7 @@ void KNewMenu::parseFiles()
                 QString type = config.readEntry( "Type" );
                 if ( type == "Link" )
                 {
-                    templatePath = config.readPathEntry("URL");
+                    templatePath = config.readPathEntry("URL", QString());
                     if ( templatePath[0] != '/' )
                     {
                         if ( templatePath.startsWith("file:/") )
