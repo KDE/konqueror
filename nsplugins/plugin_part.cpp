@@ -126,7 +126,6 @@ PluginFactory::~PluginFactory()
    _loader->release();
 
    if (s_instance) {
-       delete s_instance->aboutData();
        delete s_instance;
        s_instance = 0;
    }
@@ -147,15 +146,10 @@ const KComponentData &PluginFactory::componentData()
     kDebug(1432) << "PluginFactory::instance";
 
     if (!s_instance) {
-        s_instance = new KComponentData(aboutData());
+        KAboutData about("plugin", 0, ki18n("plugin"), "1.99");
+        s_instance = new KComponentData(about); 
     }
     return *s_instance;
-}
-
-KAboutData *PluginFactory::aboutData()
-{
-    KAboutData *about = new KAboutData("plugin", 0, ki18n("plugin"), "1.99");
-    return about;
 }
 
 
