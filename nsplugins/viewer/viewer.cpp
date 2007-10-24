@@ -123,7 +123,10 @@ int main(int argc, char** argv)
 
    kDebug(1430) << "4 - create KApplication";
 
-   KCmdLineArgs::init(argc, argv, "nspluginviewer", "nsplugin", ki18n("nspluginviewer"), "");
+   
+   // Skip the args.. This is internal, anyway.
+   KCmdLineArgs::init(1, argv, "nspluginviewer", "nsplugin", ki18n("nspluginviewer"), "");
+   
    KApplication app;
 
    {
