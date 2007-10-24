@@ -35,5 +35,9 @@ if ( Q_WS_X11 )
   add_subdirectory( kdepasswd )
 endif ( Q_WS_X11 )
 
+if ( UNIX )
+   add_subdirectory(kdeeject)
+endif ( UNIX )
+
 add_subdirectory( doc )
 
