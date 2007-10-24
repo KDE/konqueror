@@ -324,7 +324,7 @@ void KonqCombo::loadItems()
     historyConfigGroup.writeEntry( "CompletionItems", "unused" );
 
     KConfigGroup locationBarGroup( s_config, "Location Bar" );
-    const QStringList items = locationBarGroup.readPathListEntry( "ComboContents" );
+    const QStringList items = locationBarGroup.readPathEntry( "ComboContents", QStringList() );
     QStringList::ConstIterator it = items.begin();
     QString item;
     bool first = true;

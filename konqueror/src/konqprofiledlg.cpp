@@ -48,7 +48,7 @@ KonqProfileMap KonqProfileDlg::readAllProfiles()
   {
     QFileInfo info( *pIt );
     QString profileName = KIO::decodeFileName( info.baseName() );
-    KConfig cfg( *pIt, KConfig::OnlyLocal);
+    KConfig cfg( *pIt, KConfig::SimpleConfig);
     if ( cfg.hasGroup( "Profile" ) )
     {
       KConfigGroup profileGroup( &cfg, "Profile" );
@@ -219,7 +219,7 @@ void KonqProfileDlg::slotItemRenamed( QListWidgetItem * item )
     if ( it != m_mapEntries.end() )
     {
       QString fileName = it.value();
-      KConfig _cfg( fileName, KConfig::OnlyLocal );
+      KConfig _cfg( fileName, KConfig::SimpleConfig );
       KConfigGroup cfg(&_cfg, "Profile" );
       cfg.writeEntry( "Name", newName );
       cfg.sync();

@@ -769,7 +769,7 @@ void KonqViewManager::saveViewProfile( const QString & fileName, const QString &
   if ( QFile::exists( path ) )
     QFile::remove( path );
 
-  KConfig _cfg( path, KConfig::OnlyLocal );
+  KConfig _cfg( path, KConfig::SimpleConfig );
   KConfigGroup cfg(&_cfg, "Profile" );
   if ( !profileName.isEmpty() )
       cfg.writePathEntry( "Name", profileName );
@@ -1122,7 +1122,7 @@ void KonqViewManager::loadItem( KConfigGroup &cfg, KonqFrameContainerBase *paren
       //kDebug(1202) << "KonqViewManager::loadItem: key " << key;
       if ( cfg.hasKey( key ) )
       {
-        QString u = cfg.readPathEntry( key );
+        QString u = cfg.readPathEntry( key, QString() );
         if ( u.isEmpty() )
           u = QString::fromLatin1("about:blank");
         url = u;

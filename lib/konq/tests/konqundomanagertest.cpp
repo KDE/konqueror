@@ -412,7 +412,7 @@ void KonqUndoManagerTest::testTrashFiles()
 
     // check trash?
     // Let's just check that it's not empty. kio_trash has its own unit tests anyway.
-    KConfig cfg( "trashrc", KConfig::OnlyLocal );
+    KConfig cfg( "trashrc", KConfig::SimpleConfig );
     QVERIFY( cfg.hasGroup( "Status" ) );
     QCOMPARE( cfg.group("Status").readEntry( "Empty", true ), false );
 

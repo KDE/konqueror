@@ -196,7 +196,7 @@ void addBackEnd::triggeredAddMenu(QAction* action)
 				if (!myFile.isEmpty())
 				{
 					kDebug() <<"trying to save to file: "<<myFile;
-					KConfig _scf( myFile, KConfig::OnlyLocal );
+					KConfig _scf( myFile, KConfig::SimpleConfig );
 					KConfigGroup scf(&_scf, "Desktop Entry");
 					for (QMap<QString,QString>::ConstIterator it = map.begin(); it != map.end(); ++it) {
 						kDebug() <<"writing:"<<it.key()<<" / "<<it.value();
@@ -332,7 +332,7 @@ void Sidebar_Widget::addWebSideBar(const KUrl& url, const QString& /*name*/) {
 	// Go through list to see which ones exist.  Check them for the URL
 	QStringList files = QDir(list).entryList("websidebarplugin*.desktop");
 	for (QStringList::Iterator it = files.begin(); it != files.end(); ++it){
-		KConfig _scf( list + *it, KConfig::OnlyLocal );
+		KConfig _scf( list + *it, KConfig::SimpleConfig );
 		KConfigGroup scf(&_scf, "Desktop Entry");
 		if (scf.readPathEntry("URL", QString()) == url.url()) {
 			// We already have this one!
@@ -346,7 +346,7 @@ void Sidebar_Widget::addWebSideBar(const KUrl& url, const QString& /*name*/) {
 	QString myFile = findFileName(&tmpl,m_universalMode,m_currentProfile);
 
 	if (!myFile.isEmpty()) {
-		KConfig _scf( myFile, KConfig::OnlyLocal );
+		KConfig _scf( myFile, KConfig::SimpleConfig );
 		KConfigGroup scf(&_scf, "Desktop Entry");
 		scf.writeEntry("Type", "Link");
 		scf.writePathEntry("URL", url.url());
@@ -423,7 +423,7 @@ void Sidebar_Widget::initialCopy()
 		return; //oups;
 
 	int nVersion=-1;
-	KConfig lcfg(m_path+".version", KConfig::OnlyLocal);
+	KConfig lcfg(m_path+".version", KConfig::SimpleConfig);
 	KConfigGroup generalGroup( &lcfg, "General" );
 	int lVersion = generalGroup.readEntry("Version",0);
 
@@ -437,7 +437,7 @@ void Sidebar_Widget::initialCopy()
 
 	        if ( !dirtree_dir.isEmpty() && dirtree_dir != m_path )
         	{
-			KConfig gcfg(dirtree_dir+".version", KConfig::OnlyLocal);
+			KConfig gcfg(dirtree_dir+".version", KConfig::SimpleConfig);
 			KConfigGroup dirGeneralGroup( &gcfg, "General" );
 			int gversion = dirGeneralGroup.readEntry("Version", 1);
 			nVersion=(nVersion>gversion)?nVersion:gversion;
@@ -491,9 +491,9 @@ void Sidebar_Widget::slotSetName( )
 	if(ok)
 	{
 		// Write the name in the .desktop file of this side button.
-		KConfig _ksc( m_path+m_currentButton->file, KConfig::OnlyLocal );
+		KConfig _ksc( m_path+m_currentButton->file, KConfig::SimpleConfig );
 		KConfigGroup ksc(&_ksc, "Desktop Entry");
-		ksc.writeEntry("Name", name, KConfigBase::NLS /*localized*/ );
+		ksc.writeEntry("Name", name, KConfigBase::Localized);
 		ksc.sync();
 
 		// Update the buttons with a QTimer (why?)
@@ -507,7 +507,7 @@ void Sidebar_Widget::slotSetURL( )
 	dlg.fileDialog()->setMode( KFile::Directory );
 	if (dlg.exec())
 	{
-		KConfig _ksc( m_path+m_currentButton->file, KConfig::OnlyLocal );
+		KConfig _ksc( m_path+m_currentButton->file, KConfig::SimpleConfig );
 		KConfigGroup ksc(&_ksc, "Desktop Entry");
 		if ( !dlg.selectedUrl().isValid())
 		{
@@ -532,7 +532,7 @@ void Sidebar_Widget::slotSetIcon( )
 	kDebug()<<"New Icon Name:"<<iconname;
 	if (!iconname.isEmpty())
 	{
-		KConfig _ksc( m_path+m_currentButton->file, KConfig::OnlyLocal );
+		KConfig _ksc( m_path+m_currentButton->file, KConfig::SimpleConfig );
 		KConfigGroup ksc(&_ksc, "Desktop Entry");
 		ksc.writeEntry("Icon",iconname);
 		ksc.sync();
@@ -773,7 +773,7 @@ bool Sidebar_Widget::addButton(const QString &desktoppath,int pos)
 	kDebug() << "addButton:" << (m_path+desktoppath);
 
 	confFile = new KConfigGroup(
-	    KSharedConfig::openConfig(m_path+desktoppath, KConfig::OnlyLocal),
+	    KSharedConfig::openConfig(m_path+desktoppath, KConfig::SimpleConfig),
 	    "Desktop Entry");
 
     	QString icon = confFile->readEntry("Icon");
@@ -892,7 +892,7 @@ bool Sidebar_Widget::createView( ButtonInfo *data)
 	bool ret = true;
 	KConfigGroup *confFile;
 	confFile = new KConfigGroup(
-	    KSharedConfig::openConfig(data->file, KConfig::OnlyLocal),
+	    KSharedConfig::openConfig(data->file, KConfig::SimpleConfig),
 	    "Desktop Entry");
 
 	data->dock = m_area->createDockWidget(confFile->readEntry("Name",i18n("Unknown")),QString());

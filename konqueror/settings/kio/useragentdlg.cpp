@@ -191,7 +191,7 @@ void UserAgentDlg::save()
   if (!deleteList.isEmpty())
   {
      // Remove entries from local file.
-     KConfig cfg("kio_httprc", KConfig::OnlyLocal);
+     KConfig cfg("kio_httprc", KConfig::SimpleConfig);
      for ( QStringList::Iterator it = deleteList.begin();
            it != deleteList.end(); ++it )
      {

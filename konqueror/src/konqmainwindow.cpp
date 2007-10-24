@@ -753,7 +753,7 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
           if ( f.open(QIODevice::ReadOnly) )
             {
               f.close();
-              KConfig config( urlDotDir.path(), KConfig::OnlyLocal);
+              KConfig config( urlDotDir.path(), KConfig::SimpleConfig);
               KConfigGroup urlProperties( &config, "URL properties" );
               HTMLAllowed = urlProperties.readEntry( "HTMLAllowed", m_bHTMLAllowed);
               serviceName = urlProperties.readEntry( "ViewMode", serviceName );
@@ -1634,7 +1634,7 @@ void KonqMainWindow::slotViewModeToggle( bool toggle )
       u.addPath(".directory");
       if ( u.isLocalFile() )
       {
-          KConfig config( u.path(), KConfig::OnlyLocal ); // if we have no write access, just drop it
+          KConfig config( u.path(), KConfig::SimpleConfig ); // if we have no write access, just drop it
           KConfigGroup urlProperties( &config, "URL properties" );
           urlProperties.writeEntry( "ViewMode", modeName );
           config.sync();
@@ -1660,7 +1660,7 @@ void KonqMainWindow::showHTML( KonqView * _view, bool b, bool _activateView )
       u.addPath(".directory");
       if ( u.isLocalFile() )
       {
-          KConfig config( u.path(), KConfig::OnlyLocal ); // No checks for access
+          KConfig config( u.path(), KConfig::SimpleConfig ); // No checks for access
           KConfigGroup urlProperties( &config, "URL properties" );
           urlProperties.writeEntry( "HTMLAllowed", b );
           config.sync();
@@ -2856,7 +2856,7 @@ void KonqMainWindow::slotRemoveLocalProperties()
       if ( f.open(QIODevice::ReadWrite) )
       {
           f.close();
-          KConfig config( u.path(), KConfig::OnlyLocal);
+          KConfig config( u.path(), KConfig::SimpleConfig);
           config.deleteGroup( "URL properties" ); // Bye bye
           config.sync();
           // TODO: Notify the view...

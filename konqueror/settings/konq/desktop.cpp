@@ -139,7 +139,7 @@ KDesktopConfig::KDesktopConfig(QWidget *parent, const QVariantList &)
   else
      groupname = "Desktops-screen-" + QByteArray::number ( kwin_screen_number );
 
-  if (config->groupIsImmutable(groupname))
+  if (config->isGroupImmutable(groupname))
   {
      name_group->setEnabled(false);
      number_group->setEnabled(false);
@@ -147,7 +147,7 @@ KDesktopConfig::KDesktopConfig(QWidget *parent, const QVariantList &)
   else
   {
      KConfigGroup cfgGroup(config.data(), groupname);
-     if (cfgGroup.entryIsImmutable("Number"))
+     if (cfgGroup.isEntryImmutable("Number"))
      {
         number_group->setEnabled(false);
      }
@@ -181,7 +181,7 @@ void KDesktopConfig::load()
   desktopConfig->setGroup("Mouse Buttons");
   _wheelOption->setChecked(desktopConfig->readEntry("WheelSwitchesWorkspace", false));
 
-  _wheelOptionImmutable = desktopConfig->entryIsImmutable("WheelSwitchesWorkspace");
+  _wheelOptionImmutable = desktopConfig->isEntryImmutable("WheelSwitchesWorkspace");
 
   if (_wheelOptionImmutable || n<2)
      _wheelOption->setEnabled(false);
