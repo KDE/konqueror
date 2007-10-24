@@ -141,11 +141,6 @@ NSPluginLoader::NSPluginLoader()
   _mapping.setAutoDelete( true );
   _filetype.setAutoDelete(true);
 
-  // trap dbus register events
-  QObject::connect(QDBusConnection::sessionBus().interface(),
-                   SIGNAL(serviceRegistered(const QString&)),
-                   this, SLOT(applicationRegistered(const QString&)));
-
   // load configuration
   KConfig _cfg( "kcmnspluginrc" );
   KConfigGroup cfg(&_cfg, "Misc");
@@ -270,7 +265,6 @@ bool NSPluginLoader::loadViewer()
 {
    kDebug() << "NSPluginLoader::loadViewer";
 
-   _running = false;
    _process = new K3Process;
 
    // get the dbus app id
@@ -356,16 +350,6 @@ void NSPluginLoader::unloadViewer()
 }
 
 
-void NSPluginLoader::applicationRegistered( const QString& appId )
-{
-   kDebug() << "D-Bus application " << appId << " just registered!";
-
-   if ( _dbusService == appId )
-   {
-      _running = true;
-      kDebug() << "plugin now running";
-   }
-}
 
 
 void NSPluginLoader::processTerminated(K3Process *proc)
@@ -399,6 +383,8 @@ NSPluginInstance *NSPluginLoader::newInstance(QWidget *parent, const QString& ur
          return 0;
       }
    }
+   
+   kDebug() << "-> appID" << appId << " dbus service:" << _dbusService;
 
    QStringList argn( _argn );
    QStringList argv( _argv );
@@ -435,7 +421,8 @@ NSPluginInstance *NSPluginLoader::newInstance(QWidget *parent, const QString& ur
       kDebug() << "Couldn't create plugin class";
       return 0;
    }
-   org::kde::nsplugins::Class* cls = new org::kde::nsplugins::Class( appId, cls_ref.path(), QDBusConnection::sessionBus() );
+   
+   org::kde::nsplugins::Class* cls = new org::kde::nsplugins::Class( _dbusService, cls_ref.path(), QDBusConnection::sessionBus() );
 
    // handle special plugin cases
    if ( mime=="application/x-shockwave-flash" )
