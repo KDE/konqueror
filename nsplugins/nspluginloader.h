@@ -97,7 +97,6 @@ protected:
   void unloadViewer();
 
 protected Q_SLOTS:
-  void applicationRegistered( const QString& appId );
   void processTerminated( K3Process *proc );
 
 private:
@@ -105,7 +104,6 @@ private:
   Q3Dict<QString> _mapping, _filetype;
 
   K3Process *_process;
-  bool _running;
   QString _dbusService;
   OrgKdeNspluginsViewerInterface *_viewer;
   bool _useArtsdsp;

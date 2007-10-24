@@ -86,7 +86,6 @@ extern "C"
 {
     KDE_EXPORT void kcminit_nsplugin()
     {
-        printf("Booohohoo!!!\n");
         KConfigGroup config(KSharedConfig::openConfig( "kcmnspluginrc", KConfig::NoGlobals ), "Misc");
         if( true ) // I don't think this needs to be configurable now
         {
