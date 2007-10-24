@@ -50,7 +50,6 @@ public:
    			            const QStringList &args = QStringList());
 
   static const KComponentData &componentData();
-  static KAboutData *aboutData();
 
 private:
 
