@@ -50,7 +50,6 @@ private:
   QString groupname;
 
   QCheckBox *cbNewWin;
-  QCheckBox *cbListProgress;
 
   QLabel *winPixmap;
 

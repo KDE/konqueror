@@ -63,16 +63,6 @@ KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
 
     miscLayout->addWidget(cbNewWin);
 
-    cbListProgress = new QCheckBox(i18n("&Show network operations in a single window"), this);
-    connect(cbListProgress, SIGNAL(clicked()), this, SLOT(changed()));
-
-    cbListProgress->setWhatsThis(i18n("Checking this option will group the"
-                                      " progress information for all network file transfers into a single window"
-                                      " with a list. When the option is not checked, all transfers appear in a"
-                                      " separate window."));
-
-    miscLayout->addWidget(cbListProgress);
-
     cbShowTips = new QCheckBox(i18n("Show file &tips"), this);
     connect(cbShowTips, SIGNAL(clicked()), this, SLOT(changed()));
 
@@ -197,11 +187,6 @@ void KBehaviourOptions::load()
 
 //    sbToolTip->setValue( g_pConfig->readEntry( "FileTipItems", 6 ) );
 
-    KSharedConfig::Ptr config = KSharedConfig::openConfig("uiserverrc");
-	KConfigGroup cg3(config, "UIServer");
-
-    cbListProgress->setChecked( cg3.readEntry( "ShowList", false) );
-
 	KConfigGroup cg4(g_pConfig, "Trash");
     cbMoveToTrash->setChecked( cg4.readEntry("ConfirmTrash", bool(DEFAULT_CONFIRMTRASH)) );
     cbDelete->setChecked( cg4.readEntry("ConfirmDelete", bool(DEFAULT_CONFIRMDELETE)) );
@@ -210,8 +195,6 @@ void KBehaviourOptions::load()
 void KBehaviourOptions::defaults()
 {
     cbNewWin->setChecked(false);
-
-    cbListProgress->setChecked( false );
 
     cbShowTips->setChecked( true );
     //sbToolTip->setEnabled( true );
@@ -247,18 +230,6 @@ void KBehaviourOptions::save()
     cg3.writeEntry( "ConfirmTrash", cbMoveToTrash->isChecked());
     cg3.writeEntry( "ConfirmDelete", cbDelete->isChecked());
     cg3.sync();
-
-    // UIServer setting
-    KSharedConfig::Ptr config = KSharedConfig::openConfig("uiserverrc");
-	KConfigGroup cg4(config, "UIServer");
-    cg4.writeEntry( "ShowList", cbListProgress->isChecked() );
-    cg4.sync();
-    // Tell the running server
-    if ( QDBusConnection::sessionBus().interface()->isServiceRegistered( "org.kde.kio_uiserver" ) )
-    {
-      QDBusInterface uiserver( "org.kde.kio_uiserver", "/UIServer", QString(), QDBusConnection::sessionBus() );
-      uiserver.call( "setListMode", cbListProgress->isChecked() );
-    }
 
     // Send signal to all konqueror instances
     QDBusMessage message =
