@@ -97,11 +97,11 @@ QString KonqAboutPageFactory::launch()
   KIconLoader *iconloader = KIconLoader::global();
   int iconSize = iconloader->currentSize(KIconLoader::Desktop);
   QString home_icon_path = iconloader->iconPath("go-home", KIconLoader::Desktop );
-  QString storage_icon_path = iconloader->iconPath("system", KIconLoader::Desktop );
+  QString storage_icon_path = iconloader->iconPath("computer", KIconLoader::Desktop );
   QString remote_icon_path = iconloader->iconPath("network-wired", KIconLoader::Desktop );
   QString wastebin_icon_path = iconloader->iconPath("user-trash-full", KIconLoader::Desktop );
-  QString applications_icon_path = iconloader->iconPath("kmenu", KIconLoader::Desktop );
-  QString settings_icon_path = iconloader->iconPath("kcontrol", KIconLoader::Desktop );
+  QString applications_icon_path = iconloader->iconPath("start-here", KIconLoader::Desktop );
+  QString settings_icon_path = iconloader->iconPath("preferences-system", KIconLoader::Desktop );
   QString home_folder = QDir::homePath();
   QString continue_icon_path = QApplication::isRightToLeft()?iconloader->iconPath("go-next-rtl", KIconLoader::Small ):iconloader->iconPath("go-next", KIconLoader::Small );
 
