@@ -406,9 +406,9 @@ KonqAboutPage::KonqAboutPage( //KonqMainWindow *
     //m_mainWindow = mainWindow;
     QTextCodec* codec = KGlobal::locale()->codecForEncoding();
     if (codec)
-	setCharset(codec->name(), true);
+      setEncoding(codec->name(), true);
     else
-	setCharset("iso-8859-1", true);
+      setEncoding("iso-8859-1", true);
     // about:blah isn't a kioslave -> disable View source
     QAction * act = actionCollection()->action("viewDocumentSource");
     if ( act )
