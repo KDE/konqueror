@@ -1,5 +1,6 @@
-set(kded_favicons_SRCS favicons.cpp favicons_adaptor.cpp)
+set(kded_favicons_SRCS favicons.cpp )
 
+qt4_add_dbus_adaptor(kded_favicons_SRCS org.kde.FavIcon.xml favicons.h FavIconsModule favicons_adaptor FavIconsAdaptor)
 
 kde4_add_plugin(kded_favicons ${kded_favicons_SRCS})
 

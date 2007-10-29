@@ -31,28 +31,19 @@
 #include <assert.h>
 
 // Qt
-#include <QtGui/QPainter>
-#include <QtGui/QToolButton>
-#include <QtGui/QTabBar>
-#include <QtGui/QMenu>
-#include <QtGui/QKeySequence>
-#include <QtGui/QProgressBar>
-#include <QtGui/QPixmap>
 #include <QtGui/QKeyEvent>
+#include <QtGui/QApplication>
 #include <QtCore/QEvent>
 #include <QtGui/QLabel>
 #include <QtGui/QBoxLayout>
 
 // KDE
-#include <konq_pixmapprovider.h>
 #include <kactioncollection.h>
-#include <kapplication.h>
 #include <kdebug.h>
 #include <kicon.h>
 #include <kiconloader.h>
 #include <klocale.h>
 #include <ksqueezedtextlabel.h>
-#include <kstandardshortcut.h>
 #include <konq_events.h>
 #include <kconfiggroup.h>
 

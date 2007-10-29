@@ -71,7 +71,7 @@ public Q_SLOTS: // dbus methods, called by the adaptor
      * @param url the URL which will be associated with the icon
      * @param iconURL the URL of the icon to be downloaded
      */
-    void setIconForURL(const KUrl &url, const KUrl &iconURL);
+    void setIconForUrl(const KUrl &url, const KUrl &iconURL);
     /**
      * Downloads the icon for a given host if it was not downloaded before
      * or the download was too long ago. If the download finishes

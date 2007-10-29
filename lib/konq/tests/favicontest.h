@@ -21,16 +21,25 @@
 #define FAVICONTEST_H
 
 #include <QObject>
+#include "favicon_interface.h"
+#include <QEventLoop>
 
 class FavIconTest : public QObject
 {
     Q_OBJECT
+public:
+    FavIconTest();
 
 private Q_SLOTS:
     void initTestCase();
     void testSetIconForURL();
     void testIconForURL();
     //void testDownloadHostIcon();
+
+private:
+    void waitForSignal();
+    org::kde::FavIcon m_favIconModule;
+    QEventLoop m_eventLoop;
 };
 
 

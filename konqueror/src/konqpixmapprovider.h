@@ -20,10 +20,9 @@
 #ifndef KONQ_PIXMAPPROVIDER_H
 #define KONQ_PIXMAPPROVIDER_H
 
+#include <kurl.h>
 #include <kpixmapprovider.h>
-#include "konq_faviconmgr.h"
-
-#include <libkonq_export.h>
+#include "favicon_interface.h"
 
 #include <QtCore/QMap>
 #include <QtGui/QPixmap>
@@ -31,8 +30,9 @@
 class KConfigGroup;
 class KConfig;
 
-class LIBKONQ_EXPORT KonqPixmapProvider : public KonqFavIconMgr, virtual public KPixmapProvider
+class KonqPixmapProvider : public org::kde::FavIcon, virtual public KPixmapProvider
 {
+    Q_OBJECT
 public:
     static KonqPixmapProvider * self();
 
@@ -64,16 +64,18 @@ public:
      */
     QString iconNameFor( const KUrl& url );
 
-protected:
+Q_SIGNALS:
+    void changed();
 
+private Q_SLOTS:
     /**
-     * Overridden from KonqFavIconMgr to update the cache
+     * Connected to the iconChanged signal emitted by the kded module
      */
-    virtual void notifyChange( bool isHost, QString hostOrURL, QString iconName );
-
-    QPixmap loadIcon( const QString& url, const QString& icon, int size );
+    void notifyChange( bool isHost, const QString& hostOrURL, const QString& iconName );
 
 private:
+    QPixmap loadIcon( const QString& url, const QString& icon, int size );
+
     KonqPixmapProvider();
     friend class KonqPixmapProviderSingleton;
 

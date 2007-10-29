@@ -34,7 +34,7 @@
 //#include <konq_dirpart.h>
 
 #include <konq_historymgr.h>
-#include <konq_pixmapprovider.h>
+#include <konqpixmapprovider.h>
 
 #include <assert.h>
 #include <kdebug.h>
@@ -600,7 +600,7 @@ void KonqView::slotCompleted( bool hasPending )
     {
       // Try to get /favicon.ico
       if ( supportsServiceType( "text/html" ) && url().protocol().startsWith( "http" ) )
-          KonqPixmapProvider::downloadHostIcon( url() );
+          KonqPixmapProvider::self()->downloadHostIcon( url().url() );
     }
   }
 }
@@ -654,7 +654,7 @@ void KonqView::setIconURL( const KUrl & iconURL )
 {
   if ( KonqSettings::enableFavicon() )
   {
-    KonqPixmapProvider::setIconForURL( KUrl( m_sLocationBarURL ), iconURL );
+    KonqPixmapProvider::self()->setIconForUrl( m_sLocationBarURL, iconURL.url() );
     m_bGotIconURL = true;
   }
 }

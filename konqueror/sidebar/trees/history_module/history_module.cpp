@@ -39,8 +39,6 @@
 #include <ktoggleaction.h>
 #include <kconfiggroup.h>
 
-#include <konq_faviconmgr.h>
-
 // Local
 #include "history_settings.h"
 

@@ -17,14 +17,13 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "konq_pixmapprovider.h"
+#include "konqpixmapprovider.h"
 
 #include <QBitmap>
 #include <QPainter>
 
 #include <kiconloader.h>
 #include <kmimetype.h>
-#include <kshell.h>
 #include <kprotocolinfo.h>
 
 #include <kconfiggroup.h>
@@ -43,8 +42,10 @@ KonqPixmapProvider * KonqPixmapProvider::self()
 
 KonqPixmapProvider::KonqPixmapProvider()
     : KPixmapProvider(),
-      KonqFavIconMgr( 0 )
+    org::kde::FavIcon("org.kde.kded", "/modules/favicons", QDBusConnection::sessionBus())
 {
+    QObject::connect(this, SIGNAL(iconChanged(bool,QString,QString)),
+                     this, SLOT(notifyChange(bool,QString,QString)) );
 }
 
 KonqPixmapProvider::~KonqPixmapProvider()
@@ -127,8 +128,8 @@ void KonqPixmapProvider::save( KConfigGroup& kc, const QString& key,
     kc.writePathEntry( key, list );
 }
 
-void KonqPixmapProvider::notifyChange( bool isHost, QString hostOrURL,
-    QString iconName )
+void KonqPixmapProvider::notifyChange( bool isHost, const QString& hostOrURL,
+    const QString& iconName )
 {
     for ( QMap<KUrl,QString>::iterator it = iconMap.begin();
           it != iconMap.end();
@@ -210,3 +211,5 @@ QPixmap KonqPixmapProvider::loadIcon( const QString& url, const QString& icon,
 
     return big;
 }
+
+#include "konqpixmapprovider.moc"
