@@ -36,7 +36,11 @@
 #include <assert.h>
 
 FavIconUpdater::FavIconUpdater(QObject *parent)
-    : KonqFavIconMgr(parent) {
+    : QObject(parent),
+      m_favIconModule("org.kde.kded", "/modules/favicons", QDBusConnection::sessionBus())
+{
+    QObject::connect(&m_favIconModule, SIGNAL(iconChanged(bool,QString,QString)),
+                     this, SLOT(notifyChange(bool,QString,QString)) );
     m_part = 0;
     m_webGrabber = 0;
     m_browserIface = 0;
@@ -49,7 +53,8 @@ void FavIconUpdater::slotCompleted() {
 }
 
 void FavIconUpdater::downloadIcon(const KBookmark &bk) {
-    QString favicon = KMimeType::favIconForUrl(bk.url().url());
+    const QString url = bk.url().url();
+    QString favicon = KMimeType::favIconForUrl(url);
     if (!favicon.isNull()) {
         // kDebug() << "downloadIcon() - favicon" << favicon;
         bk.internalElement().setAttribute("icon", favicon);
@@ -58,8 +63,8 @@ void FavIconUpdater::downloadIcon(const KBookmark &bk) {
         emit done(true);
 
     } else {
-        KonqFavIconMgr::downloadHostIcon(bk.url());
-        favicon = KMimeType::favIconForUrl(bk.url().url());
+        m_favIconModule.downloadHostIcon(url);
+        favicon = KMimeType::favIconForUrl(url);
         // kDebug() << "favicon == " << favicon;
         if (favicon.isNull()) {
             downloadIconActual(bk);
@@ -109,12 +114,12 @@ void FavIconUpdater::downloadIconActual(const KBookmark &bk) {
 
 // khtml callback
 void FavIconUpdater::setIconURL(const KUrl &iconURL) {
-    setIconForURL(m_bk.url(), iconURL);
+    m_favIconModule.setIconForUrl(m_bk.url().url(), iconURL.url());
 }
 
-void FavIconUpdater::notifyChange(bool isHost, 
-                                  QString hostOrURL, 
-                                  QString iconName) {
+void FavIconUpdater::notifyChange(bool isHost,
+                                  const QString& hostOrURL,
+                                  const QString& iconName) {
     // kDebug() << "FavIconUpdater::notifyChange()";
 
     Q_UNUSED(isHost);

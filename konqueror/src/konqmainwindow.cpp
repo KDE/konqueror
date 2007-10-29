@@ -42,7 +42,7 @@
 #include <config-konqueror.h>
 
 #include <konq_events.h>
-#include <konq_pixmapprovider.h>
+#include <konqpixmapprovider.h>
 #include <konq_operations.h>
 #include <kbookmarkmanager.h>
 #include <kinputdialog.h>

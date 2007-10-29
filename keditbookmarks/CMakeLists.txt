@@ -30,15 +30,11 @@ set(keditbookmarks_KDEINIT_SRCS
    bookmarklistview.cpp 
    treeitem.cpp )
 
-set(toplevel_adaptor ${CMAKE_CURRENT_SOURCE_DIR}/toplevel.h)
 set(toplevel_xml ${CMAKE_CURRENT_BINARY_DIR}/org.kde.keditbookmarks.xml)
-ADD_CUSTOM_COMMAND(OUTPUT ${toplevel_xml}
-       COMMAND ${QT_DBUSCPP2XML_EXECUTABLE} ${toplevel_adaptor} > ${toplevel_xml}
-       DEPENDS ${toplevel_adaptor})
-QT4_ADD_DBUS_INTERFACE( keditbookmarks_KDEINIT_SRCS ${toplevel_xml} toplevel_interface )
+qt4_generate_dbus_interface( ${CMAKE_CURRENT_SOURCE_DIR}/toplevel.h org.kde.keditbookmarks.xml )
 
-
-
+qt4_add_dbus_interface( keditbookmarks_KDEINIT_SRCS ${toplevel_xml} toplevel_interface )
+qt4_add_dbus_interface( keditbookmarks_KDEINIT_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../lib/konq/favicons/org.kde.FavIcon.xml favicon_interface)
 
 
 kde4_add_kcfg_files(keditbookmarks_KDEINIT_SRCS settings.kcfgc )

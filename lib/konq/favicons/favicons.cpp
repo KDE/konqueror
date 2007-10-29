@@ -34,6 +34,7 @@
 #include "favicons_adaptor.h"
 #include <ktemporaryfile.h>
 #include <kconfiggroup.h>
+#include <kdebug.h>
 
 #include "favicons.moc"
 
@@ -155,7 +156,7 @@ bool FavIconsModule::isIconOld(const QString &icon)
     return (time(0) - st.st_mtime) > 604800; // arbitrary value (one week)
 }
 
-void FavIconsModule::setIconForURL(const KUrl &url, const KUrl &iconURL)
+void FavIconsModule::setIconForUrl(const KUrl &url, const KUrl &iconURL)
 {
     const QString simplifiedURL = simplifyURL(url);
 

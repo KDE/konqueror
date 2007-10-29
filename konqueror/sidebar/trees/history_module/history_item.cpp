@@ -28,7 +28,6 @@
 // KDE
 #include <kbookmark.h>
 #include <kprotocolinfo.h>
-#include <konq_faviconmgr.h>
 #include <kiconloader.h>
 
 // Local

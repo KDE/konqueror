@@ -36,7 +36,7 @@
 #include <kiconloader.h>
 #include <kicontheme.h>
 #include <klineedit.h>
-#include <konq_pixmapprovider.h>
+#include <konqpixmapprovider.h>
 #include <kstandardshortcut.h>
 #include <konqmainwindow.h>
 #include <kstringhandler.h>

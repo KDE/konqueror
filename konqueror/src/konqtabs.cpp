@@ -42,7 +42,7 @@
 #include "konqframevisitor.h"
 
 #include <kacceleratormanager.h>
-#include <konq_pixmapprovider.h>
+#include <konqpixmapprovider.h>
 #include <kstandardshortcut.h>
 #include <QtGui/QTabBar>
 
@@ -348,11 +348,11 @@ void KonqFrameTabs::refreshSubPopupMenuTab()
         if ( frame && frame->activeChildView() )
         {
             QString title = frame->title().trimmed();
+            const QString url = frame->activeChildView()->url().url();
             if ( title.isEmpty() )
-                title = frame->activeChildView()->url().url();
+                title = url;
             title = KStringHandler::csqueeze( title, 50 );
-            m_pSubPopupMenuTab->insertItem( QIcon( KonqPixmapProvider::self()->pixmapFor( frame->activeChildView()->url().url() ) ), title, i );
-
+            m_pSubPopupMenuTab->insertItem( QIcon( KonqPixmapProvider::self()->pixmapFor( url ) ), title, i );
         }
         i++;
     }

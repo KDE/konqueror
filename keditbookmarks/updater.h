@@ -22,7 +22,7 @@
 #define __updater_h
 
 #include <kbookmark.h>
-#include <konq_faviconmgr.h>
+#include "favicon_interface.h"
 
 #include <kparts/part.h>
 #include <kparts/browserinterface.h>
@@ -45,7 +45,7 @@ private:
 
 class FavIconBrowserInterface;
 
-class FavIconUpdater : public KonqFavIconMgr 
+class FavIconUpdater : public QObject
 {
     Q_OBJECT
 
@@ -55,11 +55,10 @@ public:
     void downloadIcon(const KBookmark &bk);
     void downloadIconActual(const KBookmark &bk);
 
-    virtual void notifyChange(bool isHost, QString hostOrURL, 
-                              QString iconName);
-protected Q_SLOTS:
+private Q_SLOTS:
     void setIconURL(const KUrl &iconURL);
     void slotCompleted();
+    void notifyChange(bool isHost, const QString& hostOrURL, const QString& iconName);
 
 Q_SIGNALS:
     void done(bool succeeded);
@@ -69,6 +68,7 @@ private:
     FavIconBrowserInterface *m_browserIface;
     FavIconWebGrabber *m_webGrabber;
     KBookmark m_bk;
+    org::kde::FavIcon m_favIconModule;
 };
 
 class FavIconBrowserInterface : public KParts::BrowserInterface

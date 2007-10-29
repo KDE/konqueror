@@ -17,6 +17,8 @@
 */
 
 #include "web_module.h"
+#include "favicon_interface.h"
+
 #include <QtCore/QFileInfo>
 #include <QtGui/QSpinBox>
 #include <QtCore/QTimer>
@@ -26,7 +28,6 @@
 #include <kdialog.h>
 #include <kglobal.h>
 #include <klocale.h>
-#include <konq_pixmapprovider.h>
 #include <kparts/browserextension.h>
 #include <kstandarddirs.h>
 #include <khbox.h>
@@ -143,11 +144,12 @@ void KonqSideBarWebModule::formClicked(const KUrl& url, const KParts::OpenUrlArg
 }
 
 void KonqSideBarWebModule::loadFavicon() {
-	QString icon = KMimeType::favIconForUrl(_url);
-	if (icon.isEmpty()) {
-		KonqFavIconMgr::downloadHostIcon(_url);
-		icon = KMimeType::favIconForUrl(_url);
-	}
+    QString icon = KMimeType::favIconForUrl(_url);
+    if (icon.isEmpty()) {
+        org::kde::FavIcon favicon("org.kde.kded", "/modules/favicons", QDBusConnection::sessionBus());
+        favicon.downloadHostIcon(_url.url());
+        icon = KMimeType::favIconForUrl(_url);
+    }
 
 	if (!icon.isEmpty()) {
 		emit setIcon(icon);

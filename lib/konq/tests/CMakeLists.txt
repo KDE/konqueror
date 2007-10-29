@@ -20,7 +20,9 @@ target_link_libraries(konqundomanagertest konq ${QT_QTTEST_LIBRARY})
 
 ########### favicontest ###############
 
-kde4_add_unit_test(favicontest favicontest.cpp)
+set(favicontest_SRCS favicontest.cpp)
+qt4_add_dbus_interface(favicontest_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../favicons/org.kde.FavIcon.xml favicon_interface)
+kde4_add_unit_test(favicontest ${favicontest_SRCS})
 
 target_link_libraries(favicontest konq ${QT_QTTEST_LIBRARY})
 

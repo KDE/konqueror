@@ -19,9 +19,8 @@ set(konq_LIB_SRCS
    konq_undo.cc
    konq_historymgr.cc       # used by sidebar/trees/history_module and konqueror
    konq_historyentry.cpp
-   konq_pixmapprovider.cc   # TODO who else than konqueror uses this? -> move to konq?
-   konq_faviconmgr.cc       # used by konq_pixmapprovider [and web module but the call could be replaced with 2-liner]
-   konq_filetip.cc
+   konq_filetip.cc          # unused right now, but should be used by dolphin_part in the future.
+                            # Also useful to keep separate? (e.g. in kde3  kerry used it too)
    konqmimedata.cpp
 )
 

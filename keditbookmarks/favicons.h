@@ -22,14 +22,13 @@
 #define __favicons_h
 
 #include <kbookmark.h>
-#include <konq_faviconmgr.h>
 
 #include "bookmarkiterator.h"
 
 class FavIconsItrHolder : public BookmarkIteratorHolder {
 public:
-   static FavIconsItrHolder* self() { 
-      if (!s_self) { s_self = new FavIconsItrHolder(); }; return s_self; 
+   static FavIconsItrHolder* self() {
+      if (!s_self) { s_self = new FavIconsItrHolder(); }; return s_self;
    }
    void addAffectedBookmark( const QString & address );
 protected:

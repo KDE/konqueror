@@ -26,7 +26,7 @@
 #include <ktoolbar.h>
 #include <kdebug.h>
 
-#include <konq_pixmapprovider.h>
+#include <konqpixmapprovider.h>
 #include <kicon.h>
 #include <kiconloader.h>
 #include <kmenu.h>
