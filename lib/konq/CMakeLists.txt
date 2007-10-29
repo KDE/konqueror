@@ -55,8 +55,6 @@ install( FILES
  konq_undo.h
  konq_historymgr.h
  konq_historyentry.h
- konq_pixmapprovider.h
- konq_faviconmgr.h
  konq_filetip.h
  konqmimedata.h
 DESTINATION ${INCLUDE_INSTALL_DIR}
