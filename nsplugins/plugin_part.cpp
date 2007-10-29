@@ -175,7 +175,7 @@ PluginPart::PluginPart(QWidget *parentWidget, QObject *parent, const QStringList
     // Only create this if we have no parent since the parent part is
     // responsible for "Save As" then
     if (!parent || !parent->inherits("Part")) {
-        QAction *action = actionCollection()->addAction("saveDocument");
+        KAction *action = actionCollection()->addAction("saveDocument");
         action->setText(i18n("&Save As..."));
         connect(action, SIGNAL(triggered(bool) ), SLOT(saveAs()));
         action->setShortcut(Qt::CTRL+Qt::Key_S);
