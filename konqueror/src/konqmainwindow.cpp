@@ -3693,7 +3693,7 @@ void KonqMainWindow::initActions()
   QObject::connect( m_pMenuNew->menu(), SIGNAL(aboutToShow()),
                     this, SLOT(slotFileNewAboutToShow()) );
 
-  QAction *action = actionCollection()->addAction( "editMimeType" );
+  KAction *action = actionCollection()->addAction( "editMimeType" );
   action->setText( i18n( "&Edit File Type..." ) );
   action = actionCollection()->addAction( "properties" );
   action->setText( i18n( "Properties" ) );
@@ -4042,7 +4042,7 @@ void KonqMainWindow::initActions()
   m_combo->setWhatsThis( i18n( "Location Bar<br /><br />"
 				  "Enter a web address or search term." ) );
 
-  QAction *clearLocation = actionCollection()->addAction("clear_location");
+  KAction *clearLocation = actionCollection()->addAction("clear_location");
   clearLocation->setIcon( KIcon(QApplication::isRightToLeft() ? "edit-clear-locationbar-rtl" : "edit-clear-locationbar") );
   clearLocation->setText( i18n( "Clear Location Bar" ) );
   clearLocation->setShortcut(Qt::CTRL+Qt::Key_L);
