@@ -1,7 +1,6 @@
-
-
 add_subdirectory( pics )
 add_subdirectory( favicons )
+add_subdirectory( Templates )
 add_subdirectory( tests )
 
 # For crc32 in konq_historymgr.cc
