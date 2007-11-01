@@ -1,6 +1,14 @@
 <ui version="4.0" >
  <class>KProxyDialogUI</class>
  <widget class="QWidget" name="KProxyDialogUI" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>408</width>
+    <height>473</height>
+   </rect>
+  </property>
   <property name="whatsThis" >
    <string>&lt;qt>
 Setup proxy configuration.
@@ -11,6 +19,18 @@ If you are uncertain whether or not you need to use a proxy server to connect to
 &lt;/qt></string>
   </property>
   <layout class="QVBoxLayout" >
+   <property name="leftMargin" >
+    <number>0</number>
+   </property>
+   <property name="topMargin" >
+    <number>0</number>
+   </property>
+   <property name="rightMargin" >
+    <number>0</number>
+   </property>
+   <property name="bottomMargin" >
+    <number>0</number>
+   </property>
    <item>
     <widget class="Q3ButtonGroup" name="gbConfigure" >
      <property name="orientation" >
@@ -418,6 +438,7 @@ Although a persistent proxy connection is faster, note that it only works correc
    <class>KUrlRequester</class>
    <extends>QFrame</extends>
    <header>kurlrequester.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <includes>
