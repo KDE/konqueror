@@ -2,6 +2,14 @@
  <author>Frans Englich &lt;frans.englich@telia.com></author>
  <class>MainWidget</class>
  <widget class="QWidget" name="MainWidget" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>379</width>
+    <height>354</height>
+   </rect>
+  </property>
   <property name="windowTitle" >
    <string>KCMUserAccount</string>
   </property>
@@ -106,7 +114,11 @@
        </widget>
       </item>
       <item row="0" column="1" >
-       <widget class="QLineEdit" name="leRealname" />
+       <widget class="KLineEdit" name="leRealname" >
+        <property name="showClearButton" stdset="0" >
+         <bool>true</bool>
+        </property>
+       </widget>
       </item>
       <item row="1" column="0" >
        <widget class="QLabel" name="lblOrganisation" >
@@ -122,7 +134,11 @@
        </widget>
       </item>
       <item row="1" column="1" >
-       <widget class="QLineEdit" name="leOrganization" />
+       <widget class="KLineEdit" name="leOrganization" >
+        <property name="showClearButton" stdset="0" >
+         <bool>true</bool>
+        </property>
+       </widget>
       </item>
       <item row="2" column="0" >
        <widget class="QLabel" name="lblEmail" >
@@ -138,7 +154,11 @@
        </widget>
       </item>
       <item row="2" column="1" >
-       <widget class="QLineEdit" name="leEmail" />
+       <widget class="KLineEdit" name="leEmail" >
+        <property name="showClearButton" stdset="0" >
+         <bool>true</bool>
+        </property>
+       </widget>
       </item>
       <item row="3" column="0" >
        <widget class="QLabel" name="textLabel3" >
@@ -154,7 +174,11 @@
        </widget>
       </item>
       <item row="3" column="1" >
-       <widget class="QLineEdit" name="leSMTP" />
+       <widget class="KLineEdit" name="leSMTP" >
+        <property name="showClearButton" stdset="0" >
+         <bool>true</bool>
+        </property>
+       </widget>
       </item>
       <item row="4" column="0" >
        <widget class="QLabel" name="lblUIDTell" >
@@ -228,6 +252,11 @@
  <layoutfunction spacing="KDialog::spacingHint" margin="KDialog::marginHint" />
  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
  <customwidgets>
+  <customwidget>
+   <class>KLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>klineedit.h</header>
+  </customwidget>
   <customwidget>
    <class>KPushButton</class>
    <extends>QPushButton</extends>
