@@ -83,6 +83,7 @@ DesktopPathConfig::DesktopPathConfig(QWidget *parent, const QVariantList &)
   int row = 0;
   QGridLayout *lay = new QGridLayout(this );
   lay->setSpacing( KDialog::spacingHint() );
+  lay->setMargin(0);
 
   lay->setRowStretch(RO_LASTROW,10); // last line grows
 
