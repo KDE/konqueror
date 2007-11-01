@@ -67,7 +67,7 @@ SMBRoOptions::SMBRoOptions(QWidget *parent, const QVariantList &, const KCompone
    layout->addWidget(m_workgroupLe,3,1);
 
    m_showHiddenShares=new QCheckBox(i18n("Show hidden shares"),this);
-   layout->addWidget(m_showHiddenShares,4,0, 1, 2 );*/
+   layout->addWidget(m_showHiddenShares,4,0, 1, 2 );
 
    m_encodingList = new KComboBox( false, this );
    QStringList _strList = KGlobal::charsets()->availableEncodingNames();
@@ -77,6 +77,7 @@ SMBRoOptions::SMBRoOptions(QWidget *parent, const QVariantList &, const KCompone
    label->setBuddy( m_encodingList );
    layout->addWidget( label, 3, 0 );
    layout->addWidget( m_encodingList, 3, 1 );
+   */
 
    layout->addWidget(new QWidget(this),4,0);
 
@@ -84,7 +85,7 @@ SMBRoOptions::SMBRoOptions(QWidget *parent, const QVariantList &, const KCompone
    connect(m_userLe, SIGNAL(textChanged(const QString&)), this, SLOT(changed()));
    connect(m_passwordLe, SIGNAL(textChanged(const QString&)), this, SLOT(changed()));
 //   connect(m_workgroupLe, SIGNAL(textChanged(const QString&)), this, SLOT(changed()));
-   connect( m_encodingList, SIGNAL( activated( const QString & ) ), this , SLOT( changed() ) );
+//   connect( m_encodingList, SIGNAL( activated( const QString & ) ), this , SLOT( changed() ) );
 
    layout->setRowStretch(4, 1);
 
@@ -106,9 +107,9 @@ void SMBRoOptions::load()
 //   m_workgroupLe->setText(group.readEntry("Workgroup"));
 //   m_showHiddenShares->setChecked(group.readEntry("ShowHiddenShares", QVariant(false)).toBool());
 
-   QStringList _strList = KGlobal::charsets()->availableEncodingNames();
-   QString m_encoding = QTextCodec::codecForLocale()->name();
-   m_encodingList->setCurrentIndex( _strList.indexOf( group.readEntry( "Encoding", m_encoding.toLower() ) ) );
+   //QStringList _strList = KGlobal::charsets()->availableEncodingNames();
+   //QString m_encoding = QTextCodec::codecForLocale()->name();
+   //m_encodingList->setCurrentIndex( _strList.indexOf( group.readEntry( "Encoding", m_encoding.toLower() ) ) );
 
    // unscramble
    QString scrambled = group.readEntry( "Password" );
@@ -137,7 +138,7 @@ void SMBRoOptions::save()
    group.writeEntry( "User", m_userLe->text());
 //   group.writeEntry( "Workgroup", m_workgroupLe->text());
 //   group.writeEntry( "ShowHiddenShares", m_showHiddenShares->isChecked());
-   group.writeEntry( "Encoding", m_encodingList->currentText() );
+//   group.writeEntry( "Encoding", m_encodingList->currentText() );
 
    //taken from Nicola Brodu's smb ioslave
    //it's not really secure, but at

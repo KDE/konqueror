@@ -50,7 +50,7 @@ class SMBRoOptions : public KCModule
       QLineEdit *m_passwordLe;
 //      QLineEdit *m_workgroupLe; //currently unused, Alex
 //      QCheckBox *m_showHiddenShares; //currently unused, Alex
-      KComboBox *m_encodingList;
+//      KComboBox *m_encodingList; //currently unused
 };
 
 #endif
