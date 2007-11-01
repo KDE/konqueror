@@ -13,6 +13,15 @@
    <string>SOCKS</string>
   </property>
   <layout class="QVBoxLayout" >
+   <property name="leftMargin" >
+    <number>0</number>
+   </property>
+   <property name="topMargin" >
+    <number>0</number>
+   </property>
+   <property name="rightMargin" >
+    <number>0</number>
+   </property>
    <item>
     <widget class="QCheckBox" name="_c_enableSocks" >
      <property name="whatsThis" >
@@ -67,15 +76,22 @@
       </item>
       <item row="2" column="0" colspan="3" >
        <layout class="QHBoxLayout" >
-        <property name="margin" >
+        <property name="leftMargin" >
+         <number>0</number>
+        </property>
+        <property name="topMargin" >
+         <number>0</number>
+        </property>
+        <property name="rightMargin" >
+         <number>0</number>
+        </property>
+        <property name="bottomMargin" >
          <number>0</number>
         </property>
         <item>
          <widget class="QLabel" name="_c_customLabel" >
           <property name="sizePolicy" >
-           <sizepolicy>
-            <hsizetype>4</hsizetype>
-            <vsizetype>1</vsizetype>
+           <sizepolicy vsizetype="Minimum" hsizetype="Maximum" >
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -128,9 +144,7 @@
       <bool>false</bool>
      </property>
      <property name="sizePolicy" >
-      <sizepolicy>
-       <hsizetype>1</hsizetype>
-       <vsizetype>1</vsizetype>
+      <sizepolicy vsizetype="Minimum" hsizetype="Minimum" >
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -145,9 +159,7 @@
       <item>
        <widget class="Q3ListView" name="_c_libs" >
         <property name="sizePolicy" >
-         <sizepolicy>
-          <hsizetype>7</hsizetype>
-          <vsizetype>7</vsizetype>
+         <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
@@ -276,6 +288,7 @@
    <class>KUrlRequester</class>
    <extends>QFrame</extends>
    <header>kurlrequester.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <includes>

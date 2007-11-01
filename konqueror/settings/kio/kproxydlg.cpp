@@ -49,6 +49,7 @@ KProxyOptions::KProxyOptions(QWidget *parent, const QVariantList &)
     : KCModule(KioConfigFactory::componentData(), parent)
 {
   QVBoxLayout *layout = new QVBoxLayout(this);
+  layout->setMargin(0);
   
   mTab = new QTabWidget(this);
   layout->addWidget(mTab);
