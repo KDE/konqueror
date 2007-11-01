@@ -61,6 +61,9 @@ KCMUserAccount::KCMUserAccount( QWidget *parent, const QVariantList &)
 	: KCModule( Factory::componentData(), parent)
 {
 	QVBoxLayout *topLayout = new QVBoxLayout(this);
+        topLayout->setSpacing(KDialog::spacingHint());
+        topLayout->setMargin(0);
+
 	_mw = new MainWidget(this);
 	topLayout->addWidget( _mw );
 
