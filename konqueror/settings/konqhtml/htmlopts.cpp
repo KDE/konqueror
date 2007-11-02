@@ -17,7 +17,6 @@
 #include <QtDBus/QDBusConnection>
 
 // KDE
-#include <konq_defaults.h> // include default values directly from konqueror
 #include <kglobalsettings.h> // get default for DEFAULT_CHANGECURSOR
 #include <klocale.h>
 #include <kdialog.h>
@@ -240,7 +239,7 @@ void KMiscHTMLOptions::load()
     bool bBackRightClick = READ_BOOL( "BackRightClick", false );
     SET_GROUP( "HTML Settings" );
     bool changeCursor = READ_BOOL("ChangeCursor", KDE_DEFAULT_CHANGECURSOR);
-    bool underlineLinks = READ_BOOL("UnderlineLinks", DEFAULT_UNDERLINELINKS);
+    bool underlineLinks = READ_BOOL("UnderlineLinks", true /*was DEFAULT_UNDERLINELINKS, but comes from khtml in fact */ );
     bool hoverLinks = READ_BOOL("HoverLinks", true);
     bool bAutoLoadImages = READ_BOOL( "AutoLoadImages", true );
     bool bUnfinishedImageFrame = READ_BOOL( "UnfinishedImageFrame", true );

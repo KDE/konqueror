@@ -4,7 +4,6 @@
 set(kcm_konq_PART_SRCS
    behaviour.cpp
    globalpaths.cpp
-   fontopts.cpp
    previews.cpp
    browser.cpp
    konqkcmfactory.cpp
