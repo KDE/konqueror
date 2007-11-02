@@ -92,7 +92,7 @@ Q_SIGNALS:
 
 private:
   void refreshSubPopupMenuTab();
-  void hideTabBar();
+    void updateTabBarVisibility();
     void initPopupMenu();
    /**
     * Returns the index position of the tab where the frame @p frame is, assuming that

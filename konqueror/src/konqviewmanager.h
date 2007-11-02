@@ -154,6 +154,9 @@ public:
 
     KonqFrameTabs *tabContainer();
 
+    // Apply configuration that applies to us, like alwaysTabbedMode.
+    void applyConfiguration();
+
   /**
    * Brings the tab specified by @p view to the front of the stack
    *
