@@ -101,13 +101,6 @@ KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
 
     miscLayout->addLayout(previewLayout);
 
-    cbRenameDirectlyIcon = new QCheckBox(i18n("Rename icons in&line"), this);
-    cbRenameDirectlyIcon->setWhatsThis( i18n("Checking this option will allow files to be "
-                                             "renamed by clicking directly on the icon name. "));
-    connect(cbRenameDirectlyIcon, SIGNAL(clicked()), this, SLOT(changed()));
-
-    miscLayout->addWidget(cbRenameDirectlyIcon);
-
     miscHLayout->addLayout(miscLayout);
     miscHLayout->addWidget(winPixmap);
 
@@ -176,8 +169,6 @@ void KBehaviourOptions::load()
     bool showPreviewsIntips = cg.readEntry( "ShowPreviewsInFileTips", true);
     cbShowPreviewsInTips->setChecked( showPreviewsIntips );
 
-    cbRenameDirectlyIcon->setChecked( cg.readEntry("RenameIconDirectly", bool(DEFAULT_RENAMEICONDIRECTLY )) );
-
     KSharedConfig::Ptr globalconfig = KSharedConfig::openConfig("kdeglobals", KConfig::NoGlobals);
 	KConfigGroup cg2(globalconfig, "KDE");
     cbShowDeleteCommand->setChecked( cg2.readEntry("ShowDeleteCommand", false) );
@@ -203,8 +194,6 @@ void KBehaviourOptions::defaults()
     cbShowPreviewsInTips->setChecked( true );
     cbShowPreviewsInTips->setEnabled( true );
 
-    cbRenameDirectlyIcon->setChecked( DEFAULT_RENAMEICONDIRECTLY );
-
     cbMoveToTrash->setChecked( DEFAULT_CONFIRMTRASH );
     cbDelete->setChecked( DEFAULT_CONFIRMDELETE );
     cbShowDeleteCommand->setChecked( false );
@@ -218,8 +207,6 @@ void KBehaviourOptions::save()
     cg.writeEntry( "ShowFileTips", cbShowTips->isChecked() );
     cg.writeEntry( "ShowPreviewsInFileTips", cbShowPreviewsInTips->isChecked() );
 //    g_pConfig->writeEntry( "FileTipsItems", sbToolTip->value() );
-
-    cg.writeEntry( "RenameIconDirectly", cbRenameDirectlyIcon->isChecked());
 
     KSharedConfig::Ptr globalconfig = KSharedConfig::openConfig("kdeglobals", KConfig::NoGlobals);
 	KConfigGroup cg2(globalconfig, "KDE");

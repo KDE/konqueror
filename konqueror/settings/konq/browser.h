@@ -41,7 +41,6 @@ public:
 
 private:
    
-  KCModule *appearance;
   KCModule *behavior;
   KCModule *previews;
   QTabWidget *m_tab;

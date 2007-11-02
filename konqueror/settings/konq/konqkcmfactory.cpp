@@ -21,7 +21,6 @@
 #include "behaviour.h"
 #include "browser.h"
 #include "desktop.h"
-#include "fontopts.h"
 #include "globalpaths.h"
 #include "previews.h"
 
@@ -33,8 +32,8 @@ K_PLUGIN_FACTORY_DEFINITION(KonqKcmFactory,
         registerPlugin<KBrowserOptions>("browser");
         //registerPlugin<DesktopBehaviorModule>("dbehavior");
         //registerPlugin<KDesktopConfig>("ddesktop");
-        registerPlugin<KonqFontOptions>("appearance");
-        registerPlugin<KonqFontOptionsDesktop>("dappearance");
+        //registerPlugin<KonqFontOptions>("appearance");
+        //registerPlugin<KonqFontOptionsDesktop>("dappearance");
         registerPlugin<DesktopPathConfig>("dpath");
         registerPlugin<KPreviewOptions>("previews");
         )

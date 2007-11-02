@@ -33,9 +33,10 @@
 
 // Local
 #include "behaviour.h"
-#include "fontopts.h"
 #include "previews.h"
 #include "konqkcmfactory.h"
+
+/// ### Why is this called browser? It contains filemanagement options
 
 KBrowserOptions::KBrowserOptions(QWidget *parent, const QVariantList &)
     : KCModule( KonqKcmFactory::componentData(), parent )
@@ -47,8 +48,7 @@ KBrowserOptions::KBrowserOptions(QWidget *parent, const QVariantList &)
   QTabWidget *tab = new QTabWidget(this);
   layout->addWidget(tab);
 
-  appearance = new KonqFontOptions(tab);
-  appearance->layout()->setMargin( KDialog::marginHint() );
+  // appearance = ...
 
   behavior = new KBehaviourOptions(tab);
   behavior->layout()->setMargin( KDialog::marginHint() );
@@ -57,11 +57,11 @@ KBrowserOptions::KBrowserOptions(QWidget *parent, const QVariantList &)
   previews->layout()->setMargin( KDialog::marginHint() );
 
 
-  tab->addTab(appearance, i18n("&Appearance"));
+  //tab->addTab(appearance, i18n("&Appearance"));
   tab->addTab(behavior, i18n("&Behavior"));
   tab->addTab(previews, i18n("&Previews && Meta-Data"));
 
-  connect(appearance, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)));
+  //connect(appearance, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)));
   connect(behavior, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)));
   connect(previews, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)));
 
@@ -72,21 +72,21 @@ KBrowserOptions::KBrowserOptions(QWidget *parent, const QVariantList &)
 
 void KBrowserOptions::load()
 {
-  appearance->load();
+  //appearance->load();
   behavior->load();
   previews->load();
 }
 
 void KBrowserOptions::defaults()
 {
-  appearance->defaults();
+  //appearance->defaults();
   behavior->defaults();
   previews->defaults();
 }
 
 void KBrowserOptions::save()
 {
-  appearance->save();
+  //appearance->save();
   behavior->save();
   previews->save();
 }
@@ -94,9 +94,8 @@ void KBrowserOptions::save()
 QString KBrowserOptions::quickHelp() const
 {
   QWidget *w = m_tab->currentWidget();
-  if (w->inherits("KCModule"))
-  {
-     KCModule *m = static_cast<KCModule *>(w);
+  KCModule *m = qobject_cast<KCModule *>(w);
+  if (m) {
      return m->quickHelp();
   }
   return QString();

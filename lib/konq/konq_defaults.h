@@ -18,32 +18,12 @@
    Boston, MA 02110-1301, USA.
 */
 
-// Default values for konqueror/kdesktop settings
-// This file is used by konqueror kdesktop, and kcmkonq,
+// Default values for libkonq settings
+// This file is used by konqueror, libkonq, and kcmkonq,
 // to share the same defaults
 
 #ifndef KONQ_DEFAULTS_H
 #define KONQ_DEFAULTS_H
-
-// appearance tab
-#define DEFAULT_UNDERLINELINKS true
-#define DEFAULT_WORDWRAPTEXT true // kfm-like, sorry Reggie :-)
-#define DEFAULT_TEXTHEIGHT 2
-#define DEFAULT_TEXTWIDTH 0       // 0 = automatic (font depending)
-#define DEFAULT_TEXTWIDTH_MULTICOLUMN 600  // maxwidth, as the iconview has dynamic column width
-#define DEFAULT_FILESIZEINBYTES false
-
-#define DEFAULT_RENAMEICONDIRECTLY false
-
-// transparency of blended mimetype icons in textpreview
-#define DEFAULT_TEXTPREVIEW_ICONTRANSPARENCY 70
-
-// show hidden files on desktop default
-#define DEFAULT_SHOW_HIDDEN_ROOT_ICONS false
-#define DEFAULT_VERT_ALIGN true
-
-// Default terminal for "Open Terminal" in konqueror
-#define DEFAULT_TERMINAL "konsole"
 
 // Confirmations for deletions
 #define DEFAULT_CONFIRMTRASH true
