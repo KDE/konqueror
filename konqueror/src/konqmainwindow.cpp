@@ -5014,6 +5014,7 @@ void KonqMainWindow::reparseConfiguration()
   kDebug(1202) << "KonqMainWindow::reparseConfiguration() !";
 
   KonqSettings::self()->readConfig();
+  m_pViewManager->applyConfiguration();
 
   m_bSaveViewPropertiesLocally = KonqSettings::saveViewPropertiesLocally();
   m_bHTMLAllowed = KonqSettings::htmlAllowed();

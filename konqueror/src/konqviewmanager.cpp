@@ -1481,10 +1481,15 @@ KonqFrameTabs * KonqViewManager::tabContainer()
         m_tabContainer = new KonqFrameTabs( m_pMainWindow /*as widget*/, m_pMainWindow /*as container*/, this );
 
         connect( m_tabContainer, SIGNAL(ctrlTabPressed()), m_pMainWindow, SLOT(slotCtrlTabPressed()) );
-        m_tabContainer->setAlwaysTabbedMode( KonqSettings::alwaysTabbedMode() );
+        applyConfiguration();
         m_pMainWindow->insertChildFrame( m_tabContainer );
     }
     return m_tabContainer;
+}
+
+void KonqViewManager::applyConfiguration()
+{
+    tabContainer()->setAlwaysTabbedMode( KonqSettings::alwaysTabbedMode() );
 }
 
 #include "konqviewmanager.moc"

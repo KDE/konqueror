@@ -251,8 +251,7 @@ void KonqFrameTabs::insertChildFrame( KonqFrameBase* frame, int index )
       activeChildView->setTabIcon( activeChildView->url() );
     }
 
-    setTabBarHidden(count() <= 1);
-
+    updateTabBarVisibility();
     setUpdatesEnabled(true);
 }
 
@@ -265,7 +264,7 @@ void KonqFrameTabs::childFrameRemoved( KonqFrameBase * frame )
     if (m_rightWidget)
       m_rightWidget->setEnabled( m_childFrameList.count()>1 );
     if (count() == 1)
-      hideTabBar();
+      updateTabBarVisibility();
   }
   else
     kWarning(1202) << "KonqFrameTabs " << this << ": childFrameRemoved(0L) !" ;
@@ -454,24 +453,22 @@ void KonqFrameTabs::slotInitiateDrag( QWidget *w )
   }
 }
 
-void KonqFrameTabs::hideTabBar()
+void KonqFrameTabs::updateTabBarVisibility()
 {
-  if ( !m_alwaysTabBar ) {
-    setTabBarHidden(true);
-  }
+    if ( m_alwaysTabBar ) {
+        setTabBarHidden(false);
+    } else {
+        setTabBarHidden(count() <= 1);
+    }
 }
 
 void KonqFrameTabs::setAlwaysTabbedMode( bool enable )
 {
-  bool update = ( enable != m_alwaysTabBar );
-
-  m_alwaysTabBar = enable;
-  if ( update ) {
-    if ( m_alwaysTabBar )
-      setTabBarHidden(false);
-    else
-      hideTabBar();
-  }
+    const bool update = ( enable != m_alwaysTabBar );
+    m_alwaysTabBar = enable;
+    if ( update ) {
+        updateTabBarVisibility();
+    }
 }
 
 void KonqFrameTabs::initPopupMenu()
