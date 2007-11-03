@@ -90,6 +90,7 @@ class KonqComboLineEdit : public KLineEdit
 {
 public:
     KonqComboLineEdit( QWidget *parent=0 );
+    void mouseDoubleClickEvent( QMouseEvent *e );
     void setCompletedItems( const QStringList& items );
 };
 
@@ -800,6 +801,15 @@ KonqComboLineEdit::KonqComboLineEdit( QWidget *parent )
                   :KLineEdit( parent )
 {
     setClearButtonShown( true );
+}
+
+void KonqComboLineEdit::mouseDoubleClickEvent( QMouseEvent *e )
+{
+    if ( e->button() == Qt::LeftButton ) {
+	selectAll();
+	return;
+    }
+    KLineEdit::mouseDoubleClickEvent( e );
 }
 
 void KonqComboLineEdit::setCompletedItems( const QStringList& items )
