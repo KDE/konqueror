@@ -7,6 +7,7 @@ set(kcm_konq_PART_SRCS
    previews.cpp
    browser.cpp
    konqkcmfactory.cpp
+   desktop.cpp
    #desktopbehavior_impl.cpp
    kcustommenueditor.cpp)
 
@@ -40,6 +41,7 @@ install( FILES
    fileappearance.desktop
    filepreviews.desktop
    filebrowser.desktop 
+   desktop.desktop
    DESTINATION  ${SERVICES_INSTALL_DIR} )
 install( FILES overlapping.png onlyone.png  DESTINATION  ${DATA_INSTALL_DIR}/kcontrol/pics )
 

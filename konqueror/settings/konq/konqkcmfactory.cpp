@@ -31,7 +31,7 @@ K_PLUGIN_FACTORY_DEFINITION(KonqKcmFactory,
         registerPlugin<KBehaviourOptions>("behavior");
         registerPlugin<KBrowserOptions>("browser");
         //registerPlugin<DesktopBehaviorModule>("dbehavior");
-        //registerPlugin<KDesktopConfig>("ddesktop");
+        registerPlugin<KDesktopConfig>("ddesktop");
         //registerPlugin<KonqFontOptions>("appearance");
         //registerPlugin<KonqFontOptionsDesktop>("dappearance");
         registerPlugin<DesktopPathConfig>("dpath");
