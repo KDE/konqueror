@@ -27,6 +27,8 @@ class KLineEdit;
 class KIntNumInput;
 class QStringList;
 
+#ifdef Q_WS_X11
+
 // if you change this, update also the number of keyboard shortcuts in kwin/kwinbindings.cpp
 static const int maxDesktops = 20;
 
@@ -54,4 +56,5 @@ class KDesktopConfig : public KCModule
 #endif
 };
 
+#endif // Q_WS_X11
 #endif
