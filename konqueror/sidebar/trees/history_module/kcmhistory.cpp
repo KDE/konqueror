@@ -250,7 +250,7 @@ void HistorySidebarConfig::slotGetFontOlder()
 void HistorySidebarConfig::slotClearHistory()
 {
     KGuiItem guiitem = KStandardGuiItem::clear();
-    guiitem.setIcon( KIcon("history-clear"));
+    guiitem.setIcon( KIcon("edit-clear-history"));
     if ( KMessageBox::warningContinueCancel( this,
 				     i18n("Do you really want to clear "
 					  "the entire history?"),

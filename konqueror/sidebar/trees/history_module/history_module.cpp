@@ -92,7 +92,7 @@ KonqSidebarHistoryModule::KonqSidebarHistoryModule( KonqSidebarTree * parentTree
     action->setText( i18n("&Remove Entry") );
     connect(action, SIGNAL(triggered(bool)), SLOT( slotRemoveEntry() ));
     action = m_collection->addAction("clear");
-    action->setIcon( KIcon("history-clear") );
+    action->setIcon( KIcon("edit-clear-history") );
     action->setText( i18n("C&lear History") );
     connect(action, SIGNAL(triggered(bool)), SLOT( slotClearHistory() ));
     action = m_collection->addAction("preferences");
@@ -364,7 +364,7 @@ KonqSidebarHistoryGroupItem * KonqSidebarHistoryModule::getGroupItem( const KUrl
 void KonqSidebarHistoryModule::slotClearHistory()
 {
     KGuiItem guiitem = KStandardGuiItem::clear();
-    guiitem.setIcon( KIcon("history-clear"));
+    guiitem.setIcon( KIcon("edit-clear-history"));
 
     if ( KMessageBox::warningContinueCancel( tree(),
 				     i18n("Do you really want to clear "
