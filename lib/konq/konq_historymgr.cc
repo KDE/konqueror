@@ -165,7 +165,7 @@ bool KonqHistoryManager::loadHistory()
         while ( !stream->atEnd() ) {
 	    KonqHistoryEntry entry;
             *stream >> entry;
-	    // kDebug(1203) << "## loaded entry: " << entry->url << ",  Title: " << entry->title;
+	    // kDebug(1203) << "## loaded entry: " << entry.url << ",  Title: " << entry.title;
 	    m_history.append( entry );
 	    QString urlString2 = entry.url.prettyUrl();
 
