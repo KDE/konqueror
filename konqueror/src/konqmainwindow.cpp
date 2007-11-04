@@ -3737,7 +3737,7 @@ void KonqMainWindow::initActions()
   action->setShortcuts(KStandardShortcut::shortcut(KStandardShortcut::Open));
 
 #if 0
-  m_paFindFiles = new KToggleAction(KIcon("file-find"), i18n( "&Find File..." ), this);
+  m_paFindFiles = new KToggleAction(KIcon("edit-find"), i18n( "&Find File..." ), this);
   actionCollection()->addAction( "findfile", m_paFindFiles );
   connect(m_paFindFiles, SIGNAL(triggered(bool) ), SLOT( slotToolFind() ));
   m_paFindFiles->setShortcuts(KStandardShortcut::shortcut(KStandardShortcut::Find));
