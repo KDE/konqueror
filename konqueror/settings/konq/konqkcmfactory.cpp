@@ -20,7 +20,6 @@
 #include "konqkcmfactory.h"
 #include "behaviour.h"
 #include "browser.h"
-#include "desktop.h"
 #include "globalpaths.h"
 #include "previews.h"
 
@@ -31,9 +30,6 @@ K_PLUGIN_FACTORY_DEFINITION(KonqKcmFactory,
         registerPlugin<KBehaviourOptions>("behavior");
         registerPlugin<KBrowserOptions>("browser");
         //registerPlugin<DesktopBehaviorModule>("dbehavior");
-#ifdef Q_WS_X11
-        registerPlugin<KDesktopConfig>("ddesktop");
-#endif
         //registerPlugin<KonqFontOptions>("appearance");
         //registerPlugin<KonqFontOptionsDesktop>("dappearance");
         registerPlugin<DesktopPathConfig>("dpath");

@@ -11,7 +11,6 @@ set(kcm_konq_PART_SRCS
    kcustommenueditor.cpp)
 
 if(Q_WS_X11)
- set(kcm_konq_PART_SRCS desktop.cpp ${kcm_konq_PART_SRCS})
  #set(kdesktop_xml  ${KDEBASE_WORKSPACE_SOURCE_DIR}/kdesktop/org.kde.kdesktop.Desktop.xml)
  #QT4_ADD_DBUS_INTERFACE( kcm_konq_PART_SRCS ${kdesktop_xml} kdesktop_interface )
 endif(Q_WS_X11)
@@ -29,10 +28,6 @@ install(TARGETS kcm_konq  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
 
 ########### install files ###############
-if(Q_WS_X11)
- install( FILES desktop.desktop DESTINATION  ${SERVICES_INSTALL_DIR} )
-endif(Q_WS_X11)
-
 install( FILES
    #desktopbehavior.desktop
    desktoppath.desktop
