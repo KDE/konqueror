@@ -90,8 +90,10 @@ class KonqComboLineEdit : public KLineEdit
 {
 public:
     KonqComboLineEdit( QWidget *parent=0 );
-    void mouseDoubleClickEvent( QMouseEvent *e );
     void setCompletedItems( const QStringList& items );
+
+protected:
+    void mouseDoubleClickEvent( QMouseEvent *e );
 };
 
 class KonqComboCompletionBox : public KCompletionBox
