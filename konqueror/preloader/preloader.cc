@@ -21,13 +21,19 @@
 #include "konqsettingsxt.h"
 #include "preloaderadaptor.h"
 
-#include <kconfig.h>
-#include <kapplication.h>
 #include <kdebug.h>
 #include <ktoolinvocation.h>
 
-KonqyPreloader::KonqyPreloader()
-    : KDEDModule()
+#include <kpluginfactory.h>
+#include <kpluginloader.h>
+
+K_PLUGIN_FACTORY(KonqyPreloaderFactory,
+                 registerPlugin<KonqyPreloader>();
+    )
+K_EXPORT_PLUGIN(KonqyPreloaderFactory("konqypreloader"))
+
+KonqyPreloader::KonqyPreloader(QObject* parent, const QList<QVariant>&)
+    : KDEDModule(parent)
     {
     reconfigure();
 
@@ -144,12 +150,6 @@ void KonqyPreloader::unloadAllPreloaded()
         ref.call( "terminatePreloaded" );
         }
     // ignore 'always_have_preloaded' here
-    }
-
-extern "C"
-KDE_EXPORT KDEDModule *create_konqy_preloader()
-    {
-    return new KonqyPreloader();
     }
 
 #include "preloader.moc"
