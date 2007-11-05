@@ -12,11 +12,11 @@ associate it with the relevant file types.
 
 How
 ===
-Create a file ~/.kde/share/apps/konqueror/servicemenus/something.desktop
+Create a file ~/.kde/share/kde4/services/ServiceMenus/something.desktop
 and write into it something like (without the comments) :
 
 [Desktop Entry]
-ServiceTypes=text/html,text/plain # use all/all for all entries
+ServiceTypes=KonqPopupMenu/Plugin,text/html,text/plain # use all/all for all entries
                                   # all/allfiles for files only
                                   # and use inode/directory for dirs only
                                   # you can also do things like image/* for all
