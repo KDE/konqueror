@@ -47,6 +47,7 @@
 #include <klibloader.h>
 #include <kconfig.h>
 #include <kconfiggroup.h>
+#include <kcrash.h>
 #include <kdesktopfile.h>
 #include <kservicetype.h>
 #include <kmimetype.h>
@@ -211,7 +212,12 @@ void registerPlugin( const QString &name, const QString &description,
     cg.writeEntry( "mime", mimeInfo );
 }
 
-int tryCheck(int write_fd, const QString &absFile)
+static void segv_handler(int)
+{
+    _exit(255);
+}
+
+static int tryCheck(int write_fd, const QString &absFile)
 {
     KLibrary *_handle = KLibLoader::self()->library( QFile::encodeName(absFile) );
     if (!_handle) {
@@ -333,6 +339,7 @@ void scanDirectory( const QString &dir, QStringList &mimeInfoList,
         // fork, so that a crash in the plugin won't stop the scanning of other plugins
         int pipes[2];
         if (pipe(pipes) != 0) continue;
+        
         int loader_pid = fork();
 
         if (loader_pid == -1) {
@@ -341,6 +348,7 @@ void scanDirectory( const QString &dir, QStringList &mimeInfoList,
         } else if (loader_pid == 0) {
            // inside the child
            close(pipes[0]);
+           KCrash::setCrashHandler(segv_handler);
            _exit(tryCheck(pipes[1], absFile));
         } else {
            close(pipes[1]);
