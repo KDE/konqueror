@@ -776,6 +776,7 @@ KonqMultiRestoreJob::KonqMultiRestoreJob( const KUrl::List& urls )
       m_progress( 0 )
 {
     QTimer::singleShot(0, this, SLOT(slotStart()));
+    setUiDelegate(new KIO::JobUiDelegate);
 }
 
 void KonqMultiRestoreJob::slotStart()
@@ -801,7 +802,7 @@ void KonqMultiRestoreJob::slotStart()
         QByteArray packedArgs;
         QDataStream stream( &packedArgs, QIODevice::WriteOnly );
         stream << (int)3 << new_url;
-        KIO::Job* job = KIO::special( new_url, packedArgs );
+        KIO::Job* job = KIO::special( new_url, packedArgs, KIO::HideProgressInfo );
         addSubjob( job );
         setProcessedAmount(KJob::Files, processedAmount(KJob::Files) + 1);
     }
