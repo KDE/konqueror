@@ -111,8 +111,7 @@ bool KonqHistoryManager::loadHistory()
     QDataStream fileStream( &file );
     QByteArray data; // only used for version == 2
     // we construct the stream object now but fill in the data later.
-    // thanks to QBA's explicit sharing this works :)
-    QDataStream crcStream( data );
+    QDataStream crcStream( &data, QIODevice::ReadOnly );
 
     if ( !fileStream.atEnd() ) {
 	quint32 version;
@@ -123,7 +122,7 @@ bool KonqHistoryManager::loadHistory()
         bool crcChecked = false;
         bool crcOk = false;
 
-        if ( version == 2 || version == 3) {
+        if ( version >= 2 && version <= 4) {
             quint32 crc;
             crcChecked = true;
             fileStream >> crc >> data;
