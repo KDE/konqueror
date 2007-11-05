@@ -28,6 +28,8 @@
 #include <kglobal.h>
 #include <kicon.h>
 #include <kstandarddirs.h>
+#include <KService>
+#include <KServiceTypeTrader>
 
 #include <QtDBus/QtDBus>
 
@@ -244,13 +246,11 @@ int KonqMenuActions::addActionsTo(QMenu* mainMenu)
         }
     }
 
-    const QStringList entries = KGlobal::dirs()->findAllResources( "data",
-                                                                   "konqueror/servicemenus/*.desktop",
-                                                                   KStandardDirs::NoDuplicates );
-    QStringList::ConstIterator eIt = entries.begin();
-    const QStringList::ConstIterator eEnd = entries.end();
-    for (; eIt != eEnd; ++eIt ) {
-        KDesktopFile desktopFile( *eIt );
+    KService::List entries = KServiceTypeTrader::self()->query( "KonqPopupMenu/Plugin");
+    KService::List::const_iterator eEnd = entries.end();
+    for (KService::List::const_iterator it2 = entries.begin(); it2 != eEnd; it2++ ) {
+        QString file = KStandardDirs::locate("services", (*it2)->entryPath());
+        KDesktopFile desktopFile( file );
         const KConfigGroup cfg = desktopFile.desktopGroup();
 
         if (!KIOSKAuthorizedAction(cfg)) {
@@ -362,7 +362,7 @@ int KonqMenuActions::addActionsTo(QMenu* mainMenu)
                 const QString submenuName = cfg.readEntry( "X-KDE-Submenu" );
 
                 ServiceList& list = s.selectList( priority, submenuName );
-                list += KDesktopFileActions::userDefinedServices( *eIt, desktopFile, d->m_url.isLocalFile(), d->m_urlList );
+                list += KDesktopFileActions::userDefinedServices( *(*it2), d->m_url.isLocalFile(), d->m_urlList );
             }
         }
     }
