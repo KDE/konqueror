@@ -47,7 +47,7 @@ class FavIconsModule : public KDEDModule
 {
     Q_OBJECT
 public:
-    FavIconsModule();
+    FavIconsModule(QObject* parent, const QList<QVariant>&);
     virtual ~FavIconsModule();
 
 public Q_SLOTS: // dbus methods, called by the adaptor

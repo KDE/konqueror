@@ -17,7 +17,9 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include <string.h>
+#include "favicons.h"
+#include "favicons_adaptor.h"
+
 #include <time.h>
 
 #include <QBuffer>
@@ -31,12 +33,15 @@
 #include <kconfig.h>
 #include <kstandarddirs.h>
 #include <kio/job.h>
-#include "favicons_adaptor.h"
-#include <ktemporaryfile.h>
 #include <kconfiggroup.h>
 #include <kdebug.h>
+#include <kpluginfactory.h>
+#include <kpluginloader.h>
 
-#include "favicons.moc"
+K_PLUGIN_FACTORY(FavIconsFactory,
+                 registerPlugin<FavIconsModule>();
+    )
+K_EXPORT_PLUGIN(FavIconsFactory("favicons"))
 
 struct FavIconsModulePrivate
 {
@@ -57,8 +62,8 @@ struct FavIconsModulePrivate
     QCache<QString,QString> faviconsCache;
 };
 
-FavIconsModule::FavIconsModule()
-    : KDEDModule()
+FavIconsModule::FavIconsModule(QObject* parent, const QList<QVariant>&)
+    : KDEDModule(parent)
 {
     // create our favicons folder so that KIconLoader knows about it
     d = new FavIconsModulePrivate;
@@ -263,11 +268,6 @@ void FavIconsModule::slotKill()
     d->killJobs.clear();
 }
 
-extern "C" {
-    KDE_EXPORT KDEDModule *create_favicons()
-    {
-        return new FavIconsModule();
-    }
-}
+#include "favicons.moc"
 
 // vim: ts=4 sw=4 et

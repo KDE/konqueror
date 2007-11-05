@@ -28,9 +28,9 @@ class KonqyPreloader
     {
     Q_OBJECT
     public:
-        KonqyPreloader();
+        KonqyPreloader(QObject* parent, const QList<QVariant>&);
         virtual ~KonqyPreloader();
-	
+
     public Q_SLOTS:
         bool registerPreloadedKonqy( const QString &id, int screen );
         QString getPreloadedKonqy( int screen );
