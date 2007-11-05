@@ -32,7 +32,7 @@ install( FILES
    #desktopbehavior.desktop
    desktoppath.desktop
    filebehavior.desktop
-   fileappearance.desktop
+   #fileappearance.desktop
    filepreviews.desktop
    filebrowser.desktop 
    DESTINATION  ${SERVICES_INSTALL_DIR} )
