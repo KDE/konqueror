@@ -158,7 +158,7 @@ KNewMenu::~KNewMenu()
 
 void KNewMenu::makeMenus()
 {
-    d->m_menuDev = new KActionMenu( KIcon("kcmdevices"), i18n( "Link to Device" ), this );
+    d->m_menuDev = new KActionMenu( KIcon("drive-removable-media"), i18n( "Link to Device" ), this );
 }
 
 void KNewMenu::slotCheckUpToDate( )
