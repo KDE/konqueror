@@ -300,8 +300,7 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, bool 
 
 	if (universalMode)
 	{
-	    m_config = new KConfigGroup(KSharedConfig::openConfig("konqsidebartng_kicker.rc"),
-					QByteArray());
+		m_config = new KConfigGroup(KSharedConfig::openConfig("konqsidebartng_kicker.rc"), "");
 	}
 	else
 	{
