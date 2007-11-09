@@ -40,62 +40,57 @@
 
 // Local
 #include "ksaveioconfig.h"
-#include "ui_cache.h"
 
 K_PLUGIN_FACTORY_DECLARATION(KioConfigFactory)
 
-KCacheConfigDialog::KCacheConfigDialog(QWidget *parent, const QVariantList &)
-    : KCModule(KioConfigFactory::componentData(), parent)
+CacheConfigModule::CacheConfigModule(QWidget *parent, const QVariantList &)
+                  :KCModule(KioConfigFactory::componentData(), parent)
 {
-  m_dlg = new Ui::CacheDlgUI();
-  m_dlg->setupUi(this);
-
+  ui.setupUi(this);
   load();
 }
 
-KCacheConfigDialog::~KCacheConfigDialog()
+CacheConfigModule::~CacheConfigModule()
 {
-  delete m_dlg;
 }
 
-void KCacheConfigDialog::load()
+void CacheConfigModule::load()
 {
-  m_dlg->cbUseCache->setChecked(KProtocolManager::useCache());
-  m_dlg->sbMaxCacheSize->setValue( KProtocolManager::maxCacheSize() );
+  ui.cbUseCache->setChecked(KProtocolManager::useCache());
+  ui.sbMaxCacheSize->setValue( KProtocolManager::maxCacheSize() );
 
   KIO::CacheControl cc = KProtocolManager::cacheControl();
 
   if (cc==KIO::CC_Verify)
-      m_dlg->rbVerifyCache->setChecked( true );
+      ui.rbVerifyCache->setChecked( true );
   else if (cc==KIO::CC_Refresh)
-      m_dlg->rbVerifyCache->setChecked( true );
+      ui.rbVerifyCache->setChecked( true );
   else if (cc==KIO::CC_CacheOnly)
-      m_dlg->rbOfflineMode->setChecked( true );
+      ui.rbOfflineMode->setChecked( true );
   else if (cc==KIO::CC_Cache)
-      m_dlg->rbCacheIfPossible->setChecked( true );
+      ui.rbCacheIfPossible->setChecked( true );
 
   // Config changed notifications...
-  connect ( m_dlg->cbUseCache, SIGNAL(toggled(bool)), SLOT(configChanged()) );
-  connect ( m_dlg->rbVerifyCache, SIGNAL(toggled(bool)), SLOT(configChanged()) );
-  connect ( m_dlg->rbOfflineMode, SIGNAL(toggled(bool)), SLOT(configChanged()) );
-  connect ( m_dlg->rbCacheIfPossible, SIGNAL(toggled(bool)), SLOT(configChanged()) );
-  connect ( m_dlg->sbMaxCacheSize, SIGNAL(valueChanged(int)), SLOT(configChanged()) );
-  connect ( m_dlg->pbClearCache, SIGNAL(clicked()), SLOT(slotClearCache()) );
+  connect ( ui.cbUseCache, SIGNAL(toggled(bool)), SLOT(configChanged()) );
+  connect ( ui.rbVerifyCache, SIGNAL(toggled(bool)), SLOT(configChanged()) );
+  connect ( ui.rbOfflineMode, SIGNAL(toggled(bool)), SLOT(configChanged()) );
+  connect ( ui.rbCacheIfPossible, SIGNAL(toggled(bool)), SLOT(configChanged()) );
+  connect ( ui.sbMaxCacheSize, SIGNAL(valueChanged(int)), SLOT(configChanged()) );
   emit changed( false );
 } 
 
-void KCacheConfigDialog::save()
+void CacheConfigModule::save()
 {
-  KSaveIOConfig::setUseCache( m_dlg->cbUseCache->isChecked() );
-  KSaveIOConfig::setMaxCacheSize( m_dlg->sbMaxCacheSize->value() );
+  KSaveIOConfig::setUseCache( ui.cbUseCache->isChecked() );
+  KSaveIOConfig::setMaxCacheSize( ui.sbMaxCacheSize->value() );
 
-  if ( !m_dlg->cbUseCache->isChecked() )
+  if ( !ui.cbUseCache->isChecked() )
       KSaveIOConfig::setCacheControl(KIO::CC_Refresh);
-  else if ( m_dlg->rbVerifyCache->isChecked() )
+  else if ( ui.rbVerifyCache->isChecked() )
       KSaveIOConfig::setCacheControl(KIO::CC_Refresh);
-  else if ( m_dlg->rbOfflineMode->isChecked() )
+  else if ( ui.rbOfflineMode->isChecked() )
       KSaveIOConfig::setCacheControl(KIO::CC_CacheOnly);
-  else if ( m_dlg->rbCacheIfPossible->isChecked() )
+  else if ( ui.rbCacheIfPossible->isChecked() )
       KSaveIOConfig::setCacheControl(KIO::CC_Cache);
 
   // Update running io-slaves...
@@ -104,16 +99,16 @@ void KCacheConfigDialog::save()
   emit changed( false );
 }
 
-void KCacheConfigDialog::defaults()
+void CacheConfigModule::defaults()
 {
-  m_dlg->cbUseCache->setChecked( true );
-  m_dlg->rbVerifyCache->setChecked( true );
-  m_dlg->sbMaxCacheSize->setValue( DEFAULT_MAX_CACHE_SIZE );
+  ui.cbUseCache->setChecked( true );
+  ui.rbVerifyCache->setChecked( true );
+  ui.sbMaxCacheSize->setValue( DEFAULT_MAX_CACHE_SIZE );
 
   emit changed( true );
 }
 
-QString KCacheConfigDialog::quickHelp() const
+QString CacheConfigModule::quickHelp() const
 {
   return i18n( "<h1>Cache</h1><p>This module lets you configure your cache settings.</p>"
                 "<p>The cache is an internal memory in Konqueror where recently "
@@ -123,15 +118,15 @@ QString KCacheConfigDialog::quickHelp() const
                 "cache, which is a lot faster.</p>" );
 }
 
-void KCacheConfigDialog::configChanged()
+void CacheConfigModule::configChanged()
 {
   emit changed( true );
 }
 
-void KCacheConfigDialog::slotClearCache()
+void CacheConfigModule::on_clearCacheButton_clicked()
 {
   KProcess::startDetached(QLatin1String("kio_http_cache_cleaner"),
-              QStringList(QLatin1String("--clear-all")));
+                          QStringList(QLatin1String("--clear-all")));
 }
 
 #include "cache.moc"

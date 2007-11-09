@@ -51,7 +51,7 @@ K_PLUGIN_FACTORY(KioConfigFactory,
         registerPlugin<KIOPreferences>("netpref");
         registerPlugin<KProxyOptions>("proxy");
         registerPlugin<KCookiesMain>("cookie");
-        registerPlugin<KCacheConfigDialog>("cache");
+        registerPlugin<CacheConfigModule>("cache");
         )
 K_EXPORT_PLUGIN(KioConfigFactory("kcmkio"))
 
