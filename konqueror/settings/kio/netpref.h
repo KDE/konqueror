@@ -3,7 +3,7 @@
 
 #include <kcmodule.h>
 
-class Q3GroupBox;
+class QGroupBox;
 class QCheckBox;
 
 class KIntNumInput;
@@ -26,8 +26,8 @@ protected Q_SLOTS:
     void configChanged() { emit changed(true); }
 
 private:
-    Q3GroupBox* gb_Ftp;
-    Q3GroupBox* gb_Timeout;
+    QGroupBox* gb_Ftp;
+    QGroupBox* gb_Timeout;
     QCheckBox* cb_ftpEnablePasv;
     QCheckBox* cb_ftpMarkPartial;
 

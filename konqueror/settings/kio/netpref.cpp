@@ -5,7 +5,7 @@
 // Qt
 #include <QtGui/QLayout>
 #include <QtGui/QCheckBox>
-#include <Qt3Support/Q3GroupBox>
+#include <QtGui/QGroupBox>
 #include <QtGui/QBoxLayout>
 
 // KDE
@@ -24,53 +24,50 @@
 K_PLUGIN_FACTORY_DECLARATION(KioConfigFactory)
 
 KIOPreferences::KIOPreferences(QWidget *parent, const QVariantList &)
-    : KCModule(KioConfigFactory::componentData(), parent)
+               :KCModule(KioConfigFactory::componentData(), parent)
 {
     QVBoxLayout* mainLayout = new QVBoxLayout( this );
     mainLayout->setMargin( 0 );
     mainLayout->setSpacing( KDialog::spacingHint() );
-    gb_Timeout = new Q3GroupBox( 1, Qt::Horizontal, i18n("Timeout Values"), this, "gb_Timeout" );
+    gb_Timeout = new QGroupBox( i18n("Timeout Values"), this );
     gb_Timeout->setWhatsThis( i18n("Here you can set timeout values. "
-                    "You might want to tweak them if your "
-                    "connection is very slow. The maximum "
-                    "allowed value is %1 seconds.", MAX_TIMEOUT_VALUE));
+                                   "You might want to tweak them if your "
+                                   "connection is very slow. The maximum "
+                                   "allowed value is %1 seconds.", MAX_TIMEOUT_VALUE));
     mainLayout->addWidget( gb_Timeout );
 
     sb_socketRead = new KIntNumInput( gb_Timeout);
     sb_socketRead->setSuffix( i18n( " sec" ) );
     sb_socketRead->setLabel( i18n( "Soc&ket read:" ), Qt::AlignVCenter);
-    connect(sb_socketRead, SIGNAL(valueChanged ( int )),
-            this, SLOT(configChanged()));
+    connect(sb_socketRead, SIGNAL(valueChanged(int)), SLOT(configChanged()));
 
-    sb_proxyConnect = new KIntNumInput( sb_socketRead, 0, gb_Timeout,
-            10);
+    sb_proxyConnect = new KIntNumInput( gb_Timeout );
     sb_proxyConnect->setSuffix( i18n( " sec" ) );
     sb_proxyConnect->setLabel( i18n( "Pro&xy connect:" ), Qt::AlignVCenter);
-    connect(sb_proxyConnect, SIGNAL(valueChanged ( int )),
-            this, SLOT(configChanged()));
+    connect(sb_proxyConnect, SIGNAL(valueChanged(int)), SLOT(configChanged()));
 
-    sb_serverConnect = new KIntNumInput( sb_proxyConnect, 0, gb_Timeout,
-            10);
+    sb_serverConnect = new KIntNumInput( gb_Timeout );
     sb_serverConnect->setSuffix( i18n( " sec" ) );
     sb_serverConnect->setLabel( i18n("Server co&nnect:"), Qt::AlignVCenter);
-    connect(sb_serverConnect, SIGNAL(valueChanged ( int )),
-            this, SLOT(configChanged()));
+    connect(sb_serverConnect, SIGNAL(valueChanged(int)), SLOT(configChanged()));
 
-    sb_serverResponse = new KIntNumInput( sb_serverConnect, 0, gb_Timeout,
-            10);
+    sb_serverResponse = new KIntNumInput( gb_Timeout );
     sb_serverResponse->setSuffix( i18n( " sec" ) );
     sb_serverResponse->setLabel( i18n("&Server response:"), Qt::AlignVCenter);
-    connect(sb_serverResponse, SIGNAL(valueChanged ( int )),
-            this, SLOT(configChanged()));
+    connect(sb_serverResponse, SIGNAL(valueChanged(int)), SLOT(configChanged()));
 
-    gb_Ftp = new Q3GroupBox(  1, Qt::Horizontal, i18n( "FTP Options" ), this, "gb_Ftp" );
+    gb_Ftp = new QGroupBox( i18n( "FTP Options" ), this );
     cb_ftpEnablePasv = new QCheckBox( i18n( "Enable passive &mode (PASV)" ), gb_Ftp );
-    cb_ftpEnablePasv->setWhatsThis( i18n( "Enables FTP's \"passive\" mode. This is required to allow FTP to work from behind firewalls." ));
+    cb_ftpEnablePasv->setWhatsThis( i18n("Enables FTP's \"passive\" mode. "
+                                         "This is required to allow FTP to "
+                                         "work from behind firewalls.") );
     cb_ftpMarkPartial = new QCheckBox( i18n( "Mark &partially uploaded files" ), gb_Ftp );
-    cb_ftpMarkPartial->setWhatsThis( i18n( "<p>Marks partially uploaded FTP files.</p>"
-                                             "<p>When this option is enabled, partially uploaded files "
-                                             "will have a \".part\" extension. This extension will be removed "
-                                             "once the transfer is complete.</p>"));
+    cb_ftpMarkPartial->setWhatsThis( i18n( "<p>Marks partially uploaded FTP "
+                                           "files.</p><p>When this option is "
+                                           "enabled, partially uploaded files "
+                                           "will have a \".part\" extension. "
+                                           "This extension will be removed "
+                                           "once the transfer is complete.</p>") );
 
     mainLayout->addWidget( gb_Ftp );
 
