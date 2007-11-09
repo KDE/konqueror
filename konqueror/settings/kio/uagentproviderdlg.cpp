@@ -19,12 +19,16 @@
 // Own
 #include "uagentproviderdlg.h"
 
+// Local
+#include "useragentinfo.h"
+
 // Qt
 #include <QtGui/QBoxLayout>
 #include <QtGui/QKeyEvent>
 #include <QtGui/QLabel>
 #include <QtGui/QLayout>
 #include <QtGui/QPushButton>
+#include <QtGui/QValidator>
 
 // KDE
 #include <kcombobox.h>
@@ -33,45 +37,47 @@
 #include <klocale.h>
 #include <kurllabel.h>
 
-#include "fakeuaprovider.h"
-
-UALineEdit::UALineEdit( QWidget *parent )
-           :KLineEdit( parent )
+class UASiteNameValidator : public QValidator
 {
-  // For now do not accept any drops since they might contain
-  // characters we do not accept.
-  // TODO: Re-implement ::dropEvent to allow acceptable formats...
-  setAcceptDrops( false );
-}
-
-void UALineEdit::keyPressEvent( QKeyEvent* e )
-{
-  int key = e->key();
-  QString keycode = e->text();
-  if ( (key >= Qt::Key_Escape && key <= Qt::Key_Help) || key == Qt::Key_Period ||
-       (cursorPosition() > 0 && key == Qt::Key_Minus) ||
-       (!keycode.isEmpty() && keycode.unicode()->isLetterOrNumber()) )
+public:
+  UASiteNameValidator(QObject *parent)
+  :QValidator(parent)
   {
-    KLineEdit::keyPressEvent(e);
-    return;
+    setObjectName("UASiteNameValidator");
   }
-  e->accept();
-}
 
-UAProviderDlg::UAProviderDlg( const QString& caption, QWidget *parent,
-                              FakeUASProvider* provider )
-              :KDialog(parent), m_provider(provider)
+  State validate(QString &input, int &) const
+  {
+    if (input.isEmpty())
+      return Intermediate;
+
+    if (input.startsWith(QChar('.')))
+      return Invalid;
+
+    const int length = input.length();
+
+    for(int i = 0 ; i < length; i++)
+    {
+      if (!input[i].isLetterOrNumber() && input[i] != '.' && input[i] != '-')
+        return Invalid;
+    }
+
+    return Acceptable;
+  }
+};
+
+
+UserAgentConfigDlg::UserAgentConfigDlg( const QString& caption, UserAgentInfo* info,
+                              QWidget *parent, Qt::WindowFlags f )
+              :QDialog(parent, f),
+               m_userAgentInfo(info)
 {
+  ui.setupUi(this);
+
   setModal( true );
-  setCaption ( caption );
-  setButtons( None );
+  setWindowTitle ( caption );
 
-  dlg = new UAProviderDlgUI (this);
-  dlg->layout()->setMargin(0);
-  dlg->layout()->setSpacing(0);
-  setMainWidget( dlg );
-
-  if (!m_provider)
+  if (!m_userAgentInfo)
   {
     setEnabled( false );
     return;
@@ -80,76 +86,68 @@ UAProviderDlg::UAProviderDlg( const QString& caption, QWidget *parent,
   init();
 }
 
-UAProviderDlg::~UAProviderDlg()
+UserAgentConfigDlg::~UserAgentConfigDlg()
 {
 }
 
-void UAProviderDlg::init()
+void UserAgentConfigDlg::init()
 {
-  connect( dlg->pbOk, SIGNAL(clicked()), SLOT(accept()) );
-  connect( dlg->pbCancel, SIGNAL(clicked()), SLOT(reject()) );
-
-  connect( dlg->leSite, SIGNAL(textChanged(const QString&)),
-                SLOT(slotTextChanged( const QString&)) );
-
-  connect( dlg->cbAlias, SIGNAL(activated(const QString&)),
-                SLOT(slotActivated(const QString&)) );
-
-  dlg->cbAlias->clear();
-  dlg->cbAlias->addItems( m_provider->userAgentAliasList() );
-  dlg->cbAlias->insertItem( 0, "" );
-  dlg->cbAlias->model()->sort( 0 );
-  dlg->cbAlias->setCurrentIndex( 0 );
-
-  dlg->leSite->setFocus();
+  ui.aliasComboBox->clear();
+  ui.aliasComboBox->addItems( m_userAgentInfo->userAgentAliasList() );
+  ui.aliasComboBox->insertItem( 0, "" );
+  ui.aliasComboBox->model()->sort( 0 );
+  ui.aliasComboBox->setCurrentIndex( 0 );
+  ui.siteLineEdit->setFocus();
 }
 
-void UAProviderDlg::slotActivated( const QString& text )
+void UserAgentConfigDlg::on_aliasComboBox_activated( const QString& text )
 {
   if ( text.isEmpty() )
-    dlg->leIdentity->setText( "" );
+    ui.identityLineEdit->setText( QString() );
   else
-    dlg->leIdentity->setText( m_provider->agentStr(text) );
+    ui.identityLineEdit->setText( m_userAgentInfo->agentStr(text) );
 
-  dlg->pbOk->setEnabled( (!dlg->leSite->text().isEmpty() && !text.isEmpty()) );
+  const bool enable =  (!ui.siteLineEdit->text().isEmpty() && !text.isEmpty());
+  ui.buttonBox->button(QDialogButtonBox::Ok)->setEnabled(enable);
 }
 
-void UAProviderDlg::slotTextChanged( const QString& text )
+void UserAgentConfigDlg::on_siteLineEdit_textChanged( const QString& text )
 {
-  dlg->pbOk->setEnabled( (!text.isEmpty() && !dlg->cbAlias->currentText().isEmpty()) );
+  const bool enable = (!text.isEmpty() && !ui.aliasComboBox->currentText().isEmpty());
+  ui.buttonBox->button(QDialogButtonBox::Ok)->setEnabled(enable);
 }
 
-void UAProviderDlg::setSiteName( const QString& text )
+void UserAgentConfigDlg::setSiteName( const QString& text )
 {
-  dlg->leSite->setText( text );
+  ui.siteLineEdit->setText( text );
 }
 
-void UAProviderDlg::setIdentity( const QString& text )
+void UserAgentConfigDlg::setIdentity( const QString& text )
 {
-  int id = dlg->cbAlias->findText( text );
+  int id = ui.aliasComboBox->findText( text );
   if ( id != -1 )
-     dlg->cbAlias->setCurrentIndex( id );
-  slotActivated( dlg->cbAlias->currentText() );
-  if ( !dlg->leSite->isEnabled() )
-    dlg->cbAlias->setFocus();
+     ui.aliasComboBox->setCurrentIndex( id );
+  on_aliasComboBox_activated( ui.aliasComboBox->currentText() );
+  if ( !ui.siteLineEdit->isEnabled() )
+    ui.aliasComboBox->setFocus();
 }
 
-QString UAProviderDlg::siteName()
+QString UserAgentConfigDlg::siteName()
 {
-  QString site_name=dlg->leSite->text().toLower();
+  QString site_name=ui.siteLineEdit->text().toLower();
   site_name = site_name.remove( "https://" );
   site_name = site_name.remove( "http://" );
   return site_name;
 }
 
-QString UAProviderDlg::identity()
+QString UserAgentConfigDlg::identity()
 {
-  return dlg->cbAlias->currentText();
+  return ui.aliasComboBox->currentText();
 }
 
-QString UAProviderDlg::alias()
+QString UserAgentConfigDlg::alias()
 {
-  return dlg->leIdentity->text();
+  return ui.identityLineEdit->text();
 }
 
 #include "uagentproviderdlg.moc"

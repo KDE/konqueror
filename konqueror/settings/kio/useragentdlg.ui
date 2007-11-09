@@ -1,6 +1,14 @@
 <ui version="4.0" >
- <class>UserAgentDlgUI</class>
- <widget class="QWidget" name="UserAgentDlgUI" >
+ <class>UserAgentUI</class>
+ <widget class="QWidget" name="UserAgentUI" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>613</width>
+    <height>512</height>
+   </rect>
+  </property>
   <property name="whatsThis" >
    <string>&lt;qt>
 Here you can modify the default browser-identification text or set a site &lt;code>(eg. www.kde.org)&lt;/code> or a domain &lt;code>(eg. kde.org)&lt;/code> specific identification text.&lt;p>
@@ -9,7 +17,7 @@ To add a new site specific identification text, click the &lt;code>New&lt;/code>
   </property>
   <layout class="QVBoxLayout" >
    <item>
-    <widget class="QCheckBox" name="cbSendUAString" >
+    <widget class="QCheckBox" name="sendUACheckBox" >
      <property name="whatsThis" >
       <string>&lt;qt>
 Send the browser identification to web sites.&lt;p>
@@ -26,7 +34,7 @@ By default, only minimal identification information is sent to remote sites. The
     </widget>
    </item>
    <item>
-    <widget class="Q3ButtonGroup" name="gbDefaultId" >
+    <widget class="Q3ButtonGroup" name="defaultIdGroupBox" >
      <property name="enabled" >
       <bool>true</bool>
      </property>
@@ -38,7 +46,7 @@ By default, only minimal identification information is sent to remote sites. The
      </property>
      <layout class="QVBoxLayout" >
       <item>
-       <widget class="QLabel" name="leDefaultId" >
+       <widget class="QLabel" name="defaultIdLineEdit" >
         <property name="whatsThis" >
          <string>The browser identification text sent to the sites you visit. You can customize it using the options provided below.</string>
         </property>
@@ -48,7 +56,7 @@ By default, only minimal identification information is sent to remote sites. The
        </widget>
       </item>
       <item>
-       <widget class="QCheckBox" name="cbOS" >
+       <widget class="QCheckBox" name="osNameCheckBox" >
         <property name="whatsThis" >
          <string>Includes your operating system's name in the browser identification text.</string>
         </property>
@@ -76,7 +84,7 @@ By default, only minimal identification information is sent to remote sites. The
          </spacer>
         </item>
         <item>
-         <widget class="QCheckBox" name="cbOSVersion" >
+         <widget class="QCheckBox" name="osVersionCheckBox" >
           <property name="enabled" >
            <bool>false</bool>
           </property>
@@ -91,7 +99,7 @@ By default, only minimal identification information is sent to remote sites. The
        </layout>
       </item>
       <item>
-       <widget class="QCheckBox" name="cbPlatform" >
+       <widget class="QCheckBox" name="platformCheckBox" >
         <property name="whatsThis" >
          <string>Includes your platform type in the browser identification text</string>
         </property>
@@ -101,7 +109,7 @@ By default, only minimal identification information is sent to remote sites. The
        </widget>
       </item>
       <item>
-       <widget class="QCheckBox" name="cbProcessorType" >
+       <widget class="QCheckBox" name="processorTypeCheckBox" >
         <property name="whatsThis" >
          <string>Includes your machine's CPU type in the browser identification text.</string>
         </property>
@@ -111,7 +119,7 @@ By default, only minimal identification information is sent to remote sites. The
        </widget>
       </item>
       <item>
-       <widget class="QCheckBox" name="cbLanguage" >
+       <widget class="QCheckBox" name="languageCheckBox" >
         <property name="whatsThis" >
          <string>Includes your language settings in the browser identification text to obtain localised versions of the page.</string>
         </property>
@@ -124,7 +132,7 @@ By default, only minimal identification information is sent to remote sites. The
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="gbDomainPolicy" >
+    <widget class="QGroupBox" name="domainPolicyGroupBox" >
      <property name="enabled" >
       <bool>true</bool>
      </property>
@@ -133,24 +141,12 @@ By default, only minimal identification information is sent to remote sites. The
      </property>
      <layout class="QHBoxLayout" >
       <item>
-       <widget class="K3ListView" name="lvDomainPolicyList" >
-        <property name="whatsThis" >
-         <string>List of sites for which the specified identification text will be used instead of the default one.</string>
+       <widget class="QTreeWidget" name="sitePolicyTreeWidget" >
+        <property name="rootIsDecorated" >
+         <bool>false</bool>
         </property>
-        <property name="selectionMode" >
-         <enum>Q3ListView::Single</enum>
-        </property>
-        <property name="allColumnsShowFocus" >
+        <property name="sortingEnabled" >
          <bool>true</bool>
-        </property>
-        <property name="showSortIndicator" >
-         <bool>true</bool>
-        </property>
-        <property name="resizeMode" >
-         <enum>Q3ListView::NoColumn</enum>
-        </property>
-        <property name="treeStepSize" >
-         <number>0</number>
         </property>
         <column>
          <property name="text" >
@@ -184,7 +180,7 @@ By default, only minimal identification information is sent to remote sites. The
          <number>0</number>
         </property>
         <item>
-         <widget class="QPushButton" name="pbNew" >
+         <widget class="QPushButton" name="newButton" >
           <property name="whatsThis" >
            <string>Add new identification text for a site.</string>
           </property>
@@ -194,7 +190,7 @@ By default, only minimal identification information is sent to remote sites. The
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pbChange" >
+         <widget class="QPushButton" name="changeButton" >
           <property name="whatsThis" >
            <string>Change the selected identifier text.</string>
           </property>
@@ -204,7 +200,7 @@ By default, only minimal identification information is sent to remote sites. The
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pbDelete" >
+         <widget class="QPushButton" name="deleteButton" >
           <property name="whatsThis" >
            <string>Delete the selected identifier text.</string>
           </property>
@@ -214,7 +210,7 @@ By default, only minimal identification information is sent to remote sites. The
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pbDeleteAll" >
+         <widget class="QPushButton" name="deleteAllButton" >
           <property name="whatsThis" >
            <string>Delete all identifiers.</string>
           </property>
@@ -256,11 +252,6 @@ By default, only minimal identification information is sent to remote sites. The
    <header>Qt3Support/Q3ButtonGroup</header>
    <container>1</container>
   </customwidget>
-  <customwidget>
-   <class>K3ListView</class>
-   <extends>Q3ListView</extends>
-   <header>k3listview.h</header>
-  </customwidget>
  </customwidgets>
  <includes>
   <include location="local" >klineedit.h</include>
@@ -269,9 +260,9 @@ By default, only minimal identification information is sent to remote sites. The
  <resources/>
  <connections>
   <connection>
-   <sender>cbOS</sender>
+   <sender>osNameCheckBox</sender>
    <signal>toggled(bool)</signal>
-   <receiver>cbOSVersion</receiver>
+   <receiver>osVersionCheckBox</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel" >
@@ -285,9 +276,9 @@ By default, only minimal identification information is sent to remote sites. The
    </hints>
   </connection>
   <connection>
-   <sender>cbSendUAString</sender>
+   <sender>sendUACheckBox</sender>
    <signal>toggled(bool)</signal>
-   <receiver>gbDefaultId</receiver>
+   <receiver>defaultIdGroupBox</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel" >
@@ -301,9 +292,9 @@ By default, only minimal identification information is sent to remote sites. The
    </hints>
   </connection>
   <connection>
-   <sender>cbSendUAString</sender>
+   <sender>sendUACheckBox</sender>
    <signal>toggled(bool)</signal>
-   <receiver>gbDomainPolicy</receiver>
+   <receiver>domainPolicyGroupBox</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel" >

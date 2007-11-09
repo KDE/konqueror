@@ -25,362 +25,366 @@
 // Own
 #include "useragentdlg.h"
 
+// Local
+#include "ksaveioconfig.h"
+#include "useragentinfo.h"
+#include "uagentproviderdlg.h"
+
 // Qt
 #include <QtGui/QLayout>
 #include <QtGui/QCheckBox>
 #include <QtGui/QLineEdit>
 #include <QtGui/QPushButton>
 #include <QtGui/QBoxLayout>
+#include <QtGui/QTreeWidget>
 
 // KDE
 #include <kdebug.h>
 #include <kconfig.h>
 #include <klocale.h>
-#include <k3listview.h>
 #include <kmessagebox.h>
 #include <kio/http_slave_defaults.h>
 #include <kgenericfactory.h>
 
-// Local
-#include "ksaveioconfig.h"
-#include "fakeuaprovider.h"
-#include "uagentproviderdlg.h"
-
 
 K_PLUGIN_FACTORY_DECLARATION(KioConfigFactory)
 
+typedef QList<QTreeWidgetItem*> SiteList;
+typedef SiteList::iterator SiteListIterator;
+
 UserAgentDlg::UserAgentDlg(QWidget *parent, const QVariantList &)
-    : KCModule(KioConfigFactory::componentData(), parent)
+             :KCModule(KioConfigFactory::componentData(), parent),
+              m_userAgentInfo(0),
+              m_config(0)
 {
-  QVBoxLayout *mainLayout = new QVBoxLayout(this);
-  mainLayout->setMargin(0);
-  mainLayout->setSpacing(KDialog::spacingHint());
-
-  dlg = new UserAgentDlgUI (this);
-  mainLayout->addWidget(dlg);
-
-  dlg->lvDomainPolicyList->setSorting(0);
-
-  connect( dlg->cbSendUAString, SIGNAL(clicked()), SLOT(configChanged()) );
-
-  connect( dlg->gbDefaultId, SIGNAL(clicked(int)),
-           SLOT(changeDefaultUAModifiers(int)));
-
-  connect( dlg->lvDomainPolicyList, SIGNAL(selectionChanged()),
-           SLOT(selectionChanged()) );
-  connect( dlg->lvDomainPolicyList, SIGNAL(doubleClicked (Q3ListViewItem *)),
-           SLOT(changePressed()) );
-  connect( dlg->lvDomainPolicyList, SIGNAL( returnPressed ( Q3ListViewItem * ) ),
-           SLOT( changePressed() ));
-
-  connect( dlg->pbNew, SIGNAL(clicked()), SLOT( addPressed() ) );
-  connect( dlg->pbChange, SIGNAL( clicked() ), SLOT( changePressed() ) );
-  connect( dlg->pbDelete, SIGNAL( clicked() ), SLOT( deletePressed() ) );
-  connect( dlg->pbDeleteAll, SIGNAL( clicked() ), SLOT( deleteAllPressed() ) );
-
+  ui.setupUi(this);
   load();
 }
 
 UserAgentDlg::~UserAgentDlg()
 {
-    delete m_provider;
+    delete m_userAgentInfo;
     delete m_config;
+}
+
+void UserAgentDlg::on_sendUACheckBox_clicked()
+{
+  configChanged();
+}
+
+void UserAgentDlg::on_newButton_clicked()
+{
+  UserAgentConfigDlg pdlg (i18n("Add Identification"), m_userAgentInfo, this );
+
+  if ( pdlg.exec() == QDialog::Accepted )
+  {
+    if ( !handleDuplicate( pdlg.siteName(), pdlg.identity(), pdlg.alias() ) )
+    {
+      QTreeWidgetItem* item = new QTreeWidgetItem( ui.sitePolicyTreeWidget);
+      item->setText(0, pdlg.siteName());
+      item->setText(1, pdlg.identity());
+      item->setText(2, pdlg.alias());
+      ui.sitePolicyTreeWidget->setCurrentItem( item );
+      configChanged();
+    }
+  }
+}
+
+void UserAgentDlg::on_changeButton_clicked()
+{
+  on_sitePolicyTreeWidget_itemActivated(ui.sitePolicyTreeWidget->currentItem(), -1);
+}
+
+void UserAgentDlg::on_deleteButton_clicked()
+{
+  SiteList selectedItems = ui.sitePolicyTreeWidget->selectedItems();
+  SiteListIterator endIt = selectedItems.end();
+
+  QString siteName;
+  for(SiteListIterator it = selectedItems.begin(); it != endIt; ++it)
+    delete (*it);
+
+  updateButtons();
+  configChanged();
+}
+
+void UserAgentDlg::on_deleteAllButton_clicked()
+{
+  ui.sitePolicyTreeWidget->clear();
+  updateButtons();
+  configChanged();
+}
+
+void UserAgentDlg::on_osNameCheckBox_clicked()
+{
+  changeDefaultUAModifiers();
+}
+
+void UserAgentDlg::on_osVersionCheckBox_clicked()
+{
+  changeDefaultUAModifiers();
+}
+
+void UserAgentDlg::on_platformCheckBox_clicked()
+{
+  changeDefaultUAModifiers();
+}
+
+void UserAgentDlg::on_processorTypeCheckBox_clicked()
+{
+  changeDefaultUAModifiers();
+}
+
+void UserAgentDlg::on_languageCheckBox_clicked()
+{
+  changeDefaultUAModifiers();
+}
+
+void UserAgentDlg::on_sitePolicyTreeWidget_itemActivated(QTreeWidgetItem* item, int)
+{
+  if(item)
+  {
+    // Store the current site name...
+    const QString currentSiteName = item->text(0);
+
+    UserAgentConfigDlg pdlg ( i18n("Modify Identification"), m_userAgentInfo, this );
+    pdlg.setSiteName( currentSiteName );
+    pdlg.setIdentity( item->text(1) );
+
+    if ( pdlg.exec() == QDialog::Accepted )
+    {
+      if ( pdlg.siteName() == currentSiteName ||
+          !handleDuplicate( pdlg.siteName(), pdlg.identity(), pdlg.alias() ) )
+      {
+        item->setText( 0, pdlg.siteName() );
+        item->setText( 1, pdlg.identity() );
+        item->setText( 2, pdlg.alias() );
+        configChanged();
+      }
+    }
+  }
+}
+
+void UserAgentDlg::changeDefaultUAModifiers()
+{
+  m_ua_keys = ":"; // Make sure it's not empty
+
+  if ( ui.osNameCheckBox->isChecked() )
+     m_ua_keys += 'o';
+
+  if ( ui.osVersionCheckBox->isChecked() )
+     m_ua_keys += 'v';
+
+  if ( ui.platformCheckBox->isChecked() )
+     m_ua_keys += 'p';
+
+  if ( ui.processorTypeCheckBox->isChecked() )
+     m_ua_keys += 'm';
+
+  if ( ui.languageCheckBox->isChecked() )
+     m_ua_keys += 'l';
+
+  ui.osVersionCheckBox->setEnabled(m_ua_keys.contains('o'));
+
+  QString modVal = KProtocolManager::defaultUserAgent( m_ua_keys );
+  if ( ui.defaultIdLineEdit->text() != modVal )
+  {
+    ui.defaultIdLineEdit->setText(modVal);
+    configChanged();
+  }
+}
+
+bool UserAgentDlg::handleDuplicate( const QString& site,
+                                    const QString& identity,
+                                    const QString& alias )
+{
+  SiteList list = ui.sitePolicyTreeWidget->findItems(site, Qt::MatchExactly, 0);
+
+  if (!list.isEmpty())
+  {
+    QString msg = i18n("<qt><center>Found an existing identification for"
+                        "<br/><b>%1</b><br/>"
+                        "Do you want to replace it?</center>"
+                        "</qt>", site);
+    int res = KMessageBox::warningContinueCancel(this, msg,
+                                        i18n("Duplicate Identification"),
+                                        KGuiItem(i18n("Replace")));
+    if ( res == KMessageBox::Continue )
+    {
+      list[0]->setText(0, site);
+      list[0]->setText(1, identity);
+      list[0]->setText(2, alias);
+      configChanged();
+    }
+
+    return true;
+  }
+
+  return false;
+}
+
+void UserAgentDlg::configChanged(bool enable)
+{
+  emit changed(enable);
+}
+
+void UserAgentDlg::updateButtons()
+{
+  const int selectedItemCount = ui.sitePolicyTreeWidget->selectedItems().count();
+  const bool hasItems = ui.sitePolicyTreeWidget->topLevelItemCount() > 0;
+
+  ui.changeButton->setEnabled ((hasItems && selectedItemCount == 1));
+  ui.deleteButton->setEnabled ((hasItems && selectedItemCount > 0));
+  ui.deleteAllButton->setEnabled ( hasItems );
+}
+
+void UserAgentDlg::on_sitePolicyTreeWidget_itemSelectionChanged()
+{
+  updateButtons();
 }
 
 void UserAgentDlg::load()
 {
-  d_itemsSelected = 0;
-  dlg->lvDomainPolicyList->clear();
+  ui.sitePolicyTreeWidget->clear();
 
-  m_config = new KConfig("kio_httprc", KConfig::NoGlobals);
-  m_provider = new FakeUASProvider();
+  if (!m_config)
+    m_config = new KConfig("kio_httprc", KConfig::NoGlobals);
+  else
+    m_config->reparseConfiguration();
+
+  if (!m_userAgentInfo)
+    m_userAgentInfo = new UserAgentInfo();
 
   QStringList list = m_config->groupList();
-  for ( QStringList::Iterator it = list.begin(); it != list.end(); ++it )
+  QStringList::ConstIterator endIt = list.end();
+  QString agentStr;
+
+  for ( QStringList::Iterator it = list.begin(); it != endIt; ++it )
   {
-      if ( (*it) == "<default>")
-         continue;
-      QString domain = *it;
-	  KConfigGroup cg(m_config, *it);
-      QString agentStr = cg.readEntry("UserAgent");
-      if (!agentStr.isEmpty())
-      {
-         QString realName = m_provider->aliasStr(agentStr);
-         new Q3ListViewItem( dlg->lvDomainPolicyList, domain.toLower(), realName, agentStr );
-      }
+    if ( (*it) == "<default>")
+        continue;
+
+    KConfigGroup cg(m_config, *it);
+    agentStr = cg.readEntry("UserAgent");
+    if (!agentStr.isEmpty())
+    {
+      QTreeWidgetItem* item = new QTreeWidgetItem(ui.sitePolicyTreeWidget);
+      item->setText(0, (*it).toLower());
+      item->setText(1, m_userAgentInfo->aliasStr(agentStr));
+      item->setText(2, agentStr);
+    }
   }
 
   // Update buttons and checkboxes...
   KConfigGroup cg2(m_config, QString());
   bool b = cg2.readEntry("SendUserAgent", true);
-  dlg->cbSendUAString->setChecked( b );
+  ui.sendUACheckBox->setChecked( b );
   m_ua_keys = cg2.readEntry("UserAgentKeys", DEFAULT_USER_AGENT_KEYS).toLower();
-  dlg->leDefaultId->setText( KProtocolManager::defaultUserAgent( m_ua_keys ) );
-  dlg->cbOS->setChecked( m_ua_keys.contains('o') );
-  dlg->cbOSVersion->setChecked( m_ua_keys.contains('v') );
-  dlg->cbOSVersion->setEnabled( m_ua_keys.contains('o') );
-  dlg->cbPlatform->setChecked( m_ua_keys.contains('p') );
-  dlg->cbProcessorType->setChecked( m_ua_keys.contains('m') );
-  dlg->cbLanguage->setChecked( m_ua_keys.contains('l') );
+  ui.defaultIdLineEdit->setText( KProtocolManager::defaultUserAgent( m_ua_keys ) );
+  ui.osNameCheckBox->setChecked( m_ua_keys.contains('o') );
+  ui.osVersionCheckBox->setChecked( m_ua_keys.contains('v') );
+  ui.platformCheckBox->setChecked( m_ua_keys.contains('p') );
+  ui.processorTypeCheckBox->setChecked( m_ua_keys.contains('m') );
+  ui.languageCheckBox->setChecked( m_ua_keys.contains('l') );
+
   updateButtons();
-  emit changed( false );
-}
-
-void UserAgentDlg::updateButtons()
-{
-  bool hasItems = dlg->lvDomainPolicyList->childCount() > 0;
-
-  dlg->pbChange->setEnabled ((hasItems && d_itemsSelected == 1));
-  dlg->pbDelete->setEnabled ((hasItems && d_itemsSelected > 0));
-  dlg->pbDeleteAll->setEnabled ( hasItems );
+  configChanged(false);
 }
 
 void UserAgentDlg::defaults()
 {
-  dlg->lvDomainPolicyList->clear();
+  ui.sitePolicyTreeWidget->clear();
   m_ua_keys = DEFAULT_USER_AGENT_KEYS;
-  dlg->leDefaultId->setText( KProtocolManager::defaultUserAgent(m_ua_keys) );
-  dlg->cbOS->setChecked( m_ua_keys.contains('o') );
-  dlg->cbOSVersion->setChecked( m_ua_keys.contains('v') );
-  dlg->cbOSVersion->setEnabled( m_ua_keys.contains('o') );
-  dlg->cbPlatform->setChecked( m_ua_keys.contains('p') );
-  dlg->cbProcessorType->setChecked( m_ua_keys.contains('m') );
-  dlg->cbLanguage->setChecked( m_ua_keys.contains('l') );
-  dlg->cbSendUAString->setChecked( true );
+  ui.defaultIdLineEdit->setText( KProtocolManager::defaultUserAgent(m_ua_keys) );
+  ui.osNameCheckBox->setChecked( m_ua_keys.contains('o') );
+  ui.osVersionCheckBox->setChecked( m_ua_keys.contains('v') );
+  ui.platformCheckBox->setChecked( m_ua_keys.contains('p') );
+  ui.processorTypeCheckBox->setChecked( m_ua_keys.contains('m') );
+  ui.languageCheckBox->setChecked( m_ua_keys.contains('l') );
+  ui.sendUACheckBox->setChecked( true );
+
   updateButtons();
   configChanged();
 }
 
 void UserAgentDlg::save()
 {
-  QStringList deleteList;
+  Q_ASSERT(m_config);
 
-  // This is tricky because we have to take care to delete entries
-  // as well.
-  QStringList list = m_config->groupList();
-  for ( QStringList::Iterator it = list.begin(); it != list.end(); ++it )
+  // Put all the groups except the default into the delete list.
+  QStringList deleteList = m_config->groupList();
+
+  //Remove all the groups that DO NOT contain a "UserAgent" entry...
+  QStringList::ConstIterator endIt = deleteList.end();
+  for (QStringList::ConstIterator it = deleteList.begin(); it != endIt; ++it)
   {
-      if ( (*it) == "<default>")
-         continue;
-      QString domain = *it;
-	  KConfigGroup cg(m_config, *it);
-      if (cg.hasKey("UserAgent"))
-         deleteList.append(*it);
+    if ( (*it) == QLatin1String("<default>") )
+      continue;
+
+    KConfigGroup cg(m_config, *it);
+    if (!cg.hasKey("UserAgent"))
+      deleteList.remove(*it);
   }
 
-  Q3ListViewItem* it2 = dlg->lvDomainPolicyList->firstChild();
-  while(it2)
+  QString domain;
+  QTreeWidgetItem* item;
+  int itemCount = ui.sitePolicyTreeWidget->topLevelItemCount();
+
+  // Save and remove from the delete list all the groups that were 
+  // not deleted by the end user.
+  for(int i = 0; i < itemCount; i++)
   {
-    QString domain = it2->text(0);
-    if (domain[0] == '.')
-      domain = domain.mid(1);
-    QString userAgent = it2->text(2);
-	KConfigGroup cg2(m_config, domain);
-    cg2.writeEntry("UserAgent", userAgent);
+    item = ui.sitePolicyTreeWidget->topLevelItem(i);
+    domain = item->text(0);
+    KConfigGroup cg(m_config, domain);
+    cg.writeEntry("UserAgent", item->text(2));
     deleteList.removeAll(domain);
-
-    it2 = it2->nextSibling();
+    qDebug("UserAgentDlg::save: Removed [%s] from delete list", domain.toLatin1().constData());
   }
 
-  KConfigGroup cg3(m_config, QString());
-  cg3.writeEntry("SendUserAgent", dlg->cbSendUAString->isChecked());
-  cg3.writeEntry("UserAgentKeys", m_ua_keys );
-  cg3.sync();
+  // Write the global configuration information...
+  KConfigGroup cg(m_config, QString());
+  cg.writeEntry("SendUserAgent", ui.sendUACheckBox->isChecked());
+  cg.writeEntry("UserAgentKeys", m_ua_keys );
 
-  // Delete all entries from deleteList.
+  // Sync up all the changes so far...
+  m_config->sync();
+
+  // If delete list is not empty, delete the specified domains.
   if (!deleteList.isEmpty())
   {
-     // Remove entries from local file.
-     KConfig cfg("kio_httprc", KConfig::SimpleConfig);
-     for ( QStringList::Iterator it = deleteList.begin();
-           it != deleteList.end(); ++it )
-     {
-		KConfigGroup gcfg(&cfg, *it);
-        gcfg.deleteEntry("UserAgent", false);
-        gcfg.deleteGroup(); // Delete if empty. //XXX mm : I think the "if empty" condition has been severely perverted over time, needs checking
-     }
-     cfg.sync();
+    // Remove entries from local file.
+    endIt = deleteList.end();
+    KConfig cfg ("kio_httprc", KConfig::SimpleConfig);
 
-     m_config->reparseConfiguration();
-     // Check everything is gone, reset to blank otherwise.
-     for ( QStringList::Iterator it = deleteList.begin();
-           it != deleteList.end(); ++it )
-     {
-		KConfigGroup gcfg(m_config, *it);
-        if (gcfg.hasKey("UserAgent"))
-           gcfg.writeEntry("UserAgent", QString());
-     }
-     m_config->sync();
+    for ( QStringList::ConstIterator it = deleteList.begin(); it != endIt; ++it )
+    {
+      KConfigGroup cg(&cfg, *it);
+      cg.deleteEntry("UserAgent");
+      qDebug("UserAgentDlg::save: Deleting UserAgent of group [%s]", (*it).toLatin1().constData());
+      if (cg.keyList().count() < 1)
+        cg.deleteGroup();
+    }
+
+    // Sync up the configuration...
+    cfg.sync();
+
+    // Check everything is gone, reset to blank otherwise.
+    m_config->reparseConfiguration();
+    endIt = deleteList.end();
+    for (QStringList::ConstIterator it = deleteList.begin(); it != endIt; ++it )
+    {
+      KConfigGroup cg(m_config, *it);
+      if (cg.hasKey("UserAgent"))
+        cg.writeEntry("UserAgent", QString());
+    }
+
+    // Sync up the configuration...
+    m_config->sync();
   }
 
   KSaveIOConfig::updateRunningIOSlaves (this);
-
-  emit changed( false );
-}
-
-bool UserAgentDlg::handleDuplicate( const QString& site,
-                                        const QString& identity,
-                                        const QString& alias )
-{
-  Q3ListViewItem* item = dlg->lvDomainPolicyList->firstChild();
-  while ( item != 0 )
-  {
-    if ( item->text(0) == site )
-    {
-      QString msg = i18n("<qt><center>Found an existing identification for"
-                         "<br/><b>%1</b><br/>"
-                         "Do you want to replace it?</center>"
-                         "</qt>", site);
-      int res = KMessageBox::warningContinueCancel(this, msg,
-                                          i18n("Duplicate Identification"),
-                                          KGuiItem(i18n("Replace")));
-      if ( res == KMessageBox::Continue )
-      {
-        item->setText(0, site);
-        item->setText(1, identity);
-        item->setText(2, alias);
-        configChanged();
-      }
-      return true;
-    }
-    item = item->nextSibling();
-  }
-  return false;
-}
-
-void UserAgentDlg::addPressed()
-{
-  UAProviderDlg pdlg ( i18n("Add Identification"), this, m_provider );
-
-  if ( pdlg.exec() == QDialog::Accepted )
-  {
-    if ( !handleDuplicate( pdlg.siteName(), pdlg.identity(), pdlg.alias() ) )
-    {
-      Q3ListViewItem* index = new Q3ListViewItem( dlg->lvDomainPolicyList,
-                                                pdlg.siteName(),
-                                                pdlg.identity(),
-                                                pdlg.alias() );
-      dlg->lvDomainPolicyList->sort();
-      dlg->lvDomainPolicyList->setCurrentItem( index );
-      configChanged();
-    }
-  }
-}
-
-void UserAgentDlg::changePressed()
-{
-  UAProviderDlg pdlg ( i18n("Modify Identification"), this, m_provider );
-
-  Q3ListViewItem *index = dlg->lvDomainPolicyList->currentItem();
-
-  if(!index)
-    return;
-
-  QString old_site = index->text(0);
-  pdlg.setSiteName( old_site );
-  pdlg.setIdentity( index->text(1) );
-
-  if ( pdlg.exec() == QDialog::Accepted )
-  {
-    QString new_site = pdlg.siteName();
-    if ( new_site == old_site ||
-         !handleDuplicate( new_site, pdlg.identity(), pdlg.alias() ) )
-    {
-      index->setText( 0, new_site );
-      index->setText( 1, pdlg.identity() );
-      index->setText( 2, pdlg.alias() );
-      configChanged();
-    }
-  }
-}
-
-void UserAgentDlg::deletePressed()
-{
-  Q3ListViewItem* item;
-  Q3ListViewItem* nextItem = 0;
-
-  item = dlg->lvDomainPolicyList->firstChild ();
-
-  while (item != 0L)
-  {
-    if (dlg->lvDomainPolicyList->isSelected (item))
-    {
-      nextItem = item->itemBelow();
-      if ( !nextItem )
-        nextItem = item->itemAbove();
-
-      delete item;
-      item = nextItem;
-    }
-    else
-    {
-      item = item->itemBelow();
-    }
-  }
-
-  if (nextItem)
-    dlg->lvDomainPolicyList->setSelected (nextItem, true);
-
-  updateButtons();
-  configChanged();
-}
-
-void UserAgentDlg::deleteAllPressed()
-{
-  dlg->lvDomainPolicyList->clear();
-  updateButtons();
-  configChanged();
-}
-
-void UserAgentDlg::configChanged()
-{
-  emit changed ( true );
-}
-
-void UserAgentDlg::changeDefaultUAModifiers( int )
-{
-  m_ua_keys = ":"; // Make sure it's not empty
-
-  if ( dlg->cbOS->isChecked() )
-     m_ua_keys += 'o';
-
-  if ( dlg->cbOSVersion->isChecked() )
-     m_ua_keys += 'v';
-
-  if ( dlg->cbPlatform->isChecked() )
-     m_ua_keys += 'p';
-
-  if ( dlg->cbProcessorType->isChecked() )
-     m_ua_keys += 'm';
-
-  if ( dlg->cbLanguage->isChecked() )
-     m_ua_keys += 'l';
-
-  dlg->cbOSVersion->setEnabled(m_ua_keys.contains('o'));
-
-  QString modVal = KProtocolManager::defaultUserAgent( m_ua_keys );
-  if ( dlg->leDefaultId->text() != modVal )
-  {
-    dlg->leDefaultId->setText(modVal);
-    configChanged();
-  }
-}
-
-void UserAgentDlg::selectionChanged ()
-{
-  Q3ListViewItem* item;
-
-  d_itemsSelected = 0;
-  item = dlg->lvDomainPolicyList->firstChild ();
-
-  while (item != 0L)
-  {
-    if (dlg->lvDomainPolicyList->isSelected (item))
-      d_itemsSelected++;
-    item = item->nextSibling ();
-  }
-
-  updateButtons ();
+  configChanged( false );
 }
 
 QString UserAgentDlg::quickHelp() const

@@ -16,44 +16,22 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#ifndef UAGENTPROVIDERDLG_H
-#define UAGENTPROVIDERDLG_H
+#ifndef USERAGENTCONFIGDLG_H
+#define USERAGENTCONFIGDLG_H
 
-
-#include <kdialog.h>
-#include <klineedit.h>
+#include <QtGui/QDialog>
 #include "ui_uagentproviderdlg.h"
 
-class FakeUASProvider;
+class UserAgentInfo;
 
-class UAProviderDlgUI : public QWidget, public Ui::UAProviderDlgUI
-{
-public:
-  UAProviderDlgUI( QWidget *parent ) : QWidget( parent ) {
-    setupUi( this );
-  }
-};
-
-
-class UALineEdit : public KLineEdit
+class UserAgentConfigDlg : public QDialog
 {
   Q_OBJECT
 
 public:
-  UALineEdit( QWidget *parent );
-
-protected:
-  virtual void keyPressEvent( QKeyEvent * );
-};
-
-class UAProviderDlg : public KDialog
-{
-  Q_OBJECT
-
-public:
-  explicit UAProviderDlg( const QString& caption, QWidget *parent = 0,
-                 FakeUASProvider* provider = 0 );
-  ~UAProviderDlg();
+  explicit UserAgentConfigDlg( const QString& caption, UserAgentInfo* info,
+                          QWidget *parent = 0, Qt::WindowFlags f = 0 );
+  ~UserAgentConfigDlg();
 
   void setSiteName( const QString& );
   void setIdentity( const QString& );
@@ -63,15 +41,15 @@ public:
   QString alias();
 
 protected Q_SLOTS:
-  void slotActivated( const QString& );
-  void slotTextChanged( const QString& );
+  void on_siteLineEdit_textChanged( const QString& );
+  void on_aliasComboBox_activated( const QString& );
 
 protected:
   void init();
 
 private:
-  FakeUASProvider* m_provider;
-  UAProviderDlgUI* dlg;
+  UserAgentInfo* m_userAgentInfo;
+  Ui::UserAgentConfigDlg ui;
 };
 
 #endif // UAGENTPROVIDERDLG_H

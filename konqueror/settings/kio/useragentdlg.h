@@ -29,17 +29,8 @@
 #include "ui_useragentdlg.h"
 
 class KConfig;
-class FakeUASProvider;
-
-class UserAgentDlgUI : public QWidget, public Ui::UserAgentDlgUI
-{
-public:
-  UserAgentDlgUI( QWidget *parent ) : QWidget( parent ) {
-    setupUi( this );
-  }
-};
-
-
+class UserAgentInfo;
+class QTreeWidgetItem;
 
 class UserAgentDlg : public KCModule
 {
@@ -56,20 +47,28 @@ public:
 
 private Q_SLOTS:
   void updateButtons();
-  void selectionChanged();
 
-  void addPressed();
-  void changePressed();
-  void deletePressed();
-  void deleteAllPressed();
+  void on_newButton_clicked();
+  void on_changeButton_clicked();
+  void on_deleteButton_clicked();
+  void on_deleteAllButton_clicked();
 
-  void configChanged();
-  void changeDefaultUAModifiers( int );
+  void on_sendUACheckBox_clicked();
+  void on_osNameCheckBox_clicked();
+  void on_osVersionCheckBox_clicked();
+  void on_platformCheckBox_clicked();
+  void on_processorTypeCheckBox_clicked();
+  void on_languageCheckBox_clicked();
+  void on_sitePolicyTreeWidget_itemSelectionChanged();
+  void on_sitePolicyTreeWidget_itemActivated(QTreeWidgetItem*, int);
 
 private:
+  void changeDefaultUAModifiers();
+  void configChanged(bool enable = true);
   bool handleDuplicate( const QString&, const QString&, const QString& );
 
-  enum {
+  enum
+  {
     SHOW_OS = 0,
     SHOW_OS_VERSION,
     SHOW_PLATFORM,
@@ -81,13 +80,11 @@ private:
   QString m_ua_keys;
 
   // Fake user-agent modifiers...
-  FakeUASProvider* m_provider;
-
-  //
-  int d_itemsSelected;
-
+  UserAgentInfo* m_userAgentInfo;
   KConfig *m_config;
-  UserAgentDlgUI* dlg;
+
+  // Interface...
+  Ui::UserAgentUI ui;
 };
 
 #endif
