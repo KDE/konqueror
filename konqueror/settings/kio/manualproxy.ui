@@ -1,6 +1,14 @@
 <ui version="4.0" >
  <class>ManualProxyDlgUI</class>
  <widget class="QWidget" name="ManualProxyDlgUI" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>488</width>
+    <height>390</height>
+   </rect>
+  </property>
   <layout class="QVBoxLayout" >
    <item>
     <widget class="QGroupBox" name="gbServers" >
