@@ -164,7 +164,7 @@ void KCMFilter::updateButton()
 
 void KCMFilter::importFilters()
 {
-    QString inFile = KFileDialog::getOpenFileName();
+    QString inFile = KFileDialog::getOpenFileName(KUrl(), QString(), this);
     if (inFile.length() > 0)
     {
         QFile f(inFile);
@@ -215,7 +215,7 @@ void KCMFilter::importFilters()
 
 void KCMFilter::exportFilters()
 {
-  QString outFile = KFileDialog::getSaveFileName();
+  QString outFile = KFileDialog::getSaveFileName(KUrl(), QString(), this);
   if (outFile.length() > 0)
   {
     QFile f(outFile);

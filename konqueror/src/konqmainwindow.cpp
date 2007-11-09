@@ -1891,7 +1891,7 @@ void KonqMainWindow::slotGoHistory()
 
 void KonqMainWindow::slotConfigureExtensions()
 {
-    KonqExtensionManager extensionManager(0, this, m_currentView ? m_currentView->part() : 0);
+    KonqExtensionManager extensionManager(this, this, m_currentView ? m_currentView->part() : 0);
     extensionManager.exec();
 }
 
@@ -1959,7 +1959,7 @@ void KonqMainWindow::slotConfigureToolbars()
         KConfigGroup cg = KGlobal::config()->group( "KonqMainWindow" );
         saveMainWindowSettings( cg );
     }
-    KEditToolBar dlg(factory());
+    KEditToolBar dlg(factory(), this);
     connect(&dlg,SIGNAL(newToolBarConfig()),this,SLOT(slotNewToolbarConfig()));
     connect(&dlg,SIGNAL(newToolBarConfig()),this,SLOT(initBookmarkBar()));
     dlg.exec();
