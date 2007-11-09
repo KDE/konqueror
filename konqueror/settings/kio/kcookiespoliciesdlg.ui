@@ -1,8 +1,16 @@
 <ui version="4.0" >
  <class>KCookiesPolicyDlgUI</class>
  <widget class="QWidget" name="KCookiesPolicyDlgUI" >
-  <layout class="QGridLayout" >
-   <item row="0" column="0" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>568</width>
+    <height>493</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" >
+   <item>
     <widget class="QCheckBox" name="cbEnableCookies" >
      <property name="whatsThis" >
       <string>&lt;qt>
@@ -15,7 +23,7 @@ Please note that disabling cookie support might make many web sites unbrowsable.
      </property>
     </widget>
    </item>
-   <item row="1" column="0" >
+   <item>
     <widget class="QGroupBox" name="bgPreferences" >
      <layout class="QVBoxLayout" >
       <item>
@@ -59,7 +67,7 @@ Treat all cookies as session cookies. Session cookies are small pieces of data t
      </layout>
     </widget>
    </item>
-   <item row="2" column="0" >
+   <item>
     <widget class="Q3ButtonGroup" name="bgDefault" >
      <property name="whatsThis" >
       <string>&lt;qt>
@@ -103,7 +111,7 @@ Determines how cookies received from a remote machine will be handled:
      </layout>
     </widget>
    </item>
-   <item row="3" column="0" >
+   <item>
     <widget class="QGroupBox" name="gbDomainSpecific" >
      <property name="whatsThis" >
       <string>&lt;qt>
@@ -114,67 +122,30 @@ To add a new policy, simply click on the &lt;b>Add...&lt;/b> button and supply t
       <string>Site Policy</string>
      </property>
      <layout class="QGridLayout" >
-      <item row="2" column="1" >
-       <spacer>
-        <property name="orientation" >
-         <enum>Qt::Vertical</enum>
+      <item row="0" column="0" >
+       <widget class="QLabel" name="textLabel1" >
+        <property name="text" >
+         <string>&amp;Search:</string>
         </property>
-        <property name="sizeType" >
-         <enum>QSizePolicy::Expanding</enum>
+        <property name="wordWrap" >
+         <bool>false</bool>
         </property>
-        <property name="sizeHint" >
-         <size>
-          <width>20</width>
-          <height>16</height>
-         </size>
+        <property name="buddy" >
+         <cstring>kListViewSearchLine</cstring>
         </property>
-       </spacer>
+       </widget>
       </item>
-      <item rowspan="2" row="0" column="1" >
-       <layout class="QVBoxLayout" >
-        <property name="leftMargin" >
-         <number>0</number>
+      <item row="0" column="1" >
+       <widget class="K3ListViewSearchLine" name="kListViewSearchLine" >
+        <property name="toolTip" >
+         <string>Search interactively for domains</string>
         </property>
-        <property name="topMargin" >
-         <number>0</number>
+        <property name="text" >
+         <string/>
         </property>
-        <property name="rightMargin" >
-         <number>0</number>
-        </property>
-        <property name="bottomMargin" >
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QPushButton" name="pbNew" >
-          <property name="text" >
-           <string>&amp;New...</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pbChange" >
-          <property name="text" >
-           <string>Chan&amp;ge...</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pbDelete" >
-          <property name="text" >
-           <string>D&amp;elete</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pbDeleteAll" >
-          <property name="text" >
-           <string>Delete A&amp;ll</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       </widget>
       </item>
-      <item rowspan="2" row="1" column="0" >
+      <item row="1" column="0" colspan="2" >
        <widget class="K3ListView" name="lvDomainPolicy" >
         <property name="whatsThis" >
          <string>&lt;qt>
@@ -205,42 +176,51 @@ List of sites for which you have set a specific cookie policy. Specific policies
         </column>
        </widget>
       </item>
-      <item row="0" column="0" >
-       <layout class="QHBoxLayout" >
-        <property name="leftMargin" >
-         <number>0</number>
-        </property>
-        <property name="topMargin" >
-         <number>0</number>
-        </property>
-        <property name="rightMargin" >
-         <number>0</number>
-        </property>
-        <property name="bottomMargin" >
-         <number>0</number>
-        </property>
+      <item row="1" column="2" >
+       <layout class="QVBoxLayout" >
         <item>
-         <widget class="QLabel" name="textLabel1" >
+         <widget class="QPushButton" name="pbNew" >
           <property name="text" >
-           <string>&amp;Search:</string>
-          </property>
-          <property name="wordWrap" >
-           <bool>false</bool>
-          </property>
-          <property name="buddy" >
-           <cstring>kListViewSearchLine</cstring>
+           <string>&amp;New...</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="K3ListViewSearchLine" name="kListViewSearchLine" >
-          <property name="toolTip" >
-           <string>Search interactively for domains</string>
-          </property>
+         <widget class="QPushButton" name="pbChange" >
           <property name="text" >
-           <string/>
+           <string>Chan&amp;ge...</string>
           </property>
          </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pbDelete" >
+          <property name="text" >
+           <string>D&amp;elete</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pbDeleteAll" >
+          <property name="text" >
+           <string>Delete A&amp;ll</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer>
+          <property name="orientation" >
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType" >
+           <enum>QSizePolicy::Expanding</enum>
+          </property>
+          <property name="sizeHint" >
+           <size>
+            <width>81</width>
+            <height>16</height>
+           </size>
+          </property>
+         </spacer>
         </item>
        </layout>
       </item>
