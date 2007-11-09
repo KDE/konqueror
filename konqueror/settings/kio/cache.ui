@@ -1,16 +1,16 @@
 <ui version="4.0" >
- <class>CacheDlgUI</class>
- <widget class="QWidget" name="CacheDlgUI" >
+ <class>CacheConfigUI</class>
+ <widget class="QWidget" name="CacheConfigUI" >
   <property name="geometry" >
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>424</width>
-    <height>204</height>
+    <width>498</width>
+    <height>210</height>
    </rect>
   </property>
-  <layout class="QVBoxLayout" >
-   <item>
+  <layout class="QGridLayout" >
+   <item row="0" column="0" colspan="5" >
     <widget class="QCheckBox" name="cbUseCache" >
      <property name="whatsThis" >
       <string>Check this box if you want the web pages you visit to be stored on your hard disk for quicker access. The stored pages will only be updated as needed instead of on every visit to that site. This is especially useful if you have a slow connection to the Internet.</string>
@@ -20,115 +20,122 @@
      </property>
     </widget>
    </item>
-   <item>
-    <layout class="QHBoxLayout" >
-     <item>
-      <spacer>
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeType" >
-        <enum>QSizePolicy::Fixed</enum>
-       </property>
-       <property name="sizeHint" >
-        <size>
-         <width>16</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" >
-       <item>
-        <widget class="QGroupBox" name="bgCachePolicy" >
-         <property name="enabled" >
-          <bool>false</bool>
-         </property>
-         <property name="title" >
-          <string>Policy</string>
-         </property>
-         <layout class="QVBoxLayout" >
-          <item>
-           <widget class="QRadioButton" name="rbVerifyCache" >
-            <property name="whatsThis" >
-             <string>Verify whether the cached web page is valid before attempting to fetch the web page again.</string>
-            </property>
-            <property name="text" >
-             <string>&amp;Keep cache in sync</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QRadioButton" name="rbCacheIfPossible" >
-            <property name="whatsThis" >
-             <string>Always use documents from the cache when available. You can still use the reload button to synchronize the cache with the remote host.</string>
-            </property>
-            <property name="text" >
-             <string>Use cache whenever &amp;possible</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QRadioButton" name="rbOfflineMode" >
-            <property name="whatsThis" >
-             <string>Do not fetch web pages that are not already stored in the cache. Offline mode prevents you from viewing pages that you have not previously visited.</string>
-            </property>
-            <property name="text" >
-             <string>O&amp;ffline browsing mode</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" >
-         <item>
-          <widget class="QLabel" name="lbMaxCacheSize" >
-           <property name="enabled" >
-            <bool>false</bool>
-           </property>
-           <property name="text" >
-            <string>Disk cache &amp;size:</string>
-           </property>
-           <property name="buddy" >
-            <cstring>sbMaxCacheSize</cstring>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="KIntNumInput" name="sbMaxCacheSize" >
-           <property name="enabled" >
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pbClearCache" >
-           <property name="enabled" >
-            <bool>false</bool>
-           </property>
-           <property name="text" >
-            <string>C&amp;lear Cache</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </item>
-    </layout>
+   <item row="1" column="0" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeType" >
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>16</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
    </item>
-   <item>
+   <item row="1" column="1" colspan="4" >
+    <widget class="QGroupBox" name="bgCachePolicy" >
+     <property name="enabled" >
+      <bool>false</bool>
+     </property>
+     <property name="title" >
+      <string>Policy</string>
+     </property>
+     <layout class="QVBoxLayout" >
+      <item>
+       <widget class="QRadioButton" name="rbVerifyCache" >
+        <property name="whatsThis" >
+         <string>Verify whether the cached web page is valid before attempting to fetch the web page again.</string>
+        </property>
+        <property name="text" >
+         <string>&amp;Keep cache in sync</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="rbCacheIfPossible" >
+        <property name="whatsThis" >
+         <string>Always use documents from the cache when available. You can still use the reload button to synchronize the cache with the remote host.</string>
+        </property>
+        <property name="text" >
+         <string>Use cache whenever &amp;possible</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="rbOfflineMode" >
+        <property name="whatsThis" >
+         <string>Do not fetch web pages that are not already stored in the cache. Offline mode prevents you from viewing pages that you have not previously visited.</string>
+        </property>
+        <property name="text" >
+         <string>O&amp;ffline browsing mode</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="1" >
+    <widget class="QLabel" name="lbMaxCacheSize" >
+     <property name="enabled" >
+      <bool>false</bool>
+     </property>
+     <property name="text" >
+      <string>Disk cache &amp;size:</string>
+     </property>
+     <property name="buddy" >
+      <cstring>sbMaxCacheSize</cstring>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2" >
+    <widget class="KIntNumInput" name="sbMaxCacheSize" >
+     <property name="enabled" >
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="3" >
+    <widget class="QPushButton" name="clearCacheButton" >
+     <property name="enabled" >
+      <bool>false</bool>
+     </property>
+     <property name="text" >
+      <string>C&amp;lear Cache</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="4" >
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeType" >
+      <enum>QSizePolicy::MinimumExpanding</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>127</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="3" column="0" colspan="5" >
     <spacer>
      <property name="orientation" >
       <enum>Qt::Vertical</enum>
      </property>
+     <property name="sizeType" >
+      <enum>QSizePolicy::MinimumExpanding</enum>
+     </property>
      <property name="sizeHint" >
       <size>
-       <width>20</width>
-       <height>10</height>
+       <width>477</width>
+       <height>16</height>
       </size>
      </property>
     </spacer>
@@ -157,8 +164,8 @@
      <y>20</y>
     </hint>
     <hint type="destinationlabel" >
-     <x>20</x>
-     <y>20</y>
+     <x>60</x>
+     <y>60</y>
     </hint>
    </hints>
   </connection>
@@ -173,8 +180,8 @@
      <y>20</y>
     </hint>
     <hint type="destinationlabel" >
-     <x>20</x>
-     <y>20</y>
+     <x>60</x>
+     <y>181</y>
     </hint>
    </hints>
   </connection>
@@ -189,15 +196,15 @@
      <y>20</y>
     </hint>
     <hint type="destinationlabel" >
-     <x>20</x>
-     <y>20</y>
+     <x>164</x>
+     <y>181</y>
     </hint>
    </hints>
   </connection>
   <connection>
    <sender>cbUseCache</sender>
    <signal>toggled(bool)</signal>
-   <receiver>pbClearCache</receiver>
+   <receiver>clearCacheButton</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel" >
@@ -205,8 +212,8 @@
      <y>20</y>
     </hint>
     <hint type="destinationlabel" >
-     <x>20</x>
-     <y>20</y>
+     <x>284</x>
+     <y>181</y>
     </hint>
    </hints>
   </connection>

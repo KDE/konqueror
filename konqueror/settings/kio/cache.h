@@ -19,34 +19,34 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef CACHE_H
-#define CACHE_H
+#ifndef CACHECONFIGMODULE_H
+#define CACHECONFIGMODULE_H
 
+// KDE
 #include <kcmodule.h>
 
-namespace Ui {
-class CacheDlgUI;
-}
+// Local
+#include "ui_cache.h"
 
-class KCacheConfigDialog : public KCModule
+class CacheConfigModule : public KCModule
 {
   Q_OBJECT
 
 public:
-  KCacheConfigDialog(QWidget *parent, const QVariantList &args);
-  ~KCacheConfigDialog();
+  CacheConfigModule(QWidget *parent, const QVariantList &args);
+  ~CacheConfigModule();
 
   virtual void load();
   virtual void save();
   virtual void defaults();
   QString quickHelp() const;
 
-protected Q_SLOTS:
+private Q_SLOTS:
   void configChanged();
-  void slotClearCache();
+  void on_clearCacheButton_clicked();
 
 private:
-  Ui::CacheDlgUI* m_dlg;
+  Ui::CacheConfigUI ui;
 };
 
 #endif // CACHE_H
