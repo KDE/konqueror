@@ -1,28 +1,28 @@
 
-add_subdirectory( uasproviders ) 
+add_subdirectory( uasproviders )
 
 
 
 ########### next target ###############
 
-set(kcm_kio_PART_SRCS 
-   policydlg.cpp 
-   kcookiesmain.cpp 
-   kcookiespolicies.cpp 
-   main.cpp 
-   smbrodlg.cpp 
-   useragentdlg.cpp 
-   kproxydlgbase.cpp 
-   kmanualproxydlg.cpp 
-   kenvvarproxydlg.cpp 
-   kproxydlg.cpp 
-   kcookiesmanagement.cpp 
-   fakeuaprovider.cpp 
-   uagentproviderdlg.cpp 
-   netpref.cpp 
-   cache.cpp 
-   ksaveioconfig.cpp 
-   socks.cpp )
+set(kcm_kio_PART_SRCS
+    policydlg.cpp
+    kcookiesmain.cpp
+    kcookiespolicies.cpp
+    main.cpp
+    smbrodlg.cpp
+    useragentdlg.cpp
+    kproxydlgbase.cpp
+    kmanualproxydlg.cpp
+    kenvvarproxydlg.cpp
+    kproxydlg.cpp
+    kcookiesmanagement.cpp
+    useragentinfo.cpp
+    uagentproviderdlg.cpp
+    netpref.cpp
+    cache.cpp
+    ksaveioconfig.cpp
+    socks.cpp)
 
 
 kde4_add_ui_files(kcm_kio_PART_SRCS cache.ui manualproxy.ui envvarproxy.ui policydlg.ui uagentproviderdlg.ui kcookiesmanagementdlg.ui useragentdlg.ui socksbase.ui kproxydlg.ui kcookiespoliciesdlg.ui kcookiesmanagementdlg.ui)
