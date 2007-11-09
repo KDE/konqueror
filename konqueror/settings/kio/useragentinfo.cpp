@@ -17,7 +17,7 @@
  */
 
 // Own
-#include "fakeuaprovider.h"
+#include "useragentinfo.h"
 
 // std
 #include <time.h>
@@ -32,12 +32,12 @@
 #define UA_PTOS(x) (*it)->property(x).toString()
 #define QFL(x) QLatin1String(x)
 
-FakeUASProvider::FakeUASProvider()
+UserAgentInfo::UserAgentInfo()
 {
    m_bIsDirty = true;
 }
 
-FakeUASProvider::StatusCode FakeUASProvider::createNewUAProvider( const QString& uaStr )
+UserAgentInfo::StatusCode UserAgentInfo::createNewUAProvider( const QString& uaStr )
 {
   QStringList split;
   int pos = (uaStr).indexOf("::");
@@ -71,13 +71,13 @@ FakeUASProvider::StatusCode FakeUASProvider::createNewUAProvider( const QString&
   return SUCCEEDED;
 }
 
-void FakeUASProvider::loadFromDesktopFiles()
+void UserAgentInfo::loadFromDesktopFiles()
 {
   m_providers.clear();
   m_providers = KServiceTypeTrader::self()->query("UserAgentStrings");
 }
 
-void FakeUASProvider::parseDescription()
+void UserAgentInfo::parseDescription()
 {
   QString tmp;
 
@@ -134,7 +134,7 @@ void FakeUASProvider::parseDescription()
   m_bIsDirty = false;
 }
 
-QString FakeUASProvider::aliasStr( const QString& name )
+QString UserAgentInfo::aliasStr( const QString& name )
 {
   int id = userAgentStringList().indexOf(name);
   if ( id == -1 )
@@ -143,7 +143,7 @@ QString FakeUASProvider::aliasStr( const QString& name )
     return m_lstAlias[id];
 }
 
-QString FakeUASProvider::agentStr( const QString& name )
+QString UserAgentInfo::agentStr( const QString& name )
 {
   int id = userAgentAliasList().indexOf(name);
   if ( id == -1 )
@@ -153,7 +153,7 @@ QString FakeUASProvider::agentStr( const QString& name )
 }
 
 
-QStringList FakeUASProvider::userAgentStringList()
+QStringList UserAgentInfo::userAgentStringList()
 {
   if ( m_bIsDirty )
   {
@@ -165,7 +165,7 @@ QStringList FakeUASProvider::userAgentStringList()
   return m_lstIdentity;
 }
 
-QStringList FakeUASProvider::userAgentAliasList ()
+QStringList UserAgentInfo::userAgentAliasList ()
 {
   if ( m_bIsDirty )
   {

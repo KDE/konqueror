@@ -24,7 +24,7 @@
 class QString;
 class QStringList;
 
-class FakeUASProvider
+class UserAgentInfo
 {
 public:
   enum StatusCode {
@@ -33,8 +33,8 @@ public:
     DUPLICATE_ENTRY
   };
 
-  FakeUASProvider();
-  ~FakeUASProvider(){}
+  UserAgentInfo();
+  ~UserAgentInfo(){}
 
   StatusCode createNewUAProvider( const QString& );
   QString aliasStr( const QString& );
