@@ -273,7 +273,7 @@ void KCMUserAccount::slotFaceButtonClicked()
   }
 
   ChFaceDlg* pDlg = new ChFaceDlg( KGlobal::dirs()->resourceDirs("data").last() +
-	"/kdm/pics/users/" );
+	"/kdm/pics/users/", this );
 
   if ( pDlg->exec() == QDialog::Accepted && !pDlg->getFaceImage().isNull() )
       changeFace( pDlg->getFaceImage() );
