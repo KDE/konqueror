@@ -2691,7 +2691,7 @@ void KonqMainWindow::slotRemoveView()
     if (prop.isValid() && prop.toBool())
       if ( KMessageBox::warningContinueCancel( this,
            i18n("This view contains changes that have not been submitted.\nClosing the view will discard these changes."),
-           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"view-remove"), KStandardGuiItem::cancel(), "discardchangesclose") != KMessageBox::Continue )
+           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"view-close"), KStandardGuiItem::cancel(), "discardchangesclose") != KMessageBox::Continue )
         return;
   }
 
@@ -3896,7 +3896,7 @@ void KonqMainWindow::initActions()
   connect(m_paBreakOffTab, SIGNAL(triggered(bool)), SLOT( slotBreakOffTab() ));
   m_paBreakOffTab->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_B);
   m_paRemoveView = actionCollection()->addAction("removeview");
-  m_paRemoveView->setIcon( KIcon("view-remove") );
+  m_paRemoveView->setIcon( KIcon("view-close") );
   m_paRemoveView->setText( i18n( "&Close Active View" ) );
   connect(m_paRemoveView, SIGNAL(triggered(bool)), SLOT( slotRemoveView() ));
   m_paRemoveView->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_R);
