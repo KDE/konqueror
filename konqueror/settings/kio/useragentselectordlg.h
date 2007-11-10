@@ -24,16 +24,16 @@
 
 // Forward declarations
 class UserAgentInfo;
-class UserAgentConfigWidget;
+class UserAgentSelectorWidget;
 
-class UserAgentConfigDlg : public KDialog
+class UserAgentSelectorDlg : public KDialog
 {
   Q_OBJECT
 
 public:
-  explicit UserAgentConfigDlg( const QString& caption, UserAgentInfo* info,
+  explicit UserAgentSelectorDlg( const QString& caption, UserAgentInfo* info,
                           QWidget *parent = 0, Qt::WindowFlags f = 0 );
-  ~UserAgentConfigDlg();
+  ~UserAgentSelectorDlg();
 
   void setSiteName( const QString& );
   void setIdentity( const QString& );
@@ -48,7 +48,7 @@ protected Q_SLOTS:
 
 private:
   UserAgentInfo* m_userAgentInfo;
-  UserAgentConfigWidget* m_widget;
+  UserAgentSelectorWidget* m_widget;
 };
 
 #endif // UAGENTPROVIDERDLG_H
