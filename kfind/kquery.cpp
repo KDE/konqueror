@@ -65,7 +65,7 @@ KQuery::~KQuery()
 void KQuery::kill()
 {
   if (job)
-     job->kill();
+     job->kill(KJob::EmitResult);
   if (processLocate->state() == QProcess::Running)
      processLocate->kill();
   while (!m_fileItems.isEmpty())
