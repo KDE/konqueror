@@ -311,7 +311,7 @@ QString KonqAboutPageFactory::tips()
     QString history_icon_path =
 	    iconloader->iconPath("history", KIconLoader::Small );
     QString openterm_icon_path =
-	    iconloader->iconPath("openterm", KIconLoader::Small );
+	    iconloader->iconPath("utilities-terminal", KIconLoader::Small );
     QString locationbar_erase_rtl_icon_path =
 	    iconloader->iconPath("edit-clear-locationbar-rtl", KIconLoader::Small );
     QString locationbar_erase_icon_path =

@@ -3721,7 +3721,7 @@ void KonqMainWindow::initActions()
   if (KAuthorized::authorizeKAction("shell_access"))
   {
       action = actionCollection()->addAction("open_terminal");
-      action->setIcon(KIcon("openterm"));
+      action->setIcon(KIcon("utilities-terminal"));
       action->setText(i18n( "Open &Terminal" ));
       connect(action, SIGNAL(triggered(bool)), SLOT( slotOpenTerminal() ));
       action->setShortcut(Qt::Key_F4);
