@@ -28,7 +28,7 @@
 // Local
 #include "ksaveioconfig.h"
 #include "useragentinfo.h"
-#include "useragentconfigdlg.h"
+#include "useragentselectordlg.h"
 
 // Qt
 #include <QtGui/QLayout>
@@ -74,7 +74,7 @@ void UserAgentDlg::on_sendUACheckBox_clicked()
 
 void UserAgentDlg::on_newButton_clicked()
 {
-  UserAgentConfigDlg pdlg (i18n("Add Identification"), m_userAgentInfo, this );
+  UserAgentSelectorDlg pdlg (i18n("Add Identification"), m_userAgentInfo, this );
 
   if ( pdlg.exec() == QDialog::Accepted )
   {
@@ -147,7 +147,7 @@ void UserAgentDlg::on_sitePolicyTreeWidget_itemActivated(QTreeWidgetItem* item, 
     // Store the current site name...
     const QString currentSiteName = item->text(0);
 
-    UserAgentConfigDlg pdlg ( i18n("Modify Identification"), m_userAgentInfo, this );
+    UserAgentSelectorDlg pdlg ( i18n("Modify Identification"), m_userAgentInfo, this );
     pdlg.setSiteName( currentSiteName );
     pdlg.setIdentity( item->text(1) );
 

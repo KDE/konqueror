@@ -18,14 +18,14 @@ set(kcm_kio_PART_SRCS
     kproxydlg.cpp
     kcookiesmanagement.cpp
     useragentinfo.cpp
-    useragentconfigdlg.cpp
+    useragentselectordlg.cpp
     netpref.cpp
     cache.cpp
     ksaveioconfig.cpp
     socks.cpp)
 
 
-kde4_add_ui_files(kcm_kio_PART_SRCS cache.ui manualproxy.ui envvarproxy.ui policydlg.ui useragentconfigdlg.ui kcookiesmanagementdlg.ui useragentdlg.ui socksbase.ui kproxydlg.ui kcookiespoliciesdlg.ui kcookiesmanagementdlg.ui)
+kde4_add_ui_files(kcm_kio_PART_SRCS cache.ui manualproxy.ui envvarproxy.ui policydlg.ui useragentselectordlg.ui kcookiesmanagementdlg.ui useragentdlg.ui socksbase.ui kproxydlg.ui kcookiespoliciesdlg.ui kcookiesmanagementdlg.ui)
 
 
 kde4_add_plugin(kcm_kio ${kcm_kio_PART_SRCS})

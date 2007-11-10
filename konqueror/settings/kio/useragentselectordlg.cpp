@@ -17,8 +17,8 @@
  */
 
 // Own
-#include "useragentconfigdlg.h"
-#include "ui_useragentconfigdlg.h"
+#include "useragentselectordlg.h"
+#include "ui_useragentselectordlg.h"
 
 // Local
 #include "useragentinfo.h"
@@ -40,10 +40,10 @@
 #include <kurllabel.h>
 
 
-class UserAgentConfigWidget : public QWidget, public Ui::UserAgentConfigDlgUI
+class UserAgentSelectorWidget : public QWidget, public Ui::UserAgentSelectorWidget
 {
 public:
-  UserAgentConfigWidget(QWidget * parent = 0, Qt::WindowFlags f = 0)
+  UserAgentSelectorWidget(QWidget * parent = 0, Qt::WindowFlags f = 0)
   :QWidget(parent, f)
   {
     setupUi(this);
@@ -80,16 +80,18 @@ public:
 };
 
 
-UserAgentConfigDlg::UserAgentConfigDlg( const QString& caption, UserAgentInfo* info,
+UserAgentSelectorDlg::UserAgentSelectorDlg( const QString& caption, UserAgentInfo* info,
                                         QWidget *parent, Qt::WindowFlags f )
                    :KDialog(parent, f),
                     m_userAgentInfo(info)
 {
+  m_widget = new UserAgentSelectorWidget(this);
+  setMainWidget(m_widget);
+
   setModal( true );
   setWindowTitle ( caption );
-
-  m_widget = new UserAgentConfigWidget(this);
-  setMainWidget(m_widget);
+  setButtons( Ok|Cancel );
+  showButtonSeparator( true );
 
   if (!m_userAgentInfo)
   {
@@ -115,11 +117,11 @@ UserAgentConfigDlg::UserAgentConfigDlg( const QString& caption, UserAgentInfo* i
   enableButtonOk(false);
 }
 
-UserAgentConfigDlg::~UserAgentConfigDlg()
+UserAgentSelectorDlg::~UserAgentSelectorDlg()
 {
 }
 
-void UserAgentConfigDlg::onAliasChanged( const QString& text )
+void UserAgentSelectorDlg::onAliasChanged( const QString& text )
 {
   if ( text.isEmpty() )
     m_widget->identityLineEdit->setText( QString() );
@@ -130,18 +132,18 @@ void UserAgentConfigDlg::onAliasChanged( const QString& text )
   enableButtonOk(enable);
 }
 
-void UserAgentConfigDlg::onHostNameChanged( const QString& text )
+void UserAgentSelectorDlg::onHostNameChanged( const QString& text )
 {
   const bool enable = (!text.isEmpty() && !m_widget->aliasComboBox->currentText().isEmpty());
   enableButtonOk(enable);
 }
 
-void UserAgentConfigDlg::setSiteName( const QString& text )
+void UserAgentSelectorDlg::setSiteName( const QString& text )
 {
   m_widget->siteLineEdit->setText( text );
 }
 
-void UserAgentConfigDlg::setIdentity( const QString& text )
+void UserAgentSelectorDlg::setIdentity( const QString& text )
 {
   int id = m_widget->aliasComboBox->findText( text );
   if ( id != -1 )
@@ -151,22 +153,19 @@ void UserAgentConfigDlg::setIdentity( const QString& text )
     m_widget->aliasComboBox->setFocus();
 }
 
-QString UserAgentConfigDlg::siteName()
+QString UserAgentSelectorDlg::siteName()
 {
-  QString site_name = m_widget->siteLineEdit->text().toLower();
-  site_name = site_name.remove( "https://" );
-  site_name = site_name.remove( "http://" );
-  return site_name;
+  return m_widget->siteLineEdit->text().toLower();
 }
 
-QString UserAgentConfigDlg::identity()
+QString UserAgentSelectorDlg::identity()
 {
   return m_widget->aliasComboBox->currentText();
 }
 
-QString UserAgentConfigDlg::alias()
+QString UserAgentSelectorDlg::alias()
 {
   return m_widget->identityLineEdit->text();
 }
 
-#include "useragentconfigdlg.moc"
+#include "useragentselectordlg.moc"
