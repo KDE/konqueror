@@ -47,6 +47,12 @@ By default, only minimal identification information is sent to remote sites. The
      <layout class="QVBoxLayout" >
       <item>
        <widget class="QLabel" name="defaultIdLineEdit" >
+        <property name="font" >
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
         <property name="whatsThis" >
          <string>The browser identification text sent to the sites you visit. You can customize it using the options provided below.</string>
         </property>

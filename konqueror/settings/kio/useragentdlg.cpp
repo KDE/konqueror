@@ -28,7 +28,7 @@
 // Local
 #include "ksaveioconfig.h"
 #include "useragentinfo.h"
-#include "uagentproviderdlg.h"
+#include "useragentconfigdlg.h"
 
 // Qt
 #include <QtGui/QLayout>

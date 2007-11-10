@@ -19,12 +19,14 @@
 #ifndef USERAGENTCONFIGDLG_H
 #define USERAGENTCONFIGDLG_H
 
-#include <QtGui/QDialog>
-#include "ui_uagentproviderdlg.h"
+// KDE
+#include <kdialog.h>
 
+// Forward declarations
 class UserAgentInfo;
+class UserAgentConfigWidget;
 
-class UserAgentConfigDlg : public QDialog
+class UserAgentConfigDlg : public KDialog
 {
   Q_OBJECT
 
@@ -41,15 +43,12 @@ public:
   QString alias();
 
 protected Q_SLOTS:
-  void on_siteLineEdit_textChanged( const QString& );
-  void on_aliasComboBox_activated( const QString& );
-
-protected:
-  void init();
+  void onHostNameChanged( const QString& );
+  void onAliasChanged( const QString& );
 
 private:
   UserAgentInfo* m_userAgentInfo;
-  Ui::UserAgentConfigDlg ui;
+  UserAgentConfigWidget* m_widget;
 };
 
 #endif // UAGENTPROVIDERDLG_H
