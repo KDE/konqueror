@@ -2703,7 +2703,7 @@ void KonqMainWindow::slotRemoveTab()
 {
   if ( !m_currentView )
     return;
-  if (m_currentView && m_currentView->part() &&
+  if ( m_currentView->part() &&
       (m_currentView->part()->metaObject()->indexOfProperty("modified") != -1) ) {
     QVariant prop = m_currentView->part()->property("modified");
     if (prop.isValid() && prop.toBool())
