@@ -49,7 +49,7 @@ KManualProxyDlg::KManualProxyDlg( QWidget* parent, const char* name )
                                    i18n("Manual Proxy Configuration") )
 {
     mDlg = new ManualProxyDlgUI (this);
-
+    setMainWidget(mDlg);
     mDlg->pbCopyDown->setPixmap( BarIcon("go-down", KIconLoader::SizeSmall) );
     QSizePolicy sizePolicy( QSizePolicy::Fixed, QSizePolicy::Fixed,
                             mDlg->pbCopyDown->sizePolicy().hasHeightForWidth() );
