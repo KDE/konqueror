@@ -225,9 +225,8 @@ KMiscHTMLOptions::~KMiscHTMLOptions()
 
 void KMiscHTMLOptions::load()
 {
-    KConfigGroup khtmlrc(KSharedConfig::openConfig("khtmlrc", KConfig::NoGlobals),
-			 QByteArray(""));
-    KConfigGroup cg(m_pConfig, QByteArray(""));
+    KConfigGroup khtmlrc(KSharedConfig::openConfig("khtmlrc", KConfig::NoGlobals), "");
+    KConfigGroup cg(m_pConfig, "");
 #define SET_GROUP(x) cg = KConfigGroup(m_pConfig, x); khtmlrc = KConfigGroup(KSharedConfig::openConfig("khtmlrc", KConfig::NoGlobals),x)
 #define READ_BOOL(x,y) cg.readEntry(x, khtmlrc.readEntry(x, y))
 #define READ_ENTRY(x) cg.readEntry(x, khtmlrc.readEntry(x))
