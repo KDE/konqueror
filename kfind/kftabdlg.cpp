@@ -206,9 +206,9 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     sizeBox ->addItem( i18n("Equal To") );
 
     sizeUnitBox ->addItem( i18n("Bytes") );
-    sizeUnitBox ->addItem( i18n("KB") );
-    sizeUnitBox ->addItem( i18n("MB") );
-    sizeUnitBox ->addItem( i18n("GB") );
+    sizeUnitBox ->addItem( i18n("KiB") );
+    sizeUnitBox ->addItem( i18n("MiB") );
+    sizeUnitBox ->addItem( i18n("GiB") );
     sizeUnitBox ->setCurrentIndex(1);
 
     int tmp = sizeEdit->fontMetrics().width(" 000000000 ");
@@ -641,14 +641,14 @@ void KfindTabWidget::setQuery(KQuery *query)
          sizeunit = 1; //one byte
 			break;
      case 2:
-         sizeunit = 1048576; //1M
+         sizeunit = 1048576; //1Mi
 			break;
      case 3:
-         sizeunit = 1073741824; //1G
+         sizeunit = 1073741824; //1Gi
 			break;
      case 1: // fall to default case
      default:
-         sizeunit=1024; //1k
+         sizeunit=1024; //1Ki
             break;
   }
   size = sizeEdit->value() * sizeunit;
