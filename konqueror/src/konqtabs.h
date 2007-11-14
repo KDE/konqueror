@@ -127,6 +127,8 @@ private:
   bool m_alwaysTabBar;
   bool m_MouseMiddleClickClosesTab;
   int m_closeOtherTabsId;
+
+  friend class KonqTabsStyle;
 };
 
 #endif // KONQTABS_H
