@@ -40,6 +40,7 @@
 #include "konqmisc.h"
 #include "konqsettingsxt.h"
 #include "konqframevisitor.h"
+#include "konqproxystyle.h"
 
 #include <kacceleratormanager.h>
 #include <konqpixmapprovider.h>
@@ -56,6 +57,78 @@
 
 //###################################################################
 
+class KonqTabsStyle : public KonqProxyStyle
+{
+public:
+  KonqTabsStyle(QWidget *parent) : KonqProxyStyle(parent) {}
+ 
+  void drawPrimitive(PrimitiveElement element, const QStyleOption *option, QPainter *painter, const QWidget *widget) const;
+  QRect subElementRect(SubElement element, const QStyleOption *option, const QWidget *widget) const;
+};
+
+void KonqTabsStyle::drawPrimitive(PrimitiveElement element, const QStyleOption *option,
+                                  QPainter *painter, const QWidget *widget) const
+{
+  if (element == PE_FrameTabWidget)
+  {
+    const KonqFrameTabs *tw = static_cast<const KonqFrameTabs*>(widget);
+    const QTabBar *tb = tw->tabBar();
+
+    QStyleOptionTabV2 tab;
+    tab.initFrom(tb);
+    tab.shape = tb->shape();
+    int overlap = style()->pixelMetric(PM_TabBarBaseOverlap, &tab, tb);
+
+    if (overlap <= 0 || tw->isTabBarHidden())
+      return;
+
+    QStyleOptionTabBarBase opt;
+    opt.initFrom(tb);
+
+    opt.selectedTabRect = tb->tabRect(tb->currentIndex());
+    opt.selectedTabRect = QRect(tb->mapToParent(opt.selectedTabRect.topLeft()), opt.selectedTabRect.size());
+    opt.tabBarRect = QRect(tb->mapToParent(tb->rect().topLeft()), tb->size());
+
+    if (tw->tabPosition() == QTabWidget::North)
+      opt.rect = QRect(option->rect.left(), option->rect.top(), option->rect.width(), overlap);
+    else
+      opt.rect = QRect(option->rect.left(), option->rect.bottom() - overlap - 1, option->rect.width(), overlap);
+
+    style()->drawPrimitive(PE_FrameTabBarBase, &opt, painter, tb);
+    return;
+  }
+
+  KonqProxyStyle::drawPrimitive(element, option, painter, widget);
+}
+
+QRect KonqTabsStyle::subElementRect(SubElement element, const QStyleOption *option, const QWidget *widget) const
+{
+  if (element == SE_TabWidgetTabContents)
+  {
+    QRect rect = style()->subElementRect(SE_TabWidgetTabPane, option, widget);
+
+    const KonqFrameTabs *tw = static_cast<const KonqFrameTabs*>(widget);
+    const QTabBar *tb = tw->tabBar();
+
+    QStyleOptionTabV2 tab;
+    tab.initFrom(tb);
+    tab.shape = tb->shape();
+    int overlap = style()->pixelMetric(PM_TabBarBaseOverlap, &tab, tw->tabBar());
+
+    if (overlap <= 0 || tw->isTabBarHidden())
+      return rect;
+
+    return tw->tabPosition() == QTabWidget::North ?
+        rect.adjusted(0, overlap, 0, 0) : rect.adjusted(0, 0, 0, -overlap);
+  }
+
+  return KonqProxyStyle::subElementRect(element, option, widget);
+}
+
+
+//###################################################################
+
+
 KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentContainer,
                              KonqViewManager* viewManager)
   : KTabWidget(parent),
@@ -64,8 +137,18 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
     m_rightWidget(0), m_leftWidget(0), m_alwaysTabBar(false),
     m_closeOtherTabsId(0)
 {
+  // Set an object name so the widget style can identify this widget.
+  setObjectName("kde_konq_tabwidget");
+
   KAcceleratorManager::setNoAccel(this);
-  setStyleSheet("QTabWidget::pane { border: none; }");
+
+  // Set the widget style to a forwarding proxy style that removes the tabwidget frame,
+  // and draws a tabbar base underneath the tabbar.
+  setStyle(new KonqTabsStyle(this));
+
+  // The base will be drawn on the frame instead of on the tabbar, so it extends across
+  // the whole widget.
+  tabBar()->setDrawBase(false);
 
   tabBar()->setWhatsThis(i18n( "This bar contains the list of currently open tabs. Click on a tab to make it "
 			  "active. The option to show a close button instead of the website icon in the left "
