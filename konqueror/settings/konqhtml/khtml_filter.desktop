@@ -1,9 +1,8 @@
 [Desktop Entry]
-Encoding=UTF-8
 Type=Service
-ServiceTypes=KCModule
+X-KDE-ServiceTypes=KCModule
 
-DocPath=kcontrol/khtml/index.html#khtml-adblock
+X-DocPath=kcontrol/khtml/index.html#khtml-adblock
 Icon=preferences-web-browser-adblock
 Exec=kcmshell4 khtml_filter
 
