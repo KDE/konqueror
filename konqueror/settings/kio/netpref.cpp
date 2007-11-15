@@ -27,8 +27,6 @@ KIOPreferences::KIOPreferences(QWidget *parent, const QVariantList &)
                :KCModule(KioConfigFactory::componentData(), parent)
 {
     QVBoxLayout* mainLayout = new QVBoxLayout( this );
-    mainLayout->setMargin( 0 );
-    mainLayout->setSpacing( KDialog::spacingHint() );
     gb_Timeout = new QGroupBox( i18n("Timeout Values"), this );
     gb_Timeout->setWhatsThis( i18n("Here you can set timeout values. "
                                    "You might want to tweak them if your "
@@ -36,46 +34,51 @@ KIOPreferences::KIOPreferences(QWidget *parent, const QVariantList &)
                                    "allowed value is %1 seconds.", MAX_TIMEOUT_VALUE));
     mainLayout->addWidget( gb_Timeout );
 
-    sb_socketRead = new KIntNumInput( gb_Timeout);
+    sb_socketRead = new KIntNumInput( this );
     sb_socketRead->setSuffix( i18n( " sec" ) );
     sb_socketRead->setLabel( i18n( "Soc&ket read:" ), Qt::AlignVCenter);
+    mainLayout->addWidget( sb_socketRead );
     connect(sb_socketRead, SIGNAL(valueChanged(int)), SLOT(configChanged()));
 
-    sb_proxyConnect = new KIntNumInput( gb_Timeout );
+    sb_proxyConnect = new KIntNumInput( this );
     sb_proxyConnect->setSuffix( i18n( " sec" ) );
     sb_proxyConnect->setLabel( i18n( "Pro&xy connect:" ), Qt::AlignVCenter);
+    mainLayout->addWidget( sb_proxyConnect );
     connect(sb_proxyConnect, SIGNAL(valueChanged(int)), SLOT(configChanged()));
 
-    sb_serverConnect = new KIntNumInput( gb_Timeout );
+    sb_serverConnect = new KIntNumInput( this );
     sb_serverConnect->setSuffix( i18n( " sec" ) );
     sb_serverConnect->setLabel( i18n("Server co&nnect:"), Qt::AlignVCenter);
+    mainLayout->addWidget( sb_serverConnect );
     connect(sb_serverConnect, SIGNAL(valueChanged(int)), SLOT(configChanged()));
 
-    sb_serverResponse = new KIntNumInput( gb_Timeout );
+    sb_serverResponse = new KIntNumInput( this );
     sb_serverResponse->setSuffix( i18n( " sec" ) );
     sb_serverResponse->setLabel( i18n("&Server response:"), Qt::AlignVCenter);
+    mainLayout->addWidget( sb_serverResponse );
     connect(sb_serverResponse, SIGNAL(valueChanged(int)), SLOT(configChanged()));
 
     gb_Ftp = new QGroupBox( i18n( "FTP Options" ), this );
-    cb_ftpEnablePasv = new QCheckBox( i18n( "Enable passive &mode (PASV)" ), gb_Ftp );
+    mainLayout->addWidget( gb_Ftp );
+
+    cb_ftpEnablePasv = new QCheckBox( i18n( "Enable passive &mode (PASV)" ), this );
     cb_ftpEnablePasv->setWhatsThis( i18n("Enables FTP's \"passive\" mode. "
                                          "This is required to allow FTP to "
                                          "work from behind firewalls.") );
-    cb_ftpMarkPartial = new QCheckBox( i18n( "Mark &partially uploaded files" ), gb_Ftp );
+    connect(cb_ftpEnablePasv, SIGNAL(toggled(bool)), SLOT(configChanged()));
+    mainLayout->addWidget( cb_ftpEnablePasv );
+
+    cb_ftpMarkPartial = new QCheckBox( i18n( "Mark &partially uploaded files" ), this );
     cb_ftpMarkPartial->setWhatsThis( i18n( "<p>Marks partially uploaded FTP "
                                            "files.</p><p>When this option is "
                                            "enabled, partially uploaded files "
                                            "will have a \".part\" extension. "
                                            "This extension will be removed "
                                            "once the transfer is complete.</p>") );
-
-    mainLayout->addWidget( gb_Ftp );
-
-    connect(cb_ftpEnablePasv, SIGNAL(toggled(bool)), SLOT(configChanged()));
     connect(cb_ftpMarkPartial, SIGNAL(toggled(bool)), SLOT(configChanged()));
+    mainLayout->addWidget( cb_ftpMarkPartial );
 
-    mainLayout->addStretch();
-
+    mainLayout->addStretch( 1 );
     load();
 }
 
@@ -98,8 +101,8 @@ void KIOPreferences::load()
   sb_proxyConnect->setValue( proto.proxyConnectTimeout() );
 
   KConfig config( "kio_ftprc", KConfig::NoGlobals );
-  cb_ftpEnablePasv->setChecked( !config.group("").readEntry( "DisablePassiveMode", false) );
-  cb_ftpMarkPartial->setChecked( config.group("").readEntry( "MarkPartial", true) );
+  cb_ftpEnablePasv->setChecked( !config.group("").readEntry( "DisablePassiveMode", false ) );
+  cb_ftpMarkPartial->setChecked( config.group("").readEntry( "MarkPartial", true ) );
   emit changed( false );
 }
 
@@ -115,7 +118,7 @@ void KIOPreferences::save()
   config.group("").writeEntry( "MarkPartial", cb_ftpMarkPartial->isChecked() );
   config.sync();
 
-  KSaveIOConfig::updateRunningIOSlaves (this);
+  KSaveIOConfig::updateRunningIOSlaves(this);
 
   emit changed( false );
 }
