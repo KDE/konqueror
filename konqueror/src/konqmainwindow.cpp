@@ -3998,9 +3998,6 @@ void KonqMainWindow::initActions()
   connect(m_paStop, SIGNAL(triggered(bool)), SLOT( slotStop() ));
   m_paStop->setShortcut(Qt::Key_Escape);
 
-  m_paRename = actionCollection()->addAction( "rename" );
-  m_paRename->setText( i18n( "&Rename" ) );
-  m_paRename->setShortcut(Qt::Key_F2);
   m_paTrash = actionCollection()->addAction("trash");
   m_paTrash->setIcon( KIcon("user-trash") );
   m_paTrash->setText( i18n( "&Move to Trash" ) );
@@ -4752,7 +4749,6 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
   popupMenuCollection.addAction( "copy", m_paCopy );
   popupMenuCollection.addAction( "paste", m_paPaste );
   popupMenuCollection.addAction( "trash", m_paTrash );
-  popupMenuCollection.addAction( "rename", m_paRename );
   popupMenuCollection.addAction( "del", m_paDelete );
 
   // The pasteto action is used when clicking on a dir, to paste into it.
