@@ -17,14 +17,14 @@
     Boston, MA 02110-1301, USA.
 */
 
-#ifndef KONQUNDOMANAGERTEST_H
-#define KONQUNDOMANAGERTEST_H
+#ifndef KONQFILEUNDOMANAGERTEST_H
+#define KONQFILEUNDOMANAGERTEST_H
 
 #include <QObject>
 #include <QEventLoop>
 class TestUiInterface;
 
-class KonqUndoManagerTest : public QObject
+class KonqFileUndoManagerTest : public QObject
 {
     Q_OBJECT
 private slots:

@@ -15,7 +15,7 @@ set(konq_LIB_SRCS
    konq_menuactions.cpp     # used by dolphin, KonqPopupMenu
    konq_operations.cpp
    konq_events.cpp
-   konq_undo.cc
+   konq_fileundomanager.cpp
    konq_historymgr.cc       # used by sidebar/trees/history_module and konqueror
    konq_historyentry.cpp
    konq_filetip.cc          # unused right now, but should be used by dolphin_part in the future.
@@ -24,7 +24,7 @@ set(konq_LIB_SRCS
 )
 
 qt4_add_dbus_adaptor( konq_LIB_SRCS org.kde.libkonq.KonqHistoryManager.xml konq_historymgr.h KonqHistoryManager )
-qt4_add_dbus_adaptor( konq_LIB_SRCS org.kde.libkonq.UndoManager.xml konq_undo.h KonqUndoManager) 
+qt4_add_dbus_adaptor( konq_LIB_SRCS org.kde.libkonq.FileUndoManager.xml konq_fileundomanager.h KonqFileUndoManager) 
 
 kde4_add_library(konq SHARED ${konq_LIB_SRCS})
 
@@ -51,7 +51,7 @@ install( FILES
  konq_operations.h
  libkonq_export.h
  konq_events.h
- konq_undo.h
+ konq_fileundomanager.h
  konq_historymgr.h
  konq_historyentry.h
  konq_filetip.h
@@ -60,5 +60,5 @@ DESTINATION ${INCLUDE_INSTALL_DIR}
 )
 install( FILES konqpopupmenuplugin.desktop  DESTINATION  ${SERVICETYPES_INSTALL_DIR} )
 
-install( FILES org.kde.libkonq.KonqHistoryManager.xml org.kde.libkonq.UndoManager.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR} )
+install( FILES org.kde.libkonq.KonqHistoryManager.xml org.kde.libkonq.FileUndoManager.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR} )
 

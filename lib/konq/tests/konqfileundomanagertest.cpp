@@ -19,8 +19,8 @@
 
 #include <qtest_kde.h>
 
-#include "konqundomanagertest.h"
-#include <konq_undo.h>
+#include "konqfileundomanagertest.h"
+#include <konq_fileundomanager.h>
 
 #include <kio/copyjob.h>
 #include <kio/deletejob.h>
@@ -37,9 +37,9 @@
 #include <time.h>
 #include <sys/time.h>
 
-#include "konqundomanagertest.moc"
+#include "konqfileundomanagertest.moc"
 
-QTEST_KDEMAIN( KonqUndoManagerTest, NoGUI )
+QTEST_KDEMAIN( KonqFileUndoManagerTest, NoGUI )
 
 static QString homeTmpDir() { return QFile::decodeName( getenv( "KDEHOME" ) ) + "/jobtest/"; }
 static QString destDir() { return homeTmpDir() + "destdir/"; }
@@ -119,10 +119,10 @@ static void createTestDirectory( const QString& path )
     checkTestDirectory( path );
 }
 
-class TestUiInterface : public KonqUndoManager::UiInterface
+class TestUiInterface : public KonqFileUndoManager::UiInterface
 {
 public:
-    TestUiInterface() : KonqUndoManager::UiInterface(0), m_nextReplyToConfirmDeletion(true) {
+    TestUiInterface() : KonqFileUndoManager::UiInterface(0), m_nextReplyToConfirmDeletion(true) {
         setShowProgressInfo( false );
     }
     virtual void jobError( KIO::Job* job ) {
@@ -154,7 +154,7 @@ private:
     KUrl::List m_files;
 };
 
-void KonqUndoManagerTest::initTestCase()
+void KonqFileUndoManagerTest::initTestCase()
 {
     qDebug( "initTestCase" );
 
@@ -180,29 +180,29 @@ void KonqUndoManagerTest::initTestCase()
     QDir().mkdir( destDir() );
     QVERIFY( QFileInfo( destDir() ).isDir() );
 
-    QVERIFY( !KonqUndoManager::self()->undoAvailable() );
-    m_uiInterface = new TestUiInterface; // owned by KonqUndoManager
-    KonqUndoManager::self()->setUiInterface( m_uiInterface );
+    QVERIFY( !KonqFileUndoManager::self()->undoAvailable() );
+    m_uiInterface = new TestUiInterface; // owned by KonqFileUndoManager
+    KonqFileUndoManager::self()->setUiInterface( m_uiInterface );
 }
 
-void KonqUndoManagerTest::cleanupTestCase()
+void KonqFileUndoManagerTest::cleanupTestCase()
 {
     KIO::Job* job = KIO::del( KUrl::fromPath( homeTmpDir() ), KIO::HideProgressInfo );
     KIO::NetAccess::synchronousRun( job, 0 );
 }
 
-void KonqUndoManagerTest::doUndo()
+void KonqFileUndoManagerTest::doUndo()
 {
     QEventLoop eventLoop;
-    bool ok = connect( KonqUndoManager::self(), SIGNAL( undoJobFinished() ),
+    bool ok = connect( KonqFileUndoManager::self(), SIGNAL( undoJobFinished() ),
                   &eventLoop, SLOT( quit() ) );
     QVERIFY( ok );
 
-    KonqUndoManager::self()->undo();
+    KonqFileUndoManager::self()->undo();
     eventLoop.exec(QEventLoop::ExcludeUserInputEvents); // wait for undo job to finish
 }
 
-void KonqUndoManagerTest::testCopyFiles()
+void KonqFileUndoManagerTest::testCopyFiles()
 {
     kDebug() ;
     // Initially inspired from JobTest::copyFileToSamePartition()
@@ -211,11 +211,11 @@ void KonqUndoManagerTest::testCopyFiles()
     const KUrl d( destdir );
     KIO::CopyJob* job = KIO::copy( lst, d, KIO::HideProgressInfo );
     job->setUiDelegate( 0 );
-    KonqUndoManager::self()->recordJob( KonqUndoManager::COPY, lst, d, job );
+    KonqFileUndoManager::self()->recordJob( KonqFileUndoManager::COPY, lst, d, job );
 
-    QSignalSpy spyUndoAvailable( KonqUndoManager::self(), SIGNAL(undoAvailable(bool)) );
+    QSignalSpy spyUndoAvailable( KonqFileUndoManager::self(), SIGNAL(undoAvailable(bool)) );
     QVERIFY( spyUndoAvailable.isValid() );
-    QSignalSpy spyTextChanged( KonqUndoManager::self(), SIGNAL(undoTextChanged(QString)) );
+    QSignalSpy spyTextChanged( KonqFileUndoManager::self(), SIGNAL(undoTextChanged(QString)) );
     QVERIFY( spyTextChanged.isValid() );
 
     bool ok = KIO::NetAccess::synchronousRun( job, 0 );
@@ -229,13 +229,13 @@ void KonqUndoManagerTest::testCopyFiles()
 
     // might have to wait for dbus signal here... but this is currently disabled.
     //QTest::qWait( 20 );
-    QVERIFY( KonqUndoManager::self()->undoAvailable() );
+    QVERIFY( KonqFileUndoManager::self()->undoAvailable() );
     QCOMPARE( spyUndoAvailable.count(), 1 );
     QCOMPARE( spyTextChanged.count(), 1 );
     m_uiInterface->clear();
 
     m_uiInterface->setNextReplyToConfirmDeletion( false ); // act like the user didn't confirm
-    KonqUndoManager::self()->undo();
+    KonqFileUndoManager::self()->undo();
     QCOMPARE( m_uiInterface->files().count(), 1 ); // confirmDeletion was called
     QCOMPARE( m_uiInterface->files()[0].url(), KUrl(destFile()).url() );
     QVERIFY( QFile::exists( destFile() ) ); // nothing happened yet
@@ -244,7 +244,7 @@ void KonqUndoManagerTest::testCopyFiles()
     m_uiInterface->setNextReplyToConfirmDeletion( true );
     doUndo();
 
-    QVERIFY( !KonqUndoManager::self()->undoAvailable() );
+    QVERIFY( !KonqFileUndoManager::self()->undoAvailable() );
     QVERIFY( spyUndoAvailable.count() >= 2 ); // it's in fact 3, due to lock/unlock emitting it as well
     QCOMPARE( spyTextChanged.count(), 2 );
     QCOMPARE( m_uiInterface->files().count(), 1 ); // confirmDeletion was called
@@ -258,7 +258,7 @@ void KonqUndoManagerTest::testCopyFiles()
 #endif
 }
 
-void KonqUndoManagerTest::testMoveFiles()
+void KonqFileUndoManagerTest::testMoveFiles()
 {
     kDebug() ;
     const QString destdir = destDir();
@@ -266,7 +266,7 @@ void KonqUndoManagerTest::testMoveFiles()
     const KUrl d( destdir );
     KIO::CopyJob* job = KIO::move( lst, d, KIO::HideProgressInfo );
     job->setUiDelegate( 0 );
-    KonqUndoManager::self()->recordJob( KonqUndoManager::MOVE, lst, d, job );
+    KonqFileUndoManager::self()->recordJob( KonqFileUndoManager::MOVE, lst, d, job );
 
     bool ok = KIO::NetAccess::synchronousRun( job, 0 );
     QVERIFY( ok );
@@ -292,7 +292,7 @@ void KonqUndoManagerTest::testMoveFiles()
 // Testing for overwrite isn't possible, because non-interactive jobs never overwrite.
 // And nothing different happens anyway, the dest is removed...
 #if 0
-void KonqUndoManagerTest::testCopyFilesOverwrite()
+void KonqFileUndoManagerTest::testCopyFilesOverwrite()
 {
     kDebug() ;
     // Create a different file in the destdir
@@ -302,14 +302,14 @@ void KonqUndoManagerTest::testCopyFilesOverwrite()
 }
 #endif
 
-void KonqUndoManagerTest::testCopyDirectory()
+void KonqFileUndoManagerTest::testCopyDirectory()
 {
     const QString destdir = destDir();
     KUrl::List lst; lst << srcSubDir();
     const KUrl d( destdir );
     KIO::CopyJob* job = KIO::copy( lst, d, KIO::HideProgressInfo );
     job->setUiDelegate( 0 );
-    KonqUndoManager::self()->recordJob( KonqUndoManager::COPY, lst, d, job );
+    KonqFileUndoManager::self()->recordJob( KonqFileUndoManager::COPY, lst, d, job );
 
     bool ok = KIO::NetAccess::synchronousRun( job, 0 );
     QVERIFY( ok );
@@ -323,14 +323,14 @@ void KonqUndoManagerTest::testCopyDirectory()
     QVERIFY( !QFile::exists( destSubDir() ) );
 }
 
-void KonqUndoManagerTest::testMoveDirectory()
+void KonqFileUndoManagerTest::testMoveDirectory()
 {
     const QString destdir = destDir();
     KUrl::List lst; lst << srcSubDir();
     const KUrl d( destdir );
     KIO::CopyJob* job = KIO::move( lst, d, KIO::HideProgressInfo );
     job->setUiDelegate( 0 );
-    KonqUndoManager::self()->recordJob( KonqUndoManager::MOVE, lst, d, job );
+    KonqFileUndoManager::self()->recordJob( KonqFileUndoManager::MOVE, lst, d, job );
 
     bool ok = KIO::NetAccess::synchronousRun( job, 0 );
     QVERIFY( ok );
@@ -344,7 +344,7 @@ void KonqUndoManagerTest::testMoveDirectory()
     QVERIFY( !QFile::exists( destSubDir() ) );
 }
 
-void KonqUndoManagerTest::testRenameFile()
+void KonqFileUndoManagerTest::testRenameFile()
 {
     const KUrl oldUrl( srcFile() );
     const KUrl newUrl( srcFile() + ".new" );
@@ -352,7 +352,7 @@ void KonqUndoManagerTest::testRenameFile()
     lst.append(oldUrl);
     KIO::Job* job = KIO::moveAs( oldUrl, newUrl, KIO::HideProgressInfo );
     job->setUiDelegate( 0 );
-    KonqUndoManager::self()->recordJob( KonqUndoManager::RENAME, lst, newUrl, job );
+    KonqFileUndoManager::self()->recordJob( KonqFileUndoManager::RENAME, lst, newUrl, job );
 
     bool ok = KIO::NetAccess::synchronousRun( job, 0 );
     QVERIFY( ok );
@@ -366,7 +366,7 @@ void KonqUndoManagerTest::testRenameFile()
     QVERIFY( !QFileInfo( newUrl.path() ).isFile() );
 }
 
-void KonqUndoManagerTest::testRenameDir()
+void KonqFileUndoManagerTest::testRenameDir()
 {
     const KUrl oldUrl( srcSubDir() );
     const KUrl newUrl( srcSubDir() + ".new" );
@@ -374,7 +374,7 @@ void KonqUndoManagerTest::testRenameDir()
     lst.append(oldUrl);
     KIO::Job* job = KIO::moveAs( oldUrl, newUrl, KIO::HideProgressInfo );
     job->setUiDelegate( 0 );
-    KonqUndoManager::self()->recordJob( KonqUndoManager::RENAME, lst, newUrl, job );
+    KonqFileUndoManager::self()->recordJob( KonqFileUndoManager::RENAME, lst, newUrl, job );
 
     bool ok = KIO::NetAccess::synchronousRun( job, 0 );
     QVERIFY( ok );
@@ -388,7 +388,7 @@ void KonqUndoManagerTest::testRenameDir()
     QVERIFY( !QFileInfo( newUrl.path() ).isDir() );
 }
 
-void KonqUndoManagerTest::testTrashFiles()
+void KonqFileUndoManagerTest::testTrashFiles()
 {
     if ( !KProtocolInfo::isKnownProtocol( "trash" ) )
         QSKIP( "kio_trash not installed", SkipAll );
@@ -398,7 +398,7 @@ void KonqUndoManagerTest::testTrashFiles()
     lst.append( srcSubDir() );
     KIO::Job* job = KIO::trash( lst, KIO::HideProgressInfo );
     job->setUiDelegate( 0 );
-    KonqUndoManager::self()->recordJob( KonqUndoManager::TRASH, lst, KUrl("trash:/"), job );
+    KonqFileUndoManager::self()->recordJob( KonqFileUndoManager::TRASH, lst, KUrl("trash:/"), job );
 
     bool ok = KIO::NetAccess::synchronousRun( job, 0 );
     QVERIFY( ok );
@@ -442,7 +442,7 @@ static void setTimeStamp( const QString& path )
 #endif
 }
 
-void KonqUndoManagerTest::testModifyFileBeforeUndo()
+void KonqFileUndoManagerTest::testModifyFileBeforeUndo()
 {
     // based on testCopyDirectory (so that we check that it works for files in subdirs too)
     const QString destdir = destDir();
@@ -450,7 +450,7 @@ void KonqUndoManagerTest::testModifyFileBeforeUndo()
     const KUrl d( destdir );
     KIO::CopyJob* job = KIO::copy( lst, d, KIO::HideProgressInfo );
     job->setUiDelegate( 0 );
-    KonqUndoManager::self()->recordJob( KonqUndoManager::COPY, lst, d, job );
+    KonqFileUndoManager::self()->recordJob( KonqFileUndoManager::COPY, lst, d, job );
 
     bool ok = KIO::NetAccess::synchronousRun( job, 0 );
     QVERIFY( ok );
