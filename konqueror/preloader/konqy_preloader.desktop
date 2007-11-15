@@ -1,5 +1,4 @@
 [Desktop Entry]
-Encoding=UTF-8
 Type=Service
 Name=KDED Konqueror Preloader Module
 Name[af]=KDED Konqueror Vroegtydige Laai Module
@@ -120,7 +119,7 @@ Comment[vi]=Giảm thời gian khởi chạy Konqueror
 Comment[x-test]=xxReduces Konqueror startup timexx
 Comment[zh_CN]=减少 Konqueror 启动时间
 Comment[zh_TW]=減少 Konqueror 啟動時間
-ServiceTypes=KDEDModule
+X-KDE-ServiceTypes=KDEDModule
 X-KDE-Library=konqy_preloader
 X-KDE-Kded-autoload=false
 X-KDE-Kded-load-on-demand=true
