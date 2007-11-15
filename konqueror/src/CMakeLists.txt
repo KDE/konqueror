@@ -40,6 +40,7 @@ set(konqueror_KDEINIT_SRCS
    KonqMainWindowAdaptor.cpp
    KonqViewAdaptor.cpp
    konqproxystyle.cpp
+   konqundomanager.cpp
 )
 kde4_add_kcfg_files(konqueror_KDEINIT_SRCS konqsettingsxt.kcfgc)
 
