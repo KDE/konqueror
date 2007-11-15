@@ -39,6 +39,7 @@
 #include "konqextendedbookmarkowner.h"
 #include "konqframevisitor.h"
 #include "konqbookmarkbar.h"
+#include "konqundomanager.h"
 #include <config-konqueror.h>
 
 #include <konq_events.h>
@@ -96,7 +97,6 @@
 #include <konq_defaults.h>
 #include <konq_popupmenu.h>
 #include "konqsettings.h"
-#include <konq_fileundomanager.h>
 #include <kprotocolinfo.h>
 #include <kprotocolmanager.h>
 #include <kstandardshortcut.h>
@@ -235,6 +235,10 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
   }
   connect( prov, SIGNAL( changed() ), SLOT( slotIconsChanged() ) );
 
+  m_undoManager = new KonqUndoManager(this);
+  connect( m_undoManager, SIGNAL( undoAvailable( bool ) ),
+           this, SLOT( slotUndoAvailable( bool ) ) );
+
   initCombo();
   initActions();
 
@@ -276,10 +280,6 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
   m_ptaUseHTML->setChecked( m_bHTMLAllowed );
   m_paSaveViewPropertiesLocally->setChecked( m_bSaveViewPropertiesLocally );
 
-  KonqFileUndoManager::incRef();
-
-  connect( KonqFileUndoManager::self(), SIGNAL( undoAvailable( bool ) ),
-           this, SLOT( slotUndoAvailable( bool ) ) );
   m_bNeedApplyKonqMainWindowSettings = true;
 
   if ( !initialURL.isEmpty() ) {
@@ -314,7 +314,7 @@ KonqMainWindow::~KonqMainWindow()
   if ( s_lstViews )
   {
     s_lstViews->removeAll( this );
-    if ( s_lstViews->count() == 0 )
+    if ( s_lstViews->isEmpty() )
     {
       delete s_lstViews;
       s_lstViews = 0;
@@ -327,8 +327,6 @@ KonqMainWindow::~KonqMainWindow()
   delete m_paBookmarkBar;
   delete m_pBookmarksOwner;
   delete m_pURLCompletion;
-
-  KonqFileUndoManager::decRef();
 
   if ( s_lstViews == 0 ) {
       delete s_comboConfig;
@@ -3976,10 +3974,10 @@ void KonqMainWindow::initActions()
   connect(m_paReloadAllTabs, SIGNAL(triggered(bool)), SLOT( slotReloadAllTabs() ));
   m_paReloadAllTabs->setShortcut(Qt::SHIFT+Qt::Key_F5);
 
-  m_paUndo = KStandardAction::undo( KonqFileUndoManager::self(), SLOT( undo() ), this );
+  m_paUndo = KStandardAction::undo( m_undoManager, SLOT( undo() ), this );
   actionCollection()->addAction( "undo", m_paUndo );
-  connect( KonqFileUndoManager::self(), SIGNAL( undoTextChanged( const QString & ) ),
-           this, SLOT( slotUndoTextChanged( const QString & ) ) );
+  connect( m_undoManager, SIGNAL( undoTextChanged(QString) ),
+           this, SLOT( slotUndoTextChanged(QString) ) );
 
   // Those are connected to the browserextension directly
   m_paCut = KStandardAction::cut( 0, 0, this );
@@ -4234,7 +4232,7 @@ void KonqMainWindow::updateViewActions()
   // When going 'back' in history this will be called before opening the url.
   // Use updateToolBarActions instead.
 
-  slotUndoAvailable( KonqFileUndoManager::self()->undoAvailable() );
+  slotUndoAvailable( m_undoManager->undoAvailable() );
 
   // Can lock a view only if there is a next view
   //m_paLockView->setEnabled( m_pViewManager->chooseNextView(m_currentView) != 0 && );

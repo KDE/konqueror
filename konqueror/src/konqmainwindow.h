@@ -47,6 +47,7 @@
 #include <klocalizedstring.h>
 #include <ktogglefullscreenaction.h>
 
+class KonqUndoManager;
 class QFile;
 class QAction;
 class QPixmap;
@@ -593,6 +594,7 @@ private:
   QObject* lastFrame( KonqView *view );
 
 private: // members
+  KonqUndoManager* m_undoManager;
 
   KNewMenu * m_pMenuNew;
 
