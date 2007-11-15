@@ -19,7 +19,7 @@
 
 #include "knewmenu.h"
 #include "konq_operations.h"
-#include "konq_undo.h"
+#include "konq_fileundomanager.h"
 
 #include <QDir>
 #include <QVBoxLayout>
@@ -538,7 +538,7 @@ void KNewMenu::slotActionTriggered(QAction* action)
         	     SLOT( slotRenamed( KIO::Job *, const KUrl&, const KUrl& ) ) );
     	KUrl::List lst;
     	lst.append( uSrc );
-        KonqUndoManager::self()->recordJob( KonqUndoManager::COPY, lst, dest, job );
+        KonqFileUndoManager::self()->recordJob( KonqFileUndoManager::COPY, lst, dest, job );
     }
 }
 

@@ -1,7 +1,7 @@
 <!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
 "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
 <node>
-  <interface name="org.kde.libkonq.UndoManager">
+  <interface name="org.kde.libkonq.FileUndoManager">
     <method name="get">
       <arg name="commands" type="ay" direction="out"/>
     </method>

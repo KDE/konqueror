@@ -18,9 +18,9 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "konq_undo.h"
-#include "konq_undo_p.h"
-#include "undomanageradaptor.h"
+#include "konq_fileundomanager.h"
+#include "konq_fileundomanager_p.h"
+#include "fileundomanageradaptor.h"
 #include "konq_operations.h"
 
 #include <kio/job.h>
@@ -75,11 +75,11 @@ public:
     KonqUndoJob( bool showProgressInfo ) : KIO::Job() {
         if ( showProgressInfo )
             KIO::getJobTracker()->registerJob(this);
-        KonqUndoManager::incRef();
+        KonqFileUndoManager::incRef();
     }
-    virtual ~KonqUndoJob() { KonqUndoManager::decRef(); }
+    virtual ~KonqUndoJob() { KonqFileUndoManager::decRef(); }
 
-    virtual void kill( bool ) { KonqUndoManager::self()->stopUndo( true ); KIO::Job::doKill(); }
+    virtual void kill( bool ) { KonqFileUndoManager::self()->stopUndo( true ); KIO::Job::doKill(); }
 
     void emitCreatingDir(const KUrl &dir)
     { emit description(this, i18n("Creating directory"),
@@ -94,7 +94,7 @@ public:
     void emitResult() { KIO::Job::emitResult(); }
 };
 
-KonqCommandRecorder::KonqCommandRecorder( KonqUndoManager::CommandType op, const KUrl::List &src, const KUrl &dst, KIO::Job *job )
+KonqCommandRecorder::KonqCommandRecorder( KonqFileUndoManager::CommandType op, const KUrl::List &src, const KUrl &dst, KIO::Job *job )
   : QObject( job )
 {
   setObjectName( "konqcmdrecorder" );
@@ -106,19 +106,19 @@ KonqCommandRecorder::KonqCommandRecorder( KonqUndoManager::CommandType op, const
   connect( job, SIGNAL( result( KJob * ) ),
            this, SLOT( slotResult( KJob * ) ) );
 
-  if ( op != KonqUndoManager::MKDIR ) {
+  if ( op != KonqFileUndoManager::MKDIR ) {
       connect( job, SIGNAL( copyingDone(KIO::Job*,const KUrl&,const KUrl&,time_t,bool,bool) ),
                this, SLOT( slotCopyingDone(KIO::Job*,const KUrl&,const KUrl&,time_t,bool,bool) ) );
       connect( job, SIGNAL( copyingLinkDone( KIO::Job *, const KUrl &, const QString &, const KUrl & ) ),
                this, SLOT( slotCopyingLinkDone( KIO::Job *, const KUrl &, const QString &, const KUrl & ) ) );
   }
 
-  KonqUndoManager::incRef();
+  KonqFileUndoManager::incRef();
 }
 
 KonqCommandRecorder::~KonqCommandRecorder()
 {
-  KonqUndoManager::decRef();
+  KonqFileUndoManager::decRef();
 }
 
 void KonqCommandRecorder::slotResult( KJob *job )
@@ -126,7 +126,7 @@ void KonqCommandRecorder::slotResult( KJob *job )
   if ( job->error() )
     return;
 
-  KonqUndoManager::self()->addCommand( m_cmd );
+  KonqFileUndoManager::self()->addCommand( m_cmd );
 }
 
 void KonqCommandRecorder::slotCopyingDone( KIO::Job *job, const KUrl &from, const KUrl &to, time_t mtime, bool directory, bool renamed )
@@ -139,7 +139,7 @@ void KonqCommandRecorder::slotCopyingDone( KIO::Job *job, const KUrl &from, cons
   op.m_dst = to;
   op.m_mtime = mtime;
 
-  if ( m_cmd.m_type == KonqUndoManager::TRASH )
+  if ( m_cmd.m_type == KonqFileUndoManager::TRASH )
   {
       Q_ASSERT( to.protocol() == "trash" );
       QMap<QString, QString> metaData = job->metaData();
@@ -167,18 +167,18 @@ void KonqCommandRecorder::slotCopyingLinkDone( KIO::Job *, const KUrl &from, con
   m_cmd.m_opStack.prepend( op );
 }
 
-KonqUndoManager *KonqUndoManager::s_self = 0;
+KonqFileUndoManager *KonqFileUndoManager::s_self = 0;
 static unsigned long s_undoManagerRefCnt = 0;
 
-class KonqUndoManager::KonqUndoManagerPrivate
+class KonqFileUndoManager::KonqFileUndoManagerPrivate
 {
 public:
-    KonqUndoManagerPrivate()
-        : m_uiInterface( new KonqUndoManager::UiInterface( 0 /*TODO*/ ) ),
+    KonqFileUndoManagerPrivate()
+        : m_uiInterface( new KonqFileUndoManager::UiInterface( 0 /*TODO*/ ) ),
           m_undoJob( 0 )
     {
     }
-    ~KonqUndoManagerPrivate()
+    ~KonqFileUndoManagerPrivate()
     {
         delete m_uiInterface;
     }
@@ -195,16 +195,16 @@ public:
     QStack<KUrl> m_dirCleanupStack;
     QStack<KUrl> m_linkCleanupStack;
     QList<KUrl> m_dirsToUpdate;
-    KonqUndoManager::UiInterface* m_uiInterface;
+    KonqFileUndoManager::UiInterface* m_uiInterface;
 
     KonqUndoJob *m_undoJob;
 };
 
-KonqUndoManager::KonqUndoManager()
+KonqFileUndoManager::KonqFileUndoManager()
 {
-    (void) new UndoManagerAdaptor( this );
-    const QString dbusPath = "/KonqUndoManager";
-    const QString dbusInterface = "org.kde.libkonq.UndoManager";
+    (void) new FileUndoManagerAdaptor( this );
+    const QString dbusPath = "/KonqFileUndoManager";
+    const QString dbusInterface = "org.kde.libkonq.FileUndoManager";
 
     QDBusConnection dbus = QDBusConnection::sessionBus();
     dbus.registerObject( dbusPath, this );
@@ -213,23 +213,23 @@ KonqUndoManager::KonqUndoManager()
     dbus.connect(QString(), dbusPath, dbusInterface, "push", this, SLOT(slotPush(QByteArray)) );
     dbus.connect(QString(), dbusPath, dbusInterface, "unlock", this, SLOT(slotUnlock()) );
 
-    d = new KonqUndoManagerPrivate;
+    d = new KonqFileUndoManagerPrivate;
     d->m_syncronized = initializeFromKDesky();
     d->m_lock = false;
     d->m_currentJob = 0;
 }
 
-KonqUndoManager::~KonqUndoManager()
+KonqFileUndoManager::~KonqFileUndoManager()
 {
     delete d;
 }
 
-void KonqUndoManager::incRef()
+void KonqFileUndoManager::incRef()
 {
     s_undoManagerRefCnt++;
 }
 
-void KonqUndoManager::decRef()
+void KonqFileUndoManager::decRef()
 {
     s_undoManagerRefCnt--;
     if ( s_undoManagerRefCnt == 0 && s_self )
@@ -239,50 +239,50 @@ void KonqUndoManager::decRef()
     }
 }
 
-KonqUndoManager *KonqUndoManager::self()
+KonqFileUndoManager *KonqFileUndoManager::self()
 {
     if ( !s_self )
     {
         if ( s_undoManagerRefCnt == 0 )
             s_undoManagerRefCnt++; // someone forgot to call incRef
-        s_self = new KonqUndoManager;
+        s_self = new KonqFileUndoManager;
     }
     return s_self;
 }
 
-void KonqUndoManager::recordJob( CommandType op, const KUrl::List &src, const KUrl &dst, KIO::Job *job )
+void KonqFileUndoManager::recordJob( CommandType op, const KUrl::List &src, const KUrl &dst, KIO::Job *job )
 {
     // This records what the job does and calls addCommand when done
     (void) new KonqCommandRecorder( op, src, dst, job );
 }
 
-void KonqUndoManager::addCommand( const KonqCommand &cmd )
+void KonqFileUndoManager::addCommand( const KonqCommand &cmd )
 {
     broadcastPush( cmd );
 }
 
-bool KonqUndoManager::undoAvailable() const
+bool KonqFileUndoManager::undoAvailable() const
 {
     return ( d->m_commands.count() > 0 ) && !d->m_lock;
 }
 
-QString KonqUndoManager::undoText() const
+QString KonqFileUndoManager::undoText() const
 {
     if ( d->m_commands.isEmpty() )
         return i18n( "Und&o" );
 
-    KonqUndoManager::CommandType t = d->m_commands.top().m_type;
-    if ( t == KonqUndoManager::COPY )
+    KonqFileUndoManager::CommandType t = d->m_commands.top().m_type;
+    if ( t == KonqFileUndoManager::COPY )
         return i18n( "Und&o: Copy" );
-    else if ( t == KonqUndoManager::LINK )
+    else if ( t == KonqFileUndoManager::LINK )
         return i18n( "Und&o: Link" );
-    else if ( t == KonqUndoManager::MOVE )
+    else if ( t == KonqFileUndoManager::MOVE )
         return i18n( "Und&o: Move" );
-    else if ( t == KonqUndoManager::RENAME )
+    else if ( t == KonqFileUndoManager::RENAME )
         return i18n( "Und&o: Rename" );
-    else if ( t == KonqUndoManager::TRASH )
+    else if ( t == KonqFileUndoManager::TRASH )
         return i18n( "Und&o: Trash" );
-    else if ( t == KonqUndoManager::MKDIR )
+    else if ( t == KonqFileUndoManager::MKDIR )
         return i18n( "Und&o: Create Folder" );
     else
         assert( false );
@@ -290,7 +290,7 @@ QString KonqUndoManager::undoText() const
     return QString();
 }
 
-void KonqUndoManager::undo()
+void KonqFileUndoManager::undo()
 {
     // Make a copy of the command to undo before broadcastPop() pops it.
     KonqCommand cmd = d->m_commands.top();
@@ -305,7 +305,7 @@ void KonqUndoManager::undo()
     QStack<KonqBasicOperation>::Iterator it = opStack.begin();
     for ( ; it != opStack.end() ; ++it ) {
         KonqBasicOperation::Type type = (*it).m_type;
-        if ( type == KonqBasicOperation::File && d->m_current.m_type == KonqUndoManager::COPY ) {
+        if ( type == KonqBasicOperation::File && d->m_current.m_type == KonqFileUndoManager::COPY ) {
             fileCleanupStack.append( (*it).m_dst );
         }
     }
@@ -362,7 +362,7 @@ void KonqUndoManager::undo()
     undoStep();
 }
 
-void KonqUndoManager::stopUndo( bool step )
+void KonqFileUndoManager::stopUndo( bool step )
 {
     d->m_current.m_opStack.clear();
     d->m_dirCleanupStack.clear();
@@ -379,7 +379,7 @@ void KonqUndoManager::stopUndo( bool step )
         undoStep();
 }
 
-void KonqUndoManager::slotResult( KJob *job )
+void KonqFileUndoManager::slotResult( KJob *job )
 {
     d->m_currentJob = 0;
     if ( job->error() )
@@ -406,13 +406,13 @@ void KonqUndoManager::slotResult( KJob *job )
 }
 
 
-void KonqUndoManager::addDirToUpdate( const KUrl& url )
+void KonqFileUndoManager::addDirToUpdate( const KUrl& url )
 {
     if ( !d->m_dirsToUpdate.contains( url ) )
         d->m_dirsToUpdate.prepend( url );
 }
 
-void KonqUndoManager::undoStep()
+void KonqFileUndoManager::undoStep()
 {
     d->m_currentJob = 0;
 
@@ -435,7 +435,7 @@ void KonqUndoManager::undoStep()
     }
 }
 
-void KonqUndoManager::stepMakingDirectories()
+void KonqFileUndoManager::stepMakingDirectories()
 {
     if ( !d->m_dirStack.isEmpty() ) {
         KUrl dir = d->m_dirStack.pop();
@@ -450,7 +450,7 @@ void KonqUndoManager::stepMakingDirectories()
 // Misnamed method: It moves files back, but it also
 // renames directories back, recreates symlinks,
 // deletes copied files, and restores trashed files.
-void KonqUndoManager::stepMovingFiles()
+void KonqFileUndoManager::stepMovingFiles()
 {
     if ( !d->m_current.m_opStack.isEmpty() )
     {
@@ -474,7 +474,7 @@ void KonqUndoManager::stepMovingFiles()
             kDebug(1203) << "symlink" << op.m_target << op.m_src;
             d->m_currentJob = KIO::symlink( op.m_target, op.m_src, KIO::Overwrite | KIO::HideProgressInfo );
         }
-        else if ( d->m_current.m_type == KonqUndoManager::COPY )
+        else if ( d->m_current.m_type == KonqFileUndoManager::COPY )
         {
             if ( d->m_undoState == MOVINGFILES ) // dest not stat'ed yet
             {
@@ -492,7 +492,7 @@ void KonqUndoManager::stepMovingFiles()
             }
         }
         else if ( d->m_current.isMoveCommand()
-                  || d->m_current.m_type == KonqUndoManager::TRASH )
+                  || d->m_current.m_type == KonqFileUndoManager::TRASH )
         {
             kDebug(1203) << "file_move" << op.m_dst << op.m_src;
             d->m_currentJob = KIO::file_move( op.m_dst, op.m_src, -1, KIO::Overwrite | KIO::HideProgressInfo );
@@ -514,7 +514,7 @@ void KonqUndoManager::stepMovingFiles()
         d->m_undoState = REMOVINGLINKS;
 }
 
-void KonqUndoManager::stepRemovingLinks()
+void KonqFileUndoManager::stepRemovingLinks()
 {
     kDebug(1203) << "REMOVINGLINKS";
     if ( !d->m_linkCleanupStack.isEmpty() )
@@ -532,12 +532,12 @@ void KonqUndoManager::stepRemovingLinks()
     {
       d->m_undoState = REMOVINGDIRS;
 
-      if ( d->m_dirCleanupStack.isEmpty() && d->m_current.m_type == KonqUndoManager::MKDIR )
+      if ( d->m_dirCleanupStack.isEmpty() && d->m_current.m_type == KonqFileUndoManager::MKDIR )
         d->m_dirCleanupStack << d->m_current.m_dst;
     }
 }
 
-void KonqUndoManager::stepRemovingDirectories()
+void KonqFileUndoManager::stepRemovingDirectories()
 {
     if ( !d->m_dirCleanupStack.isEmpty() )
     {
@@ -567,7 +567,7 @@ void KonqUndoManager::stepRemovingDirectories()
     }
 }
 
-void KonqUndoManager::slotPush( QByteArray data )
+void KonqFileUndoManager::slotPush( QByteArray data )
 {
     QDataStream strm( &data, QIODevice::ReadOnly );
     KonqCommand cmd;
@@ -575,35 +575,35 @@ void KonqUndoManager::slotPush( QByteArray data )
     pushCommand( cmd );
 }
 
-void KonqUndoManager::pushCommand( const KonqCommand& cmd )
+void KonqFileUndoManager::pushCommand( const KonqCommand& cmd )
 {
     d->m_commands.push( cmd );
     emit undoAvailable( true );
     emit undoTextChanged( undoText() );
 }
 
-void KonqUndoManager::slotPop()
+void KonqFileUndoManager::slotPop()
 {
     d->m_commands.pop();
     emit undoAvailable( undoAvailable() );
     emit undoTextChanged( undoText() );
 }
 
-void KonqUndoManager::slotLock()
+void KonqFileUndoManager::slotLock()
 {
 //  assert( !d->m_lock );
     d->m_lock = true;
     emit undoAvailable( undoAvailable() );
 }
 
-void KonqUndoManager::slotUnlock()
+void KonqFileUndoManager::slotUnlock()
 {
 //  assert( d->m_lock );
     d->m_lock = false;
     emit undoAvailable( undoAvailable() );
 }
 
-QByteArray KonqUndoManager::get() const
+QByteArray KonqFileUndoManager::get() const
 {
     QByteArray data;
     QDataStream stream( &data, QIODevice::WriteOnly );
@@ -611,7 +611,7 @@ QByteArray KonqUndoManager::get() const
     return data;
 }
 
-void KonqUndoManager::broadcastPush( const KonqCommand &cmd )
+void KonqFileUndoManager::broadcastPush( const KonqCommand &cmd )
 {
     if ( !d->m_syncronized )
     {
@@ -625,7 +625,7 @@ void KonqUndoManager::broadcastPush( const KonqCommand &cmd )
     emit push( data ); // DBUS signal
 }
 
-void KonqUndoManager::broadcastPop()
+void KonqFileUndoManager::broadcastPop()
 {
   if ( !d->m_syncronized )
   {
@@ -636,7 +636,7 @@ void KonqUndoManager::broadcastPop()
   emit pop(); // DBUS signal
 }
 
-void KonqUndoManager::broadcastLock()
+void KonqFileUndoManager::broadcastLock()
 {
 //  assert( !d->m_lock );
 
@@ -648,7 +648,7 @@ void KonqUndoManager::broadcastLock()
   emit lock(); // DBUS signal
 }
 
-void KonqUndoManager::broadcastUnlock()
+void KonqFileUndoManager::broadcastUnlock()
 {
 //  assert( d->m_lock );
 
@@ -660,7 +660,7 @@ void KonqUndoManager::broadcastUnlock()
     emit unlock(); // DBUS signal
 }
 
-bool KonqUndoManager::initializeFromKDesky()
+bool KonqFileUndoManager::initializeFromKDesky()
 {
     // ### workaround for dcop problem and upcoming 2.1 release:
     // in case of huge io operations the amount of data sent over
@@ -680,28 +680,28 @@ bool KonqUndoManager::initializeFromKDesky()
     if ( !client->isApplicationRegistered( "kdesktop" ) )
         return false;
 
-    d->m_commands = DCOPRef( "kdesktop", "KonqUndoManager" ).call( "get" );
+    d->m_commands = DCOPRef( "kdesktop", "KonqFileUndoManager" ).call( "get" );
     return true;
 #endif
 }
 
-void KonqUndoManager::setUiInterface( UiInterface* ui )
+void KonqFileUndoManager::setUiInterface( UiInterface* ui )
 {
     delete d->m_uiInterface;
     d->m_uiInterface = ui;
 }
 
-KonqUndoManager::UiInterface::UiInterface( QWidget* w )
+KonqFileUndoManager::UiInterface::UiInterface( QWidget* w )
     : m_parentWidget( w ), m_showProgressInfo( true )
 {
 }
 
-void KonqUndoManager::UiInterface::jobError( KIO::Job* job )
+void KonqFileUndoManager::UiInterface::jobError( KIO::Job* job )
 {
     job->ui()->showErrorMessage();
 }
 
-bool KonqUndoManager::UiInterface::copiedFileWasModified( const KUrl& src, const KUrl& dest, time_t srcTime, time_t destTime ) {
+bool KonqFileUndoManager::UiInterface::copiedFileWasModified( const KUrl& src, const KUrl& dest, time_t srcTime, time_t destTime ) {
     Q_UNUSED( srcTime ); // not sure it should appear in the msgbox
     //const QDateTime srcDt = QDateTime::fromTime_t( srcTime );
     const QDateTime destDt = QDateTime::fromTime_t( destTime );
@@ -719,7 +719,7 @@ bool KonqUndoManager::UiInterface::copiedFileWasModified( const KUrl& src, const
         KMessageBox::Notify | KMessageBox::Dangerous ) == KMessageBox::Continue;
 }
 
-bool KonqUndoManager::UiInterface::confirmDeletion( const KUrl::List& files )
+bool KonqFileUndoManager::UiInterface::confirmDeletion( const KUrl::List& files )
 {
     // Because undo can happen with an accidental Ctrl-Z, we want to always confirm.
     return KonqOperations::askDeleteConfirmation( files, KonqOperations::DEL,
@@ -727,5 +727,5 @@ bool KonqUndoManager::UiInterface::confirmDeletion( const KUrl::List& files )
                                                   m_parentWidget );
 }
 
-#include "konq_undo.moc"
-#include "konq_undo_p.moc"
+#include "konq_fileundomanager.moc"
+#include "konq_fileundomanager_p.moc"

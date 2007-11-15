@@ -96,7 +96,7 @@
 #include <konq_defaults.h>
 #include <konq_popupmenu.h>
 #include "konqsettings.h"
-#include <konq_undo.h>
+#include <konq_fileundomanager.h>
 #include <kprotocolinfo.h>
 #include <kprotocolmanager.h>
 #include <kstandardshortcut.h>
@@ -276,9 +276,9 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
   m_ptaUseHTML->setChecked( m_bHTMLAllowed );
   m_paSaveViewPropertiesLocally->setChecked( m_bSaveViewPropertiesLocally );
 
-  KonqUndoManager::incRef();
+  KonqFileUndoManager::incRef();
 
-  connect( KonqUndoManager::self(), SIGNAL( undoAvailable( bool ) ),
+  connect( KonqFileUndoManager::self(), SIGNAL( undoAvailable( bool ) ),
            this, SLOT( slotUndoAvailable( bool ) ) );
   m_bNeedApplyKonqMainWindowSettings = true;
 
@@ -328,7 +328,7 @@ KonqMainWindow::~KonqMainWindow()
   delete m_pBookmarksOwner;
   delete m_pURLCompletion;
 
-  KonqUndoManager::decRef();
+  KonqFileUndoManager::decRef();
 
   if ( s_lstViews == 0 ) {
       delete s_comboConfig;
@@ -3976,10 +3976,9 @@ void KonqMainWindow::initActions()
   connect(m_paReloadAllTabs, SIGNAL(triggered(bool)), SLOT( slotReloadAllTabs() ));
   m_paReloadAllTabs->setShortcut(Qt::SHIFT+Qt::Key_F5);
 
-  m_paUndo = KStandardAction::undo( KonqUndoManager::self(), SLOT( undo() ), this );
+  m_paUndo = KStandardAction::undo( KonqFileUndoManager::self(), SLOT( undo() ), this );
   actionCollection()->addAction( "undo", m_paUndo );
-  //m_paUndo->setEnabled( KonqUndoManager::self()->undoAvailable() );
-  connect( KonqUndoManager::self(), SIGNAL( undoTextChanged( const QString & ) ),
+  connect( KonqFileUndoManager::self(), SIGNAL( undoTextChanged( const QString & ) ),
            this, SLOT( slotUndoTextChanged( const QString & ) ) );
 
   // Those are connected to the browserextension directly
@@ -4238,7 +4237,7 @@ void KonqMainWindow::updateViewActions()
   // When going 'back' in history this will be called before opening the url.
   // Use updateToolBarActions instead.
 
-  slotUndoAvailable( KonqUndoManager::self()->undoAvailable() );
+  slotUndoAvailable( KonqFileUndoManager::self()->undoAvailable() );
 
   // Can lock a view only if there is a next view
   //m_paLockView->setEnabled( m_pViewManager->chooseNextView(m_currentView) != 0 && );

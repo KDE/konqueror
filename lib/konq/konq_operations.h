@@ -95,7 +95,7 @@ public:
     static void restoreTrashedItems( const KUrl::List& urls, QWidget* parent );
 
     /**
-     * Create a directory. Same as KIO::mkdir but records job into KonqUndoManager for undo/redo purposes.
+     * Create a directory. Same as KIO::mkdir but records job into KonqFileUndoManager for undo/redo purposes.
      */
     static KIO::SimpleJob* mkdir( QWidget *parent, const KUrl & url );
 

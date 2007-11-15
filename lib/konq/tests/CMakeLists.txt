@@ -12,11 +12,11 @@ kde4_add_unit_test(konqpopupmenutest konqpopupmenutest.cpp)
 
 target_link_libraries(konqpopupmenutest konq ${QT_QTTEST_LIBRARY})
 
-########### konqundomanager ###############
+########### konqfileundomanager ###############
 
-kde4_add_unit_test(konqundomanagertest konqundomanagertest.cpp)
+kde4_add_unit_test(konqfileundomanagertest konqfileundomanagertest.cpp)
 
-target_link_libraries(konqundomanagertest konq ${QT_QTTEST_LIBRARY})
+target_link_libraries(konqfileundomanagertest konq ${QT_QTTEST_LIBRARY})
 
 ########### favicontest ###############
 

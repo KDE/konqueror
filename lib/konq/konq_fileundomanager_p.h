@@ -61,18 +61,18 @@ public:
     //KonqCommand( Type type, KonqBasicOperation::Stack& opStack, const KUrl::List& src, const KUrl& dest )
     //  : m_type( type ), m_opStack( opStack ), m_src( src ), m_dest( dest )
     // {
-    //     // if using QUndoCommand: setText(...); // see code in KonqUndoManager::undoText()
+    //     // if using QUndoCommand: setText(...); // see code in KonqFileUndoManager::undoText()
     // }
 
     //virtual void undo() {} // TODO
     //virtual void redo() {} // TODO
 
     // TODO: is ::TRASH missing?
-    bool isMoveCommand() const { return m_type == KonqUndoManager::MOVE || m_type == KonqUndoManager::RENAME; }
+    bool isMoveCommand() const { return m_type == KonqFileUndoManager::MOVE || m_type == KonqFileUndoManager::RENAME; }
 
     bool m_valid;
 
-    KonqUndoManager::CommandType m_type;
+    KonqFileUndoManager::CommandType m_type;
     KonqBasicOperation::Stack m_opStack;
     KUrl::List m_src;
     KUrl m_dst;
@@ -84,7 +84,7 @@ class KonqCommandRecorder : public QObject
 {
   Q_OBJECT
 public:
-  KonqCommandRecorder( KonqUndoManager::CommandType op, const KUrl::List &src, const KUrl &dst, KIO::Job *job );
+  KonqCommandRecorder( KonqFileUndoManager::CommandType op, const KUrl::List &src, const KUrl &dst, KIO::Job *job );
   virtual ~KonqCommandRecorder();
 
 private Q_SLOTS:
@@ -124,7 +124,7 @@ QDataStream &operator>>( QDataStream &stream, KonqCommand &cmd )
 {
     qint8 type;
     stream >> cmd.m_valid >> type >> cmd.m_opStack >> cmd.m_src >> cmd.m_dst;
-    cmd.m_type = static_cast<KonqUndoManager::CommandType>( type );
+    cmd.m_type = static_cast<KonqFileUndoManager::CommandType>( type );
     return stream;
 }
 
