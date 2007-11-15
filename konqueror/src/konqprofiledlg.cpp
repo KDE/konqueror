@@ -119,7 +119,7 @@ KonqProfileDlg::KonqProfileDlg( KonqViewManager *manager, const QString & presel
   connect( m_pListView, SIGNAL( itemSelectionChanged() ),
            this, SLOT( slotSelectionChanged() ) );
 
-  connect( m_pProfileNameLineEdit, SIGNAL( textEdited( const QString & ) ),
+  connect( m_pProfileNameLineEdit, SIGNAL( textChanged( const QString & ) ),
            this, SLOT( slotTextChanged( const QString & ) ) );
 
   enableButton( BTN_RENAME, m_pListView->currentItem() != 0 );
@@ -212,6 +212,9 @@ void KonqProfileDlg::slotItemRenamed( QListWidgetItem * item )
   QString newName = profileItem->text();
   QString oldName = profileItem->m_profileName;
 
+  if ( newName == oldName )
+    return;
+
   if (!newName.isEmpty())
   {
     KonqProfileMap::ConstIterator it = m_mapEntries.find( oldName );
@@ -234,7 +237,8 @@ void KonqProfileDlg::slotItemRenamed( QListWidgetItem * item )
 
 void KonqProfileDlg::slotSelectionChanged()
 {
-    m_pProfileNameLineEdit->setText( m_pListView->currentItem() ? m_pListView->currentItem()->text() : QString() );
+  if ( m_pListView->currentItem() ) 
+    m_pProfileNameLineEdit->setText( m_pListView->currentItem()->text() );
 }
 
 void KonqProfileDlg::slotTextChanged( const QString & text )
@@ -252,6 +256,8 @@ void KonqProfileDlg::slotTextChanged( const QString & text )
   {
     QFileInfo fi( m_mapEntries[ item->text() ] );
     itemSelected = itemSelected && fi.isWritable();
+    if ( itemSelected ) 
+      item->setFlags( Qt::ItemIsSelectable | Qt::ItemIsEnabled | Qt::ItemIsEditable );
   }
 
   enableButton( BTN_RENAME, itemSelected );
