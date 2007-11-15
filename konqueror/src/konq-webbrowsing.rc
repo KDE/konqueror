@@ -24,15 +24,14 @@
   <Action name="cut"/>
   <Action name="copy"/>
   <Action name="paste"/>
-  <!--<Action name="rename"/>-->
-  <Action name="trash"/>
-  <Action name="del" />
+  <!--<Action name="trash"/>
+  <Action name="del" />-->
   <ActionList name="operations" /><!-- copy files and move files, when two directory views -->
-  <Separator/>
+  <!--<Separator/>
   <Action name="new_menu"/>
   <Separator/>
   <Action name="editMimeType"/>
-  <Action name="properties"/>
+  <Action name="properties"/>-->
   <WeakSeparator/>
   <Merge/>
  </Menu>
