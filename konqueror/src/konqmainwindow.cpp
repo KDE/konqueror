@@ -1915,7 +1915,7 @@ void KonqMainWindow::slotConfigure()
 #define ADD_MODULE(name)    if (KAuthorized::authorizeControlModule(name))\
                                 m_configureDialog->addModule(KCModuleInfo(name),fileManagementGroup);
 
-            ADD_MODULE("fileappearance")
+            //ADD_MODULE("fileappearance")
             ADD_MODULE("filepreviews")
             ADD_MODULE("filetypes")
 #undef ADD_MODULE
@@ -3845,9 +3845,10 @@ void KonqMainWindow::initActions()
   m_paRemoveLocalProperties->setText( i18n( "Remove Folder Properties" ) );
   connect(m_paRemoveLocalProperties, SIGNAL(triggered(bool) ), SLOT( slotRemoveLocalProperties() ));
 
+  // This list is just for the call to authorizeControlModule; see slotConfigure for the real code
   QStringList configureModules;
-  configureModules << "khtml_general" "filebehavior" << "fileappearance" <<
-      "filepreviews" << "filetypes" <<
+  configureModules << "khtml_general" <<
+      "filebehavior" << "filepreviews" << "filetypes" <<
       "khtml_behavior" << "khtml_java_js" <<
       "khtml_filter" <<
       "khtml_fonts" << "ebrowsing" <<
