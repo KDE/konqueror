@@ -34,6 +34,8 @@
 #include <KDialog>
 #include <K3IconView> // declaration below
 
+#include "ui_faceDlg.h"
+
 enum FacePerm { adminOnly = 1, adminFirst = 2, userFirst = 3, userOnly = 4};
 
 class ChFaceDlg : public KDialog
@@ -50,8 +52,8 @@ public:
 
   QPixmap getFaceImage() const
   {
-    if(m_FacesWidget->currentItem())
-      return *(m_FacesWidget->currentItem()->pixmap());
+    if(ui.m_FacesWidget->currentItem())
+      return *(ui.m_FacesWidget->currentItem()->pixmap());
     else
       return QPixmap();
   }
@@ -66,7 +68,7 @@ private Q_SLOTS:
 private:
   void addCustomPixmap( const QString &imPath, bool saveCopy );
 
-  K3IconView *m_FacesWidget;
+  Ui::faceDlg ui;
 };
 
 #endif // CHFACEDLG_H

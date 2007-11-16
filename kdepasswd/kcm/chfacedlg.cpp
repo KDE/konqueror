@@ -63,42 +63,23 @@ ChFaceDlg::ChFaceDlg(const QString& picsdir, QWidget *parent, const char *name, 
   setDefaultButton( Ok );
   showButtonSeparator( true );
 
-  QWidget *page = new QWidget(this);
-  setMainWidget( page );
+  QWidget *faceDlg = new QWidget;
+  ui.setupUi(faceDlg);
 
-  QVBoxLayout *top = new QVBoxLayout(page);
-  top->setMargin(0);
-  top->setSpacing(spacingHint());
+  setMainWidget(faceDlg);
 
-  QLabel *header = new QLabel( i18n("Select a new face:"), page );
-  top->addWidget( header );
+  connect( ui.m_FacesWidget, SIGNAL( selectionChanged( Q3IconViewItem * ) ), SLOT( slotFaceWidgetSelectionChanged( Q3IconViewItem * ) ) );
 
-  m_FacesWidget = new K3IconView( page );
-  m_FacesWidget->setSelectionMode( Q3IconView::Single );
-  m_FacesWidget->setItemsMovable( false );
-  m_FacesWidget->setMinimumSize( 400, 200 );
+  connect( ui.m_FacesWidget, SIGNAL( doubleClicked( Q3IconViewItem *, const QPoint & ) ), SLOT(accept()) );
+  connect( this, SIGNAL(okClicked()), this, SLOT(accept()));
 
-  connect( m_FacesWidget, SIGNAL( selectionChanged( Q3IconViewItem * ) ), SLOT( slotFaceWidgetSelectionChanged( Q3IconViewItem * ) ) );
+  connect( ui.browseBtn, SIGNAL( clicked() ), SLOT( slotGetCustomImage() ) );
 
-  connect( m_FacesWidget, SIGNAL( doubleClicked( Q3IconViewItem *, const QPoint & ) ), SLOT(accept()) );
-  connect( this, SIGNAL(okClicked()),this,SLOT(accept()));
-
-  top->addWidget( m_FacesWidget );
-
-  // Buttons to get more pics
-  QHBoxLayout * morePics = new QHBoxLayout();
-  morePics->setMargin(0);
-  morePics->setSpacing(spacingHint());
-  QPushButton *browseBtn = new QPushButton( i18n("Custom &Image..."), page );
-  connect( browseBtn, SIGNAL( clicked() ), SLOT( slotGetCustomImage() ) );
-  morePics->addWidget( browseBtn );
 #if 0
   QPushButton *acquireBtn = new QPushButton( i18n("&Acquire Image..."), page );
   acquireBtn->setEnabled( false );
   morePics->addWidget( acquireBtn );
 #endif
-  morePics->addStretch();
-  top->addLayout( morePics );
 
   // Filling the icon view
   QDir facesDir( picsdir );
@@ -106,21 +87,18 @@ ChFaceDlg::ChFaceDlg(const QString& picsdir, QWidget *parent, const char *name, 
   {
     QStringList picslist = facesDir.entryList( QDir::Files );
     for ( QStringList::Iterator it = picslist.begin(); it != picslist.end(); ++it )
-      new Q3IconViewItem( m_FacesWidget, (*it).section(".",0,0), QPixmap( picsdir + *it ) );
+      new Q3IconViewItem( ui.m_FacesWidget, (*it).section(".",0,0), QPixmap( picsdir + *it ) );
   }
   facesDir.setPath( KCFGUserAccount::userFaceDir() );
   if ( facesDir.exists() )
   {
     QStringList picslist = facesDir.entryList( QDir::Files );
     for ( QStringList::Iterator it = picslist.begin(); it != picslist.end(); ++it )
-      new Q3IconViewItem( m_FacesWidget, '/'+(*it) == KCFGUserAccount::customFaceFile() ? 
+      new Q3IconViewItem( ui.m_FacesWidget, '/'+(*it) == KCFGUserAccount::customFaceFile() ? 
 		      i18n("(Custom)") : (*it).section(".",0,0),
                       QPixmap( KCFGUserAccount::userFaceDir() + *it ) );
   }
 
-  m_FacesWidget->setResizeMode( Q3IconView::Adjust );
-  //m_FacesWidget->setGridX( FACE_PIX_SIZE - 10 );
-  m_FacesWidget->arrangeItemsInGrid();
 
   enableButtonOk( false );
   //connect( this, SIGNAL( okClicked() ), SLOT( slotSaveCustomImage() ) );
@@ -158,10 +136,10 @@ void ChFaceDlg::addCustomPixmap( const QString &imPath, bool saveCopy )
 #endif
   }
 
-  Q3IconViewItem* newface = new Q3IconViewItem( m_FacesWidget, QFileInfo(imPath).fileName().section(".",0,0), QPixmap::fromImage(pix) );
+  Q3IconViewItem* newface = new Q3IconViewItem( ui.m_FacesWidget, QFileInfo(imPath).fileName().section(".",0,0), QPixmap::fromImage(pix) );
   newface->setKey( KCFGUserAccount::customKey() );// Add custom items to end
-  m_FacesWidget->ensureItemVisible( newface );
-  m_FacesWidget->setCurrentItem( newface );
+  ui.m_FacesWidget->ensureItemVisible( newface );
+  ui.m_FacesWidget->setCurrentItem( newface );
 }
 
 void ChFaceDlg::slotGetCustomImage(  )
