@@ -34,39 +34,41 @@ KIOPreferences::KIOPreferences(QWidget *parent, const QVariantList &)
                                    "allowed value is %1 seconds.", MAX_TIMEOUT_VALUE));
     mainLayout->addWidget( gb_Timeout );
 
+    QVBoxLayout* timeoutLayout = new QVBoxLayout(gb_Timeout);
     sb_socketRead = new KIntNumInput( this );
     sb_socketRead->setSuffix( i18n( " sec" ) );
     sb_socketRead->setLabel( i18n( "Soc&ket read:" ), Qt::AlignVCenter);
-    mainLayout->addWidget( sb_socketRead );
     connect(sb_socketRead, SIGNAL(valueChanged(int)), SLOT(configChanged()));
+    timeoutLayout->addWidget(sb_socketRead);
 
     sb_proxyConnect = new KIntNumInput( this );
     sb_proxyConnect->setSuffix( i18n( " sec" ) );
     sb_proxyConnect->setLabel( i18n( "Pro&xy connect:" ), Qt::AlignVCenter);
-    mainLayout->addWidget( sb_proxyConnect );
     connect(sb_proxyConnect, SIGNAL(valueChanged(int)), SLOT(configChanged()));
+    timeoutLayout->addWidget(sb_proxyConnect);
 
     sb_serverConnect = new KIntNumInput( this );
     sb_serverConnect->setSuffix( i18n( " sec" ) );
     sb_serverConnect->setLabel( i18n("Server co&nnect:"), Qt::AlignVCenter);
-    mainLayout->addWidget( sb_serverConnect );
     connect(sb_serverConnect, SIGNAL(valueChanged(int)), SLOT(configChanged()));
+    timeoutLayout->addWidget(sb_serverConnect);
 
     sb_serverResponse = new KIntNumInput( this );
     sb_serverResponse->setSuffix( i18n( " sec" ) );
     sb_serverResponse->setLabel( i18n("&Server response:"), Qt::AlignVCenter);
-    mainLayout->addWidget( sb_serverResponse );
     connect(sb_serverResponse, SIGNAL(valueChanged(int)), SLOT(configChanged()));
+    timeoutLayout->addWidget(sb_serverResponse);
 
     gb_Ftp = new QGroupBox( i18n( "FTP Options" ), this );
     mainLayout->addWidget( gb_Ftp );
+    QVBoxLayout* ftpLayout = new QVBoxLayout(gb_Ftp);
 
     cb_ftpEnablePasv = new QCheckBox( i18n( "Enable passive &mode (PASV)" ), this );
     cb_ftpEnablePasv->setWhatsThis( i18n("Enables FTP's \"passive\" mode. "
                                          "This is required to allow FTP to "
                                          "work from behind firewalls.") );
     connect(cb_ftpEnablePasv, SIGNAL(toggled(bool)), SLOT(configChanged()));
-    mainLayout->addWidget( cb_ftpEnablePasv );
+    ftpLayout->addWidget(cb_ftpEnablePasv);
 
     cb_ftpMarkPartial = new QCheckBox( i18n( "Mark &partially uploaded files" ), this );
     cb_ftpMarkPartial->setWhatsThis( i18n( "<p>Marks partially uploaded FTP "
@@ -76,7 +78,7 @@ KIOPreferences::KIOPreferences(QWidget *parent, const QVariantList &)
                                            "This extension will be removed "
                                            "once the transfer is complete.</p>") );
     connect(cb_ftpMarkPartial, SIGNAL(toggled(bool)), SLOT(configChanged()));
-    mainLayout->addWidget( cb_ftpMarkPartial );
+    ftpLayout->addWidget(cb_ftpMarkPartial);
 
     mainLayout->addStretch( 1 );
     load();
