@@ -1,6 +1,6 @@
 include_directories(
-  ${CMAKE_CURRENT_SOURCE_DIR}/apps/konqueror/../../            # sidebar dir
-  ${CMAKE_CURRENT_SOURCE_DIR}/apps/konqueror/../      # trees dir
+  ${CMAKE_CURRENT_SOURCE_DIR}/../../            # sidebar dir
+  ${CMAKE_CURRENT_SOURCE_DIR}/../      # trees dir
   ${CMAKE_SOURCE_DIR}/apps/konqueror/sidebar            # sidebar dir
   ${CMAKE_SOURCE_DIR}/apps/konqueror/sidebar/trees      # trees dir
 )
