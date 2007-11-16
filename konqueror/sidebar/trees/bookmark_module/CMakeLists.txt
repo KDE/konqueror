@@ -1,6 +1,6 @@
 include_directories(
-  ${CMAKE_CURRENT_SOURCE_DIR}/../.. # sidebar dir
-  ${CMAKE_CURRENT_SOURCE_DIR}/..    # trees dir
+  ${CMAKE_SOURCE_DIR}/apps/konqueror/sidebar            # sidebar dir
+  ${CMAKE_SOURCE_DIR}/apps/konqueror/sidebar/trees      # trees dir
 )
 
 set(konq_sidebartree_bookmarks_SRCS bookmark_module.cpp bookmark_item.cpp ${libkonq_sidebar_tree_SRCS} )
