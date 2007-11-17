@@ -182,21 +182,6 @@ QDBusObjectPath KonquerorAdaptor::windowForTab()
     return QDBusObjectPath();
 }
 
-void KonquerorAdaptor::addToCombo( const QString& url, const QDBusMessage& msg )
-{
-    KonqMainWindow::comboAction( KonqMainWindow::ComboAdd, url, msg.service() );
-}
-
-void KonquerorAdaptor::removeFromCombo( const QString& url, const QDBusMessage& msg )
-{
-    KonqMainWindow::comboAction( KonqMainWindow::ComboRemove, url, msg.service() );
-}
-
-void KonquerorAdaptor::comboCleared( const QDBusMessage& msg )
-{
-    KonqMainWindow::comboAction( KonqMainWindow::ComboClear, QString(), msg.service() );
-}
-
 bool KonquerorAdaptor::processCanBeReused( int screen )
 {
 #ifdef Q_WS_X11

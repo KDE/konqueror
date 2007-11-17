@@ -2021,10 +2021,9 @@ void KonqMainWindow::slotRunFinished()
   }
 
   if ( run->hasError() ) { // we had an error
-      org::kde::Konqueror::Main dbus( "org.kde.konqueror",
-                                      KONQ_MAIN_PATH,
-                                      QDBusConnection::sessionBus() );
-      dbus.removeFromCombo( run->url().prettyUrl() );
+      QDBusMessage message = QDBusMessage::createSignal( KONQ_MAIN_PATH, "org.kde.Konqueror.Main", "removeFromCombo" );
+      message << run->url().prettyUrl();
+      QDBusConnection::sessionBus().send( message );
   }
 
   KonqView *childView = run->childView();
@@ -3580,7 +3579,7 @@ void KonqMainWindow::showPageSecurity()
     }
 }
 
-// called via DBUS from KonquerorAdaptor
+// Called via DBUS from KonquerorApplication
 void KonqMainWindow::comboAction( int action, const QString& url, const QString& senderId )
 {
     if (!s_lstViews) // this happens in "konqueror --silent"

@@ -125,21 +125,6 @@ public slots:
   Q_NOREPLY void updateProfileList();
 
   /**
-   * Called internally as broadcast when a URL is to be added to the combobox.
-   */
-  Q_NOREPLY void addToCombo( const QString& url, const QDBusMessage& msg );
-
-  /**
-   * Called internall as broadcast when a URL has to be removed from the combo.
-   */
-  Q_NOREPLY void removeFromCombo( const QString& url, const QDBusMessage& msg );
-
-  /**
-   * Called internally as a broadcast when the combobox was cleared.
-   */
-  Q_NOREPLY void comboCleared( const QDBusMessage& msg );
-
-  /**
    * Used by kfmclient when the 'minimize memory usage' setting is set
    * to find out if this konqueror can be used.
    */
@@ -160,6 +145,18 @@ Q_SIGNALS:
    * Emitted by konqueror when we must update list of profiles
    */
   void updateAllProfileList();
+  /**
+   * Used internally by Konqueror to notify all instances when a URL should be added to the combobox.
+   */
+  void addToCombo( const QString& url, const QDBusMessage& msg );
+  /**
+   * Used internally by Konqueror to notify all instances when a URL should be removed from the combobox.
+   */
+  void removeFromCombo( const QString& url, const QDBusMessage& msg );
+  /**
+   * Used internally by Konqueror to notify all instances when the combobox should be cleared.
+   */
+  void comboCleared( const QDBusMessage& msg );
 };
 
 #endif
