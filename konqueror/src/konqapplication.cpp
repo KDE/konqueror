@@ -33,6 +33,11 @@ KonquerorApplication::KonquerorApplication()
     QDBusConnection dbus = QDBusConnection::sessionBus();
     dbus.connect(QString(), KONQ_MAIN_PATH, dbusInterface, "reparseConfiguration", this, SLOT(slotReparseConfiguration()));
     dbus.connect(QString(), KONQ_MAIN_PATH, dbusInterface, "updateAllProfileList", this, SLOT(slotUpdateProfileList()));
+    dbus.connect(QString(), KONQ_MAIN_PATH, dbusInterface, "addToCombo", this,
+                 SLOT(slotAddToCombo(const QString&, const QDBusMessage&)));
+    dbus.connect(QString(), KONQ_MAIN_PATH, dbusInterface, "removeFromCombo", this,
+                 SLOT(slotRemoveFromCombo(const QString&, const QDBusMessage&)));
+    dbus.connect(QString(), KONQ_MAIN_PATH, dbusInterface, "comboCleared", this, SLOT(slotComboCleared(const QDBusMessage&)));
 }
 
 void KonquerorApplication::slotReparseConfiguration()
@@ -58,5 +63,19 @@ void KonquerorApplication::slotUpdateProfileList()
         window->viewManager()->profileListDirty( false );
 }
 
+void KonquerorApplication::slotAddToCombo( const QString& url, const QDBusMessage& msg )
+{
+    KonqMainWindow::comboAction( KonqMainWindow::ComboAdd, url, msg.service() );
+}
+
+void KonquerorApplication::slotRemoveFromCombo( const QString& url, const QDBusMessage& msg )
+{
+    KonqMainWindow::comboAction( KonqMainWindow::ComboRemove, url, msg.service() );
+}
+
+void KonquerorApplication::slotComboCleared( const QDBusMessage& msg )
+{
+    KonqMainWindow::comboAction( KonqMainWindow::ComboClear, QString(), msg.service() );
+}
 
 #include "konqapplication.moc"

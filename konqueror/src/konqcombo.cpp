@@ -163,10 +163,9 @@ void KonqCombo::setURL( const QString& url )
 
     if ( m_returnPressed ) { // Really insert...
         m_returnPressed = false;
-        org::kde::Konqueror::Main dbus( "org.kde.konqueror",
-                                        KONQ_MAIN_PATH,
-                                        QDBusConnection::sessionBus() );
-        dbus.addToCombo( url );
+        QDBusMessage message = QDBusMessage::createSignal( KONQ_MAIN_PATH, "org.kde.Konqueror.Main", "addToCombo" );
+        message << url;
+        QDBusConnection::sessionBus().send( message );
     }
     // important security consideration: always display the beginning
     // of the url rather than its end to prevent spoofing attempts.
@@ -525,10 +524,8 @@ void KonqCombo::selectWord(QKeyEvent *e)
 
 void KonqCombo::slotCleared()
 {
-    org::kde::Konqueror::Main dbus( "org.kde.konqueror",
-                                    KONQ_MAIN_PATH,
-                                    QDBusConnection::sessionBus() );
-    dbus.comboCleared( );
+    QDBusMessage message = QDBusMessage::createSignal( KONQ_MAIN_PATH, "org.kde.Konqueror.Main", "comboCleared" );
+    QDBusConnection::sessionBus().send( message );
 }
 
 void KonqCombo::removeURL( const QString& url )
