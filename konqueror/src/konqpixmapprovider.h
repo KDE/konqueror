@@ -20,6 +20,8 @@
 #ifndef KONQ_PIXMAPPROVIDER_H
 #define KONQ_PIXMAPPROVIDER_H
 
+#include "konqprivate_export.h"
+
 #include <kurl.h>
 #include <kpixmapprovider.h>
 #include "favicon_interface.h"
@@ -30,7 +32,10 @@
 class KConfigGroup;
 class KConfig;
 
-class KonqPixmapProvider : public org::kde::FavIcon, virtual public KPixmapProvider
+// Ideally OrgKdeFavIconInterface should be exported with KONQUERORPRIVATE_EXPORT, but the cmake macro
+// doesn't allow that. Doesn't seem to be a problem though, at least on linux, since the methods are all inline.
+
+class KONQUERORPRIVATE_EXPORT KonqPixmapProvider : public org::kde::FavIcon, virtual public KPixmapProvider
 {
     Q_OBJECT
 public:
