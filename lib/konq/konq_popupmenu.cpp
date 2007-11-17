@@ -406,36 +406,6 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
             else
                 addNamedAction( "pasteto" );
         }
-        if ( !currentDir )
-        {
-            if ( m_lstItems.count() == 1 && sMoving )
-                addNamedAction( "rename" );
-
-            bool addTrash = false;
-            bool addDel = false;
-
-            if ( sMoving && !isIntoTrash && !isTrashLink )
-                addTrash = true;
-
-            if ( sDeleting ) {
-                if ( !isLocal )
-                    addDel = true;
-                else if (QApplication::keyboardModifiers() & Qt::ShiftModifier) {
-                    addTrash = false;
-                    addDel = true;
-                }
-                else {
-                    KConfigGroup configGroup( KGlobal::config(), "KDE" );
-                    if ( configGroup.readEntry( "ShowDeleteCommand", false) )
-                        addDel = true;
-                }
-            }
-
-            if ( addTrash )
-                addNamedAction( "trash" );
-            if ( addDel )
-                addNamedAction( "del" );
-        }
     }
     if ( isCurrentTrash )
     {
