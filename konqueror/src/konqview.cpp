@@ -31,10 +31,9 @@
 #include "konqbrowseriface.h"
 #include <kparts/statusbarextension.h>
 #include <kparts/browserextension.h>
-//#include <konq_dirpart.h>
 
-#include <konq_historymgr.h>
-#include <konqpixmapprovider.h>
+#include "konqhistorymanager.h"
+#include "konqpixmapprovider.h"
 
 #include <assert.h>
 #include <kdebug.h>

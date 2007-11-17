@@ -20,7 +20,7 @@
 #ifndef __konq_actions_h__
 #define __konq_actions_h__
 
-#include <konq_historymgr.h>
+#include <konqhistorymanager.h>
 #include <kactionmenu.h>
 #include <QtGui/QWidget>
 #include <QtGui/QToolBar>

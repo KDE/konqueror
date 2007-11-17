@@ -30,7 +30,7 @@
 
 // Local
 #include "konqview.h"
-#include <konq_historymgr.h>
+#include "konqhistorymanager.h"
 
 
 #define HINT_UTF8	106

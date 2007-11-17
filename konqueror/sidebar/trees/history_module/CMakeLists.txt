@@ -1,4 +1,5 @@
 include_directories(
+  ${CMAKE_CURRENT_SOURCE_DIR}/../../../src # konqueror dir (for konqhistorymanager.h)
   ${CMAKE_CURRENT_SOURCE_DIR}/../.. # sidebar dir
   ${CMAKE_CURRENT_SOURCE_DIR}/..    # trees dir
 )
@@ -11,7 +12,7 @@ set(konq_sidebartree_history_SRCS history_module.cpp history_item.cpp history_se
 
 kde4_add_plugin(konq_sidebartree_history ${konq_sidebartree_history_SRCS})
 
-target_link_libraries(konq_sidebartree_history  ${KDE4_KDEUI_LIBS} konqsidebarplugin konq )
+target_link_libraries(konq_sidebartree_history  konqsidebarplugin konquerorprivate konq )
 
 install(TARGETS konq_sidebartree_history  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
@@ -25,7 +26,7 @@ kde4_add_ui_files(kcm_history_SRCS history_dlg.ui )
 
 kde4_add_plugin(kcm_history ${kcm_history_SRCS})
 
-target_link_libraries(kcm_history  ${KDE4_KDEUI_LIBS} konq )
+target_link_libraries(kcm_history konquerorprivate konq )
 
 install(TARGETS kcm_history  DESTINATION ${PLUGIN_INSTALL_DIR} )
 

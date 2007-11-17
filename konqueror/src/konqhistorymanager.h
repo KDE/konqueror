@@ -1,5 +1,6 @@
 /* This file is part of the KDE project
    Copyright (C) 2000,2001 Carsten Pfeiffer <pfeiffer@kde.org>
+   Copyright 2007 David Faure <faure@kde.org>
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -17,27 +18,23 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef KONQ_HISTORY_H
-#define KONQ_HISTORY_H
+#ifndef KONQ_HISTORYMANAGER_H
+#define KONQ_HISTORYMANAGER_H
 
 #include <QtCore/QObject>
 #include <QtCore/QMap>
 #include <QtCore/QTimer>
 #include <QtCore/QStringList>
 
-#include <kurl.h>
 #include <kparts/historyprovider.h>
 
-#include "konq_historyentry.h"
-
-#include <libkonq_export.h>
+#include "konqhistoryentry.h"
 
 class KBookmarkManager;
 class QDBusMessage;
 class KCompletion;
 
-
-class LIBKONQ_EXPORT KonqHistoryList : public QList<KonqHistoryEntry>
+class KONQUERORPRIVATE_EXPORT KonqHistoryList : public QList<KonqHistoryEntry>
 {
 public:
     /**
@@ -63,7 +60,7 @@ public:
  *
  * It keeps the history in sync with one KCompletion object
  */
-class LIBKONQ_EXPORT KonqHistoryManager : public KParts::HistoryProvider
+class KONQUERORPRIVATE_EXPORT KonqHistoryManager : public KParts::HistoryProvider
 {
     Q_OBJECT
 

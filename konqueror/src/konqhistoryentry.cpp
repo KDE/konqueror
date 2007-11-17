@@ -17,7 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "konq_historyentry.h"
+#include "konqhistoryentry.h"
 
 bool KonqHistoryEntry::marshalURLAsStrings;
 

@@ -12,20 +12,25 @@ check_symbol_exists(mallinfo        "stdlib.h"                 KDE_MALLINFO_STDL
 # TODO KDE_MALLINFO_FIELD_usmblks
 configure_file(config-konqueror.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-konqueror.h )
 
-if (WIN32)
-    add_definitions(-DMAKE_KDEINIT_KONQUEROR_LIB)
-endif(WIN32)
+# For crc32 in konqhistorymanager.cpp
+include_directories( ${ZLIB_INCLUDE_DIR} )
 
 ########### libkonquerorprivate, shared with sidebar modules ###############
 
 set(konquerorprivate_SRCS
    konqpixmapprovider.cpp
+   konqhistorymanager.cpp
+   konqhistoryentry.cpp
 )
 qt4_add_dbus_interface(konquerorprivate_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../../lib/konq/favicons/org.kde.FavIcon.xml favicon_interface)
+qt4_add_dbus_adaptor(konquerorprivate_SRCS org.kde.Konqueror.HistoryManager.xml konqhistorymanager.h KonqHistoryManager konqhistorymanageradaptor KonqHistoryManagerAdaptor)
 kde4_add_library(konquerorprivate SHARED ${konquerorprivate_SRCS})
-target_link_libraries(konquerorprivate ${KDE4_KDEUI_LIBS})
+target_link_libraries(konquerorprivate ${KDE4_KPARTS_LIBS})
 
 ########### konqueror ###############
+if (WIN32)
+    add_definitions(-DMAKE_KDEINIT_KONQUEROR_LIB)
+endif(WIN32)
 
 set(konqueror_KDEINIT_SRCS
    konqapplication.cpp

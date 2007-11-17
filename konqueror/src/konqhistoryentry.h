@@ -20,14 +20,14 @@
 #ifndef KONQ_HISTORYENTRY_H
 #define KONQ_HISTORYENTRY_H
 
+#include "konqprivate_export.h"
+
 #include <QtCore/QDateTime>
 #include <QtCore/QVariant>
 
 #include <kurl.h>
 
-#include <libkonq_export.h>
-
-class LIBKONQ_EXPORT KonqHistoryEntry
+class KONQUERORPRIVATE_EXPORT KonqHistoryEntry
 {
 public:
     //Should URLs be marshaled as strings (V2 history format)?
