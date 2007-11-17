@@ -24,9 +24,7 @@
   <Action name="cut"/>
   <Action name="copy"/>
   <Action name="paste"/>
-  <!-- TODO: Dolphin's rename action should be merged here -->
-  <Action name="trash"/>
-  <Action name="del" />
+  <!-- TODO: Dolphin's actions: rename, move_to_trash, del should be merged here -->
   <ActionList name="operations" /><!-- copy files and move files, when two directory views -->
   <Separator/>
   <Action name="new_menu"/>

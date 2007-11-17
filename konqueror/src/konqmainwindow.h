@@ -540,7 +540,6 @@ private Q_SLOTS:
   void bookmarksIntoCompletion();
 
   void initBookmarkBar();
-  void slotTrashActivated( Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers );
 
   void showPageSecurity();
 
@@ -636,9 +635,6 @@ private: // members
   KAction *m_paCopy;
   KAction *m_paPaste;
   KAction *m_paStop;
-
-  KAction *m_paTrash;
-  KAction *m_paDelete;
 
   KAction *m_paCopyFiles;
   KAction *m_paMoveFiles;
