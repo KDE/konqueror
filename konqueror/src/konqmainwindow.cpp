@@ -207,7 +207,6 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
   m_viewModeMenu = 0;
   m_paCopyFiles = 0;
   m_paMoveFiles = 0;
-  m_paDelete = 0;
   m_paNewDir = 0;
   m_bookmarkBarInitialized = false;
   m_pBookmarksOwner = new KonqExtendedBookmarkOwner(this);
@@ -3386,17 +3385,6 @@ bool KonqMainWindow::eventFilter(QObject*obj,QEvent *ev)
       if ( duplicate->shortcuts().contains( QKeySequence(Qt::CTRL+Qt::Key_D) ))
           duplicate->setEnabled( false );
 
-      if (slotMetaObject && slotMetaObject->indexOfSlot("cut()") != -1)
-        disconnect( m_paCut, SIGNAL( activated() ), ext, SLOT( cut() ) );
-      if (slotMetaObject && slotMetaObject->indexOfSlot("copy()") != -1)
-        disconnect( m_paCopy, SIGNAL( activated() ), ext, SLOT( copy() ) );
-      if (slotMetaObject && slotMetaObject->indexOfSlot("paste()") != -1)
-        disconnect( m_paPaste, SIGNAL( activated() ), ext, SLOT( paste() ) );
-      if (slotMetaObject && slotMetaObject->indexOfSlot("del()") != -1)
-        disconnect( m_paDelete, SIGNAL( activated() ), ext, SLOT( del() ) );
-      disconnect( m_paTrash, SIGNAL( triggered( Qt::MouseButtons, Qt::KeyboardModifiers ) ),
-                  this, SLOT( slotTrashActivated( Qt::MouseButtons, Qt::KeyboardModifiers ) ) );
-
       connect( m_paCut, SIGNAL( activated() ), m_combo->lineEdit(), SLOT( cut() ) );
       connect( m_paCopy, SIGNAL( activated() ), m_combo->lineEdit(), SLOT( copy() ) );
       connect( m_paPaste, SIGNAL( activated() ), m_combo->lineEdit(), SLOT( paste() ) );
@@ -3404,11 +3392,7 @@ bool KonqMainWindow::eventFilter(QObject*obj,QEvent *ev)
       connect( m_combo->lineEdit(), SIGNAL(textChanged(const QString &)), this, SLOT(slotCheckComboSelection()) );
       connect( m_combo->lineEdit(), SIGNAL(selectionChanged()), this, SLOT(slotCheckComboSelection()) );
 
-      m_paTrash->setEnabled(false);
-      m_paDelete->setEnabled(false);
-
       slotClipboardDataChanged();
-
     }
     else if ( ev->type()==QEvent::FocusOut)
     {
@@ -3427,17 +3411,6 @@ bool KonqMainWindow::eventFilter(QObject*obj,QEvent *ev)
       if ( duplicate->shortcuts().contains( QKeySequence(Qt::CTRL+Qt::Key_D) ) )
           duplicate->setEnabled( actionCollection()->action("new_window")->isEnabled() );
 
-      if (slotMetaObject && slotMetaObject->indexOfSlot("cut()") != -1)
-        connect( m_paCut, SIGNAL( activated() ), ext, SLOT( cut() ) );
-      if (slotMetaObject && slotMetaObject->indexOfSlot("copy()") != -1)
-        connect( m_paCopy, SIGNAL( activated() ), ext, SLOT( copy() ) );
-      if (slotMetaObject && slotMetaObject->indexOfSlot("paste()") != -1)
-        connect( m_paPaste, SIGNAL( activated() ), ext, SLOT( paste() ) );
-      if (slotMetaObject && slotMetaObject->indexOfSlot("del()") != -1)
-        connect( m_paDelete, SIGNAL( activated() ), ext, SLOT( del() ) );
-      connect( m_paTrash, SIGNAL( triggered( Qt::MouseButtons, Qt::KeyboardModifiers ) ),
-               this, SLOT( slotTrashActivated( Qt::MouseButtons, Qt::KeyboardModifiers ) ) );
-
       disconnect( m_paCut, SIGNAL( activated() ), m_combo->lineEdit(), SLOT( cut() ) );
       disconnect( m_paCopy, SIGNAL( activated() ), m_combo->lineEdit(), SLOT( copy() ) );
       disconnect( m_paPaste, SIGNAL( activated() ), m_combo->lineEdit(), SLOT( paste() ) );
@@ -3450,16 +3423,12 @@ bool KonqMainWindow::eventFilter(QObject*obj,QEvent *ev)
           m_paCut->setEnabled( ext->isActionEnabled( "cut" ) );
           m_paCopy->setEnabled( ext->isActionEnabled( "copy" ) );
           m_paPaste->setEnabled( ext->isActionEnabled( "paste" ) );
-          m_paDelete->setEnabled( ext->isActionEnabled( "delete" ) );
-          m_paTrash->setEnabled( ext->isActionEnabled( "trash" ) );
       }
       else
       {
           m_paCut->setEnabled( false );
           m_paCopy->setEnabled( false );
           m_paPaste->setEnabled( false );
-          m_paDelete->setEnabled( false );
-          m_paTrash->setEnabled( false );
       }
     }
   }
@@ -3996,18 +3965,6 @@ void KonqMainWindow::initActions()
   connect(m_paStop, SIGNAL(triggered(bool)), SLOT( slotStop() ));
   m_paStop->setShortcut(Qt::Key_Escape);
 
-  m_paTrash = actionCollection()->addAction("trash");
-  m_paTrash->setIcon( KIcon("user-trash") );
-  m_paTrash->setText( i18n( "&Move to Trash" ) );
-  m_paTrash->setShortcut(Qt::Key_Delete);
-  connect( m_paTrash, SIGNAL( triggered( Qt::MouseButtons, Qt::KeyboardModifiers ) ),
-           this, SLOT( slotTrashActivated( Qt::MouseButtons, Qt::KeyboardModifiers ) ) );
-
-  m_paDelete = actionCollection()->addAction("del");
-  m_paDelete->setIcon( KIcon("edit-delete") );
-  m_paDelete->setText( i18n( "&Delete" ) );
-  m_paDelete->setShortcut(Qt::SHIFT+Qt::Key_Delete);
-
   m_paAnimatedLogo = new KAnimatedButton( this );
   m_paAnimatedLogo->setAutoRaise(true);
   m_paAnimatedLogo->setFocusPolicy(Qt::NoFocus);
@@ -4374,8 +4331,7 @@ void KonqMainWindow::connectExtension( KParts::BrowserExtension *ext )
       // Does the extension have a slot with the name of this action ?
       if ( ext->metaObject()->indexOfSlot( it.key()+"()" ) != -1 )
       {
-          if ( it.key() != "trash" )
-              connect( act, SIGNAL( activated() ), ext, it.value() /* SLOT(slot name) */ );
+          connect( act, SIGNAL( activated() ), ext, it.value() /* SLOT(slot name) */ );
           act->setEnabled( ext->isActionEnabled( it.key() ) );
           const QString text = ext->actionText( it.key() );
           if ( !text.isEmpty() )
@@ -4409,17 +4365,6 @@ void KonqMainWindow::disconnectExtension( KParts::BrowserExtension *ext )
   }
 }
 
-void KonqMainWindow::slotTrashActivated( Qt::MouseButtons, Qt::KeyboardModifiers modifiers )
-{
-  if ( !m_currentView )
-    return;
-  // FIXME KAction port - not supported any more
-  if ( /*reason == KAction::PopupMenuActivation &&*/ ( modifiers & Qt::ShiftModifier ) )
-      m_currentView->callExtensionMethod( "del" );
-  else
-      m_currentView->callExtensionMethod( "trash" );
-}
-
 void KonqMainWindow::enableAction( const char * name, bool enabled )
 {
   QAction * act = actionCollection()->action( name );
@@ -4428,7 +4373,7 @@ void KonqMainWindow::enableAction( const char * name, bool enabled )
   else
   {
     if ( m_bLocationBarConnected && (
-      act==m_paCopy || act==m_paCut || act==m_paPaste || act==m_paDelete || act==m_paTrash ) )
+      act==m_paCopy || act==m_paCut || act==m_paPaste ) )
         // Don't change action state while the location bar has focus.
         return;
     //kDebug(1202) << "KonqMainWindow::enableAction " << name << " " << enabled;
@@ -4746,8 +4691,6 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
   popupMenuCollection.addAction( "cut", m_paCut );
   popupMenuCollection.addAction( "copy", m_paCopy );
   popupMenuCollection.addAction( "paste", m_paPaste );
-  popupMenuCollection.addAction( "trash", m_paTrash );
-  popupMenuCollection.addAction( "del", m_paDelete );
 
   // The pasteto action is used when clicking on a dir, to paste into it.
   KAction *actPaste = KStandardAction::paste( this, SLOT( slotPopupPasteTo() ), this );
