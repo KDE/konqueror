@@ -3,27 +3,21 @@ add_subdirectory( favicons )
 add_subdirectory( Templates )
 add_subdirectory( tests )
 
-# For crc32 in konq_historymgr.cc
-include_directories( ${ZLIB_INCLUDE_DIR}  )
-
-########### next target ###############
+########### libkonq ###############
 
 # Please use .cpp for new files
 set(konq_LIB_SRCS
-   konq_popupmenu.cpp       # OK to remain in libkonq, was needed by kicker applets like the trash applet
-   knewmenu.cpp             # used by dolphin, KonqPopupMenu, and konqueror (File menu)
+   konq_popupmenu.cpp       # remains in libkonq, was needed by kicker applets like the trash applet
+   knewmenu.cpp             # used by dolphin, KonqPopupMenu, and konqueror (File menu; to be moved to dolphinpart)
    konq_menuactions.cpp     # used by dolphin, KonqPopupMenu
-   konq_operations.cpp
+   konq_operations.cpp      # used by dolphin and konqueror
    konq_events.cpp
-   konq_fileundomanager.cpp
-   konq_historymgr.cc       # used by sidebar/trees/history_module and konqueror
-   konq_historyentry.cpp
+   konq_fileundomanager.cpp # used by dolphin, KonqOperations, and konqueror
    konq_filetip.cc          # unused right now, but should be used by dolphin_part in the future.
                             # Also useful to keep separate? (e.g. in kde3  kerry used it too)
-   konqmimedata.cpp
+   konqmimedata.cpp         # used by dolphin, KonqOperations, some filemanagement konqueror modules.
 )
 
-qt4_add_dbus_adaptor( konq_LIB_SRCS org.kde.libkonq.KonqHistoryManager.xml konq_historymgr.h KonqHistoryManager )
 qt4_add_dbus_adaptor( konq_LIB_SRCS org.kde.libkonq.FileUndoManager.xml konq_fileundomanager.h KonqFileUndoManager) 
 
 kde4_add_library(konq SHARED ${konq_LIB_SRCS})
@@ -33,7 +27,7 @@ target_link_libraries(konq ${QT_QTXML_LIBRARY} ${KDE4_KPARTS_LIBS})
 set_target_properties(konq PROPERTIES VERSION ${KDE_NON_GENERIC_LIB_VERSION} SOVERSION ${KDE_NON_GENERIC_LIB_SOVERSION} )
 install(TARGETS konq  DESTINATION ${LIB_INSTALL_DIR})
 
-########### next target ###############
+########### konq_sound ###############
 
 set(konq_sound_LIB_SRCS konq_sound.cc)
 kde4_add_plugin(konq_sound ${konq_sound_LIB_SRCS})
@@ -52,13 +46,11 @@ install( FILES
  libkonq_export.h
  konq_events.h
  konq_fileundomanager.h
- konq_historymgr.h
- konq_historyentry.h
  konq_filetip.h
  konqmimedata.h
 DESTINATION ${INCLUDE_INSTALL_DIR}
 )
 install( FILES konqpopupmenuplugin.desktop  DESTINATION  ${SERVICETYPES_INSTALL_DIR} )
 
-install( FILES org.kde.libkonq.KonqHistoryManager.xml org.kde.libkonq.FileUndoManager.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR} )
+install( FILES org.kde.libkonq.FileUndoManager.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR} )
 

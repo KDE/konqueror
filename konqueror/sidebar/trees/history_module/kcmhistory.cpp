@@ -43,8 +43,9 @@
 #include <KPluginFactory>
 #include <KPluginLoader>
 
+#include <konqhistorymanager.h>
+
 // Local
-#include "konq_historymgr.h"
 #include "history_settings.h"
 
 K_PLUGIN_FACTORY(KCMHistoryFactory,

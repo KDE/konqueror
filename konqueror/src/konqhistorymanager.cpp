@@ -1,5 +1,6 @@
 /* This file is part of the KDE project
    Copyright (C) 2000,2001 Carsten Pfeiffer <pfeiffer@kde.org>
+   Copyright     2007 David Faure <faure@kde.org>
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -17,7 +18,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "konq_historymgr.h"
+#include "konqhistorymanager.h"
 #include "konqhistorymanageradaptor.h"
 #include <kbookmarkmanager.h>
 
@@ -61,7 +62,7 @@ KonqHistoryManager::KonqHistoryManager( KBookmarkManager* bookmarkManager, QObje
 
     (void) new KonqHistoryManagerAdaptor( this );
     const QString dbusPath = "/KonqHistoryManager";
-    const QString dbusInterface = "org.kde.libkonq.KonqHistoryManager";
+    const QString dbusInterface = "org.kde.Konqueror.HistoryManager";
 
     QDBusConnection dbus = QDBusConnection::sessionBus();
     dbus.registerObject( dbusPath, this );
@@ -722,5 +723,4 @@ void KonqHistoryList::removeEntry( const KUrl& url )
         erase( it );
 }
 
-using namespace KParts; // for IRIX
-#include "konq_historymgr.moc"
+#include "konqhistorymanager.moc"

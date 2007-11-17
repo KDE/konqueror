@@ -17,17 +17,17 @@
     Boston, MA 02110-1301, USA.
 */
 
-#include "historymgrtest.h"
+#include "historymanagertest.h"
 #include <qtest_kde.h>
-#include <konq_historymgr.h>
+#include <konqhistorymanager.h>
 #include <kio/netaccess.h>
 #include <QDateTime>
 
-#include "historymgrtest.moc"
+#include "historymanagertest.moc"
 
-QTEST_KDEMAIN( HistoryMgrTest, NoGUI )
+QTEST_KDEMAIN( HistoryManagerTest, NoGUI )
 
-void HistoryMgrTest::testGetSetMaxCount()
+void HistoryManagerTest::testGetSetMaxCount()
 {
     KonqHistoryManager mgr(0);
     const int oldMaxCount = mgr.maxCount();
@@ -43,7 +43,7 @@ void HistoryMgrTest::testGetSetMaxCount()
     QCOMPARE( mgr.maxCount(), oldMaxCount );
 }
 
-void HistoryMgrTest::testGetSetMaxAge()
+void HistoryManagerTest::testGetSetMaxAge()
 {
     KonqHistoryManager mgr(0);
     const int oldMaxAge = mgr.maxAge();
@@ -70,7 +70,7 @@ static void waitForRemovedSignal( KonqHistoryManager* mgr )
     eventLoop.exec( QEventLoop::ExcludeUserInputEvents );
 }
 
-void HistoryMgrTest::testAddHistoryEntry()
+void HistoryManagerTest::testAddHistoryEntry()
 {
     KonqHistoryManager mgr(0);
     qRegisterMetaType<KonqHistoryEntry>("KonqHistoryEntry");

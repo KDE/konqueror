@@ -20,7 +20,7 @@
 #define HISTORY_ITEM_H
 
 #include <kurl.h>
-#include <konq_historymgr.h>
+#include <konqhistorymanager.h>
 
 #include "konq_sidebartreeitem.h"
 

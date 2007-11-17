@@ -45,6 +45,7 @@
 #include "konqview.h"
 #include "KonquerorAdaptor.h"
 #include "konqueror_interface.h"
+#include "konqhistorymanager.h"
 
 KConfig * KonqCombo::s_config = 0L;
 const int KonqCombo::temporary = 0;

@@ -17,12 +17,12 @@
     Boston, MA 02110-1301, USA.
 */
 
-#ifndef HISTORYMGRTEST_H
-#define HISTORYMGRTEST_H
+#ifndef HISTORYMANAGERTEST_H
+#define HISTORYMANAGERTEST_H
 
 #include <QObject>
 
-class HistoryMgrTest : public QObject
+class HistoryManagerTest : public QObject
 {
     Q_OBJECT
 
@@ -33,5 +33,5 @@ private Q_SLOTS:
 };
 
 
-#endif /* HISTORYMGRTEST_H */
+#endif
 

@@ -21,7 +21,6 @@
 #define KONQ_COMBO_H
 
 #include <khistorycombobox.h>
-#include <konq_historymgr.h>
 
 class QEvent;
 class QKeyEvent;

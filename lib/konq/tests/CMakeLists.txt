@@ -26,10 +26,4 @@ kde4_add_unit_test(favicontest ${favicontest_SRCS})
 
 target_link_libraries(favicontest konq ${QT_QTTEST_LIBRARY})
 
-########### historymgrtest ###############
-
-kde4_add_unit_test(historymgrtest historymgrtest.cpp)
-
-target_link_libraries(historymgrtest konq ${QT_QTTEST_LIBRARY})
-
 ############################################
