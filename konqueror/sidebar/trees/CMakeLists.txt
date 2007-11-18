@@ -4,6 +4,8 @@ set(libkonq_sidebar_tree_SRCS
 	${CMAKE_CURRENT_SOURCE_DIR}/konq_sidebartreeitem.cpp 
 	${CMAKE_CURRENT_SOURCE_DIR}/konq_sidebartreetoplevelitem.cpp
 	)
+# please remove for 4.1 if cmake > 2.6 is available
+add_library(sidebar_tree STATIC ${libkonq_sidebar_tree_SRCS})
 
 add_subdirectory( init )
 add_subdirectory( dirtree_module )
