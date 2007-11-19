@@ -153,6 +153,6 @@ void KonqProxyStyle::unpolish(QWidget *widget)
 
 void KonqProxyStyle::unpolish(QApplication *application)
 {
-    style()->polish(application);
+    style()->unpolish(application);
 }
 
