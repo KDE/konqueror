@@ -6,7 +6,7 @@ include_directories(
 
 if(WIN32)
 set(konq_sidebartree_bookmarks_SRCS bookmark_module.cpp bookmark_item.cpp)
-else
+else(WIN32)
 set(konq_sidebartree_bookmarks_SRCS bookmark_module.cpp bookmark_item.cpp ${libkonq_sidebar_tree_SRCS})
 endif(WIN32)
 
