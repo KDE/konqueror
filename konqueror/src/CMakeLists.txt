@@ -64,7 +64,7 @@ set(konqueror_KDEINIT_SRCS
 kde4_add_kcfg_files(konqueror_KDEINIT_SRCS konqsettingsxt.kcfgc)
 
 qt4_add_dbus_interface(konqueror_KDEINIT_SRCS org.kde.Konqueror.Main.xml konqueror_interface)
-qt4_add_dbus_interface(konqueror_KDEINIT_SRCS ${DBUS_INTERFACES_INSTALL_DIR}/org.kde.kded.xml kded_interface)
+qt4_add_dbus_interface(konqueror_KDEINIT_SRCS ${KDE4_DBUS_INTERFACES_DIR}/org.kde.kded.xml kded_interface)
 kde4_add_kdeinit_executable(konqueror ${konqueror_KDEINIT_SRCS} konqmain.cpp)
 
 # KDE4_KUTILS_LIBS used for KCMultiDialog, KCModuleInfo, and KPluginSelector
