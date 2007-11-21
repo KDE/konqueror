@@ -2,6 +2,8 @@
    This file is part of the KDE project
    Copyright (C) 1998, 1999 Simon Hausmann <hausmann@kde.org>
    Copyright (C) 2000-2004 David Faure <faure@kde.org>
+   Copyright (C) 2007 Eduardo Robles Elvira <edulix@gmail.com>
+   Copyright (C) 2007 Daniel García Moreno <danigm@gmail.com>
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -30,11 +32,11 @@
 #include <QtCore/QList>
 #include <QtCore/QEvent>
 #include <QtGui/QLabel>
+#include <QtCore/QHash>
 
 #include <kfileitem.h>
 
 #include "konqopenurlrequest.h"
-
 #include <kparts/mainwindow.h>
 #include <kcompletion.h>
 #include <kurlcompletion.h>
@@ -74,9 +76,11 @@ class ToggleViewGUIClient;
 class KonqMainWindowIface;
 class KonqDirPart;
 class KonqRun;
+class KConfigGroup;
 class KUrlRequester;
 class KBookmarkManager;
 struct HistoryEntry;
+class KonqClosedTabItem;
 
 namespace KParts {
     class BrowserExtension;
@@ -87,6 +91,7 @@ namespace KParts {
 }
 
 class KonqExtendedBookmarkOwner;
+
 
 class KONQ_TESTS_EXPORT KonqMainWindow : public KParts::MainWindow, public KonqFrameContainerBase
 {
@@ -314,6 +319,7 @@ public:
 
   void saveWindowSize() const;
   void restoreWindowSize();
+  void updateHistoryActions();
 
 Q_SIGNALS:
   void viewAdded( KonqView *view );
@@ -376,6 +382,8 @@ public Q_SLOTS:
   void slotGoAutostart();
   void slotGoHistory();
 
+  void slotAddClosedUrl(KonqFrameBase *tab);
+
   void slotConfigure();
   void slotConfigureToolbars();
   void slotConfigureExtensions();
@@ -403,7 +411,7 @@ public Q_SLOTS:
   void slotSplitViewHorizontal();
   void slotSplitViewVertical();
 
-protected Q_SLOTS:
+private Q_SLOTS:
   void slotViewCompleted( KonqView * view );
 
   void slotURLEntered( const QString &text, int );
@@ -459,6 +467,9 @@ protected Q_SLOTS:
   void slotUpAboutToShow();
   void slotBackAboutToShow();
   void slotForwardAboutToShow();
+
+    void slotClosedTabsListAboutToShow();
+    void updateClosedTabsAction();
 
   void slotUpActivated( int id );
   void slotBackActivated( int id );
@@ -604,6 +615,7 @@ private: // members
   KToolBarPopupAction *m_paUp;
   KToolBarPopupAction *m_paBack;
   KToolBarPopupAction *m_paForward;
+  KToolBarPopupAction *m_paClosedTabs;  /// Action for the trash that contains closed tabs
   KAction *m_paHome;
 
   KonqBidiHistoryAction *m_paHistory;

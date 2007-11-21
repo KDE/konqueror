@@ -1,5 +1,6 @@
 /*  This file is part of the KDE project
     Copyright (C) 1999 Simon Hausmann <hausmann@kde.org>
+    Copyright (C) 2007 Eduardo Robles Elvira <edulix@gmail.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -42,6 +43,7 @@ class KonqFrameContainer;
 class KonqFrameContainerBase;
 class KonqView;
 class KActionMenu;
+class KonqClosedTabItem;
 
 namespace KParts
 {
@@ -89,9 +91,7 @@ public:
    */
   KonqView* addTab(const QString &serviceType,
                    const QString &serviceName = QString(),
-                   bool passiveMode = false, bool openAfterCurrentPage = false );
-
-
+                   bool passiveMode = false, bool openAfterCurrentPage = false, int pos = -1 );
 
   /**
    * Duplicates the specified tab, or else the current one if none is specified
@@ -284,7 +284,13 @@ public:
 
   QString profileHomeURL() const { return m_profileHomeURL; }
 
-protected Q_SLOTS:
+public Q_SLOTS:
+    /**
+     * Opens a previously closed tab in a new tab
+     */
+    void openClosedTab(const KonqClosedTabItem& closedTab);
+
+private Q_SLOTS:
   void emitActivePartChanged();
 
   void slotProfileDlg();
@@ -297,7 +303,7 @@ protected Q_SLOTS:
 
   void slotActivePartChanged ( KParts::Part *newPart );
 
-protected:
+private:
 
   /**
    * Load the config entries for a view.
@@ -307,11 +313,14 @@ protected:
    * @param openUrl whether to open urls at all (from the profile or using @p defaultURL).
    *  (this is set to false when we have a forcedURL to open)
    */
-  void loadItem( KConfigGroup &cfg, KonqFrameContainerBase *parent,
-                 const QString &name, const KUrl & defaultURL, bool openUrl, bool openAfterCurrentPage = false );
+  void loadItem( const KConfigGroup &cfg, KonqFrameContainerBase *parent,
+                 const QString &name, const KUrl & defaultURL, bool openUrl, bool openAfterCurrentPage = false, int pos = -1 );
 
   // Disabled - we do it ourselves
   virtual void setActiveComponent(const KComponentData &) {}
+
+signals:
+  void aboutToRemoveTab( KonqFrameBase* tab );
 
 private:
   /**
@@ -336,7 +345,7 @@ private:
                        const KService::List &partServiceOffers,
                        const KService::List &appServiceOffers,
                        const QString &serviceType,
-                       bool passiveMode, bool openAfterCurrentPage = false);
+                       bool passiveMode, bool openAfterCurrentPage = false, int pos = 0);
 
 #ifndef NDEBUG
   //just for debugging
