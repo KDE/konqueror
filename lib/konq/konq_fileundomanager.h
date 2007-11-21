@@ -101,6 +101,15 @@ public:
     bool undoAvailable() const;
     QString undoText() const;
 
+    /**
+     * These two functions are useful when wrapping KonqFileUndoManager and adding custom commands.
+     * Each command has a unique ID. You can get a new serial number for a custom command
+     * with newCommandSerialNumber(), and then when you want to undo, check if the command
+     * KonqFileUndoManager would undo is newer or older than your custom command.
+     */
+    quint64 newCommandSerialNumber();
+    quint64 currentCommandSerialNumber();
+
 public Q_SLOTS:
     // TODO: add QWidget* parameter for error boxes
     /// Undoes the last command

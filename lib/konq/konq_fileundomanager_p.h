@@ -55,7 +55,9 @@ public:
     typedef QStack<KonqCommand> Stack;
 
     KonqCommand()
-    { m_valid = false; }
+    {
+      m_valid = false;
+    }
 
     // TODO
     //KonqCommand( Type type, KonqBasicOperation::Stack& opStack, const KUrl::List& src, const KUrl& dest )
@@ -76,6 +78,7 @@ public:
     KonqBasicOperation::Stack m_opStack;
     KUrl::List m_src;
     KUrl m_dst;
+    quint64 m_serialNumber;
 };
 
 // This class listens to a job, collects info while it's running (for copyjobs)
