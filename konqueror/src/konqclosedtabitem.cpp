@@ -23,7 +23,7 @@
 #include <kdebug.h>
 #include <kglobal.h>
 
-K_GLOBAL_STATIC_WITH_ARGS(KConfig, s_config, ("konqueror_closedtabs", KConfig::NoGlobals) );
+K_GLOBAL_STATIC_WITH_ARGS(KConfig, s_config, ("konqueror_closedtabs", KConfig::NoGlobals) )
 
 KonqClosedTabItem::KonqClosedTabItem(const QString& url, const QString& title, int pos, quint64 serialNumber)
       :  m_url(url), m_title(title), m_pos(pos),
