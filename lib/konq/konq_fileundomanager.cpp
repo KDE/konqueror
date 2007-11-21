@@ -101,6 +101,7 @@ KonqCommandRecorder::KonqCommandRecorder( KonqFileUndoManager::CommandType op, c
 
   m_cmd.m_type = op;
   m_cmd.m_valid = true;
+  m_cmd.m_serialNumber = KonqFileUndoManager::self()->newCommandSerialNumber();
   m_cmd.m_src = src;
   m_cmd.m_dst = dst;
   connect( job, SIGNAL( result( KJob * ) ),
@@ -175,7 +176,7 @@ class KonqFileUndoManager::KonqFileUndoManagerPrivate
 public:
     KonqFileUndoManagerPrivate()
         : m_uiInterface( new KonqFileUndoManager::UiInterface( 0 /*TODO*/ ) ),
-          m_undoJob( 0 )
+          m_undoJob( 0 ), m_nextCommandIndex( 0 )
     {
     }
     ~KonqFileUndoManagerPrivate()
@@ -198,6 +199,7 @@ public:
     KonqFileUndoManager::UiInterface* m_uiInterface;
 
     KonqUndoJob *m_undoJob;
+    quint64 m_nextCommandIndex;
 };
 
 KonqFileUndoManager::KonqFileUndoManager()
@@ -288,6 +290,22 @@ QString KonqFileUndoManager::undoText() const
         assert( false );
     /* NOTREACHED */
     return QString();
+}
+
+quint64 KonqFileUndoManager::newCommandSerialNumber()
+{
+    return ++(d->m_nextCommandIndex);
+}
+
+quint64 KonqFileUndoManager::currentCommandSerialNumber()
+{
+    if(!d->m_commands.isEmpty())
+    {
+        const KonqCommand& cmd = d->m_commands.top();
+        assert( cmd.m_valid );
+        return cmd.m_serialNumber;
+    } else
+    	return 0;
 }
 
 void KonqFileUndoManager::undo()
