@@ -1,5 +1,6 @@
 /* This file is part of the KDE project
    Copyright (C) 2001 Carsten Pfeiffer <pfeiffer@kde.org>
+   Copyright (C) 2007 Fredrik Höglund <fredrik@kde.org>
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -26,6 +27,7 @@
 #include <QtGui/QPixmap>
 #include <QtGui/QKeyEvent>
 #include <QtGui/QItemDelegate>
+#include <QtGui/QListWidgetItem>
 #include <QtCore/QEvent>
 
 // KDE
@@ -65,29 +67,20 @@ static QString titleOfURL( const QString& urlStr )
 
 ///////////////////////////////////////////////////////////////////////////////
 
-class KonqComboListBoxPixmap : public QListWidgetItem
+class KonqListWidgetItem : public QListWidgetItem
 {
 public:
-    KonqComboListBoxPixmap( const QString& text );
-    KonqComboListBoxPixmap( const QPixmap &, const QString& text, const QString& title );
+    enum ItemType { KonqItemType = 0x1845D5CC };
 
-    const QPixmap *pixmap() const { return &pm; }
+    KonqListWidgetItem( QListWidget *parent = 0 );
+    KonqListWidgetItem( const QString &text, QListWidget *parent = 0 );
 
-    int height( const QListWidget * ) const;
-    int width( const QListWidget * )  const;
+    QVariant data( int role ) const;
 
-    int rtti() const;
-    static int RTTI;
-
-    bool reuse( const QString& newText );
-
-protected:
-    void paint( QPainter * );
+    bool reuse( const QString &newText );
 
 private:
-    bool lookup_pending;
-    QPixmap pm;
-    QString title;
+    mutable bool lookupPending;
 };
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -106,7 +99,7 @@ class KonqComboLineEdit : public KLineEdit
 {
 public:
     KonqComboLineEdit( QWidget *parent=0 );
-    void setCompletedItems( const QStringList& items );
+    void setCompletedItems( const QStringList& items, bool );
 
 protected:
     void mouseDoubleClickEvent( QMouseEvent *e );
@@ -119,8 +112,6 @@ public:
     void setItems( const QStringList& items );
     void insertStringList( const QStringList & list, int index = -1 );
 };
-
-///////////////////////////////////////////////////////////////////////////////
 
 KonqCombo::KonqCombo( QWidget *parent )
           : KHistoryComboBox( parent ),
@@ -277,8 +268,6 @@ void KonqCombo::insertItem( const QPixmap &pixmap, const QString& text, int inde
 
 void KonqCombo::updateItem( const QPixmap& pix, const QString& t, int index, const QString& title )
 {
-    Q_UNUSED( title )
-
     // No need to flicker
     if (itemText( index ) == t &&
         (!pixmap(index).isNull() && pixmap(index).serialNumber() == pix.serialNumber()))
@@ -700,6 +689,56 @@ bool KonqCombo::hasSufficientContrast(const QColor &c1, const QColor &c2)
 
 ///////////////////////////////////////////////////////////////////////////////
 
+KonqListWidgetItem::KonqListWidgetItem( QListWidget *parent )
+    : QListWidgetItem( parent, KonqItemType ), lookupPending( true )
+{
+}
+
+KonqListWidgetItem::KonqListWidgetItem( const QString &text, QListWidget *parent )
+    : QListWidgetItem( text, parent, KonqItemType ), lookupPending( true )
+{
+}
+
+QVariant KonqListWidgetItem::data( int role ) const
+{
+    if ( lookupPending && role != Qt::DisplayRole )
+    {
+        QString title = titleOfURL( text() );
+        QPixmap pixmap;
+
+        KonqPixmapProvider *provider = KonqPixmapProvider::self();
+
+        if ( !title.isEmpty() )
+            pixmap = provider->pixmapFor( text(), KIconLoader::SizeSmall );
+        else if ( text().find( "://" ) == -1 ) {
+            title = titleOfURL( "http://"+text() );
+            if ( !title.isEmpty() )
+                pixmap = provider->pixmapFor( "http://"+text(), KIconLoader::SizeSmall );
+            else
+                pixmap = provider->pixmapFor( text(), KIconLoader::SizeSmall );
+        }
+
+        const_cast<KonqListWidgetItem*>( this )->setIcon( pixmap );
+        const_cast<KonqListWidgetItem*>( this )->setData( Qt::UserRole, title );
+
+        lookupPending = false;
+    }
+
+    return QListWidgetItem::data( role );
+}
+
+bool KonqListWidgetItem::reuse(const QString &newText)
+{
+    if ( text() == newText )
+        return false;
+
+    lookupPending = true;
+    setText( newText );
+    return true;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+
 QSize KonqComboItemDelegate::sizeHint( const QStyleOptionViewItem &option,
                                        const QModelIndex &index ) const
 {
@@ -773,106 +812,6 @@ void KonqComboItemDelegate::paint( QPainter *painter, const QStyleOptionViewItem
 
 ///////////////////////////////////////////////////////////////////////////////
 
-KonqComboListBoxPixmap::KonqComboListBoxPixmap( const QString& text )
-    : QListWidgetItem()
-{
-    setText( text );
-    lookup_pending = true;
-}
-
-KonqComboListBoxPixmap::KonqComboListBoxPixmap( const QPixmap & pix, const QString& text, const QString& _title )
-  : QListWidgetItem()
-{
-    pm = pix;
-    title = _title;
-    setText( text );
-    lookup_pending = false;
-}
-
-void KonqComboListBoxPixmap::paint( QPainter *painter )
-{
-    if ( lookup_pending ) {
-        title = titleOfURL( text() );
-        if ( !title.isEmpty() )
-            pm = KonqPixmapProvider::self()->pixmapFor( text(), KIconLoader::SizeSmall );
-        else if ( text().find( "://" ) == -1 ) {
-            title = titleOfURL( "http://"+text() );
-            if ( !title.isEmpty() )
-                pm = KonqPixmapProvider::self()->pixmapFor( "http://"+text(), KIconLoader::SizeSmall );
-            else
-                pm = KonqPixmapProvider::self()->pixmapFor( text(), KIconLoader::SizeSmall );
-        }
-        else
-            pm = QPixmap();
-        lookup_pending = false;
-    }
-
-    int itemHeight = listWidget()->visualItemRect(this).height();
-    int yPos, pmWidth = 0;
-    const QPixmap *pm = pixmap();
-
-    if ( pm && ! pm->isNull() ) {
-        yPos = ( itemHeight - pm->height() ) / 2;
-        painter->drawPixmap( 3, yPos, *pm );
-        pmWidth = pm->width() + 5;
-    }
-
-    int entryWidth = listWidget()->width() - listWidget()->style()->pixelMetric( QStyle::PM_ScrollBarExtent ) -
-                     2 * listWidget()->style()->pixelMetric( QStyle::PM_DefaultFrameWidth );
-    int titleWidth = ( entryWidth / 3 ) - 1;
-    int urlWidth = entryWidth - titleWidth - pmWidth - 2;
-
-    if ( !text().isEmpty() ) {
-        QString squeezedText = listWidget()->fontMetrics().elidedText( text(), Qt::ElideRight, urlWidth );
-        painter->drawText( pmWidth, 0, urlWidth + pmWidth, itemHeight,
-                           Qt::AlignLeft | Qt::AlignTop, squeezedText );
-
-        painter->setPen( KGlobalSettings::inactiveTextColor() );
-        squeezedText = listWidget()->fontMetrics().elidedText( title, Qt::ElideRight, titleWidth );
-        QFont font = painter->font();
-        font.setItalic( true );
-        painter->setFont( font );
-        painter->drawText( entryWidth - titleWidth, 0, titleWidth,
-                           itemHeight, Qt::AlignLeft | Qt::AlignTop, squeezedText );
-    }
-}
-
-int KonqComboListBoxPixmap::height( const QListWidget* lb ) const
-{
-    int h;
-    if ( text().isEmpty() )
-        h = pm.height();
-    else
-        h = qMax( pm.height(), lb->fontMetrics().lineSpacing() + 2 );
-    return qMax( h, QApplication::globalStrut().height() );
-}
-
-int KonqComboListBoxPixmap::width( const QListWidget* lb ) const
-{
-    if ( text().isEmpty() )
-        return qMax( pm.width() + 6, QApplication::globalStrut().width() );
-    return qMax( pm.width() + lb->fontMetrics().width( text() ) + 6,
-                 QApplication::globalStrut().width() );
-}
-
-int KonqComboListBoxPixmap::RTTI = 1003;
-
-int KonqComboListBoxPixmap::rtti() const
-{
-    return RTTI;
-}
-
-bool KonqComboListBoxPixmap::reuse( const QString& newText )
-{
-    if ( text() == newText )
-        return false;
-
-    lookup_pending = true;
-    setText( newText );
-    return true;
-}
-///////////////////////////////////////////////////////////////////////////////
-
 KonqComboLineEdit::KonqComboLineEdit( QWidget *parent )
                   :KLineEdit( parent )
 {
@@ -888,7 +827,7 @@ void KonqComboLineEdit::mouseDoubleClickEvent( QMouseEvent *e )
     KLineEdit::mouseDoubleClickEvent( e );
 }
 
-void KonqComboLineEdit::setCompletedItems( const QStringList& items )
+void KonqComboLineEdit::setCompletedItems( const QStringList& items, bool )
 {
     QString txt;
     KonqComboCompletionBox *completionbox = static_cast<KonqComboCompletionBox*>( completionBox() );
@@ -955,6 +894,7 @@ void KonqComboLineEdit::setCompletedItems( const QStringList& items )
 }
 
 ///////////////////////////////////////////////////////////////////////////////
+
 KonqComboCompletionBox::KonqComboCompletionBox( QWidget *parent )
                        :KCompletionBox( parent ) {}
 
@@ -978,14 +918,14 @@ void KonqComboCompletionBox::setItems( const QStringList& items )
 
         for ( ; it != itEnd; ++it) {
             if ( rowIndex < count() ) {
-                const bool changed = ((KonqComboListBoxPixmap*)item(rowIndex))->reuse( *it );
+                const bool changed = ((KonqListWidgetItem*)item(rowIndex))->reuse( *it );
                 dirty = dirty || changed;
                 rowIndex++;
             }
             else {
                 dirty = true;
                 //Inserting an item is a way of making this dirty
-                addItem( new KonqComboListBoxPixmap( *it ) );
+                addItem( new KonqListWidgetItem( *it ) );
             }
         }
 
@@ -1016,8 +956,8 @@ void KonqComboCompletionBox::insertStringList( const QStringList & list, int ind
 {
     if ( index < 0 )
         index = count();
-    for ( QStringList::ConstIterator it = list.begin(); it != list.end(); ++it ) {
-        insertItem( index++ , new KonqComboListBoxPixmap( *it ) );
-    }
+
+    foreach ( const QString &text, list )
+        insertItem( index++, new KonqListWidgetItem( text ) );
 }
 #include "konqcombo.moc"
