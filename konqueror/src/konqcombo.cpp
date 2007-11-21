@@ -25,6 +25,7 @@
 #include <QtGui/QStyle>
 #include <QtGui/QPixmap>
 #include <QtGui/QKeyEvent>
+#include <QtGui/QItemDelegate>
 #include <QtCore/QEvent>
 
 // KDE
@@ -62,6 +63,8 @@ static QString titleOfURL( const QString& urlStr )
     return ( historyentry != historylist.end() ? (*historyentry).title : QString() );
 }
 
+///////////////////////////////////////////////////////////////////////////////
+
 class KonqComboListBoxPixmap : public QListWidgetItem
 {
 public:
@@ -87,6 +90,18 @@ private:
     QString title;
 };
 
+///////////////////////////////////////////////////////////////////////////////
+
+class KonqComboItemDelegate : public QItemDelegate
+{
+public:
+    KonqComboItemDelegate( QObject *parent ) : QItemDelegate( parent ) {}
+    QSize sizeHint( const QStyleOptionViewItem &option, const QModelIndex &index ) const;
+    void paint( QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index ) const;
+};
+
+///////////////////////////////////////////////////////////////////////////////
+
 class KonqComboLineEdit : public KLineEdit
 {
 public:
@@ -104,6 +119,8 @@ public:
     void setItems( const QStringList& items );
     void insertStringList( const QStringList & list, int index = -1 );
 };
+
+///////////////////////////////////////////////////////////////////////////////
 
 KonqCombo::KonqCombo( QWidget *parent )
           : KHistoryComboBox( parent ),
@@ -130,8 +147,10 @@ KonqCombo::KonqCombo( QWidget *parent )
     edit->setHandleSignals( true );
     edit->setCompletionBox( new KonqComboCompletionBox( edit ) );
     setLineEdit( edit );
+    setItemDelegate( new KonqComboItemDelegate( this ) );
 
     completionBox()->setTabHandling( true );
+    completionBox()->setItemDelegate( new KonqComboItemDelegate( this ) );
 
     // Make the lineedit consume the Qt::Key_Enter event...
     setTrapReturnKey( true );
@@ -248,14 +267,12 @@ void KonqCombo::applyPermanent()
 
 void KonqCombo::insertItem( const QString &text, int index, const QString& title )
 {
-    KonqComboListBoxPixmap* item = new KonqComboListBoxPixmap( QPixmap(), text, title );
-    KHistoryComboBox::insertItem( index, text, item );
+    KHistoryComboBox::insertItem( index, text, title );
 }
 
 void KonqCombo::insertItem( const QPixmap &pixmap, const QString& text, int index, const QString& title )
 {
-    KonqComboListBoxPixmap* item = new KonqComboListBoxPixmap( pixmap, text, title );
-    KHistoryComboBox::insertItem( index, pixmap, text, item );
+    KHistoryComboBox::insertItem( index, pixmap, text, title );
 }
 
 void KonqCombo::updateItem( const QPixmap& pix, const QString& t, int index, const QString& title )
@@ -270,23 +287,10 @@ void KonqCombo::updateItem( const QPixmap& pix, const QString& t, int index, con
     // kDebug(1202) << "KonqCombo::updateItem: item='" << t << "', index='"
     //               << index << "'" << endl;
 
-    // QComboBox::changeItem() doesn't honor the pixmap when
-    // using an editable combobox, so we just remove and insert
-    // ### use QComboBox::changeItem(), once that finally works
-    // Well lets try it now as it seems to work fine for me. We
-    // can always revert :)
-    //KonqComboListBoxPixmap* item = new KonqComboListBoxPixmap( pix, t, title );
-    //listBox()->changeItem( item, index );
-    changeItem( pix, t, index );
+    setItemText( index, t );
+    setItemIcon( index, pix );
+    setItemData( index, title );
 
-    setUpdatesEnabled( false );
-    lineEdit()->setUpdatesEnabled( false );
-
-    removeItem( index );
-    insertItem( pix, t, index );
-
-    setUpdatesEnabled( true );
-    lineEdit()->setUpdatesEnabled( true );
     update();
 }
 
@@ -310,7 +314,7 @@ void KonqCombo::updatePixmaps()
     setUpdatesEnabled( false );
     KonqPixmapProvider *prov = KonqPixmapProvider::self();
     for ( int i = 1; i < count(); i++ ) {
-        updateItem( prov->pixmapFor( itemText( i ) ), itemText( i ), i, titleOfURL( itemText( i ) ) );
+        setItemIcon( i, prov->pixmapFor( itemText( i ) ) );
     }
     setUpdatesEnabled( true );
     repaint();
@@ -354,9 +358,8 @@ void KonqCombo::slotSetIcon( int index )
 {
     if( pixmap( index ).isNull())
         // on-demand icon loading
-        updateItem( KonqPixmapProvider::self()->pixmapFor( itemText( index ),
-                    KIconLoader::SizeSmall ), itemText( index ), index,
-                    titleOfURL( itemText( index ) ) );
+        setItemIcon( index, KonqPixmapProvider::self()->pixmapFor( itemText( index ),
+                     KIconLoader::SizeSmall ) );
     update();
 }
 
@@ -378,8 +381,8 @@ void KonqCombo::popup()
         if( pixmap( i ).isNull() )
         {
             // on-demand icon loading
-            updateItem( KonqPixmapProvider::self()->pixmapFor( itemText( i ),
-                        KIconLoader::SizeSmall), itemText( i ), i, titleOfURL( itemText( i ) ) );
+            setItemIcon( i, KonqPixmapProvider::self()->pixmapFor( itemText( i ),
+                         KIconLoader::SizeSmall ) );
         }
     }
     KHistoryComboBox::showPopup();
@@ -693,6 +696,79 @@ bool KonqCombo::hasSufficientContrast(const QColor &c1, const QColor &c2)
         hdist = qMin(hdist, HUE_DISTANCE*2);
     }
     return hdist + (qAbs(s1-s2)*128)/(160+qMin(s1,s2)) + qAbs(v1-v2) > CONTRAST_DISTANCE;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+
+QSize KonqComboItemDelegate::sizeHint( const QStyleOptionViewItem &option,
+                                       const QModelIndex &index ) const
+{
+    int vMargin = QApplication::style()->pixelMetric( QStyle::PM_FocusFrameVMargin );
+
+    QSize size( 1, qMax( option.fontMetrics.lineSpacing(), option.decorationSize.height() ) );
+    size.rheight() += vMargin * 2;
+
+    return size.expandedTo( QApplication::globalStrut() );
+}
+
+void KonqComboItemDelegate::paint( QPainter *painter, const QStyleOptionViewItem &option,
+                                   const QModelIndex &index ) const
+{
+    QIcon icon = qvariant_cast<QIcon>( index.data( Qt::DecorationRole ) );
+    QString url = index.data( Qt::DisplayRole ).toString();
+    QString title = index.data( Qt::UserRole ).toString();
+
+    QIcon::Mode mode = option.state & QStyle::State_Enabled ? QIcon::Normal : QIcon::Disabled;
+    const QSize size = icon.actualSize( option.decorationSize, mode );
+    QPixmap pixmap = icon.pixmap( size, mode );
+
+    QStyleOptionViewItemV3 opt( option );
+
+    painter->save();
+
+    // Draw the item background
+
+    // ### When Qt 4.4 is released we need to change this code to draw the background
+    //     by calling QStyle::drawPrimitive() with PE_PanelItemViewRow.
+    if ( opt.state & QStyle::State_Selected ) {
+        painter->fillRect( option.rect, option.palette.brush( QPalette::Highlight ) );
+        painter->setPen( QPen( option.palette.brush( QPalette::HighlightedText ), 0 ) );
+    }
+
+    int hMargin = QApplication::style()->pixelMetric( QStyle::PM_FocusFrameHMargin );
+    int vMargin = QApplication::style()->pixelMetric( QStyle::PM_FocusFrameVMargin );
+
+    const QRect bounding = option.rect.adjusted( hMargin, vMargin, -hMargin, -vMargin );
+    const QSize textSize( bounding.width() - pixmap.width() - 2, bounding.height() );
+    const QRect pixmapRect = QStyle::alignedRect( option.direction, Qt::AlignLeft | Qt::AlignVCenter,
+                                                  pixmap.size(), bounding );
+    const QRect textRect = QStyle::alignedRect( option.direction, Qt::AlignRight, textSize, bounding );
+
+    if ( !pixmap.isNull() )
+        painter->drawPixmap( pixmapRect.topLeft(), pixmap );
+
+    const QSize titleSize( ( bounding.width() / 3 ) - 1, textRect.height() );
+    const QSize urlSize( textRect.width() - titleSize.width() - 2, textRect.height() );
+    const QRect titleRect = QStyle::alignedRect( option.direction, Qt::AlignRight, titleSize, textRect );
+    const QRect urlRect   = QStyle::alignedRect( option.direction, Qt::AlignLeft, urlSize, textRect );
+
+    if ( !url.isEmpty() ) {
+        QString squeezedText = option.fontMetrics.elidedText( url, Qt::ElideRight, urlRect.width() );
+        painter->drawText( urlRect, Qt::AlignLeft | Qt::AlignVCenter, squeezedText );
+    }
+
+    if ( !title.isEmpty() ) {
+        QString squeezedText = option.fontMetrics.elidedText( title, Qt::ElideRight, titleRect.width() );
+        QFont font = painter->font();
+        font.setItalic( true );
+        painter->setFont( font );
+        QColor color = painter->pen().color();
+        color.setAlphaF(.75);
+        painter->setPen(color);
+        painter->drawText( titleRect, Qt::AlignLeft | Qt::AlignVCenter, squeezedText );
+    }
+
+    painter->restore();
 }
 
 ///////////////////////////////////////////////////////////////////////////////
