@@ -53,7 +53,7 @@ public:
             lastVisited == entry.lastVisited;
     }
 };
-#ifdef MAKE_KONQ_LIB
+#ifdef MAKE_KONQUERORPRIVATE_LIB
 KDE_DUMMY_QHASH_FUNCTION(KonqHistoryEntry)
 #endif
 
