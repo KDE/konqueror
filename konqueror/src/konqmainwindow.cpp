@@ -3162,7 +3162,7 @@ void KonqMainWindow::slotForwardActivated( int id )
 
 void KonqMainWindow::initCombo()
 {
-  m_combo = new KonqCombo( 0 );
+  m_combo = new KonqCombo( toolBar("locationToolBar" ) );
 
   m_combo->init( s_pCompletion );
 
