@@ -26,6 +26,7 @@ qt4_add_dbus_interface(konquerorprivate_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../../l
 qt4_add_dbus_adaptor(konquerorprivate_SRCS org.kde.Konqueror.HistoryManager.xml konqhistorymanager.h KonqHistoryManager konqhistorymanageradaptor KonqHistoryManagerAdaptor)
 kde4_add_library(konquerorprivate SHARED ${konquerorprivate_SRCS})
 target_link_libraries(konquerorprivate ${KDE4_KPARTS_LIBS})
+set_target_properties(konquerorprivate PROPERTIES VERSION 1.0.0 SOVERSION 1 )
 install(TARGETS konquerorprivate DESTINATION ${LIB_INSTALL_DIR})
 
 ########### konqueror ###############
@@ -60,6 +61,7 @@ set(konqueror_KDEINIT_SRCS
    KonqViewAdaptor.cpp
    konqproxystyle.cpp
    konqundomanager.cpp
+   konqclosedtabitem.cpp
 )
 kde4_add_kcfg_files(konqueror_KDEINIT_SRCS konqsettingsxt.kcfgc)
 

@@ -2,6 +2,8 @@
    Copyright (C) 1998, 1999 Simon Hausmann <hausmann@kde.org>
    Copyright (C) 2000 Carsten Pfeiffer <pfeiffer@kde.org>
    Copyright (C) 2000-2005 David Faure <faure@kde.org>
+   Copyright (C) 2007 Eduardo Robles Elvira <edulix@gmail.com>
+   Copyright (C) 2007 Daniel García Moreno <danigm@gmail.com>
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -20,6 +22,7 @@
 */
 
 #include "konqmainwindow.h"
+#include "konqclosedtabitem.h"
 #include "konqapplication.h"
 #include "konqguiclients.h"
 #include "KonqMainWindowAdaptor.h"
@@ -41,6 +44,7 @@
 #include "konqbookmarkbar.h"
 #include "konqundomanager.h"
 #include <config-konqueror.h>
+#include <kstringhandler.h>
 
 #include <konq_events.h>
 #include <konqpixmapprovider.h>
@@ -151,6 +155,7 @@ QFile * KonqMainWindow::s_crashlog_file = 0;
 bool KonqMainWindow::s_preloaded = false;
 KonqMainWindow* KonqMainWindow::s_preloadedWindow = 0;
 int KonqMainWindow::s_initialMemoryUsage = -1;
+static unsigned short int s_closedTabsListLength = 10;
 time_t KonqMainWindow::s_startupTime;
 int KonqMainWindow::s_preloadUsageCount;
 
@@ -164,7 +169,8 @@ KonqExtendedBookmarkOwner::KonqExtendedBookmarkOwner(KonqMainWindow *w)
 }
 
 KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile)
- : KParts::MainWindow()
+    : KParts::MainWindow(),
+      m_paClosedTabs(0)
 {
   setPreloadedFlag( false );
 
@@ -232,6 +238,7 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
       KConfigGroup locationBarGroup( s_comboConfig, "Location Bar" );
       prov->load( locationBarGroup, "ComboIconCache" );
   }
+
   connect( prov, SIGNAL( changed() ), SLOT( slotIconsChanged() ) );
 
   m_undoManager = new KonqUndoManager(this);
@@ -326,6 +333,7 @@ KonqMainWindow::~KonqMainWindow()
   delete m_paBookmarkBar;
   delete m_pBookmarksOwner;
   delete m_pURLCompletion;
+  delete m_paClosedTabs;
 
   if ( s_lstViews == 0 ) {
       delete s_comboConfig;
@@ -3121,9 +3129,40 @@ void KonqMainWindow::slotBackAboutToShow()
       KonqBidiHistoryAction::fillHistoryPopup( m_currentView->history(), m_currentView->historyIndex(), m_paBack->menu(), true, false );
 }
 
+
+/**
+ * Fill the closed tabs action menu before it's shown
+ */
+void KonqMainWindow::slotClosedTabsListAboutToShow()
+{
+    kDebug(1202);
+    QMenu* popup = m_paClosedTabs->menu();
+    // Clear the menu and fill it with a maximum of s_closedTabsListLength number of urls
+    popup->clear();
+    QAction* clearAction = popup->addAction( i18n("Empty closed tabs history") );
+    connect(clearAction, SIGNAL(triggered()), m_undoManager, SLOT(clearClosedTabsList()));
+    popup->insertSeparator();
+
+    QList<KonqClosedTabItem *>::ConstIterator it = m_undoManager->closedTabsList().begin();
+    const QList<KonqClosedTabItem *>::ConstIterator end = m_undoManager->closedTabsList().end();
+    for ( int i = 0; it != end && i < s_closedTabsListLength; ++it, ++i ) {
+        const QString text = QString::number(i) + ' ' + (*it)->title();
+        const QString url = (*it)->url();
+        QAction* action = popup->addAction( KonqPixmapProvider::self()->pixmapFor(url), text );
+        action->setData(i);
+    }
+    KAcceleratorManager::manage(popup);
+    kDebug(1202) << "done";
+}
+
+void KonqMainWindow::updateClosedTabsAction()
+{
+    m_paClosedTabs->setEnabled(!m_undoManager->closedTabsList().isEmpty());
+}
+
 void KonqMainWindow::slotBack()
 {
-  slotGoHistoryActivated(-1);
+    slotGoHistoryActivated(-1);
 }
 
 void KonqMainWindow::slotBack(Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers)
@@ -3735,6 +3774,18 @@ void KonqMainWindow::initActions()
 
   QPair< KGuiItem, KGuiItem > backForward = KStandardGuiItem::backAndForward();
 
+
+  // Trash bin of closed tabs
+  m_paClosedTabs = new KToolBarPopupAction( KIcon("closedtabs"),  i18n( "Closed Tabs" ), this );
+  actionCollection()->addAction( "closedtabs", m_paClosedTabs );
+  // set the maximum number of closed tabs list shown
+  connect( m_paClosedTabs, SIGNAL(triggered()), m_undoManager, SLOT(undoLastClosedTab()) );
+  connect( m_paClosedTabs->menu(), SIGNAL(aboutToShow()), this, SLOT(slotClosedTabsListAboutToShow()) );
+  connect( m_paClosedTabs->menu(), SIGNAL(triggered(QAction*)), m_undoManager, SLOT(slotClosedTabsActivated(QAction*)) );
+  connect( m_pViewManager, SIGNAL(aboutToRemoveTab(KonqFrameBase*)), this, SLOT(slotAddClosedUrl(KonqFrameBase*)) );
+  connect( m_undoManager, SIGNAL(openClosedTab(KonqClosedTabItem)), m_pViewManager, SLOT(openClosedTab(KonqClosedTabItem)) );
+  connect( m_undoManager, SIGNAL(closedTabsListChanged()), this, SLOT(updateClosedTabsAction()));
+
   m_paBack = new KToolBarPopupAction( KIcon(backForward.first.iconName()), backForward.first.text(), this );
   actionCollection()->addAction( "go_back", m_paBack );
   m_paBack->setShortcuts( KStandardShortcut::shortcut(KStandardShortcut::Back) );
@@ -4046,6 +4097,11 @@ void KonqMainWindow::initActions()
   m_paForward->setWhatsThis( i18n( "Move forward one step in the browsing history" ) );
   m_paForward->setToolTip( i18n( "Move forward one step in the browsing history" ) );
 
+
+  m_paClosedTabs->setWhatsThis( i18n( "Move backwards one step in the closed tabs history" ) );
+  m_paClosedTabs->setToolTip( i18n( "Move backwards one step in the closed tabs history" ) );
+
+
   m_paHome->setWhatsThis( i18n( "<html>Navigate to your 'Home Location'<br /><br />"
                                 "You can configure the location this button takes you to "
                                 "under <b>Settings -> Configure Konqueror -> General</b>.</html>" ) );
@@ -4143,6 +4199,15 @@ void KonqMainWindow::slotMoveTabRight()
     m_pViewManager->moveTabBackward();
   else
     m_pViewManager->moveTabForward();
+}
+
+void KonqMainWindow::updateHistoryActions()
+{
+    if(m_currentView)
+    {
+        m_paBack->setEnabled( m_currentView->canGoBack() );
+        m_paForward->setEnabled( m_currentView->canGoForward() );
+    }
 }
 
 void KonqMainWindow::updateToolBarActions( bool pendingAction /*=false*/)
@@ -4441,6 +4506,7 @@ void KonqMainWindow::enableAllActions( bool enable )
       currentProfileChanged();
 
       updateViewActions(); // undo, lock, link and other view-dependent actions
+      updateClosedTabsAction();
 
       m_paStop->setEnabled( m_currentView && m_currentView->isLoading() );
 
@@ -4681,6 +4747,7 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
   popupMenuCollection.addAction( "go_forward", m_paForward );
   popupMenuCollection.addAction( "go_up", m_paUp );
   popupMenuCollection.addAction( "reload", m_paReload );
+  popupMenuCollection.addAction( "closedtabs", m_paClosedTabs );
 
 #if 0
   popupMenuCollection.addAction( "find", m_paFindFiles );
@@ -5360,6 +5427,55 @@ void KonqMainWindow::goURL()
 
   QKeyEvent event( QEvent::KeyPress, Qt::Key_Return, Qt::NoModifier, QChar('\n') );
   QApplication::sendEvent( lineEdit, &event );
+}
+
+/**
+ * Adds the URL of a KonqView to the closed tabs list.
+ * This slot gets called everytime a View is closed
+ */
+void KonqMainWindow::slotAddClosedUrl(KonqFrameBase *tab)
+{
+    kDebug(1202);
+    KonqFrameBase* currentFrame = tab;
+    QString title( i18n("no name") ), url("about:blank");
+
+    // TODO simplify
+    KonqFrame* frame = dynamic_cast<KonqFrame *>(tab);
+    KonqFrameContainer* frame2 = dynamic_cast<KonqFrameContainer *>(tab);
+
+    if ( frame && frame->activeChildView() )
+    {
+        title = frame->title().trimmed();
+        if ( title.isEmpty() )
+            title = frame->activeChildView()->url().url();
+
+        title = KStringHandler::csqueeze( title, 50 );
+
+        url = frame->activeChildView()->url().url();
+    } else if ( frame2 && frame2->activeChildView() )
+    {
+        // TODO: in case we are a KonqFrameContainer.. how do we get the title of the selected view?
+        title = frame2->activeChildView()->url().url();
+
+        title = KStringHandler::csqueeze( title, 50 );
+
+        url = frame2->activeChildView()->url().url();
+    }
+
+    // Now we get the position of the tab
+    const int index =  m_pViewManager->tabContainer()->childFrameList().indexOf(tab);
+
+    KonqClosedTabItem* closedTabItem = new KonqClosedTabItem(url, title, index, m_undoManager->newCommandSerialNumber());
+
+    QString prefix = QString::fromLatin1( currentFrame->frameType() ) + QString::number(0);
+    closedTabItem->configGroup().writeEntry( "RootItem", prefix );
+    prefix.append( QLatin1Char( '_' ) );
+    currentFrame->saveConfig( closedTabItem->configGroup(), prefix, true, 0L, 0, 1);
+
+    m_paClosedTabs->setEnabled(true);
+    m_undoManager->addClosedTabItem( closedTabItem );
+
+    kDebug(1202) << "done";
 }
 
 void KonqMainWindow::slotLocationLabelActivated()

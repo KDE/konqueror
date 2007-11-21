@@ -1,5 +1,6 @@
 /*  This file is part of the KDE project
     Copyright (C) 1999 Simon Hausmann <hausmann@kde.org>
+    Copyright (C) 2007 Eduardo Robles Elvira <edulix@gmail.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -18,6 +19,8 @@
 */
 
 #include "konqviewmanager.h"
+#include "konqclosedtabitem.h"
+#include "konqundomanager.h"
 
 #include <QtCore/QFileInfo>
 #include <QtDBus/QDBusMessage>
@@ -26,12 +29,14 @@
 #include <kaccelgen.h>
 #include <kactionmenu.h>
 #include <kstandarddirs.h>
+#include <kstringhandler.h>
 #include <kdebug.h>
 #include <kapplication.h>
 #include <kglobalsettings.h>
 #include <ktemporaryfile.h>
 #include <klocale.h>
 #include <kmessagebox.h>
+#include <ktoolbarpopupaction.h>
 
 #include <kmenu.h>
 
@@ -200,7 +205,7 @@ KonqView* KonqViewManager::splitMainContainer( KonqView* currentView,
     return childView;
 }
 
-KonqView* KonqViewManager::addTab(const QString &serviceType, const QString &serviceName, bool passiveMode, bool openAfterCurrentPage  )
+KonqView* KonqViewManager::addTab(const QString &serviceType, const QString &serviceName, bool passiveMode, bool openAfterCurrentPage, int pos  )
 {
 #ifdef DEBUG_VIEWMGR
   kDebug(1202) << "------------- KonqViewManager::addTab starting -------------";
@@ -218,7 +223,7 @@ KonqView* KonqViewManager::addTab(const QString &serviceType, const QString &ser
   if( newViewFactory.isNull() )
     return 0L; //do not split at all if we can't create the new view
 
-  KonqView* childView = setupView( tabContainer(), newViewFactory, service, partServiceOffers, appServiceOffers, serviceType, passiveMode, openAfterCurrentPage );
+  KonqView* childView = setupView( tabContainer(), newViewFactory, service, partServiceOffers, appServiceOffers, serviceType, passiveMode, openAfterCurrentPage, pos );
 
 #ifdef DEBUG_VIEWMGR
   m_pMainWindow->dumpViewList();
@@ -357,6 +362,8 @@ void KonqViewManager::removeTab( KonqFrameBase* currentFrame )
   if ( m_tabContainer->count() == 1 )
     return;
 
+  emit aboutToRemoveTab(currentFrame);
+
   if (currentFrame->asQWidget() == m_tabContainer->currentWidget())
     setActivePart( 0L, true );
 
@@ -471,10 +478,41 @@ void KonqViewManager::updatePixmaps()
         view->setTabIcon( KUrl( view->locationBarURL() ) );
 }
 
+void KonqViewManager::openClosedTab(const KonqClosedTabItem& closedTab)
+{
+    kDebug(1202);
+    // TODO: this code is duplicated three times!
+    const QString rootItem = closedTab.configGroup().readEntry("RootItem", "empty");
+    if (rootItem.isNull() || rootItem == "empty") {
+        return;
+    }
+
+    // This flag is used by KonqView, to distinguish manual view creation
+    // from profile loading (e.g. in switchView)
+    m_bLoadingProfile = true;
+
+    loadItem( closedTab.configGroup(), m_tabContainer, rootItem, KUrl(), true, false, closedTab.pos() );
+
+    if( closedTab.pos() < m_tabContainer->count() )
+        m_tabContainer->setCurrentIndex( closedTab.pos() );
+    else
+        m_tabContainer->setCurrentIndex( m_tabContainer->count()-1 );
+
+    m_bLoadingProfile = false;
+
+    m_pMainWindow->enableAllActions(true);
+
+    // This flag disables calls to viewCountChanged while creating the views,
+    // so we do it once at the end :
+    viewCountChanged();
+
+    kDebug(1202) << "done";
+}
+
 void KonqViewManager::removeView( KonqView *view )
 {
 #ifdef DEBUG_VIEWMGR
-  kDebug(1202) << "---------------- removeView --------------" << view;
+  kDebug(1202) << view;
   m_pMainWindow->dumpViewList();
   printFullHierarchy( m_pMainWindow );
 #endif
@@ -532,7 +570,7 @@ void KonqViewManager::removeView( KonqView *view )
   printFullHierarchy( m_pMainWindow );
   m_pMainWindow->dumpViewList();
 
-  kDebug(1202) << "------------- removeView done --------------";
+  kDebug(1202) << "done";
 #endif
 }
 
@@ -713,7 +751,8 @@ KonqView *KonqViewManager::setupView( KonqFrameContainerBase *parentContainer,
                                       const KService::List &appServiceOffers,
                                       const QString &serviceType,
                                       bool passiveMode,
-                                      bool openAfterCurrentPage )
+                                      bool openAfterCurrentPage,
+                                      int pos )
 {
     //kDebug(1202) << "KonqViewManager::setupView passiveMode=" << passiveMode;
 
@@ -740,6 +779,8 @@ KonqView *KonqViewManager::setupView( KonqFrameContainerBase *parentContainer,
   int index = -1;
   if ( openAfterCurrentPage )
     index = m_tabContainer->currentIndex() + 1;
+  else if(pos > -1)
+    index = pos;
 
   parentContainer->insertChildFrame( newViewFrame, index );
 
@@ -1062,8 +1103,8 @@ QSize KonqViewManager::readConfigSize( KConfigGroup &cfg, QWidget *widget )
     return QSize( width, height );
 }
 
-void KonqViewManager::loadItem( KConfigGroup &cfg, KonqFrameContainerBase *parent,
-                                const QString &name, const KUrl & defaultURL, bool openUrl, bool openAfterCurrentPage )
+void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase *parent,
+                                const QString &name, const KUrl & defaultURL, bool openUrl, bool openAfterCurrentPage, int pos )
 {
   QString prefix;
   if( name != "InitialView" )
@@ -1102,15 +1143,17 @@ void KonqViewManager::loadItem( KConfigGroup &cfg, KonqFrameContainerBase *paren
     //kDebug(1202) << "KonqViewManager::loadItem: Creating View Stuff; parent=" << parent;
     if ( parent == m_pMainWindow )
         parent = tabContainer();
-    KonqView *childView = setupView( parent, viewFactory, service, partServiceOffers, appServiceOffers, serviceType, passiveMode, openAfterCurrentPage );
+    KonqView *childView = setupView( parent, viewFactory, service, partServiceOffers, appServiceOffers, serviceType, passiveMode, openAfterCurrentPage, pos );
 
     if (!childView->isFollowActive()) childView->setLinkedView( cfg.readEntry( QString::fromLatin1( "LinkedView" ).prepend( prefix ), false ) );
     childView->setToggleView( cfg.readEntry( QString::fromLatin1( "ToggleView" ).prepend( prefix ), false ) );
     if( !cfg.readEntry( QString::fromLatin1( "ShowStatusBar" ).prepend( prefix ), true ) )
       childView->frame()->statusbar()->hide();
 
+#if 0 // currently unused
     KonqConfigEvent ev( cfg.config(), prefix+'_', false/*load*/);
     QApplication::sendEvent( childView->part(), &ev );
+#endif
 
     childView->frame()->show();
 
@@ -1141,6 +1184,9 @@ void KonqViewManager::loadItem( KConfigGroup &cfg, KonqFrameContainerBase *paren
         if (url.protocol() != "about")
           req.typedUrl = url.prettyUrl();
         m_pMainWindow->openView( serviceType, url, childView, req );
+
+        childView->loadHistoryConfig(cfg, prefix);
+        m_pMainWindow->updateHistoryActions();
       }
       //else kDebug(1202) << "KonqViewManager::loadItem: url is empty";
     }
@@ -1180,7 +1226,7 @@ void KonqViewManager::loadItem( KConfigGroup &cfg, KonqFrameContainerBase *paren
       KonqFrameContainer *newContainer = new KonqFrameContainer( o, parent->asQWidget(), parent );
       connect(newContainer,SIGNAL(ctrlTabPressed()),m_pMainWindow,SLOT(slotCtrlTabPressed()));
 
-      int tabindex = -1;
+      int tabindex = pos;
       if(openAfterCurrentPage && parent->frameType() == "Tabs") // Need to honor it, if possible
 	tabindex = static_cast<KonqFrameTabs*>(parent)->currentIndex() + 1;
       parent->insertChildFrame( newContainer, tabindex );

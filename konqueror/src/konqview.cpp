@@ -1329,4 +1329,84 @@ bool KonqView::supportsServiceType( const QString &serviceType ) const
     return false;
 }
 
+void HistoryEntry::saveConfig( KConfigGroup& config, const QString &prefix)
+{
+    config.writeEntry( QString::fromLatin1( "Url" ).prepend( prefix ), url.url() );
+    config.writeEntry( QString::fromLatin1( "LocationBarURL" ).prepend( prefix ), locationBarURL );
+    config.writeEntry( QString::fromLatin1( "Title" ).prepend( prefix ), title );
+    config.writeEntry( QString::fromLatin1( "Buffer" ).prepend( prefix ), buffer );
+    config.writeEntry( QString::fromLatin1( "StrServiceType" ).prepend( prefix ), strServiceType );
+    config.writeEntry( QString::fromLatin1( "StrServiceName" ).prepend( prefix ), strServiceName );
+    config.writeEntry( QString::fromLatin1( "PostData" ).prepend( prefix ), postData );
+    config.writeEntry( QString::fromLatin1( "PostContentType" ).prepend( prefix ), postContentType );
+    config.writeEntry( QString::fromLatin1( "DoPost" ).prepend( prefix ), doPost );
+    config.writeEntry( QString::fromLatin1( "PageReferrer" ).prepend( prefix ), pageReferrer );
+    config.writeEntry( QString::fromLatin1( "PageSecurity" ).prepend( prefix ), (int)pageSecurity );
+}
+
+void HistoryEntry::loadItem( const KConfigGroup& config, const QString &prefix)
+{
+    url = KUrl(config.readEntry( QString::fromLatin1( "Url" ).prepend( prefix ), "" ));
+    locationBarURL = config.readEntry( QString::fromLatin1( "LocationBarURL" ).prepend( prefix ), "" );
+    title = config.readEntry( QString::fromLatin1( "Title" ).prepend( prefix ), "" );
+    buffer = config.readEntry( QString::fromLatin1( "Buffer" ).prepend( prefix ), QByteArray() );
+    strServiceType = config.readEntry( QString::fromLatin1( "StrServiceType" ).prepend( prefix ), "" );
+    strServiceName = config.readEntry( QString::fromLatin1( "StrServiceName" ).prepend( prefix ), "" );
+    postData = config.readEntry( QString::fromLatin1( "PostData" ).prepend( prefix ), QByteArray() );
+    postContentType = config.readEntry( QString::fromLatin1( "PostContentType" ).prepend( prefix ), "" );
+    doPost = config.readEntry( QString::fromLatin1( "DoPost" ).prepend( prefix ), false );
+    pageReferrer = config.readEntry( QString::fromLatin1( "PageReferrer" ).prepend( prefix ), "" );
+    pageSecurity = (KonqMainWindow::PageSecurity)config.readEntry( QString::fromLatin1( "PageSecurity" ).prepend( prefix ), 0 );
+}
+
+void KonqView::saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs)
+{
+    config.writeEntry( QString::fromLatin1( "ServiceType" ).prepend( prefix ), serviceType() );
+    config.writeEntry( QString::fromLatin1( "ServiceName" ).prepend( prefix ), service()->desktopEntryName() );
+    config.writeEntry( QString::fromLatin1( "PassiveMode" ).prepend( prefix ), isPassiveMode() );
+    config.writeEntry( QString::fromLatin1( "LinkedView" ).prepend( prefix ), isLinkedView() );
+    config.writeEntry( QString::fromLatin1( "ToggleView" ).prepend( prefix ), isToggleView() );
+    config.writeEntry( QString::fromLatin1( "LockedLocation" ).prepend( prefix ), isLockedLocation() );
+
+    if (saveURLs) {
+        // Don't save the url, but save the history entries instead
+        config.writePathEntry( QString::fromLatin1( "URL" ).prepend( prefix ), url().url() );
+
+        QList<HistoryEntry*>::Iterator it = m_lstHistory.begin();
+        for ( uint i = 0; it != m_lstHistory.end(); ++it, ++i ) {
+            (*it)->saveConfig(config, QString::fromLatin1( "HistoryItem" ) + QString::number(i).prepend( prefix ));
+        }
+        config.writeEntry( QString::fromLatin1( "CurrentHistoryItem" ).prepend( prefix ), m_lstHistoryIndex );
+        config.writeEntry( QString::fromLatin1( "NumberOfHistoryItems" ).prepend( prefix ), historyLength() );
+    }
+}
+
+void KonqView::loadHistoryConfig(const KConfigGroup& config, const QString &prefix)
+{
+    // First, remove any history
+    qDeleteAll(m_lstHistory);
+    m_lstHistory.clear();
+
+    const int m_lstHistorySize = config.readEntry( QString::fromLatin1( "NumberOfHistoryItems" ).prepend( prefix ), 0 );
+
+    // No history to restore..
+    if (m_lstHistorySize == 0) {
+        createHistoryEntry();
+        return;
+    }
+
+    // restore history list
+    for ( uint i = 0; i < m_lstHistorySize; ++i )
+    {
+        HistoryEntry* historyEntry = new HistoryEntry;
+        historyEntry->loadItem(config, QString::fromLatin1( "HistoryItem" ) + QString::number(i).prepend( prefix ));
+
+        m_lstHistory.append( historyEntry );
+    }
+
+    // set and load the correct history index
+    setHistoryIndex( config.readEntry( QString::fromLatin1( "CurrentHistoryItem" ).prepend( prefix ), historyLength()-1 ) );
+}
+
+
 #include "konqview.moc"

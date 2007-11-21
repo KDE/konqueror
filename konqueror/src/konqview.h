@@ -43,6 +43,9 @@ namespace KParts
 
 struct HistoryEntry
 {
+  void loadItem( const KConfigGroup& config, const QString &prefix);
+  void saveConfig( KConfigGroup& config, const QString &prefix);
+
   KUrl url;
   QString locationBarURL; // can be different from url when showing a index.html
   QString title;
@@ -323,6 +326,12 @@ public:
 
   // overload for the QString version
   void setLocationBarURL( const KUrl& locationBarURL );
+
+  /**
+   * Saves config in a KConfigGroup
+   */
+  void saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs);
+  void loadHistoryConfig( const KConfigGroup& config, const QString &prefix);
 
   static QStringList childFrameNames( KParts::ReadOnlyPart *part );
 
