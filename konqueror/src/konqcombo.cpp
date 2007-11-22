@@ -640,8 +640,10 @@ void KonqCombo::paintEvent( QPaintEvent *pe )
 	    edit->setPaletteBackgroundColor( color );
 
         pix = SmallIcon( m_pageSecurity==KonqMainWindow::Encrypted ? "security-high" : "security-medium" );
-        p.fillRect( re.right() - pix.width() - 3 , re.y(), pix.width() + 4, re.height(),
-		    QBrush( useColor ? color : edit->paletteBackgroundColor() ));
+        if ( useColor ) {
+            p.fillRect( re.right() - pix.width() - 3 , re.y(), pix.width() + 4, re.height(),
+		    QBrush( color ));
+        }
         p.drawPixmap( re.right() - pix.width() -1 , re.y() + ( re.height() - pix.height() ) / 2, pix );
         p.setClipping( false );
     }
