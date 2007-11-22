@@ -1985,20 +1985,7 @@ void KonqMainWindow::slotNewToolbarConfig() // This is called when OK or Apply i
 
 void KonqMainWindow::slotUndoAvailable( bool avail )
 {
-  bool enable = false;
-
-  if ( avail && m_currentView && m_currentView->part() )
-  {
-    // Avoid qWarning from QObject::property if it doesn't exist
-    if ( m_currentView->part()->metaObject()->indexOfProperty( "supportsUndo" ) != -1 )
-    {
-      QVariant prop = m_currentView->part()->property( "supportsUndo" );
-      if ( prop.isValid() && prop.toBool() )
-        enable = true;
-    }
-  }
-
-  m_paUndo->setEnabled( enable );
+  m_paUndo->setEnabled( avail );
 }
 
 void KonqMainWindow::slotPartChanged( KonqView *childView, KParts::ReadOnlyPart *oldPart, KParts::ReadOnlyPart *newPart )
@@ -3149,6 +3136,7 @@ void KonqMainWindow::slotClosedTabsListAboutToShow()
         const QString text = QString::number(i) + ' ' + (*it)->title();
         const QString url = (*it)->url();
         QAction* action = popup->addAction( KonqPixmapProvider::self()->pixmapFor(url), text );
+        action->setActionGroup(m_closedTabsGroup);
         action->setData(i);
     }
     KAcceleratorManager::manage(popup);
@@ -3778,10 +3766,12 @@ void KonqMainWindow::initActions()
   // Trash bin of closed tabs
   m_paClosedTabs = new KToolBarPopupAction( KIcon("closedtabs"),  i18n( "Closed Tabs" ), this );
   actionCollection()->addAction( "closedtabs", m_paClosedTabs );
+  m_closedTabsGroup = new QActionGroup(m_paClosedTabs->menu());
+
   // set the maximum number of closed tabs list shown
   connect( m_paClosedTabs, SIGNAL(triggered()), m_undoManager, SLOT(undoLastClosedTab()) );
   connect( m_paClosedTabs->menu(), SIGNAL(aboutToShow()), this, SLOT(slotClosedTabsListAboutToShow()) );
-  connect( m_paClosedTabs->menu(), SIGNAL(triggered(QAction*)), m_undoManager, SLOT(slotClosedTabsActivated(QAction*)) );
+  connect( m_closedTabsGroup, SIGNAL(triggered(QAction*)), m_undoManager, SLOT(slotClosedTabsActivated(QAction*)) );
   connect( m_pViewManager, SIGNAL(aboutToRemoveTab(KonqFrameBase*)), this, SLOT(slotAddClosedUrl(KonqFrameBase*)) );
   connect( m_undoManager, SIGNAL(openClosedTab(KonqClosedTabItem)), m_pViewManager, SLOT(openClosedTab(KonqClosedTabItem)) );
   connect( m_undoManager, SIGNAL(closedTabsListChanged()), this, SLOT(updateClosedTabsAction()));
@@ -4253,7 +4243,22 @@ void KonqMainWindow::updateViewActions()
   // When going 'back' in history this will be called before opening the url.
   // Use updateToolBarActions instead.
 
-  slotUndoAvailable( m_undoManager->undoAvailable() );
+  bool enable = false;
+
+  if ( m_currentView && m_currentView->part() )
+  {
+    // Avoid qWarning from QObject::property if it doesn't exist
+    if ( m_currentView->part()->metaObject()->indexOfProperty( "supportsUndo" ) != -1 )
+    {
+      QVariant prop = m_currentView->part()->property( "supportsUndo" );
+      if ( prop.isValid() && prop.toBool() )
+        enable = true;
+    }
+  }
+
+  m_undoManager->updateSupportsFileUndo(enable);
+
+//   slotUndoAvailable( m_undoManager->undoAvailable() );
 
   // Can lock a view only if there is a next view
   //m_paLockView->setEnabled( m_pViewManager->chooseNextView(m_currentView) != 0 && );

@@ -49,7 +49,10 @@ void KonqUndoManager::slotFileUndoAvailable(bool)
 
 bool KonqUndoManager::undoAvailable() const
 {
-    return KonqFileUndoManager::self()->undoAvailable() || !m_closedTabsList.isEmpty();
+    if (!m_closedTabsList.isEmpty())
+        return true;
+    else
+        return (m_supportsFileUndo && KonqFileUndoManager::self()->undoAvailable());
 }
 
 QString KonqUndoManager::undoText() const
@@ -126,6 +129,12 @@ void KonqUndoManager::addClosedTabItem(KonqClosedTabItem* closedTabItem)
     m_closedTabsList.prepend(closedTabItem);
     emit undoTextChanged(i18n("Und&o: Closed Tab"));
     emit undoAvailable(true);
+}
+
+void KonqUndoManager::updateSupportsFileUndo(bool enable)
+{
+	m_supportsFileUndo = enable;
+	emit undoAvailable(this->undoAvailable());
 }
 
 void KonqUndoManager::clearClosedTabsList()
