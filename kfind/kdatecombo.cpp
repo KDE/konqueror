@@ -45,6 +45,7 @@ void KDateCombo::initObject(const QDate & date)
   setDate(date);
 
   connect(datePicker, SIGNAL(dateSelected(QDate)), this, SLOT(dateEnteredEvent(QDate)));
+  connect(datePicker, SIGNAL(dateEntered(QDate)), this, SLOT(dateEnteredEvent(QDate)));
 }
 
 KDateCombo::~KDateCombo()
@@ -99,7 +100,6 @@ void KDateCombo::mousePressEvent (QMouseEvent * e)
       getDate(& tempDate);
       datePicker->setDate(tempDate);
       popupFrame->popup(mapToGlobal(QPoint(0, height())));
-      //datePicker->setFocus();
     }
   }
 }
@@ -119,19 +119,14 @@ bool KDateCombo::eventFilter (QObject*, QEvent* e)
   else if ( e->type() == QEvent::KeyRelease )
   {
       QKeyEvent *k = (QKeyEvent *)e;
-      //Press return == pick selected date and close the combo
-      if((k->key()==Qt::Key_Return)||(k->key()==Qt::Key_Enter))
-      {
-        dateEnteredEvent(datePicker->date());
-        return true;
-      }
-      else if (k->key()==Qt::Key_Escape)
-      {
+
+      if (k->key()==Qt::Key_Escape) {
         popupFrame->hide();
         return true;
       }
-      else
+      else {
         return false;
+      }
   }
 
   return false;
