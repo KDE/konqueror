@@ -417,12 +417,10 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
         QObject::connect(act, SIGNAL(triggered()), q, SLOT(slotPopupEmptyTrashBin()));
         q->addAction(act);
     }
+
     // This is used by KHTML, see khtml_popupmenu.rc (copy, selectAll, searchProvider etc.)
-    // TODO: move cut/copy/paste/etc. to konqueror or dolphinpart, as "editactions" too...
-    // Ideally in dolphinpart but the popupmenu code is in konq...
-    // Then we can remove ShowUrlOperations from PopupFlag
-    // We need a BrowserExtension::setActions(const QString& group, QList<QAction *> actions)?
-    addGroup( "editactions" ); // see khtml
+    // and by DolphinPart (rename, trash, delete)
+    addGroup( "editactions" );
 
     if (m_itemFlags & KParts::BrowserExtension::ShowTextSelectionItems) {
         // OK, we have to stop here.
