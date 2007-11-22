@@ -122,6 +122,7 @@ KonqCombo::KonqCombo( QWidget *parent )
 {
     setInsertPolicy( NoInsertion );
     setSizePolicy( QSizePolicy( QSizePolicy::Expanding, QSizePolicy::Fixed ));
+    setSizeAdjustPolicy( QComboBox::AdjustToMinimumContentsLength );
 
     Q_ASSERT( s_config );
 
