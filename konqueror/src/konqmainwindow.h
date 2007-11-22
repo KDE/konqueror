@@ -732,6 +732,7 @@ private: // members
   QMap<QString,KService::Ptr> m_viewModeToolBarServices; // similar to m_toolBarViewModeActions
   // it holds a map library name (libkonqiconview/libkonqlistview) ==> service (service for
   // iconview, multicolumnview, treeview, etc .)
+  QActionGroup* m_closedTabsGroup;
 
 //  KonqMainWindowIface * m_dcopObject;
 

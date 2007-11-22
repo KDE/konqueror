@@ -46,6 +46,7 @@ public:
     const QList<KonqClosedTabItem* >& closedTabsList() const;
     void undoClosedTab(int index);
     void addClosedTabItem(KonqClosedTabItem* closedTabItem);
+    void updateSupportsFileUndo(bool enable);
 
 public Q_SLOTS:
     void undo();
@@ -72,6 +73,7 @@ private Q_SLOTS:
 
 private:
     QList<KonqClosedTabItem *> m_closedTabsList;
+    bool m_supportsFileUndo;
 };
 
 #endif /* KONQUNDOMANAGER_H */

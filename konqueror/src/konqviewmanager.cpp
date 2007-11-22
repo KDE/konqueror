@@ -491,12 +491,13 @@ void KonqViewManager::openClosedTab(const KonqClosedTabItem& closedTab)
     // from profile loading (e.g. in switchView)
     m_bLoadingProfile = true;
 
-    loadItem( closedTab.configGroup(), m_tabContainer, rootItem, KUrl(), true, false, closedTab.pos() );
+    int pos = ( pos >= m_tabContainer->count() ) ? closedTab.pos() : m_tabContainer->count()-1;
 
-    if( closedTab.pos() < m_tabContainer->count() )
-        m_tabContainer->setCurrentIndex( closedTab.pos() );
-    else
-        m_tabContainer->setCurrentIndex( m_tabContainer->count()-1 );
+    loadItem( closedTab.configGroup(), m_tabContainer, rootItem, KUrl(), true, false, pos );
+    kDebug(1202) << "pos, m_tabContainer->count(): " << pos << ", " << m_tabContainer->count() << endl;
+
+    // FIXME: TabContainer does weird things with indexes sometimes
+    m_tabContainer->setCurrentIndex( pos );
 
     m_bLoadingProfile = false;
 
