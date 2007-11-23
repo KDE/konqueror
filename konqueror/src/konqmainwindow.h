@@ -198,6 +198,11 @@ public:
 
   /// Overloaded of KMainWindow
   virtual void setCaption( const QString &caption );
+  /// Overloaded of KMainWindow -- should never be called, or if it is, we ignore "modified" anyway
+  virtual void setCaption( const QString &caption, bool modified ) {
+      Q_UNUSED(modified);
+      return setCaption(caption);
+  }
 
   /**
    * Change URL displayed in the location bar
@@ -349,7 +354,6 @@ public Q_SLOTS:
   void slotSendFile();
   void slotCopyFiles();
   void slotMoveFiles();
-  void slotNewDir();
   void slotOpenTerminal();
   void slotOpenLocation();
   void slotOpenFile();
@@ -650,7 +654,6 @@ private: // members
 
   KAction *m_paCopyFiles;
   KAction *m_paMoveFiles;
-  KAction *m_paNewDir;
 
   KAction *m_paMoveTabLeft;
   KAction *m_paMoveTabRight;

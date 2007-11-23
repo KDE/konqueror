@@ -213,7 +213,6 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
   m_viewModeMenu = 0;
   m_paCopyFiles = 0;
   m_paMoveFiles = 0;
-  m_paNewDir = 0;
   m_bookmarkBarInitialized = false;
   m_pBookmarksOwner = new KonqExtendedBookmarkOwner(this);
 
@@ -2168,8 +2167,6 @@ void KonqMainWindow::slotPartActivated( KParts::Part *part )
       m_paCopyFiles->setEnabled( false );
     if ( m_paMoveFiles )
       m_paMoveFiles->setEnabled( false );
-    if ( m_paNewDir )
-      m_paNewDir->setEnabled( false );
   }
 
   createGUI( part );
@@ -2907,13 +2904,6 @@ void KonqMainWindow::slotMoveFiles()
      return;
 
   KonqOperations::copy(this,KonqOperations::MOVE,currentURLs(),dest);
-}
-
-void KonqMainWindow::slotNewDir()
-{
-    Q_ASSERT( m_currentView );
-    if ( m_currentView )
-        KonqOperations::newDir(this, m_currentView->url());
 }
 
 KUrl::List KonqMainWindow::currentURLs() const
@@ -4316,6 +4306,7 @@ void KonqMainWindow::updateViewActions()
     m_paFindFiles->setEnabled( dirPart->findPart() == 0 );
 
     // Create the copy/move options if not already done
+    // TODO: move that stuff to dolphin(part)
     if ( !m_paCopyFiles )
     {
       // F5 is the default key binding for Reload.... a la Windows.
@@ -4330,14 +4321,6 @@ void KonqMainWindow::updateViewActions()
       m_paMoveFiles->setText( i18n("M&ove Files...") );
       connect(m_paMoveFiles, SIGNAL(triggered(bool) ), SLOT( slotMoveFiles() ));
       m_paMoveFiles->setShortcut(Qt::Key_F8);
-
-      // This action doesn't appear in the GUI, it's for the shortcut only.
-      // KNewMenu takes care of the GUI stuff.
-      // TODO: move this shortcut to dolphin
-      m_paNewDir = actionCollection()->addAction( "konq_create_dir" );
-      m_paNewDir->setText( i18n("Create Folder..." ) );
-      connect(m_paNewDir, SIGNAL(triggered(bool) ), SLOT( slotNewDir() ));
-      m_paNewDir->setShortcut(Qt::Key_F10);
 
       QList<QAction*> lst;
       lst.append( m_paCopyFiles );
@@ -4358,8 +4341,6 @@ void KonqMainWindow::updateViewActions()
           m_paCopyFiles = 0;
           delete m_paMoveFiles;
           m_paMoveFiles = 0;
-          delete m_paNewDir;
-          m_paNewDir = 0;
       }
   }
 #endif
