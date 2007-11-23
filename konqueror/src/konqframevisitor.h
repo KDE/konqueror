@@ -50,6 +50,9 @@ class KonqViewCollector : public KonqFrameVisitor
 public:
     static QList<KonqView *> collect(KonqFrameBase* topLevel);
     virtual bool visit(KonqFrame* frame);
+    virtual bool visit(KonqFrameContainer*) { return true; }
+    virtual bool visit(KonqFrameTabs*) { return true; }
+    virtual bool visit(KonqMainWindow*) { return true; }
 private:
     QList<KonqView *> m_views;
 };

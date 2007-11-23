@@ -1497,6 +1497,7 @@ public:
         m_spaces += "  ";
         return true;
     }
+    virtual bool visit(KonqMainWindow*) { return true; }
     virtual bool endVisit(KonqFrameTabs*) {
         m_spaces.resize( m_spaces.size() - 2 );
         return true;
@@ -1505,6 +1506,7 @@ public:
         m_spaces.resize( m_spaces.size() - 2 );
         return true;
     }
+    virtual bool endVisit(KonqMainWindow*) { return true; }
 private:
     QString m_spaces;
 };
