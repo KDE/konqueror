@@ -143,8 +143,8 @@ void WebPage::contextMenuEvent(QContextMenuEvent *e)
     flags |= KParts::BrowserExtension::ShowReload;
     flags |= KParts::BrowserExtension::ShowBookmark;
     flags |= KParts::BrowserExtension::ShowNavigationItems;
-    emit part->browserExt()->popupMenu(/*guiclient */0,
-                                       e->globalPos(), part->url(), KParts::OpenUrlArguments(), KParts::BrowserArguments(),
+    emit part->browserExt()->popupMenu(/*guiclient */
+                                       e->globalPos(), part->url(), 0, KParts::OpenUrlArguments(), KParts::BrowserArguments(),
                                        flags);
 }
 
@@ -161,25 +161,25 @@ WebKitBrowserExtension::WebKitBrowserExtension(WebKitPart *parent)
 
 void WebKitBrowserExtension::cut()
 {
-    part->page()->cut();
+    part->page()->triggerAction(QWebPage::Cut);
 }
 
 void WebKitBrowserExtension::copy()
 {
-    part->page()->copy();
+    part->page()->triggerAction(QWebPage::Copy);
 }
 
 void WebKitBrowserExtension::paste()
 {
-    part->page()->paste();
+    part->page()->triggerAction(QWebPage::Paste);
 }
 
 void WebKitBrowserExtension::updateEditActions()
 {
     QWebPage *page = part->page();
-    enableAction("cut", page->canCut());
-    enableAction("copy", page->canCopy());
-    enableAction("paste", page->canPaste());
+    enableAction("cut", page->action(QWebPage::Cut));
+    enableAction("copy", page->action(QWebPage::Copy));
+    enableAction("paste", page->action(QWebPage::Paste));
 }
 
 typedef KParts::GenericFactory<WebKitPart> Factory;
