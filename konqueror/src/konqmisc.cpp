@@ -17,12 +17,9 @@
    Boston, MA 02110-1301, USA.
 */
 #include "konqmisc.h"
-
-#include <QtGui/QStyle>
-#include <QtCore/QDir>
-//Added by qt3to4:
-#include <QtGui/QKeyEvent>
-#include <QtGui/QLabel>
+#include "konqmainwindow.h"
+#include "konqviewmanager.h"
+#include "konqview.h"
 
 #include <kapplication.h>
 #include <kdebug.h>
@@ -36,13 +33,9 @@
 #include <kiconloader.h>
 #include <kconfiggroup.h>
 
-#include "konqmainwindow.h"
-#include "konqviewmanager.h"
-#include "konqview.h"
-
 #ifdef Q_WS_WIN
-// windows defines ERROR 
-#undef ERROR 
+// windows defines ERROR
+#undef ERROR
 #endif
 /**********************************************
  *
@@ -210,71 +203,6 @@ QString KonqMisc::konqFilteredURL( QWidget* parent, const QString& _url, const Q
     return "about:konqueror";
   }
   return _url;  // return the original url if it cannot be filtered.
-}
-
-KonqDraggableLabel::KonqDraggableLabel( KonqMainWindow* mw, const QString& text )
-  : QLabel( text )
-  , m_mw(mw)
-{
-  setBackgroundRole( QPalette::Button );
-  setAlignment( (QApplication::isRightToLeft() ? Qt::AlignRight : Qt::AlignLeft) |
-                 Qt::AlignVCenter );
-  setAcceptDrops(true);
-  adjustSize();
-  validDrag = false;
-}
-
-void KonqDraggableLabel::mousePressEvent( QMouseEvent * ev )
-{
-  validDrag = true;
-  startDragPos = ev->pos();
-}
-
-void KonqDraggableLabel::mouseMoveEvent( QMouseEvent * ev )
-{
-  if ((startDragPos - ev->pos()).manhattanLength() > QApplication::startDragDistance())
-  {
-    validDrag = false;
-    if ( m_mw->currentView() )
-    {
-      KUrl::List lst;
-      lst.append( m_mw->currentView()->url() );
-      QDrag* drag = new QDrag( m_mw );
-      QMimeData* md = new QMimeData();
-      lst.populateMimeData( md );
-      drag->setMimeData( md );
-      QString iconName = KMimeType::iconNameForUrl( lst.first() );
-
-      drag->setPixmap(KIconLoader::global()->loadMimeTypeIcon(iconName, KIconLoader::Small));
-
-      drag->start();
-    }
-  }
-}
-
-void KonqDraggableLabel::mouseReleaseEvent( QMouseEvent * )
-{
-  validDrag = false;
-}
-
-void KonqDraggableLabel::dragEnterEvent( QDragEnterEvent *ev )
-{
-  if ( KUrl::List::canDecode( ev->mimeData() ) )
-    ev->accept();
-}
-
-void KonqDraggableLabel::dropEvent( QDropEvent* ev )
-{
-  _savedLst.clear();
-  _savedLst = KUrl::List::fromMimeData( ev->mimeData() );
-  if ( !_savedLst.isEmpty() ) {
-    QTimer::singleShot(0, this, SLOT(delayedOpenURL()));
-  }
-}
-
-void KonqDraggableLabel::delayedOpenURL()
-{
-    m_mw->openUrl( 0L, _savedLst.first() );
 }
 
 #include "konqmisc.moc"

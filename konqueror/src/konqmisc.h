@@ -104,29 +104,4 @@ public:
 
 };
 
-#include <QtGui/QLabel>
-
-class KonqDraggableLabel : public QLabel
-{
-    Q_OBJECT
-public:
-    KonqDraggableLabel( KonqMainWindow * mw, const QString & text );
-
-protected:
-    void mousePressEvent( QMouseEvent * ev );
-    void mouseMoveEvent( QMouseEvent * ev );
-    void mouseReleaseEvent( QMouseEvent * );
-    void dragEnterEvent( QDragEnterEvent *ev );
-    void dropEvent( QDropEvent* ev );
-
-private Q_SLOTS:
-    void delayedOpenURL();
-
-private:
-    QPoint startDragPos;
-    bool validDrag;
-    KonqMainWindow * m_mw;
-    KUrl::List _savedLst;
-};
-
 #endif
