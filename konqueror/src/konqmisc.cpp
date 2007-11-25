@@ -129,7 +129,7 @@ KonqMainWindow * KonqMisc::createBrowserWindowFromProfile( const QString &path, 
       KonqMainWindow::setPreloadedFlag( false );
       mainWindow->resetWindow();
       mainWindow->reparseConfiguration();
-      mainWindow->viewManager()->loadViewProfile( path, filename, url, req, true );
+      mainWindow->viewManager()->loadViewProfileFromFile( path, filename, url, req, true );
   }
   else
   {
@@ -138,7 +138,7 @@ KonqMainWindow * KonqMisc::createBrowserWindowFromProfile( const QString &path, 
       QString xmluiFile = profileGroup.readPathEntry("XMLUIFile","konqueror.rc");
 
       mainWindow = new KonqMainWindow( KUrl(), xmluiFile );
-      mainWindow->viewManager()->loadViewProfile( cfg, filename, url, req, false, openUrl );
+      mainWindow->viewManager()->loadViewProfileFromConfig( cfg, filename, url, req, false, openUrl );
   }
   if ( forbidUseHTML )
       mainWindow->setShowHTML( false );

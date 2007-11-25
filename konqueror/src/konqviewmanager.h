@@ -170,39 +170,26 @@ public:
   void updatePixmaps();
 
   /**
-   * Saves the current view layout to a config file.
-   * Remove config file before saving, especially if saveURLs is false.
-   * @param cfg the config file
-   * @param saveURLs whether to save the URLs in the profile
-   * @param saveWindowSize whether to save the size of the window in the profile
-   */
-  void saveViewProfile( KConfig & cfg, bool saveURLs, bool saveWindowSize );
-
-  /**
-   * Saves the current view layout to a config file.
+   * Saves the current view layout to a config file, including menu/toolbar settings.
    * Remove config file before saving, especially if saveURLs is false.
    * @param fileName the name of the config file
    * @param profileName the name of the profile
    * @param saveURLs whether to save the URLs in the profile
    * @param saveWindowSize whether to save the size of the window in the profile
    */
-  void saveViewProfile( const QString & fileName, const QString & profileName,
-                        bool saveURLs, bool saveWindowSize );
+  void saveViewProfileToFile( const QString & fileName, const QString & profileName,
+                              bool saveURLs, bool saveWindowSize );
 
   /**
-   * Loads a view layout from a config file. Removes all views before loading.
+   * Saves the current view layout to a group in a config file.
+   * This is shared between saveViewProfileToFile and saveProperties (session management)
+   * Remove config file before saving, especially if saveURLs is false.
    * @param cfg the config file
-   * @param filename if set, remember the file name of the profile (for save settings)
-   * It has to be under the profiles dir. Otherwise, set to QString()
-   * @param forcedURL if set, the URL to open, whatever the profile says
-   * @param req attributes related to @p forcedURL
-   * @param resetWindow if the profile doesn't have attributes like size or toolbar
-   * settings, they will be reset to the defaults
+   * @param saveURLs whether to save the URLs in the profile
+   * @param saveWindowSize whether to save the size of the window in the profile
    */
-  void loadViewProfile( KConfig& cfg, const QString & filename,
-                        const KUrl & forcedURL = KUrl(),
-                        const KonqOpenURLRequest &req = KonqOpenURLRequest(),
-                        bool resetWindow = false, bool openUrl = true );
+  void saveViewProfileToGroup( KConfigGroup & cfg, bool saveURLs, bool saveWindowSize );
+
 
   /**
    * Loads a view layout from a config file. Removes all views before loading.
@@ -214,10 +201,29 @@ public:
    * @param resetWindow if the profile doesn't have attributes like size or toolbar
    * settings, they will be reset to the defaults
    */
-  void loadViewProfile( const QString & path, const QString & filename,
-                        const KUrl & forcedURL = KUrl(),
-                        const KonqOpenURLRequest &req = KonqOpenURLRequest(),
-                        bool resetWindow = false, bool openUrl = true );
+  void loadViewProfileFromFile( const QString & path, const QString & filename,
+                                const KUrl & forcedURL = KUrl(),
+                                const KonqOpenURLRequest &req = KonqOpenURLRequest(),
+                                bool resetWindow = false, bool openUrl = true );
+    // Overload for KonqMisc::createBrowserWindowFromProfile
+  void loadViewProfileFromConfig( const KConfig& config, const QString & filename,
+                                  const KUrl & forcedURL = KUrl(),
+                                  const KonqOpenURLRequest &req = KonqOpenURLRequest(),
+                                  bool resetWindow = false, bool openUrl = true );
+  /**
+   * Loads a view layout from a config file. Removes all views before loading.
+   * @param cfg the config file
+   * @param filename if set, remember the file name of the profile (for save settings)
+   * It has to be under the profiles dir. Otherwise, set to QString()
+   * @param forcedURL if set, the URL to open, whatever the profile says
+   * @param req attributes related to @p forcedURL
+   * @param resetWindow if the profile doesn't have attributes like size or toolbar
+   * settings, they will be reset to the defaults
+   */
+  void loadViewProfileFromGroup( const KConfigGroup& cfg, const QString & filename,
+                                 const KUrl & forcedURL = KUrl(),
+                                 const KonqOpenURLRequest &req = KonqOpenURLRequest(),
+                                 bool resetWindow = false, bool openUrl = true );
   /**
    * Return the filename of the last profile that was loaded
    * by the view manager. For "save settings".
@@ -272,7 +278,7 @@ public:
   /**
    *   The widget is the one which you are referring to.
    */
-  static QSize readConfigSize( KConfigGroup &cfg, QWidget *widget = NULL);
+  static QSize readConfigSize( const KConfigGroup &cfg, QWidget *widget = NULL);
 
 #ifndef NDEBUG
   void printFullHierarchy( KonqFrameContainerBase * container );

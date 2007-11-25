@@ -125,9 +125,9 @@ KonqProfileDlg::KonqProfileDlg( KonqViewManager *manager, const QString & presel
   enableButton( BTN_RENAME, m_pListView->currentItem() != 0 );
   enableButton( BTN_DELETE, m_pListView->currentItem() != 0 );
 
-  connect( this,SIGNAL(user1Clicked()),SLOT(slotUser1()));
-  connect( this,SIGNAL(user2Clicked()),SLOT(slotUser2()));
-  connect( this,SIGNAL(user3Clicked()),SLOT(slotUser3()));
+  connect( this,SIGNAL(user1Clicked()),SLOT(slotRenameProfile()));
+  connect( this,SIGNAL(user2Clicked()),SLOT(slotDeleteProfile()));
+  connect( this,SIGNAL(user3Clicked()),SLOT(slotSave()));
 
   resize( sizeHint() );
 }
@@ -162,7 +162,7 @@ void KonqProfileDlg::loadAllProfiles(const QString & preselectProfile)
         m_pProfileNameLineEdit->setText( preselectProfile);
 }
 
-void KonqProfileDlg::slotUser3() // Save button
+void KonqProfileDlg::slotSave()
 {
   QString name = KIO::encodeFileName( m_pProfileNameLineEdit->text() ); // in case of '/'
 
@@ -178,13 +178,13 @@ void KonqProfileDlg::slotUser3() // Save button
   }
 
   kDebug(1202) << "Saving as " << name;
-  m_pViewManager->saveViewProfile( name, m_pProfileNameLineEdit->text(),
+  m_pViewManager->saveViewProfileToFile( name, m_pProfileNameLineEdit->text(),
             m_cbSaveURLs->isChecked(), m_cbSaveSize->isChecked() );
 
   accept();
 }
 
-void KonqProfileDlg::slotUser2() // Delete button
+void KonqProfileDlg::slotDeleteProfile()
 {
     if(!m_pListView->currentItem())
         return;
@@ -197,7 +197,7 @@ void KonqProfileDlg::slotUser2() // Delete button
   enableButton( BTN_DELETE, m_pListView->currentItem() != 0 );
 }
 
-void KonqProfileDlg::slotUser1() // Rename button
+void KonqProfileDlg::slotRenameProfile()
 {
   QListWidgetItem *item = m_pListView->currentItem();
 
@@ -237,13 +237,13 @@ void KonqProfileDlg::slotItemRenamed( QListWidgetItem * item )
 
 void KonqProfileDlg::slotSelectionChanged()
 {
-  if ( m_pListView->currentItem() ) 
+  if ( m_pListView->currentItem() )
     m_pProfileNameLineEdit->setText( m_pListView->currentItem()->text() );
 }
 
 void KonqProfileDlg::slotTextChanged( const QString & text )
 {
-  enableButton( KDialog::User3, !text.isEmpty() );
+  enableButton( BTN_SAVE, !text.isEmpty() );
 
   // If we type the name of a profile, select it in the list
 
@@ -256,7 +256,7 @@ void KonqProfileDlg::slotTextChanged( const QString & text )
   {
     QFileInfo fi( m_mapEntries[ item->text() ] );
     itemSelected = itemSelected && fi.isWritable();
-    if ( itemSelected ) 
+    if ( itemSelected )
       item->setFlags( Qt::ItemIsSelectable | Qt::ItemIsEnabled | Qt::ItemIsEditable );
   }
 

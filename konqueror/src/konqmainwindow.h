@@ -143,26 +143,25 @@ public:
 
     void openMultiURL( const KUrl::List& url );
 
-  KonqViewManager *viewManager() const { return m_pViewManager; }
+    /// Returns the view manager for this window.
+    KonqViewManager *viewManager() const { return m_pViewManager; }
 
-  // Central widget of the mainwindow, never 0L
-  QWidget *mainWidget() const;
+    /// KXMLGUIBuilder methods, reimplemented for delayed bookmark-toolbar initialization
+    virtual QWidget *createContainer( QWidget *parent, int index, const QDomElement &element, QAction* &containerAction );
+    virtual void removeContainer( QWidget *container, QWidget *parent, QDomElement &element, QAction* containerAction );
 
-  // KXMLGUIBuilder methods
-  virtual QWidget *createContainer( QWidget *parent, int index, const QDomElement &element, QAction* &containerAction );
-  virtual void removeContainer( QWidget *container, QWidget *parent, QDomElement &element, QAction* containerAction );
-
-  virtual void saveProperties( KConfig& config );
-  virtual void readProperties( KConfig& config );
+    /// KMainWindow methods, for session management
+    virtual void saveProperties( KConfigGroup& config );
+    virtual void readProperties( const KConfigGroup& config );
 
   void setInitialFrameName( const QString &name );
 
-//  KonqMainWindowIface * dcopObject();
-
   void reparseConfiguration();
 
-    virtual void insertChildView(KonqView *childView);
-    virtual void removeChildView(KonqView *childView);
+    /// Called by KonqViewManager
+    void insertChildView(KonqView *childView);
+    /// Called by KonqViewManager
+    void removeChildView(KonqView *childView);
 
   KonqView *childView( KParts::ReadOnlyPart *view );
   KonqView *childView( KParts::ReadOnlyPart *callingPart, const QString &name, KParts::BrowserHostExtension **hostExtension, KParts::ReadOnlyPart **part );
