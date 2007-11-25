@@ -152,12 +152,8 @@ static bool startNewKonqueror( QString url, QString mimetype, const QString& pro
     const KConfigGroup reusingGroup( &konqCfg, "Reusing" );
     QStringList allowed_parts;
     // is duplicated in ../KonquerorAdaptor.cpp
-    allowed_parts << QLatin1String( "konq_iconview.desktop" )
-                  << QLatin1String( "konq_multicolumnview.desktop" )
-                  << QLatin1String( "konq_sidebartng.desktop" )
-                  << QLatin1String( "konq_infolistview.desktop" )
-                  << QLatin1String( "konq_treeview.desktop" )
-                  << QLatin1String( "konq_detailedlistview.desktop" );
+    allowed_parts << QLatin1String( "dolphinpart.desktop" )
+                  << QLatin1String( "konq_sidebartng.desktop" );
     if( reusingGroup.hasKey( "SafeParts" )
         && reusingGroup.readEntry( "SafeParts" ) != QLatin1String( "SAFE" ))
         allowed_parts = reusingGroup.readEntry( "SafeParts",QStringList() );

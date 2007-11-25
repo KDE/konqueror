@@ -201,12 +201,8 @@ bool KonquerorAdaptor::processCanBeReused( int screen )
     {
         allowed_parts.clear();
         // is duplicated in client/kfmclient.cc
-        allowed_parts << QLatin1String( "konq_iconview.desktop" )
-                      << QLatin1String( "konq_multicolumnview.desktop" )
-                      << QLatin1String( "konq_sidebartng.desktop" )
-                      << QLatin1String( "konq_infolistview.desktop" )
-                      << QLatin1String( "konq_treeview.desktop" )
-                      << QLatin1String( "konq_detailedlistview.desktop" );
+        allowed_parts << QLatin1String( "dolphinpart.desktop" )
+                      << QLatin1String( "konq_sidebartng.desktop" );
     }
     else if( allowed_parts.count() == 1 && allowed_parts.first() == QLatin1String( "ALL" ))
     {

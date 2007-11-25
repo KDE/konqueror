@@ -3,7 +3,7 @@ Konqueror Design Document
 Author:
   David Faure, faure@kde.org
 
-Last modified: 16 June 2000
+Last modified: 25 September 2007
 
 Overall design of konqueror :
 =============================
@@ -16,32 +16,39 @@ The main(), including all the startup mechanism is in konq_main.*
 
 The main window contains several "views", in order to show several URLs
 at once, possibly using several modes. Each view is a KonqView.
-The KonqView contains the child part, which can be :
-- an icon view (KonqIconView)
-- a list view / tree view (KonqListView/KonqTreeView)
-- an HTML view (KHTMLPart)
-- any other ReadOnlyPart with or without Browserextension
+The KonqView contains the child part, which can be any KParts::ReadOnlyPart.
+For instance:
+- a directory view provided by DolphinPart
+- an HTML view provided by KHTMLPart
+- any other KParts::ReadOnlyPart with or without BrowserExtension
 
 Where to find those classes
 ===========================
 
-konq_run.* : Re-implementation of KRun (see libkio) for konqueror.
-	   Responsible for finding appropriate view<->mimetype bindings.
-konq_view.* : KonqView, class used by KonqMainView to handle child views
-konq_frame.* : KonqFrame and KonqFrameHeader (handles view-statusbar).
-konq_main.* : The main()
-konq_mainwindow.* : KonqMainWindow, the main window :)
-konq_viewmgr.*: View manager. Handles view creation, activation, splitters etc.
-iconview/* : KonqIconView, for icon views
-listview/* : KonqTreeView, KonqListView...
-dirtree/*  : KonqDirTree, the directory tree
+src/*  : This is where konqueror is.
+  konqrun.* : Re-implementation of KRun (see libkio) for konqueror.
+              Responsible for finding appropriate view<->mimetype bindings.
+  konqview.* : KonqView, class used by KonqMainView to handle child views
+  konqframe.* : KonqFrame and KonqFrameHeader (handles view-statusbar).
+  konqmain.* : The main()
+  konqmainwindow.* : KonqMainWindow, the main window :)
+  konqviewmanager.*: View manager. Handles view creation, activation, splitters etc.
+about/* : The about part, shows the about page on startup
+client/* : kfmclient, for talking to running konqueror processes
+sidebar/* : The konqueror sidebar (framework+plugins)
 
 Libs used by konqueror
 ======================
 
-kdecore, kdeui, kfile, khtml, kparts - usual stuff :)
-libkio - I/O stuff, mimetypes, services
-libkonq - bookmarks, properties dialog, templates ("new") menu, icon view widget
+From kdelibs:
+kdecore - mimetypes, services
+kdeui - widgets
+kparts - component model
+khtml - HTML rendering
+kio - I/O stuff, bookmarks, properties dialog
+
+From kdebase:
+libkonq - templates ("new") menu, RMB popup menu, file operations
 
 How konqueror opens URLs
 ========================
