@@ -213,10 +213,9 @@ QString KonqMisc::konqFilteredURL( QWidget* parent, const QString& _url, const Q
 }
 
 KonqDraggableLabel::KonqDraggableLabel( KonqMainWindow* mw, const QString& text )
-  : QLabel( text )	// Use this name for it to be styled!
+  : QLabel( text )
   , m_mw(mw)
 {
-  setObjectName( "kde toolbar widget" );
   setBackgroundRole( QPalette::Button );
   setAlignment( (QApplication::isRightToLeft() ? Qt::AlignRight : Qt::AlignLeft) |
                  Qt::AlignVCenter );
