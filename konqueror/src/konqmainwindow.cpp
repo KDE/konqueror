@@ -22,6 +22,7 @@
 */
 
 #include "konqmainwindow.h"
+#include "konqdraggablelabel.h"
 #include "konqclosedtabitem.h"
 #include "konqapplication.h"
 #include "konqguiclients.h"
