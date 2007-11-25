@@ -329,7 +329,7 @@ void KonqViewManager::breakOffTab( KonqFrameBase* currentFrame, const QSize& win
 
   KonqMainWindow *mainWindow = new KonqMainWindow;
 
-  mainWindow->viewManager()->loadViewProfile( config, "" );
+  mainWindow->viewManager()->loadViewProfileFromGroup( profileGroup, QString() );
 
   KonqFrameTabs * kft = mainWindow->viewManager()->tabContainer();
   KonqFrameBase *newFrame = dynamic_cast<KonqFrameBase*>(kft->currentWidget());
@@ -802,7 +802,7 @@ KonqView *KonqViewManager::setupView( KonqFrameContainerBase *parentContainer,
 
 ///////////////// Profile stuff ////////////////
 
-void KonqViewManager::saveViewProfile( const QString & fileName, const QString & profileName, bool saveURLs, bool saveWindowSize )
+void KonqViewManager::saveViewProfileToFile( const QString & fileName, const QString & profileName, bool saveURLs, bool saveWindowSize )
 {
 
   QString path = KStandardDirs::locateLocal( "data", QString::fromLatin1( "konqueror/profiles/" ) +
@@ -816,31 +816,9 @@ void KonqViewManager::saveViewProfile( const QString & fileName, const QString &
   if ( !profileName.isEmpty() )
       cfg.writePathEntry( "Name", profileName );
 
-  saveViewProfile( _cfg, saveURLs, saveWindowSize );
+  saveViewProfileToGroup( cfg, saveURLs, saveWindowSize );
 
-}
-
-void KonqViewManager::saveViewProfile( KConfig & cfg, bool saveURLs, bool saveWindowSize )
-{
-  //kDebug(1202) << "KonqViewManager::saveViewProfile";
-  KConfigGroup profileGroup(&cfg, "Profile");
-  if( m_pMainWindow->childFrame() != 0L ) {
-    QString prefix = QString::fromLatin1( m_pMainWindow->childFrame()->frameType() )
-                     + QString::number(0);
-    profileGroup.writeEntry( "RootItem", prefix );
-    prefix.append( QLatin1Char( '_' ) );
-    m_pMainWindow->saveConfig( profileGroup, prefix, saveURLs, tabContainer(), 0, 1);
-  }
-
-  profileGroup.writeEntry( "FullScreen", m_pMainWindow->fullScreenMode());
-  profileGroup.writeEntry("XMLUIFile", m_pMainWindow->xmlFile());
-  if ( saveWindowSize )
-  {
-    profileGroup.writeEntry( "Width", m_pMainWindow->width() );
-    profileGroup.writeEntry( "Height", m_pMainWindow->height() );
-  }
-
-  // Save menu/toolbar settings in profile. Relys on konq_mainwindow calling
+  // Save menu/toolbar settings in profile. Relies on konq_mainwindow calling
   // setAutoSaveSetting( "KonqMainWindow", false ). The false is important,
   // we do not want this call save size settings in the profile, because we
   // do it ourselves. Save in a separate group than the rest of the profile.
@@ -850,20 +828,62 @@ void KonqViewManager::saveViewProfile( KConfig & cfg, bool saveURLs, bool saveWi
   cfg.sync();
 }
 
-void KonqViewManager::loadViewProfile( const QString & path, const QString & filename,
-                                       const KUrl & forcedURL, const KonqOpenURLRequest &req,
-                                       bool resetWindow, bool openUrl )
+void KonqViewManager::saveViewProfileToGroup( KConfigGroup & profileGroup, bool saveURLs, bool saveWindowSize )
 {
-  KConfig cfg( path );
-  loadViewProfile( cfg, filename, forcedURL, req, resetWindow, openUrl );
+    //kDebug(1202) << "KonqViewManager::saveViewProfile";
+    if( m_pMainWindow->childFrame() ) {
+        QString prefix = QString::fromLatin1( m_pMainWindow->childFrame()->frameType() )
+                         + QString::number(0);
+        profileGroup.writeEntry( "RootItem", prefix );
+        prefix.append( QLatin1Char( '_' ) );
+        m_pMainWindow->saveConfig( profileGroup, prefix, saveURLs, tabContainer(), 0, 1);
+    }
+
+    profileGroup.writeEntry( "FullScreen", m_pMainWindow->fullScreenMode());
+    profileGroup.writeEntry("XMLUIFile", m_pMainWindow->xmlFile());
+    if ( saveWindowSize ) {
+        profileGroup.writeEntry( "Width", m_pMainWindow->width() );
+        profileGroup.writeEntry( "Height", m_pMainWindow->height() );
+    }
 }
 
-void KonqViewManager::loadViewProfile( KConfig &cfg, const QString & filename,
-                                       const KUrl & forcedURL, const KonqOpenURLRequest &req,
-                                       bool resetWindow, bool openUrl )
+void KonqViewManager::loadViewProfileFromFile( const QString & path, const QString & filename,
+                                               const KUrl & forcedURL, const KonqOpenURLRequest &req,
+                                               bool resetWindow, bool openUrl )
 {
-  KConfigGroup profileGroup( &cfg, "Profile" );
+    KConfig config( path );
+    loadViewProfileFromConfig(config, filename, forcedURL, req, resetWindow, openUrl );
+}
 
+void KonqViewManager::loadViewProfileFromConfig( const KConfig& cfg, const QString & filename,
+                                                 const KUrl & forcedURL,
+                                                 const KonqOpenURLRequest &req,
+                                                 bool resetWindow, bool openUrl )
+{
+    KConfigGroup profileGroup( &cfg, "Profile" );
+
+    loadViewProfileFromGroup( profileGroup, filename, forcedURL, req, resetWindow, openUrl );
+
+    if( resetWindow )
+    { // force default settings for the GUI
+        m_pMainWindow->applyMainWindowSettings( KConfigGroup( KGlobal::config(), "KonqMainWindow" ), true );
+    }
+
+    // Apply menu/toolbar settings saved in profile. Read from a separate group
+    // so that the window doesn't try to change the size stored in the Profile group.
+    // (If applyMainWindowSettings finds a "Width" or "Height" entry, it
+    // sets them to 0,0)
+    m_pMainWindow->applyMainWindowSettings( KConfigGroup(&cfg, "Main Window Settings") );
+
+#ifdef DEBUG_VIEWMGR
+    printFullHierarchy( m_pMainWindow );
+#endif
+}
+
+void KonqViewManager::loadViewProfileFromGroup( const KConfigGroup &profileGroup, const QString & filename,
+                                                const KUrl & forcedURL, const KonqOpenURLRequest &req,
+                                                bool resetWindow, bool openUrl )
+{
   m_currentProfile = filename;
   m_currentProfileText = profileGroup.readPathEntry("Name", filename);
   m_profileHomeURL = profileGroup.readPathEntry("HomeURL", QString());
@@ -877,8 +897,7 @@ void KonqViewManager::loadViewProfile( KConfig &cfg, const QString & filename,
 
   QString rootItem = profileGroup.readPathEntry( "RootItem", "empty" );
 
-  //kDebug(1202) << "KonqViewManager::loadViewProfile : loading RootItem " << rootItem <<
-  //" forcedURL " << forcedURL.url() << endl;
+  //kDebug(1202) << "loading RootItem" << rootItem << "forcedURL" << forcedURL;
 
   if ( forcedURL.url() != "about:blank" )
   {
@@ -902,7 +921,7 @@ void KonqViewManager::loadViewProfile( KConfig &cfg, const QString & filename,
     m_pMainWindow->action( "clear_location" )->trigger();
   }
 
-  //kDebug(1202) << "KonqViewManager::loadViewProfile : after loadItem ";
+  //kDebug(1202) << "after loadItem";
 
   // Set an active part first so that we open the URL in the current view
   // (to set the location bar correctly and asap)
@@ -948,7 +967,7 @@ void KonqViewManager::loadViewProfile( KConfig &cfg, const QString & filename,
          if( m_pMainWindow->isFullScreen())
              m_pMainWindow->showNormal();
 
-         QSize size = readConfigSize( profileGroup, m_pMainWindow );
+         const QSize size = readConfigSize( profileGroup, m_pMainWindow );
          if ( size.isValid() )
              m_pMainWindow->resize( size );
          else  // no size in the profile; use last known size
@@ -956,22 +975,7 @@ void KonqViewManager::loadViewProfile( KConfig &cfg, const QString & filename,
      }
   }
 
-  if( resetWindow )
-  { // force default settings for the GUI
-     m_pMainWindow->applyMainWindowSettings( KConfigGroup( KGlobal::config(), "KonqMainWindow" ), true );
-  }
-
-  // Apply menu/toolbar settings saved in profile. Read from a separate group
-  // so that the window doesn't try to change the size stored in the Profile group.
-  // (If applyMainWindowSettings finds a "Width" or "Height" entry, it
-  // sets them to 0,0)
-  m_pMainWindow->applyMainWindowSettings( KConfigGroup(&cfg, "Main Window Settings") );
-
-#ifdef DEBUG_VIEWMGR
-  printFullHierarchy( m_pMainWindow );
-#endif
-
-  //kDebug(1202) << "KonqViewManager::loadViewProfile done";
+  //kDebug(1202) << "done";
 }
 
 void KonqViewManager::setActivePart( KParts::Part *part, QWidget * )
@@ -1059,7 +1063,7 @@ void KonqViewManager::emitActivePartChanged()
 }
 
 
-QSize KonqViewManager::readConfigSize( KConfigGroup &cfg, QWidget *widget )
+QSize KonqViewManager::readConfigSize( const KConfigGroup &cfg, QWidget *widget )
 {
     bool ok;
 
@@ -1386,7 +1390,7 @@ void KonqViewManager::slotProfileActivated( int id )
                 m_pMainWindow->deleteLater();
                 KonqMisc::createBrowserWindowFromProfile( *iter, u.fileName(), m_pMainWindow->currentView()->url() );
             } else {
-                loadViewProfile( *iter, u.fileName() );
+                loadViewProfileFromFile( *iter, u.fileName() );
             }
             break;
         }

@@ -1278,11 +1278,10 @@ void KonqMainWindow::slotDuplicateWindow()
 {
   KTemporaryFile tempFile;
   tempFile.open();
-  KConfig config( tempFile.fileName() );
-  m_pViewManager->saveViewProfile( config, true, true );
+  m_pViewManager->saveViewProfileToFile( tempFile.fileName(), QString(), true, true );
 
   KonqMainWindow *mainWindow = new KonqMainWindow( KUrl(), xmlFile() );
-  mainWindow->viewManager()->loadViewProfile( config, m_pViewManager->currentProfile() );
+  mainWindow->viewManager()->loadViewProfileFromFile( tempFile.fileName(), m_pViewManager->currentProfile() );
   if (mainWindow->currentView())
   {
       mainWindow->copyHistory( childFrame() );
@@ -2939,19 +2938,6 @@ KonqView * KonqMainWindow::otherView( KonqView * view ) const
 
 void KonqMainWindow::slotSaveViewProfile()
 {
-#if 0
-    if ( m_pViewManager->currentProfile().isEmpty() )
-    {
-        // The action should be disabled...........
-        kWarning(1202) << "No known profile. Use the Save Profile dialog box" ;
-    } else {
-
-        m_pViewManager->saveViewProfile( m_pViewManager->currentProfile(),
-                                         m_pViewManager->currentProfileText(),
-                                         false /* URLs */, true /* size */ );
-
-    }
-#endif
     m_pViewManager->showProfileDlg( m_pViewManager->currentProfile() );
 }
 
@@ -5016,15 +5002,14 @@ void KonqMainWindow::reparseConfiguration()
       (*it)->reparseConfiguration();
 }
 
-void KonqMainWindow::saveProperties( KConfig& config )
+void KonqMainWindow::saveProperties( KConfigGroup& config )
 {
-  m_pViewManager->saveViewProfile( config, true /* save URLs */, false );
+    m_pViewManager->saveViewProfileToGroup( config, true /* save URLs */, false );
 }
 
-void KonqMainWindow::readProperties( KConfig& config )
+void KonqMainWindow::readProperties( const KConfigGroup& config )
 {
-  kDebug(1202) << "KonqMainWindow::readProperties( KConfig *config )";
-  m_pViewManager->loadViewProfile( config, QString() /*no profile name*/ );
+    m_pViewManager->loadViewProfileFromGroup( config, QString() /*no profile name*/ );
 }
 
 void KonqMainWindow::setInitialFrameName( const QString &name )
