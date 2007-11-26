@@ -28,27 +28,22 @@
 
 #include <QtCore/QMap>
 #include <QtCore/QPointer>
-#include <QtGui/QKeyEvent>
 #include <QtCore/QList>
-#include <QtCore/QEvent>
-#include <QtGui/QLabel>
-#include <QtCore/QHash>
 
 #include <kfileitem.h>
 
 #include "konqopenurlrequest.h"
 #include <kparts/mainwindow.h>
-#include <kcompletion.h>
-#include <kurlcompletion.h>
 #include <kglobalsettings.h>
-#include <kxmlguifactory.h>
 #include <kxmlguiclient.h>
 #include <kservice.h>
 #include "konqcombo.h"
 #include "konqframecontainer.h"
-#include <klocalizedstring.h>
-#include <ktogglefullscreenaction.h>
 
+class KUrlCompletion;
+class QLabel;
+class KLocalizedString;
+class KToggleFullScreenAction;
 class KonqUndoManager;
 class QFile;
 class QAction;
@@ -237,7 +232,7 @@ public:
 
     void showHTML( KonqView * view, bool b, bool _activateView );
 
-  bool fullScreenMode() const { return m_ptaFullScreen->isChecked(); }
+    bool fullScreenMode() const;
 
   /**
    * @return the "link view" action, for checking/unchecking from KonqView
@@ -308,6 +303,7 @@ public:
 
   void resetWindow();
 
+    // TODO: move to a KonqPreloadHandler class
   static void setPreloadedFlag( bool preloaded );
   static bool isPreloaded() { return s_preloaded; }
   static void setPreloadedWindow( KonqMainWindow* );
@@ -695,11 +691,11 @@ private: // members
 
   KonqFrameBase* m_pWorkingTab;
 
-  KFileItemList popupItems;
-  KParts::OpenUrlArguments popupUrlArgs;
-  KParts::BrowserArguments popupUrlBrowserArgs;
-
-  QString m_title;
+  QString m_popupServiceType;
+  KUrl m_popupUrl;
+  KFileItemList m_popupItems;
+  KParts::OpenUrlArguments m_popupUrlArgs;
+  KParts::BrowserArguments m_popupUrlBrowserArgs;
 
   KCMultiDialog* m_configureDialog;
 
@@ -711,9 +707,6 @@ private: // members
   static KCompletion *s_pCompletion;
 
   ToggleViewGUIClient *m_toggleViewGUIClient;
-
-  QString m_popupServiceType;
-  KUrl m_popupUrl;
 
   QString m_initialFrameName;
 
@@ -729,19 +722,13 @@ private: // members
   // iconview, multicolumnview, treeview, etc .)
   QActionGroup* m_closedTabsGroup;
 
-//  KonqMainWindowIface * m_dcopObject;
-
-  static QStringList *s_plstAnimatedLogo;
-
   static QList<KonqMainWindow*> *s_lstViews;
 
   QString m_currentDir; // stores current dir for relative URLs whenever applicable
 
+    // TODO: move to a KonqPreloadHandler class
   static bool s_preloaded;
   static KonqMainWindow* s_preloadedWindow;
-  static int s_initialMemoryUsage;
-  static time_t s_startupTime;
-  static int s_preloadUsageCount;
 
 public:
 
