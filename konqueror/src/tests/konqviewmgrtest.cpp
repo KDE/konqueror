@@ -101,24 +101,24 @@ void ViewMgrTest::initTestCase()
 void ViewMgrTest::testCreateFirstView()
 {
     KonqMainWindow mainWindow;
-    KonqViewManager viewMgr( &mainWindow );
-    KonqView* view = viewMgr.createFirstView( "KonqAboutPage", "konq_aboutpage" );
+    KonqViewManager* viewMgr = mainWindow.viewManager();
+    KonqView* view = viewMgr->createFirstView( "KonqAboutPage", "konq_aboutpage" );
     QVERIFY( view );
-    QVERIFY( viewMgr.tabContainer() );
+    QVERIFY( viewMgr->tabContainer() );
 
     // Use DebugFrameVisitor to find out the structure of the frame hierarchy
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, one tab, one frame
 
-    // Check widget parents:  part's widget -> frame -> [tabwidget's stack] -> tabwidget -> mainwindow
+    // Check widget parents:  part's widget -> frame -> [tabwidget's stack] -> tabwidget -> mainWindow
     QWidget* partWidget = view->part()->widget();
     QCOMPARE( partWidget->topLevelWidget(), &mainWindow );
     QWidget* frame = view->frame()->asQWidget();
     QCOMPARE( partWidget->parentWidget(), frame );
-    QWidget* tabWidget = viewMgr.tabContainer()->asQWidget();
+    QWidget* tabWidget = viewMgr->tabContainer()->asQWidget();
     QCOMPARE( frame->parentWidget()->parentWidget(), tabWidget );
 
     // Check frame geometry, to check that all layouts are there
-    // (the mainwindow is resized to 700x480 in its constructor)
+    // (the mainWindow is resized to 700x480 in its constructor)
     // But pending resize events are only sent by show(), and we don't want to see
     // widgets from unit tests.
     // So we iterate over all widgets and ensure the pending resize events are sent.
@@ -138,10 +138,10 @@ void ViewMgrTest::testCreateFirstView()
 void ViewMgrTest::testRemoveFirstView()
 {
     KonqMainWindow mainWindow;
-    KonqViewManager viewMgr( &mainWindow );
-    KonqView* view = viewMgr.createFirstView( "KonqAboutPage", "konq_aboutpage" );
+    KonqViewManager* viewMgr = mainWindow.viewManager();
+    KonqView* view = viewMgr->createFirstView( "KonqAboutPage", "konq_aboutpage" );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, tab widget, one frame
-    viewMgr.removeView( view );
+    viewMgr->removeView( view );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // removing not allowed
     // real test for removeView is part of testSplitView
 }
@@ -149,11 +149,11 @@ void ViewMgrTest::testRemoveFirstView()
 void ViewMgrTest::testSplitView()
 {
     KonqMainWindow mainWindow;
-    KonqViewManager viewMgr( &mainWindow );
-    KonqView* view = viewMgr.createFirstView( "KonqAboutPage", "konq_aboutpage" );
+    KonqViewManager* viewMgr = mainWindow.viewManager();
+    KonqView* view = viewMgr->createFirstView( "KonqAboutPage", "konq_aboutpage" );
 
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, tab widget, one frame
-    KonqView* view2 = viewMgr.splitView( view, Qt::Horizontal );
+    KonqView* view2 = viewMgr->splitView( view, Qt::Horizontal );
     QVERIFY( view2 );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, one splitter, two frames
 
@@ -188,16 +188,16 @@ void ViewMgrTest::testSplitView()
     //    qDebug() << w << w->geometry() << "visible:" << w->isVisible();
 
     //qDebug() << "view geom:" << frame->geometry();
-    QVERIFY( frame->width() > 300 && frame->width() < 400 ); // horiz split, so half the mainwindow width
+    QVERIFY( frame->width() > 300 && frame->width() < 400 ); // horiz split, so half the mainWindow width
     QVERIFY( frame->height() > 300 );
     //qDebug() << "view2 geom:" << frame2->geometry();
-    QVERIFY( frame2->width() > 300 && frame2->width() < 400 ); // horiz split, so half the mainwindow width
+    QVERIFY( frame2->width() > 300 && frame2->width() < 400 ); // horiz split, so half the mainWindow width
     QVERIFY( frame2->height() > 300 );
     QCOMPARE( frame->size(), frame2->size() );
     //qDebug() << "partWidget geom:" << partWidget->geometry();
-    QVERIFY( partWidget->width() > 300 && partWidget->width() < 400 ); // horiz split, so half the mainwindow width
+    QVERIFY( partWidget->width() > 300 && partWidget->width() < 400 ); // horiz split, so half the mainWindow width
     QVERIFY( partWidget->height() > 290 );
-    QVERIFY( part2Widget->width() > 300 && part2Widget->width() < 400 ); // horiz split, so half the mainwindow width
+    QVERIFY( part2Widget->width() > 300 && part2Widget->width() < 400 ); // horiz split, so half the mainWindow width
     QVERIFY( part2Widget->height() > 290 );
 
     //KonqFrameContainerBase* container = view->frame()->parentContainer();
@@ -206,27 +206,27 @@ void ViewMgrTest::testSplitView()
 
 
     // Split again
-    KonqView* view3 = viewMgr.splitView( view, Qt::Horizontal );
+    KonqView* view3 = viewMgr->splitView( view, Qt::Horizontal );
     QVERIFY( view3 );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(C(FF)F)].") );
 
     // Now test removing the first view
-    viewMgr.removeView( view );
+    viewMgr->removeView( view );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, one splitter, two frames
 
     // Now test removing the last view
-    viewMgr.removeView( view3 );
+    viewMgr->removeView( view3 );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, tab widget, one frame
 }
 
 void ViewMgrTest::testSplitMainContainer()
 {
     KonqMainWindow mainWindow;
-    KonqViewManager viewMgr( &mainWindow );
-    KonqView* view = viewMgr.createFirstView( "KonqAboutPage", "konq_aboutpage" );
+    KonqViewManager* viewMgr = mainWindow.viewManager();
+    KonqView* view = viewMgr->createFirstView( "KonqAboutPage", "konq_aboutpage" );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, tab widget, one frame
     KonqFrameContainerBase* tabContainer = view->frame()->parentContainer();
-    KonqView* view2 = viewMgr.splitMainContainer( view, Qt::Horizontal, "KonqAboutPage", "konq_aboutpage", true );
+    KonqView* view2 = viewMgr->splitMainContainer( view, Qt::Horizontal, "KonqAboutPage", "konq_aboutpage", true );
     QVERIFY( view2 );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MC(FT[F]).") ); // mainWindow, splitter, frame, tab widget, one frame
 
@@ -256,17 +256,17 @@ void ViewMgrTest::testSplitMainContainer()
     QCOMPARE(container->widget(1), tabContainer->asQWidget());
 
     // Now test removing the view we added last
-    viewMgr.removeView( view2 );
+    viewMgr->removeView( view2 );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, tab widget, one frame
 }
 
 void ViewMgrTest::testAddTab()
 {
     KonqMainWindow mainWindow;
-    KonqViewManager viewMgr( &mainWindow );
-    KonqView* view = viewMgr.createFirstView( "KonqAboutPage", "konq_aboutpage" );
+    KonqViewManager* viewMgr = mainWindow.viewManager();
+    KonqView* view = viewMgr->createFirstView( "KonqAboutPage", "konq_aboutpage" );
     QVERIFY( view );
-    KonqView* viewTab2 = viewMgr.addTab("text/html");
+    KonqView* viewTab2 = viewMgr->addTab("text/html");
     QVERIFY( viewTab2 );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].") ); // mainWindow, tab widget, two tabs
 
@@ -275,9 +275,9 @@ void ViewMgrTest::testAddTab()
 void ViewMgrTest::testDuplicateTab()
 {
     KonqMainWindow mainWindow;
-    KonqViewManager viewMgr( &mainWindow );
-    KonqView* view = viewMgr.createFirstView( "KonqAboutPage", "konq_aboutpage" );
-    viewMgr.duplicateTab(view->frame()); // should return a KonqFrameBase?
+    KonqViewManager* viewMgr = mainWindow.viewManager();
+    KonqView* view = viewMgr->createFirstView( "KonqAboutPage", "konq_aboutpage" );
+    viewMgr->duplicateTab(view->frame()); // should return a KonqFrameBase?
 
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].") ); // mainWindow, tab widget, two tabs
     // TODO check serviceType and serviceName of the new view
@@ -286,9 +286,9 @@ void ViewMgrTest::testDuplicateTab()
 void ViewMgrTest::testDuplicateSplittedTab()
 {
     KonqMainWindow mainWindow;
-    KonqViewManager viewMgr( &mainWindow );
-    KonqView* view = viewMgr.createFirstView( "KonqAboutPage", "konq_aboutpage" );
-    KonqView* view2 = viewMgr.splitView( view, Qt::Vertical );
+    KonqViewManager* viewMgr = mainWindow.viewManager();
+    KonqView* view = viewMgr->createFirstView( "KonqAboutPage", "konq_aboutpage" );
+    KonqView* view2 = viewMgr->splitView( view, Qt::Vertical );
     QVERIFY( view2 );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, one splitter, two frames
 
@@ -296,10 +296,10 @@ void ViewMgrTest::testDuplicateSplittedTab()
     QVERIFY( container );
     QVERIFY( container->parentContainer()->frameType() == "Tabs" ); // TODO enum instead
 
-    viewMgr.duplicateTab(container); // TODO shouldn't it return a KonqFrameBase?
+    viewMgr->duplicateTab(container); // TODO shouldn't it return a KonqFrameBase?
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)C(FF)].") ); // mainWindow, tab widget, two tabs
 
-    viewMgr.removeTab(container);
+    viewMgr->removeTab(container);
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, one tab
 }
 
