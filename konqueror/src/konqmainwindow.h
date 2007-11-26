@@ -35,7 +35,6 @@
 #include "konqopenurlrequest.h"
 #include <kparts/mainwindow.h>
 #include <kglobalsettings.h>
-#include <kxmlguiclient.h>
 #include <kservice.h>
 #include "konqcombo.h"
 #include "konqframecontainer.h"
@@ -159,10 +158,7 @@ public:
     void removeChildView(KonqView *childView);
 
   KonqView *childView( KParts::ReadOnlyPart *view );
-  KonqView *childView( KParts::ReadOnlyPart *callingPart, const QString &name, KParts::BrowserHostExtension **hostExtension, KParts::ReadOnlyPart **part );
-
-  // dcop idl bug! it can't handle KonqMainWindow *&mainWindow
-  static KonqView *findChildView( KParts::ReadOnlyPart *callingPart, const QString &name, KonqMainWindow **mainWindow, KParts::BrowserHostExtension **hostExtension, KParts::ReadOnlyPart **part );
+  KonqView *childView( KParts::ReadOnlyPart *callingPart, const QString &name, KParts::BrowserHostExtension *&hostExtension, KParts::ReadOnlyPart **part );
 
   // Total number of views
   int viewCount() const { return m_mapViews.count(); }

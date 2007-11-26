@@ -1,5 +1,5 @@
 /*
-    konq_extensionmanager.cc - Extension Manager for Konqueror
+    Extension Manager for Konqueror
 
     Copyright (c) 2003      by Martijn Klingens      <klingens@kde.org>
     Copyright (c) 2004      by Arend van Beelen jr.  <arend@auton.nl>
