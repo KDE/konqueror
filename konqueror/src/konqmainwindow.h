@@ -253,8 +253,6 @@ public:
    */
   bool isHTMLAllowed() const { return m_bHTMLAllowed; }
 
-  bool saveViewPropertiesLocally() const { return m_bSaveViewPropertiesLocally; }
-
   static QList<KonqMainWindow*> *mainWindowList() { return s_lstViews; }
 
   // public for konq_guiclients
@@ -451,8 +449,6 @@ private Q_SLOTS:
   void slotDumpDebugInfo();
 
   void slotSaveViewProfile();
-  void slotSaveViewPropertiesLocally();
-  void slotRemoveLocalProperties();
 
     void slotOpenEmbedded(KService::Ptr);
 
@@ -624,8 +620,6 @@ private: // members
   KonqBidiHistoryAction *m_paHistory;
 
   KAction *m_paSaveViewProfile;
-  KToggleAction *m_paSaveViewPropertiesLocally;
-  KAction *m_paRemoveLocalProperties;
 
   KAction *m_paSplitViewHor;
   KAction *m_paSplitViewVer;
@@ -676,7 +670,6 @@ private: // members
   bool m_bLocationBarConnected:1;
   bool m_bURLEnterLock:1;
   // Global settings
-  bool m_bSaveViewPropertiesLocally:1;
   bool m_bHTMLAllowed:1;
   // Set in constructor, used in slotRunFinished
   bool m_bNeedApplyKonqMainWindowSettings:1;

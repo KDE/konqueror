@@ -450,8 +450,6 @@ void KonqView::connectPart(  )
                    m_pMainWindow,
                    SLOT( slotAddWebSideBar(const KUrl&, const QString&) ) );
       }
-
-      callExtensionBoolMethod( "setSaveViewPropertiesLocally", m_pMainWindow->saveViewPropertiesLocally() );
   }
 
   QVariant urlDropHandling;
