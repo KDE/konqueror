@@ -280,11 +280,9 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
   if (popup)
     KAcceleratorManager::manage(popup);
 
-  m_bSaveViewPropertiesLocally = KonqSettings::saveViewPropertiesLocally();
   m_bHTMLAllowed = KonqSettings::htmlAllowed();
 
   m_ptaUseHTML->setChecked( m_bHTMLAllowed );
-  m_paSaveViewPropertiesLocally->setChecked( m_bSaveViewPropertiesLocally );
 
   m_bNeedApplyKonqMainWindowSettings = true;
 
@@ -1629,53 +1627,21 @@ void KonqMainWindow::slotViewModeToggle( bool toggle )
     m_currentView->openUrl( locURL, locationBarURL, nameFilter );
   }
 
-  // Now save this setting, either locally or globally (for directories only)
-  // (We don't have views with viewmodes other than for dirs currently;
-  // once we do, we might want to implement per-mimetype global-saving)
-  if ( m_bSaveViewPropertiesLocally && m_currentView->supportsServiceType( "inode/directory" ) )
-  {
-      KUrl u ( m_currentView->url() );
-      u.addPath(".directory");
-      if ( u.isLocalFile() )
-      {
-          KConfig config( u.path(), KConfig::SimpleConfig ); // if we have no write access, just drop it
-          KConfigGroup urlProperties( &config, "URL properties" );
-          urlProperties.writeEntry( "ViewMode", modeName );
-          config.sync();
-      }
-  } else
-  {
-      // We save the global view mode only if the view is a built-in view
-      if ( m_currentView->isBuiltinView() )
-      {
-          KonqSettings::setMainViewViewMode( modeName );
-          KonqSettings::self()->writeConfig();
-      }
-  }
+    // We save the global view mode only if the view is a built-in view
+    if ( m_currentView->isBuiltinView() ) {
+        KonqSettings::setMainViewViewMode( modeName );
+        KonqSettings::self()->writeConfig();
+    }
 }
 
 void KonqMainWindow::showHTML( KonqView * _view, bool b, bool _activateView )
 {
-  // Save this setting, either locally or globally
+  // Save this setting
   // This has to be done before calling openView since it relies on it
-  if ( m_bSaveViewPropertiesLocally )
-  {
-      KUrl u ( b ? _view->url() : KUrl( _view->url().directory() ) );
-      u.addPath(".directory");
-      if ( u.isLocalFile() )
-      {
-          KConfig config( u.path(), KConfig::SimpleConfig ); // No checks for access
-          KConfigGroup urlProperties( &config, "URL properties" );
-          urlProperties.writeEntry( "HTMLAllowed", b );
-          config.sync();
-      }
-  } else
-  {
-      KonqSettings::setHtmlAllowed( b );
-      KonqSettings::self()->writeConfig();
-      if ( _activateView )
-          m_bHTMLAllowed = b;
-  }
+    KonqSettings::setHtmlAllowed( b );
+    KonqSettings::self()->writeConfig();
+    if ( _activateView )
+        m_bHTMLAllowed = b;
 
   if ( b && _view->supportsServiceType( "inode/directory" ) )
   {
@@ -2176,7 +2142,6 @@ void KonqMainWindow::slotPartActivated( KParts::Part *part )
   KParts::MainWindow::setCaption( m_currentView->caption() );
   m_currentView->frame()->setTitle( m_currentView->caption() , 0);
   updateOpenWithActions();
-  updateLocalPropsActions();
   updateViewActions(); // undo, lock, link and other view-dependent actions
 
   if ( m_bViewModeToggled )
@@ -2454,19 +2419,6 @@ KParts::ReadOnlyPart * KonqMainWindow::currentPart() const
     return m_currentView->part();
   else
     return 0;
-}
-
-void KonqMainWindow::updateLocalPropsActions()
-{
-    bool canWrite = false;
-    if ( m_currentView && m_currentView->url().isLocalFile() )
-    {
-        // Can we write ?
-        QFileInfo info( m_currentView->url().path() );
-        canWrite = info.isDir() && info.isWritable();
-    }
-    m_paSaveViewPropertiesLocally->setEnabled( canWrite );
-    m_paRemoveLocalProperties->setEnabled( canWrite );
 }
 
 void KonqMainWindow::slotURLEntered( const QString &text, int state )
@@ -2820,44 +2772,6 @@ void KonqMainWindow::slotDumpDebugInfo()
   dumpViewList();
   m_pViewManager->printFullHierarchy( 0 );
 #endif
-}
-
-void KonqMainWindow::slotSaveViewPropertiesLocally()
-{
-  m_bSaveViewPropertiesLocally = !m_bSaveViewPropertiesLocally;
-  // And this is a main-view setting, so save it
-  KonqSettings::setSaveViewPropertiesLocally( m_bSaveViewPropertiesLocally );
-  KonqSettings::self()->writeConfig();
-  // Now tell the views
-  MapViews::ConstIterator it = m_mapViews.begin();
-  MapViews::ConstIterator end = m_mapViews.end();
-  for (; it != end; ++it )
-    (*it)->callExtensionBoolMethod( "setSaveViewPropertiesLocally", m_bSaveViewPropertiesLocally );
-}
-
-void KonqMainWindow::slotRemoveLocalProperties()
-{
-  assert( m_currentView );
-  KUrl u ( m_currentView->url() );
-  u.addPath(".directory");
-  if ( u.isLocalFile() )
-  {
-      QFile f( u.path() );
-      if ( f.open(QIODevice::ReadWrite) )
-      {
-          f.close();
-          KConfig config( u.path(), KConfig::SimpleConfig);
-          config.deleteGroup( "URL properties" ); // Bye bye
-          config.sync();
-          // TODO: Notify the view...
-          // Or the hard way: (and hoping it doesn't cache the values!)
-          slotReload();
-      } else
-      {
-         Q_ASSERT( QFile::exists(u.path()) ); // The action shouldn't be enabled, otherwise.
-         KMessageBox::sorry( this, i18n("No permissions to write to %1", u.path()) );
-      }
-  }
 }
 
 bool KonqMainWindow::askForTarget(const KLocalizedString& text, KUrl& url)
@@ -3821,13 +3735,6 @@ void KonqMainWindow::initActions()
   m_paSaveViewProfile = actionCollection()->addAction( "saveviewprofile" );
   m_paSaveViewProfile->setText( i18n( "&Save View Profile..." ) );
   connect(m_paSaveViewProfile, SIGNAL(triggered(bool) ), SLOT( slotSaveViewProfile() ));
-  m_paSaveViewPropertiesLocally = new KToggleAction( i18n( "Save View Changes per &Folder" ), this );
-  actionCollection()->addAction( "saveViewPropertiesLocally", m_paSaveViewPropertiesLocally );
-  connect(m_paSaveViewPropertiesLocally, SIGNAL(triggered(bool) ), SLOT( slotSaveViewPropertiesLocally() ));
-   // "Remove" ? "Reset" ? The former is more correct, the latter is more kcontrol-like...
-  m_paRemoveLocalProperties = actionCollection()->addAction( "removeLocalProperties" );
-  m_paRemoveLocalProperties->setText( i18n( "Remove Folder Properties" ) );
-  connect(m_paRemoveLocalProperties, SIGNAL(triggered(bool) ), SLOT( slotRemoveLocalProperties() ));
 
   // This list is just for the call to authorizeControlModule; see slotConfigure for the real code
   QStringList configureModules;
@@ -4537,7 +4444,6 @@ void KonqMainWindow::disableActionsNoView()
     m_paSaveViewProfile->setEnabled( true );
     m_paSaveRemoveViewProfile->setEnabled( true );
     m_combo->clearTemporary();
-    updateLocalPropsActions();
 }
 
 void KonqMainWindow::setCaption( const QString &caption )
@@ -4993,7 +4899,6 @@ void KonqMainWindow::reparseConfiguration()
   KonqSettings::self()->readConfig();
   m_pViewManager->applyConfiguration();
 
-  m_bSaveViewPropertiesLocally = KonqSettings::saveViewPropertiesLocally();
   m_bHTMLAllowed = KonqSettings::htmlAllowed();
 
   MapViews::ConstIterator it = m_mapViews.begin();
@@ -5876,10 +5781,6 @@ bool KonqMainWindow::event( QEvent* e )
     {
         KParts::OpenUrlEvent * ev = static_cast<KParts::OpenUrlEvent*>(e);
         KonqView * senderChildView = childView(ev->part());
-
-        // Enable/disable local properties actions if current view
-        if ( senderChildView == m_currentView )
-            updateLocalPropsActions();
 
         // Forward the event to all views
         MapViews::ConstIterator it = m_mapViews.begin();
