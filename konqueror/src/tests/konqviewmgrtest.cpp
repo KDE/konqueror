@@ -101,10 +101,10 @@ void ViewMgrTest::initTestCase()
 void ViewMgrTest::testCreateFirstView()
 {
     KonqMainWindow mainWindow;
-    KonqViewManager* viewMgr = mainWindow.viewManager();
-    KonqView* view = viewMgr->createFirstView( "KonqAboutPage", "konq_aboutpage" );
+    KonqViewManager* viewManager = mainWindow.viewManager();
+    KonqView* view = viewManager->createFirstView( "KonqAboutPage", "konq_aboutpage" );
     QVERIFY( view );
-    QVERIFY( viewMgr->tabContainer() );
+    QVERIFY( viewManager->tabContainer() );
 
     // Use DebugFrameVisitor to find out the structure of the frame hierarchy
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, one tab, one frame
@@ -114,7 +114,7 @@ void ViewMgrTest::testCreateFirstView()
     QCOMPARE( partWidget->topLevelWidget(), &mainWindow );
     QWidget* frame = view->frame()->asQWidget();
     QCOMPARE( partWidget->parentWidget(), frame );
-    QWidget* tabWidget = viewMgr->tabContainer()->asQWidget();
+    QWidget* tabWidget = viewManager->tabContainer()->asQWidget();
     QCOMPARE( frame->parentWidget()->parentWidget(), tabWidget );
 
     // Check frame geometry, to check that all layouts are there
@@ -138,10 +138,10 @@ void ViewMgrTest::testCreateFirstView()
 void ViewMgrTest::testRemoveFirstView()
 {
     KonqMainWindow mainWindow;
-    KonqViewManager* viewMgr = mainWindow.viewManager();
-    KonqView* view = viewMgr->createFirstView( "KonqAboutPage", "konq_aboutpage" );
+    KonqViewManager* viewManager = mainWindow.viewManager();
+    KonqView* view = viewManager->createFirstView( "KonqAboutPage", "konq_aboutpage" );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, tab widget, one frame
-    viewMgr->removeView( view );
+    viewManager->removeView( view );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // removing not allowed
     // real test for removeView is part of testSplitView
 }
@@ -149,11 +149,11 @@ void ViewMgrTest::testRemoveFirstView()
 void ViewMgrTest::testSplitView()
 {
     KonqMainWindow mainWindow;
-    KonqViewManager* viewMgr = mainWindow.viewManager();
-    KonqView* view = viewMgr->createFirstView( "KonqAboutPage", "konq_aboutpage" );
+    KonqViewManager* viewManager = mainWindow.viewManager();
+    KonqView* view = viewManager->createFirstView( "KonqAboutPage", "konq_aboutpage" );
 
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, tab widget, one frame
-    KonqView* view2 = viewMgr->splitView( view, Qt::Horizontal );
+    KonqView* view2 = viewManager->splitView( view, Qt::Horizontal );
     QVERIFY( view2 );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, one splitter, two frames
 
@@ -206,27 +206,27 @@ void ViewMgrTest::testSplitView()
 
 
     // Split again
-    KonqView* view3 = viewMgr->splitView( view, Qt::Horizontal );
+    KonqView* view3 = viewManager->splitView( view, Qt::Horizontal );
     QVERIFY( view3 );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(C(FF)F)].") );
 
     // Now test removing the first view
-    viewMgr->removeView( view );
+    viewManager->removeView( view );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, one splitter, two frames
 
     // Now test removing the last view
-    viewMgr->removeView( view3 );
+    viewManager->removeView( view3 );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, tab widget, one frame
 }
 
 void ViewMgrTest::testSplitMainContainer()
 {
     KonqMainWindow mainWindow;
-    KonqViewManager* viewMgr = mainWindow.viewManager();
-    KonqView* view = viewMgr->createFirstView( "KonqAboutPage", "konq_aboutpage" );
+    KonqViewManager* viewManager = mainWindow.viewManager();
+    KonqView* view = viewManager->createFirstView( "KonqAboutPage", "konq_aboutpage" );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, tab widget, one frame
     KonqFrameContainerBase* tabContainer = view->frame()->parentContainer();
-    KonqView* view2 = viewMgr->splitMainContainer( view, Qt::Horizontal, "KonqAboutPage", "konq_aboutpage", true );
+    KonqView* view2 = viewManager->splitMainContainer( view, Qt::Horizontal, "KonqAboutPage", "konq_aboutpage", true );
     QVERIFY( view2 );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MC(FT[F]).") ); // mainWindow, splitter, frame, tab widget, one frame
 
@@ -256,17 +256,17 @@ void ViewMgrTest::testSplitMainContainer()
     QCOMPARE(container->widget(1), tabContainer->asQWidget());
 
     // Now test removing the view we added last
-    viewMgr->removeView( view2 );
+    viewManager->removeView( view2 );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, tab widget, one frame
 }
 
 void ViewMgrTest::testAddTab()
 {
     KonqMainWindow mainWindow;
-    KonqViewManager* viewMgr = mainWindow.viewManager();
-    KonqView* view = viewMgr->createFirstView( "KonqAboutPage", "konq_aboutpage" );
+    KonqViewManager* viewManager = mainWindow.viewManager();
+    KonqView* view = viewManager->createFirstView( "KonqAboutPage", "konq_aboutpage" );
     QVERIFY( view );
-    KonqView* viewTab2 = viewMgr->addTab("text/html");
+    KonqView* viewTab2 = viewManager->addTab("text/html");
     QVERIFY( viewTab2 );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].") ); // mainWindow, tab widget, two tabs
 
@@ -275,9 +275,9 @@ void ViewMgrTest::testAddTab()
 void ViewMgrTest::testDuplicateTab()
 {
     KonqMainWindow mainWindow;
-    KonqViewManager* viewMgr = mainWindow.viewManager();
-    KonqView* view = viewMgr->createFirstView( "KonqAboutPage", "konq_aboutpage" );
-    viewMgr->duplicateTab(view->frame()); // should return a KonqFrameBase?
+    KonqViewManager* viewManager = mainWindow.viewManager();
+    KonqView* view = viewManager->createFirstView( "KonqAboutPage", "konq_aboutpage" );
+    viewManager->duplicateTab(view->frame()); // should return a KonqFrameBase?
 
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].") ); // mainWindow, tab widget, two tabs
     // TODO check serviceType and serviceName of the new view
@@ -286,9 +286,9 @@ void ViewMgrTest::testDuplicateTab()
 void ViewMgrTest::testDuplicateSplittedTab()
 {
     KonqMainWindow mainWindow;
-    KonqViewManager* viewMgr = mainWindow.viewManager();
-    KonqView* view = viewMgr->createFirstView( "KonqAboutPage", "konq_aboutpage" );
-    KonqView* view2 = viewMgr->splitView( view, Qt::Vertical );
+    KonqViewManager* viewManager = mainWindow.viewManager();
+    KonqView* view = viewManager->createFirstView( "KonqAboutPage", "konq_aboutpage" );
+    KonqView* view2 = viewManager->splitView( view, Qt::Vertical );
     QVERIFY( view2 );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, one splitter, two frames
 
@@ -296,17 +296,24 @@ void ViewMgrTest::testDuplicateSplittedTab()
     QVERIFY( container );
     QVERIFY( container->parentContainer()->frameType() == "Tabs" ); // TODO enum instead
 
-    viewMgr->duplicateTab(container); // TODO shouldn't it return a KonqFrameBase?
+    viewManager->duplicateTab(container); // TODO shouldn't it return a KonqFrameBase?
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)C(FF)].") ); // mainWindow, tab widget, two tabs
 
-    viewMgr->removeTab(container);
+    viewManager->removeTab(container);
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, one tab
 }
 
 void ViewMgrTest::testLoadProfile()
 {
-    // TODO
-    // TODO check view->locationBarUrl() and mainWindow.locationBarUrl() too
+    KonqMainWindow mainWindow;
+    KonqViewManager* viewManager = mainWindow.viewManager();
+    const QString profile = KStandardDirs::locate("data", "konqueror/profiles/filemanagement");
+    QVERIFY(!profile.isEmpty());
+    QString path = QDir::homePath();
+    viewManager->loadViewProfileFromFile(profile, "filemanagement", KUrl(path));
+    // TODO QCOMPARE(view->locationBarUrl(), path);
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MC(FT[F]).") ); // mainWindow, splitter, frame, tab widget, one frame
+    QCOMPARE(mainWindow.locationBarURL(), path);
 }
 
 #include "konqviewmgrtest.moc"

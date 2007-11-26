@@ -905,7 +905,7 @@ void KonqViewManager::loadViewProfileFromGroup( const KConfigGroup &profileGroup
     // from profile loading (e.g. in switchView)
     m_bLoadingProfile = true;
 
-    loadItem( profileGroup, tabContainer(), rootItem, defaultURL, openUrl && forcedURL.isEmpty() );
+    loadItem( profileGroup, m_pMainWindow, rootItem, defaultURL, openUrl && forcedURL.isEmpty() );
 
     m_bLoadingProfile = false;
 
@@ -1255,6 +1255,10 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
     //kDebug(1202) << "KonqViewManager::loadItem Item is a Tabs";
 
     int index = cfg.readEntry( QString::fromLatin1( "activeChildIndex" ).prepend(prefix), 0 );
+    if ( !m_tabContainer ) {
+        createTabContainer(parent->asQWidget(), parent);
+        parent->insertChildFrame( m_tabContainer );
+    }
 
     QStringList childList = cfg.readEntry( QString::fromLatin1( "Children" ).prepend( prefix ),QStringList() );
     for ( QStringList::Iterator it = childList.begin(); it != childList.end(); ++it )
@@ -1531,13 +1535,18 @@ void KonqViewManager::printFullHierarchy( KonqFrameContainerBase * container )
 KonqFrameTabs * KonqViewManager::tabContainer()
 {
     if ( !m_tabContainer ) {
-        m_tabContainer = new KonqFrameTabs( m_pMainWindow /*as widget*/, m_pMainWindow /*as container*/, this );
-
-        connect( m_tabContainer, SIGNAL(ctrlTabPressed()), m_pMainWindow, SLOT(slotCtrlTabPressed()) );
-        applyConfiguration();
+        createTabContainer(m_pMainWindow /*as widget*/, m_pMainWindow /*as container*/);
         m_pMainWindow->insertChildFrame( m_tabContainer );
     }
     return m_tabContainer;
+}
+
+void KonqViewManager::createTabContainer(QWidget* parent, KonqFrameContainerBase* parentContainer)
+{
+    //kDebug(1202) << "createTabContainer" << parent << parentContainer;
+    m_tabContainer = new KonqFrameTabs( parent, parentContainer, this );
+    connect( m_tabContainer, SIGNAL(ctrlTabPressed()), m_pMainWindow, SLOT(slotCtrlTabPressed()) );
+    applyConfiguration();
 }
 
 void KonqViewManager::applyConfiguration()
