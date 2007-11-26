@@ -896,6 +896,22 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
   return ok || bOthersFollowed;
 }
 
+static KonqView * findChildView( KParts::ReadOnlyPart *callingPart, const QString &name, KonqMainWindow *&mainWindow, KParts::BrowserHostExtension *&hostExtension, KParts::ReadOnlyPart **part )
+{
+    if ( !KonqMainWindow::mainWindowList() )
+        return 0;
+
+    foreach ( KonqMainWindow* window, *KonqMainWindow::mainWindowList() ) {
+        KonqView *res = window->childView( callingPart, name, hostExtension, part );
+        if ( res ) {
+            mainWindow = window;
+            return res;
+        }
+    }
+
+    return 0;
+}
+
 void KonqMainWindow::slotOpenURLRequest( const KUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments &browserArgs )
 {
   kDebug(1202) << "KonqMainWindow::slotOpenURLRequest frameName=" << browserArgs.frameName;
@@ -921,11 +937,11 @@ void KonqMainWindow::slotOpenURLRequest( const KUrl &url, const KParts::OpenUrlA
          frameName.toLower() != _parent )
     {
       KParts::BrowserHostExtension *hostExtension = 0;
-      KonqView *view = childView( callingPart, frameName, &hostExtension, 0 );
+      KonqView *view = childView( callingPart, frameName, hostExtension, 0 );
       if ( !view )
       {
         KonqMainWindow *mainWindow = 0;
-        view = findChildView( callingPart, frameName, &mainWindow, &hostExtension, 0 );
+        view = findChildView( callingPart, frameName, mainWindow, hostExtension, 0 );
 
         if ( !view || !mainWindow )
         {
@@ -1096,7 +1112,7 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
         KParts::BrowserExtension *be = ::qobject_cast<KParts::BrowserExtension *>(sender());
         if (be)
             ro_part = ::qobject_cast<KParts::ReadOnlyPart *>(be->parent());
-        if ( findChildView( ro_part, browserArgs.frameName, &mainWindow, &hostExtension, part ) ) {
+        if ( findChildView( ro_part, browserArgs.frameName, mainWindow, hostExtension, part ) ) {
             // Found a view. If url isn't empty, we should open it - but this never happens currently
             // findChildView put the resulting part in 'part', so we can just return now
             //kDebug() << " frame=" << browserArgs.frameName << " -> found part=" << part << " " << part->name();
@@ -2053,7 +2069,7 @@ void KonqMainWindow::applyKonqMainWindowSettings()
 void KonqMainWindow::slotSetStatusBarText( const QString & )
 {
    // Reimplemented to disable KParts::MainWindow default behaviour
-   // Does nothing here, see konq_frame.cc
+   // Does nothing here, see KonqFrame
 }
 
 void KonqMainWindow::slotViewCompleted( KonqView * view )
@@ -2306,7 +2322,7 @@ KonqView * KonqMainWindow::childView( KParts::ReadOnlyPart *view )
     return 0;
 }
 
-KonqView * KonqMainWindow::childView( KParts::ReadOnlyPart *callingPart, const QString &name, KParts::BrowserHostExtension **hostExtension, KParts::ReadOnlyPart **part )
+KonqView * KonqMainWindow::childView( KParts::ReadOnlyPart *callingPart, const QString &name, KParts::BrowserHostExtension *&hostExtension, KParts::ReadOnlyPart **part )
 {
   kDebug() << "KonqMainWindow::childView this=" << this << " looking for " << name;
 
@@ -2332,8 +2348,7 @@ KonqView * KonqMainWindow::childView( KParts::ReadOnlyPart *callingPart, const Q
     if ( !viewName.isEmpty() && viewName == name )
     {
       kDebug() << "found existing view by name: " << view;
-      if ( hostExtension )
-        *hostExtension = 0;
+      hostExtension = 0;
       if ( part )
         *part = view->part();
       return view;
@@ -2351,33 +2366,12 @@ KonqView * KonqMainWindow::childView( KParts::ReadOnlyPart *callingPart, const Q
         if ( item->objectName() == name )
         {
           kDebug() << "found a frame of name " << name << " : " << item;
-          if ( hostExtension )
-            *hostExtension = ext;
+          hostExtension = ext;
           if ( part )
             *part = item;
           return view;
         }
       }
-    }
-  }
-
-  return 0;
-}
-
-// static
-KonqView * KonqMainWindow::findChildView( KParts::ReadOnlyPart *callingPart, const QString &name, KonqMainWindow **mainWindow, KParts::BrowserHostExtension **hostExtension, KParts::ReadOnlyPart **part )
-{
-  if ( !s_lstViews )
-    return 0;
-
-  foreach ( KonqMainWindow* window, *s_lstViews )
-  {
-    KonqView *res = window->childView( callingPart, name, hostExtension, part );
-    if ( res )
-    {
-      if ( mainWindow )
-        *mainWindow = window;
-      return res;
     }
   }
 
