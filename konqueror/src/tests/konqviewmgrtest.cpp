@@ -311,9 +311,9 @@ void ViewMgrTest::testLoadProfile()
     QVERIFY(!profile.isEmpty());
     QString path = QDir::homePath();
     viewManager->loadViewProfileFromFile(profile, "filemanagement", KUrl(path));
-    // TODO QCOMPARE(view->locationBarUrl(), path);
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MC(FT[F]).") ); // mainWindow, splitter, frame, tab widget, one frame
     QCOMPARE(mainWindow.locationBarURL(), path);
+    QCOMPARE(mainWindow.currentView()->locationBarURL(), path);
 }
 
 #include "konqviewmgrtest.moc"
