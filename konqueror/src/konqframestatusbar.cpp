@@ -94,6 +94,9 @@ KonqFrameStatusBar::KonqFrameStatusBar( KonqFrame *_parent )
             this, SIGNAL(linkedViewClicked(bool)) );
 
     m_progressBar = new QProgressBar( this );
+    // Minimum width of QProgressBar::sizeHint depends on PM_ProgressBarChunkWidth which doesn't make sense;
+    // we don't want chunking but we want a reasonably-sized progressbar :)
+    m_progressBar->setMinimumWidth(150);
     m_progressBar->setMaximumHeight(fontMetrics().height());
     m_progressBar->hide();
     addPermanentWidget( m_progressBar, 0 );
