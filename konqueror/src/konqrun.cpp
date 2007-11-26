@@ -27,6 +27,7 @@
 #include <kdebug.h>
 #include <kmessagebox.h>
 #include <klocale.h>
+#include <kio/job.h>
 
 // Local
 #include "konqview.h"
@@ -136,7 +137,7 @@ void KonqRun::foundMimeType( const QString & _type )
   KRun::foundMimeType( mimeType );
 }
 
-void KonqRun::handleError( KIO::Job *job )
+void KonqRun::handleError( KJob *job )
 {
   kDebug(1202) << "KonqRun::handleError error:" << job->errorString();
   if (!m_mailto.isEmpty())

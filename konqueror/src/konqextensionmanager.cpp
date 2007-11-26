@@ -23,6 +23,7 @@
 #include <QtGui/QBoxLayout>
 
 // KDE
+#include <kxmlguifactory.h>
 #include <kconfig.h>
 #include <kdebug.h>
 #include <klocale.h>

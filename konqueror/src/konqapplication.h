@@ -25,15 +25,15 @@
 
 class QDBusMessage;
 
-// This is used to know if we are being closed by session management
-// or by the user. See KonqMainWindow::~KonqMainWindow.
-// Credits to Matthias Ettrich for the idea.
 class KONQ_TESTS_EXPORT KonquerorApplication : public KApplication
 {
   Q_OBJECT
 public:
   KonquerorApplication();
 
+  // This is used to know if we are being closed by session management
+  // or by the user. See KonqMainWindow::~KonqMainWindow.
+  // Credits to Matthias Ettrich for the idea.
   bool closedByUser() const { return !closed_by_sm; }
   void commitData(QSessionManager& sm) {
     closed_by_sm = true;

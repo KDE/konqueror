@@ -42,7 +42,9 @@
 #include <klocale.h>
 #include <fixx11h.h>
 #include <krandom.h>
+#include <kio/job.h>
 #include <kio/jobuidelegate.h>
+#include <ktoggleaction.h>
 
 #include <QtGui/QApplication>
 #include <QtCore/QArgument>
@@ -1394,7 +1396,7 @@ void KonqView::loadHistoryConfig(const KConfigGroup& config, const QString &pref
     }
 
     // restore history list
-    for ( uint i = 0; i < m_lstHistorySize; ++i )
+    for ( int i = 0; i < m_lstHistorySize; ++i )
     {
         HistoryEntry* historyEntry = new HistoryEntry;
         historyEntry->loadItem(config, QString::fromLatin1( "HistoryItem" ) + QString::number(i).prepend( prefix ));

@@ -55,7 +55,7 @@ public:
 
 protected:
   virtual void foundMimeType( const QString & _type );
-  virtual void handleError( KIO::Job * job );
+  virtual void handleError( KJob * job );
   virtual void init();
   virtual void scanFile();
 

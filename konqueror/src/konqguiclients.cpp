@@ -21,6 +21,7 @@
 #include "konqguiclients.h"
 
 // KDE
+#include <ktoggleaction.h>
 #include <kdebug.h>
 #include <kicon.h>
 #include <kiconloader.h>

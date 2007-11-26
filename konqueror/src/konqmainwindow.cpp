@@ -96,6 +96,7 @@
 #include <kcmultidialog.h>
 #include <kdebug.h>
 #include <kedittoolbar.h>
+#include <klocalizedstring.h>
 #include <kmenubar.h>
 #include <kmessagebox.h>
 #include <knewmenu.h>
@@ -109,7 +110,9 @@
 #include <kstandarddirs.h>
 #include <ksycoca.h>
 #include <ktemporaryfile.h>
+#include <ktogglefullscreenaction.h>
 #include <ktoolbarpopupaction.h>
+#include <kurlcompletion.h>
 #include <kurlrequesterdialog.h>
 #include <kurlrequester.h>
 #include <kmimetypetrader.h>
@@ -125,6 +128,7 @@
 #include <kio/netaccess.h>
 #include <kacceleratormanager.h>
 #include <kuser.h>
+#include <kxmlguifactory.h>
 #include <netwm.h>
 
 #ifdef KDE_MALLINFO_STDLIB
@@ -153,16 +157,18 @@ QList<KonqMainWindow*> *KonqMainWindow::s_lstViews = 0;
 KConfig * KonqMainWindow::s_comboConfig = 0;
 KCompletion * KonqMainWindow::s_pCompletion = 0;
 QFile * KonqMainWindow::s_crashlog_file = 0;
+
 bool KonqMainWindow::s_preloaded = false;
 KonqMainWindow* KonqMainWindow::s_preloadedWindow = 0;
-int KonqMainWindow::s_initialMemoryUsage = -1;
-static unsigned short int s_closedTabsListLength = 10;
-time_t KonqMainWindow::s_startupTime;
-int KonqMainWindow::s_preloadUsageCount;
+static int s_initialMemoryUsage = -1;
+static time_t s_startupTime;
+static int s_preloadUsageCount;
 
 KonqOpenURLRequest KonqOpenURLRequest::null;
 
 static int current_memory_usage( int* limit = NULL );
+
+static unsigned short int s_closedTabsListLength = 10;
 
 KonqExtendedBookmarkOwner::KonqExtendedBookmarkOwner(KonqMainWindow *w)
 {
@@ -209,8 +215,6 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
 
   m_toggleViewGUIClient = new ToggleViewGUIClient( this );
 
-  //m_openWithActions.setAutoDelete( true );
-  //m_toolBarViewModeActions.setAutoDelete( true );
   m_viewModeMenu = 0;
   m_paCopyFiles = 0;
   m_paMoveFiles = 0;
@@ -324,6 +328,13 @@ KonqMainWindow::~KonqMainWindow()
       s_lstViews = 0;
     }
   }
+
+    qDeleteAll(m_openWithActions);
+    m_openWithActions.clear();
+    qDeleteAll(m_toolBarViewModeActions);
+    m_toolBarViewModeActions.clear();
+    qDeleteAll(m_viewModeActions);
+    m_viewModeActions.clear();
 
   saveToolBarServicesMap();
 
@@ -2559,11 +2570,11 @@ void KonqMainWindow::slotPopupNewWindow()
 {
     kDebug(1202) << "KonqMainWindow::slotPopupNewWindow()";
 
-    KFileItemList::const_iterator it = popupItems.begin();
-    const KFileItemList::const_iterator end = popupItems.end();
+    KFileItemList::const_iterator it = m_popupItems.begin();
+    const KFileItemList::const_iterator end = m_popupItems.end();
     for ( ; it != end; ++it )
     {
-        KonqMisc::createNewWindow( (*it).url(), popupUrlArgs, popupUrlBrowserArgs );
+        KonqMisc::createNewWindow( (*it).url(), m_popupUrlArgs, m_popupUrlBrowserArgs );
     }
 }
 
@@ -2571,7 +2582,7 @@ void KonqMainWindow::slotPopupThisWindow()
 {
     kDebug(1202) << "KonqMainWindow::slotPopupThisWindow()";
 
-    openUrl( 0, popupItems.first().url() );
+    openUrl( 0, m_popupItems.first().url() );
 }
 
 void KonqMainWindow::slotPopupNewTab()
@@ -2594,16 +2605,16 @@ void KonqMainWindow::popupNewTab(bool infront, bool openAfterCurrentPage)
   req.newTab = true;
   req.newTabInFront = false;
   req.openAfterCurrentPage = openAfterCurrentPage;
-  req.args = popupUrlArgs;
-  req.browserArgs = popupUrlBrowserArgs;
+  req.args = m_popupUrlArgs;
+  req.browserArgs = m_popupUrlBrowserArgs;
 
-  for ( int i = 0; i < popupItems.count(); ++i )
+  for ( int i = 0; i < m_popupItems.count(); ++i )
   {
-    if ( infront && i == popupItems.count()-1 )
+    if ( infront && i == m_popupItems.count()-1 )
     {
       req.newTabInFront = true;
     }
-    openUrl( 0, popupItems[i].url(), QString(), req );
+    openUrl( 0, m_popupItems[i].url(), QString(), req );
   }
 }
 
@@ -4774,10 +4785,10 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
         pPopupMenu->setURLTitle( currentView->caption() );
 
     // We will need these if we call the newTab slot
-    popupItems = items;
-    popupUrlArgs = args;
-    popupUrlArgs.setMimeType( QString() ); // Reset so that Open in New Window/Tab does mimetype detection
-    popupUrlBrowserArgs = browserArgs;
+    m_popupItems = items;
+    m_popupUrlArgs = args;
+    m_popupUrlArgs.setMimeType( QString() ); // Reset so that Open in New Window/Tab does mimetype detection
+    m_popupUrlBrowserArgs = browserArgs;
 
     QPointer<KParts::BrowserExtension> be = ::qobject_cast<KParts::BrowserExtension *>(sender());
 
@@ -4815,7 +4826,7 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
   }
 
   delete konqyMenuClient;
-  popupItems.clear();
+  m_popupItems.clear();
 
   // Deleted by konqyMenuClient's actioncollection
   //delete actNewTab;
@@ -4851,7 +4862,7 @@ void KonqMainWindow::slotItemsRemoved(const KFileItemList &items)
 {
     QListIterator<KFileItem> it(items);
     while (it.hasNext()) {
-        if (popupItems.contains(it.next())) {
+        if (m_popupItems.contains(it.next())) {
             emit popupItemsDisturbed();
             return;
         }
@@ -4926,6 +4937,7 @@ void KonqMainWindow::updateOpenWithActions()
 {
   unplugActionList( "openwith" );
 
+  qDeleteAll(m_openWithActions);
   m_openWithActions.clear();
 
   if (!KAuthorized::authorizeKAction("openwith"))
@@ -4976,7 +4988,9 @@ void KonqMainWindow::updateViewModeActions()
   }
 
   m_viewModeMenu = 0;
+  qDeleteAll(m_toolBarViewModeActions);
   m_toolBarViewModeActions.clear();
+  qDeleteAll(m_viewModeActions);
   m_viewModeActions.clear();
 
   // if we changed the viewmode to something new, then we have to
@@ -5370,6 +5384,11 @@ bool KonqMainWindow::sidebarVisible() const
 {
     QAction *a = m_toggleViewGUIClient->action("konq_sidebartng");
     return (a && static_cast<KToggleAction*>(a)->isChecked());
+}
+
+bool KonqMainWindow::fullScreenMode() const
+{
+    return m_ptaFullScreen->isChecked();
 }
 
 void KonqMainWindow::slotAddWebSideBar(const KUrl& url, const QString& name)
@@ -5780,7 +5799,6 @@ bool KonqMainWindow::event( QEvent* e )
     if ( KParts::OpenUrlEvent::test( e ) )
     {
         KParts::OpenUrlEvent * ev = static_cast<KParts::OpenUrlEvent*>(e);
-        KonqView * senderChildView = childView(ev->part());
 
         // Forward the event to all views
         MapViews::ConstIterator it = m_mapViews.begin();
