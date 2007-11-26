@@ -351,7 +351,7 @@ private:
                        const KService::List &partServiceOffers,
                        const KService::List &appServiceOffers,
                        const QString &serviceType,
-                       bool passiveMode, bool openAfterCurrentPage = false, int pos = 0);
+                       bool passiveMode, bool openAfterCurrentPage = false, int pos = -1);
 
 #ifndef NDEBUG
   //just for debugging
