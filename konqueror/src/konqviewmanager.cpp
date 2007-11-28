@@ -273,7 +273,8 @@ void KonqViewManager::duplicateTab( KonqFrameBase* currentFrame, bool openAfterC
   QString prefix = QString::fromLatin1( currentFrame->frameType() ) + QString::number(0);
   profileGroup.writeEntry( "RootItem", prefix );
   prefix.append( QLatin1Char( '_' ) );
-  currentFrame->saveConfig( profileGroup, prefix, true, 0L, 0, 1);
+  KonqFrameBase::Options flags = KonqFrameBase::saveURLs;
+  currentFrame->saveConfig( profileGroup, prefix, flags, 0L, 0, 1);
 
   QString rootItem = profileGroup.readEntry( "RootItem", "empty" );
 
@@ -325,7 +326,8 @@ void KonqViewManager::breakOffTab( KonqFrameBase* currentFrame, const QSize& win
   QString prefix = QString::fromLatin1( currentFrame->frameType() ) + QString::number(0);
   profileGroup.writeEntry( "RootItem", prefix );
   prefix.append( QLatin1Char( '_' ) );
-  currentFrame->saveConfig( profileGroup, prefix, true, 0L, 0, 1);
+  KonqFrameBase::Options flags = KonqFrameBase::saveURLs;
+  currentFrame->saveConfig( profileGroup, prefix, flags, 0L, 0, 1);
 
   KonqMainWindow *mainWindow = new KonqMainWindow;
 
@@ -491,12 +493,16 @@ void KonqViewManager::openClosedTab(const KonqClosedTabItem& closedTab)
     // from profile loading (e.g. in switchView)
     m_bLoadingProfile = true;
 
-    int pos = ( pos >= m_tabContainer->count() ) ? closedTab.pos() : m_tabContainer->count()-1;
 
-    loadItem( closedTab.configGroup(), m_tabContainer, rootItem, KUrl(), true, false, pos );
-    kDebug(1202) << "pos, m_tabContainer->count(): " << pos << ", " << m_tabContainer->count() << endl;
+    loadItem( closedTab.configGroup(), m_tabContainer, rootItem, KUrl(), true, false, closedTab.pos() );
 
     // FIXME: TabContainer does weird things with indexes sometimes
+    int pos = ( closedTab.pos() >= m_tabContainer->count() ) ? closedTab.pos() : m_tabContainer->count()-1;
+    kDebug(1202) << "pos, m_tabContainer->count(): " << pos << ", " << m_tabContainer->count()-1 << endl;
+
+    QWidget* w = m_tabContainer->widget(pos);
+    Q_ASSERT(w);
+    m_tabContainer->setActiveChild( dynamic_cast<KonqFrameBase*>(w) );
     m_tabContainer->setCurrentIndex( pos );
 
     m_bLoadingProfile = false;
@@ -836,7 +842,10 @@ void KonqViewManager::saveViewProfileToGroup( KConfigGroup & profileGroup, bool 
                          + QString::number(0);
         profileGroup.writeEntry( "RootItem", prefix );
         prefix.append( QLatin1Char( '_' ) );
-        m_pMainWindow->saveConfig( profileGroup, prefix, saveURLs, tabContainer(), 0, 1);
+        KonqFrameBase::Options options = KonqFrameBase::None;
+        if(saveURLs)
+           options = KonqFrameBase::saveURLs;
+        m_pMainWindow->saveConfig( profileGroup, prefix, options, tabContainer(), 0, 1);
     }
 
     profileGroup.writeEntry( "FullScreen", m_pMainWindow->fullScreenMode());

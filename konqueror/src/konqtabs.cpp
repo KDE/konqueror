@@ -34,7 +34,6 @@
 #include <klocale.h>
 #include <kstringhandler.h>
 
-#include "konqframe.h"
 #include "konqview.h"
 #include "konqviewmanager.h"
 #include "konqmisc.h"
@@ -233,7 +232,7 @@ KonqFrameTabs::~KonqFrameTabs()
   m_childFrameList.clear();
 }
 
-void KonqFrameTabs::saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs,
+void KonqFrameTabs::saveConfig( KConfigGroup& config, const QString &prefix, KonqFrameBase::Options &options,
                                 KonqFrameBase* docContainer, int id, int depth )
 {
   //write children
@@ -245,7 +244,7 @@ void KonqFrameTabs::saveConfig( KConfigGroup& config, const QString &prefix, boo
       newPrefix = QString::fromLatin1( frame->frameType() ) + 'T' + QString::number(i);
       strlst.append( newPrefix );
       newPrefix.append( QLatin1Char( '_' ) );
-      frame->saveConfig( config, newPrefix, saveURLs, docContainer, id, depth + i );
+      frame->saveConfig( config, newPrefix, options, docContainer, id, depth + i );
       i++;
     }
 

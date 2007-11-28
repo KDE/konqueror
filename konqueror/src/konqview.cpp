@@ -22,7 +22,6 @@
 #include "konqview.h"
 #include "KonqViewAdaptor.h"
 #include "konqsettingsxt.h"
-#include "konqframe.h"
 #include "konqframestatusbar.h"
 #include "konqrun.h"
 #include <konq_events.h>
@@ -1359,7 +1358,7 @@ void HistoryEntry::loadItem( const KConfigGroup& config, const QString &prefix)
     pageSecurity = (KonqMainWindow::PageSecurity)config.readEntry( QString::fromLatin1( "PageSecurity" ).prepend( prefix ), 0 );
 }
 
-void KonqView::saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs)
+void KonqView::saveConfig( KConfigGroup& config, const QString &prefix, KonqFrameBase::Options &options)
 {
     config.writeEntry( QString::fromLatin1( "ServiceType" ).prepend( prefix ), serviceType() );
     config.writeEntry( QString::fromLatin1( "ServiceName" ).prepend( prefix ), service()->desktopEntryName() );
@@ -1368,16 +1367,19 @@ void KonqView::saveConfig( KConfigGroup& config, const QString &prefix, bool sav
     config.writeEntry( QString::fromLatin1( "ToggleView" ).prepend( prefix ), isToggleView() );
     config.writeEntry( QString::fromLatin1( "LockedLocation" ).prepend( prefix ), isLockedLocation() );
 
-    if (saveURLs) {
-        // Don't save the url, but save the history entries instead
+    if (options & KonqFrameBase::saveURLs) {
         config.writePathEntry( QString::fromLatin1( "URL" ).prepend( prefix ), url().url() );
 
-        QList<HistoryEntry*>::Iterator it = m_lstHistory.begin();
-        for ( uint i = 0; it != m_lstHistory.end(); ++it, ++i ) {
-            (*it)->saveConfig(config, QString::fromLatin1( "HistoryItem" ) + QString::number(i).prepend( prefix ));
-        }
-        config.writeEntry( QString::fromLatin1( "CurrentHistoryItem" ).prepend( prefix ), m_lstHistoryIndex );
-        config.writeEntry( QString::fromLatin1( "NumberOfHistoryItems" ).prepend( prefix ), historyLength() );
+        if(options & KonqFrameBase::saveHistoryItems)
+        {
+            QList<HistoryEntry*>::Iterator it = m_lstHistory.begin();
+            for ( uint i = 0; it != m_lstHistory.end(); ++it, ++i ) {
+                (*it)->saveConfig(config, QString::fromLatin1( "HistoryItem" ) + QString::number(i).prepend( prefix ));
+            }
+            config.writeEntry( QString::fromLatin1( "CurrentHistoryItem" ).prepend( prefix ), m_lstHistoryIndex );
+            config.writeEntry( QString::fromLatin1( "NumberOfHistoryItems" ).prepend( prefix ), historyLength() );
+        } else
+            config.writeEntry( QString::fromLatin1( "NumberOfHistoryItems" ).prepend( prefix ), 0 );
     }
 }
 

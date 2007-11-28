@@ -37,6 +37,7 @@
 #include <kglobalsettings.h>
 #include <kservice.h>
 #include "konqcombo.h"
+#include "konqframe.h"
 #include "konqframecontainer.h"
 
 class KUrlCompletion;
@@ -59,8 +60,6 @@ class KToggleAction;
 class KonqBidiHistoryAction;
 class KBookmarkBar;
 class KonqView;
-class KonqFrame;
-class KonqFrameBase;
 class KonqFrameContainerBase;
 class KonqFrameContainer;
 class KToolBarPopupAction;
@@ -274,7 +273,7 @@ public:
      */
     virtual void childFrameRemoved( KonqFrameBase * frame );
 
-  void saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs, KonqFrameBase* docContainer, int id = 0, int depth = 0 );
+  void saveConfig( KConfigGroup& config, const QString &prefix, KonqFrameBase::Options &options, KonqFrameBase* docContainer, int id = 0, int depth = 0 );
 
   void copyHistory( KonqFrameBase *other );
 

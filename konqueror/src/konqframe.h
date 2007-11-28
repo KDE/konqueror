@@ -60,13 +60,20 @@ typedef QList<KonqView*> ChildViewList;
 class KonqFrameBase
 {
  public:
+  enum Option {
+     None = 0x0,
+     saveURLs = 0x1,
+     saveHistoryItems = 0x02
+  };
+  Q_DECLARE_FLAGS(Options, Option)
+
   virtual ~KonqFrameBase() {}
 
     virtual bool isContainer() const = 0;
 
     virtual bool accept( KonqFrameVisitor* visitor ) = 0;
 
-  virtual void saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs, KonqFrameBase* docContainer, int id = 0, int depth = 0) = 0;
+  virtual void saveConfig( KConfigGroup& config, const QString &prefix, KonqFrameBase::Options &options, KonqFrameBase* docContainer, int id = 0, int depth = 0) = 0;
 
   virtual void copyHistory( KonqFrameBase *other ) = 0;
 
@@ -89,6 +96,8 @@ protected:
 
   KonqFrameContainerBase* m_pParentContainer;
 };
+
+  Q_DECLARE_OPERATORS_FOR_FLAGS ( KonqFrameBase::Options )
 
 /**
  * The KonqFrame is the actual container for the views. It takes care of the
@@ -146,7 +155,7 @@ public:
 
   void setView( KonqView* child );
 
-  virtual void saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs, KonqFrameBase* docContainer, int id = 0, int depth = 0 );
+  virtual void saveConfig( KConfigGroup& config, const QString &prefix, KonqFrameBase::Options &options, KonqFrameBase* docContainer, int id = 0, int depth = 0 );
   virtual void copyHistory( KonqFrameBase *other );
 
   virtual void setTitle( const QString &title, QWidget* sender );

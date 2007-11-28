@@ -22,6 +22,7 @@
 #ifndef KONQTABS_H
 #define KONQTABS_H
 
+#include "konqframe.h"
 #include "konqframecontainer.h"
 
 #include <ktabwidget.h>
@@ -33,8 +34,6 @@ class QPushButton;
 
 class KonqView;
 class KonqViewManager;
-class KonqFrameBase;
-class KonqFrame;
 class KonqFrameContainerBase;
 class KonqFrameContainer;
 class KConfig;
@@ -51,7 +50,7 @@ public:
 
     virtual bool accept( KonqFrameVisitor* visitor );
 
-  virtual void saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs,
+  virtual void saveConfig( KConfigGroup& config, const QString &prefix, KonqFrameBase::Options &options,
 			   KonqFrameBase* docContainer, int id = 0, int depth = 0 );
   virtual void copyHistory( KonqFrameBase *other );
 
