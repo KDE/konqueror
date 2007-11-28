@@ -75,9 +75,9 @@ bool KonqFrame::isActivePart()
            static_cast<KonqView*>(m_pView) == m_pView->mainWindow()->currentView() );
 }
 
-void KonqFrame::saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs, KonqFrameBase* docContainer, int /*id*/, int /*depth*/ )
+void KonqFrame::saveConfig( KConfigGroup& config, const QString &prefix, KonqFrameBase::Options &options, KonqFrameBase* docContainer, int /*id*/, int /*depth*/ )
 {
-  childView()->saveConfig(config, prefix, saveURLs);
+  childView()->saveConfig(config, prefix, options);
   //config.writeEntry( QString::fromLatin1( "ShowStatusBar" ).prepend( prefix ), statusbar()->isVisible() );
   if (this == docContainer) config.writeEntry( QString::fromLatin1( "docContainer" ).prepend( prefix ), true );
 

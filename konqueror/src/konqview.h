@@ -22,6 +22,7 @@
 
 #include "konqmainwindow.h" // hmm, please move PageSecurity out of konq_mainwindow...
 #include "konqfactory.h"
+#include "konqframe.h"
 
 #include <kservice.h>
 
@@ -330,7 +331,7 @@ public:
   /**
    * Saves config in a KConfigGroup
    */
-  void saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs);
+  void saveConfig( KConfigGroup& config, const QString &prefix, KonqFrameBase::Options &options);
   void loadHistoryConfig( const KConfigGroup& config, const QString &prefix);
 
   static QStringList childFrameNames( KParts::ReadOnlyPart *part );

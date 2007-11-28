@@ -63,7 +63,7 @@ KonqFrameContainer::~KonqFrameContainer()
     delete m_pSecondChild;
 }
 
-void KonqFrameContainer::saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs, KonqFrameBase* docContainer, int id, int depth )
+void KonqFrameContainer::saveConfig( KConfigGroup& config, const QString &prefix, KonqFrameBase::Options &options, KonqFrameBase* docContainer, int id, int depth )
 {
   int idSecond = id + (int)pow( 2.0, depth );
 
@@ -97,13 +97,13 @@ void KonqFrameContainer::saveConfig( KConfigGroup& config, const QString &prefix
   if( firstChild() ) {
     QString newPrefix = QString::fromLatin1( firstChild()->frameType() ) + QString::number(idSecond - 1);
     newPrefix.append( QLatin1Char( '_' ) );
-    firstChild()->saveConfig( config, newPrefix, saveURLs, docContainer, id, depth + 1 );
+    firstChild()->saveConfig( config, newPrefix, options, docContainer, id, depth + 1 );
   }
 
   if( secondChild() ) {
     QString newPrefix = QString::fromLatin1( secondChild()->frameType() ) + QString::number( idSecond );
     newPrefix.append( QLatin1Char( '_' ) );
-    secondChild()->saveConfig( config, newPrefix, saveURLs, docContainer, idSecond, depth + 1 );
+    secondChild()->saveConfig( config, newPrefix, options, docContainer, idSecond, depth + 1 );
   }
 }
 

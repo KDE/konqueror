@@ -32,7 +32,6 @@
 #include "konqrun.h"
 #include "konqmisc.h"
 #include "konqviewmanager.h"
-#include "konqframe.h"
 #include "konqframestatusbar.h"
 #include "konqtabs.h"
 #include "konqactions.h"
@@ -5355,7 +5354,8 @@ void KonqMainWindow::slotAddClosedUrl(KonqFrameBase *tab)
     QString prefix = QString::fromLatin1( currentFrame->frameType() ) + QString::number(0);
     closedTabItem->configGroup().writeEntry( "RootItem", prefix );
     prefix.append( QLatin1Char( '_' ) );
-    currentFrame->saveConfig( closedTabItem->configGroup(), prefix, true, 0L, 0, 1);
+    KonqFrameBase::Options flags = KonqFrameBase::saveURLs | KonqFrameBase::saveHistoryItems;
+    currentFrame->saveConfig( closedTabItem->configGroup(), prefix, flags, 0L, 0, 1);
 
     m_paClosedTabs->setEnabled(true);
     m_undoManager->addClosedTabItem( closedTabItem );
@@ -5670,7 +5670,7 @@ void KonqMainWindow::childFrameRemoved(KonqFrameBase* frame)
     m_pActiveChild = 0;
 }
 
-void KonqMainWindow::saveConfig( KConfigGroup& config, const QString &prefix, bool saveURLs, KonqFrameBase* docContainer, int id, int depth ) { if( m_pChildFrame ) m_pChildFrame->saveConfig( config, prefix, saveURLs, docContainer, id, depth); }
+void KonqMainWindow::saveConfig( KConfigGroup& config, const QString &prefix, KonqFrameBase::Options &options, KonqFrameBase* docContainer, int id, int depth ) { if( m_pChildFrame ) m_pChildFrame->saveConfig( config, prefix, options, docContainer, id, depth); }
 
 void KonqMainWindow::copyHistory( KonqFrameBase *other ) { if( m_pChildFrame ) m_pChildFrame->copyHistory( other ); }
 
