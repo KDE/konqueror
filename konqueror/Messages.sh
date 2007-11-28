@@ -1,6 +1,5 @@
 #! /usr/bin/env bash
-### TEMPORARY for KDE4, might extract too much
-### Consider restricting to the src subdir?
-$EXTRACTRC `find . -name \*.rc` >> rc.cpp || exit 11
-$EXTRACTRC sidebar/trees/history_module/history_dlg.ui >> rc.cpp || exit 12
-$XGETTEXT -kaliasLocal `find . -name \*.cc -o -name \*.cpp -o -name \*.h` -o $podir/konqueror.pot
+subdirs="src sidebar about kttsplugin remoteencodingplugin shellcmdplugin"
+$EXTRACTRC `find $subdirs -name \*.rc` >> rc.cpp || exit 11
+$EXTRACTRC `find $subdirs -name \*.ui` >> rc.cpp || exit 12
+$XGETTEXT -kaliasLocal `find $subdirs -name \*.cc -o -name \*.cpp -o -name \*.h` -o $podir/konqueror.pot
