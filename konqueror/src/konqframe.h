@@ -73,7 +73,7 @@ class KonqFrameBase
 
     virtual bool accept( KonqFrameVisitor* visitor ) = 0;
 
-  virtual void saveConfig( KConfigGroup& config, const QString &prefix, KonqFrameBase::Options &options, KonqFrameBase* docContainer, int id = 0, int depth = 0) = 0;
+  virtual void saveConfig( KConfigGroup& config, const QString &prefix, const KonqFrameBase::Options &options, KonqFrameBase* docContainer, int id = 0, int depth = 0) = 0;
 
   virtual void copyHistory( KonqFrameBase *other ) = 0;
 
@@ -155,7 +155,7 @@ public:
 
   void setView( KonqView* child );
 
-  virtual void saveConfig( KConfigGroup& config, const QString &prefix, KonqFrameBase::Options &options, KonqFrameBase* docContainer, int id = 0, int depth = 0 );
+  virtual void saveConfig( KConfigGroup& config, const QString &prefix, const KonqFrameBase::Options &options, KonqFrameBase* docContainer, int id = 0, int depth = 0 );
   virtual void copyHistory( KonqFrameBase *other );
 
   virtual void setTitle( const QString &title, QWidget* sender );

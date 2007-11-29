@@ -5670,7 +5670,7 @@ void KonqMainWindow::childFrameRemoved(KonqFrameBase* frame)
     m_pActiveChild = 0;
 }
 
-void KonqMainWindow::saveConfig( KConfigGroup& config, const QString &prefix, KonqFrameBase::Options &options, KonqFrameBase* docContainer, int id, int depth ) { if( m_pChildFrame ) m_pChildFrame->saveConfig( config, prefix, options, docContainer, id, depth); }
+void KonqMainWindow::saveConfig( KConfigGroup& config, const QString &prefix, const KonqFrameBase::Options &options, KonqFrameBase* docContainer, int id, int depth ) { if( m_pChildFrame ) m_pChildFrame->saveConfig( config, prefix, options, docContainer, id, depth); }
 
 void KonqMainWindow::copyHistory( KonqFrameBase *other ) { if( m_pChildFrame ) m_pChildFrame->copyHistory( other ); }
 

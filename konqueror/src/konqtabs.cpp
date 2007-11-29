@@ -232,7 +232,7 @@ KonqFrameTabs::~KonqFrameTabs()
   m_childFrameList.clear();
 }
 
-void KonqFrameTabs::saveConfig( KConfigGroup& config, const QString &prefix, KonqFrameBase::Options &options,
+void KonqFrameTabs::saveConfig( KConfigGroup& config, const QString &prefix, const KonqFrameBase::Options &options,
                                 KonqFrameBase* docContainer, int id, int depth )
 {
   //write children

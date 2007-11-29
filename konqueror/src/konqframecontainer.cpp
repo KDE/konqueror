@@ -63,7 +63,7 @@ KonqFrameContainer::~KonqFrameContainer()
     delete m_pSecondChild;
 }
 
-void KonqFrameContainer::saveConfig( KConfigGroup& config, const QString &prefix, KonqFrameBase::Options &options, KonqFrameBase* docContainer, int id, int depth )
+void KonqFrameContainer::saveConfig( KConfigGroup& config, const QString &prefix, const KonqFrameBase::Options &options, KonqFrameBase* docContainer, int id, int depth )
 {
   int idSecond = id + (int)pow( 2.0, depth );
 

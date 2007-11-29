@@ -90,7 +90,7 @@ public:
 
     virtual bool accept( KonqFrameVisitor* visitor );
 
-  virtual void saveConfig( KConfigGroup& config, const QString &prefix, KonqFrameBase::Options &options, KonqFrameBase* docContainer, int id = 0, int depth = 0 );
+  virtual void saveConfig( KConfigGroup& config, const QString &prefix, const KonqFrameBase::Options &options, KonqFrameBase* docContainer, int id = 0, int depth = 0 );
   virtual void copyHistory( KonqFrameBase *other );
 
   KonqFrameBase* firstChild() { return m_pFirstChild; }
