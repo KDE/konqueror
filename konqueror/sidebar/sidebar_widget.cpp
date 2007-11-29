@@ -26,7 +26,6 @@
 #include <QtGui/QPushButton>
 #include <QtGui/QLayout>
 #include <QtCore/QStringList>
-#include <QtGui/QSplitter>
 #include <QtGui/QMenu>
 
 // KDE
@@ -233,7 +232,7 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, bool 
 	m_layout = 0;
 	m_currentButton = 0;
 	m_activeModule = 0;
-	m_userMovedSplitter = false;
+	//m_userMovedSplitter = false;
         //kDebug() << "**** Sidebar_Widget:SidebarWidget()";
 	if (universalMode)
 	{
@@ -249,12 +248,15 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, bool 
 	m_latestViewed = -1;
 	setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
 
+#if 0 // Konqueror says: leave my splitter alone!
 	QSplitter *splitterWidget = splitter();
 	if (splitterWidget) {
+            // ### this sets a stretch factor on the sidebar's sizepolicy, which makes it huge....
 		splitterWidget->setResizeMode(parent, QSplitter::FollowSizeHint);
 		splitterWidget->setOpaqueResize( false );
 		connect(splitterWidget,SIGNAL(setRubberbandCalled()),SLOT(userMovedSplitter()));
 	}
+#endif
 
 	m_area = new K3DockArea(this);
 	m_area->setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
@@ -1223,6 +1225,7 @@ void Sidebar_Widget::customEvent(QEvent* ev)
 	}
 }
 
+#if 0
 void Sidebar_Widget::resizeEvent(QResizeEvent* ev)
 {
 	if (m_somethingVisible && m_userMovedSplitter)
@@ -1257,7 +1260,6 @@ void Sidebar_Widget::userMovedSplitter()
 {
 	m_userMovedSplitter = true;
 }
-
+#endif
 
 #include "sidebar_widget.moc"
-

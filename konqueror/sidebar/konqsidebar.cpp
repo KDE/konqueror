@@ -43,7 +43,7 @@ KonqSidebar::KonqSidebar( QWidget *parentWidget, QObject *parent, bool universal
 const KComponentData &KonqSidebar::getInstance()
 {
 	kDebug() << "KonqSidebar::getInstance()";
-	return KonqSidebarFactory::componentData(); 
+	return KonqSidebarFactory::componentData();
 }
 
 KonqSidebar::~KonqSidebar()
@@ -59,9 +59,9 @@ bool KonqSidebar::openUrl(const KUrl &url) {
 	if (m_widget)
 		return m_widget->openUrl(url);
 	else return false;
-} 
+}
 
-void KonqSidebar::customEvent(QCustomEvent* ev)
+void KonqSidebar::customEvent(QEvent* ev)
 {
 	if (KonqFileSelectionEvent::test(ev) ||
 	    KonqFileMouseOverEvent::test(ev) ||
