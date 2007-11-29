@@ -1358,7 +1358,7 @@ void HistoryEntry::loadItem( const KConfigGroup& config, const QString &prefix)
     pageSecurity = (KonqMainWindow::PageSecurity)config.readEntry( QString::fromLatin1( "PageSecurity" ).prepend( prefix ), 0 );
 }
 
-void KonqView::saveConfig( KConfigGroup& config, const QString &prefix, KonqFrameBase::Options &options)
+void KonqView::saveConfig( KConfigGroup& config, const QString &prefix, const KonqFrameBase::Options &options)
 {
     config.writeEntry( QString::fromLatin1( "ServiceType" ).prepend( prefix ), serviceType() );
     config.writeEntry( QString::fromLatin1( "ServiceName" ).prepend( prefix ), service()->desktopEntryName() );
@@ -1378,8 +1378,7 @@ void KonqView::saveConfig( KConfigGroup& config, const QString &prefix, KonqFram
             }
             config.writeEntry( QString::fromLatin1( "CurrentHistoryItem" ).prepend( prefix ), m_lstHistoryIndex );
             config.writeEntry( QString::fromLatin1( "NumberOfHistoryItems" ).prepend( prefix ), historyLength() );
-        } else
-            config.writeEntry( QString::fromLatin1( "NumberOfHistoryItems" ).prepend( prefix ), 0 );
+        }
     }
 }
 

@@ -331,7 +331,7 @@ public:
   /**
    * Saves config in a KConfigGroup
    */
-  void saveConfig( KConfigGroup& config, const QString &prefix, KonqFrameBase::Options &options);
+  void saveConfig( KConfigGroup& config, const QString &prefix, const KonqFrameBase::Options &options);
   void loadHistoryConfig( const KConfigGroup& config, const QString &prefix);
 
   static QStringList childFrameNames( KParts::ReadOnlyPart *part );

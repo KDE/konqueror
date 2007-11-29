@@ -273,7 +273,7 @@ public:
      */
     virtual void childFrameRemoved( KonqFrameBase * frame );
 
-  void saveConfig( KConfigGroup& config, const QString &prefix, KonqFrameBase::Options &options, KonqFrameBase* docContainer, int id = 0, int depth = 0 );
+  void saveConfig( KConfigGroup& config, const QString &prefix, const KonqFrameBase::Options &options, KonqFrameBase* docContainer, int id = 0, int depth = 0 );
 
   void copyHistory( KonqFrameBase *other );
 
