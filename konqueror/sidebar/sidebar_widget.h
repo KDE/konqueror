@@ -42,7 +42,7 @@
 #endif
 
 class QHBoxLayout;
-class QSplitter;
+//class QSplitter;
 class QStringList;
 
 class ButtonInfo: public QObject, public KonqSidebarIface
@@ -121,7 +121,7 @@ public Q_SLOTS:
 
 protected:
 	void customEvent(QEvent* ev);
-	void resizeEvent(QResizeEvent* ev);
+    //void resizeEvent(QResizeEvent* ev);
 	virtual bool eventFilter(QObject*,QEvent*);
 	virtual void mousePressEvent(QMouseEvent*);
 
@@ -171,10 +171,10 @@ public Q_SLOTS:
 	void popupMenu( const QPoint &global, const KUrl &url,
 		const QString &mimeType, mode_t mode = (mode_t)-1 );
 	void enableAction( const char * name, bool enabled );
-	void userMovedSplitter();
+    //void userMovedSplitter();
 
 private:
-	QSplitter *splitter() const;
+    //QSplitter *splitter() const;
 	bool addButton(const QString &desktoppath,int pos=-1);
 	bool createView(ButtonInfo *data);
 	KonqSidebarPlugin *loadModule(QWidget *par,QString &desktopName,const QString &lib_name,ButtonInfo *bi);
@@ -185,7 +185,7 @@ private:
 	void collapseExpandSidebar();
 	bool doEnableActions();
 	bool m_universalMode;
-	bool m_userMovedSplitter;
+    //bool m_userMovedSplitter;
 private:
 	KParts::ReadOnlyPart *m_partParent;
 	K3DockArea *m_area;

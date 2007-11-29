@@ -26,7 +26,6 @@
 #include "konqsidebariface_p.h"
 
 class QWidget;
-class QCustomEvent;
 class KUrl;
 
 
@@ -95,7 +94,7 @@ protected:
     KonqSidebarBrowserExtension * m_extension;
     virtual bool openFile();
 
-    virtual void customEvent(QCustomEvent* ev);
+    virtual void customEvent(QEvent* ev);
 
 private:
      class Sidebar_Widget *m_widget;
