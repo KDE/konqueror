@@ -1171,9 +1171,17 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
 
     childView->frame()->show();
 
-    QString key = QString::fromLatin1( "URL" ).prepend( prefix );
+    QString keyHistoryItems = QString::fromLatin1( "NumberOfHistoryItems" ).prepend( prefix );
     if ( openUrl )
     {
+      if( cfg.hasKey( keyHistoryItems ) )
+      {
+        childView->loadHistoryConfig(cfg, prefix);
+        m_pMainWindow->updateHistoryActions();
+      }
+      else
+      {
+        QString key = QString::fromLatin1( "URL" ).prepend( prefix );
       KUrl url;
 
       //kDebug(1202) << "KonqViewManager::loadItem: key " << key;
@@ -1198,9 +1206,7 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
         if (url.protocol() != "about")
           req.typedUrl = url.prettyUrl();
         m_pMainWindow->openView( serviceType, url, childView, req );
-
-        childView->loadHistoryConfig(cfg, prefix);
-        m_pMainWindow->updateHistoryActions();
+        }
       }
       //else kDebug(1202) << "KonqViewManager::loadItem: url is empty";
     }
