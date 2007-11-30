@@ -5354,7 +5354,7 @@ void KonqMainWindow::slotAddClosedUrl(KonqFrameBase *tab)
     QString prefix = QString::fromLatin1( currentFrame->frameType() ) + QString::number(0);
     closedTabItem->configGroup().writeEntry( "RootItem", prefix );
     prefix.append( QLatin1Char( '_' ) );
-    KonqFrameBase::Options flags = KonqFrameBase::saveURLs | KonqFrameBase::saveHistoryItems;
+    KonqFrameBase::Options flags = KonqFrameBase::saveHistoryItems;
     currentFrame->saveConfig( closedTabItem->configGroup(), prefix, flags, 0L, 0, 1);
 
     m_paClosedTabs->setEnabled(true);
