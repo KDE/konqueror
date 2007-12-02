@@ -221,7 +221,6 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
 
 
     // Setup
-    timeBox->setButtonSymbols(QSpinBox::PlusMinus);
     rb[0]->setChecked(true);
     bg->addButton( rb[0] );
     bg->addButton( rb[1] );
