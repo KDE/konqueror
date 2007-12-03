@@ -152,7 +152,7 @@ KonqViewFactory KonqFactory::createView( const QString &serviceType,
   if ( service )
   {
     kDebug(1202) << "Trying to open lib for requested service " << service->desktopEntryName();
-    factory = KLibLoader::self()->factory( QFile::encodeName(service->library()) );
+    factory = KLibLoader::self()->factory( service->library() );
     if ( !factory )
         KMessageBox::error(0,
                            i18n("There was an error loading the module %1.\nThe diagnostics is:\n%2",
@@ -170,7 +170,7 @@ KonqViewFactory KonqFactory::createView( const QString &serviceType,
     {
       //kDebug(1202) << "Trying to open lib for service " << service->name();
       // Try loading factory
-      factory = KLibLoader::self()->factory( QFile::encodeName(service->library()) );
+      factory = KLibLoader::self()->factory( service->library() );
       if ( !factory )
         KMessageBox::error(0,
                            i18n("There was an error loading the module %1.\nThe diagnostics is:\n%2",
