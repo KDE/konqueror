@@ -941,7 +941,7 @@ void KonqSidebarTree::showToplevelContextMenu()
         action = new KAction(KIcon("edit-delete"),  i18n("Delete Link"), this);
         m_collection->addAction("delete_link", action);
         connect(action, SIGNAL(triggered(bool)), SLOT( slotDelete() ));
-        action = new KAction(KIcon("edit"),  i18n("Properties"), this);
+        action = new KAction(KIcon("document-properties"),  i18n("Properties"), this);
         m_collection->addAction("item_properties", action);
         connect(action, SIGNAL(triggered(bool)), SLOT( slotProperties() ));
         action = new KAction(KIcon("window-new"),  i18n("Open in New Window"), this);

@@ -81,7 +81,7 @@ KonqSidebarBookmarkModule::KonqSidebarBookmarkModule( KonqSidebarTree * parentTr
     action->setText( i18n("Delete Bookmark") );
     connect(action, SIGNAL(triggered(bool)), SLOT( slotDelete() ));
     action = m_collection->addAction("item_properties");
-    action->setIcon( KIcon("edit") );
+    action->setIcon( KIcon("document-properties") );
     action->setText( i18n("Properties") );
     connect(action, SIGNAL(triggered(bool)), SLOT( slotProperties() ));
     action = m_collection->addAction("open_window");
