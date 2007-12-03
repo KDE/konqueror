@@ -909,7 +909,7 @@ void KonqComboCompletionBox::setItems( const QStringList& items )
     int rowIndex = 0;
 
     if ( count() == 0 )
-        addItems( items );
+        insertStringList( items );
     else {
         //Keep track of whether we need to change anything,
         //so we can avoid a repaint for identical updates,
