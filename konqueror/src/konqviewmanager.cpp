@@ -45,7 +45,6 @@
 #include "konqmisc.h"
 
 #include "konqview.h"
-#include "konqframe.h"
 #include "konqframestatusbar.h"
 #include "konqtabs.h"
 #include "konqprofiledlg.h"
@@ -817,7 +816,11 @@ void KonqViewManager::saveViewProfileToFile( const QString & fileName, const QSt
   if ( !profileName.isEmpty() )
       cfg.writePathEntry( "Name", profileName );
 
-  saveViewProfileToGroup( cfg, saveURLs, saveWindowSize );
+  KonqFrameBase::Options options = KonqFrameBase::None;
+  if(saveURLs)
+      options = KonqFrameBase::saveURLs;
+
+  saveViewProfileToGroup( cfg, options, saveWindowSize );
 
   // Save menu/toolbar settings in profile. Relies on konq_mainwindow calling
   // setAutoSaveSetting( "KonqMainWindow", false ). The false is important,
@@ -829,7 +832,7 @@ void KonqViewManager::saveViewProfileToFile( const QString & fileName, const QSt
   cfg.sync();
 }
 
-void KonqViewManager::saveViewProfileToGroup( KConfigGroup & profileGroup, bool saveURLs, bool saveWindowSize )
+void KonqViewManager::saveViewProfileToGroup( KConfigGroup & profileGroup, const KonqFrameBase::Options &options, bool saveWindowSize )
 {
     //kDebug(1202) << "KonqViewManager::saveViewProfile";
     if( m_pMainWindow->childFrame() ) {
@@ -837,9 +840,6 @@ void KonqViewManager::saveViewProfileToGroup( KConfigGroup & profileGroup, bool 
                          + QString::number(0);
         profileGroup.writeEntry( "RootItem", prefix );
         prefix.append( QLatin1Char( '_' ) );
-        KonqFrameBase::Options options = KonqFrameBase::None;
-        if(saveURLs)
-           options = KonqFrameBase::saveURLs;
         m_pMainWindow->saveConfig( profileGroup, prefix, options, tabContainer(), 0, 1);
     }
 

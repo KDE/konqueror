@@ -23,6 +23,7 @@
 
 #include "konqprivate_export.h"
 #include "konqfactory.h"
+#include "konqframe.h"
 
 #include <QtCore/QMap>
 #include <QtCore/QPointer>
@@ -185,10 +186,10 @@ public:
    * This is shared between saveViewProfileToFile and saveProperties (session management)
    * Remove config file before saving, especially if saveURLs is false.
    * @param cfg the config file
-   * @param saveURLs whether to save the URLs in the profile
+   * @param options whether to save nothing, the URLs or the complete history of each view in the profile
    * @param saveWindowSize whether to save the size of the window in the profile
    */
-  void saveViewProfileToGroup( KConfigGroup & cfg, bool saveURLs, bool saveWindowSize );
+  void saveViewProfileToGroup( KConfigGroup & cfg, const KonqFrameBase::Options &options, bool saveWindowSize );
 
 
   /**
