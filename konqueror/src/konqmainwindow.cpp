@@ -4913,7 +4913,8 @@ void KonqMainWindow::reparseConfiguration()
 
 void KonqMainWindow::saveProperties( KConfigGroup& config )
 {
-    m_pViewManager->saveViewProfileToGroup( config, true /* save URLs */, false );
+    KonqFrameBase::Options flags = KonqFrameBase::saveHistoryItems;
+    m_pViewManager->saveViewProfileToGroup( config, flags, false );
 }
 
 void KonqMainWindow::readProperties( const KConfigGroup& config )
