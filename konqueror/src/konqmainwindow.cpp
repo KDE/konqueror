@@ -2657,7 +2657,10 @@ void KonqMainWindow::slotRemoveTab()
         return;
   }
 
-  m_pViewManager->removeTab( m_currentView->frame() );
+  KonqFrameBase* frame = dynamic_cast<KonqFrameBase*>(m_pViewManager->tabContainer()->currentWidget());
+
+  if(frame)
+      m_pViewManager->removeTab( frame );
 }
 
 void KonqMainWindow::slotRemoveTabPopup()
