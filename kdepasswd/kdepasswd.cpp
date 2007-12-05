@@ -41,6 +41,7 @@ int main(int argc, char **argv)
     }
 
     KUniqueApplication app;
+    QApplication::setWindowIcon( KIcon( "preferences-desktop-user-password" ) );
 
     KUser ku;
     QString user;
