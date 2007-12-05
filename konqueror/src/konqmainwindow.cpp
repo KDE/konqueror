@@ -3602,11 +3602,11 @@ void KonqMainWindow::initActions()
   connect(action, SIGNAL(triggered(bool)), SLOT( slotDuplicateWindow() ));
   action->setShortcut(Qt::CTRL+Qt::Key_D);
   action = actionCollection()->addAction("sendURL");
-  action->setIcon(KIcon("mail"));
+  action->setIcon(KIcon("mail-message-new"));
   action->setText(i18n( "Send &Link Address..." ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotSendURL() ));
   action = actionCollection()->addAction("sendPage");
-  action->setIcon(KIcon("mail"));
+  action->setIcon(KIcon("mail-message-new"));
   action->setText(i18n( "S&end File..." ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotSendFile() ));
   if (KAuthorized::authorizeKAction("shell_access"))
@@ -3618,7 +3618,7 @@ void KonqMainWindow::initActions()
       action->setShortcut(Qt::Key_F4);
   }
   action = actionCollection()->addAction("open_location");
-  action->setIcon(KIcon("document-open"));
+  action->setIcon(KIcon("document-open-remote"));
   action->setText(i18n( "&Open Location" ));
   action->setShortcut(Qt::ALT+Qt::Key_O);
   connect(action, SIGNAL(triggered(bool)), SLOT( slotOpenLocation() ));
@@ -3630,7 +3630,7 @@ void KonqMainWindow::initActions()
   action->setShortcuts(KStandardShortcut::shortcut(KStandardShortcut::Open));
 
 #if 0
-  m_paFindFiles = new KToggleAction(KIcon("edit-find"), i18n( "&Find File..." ), this);
+  m_paFindFiles = new KToggleAction(KIcon("system-search"), i18n( "&Find File..." ), this);
   actionCollection()->addAction( "findfile", m_paFindFiles );
   connect(m_paFindFiles, SIGNAL(triggered(bool) ), SLOT( slotToolFind() ));
   m_paFindFiles->setShortcuts(KStandardShortcut::shortcut(KStandardShortcut::Find));
@@ -3662,7 +3662,7 @@ void KonqMainWindow::initActions()
 
 
   // Trash bin of closed tabs
-  m_paClosedTabs = new KToolBarPopupAction( KIcon("closedtabs"),  i18n( "Closed Tabs" ), this );
+  m_paClosedTabs = new KToolBarPopupAction( KIcon("edit-undo-closed-tabs"),  i18n( "Closed Tabs" ), this );
   actionCollection()->addAction( "closedtabs", m_paClosedTabs );
   m_closedTabsGroup = new QActionGroup(m_paClosedTabs->menu());
 
@@ -3701,28 +3701,28 @@ void KonqMainWindow::initActions()
 	   SLOT( slotHome(Qt::MouseButtons, Qt::KeyboardModifiers) ) );
 
   action = actionCollection()->addAction("go_system");
-  action->setIcon(KIcon("system"));
+  action->setIcon(KIcon("computer"));
   action->setText(i18n( "S&ystem" ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotGoSystem() ));
   action = actionCollection()->addAction("go_applications");
-  action->setIcon(KIcon("kmenu"));
+  action->setIcon(KIcon("start-here"));
   action->setText(i18n( "App&lications" ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotGoApplications() ));
   action = actionCollection()->addAction("go_media");
-  action->setIcon(KIcon("system"));
+  action->setIcon(KIcon("computer"));
   action->setText(i18n( "&Storage Media" ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotGoMedia() ));
   action = actionCollection()->addAction("go_network_folders");
-  action->setIcon(KIcon("network-wired"));
+  action->setIcon(KIcon("drive-remote"));
   action->setText(i18n( "&Network Folders" ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotGoNetworkFolders() ));
   action = actionCollection()->addAction("go_settings");
-  action->setIcon(KIcon("kcontrol"));
+  action->setIcon(KIcon("preferences-system"));
   action->setText(i18n( "Sett&ings" ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotGoSettings() ));
   //(void) new KAction( i18n( "Sidebar Configuration" ), 0, this, SLOT( slotGoDirTree() ), actionCollection(), "go_dirtree" );
   action = actionCollection()->addAction("go_trash");
-  action->setIcon(KIcon("user-trash-full"));
+  action->setIcon(KIcon("user-trash"));
   action->setText(i18n( "Trash" ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotGoTrash() ));
   action = actionCollection()->addAction("go_autostart");
@@ -3733,7 +3733,7 @@ void KonqMainWindow::initActions()
   connect( mostOften, SIGNAL( activated( const KUrl& )),
 	   SLOT( slotOpenURL( const KUrl& )));
   action = actionCollection()->addAction("go_history");
-  action->setIcon(KIcon("history"));
+  action->setIcon(KIcon("view-history"));
   action->setText(i18n( "History" ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotGoHistory() ));
 
@@ -3812,12 +3812,10 @@ void KonqMainWindow::initActions()
   connect(m_paRemoveOtherTabs, SIGNAL(triggered(bool)), SLOT( slotRemoveOtherTabsPopup() ));
 
   m_paActivateNextTab = actionCollection()->addAction("activatenexttab");
-  m_paActivateNextTab->setIcon( KIcon("tab-next") );
   m_paActivateNextTab->setText( i18n( "Activate Next Tab" ) );
   connect(m_paActivateNextTab, SIGNAL(triggered(bool)), SLOT( slotActivateNextTab() ));
   m_paActivateNextTab->setShortcuts(QApplication::isRightToLeft() ? KStandardShortcut::tabPrev() : KStandardShortcut::tabNext());
   m_paActivatePrevTab = actionCollection()->addAction("activateprevtab");
-  m_paActivatePrevTab->setIcon( KIcon("tab-previous") );
   m_paActivatePrevTab->setText( i18n( "Activate Previous Tab" ) );
   connect(m_paActivatePrevTab, SIGNAL(triggered(bool)), SLOT( slotActivatePrevTab() ));
   m_paActivatePrevTab->setShortcuts(QApplication::isRightToLeft() ? KStandardShortcut::tabNext() : KStandardShortcut::tabPrev());
@@ -3869,7 +3867,7 @@ void KonqMainWindow::initActions()
   connect(m_paReload, SIGNAL(triggered(bool)), SLOT( slotReload() ));
   m_paReload->setShortcuts(reloadShortcut);
   m_paReloadAllTabs = actionCollection()->addAction("reload_all_tabs");
-  m_paReloadAllTabs->setIcon( KIcon("reload-all-tabs") );
+  m_paReloadAllTabs->setIcon( KIcon("view-refresh-all") );
   m_paReloadAllTabs->setText( i18n( "&Reload All Tabs" ) );
   connect(m_paReloadAllTabs, SIGNAL(triggered(bool)), SLOT( slotReloadAllTabs() ));
   m_paReloadAllTabs->setShortcut(Qt::SHIFT+Qt::Key_F5);
@@ -3927,7 +3925,7 @@ void KonqMainWindow::initActions()
   m_combo->setWhatsThis( i18n( "<html>Location Bar<br /><br />Enter a web address or search term.</html>" ) );
 
   KAction *clearLocation = actionCollection()->addAction("clear_location");
-  clearLocation->setIcon( KIcon(QApplication::isRightToLeft() ? "edit-clear-locationbar-rtl" : "edit-clear-locationbar") );
+  clearLocation->setIcon( KIcon(QApplication::isRightToLeft() ? "edit-clear-locationbar-rtl" : "edit-clear-locationbar-ltr") );
   clearLocation->setText( i18n( "Clear Location Bar" ) );
   clearLocation->setShortcut(Qt::CTRL+Qt::Key_L);
   connect( clearLocation, SIGNAL( triggered(bool) ),
