@@ -30,6 +30,7 @@ if ( Q_WS_MAC )
 endif ( Q_WS_MAC )
 
 if ( Q_WS_X11 )
+  add_subdirectory( kinfocenter )
   add_subdirectory( nsplugins )
   add_subdirectory( konsole )
   add_subdirectory( kdepasswd )
