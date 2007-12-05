@@ -46,6 +46,7 @@ void AboutProtocol::get( const KUrl& )
     os.setCodec( "ISO-8859-1" ); // In fact ASCII
 
     os << "<html><head><title>about:blank</title></head><body></body></html>";
+    os.flush();
     
     data( output );
     finished();
