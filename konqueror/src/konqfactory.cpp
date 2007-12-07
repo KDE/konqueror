@@ -209,7 +209,7 @@ void KonqFactory::getOffers( const QString & serviceType,
 #ifdef __GNUC__
 #warning Temporary hack
 #endif
-    if ( partServiceOffers && serviceType[0].isUpper() ) {
+    if ( partServiceOffers && serviceType.length() > 0 && serviceType[0].isUpper() ) {
         *partServiceOffers = KServiceTypeTrader::self()->query( serviceType,
                     "DesktopEntryName != 'kfmclient' and DesktopEntryName != 'kfmclient_dir' and DesktopEntryName != 'kfmclient_html'");
         return;
