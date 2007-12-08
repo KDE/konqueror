@@ -28,6 +28,7 @@
 // Qt
 #include <QtGui/QWidget>
 #include <QtCore/QFile>
+#include <QtCore/QCoreApplication>
 
 // KDE
 #include <kaboutdata.h>
@@ -47,6 +48,10 @@
 
 
 static KAboutData *s_aboutData = 0;
+static void cleanupKAboutData()
+{
+    delete s_aboutData;
+}
 
 KonqViewFactory::KonqViewFactory( KLibFactory *factory, const QStringList &args,
                                   bool createBrowser )
@@ -274,6 +279,7 @@ const KAboutData *KonqFactory::aboutData()
     s_aboutData->addAuthor( ki18n("Joseph Wenninger"), ki18n("Developer (navigation panel framework)"),"jowenn@kde.org");
     s_aboutData->addAuthor( ki18n("Stephan Binner"), ki18n("Developer (misc stuff)"),"binner@kde.org");
     s_aboutData->addAuthor( ki18n("Ivor Hewitt"), ki18n("Developer (AdBlock filter)"),"ivor@ivor.org");
+    qAddPostRoutine(cleanupKAboutData);
   }
   return s_aboutData;
 }
