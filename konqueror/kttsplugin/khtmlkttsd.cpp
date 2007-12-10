@@ -18,7 +18,7 @@
 // Qt
 #include <QtCore/QBuffer>
 #include <QtCore/QTimer>
-#include <QtDBus>
+#include <QtDBus/QtDBus>
 #include <QtGui/QMessageBox>
 
 // KDE
