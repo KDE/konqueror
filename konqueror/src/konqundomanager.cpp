@@ -133,8 +133,8 @@ void KonqUndoManager::addClosedTabItem(KonqClosedTabItem* closedTabItem)
 
 void KonqUndoManager::updateSupportsFileUndo(bool enable)
 {
-	m_supportsFileUndo = enable;
-	emit undoAvailable(this->undoAvailable());
+    m_supportsFileUndo = enable;
+    emit undoAvailable(this->undoAvailable());
 }
 
 void KonqUndoManager::clearClosedTabsList()
@@ -142,6 +142,7 @@ void KonqUndoManager::clearClosedTabsList()
     qDeleteAll(m_closedTabsList);
     m_closedTabsList.clear();
     emit closedTabsListChanged();
+    emit undoAvailable(this->undoAvailable());
 }
 
 void KonqUndoManager::undoLastClosedTab()
