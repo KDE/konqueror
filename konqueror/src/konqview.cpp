@@ -1370,13 +1370,14 @@ void KonqView::saveConfig( KConfigGroup& config, const QString &prefix, const Ko
     if (options & KonqFrameBase::saveURLs) {
         config.writePathEntry( QString::fromLatin1( "URL" ).prepend( prefix ), url().url() );
     } else if(options & KonqFrameBase::saveHistoryItems) {
-            QList<HistoryEntry*>::Iterator it = m_lstHistory.begin();
-            for ( uint i = 0; it != m_lstHistory.end(); ++it, ++i ) {
-                (*it)->saveConfig(config, QString::fromLatin1( "HistoryItem" ) + QString::number(i).prepend( prefix ));
-            }
-            config.writeEntry( QString::fromLatin1( "CurrentHistoryItem" ).prepend( prefix ), m_lstHistoryIndex );
-            config.writeEntry( QString::fromLatin1( "NumberOfHistoryItems" ).prepend( prefix ), historyLength() );
+        updateHistoryEntry(true);
+        QList<HistoryEntry*>::Iterator it = m_lstHistory.begin();
+        for ( uint i = 0; it != m_lstHistory.end(); ++it, ++i ) {
+            (*it)->saveConfig(config, QString::fromLatin1( "HistoryItem" ) + QString::number(i).prepend( prefix ));
         }
+        config.writeEntry( QString::fromLatin1( "CurrentHistoryItem" ).prepend( prefix ), m_lstHistoryIndex );
+        config.writeEntry( QString::fromLatin1( "NumberOfHistoryItems" ).prepend( prefix ), historyLength() );
+    }
 }
 
 void KonqView::loadHistoryConfig(const KConfigGroup& config, const QString &prefix)
