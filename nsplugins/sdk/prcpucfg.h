@@ -321,7 +321,7 @@
 #define PR_BYTES_PER_WORD_LOG2   2
 #define PR_BYTES_PER_DWORD_LOG2  3
 
-#elif defined(__i386__)
+#elif defined(__i386__) || (defined(__SUNPRO_CC) && defined(__i386))
 
 #define IS_LITTLE_ENDIAN 1
 #undef  IS_BIG_ENDIAN
