@@ -439,8 +439,10 @@ Q3DragObject* KonqSidebarTree::dragObject()
         return 0;
 
     QDrag* drag = new QDrag( viewport() );
-    if ( item->populateMimeData( drag->mimeData(), false ) )
+    QMimeData *mimeData = new QMimeData;
+    if ( item->populateMimeData( mimeData, false ) )
     {
+        drag->setMimeData(mimeData);
         const QPixmap *pix = item->pixmap(0);
         if ( pix && drag->pixmap().isNull() )
             drag->setPixmap( *pix );
