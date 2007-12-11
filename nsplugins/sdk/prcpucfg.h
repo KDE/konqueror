@@ -276,7 +276,7 @@
 #define PR_BYTES_PER_WORD_LOG2   2
 #define PR_BYTES_PER_DWORD_LOG2  3
 
-#elif defined(__sparc__)
+#elif defined(__sparc__) || (defined(__SUNPRO_CC) && defined(__sparc))
 
 #undef	IS_LITTLE_ENDIAN
 #define	IS_BIG_ENDIAN 1
