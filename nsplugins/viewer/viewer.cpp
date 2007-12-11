@@ -50,7 +50,7 @@
 #endif
 #include <kconfig.h>
 
-#include "qxteventloop.h"
+#include "xtevents.h"
 #include <QtDBus/QtDBus>
 
 /**
@@ -114,20 +114,17 @@ int main(int argc, char** argv)
    kDebug(1430) << "2 - parseCommandLine";
    parseCommandLine(argc, argv);
 
-   kDebug(1430) << "3 - create QXtEventLoop";
-#ifdef __GNUC__
-#warning QXtEventLoop is missing
-#endif
-   // QXtEventLoop integrator( "nspluginviewer" );
    parseCommandLine(argc, argv);
 
-   kDebug(1430) << "4 - create KApplication";
+   kDebug(1430) << "3 - create KApplication";
 
-   
    // Skip the args.. This is internal, anyway.
    KCmdLineArgs::init(1, argv, "nspluginviewer", "nsplugin", ki18n("nspluginviewer"), "");
    
    KApplication app;
+
+   kDebug(1430) << "4 - create XtEvents";
+   XtEvents xtevents;
 
    {
       KConfig _cfg( "kcmnspluginrc" );
