@@ -65,15 +65,15 @@ KKonqGeneralOptions::KKonqGeneralOptions(QWidget *parent, const QVariantList&)
     tabOptions = new Ui_advancedTabOptions;
     tabOptions->setupUi(tabsGroup);
 
-    connect(tabOptions->m_pShowMMBInTabs, SIGNAL(clicked()), SLOT(slotChanged()));
-    connect(tabOptions->m_pDynamicTabbarHide, SIGNAL(clicked()), SLOT(slotChanged()));
-    connect(tabOptions->m_pNewTabsInBackground, SIGNAL(clicked()), SLOT(slotChanged()));
-    connect(tabOptions->m_pOpenAfterCurrentPage, SIGNAL(clicked()), SLOT(slotChanged()));
-    connect(tabOptions->m_pTabConfirm, SIGNAL(clicked()), SLOT(slotChanged()));
-    connect(tabOptions->m_pTabCloseActivatePrevious, SIGNAL(clicked()), SLOT(slotChanged()));
-    connect(tabOptions->m_pPermanentCloseButton, SIGNAL(clicked()), SLOT(slotChanged()));
-    connect(tabOptions->m_pKonquerorTabforExternalURL, SIGNAL(clicked()), SLOT(slotChanged()));
-    connect(tabOptions->m_pPopupsWithinTabs, SIGNAL(clicked()), SLOT(slotChanged()));
+    connect(tabOptions->m_pShowMMBInTabs, SIGNAL(toggled(bool)), SLOT(slotChanged()));
+    connect(tabOptions->m_pDynamicTabbarHide, SIGNAL(toggled(bool)), SLOT(slotChanged()));
+    connect(tabOptions->m_pNewTabsInBackground, SIGNAL(toggled(bool)), SLOT(slotChanged()));
+    connect(tabOptions->m_pOpenAfterCurrentPage, SIGNAL(toggled(bool)), SLOT(slotChanged()));
+    connect(tabOptions->m_pTabConfirm, SIGNAL(toggled(bool)), SLOT(slotChanged()));
+    connect(tabOptions->m_pTabCloseActivatePrevious, SIGNAL(toggled(bool)), SLOT(slotChanged()));
+    connect(tabOptions->m_pPermanentCloseButton, SIGNAL(toggled(bool)), SLOT(slotChanged()));
+    connect(tabOptions->m_pKonquerorTabforExternalURL, SIGNAL(toggled(bool)), SLOT(slotChanged()));
+    connect(tabOptions->m_pPopupsWithinTabs, SIGNAL(toggled(bool)), SLOT(slotChanged()));
 
     lay->addWidget( tabsGroup, 1, 0, 1, 2 );
 
