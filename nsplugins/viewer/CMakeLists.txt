@@ -3,7 +3,7 @@ include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/.. )
 
 ########### next target ###############
 
-set(nspluginviewer_SRCS nsplugin.cpp viewer.cpp )
+set(nspluginviewer_SRCS nsplugin.cpp viewer.cpp xtevents.cpp)
 
 qt4_add_dbus_adaptor( nspluginviewer_SRCS org.kde.nsplugins.class.xml nsplugin.h NSPluginClass )
 qt4_add_dbus_adaptor( nspluginviewer_SRCS org.kde.nsplugins.instance.xml nsplugin.h NSPluginInstance )
