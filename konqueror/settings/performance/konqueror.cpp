@@ -50,9 +50,9 @@ Konqueror::Konqueror( QWidget* parent_P )
               "thus reducing resource requirements.</p>"
               "<p>Be aware that this also means that, if something goes wrong, "
               "all your browsing windows will be closed simultaneously.</p>" ));
-    connect( rb_never_reuse, SIGNAL( clicked()), SIGNAL( changed()));
-    connect( rb_file_browsing_reuse, SIGNAL( clicked()), SIGNAL( changed()));
-    connect( rb_always_reuse, SIGNAL( clicked()), SIGNAL( changed()));
+    connect( rb_never_reuse, SIGNAL( toggled(bool)), SIGNAL( changed()));
+    connect( rb_file_browsing_reuse, SIGNAL( toggle(bool)), SIGNAL( changed()));
+    connect( rb_always_reuse, SIGNAL( toggled(bool)), SIGNAL( changed()));
     rb_file_browsing_reuse->setChecked( true );
 
     QString tmp =
@@ -78,8 +78,8 @@ Konqueror::Konqueror( QWidget* parent_P )
               "reduce perceived performance.</p>" ));
     connect( sb_preload_count, SIGNAL( valueChanged( int )), SLOT( preload_count_changed( int )));
     connect( sb_preload_count, SIGNAL( valueChanged( int )), SIGNAL( changed()));
-    connect( cb_preload_on_startup, SIGNAL( clicked()), SIGNAL( changed()));
-    connect( cb_always_have_preloaded, SIGNAL( clicked()), SIGNAL( changed()));
+    connect( cb_preload_on_startup, SIGNAL( toggled(bool)), SIGNAL( changed()));
+    connect( cb_always_have_preloaded, SIGNAL( toggled(bool)), SIGNAL( changed()));
     defaults();
     }
 
