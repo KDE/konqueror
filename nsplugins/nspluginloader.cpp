@@ -116,6 +116,7 @@ void NSPluginInstance::windowChanged(WId w)
 
 void NSPluginInstance::resizeEvent(QResizeEvent *event)
 {
+  kDebug() << "NSPluginInstance(client)::resizeEvent" << shown << event->size();
   if (shown == false)
      return;
   EMBEDCLASS::resizeEvent(event);
