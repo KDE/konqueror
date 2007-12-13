@@ -318,9 +318,10 @@ private:
   QByteArray _app;
   NPPluginFuncs _pluginFuncs;
   NPNetscapeFuncs _nsFuncs;
-  void* _extraFuncs[19];
-  // flash r115 likes to read npruntime functions even if the ABI version and 
-  // structure size indicate they aren't there, so we put these in as padding.
+  
+  // If plugins use gtk, we call the gtk_init function for them --- 
+  // but only do it once.
+  static bool s_initedGTK;
 };
 
 
