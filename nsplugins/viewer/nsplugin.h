@@ -214,8 +214,6 @@ private Q_SLOTS:
 private:
   friend class NSPluginStreamBase;
 
-  static void forwarder(Widget, XtPointer, XEvent *, Boolean*);
-
   void destroy();
   void setupWindow(); //Sets up our windows and registers it with the plugin.
 
