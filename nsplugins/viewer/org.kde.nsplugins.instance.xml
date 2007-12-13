@@ -6,13 +6,6 @@
     <method name="winId">
       <arg type="i" direction="out"/>
     </method>
-    <method name="setWindow">
-      <arg type="i" direction="out"/>
-      <arg name="remove" type="i" direction="in"/>
-    </method>
-    <method name="setWindow">
-      <arg type="i" direction="out"/>
-    </method>
     <method name="resizePlugin">
       <arg name="w" type="i" direction="in"/>
       <arg name="h" type="i" direction="in"/>
@@ -20,8 +13,6 @@
     <method name="javascriptResult">
       <arg name="id" type="i" direction="in"/>
       <arg name="result" type="s" direction="in"/>
-    </method>
-    <method name="displayPlugin">
     </method>
   </interface>
 </node>

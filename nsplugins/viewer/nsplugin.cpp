@@ -6,6 +6,7 @@
   Copyright (c) 2000 Matthias Hoelzer-Kluepfel <hoelzer@kde.org>
                      Stefan Schimanski <1Stein@gmx.de>
                 2003-2005 George Staikos <staikos@kde.org>
+                2007 Maksim orlovich     <maksim@kde.org>
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -598,7 +599,7 @@ NSPluginInstance::NSPluginInstance(NPP privateData, NPPluginFuncs *pluginFuncs,
 
     Q_UNUSED(embed);
    _firstResize = true;
-   _visible = false;
+   _embedded = false;
    _npp = privateData;
    _npp->ndata = this;
    _destroyed = false;
@@ -628,7 +629,22 @@ NSPluginInstance::NSPluginInstance(NPP privateData, NPPluginFuncs *pluginFuncs,
 
    if (height == 0)
       height = 1200;
+      
+   // Create our XEmbed peer with the part.
+   _outside = new QX11EmbedWidget();
+   _outside->hide();
+   _outside->setWindowTitle("nspluginviewer.outside");
+   kDebug(1431) << _outside->winId();
+   
+   // We need to wait until we're embedded before being able to 
+   // do things.
+   connect(_outside, SIGNAL(embedded()), this, SLOT(embeddedIntoHost()));
+   
+   QPalette p = _outside->palette();
+   p.setColor(_outside->backgroundRole(), Qt::blue);
+   _outside->setPalette(p);
 
+#ifdef XT
    // create drawing area
    Arg args[7];
    Cardinal nargs = 0;
@@ -673,11 +689,13 @@ NSPluginInstance::NSPluginInstance(NPP privateData, NPPluginFuncs *pluginFuncs,
                      False, forwarder, (XtPointer)this );
    XtAddEventHandler(_form, (KeyPressMask|KeyReleaseMask),
                      False, forwarder, (XtPointer)this );
+#endif //XT
    XSync(QX11Info::display(), false);
 }
 
 NSPluginInstance::~NSPluginInstance()
 {
+   delete _outside;
    kDebug(1431) << "-> ~NSPluginInstance";
    destroy();
    kDebug(1431) << "<- ~NSPluginInstance";
@@ -724,6 +742,7 @@ void NSPluginInstance::destroy()
         if (saved)
           g_NPN_MemFree(saved);
 
+#ifdef XT
         XtRemoveEventHandler(_form, (KeyPressMask|KeyReleaseMask),
                              False, forwarder, (XtPointer)this);
         XtRemoveEventHandler(_toplevel, (KeyPressMask|KeyReleaseMask),
@@ -732,6 +751,7 @@ void NSPluginInstance::destroy()
 	_form = 0;
         XtDestroyWidget(_toplevel);
 	_toplevel = 0;
+#endif
 
         if (_npp) {
             ::free(_npp);   // matched with malloc() in newInstance
@@ -754,7 +774,7 @@ void NSPluginInstance::shutdown()
 
 void NSPluginInstance::timer()
 {
-    if (!_visible) {
+    if (!_embedded) {
          _timer->setSingleShot( true );
          _timer->start( 100 );
          return;
@@ -844,6 +864,7 @@ void NSPluginInstance::timer()
 
 
 QString NSPluginInstance::normalizedURL(const QString& url) const {
+
     KUrl bu( _baseURL );
     KUrl inURL(bu, url);
     KConfig _cfg( "kcmnspluginrc" );
@@ -917,16 +938,17 @@ void NSPluginInstance::streamFinished( NSPluginStreamBase* strm )
    _timer->start( 100 );
 }
 
-
-int NSPluginInstance::setWindow(int remove)
+void NSPluginInstance::embeddedIntoHost()
 {
-   if (remove)
-   {
-      NPSetWindow(0);
-      return NPERR_NO_ERROR;
-   }
+   setupWindow();
+   _embedded = true;
+}
 
-   kDebug(1431) << "-> NSPluginInstance::setWindow";
+void NSPluginInstance::setupWindow()
+{
+   return;//XT
+
+   kDebug(1431) << "-> NSPluginInstance::setupWindow";
 
    _win.x = 0;
    _win.y = 0;
@@ -955,7 +977,6 @@ int NSPluginInstance::setWindow(int remove)
    NPError error = NPSetWindow( &_win );
 
    kDebug(1431) << "<- NSPluginInstance::setWindow = " << error;
-   return error;
 }
 
 
@@ -974,17 +995,18 @@ static void resizeWidgets(Window w, int width, int height) {
 
 void NSPluginInstance::resizePlugin(int w, int h)
 {
-   if (!_visible)
+   if (!_embedded) {
+      _width = w;
+      _height = h;
       return;
+   }
 
    if (w == _width && h == _height)
       return;
 
    kDebug(1431) << "-> NSPluginInstance::resizePlugin( w=" << w << ", h=" << h << " ) ";
 
-   _width = w;
-   _height = h;
-
+#ifdef XT
    XResizeWindow(QX11Info::display(), XtWindow(_form), w, h);
    XResizeWindow(QX11Info::display(), XtWindow(_toplevel), w, h);
 
@@ -1001,10 +1023,12 @@ void NSPluginInstance::resizePlugin(int w, int h)
    XtSetValues(_form, args, nargs);
 
    resizeWidgets(XtWindow(_form), _width, _height);
+   
+#endif
 
    if (_firstResize) {
       _firstResize = false;
-      setWindow();
+      setupWindow();
    }
 
    kDebug(1431) << "<- NSPluginInstance::resizePlugin";
@@ -1193,21 +1217,6 @@ void NSPluginInstance::addTempFile(KTemporaryFile *tmpFile)
 {
    _tempFiles.append(tmpFile);
 }
-
-/*
- *   We have to call this after we reparent the widget otherwise some plugins
- *   like the ones based on WINE get very confused. (their coordinates are not
- *   adjusted for the mouse at best)
- */
-void NSPluginInstance::displayPlugin()
-{
-   // display plugin
-   setWindow();
-
-   _visible = true;
-   kDebug(1431) << "<- NSPluginInstance::displayPlugin = " << (void*)this;
-}
-
 
 /***************************************************************************/
 
