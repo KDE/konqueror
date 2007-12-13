@@ -32,6 +32,8 @@ public:
     virtual void setupWindow (int width, int height) = 0;
     virtual void resizePlugin(int width, int height) = 0;
     virtual ~PluginHost() {};
+    
+    void setupPluginWindow(NSPluginInstance* instance, void* winID, int width, int height);
 };
 
 
