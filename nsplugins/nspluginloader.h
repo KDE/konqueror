@@ -106,7 +106,6 @@ private:
   K3Process *_process;
   QString _dbusService;
   OrgKdeNspluginsViewerInterface *_viewer;
-  bool _useArtsdsp;
 
   static NSPluginLoader *s_instance;
   static int s_refCount;

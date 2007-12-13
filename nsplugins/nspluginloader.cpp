@@ -140,11 +140,6 @@ NSPluginLoader::NSPluginLoader()
   scanPlugins();
   _mapping.setAutoDelete( true );
   _filetype.setAutoDelete(true);
-
-  // load configuration
-  KConfig _cfg( "kcmnspluginrc" );
-  KConfigGroup cfg(&_cfg, "Misc");
-  _useArtsdsp = cfg.readEntry( "useArtsdsp", false);
 }
 
 
