@@ -26,6 +26,7 @@
 
 #include "nsplugin.h"
 #include "pluginhost_xembed.h"
+#include "pluginhost_xt.h"
 #include "resolve.h"
 #include "classadaptor.h"
 #include "instanceadaptor.h"
@@ -499,7 +500,7 @@ void g_NPN_Status(NPP instance, const char *message)
 }
 
 
-QByteArray uaStore;
+static QByteArray uaStore;
 
 // inquire user agent
 const char *g_NPN_UserAgent(NPP /*instance*/)
@@ -589,20 +590,6 @@ NPError g_NPN_SetValue(NPP /*instance*/, NPPVariable variable, void* /*value*/)
 
 /******************************************************************/
 
-void
-NSPluginInstance::forwarder(Widget w, XtPointer cl_data, XEvent * event, Boolean * cont)
-{
-  Q_UNUSED(w);
-  NSPluginInstance *inst = (NSPluginInstance*)cl_data;
-  *cont = True;
-  if (inst->_form == 0 || event->xkey.window == XtWindow(inst->_form))
-    return;
-  *cont = False;
-  event->xkey.window = XtWindow(inst->_form);
-  event->xkey.subwindow = None;
-  XtDispatchEvent(event);
-}
-
 static int s_instanceCounter = 0;
 
 NSPluginInstance::NSPluginInstance(NPP privateData, NPPluginFuncs *pluginFuncs,
@@ -662,7 +649,7 @@ NSPluginInstance::NSPluginInstance(NPP privateData, NPPluginFuncs *pluginFuncs,
    
    // Create the appropriate host for the plugin type.
    _pluginHost = 0;
-   PRBool result = PR_FALSE;
+   int result = PR_FALSE;
    
    //### iceweasel does something odd here --- it enabled XEmbed for swfdec,
    // even though that doesn't provide GetValue at all(!)
@@ -671,54 +658,9 @@ NSPluginInstance::NSPluginInstance(NPP privateData, NPPluginFuncs *pluginFuncs,
       _pluginHost = new PluginHostXEmbed(this, _outside);
    } else {
       kDebug(1431) << "plugin requests Xt";
+      _pluginHost = new PluginHostXt(this, _outside, width, height);
    }
 
-#ifdef XT
-   // create drawing area
-   Arg args[7];
-   Cardinal nargs = 0;
-   XtSetArg(args[nargs], XtNwidth, width); nargs++;
-   XtSetArg(args[nargs], XtNheight, height); nargs++;
-   XtSetArg(args[nargs], XtNborderWidth, 0); nargs++;
-
-   String n, c;
-   XtGetApplicationNameAndClass(QX11Info::display(), &n, &c);
-
-   _toplevel = XtAppCreateShell("drawingArea", c, applicationShellWidgetClass,
-                                QX11Info::display(), args, nargs);
-
-   // What exactly does widget mapping mean? Without this call the widget isn't
-   // embedded correctly. With it the viewer doesn't show anything in standalone mode.
-   //if (embed)
-      XtSetMappedWhenManaged(_toplevel, False);
-   XtRealizeWidget(_toplevel);
-
-   // Create form window that is searched for by flash plugin
-   _form = XtVaCreateWidget("form", compositeWidgetClass, _toplevel, NULL);
-   XtSetArg(args[nargs], XtNvisual, QX11Info::appVisual()); nargs++;
-   XtSetArg(args[nargs], XtNdepth, QX11Info::appDepth()); nargs++;
-   XtSetArg(args[nargs], XtNcolormap, QX11Info::appColormap()); nargs++;
-   XtSetValues(_form, args, nargs);
-   XSync(QX11Info::display(), false);
-
-   // From mozilla - not sure if it's needed yet, nor what to use for embedder
-#if 0
-   /* this little trick seems to finish initializing the widget */
-#if XlibSpecificationRelease >= 6
-   XtRegisterDrawable(QX11Info::display(), embedderid, _toplevel);
-#else
-   _XtRegisterWindow(embedderid, _toplevel);
-#endif
-#endif
-   XtRealizeWidget(_form);
-   XtManageChild(_form);
-
-   // Register forwarder
-   XtAddEventHandler(_toplevel, (KeyPressMask|KeyReleaseMask),
-                     False, forwarder, (XtPointer)this );
-   XtAddEventHandler(_form, (KeyPressMask|KeyReleaseMask),
-                     False, forwarder, (XtPointer)this );
-#endif //XT
    XSync(QX11Info::display(), false);
 }
 
@@ -775,16 +717,6 @@ void NSPluginInstance::destroy()
         
         delete _outside;
         _outside = 0;
-#ifdef XT
-        XtRemoveEventHandler(_form, (KeyPressMask|KeyReleaseMask),
-                             False, forwarder, (XtPointer)this);
-        XtRemoveEventHandler(_toplevel, (KeyPressMask|KeyReleaseMask),
-                             False, forwarder, (XtPointer)this);
-        XtDestroyWidget(_form);
-	_form = 0;
-        XtDestroyWidget(_toplevel);
-	_toplevel = 0;
-#endif
 
         if (_npp) {
             ::free(_npp);   // matched with malloc() in newInstance
@@ -988,52 +920,6 @@ void NSPluginInstance::setupWindow()
 {
    if (_pluginHost)
       _pluginHost->setupWindow(_width, _height);
-   return;//XT
-
-   kDebug(1431) << "-> NSPluginInstance::setupWindow";
-
-   NPWindow win;
-   NPSetWindowCallbackStruct win_info;
-   win.x = 0;
-   win.y = 0;
-   win.height = _height;
-   win.width = _width;
-   win.type = NPWindowTypeWindow;
-
-   // Well, the docu says sometimes, this is only used on the
-   // MAC, but sometimes it says it's always. Who knows...
-   win.clipRect.top = 0;
-   win.clipRect.left = 0;
-   win.clipRect.bottom = _height;
-   win.clipRect.right = _width;
-
-   win.window = (void*) XtWindow(_form);
-   kDebug(1431) << "Window ID = " << win.window;
-
-   win_info.type = NP_SETWINDOW;
-   win_info.display = XtDisplay(_form);
-   win_info.visual = DefaultVisualOfScreen(XtScreen(_form));
-   win_info.colormap = DefaultColormapOfScreen(XtScreen(_form));
-   win_info.depth = DefaultDepthOfScreen(XtScreen(_form));
-
-   win.ws_info = &win_info;
-
-   NPError error = NPSetWindow( &win );
-
-   kDebug(1431) << "<- NSPluginInstance::setWindow = " << error;
-}
-
-
-static void resizeWidgets(Window w, int width, int height) {
-   Window rroot, parent, *children;
-   unsigned int nchildren = 0;
-
-   if (XQueryTree(QX11Info::display(), w, &rroot, &parent, &children, &nchildren)) {
-      for (unsigned int i = 0; i < nchildren; i++) {
-         XResizeWindow(QX11Info::display(), children[i], width, height);
-      }
-      XFree(children);
-   }
 }
 
 
@@ -1055,25 +941,6 @@ void NSPluginInstance::resizePlugin(int w, int h)
    _outside->resize(w, h);
    if (_pluginHost)
       _pluginHost->resizePlugin(w, h);
-#ifdef XT
-   XResizeWindow(QX11Info::display(), XtWindow(_form), w, h);
-   XResizeWindow(QX11Info::display(), XtWindow(_toplevel), w, h);
-
-   Arg args[7];
-   Cardinal nargs = 0;
-   XtSetArg(args[nargs], XtNwidth, _width); nargs++;
-   XtSetArg(args[nargs], XtNheight, _height); nargs++;
-   XtSetArg(args[nargs], XtNvisual, QX11Info::appVisual()); nargs++;
-   XtSetArg(args[nargs], XtNdepth, QX11Info::appDepth()); nargs++;
-   XtSetArg(args[nargs], XtNcolormap, QX11Info::appColormap()); nargs++;
-   XtSetArg(args[nargs], XtNborderWidth, 0); nargs++;
-
-   XtSetValues(_toplevel, args, nargs);
-   XtSetValues(_form, args, nargs);
-
-   resizeWidgets(XtWindow(_form), _width, _height);
-   
-#endif
 
    if (_firstResize) {
       _firstResize = false;
