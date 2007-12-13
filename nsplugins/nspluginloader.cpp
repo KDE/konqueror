@@ -86,9 +86,9 @@ void NSPluginInstance::doLoadPlugin() {
         _button = 0L;
         _loader = NSPluginLoader::instance();
 
+        kDebug() << _instanceInterface->winId();
         embedClient( _instanceInterface->winId() );
 
-        _instanceInterface->displayPlugin();
         show();
         shown = true;
     }
@@ -430,7 +430,7 @@ NSPluginInstance *NSPluginLoader::newInstance(QWidget *parent, const QString& ur
       return 0;
    }
 
-   NSPluginInstance *plugin = new NSPluginInstance( parent, ownDBusId, inst_ref.path() );
+   NSPluginInstance *plugin = new NSPluginInstance( parent, _viewerDBusId, inst_ref.path() );
 
    kDebug() << "<- NSPluginLoader::NewInstance = " << (void*)plugin;
 

@@ -35,9 +35,13 @@
 //Added by qt3to4:
 #include <Q3PtrList>
 
+#include <KDebug>
+
 #include <kparts/browserextension.h>  // for OpenUrlArguments
 #include <kio/job.h>
 #include <QDBusObjectPath>
+
+#include <QX11EmbedWidget>
 
 #define XP_UNIX
 #define MOZ_X11
@@ -46,7 +50,6 @@
 typedef char* NP_GetMIMEDescriptionUPP(void);
 typedef NPError NP_InitializeUPP(NPNetscapeFuncs*, NPPluginFuncs*);
 typedef NPError NP_ShutdownUPP(void);
-
 
 #include <X11/Intrinsic.h>
 #include <fixx11h.h>
@@ -166,11 +169,9 @@ public:
 
   // DBus-exported functions
   void shutdown();
-  int winId() { return XtWindow(_form); }
-  int setWindow(int remove=0);
+  int winId() { return _outside->winId(); }
   void resizePlugin(int w, int h);
   void javascriptResult(int id, const QString &result);
-  void displayPlugin();
 
   // value handling
   NPError NPGetValue(NPPVariable variable, void *value);
@@ -207,6 +208,7 @@ public Q_SLOTS:
 
 private Q_SLOTS:
   void timer();
+  void embeddedIntoHost();
 
 private:
   friend class NSPluginStreamBase;
@@ -214,6 +216,7 @@ private:
   static void forwarder(Widget, XtPointer, XEvent *, Boolean*);
 
   void destroy();
+  void setupWindow(); //Sets up our windows and registers it with the plugin.
 
   bool _destroyed;
   bool _visible;
@@ -227,6 +230,9 @@ private:
 
   NPP      _npp;
   NPPluginFuncs _pluginFuncs;
+  
+  QX11EmbedWidget* _outside; //What we get embedded into
+  bool             _embedded;
 
   Widget _area, _form, _toplevel;
   QString _baseURL;
