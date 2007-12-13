@@ -86,7 +86,7 @@ void NSPluginInstance::doLoadPlugin() {
         _button = 0L;
         _loader = NSPluginLoader::instance();
 
-        embedInto( _instanceInterface->winId() );
+        embedClient( _instanceInterface->winId() );
 
         _instanceInterface->displayPlugin();
         show();
