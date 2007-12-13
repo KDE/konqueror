@@ -5482,15 +5482,10 @@ static QString hp_tryPrepend( const QString& s )
 
 
 static void hp_removeDupe( KCompletionMatches& l, const QString& dupe,
-    KCompletionMatches::Iterator it_orig )
+                           KCompletionMatches::Iterator it_orig )
 {
-    for( KCompletionMatches::Iterator it = l.begin();
-         it != l.end();
-         ) {
-        if( it == it_orig ) {
-            ++it;
-            continue;
-        }
+    KCompletionMatches::Iterator it = it_orig + 1;
+    while (it != l.end()) {
         if( (*it).value() == dupe ) {
             (*it_orig).first = qMax( (*it_orig).first, (*it).key());
             it = l.erase( it );
