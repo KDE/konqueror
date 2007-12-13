@@ -82,7 +82,7 @@ public:
   NSPluginInstance *newInstance(QWidget *parent,
 				const QString& url, const QString& mimeType, bool embed,
 				const QStringList& argn, const QStringList& argv,
-                                const QString& appId, const QString& callbackId, bool reload );
+                                const QString& ownDBusId, const QString& callbackId, bool reload );
 
   static NSPluginLoader *instance();
   void release();
@@ -104,7 +104,7 @@ private:
   Q3Dict<QString> _mapping, _filetype;
 
   K3Process *_process;
-  QString _dbusService;
+  QString _viewerDBusId;
   OrgKdeNspluginsViewerInterface *_viewer;
 
   static NSPluginLoader *s_instance;
