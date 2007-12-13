@@ -493,13 +493,18 @@ void g_NPN_Status(NPP instance, const char *message)
 }
 
 
+QByteArray uaStore;
+
 // inquire user agent
 const char *g_NPN_UserAgent(NPP /*instance*/)
 {
-    KProtocolManager kpm;
-    QString agent = kpm.userAgentForHost("nspluginviewer");
-    kDebug(1431) << "g_NPN_UserAgent() = " << agent;
-    return agent.toLatin1();
+    if (uaStore.isEmpty()) {
+        KProtocolManager kpm;
+        QString agent = kpm.userAgentForHost("nspluginviewer");
+        uaStore = agent.toLatin1();
+    }
+    kDebug(1431) << "g_NPN_UserAgent() = " << uaStore;
+    return uaStore.data();
 }
 
 
@@ -1411,6 +1416,10 @@ int NSPluginClass::initialize()
    // initialize nescape exported functions
    memset(&_pluginFuncs, 0, sizeof(_pluginFuncs));
    memset(&_nsFuncs, 0, sizeof(_nsFuncs));
+   
+   // Some padding to protect against buggy flash 
+   // versions
+   memset(&_extraFuncs, 0, sizeof(_extraFuncs));
 
    _pluginFuncs.size = sizeof(_pluginFuncs);
    _nsFuncs.size = sizeof(_nsFuncs);
@@ -1439,6 +1448,7 @@ int NSPluginClass::initialize()
 
    // initialize plugin
    NPError error = _NP_Initialize(&_nsFuncs, &_pluginFuncs);
+   assert(_nsFuncs.size == sizeof(_nsFuncs));
    CHECK(Initialize,error);
 }
 

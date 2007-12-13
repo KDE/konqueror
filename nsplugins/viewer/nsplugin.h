@@ -312,13 +312,15 @@ private:
   NP_InitializeUPP *_NP_Initialize;
   NP_ShutdownUPP *_NP_Shutdown;
 
-  NPPluginFuncs _pluginFuncs;
-  NPNetscapeFuncs _nsFuncs;
-
   Q3PtrList<NSPluginInstance> _instances;
   Q3PtrList<NSPluginInstance> _trash;
 
   QByteArray _app;
+  NPPluginFuncs _pluginFuncs;
+  NPNetscapeFuncs _nsFuncs;
+  void* _extraFuncs[19];
+  // flash r115 likes to read npruntime functions even if the ABI version and 
+  // structure size indicate they aren't there, so we put these in as padding.
 };
 
 
