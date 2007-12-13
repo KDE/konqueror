@@ -189,8 +189,14 @@ NPError g_NPN_GetValue(NPP /*instance*/, NPNVariable variable, void *value)
          *(bool*)value = true;
          return NPERR_NO_ERROR;
       case NPNVToolkit:
-         // ### Not sure what to do here --- so just return a KHTML classic.
+         // This is messy. OSS things want to see "Gtk2" here;
+         // but commercial flash works better if we return something else.
+         // So we return a KHTML classic, since we can work with 
+         // the community members far easier.
          *(NPNToolkitType*)value = (NPNToolkitType)0xFEEDABEE;
+         return NPERR_NO_ERROR;
+      case NPPVpluginKeepLibraryInMemory:
+         *(bool*)value = true;
          return NPERR_NO_ERROR;
       default:
          kDebug(1431) << "g_NPN_GetValue(), [unimplemented] variable=" << variable;
@@ -657,8 +663,14 @@ NSPluginInstance::NSPluginInstance(NPP privateData, NPPluginFuncs *pluginFuncs,
    // Create the appropriate host for the plugin type.
    _pluginHost = 0;
    PRBool result = PR_FALSE;
+   
+   //### iceweasel does something odd here --- it enabled XEmbed for swfdec,
+   // even though that doesn't provide GetValue at all(!)
    if (NPGetValue(NPPVpluginNeedsXEmbed, &result) == NPERR_NO_ERROR && result) {
+      kDebug(1431) << "plugin reqests XEmbed";
       _pluginHost = new PluginHostXEmbed(this, _outside);
+   } else {
+      kDebug(1431) << "plugin requests Xt";
    }
 
 #ifdef XT
@@ -1330,6 +1342,10 @@ QDBusObjectPath NSPluginViewer::newClass( const QString& plugin, const QString& 
 
 static int s_classCounter = 0;
 
+bool NSPluginClass::s_initedGTK = false;
+
+typedef void gtkInitFunc(int *argc, char ***argv);
+
 NSPluginClass::NSPluginClass( const QString &library,
                               QObject *parent )
    : QObject( parent )
@@ -1381,6 +1397,17 @@ NSPluginClass::NSPluginClass( const QString &library,
 
     // initialize plugin
     kDebug(1431) << "Plugin library " << library << " loaded!";
+    
+    // see if it uses gtk
+    if (!s_initedGTK) {
+        gtkInitFunc* gtkInit = (gtkInitFunc*)_handle->resolveFunction("gtk_init");
+        if (gtkInit) {
+            kDebug(1431) << "Calling gtk_init for the plugin";
+            gtkInit(0, 0);
+            s_initedGTK = true;
+        }
+    }
+    
     _constructed = true;
     _error = initialize()!=NPERR_NO_ERROR;
 }
@@ -1417,10 +1444,6 @@ int NSPluginClass::initialize()
    memset(&_pluginFuncs, 0, sizeof(_pluginFuncs));
    memset(&_nsFuncs, 0, sizeof(_nsFuncs));
    
-   // Some padding to protect against buggy flash 
-   // versions
-   memset(&_extraFuncs, 0, sizeof(_extraFuncs));
-
    _pluginFuncs.size = sizeof(_pluginFuncs);
    _nsFuncs.size = sizeof(_nsFuncs);
    _nsFuncs.version = (NP_VERSION_MAJOR << 8) + NP_VERSION_MINOR;
