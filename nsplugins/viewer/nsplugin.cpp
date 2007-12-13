@@ -25,6 +25,7 @@
 */
 
 #include "nsplugin.h"
+#include "pluginhost_xembed.h"
 #include "resolve.h"
 #include "classadaptor.h"
 #include "instanceadaptor.h"
@@ -183,7 +184,16 @@ NPError g_NPN_GetValue(NPP /*instance*/, NPNVariable variable, void *value)
          // Offline browsing - no thanks
          *(bool*)value = false;
          return NPERR_NO_ERROR;
+      case NPNVSupportsXEmbedBool:
+         // ### may depend on event loop setting
+         *(bool*)value = true;
+         return NPERR_NO_ERROR;
+      case NPNVToolkit:
+         // ### Not sure what to do here --- so just return a KHTML classic.
+         *(NPNToolkitType*)value = (NPNToolkitType)0xFEEDABEE;
+         return NPERR_NO_ERROR;
       default:
+         kDebug(1431) << "g_NPN_GetValue(), [unimplemented] variable=" << variable;
          return NPERR_INVALID_PARAM;
    }
 }
@@ -634,15 +644,17 @@ NSPluginInstance::NSPluginInstance(NPP privateData, NPPluginFuncs *pluginFuncs,
    _outside = new QX11EmbedWidget();
    _outside->hide();
    _outside->setWindowTitle("nspluginviewer.outside");
-   kDebug(1431) << _outside->winId();
    
    // We need to wait until we're embedded before being able to 
    // do things.
    connect(_outside, SIGNAL(embedded()), this, SLOT(embeddedIntoHost()));
    
-   QPalette p = _outside->palette();
-   p.setColor(_outside->backgroundRole(), Qt::blue);
-   _outside->setPalette(p);
+   // Create the appropriate host for the plugin type.
+   _pluginHost = 0;
+   PRBool result = PR_FALSE;
+   if (NPGetValue(NPPVpluginNeedsXEmbed, &result) == NPERR_NO_ERROR && result) {
+      _pluginHost = new PluginHostXEmbed(this, _outside);
+   }
 
 #ifdef XT
    // create drawing area
@@ -695,7 +707,6 @@ NSPluginInstance::NSPluginInstance(NPP privateData, NPPluginFuncs *pluginFuncs,
 
 NSPluginInstance::~NSPluginInstance()
 {
-   delete _outside;
    kDebug(1431) << "-> ~NSPluginInstance";
    destroy();
    kDebug(1431) << "<- ~NSPluginInstance";
@@ -742,6 +753,11 @@ void NSPluginInstance::destroy()
         if (saved)
           g_NPN_MemFree(saved);
 
+        delete _pluginHost;
+        _pluginHost = 0;
+        
+        delete _outside;
+        _outside = 0;
 #ifdef XT
         XtRemoveEventHandler(_form, (KeyPressMask|KeyReleaseMask),
                              False, forwarder, (XtPointer)this);
@@ -865,6 +881,12 @@ void NSPluginInstance::timer()
 
 QString NSPluginInstance::normalizedURL(const QString& url) const {
 
+    // ### for dfaure:  KUrl(KUrl("http://www.youtube.com/?v=JvOSnRD5aNk"), KUrl("javascript:window.location+"__flashplugin_unique__"));
+    
+    //### hack, prolly evil, etc.
+    if (url.startsWith("javascript:"))
+       return url;
+
     KUrl bu( _baseURL );
     KUrl inURL(bu, url);
     KConfig _cfg( "kcmnspluginrc" );
@@ -940,41 +962,46 @@ void NSPluginInstance::streamFinished( NSPluginStreamBase* strm )
 
 void NSPluginInstance::embeddedIntoHost()
 {
+   _outside->show();
    setupWindow();
    _embedded = true;
 }
 
 void NSPluginInstance::setupWindow()
 {
+   if (_pluginHost)
+      _pluginHost->setupWindow(_width, _height);
    return;//XT
 
    kDebug(1431) << "-> NSPluginInstance::setupWindow";
 
-   _win.x = 0;
-   _win.y = 0;
-   _win.height = _height;
-   _win.width = _width;
-   _win.type = NPWindowTypeWindow;
+   NPWindow win;
+   NPSetWindowCallbackStruct win_info;
+   win.x = 0;
+   win.y = 0;
+   win.height = _height;
+   win.width = _width;
+   win.type = NPWindowTypeWindow;
 
    // Well, the docu says sometimes, this is only used on the
    // MAC, but sometimes it says it's always. Who knows...
-   _win.clipRect.top = 0;
-   _win.clipRect.left = 0;
-   _win.clipRect.bottom = _height;
-   _win.clipRect.right = _width;
+   win.clipRect.top = 0;
+   win.clipRect.left = 0;
+   win.clipRect.bottom = _height;
+   win.clipRect.right = _width;
 
-   _win.window = (void*) XtWindow(_form);
-   kDebug(1431) << "Window ID = " << _win.window;
+   win.window = (void*) XtWindow(_form);
+   kDebug(1431) << "Window ID = " << win.window;
 
-   _win_info.type = NP_SETWINDOW;
-   _win_info.display = XtDisplay(_form);
-   _win_info.visual = DefaultVisualOfScreen(XtScreen(_form));
-   _win_info.colormap = DefaultColormapOfScreen(XtScreen(_form));
-   _win_info.depth = DefaultDepthOfScreen(XtScreen(_form));
+   win_info.type = NP_SETWINDOW;
+   win_info.display = XtDisplay(_form);
+   win_info.visual = DefaultVisualOfScreen(XtScreen(_form));
+   win_info.colormap = DefaultColormapOfScreen(XtScreen(_form));
+   win_info.depth = DefaultDepthOfScreen(XtScreen(_form));
 
-   _win.ws_info = &_win_info;
+   win.ws_info = &win_info;
 
-   NPError error = NPSetWindow( &_win );
+   NPError error = NPSetWindow( &win );
 
    kDebug(1431) << "<- NSPluginInstance::setWindow = " << error;
 }
@@ -995,6 +1022,7 @@ static void resizeWidgets(Window w, int width, int height) {
 
 void NSPluginInstance::resizePlugin(int w, int h)
 {
+   kDebug(1431) << "-> NSPluginInstance::resizePlugin( w=" << w << ", h=" << h << " ) ";
    if (!_embedded) {
       _width = w;
       _height = h;
@@ -1004,8 +1032,12 @@ void NSPluginInstance::resizePlugin(int w, int h)
    if (w == _width && h == _height)
       return;
 
-   kDebug(1431) << "-> NSPluginInstance::resizePlugin( w=" << w << ", h=" << h << " ) ";
+   _width = w;
+   _height = h;
 
+   _outside->resize(w, h);
+   if (_pluginHost)
+      _pluginHost->resizePlugin(w, h);
 #ifdef XT
    XResizeWindow(QX11Info::display(), XtWindow(_form), w, h);
    XResizeWindow(QX11Info::display(), XtWindow(_toplevel), w, h);

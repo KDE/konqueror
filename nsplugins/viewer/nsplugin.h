@@ -153,6 +153,7 @@ protected:
   bool _singleShot;
 };
 
+class PluginHost;
 
 class NSPluginInstance : public QObject
 {
@@ -231,8 +232,9 @@ private:
   NPP      _npp;
   NPPluginFuncs _pluginFuncs;
   
-  QX11EmbedWidget* _outside; //What we get embedded into
-  bool             _embedded;
+  QX11EmbedWidget* _outside;  // What we get embedded into
+  bool             _embedded; // Whether we've been embedded
+  PluginHost*      _pluginHost; // Manages embedding of the plugin into us
 
   Widget _area, _form, _toplevel;
   QString _baseURL;
@@ -270,8 +272,6 @@ private:
       KParts::BrowserArguments browserArgs;
   };
 
-  NPWindow _win;
-  NPSetWindowCallbackStruct _win_info;
   Q3PtrQueue<Request> _waitingRequests;
   QMap<int, Request*> _jsrequests;
 };
