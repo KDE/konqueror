@@ -40,7 +40,7 @@
 
 
 #define CHECK(fname,error)                    \
-  kDebug() << "Result of ";          \
+  kDebug() << "results in " << error;         \
   return error;
 
 
