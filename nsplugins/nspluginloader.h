@@ -38,7 +38,7 @@
 #include <QResizeEvent>
 #include <kdemacros.h>
 
-#define EMBEDCLASS QX11EmbedWidget
+#define EMBEDCLASS QX11EmbedContainer
 
 class OrgKdeNspluginsViewerInterface;
 class K3Process;
