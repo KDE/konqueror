@@ -3898,7 +3898,7 @@ void KonqMainWindow::initActions()
   m_paAnimatedLogo->setAutoRaise(true);
   m_paAnimatedLogo->setFocusPolicy(Qt::NoFocus);
   m_paAnimatedLogo->setToolButtonStyle(Qt::ToolButtonIconOnly);
-  m_paAnimatedLogo->setIcons("kde");
+  m_paAnimatedLogo->setIcons("process-working-kde");
 
   int size = style()->pixelMetric(QStyle::PM_SmallIconSize, NULL, m_paAnimatedLogo);
   m_paAnimatedLogo->setIconSize(QSize(size, size));
