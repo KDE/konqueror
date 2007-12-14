@@ -58,13 +58,13 @@ KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
     cbNewWin = new QCheckBox(i18n("Open folders in separate &windows"), this);
     cbNewWin->setWhatsThis(i18n("If this option is checked, Konqueror will open a new window when "
                                 "you open a folder, rather than showing that folder's contents in the current window."));
-    connect(cbNewWin, SIGNAL(clicked()), this, SLOT(changed()));
+    connect(cbNewWin, SIGNAL(toggled(bool)), this, SLOT(changed()));
     connect(cbNewWin, SIGNAL(toggled(bool)), SLOT(updateWinPixmap(bool)));
 
     miscLayout->addWidget(cbNewWin);
 
     cbShowTips = new QCheckBox(i18n("Show file &tips"), this);
-    connect(cbShowTips, SIGNAL(clicked()), this, SLOT(changed()));
+    connect(cbShowTips, SIGNAL(toggled(bool)), this, SLOT(changed()));
 
     cbShowTips->setWhatsThis( i18n("Here you can control if, when moving the mouse over a file, you want to see a "
                                     "small popup window with additional information about that file"));
@@ -91,7 +91,7 @@ KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
     previewLayout->addWidget(spacer);
 
     cbShowPreviewsInTips = new QCheckBox(i18n("Show &previews in file tips"), this);
-    connect(cbShowPreviewsInTips, SIGNAL(clicked()), this, SLOT(changed()));
+    connect(cbShowPreviewsInTips, SIGNAL(toggled(bool)), this, SLOT(changed()));
 
     cbShowPreviewsInTips->setWhatsThis( i18n("Here you can control if you want the "
                                              "popup window to contain a larger preview for the file, "
@@ -118,10 +118,10 @@ KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
                           " </ul>"));
 
     cbMoveToTrash = new QCheckBox(i18n("&Move to trash"), bg);
-    connect(cbMoveToTrash, SIGNAL(clicked()), this, SLOT(changed()));
+    connect(cbMoveToTrash, SIGNAL(toggled(bool)), this, SLOT(changed()));
 
     cbDelete = new QCheckBox(i18n("D&elete"), bg);
-    connect(cbDelete, SIGNAL(clicked()), this, SLOT(changed()));
+    connect(cbDelete, SIGNAL(toggled(bool)), this, SLOT(changed()));
 
     QVBoxLayout *confirmationLayout = new QVBoxLayout;
     confirmationLayout->addWidget(cbMoveToTrash);
@@ -132,7 +132,7 @@ KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
 
     cbShowDeleteCommand = new QCheckBox(i18n("Show 'Delete' context me&nu entries which bypass the trashcan"), this);
     mainLayout->addWidget(cbShowDeleteCommand);
-    connect(cbShowDeleteCommand, SIGNAL(clicked()), this, SLOT(changed()));
+    connect(cbShowDeleteCommand, SIGNAL(toggled(bool)), this, SLOT(changed()));
 
     cbShowDeleteCommand->setWhatsThis(i18n("Check this if you want 'Delete' menu commands to be displayed "
                                            "on the desktop and in the file manager's context menus. "
