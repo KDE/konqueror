@@ -26,7 +26,7 @@ qt4_add_dbus_interface(konquerorprivate_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../../l
 qt4_add_dbus_adaptor(konquerorprivate_SRCS org.kde.Konqueror.HistoryManager.xml konqhistorymanager.h KonqHistoryManager konqhistorymanageradaptor KonqHistoryManagerAdaptor)
 kde4_add_library(konquerorprivate SHARED ${konquerorprivate_SRCS})
 target_link_libraries(konquerorprivate ${KDE4_KPARTS_LIBS})
-set_target_properties(konquerorprivate PROPERTIES VERSION {GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION} )
+set_target_properties(konquerorprivate PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION} )
 install(TARGETS konquerorprivate DESTINATION ${LIB_INSTALL_DIR})
 
 ########### konqueror ###############
