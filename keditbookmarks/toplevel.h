@@ -178,7 +178,6 @@ private:
     void createActions();
 
     static KEBApp *s_topLevel;
-    KBookmarkEditorIface *m_dcopIface;
 
     CmdHistory *m_cmdHistory;
     QString m_bookmarksFilename;

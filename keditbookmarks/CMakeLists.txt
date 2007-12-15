@@ -18,7 +18,6 @@ set(keditbookmarks_KDEINIT_SRCS
    actionsimpl.cpp 
    commands.cpp 
    importers.cpp 
-   dcop.cpp 
    bookmarkiterator.cpp 
    testlink.cpp 
    favicons.cpp 

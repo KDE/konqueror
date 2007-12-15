@@ -215,7 +215,7 @@ KEBApp::KEBApp(
     const QString &bookmarksFile, bool readonly,
     const QString &address, bool browser, const QString &caption,
     const QString &dbusObjectName
-) : KXmlGuiWindow(), m_dcopIface(0), m_bookmarksFilename(bookmarksFile),
+) : KXmlGuiWindow(), m_bookmarksFilename(bookmarksFile),
     m_caption(caption),
     m_dbusObjectName(dbusObjectName), m_readOnly(readonly),m_browser(browser)
  {
@@ -233,8 +233,6 @@ KEBApp::KEBApp(
         createGUI();
     else
         createGUI("keditbookmarks-genui.rc");
-
-    m_dcopIface = new KBookmarkEditorIface();
 
     connect(qApp->clipboard(), SIGNAL( dataChanged() ),
                                SLOT( slotClipboardDataChanged() ));
@@ -464,7 +462,6 @@ void KEBApp::updateStatus(const QString &url)
 KEBApp::~KEBApp() {
     s_topLevel = 0;
     delete m_cmdHistory;
-    delete m_dcopIface;
     delete ActionsImpl::self();
     delete mBookmarkListView;
     delete CurrentMgr::self();
