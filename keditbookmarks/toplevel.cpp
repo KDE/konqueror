@@ -23,7 +23,6 @@
 
 #include "bookmarkinfo.h"
 #include "actionsimpl.h"
-#include "dcop.h"
 #include "exporters.h"
 #include "settings.h"
 #include "commands.h"
