@@ -51,7 +51,7 @@ Konqueror::Konqueror( QWidget* parent_P )
               "<p>Be aware that this also means that, if something goes wrong, "
               "all your browsing windows will be closed simultaneously.</p>" ));
     connect( rb_never_reuse, SIGNAL( toggled(bool)), SIGNAL( changed()));
-    connect( rb_file_browsing_reuse, SIGNAL( toggle(bool)), SIGNAL( changed()));
+    connect( rb_file_browsing_reuse, SIGNAL( toggled(bool)), SIGNAL( changed()));
     connect( rb_always_reuse, SIGNAL( toggled(bool)), SIGNAL( changed()));
     rb_file_browsing_reuse->setChecked( true );
 
