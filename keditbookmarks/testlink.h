@@ -33,18 +33,11 @@ public:
       if (!s_self) { s_self = new TestLinkItrHolder(); }; return s_self;
    }
    void addAffectedBookmark( const QString & address );
-   void resetToValue(const QString &url, const QString &val);
-   const QString getMod(const QString &url) const;
-   const QString getOldVisit(const QString &url) const;
-   void setMod(const QString &url, const QString &val);
-   void setOldVisit(const QString &url, const QString &val);
 protected:
    virtual void doItrListChanged();
 private:
    TestLinkItrHolder();
    static TestLinkItrHolder *s_self;
-   QMap<QString, QString> m_modify;
-   QMap<QString, QString> m_oldModify;
    QString m_affectedBookmark;
 };
 
@@ -59,14 +52,14 @@ public:
 
 public Q_SLOTS:
    void slotJobResult(KJob *job);
-   void slotJobData(KIO::Job *job, const QByteArray &data);
 
 private:
+   void setStatus(const QString & text);
    virtual void doAction();
    virtual bool isApplicable(const KBookmark &bk) const;
 
    KIO::TransferJob *m_job;
-   bool m_errSet;
+   QString m_oldStatus;
 };
 
 #endif

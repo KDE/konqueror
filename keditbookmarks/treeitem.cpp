@@ -24,9 +24,7 @@ TreeItem::TreeItem(const KBookmark& bk, TreeItem * parent)
     : mparent(parent), mbk(bk)
 {
     init = false;
-#ifdef DEBUG_STUPID_QT
     deleted = false;
-#endif
 }
 
 TreeItem::~TreeItem()
@@ -37,10 +35,6 @@ TreeItem::~TreeItem()
 
 TreeItem * TreeItem::child(int row)
 {
-#ifdef DEBUG_STUPID_QT
-    if(deleted)
-        kFatal()<<"child for deleted ";
-#endif
     if(!init)
         initChildren();
     return children.at(row);
@@ -55,25 +49,8 @@ int TreeItem::childCount()
 
 TreeItem * TreeItem::parent() const
 {
-#ifdef DEBUG_STUPID_QT
-    if(deleted)
-        kFatal()<<"parent for deleted ";
-#endif
     return mparent;
 }
-
-#ifdef DEBUG_STUPID_QT
-void TreeItem::markDelete()
-{
-    deleted = true;
-    QList<TreeItem *>::iterator it, end;
-    end = children.constEnd();
-    for(it = children.constBegin(); it != end; ++it)
-    {
-        (*it)->markDelete();
-    }
-}
-#endif
 
 void TreeItem::insertChildren(int first, int last)
 {
@@ -102,63 +79,17 @@ void TreeItem::deleteChildren(int first, int last)
     lastIt = children.begin() + last + 1;
     for( it = firstIt; it != lastIt; ++it)
     {
-        kDebug()<<"removing child "<<(*it)->bookmark().address();
-#ifndef DEBUG_STUPID_QT
-        delete *it;
-#else
-        (*it)->markDelete();
-#endif
+        //delete *it;
+        (*it)->deleted = true;
     }
     children.erase(firstIt, lastIt);
-}
-
-void TreeItem::moveChildren(int first, int last, TreeItem * newParent, int position)
-{
-    if(newParent != this)
-    {
-        for(int i = last; i>=first; --i)
-        {
-            TreeItem * item = children[i];
-            item->mparent = newParent;
-            newParent->children.insert(position, item);
-
-            QList<TreeItem *>::iterator firstIt, lastIt;
-            firstIt = children.begin() + first;
-            lastIt = children.begin() + last + 1;
-            children.erase(firstIt, lastIt);
-        }
-    }
-    else
-    {
-        if(first > position)
-        {
-            // swap around
-            int tempPos = position;
-            position = last + 1;
-            last = first - 1;
-            first = tempPos;
-        }
-        // Invariant first > position
-        QVector<TreeItem *> temp;
-        for(int i=first; i<=last; ++i)
-            temp.append(children[i]);
-
-        int count = (last-first + 1);
-        for(int i=first; i+count<position; ++i)
-            children[i] = children[i+count];
-
-        for(int i = position - count; i < position; ++i)
-            children[i] = temp[ i - position + count];
-
-    }
+    kDebug()<<"now having"<<children.size()<<" childs";
 }
 
 KBookmark TreeItem::bookmark() const
 {
-#ifdef DEBUG_STUPID_QT
     if(deleted)
-        kFatal()<<"child for deleted ";
-#endif
+        kDebug()<<"THIS WAS ALREADY DELETED";
     return mbk;
 }
 

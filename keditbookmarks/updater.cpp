@@ -53,7 +53,8 @@ void FavIconUpdater::slotCompleted() {
 }
 
 void FavIconUpdater::downloadIcon(const KBookmark &bk) {
-    const QString url = bk.url().url();
+    m_bk = bk;
+    const QString & url = bk.url().url();
     QString favicon = KMimeType::favIconForUrl(url);
     if (!favicon.isNull()) {
         // kDebug() << "downloadIcon() - favicon" << favicon;
@@ -63,12 +64,9 @@ void FavIconUpdater::downloadIcon(const KBookmark &bk) {
         emit done(true);
 
     } else {
+        kDebug()<<"no favicon found "<<endl;
+        webupdate = false;
         m_favIconModule.downloadHostIcon(url);
-        favicon = KMimeType::favIconForUrl(url);
-        // kDebug() << "favicon == " << favicon;
-        if (favicon.isNull()) {
-            downloadIconActual(bk);
-        }
     }
 }
 
@@ -80,7 +78,9 @@ FavIconUpdater::~FavIconUpdater() {
 }
 
 void FavIconUpdater::downloadIconActual(const KBookmark &bk) {
+    kDebug()<<"FavIconUpdater::downloadIconActual"<<endl;
     m_bk = bk;
+    webupdate = true;
 
     if (!m_part) {
         KParts::ReadOnlyPart *part
@@ -92,6 +92,9 @@ void FavIconUpdater::downloadIconActual(const KBookmark &bk) {
         part->setProperty("javaEnabled", QVariant(false));
         part->setProperty("autoloadImages", QVariant(false));
 
+        //FIXME only connect to result?
+//      connect(part, SIGNAL( result(KIO::Job * job)),
+//              this, SLOT( slotCompleted()));
         connect(part, SIGNAL( canceled(const QString &) ),
                 this, SLOT( slotCompleted() ));
         connect(part, SIGNAL( completed() ),
@@ -122,13 +125,17 @@ void FavIconUpdater::notifyChange(bool isHost,
                                   const QString& iconName) {
     // kDebug() << "FavIconUpdater::notifyChange()";
 
-    Q_UNUSED(isHost);
-    // kDebug() << isHost;
-    Q_UNUSED(hostOrURL);
-    // kDebug() << hostOrURL << "==" << m_bk.url().url() << "-> " << iconName;
-
-    m_bk.internalElement().setAttribute("icon", iconName);
-    KEBApp::self()->notifyCommandExecuted();
+    if(iconName.isNull() && !webupdate)
+    {
+        // no icon found, try webupdater 
+        downloadIconActual(m_bk);
+    }
+    else
+    {
+        // Either we have an icon or we already tried the webupdater
+        m_bk.internalElement().setAttribute("icon", iconName);
+        emit done(!iconName.isNull());
+    } 
 }
 
 /* -------------------------- */

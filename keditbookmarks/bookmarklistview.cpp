@@ -23,6 +23,7 @@
 #include "toplevel.h"
 #include "settings.h"
 #include "commands.h"
+#include "treeitem_p.h"
 #include <QtGui/QHeaderView>
 #include <QtGui/QItemSelection>
 #include <QtGui/QMenu>
@@ -36,7 +37,6 @@ BookmarkView::BookmarkView( QWidget * parent )
     :QTreeView( parent )
 {
     setAcceptDrops(true);
-    mDropEvent = 0;
 }
 
 BookmarkView::~BookmarkView()
@@ -44,69 +44,18 @@ BookmarkView::~BookmarkView()
 
 }
 
-void BookmarkView::aboutToMoveRows(const QModelIndex & oldParent, int, int, const QModelIndex & newParent, int)
-{
-//FIXME relayout should be enough, wait and see how qt handles this for rowsInserted in qt 4.1
-    if( isExpanded(oldParent))
-    {
-        setExpanded(oldParent, false);
-        moveOldParent = oldParent;
-    }
-    else
-        moveOldParent = QModelIndex();
-    if( isExpanded(newParent))
-    {
-        setExpanded(newParent, false);
-        moveNewParent = newParent;
-    }
-    else
-        moveNewParent = QModelIndex();
-}
+/* ----------- */
 
-void BookmarkView::dragEnterEvent(QDragEnterEvent *event)
+BookmarkFolderView::BookmarkFolderView( BookmarkListView * view, QWidget * parent )
+    :BookmarkView( parent ), mview(view)
 {
-    //FIXME add code
-    QAbstractItemView::dragEnterEvent(event);
-}
-
-void BookmarkView::dragMoveEvent(QDragMoveEvent *event)
-{
-    //FIXME add code
-    QAbstractItemView::dragMoveEvent(event);
-}
-
-void BookmarkView::dropEvent ( QDropEvent * event )
-{
-    // This is ugly. I need the drop event pointer inside dropped()
-    // to decide if the drop was internal
-    mDropEvent = event;
-    QTreeView::dropEvent(event);
-}
-
-void BookmarkView::rowsMoved(const QModelIndex & oldParent, int, int, const QModelIndex & newParent, int)
-{
-    Q_UNUSED(oldParent)
-    Q_UNUSED(newParent)
-
-    if(moveOldParent.isValid())
-        setExpanded(moveOldParent, true);
-    if(moveNewParent.isValid())
-        setExpanded(moveNewParent, true);
-}
-
-void BookmarkView::setModel(QAbstractItemModel * model)
-{
-    if( !dynamic_cast<KBookmarkModel *>(model))
-        kFatal()<<"BookmarkView needs a KBookmarkModel";
-    connect( model, SIGNAL(aboutToMoveRows(const QModelIndex &, int, int, const QModelIndex &, int)),
-            this, SLOT(aboutToMoveRows(const QModelIndex &, int, int, const QModelIndex &, int)));
-    connect( model, SIGNAL(rowsMoved(const QModelIndex &, int, int, const QModelIndex &, int)),
-            this, SLOT(rowsMoved(const QModelIndex &, int, int, const QModelIndex &, int)));
-    connect(model, SIGNAL(dropped(const QMimeData*, const KBookmark&)),
-            this, SLOT(dropped(const QMimeData*, const KBookmark&)));
-    connect(model, SIGNAL(textEdited(const KBookmark&, int, const QString&)),
-            this, SLOT(textEdited(const KBookmark&, int, const QString&)));
-    QTreeView::setModel(model);
+    mmodel = new BookmarkFolderViewFilterModel(parent);
+    mmodel->setSourceModel(view->model());
+    setModel(mmodel);
+    header()->setResizeMode(QHeaderView::Stretch);
+    setRootIsDecorated(false);
+    expandAll();
+    setCurrentIndex( mmodel->index(0,0, QModelIndex()));
 }
 
 KBookmarkModel* BookmarkView::model() const
@@ -116,17 +65,6 @@ KBookmarkModel* BookmarkView::model() const
 
 ////
 
-BookmarkFolderView::BookmarkFolderView( BookmarkListView * view, QWidget * parent )
-    :BookmarkView( parent ), mview(view)
-{
-    //FIXME initiliaze a filter model
-    setModel(view->model());
-    int columnCount = model()->columnCount(QModelIndex());
-    for(int i=1; i<columnCount; ++i)
-        setColumnHidden(i, true);
-    header()->setResizeMode(QHeaderView::Stretch);
-}
-
 BookmarkFolderView::~BookmarkFolderView()
 {
 
@@ -134,14 +72,15 @@ BookmarkFolderView::~BookmarkFolderView()
 
 void BookmarkFolderView::selectionChanged ( const QItemSelection & deselected, const QItemSelection & selected)
 {
-    //FIXME can there be no selection and is QModelIndex the right index?
     const QModelIndexList & list = selectionModel()->selectedIndexes();
     if(list.count())
-        mview->setRootIndex( list.at(0) );
+        mview->setRootIndex( mmodel->mapToSource(list.at(0)) );
     else
         mview->setRootIndex( QModelIndex());
     BookmarkView::selectionChanged( deselected, selected);
 }
+
+/********/
 
 
 BookmarkListView::BookmarkListView( QWidget * parent )
@@ -150,122 +89,16 @@ BookmarkListView::BookmarkListView( QWidget * parent )
     setDragEnabled(true);
 }
 
+
+void BookmarkListView::setModel(QAbstractItemModel * model)
+{
+    BookmarkView::setModel(model);
+}
+
+
 BookmarkListView::~BookmarkListView()
 {
     saveColumnSetting();
-}
-
-QRect BookmarkListView::merge(const QRect& a, const QRect& b)
-{
-    if(a.isNull())
-        return b;
-    if(b.isNull())
-        return a;
-    a.normalized();
-    b.normalized();
-    int left = qMin(a.left(), b.left());
-    int top = qMin(a.top(), b.top());
-    int width = qMax(a.right(), b.right()) - left + 1;
-    int height = qMax(a.bottom(), b.bottom()) - top + 1;
-    return QRect(left, top, width, height);
-}
-
-QRect BookmarkListView::rectForRow(QModelIndex index)
-{
-    QModelIndex parent = index.parent();
-    int row = index.row();
-    int columnCount = model()->columnCount(parent);
-
-    QRect result;
-    for(int i = 0; i<columnCount; ++i)
-        result = merge( visualRect( parent.child(row, i) ), result);
-    return result;
-}
-
-QRect BookmarkListView::rectForRowWithChildren(QModelIndex index)
-{
-    QRect rect = rectForRow(index);
-    int rowCount = model()->rowCount(index);
-    for(int i=0; i<rowCount; ++i)
-        rect = merge(rect, rectForRowWithChildren( index.child(i, 0) ));
-    return rect;
-}
-
-void BookmarkListView::deselectChildren( const QModelIndex & parent)
-{
-    int rowCount = model()->rowCount(parent);
-    if(rowCount)
-    {
-        QItemSelection deselect;
-        deselect.select( parent.child(0,0), parent.child(rowCount-1, model()->columnCount(parent)-1));
-        selectionModel()->select(deselect, QItemSelectionModel::Deselect);
-
-        for(int i=0; i<rowCount; ++i)
-            deselectChildren(parent.child(i, 0));
-    }
-}
-
-//FIXME check scalability of this code
-void BookmarkListView::selectionChanged ( const QItemSelection & selected, const QItemSelection & deselected )
-{
-    BookmarkView::selectionChanged( selected, deselected );
-
-    // deselect indexes which shouldn't have been selected
-    QItemSelection deselectAgain; // selections which need to be undone
-    const QModelIndexList & list = selected.indexes();
-    QModelIndexList::const_iterator it, end;
-    end = list.constEnd();
-    for(it = list.constBegin(); it != end; ++it)
-    {
-        if( (*it).column() != 0)
-            continue;
-        if(parentSelected( *it ))
-            deselectAgain.select( (*it), (*it).parent().child( (*it).row(), model()->columnCount() -1)  );
-    }
-    selectionModel()->select( deselectAgain, QItemSelectionModel::Deselect);
-
-    //deselect children of selected items
-    for(it = list.constBegin(); it != end; ++it)
-    {
-        if( (*it).column() !=0)
-            continue;
-        deselectChildren(*it);
-    }
-
-    // ensure that drawRow is called for all children
-    KBookmarkModel* model = this->model();
-    const QModelIndexList & sellist = selected.indexes();
-    end = sellist.constEnd();
-    QRect rect;
-    for(it = sellist.constBegin(); it != end; ++it)
-    {
-        if((*it).column() != 0)
-            continue;
-        if( model->bookmarkForIndex(*it).address().isEmpty() ) //FIXME
-            continue;
-        rect = merge(rect, rectForRowWithChildren(*it));
-    }
-    const QModelIndexList & desellist = deselected.indexes();
-    end = desellist.constEnd();
-    for(it = desellist.constBegin(); it != end; ++it)
-    {
-        if((*it).column() != 0)
-            continue;
-        if( model->bookmarkForIndex(*it).address().isEmpty() ) //FIXME
-            continue;
-        rect = merge(rect, rectForRowWithChildren(*it));
-    }
-    rect.setLeft(0);
-    viewport()->update(rect);
-}
-
-QItemSelectionModel::SelectionFlags BookmarkListView::selectionCommand ( const QModelIndex & index, const QEvent * event ) const
-{
-    const QMouseEvent * qme = dynamic_cast<const QMouseEvent *>(event);
-    if(qme && (qme->button() == Qt::RightButton ) && parentSelected(index)) //right click on a parentSelected index
-        return QItemSelectionModel::NoUpdate; // don't modify selection, only show a context menu
-    else
-        return BookmarkView::selectionCommand( index, event );
 }
 
 void BookmarkListView::contextMenuEvent ( QContextMenuEvent * e )
@@ -290,41 +123,6 @@ void BookmarkListView::contextMenuEvent ( QContextMenuEvent * e )
         popup->popup(e->globalPos());
 }
 
-void BookmarkListView::drawRow ( QPainter * painter, const QStyleOptionViewItem & option, const QModelIndex & index ) const
-{
-    QStyleOptionViewItem opt = option;
-    if(parentSelected(index))
-    {
-
-        int base_h, base_s, base_v;
-        opt.palette.color( QPalette::Base ).getHsv(&base_h, &base_s, &base_v);
-
-        int hilite_h, hilite_s, hilite_v;
-        opt.palette.color( QPalette::Highlight ).getHsv(&hilite_h, &hilite_s, &hilite_v);
-
-        QColor col;
-        col.setHsv(hilite_h,
-                   (hilite_s + base_s + base_s ) / 3,
-                   (hilite_v + base_v + base_v ) / 3);
-        opt.palette.setBrush(QPalette::Base, QBrush( col ) );
-    }
-    BookmarkView::drawRow( painter, opt, index );
-}
-
-bool BookmarkListView::parentSelected(const QModelIndex & idx ) const
-{
-    QModelIndex index = idx.parent();
-    while(index.isValid())
-    {
-        QModelIndex parent = index.parent();
-        if(selectionModel()->isRowSelected(index.row(), parent) && parent.isValid() )
-            return true;
-        else
-            index = index.parent();
-    }
-    return false;
-}
-
 //FIXME clean up and remove unneeded things
 SelcAbilities BookmarkListView::getSelectionAbilities() const
 {
@@ -339,7 +137,7 @@ SelcAbilities BookmarkListView::getSelectionAbilities() const
     selctionAbilities.singleSelect   = false;
     selctionAbilities.notEmpty       = false;
 
-    if ( sel .count() > 0)
+    if ( sel.count() > 0)
     {
         KBookmark nbk     = model()->bookmarkForIndex(sel.first());
         selctionAbilities.itemSelected   = true;
@@ -347,7 +145,7 @@ SelcAbilities BookmarkListView::getSelectionAbilities() const
         selctionAbilities.separator      = nbk.isSeparator();
         selctionAbilities.urlIsEmpty     = nbk.url().isEmpty();
         selctionAbilities.root           = nbk.address() == CurrentMgr::self()->root().address();
-        selctionAbilities.multiSelect    = (sel.count() > CurrentMgr::self()->model()->columnCount());
+        selctionAbilities.multiSelect    = (sel.count() > model()->columnCount());
         selctionAbilities.singleSelect   = (!selctionAbilities.multiSelect && selctionAbilities.itemSelected);
     }
     //FIXME check next line, if it actually works
@@ -360,7 +158,7 @@ SelcAbilities BookmarkListView::getSelectionAbilities() const
     return selctionAbilities;
 }
 
-void BookmarkListView::loadColumnSetting()
+void BookmarkListView::loadColumnSetting() 
 {
     header()->resizeSection(KEBApp::NameColumn, KEBSettings::name());
     header()->resizeSection(KEBApp::UrlColumn, KEBSettings::uRL());
@@ -368,7 +166,7 @@ void BookmarkListView::loadColumnSetting()
     header()->resizeSection(KEBApp::StatusColumn, KEBSettings::status());
 }
 
-void BookmarkListView::saveColumnSetting()
+void BookmarkListView::saveColumnSetting() 
 {
     KEBSettings::setName( header()->sectionSize(KEBApp::NameColumn));
     KEBSettings::setURL( header()->sectionSize(KEBApp::UrlColumn));
@@ -377,27 +175,45 @@ void BookmarkListView::saveColumnSetting()
     KEBSettings::self()->writeConfig();
 }
 
-void BookmarkView::dropped(const QMimeData* data, const KBookmark& bk)
+/************/
+
+BookmarkFolderViewFilterModel::BookmarkFolderViewFilterModel(QObject * parent)
+    : QSortFilterProxyModel(parent)
 {
-    QString addr = bk.address();
-    if(bk.isGroup())
-        addr += "/0"; //FIXME internal representation
-    if(mDropEvent)
-    {
-        K3Command * mcmd = CmdGen::itemsMoved(KEBApp::self()->selectedBookmarks(), addr, false);
-        CmdHistory::self()->didCommand(mcmd);
-    }
-    else
-    {
-        K3Command * mcmd = CmdGen::insertMimeSource("FIXME", data, addr);
-        CmdHistory::self()->didCommand(mcmd);
-    }
-    mDropEvent = 0;
 }
 
-void BookmarkView::textEdited(const KBookmark& bookmark, int column, const QString& text)
+QStringList BookmarkFolderViewFilterModel::mimeTypes() const
 {
-    CmdHistory::self()->addCommand(new EditCommand(bookmark.address(), column, text));
+    return sourceModel()->mimeTypes();
+}
+
+bool BookmarkFolderViewFilterModel::dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent)
+{
+    // FIXME Probably bug in QT, send bug report
+    kDebug()<<"BookmarkFolderViewFilterModel::dropMimeData"<<endl;
+    QModelIndex idx;
+    if(row == -1)
+        idx = parent;
+    else
+        idx = index(row, column, parent);
+    QModelIndex src = mapToSource(idx);
+    return sourceModel()->dropMimeData( data, action, -1, -1, src);
+}
+
+BookmarkFolderViewFilterModel::~BookmarkFolderViewFilterModel()
+{
+}
+
+bool BookmarkFolderViewFilterModel::filterAcceptsColumn ( int source_column, const QModelIndex & source_parent ) const
+{
+    //Show name, hide everything else
+    return (source_column == 0);
+}
+
+bool BookmarkFolderViewFilterModel::filterAcceptsRow ( int source_row, const QModelIndex & source_parent ) const
+{
+    QModelIndex index = sourceModel()->index(source_row, 0, source_parent);
+    return static_cast<TreeItem *>(index.internalPointer())->bookmark().isGroup();
 }
 
 #include "bookmarklistview.moc"

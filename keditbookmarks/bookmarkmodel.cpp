@@ -18,7 +18,10 @@
 
 #include "bookmarkmodel.h"
 #include "treeitem_p.h"
+#include "toplevel.h"
+#include "commands.h"
 
+#include <kbookmarkmanager.h>
 #include <KIcon>
 #include <kdebug.h>
 #include <klocale.h>
@@ -45,16 +48,6 @@ public:
     }
     TreeItem * mRootItem;
     KBookmark mRoot;
-
-    // for move support
-    QPersistentModelIndex mOldParent;
-    int mFirst;
-    int mLast;
-    QPersistentModelIndex mNewParent;
-    int mPosition;
-    QVector<QPersistentModelIndex> mMovedIndexes;
-    QVector<QPersistentModelIndex> mOldParentIndexes;
-    QVector<QPersistentModelIndex> mNewParentIndexes;
 };
 
 KBookmarkModel::KBookmarkModel(const KBookmark& root)
@@ -69,7 +62,6 @@ void KBookmarkModel::setRoot(const KBookmark& root)
 }
 KBookmarkModel::~KBookmarkModel()
 {
-    qDebug() << "Deleting model" << this << "with private" << d;
     delete d;
 }
 
@@ -78,107 +70,6 @@ void KBookmarkModel::resetModel()
     delete d->mRootItem;
     d->mRootItem = new TreeItem(d->mRoot, 0);
     reset();
-}
-
-void KBookmarkModel::beginMoveRows(const QModelIndex & oldParent, int first, int last, const QModelIndex & newParent, int position)
-{
-    emit aboutToMoveRows(oldParent, first, last, newParent, position);
-    if(oldParent != newParent) // different parents
-    {
-        int columnsCount = columnCount(QModelIndex());
-        for(int i=first; i<=last; ++i)
-            for(int j=0; j<columnsCount; ++j)
-                d->mMovedIndexes.push_back( index(i, j, oldParent));
-
-        int rowsCount = rowCount(oldParent);
-        for(int i=last+1; i<rowsCount; ++i)
-            for(int j=0; j<columnsCount; ++j)
-                d->mOldParentIndexes.push_back( index(i, j, oldParent));
-
-        rowsCount = rowCount(newParent);
-        for(int i=position; i<rowsCount; ++i)
-            for(int j=0; j<columnsCount; ++j)
-                d->mNewParentIndexes.push_back( index(i, j, newParent));
-    }
-    else //same parent
-    {
-        int columnsCount = columnCount(QModelIndex());
-        if(first > position)
-        {
-            // swap around
-            int tempPos = position;
-            position = last + 1;
-            last = first - 1;
-            first = tempPos;
-        }
-        // Invariant first > positionx
-        for(int i=first; i<=last; ++i)
-            for(int j=0; j<columnsCount; ++j)
-                d->mMovedIndexes.push_back( index(i, j, oldParent));
-
-        for(int i=last+1; i<position; ++i)
-            for(int j=0; j<columnsCount; ++j)
-                d->mOldParentIndexes.push_back( index(i, j, oldParent));
-    }
-    d->mOldParent = oldParent;
-    d->mFirst = first;
-    d->mLast = last;
-    d->mNewParent = newParent;
-    d->mPosition = position;
-}
-void KBookmarkModel::endMoveRows()
-{
-    if(d->mOldParent != d->mNewParent)
-    {
-        int count = d->mMovedIndexes.count();
-        int delta = d->mPosition - d->mFirst;
-        for(int i=0; i <count; ++i)
-        {
-            QModelIndex idx = createIndex(d->mMovedIndexes[i].row()+delta,
-                                          d->mMovedIndexes[i].column(),
-                                          d->mMovedIndexes[i].internalPointer());
-            changePersistentIndex( d->mMovedIndexes[i], idx);
-        }
-
-        count = d->mOldParentIndexes.count();
-        delta = d->mLast - d->mFirst + 1;
-        for(int i=0; i<count; ++i)
-        {
-            QModelIndex idx = createIndex( d->mOldParentIndexes[i].row()-delta,
-                                           d->mOldParentIndexes[i].column(),
-                                           d->mOldParentIndexes[i].internalPointer());
-            changePersistentIndex( d->mOldParentIndexes[i], idx);
-        }
-
-        count = d->mNewParentIndexes.count();
-        for(int i=0; i<count; ++i)
-        {
-            int delta = (d->mLast-d->mFirst+1);
-            QModelIndex idx = createIndex( d->mNewParentIndexes[i].row() + delta,
-                                           d->mNewParentIndexes[i].column(),
-                                           d->mNewParentIndexes[i].internalPointer());
-            changePersistentIndex( d->mNewParentIndexes[i], idx);
-        }
-    }
-    else
-    {
-        int count = d->mMovedIndexes.count();
-        int delta = d->mPosition - (d->mLast +1);
-        for(int i=0; i<count; ++i)
-        {
-            QModelIndex idx = createIndex(d->mMovedIndexes[i].row()+delta, d->mMovedIndexes[i].column(), d->mMovedIndexes[i].internalPointer());
-            changePersistentIndex(d->mMovedIndexes[i], idx);
-        }
-
-        count = d->mOldParentIndexes.count();
-        delta = d->mLast-d->mFirst + 1;
-        for(int i=0; i<count; ++i)
-        {
-            QModelIndex idx = createIndex(d->mOldParentIndexes[i].row() - delta, d->mOldParentIndexes[i].column(), d->mOldParentIndexes[i].internalPointer());
-            changePersistentIndex(d->mOldParentIndexes[i], idx);
-        }
-    }
-    emit rowsMoved(d->mOldParent, d->mFirst, d->mLast, d->mNewParent, d->mPosition);
 }
 
 QVariant KBookmarkModel::data(const QModelIndex &index, int role) const
@@ -199,14 +90,20 @@ QVariant KBookmarkModel::data(const QModelIndex &index, int role) const
                 return QVariant( bk.fullText() );
             case 1:
                 return QVariant( bk.url().pathOrUrl() );
-            case 2:{
+            case 2: {
                 QDomNode subnode = bk.internalElement().namedItem("desc");
                 return (subnode.firstChild().isNull())
                     ? QString()
                     : subnode.firstChild().toText().data();
             }
-            case 3:
-                return QVariant( QString() ); //FIXME status column
+            case 3: { //Status column
+                QString text1 = ""; //FIXME favicon state
+                QString text2 = ""; //FIXME link state
+                if(text1.isNull() || text2.isNull())
+                    return QVariant( text1 + text2);
+                else
+                    return QVariant( text1 + "  --  " + text2);
+            }
             default:
                 return QVariant( QString() ); //can't happen
         }
@@ -224,6 +121,7 @@ QVariant KBookmarkModel::data(const QModelIndex &index, int role) const
 }
 
 //FIXME QModelIndex KBookmarkModel::buddy(const QModelIndex & index) //return parent for empty folder padders
+// no empty folder padders atm
 
 
 Qt::ItemFlags KBookmarkModel::flags(const QModelIndex &index) const
@@ -252,10 +150,7 @@ bool KBookmarkModel::setData(const QModelIndex &index, const QVariant &value, in
 {
     if(index.isValid() && role == Qt::EditRole)
     {
-        //FIXME don't create a command if still the same
-        // and ignore if name column is empty
-        emit textEdited(bookmarkForIndex(index),
-                        index.column(), value.toString());
+        CmdHistory::self()->addCommand(new EditCommand(bookmarkForIndex(index).address(), index.column(), value.toString()));
         return true;
     }
     return false;
@@ -323,39 +218,49 @@ QModelIndex KBookmarkModel::parent(const QModelIndex &index) const
 int KBookmarkModel::rowCount(const QModelIndex &parent) const
 {
     if(parent.isValid())
-            return static_cast<TreeItem *>(parent.internalPointer())->childCount();
+        return static_cast<TreeItem *>(parent.internalPointer())->childCount();
     else //root case
     {
-        return 1;
+        return 1; // Only one child: "Bookmarks"
     }
 }
 
 int KBookmarkModel::columnCount(const QModelIndex &) const
 {
-    return 4;
+    return 4; // Name, URL, Comment and Status
 }
 
 QModelIndex KBookmarkModel::indexForBookmark(const KBookmark& bk) const
 {
-    // TODO replace first argument with bk.positionInParent()
-    return createIndex( KBookmark::positionInParent(bk.address()), 0, d->mRootItem->treeItemForBookmark(bk));
+    return createIndex(KBookmark::positionInParent(bk.address()) , 0, d->mRootItem->treeItemForBookmark(bk));
 }
 
 void KBookmarkModel::emitDataChanged(const KBookmark& bk)
 {
-    QModelIndex index = indexForBookmark(bk);
-    emit dataChanged(index, index );
+    QModelIndex idx = indexForBookmark(bk);
+    emit dataChanged(idx, idx.sibling(idx.row(), columnCount(QModelIndex())-1) );
 }
 
 QMimeData * KBookmarkModel::mimeData( const QModelIndexList & indexes ) const
 {
     QMimeData *mimeData = new QMimeData;
     KBookmark::List bookmarks;
+    QByteArray addresses;
+
     QModelIndexList::const_iterator it, end;
     end = indexes.constEnd();
     for( it = indexes.constBegin(); it!= end; ++it)
-        bookmarks.push_back( bookmarkForIndex(*it) );
+        if( it->column() == 0)
+        {
+            bookmarks.push_back( bookmarkForIndex(*it) );
+            if(!addresses.isEmpty())
+                addresses.append(";");
+            addresses.append( bookmarkForIndex(*it).address().toLatin1() );
+            kDebug()<<"appended"<<bookmarkForIndex(*it).address().toLatin1();
+        }
+
     bookmarks.populateMimeData(mimeData);
+    mimeData->setData( "application/x-keditbookmarks", addresses);
     return mimeData;
 }
 
@@ -377,15 +282,49 @@ bool KBookmarkModel::dropMimeData(const QMimeData * data, Qt::DropAction action,
     //FIXME this only works for internal drag and drops
 
     QModelIndex idx;
-    // idx is the index on which the data was dropped
-    // work around stupid design of the qt api:
     if(row == -1)
         idx = parent;
     else
         idx = index(row, column, parent);
-    KBookmark bk = bookmarkForIndex(idx);
 
-    emit dropped(data, bk);
+    KBookmark bk = bookmarkForIndex(idx);
+    QString addr = bk.address();
+    if(bk.isGroup())
+        addr += "/0";
+        
+    if(action == Qt::CopyAction)
+    {
+        KEBMacroCommand * cmd = CmdGen::insertMimeSource("Copy", data, addr);
+        CmdHistory::self()->didCommand(cmd);
+    }
+    else if(action == Qt::MoveAction)
+    {
+        KBookmark::List bookmarks;
+        if(data->hasFormat("application/x-keditbookmarks"))
+        {
+            QList<QByteArray> addresses = data->data("application/x-keditbookmarks").split(';');
+            QList<QByteArray>::const_iterator it, end;
+            end = addresses.constEnd();
+            for(it = addresses.constBegin(); it != end; ++it)
+            {
+                KBookmark bk = CurrentMgr::self()->mgr()->findByAddress(QString::fromLatin1(*it));
+                kDebug()<<"Extracted bookmark xxx to list: "<<bk.address();
+                bookmarks.push_back(bk);
+            }
+
+            KEBMacroCommand * cmd = CmdGen::itemsMoved(bookmarks, addr, false);
+            CmdHistory::self()->didCommand(cmd);            
+        }
+        else
+        {
+            kDebug()<<"NO FORMAT";
+            bookmarks = KBookmark::List::fromMimeData(data);
+            KEBMacroCommand * cmd = CmdGen::insertMimeSource("Copy", data, addr);
+            CmdHistory::self()->didCommand(cmd);
+        }
+    }
+
+    //FIXME drag and drop implementation
 
     return true;
 }

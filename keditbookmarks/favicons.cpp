@@ -23,6 +23,8 @@
 #include "bookmarkiterator.h"
 #include "toplevel.h"
 #include "updater.h"
+#include "commands.h"
+#include "bookmarkmodel.h"
 
 #include <kdebug.h>
 #include <klocale.h>
@@ -64,15 +66,19 @@ FavIconsItr::FavIconsItr(QList<KBookmark> bks)
 }
 
 FavIconsItr::~FavIconsItr() {
-//FIXME    if (curItem())
-//        curItem()->restoreStatus();
+    setStatus(m_oldStatus);
     delete m_updater;
+}
+
+void FavIconsItr::setStatus(const QString & status)
+{
+    EditCommand::setNodeText(curBk(), QStringList()<< "info" << "metadata" << "favstate", status);
+    CurrentMgr::self()->model()->emitDataChanged(curBk());
 }
 
 void FavIconsItr::slotDone(bool succeeded) {
     // kDebug() << "FavIconsItr::slotDone()";
-    //FIXME curItem()->setTmpStatus(succeeded ? i18n("OK") : i18n("No favicon found"));
-    Q_UNUSED(succeeded);
+    setStatus(succeeded ? i18n("OK") : i18n("No favicon found"));
     holder()->addAffectedBookmark(KBookmark::parentAddress(curBk().address()));
     delayedEmitNextOne();
 }
@@ -83,7 +89,8 @@ bool FavIconsItr::isApplicable(const KBookmark &bk) const {
 
 void FavIconsItr::doAction() {
     // kDebug() << "FavIconsItr::doAction()";
-    //FIXME curItem()->setTmpStatus(i18n("Updating favicon..."));
+    //FIXME ensure that this gets overwritten
+    setStatus(i18n("Updating favicon..."));
     if (!m_updater) {
         m_updater = new FavIconUpdater(kapp);
         connect(m_updater, SIGNAL( done(bool) ),
@@ -92,7 +99,7 @@ void FavIconsItr::doAction() {
     if (curBk().url().protocol().startsWith("http")) {
         m_updater->downloadIcon(curBk());
     } else {
-        //FIXME curItem()->setTmpStatus(i18n("Local file"));
+        setStatus(i18n("Local file"));
         delayedEmitNextOne();
     }
 }

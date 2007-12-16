@@ -136,8 +136,8 @@ public:
 
     BookmarkInfoWidget *bkInfo() { return m_bkinfo; }
 
-    void collapseAll();
     void expandAll();
+    void collapseAll();
 
     enum Column {
       NameColumn = 0,
@@ -150,8 +150,7 @@ public:
     QString insertAddress() const;
     KBookmark::List selectedBookmarks() const;
     KBookmark::List selectedBookmarksExpanded() const;
-    KBookmark::List allBookmarks() const
-        { return KBookmark::List();} //FIXME look up what it is suppposed to do, seems like only bookmarks but not folder are returned
+    KBookmark::List allBookmarks() const;
 public Q_SLOTS:
     Q_SCRIPTABLE QString bookmarkFilename();
 
@@ -166,9 +165,6 @@ protected Q_SLOTS:
 private:
     void selectedBookmarksExpandedHelper(const KBookmark& bk,
                                          KBookmark::List & bookmarks) const;
-    void collapseAllHelper( QModelIndex index );
-    void expandAllHelper(QTreeView * view, QModelIndex index);
-
 public: //FIXME
     BookmarkListView * mBookmarkListView;
     BookmarkFolderView * mBookmarkFolderView;

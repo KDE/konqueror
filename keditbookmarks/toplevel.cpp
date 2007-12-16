@@ -271,7 +271,7 @@ KEBApp::KEBApp(
 
     setCentralWidget(hsplitter);
 
-    expandAll();
+    mBookmarkListView->expandAll();
 
     slotClipboardDataChanged();
     setAutoSaveSettings();
@@ -282,6 +282,16 @@ KEBApp::KEBApp(
     setCancelFavIconUpdatesEnabled(false);
     setCancelTestsEnabled(false);
     updateActions();
+}
+
+void KEBApp::expandAll()
+{
+    mBookmarkListView->collapseAll();
+}
+
+void KEBApp::collapseAll()
+{
+    mBookmarkListView->collapseAll();
 }
 
 QString KEBApp::bookmarkFilename()
@@ -295,35 +305,8 @@ void KEBApp::reset(const QString & caption, const QString & bookmarksFileName)
     m_bookmarksFilename = bookmarksFileName;
     CurrentMgr::self()->createManager(m_bookmarksFilename, m_dbusObjectName); //FIXME this is still a memory leak (iff called by slotLoad)
     CurrentMgr::self()->model()->resetModel();
-    expandAll();
+    mBookmarkListView->expandAll();
     updateActions();
-}
-
-void KEBApp::collapseAll()
-{
-    collapseAllHelper( CurrentMgr::self()->model()->index(0, 0, QModelIndex()));
-}
-
-void KEBApp::collapseAllHelper( QModelIndex index )
-{
-    mBookmarkListView->collapse(index);
-    int rowCount = index.model()->rowCount(index);
-    for(int i=0; i<rowCount; ++i)
-        collapseAllHelper(index.child(i, 0));
-}
-
-void KEBApp::expandAll()
-{
-    expandAllHelper( mBookmarkListView, CurrentMgr::self()->model()->index(0, 0, QModelIndex()));
-    expandAllHelper( mBookmarkFolderView, CurrentMgr::self()->model()->index(0, 0, QModelIndex()));
-}
-
-void KEBApp::expandAllHelper(QTreeView * view, QModelIndex index)
-{
-    view->expand(index);
-    int rowCount = index.model()->rowCount(index);
-    for(int i=0; i<rowCount; ++i)
-        expandAllHelper(view, index.child(i, 0));
 }
 
 void KEBApp::startEdit( Column c )
@@ -332,12 +315,13 @@ void KEBApp::startEdit( Column c )
     QModelIndexList::const_iterator it, end;
     end = list.constEnd();
     for(it = list.constBegin(); it != end; ++it)
-        if( (*it).column() == int(c) && (CurrentMgr::self()->model()->flags(*it) & Qt::ItemIsEditable) )
+        if( (*it).column() == int(c) && (mBookmarkListView->model()->flags(*it) & Qt::ItemIsEditable) )
             return mBookmarkListView->edit( *it );
 }
 
 KBookmark KEBApp::firstSelected() const
 {
+    // FIXME if nothing is selected should (probably) return the selected item in the folder view
     const QModelIndexList & list = mBookmarkListView->selectionModel()->selectedIndexes();
     QModelIndex index = *list.constBegin();
     return mBookmarkListView->model()->bookmarkForIndex(index);
@@ -406,6 +390,13 @@ bool lessBookmark(const KBookmark & first, const KBookmark & second) //FIXME Usi
     return lessAddress(first.address(), second.address());
 }
 
+KBookmark::List KEBApp::allBookmarks() const
+{
+    KBookmark::List bookmarks;
+    selectedBookmarksExpandedHelper(CurrentMgr::self()->root(), bookmarks);
+    return bookmarks;
+}
+
 KBookmark::List KEBApp::selectedBookmarks() const
 {
     KBookmark::List bookmarks;
@@ -421,6 +412,7 @@ KBookmark::List KEBApp::selectedBookmarks() const
             bookmarks.push_back( bk );
     }
     qSort(bookmarks.begin(), bookmarks.end(), lessBookmark);
+
     return bookmarks;
 }
 
@@ -439,7 +431,8 @@ KBookmark::List KEBApp::selectedBookmarksExpanded() const
 
 void KEBApp::selectedBookmarksExpandedHelper(const KBookmark& bk, KBookmark::List & bookmarks) const
 {
-    bookmarks.push_back( bk );
+    //FIXME in which order parents should ideally be: parent then child
+    // or child and then parents
     if(bk.isGroup())
     {
         KBookmarkGroup parent = bk.toGroup();
@@ -449,6 +442,10 @@ void KEBApp::selectedBookmarksExpandedHelper(const KBookmark& bk, KBookmark::Lis
             selectedBookmarksExpandedHelper(child, bookmarks);
             child = parent.next(child);
         }
+    }
+    else
+    {
+        bookmarks.push_back( bk );
     }
 }
 

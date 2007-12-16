@@ -1,5 +1,3 @@
-// -*- indent-tabs-mode:nil -*-
-// vim: set ts=4 sts=4 sw=4 et:
 /* This file is part of the KDE project
    Copyright (C) 2000 David Faure <faure@kde.org>
    Copyright (C) 2002-2003 Alexander Kellett <lypanov@kde.org>
@@ -40,6 +38,7 @@
 #include "toplevel.h"
 #include "commands.h"
 #include "bookmarkiterator.h"
+#include "bookmarkmodel.h"
 
 TestLinkItrHolder *TestLinkItrHolder::s_self = 0;
 
@@ -76,7 +75,7 @@ TestLinkItr::TestLinkItr(QList<KBookmark> bks)
 }
 
 TestLinkItr::~TestLinkItr() {
-    //FIXME set status
+    //FIXME setStatus(m_oldStatus); if we didn't finish
     if (m_job) {
         // kDebug() << "JOB kill\n";
         m_job->disconnect();
@@ -84,326 +83,54 @@ TestLinkItr::~TestLinkItr() {
     }
 }
 
+void TestLinkItr::setStatus(const QString & text)
+{
+    EditCommand::setNodeText(curBk(), QStringList()<< "info" << "metadata" << "linkstate", text);
+    CurrentMgr::self()->model()->emitDataChanged(curBk());
+}
+
 bool TestLinkItr::isApplicable(const KBookmark &bk) const {
     return (!bk.isGroup() && !bk.isSeparator());
 }
 
 void TestLinkItr::doAction() {
-    m_errSet = false;
-
+    kDebug()<<"TestLinkItr::doAction() "<<endl;
     m_job = KIO::get(curBk().url(), KIO::Reload, KIO::HideProgressInfo);
-    m_job->addMetaData("errorPage", "true");
     m_job->addMetaData( QString("cookies"), QString("none") );
+    m_job->addMetaData( QString("errorPage"), QString("false") );
 
     connect(m_job, SIGNAL( result( KJob *)),
             this, SLOT( slotJobResult(KJob *)));
-    connect(m_job, SIGNAL( data( KIO::Job *, const QByteArray &)),
-            this, SLOT( slotJobData(KIO::Job *, const QByteArray &)));
 
-    //FIXME curItem()->setTmpStatus(i18n("Checking..."));
-    QString oldModDate = TestLinkItrHolder::self()->getMod(curBk().url().url());
-    //FIXME curItem()->setOldStatus(oldModDate);
-    TestLinkItrHolder::self()->setMod(curBk().url().url(), i18n("Checking..."));
-}
-
-void TestLinkItr::slotJobData(KIO::Job *job, const QByteArray &data) {
-    KIO::TransferJob *transfer = (KIO::TransferJob *)job;
-
-    if (transfer->isErrorPage()) {
-        QString strData(data);
-        QStringList lines = strData.split('\n');
-        for (QStringList::Iterator it = lines.begin(); it != lines.end(); ++it) {
-            int open_pos = (*it).indexOf("<title>", 0, Qt::CaseInsensitive);
-            if (open_pos >= 0) {
-                QString leftover = (*it).mid(open_pos + 7);
-                int close_pos = leftover.lastIndexOf( "</title>", -1, Qt::CaseInsensitive );
-                if (close_pos >= 0) {
-                    // if no end tag found then just
-                    // print the first line of the <title>
-                    leftover = leftover.left(close_pos);
-                }
-                //FIXME curItem()->nsPut(KCharsets::resolveEntities(leftover));
-                m_errSet = true;
-                break;
-            }
-        }
-
-    } else {
-        QString modDate = transfer->queryMetaData("modified");
-        if (!modDate.isEmpty()) {
-            //FIXME curItem()->nsPut(QString::number(KDateTime::fromString(modDate, KDateTime::RFCDate).toTime_t()));
-        }
-    }
-
-    transfer->kill();
+    m_oldStatus = EditCommand::getNodeText(curBk(), QStringList()<< "info" << "metadata" << "linkstate");
+    setStatus(i18n("Checking..."));
 }
 
 void TestLinkItr::slotJobResult(KJob *job) {
+    kDebug()<<"TestLinkItr::slotJobResult()"<<endl;
     m_job = 0;
-    //FIXME if ( !curItem() ) return;
 
     KIO::TransferJob *transfer = (KIO::TransferJob *)job;
     QString modDate = transfer->queryMetaData("modified");
 
-    bool chkErr = true;
-    if (transfer->error()) {
+    if (transfer->error() || transfer->isErrorPage())
+    {
+        kDebug()<<"***********"<<transfer->error()<<"  "<<transfer->isErrorPage()<<endl;
         // can we assume that errorString will contain no entities?
-        QString jerr = job->errorString();
-        if (!jerr.isEmpty()) {
-            jerr.replace("\n", " ");
-            //FIXME curItem()->nsPut(jerr);
-            chkErr = false;
-        }
+        QString err = transfer->errorString();
+        err.replace("\n", " ");
+        setStatus(err);
+    }
+    else
+    {
+        if (!modDate.isEmpty())
+            setStatus(modDate);
+        else
+            setStatus(i18n("OK"));
     }
 
-    if (chkErr) {
-        if (!modDate.isEmpty()) {
-            //FIXME curItem()->nsPut(QString::number(KDateTime::fromString(modDate, KDateTime::RFCDate).toTime_t()));
-        } else if (!m_errSet) {
-            //FIXME curItem()->nsPut(QString::number(KRFCDate::parseDate("0")));
-        }
-    }
-
-    //FIXME curItem()->modUpdate();
     holder()->addAffectedBookmark(KBookmark::parentAddress(curBk().address()));
     delayedEmitNextOne();
+    //FIXME check that we don't need to call kill()
 }
-
-/* -------------------------- */
-
-const QString TestLinkItrHolder::getMod(const QString &url) const {
-    return m_modify.contains(url)
-        ? m_modify[url]
-        : QString();
-}
-
-const QString TestLinkItrHolder::getOldVisit(const QString &url) const {
-    return self()->m_oldModify.contains(url)
-        ? self()->m_oldModify[url]
-        : QString();
-}
-
-void TestLinkItrHolder::setMod(const QString &url, const QString &val) {
-    m_modify[url] = val;
-}
-
-void TestLinkItrHolder::setOldVisit(const QString &url, const QString &val) {
-    m_oldModify[url] = val;
-}
-
-void TestLinkItrHolder::resetToValue(const QString &url, const QString &oldValue) {
-    if (!oldValue.isEmpty()) {
-        m_modify[url] = oldValue;
-    } else {
-        m_modify.remove(url);
-    }
-}
-
-/* -------------------------- */
-
-/*
-QString TestLinkItrHolder::calcPaintStyle(const QString &url, KEBListViewItem::PaintStyle &_style,
-                                          const QString &nVisit, const QString &Modify) {
-    bool newModValid = false;
-    int newMod = 0;
-    QString newModStr;
-    bool initial = false;
-    bool oldError = false;
-
-    if (!Modify.isNull() && Modify == "1") {
-        oldError = true;
-    }
-
-    // get new mod time if there is one
-    newModStr = self()->getMod(url);
-
-    // if no new mod time use previous one
-    if (newModStr.isNull()) {
-        newModStr = Modify;
-        initial = true;
-    }
-
-    if (!newModStr.isNull()) {
-        newMod = newModStr.toInt(&newModValid);
-    }
-
-
-//    kDebug() << "TestLink " << url << " " << "booktime=" << nVisit << " urltime=" << newModStr <<
-//               " Modify=" << Modify << " init=" << initial << " newMod=" << newMod << "\n";
-
-    QString visitStr;
-
-    if (self()->getOldVisit(url).isNull()) {
-        // first time
-        visitStr = nVisit;
-        if (!nVisit.isEmpty())
-            self()->setOldVisit(url, visitStr);
-    } else {
-        // may be reading a second bookmark with same url
-        QString oom = nVisit;
-        visitStr = self()->getOldVisit(url);
-        if (oom.toInt() > visitStr.toInt()) {
-            self()->setOldVisit(url, oom);
-            visitStr = oom;
-        }
-    }
-
-    int visit = 0;
-    if (!visitStr.isNull())
-        visit = visitStr.toInt(); // TODO - check validity?
-
-    QString statusStr;
-    KEBListViewItem::PaintStyle style = KEBListViewItem::DefaultStyle;
-
-//    kDebug() << "TestLink " << "isNull=" << newModStr.isNull() << "newModValid="
-//              << newModValid << "newMod > visit " << newMod << ">" << visit << "\n";
-
-    if (!newModStr.isNull() && !newModValid) {
-        // Current check has error
-        statusStr = newModStr;
-        if (oldError) {
-            style = KEBListViewItem::BoldStyle;
-        } else {
-            style =  KEBListViewItem::DefaultStyle;
-        }
-
-    } else if (initial && oldError) {
-        // Previous check has error
-        style = KEBListViewItem::GreyStyle;
-        statusStr = i18n("Error ");
-
-    } else if (!initial && !newModStr.isNull() && (newMod == 0)) {
-        // Current check has no modify time
-        statusStr = i18n("Ok");
-
-    } else if (initial && !newModStr.isNull() && (newMod == 0)) {
-        // previous check has no modify time recorded
-        statusStr.clear();
-
-    } else if (!newModStr.isNull() && (newMod > visit)) {
-        // if modify time greater than last visit, show bold modify time
-        statusStr = CurrentMgr::makeTimeStr(newMod);
-        if (initial) {
-            style = KEBListViewItem::GreyBoldStyle;
-        } else {
-            style = KEBListViewItem::BoldStyle;
-        }
-
-    } else if (visit != 0) {
-        // modify time not greater than last visit, show last visit time
-        statusStr = CurrentMgr::makeTimeStr(visit);
-        if (initial) {
-                style = KEBListViewItem::GreyStyle;
-        } else {
-                style = KEBListViewItem::DefaultStyle;
-        }
-
-    } else {
-        statusStr.clear();
-    }
-
-    _style = style;
-    return statusStr;
-}
-*/
-/*
-static void parseInfo (KBookmark &bk, QString &nVisited) {
-    nVisited =
-        NodeEditCommand::getNodeText(bk, QStringList() << "info" << "metadata"
-                                     << "time_visited" );
-
-//    kDebug() << " Visited=" << nVisited << "\n";
-}
-*/
-
-/*static void parseNsInfo(const QString &nsinfo, QString &nCreate, QString &nAccess, QString &nModify) {
-    QStringList sl = nsinfo.split(' ');
-
-    for (QStringList::Iterator it = sl.begin(); it != sl.end(); ++it) {
-        QStringList spl = (*it).split('"');
-
-        if (spl[0] == "LAST_MODIFIED=") {
-            nModify = spl[1];
-        } else if (spl[0] == "ADD_DATE=") {
-            nCreate = spl[1];
-        } else if (spl[0] == "LAST_VISIT=") {
-            nAccess = spl[1];
-        }
-    }
-}*/
-
-// Still use nsinfo for storing old modify time
-/*static const QString updateNsInfoMod(const QString &_nsinfo, const QString &nm) {
-    QString nCreate, nAccess, nModify;
-    parseNsInfo(_nsinfo, nCreate, nAccess, nModify);
-
-    bool numValid = false;
-    nm.toInt(&numValid);
-
-    QString tmp;
-    tmp  =  "ADD_DATE=\"" + ((nCreate.isEmpty()) ? QString::number(time(0)) : nCreate) + "\"";
-    tmp += " LAST_VISIT=\"" + ((nAccess.isEmpty()) ? QString("0") : nAccess) + "\"";
-    tmp += " LAST_MODIFIED=\"" + ((numValid) ? nm : QString("1")) + "\"";
-
-//  if (!numValid) kDebug() << tmp << "\n";
-    return tmp;
-}*/
-
-// KEBListViewItem !!!!!!!!!!!
-//FIXME nsPut
-/*
-void KEBListViewItem::nsPut(const QString &newModDate) {
-    static const QString NetscapeInfoAttribute = "netscapeinfo";
-    const QString info = m_bookmark.internalElement().attribute(NetscapeInfoAttribute);
-    QString blah = updateNsInfoMod(info, newModDate);
-    m_bookmark.internalElement().setAttribute(NetscapeInfoAttribute, blah);
-    TestLinkItrHolder::self()->setMod(m_bookmark.url().url(), newModDate);
-    setText(KEBListView::StatusColumn, newModDate);
-}
-*/
-
-// KEBListViewItem !!!!!!!!!!!
-/*
-void KEBListViewItem::modUpdate() {
-    QString nCreate, nAccess, oldModify;
-    QString iVisit;
-
-    QString nsinfo = m_bookmark.internalElement().attribute("netscapeinfo");
-    if (!nsinfo.isEmpty()) {
-        parseNsInfo(nsinfo, nCreate, nAccess, oldModify);
-    }
-
-    parseInfo(m_bookmark, iVisit);
-
-    QString statusLine;
-    statusLine = TestLinkItrHolder::calcPaintStyle(m_bookmark.url().url(), m_paintStyle, iVisit, oldModify);
-    if (statusLine != "Error")
-        setText(KEBListView::StatusColumn, statusLine);
-}
-*/
-/* -------------------------- */
-
-// KEBListViewItem !!!!!!!!!!!
-/*
-void KEBListViewItem::setOldStatus(const QString &oldStatus) {
-    // kDebug() << "KEBListViewItem::setOldStatus";
-    m_oldStatus = oldStatus;
-}
-
-// KEBListViewItem !!!!!!!!!!!
-void KEBListViewItem::setTmpStatus(const QString &status) {
-    // kDebug() << "KEBListViewItem::setTmpStatus";
-    m_paintStyle = KEBListViewItem::BoldStyle;
-    setText(KEBListView::StatusColumn, status);
-}
-
-// KEBListViewItem !!!!!!!!!!!
-void KEBListViewItem::restoreStatus() {
-    if (!m_oldStatus.isNull()) {
-        // kDebug() << "KEBListViewItem::restoreStatus";
-        TestLinkItrHolder::self()->resetToValue(m_bookmark.url().url(), m_oldStatus);
-        modUpdate();
-    }
-}
-*/
 #include "testlink.moc"

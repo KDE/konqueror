@@ -63,11 +63,9 @@ public:
     KBookmarkModelRemoveSentry(const KBookmark& parent, int first, int last)
     {
         QModelIndex mParent = CurrentMgr::self()->model()->indexForBookmark(parent);
-        //FIXME remove this once Qt fixes their really stupid bugs
-        for(int i = first; i <= last; ++i)
-        {
-            KEBApp::self()->mBookmarkListView->selectionModel()->select(mParent.child(i, 0), QItemSelectionModel::Deselect);
-        }
+
+        //deselecting bookmarks: FIXME be more smart
+        KEBApp::self()->mBookmarkListView->selectionModel()->clear();
 
         CurrentMgr::self()->model()->beginRemoveRows( mParent, first, last);
 
@@ -84,35 +82,6 @@ private:
     TreeItem * mt;
     int mf, ml;
 };
-
-class KBookmarkModelMoveSentry
-{
-public:
-    KBookmarkModelMoveSentry(const KBookmark& oldParent, int first, int last, KBookmark newParent, int position)
-    {
-        //FIXME need to decide how to handle selections and moving.
-        KEBApp::self()->mBookmarkListView->selectionModel()->clear();
-        QModelIndex mOldParent = CurrentMgr::self()->model()->indexForBookmark(oldParent);
-        QModelIndex mNewParent = CurrentMgr::self()->model()->indexForBookmark(newParent);
-
-        CurrentMgr::self()->model()->beginMoveRows( mOldParent, first, last, mNewParent, position);
-
-        mop = static_cast<TreeItem *>(mOldParent.internalPointer());
-        mf = first;
-        ml = last;
-        mnp = static_cast<TreeItem *>(mNewParent.internalPointer());
-        mp = position;
-    }
-    ~KBookmarkModelMoveSentry()
-    {
-        mop->moveChildren(mf, ml, mnp, mp);
-        CurrentMgr::self()->model()->endMoveRows();
-    }
-private:
-    TreeItem * mop, *mnp;
-    int mf, ml, mp;
-};
-
 
 QString KEBMacroCommand::affectedBookmarks() const
 {
@@ -174,6 +143,7 @@ void CreateCommand::execute()
     KBookmark bk = KBookmark(QDomElement());
     // TODO use m_to.positionInParent()
     KBookmarkModelInsertSentry guard(parentGroup, KBookmark::positionInParent(m_to), KBookmark::positionInParent(m_to));
+
     if (m_separator) {
         bk = parentGroup.createNewSeparator();
 
@@ -184,11 +154,10 @@ void CreateCommand::execute()
         if (!m_iconPath.isEmpty()) {
             bk.setIcon(m_iconPath);
         }
-
-    } else if (!m_originalBookmark.isNull()) {
-        // umm.. moveItem needs bk to be a child already!
-        bk = m_originalBookmark;
-
+    } else if(!m_originalBookmark.isNull()) {
+        QDomElement element = m_originalBookmark.internalElement().cloneNode().toElement();
+        bk = KBookmark(element);
+        parentGroup.addBookmark(bk);
     } else {
         bk = parentGroup.addBookmark(m_text, m_url, m_iconPath);
     }
@@ -210,8 +179,6 @@ QString CreateCommand::finalAddress() const {
 }
 
 void CreateCommand::unexecute() {
-    // kDebug() << "CreateCommand::unexecute deleting " << m_to;
-
     KBookmark bk = CurrentMgr::bookmarkAt(m_to);
     Q_ASSERT(!bk.isNull() && !bk.parentGroup().isNull());
 
@@ -367,8 +334,6 @@ QString EditCommand::setNodeText(const KBookmark& bk, const QStringList &nodehie
 /* -------------------------------------- */
 
 void DeleteCommand::execute() {
-    kDebug() << "DeleteCommand::execute " << m_from;
-
     KBookmark bk = CurrentMgr::bookmarkAt(m_from);
     Q_ASSERT(!bk.isNull());
 
@@ -453,59 +418,14 @@ void MoveCommand::execute() {
     // kDebug() << "MoveCommand::execute moving from=" << m_from
     //           << " to=" << m_to << endl;
 
-    KBookmark bk = CurrentMgr::bookmarkAt(m_from);
-    Q_ASSERT(!bk.isNull());
 
-    // look for m_from in the QDom tree
-    KBookmark oldParent =
-        CurrentMgr::bookmarkAt(KBookmark::parentAddress(m_from));
-    // TODO use m_from.positionInParent(), or better, compare with the first child!
-    bool wasFirstChild = (KBookmark::positionInParent(m_from) == 0);
+    KBookmark fromBk = CurrentMgr::self()->mgr()->findByAddress( m_from );
 
-    KBookmark oldPreviousSibling = wasFirstChild
-        ? KBookmark(QDomElement())
-        : CurrentMgr::bookmarkAt(
-                KBookmark::previousAddress(m_from));
+    m_cc = new CreateCommand(m_to, fromBk, "");
+    m_cc->execute();
 
-    // look for m_to in the QDom tree
-    QString parentAddress = KBookmark::parentAddress(m_to);
-
-    KBookmark newParent = CurrentMgr::bookmarkAt(parentAddress);
-    Q_ASSERT(!newParent.isNull());
-    Q_ASSERT(newParent.isGroup());
-
-    bool isFirstChild = (KBookmark::positionInParent(m_to) == 0);
-
-    // TODO use {m_from,m_to}.positionInParent()
-    KBookmarkModelMoveSentry sentry(oldParent, KBookmark::positionInParent(m_from), KBookmark::positionInParent(m_from),
-                                    newParent, KBookmark::positionInParent(m_to));
-
-    if (isFirstChild) {
-        newParent.toGroup().moveBookmark(bk, KBookmark());
-
-    } else {
-        QString afterAddress = KBookmark::previousAddress(m_to);
-
-        // kDebug() << "MoveCommand::execute afterAddress="
-        //           << afterAddress << endl;
-        KBookmark afterNow = CurrentMgr::bookmarkAt(afterAddress);
-        Q_ASSERT(!afterNow.isNull());
-
-        bool movedOkay = newParent.toGroup().moveBookmark(bk, afterNow);
-        Q_ASSERT(movedOkay);
-
-        // kDebug() << "MoveCommand::execute after moving in the dom tree"
-        //              ": item=" << bk.address() << endl;
-    }
-
-    // because we moved stuff around, the from/to
-    // addresses can have changed, update
-    m_to = bk.address();
-    m_from = (wasFirstChild)
-        ? (oldParent.address() + "/0")
-        : KBookmark::nextAddress(oldPreviousSibling.address());
-    // kDebug() << "MoveCommand::execute : new addresses from="
-    //           << m_from << " to=" << m_to << endl;
+    m_dc = new DeleteCommand( fromBk.address() );
+    m_dc->execute();
 }
 
 QString MoveCommand::finalAddress() const {
@@ -514,12 +434,9 @@ QString MoveCommand::finalAddress() const {
 }
 
 void MoveCommand::unexecute() {
-    // let's not duplicate code.
-    MoveCommand undoCmd(m_to, m_from);
-    undoCmd.execute();
-    // get the addresses back from that command, in case they changed
-    m_from = undoCmd.m_to;
-    m_to = undoCmd.m_from;
+
+    m_dc->unexecute();
+    m_cc->unexecute();
 }
 
 QString MoveCommand::affectedBookmarks() const
@@ -628,6 +545,7 @@ KEBMacroCommand* CmdGen::insertMimeSource(const QString &cmdName, const QMimeDat
     KBookmark::List bookmarks = KBookmark::List::fromMimeData(data);
     KBookmark::List::const_iterator it, end;
     end = bookmarks.constEnd();
+
     for (it = bookmarks.constBegin(); it != end; ++it)
     {
         CreateCommand *cmd = new CreateCommand(currentAddress, (*it));
@@ -636,17 +554,10 @@ KEBMacroCommand* CmdGen::insertMimeSource(const QString &cmdName, const QMimeDat
         currentAddress = KBookmark::nextAddress(currentAddress);
     }
     return mcmd;
-    // FIXME galeon
-    // the old code checked for format GALEON_BOOKMARK
-    // check how to port this and make drag and drop between them possible
-
-    // the old code had a special behaviour if the format was text/uri-list
-    // and included ".desktop" files
-    // Instead of adding a bookmark poiting to the .desktop file, the contents
-    // of the .desktop file were added.
-    // FIXME decide whether that is useful and how to port
 }
 
+
+//FIXME copy=true needed? what is the difference with insertMimeSource
 KEBMacroCommand* CmdGen::itemsMoved(const QList<KBookmark> & items,
         const QString &newAddress, bool copy) {
     KEBMacroCommand *mcmd = new KEBMacroCommand(copy ? i18n("Copy Items")
@@ -673,8 +584,8 @@ KEBMacroCommand* CmdGen::itemsMoved(const QList<KBookmark> & items,
 
         } else /* if (move) */ {
             QString oldAddress = (*it).address();
-            if (bkInsertAddr.startsWith(oldAddress)) //FIXME uses internal representation of address
-                continue;
+            if (bkInsertAddr.startsWith(oldAddress)) 
+                continue; // trying to insert a parent into one of its childs, ignore :)
 
             MoveCommand *cmd = new MoveCommand(oldAddress, bkInsertAddr,
                     (*it).text());

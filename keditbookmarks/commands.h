@@ -152,10 +152,8 @@ private:
 class MoveCommand : public K3Command, public IKEBCommand
 {
 public:
-   // "Create it with itemsAlreadyMoved=true since
-   // "K3ListView moves the item before telling us about it."
    MoveCommand(const QString &from, const QString &to, const QString &name = QString())
-      : K3Command(), m_from(from), m_to(to), m_mytext(name)
+       : K3Command(), m_from(from), m_to(to), m_mytext(name), m_cc(0), m_dc(0)
    {}
    QString finalAddress() const;
    virtual ~MoveCommand() {}
@@ -167,6 +165,8 @@ private:
    QString m_from;
    QString m_to;
    QString m_mytext;
+   CreateCommand * m_cc;
+   DeleteCommand * m_dc;
 };
 
 class SortItem;

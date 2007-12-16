@@ -91,6 +91,7 @@ void BookmarkInfoWidget::showBookmark(const KBookmark &bk) {
 
 void BookmarkInfoWidget::updateStatus()
 {
+   //FIXME we don't want every metadata element, but only that with owner "http://www.kde.org"
    QString visitDate =
         CurrentMgr::makeTimeStr( EditCommand::getNodeText(m_bk, QStringList() << "info" << "metadata"
                                                              << "time_visited" ));

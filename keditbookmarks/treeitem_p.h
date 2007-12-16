@@ -22,8 +22,6 @@
 #include <QtCore/QList>
 #include <kbookmark.h>
 
-//#define DEBUG_STUPID_QT
-
 class TreeItem
 {
 public:
@@ -38,11 +36,8 @@ public:
     KBookmark bookmark() const;
     int childCount();
     TreeItem * treeItemForBookmark(const KBookmark& bk);
-private:
-#ifdef DEBUG_STUPID_QT
-    void markDelete();
     bool deleted;
-#endif
+private:
     void initChildren();
     bool init;
     QList<TreeItem *> children;

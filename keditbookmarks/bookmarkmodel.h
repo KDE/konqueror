@@ -35,7 +35,6 @@ public:
     // Those keditbookmarks classes need to access beginInsertRows etc.
     friend class KBookmarkModelInsertSentry;
     friend class KBookmarkModelRemoveSentry;
-    friend class KBookmarkModelMoveSentry;
 
     KBookmarkModel(const KBookmark& root);
     void setRoot(const KBookmark& root);
@@ -59,22 +58,13 @@ public:
 
     //drag and drop
     virtual bool dropMimeData ( const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent );
-    virtual QStringList mimeTypes () const;
-    virtual QMimeData * mimeData ( const QModelIndexList & indexes ) const;
+    virtual QStringList mimeTypes() const;
+    virtual QMimeData * mimeData( const QModelIndexList & indexes ) const;
     virtual Qt::DropActions supportedDropActions () const;
-
-Q_SIGNALS:
-    //FIXME searchline should respond too
-    void aboutToMoveRows(const QModelIndex &, int, int, const QModelIndex &, int);
-    void rowsMoved(const QModelIndex &, int, int, const QModelIndex &, int);
-
-    void dropped(const QMimeData* data, const KBookmark& bookmark);
-    void textEdited(const KBookmark& bookmark, int column, const QString& text);
+    //FIXME public for moving
+    using QAbstractItemModel::reset;
 
 private:
-    void beginMoveRows(const QModelIndex & oldParent, int first, int last, const QModelIndex & newParent, int position);
-    void endMoveRows();
-
     class Private;
     Private * const d;
 };

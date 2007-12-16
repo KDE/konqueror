@@ -58,7 +58,9 @@ protected:
    virtual bool isApplicable(const KBookmark &bk) const;
 
 private:
+   void setStatus(const QString & status);
    FavIconUpdater *m_updater;
+   QString m_oldStatus;
 };
 
 #endif

@@ -20,6 +20,7 @@
 #define __bookmarklistview_h
 
 #include <QtGui/QTreeView>
+#include <QSortFilterProxyModel>
 
 struct SelcAbilities {
     bool itemSelected:1;
@@ -35,6 +36,7 @@ struct SelcAbilities {
 class KBookmarkModel;
 class KBookmark;
 class BookmarkListView;
+class BookmarkFolderViewFilterModel;
 
 class BookmarkView : public QTreeView
 {
@@ -42,21 +44,7 @@ class BookmarkView : public QTreeView
 public:
     BookmarkView( QWidget * parent = 0 );
     virtual ~BookmarkView();
-    virtual void setModel(QAbstractItemModel * view);
     KBookmarkModel* model() const;
-    virtual void dragEnterEvent(QDragEnterEvent *event);
-    virtual void dragMoveEvent(QDragMoveEvent *event);
-public Q_SLOTS:
-    void aboutToMoveRows(const QModelIndex & oldParent, int first, int last, const QModelIndex & newParent, int position);
-    void rowsMoved(const QModelIndex & oldParent, int first, int last, const QModelIndex & newParent, int position);
-    void dropped(const QMimeData* data, const KBookmark& bookmark);
-    void textEdited(const KBookmark& bookmark, int column, const QString& text);
-protected:
-    virtual void dropEvent ( QDropEvent * event );
-private:
-    QPersistentModelIndex moveOldParent;
-    QPersistentModelIndex moveNewParent;
-    QDropEvent* mDropEvent;
 };
 
 class BookmarkFolderView : public BookmarkView
@@ -68,6 +56,7 @@ public:
     virtual void selectionChanged ( const QItemSelection & selected, const QItemSelection & deselected );
 private:
     BookmarkListView * mview;
+    BookmarkFolderViewFilterModel * mmodel;
 };
 
 class BookmarkListView : public BookmarkView
@@ -76,20 +65,28 @@ class BookmarkListView : public BookmarkView
 public:
     BookmarkListView( QWidget * parent = 0 );
     virtual ~BookmarkListView();
-    virtual void selectionChanged ( const QItemSelection & selected, const QItemSelection & deselected );
-    virtual void drawRow ( QPainter * painter, const QStyleOptionViewItem & option, const QModelIndex & index ) const;
-    virtual QItemSelectionModel::SelectionFlags selectionCommand ( const QModelIndex & index, const QEvent * event = 0 ) const;
     SelcAbilities getSelectionAbilities() const;
     void loadColumnSetting();
     void saveColumnSetting ();
-
+    virtual void setModel(QAbstractItemModel * model);
 protected:
     virtual void contextMenuEvent ( QContextMenuEvent * e );
-private:
-    QRect merge(const QRect& a, const QRect& b);
-    void deselectChildren(const QModelIndex & parent);
-    QRect rectForRow(QModelIndex index);
-    QRect rectForRowWithChildren(QModelIndex index);
-    bool parentSelected(const QModelIndex & index ) const;
+};
+
+
+class BookmarkFolderViewFilterModel : public QSortFilterProxyModel
+{
+    Q_OBJECT
+public:
+    BookmarkFolderViewFilterModel(QObject * parent = 0);
+    virtual ~BookmarkFolderViewFilterModel();
+    virtual QStringList mimeTypes() const;
+    virtual bool dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent);
+protected:
+    bool filterAcceptsColumn ( int source_column, const QModelIndex & source_parent ) const;
+    bool filterAcceptsRow ( int source_row, const QModelIndex & source_parent ) const;
+    //FIXME check
+    virtual Qt::DropActions supportedDropActions() const
+        { return sourceModel()->supportedDropActions(); }
 };
 #endif

@@ -68,6 +68,7 @@ private:
     FavIconBrowserInterface *m_browserIface;
     FavIconWebGrabber *m_webGrabber;
     KBookmark m_bk;
+    bool webupdate;
     org::kde::FavIcon m_favIconModule;
 };
 
