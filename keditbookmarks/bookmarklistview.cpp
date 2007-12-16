@@ -52,7 +52,7 @@ BookmarkFolderView::BookmarkFolderView( BookmarkListView * view, QWidget * paren
     mmodel = new BookmarkFolderViewFilterModel(parent);
     mmodel->setSourceModel(view->model());
     setModel(mmodel);
-    header()->setResizeMode(QHeaderView::Stretch);
+    header()->setVisible(false);
     setRootIsDecorated(false);
     expandAll();
     setCurrentIndex( mmodel->index(0,0, QModelIndex()));
