@@ -62,14 +62,14 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
     m_pAdvancedAddBookmarkCheckBox->setWhatsThis( i18n( "If this box is checked, Konqueror will allow you to"
                                                         " change the title of the bookmark and choose a folder"
 							" in which to store it when you add a new bookmark." ) );
-    connect(m_pAdvancedAddBookmarkCheckBox, SIGNAL(clicked()), SLOT(slotChanged()));
+    connect(m_pAdvancedAddBookmarkCheckBox, SIGNAL(toggled(bool)), SLOT(slotChanged()));
     bgBookmarks->setLayout(laygroup1);
 
     m_pOnlyMarkedBookmarksCheckBox = new QCheckBox(i18n( "Show only marked bookmarks in bookmark toolbar" ), bgBookmarks);
     laygroup1->addWidget(m_pOnlyMarkedBookmarksCheckBox);
     m_pOnlyMarkedBookmarksCheckBox->setWhatsThis( i18n( "If this box is checked, Konqueror will show only those"
                      " bookmarks in the bookmark toolbar which you have marked to do so in the bookmark editor." ) );
-    connect(m_pOnlyMarkedBookmarksCheckBox, SIGNAL(clicked()), SLOT(slotChanged()));
+    connect(m_pOnlyMarkedBookmarksCheckBox, SIGNAL(toggled(bool)), SLOT(slotChanged()));
 
     lay->addWidget( bgBookmarks, row, 0, 1, 2 );
     row++;
@@ -86,7 +86,7 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
 
     m_pFormCompletionCheckBox->setWhatsThis( i18n( "If this box is checked, Konqueror will remember"
                   " the data you enter in web forms and suggest it in similar fields for all forms." ) );
-    connect(m_pFormCompletionCheckBox, SIGNAL(clicked()), SLOT(slotChanged()));
+    connect(m_pFormCompletionCheckBox, SIGNAL(toggled(bool)), SLOT(slotChanged()));
 
     m_pMaxFormCompletionItems = new KIntNumInput;
     m_pMaxFormCompletionItems->setLabel( i18n( "&Maximum completions:" ) );
@@ -110,21 +110,21 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
     laygroup3->addWidget( m_cbCursor );
     m_cbCursor->setWhatsThis( i18n("If this option is set, the shape of the cursor will change "
        "(usually to a hand) if it is moved over a hyperlink.") );
-    connect(m_cbCursor, SIGNAL(clicked()), SLOT(slotChanged()));
+    connect(m_cbCursor, SIGNAL(toggled(bool)), SLOT(slotChanged()));
 
     m_pOpenMiddleClick = new QCheckBox( i18n ("M&iddle click opens URL in selection" ) );
     laygroup3->addWidget( m_pOpenMiddleClick );
     m_pOpenMiddleClick->setWhatsThis( i18n (
       "If this box is checked, you can open the URL in the selection by middle clicking on a "
       "Konqueror view." ) );
-    connect(m_pOpenMiddleClick, SIGNAL(clicked()), SLOT(slotChanged()));
+    connect(m_pOpenMiddleClick, SIGNAL(toggled(bool)), SLOT(slotChanged()));
 
     m_pBackRightClick = new QCheckBox( i18n( "Right click goes &back in history" ) );
     laygroup3->addWidget( m_pBackRightClick );
     m_pBackRightClick->setWhatsThis( i18n(
       "If this box is checked, you can go back in history by right clicking on a Konqueror view. "
       "To access the context menu, press the right mouse button and move." ) );
-    connect(m_pBackRightClick, SIGNAL(clicked()), SLOT(slotChanged()));
+    connect(m_pBackRightClick, SIGNAL(toggled(bool)), SLOT(slotChanged()));
 
     bgMouse->setLayout(laygroup3);
     lay->addWidget( bgMouse, row, 0, 1, 2 );
@@ -140,7 +140,7 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
 			    " button.<br />Unless you have a very slow network connection, you"
 			    " will probably want to check this box to enhance your browsing"
 			    " experience." ) );
-    connect(m_pAutoLoadImagesCheckBox, SIGNAL(clicked()), SLOT(slotChanged()));
+    connect(m_pAutoLoadImagesCheckBox, SIGNAL(toggled(bool)), SLOT(slotChanged()));
     lay->addWidget( m_pAutoLoadImagesCheckBox, row, 0, 1, 2 );
     row++;
 
@@ -149,14 +149,14 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
 			    " a frame as placeholder around not yet fully loaded images that are embedded"
 			    " in a web page.<br />Especially if you have a slow network connection, you will"
 			    " probably want to check this box to enhance your browsing experience." ) );
-    connect(m_pUnfinishedImageFrameCheckBox, SIGNAL(clicked()), SLOT(slotChanged()));
+    connect(m_pUnfinishedImageFrameCheckBox, SIGNAL(toggled(bool)), SLOT(slotChanged()));
     lay->addWidget( m_pUnfinishedImageFrameCheckBox, row, 0, 1, 2 );
     row++;
 
     m_pAutoRedirectCheckBox = new QCheckBox( i18n( "Allow automatic delayed &reloading/redirecting"), this );
     m_pAutoRedirectCheckBox->setWhatsThis( i18n( "Some web pages request an automatic reload or redirection after"
 			    " a certain period of time. By unchecking this box Konqueror will ignore these requests." ) );
-    connect(m_pAutoRedirectCheckBox, SIGNAL(clicked()), SLOT(slotChanged()));
+    connect(m_pAutoRedirectCheckBox, SIGNAL(toggled(bool)), SLOT(slotChanged()));
     lay->addWidget( m_pAutoRedirectCheckBox, row, 0, 1, 2 );
     row++;
 
@@ -164,7 +164,7 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
 
     m_pAccessKeys = new QCheckBox( i18n( "Enable/disable Access Ke&y activation with Ctrl key"), this );
     m_pAccessKeys->setWhatsThis( i18n( "Pressing the Ctrl key when viewing webpages activates KDE's Access Keys. Unchecking this box will disable this accessibility feature. (Konqueror needs to be restarted for changes to take effect)" ) );
-    connect(m_pAccessKeys, SIGNAL(clicked()), SLOT(slotChanged()));
+    connect(m_pAccessKeys, SIGNAL(toggled(bool)), SLOT(slotChanged()));
     lay->addMultiCellWidget( m_pAccessKeys, row, row, 0, 1 );
     row++;
 
@@ -191,7 +191,7 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
 	    "</ul><br /><i>Note: The site's CSS definitions can override this value</i>");
     label->setWhatsThis(whatsThis);
     m_pUnderlineCombo->setWhatsThis(whatsThis);
-    connect(m_pUnderlineCombo, SIGNAL(activated(int)), SLOT(slotChanged()));
+    connect(m_pUnderlineCombo, SIGNAL(currentIndexChanged(int)), SLOT(slotChanged()));
 
 
 
@@ -211,7 +211,7 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
 	    "<li><b>Show only once</b>: Show all animations completely but do not repeat them.</li></ul>");
     label->setWhatsThis(whatsThis);
     m_pAnimationsCombo->setWhatsThis(whatsThis);
-    connect(m_pAnimationsCombo, SIGNAL(activated(int)), SLOT(slotChanged()));
+    connect(m_pAnimationsCombo, SIGNAL(currentIndexChanged(int)), SLOT(slotChanged()));
 
     lay->setRowStretch(row, 1);
 
