@@ -5322,42 +5322,35 @@ void KonqMainWindow::goURL()
 void KonqMainWindow::slotAddClosedUrl(KonqFrameBase *tab)
 {
     kDebug(1202);
-    KonqFrameBase* currentFrame = tab;
     QString title( i18n("no name") ), url("about:blank");
 
-    // TODO simplify
+    // Did the tab contain a single frame, or a splitter?
     KonqFrame* frame = dynamic_cast<KonqFrame *>(tab);
-    KonqFrameContainer* frame2 = dynamic_cast<KonqFrameContainer *>(tab);
-
-    if ( frame && frame->activeChildView() )
-    {
-        title = frame->title().trimmed();
-        if ( title.isEmpty() )
-            title = frame->activeChildView()->url().url();
-
-        title = KStringHandler::csqueeze( title, 50 );
-
-        url = frame->activeChildView()->url().url();
-    } else if ( frame2 && frame2->activeChildView() )
-    {
-        // TODO: in case we are a KonqFrameContainer.. how do we get the title of the selected view?
-        title = frame2->activeChildView()->url().url();
-
-        title = KStringHandler::csqueeze( title, 50 );
-
-        url = frame2->activeChildView()->url().url();
+    if (!frame) {
+        KonqFrameContainer* frameContainer = dynamic_cast<KonqFrameContainer *>(tab);
+        if (frameContainer->activeChildView())
+            frame = frameContainer->activeChildView()->frame();
     }
+
+    KParts::ReadOnlyPart* part = frame ? frame->part() : 0;
+    if (part)
+        url = part->url().url();
+    if (frame)
+        title = frame->title().trimmed();
+    if (title.isEmpty())
+        title = url;
+    title = KStringHandler::csqueeze( title, 50 );
 
     // Now we get the position of the tab
     const int index =  m_pViewManager->tabContainer()->childFrameList().indexOf(tab);
 
     KonqClosedTabItem* closedTabItem = new KonqClosedTabItem(url, title, index, m_undoManager->newCommandSerialNumber());
 
-    QString prefix = QString::fromLatin1( currentFrame->frameType() ) + QString::number(0);
+    QString prefix = QString::fromLatin1( tab->frameType() ) + QString::number(0);
     closedTabItem->configGroup().writeEntry( "RootItem", prefix );
     prefix.append( QLatin1Char( '_' ) );
     KonqFrameBase::Options flags = KonqFrameBase::saveHistoryItems;
-    currentFrame->saveConfig( closedTabItem->configGroup(), prefix, flags, 0L, 0, 1);
+    tab->saveConfig( closedTabItem->configGroup(), prefix, flags, 0L, 0, 1);
 
     m_paClosedTabs->setEnabled(true);
     m_undoManager->addClosedTabItem( closedTabItem );
