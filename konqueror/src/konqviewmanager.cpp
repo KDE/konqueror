@@ -275,23 +275,7 @@ void KonqViewManager::duplicateTab( KonqFrameBase* currentFrame, bool openAfterC
   KonqFrameBase::Options flags = KonqFrameBase::saveURLs;
   currentFrame->saveConfig( profileGroup, prefix, flags, 0L, 0, 1);
 
-  QString rootItem = profileGroup.readEntry( "RootItem", "empty" );
-
-  if (rootItem.isNull() || rootItem == "empty") return;
-
-  // This flag is used by KonqView, to distinguish manual view creation
-  // from profile loading (e.g. in switchView)
-  m_bLoadingProfile = true;
-
-  loadItem( profileGroup, tabContainer(), rootItem, KUrl(""), true, openAfterCurrentPage );
-
-  m_bLoadingProfile = false;
-
-  m_pMainWindow->enableAllActions(true);
-
-  // This flag disables calls to viewCountChanged while creating the views,
-  // so we do it once at the end :
-  m_pMainWindow->viewCountChanged();
+  loadRootItem( profileGroup, tabContainer(), KUrl(), true, openAfterCurrentPage );
 
   if (openAfterCurrentPage)
     m_tabContainer->setCurrentIndex( m_tabContainer->currentIndex () + 1 );
@@ -482,30 +466,12 @@ void KonqViewManager::updatePixmaps()
 void KonqViewManager::openClosedTab(const KonqClosedTabItem& closedTab)
 {
     kDebug(1202);
-    // TODO: this code is duplicated three times!
-    const QString rootItem = closedTab.configGroup().readEntry("RootItem", "empty");
-    if (rootItem.isNull() || rootItem == "empty") {
-        return;
-    }
-
-    // This flag is used by KonqView, to distinguish manual view creation
-    // from profile loading (e.g. in switchView)
-    m_bLoadingProfile = true;
-
-    loadItem( closedTab.configGroup(), m_tabContainer, rootItem, KUrl(), true, false, closedTab.pos() );
-
-    m_bLoadingProfile = false;
+    loadRootItem( closedTab.configGroup(), m_tabContainer, KUrl(), true, false, closedTab.pos() );
 
     int pos = ( closedTab.pos() < m_tabContainer->count() ) ? closedTab.pos() : m_tabContainer->count()-1;
     kDebug(1202) << "pos, m_tabContainer->count(): " << pos << ", " << m_tabContainer->count()-1 << endl;
 
     m_tabContainer->setCurrentIndex( pos );
-
-    m_pMainWindow->enableAllActions(true);
-
-    // This flag disables calls to viewCountChanged while creating the views,
-    // so we do it once at the end :
-    viewCountChanged();
 
     kDebug(1202) << "done";
 }
@@ -591,7 +557,9 @@ void KonqViewManager::removePart( KParts::Part * part )
   if ( view ) // the child view still exists, so we are in case 1
   {
       kDebug(1202) << "Found a child view";
+
       view->partDeleted(); // tell the child view that the part auto-deletes itself
+
       if (m_pMainWindow->mainViewsCount() == 1)
       {
         kDebug(1202) << "Deleting last view -> closing the window";
@@ -899,25 +867,9 @@ void KonqViewManager::loadViewProfileFromGroup( const KConfigGroup &profileGroup
 
   clear();
 
-  QString rootItem = profileGroup.readPathEntry( "RootItem", "empty" );
-
-  //kDebug(1202) << "loading RootItem" << rootItem << "forcedURL" << forcedURL;
-
   if ( forcedURL.url() != "about:blank" )
   {
-    // This flag is used by KonqView, to distinguish manual view creation
-    // from profile loading (e.g. in switchView)
-    m_bLoadingProfile = true;
-
-    loadItem( profileGroup, m_pMainWindow, rootItem, defaultURL, openUrl && forcedURL.isEmpty() );
-
-    m_bLoadingProfile = false;
-
-    m_pMainWindow->enableAllActions(true);
-
-    // This flag disables calls to viewCountChanged while creating the views,
-    // so we do it once at the end :
-    m_pMainWindow->viewCountChanged();
+    loadRootItem( profileGroup, m_pMainWindow, defaultURL, openUrl && forcedURL.isEmpty() );
   }
   else
   {
@@ -925,7 +877,7 @@ void KonqViewManager::loadViewProfileFromGroup( const KConfigGroup &profileGroup
     m_pMainWindow->action( "clear_location" )->trigger();
   }
 
-  //kDebug(1202) << "after loadItem";
+  //kDebug(1202) << "after loadRootItem";
 
   // Set an active part first so that we open the URL in the current view
   // (to set the location bar correctly and asap)
@@ -1110,6 +1062,32 @@ QSize KonqViewManager::readConfigSize( const KConfigGroup &cfg, QWidget *widget 
     }
 
     return QSize( width, height );
+}
+
+void KonqViewManager::loadRootItem( const KConfigGroup &cfg, KonqFrameContainerBase *parent,
+                                    const KUrl & defaultURL, bool openUrl, bool openAfterCurrentPage,
+                                    int pos )
+{
+    const QString rootItem = cfg.readEntry("RootItem", "empty");
+    if (rootItem.isNull() || rootItem == "empty") {
+        return;
+    }
+
+    // This flag is used by KonqView, to distinguish manual view creation
+    // from profile loading (e.g. in switchView)
+    m_bLoadingProfile = true;
+
+    loadItem( cfg, parent, rootItem, defaultURL, openUrl, openAfterCurrentPage, pos );
+
+    m_bLoadingProfile = false;
+
+    m_pMainWindow->enableAllActions(true);
+
+    // This flag disables calls to viewCountChanged while creating the views,
+    // so we do it once at the end :
+    viewCountChanged();
+
+
 }
 
 void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase *parent,
