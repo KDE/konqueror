@@ -323,6 +323,10 @@ private:
   void loadItem( const KConfigGroup &cfg, KonqFrameContainerBase *parent,
                  const QString &name, const KUrl & defaultURL, bool openUrl, bool openAfterCurrentPage = false, int pos = -1 );
 
+    void loadRootItem( const KConfigGroup &cfg, KonqFrameContainerBase *parent,
+                       const KUrl & defaultURL, bool openUrl, bool openAfterCurrentPage = false,
+                       int pos = -1 );
+
     void createTabContainer(QWidget* parent, KonqFrameContainerBase* parentContainer);
 
     // Disabled - we do it ourselves
