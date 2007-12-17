@@ -77,6 +77,7 @@ LanBrowser::LanBrowser(QWidget *parent, const QVariantList &)
 		"the LISa Homepage</a> or contact Alexander Neundorf "
 		"&lt;<a href=\"mailto:neundorf@kde.org\">neundorf@kde.org</a>&gt;."));
    
+   layout.setMargin(0);
    layout.addWidget(&tabs);
 
    smbPage = new SMBRoOptions(&tabs, QVariantList(), componentData());
