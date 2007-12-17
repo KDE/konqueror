@@ -17,6 +17,7 @@
 
 #include <qtest_kde.h>
 #include "konqviewmgrtest.h"
+#include <QToolBar>
 
 #include <konqmainwindow.h>
 #include <konqviewmanager.h>
@@ -123,16 +124,21 @@ void ViewMgrTest::testCreateFirstView()
     // widgets from unit tests.
     // So we iterate over all widgets and ensure the pending resize events are sent.
     sendAllPendingResizeEvents( &mainWindow );
-    //for ( QWidget* w = partWidget; w; w = w->parentWidget() )
-    //    qDebug() << w << w->geometry();
+    for ( QWidget* w = partWidget; w; w = w->parentWidget() )
+        qDebug() << w << w->geometry();
+    //const QList<QToolBar*> toolbars = mainWindow.findChildren<QToolBar *>();
+    //foreach( QToolBar* toolbar, toolbars ) {
+    //    if (!toolbar->isHidden())
+    //        qDebug() << toolbar << toolbar->geometry();
+    //}
     QVERIFY( frame->width() > 680 );
-    QVERIFY( frame->height() > 300 ); // 325
+    QVERIFY( frame->height() > 240 ); // usually 325, but can be 256 with oxygen when three toolbars are shown
     //qDebug() << "partWidget geom:" << partWidget->geometry();
     QVERIFY( partWidget->width() > 680 );
-    QVERIFY( partWidget->height() > 290 ); // 295 (325 - statusbar)
+    QVERIFY( partWidget->height() > frame->height() - 50 /*statusbar*/ );
     //qDebug() << "tabWidget geom: " << tabWidget->geometry();
     QVERIFY( tabWidget->width() > 680 );
-    QVERIFY( tabWidget->height() > 300 ); // 329
+    QVERIFY( tabWidget->height() > frame->height() );
 }
 
 void ViewMgrTest::testRemoveFirstView()
@@ -189,16 +195,18 @@ void ViewMgrTest::testSplitView()
 
     //qDebug() << "view geom:" << frame->geometry();
     QVERIFY( frame->width() > 300 && frame->width() < 400 ); // horiz split, so half the mainWindow width
-    QVERIFY( frame->height() > 300 );
+    QVERIFY( frame->height() > 240 ); // usually 325, but can be 256 with oxygen when three toolbars are shown
     //qDebug() << "view2 geom:" << frame2->geometry();
     QVERIFY( frame2->width() > 300 && frame2->width() < 400 ); // horiz split, so half the mainWindow width
-    QVERIFY( frame2->height() > 300 );
-    QCOMPARE( frame->size(), frame2->size() );
+    QVERIFY( frame->height() > 240 ); // usually 325, but can be 256 with oxygen when three toolbars are shown
+    // Both frames should have the same size; well, if the width was odd then there can be an off-by-one...
+    QCOMPARE( frame->height(), frame2->height() );
+    QVERIFY( qAbs(frame->width() - frame2->width()) <= 1 ); // e.g. 173 and 172 are "close enough"
     //qDebug() << "partWidget geom:" << partWidget->geometry();
     QVERIFY( partWidget->width() > 300 && partWidget->width() < 400 ); // horiz split, so half the mainWindow width
-    QVERIFY( partWidget->height() > 290 );
+    QVERIFY( partWidget->height() > 220 ); // frame minus statusbar height
     QVERIFY( part2Widget->width() > 300 && part2Widget->width() < 400 ); // horiz split, so half the mainWindow width
-    QVERIFY( part2Widget->height() > 290 );
+    QVERIFY( part2Widget->height() > 220 );
 
     //KonqFrameContainerBase* container = view->frame()->parentContainer();
     //QVERIFY( container );
