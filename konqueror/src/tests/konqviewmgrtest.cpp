@@ -277,7 +277,6 @@ void ViewMgrTest::testAddTab()
     KonqView* viewTab2 = viewManager->addTab("text/html");
     QVERIFY( viewTab2 );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].") ); // mainWindow, tab widget, two tabs
-
 }
 
 void ViewMgrTest::testDuplicateTab()
@@ -309,6 +308,23 @@ void ViewMgrTest::testDuplicateSplittedTab()
 
     viewManager->removeTab(container);
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, one tab
+}
+
+// Like in http://bugs.kde.org/show_bug.cgi?id=153533,
+// where the part deletes itself.
+void ViewMgrTest::testDeletePartInTab()
+{
+    KonqMainWindow mainWindow;
+    KonqViewManager* viewManager = mainWindow.viewManager();
+    KonqView* view = viewManager->createFirstView( "KonqAboutPage", "konq_aboutpage" );
+    QVERIFY( view );
+    QPointer<KonqView> viewTab2 = viewManager->addTab("text/html");
+    QVERIFY(!viewTab2.isNull());
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].") ); // mainWindow, tab widget, two tabs
+
+    delete viewTab2->part();
+    QVERIFY(viewTab2.isNull());
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, tab widget, one tab
 }
 
 void ViewMgrTest::testLoadProfile()
