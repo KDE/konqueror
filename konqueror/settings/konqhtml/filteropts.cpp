@@ -89,7 +89,7 @@ KCMFilter::KCMFilter( QWidget *parent, const QVariantList& )
     mExportButton = new QPushButton(i18n("Export..."),buttonBox);
     connect( mExportButton, SIGNAL( clicked() ), SLOT( exportFilters() ) );
 
-    connect( mEnableCheck, SIGNAL( clicked()), this, SLOT( slotEnableChecked()));
+    connect( mEnableCheck, SIGNAL( toggled(bool)), this, SLOT( slotEnableChecked()));
     connect( mKillCheck, SIGNAL( clicked()), this, SLOT( slotKillChecked()));
     connect( mListBox, SIGNAL(itemSelectionChanged()),this, SLOT(slotItemSelected()));
 
