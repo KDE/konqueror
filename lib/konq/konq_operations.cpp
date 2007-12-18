@@ -517,9 +517,10 @@ void KonqOperations::doDropFileCopy()
     }
     else if ( (
         ((m_info->keyboardModifiers & Qt::ControlModifier) == 0) &&
-        ((m_info->keyboardModifiers & Qt::ShiftModifier) == 0) ) || linkOnly )
+        ((m_info->keyboardModifiers & Qt::ShiftModifier) == 0) &&
+        ((m_info->keyboardModifiers & Qt::AltModifier) == 0) ) || linkOnly )
     {
-        // Neither control nor shift are pressed => show popup menu
+        // Neither control, shift or alt are pressed => show popup menu
 
         // TODO move this code out somehow. Allow user of KonqOperations to add his own actions...
 #if 0
