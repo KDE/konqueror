@@ -37,9 +37,9 @@ void KWebNetworkInterface::addJob(QWebNetworkJob *job)
     KIO::Job *kioJob = 0;
     QByteArray postData = job->postData();
     if (postData.isEmpty())
-        kioJob = KIO::get(job->url());
+        kioJob = KIO::get(job->url(), KIO::NoReload, KIO::HideProgressInfo);
     else
-        kioJob = KIO::http_post(job->url(), postData);
+        kioJob = KIO::http_post(job->url(), postData, KIO::HideProgressInfo);
 
     kioJob->addMetaData(metaDataForRequest(job->request().httpHeader()));
 
