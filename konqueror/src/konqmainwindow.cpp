@@ -1836,13 +1836,6 @@ void KonqMainWindow::slotGoSettings()
   openUrl( 0, KUrl( "settings:/" ) );
 }
 
-void KonqMainWindow::slotGoDirTree()
-{
-  KUrl u;
-  u.setPath( KStandardDirs::locateLocal( "data", "konqueror/dirtree/" ) );
-  openUrl( 0, u );
-}
-
 void KonqMainWindow::slotGoTrash()
 {
   openUrl( 0, KUrl( "trash:/" ) );
@@ -3720,7 +3713,6 @@ void KonqMainWindow::initActions()
   action->setIcon(KIcon("preferences-system"));
   action->setText(i18n( "Sett&ings" ));
   connect(action, SIGNAL(triggered(bool)), SLOT( slotGoSettings() ));
-  //(void) new KAction( i18n( "Sidebar Configuration" ), 0, this, SLOT( slotGoDirTree() ), actionCollection(), "go_dirtree" );
   action = actionCollection()->addAction("go_trash");
   action->setIcon(KIcon("user-trash"));
   action->setText(i18n( "Trash" ));
@@ -4436,7 +4428,7 @@ void KonqMainWindow::disableActionsNoView()
     m_pamBookmarks->setEnabled( true );
     static const char* const s_enActions[] = { "new_window", "duplicate_window", "open_location",
                                          "toolbar_url_combo", "clear_location", "animated_logo",
-                                         "konqintro", "go_most_often", "go_applications", "go_dirtree",
+                                         "konqintro", "go_most_often", "go_applications",
                                          "go_trash", "go_settings", "go_network_folders", "go_autostart",
                                          "go_url", "go_media", "go_history", "options_configure_extensions", 0 };
     for ( int i = 0 ; s_enActions[i] ; ++i )
