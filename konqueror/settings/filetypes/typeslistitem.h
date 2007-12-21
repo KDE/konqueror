@@ -24,6 +24,7 @@
 
 #include <kmimetype.h>
 
+// TODO split into a QTreeWidgetItem and a non-gui class that holds the data (MimeTypeItem?)
 class TypesListItem : public Q3ListViewItem
 {
 public:
@@ -47,9 +48,9 @@ public:
   QString name() const { return m_major + "/" + m_minor; }
   QString majorType() const { return m_major; }
   QString minorType() const { return m_minor; }
-  void setMinor(QString m) { m_minor = m; }
+  void setMinor(const QString& m) { m_minor = m; }
   QString comment() const { return m_comment; }
-  void setComment(QString c) { m_comment = c; }
+  void setComment(const QString& c) { m_comment = c; }
   /**
    * Returns true if "this" is a group
    */
@@ -84,12 +85,12 @@ public:
   void setup();
   void refresh(); // update m_mimetype from ksycoca when Apply is pressed
 
-  static bool defaultEmbeddingSetting(  const QString& major );
+  static bool defaultEmbeddingSetting( const QString& major );
   static void reset();
 
 private:
   void getServiceOffers( QStringList & appServices, QStringList & embedServices ) const;
-  void saveServices( KConfig & profile, QStringList services, const QString & servicetype2 );
+  void saveServices( KConfig & profile, const QStringList& services, const QString & servicetype2 );
   void initMeta( const QString & major );
   void init(KMimeType::Ptr mimetype);
   static int readAutoEmbed( KMimeType::Ptr mimetype );
@@ -105,7 +106,6 @@ private:
   QStringList m_patterns;
   QStringList m_appServices;
   QStringList m_embedServices;
-  static QMap< QString, QStringList >* s_changedServices;
 };
 
 #endif

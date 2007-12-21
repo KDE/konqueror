@@ -27,12 +27,11 @@
 #include <kstandarddirs.h>
 #include <kdesktopfile.h>
 #include <kmimetypetrader.h>
-#include <k3staticdeleter.h>
 #include <kconfiggroup.h>
 
 
-QMap< QString, QStringList >* TypesListItem::s_changedServices;
-static K3StaticDeleter< QMap< QString, QStringList > > deleter;
+typedef QMap< QString, QStringList > ChangedServices;
+K_GLOBAL_STATIC(ChangedServices, s_changedServices)
 
 TypesListItem::TypesListItem(Q3ListView *parent, const QString & major)
   : Q3ListViewItem(parent), metaType(true), m_bNewItem(false), m_askSave(2)
@@ -336,8 +335,6 @@ void TypesListItem::sync()
         // The service was in m_appServices but has been removed
         // create a new .desktop file without this mimetype
 
-        if( s_changedServices == NULL )
-            deleter.setObject( s_changedServices, new QMap< QString, QStringList > );
         QStringList mimeTypeList = s_changedServices->contains( pService->entryPath())
             ? (*s_changedServices)[ pService->entryPath() ] : pService->serviceTypes();
 
@@ -423,8 +420,6 @@ KMimeType::Ptr TypesListItem::findImplicitAssociation(const QString &desktop)
     KService::Ptr s = KService::serviceByDesktopPath(desktop);
     if (!s) return KMimeType::Ptr(); // Hey, where did that one go?
 
-    if( s_changedServices == NULL )
-       deleter.setObject( s_changedServices, new QMap< QString, QStringList > );
     QStringList mimeTypeList = s_changedServices->contains( s->entryPath())
        ? (*s_changedServices)[ s->entryPath() ] : s->serviceTypes();
 
@@ -439,9 +434,9 @@ KMimeType::Ptr TypesListItem::findImplicitAssociation(const QString &desktop)
     return KMimeType::Ptr();
 }
 
-void TypesListItem::saveServices( KConfig & profile, QStringList services, const QString & genericServiceType )
+void TypesListItem::saveServices( KConfig & profile, const QStringList& services, const QString & genericServiceType )
 {
-  QStringList::Iterator it(services.begin());
+  QStringList::const_iterator it(services.begin());
   for (int i = services.count(); it != services.end(); ++it, i--) {
 
     KService::Ptr pService = KService::serviceByDesktopPath(*it);
@@ -462,8 +457,6 @@ void TypesListItem::saveServices( KConfig & profile, QStringList services, const
     group.writeEntry("Preference", i);
 
     // merge new mimetype
-    if( s_changedServices == NULL )
-       deleter.setObject( s_changedServices, new QMap< QString, QStringList > );
     QStringList mimeTypeList = s_changedServices->contains( pService->entryPath())
        ? (*s_changedServices)[ pService->entryPath() ] : pService->serviceTypes();
 
@@ -537,8 +530,7 @@ void TypesListItem::refresh()
 
 void TypesListItem::reset()
 {
-    if( s_changedServices )
-        s_changedServices->clear();
+    s_changedServices->clear();
 }
 
 void TypesListItem::getAskSave(bool &_askSave)
