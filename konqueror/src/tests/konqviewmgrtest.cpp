@@ -338,6 +338,29 @@ void ViewMgrTest::testLoadProfile()
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MC(FT[F]).") ); // mainWindow, splitter, frame, tab widget, one frame
     QCOMPARE(mainWindow.locationBarURL(), path);
     QCOMPARE(mainWindow.currentView()->locationBarURL(), path);
+
+    sendAllPendingResizeEvents( &mainWindow );
+
+    QVERIFY(mainWindow.width() > 680);
+    // QCOMPARE(frameType,QByteArray("Container")) leads to unreadable output on a mismatch :)
+    QCOMPARE(QString(mainWindow.childFrame()->frameType()), QString("Container"));
+    KonqFrameContainer* container = static_cast<KonqFrameContainer *>(mainWindow.childFrame());
+    KonqFrameBase* firstChild = container->firstChild();
+    QWidget* sidebarFrame = container->widget(0);
+    QCOMPARE(firstChild->asQWidget(), sidebarFrame);
+    QCOMPARE(QString(firstChild->frameType()), QString("View"));
+    //QVERIFY(qobject_cast<KonqFrame*>(sidebarFrame));
+    KonqFrameBase* secondChild = container->secondChild();
+    QCOMPARE(QString(secondChild->frameType()), QString("Tabs"));
+    QWidget* tabFrame = container->widget(1);
+    QCOMPARE(secondChild->asQWidget(), tabFrame);
+    QCOMPARE(sidebarFrame->sizePolicy().horizontalPolicy(), QSizePolicy::Preferred);
+    QCOMPARE(sidebarFrame->sizePolicy().horizontalStretch(), 0);
+    QCOMPARE(tabFrame->sizePolicy().horizontalPolicy(), QSizePolicy::Expanding);
+    QCOMPARE(tabFrame->sizePolicy().horizontalStretch(), 0);
+    const QList<int> sizes = container->sizes();
+    QCOMPARE(sizes.count(), 2);
+    QVERIFY(sizes[0] < sizes[1]);
 }
 
 #include "konqviewmgrtest.moc"
