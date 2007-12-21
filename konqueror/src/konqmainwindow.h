@@ -369,7 +369,6 @@ public Q_SLOTS:
   void slotGoMedia();
   void slotGoNetworkFolders();
   void slotGoSettings();
-  void slotGoDirTree();
   void slotGoTrash();
   void slotGoAutostart();
   void slotGoHistory();
