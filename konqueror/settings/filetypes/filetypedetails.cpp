@@ -1,3 +1,21 @@
+/* This file is part of the KDE project
+   Copyright (C) 2000, 2007 David Faure <faure@kde.org>
+
+   This program is free software; you can redistribute it and/or
+   modify it under the terms of the GNU General Public
+   License version 2 or at your option version 3 as published by
+   the Free Software Foundation.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program; see the file COPYING.  If not, write to
+   the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
+*/
 
 // Own
 #include "filetypedetails.h"
@@ -26,7 +44,7 @@
 #include "typeslistitem.h"
 
 FileTypeDetails::FileTypeDetails( QWidget * parent )
-  : QTabWidget( parent ), m_item( 0L )
+    : QTabWidget( parent ), m_mimeTypeData(0), m_item(0)
 {
   QString wtstr;
   // First tab - General
@@ -164,27 +182,30 @@ void FileTypeDetails::updateRemoveButton()
 
 void FileTypeDetails::updateIcon(const QString &icon)
 {
-  if (!m_item)
+  if (!m_mimeTypeData)
     return;
 
-  m_item->setIcon(icon);
+  m_mimeTypeData->setIcon(icon);
+
+  if (m_item)
+      m_item->setIcon(icon);
 
   emit changed(true);
 }
 
 void FileTypeDetails::updateDescription(const QString &desc)
 {
-  if (!m_item)
+  if (!m_mimeTypeData)
     return;
 
-  m_item->setComment(desc);
+  m_mimeTypeData->setComment(desc);
 
   emit changed(true);
 }
 
 void FileTypeDetails::addExtension()
 {
-  if ( !m_item )
+  if ( !m_mimeTypeData )
     return;
 
   bool ok;
@@ -192,9 +213,9 @@ void FileTypeDetails::addExtension()
     i18n( "Extension:" ), "*.", &ok, this );
   if (ok) {
     extensionLB->addItem(ext);
-    QStringList patt = m_item->patterns();
+    QStringList patt = m_mimeTypeData->patterns();
     patt += ext;
-    m_item->setPatterns(patt);
+    m_mimeTypeData->setPatterns(patt);
     updateRemoveButton();
     emit changed(true);
   }
@@ -204,11 +225,11 @@ void FileTypeDetails::removeExtension()
 {
   if (extensionLB->currentRow() == -1)
     return;
-  if ( !m_item )
+  if ( !m_mimeTypeData )
     return;
-  QStringList patt = m_item->patterns();
+  QStringList patt = m_mimeTypeData->patterns();
   patt.removeAll(extensionLB->currentItem()->text());
-  m_item->setPatterns(patt);
+  m_mimeTypeData->setPatterns(patt);
   delete extensionLB->takeItem(extensionLB->currentRow());
   updateRemoveButton();
   emit changed(true);
@@ -216,10 +237,10 @@ void FileTypeDetails::removeExtension()
 
 void FileTypeDetails::slotAutoEmbedClicked( int button )
 {
-  if ( !m_item || (button > 2))
+  if ( !m_mimeTypeData || (button > 2))
     return;
 
-  m_item->setAutoEmbed( button );
+  m_mimeTypeData->setAutoEmbed( button );
 
   updateAskSave();
 
@@ -228,18 +249,18 @@ void FileTypeDetails::slotAutoEmbedClicked( int button )
 
 void FileTypeDetails::updateAskSave()
 {
-  if ( !m_item )
+  if ( !m_mimeTypeData )
     return;
 
-  int button = m_item->autoEmbed();
+  int button = m_mimeTypeData->autoEmbed();
   if (button == 2)
   {
-    bool embedParent = TypesListItem::defaultEmbeddingSetting(m_item->majorType());
-    emit embedMajor(m_item->majorType(), embedParent);
+    bool embedParent = MimeTypeData::defaultEmbeddingSetting(m_mimeTypeData->majorType());
+    emit embedMajor(m_mimeTypeData->majorType(), embedParent);
     button = embedParent ? 0 : 1;
   }
 
-  QString mimeType = m_item->name();
+  QString mimeType = m_mimeTypeData->name();
 
   QString dontAskAgainName;
 
@@ -250,7 +271,7 @@ void FileTypeDetails::updateAskSave()
 
   KSharedConfig::Ptr config = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
   bool ask = config->group("Notification Messages").readEntry(dontAskAgainName, QString()).isEmpty();
-  m_item->getAskSave(ask);
+  m_mimeTypeData->getAskSave(ask);
 
   bool neverAsk = false;
 
@@ -285,30 +306,31 @@ void FileTypeDetails::updateAskSave()
 
 void FileTypeDetails::slotAskSaveToggled(bool askSave)
 {
-  if (!m_item)
+  if (!m_mimeTypeData)
     return;
 
-  m_item->setAskSave(askSave);
+  m_mimeTypeData->setAskSave(askSave);
   emit changed(true);
 }
 
-void FileTypeDetails::setTypeItem( TypesListItem * tlitem )
+void FileTypeDetails::setMimeTypeData( MimeTypeData * mimeTypeData, TypesListItem* item )
 {
-  m_item = tlitem;
-  Q_ASSERT(tlitem);
-  iconButton->setIcon(tlitem->icon());
-  description->setText(tlitem->comment());
-  m_rbGroupSettings->setText( i18n("Use settings for '%1' group", tlitem->majorType() ) );
+  m_mimeTypeData = mimeTypeData;
+  m_item = item; // can be 0
+  Q_ASSERT(mimeTypeData);
+  iconButton->setIcon(mimeTypeData->icon());
+  description->setText(mimeTypeData->comment());
+  m_rbGroupSettings->setText( i18n("Use settings for '%1' group", mimeTypeData->majorType() ) );
   extensionLB->clear();
   addExtButton->setEnabled(true);
   removeExtButton->setEnabled(false);
 
-  serviceListWidget->setTypeItem( tlitem );
-  embedServiceListWidget->setTypeItem( tlitem );
-  m_autoEmbedGroup->button(tlitem->autoEmbed())->setChecked(true);
-  m_rbGroupSettings->setEnabled( tlitem->canUseGroupSetting() );
+  serviceListWidget->setMimeTypeData( mimeTypeData );
+  embedServiceListWidget->setMimeTypeData( mimeTypeData );
+  m_autoEmbedGroup->button(mimeTypeData->autoEmbed())->setChecked(true);
+  m_rbGroupSettings->setEnabled( mimeTypeData->canUseGroupSetting() );
 
-  extensionLB->addItems(tlitem->patterns());
+  extensionLB->addItems(mimeTypeData->patterns());
 
   updateAskSave();
 }

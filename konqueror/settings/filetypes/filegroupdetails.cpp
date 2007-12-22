@@ -1,14 +1,16 @@
 /* This file is part of the KDE project
-   Copyright (C) 2000 David Faure <faure@kde.org>
+   Copyright (C) 2000, 2007 David Faure <faure@kde.org>
+   Copyright (C) 2003 Waldo Bastian <bastian@kde.org>
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
-   License version 2 as published by the Free Software Foundation.
+   License version 2 or at your option version 3 as published by
+   the Free Software Foundation.
 
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-    General Public License for more details.
+   General Public License for more details.
 
    You should have received a copy of the GNU General Public License
    along with this program; see the file COPYING.  If not, write to
@@ -16,7 +18,7 @@
    Boston, MA 02110-1301, USA.
 */
 #include "filegroupdetails.h"
-#include "typeslistitem.h"
+#include "mimetypedata.h"
 #include <QtGui/QLayout>
 #include <QtGui/QRadioButton>
 #include <Qt3Support/Q3ButtonGroup>
@@ -51,18 +53,18 @@ FileGroupDetails::FileGroupDetails(QWidget *parent)
   setLayout(secondLayout);
 }
 
-void FileGroupDetails::setTypeItem( TypesListItem * item )
+void FileGroupDetails::setMimeTypeData( MimeTypeData * mimeTypeData )
 {
-  Q_ASSERT( item->isMeta() );
-  m_item = item;
-  m_autoEmbed->setButton( item ? item->autoEmbed() : -1 );
+    Q_ASSERT( mimeTypeData->isMeta() );
+    m_mimeTypeData = mimeTypeData;
+    m_autoEmbed->setButton( m_mimeTypeData->autoEmbed() );
 }
 
 void FileGroupDetails::slotAutoEmbedClicked(int button)
 {
-  if ( !m_item )
+  if ( !m_mimeTypeData )
     return;
-  m_item->setAutoEmbed( button );
+  m_mimeTypeData->setAutoEmbed( button );
   emit changed(true);
 }
 

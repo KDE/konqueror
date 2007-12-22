@@ -41,7 +41,7 @@
 
 // Local
 #include "kserviceselectdlg.h"
-#include "typeslistitem.h"
+#include "mimetypedata.h"
 
 KServiceListItem::KServiceListItem( KService::Ptr pService, int kind )
     : QListWidgetItem(), desktopPath(pService->entryPath())
@@ -65,7 +65,7 @@ bool KServiceListItem::isImmutable()
 KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *name)
   : Q3GroupBox( kind == SERVICELIST_APPLICATIONS ? i18n("Application Preference Order")
                : i18n("Services Preference Order"), parent, name ),
-    m_kind( kind ), m_item( 0L )
+    m_kind( kind ), m_mimeTypeData( 0L )
 {
   QWidget * gb = this;
   QGridLayout * grid = new QGridLayout(gb);
@@ -150,9 +150,9 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *na
   servRemoveButton->setWhatsThis( i18n( "Remove the selected application from the list." ) );
 }
 
-void KServiceListWidget::setTypeItem( TypesListItem * item )
+void KServiceListWidget::setMimeTypeData( MimeTypeData * mimeTypeData )
 {
-  m_item = item;
+  m_mimeTypeData = mimeTypeData;
   if ( servNewButton )
     servNewButton->setEnabled(true);
   // will need a selection
@@ -167,11 +167,11 @@ void KServiceListWidget::setTypeItem( TypesListItem * item )
   servicesLB->clear();
   servicesLB->setEnabled(false);
 
-  if ( item )
+  if ( m_mimeTypeData )
   {
     QStringList services = ( m_kind == SERVICELIST_APPLICATIONS )
-      ? item->appServices()
-      : item->embedServices();
+      ? m_mimeTypeData->appServices()
+      : m_mimeTypeData->embedServices();
 
     if (services.count() == 0) {
       servicesLB->addItem(i18n("None"));
@@ -237,13 +237,13 @@ void KServiceListWidget::demoteService()
 
 void KServiceListWidget::addService()
 {
-  if (!m_item)
+  if (!m_mimeTypeData)
       return;
 
   KService::Ptr service;
   if ( m_kind == SERVICELIST_APPLICATIONS )
   {
-      KOpenWithDialog dlg(m_item->name(), QString(), 0L);
+      KOpenWithDialog dlg(m_mimeTypeData->name(), QString(), 0L);
       dlg.setSaveNewApplications(true);
       if (dlg.exec() != QDialog::Accepted)
           return;
@@ -256,7 +256,7 @@ void KServiceListWidget::addService()
   }
   else
   {
-      KServiceSelectDlg dlg(m_item->name(), QString(), 0L);
+      KServiceSelectDlg dlg(m_mimeTypeData->name(), QString(), 0L);
       if (dlg.exec() != QDialog::Accepted)
           return;
        service = dlg.service();
@@ -289,7 +289,7 @@ void KServiceListWidget::addService()
 
 void KServiceListWidget::editService()
 {
-  if (!m_item)
+  if (!m_mimeTypeData)
       return;
   int selected = servicesLB->currentRow();
   if ( selected >= 0 ) {
@@ -353,14 +353,14 @@ void KServiceListWidget::editService()
 
 void KServiceListWidget::removeService()
 {
-  if (!m_item) return;
+  if (!m_mimeTypeData) return;
 
   int selected = servicesLB->currentRow();
 
   if ( selected >= 0 ) {
     // Check if service is associated with this mimetype or with one of its parents
     KServiceListItem *serviceItem = static_cast<KServiceListItem *>(servicesLB->item(selected));
-    KMimeType::Ptr mimetype = m_item->findImplicitAssociation(serviceItem->desktopPath);
+    KMimeType::Ptr mimetype = m_mimeTypeData->findImplicitAssociation(serviceItem->desktopPath);
     if (serviceItem->isImmutable())
     {
        KMessageBox::sorry(this, i18n("You are not authorized to remove this service."));
@@ -374,7 +374,7 @@ void KServiceListWidget::removeService()
                                      "with the <b>%1</b> (%2) file type and files of type "
                                      "<b>%3</b> (%4) are per definition also of type "
                                      "<b>%5</b>.", mimetype->name(), mimetype->comment(),
-                                     m_item->name(), m_item->comment(), mimetype->name())+
+                                     m_mimeTypeData->name(), m_mimeTypeData->comment(), mimetype->name())+
                                 "<p>"+
                                 i18n("Either select the <b>%1</b> file type to remove the "
                                      "service from there or move the service down "
@@ -401,7 +401,7 @@ void KServiceListWidget::removeService()
 
 void KServiceListWidget::updatePreferredServices()
 {
-  if (!m_item)
+  if (!m_mimeTypeData)
     return;
   QStringList sl;
   unsigned int count = servicesLB->count();
@@ -411,9 +411,9 @@ void KServiceListWidget::updatePreferredServices()
     sl.append( sli->desktopPath );
   }
   if ( m_kind == SERVICELIST_APPLICATIONS )
-    m_item->setAppServices(sl);
+    m_mimeTypeData->setAppServices(sl);
   else
-    m_item->setEmbedServices(sl);
+    m_mimeTypeData->setEmbedServices(sl);
 }
 
 void KServiceListWidget::enableMoveButtons()
