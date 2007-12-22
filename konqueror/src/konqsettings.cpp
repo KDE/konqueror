@@ -26,7 +26,6 @@
 #include <kdesktopfile.h>
 #include <kdebug.h>
 #include <assert.h>
-#include <QFontMetrics>
 #include <kconfiggroup.h>
 
 //static
