@@ -5,7 +5,7 @@
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
-   License version 2 or at your option version 3 as published 
+   License version 2 or at your option version 3 as published
    by the Free Software Foundation.
 
    This program is distributed in the hope that it will be useful,
@@ -25,7 +25,7 @@
 #include <Qt3Support/Q3GroupBox>
 #include <QtGui/QListWidget>
 #include <kservice.h>
-class TypesListItem;
+class MimeTypeData;
 class QPushButton;
 class KService;
 
@@ -51,7 +51,7 @@ public:
   enum { SERVICELIST_APPLICATIONS, SERVICELIST_SERVICES };
   explicit KServiceListWidget(int kind, QWidget *parent = 0, const char *name = 0);
 
-  void setTypeItem( TypesListItem * item );
+  void setMimeTypeData( MimeTypeData * item );
 
 Q_SIGNALS:
   void changed(bool);
@@ -72,7 +72,7 @@ private:
   QListWidget *servicesLB;
   QPushButton *servUpButton, *servDownButton;
   QPushButton *servNewButton, *servEditButton, *servRemoveButton;
-  TypesListItem *m_item;
+  MimeTypeData *m_mimeTypeData;
 };
 
 #endif

@@ -181,7 +181,7 @@ void FileTypesView::readFileTypes()
     typesLV->clear();
     m_majorMap.clear();
     m_itemList.clear();
-    TypesListItem::reset();
+    MimeTypeData::reset();
 
     TypesListItem *groupItem;
     KMimeType::List mimetypes = KMimeType::allMimeTypes();
@@ -216,7 +216,7 @@ void FileTypesView::slotEmbedMajor(const QString &major, bool &embed)
 
     groupItem = mit.value();
 
-    embed = (groupItem->autoEmbed() == 0);
+    embed = (groupItem->mimeTypeData().autoEmbed() == 0);
 }
 
 void FileTypesView::slotFilter(const QString & patternFilter)
@@ -234,10 +234,11 @@ void FileTypesView::slotFilter(const QString & patternFilter)
     // insert all items and their group that match the filter
     Q3PtrListIterator<TypesListItem> it( m_itemList );
     while ( it.current() ) {
+        const MimeTypeData& mimeTypeData = (*it)->mimeTypeData();
 	if ( patternFilter.isEmpty() ||
-	     !((*it)->patterns().filter( patternFilter, Qt::CaseInsensitive )).isEmpty() ) {
+	     !(mimeTypeData.patterns().filter( patternFilter, Qt::CaseInsensitive )).isEmpty() ) {
 
-	    TypesListItem *group = m_majorMap[ (*it)->majorType() ];
+	    TypesListItem *group = m_majorMap[ mimeTypeData.majorType() ];
 	    // QListView makes sure we don't insert a group-item more than once
 	    typesLV->insertItem( group );
 	    group->insertItem( *it );
@@ -309,11 +310,13 @@ void FileTypesView::removeType()
   if ( !current )
       return;
 
+  const MimeTypeData& mimeTypeData = current->mimeTypeData();
+
   // Can't delete groups
-  if ( current->isMeta() )
+  if ( mimeTypeData.isMeta() )
       return;
   // nor essential mimetypes
-  if ( current->isEssential() )
+  if ( mimeTypeData.isEssential() )
       return;
 
   Q3ListViewItem *li = current->itemAbove();
@@ -322,7 +325,7 @@ void FileTypesView::removeType()
   if (!li)
       li = current->parent();
 
-  removedList.append(current->name());
+  removedList.append(mimeTypeData.name());
   current->parent()->takeItem(current);
   m_itemList.removeRef( current );
   setDirty(true);
@@ -349,17 +352,19 @@ void FileTypesView::updateDisplay(Q3ListViewItem *item)
   bool wasDirty = m_dirty;
 
   TypesListItem *tlitem = (TypesListItem *) item;
-  if (tlitem->isMeta()) // is a group
+  MimeTypeData& mimeTypeData = tlitem->mimeTypeData();
+
+  if (mimeTypeData.isMeta()) // is a group
   {
     m_widgetStack->setCurrentWidget( m_groupDetails );
-    m_groupDetails->setTypeItem( tlitem );
+    m_groupDetails->setMimeTypeData( &mimeTypeData );
     m_removeTypeB->setEnabled(false);
   }
   else
   {
     m_widgetStack->setCurrentWidget( m_details );
-    m_details->setTypeItem( tlitem );
-    m_removeTypeB->setEnabled( !tlitem->isEssential() );
+    m_details->setMimeTypeData( &mimeTypeData );
+    m_removeTypeB->setEnabled( !mimeTypeData.isEssential() );
   }
 
   // Updating the display indirectly called change(true)

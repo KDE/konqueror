@@ -1,14 +1,15 @@
 /* This file is part of the KDE project
-   Copyright (C) 2000 David Faure <faure@kde.org>
+   Copyright (C) 2000, 2007 David Faure <faure@kde.org>
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
-   License version 2 as published by the Free Software Foundation.
+   License version 2 or at your option version 3 as published by
+   the Free Software Foundation.
 
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-    General Public License for more details.
+   General Public License for more details.
 
    You should have received a copy of the GNU General Public License
    along with this program; see the file COPYING.  If not, write to
@@ -44,15 +45,6 @@
 #include <X11/Xutil.h>
 #endif
 
-FileTypeDialog::FileTypeDialog( KMimeType::Ptr mime )
-  : KDialog( 0 )
-{
-  setButtons( Cancel | Apply | Ok );
-  showButtonSeparator( false );
-
-  init( mime, false );
-}
-
 FileTypeDialog::FileTypeDialog( KMimeType::Ptr mime, bool newItem )
   : KDialog( 0 )
 {
@@ -65,10 +57,8 @@ FileTypeDialog::FileTypeDialog( KMimeType::Ptr mime, bool newItem )
 void FileTypeDialog::init( KMimeType::Ptr mime, bool newItem )
 {
   m_details = new FileTypeDetails( this );
-  Q3ListView * dummyListView = new Q3ListView( m_details );
-  dummyListView->hide();
-  m_item = new TypesListItem( dummyListView, mime, newItem );
-  m_details->setTypeItem( m_item );
+  m_mimeTypeData = new MimeTypeData( mime, newItem );
+  m_details->setMimeTypeData( m_mimeTypeData );
 
   // This code is very similar to kcdialog.cpp
   setMainWidget( m_details );
@@ -84,8 +74,8 @@ void FileTypeDialog::init( KMimeType::Ptr mime, bool newItem )
 
 void FileTypeDialog::save()
 {
-  if (m_item->isDirty()) {
-    m_item->sync();
+  if (m_mimeTypeData->isDirty()) {
+    m_mimeTypeData->sync();
     KBuildSycocaProgressDialog::rebuildKSycoca(this);
   }
 }
@@ -112,7 +102,7 @@ void FileTypeDialog::slotDatabaseChanged()
 {
   if ( KSycoca::self()->isChanged( "mime" ) )
   {
-      m_item->refresh();
+      m_mimeTypeData->refresh();
   }
 }
 
