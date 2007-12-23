@@ -34,7 +34,7 @@
 using namespace KDESu;
 
 KShellCommandExecutor::KShellCommandExecutor(const QString& command, QWidget* parent)
-:Q3TextView(parent)
+:QTextEdit(parent)
 ,m_shellProcess(0)
 ,m_command(command)
 ,m_readNotifier(0)
