@@ -104,8 +104,6 @@ void CacheConfigModule::defaults()
   ui.cbUseCache->setChecked( true );
   ui.rbVerifyCache->setChecked( true );
   ui.sbMaxCacheSize->setValue( DEFAULT_MAX_CACHE_SIZE );
-
-  emit changed( true );
 }
 
 QString CacheConfigModule::quickHelp() const
