@@ -71,14 +71,10 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   hBox->addWidget(gb);
 
   QGridLayout *grid = new QGridLayout(gb);
-  grid->addItem(new QSpacerItem(0,fontMetrics().lineSpacing()), 0, 0);
 
   extensionLB = new QListWidget(gb);
   connect(extensionLB, SIGNAL(itemSelectionChanged()), SLOT(enableExtButtons()));
-  grid->addWidget(extensionLB, 1, 0, 2, 1);
-  grid->setRowStretch(0, 0);
-  grid->setRowStretch(1, 1);
-  grid->setRowStretch(2, 0);
+  grid->addWidget(extensionLB, 0, 0, 3, 1);
 
   extensionLB->setWhatsThis( i18n("This box contains a list of patterns that can be"
     " used to identify files of the selected type. For example, the pattern *.txt is"
@@ -89,7 +85,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   addExtButton->setEnabled(false);
   connect(addExtButton, SIGNAL(clicked()),
           this, SLOT(addExtension()));
-  grid->addWidget(addExtButton, 1, 1);
+  grid->addWidget(addExtButton, 0, 1);
 
   addExtButton->setWhatsThis( i18n("Add a new pattern for the selected file type.") );
 
@@ -97,9 +93,11 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   removeExtButton->setEnabled(false);
   connect(removeExtButton, SIGNAL(clicked()),
           this, SLOT(removeExtension()));
-  grid->addWidget(removeExtButton, 2, 1);
+  grid->addWidget(removeExtButton, 1, 1);
 
   removeExtButton->setWhatsThis( i18n("Remove the selected filename pattern.") );
+
+  grid->addItem(new QSpacerItem(0, 0, QSizePolicy::Fixed, QSizePolicy::Expanding), 2, 1);
 
   gb = new QGroupBox(i18n("Description"), firstWidget);
   firstLayout->addWidget(gb);
@@ -130,7 +128,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
 
   m_autoEmbedBox = new QGroupBox( i18n("Left Click Action"), secondWidget );
   secondLayout->setSpacing( KDialog::spacingHint() );
-  secondLayout->addWidget( m_autoEmbedBox, 1 );
+  secondLayout->addWidget( m_autoEmbedBox );
 
   m_autoEmbedBox->setSizePolicy( QSizePolicy::Preferred, QSizePolicy::Fixed );
 
@@ -164,12 +162,10 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
     " Konqueror will behave according to the settings of the group G this type belongs to,"
     " for instance 'image' if the current file type is image/png.") );
 
-  secondLayout->addSpacing(10);
-
   embedServiceListWidget = new KServiceListWidget( KServiceListWidget::SERVICELIST_SERVICES, secondWidget );
   embedServiceListWidget->setMinimumHeight( serviceListWidget->sizeHint().height() );
   connect( embedServiceListWidget, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)));
-  secondLayout->addWidget(embedServiceListWidget, 3);
+  secondLayout->addWidget(embedServiceListWidget);
 
   addTab( firstWidget, i18n("&General") );
   addTab( secondWidget, i18n("&Embedding") );
