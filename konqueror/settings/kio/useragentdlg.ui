@@ -34,7 +34,7 @@ By default, only minimal identification information is sent to remote sites. The
     </widget>
    </item>
    <item>
-    <widget class="Q3ButtonGroup" name="defaultIdGroupBox" >
+    <widget class="QGroupBox" name="defaultIdGroupBox" >
      <property name="enabled" >
       <bool>true</bool>
      </property>
@@ -251,14 +251,6 @@ By default, only minimal identification information is sent to remote sites. The
  <layoutdefault spacing="6" margin="11" />
  <layoutfunction spacing="KDialog::spacingHint" margin="KDialog::marginHint" />
  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
- <customwidgets>
-  <customwidget>
-   <class>Q3ButtonGroup</class>
-   <extends>Q3GroupBox</extends>
-   <header>Qt3Support/Q3ButtonGroup</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
  <includes>
   <include location="local" >klineedit.h</include>
   <include location="local" >k3listview.h</include>

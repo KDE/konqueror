@@ -331,7 +331,7 @@ void KCookiesPolicies::load()
            SLOT( configChanged() ) );
 
   // Connect the preference check boxes...
-  connect ( dlg->cbRejectCrossDomainCookies, SIGNAL(clicked()),
+  connect ( dlg->cbRejectCrossDomainCookies, SIGNAL(toggled(bool)),
             SLOT(configChanged()));
   connect ( dlg->cbAutoAcceptSessionCookies, SIGNAL(toggled(bool)),
             SLOT(configChanged()));
@@ -343,9 +343,12 @@ void KCookiesPolicies::load()
   connect ( dlg->cbIgnoreCookieExpirationDate, SIGNAL(toggled(bool)),
             SLOT(ignoreCookieExpirationDate(bool)));
 
-  // Connect the default cookie policy radio buttons...
-  connect(dlg->bgDefault, SIGNAL(clicked(int)), SLOT(configChanged()));
-
+  connect ( dlg->rbPolicyAsk, SIGNAL(toggled(bool)),
+            SLOT(configChanged()));
+  connect ( dlg->rbPolicyAccept, SIGNAL(toggled(bool)),
+            SLOT(configChanged()));
+  connect ( dlg->rbPolicyReject, SIGNAL(toggled(bool)),
+            SLOT(configChanged()));
   // Connect signals from the domain specific policy listview.
   connect( dlg->lvDomainPolicy, SIGNAL(selectionChanged()),
            SLOT(selectionChanged()) );

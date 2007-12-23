@@ -68,7 +68,7 @@ Treat all cookies as session cookies. Session cookies are small pieces of data t
     </widget>
    </item>
    <item>
-    <widget class="Q3ButtonGroup" name="bgDefault" >
+    <widget class="QGroupBox" name="bgDefault" >
      <property name="whatsThis" >
       <string>&lt;qt>
 Determines how cookies received from a remote machine will be handled: 
@@ -82,9 +82,6 @@ Determines how cookies received from a remote machine will be handled:
      </property>
      <property name="title" >
       <string>Default Policy</string>
-     </property>
-     <property name="exclusive" >
-      <bool>true</bool>
      </property>
      <layout class="QVBoxLayout" >
       <item>
