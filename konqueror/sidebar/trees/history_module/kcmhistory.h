@@ -32,6 +32,7 @@ class KonqSidebarHistoryDlg : public QWidget, public Ui::KonqSidebarHistoryDlg
 public:
   KonqSidebarHistoryDlg( QWidget *parent ) : QWidget( parent ) {
     setupUi( this );
+    layout()->setMargin( 0 );
   }
 };
 
