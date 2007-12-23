@@ -111,8 +111,10 @@ KURIFilterModule::KURIFilterModule(QWidget *parent, const QVariantList &)
     else if (modules.count() == 1)
     {
         m_widget = modules.first();
-        // Huh? A negative margin?
-        //        layout->setMargin(-KDialog::marginHint());
+        if (m_widget->layout())
+        {
+            m_widget->layout()->setMargin(0);
+        }
     }
 
     if (m_widget) {
