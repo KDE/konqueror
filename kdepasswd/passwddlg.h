@@ -1,13 +1,11 @@
 /* vi: ts=8 sts=4 sw=4
  *
- * $Id$
- *
  * This file is part of the KDE project, module kdesu.
  * Copyright (C) 2000 Geert Jansen <jansen@kde.org>
  */
 
-#ifndef __PasswdDlg_h_Incluced__
-#define __PasswdDlg_h_Incluced__
+#ifndef PASSWDDLG_H
+#define PASSWDDLG_H
 
 #include <kpassworddialog.h>
 #include <knewpassworddialog.h>
@@ -50,4 +48,4 @@ private:
 
 
 
-#endif // __PasswdDlg_h_Incluced__
+#endif // PASSWDDLG_H

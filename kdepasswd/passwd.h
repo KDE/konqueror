@@ -1,13 +1,11 @@
 /* vi: ts=8 sts=4 sw=4
  *
- * $Id$
- *
  * This file is part of the KDE project, module kdesu.
  * Copyright (C) 2000 Geert Jansen <jansen@kde.org>
  */
 
-#ifndef __Passwd_h_Included__
-#define __Passwd_h_Included__
+#ifndef PASSWD_H
+#define PASSWD_H
 
 #include <QtCore/QByteRef>
 #include <kdesu/process.h>
@@ -40,4 +38,4 @@ private:
 };
 
 
-#endif // __Passwd_h_Included__
+#endif // PASSWD_H

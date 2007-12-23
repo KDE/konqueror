@@ -1,7 +1,5 @@
 /* vi: ts=8 sts=4 sw=4
  *
- * $Id$
- *
  * This file is part of the KDE project, module kdesu.
  * Copyright (C) 2000 Geert Jansen <jansen@kde.org>
  */
@@ -25,7 +23,7 @@ int main(int argc, char **argv)
             KDE_VERSION_STRING, ki18n("Changes a UNIX password."),
             KAboutData::License_Artistic, ki18n("Copyright (c) 2000 Geert Jansen"));
     aboutData.addAuthor(ki18n("Geert Jansen"), ki18n("Maintainer"),
-            "jansen@kde.org", "http://www.stack.nl/~geertj/");
+            "jansen@kde.org");
  
     KCmdLineArgs::init(argc, argv, &aboutData);
 

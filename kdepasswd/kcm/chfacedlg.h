@@ -32,7 +32,6 @@
 #include <QtGui/QPixmap>
 
 #include <KDialog>
-#include <K3IconView> // declaration below
 
 #include "ui_faceDlg.h"
 
@@ -45,22 +44,20 @@ public:
 
 
   explicit ChFaceDlg(const QString& picsdirs, 
-                     QWidget *parent=0, 
-                     const char *name=0, 
-                     bool modal=true);
+                     QWidget *parent=0);
 
 
   QPixmap getFaceImage() const
   {
     if(ui.m_FacesWidget->currentItem())
-      return *(ui.m_FacesWidget->currentItem()->pixmap());
+      return ui.m_FacesWidget->currentItem()->icon().pixmap(64);
     else
       return QPixmap();
   }
 
 private Q_SLOTS:
-  void slotFaceWidgetSelectionChanged( Q3IconViewItem *item )
-  	{ enableButton( Ok, !item->pixmap()->isNull() ); }
+  void slotFaceWidgetSelectionChanged( QListWidgetItem *item )
+  	{ enableButton( Ok, !item->icon().isNull() ); }
 
   void slotGetCustomImage();
   //void slotSaveCustomImage();

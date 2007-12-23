@@ -28,9 +28,7 @@
 #include <QtCore/QEvent>
 #include <QtGui/QPixmap>
 #include <QtCore/QStringList>
-//Added by qt3to4:
-#include <QtGui/QKeyEvent>
-#include <QtGui/QBoxLayout>
+#include <QtGui/QDragEnterEvent>
 
 #include <kpushbutton.h>
 #include <kguiitem.h>
@@ -45,7 +43,6 @@
 #include <QProcess>
 #include <kio/netaccess.h>
 #include <kurl.h>
-#include <k3urldrag.h>
 
 #include "settings.h"
 #include "chfnprocess.h"
@@ -69,7 +66,7 @@ KCMUserAccount::KCMUserAccount( QWidget *parent, const QVariantList &)
 
 	connect( _mw->btnChangeFace, SIGNAL(clicked()), SLOT(slotFaceButtonClicked()));
 	connect( _mw->btnChangePassword, SIGNAL(clicked()), SLOT(slotChangePassword()));
-	_mw->btnChangePassword->setGuiItem( KGuiItem( i18n("Change &Password..."), "password" ));
+	_mw->btnChangePassword->setGuiItem( KGuiItem( i18n("Change &Password..."), "preferences-desktop-user-password" ));
 
 	connect( _mw->leRealname, SIGNAL(textChanged(const QString&)), SLOT(changed()));
 	connect( _mw->leOrganization, SIGNAL(textChanged(const QString&)), SLOT(changed()));
@@ -291,7 +288,7 @@ bool KCMUserAccount::eventFilter(QObject *, QEvent *e)
 	if (e->type() == QEvent::DragEnter)
 		{
 		QDragEnterEvent *ee = (QDragEnterEvent *) e;
-    if ( K3URLDrag::canDecode( ee ) )
+    if (!KUrl::List::fromMimeData( ee->mimeData() ).isEmpty())
       ee->accept();
     else
       ee->ignore();
@@ -323,9 +320,8 @@ bool KCMUserAccount::eventFilter(QObject *, QEvent *e)
 
 inline KUrl *KCMUserAccount::decodeImgDrop(QDropEvent *e, QWidget *wdg)
 {
-  KUrl::List uris;
-
-  if (K3URLDrag::decode(e, uris) && (uris.count() > 0))
+  KUrl::List uris = KUrl::List::fromMimeData(e->mimeData());
+  if (!uris.isEmpty())
   {
     KUrl *url = new KUrl(uris.first());
 

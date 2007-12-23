@@ -26,12 +26,18 @@
       </widget>
      </item>
      <item>
-      <widget class="Q3IconView" name="m_FacesWidget" >
-       <property name="resizeMode" >
-        <enum>Q3IconView::Adjust</enum>
+      <widget class="QListWidget" name="m_FacesWidget" >
+       <property name="iconSize" >
+        <size>
+         <width>64</width>
+         <height>64</height>
+        </size>
        </property>
-       <property name="itemsMovable" >
-        <bool>false</bool>
+       <property name="resizeMode" >
+        <enum>QListView::Adjust</enum>
+       </property>
+       <property name="viewMode" >
+        <enum>QListView::IconMode</enum>
        </property>
       </widget>
      </item>
@@ -63,13 +69,6 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>Q3IconView</class>
-   <extends>Q3Frame</extends>
-   <header>q3iconview.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

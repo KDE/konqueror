@@ -34,12 +34,9 @@
 #include <QtGui/QPushButton>
 #include <QtCore/QDir>
 #include <QtGui/QCheckBox>
-//Added by qt3to4:
-#include <QtGui/QBoxLayout>
 
 #include <klocale.h>
 #include <kfiledialog.h>
-#include <k3iconview.h>
 #include <kimagefilepreview.h>
 #include <kimageio.h>
 #include <kmessagebox.h>
@@ -53,11 +50,9 @@
 /**
  * TODO: It would be nice if the widget were in a .ui
  */
-ChFaceDlg::ChFaceDlg(const QString& picsdir, QWidget *parent, const char *name, bool modal)
+ChFaceDlg::ChFaceDlg(const QString& picsdir, QWidget *parent)
   : KDialog( parent )
 {
-  setObjectName( name );
-  setModal( modal );
   setCaption( i18n("Change your Face") );
   setButtons( Ok|Cancel );
   setDefaultButton( Ok );
@@ -68,9 +63,9 @@ ChFaceDlg::ChFaceDlg(const QString& picsdir, QWidget *parent, const char *name, 
 
   setMainWidget(faceDlg);
 
-  connect( ui.m_FacesWidget, SIGNAL( selectionChanged( Q3IconViewItem * ) ), SLOT( slotFaceWidgetSelectionChanged( Q3IconViewItem * ) ) );
+  connect( ui.m_FacesWidget, SIGNAL( currentItemChanged( QListWidgetItem *, QListWidgetItem * ) ), SLOT( slotFaceWidgetSelectionChanged( QListWidgetItem * ) ) );
 
-  connect( ui.m_FacesWidget, SIGNAL( doubleClicked( Q3IconViewItem *, const QPoint & ) ), SLOT(accept()) );
+  connect( ui.m_FacesWidget, SIGNAL( doubleClicked( const QModelIndex & ) ), SLOT(accept()) );
   connect( this, SIGNAL(okClicked()), this, SLOT(accept()));
 
   connect( ui.browseBtn, SIGNAL( clicked() ), SLOT( slotGetCustomImage() ) );
@@ -87,16 +82,17 @@ ChFaceDlg::ChFaceDlg(const QString& picsdir, QWidget *parent, const char *name, 
   {
     QStringList picslist = facesDir.entryList( QDir::Files );
     for ( QStringList::Iterator it = picslist.begin(); it != picslist.end(); ++it )
-      new Q3IconViewItem( ui.m_FacesWidget, (*it).section(".",0,0), QPixmap( picsdir + *it ) );
+      new QListWidgetItem( QIcon( picsdir + *it ), (*it).section(".",0,0), ui.m_FacesWidget );
   }
   facesDir.setPath( KCFGUserAccount::userFaceDir() );
   if ( facesDir.exists() )
   {
     QStringList picslist = facesDir.entryList( QDir::Files );
     for ( QStringList::Iterator it = picslist.begin(); it != picslist.end(); ++it )
-      new Q3IconViewItem( ui.m_FacesWidget, '/'+(*it) == KCFGUserAccount::customFaceFile() ? 
-		      i18n("(Custom)") : (*it).section(".",0,0),
-                      QPixmap( KCFGUserAccount::userFaceDir() + *it ) );
+      new QListWidgetItem( QIcon( KCFGUserAccount::userFaceDir() + *it ),
+                           '/'+(*it) == KCFGUserAccount::customFaceFile() ? 
+                           i18n("(Custom)") : (*it).section(".",0,0),
+                           ui.m_FacesWidget );
   }
 
 
@@ -136,9 +132,8 @@ void ChFaceDlg::addCustomPixmap( const QString &imPath, bool saveCopy )
 #endif
   }
 
-  Q3IconViewItem* newface = new Q3IconViewItem( ui.m_FacesWidget, QFileInfo(imPath).fileName().section(".",0,0), QPixmap::fromImage(pix) );
-  newface->setKey( KCFGUserAccount::customKey() );// Add custom items to end
-  ui.m_FacesWidget->ensureItemVisible( newface );
+  QListWidgetItem* newface = new QListWidgetItem( QIcon(QPixmap::fromImage(pix)), QFileInfo(imPath).fileName().section(".",0,0), ui.m_FacesWidget );
+  ui.m_FacesWidget->scrollToItem( newface );
   ui.m_FacesWidget->setCurrentItem( newface );
 }
 
