@@ -1,4 +1,3 @@
-#include <kmimetype.h>
 /* This file is part of the KDE project
    Copyright (C) 2003 Waldo Bastian <bastian@kde.org>
    Copyright (C) 2003, 2007 David Faure <faure@kde.org>
@@ -21,6 +20,8 @@
 
 #ifndef MIMETYPEDATA_H
 #define MIMETYPEDATA_H
+
+#include <kmimetype.h>
 
 /**
  * This is a non-gui (data) class, that represents a mimetype.
@@ -59,8 +60,11 @@ public:
     void setAppServices(const QStringList &dsl) { m_appServices = dsl; }
     QStringList embedServices() const;
     void setEmbedServices(const QStringList &dsl) { m_embedServices = dsl; }
-    int autoEmbed() const { return m_autoEmbed; }
-    void setAutoEmbed( int a ) { m_autoEmbed = a; }
+
+    enum AutoEmbed { Yes = 0, No = 1, UseGroupSetting = 2 };
+    AutoEmbed autoEmbed() const { return m_autoEmbed; }
+    void setAutoEmbed( AutoEmbed a ) { m_autoEmbed = a; }
+
     const KMimeType::Ptr& mimeType() const { return m_mimetype; }
     bool canUseGroupSetting() const;
 
@@ -70,7 +74,6 @@ public:
     // Whether the given service lists this mimetype explicitly
     KMimeType::Ptr findImplicitAssociation(const QString &desktop);
 
-    bool isMimeTypeDirty() const; // whether the mimetype .desktop file needs saving
     bool isDirty() const;
     void sync();
     void refresh(); // update m_mimetype from ksycoca when Apply is pressed
@@ -79,6 +82,7 @@ public:
     static void reset();
 
 private:
+    bool isMimeTypeDirty() const; // whether the mimetype .desktop file needs saving
     void getServiceOffers(QStringList& appServices, QStringList& embedServices) const;
     void getMyServiceOffers() const;
     void saveServices( KConfig & profile, const QStringList& services, const QString & servicetype2 );
@@ -86,7 +90,7 @@ private:
     KMimeType::Ptr m_mimetype; // 0 if this is data for a mimetype group (m_isGroup==true)
     unsigned int groupCount:16; // shared between saveServices and sync
     unsigned int m_askSave:3; // 0 yes, 1 no, 2 default       -- TODO enum
-    unsigned int m_autoEmbed:3; // 0 yes, 1 no, 2 use group setting -- TODO enum
+    AutoEmbed m_autoEmbed:3;
     bool m_bNewItem:1;
     mutable bool m_bFullInit:1; // lazy init of m_appServices and m_embedServices
     bool m_isGroup:1;

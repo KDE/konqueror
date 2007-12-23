@@ -19,6 +19,9 @@
 */
 
 #include "mimetypedata.h"
+#include <QFile>
+#include <kstandarddirs.h>
+#include <QXmlStreamWriter>
 #include <kdebug.h>
 #include <kservice.h>
 #include <ksharedconfig.h>
@@ -29,15 +32,16 @@
 typedef QMap< QString, QStringList > ChangedServices;
 K_GLOBAL_STATIC(ChangedServices, s_changedServices)
 
-static int readAutoEmbed( KMimeType::Ptr mimetype )
+static MimeTypeData::AutoEmbed readAutoEmbed( KMimeType::Ptr mimetype )
 {
+    // TODO store this somewhere else!
     const QVariant v = mimetype->property( "X-KDE-AutoEmbed" );
     if ( v.isValid() )
-        return (v.toBool() ? 0 : 1);
+        return (v.toBool() ? MimeTypeData::Yes : MimeTypeData::No);
     else if ( !mimetype->property( "X-KDE-LocalProtocol" ).toString().isEmpty() )
-        return 0; // embed by default for zip, tar etc.
+        return MimeTypeData::Yes; // embed by default for zip, tar etc.
     else
-        return 2;
+        return MimeTypeData::UseGroupSetting;
 }
 
 MimeTypeData::MimeTypeData(const QString& major)
@@ -49,12 +53,12 @@ MimeTypeData::MimeTypeData(const QString& major)
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
     bool defaultValue = defaultEmbeddingSetting( major );
-    m_autoEmbed = config->group("EmbedSettings").readEntry( QLatin1String("embed-")+m_major, defaultValue ) ? 0 : 1;
+    m_autoEmbed = config->group("EmbedSettings").readEntry( QLatin1String("embed-")+m_major, defaultValue ) ? Yes : No;
 }
 
 MimeTypeData::MimeTypeData(const KMimeType::Ptr mime, bool newItem)
     : m_mimetype(mime),
-      m_askSave(2),
+      m_askSave(2), // TODO: the code for initializing this is missing. FileTypeDetails initializes the checkbox instead...
       m_bNewItem(newItem),
       m_isGroup(false)
 {
@@ -75,8 +79,8 @@ MimeTypeData::MimeTypeData(const KMimeType::Ptr mime, bool newItem)
 
 bool MimeTypeData::defaultEmbeddingSetting( const QString& major )
 {
-  // embedding is false by default except for image/*
-  return ( major=="image" );
+    // embedding is false by default except for image/*
+    return ( major=="image" );
 }
 
 bool MimeTypeData::isEssential() const
@@ -167,41 +171,39 @@ bool MimeTypeData::isMimeTypeDirty() const
     }
 
     if (m_mimetype->patterns() != m_patterns) {
-        kDebug() << "Mimetype Patterns Dirty: old=" << m_mimetype->patterns()
-                 << "m_patterns=" << m_patterns;
+        //kDebug() << "Mimetype Patterns Dirty: old=" << m_mimetype->patterns()
+        //         << "m_patterns=" << m_patterns;
         return true;
     }
 
-    if ( readAutoEmbed( m_mimetype ) != (int)m_autoEmbed )
+    if ( readAutoEmbed( m_mimetype ) != m_autoEmbed )
         return true;
     return false;
 }
 
 bool MimeTypeData::isDirty() const
 {
-    if ( !m_bFullInit) {
-        return false;
-    }
-
     if ( m_bNewItem ) {
         kDebug() << "New item, need to save it";
         return true;
     }
 
     if ( !m_isGroup ) {
-        QStringList oldAppServices;
-        QStringList oldEmbedServices;
-        getServiceOffers( oldAppServices, oldEmbedServices );
+        if (m_bFullInit) {
+            QStringList oldAppServices;
+            QStringList oldEmbedServices;
+            getServiceOffers( oldAppServices, oldEmbedServices );
 
-        if (oldAppServices != m_appServices) {
-            kDebug() << "App Services Dirty: old=" << oldAppServices
-                     << " m_appServices=" << m_appServices;
-            return true;
-        }
-        if (oldEmbedServices != m_embedServices) {
-            kDebug() << "Embed Services Dirty: old=" << oldEmbedServices
-                     << " m_embedServices=" << m_embedServices;
-            return true;
+            if (oldAppServices != m_appServices) {
+                kDebug() << "App Services Dirty: old=" << oldAppServices
+                         << " m_appServices=" << m_appServices;
+                return true;
+            }
+            if (oldEmbedServices != m_embedServices) {
+                kDebug() << "Embed Services Dirty: old=" << oldEmbedServices
+                         << " m_embedServices=" << m_embedServices;
+                return true;
+            }
         }
         if (isMimeTypeDirty())
             return true;
@@ -210,7 +212,7 @@ bool MimeTypeData::isDirty() const
     {
         KSharedConfig::Ptr config = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
         bool defaultValue = defaultEmbeddingSetting(m_major);
-        unsigned int oldAutoEmbed = config->group("EmbedSettings").readEntry( QLatin1String("embed-")+m_major, defaultValue ) ? 0 : 1;
+        AutoEmbed oldAutoEmbed = config->group("EmbedSettings").readEntry( QLatin1String("embed-")+m_major, defaultValue ) ? Yes : No;
         if ( m_autoEmbed != oldAutoEmbed )
             return true;
     }
@@ -224,10 +226,9 @@ bool MimeTypeData::isDirty() const
 
 void MimeTypeData::sync()
 {
-    Q_ASSERT(m_bFullInit);
     if (m_isGroup) {
         KSharedConfig::Ptr config = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
-        config->group("EmbedSettings").writeEntry( QLatin1String("embed-")+m_major, m_autoEmbed == 0 );
+        config->group("EmbedSettings").writeEntry( QLatin1String("embed-")+m_major, m_autoEmbed == Yes );
         return;
     }
 
@@ -246,25 +247,53 @@ void MimeTypeData::sync()
     }
 
     if (isMimeTypeDirty()) {
-        // We must use KConfig otherwise config.deleteEntry doesn't
-        // properly cancel out settings already present in system files.
-        KDesktopFile config( "mime", m_mimetype->entryPath() );
-        KConfigGroup cg = config.desktopGroup();
+        // XDG shared mime: we must write into a <kdehome>/share/mime/packages/ file...
+        // To simplify our job, let's use one "input" file per mimetype, in the user's dir.
+        // TODO this writes into $HOME/.local/share/mime which makes the unit test mess up the user's configuration... can we avoid that? is $KDEHOME/share/mime available too?
+        const QString packageFileName = KStandardDirs::locateLocal( "xdgdata-mime", "packages/" + m_major + '-' + m_minor + ".xml" );
+        kDebug() << "writing" << packageFileName;
+        QFile packageFile(packageFileName);
+        if (!packageFile.open(QIODevice::WriteOnly)) {
+            kError() << "Couldn't open" << packageFileName << "for writing";
+            return;
+        }
+        QXmlStreamWriter writer(&packageFile);
+        writer.setAutoFormatting(true);
+        writer.writeStartDocument();
+        const QString nsUri = "http://www.freedesktop.org/standards/shared-mime-info";
+        writer.writeDefaultNamespace(nsUri);
+        writer.writeStartElement("mime-info");
+        writer.writeStartElement(nsUri, "mime-type");
+        writer.writeAttribute("type", name());
 
-        cg.writeEntry("Type", "MimeTypeData");
-        cg.writeEntry("MimeTypeData", name());
-        cg.writeEntry("Icon", m_icon);
-        cg.writeXdgListEntry("Patterns", m_patterns);
-        cg.writeEntry("Comment", m_comment);
-        cg.writeEntry("Hidden", false);
+        writer.writeStartElement(nsUri, "comment");
+        writer.writeCharacters(m_comment);
+        writer.writeEndElement(); // comment
 
-        if ( m_autoEmbed == 2 )
-            cg.deleteEntry( QLatin1String("X-KDE-AutoEmbed"), false );
-        else
-            cg.writeEntry( QLatin1String("X-KDE-AutoEmbed"), m_autoEmbed == 0 );
+        // TODO: we cannot write out the icon -> remove GUI for modifying the icon!
+        //cg.writeEntry("Icon", m_icon);
+
+        foreach(const QString& pattern, m_patterns) {
+            writer.writeStartElement(nsUri, "glob");
+            writer.writeAttribute("pattern", pattern);
+            writer.writeEndElement(); // glob
+        }
+
+        // TODO store this somewhere else!
+        //if ( m_autoEmbed == UseGroupSetting )
+        //    cg.deleteEntry( QLatin1String("X-KDE-AutoEmbed"), false );
+        //else
+        //    cg.writeEntry( QLatin1String("X-KDE-AutoEmbed"), m_autoEmbed == Yes );
+
+        writer.writeEndElement(); // mime-info
+        writer.writeEndElement(); // mime-type
+        writer.writeEndDocument();
 
         m_bNewItem = false;
     }
+
+    if (!m_bFullInit)
+        return;
 
     KConfig profile("profilerc", KConfig::NoGlobals);
 
@@ -337,7 +366,7 @@ void MimeTypeData::sync()
 
                 KConfigGroup group = desktop->desktopGroup();
                 mimeTypeList = s_changedServices->contains( pService->entryPath())
-                               ? (*s_changedServices)[ pService->entryPath() ] : group.readXdgListEntry("MimeTypeData");
+                               ? (*s_changedServices)[ pService->entryPath() ] : group.readXdgListEntry("MimeType");
 
                 // Remove entry and the number that might follow.
                 for(int i=0;(i = mimeTypeList.indexOf(name())) != -1;)
@@ -354,7 +383,7 @@ void MimeTypeData::sync()
                     }
                 }
 
-                group.writeXdgListEntry("MimeTypeData", mimeTypeList);
+                group.writeXdgListEntry("MimeType", mimeTypeList);
 
                 // if two or more types have been modified, and they use the same service,
                 // accumulate the changes
@@ -457,10 +486,10 @@ void MimeTypeData::saveServices( KConfig & profile, const QStringList& services,
 
             KConfigGroup group = desktop->desktopGroup();
             mimeTypeList = s_changedServices->contains( pService->entryPath())
-                           ? (*s_changedServices)[ pService->entryPath() ] : group.readXdgListEntry("MimeTypeData");
+                           ? (*s_changedServices)[ pService->entryPath() ] : group.readXdgListEntry("MimeType");
             mimeTypeList.append(name());
 
-            group.writeXdgListEntry("MimeTypeData", mimeTypeList);
+            group.writeXdgListEntry("MimeType", mimeTypeList);
             desktop->sync();
             delete desktop;
 
