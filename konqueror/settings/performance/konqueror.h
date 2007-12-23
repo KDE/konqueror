@@ -29,6 +29,7 @@ class Konqueror_ui : public QWidget, public Ui::Konqueror_ui
 public:
   Konqueror_ui( QWidget *parent ) : QWidget( parent ) {
     setupUi( this );
+    layout()->setMargin( 0 );
   }
 };
 
