@@ -30,6 +30,7 @@ FileGroupDetails::FileGroupDetails(QWidget *parent)
     : QWidget( parent )
 {
   QVBoxLayout *secondLayout = new QVBoxLayout;
+  secondLayout->setMargin(0);
   secondLayout->setSpacing(KDialog::spacingHint());
 
   m_autoEmbed = new Q3ButtonGroup( i18n("Left Click Action"));
