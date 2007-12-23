@@ -65,7 +65,7 @@ void FileGroupDetails::slotAutoEmbedClicked(int button)
 {
   if ( !m_mimeTypeData )
     return;
-  m_mimeTypeData->setAutoEmbed( button );
+  m_mimeTypeData->setAutoEmbed( (MimeTypeData::AutoEmbed)button );
   emit changed(true);
 }
 

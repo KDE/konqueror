@@ -236,7 +236,7 @@ void FileTypeDetails::slotAutoEmbedClicked( int button )
   if ( !m_mimeTypeData || (button > 2))
     return;
 
-  m_mimeTypeData->setAutoEmbed( button );
+  m_mimeTypeData->setAutoEmbed( (MimeTypeData::AutoEmbed) button );
 
   updateAskSave();
 
@@ -245,68 +245,69 @@ void FileTypeDetails::slotAutoEmbedClicked( int button )
 
 void FileTypeDetails::updateAskSave()
 {
-  if ( !m_mimeTypeData )
-    return;
+    if ( !m_mimeTypeData )
+        return;
 
-  int button = m_mimeTypeData->autoEmbed();
-  if (button == 2)
-  {
-    bool embedParent = MimeTypeData::defaultEmbeddingSetting(m_mimeTypeData->majorType());
-    emit embedMajor(m_mimeTypeData->majorType(), embedParent);
-    button = embedParent ? 0 : 1;
-  }
-
-  QString mimeType = m_mimeTypeData->name();
-
-  QString dontAskAgainName;
-
-  if (button == 0) // Embedded
-    dontAskAgainName = "askEmbedOrSave"+mimeType;
-  else
-    dontAskAgainName = "askSave"+mimeType;
-
-  KSharedConfig::Ptr config = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
-  bool ask = config->group("Notification Messages").readEntry(dontAskAgainName, QString()).isEmpty();
-  m_mimeTypeData->getAskSave(ask);
-
-  bool neverAsk = false;
-
-  if (button == 0)
-  {
-    KMimeType::Ptr mime = KMimeType::mimeType( mimeType );
-    // Don't ask for:
-    // - html (even new tabs would ask, due to about:blank!)
-    // - dirs obviously (though not common over HTTP :),
-    // - images (reasoning: no need to save, most of the time, because fast to see)
-    // e.g. postscript is different, because takes longer to read, so
-    // it's more likely that the user might want to save it.
-    // - multipart/* ("server push", see kmultipart)
-    // - other strange 'internal' mimetypes like print/manager...
-    if ( mime->is( "text/html" ) ||
-         mime->is( "application/xml" ) ||
-         mime->is( "inode/directory" ) ||
-         mimeType.startsWith( "image" ) ||
-         mime->is( "multipart/x-mixed-replace" ) ||
-         mime->is( "multipart/replace" ) ||
-         mimeType.startsWith( "print" ) )
-    {
-        neverAsk = true;
+    MimeTypeData::AutoEmbed autoEmbed = m_mimeTypeData->autoEmbed();
+    if (autoEmbed == MimeTypeData::UseGroupSetting) {
+        bool embedParent = MimeTypeData::defaultEmbeddingSetting(m_mimeTypeData->majorType());
+        // ####### HACK. This is really ugly. Move all that logic to mimetypedata
+        // (but this relies on a way for a mimetypedata to know it's parent)
+        emit embedMajor(m_mimeTypeData->majorType(), embedParent);
+        autoEmbed = embedParent ? MimeTypeData::Yes : MimeTypeData::No;
     }
-  }
 
-  m_chkAskSave->blockSignals(true);
-  m_chkAskSave->setChecked(ask && !neverAsk);
-  m_chkAskSave->setEnabled(!neverAsk);
-  m_chkAskSave->blockSignals(false);
+    const QString mimeType = m_mimeTypeData->name();
+
+    QString dontAskAgainName;
+    if (autoEmbed == MimeTypeData::Yes) // Embedded
+        dontAskAgainName = "askEmbedOrSave"+mimeType;
+    else
+        dontAskAgainName = "askSave"+mimeType;
+
+    KSharedConfig::Ptr config = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
+    // default value
+    bool ask = config->group("Notification Messages").readEntry(dontAskAgainName, QString()).isEmpty();
+    // per-mimetype override if there's one
+    m_mimeTypeData->getAskSave(ask);
+
+    bool neverAsk = false;
+
+    if (autoEmbed == MimeTypeData::Yes) {
+        const KMimeType::Ptr mime = KMimeType::mimeType( mimeType );
+        // Don't ask for:
+        // - html (even new tabs would ask, due to about:blank!)
+        // - dirs obviously (though not common over HTTP :),
+        // - images (reasoning: no need to save, most of the time, because fast to see)
+        // e.g. postscript is different, because takes longer to read, so
+        // it's more likely that the user might want to save it.
+        // - multipart/* ("server push", see kmultipart)
+        // - other strange 'internal' mimetypes like print/manager...
+        if ( mime->is( "text/html" ) ||
+             mime->is( "application/xml" ) ||
+             mime->is( "inode/directory" ) ||
+             mimeType.startsWith( "image" ) ||
+             mime->is( "multipart/x-mixed-replace" ) ||
+             mime->is( "multipart/replace" ) ||
+             mimeType.startsWith( "print" ) )
+        {
+            neverAsk = true;
+        }
+    }
+
+    m_chkAskSave->blockSignals(true);
+    m_chkAskSave->setChecked(ask && !neverAsk);
+    m_chkAskSave->setEnabled(!neverAsk);
+    m_chkAskSave->blockSignals(false);
 }
 
 void FileTypeDetails::slotAskSaveToggled(bool askSave)
 {
-  if (!m_mimeTypeData)
-    return;
+    if (!m_mimeTypeData)
+        return;
 
-  m_mimeTypeData->setAskSave(askSave);
-  emit changed(true);
+    m_mimeTypeData->setAskSave(askSave);
+    emit changed(true);
 }
 
 void FileTypeDetails::setMimeTypeData( MimeTypeData * mimeTypeData, TypesListItem* item )
