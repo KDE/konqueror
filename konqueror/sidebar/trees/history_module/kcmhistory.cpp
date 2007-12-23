@@ -105,9 +105,9 @@ HistorySidebarConfig::HistorySidebarConfig( QWidget *parent, const QVariantList 
              SLOT( configChanged() ));
     connect( dialog->spinEntries, SIGNAL( valueChanged( int )),
              SLOT( configChanged() ));
-    connect( dialog->comboNewer, SIGNAL( activated( int )),
+    connect( dialog->comboNewer, SIGNAL( currentIndexChanged( int )),
              SLOT( configChanged() ));
-    connect( dialog->comboOlder, SIGNAL( activated( int )),
+    connect( dialog->comboOlder, SIGNAL( currentIndexChanged( int )),
              SLOT( configChanged() ));
 
     dialog->show();
@@ -190,8 +190,6 @@ void HistorySidebarConfig::defaults()
     m_fontNewer = QFont();
     m_fontNewer.setItalic( true );
     m_fontOlder = QFont();
-
-    emit changed(true);
 }
 
 QString HistorySidebarConfig::quickHelp() const
