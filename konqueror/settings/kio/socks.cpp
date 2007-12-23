@@ -71,7 +71,7 @@ KSocksConfig::KSocksConfig(const KComponentData &componentData, QWidget *parent)
   base = new SocksBase(this);
   layout->addWidget(base);
 
-  connect(base->_c_enableSocks, SIGNAL(clicked()), this, SLOT(enableChanged()));
+  connect(base->_c_enableSocks, SIGNAL(toggled(bool)), this, SLOT(enableChanged()));
   connect(base->bg, SIGNAL(clicked(int)), this, SLOT(methodChanged(int)));
 
   // The custom library
@@ -281,7 +281,6 @@ void KSocksConfig::defaults()
   base->_c_newPath->clear();
   base->_c_add->setEnabled(false);
   base->_c_remove->setEnabled(false);
-  emit changed(true);
 }
 
 QString KSocksConfig::quickHelp() const

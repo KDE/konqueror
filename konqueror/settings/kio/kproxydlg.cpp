@@ -301,7 +301,6 @@ void KProxyDialog::defaults()
   mDlg->rbNoProxy->setChecked( true );
   mDlg->location->lineEdit()->clear();
   mDlg->cbPersConn->setChecked( false );
-  emit changed( true );
 }
 
 void KProxyDialog::setupManProxy()
