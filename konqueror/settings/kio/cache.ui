@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>498</width>
-    <height>210</height>
+    <width>307</width>
+    <height>234</height>
    </rect>
   </property>
   <layout class="QGridLayout" >
@@ -92,7 +92,7 @@
     </widget>
    </item>
    <item row="2" column="2" >
-    <widget class="KIntNumInput" name="sbMaxCacheSize" >
+    <widget class="KIntNumInput" native="1" name="sbMaxCacheSize" >
      <property name="enabled" >
       <bool>false</bool>
      </property>
@@ -114,11 +114,11 @@
       <enum>Qt::Horizontal</enum>
      </property>
      <property name="sizeType" >
-      <enum>QSizePolicy::MinimumExpanding</enum>
+      <enum>QSizePolicy::Expanding</enum>
      </property>
      <property name="sizeHint" >
       <size>
-       <width>127</width>
+       <width>0</width>
        <height>20</height>
       </size>
      </property>
@@ -130,11 +130,11 @@
       <enum>Qt::Vertical</enum>
      </property>
      <property name="sizeType" >
-      <enum>QSizePolicy::MinimumExpanding</enum>
+      <enum>QSizePolicy::Expanding</enum>
      </property>
      <property name="sizeHint" >
       <size>
-       <width>477</width>
+       <width>20</width>
        <height>16</height>
       </size>
      </property>
