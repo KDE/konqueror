@@ -21,12 +21,12 @@
 #define KSHELLCMDEXECUTOR_H
 
 
-#include <Qt3Support/Q3TextView>
+#include <QTextEdit>
 
 namespace KDESu {class PtyProcess; }
 class QSocketNotifier;
 
-class KShellCommandExecutor:public Q3TextView
+class KShellCommandExecutor:public QTextEdit
 {
    Q_OBJECT
    public:
