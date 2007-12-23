@@ -163,6 +163,7 @@ KPluginOptions::KPluginOptions( QWidget *parent, const QVariantList& )
     QWidget *dummy = new QWidget(netscapeGB);
     m_widget = new Ui::NSConfigWidget();
     m_widget->setupUi( dummy );
+    dummy->layout()->setMargin( 0 );
     dummy->setObjectName( "configwidget" );
     m_widget->dirEdit->setMode(KFile::ExistingOnly | KFile::LocalOnly | KFile::Directory);
 
