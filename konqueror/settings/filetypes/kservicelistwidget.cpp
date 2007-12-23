@@ -71,17 +71,10 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *na
   QGridLayout * grid = new QGridLayout(gb);
   grid->setMargin(KDialog::marginHint());
   grid->setSpacing(KDialog::spacingHint());
-  grid->addItem(new QSpacerItem(0,fontMetrics().lineSpacing()), 0, 0);
-  grid->setRowStretch(1, 1);
-  grid->setRowStretch(2, 1);
-  grid->setRowStretch(3, 1);
-  grid->setRowStretch(4, 1);
-  grid->setRowStretch(5, 1);
-  grid->setRowStretch(6, 1);
 
   servicesLB = new QListWidget(gb);
   connect(servicesLB, SIGNAL(itemSelectionChanged()), SLOT(enableMoveButtons()));
-  grid->addWidget(servicesLB, 1, 0, 6, 1);
+  grid->addWidget(servicesLB, 0, 0, 6, 1);
   connect( servicesLB, SIGNAL( itemDoubleClicked(QListWidgetItem*)), this, SLOT( editService()));
 
   QString wtstr =
@@ -103,7 +96,7 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *na
   servUpButton = new QPushButton(i18n("Move &Up"), gb);
   servUpButton->setEnabled(false);
   connect(servUpButton, SIGNAL(clicked()), SLOT(promoteService()));
-  grid->addWidget(servUpButton, 2, 1);
+  grid->addWidget(servUpButton, 1, 1);
 
   servUpButton->setWhatsThis( kind == SERVICELIST_APPLICATIONS ?
                    i18n("Assigns a higher priority to the selected\n"
@@ -116,7 +109,7 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *na
   servDownButton = new QPushButton(i18n("Move &Down"), gb);
   servDownButton->setEnabled(false);
   connect(servDownButton, SIGNAL(clicked()), SLOT(demoteService()));
-  grid->addWidget(servDownButton, 3, 1);
+  grid->addWidget(servDownButton, 2, 1);
 
   servDownButton->setWhatsThis( kind == SERVICELIST_APPLICATIONS ?
                    i18n("Assigns a lower priority to the selected\n"
@@ -129,7 +122,7 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *na
   servNewButton = new QPushButton(i18n("Add..."), gb);
   servNewButton->setEnabled(false);
   connect(servNewButton, SIGNAL(clicked()), SLOT(addService()));
-  grid->addWidget(servNewButton, 1, 1);
+  grid->addWidget(servNewButton, 0, 1);
 
   servNewButton->setWhatsThis( i18n( "Add a new application for this file type." ) );
 
@@ -137,7 +130,7 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *na
   servEditButton = new QPushButton(i18n("Edit..."), gb);
   servEditButton->setEnabled(false);
   connect(servEditButton, SIGNAL(clicked()), SLOT(editService()));
-  grid->addWidget(servEditButton, 4, 1);
+  grid->addWidget(servEditButton, 3, 1);
 
   servEditButton->setWhatsThis( i18n( "Edit command line of the selected application." ) );
 
@@ -145,9 +138,11 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *na
   servRemoveButton = new QPushButton(i18n("Remove"), gb);
   servRemoveButton->setEnabled(false);
   connect(servRemoveButton, SIGNAL(clicked()), SLOT(removeService()));
-  grid->addWidget(servRemoveButton, 5, 1);
+  grid->addWidget(servRemoveButton, 4, 1);
 
   servRemoveButton->setWhatsThis( i18n( "Remove the selected application from the list." ) );
+
+  grid->addItem(new QSpacerItem(0, 0, QSizePolicy::Fixed, QSizePolicy::Expanding), 5, 1);
 }
 
 void KServiceListWidget::setMimeTypeData( MimeTypeData * mimeTypeData )
