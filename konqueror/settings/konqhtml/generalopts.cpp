@@ -36,7 +36,9 @@ KKonqGeneralOptions::KKonqGeneralOptions(QWidget *parent, const QVariantList&)
     : KCModule( KcmKonqHtmlFactory::componentData(), parent )
 {
     m_pConfig = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
-    QGridLayout *lay = new QGridLayout(this);
+    QVBoxLayout *lay = new QVBoxLayout(this);
+    lay->setMargin(0);
+    lay->setSpacing(KDialog::spacingHint());
 
     //HOME URL
     QHBoxLayout *homeLayout = new QHBoxLayout;
@@ -51,7 +53,7 @@ KKonqGeneralOptions::KKonqGeneralOptions(QWidget *parent, const QVariantList&)
     connect(homeURL, SIGNAL(textChanged(const QString &)), SLOT(slotChanged()));
     label->setBuddy(homeURL);
 
-    lay->addLayout(homeLayout, 0, 0);
+    lay->addLayout(homeLayout);
 
     QString homestr = i18n("This is the URL (e.g. a folder or a web page) where "
                            "Konqueror will jump to when the \"Home\" button is pressed. "
@@ -75,9 +77,7 @@ KKonqGeneralOptions::KKonqGeneralOptions(QWidget *parent, const QVariantList&)
     connect(tabOptions->m_pKonquerorTabforExternalURL, SIGNAL(toggled(bool)), SLOT(slotChanged()));
     connect(tabOptions->m_pPopupsWithinTabs, SIGNAL(toggled(bool)), SLOT(slotChanged()));
 
-    lay->addWidget( tabsGroup, 1, 0, 1, 2 );
-
-    lay->setRowStretch(1, 1);
+    lay->addWidget(tabsGroup);
 
     load();
     emit changed(false);
