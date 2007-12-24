@@ -293,7 +293,7 @@ bool Widgets::radioBox(QWidget *parent, const QString& title, const QString& tex
 
   bool retcode = (box.exec() == QDialog::Accepted);
   if ( retcode )
-    result = tags[ table.row(table.currentItem()) ];
+    result = tags[ table.currentRow() ];
   return retcode;
 }
 
