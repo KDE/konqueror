@@ -70,7 +70,7 @@ FavIconsModule::FavIconsModule(QObject* parent, const QList<QVariant>&)
     d->faviconsDir = KGlobal::dirs()->saveLocation( "cache", "favicons/" );
     d->faviconsDir.truncate(d->faviconsDir.length()-9); // Strip off "favicons/"
     d->metaData.insert("ssl_no_client_cert", "TRUE");
-    d->metaData.insert("ssl_militant", "TRUE");
+    d->metaData.insert("ssl_no_ui", "TRUE");
     d->metaData.insert("UseCache", "false");
     d->metaData.insert("cookies", "none");
     d->metaData.insert("no-auth", "true");
