@@ -3541,9 +3541,7 @@ void KonqMainWindow::initActions()
   QObject::connect( m_pMenuNew->menu(), SIGNAL(aboutToShow()),
                     this, SLOT(slotFileNewAboutToShow()) );
 
-  KAction *action = actionCollection()->addAction( "editMimeType" );
-  action->setText( i18n( "&Edit File Type..." ) );
-  action = actionCollection()->addAction( "properties" );
+  KAction *action = actionCollection()->addAction( "properties" );
   action->setText( i18n( "Properties" ) );
   action->setShortcut(Qt::ALT+Qt::Key_Return);
   action = actionCollection()->addAction("new_window");
