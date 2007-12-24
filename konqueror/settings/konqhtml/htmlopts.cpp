@@ -279,11 +279,9 @@ void KMiscHTMLOptions::load()
     m_pMaxFormCompletionItems->setValue( cg.readEntry( "MaxFormCompletionItems", 10 ) );
     m_pMaxFormCompletionItems->setEnabled( m_pFormCompletionCheckBox->isChecked() );
 
-    // Writes the value of m_pAccessKeys into khtmlrc to affect all applications using KHTML
-    KConfig _khtmlconfig("khtmlrc", KConfig::NoGlobals);
-    KConfigGroup khtmlconfig(&_khtmlconfig, "Access Keys");
-    khtmlconfig.writeEntry( "Enabled", m_pAccessKeys->isChecked() );
-    khtmlconfig.sync();
+    // Reads in the value of m_accessKeysEnabled by calling accessKeysEnabled() in khtml_settings.cpp
+    KHTMLSettings settings;
+    m_pAccessKeys->setChecked( settings.accessKeysEnabled() );
 
     KConfigGroup config(KSharedConfig::openConfig("kbookmarkrc", KConfig::NoGlobals), "Bookmarks");
     m_pAdvancedAddBookmarkCheckBox->setChecked( config.readEntry("AdvancedAddBookmarkDialog", false) );
@@ -343,9 +341,11 @@ void KMiscHTMLOptions::save()
 
     cg.sync();
 
-    // Reads in the value of m_accessKeysEnabled by calling accessKeysEnabled() in khtml_settings.cpp
-    KHTMLSettings settings;
-    m_pAccessKeys->setChecked( settings.accessKeysEnabled() );
+    // Writes the value of m_pAccessKeys into khtmlrc to affect all applications using KHTML
+    KConfig _khtmlconfig("khtmlrc", KConfig::NoGlobals);
+    KConfigGroup khtmlconfig(&_khtmlconfig, "Access Keys");
+    khtmlconfig.writeEntry( "Enabled", m_pAccessKeys->isChecked() );
+    khtmlconfig.sync();
 
     KConfigGroup config(KSharedConfig::openConfig("kbookmarkrc", KConfig::NoGlobals), "Bookmarks");
     config.writeEntry("AdvancedAddBookmarkDialog", m_pAdvancedAddBookmarkCheckBox->isChecked());
