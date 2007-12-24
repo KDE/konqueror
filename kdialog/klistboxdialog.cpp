@@ -20,7 +20,6 @@
 #include "klistboxdialog.moc"
 
 #include <QtGui/QLabel>
-#include <Qt3Support/Q3ListBox>
 #include <kvbox.h>
 
 #include "klocale.h"
@@ -38,21 +37,21 @@ KListBoxDialog::KListBoxDialog(const QString &text, QWidget *parent)
   label = new QLabel(text, page);
   label->setAlignment(Qt::AlignCenter);
 
-  table = new Q3ListBox(page);
+  table = new QListWidget(page);
   table->setFocus();
 }
 
 void KListBoxDialog::insertItem(const QString& item)
 {
-  table->insertItem(item);
+  table->insertItem(-1, item);
   table->setCurrentItem(0);
 }
 
 void KListBoxDialog::setCurrentItem(const QString& item)
 {
   for ( int i=0; i < (int) table->count(); i++ ) {
-    if ( table->text(i) == item ) {
-      table->setCurrentItem(i);
+    if ( table->item(i)->text() == item ) {
+      table->setCurrentItem(table->item(i));
       break;
     }
   }
@@ -60,5 +59,5 @@ void KListBoxDialog::setCurrentItem(const QString& item)
 
 int KListBoxDialog::currentItem()
 {
-  return table->currentItem();
+  return table->row(table->currentItem());
 }

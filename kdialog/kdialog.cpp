@@ -33,7 +33,6 @@
 #include <kmessagebox.h>
 #include <kapplication.h>
 #include <kdebug.h>
-//#include <ktopwidget.h>
 #include <kxmlguiwindow.h>
 #include <kpassivepopup.h>
 #include <krecentdocument.h>

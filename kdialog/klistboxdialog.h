@@ -23,7 +23,7 @@
 
 #include <kdialog.h>
 
-#include <Qt3Support/Q3ListBox>
+#include <QtGui/QListWidget>
 
 class QLabel;
 
@@ -36,7 +36,7 @@ public:
   explicit KListBoxDialog(const QString &text, QWidget *parent=0);
   ~KListBoxDialog() {}
 
-  Q3ListBox &getTable() { return *table; }
+  QListWidget &getTable() { return *table; }
 
   void insertItem( const QString& text );
   void setCurrentItem ( const QString& text );
@@ -44,7 +44,7 @@ public:
 
 protected:
 
-  Q3ListBox *table;
+  QListWidget *table;
   QLabel *label;
 
 };

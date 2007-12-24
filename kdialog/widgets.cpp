@@ -229,7 +229,7 @@ bool Widgets::checkList(QWidget *parent, const QString& title, const QString& te
 
   KListBoxDialog box(text,parent);
 
-  Q3ListBox &table = box.getTable();
+  QListWidget &table = box.getTable();
 
   kapp->setTopWidget( &box );
   box.setCaption(title);
@@ -239,12 +239,12 @@ bool Widgets::checkList(QWidget *parent, const QString& title, const QString& te
     entries.append(args[i+1]);
   }
 
-  table.insertStringList(entries);
-  table.setMultiSelection(true);
+  table.addItems(entries);
+  table.setSelectionMode(QListWidget::MultiSelection);
   table.setCurrentItem(0); // This is to circumvent a Qt bug
 
   for (int i=0; i+2<args.count(); i += 3) {
-    table.setSelected( i/3, args[i+2] == QLatin1String("on") );
+    table.item( i/3 )->setSelected( args[i+2] == QLatin1String("on") );
   }
 
   handleXGeometry(&box);
@@ -253,12 +253,12 @@ bool Widgets::checkList(QWidget *parent, const QString& title, const QString& te
 
   if ( retcode ) {
     if (separateOutput) {
-      for (unsigned int i=0; i<table.count(); i++)
-        if (table.isSelected(i))
+      for (int i=0; i<table.count(); i++)
+        if (table.item(i)->isSelected())
           result.append(tags[i]);
     } else {
-      for (unsigned int i=0; i<table.count(); i++)
-        if (table.isSelected(i))
+      for (int i=0; i<table.count(); i++)
+        if (table.item(i)->isSelected())
           rs += QLatin1String("\"") + tags[i] + QLatin1String("\" ");
       result.append(rs);
     }
@@ -273,7 +273,7 @@ bool Widgets::radioBox(QWidget *parent, const QString& title, const QString& tex
 
   KListBoxDialog box(text,parent);
 
-  Q3ListBox &table = box.getTable();
+  QListWidget &table = box.getTable();
 
   kapp->setTopWidget( &box );
   box.setCaption(title);
@@ -283,17 +283,17 @@ bool Widgets::radioBox(QWidget *parent, const QString& title, const QString& tex
     entries.append(args[i+1]);
   }
 
-  table.insertStringList(entries);
+  table.addItems(entries);
 
   for (int i=0; i+2<args.count(); i += 3) {
-    table.setSelected( i/3, args[i+2] == QLatin1String("on") );
+    table.item( i/3 )->setSelected( args[i+2] == QLatin1String("on") );
   }
 
   handleXGeometry(&box);
 
   bool retcode = (box.exec() == QDialog::Accepted);
   if ( retcode )
-    result = tags[ table.currentItem() ];
+    result = tags[ table.row(table.currentItem()) ];
   return retcode;
 }
 
