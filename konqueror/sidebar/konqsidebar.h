@@ -54,7 +54,6 @@ class KonqSidebarBrowserExtension : public KParts::BrowserExtension
 	    void del(){if (widget) widget->stdAction("del()");}
 	    void rename(){if (widget) widget->stdAction("rename()");}
   	    void properties() {if (widget) widget->stdAction("properties()");}
-  	    void editMimeType() {if (widget) widget->stdAction("editMimeType()");}
 	    //  @li @p print : Print :-) not supported
 	    void reparseConfiguration() {if (widget) widget->stdAction("reparseConfiguration()");}
 	    void refreshMimeTypes () { if (widget) widget->stdAction("refreshMimeTypes()");}

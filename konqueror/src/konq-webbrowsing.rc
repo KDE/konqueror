@@ -24,14 +24,7 @@
   <Action name="cut"/>
   <Action name="copy"/>
   <Action name="paste"/>
-  <!--<Action name="trash"/>
-  <Action name="del" />-->
-  <ActionList name="operations" /><!-- copy files and move files, when two directory views -->
-  <!--<Separator/>
-  <Action name="new_menu"/>
-  <Separator/>
-  <Action name="editMimeType"/>
-  <Action name="properties"/>-->
+  <!--<ActionList name="operations" />--><!-- copy files and move files, when two directory views -->
   <WeakSeparator/>
   <Merge/>
  </Menu>
