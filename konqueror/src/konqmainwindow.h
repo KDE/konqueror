@@ -364,13 +364,6 @@ public Q_SLOTS:
   void slotForward(Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers);
   void slotHome();
   void slotHome(Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers);
-  void slotGoSystem();
-  void slotGoApplications();
-  void slotGoMedia();
-  void slotGoNetworkFolders();
-  void slotGoSettings();
-  void slotGoTrash();
-  void slotGoAutostart();
   void slotGoHistory();
 
   void slotAddClosedUrl(KonqFrameBase *tab);
