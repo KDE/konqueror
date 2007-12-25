@@ -254,7 +254,7 @@ bool MimeTypeData::sync()
     if (isMimeTypeDirty()) {
         // XDG shared mime: we must write into a <kdehome>/share/mime/packages/ file...
         // To simplify our job, let's use one "input" file per mimetype, in the user's dir.
-        // TODO this writes into $HOME/.local/share/mime which makes the unit test mess up the user's configuration... can we avoid that? is $KDEHOME/share/mime available too?
+        // (this writes into $HOME/.local/share/mime by default)
         const QString packageFileName = KStandardDirs::locateLocal( "xdgdata-mime", "packages/" + m_major + '-' + m_minor + ".xml" );
         kDebug() << "writing" << packageFileName;
         QFile packageFile(packageFileName);
