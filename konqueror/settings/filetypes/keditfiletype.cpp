@@ -75,7 +75,8 @@ void FileTypeDialog::init( KMimeType::Ptr mime, bool newItem )
 void FileTypeDialog::save()
 {
   if (m_mimeTypeData->isDirty()) {
-    m_mimeTypeData->sync();
+    if (m_mimeTypeData->sync())
+        MimeTypeData::runUpdateMimeDatabase();
     KBuildSycocaProgressDialog::rebuildKSycoca(this);
   }
 }
@@ -100,7 +101,7 @@ void FileTypeDialog::clientChanged(bool state)
 
 void FileTypeDialog::slotDatabaseChanged()
 {
-  if ( KSycoca::self()->isChanged( "mime" ) )
+  if ( KSycoca::self()->isChanged( "xdgdata-mime" ) )
   {
       m_mimeTypeData->refresh();
   }
@@ -137,6 +138,7 @@ int main(int argc, char ** argv)
   KMimeType::Ptr mime;
 
   if ( createType ) {
+      // TODO port to XDG share mime! (see FileTypesView::addType())
     QString mimeString = "application/x-kdeuser%1";
     QString loc;
     int inc = 0;

@@ -372,35 +372,39 @@ void FileTypesView::updateDisplay(Q3ListViewItem *item)
     setDirty(false);
 }
 
-bool FileTypesView::sync( QList<TypesListItem *>& itemsModified )
+void FileTypesView::save()
 {
+  m_itemsModified.clear();
   bool didIt = false;
   // first, remove those items which we are asked to remove.
   QStringList::Iterator it(removedList.begin());
   QString loc;
 
   for (; it != removedList.end(); ++it) {
+#if 0
     didIt = true;
     KMimeType::Ptr m_ptr = KMimeType::mimeType(*it);
+    loc = KStandardDirs::locate("mime", m_ptr->entryPath());
 
-    loc = m_ptr->entryPath();
-    loc = KStandardDirs::locate("mime", loc);
-
+    // TODO port to XDG shared mime!
     KDesktopFile config("mime", loc);
     config.desktopGroup().writeEntry("Type", "MimeType");
     config.desktopGroup().writeEntry("MimeType", m_ptr->name());
     config.desktopGroup().writeEntry("Hidden", true);
+#endif
   }
 
+  bool needUpdateMimeDb = false;
   // now go through all entries and sync those which are dirty.
   // don't use typesLV, it may be filtered
   QMap<QString,TypesListItem*>::iterator it1 = m_majorMap.begin();
   while ( it1 != m_majorMap.end() ) {
     TypesListItem *tli = *it1;
-    if (tli->isDirty()) {
+    if (tli->mimeTypeData().isDirty()) {
       kDebug() << "Entry " << tli->name() << " is dirty. Saving.";
-      tli->sync();
-      itemsModified.append( tli );
+      if (tli->mimeTypeData().sync())
+          needUpdateMimeDb = true;
+      m_itemsModified.append( tli );
       didIt = true;
     }
     ++it1;
@@ -408,10 +412,11 @@ bool FileTypesView::sync( QList<TypesListItem *>& itemsModified )
   Q3PtrListIterator<TypesListItem> it2( m_itemList );
   while ( it2.current() ) {
     TypesListItem *tli = *it2;
-    if (tli->isDirty()) {
+    if (tli->mimeTypeData().isDirty()) {
       kDebug() << "Entry " << tli->name() << " is dirty. Saving.";
-      tli->sync();
-      itemsModified.append( tli );
+      if (tli->mimeTypeData().sync())
+          needUpdateMimeDb = true;
+      m_itemsModified.append( tli );
       didIt = true;
     }
     ++it2;
@@ -420,7 +425,14 @@ bool FileTypesView::sync( QList<TypesListItem *>& itemsModified )
   m_konqConfig->sync();
 
   setDirty(false);
-  return didIt;
+
+  if (needUpdateMimeDb) {
+      MimeTypeData::runUpdateMimeDatabase();
+  }
+  if (didIt) {
+      KBuildSycocaProgressDialog::rebuildKSycoca(this);
+      KGlobalSettings::self()->emitChange(KGlobalSettings::SettingsChanged);
+  }
 }
 
 void FileTypesView::load()
@@ -428,19 +440,9 @@ void FileTypesView::load()
     readFileTypes();
 }
 
-void FileTypesView::save()
-{
-  m_itemsModified.clear();
-  if (sync(m_itemsModified)) {
-    // only rebuild if sync() was necessary
-    KBuildSycocaProgressDialog::rebuildKSycoca(this);
-    KGlobalSettings::self()->emitChange(KGlobalSettings::SettingsChanged);
-  }
-}
-
 void FileTypesView::slotDatabaseChanged()
 {
-  if ( KSycoca::self()->isChanged( "mime" ) )
+  if ( KSycoca::self()->isChanged( "xdgdata-mime" ) )
   {
     // ksycoca has new KMimeTypes objects for us, make sure to update
     // our 'copies' to be in sync with it. Not important for OK, but

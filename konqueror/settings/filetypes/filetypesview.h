@@ -46,9 +46,8 @@ protected Q_SLOTS:
   void slotDatabaseChanged();
   void slotEmbedMajor(const QString &major, bool &embed);
 
-protected:
+private:
   void readFileTypes();
-  bool sync( QList<TypesListItem *>& itemsModified );
 
 private:
   K3ListView *typesLV;
