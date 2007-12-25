@@ -55,7 +55,7 @@ public:
     QString icon() const { return m_icon; }
     void setIcon(const QString& icon);
     QStringList patterns() const { return m_patterns; }
-    void setPatterns(const QStringList &p) { m_patterns = p; }
+    void setPatterns(const QStringList &p);
     QStringList appServices() const;
     void setAppServices(const QStringList &dsl) { m_appServices = dsl; }
     QStringList embedServices() const;
@@ -74,9 +74,22 @@ public:
     // Whether the given service lists this mimetype explicitly
     KMimeType::Ptr findImplicitAssociation(const QString &desktop);
 
+    /**
+     * Returns true if the mimetype data has any unsaved changes.
+     */
     bool isDirty() const;
-    void sync();
-    void refresh(); // update m_mimetype from ksycoca when Apply is pressed
+    /**
+     * Save changes to disk.
+     * Does not check isDirty(), so the common idiom is if (data.isDirty()) { needUpdate = data.sync(); }
+     * Returns true if update-mime-database needs to be run afterwards
+     */
+    bool sync();
+    /**
+     * Update m_mimetype from ksycoca when Apply is pressed
+     */
+    void refresh();
+
+    static void runUpdateMimeDatabase();
 
     static bool defaultEmbeddingSetting( const QString& major );
     static void reset();
@@ -85,6 +98,7 @@ private:
     bool isMimeTypeDirty() const; // whether the mimetype .desktop file needs saving
     void getServiceOffers(QStringList& appServices, QStringList& embedServices) const;
     void getMyServiceOffers() const;
+    void syncServices();
     void saveServices( KConfig & profile, const QStringList& services, const QString & servicetype2 );
 
     KMimeType::Ptr m_mimetype; // 0 if this is data for a mimetype group (m_isGroup==true)

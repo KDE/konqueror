@@ -50,9 +50,18 @@ private Q_SLOTS:
             group.writeEntry("Exec", "ls");
         }
 
+        // Cleanup after testMimeTypePatterns if it failed mid-way
+        const QString packageFileName = KStandardDirs::locateLocal( "xdgdata-mime", "packages/text-plain.xml" );
+        if (!packageFileName.isEmpty()) {
+            QFile::remove(packageFileName);
+            MimeTypeData::runUpdateMimeDatabase();
+            mustUpdateKSycoca = true;
+        }
+
+
         if ( mustUpdateKSycoca ) {
             // Update ksycoca in ~/.kde-unit-test after creating the above
-            QProcess::execute( KGlobal::dirs()->findExe(KBUILDSYCOCA_EXENAME), QStringList() << "--noincremental" );
+            QProcess::execute( KGlobal::dirs()->findExe(KBUILDSYCOCA_EXENAME) );
         }
     }
 
@@ -89,25 +98,53 @@ private Q_SLOTS:
         QVERIFY(!data.isMeta());
         QStringList patterns = data.patterns();
         QVERIFY(patterns.contains("*.txt"));
-        QVERIFY(!patterns.contains("*.toto")); // TODO in the current state, this should fail, after running update-mime-database $HOME/.local/share/mime
+        QVERIFY(!patterns.contains("*.toto"));
+        const QStringList origPatterns = patterns;
         patterns.append("*.toto"); // yes, a french guy wrote this, as you can see
+        patterns.sort(); // for future comparisons
         QVERIFY(!data.isDirty());
         data.setPatterns(patterns);
         QVERIFY(data.isDirty());
-        data.sync();
-        // TODO run update-mime-database and then kbuildsycoca!
-#if 0
+        bool needUpdateMimeDb = data.sync();
+        QVERIFY(needUpdateMimeDb);
+        MimeTypeData::runUpdateMimeDatabase();
+        QProcess::execute( KGlobal::dirs()->findExe(KBUILDSYCOCA_EXENAME) );
+        // Wait for notifyDatabaseChanged DBus signal
+        // (The real KCM code simply does the refresh in a slot, asynchronously)
+        QEventLoop loop;
+        QObject::connect(KSycoca::self(), SIGNAL(databaseChanged()), &loop, SLOT(quit()));
+        loop.exec();
+        QCOMPARE(data.patterns(), patterns);
+        data.refresh(); // reload from ksycoca
+        QCOMPARE(data.patterns(), patterns);
         QVERIFY(!data.isDirty());
-        // Check what's on disk by creating another MimeTypeData instance
-        MimeTypeData data2(KMimeType::mimeType("text/plain"));
-        QCOMPARE(data2.patterns(), patterns);
-#endif
+        // Check what's in ksycoca
+        QStringList newPatterns = KMimeType::mimeType("text/plain")->patterns();
+        newPatterns.sort();
+        QCOMPARE(newPatterns, patterns);
+
+        // Remove custom file (it's in ~/.local, not in ~/.kde-unit-test, so it messes up the user's configuration!)
+        const QString packageFileName = KStandardDirs::locateLocal( "xdgdata-mime", "packages/text-plain.xml" );
+        QVERIFY(!packageFileName.isEmpty());
+        QFile::remove(packageFileName);
+        MimeTypeData::runUpdateMimeDatabase();
+        QProcess::execute( KGlobal::dirs()->findExe(KBUILDSYCOCA_EXENAME) );
+        loop.exec(); // need to process DBUS signal
+        // Check what's in ksycoca
+        newPatterns = KMimeType::mimeType("text/plain")->patterns();
+        newPatterns.sort();
+        QCOMPARE(newPatterns, origPatterns);
     }
 
     void testMimeTypeAutoEmbed()
     {
         // TODO
     }
+
+    // TODO see TODO in filetypesview
+    //void testDeleteMimeType()
+    //{
+    //}
 
     void cleanupTestCase()
     {

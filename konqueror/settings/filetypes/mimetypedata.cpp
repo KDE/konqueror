@@ -19,6 +19,7 @@
 */
 
 #include "mimetypedata.h"
+#include <kprocess.h>
 #include <QFile>
 #include <kstandarddirs.h>
 #include <QXmlStreamWriter>
@@ -73,7 +74,7 @@ MimeTypeData::MimeTypeData(const KMimeType::Ptr mime, bool newItem)
     }
     m_comment = m_mimetype->comment();
     m_icon = m_mimetype->iconName();
-    m_patterns = m_mimetype->patterns();
+    setPatterns(m_mimetype->patterns());
     m_autoEmbed = readAutoEmbed( m_mimetype );
 }
 
@@ -117,15 +118,16 @@ void MimeTypeData::setIcon(const QString& icon)
 
 void MimeTypeData::getServiceOffers(QStringList& appServices, QStringList& embedServices) const
 {
-    KService::List offerList =
+    const KService::List offerList =
         KMimeTypeTrader::self()->query(m_mimetype->name(), "Application");
     KService::List::const_iterator it(offerList.begin());
     for (; it != offerList.constEnd(); ++it)
         if ((*it)->allowAsDefault())
             appServices.append((*it)->entryPath());
 
-    offerList = KMimeTypeTrader::self()->query(m_mimetype->name(), "KParts/ReadOnlyPart");
-    for ( it = offerList.begin(); it != offerList.constEnd(); ++it)
+    const KService::List partOfferList =
+        KMimeTypeTrader::self()->query(m_mimetype->name(), "KParts/ReadOnlyPart");
+    for ( it = partOfferList.begin(); it != partOfferList.constEnd(); ++it)
         embedServices.append((*it)->entryPath());
 }
 
@@ -170,9 +172,11 @@ bool MimeTypeData::isMimeTypeDirty() const
         return true;
     }
 
-    if (m_mimetype->patterns() != m_patterns) {
-        //kDebug() << "Mimetype Patterns Dirty: old=" << m_mimetype->patterns()
-        //         << "m_patterns=" << m_patterns;
+    QStringList storedPatterns = m_mimetype->patterns();
+    storedPatterns.sort(); // see ctor
+    if ( storedPatterns != m_patterns) {
+        kDebug() << "Mimetype Patterns Dirty: old=" << storedPatterns
+                 << "m_patterns=" << m_patterns;
         return true;
     }
 
@@ -224,12 +228,12 @@ bool MimeTypeData::isDirty() const
     return false;
 }
 
-void MimeTypeData::sync()
+bool MimeTypeData::sync()
 {
     if (m_isGroup) {
         KSharedConfig::Ptr config = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
         config->group("EmbedSettings").writeEntry( QLatin1String("embed-")+m_major, m_autoEmbed == Yes );
-        return;
+        return false;
     }
 
     if (m_askSave != 2) {
@@ -246,6 +250,7 @@ void MimeTypeData::sync()
         }
     }
 
+    bool needUpdateMimeDb = false;
     if (isMimeTypeDirty()) {
         // XDG shared mime: we must write into a <kdehome>/share/mime/packages/ file...
         // To simplify our job, let's use one "input" file per mimetype, in the user's dir.
@@ -255,7 +260,7 @@ void MimeTypeData::sync()
         QFile packageFile(packageFileName);
         if (!packageFile.open(QIODevice::WriteOnly)) {
             kError() << "Couldn't open" << packageFileName << "for writing";
-            return;
+            return false;
         }
         QXmlStreamWriter writer(&packageFile);
         writer.setAutoFormatting(true);
@@ -290,11 +295,18 @@ void MimeTypeData::sync()
         writer.writeEndDocument();
 
         m_bNewItem = false;
+        needUpdateMimeDb = true;
     }
 
-    if (!m_bFullInit)
-        return;
+    if (m_bFullInit) {
+        syncServices();
+    }
 
+    return needUpdateMimeDb;
+}
+
+void MimeTypeData::syncServices()
+{
     KConfig profile("profilerc", KConfig::NoGlobals);
 
     // Deleting current contents in profilerc relating to
@@ -532,4 +544,26 @@ bool MimeTypeData::canUseGroupSetting() const
     // "Use group settings" isn't available for zip, tar etc.; those have a builtin default...
     const bool hasLocalProtocolRedirect = !m_mimetype->property( "X-KDE-LocalProtocol" ).toString().isEmpty();
     return !hasLocalProtocolRedirect;
+}
+
+void MimeTypeData::runUpdateMimeDatabase()
+{
+    const QString localPackageDir = KStandardDirs::locateLocal("xdgdata-mime", QString());
+    KProcess proc;
+    proc << "update-mime-database";
+    proc << localPackageDir;
+    const int exitCode = proc.execute();
+    if (exitCode) {
+        kWarning() << proc.program() << "exited with error code" << exitCode;
+    }
+}
+
+void MimeTypeData::setPatterns(const QStringList &p)
+{
+    m_patterns = p;
+    // Sort them, since update-mime-database doesn't respect order (order of globs file != order of xml),
+    // and this code says things like if (m_mimetype->patterns() == m_patterns).
+    // We could also sort in KMimeType::setPatterns but this would just slow down the
+    // normal use case (anything else than this KCM) for no good reason.
+    m_patterns.sort();
 }
