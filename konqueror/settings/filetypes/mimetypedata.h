@@ -35,7 +35,7 @@ public:
     // Real constructor, used for a mimetype.
     MimeTypeData(const KMimeType::Ptr mime, bool newItem = false);
 
-    QString name() const { return m_major + '/' + m_minor; }
+    QString name() const { return m_isGroup ? m_major : m_major + '/' + m_minor; }
     QString majorType() const { return m_major; }
     QString minorType() const { return m_minor; }
     void setMinor(const QString& m) { m_minor = m; }
@@ -91,10 +91,11 @@ public:
 
     static void runUpdateMimeDatabase();
 
-    static bool defaultEmbeddingSetting( const QString& major );
     static void reset();
 
 private:
+    AutoEmbed readAutoEmbed() const;
+    void writeAutoEmbed();
     bool isMimeTypeDirty() const; // whether the mimetype .desktop file needs saving
     void getServiceOffers(QStringList& appServices, QStringList& embedServices) const;
     void getMyServiceOffers() const;

@@ -39,7 +39,7 @@ K_EXPORT_PLUGIN(FileTypesViewFactory("filetypes"))
 FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
   : KCModule(FileTypesViewFactory::componentData(), parent)
 {
-  m_konqConfig = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
+  m_fileTypesConfig = KSharedConfig::openConfig("filetypesrc", KConfig::NoGlobals);
 
   // TODO remove mention of *.kwd and use another example
   setQuickHelp( i18n("<p><h1>File Associations</h1>"
@@ -423,7 +423,7 @@ void FileTypesView::save()
     ++it2;
   }
 
-  m_konqConfig->sync();
+  m_fileTypesConfig->sync();
 
   setDirty(false);
 

@@ -33,18 +33,6 @@
 typedef QMap< QString, QStringList > ChangedServices;
 K_GLOBAL_STATIC(ChangedServices, s_changedServices)
 
-static MimeTypeData::AutoEmbed readAutoEmbed( KMimeType::Ptr mimetype )
-{
-    // TODO store this somewhere else!
-    const QVariant v = mimetype->property( "X-KDE-AutoEmbed" );
-    if ( v.isValid() )
-        return (v.toBool() ? MimeTypeData::Yes : MimeTypeData::No);
-    else if ( !mimetype->property( "X-KDE-LocalProtocol" ).toString().isEmpty() )
-        return MimeTypeData::Yes; // embed by default for zip, tar etc.
-    else
-        return MimeTypeData::UseGroupSetting;
-}
-
 MimeTypeData::MimeTypeData(const QString& major)
     : m_askSave(2),
       m_bNewItem(false),
@@ -52,9 +40,7 @@ MimeTypeData::MimeTypeData(const QString& major)
       m_isGroup(true),
       m_major(major)
 {
-    KSharedConfig::Ptr config = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
-    bool defaultValue = defaultEmbeddingSetting( major );
-    m_autoEmbed = config->group("EmbedSettings").readEntry( QLatin1String("embed-")+m_major, defaultValue ) ? Yes : No;
+    m_autoEmbed = readAutoEmbed();
 }
 
 MimeTypeData::MimeTypeData(const KMimeType::Ptr mime, bool newItem)
@@ -75,13 +61,40 @@ MimeTypeData::MimeTypeData(const KMimeType::Ptr mime, bool newItem)
     m_comment = m_mimetype->comment();
     m_icon = m_mimetype->iconName();
     setPatterns(m_mimetype->patterns());
-    m_autoEmbed = readAutoEmbed( m_mimetype );
+    m_autoEmbed = readAutoEmbed();
 }
 
-bool MimeTypeData::defaultEmbeddingSetting( const QString& major )
+MimeTypeData::AutoEmbed MimeTypeData::readAutoEmbed() const
 {
-    // embedding is false by default except for image/*
-    return ( major=="image" );
+    const KSharedConfig::Ptr config = KSharedConfig::openConfig("filetypesrc", KConfig::NoGlobals);
+    const QString key = QString("embed-") + name();
+    const KConfigGroup group(config, "EmbedSettings");
+    if (m_isGroup) {
+        // embedding is false by default except for image/* and inode/* (hardcoded in konq)
+        const bool defaultValue = ( m_major == "image" || m_major == "inode" );
+        return group.readEntry(key, defaultValue) ? Yes : No;
+    } else {
+        if (group.hasKey(key))
+            return group.readEntry(key, false) ? Yes : No;
+        // TODO if ( !mimetype->property( "X-KDE-LocalProtocol" ).toString().isEmpty() )
+        // TODO    return MimeTypeData::Yes; // embed by default for zip, tar etc.
+        return MimeTypeData::UseGroupSetting;
+    }
+}
+
+void MimeTypeData::writeAutoEmbed()
+{
+    KSharedConfig::Ptr config = KSharedConfig::openConfig("filetypesrc", KConfig::NoGlobals);
+    const QString key = QString("embed-") + name();
+    KConfigGroup group(config, "EmbedSettings");
+    if (m_isGroup) {
+        group.writeEntry(key, m_autoEmbed == Yes);
+    } else {
+        if (m_autoEmbed == UseGroupSetting)
+            group.deleteEntry(key);
+        else
+            group.writeEntry(key, m_autoEmbed == Yes);
+    }
 }
 
 bool MimeTypeData::isEssential() const
@@ -182,7 +195,7 @@ bool MimeTypeData::isMimeTypeDirty() const
         return true;
     }
 
-    if ( readAutoEmbed( m_mimetype ) != m_autoEmbed )
+    if (readAutoEmbed() != m_autoEmbed)
         return true;
     return false;
 }
@@ -216,10 +229,7 @@ bool MimeTypeData::isDirty() const
     }
     else // is a group
     {
-        KSharedConfig::Ptr config = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
-        bool defaultValue = defaultEmbeddingSetting(m_major);
-        AutoEmbed oldAutoEmbed = config->group("EmbedSettings").readEntry( QLatin1String("embed-")+m_major, defaultValue ) ? Yes : No;
-        if ( m_autoEmbed != oldAutoEmbed )
+        if (readAutoEmbed() != m_autoEmbed)
             return true;
     }
 
@@ -233,13 +243,12 @@ bool MimeTypeData::isDirty() const
 bool MimeTypeData::sync()
 {
     if (m_isGroup) {
-        KSharedConfig::Ptr config = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
-        config->group("EmbedSettings").writeEntry( QLatin1String("embed-")+m_major, m_autoEmbed == Yes );
+        writeAutoEmbed();
         return false;
     }
 
     if (m_askSave != 2) {
-        KSharedConfig::Ptr config = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
+        const KSharedConfig::Ptr config = KSharedConfig::openConfig("filetypesrc", KConfig::NoGlobals);
         KConfigGroup cg = config->group("Notification Messages");
         if (m_askSave == 0) {
             // Ask
@@ -251,6 +260,8 @@ bool MimeTypeData::sync()
             cg.writeEntry("askEmbedOrSave"+name(), "no" );
         }
     }
+
+    writeAutoEmbed();
 
     bool needUpdateMimeDb = false;
     if (isMimeTypeDirty()) {
@@ -277,20 +288,11 @@ bool MimeTypeData::sync()
         writer.writeCharacters(m_comment);
         writer.writeEndElement(); // comment
 
-        // TODO: we cannot write out the icon -> remove GUI for modifying the icon!
-        //cg.writeEntry("Icon", m_icon);
-
         foreach(const QString& pattern, m_patterns) {
             writer.writeStartElement(nsUri, "glob");
             writer.writeAttribute("pattern", pattern);
             writer.writeEndElement(); // glob
         }
-
-        // TODO store this somewhere else!
-        //if ( m_autoEmbed == UseGroupSetting )
-        //    cg.deleteEntry( QLatin1String("X-KDE-AutoEmbed"), false );
-        //else
-        //    cg.writeEntry( QLatin1String("X-KDE-AutoEmbed"), m_autoEmbed == Yes );
 
         writer.writeEndElement(); // mime-info
         writer.writeEndElement(); // mime-type
