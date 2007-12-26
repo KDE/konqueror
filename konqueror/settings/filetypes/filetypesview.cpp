@@ -119,6 +119,10 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
   m_removeTypeB->setEnabled(false);
 
   m_removeTypeB->setWhatsThis( i18n("Click here to remove the selected file type.") );
+#if 1 // TODO remove after porting the add / remove code
+  addTypeB->hide();
+  m_removeTypeB->hide();
+#endif
 
   // For the right panel, prepare a widget stack
   m_widgetStack = new QStackedWidget(this);
