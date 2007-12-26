@@ -53,8 +53,10 @@ TypesListItem::~TypesListItem()
 {
 }
 
+#if 0
 void TypesListItem::setIcon( const QString& icon )
 {
     m_mimetypeData.setIcon(icon);
     setPixmap( 0, SmallIcon( icon ) );
 }
+#endif

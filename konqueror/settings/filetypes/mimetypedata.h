@@ -53,7 +53,7 @@ public:
      */
     bool isEssential() const;
     QString icon() const { return m_icon; }
-    void setIcon(const QString& icon);
+    //void setIcon(const QString& icon);
     QStringList patterns() const { return m_patterns; }
     void setPatterns(const QStringList &p);
     QStringList appServices() const;

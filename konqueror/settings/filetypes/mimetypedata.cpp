@@ -86,13 +86,13 @@ bool MimeTypeData::defaultEmbeddingSetting( const QString& major )
 
 bool MimeTypeData::isEssential() const
 {
-    // TODO resync with kmimetype.cpp
+    // Keep in sync with KMimeTYpe::checkEssentialMimeTypes
     const QString n = name();
     if ( n == "application/octet-stream" )
         return true;
     if ( n == "inode/directory" )
         return true;
-    if ( n == "inode/directory-locked" )
+    if ( n == "inode/directory-locked" ) // doesn't exist anymore, but the check doesn't hurt :)
         return true;
     if ( n == "inode/blockdevice" )
         return true;
@@ -111,10 +111,12 @@ bool MimeTypeData::isEssential() const
     return false;
 }
 
+#if 0
 void MimeTypeData::setIcon(const QString& icon)
 {
     m_icon = icon;
 }
+#endif
 
 void MimeTypeData::getServiceOffers(QStringList& appServices, QStringList& embedServices) const
 {

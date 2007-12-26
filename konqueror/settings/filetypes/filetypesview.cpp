@@ -41,6 +41,7 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
 {
   m_konqConfig = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
 
+  // TODO remove mention of *.kwd and use another example
   setQuickHelp( i18n("<p><h1>File Associations</h1>"
     " This module allows you to choose which applications are associated"
     " with a given type of file. File types are also referred to MIME types"
@@ -452,7 +453,7 @@ void FileTypesView::slotDatabaseChanged()
     for( ; it != m_itemsModified.end(); ++it ) {
         QString name = (*it)->name();
         if ( removedList.indexOf( name ) == -1 ) // if not deleted meanwhile
-            (*it)->refresh();
+            (*it)->mimeTypeData().refresh();
     }
     m_itemsModified.clear();
   }

@@ -28,10 +28,10 @@
 #include <QtGui/QLayout>
 #include <QtGui/QListWidget>
 #include <QtGui/QRadioButton>
+#include <QLabel>
 #include <fixx11h.h>
 
 // KDE
-#include <kapplication.h>
 #include <kconfig.h>
 #include <kdebug.h>
 #include <kicondialog.h>
@@ -53,19 +53,19 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   firstLayout->setMargin(KDialog::marginHint());
   firstLayout->setSpacing(KDialog::spacingHint());
 
-  QHBoxLayout *hBox = new QHBoxLayout((QWidget*)0);
+  QHBoxLayout *hBox = new QHBoxLayout();
   hBox->setSpacing(KDialog::spacingHint());
   firstLayout->addLayout(hBox, 1);
 
-  iconButton = new KIconButton(firstWidget);
-  iconButton->setIconType(KIconLoader::Desktop, KIconLoader::MimeType);
-  connect(iconButton, SIGNAL(iconChanged(QString)), SLOT(updateIcon(QString)));
+  //iconButton = new KIconButton(firstWidget);
+  //iconButton->setIconType(KIconLoader::Desktop, KIconLoader::MimeType);
+  //connect(iconButton, SIGNAL(iconChanged(QString)), SLOT(updateIcon(QString)));
+  //iconButton->setWhatsThis( i18n("This button displays the icon associated"
+  //  " with the selected file type. Click on it to choose a different icon.") );
+  iconButton = new QLabel(firstWidget);
 
   iconButton->setFixedSize(70, 70);
   hBox->addWidget(iconButton);
-
-  iconButton->setWhatsThis( i18n("This button displays the icon associated"
-    " with the selected file type. Click on it to choose a different icon.") );
 
   QGroupBox *gb = new QGroupBox(i18n("Filename Patterns"), firstWidget);
   hBox->addWidget(gb);
@@ -176,6 +176,7 @@ void FileTypeDetails::updateRemoveButton()
     removeExtButton->setEnabled(extensionLB->count()>0);
 }
 
+#if 0
 void FileTypeDetails::updateIcon(const QString &icon)
 {
   if (!m_mimeTypeData)
@@ -188,6 +189,7 @@ void FileTypeDetails::updateIcon(const QString &icon)
 
   emit changed(true);
 }
+#endif
 
 void FileTypeDetails::updateDescription(const QString &desc)
 {
@@ -315,7 +317,7 @@ void FileTypeDetails::setMimeTypeData( MimeTypeData * mimeTypeData, TypesListIte
   m_mimeTypeData = mimeTypeData;
   m_item = item; // can be 0
   Q_ASSERT(mimeTypeData);
-  iconButton->setIcon(mimeTypeData->icon());
+  iconButton->setPixmap(DesktopIcon(mimeTypeData->icon()));
   description->setText(mimeTypeData->comment());
   m_rbGroupSettings->setText( i18n("Use settings for '%1' group", mimeTypeData->majorType() ) );
   extensionLB->clear();
