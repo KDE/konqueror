@@ -47,11 +47,8 @@ public:
 
     ~TypesListItem();
 
-    void setIcon( const QString& icon );
-    void sync() { m_mimetypeData.sync(); }
-    void refresh() { m_mimetypeData.refresh(); }
+    //void setIcon( const QString& icon );
 
-    bool isDirty() const { return m_mimetypeData.isDirty(); }
     QString name() const { return m_mimetypeData.name(); }
     const MimeTypeData& mimeTypeData() const { return m_mimetypeData; }
     MimeTypeData& mimeTypeData() { return m_mimetypeData; }

@@ -23,7 +23,7 @@
 #include <QtGui/QTabWidget>
 class MimeTypeData;
 class TypesListItem;
-class KIconButton;
+class QLabel;
 class QLineEdit;
 class QListWidget;
 class QGroupBox;
@@ -60,7 +60,7 @@ Q_SIGNALS:
   void changed(bool);
 
 protected Q_SLOTS:
-  void updateIcon(const QString &icon);
+    //void updateIcon(const QString &icon);
   void updateDescription(const QString &desc);
   void addExtension();
   void removeExtension();
@@ -73,7 +73,7 @@ private:
     TypesListItem* m_item; // can be 0, in keditfiletype!
 
   // First tab - General
-  KIconButton *iconButton;
+  QLabel *iconButton;
   QListWidget *extensionLB;
   QPushButton *addExtButton, *removeExtButton;
   QLineEdit *description;
