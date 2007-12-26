@@ -251,12 +251,9 @@ void FileTypeDetails::updateAskSave()
         return;
 
     MimeTypeData::AutoEmbed autoEmbed = m_mimeTypeData->autoEmbed();
-    if (autoEmbed == MimeTypeData::UseGroupSetting) {
-        bool embedParent = MimeTypeData::defaultEmbeddingSetting(m_mimeTypeData->majorType());
-        // ####### HACK. This is really ugly. Move all that logic to mimetypedata
-        // (but this relies on a way for a mimetypedata to know it's parent)
-        emit embedMajor(m_mimeTypeData->majorType(), embedParent);
-        autoEmbed = embedParent ? MimeTypeData::Yes : MimeTypeData::No;
+    if (m_mimeTypeData->isMeta() && autoEmbed == MimeTypeData::UseGroupSetting) {
+        // Resolve by looking at group (we could cache groups somewhere to avoid the re-parsing?)
+        autoEmbed = MimeTypeData(m_mimeTypeData->majorType()).autoEmbed();
     }
 
     const QString mimeType = m_mimeTypeData->name();
@@ -267,7 +264,7 @@ void FileTypeDetails::updateAskSave()
     else
         dontAskAgainName = "askSave"+mimeType;
 
-    KSharedConfig::Ptr config = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
+    KSharedConfig::Ptr config = KSharedConfig::openConfig("filetypesrc", KConfig::NoGlobals);
     // default value
     bool ask = config->group("Notification Messages").readEntry(dontAskAgainName, QString()).isEmpty();
     // per-mimetype override if there's one

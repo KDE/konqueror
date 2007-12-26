@@ -66,7 +66,7 @@ private:
 
   QList<TypesListItem *> m_itemsModified;
 
-  KSharedConfig::Ptr m_konqConfig;
+  KSharedConfig::Ptr m_fileTypesConfig;
 };
 
 #endif

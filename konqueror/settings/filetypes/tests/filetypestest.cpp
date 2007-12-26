@@ -69,6 +69,7 @@ private Q_SLOTS:
     {
         MimeTypeData data("text");
         QCOMPARE(data.majorType(), QString("text"));
+        QCOMPARE(data.name(), QString("text"));
         QVERIFY(data.isMeta());
         QCOMPARE(data.autoEmbed(), MimeTypeData::No); // text doesn't autoembed by default
         QVERIFY(!data.isDirty());
@@ -87,6 +88,30 @@ private Q_SLOTS:
         QVERIFY(!data2.isDirty());
 
         // TODO test askSave after cleaning up the code
+    }
+
+    void testMimeTypeAutoEmbed()
+    {
+        MimeTypeData data(KMimeType::mimeType("text/plain"));
+        QCOMPARE(data.majorType(), QString("text"));
+        QCOMPARE(data.minorType(), QString("plain"));
+        QCOMPARE(data.name(), QString("text/plain"));
+        QVERIFY(!data.isMeta());
+        QCOMPARE(data.autoEmbed(), MimeTypeData::UseGroupSetting);
+        QVERIFY(!data.isDirty());
+        data.setAutoEmbed(MimeTypeData::Yes);
+        QCOMPARE(data.autoEmbed(), MimeTypeData::Yes);
+        QVERIFY(data.isDirty());
+        data.sync(); // save to disk
+        QVERIFY(!data.isDirty());
+        // Check what's on disk by creating another MimeTypeData instance
+        MimeTypeData data2(KMimeType::mimeType("text/plain"));
+        QCOMPARE(data2.autoEmbed(), MimeTypeData::Yes);
+        QVERIFY(!data2.isDirty());
+        data2.setAutoEmbed(MimeTypeData::UseGroupSetting); // revert to default, for next time
+        QVERIFY(data2.isDirty());
+        data2.sync();
+        QVERIFY(!data2.isDirty());
     }
 
     void testMimeTypePatterns()
@@ -134,11 +159,6 @@ private Q_SLOTS:
         newPatterns = KMimeType::mimeType("text/plain")->patterns();
         newPatterns.sort();
         QCOMPARE(newPatterns, origPatterns);
-    }
-
-    void testMimeTypeAutoEmbed()
-    {
-        // TODO
     }
 
     // TODO see TODO in filetypesview

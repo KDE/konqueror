@@ -1,5 +1,5 @@
 /* This file is part of the KDE project
-   Copyright (C) 1999 David Faure <faure@kde.org>
+   Copyright (C) 1999, 2007 David Faure <faure@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -66,39 +66,33 @@ KonqFMSettings::~KonqFMSettings()
 void KonqFMSettings::init(const KConfigGroup &config)
 {
     m_homeURL = config.readPathEntry("HomeURL", "~");
-    m_embedMap = config.config()->entryMap("EmbedSettings");
+    const KSharedConfig::Ptr fileTypesConfig = KSharedConfig::openConfig("filetypesrc", KConfig::NoGlobals);
+    m_embedMap = fileTypesConfig->entryMap("EmbedSettings");
 }
 
 bool KonqFMSettings::shouldEmbed( const QString & mimeType ) const
 {
     // First check in user's settings whether to embed or not
-    // 1 - in the mimetype file itself
-    KMimeType::Ptr mimeTypePtr = KMimeType::mimeType( mimeType );
+    // 1 - in the filetypesrc config file (written by the configuration module)
     bool hasLocalProtocolRedirect = false;
-    if ( mimeTypePtr )
-    {
-        hasLocalProtocolRedirect = !mimeTypePtr->property( "X-KDE-LocalProtocol" ).toString().isEmpty();
-        QVariant autoEmbedProp = mimeTypePtr->property( "X-KDE-AutoEmbed" );
-        if ( autoEmbedProp.isValid() )
-        {
-            bool autoEmbed = autoEmbedProp.toBool();
-            kDebug(1203) << "X-KDE-AutoEmbed set to " << (autoEmbed ? "true" : "false");
-            return autoEmbed;
-        } else
-            kDebug(1203) << "No X-KDE-AutoEmbed, looking for group";
+    // TODO
+    //hasLocalProtocolRedirect = !mimeTypePtr->property( "X-KDE-LocalProtocol" ).toString().isEmpty();
+    QMap<QString, QString>::const_iterator it = m_embedMap.find( QString::fromLatin1("embed-")+mimeType );
+    if ( it != m_embedMap.end() ) {
+        kDebug(1202) << mimeType << it.value();
+        return it.value() == QLatin1String("true");
     }
     // 2 - in the configuration for the group if nothing was found in the mimetype
-    QString mimeTypeGroup = mimeType.left(mimeType.indexOf("/"));
-    kDebug(1203) << "KonqFMSettings::shouldEmbed : mimeTypeGroup=" << mimeTypeGroup;
+    QString mimeTypeGroup = mimeType.left(mimeType.indexOf('/'));
     if ( mimeTypeGroup == "inode" || mimeTypeGroup == "Browser" || mimeTypeGroup == "Konqueror" )
         return true; //always embed mimetype inode/*, Browser/* and Konqueror/*
-    QMap<QString, QString>::ConstIterator it = m_embedMap.find( QString::fromLatin1("embed-")+mimeTypeGroup );
+    it = m_embedMap.find( QString::fromLatin1("embed-")+mimeTypeGroup );
     if ( it != m_embedMap.end() ) {
-        kDebug(1203) << "KonqFMSettings::shouldEmbed: " << it.value();
-        return it.value() == QString::fromLatin1("true");
+        kDebug(1202) << mimeType << "group setting:" << it.value();
+        return it.value() == QLatin1String("true");
     }
     // 3 - if no config found, use default.
-    // Note: if you change those defaults, also change kcontrol/filetypes/typeslistitem.cpp !
+    // Note: if you change those defaults, also change kcontrol/filetypes/mimetypedata.cpp !
     // Embedding is false by default except for image/* and for zip, tar etc.
     if ( mimeTypeGroup == "image" || hasLocalProtocolRedirect )
         return true;
