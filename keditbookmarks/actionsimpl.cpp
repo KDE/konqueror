@@ -92,7 +92,6 @@ void KEBApp::createActions() {
     (void) KStandardAction::cut(actn, SLOT( slotCut() ), actionCollection());
     (void) KStandardAction::copy(actn, SLOT( slotCopy() ), actionCollection());
     (void) KStandardAction::paste(actn, SLOT( slotPaste() ), actionCollection());
-    (void) KStandardAction::print(actn, SLOT( slotPrint() ), actionCollection());
 
     // actions
     KAction* actnDelete = actionCollection()->addAction("delete");
@@ -423,59 +422,6 @@ void ActionsImpl::slotExportNS() {
 void ActionsImpl::slotExportMoz() {
     KEBApp::self()->bkInfo()->commitChanges();
     CurrentMgr::self()->doExport(CurrentMgr::MozillaExport); }
-
-/* -------------------------------------- */
-
-#if 0
-static DCOPCString s_appId, s_objId;
-#endif
-static KParts::ReadOnlyPart *s_part;
-
-void ActionsImpl::slotPrint() {
-    KEBApp::self()->bkInfo()->commitChanges();
-    s_part = KServiceTypeTrader
-                        ::createInstanceFromQuery<KParts::ReadOnlyPart>(
-                                "text/html", QString());
-    s_part->setProperty("pluginsEnabled", QVariant(false));
-    s_part->setProperty("javaScriptEnabled", QVariant(false));
-    s_part->setProperty("javaEnabled", QVariant(false));
-
-    // doc->openStream( "text/html", KUrl() );
-    // doc->writeStream( QCString( "<HTML><BODY>FOO</BODY></HTML>" ) );
-    // doc->closeStream();
-
-    HTMLExporter exporter;
-    KTemporaryFile tmpf;
-    tmpf.setPrefix("print_bookmarks");
-    tmpf.setSuffix(".html");
-    tmpf.setAutoRemove(false);
-    QTextStream tstream ( &tmpf );
-    tstream.setCodec("UTF-16");
-    tstream << exporter.toString(CurrentMgr::self()->root(), true);
-    tstream.flush();
-
-#if 0
-    s_appId = kapp->dcopClient()->appId();
-    s_objId = s_part->property("dcopObjectId").toString().toLatin1();
-#endif
-    connect(s_part, SIGNAL(completed()), this, SLOT(slotDelayedPrint()));
-
-    s_part->openUrl(KUrl( tmpf.fileName() ));
-}
-
-void ActionsImpl::slotDelayedPrint() {
-    Q_ASSERT(s_part);
-#ifdef __GNUC__
-#warning Re-implement khtml print call without dcop
-#endif
-#if 0
-    // We could just link to khtml and call s_part->view()->print(false)...
-    // Or print could be made a slot in either khtmlpart or khtmlview...
-    DCOPRef(s_appId, s_objId).send("print", false);
-#endif
-    delete s_part;
-    s_part = 0;
-}
 
 /* -------------------------------------- */
 

@@ -1,13 +1,11 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<kpartgui name="keditbookmarks" version="25">
+<kpartgui name="keditbookmarks" version="26">
 
 <MenuBar>
 
 <Menu name="file" noMerge="1"><text>&amp;File</text>
   <Action name="file_open"/>
   <Action name="file_save_as"/>
-  <Separator/>
-  <Action name="file_print"/>
   <Separator/>
   <Action name="file_quit"/>
 </Menu>

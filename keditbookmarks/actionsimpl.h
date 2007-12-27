@@ -37,7 +37,6 @@ public Q_SLOTS:
    void slotCopy();
    void slotPaste();
    void slotRename();
-   void slotPrint();
    void slotChangeURL();
    void slotChangeComment();
    void slotChangeIcon();
@@ -63,9 +62,6 @@ public Q_SLOTS:
    void slotExportIE();
    void slotExportNS();
    void slotExportMoz();
-
-   // ugly hack really...
-   void slotDelayedPrint();
 
    static ActionsImpl* self() { if (!s_self) { s_self = new ActionsImpl(); }; return s_self; }
 
