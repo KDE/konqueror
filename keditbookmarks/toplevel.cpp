@@ -226,8 +226,6 @@ KEBApp::KEBApp(
 
     s_topLevel = this;
 
-    QSplitter *vsplitter = new QSplitter(this);
-
     createActions();
     if (m_browser)
         createGUI();
@@ -255,20 +253,19 @@ KEBApp::KEBApp(
     QWidget *listLayoutWidget = new QWidget;
 
     QVBoxLayout *listLayout = new QVBoxLayout(listLayoutWidget);
+    QWidget * rightSide = new QWidget;
+    rightSide->setLayout(listLayout);
     listLayout->addWidget(searchline);
     listLayout->addWidget(mBookmarkListView);
 
     m_bkinfo = new BookmarkInfoWidget(mBookmarkListView);
 
-    vsplitter->setOrientation(Qt::Vertical);
-    vsplitter->addWidget(listLayoutWidget);
-    vsplitter->addWidget(m_bkinfo);
+    listLayout->addWidget(m_bkinfo);
 
     QSplitter *hsplitter = new QSplitter(this);
     hsplitter->setOrientation(Qt::Horizontal);
     hsplitter->addWidget(mBookmarkFolderView);
-    hsplitter->addWidget(vsplitter);
-    //FIXME set sensible sizes for vsplitter and hsplitter
+    hsplitter->addWidget(rightSide);
 
     setCentralWidget(hsplitter);
 
