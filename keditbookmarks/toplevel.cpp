@@ -277,6 +277,9 @@ KEBApp::KEBApp(
     connect(mBookmarkListView->selectionModel(), SIGNAL(selectionChanged(  const QItemSelection &, const QItemSelection & )),
             this, SLOT(selectionChanged()));
 
+    connect(mBookmarkFolderView->selectionModel(), SIGNAL(selectionChanged(  const QItemSelection &, const QItemSelection & )),
+            this, SLOT(selectionChanged()));
+
     setCancelFavIconUpdatesEnabled(false);
     setCancelTestsEnabled(false);
     updateActions();
@@ -317,12 +320,120 @@ void KEBApp::startEdit( Column c )
             return mBookmarkListView->edit( *it );
 }
 
+//FIXME clean up and remove unneeded things
+SelcAbilities KEBApp::getSelectionAbilities() const
+{
+    SelcAbilities selctionAbilities;
+    selctionAbilities.itemSelected   = false;
+    selctionAbilities.group          = false;
+    selctionAbilities.separator      = false;
+    selctionAbilities.urlIsEmpty     = false;
+    selctionAbilities.root           = false;
+    selctionAbilities.multiSelect    = false;
+    selctionAbilities.singleSelect   = false;
+    selctionAbilities.notEmpty       = false;
+    selctionAbilities.deleteEnabled  = false;
+
+    KBookmark nbk;
+    QModelIndexList sel = mBookmarkListView->selectionModel()->selectedIndexes();
+    int columnCount;
+    if(sel.count())
+    {
+        nbk = mBookmarkListView->bookmarkForIndex(sel.first());
+        selctionAbilities.deleteEnabled = true;
+        columnCount = mBookmarkListView->model()->columnCount();
+    }
+    else
+    {
+        sel = mBookmarkFolderView->selectionModel()->selectedIndexes();
+        nbk = mBookmarkFolderView->bookmarkForIndex(sel.first());
+        columnCount = mBookmarkFolderView->model()->columnCount();
+    }
+
+    if ( sel.count() > 0)
+    {
+       
+        selctionAbilities.itemSelected   = true;
+        selctionAbilities.group          = nbk.isGroup();
+        selctionAbilities.separator      = nbk.isSeparator();
+        selctionAbilities.urlIsEmpty     = nbk.url().isEmpty();
+        selctionAbilities.root           = nbk.address() == CurrentMgr::self()->root().address();
+        selctionAbilities.multiSelect    = (sel.count() > columnCount);
+        selctionAbilities.singleSelect   = (!selctionAbilities.multiSelect && selctionAbilities.itemSelected);
+    }
+    //FIXME check next line, if it actually works
+    selctionAbilities.notEmpty = CurrentMgr::self()->root().first().hasParent();
+
+/*    kDebug()
+        <<"\nsa.itemSelected "<<selctionAbilities.itemSelected
+        <<"\nsa.group        "<<selctionAbilities.group
+        <<"\nsa.separator    "<<selctionAbilities.separator
+        <<"\nsa.urlIsEmpty   "<<selctionAbilities.urlIsEmpty
+        <<"\nsa.root         "<<selctionAbilities.root
+        <<"\nsa.multiSelect  "<<selctionAbilities.multiSelect
+        <<"\nsa.singleSelect "<<selctionAbilities.singleSelect
+        <<"\nsa.deleteEnabled"<<selctionAbilities.deleteEnabled
+        <<endl;
+*/
+    return selctionAbilities;
+}
+
+void KEBApp::setActionsEnabled(SelcAbilities sa) {
+    KActionCollection * coll = actionCollection();
+
+    QStringList toEnable;
+
+    if (sa.multiSelect || (sa.singleSelect && !sa.root))
+        toEnable << "edit_copy";
+
+    if (sa.multiSelect || (sa.singleSelect && !sa.root && !sa.urlIsEmpty && !sa.group && !sa.separator))
+            toEnable << "openlink";
+
+    if (!m_readOnly) {
+        if (sa.notEmpty)
+            toEnable << "testall" << "updateallfavicons";
+
+        if ( sa.deleteEnabled && (sa.multiSelect || (sa.singleSelect && !sa.root)) )
+                toEnable << "delete" << "edit_cut";
+
+        if( sa.singleSelect)
+            if (m_canPaste)
+                toEnable << "edit_paste";
+
+        if( sa.multiSelect || (sa.singleSelect && !sa.root && !sa.urlIsEmpty && !sa.group && !sa.separator))
+            toEnable << "testlink" << "updatefavicon";
+
+        if (sa.singleSelect && !sa.root && !sa.separator) {
+            toEnable << "rename" << "changeicon" << "changecomment";
+            if (!sa.group)
+                toEnable << "changeurl";
+        }
+
+        if (sa.singleSelect) {
+            toEnable << "newfolder" << "newbookmark" << "insertseparator";
+            if (sa.group)
+                toEnable << "sort" << "recursivesort" << "setastoolbar";
+        }
+    }
+
+    for ( QStringList::Iterator it = toEnable.begin();
+            it != toEnable.end(); ++it )
+    {
+        //kDebug() <<" enabling action "<<(*it);
+        coll->action((*it).toAscii().data())->setEnabled(true);
+    }
+}
+
 KBookmark KEBApp::firstSelected() const
 {
-    // FIXME if nothing is selected should (probably) return the selected item in the folder view
+    QModelIndex index;
     const QModelIndexList & list = mBookmarkListView->selectionModel()->selectedIndexes();
-    QModelIndex index = *list.constBegin();
-    return mBookmarkListView->model()->bookmarkForIndex(index);
+    if(list.count()) // selection in main listview, return bookmark for firstSelected
+        return mBookmarkListView->bookmarkForIndex(*list.constBegin());
+
+    // no selection in main listview, fall back to selection in right tree
+    const QModelIndexList & list2 = mBookmarkFolderView->selectionModel()->selectedIndexes();
+    return mBookmarkFolderView->bookmarkForIndex(*list2.constBegin());
 }
 
 QString KEBApp::insertAddress() const
@@ -405,7 +516,7 @@ KBookmark::List KEBApp::selectedBookmarks() const
     {
         if((*it).column() != 0)
             continue;
-        KBookmark bk = mBookmarkListView->model()->bookmarkForIndex(*it);;
+        KBookmark bk = mBookmarkListView->bookmarkModel()->bookmarkForIndex(*it);;
         if(bk.address() != CurrentMgr::self()->root().address())
             bookmarks.push_back( bk );
     }
@@ -479,11 +590,8 @@ void  KEBApp::selectionChanged()
 }
 
 void KEBApp::updateActions() {
-    // FIXME if nothing is selected in the item view, the folder in the group view
-    // is selected.
-    // Change setActionsEnabled() and firstSelected() to match that
     resetActions();
-    setActionsEnabled(mBookmarkListView->getSelectionAbilities());
+    setActionsEnabled(getSelectionAbilities());
 }
 
 void KEBApp::slotClipboardDataChanged() {

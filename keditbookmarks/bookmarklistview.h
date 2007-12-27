@@ -22,17 +22,6 @@
 #include <QtGui/QTreeView>
 #include <QSortFilterProxyModel>
 
-struct SelcAbilities {
-    bool itemSelected:1;
-    bool group:1;
-    bool root:1;
-    bool separator:1;
-    bool urlIsEmpty:1;
-    bool multiSelect:1;
-    bool singleSelect:1;
-    bool notEmpty:1;
-};
-
 class KBookmarkModel;
 class KBookmark;
 class BookmarkListView;
@@ -43,8 +32,8 @@ class BookmarkView : public QTreeView
     Q_OBJECT
 public:
     BookmarkView( QWidget * parent = 0 );
-    virtual ~BookmarkView();
-    KBookmarkModel* model() const;
+    virtual ~BookmarkView();    
+    virtual KBookmark bookmarkForIndex(const QModelIndex & idx) const = 0;
 };
 
 class BookmarkFolderView : public BookmarkView
@@ -54,6 +43,7 @@ public:
     explicit BookmarkFolderView( BookmarkListView * view, QWidget * parent = 0 );
     virtual ~BookmarkFolderView();
     virtual void selectionChanged ( const QItemSelection & selected, const QItemSelection & deselected );
+    virtual KBookmark bookmarkForIndex(const QModelIndex & idx) const;
 private:
     BookmarkListView * mview;
     BookmarkFolderViewFilterModel * mmodel;
@@ -65,10 +55,11 @@ class BookmarkListView : public BookmarkView
 public:
     BookmarkListView( QWidget * parent = 0 );
     virtual ~BookmarkListView();
-    SelcAbilities getSelectionAbilities() const;
     void loadColumnSetting();
     void saveColumnSetting ();
     virtual void setModel(QAbstractItemModel * model);
+    virtual KBookmark bookmarkForIndex(const QModelIndex & idx) const;
+    KBookmarkModel * bookmarkModel() const;
 protected:
     virtual void contextMenuEvent ( QContextMenuEvent * e );
 };

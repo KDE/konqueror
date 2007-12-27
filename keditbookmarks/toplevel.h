@@ -33,6 +33,18 @@ class KBookmarkEditorIface;
 class BookmarkInfoWidget;
 class BookmarkListView;
 
+struct SelcAbilities {
+    bool itemSelected:1;
+    bool group:1;
+    bool root:1;
+    bool separator:1;
+    bool urlIsEmpty:1;
+    bool multiSelect:1;
+    bool singleSelect:1;
+    bool notEmpty:1;
+    bool deleteEnabled:1;
+};
+
 class CmdHistory : public QObject {
     Q_OBJECT
 public:
@@ -112,6 +124,7 @@ public:
 
     void updateActions();
     void updateStatus(const QString &url);
+    SelcAbilities getSelectionAbilities() const;
     void setActionsEnabled(SelcAbilities);
 
     void setCancelFavIconUpdatesEnabled(bool);

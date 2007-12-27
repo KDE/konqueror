@@ -211,11 +211,11 @@ void BookmarkInfoWidget::slotTextChangedComment(const QString &str) {
 
 void BookmarkInfoWidget::slotUpdate()
 {
-    if( mBookmarkListView->getSelectionAbilities().singleSelect)
-    {
-        const QModelIndexList & list = mBookmarkListView->selectionModel()->selectedIndexes();
+    const QModelIndexList & list = mBookmarkListView->selectionModel()->selectedIndexes();
+    if( list.count() == 1)
+    {        
         QModelIndex index = *list.constBegin();
-        showBookmark( mBookmarkListView->model()->bookmarkForIndex(index) );
+        showBookmark( mBookmarkListView->bookmarkModel()->bookmarkForIndex(index) );
     }
     else
         showBookmark( KBookmark() );

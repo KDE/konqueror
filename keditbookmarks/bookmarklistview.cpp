@@ -57,12 +57,6 @@ BookmarkFolderView::BookmarkFolderView( BookmarkListView * view, QWidget * paren
     setCurrentIndex( mmodel->index(0,0, QModelIndex()));
 }
 
-KBookmarkModel* BookmarkView::model() const
-{
-    return dynamic_cast<KBookmarkModel*>(QTreeView::model());
-}
-
-////
 
 BookmarkFolderView::~BookmarkFolderView()
 {
@@ -79,6 +73,14 @@ void BookmarkFolderView::selectionChanged ( const QItemSelection & deselected, c
     BookmarkView::selectionChanged( deselected, selected);
 }
 
+KBookmark BookmarkFolderView::bookmarkForIndex(const QModelIndex & idx) const
+{
+    qDebug()<<"BookmarkFolderView::bookmarkForIndex"<<idx;
+    const QModelIndex & index = mmodel->mapToSource(idx);
+    return static_cast<KBookmarkModel *>(mmodel->sourceModel())->bookmarkForIndex(index);
+}
+
+
 /********/
 
 
@@ -94,6 +96,16 @@ void BookmarkListView::setModel(QAbstractItemModel * model)
     BookmarkView::setModel(model);
 }
 
+KBookmarkModel* BookmarkListView::bookmarkModel() const
+{
+    return dynamic_cast<KBookmarkModel*>(QTreeView::model());
+}
+
+KBookmark BookmarkListView::bookmarkForIndex(const QModelIndex & idx) const
+{
+    return bookmarkModel()->bookmarkForIndex(idx);
+}
+
 
 BookmarkListView::~BookmarkListView()
 {
@@ -105,7 +117,7 @@ void BookmarkListView::contextMenuEvent ( QContextMenuEvent * e )
     QModelIndex index = indexAt(e->pos());
     KBookmark bk;
     if(index.isValid())
-        bk = model()->bookmarkForIndex(index);
+        bk = bookmarkForIndex(index);
 
     QMenu* popup;
     if( !index.isValid()
@@ -120,41 +132,6 @@ void BookmarkListView::contextMenuEvent ( QContextMenuEvent * e )
     }
     if (popup)
         popup->popup(e->globalPos());
-}
-
-//FIXME clean up and remove unneeded things
-SelcAbilities BookmarkListView::getSelectionAbilities() const
-{
-    SelcAbilities selctionAbilities;
-    const QModelIndexList & sel = selectionModel()->selectedIndexes();
-    selctionAbilities.itemSelected   = false;
-    selctionAbilities.group          = false;
-    selctionAbilities.separator      = false;
-    selctionAbilities.urlIsEmpty     = false;
-    selctionAbilities.root           = false;
-    selctionAbilities.multiSelect    = false;
-    selctionAbilities.singleSelect   = false;
-    selctionAbilities.notEmpty       = false;
-
-    if ( sel.count() > 0)
-    {
-        KBookmark nbk     = model()->bookmarkForIndex(sel.first());
-        selctionAbilities.itemSelected   = true;
-        selctionAbilities.group          = nbk.isGroup();
-        selctionAbilities.separator      = nbk.isSeparator();
-        selctionAbilities.urlIsEmpty     = nbk.url().isEmpty();
-        selctionAbilities.root           = nbk.address() == CurrentMgr::self()->root().address();
-        selctionAbilities.multiSelect    = (sel.count() > model()->columnCount());
-        selctionAbilities.singleSelect   = (!selctionAbilities.multiSelect && selctionAbilities.itemSelected);
-    }
-    //FIXME check next line, if it actually works
-    selctionAbilities.notEmpty = CurrentMgr::self()->root().first().hasParent(); //FIXME that's insane, checks whether there exists at least one bookmark
-
-//     kDebug()<<"sa.itemSelected "<<selctionAbilities.itemSelected<<"\nsa.group "<<selctionAbilities.group<<
-//                 "\nsa.separator "<<selctionAbilities.separator<<"\nsa.urlIsEmpty "<<selctionAbilities.urlIsEmpty<<
-//                 "\nsa.root "<<selctionAbilities.root<<"\nsa.multiSelect "<<selctionAbilities.multiSelect<<
-//                 "\nsa.singleSelect "<<selctionAbilities.singleSelect<<endl;
-    return selctionAbilities;
 }
 
 void BookmarkListView::loadColumnSetting() 

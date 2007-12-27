@@ -320,52 +320,6 @@ void CurrentMgr::doExport(ExportType type, const QString & _path) {
     }
 }
 
-void KEBApp::setActionsEnabled(SelcAbilities sa) {
-    KActionCollection * coll = actionCollection();
-
-    QStringList toEnable;
-
-    if (sa.multiSelect || (sa.singleSelect && !sa.root))
-        toEnable << "edit_copy";
-
-    if (sa.multiSelect || (sa.singleSelect && !sa.root && !sa.urlIsEmpty && !sa.group && !sa.separator))
-            toEnable << "openlink";
-
-    if (!m_readOnly) {
-        if (sa.notEmpty)
-            toEnable << "testall" << "updateallfavicons";
-
-        if ( sa.multiSelect || (sa.singleSelect && !sa.root) )
-                toEnable << "delete" << "edit_cut";
-
-        if( sa.singleSelect)
-            if (m_canPaste)
-                toEnable << "edit_paste";
-
-        if( sa.multiSelect || (sa.singleSelect && !sa.root && !sa.urlIsEmpty && !sa.group && !sa.separator))
-            toEnable << "testlink" << "updatefavicon";
-
-        if (sa.singleSelect && !sa.root && !sa.separator) {
-            toEnable << "rename" << "changeicon" << "changecomment";
-            if (!sa.group)
-                toEnable << "changeurl";
-        }
-
-        if (sa.singleSelect) {
-            toEnable << "newfolder" << "newbookmark" << "insertseparator";
-            if (sa.group)
-                toEnable << "sort" << "recursivesort" << "setastoolbar";
-        }
-    }
-
-    for ( QStringList::Iterator it = toEnable.begin();
-            it != toEnable.end(); ++it )
-    {
-        //kDebug() <<" enabling action "<<(*it);
-        coll->action((*it).toAscii().data())->setEnabled(true);
-    }
-}
-
 void KEBApp::setCancelFavIconUpdatesEnabled(bool enabled) {
     actionCollection()->action("cancelfaviconupdates")->setEnabled(enabled);
 }
