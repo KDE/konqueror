@@ -36,13 +36,13 @@ ExcludeServiceTypes=application/x-zip # This entry is used to avoid to display m
 [Desktop Action gzip]            # One "Desktop Action <name>" group per Action
 Name=GZip this file
 Name[fr]=...
-Icon=tgz
+Icon=application-x-tarz
 Exec=gzip %f
 
 [Desktop Action mail]
 Name=Mail this file
 Name[fr]=...
-Icon=kmail
+Icon=internet-mail
 Exec=kmail --there-is-no-such-option-yet %f
 
 
