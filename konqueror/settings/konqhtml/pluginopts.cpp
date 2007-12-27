@@ -590,8 +590,12 @@ void KPluginOptions::pluginLoad( KSharedConfig::Ptr /*config*/ )
 
         QStringList desc = line.split(':');
         QString mime = desc[0].trimmed();
-        QString name = desc[2];
-        QString suffixes = desc[1];
+        QString name;
+        QString suffixes;
+        if (desc.count() > 2)
+            name = desc[2];
+        if (desc.count() > 1)
+            suffixes = desc[1];
 
         if (!mime.isEmpty() && next) {
             //kDebug() << "mime=" << mime << " desc=" << name << " suffix=" << suffixes;
