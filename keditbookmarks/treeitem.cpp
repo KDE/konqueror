@@ -23,7 +23,6 @@ TreeItem::TreeItem(const KBookmark& bk, TreeItem * parent)
     : mparent(parent), mbk(bk)
 {
     init = false;
-    deleted = false;
 }
 
 TreeItem::~TreeItem()
@@ -72,23 +71,18 @@ void TreeItem::insertChildren(int first, int last)
 
 void TreeItem::deleteChildren(int first, int last)
 {
-    kDebug()<<"deleteChildren of "<<bookmark().address()<<" "<<first<<" "<<last;
     QList<TreeItem *>::iterator firstIt, lastIt, it;
     firstIt = children.begin() + first;
     lastIt = children.begin() + last + 1;
     for( it = firstIt; it != lastIt; ++it)
     {
-        //delete *it;
-        (*it)->deleted = true;
+        delete *it;
     }
     children.erase(firstIt, lastIt);
-    kDebug()<<"now having"<<children.size()<<" childs";
 }
 
 KBookmark TreeItem::bookmark() const
 {
-    if(deleted)
-        kDebug()<<"THIS WAS ALREADY DELETED";
     return mbk;
 }
 

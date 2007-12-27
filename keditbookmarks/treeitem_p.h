@@ -35,7 +35,6 @@ public:
     KBookmark bookmark() const;
     int childCount();
     TreeItem * treeItemForBookmark(const KBookmark& bk);
-    bool deleted;
 private:
     void initChildren();
     bool init;
