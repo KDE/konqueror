@@ -264,6 +264,9 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
   setStandardToolBarMenuEnabled( true );
 
   createGUI( 0 );
+  
+  m_combo->setParent( toolBar("locationToolBar") );
+  m_combo->show();
 
   connect(toolBarMenuAction(),SIGNAL(activated()),this,SLOT(slotForceSaveMainWindowSettings()) );
 
@@ -3042,7 +3045,7 @@ void KonqMainWindow::slotForwardActivated( int id )
 
 void KonqMainWindow::initCombo()
 {
-  m_combo = new KonqCombo( toolBar("locationToolBar" ) );
+  m_combo = new KonqCombo(0);
 
   m_combo->init( s_pCompletion );
 
