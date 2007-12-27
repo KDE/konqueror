@@ -205,7 +205,10 @@ void NSPluginLoader::scanPlugins()
 
       QStringList desc = line.split(':', QString::KeepEmptyParts);
       QString mime = desc[0].trimmed();
-      QStringList suffixes = desc[1].trimmed().split(',');
+      QStringList suffixes;
+      // If there are no suffixes, this would cause a crash
+      if (desc.count() > 1)
+        suffixes = desc[1].trimmed().split(',');
       if (!mime.isEmpty())
         {
           // insert the mimetype -> plugin mapping
