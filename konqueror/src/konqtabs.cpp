@@ -24,7 +24,7 @@
 #include <QtGui/QApplication>
 #include <QtGui/QClipboard>
 #include <QtGui/QMenu>
-#include <QtGui/QPushButton>
+#include <QtGui/QToolButton>
 #include <QtGui/QKeyEvent>
 
 #include <kapplication.h>
@@ -181,22 +181,18 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
            m_pViewManager->mainWindow(), SLOT( slotRemoveTabPopup() ) );
 
   if ( KonqSettings::addTabButton() ) {
-    m_leftWidget = new QPushButton( this );
-    m_leftWidget->setFlat(true);
+    m_leftWidget = new QToolButton( this );
     connect( m_leftWidget, SIGNAL( clicked() ),
              m_pViewManager->mainWindow(), SLOT( slotAddTab() ) );
     m_leftWidget->setIcon( KIcon( "tab-new" ) );
-    m_leftWidget->adjustSize();
     m_leftWidget->setToolTip( i18n("Open a new tab"));
     setCornerWidget( m_leftWidget, Qt::TopLeftCorner );
   }
   if ( KonqSettings::closeTabButton() ) {
-    m_rightWidget = new QPushButton( this );
-    m_rightWidget->setFlat(true);
+    m_rightWidget = new QToolButton( this );
     connect( m_rightWidget, SIGNAL( clicked() ),
              m_pViewManager->mainWindow(), SLOT( slotRemoveTab() ) );
     m_rightWidget->setIcon( KIcon( "tab-close" ) );
-    m_rightWidget->adjustSize();
     m_rightWidget->setToolTip( i18n("Close the current tab"));
     setCornerWidget( m_rightWidget, Qt::TopRightCorner );
   }
