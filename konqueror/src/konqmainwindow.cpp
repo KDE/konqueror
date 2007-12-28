@@ -2108,7 +2108,6 @@ void KonqMainWindow::slotPartActivated( KParts::Part *part )
     for ( ; it != itEnd ; ++it )
     {
       QAction * act = actionCollection()->action( it.key().data() );
-      Q_ASSERT(act);
       if (act)
         act->setEnabled( false );
     }
