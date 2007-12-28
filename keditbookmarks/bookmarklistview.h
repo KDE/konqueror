@@ -44,6 +44,8 @@ public:
     virtual ~BookmarkFolderView();
     virtual void selectionChanged ( const QItemSelection & selected, const QItemSelection & deselected );
     virtual KBookmark bookmarkForIndex(const QModelIndex & idx) const;
+private Q_SLOTS:
+    void slotReset();
 private:
     BookmarkListView * mview;
     BookmarkFolderViewFilterModel * mmodel;

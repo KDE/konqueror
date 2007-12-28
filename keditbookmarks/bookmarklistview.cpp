@@ -55,6 +55,8 @@ BookmarkFolderView::BookmarkFolderView( BookmarkListView * view, QWidget * paren
     setRootIsDecorated(false);
     expandAll();
     setCurrentIndex( mmodel->index(0,0, QModelIndex()));
+    
+    connect(mmodel, SIGNAL(modelReset()), this, SLOT(slotReset()));
 }
 
 
@@ -71,6 +73,12 @@ void BookmarkFolderView::selectionChanged ( const QItemSelection & deselected, c
     else
         mview->setRootIndex( QModelIndex());
     BookmarkView::selectionChanged( deselected, selected);
+}
+
+void BookmarkFolderView::slotReset()
+{
+    setCurrentIndex( mmodel->index(0,0, QModelIndex()));
+    expandAll();
 }
 
 KBookmark BookmarkFolderView::bookmarkForIndex(const QModelIndex & idx) const

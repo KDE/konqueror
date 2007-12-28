@@ -170,8 +170,11 @@ void CurrentMgr::slotBookmarksChanged(const QString &, const QString &) {
         return;
     }
 
+    m_model->setRoot(m_mgr->root());    
+
     CmdHistory::self()->clearHistory();
     KEBApp::self()->updateActions();
+    KEBApp::self()->expandAll();
 }
 
 void CurrentMgr::notifyManagers(const KBookmarkGroup& grp)
@@ -287,7 +290,7 @@ KEBApp::KEBApp(
 
 void KEBApp::expandAll()
 {
-    mBookmarkListView->collapseAll();
+    mBookmarkListView->expandAll();
 }
 
 void KEBApp::collapseAll()
@@ -302,6 +305,7 @@ QString KEBApp::bookmarkFilename()
 
 void KEBApp::reset(const QString & caption, const QString & bookmarksFileName)
 {
+    //FIXME check this code, probably should be model()->setRoot instead of resetModel()
     m_caption = caption;
     m_bookmarksFilename = bookmarksFileName;
     CurrentMgr::self()->createManager(m_bookmarksFilename, m_dbusObjectName); //FIXME this is still a memory leak (iff called by slotLoad)
@@ -346,7 +350,8 @@ SelcAbilities KEBApp::getSelectionAbilities() const
     else
     {
         sel = mBookmarkFolderView->selectionModel()->selectedIndexes();
-        nbk = mBookmarkFolderView->bookmarkForIndex(sel.first());
+        if(sel.count())
+            nbk = mBookmarkFolderView->bookmarkForIndex(sel.first());
         columnCount = mBookmarkFolderView->model()->columnCount();
     }
 

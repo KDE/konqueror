@@ -177,7 +177,6 @@ protected Q_SLOTS:
 private:
     void selectedBookmarksExpandedHelper(const KBookmark& bk,
                                          KBookmark::List & bookmarks) const;
-public: //FIXME
     BookmarkListView * mBookmarkListView;
     BookmarkFolderView * mBookmarkFolderView;
 private:

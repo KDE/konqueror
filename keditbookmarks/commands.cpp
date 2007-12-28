@@ -65,9 +65,6 @@ public:
     {
         QModelIndex mParent = CurrentMgr::self()->model()->indexForBookmark(parent);
 
-        //deselecting bookmarks: FIXME be more smart
-        KEBApp::self()->mBookmarkListView->selectionModel()->clear();
-
         CurrentMgr::self()->model()->beginRemoveRows( mParent, first, last);
 
         mt = static_cast<TreeItem *>(mParent.internalPointer());
