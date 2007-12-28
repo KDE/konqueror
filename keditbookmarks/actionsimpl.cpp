@@ -214,7 +214,7 @@ void KEBApp::createActions() {
 
     KAction* actnImportKDE2 = actionCollection()->addAction("importKDE2");
     actnImportKDE2->setObjectName("KDE2");
-    actnImportKDE2->setIcon(KIcon("kmenu"));
+    actnImportKDE2->setIcon(KIcon("kde"));
     actnImportKDE2->setText(i18n("Import &KDE 2 or KDE 3 Bookmarks..."));
 
     connect(actnImportKDE2, SIGNAL( triggered() ), actn, SLOT( slotImport() ));
@@ -241,7 +241,7 @@ void KEBApp::createActions() {
     connect(actnExportOpera, SIGNAL( triggered() ), actn, SLOT( slotExportOpera() ));
 
     KAction* actnExportHTML = actionCollection()->addAction("exportHTML");
-    actnExportHTML->setIcon(KIcon("html"));
+    actnExportHTML->setIcon(KIcon("text-html"));
     actnExportHTML->setText(i18n("Export &HTML Bookmarks..."));
     connect(actnExportHTML, SIGNAL( triggered() ), actn, SLOT( slotExportHTML() ));
 
