@@ -65,6 +65,7 @@ set(konqueror_KDEINIT_SRCS
    konqclosedtabitem.cpp
 )
 kde4_add_kcfg_files(konqueror_KDEINIT_SRCS konqsettingsxt.kcfgc)
+kde4_add_ui_files(konqueror_KDEINIT_SRCS konqprofiledlg_base.ui)
 
 qt4_add_dbus_interface(konqueror_KDEINIT_SRCS org.kde.Konqueror.Main.xml konqueror_interface)
 qt4_add_dbus_interface(konqueror_KDEINIT_SRCS ${KDE4_DBUS_INTERFACES_DIR}/org.kde.kded.xml kded_interface)

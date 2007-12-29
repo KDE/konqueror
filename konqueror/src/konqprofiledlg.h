@@ -23,25 +23,11 @@
 #include <kdialog.h>
 
 #include <QtCore/QMap>
-#include <QtGui/QGridLayout>
-#include <QtGui/QListWidgetItem>
 
 class KonqViewManager;
-class QGridLayout;
-class QCheckBox;
-class QLineEdit;
-class KListWidget;
+class QListWidgetItem;
 
 typedef QMap<QString, QString> KonqProfileMap;
-
-class KonqProfileItem : public QListWidgetItem
-{
-public:
-  KonqProfileItem( KListWidget *, const QString & );
-  ~KonqProfileItem() {}
-
-  QString m_profileName;
-};
 
 class KonqProfileDlg : public KDialog
 {
@@ -56,6 +42,8 @@ public:
    */
   static KonqProfileMap readAllProfiles();
 
+  class KonqProfileItem;
+
 protected Q_SLOTS:
   void slotRenameProfile();
   void slotDeleteProfile();
@@ -66,17 +54,9 @@ protected Q_SLOTS:
   void slotItemRenamed( QListWidgetItem * );
 
 private:
+  class KonqProfileDlgPrivate;
+  KonqProfileDlgPrivate * const d;
   void loadAllProfiles(const QString & = QString());
-  KonqViewManager *m_pViewManager;
-
-  KonqProfileMap m_mapEntries;
-
-  QLineEdit *m_pProfileNameLineEdit;
-
-  QCheckBox *m_cbSaveURLs;
-  QCheckBox *m_cbSaveSize;
-
-  KListWidget *m_pListView;
 };
 
 #endif

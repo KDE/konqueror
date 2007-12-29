@@ -1305,7 +1305,7 @@ void KonqMainWindow::slotDuplicateWindow()
 {
   KTemporaryFile tempFile;
   tempFile.open();
-  m_pViewManager->saveViewProfileToFile( tempFile.fileName(), QString(), true, true );
+  m_pViewManager->saveViewProfileToFile( tempFile.fileName(), QString(), KUrl(), true, true );
 
   KonqMainWindow *mainWindow = new KonqMainWindow( KUrl(), xmlFile() );
   mainWindow->viewManager()->loadViewProfileFromFile( tempFile.fileName(), m_pViewManager->currentProfile() );
