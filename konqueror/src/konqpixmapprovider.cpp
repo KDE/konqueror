@@ -88,7 +88,7 @@ QString KonqPixmapProvider::iconNameFor( const KUrl& url )
 
 QPixmap KonqPixmapProvider::pixmapFor( const QString& url, int size )
 {
-    return loadIcon( url, iconNameFor( KUrl( url ) ), size );
+    return loadIcon( iconNameFor( KUrl( url ) ), size );
 }
 
 void KonqPixmapProvider::load( KConfigGroup& kc, const QString& key )
@@ -157,60 +157,12 @@ void KonqPixmapProvider::clear()
     iconMap.clear();
 }
 
-QPixmap KonqPixmapProvider::loadIcon( const QString& url, const QString& icon,
-				      int size )
+QPixmap KonqPixmapProvider::loadIcon( const QString& icon, int size )
 {
     if ( size <= KIconLoader::SizeSmall )
 	return SmallIcon( icon, size );
 
-    KUrl u;
-    if ( url.at(0) == '/' )
-	u.setPath( url );
-    else
-	u = url;
-
-    QPixmap big;
-
-    // favicon? => blend the favicon in the large
-    if ( url.startsWith( "http:/" ) && icon.startsWith("favicons/") ) {
-	QPixmap small = SmallIcon( icon, size );
-	big = KIconLoader::global()->loadIcon( KProtocolInfo::icon("http"),
-					       KIconLoader::Panel, size );
-
-	int x = big.width()  - small.width();
-	int y = 0;
-#ifdef __GNUC__
-#warning This mask merge is probably wrong.  I couldnt find a way to get the old behavior of Qt::OrROP
-#endif
-/* Old code that did the bitmask merge
-       if ( big.mask() ) {
-           QBitmap mask = *big.mask();
-           bitBlt( &mask, x, y,
-            small.mask() ? const_cast<QBitmap *>(small.mask()) : &small, 0, 0,
-                   small.width(), small.height(),
-                   small.mask() ? OrROP : SetROP );
-           big.setMask( mask );
-       }
-*/
-	QBitmap mask( big.mask() );
-	if( !mask.isNull() ) {
-            QBitmap sm( small.mask() );
-            QPainter pt(&mask);
-#ifdef __GNUC__
-		#warning
-#endif
-            pt.setCompositionMode( QPainter::CompositionMode_Source );
-            pt.drawPixmap(QPoint(x,y), sm.isNull() ? small : QPixmap(sm), QRect(0,0,small.width(), small.height()));
-	    big.setMask( mask );
-	}
-        QPainter painterOnBig( &big );
-        painterOnBig.drawPixmap( x, y, small );
-    }
-
-    else // not a favicon..
-	big = KIconLoader::global()->loadIcon( icon, KIconLoader::Panel, size );
-
-    return big;
+    return KIconLoader::global()->loadIcon( icon, KIconLoader::Panel, size );
 }
 
 #include "konqpixmapprovider.moc"
