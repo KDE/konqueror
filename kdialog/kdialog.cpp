@@ -673,6 +673,8 @@ int main(int argc, char *argv[])
 
   KApplication app;
 
+  QApplication::setWindowIcon(KIcon("system-run"));
+
   KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
   // execute direct kdialog command
