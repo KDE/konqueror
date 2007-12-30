@@ -79,7 +79,7 @@ private Q_SLOTS:
     void notifyChange( bool isHost, const QString& hostOrURL, const QString& iconName );
 
 private:
-    QPixmap loadIcon( const QString& url, const QString& icon, int size );
+    QPixmap loadIcon( const QString& icon, int size );
 
     KonqPixmapProvider();
     friend class KonqPixmapProviderSingleton;
