@@ -56,6 +56,12 @@ int ChfnProcess::ConverseChfn(const char *pass)
 
     if ( line.isEmpty() )
       continue;// discard line
+    else if ( line.contains( "Permission denied" ) )
+    {
+      status=MiscError;
+      m_Error=line;
+      break;
+    }
 
     if ( line.contains( "Password: " )/*isPrompt( line, "password" )*/ )
     {
@@ -77,8 +83,8 @@ int ChfnProcess::ConverseChfn(const char *pass)
     }
     else if ( line.isEmpty() )
     {
-	    status=0;
-	    break;
+      status=0;
+      break;
     }
     else if ( line.contains( "Password error" ) || line.contains("Incorrect password") )
     {
