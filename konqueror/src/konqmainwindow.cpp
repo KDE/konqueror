@@ -3582,7 +3582,7 @@ void KonqMainWindow::initActions()
   action->setShortcuts(KStandardShortcut::shortcut(KStandardShortcut::Open));
 
 #if 0
-  m_paFindFiles = new KToggleAction(KIcon("system-search"), i18n( "&Find File..." ), this);
+  m_paFindFiles = new KToggleAction(KIcon("edit-find"), i18n( "&Find File..." ), this);
   actionCollection()->addAction( "findfile", m_paFindFiles );
   connect(m_paFindFiles, SIGNAL(triggered() ), SLOT( slotToolFind() ));
   m_paFindFiles->setShortcuts(KStandardShortcut::shortcut(KStandardShortcut::Find));
@@ -3696,12 +3696,12 @@ void KonqMainWindow::initActions()
 
   // Window menu
   m_paSplitViewHor = actionCollection()->addAction("splitviewh");
-  m_paSplitViewHor->setIcon( KIcon("view-left-right") );
+  m_paSplitViewHor->setIcon( KIcon("view-split-left-right") );
   m_paSplitViewHor->setText( i18n( "Split View &Left/Right" ) );
   connect(m_paSplitViewHor, SIGNAL(triggered()), SLOT( slotSplitViewHorizontal() ));
   m_paSplitViewHor->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_L);
   m_paSplitViewVer = actionCollection()->addAction("splitviewv");
-  m_paSplitViewVer->setIcon( KIcon("view-top-bottom") );
+  m_paSplitViewVer->setIcon( KIcon("view-split-top-bottom") );
   m_paSplitViewVer->setText( i18n( "Split View &Top/Bottom" ) );
   connect(m_paSplitViewVer, SIGNAL(triggered()), SLOT( slotSplitViewVertical() ));
   m_paSplitViewVer->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_T);
