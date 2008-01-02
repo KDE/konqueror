@@ -238,7 +238,7 @@ void KServiceListWidget::addService()
   KService::Ptr service;
   if ( m_kind == SERVICELIST_APPLICATIONS )
   {
-      KOpenWithDialog dlg(m_mimeTypeData->name(), QString(), 0L);
+      KOpenWithDialog dlg(m_mimeTypeData->name(), QString(), this);
       dlg.setSaveNewApplications(true);
       if (dlg.exec() != QDialog::Accepted)
           return;
@@ -251,7 +251,7 @@ void KServiceListWidget::addService()
   }
   else
   {
-      KServiceSelectDlg dlg(m_mimeTypeData->name(), QString(), 0L);
+      KServiceSelectDlg dlg(m_mimeTypeData->name(), QString(), this);
       if (dlg.exec() != QDialog::Accepted)
           return;
        service = dlg.service();
