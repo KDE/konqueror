@@ -108,7 +108,7 @@ void KSocksConfig::configChanged()
 
 void KSocksConfig::enableChanged()
 {
-  KMessageBox::information(NULL,
+  KMessageBox::information(this,
                            i18n("These changes will only apply to newly "
                                 "started applications."),
                            i18n("SOCKS Support"),
@@ -143,12 +143,12 @@ void KSocksConfig::testClicked()
 #ifdef Q_OS_UNIX
   KDECORE_EXPORT bool kdeHasSocks(); // defined in kdecore/ksocks.cpp
   if (kdeHasSocks()) {
-     KMessageBox::information(NULL,
+     KMessageBox::information(this,
                               i18n("Success: SOCKS was found and initialized."),
                               i18n("SOCKS Support"));
      // Eventually we could actually attempt to connect to a site here.
   } else {
-      KMessageBox::information(NULL,
+      KMessageBox::information(this,
                                i18n("SOCKS could not be loaded."),
                                i18n("SOCKS Support"));
   }
