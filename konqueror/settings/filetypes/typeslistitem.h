@@ -53,6 +53,8 @@ public:
     const MimeTypeData& mimeTypeData() const { return m_mimetypeData; }
     MimeTypeData& mimeTypeData() { return m_mimetypeData; }
 
+    virtual void paintCell(QPainter *painter, const QColorGroup & cg, int column, int width, int align);
+
 private:
     MimeTypeData m_mimetypeData;
 };

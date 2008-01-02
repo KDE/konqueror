@@ -38,7 +38,6 @@ TypesListItem::TypesListItem(TypesListItem *parent, KMimeType::Ptr mimetype, boo
     m_mimetypeData(mimetype, newItem)
 {
     setText(0, m_mimetypeData.minorType());
-    setPixmap(0, KIconLoader::global()->loadMimeTypeIcon(m_mimetypeData.icon(), KIconLoader::Small));
 }
 
 TypesListItem::TypesListItem(Q3ListView *parent, KMimeType::Ptr mimetype, bool newItem)
@@ -51,6 +50,16 @@ TypesListItem::TypesListItem(Q3ListView *parent, KMimeType::Ptr mimetype, bool n
 
 TypesListItem::~TypesListItem()
 {
+}
+
+void TypesListItem::paintCell(QPainter *painter, const QColorGroup & cg, int column, int width, int align)
+{
+    if (parent() && !pixmap(0)) {
+        // Load icon here instead of loading it in the constructor. This way
+        // the user won't wait for icons he won't see.
+        setPixmap(0, KIconLoader::global()->loadMimeTypeIcon(m_mimetypeData.icon(), KIconLoader::Small));
+    }
+    Q3ListViewItem::paintCell(painter, cg, column, width, align);
 }
 
 #if 0
