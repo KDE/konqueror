@@ -1,8 +1,7 @@
 #include "konq_aboutpage.h"
 
 #include <QtCore/QTextCodec>
-//Added by qt3to4:
-#include <QtCore/QTextStream>
+#include <QtCore/QDir>
 
 #include <kaboutdata.h>
 #include <kaction.h>
@@ -15,10 +14,6 @@
 #include <ksavefile.h>
 #include <kstandarddirs.h>
 #include <ktoolinvocation.h>
-
-#include <assert.h>
-#include <QtCore/QFile>
-#include <QtCore/QDir>
 
 K_EXPORT_COMPONENT_FACTORY( konq_aboutpage, KonqAboutPageFactory )
 
