@@ -170,7 +170,7 @@ void KEBApp::createActions() {
     connect(actnOpenLink, SIGNAL( triggered() ), actn, SLOT( slotOpenLink() ));
 
     KAction* actnTestSelection = actionCollection()->addAction("testlink");
-    actnTestSelection->setIcon(KIcon("bookmark"));
+    actnTestSelection->setIcon(KIcon("bookmarks"));
     actnTestSelection->setText(i18n("Check &Status"));
     connect(actnTestSelection, SIGNAL( triggered() ), actn, SLOT( slotTestSelection() ));
 

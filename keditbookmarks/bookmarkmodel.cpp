@@ -115,7 +115,7 @@ QVariant KBookmarkModel::data(const QModelIndex &index, int role) const
     {
         KBookmark bk = bookmarkForIndex(index);
         if(bk.address().isEmpty())
-            return KIcon("bookmark");
+            return KIcon("bookmarks");
         return KIcon(bk.icon());
     }
     return QVariant();
