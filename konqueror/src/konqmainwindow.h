@@ -563,6 +563,7 @@ private:
 
   void setUpEnabled( const KUrl &url );
 
+  void checkDisableClearButton();
   void initCombo();
   void initActions();
 

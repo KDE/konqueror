@@ -51,6 +51,7 @@
 #include <konq_operations.h>
 #include <kbookmarkmanager.h>
 #include <kinputdialog.h>
+#include <klineedit.h>
 #include <kanimatedbutton.h>
 #include <kzip.h>
 #include <pwd.h>
@@ -269,6 +270,8 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
   m_combo->setFont( KGlobalSettings::generalFont() );
   m_combo->show();
 
+  checkDisableClearButton();
+  
   connect(toolBarMenuAction(),SIGNAL(activated()),this,SLOT(slotForceSaveMainWindowSettings()) );
 
   if ( !m_toggleViewGUIClient->empty() )
@@ -1918,6 +1921,7 @@ void KonqMainWindow::slotConfigureToolbars()
     connect(&dlg,SIGNAL(newToolBarConfig()),this,SLOT(slotNewToolbarConfig()));
     connect(&dlg,SIGNAL(newToolBarConfig()),this,SLOT(initBookmarkBar()));
     dlg.exec();
+    checkDisableClearButton();
 }
 
 void KonqMainWindow::slotNewToolbarConfig() // This is called when OK or Apply is clicked
@@ -3042,6 +3046,24 @@ void KonqMainWindow::slotForwardActivated( int id )
 {
     KMenu* forwardMenu = static_cast<KMenu *>( m_paForward->menu() );
     slotGoHistoryActivated( forwardMenu->indexOf( id ) + 1, forwardMenu->mouseButtons(), forwardMenu->keyboardModifiers() );
+}
+
+void KonqMainWindow::checkDisableClearButton()
+{
+  // if the location toolbar already has the clear_location action,
+  // disable the combobox's embedded clear icon.
+  KToolBar* ltb = toolBar("locationToolBar");
+  QAction* clearAction = action("clear_location");
+  bool enable = true;
+  foreach(QToolButton* atb, qFindChildren<QToolButton *>(ltb))
+  {
+     if (atb->defaultAction() == clearAction) {
+         enable = false;
+         break;
+     }
+  }
+  if (KLineEdit* kle = qobject_cast<KLineEdit*>(m_combo->lineEdit()))
+      kle->setClearButtonShown( enable );
 }
 
 void KonqMainWindow::initCombo()
