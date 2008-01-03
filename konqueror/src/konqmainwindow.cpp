@@ -266,6 +266,7 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
   createGUI( 0 );
   
   m_combo->setParent( toolBar("locationToolBar") );
+  m_combo->setFont( KGlobalSettings::generalFont() );
   m_combo->show();
 
   connect(toolBarMenuAction(),SIGNAL(activated()),this,SLOT(slotForceSaveMainWindowSettings()) );
@@ -4831,6 +4832,9 @@ void KonqMainWindow::reparseConfiguration()
   m_pViewManager->applyConfiguration();
 
   m_bHTMLAllowed = KonqSettings::htmlAllowed();
+
+  if (m_combo)
+      m_combo->setFont( KGlobalSettings::generalFont() );
 
   MapViews::ConstIterator it = m_mapViews.begin();
   MapViews::ConstIterator end = m_mapViews.end();
