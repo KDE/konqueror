@@ -124,8 +124,6 @@ KonqProfileDlg::KonqProfileDlg( KonqViewManager *manager, const QString & presel
   loadAllProfiles( preselectProfile );
   d->m_pListView->setMinimumSize( d->m_pListView->sizeHint() );
 
-  d->m_pHomeURLRequester->setPath( d->m_pViewManager->profileHomeURL() );
-  d->m_pHomeURLRequester->setMode( KFile::Directory );
   d->m_cbSaveURLs->setChecked( KonqSettings::saveURLInProfile() );
   d->m_cbSaveSize->setChecked( KonqSettings::saveWindowSizeInProfile() );
 
@@ -193,7 +191,7 @@ void KonqProfileDlg::slotSave()
   }
 
   kDebug(1202) << "Saving as " << name;
-  d->m_pViewManager->saveViewProfileToFile( name, d->m_pProfileNameLineEdit->text(), d->m_pHomeURLRequester->url(),
+  d->m_pViewManager->saveViewProfileToFile( name, d->m_pProfileNameLineEdit->text(),
             d->m_cbSaveURLs->isChecked(), d->m_cbSaveSize->isChecked() );
 
   accept();
@@ -271,8 +269,6 @@ void KonqProfileDlg::slotTextChanged( const QString & text )
   {
     KConfig config( d->m_mapEntries[text], KConfig::SimpleConfig );
     KConfigGroup profile( &config, "Profile" );
-
-    d->m_pHomeURLRequester->setUrl( profile.readEntry( "HomeURL", QString() ) );
 
     QFileInfo fi( d->m_mapEntries[ item->text() ] );
     itemSelected = itemSelected && fi.isWritable();

@@ -45,7 +45,6 @@ class KonqFrameContainerBase;
 class KonqView;
 class KActionMenu;
 class KonqClosedTabItem;
-class KUrl;
 
 namespace KParts
 {
@@ -179,7 +178,7 @@ public:
    * @param saveURLs whether to save the URLs in the profile
    * @param saveWindowSize whether to save the size of the window in the profile
    */
-  void saveViewProfileToFile( const QString & fileName, const QString & profileName, const KUrl &homeURL,
+  void saveViewProfileToFile( const QString & fileName, const QString & profileName,
                               bool saveURLs, bool saveWindowSize );
 
   /**

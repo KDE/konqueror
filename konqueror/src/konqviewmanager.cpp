@@ -37,7 +37,6 @@
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <ktoolbarpopupaction.h>
-#include <kurl.h>
 
 #include <kmenu.h>
 
@@ -771,7 +770,7 @@ KonqView *KonqViewManager::setupView( KonqFrameContainerBase *parentContainer,
 
 ///////////////// Profile stuff ////////////////
 
-void KonqViewManager::saveViewProfileToFile( const QString & fileName, const QString & profileName, const KUrl &homeURL, bool saveURLs, bool saveWindowSize )
+void KonqViewManager::saveViewProfileToFile( const QString & fileName, const QString & profileName, bool saveURLs, bool saveWindowSize )
 {
 
   QString path = KStandardDirs::locateLocal( "data", QString::fromLatin1( "konqueror/profiles/" ) +
@@ -785,7 +784,6 @@ void KonqViewManager::saveViewProfileToFile( const QString & fileName, const QSt
   if ( !profileName.isEmpty() )
       cfg.writePathEntry( "Name", profileName );
 
-  cfg.writePathEntry( "HomeURL", homeURL.prettyUrl() );
   KonqFrameBase::Options options = KonqFrameBase::None;
   if(saveURLs)
       options = KonqFrameBase::saveURLs;
@@ -1300,7 +1298,7 @@ void KonqViewManager::showProfileDlg( const QString & preselectProfile )
 
 void KonqViewManager::slotProfileDlg()
 {
-  showProfileDlg( currentProfile() );
+  showProfileDlg( QString() );
 }
 
 void KonqViewManager::profileListDirty( bool broadcast )
