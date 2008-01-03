@@ -6,11 +6,21 @@
 }
 
 #boxCenter {
-<!--  background-image: url(box-centre-konqueror.png); -->
-<!--  background-repeat: no-repeat; -->
-<!--  min-width: 490; -->
-<!--  min-height: 285; -->
+/*  background-image: url(box-centre-konqueror.png); */
+/*  background-repeat: no-repeat; */
+/*  min-width: 490; */
+/*  min-height: 285; */
   padding: 1em;
 }
 
+.sepTable {
+  border: 1px solid #BDBDBD;
+}
 
+.specTableTitle {
+  background-color: #909090;
+}
+
+.specTableSubTitle {
+  background-color: #444444;
+}
