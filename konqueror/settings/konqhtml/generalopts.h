@@ -33,7 +33,10 @@ private Q_SLOTS:
     void slotChanged();
 
 private:
+    static KSharedConfig::Ptr profileConfig( const QWidget *parent );
+
     KSharedConfig::Ptr m_pConfig;
+    KSharedConfig::Ptr m_pProfileConfig;
 
     KUrlRequester *homeURL;
     Ui_advancedTabOptions* tabOptions;

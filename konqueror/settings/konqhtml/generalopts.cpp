@@ -21,6 +21,7 @@
 #include <konq_defaults.h> // include default values directly from konqueror
 #include <kapplication.h>
 #include <kurlrequester.h>
+#include <kstandarddirs.h>
 
 // Local
 #include "ui_advancedTabOptions.h"
@@ -28,12 +29,15 @@
 #include <KPluginFactory>
 #include <KPluginLoader>
 
+#include "konqmainwindow.h"
+
 K_PLUGIN_FACTORY_DECLARATION(KcmKonqHtmlFactory)
 
 //-----------------------------------------------------------------------------
 
 KKonqGeneralOptions::KKonqGeneralOptions(QWidget *parent, const QVariantList&)
     : KCModule( KcmKonqHtmlFactory::componentData(), parent )
+    , m_pProfileConfig( profileConfig( parent ) )
 {
     m_pConfig = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
     QVBoxLayout *lay = new QVBoxLayout(this);
@@ -88,11 +92,44 @@ KKonqGeneralOptions::~KKonqGeneralOptions()
     delete tabOptions;
 }
 
+KSharedConfig::Ptr KKonqGeneralOptions::profileConfig( const QWidget *parent )
+{
+    const KonqMainWindow *mainWindow = 0;
+    for( ; parent != 0; parent = parent->parentWidget() )
+    {
+        mainWindow = qobject_cast<const KonqMainWindow *>( parent );
+        if ( mainWindow != 0 )
+            break;
+    }
+
+    if ( mainWindow == 0 )
+        return KSharedConfig::Ptr();
+
+    QStringList profiles = KGlobal::dirs()->findAllResources( "data", "konqueror/profiles/*", KStandardDirs::NoDuplicates );
+    foreach ( const QString &profile, profiles )
+    {
+        QFileInfo info( profile );
+        QString profileName = KIO::decodeFileName( info.baseName() );
+
+        if( profileName == mainWindow->currentProfile() )
+            return KSharedConfig::openConfig( profile, KConfig::SimpleConfig );
+    }
+
+    return KSharedConfig::Ptr();
+}
+
 void KKonqGeneralOptions::load()
 {
+    if ( m_pProfileConfig )
+    {
+        KConfigGroup profileGroup( m_pProfileConfig, "Profile" );
+        homeURL->setUrl( profileGroup.readEntry( "HomeURL", "~" ) );
+    }
+
     KConfigGroup cg(m_pConfig, "FMSettings");
-    
-    homeURL->setUrl(cg.readEntry("HomeURL", "~"));
+
+    if ( ! m_pProfileConfig )
+        homeURL->setUrl(cg.readEntry("HomeURL", "~"));
     tabOptions->m_pShowMMBInTabs->setChecked( cg.readEntry( "MMBOpensTab", false ) );
     tabOptions->m_pDynamicTabbarHide->setChecked( ! (cg.readEntry( "AlwaysTabbedMode", false )) );
 
@@ -120,8 +157,16 @@ void KKonqGeneralOptions::defaults()
 
 void KKonqGeneralOptions::save()
 {
+    if ( m_pProfileConfig )
+    {
+        KConfigGroup profileGroup( m_pProfileConfig, "Profile" );
+        profileGroup.writeEntry( "HomeURL", homeURL->url().url() );
+        profileGroup.sync();
+    }
+
     KConfigGroup cg(m_pConfig, "FMSettings");
-    cg.writeEntry( "HomeURL", homeURL->url().isEmpty()? QString("~") : homeURL->url().url() );
+    if ( ! m_pProfileConfig )
+        cg.writeEntry( "HomeURL", homeURL->url().isEmpty()? QString("~") : homeURL->url().url() );
     cg.writeEntry( "MMBOpensTab", tabOptions->m_pShowMMBInTabs->isChecked() );
     cg.writeEntry( "AlwaysTabbedMode", !(tabOptions->m_pDynamicTabbarHide->isChecked()) );
 
