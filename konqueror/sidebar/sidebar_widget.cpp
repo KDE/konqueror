@@ -284,7 +284,7 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, bool 
 	m_menu->addAction(i18n("Show Configuration Button"), this, SLOT(slotShowConfigurationButton()));
 	if (!m_universalMode) {
 		m_menu->addSeparator();
-		m_menu->addAction(KIcon("list-remove"), i18n("Close Navigation Panel"),
+		m_menu->addAction(KIcon("window-close"), i18n("Close Navigation Panel"),
 				par, SLOT(deleteLater()));
 	}
         connect(m_menu, SIGNAL(aboutToShow()),
@@ -351,7 +351,7 @@ void Sidebar_Widget::addWebSideBar(const KUrl& url, const QString& /*name*/) {
 		KConfigGroup scf(&_scf, "Desktop Entry");
 		scf.writeEntry("Type", "Link");
 		scf.writePathEntry("URL", url.url());
-		scf.writeEntry("Icon", "netscape");
+		scf.writeEntry("Icon", "internet-web-browser");
 		scf.writeEntry("Name", i18n("Web SideBar Plugin"));
 		scf.writeEntry("Open", "true");
 		scf.writeEntry("X-KDE-KonqSidebarModule", "konqsidebar_web");
@@ -830,9 +830,9 @@ bool Sidebar_Widget::eventFilter(QObject *obj, QEvent *ev)
 				{
 					m_buttonPopup=new KMenu(this);
 					m_buttonPopupTitle = m_buttonPopup->addTitle(SmallIcon("unknown"), "");
-					m_buttonPopup->addAction(KIcon("text"), i18n("Set Name..."), this, SLOT(slotSetName())); // Item to open a dialog to change the name of the sidebar item (by Pupeno)
-					m_buttonPopup->addAction(KIcon("www"), i18n("Set URL..."), this, SLOT(slotSetURL()));
-					m_buttonPopup->addAction(KIcon("icons"), i18n("Set Icon..."), this, SLOT(slotSetIcon()));
+					m_buttonPopup->addAction(KIcon("edit-rename"), i18n("Set Name..."), this, SLOT(slotSetName())); // Item to open a dialog to change the name of the sidebar item (by Pupeno)
+					m_buttonPopup->addAction(KIcon("internet-web-browser"), i18n("Set URL..."), this, SLOT(slotSetURL()));
+					m_buttonPopup->addAction(KIcon("preferences-desktop-icons"), i18n("Set Icon..."), this, SLOT(slotSetIcon()));
 					m_buttonPopup->addSeparator();
 					m_buttonPopup->addAction(KIcon("edit-delete"), i18n("Remove"), this, SLOT(slotRemove()));
 					m_buttonPopup->addSeparator();

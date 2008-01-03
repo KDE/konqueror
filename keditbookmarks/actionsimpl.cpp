@@ -101,25 +101,25 @@ void KEBApp::createActions() {
     connect(actnDelete, SIGNAL( triggered() ), actn, SLOT( slotDelete() ));
 
     KAction* actnRename = actionCollection()->addAction("rename");
-    actnRename->setIcon(KIcon("text"));
+    actnRename->setIcon(KIcon("edit-rename"));
     actnRename->setText(i18n("Rename"));
     actnRename->setShortcut(Qt::Key_F2);
     connect(actnRename, SIGNAL( triggered() ), actn, SLOT( slotRename() ));
 
     KAction* actnChangeURL = actionCollection()->addAction("changeurl");
-    actnChangeURL->setIcon(KIcon("text"));
+    actnChangeURL->setIcon(KIcon("edit-rename"));
     actnChangeURL->setText(i18n("C&hange URL"));
     actnChangeURL->setShortcut(Qt::Key_F3);
     connect(actnChangeURL, SIGNAL( triggered() ), actn, SLOT( slotChangeURL() ));
 
     KAction* actnChangeComment = actionCollection()->addAction("changecomment");
-    actnChangeComment->setIcon(KIcon("text"));
+    actnChangeComment->setIcon(KIcon("edit-rename"));
     actnChangeComment->setText(i18n("C&hange Comment"));
     actnChangeComment->setShortcut(Qt::Key_F4);
     connect(actnChangeComment, SIGNAL( triggered() ), actn, SLOT( slotChangeComment() ));
 
     KAction* actnChangeIcon = actionCollection()->addAction("changeicon");
-    actnChangeIcon->setIcon(KIcon("icons"));
+    actnChangeIcon->setIcon(KIcon("preferences-desktop-icons"));
     actnChangeIcon->setText(i18n("Chan&ge Icon..."));
     connect(actnChangeIcon, SIGNAL( triggered() ), actn, SLOT( slotChangeIcon() ));
 
