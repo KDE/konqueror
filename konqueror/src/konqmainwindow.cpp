@@ -265,13 +265,13 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
   setStandardToolBarMenuEnabled( true );
 
   createGUI( 0 );
-  
+
   m_combo->setParent( toolBar("locationToolBar") );
   m_combo->setFont( KGlobalSettings::generalFont() );
   m_combo->show();
 
   checkDisableClearButton();
-  
+
   connect(toolBarMenuAction(),SIGNAL(activated()),this,SLOT(slotForceSaveMainWindowSettings()) );
 
   if ( !m_toggleViewGUIClient->empty() )
@@ -599,7 +599,7 @@ void KonqMainWindow::openUrl( KonqView *_view, const KUrl &_url,
                 KMessageBox::error( this, i18n("There appears to be a configuration error. You have associated Konqueror with %1, but it cannot handle this file type.", mimeType));
                 return;
             }
-            if ( !url.isLocalFile() && KonqRun::isTextExecutable( mimeType ) )
+            if ( !url.isLocalFile() && !trustedSource && KonqRun::isTextExecutable( mimeType ) )
                 mimeType = "text/plain"; // view, don't execute
             // Remote URL: save or open ?
             QString protClass = KProtocolInfo::protocolClass(url.protocol());
@@ -615,7 +615,8 @@ void KonqMainWindow::openUrl( KonqView *_view, const KUrl &_url,
                 KUrl::List lst;
                 lst.append(url);
                 //kDebug(1202) << "Got offer " << (offer ? offer->name().toLatin1() : "0");
-                if ( ( trustedSource || KonqRun::allowExecution( mimeType, url ) ) &&
+                const bool allowExecution = trustedSource || KParts::BrowserRun::allowExecution( mimeType, url );
+                if ( allowExecution &&
                      ( KonqRun::isExecutable( mimeType ) || !offer || !KRun::run( *offer, lst, this ) ) )
                 {
                     setLocationBarURL( oldLocationBarURL ); // Revert to previous locationbar URL
