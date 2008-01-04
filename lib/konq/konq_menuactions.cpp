@@ -30,6 +30,7 @@
 #include <kstandarddirs.h>
 #include <KService>
 #include <KServiceTypeTrader>
+#include <QFile>
 
 #include <QtDBus/QtDBus>
 
@@ -235,6 +236,7 @@ int KonqMenuActions::addActionsTo(QMenu* mainMenu)
     // first check the .directory if this is a directory
     if (d->m_isDirectory && isSingleLocal) {
         QString dotDirectoryFile = d->m_url.path( KUrl::AddTrailingSlash ).append(".directory");
+        if (QFile::exists(dotDirectoryFile)) {
         KDesktopFile desktopFile(  dotDirectoryFile );
         const KConfigGroup cfg = desktopFile.desktopGroup();
 
@@ -245,8 +247,9 @@ int KonqMenuActions::addActionsTo(QMenu* mainMenu)
             list += KDesktopFileActions::userDefinedServices( dotDirectoryFile, desktopFile, true );
         }
     }
+    }
 
-    KService::List entries = KServiceTypeTrader::self()->query( "KonqPopupMenu/Plugin");
+    const KService::List entries = KServiceTypeTrader::self()->query( "KonqPopupMenu/Plugin");
     KService::List::const_iterator eEnd = entries.end();
     for (KService::List::const_iterator it2 = entries.begin(); it2 != eEnd; it2++ ) {
         QString file = KStandardDirs::locate("services", (*it2)->entryPath());
