@@ -505,6 +505,9 @@ static QByteArray uaStore;
 // inquire user agent
 const char *g_NPN_UserAgent(NPP /*instance*/)
 {
+    // flash crashes without Firefox UA
+    return "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.10) Gecko/2007101500 Firefox/2.0.0.10";
+#if 0
     if (uaStore.isEmpty()) {
         KProtocolManager kpm;
         QString agent = kpm.userAgentForHost("nspluginviewer");
@@ -512,6 +515,7 @@ const char *g_NPN_UserAgent(NPP /*instance*/)
     }
     kDebug(1431) << "g_NPN_UserAgent() = " << uaStore;
     return uaStore.data();
+#endif
 }
 
 
