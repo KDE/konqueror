@@ -18,6 +18,7 @@
 */
 
 #include "konqpopupmenutest.h"
+#include <kstandarddirs.h>
 #include <kbookmarkmanager.h>
 #include <assert.h>
 #include "qtest_kde.h"
@@ -40,12 +41,18 @@ static QStringList extractActionNames(const QMenu& menu)
     foreach (const QAction* action, menu.actions()) {
         if (action->isSeparator()) {
             ret.append("separator");
-        } else if (action->objectName().isEmpty()) {
-            //qDebug() << action->metaObject()->className();
-            Q_ASSERT(action->menu());
-            ret.append("submenu");
         } else {
-            ret.append(action->objectName());
+            //qDebug() << action->objectName() << action->metaObject()->className();
+            const QString objectName = action->objectName();
+            if (objectName.isEmpty()) {
+                Q_ASSERT(action->menu());
+                ret.append("submenu");
+            } else {
+                if (objectName == "menuaction") // a single service-menu action: give same name as a submenu
+                    ret.append("actions_submenu");
+                else
+                    ret.append(objectName);
+            }
         }
     }
     return ret;
@@ -76,10 +83,6 @@ void KonqPopupMenuTest::initTestCase()
     m_actionCollection.addAction("reload", m_reload);
     m_properties = new QAction(this);
     m_actionCollection.addAction("properties", m_properties);
-    m_rename = new QAction(this);
-    m_actionCollection.addAction("rename", m_rename);
-    m_trash = new QAction(this);
-    m_actionCollection.addAction("trash", m_trash);
 
     m_tabHandlingActions = new QActionGroup(this);
     m_newWindow = new QAction(m_tabHandlingActions);
@@ -96,8 +99,14 @@ void KonqPopupMenuTest::initTestCase()
     m_preview2 = new QAction(m_previewActions);
     m_actionCollection.addAction("preview2", m_preview2);
 
-    m_editActions = new QActionGroup(this);
-    // TODO use it, see khtml_popupmenu.rc
+    m_fileEditActions = new QActionGroup(this);
+    m_rename = new QAction(m_fileEditActions);
+    m_actionCollection.addAction("rename", m_rename);
+    m_trash = new QAction(m_fileEditActions);
+    m_actionCollection.addAction("trash", m_trash);
+
+    m_htmlEditActions = new QActionGroup(this);
+    // TODO use m_htmlEditActions like in khtml (see khtml_popupmenu.rc)
 
     m_linkActions = new QActionGroup(this);
     QAction* saveLinkAs = new QAction(m_linkActions);
@@ -137,6 +146,7 @@ void KonqPopupMenuTest::testFile()
                                                    | KParts::BrowserExtension::ShowUrlOperations;
     KParts::BrowserExtension::ActionGroupMap actionGroups;
     actionGroups.insert("tabhandling", m_tabHandlingActions->actions());
+    actionGroups.insert("editactions", m_fileEditActions->actions());
     actionGroups.insert("preview", QList<QAction *>() << m_preview1);
 
     KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags, beflags,
@@ -144,15 +154,18 @@ void KonqPopupMenuTest::testFile()
 
     QStringList actions = extractActionNames(popup);
     kDebug() << actions;
-    QCOMPARE(actions, QStringList()
-             << "openInNewWindow" << "openInNewTab" << "separator"
-             << "cut" << "copy" << "rename" << "trash" << "separator"
-             << "openWith_submenu"
-             << "preview1"
-             << "actions_submenu" << "separator"
-             // (came from arkplugin) << "compress"
-             // (came from kuick) << "copy_to" << "move_to"
-             << "properties");
+    QStringList expectedActions;
+    expectedActions << "openInNewWindow" << "openInNewTab" << "separator"
+                    << "cut" << "copy" << "rename" << "trash" << "separator"
+                    << "openWith_submenu"
+                    << "preview1";
+    if (!KStandardDirs::locate("services", "ServiceMenus/encryptfile.desktop").isEmpty())
+        expectedActions << "actions_submenu" << "separator";
+
+    // (came from arkplugin) << "compress"
+    // (came from kuick) << "copy_to" << "move_to"
+    expectedActions << "properties";
+    QCOMPARE(actions, expectedActions);
 }
 
 void KonqPopupMenuTest::testFilePreviewSubMenu()
@@ -166,6 +179,7 @@ void KonqPopupMenuTest::testFilePreviewSubMenu()
                                                    | KParts::BrowserExtension::ShowUrlOperations;
     KParts::BrowserExtension::ActionGroupMap actionGroups;
     actionGroups.insert("tabhandling", m_tabHandlingActions->actions());
+    actionGroups.insert("editactions", m_fileEditActions->actions());
     actionGroups.insert("preview", m_previewActions->actions());
 
     KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags, beflags,
@@ -194,6 +208,7 @@ void KonqPopupMenuTest::testSubDirectory()
                                                    | KParts::BrowserExtension::ShowUrlOperations;
     KParts::BrowserExtension::ActionGroupMap actionGroups;
     actionGroups.insert("tabhandling", m_tabHandlingActions->actions());
+    actionGroups.insert("editactions", m_fileEditActions->actions());
     actionGroups.insert("preview", m_previewActions->actions());
 
     KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags, beflags,
@@ -260,7 +275,7 @@ void KonqPopupMenuTest::testHtmlLink()
     KParts::BrowserExtension::ActionGroupMap actionGroups;
     actionGroups.insert("tabhandling", m_tabHandlingActions->actions());
     actionGroups.insert("preview", m_previewActions->actions());
-    actionGroups.insert("editactions", m_editActions->actions());
+    actionGroups.insert("editactions", m_htmlEditActions->actions());
     actionGroups.insert("linkactions", m_linkActions->actions());
     actionGroups.insert("partactions", m_partActions->actions());
 
@@ -294,7 +309,7 @@ void KonqPopupMenuTest::testHtmlPage()
     // TODO we could just move that logic to KonqPopupMenu...
     //actionGroups.insert("tabhandling", m_tabHandlingActions->actions());
     actionGroups.insert("preview", m_previewActions->actions());
-    actionGroups.insert("editactions", m_editActions->actions());
+    actionGroups.insert("editactions", m_htmlEditActions->actions());
     //actionGroups.insert("linkactions", m_linkActions->actions());
     QAction* security = new QAction(m_partActions);
     m_actionCollection.addAction("security", security);

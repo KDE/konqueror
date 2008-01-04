@@ -19,6 +19,7 @@
 
 #include "konq_menuactions.h"
 #include "konq_menuactions_p.h"
+#include <kdebug.h>
 #include <kdesktopfileactions.h>
 #include <kmenu.h>
 #include <klocale.h>
@@ -132,6 +133,7 @@ int KonqMenuActionsPrivate::insertServices(const ServiceList& list,
 
         if (isBuiltin || !(*it).noDisplay()) {
             QAction* act = new QAction(&m_ownActions);
+            act->setObjectName("menuaction"); // for the unittest
             QString text = (*it).text();
             text.replace('&',"&&");
             act->setText( text );
@@ -249,6 +251,7 @@ int KonqMenuActions::addActionsTo(QMenu* mainMenu)
         }
     }
 
+    const KMimeType::Ptr mimeTypePtr = d->m_mimeType.isEmpty() ? KMimeType::Ptr() : KMimeType::mimeType(d->m_mimeType);
     const KService::List entries = KServiceTypeTrader::self()->query( "KonqPopupMenu/Plugin");
     KService::List::const_iterator eEnd = entries.end();
     for (KService::List::const_iterator it2 = entries.begin(); it2 != eEnd; it2++ ) {
@@ -313,8 +316,15 @@ int KonqMenuActions::addActionsTo(QMenu* mainMenu)
             if ( capabilities.contains( "Write" ) && d->m_readOnly )
                 continue;
         }
-        if ( (cfg.hasKey( "Actions" ) || cfg.hasKey( "X-KDE-GetActionMenu") ) && cfg.hasKey( "ServiceTypes" ) ) {
-            const QStringList types = cfg.readEntry( "ServiceTypes" , QStringList() );
+        if ( cfg.hasKey( "Actions" ) || cfg.hasKey( "X-KDE-GetActionMenu") ) {
+            // Like KService, we support ServiceTypes, X-KDE-ServiceTypes, and MimeType.
+            QStringList types = cfg.readEntry("ServiceTypes", QStringList());
+            types += cfg.readEntry("X-KDE-ServiceTypes", QStringList());
+            types += cfg.readXdgListEntry("MimeType");
+            kDebug() << file << types;
+
+            if (types.isEmpty())
+                continue;
             const QStringList excludeTypes = cfg.readEntry( "ExcludeServiceTypes" , QStringList() );
             bool ok = false;
 
@@ -339,8 +349,7 @@ int KonqMenuActions::addActionsTo(QMenu* mainMenu)
 
                 // if we have a mimetype, see if we have an exact or a type globbed match
                 if (!ok &&
-                    (!d->m_mimeType.isEmpty() &&
-                     *it == d->m_mimeType) ||
+                    (mimeTypePtr && mimeTypePtr->is(*it)) ||
                     (!d->m_mimeGroup.isEmpty() &&
                      ((*it).right(1) == "*" &&
                       (*it).left((*it).indexOf('/')) == d->m_mimeGroup))) {
