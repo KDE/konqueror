@@ -63,7 +63,8 @@ private:
     QAction* m_preview2;
     QActionGroup* m_tabHandlingActions;
     QActionGroup* m_previewActions;
-    QActionGroup* m_editActions;
+    QActionGroup* m_htmlEditActions;
+    QActionGroup* m_fileEditActions;
     QActionGroup* m_linkActions;
     QActionGroup* m_partActions;
     KNewMenu* m_newMenu;
