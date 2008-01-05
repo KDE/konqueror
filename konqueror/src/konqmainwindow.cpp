@@ -2988,7 +2988,7 @@ void KonqMainWindow::slotClosedTabsListAboutToShow()
     QMenu* popup = m_paClosedTabs->menu();
     // Clear the menu and fill it with a maximum of s_closedTabsListLength number of urls
     popup->clear();
-    QAction* clearAction = popup->addAction( i18n("Empty closed tabs history") );
+    QAction* clearAction = popup->addAction( i18n("Empty Closed Tabs History") );
     connect(clearAction, SIGNAL(triggered()), m_undoManager, SLOT(clearClosedTabsList()));
     popup->insertSeparator();
 
