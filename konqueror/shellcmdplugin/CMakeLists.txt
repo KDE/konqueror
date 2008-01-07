@@ -7,7 +7,7 @@ set(konq_shellcmdplugin_PART_SRCS kshellcmdexecutor.cpp kshellcmddialog.cpp kshe
 kde4_add_plugin(konq_shellcmdplugin ${konq_shellcmdplugin_PART_SRCS})
 
 
-target_link_libraries(konq_shellcmdplugin  konq ${KDE4_KDEUI_LIBS} ${KDE4_KDESU_LIBS})
+target_link_libraries(konq_shellcmdplugin ${KDE4_KPARTS_LIBS} ${KDE4_KDESU_LIBS})
 
 install(TARGETS konq_shellcmdplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
