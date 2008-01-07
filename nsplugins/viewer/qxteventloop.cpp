@@ -74,7 +74,7 @@ public:
 
     Q3IntDict<QSocketNotifier> socknotDict;
     bool activate_timers;
-    int timerid;
+    XtIntervalId timerid;
 
     // arguments for Xt display initialization
     const char* applicationClass;
@@ -112,7 +112,7 @@ XEvent* QXtEventLoop::lastEvent()
 
 QXtEventLoopPrivate::QXtEventLoopPrivate()
     : appContext(NULL), ownContext(NULL),
-      activate_timers(false), timerid(-1)
+      activate_timers(false), timerid(0)
 {
 }
 
@@ -418,7 +418,7 @@ void QXtEventLoop::unregisterSocketNotifier( QSocketNotifier *notifier )
 void qmotif_timeout_handler( XtPointer, XtIntervalId * )
 {
     static_d->activate_timers = true;
-    static_d->timerid = -1;
+    static_d->timerid = 0;
 }
 
 /*! \reimp
@@ -431,10 +431,10 @@ bool QXtEventLoop::processEvents( ProcessEventsFlags flags )
 
     // make sure we fire off Qt's timers
     int ttw = timeToWait();
-    if ( d->timerid != -1 ) {
+    if ( d->timerid != 0 ) {
 	XtRemoveTimeOut( d->timerid );
     }
-    d->timerid = -1;
+    d->timerid = 0;
     if ( ttw != -1 ) {
 	d->timerid =
 	    XtAppAddTimeOut( d->appContext, ttw,
