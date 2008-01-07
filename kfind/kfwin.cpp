@@ -95,8 +95,11 @@ QString KfFileLVI::key(int column, bool) const
     // Returns size in bytes. Used for sorting
     return QString().sprintf("%010ld", (long int)fileInfo->size());
   case 3:
+  {
+    unsigned long l_time = fileitem.time(KFileItem::ModificationTime).toTime_t();
     // Returns time in secs from 1/1/1970. Used for sorting
-    return QString().sprintf("%010ld", fileitem.time(KFileItem::ModificationTime).toTime_t());
+    return QString().sprintf("%010lu", l_time);
+  }
   }
 
   return text(column);
