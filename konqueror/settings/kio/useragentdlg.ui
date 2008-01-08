@@ -46,7 +46,7 @@ By default, only minimal identification information is sent to remote sites. The
      </property>
      <layout class="QVBoxLayout" >
       <item>
-       <widget class="QLabel" name="defaultIdLineEdit" >
+       <widget class="KSqueezedTextLabel" name="defaultIdLineEdit" >
         <property name="font" >
          <font>
           <weight>75</weight>
