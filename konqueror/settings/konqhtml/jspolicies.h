@@ -22,7 +22,7 @@
 #ifndef __JSPOLICIES_H__
 #define __JSPOLICIES_H__
 
-#include <Qt3Support/Q3GroupBox>
+#include <QtGui/QGroupBox>
 
 
 #include <khtml_settings.h>
@@ -199,7 +199,7 @@ private:
  *
  * @author Leo Savernik
  */
-class JSPoliciesFrame : public Q3GroupBox {
+class JSPoliciesFrame : public QGroupBox {
   Q_OBJECT
 public:
   /**

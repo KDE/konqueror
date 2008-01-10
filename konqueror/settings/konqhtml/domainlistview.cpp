@@ -39,12 +39,9 @@
 
 DomainListView::DomainListView(KSharedConfig::Ptr config,const QString &title,
 		QWidget *parent) :
-	Q3GroupBox(title, parent), config(config) {
-  setColumnLayout(0, Qt::Vertical);
-  layout()->setSpacing(0);
-  layout()->setMargin(0);
+	QGroupBox(title, parent), config(config) {
   QGridLayout* thisLayout = new QGridLayout();
-  layout()->addItem( thisLayout );
+  setLayout( thisLayout );
   thisLayout->setAlignment(Qt::AlignTop);
   thisLayout->setSpacing(KDialog::spacingHint());
   thisLayout->setMargin(KDialog::marginHint());

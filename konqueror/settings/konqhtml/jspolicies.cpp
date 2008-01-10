@@ -135,16 +135,13 @@ void JSPolicies::save() {
 
 JSPoliciesFrame::JSPoliciesFrame(JSPolicies *policies, const QString &title,
 		QWidget* parent) :
-	Q3GroupBox(title, parent, "jspoliciesframe"),
+	QGroupBox(title, parent, "jspoliciesframe"),
 	policies(policies) {
 
   bool is_per_domain = !policies->isGlobal();
 
-  setColumnLayout(0, Qt::Vertical);
-  layout()->setSpacing(0);
-  layout()->setMargin(0);
   QGridLayout *this_layout = new QGridLayout();
-  layout()->addItem( this_layout );
+  setLayout(this_layout);
   this_layout->setAlignment(Qt::AlignTop);
   this_layout->setSpacing(3);
   this_layout->setMargin(11);
