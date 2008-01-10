@@ -29,7 +29,7 @@
 
 #include "policies.h"
 
-class Q3ButtonGroup;
+class QButtonGroup;
 
 // special value for inheriting a global policy
 #define INHERIT_POLICY		32767
@@ -256,11 +256,11 @@ private Q_SLOTS:
 private:
 
   JSPolicies *policies;
-  Q3ButtonGroup *js_popup;
-  Q3ButtonGroup *js_resize;
-  Q3ButtonGroup *js_move;
-  Q3ButtonGroup *js_focus;
-  Q3ButtonGroup *js_statusbar;
+  QButtonGroup *js_popup;
+  QButtonGroup *js_resize;
+  QButtonGroup *js_move;
+  QButtonGroup *js_focus;
+  QButtonGroup *js_statusbar;
 };
 
 
