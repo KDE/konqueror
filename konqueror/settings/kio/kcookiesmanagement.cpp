@@ -29,7 +29,6 @@
 #include <QtGui/QApplication>
 #include <QtGui/QLayout>
 #include <QtGui/QPushButton>
-#include <Qt3Support/Q3GroupBox>
 #include <QtGui/QLabel>
 #include <QtCore/QTimer>
 #include <QtCore/QDate>
