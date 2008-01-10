@@ -12,7 +12,6 @@
 #include <unistd.h>
 
 // Qt
-#include <Qt3Support/Q3GroupBox>
 #include <QtCore/QRegExp>
 #include <QtCore/QTextStream>
 #include <QtDBus/QDBusConnection>

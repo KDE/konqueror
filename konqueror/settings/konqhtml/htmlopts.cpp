@@ -9,8 +9,8 @@
 #include "htmlopts.h"
 
 // Qt
+#include <QtGui/QGroupBox>
 #include <QtGui/QLayout>
-#include <Qt3Support/Q3GroupBox>
 #include <QtGui/QLabel>
 #include <QtGui/QPushButton>
 #include <QtDBus/QDBusMessage>

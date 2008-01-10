@@ -20,7 +20,6 @@
 #include "filteropts.h"
 
 // Qt
-#include <Qt3Support/Q3GroupBox>
 #include <QtCore/QRegExp>
 #include <QtCore/QTextStream>
 #include <QtDBus/QtDBus>
@@ -30,6 +29,7 @@
 #include <QtGui/QLineEdit>
 #include <QtGui/QListWidget>
 #include <QtGui/QPushButton>
+#include <QtGui/QGroupBox>
 
 // KDE
 #include <kaboutdata.h>
