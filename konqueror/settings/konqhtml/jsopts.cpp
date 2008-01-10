@@ -16,7 +16,6 @@
 
 // Qt
 #include <QtGui/QLayout>
-#include <Qt3Support/Q3GroupBox>
 
 // KDE
 #include <kconfig.h>
