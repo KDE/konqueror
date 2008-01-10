@@ -16,7 +16,7 @@
 
 // Qt
 #include <QtGui/QLayout>
-#include <Qt3Support/Q3GroupBox>
+#include <QtGui/QGroupBox>
 #include <QtGui/QLabel>
 
 // KDE
@@ -69,10 +69,9 @@ KJavaOptions::KJavaOptions( KSharedConfig::Ptr config, const QString &group,
     /***************************************************************************
      ********************* Global Settings *************************************
      **************************************************************************/
-    Q3GroupBox* globalGB = new Q3GroupBox( i18n( "Global Settings" ), this );
-    globalGB->setOrientation( Qt::Vertical );
+    QGroupBox* globalGB = new QGroupBox( i18n( "Global Settings" ), this );
     QVBoxLayout *laygroup = new QVBoxLayout();
-    globalGB->layout()->addItem( laygroup );
+    globalGB->setLayout( laygroup );
     laygroup->setSpacing(KDialog::spacingHint());
     toplevel->addWidget( globalGB );
     enableJavaGloballyCB = new QCheckBox( i18n( "Enable Ja&va globally" ), globalGB );
@@ -91,10 +90,9 @@ KJavaOptions::KJavaOptions( KSharedConfig::Ptr config, const QString &group,
     /***************************************************************************
      ***************** Java Runtime Settings ***********************************
      **************************************************************************/
-    Q3GroupBox* javartGB = new Q3GroupBox( i18n( "Java Runtime Settings" ), this );
-    javartGB->setOrientation( Qt::Vertical );
+    QGroupBox* javartGB = new QGroupBox( i18n( "Java Runtime Settings" ), this );
     QVBoxLayout *laygroup1 = new QVBoxLayout();
-    javartGB->layout()->addItem( laygroup1 );
+    javartGB->setLayout( laygroup1 );
     laygroup1->setSpacing(KDialog::spacingHint());
     toplevel->addWidget( javartGB );
 

@@ -22,7 +22,7 @@
 #ifndef __DOMAINLISTVIEW_H__
 #define __DOMAINLISTVIEW_H__
 
-#include <Qt3Support/Q3GroupBox>
+#include <QtGui/QGroupBox>
 #include <QtCore/QMap>
 
 #include <kconfig.h>
@@ -53,7 +53,7 @@ class PolicyDialog;
  *
  * @author Leo Savernik
  */
-class DomainListView : public Q3GroupBox {
+class DomainListView : public QGroupBox {
   Q_OBJECT
 public:
   /** Enumerates the available buttons.
