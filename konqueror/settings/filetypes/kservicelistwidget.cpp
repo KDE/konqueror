@@ -62,9 +62,9 @@ bool KServiceListItem::isImmutable()
     return !KStandardDirs::checkAccess(localPath, W_OK);
 }
 
-KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *name)
-  : Q3GroupBox( kind == SERVICELIST_APPLICATIONS ? i18n("Application Preference Order")
-               : i18n("Services Preference Order"), parent, name ),
+KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
+  : QGroupBox( kind == SERVICELIST_APPLICATIONS ? i18n("Application Preference Order")
+               : i18n("Services Preference Order"), parent ),
     m_kind( kind ), m_mimeTypeData( 0L )
 {
   QWidget * gb = this;

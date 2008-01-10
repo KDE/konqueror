@@ -22,7 +22,7 @@
 #ifndef _KSERVICELISTWIDGET_H
 #define _KSERVICELISTWIDGET_H
 
-#include <Qt3Support/Q3GroupBox>
+#include <QGroupBox>
 #include <QtGui/QListWidget>
 #include <kservice.h>
 class MimeTypeData;
@@ -44,12 +44,12 @@ public:
  * module, once for applications and once for services.
  * The "kind" is determined by the argument given to the constructor.
  */
-class KServiceListWidget : public Q3GroupBox
+class KServiceListWidget : public QGroupBox
 {
   Q_OBJECT
 public:
   enum { SERVICELIST_APPLICATIONS, SERVICELIST_SERVICES };
-  explicit KServiceListWidget(int kind, QWidget *parent = 0, const char *name = 0);
+  explicit KServiceListWidget(int kind, QWidget *parent = 0);
 
   void setMimeTypeData( MimeTypeData * item );
 
