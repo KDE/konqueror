@@ -26,6 +26,7 @@ KfindDlg::KfindDlg(const KUrl & url, QWidget *parent)
   : KDialog( parent )
 {
   setButtons( User1 | User2 | User3 | Close | Help );
+  setHelp( QString(), "kfind" );
   setDefaultButton( User3 );
   setModal( true );
 
