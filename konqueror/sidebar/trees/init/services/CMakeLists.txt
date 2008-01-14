@@ -1,7 +1,6 @@
 
 install(FILES
   .directory
-  audiocd.desktop
 #  printsystem.desktop
 #  settings.desktop
   applications.desktop
