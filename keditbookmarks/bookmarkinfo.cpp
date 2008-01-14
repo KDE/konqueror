@@ -211,7 +211,7 @@ void BookmarkInfoWidget::slotTextChangedComment(const QString &str) {
 
 void BookmarkInfoWidget::slotUpdate()
 {
-    const QModelIndexList & list = mBookmarkListView->selectionModel()->selectedIndexes();
+    const QModelIndexList & list = mBookmarkListView->selectionModel()->selectedRows();
     if( list.count() == 1)
     {        
         QModelIndex index = *list.constBegin();
