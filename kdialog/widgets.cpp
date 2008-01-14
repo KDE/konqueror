@@ -129,8 +129,7 @@ int Widgets::textBox(QWidget *parent, int width, int height, const QString& titl
 
   handleXGeometry(&dlg);
   dlg.setCaption(title);
-  dlg.exec();
-  return 0;
+  return (dlg.exec() == KDialog::Accepted) ? 0 : 1;
 }
 
 int Widgets::textInputBox(QWidget *parent, int width, int height, const QString& title, const QStringList& args, QString &result)
