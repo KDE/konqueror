@@ -238,17 +238,18 @@ static int directCommand(KCmdLineArgs *args)
             duration = 1000 * args->arg(0).toInt();
         if (duration == 0)
             duration = 10000;
-	KPassivePopup *popup = KPassivePopup::message( KPassivePopup::Balloon, // style
-						       title,
-						       args->getOption("passivepopup"),
-						       QPixmap() /* do not crash 0*/, // icon
-						       (QWidget*)0UL, // parent
-						       duration );
-	QTimer *timer = new QTimer();
-	QObject::connect( timer, SIGNAL( timeout() ), kapp, SLOT( quit() ) );
-	QObject::connect( popup, SIGNAL( clicked() ), kapp, SLOT( quit() ) );
-        timer->setSingleShot( true );
-	timer->start( duration );
+    KPassivePopup *popup = KPassivePopup::message( KPassivePopup::Boxed, // style
+                                                   title,
+                                                   args->getOption("passivepopup"),
+                                                   QPixmap() /* do not crash 0*/, // icon
+                                                   (QWidget*)0UL, // parent
+                                                   duration );
+    KDialog::centerOnScreen( popup );
+    QTimer *timer = new QTimer();
+    QObject::connect( timer, SIGNAL( timeout() ), kapp, SLOT( quit() ) );
+    QObject::connect( popup, SIGNAL( clicked() ), kapp, SLOT( quit() ) );
+    timer->setSingleShot( true );
+    timer->start( duration );
 
 #ifdef Q_WS_X11
 	QString geometry;
