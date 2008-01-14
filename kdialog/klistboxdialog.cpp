@@ -43,7 +43,7 @@ KListBoxDialog::KListBoxDialog(const QString &text, QWidget *parent)
 
 void KListBoxDialog::insertItem(const QString& item)
 {
-  table->insertItem(-1, item);
+  table->addItem(item);
   table->setCurrentItem(0);
 }
 
