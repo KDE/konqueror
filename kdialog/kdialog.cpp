@@ -18,34 +18,23 @@
 //  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 //
 
-
-#include <fcntl.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <iostream>
-
-#include <QtCore/QFile>
-#include <QtCore/QDataStream>
-#include <QtCore/QRegExp>
-#include <QtCore/QTimer>
-#include <QtGui/QFileDialog>
-#include <QtGui/QDesktopWidget>
-#include <kmessagebox.h>
-#include <kapplication.h>
-#include <kdebug.h>
-#include <kxmlguiwindow.h>
-#include <kpassivepopup.h>
-#include <krecentdocument.h>
-
 #include "widgets.h"
 
-#include <klocale.h>
-#include <QtGui/QDialog>
+#include <kmessagebox.h>
+#include <kapplication.h>
+#include <kpassivepopup.h>
+#include <krecentdocument.h>
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
 #include <kfiledialog.h>
 #include <kicondialog.h>
 #include <kdirselectdialog.h>
+#include <kcolordialog.h>
+
+#include <QtCore/QTimer>
+#include <QtGui/QDesktopWidget>
+
+#include <iostream>
 
 #if defined Q_WS_X11 && ! defined K_WS_QTONLY
 #include <netwm.h>
@@ -252,7 +241,7 @@ static int directCommand(KCmdLineArgs *args)
 	KPassivePopup *popup = KPassivePopup::message( KPassivePopup::Balloon, // style
 						       title,
 						       args->getOption("passivepopup"),
-						       QPixmap() /* don't crash 0*/, // icon
+						       QPixmap() /* do not crash 0*/, // icon
 						       (QWidget*)0UL, // parent
 						       duration );
 	QTimer *timer = new QTimer();
@@ -614,6 +603,31 @@ static int directCommand(KCmdLineArgs *args)
        return Widgets::progressBar(0, title, text, totalsteps) ? 1 : 0;
     }
 
+    // --getcolor
+    if (args->isSet("getcolor")) {
+        KColorDialog dlg((QWidget*)0L, true);
+
+        if (args->isSet("default")) {
+            defaultEntry = args->getOption("default");
+            dlg.setColor(defaultEntry);
+        }
+        Widgets::handleXGeometry(&dlg);
+        kapp->setTopWidget(&dlg);
+        dlg.setCaption(title.isNull() ? i18n("Choose Color") : title);
+
+        if (dlg.exec() == KColorDialog::Accepted) {
+            QString result;
+            if (dlg.color().isValid()) {
+                result = dlg.color().name();
+            } else {
+                result = dlg.defaultColor().name();
+            }
+            cout << result.toLocal8Bit().data() << endl;
+            return 0;
+        }
+        return 1; // cancelled
+    }
+
     KCmdLineArgs::usage();
     return -2; // NOTREACHED
 }
@@ -660,9 +674,10 @@ int main(int argc, char *argv[])
   options.add("getsaveurl [startDir] [filter]", ki18n("File dialog to save a URL"));
   options.add("geticon [group] [context]", ki18n("Icon chooser dialog"));
   options.add("progressbar <text> [totalsteps]", ki18n("Progress bar dialog, returns a D-Bus reference for communication"));
+  options.add("getcolor", ki18n("Color dialog to select a color"));
   // TODO gauge stuff, reading values from stdin
   options.add("title <text>", ki18n("Dialog title"));
-  options.add("default <text>", ki18n("Default entry to use for combobox and menu"));
+  options.add("default <text>", ki18n("Default entry to use for combobox, menu and color"));
   options.add("multiple", ki18n("Allows the --getopenurl and --getopenfilename options to return multiple files"));
   options.add("separate-output", ki18n("Return list items on separate lines (for checklist option and file open with --multiple)"));
   options.add("print-winid", ki18n("Outputs the winId of each dialog"));
