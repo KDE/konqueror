@@ -40,6 +40,11 @@
 #include <netwm.h>
 #endif
 
+#ifdef Q_WS_WIN
+#include <QtGui/QFileDialog>
+#include <unistd.h>
+#endif
+
 using namespace std;
 
 #if defined(Q_WS_X11)
