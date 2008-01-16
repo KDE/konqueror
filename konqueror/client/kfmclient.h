@@ -20,6 +20,7 @@
 #ifndef __kfmclient_h
 #define __kfmclient_h
 
+#include <kglobal.h>
 #include <QtGui/QApplication>
 class KJob;
 class KUrl;
@@ -43,6 +44,7 @@ protected Q_SLOTS:
   void slotResult( KJob * );
   void delayedQuit();
   void slotDialogCanceled();
+  void deref() { KGlobal::deref(); }
 
 private:
   static void sendASNChange();
