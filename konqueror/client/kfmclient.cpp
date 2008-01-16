@@ -293,7 +293,7 @@ static bool krun_has_error = false;
 
 bool ClientApp::createNewWindow(const KUrl & url, bool newTab, bool tempFile, const QString & mimetype)
 {
-    kDebug( 1202 ) << "ClientApp::createNewWindow " << url.url() << " mimetype=" << mimetype;
+    kDebug( 1202 ) << url << "mimetype=" << mimetype;
     needInstance();
 
     if (url.protocol().startsWith(QLatin1String("http")))
@@ -302,14 +302,16 @@ bool ClientApp::createNewWindow(const KUrl & url, bool newTab, bool tempFile, co
         KConfigGroup generalGroup(&config, "General");
         if (!generalGroup.readEntry("BrowserApplication").isEmpty())
         {
-            kDebug() << generalGroup.readEntry( "BrowserApplication" );
+            kDebug() << "Using external browser" << generalGroup.readEntry( "BrowserApplication" );
             Q_ASSERT( qApp );
             //ClientApp app;
 #ifdef Q_WS_X11
             KStartupInfo::appStarted();
 #endif
 
-            KRun * run = new KRun( url, 0L, false, false /* no progress window */ ); // TODO pass tempFile [needs support in the KRun ctor]
+            // TODO we don't handle tempFile here, but most likely the external browser doesn't support it,
+            // so we should sleep and delete it ourselves....
+            KRun * run = new KRun( url, 0L, false, false /* no progress window */ );
             QObject::connect( run, SIGNAL( finished() ), qApp, SLOT( delayedQuit() ));
             QObject::connect( run, SIGNAL( error() ), qApp, SLOT( delayedQuit() ));
             qApp->exec();
