@@ -1,7 +1,7 @@
 
 add_definitions(-D_LARGEFILE64_SOURCE )
 
-add_definitions (-DQT3_SUPPORT)
+add_definitions (-DQT3_SUPPORT -DQT3_SUPPORT_WARNINGS)
 
 add_subdirectory( src )
 add_subdirectory( client )
