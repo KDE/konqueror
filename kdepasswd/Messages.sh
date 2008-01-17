@@ -1,2 +1,3 @@
 #! /usr/bin/env bash
-$XGETTEXT *.cpp  -o $podir/kdepasswd.pot
+$EXTRACTRC `find . -name "*.ui"` >> rc.cpp || exit 11
+$XGETTEXT *.cpp -o $podir/useraccount.pot
