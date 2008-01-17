@@ -135,7 +135,7 @@ void JSPolicies::save() {
 
 JSPoliciesFrame::JSPoliciesFrame(JSPolicies *policies, const QString &title,
 		QWidget* parent) :
-	QGroupBox(title, parent, "jspoliciesframe"),
+	QGroupBox(title, parent),
 	policies(policies) {
 
   bool is_per_domain = !policies->isGlobal();

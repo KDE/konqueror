@@ -713,7 +713,7 @@ QVariant KonqListWidgetItem::data( int role ) const
 
         if ( !title.isEmpty() )
             pixmap = provider->pixmapFor( text(), KIconLoader::SizeSmall );
-        else if ( text().find( "://" ) == -1 ) {
+        else if ( text().indexOf( "://" ) == -1 ) {
             title = titleOfURL( "http://"+text() );
             if ( !title.isEmpty() )
                 pixmap = provider->pixmapFor( "http://"+text(), KIconLoader::SizeSmall );
@@ -885,7 +885,7 @@ void KonqComboLineEdit::setCompletedItems( const QStringList& items, bool )
         }
 
         if ( autoSuggest() ) {
-            int index = items.first().find( txt );
+            int index = items.first().indexOf( txt );
             QString newText = items.first().mid( index );
             setUserSelection( false );
             setCompletedText( newText, true );
