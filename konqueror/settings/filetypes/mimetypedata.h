@@ -89,8 +89,6 @@ public:
      */
     void refresh();
 
-    static void runUpdateMimeDatabase();
-
     static void reset();
 
 private:

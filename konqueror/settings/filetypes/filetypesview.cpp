@@ -2,6 +2,7 @@
 
 // Own
 #include "filetypesview.h"
+#include "mimetypewriter.h"
 
 // Qt
 #include <QtGui/QLabel>
@@ -432,7 +433,7 @@ void FileTypesView::save()
   setDirty(false);
 
   if (needUpdateMimeDb) {
-      MimeTypeData::runUpdateMimeDatabase();
+      MimeTypeWriter::runUpdateMimeDatabase();
   }
   if (didIt) {
       KBuildSycocaProgressDialog::rebuildKSycoca(this);

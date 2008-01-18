@@ -24,6 +24,7 @@
 #include <ksycoca.h>
 
 #include <mimetypedata.h>
+#include <mimetypewriter.h>
 
 
 class FileTypesTest : public QObject
@@ -54,7 +55,7 @@ private Q_SLOTS:
         const QString packageFileName = KStandardDirs::locateLocal( "xdgdata-mime", "packages/text-plain.xml" );
         if (!packageFileName.isEmpty()) {
             QFile::remove(packageFileName);
-            MimeTypeData::runUpdateMimeDatabase();
+            MimeTypeWriter::runUpdateMimeDatabase();
             mustUpdateKSycoca = true;
         }
 
@@ -132,7 +133,7 @@ private Q_SLOTS:
         QVERIFY(data.isDirty());
         bool needUpdateMimeDb = data.sync();
         QVERIFY(needUpdateMimeDb);
-        MimeTypeData::runUpdateMimeDatabase();
+        MimeTypeWriter::runUpdateMimeDatabase();
         QProcess::execute( KGlobal::dirs()->findExe(KBUILDSYCOCA_EXENAME) );
         // Wait for notifyDatabaseChanged DBus signal
         // (The real KCM code simply does the refresh in a slot, asynchronously)
@@ -152,7 +153,7 @@ private Q_SLOTS:
         const QString packageFileName = KStandardDirs::locateLocal( "xdgdata-mime", "packages/text-plain.xml" );
         QVERIFY(!packageFileName.isEmpty());
         QFile::remove(packageFileName);
-        MimeTypeData::runUpdateMimeDatabase();
+        MimeTypeWriter::runUpdateMimeDatabase();
         QProcess::execute( KGlobal::dirs()->findExe(KBUILDSYCOCA_EXENAME) );
         loop.exec(); // need to process DBUS signal
         // Check what's in ksycoca
