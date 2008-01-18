@@ -7,7 +7,7 @@ if (X11_Xt_LIB)
   ########### next target ###############
 
   set(nsplugins_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/plugin_part.cpp ${CMAKE_CURRENT_SOURCE_DIR}/nspluginloader.cpp )
-  
+
   set(nsplugins_PART_SRCS
        ${nsplugins_SRCS}
     )
@@ -43,10 +43,11 @@ if (X11_Xt_LIB)
   install(TARGETS kcminit_nsplugins  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
 
-  ########### next target ###############
+  ########### nspluginscan ###############
 
-  set(nspluginscan_SRCS pluginscan.cpp plugin_paths.cpp)
+  set(nspluginscan_SRCS pluginscan.cpp plugin_paths.cpp ../konqueror/settings/filetypes/mimetypewriter.cpp)
 
+  include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../konqueror/settings/filetypes/)
 
   kde4_add_executable(nspluginscan ${nspluginscan_SRCS})
 

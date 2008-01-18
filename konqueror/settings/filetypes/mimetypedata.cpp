@@ -19,10 +19,7 @@
 */
 
 #include "mimetypedata.h"
-#include <kprocess.h>
-#include <QFile>
-#include <kstandarddirs.h>
-#include <QXmlStreamWriter>
+#include "mimetypewriter.h"
 #include <kdebug.h>
 #include <kservice.h>
 #include <ksharedconfig.h>
@@ -265,38 +262,11 @@ bool MimeTypeData::sync()
 
     bool needUpdateMimeDb = false;
     if (isMimeTypeDirty()) {
-        // XDG shared mime: we must write into a <kdehome>/share/mime/packages/ file...
-        // To simplify our job, let's use one "input" file per mimetype, in the user's dir.
-        // (this writes into $HOME/.local/share/mime by default)
-        const QString packageFileName = KStandardDirs::locateLocal( "xdgdata-mime", "packages/" + m_major + '-' + m_minor + ".xml" );
-        kDebug() << "writing" << packageFileName;
-        QFile packageFile(packageFileName);
-        if (!packageFile.open(QIODevice::WriteOnly)) {
-            kError() << "Couldn't open" << packageFileName << "for writing";
+        MimeTypeWriter mimeTypeWriter(name());
+        mimeTypeWriter.setComment(m_comment);
+        mimeTypeWriter.setPatterns(m_patterns);
+        if (!mimeTypeWriter.write())
             return false;
-        }
-        QXmlStreamWriter writer(&packageFile);
-        writer.setAutoFormatting(true);
-        writer.writeStartDocument();
-        const QString nsUri = "http://www.freedesktop.org/standards/shared-mime-info";
-        writer.writeDefaultNamespace(nsUri);
-        writer.writeStartElement("mime-info");
-        writer.writeStartElement(nsUri, "mime-type");
-        writer.writeAttribute("type", name());
-
-        writer.writeStartElement(nsUri, "comment");
-        writer.writeCharacters(m_comment);
-        writer.writeEndElement(); // comment
-
-        foreach(const QString& pattern, m_patterns) {
-            writer.writeStartElement(nsUri, "glob");
-            writer.writeAttribute("pattern", pattern);
-            writer.writeEndElement(); // glob
-        }
-
-        writer.writeEndElement(); // mime-info
-        writer.writeEndElement(); // mime-type
-        writer.writeEndDocument();
 
         m_bNewItem = false;
         needUpdateMimeDb = true;
@@ -548,18 +518,6 @@ bool MimeTypeData::canUseGroupSetting() const
     // "Use group settings" isn't available for zip, tar etc.; those have a builtin default...
     const bool hasLocalProtocolRedirect = !m_mimetype->property( "X-KDE-LocalProtocol" ).toString().isEmpty();
     return !hasLocalProtocolRedirect;
-}
-
-void MimeTypeData::runUpdateMimeDatabase()
-{
-    const QString localPackageDir = KStandardDirs::locateLocal("xdgdata-mime", QString());
-    KProcess proc;
-    proc << "update-mime-database";
-    proc << localPackageDir;
-    const int exitCode = proc.execute();
-    if (exitCode) {
-        kWarning() << proc.program() << "exited with error code" << exitCode;
-    }
 }
 
 void MimeTypeData::setPatterns(const QStringList &p)

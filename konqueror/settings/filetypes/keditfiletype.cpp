@@ -19,6 +19,7 @@
 
 // Own
 #include "keditfiletype.h"
+#include "mimetypewriter.h"
 
 // Qt
 #include <QtCore/QFile>
@@ -76,7 +77,7 @@ void FileTypeDialog::save()
 {
   if (m_mimeTypeData->isDirty()) {
     if (m_mimeTypeData->sync())
-        MimeTypeData::runUpdateMimeDatabase();
+        MimeTypeWriter::runUpdateMimeDatabase();
     KBuildSycocaProgressDialog::rebuildKSycoca(this);
   }
 }

@@ -1,7 +1,16 @@
 add_subdirectory(tests)
 
 
-set(libfiletypes_SRCS filetypedetails.cpp filegroupdetails.cpp kservicelistwidget.cpp typeslistitem.cpp mimetypedata.cpp newtypedlg.cpp kserviceselectdlg.cpp )
+set(libfiletypes_SRCS
+ filetypedetails.cpp
+ filegroupdetails.cpp
+ kservicelistwidget.cpp
+ typeslistitem.cpp
+ mimetypedata.cpp
+ mimetypewriter.cpp
+ newtypedlg.cpp
+ kserviceselectdlg.cpp
+)
 
 ########### next target ###############
 

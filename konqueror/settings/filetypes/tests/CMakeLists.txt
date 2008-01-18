@@ -3,5 +3,5 @@ include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/.. ${KDE4_INCLUDES} )
 
 ########### filetypestest ###############
 
-kde4_add_unit_test(filetypestest TEST filetypestest.cpp ../mimetypedata.cpp)
+kde4_add_unit_test(filetypestest TEST filetypestest.cpp ../mimetypedata.cpp ../mimetypewriter.cpp)
 target_link_libraries(filetypestest kdeinit_konqueror ${QT_QTTEST_LIBRARY})
