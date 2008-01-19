@@ -274,7 +274,9 @@ void KonqFrameStatusBar::updateActiveStatus()
     bool hasFocus = m_pParentKonqFrame->isActivePart();
 
     const QColorGroup& activeCg = palette().active();
-    setPaletteBackgroundColor( hasFocus ? activeCg.midlight() : activeCg.mid() );
+    QPalette palette;
+    palette.setColor(backgroundRole(), hasFocus ? activeCg.midlight() : activeCg.mid());
+    setPalette(palette);
 
     static QPixmap indicator_viewactive( UserIcon( "indicator_viewactive" ) );
     static QPixmap indicator_empty( UserIcon( "indicator_empty" ) );

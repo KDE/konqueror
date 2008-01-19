@@ -636,8 +636,11 @@ void KonqCombo::paintEvent( QPaintEvent *pe )
         if ( r != edit->geometry() )
             edit->setGeometry( r );
 
-	if ( useColor)
-	    edit->setPaletteBackgroundColor( color );
+	if ( useColor){
+        QPalette palette;
+        palette.setColor(edit->backgroundRole(), color);
+        edit->setPalette(palette);
+    }
 
         pix = SmallIcon( m_pageSecurity==KonqMainWindow::Encrypted ? "security-high" : "security-medium" );
         if ( useColor ) {
@@ -652,7 +655,9 @@ void KonqCombo::paintEvent( QPaintEvent *pe )
         r.setRight( re.right() );
         if ( r != edit->geometry() )
             edit->setGeometry( r );
-        edit->setPaletteBackgroundColor( QApplication::palette( edit ).color( QPalette::Active, QPalette::Base ) );
+        QPalette palette;
+        palette.setColor(edit->backgroundRole(), QApplication::palette( edit ).color( QPalette::Active, QPalette::Base ));
+        edit->setPalette(palette);
     }
 }
 
