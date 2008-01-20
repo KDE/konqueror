@@ -106,9 +106,9 @@ QString KonqAboutPageFactory::launch()
   else
     res = res.arg( "" );
 
-  res = res.arg( i18n("Conquer your Desktop!") )
+  res = res.arg( i18n("Be free.") )
       .arg( i18n( "Konqueror" ) )
-      .arg( i18n("Conquer your Desktop!") )
+      .arg( i18n("Be free.") )
       .arg( i18n("Konqueror is a web browser, file manager and universal document viewer.") )
       .arg( i18n( "Starting Points" ) )
       .arg( i18n( "Introduction" ) )
@@ -163,9 +163,9 @@ QString KonqAboutPageFactory::intro()
     else
 	res = res.arg( "" );
 
-    res = res.arg( i18n("Conquer your Desktop!") )
+    res = res.arg( i18n("Be free.") )
 	.arg( i18n( "Konqueror" ) )
-	.arg( i18n( "Conquer your Desktop!") )
+	.arg( i18n( "Be free.") )
 	.arg( i18n( "Konqueror is your file manager, web browser and universal document viewer.") )
 	.arg( i18n( "Starting Points" ) )
 	.arg( i18n( "Introduction" ) )
@@ -218,9 +218,9 @@ QString KonqAboutPageFactory::specs()
     else
 	res = res.arg( "" );
 
-    res = res.arg( i18n("Conquer your Desktop!") )
+    res = res.arg( i18n("Be free.") )
 	.arg( i18n( "Konqueror" ) )
-	.arg( i18n("Conquer your Desktop!") )
+	.arg( i18n("Be free.") )
 	.arg( i18n("Konqueror is your file manager, web browser and universal document viewer.") )
 	.arg( i18n( "Starting Points" ) )
 	.arg( i18n( "Introduction" ) )
@@ -316,9 +316,9 @@ QString KonqAboutPageFactory::tips()
     else
 	res = res.arg( "" );
 
-    res = res.arg( i18n("Conquer your Desktop!") )
+    res = res.arg( i18n("Be free.") )
 	.arg( i18n( "Konqueror" ) )
-	.arg( i18n("Conquer your Desktop!") )
+	.arg( i18n("Be free.") )
 	.arg( i18n("Konqueror is your file manager, web browser and universal document viewer.") )
 	.arg( i18n( "Starting Points" ) )
 	.arg( i18n( "Introduction" ) )
