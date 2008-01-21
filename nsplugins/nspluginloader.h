@@ -62,6 +62,8 @@ private Q_SLOTS:
 protected:
     void resizeEvent(QResizeEvent *event);
     void windowChanged(WId w);
+    virtual void focusInEvent( QFocusEvent* event );
+    virtual void focusOutEvent( QFocusEvent* event );
 private:
     class NSPluginLoader *_loader;
     OrgKdeNspluginsInstanceInterface *_instanceInterface;
