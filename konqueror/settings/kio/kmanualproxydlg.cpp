@@ -370,7 +370,8 @@ void KManualProxyDlg::changePressed()
 void KManualProxyDlg::deletePressed()
 {
     delete mDlg->lbExceptions->takeItem( mDlg->lbExceptions->currentRow() );
-    mDlg->lbExceptions->currentItem()->setSelected(true); 
+    if(mDlg->lbExceptions->currentItem())
+       mDlg->lbExceptions->currentItem()->setSelected(true); 
     updateButtons();
 }
 
