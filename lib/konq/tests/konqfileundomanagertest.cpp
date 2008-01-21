@@ -23,6 +23,7 @@
 #include <konq_fileundomanager.h>
 
 #include <kio/copyjob.h>
+#include <kio/job.h>
 #include <kio/deletejob.h>
 #include <kio/netaccess.h>
 #include <kprotocolinfo.h>
@@ -241,6 +242,7 @@ void KonqFileUndoManagerTest::testCopyFiles()
     QVERIFY( QFile::exists( destFile() ) ); // nothing happened yet
 
     // OK, now do it
+    m_uiInterface->clear();
     m_uiInterface->setNextReplyToConfirmDeletion( true );
     doUndo();
 
@@ -386,6 +388,35 @@ void KonqFileUndoManagerTest::testRenameDir()
 
     QVERIFY( QFile::exists( srcSubDir() ) );
     QVERIFY( !QFileInfo( newUrl.path() ).isDir() );
+}
+
+void KonqFileUndoManagerTest::testCreateDir()
+{
+    const KUrl url( srcSubDir() + ".mkdir" );
+    const QString path = url.path();
+    QVERIFY( !QFile::exists(path) );
+
+    KIO::SimpleJob* job = KIO::mkdir(url);
+    job->setUiDelegate( 0 );
+    KonqFileUndoManager::self()->recordJob( KonqFileUndoManager::MKDIR, KUrl(), url, job );
+    bool ok = KIO::NetAccess::synchronousRun( job, 0 );
+    QVERIFY( ok );
+    QVERIFY( QFile::exists(path) );
+    QVERIFY( QFileInfo(path).isDir() );
+
+    m_uiInterface->clear();
+    m_uiInterface->setNextReplyToConfirmDeletion( false ); // act like the user didn't confirm
+    KonqFileUndoManager::self()->undo();
+    QCOMPARE( m_uiInterface->files().count(), 1 ); // confirmDeletion was called
+    QCOMPARE( m_uiInterface->files()[0].url(), url.url() );
+    QVERIFY( QFile::exists(path) ); // nothing happened yet
+
+    // OK, now do it
+    m_uiInterface->clear();
+    m_uiInterface->setNextReplyToConfirmDeletion( true );
+    doUndo();
+
+    QVERIFY( !QFile::exists(path) );
 }
 
 void KonqFileUndoManagerTest::testTrashFiles()
