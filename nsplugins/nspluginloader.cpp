@@ -131,6 +131,15 @@ void NSPluginInstance::javascriptResult(int id, const QString &result)
     _instanceInterface->javascriptResult( id, result );
 }
 
+void NSPluginInstance::focusInEvent( QFocusEvent* event )
+{
+  _instanceInterface->gotFocusIn();
+}
+
+void NSPluginInstance::focusOutEvent( QFocusEvent* event )
+{
+  _instanceInterface->gotFocusOut();
+}
 
 /*******************************************************************************/
 

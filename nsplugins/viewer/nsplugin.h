@@ -173,6 +173,8 @@ public:
   int winId() { return _outside->winId(); }
   void resizePlugin(int w, int h);
   void javascriptResult(int id, const QString &result);
+  void gotFocusIn();
+  void gotFocusOut();
 
   // value handling
   NPError NPGetValue(NPPVariable variable, void *value);

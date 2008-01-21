@@ -1138,6 +1138,34 @@ void NSPluginInstance::addTempFile(KTemporaryFile *tmpFile)
    _tempFiles.append(tmpFile);
 }
 
+static bool has_focus = false;
+
+void NSPluginInstance::gotFocusIn()
+{
+  has_focus = true;
+}
+
+void NSPluginInstance::gotFocusOut()
+{
+  has_focus = false;
+}
+
+#include <dlfcn.h>
+// Prevent plugins from polling the keyboard regardless of focus.
+static int (*real_xquerykeymap)( Display*, char[32] ) = NULL;
+
+extern "C" KDE_EXPORT
+int XQueryKeymap( Display* dpy, char k[32] )
+{
+    if( real_xquerykeymap == NULL )
+        real_xquerykeymap = (int (*)( Display*, char[32] )) dlsym( RTLD_NEXT, "XQueryKeymap" );
+    if( has_focus )
+        return real_xquerykeymap( dpy, k );
+    memset( k, 0, 32 );
+    return 1;
+}
+
+
 /***************************************************************************/
 
 NSPluginViewer::NSPluginViewer( QObject *parent )
