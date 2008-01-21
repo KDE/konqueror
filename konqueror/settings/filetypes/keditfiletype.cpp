@@ -159,11 +159,15 @@ int main(int argc, char ** argv)
     }
     // TODO see filetypesview.cpp
     //mime = new KMimeType( loc, mimeString.arg( inc ), QString(), comment, patterns );
+    kError() << "Creating a mimetype with keditfiletype is not supported in KDE-4.0.x";
+    return 1;
   }
   else {
     mime = KMimeType::mimeType( arg );
-    if (!mime)
-      kFatal() << "Mimetype " << arg << " not found" ;
+    if (!mime) {
+      kError() << "Mimetype" << arg << "not found";
+      return 1;
+    }
   }
 
   FileTypeDialog dlg( mime, createType );
