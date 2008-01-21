@@ -62,22 +62,6 @@
 #define RLIMIT_AS RLIMIT_DATA
 #endif
 
-/**
- * The error handler catches all X errors, writes the error
- * message to the debug log and continues.
- *
- * This is done to prevent abortion of the plugin viewer
- * in case the plugin does some invalid X operation.
- *
- */
-static int x_errhandler(Display *dpy, XErrorEvent *error)
-{
-  char errstr[256];
-  XGetErrorText(dpy, error->error_code, errstr, 256);
-  kDebug(1430) << "Detected X Error: " << errstr;
-  return 1;
-}
-
 /*
  * As the plugin viewer needs to be a motif application, I give in to
  * the "old style" and keep lot's of global vars. :-)
@@ -106,9 +90,6 @@ int main(int argc, char** argv)
     // nspluginviewer is a helper app, it shouldn't do session management at all
    setenv( "SESSION_MANAGER", "", 1 );
 
-   // trap X errors
-   kDebug(1430) << "1 - XSetErrorHandler";
-   XSetErrorHandler(x_errhandler);
    setvbuf( stderr, NULL, _IONBF, 0 );
 
    kDebug(1430) << "2 - parseCommandLine";
