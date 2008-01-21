@@ -220,6 +220,10 @@ void KonqProfileDlg::slotRenameProfile()
 
 void KonqProfileDlg::slotItemRenamed( QListWidgetItem * item )
 {
+    if (!item) {
+        return;
+    }
+
   KonqProfileItem * profileItem = static_cast<KonqProfileItem *>( item );
 
   QString newName = profileItem->text();
