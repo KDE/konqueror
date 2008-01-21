@@ -38,6 +38,7 @@ private slots:
     void testRenameDir();
     void testTrashFiles();
     void testModifyFileBeforeUndo(); // #20532
+    void testCreateDir();
 
     // TODO find tests that would lead to kio job errors
 

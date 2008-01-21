@@ -316,7 +316,7 @@ void KonqFileUndoManager::undo()
     d->m_current = cmd;
 
     KonqBasicOperation::Stack& opStack = d->m_current.m_opStack;
-    assert( !opStack.isEmpty() );
+    // Note that opStack is empty for simple operations like MKDIR.
 
     // Let's first ask for confirmation if we need to delete any file (#99898)
     KUrl::List fileCleanupStack;
@@ -326,6 +326,9 @@ void KonqFileUndoManager::undo()
         if ( type == KonqBasicOperation::File && d->m_current.m_type == KonqFileUndoManager::COPY ) {
             fileCleanupStack.append( (*it).m_dst );
         }
+    }
+    if ( d->m_current.m_type == KonqFileUndoManager::MKDIR ) {
+        fileCleanupStack.append(d->m_current.m_dst);
     }
     if ( !fileCleanupStack.isEmpty() ) {
         if ( !d->m_uiInterface->confirmDeletion( fileCleanupStack ) ) {
