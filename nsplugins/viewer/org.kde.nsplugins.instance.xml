@@ -14,5 +14,9 @@
       <arg name="id" type="i" direction="in"/>
       <arg name="result" type="s" direction="in"/>
     </method>
+    <method name="gotFocusIn">
+    </method>
+    <method name="gotFocusOut">
+    </method>
   </interface>
 </node>
