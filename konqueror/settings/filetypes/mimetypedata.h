@@ -94,7 +94,8 @@ public:
 private:
     AutoEmbed readAutoEmbed() const;
     void writeAutoEmbed();
-    bool isMimeTypeDirty() const; // whether the mimetype .desktop file needs saving
+    bool isMimeTypeDirty() const; // whether the mimetype definition file needs saving
+    bool areServicesDirty() const; // whether the services using that mimetype need saving
     void getServiceOffers(QStringList& appServices, QStringList& embedServices) const;
     void getMyServiceOffers() const;
     void syncServices();

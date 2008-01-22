@@ -121,6 +121,11 @@ QString MimeTypeWriterPrivate::localFilePath() const
     // XDG shared mime: we must write into a <kdehome>/share/mime/packages/ file...
     // To simplify our job, let's use one "input" file per mimetype, in the user's dir.
     // (this writes into $HOME/.local/share/mime by default)
+    //
+    // We could also use Override.xml, says the spec, but then we'd need to merge with other mimetypes,
+    // and in ~/.local we don't really expect other packages to be installed anyway...
+    // TODO this writes into $HOME/.local/share/mime which makes the unit test mess up the user's configuration...
+    // can we avoid that? is $KDEHOME/share/mime available too?
     QString baseName = m_mimeType;
     baseName.replace('/', '-');
     return KStandardDirs::locateLocal( "xdgdata-mime", "packages/" + baseName + ".xml" );
