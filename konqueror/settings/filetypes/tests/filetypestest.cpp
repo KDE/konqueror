@@ -166,6 +166,7 @@ private Q_SLOTS:
         MimeTypeData data(KMimeType::mimeType(mimeTypeName));
         QStringList appServices = data.appServices();
         qDebug() << appServices;
+        QVERIFY(!appServices.contains(fakeApplication)); // already there? hmm can't really test then
         QVERIFY(!data.isDirty());
         appServices.prepend(fakeApplication);
         data.setAppServices(appServices);
@@ -178,11 +179,15 @@ private Q_SLOTS:
         QVERIFY(data2.appServices().contains(fakeApplication));
         QCOMPARE(data2.appServices(), appServices);
         QVERIFY(!data.isDirty());
-    }
 
-    void testRemoveService()
-    {
-        // TODO
+        // Now test removing (in the same test, since it's inter-dependent)
+        appServices.remove(fakeApplication);
+        data.setAppServices(appServices);
+        QVERIFY(data.isDirty());
+        data.sync();
+        runKBuildSycoca();
+        QCOMPARE(data.appServices(), appServices);
+        QVERIFY(!data.appServices().contains(fakeApplication));
     }
 
     // TODO see TODO in filetypesview
