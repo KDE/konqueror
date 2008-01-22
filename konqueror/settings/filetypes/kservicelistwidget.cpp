@@ -439,7 +439,7 @@ void KServiceListWidget::enableMoveButtons()
     servRemoveButton->setEnabled(true);
 
   if ( servEditButton )
-    servEditButton->setEnabled(true && ( m_kind == SERVICELIST_APPLICATIONS ) );
+    servEditButton->setEnabled( m_kind == SERVICELIST_APPLICATIONS );
 }
 
 #include "kservicelistwidget.moc"

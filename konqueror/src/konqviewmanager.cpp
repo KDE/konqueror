@@ -947,7 +947,7 @@ void KonqViewManager::setActivePart( KParts::Part *part, bool immediate )
 
     // Due to the single-shot timer below, we need to also make sure that
     // the mainwindow also has the right part active already
-    KParts::Part* mainWindowActivePart = (m_pMainWindow && m_pMainWindow->currentView())
+    KParts::Part* mainWindowActivePart = m_pMainWindow->currentView()
                                          ? m_pMainWindow->currentView()->part() : 0;
     if (part == activePart() && (!immediate || mainWindowActivePart == part))
     {
