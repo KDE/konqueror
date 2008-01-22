@@ -397,7 +397,7 @@ void CSSConfig::slotPreview()
   text->setFontFamily(customDialog->fontFamily->currentText());
 
   // Show the preview
-  PreviewDialog *dlg = new PreviewDialog(this);
+  PreviewDialog *dlg = new PreviewDialog(customDialogBase);
   dlg->preview->setPaper(back);
   dlg->preview->viewport()->setFont(QFont(KGlobalSettings::generalFont().family(), bfs));
 
