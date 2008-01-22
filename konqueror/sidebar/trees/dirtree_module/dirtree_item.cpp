@@ -167,7 +167,7 @@ void KonqSidebarDirTreeItem::itemSelected()
     QMimeSource *data = QApplication::clipboard()->data();
     bool paste = ( data->encodedData( data->format() ).size() != 0 );
 
-    tree()->enableActions( true, true, paste, true && !bInTrash, true, true );
+    tree()->enableActions( true, true, paste, !bInTrash, true, true );
 }
 
 void KonqSidebarDirTreeItem::middleButtonClicked()
