@@ -35,6 +35,8 @@ TreeItem * TreeItem::child(int row)
 {
     if(!init)
         initChildren();
+    if(row < 0 || row > children.count())
+      return parent();
     return children.at(row);
 }
 
