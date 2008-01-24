@@ -40,11 +40,6 @@ public:
      */
     TypesListItem(TypesListItem *parent, KMimeType::Ptr mimetype, bool newItem=false);
 
-    /**
-     * Create a filetype item not inside a group (used by keditfiletype)
-     */
-    TypesListItem(Q3ListView *parent, KMimeType::Ptr mimetype, bool newItem=false);
-
     ~TypesListItem();
 
     //void setIcon( const QString& icon );

@@ -40,14 +40,6 @@ TypesListItem::TypesListItem(TypesListItem *parent, KMimeType::Ptr mimetype, boo
     setText(0, m_mimetypeData.minorType());
 }
 
-TypesListItem::TypesListItem(Q3ListView *parent, KMimeType::Ptr mimetype, bool newItem)
-  : Q3ListViewItem(parent),
-    m_mimetypeData(mimetype, newItem)
-{
-    // This is a fake item for keditfiletype, no need for text/pixmap
-    // TODO: make the code rely on MimeType only, not TypesListItem.
-}
-
 TypesListItem::~TypesListItem()
 {
 }
