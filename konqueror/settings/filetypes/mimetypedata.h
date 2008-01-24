@@ -102,7 +102,8 @@ private:
 
     KMimeType::Ptr m_mimetype; // 0 if this is data for a mimetype group (m_isGroup==true)
     unsigned int groupCount:16; // shared between saveServices and sync
-    unsigned int m_askSave:3; // 0 yes, 1 no, 2 default       -- TODO enum
+    enum AskSave { AskSaveYes = 0, AskSaveNo = 1, AskSaveDefault = 2 };
+    AskSave m_askSave:3;
     AutoEmbed m_autoEmbed:3;
     bool m_bNewItem:1;
     mutable bool m_bFullInit:1; // lazy init of m_appServices and m_embedServices

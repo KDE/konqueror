@@ -31,7 +31,7 @@ typedef QMap< QString, QStringList > ChangedServices;
 K_GLOBAL_STATIC(ChangedServices, s_changedServices)
 
 MimeTypeData::MimeTypeData(const QString& major)
-    : m_askSave(2),
+    : m_askSave(AskSaveDefault),
       m_bNewItem(false),
       m_bFullInit(true),
       m_isGroup(true),
@@ -42,7 +42,7 @@ MimeTypeData::MimeTypeData(const QString& major)
 
 MimeTypeData::MimeTypeData(const KMimeType::Ptr mime, bool newItem)
     : m_mimetype(mime),
-      m_askSave(2), // TODO: the code for initializing this is missing. FileTypeDetails initializes the checkbox instead...
+      m_askSave(AskSaveDefault), // TODO: the code for initializing this is missing. FileTypeDetails initializes the checkbox instead...
       m_bNewItem(newItem),
       m_isGroup(false)
 {
@@ -230,7 +230,7 @@ bool MimeTypeData::isDirty() const
             return true;
     }
 
-    if (m_askSave != 2)
+    if (m_askSave != AskSaveDefault)
         return true;
 
     // nothing seems to have changed, it's not dirty.
@@ -244,10 +244,10 @@ bool MimeTypeData::sync()
         return false;
     }
 
-    if (m_askSave != 2) {
+    if (m_askSave != AskSaveDefault) {
         const KSharedConfig::Ptr config = KSharedConfig::openConfig("filetypesrc", KConfig::NoGlobals);
         KConfigGroup cg = config->group("Notification Messages");
-        if (m_askSave == 0) {
+        if (m_askSave == AskSaveYes) {
             // Ask
             cg.deleteEntry("askSave"+name());
             cg.deleteEntry("askEmbedOrSave"+name());
@@ -499,18 +499,15 @@ void MimeTypeData::reset()
 
 void MimeTypeData::getAskSave(bool &_askSave)
 {
-    if (m_askSave == 0)
+    if (m_askSave == AskSaveYes)
         _askSave = true;
-    if (m_askSave == 1)
+    if (m_askSave == AskSaveNo)
         _askSave = false;
 }
 
 void MimeTypeData::setAskSave(bool _askSave)
 {
-    if (_askSave)
-        m_askSave = 0;
-    else
-        m_askSave = 1;
+    m_askSave = _askSave ? AskSaveYes : AskSaveNo;
 }
 
 bool MimeTypeData::canUseGroupSetting() const
