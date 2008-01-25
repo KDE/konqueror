@@ -39,7 +39,9 @@
 #include <QFrame>
 #include <QResizeEvent>
 
+#ifdef Q_WS_X11
 #include <fixx11h.h>
+#endif
 //--------------------------------------------------------------------------------
 
 KonqFileTip::KonqFileTip( QScrollArea* parent )
