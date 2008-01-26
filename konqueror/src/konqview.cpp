@@ -39,7 +39,11 @@
 #include <kcursor.h>
 #include <kmessagebox.h>
 #include <klocale.h>
+
+#ifdef Q_WS_X11
 #include <fixx11h.h>
+#endif
+
 #include <krandom.h>
 #include <kio/job.h>
 #include <kio/jobuidelegate.h>

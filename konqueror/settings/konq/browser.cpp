@@ -28,7 +28,11 @@
 // KDE
 #include <klocale.h>
 #include <kdialog.h>
+
+#ifdef Q_WS_X11
 #include <fixx11h.h>
+#endif
+
 #include <kcmoduleloader.h>
 
 // Local
