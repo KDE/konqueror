@@ -65,7 +65,7 @@ QDBusObjectPath KonquerorAdaptor::openBrowserWindow( const QString& url, const Q
     KonqMainWindow *res = KonqMisc::createSimpleWindow( KUrl(url), KParts::OpenUrlArguments() );
     if ( !res )
         return QDBusObjectPath();
-    return QDBusObjectPath( '/' + res->objectName() ); // this is what KMainWindow sets as the dbus object path
+    return QDBusObjectPath( res->dbusName() );
 }
 
 QDBusObjectPath KonquerorAdaptor::createNewWindow( const QString& url, const QString& mimetype, const QByteArray& startup_id, bool tempFile )
@@ -81,7 +81,7 @@ QDBusObjectPath KonquerorAdaptor::createNewWindow( const QString& url, const QSt
     KonqMainWindow *res = KonqMisc::createNewWindow( finalURL, args, KParts::BrowserArguments(), false, QStringList(), tempFile );
     if ( !res )
         return QDBusObjectPath();
-    return QDBusObjectPath( '/' + res->objectName() ); // this is what KMainWindow sets as the dbus object path
+    return QDBusObjectPath( res->dbusName() );
 }
 
 QDBusObjectPath KonquerorAdaptor::createNewWindowWithSelection( const QString& url, const QStringList& filesToSelect, const QByteArray& startup_id )
@@ -93,7 +93,7 @@ QDBusObjectPath KonquerorAdaptor::createNewWindowWithSelection( const QString& u
     KonqMainWindow *res = KonqMisc::createNewWindow( KUrl(url), KParts::OpenUrlArguments(), KParts::BrowserArguments(), false, filesToSelect );
     if ( !res )
         return QDBusObjectPath();
-    return QDBusObjectPath( '/' + res->objectName() ); // this is what KMainWindow sets as the dbus object path
+    return QDBusObjectPath( res->dbusName() );
 }
 
 QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfile( const QString& path, const QString& filename, const QByteArray& startup_id )
@@ -107,7 +107,7 @@ QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfile( const QString&
     KonqMainWindow *res = KonqMisc::createBrowserWindowFromProfile( path, filename );
     if ( !res )
         return QDBusObjectPath();
-    return QDBusObjectPath( '/' + res->objectName() ); // this is what KMainWindow sets as the dbus object path
+    return QDBusObjectPath( res->dbusName() );
 }
 
 QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfileAndUrl( const QString& path, const QString& filename, const QString& url, const QByteArray& startup_id )
@@ -119,7 +119,7 @@ QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfileAndUrl( const QS
     KonqMainWindow *res = KonqMisc::createBrowserWindowFromProfile( path, filename, KUrl(url) );
     if ( !res )
         return QDBusObjectPath();
-    return QDBusObjectPath( '/' + res->objectName() ); // this is what KMainWindow sets as the dbus object path
+    return QDBusObjectPath( res->dbusName() );
 }
 
 QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfileUrlAndMimeType( const QString& path, const QString& filename, const QString& url, const QString& mimetype, const QByteArray& startup_id )
@@ -133,7 +133,7 @@ QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfileUrlAndMimeType( 
     KonqMainWindow *res = KonqMisc::createBrowserWindowFromProfile( path, filename, KUrl(url), args );
     if ( !res )
         return QDBusObjectPath();
-    return QDBusObjectPath( '/' + res->objectName() ); // this is what KMainWindow sets as the dbus object path
+    return QDBusObjectPath( res->dbusName() );
 }
 
 void KonquerorAdaptor::updateProfileList()
@@ -158,7 +158,7 @@ QList<QDBusObjectPath> KonquerorAdaptor::getWindows()
     if ( mainWindows )
     {
       foreach ( KonqMainWindow* window, *mainWindows )
-        lst.append( QDBusObjectPath( '/' + window->objectName() ) );
+        lst.append( QDBusObjectPath( window->dbusName() ) );
     }
     return lst;
 }
@@ -175,7 +175,7 @@ QDBusObjectPath KonquerorAdaptor::windowForTab()
 	    if(
 #endif
                 !KonqMainWindow::isPreloaded() ) { // we want a tab in an already shown window
-                return QDBusObjectPath( '/' + window->objectName() );
+                return QDBusObjectPath( window->dbusName() );
             }
         }
     }
