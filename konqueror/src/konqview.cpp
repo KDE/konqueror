@@ -1175,7 +1175,7 @@ QString KonqView::dbusObjectPath()
     // And to make sure it's a valid dbus object path like in kmainwindow...
     static int s_viewNumber = 0;
     if ( m_dbusObjectPath.isEmpty() ) {
-        m_dbusObjectPath = '/' + m_pMainWindow->objectName() + '/' + QString::number( ++s_viewNumber );
+        m_dbusObjectPath = m_pMainWindow->dbusName() + '/' + QString::number( ++s_viewNumber );
         new KonqViewAdaptor( this );
         QDBusConnection::sessionBus().registerObject( m_dbusObjectPath, this );
     }
