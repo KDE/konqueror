@@ -29,7 +29,6 @@
 #include <QtGui/QListWidget>
 #include <QtGui/QRadioButton>
 #include <QLabel>
-#include <fixx11h.h>
 
 // KDE
 #include <kconfig.h>
