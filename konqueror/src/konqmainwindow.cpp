@@ -130,7 +130,7 @@
 #include <kuser.h>
 #include <kxmlguifactory.h>
 #include <netwm.h>
-
+#include <sonnet/configdialog.h>
 #ifdef KDE_MALLINFO_STDLIB
 #include <stdlib.h>
 #endif
@@ -1909,7 +1909,11 @@ void KonqMainWindow::slotConfigure()
 
 void KonqMainWindow::slotConfigureSpellChecking()
 {
-    KToolInvocation::startServiceByDesktopName("spellchecking");
+    Sonnet::ConfigDialog *dialog = new Sonnet::ConfigDialog(&( *KGlobal::config() ), this);
+    KWindowSystem::setIcons( dialog->winId(), qApp->windowIcon().pixmap( IconSize( KIconLoader::Desktop ), IconSize( KIconLoader::Desktop ) ), qApp->windowIcon().pixmap( IconSize( KIconLoader::Small ), IconSize( KIconLoader::Small ) ) );
+
+    dialog->exec();
+    delete dialog;
 }
 
 void KonqMainWindow::slotConfigureToolbars()
@@ -3714,10 +3718,10 @@ void KonqMainWindow::initActions()
   m_paConfigureExtensions = actionCollection()->addAction("options_configure_extensions");
   m_paConfigureExtensions->setText( i18n("Configure Extensions...") );
   connect(m_paConfigureExtensions, SIGNAL(triggered() ), SLOT( slotConfigureExtensions()));
-  //m_paConfigureSpellChecking = actionCollection()->addAction("configurespellcheck");
-  //m_paConfigureSpellChecking->setIcon(KIcon("tools-check-spelling"));
-  //m_paConfigureSpellChecking->setText(i18n("Configure Spell Checking..."));
-  //connect(m_paConfigureSpellChecking, SIGNAL(triggered()), SLOT( slotConfigureSpellChecking()));
+  m_paConfigureSpellChecking = actionCollection()->addAction("configurespellcheck");
+  m_paConfigureSpellChecking->setIcon(KIcon("tools-check-spelling"));
+  m_paConfigureSpellChecking->setText(i18n("Configure Spell Checking..."));
+  connect(m_paConfigureSpellChecking, SIGNAL(triggered()), SLOT( slotConfigureSpellChecking()));
 
   // Window menu
   m_paSplitViewHor = actionCollection()->addAction("splitviewh");

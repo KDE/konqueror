@@ -636,7 +636,7 @@ private: // members
   KAction *m_paMoveTabRight;
 
   KAction *m_paConfigureExtensions;
-  //KAction *m_paConfigureSpellChecking;
+  KAction *m_paConfigureSpellChecking;
 
   KAnimatedButton *m_paAnimatedLogo;
 
