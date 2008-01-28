@@ -190,6 +190,8 @@ BookmarkFolderViewFilterModel::~BookmarkFolderViewFilterModel()
 
 bool BookmarkFolderViewFilterModel::filterAcceptsColumn ( int source_column, const QModelIndex & source_parent ) const
 {
+    Q_UNUSED(source_parent);
+
     //Show name, hide everything else
     return (source_column == 0);
 }
