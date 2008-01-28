@@ -16,9 +16,11 @@
    Boston, MA 02110-1301, USA.
 */
 
+#include <kservice.h>
 #include <qtest_kde.h>
 
 #include <kconfiggroup.h>
+#include <kdebug.h>
 #include <kdesktopfile.h>
 #include <kstandarddirs.h>
 #include <ksycoca.h>
@@ -40,7 +42,7 @@ private Q_SLOTS:
 
         // Create fake application for some tests below.
         bool mustUpdateKSycoca = false;
-        const QString fakeApplication = KStandardDirs::locateLocal("xdgdata-apps", "fakeapplication.desktop");
+        fakeApplication = KStandardDirs::locateLocal("xdgdata-apps", "fakeapplication.desktop");
         const bool mustCreateFakeService = !QFile::exists(fakeApplication);
         if (mustCreateFakeService) {
             mustUpdateKSycoca = true;
@@ -64,6 +66,8 @@ private Q_SLOTS:
             // Update ksycoca in ~/.kde-unit-test after creating the above
             QProcess::execute( KGlobal::dirs()->findExe(KBUILDSYCOCA_EXENAME) );
         }
+        KService::Ptr fakeApplicationService = KService::serviceByDesktopPath(fakeApplication);
+        QVERIFY(fakeApplicationService);
     }
 
     void testMimeTypeGroupAutoEmbed()
@@ -134,12 +138,7 @@ private Q_SLOTS:
         bool needUpdateMimeDb = data.sync();
         QVERIFY(needUpdateMimeDb);
         MimeTypeWriter::runUpdateMimeDatabase();
-        QProcess::execute( KGlobal::dirs()->findExe(KBUILDSYCOCA_EXENAME) );
-        // Wait for notifyDatabaseChanged DBus signal
-        // (The real KCM code simply does the refresh in a slot, asynchronously)
-        QEventLoop loop;
-        QObject::connect(KSycoca::self(), SIGNAL(databaseChanged()), &loop, SLOT(quit()));
-        loop.exec();
+        runKBuildSycoca();
         QCOMPARE(data.patterns(), patterns);
         data.refresh(); // reload from ksycoca
         QCOMPARE(data.patterns(), patterns);
@@ -154,12 +153,41 @@ private Q_SLOTS:
         QVERIFY(!packageFileName.isEmpty());
         QFile::remove(packageFileName);
         MimeTypeWriter::runUpdateMimeDatabase();
-        QProcess::execute( KGlobal::dirs()->findExe(KBUILDSYCOCA_EXENAME) );
-        loop.exec(); // need to process DBUS signal
+        runKBuildSycoca();
         // Check what's in ksycoca
         newPatterns = KMimeType::mimeType("text/plain")->patterns();
         newPatterns.sort();
         QCOMPARE(newPatterns, origPatterns);
+    }
+
+    void testAddService()
+    {
+        const char* mimeTypeName = "application/vnd.oasis.opendocument.text";
+        MimeTypeData data(KMimeType::mimeType(mimeTypeName));
+        QStringList appServices = data.appServices();
+        qDebug() << appServices;
+        QVERIFY(!appServices.contains(fakeApplication)); // already there? hmm can't really test then
+        QVERIFY(!data.isDirty());
+        appServices.prepend(fakeApplication);
+        data.setAppServices(appServices);
+        QVERIFY(data.isDirty());
+        data.sync();
+        runKBuildSycoca();
+        // Check what's in ksycoca
+        MimeTypeData data2(KMimeType::mimeType(mimeTypeName));
+        qDebug() << data2.appServices();
+        QVERIFY(data2.appServices().contains(fakeApplication));
+        QCOMPARE(data2.appServices(), appServices);
+        QVERIFY(!data.isDirty());
+
+        // Now test removing (in the same test, since it's inter-dependent)
+        appServices.remove(fakeApplication);
+        data.setAppServices(appServices);
+        QVERIFY(data.isDirty());
+        data.sync();
+        runKBuildSycoca();
+        QCOMPARE(data.appServices(), appServices);
+        QVERIFY(!data.appServices().contains(fakeApplication));
     }
 
     // TODO see TODO in filetypesview
@@ -172,6 +200,20 @@ private Q_SLOTS:
         // If we remove it, then every run of the unit test has to run kbuildsycoca... slow.
         //QFile::remove(KStandardDirs::locateLocal("xdgdata-apps", "fakeapplication.desktop"));
     }
+
+private: // helper methods
+
+    void runKBuildSycoca()
+    {
+        QProcess::execute( KGlobal::dirs()->findExe(KBUILDSYCOCA_EXENAME) );
+        // Wait for notifyDatabaseChanged DBus signal
+        // (The real KCM code simply does the refresh in a slot, asynchronously)
+        QEventLoop loop;
+        QObject::connect(KSycoca::self(), SIGNAL(databaseChanged()), &loop, SLOT(quit()));
+        loop.exec();
+    }
+
+    QString fakeApplication;
 };
 
 QTEST_KDEMAIN( FileTypesTest, NoGUI )

@@ -205,22 +205,8 @@ bool MimeTypeData::isDirty() const
     }
 
     if ( !m_isGroup ) {
-        if (m_bFullInit) {
-            QStringList oldAppServices;
-            QStringList oldEmbedServices;
-            getServiceOffers( oldAppServices, oldEmbedServices );
-
-            if (oldAppServices != m_appServices) {
-                kDebug() << "App Services Dirty: old=" << oldAppServices
-                         << " m_appServices=" << m_appServices;
-                return true;
-            }
-            if (oldEmbedServices != m_embedServices) {
-                kDebug() << "Embed Services Dirty: old=" << oldEmbedServices
-                         << " m_embedServices=" << m_embedServices;
-                return true;
-            }
-        }
+        if (areServicesDirty())
+            return true;
         if (isMimeTypeDirty())
             return true;
     }
@@ -272,7 +258,7 @@ bool MimeTypeData::sync()
         needUpdateMimeDb = true;
     }
 
-    if (m_bFullInit) {
+    if (areServicesDirty()) {
         syncServices();
     }
 
@@ -413,17 +399,18 @@ static bool inheritsMimetype(KMimeType::Ptr m, const QStringList &mimeTypeList)
 
 KMimeType::Ptr MimeTypeData::findImplicitAssociation(const QString &desktop)
 {
-    KService::Ptr s = KService::serviceByDesktopPath(desktop);
-    if (!s) return KMimeType::Ptr(); // Hey, where did that one go?
+    QStringList mimeTypeList;
+    if (s_changedServices->contains(desktop)) {
+        mimeTypeList = s_changedServices->value( desktop );
+    } else {
+        KService::Ptr s = KService::serviceByDesktopPath(desktop);
+        if (!s) return KMimeType::Ptr(); // Hey, where did that one go?
+        mimeTypeList = s->serviceTypes();
+    }
 
-    QStringList mimeTypeList = s_changedServices->contains( s->entryPath())
-                               ? (*s_changedServices)[ s->entryPath() ] : s->serviceTypes();
-
-    for(QStringList::const_iterator it = mimeTypeList.begin();
-        it != mimeTypeList.end(); ++it)
-    {
-        if ((m_mimetype->name() != *it) && m_mimetype->is(*it))
-        {
+    for (QStringList::const_iterator it = mimeTypeList.begin();
+         it != mimeTypeList.end(); ++it) {
+        if ((m_mimetype->name() != *it) && m_mimetype->is(*it)) {
             return KMimeType::mimeType(*it);
         }
     }
@@ -436,7 +423,10 @@ void MimeTypeData::saveServices( KConfig & profile, const QStringList& services,
     for (int i = services.count(); it != services.end(); ++it, i--) {
 
         KService::Ptr pService = KService::serviceByDesktopPath(*it);
-        if (!pService) continue; // Where did that one go?
+        if (!pService) {
+            kWarning() << "service with desktop path" << *it << "not found";
+            continue; // Where did that one go?
+        }
 
         // Find a group header. The headers are just dummy names as far as
         // KUserProfile is concerned, but using the mimetype makes it a
@@ -525,4 +515,25 @@ void MimeTypeData::setPatterns(const QStringList &p)
     // We could also sort in KMimeType::setPatterns but this would just slow down the
     // normal use case (anything else than this KCM) for no good reason.
     m_patterns.sort();
+}
+
+bool MimeTypeData::areServicesDirty() const
+{
+    if (m_bFullInit) {
+        QStringList oldAppServices;
+        QStringList oldEmbedServices;
+        getServiceOffers( oldAppServices, oldEmbedServices );
+
+        if (oldAppServices != m_appServices) {
+            kDebug() << "App Services Dirty: old=" << oldAppServices
+                     << " m_appServices=" << m_appServices;
+            return true;
+        }
+        if (oldEmbedServices != m_embedServices) {
+            kDebug() << "Embed Services Dirty: old=" << oldEmbedServices
+                     << " m_embedServices=" << m_embedServices;
+            return true;
+        }
+    }
+    return false;
 }
