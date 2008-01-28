@@ -1909,11 +1909,9 @@ void KonqMainWindow::slotConfigure()
 
 void KonqMainWindow::slotConfigureSpellChecking()
 {
-    Sonnet::ConfigDialog *dialog = new Sonnet::ConfigDialog(&( *KGlobal::config() ), this);
-    KWindowSystem::setIcons( dialog->winId(), qApp->windowIcon().pixmap( IconSize( KIconLoader::Desktop ), IconSize( KIconLoader::Desktop ) ), qApp->windowIcon().pixmap( IconSize( KIconLoader::Small ), IconSize( KIconLoader::Small ) ) );
-
-    dialog->exec();
-    delete dialog;
+    Sonnet::ConfigDialog dialog( & ( *KGlobal::config() ), this);
+    setWindowIcon( KIcon( "konqueror" ));
+    dialog.exec();
 }
 
 void KonqMainWindow::slotConfigureToolbars()
