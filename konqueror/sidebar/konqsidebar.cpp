@@ -42,7 +42,7 @@ KonqSidebar::KonqSidebar( QWidget *parentWidget, QObject *parent, bool universal
 
 const KComponentData &KonqSidebar::getInstance()
 {
-	kDebug() << "KonqSidebar::getInstance()";
+	kDebug();
 	return KonqSidebarFactory::componentData();
 }
 
