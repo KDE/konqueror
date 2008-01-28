@@ -856,6 +856,8 @@ void KonqViewManager::loadViewProfileFromGroup( const KConfigGroup &profileGroup
                                                 const KUrl & forcedURL, const KonqOpenURLRequest &req,
                                                 bool resetWindow, bool openUrl )
 {
+  Q_UNUSED(resetWindow);
+
   m_currentProfile = filename;
   m_currentProfileText = profileGroup.readPathEntry("Name", filename);
   m_profileHomeURL = profileGroup.readPathEntry("HomeURL", QString());

@@ -271,7 +271,7 @@ void KonqCombo::updateItem( const QPixmap& pix, const QString& t, int index, con
 {
     // No need to flicker
     if (itemText( index ) == t &&
-        (!pixmap(index).isNull() && pixmap(index).serialNumber() == pix.serialNumber()))
+        (!itemIcon(index).isNull() && itemIcon(index).serialNumber() == pix.serialNumber()))
         return;
 
     // kDebug(1202) << "KonqCombo::updateItem: item='" << t << "', index='"
@@ -346,7 +346,7 @@ void KonqCombo::loadItems()
 
 void KonqCombo::slotSetIcon( int index )
 {
-    if( pixmap( index ).isNull())
+    if( itemIcon( index ).isNull())
         // on-demand icon loading
         setItemIcon( index, KonqPixmapProvider::self()->pixmapFor( itemText( index ),
                      KIconLoader::SizeSmall ) );
@@ -368,7 +368,7 @@ void KonqCombo::popup()
 {
   for( int i = 0; i < count(); ++i )
     {
-        if( pixmap( i ).isNull() )
+        if( itemIcon( i ).isNull() )
         {
             // on-demand icon loading
             setItemIcon( i, KonqPixmapProvider::self()->pixmapFor( itemText( i ),
@@ -539,7 +539,7 @@ void KonqCombo::mousePressEvent( QMouseEvent *e )
 {
     m_dragStart = QPoint(); // null QPoint
 
-    if ( e->button() == Qt::LeftButton && !pixmap( currentIndex()).isNull() ) {
+    if ( e->button() == Qt::LeftButton && !itemIcon( currentIndex()).isNull() ) {
         // check if the pixmap was clicked
         int x = e->pos().x();
         QStyleOptionComboBox comboOpt;
