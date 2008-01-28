@@ -288,7 +288,7 @@ void KonqFrameTabs::setTabIcon( const KUrl &url, QWidget* sender )
   else
     iconSet = KIcon( KonqPixmapProvider::self()->iconNameFor( url ) );
   const int pos = indexOf(sender);
-  if (tabIcon(pos).pixmap().serialNumber() != iconSet.pixmap().serialNumber())
+  if (tabIcon(pos).pixmap(0).serialNumber() != iconSet.pixmap(0).serialNumber())
     KTabWidget::setTabIcon( pos, iconSet );
 }
 

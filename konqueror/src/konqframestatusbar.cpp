@@ -182,7 +182,8 @@ bool KonqFrameStatusBar::eventFilter(QObject* o, QEvent *e)
    }
    else if ( o == this && e->type() == QEvent::ApplicationPaletteChange )
    {
-      unsetPalette();
+      //unsetPalette();
+      setPalette(QPalette());
       updateActiveStatus();
       return true;
    }
@@ -267,15 +268,17 @@ void KonqFrameStatusBar::updateActiveStatus()
 {
     if ( m_led->isHidden() )
     {
-        unsetPalette();
+        //unsetPalette();
+        setPalette(QPalette());
         return;
     }
 
     bool hasFocus = m_pParentKonqFrame->isActivePart();
 
-    const QColorGroup& activeCg = palette().active();
+    const QColor midLight = palette().midlight().color();
+    const QColor Mid = palette().mid().color();
     QPalette palette;
-    palette.setColor(backgroundRole(), hasFocus ? activeCg.midlight() : activeCg.mid());
+    palette.setColor(backgroundRole(), hasFocus ? midLight : Mid);
     setPalette(palette);
 
     static QPixmap indicator_viewactive( UserIcon( "indicator_viewactive" ) );
