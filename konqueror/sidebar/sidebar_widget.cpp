@@ -280,7 +280,7 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, bool 
 	QMenu *addMenu = m_menu->addMenu(i18n("Add New"));
 	m_menu->addSeparator();
 	m_menu->addAction(i18n("Multiple Views"), this, SLOT(slotMultipleViews()));
-	m_menu->addAction(i18n("Show Tabs Left"), this, SLOT(slotShowTabsLeft()));
+	m_showTabLeft = m_menu->addAction(i18n("Show Tabs Left"), this, SLOT(slotShowTabsLeft()));
 	m_menu->addAction(i18n("Show Configuration Button"), this, SLOT(slotShowConfigurationButton()));
 	if (!m_universalMode) {
 		m_menu->addSeparator();
@@ -407,6 +407,7 @@ void Sidebar_Widget::doLayout()
 void Sidebar_Widget::aboutToShowConfigMenu()
 {
 	m_menu->setItemChecked(1, !m_singleWidgetMode);
+        m_showTabLeft->setText(m_showTabsLeft ? i18n("Show Tabs Right") : i18n("Show Tabs Left"));
 	m_menu->setItemChecked(2, m_showTabsLeft);
 	m_menu->setItemChecked(3, m_showExtraButtons);
 }
