@@ -30,10 +30,6 @@
 #include <QtGui/QRadioButton>
 #include <QLabel>
 
-#ifdef Q_WS_X11
-#include <fixx11h.h>
-#endif
-
 // KDE
 #include <kconfig.h>
 #include <kdebug.h>
