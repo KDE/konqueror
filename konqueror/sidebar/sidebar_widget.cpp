@@ -269,10 +269,6 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, bool 
 
    	m_buttonBar = new KMultiTabBar(KMultiTabBar::Left,this);
 
-	// Ported to QMenu already, just needs to have KMultiTabBar fixed
-#ifdef __GNUC__
-#warning switch to QMenu when KMultiTabBar ported
-#endif
 	m_menu = new QMenu(this);
 	m_menu->setIcon(KIcon("configure"));
 	m_menu->setTitle(i18n("Configure Navigation Panel"));
