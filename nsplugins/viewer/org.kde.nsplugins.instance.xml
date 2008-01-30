@@ -8,6 +8,11 @@
       <arg name="w" type="i" direction="in"/>
       <arg name="h" type="i" direction="in"/>
     </method>
+    <method name="resizePlugin">
+      <arg name="pluginWinId" type="i" direction="in"/>
+      <arg name="w" type="i" direction="in"/>
+      <arg name="h" type="i" direction="in"/>
+    </method>
     <method name="javascriptResult">
       <arg name="id" type="i" direction="in"/>
       <arg name="result" type="s" direction="in"/>

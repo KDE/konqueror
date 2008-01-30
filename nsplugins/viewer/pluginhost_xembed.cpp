@@ -29,7 +29,7 @@
 #include <QLabel>
 
 PluginHostXEmbed::PluginHostXEmbed(NSPluginInstance* plugin):
-    _plugin(plugin)
+    _plugin(plugin), _winId(0)
 {}
 
 PluginHostXEmbed::~PluginHostXEmbed()
@@ -39,7 +39,17 @@ PluginHostXEmbed::~PluginHostXEmbed()
 void PluginHostXEmbed::setupWindow(int winId, int width, int height)
 {
     kDebug() << winId << width << height;
+    _winId = winId;
     setupPluginWindow(_plugin, (void*)winId, width, height);
+}
+
+void PluginHostXEmbed::resizePlugin(int pluginWinId, int w, int h)
+{
+    kDebug() << pluginWinId << _winId << w << h;
+    if (_winId) {
+        XResizeWindow(QX11Info::display(), pluginWinId, w, h);
+        setupPluginWindow(_plugin, (void*)_winId, w, h);
+    }
 }
 
 // kate: indent-width 4; replace-tabs on; tab-width 4; space-indent on;
