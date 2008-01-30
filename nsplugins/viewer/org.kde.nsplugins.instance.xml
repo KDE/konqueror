@@ -3,10 +3,8 @@
   <interface name="org.kde.nsplugins.Instance">
     <method name="shutdown">
     </method>
-    <method name="winId">
-      <arg type="i" direction="out"/>
-    </method>
-    <method name="resizePlugin">
+    <method name="setupWindow">
+      <arg name="winId" type="i" direction="in"/>
       <arg name="w" type="i" direction="in"/>
       <arg name="h" type="i" direction="in"/>
     </method>
