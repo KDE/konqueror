@@ -28,49 +28,18 @@
 #include <QVBoxLayout>
 #include <QLabel>
 
-PluginHostXEmbed::PluginHostXEmbed(NSPluginInstance* plugin, QX11EmbedWidget* outside):
-    _plugin(plugin), _outside(outside), _container(0)
-{
-    // Nothing here yet --- will do once embedded, inside setupWindow
-}
+PluginHostXEmbed::PluginHostXEmbed(NSPluginInstance* plugin):
+    _plugin(plugin)
+{}
 
 PluginHostXEmbed::~PluginHostXEmbed()
+{}
+
+
+void PluginHostXEmbed::setupWindow(int winId, int width, int height)
 {
-/*    delete _inside;
-    _inside = 0;*/
-}
-
-
-void PluginHostXEmbed::resizePlugin(int width, int height)
-{
-//    return;
-    kDebug(1431) << _container->geometry() << _outside->geometry();
-/*    _inside->setGeometry(0, 0, width, height);*/
-}
-
-void PluginHostXEmbed::setupWindow(int width, int height)
-{
-    if (!_container) {
-        QVBoxLayout* outsideLayout = new QVBoxLayout(_outside);
-        outsideLayout->setMargin(0);
-        _outside->setLayout(outsideLayout);
-        
-        _container = new QX11EmbedContainer(_outside);
-        _container->setWindowTitle("_inner");
-        outsideLayout->addWidget(_container);
-        
-//         QPalette p = _container->palette();
-//         p.setColor(_container->backgroundRole(), Qt::green);
-//         _container->setPalette(p);
-//         _container->setAutoFillBackground(true);
-
-        _container->show();
-        outsideLayout->update();
-    }
-    kDebug() << _outside->geometry() << _container->geometry() << 
-        _outside->isVisible() << _container->isVisible();
-    
-    setupPluginWindow(_plugin, (void*)_container->winId(), width, height);
+    kDebug() << winId << width << height;
+    setupPluginWindow(_plugin, (void*)winId, width, height);
 }
 
 // kate: indent-width 4; replace-tabs on; tab-width 4; space-indent on;

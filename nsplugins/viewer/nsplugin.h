@@ -163,15 +163,14 @@ public:
 
   // constructor, destructor
   NSPluginInstance( NPP privateData, NPPluginFuncs *pluginFuncs, KLibrary *handle,
-		    int width, int height, const QString &src, const QString &mime,
+		    const QString &src, const QString &mime,
                     const QString &appId, const QString &callbackId, bool embed,
 		    QObject *parent );
   ~NSPluginInstance();
 
   // DBus-exported functions
   void shutdown();
-  int winId() { return _outside->winId(); }
-  void resizePlugin(int w, int h);
+  void setupWindow(int winId, int w, int h);
   void javascriptResult(int id, const QString &result);
   void gotFocusIn();
   void gotFocusOut();
@@ -209,9 +208,7 @@ public:
 public Q_SLOTS:
   void streamFinished( NSPluginStreamBase *strm );
 
-private Q_SLOTS:
   void timer();
-  void embeddedIntoHost();
 
 private:
   friend class NSPluginStreamBase;
@@ -220,8 +217,7 @@ private:
   void setupWindow(); //Sets up our windows and registers it with the plugin.
 
   bool _destroyed;
-  bool _visible;
-  bool _firstResize;
+  bool _embedded;
   void addTempFile(KTemporaryFile *tmpFile);
   Q3PtrList<KTemporaryFile> _tempFiles;
   OrgKdeNspluginsCallBackInterface *_callback;
@@ -231,14 +227,11 @@ private:
 
   NPP      _npp;
   NPPluginFuncs _pluginFuncs;
-  
-  QX11EmbedWidget* _outside;  // What we get embedded into
-  bool             _embedded; // Whether we've been embedded
+
   PluginHost*      _pluginHost; // Manages embedding of the plugin into us
 
   Widget _area, _form, _toplevel;
   QString _baseURL;
-  int _width, _height;
 
   struct Request
   {
@@ -318,8 +311,8 @@ private:
   QByteArray _app;
   NPPluginFuncs _pluginFuncs;
   NPNetscapeFuncs _nsFuncs;
-  
-  // If plugins use gtk, we call the gtk_init function for them --- 
+
+  // If plugins use gtk, we call the gtk_init function for them ---
   // but only do it once.
   static bool s_initedGTK;
 };
