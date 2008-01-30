@@ -41,6 +41,7 @@ class PluginHostXt : public PluginHost
 public:
     PluginHostXt(NSPluginInstance* plugin);
     virtual void setupWindow(int winId, int width, int height);
+    virtual void resizePlugin(int pluginWinId, int w, int h);
     virtual ~PluginHostXt();
 private:
     static void forwarder(Widget w, XtPointer cl_data, XEvent * event, Boolean * cont);
