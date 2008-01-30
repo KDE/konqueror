@@ -30,6 +30,7 @@ class PluginHost
 {
 public:
     virtual void setupWindow (int winId, int width, int height) = 0;
+    virtual void resizePlugin(int pluginWinId, int w, int h) = 0;
     virtual ~PluginHost() {};
 
     void setupPluginWindow(NSPluginInstance* instance, void* winID, int width, int height);

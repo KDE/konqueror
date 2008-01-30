@@ -171,6 +171,7 @@ public:
   // DBus-exported functions
   void shutdown();
   void setupWindow(int winId, int w, int h);
+  void resizePlugin(int clientWinId, int w, int h);
   void javascriptResult(int id, const QString &result);
   void gotFocusIn();
   void gotFocusOut();
@@ -214,7 +215,6 @@ private:
   friend class NSPluginStreamBase;
 
   void destroy();
-  void setupWindow(); //Sets up our windows and registers it with the plugin.
 
   bool _destroyed;
   bool _embedded;
@@ -229,8 +229,8 @@ private:
   NPPluginFuncs _pluginFuncs;
 
   PluginHost*      _pluginHost; // Manages embedding of the plugin into us
+  int _width, _height;          // last size we used;
 
-  Widget _area, _form, _toplevel;
   QString _baseURL;
 
   struct Request

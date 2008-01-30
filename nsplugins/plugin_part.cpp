@@ -147,7 +147,7 @@ const KComponentData &PluginFactory::componentData()
 
     if (!s_instance) {
         KAboutData about("plugin", 0, ki18n("plugin"), "1.99");
-        s_instance = new KComponentData(about); 
+        s_instance = new KComponentData(about);
     }
     return *s_instance;
 }
@@ -155,14 +155,16 @@ const KComponentData &PluginFactory::componentData()
 
 /**************************************************************************/
 
-static const char* s_callBackObjectPath = "/CallBack";
+static int s_callBackObjectCounter;
 
 PluginPart::PluginPart(QWidget *parentWidget, QObject *parent, const QStringList &args)
     : KParts::ReadOnlyPart(parent), _widget(0), _args(args),
       _destructed(0L)
 {
+    callbackPath = QString::fromLatin1("/Callback") + QString::number(s_callBackObjectCounter);
+    ++s_callBackObjectCounter;
     (void) new CallBackAdaptor( this );
-    QDBusConnection::sessionBus().registerObject( s_callBackObjectPath, this );
+    QDBusConnection::sessionBus().registerObject( callbackPath, this );
 
     setComponentData(PluginFactory::componentData());
     kDebug(1432) << "PluginPart::PluginPart";
@@ -261,10 +263,11 @@ bool PluginPart::openUrl(const KUrl &url)
     NSPluginInstance *inst = _loader->newInstance( _canvas, surl, smime, embed,
                                                    argn, argv,
                                                    QDBusConnection::sessionBus().baseService(),
-                                                   s_callBackObjectPath, reload);
+                                                   callbackPath, reload);
 
     if ( inst ) {
         _widget = inst;
+        _nspWidget = inst;
     } else {
         QLabel *label = new QLabel( i18n("Unable to load Netscape plugin for %1", url.url()), _canvas );
         label->setAlignment( Qt::AlignCenter );
@@ -331,7 +334,7 @@ void PluginPart::evalJavaScript(int id, const QString & script)
     if (_widget) {
         bool destructed = false;
         _destructed = &destructed;
-	kDebug(1432) <<"evalJavascript: there is a widget";
+	kDebug(1432) <<"evalJavascript: there is a widget:";
         QString rc = _liveconnect->evalJavaScript(script);
         if (destructed)
             return;
@@ -352,7 +355,8 @@ void PluginPart::statusMessage(const QString &msg)
 
 void PluginPart::pluginResized(int w, int h)
 {
-    kDebug(1432) << "PluginPart::pluginResized()";
+    if (_nspWidget)
+        _nspWidget->pluginResized(w, h);
 
     if (_widget) {
         _widget->resize(w, h);

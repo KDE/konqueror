@@ -6,7 +6,7 @@
   Copyright (c) 2000 Matthias Hoelzer-Kluepfel <hoelzer@kde.org>
                      Stefan Schimanski <1Stein@gmx.de>
                 2003-2005 George Staikos <staikos@kde.org>
-                2007 Maksim orlovich     <maksim@kde.org>
+                2007, 2008 Maksim Orlovich     <maksim@kde.org>
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -900,8 +900,22 @@ void NSPluginInstance::setupWindow(int winId, int w, int h)
    else
     kWarning(1431) << "No plugin host!";
 
-   kDebug(1431) << "<- NSPluginInstance::resizePlugin";
+   kDebug(1431) << "<- NSPluginInstance::setupWindow";
+   _width  = w;
+   _height = h;
    _embedded = true;
+}
+
+void NSPluginInstance::resizePlugin(int clientWinId, int w, int h)
+{
+   kDebug() << _width << w << _height << h << _embedded;
+   if (!_embedded)
+      return;
+   if (w == _width && h == _height)
+      return;
+   _pluginHost->resizePlugin(clientWinId, w, h);
+   _width  = w;
+   _height = h;
 }
 
 
