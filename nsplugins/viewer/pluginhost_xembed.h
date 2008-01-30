@@ -29,14 +29,11 @@
 class PluginHostXEmbed : public PluginHost
 {
 public:
-    PluginHostXEmbed(NSPluginInstance* plugin, QX11EmbedWidget* outside);
-    virtual void setupWindow(int width, int height);
-    virtual void resizePlugin(int width, int height);
+    PluginHostXEmbed(NSPluginInstance* plugin);
+    virtual void setupWindow(int winId, int width, int height);
     virtual ~PluginHostXEmbed();
 private:
     NSPluginInstance*   _plugin;
-    QX11EmbedWidget*    _outside;
-    QX11EmbedContainer* _container;
 };
 
 
