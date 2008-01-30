@@ -31,9 +31,11 @@ class PluginHostXEmbed : public PluginHost
 public:
     PluginHostXEmbed(NSPluginInstance* plugin);
     virtual void setupWindow(int winId, int width, int height);
+    virtual void resizePlugin(int clientWinId, int w, int h);
     virtual ~PluginHostXEmbed();
 private:
     NSPluginInstance*   _plugin;
+    int                 _winId;
 };
 
 

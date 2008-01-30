@@ -30,6 +30,7 @@
 #include <klibloader.h>
 #include <QWidget>
 #include <QPointer>
+#include "nspluginloader.h"
 
 class KAboutData;
 class KComponentData;
@@ -101,7 +102,9 @@ protected Q_SLOTS:
   void saveAs();
 
 private:
+  QString callbackPath;
   QPointer<QWidget> _widget;
+  QPointer<NSPluginInstance> _nspWidget;
   PluginCanvasWidget *_canvas;
   PluginBrowserExtension *_extension;
   PluginLiveConnectExtension *_liveconnect;

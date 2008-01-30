@@ -149,9 +149,7 @@ static void resizeWidgets(Window w, int width, int height) {
    }
 }
 
- #if 0
-
-void PluginHostXt::resizePlugin(int w, int h)
+void PluginHostXt::resizePlugin(int /*pluginWinId*/, int w, int h)
 {
     kDebug(1431) << w << h;
     XResizeWindow(QX11Info::display(), XtWindow(_form), w, h);
@@ -170,7 +168,5 @@ void PluginHostXt::resizePlugin(int w, int h)
 
     resizeWidgets(XtWindow(_form), w, h);
 }
-
-#endif
 
 // kate: indent-width 4; replace-tabs on; tab-width 4; space-indent on;

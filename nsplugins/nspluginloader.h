@@ -56,9 +56,9 @@ public:
 
     void javascriptResult(int id, const QString &result);
 
+    void pluginResized(int w, int h);
 private Q_SLOTS:
-    void doLoadPlugin();
-    void embedIfNeeded();
+    void doLoadPlugin(int w, int h);
 protected:
     void resizeEvent(QResizeEvent *event);
     void showEvent(QShowEvent *event);
@@ -68,9 +68,11 @@ protected:
 private:
     class NSPluginLoader *_loader;
     OrgKdeNspluginsInstanceInterface *_instanceInterface;
-    bool shown;
-    bool embedded; // if embedding was complete
-    bool resizedAfterShow;
+    bool inited;
+    bool haveSize;
+    void embedIfNeeded(int w, int h);
+    void resizePlugin(int w, int h );
+
     QPushButton *_button;
     QGridLayout *_layout;
 };

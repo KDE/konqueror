@@ -66,9 +66,8 @@ NSPluginInstance::NSPluginInstance(QWidget *parent, const QString& viewerDBusId,
     _instanceInterface = new org::kde::nsplugins::Instance( viewerDBusId, id, QDBusConnection::sessionBus() );
 
     _loader = 0;
-    shown    = false;
-    embedded = false;
-    resizedAfterShow = false;
+    haveSize = false;
+    inited   = false;
 
     QGridLayout *_layout = new QGridLayout(this);
     _layout->setMargin(1);
@@ -82,19 +81,22 @@ NSPluginInstance::NSPluginInstance(QWidget *parent, const QString& viewerDBusId,
         show();
     } else {
         _button = 0;
-        doLoadPlugin();
     }
 }
 
 
-void NSPluginInstance::doLoadPlugin() {
-    if (!_loader) {
+void NSPluginInstance::doLoadPlugin(int w, int h) {
+    if (!inited) {
         delete _button;
         _button = 0L;
         _loader = NSPluginLoader::instance();
+        // resize before showing, some plugins are stupid and can't handle repeated
+        // NPSetWindow() calls very well (viewer will avoid the call if not shown yet)
+        qApp->syncX();
+        _instanceInterface->setupWindow(winId(), w, h);
+        inited = true;
     }
 }
-
 
 NSPluginInstance::~NSPluginInstance()
 {
@@ -114,47 +116,37 @@ void NSPluginInstance::windowChanged(WId w)
     }
 }
 
+void NSPluginInstance::pluginResized(int w, int h)
+{
+    kDebug() << w << h;
+    haveSize = true;
+    embedIfNeeded(w, h);
+}
 
-
-/*
- Flash 9.0r115 is picky, and only wants to be sized once,
- so we want to do it when we're ready. For that, we wait
- until we get the 2nd resize from khtml (and not the original
- Qt default)
-*/
-
+void NSPluginInstance::embedIfNeeded(int w, int h)
+{
+    if (isVisible()) {
+        if (haveSize && !inited)
+            doLoadPlugin(w, h);
+        else if (inited)
+            resizePlugin(w, h);
+    }
+}
 
 void NSPluginInstance::resizeEvent(QResizeEvent *event)
 {
-    if (shown)
-      resizedAfterShow = true;
-
-    kDebug() << this << shown << resizedAfterShow;
+    kDebug() << width() << height() << isVisible() << haveSize << inited;
     EMBEDCLASS::resizeEvent(event);
-    QTimer::singleShot(10, this, SLOT(embedIfNeeded()));
+
+    embedIfNeeded(width(), height());
 }
 
 void NSPluginInstance::showEvent(QShowEvent *event)
 {
-    shown = true;
-
-    kDebug() << this << shown << resizedAfterShow;
+    kDebug() << width() << height() << isVisible() << haveSize << inited;
     EMBEDCLASS::showEvent(event);
-    QTimer::singleShot(10, this, SLOT(embedIfNeeded()));
-}
 
-void NSPluginInstance::embedIfNeeded()
-{
-    if (embedded)
-        return;
-    if (shown && resizedAfterShow) {
-        kDebug() << isVisible() << width() << height() << winId() << internalWinId();
-        show();
-        qApp->syncX();
-        embedded = true;
-        _instanceInterface->setupWindow(winId(), width(), height());
-        qApp->syncX();
-    }
+    embedIfNeeded(width(), height());
 }
 
 void NSPluginInstance::javascriptResult(int id, const QString &result)
@@ -170,6 +162,12 @@ void NSPluginInstance::focusInEvent( QFocusEvent* event )
 void NSPluginInstance::focusOutEvent( QFocusEvent* event )
 {
   _instanceInterface->gotFocusOut();
+}
+
+void NSPluginInstance::resizePlugin( int w, int h )
+{
+  qApp->syncX();
+  _instanceInterface->resizePlugin( clientWinId(), w, h );
 }
 
 /*******************************************************************************/
@@ -483,3 +481,4 @@ NSPluginInstance *NSPluginLoader::newInstance(QWidget *parent, const QString& ur
 }
 
 // vim: ts=4 sw=4 et
+// kate: indent-width 4; replace-tabs on; tab-width 4; space-indent on;
