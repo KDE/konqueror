@@ -1,6 +1,6 @@
 /*
 
-  This class abstracts away various ways one can embed plugins 
+  This class abstracts away various ways one can embed plugins
 
   Copyright (c) 2007 Maksim Orlovich <maksim@kde.org>
 
@@ -29,10 +29,9 @@
 class PluginHost
 {
 public:
-    virtual void setupWindow (int width, int height) = 0;
-    virtual void resizePlugin(int width, int height) = 0;
+    virtual void setupWindow (int winId, int width, int height) = 0;
     virtual ~PluginHost() {};
-    
+
     void setupPluginWindow(NSPluginInstance* instance, void* winID, int width, int height);
 };
 

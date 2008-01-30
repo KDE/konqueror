@@ -45,12 +45,15 @@
 #include <QtGui/QX11EmbedContainer>
 #include <QTextStream>
 #include <QRegExp>
+#include <QTimer>
 
 #include "nsplugins_class_interface.h"
 #include "nsplugins_instance_interface.h"
 #include "nsplugins_viewer_interface.h"
 
 #include <config-apps.h>
+
+#include <X11/Xlib.h>
 
 NSPluginLoader *NSPluginLoader::s_instance = 0;
 int NSPluginLoader::s_refCount = 0;
@@ -59,10 +62,14 @@ int NSPluginLoader::s_refCount = 0;
 NSPluginInstance::NSPluginInstance(QWidget *parent, const QString& viewerDBusId, const QString& id)
   : EMBEDCLASS(parent)
 {
+    setWindowTitle("nsp.host"); // for debugging..
     _instanceInterface = new org::kde::nsplugins::Instance( viewerDBusId, id, QDBusConnection::sessionBus() );
 
     _loader = 0;
-    shown = false;
+    shown    = false;
+    embedded = false;
+    resizedAfterShow = false;
+
     QGridLayout *_layout = new QGridLayout(this);
     _layout->setMargin(1);
     _layout->setSpacing(1);
@@ -85,12 +92,6 @@ void NSPluginInstance::doLoadPlugin() {
         delete _button;
         _button = 0L;
         _loader = NSPluginLoader::instance();
-
-        kDebug() << _instanceInterface->winId();
-        embedClient( _instanceInterface->winId() );
-
-        show();
-        shown = true;
     }
 }
 
@@ -114,16 +115,46 @@ void NSPluginInstance::windowChanged(WId w)
 }
 
 
+
+/*
+ Flash 9.0r115 is picky, and only wants to be sized once,
+ so we want to do it when we're ready. For that, we wait
+ until we get the 2nd resize from khtml (and not the original
+ Qt default)
+*/
+
+
 void NSPluginInstance::resizeEvent(QResizeEvent *event)
 {
-  kDebug() << "NSPluginInstance(client)::resizeEvent" << shown << event->size();
-  if (shown == false)
-     return;
-  EMBEDCLASS::resizeEvent(event);
-  if (isVisible()) {
-    _instanceInterface->resizePlugin(width(), height());
-  }
-  kDebug() << "NSPluginInstance(client)::resizeEvent";
+    if (shown)
+      resizedAfterShow = true;
+
+    kDebug() << this << shown << resizedAfterShow;
+    EMBEDCLASS::resizeEvent(event);
+    QTimer::singleShot(10, this, SLOT(embedIfNeeded()));
+}
+
+void NSPluginInstance::showEvent(QShowEvent *event)
+{
+    shown = true;
+
+    kDebug() << this << shown << resizedAfterShow;
+    EMBEDCLASS::showEvent(event);
+    QTimer::singleShot(10, this, SLOT(embedIfNeeded()));
+}
+
+void NSPluginInstance::embedIfNeeded()
+{
+    if (embedded)
+        return;
+    if (shown && resizedAfterShow) {
+        kDebug() << isVisible() << width() << height() << winId() << internalWinId();
+        show();
+        qApp->syncX();
+        embedded = true;
+        _instanceInterface->setupWindow(winId(), width(), height());
+        qApp->syncX();
+    }
 }
 
 void NSPluginInstance::javascriptResult(int id, const QString &result)
@@ -391,7 +422,7 @@ NSPluginInstance *NSPluginLoader::newInstance(QWidget *parent, const QString& ur
          return 0;
       }
    }
-   
+
    kDebug() << "-> ownID" << ownDBusId << " viewer ID:" << _viewerDBusId;
 
    QStringList argn( _argn );
@@ -426,7 +457,7 @@ NSPluginInstance *NSPluginLoader::newInstance(QWidget *parent, const QString& ur
       kDebug() << "Couldn't create plugin class";
       return 0;
    }
-   
+
    org::kde::nsplugins::Class* cls = new org::kde::nsplugins::Class( _viewerDBusId, cls_ref.path(), QDBusConnection::sessionBus() );
 
    // handle special plugin cases

@@ -192,7 +192,7 @@ NPError g_NPN_GetValue(NPP /*instance*/, NPNVariable variable, void *value)
       case NPNVToolkit:
          // This is messy. OSS things want to see "Gtk2" here;
          // but commercial flash works better if we return something else.
-         // So we return a KHTML classic, since we can work with 
+         // So we return a KHTML classic, since we can work with
          // the community members far easier.
          *(NPNToolkitType*)value = (NPNToolkitType)0xFEEDABEE;
          return NPERR_NO_ERROR;
@@ -593,7 +593,7 @@ NPError g_NPN_SetValue(NPP /*instance*/, NPPVariable variable, void* /*value*/)
 static int s_instanceCounter = 0;
 
 NSPluginInstance::NSPluginInstance(NPP privateData, NPPluginFuncs *pluginFuncs,
-                                   KLibrary *handle, int width, int height,
+                                   KLibrary *handle,
                                    const QString &src, const QString &/*mime*/,
                                    const QString &appId, const QString &callbackId,
                                    bool embed,
@@ -606,14 +606,11 @@ NSPluginInstance::NSPluginInstance(NPP privateData, NPPluginFuncs *pluginFuncs,
    QDBusConnection::sessionBus().registerObject( objectName(), this );
 
     Q_UNUSED(embed);
-   _firstResize = true;
    _embedded = false;
    _npp = privateData;
    _npp->ndata = this;
    _destroyed = false;
    _handle = handle;
-   _width = width;
-   _height = height;
    _tempFiles.setAutoDelete( true );
    _streams.setAutoDelete( true );
    _waitingRequests.setAutoDelete( true );
@@ -632,33 +629,18 @@ NSPluginInstance::NSPluginInstance(NPP privateData, NPPluginFuncs *pluginFuncs,
    kDebug(1431) << "pdata = " << _npp->pdata;
    kDebug(1431) << "ndata = " << _npp->ndata;
 
-   if (width == 0)
-      width = 1600;
-
-   if (height == 0)
-      height = 1200;
-      
-   // Create our XEmbed peer with the part.
-   _outside = new QX11EmbedWidget();
-   _outside->hide();
-   _outside->setWindowTitle("nspluginviewer.outside");
-   
-   // We need to wait until we're embedded before being able to 
-   // do things.
-   connect(_outside, SIGNAL(embedded()), this, SLOT(embeddedIntoHost()));
-   
    // Create the appropriate host for the plugin type.
    _pluginHost = 0;
    int result = PR_FALSE;
-   
+
    //### iceweasel does something odd here --- it enabled XEmbed for swfdec,
    // even though that doesn't provide GetValue at all(!)
    if (NPGetValue(NPPVpluginNeedsXEmbed, &result) == NPERR_NO_ERROR && result) {
       kDebug(1431) << "plugin reqests XEmbed";
-      _pluginHost = new PluginHostXEmbed(this, _outside);
+      _pluginHost = new PluginHostXEmbed(this);
    } else {
       kDebug(1431) << "plugin requests Xt";
-      _pluginHost = new PluginHostXt(this, _outside, width, height);
+      _pluginHost = new PluginHostXt(this);
    }
 
    XSync(QX11Info::display(), false);
@@ -714,9 +696,6 @@ void NSPluginInstance::destroy()
 
         delete _pluginHost;
         _pluginHost = 0;
-        
-        delete _outside;
-        _outside = 0;
 
         if (_npp) {
             ::free(_npp);   // matched with malloc() in newInstance
@@ -831,7 +810,7 @@ void NSPluginInstance::timer()
 QString NSPluginInstance::normalizedURL(const QString& url) const {
 
     // ### for dfaure:  KUrl(KUrl("http://www.youtube.com/?v=JvOSnRD5aNk"), KUrl("javascript:window.location+"__flashplugin_unique__"));
-    
+
     //### hack, prolly evil, etc.
     if (url.startsWith("javascript:"))
        return url;
@@ -909,45 +888,16 @@ void NSPluginInstance::streamFinished( NSPluginStreamBase* strm )
    _timer->start( 100 );
 }
 
-void NSPluginInstance::embeddedIntoHost()
+void NSPluginInstance::setupWindow(int winId, int w, int h)
 {
-   _outside->show();
-   setupWindow();
-   _embedded = true;
-}
-
-void NSPluginInstance::setupWindow()
-{
+   kDebug(1431) << "-> NSPluginInstance::setupWindow( winid =" << winId << " w=" << w << ", h=" << h << " ) ";
    if (_pluginHost)
-      _pluginHost->setupWindow(_width, _height);
-}
-
-
-void NSPluginInstance::resizePlugin(int w, int h)
-{
-   kDebug(1431) << "-> NSPluginInstance::resizePlugin( w=" << w << ", h=" << h << " ) ";
-   if (!_embedded) {
-      _width = w;
-      _height = h;
-      return;
-   }
-
-   if (w == _width && h == _height)
-      return;
-
-   _width = w;
-   _height = h;
-
-   _outside->resize(w, h);
-   if (_pluginHost)
-      _pluginHost->resizePlugin(w, h);
-
-   if (_firstResize) {
-      _firstResize = false;
-      setupWindow();
-   }
+      _pluginHost->setupWindow(winId, w, h);
+   else
+    kWarning(1431) << "No plugin host!";
 
    kDebug(1431) << "<- NSPluginInstance::resizePlugin";
+   _embedded = true;
 }
 
 
@@ -1292,7 +1242,7 @@ NSPluginClass::NSPluginClass( const QString &library,
 
     // initialize plugin
     kDebug(1431) << "Plugin library " << library << " loaded!";
-    
+
     // see if it uses gtk
     if (!s_initedGTK) {
         gtkInitFunc* gtkInit = (gtkInitFunc*)_handle->resolveFunction("gtk_init");
@@ -1302,7 +1252,7 @@ NSPluginClass::NSPluginClass( const QString &library,
             s_initedGTK = true;
         }
     }
-    
+
     _constructed = true;
     _error = initialize()!=NPERR_NO_ERROR;
 }
@@ -1338,7 +1288,7 @@ int NSPluginClass::initialize()
    // initialize nescape exported functions
    memset(&_pluginFuncs, 0, sizeof(_pluginFuncs));
    memset(&_nsFuncs, 0, sizeof(_nsFuncs));
-   
+
    _pluginFuncs.size = sizeof(_pluginFuncs);
    _nsFuncs.size = sizeof(_nsFuncs);
    _nsFuncs.version = (NP_VERSION_MAJOR << 8) + NP_VERSION_MINOR;
@@ -1399,8 +1349,6 @@ QDBusObjectPath NSPluginClass::newInstance( const QString &url, const QString &m
    char **_argn = new char*[argc];
    char **_argv = new char*[argc];
    QString src = url;
-   int width = 0;
-   int height = 0;
    QString baseURL = url;
 
    for (unsigned int i=0; i<argc; i++)
@@ -1414,8 +1362,6 @@ QDBusObjectPath NSPluginClass::newInstance( const QString &url, const QString &m
       _argn[i] = strdup(n);
       _argv[i] = strdup(v);
 
-      if (!strcasecmp(_argn[i], "WIDTH")) width = argv[i].toInt();
-      if (!strcasecmp(_argn[i], "HEIGHT")) height = argv[i].toInt();
       if (!strcasecmp(_argn[i], "__KHTML__PLUGINBASEURL")) baseURL = _argv[i];
       kDebug(1431) << "argn=" << _argn[i] << " argv=" << _argv[i];
    }
@@ -1433,8 +1379,8 @@ QDBusObjectPath NSPluginClass::newInstance( const QString &url, const QString &m
 
    // Create plugin instance object
    NSPluginInstance *inst = new NSPluginInstance( npp, &_pluginFuncs, _handle,
-                                                  width, height, baseURL, mimeType,
-                                                  appId, callbackId, embed, this );
+                                                  baseURL, mimeType, appId,
+                                                  callbackId, embed, this );
 
    // create plugin instance
    NPError error = _pluginFuncs.newp(mime, npp, embed ? NP_EMBED : NP_FULL,

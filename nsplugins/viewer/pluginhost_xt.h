@@ -39,9 +39,8 @@
 class PluginHostXt : public PluginHost
 {
 public:
-    PluginHostXt(NSPluginInstance* plugin, QX11EmbedWidget* outside, int w, int h);
-    virtual void setupWindow(int width, int height);
-    virtual void resizePlugin(int width, int height);
+    PluginHostXt(NSPluginInstance* plugin);
+    virtual void setupWindow(int winId, int width, int height);
     virtual ~PluginHostXt();
 private:
     static void forwarder(Widget w, XtPointer cl_data, XEvent * event, Boolean * cont);

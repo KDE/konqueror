@@ -58,9 +58,10 @@ public:
 
 private Q_SLOTS:
     void doLoadPlugin();
-
+    void embedIfNeeded();
 protected:
     void resizeEvent(QResizeEvent *event);
+    void showEvent(QShowEvent *event);
     void windowChanged(WId w);
     virtual void focusInEvent( QFocusEvent* event );
     virtual void focusOutEvent( QFocusEvent* event );
@@ -68,6 +69,8 @@ private:
     class NSPluginLoader *_loader;
     OrgKdeNspluginsInstanceInterface *_instanceInterface;
     bool shown;
+    bool embedded; // if embedding was complete
+    bool resizedAfterShow;
     QPushButton *_button;
     QGridLayout *_layout;
 };

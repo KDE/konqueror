@@ -28,25 +28,54 @@
 #include <QVBoxLayout>
 #include <QLabel>
 
-PluginHostXt::PluginHostXt(NSPluginInstance* plugin, QX11EmbedWidget* outside, 
-                           int width, int height):
-    _plugin(plugin), _outside(outside)
+// BEGIN Workaround for QX11EmbedWidget silliness --- it maps widgets by default
+// Most of the code is from Qt 4.3.3, Copyright (C) 1992-2007 Trolltech ASA
+static unsigned int XEMBED_VERSION = 0;
+static Atom _XEMBED_INFO = None;
+static void initXEmbedAtoms(Display *d)
 {
+    if (_XEMBED_INFO == None)
+        _XEMBED_INFO = XInternAtom(d, "_XEMBED_INFO", false);
+}
+
+static void doNotAskForXEmbedMapping(QX11EmbedWidget* widget)
+{
+    initXEmbedAtoms(widget->x11Info().display());
+    unsigned int data[] = {XEMBED_VERSION, 0 /* e.g. not XEMBED_MAPPED*/};
+    XChangeProperty(widget->x11Info().display(), widget->winId(), _XEMBED_INFO,
+                    _XEMBED_INFO, 32, PropModeReplace,
+                    (unsigned char*) data, 2);
+}
+
+// END  Workaround for QX11EmbedWidget silliness.
+
+
+PluginHostXt::PluginHostXt(NSPluginInstance* plugin):
+    _plugin(plugin), _outside(0), _toplevel(0), _form(0)
+{}
+
+
+void PluginHostXt::setupWindow(int winId, int width, int height)
+{
+    _outside = new QX11EmbedWidget();
+    doNotAskForXEmbedMapping(_outside);
+    _outside->embedInto(winId);
+
     Arg args[7];
     Cardinal nargs = 0;
     XtSetArg(args[nargs], XtNwidth, width); nargs++;
     XtSetArg(args[nargs], XtNheight, height); nargs++;
     XtSetArg(args[nargs], XtNborderWidth, 0); nargs++;
-    
+
     String n, c;
     XtGetApplicationNameAndClass(QX11Info::display(), &n, &c);
     _toplevel = XtAppCreateShell("drawingArea", c, applicationShellWidgetClass,
                                  QX11Info::display(), args, nargs);
-    
+
     //if (embed)
         XtSetMappedWhenManaged(_toplevel, False);
     XtRealizeWidget(_toplevel);
-    
+
     // Create form window that is searched for by flash plugin
     _form = XtVaCreateWidget("form", compositeWidgetClass, _toplevel, NULL);
     XtSetArg(args[nargs], XtNvisual, QX11Info::appVisual()); nargs++;
@@ -66,24 +95,32 @@ PluginHostXt::PluginHostXt(NSPluginInstance* plugin, QX11EmbedWidget* outside,
 #endif
     XtRealizeWidget(_form);
     XtManageChild(_form);
-    
+
     // Register forwarder
     XtAddEventHandler(_toplevel, (KeyPressMask|KeyReleaseMask),
                       False, forwarder, (XtPointer)this );
     XtAddEventHandler(_form, (KeyPressMask|KeyReleaseMask),
                       False, forwarder, (XtPointer)this );
+
+    // Embed the Xt widget into the Qt widget
+    XReparentWindow(QX11Info::display(), XtWindow(_toplevel), _outside->winId(), 0, 0);
+    XtMapWidget(_toplevel);
+    setupPluginWindow(_plugin, (void*) XtWindow(_form), width, height);
 }
 
 PluginHostXt::~PluginHostXt()
 {
-    XtRemoveEventHandler(_form, (KeyPressMask|KeyReleaseMask),
-                            False, forwarder, (XtPointer)this);
-    XtRemoveEventHandler(_toplevel, (KeyPressMask|KeyReleaseMask),
-                            False, forwarder, (XtPointer)this);
-    XtDestroyWidget(_form);
-    XtDestroyWidget(_toplevel);
-    _form     = 0;
-    _toplevel = 0;
+    if (_form) {
+        XtRemoveEventHandler(_form, (KeyPressMask|KeyReleaseMask),
+                                False, forwarder, (XtPointer)this);
+        XtRemoveEventHandler(_toplevel, (KeyPressMask|KeyReleaseMask),
+                                False, forwarder, (XtPointer)this);
+        XtDestroyWidget(_form);
+        XtDestroyWidget(_toplevel);
+        _form     = 0;
+        _toplevel = 0;
+    }
+    delete _outside;
 }
 
 void PluginHostXt::forwarder(Widget w, XtPointer cl_data, XEvent * event, Boolean * cont)
@@ -112,14 +149,14 @@ static void resizeWidgets(Window w, int width, int height) {
    }
 }
 
-
+ #if 0
 
 void PluginHostXt::resizePlugin(int w, int h)
 {
     kDebug(1431) << w << h;
     XResizeWindow(QX11Info::display(), XtWindow(_form), w, h);
     XResizeWindow(QX11Info::display(), XtWindow(_toplevel), w, h);
-    
+
     Arg args[7];
     Cardinal nargs = 0;
     XtSetArg(args[nargs], XtNwidth, w); nargs++;
@@ -128,18 +165,12 @@ void PluginHostXt::resizePlugin(int w, int h)
     XtSetArg(args[nargs], XtNdepth, QX11Info::appDepth()); nargs++;
     XtSetArg(args[nargs], XtNcolormap, QX11Info::appColormap()); nargs++;
     XtSetArg(args[nargs], XtNborderWidth, 0); nargs++;
-    
+
     XtSetValues(_form, args, nargs);
-    
+
     resizeWidgets(XtWindow(_form), w, h);
 }
 
-void PluginHostXt::setupWindow(int width, int height)
-{
-    // Embed the Xt widget into the Qt widget
-    XReparentWindow(QX11Info::display(), XtWindow(_toplevel), _outside->winId(), 0, 0);
-    XtMapWidget(_toplevel);
-    setupPluginWindow(_plugin, (void*) XtWindow(_form), width, height);
-}
+#endif
 
 // kate: indent-width 4; replace-tabs on; tab-width 4; space-indent on;
