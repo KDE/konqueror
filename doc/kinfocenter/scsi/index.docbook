@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % English "INCLUDE" > <!-- change language only here -->
+]>
+
+<article lang="&language;">
+<title><acronym>SCSI</acronym> Interface Information</title>
+<articleinfo>
+
+<authorgroup>
+<author>&Matthias.Hoelzer-Kluepfel;</author>
+<author>&Helge.Deller;</author>
+<author>&Duncan.Haldane;</author>
+<author>&Mike.McBride;</author>
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+</authorgroup>
+
+<date>2002-02-12</date>
+<releaseinfo>3.00.00</releaseinfo>
+
+<keywordset>
+<keyword>KDE</keyword>
+<keyword>KControl</keyword>
+<keyword>SCSI</keyword>
+<keyword>system information</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1 id="scsi">
+
+<title><acronym>SCSI</acronym> Interface Information</title>
+
+<para>This page displays information about Small Computer Systems
+Interface (<acronym>SCSI</acronym>) Interfaces and the attached
+<acronym>SCSI</acronym> devices.</para>
+
+<note><para>The exact information displayed is system-dependent.  On
+some systems <acronym>SCSI</acronym> information cannot be displayed
+yet.</para></note>
+
+<para>On &Linux;, this information is read from <filename
+class="devicefile">/proc/scsi/scsi</filename>, which is only available
+if the <filename class="directory">/proc</filename> pseudo-filesystem is
+compiled into the kernel.  A listing of all <acronym>SCSI</acronym>
+devices known to the kernel is shown.</para>
+
+<para>The devices are sorted numerically by their host, channel, and
+<acronym>ID</acronym> numbers.</para>
+
+<para>The user cannot modify any settings on this page.</para>
+
+</sect1>
+
+</article>

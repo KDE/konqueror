@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % English "INCLUDE" > <!-- change language only here -->
+]>
+
+<article lang="&language;" id="xserver">
+<title>X Server Information</title>
+<articleinfo>
+
+<authorgroup>
+<author>&Mike.McBride;</author>
+
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+
+</authorgroup>
+
+<date>2002-02-12</date>
+<releaseinfo>3.00.00</releaseinfo>
+
+<keywordset>
+<keyword>KDE</keyword>
+<keyword>KControl</keyword>
+<keyword>X server</keyword>
+<keyword>system information</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1>
+<title>X Server Information</title>
+
+<para>This screen is useful for getting specific information about your
+X server and the current session of X.</para>
+
+<para>When you open this module, you are presented with some
+information.  The left hand side of the window is organized into a
+tree. Some of the elements have a plus sign in front of the label.
+Clicking this sign opens a <quote>submenu</quote> related to the
+label.  Clicking on a minus sign in front of a label hides the
+submenu.</para>
+
+<para>The right hand side of the window contains the individual
+values for each of the parameters on the left.</para>
+
+<para>The information presented will vary depending on your
+setup.</para>
+
+<note><para>Some setups may not be able to determine some or all of the
+parameters.</para></note>
+
+<para>You can not change any values from this menu.  It is for
+information only.</para>
+
+</sect1>
+</article>

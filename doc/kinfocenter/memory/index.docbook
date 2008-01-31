@@ -1,0 +1,108 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % English "INCLUDE" > <!-- change language only here -->
+]>
+
+<article lang="&language;">
+<title>Memory Information</title>
+<articleinfo>
+
+<authorgroup>
+<author>&Mike.McBride;</author>
+
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+
+</authorgroup>
+        
+<date>2002-02-13</date>
+<releaseinfo>3.00.00</releaseinfo>
+
+<keywordset>
+<keyword>KDE</keyword>
+<keyword>KControl</keyword>
+<keyword>memory</keyword>
+<keyword>system information</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1>
+<title>Memory Information</title>
+
+<para>This module displays the current memory usage.  It is updated
+constantly, and can be very useful for pinpointing bottlenecks when certain
+applications  are executed.</para>
+
+<sect2 id="memory-intro">
+<title>Memory Types</title>
+
+<para>The first thing you must understand, is there are two types of
+<quote>memory</quote>, available to the operating system and the programs
+that run within  it.</para>
+
+<para>The first type, is called physical memory.  This is the memory located
+within the memory chips, within your computer.  This is the
+<acronym>RAM</acronym> (for Random Access Memory) you bought when you
+purchased your  computer.</para>
+
+<para>The second type of memory, is called virtual or swap memory.  This
+block of memory, is actually space on the hard drive.  The operating
+system reserves a space on the hard drive for <quote>swap space</quote>.
+The operating system can use this virtual memory (or swap space), if it
+runs out of physical memory.  The reason this is called
+<quote>swap</quote> memory, is the operating system takes some data that
+it doesn't think you will want for a while, and saves that to disk in
+this reserved space.  The operating system then loads the new data you
+need right now.  It has <quote>swapped</quote> the not needed data, for
+the data you need right now.  Virtual or swap memory is not as fast as
+physical memory, so operating systems try to keep data (especially often
+used data), in the physical memory.</para>
+
+<para>The total memory, is the combined total of physical memory and
+virtual memory.</para>
+
+</sect2>
+
+<sect2 id="memory-use">
+<title>Memory Information Module</title>
+
+<para>This window is divided into a top and bottom section</para>
+
+<para>The top section shows you the total physical memory, total free
+ physical memory, shared memory, and buffered memory.</para>
+
+<para>All four values are represented as the total number of bytes, and
+ as the number of megabytes (1 megabyte = slightly more than 1,000,000
+ bytes)</para>
+
+<para>The bottom section shows you three graphs:  </para>
+
+<itemizedlist>
+<listitem><para><guilabel>Total Memory</guilabel> (this is the combination of physical and  virtual memory).</para></listitem>
+<listitem><para><guilabel>Physical Memory</guilabel></para></listitem>
+<listitem><para>Virtual memory, or <guilabel>Swap Space</guilabel>.</para></listitem>
+</itemizedlist>
+
+<para>The green areas are free, and the red areas are used.</para>
+
+<tip><para>The exact values of each type of memory are not critical, and
+ they change regularly.  When you evaluate this page, look at
+ trends.</para>
+
+<para>Does your computer have plenty of free space (green areas)?  If
+ not, you can increase the swap size or increase the physical
+ memory.</para>
+
+<para>Also, if your computer seems sluggish: is your physical memory
+ full, and does the hard drive always seem to be running?  This suggests
+ that you do not have enough physical memory, and your computer is
+ relying on the slower virtual memory for commonly used data. Increasing
+ your physical memory will improve the responsiveness of your
+ computer.</para></tip>
+
+</sect2>
+
+</sect1>
+
+</article>

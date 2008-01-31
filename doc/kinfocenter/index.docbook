@@ -1,0 +1,341 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN" 
+"dtd/kdex.dtd" [
+<!ENTITY kappname "&kinfocenter;">
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % English "INCLUDE" > <!-- change language only here -->
+]>
+
+<book lang="&language;">
+<bookinfo>
+<title>The &infocenter;</title>
+
+<authorgroup>
+<author>
+<firstname>Michael</firstname>
+<surname>McBride</surname>
+<affiliation><address><email>mpmcbride7@yahoo.com</email></address></affiliation>
+</author>
+</authorgroup>
+
+<date>2002-07-03</date>
+<releaseinfo>3.10.00</releaseinfo>
+
+<abstract>
+<para>This documentation describes &kde;'s information center.</para>
+</abstract>
+
+<keywordset>
+<keyword>KDE</keyword>
+<keyword>kinfocenter</keyword>
+<keyword>system</keyword>
+<keyword>information</keyword>
+<keyword>module</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title>The &infocenter;</title>
+
+<para>
+The &infocenter; (from now on referred to simply as <quote>the
+information center</quote>) provides you with a centralized and convenient
+overview of your &kde; and system settings.
+</para>
+
+<para>
+The information center is made up of multiple modules.  Each module is a
+separate application, but the information center organizes all of these
+programs into a convenient location.
+</para>
+
+</chapter>
+
+<chapter id="info-center">
+<title>Using The &infocenter;</title>
+
+<para>
+This next section details the use of the information center itself.  For
+information on individual modules, please see <link linkend="module">Info
+Center Modules</link>
+</para>
+
+<sect1 id="information-center-starting">
+<title>Starting the &infocenter;</title>
+
+<para>
+The &infocenter; can be started 3 ways:
+</para>
+
+<orderedlist> 
+<listitem>
+<para>
+By selecting <menuchoice><guimenu>K
+Button</guimenu><guisubmenu>System</guisubmenu><guimenuitem>Info
+Center</guimenuitem></menuchoice> from the &kde; Panel.
+
+</para>
+</listitem>
+<listitem>
+<para>
+By pressing <keycombo
+action="simul">&Alt;<keycap>F2</keycap></keycombo>.
+</para>
+
+<para>
+This will bring up a dialog box.  Type
+<userinput><command>kinfocenter</command></userinput>, and click
+<guibutton>Run</guibutton> or press <keycap>Enter</keycap>.
+</para>
+</listitem>
+
+<listitem>
+<para>
+You can type <command>kinfocenter &amp;</command> at any command prompt.
+</para>
+</listitem> 
+</orderedlist> 
+
+<para>
+All three of these methods are equivalent, and produce the same result.
+</para>
+
+</sect1>
+
+<sect1 id="information-center-screen"> 
+<title>The &infocenter; Screen</title>
+
+<para>
+When you start the information center, you are presented with a window,
+which can be divided into 3 functional parts.
+</para>
+
+<para>
+Across the top is a menubar.  The menubar will provide you with quick
+access to most of &infocenter;'s features.  The menus are detailed in
+<link linkend="info-center-menus">The &kde; Info Center
+Menus</link>.
+</para>
+
+<para>
+Along the left hand side, is a column.  This is a where you choose which
+module to investigate.  You can learn how to navigate through the modules
+in the section called <link linkend="module-intro">Navigating
+Modules</link>.
+</para>
+
+<para>
+The main panel shows you some system information.
+</para>
+
+<!-- 
+<para>
+In this example, we are running &kde; 2.99, we started &infocenter;
+as user <systemitem class="username">adridg</systemitem>, the computer is
+named <systemitem class="systemname">aramis</systemitem>, it is a
+FreeBSD system, Version 4.4-RELEASE, on a Pentium.
+</para> -->
+
+</sect1>
+
+<sect1 id="info-center-menus">
+<title>The &infocenter; Menus</title>
+
+<para>
+This next section gives you a brief description of what each menu item
+does.
+</para>
+
+<sect2 id="info-center-menu-file">
+<title><guimenu>File</guimenu> Menu</title>
+
+<para>
+The <guimenu>File</guimenu> menu has a single entry.
+</para>
+
+<variablelist>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo>
+</shortcut>
+<guimenu>File</guimenu>
+<guimenuitem>Quit</guimenuitem>
+</menuchoice></term>
+<listitem>
+<para>
+<action>Closes the info center.</action>
+</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2 id="info-center-menu-help">
+<title><guimenu>Help</guimenu> Menu</title>
+
+&help.menu.documentation;
+
+</sect2>
+
+</sect1>
+
+<sect1 id="info-center-exiting">
+<title>Exiting The &kde; Information Center</title>
+
+<para>
+You can exit the info center one of three ways:
+</para>
+
+<itemizedlist>
+<listitem>
+<para>
+Select <menuchoice><guimenu>File</guimenu>
+<guimenuitem>Quit</guimenuitem></menuchoice> from the menu bar.
+</para>
+</listitem>
+
+<listitem>
+<para>Type <keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo>
+on the keyboard.
+</para>
+</listitem>
+
+<listitem>
+<para>
+Click on the <guiicon>Close</guiicon> button on the frame surrounding
+the info center.
+</para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+</chapter>
+
+<!--*****************************************************************-->
+
+<chapter id="module">
+<title>The &infocenter; Modules</title>
+
+<sect1 id="module-intro">
+<title>Navigating Modules</title>
+
+<para>
+This is a list of the <emphasis>standard</emphasis> configuration
+modules (sorted by category) provided by the <application
+role="package">&kde; base</application> package. Please note that there
+may be many more modules on your system if you have installed additional
+software.
+</para>
+
+<itemizedlist>
+<listitem>
+<para><ulink url="help:/kinfocenter/devices/index.html">Devices</ulink></para>
+</listitem>
+<listitem>
+<para><ulink url="help:/kinfocenter/dma/index.html">DMA-Channels</ulink></para>
+</listitem>
+<listitem>
+<para><ulink url="help:/kinfocenter/interrupts/index.html">Interrupts</ulink></para>
+</listitem>
+<listitem>
+<para><ulink url="help:/kinfocenter/ioports/index.html">IO-Ports</ulink></para>
+</listitem>
+<listitem>
+<para><ulink url="help:/kinfocenter/memory/index.html">Memory</ulink></para>
+</listitem>
+<listitem>
+<para><ulink url="help:/kinfocenter/nics/index.html">Network Interfaces</ulink></para>
+</listitem>
+<listitem>
+<para><ulink url="help:/kinfocenter/opengl/index.html">OpenGL</ulink></para>
+</listitem>
+<listitem>
+<para><ulink url="help:/kinfocenter/partitions/index.html">Partitions</ulink></para>
+</listitem>
+<listitem>
+<para><ulink url="help:/kinfocenter/pci/index.html">PCI</ulink></para>
+</listitem>
+<listitem>
+<para><ulink url="help:/kinfocenter/pcmcia/index.html">PCMCIA</ulink></para>
+</listitem>
+<listitem>
+<para><ulink url="help:/kinfocenter/processor/index.html">Processor</ulink></para>
+</listitem>
+<listitem>
+<para><ulink url="help:/kinfocenter/protocols/index.html">Protocols</ulink></para>
+</listitem>
+<listitem>
+<para><ulink url="help:/kinfocenter/samba/index.html">Samba Status Information</ulink></para>
+</listitem>
+<listitem>
+<para><ulink url="help:/kinfocenter/scsi/index.html">SCSI</ulink></para>
+</listitem>
+<listitem>
+<para><ulink url="help:/kinfocenter/sound/index.html">Sound</ulink></para>
+</listitem>
+<listitem>
+<para><ulink url="help:/kinfocenter/usb/index.html">USB Devices</ulink></para>
+</listitem>
+<listitem>
+<para><ulink url="help:/kinfocenter/xserver/index.html">X-Server</ulink></para>
+</listitem>
+</itemizedlist>
+
+</sect1>
+
+<!--****************************************-->
+
+</chapter>
+
+<chapter id="credits">
+<title>Credits and License</title>
+
+<para>&infocenter;</para>
+<para>Program copyright 1997-2001 The &infocenter; Developers</para>
+<para>Contributors:</para>
+
+<itemizedlist>
+<listitem><para>Matthias Hoelzer-Kluepfel 
+<email>hoelzer@kde.org</email></para></listitem>
+<listitem><para>Matthias Elter <email>elter@kde.org</email></para></listitem>
+</itemizedlist>
+
+<para>Documentation <trademark class="copyright">copyright 2000 Michael
+McBride</trademark> <email>mpmcbride7@yahoo.com</email></para>
+
+<para>Contributors:</para>
+
+<itemizedlist>
+<listitem><para>Paul Campbell <email>paul@taniwha.com</email></para></listitem>
+<listitem><para>Helge Deller <email>deller@kde.org</email></para></listitem>
+<listitem><para>Mark Donohoe </para></listitem>
+<listitem><para>Pat Dowler</para></listitem>
+<listitem><para>Duncan Haldane <email>duncan@kde.org</email></para></listitem>
+<listitem><para>Steffen Hansen <email>stefh@mip.ou.dk</email>.</para></listitem>
+<listitem><para>Matthias Hoelzer-Kluepfel <email>hoelzer@kde.org</email></para></listitem>
+<listitem><para>Martin Jones <email>mjones@kde.org</email></para></listitem>
+<listitem><para>Jost Schenck <email>jost@schenck.de</email></para></listitem>
+<listitem><para>Jonathan Singer <email>jsinger@leeta.net</email></para></listitem>
+<listitem><para>Thomas Tanghus <email>tanghus@earthling.net</email></para></listitem>
+<listitem><para>Krishna Tateneni <email>tateneni@pluto.njcc.com></email></para></listitem>
+<listitem><para>Ellis Whitehead <email>ewhitehe@uni-freiburg.de</email></para></listitem>
+
+</itemizedlist>
+
+<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
+
+&underFDL;
+&underGPL;
+</chapter>
+
+</book>
+<!--
+Local Variables:
+mode: sgml
+End:
+-->

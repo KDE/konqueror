@@ -1,3 +1,4 @@
+add_subdirectory(kinfocenter)
 add_subdirectory(dolphin)
 add_subdirectory(kappfinder)
 add_subdirectory(kfind)
