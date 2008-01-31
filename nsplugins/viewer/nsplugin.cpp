@@ -1533,6 +1533,12 @@ bool NSPluginStreamBase::create( const QString& url, const QString& mimeType, vo
     return true;
 }
 
+void NSPluginStreamBase::updateURL( const KUrl& newURL )
+{
+    _url = newURL;
+    free(const_cast<char*>(_stream->url));
+    _stream->url = strdup(_url.url().toLatin1().data());
+}
 
 int NSPluginStreamBase::process( const QByteArray &data, int start )
 {
@@ -1760,6 +1766,8 @@ bool NSPluginStream::get( const QString& url, const QString& mimeType,
                 SLOT(totalSize(KJob *, qulonglong)));
         connect(_job, SIGNAL(mimetype(KIO::Job *, const QString &)),
                 SLOT(mimetype(KIO::Job *, const QString &)));
+        connect(_job, SIGNAL(redirection(KIO::Job *, const KUrl&)),
+                SLOT(redirection(KIO::Job *, const KUrl&)));
     }
 
     return false;
@@ -1785,6 +1793,8 @@ bool NSPluginStream::post( const QString& url, const QByteArray& data,
                 SLOT(totalSize(KJob *, qulonglong)));
         connect(_job, SIGNAL(mimetype(KIO::Job *, const QString &)),
                 SLOT(mimetype(KIO::Job *, const QString &)));
+        connect(_job, SIGNAL(redirection(KIO::Job *, const KUrl&)),
+                SLOT(redirection(KIO::Job *, const KUrl&)));
     }
 
     return false;
@@ -1800,6 +1810,11 @@ void NSPluginStream::data(KIO::Job*, const QByteArray &data)
         _resumeTimer->setSingleShot( true );
         _resumeTimer->start( 100 );
     }
+}
+
+void NSPluginStream::redirection(KIO::Job * /*job*/, const KUrl& url)
+{
+    updateURL(url);
 }
 
 void NSPluginStream::totalSize(KJob * job, qulonglong size)
