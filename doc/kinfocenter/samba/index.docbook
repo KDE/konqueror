@@ -1,0 +1,207 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % English "INCLUDE" > <!-- change language only here -->
+]>
+
+<article lang="&language;">
+<title>Samba Status Information</title>
+<articleinfo>
+<authorgroup>
+<author>&Alexander.Neundorf;</author>
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+</authorgroup> 
+
+<date>2002-02-12</date>
+<releaseinfo>3.00.00</releaseinfo>
+
+<keywordset>
+<keyword>KDE</keyword>
+<keyword>KControl</keyword>
+<keyword>Samba</keyword>
+<keyword>system information</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1 id="sambastatus">
+
+
+<title>Samba Status Information</title>
+
+<para>The Samba and <acronym>NFS</acronym> Status Monitor is a front end
+to the programs <command>smbstatus</command> and
+<command>showmount</command>.  Smbstatus reports on current Samba
+connections, and is part of the suite of Samba tools, which implements
+the <acronym>SMB</acronym> (Session Message Block) protocol, also called
+the NetBIOS or LanManager protocol.</para>
+
+<para>This protocol can be used to provide printer sharing or drive
+sharing services on a network including machines running the various
+flavors of &Microsoft; &Windows;.</para>
+
+<para><command>showmount</command> is part of the <acronym>NFS</acronym>
+software package. <acronym>NFS</acronym> stands for Network File System
+and is the traditional &UNIX; way to share folders over the
+network. In this case the output of <command>showmount</command>
+<option>-a localhost</option> is parsed. On some systems showmount is in
+<filename class="directory">/usr/sbin</filename>, check if you have
+showmount in your <envar>PATH</envar>.</para>
+
+<sect2 id="smb-exports">
+<title>Exports</title>
+
+<para>On this page you can see a big list which shows the currently
+active connections to Samba shares and <acronym>NFS</acronym> exports of
+your machine.  The first column shows you whether the resource is a Samba
+(<acronym>SMB</acronym>) share or a <acronym>NFS</acronym> export. The
+second column contains the name of the share, the third the name of the
+remote host, which accesses this share. The remaining columns have only
+a meaning for Samba-shares.</para>
+
+<para>The fourth column contains the User <abbrev>ID</abbrev> of the
+user, who accesses this share. Note that this does not have to be equal
+to the &UNIX; user <abbrev>ID</abbrev> of this user. The same applies
+for the next column, which displays the group <abbrev>ID</abbrev> of the
+user.</para>
+
+<para>Each connection to one of your shares is handled by a single
+process (<command>smbd</command>), the next column shows the process
+<abbrev>ID</abbrev> (<acronym>pid</acronym>) of this
+<command>smbd</command>. If you kill this process the connected user
+will be disconnected. If the remote user works from &Windows;, as soon
+as this process is killed a new one will be created, so he will almost
+not notice it.</para>
+
+<para>The last column shows how many files this user has currently open.
+Here you see only, how many files he has <emphasis>open</emphasis> just
+now, you don't see how many he copied or formerly opened &etc;</para>
+
+</sect2>
+
+<sect2 id="smb-imports">
+<title>Imports</title>
+
+<para> Here you see which Samba- and <acronym>NFS</acronym>-shares from
+other hosts are mounted on your local system. The first column shows
+wether it is a Samba- or <acronym>NFS</acronym>-share, the second column
+displays the name of the share, and the third shows where it is
+mounted.</para>
+
+<para>The mounted <acronym>NFS</acronym>-shares you should see on
+&Linux; (this has been tested), and it should also work on &Solaris;
+(this has not been tested).</para>
+
+</sect2>
+
+<sect2 id="smb-log"> 
+<title>Log</title> 
+
+<para>This page presents the contents of your local samba log file in a
+nice way. If you open this page, the list will be empty.  You have to
+press the <guibutton>Update</guibutton> button, then the samba log file
+will be read and the results displayed. Check whether the samba log file
+on your system is really at the location as specified in the input
+line. If it is somewhere else or if it has another name, correct
+it. After changing the file name you have to press
+<guibutton>Update</guibutton> again.</para>
+
+<para>Samba logs its actions according to the log level (see
+<filename>smb.conf</filename>).  If loglevel = 1, samba logs only when
+somebody connects to your machine and when this connection is closed
+again. If log level = 2, it logs also if somebody opens a file and if he
+closes the file again.  If the log level is higher than 2, yet more
+stuff is logged.</para>
+
+<para>If you are interested in who accesses your machine, and which
+files are accessed, you should set the log level to 2 and regularly
+create a new samba log file (&eg; set up a <command>cron</command> task
+which once a week moves your current samba log file into another
+folder or something like that). Otherwise your samba log file may
+become very big.</para>
+
+<para>With the four checkboxes below the big list you can decide, which
+events are displayed in the list. You have to press
+<guibutton>Update</guibutton> to see the results.  If the log level of
+your samba is too low, you won't see everything.</para>
+
+<para>By clicking on the header of one column you can sort the list by
+this column.</para>
+
+</sect2>
+
+
+<sect2 id="smb-statistics">
+<title>Statistics</title>
+
+<para>On this page you can filter the contents of the third page for
+certain contents.</para>
+
+<para>Let's say the <guilabel>Event</guilabel> field (not the one in the
+list) is set to <userinput>Connection</userinput>,
+<guilabel>Service/File</guilabel> is set to <userinput>*</userinput>,
+<guilabel>Host/User</guilabel> is set to <userinput>*</userinput>,
+<guilabel>Show expanded service info</guilabel> is disabled and
+<guilabel>Show expanded host info</guilabel> is disabled.</para>
+
+<para>If you press <guibutton>Update</guibutton> now, you will see how
+often a connection was opened to share <literal>*</literal> (&ie; to any
+share) from host <literal>*</literal> (&ie; from any host).  Now enable
+<guilabel>Show expanded host info</guilabel> and press
+<guibutton>Update</guibutton> again.  Now you will see for every host
+which matches the wildcard <literal>*</literal>, how many connections
+were opened by him.</para>
+
+<para>Now press <guibutton>clear</guibutton>.</para>
+
+<para>Now set the <guilabel>Event</guilabel> field to File Access and
+enable <guilabel>Show expanded service info</guilabel> and press
+<guibutton>Update</guibutton> again.</para>
+
+<para>Now you will see how often every single file was accessed. If you
+enable <guilabel>Show expanded host info</guilabel> too, you will see
+how often every single user opened each file.</para>
+
+<para>In the input lines <guilabel>Service/File</guilabel> and
+<guilabel>Host/User</guilabel> you can use the wildcards
+<literal>*</literal> and <literal>?</literal> in the same way you use
+them at the command line.  Regular expressions are not
+recognized.</para>
+
+<para>By clicking on the header of a column you can sort the list by
+this column.  This way you can check out which file was opened most
+often, or which user opened the most files or whatever.</para>
+
+</sect2>
+
+
+<sect2 id="smb-stat-author">
+<title>Section Author</title>
+
+<para>Module copyright 2000: Michael Glauche and &Alexander.Neundorf; &Alexander.Neundorf.mail;</para>
+
+<para>Originally written by: Michael Glauche</para>
+
+<para>Currently maintained by: &Alexander.Neundorf; &Alexander.Neundorf.mail;</para>
+
+<itemizedlist>
+<title>Contributors</title>
+<listitem><para>Conversion to kcontrol applet:</para>
+<para>&Matthias.Hoelzer-Kluepfel; &Matthias.Hoelzer-Kluepfel.mail;</para></listitem>
+<listitem><para>Use of <classname>K3Process</classname> instead of popen, and more error checking:</para>
+<para>&David.Faure; &David.Faure.mail;</para></listitem>
+<listitem><para>Conversion to kcmodule, added tab pages 2,3,4, bug
+fixed:</para>
+<para>&Alexander.Neundorf; &Alexander.Neundorf.mail;</para></listitem>
+</itemizedlist>
+
+<para>Documentation copyright 2000 &Alexander.Neundorf; &Alexander.Neundorf.mail;</para>
+
+<para>Documentation translated to docbook by &Mike.McBride; &Mike.McBride.mail;</para>
+
+<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
+
+</sect2>
+</sect1>
+
+</article>

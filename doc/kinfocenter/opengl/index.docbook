@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % English "INCLUDE" > <!-- change language only here -->
+]>
+
+<article lang="&language;">
+<title><acronym>OpenGL</acronym></title>
+<articleinfo>
+
+<authorgroup>
+<author><personname><firstname>Ilya</firstname><surname>Korniyko</surname></personname><email>k_ilya@ukr.net</email></author>
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+
+</authorgroup>
+
+<date></date>
+<releaseinfo></releaseinfo>
+
+<keywordset>
+<keyword>KDE</keyword>
+<keyword>KControl</keyword>
+<keyword>OpenGL</keyword>
+<keyword>system information</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1 id="opengl">
+
+<title>OpenGL</title>
+
+<para>This page displays information about installed <acronym>OpenGL</acronym> implementation.
+OpenGL (for "Open Graphics Library") is a cross-platform, 
+hardware independent interface for 3D graphics. </para>
+
+<para><acronym>GLX</acronym> is the binding for OpenGL to X Window system.</para>
+
+<para> <acronym>DRI</acronym> (Direct Rendering Infrastucture) provides hardware acceleration for OpenGL. 
+You must have a videocard with 3D accelerator and properly installed driver for this.</para>
+<para> </para>
+
+<para>Read more at the official OpenGL site <ulink url="http://www.opengl.org">http://www.opengl.org</ulink> </para>
+
+</sect1>
+
+</article>

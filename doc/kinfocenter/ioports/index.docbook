@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % English "INCLUDE" > <!-- change language only here -->
+]>
+
+<article lang="&language;">
+<title>I/O Port</title>
+<articleinfo>
+
+<authorgroup>
+<author>&Matthias.Hoelzer-Kluepfel;</author>
+<author>&Helge.Deller;</author>
+<author>&Duncan.Haldane;</author>
+<author>&Mike.McBride;</author>
+
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+</authorgroup>
+
+<date>2002-02-12</date>
+<releaseinfo>3.00.00</releaseinfo>
+
+<keywordset>
+<keyword>KDE</keyword>
+<keyword>KControl</keyword>
+<keyword>ioports</keyword>
+<keyword>system information</keyword>
+</keywordset>
+</articleinfo>
+
+<sect1>
+<title>Input/Output Port Information</title>
+
+<para>This page displays information about the I/O ports.</para>
+
+<para>I/O Ports are memory addresses used by the processor for direct
+communication with a device that has sent an
+interrupt signal to the processor.</para>
+
+<para>The exchange of commands or data between the processor and the device
+takes place through the I/O port address of the device, which is a
+ hexadecimal
+number.  No two devices can share the same I/O port.  Many devices use
+ multiple
+I/O port addresses, which are expressed as a range of hexadecimal
+numbers. </para>
+
+<note><para>The exact information displayed is system-dependent. On some
+systems, I/O port information can not yet be displayed.</para></note>
+
+<para>On &Linux;, this information is read from <filename
+class="devicefile">/proc/ioports</filename> which is only available if
+the <filename class="devicefile">/proc</filename> pseudo-filesystem is
+compiled into the kernel.  A list of all currently-registered I/O port
+regions that are in use is shown.</para>
+
+<para>The first column is the I/O port (or the range of I/O ports), the
+second column identifies the device that uses these I/O ports.</para>
+
+<para>The user cannot modify any settings on this page.</para>
+
+</sect1>
+</article>
