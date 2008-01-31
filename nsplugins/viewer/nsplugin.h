@@ -84,6 +84,7 @@ protected:
   bool create( const QString& url, const QString& mimeType, void *notify, bool forceNotify = false );
   int tries() { return _tries; }
   void inform( );
+  void updateURL( const KUrl& newUrl );
 
   class NSPluginInstance *_instance;
   uint16 _streamType;
@@ -127,6 +128,7 @@ protected Q_SLOTS:
   void totalSize(KJob *job, qulonglong size);
   void mimetype(KIO::Job * job, const QString &mimeType);
   void result(KJob *job);
+  void redirection(KIO::Job *job, const KUrl& url);
   void resume();
 
 protected:
