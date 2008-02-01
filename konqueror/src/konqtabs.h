@@ -30,7 +30,7 @@
 #include <QtCore/QList>
 
 class QMenu;
-class QPushButton;
+class QToolButton;
 
 class KonqView;
 class KonqViewManager;
@@ -120,8 +120,8 @@ private:
   KonqViewManager* m_pViewManager;
   QMenu* m_pPopupMenu;
   QMenu* m_pSubPopupMenuTab;
-  QPushButton* m_rightWidget;
-  QPushButton* m_leftWidget;
+  QToolButton* m_rightWidget;
+  QToolButton* m_leftWidget;
   bool m_permanentCloseButtons;
   bool m_alwaysTabBar;
   bool m_MouseMiddleClickClosesTab;
