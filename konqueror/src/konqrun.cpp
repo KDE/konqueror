@@ -86,24 +86,30 @@ void KonqRun::foundMimeType( const QString & _type )
   m_req.args = arguments();
   m_req.browserArgs = browserArguments();
 
-  bool tryEmbed = true;
-  // One case where we shouldn't try to embed, is when the server asks us to save
-  if ( serverSuggestsSave() )
-    tryEmbed = false;
+    bool tryEmbed = true;
+    // One case where we shouldn't try to embed, is when the server asks us to save
+    if (serverSuggestsSave())
+        tryEmbed = false;
 
-  if (KonqMainWindow::isMimeTypeAssociatedWithSelf(mimeType))
-      m_req.forceAutoEmbed = true;
-  else if (m_pMainWindow->hasViewWithMimeType(mimeType))
-      m_req.forceAutoEmbed = true; // see hasViewWithMimeType documentation
+    if (tryEmbed) {
+        if (KonqMainWindow::isMimeTypeAssociatedWithSelf(mimeType))
+            m_req.forceAutoEmbed = true;
+        else if (m_pMainWindow->hasViewWithMimeType(mimeType)) {
+            m_req.forceAutoEmbed = true;
+            // When text/html is associated with another browser,
+            // we need to find out if we should keep browsing the web in konq,
+            // or if we are clicking on an html file in a directory view (which should
+            // then open the other browser)
+        }
 
-  if ( tryEmbed )
-      setFinished(m_pMainWindow->openView( mimeType, KRun::url(), m_pView, m_req ));
+        setFinished(m_pMainWindow->openView( mimeType, KRun::url(), m_pView, m_req ));
 
-  if ( hasFinished() ) {
-    m_pMainWindow = 0L;
-    timer().start( 0 );
-    return;
-  }
+        if (hasFinished()) {
+            m_pMainWindow = 0;
+            timer().start(0);
+            return;
+        }
+    }
 
   // If we were following another view, do nothing if opening didn't work.
   if ( m_req.followMode )

@@ -767,7 +767,7 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
     { // Phew !
 
       // Set view mode if necessary (current view doesn't support directories)
-      if ( !childView || !childView->supportsServiceType( mimeType ) )
+      if ( !childView || !childView->supportsMimeType( mimeType ) )
         serviceName = KonqSettings::mainViewViewMode();
 
       if ( url.isLocalFile() ) // local, we can do better (.directory)
@@ -1081,9 +1081,9 @@ bool KonqMainWindow::makeViewsFollow( const KUrl & url,
     // file, e.g. in a separate viewer.
     // This happens in views locked to a directory mode,
     // like sidebar and konsolepart (#52161).
-    bool ignore = view->isLockedViewMode() && view->supportsServiceType("inode/directory");
+    bool ignore = view->isLockedViewMode() && view->supportsMimeType("inode/directory");
     //kDebug(1202) << "View " << view->service()->name()
-    //              << " supports dirs: " << view->supportsServiceType( "inode/directory" )
+    //              << " supports dirs: " << view->supportsMimeType( "inode/directory" )
     //              << " is locked-view-mode:" << view->isLockedViewMode()
     //              << " ignore=" << ignore << endl;
     if ( !ignore )
@@ -1346,7 +1346,7 @@ void KonqMainWindow::slotSendURL()
     fileNameList += (*it).fileName();
   }
   QString subject;
-  if ( m_currentView && !m_currentView->supportsServiceType( "inode/directory" ) )
+  if ( m_currentView && !m_currentView->supportsMimeType( "inode/directory" ) )
     subject = m_currentView->caption();
   else // directory view
       subject = fileNameList;
@@ -1390,7 +1390,7 @@ void KonqMainWindow::slotSendFile()
     }
   }
   QString subject;
-  if ( m_currentView && !m_currentView->supportsServiceType( "inode/directory" ) )
+  if ( m_currentView && !m_currentView->supportsMimeType( "inode/directory" ) )
     subject = m_currentView->caption();
   else
     subject = fileNameList;
@@ -1418,7 +1418,7 @@ void KonqMainWindow::slotOpenTerminal()
       //If the URL is local after the above conversion, set the directory.
       if ( u.isLocalFile() )
       {
-          if ( m_currentView->supportsServiceType( "inode/directory" ) )
+          if ( m_currentView->supportsMimeType( "inode/directory" ) )
               dir = u.path();
           else
               dir = u.directory();
@@ -1685,12 +1685,12 @@ void KonqMainWindow::showHTML( KonqView * _view, bool b, bool _activateView )
     if ( _activateView )
         m_bHTMLAllowed = b;
 
-  if ( b && _view->supportsServiceType( "inode/directory" ) )
+  if ( b && _view->supportsMimeType( "inode/directory" ) )
   {
     _view->lockHistory();
     openView( "inode/directory", _view->url(), _view );
   }
-  else if ( !b && _view->supportsServiceType( "text/html" ) )
+  else if ( !b && _view->supportsMimeType( "text/html" ) )
   {
     KUrl u( _view->url() );
     QString fileName = u.fileName().toLower();
@@ -2180,7 +2180,7 @@ void KonqMainWindow::slotPartActivated( KParts::Part *part )
   m_bViewModeToggled = false;
 
 
-  m_pMenuNew->setEnabled( m_currentView->supportsServiceType( QLatin1String( "inode/directory" ) ));
+  m_pMenuNew->setEnabled( m_currentView->supportsMimeType( QLatin1String( "inode/directory" ) ));
 
   m_currentView->frame()->statusbar()->updateActiveStatus();
 
@@ -5130,7 +5130,7 @@ void KonqMainWindow::plugViewModeActions()
   lst.append( m_viewModeMenu );
   plugActionList( "viewmode", lst );
   // display the toolbar viewmode icons only for inode/directory, as here we have dedicated icons
-  if ( m_currentView && m_currentView->supportsServiceType( "inode/directory" ) )
+  if ( m_currentView && m_currentView->supportsMimeType( "inode/directory" ) )
     plugActionList( "viewmode_toolbar", m_toolBarViewModeActions );
 }
 
@@ -5921,8 +5921,10 @@ bool KonqMainWindow::hasViewWithMimeType(const QString& mimeType) const
     MapViews::const_iterator it = m_mapViews.begin();
     const MapViews::const_iterator end = m_mapViews.end();
     for (; it != end; ++it) {
-        if ((*it)->supportsServiceType(mimeType))
+        if ((*it)->supportsMimeType(mimeType)) {
+            kDebug() << *it << "supports" << mimeType << "!";
             return true;
+        }
     }
     return false;
 }
