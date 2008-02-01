@@ -91,8 +91,10 @@ void KonqRun::foundMimeType( const QString & _type )
   if ( serverSuggestsSave() )
     tryEmbed = false;
 
-  if ( KonqMainWindow::isMimeTypeAssociatedWithSelf( mimeType ) )
+  if (KonqMainWindow::isMimeTypeAssociatedWithSelf(mimeType))
       m_req.forceAutoEmbed = true;
+  else if (m_pMainWindow->hasViewWithMimeType(mimeType))
+      m_req.forceAutoEmbed = true; // see hasViewWithMimeType documentation
 
   if ( tryEmbed )
       setFinished(m_pMainWindow->openView( mimeType, KRun::url(), m_pView, m_req ));
