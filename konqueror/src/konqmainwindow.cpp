@@ -846,7 +846,7 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
           bool forceAutoEmbed = req.forceAutoEmbed || req.newTab || req.userRequestedReload;
           if ( !req.typedUrl.isEmpty() ) // the user _typed_ the URL, he wants it in Konq.
               forceAutoEmbed = true;
-          if ( url.protocol() == "about" )
+          if ( url.protocol() == "about" || url.protocol() == "error" )
               forceAutoEmbed = true;
           // Related to KonqFactory::createView
           if ( !forceAutoEmbed && !KonqFMSettings::settings()->shouldEmbed( mimeType ) )
@@ -5142,12 +5142,9 @@ void KonqMainWindow::unplugViewModeActions()
 
 void KonqMainWindow::updateBookmarkBar()
 {
-  KToolBar * bar = static_cast<KToolBar *>( child( "bookmarkToolBar", "KToolBar" ) );
-
-  if (!bar) return;
-
-  // hide if empty
-  if (m_paBookmarkBar && bar->actions().count() == 0 )
+    KToolBar * bar = qFindChild<KToolBar *>(this, "bookmarkToolBar");
+    if (!bar) return;
+    if (m_paBookmarkBar && bar->actions().isEmpty() )
         bar->hide();
 
 }
@@ -5917,6 +5914,17 @@ bool KonqMainWindow::accept( KonqFrameVisitor* visitor )
     if ( !visitor->endVisit( this ) )
         return false;
     return true;
+}
+
+bool KonqMainWindow::hasViewWithMimeType(const QString& mimeType) const
+{
+    MapViews::const_iterator it = m_mapViews.begin();
+    const MapViews::const_iterator end = m_mapViews.end();
+    for (; it != end; ++it) {
+        if ((*it)->supportsServiceType(mimeType))
+            return true;
+    }
+    return false;
 }
 
 #include "konqmainwindow.moc"
