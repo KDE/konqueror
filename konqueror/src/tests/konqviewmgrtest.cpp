@@ -277,6 +277,10 @@ void ViewMgrTest::testAddTab()
     KonqView* viewTab2 = viewManager->addTab("text/html");
     QVERIFY( viewTab2 );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].") ); // mainWindow, tab widget, two tabs
+    QVERIFY(viewTab2->supportsMimeType("text/html"));
+    QVERIFY(!viewTab2->supportsMimeType("text/plain"));
+    // correct since it's a subclass of text/html, khtml can display it
+    QVERIFY(viewTab2->supportsMimeType("application/x-netscape-bookmarks"));
 }
 
 void ViewMgrTest::testDuplicateTab()

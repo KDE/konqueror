@@ -597,7 +597,7 @@ void KonqView::slotCompleted( bool hasPending )
     if ( KonqSettings::enableFavicon() == true )
     {
       // Try to get /favicon.ico
-      if ( supportsServiceType( "text/html" ) && url().protocol().startsWith( "http" ) )
+      if ( supportsMimeType( "text/html" ) && url().protocol().startsWith( "http" ) )
           KonqPixmapProvider::self()->downloadHostIcon( url().url() );
     }
   }
@@ -1314,15 +1314,14 @@ KParts::StatusBarExtension * KonqView::statusBarExtension() const
     return KParts::StatusBarExtension::childObject( m_pPart );
 }
 
-bool KonqView::supportsServiceType( const QString &serviceType ) const
+bool KonqView::supportsMimeType( const QString &mimeType ) const
 {
+    KMimeType::Ptr mime = KMimeType::mimeType( mimeType );
+    if (!mime)
+        return false;
     const QStringList lst = serviceTypes();
     for( QStringList::ConstIterator it = lst.begin(); it != lst.end(); ++it ) {
-        if ( *it == serviceType )
-            return true;
-        // Maybe we should keep around a list of KServiceType::Ptr?
-        KMimeType::Ptr mime = KMimeType::mimeType( *it );
-        if ( mime && mime->is( serviceType ) ) // respect inheritance
+        if ( mime->is(*it) ) // same as mime == *it, but also respect inheritance, mimeType can be a subclass
             return true;
     }
     return false;

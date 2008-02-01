@@ -65,7 +65,7 @@ struct HistoryEntry
  * handles it. It's more or less the backend structure for the views.
  * The widget handling stuff is done by the KonqFrame.
  */
-class KonqView : public QObject
+class KONQ_TESTS_EXPORT KonqView : public QObject
 {
   Q_OBJECT
 public:
@@ -243,7 +243,7 @@ public:
    */
   QStringList serviceTypes() const { return m_service->serviceTypes(); }
 
-  bool supportsServiceType( const QString &serviceType ) const;
+  bool supportsMimeType( const QString &mimeType ) const;
 
   // True if "Use index.html" is set (->the view doesn't necessarily show HTML!)
   bool allowHTML() const { return m_bAllowHTML; }
