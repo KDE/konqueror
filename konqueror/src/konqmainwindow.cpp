@@ -628,8 +628,14 @@ void KonqMainWindow::openUrl( KonqView *_view, const KUrl &_url,
   }
   else // no known mimeType, use KonqRun
   {
-      if ( ( !view || view->url().isEmpty() ) && !req.newTab ) // startup with argument
-      {
+      bool earlySetLocationBarURL = false;
+      if (!view && !m_currentView) // no view yet, e.g. starting with url as argument
+          earlySetLocationBarURL = true;
+      else if (view == m_currentView && view->url().isEmpty()) // opening in current view
+          earlySetLocationBarURL = true;
+      if (req.newTab) // it's going into a new tab anyway
+          earlySetLocationBarURL = false;
+      if (earlySetLocationBarURL) {
           // Show it for now in the location bar, but we'll need to store it in the view
           // later on (can't do it yet since either view == 0 or updateHistoryEntry will be called).
           kDebug(1202) << "setLocationBarURL : url = " << url;
@@ -1146,7 +1152,9 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
         if (newtabsinfront)
             m_pViewManager->showTab( newView );
 
-        openUrl( newView, url.isEmpty() ? KUrl("about:blank") : url, QString() );
+        KonqOpenURLRequest req;
+        req.forceAutoEmbed = true;
+        openUrl( newView, url.isEmpty() ? KUrl("about:blank") : url, QString(), req );
         newView->setViewName( browserArgs.frameName );
 
         if ( part )
