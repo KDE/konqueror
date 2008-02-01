@@ -171,6 +171,13 @@ public:
   // Number of main views (non-toggle non-passive views)
   int mainViewsCount() const;
 
+    // Return true if we are showing a view that supports this mimeType.
+    // Used for instance when text/html is associated with another browser:
+    // we need to find out if we should keep browsing the web in konq,
+    // or if we are clicking on an html file in a directory view (which should
+    // then open the other browser)
+    bool hasViewWithMimeType(const QString& mimeType) const;
+
   typedef QMap<KParts::ReadOnlyPart *, KonqView *> MapViews;
 
   const MapViews & viewMap() const { return m_mapViews; }
