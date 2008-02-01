@@ -1987,7 +1987,7 @@ void KonqMainWindow::slotRunFinished()
   KonqView *childView = run->childView();
 
   // Check if we found a mimetype _and_ we got no error (example: cancel in openwith dialog)
-  if ( run->foundMimeType() && !run->hasError() )
+  if ( run->wasMimeTypeFound() && !run->hasError() )
   {
 
     // We do this here and not in the constructor, because
