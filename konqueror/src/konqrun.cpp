@@ -51,8 +51,6 @@ KonqRun::KonqRun( KonqMainWindow* mainWindow, KonqView *_childView,
   assert( !m_pMainWindow.isNull() );
   if (m_pView)
     m_pView->setLoading(true);
-
-  timer().setSingleShot(true);
 }
 
 KonqRun::~KonqRun()

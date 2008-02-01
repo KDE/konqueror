@@ -43,9 +43,9 @@ public:
   virtual ~KonqRun();
 
   /**
-   * Returns true if we found the servicetype for the given url.
+   * Returns true if we found the mimetype for the given url.
    */
-  bool foundMimeType() const { return m_bFoundMimeType; }
+  bool wasMimeTypeFound() const { return m_bFoundMimeType; }
 
   KonqView *childView() const;
 
