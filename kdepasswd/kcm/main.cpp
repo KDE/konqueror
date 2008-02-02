@@ -102,6 +102,7 @@ KCMUserAccount::KCMUserAccount( QWidget *parent, const QVariantList &)
 			"will be used in mail programs and word processors, for example. You can "
 			"change your login password by clicking <em>Change Password</em>.</qt>") );
 
+        setButtons( KCModule::Default|KCModule::Apply );
 	load();
 }
 
