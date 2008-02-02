@@ -22,11 +22,12 @@
 
 #include "konqbookmarkbar.h"
 
-#include <qregexp.h>
-#include <qfile.h>
-#include <qevent.h>
-#include <qapplication.h>
-#include <qdebug.h>
+#include <QApplication>
+#include <QDebug>
+#include <QDropEvent>
+#include <QEvent>
+#include <QFile>
+#include <QRegExp>
 
 #include <ktoolbar.h>
 #include <kactionmenu.h>

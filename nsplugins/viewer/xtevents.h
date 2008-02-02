@@ -20,8 +20,8 @@
 #ifndef XTEVENTS_H
 #define XTEVENTS_H
 
-#include <qwidget.h>
-#include <qtimer.h>
+#include <QWidget>
+#include <QTimer>
 
 #include <X11/Intrinsic.h>
 
