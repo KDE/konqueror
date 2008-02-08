@@ -6,7 +6,7 @@
   </property>
   <layout class="QVBoxLayout" >
    <item>
-    <widget class="Q3ButtonGroup" name="ButtonGroup1" >
+    <widget class="QGroupBox" name="ButtonGroup1" >
      <property name="sizePolicy" >
       <sizepolicy vsizetype="Preferred" hsizetype="MinimumExpanding" >
        <horstretch>0</horstretch>
@@ -18,9 +18,6 @@
      </property>
      <property name="title" >
       <string>Stylesheets</string>
-     </property>
-     <property name="exclusive" >
-      <bool>true</bool>
      </property>
      <layout class="QVBoxLayout" >
       <item>
@@ -184,12 +181,6 @@
  <layoutfunction spacing="KDialog::spacingHint" margin="KDialog::marginHint" />
  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
  <customwidgets>
-  <customwidget>
-   <class>Q3ButtonGroup</class>
-   <extends>Q3GroupBox</extends>
-   <header>Qt3Support/Q3ButtonGroup</header>
-   <container>1</container>
-  </customwidget>
   <customwidget>
    <class>KUrlRequester</class>
    <extends>QFrame</extends>
