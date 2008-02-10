@@ -26,65 +26,6 @@
 #include <QtGui/QKeyEvent>
 
 
-KEBSearchLine::KEBSearchLine(QWidget *parent, K3ListView *listView)
-    : K3ListViewSearchLine(parent, listView)
-{
-    mmode = AND;
-}
-
-KEBSearchLine::KEBSearchLine(QWidget *parent)
-    :K3ListViewSearchLine(parent)
-{
-    mmode = AND;
-}
-
-KEBSearchLine::~KEBSearchLine()
-{
-}
-
-bool KEBSearchLine::itemMatches(const Q3ListViewItem *item, const QString &s) const
-{
-    if(mmode == EXACTLY)
-       return K3ListViewSearchLine::itemMatches(item, s);
-
-    if(lastpattern != s)
-    {
-       splitted = s.split(QChar(' '));
-       lastpattern = s;
-    }
-
-    QStringList::const_iterator it = splitted.begin();
-    QStringList::const_iterator end = splitted.end();
-
-    if(mmode == OR)
-    {
-       if(it == end) //Nothing to match
-           return true;
-       for( ; it != end; ++it)
-           if(K3ListViewSearchLine::itemMatches(item, *it))
-               return true;
-    }
-    else if(mmode == AND)
-       for( ; it != end; ++it)
-           if(! K3ListViewSearchLine::itemMatches(item, *it))
-               return false;
-
-    return (mmode == AND);
-}
-
-KEBSearchLine::modes KEBSearchLine::mode()
-{
-    return mmode;
-}
-
-void KEBSearchLine::setMode(modes m)
-{
-    mmode = m;
-}
-
-////////////////////////////////////////////////////////////////////////////////
-// KViewSearchLine
-////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////////////////////////
 // public methods
@@ -290,7 +231,7 @@ bool KViewSearchLine::itemMatches(const QModelIndex & item, const QString &s) co
             }
         }
         else {
-            for(int i = 0; i < columnCount; i++) 
+            for(int i = 0; i < columnCount; i++)
             {
                 if(d->treeView->isColumnHidden(i) == false)
                 {
@@ -335,11 +276,11 @@ void KViewSearchLine::contextMenuEvent( QContextMenuEvent*e )
                 QString columnText = model()->headerData(logicalIndex, Qt::Horizontal).toString();
                 if(columnText.isEmpty())
                     columnText = i18nc("Column number %1","Column No. %1", i);
-                QAction * act = new QAction(columnText, 0); 
+                QAction * act = new QAction(columnText, 0);
                 act->setCheckable(true);
                 if( d->searchColumns.isEmpty() || d->searchColumns.contains(logicalIndex) )
                     act->setChecked(true);
-    
+
                 actions[logicalIndex] = act;
                 if( !d->treeView || (d->treeView->isColumnHidden(i) == false) )
                 {
@@ -649,7 +590,7 @@ void KViewSearchLine::checkItemParentsNotVisible()
     int column = 0;
     if(d->listView)
         column = d->listView->modelColumn();
-    for(int i = 0; i < rowCount; ++i) 
+    for(int i = 0; i < rowCount; ++i)
     {
         QModelIndex it = model()->index(i, column, QModelIndex());
         if(itemMatches(it, d->search))

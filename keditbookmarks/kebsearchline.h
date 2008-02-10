@@ -53,7 +53,7 @@ class KViewSearchLinePrivate;
  * Note: Don't call setModel() on the view while a KViewSearchLine filters
  * the view. (Instead call setView(0) before and setView(view) after calling
  * setModel()
- * 
+ *
  *
  * Note: You need to call updateSearch() if you called QListView::setModelColumn()
  */
@@ -75,7 +75,7 @@ public:
 
     /**
      * Constructs a KViewSearchLine without any QListView/QTreeView to filter. The
-     * QListView/QTreeView object has to be set later with setListView(). 
+     * QListView/QTreeView object has to be set later with setListView().
      */
     KViewSearchLine(QWidget *parent);
 
@@ -153,7 +153,7 @@ public Q_SLOTS:
     void setSearchColumns(const QLinkedList<int> &columns);
 
     /**
-     * Sets the view that is filtered by this search line.  
+     * Sets the view that is filtered by this search line.
      * If \a v is null then the widget will be disabled.
      * v must be either a QListView or a QTreeView
      * (That includes QListWidget and QTreeWidget)
@@ -166,7 +166,7 @@ protected:
     /**
      * Returns true if the row including \a item matches the search \a s.
      * This will be evaluated based on the value of caseSensitive() and
-     * searchColumns().  This can be overridden in subclasses to implement 
+     * searchColumns().  This can be overridden in subclasses to implement
      * more complicated matching schemes.
      */
     virtual bool itemMatches(const QModelIndex & item, const QString &s) const;
@@ -309,28 +309,5 @@ private:
     KViewSearchLineWidgetPrivate *d;
 };
 
-
-//FIXME reimplement on top of the searchline
-class KEBSearchLine : public K3ListViewSearchLine
-{
-public:
-    explicit KEBSearchLine(QWidget *parent = 0, K3ListView *listView = 0);
-
-    KEBSearchLine(QWidget *parent);
-
-    virtual ~KEBSearchLine();
-
-    enum modes { EXACTLY, AND, OR } mmode;
-    modes mode();
-    void setMode(modes m);
-
-protected:
-
-    virtual bool itemMatches(const Q3ListViewItem *item, const QString &s) const;
-
-private:
-    mutable QString lastpattern; // what was cached
-    mutable QStringList splitted; // cache of the splitted string
-};
 
 #endif
