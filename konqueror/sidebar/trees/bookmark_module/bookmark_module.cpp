@@ -157,6 +157,8 @@ void KonqSidebarBookmarkModule::showPopupMenu()
             menu->addSeparator();
         }
         menu->addAction( m_collection->action("create_folder") );
+        menu->addAction( m_collection->action("item_properties") );
+        menu->addSeparator();
         menu->addAction( m_collection->action("delete_folder") );
     } else {
         menu->addAction( m_collection->action("open_window") );
@@ -165,10 +167,10 @@ void KonqSidebarBookmarkModule::showPopupMenu()
         menu->addAction( m_collection->action("copy_location") );
         menu->addSeparator();
         menu->addAction( m_collection->action("create_folder") );
+        menu->addAction( m_collection->action("item_properties") );
+        menu->addSeparator();
         menu->addAction( m_collection->action("delete_bookmark") );
     }
-    menu->addSeparator();
-    menu->addAction( m_collection->action("item_properties") );
 
     menu->exec( QCursor::pos() );
     delete menu;
