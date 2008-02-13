@@ -284,9 +284,8 @@ static int tryCheck(int write_fd, const QString &absFile)
     KLibLoader::self()->unloadLibrary( QFile::encodeName(absFile) );
 
     // create a QDataStream for our IPC pipe (to send plugin info back to the parent)
-    FILE *write_pipe = fdopen(write_fd, "w");
     QFile stream_file;
-    stream_file.open(write_pipe, QIODevice::WriteOnly);
+    stream_file.open(write_fd, QIODevice::WriteOnly);
     QDataStream stream(&stream_file);
 
     // return the gathered info to the parent
@@ -361,20 +360,18 @@ void scanDirectory( const QString &dir, QStringList &mimeInfoList,
            QBuffer m_buffer;
            m_buffer.open(QIODevice::WriteOnly);
 
-           FILE *read_pipe = fdopen(pipes[0], "r");
            QFile q_read_pipe;
-           q_read_pipe.open(read_pipe, QIODevice::ReadOnly);
+           q_read_pipe.open(pipes[0], QIODevice::ReadOnly);
 
            char *data = (char *)malloc(4096);
            if (!data) continue;
 
            // when the child closes, we'll get an EOF (size == 0)
-           while (int size = q_read_pipe.read(data, 4096)) {
-               if (size > 0)
-                   m_buffer.write(data, size);
-           }
+           while (int size = q_read_pipe.read(data, 4096) > 0)
+               m_buffer.write(data, size);
            free(data);
 
+           q_read_pipe.close();
            close(pipes[0]); // we no longer need the pipe's reading end
 
            // close the buffer and open for reading (from the start)
