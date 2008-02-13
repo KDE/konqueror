@@ -221,7 +221,6 @@ public:
 
   void updateToolBarActions( bool pendingActions = false );
   void updateOpenWithActions();
-  void updateViewModeActions();
   void updateViewActions();
 
   bool sidebarVisible() const;
@@ -323,6 +322,10 @@ Q_SIGNALS:
   void popupItemsDisturbed();
 
 public Q_SLOTS:
+    void updateViewModeActions();
+
+    void slotInternalViewModeChanged();
+
     void slotCtrlTabPressed();
 
     void slotPopupMenu( const QPoint &global, const KFileItemList &items, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments& browserArgs, KParts::BrowserExtension::PopupFlags flags, const KParts::BrowserExtension::ActionGroupMap& );
@@ -350,7 +353,7 @@ public Q_SLOTS:
   void slotOpenFile();
 
   // View menu
-  void slotViewModeToggle( bool toggle );
+  void slotViewModeTriggered(QAction* action);
   void slotShowHTML();
   void slotLockView();
   void slotLinkView();
@@ -510,8 +513,6 @@ protected:
 
   void applyKonqMainWindowSettings();
 
-  void saveToolBarServicesMap();
-
   void viewsChanged();
 
   void updateLocalPropsActions();
@@ -582,7 +583,6 @@ private:
 
   void plugViewModeActions();
   void unplugViewModeActions();
-  static QString viewModeActionKey( KService::Ptr service );
 
   bool stayPreloaded();
   bool checkPreloadResourceUsage();
@@ -660,7 +660,6 @@ private: // members
   bool m_bHTMLAllowed:1;
   // Set in constructor, used in slotRunFinished
   bool m_bNeedApplyKonqMainWindowSettings:1;
-  bool m_bViewModeToggled:1;
   bool m_urlCompletionStarted:1;
   bool m_prevMenuBarVisible:1;
 
@@ -704,13 +703,6 @@ private: // members
   QList<QAction *> m_openWithActions;
   KActionMenu *m_viewModeMenu;
   QActionGroup* m_viewModesGroup;
-  QList<QAction*> m_toolBarViewModeActions; // basically holds three KonqViewActions, one of
-                                              // iconview, one for listview, and one for externals
-  QActionGroup* m_toolBarViewModesGroup;
-  QList<KToggleAction *> m_viewModeActions;
-  QMap<QString,KService::Ptr> m_viewModeToolBarServices; // similar to m_toolBarViewModeActions
-  // it holds a map library name (libkonqiconview/libkonqlistview) ==> service (service for
-  // iconview, multicolumnview, treeview, etc .)
   QActionGroup* m_closedTabsGroup;
 
   static QList<KonqMainWindow*> *s_lstViews;

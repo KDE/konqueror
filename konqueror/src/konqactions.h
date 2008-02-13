@@ -67,29 +67,6 @@ private:
 
 /////
 
-class KonqViewModeAction : public KAction
-{
-    Q_OBJECT
-public:
-    KonqViewModeAction( const QString& desktopEntryName,
-                        const QString &text, const KIcon &icon,
-                        QObject* parent );
-    virtual ~KonqViewModeAction();
-
-    QString desktopEntryName() const { return m_desktopEntryName; }
-
-    virtual QWidget* createWidget(QWidget* parent);
-
-/*private Q_SLOTS:
-    void slotPopupAboutToShow();
-    void slotPopupActivated();
-    void slotPopupAboutToHide();*/
-
-private:
-    QString m_desktopEntryName;
-    bool m_popupActivated;
-};
-
 class KonqMostOftenURLSAction : public KActionMenu
 {
     Q_OBJECT

@@ -212,7 +212,7 @@ void KonqFactory::getOffers( const QString & serviceType,
                              KService::List *appServiceOffers )
 {
 #ifdef __GNUC__
-#warning Temporary hack
+#warning Temporary hack -- must separate mimetypes and servicetypes better
 #endif
     if ( partServiceOffers && serviceType.length() > 0 && serviceType[0].isUpper() ) {
         *partServiceOffers = KServiceTypeTrader::self()->query( serviceType,
