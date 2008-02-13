@@ -314,7 +314,7 @@ bool KonqView::changeViewMode( const QString &serviceType,
 
   kDebug(1202) << "changeViewMode: serviceType is " << serviceType
                 << " serviceName is " << serviceName
-                << " current service name is " << m_service->desktopEntryName() << endl;
+                << " current service name is " << m_service->desktopEntryName();
 
   if ( KMimeType::mimeType(serviceType) && KMimeType::mimeType(serviceType)->is(m_serviceType) && (serviceName.isEmpty() || serviceName == m_service->desktopEntryName()) )
     return true;
@@ -371,7 +371,7 @@ bool KonqView::changeViewMode( const QString &serviceType,
   return true;
 }
 
-void KonqView::connectPart(  )
+void KonqView::connectPart()
 {
   //kDebug(1202) << "KonqView::connectPart";
   connect( m_pPart, SIGNAL( started( KIO::Job * ) ),
@@ -384,6 +384,11 @@ void KonqView::connectPart(  )
            this, SLOT( slotCanceled( const QString & ) ) );
   connect( m_pPart, SIGNAL( setWindowCaption( const QString & ) ),
            this, SLOT( setCaption( const QString & ) ) );
+  if (!internalViewMode().isEmpty()) {
+      // Update checked action in "View Mode" menu when switching view mode in dolphin
+      connect(m_pPart, SIGNAL(viewModeChanged()),
+              m_pMainWindow, SLOT(slotInternalViewModeChanged()));
+  }
 
   KParts::BrowserExtension *ext = browserExtension();
 
@@ -790,9 +795,8 @@ void KonqView::go( int steps )
   int newPos = historyIndex() + steps;
 #ifdef DEBUG_HISTORY
   kDebug(1202) << "go : steps=" << steps
-                << " newPos=" << newPos
-                << " m_lstHistory.count()=" << m_lstHistory.count()
-                << endl;
+               << " newPos=" << newPos
+               << " m_lstHistory.count()=" << m_lstHistory.count();
 #endif
   if( newPos < 0 || newPos >= m_lstHistory.count() )
     return;
@@ -822,7 +826,7 @@ void KonqView::restoreHistory()
   if ( ! changeViewMode( h.strServiceType, h.strServiceName ) )
   {
     kWarning(1202) << "Couldn't change view mode to " << h.strServiceType
-                    << " " << h.strServiceName << endl;
+                    << " " << h.strServiceName;
     return /*false*/;
   }
 
@@ -1408,5 +1412,16 @@ void KonqView::loadHistoryConfig(const KConfigGroup& config, const QString &pref
     restoreHistory();
 }
 
+
+QString KonqView::internalViewMode() const
+{
+    const QVariant viewModeProperty = m_pPart->property("currentViewMode");
+    return viewModeProperty.toString();
+}
+
+void KonqView::setInternalViewMode(const QString& viewMode)
+{
+    m_pPart->setProperty("currentViewMode", viewMode);
+}
 
 #include "konqview.moc"

@@ -282,9 +282,19 @@ public:
   bool isLockedViewMode() const { return m_bToggleView || m_bPassiveMode; }
 
   // True if "builtin" (see X-KDE-BrowserView-Built-Into)
-  bool isBuiltinView() const { return m_bBuiltinView; }
+  //bool isBuiltinView() const { return m_bBuiltinView; }
 
-  void setService( const KService::Ptr &s ) { m_service = s; }
+    /**
+     * The current viewmode used by this view -- only meaningful
+     * when the part implements several view modes internally, like DolphinPart.
+     */
+    QString internalViewMode() const;
+    /**
+     * Switch the internal view mode in this view -- only meaningful
+     * when the part implements several view modes internally, like DolphinPart.
+     */
+    void setInternalViewMode(const QString& viewMode);
+
   KService::Ptr service() { return m_service; }
 
   QString caption() const { return m_caption; }
@@ -377,7 +387,7 @@ public Q_SLOTS:
   // but also to KonqRun's job
   void slotInfoMessage( KJob *, const QString &msg );
 
-protected Q_SLOTS:
+private Q_SLOTS:
   // connected to the KROP's KIO::Job
   void slotStarted( KIO::Job * job );
   void slotCompleted();
