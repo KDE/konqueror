@@ -202,12 +202,11 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
   m_goBuffer = 0;
   m_configureDialog = 0;
 
-  m_bViewModeToggled = false;
-
   m_viewModesGroup = new QActionGroup(this);
   m_viewModesGroup->setExclusive(true);
-  m_toolBarViewModesGroup = new QActionGroup(this);
-  m_toolBarViewModesGroup->setExclusive(true);
+  connect(m_viewModesGroup, SIGNAL(triggered(QAction*)),
+          this, SLOT(slotViewModeTriggered(QAction*)),
+          Qt::QueuedConnection); // Queued so that we don't delete the action from the code that triggered it.
 
   m_prevMenuBarVisible = true;
 
@@ -337,12 +336,6 @@ KonqMainWindow::~KonqMainWindow()
 
     qDeleteAll(m_openWithActions);
     m_openWithActions.clear();
-    qDeleteAll(m_toolBarViewModeActions);
-    m_toolBarViewModeActions.clear();
-    qDeleteAll(m_viewModeActions);
-    m_viewModeActions.clear();
-
-  saveToolBarServicesMap();
 
   delete m_pBookmarkMenu;
   delete m_paBookmarkBar;
@@ -497,7 +490,7 @@ void KonqMainWindow::openUrl( KonqView *_view, const KUrl &_url,
 #ifndef NDEBUG // needed for req.debug()
   kDebug(1202) << "KonqMainWindow::openUrl : url = '" << _url << "'  "
                 << "mimeType='" << _mimeType << " req=" << req.debug()
-                << "' view=" << _view << endl;
+                << "' view=" << _view;
 #endif
 
   KUrl url( _url );
@@ -763,37 +756,28 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
 
   // Look for which view mode to use, if a directory - not if view locked
   if ( ( !childView || (!childView->isLockedViewMode()) )
-       && mimeType == "inode/directory" )
-    { // Phew !
+       && mimeType == "inode/directory" ) {
 
-      // Set view mode if necessary (current view doesn't support directories)
-      if ( !childView || !childView->supportsMimeType( mimeType ) )
-        serviceName = KonqSettings::mainViewViewMode();
-
-      if ( url.isLocalFile() ) // local, we can do better (.directory)
-        {
-          // Read it in the .directory file, default to m_bHTMLAllowed
+      if ( url.isLocalFile() ) { // local, check .directory file
+          // Read HTMLAllowed in the .directory file, default to m_bHTMLAllowed
           KUrl urlDotDir( url );
           urlDotDir.addPath(".directory");
           bool HTMLAllowed = m_bHTMLAllowed;
           QFile f( urlDotDir.path() );
-          if ( f.open(QIODevice::ReadOnly) )
-            {
+          if ( f.open(QIODevice::ReadOnly) ) {
               f.close();
-              KConfig config( urlDotDir.path(), KConfig::SimpleConfig);
+              KConfig config(urlDotDir.path(), KConfig::SimpleConfig);
               KConfigGroup urlProperties( &config, "URL properties" );
               HTMLAllowed = urlProperties.readEntry( "HTMLAllowed", m_bHTMLAllowed);
               serviceName = urlProperties.readEntry( "ViewMode", serviceName );
-              kDebug(1202) << "serviceName=" << serviceName;
-            }
+              //kDebug(1202) << "serviceName=" << serviceName;
+          }
           if ( HTMLAllowed &&
-               ( ( indexFile = findIndexFile( url.path() ) ) != QString() ) )
-            {
+               ( !( indexFile = findIndexFile( url.path() ) ).isEmpty() ) ) {
               mimeType = "text/html";
-              url = KUrl();
-              url.setPath( indexFile );
+              url = KUrl(indexFile);
               serviceName.clear(); // cancel what we just set, this is not a dir finally
-            }
+          }
 
           // Reflect this setting in the menu
           m_ptaUseHTML->setChecked( HTMLAllowed );
@@ -904,8 +888,7 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
           childView->openUrl( url, originalURL, req.nameFilter, req.tempFile );
   }
   kDebug(1202) << "KonqMainWindow::openView ok=" << ok << " bOthersFollowed=" << bOthersFollowed << " returning "
-                << (ok || bOthersFollowed)
-                << endl;
+                << (ok || bOthersFollowed);
   return ok || bOthersFollowed;
 }
 
@@ -1085,7 +1068,7 @@ bool KonqMainWindow::makeViewsFollow( const KUrl & url,
     //kDebug(1202) << "View " << view->service()->name()
     //              << " supports dirs: " << view->supportsMimeType( "inode/directory" )
     //              << " is locked-view-mode:" << view->isLockedViewMode()
-    //              << " ignore=" << ignore << endl;
+    //              << " ignore=" << ignore;
     if ( !ignore )
       res = followed || res;
   }
@@ -1113,7 +1096,7 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
 
     kDebug(1202) << "KonqMainWindow::slotCreateNewWindow url=" << url
                   << " args.mimeType()=" << args.mimeType()
-                  << " browserArgs.frameName=" << browserArgs.frameName << endl;
+                  << " browserArgs.frameName=" << browserArgs.frameName;
 
     if ( part )
         *part = 0; // Make sure to be initialized in case of failure...
@@ -1432,7 +1415,7 @@ void KonqMainWindow::slotOpenTerminal()
   QProcess::startDetached(prog, args, dir, NULL);
 
   kDebug(1202) << "slotOpenTerminal: directory " << dir
-		<< ", terminal:" << term << endl;
+		<< ", terminal:" << term;
 }
 
 void KonqMainWindow::slotOpenLocation()
@@ -1553,124 +1536,45 @@ void KonqMainWindow::slotOpenWith()
     }
 }
 
-void KonqMainWindow::slotViewModeToggle( bool toggle )
+void KonqMainWindow::slotViewModeTriggered(QAction* action)
 {
-  if ( !toggle )
-    return;
+    // Gather data from the action, since the action will be deleted by changeViewMode
+    const QString modeName = action->objectName();
+    const QString internalViewMode = action->data().toString();
 
-  const KAction* action = static_cast<const KAction*>( sender() );
-  QString modeName = action->objectName();
-  // for KonqViewModeActions the service name is stored as a member
-  if ( const KonqViewModeAction* kvmAction = qobject_cast<const KonqViewModeAction *>( action ) )
-      modeName = kvmAction->desktopEntryName();
+    if ( m_currentView->service()->desktopEntryName() != modeName ) {
+        m_currentView->stop();
+        m_currentView->lockHistory();
 
-  if ( m_currentView->service()->desktopEntryName() == modeName )
-    return;
-
-  m_bViewModeToggled = true;
-
-  m_currentView->stop();
-  m_currentView->lockHistory();
-
-  // Save those, because changeViewMode will lose them
-  KUrl url = m_currentView->url();
-  QString locationBarURL = m_currentView->locationBarURL();
+        // Save those, because changeViewMode will lose them
+        KUrl url = m_currentView->url();
+        QString locationBarURL = m_currentView->locationBarURL();
 #if 0
-  QStringList filesToSelect;
-  KonqDirPart* dirPart = ::qobject_cast<KonqDirPart *>(m_currentView->part());
-  if( dirPart ) {
-     const KFileItemList fileItemsToSelect = dirPart->selectedFileItems();
-     KFileItemList::const_iterator it = fileItemsToSelect.begin();
-     const KFileItemList::const_iterator end = fileItemsToSelect.end();
-     for ( ; it != end; ++it ) {
-         filesToSelect += (*it)->name();
-     }
-  }
+        QStringList filesToSelect;
+        KonqDirPart* dirPart = ::qobject_cast<KonqDirPart *>(m_currentView->part());
+        if( dirPart ) {
+            const KFileItemList fileItemsToSelect = dirPart->selectedFileItems();
+            KFileItemList::const_iterator it = fileItemsToSelect.begin();
+            const KFileItemList::const_iterator end = fileItemsToSelect.end();
+            for ( ; it != end; ++it ) {
+                filesToSelect += (*it)->name();
+            }
+        }
 #endif
 
-  bool bQuickViewModeChange = false;
-
-  // iterate over all services, update the toolbar service map
-  // and check if we can do a quick property-based viewmode change
-  const KService::List offers = m_currentView->partServiceOffers();
-  KService::List::ConstIterator oIt = offers.begin();
-  KService::List::ConstIterator oEnd = offers.end();
-  const QString currentServiceKey = viewModeActionKey( m_currentView->service() );
-  for (; oIt != oEnd; ++oIt )
-  {
-      KService::Ptr service = *oIt;
-
-      if ( service->desktopEntryName() == modeName )
-      {
-          // we changed the viewmode of either iconview or listview
-          // -> update the service in the corresponding map, so that
-          // we can set the correct text, icon, etc. properties to the
-          // KonqViewModeAction when rebuilding the view-mode actions in
-          // updateViewModeActions
-          // (I'm saying iconview/listview here, but theoretically it could be
-          //  any view :)
-          const QString serviceKey = viewModeActionKey( service );
-          m_viewModeToolBarServices[ serviceKey ] = service;
-
-          if ( serviceKey == currentServiceKey )
-          {
-              QVariant modeProp = service->property( "X-KDE-BrowserView-ModeProperty" );
-              QVariant modePropValue = service->property( "X-KDE-BrowserView-ModePropertyValue" );
-              if ( !modeProp.isValid() || !modePropValue.isValid() )
-                  break;
-
-              m_currentView->part()->setProperty( modeProp.toString().toLatin1(), modePropValue );
-
-              KService::Ptr oldService = m_currentView->service();
-
-              // we aren't going to re-build the viewmode actions but instead of a
-              // quick viewmode change (iconview) -> find the iconview-konqviewmode
-              // action and set new text,icon,etc. properties, to show the new
-              // current viewmode
-              for (int i = 0; i < m_toolBarViewModeActions.size(); ++i)
-                  if ( m_toolBarViewModeActions.at(i)->objectName() == oldService->desktopEntryName() )
-                  {
-                      assert( ::qobject_cast<KonqViewModeAction *>( m_toolBarViewModeActions.at(i) ) );
-
-                      KonqViewModeAction *action = static_cast<KonqViewModeAction *>( m_toolBarViewModeActions.at(i) );
-
-                      action->setChecked( true );
-		      QString servicename = service->genericName();
-		      if (servicename.isEmpty())
-		          servicename = service->name();
-                      action->setText( servicename );
-                      action->setIcon( KIcon( service->icon() ) );
-                      // Bypassing KAction restriction - this action will not be found via KActionCollection when doing a name search
-                      action->QAction::setObjectName( service->desktopEntryName() );
-
-                      break;
-                  }
-
-              m_currentView->setService( service );
-
-              bQuickViewModeChange = true;
-              break;
-          }
-      }
-  }
-
-  if ( !bQuickViewModeChange )
-  {
-    m_currentView->changeViewMode( m_currentView->serviceType(), modeName );
-    KUrl locURL( locationBarURL );
-    QString nameFilter = detectNameFilter( locURL );
+        m_currentView->changeViewMode( m_currentView->serviceType(), modeName );
+        KUrl locURL( locationBarURL );
+        QString nameFilter = detectNameFilter( locURL );
 #if 0
-    KonqDirPart* dirPart = ::qobject_cast<KonqDirPart *>(m_currentView->part());
-    if( dirPart )
-       dirPart->setFilesToSelect( filesToSelect );
+        KonqDirPart* dirPart = ::qobject_cast<KonqDirPart *>(m_currentView->part());
+        if( dirPart )
+            dirPart->setFilesToSelect( filesToSelect );
 #endif
-    m_currentView->openUrl( locURL, locationBarURL, nameFilter );
-  }
+        m_currentView->openUrl( locURL, locationBarURL, nameFilter );
+    }
 
-    // We save the global view mode only if the view is a built-in view
-    if ( m_currentView->isBuiltinView() ) {
-        KonqSettings::setMainViewViewMode( modeName );
-        KonqSettings::self()->writeConfig();
+    if (!internalViewMode.isEmpty() && internalViewMode != m_currentView->internalViewMode()) {
+        m_currentView->setInternalViewMode(internalViewMode);
     }
 }
 
@@ -2063,7 +1967,7 @@ void KonqMainWindow::slotViewCompleted( KonqView * view )
 void KonqMainWindow::slotPartActivated( KParts::Part *part )
 {
   kDebug(1202) << "KonqMainWindow::slotPartActivated " << part << " "
-                <<  ( part && part->componentData().isValid() && part->componentData().aboutData() ? part->componentData().aboutData()->appName() : "" ) << endl;
+                <<  ( part && part->componentData().isValid() && part->componentData().aboutData() ? part->componentData().aboutData()->appName() : "" );
 
   KonqView *newView = 0;
   KonqView *oldView = m_currentView;
@@ -2141,44 +2045,9 @@ void KonqMainWindow::slotPartActivated( KParts::Part *part )
   m_currentView->frame()->setTitle( m_currentView->caption() , 0);
   updateOpenWithActions();
   updateViewActions(); // undo, lock, link and other view-dependent actions
+  updateViewModeActions();
 
-  if ( m_bViewModeToggled )
-  {
-      // if we just toggled the view mode via the view mode actions, then
-      // we don't need to do all the time-taking stuff below (Simon)
-      const QString currentServiceDesktopEntryName = m_currentView->service()->desktopEntryName();
-      foreach( KToggleAction* action, m_viewModeActions ) {
-          if ( action->objectName() == currentServiceDesktopEntryName ) {
-              action->setChecked( true );
-              break;
-          }
-      }
-      const QString currentServiceLibrary = viewModeActionKey( m_currentView->service() );
-      for (int i = 0; i < m_toolBarViewModeActions.size(); ++i) {
-          KService::Ptr serv = KService::serviceByDesktopName(  m_toolBarViewModeActions.at(i)->objectName() );
-          if ( serv && viewModeActionKey( serv ) == currentServiceLibrary ) {
-              KToggleAction* ta = static_cast<KToggleAction*>( m_toolBarViewModeActions.at(i));
-              ta->setChecked( true );
-	      QString servicename = m_currentView->service()->genericName();
-	      if (servicename.isEmpty())
-	          servicename = m_currentView->service()->name();
-              ta->setText( servicename );
-              ta->setIcon( KIcon( m_currentView->service()->icon() ) );
-              // Bypassing KAction restriction - this action will not be found via KActionCollection when doing a name search
-              ta->QAction::setObjectName( m_currentView->service()->desktopEntryName().toAscii() ) ;
-              break;
-          }
-      }
-  }
-  else
-  {
-      updateViewModeActions();
-  }
-
-  m_bViewModeToggled = false;
-
-
-  m_pMenuNew->setEnabled( m_currentView->supportsMimeType( QLatin1String( "inode/directory" ) ));
+  m_pMenuNew->setEnabled( m_currentView->supportsMimeType( QLatin1String("inode/directory") ));
 
   m_currentView->frame()->statusbar()->updateActiveStatus();
 
@@ -2186,7 +2055,7 @@ void KonqMainWindow::slotPartActivated( KParts::Part *part )
     oldView->frame()->statusbar()->updateActiveStatus();
 
   //kDebug(1202) << "KonqMainWindow::slotPartActivated: setting location bar url to "
-  //              << m_currentView->locationBarURL() << " m_currentView=" << m_currentView << endl;
+  //              << m_currentView->locationBarURL() << " m_currentView=" << m_currentView;
   m_currentView->setLocationBarURL( m_currentView->locationBarURL() );
 
   updateToolBarActions();
@@ -2304,7 +2173,7 @@ KonqView * KonqMainWindow::childView( KParts::ReadOnlyPart *callingPart, const Q
     KonqView* view = it.value();
     QString viewName = view->viewName();
     kDebug() << "       - viewName=" << viewName << "   "
-              << "frame names:" << view->frameNames().join( "," ) << endl;
+              << "frame names:" << view->frameNames().join( "," );
 
     // First look for a hostextension containing this frame name
     KParts::BrowserHostExtension *ext = KParts::BrowserHostExtension::childObject( view->part() );
@@ -4248,7 +4117,7 @@ void KonqMainWindow::connectExtension( KParts::BrowserExtension *ext )
       } else
           act->setEnabled(false);
 
-    } else kError(1202) << "Error in BrowserExtension::actionSlotMap(), unknown action : " << it.key() << endl;
+    } else kError(1202) << "Error in BrowserExtension::actionSlotMap(), unknown action : " << it.key();
   }
 
 }
@@ -4787,7 +4656,7 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
   delete actPaste;
 
   //kDebug(1202) << "-------- KonqMainWindow::slotPopupMenu() - m_oldView = " << m_oldView << ", currentView = " << currentView
-  //<< ", m_currentView = " << m_currentView << endl;
+  //<< ", m_currentView = " << m_currentView;
 
   // Restore current view if current is passive
   if ( (m_oldView != currentView) && (currentView == m_currentView) && currentView->isPassiveMode() )
@@ -4922,220 +4791,105 @@ void KonqMainWindow::updateOpenWithActions()
   }
 }
 
-QString KonqMainWindow::viewModeActionKey( KService::Ptr service )
-{
-    QString library = service->library();
-    // Group all non-builtin views together
-    QVariant builtIntoProp = service->property( "X-KDE-BrowserView-Built-Into" );
-    if ( !builtIntoProp.isValid() || builtIntoProp.toString() != "konqueror" )
-        library = "external";
-    return library;
-}
-
 void KonqMainWindow::updateViewModeActions()
 {
-  unplugViewModeActions();
-  if ( m_viewModeMenu )
-  {
-    foreach( KToggleAction* action, m_viewModeActions )
-      foreach ( QWidget *w, action->associatedWidgets() )
-          w->removeAction( action );
+    unplugViewModeActions();
+    Q_FOREACH( QAction* action, m_viewModesGroup->actions() ) {
+        Q_FOREACH( QWidget *w, action->associatedWidgets() )
+            w->removeAction( action );
+        delete action;
+    }
+
     delete m_viewModeMenu;
-  }
+    m_viewModeMenu = 0;
 
-  m_viewModeMenu = 0;
-  qDeleteAll(m_toolBarViewModeActions);
-  m_toolBarViewModeActions.clear();
-  qDeleteAll(m_viewModeActions);
-  m_viewModeActions.clear();
+    const KService::List services = m_currentView->partServiceOffers();
+    if ( services.count() <= 1 )
+        return;
 
-  // if we changed the viewmode to something new, then we have to
-  // make sure to also clear our [libiconview,liblistview]->service-for-viewmode
-  // map
-  if ( m_viewModeToolBarServices.count() > 0 &&
-       !m_viewModeToolBarServices.begin().value()->serviceTypes().contains( m_currentView->serviceType() ) )
-  {
-      // Save the current map to the config file, for later reuse
-      saveToolBarServicesMap();
+    // TODO i18nc("@action:inmenu View", "&View Mode")
+    m_viewModeMenu = new KActionMenu( i18n("&View Mode"), this );
+    //actionCollection()->addAction( "viewModeMenu", m_viewModeMenu );
 
-      m_viewModeToolBarServices.clear();
-  }
+    KService::List::ConstIterator it = services.begin();
+    const KService::List::ConstIterator end = services.end();
+    for (; it != end; ++it) {
+        const KService::Ptr service = *it;
+        const QVariant prop = service->property( "X-KDE-BrowserView-Toggable" );
+        if (prop.isValid() && prop.toBool()) // No toggable views in view mode
+            continue;
 
-  KService::List services = m_currentView->partServiceOffers();
+        const QString desktopEntryName = service->desktopEntryName();
+        bool bIsCurrentView = desktopEntryName == m_currentView->service()->desktopEntryName();
 
-  if ( services.count() <= 1 )
-    return;
+        const QList<KServiceAction> actions = service->actions();
+        if (!actions.isEmpty()) {
 
-  m_viewModeMenu = new KActionMenu( i18n( "&View Mode" ), this );
-  actionCollection()->addAction( "viewModeMenu", m_viewModeMenu );
+            // The service provides several view modes, like DolphinPart
+            // -> create one action per view mode
+            Q_FOREACH(const KServiceAction& serviceAction, actions) {
+                // Create a KToggleAction for each view mode, and plug it into the menu
+                KToggleAction* action = new KToggleAction(KIcon(serviceAction.icon()), serviceAction.text(), this);
+                //actionCollection()->addAction(desktopEntryName /*not unique!*/, action);
+                action->setObjectName(desktopEntryName);
+                action->setData(QVariant(serviceAction.name()));
+                action->setActionGroup(m_viewModesGroup);
+                m_viewModeMenu->menu()->addAction(action);
+                if (bIsCurrentView && m_currentView->internalViewMode() == serviceAction.name()) {
+                    action->setChecked(true);
+                }
+            }
 
-  // a temporary map, just like the m_viewModeToolBarServices map, but
-  // mapping to a KonqViewModeAction object. It's just temporary as we
-  // of use it to group the viewmode actions (iconview,multicolumnview,
-  // treeview, etc.) into to two groups -> icon/list
-  // Although I wrote this now only of icon/listview it has to work for
-  // any view, that's why it's so general :)
-  QMap<QString,KonqViewModeAction*> groupedServiceMap;
+        } else {
+            // The service only provides one view mode (common case)
 
-  // Another temporary map, the preferred service for each library (2 entries in our example)
-  QMap<QString,QString> preferredServiceMap;
+            QString serviceText = service->genericName();
+            if (serviceText.isEmpty())
+                serviceText = service->name();
 
-  KSharedConfig::Ptr config = KGlobal::config();
-  KConfigGroup barServicesGroup( config, "ModeToolBarServices" );
+            // Create a KToggleAction for this view mode, and plug it into the menu
+            KToggleAction* action = new KToggleAction(KIcon(service->icon()), serviceText, this);
+            actionCollection()->addAction(desktopEntryName, action);
+            action->setObjectName(desktopEntryName);
+            action->setActionGroup(m_viewModesGroup);
+            m_viewModeMenu->menu()->addAction(action);
 
-  KService::List::ConstIterator it = services.begin();
-  KService::List::ConstIterator end = services.end();
-  for (; it != end; ++it )
-  {
-      QVariant prop = (*it)->property( "X-KDE-BrowserView-Toggable" );
-      if ( prop.isValid() && prop.toBool() ) // No toggable views in view mode
-          continue;
+            action->setChecked(bIsCurrentView);
+        }
+    }
 
-      QString itname = (*it)->genericName();
-      if (itname.isEmpty())
-          itname = (*it)->name();
-
-      QString icon = (*it)->icon();
-      // Create a KToggleAction for each view mode, and plug it into the menu
-      // we *have* to specify a parent qobject, otherwise the exclusive group stuff doesn't work!(Simon)
-      KToggleAction* action = new KToggleAction( KIcon(icon), itname, this );
-      actionCollection()->addAction( (*it)->desktopEntryName(), action );
-      action->setActionGroup( m_viewModesGroup );
-
-      connect( action, SIGNAL( toggled( bool ) ),
-               this, SLOT( slotViewModeToggle( bool ) ) );
-
-      m_viewModeActions.append( action );
-      m_viewModeMenu->menu()->addAction( action );
-
-      const QString library = viewModeActionKey( *it );
-
-      // look if we already have a KonqViewModeAction (in the toolbar)
-      // for this component
-      QMap<QString,KonqViewModeAction*>::Iterator mapIt = groupedServiceMap.find( library );
-
-      // if we don't have -> create one
-      if ( mapIt == groupedServiceMap.end() )
-      {
-          // default service on this action: the current one (i.e. the first one)
-          QString text = itname;
-          QString icon((*it)->icon());
-          QString desktopEntryName = (*it)->desktopEntryName();
-
-          // if we previously changed the viewmode (see slotViewModeToggle!)
-          // then we will want to use the previously used settings (previous as
-          // in before the actions got deleted)
-          QMap<QString,KService::Ptr>::ConstIterator serviceIt = m_viewModeToolBarServices.find( library );
-          if ( serviceIt != m_viewModeToolBarServices.end() )
-          {
-              kDebug(1202) << " Setting action for " << library << " to " << (*serviceIt)->name();
-              text = (*serviceIt)->genericName();
-              if (text.isEmpty())
-                  text = (*serviceIt)->name();
-              icon = (*serviceIt)->icon();
-              desktopEntryName = (*serviceIt)->desktopEntryName();
-          } else
-          {
-              // if we don't have it in the map, we should look for a setting
-              // for this library in the config file.
-              QString preferredService = barServicesGroup.readEntry( library, QString() );
-              if ( !preferredService.isEmpty() && desktopEntryName != preferredService )
-              {
-                  //kDebug(1202) << " Inserting into preferredServiceMap(" << library << ") : " << preferredService;
-                  // The preferred service isn't the current one, so remember to set it later
-                  preferredServiceMap[ library ] = preferredService;
-              }
-          }
-
-          KonqViewModeAction *tbAction = new KonqViewModeAction( desktopEntryName,
-                                                                 text,
-                                                                 KIcon(icon),
-                                                                 this );
-          actionCollection()->addAction( desktopEntryName.prepend( "viewmode_" ).toLatin1(), tbAction ); // prefix to avoid conflicts in the actioncollection
-
-          tbAction->setActionGroup( m_toolBarViewModesGroup );
-
-          tbAction->setChecked( action->isChecked() );
-
-          connect( tbAction, SIGNAL( toggled( bool ) ),
-                   this, SLOT( slotViewModeToggle( bool ) ) );
-
-          m_toolBarViewModeActions.append( tbAction );
-
-          mapIt = groupedServiceMap.insert( library, tbAction );
-      }
-
-      // Check the actions (toolbar button and menu item) if they correspond to the current view
-      bool bIsCurrentView = (*it)->desktopEntryName() == m_currentView->service()->desktopEntryName();
-      if ( bIsCurrentView )
-      {
-          (*mapIt)->setChecked( true );
-          action->blockSignals( true );
-          action->setChecked( true );
-          action->blockSignals( false );
-      }
-
-      // Set the contents of the button from the current service, either if it's the current view
-      // or if it's our preferred service for this button (library)
-      if ( bIsCurrentView
-           || ( preferredServiceMap.contains( library ) && (*it)->desktopEntryName() == preferredServiceMap[ library ] ) )
-      {
-          //kDebug(1202) << " Changing action for " << library << " into service " << (*it)->name();
-
-          QString mapitname = (*it)->genericName();
-          if (mapitname.isEmpty())
-              mapitname = (*it)->name();
-          (*mapIt)->setText( mapitname );
-          (*mapIt)->setIcon( KIcon((*it)->icon()) );
-          (*mapIt)->QAction::setObjectName( (*it)->desktopEntryName() ); // tricky...
-          preferredServiceMap.remove( library ); // The current view has priority over the saved settings
-      }
-
-      // plug action also into the delayed popupmenu of appropriate toolbar action
-      (*mapIt)->menu()->addAction( action );
-  }
-
-#ifndef NDEBUG
-  // Note that this can happen (map not empty) when a inode/directory view is removed,
-  // and remains in the KConfig file.
-  Q_ASSERT( preferredServiceMap.isEmpty() );
-  QMap<QString,QString>::Iterator debugIt = preferredServiceMap.begin();
-  QMap<QString,QString>::Iterator debugEnd = preferredServiceMap.end();
-  for ( ; debugIt != debugEnd ; ++debugIt )
-      kDebug(1202) << " STILL IN preferredServiceMap : " << debugIt.key() << " | " << debugIt.value();
-#endif
-
-  if ( !m_currentView->isToggleView() ) // No view mode for toggable views
-      // (The other way would be to enforce a better servicetype for them, than Browser/View)
-      if ( /* already tested: services.count() > 1 && */ m_viewModeMenu )
-          plugViewModeActions();
+    // No view mode for actions toggable views
+    // (The other way would be to enforce a better servicetype for them, than Browser/View)
+    if (!m_currentView->isToggleView()
+        /* already tested: && services.count() > 1 */
+        && m_viewModeMenu) {
+        plugViewModeActions();
+    }
 }
 
-void KonqMainWindow::saveToolBarServicesMap()
+void KonqMainWindow::slotInternalViewModeChanged()
 {
-    QMap<QString,KService::Ptr>::ConstIterator serviceIt = m_viewModeToolBarServices.begin();
-    QMap<QString,KService::Ptr>::ConstIterator serviceEnd = m_viewModeToolBarServices.end();
-    KSharedConfig::Ptr config = KGlobal::config();
-    KConfigGroup barServicesGroup( config, "ModeToolBarServices" );
-    for ( ; serviceIt != serviceEnd ; ++serviceIt )
-        barServicesGroup.writeEntry( serviceIt.key(), serviceIt.value()->desktopEntryName() );
-    barServicesGroup.sync();
+    const QString actionName = m_currentView->service()->desktopEntryName();
+    const QString actionData = m_currentView->internalViewMode();
+    Q_FOREACH(QAction* action, m_viewModesGroup->actions()) {
+        if (action->objectName() == actionName &&
+            action->data().toString() == actionData) {
+            action->setChecked(true);
+            break;
+        }
+    }
 }
 
 void KonqMainWindow::plugViewModeActions()
 {
-  QList<QAction*> lst;
-  lst.append( m_viewModeMenu );
-  plugActionList( "viewmode", lst );
-  // display the toolbar viewmode icons only for inode/directory, as here we have dedicated icons
-  if ( m_currentView && m_currentView->supportsMimeType( "inode/directory" ) )
-    plugActionList( "viewmode_toolbar", m_toolBarViewModeActions );
+    QList<QAction*> lst;
+    lst.append( m_viewModeMenu );
+    plugActionList( "viewmode", lst );
 }
 
 void KonqMainWindow::unplugViewModeActions()
 {
-  unplugActionList( "viewmode" );
-  unplugActionList( "viewmode_toolbar" );
+    unplugActionList( "viewmode" );
 }
 
 void KonqMainWindow::updateBookmarkBar()
@@ -5811,7 +5565,7 @@ bool KonqMainWindow::checkPreloadResourceUsage()
     int limit;
     int usage = current_memory_usage( &limit );
     kDebug(1202) << "Memory usage increase: " << ( usage - s_initialMemoryUsage )
-        << " (" << usage << "/" << s_initialMemoryUsage << "), increase limit: " << limit << endl;
+        << " (" << usage << "/" << s_initialMemoryUsage << "), increase limit: " << limit;
     int max_allowed_usage = s_initialMemoryUsage + limit;
     if( usage > max_allowed_usage ) // too much memory used?
     {
