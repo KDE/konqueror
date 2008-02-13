@@ -4807,8 +4807,7 @@ void KonqMainWindow::updateViewModeActions()
     if ( services.count() <= 1 )
         return;
 
-    // TODO i18nc("@action:inmenu View", "&View Mode")
-    m_viewModeMenu = new KActionMenu( i18n("&View Mode"), this );
+    m_viewModeMenu = new KActionMenu( i18nc("@action:inmenu View", "&View Mode"), this );
     //actionCollection()->addAction( "viewModeMenu", m_viewModeMenu );
 
     KService::List::ConstIterator it = services.begin();
