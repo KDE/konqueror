@@ -365,9 +365,10 @@ void scanDirectory( const QString &dir, QStringList &mimeInfoList,
 
            char *data = (char *)malloc(4096);
            if (!data) continue;
+           int size;
 
            // when the child closes, we'll get an EOF (size == 0)
-           while (int size = q_read_pipe.read(data, 4096) > 0)
+           while ((size = q_read_pipe.read(data, 4096)) > 0)
                m_buffer.write(data, size);
            free(data);
 
