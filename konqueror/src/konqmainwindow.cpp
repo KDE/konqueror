@@ -4902,11 +4902,12 @@ void KonqMainWindow::updateBookmarkBar()
 
 void KonqMainWindow::closeEvent( QCloseEvent *e )
 {
-  kDebug(1202) << "KonqMainWindow::closeEvent begin";
-  // This breaks session management (the window is withdrawn in kwin)
-  // so let's do this only when closed by the user.
-  if ( static_cast<KonquerorApplication *>(kapp)->closedByUser() )
-  {
+    // This breaks session management (the window is withdrawn in kwin)
+    // so let's do this only when closed by the user.
+    KonquerorApplication* konqApp = qobject_cast<KonquerorApplication *>(qApp);
+
+    // konqApp is 0 in unit tests
+    if (konqApp && konqApp->closedByUser()) {
       KonqFrameTabs* tabContainer = m_pViewManager->tabContainer();
       if ( tabContainer->count() > 1 )
       {
@@ -4992,7 +4993,7 @@ void KonqMainWindow::closeEvent( QCloseEvent *e )
 
 bool KonqMainWindow::queryExit()
 {
-    if( kapp->sessionSaving()) // *sigh*
+    if( kapp && kapp->sessionSaving()) // *sigh*
         return true;
     return !stayPreloaded();
 }
@@ -5457,7 +5458,6 @@ void KonqMainWindow::resetWindow()
 // Qt remembers the iconic state if the window was withdrawn while on another virtual desktop
     setWindowState( windowState() & ~Qt::WindowMinimized );
     ignoreInitialGeometry();
-    kapp->setTopWidget( this ); // set again the default window icon
 }
 
 bool KonqMainWindow::event( QEvent* e )

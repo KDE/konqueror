@@ -20,11 +20,13 @@
 #ifndef __konqopenurlrequest_h
 #define __konqopenurlrequest_h
 
+#include "konqprivate_export.h"
+
 #include <QtCore/QStringList>
 
 #include <kparts/browserextension.h>
 
-struct KonqOpenURLRequest {
+struct KONQ_TESTS_EXPORT KonqOpenURLRequest {
 
   KonqOpenURLRequest() :
       followMode(false), newTab(false), newTabInFront(false),
