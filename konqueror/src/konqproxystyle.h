@@ -18,6 +18,9 @@
     MA  02110-1301, USA.
 */
 
+#ifndef KONQOPENURLREQUEST_H
+#define KONQOPENURLREQUEST_H
+
 #include <QtGui/QStyle>
 
 class KonqProxyStyle : public QStyle
@@ -58,4 +61,5 @@ public:
 protected:
     QWidget *parent;
 };
+#endif
 
