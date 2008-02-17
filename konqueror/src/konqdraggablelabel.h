@@ -16,6 +16,8 @@
    the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
    Boston, MA 02110-1301, USA.
 */
+#ifndef KONQDRAGGABLELABEL_H
+#define KONQDRAGGABLELABEL_H
 
 #include <kurl.h>
 #include <QtGui/QLabel>
@@ -43,3 +45,5 @@ private:
     KonqMainWindow * m_mw;
     KUrl::List _savedLst;
 };
+#endif
+
