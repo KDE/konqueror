@@ -260,7 +260,9 @@ void NSPluginLoader::scanPlugins()
               QString stripped = (*suffix).trimmed();
 
               int p=0;
-              for ( ; p<stripped.length() && stripped[p]=='.'; p++ );
+              for ( ; p<stripped.length() && stripped[p]=='.'; p++ ) {
+                  ;
+              }
               stripped = stripped.right( stripped.length()-p );
 
               // add filetype to list
