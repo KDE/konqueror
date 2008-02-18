@@ -531,8 +531,8 @@ void KonqView::slotStarted( KIO::Job * job )
   if (job)
   {
       // Manage passwords properly...
-      kDebug(7035) << "slotStarted: Window ID = " << m_pMainWindow->topLevelWidget()->winId();
-      job->ui()->setWindow (m_pMainWindow->topLevelWidget ());
+      kDebug(7035) << "slotStarted: Window ID = " << m_pMainWindow->window()->winId();
+      job->ui()->setWindow (m_pMainWindow->window());
 
       connect( job, SIGNAL( percent( KJob *, unsigned long ) ), this, SLOT( slotPercent( KJob *, unsigned long ) ) );
       connect( job, SIGNAL( speed( KJob *, unsigned long ) ), this, SLOT( slotSpeed( KJob *, unsigned long ) ) );

@@ -428,5 +428,5 @@ void KfindWindow::slotContextMenu(K3ListView *,Q3ListViewItem *item,const QPoint
 
 void KfindWindow::slotOpenWith()
 {
-   KRun::displayOpenWithDialog( KUrl::split(((KfFileLVI*)currentItem())->fileitem.url()), topLevelWidget() );
+   KRun::displayOpenWithDialog( KUrl::split(((KfFileLVI*)currentItem())->fileitem.url()), window() );
 }

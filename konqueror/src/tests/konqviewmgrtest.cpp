@@ -112,7 +112,7 @@ void ViewMgrTest::testCreateFirstView()
 
     // Check widget parents:  part's widget -> frame -> [tabwidget's stack] -> tabwidget -> mainWindow
     QWidget* partWidget = view->part()->widget();
-    QCOMPARE( partWidget->topLevelWidget(), &mainWindow );
+    QCOMPARE( partWidget->window(), &mainWindow );
     QWidget* frame = view->frame()->asQWidget();
     QCOMPARE( partWidget->parentWidget(), frame );
     QWidget* tabWidget = viewManager->tabContainer()->asQWidget();
@@ -166,13 +166,13 @@ void ViewMgrTest::testSplitView()
     // Check widget parents
     //mainWindow.dumpObjectTree();
     QWidget* partWidget = view->part()->widget();
-    QCOMPARE( partWidget->topLevelWidget(), &mainWindow );
+    QCOMPARE( partWidget->window(), &mainWindow );
     QWidget* frame = view->frame()->asQWidget();
     QCOMPARE( partWidget->parentWidget(), frame );
     QVERIFY(!frame->isHidden());
 
     QWidget* part2Widget = view2->part()->widget();
-    QCOMPARE( part2Widget->topLevelWidget(), &mainWindow );
+    QCOMPARE( part2Widget->window(), &mainWindow );
     QWidget* frame2 = view2->frame()->asQWidget();
     QCOMPARE( part2Widget->parentWidget(), frame2 );
     QVERIFY(!frame2->isHidden());
@@ -240,13 +240,13 @@ void ViewMgrTest::testSplitMainContainer()
 
     // Check widget parents
     QWidget* partWidget = view->part()->widget();
-    QCOMPARE( partWidget->topLevelWidget(), &mainWindow );
+    QCOMPARE( partWidget->window(), &mainWindow );
     QWidget* frame = view->frame()->asQWidget();
     QCOMPARE( partWidget->parentWidget(), frame );
     QVERIFY(!frame->isHidden());
 
     QWidget* part2Widget = view2->part()->widget();
-    QCOMPARE( part2Widget->topLevelWidget(), &mainWindow );
+    QCOMPARE( part2Widget->window(), &mainWindow );
     QWidget* frame2 = view2->frame()->asQWidget();
     QCOMPARE( part2Widget->parentWidget(), frame2 );
     QVERIFY(!frame2->isHidden());
