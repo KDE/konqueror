@@ -27,7 +27,7 @@ qt4_add_dbus_adaptor(konquerorprivate_SRCS org.kde.Konqueror.HistoryManager.xml 
 kde4_add_library(konquerorprivate SHARED ${konquerorprivate_SRCS})
 target_link_libraries(konquerorprivate ${KDE4_KPARTS_LIBS})
 set_target_properties(konquerorprivate PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION} )
-install(TARGETS konquerorprivate DESTINATION ${LIB_INSTALL_DIR})
+install(TARGETS konquerorprivate DESTINATION ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### konqueror ###############
 if (WIN32)
@@ -75,7 +75,7 @@ kde4_add_kdeinit_executable(konqueror ${konqueror_KDEINIT_SRCS} konqmain.cpp)
 target_link_libraries(kdeinit_konqueror konquerorprivate konq ${KDE4_KPARTS_LIBS} ${KDE4_KUTILS_LIBS})
 target_link_libraries(konqueror kdeinit_konqueror)
 
-install(TARGETS kdeinit_konqueror  DESTINATION ${LIB_INSTALL_DIR} )
+install(TARGETS kdeinit_konqueror  DESTINATION ${INSTALL_TARGETS_DEFAULT_ARGS} )
 install(TARGETS konqueror DESTINATION ${BIN_INSTALL_DIR})
 
 ########### install files ###############

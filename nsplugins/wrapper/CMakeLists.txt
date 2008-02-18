@@ -11,5 +11,5 @@ kde4_add_library(nswrapper SHARED ${nswrapper_LIB_SRCS})
 target_link_libraries(nswrapper  ${KDE4_KDECORE_LIBS} )
 
 set_target_properties(nswrapper PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION} )
-install(TARGETS nswrapper  DESTINATION ${LIB_INSTALL_DIR} )
+install(TARGETS nswrapper  DESTINATION ${INSTALL_TARGETS_DEFAULT_ARGS} )
 

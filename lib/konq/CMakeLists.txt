@@ -25,7 +25,7 @@ kde4_add_library(konq SHARED ${konq_LIB_SRCS})
 target_link_libraries(konq ${QT_QTXML_LIBRARY} ${KDE4_KPARTS_LIBS})
 
 set_target_properties(konq PROPERTIES VERSION ${KDE_NON_GENERIC_LIB_VERSION} SOVERSION ${KDE_NON_GENERIC_LIB_SOVERSION} )
-install(TARGETS konq  DESTINATION ${LIB_INSTALL_DIR})
+install(TARGETS konq  DESTINATION ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### konq_sound ###############
 
