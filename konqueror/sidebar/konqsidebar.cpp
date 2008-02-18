@@ -29,7 +29,7 @@ KonqSidebar::KonqSidebar( QWidget *parentWidget, QObject *parent, bool universal
 	setComponentData(KonqSidebarFactory::componentData());
 	m_extension = 0;
 	// this should be your custom internal widget
-	m_widget = new Sidebar_Widget( parentWidget, this, universalMode, parentWidget->topLevelWidget()->property("currentProfile").toString() );
+	m_widget = new Sidebar_Widget( parentWidget, this, universalMode, parentWidget->window()->property("currentProfile").toString() );
 	m_extension = new KonqSidebarBrowserExtension( this, m_widget );
 	connect(m_widget,SIGNAL(started(KIO::Job *)),
 		this, SIGNAL(started(KIO::Job*)));
