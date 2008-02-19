@@ -278,6 +278,9 @@ static int tryCheck(int write_fd, const QString &absFile)
     // remove version info, as it is not used at the moment
     QRegExp versionRegExp(";version=[^:]*:");
     mimeInfo.replace( versionRegExp, ":");
+    if (!mimeInfo.isEmpty() && !mimeInfo.endsWith(';')) {
+        mimeInfo += ';'; // XDG compliance
+    }
 
     // unload plugin lib
     kDebug(1433) << " - unloading plugin";
