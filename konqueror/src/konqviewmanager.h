@@ -197,18 +197,18 @@ public:
    * @param path the full path to the config file
    * @param filename if set, remember the file name of the profile (for save settings)
    * It has to be under the profiles dir. Otherwise, set to QString()
-   * @param forcedURL if set, the URL to open, whatever the profile says
-   * @param req attributes related to @p forcedURL
+   * @param forcedUrl if set, the URL to open, whatever the profile says
+   * @param req attributes related to @p forcedUrl
    * @param resetWindow if the profile doesn't have attributes like size or toolbar
    * settings, they will be reset to the defaults
    */
   void loadViewProfileFromFile( const QString & path, const QString & filename,
-                                const KUrl & forcedURL = KUrl(),
+                                const KUrl & forcedUrl = KUrl(),
                                 const KonqOpenURLRequest &req = KonqOpenURLRequest(),
                                 bool resetWindow = false, bool openUrl = true );
     // Overload for KonqMisc::createBrowserWindowFromProfile
   void loadViewProfileFromConfig( const KConfig& config, const QString & filename,
-                                  const KUrl & forcedURL = KUrl(),
+                                  const KUrl & forcedUrl = KUrl(),
                                   const KonqOpenURLRequest &req = KonqOpenURLRequest(),
                                   bool resetWindow = false, bool openUrl = true );
   /**
@@ -216,13 +216,13 @@ public:
    * @param cfg the config file
    * @param filename if set, remember the file name of the profile (for save settings)
    * It has to be under the profiles dir. Otherwise, set to QString()
-   * @param forcedURL if set, the URL to open, whatever the profile says
-   * @param req attributes related to @p forcedURL
+   * @param forcedUrl if set, the URL to open, whatever the profile says
+   * @param req attributes related to @p forcedUrl
    * @param resetWindow if the profile doesn't have attributes like size or toolbar
    * settings, they will be reset to the defaults
    */
   void loadViewProfileFromGroup( const KConfigGroup& cfg, const QString & filename,
-                                 const KUrl & forcedURL = KUrl(),
+                                 const KUrl & forcedUrl = KUrl(),
                                  const KonqOpenURLRequest &req = KonqOpenURLRequest(),
                                  bool resetWindow = false, bool openUrl = true );
   /**
@@ -318,13 +318,17 @@ private:
    * ...
    * @param defaultURL the URL to use if the profile doesn't contain urls
    * @param openUrl whether to open urls at all (from the profile or using @p defaultURL).
-   *  (this is set to false when we have a forcedURL to open)
+   *  (this is set to false when we have a forcedUrl to open)
    */
   void loadItem( const KConfigGroup &cfg, KonqFrameContainerBase *parent,
-                 const QString &name, const KUrl & defaultURL, bool openUrl, bool openAfterCurrentPage = false, int pos = -1 );
+                 const QString &name, const KUrl & defaultURL, bool openUrl,
+                 const KUrl& forcedUrl,
+                 bool openAfterCurrentPage = false, int pos = -1 );
 
     void loadRootItem( const KConfigGroup &cfg, KonqFrameContainerBase *parent,
-                       const KUrl & defaultURL, bool openUrl, bool openAfterCurrentPage = false,
+                       const KUrl & defaultURL, bool openUrl,
+                       const KUrl& forcedUrl,
+                       bool openAfterCurrentPage = false,
                        int pos = -1 );
 
     void createTabContainer(QWidget* parent, KonqFrameContainerBase* parentContainer);
