@@ -253,10 +253,9 @@ KEBApp::KEBApp(
 
     mBookmarkFolderView = new BookmarkFolderView(mBookmarkListView);
 
-    QWidget *listLayoutWidget = new QWidget;
 
-    QVBoxLayout *listLayout = new QVBoxLayout(listLayoutWidget);
     QWidget * rightSide = new QWidget;
+    QVBoxLayout *listLayout = new QVBoxLayout(rightSide);
     rightSide->setLayout(listLayout);
     listLayout->addWidget(searchline);
     listLayout->addWidget(mBookmarkListView);
