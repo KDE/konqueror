@@ -108,6 +108,7 @@ int KonqMenuActionsPrivate::insertServicesSubmenus(const QMap<QString, ServiceLi
         }
 
         QMenu* actionSubmenu = new KMenu(menu);
+        actionSubmenu->setTitle( it.key() );
         menu->menuAction()->setObjectName("services_submenu"); // for the unittest
         menu->addMenu(actionSubmenu);
         count += insertServices(it.value(), actionSubmenu, isBuiltin);
