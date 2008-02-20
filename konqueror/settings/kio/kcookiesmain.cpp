@@ -1,7 +1,11 @@
-// kcookiesmain.cpp - Cookies configuration
-//
-// First version of cookies configuration by Waldo Bastian <bastian@kde.org>
-// This dialog box created by David Faure <faure@kde.org>
+/*    kcookiesmain.cpp - Cookies configuration
+ *
+ *    First version of cookies configuration:
+ *        Copyright (C) Waldo Bastian <bastian@kde.org>
+ *    This dialog box:
+ *        Copyright (C) David Faure <faure@kde.org>
+ *
+ */
 
 // Own
 #include "kcookiesmain.h"

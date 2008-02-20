@@ -1,5 +1,10 @@
-// File khttpoptdlg.cpp by Jacek Konieczny <jajcus@zeus.posl.gliwice.pl>
-// Port to KControl by David Faure <faure@kde.org>
+/*
+ * Copyright (C) Jacek Konieczny <jajcus@zeus.posl.gliwice.pl>
+ * 
+ * Copyright (C) David Faure <faure@kde.org>
+ *     Port to KControl
+ * 
+ */
 
 // Own
 #include "khttpoptdlg.h"

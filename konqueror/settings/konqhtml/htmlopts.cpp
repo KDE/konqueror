@@ -1,9 +1,11 @@
-////
-// "Misc Options" Tab for KFM configuration
-//
-// (c) Sven Radej 1998
-// (c) David Faure 1998
-// (c) 2001 Waldo Bastian <bastian@kde.org>
+/*
+ * "Misc Options" Tab for KFM configuration
+ *
+ * Copyright (C) Sven Radej 1998
+ * Copyright (C) David Faure 1998
+ * Copyright (C) 2001 Waldo Bastian <bastian@kde.org>
+ *
+ */
 
 // Own
 #include "htmlopts.h"

@@ -1,12 +1,18 @@
 // -*- c-basic-offset: 2 -*-
-// (c) Martin R. Jones 1996
-// (c) Bernd Wuebben 1998
-// KControl port & modifications
-// (c) Torben Weis 1998
-// End of the KControl port, added 'kfmclient configure' call.
-// (c) David Faure 1998
-// Cleanup and modifications for KDE 2.1
-// (c) Daniel Molkentin 2000
+/*
+ * Copyright (c) Martin R. Jones 1996
+ * Copyright (c) Bernd Wuebben 1998
+ *
+ * Copyright (c) Torben Weis 1998
+ *     KControl port & modifications
+ *
+ * Copyright (c) David Faure 1998
+ *     End of the KControl port, added 'kfmclient configure' call.
+ *
+ * Copyright (c) Daniel Molkentin 2000
+ *     Cleanup and modifications for KDE 2.1
+ *
+ */
 
 #ifndef APPEARANCE_H
 #define APPEARANCE_H

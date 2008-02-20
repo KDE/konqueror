@@ -1,7 +1,12 @@
-// (c) 2002-2003 Leo Savernik, per-domain settings
-// (c) 2001, Daniel Naber, based on javaopts.cpp
-// (c) 2000 Stefan Schimanski <1Stein@gmx.de>, Netscape parts
-
+/*
+ * Copyright (C) 2002-2003 Leo Savernik
+ *    per-domain settings
+ * Copyright (C) 2001, Daniel Naber
+ *    based on javaopts.cpp
+ * Copyright (C) 2000 Stefan Schimanski <1Stein@gmx.de>
+ *    Netscape parts
+ *
+ */
 
 // Own
 #include "pluginopts.h"

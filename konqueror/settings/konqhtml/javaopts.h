@@ -1,16 +1,12 @@
-//-----------------------------------------------------------------------------
-//
-// HTML Options
-//
-// (c) Martin R. Jones 1996
-//
-// Port to KControl
-// (c) Torben Weis 1998
-//
-// Redesign and cleanup
-// (c) Daniel Molkentin 2000
-//
-//-----------------------------------------------------------------------------
+/*
+ * Copyright (c) Martin R. Jones 1996
+ *     HTML Options
+ * Copyright (c) Torben Weis 1998 
+ *     Port to KControl
+ * Copyright (c) Daniel Molkentin 2000
+ *     Redesign and cleanup
+ *
+ */
 
 #ifndef __JAVAOPTS_H__
 #define __JAVAOPTS_H__
