@@ -1,12 +1,12 @@
-//-----------------------------------------------------------------------------
-//
-// Plugin Options
-//
-// (c) 2002 Leo Savernik, per-domain settings
-// (c) 2001, Daniel Naber, based on javaopts.h
-// (c) 2000, Stefan Schimanski <1Stein@gmx.de>, Netscape parts
-//
-//-----------------------------------------------------------------------------
+/*
+ * Plugin Options
+ *
+ * Copyright (c) 2002 Leo Savernik, per-domain settings
+ * Copyright (c) 2001, Daniel Naber, based on javaopts.h
+ * Copyright (c) 2000, Stefan Schimanski <1Stein@gmx.de>
+ *     Netscape parts
+ *
+ */
 
 #ifndef __PLUGINOPTS_H__
 #define __PLUGINOPTS_H__

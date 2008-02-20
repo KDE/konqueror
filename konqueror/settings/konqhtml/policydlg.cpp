@@ -1,6 +1,9 @@
-// (C) < 2002 to whoever created and edited this file before
-// (C) 2002 Leo Savernik <l.savernik@aon.at>
-//	Generalizing the policy dialog
+/*
+ * Copyright (C) < 2002 to whoever created and edited this file before
+ * Copyright (C) 2002 Leo Savernik <l.savernik@aon.at>
+ *     Generalizing the policy dialog
+ *
+ */
 
 // Own
 #include "policydlg.h"

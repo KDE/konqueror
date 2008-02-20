@@ -1,4 +1,9 @@
-// khttpoptdlg.h - extra HTTP configuration by Jacek Konieczy <jajcus@zeus.polsl.gliwice.pl>
+/*
+ * Copyright (C) Jacek Konieczy <jajcus@zeus.polsl.gliwice.pl>
+ *     extra HTTP configuration
+ *
+ */
+
 #ifndef __KHTTPOPTDLG_H
 #define __KHTTPOPTDLG_H
 
