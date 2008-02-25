@@ -1,10 +1,11 @@
 /* This file is part of the KDE project
-   Copyright (C) 2007 David Faure <faure@kde.org>
+    Copyright 2007 David Faure <faure@kde.org>
 
-   This program is free software: you can redistribute it and/or modify
+   This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
-   the Free Software Foundation, either version 2 of the License, or
-   (at your option) any later version.
+   the Free Software Foundation; either version 2 of the License or ( at
+   your option ) version 3 or, at the discretion of KDE e.V. ( which shall
+   act as a proxy as in section 14 of the GPLv3 ), any later version.
 
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -36,9 +37,11 @@ class FileTypesTest : public QObject
 private Q_SLOTS:
     void initTestCase()
     {
-        const QString profilerc = KStandardDirs::locateLocal( "config", "profilerc" );
-        if ( !profilerc.isEmpty() )
-            QFile::remove( profilerc );
+        m_kdehome = QDir::home().canonicalPath() + "/.kde-unit-test";
+        // We need a place where we can hack a mimeapps.list without harm, so not ~/.local
+        // This test relies on shared-mime-info being installed in /usr/share [or kdedir/share]
+        ::setenv("XDG_DATA_DIRS", QFile::encodeName(m_kdehome + "/share:/usr/share"), 1 );
+        QFile::remove(m_kdehome + "/share/applications/mimeapps.list");
 
         // Create fake application for some tests below.
         bool mustUpdateKSycoca = false;
@@ -60,7 +63,6 @@ private Q_SLOTS:
             MimeTypeWriter::runUpdateMimeDatabase();
             mustUpdateKSycoca = true;
         }
-
 
         if ( mustUpdateKSycoca ) {
             // Update ksycoca in ~/.kde-unit-test after creating the above
@@ -181,7 +183,7 @@ private Q_SLOTS:
         QVERIFY(!data.isDirty());
 
         // Now test removing (in the same test, since it's inter-dependent)
-        appServices.remove(fakeApplication);
+        appServices.removeAll(fakeApplication);
         data.setAppServices(appServices);
         QVERIFY(data.isDirty());
         data.sync();
@@ -189,6 +191,9 @@ private Q_SLOTS:
         QCOMPARE(data.appServices(), appServices);
         QVERIFY(!data.appServices().contains(fakeApplication));
     }
+
+    // TODO test removing an "implicit association"
+
 
     // TODO see TODO in filetypesview
     //void testDeleteMimeType()
@@ -214,6 +219,7 @@ private: // helper methods
     }
 
     QString fakeApplication;
+    QString m_kdehome;
 };
 
 QTEST_KDEMAIN( FileTypesTest, NoGUI )
