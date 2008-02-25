@@ -71,9 +71,6 @@ public:
     void getAskSave(bool &);
     void setAskSave(bool);
 
-    // Whether the given service lists this mimetype explicitly
-    KMimeType::Ptr findImplicitAssociation(const QString &desktop);
-
     /**
      * Returns true if the mimetype data has any unsaved changes.
      */
@@ -89,8 +86,6 @@ public:
      */
     void refresh();
 
-    static void reset();
-
 private:
     AutoEmbed readAutoEmbed() const;
     void writeAutoEmbed();
@@ -99,10 +94,10 @@ private:
     void getServiceOffers(QStringList& appServices, QStringList& embedServices) const;
     void getMyServiceOffers() const;
     void syncServices();
-    void saveServices( KConfig & profile, const QStringList& services, const QString & servicetype2 );
+    void saveServices(KConfigGroup & config, const QStringList& services);
+    void saveRemovedServices(KConfigGroup & config, const QStringList& services, const QString& genericServiceType);
 
     KMimeType::Ptr m_mimetype; // 0 if this is data for a mimetype group (m_isGroup==true)
-    unsigned int groupCount:16; // shared between saveServices and sync
     enum AskSave { AskSaveYes = 0, AskSaveNo = 1, AskSaveDefault = 2 };
     AskSave m_askSave:3;
     AutoEmbed m_autoEmbed:3;
