@@ -2,6 +2,7 @@
  * This file is part of the KDE project.
  *
  * Copyright (C) 2007 Trolltech ASA
+ * Copyright (C) 2008 Urs Wolfer <uwolfer @ kde.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -25,28 +26,30 @@
 #include <KDE/KParts/GenericFactory>
 #include <KDE/KAboutData>
 
-#include "kwebnetworkinterface.h"
+#include <QHttpRequestHeader>
+
+// #include "kwebnetworkinterface.h"
 
 WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList &/*args*/)
     : KParts::ReadOnlyPart(parent)
 {
-    webPage = new WebPage(this, parentWidget);
-    webPage->setNetworkInterface(new KWebNetworkInterface(this));
-    setWidget(webPage);
+    webView = new WebView(this, parentWidget);
+//     webView->setNetworkInterface(new KWebNetworkInterface(this));
+    setWidget(webView);
 
-    connect(webPage, SIGNAL(loadStarted(QWebFrame *)),
-            this, SLOT(frameStarted(QWebFrame *)));
-    connect(webPage, SIGNAL(loadFinished(QWebFrame *)),
+    connect(webView, SIGNAL(loadStarted()),
+            this, SLOT(laodStarted()));
+    connect(webView->page(), SIGNAL(frameCreated(QWebFrame *)),
             this, SLOT(frameFinished(QWebFrame *)));
-    connect(webPage, SIGNAL(titleChanged(const QString &)),
+    connect(webView, SIGNAL(titleChanged(const QString &)),
             this, SIGNAL(setWindowCaption(const QString &)));
 
-    connect(webPage, SIGNAL(hoveringOverLink(const QString &, const QString &)),
+    connect(webView->page(), SIGNAL(linkHovered(const QString &, const QString &, const QString &)),
             this, SIGNAL(setStatusBarText(const QString &)));
 
     browserExtension = new WebKitBrowserExtension(this);
 
-    connect(webPage, SIGNAL(loadProgressChanged(int)),
+    connect(webView->page(), SIGNAL(loadProgress(int)),
             browserExtension, SIGNAL(loadingProgress(int)));
 }
 
@@ -58,6 +61,7 @@ bool WebKitPart::openUrl(const KUrl &url)
 {
     setUrl(url);
 
+#if 0
     KParts::OpenUrlArguments arguments;
     KParts::BrowserArguments browserArguments = browserExtension->browserArguments();
     QString headerString = browserArguments.doPost() ? "POST" : "GET";
@@ -72,15 +76,16 @@ bool WebKitPart::openUrl(const KUrl &url)
 
     foreach (QString key, header.keys())
         request.setHttpHeaderField(key, header.value(key));
+#endif
 
-    webPage->open(request);
+    webView->load(url);
 
     return true;
 }
 
 bool WebKitPart::closeUrl()
 {
-    webPage->stop();
+    webView->stop();
     return true;
 }
 
@@ -90,18 +95,18 @@ bool WebKitPart::openFile()
     return false;
 }
 
-void WebKitPart::frameStarted(QWebFrame *frame)
+void WebKitPart::laodStarted()
 {
-    if (frame == webPage->mainFrame())
-        emit started(0);
+    emit started(0);
 }
 
 void WebKitPart::frameFinished(QWebFrame *frame)
 {
-    if (frame == webPage->mainFrame())
+    if (frame == webView->page()->mainFrame())
         emit completed();
 }
 
+#if 0
 QWebPage::NavigationRequestResponse WebKitPart::navigationRequested(const QWebNetworkRequest &request)
 {
     KParts::OpenUrlArguments arguments;
@@ -116,6 +121,7 @@ QWebPage::NavigationRequestResponse WebKitPart::navigationRequested(const QWebNe
 
     return QWebPage::IgnoreNavigationRequest;
 }
+#endif
 
 KAboutData *WebKitPart::createAboutData()
 {
@@ -125,19 +131,21 @@ KAboutData *WebKitPart::createAboutData()
                           ki18n("Copyright (c) 2007 Trolltech ASA"));
 }
 
-WebPage::WebPage(WebKitPart *wpart, QWidget *parent)
-    : QWebPage(parent), part(wpart)
+WebView::WebView(WebKitPart *wpart, QWidget *parent)
+    : QWebView(parent), part(wpart)
 {
 }
 
+#if 0
 QWebPage::NavigationRequestResponse WebPage::navigationRequested(QWebFrame *frame, const QWebNetworkRequest &request)
 {
     if (frame != mainFrame())
         return AcceptNavigationRequest;
     return part->navigationRequested(request);
 }
+#endif
 
-void WebPage::contextMenuEvent(QContextMenuEvent *e)
+void WebView::contextMenuEvent(QContextMenuEvent *e)
 {
     KParts::BrowserExtension::PopupFlags flags = KParts::BrowserExtension::DefaultPopupItems;
     flags |= KParts::BrowserExtension::ShowReload;
@@ -151,7 +159,7 @@ void WebPage::contextMenuEvent(QContextMenuEvent *e)
 WebKitBrowserExtension::WebKitBrowserExtension(WebKitPart *parent)
     : KParts::BrowserExtension(parent), part(parent)
 {
-    connect(part->page(), SIGNAL(selectionChanged()),
+    connect(part->view(), SIGNAL(selectionChanged()),
             this, SLOT(updateEditActions()));
 
     enableAction("cut", false);
@@ -161,22 +169,22 @@ WebKitBrowserExtension::WebKitBrowserExtension(WebKitPart *parent)
 
 void WebKitBrowserExtension::cut()
 {
-    part->page()->triggerAction(QWebPage::Cut);
+    part->view()->page()->triggerAction(QWebPage::Cut);
 }
 
 void WebKitBrowserExtension::copy()
 {
-    part->page()->triggerAction(QWebPage::Copy);
+    part->view()->page()->triggerAction(QWebPage::Copy);
 }
 
 void WebKitBrowserExtension::paste()
 {
-    part->page()->triggerAction(QWebPage::Paste);
+    part->view()->page()->triggerAction(QWebPage::Paste);
 }
 
 void WebKitBrowserExtension::updateEditActions()
 {
-    QWebPage *page = part->page();
+    QWebPage *page = part->view()->page();
     enableAction("cut", page->action(QWebPage::Cut));
     enableAction("copy", page->action(QWebPage::Copy));
     enableAction("paste", page->action(QWebPage::Paste));
@@ -186,4 +194,3 @@ typedef KParts::GenericFactory<WebKitPart> Factory;
 Q_EXPORT_PLUGIN(Factory);
 
 #include "webkitpart.moc"
-

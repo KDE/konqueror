@@ -2,6 +2,7 @@
  * This file is part of the KDE project.
  *
  * Copyright (C) 2007 Trolltech ASA
+ * Copyright (C) 2008 Urs Wolfer <uwolfer @ kde.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -25,9 +26,9 @@
 #include <KDE/KParts/ReadOnlyPart>
 #include <KDE/KParts/BrowserExtension>
 
-#include <qwebpage.h>
+#include <qwebview.h>
 
-class WebPage;
+class WebView;
 class QWebFrame;
 class KAboutData;
 class WebKitBrowserExtension;
@@ -43,9 +44,9 @@ public:
     virtual bool openUrl(const KUrl &url);
     virtual bool closeUrl();
 
-    QWebPage::NavigationRequestResponse navigationRequested(const QWebNetworkRequest &request);
+//     QWebPage::NavigationRequestResponse navigationRequested(const QWebNetworkRequest &request);
 
-    inline WebPage *page() { return webPage; }
+    inline WebView *view() { return webView; }
     inline WebKitBrowserExtension *browserExt() const { return browserExtension; }
 
     static KAboutData *createAboutData();
@@ -54,21 +55,21 @@ protected:
     virtual bool openFile();
 
 private slots:
-    void frameStarted(QWebFrame *frame);
+    void laodStarted();
     void frameFinished(QWebFrame *frame);
 
 private:
-    WebPage *webPage;
+    WebView *webView;
     WebKitBrowserExtension *browserExtension;
 };
 
-class WebPage : public QWebPage
+class WebView : public QWebView
 {
 public:
-    WebPage(WebKitPart *wpart, QWidget *parent);
+    WebView(WebKitPart *wpart, QWidget *parent);
 
 protected:
-    virtual NavigationRequestResponse navigationRequested(QWebFrame *frame, const QWebNetworkRequest &request);
+//     virtual NavigationRequestResponse navigationRequested(QWebFrame *frame, const QWebNetworkRequest &request);
 
     virtual void contextMenuEvent(QContextMenuEvent *e);
 
