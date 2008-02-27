@@ -1,9 +1,8 @@
 [Desktop Entry]
-Encoding=UTF-8
 Type=Service
 Comment=Embeddable HTML component
 MimeType=text/html;application/xml;application/xhtml+xml;
 Name=WebKit
-ServiceTypes=KParts/ReadOnlyPart,Browser/View
+X-KDE-ServiceTypes=KParts/ReadOnlyPart,Browser/View
 X-KDE-Library=webkitkde
 InitialPreference=11

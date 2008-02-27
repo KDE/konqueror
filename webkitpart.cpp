@@ -39,8 +39,8 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
 
     connect(webView, SIGNAL(loadStarted()),
             this, SLOT(laodStarted()));
-    connect(webView->page(), SIGNAL(frameCreated(QWebFrame *)),
-            this, SLOT(frameFinished(QWebFrame *)));
+    connect(webView, SIGNAL(loadFinished()),
+            this, SLOT(loadFinished()));
     connect(webView, SIGNAL(titleChanged(const QString &)),
             this, SIGNAL(setWindowCaption(const QString &)));
 
@@ -100,10 +100,9 @@ void WebKitPart::laodStarted()
     emit started(0);
 }
 
-void WebKitPart::frameFinished(QWebFrame *frame)
+void WebKitPart::loadFinished()
 {
-    if (frame == webView->page()->mainFrame())
-        emit completed();
+    emit completed();
 }
 
 #if 0
@@ -159,7 +158,7 @@ void WebView::contextMenuEvent(QContextMenuEvent *e)
 WebKitBrowserExtension::WebKitBrowserExtension(WebKitPart *parent)
     : KParts::BrowserExtension(parent), part(parent)
 {
-    connect(part->view(), SIGNAL(selectionChanged()),
+    connect(part->view()->page(), SIGNAL(selectionChanged()),
             this, SLOT(updateEditActions()));
 
     enableAction("cut", false);

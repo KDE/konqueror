@@ -56,7 +56,7 @@ protected:
 
 private slots:
     void laodStarted();
-    void frameFinished(QWebFrame *frame);
+    void loadFinished();
 
 private:
     WebView *webView;
