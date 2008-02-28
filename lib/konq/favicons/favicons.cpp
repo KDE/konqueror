@@ -232,9 +232,11 @@ void FavIconsModule::slotResult(KJob *job)
         if( ir.canRead() ) {
 
             while( ir.imageCount() > 1
-              && ir.currentImageRect() != QRect( 0, 0, desired.width(), desired.height() )
-              && ir.imageCount() >= ir.currentImageNumber() )
-                ir.jumpToNextImage();
+              && ir.currentImageRect() != QRect(0, 0, desired.width(), desired.height())) {
+                if (!ir.jumpToNextImage()) {
+                    break;
+                }
+            }
             ir.setScaledSize( desired );
             QImage img = ir.read();
             if( !img.isNull() ) {
