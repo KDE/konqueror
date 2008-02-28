@@ -187,7 +187,6 @@ void FileTypesView::readFileTypes()
     typesLV->clear();
     m_majorMap.clear();
     m_itemList.clear();
-    MimeTypeData::reset();
 
     TypesListItem *groupItem;
     KMimeType::List mimetypes = KMimeType::allMimeTypes();

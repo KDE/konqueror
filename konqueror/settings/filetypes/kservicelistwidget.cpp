@@ -355,28 +355,9 @@ void KServiceListWidget::removeService()
   if ( selected >= 0 ) {
     // Check if service is associated with this mimetype or with one of its parents
     KServiceListItem *serviceItem = static_cast<KServiceListItem *>(servicesLB->item(selected));
-    KMimeType::Ptr mimetype = m_mimeTypeData->findImplicitAssociation(serviceItem->desktopPath);
     if (serviceItem->isImmutable())
     {
        KMessageBox::sorry(this, i18n("You are not authorized to remove this service."));
-    }
-    else if (mimetype)
-    {
-       KMessageBox::sorry(this, "<qt>"+
-                                i18n("The service <b>%1</b> can not be removed.", serviceItem->text())+
-                                "<p>"+
-                                i18n("The service is listed here because it has been associated "
-                                     "with the <b>%1</b> (%2) file type and files of type "
-                                     "<b>%3</b> (%4) are per definition also of type "
-                                     "<b>%5</b>.", mimetype->name(), mimetype->comment(),
-                                     m_mimeTypeData->name(), m_mimeTypeData->comment(), mimetype->name())+
-                                "<p>"+
-                                i18n("Either select the <b>%1</b> file type to remove the "
-                                     "service from there or move the service down "
-                                     "to deprecate it.", mimetype->name()));
-
-                                // i18n("Do you want to remove the service from the <b>%1</b> "
-                                //      "file type or from the <b>%2</b> file type?", ???, ???);
     }
     else
     {
