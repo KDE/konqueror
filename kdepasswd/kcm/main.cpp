@@ -242,9 +242,11 @@ void KCMUserAccount::save()
 	}
 
 	/* Save the image */
-	if( !_facePixmap.save( KCFGUserAccount::faceFile(), "PNG" ))
-		KMessageBox::error( this, i18n("There was an error saving the image: %1" ,
-			KCFGUserAccount::faceFile()) );
+	if( !_facePixmap.isNull() ) {
+		if( !_facePixmap.save( KCFGUserAccount::faceFile(), "PNG" ))
+			KMessageBox::error( this, i18n("There was an error saving the image: %1" ,
+				KCFGUserAccount::faceFile()) );
+	}
 
 }
 
