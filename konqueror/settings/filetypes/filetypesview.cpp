@@ -42,25 +42,24 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
 {
   m_fileTypesConfig = KSharedConfig::openConfig("filetypesrc", KConfig::NoGlobals);
 
-  // TODO remove mention of *.kwd and use another example
   setQuickHelp( i18n("<p><h1>File Associations</h1>"
     " This module allows you to choose which applications are associated"
     " with a given type of file. File types are also referred to MIME types"
     " (MIME is an acronym which stands for \"Multipurpose Internet Mail"
     " Extensions\".)</p><p> A file association consists of the following:"
     " <ul><li>Rules for determining the MIME-type of a file, for example"
-    " the filename pattern *.kwd, which means 'all files with names that end"
-    " in .kwd', is associated with the MIME type \"x-kword\";</li>"
+    " the filename pattern *.png, which means 'all files with names that end"
+    " in .png', is associated with the MIME type \"image/png\";</li>"
     " <li>A short description of the MIME-type, for example the description"
-    " of the MIME type \"x-kword\" is simply 'KWord document';</li>"
+    " of the MIME type \"image/png\" is simply 'PNG image';</li>"
     " <li>An icon to be used for displaying files of the given MIME-type,"
-    " so that you can easily identify the type of file in, say, a Konqueror"
-    " view (at least for the types you use often);</li>"
+    " so that you can easily identify the type of file in a file"
+    " manager or file-selection dialog (at least for the types you use often);</li>"
     " <li>A list of the applications which can be used to open files of the"
     " given MIME-type -- if more than one application can be used then the"
     " list is ordered by priority.</li></ul>"
     " You may be surprised to find that some MIME types have no associated"
-    " filename patterns; in these cases, Konqueror is able to determine the"
+    " filename patterns; in these cases, KDE is able to determine the"
     " MIME-type by directly examining the contents of the file.</p>"));
 
   KServiceTypeProfile::setConfigurationMode();
