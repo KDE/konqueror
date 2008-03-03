@@ -43,11 +43,20 @@
 #include "typeslistitem.h"
 
 FileTypeDetails::FileTypeDetails( QWidget * parent )
-    : QTabWidget( parent ), m_mimeTypeData(0), m_item(0)
+    : QWidget( parent ), m_mimeTypeData(0), m_item(0)
 {
+
+    QVBoxLayout* topLayout = new QVBoxLayout(this);
+
+    m_mimeTypeLabel = new QLabel(this);
+    topLayout->addWidget(m_mimeTypeLabel);
+
+    m_tabWidget = new QTabWidget(this);
+    topLayout->addWidget(m_tabWidget);
+
   QString wtstr;
   // First tab - General
-  QWidget * firstWidget = new QWidget(this);
+  QWidget * firstWidget = new QWidget(m_tabWidget);
   QVBoxLayout *firstLayout = new QVBoxLayout(firstWidget);
   firstLayout->setMargin(KDialog::marginHint());
   firstLayout->setSpacing(KDialog::spacingHint());
@@ -120,7 +129,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   firstLayout->addWidget(serviceListWidget, 5);
 
   // Second tab - Embedding
-  QWidget * secondWidget = new QWidget(this);
+  QWidget * secondWidget = new QWidget(m_tabWidget);
   QVBoxLayout *secondLayout = new QVBoxLayout(secondWidget);
   secondLayout->setMargin(KDialog::marginHint());
   secondLayout->setSpacing(KDialog::spacingHint());
@@ -138,18 +147,17 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   m_chkAskSave = new QCheckBox( i18n("Ask whether to save to disk instead") );
   connect(m_chkAskSave, SIGNAL( toggled(bool) ), SLOT( slotAskSaveToggled(bool) ));
 
-  m_autoEmbedGroup = new QButtonGroup(this);
+  m_autoEmbedGroup = new QButtonGroup(m_autoEmbedBox);
   m_autoEmbedGroup->addButton(embViewerRadio, 0);
   m_autoEmbedGroup->addButton(sepViewerRadio, 1);
   m_autoEmbedGroup->addButton(m_rbGroupSettings, 2);
   connect(m_autoEmbedGroup, SIGNAL( buttonClicked(int) ), SLOT( slotAutoEmbedClicked(int) ));
 
-  QVBoxLayout *vbox = new QVBoxLayout;
+  QVBoxLayout *vbox = new QVBoxLayout(m_autoEmbedBox);
   vbox->addWidget(embViewerRadio);
   vbox->addWidget(sepViewerRadio);
   vbox->addWidget(m_rbGroupSettings);
   vbox->addWidget(m_chkAskSave);
-  m_autoEmbedBox->setLayout(vbox);
 
   m_autoEmbedBox->setWhatsThis( i18n("Here you can configure what the Konqueror file manager"
     " will do when you click on a file of this type. Konqueror can display the file in"
@@ -162,8 +170,8 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   connect( embedServiceListWidget, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)));
   secondLayout->addWidget(embedServiceListWidget);
 
-  addTab( firstWidget, i18n("&General") );
-  addTab( secondWidget, i18n("&Embedding") );
+  m_tabWidget->addTab( firstWidget, i18n("&General") );
+  m_tabWidget->addTab( secondWidget, i18n("&Embedding") );
 }
 
 void FileTypeDetails::updateRemoveButton()
@@ -311,6 +319,7 @@ void FileTypeDetails::setMimeTypeData( MimeTypeData * mimeTypeData, TypesListIte
   m_mimeTypeData = mimeTypeData;
   m_item = item; // can be 0
   Q_ASSERT(mimeTypeData);
+  m_mimeTypeLabel->setText(i18n("File type %1", mimeTypeData->name()));
   iconButton->setPixmap(DesktopIcon(mimeTypeData->icon()));
   description->setText(mimeTypeData->comment());
   m_rbGroupSettings->setText( i18n("Use settings for '%1' group", mimeTypeData->majorType() ) );
