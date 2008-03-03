@@ -103,6 +103,8 @@ bool MimeTypeWriter::write()
         // User-specified icon name; requires update-mime-database >= 0.24 at least
         // Otherwise update-mime-database fails with an error about an unknown attribute!
 #if 0
+        // TODO re-enable once update-mime-database is fixed
+        // and either we require a version with the fix or we have a check on the version number
         writer.writeStartElement(nsUri, "icon");
         writer.writeCharacters(d->m_iconName);
         writer.writeEndElement(); // icon
@@ -147,11 +149,25 @@ QString MimeTypeWriterPrivate::localFilePath() const
     return KStandardDirs::locateLocal( "xdgdata-mime", "packages/" + baseName + ".xml" );
 }
 
-#if 0
-QString MimeTypeWriter::existingDefinitionFile() const
+static QString existingDefinitionFile(const QString& mimeType)
 {
-    QString baseName = d->m_mimeType;
+    QString baseName = mimeType;
     baseName.replace('/', '-');
     return KGlobal::dirs()->findResource( "xdgdata-mime", "packages/" + baseName + ".xml" );
 }
-#endif
+
+bool MimeTypeWriter::hasDefinitionFile(const QString& mimeType)
+{
+    return !existingDefinitionFile(mimeType).isEmpty();
+}
+
+void MimeTypeWriter::removeOwnMimeType(const QString& mimeType)
+{
+    const QString file = existingDefinitionFile(mimeType);
+    Q_ASSERT(!file.isEmpty());
+    QFile::remove(file);
+    // We must also remove the generated XML file, update-mime-database doesn't do that, for unknown media types
+    QString xmlFile = KGlobal::dirs()->findResource( "xdgdata-mime", mimeType + ".xml" );
+    qDebug() << xmlFile;
+    QFile::remove(xmlFile);
+}

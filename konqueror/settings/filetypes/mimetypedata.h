@@ -32,8 +32,10 @@ class MimeTypeData
 public:
     // Constructor used for groups
     MimeTypeData(const QString& major);
-    // Real constructor, used for a mimetype.
-    MimeTypeData(const KMimeType::Ptr mime, bool newItem = false);
+    // Real constructor, used for an existing mimetype.
+    MimeTypeData(const KMimeType::Ptr mime);
+    // Real constructor, used for a new mimetype.
+    MimeTypeData(const QString& mimeName, bool /*unused, just to distinguish from the other QString ctor*/);
 
     QString name() const { return m_isGroup ? m_major : m_major + '/' + m_minor; }
     QString majorType() const { return m_major; }
@@ -85,6 +87,11 @@ public:
      * Update m_mimetype from ksycoca when Apply is pressed
      */
     void refresh();
+
+    /**
+     * Return true if this is a new mimetype, i.e. one that is not yet in ksycoca
+     */
+    bool isNew() const { return m_bNewItem; }
 
 private:
     AutoEmbed readAutoEmbed() const;

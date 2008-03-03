@@ -29,9 +29,10 @@ class FileTypeDetails;
 // A dialog for ONE file type to be edited.
 class FileTypeDialog : public KDialog
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  FileTypeDialog( KMimeType::Ptr mime, bool newItem = false );
+    FileTypeDialog(MimeTypeData* mime);
+    ~FileTypeDialog();
 
 protected Q_SLOTS:
   virtual void slotOk();
@@ -43,9 +44,9 @@ protected:
   void save();
 
 private:
-  void init( KMimeType::Ptr mime, bool newItem );
+  void init();
   FileTypeDetails * m_details;
-  MimeTypeData * m_mimeTypeData;
+  MimeTypeData* m_mimeTypeData;
 };
 
 #endif

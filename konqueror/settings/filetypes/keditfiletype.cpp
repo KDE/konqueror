@@ -46,31 +46,36 @@
 #include <X11/Xutil.h>
 #endif
 
-FileTypeDialog::FileTypeDialog( KMimeType::Ptr mime, bool newItem )
-  : KDialog( 0 )
+FileTypeDialog::FileTypeDialog( MimeTypeData* mime )
+  : KDialog( 0 ),
+    m_mimeTypeData(mime)
 {
   setButtons( Cancel | Apply | Ok );
   showButtonSeparator( false );
 
-  init( mime, newItem );
+  init();
 }
 
-void FileTypeDialog::init( KMimeType::Ptr mime, bool newItem )
+FileTypeDialog::~FileTypeDialog()
 {
-  m_details = new FileTypeDetails( this );
-  m_mimeTypeData = new MimeTypeData( mime, newItem );
-  m_details->setMimeTypeData( m_mimeTypeData );
+    delete m_details;
+}
 
-  // This code is very similar to kcdialog.cpp
-  setMainWidget( m_details );
-  connect(m_details, SIGNAL(changed(bool)), this, SLOT(clientChanged(bool)));
-  // TODO setHelp()
-  enableButton(Apply, false);
+void FileTypeDialog::init()
+{
+    m_details = new FileTypeDetails( this );
+    m_details->setMimeTypeData( m_mimeTypeData );
 
-  connect( KSycoca::self(), SIGNAL( databaseChanged() ), SLOT( slotDatabaseChanged() ) );
+    // This code is very similar to kcdialog.cpp
+    setMainWidget( m_details );
+    connect(m_details, SIGNAL(changed(bool)), this, SLOT(clientChanged(bool)));
+    // TODO setHelp()
+    enableButton(Apply, false);
 
-  connect( this, SIGNAL( okClicked() ), SLOT( slotOk() ) );
-  connect( this, SIGNAL( applyClicked() ), SLOT( slotApply() ) );
+    connect( KSycoca::self(), SIGNAL( databaseChanged() ), SLOT( slotDatabaseChanged() ) );
+
+    connect( this, SIGNAL( okClicked() ), SLOT( slotOk() ) );
+    connect( this, SIGNAL( applyClicked() ), SLOT( slotApply() ) );
 }
 
 void FileTypeDialog::save()
@@ -133,40 +138,42 @@ int main(int argc, char ** argv)
     KCmdLineArgs::usage();
 
   QString arg = args->arg(0);
-
-  bool createType = arg.startsWith( "*" );	//krazy:exclude=duoblequote_chars
-
-  KMimeType::Ptr mime;
-
+  MimeTypeData* mimeTypeData = 0;
+  const bool createType = arg.startsWith('*');
   if ( createType ) {
-      // TODO port to XDG share mime! (see FileTypesView::addType())
-    QString mimeString = "application/x-kdeuser%1";
-    QString loc;
-    int inc = 0;
-    do {
-      ++inc;
-      loc = KStandardDirs::locate( "mime", mimeString.arg( inc ) + ".desktop" );
-    }
-    while ( QFile::exists( loc ) );
+      QString mimeString = "application/x-kdeuser%1";
+      QString mimeTypeName;
+      int inc = 0;
+      bool ok = false;
+      do {
+          ++inc;
+          mimeTypeName = mimeString.arg(inc);
+          ok = !KMimeType::mimeType(mimeTypeName);
+      } while (!ok);
 
-    QStringList patterns;
-    if ( arg.length() > 2 )
-	patterns << arg.toLower() << arg.toUpper();
-    QString comment;
-    if ( arg.startsWith( "*." ) && arg.length() >= 3 ) {
-	QString type = arg.mid( 3 ).prepend( arg[2].toUpper() );
-        comment = i18n( "%1 File", type );
-    }
-    // TODO see filetypesview.cpp
-    //mime = new KMimeType( loc, mimeString.arg( inc ), QString(), comment, patterns );
+      QStringList patterns;
+      if ( arg.length() > 2 )
+          patterns << arg.toLower() << arg.toUpper();
+      QString comment;
+      if ( arg.startsWith( "*." ) && arg.length() >= 3 ) {
+          const QString type = arg.mid( 3 ).prepend( arg[2].toUpper() );
+          comment = i18n( "%1 File", type );
+      }
+
+      mimeTypeData = new MimeTypeData(mimeTypeName, true); // new mimetype
+      mimeTypeData->setComment(comment);
+      mimeTypeData->setPatterns(patterns);
   }
   else {
-    mime = KMimeType::mimeType( arg );
-    if (!mime)
-      kFatal() << "Mimetype " << arg << " not found" ;
+      const QString mimeTypeName = arg;
+      KMimeType::Ptr mime = KMimeType::mimeType(mimeTypeName);
+      if (!mime)
+          kFatal() << "Mimetype" << mimeTypeName << "not found" ;
+
+      mimeTypeData = new MimeTypeData(mime);
   }
 
-  FileTypeDialog dlg( mime, createType );
+  FileTypeDialog dlg( mimeTypeData );
 #if defined Q_WS_X11
   if( args->isSet( "parent" )) {
     bool ok;
@@ -177,9 +184,9 @@ int main(int argc, char ** argv)
 #endif
   args->clear();
   if ( !createType )
-    dlg.setCaption( i18n("Edit File Type %1", mime->name()) );
+    dlg.setCaption( i18n("Edit File Type %1", mimeTypeData->name()) );
   else {
-    dlg.setCaption( i18n("Create New File Type %1", mime->name()) );
+    dlg.setCaption( i18n("Create New File Type %1", mimeTypeData->name()) );
     dlg.enableButton( KDialog::Apply, true );
   }
 

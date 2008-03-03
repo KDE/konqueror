@@ -33,9 +33,16 @@ TypesListItem::TypesListItem(Q3ListView *parent, const QString & major)
     setText(0, major);
 }
 
-TypesListItem::TypesListItem(TypesListItem *parent, KMimeType::Ptr mimetype, bool newItem)
+TypesListItem::TypesListItem(TypesListItem *parent, KMimeType::Ptr mimetype)
   : Q3ListViewItem(parent),
-    m_mimetypeData(mimetype, newItem)
+    m_mimetypeData(mimetype)
+{
+    setText(0, m_mimetypeData.minorType());
+}
+
+TypesListItem::TypesListItem(TypesListItem *parent, const QString& newMimetype)
+  : Q3ListViewItem(parent),
+    m_mimetypeData(newMimetype, true)
 {
     setText(0, m_mimetypeData.minorType());
 }
