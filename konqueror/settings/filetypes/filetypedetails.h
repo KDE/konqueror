@@ -39,7 +39,7 @@ class KServiceListWidget;
  * It is implemented as a separate class so that it can be used by
  * the keditfiletype program to show the details of a single mimetype.
  */
-class FileTypeDetails : public QTabWidget
+class FileTypeDetails : public QWidget
 {
   Q_OBJECT
 public:
@@ -71,6 +71,10 @@ protected Q_SLOTS:
 private:
     MimeTypeData* m_mimeTypeData;
     TypesListItem* m_item; // can be 0, in keditfiletype!
+
+    QLabel* m_mimeTypeLabel;
+
+    QTabWidget* m_tabWidget;
 
   // First tab - General
   QLabel *iconButton;
