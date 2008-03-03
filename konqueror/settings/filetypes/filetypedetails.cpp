@@ -269,23 +269,25 @@ void FileTypeDetails::updateAskSave()
 
     if (autoEmbed == MimeTypeData::Yes) {
         const KMimeType::Ptr mime = KMimeType::mimeType( mimeType );
-        // Don't ask for:
-        // - html (even new tabs would ask, due to about:blank!)
-        // - dirs obviously (though not common over HTTP :),
-        // - images (reasoning: no need to save, most of the time, because fast to see)
-        // e.g. postscript is different, because takes longer to read, so
-        // it's more likely that the user might want to save it.
-        // - multipart/* ("server push", see kmultipart)
-        // - other strange 'internal' mimetypes like print/manager...
-        if ( mime->is( "text/html" ) ||
-             mime->is( "application/xml" ) ||
-             mime->is( "inode/directory" ) ||
-             mimeType.startsWith( "image" ) ||
-             mime->is( "multipart/x-mixed-replace" ) ||
-             mime->is( "multipart/replace" ) ||
-             mimeType.startsWith( "print" ) )
-        {
-            neverAsk = true;
+        if (mime) {
+            // Don't ask for:
+            // - html (even new tabs would ask, due to about:blank!)
+            // - dirs obviously (though not common over HTTP :),
+            // - images (reasoning: no need to save, most of the time, because fast to see)
+            // e.g. postscript is different, because takes longer to read, so
+            // it's more likely that the user might want to save it.
+            // - multipart/* ("server push", see kmultipart)
+            // - other strange 'internal' mimetypes like print/manager...
+            if ( mime->is( "text/html" ) ||
+                 mime->is( "application/xml" ) ||
+                 mime->is( "inode/directory" ) ||
+                 mimeType.startsWith( "image" ) ||
+                 mime->is( "multipart/x-mixed-replace" ) ||
+                 mime->is( "multipart/replace" ) ||
+                 mimeType.startsWith( "print" ) )
+            {
+                neverAsk = true;
+            }
         }
     }
 

@@ -36,9 +36,14 @@ public:
     TypesListItem(Q3ListView *parent, const QString & major );
 
     /**
-     * Create a filetype item inside a group
+     * Create a filetype item inside a group, for an existing mimetype
      */
-    TypesListItem(TypesListItem *parent, KMimeType::Ptr mimetype, bool newItem=false);
+    TypesListItem(TypesListItem *parent, KMimeType::Ptr mimetype);
+
+    /**
+     * Create a filetype item inside a group, for a new mimetype
+     */
+    TypesListItem(TypesListItem *parent, const QString& newMimetype);
 
     ~TypesListItem();
 

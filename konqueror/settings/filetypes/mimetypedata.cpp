@@ -37,13 +37,13 @@ MimeTypeData::MimeTypeData(const QString& major)
     m_autoEmbed = readAutoEmbed();
 }
 
-MimeTypeData::MimeTypeData(const KMimeType::Ptr mime, bool newItem)
+MimeTypeData::MimeTypeData(const KMimeType::Ptr mime)
     : m_mimetype(mime),
       m_askSave(AskSaveDefault), // TODO: the code for initializing this is missing. FileTypeDetails initializes the checkbox instead...
-      m_bNewItem(newItem),
+      m_bNewItem(false),
+      m_bFullInit(false),
       m_isGroup(false)
 {
-    m_bFullInit = false;
     const QString mimeName = m_mimetype->name();
     const int index = mimeName.indexOf('/');
     if (index != -1) {
@@ -56,6 +56,24 @@ MimeTypeData::MimeTypeData(const KMimeType::Ptr mime, bool newItem)
     m_icon = m_mimetype->iconName();
     setPatterns(m_mimetype->patterns());
     m_autoEmbed = readAutoEmbed();
+}
+
+MimeTypeData::MimeTypeData(const QString& mimeName, bool)
+    : m_mimetype(0),
+      m_askSave(AskSaveDefault),
+      m_bNewItem(true),
+      m_bFullInit(false),
+      m_isGroup(false)
+{
+    const int index = mimeName.indexOf('/');
+    if (index != -1) {
+        m_major = mimeName.left(index);
+        m_minor = mimeName.mid(index+1);
+    } else {
+        m_major = mimeName;
+    }
+    m_autoEmbed = UseGroupSetting;
+    // all the rest is empty by default
 }
 
 MimeTypeData::AutoEmbed MimeTypeData::readAutoEmbed() const
@@ -126,14 +144,14 @@ void MimeTypeData::setIcon(const QString& icon)
 void MimeTypeData::getServiceOffers(QStringList& appServices, QStringList& embedServices) const
 {
     const KService::List offerList =
-        KMimeTypeTrader::self()->query(m_mimetype->name(), "Application");
+        KMimeTypeTrader::self()->query(name(), "Application");
     KService::List::const_iterator it(offerList.begin());
     for (; it != offerList.constEnd(); ++it)
         if ((*it)->allowAsDefault())
             appServices.append((*it)->entryPath());
 
     const KService::List partOfferList =
-        KMimeTypeTrader::self()->query(m_mimetype->name(), "KParts/ReadOnlyPart");
+        KMimeTypeTrader::self()->query(name(), "KParts/ReadOnlyPart");
     for ( it = partOfferList.begin(); it != partOfferList.constEnd(); ++it)
         embedServices.append((*it)->entryPath());
 }
@@ -163,13 +181,9 @@ QStringList MimeTypeData::embedServices() const
 bool MimeTypeData::isMimeTypeDirty() const
 {
     Q_ASSERT(!m_isGroup);
-    if ( m_bNewItem )
+    if (m_bNewItem)
         return true;
-    if ((m_mimetype->name() != name()) &&
-        (name() != "application/octet-stream")) {
-        kDebug() << "Mimetype Name Dirty: old=" << m_mimetype->name() << "name()=" << name();
-        return true;
-    }
+
     if (m_mimetype->comment() != m_comment) {
         kDebug() << "Mimetype Comment Dirty: old=" << m_mimetype->comment() << "m_comment=" << m_comment;
         return true;
@@ -249,7 +263,6 @@ bool MimeTypeData::sync()
         if (!mimeTypeWriter.write())
             return false;
 
-        m_bNewItem = false;
         needUpdateMimeDb = true;
     }
 
@@ -298,7 +311,7 @@ void MimeTypeData::saveRemovedServices(KConfigGroup & config, const QStringList&
 {
     QStringList removedServiceList;
     const KService::List offerList =
-        KMimeTypeTrader::self()->query(m_mimetype->name(), genericServiceType);
+        KMimeTypeTrader::self()->query(name(), genericServiceType);
 
     KService::List::const_iterator it_srv(offerList.begin());
     for (; it_srv != offerList.end(); ++it_srv) {
@@ -326,6 +339,11 @@ void MimeTypeData::refresh()
 {
     kDebug() << "MimeTypeData refresh" << name();
     m_mimetype = KMimeType::mimeType( name() );
+    if (m_mimetype && m_bNewItem) {
+        kDebug() << "OK, created" << name();
+        m_bNewItem = false; // if this was a new mimetype, we just created it
+        m_icon = m_mimetype->iconName();
+    }
 }
 
 void MimeTypeData::getAskSave(bool &_askSave)
@@ -344,6 +362,8 @@ void MimeTypeData::setAskSave(bool _askSave)
 bool MimeTypeData::canUseGroupSetting() const
 {
     // "Use group settings" isn't available for zip, tar etc.; those have a builtin default...
+    if (!m_mimetype) // e.g. new mimetype
+        return true;
     const bool hasLocalProtocolRedirect = !m_mimetype->property( "X-KDE-LocalProtocol" ).toString().isEmpty();
     return !hasLocalProtocolRedirect;
 }

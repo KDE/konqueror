@@ -11,6 +11,7 @@
 #include <QtCore/QTimer>
 #include <QtGui/QGridLayout>
 #include <QtGui/QBoxLayout>
+#include <QFile>
 
 // KDE
 #include <kapplication.h>
@@ -22,7 +23,6 @@
 #include <k3listview.h>
 #include <klocale.h>
 #include <kservicetypeprofile.h>
-#include <kstandarddirs.h>
 #include <ksycoca.h>
 #include <kpluginfactory.h>
 #include <kpluginloader.h>
@@ -119,10 +119,6 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
   m_removeTypeB->setEnabled(false);
 
   m_removeTypeB->setWhatsThis( i18n("Click here to remove the selected file type.") );
-#if 1 // TODO remove after porting the add / remove code
-  addTypeB->hide();
-  m_removeTypeB->hide();
-#endif
 
   // For the right panel, prepare a widget stack
   m_widgetStack = new QStackedWidget(this);
@@ -253,58 +249,45 @@ void FileTypesView::slotFilter(const QString & patternFilter)
 
 void FileTypesView::addType()
 {
-  QStringList allGroups;
-  QMap<QString,TypesListItem*>::iterator it = m_majorMap.begin();
-  while ( it != m_majorMap.end() ) {
-      allGroups.append( it.key() );
-      ++it;
-  }
+    const QStringList allGroups = m_majorMap.keys();
 
-  NewTypeDialog m(allGroups, this);
+    NewTypeDialog dialog(allGroups, this);
 
-  // TODO write out a kde-user-mimetypes.xml - or a file per mimetype
-  // in locateLocal("xdgdata-mime", "packages")
-  // And make the code for creating it useable from keditfiletype.cpp
-#if 0
-  if (m.exec()) {
-    Q3ListViewItemIterator it(typesLV);
-    QString loc = m.group() + '/' + m.text() + ".desktop";
-    loc = KStandardDirs::locate("mime", loc);
-    KMimeType::Ptr mimetype(new KMimeType(loc,
-                                          m.group() + '/' + m.text(),
-                                          QString(), QString(),
-                                          QStringList()));
+    if (dialog.exec()) {
+        QString newMimeType = dialog.group() + '/' + dialog.text();
 
-    TypesListItem *group = m_majorMap[ m.group() ];
-    if ( !group )
-    {
-       //group = new TypesListItem(
-       //TODO ! (The combo in NewTypeDialog must be made editable again when that happens)
-       Q_ASSERT(group);
+        Q3ListViewItemIterator it(typesLV);
+
+        TypesListItem *group = m_majorMap[ dialog.group() ];
+        if ( !group )
+        {
+            //group = new TypesListItem(
+            //TODO create group! (The combo in NewTypeDialog must be made editable again when that happens)
+            // Creating a mimetype in a new group is request #22837
+            Q_ASSERT(group);
+        }
+
+        // find out if our group has been filtered out -> insert if necessary
+        Q3ListViewItem *item = typesLV->firstChild();
+        bool insert = true;
+        while ( item ) {
+            if ( item == group ) {
+                insert = false;
+                break;
+            }
+            item = item->nextSibling();
+        }
+        if ( insert )
+            typesLV->insertItem( group );
+
+        TypesListItem *tli = new TypesListItem(group, newMimeType);
+        m_itemList.append( tli );
+
+        group->setOpen(true);
+        typesLV->setSelected(tli, true);
+
+        setDirty(true);
     }
-
-    // find out if our group has been filtered out -> insert if necessary
-    Q3ListViewItem *item = typesLV->firstChild();
-    bool insert = true;
-    while ( item ) {
-	if ( item == group ) {
-	    insert = false;
-	    break;
-	}
-	item = item->nextSibling();
-    }
-    if ( insert )
-	typesLV->insertItem( group );
-
-    TypesListItem *tli = new TypesListItem(group, mimetype, true);
-    m_itemList.append( tli );
-
-    group->setOpen(true);
-    typesLV->setSelected(tli, true);
-
-    setDirty(true);
-  }
-#endif
 }
 
 void FileTypesView::removeType()
@@ -329,7 +312,8 @@ void FileTypesView::removeType()
   if (!li)
       li = current->parent();
 
-  removedList.append(mimeTypeData.name());
+  if (!mimeTypeData.isNew())
+      removedList.append(mimeTypeData.name());
   current->parent()->takeItem(current);
   m_itemList.removeRef( current );
   setDirty(true);
@@ -368,7 +352,12 @@ void FileTypesView::updateDisplay(Q3ListViewItem *item)
   {
     m_widgetStack->setCurrentWidget( m_details );
     m_details->setMimeTypeData( &mimeTypeData );
-    m_removeTypeB->setEnabled( !mimeTypeData.isEssential() );
+    bool canRemove = !mimeTypeData.isEssential();
+    if (canRemove && !mimeTypeData.isNew()) {
+        // We can only remove mimetypes that we defined ourselves, not those from freedesktop.org
+        canRemove = MimeTypeWriter::hasDefinitionFile(mimeTypeData.name());
+    }
+    m_removeTypeB->setEnabled(canRemove);
   }
 
   // Updating the display indirectly called change(true)
@@ -378,27 +367,17 @@ void FileTypesView::updateDisplay(Q3ListViewItem *item)
 
 void FileTypesView::save()
 {
-  m_itemsModified.clear();
-  bool didIt = false;
-  // first, remove those items which we are asked to remove.
-  QStringList::Iterator it(removedList.begin());
-  QString loc;
+    m_itemsModified.clear();
 
-  for (; it != removedList.end(); ++it) {
-#if 0
-    didIt = true;
-    KMimeType::Ptr m_ptr = KMimeType::mimeType(*it);
-    loc = KStandardDirs::locate("mime", m_ptr->entryPath());
+    bool needUpdateMimeDb = false;
+    bool didIt = false;
+    // first, remove those items which we are asked to remove.
+    Q_FOREACH(const QString& mime, removedList) {
+        MimeTypeWriter::removeOwnMimeType(mime);
+        didIt = true;
+        needUpdateMimeDb = true;
+    }
 
-    // TODO port to XDG shared mime!
-    KDesktopFile config("mime", loc);
-    config.desktopGroup().writeEntry("Type", "MimeType");
-    config.desktopGroup().writeEntry("MimeType", m_ptr->name());
-    config.desktopGroup().writeEntry("Hidden", true);
-#endif
-  }
-
-  bool needUpdateMimeDb = false;
   // now go through all entries and sync those which are dirty.
   // don't use typesLV, it may be filtered
   QMap<QString,TypesListItem*>::iterator it1 = m_majorMap.begin();
@@ -455,7 +434,7 @@ void FileTypesView::slotDatabaseChanged()
     QList<TypesListItem *>::Iterator it = m_itemsModified.begin();
     for( ; it != m_itemsModified.end(); ++it ) {
         QString name = (*it)->name();
-        if ( removedList.indexOf( name ) == -1 ) // if not deleted meanwhile
+        if (!removedList.contains( name )) // if not deleted meanwhile
             (*it)->mimeTypeData().refresh();
     }
     m_itemsModified.clear();
