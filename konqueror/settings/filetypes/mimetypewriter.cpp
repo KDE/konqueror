@@ -35,6 +35,7 @@ public:
 
     QString m_mimeType;
     QString m_comment;
+    QString m_iconName;
     QStringList m_patterns;
     QString m_marker;
 };
@@ -59,6 +60,11 @@ void MimeTypeWriter::setComment(const QString& comment)
 void MimeTypeWriter::setPatterns(const QStringList& patterns)
 {
     d->m_patterns = patterns;
+}
+
+void MimeTypeWriter::setIconName(const QString& iconName)
+{
+    d->m_iconName = iconName;
 }
 
 void MimeTypeWriter::setMarker(const QString& marker)
@@ -87,9 +93,21 @@ bool MimeTypeWriter::write()
     writer.writeStartElement(nsUri, "mime-type");
     writer.writeAttribute("type", d->m_mimeType);
 
-    writer.writeStartElement(nsUri, "comment");
-    writer.writeCharacters(d->m_comment);
-    writer.writeEndElement(); // comment
+    if (!d->m_comment.isEmpty()) {
+        writer.writeStartElement(nsUri, "comment");
+        writer.writeCharacters(d->m_comment);
+        writer.writeEndElement(); // comment
+    }
+
+    if (!d->m_iconName.isEmpty()) {
+        // User-specified icon name; requires update-mime-database >= 0.24 at least
+        // Otherwise update-mime-database fails with an error about an unknown attribute!
+#if 0
+        writer.writeStartElement(nsUri, "icon");
+        writer.writeCharacters(d->m_iconName);
+        writer.writeEndElement(); // icon
+#endif
+    }
 
     foreach(const QString& pattern, d->m_patterns) {
         writer.writeStartElement(nsUri, "glob");
@@ -124,8 +142,6 @@ QString MimeTypeWriterPrivate::localFilePath() const
     //
     // We could also use Override.xml, says the spec, but then we'd need to merge with other mimetypes,
     // and in ~/.local we don't really expect other packages to be installed anyway...
-    // TODO this writes into $HOME/.local/share/mime which makes the unit test mess up the user's configuration...
-    // can we avoid that? is $KDEHOME/share/mime available too?
     QString baseName = m_mimeType;
     baseName.replace('/', '-');
     return KStandardDirs::locateLocal( "xdgdata-mime", "packages/" + baseName + ".xml" );

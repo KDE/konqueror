@@ -35,8 +35,23 @@ public:
     MimeTypeWriter(const QString& mimeType);
     ~MimeTypeWriter();
 
+    /**
+     * Sets the comment describing this mimetype.
+     * It is strongly recommended to call this.
+     */
     void setComment(const QString& comment);
+
+    /**
+     * Define the patterns associated with this mimetype,
+     * like "*.png"
+     */
     void setPatterns(const QStringList& patterns);
+
+    /**
+     * Optional: set a user-specified icon name for this mimetype.
+     * Otherwise the icon name is based on the mimetype name.
+     */
+    void setIconName(const QString& iconName);
 
     /**
      * Sets a string that will be written out as an XML comment
