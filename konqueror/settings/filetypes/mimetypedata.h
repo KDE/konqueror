@@ -93,6 +93,11 @@ public:
      */
     bool isNew() const { return m_bNewItem; }
 
+    /**
+     * Helper method for the filtering in the listview
+     */
+    bool matchesFilter(const QString& filter) const;
+
 private:
     AutoEmbed readAutoEmbed() const;
     void writeAutoEmbed();

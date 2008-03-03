@@ -73,7 +73,7 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
 
   l->addLayout( leftLayout );
 
-  QLabel *patternFilterLBL = new QLabel(i18n("F&ind filename pattern:"), this);
+  QLabel *patternFilterLBL = new QLabel(i18n("F&ind file type or filename pattern:"), this);
   leftLayout->addWidget(patternFilterLBL, 0, 0, 1, 3);
 
   patternFilterLE = new KLineEdit(this);
@@ -84,8 +84,9 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
   connect(patternFilterLE, SIGNAL(textChanged(const QString &)),
           this, SLOT(slotFilter(const QString &)));
 
-  wtstr = i18n("Enter a part of a filename pattern. Only file types with a "
-               "matching file pattern will appear in the list.");
+  wtstr = i18n("Enter a part of a filename pattern, and only file types with a "
+               "matching file pattern will appear in the list. Alternatively, enter "
+               "a part of a file type name as it appears in the list.");
 
   patternFilterLE->setWhatsThis( wtstr );
   patternFilterLBL->setWhatsThis( wtstr );
@@ -183,7 +184,6 @@ void FileTypesView::readFileTypes()
     m_majorMap.clear();
     m_itemList.clear();
 
-    TypesListItem *groupItem;
     KMimeType::List mimetypes = KMimeType::allMimeTypes();
     KMimeType::List::const_iterator it2(mimetypes.begin());
     for (; it2 != mimetypes.end(); ++it2) {
@@ -192,13 +192,11 @@ void FileTypesView::readFileTypes()
 	QString maj = mimetype.left(index);
 	QString min = mimetype.right(mimetype.length() - index+1);
 
-	QMap<QString,TypesListItem*>::const_iterator mit = m_majorMap.find( maj );
-	if ( mit == m_majorMap.end() ) {
+        TypesListItem* groupItem = m_majorMap.value(maj);
+	if ( !groupItem ) {
 	    groupItem = new TypesListItem( typesLV, maj );
 	    m_majorMap.insert( maj, groupItem );
 	}
-	else
-	    groupItem = mit.value();
 
 	TypesListItem *item = new TypesListItem(groupItem, (*it2));
 	m_itemList.append( item );
@@ -209,14 +207,11 @@ void FileTypesView::readFileTypes()
 
 void FileTypesView::slotEmbedMajor(const QString &major, bool &embed)
 {
-    TypesListItem *groupItem;
-    QMap<QString,TypesListItem*>::const_iterator mit = m_majorMap.find( major );
-    if ( mit == m_majorMap.end() )
+    TypesListItem *groupItem = m_majorMap.value(major);
+    if (!groupItem)
         return;
 
-    groupItem = mit.value();
-
-    embed = (groupItem->mimeTypeData().autoEmbed() == 0);
+    embed = (groupItem->mimeTypeData().autoEmbed() == MimeTypeData::Yes);
 }
 
 void FileTypesView::slotFilter(const QString & patternFilter)
@@ -235,13 +230,14 @@ void FileTypesView::slotFilter(const QString & patternFilter)
     Q3PtrListIterator<TypesListItem> it( m_itemList );
     while ( it.current() ) {
         const MimeTypeData& mimeTypeData = (*it)->mimeTypeData();
-	if ( patternFilter.isEmpty() ||
-	     !(mimeTypeData.patterns().filter( patternFilter, Qt::CaseInsensitive )).isEmpty() ) {
-
-	    TypesListItem *group = m_majorMap[ mimeTypeData.majorType() ];
-	    // QListView makes sure we don't insert a group-item more than once
-	    typesLV->insertItem( group );
-	    group->insertItem( *it );
+	if ( patternFilter.isEmpty() || mimeTypeData.matchesFilter(patternFilter) ) {
+	    TypesListItem *group = m_majorMap.value( mimeTypeData.majorType() );
+            Q_ASSERT(group);
+            if (group) {
+                // QListView makes sure we don't insert a group-item more than once
+                typesLV->insertItem( group );
+                group->insertItem( *it );
+            }
 	}
 	++it;
     }
@@ -261,6 +257,7 @@ void FileTypesView::addType()
         TypesListItem *group = m_majorMap.value(dialog.group());
         if ( !group ) {
             group = new TypesListItem(typesLV, dialog.group());
+            m_majorMap.insert(dialog.group(), group);
         }
 
         // find out if our group has been filtered out -> insert if necessary
