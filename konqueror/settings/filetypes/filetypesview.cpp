@@ -258,13 +258,9 @@ void FileTypesView::addType()
 
         Q3ListViewItemIterator it(typesLV);
 
-        TypesListItem *group = m_majorMap[ dialog.group() ];
-        if ( !group )
-        {
-            //group = new TypesListItem(
-            //TODO create group! (The combo in NewTypeDialog must be made editable again when that happens)
-            // Creating a mimetype in a new group is request #22837
-            Q_ASSERT(group);
+        TypesListItem *group = m_majorMap.value(dialog.group());
+        if ( !group ) {
+            group = new TypesListItem(typesLV, dialog.group());
         }
 
         // find out if our group has been filtered out -> insert if necessary

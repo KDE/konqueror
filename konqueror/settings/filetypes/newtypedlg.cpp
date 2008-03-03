@@ -54,8 +54,7 @@ NewTypeDialog::NewTypeDialog(const QStringList &groups, QWidget *parent)
   grid->addWidget(l, 0, 0);
 
   m_groupCombo = new QComboBox(main);
-  //m_groupCombo->setEditable( true ); M.O.: Currently, the code in filetypesview isn't capable of handling
-  //new top level types; so better not let them be added than crash.
+  m_groupCombo->setEditable(true);
   m_groupCombo->addItems(groups);
   grid->addWidget(m_groupCombo, 0, 1);
   l->setBuddy(m_groupCombo);
