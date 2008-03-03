@@ -178,9 +178,10 @@ static void generateMimeType( const QString &mime, const QString &extensions, co
         // TODO remove mimeinfo here, after message freeze
         mimeTypeWriter.setComment(i18n("Netscape plugin mimeinfo") + ' ' + pluginName);
     }
-    // TODO we wrote Icon=netscape_doc but the XDG shared mime spec doesn't have that;
-    // the icon name is supposed to match the mimetype name. I guess for plugin-defined
-    // mimetypes we'll just fallback to generic icons.
+
+    // TODO we wrote Icon=netscape_doc but we don't have an icon for that anymore,
+    // and we should do it only if the icon named after the mimetype doesn't exist on the system...
+    //mimeTypeWriter.setIcon(...)
 
     if (!extensions.isEmpty()) {
         const QStringList exts = extensions.split(",");
@@ -531,7 +532,7 @@ int main( int argc, char **argv )
       printf("10\n"); fflush(stdout);
     }
 
-    KApplication app( false);
+    KApplication app(false);
 
     // Set up SIGCHLD handler
     struct sigaction act;
