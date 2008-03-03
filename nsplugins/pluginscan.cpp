@@ -179,9 +179,9 @@ static void generateMimeType( const QString &mime, const QString &extensions, co
         mimeTypeWriter.setComment(i18n("Netscape plugin mimeinfo") + ' ' + pluginName);
     }
 
-    // TODO we wrote Icon=netscape_doc but we don't have an icon for that anymore,
-    // and we should do it only if the icon named after the mimetype doesn't exist on the system...
-    //mimeTypeWriter.setIcon(...)
+    // Maybe we should do it only if the icon named after the mimetype doesn't exist on the system...
+    // but this is quite unlikely, why would have the icon and not the mimetype.
+    mimeTypeWriter.setIconName("x-kde-nsplugin-generated");
 
     if (!extensions.isEmpty()) {
         const QStringList exts = extensions.split(",");
