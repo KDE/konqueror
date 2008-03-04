@@ -55,6 +55,11 @@ public:
      */
     void setMimeTypeData( MimeTypeData * mimeTypeData, TypesListItem* item = 0 );
 
+    /**
+     * Called when ksycoca has changed
+     */
+    void refresh();
+
 protected:
   void updateRemoveButton();
   void updateAskSave();

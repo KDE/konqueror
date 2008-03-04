@@ -107,10 +107,10 @@ void FileTypeDialog::clientChanged(bool state)
 
 void FileTypeDialog::slotDatabaseChanged()
 {
-  if ( KSycoca::self()->isChanged( "xdgdata-mime" ) )
-  {
-      m_mimeTypeData->refresh();
-  }
+    if ( KSycoca::self()->isChanged("xdgdata-mime") // changes in mimetype definitions
+         || KSycoca::self()->isChanged("services") ) { // changes in .desktop files
+        m_details->refresh();
+    }
 }
 
 #include "keditfiletype.moc"
