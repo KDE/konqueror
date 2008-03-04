@@ -688,7 +688,7 @@ int main(int argc, char *argv[])
   options.add("separate-output", ki18n("Return list items on separate lines (for checklist option and file open with --multiple)"));
   options.add("print-winid", ki18n("Outputs the winId of each dialog"));
   options.add("embed <winid>", ki18n("Makes the dialog transient for an X app specified by winid"));
-  options.add("dontagain <file:entry>", ki18n("Config file and option name for saving the \"don't-show/ask-again\" state"));
+  options.add("dontagain <file:entry>", ki18n("Config file and option name for saving the \"do-not-show/ask-again\" state"));
   options.add("+[arg]", ki18n("Arguments - depending on main option"));
   KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 
