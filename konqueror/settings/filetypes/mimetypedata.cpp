@@ -32,6 +32,8 @@ MimeTypeData::MimeTypeData(const QString& major)
       m_bNewItem(false),
       m_bFullInit(true),
       m_isGroup(true),
+      m_appServicesModified(false),
+      m_embedServicesModified(false),
       m_major(major)
 {
     m_autoEmbed = readAutoEmbed();
@@ -42,7 +44,9 @@ MimeTypeData::MimeTypeData(const KMimeType::Ptr mime)
       m_askSave(AskSaveDefault), // TODO: the code for initializing this is missing. FileTypeDetails initializes the checkbox instead...
       m_bNewItem(false),
       m_bFullInit(false),
-      m_isGroup(false)
+      m_isGroup(false),
+      m_appServicesModified(false),
+      m_embedServicesModified(false)
 {
     const QString mimeName = m_mimetype->name();
     const int index = mimeName.indexOf('/');
@@ -52,10 +56,7 @@ MimeTypeData::MimeTypeData(const KMimeType::Ptr mime)
     } else {
         m_major = mimeName;
     }
-    m_comment = m_mimetype->comment();
-    m_icon = m_mimetype->iconName();
-    setPatterns(m_mimetype->patterns());
-    m_autoEmbed = readAutoEmbed();
+    initFromKMimeType();
 }
 
 MimeTypeData::MimeTypeData(const QString& mimeName, bool)
@@ -63,7 +64,9 @@ MimeTypeData::MimeTypeData(const QString& mimeName, bool)
       m_askSave(AskSaveDefault),
       m_bNewItem(true),
       m_bFullInit(false),
-      m_isGroup(false)
+      m_isGroup(false),
+      m_appServicesModified(false),
+      m_embedServicesModified(false)
 {
     const int index = mimeName.indexOf('/');
     if (index != -1) {
@@ -74,6 +77,14 @@ MimeTypeData::MimeTypeData(const QString& mimeName, bool)
     }
     m_autoEmbed = UseGroupSetting;
     // all the rest is empty by default
+}
+
+void MimeTypeData::initFromKMimeType()
+{
+    m_comment = m_mimetype->comment();
+    m_icon = m_mimetype->iconName();
+    setPatterns(m_mimetype->patterns());
+    m_autoEmbed = readAutoEmbed();
 }
 
 MimeTypeData::AutoEmbed MimeTypeData::readAutoEmbed() const
@@ -223,7 +234,7 @@ bool MimeTypeData::isDirty() const
     }
 
     if ( !m_isGroup ) {
-        if (areServicesDirty())
+        if (m_appServicesModified || m_embedServicesModified)
             return true;
         if (isMimeTypeDirty())
             return true;
@@ -304,6 +315,9 @@ void MimeTypeData::syncServices()
         KConfigGroup removedParts(profile, "Removed KDE Service Associations");
         saveRemovedServices(removedParts, m_embedServices, oldPartServices);
     }
+
+    m_appServicesModified = false;
+    m_embedServicesModified = false;
 }
 
 static QStringList collectStorageIds(const QStringList& services)
@@ -353,12 +367,25 @@ void MimeTypeData::saveServices(KConfigGroup & config, const QStringList& servic
 
 void MimeTypeData::refresh()
 {
-    kDebug() << "MimeTypeData refresh" << name();
+    if (m_isGroup)
+        return;
+
+    //kDebug() << "MimeTypeData refresh" << name();
     m_mimetype = KMimeType::mimeType( name() );
-    if (m_mimetype && m_bNewItem) {
-        kDebug() << "OK, created" << name();
-        m_bNewItem = false; // if this was a new mimetype, we just created it
-        m_icon = m_mimetype->iconName();
+    if (m_mimetype) {
+        if (m_bNewItem) {
+            kDebug() << "OK, created" << name();
+            m_bNewItem = false; // if this was a new mimetype, we just created it
+            m_icon = m_mimetype->iconName();
+        }
+        if (!isMimeTypeDirty()) {
+            // Update from ksycoca, in case something was changed from out of this kcm
+            // (e.g. using KOpenWithDialog, or keditfiletype + kcmshell filetypes)
+            initFromKMimeType();
+        }
+        if (!m_appServicesModified && !m_embedServicesModified) {
+            m_bFullInit = false; // refresh services too
+        }
     }
 }
 
@@ -394,26 +421,6 @@ void MimeTypeData::setPatterns(const QStringList &p)
     m_patterns.sort();
 }
 
-bool MimeTypeData::areServicesDirty() const
-{
-    if (m_bFullInit) {
-        QStringList oldAppServices = getAppOffers();
-        QStringList oldEmbedServices = getPartOffers();
-
-        if (oldAppServices != m_appServices) {
-            kDebug() << "App Services Dirty: old=" << oldAppServices
-                     << " m_appServices=" << m_appServices;
-            return true;
-        }
-        if (oldEmbedServices != m_embedServices) {
-            kDebug() << "Embed Services Dirty: old=" << oldEmbedServices
-                     << " m_embedServices=" << m_embedServices;
-            return true;
-        }
-    }
-    return false;
-}
-
 bool MimeTypeData::matchesFilter(const QString& filter) const
 {
     if (name().contains(filter, Qt::CaseInsensitive))
@@ -426,4 +433,16 @@ bool MimeTypeData::matchesFilter(const QString& filter) const
         return true;
 
     return false;
+}
+
+void MimeTypeData::setAppServices(const QStringList &dsl)
+{
+    m_appServices = dsl;
+    m_appServicesModified = true;
+}
+
+void MimeTypeData::setEmbedServices(const QStringList &dsl)
+{
+    m_embedServices = dsl;
+    m_embedServicesModified = true;
 }

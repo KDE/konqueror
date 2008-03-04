@@ -349,4 +349,14 @@ void FileTypeDetails::enableExtButtons()
   removeExtButton->setEnabled(true);
 }
 
+void FileTypeDetails::refresh()
+{
+    if (!m_mimeTypeData)
+        return;
+
+    // Called when ksycoca has been updated -> refresh data, then widgets
+    m_mimeTypeData->refresh();
+    setMimeTypeData(m_mimeTypeData, m_item);
+}
+
 #include "filetypedetails.moc"

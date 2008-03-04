@@ -227,19 +227,17 @@ void FileTypesView::slotFilter(const QString & patternFilter)
     }
 
     // insert all items and their group that match the filter
-    Q3PtrListIterator<TypesListItem> it( m_itemList );
-    while ( it.current() ) {
-        const MimeTypeData& mimeTypeData = (*it)->mimeTypeData();
+    Q_FOREACH(TypesListItem* it, m_itemList) {
+        const MimeTypeData& mimeTypeData = it->mimeTypeData();
 	if ( patternFilter.isEmpty() || mimeTypeData.matchesFilter(patternFilter) ) {
 	    TypesListItem *group = m_majorMap.value( mimeTypeData.majorType() );
             Q_ASSERT(group);
             if (group) {
                 // QListView makes sure we don't insert a group-item more than once
-                typesLV->insertItem( group );
-                group->insertItem( *it );
+                typesLV->insertItem(group);
+                group->insertItem(it);
             }
 	}
-	++it;
     }
 }
 
@@ -308,7 +306,7 @@ void FileTypesView::removeType()
   if (!mimeTypeData.isNew())
       removedList.append(mimeTypeData.name());
   current->parent()->takeItem(current);
-  m_itemList.removeRef( current );
+  m_itemList.removeAll(current);
   setDirty(true);
 
   if ( li )
@@ -360,8 +358,6 @@ void FileTypesView::updateDisplay(Q3ListViewItem *item)
 
 void FileTypesView::save()
 {
-    m_itemsModified.clear();
-
     bool needUpdateMimeDb = false;
     bool didIt = false;
     // first, remove those items which we are asked to remove.
@@ -380,23 +376,18 @@ void FileTypesView::save()
       kDebug() << "Entry " << tli->name() << " is dirty. Saving.";
       if (tli->mimeTypeData().sync())
           needUpdateMimeDb = true;
-      m_itemsModified.append( tli );
       didIt = true;
     }
     ++it1;
   }
-  Q3PtrListIterator<TypesListItem> it2( m_itemList );
-  while ( it2.current() ) {
-    TypesListItem *tli = *it2;
-    if (tli->mimeTypeData().isDirty()) {
-      kDebug() << "Entry " << tli->name() << " is dirty. Saving.";
-      if (tli->mimeTypeData().sync())
-          needUpdateMimeDb = true;
-      m_itemsModified.append( tli );
-      didIt = true;
+    Q_FOREACH(TypesListItem* tli, m_itemList) {
+        if (tli->mimeTypeData().isDirty()) {
+            kDebug() << "Entry " << tli->name() << " is dirty. Saving.";
+            if (tli->mimeTypeData().sync())
+                needUpdateMimeDb = true;
+            didIt = true;
+        }
     }
-    ++it2;
-  }
 
   m_fileTypesConfig->sync();
 
@@ -418,20 +409,20 @@ void FileTypesView::load()
 
 void FileTypesView::slotDatabaseChanged()
 {
-  if ( KSycoca::self()->isChanged( "xdgdata-mime" ) )
-  {
-    // ksycoca has new KMimeTypes objects for us, make sure to update
-    // our 'copies' to be in sync with it. Not important for OK, but
-    // important for Apply (how to differentiate those 2?).
-    // See BR 35071.
-    QList<TypesListItem *>::Iterator it = m_itemsModified.begin();
-    for( ; it != m_itemsModified.end(); ++it ) {
-        QString name = (*it)->name();
-        if (!removedList.contains( name )) // if not deleted meanwhile
-            (*it)->mimeTypeData().refresh();
+    if ( KSycoca::self()->isChanged("xdgdata-mime") // changes in mimetype definitions
+         || KSycoca::self()->isChanged("services") ) { // changes in .desktop files
+
+        m_details->refresh();
+
+        // ksycoca has new KMimeTypes objects for us, make sure to update
+        // our 'copies' to be in sync with it. Not important for OK, but
+        // important for Apply (how to differentiate those 2?).
+        // See BR 35071.
+
+        Q_FOREACH(TypesListItem* tli, m_itemList) {
+            tli->mimeTypeData().refresh();
+        }
     }
-    m_itemsModified.clear();
-  }
 }
 
 void FileTypesView::defaults()
