@@ -141,24 +141,33 @@ void MimeTypeData::setIcon(const QString& icon)
 }
 #endif
 
-void MimeTypeData::getServiceOffers(QStringList& appServices, QStringList& embedServices) const
+QStringList MimeTypeData::getAppOffers() const
 {
+    QStringList services;
     const KService::List offerList =
         KMimeTypeTrader::self()->query(name(), "Application");
     KService::List::const_iterator it(offerList.begin());
-    for (; it != offerList.constEnd(); ++it)
+    for (; it != offerList.constEnd(); ++it) {
         if ((*it)->allowAsDefault())
-            appServices.append((*it)->entryPath());
+            services.append((*it)->storageId());
+    }
+    return services;
+}
 
+QStringList MimeTypeData::getPartOffers() const
+{
+    QStringList services;
     const KService::List partOfferList =
         KMimeTypeTrader::self()->query(name(), "KParts/ReadOnlyPart");
-    for ( it = partOfferList.begin(); it != partOfferList.constEnd(); ++it)
-        embedServices.append((*it)->entryPath());
+    for ( KService::List::const_iterator it = partOfferList.begin(); it != partOfferList.constEnd(); ++it)
+        services.append((*it)->storageId());
+    return services;
 }
 
 void MimeTypeData::getMyServiceOffers() const
 {
-    getServiceOffers(m_appServices, m_embedServices);
+    m_appServices = getAppOffers();
+    m_embedServices = getPartOffers();
     m_bFullInit = true;
 }
 
@@ -266,28 +275,35 @@ bool MimeTypeData::sync()
         needUpdateMimeDb = true;
     }
 
-    if (areServicesDirty()) {
-        syncServices();
-    }
+    syncServices();
 
     return needUpdateMimeDb;
 }
 
 void MimeTypeData::syncServices()
 {
+    if (!m_bFullInit)
+        return;
+
     KSharedConfig::Ptr profile = KSharedConfig::openConfig("mimeapps.list", KConfig::NoGlobals, "xdgdata-apps");
 
-    // Save preferred services
-    KConfigGroup addedApps(profile, "Added Associations");
-    saveServices(addedApps, m_appServices);
-    KConfigGroup addedParts(profile, "Added KDE Service Associations");
-    saveServices(addedParts, m_embedServices);
+    const QStringList oldAppServices = getAppOffers();
+    if (oldAppServices != m_appServices) {
+        // Save preferred services
+        KConfigGroup addedApps(profile, "Added Associations");
+        saveServices(addedApps, m_appServices);
+        KConfigGroup removedApps(profile, "Removed Associations");
+        saveRemovedServices(removedApps, m_appServices, oldAppServices);
+    }
 
-    // Handle removed services
-    KConfigGroup removedApps(profile, "Removed Associations");
-    saveRemovedServices(removedApps, m_appServices, "Application");
-    KConfigGroup removedParts(profile, "Removed KDE Service Associations");
-    saveRemovedServices(removedParts, m_embedServices, "KParts/ReadOnlyPart");
+    const QStringList oldPartServices = getPartOffers();
+    if (oldPartServices != m_embedServices) {
+        // Handle removed services
+        KConfigGroup addedParts(profile, "Added KDE Service Associations");
+        saveServices(addedParts, m_embedServices);
+        KConfigGroup removedParts(profile, "Removed KDE Service Associations");
+        saveRemovedServices(removedParts, m_embedServices, oldPartServices);
+    }
 }
 
 static QStringList collectStorageIds(const QStringList& services)
@@ -296,9 +312,9 @@ static QStringList collectStorageIds(const QStringList& services)
     QStringList::const_iterator it(services.begin());
     for (int i = services.count(); it != services.end(); ++it, i--) {
 
-        KService::Ptr pService = KService::serviceByDesktopPath(*it);
+        KService::Ptr pService = KService::serviceByStorageId(*it);
         if (!pService) {
-            kWarning() << "service with desktop path" << *it << "not found";
+            kWarning() << "service with storage id" << *it << "not found";
             continue; // Where did that one go?
         }
 
@@ -307,18 +323,14 @@ static QStringList collectStorageIds(const QStringList& services)
     return serviceList;
 }
 
-void MimeTypeData::saveRemovedServices(KConfigGroup & config, const QStringList& services, const QString& genericServiceType)
+void MimeTypeData::saveRemovedServices(KConfigGroup & config, const QStringList& services, const QStringList& oldServices)
 {
-    QStringList removedServiceList;
-    const KService::List offerList =
-        KMimeTypeTrader::self()->query(name(), genericServiceType);
+    QStringList removedServiceList = config.readXdgListEntry(name());
 
-    KService::List::const_iterator it_srv(offerList.begin());
-    for (; it_srv != offerList.end(); ++it_srv) {
-        KService::Ptr pService = (*it_srv);
-        if (!services.contains(pService->entryPath())) {
+    Q_FOREACH(const QString& oldService, oldServices) {
+        if (!services.contains(oldService)) {
             // The service was in m_appServices (or m_embedServices) but has been removed
-            removedServiceList.append(pService->storageId());
+            removedServiceList.append(oldService);
         }
     }
     if (removedServiceList.isEmpty())
@@ -381,9 +393,8 @@ void MimeTypeData::setPatterns(const QStringList &p)
 bool MimeTypeData::areServicesDirty() const
 {
     if (m_bFullInit) {
-        QStringList oldAppServices;
-        QStringList oldEmbedServices;
-        getServiceOffers( oldAppServices, oldEmbedServices );
+        QStringList oldAppServices = getAppOffers();
+        QStringList oldEmbedServices = getPartOffers();
 
         if (oldAppServices != m_appServices) {
             kDebug() << "App Services Dirty: old=" << oldAppServices

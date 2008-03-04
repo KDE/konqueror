@@ -103,11 +103,12 @@ private:
     void writeAutoEmbed();
     bool isMimeTypeDirty() const; // whether the mimetype definition file needs saving
     bool areServicesDirty() const; // whether the services using that mimetype need saving
-    void getServiceOffers(QStringList& appServices, QStringList& embedServices) const;
+    QStringList getAppOffers() const;
+    QStringList getPartOffers() const;
     void getMyServiceOffers() const;
     void syncServices();
     void saveServices(KConfigGroup & config, const QStringList& services);
-    void saveRemovedServices(KConfigGroup & config, const QStringList& services, const QString& genericServiceType);
+    void saveRemovedServices(KConfigGroup & config, const QStringList& services, const QStringList& oldServices);
 
     KMimeType::Ptr m_mimetype; // 0 if this is data for a mimetype group (m_isGroup==true)
     enum AskSave { AskSaveYes = 0, AskSaveNo = 1, AskSaveDefault = 2 };
