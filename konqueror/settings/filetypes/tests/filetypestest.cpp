@@ -17,6 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 
+#include <kprocess.h>
 #include <kservice.h>
 #include <qtest_kde.h>
 
@@ -38,31 +39,27 @@ private Q_SLOTS:
     void initTestCase()
     {
         m_mimeTypeCreatedSuccessfully = false;
-        m_kdehome = QDir::home().canonicalPath() + "/.kde-unit-test";
+        const QString kdehome = QDir::home().canonicalPath() + "/.kde-unit-test";
         // We need a place where we can hack a mimeapps.list without harm, so not ~/.local
         // This test relies on shared-mime-info being installed in /usr/share [or kdedir/share]
-        //::setenv("XDG_DATA_DIRS", QFile::encodeName(m_kdehome + "/share:/usr/share"), 1 );
-        ::setenv("XDG_DATA_HOME", QFile::encodeName(m_kdehome) + "/local", 1);
+        //::setenv("XDG_DATA_DIRS", QFile::encodeName(kdehome + "/share:/usr/share"), 1 );
+        ::setenv("XDG_DATA_HOME", QFile::encodeName(kdehome) + "/local", 1);
         QStringList appsDirs = KGlobal::dirs()->resourceDirs("xdgdata-apps");
-        kDebug() << appsDirs;
-        const QString localApps = m_kdehome + "/local/applications/";
-        QCOMPARE(appsDirs.first(), localApps);
-        QCOMPARE(KGlobal::dirs()->resourceDirs("xdgdata-mime").first(), m_kdehome + "/local/mime/");
+        //kDebug() << appsDirs;
+        m_localApps = kdehome + "/local/applications/";
+        QCOMPARE(appsDirs.first(), m_localApps);
+        QCOMPARE(KGlobal::dirs()->resourceDirs("xdgdata-mime").first(), kdehome + "/local/mime/");
 
-        QFile::remove(localApps + "/mimeapps.list");
+        QFile::remove(m_localApps + "mimeapps.list");
 
-        // Create fake application for some tests below.
+        // Create fake applications for some tests below.
         bool mustUpdateKSycoca = false;
-        fakeApplication = localApps + "fakeapplication.desktop";
-        const bool mustCreateFakeService = !QFile::exists(fakeApplication);
-        if (mustCreateFakeService) {
+        fakeApplication = "fakeapplication.desktop";
+        if (createDesktopFile(m_localApps + fakeApplication))
             mustUpdateKSycoca = true;
-            KDesktopFile file(fakeApplication);
-            KConfigGroup group = file.desktopGroup();
-            group.writeEntry("Name", "FakeApplication");
-            group.writeEntry("Type", "Application");
-            group.writeEntry("Exec", "ls");
-        }
+        fakeApplication2 = "fakeapplication2.desktop";
+        if (createDesktopFile(m_localApps + fakeApplication2))
+            mustUpdateKSycoca = true;
 
         // Cleanup after testMimeTypePatterns if it failed mid-way
         const QString packageFileName = KStandardDirs::locateLocal( "xdgdata-mime", "packages/text-plain.xml" );
@@ -78,7 +75,7 @@ private Q_SLOTS:
             // Update ksycoca in ~/.kde-unit-test after creating the above
             runKBuildSycoca();
         }
-        KService::Ptr fakeApplicationService = KService::serviceByDesktopPath(fakeApplication);
+        KService::Ptr fakeApplicationService = KService::serviceByStorageId(fakeApplication);
         QVERIFY(fakeApplicationService);
     }
 
@@ -177,7 +174,8 @@ private Q_SLOTS:
         const char* mimeTypeName = "application/vnd.oasis.opendocument.text";
         MimeTypeData data(KMimeType::mimeType(mimeTypeName));
         QStringList appServices = data.appServices();
-        qDebug() << appServices;
+        //kDebug() << appServices;
+        const QString oldPreferredApp = appServices.first();
         QVERIFY(!appServices.contains(fakeApplication)); // already there? hmm can't really test then
         QVERIFY(!data.isDirty());
         appServices.prepend(fakeApplication);
@@ -185,24 +183,50 @@ private Q_SLOTS:
         QVERIFY(data.isDirty());
         QVERIFY(!data.sync()); // success, but no need to run update-mime-database
         runKBuildSycoca();
-        // Check what's in ksycoca
-        MimeTypeData data2(KMimeType::mimeType(mimeTypeName));
-        qDebug() << data2.appServices();
-        QVERIFY(data2.appServices().contains(fakeApplication));
-        QCOMPARE(data2.appServices(), appServices);
         QVERIFY(!data.isDirty());
+        // Check what's in ksycoca
+        checkMimeTypeServices(mimeTypeName, appServices);
 
         // Now test removing (in the same test, since it's inter-dependent)
-        appServices.removeAll(fakeApplication);
+        QVERIFY(appServices.removeAll(fakeApplication) > 0);
         data.setAppServices(appServices);
         QVERIFY(data.isDirty());
         QVERIFY(!data.sync()); // success, but no need to run update-mime-database
         runKBuildSycoca();
-        QCOMPARE(data.appServices(), appServices);
-        QVERIFY(!data.appServices().contains(fakeApplication));
+        // Check what's in ksycoca
+        checkMimeTypeServices(mimeTypeName, appServices);
+        // Check what's in mimeapps.list
+        checkRemovedAssociationsContains(mimeTypeName, fakeApplication);
     }
 
-    // TODO test removing an "implicit association"
+    void testRemoveTwice()
+    {
+        // Remove fakeApplication from image/png
+        const char* mimeTypeName = "image/png";
+        MimeTypeData data(KMimeType::mimeType(mimeTypeName));
+        QStringList appServices = data.appServices();
+        kDebug() << "initial list for" << mimeTypeName << appServices;
+        QVERIFY(appServices.removeAll(fakeApplication) > 0);
+        data.setAppServices(appServices);
+        QVERIFY(!data.sync()); // success, but no need to run update-mime-database
+        runKBuildSycoca();
+        // Check what's in ksycoca
+        checkMimeTypeServices(mimeTypeName, appServices);
+        // Check what's in mimeapps.list
+        checkRemovedAssociationsContains(mimeTypeName, fakeApplication);
+
+        // Remove fakeApplication2 from image/png; must keep the previous entry in "Removed Associations"
+        QVERIFY(appServices.removeAll(fakeApplication2) > 0);
+        data.setAppServices(appServices);
+        QVERIFY(!data.sync()); // success, but no need to run update-mime-database
+        runKBuildSycoca();
+        // Check what's in ksycoca
+        checkMimeTypeServices(mimeTypeName, appServices);
+        // Check what's in mimeapps.list
+        checkRemovedAssociationsContains(mimeTypeName, fakeApplication);
+        // Check what's in mimeapps.list
+        checkRemovedAssociationsContains(mimeTypeName, fakeApplication2);
+    }
 
     void testCreateMimeType()
     {
@@ -247,18 +271,54 @@ private Q_SLOTS:
 
 private: // helper methods
 
+    void checkRemovedAssociationsContains(const QString& mimeTypeName, const QString& application)
+    {
+        const KConfig config(m_localApps + "mimeapps.list", KConfig::NoGlobals);
+        const KConfigGroup group(&config, "Removed Associations");
+        const QStringList removedEntries = group.readXdgListEntry(mimeTypeName);
+        if (!removedEntries.contains(application)) {
+            kWarning() << removedEntries << "does not contain" << application;
+            QVERIFY(removedEntries.contains(application));
+        }
+    }
+
     void runKBuildSycoca()
     {
         // Wait for notifyDatabaseChanged DBus signal
         // (The real KCM code simply does the refresh in a slot, asynchronously)
         QEventLoop loop;
         QObject::connect(KSycoca::self(), SIGNAL(databaseChanged()), &loop, SLOT(quit()));
-        QProcess::execute( KGlobal::dirs()->findExe(KBUILDSYCOCA_EXENAME) );
+        KProcess proc;
+        proc << KStandardDirs::findExe(KBUILDSYCOCA_EXENAME);
+        proc.setOutputChannelMode(KProcess::MergedChannels); // silence kbuildsycoca output
+        proc.execute();
         loop.exec();
     }
 
-    QString fakeApplication;
-    QString m_kdehome;
+    bool createDesktopFile(const QString& path)
+    {
+        if (!QFile::exists(path)) {
+            KDesktopFile file(path);
+            KConfigGroup group = file.desktopGroup();
+            group.writeEntry("Name", "FakeApplication");
+            group.writeEntry("Type", "Application");
+            group.writeEntry("Exec", "ls");
+            group.writeEntry("MimeType", "image/png");
+            return true;
+        }
+        return false;
+    }
+
+    void checkMimeTypeServices(const QString& mimeTypeName, const QStringList& expectedServices)
+    {
+        MimeTypeData data2(KMimeType::mimeType(mimeTypeName));
+        kDebug() << data2.appServices();
+        QCOMPARE(data2.appServices(), expectedServices);
+    }
+
+    QString fakeApplication; // storage id of the fake application
+    QString fakeApplication2; // storage id of the fake application2
+    QString m_localApps;
     bool m_mimeTypeCreatedSuccessfully;
 };
 

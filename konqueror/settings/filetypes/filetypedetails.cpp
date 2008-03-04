@@ -49,7 +49,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
     QVBoxLayout* topLayout = new QVBoxLayout(this);
 
     m_mimeTypeLabel = new QLabel(this);
-    topLayout->addWidget(m_mimeTypeLabel);
+    topLayout->addWidget(m_mimeTypeLabel, 0, Qt::AlignCenter);
 
     m_tabWidget = new QTabWidget(this);
     topLayout->addWidget(m_tabWidget);
