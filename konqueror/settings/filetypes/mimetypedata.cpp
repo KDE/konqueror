@@ -108,6 +108,9 @@ MimeTypeData::AutoEmbed MimeTypeData::readAutoEmbed() const
 void MimeTypeData::writeAutoEmbed()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig("filetypesrc", KConfig::NoGlobals);
+    if (!config->isConfigWritable(true))
+        return;
+
     const QString key = QString("embed-") + name();
     KConfigGroup group(config, "EmbedSettings");
     if (m_isGroup) {
@@ -260,7 +263,9 @@ bool MimeTypeData::sync()
     }
 
     if (m_askSave != AskSaveDefault) {
-        const KSharedConfig::Ptr config = KSharedConfig::openConfig("filetypesrc", KConfig::NoGlobals);
+        KSharedConfig::Ptr config = KSharedConfig::openConfig("filetypesrc", KConfig::NoGlobals);
+        if (!config->isConfigWritable(true))
+            return false;
         KConfigGroup cg = config->group("Notification Messages");
         if (m_askSave == AskSaveYes) {
             // Ask
@@ -297,6 +302,9 @@ void MimeTypeData::syncServices()
         return;
 
     KSharedConfig::Ptr profile = KSharedConfig::openConfig("mimeapps.list", KConfig::NoGlobals, "xdgdata-apps");
+
+    if (!profile->isConfigWritable(true)) // warn user if mimeapps.list is root-owned (#155126/#94504)
+        return;
 
     const QStringList oldAppServices = getAppOffers();
     if (oldAppServices != m_appServices) {
