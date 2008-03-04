@@ -65,12 +65,15 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   hBox->setSpacing(KDialog::spacingHint());
   firstLayout->addLayout(hBox, 1);
 
-  //iconButton = new KIconButton(firstWidget);
-  //iconButton->setIconType(KIconLoader::Desktop, KIconLoader::MimeType);
-  //connect(iconButton, SIGNAL(iconChanged(QString)), SLOT(updateIcon(QString)));
-  //iconButton->setWhatsThis( i18n("This button displays the icon associated"
-  //  " with the selected file type. Click on it to choose a different icon.") );
+#if ENABLE_CHANGING_ICON
+  iconButton = new KIconButton(firstWidget);
+  iconButton->setIconType(KIconLoader::Desktop, KIconLoader::MimeType);
+  connect(iconButton, SIGNAL(iconChanged(QString)), SLOT(updateIcon(QString)));
+  iconButton->setWhatsThis( i18n("This button displays the icon associated"
+                                 " with the selected file type. Click on it to choose a different icon.") );
+#else
   iconButton = new QLabel(firstWidget);
+#endif
 
   iconButton->setFixedSize(70, 70);
   hBox->addWidget(iconButton);
@@ -320,7 +323,11 @@ void FileTypeDetails::setMimeTypeData( MimeTypeData * mimeTypeData, TypesListIte
   m_item = item; // can be 0
   Q_ASSERT(mimeTypeData);
   m_mimeTypeLabel->setText(i18n("File type %1", mimeTypeData->name()));
+#if ENABLE_CHANGING_ICON
+  iconButton->setIcon(mimeTypeData->icon());
+#else
   iconButton->setPixmap(DesktopIcon(mimeTypeData->icon()));
+#endif
   description->setText(mimeTypeData->comment());
   m_rbGroupSettings->setText( i18n("Use settings for '%1' group", mimeTypeData->majorType() ) );
   extensionLB->clear();
