@@ -216,6 +216,7 @@ private Q_SLOTS:
         checkRemovedAssociationsContains(mimeTypeName, fakeApplication);
 
         // Remove fakeApplication2 from image/png; must keep the previous entry in "Removed Associations"
+        kDebug() << "Removing fakeApplication2";
         QVERIFY(appServices.removeAll(fakeApplication2) > 0);
         data.setAppServices(appServices);
         QVERIFY(!data.sync()); // success, but no need to run update-mime-database
@@ -226,6 +227,18 @@ private Q_SLOTS:
         checkRemovedAssociationsContains(mimeTypeName, fakeApplication);
         // Check what's in mimeapps.list
         checkRemovedAssociationsContains(mimeTypeName, fakeApplication2);
+
+        // And now re-add fakeApplication2...
+        kDebug() << "Re-adding fakeApplication2";
+        appServices.prepend(fakeApplication2);
+        data.setAppServices(appServices);
+        QVERIFY(!data.sync()); // success, but no need to run update-mime-database
+        runKBuildSycoca();
+        // Check what's in ksycoca
+        checkMimeTypeServices(mimeTypeName, appServices);
+        // Check what's in mimeapps.list
+        checkRemovedAssociationsContains(mimeTypeName, fakeApplication);
+        checkRemovedAssociationsDoesNotContain(mimeTypeName, fakeApplication2);
     }
 
     void testCreateMimeType()
@@ -282,6 +295,17 @@ private: // helper methods
         }
     }
 
+    void checkRemovedAssociationsDoesNotContain(const QString& mimeTypeName, const QString& application)
+    {
+        const KConfig config(m_localApps + "mimeapps.list", KConfig::NoGlobals);
+        const KConfigGroup group(&config, "Removed Associations");
+        const QStringList removedEntries = group.readXdgListEntry(mimeTypeName);
+        if (removedEntries.contains(application)) {
+            kWarning() << removedEntries << "contains" << application;
+            QVERIFY(!removedEntries.contains(application));
+        }
+    }
+
     void runKBuildSycoca()
     {
         // Wait for notifyDatabaseChanged DBus signal
@@ -312,7 +336,8 @@ private: // helper methods
     void checkMimeTypeServices(const QString& mimeTypeName, const QStringList& expectedServices)
     {
         MimeTypeData data2(KMimeType::mimeType(mimeTypeName));
-        kDebug() << data2.appServices();
+        if (data2.appServices() != expectedServices)
+            kDebug() << "got" << data2.appServices() << "expected" << expectedServices;
         QCOMPARE(data2.appServices(), expectedServices);
     }
 
