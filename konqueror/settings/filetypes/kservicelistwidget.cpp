@@ -43,8 +43,8 @@
 #include "kserviceselectdlg.h"
 #include "mimetypedata.h"
 
-KServiceListItem::KServiceListItem( KService::Ptr pService, int kind )
-    : QListWidgetItem(), desktopPath(pService->entryPath())
+KServiceListItem::KServiceListItem( const KService::Ptr& pService, int kind )
+    : QListWidgetItem(), storageId(pService->storageId()), desktopPath(pService->entryPath())
 {
     if ( kind == KServiceListWidget::SERVICELIST_APPLICATIONS )
         setText( pService->name() );
@@ -57,7 +57,7 @@ KServiceListItem::KServiceListItem( KService::Ptr pService, int kind )
       localPath = pService->locateLocal();
 }
 
-bool KServiceListItem::isImmutable()
+bool KServiceListItem::isImmutable() const
 {
     return !KStandardDirs::checkAccess(localPath, W_OK);
 }
@@ -162,26 +162,22 @@ void KServiceListWidget::setMimeTypeData( MimeTypeData * mimeTypeData )
   servicesLB->clear();
   servicesLB->setEnabled(false);
 
-  if ( m_mimeTypeData )
-  {
-    QStringList services = ( m_kind == SERVICELIST_APPLICATIONS )
-      ? m_mimeTypeData->appServices()
-      : m_mimeTypeData->embedServices();
+    if (m_mimeTypeData) {
+        const QStringList services = ( m_kind == SERVICELIST_APPLICATIONS )
+                                     ? m_mimeTypeData->appServices()
+                                     : m_mimeTypeData->embedServices();
 
-    if (services.count() == 0) {
-      servicesLB->addItem(i18n("None"));
-    } else {
-      for ( QStringList::Iterator it = services.begin();
-            it != services.end(); it++ )
-      {
-        KService::Ptr pService = KService::serviceByDesktopPath( *it );
-
-        if (pService)
-          servicesLB->addItem( new KServiceListItem(pService, m_kind) );
-      }
-      servicesLB->setEnabled(true);
+        if (services.isEmpty()) {
+            servicesLB->addItem(i18n("None"));
+        } else {
+            Q_FOREACH(const QString& service, services) {
+                KService::Ptr pService = KService::serviceByStorageId(service);
+                if (pService)
+                    servicesLB->addItem( new KServiceListItem(pService, m_kind) );
+            }
+            servicesLB->setEnabled(true);
+        }
     }
-  }
 }
 
 void KServiceListWidget::promoteService()
@@ -305,11 +301,9 @@ void KServiceListWidget::editService()
       QString path = service->entryPath();
 
       // If the path to the desktop file is relative, try to get the full
-      // path from KStdDirs.
-      path = KStandardDirs::locate("apps", path);
-      KUrl serviceURL;
-      serviceURL.setPath( path );
-      KFileItem item( serviceURL, "application/x-desktop", KFileItem::Unknown );
+      // path from KStandardDirs.
+      path = KStandardDirs::locate("apps", path); // TODO use xdgdata-apps instead?
+      KFileItem item( KUrl(path), "application/x-desktop", KFileItem::Unknown );
       KPropertiesDialog dlg( item, this );
       if ( dlg.exec() != QDialog::Accepted )
         return;
@@ -384,7 +378,7 @@ void KServiceListWidget::updatePreferredServices()
 
   for (unsigned int i = 0; i < count; i++) {
     KServiceListItem *sli = (KServiceListItem *) servicesLB->item(i);
-    sl.append( sli->desktopPath );
+    sl.append( sli->storageId );
   }
   if ( m_kind == SERVICELIST_APPLICATIONS )
     m_mimeTypeData->setAppServices(sl);

@@ -34,6 +34,8 @@ public:
     MimeTypeData(const QString& major);
     // Real constructor, used for a mimetype.
     MimeTypeData(const KMimeType::Ptr mime, bool newItem = false);
+    // Real constructor, used for a new mimetype.
+    MimeTypeData(const QString& mimeName, bool /*unused, just to distinguish from the other QString ctor*/);
 
     QString name() const { return m_isGroup ? m_major : m_major + '/' + m_minor; }
     QString majorType() const { return m_major; }
@@ -57,9 +59,9 @@ public:
     QStringList patterns() const { return m_patterns; }
     void setPatterns(const QStringList &p);
     QStringList appServices() const;
-    void setAppServices(const QStringList &dsl) { m_appServices = dsl; }
+    void setAppServices(const QStringList &dsl);
     QStringList embedServices() const;
-    void setEmbedServices(const QStringList &dsl) { m_embedServices = dsl; }
+    void setEmbedServices(const QStringList &dsl);
 
     enum AutoEmbed { Yes = 0, No = 1, UseGroupSetting = 2 };
     AutoEmbed autoEmbed() const { return m_autoEmbed; }
@@ -86,16 +88,22 @@ public:
      */
     void refresh();
 
+    /**
+     * Helper method for the filtering in the listview
+     */
+    bool matchesFilter(const QString& filter) const;
+
 private:
+    void initFromKMimeType();
     AutoEmbed readAutoEmbed() const;
     void writeAutoEmbed();
     bool isMimeTypeDirty() const; // whether the mimetype definition file needs saving
-    bool areServicesDirty() const; // whether the services using that mimetype need saving
-    void getServiceOffers(QStringList& appServices, QStringList& embedServices) const;
+    QStringList getAppOffers() const;
+    QStringList getPartOffers() const;
     void getMyServiceOffers() const;
     void syncServices();
     void saveServices(KConfigGroup & config, const QStringList& services);
-    void saveRemovedServices(KConfigGroup & config, const QStringList& services, const QString& genericServiceType);
+    void saveRemovedServices(KConfigGroup & config, const QStringList& services, const QStringList& oldServices);
 
     KMimeType::Ptr m_mimetype; // 0 if this is data for a mimetype group (m_isGroup==true)
     enum AskSave { AskSaveYes = 0, AskSaveNo = 1, AskSaveDefault = 2 };
@@ -104,6 +112,8 @@ private:
     bool m_bNewItem:1;
     mutable bool m_bFullInit:1; // lazy init of m_appServices and m_embedServices
     bool m_isGroup:1;
+    bool m_appServicesModified:1;
+    bool m_embedServicesModified:1;
     QString m_major, m_minor, m_comment, m_icon;
     QStringList m_patterns;
     mutable QStringList m_appServices;

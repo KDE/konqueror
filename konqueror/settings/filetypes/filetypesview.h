@@ -1,7 +1,7 @@
 #ifndef FILETYPESVIEW_H
 #define FILETYPESVIEW_H
 
-#include <Qt3Support/Q3PtrList>
+#include <QtCore/QList>
 #include <QtCore/QMap>
 #include <QtGui/QLabel>
 #include <QtGui/QStackedWidget>
@@ -62,9 +62,7 @@ private:
   QStringList removedList;
   bool m_dirty;
   QMap<QString,TypesListItem*> m_majorMap;
-  Q3PtrList<TypesListItem> m_itemList;
-
-  QList<TypesListItem *> m_itemsModified;
+  QList<TypesListItem *> m_itemList;
 
   KSharedConfig::Ptr m_fileTypesConfig;
 };

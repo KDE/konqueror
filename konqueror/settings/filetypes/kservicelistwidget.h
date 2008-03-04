@@ -32,8 +32,9 @@ class KService;
 class KServiceListItem : public QListWidgetItem
 {
 public:
-    KServiceListItem( /*TODO const &*/ KService::Ptr pService, int kind );
-    bool isImmutable();
+    KServiceListItem( const KService::Ptr& pService, int kind );
+    bool isImmutable() const;
+    QString storageId;
     QString desktopPath;
     QString localPath;
 };
