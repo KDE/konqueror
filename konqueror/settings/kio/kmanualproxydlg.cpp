@@ -155,7 +155,7 @@ void KManualProxyDlg::setProxyData( const KProxyData &data )
         // Validate the NOPROXYFOR entries and use only hostnames if the entry is
         // a valid or legitimate URL. NOTE: needed to catch manual manipulation
         // of the proxy config files...
-        if( isValidURL( *it ) || ((*it).length() >= 3 && (*it).startsWith('.')) )	//krazy:exclude=duoblequote_chars
+        if( isValidURL( *it ) || ((*it).length() >= 3 && (*it).startsWith('.')) )
           mDlg->lbExceptions->addItem( *it );
       }
     }
@@ -487,7 +487,7 @@ bool KManualProxyDlg::getException ( QString& result,
 
     // If the typed URL is malformed, and the filters cannot filter it
     // then it must be an invalid entry,
-    if( isValidURL(result) || (result.length() >= 3 && result.startsWith('.')))	//krazy:exclude=duoblequote_chars
+    if( isValidURL(result) || (result.length() >= 3 && result.startsWith('.')))	
       return true;
 
     showErrorMsg();
