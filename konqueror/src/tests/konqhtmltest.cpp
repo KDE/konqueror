@@ -46,14 +46,14 @@ private Q_SLOTS:
 
     void rightClickClose() // #149736
     {
-        KonqMainWindow mainWindow;
+        QPointer<KonqMainWindow> mainWindow = new KonqMainWindow;
         // we specify the mimetype so that we don't have to wait for a KonqRun
-        mainWindow.openUrl(0, KUrl(
+        mainWindow->openUrl(0, KUrl(
                 "data:text/html, <script type=\"text/javascript\">"
                 "function closeMe() { window.close(); } "
                 "document.onmousedown = closeMe; "
                 "</script>"), QString("text/html"));
-        KonqView* view = mainWindow.currentView();
+        QPointer<KonqView> view = mainWindow->currentView();
         QVERIFY(view);
         QVERIFY(view->part());
         QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 5000));
@@ -62,7 +62,9 @@ private Q_SLOTS:
             widget = scrollArea->widget();
         qDebug() << "Clicking on" << widget;
         QTest::mousePress(widget, Qt::RightButton);
-        QVERIFY(!view->part()); // deleted
+        qApp->processEvents();
+        QVERIFY(!view); // deleted
+        QVERIFY(!mainWindow); // the whole window gets deleted, in fact
     }
 
 };
