@@ -404,6 +404,9 @@ bool MimeTypeData::matchesFilter(const QString& filter) const
     if (name().contains(filter, Qt::CaseInsensitive))
         return true;
 
+    if (m_comment.contains(filter, Qt::CaseInsensitive))
+        return true;
+
     if (!m_patterns.filter(filter, Qt::CaseInsensitive).isEmpty())
         return true;
 
