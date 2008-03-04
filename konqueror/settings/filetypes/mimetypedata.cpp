@@ -327,6 +327,10 @@ void MimeTypeData::saveRemovedServices(KConfigGroup & config, const QStringList&
 {
     QStringList removedServiceList = config.readXdgListEntry(name());
 
+    Q_FOREACH(const QString& service, services) {
+        // If removedServiceList.contains(service), then it was previously removed but has been added back
+        removedServiceList.removeAll(service);
+    }
     Q_FOREACH(const QString& oldService, oldServices) {
         if (!services.contains(oldService)) {
             // The service was in m_appServices (or m_embedServices) but has been removed
