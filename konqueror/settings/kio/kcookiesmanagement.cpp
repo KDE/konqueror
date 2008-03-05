@@ -158,7 +158,7 @@ void KCookiesManagement::save()
     {
       QString caption = i18n ("D-Bus Communication Error");
       QString message = i18n ("Unable to delete all the cookies as requested.");
-      KMessageBox::sorry (this, caption, message);
+      KMessageBox::sorry (this, message, caption);
       return;
     }
 
@@ -175,7 +175,7 @@ void KCookiesManagement::save()
     {
       QString caption = i18n ("D-Bus Communication Error");
       QString message = i18n ("Unable to delete cookies as requested.");
-      KMessageBox::sorry (this, caption, message);
+      KMessageBox::sorry (this, message, caption);
       return;
     }
 
