@@ -260,7 +260,7 @@ void KCookiesManagement::getDomains()
     QString caption = i18n ("Information Lookup Failure");
     QString message = i18n ("Unable to retrieve information about the "
                             "cookies stored on your computer.");
-    KMessageBox::sorry (this, caption, message);
+    KMessageBox::sorry (this, message, caption);
     return;
   }
 
