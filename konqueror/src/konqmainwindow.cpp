@@ -2408,7 +2408,7 @@ void KonqMainWindow::slotPopupNewWindow()
     const KFileItemList::const_iterator end = m_popupItems.end();
     for ( ; it != end; ++it )
     {
-        KonqMisc::createNewWindow( (*it).url(), m_popupUrlArgs, m_popupUrlBrowserArgs );
+      KonqMisc::createNewWindow( (*it).targetUrl(), m_popupUrlArgs, m_popupUrlBrowserArgs );
     }
 }
 
@@ -2448,7 +2448,7 @@ void KonqMainWindow::popupNewTab(bool infront, bool openAfterCurrentPage)
     {
       req.newTabInFront = true;
     }
-    openUrl( 0, m_popupItems[i].url(), QString(), req );
+    openUrl( 0, m_popupItems[i].targetUrl(), QString(), req );
   }
 }
 
