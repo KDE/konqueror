@@ -148,7 +148,7 @@ void UserAgentSelectorDlg::setIdentity( const QString& text )
   int id = m_widget->aliasComboBox->findText( text );
   if ( id != -1 )
      m_widget->aliasComboBox->setCurrentIndex( id );
-   m_widget->identityLineEdit->setText(m_widget->aliasComboBox->currentText());
+  m_widget->identityLineEdit->setText(m_userAgentInfo->agentStr(m_widget->aliasComboBox->currentText() ));
   if ( !m_widget->siteLineEdit->isEnabled() )
     m_widget->aliasComboBox->setFocus();
 }
