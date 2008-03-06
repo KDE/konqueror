@@ -32,12 +32,12 @@ class KCMFilter : public KCModule
 public:
     KCMFilter( QWidget* parent, const QVariantList& );
     ~KCMFilter();
-    
+
     void load();
     void save();
     void defaults();
     QString quickHelp() const;
-    
+
 public Q_SLOTS:
 
 protected Q_SLOTS:
@@ -50,9 +50,9 @@ protected Q_SLOTS:
 
     void exportFilters();
     void importFilters();
+    void updateButton();
 
 private:
-    void updateButton();
     QListWidget *mListBox;
     QLineEdit *mString;
     QCheckBox *mEnableCheck;

@@ -92,7 +92,7 @@ KCMFilter::KCMFilter( QWidget *parent, const QVariantList& )
     connect( mEnableCheck, SIGNAL( toggled(bool)), this, SLOT( slotEnableChecked()));
     connect( mKillCheck, SIGNAL( clicked()), this, SLOT( slotKillChecked()));
     connect( mListBox, SIGNAL(itemSelectionChanged()),this, SLOT(slotItemSelected()));
-
+    connect( mString, SIGNAL(textChanged(const QString& ) ), this, SLOT( updateButton() ) );
 /*
  * Whats this items
  */
@@ -150,10 +150,10 @@ void KCMFilter::slotItemSelected()
 void KCMFilter::updateButton()
 {
     bool state = mEnableCheck->isChecked();
-
-    mUpdateButton->setEnabled(state && (mSelCount == 1));
+    bool expressionIsNotEmpty = !mString->text().isEmpty();
+    mUpdateButton->setEnabled(state && (mSelCount == 1) && expressionIsNotEmpty );
     mRemoveButton->setEnabled(state && (mSelCount > 0));
-    mInsertButton->setEnabled(state);
+    mInsertButton->setEnabled(state && expressionIsNotEmpty);
     mImportButton->setEnabled(state);
     mExportButton->setEnabled(state);
 
@@ -199,8 +199,8 @@ void KCMFilter::importFilters()
                     }
                 }
 
-                if (!line.isEmpty() && 
-                     mListBox->findItems(line, 
+                if (!line.isEmpty() &&
+                     mListBox->findItems(line,
                                         Qt::MatchCaseSensitive|Qt::MatchExactly).isEmpty()) {
                     paths.append(line);
                 }
