@@ -47,7 +47,7 @@ KHTMLPluginKTTSD::KHTMLPluginKTTSD( QObject* parent, const QStringList& )
     if (offers.count() > 0)
     {
         QAction *action = actionCollection()->addAction( "tools_kttsd" );
-        action->setIcon( KIcon("kttsd") );
+        action->setIcon( KIcon("preferences-desktop-text-to-speech") );
         action->setText( i18n("&Speak Text") );
         connect(action, SIGNAL(triggered(bool) ), SLOT(slotReadOut()));
     }
