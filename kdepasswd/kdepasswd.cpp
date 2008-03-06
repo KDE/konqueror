@@ -43,7 +43,7 @@ int main(int argc, char **argv)
             KAboutData::License_Artistic, ki18n("Copyright (c) 2000 Geert Jansen"));
     aboutData.addAuthor(ki18n("Geert Jansen"), ki18n("Maintainer"),
             "jansen@kde.org");
- 
+
     KCmdLineArgs::init(argc, argv, &aboutData);
 
     KCmdLineOptions options;
@@ -53,8 +53,8 @@ int main(int argc, char **argv)
 
 
     if (!KUniqueApplication::start()) {
-	kDebug() << "kdepasswd is already running";
-	return 0;
+        kDebug() << "kdepasswd is already running";
+        return 0;
     }
 
     KUniqueApplication app;
@@ -66,7 +66,7 @@ int main(int argc, char **argv)
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
     if (args->count())
-	user = args->arg(0);
+        user = args->arg(0);
 
     /* You must be able to run "kdepasswd loginName" */
     if ( !user.isEmpty() && user!=KUser().loginName() && !bRoot)
@@ -80,7 +80,7 @@ int main(int argc, char **argv)
     {
         int result = KDEpasswd1Dialog::getPassword(oldpass);
         if (result != KDEpasswd1Dialog::Accepted)
-	    return 0;
+            return 0;
     }
 
     KDEpasswd2Dialog *dlg = new KDEpasswd2Dialog(oldpass, user.toLocal8Bit());

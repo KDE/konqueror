@@ -50,7 +50,7 @@ public:
 private:
     bool isPrompt(const QByteArray &line, const char *word=0L);
     int ConversePasswd(const char *oldpass, const char *newpass,
-	    int check);
+            int check);
 
     QByteArray m_User, m_Error;
     bool bOtherUser;
