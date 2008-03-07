@@ -31,7 +31,6 @@
 #include <kdebug.h>
 
 #include <kapplication.h>
-#include <k3procio.h>
 #include <ktoolinvocation.h>
 
 #include "plugin_paths.h"
