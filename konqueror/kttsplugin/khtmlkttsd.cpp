@@ -49,7 +49,7 @@ KHTMLPluginKTTSD::KHTMLPluginKTTSD( QObject* parent, const QVariantList& )
     if (offers.count() > 0)
     {
         QAction *action = actionCollection()->addAction( "tools_kttsd" );
-        action->setIcon( KIcon("preferences-desktop-text-to-speech") );
+        action->setIcon( KIcon("text-speak") );
         action->setText( i18n("&Speak Text") );
         connect(action, SIGNAL(triggered(bool) ), SLOT(slotReadOut()));
     }
@@ -63,18 +63,19 @@ KHTMLPluginKTTSD::~KHTMLPluginKTTSD()
 
 void KHTMLPluginKTTSD::slotReadOut()
 {
+    KHTMLPart *part = qobject_cast<KHTMLPart *>(parent());
+
     // The parent is assumed to be a KHTMLPart
-    if ( !parent()->inherits("KHTMLPart") )
-       QMessageBox::warning( 0, i18n( "Cannot Read source" ),
-                                i18n( "You cannot read anything except web pages with\n"
-                                      "this plugin, sorry." ));
+    if (!part)
+       KMessageBox::sorry( 0, i18n( "You cannot read anything except web pages with this plugin, sorry." ),
+                              i18n( "Cannot Read source" ) );
     else
     {
         if (!QDBusConnection::sessionBus().interface()->isServiceRegistered("org.kde.kttsd"))
         {
             QString error;
             if (KToolInvocation::startServiceByDesktopName("kttsd", QStringList(), &error))
-                QMessageBox::warning(0, i18n( "Starting KTTSD Failed"), error );
+                KMessageBox::error(0, error, i18n( "Starting KTTSD Failed") );
         }
         // Find out if KTTSD supports xhtml (rich speak).
         bool supportsXhtml = false;
@@ -82,14 +83,11 @@ void KHTMLPluginKTTSD::slotReadOut()
         QString talker = kttsd.defaultTalker();
         QDBusReply<int> reply = kttsd.getTalkerCapabilities2(talker);
         if ( !reply.isValid())
-            QMessageBox::warning( 0, i18n( "D-Bus Call Failed" ),
-                                     i18n( "The D-Bus call getTalkerCapabilities2 failed." ));
+            kDebug() << "D-Bus call getTalkerCapabilities2() failed, assuming non-XHTML support.";
         else
         {
             supportsXhtml = reply.value() & KSpeech::tcCanParseHtml;
         }
-
-        KHTMLPart *part = (KHTMLPart *) parent();
 
         QString query;
         if (supportsXhtml)
@@ -114,12 +112,12 @@ void KHTMLPluginKTTSD::slotReadOut()
             else
                 query = part->htmlDocument().body().innerText().string();
         }
-        // kDebug() << "KHTMLPluginKTTSD::slotReadOut: query = " << query;
+        // kDebug() << "query =" << query;
 
         reply = kttsd.say(query, KSpeech::soNone);
         if ( !reply.isValid())
-            QMessageBox::warning( 0, i18n( "D-Bus Call Failed" ),
-                                     i18n( "The D-Bus call say() failed." ));
+            KMessageBox::sorry( 0, i18n( "The D-Bus call say() failed." ),
+                                   i18n( "D-Bus Call Failed" ));
     }
 }
 
