@@ -30,7 +30,7 @@ public:
     /**
      * Construct a new KParts plugin.
      */
-    KHTMLPluginKTTSD( QObject* parent, const QStringList& );
+    KHTMLPluginKTTSD( QObject* parent, const QVariantList& );
 
     /**
      * Destructor.
