@@ -1,3 +1,4 @@
+//krazy:excludeall=license
 /* -*- Mode: C; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 /* ***** BEGIN LICENSE BLOCK *****
  * Version: NPL 1.1/GPL 2.0/LGPL 2.1
@@ -34,7 +35,6 @@
  * the terms of any one of the NPL, the GPL or the LGPL.
  *
  * ***** END LICENSE BLOCK ***** */
-
 /*******************************************************************************
  * Java Runtime Interface
  ******************************************************************************/

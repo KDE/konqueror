@@ -39,8 +39,10 @@
  * the new definitions.
  */
 
-#if !defined(PROTYPES_H)
-#define PROTYPES_H
+//krazy:excludeall=captruefalse
+
+#ifndef NSPLUGIN_PROTYPES_H
+#define NSPLUGIN_PROTYPES_H
 
 typedef PRUintn uintn;
 #ifndef _XP_Core_
@@ -248,4 +250,4 @@ typedef PRWord prword_t;
 #endif
 #endif
 
-#endif /* !defined(PROTYPES_H) */
+#endif /* NSPLUGIN_PROTYPES_H */
