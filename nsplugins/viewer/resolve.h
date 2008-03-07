@@ -17,6 +17,8 @@
  
 */                                                                            
 
+#ifndef VIEWER_RESOLVE_H
+#define VIEWER_RESOLVE_H
 
 #define RESOLVE_RETVAL(fname,error)           \
   kDebug() << "NSPluginInstance::";  \
@@ -43,4 +45,5 @@
   kDebug() << "results in " << error;         \
   return error;
 
+#endif /* VIEWER_RESOLVE_H */
 
