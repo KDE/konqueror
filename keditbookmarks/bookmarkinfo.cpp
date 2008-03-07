@@ -249,7 +249,7 @@ BookmarkInfoWidget::BookmarkInfoWidget(BookmarkListView * lv, QWidget *parent)
 
     connect(m_title_le, SIGNAL( textChanged(const QString &) ),
                         SLOT( slotTextChangedTitle(const QString &) ));
-    connect(m_title_le, SIGNAL( lostFocus() ), SLOT( commitTitle() ));
+    connect(m_title_le, SIGNAL( editingFinished() ), SLOT( commitTitle() ));
 
     m_url_le = new KLineEdit(this);
     grid->addWidget(m_url_le, 1, 1);
@@ -259,7 +259,7 @@ BookmarkInfoWidget::BookmarkInfoWidget(BookmarkListView * lv, QWidget *parent)
 
     connect(m_url_le, SIGNAL( textChanged(const QString &) ),
                       SLOT( slotTextChangedURL(const QString &) ));
-    connect(m_url_le, SIGNAL( lostFocus() ), SLOT( commitURL() ));
+    connect(m_url_le, SIGNAL( editingFinished() ), SLOT( commitURL() ));
 
     m_comment_le = new KLineEdit(this);
     grid->addWidget(m_comment_le, 2, 1);
@@ -269,7 +269,7 @@ BookmarkInfoWidget::BookmarkInfoWidget(BookmarkListView * lv, QWidget *parent)
 
     connect(m_comment_le, SIGNAL( textChanged(const QString &) ),
                           SLOT( slotTextChangedComment(const QString &) ));
-    connect(m_comment_le, SIGNAL( lostFocus() ), SLOT( commitComment() ));
+    connect(m_comment_le, SIGNAL( editingFinished() ), SLOT( commitComment() ));
 
     m_credate_le = new KLineEdit(this);
     grid->addWidget(m_credate_le, 0, 3);
