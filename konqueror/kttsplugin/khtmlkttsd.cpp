@@ -39,6 +39,8 @@
 #include <kspeech.h>
 #include <ktoolinvocation.h>
 
+#include "kspeechinterface.h"
+
 KHTMLPluginKTTSD::KHTMLPluginKTTSD( QObject* parent, const QVariantList& )
     : Plugin( parent )
 {
@@ -74,19 +76,17 @@ void KHTMLPluginKTTSD::slotReadOut()
             if (KToolInvocation::startServiceByDesktopName("kttsd", QStringList(), &error))
                 QMessageBox::warning(0, i18n( "Starting KTTSD Failed"), error );
         }
-#ifdef __GNUC__
-#warning "kde4: kspeech dbus doesn't have supportsMarkup function"
-#endif
         // Find out if KTTSD supports xhtml (rich speak).
         bool supportsXhtml = false;
-		QDBusInterface kttsd( "org.kde.KSpeech", "/KSpeech", "org.kde.KSpeech" );
-		QDBusReply<bool> reply = kttsd.call("supportsMarkup", "", KSpeech::soHtml);
+        org::kde::KSpeech kttsd( "org.kde.kttsd", "/KSpeech", QDBusConnection::sessionBus() );
+        QString talker = kttsd.defaultTalker();
+        QDBusReply<int> reply = kttsd.getTalkerCapabilities2(talker);
         if ( !reply.isValid())
             QMessageBox::warning( 0, i18n( "D-Bus Call Failed" ),
-                                     i18n( "The D-Bus call supportsMarkup failed." ));
+                                     i18n( "The D-Bus call getTalkerCapabilities2 failed." ));
         else
         {
-			supportsXhtml = reply;
+            supportsXhtml = reply.value() & KSpeech::tcCanParseHtml;
         }
 
         KHTMLPart *part = (KHTMLPart *) parent();
@@ -116,14 +116,10 @@ void KHTMLPluginKTTSD::slotReadOut()
         }
         // kDebug() << "KHTMLPluginKTTSD::slotReadOut: query = " << query;
 
-		reply = kttsd.call("setText", query, "");
+        reply = kttsd.say(query, KSpeech::soNone);
         if ( !reply.isValid())
             QMessageBox::warning( 0, i18n( "D-Bus Call Failed" ),
-                                     i18n( "The D-Bus call setText failed." ));
-		reply = kttsd.call("startText", 0);
-        if ( !reply.isValid())
-            QMessageBox::warning( 0, i18n( "D-Bus Call Failed" ),
-                                     i18n( "The D-Bus call startText failed." ));
+                                     i18n( "The D-Bus call say() failed." ));
     }
 }
 
