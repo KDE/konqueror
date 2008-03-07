@@ -36,7 +36,7 @@
 
 #include "plugin_paths.h"
 
-static QDateTime lastChanged( QString dir )
+static QDateTime lastChanged( const QString &dir )
 {
     QDateTime t = QFileInfo( dir ).lastModified();
     if( t.isNull())
@@ -55,7 +55,7 @@ static QDateTime lastChanged( QString dir )
     return t;
 }
 
-static bool checkSearchPathTimestamps( QStringList paths, QStringList timestamps )
+static bool checkSearchPathTimestamps( const QStringList &paths, const QStringList &timestamps )
 {
     QStringList currentTimestamps;
     bool changed = false;

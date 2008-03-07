@@ -24,7 +24,7 @@
 */
 
 #include "plugin_paths.h"
-
+#include <QtCore/QGlobalStatic>
 #include <ksharedconfig.h>
 #include <kconfiggroup.h>
 #include <stdlib.h>
@@ -62,7 +62,7 @@ QStringList getSearchPaths()
     searchPaths = config.readPathEntry( "scanPaths", QStringList() );
 
     // append environment variable NPX_PLUGIN_PATH
-    QStringList envs = QString( getenv("NPX_PLUGIN_PATH") ).split(':');
+    QStringList envs = QString( qgetenv("NPX_PLUGIN_PATH") ).split(':');
     QStringList::Iterator it;
     for (it = envs.begin(); it != envs.end(); ++it)
         searchPaths.append(*it);
