@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.1.2-Based Variant V1.1//EN" "dtd/kdex.dtd" [
-  <!ENTITY dolphin "Dolphin">
+  <!ENTITY dolphin "<application>Dolphin</application>">
   <!ENTITY kappname "&dolphin;">
-  <!ENTITY package "dolphin">
+  <!ENTITY package "kdebase">
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % English "INCLUDE"><!-- change language only here -->
   
@@ -66,8 +66,8 @@ Please respect the format of the date (YYYY-MM-DD) and of the version
 (V.MM.LL), it could be used by automation scripts.
 Do NOT change these in the translation. -->
 
-<date>2006-10-14</date>
-<releaseinfo>0.7.0</releaseinfo>
+<date>2008-03-05</date>
+<releaseinfo>1.0.2</releaseinfo>
 
 
 <abstract>
@@ -84,7 +84,8 @@ Please at least include KDE, the KDE package it is in, the name
 <keyword>KDE</keyword>
 <keyword>Dolphin</keyword>
 <keyword>Filemanager</keyword>
-<keyword>nothing else</keyword>
+<keyword>file</keyword>
+<keyword>management</keyword>
 </keywordset>
 
 </bookinfo>
@@ -150,7 +151,7 @@ the &dolphin; main window. It's not a bug, it's a feature!
 <title>&dolphin; User Interface</title>
 
 <para>
-The default Dolphin interface consists of a (1) menu bar, (2) toolbar, (3) location bar, (4) workspace and (5) status bar.
+The default &dolphin; interface consists of a (1) menu bar, (2) toolbar, (3) location bar, (4) workspace and (5) status bar.
 </para>
 
 <para>
@@ -161,14 +162,14 @@ The default Dolphin interface consists of a (1) menu bar, (2) toolbar, (3) locat
 	    <imagedata fileref="dolphin.png" format="PNG"/>
 	  </imageobject>
 	  <textobject>
-	    <phrase>Dolphin Screenshot</phrase>
+	    <phrase>&dolphin; Screenshot</phrase>
 	  </textobject>
 	</mediaobject>
 </screenshot>
 </para>
 
 <para>
-The location bar displays the path to the current directory. The location bar has two versions. There is the typical line input version which shows the path to the current directory via a string of text e.g. <filename class="directory">/home/peter/Documents</filename>.  The second version of the location bar uses the 'bread crumb' display.  The bread crumb display makes each folder a link which can be used to immediately go to the entry. The <filename class="directory">/home/peter/Documents</filename> entry in the bread crumb view would become 'Home >  peter >  Documents' with Home, peter, and Documents being clickable links which are able go to there respective locations. This makes navigation to directories above the current directory easier and more intuitive. It also removes the need for the <guiicon>Up</guiicon> icon to be present in the toolbar. 
+The location bar displays the path to the current directory. The location bar has two versions. There is the typical line input version which shows the path to the current directory via a string of text &eg; <filename class="directory">/home/peter/Documents</filename>.  The second version of the location bar uses the 'bread crumb' display.  The bread crumb display makes each folder a link which can be used to immediately go to the entry. The <filename class="directory">/home/peter/Documents</filename> entry in the bread crumb view would become 'Home >  peter >  Documents' with Home, peter, and Documents being clickable links which are able go to there respective locations. This makes navigation to directories above the current directory easier and more intuitive. It also removes the need for the <guiicon>Up</guiicon> icon to be present in the toolbar. 
 </para>
 <!-- TODO
 (show picture here distinguishing the two views for clarification) -->
@@ -178,7 +179,7 @@ The workspace shows the contents of the current directory. The workspace can als
 </para>
 
 <para>
-The status bar shows a limited amount of data relating to the file hovered over and the current directory.  When a file is hovered over, the status bar shows the file name, the file size and the file type e.g. Jpeg.  When no file has been highlighted or hovered over, the status bar shows the amount of files and folders in the current directory.  At all times the status bar shows the amount of storage space that has currently been used on the current mount point, as well as the maximum space available on the mount pount e.g. /home/.
+The status bar shows a limited amount of data relating to the file hovered over and the current directory.  When a file is hovered over, the status bar shows the file name, the file size and the file type &eg; JPEG.  When no file has been highlighted or hovered over, the status bar shows the amount of files and folders in the current directory.  At all times the status bar shows the amount of storage space that has currently been used on the current mount point, as well as the maximum space available on the mount pount &eg; <filename class="directory">/home/</filename>.
 </para>
 </sect2>
 
@@ -188,7 +189,7 @@ The status bar shows a limited amount of data relating to the file hovered over 
 <para>The &dolphin; workspace can display the contents of a directory in a variety of views. Currently there are icons, details and previews modes.</para>
 
 <para>
-The <guibutton>Icons</guibutton> view shows the contents of the directory via the file icon type e.g. an mp3 file will be represented with the icon for an mp3 file.  Sub-directories are represented in the form of a folder icon. The folder icon is defined by the &kde; icon theme currently in use, however individual folders can have their icon changed manually if the user wishes.  This can be done via the properties dialogue. 
+The <guibutton>Icons</guibutton> view shows the contents of the directory via the file icon type &eg; an <acronym>MP3</acronym> file will be represented with the icon for an <acronym>MP3</acronym>  file.  Sub-directories are represented in the form of a folder icon. The folder icon is defined by the &kde; icon theme currently in use, however individual folders can have their icon changed manually if the user wishes.  This can be done via the properties dialogue. 
 <!-- TODO (more? changing folder icons not really dolphin specific.) -->
 </para>
 
@@ -197,12 +198,12 @@ The <guibutton>Details</guibutton> view lists the contents of a directory in alp
 </para>
 
 <para>
-Details are displayed to the right of the files within the directory. The default &dolphin; configuration only displays the size of the file and the date it was last modified. More details can be added via the Configure Dolphin dialogue however.
+Details are displayed to the right of the files within the directory. The default &dolphin; configuration only displays the size of the file and the date it was last modified. More details can be added via the Configure &dolphin; dialogue however.
 <!-- TODO (link to the details part configuring dolphin section) -->
 </para>
 
 <para>
-The <guibutton>Preview</guibutton> view is similar to the icons view. The difference is that wherever possible previews of the files are shown. This function works for a number of image types including; JPG, PNG, XCF, SVG and numerous others. The previews view is also capable of showing the first 14 lines from text documents. &dolphin; is also capable of displaying a preview of HTML and PDF files in the previews view. It is also possible to modify the size of the previews via the Configure Dolphin dialogue.
+The <guibutton>Preview</guibutton> view is similar to the icons view. The difference is that wherever possible previews of the files are shown. This function works for a number of image types including; JPG, PNG, XCF, <acronym>SVG</acronym> and numerous others. The previews view is also capable of showing the first 14 lines from text documents. &dolphin; is also capable of displaying a preview of HTML and <acronym>PDF</acronym> files in the previews view. It is also possible to modify the size of the previews via the Configure &dolphin; dialogue.
 <!--  (link, and info on it) -->
 </para>
 
@@ -218,7 +219,7 @@ Changing the view of the directory a user is working in is as simple as clicking
 	    <imagedata fileref="workspacebuttons.png" format="PNG"/>
 	  </imageobject>
 	  <textobject>
-	    <phrase>Dolphin Workspace View Buttons</phrase>
+	    <phrase>&dolphin; Workspace View Buttons</phrase>
 	  </textobject>
 	</mediaobject>
 </screenshot>
@@ -240,18 +241,18 @@ If this option is enabled then the workspace will split apart. Two separate work
 	    <imagedata fileref="split.png" format="PNG"/>
 	  </imageobject>
 	  <textobject>
-	    <phrase>Dolphin In Split Workspace Mode </phrase>
+	    <phrase>&dolphin; In Split Workspace Mode </phrase>
 	  </textobject>
 	</mediaobject>
 </screenshot>
 </para>
 
 <para>
-&dolphin; is capable of remembering the workspace view on a per-directory basis.  For example, if while viewing <filename class="directory">/home/peter/Pictures/</filename> the user choses to use the previews view, then the next time the user enters that directory, the view will be changed to the previews view. This is especially useful for directories containing mainly images. The feature only works for local directories which the user has read/write permissions to. &dolphin; will also remember the viewing mode it was in when last running e.g. single workspace or split workspace.
+&dolphin; is capable of remembering the workspace view on a per-directory basis.  For example, if while viewing <filename class="directory">/home/peter/Pictures/</filename> the user choses to use the previews view, then the next time the user enters that directory, the view will be changed to the previews view. This is especially useful for directories containing mainly images. The feature only works for local directories which the user has read/write permissions to. &dolphin; will also remember the viewing mode it was in when last running &eg; single workspace or split workspace.
 </para>
 
 <para>
-Dolphin can also display files and sub-directories that are hidden in the the current directory e.g. files such as .dolphin and sub-directory such as .kde/.
+&dolphin; can also display files and sub-directories that are hidden in the the current directory &eg; files such as <filename>.dolphin</filename> and sub-directory such as <filename class="directory">.kde/</filename>.
 </para>
 
 <para>
@@ -266,22 +267,22 @@ Hidden files and sub-folders can be distinguished from non-hidden file and sub-f
 	    <imagedata fileref="hiddenfolder.png" format="PNG"/>
 	  </imageobject>
 	  <textobject>
-	    <phrase>Dolphin Showing Hidden Folders/Directories Enabled</phrase>
+	    <phrase>&dolphin; Showing Hidden Folders/Directories Enabled</phrase>
 	  </textobject>
 	</mediaobject>
 </screenshot>
 </para>
 
 <para>
-To enable the showing of hidden files and sub-directories via the main menu View>Show Hidden Files.
+To enable the showing of hidden files and sub-directories you can select <menuchoice><guimenu>View</guimenu><guimenuitem>Show Hidden Files</guimenuitem></menuchoice>.
 </para>
 
 <para>
-Dolphin is able to sort the contents of a directory in a number of ways.  These are; By Name, By Date, By Size and Descending.  These only apply to the current directory the user is currently in and do not affect other directories.  As with the Views Modes the Sorting order is saved for this directory.
+&dolphin; is able to sort the contents of a directory in a number of ways.  These are; By Name, By Date, By Size and Descending.  These only apply to the current directory the user is currently in and do not affect other directories.  As with the Views Modes the Sorting order is saved for this directory.
 </para>
 
 <para>
-To change the way the directory is sorted, via the Main Menu View>Sort>sorting type (e.g. By Date).
+To change the way the directory is sorted, via the menu <menuchoice><guimenu>View</guimenu><guisubmenu>Sort By</guisubmenu></menuchoice> (&eg; By Date).
 </para>
 </sect2>
 
@@ -293,7 +294,7 @@ The &dolphin; sidebar has two modes.  The first mode is the Bookmarks mode.  The
 </para>
 
 <para>
-The sidebar mode can be changed via the drop down menu at the top.  Selecting Bookmakrs will enable the bookmarks mode, while selecting Information will enable the Information mode.
+The sidebar mode can be changed via the drop down menu at the top.  Selecting Bookmarks will enable the bookmarks mode, while selecting Information will enable the Information mode.
 </para>
 
 <para>
@@ -308,14 +309,14 @@ The Bookmarks sidebar mode displays the filesystem bookmarks the user has stored
 	    <imagedata fileref="bookmarksidebar.png" format="PNG"/>
 	  </imageobject>
 	  <textobject>
-	    <phrase>Dolphin Showing The Sidebar With The Bookmarks Mode Enabled</phrase>
+	    <phrase>&dolphin; Showing The Sidebar With The Bookmarks Mode Enabled</phrase>
 	  </textobject>
 	</mediaobject>
 </screenshot>
 </para>
 
 <para>
-The Information sidebar mode also allows the user access to their service menus for a given file type.  A service menu entry that is directly under the Actions > ... menu is diaplayed as a single button.  However if a service menu entry is in a submenu under the Actions > .... menu e.g. Actions > Amarok, then this is presented as a drop down menu containing the options.
+The Information sidebar mode also allows the user access to their service menus for a given file type.  A service menu entry that is directly under the Actions > ... menu is diaplayed as a single button.  However if a service menu entry is in a submenu under the Actions > .... menu &eg; Actions > Amarok, then this is presented as a drop down menu containing the options.
 </para>
 
 <screenshot>
@@ -325,7 +326,7 @@ The Information sidebar mode also allows the user access to their service menus 
 	    <imagedata fileref="informationsidebar.png" format="PNG"/>
 	  </imageobject>
 	  <textobject>
-	    <phrase>Dolphin Showing The Sidebar With The Information Mode Enabled</phrase>
+	    <phrase>&dolphin; Showing The Sidebar With The Information Mode Enabled</phrase>
 	  </textobject>
 	</mediaobject>
 </screenshot>
@@ -341,11 +342,11 @@ The Information sidebar mode also allows the user access to their service menus 
 <title>&dolphin; Navigation</title>
 
 <para>
-The main feature of Dolphin that allows navigation of the file system is the work space.  Clicking on a sub-directory within the current directory changes to this directory.  Clicking on files within the workspace will open the file in the default application that has been assigned to it.
+The main feature of &dolphin; that allows navigation of the file system is the work space.  Clicking on a sub-directory within the current directory changes to this directory.  Clicking on files within the workspace will open the file in the default application that has been assigned to it.
 </para>
 
 <para>
-The tool bar is also used for navigating the file system.  The tool bar contains two buttons essential for navigating the file system quickly and easily, these are; back and forward.
+The tool bar is also used for navigating the file system.  The tool bar contains two buttons essential for navigating the file system quickly and easily, these are; <guiicon>Back</guiicon> and <guiicon>Forward</guiicon>.
 </para>
 
 <para>
@@ -356,18 +357,18 @@ The tool bar is also used for navigating the file system.  The tool bar contains
 	    <imagedata fileref="toolbarbuttons.png" format="PNG"/>
 	  </imageobject>
 	  <textobject>
-	    <phrase>Dolphin Toolbar Buttons</phrase>
+	    <phrase>&dolphin; Toolbar Buttons</phrase>
 	  </textobject>
 	</mediaobject>
 </screenshot>
 </para>
 
 <para>
-Other buttons can be added to the tool bar to further aid navigation or to provide short cuts for functions within Dolphin e.g. deleting a file.
+Other buttons can be added to the tool bar to further aid navigation or to provide short cuts for functions within &dolphin; &eg; deleting a file.
 </para>
 
 <para>
-Dolphin continually shows the directory that it is currently viewing the contents of, via the location bar and the title bar.  The location bar has two views available.  The first is the directory path view.  This shows the path to the current directory e.g. /usr/share/apps/dolphin/
+&dolphin; continually shows the directory that it is currently viewing the contents of, via the location bar and the title bar.  The location bar has two views available.  The first is the directory path view.  This shows the path to the current directory &eg; <filename class="directory">/usr/share/apps/dolphin/</filename>.
 </para>
 
 <para>
@@ -378,7 +379,7 @@ Dolphin continually shows the directory that it is currently viewing the content
 	    <imagedata fileref="directorypath.png" format="PNG"/>
 	  </imageobject>
 	  <textobject>
-	    <phrase>Dolphin Displaying The Directory Path View</phrase>
+	    <phrase>&dolphin; Displaying The Directory Path View</phrase>
 	  </textobject>
 	</mediaobject>
 </screenshot>
@@ -396,14 +397,14 @@ The second view is the breadcrumb view.  This allows the user to move to a direc
 	    <imagedata fileref="breadcrumb.png" format="PNG"/>
 	  </imageobject>
 	  <textobject>
-	    <phrase>Dolphin Displaying The Breadcrumb View</phrase>
+	    <phrase>&dolphin; Displaying The Breadcrumb View</phrase>
 	  </textobject>
 	</mediaobject>
 </screenshot>
 </para>
 
 <para>
-In order to change between the two location bar views, click on the the browse button.  This will toggle the view between the directory path view and the bread crumb view.  A second way of switching between the directory path view and the breadcrumb view is via View>Navigation Bar>Edit Location or Browse.
+In order to change between the two location bar views, click on the the browse button.  This will toggle the view between the directory path view and the bread crumb view.  A second way of switching between the directory path view and the breadcrumb view is via <menuchoice> <guimenu>View</guimenu> <guisubmenu>Navigation Bar</guisubmenu> <guimenuitem>Edit Location</guimenuitem> </menuchoice>.
 </para>
 
 <para>
@@ -414,14 +415,14 @@ In order to change between the two location bar views, click on the the browse b
 	    <imagedata fileref="browsebutton.png" format="PNG"/>
 	  </imageobject>
 	  <textobject>
-	    <phrase>Dolphin Browse Button</phrase>
+	    <phrase>&dolphin; Browse Button</phrase>
 	  </textobject>
 	</mediaobject>
 </screenshot>
 </para>
 
 <para>
-With the directory path view the user is able to enter the whole path to the directory they wish to enter.  In order to do so, the user can toggle the browse button to the directory path view or alternatively via the menu bar View > Navigation Bar > Browse Location/Browse then enter the path to the directory they wish to enter.  The user will notice as they are entering the path, a box will open underneath the address bar showing the content of the folder they are currently heading to.  The content of this box will change as they continue to enter the path to the directory, showing the directories and the files beginning with the characters being entered e.g. /usr/share/apps/k would display everything within the directory beginning with the k character.
+With the directory path view the user is able to enter the whole path to the directory they wish to enter.  In order to do so, the user can toggle the browse button to the directory path view or alternatively via the menu <menuchoice> <guimenu>View</guimenu> <guisubmenu>Navigation Bar</guisubmenu> <guimenuitem>Edit Location</guimenuitem> </menuchoice> then enter the path to the directory they wish to enter.  The user will notice as they are entering the path, a box will open underneath the address bar showing the content of the folder they are currently heading to.  The content of this box will change as they continue to enter the path to the directory, showing the directories and the files beginning with the characters being entered &eg; <filename class="directory">/usr/share/apps/k</filename> would display everything within the directory beginning with the k character.
 </para>
 
 <para>
@@ -429,7 +430,7 @@ If the breadcrumb view is enabled then the user is unable to enter the path to t
 </para>
 
 <para>
-In order to aid the navigation of the file system, Dolphin can use bookmarks.  Bookmarks can be set for any location on the file system including virtual directories that do not physically exist, but kde creates for ease of use e.g. trash:/.  This in turn means that if the user chooses a bookmark from the list the workspace will move into that directory or virtual location.
+In order to aid the navigation of the file system, &dolphin; can use bookmarks.  Bookmarks can be set for any location on the file system including virtual directories that do not physically exist, but &kde; creates for ease of use &eg; trash:/.  This in turn means that if the user chooses a bookmark from the list the workspace will move into that directory or virtual location.
 </para>
 
 <para>
@@ -440,14 +441,14 @@ In order to aid the navigation of the file system, Dolphin can use bookmarks.  B
 	    <imagedata fileref="bookmarkbutton.png" format="PNG"/>
 	  </imageobject>
 	  <textobject>
-	    <phrase>Dolphin Bookmark Button Open</phrase>
+	    <phrase>&dolphin; Bookmark Button Open</phrase>
 	  </textobject>
 	</mediaobject>
 </screenshot>
 </para>
 
 <para>
-In order to select a bookmark, the location bar must be set to the breadcrumb view.  Clicking the image of the home button (as set by the icon theme currently in use) will drop down a list of all the available bookmarks.  The &dolphin; sidebar also contains a bookmark list.  This can be accessed via switching the the sideba to bookmakrs mode.  The user then clicks the desired bookmark to open that directory.  By default Dolphin sets bookmarks for; the users home folder /home/usrname/, the Root partition and the system:/ area (location were the user is able to view the storage devices).  More bookmarks can be set via the Configure Dolphin dialogue.
+In order to select a bookmark, the location bar must be set to the breadcrumb view.  Clicking the image of the home button (as set by the icon theme currently in use) will drop down a list of all the available bookmarks.  The &dolphin; sidebar also contains a bookmark list.  This can be accessed via switching the the sideba to bookmarks mode.  The user then clicks the desired bookmark to open that directory.  By default &dolphin; sets bookmarks for; the users home folder <filename class="directory">/home/username/</filename>, the Root partition and the system:/ area (location were the user is able to view the storage devices).  More bookmarks can be set via the Configure &dolphin; dialogue.
 </para>
 
 <para>
@@ -459,11 +460,11 @@ In order to select a bookmark, the location bar must be set to the breadcrumb vi
 <title>&dolphin; Storage Media Navigation</title>
 
 <para>
-Dolphin is not restricted to navigating your local file system, it is also capable of navigating Removable Storage Media.  In addition to this, Dolphin also has the ability to mount and un-mount storage media on the system.
+&dolphin; is not restricted to navigating your local file system, it is also capable of navigating Removable Storage Media.  In addition to this, &dolphin; also has the ability to mount and un-mount storage media on the system.
 </para>
 
 <para>
-When in the kde directory for storage Media; system:/media/ the available Storage Media are shown.  Typically this is the hard drive(s)/partitions and Floppy Drive.  Each device is named according to their name or device type.  The root Partition/Drive is named / while the home partition is named /home, the Floppy Disk is named Floppy Drive.
+When in the &kde; directory for storage Media; system:/media/ the available Storage Media are shown.  Typically this is the hard drive(s)/partitions and Floppy Drive.  Each device is named according to their name or device type.  The root Partition/Drive is named / while the home partition is named /home, the Floppy Disk is named Floppy Drive.
 </para>
 
 <para>
@@ -474,14 +475,14 @@ When in the kde directory for storage Media; system:/media/ the available Storag
 	    <imagedata fileref="systemmediadirectory.png" format="PNG"/>
 	  </imageobject>
 	  <textobject>
-	    <phrase>Dolphin Displaying The System:/Media Directory</phrase>
+	    <phrase>&dolphin; Displaying The System:/Media Directory</phrase>
 	  </textobject>
 	</mediaobject>
 </screenshot>
 </para>
 
 <para>
-If the user has inserted Removable Storage media e.g. a Flash USB disk, then this will be shown.  This also applies to CDROM/DVDROM drives.  As with the Hard Disks these devices will also be named accordingly, either by there drive name, device type or in the case of CDROMS/DVDROMS by their disk name.
+If the user has inserted Removable Storage media &eg; a Flash USB disk, then this will be shown.  This also applies to CDROM/DVDROM drives.  As with the Hard Disks these devices will also be named accordingly, either by there drive name, device type or in the case of CDROMS/DVDROMS by their disk name.
 </para>
 
 <para>
@@ -489,7 +490,7 @@ Each device found in this location has the appropriate icon for their device typ
 </para>
 
 <para>
-Dolphin can mount devices found in the System:/media/ directory via  a number of ways.  Firstly right clicking on the device and via the menu Actions>Mount.  The second way is by clicking on the device icon.
+&dolphin; can mount devices found in the System:/media/ directory via  a number of ways.  Firstly right clicking on the device and via the menu Actions>Mount.  The second way is by clicking on the device icon.
 </para>
 
 <para>
@@ -505,11 +506,11 @@ To open a mounted device there are two methods.  Firstly clicking the mounted de
 <title>&dolphin; Configuration</title>
 
 <para>
-In order to configure Dolphin the user needs to access the Dolphin Configuration dialogue.  This can be accessed via the menu bar; Settings>Configure Dolphin.
+In order to configure &dolphin; the user needs to access the &dolphin; Configuration dialogue.  This can be accessed via the menu bar; <menuchoice> <guimenu>Settings</guimenu> <guimenuitem>Configure &dolphin;...</guimenuitem> </menuchoice>.
 </para>
 
 <para>
-The Dolphin Configuration dialogue consists of three sections; General, View Modes and Bookmarks.  Clicking one of these esections will make those options available accordingly.  The options available are displayed to the right of the dialogue.
+The &dolphin; Configuration dialogue consists of three sections; Startup, View Modes, and General.  Clicking one of these sections will make those options available accordingly.  The options available are displayed to the right of the dialogue.
 </para>
 
 <para>
@@ -520,14 +521,14 @@ The Dolphin Configuration dialogue consists of three sections; General, View Mod
 	    <imagedata fileref="configurationwindow.png" format="PNG"/>
 	  </imageobject>
 	  <textobject>
-	    <phrase>Dolphin Cnfiguration Window Showing The General Options</phrase>
+	    <phrase>&dolphin; Configuration Window Showing The General Options</phrase>
 	  </textobject>
 	</mediaobject>
 </screenshot>
 </para>
 
 <para>
-The General option allows users to set a number of options for Dolphin, these are; the default home location for the user e.g. /home/Peter, the default view mode (all directories will use this view unless they have already been changed) and wether or not split view is anable by default.
+The General option allows users to set a number of options for &dolphin;, these are; the default home location for the user &eg; /home/Peter, the default view mode (all directories will use this view unless they have already been changed) and wether or not split view is anable by default.
 </para>
 
 <para>
@@ -538,32 +539,14 @@ The General option allows users to set a number of options for Dolphin, these ar
 	    <imagedata fileref="configurationwindow2.png" format="PNG"/>
 	  </imageobject>
 	  <textobject>
-	    <phrase>Dolphin Cnfiguration Window Showing The View Options</phrase>
+	    <phrase>&dolphin; Configuration Window Showing The View Options</phrase>
 	  </textobject>
 	</mediaobject>
 </screenshot>
 </para>
 
 <para>
-The View Modes option differes slightly from the General option in that it has three tabs in the options.  The Icons tab allows users to set options to do with the Icons View Mode .e.g icon size.  The Details tab allows users to set options relating to the Details View Mode e.g. what information about files are shown.  The Previews to allows users to set options relating to the Prevews View Mode e.g. the size of the preview images.
-</para>
-
-<para>
-<screenshot>
-<screeninfo>Here's a screenshot of &dolphin;</screeninfo>
-	<mediaobject>
-	  <imageobject>
-	    <imagedata fileref="configurationwindow3.png" format="PNG"/>
-	  </imageobject>
-	  <textobject>
-	    <phrase>Dolphin Cnfiguration Window Showing The Bookmark Options</phrase>
-	  </textobject>
-	</mediaobject>
-</screenshot>
-</para>
-
-<para>
-The Bookmarks option allows the user to add, edit and remove Bookmarks that have been created.  Note: only bookmarks created by the user may be removed.
+The View Modes option differes slightly from the General option in that it has three tabs in the options.  The Icons tab allows users to set options to do with the Icons View Mode &eg; icon size.  The Details tab allows users to set options relating to the Details View Mode &eg; what information about files are shown.  The Previews to allows users to set options relating to the Prevews View Mode &eg; the size of the preview images.
 </para>
 </sect1>
 
@@ -571,7 +554,7 @@ The Bookmarks option allows the user to add, edit and remove Bookmarks that have
 <title>Quick Tips</title>
 
 <para>
-The following are a number of tips to save time when using Dolphin.
+The following are a number of tips to save time when using &dolphin;.
 </para>
 
 <sect2 id="quick-bookmarking">
@@ -582,7 +565,7 @@ To quickly create a bookmark of the directory currently being viewed, right clic
 </para>
 
 <para>
-Another method is to have the sidebar enabled in the bookmakrs mode.  Right clikcing the side bar and selecting 'Add Bookmark...' will open the dialogue to add bookmarks.
+Another method is to have the sidebar enabled in the bookmarks mode.  Right clicking the side bar and selecting 'Add Bookmark...' will open the dialogue to add bookmarks.
 </para>
 </sect2>
 
@@ -590,7 +573,7 @@ Another method is to have the sidebar enabled in the bookmakrs mode.  Right clik
 <title>Finding Files</title>
 
 <para>
-Dolphin is capable of searching for files in a filesystem.  If Ctrl+f is pressed or via the Tools menu; Tools > Find Files, kfind will open already set up to search within the current directory and any sub-directories contained within.
+&dolphin; is capable of searching for files in a filesystem.  If <keycombo action="simul">&Ctrl;<keycap>F</keycap></keycombo> is pressed or using <menuchoice> <guimenu>Tools</guimenu> <guimenuitem>Find File...</guimenuitem> </menuchoice>, <application>KFind</application> will open already set up to search within the current directory and any sub-directories contained within.
 </para>
 </sect2>
 
@@ -599,7 +582,7 @@ Dolphin is capable of searching for files in a filesystem.  If Ctrl+f is pressed
 <title>Mounting Storage Media</title>
 
 <para>
-A quick way to mount Storage Media is to click on the device.  This will mount and open the device in Dolphin.
+A quick way to mount Storage Media is to click on the device.  This will mount and open the device in &dolphin;.
 </para>
 </sect2>
 
@@ -607,7 +590,7 @@ A quick way to mount Storage Media is to click on the device.  This will mount a
 <title>Open A Terminal</title>
 
 <para>
-&dolphin; can open a terminal already in the current directory.  This can be done by pressing the F4 button.  For example if the user were in /home/Peter/Packages/ and pressed f4 a terminal will open already in the /home/Peter/Packages/ directory or via the Tools menu; Tools > Open Terminal.
+&dolphin; can open a terminal already in the current directory.  This can be done by pressing the <keycap>F4</keycap> button.  For example if the user were in <filename class="directory">/home/Peter/Packages/</filename> and pressed <keycap>F4</keycap> a terminal will open already in the <filename class="directory">/home/Peter/Packages/</filename> directory or using <menuchoice> <guimenu>View</guimenu> <guisubmenu>Panels</guisubmenu> <guimenuitem>Terminal</guimenuitem> </menuchoice>.
 </para>
 </sect2>
 
@@ -615,7 +598,7 @@ A quick way to mount Storage Media is to click on the device.  This will mount a
 <title>Undo Actions</title>
 
 <para>
-&dolphin; is capable of undoing changes users have made to files.  For example if a user sent a file to the Trash, Dolphin can undo this and move it back to the directory it previously belonged in.  To undo an action via the menu Edit>Undo(action name)... e.g. Undo rename or by pressing Ctrl+Z
+&dolphin; is capable of undoing changes users have made to files.  For example if a user sent a file to the Trash, &dolphin; can undo this and move it back to the directory it previously belonged in.  To undo an action via the menu <menuchoice> <guimenu>Edit</guimenu> <guimenuitem>Undo: (action name)</guimenuitem> </menuchoice>, &eg; <guilabel>Undo: Rename</guilabel> or by pressing <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>.
 </para>
 </sect2>
 
@@ -623,15 +606,15 @@ A quick way to mount Storage Media is to click on the device.  This will mount a
 <title>Renaming A Batch Of Files</title>
 
 <para>
-&dolphin; is capable of renaming a number of files at the same time.  Each file will have the file name specified, followed by a number for how many files that have been chosen to rename e.g. Tester 1.png, Tester 2.png, Tester 3.png.  This is useful for when you have a number of audio files where you wish to number them via their track number, or for photographs taken from a digital camera.
+&dolphin; is capable of renaming a number of files at the same time.  Each file will have the file name specified, followed by a number for how many files that have been chosen to rename &eg; Tester 1.png, Tester 2.png, Tester 3.png.  This is useful for when you have a number of audio files where you wish to number them via their track number, or for photographs taken from a digital camera.
 </para>
 
 <para>
-If a user wishes to rename a batch of files they must first select the files to be renamed.  This can be done via dragging the mouse over the files to be renamed, or via holding Ctrl and clicking each file to be renamed.   The user must then open the batch-rename dialogue, this, can be done via pressing F2 or via the File menu; File > Rename.
+If a user wishes to rename a batch of files they must first select the files to be renamed.  This can be done via dragging the mouse over the files to be renamed, or via holding &Ctrl; and clicking each file to be renamed.  The user must then open the batch-rename dialogue, this, can be done via pressing <keycap>F2</keycap> or via the File menu; <menuchoice> <guimenu>File</guimenu> <guimenuitem>Rename...</guimenuitem> </menuchoice>.
 </para>
 
 <para>
-The user must then enter the name they wish to give the filEs.  The # character must also be present within the name (failure to include the # key will result in an error as this indicates where the file number should be sequentially increased for each file.)   The files will then be renamed with a  number present within the file name.
+The user must then enter the name they wish to give the files.  The # character must also be present within the name (failure to include the # key will result in an error as this indicates where the file number should be sequentially increased for each file.)   The files will then be renamed with a  number present within the file name.
 </para>
 </sect2>
 
@@ -639,11 +622,11 @@ The user must then enter the name they wish to give the filEs.  The # character 
 <title>Comparing A Selection Of Files</title>
 
 <para>
-&dolphin; is capable of comparing a selection of files to see the differences between them.  For a user to be able to compare files then the Kompare application must be installed.  &dolphin; can only compare the files that Kompare is capable on analyzing.
+&dolphin; is capable of comparing a selection of files to see the differences between them.  For a user to be able to compare files then the <application>Kompare</application> application must be installed.  &dolphin; can only compare the files that <application>Kompare</application> is capable on analyzing.
 </para>
 
 <para>
-If a user wishes to compare a selection of files, then first they must select the files to be compared.  Then launch the Kompare application via the Tools menu; Tools > Compare Files.  Kompare will then open showing the differences between the files.
+If a user wishes to compare a selection of files, then first they must select the files to be compared.  Then launch the <application>Kompare</application> application via the Tools menu; <menuchoice> <guimenu>Tools</guimenu> <guimenuitem>Compare Files</guimenuitem> </menuchoice>.  <application>Kompare</application> will then open showing the differences between the files.
 </para>
 </sect2>
 
@@ -651,11 +634,11 @@ If a user wishes to compare a selection of files, then first they must select th
 <title>Filter A Selection Of Files</title>
 
 <para>
-&dolphin; is capable of filtering a selection of files within the workspace via a text string.  For example if a user wish to filter all of the MP3 files within a directory, they could filter for .mp3.  Tis would then  filter out all of the files that did not have .mp3 within their file name.
+&dolphin; is capable of filtering a selection of files within the workspace via a text string.  For example if a user wish to filter all of the <acronym>MP3</acronym>  files within a directory, they could filter for .mp3.  This would then filter out all of the files that did not have .mp3 within their file name.
 </para>
 
 <para>
-If a user wishes to filter a selection of files this can be done via the filter bar.  The user then enters the text they wish to filter for within that directory.  To enable the filter bar the user must press either the '/' key or via the Menu Bar; Tools > Show Filter Bar.  To disable the filter bar the user must press either the 'Esc' Key, or via the Menu Bar; Tools > Show Filter Bar.
+If a user wishes to filter a selection of files this can be done via the filter bar.  The user then enters the text they wish to filter for within that directory.  To enable the filter bar the user must press either the <keycap>/</keycap> key or via the Menu Bar; <menuchoice> <guimenu>Tools</guimenu> <guimenuitem>Show Filter Bar</guimenuitem> </menuchoice>.  To disable the filter bar the user must press either the <keycap>Esc</keycap> Key, or via the <menuchoice> <guimenu>Tools</guimenu> <guimenuitem>Show Filter Bar</guimenuitem> </menuchoice>.
 </para>
 </sect2>
 
@@ -681,13 +664,21 @@ or menu bars. -->
 
 <varlistentry>
 <term><menuchoice>
+<guimenu>File</guimenu>
+<guisubmenu>New</guisubmenu>
+</menuchoice></term>
+<listitem><para><action>Creates a new object in the current directory.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
 <shortcut>
 <keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo>
 </shortcut>
 <guimenu>File</guimenu>
-<guimenuitem>New</guimenuitem>
+<guimenuitem>New Window</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Creates a new document.</action></para></listitem>
+<listitem><para><action>Opens a new window.</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -738,7 +729,7 @@ or menu bars. -->
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul"><keycap>Ctrl+Q</keycap></keycombo>
+<keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo>
 </shortcut>
 <guimenu>File</guimenu>
 <guimenuitem>Quit</guimenuitem>
@@ -758,7 +749,7 @@ or menu bars. -->
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul"><keycap>Ctrl+Z</keycap></keycombo>
+<keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
 </shortcut>
 <guimenu>Edit</guimenu>
 <guimenuitem>Undo</guimenuitem>
@@ -769,7 +760,7 @@ or menu bars. -->
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul"><keycap>Ctrl+Shift+Z</keycap></keycombo>
+<keycombo action="simul">&Ctrl;&Shift;<keycap>Z</keycap></keycombo>
 </shortcut>
 <guimenu>Edit</guimenu>
 <guimenuitem>Redo</guimenuitem>
@@ -780,7 +771,7 @@ or menu bars. -->
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul"><keycap>Ctrl+X</keycap></keycombo>
+<keycombo action="simul">&Ctrl;<keycap>X</keycap></keycombo>
 </shortcut>
 <guimenu>Edit</guimenu>
 <guimenuitem>Cut</guimenuitem>
@@ -791,7 +782,7 @@ or menu bars. -->
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul"><keycap>Ctrl+C</keycap></keycombo>
+<keycombo action="simul">&Ctrl;<keycap>C</keycap></keycombo>
 </shortcut>
 <guimenu>Edit</guimenu>
 <guimenuitem>Cut</guimenuitem>
@@ -802,7 +793,7 @@ or menu bars. -->
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul"><keycap>Ctrl+V</keycap></keycombo>
+<keycombo action="simul">&Ctrl;<keycap>V</keycap></keycombo>
 </shortcut>
 <guimenu>Edit</guimenu>
 <guimenuitem>Paste</guimenuitem>
@@ -813,7 +804,7 @@ or menu bars. -->
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul"><keycap>Ctrl+A</keycap></keycombo>
+<keycombo action="simul">&Ctrl;<keycap>A</keycap></keycombo>
 </shortcut>
 <guimenu>Edit</guimenu>
 <guimenuitem>Select All</guimenuitem>
@@ -824,12 +815,12 @@ or menu bars. -->
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul"><keycap>Ctrl+Shift+A</keycap></keycombo>
+<keycombo action="simul">&Ctrl;&Shift;<keycap>A</keycap></keycombo>
 </shortcut>
 <guimenu>Edit</guimenu>
 <guimenuitem>Invert Selection</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Inverts the currently selected files e.g. if you select ten files out of twenty, then the selected ten files will be swapped for the un-selected ten files. (If you have a better way of phrasing this please let me know as I am a little stuck here).</action></para></listitem>
+<listitem><para><action>Inverts the currently selected files &eg; if you select ten files out of twenty, then the selected ten files will be swapped for the un-selected ten files. (If you have a better way of phrasing this please let me know as I am a little stuck here).</action></para></listitem>
 </varlistentry>
 </variablelist>
 </para>
@@ -843,7 +834,7 @@ or menu bars. -->
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul"><keycap>Ctrl++</keycap></keycombo>
+<keycombo action="simul">&Ctrl;<keycap>+</keycap></keycombo>
 </shortcut>
 <guimenu>View</guimenu>
 <guimenuitem>Zoom In</guimenuitem>
@@ -854,7 +845,7 @@ or menu bars. -->
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul"><keycap>Ctrl+-</keycap></keycombo>
+<keycombo action="simul">&Ctrl;<keycap>-</keycap></keycombo>
 </shortcut>
 <guimenu>View</guimenu>
 <guimenuitem>Zoom Out</guimenuitem>
@@ -884,7 +875,7 @@ or menu bars. -->
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul"><keycap>Alt+.</keycap></keycombo>
+<keycombo action="simul">&Ctrl;<keycap>.</keycap></keycombo>
 </shortcut>
 <guimenu>View</guimenu>
 <guimenuitem>Show Hidden Files</guimenuitem>
@@ -928,10 +919,11 @@ or menu bars. -->
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul"><keycap>Ctrl+L Ctrl+B</keycap></keycombo>
+<keycombo action="simul">&Ctrl;<keycap>L</keycap></keycombo>
 </shortcut>
 <guimenu>View</guimenu>
-<guimenuitem>Navigation Bar...</guimenuitem>
+<guisubmenu>Navigation Bar</guisubmenu>
+<guimenuitem>Show Full Location</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Changes the address bar between the two modes; the line input mode and the breadcrumb mode.</action></para></listitem>
 </varlistentry>
@@ -1005,7 +997,7 @@ or menu bars. -->
 <guimenu>Go</guimenu>
 <guimenuitem>Home</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Changes to the users home directory e.g. /home/Peter/.</action></para></listitem>
+<listitem><para><action>Changes to the users home directory &eg; /home/Peter/.</action></para></listitem>
 </varlistentry>
 </variablelist>
 </para>
@@ -1030,7 +1022,7 @@ or menu bars. -->
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul"><keycap>Ctrl+F</keycap></keycombo>
+<keycombo action="simul">&Ctrl;<keycap>F</keycap></keycombo>
 </shortcut>
 <guimenu>Tools</guimenu>
 <guimenuitem>Find File...</guimenuitem>
@@ -1041,18 +1033,7 @@ or menu bars. -->
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul"><keycap>Ctrl+F</keycap></keycombo>
-</shortcut>
-<guimenu>Tools</guimenu>
-<guimenuitem>Show Filter Bar</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Enables and disables the filter bar.</action></para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul"><keycap>/</keycap></keycombo>
+<keycombo action="simul">&Ctrl;<keycap>I</keycap></keycombo>
 </shortcut>
 <guimenu>Tools</guimenu>
 <guimenuitem>Show Filter Bar</guimenuitem>
@@ -1079,9 +1060,6 @@ or menu bars. -->
 <variablelist>
 <varlistentry>
 <term><menuchoice>
-<shortcut>
-<keycombo action="simul"><keycap>/</keycap></keycombo>
-</shortcut>
 <guimenu>Settings</guimenu>
 <guimenuitem>Hide Toolbar</guimenuitem>
 </menuchoice></term>
@@ -1107,7 +1085,7 @@ or menu bars. -->
 <varlistentry>
 <term><menuchoice>
 <guimenu>Settings</guimenu>
-<guimenuitem>Configure Dolphin...</guimenuitem>
+<guimenuitem>Configure &dolphin;...</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Opens the &dolphin; configuration dialogue.</action></para></listitem>
 </varlistentry>
@@ -1153,7 +1131,7 @@ application work. -->
 </question>
 <answer>
 <para>
-Dolphin can use the majority of service menus created for Konqueror, however &dolphin; does impose one limitation on the service menus: Service menu entries that add them selves to the top level of the context menu will automatically be placed below the Actions sub-menu. This prevents that the context menu will get crowded.
+&dolphin; can use the majority of service menus created for &konqueror;, however &dolphin; does impose one limitation on the service menus: Service menu entries that add them selves to the top level of the context menu will automatically be placed below the Actions sub-menu. This prevents that the context menu will get crowded.
 </para>
 
 <para>
@@ -1164,7 +1142,7 @@ To add a custom service menu to &dolphin; save the service menu to the &dolphin;
 
 <qandaentry>
 <question>
-<para>How do I make Dolphin my default file manager</para>
+<para>How do I make &dolphin; my default file manager</para>
 </question>
 <answer>
 <para>
@@ -1172,7 +1150,7 @@ To make &dolphin; the default file manager for &kde; from the &kde; control cent
 </para>
 
 <para>
-To make &dolphin; the default file manager for the virtual directories &kde; creates e.g. system:/ then again in the File Associations section of the control centre expand the inode section of Known Types.  Under the system_directory mime type, add &dolphin; to the list of applications, however instead of choosing &dolphin; from the kmenu, type the following in to the text box at the top;  dolphin %u The virtual directories created by &kde; will then be opened by &dolphin; as default.
+To make &dolphin; the default file manager for the virtual directories &kde; creates &eg; system:/ then again in the File Associations section of the control centre expand the inode section of Known Types.  Under the system_directory mime type, add &dolphin; to the list of applications, however instead of choosing &dolphin; from the kmenu, type the following in to the text box at the top;  dolphin %u The virtual directories created by &kde; will then be opened by &dolphin; as default.
 </para>
 </answer>
 </qandaentry>
@@ -1187,33 +1165,22 @@ To make &dolphin; the default file manager for the virtual directories &kde; cre
 <qandaset id="misclist">
 <qandaentry>
 <question>
-<para>Does Dolphin intended to replace Konqueror?</para>
+<para>Does &dolphin; intended to replace &konqueror;?</para>
 </question>
 <answer>
 <para>
-&dolphin; is not intended to be a competitor to Konqueror: Konqueror acts as universal viewer being able to show HTML pages, text documents, directories and a lot more, whereas &dolphin; focuses on being only a file manager. This approach allows to optimize the user interface for the task of file management.
+&dolphin; is not intended to be a competitor to &konqueror;: &konqueror; acts as universal viewer being able to show <acronym>HTML</acronym> pages, text documents, directories and a lot more, whereas &dolphin; focuses on being only a file manager. This approach allows to optimize the user interface for the task of file management.
 </para>
 </answer>
 </qandaentry>
 
 <qandaentry>
 <question>
-<para>Will Dolphin be ported to Kde4?</para>
+<para>How can I get involved with the development of &dolphin;?</para>
 </question>
 <answer>
 <para>
-Development of &dolphin; for Kde4 is scheduled to begin in December (2006).  These are just intial ideas floating around at the moment between the developers.  By the time the first alpha release of Kde4 is released, then &dolphin; devlopment should be well underway.
-</para>
-</answer>
-</qandaentry>
-
-<qandaentry>
-<question>
-<para>How can I get involved with the development of Dolphin?</para>
-</question>
-<answer>
-<para>
-The easiest way to get involved with &dolphin; is to drop the developers an email.  If you email Peter Penz (Lead Developer/Project Leader), what you can do, how much time you can devote etc and he will let you know what you can do in the project. If you wish to contribute the documentation email Michael Austin (Documentation Leader).  He can then fill you in on the situation e.g. what needs to be added/finished, the procedure for submitting documentation.
+The easiest way to get involved with &dolphin; is to drop the developers an email.  If you email Peter Penz (Lead Developer/Project Leader), what you can do, how much time you can devote etc and he will let you know what you can do in the project. If you wish to contribute the documentation email Michael Austin (Documentation Leader).  He can then fill you in on the situation &eg; what needs to be added/finished, the procedure for submitting documentation.
 </para>
 <para>
 The email addresses of Peter Penz and Michael Austin can be found on the main page of the documentation, or in the Credits section.
@@ -1227,13 +1194,13 @@ The email addresses of Peter Penz and Michael Austin can be found on the main pa
 </question>
 <answer>
 <para>
-Bug reports should only be submitted for release versions of &dolphin;, please do not submit bug reports for the Subversion release of &dolphin; as this is expected to break due to it's constant development.
+Bug reports should only be submitted for released versions of &dolphin;, please do not submit bug reports for the Subversion release of &dolphin; as this is expected to break due to its constant development.
 </para>
 <para>
-The official channel for submitting bug reports is via the &dolphin; tracker found at the &dolphin; Sourceforge page.  Alternatively bug reports can be emailed to Peter Penz (email address is found on the main page or the credits section).
+The official channel for submitting bug reports is via the &kde; bug tracking system.  Alternatively bug reports can be emailed to Peter Penz (email address is found on the main page or the credits section).
 </para> 
 <para>
-The &dolphin; bug tracker can be found <ulink url="http://sourceforge.net/tracker/?group_id=173325">here</ulink>.
+The &kde; bug tracker can be found at <ulink url="http://bugs.kde.org">http://bugs.kde.org</ulink>.
 </para>
 </answer>
 </qandaentry>
@@ -1244,11 +1211,7 @@ The &dolphin; bug tracker can be found <ulink url="http://sourceforge.net/tracke
 </question>
 <answer>
 <para>
-The official channel for submitting feature requests is via the &dolphin; tracker.  Alternatively feature requests can be emailed to Peter Penz  (email address is found on the main page or the credits section).
-</para>
-
-<para>
-As with the bug tracker, the feature request tracker can be found <ulink url="http://sourceforge.net/tracker/?group_id=173325">here</ulink> below the link for the bug tracker.
+The official channel for submitting feature requests is via the &kde; bug tracking system.  Alternatively feature requests can be emailed to Peter Penz  (email address is found on the main page or the credits section).
 </para>
 
 </answer>
@@ -1310,27 +1273,9 @@ Documentation copyright 2006 Michael Austin <email>tuxedup@users.sourceforge.net
 <sect1 id="getting-dolphin">
 <title>How to obtain &dolphin;</title>
 
-<para>
-&dolphin; can be obtained from the <ulink url="http://enzosworld.gmxhome.de/">&dolphin; home page</ulink>. 
-</para>
+&install.intro.documentation;
 
-<para>
-&dolphin; can also be found on the <ulink
-url="http://kde-apps.org/content/show.php?content=40491">kde-apps.org</ulink> website.
-</para>
-
-<para>
-The &dolphin; Sourceforge page also hosts the current release version, as well as the development version found on the &dolphin; Subversion Repository.
-The release version of&dolphin; can be found on it's <ulink
-url="http://sourceforge.net/projects/dolphinfileman">Sourceforge page.</ulink>
-</para>
-
-<para>
-The development version of &dolphin; can be found at it's <ulink
-url="https://svn.sourceforge.net/svnroot/dolphinfileman/">Subversion Repository.</ulink>
-</para>
-</sect1>
-
+<!--
 <sect1 id="requirements">
 <title>Requirements</title>
 
@@ -1346,7 +1291,8 @@ In order to compile &dolphin; you will also require libqt2-mt-dev, libx11-dev, k
 <para>
 Other &kde; libraries may also be required for some advanced features.
 </para>
-<!-- But I don't know what these might be so I can't really specify :-) -->
+< But I don't know what these might be so I can't really specify :-) >
+-->
 
 </sect1>
 
