@@ -5,6 +5,7 @@
 
 set(khtmlkttsdplugin_PART_SRCS khtmlkttsd.cpp )
 
+qt4_add_dbus_interfaces(khtmlkttsdplugin_PART_SRCS ${DBUS_INTERFACES_INSTALL_DIR}/org.kde.KSpeech.xml)
 
 kde4_add_plugin(khtmlkttsdplugin WITH_PREFIX ${khtmlkttsdplugin_PART_SRCS})
 
