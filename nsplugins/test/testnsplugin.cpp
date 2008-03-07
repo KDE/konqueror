@@ -18,8 +18,11 @@
   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 */
-#include <stdio.h>
 
+#include "testnsplugin.h"
+#include "../nspluginloader.h"
+
+#include <stdio.h>
 
 #include <kactioncollection.h>
 //Added by qt3to4:
@@ -29,8 +32,6 @@
 #include <kstandardaction.h>
 #include <kaction.h>
 
-#include "testnsplugin.h"
-#include "../nspluginloader.h"
 
 
 TestNSPlugin::TestNSPlugin()
