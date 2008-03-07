@@ -15,23 +15,15 @@
 // Own
 #include "khtmlkttsd.h"
 
-// Qt
-#include <QtCore/QBuffer>
-#include <QtCore/QTimer>
-#include <QtDBus/QtDBus>
-#include <QtGui/QMessageBox>
-
 // KDE
 #include <dom/dom_string.h>
 #include <dom/html_document.h>
 #include <dom/html_element.h>
 #include <kaction.h>
 #include <kactioncollection.h>
-#include <kapplication.h>
 #include <kdebug.h>
 #include <khtml_part.h> // this plugin applies to a khtml part
 #include <kicon.h>
-#include <kiconloader.h>
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <kpluginfactory.h>
