@@ -46,7 +46,7 @@ KHTMLPluginKTTSD::KHTMLPluginKTTSD( QObject* parent, const QVariantList& )
         connect(action, SIGNAL(triggered(bool) ), SLOT(slotReadOut()));
     }
     else
-        kDebug() << "KHTMLPLuginKTTSD::KHTMLPluginKTTSD: KTrader did not find KTTSD.";
+        kDebug() << "KServiceTypeTrader did not find KTTSD.";
 }
 
 KHTMLPluginKTTSD::~KHTMLPluginKTTSD()
