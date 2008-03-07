@@ -1,4 +1,4 @@
-//krazy:excludeall=license,captruefalse
+//krazy:excludeall=license,captruefalse,copyright
 /* -*- Mode: C; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
 /* ***** BEGIN LICENSE BLOCK *****
  * Version: NPL 1.1/GPL 2.0/LGPL 2.1
