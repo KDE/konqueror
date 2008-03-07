@@ -29,17 +29,17 @@
 #include <kactioncollection.h>
 #include <kapplication.h>
 #include <kdebug.h>
-#include <kgenericfactory.h>
 #include <khtml_part.h> // this plugin applies to a khtml part
 #include <kicon.h>
 #include <kiconloader.h>
 #include <klocale.h>
 #include <kmessagebox.h>
+#include <kpluginfactory.h>
 #include <kservicetypetrader.h>
 #include <kspeech.h>
 #include <ktoolinvocation.h>
 
-KHTMLPluginKTTSD::KHTMLPluginKTTSD( QObject* parent, const QStringList& )
+KHTMLPluginKTTSD::KHTMLPluginKTTSD( QObject* parent, const QVariantList& )
     : Plugin( parent )
 {
     // If KTTSD is not installed, hide action.
@@ -127,6 +127,7 @@ void KHTMLPluginKTTSD::slotReadOut()
     }
 }
 
-K_EXPORT_COMPONENT_FACTORY( libkhtmlkttsdplugin, KGenericFactory<KHTMLPluginKTTSD>("khtmlkttsd") )
+K_PLUGIN_FACTORY( KHTMLPluginKTTSDFactory, registerPlugin< KHTMLPluginKTTSD >(); )
+K_EXPORT_PLUGIN( KHTMLPluginKTTSDFactory( "khtmlkttsd" ) )
 
 #include "khtmlkttsd.moc"
