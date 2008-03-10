@@ -22,6 +22,7 @@
  */
 
 #include "webkitpart.h"
+#include "webkitview.h"
 
 #include <KDE/KParts/GenericFactory>
 #include <KDE/KAboutData>
@@ -128,31 +129,6 @@ KAboutData *WebKitPart::createAboutData()
                           /*version*/ "1.0", ki18n(/*shortDescription*/ ""),
                           KAboutData::License_LGPL,
                           ki18n("Copyright (c) 2007 Trolltech ASA"));
-}
-
-WebView::WebView(WebKitPart *wpart, QWidget *parent)
-    : QWebView(parent), part(wpart)
-{
-}
-
-#if 0
-QWebPage::NavigationRequestResponse WebPage::navigationRequested(QWebFrame *frame, const QWebNetworkRequest &request)
-{
-    if (frame != mainFrame())
-        return AcceptNavigationRequest;
-    return part->navigationRequested(request);
-}
-#endif
-
-void WebView::contextMenuEvent(QContextMenuEvent *e)
-{
-    KParts::BrowserExtension::PopupFlags flags = KParts::BrowserExtension::DefaultPopupItems;
-    flags |= KParts::BrowserExtension::ShowReload;
-    flags |= KParts::BrowserExtension::ShowBookmark;
-    flags |= KParts::BrowserExtension::ShowNavigationItems;
-    emit part->browserExt()->popupMenu(/*guiclient */
-                                       e->globalPos(), part->url(), 0, KParts::OpenUrlArguments(), KParts::BrowserArguments(),
-                                       flags);
 }
 
 WebKitBrowserExtension::WebKitBrowserExtension(WebKitPart *parent)

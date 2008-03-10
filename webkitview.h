@@ -20,8 +20,8 @@
  * Boston, MA 02110-1301, USA.
  *
  */
-#ifndef WEBKITPART_H
-#define WEBKITPART_H
+#ifndef WEBKITVIEW_H
+#define WEBKITVIEW_H
 
 #include <KDE/KParts/ReadOnlyPart>
 #include <KDE/KParts/BrowserExtension>
@@ -33,52 +33,20 @@ class QWebFrame;
 class KAboutData;
 class WebKitBrowserExtension;
 class KWebNetworkInterface;
+class WebKitPart;
 
-class WebKitPart : public KParts::ReadOnlyPart
+class WebView : public QWebView
 {
-    Q_OBJECT
 public:
-    WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList &/*args*/);
-    ~WebKitPart();
-
-    virtual bool openUrl(const KUrl &url);
-    virtual bool closeUrl();
-
-//     QWebPage::NavigationRequestResponse navigationRequested(const QWebNetworkRequest &request);
-
-    inline WebView *view() { return webView; }
-    inline WebKitBrowserExtension *browserExt() const { return browserExtension; }
-
-    static KAboutData *createAboutData();
+    WebView(WebKitPart *wpart, QWidget *parent);
 
 protected:
-    virtual bool openFile();
+//     virtual NavigationRequestResponse navigationRequested(QWebFrame *frame, const QWebNetworkRequest &request);
 
-private slots:
-    void laodStarted();
-    void loadFinished();
-
-private:
-    WebView *webView;
-    WebKitBrowserExtension *browserExtension;
-};
-
-class WebKitBrowserExtension : public KParts::BrowserExtension
-{
-    Q_OBJECT
-public:
-    WebKitBrowserExtension(WebKitPart *parent);
-
-public slots:
-    void cut();
-    void copy();
-    void paste();
-
-private slots:
-    void updateEditActions();
+    virtual void contextMenuEvent(QContextMenuEvent *e);
 
 private:
     WebKitPart *part;
 };
 
-#endif // WEBKITPART_H
+#endif // WEBKITVIEW_H
