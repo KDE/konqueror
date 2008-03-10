@@ -25,6 +25,8 @@
 
 #include <KDE/KParts/GenericFactory>
 #include <KDE/KAboutData>
+#include <KDE/KInputDialog>
+#include <KDE/KMessageBox>
 
 #include <QHttpRequestHeader>
 
@@ -33,9 +35,27 @@ WebPage::WebPage(WebKitPart *wpart, QWidget *parent)
 {
 }
 
-bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QWebNetworkRequest &request,
+bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request,
             NavigationType type)
 {
     kDebug() << "acceptNavigationRequest";
     return true;
+}
+
+void WebPage::javaScriptAlert(QWebFrame *frame, const QString &msg)
+{
+    KMessageBox::error(0, msg, i18n("JavaScript"));
+}
+
+bool WebPage::javaScriptConfirm(QWebFrame *frame, const QString &msg)
+{
+    return (KMessageBox::warningYesNo(0, msg, i18n("JavaScript"), KStandardGuiItem::ok(), KStandardGuiItem::cancel())
+            == KMessageBox::Yes);
+}
+
+bool WebPage::javaScriptPrompt(QWebFrame *frame, const QString &msg, const QString &defaultValue, QString *result)
+{
+    bool ok = false;
+    *result = KInputDialog::getText(i18n("JavaScript"), msg, defaultValue, &ok);
+    return ok;
 }

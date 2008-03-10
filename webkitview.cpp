@@ -23,6 +23,7 @@
 
 #include "webkitview.h"
 #include "webkitpart.h"
+#include "webkitpage.h"
 
 #include <KDE/KParts/GenericFactory>
 #include <KDE/KAboutData>
@@ -32,16 +33,8 @@
 WebView::WebView(WebKitPart *wpart, QWidget *parent)
     : QWebView(parent), part(wpart)
 {
+    setPage(new WebPage(wpart, parent));
 }
-
-#if 0
-QWebPage::NavigationRequestResponse WebPage::navigationRequested(QWebFrame *frame, const QWebNetworkRequest &request)
-{
-    if (frame != mainFrame())
-        return AcceptNavigationRequest;
-    return part->navigationRequested(request);
-}
-#endif
 
 void WebView::contextMenuEvent(QContextMenuEvent *e)
 {

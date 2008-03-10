@@ -37,8 +37,11 @@ public:
     WebPage(WebKitPart *wpart, QWidget *parent);
 
 protected:
-    virtual bool acceptNavigationRequest(QWebFrame *frame, const QWebNetworkRequest &request,
+    virtual bool acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request,
             NavigationType type);
+    virtual void javaScriptAlert(QWebFrame *frame, const QString &msg);
+    virtual bool javaScriptConfirm(QWebFrame *frame, const QString &msg);
+    virtual bool javaScriptPrompt(QWebFrame *frame, const QString &msg, const QString &defaultValue, QString *result);
 
 private:
     WebKitPart *m_part;

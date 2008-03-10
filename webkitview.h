@@ -41,8 +41,6 @@ public:
     WebView(WebKitPart *wpart, QWidget *parent);
 
 protected:
-//     virtual NavigationRequestResponse navigationRequested(QWebFrame *frame, const QWebNetworkRequest &request);
-
     virtual void contextMenuEvent(QContextMenuEvent *e);
 
 private:
