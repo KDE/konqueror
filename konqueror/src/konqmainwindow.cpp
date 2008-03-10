@@ -3266,9 +3266,9 @@ void KonqMainWindow::slotShowMenuBar()
 
 void KonqMainWindow::slotUpdateFullScreen( bool set )
 {
+  KToggleFullScreenAction::setFullScreen( this, set );
   if( set )
   {
-    showFullScreen();
     // Create toolbar button for exiting from full-screen mode
     // ...but only if there isn't one already...
 
@@ -3311,7 +3311,6 @@ void KonqMainWindow::slotUpdateFullScreen( bool set )
   }
   else
   {
-    setWindowState( windowState() & ~Qt::WindowFullScreen );
     unplugActionList( "fullscreen" );
 
     if (m_prevMenuBarVisible)
