@@ -56,7 +56,7 @@ void KonqMisc::abortFullScreenMode()
       {
 	KWindowInfo info = KWindowSystem::windowInfo( window->winId(), NET::WMDesktop );
 	if ( info.valid() && info.isOnCurrentDesktop() )
-          window->showNormal();
+          window->setWindowState( window->windowState() & ~Qt::WindowFullScreen );
       }
     }
   }
