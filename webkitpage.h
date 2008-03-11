@@ -24,11 +24,8 @@
 
 #include <qwebpage.h>
 
-class WebView;
 class QWebFrame;
-class KAboutData;
 class WebKitBrowserExtension;
-class KWebNetworkInterface;
 class WebKitPart;
 
 class WebPage : public QWebPage
@@ -39,6 +36,7 @@ public:
 protected:
     virtual bool acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request,
             NavigationType type);
+    virtual QString chooseFile(QWebFrame *parentFrame, const QString &suggestedFile);
     virtual void javaScriptAlert(QWebFrame *frame, const QString &msg);
     virtual bool javaScriptConfirm(QWebFrame *frame, const QString &msg);
     virtual bool javaScriptPrompt(QWebFrame *frame, const QString &msg, const QString &defaultValue, QString *result);

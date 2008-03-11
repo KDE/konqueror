@@ -25,10 +25,9 @@
 
 #include <KDE/KParts/GenericFactory>
 #include <KDE/KAboutData>
+#include <KDE/KFileDialog>
 #include <KDE/KInputDialog>
 #include <KDE/KMessageBox>
-
-#include <QHttpRequestHeader>
 
 WebPage::WebPage(WebKitPart *wpart, QWidget *parent)
     : QWebPage(parent), m_part(wpart)
@@ -40,6 +39,11 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
 {
     kDebug() << "acceptNavigationRequest";
     return true;
+}
+
+QString WebPage::chooseFile(QWebFrame *parentFrame, const QString &suggestedFile)
+{
+    return KFileDialog::getOpenFileName(suggestedFile);
 }
 
 void WebPage::javaScriptAlert(QWebFrame *frame, const QString &msg)
