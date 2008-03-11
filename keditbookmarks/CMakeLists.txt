@@ -51,5 +51,3 @@ install(TARGETS keditbookmarks DESTINATION ${BIN_INSTALL_DIR})
 
 install( FILES keditbookmarks.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
 install( FILES keditbookmarksui.rc  keditbookmarks-genui.rc  DESTINATION  ${DATA_INSTALL_DIR}/keditbookmarks )
-
-kde4_install_icons( ${ICON_INSTALL_DIR}  )

@@ -1,6 +1,4 @@
 
-install( FILES Apple.png BeachBall.png Blowfish.png Bug.png  	Butterfly.png Car.png Cow.png Daemon.png Dog.png Elephant.png  	Flower.png Frog.png Ghost.png Guitar.png Heart.png Konqui.png  	Lion.png Monkey.png Penguin.png Pig.png Rabbit.png  	Ring.png Scream.png Shark.png Splash.png Star.png Teddybear.png  	Turtle.png  DESTINATION  ${DATA_INSTALL_DIR}/kdm/pics/users )
-
-
-
+FILE(GLOB userpics *.png)
+install( FILES ${userpics} DESTINATION ${DATA_INSTALL_DIR}/kdm/pics/users )
 
