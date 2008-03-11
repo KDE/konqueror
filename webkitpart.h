@@ -57,6 +57,7 @@ protected:
 private slots:
     void laodStarted();
     void loadFinished();
+    void urlChanged(const QUrl &url);
 
 private:
     WebView *webView;

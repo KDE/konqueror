@@ -52,6 +52,8 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
 
     connect(webView->page(), SIGNAL(loadProgress(int)),
             browserExtension, SIGNAL(loadingProgress(int)));
+    connect(webView, SIGNAL(urlChanged(const QUrl &)),
+            this, SLOT(urlChanged(const QUrl &)));
 }
 
 WebKitPart::~WebKitPart()
@@ -104,6 +106,11 @@ void WebKitPart::laodStarted()
 void WebKitPart::loadFinished()
 {
     emit completed();
+}
+
+void WebKitPart::urlChanged(const QUrl &url)
+{
+    emit browserExtension->setLocationBarUrl(KUrl(url).prettyUrl());
 }
 
 #if 0
