@@ -27,7 +27,7 @@
  * Base class for containers
  * This implements the Composite pattern: a composite is a type of base element.
  */
-class KonqFrameContainerBase : public KonqFrameBase
+class KONQ_TESTS_EXPORT KonqFrameContainerBase : public KonqFrameBase
 {
 public:
     virtual ~KonqFrameContainerBase() {}
