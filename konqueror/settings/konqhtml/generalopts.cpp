@@ -78,6 +78,7 @@ KKonqGeneralOptions::KKonqGeneralOptions(QWidget *parent, const QVariantList&)
     connect(tabOptions->m_pPermanentCloseButton, SIGNAL(toggled(bool)), SLOT(slotChanged()));
     connect(tabOptions->m_pKonquerorTabforExternalURL, SIGNAL(toggled(bool)), SLOT(slotChanged()));
     connect(tabOptions->m_pPopupsWithinTabs, SIGNAL(toggled(bool)), SLOT(slotChanged()));
+    connect(tabOptions->m_pMiddleClickClose, SIGNAL(toggled(bool)), SLOT(slotChanged()));
 
     lay->addWidget(tabsGroup);
 
@@ -104,6 +105,7 @@ void KKonqGeneralOptions::load()
     tabOptions->m_pKonquerorTabforExternalURL->setChecked( cg.readEntry( "KonquerorTabforExternalURL", false) );
     tabOptions->m_pPopupsWithinTabs->setChecked( cg.readEntry( "PopupsWithinTabs", false) );
     tabOptions->m_pTabCloseActivatePrevious->setChecked( cg.readEntry( "TabCloseActivatePrevious", false) );
+    tabOptions->m_pMiddleClickClose->setChecked( cg.readEntry( "MouseMiddleClickClosesTab", false ) );
 
     cg = KConfigGroup(m_pConfig, "Notification Messages");
     tabOptions->m_pTabConfirm->setChecked( !cg.hasKey("MultipleTabConfirm") );
@@ -133,6 +135,7 @@ void KKonqGeneralOptions::save()
     cg.writeEntry( "KonquerorTabforExternalURL", tabOptions->m_pKonquerorTabforExternalURL->isChecked() );
     cg.writeEntry( "PopupsWithinTabs", tabOptions->m_pPopupsWithinTabs->isChecked() );
     cg.writeEntry( "TabCloseActivatePrevious", tabOptions->m_pTabCloseActivatePrevious->isChecked() );
+    cg.writeEntry( "MouseMiddleClickClosesTab", tabOptions->m_pMiddleClickClose->isChecked() );
 
     cg.sync();
 
