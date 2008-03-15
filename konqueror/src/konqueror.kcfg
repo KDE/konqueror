@@ -44,14 +44,14 @@
       <whatsthis>Uncheck this if you do not want 'Delete' menu commands to be displayed on the desktop and in the file manager's menus and context menus. You can still delete files when hidden by holding the Shift key while calling 'Move to Trash'.</whatsthis>
       <!-- checked -->
     </entry>
-<!-- konqmainwindow.cpp, gui in htmlopts.cpp -->
+<!-- konqmainwindow.cpp, gui in generalopts.cpp -->
     <entry name="MmbOpensTab" key="MMBOpensTab" type="Bool">
       <default>true</default> 
       <label></label>
       <whatsthis></whatsthis>
       <!-- checked -->
     </entry>
-<!-- konqviewmanager.cpp, gui in htmlopts.cpp -->
+<!-- konqviewmanager.cpp, gui in generalopts.cpp -->
     <entry key="AlwaysTabbedMode" type="Bool">
       <default>false</default>
       <label></label>
