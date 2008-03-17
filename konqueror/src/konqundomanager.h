@@ -43,20 +43,22 @@ public:
     QString undoText() const;
     quint64 newCommandSerialNumber();
 
-    const QList<KonqClosedTabItem* >& closedTabsList() const;
-    void undoClosedTab(int index);
+    const QList<KonqClosedItem* >& closedTabsList() const;
+    void undoClosedItem(int index);
     void addClosedTabItem(KonqClosedTabItem* closedTabItem);
     void updateSupportsFileUndo(bool enable);
+    void addWindowInOtherInstances(const KonqClosedWindowItem
+    *closedWindowItem);
 
 public Q_SLOTS:
     void undo();
-    void clearClosedTabsList();
-    void undoLastClosedTab();
+    void clearClosedItemsList();
+    void undoLastClosedItem();
     /**
-     * Opens in a new tab the URL the user selected from the closed tabs menu
-     * (by emitting openClosedTab), and takes it from the list.
+     * Opens in a new tab/window the item the user selected from the closed tabs 
+     * menu (by emitting openClosedTab/Window), and takes it from the list.
      */
-    void slotClosedTabsActivated(QAction* action);
+    void slotClosedItemsActivated(QAction* action);
 
 Q_SIGNALS:
     void undoAvailable(bool canUndo);
@@ -64,15 +66,30 @@ Q_SIGNALS:
 
     /// Emitted when a closed tab should be reopened
     void openClosedTab(const KonqClosedTabItem&);
-    /// Emitted when closedTabsList() has changed.
-    void closedTabsListChanged();
+    /// Emitted when a closed window should be reopened
+    void openClosedWindow(const KonqClosedWindowItem&);
+    /// Emitted when closedItemsList() has changed.
+    void closedItemsListChanged();
 
+    /// Emitted to be received in other window instances
+    void bypassCustomInfo(QVariant &customData);
 private Q_SLOTS:
     void slotFileUndoAvailable(bool);
     void slotFileUndoTextChanged(const QString& text);
-
+    
+    /**
+     * Received from other window instances, removes a reference of a window 
+     * from m_closedItemList.
+     */
+    void slotBypassCustomInfo(QVariant &customData);
 private:
-    QList<KonqClosedTabItem *> m_closedTabsList;
+    void addClosedWindowItem(KonqClosedWindowItem* closedWindowItem);
+    void removeWindowInOtherInstances(const KonqClosedWindowItem
+    *closedWindowItem);
+    void incRef();
+    void decRef();
+    
+    QList<KonqClosedItem *> m_closedItemList;
     bool m_supportsFileUndo;
 };
 

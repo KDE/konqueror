@@ -73,7 +73,6 @@ class KConfigGroup;
 class KUrlRequester;
 class KBookmarkManager;
 struct HistoryEntry;
-class KonqClosedTabItem;
 
 namespace KParts {
     class BrowserExtension;
@@ -456,8 +455,8 @@ private Q_SLOTS:
   void slotBackAboutToShow();
   void slotForwardAboutToShow();
 
-    void slotClosedTabsListAboutToShow();
-    void updateClosedTabsAction();
+  void slotClosedItemsListAboutToShow();
+  void updateClosedItemsAction();
 
   void slotUpActivated( int id );
   void slotBackActivated( int id );
@@ -572,7 +571,7 @@ private:
   void initActions();
 
   void popupNewTab(bool infront, bool openAfterCurrentPage);
-
+  void addClosedWindowToUndoList();
   /**
    * Tries to find a index.html (.kde.html) file in the specified directory
    */
@@ -586,6 +585,12 @@ private:
 
   bool stayPreloaded();
   bool checkPreloadResourceUsage();
+  
+  /**
+   * Manage how many instances of this class are out there.
+   */
+  void incInstancesCount();
+  void decInstancesCount();
 
   QObject* lastFrame( KonqView *view );
 
@@ -601,7 +606,8 @@ private: // members
   KToolBarPopupAction *m_paUp;
   KToolBarPopupAction *m_paBack;
   KToolBarPopupAction *m_paForward;
-  KToolBarPopupAction *m_paClosedTabs;  /// Action for the trash that contains closed tabs
+  /// Action for the trash that contains closed tabs/windows
+  KToolBarPopupAction *m_paClosedItems;
   KAction *m_paHome;
 
   KonqBidiHistoryAction *m_paHistory;
@@ -703,7 +709,7 @@ private: // members
   QList<QAction *> m_openWithActions;
   KActionMenu *m_viewModeMenu;
   QActionGroup* m_viewModesGroup;
-  QActionGroup* m_closedTabsGroup;
+  QActionGroup* m_closedItemsGroup;
 
   static QList<KonqMainWindow*> *s_lstViews;
 

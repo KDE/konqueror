@@ -335,6 +335,36 @@ void KonqViewManager::breakOffTab( KonqFrameBase* currentFrame, const QSize& win
 #endif
 }
 
+void KonqViewManager::openClosedWindow(const KonqClosedWindowItem& closedWindowItem)
+{
+    kDebug(1202) << "begin";
+    KonqMainWindow *mainWindow = new KonqMainWindow;
+    if (closedWindowItem.configGroup().readEntry( "FullScreen", false ))
+    {
+        // Full screen on
+        mainWindow->showFullScreen();
+    }
+    else
+    {
+        // Full screen off
+        if( mainWindow->isFullScreen())
+            mainWindow->showNormal();
+    
+        const QSize size = readConfigSize( closedWindowItem.configGroup(), mainWindow );
+        if ( size.isValid() )
+            mainWindow->resize( size );
+        else  // no size in the profile; use last known size
+            mainWindow->restoreWindowSize();
+    }
+    
+    mainWindow->viewManager()->loadRootItem( closedWindowItem.configGroup(), mainWindow->viewManager()->tabContainer(), KUrl(), true, KUrl() );
+    mainWindow->activateChild();
+    mainWindow->show();
+    
+    kDebug(1202) << "done";
+}
+
+
 void KonqViewManager::removeTab( KonqFrameBase* currentFrame )
 {
 #ifdef DEBUG_VIEWMGR

@@ -25,31 +25,49 @@
 #include <kconfiggroup.h>
 #include <QString>
 
+class KONQ_TESTS_EXPORT KonqClosedItem : public QObject {
+public:
+    virtual ~KonqClosedItem();
+    const KConfigGroup& configGroup() const { return m_configGroup; }
+    KConfigGroup& configGroup() { return m_configGroup; }
+    quint64 serialNumber() const { return m_serialNumber; }
+    QString title() const { return m_title; }
+    virtual QPixmap icon() = 0;
+
+protected:
+    KonqClosedItem(const QString& title, const QString& group, quint64 serialNumber);
+    QString m_title;
+    KConfigGroup m_configGroup;
+    quint64 m_serialNumber;
+};
+
 /**
  * This class stores all the needed information about a closed tab
  * in order to be able to reopen it if requested
  */
-class KONQ_TESTS_EXPORT KonqClosedTabItem {
+class KONQ_TESTS_EXPORT KonqClosedTabItem : public KonqClosedItem {
 public:
     KonqClosedTabItem(const QString& url, const QString& title, int index, quint64 serialNumber);
-    ~KonqClosedTabItem();
-    const KConfigGroup& configGroup() const { return m_configGroup; }
-    KConfigGroup& configGroup() { return m_configGroup; }
-    quint64 serialNumber() const { return m_serialNumber; }
+    virtual ~KonqClosedTabItem();
+    virtual QPixmap icon();
     QString url() const { return m_url; }
-    QString title() const { return m_title; }
-    /// The position inside the tabbar that the tab had when it was closed
+    /// The position inside the tabbar that the tab had when it was  closed
     int pos() const { return m_pos; }
 
-private:
+protected:
     QString m_url;
-    QString m_title;
     int m_pos;
-    KConfigGroup m_configGroup;
-    quint64 m_serialNumber;
+};
 
-    // Copying an item would delete the group in the config file (see destructor)!
-    Q_DISABLE_COPY(KonqClosedTabItem)
+/**
+ * This class stores all the needed information about a closed tab
+ * in order to be able to reopen it if requested
+ */
+class KONQ_TESTS_EXPORT KonqClosedWindowItem : public KonqClosedItem {
+public:
+    KonqClosedWindowItem(const QString& title, quint64 serialNumber);
+    virtual ~KonqClosedWindowItem();
+    virtual QPixmap icon();
 };
 
 #endif /* KONQCLOSEDTABITEM_H */

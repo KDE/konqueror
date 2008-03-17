@@ -20,7 +20,7 @@ knewmenu.*      : implements the 'new' menu (file templates)
 2) files
 konq_operations.*: common operations to all views, like deleting files, and
                   dropping files.
-konq_undo.*     : undo feature for file operations
+konq_fileundomanager.* : undo feature for file operations
 
 3) icons
 kfileivi.*      : icon representing a file (inherits QListViewItem and 
