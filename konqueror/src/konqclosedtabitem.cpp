@@ -22,13 +22,23 @@
 #include <kconfig.h>
 #include <kdebug.h>
 #include <kglobal.h>
+#include <konqpixmapprovider.h>
 
 K_GLOBAL_STATIC_WITH_ARGS(KConfig, s_config, ("konqueror_closedtabs", KConfig::NoGlobals) )
 
+KonqClosedItem::KonqClosedItem(const QString& title, const QString& group, quint64 serialNumber)
+    : m_title(title), m_configGroup(s_config, group), m_serialNumber(serialNumber)
+{
+}
+
+KonqClosedItem::~KonqClosedItem()
+{
+    m_configGroup.deleteGroup();
+    kDebug(1202) << "deleted group" << m_configGroup.name();
+}
+
 KonqClosedTabItem::KonqClosedTabItem(const QString& url, const QString& title, int pos, quint64 serialNumber)
-      :  m_url(url), m_title(title), m_pos(pos),
-         m_configGroup(s_config, "Closed_Tab" + QString::number((qint64)this)),
-         m_serialNumber(serialNumber)
+      :  KonqClosedItem(title, "Closed_Tab" + QString::number((qint64)this), serialNumber),  m_url(url), m_pos(pos)
 {
     kDebug(1202) << m_configGroup.name();
 }
@@ -37,4 +47,24 @@ KonqClosedTabItem::~KonqClosedTabItem()
 {
     m_configGroup.deleteGroup();
     kDebug(1202) << "deleted group" << m_configGroup.name();
+}
+
+QPixmap KonqClosedTabItem::icon() {
+    return KonqPixmapProvider::self()->pixmapFor(m_url);
+}
+
+KonqClosedWindowItem::KonqClosedWindowItem(const QString& title, quint64 serialNumber)
+      :  KonqClosedItem(title, "Closed_Window" + QString::number((qint64)this), serialNumber)
+{
+    kDebug(1202) << m_configGroup.name();
+}
+
+KonqClosedWindowItem::~KonqClosedWindowItem()
+{
+    m_configGroup.deleteGroup();
+    kDebug(1202) << "deleted group" << m_configGroup.name();
+}
+
+QPixmap KonqClosedWindowItem::icon() {
+    return KonqPixmapProvider::self()->pixmapFor("about:blank");
 }

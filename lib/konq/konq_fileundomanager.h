@@ -87,7 +87,7 @@ public:
      */
     void setUiInterface( UiInterface* ui );
 
-    enum CommandType { COPY, MOVE, RENAME, LINK, MKDIR, TRASH };
+    enum CommandType { COPY, MOVE, RENAME, LINK, MKDIR, TRASH, CUSTOM };
 
     /**
      * Record this job while it's happening and add a command for it so that the user can undo it.
@@ -127,6 +127,14 @@ Q_SIGNALS:
 
     /// Emitted when an undo job finishes. Used for unit testing.
     void undoJobFinished();
+    
+    /**
+     * Emitted when a custom undo command must be dealt with by someone else,
+     * because as it's custom, we don't know how to deal with it. 
+     * You need to connect any class that manages your program's custom commands
+     * to this signal.
+     */
+    void undoCustomCommand( QByteArray &customData );
 
     // The four signals below are emitted to DBus
     void push( const QByteArray &command );
@@ -134,6 +142,36 @@ Q_SIGNALS:
     void lock();
     void unlock();
 
+    /**
+     * A communication channel for superior level custom undo managers instances
+     * To use it do this, create your own signal and slot in your custom undo
+     * manager instance and connect to it like this:
+     * 
+     * connect(KonqFileUndoManager::self(), SIGNAL( bypassCustomInfo( QVariant
+     * & ) ), this, SLOT( slotBypassCustomInfo( QVariant &) ) );
+     * connect(this, SIGNAL( bypassCustomInfo( QVariant &) ),
+     * KonqFileUndoManager::self(), SIGNAL( bypassCustomInfo( QVariant&) ) );
+     *
+     * QList< QVariant > items;
+     * QVariant myData(items);
+     * items.append(qVariantFromValue(static_cast< QObject *>(this)));
+     * items.append(qVariantFromValue(static_cast< QObject *>(data)));
+     * 
+     * emit bypassCustomInfo(myData); // Sends information to other instances
+     * 
+     * // Receives information from other instances
+     * void MyClass::slotBypassCustomInfo( QVariant &customData ) {
+     *    QList< QVariant > items = customData.toList();
+     *    MyClass myInstance = static_cast< MyClass *>(customData.first().value<QObject*>());
+     *    MyData myInstance = static_cast< MyData *>(customData.at(1).value<QObject*>());
+     *    
+     *    if(myInstance != this)
+     *    {
+     *        // Do something if we are not the one emitting the signal
+     *    }
+     * }
+     */
+    void bypassCustomInfo( QVariant &customData );
 private Q_SLOTS:
     // Those four are connected to DBUS signals
     void slotPush( QByteArray command ); // const ref doesn't work due to QDataStream
@@ -162,7 +200,8 @@ private:
     void stepMovingFiles();
     void stepRemovingLinks();
     void stepRemovingDirectories();
-
+    void stepDoingCustomOperations();
+    
     void broadcastPush( const KonqCommand &cmd );
     void broadcastPop();
     void broadcastLock();

@@ -79,6 +79,8 @@ public:
     KUrl::List m_src;
     KUrl m_dst;
     quint64 m_serialNumber;
+    QString m_typeCustom;
+    QByteArray m_customData;
 };
 
 // This class listens to a job, collects info while it's running (for copyjobs)

@@ -45,6 +45,7 @@ class KonqFrameContainerBase;
 class KonqView;
 class KActionMenu;
 class KonqClosedTabItem;
+class KonqClosedWindowItem;
 
 namespace KParts
 {
@@ -296,6 +297,10 @@ public Q_SLOTS:
      * Opens a previously closed tab in a new tab
      */
     void openClosedTab(const KonqClosedTabItem& closedTab);
+    /**
+     * Opens a previously closed window in a new window
+     */
+    void openClosedWindow(const KonqClosedWindowItem& closedTab);
 
 private Q_SLOTS:
   void emitActivePartChanged();
