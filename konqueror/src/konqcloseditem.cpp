@@ -18,13 +18,13 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "konqclosedtabitem.h"
+#include "konqcloseditem.h"
 #include <kconfig.h>
 #include <kdebug.h>
 #include <kglobal.h>
 #include <konqpixmapprovider.h>
 
-K_GLOBAL_STATIC_WITH_ARGS(KConfig, s_config, ("konqueror_closedtabs", KConfig::NoGlobals) )
+K_GLOBAL_STATIC_WITH_ARGS(KConfig, s_config, ("konqueror_closeditems", KConfig::NoGlobals) )
 
 KonqClosedItem::KonqClosedItem(const QString& title, const QString& group, quint64 serialNumber)
     : m_title(title), m_configGroup(s_config, group), m_serialNumber(serialNumber)

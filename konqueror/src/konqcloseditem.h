@@ -18,8 +18,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef KONQCLOSEDTABITEM_H
-#define KONQCLOSEDTABITEM_H
+#ifndef KONQCLOSEDITEM_H
+#define KONQCLOSEDITEM_H
 
 #include "konqprivate_export.h"
 #include <kconfiggroup.h>
@@ -70,5 +70,5 @@ public:
     virtual QPixmap icon();
 };
 
-#endif /* KONQCLOSEDTABITEM_H */
+#endif /* KONQCLOSEDITEM_H */
 
