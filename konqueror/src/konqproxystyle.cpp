@@ -18,9 +18,9 @@
     MA  02110-1301, USA.
 */
 
-#include <QtGui/QWidget>
-
 #include "konqproxystyle.h"
+
+#include <QtGui/QWidget>
 
 KonqProxyStyle::KonqProxyStyle(QWidget *parent)
     : QStyle(), parent(parent)
