@@ -18,8 +18,8 @@
     MA  02110-1301, USA.
 */
 
-#ifndef KONQOPENURLREQUEST_H
-#define KONQOPENURLREQUEST_H
+#ifndef KONQPROXYSTYLE_H
+#define KONQPROXYSTYLE_H
 
 #include <QtGui/QStyle>
 
