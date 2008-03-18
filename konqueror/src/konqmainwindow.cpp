@@ -71,7 +71,6 @@
 #include <kde_file.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <time.h>
 #include <unistd.h>
 
 #include <QtCore/QFile>
@@ -131,9 +130,6 @@
 #include <kxmlguifactory.h>
 #include <netwm.h>
 #include <sonnet/configdialog.h>
-#ifdef KDE_MALLINFO_STDLIB
-#include <stdlib.h>
-#endif
 #ifdef KDE_MALLINFO_MALLOC
 #include <malloc.h>
 #endif
@@ -5093,7 +5089,7 @@ void KonqMainWindow::goURL()
 
 /**
  * Adds the URL of a KonqView to the closed tabs list.
- * This slot gets called everytime a View is closed
+ * This slot gets called each time a View is closed.
  */
 void KonqMainWindow::slotAddClosedUrl(KonqFrameBase *tab)
 {
@@ -5651,7 +5647,7 @@ bool KonqMainWindow::checkPreloadResourceUsage()
 
 static int current_memory_usage( int* limit )
 {
-#ifdef __linux__
+#ifdef __linux__  //krazy:exclude=cpp
 // Check whole memory usage - VmSize
     QFile f( QString::fromLatin1( "/proc/%1/statm" ).arg(getpid()) );
     if( f.open( QIODevice::ReadOnly ))
