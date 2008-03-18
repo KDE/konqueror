@@ -62,7 +62,7 @@ set(konqueror_KDEINIT_SRCS
    KonqViewAdaptor.cpp
    konqproxystyle.cpp
    konqundomanager.cpp
-   konqclosedtabitem.cpp
+   konqcloseditem.cpp
 )
 kde4_add_kcfg_files(konqueror_KDEINIT_SRCS konqsettingsxt.kcfgc)
 kde4_add_ui_files(konqueror_KDEINIT_SRCS konqprofiledlg_base.ui)

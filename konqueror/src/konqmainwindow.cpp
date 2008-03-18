@@ -23,7 +23,7 @@
 
 #include "konqmainwindow.h"
 #include "konqdraggablelabel.h"
-#include "konqclosedtabitem.h"
+#include "konqcloseditem.h"
 #include "konqapplication.h"
 #include "konqguiclients.h"
 #include "KonqMainWindowAdaptor.h"
@@ -5009,29 +5009,13 @@ void KonqMainWindow::addClosedWindowToUndoList()
 {
     kDebug(1202);
     
-    // 1. We get the current tab, and the title (which might end up being its url)
+    // 1. We get the current title
     KonqFrameTabs* tabContainer = m_pViewManager->tabContainer();
+    QString title( i18n("no name") );
     
-    QString title( i18n("no name") ), url("about:blank");
-    KonqFrameBase* tab = dynamic_cast<KonqFrameBase*>(m_pViewManager->tabContainer()->currentWidget());
-    // Did the tab contain a single frame, or a splitter?
-    KonqFrame* frame = dynamic_cast<KonqFrame *>(tab);
-    if (!frame) {
-        KonqFrameContainer* frameContainer = dynamic_cast<KonqFrameContainer *>(tab);
-        if (frameContainer->activeChildView())
-            frame = frameContainer->activeChildView()->frame();
-    }
+    if(m_currentView)
+        title = m_currentView->caption();
 
-    KParts::ReadOnlyPart* part = frame ? frame->part() : 0;
-    if (part)
-        url = part->url().url();
-    if (frame)
-        title = frame->title().trimmed();
-    if (title.isEmpty())
-        title = url;
-    title = KStringHandler::csqueeze( title, 50 );
-
-    kDebug(1202) << "1";
     // 2. Create the KonqClosedWindowItem and  save its config
     KonqClosedWindowItem* closedWindowItem = new KonqClosedWindowItem(title, m_undoManager->newCommandSerialNumber());
     KonqFrameBase::Options flags = KonqFrameBase::saveHistoryItems;
@@ -5043,10 +5027,9 @@ void KonqMainWindow::addClosedWindowToUndoList()
     closedWindowItem->configGroup().writeEntry( "FullScreen", fullScreenMode() );
     tabContainer->saveConfig( closedWindowItem->configGroup(), prefix, flags, 0L, 0, 1);
     
-    kDebug(1202) << "2";
     // 3. Finally add the KonqClosedWindowItem to the undo list
     m_paClosedItems->setEnabled(true);
-    m_undoManager->addWindowInOtherInstances( closedWindowItem );
+    m_undoManager->addClosedWindowItem( closedWindowItem );
     
     kDebug(1202) << "done";
 }

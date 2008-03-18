@@ -63,9 +63,9 @@
  *
  */
 
-enum UndoState { MAKINGDIRS = 0, MOVINGFILES, STATINGFILE, REMOVINGDIRS, REMOVINGLINKS, DOINGCUSTOM };
+enum UndoState { MAKINGDIRS = 0, MOVINGFILES, STATINGFILE, REMOVINGDIRS, REMOVINGLINKS };
 static const char* undoStateToString( UndoState state ) {
-    static const char* s_undoStateToString[] = { "MAKINGDIRS", "MOVINGFILES", "STATINGFILE", "REMOVINGDIRS", "REMOVINGLINKS", "DOINGCUSTOM" };
+    static const char* s_undoStateToString[] = { "MAKINGDIRS", "MOVINGFILES", "STATINGFILE", "REMOVINGDIRS", "REMOVINGLINKS" };
     return s_undoStateToString[state];
 }
 
@@ -286,8 +286,6 @@ QString KonqFileUndoManager::undoText() const
         return i18n( "Und&o: Trash" );
     else if ( t == KonqFileUndoManager::MKDIR )
         return i18n( "Und&o: Create Folder" );
-    else if ( t == KonqFileUndoManager::CUSTOM )
-        return i18n( "Und&o: %1" ).arg( d->m_commands.top().m_typeCustom );
     else
         assert( false );
     /* NOTREACHED */
@@ -318,7 +316,7 @@ void KonqFileUndoManager::undo()
     d->m_current = cmd;
 
     KonqBasicOperation::Stack& opStack = d->m_current.m_opStack;
-    // Note that opStack is empty for simple operations like MKDIR or CUSTOM.
+    // Note that opStack is empty for simple operations like MKDIR.
 
     // Let's first ask for confirmation if we need to delete any file (#99898)
     KUrl::List fileCleanupStack;
@@ -345,11 +343,7 @@ void KonqFileUndoManager::undo()
     d->m_dirStack.clear();
     d->m_dirsToUpdate.clear();
     
-    if ( d->m_current.m_type == KonqFileUndoManager::CUSTOM )
-        // If this is a custom command, start from there
-        d->m_undoState = DOINGCUSTOM;
-    else
-        d->m_undoState = MOVINGFILES;
+    d->m_undoState = MOVINGFILES;
 
     // Let's have a look at the basic operations we need to undo.
     // While we're at it, collect all links that should be deleted.
@@ -443,9 +437,6 @@ void KonqFileUndoManager::undoStep()
 {
     d->m_currentJob = 0;
     
-    if ( d->m_undoState == DOINGCUSTOM )
-        stepDoingCustomOperations();
-    
     if ( d->m_undoState == MAKINGDIRS )
         stepMakingDirectories();
 
@@ -475,12 +466,6 @@ void KonqFileUndoManager::stepMakingDirectories()
     }
     else
         d->m_undoState = MOVINGFILES;
-}
-
-void KonqFileUndoManager::stepDoingCustomOperations()
-{
-    emit undoCustomCommand(d->m_current.m_customData);
-    d->m_undoState = MAKINGDIRS;
 }
 
 // Misnamed method: It moves files back, but it also

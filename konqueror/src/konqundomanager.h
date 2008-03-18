@@ -24,9 +24,9 @@
 #include "konqprivate_export.h"
 
 #include <QObject>
-#include "konqclosedtabitem.h"
+#include "konqcloseditem.h"
 class QAction;
-
+class KonqUndoManagerCommunicatorPrivate;
 /**
  * Note that there is one KonqUndoManager per mainwindow.
  * It integrates KonqFileUndoManager (undoing file operations)
@@ -46,9 +46,11 @@ public:
     const QList<KonqClosedItem* >& closedTabsList() const;
     void undoClosedItem(int index);
     void addClosedTabItem(KonqClosedTabItem* closedTabItem);
+    /**
+     * Add current window as a closed window item to other windows
+     */
+    void addClosedWindowItem(KonqClosedWindowItem *closedWindowItem);
     void updateSupportsFileUndo(bool enable);
-    void addWindowInOtherInstances(const KonqClosedWindowItem
-    *closedWindowItem);
 
 public Q_SLOTS:
     void undo();
@@ -59,6 +61,7 @@ public Q_SLOTS:
      * menu (by emitting openClosedTab/Window), and takes it from the list.
      */
     void slotClosedItemsActivated(QAction* action);
+    void slotAddClosedWindowItem(KonqUndoManager *real_sender, KonqClosedWindowItem *closedWindowItem);
 
 Q_SIGNALS:
     void undoAvailable(bool canUndo);
@@ -71,26 +74,49 @@ Q_SIGNALS:
     /// Emitted when closedItemsList() has changed.
     void closedItemsListChanged();
 
-    /// Emitted to be received in other window instances
-    void bypassCustomInfo(QVariant &customData);
+    /// Emitted to be received in other window instances, uing the singleton
+    /// communicator
+    void removeWindowInOtherInstances(KonqUndoManager *real_sender, const KonqClosedWindowItem
+    *closedWindowItem);
+    void addWindowInOtherInstances(KonqUndoManager *real_sender, KonqClosedWindowItem *closedWindowItem);
 private Q_SLOTS:
     void slotFileUndoAvailable(bool);
     void slotFileUndoTextChanged(const QString& text);
     
     /**
-     * Received from other window instances, removes a reference of a window 
-     * from m_closedItemList.
+     * Received from other window instances, removes/adds a reference of a 
+     * window from m_closedItemList.
      */
-    void slotBypassCustomInfo(QVariant &customData);
+    void slotRemoveClosedWindowItem(KonqUndoManager *real_sender, const KonqClosedWindowItem *closedWindowItem);
 private:
-    void addClosedWindowItem(KonqClosedWindowItem* closedWindowItem);
-    void removeWindowInOtherInstances(const KonqClosedWindowItem
-    *closedWindowItem);
-    void incRef();
-    void decRef();
+    /// Fill the m_closedItemList with closed windows
+    void populate();
     
     QList<KonqClosedItem *> m_closedItemList;
     bool m_supportsFileUndo;
+};
+
+/**
+ * Provides a shared singleton for all Konq window instances.
+ * This class is a singleton, use self() to access its only instance.
+ */
+class KDE_EXPORT KonqUndoManagerCommunicator : public QObject
+{
+    Q_OBJECT
+public:
+    friend class KonqUndoManagerCommunicatorPrivate;
+    static KonqUndoManagerCommunicator *self();
+    const QList<KonqClosedWindowItem *>& closedWindowItemList();
+    void addClosedWindowItem(KonqUndoManager *real_sender, KonqClosedWindowItem *closedWindowItem);
+    void removeClosedWindowItem(KonqUndoManager *real_sender, const KonqClosedWindowItem
+    *closedWindowItem);
+Q_SIGNALS:
+    void addWindowInOtherInstances(KonqUndoManager *real_sender, KonqClosedWindowItem *closedWindowItem);
+    void removeWindowInOtherInstances(KonqUndoManager *real_sender, const KonqClosedWindowItem
+    *closedWindowItem);
+private:
+    KonqUndoManagerCommunicator();
+    virtual ~KonqUndoManagerCommunicator();
 };
 
 #endif /* KONQUNDOMANAGER_H */

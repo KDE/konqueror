@@ -19,7 +19,7 @@
 */
 
 #include "konqviewmanager.h"
-#include "konqclosedtabitem.h"
+#include "konqcloseditem.h"
 #include "konqundomanager.h"
 
 #include <QtCore/QFileInfo>
