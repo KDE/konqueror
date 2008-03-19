@@ -17,7 +17,7 @@
     Boston, MA 02110-1301, USA.
 */
 
-#include <konqclosedtabitem.h>
+#include <konqcloseditem.h>
 #include <qtest_kde.h>
 #include <konqundomanager.h>
 
