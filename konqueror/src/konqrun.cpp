@@ -89,8 +89,10 @@ void KonqRun::foundMimeType( const QString & _type )
     if (serverSuggestsSave())
         tryEmbed = false;
 
+    const bool associatedAppIsKonqueror = KonqMainWindow::isMimeTypeAssociatedWithSelf(mimeType);
+
     if (tryEmbed) {
-        if (KonqMainWindow::isMimeTypeAssociatedWithSelf(mimeType))
+        if (associatedAppIsKonqueror)
             m_req.forceAutoEmbed = true;
         else if (m_pMainWindow->hasViewWithMimeType(mimeType)) {
             m_req.forceAutoEmbed = true;
@@ -127,10 +129,10 @@ void KonqRun::foundMimeType( const QString & _type )
   // (we saved, canceled, or we're starting another app... in any case the current view should stop loading).
   setError(true);
 
-  if ( !hasFinished() && // only if we're going to open
-       KonqMainWindow::isMimeTypeAssociatedWithSelf( mimeType ) ) {
-    KMessageBox::error( m_pMainWindow, i18n( "There appears to be a configuration error. You have associated Konqueror with %1, but it cannot handle this file type." ,  mimeType ) );
-    setFinished(true);
+  if (!hasFinished()) { // only if we're going to open
+      if (associatedAppIsKonqueror && m_pMainWindow->refuseExecutingKonqueror(mimeType)) {
+          setFinished(true);
+      }
   }
 
   if ( hasFinished() ) {

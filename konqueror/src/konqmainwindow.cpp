@@ -586,8 +586,9 @@ void KonqMainWindow::openUrl( KonqView *_view, const KUrl &_url,
          url.url() == "about:konqueror" || url.url() == "about:plugins" )
   {
     KService::Ptr offer = KMimeTypeTrader::self()->preferredService(mimeType, "Application");
+    const bool associatedAppIsKonqueror = isMimeTypeAssociatedWithSelf( mimeType, offer );
     // If the associated app is konqueror itself, then make sure we try to embed before bailing out.
-    if ( isMimeTypeAssociatedWithSelf( mimeType, offer ) )
+    if ( associatedAppIsKonqueror )
       req.forceAutoEmbed = true;
 
     // Built-in view ?
@@ -598,11 +599,11 @@ void KonqMainWindow::openUrl( KonqView *_view, const KUrl &_url,
         if ( !req.followMode )
         {
             //kDebug(1202) << "KonqMainWindow::openUrl : we were not following. Fire app.";
-            // We know the servicetype, let's try its preferred service
-            if ( isMimeTypeAssociatedWithSelf( mimeType, offer ) ) {
-                KMessageBox::error( this, i18n("There appears to be a configuration error. You have associated Konqueror with %1, but it cannot handle this file type.", mimeType));
-                return;
-            }
+            // The logic below is similar to BrowserRun::handleNonEmbeddable(),
+            // but we don't have a BrowserRun instance here, and since it uses
+            // some virtual methods [like save, for KHTMLRun], we can't just
+            // move all the logic to static methods... catch 22...
+
             if ( !url.isLocalFile() && !trustedSource && KonqRun::isTextExecutable( mimeType ) )
                 mimeType = "text/plain"; // view, don't execute
             // Remote URL: save or open ?
@@ -616,6 +617,8 @@ void KonqMainWindow::openUrl( KonqView *_view, const KUrl &_url,
             }
             if ( open )
             {
+                if ( associatedAppIsKonqueror && refuseExecutingKonqueror(mimeType) )
+                    return;
                 KUrl::List lst;
                 lst.append(url);
                 //kDebug(1202) << "Got offer " << (offer ? offer->name().toLatin1() : "0");
@@ -2232,11 +2235,22 @@ KonqView * KonqMainWindow::childView( KParts::ReadOnlyPart *callingPart, const Q
 int KonqMainWindow::activeViewsCount() const
 {
   int res = 0;
-  MapViews::ConstIterator it = m_mapViews.begin();
   MapViews::ConstIterator end = m_mapViews.end();
-  for (; it != end; ++it )
+  for (MapViews::ConstIterator it = m_mapViews.begin(); it != end; ++it )
     if ( !it.value()->isPassiveMode() )
       ++res;
+
+  return res;
+}
+
+int KonqMainWindow::activeViewsNotLockedCount() const
+{
+  int res = 0;
+  MapViews::ConstIterator end = m_mapViews.end();
+  for (MapViews::ConstIterator it = m_mapViews.begin(); it != end; ++it ) {
+      if ( !it.value()->isPassiveMode() && !it.value()->isLockedLocation() )
+          ++res;
+  }
 
   return res;
 }
@@ -3571,8 +3585,8 @@ void KonqMainWindow::initActions()
 
   action = actionCollection()->addAction("go_history");
   action->setIcon(KIcon("view-history"));
-  action->setText(i18n( "History" )); // TODO change to "Show history in Sidebar"
-  connect(action, SIGNAL(triggered()), SLOT( slotGoHistory() ));
+  action->setText(i18n("Show history in Sidebar"));
+  connect(action, SIGNAL(triggered()), SLOT(slotGoHistory()));
 
   // Settings menu
 
@@ -3986,11 +4000,7 @@ void KonqMainWindow::updateViewActions()
 
 //   slotUndoAvailable( m_undoManager->undoAvailable() );
 
-  // Can lock a view only if there is a next view
-  //m_paLockView->setEnabled( m_pViewManager->chooseNextView(m_currentView) != 0 && );
-  //kDebug(1202) << "KonqMainWindow::updateViewActions m_paLockView enabled ? " << m_paLockView->isEnabled();
-
-  m_paLockView->setEnabled( viewCount() > 1 );
+  m_paLockView->setEnabled( true );
   m_paLockView->setChecked( m_currentView && m_currentView->isLockedLocation() );
 
   // Can remove view if we'll still have a main view after that
@@ -5008,11 +5018,11 @@ void KonqMainWindow::closeEvent( QCloseEvent *e )
 void KonqMainWindow::addClosedWindowToUndoList()
 {
     kDebug(1202);
-    
+
     // 1. We get the current title
     KonqFrameTabs* tabContainer = m_pViewManager->tabContainer();
     QString title( i18n("no name") );
-    
+
     if(m_currentView)
         title = m_currentView->caption();
 
@@ -5026,11 +5036,11 @@ void KonqMainWindow::addClosedWindowToUndoList()
     closedWindowItem->configGroup().writeEntry( "Height", height() );
     closedWindowItem->configGroup().writeEntry( "FullScreen", fullScreenMode() );
     tabContainer->saveConfig( closedWindowItem->configGroup(), prefix, flags, 0L, 0, 1);
-    
+
     // 3. Finally add the KonqClosedWindowItem to the undo list
     m_paClosedItems->setEnabled(true);
     m_undoManager->addClosedWindowItem( closedWindowItem );
-    
+
     kDebug(1202) << "done";
 }
 
@@ -5443,6 +5453,15 @@ bool KonqMainWindow::isMimeTypeAssociatedWithSelf( const QString &/*mimeType*/, 
     // 2) check what KRun is going to do before calling it.
     return ( offer && ( offer->desktopEntryName() == "konqueror" ||
              offer->exec().trimmed().startsWith( "kfmclient" ) ) );
+}
+
+bool KonqMainWindow::refuseExecutingKonqueror(const QString& mimeType)
+{
+    if ( activeViewsNotLockedCount() > 0 ) { // if I lock the only view, then there's no error: open links in a new window
+        KMessageBox::error( this, i18n("There appears to be a configuration error. You have associated Konqueror with %1, but it cannot handle this file type.", mimeType));
+        return true; // we refuse indeed
+    }
+    return false; // no error
 }
 
 // KonqFrameContainerBase implementation END
