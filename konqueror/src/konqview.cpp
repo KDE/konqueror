@@ -108,7 +108,7 @@ KonqView::KonqView( KonqViewFactory &viewFactory,
 
 KonqView::~KonqView()
 {
-  //kDebug(1202) << "KonqView::~KonqView : part = " << m_pPart;
+  //kDebug(1202) << "part=" << m_pPart;
 
   if (KonqMainWindow::s_crashlog_file) {
      QString part_url;
@@ -133,13 +133,13 @@ KonqView::~KonqView()
   }
 
   setRun( 0L );
-  //kDebug(1202) << "KonqView::~KonqView " << this << " done";
+  //kDebug(1202) << this << "done";
 }
 
 void KonqView::openUrl( const KUrl &url, const QString & locationBarURL,
                         const QString & nameFilter, bool tempFile )
 {
-  kDebug(1202) << "KonqView::openUrl url=" << url << " locationBarURL=" << locationBarURL;
+  kDebug(1202) << "url=" << url << "locationBarURL=" << locationBarURL;
   setPartMimeType();
 
   if (KonqMainWindow::s_crashlog_file) {
@@ -177,7 +177,7 @@ void KonqView::openUrl( const KUrl &url, const QString & locationBarURL,
   }
 
 #ifdef DEBUG_HISTORY
-  kDebug(1202) << "m_bLockedLocation=" << m_bLockedLocation << " browserArgs.lockHistory()=" << browserArgs.lockHistory();
+  kDebug(1202) << "m_bLockedLocation=" << m_bLockedLocation << "browserArgs.lockHistory()=" << browserArgs.lockHistory();
 #endif
   if ( browserArgs.lockHistory() )
     lockHistory();
@@ -215,7 +215,7 @@ void KonqView::openUrl( const KUrl &url, const QString & locationBarURL,
       if ( url.isLocalFile() )
           m_tempFile = url.path();
       else
-          kWarning(1202) << "Tempfile option is set, but URL is remote: " << url ;
+          kWarning(1202) << "Tempfile option is set, but URL is remote:" << url ;
   }
 
   aboutToOpenURL( url, args );
@@ -227,13 +227,13 @@ void KonqView::openUrl( const KUrl &url, const QString & locationBarURL,
   KonqHistoryManager::kself()->addPending( url, locationBarURL, QString());
 
 #ifdef DEBUG_HISTORY
-  kDebug(1202) << "Current position : " << historyIndex();
+  kDebug(1202) << "Current position:" << historyIndex();
 #endif
 }
 
 void KonqView::switchView( KonqViewFactory &viewFactory )
 {
-    //kDebug(1202) << "KonqView::switchView";
+    //kDebug(1202);
   if ( m_pPart )
     m_pPart->widget()->hide();
 
@@ -260,7 +260,7 @@ void KonqView::switchView( KonqViewFactory &viewFactory )
   prop = m_service->property( "X-KDE-BrowserView-FollowActive");
   if (prop.isValid() && prop.toBool())
   {
-    //kDebug(1202) << "KonqView::switchView X-KDE-BrowserView-FollowActive -> setFollowActive";
+    //kDebug(1202) << "X-KDE-BrowserView-FollowActive -> setFollowActive";
     setFollowActive(true);
   }
 
@@ -273,7 +273,7 @@ void KonqView::switchView( KonqViewFactory &viewFactory )
     prop = m_service->property( "X-KDE-BrowserView-PassiveMode");
     if ( prop.isValid() && prop.toBool() )
     {
-      kDebug(1202) << "KonqView::switchView X-KDE-BrowserView-PassiveMode -> setPassiveMode";
+      kDebug(1202) << "X-KDE-BrowserView-PassiveMode -> setPassiveMode";
       setPassiveMode( true ); // set as passive
     }
 
@@ -295,7 +295,7 @@ void KonqView::switchView( KonqViewFactory &viewFactory )
   prop = m_service->property( "X-KDE-BrowserView-HierarchicalView");
   if ( prop.isValid() && prop.toBool() )
   {
-    kDebug() << "KonqView::switchView X-KDE-BrowserView-HierarchicalView -> setHierarchicalView";
+    kDebug() << "X-KDE-BrowserView-HierarchicalView -> setHierarchicalView";
     setHierarchicalView( true );  // set as hierarchial
   }
   else
@@ -311,9 +311,9 @@ bool KonqView::changeViewMode( const QString &mimeType,
   // Caller should call stop first.
   assert ( !m_bLoading );
 
-  kDebug(1202) << "changeViewMode: mimeType is " << mimeType
-                << " serviceName is " << serviceName
-                << " current service name is " << m_service->desktopEntryName();
+  kDebug(1202) << "mimeType is" << mimeType
+               << "serviceName is" << serviceName
+               << "current service name is" << m_service->desktopEntryName();
 
   KMimeType::Ptr mime = KMimeType::mimeType(mimeType);
   if (!mime) // huh?
@@ -352,7 +352,7 @@ bool KonqView::changeViewMode( const QString &mimeType,
   // Note: we should have an operator= for KService...
   if ( m_service && m_service->entryPath() == service->entryPath() )
   {
-    kDebug( 1202 ) << "KonqView::changeViewMode. Reusing service. Service type set to " << m_serviceType;
+    kDebug( 1202 ) << "Reusing service. Service type set to" << m_serviceType;
     if (  m_pMainWindow->currentView() == this )
       m_pMainWindow->updateViewModeActions();
   }
@@ -370,7 +370,7 @@ bool KonqView::changeViewMode( const QString &mimeType,
     // each time we change the view mode.
     // We don't do it in switchView either because it's called from the constructor too,
     // where the location bar url isn't set yet.
-    //kDebug(1202) << "Giving focus to new part " << m_pPart;
+    //kDebug(1202) << "Giving focus to new part" << m_pPart;
     m_pMainWindow->viewManager()->setActivePart( m_pPart );
   }
   return true;
@@ -378,7 +378,7 @@ bool KonqView::changeViewMode( const QString &mimeType,
 
 void KonqView::connectPart()
 {
-  //kDebug(1202) << "KonqView::connectPart";
+  //kDebug(1202);
   connect( m_pPart, SIGNAL( started( KIO::Job * ) ),
            this, SLOT( slotStarted( KIO::Job * ) ) );
   connect( m_pPart, SIGNAL( completed() ),
@@ -531,13 +531,13 @@ void KonqView::slotResizeTopLevelWidget( int w, int h )
 
 void KonqView::slotStarted( KIO::Job * job )
 {
-  //kDebug(1202) << "KonqView::slotStarted"  << job;
+  //kDebug(1202) << job;
   setLoading( true );
 
   if (job)
   {
       // Manage passwords properly...
-      kDebug(7035) << "slotStarted: Window ID = " << m_pMainWindow->window()->winId();
+      kDebug(7035) << "Window ID =" << m_pMainWindow->window()->winId();
       job->ui()->setWindow (m_pMainWindow->window());
 
       connect( job, SIGNAL( percent( KJob *, unsigned long ) ), this, SLOT( slotPercent( KJob *, unsigned long ) ) );
@@ -553,7 +553,7 @@ void KonqView::slotRequestFocus( KParts::ReadOnlyPart * )
 
 void KonqView::setLoading( bool loading, bool hasPending /*= false*/)
 {
-    //kDebug(1202) << "KonqView::setLoading loading=" << loading << " hasPending=" << hasPending;
+    //kDebug(1202) << "loading=" << loading << "hasPending=" << hasPending;
     m_bLoading = loading;
     m_bPendingRedirection = hasPending;
     if ( m_pMainWindow->currentView() == this )
@@ -584,7 +584,7 @@ void KonqView::slotCompleted()
 
 void KonqView::slotCompleted( bool hasPending )
 {
-  //kDebug(1202) << "KonqView::slotCompleted hasPending=" << hasPending;
+  //kDebug(1202) << "hasPending=" << hasPending;
   m_pKonqFrame->statusbar()->slotLoadingProgress( -1 );
 
   if ( ! m_bLockHistory )
@@ -615,7 +615,7 @@ void KonqView::slotCompleted( bool hasPending )
 
 void KonqView::slotCanceled( const QString & errorMsg )
 {
-  kDebug(1202) << "KonqView::slotCanceled";
+    //kDebug(1202);
   // The errorMsg comes from the ReadOnlyPart's job.
   // It should probably be used in a KMessageBox
   // Let's use the statusbar for now
@@ -643,12 +643,12 @@ void KonqView::setLocationBarURL( const KUrl& locationBarURL )
 
 void KonqView::setLocationBarURL( const QString & locationBarURL )
 {
-  //kDebug(1202) << "KonqView::setLocationBarURL " << locationBarURL << " this=" << this;
+  //kDebug(1202) << locationBarURL << "this=" << this;
 
   m_sLocationBarURL = locationBarURL;
   if ( m_pMainWindow->currentView() == this )
   {
-    //kDebug(1202) << "is current view " << this;
+    //kDebug(1202) << "is current view" << this;
     m_pMainWindow->setLocationBarURL( m_sLocationBarURL );
     m_pMainWindow->setPageSecurity( m_pageSecurity );
   }
@@ -701,7 +701,7 @@ void KonqView::setCaption( const QString & caption )
 void KonqView::slotOpenURLNotify()
 {
 #ifdef DEBUG_HISTORY
-  kDebug(1202) << "KonqView::slotOpenURLNotify";
+    kDebug(1202);
 #endif
   updateHistoryEntry(true);
   createHistoryEntry();
@@ -728,7 +728,7 @@ void KonqView::createHistoryEntry()
     m_lstHistory.append( new HistoryEntry );
     setHistoryIndex( m_lstHistory.count()-1 ); // made current
 #ifdef DEBUG_HISTORY
-    kDebug(1202) << "at=" << historyIndex() << " count=" << m_lstHistory.count();
+    kDebug(1202) << "at=" << historyIndex() << "count=" << m_lstHistory.count();
 #endif
 }
 
@@ -749,20 +749,20 @@ void KonqView::updateHistoryEntry( bool saveLocationBarURL )
   }
 
 #ifdef DEBUG_HISTORY
-  kDebug(1202) << "Saving part URL : " << m_pPart->url() << " in history position " << historyIndex();
+  kDebug(1202) << "Saving part URL:" << m_pPart->url() << "in history position" << historyIndex();
 #endif
   current->url = m_pPart->url();
 
   if (saveLocationBarURL)
   {
 #ifdef DEBUG_HISTORY
-    kDebug(1202) << "Saving location bar URL : " << m_sLocationBarURL << " in history position " << historyIndex();
+    kDebug(1202) << "Saving location bar URL:" << m_sLocationBarURL << "in history position" << historyIndex();
 #endif
     current->locationBarURL = m_sLocationBarURL;
     current->pageSecurity = m_pageSecurity;
   }
 #ifdef DEBUG_HISTORY
-  kDebug(1202) << "Saving title : " << m_caption << " in history position " << historyIndex();
+  kDebug(1202) << "Saving title:" << m_caption << "in history position" << historyIndex();
 #endif
   current->title = m_caption;
   current->strServiceType = m_serviceType;
@@ -789,7 +789,7 @@ void KonqView::go( int steps )
   if ( !steps ) // [WildFox] i bet there are sites on the net with stupid devs who do that :)
   {
 #ifdef DEBUG_HISTORY
-      kDebug(1202) << "KonqView::go(0)";
+      kDebug(1202) << "go(0) -> reload";
 #endif
       // [David] and you're right. And they expect that it reloads, apparently.
       // [George] I'm going to make nspluginviewer rely on this too. :-)
@@ -799,9 +799,9 @@ void KonqView::go( int steps )
 
   int newPos = historyIndex() + steps;
 #ifdef DEBUG_HISTORY
-  kDebug(1202) << "go : steps=" << steps
-               << " newPos=" << newPos
-               << " m_lstHistory.count()=" << m_lstHistory.count();
+  kDebug(1202) << "steps=" << steps
+               << "newPos=" << newPos
+               << "m_lstHistory.count()=" << m_lstHistory.count();
 #endif
   if( newPos < 0 || newPos >= m_lstHistory.count() )
     return;
@@ -811,7 +811,7 @@ void KonqView::go( int steps )
   setHistoryIndex( newPos ); // sets current item
 
 #ifdef DEBUG_HISTORY
-  kDebug(1202) << "New position " << historyIndex();
+  kDebug(1202) << "New position" << historyIndex();
 #endif
 
   restoreHistory();
@@ -823,17 +823,16 @@ void KonqView::restoreHistory()
                                           // the pointer points to will change with the following calls
 
 #ifdef DEBUG_HISTORY
-  kDebug(1202) << "Restoring servicetype/name, and location bar URL from history : " << h.locationBarURL;
+  kDebug(1202) << "Restoring servicetype/name, and location bar URL from history:" << h.locationBarURL;
 #endif
   setLocationBarURL( h.locationBarURL );
   setPageSecurity( h.pageSecurity );
   m_sTypedURL.clear();
-  if ( ! changeViewMode( h.strServiceType, h.strServiceName ) )
-  {
-    kWarning(1202) << "Couldn't change view mode to " << h.strServiceType
-                    << " " << h.strServiceName;
-    return /*false*/;
-  }
+
+    if (!changeViewMode(h.strServiceType, h.strServiceName)) {
+        kWarning(1202) << "Couldn't change view mode to" << h.strServiceType << h.strServiceName;
+        return /*false*/;
+    }
 
   setPartMimeType();
 
@@ -858,7 +857,7 @@ void KonqView::restoreHistory()
     m_pMainWindow->updateToolBarActions();
 
 #ifdef DEBUG_HISTORY
-  kDebug(1202) << "New position (2) " << historyIndex();
+  kDebug(1202) << "New position (2)" << historyIndex();
 #endif
 }
 
@@ -913,7 +912,7 @@ void KonqView::setRun( KonqRun * run )
 
 void KonqView::stop()
 {
-  //kDebug(1202) << "KonqView::stop()";
+  //kDebug(1202);
   m_bAborted = false;
   finishedWithCurrentURL();
   if ( m_bLoading || m_bPendingRedirection )
@@ -1093,7 +1092,7 @@ bool KonqView::callExtensionURLMethod( const char *methodName, const KUrl& value
 
 void KonqView::setViewName( const QString &name )
 {
-    //kDebug() << "KonqView::setViewName this=" << this << " name=" << name;
+    //kDebug() << this << "name=" << name;
     if ( m_pPart )
         m_pPart->setObjectName( name );
 }
