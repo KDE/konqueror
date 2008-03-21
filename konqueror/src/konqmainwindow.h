@@ -692,11 +692,14 @@ private: // members
 
   KonqFrameBase* m_pWorkingTab;
 
-  QString m_popupServiceType;
-  KUrl m_popupUrl;
-  KFileItemList m_popupItems;
-  KParts::OpenUrlArguments m_popupUrlArgs;
-  KParts::BrowserArguments m_popupUrlBrowserArgs;
+    // Store a number of things when opening a popup, they are needed
+    // in the slots connected to the popup's actions.
+    // TODO: a struct with new/delete to save a bit of memory?
+    QString m_popupMimeType;
+    KUrl m_popupUrl;
+    KFileItemList m_popupItems;
+    KParts::OpenUrlArguments m_popupUrlArgs;
+    KParts::BrowserArguments m_popupUrlBrowserArgs;
 
   KCMultiDialog* m_configureDialog;
 

@@ -73,19 +73,19 @@ KonqViewManager::KonqViewManager( KonqMainWindow *mainWindow )
            this, SLOT( slotActivePartChanged ( KParts::Part * ) ) );
 }
 
-KonqView* KonqViewManager::createFirstView( const QString &serviceType, const QString &serviceName )
+KonqView* KonqViewManager::createFirstView( const QString &mimeType, const QString &serviceName )
 {
     //kDebug(1202) << serviceName;
   KService::Ptr service;
   KService::List partServiceOffers, appServiceOffers;
-  KonqViewFactory newViewFactory = createView( serviceType, serviceName, service, partServiceOffers, appServiceOffers, true /*forceAutoEmbed*/ );
+  KonqViewFactory newViewFactory = createView( mimeType, serviceName, service, partServiceOffers, appServiceOffers, true /*forceAutoEmbed*/ );
   if ( newViewFactory.isNull() )
   {
     kDebug(1202) << "No suitable factory found.";
     return 0;
   }
 
-  KonqView* childView = setupView( tabContainer(), newViewFactory, service, partServiceOffers, appServiceOffers, serviceType, false );
+  KonqView* childView = setupView( tabContainer(), newViewFactory, service, partServiceOffers, appServiceOffers, mimeType, false );
 
   setActivePart( childView->part() );
 
@@ -161,7 +161,7 @@ KonqView* KonqViewManager::splitView( KonqView* currentView,
 
 KonqView* KonqViewManager::splitMainContainer( KonqView* currentView,
                                                Qt::Orientation orientation,
-                                               const QString &serviceType,
+                                               const QString &serviceType, // This can be Browser/View, not necessarily a mimetype
                                                const QString &serviceName,
                                                bool newOneFirst )
 {
@@ -349,18 +349,18 @@ void KonqViewManager::openClosedWindow(const KonqClosedWindowItem& closedWindowI
         // Full screen off
         if( mainWindow->isFullScreen())
             mainWindow->showNormal();
-    
+
         const QSize size = readConfigSize( closedWindowItem.configGroup(), mainWindow );
         if ( size.isValid() )
             mainWindow->resize( size );
         else  // no size in the profile; use last known size
             mainWindow->restoreWindowSize();
     }
-    
+
     mainWindow->viewManager()->loadRootItem( closedWindowItem.configGroup(), mainWindow->viewManager()->tabContainer(), KUrl(), true, KUrl() );
     mainWindow->activateChild();
     mainWindow->show();
-    
+
     kDebug(1202) << "done";
 }
 

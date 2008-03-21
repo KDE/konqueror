@@ -304,19 +304,25 @@ void KonqView::switchView( KonqViewFactory &viewFactory )
   }
 }
 
-bool KonqView::changeViewMode( const QString &serviceType,
+bool KonqView::changeViewMode( const QString &mimeType,
                                const QString &serviceName,
                                bool forceAutoEmbed )
 {
   // Caller should call stop first.
   assert ( !m_bLoading );
 
-  kDebug(1202) << "changeViewMode: serviceType is " << serviceType
+  kDebug(1202) << "changeViewMode: mimeType is " << mimeType
                 << " serviceName is " << serviceName
                 << " current service name is " << m_service->desktopEntryName();
 
-  if ( KMimeType::mimeType(serviceType) && KMimeType::mimeType(serviceType)->is(m_serviceType) && (serviceName.isEmpty() || serviceName == m_service->desktopEntryName()) )
+  KMimeType::Ptr mime = KMimeType::mimeType(mimeType);
+  if (!mime) // huh?
+      return false;
+
+  // See bug #108542
+  if (mime->is(m_serviceType) && (serviceName.isEmpty() || serviceName == m_service->desktopEntryName())) {
     return true;
+  }
 
   if ( isLockedViewMode() )
   {
@@ -328,7 +334,7 @@ bool KonqView::changeViewMode( const QString &serviceType,
   KService::List partServiceOffers, appServiceOffers;
   KService::Ptr service;
   KonqFactory konqFactory;
-  KonqViewFactory viewFactory = konqFactory.createView( serviceType, serviceName, &service, &partServiceOffers, &appServiceOffers, forceAutoEmbed );
+  KonqViewFactory viewFactory = konqFactory.createView( mimeType, serviceName, &service, &partServiceOffers, &appServiceOffers, forceAutoEmbed );
 
   if ( viewFactory.isNull() )
   {
@@ -338,7 +344,7 @@ bool KonqView::changeViewMode( const QString &serviceType,
     return false;
   }
 
-  m_serviceType = serviceType;
+  m_serviceType = mimeType;
   m_partServiceOffers = partServiceOffers;
   m_appServiceOffers = appServiceOffers;
 
