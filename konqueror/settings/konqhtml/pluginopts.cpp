@@ -28,7 +28,9 @@
 
 // KDE
 #include <k3listview.h>
+#ifndef Q_WS_WIN
 #include <k3procio.h>
+#endif
 #include <kapplication.h>
 #include <kdebug.h>
 #include <kfiledialog.h>
@@ -176,8 +178,10 @@ KPluginOptions::KPluginOptions( QWidget *parent, const QVariantList& )
     vbox->setMargin( KDialog::marginHint());
     netscapeGB->setLayout(vbox);
 
+#ifndef Q_WS_WIN
     // setup widgets
     connect( m_widget->scanButton, SIGNAL(clicked()), SLOT(scan()) );
+#endif
 
     m_changed = false;
 
@@ -315,6 +319,7 @@ void KPluginOptions::slotShowDomainDlg() {
 
 void KPluginOptions::scan()
 {
+#ifndef Q_WS_WIN
     m_widget->scanButton->setEnabled(false);
     if ( m_changed ) {
         int ret = KMessageBox::warningYesNoCancel( this,
@@ -367,9 +372,10 @@ void KPluginOptions::scan()
         delete m_progress;
         m_progress = 0;
     }
+#endif
     m_widget->scanButton->setEnabled(true);
 }
-
+#ifndef Q_WS_WIN
 void KPluginOptions::progress(K3ProcIO *proc)
 {
     QString line;
@@ -377,6 +383,7 @@ void KPluginOptions::progress(K3ProcIO *proc)
         ;
     m_progress->setValue(line.trimmed().toInt());
 }
+#endif
 
 void KPluginOptions::scanDone()
 {
