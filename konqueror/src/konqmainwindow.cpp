@@ -1787,10 +1787,11 @@ void KonqMainWindow::slotConfigure()
 
         if (KAuthorized::authorizeControlModule("khtml_general") )
                 m_configureDialog->addModule("khtml_general");
-
+#ifndef Q_WS_WIN
+		// results in a real bad crash, will be fixed later
         if (KAuthorized::authorizeControlModule("kcmkonqyperformance") )
                 m_configureDialog->addModule("kcmkonqyperformance");
-
+#endif
         if (KAuthorized::authorizeControlModule("filebehavior") )
         {
             KPageWidgetItem * fileManagementGroup = m_configureDialog->addModule("filebehavior");
