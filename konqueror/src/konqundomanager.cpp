@@ -20,6 +20,7 @@
 
 #include "konqundomanager.h"
 #include <QAction>
+#include <QTimer>
 #include <konq_fileundomanager.h>
 #include <kconfig.h>
 #include <kdebug.h>
@@ -30,6 +31,7 @@ class KonqUndoManagerCommunicatorPrivate {
 public:
     KonqUndoManagerCommunicator instance;
     QList<KonqClosedWindowItem *> m_closedWindowItemList;
+    int m_maxNumClosedItems;
 };
 
 K_GLOBAL_STATIC(KonqUndoManagerCommunicatorPrivate, myKonqUndoManagerCommunicatorPrivate)
@@ -146,7 +148,19 @@ void KonqUndoManager::slotAddClosedWindowItem(KonqUndoManager *real_sender, Konq
 {
     if(real_sender == this)
         return;
-
+    
+    if(m_closedItemList.size() >= KonqUndoManagerCommunicator::self()->maxNumClosedItems())
+    {
+        const KonqClosedItem* last = m_closedItemList.last();
+        const KonqClosedTabItem* lastTab =
+            dynamic_cast<const KonqClosedTabItem *>(last);
+        m_closedItemList.removeLast();
+        
+        // Delete only if it's a tab
+        if(lastTab)
+            delete lastTab;
+    }
+    
     kDebug();
     m_closedItemList.prepend(closedWindowItem);
     emit undoTextChanged(i18n("Und&o: Closed Window"));
@@ -221,6 +235,18 @@ quint64 KonqUndoManager::newCommandSerialNumber()
 
 void KonqUndoManager::addClosedTabItem(KonqClosedTabItem* closedTabItem)
 {
+    if(m_closedItemList.size() >= KonqUndoManagerCommunicator::self()->maxNumClosedItems())
+    {
+        const KonqClosedItem* last = m_closedItemList.last();
+        const KonqClosedTabItem* lastTab =
+            dynamic_cast<const KonqClosedTabItem *>(last);
+        m_closedItemList.removeLast();
+        
+        // Delete only if it's a tab
+        if(lastTab)
+            delete lastTab;
+    }
+    
     m_closedItemList.prepend(closedTabItem);
     emit undoTextChanged(i18n("Und&o: Closed Tab"));
     emit undoAvailable(true);
@@ -234,7 +260,7 @@ void KonqUndoManager::updateSupportsFileUndo(bool enable)
 
 void KonqUndoManager::clearClosedItemsList()
 {
-// normally we only DELETE tab items! So we can't do this anymore:
+// we only DELETE tab items! So we can't do this anymore:
 //     qDeleteAll(m_closedItemList);
     QList<KonqClosedItem *>::iterator it = m_closedItemList.begin();
     for (; it != m_closedItemList.end(); ++it)
@@ -242,8 +268,8 @@ void KonqUndoManager::clearClosedItemsList()
         KonqClosedItem *closedItem = *it;
         const KonqClosedTabItem* closedTabItem =
             dynamic_cast<const KonqClosedTabItem *>(closedItem);
-        const KonqClosedWindowItem* closedWindowItem =
-            dynamic_cast<const KonqClosedWindowItem *>(closedItem);
+//         const KonqClosedWindowItem* closedWindowItem =
+//             dynamic_cast<const KonqClosedWindowItem *>(closedItem);
         
         m_closedItemList.erase(it);
         if(closedTabItem)
@@ -261,6 +287,7 @@ void KonqUndoManager::undoLastClosedItem()
 
 KonqUndoManagerCommunicator::KonqUndoManagerCommunicator()
 {
+    QTimer::singleShot(0, this, SLOT(readSettings()));
 }
 
 KonqUndoManagerCommunicator::~KonqUndoManagerCommunicator()
@@ -275,6 +302,18 @@ KonqUndoManagerCommunicator *KonqUndoManagerCommunicator::self()
 void KonqUndoManagerCommunicator::addClosedWindowItem(KonqUndoManager
 *real_sender, KonqClosedWindowItem *closedWindowItem)
 {
+    // If we are off the limit, remove the last closed window item
+    if(myKonqUndoManagerCommunicatorPrivate->m_closedWindowItemList.size() >= 
+        maxNumClosedItems())
+    {
+        QList<KonqClosedWindowItem *> &closedWindowItemList =
+        myKonqUndoManagerCommunicatorPrivate->m_closedWindowItemList;
+        KonqClosedWindowItem* last = closedWindowItemList.last();
+        emit removeWindowInOtherInstances(0L, last);
+        closedWindowItemList.removeLast();
+        delete last;
+    }
+    
     myKonqUndoManagerCommunicatorPrivate->m_closedWindowItemList.prepend(closedWindowItem);
     emit addWindowInOtherInstances(real_sender, closedWindowItem);
 }
@@ -297,4 +336,35 @@ void KonqUndoManagerCommunicator::removeClosedWindowItem(KonqUndoManager
 const QList<KonqClosedWindowItem *>& KonqUndoManagerCommunicator::closedWindowItemList()
 {
     return myKonqUndoManagerCommunicatorPrivate->m_closedWindowItemList;
+}
+
+int KonqUndoManagerCommunicator::maxNumClosedItems()
+{
+    return myKonqUndoManagerCommunicatorPrivate->m_maxNumClosedItems;
+}
+
+void KonqUndoManagerCommunicator::setMaxNumClosedItems(int max)
+{
+    myKonqUndoManagerCommunicatorPrivate->m_maxNumClosedItems = qMax(1, max);
+}
+
+void KonqUndoManagerCommunicator::readSettings(bool global)
+{
+    KSharedConfigPtr config;
+
+    if (global)
+      config = KGlobal::config();
+    else
+      config = KSharedConfig::openConfig("konquerorrc");
+
+    KConfigGroup configGroup( config, "UndoManagerSettings");
+    myKonqUndoManagerCommunicatorPrivate->m_maxNumClosedItems = configGroup.readEntry("Maximum number of Closed Items", 20 );
+    myKonqUndoManagerCommunicatorPrivate->m_maxNumClosedItems = qMax(1, myKonqUndoManagerCommunicatorPrivate->m_maxNumClosedItems);
+}
+
+void KonqUndoManagerCommunicator::applySettings()
+{
+    KConfigGroup configGroup(KSharedConfig::openConfig("konquerorrc"), "UndoManagerSettings");
+
+    configGroup.writeEntry("Value youngerThan", myKonqUndoManagerCommunicatorPrivate->m_maxNumClosedItems );
 }

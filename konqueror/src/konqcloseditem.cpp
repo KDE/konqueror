@@ -19,15 +19,39 @@
 */
 
 #include "konqcloseditem.h"
+#include <QFile>
 #include <kconfig.h>
 #include <kdebug.h>
 #include <kglobal.h>
 #include <konqpixmapprovider.h>
+#include <kstandarddirs.h>
+#include <unistd.h>
 
-K_GLOBAL_STATIC_WITH_ARGS(KConfig, s_config, ("konqueror_closeditems", KConfig::NoGlobals) )
+class KConfigNew
+{
+public:
+    KConfigNew()
+    {
+        filename = "closeditems/closeditems_" + QString::number(getpid());
+        QString file = KStandardDirs::locateLocal("appdata", filename);
+        if(QFile::exists(file))
+            QFile::remove(file);
+        
+        config = new KConfig(filename, KConfig::SimpleConfig, "appdata");
+        kDebug();
+    }
+    ~KConfigNew() {
+        QFile::remove(KStandardDirs::locateLocal("appdata", filename));
+        delete config;
+    }
+    KConfig *config;
+    QString filename;
+};
+
+K_GLOBAL_STATIC(KConfigNew, s_config)
 
 KonqClosedItem::KonqClosedItem(const QString& title, const QString& group, quint64 serialNumber)
-    : m_title(title), m_configGroup(s_config, group), m_serialNumber(serialNumber)
+    : m_title(title), m_configGroup(s_config->config, group), m_serialNumber(serialNumber)
 {
 }
 

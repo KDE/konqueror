@@ -61,7 +61,8 @@ public Q_SLOTS:
      * menu (by emitting openClosedTab/Window), and takes it from the list.
      */
     void slotClosedItemsActivated(QAction* action);
-    void slotAddClosedWindowItem(KonqUndoManager *real_sender, KonqClosedWindowItem *closedWindowItem);
+    void slotAddClosedWindowItem(KonqUndoManager *real_sender,
+        KonqClosedWindowItem *closedWindowItem);
 
 Q_SIGNALS:
     void undoAvailable(bool canUndo);
@@ -76,9 +77,10 @@ Q_SIGNALS:
 
     /// Emitted to be received in other window instances, uing the singleton
     /// communicator
-    void removeWindowInOtherInstances(KonqUndoManager *real_sender, const KonqClosedWindowItem
-    *closedWindowItem);
-    void addWindowInOtherInstances(KonqUndoManager *real_sender, KonqClosedWindowItem *closedWindowItem);
+    void removeWindowInOtherInstances(KonqUndoManager *real_sender, const 
+        KonqClosedWindowItem *closedWindowItem);
+    void addWindowInOtherInstances(KonqUndoManager *real_sender,
+        KonqClosedWindowItem *closedWindowItem);
 private Q_SLOTS:
     void slotFileUndoAvailable(bool);
     void slotFileUndoTextChanged(const QString& text);
@@ -87,7 +89,8 @@ private Q_SLOTS:
      * Received from other window instances, removes/adds a reference of a 
      * window from m_closedItemList.
      */
-    void slotRemoveClosedWindowItem(KonqUndoManager *real_sender, const KonqClosedWindowItem *closedWindowItem);
+    void slotRemoveClosedWindowItem(KonqUndoManager *real_sender, const
+        KonqClosedWindowItem *closedWindowItem);
 private:
     /// Fill the m_closedItemList with closed windows
     void populate();
@@ -107,13 +110,20 @@ public:
     friend class KonqUndoManagerCommunicatorPrivate;
     static KonqUndoManagerCommunicator *self();
     const QList<KonqClosedWindowItem *>& closedWindowItemList();
-    void addClosedWindowItem(KonqUndoManager *real_sender, KonqClosedWindowItem *closedWindowItem);
-    void removeClosedWindowItem(KonqUndoManager *real_sender, const KonqClosedWindowItem
-    *closedWindowItem);
+    void addClosedWindowItem(KonqUndoManager *real_sender, KonqClosedWindowItem
+        *closedWindowItem);
+    void removeClosedWindowItem(KonqUndoManager *real_sender, const
+    KonqClosedWindowItem *closedWindowItem);
+    void applySettings();
+    int maxNumClosedItems();
+    void setMaxNumClosedItems(int max);
+public Q_SLOTS:
+    void readSettings(bool global = false);
 Q_SIGNALS:
-    void addWindowInOtherInstances(KonqUndoManager *real_sender, KonqClosedWindowItem *closedWindowItem);
-    void removeWindowInOtherInstances(KonqUndoManager *real_sender, const KonqClosedWindowItem
-    *closedWindowItem);
+    void addWindowInOtherInstances(KonqUndoManager *real_sender,
+        KonqClosedWindowItem *closedWindowItem);
+    void removeWindowInOtherInstances(KonqUndoManager *real_sender, const
+    KonqClosedWindowItem *closedWindowItem);
 private:
     KonqUndoManagerCommunicator();
     virtual ~KonqUndoManagerCommunicator();
