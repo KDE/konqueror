@@ -35,10 +35,10 @@ void KonqViewAdaptor::openUrl( const QString& url, const QString & locationBarUR
     m_pView->openUrl( KUrl(url), locationBarURL, nameFilter );
 }
 
-bool KonqViewAdaptor::changeViewMode( const QString &serviceType,
+bool KonqViewAdaptor::changeViewMode( const QString &mimeType,
                                       const QString &serviceName )
 {
-    return m_pView->changeViewMode( serviceType, serviceName );
+    return m_pView->changePart( mimeType, serviceName );
 }
 
 void KonqViewAdaptor::lockHistory()

@@ -28,8 +28,6 @@
 class KonqHtmlTest : public QObject
 {
     Q_OBJECT
-public:
-
 private Q_SLOTS:
     void loadSimpleHtml()
     {
