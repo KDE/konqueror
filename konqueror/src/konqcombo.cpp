@@ -750,6 +750,7 @@ bool KonqListWidgetItem::reuse(const QString &newText)
 QSize KonqComboItemDelegate::sizeHint( const QStyleOptionViewItem &option,
                                        const QModelIndex &index ) const
 {
+    Q_UNUSED(index);
     int vMargin = QApplication::style()->pixelMetric( QStyle::PM_FocusFrameVMargin );
 
     QSize size( 1, qMax( option.fontMetrics.lineSpacing(), option.decorationSize.height() ) );

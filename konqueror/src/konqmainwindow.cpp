@@ -2893,7 +2893,7 @@ void KonqMainWindow::slotClosedItemsListAboutToShow()
     popup->clear();
     QAction* clearAction = popup->addAction( i18n("Empty Closed Tabs History") );
     connect(clearAction, SIGNAL(triggered()), m_undoManager, SLOT(clearClosedItemsList()));
-    popup->insertSeparator();
+    popup->insertSeparator((QAction*)0);
 
     QList<KonqClosedItem *>::ConstIterator it = m_undoManager->closedTabsList().begin();
     const QList<KonqClosedItem *>::ConstIterator end = m_undoManager->closedTabsList().end();
@@ -4501,12 +4501,12 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
     m_popupUrl = items.first().url();
     sReading = KProtocolManager::supportsReading( m_popupUrl );
     if (sReading)
-      m_popupServiceType = items.first().mimetype();
+      m_popupMimeType = items.first().mimetype();
   }
   else
   {
     m_popupUrl = KUrl();
-    m_popupServiceType.clear();
+    m_popupMimeType.clear();
   }
 
 
@@ -4537,7 +4537,7 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
     url.cleanPath();
     bool isIntoTrash = url.protocol() == "trash" || url.url().startsWith( "system:/trash" );
     const bool doTabHandling = !openedForViewURL && !isIntoTrash && sReading;
-    const bool showEmbeddingServices = items.count() == 1 && !m_popupServiceType.isEmpty() &&
+    const bool showEmbeddingServices = items.count() == 1 && !m_popupMimeType.isEmpty() &&
                                        !isIntoTrash && !devicesFile &&
                                        (itemFlags & KParts::BrowserExtension::ShowTextSelectionItems) == 0;
 
@@ -4547,7 +4547,7 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
 
         // List of services for the "Preview In" submenu.
         embeddingServices = KMimeTypeTrader::self()->query(
-            m_popupServiceType,
+            m_popupMimeType,
             "KParts/ReadOnlyPart",
             // Obey "HideFromMenus". It defaults to false so we want "absent or true"
             // (wow, testing for 'true' if absent doesn't work, so order matters)
@@ -4717,7 +4717,7 @@ void KonqMainWindow::slotOpenEmbedded(KService::Ptr service)
     m_currentView->stop();
     m_currentView->setLocationBarURL(m_popupUrl);
     m_currentView->setTypedURL(QString());
-    if ( m_currentView->changeViewMode( m_popupServiceType,
+    if ( m_currentView->changeViewMode( m_popupMimeType,
                                         service->desktopEntryName() ) )
         m_currentView->openUrl( m_popupUrl, m_popupUrl.pathOrUrl() );
 }

@@ -59,7 +59,7 @@ public:
     explicit KonqViewManager( KonqMainWindow *mainWindow );
     ~KonqViewManager();
 
-    KonqView* createFirstView( const QString &serviceType, const QString &serviceName );
+    KonqView* createFirstView( const QString &mimeType, const QString &serviceName );
 
   /**
    * Splits the view, depending on orientation, either horizontally or
@@ -350,7 +350,7 @@ private:
    * it clones the current view.
    * Returns the newly created view.
    */
-  KonqViewFactory createView( const QString &serviceType,
+    KonqViewFactory createView( const QString &serviceType, /* can be servicetype or mimetype */
                               const QString &serviceName,
                               KService::Ptr &service,
                               KService::List &partServiceOffers,
