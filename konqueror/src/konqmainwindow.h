@@ -161,14 +161,17 @@ public:
   // Total number of views
   int viewCount() const { return m_mapViews.count(); }
 
-  // Number of views not in "passive" mode
-  int activeViewsCount() const;
+    // Number of views not in "passive" mode
+    int activeViewsCount() const;
 
-  // Number of views that can be linked, i.e. not with "follow active view" behavior
-  int linkableViewsCount() const;
+    // Number of views not in "passive" mode and not locked
+    int activeViewsNotLockedCount() const;
 
-  // Number of main views (non-toggle non-passive views)
-  int mainViewsCount() const;
+    // Number of views that can be linked, i.e. not with "follow active view" behavior
+    int linkableViewsCount() const;
+
+    // Number of main views (non-toggle non-passive views)
+    int mainViewsCount() const;
 
     // Return true if we are showing a view that supports this mimeType.
     bool hasViewWithMimeType(const QString& mimeType) const;
@@ -296,6 +299,8 @@ public:
 
   static bool isMimeTypeAssociatedWithSelf( const QString &mimeType );
   static bool isMimeTypeAssociatedWithSelf( const QString &mimeType, const KService::Ptr &offer );
+
+    bool refuseExecutingKonqueror(const QString& mimeType);
 
   void resetWindow();
 
@@ -585,7 +590,7 @@ private:
 
   bool stayPreloaded();
   bool checkPreloadResourceUsage();
-  
+
   /**
    * Manage how many instances of this class are out there.
    */
