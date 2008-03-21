@@ -119,7 +119,9 @@ private:
 
 
  protected Q_SLOTS:
+#ifndef Q_WS_WIN
   void progress(K3ProcIO *);
+#endif
   void updatePLabel(int);
   void change() { change( true ); }
   void change( bool c ) { emit changed(c); m_changed = c; }
