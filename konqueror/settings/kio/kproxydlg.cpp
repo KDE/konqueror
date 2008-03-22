@@ -55,13 +55,15 @@ KProxyOptions::KProxyOptions(QWidget *parent, const QVariantList &)
   layout->addWidget(mTab);
 
   mProxy  = new KProxyDialog(componentData(), mTab);
-  mSocks = new KSocksConfig(componentData(), mTab);
-
   mTab->addTab(mProxy, i18n("&Proxy"));
-  mTab->addTab(mSocks, i18n("&SOCKS"));
-
   connect(mProxy, SIGNAL(changed(bool)), SIGNAL(changed(bool)));
+
+#ifndef Q_WS_WIN
+  mSocks = new KSocksConfig(componentData(), mTab);
+  mTab->addTab(mSocks, i18n("&SOCKS"));
   connect(mSocks, SIGNAL(changed(bool)), SIGNAL(changed(bool)));
+#endif
+
   connect(mTab, SIGNAL(currentChanged(QWidget *)), SIGNAL(quickHelpChanged()));
 }
 
@@ -72,19 +74,22 @@ KProxyOptions::~KProxyOptions()
 void KProxyOptions::load()
 {
   mProxy->load();
-  mSocks->load();
+  if (mSocks)
+    mSocks->load();
 }
 
 void KProxyOptions::save()
 {
   mProxy->save();
-  mSocks->save();
+  if (mSocks)
+    mSocks->save();
 }
 
 void KProxyOptions::defaults()
 {
   mProxy->defaults();
-  mSocks->defaults();
+  if (mSocks)
+    mSocks->defaults();
 }
 
 QString KProxyOptions::quickHelp() const
