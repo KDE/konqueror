@@ -5033,13 +5033,14 @@ void KonqMainWindow::addClosedWindowToUndoList()
 
     // 1. We get the current title
     KonqFrameTabs* tabContainer = m_pViewManager->tabContainer();
+    int numTabs = m_pViewManager->tabContainer()->childFrameList().count();
     QString title( i18n("no name") );
 
     if(m_currentView)
         title = m_currentView->caption();
 
     // 2. Create the KonqClosedWindowItem and  save its config
-    KonqClosedWindowItem* closedWindowItem = new KonqClosedWindowItem(title, m_undoManager->newCommandSerialNumber());
+    KonqClosedWindowItem* closedWindowItem = new KonqClosedWindowItem(title, m_undoManager->newCommandSerialNumber(), numTabs);
     KonqFrameBase::Options flags = KonqFrameBase::saveHistoryItems;
     QString prefix = QString::fromLatin1( childFrame()->frameType() ) + QString::number(0);
     closedWindowItem->configGroup().writeEntry( "RootItem", prefix );

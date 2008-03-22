@@ -348,14 +348,9 @@ void KonqUndoManagerCommunicator::setMaxNumClosedItems(int max)
     myKonqUndoManagerCommunicatorPrivate->m_maxNumClosedItems = qMax(1, max);
 }
 
-void KonqUndoManagerCommunicator::readSettings(bool global)
+void KonqUndoManagerCommunicator::readSettings()
 {
-    KSharedConfigPtr config;
-
-    if (global)
-      config = KGlobal::config();
-    else
-      config = KSharedConfig::openConfig("konquerorrc");
+    KSharedConfigPtr config = KGlobal::config();
 
     KConfigGroup configGroup( config, "UndoManagerSettings");
     myKonqUndoManagerCommunicatorPrivate->m_maxNumClosedItems = configGroup.readEntry("Maximum number of Closed Items", 20 );

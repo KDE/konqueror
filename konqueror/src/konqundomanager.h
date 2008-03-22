@@ -118,7 +118,7 @@ public:
     int maxNumClosedItems();
     void setMaxNumClosedItems(int max);
 public Q_SLOTS:
-    void readSettings(bool global = false);
+    void readSettings();
 Q_SIGNALS:
     void addWindowInOtherInstances(KonqUndoManager *real_sender,
         KonqClosedWindowItem *closedWindowItem);
