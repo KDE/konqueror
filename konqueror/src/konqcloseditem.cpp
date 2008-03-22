@@ -20,10 +20,17 @@
 
 #include "konqcloseditem.h"
 #include <QFile>
+#include <QFont>
+#include <QFontMetrics>
+#include <QPainter>
 #include <kconfig.h>
 #include <kdebug.h>
 #include <kglobal.h>
+#include <kglobalsettings.h>
+#include <kicon.h>
+#include <kiconeffect.h>
 #include <konqpixmapprovider.h>
+#include <kcolorscheme.h>
 #include <kstandarddirs.h>
 #include <unistd.h>
 
@@ -48,7 +55,19 @@ public:
     QString filename;
 };
 
+class KonqIcon {
+public:
+    KonqIcon()
+        : image(KIcon("konqueror").pixmap(16).toImage())
+    {
+        KIconEffect::deSaturate(image, 0.60f);
+    }
+    
+    QImage image;
+};
+
 K_GLOBAL_STATIC(KConfigNew, s_config)
+K_GLOBAL_STATIC(KonqIcon, s_lightIconImage)
 
 KonqClosedItem::KonqClosedItem(const QString& title, const QString& group, quint64 serialNumber)
     : m_title(title), m_configGroup(s_config->config, group), m_serialNumber(serialNumber)
@@ -77,8 +96,8 @@ QPixmap KonqClosedTabItem::icon() {
     return KonqPixmapProvider::self()->pixmapFor(m_url);
 }
 
-KonqClosedWindowItem::KonqClosedWindowItem(const QString& title, quint64 serialNumber)
-      :  KonqClosedItem(title, "Closed_Window" + QString::number((qint64)this), serialNumber)
+KonqClosedWindowItem::KonqClosedWindowItem(const QString& title, quint64 serialNumber, int numTabs)
+      :  KonqClosedItem(title, "Closed_Window" + QString::number((qint64)this), serialNumber), m_numTabs(numTabs)
 {
     kDebug(1202) << m_configGroup.name();
 }
@@ -90,5 +109,28 @@ KonqClosedWindowItem::~KonqClosedWindowItem()
 }
 
 QPixmap KonqClosedWindowItem::icon() {
-    return KonqPixmapProvider::self()->pixmapFor("about:blank");
+    QImage overlayImg = s_lightIconImage->image.copy();
+    int oldWidth = overlayImg.width();
+    QString countStr = QString::number( m_numTabs );
+    
+    QFont f = KGlobalSettings::generalFont();
+    f.setBold(true);
+
+    float pointSize = f.pointSizeF();
+    QFontMetrics fm(f);
+    int w = fm.width(countStr);
+    if( w > (oldWidth) )
+    {
+        pointSize *= float(oldWidth) / float(w);
+        f.setPointSizeF(pointSize);
+    }
+
+    // overlay
+    QPainter p(&overlayImg);
+    p.setFont(f);
+    KColorScheme scheme(QPalette::Active, KColorScheme::Window);
+    p.setPen(scheme.foreground(KColorScheme::LinkText).color());
+    p.drawText(overlayImg.rect(), Qt::AlignCenter, countStr);
+    
+    return QPixmap::fromImage(overlayImg);
 }

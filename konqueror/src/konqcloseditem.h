@@ -24,6 +24,7 @@
 #include "konqprivate_export.h"
 #include <kconfiggroup.h>
 #include <QString>
+#include <QImage>
 
 class KONQ_TESTS_EXPORT KonqClosedItem : public QObject {
 public:
@@ -65,9 +66,12 @@ protected:
  */
 class KONQ_TESTS_EXPORT KonqClosedWindowItem : public KonqClosedItem {
 public:
-    KonqClosedWindowItem(const QString& title, quint64 serialNumber);
+    KonqClosedWindowItem(const QString& title, quint64 serialNumber, int numTabs);
     virtual ~KonqClosedWindowItem();
     virtual QPixmap icon();
+    
+protected:
+    int m_numTabs;
 };
 
 #endif /* KONQCLOSEDITEM_H */
