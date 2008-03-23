@@ -1810,7 +1810,7 @@ void KonqMainWindow::slotConfigure()
 #define ADD_MODULE(name)    if (KAuthorized::authorizeControlModule(name))\
                                 m_configureDialog->addModule(KCModuleInfo(name),fileManagementGroup);
 
-            //ADD_MODULE("fileappearance")
+            ADD_MODULE("kcmdolphin")
             ADD_MODULE("filepreviews")
             ADD_MODULE("filetypes")
 #undef ADD_MODULE
