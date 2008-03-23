@@ -40,6 +40,7 @@ protected:
     virtual void javaScriptAlert(QWebFrame *frame, const QString &msg);
     virtual bool javaScriptConfirm(QWebFrame *frame, const QString &msg);
     virtual bool javaScriptPrompt(QWebFrame *frame, const QString &msg, const QString &defaultValue, QString *result);
+    virtual QString userAgentForUrl(const QUrl& url) const;
 
 private:
     WebKitPart *m_part;

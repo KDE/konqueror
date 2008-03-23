@@ -28,6 +28,7 @@
 #include <KDE/KFileDialog>
 #include <KDE/KInputDialog>
 #include <KDE/KMessageBox>
+#include <KDE/KProtocolManager>
 
 WebPage::WebPage(WebKitPart *wpart, QWidget *parent)
     : QWebPage(parent), m_part(wpart)
@@ -62,4 +63,15 @@ bool WebPage::javaScriptPrompt(QWebFrame *frame, const QString &msg, const QStri
     bool ok = false;
     *result = KInputDialog::getText(i18n("JavaScript"), msg, defaultValue, &ok);
     return ok;
+}
+
+QString WebPage::userAgentForUrl(const QUrl& _url) const
+{
+    KUrl url( _url );
+    QString host = url.isLocalFile() ? "localhost" : url.host();
+    QString userAgent = KProtocolManager::userAgentForHost(host);
+    if (userAgent != KProtocolManager::userAgentForHost(QString())) {
+        return userAgent;
+    }
+    return QWebPage::userAgentForUrl(url);
 }
