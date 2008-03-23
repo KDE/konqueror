@@ -3,6 +3,7 @@
  *
  * Copyright (C) 2007 Trolltech ASA
  * Copyright (C) 2008 Urs Wolfer <uwolfer @ kde.org>
+ * Copyright (C) 2008 Laurent Montel <montel@kde.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -26,6 +27,9 @@
 
 #include <KDE/KParts/GenericFactory>
 #include <KDE/KAboutData>
+#include <KDE/KUriFilterData>
+#include <KDE/KDesktopFile>
+#include <KDE/KConfigGroup>
 
 #include <QHttpRequestHeader>
 
@@ -39,7 +43,7 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
     setWidget(webView);
 
     connect(webView, SIGNAL(loadStarted()),
-            this, SLOT(laodStarted()));
+            this, SLOT(loadStarted()));
     connect(webView, SIGNAL(loadFinished()),
             this, SLOT(loadFinished()));
     connect(webView, SIGNAL(titleChanged(const QString &)),
@@ -98,7 +102,7 @@ bool WebKitPart::openFile()
     return false;
 }
 
-void WebKitPart::laodStarted()
+void WebKitPart::loadStarted()
 {
     emit started(0);
 }
@@ -170,6 +174,30 @@ void WebKitBrowserExtension::updateEditActions()
     enableAction("cut", page->action(QWebPage::Cut));
     enableAction("copy", page->action(QWebPage::Copy));
     enableAction("paste", page->action(QWebPage::Paste));
+}
+
+void WebKitBrowserExtension::searchProvider()
+{
+    // action name is of form "previewProvider[<searchproviderprefix>:]"
+    const QString searchProviderPrefix = QString( sender()->objectName() ).mid( 14 );
+
+    KUriFilterData data;
+    QStringList list;
+    data.setData( searchProviderPrefix + part->view()->page()->selectedText() );
+    list << "kurisearchfilter" << "kuriikwsfilter";
+
+    if( !KUriFilter::self()->filterUri(data, list) )
+    {
+        KDesktopFile file("services", "searchproviders/google.desktop");
+        QString encodedSearchTerm = QUrl::toPercentEncoding(part->view()->page()->selectedText());
+        KConfigGroup cg(file.desktopGroup());
+        data.setData(cg.readEntry("Query").replace("\\{@}", encodedSearchTerm));
+    }
+
+    KParts::BrowserArguments browserArgs;
+    browserArgs.frameName = "_blank";
+
+    emit openUrlRequest( data.uri(), KParts::OpenUrlArguments(), browserArgs );
 }
 
 typedef KParts::GenericFactory<WebKitPart> Factory;

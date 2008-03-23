@@ -3,6 +3,7 @@
  *
  * Copyright (C) 2007 Trolltech ASA
  * Copyright (C) 2008 Urs Wolfer <uwolfer @ kde.org>
+ * Copyright (C) 2008 Laurent Montel <montel@kde.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -33,18 +34,26 @@ class QWebFrame;
 class KAboutData;
 class WebKitBrowserExtension;
 class KWebNetworkInterface;
+class QAction;
 class WebKitPart;
 
 class WebView : public QWebView
 {
 public:
     WebView(WebKitPart *wpart, QWidget *parent);
+    ~WebView();
 
 protected:
     virtual void contextMenuEvent(QContextMenuEvent *e);
+    void editActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &editGroupMap );
+    void linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &linkGroupMap );
 
 private:
     WebKitPart *part;
+    class WebViewPrivate;
+    WebViewPrivate* const d;
+
+
 };
 
 #endif // WEBKITVIEW_H

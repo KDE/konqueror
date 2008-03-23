@@ -55,7 +55,7 @@ protected:
     virtual bool openFile();
 
 private slots:
-    void laodStarted();
+    void loadStarted();
     void loadFinished();
     void urlChanged(const QUrl &url);
 
@@ -74,6 +74,7 @@ public slots:
     void cut();
     void copy();
     void paste();
+    void searchProvider();
 
 private slots:
     void updateEditActions();
