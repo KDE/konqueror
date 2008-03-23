@@ -30,7 +30,8 @@
 #include <KDE/KUriFilterData>
 #include <KDE/KDesktopFile>
 #include <KDE/KConfigGroup>
-
+#include <KDE/KAction>
+#include <KDE/KActionCollection>
 #include <QHttpRequestHeader>
 
 // #include "kwebnetworkinterface.h"
@@ -58,10 +59,24 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
             browserExtension, SIGNAL(loadingProgress(int)));
     connect(webView, SIGNAL(urlChanged(const QUrl &)),
             this, SLOT(urlChanged(const QUrl &)));
+
+    initAction();
+    setXMLFile( "webkitpart.rc" );
 }
 
 WebKitPart::~WebKitPart()
 {
+}
+
+void WebKitPart::initAction()
+{
+    KAction *action = new KAction( KIcon(  "zoom-in" ), i18n( "Enlarge Font" ), this );
+    actionCollection()->addAction( "incFontSizes", action );
+    connect( action, SIGNAL(triggered(bool)), browserExt(), SLOT( zoomIn() ) );
+
+    action = new KAction( KIcon(  "zoom-out" ),i18n( "Shrink Font" ), this );
+    actionCollection()->addAction( "decFontSizes", action );
+    connect( action, SIGNAL(triggered(bool)), browserExt(), SLOT( zoomOut() ) );
 }
 
 bool WebKitPart::openUrl(const KUrl &url)
@@ -199,6 +214,17 @@ void WebKitBrowserExtension::searchProvider()
 
     emit openUrlRequest( data.uri(), KParts::OpenUrlArguments(), browserArgs );
 }
+
+void WebKitBrowserExtension::zoomIn()
+{
+    part->view()->setTextSizeMultiplier( part->view()->textSizeMultiplier()*2 );
+}
+
+void WebKitBrowserExtension::zoomOut()
+{
+    part->view()->setTextSizeMultiplier( part->view()->textSizeMultiplier()/2 );
+}
+
 
 typedef KParts::GenericFactory<WebKitPart> Factory;
 Q_EXPORT_PLUGIN(Factory);

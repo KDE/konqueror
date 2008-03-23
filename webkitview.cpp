@@ -85,6 +85,7 @@ void WebView::editActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &edit
 {
     QList<QAction *>editActions;
 
+
     QAction* copyAction = d->m_actionCollection->addAction( KStandardAction::Copy, "copy",  part->browserExt(), SLOT( copy() ) );
     copyAction->setText(i18n("&Copy Text"));
     copyAction->setEnabled( part->browserExt()->isActionEnabled( "copy" ));
@@ -183,5 +184,6 @@ void WebView::editActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &edit
         connect( action, SIGNAL(triggered(bool)), part->browserExt(), SLOT( openSelection() ) );
         editActions.append(action);
     }
+
     editGroupMap.insert( "editactions", editActions );
 }

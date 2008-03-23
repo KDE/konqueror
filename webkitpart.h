@@ -53,6 +53,7 @@ public:
 
 protected:
     virtual bool openFile();
+    void initAction();
 
 private slots:
     void loadStarted();
@@ -75,6 +76,9 @@ public slots:
     void copy();
     void paste();
     void searchProvider();
+
+    void zoomIn();
+    void zoomOut();
 
 private slots:
     void updateEditActions();
