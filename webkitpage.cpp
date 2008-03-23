@@ -33,6 +33,22 @@
 WebPage::WebPage(WebKitPart *wpart, QWidget *parent)
     : QWebPage(parent), m_part(wpart)
 {
+    initGlobalSettings();
+}
+
+
+void WebPage::initGlobalSettings()
+{
+    QString userStyleSheet;
+    KConfigGroup cgHtml( KGlobal::config(), "HTML Settings" );
+    if ( cgHtml.readEntry( "UserStyleSheetEnabled", false ) == true ) {
+        if ( cgHtml.hasKey( "UserStyleSheet" ) )
+            userStyleSheet = cgHtml.readEntry( "UserStyleSheet", "" );
+    }
+    if ( !userStyleSheet.isEmpty() )
+    {
+        QWebSettings::globalSettings()->setUserStyleSheetUrl( QUrl( userStyleSheet ) );
+    }
 }
 
 bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request,

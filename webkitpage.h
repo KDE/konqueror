@@ -42,6 +42,9 @@ protected:
     virtual bool javaScriptPrompt(QWebFrame *frame, const QString &msg, const QString &defaultValue, QString *result);
     virtual QString userAgentForUrl(const QUrl& url) const;
 
+
+    void initGlobalSettings();
+
 private:
     WebKitPart *m_part;
 };
