@@ -1086,6 +1086,18 @@ void KonqMainWindow::abortLoading()
   }
 }
 
+// Are there any indications that this window has a strong popup
+// nature and should therefore not be embedded into a tab?
+static bool isPopupWindow( const KParts::WindowArgs &windowArgs )
+{
+    // ### other settings to respect?
+    return windowArgs.x() != -1 || windowArgs.y() != -1 ||
+        windowArgs.width() != -1 || windowArgs.height() != -1 ||
+        !windowArgs.isMenuBarVisible() ||
+        !windowArgs.toolBarsVisible() ||
+        !windowArgs.isStatusBarVisible();
+}
+
 // This is called for the javascript window.open call. Also called for MMB on link.
 void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
                                           const KParts::OpenUrlArguments& args,
@@ -1116,7 +1128,10 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
         }
     }
 
-    if ( KonqSettings::popupsWithinTabs() || ( KonqSettings::mmbOpensTab() && !args.metaData().contains("forcenewwindow") ) ) {
+    if ( KonqSettings::popupsWithinTabs() ||
+         ( KonqSettings::mmbOpensTab() &&
+           !args.metaData().contains("forcenewwindow") &&
+           !isPopupWindow( windowArgs ) ) ) {
         /* We could do this and pass 'req' to openUrl, but then we wouldn't get the part pointer immediately...
         KonqOpenURLRequest req;
         req.newTab = true;
