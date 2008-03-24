@@ -80,6 +80,8 @@ public slots:
     void zoomIn();
     void zoomOut();
 
+    void slotFind();
+
 private slots:
     void updateEditActions();
 

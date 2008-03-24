@@ -1,0 +1,37 @@
+<ui version="4.0" >
+ <class>SearchWidget</class>
+ <widget class="QWidget" name="searchwidget" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>230</width>
+    <height>91</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" >
+   <item>
+    <widget class="QLabel" name="label" >
+     <property name="text" >
+      <string>Text to find:</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="searchtext" />
+   </item>
+   <item>
+    <widget class="QCheckBox" name="sensitivecase" >
+     <property name="text" >
+      <string>Case sensitive</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

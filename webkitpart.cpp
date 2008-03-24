@@ -34,6 +34,8 @@
 #include <KDE/KActionCollection>
 #include <QHttpRequestHeader>
 
+#include "searchwidget.h"
+
 // #include "kwebnetworkinterface.h"
 
 WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList &/*args*/)
@@ -77,6 +79,11 @@ void WebKitPart::initAction()
     action = new KAction( KIcon(  "zoom-out" ),i18n( "Shrink Font" ), this );
     actionCollection()->addAction( "decFontSizes", action );
     connect( action, SIGNAL(triggered(bool)), browserExt(), SLOT( zoomOut() ) );
+
+
+    action = actionCollection()->addAction( KStandardAction::Find, "find", browserExt(), SLOT( slotFind() ) );
+    action->setWhatsThis( i18n( "Find text<br /><br />"
+                                   "Shows a dialog that allows you to find text on the displayed page." ) );
 }
 
 bool WebKitPart::openUrl(const KUrl &url)
@@ -223,6 +230,13 @@ void WebKitBrowserExtension::zoomIn()
 void WebKitBrowserExtension::zoomOut()
 {
     part->view()->setTextSizeMultiplier( part->view()->textSizeMultiplier()/2 );
+}
+
+void WebKitBrowserExtension::slotFind()
+{
+    SearchWidgetDialog *dlg = new SearchWidgetDialog( part->view(), part->view()->page() );
+    dlg->exec();
+    delete dlg;
 }
 
 
