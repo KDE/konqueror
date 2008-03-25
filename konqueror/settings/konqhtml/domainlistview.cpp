@@ -225,7 +225,7 @@ void DomainListView::save(const QString &group, const QString &domainListKey) {
 }
 
 void DomainListView::setupPolicyDlg(PushButton /*trigger*/,
-		PolicyDialog &/*pDlg*/,Policies */*copy*/) {
+		PolicyDialog &/*pDlg*/,Policies * /*copy*/) {
   // do nothing
 }
 
