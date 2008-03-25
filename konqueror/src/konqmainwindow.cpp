@@ -714,31 +714,24 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
 
   KUrl url( _url );
 
-  // Generic mechanism for redirecting to tar:/<path>/ when clicking on a tar file,
-  // zip:/<path>/ when clicking on a zip file, etc.
-  // The name of the protocol to redirect to, is read from the mimetype's .desktop file
-  if ( url.isLocalFile() )
-  {
-    KMimeType::Ptr ptr = KMimeType::mimeType( mimeType );
-    if ( ptr )
-    {
-      const QString protocol = ptr->property("X-KDE-LocalProtocol").toString();
-      if ( !protocol.isEmpty() && KonqFMSettings::settings()->shouldEmbed( mimeType ) )
-      {
-        url.setProtocol( protocol );
-        if ( mimeType == "application/x-webarchive" )
-        {
-          url.setPath( url.path() + "/index.html" );
-          mimeType = "text/html";
+    // Generic mechanism for redirecting to tar:/<path>/ when clicking on a tar file,
+    // zip:/<path>/ when clicking on a zip file, etc.
+    // The .protocol file specifies the mimetype that the kioslave handles.
+    // Note that we don't use mimetype inheritance since we don't want to
+    // open OpenDocument files as zip folders...
+    if (url.isLocalFile()) {
+        const QString protocol = KProtocolManager::protocolForArchiveMimetype(mimeType);
+        if (!protocol.isEmpty() && KonqFMSettings::settings()->shouldEmbed(mimeType)) {
+            url.setProtocol( protocol );
+            if (mimeType == "application/x-webarchive") {
+                url.addPath("index.html");
+                mimeType = "text/html";
+            } else {
+                url.setPath( url.path() + '/' );
+                mimeType = "inode/directory";
+            }
         }
-        else
-        {
-          url.setPath( url.path() + '/' );
-          mimeType = "inode/directory";
-        }
-      }
     }
-  }
 
   ///////////
 
@@ -1048,57 +1041,54 @@ bool KonqMainWindow::makeViewsFollow( const KUrl & url,
   // (e.g. by part changes). Better copy the views into a list.
   const QList<KonqView*> listViews = m_mapViews.values();
 
-  QObject *senderFrame = lastFrame( senderView );
+    QObject *senderFrame = lastFrame( senderView );
 
-  foreach ( KonqView * view, listViews )
-  {
-    bool followed = false;
-    // Views that should follow this URL as both views are linked
-    if ( (view != senderView) && view->isLinkedView() && senderView->isLinkedView() )
+    foreach (KonqView * view, listViews)
     {
-      QObject *viewFrame = lastFrame( view );
+        if (view == senderView)
+            continue;
+        bool followed = false;
+        // Views that should follow this URL as both views are linked
+        if (view->isLinkedView() && senderView->isLinkedView()) {
+            QObject *viewFrame = lastFrame(view);
 
-      // Only views in the same tab of the sender will follow
-      if ( senderFrame && viewFrame && viewFrame != senderFrame )
-        continue;
+            // Only views in the same tab of the sender will follow
+            if (senderFrame && viewFrame && viewFrame != senderFrame)
+                continue;
 
-      kDebug(1202) << "makeViewsFollow: Sending openUrl to view " << view->part()->metaObject()->className() << " url=" << url;
+            kDebug(1202) << "sending openUrl to view" << view->part()->metaObject()->className() << "url=" << url;
 
-      // XXX duplicate code from ::openUrl
-      if ( view == m_currentView )
-      {
-        abortLoading();
-        setLocationBarURL( url );
-      }
-      else
-        view->stop();
+            // XXX duplicate code from ::openUrl
+            if (view == m_currentView) {
+                abortLoading();
+                setLocationBarURL(url);
+            } else {
+                view->stop();
+            }
 
-      followed = openView( serviceType, url, view, req );
+            followed = openView(serviceType, url, view, req);
+        } else {
+            // Make the sidebar follow the URLs opened in the active view
+            if (view->isFollowActive() && senderView == m_currentView) {
+                followed = openView(serviceType, url, view, req);
+            }
+        }
+
+        // Ignore return value if the view followed but doesn't really
+        // show the file contents. We still want to see that
+        // file, e.g. in a separate viewer.
+        // This happens in views locked to a directory mode,
+        // like sidebar and konsolepart (#52161).
+        const bool ignore = view->isLockedViewMode() && view->supportsMimeType("inode/directory");
+        //kDebug(1202) << "View " << view->service()->name()
+        //              << " supports dirs: " << view->supportsMimeType( "inode/directory" )
+        //              << " is locked-view-mode:" << view->isLockedViewMode()
+        //              << " ignore=" << ignore;
+        if ( !ignore )
+            res = followed || res;
     }
-    else
-    {
-      // Make the sidebar follow the URLs opened in the active view
-      if ((view!=senderView) && view->isFollowActive() && senderView == m_currentView)
-      {
-        followed = openView(serviceType, url, view, req);
-      }
-    }
 
-    // Ignore return value if the view followed but doesn't really
-    // show the file contents. We still want to see that
-    // file, e.g. in a separate viewer.
-    // This happens in views locked to a directory mode,
-    // like sidebar and konsolepart (#52161).
-    bool ignore = view->isLockedViewMode() && view->supportsMimeType("inode/directory");
-    //kDebug(1202) << "View " << view->service()->name()
-    //              << " supports dirs: " << view->supportsMimeType( "inode/directory" )
-    //              << " is locked-view-mode:" << view->isLockedViewMode()
-    //              << " ignore=" << ignore;
-    if ( !ignore )
-      res = followed || res;
-  }
-
-  return res;
+    return res;
 }
 
 void KonqMainWindow::abortLoading()

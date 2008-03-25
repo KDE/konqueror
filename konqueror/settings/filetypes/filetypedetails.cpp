@@ -281,6 +281,10 @@ void FileTypeDetails::updateAskSave()
     if (autoEmbed == MimeTypeData::Yes) {
         const KMimeType::Ptr mime = KMimeType::mimeType( mimeType );
         if (mime) {
+            // SYNC SYNC SYNC SYNC SYNC SYNC SYNC SYNC SYNC SYNC SYNC SYNC SYNC SYNC
+            // NOTE: Keep this function in sync with
+            // kdelibs/kparts/browserrun.cpp BrowserRun::askEmbedOrSave()
+
             // Don't ask for:
             // - html (even new tabs would ask, due to about:blank!)
             // - dirs obviously (though not common over HTTP :),
