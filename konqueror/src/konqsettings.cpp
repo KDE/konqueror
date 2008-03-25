@@ -19,6 +19,7 @@
 
 #include "konqsettings.h"
 #include "konq_defaults.h"
+#include <kprotocolmanager.h>
 #include "kglobalsettings.h"
 #include <ksharedconfig.h>
 #include <kglobal.h>
@@ -74,9 +75,6 @@ bool KonqFMSettings::shouldEmbed( const QString & mimeType ) const
 {
     // First check in user's settings whether to embed or not
     // 1 - in the filetypesrc config file (written by the configuration module)
-    bool hasLocalProtocolRedirect = false;
-    // TODO
-    //hasLocalProtocolRedirect = !mimeTypePtr->property( "X-KDE-LocalProtocol" ).toString().isEmpty();
     QMap<QString, QString>::const_iterator it = m_embedMap.find( QString::fromLatin1("embed-")+mimeType );
     if ( it != m_embedMap.end() ) {
         kDebug(1202) << mimeType << it.value();
@@ -92,8 +90,9 @@ bool KonqFMSettings::shouldEmbed( const QString & mimeType ) const
         return it.value() == QLatin1String("true");
     }
     // 3 - if no config found, use default.
-    // Note: if you change those defaults, also change kcontrol/filetypes/mimetypedata.cpp !
+    // Note: if you change those defaults, also change settings/filetypes/mimetypedata.cpp !
     // Embedding is false by default except for image/* and for zip, tar etc.
+    const bool hasLocalProtocolRedirect = !KProtocolManager::protocolForArchiveMimetype(mimeType).isEmpty();
     if ( mimeTypeGroup == "image" || hasLocalProtocolRedirect )
         return true;
     return false;

@@ -19,6 +19,7 @@
 */
 
 #include "mimetypedata.h"
+#include <kprotocolmanager.h>
 #include "mimetypewriter.h"
 #include <kdebug.h>
 #include <kservice.h>
@@ -415,7 +416,7 @@ bool MimeTypeData::canUseGroupSetting() const
     // "Use group settings" isn't available for zip, tar etc.; those have a builtin default...
     if (!m_mimetype) // e.g. new mimetype
         return true;
-    const bool hasLocalProtocolRedirect = !m_mimetype->property( "X-KDE-LocalProtocol" ).toString().isEmpty();
+    const bool hasLocalProtocolRedirect = !KProtocolManager::protocolForArchiveMimetype(name()).isEmpty();
     return !hasLocalProtocolRedirect;
 }
 
