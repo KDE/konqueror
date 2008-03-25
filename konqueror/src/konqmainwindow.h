@@ -463,7 +463,7 @@ private Q_SLOTS:
   void slotClosedItemsListAboutToShow();
   void updateClosedItemsAction();
 
-  void slotUpActivated( int id );
+  void slotUpActivated(QAction* action);
   void slotBackActivated( int id );
   void slotForwardActivated( int id );
   void slotGoHistoryDelayed();
