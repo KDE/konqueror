@@ -103,7 +103,7 @@ private:
  * Provides a shared singleton for all Konq window instances.
  * This class is a singleton, use self() to access its only instance.
  */
-class KDE_EXPORT KonqUndoManagerCommunicator : public QObject
+class KONQ_TESTS_EXPORT KonqUndoManagerCommunicator : public QObject
 {
     Q_OBJECT
 public:
