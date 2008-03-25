@@ -464,8 +464,8 @@ private Q_SLOTS:
   void updateClosedItemsAction();
 
   void slotUpActivated(QAction* action);
-  void slotBackActivated( int id );
-  void slotForwardActivated( int id );
+  void slotBackActivated(QAction* action);
+  void slotForwardActivated(QAction* action);
   void slotGoHistoryDelayed();
 
   void slotCompletionModeChanged( KGlobalSettings::Completion );
