@@ -60,7 +60,7 @@ class KonqTabsStyle : public KonqProxyStyle
 {
 public:
   KonqTabsStyle(QWidget *parent) : KonqProxyStyle(parent) {}
- 
+
   void drawPrimitive(PrimitiveElement element, const QStyleOption *option, QPainter *painter, const QWidget *widget) const;
   QRect subElementRect(SubElement element, const QStyleOption *option, const QWidget *widget) const;
 };
@@ -427,11 +427,11 @@ void KonqFrameTabs::refreshSubPopupMenuTab()
         if ( frame && frame->activeChildView() )
         {
             QString title = frame->title().trimmed();
-            const QString url = frame->activeChildView()->url().url();
+            const KUrl url = frame->activeChildView()->url();
             if ( title.isEmpty() )
-                title = url;
+                title = url.pathOrUrl();
             title = KStringHandler::csqueeze( title, 50 );
-            m_pSubPopupMenuTab->insertItem( QIcon( KonqPixmapProvider::self()->pixmapFor( url ) ), title, i );
+            m_pSubPopupMenuTab->insertItem( KIcon( KonqPixmapProvider::self()->iconNameFor(url) ), title, i );
         }
         i++;
     }

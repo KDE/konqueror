@@ -2747,29 +2747,27 @@ void KonqMainWindow::slotSaveViewProfile()
 
 void KonqMainWindow::slotUpAboutToShow()
 {
-  QMenu *popup = m_paUp->menu();
+    QMenu *popup = m_paUp->menu();
+    popup->clear();
 
-  popup->clear();
+    int i = 0;
 
-  uint i = 0;
-
-  // Use the location bar URL, because in case we display a index.html
-  // we want to go up from the dir, not from the index.html
-  KUrl u( m_currentView->locationBarURL() );
-  u = u.upUrl();
-  while ( u.hasPath() )
-  {
-    popup->insertItem( QIcon( KonqPixmapProvider::self()->pixmapFor( u.url() ) ),
-                       u.pathOrUrl() );
-
-    if ( u.path() == "/" )
-        break;
-
-    if ( ++i > 10 )
-      break;
-
+    // Use the location bar URL, because in case we display a index.html
+    // we want to go up from the dir, not from the index.html
+    KUrl u(m_currentView->locationBarURL());
     u = u.upUrl();
-  }
+    while (u.hasPath()) {
+        QAction* action = new QAction(KIcon(KonqPixmapProvider::self()->iconNameFor(u)),
+                                      u.pathOrUrl(),
+                                      popup);
+        action->setData(u);
+        popup->addAction(action);
+
+        if (u.path() == "/" || ++i > 10)
+            break;
+
+        u = u.upUrl();
+    }
 }
 
 void KonqMainWindow::slotUp(Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers)
@@ -2812,14 +2810,9 @@ void KonqMainWindow::slotUpDelayed()
     m_goMouseState = Qt::LeftButton;
 }
 
-void KonqMainWindow::slotUpActivated( int id )
+void KonqMainWindow::slotUpActivated(QAction* action)
 {
-  KUrl u( m_currentView->locationBarURL() );
-  kDebug(1202) << "slotUpActivated. Start URL is " << u;
-  const int idx = m_paUp->menu()->indexOf( id ) + 1;
-  for ( int i = 0 ; i < idx ; i ++ )
-      u = u.upUrl();
-  openUrl( 0, u );
+    openUrl( 0, action->data().value<KUrl>() );
 }
 
 void KonqMainWindow::slotGoMenuAboutToShow()
@@ -3550,7 +3543,7 @@ void KonqMainWindow::initActions()
   connect( m_paUp, SIGNAL( triggered( Qt::MouseButtons, Qt::KeyboardModifiers) ), this,
 	   SLOT( slotUp(Qt::MouseButtons, Qt::KeyboardModifiers) ) );
   connect( m_paUp->menu(), SIGNAL( aboutToShow() ), this, SLOT( slotUpAboutToShow() ) );
-  connect( m_paUp->menu(), SIGNAL( activated( int ) ), this, SLOT( slotUpActivated( int ) ) );
+  connect( m_paUp->menu(), SIGNAL(triggered(QAction *)), this, SLOT(slotUpActivated(QAction*)) );
 
   QPair< KGuiItem, KGuiItem > backForward = KStandardGuiItem::backAndForward();
 

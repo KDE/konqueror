@@ -74,9 +74,10 @@ void KonqBidiHistoryAction::fillHistoryPopup( const QList<HistoryEntry*> &histor
       {
           int id = popup->insertItem( text ); // no pixmap if checked
           popup->setItemChecked( id, true );
-      } else
-          popup->insertItem( QIcon( KonqPixmapProvider::self()->pixmapFor(
-                                        history[ index ]->url.url() ) ), text );
+      } else {
+          popup->insertItem(KIcon(KonqPixmapProvider::self()->iconNameFor(
+                                      history[ index ]->url)), text );
+      }
       if ( ++i > 10 )
           break;
       if ( !onlyForward ) --index; else ++index;
@@ -300,7 +301,7 @@ void KonqMostOftenURLSAction::slotFillMenu()
 		       entry.title;
 
 	menu()->insertItem(
-		    QIcon(KonqPixmapProvider::self()->pixmapFor( entry.url.url() )),
+		    KIcon(KonqPixmapProvider::self()->iconNameFor(entry.url)),
 		    text, id );
         // Keep a copy of the URLs being shown in the menu
         // This prevents crashes when another process tells us to remove an entry.
