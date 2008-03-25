@@ -31,14 +31,14 @@
 #include "konqsidebarplugin.h"
 #include "konqsidebariface_p.h"
 
-#ifdef Q_OS_WIN
-# ifdef MAKE_KONQ_SIDEBAR_LIB
+#ifndef KONQSIDEBAR_EXPORT
+# if defined(MAKE_KONQ_SIDEBAR_LIB)
+    /* We are building this library */
 #  define KONQSIDEBAR_EXPORT KDE_EXPORT
 # else
+   /* We are using this library */
 #  define KONQSIDEBAR_EXPORT KDE_IMPORT
 # endif
-#else
-# define KONQSIDEBAR_EXPORT KDE_EXPORT
 #endif
 
 class QHBoxLayout;

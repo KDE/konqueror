@@ -29,14 +29,14 @@
 #include <kfileitem.h>
 #include <kcomponentdata.h>
 
-#ifdef Q_OS_WIN
-# ifdef MAKE_KONQSIDEBARPLUGIN_LIB
+#ifndef KONQSIDEBARPLUGIN_EXPORT
+# if defined(MAKE_KONQSIDEBARPLUGIN_LIB)
+    /* We are building this library */
 #  define KONQSIDEBARPLUGIN_EXPORT KDE_EXPORT
 # else
+   /* We are using this library */
 #  define KONQSIDEBARPLUGIN_EXPORT KDE_IMPORT
 # endif
-#else
-# define KONQSIDEBARPLUGIN_EXPORT KDE_EXPORT
 #endif
 
 class KonqSidebarPluginPrivate;
