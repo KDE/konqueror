@@ -135,18 +135,18 @@ void KonqSidebarHistoryItem::paintCell( QPainter *p, const QColorGroup & cg,
     QDateTime current = QDateTime::currentDateTime();
 
     if ( s_settings->m_metricYoungerThan == KonqSidebarHistorySettings::DAYS )
-	dt = current.addDays( - s_settings->m_valueYoungerThan );
+	dt = current.addDays( - (int)s_settings->m_valueYoungerThan );
     else
-	dt = current.addSecs( - (s_settings->m_valueYoungerThan * 60) );
+	dt = current.addSecs( - ((int)s_settings->m_valueYoungerThan * 60) );
 
     if ( m_entry.lastVisited > dt )
 	p->setFont( s_settings->m_fontYoungerThan );
 
     else {
 	if ( s_settings->m_metricOlderThan == KonqSidebarHistorySettings::DAYS )
-	    dt = current.addDays( - s_settings->m_valueOlderThan );
+	    dt = current.addDays( - (int)s_settings->m_valueOlderThan );
 	else
-	    dt = current.addSecs( - (s_settings->m_valueOlderThan * 60) );
+	    dt = current.addSecs( - ((int)s_settings->m_valueOlderThan * 60) );
 
 	if ( m_entry.lastVisited < dt )
 	    p->setFont( s_settings->m_fontOlderThan );
