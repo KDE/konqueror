@@ -49,7 +49,10 @@ bool SearchWidgetDialog::caseSensitive() const
 
 void SearchWidgetDialog::slotSearch()
 {
-    bool status = m_page->findText( searchText() );
+    QWebPage::FindFlags flags;
+    if ( caseSensitive() )
+        flags |= QWebPage::FindCaseSensitively;
+    bool status = m_page->findText( searchText(), flags );
     if ( !status )
     {
         KMessageBox::information( this, i18n( "No text found." ) );
