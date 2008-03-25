@@ -2931,10 +2931,10 @@ void KonqMainWindow::slotBack(Qt::MouseButtons buttons, Qt::KeyboardModifiers mo
   slotGoHistoryActivated( -1, buttons, modifiers );
 }
 
-void KonqMainWindow::slotBackActivated( int id )
+void KonqMainWindow::slotBackActivated(QAction* action)
 {
     KMenu* backMenu = static_cast<KMenu *>( m_paBack->menu() );
-    slotGoHistoryActivated( -(backMenu->indexOf( id ) + 1), backMenu->mouseButtons(), backMenu->keyboardModifiers());
+    slotGoHistoryActivated( -action->data().toInt(), backMenu->mouseButtons(), backMenu->keyboardModifiers());
 }
 
 void KonqMainWindow::slotForwardAboutToShow()
@@ -2954,10 +2954,10 @@ void KonqMainWindow::slotForward(Qt::MouseButtons buttons, Qt::KeyboardModifiers
     slotGoHistoryActivated( 1, buttons, modifiers );
 }
 
-void KonqMainWindow::slotForwardActivated( int id )
+void KonqMainWindow::slotForwardActivated(QAction* action)
 {
     KMenu* forwardMenu = static_cast<KMenu *>( m_paForward->menu() );
-    slotGoHistoryActivated( forwardMenu->indexOf( id ) + 1, forwardMenu->mouseButtons(), forwardMenu->keyboardModifiers() );
+    slotGoHistoryActivated( action->data().toInt(), forwardMenu->mouseButtons(), forwardMenu->keyboardModifiers() );
 }
 
 void KonqMainWindow::checkDisableClearButton()
@@ -3568,7 +3568,7 @@ void KonqMainWindow::initActions()
   connect( m_paBack, SIGNAL( triggered( Qt::MouseButtons, Qt::KeyboardModifiers) ), this,
 	   SLOT( slotBack(Qt::MouseButtons, Qt::KeyboardModifiers) ) );
   connect( m_paBack->menu(), SIGNAL( aboutToShow() ), this, SLOT( slotBackAboutToShow() ) );
-  connect( m_paBack->menu(), SIGNAL( activated( int ) ), this, SLOT( slotBackActivated( int ) ) );
+  connect( m_paBack->menu(), SIGNAL(triggered(QAction*)), this, SLOT(slotBackActivated(QAction *)) );
 
   m_paForward = new KToolBarPopupAction( KIcon(backForward.second.iconName()), backForward.second.text(), this );
   actionCollection()->addAction( "go_forward", m_paForward );
@@ -3576,7 +3576,7 @@ void KonqMainWindow::initActions()
   connect( m_paForward, SIGNAL( triggered( Qt::MouseButtons, Qt::KeyboardModifiers) ), this,
 	   SLOT( slotForward(Qt::MouseButtons, Qt::KeyboardModifiers) ) );
   connect( m_paForward->menu(), SIGNAL( aboutToShow() ), this, SLOT( slotForwardAboutToShow() ) );
-  connect( m_paForward->menu(), SIGNAL( activated( int ) ), this, SLOT( slotForwardActivated( int ) ) );
+  connect( m_paForward->menu(), SIGNAL(triggered(QAction*)), this, SLOT(slotForwardActivated(QAction *)) );
 
   m_paHistory = new KonqBidiHistoryAction( i18n("History"), this );
   actionCollection()->addAction( "history", m_paHistory );

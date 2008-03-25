@@ -67,20 +67,19 @@ void KonqBidiHistoryAction::fillHistoryPopup( const QList<HistoryEntry*> &histor
   uint i = 0;
   while ( index < history.count() && index >= 0 )
   {
-      QString text = history[ index ]->title;
-      text = fm.elidedText(text, Qt::ElideMiddle, fm.maxWidth() * 30);
-      text.replace( "&", "&&" );
-      if ( checkCurrentItem && history[ index ] == current )
-      {
-          int id = popup->insertItem( text ); // no pixmap if checked
-          popup->setItemChecked( id, true );
-      } else {
-          popup->insertItem(KIcon(KonqPixmapProvider::self()->iconNameFor(
-                                      history[ index ]->url)), text );
-      }
-      if ( ++i > 10 )
-          break;
-      if ( !onlyForward ) --index; else ++index;
+        QString text = history[ index ]->title;
+        text = fm.elidedText(text, Qt::ElideMiddle, fm.maxWidth() * 30);
+        text.replace( "&", "&&" );
+        const QString iconName = KonqPixmapProvider::self()->iconNameFor(history[index]->url);
+        QAction* action = new QAction(KIcon(iconName), text, popup);
+        if (checkCurrentItem && history[index] == current) {
+            action->setChecked(true);
+        }
+        action->setData(i);
+        popup->addAction(action);
+        if (++i > 10)
+            break;
+        if (!onlyForward) --index; else ++index;
   }
   //kDebug(1202) << "After fillHistoryPopup position: " << history.at();
 }
