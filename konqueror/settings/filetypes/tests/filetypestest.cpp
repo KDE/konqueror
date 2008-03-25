@@ -41,14 +41,12 @@ private Q_SLOTS:
         m_mimeTypeCreatedSuccessfully = false;
         const QString kdehome = QDir::home().canonicalPath() + "/.kde-unit-test";
         // We need a place where we can hack a mimeapps.list without harm, so not ~/.local
-        // This test relies on shared-mime-info being installed in /usr/share [or kdedir/share]
-        //::setenv("XDG_DATA_DIRS", QFile::encodeName(kdehome + "/share:/usr/share"), 1 );
-        ::setenv("XDG_DATA_HOME", QFile::encodeName(kdehome) + "/local", 1);
+        ::setenv("XDG_DATA_HOME", QFile::encodeName(kdehome) + "/xdg/local", 1);
         QStringList appsDirs = KGlobal::dirs()->resourceDirs("xdgdata-apps");
         //kDebug() << appsDirs;
-        m_localApps = kdehome + "/local/applications/";
+        m_localApps = kdehome + "/xdg/local/applications/";
         QCOMPARE(appsDirs.first(), m_localApps);
-        QCOMPARE(KGlobal::dirs()->resourceDirs("xdgdata-mime").first(), kdehome + "/local/mime/");
+        QCOMPARE(KGlobal::dirs()->resourceDirs("xdgdata-mime").first(), kdehome + "/xdg/local/mime/");
 
         QFile::remove(m_localApps + "mimeapps.list");
 
@@ -157,7 +155,7 @@ private Q_SLOTS:
         newPatterns.sort();
         QCOMPARE(newPatterns, patterns);
 
-        // Remove custom file (it's in ~/.local, not in ~/.kde-unit-test, so it messes up the user's configuration!)
+        // Remove custom file
         const QString packageFileName = KStandardDirs::locateLocal( "xdgdata-mime", "packages/text-plain.xml" );
         QVERIFY(!packageFileName.isEmpty());
         QFile::remove(packageFileName);
