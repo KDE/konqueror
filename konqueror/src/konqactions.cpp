@@ -285,7 +285,7 @@ void KonqMostOftenURLSAction::slotHistoryCleared()
 
 void KonqMostOftenURLSAction::slotFillMenu()
 {
-    if ( !s_mostEntries ) // first time
+    if ( s_mostEntries->isEmpty() ) // first time
 	parseHistory();
 
     menu()->clear();
