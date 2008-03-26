@@ -2815,15 +2815,6 @@ void KonqMainWindow::slotUpActivated(QAction* action)
     openUrl( 0, action->data().value<KUrl>() );
 }
 
-#if 0
-void KonqMainWindow::slotGoMenuAboutToShow()
-{
-  kDebug(1202) << "KonqMainWindow::slotGoMenuAboutToShow";
-  if ( m_paHistory && m_currentView ) // (maybe this is before initialisation)
-      m_paHistory->fillGoMenu( m_currentView->history(), m_currentView->historyIndex() );
-}
-#endif
-
 void KonqMainWindow::slotGoHistoryActivated( int steps )
 {
     slotGoHistoryActivated( steps, Qt::LeftButton, Qt::NoModifier );
@@ -3580,26 +3571,22 @@ void KonqMainWindow::initActions()
   connect( m_paForward->menu(), SIGNAL( aboutToShow() ), this, SLOT( slotForwardAboutToShow() ) );
   connect( m_paForward->menu(), SIGNAL(triggered(QAction*)), this, SLOT(slotForwardActivated(QAction *)) );
 
-#if 0
-  m_paHistory = new KonqBidiHistoryAction( i18n("History"), this );
-  actionCollection()->addAction( "history", m_paHistory );
-  connect( m_paHistory, SIGNAL( menuAboutToShow() ), this, SLOT( slotGoMenuAboutToShow() ) );
-  connect( m_paHistory, SIGNAL( step( int ) ), this, SLOT( slotGoHistoryActivated( int ) ) );
-#endif
-
   m_paHome = actionCollection()->addAction( KStandardAction::Home );
   m_paHome->setEnabled( true );
   connect( m_paHome, SIGNAL( triggered( Qt::MouseButtons, Qt::KeyboardModifiers) ), this,
 	   SLOT( slotHome(Qt::MouseButtons, Qt::KeyboardModifiers) ) );
 
-  KonqMostOftenURLSAction *mostOften = new KonqMostOftenURLSAction( i18n("Most Often Visited"), this );
+  KonqMostOftenURLSAction *mostOften = new KonqMostOftenURLSAction( i18nc("@action:inmenu Go", "Most Often Visited"), this );
   actionCollection()->addAction( "go_most_often", mostOften );
-  connect( mostOften, SIGNAL( activated( const KUrl& )),
-	   SLOT( slotOpenURL( const KUrl& )));
+  connect(mostOften, SIGNAL(activated(KUrl)), SLOT(slotOpenURL(KUrl)));
+
+  action = new KonqHistoryAction(i18nc("@action:inmenu Go", "Recently Visited"), this);
+  actionCollection()->addAction("history", action);
+  connect(action, SIGNAL(activated(KUrl)), SLOT(slotOpenURL(KUrl)));
 
   action = actionCollection()->addAction("go_history");
   action->setIcon(KIcon("view-history"));
-  action->setText(i18n("Show history in Sidebar"));
+  action->setText(i18nc("@action:inmenu Go", "Show History in Sidebar"));
   connect(action, SIGNAL(triggered()), SLOT(slotGoHistory()));
 
   // Settings menu

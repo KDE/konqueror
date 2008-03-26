@@ -31,7 +31,6 @@ struct HistoryEntry;
 class QMenu;
 
 namespace KonqActions {
-    // Used by KonqHistoryAction and KonqBidiHistoryAction
     void fillHistoryPopup( const QList<HistoryEntry*> &history, int historyIndex,
                            QMenu * popup,
                            bool onlyBack = false,
@@ -83,7 +82,7 @@ public:
     }
 
 Q_SIGNALS:
-    void activated( const KUrl& );
+    void activated(const KUrl&);
 
 private Q_SLOTS:
     void slotHistoryCleared();
@@ -91,13 +90,31 @@ private Q_SLOTS:
     void slotEntryRemoved( const KonqHistoryEntry& entry );
 
     void slotFillMenu();
-
     void slotActivated(QAction* action);
 
 private:
     void init();
     void parseHistory();
     static void inSort( const KonqHistoryEntry& entry );
+    bool m_parsingDone;
+};
+
+/////
+
+class KonqHistoryAction : public KActionMenu
+{
+    Q_OBJECT
+
+public:
+    KonqHistoryAction(const QString& text, QObject* parent);
+    virtual ~KonqHistoryAction();
+
+Q_SIGNALS:
+    void activated(const KUrl&);
+
+private Q_SLOTS:
+    void slotFillMenu();
+    void slotActivated(QAction* action);
 };
 
 #endif
