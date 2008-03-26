@@ -42,8 +42,8 @@
 
 #ifdef Q_WS_WIN
 #include <QtGui/QFileDialog>
-#include <unistd.h>
 #endif
+#include <unistd.h>
 
 using namespace std;
 
