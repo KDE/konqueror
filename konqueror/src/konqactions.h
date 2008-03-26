@@ -20,6 +20,7 @@
 #ifndef __konq_actions_h__
 #define __konq_actions_h__
 
+#include <ktoolbarpopupaction.h>
 #include <konqhistorymanager.h>
 #include <kactionmenu.h>
 #include <QtGui/QWidget>
@@ -29,11 +30,22 @@
 struct HistoryEntry;
 class QMenu;
 
+namespace KonqActions {
+    // Used by KonqHistoryAction and KonqBidiHistoryAction
+    void fillHistoryPopup( const QList<HistoryEntry*> &history, int historyIndex,
+                           QMenu * popup,
+                           bool onlyBack = false,
+                           bool onlyForward = false,
+                           bool checkCurrentItem = false,
+                           int startPos = 0 );
+}
+
+#if 0
 /**
  * Plug this action into a menu to get a bidirectional history
  * (both back and forward, including current location)
  */
-class KonqBidiHistoryAction : public KAction
+class KonqBidiHistoryAction : public KToolBarPopupAction
 {
   Q_OBJECT
 public:
@@ -41,16 +53,6 @@ public:
     virtual ~KonqBidiHistoryAction();
 
     void fillGoMenu( const QList<HistoryEntry*> &history, int historyIndex );
-
-    // Used by KonqHistoryAction and KonqBidiHistoryAction
-    static void fillHistoryPopup( const QList<HistoryEntry*> &history, int historyIndex,
-                           QMenu * popup,
-                           bool onlyBack = false,
-                           bool onlyForward = false,
-                           bool checkCurrentItem = false,
-                           int startPos = 0 );
-
-    virtual QWidget* createWidget(QWidget* parent);
 
 protected Q_SLOTS:
     void slotTriggered( QAction* action );
@@ -60,10 +62,11 @@ Q_SIGNALS:
     // -1 for one step back, 0 for don't move, +1 for one step forward, etc.
     void step( int );
 private:
-    int m_firstIndex; // first index in the Go menu
     int m_startPos;
     int m_currentPos; // == history.at()
 };
+
+#endif
 
 /////
 
@@ -88,16 +91,13 @@ private Q_SLOTS:
     void slotEntryRemoved( const KonqHistoryEntry& entry );
 
     void slotFillMenu();
-    //void slotClearMenu();
 
-    void slotActivated( int );
+    void slotActivated(QAction* action);
 
 private:
     void init();
     void parseHistory();
     static void inSort( const KonqHistoryEntry& entry );
-
-    KUrl::List m_popupList;
 };
 
 #endif

@@ -455,7 +455,9 @@ private Q_SLOTS:
 
   void slotOpenWith();
 
+#if 0
   void slotGoMenuAboutToShow();
+#endif
   void slotUpAboutToShow();
   void slotBackAboutToShow();
   void slotForwardAboutToShow();
@@ -615,7 +617,9 @@ private: // members
   KToolBarPopupAction *m_paClosedItems;
   KAction *m_paHome;
 
+#if 0
   KonqBidiHistoryAction *m_paHistory;
+#endif
 
   KAction *m_paSaveViewProfile;
 
