@@ -56,11 +56,11 @@ public slots:
 
     /**
      * Change the type of view (i.e. loads a new konqueror view)
-     * @param serviceType the service type we want to show
+     * @param mimeType the mime type we want to show
      * @param serviceName allows to enforce a particular service to be chosen,
      *        @see KonqFactory.
      */
-    bool changeViewMode( const QString &serviceType,
+    bool changeViewMode( const QString &mimeType,
                          const QString &serviceName );
 
     /**

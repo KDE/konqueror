@@ -105,17 +105,25 @@ public:
                 const QString &nameFilter = QString(),
                 bool tempFile = false );
 
-  /**
-   * Change the type of view (i.e. loads a new konqueror view)
-   * Contract: the caller should call stop() first,
-   *
-   * @param serviceType the service type we want to show
-   * @param serviceName allows to enforce a particular service to be chosen,
-   *        @see KonqFactory.
-   */
-  bool changeViewMode( const QString &serviceType,
-                       const QString &serviceName = QString(),
-                       bool forceAutoEmbed = false );
+    /**
+     * Change the part inside this view if necessary.
+     * Contract: the caller should call stop() first.
+     *
+     * @param mimeType the mime type we want to show
+     * @param serviceName allows to enforce a particular service to be chosen,
+     *        @see KonqFactory.
+     * @param forceAutoEmbed
+     */
+    bool changePart(const QString &mimeType,
+                    const QString &serviceName = QString(),
+                    bool forceAutoEmbed = false);
+
+    /**
+     * Ensures that this view's part supports the given @p mimeType,
+     * otherwise calls changePart.
+     */
+    bool ensureViewSupports(const QString& mimeType,
+                            bool forceAutoEmbed);
 
   /**
    * Call this to prevent next openUrl() call from changing history lists
@@ -351,7 +359,7 @@ public:
 Q_SIGNALS:
 
   /**
-   * Signal the main window that the embedded part changed (e.g. because of changeViewMode)
+   * Signal the main window that the embedded part changed (e.g. because of changePart)
    */
   void sigPartChanged( KonqView *childView, KParts::ReadOnlyPart *oldPart, KParts::ReadOnlyPart *newPart );
 

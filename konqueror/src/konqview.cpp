@@ -305,31 +305,39 @@ void KonqView::switchView( KonqViewFactory &viewFactory )
   }
 }
 
-bool KonqView::changeViewMode( const QString &serviceType,
-                               const QString &serviceName,
-                               bool forceAutoEmbed )
+bool KonqView::ensureViewSupports( const QString &mimeType,
+                                   bool forceAutoEmbed )
 {
-  // Caller should call stop first.
-  assert ( !m_bLoading );
+    if (supportsMimeType(mimeType))
+        return true;
+    return changePart(mimeType, QString(), forceAutoEmbed);
+}
 
-  kDebug(1202) << "changeViewMode: serviceType is " << serviceType
-                << " serviceName is " << serviceName
-                << " current service name is " << m_service->desktopEntryName();
+bool KonqView::changePart(const QString &mimeType,
+                          const QString &serviceName,
+                          bool forceAutoEmbed)
+{
+    // Caller should call stop first.
+    assert( !m_bLoading );
 
-  if ( KMimeType::mimeType(serviceType) && KMimeType::mimeType(serviceType)->is(m_serviceType) && (serviceName.isEmpty() || serviceName == m_service->desktopEntryName()) )
-    return true;
+    //kDebug(1202) << "mimeType=" << mimeType
+    //             << "requested serviceName=" << serviceName
+    //             << "current service name=" << m_service->desktopEntryName();
 
-  if ( isLockedViewMode() )
-  {
-    //kDebug(1202) << "This view's mode is locked - can't change";
-    return false; // we can't do that if our view mode is locked
-  }
+    if (serviceName == m_service->desktopEntryName()) {
+        m_serviceType = mimeType;
+        return true;
+    }
 
-  kDebug(1202) << "Switching view modes...";
-  KService::List partServiceOffers, appServiceOffers;
-  KService::Ptr service;
-  KonqFactory konqFactory;
-  KonqViewFactory viewFactory = konqFactory.createView( serviceType, serviceName, &service, &partServiceOffers, &appServiceOffers, forceAutoEmbed );
+    if (isLockedViewMode()) {
+        //kDebug(1202) << "This view's mode is locked - can't change";
+        return false; // we can't do that if our view mode is locked
+    }
+
+    KService::List partServiceOffers, appServiceOffers;
+    KService::Ptr service;
+    KonqFactory konqFactory;
+    KonqViewFactory viewFactory = konqFactory.createView( mimeType, serviceName, &service, &partServiceOffers, &appServiceOffers, forceAutoEmbed );
 
   if ( viewFactory.isNull() )
   {
@@ -339,12 +347,12 @@ bool KonqView::changeViewMode( const QString &serviceType,
     return false;
   }
 
-  m_serviceType = serviceType;
+  m_serviceType = mimeType;
   m_partServiceOffers = partServiceOffers;
   m_appServiceOffers = appServiceOffers;
 
   // Check if that's already the kind of part we have -> no need to recreate it
-  // Note: we should have an operator= for KService...
+  // Note: we should have an operator== for KService...
   if ( m_service && m_service->entryPath() == service->entryPath() )
   {
     kDebug( 1202 ) << "KonqView::changeViewMode. Reusing service. Service type set to " << m_serviceType;
@@ -823,12 +831,11 @@ void KonqView::restoreHistory()
   setLocationBarURL( h.locationBarURL );
   setPageSecurity( h.pageSecurity );
   m_sTypedURL.clear();
-  if ( ! changeViewMode( h.strServiceType, h.strServiceName ) )
-  {
-    kWarning(1202) << "Couldn't change view mode to " << h.strServiceType
-                    << " " << h.strServiceName;
-    return /*false*/;
-  }
+
+    if (!changePart(h.strServiceType, h.strServiceName)) {
+        kWarning(1202) << "Couldn't change view mode to" << h.strServiceType << h.strServiceName;
+        return /*false*/;
+    }
 
   setPartMimeType();
 

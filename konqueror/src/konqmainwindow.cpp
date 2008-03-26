@@ -467,7 +467,7 @@ void KonqMainWindow::openFilteredUrl( const QString & url, KonqOpenURLRequest & 
 
     // #4070: Give focus to view after URL was entered manually
     // Note: we do it here if the view mode (i.e. part) wasn't changed
-    // If it is changed, then it's done in KonqView::changeViewMode
+    // If it is changed, then it's done in KonqView::changePart
     if ( m_currentView && m_currentView->part() )
       m_currentView->part()->widget()->setFocus();
 
@@ -731,7 +731,7 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
   // In case we open an index.html, we want the location bar
   // to still display the original URL (so that 'up' uses that URL,
   // and since that's what the user entered).
-  // changeViewMode will take care of setting and storing that url.
+  // changePart will take care of setting and storing that url.
   QString originalURL = url.pathOrUrl();
   if ( !req.nameFilter.isEmpty() ) // keep filter in location bar
   {
@@ -769,14 +769,14 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
               KConfig config(urlDotDir.path(), KConfig::SimpleConfig);
               KConfigGroup urlProperties( &config, "URL properties" );
               HTMLAllowed = urlProperties.readEntry( "HTMLAllowed", m_bHTMLAllowed);
-              serviceName = urlProperties.readEntry( "ViewMode", serviceName );
+              //serviceName = urlProperties.readEntry( "ViewMode", serviceName );
               //kDebug(1202) << "serviceName=" << serviceName;
           }
           if ( HTMLAllowed &&
                ( !( indexFile = findIndexFile( url.path() ) ).isEmpty() ) ) {
               mimeType = "text/html";
               url = KUrl(indexFile);
-              serviceName.clear(); // cancel what we just set, this is not a dir finally
+              //serviceName.clear(); // cancel what we just set, this is not a dir finally
           }
 
           // Reflect this setting in the menu
@@ -863,8 +863,19 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
                   return true; // handled
               }
           }
-          if ( ok )
-              ok = childView->changeViewMode( mimeType, serviceName, forceAutoEmbed );
+          if ( ok ) {
+
+              // When typing a new URL, the current context doesn't matter anymore
+              // -> select the preferred part for a given mimetype (even if the current part can handle this mimetype).
+              // This fixes the "get katepart and then type a website URL -> loaded into katepart" problem
+              // (first fixed in r168902 from 2002!, see also unittest KonqHtmlTest::textThenHtml())
+
+              if (!req.typedUrl.isEmpty() || !serviceName.isEmpty()) {
+                  ok = childView->changePart( mimeType, serviceName, forceAutoEmbed );
+              } else {
+                  ok = childView->ensureViewSupports( mimeType, forceAutoEmbed );
+              }
+          }
       }
   }
 
@@ -1555,7 +1566,7 @@ void KonqMainWindow::slotOpenWith()
 
 void KonqMainWindow::slotViewModeTriggered(QAction* action)
 {
-    // Gather data from the action, since the action will be deleted by changeViewMode
+    // Gather data from the action, since the action will be deleted by changePart
     const QString modeName = action->objectName();
     const QString internalViewMode = action->data().toString();
 
@@ -1563,7 +1574,7 @@ void KonqMainWindow::slotViewModeTriggered(QAction* action)
         m_currentView->stop();
         m_currentView->lockHistory();
 
-        // Save those, because changeViewMode will lose them
+        // Save those, because changePart will lose them
         KUrl url = m_currentView->url();
         QString locationBarURL = m_currentView->locationBarURL();
 #if 0
@@ -1579,7 +1590,7 @@ void KonqMainWindow::slotViewModeTriggered(QAction* action)
         }
 #endif
 
-        m_currentView->changeViewMode( m_currentView->serviceType(), modeName );
+        m_currentView->changePart( m_currentView->serviceType(), modeName );
         KUrl locURL( locationBarURL );
         QString nameFilter = detectNameFilter( locURL );
 #if 0
@@ -4712,8 +4723,8 @@ void KonqMainWindow::slotOpenEmbedded(KService::Ptr service)
     m_currentView->stop();
     m_currentView->setLocationBarURL(m_popupUrl);
     m_currentView->setTypedURL(QString());
-    if ( m_currentView->changeViewMode( m_popupServiceType,
-                                        service->desktopEntryName() ) )
+    if ( m_currentView->changePart( m_popupServiceType,
+                                    service->desktopEntryName(), true ) )
         m_currentView->openUrl( m_popupUrl, m_popupUrl.pathOrUrl() );
 }
 
