@@ -47,9 +47,7 @@ template class QList<KonqHistoryEntry*>;
 void KonqActions::fillHistoryPopup(const QList<HistoryEntry*> &history, int historyIndex,
                                    QMenu * popup,
                                    bool onlyBack,
-                                   bool onlyForward,
-                                   bool checkCurrentItem,
-                                   int startPos)
+                                   bool onlyForward)
 {
   assert ( popup ); // kill me if this 0... :/
 
@@ -60,8 +58,7 @@ void KonqActions::fillHistoryPopup(const QList<HistoryEntry*> &history, int hist
   {
       index += historyIndex; // Jump to current item
       if ( !onlyForward ) --index; else ++index; // And move off it
-  } else if ( startPos )
-      index += startPos; // Jump to specified start pos
+  }
 
   QFontMetrics fm = popup->fontMetrics();
   uint i = 0;
@@ -72,9 +69,6 @@ void KonqActions::fillHistoryPopup(const QList<HistoryEntry*> &history, int hist
         text.replace( "&", "&&" );
         const QString iconName = KonqPixmapProvider::self()->iconNameFor(history[index]->url);
         QAction* action = new QAction(KIcon(iconName), text, popup);
-        if (checkCurrentItem && history[index] == current) {
-            action->setChecked(true);
-        }
         action->setData(i);
         popup->addAction(action);
         if (++i > 10)

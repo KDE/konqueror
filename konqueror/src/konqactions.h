@@ -31,12 +31,10 @@ struct HistoryEntry;
 class QMenu;
 
 namespace KonqActions {
-    void fillHistoryPopup( const QList<HistoryEntry*> &history, int historyIndex,
-                           QMenu * popup,
-                           bool onlyBack = false,
-                           bool onlyForward = false,
-                           bool checkCurrentItem = false,
-                           int startPos = 0 );
+    void fillHistoryPopup(const QList<HistoryEntry*> &history, int historyIndex,
+                          QMenu * popup,
+                          bool onlyBack,
+                          bool onlyForward);
 }
 
 #if 0

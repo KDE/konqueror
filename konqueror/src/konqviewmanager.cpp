@@ -855,6 +855,7 @@ void KonqViewManager::loadViewProfileFromFile( const QString & path, const QStri
     loadViewProfileFromConfig(config, filename, forcedUrl, req, resetWindow, openUrl );
 }
 
+
 void KonqViewManager::loadViewProfileFromConfig( const KConfig& cfg, const QString & filename,
                                                  const KUrl & forcedUrl,
                                                  const KonqOpenURLRequest &req,
@@ -1305,17 +1306,13 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
 
 void KonqViewManager::setProfiles( KActionMenu *profiles )
 {
-  m_pamProfiles = profiles;
-
-  if ( m_pamProfiles )
-  {
-    connect( m_pamProfiles->menu(), SIGNAL( activated( int ) ),
-             this, SLOT( slotProfileActivated( int ) ) );
-    connect( m_pamProfiles->menu(), SIGNAL( aboutToShow() ),
-             this, SLOT( slotProfileListAboutToShow() ) );
-  }
-  //KonqMainWindow::enableAllActions will call it anyway
-  //profileListDirty();
+    m_pamProfiles = profiles;
+    connect(m_pamProfiles->menu(), SIGNAL(triggered(QAction *)),
+            this, SLOT(slotProfileActivated(QAction *)));
+    connect(m_pamProfiles->menu(), SIGNAL(aboutToShow()),
+            this, SLOT(slotProfileListAboutToShow()));
+    //KonqMainWindow::enableAllActions will call it anyway
+    //profileListDirty();
 }
 
 void KonqViewManager::showProfileDlg( const QString & preselectProfile )
@@ -1332,29 +1329,20 @@ void KonqViewManager::slotProfileDlg()
 
 void KonqViewManager::profileListDirty( bool broadcast )
 {
-  if ( !broadcast )
-  {
-    m_bProfileListDirty = true;
-#if 0
-  // There's always one profile at least, now...
-  QStringList profiles = KonqFactory::componentData().dirs()->findAllResources( "data", "konqueror/profiles/*", false, true );
-  if ( m_pamProfiles )
-      m_pamProfiles->setEnabled( profiles.count() > 0 );
-#endif
-    return;
-  }
+    if (!broadcast) {
+        m_bProfileListDirty = true;
+        return;
+    }
 
     // Send signal to all konqueror instances
     QDBusMessage message =
         QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "updateAllProfileList");
     QDBusConnection::sessionBus().send(message);
-
 }
 
-void KonqViewManager::slotProfileActivated( int id )
+void KonqViewManager::slotProfileActivated(QAction* action)
 {
-    if ( tabContainer()->count() > 1 )
-    {
+    if ( tabContainer()->count() > 1 ) {
         if ( KMessageBox::warningContinueCancel( m_pMainWindow,
                                                  i18n("You have multiple tabs open in this window.\n"
                                                       "Loading a view profile will close them."),
@@ -1389,31 +1377,22 @@ void KonqViewManager::slotProfileActivated( int id )
         showTab( originalView );
 
 
+    const QString profilePath = action->data().toString();
+    const QString fileName = KUrl(profilePath).fileName();
+    KConfig cfg(profilePath);
+    KConfigGroup profileGroup( &cfg, "Profile" );
+    const QString xmluiFile = profileGroup.readEntry("XMLUIFile","konqueror.rc");
 
-    QMap<QString, QString>::ConstIterator iter = m_mapProfileNames.begin();
-    QMap<QString, QString>::ConstIterator end = m_mapProfileNames.end();
-
-    for(int i=0; iter != end; ++iter, ++i) {
-        if( i == id ) {
-            KUrl u( *iter );
-
-            KConfig cfg( *iter );
-            KConfigGroup profileGroup( &cfg, "Profile" );
-            QString xmluiFile = profileGroup.readEntry("XMLUIFile","konqueror.rc");
-
-            //If the profile specifies an xmlgui file that differs from the currently
-            //loaded one, then we have no choice but to recreate the window.  I've
-            //experimented with trying to get xmlgui to recreate the gui, but it is
-            //too brittle.  The only other choice is to ignore the profile which is
-            //not very nice.
-            if (xmluiFile != m_pMainWindow->xmlFile()) {
-                m_pMainWindow->deleteLater();
-                KonqMisc::createBrowserWindowFromProfile( *iter, u.fileName(), m_pMainWindow->currentView()->url() );
-            } else {
-                loadViewProfileFromFile( *iter, u.fileName() );
-            }
-            break;
-        }
+    //If the profile specifies an xmlgui file that differs from the currently
+    //loaded one, then we have no choice but to recreate the window.  I've
+    //experimented with trying to get xmlgui to recreate the gui, but it is
+    //too brittle.  The only other choice is to ignore the profile which is
+    //not very nice.
+    if (xmluiFile != m_pMainWindow->xmlFile()) {
+        m_pMainWindow->deleteLater();
+        KonqMisc::createBrowserWindowFromProfile(profilePath, fileName, m_pMainWindow->currentView()->url());
+    } else {
+        loadViewProfileFromFile(profilePath, fileName);
     }
 }
 
@@ -1429,15 +1408,16 @@ void KonqViewManager::slotProfileListAboutToShow()
   m_mapProfileNames = KonqProfileDlg::readAllProfiles();
 
   // Generate accelerators
+  QStringList profileNames = m_mapProfileNames.keys();
   QStringList accel_strings;
-  KAccelGen::generateFromKeys(m_mapProfileNames, accel_strings);
+  KAccelGen::generate(profileNames, accel_strings);
 
   // Store menu items
-  QList<QString>::iterator iter = accel_strings.begin();
-  for( int id = 0;
-       iter != accel_strings.end();
-       ++iter, ++id ) {
-      popup->insertItem( *iter, id );
+  QStringList profilePaths = m_mapProfileNames.values();
+  for (int i = 0; i < accel_strings.count(); ++i) {
+      QAction* action = new QAction(accel_strings.at(i), popup);
+      action->setData(profilePaths.at(i));
+      popup->addAction(action);
   }
 
   m_bProfileListDirty = false;

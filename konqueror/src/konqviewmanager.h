@@ -307,7 +307,7 @@ private Q_SLOTS:
 
   void slotProfileDlg();
 
-  void slotProfileActivated( int id );
+  void slotProfileActivated(QAction* action);
 
   void slotProfileListAboutToShow();
 
@@ -387,7 +387,7 @@ private:
   QString m_currentProfileText;
   QString m_profileHomeURL;
 
-  QMap<QString, QString> m_mapProfileNames;
+    QMap<QString /*display name*/, QString /*path to file*/> m_mapProfileNames;
 
   QTimer *m_activePartChangedTimer;
 };
