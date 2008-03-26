@@ -45,8 +45,8 @@
   <!-- go_up, go_back, go_forward, go_home: coming from ui_standards.rc -->
   <Merge/>
   <Action name="go_history"/>
-  <Action name="go_most_often"/>
   <Separator/>
+  <Action name="go_most_often"/>
   <Action name="history"/>
   <Action name="closedtabs"/>
  </Menu>

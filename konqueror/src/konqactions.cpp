@@ -44,7 +44,6 @@ template class QList<KonqHistoryEntry*>;
 /////////////////
 
 //static - used by back/forward popups in KonqMainWindow
-// and by the (now removed) KonqBidiHistoryAction (was the history list)
 void KonqActions::fillHistoryPopup(const QList<HistoryEntry*> &history, int historyIndex,
                                    QMenu * popup,
                                    bool onlyBack,
@@ -87,87 +86,17 @@ void KonqActions::fillHistoryPopup(const QList<HistoryEntry*> &history, int hist
 
 ///////////////////////////////
 
-#if 0
-KonqBidiHistoryAction::KonqBidiHistoryAction ( const QString & text, QObject *parent )
-    : KToolBarPopupAction( KIcon() /*TODO*/, text, parent )
-{
-  setShortcutConfigurable(false);
-
-  connect( menu(), SIGNAL(aboutToShow() ), SIGNAL(menuAboutToShow()) );
-  connect( menu(), SIGNAL(triggered(QAction*) ), SLOT(slotTriggered(QAction*)) );
-}
-
-KonqBidiHistoryAction::~KonqBidiHistoryAction( )
-{
-}
-
-void KonqBidiHistoryAction::fillGoMenu( const QList<HistoryEntry*> & history, int historyIndex )
-{
-    if (history.isEmpty())
-        return; // nothing to do
-
-    //kDebug(1202) << "fillGoMenu position: " << history.at();
-    { // Clean up old history (from the end, to avoid shifts)
-        for ( int i = menu()->actions().count()-1 ; i >= 0 /*m_firstIndex*/; i-- )
-            menu()->removeAction( menu()->actions()[i] );
-    }
-    // TODO perhaps smarter algorithm (rename existing items, create new ones only if not enough) ?
-
-    // Ok, we want to show 10 items in all, among which the current url...
-
-    if ( history.count() <= 9 )
-    {
-        // First case: limited history in both directions -> show it all
-        m_startPos = history.count() - 1; // Start right from the end
-    } else
-    // Second case: big history, in one or both directions
-    {
-        // Assume both directions first (in this case we place the current URL in the middle)
-        m_startPos = historyIndex + 4;
-
-        // Forward not big enough ?
-        if ( historyIndex > history.count() - 4 )
-          m_startPos = history.count() - 1;
-    }
-    Q_ASSERT( m_startPos >= 0 && m_startPos < history.count() );
-    if ( m_startPos < 0 || m_startPos >= history.count() )
-    {
-        kWarning() << "m_startPos=" << m_startPos << " history.count()=" << history.count() ;
-        return;
-    }
-    m_currentPos = historyIndex; // for slotActivated
-    KonqActions::fillHistoryPopup( history, historyIndex, menu(), false, false, true, m_startPos );
-}
-
-void KonqBidiHistoryAction::slotTriggered( QAction* action )
-{
-  // 1 for first item in the list, etc.
-
-    // TODO use setData
-    int index = menu()->actions().indexOf(action) /*- m_firstIndex*/ + 1;
-  if ( index > 0 )
-  {
-      kDebug(1202) << "Item clicked has index " << index;
-      // -1 for one step back, 0 for don't move, +1 for one step forward, etc.
-      int steps = ( m_startPos+1 ) - index - m_currentPos; // make a drawing to understand this :-)
-      kDebug(1202) << "Emit activated with steps = " << steps;
-      emit step( steps );
-  }
-}
-#endif
-
-///////////////////////////////
-
 static int s_maxEntries = 0;
 
 KonqMostOftenURLSAction::KonqMostOftenURLSAction( const QString& text,
 						  QObject* parent )
-    : KActionMenu( KIcon("goto-page"), text, parent )
+    : KActionMenu( KIcon("goto-page"), text, parent ),
+      m_parsingDone(false)
 {
     setDelayed( false );
 
-    connect( menu(), SIGNAL(aboutToShow()), SLOT(slotFillMenu()));
-    connect( menu(), SIGNAL(activated(QAction*)), SLOT(slotActivated(QAction*)));
+    connect(menu(), SIGNAL(aboutToShow()), SLOT(slotFillMenu()));
+    connect(menu(), SIGNAL(triggered(QAction*)), SLOT(slotActivated(QAction*)));
     // Need to do all this upfront for a correct initial state
     init();
 }
@@ -254,36 +183,74 @@ void KonqMostOftenURLSAction::slotHistoryCleared()
     setEnabled( false );
 }
 
+static void createHistoryAction(const KonqHistoryEntry& entry, QMenu* menu)
+{
+    // we take either title, typedUrl or URL (in this order)
+    const QString text = entry.title.isEmpty() ? (entry.typedUrl.isEmpty() ?
+                                                  entry.url.prettyUrl() :
+                                                  entry.typedUrl) :
+                         entry.title;
+    QAction* action = new QAction(
+        KIcon(KonqPixmapProvider::self()->iconNameFor(entry.url)),
+        text, menu);
+    action->setData(entry.url);
+    menu->addAction(action);
+}
+
 void KonqMostOftenURLSAction::slotFillMenu()
 {
-    if ( s_mostEntries->isEmpty() ) // first time
+    if (!m_parsingDone) { // first time
 	parseHistory();
+        m_parsingDone = true;
+    }
 
     menu()->clear();
 
-    for ( int id = s_mostEntries->count() - 1; id >= 0; --id ) {
-        const KonqHistoryEntry entry = s_mostEntries->at( id );
-	// we take either title, typedUrl or URL (in this order)
-	const QString text = entry.title.isEmpty() ? (entry.typedUrl.isEmpty() ?
-                                                      entry.url.prettyUrl() :
-                                                      entry.typedUrl) :
-                             entry.title;
-        QAction* action = new QAction(
-            KIcon(KonqPixmapProvider::self()->iconNameFor(entry.url)),
-            text, menu());
-        action->setData(entry.url);
-        menu()->addAction(action);
+    for (int id = s_mostEntries->count() - 1; id >= 0; --id) {
+        createHistoryAction(s_mostEntries->at(id), menu());
     }
     setEnabled( !s_mostEntries->isEmpty() );
 }
 
 void KonqMostOftenURLSAction::slotActivated(QAction* action)
 {
-    const KUrl url = action->data().value<KUrl>();
-    if (url.isValid())
-	emit activated(url);
-    else
-	kWarning() << "Invalid url:" << url;
+    emit activated(action->data().value<KUrl>());
+}
+
+///////////////////////////////
+
+KonqHistoryAction::KonqHistoryAction(const QString& text, QObject* parent)
+    : KActionMenu(KIcon("goto-page"), text, parent)
+{
+    setDelayed(false);
+    connect(menu(), SIGNAL(aboutToShow()), SLOT(slotFillMenu()));
+    connect(menu(), SIGNAL(triggered(QAction*)), SLOT(slotActivated(QAction*)));
+    setEnabled(!KonqHistoryManager::kself()->entries().isEmpty());
+}
+
+KonqHistoryAction::~KonqHistoryAction()
+{
+}
+
+void KonqHistoryAction::slotFillMenu()
+{
+    menu()->clear();
+
+    // Use the same configuration as the "most visited urls" action
+    s_maxEntries = KonqSettings::numberofmostvisitedURLs();
+
+    KonqHistoryManager *mgr = KonqHistoryManager::kself();
+    const KonqHistoryList mgrEntries = mgr->entries();
+    int idx = mgrEntries.count() - 1;
+    // mgrEntries is "oldest first", so take the last s_maxEntries entries.
+    for (int n = 0; idx >= 0 && n < s_maxEntries; --idx, ++n) {
+        createHistoryAction(mgrEntries.at(idx), menu());
+    }
+}
+
+void KonqHistoryAction::slotActivated(QAction* action)
+{
+    emit activated(action->data().value<KUrl>());
 }
 
 #include "konqactions.moc"

@@ -617,10 +617,6 @@ private: // members
   KToolBarPopupAction *m_paClosedItems;
   KAction *m_paHome;
 
-#if 0
-  KonqBidiHistoryAction *m_paHistory;
-#endif
-
   KAction *m_paSaveViewProfile;
 
   KAction *m_paSplitViewHor;
