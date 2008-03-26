@@ -179,6 +179,7 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
   incInstancesCount();
   setPreloadedFlag( false );
 
+
   if ( !s_lstViews )
     s_lstViews = new QList<KonqMainWindow*>;
 
@@ -207,6 +208,9 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
           Qt::QueuedConnection); // Queued so that we don't delete the action from the code that triggered it.
 
   m_prevMenuBarVisible = true;
+
+  // This has to be called before any action is created for this mainwindow
+  setComponentData( KGlobal::mainComponent() );
 
   m_pViewManager = new KonqViewManager( this );
 
@@ -248,8 +252,6 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
 
   initCombo();
   initActions();
-
-  setComponentData( KGlobal::mainComponent() );
 
   connect( KSycoca::self(), SIGNAL( databaseChanged() ),
            this, SLOT( slotDatabaseChanged() ) );
