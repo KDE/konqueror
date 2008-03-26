@@ -43,13 +43,14 @@ template class QList<KonqHistoryEntry*>;
 
 /////////////////
 
-//static - used by KonqHistoryAction and KonqBidiHistoryAction
-void KonqBidiHistoryAction::fillHistoryPopup( const QList<HistoryEntry*> &history, int historyIndex,
-                                          QMenu * popup,
-                                          bool onlyBack,
-                                          bool onlyForward,
-                                          bool checkCurrentItem,
-                                          int startPos )
+//static - used by back/forward popups in KonqMainWindow
+// and by the (now removed) KonqBidiHistoryAction (was the history list)
+void KonqActions::fillHistoryPopup(const QList<HistoryEntry*> &history, int historyIndex,
+                                   QMenu * popup,
+                                   bool onlyBack,
+                                   bool onlyForward,
+                                   bool checkCurrentItem,
+                                   int startPos)
 {
   assert ( popup ); // kill me if this 0... :/
 
@@ -86,46 +87,18 @@ void KonqBidiHistoryAction::fillHistoryPopup( const QList<HistoryEntry*> &histor
 
 ///////////////////////////////
 
+#if 0
 KonqBidiHistoryAction::KonqBidiHistoryAction ( const QString & text, QObject *parent )
-  : KAction( text, parent )
+    : KToolBarPopupAction( KIcon() /*TODO*/, text, parent )
 {
   setShortcutConfigurable(false);
-  m_firstIndex = 0;
-  setMenu(new KMenu);
 
-  connect( menu(), SIGNAL( aboutToShow() ), SIGNAL( menuAboutToShow() ) );
-  connect( menu(), SIGNAL( triggered( QAction* ) ), SLOT( slotTriggered( QAction* ) ) );
+  connect( menu(), SIGNAL(aboutToShow() ), SIGNAL(menuAboutToShow()) );
+  connect( menu(), SIGNAL(triggered(QAction*) ), SLOT(slotTriggered(QAction*)) );
 }
 
-KonqBidiHistoryAction::~ KonqBidiHistoryAction( )
+KonqBidiHistoryAction::~KonqBidiHistoryAction( )
 {
-  delete menu();
-}
-
-QWidget * KonqBidiHistoryAction::createWidget( QWidget * parent )
-{
-  QToolBar *toolbar = qobject_cast<QToolBar*>(parent);
-
-  if (!toolbar)
-    return NULL;
-
-  QToolButton* button = new QToolButton(parent);
-  button->setAutoRaise(true);
-  button->setFocusPolicy(Qt::NoFocus);
-  button->setIconSize(toolbar->iconSize());
-  button->setToolButtonStyle(toolbar->toolButtonStyle());
-  QObject::connect(toolbar, SIGNAL(iconSizeChanged(const QSize&)),
-                   toolbar, SLOT(setIconSize(const QSize&)));
-  QObject::connect(toolbar, SIGNAL(toolButtonStyleChanged(Qt::ToolButtonStyle)),
-                   button, SLOT(setToolButtonStyle(Qt::ToolButtonStyle)));
-  button->setDefaultAction(this);
-  QObject::connect(button, SIGNAL(triggered(QAction*)), toolbar, SIGNAL(actionTriggered(QAction*)));
-
-  button->setPopupMode(QToolButton::MenuButtonPopup);
-
-  m_firstIndex = menu()->actions().count();
-
-  return button;
 }
 
 void KonqBidiHistoryAction::fillGoMenu( const QList<HistoryEntry*> & history, int historyIndex )
@@ -134,11 +107,8 @@ void KonqBidiHistoryAction::fillGoMenu( const QList<HistoryEntry*> & history, in
         return; // nothing to do
 
     //kDebug(1202) << "fillGoMenu position: " << history.at();
-    if ( m_firstIndex == 0 ) // should never happen since done in plug
-        m_firstIndex = menu()->actions().count();
-    else
     { // Clean up old history (from the end, to avoid shifts)
-        for ( int i = menu()->actions().count()-1 ; i >= m_firstIndex; i-- )
+        for ( int i = menu()->actions().count()-1 ; i >= 0 /*m_firstIndex*/; i-- )
             menu()->removeAction( menu()->actions()[i] );
     }
     // TODO perhaps smarter algorithm (rename existing items, create new ones only if not enough) ?
@@ -166,13 +136,15 @@ void KonqBidiHistoryAction::fillGoMenu( const QList<HistoryEntry*> & history, in
         return;
     }
     m_currentPos = historyIndex; // for slotActivated
-    KonqBidiHistoryAction::fillHistoryPopup( history, historyIndex, menu(), false, false, true, m_startPos );
+    KonqActions::fillHistoryPopup( history, historyIndex, menu(), false, false, true, m_startPos );
 }
 
 void KonqBidiHistoryAction::slotTriggered( QAction* action )
 {
   // 1 for first item in the list, etc.
-  int index = menu()->actions().indexOf(action) - m_firstIndex + 1;
+
+    // TODO use setData
+    int index = menu()->actions().indexOf(action) /*- m_firstIndex*/ + 1;
   if ( index > 0 )
   {
       kDebug(1202) << "Item clicked has index " << index;
@@ -182,6 +154,7 @@ void KonqBidiHistoryAction::slotTriggered( QAction* action )
       emit step( steps );
   }
 }
+#endif
 
 ///////////////////////////////
 
@@ -193,10 +166,8 @@ KonqMostOftenURLSAction::KonqMostOftenURLSAction( const QString& text,
 {
     setDelayed( false );
 
-    connect( menu(), SIGNAL( aboutToShow() ), SLOT( slotFillMenu() ));
-    //connect( popupMenu(), SIGNAL( aboutToHide() ), SLOT( slotClearMenu() ));
-    connect( menu(), SIGNAL( activated( int ) ),
-	     SLOT( slotActivated(int) ));
+    connect( menu(), SIGNAL(aboutToShow()), SLOT(slotFillMenu()));
+    connect( menu(), SIGNAL(activated(QAction*)), SLOT(slotActivated(QAction*)));
     // Need to do all this upfront for a correct initial state
     init();
 }
@@ -285,50 +256,34 @@ void KonqMostOftenURLSAction::slotHistoryCleared()
 
 void KonqMostOftenURLSAction::slotFillMenu()
 {
-    if ( !s_mostEntries ) // first time
+    if ( s_mostEntries->isEmpty() ) // first time
 	parseHistory();
 
     menu()->clear();
-    m_popupList.clear();
 
     for ( int id = s_mostEntries->count() - 1; id >= 0; --id ) {
         const KonqHistoryEntry entry = s_mostEntries->at( id );
 	// we take either title, typedUrl or URL (in this order)
-	QString text = entry.title.isEmpty() ? (entry.typedUrl.isEmpty() ?
-						 entry.url.prettyUrl() :
-						 entry.typedUrl) :
-		       entry.title;
-
-	menu()->insertItem(
-		    KIcon(KonqPixmapProvider::self()->iconNameFor(entry.url)),
-		    text, id );
-        // Keep a copy of the URLs being shown in the menu
-        // This prevents crashes when another process tells us to remove an entry.
-        m_popupList.prepend( entry.url );
+	const QString text = entry.title.isEmpty() ? (entry.typedUrl.isEmpty() ?
+                                                      entry.url.prettyUrl() :
+                                                      entry.typedUrl) :
+                             entry.title;
+        QAction* action = new QAction(
+            KIcon(KonqPixmapProvider::self()->iconNameFor(entry.url)),
+            text, menu());
+        action->setData(entry.url);
+        menu()->addAction(action);
     }
     setEnabled( !s_mostEntries->isEmpty() );
-    Q_ASSERT( (int)s_mostEntries->count() == m_popupList.count() );
 }
 
-#if 0
-void KonqMostOftenURLSAction::slotClearMenu()
+void KonqMostOftenURLSAction::slotActivated(QAction* action)
 {
-    // Warning this is called _before_ slotActivated, when activating a menu item.
-    // So e.g. don't clear m_popupList here.
-}
-#endif
-
-void KonqMostOftenURLSAction::slotActivated( int id )
-{
-    Q_ASSERT( !m_popupList.isEmpty() ); // can not happen
-    Q_ASSERT( id < (int)m_popupList.count() );
-
-    KUrl url = m_popupList[ id ];
-    if ( url.isValid() )
-	emit activated( url );
+    const KUrl url = action->data().value<KUrl>();
+    if (url.isValid())
+	emit activated(url);
     else
-	kWarning() << "Invalid url: " << url.prettyUrl() ;
-    m_popupList.clear();
+	kWarning() << "Invalid url:" << url;
 }
 
 #include "konqactions.moc"

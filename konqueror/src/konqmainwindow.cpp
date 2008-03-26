@@ -2815,12 +2815,14 @@ void KonqMainWindow::slotUpActivated(QAction* action)
     openUrl( 0, action->data().value<KUrl>() );
 }
 
+#if 0
 void KonqMainWindow::slotGoMenuAboutToShow()
 {
   kDebug(1202) << "KonqMainWindow::slotGoMenuAboutToShow";
   if ( m_paHistory && m_currentView ) // (maybe this is before initialisation)
       m_paHistory->fillGoMenu( m_currentView->history(), m_currentView->historyIndex() );
 }
+#endif
 
 void KonqMainWindow::slotGoHistoryActivated( int steps )
 {
@@ -2885,9 +2887,9 @@ void KonqMainWindow::slotGoHistoryDelayed()
 
 void KonqMainWindow::slotBackAboutToShow()
 {
-  m_paBack->menu()->clear();
-  if ( m_currentView )
-      KonqBidiHistoryAction::fillHistoryPopup( m_currentView->history(), m_currentView->historyIndex(), m_paBack->menu(), true, false );
+    m_paBack->menu()->clear();
+    if (m_currentView)
+        KonqActions::fillHistoryPopup(m_currentView->history(), m_currentView->historyIndex(), m_paBack->menu(), true, false);
 }
 
 
@@ -2939,9 +2941,9 @@ void KonqMainWindow::slotBackActivated(QAction* action)
 
 void KonqMainWindow::slotForwardAboutToShow()
 {
-  m_paForward->menu()->clear();
-  if ( m_currentView )
-      KonqBidiHistoryAction::fillHistoryPopup( m_currentView->history(), m_currentView->historyIndex(), m_paForward->menu(), false, true );
+    m_paForward->menu()->clear();
+    if (m_currentView)
+        KonqActions::fillHistoryPopup(m_currentView->history(), m_currentView->historyIndex(), m_paForward->menu(), false, true);
 }
 
 void KonqMainWindow::slotForward()
@@ -3578,10 +3580,12 @@ void KonqMainWindow::initActions()
   connect( m_paForward->menu(), SIGNAL( aboutToShow() ), this, SLOT( slotForwardAboutToShow() ) );
   connect( m_paForward->menu(), SIGNAL(triggered(QAction*)), this, SLOT(slotForwardActivated(QAction *)) );
 
+#if 0
   m_paHistory = new KonqBidiHistoryAction( i18n("History"), this );
   actionCollection()->addAction( "history", m_paHistory );
   connect( m_paHistory, SIGNAL( menuAboutToShow() ), this, SLOT( slotGoMenuAboutToShow() ) );
   connect( m_paHistory, SIGNAL( step( int ) ), this, SLOT( slotGoHistoryActivated( int ) ) );
+#endif
 
   m_paHome = actionCollection()->addAction( KStandardAction::Home );
   m_paHome->setEnabled( true );
