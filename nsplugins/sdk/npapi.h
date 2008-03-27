@@ -352,6 +352,16 @@ typedef struct
 #define _NP_ABI_MIXIN_FOR_GCC3 0
 #endif
 
+#define NP_ABI_SS12_MASK 0x20000000
+/*
+ * Sun Studio 12 has its own set of ABI problems.
+ */
+#if (defined(__SUNPRO_CC))
+#define _NP_ABI_MIXIN_FOR_SS12 NP_ABI_SS12_MASK
+#else
+#define _NP_ABI_MIXIN_FOR_SS12 0
+#endif
+
 
 #define NP_ABI_MACHO_MASK 0x01000000
 /*
@@ -367,8 +377,7 @@ typedef struct
 #define _NP_ABI_MIXIN_FOR_MACHO 0
 #endif
 
-
-#define NP_ABI_MASK (_NP_ABI_MIXIN_FOR_GCC3 | _NP_ABI_MIXIN_FOR_MACHO)
+#define NP_ABI_MASK (_NP_ABI_MIXIN_FOR_GCC3 | _NP_ABI_MIXIN_FOR_SS12 | _NP_ABI_MIXIN_FOR_MACHO)
 
 /*
  * List of variable names for which NPP_GetValue shall be implemented
