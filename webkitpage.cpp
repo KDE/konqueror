@@ -29,6 +29,7 @@
 #include <KDE/KInputDialog>
 #include <KDE/KMessageBox>
 #include <KDE/KProtocolManager>
+#include <QWebFrame>
 
 WebPage::WebPage(WebKitPart *wpart, QWidget *parent)
     : QWebPage(parent), m_part(wpart)
@@ -65,12 +66,12 @@ QString WebPage::chooseFile(QWebFrame *parentFrame, const QString &suggestedFile
 
 void WebPage::javaScriptAlert(QWebFrame *frame, const QString &msg)
 {
-    KMessageBox::error(0, msg, i18n("JavaScript"));
+    KMessageBox::error(frame->page()->view(), msg, i18n("JavaScript"));
 }
 
 bool WebPage::javaScriptConfirm(QWebFrame *frame, const QString &msg)
 {
-    return (KMessageBox::warningYesNo(0, msg, i18n("JavaScript"), KStandardGuiItem::ok(), KStandardGuiItem::cancel())
+    return (KMessageBox::warningYesNo(frame->page()->view(), msg, i18n("JavaScript"), KStandardGuiItem::ok(), KStandardGuiItem::cancel())
             == KMessageBox::Yes);
 }
 
