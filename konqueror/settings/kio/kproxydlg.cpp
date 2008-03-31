@@ -58,7 +58,9 @@ KProxyOptions::KProxyOptions(QWidget *parent, const QVariantList &)
   mTab->addTab(mProxy, i18n("&Proxy"));
   connect(mProxy, SIGNAL(changed(bool)), SIGNAL(changed(bool)));
 
-#ifndef Q_WS_WIN
+#ifdef Q_WS_WIN
+  mSocks = 0;
+#else
   mSocks = new KSocksConfig(componentData(), mTab);
   mTab->addTab(mSocks, i18n("&SOCKS"));
   connect(mSocks, SIGNAL(changed(bool)), SIGNAL(changed(bool)));
