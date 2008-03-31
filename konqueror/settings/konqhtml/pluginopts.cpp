@@ -69,11 +69,15 @@ KPluginOptions::KPluginOptions( QWidget *parent, const QVariantList& )
 {
     QVBoxLayout* toplevel = new QVBoxLayout( this );
 
+    QTabWidget* topleveltab = new QTabWidget( this );
+    toplevel->addWidget( topleveltab );
+
+    QWidget* globalGB = new QWidget( topleveltab );
+    topleveltab->addTab( globalGB, i18n( "Global Settings" ) );
+
     /**************************************************************************
      ******************** Global Settings *************************************
      *************************************************************************/
-    QGroupBox* globalGB = new QGroupBox( i18n( "Global Settings" ), this );
-    toplevel->addWidget( globalGB );
     enablePluginsGloballyCB = new QCheckBox( i18n( "&Enable plugins globally" ), globalGB );
     enableHTTPOnly = new QCheckBox( i18n( "Only allow &HTTP and HTTPS URLs for plugins" ), globalGB );
     enableUserDemand = new QCheckBox( i18n( "&Load plugins on demand only" ), globalGB );
@@ -114,6 +118,8 @@ KPluginOptions::KPluginOptions( QWidget *parent, const QVariantList& )
     vbox->addWidget(domainSpecPB);
 
     globalGB->setLayout(vbox);
+
+    vbox->addItem(new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::MinimumExpanding));
 
     domainSpecificDlg = new KDialog( this );
     domainSpecificDlg->setCaption( i18n("Domain-Specific Policies") );
@@ -162,21 +168,14 @@ KPluginOptions::KPluginOptions( QWidget *parent, const QVariantList& )
 
 /*****************************************************************************/
 
-    QGroupBox* netscapeGB = new QGroupBox( i18n( "Netscape Plugins" ), this );
-    toplevel->addWidget( netscapeGB );
+    QWidget* pluginsSettingsContainer = new QWidget( topleveltab );
+    topleveltab->addTab( pluginsSettingsContainer, i18n( "Plugins" ) );
 
     // create Designer made widget
-    QWidget *dummy = new QWidget(netscapeGB);
     m_widget = new Ui::NSConfigWidget();
-    m_widget->setupUi( dummy );
-    dummy->layout()->setMargin( 0 );
-    dummy->setObjectName( "configwidget" );
+    m_widget->setupUi( pluginsSettingsContainer );
+    pluginsSettingsContainer->setObjectName( "configwidget" );
     m_widget->dirEdit->setMode(KFile::ExistingOnly | KFile::LocalOnly | KFile::Directory);
-
-    vbox = new QVBoxLayout();
-    vbox->addWidget(dummy);
-    vbox->setMargin( KDialog::marginHint());
-    netscapeGB->setLayout(vbox);
 
 #ifndef Q_WS_WIN
     // setup widgets
