@@ -39,7 +39,7 @@ PolicyDialog::PolicyDialog( Policies *policies, QWidget *parent, const char *nam
   topl->setSpacing(spacingHint());
 
   QGridLayout *grid = new QGridLayout();
-  topl->addItem( grid );
+  topl->addLayout( grid );
   grid->setColumnStretch(1, 1);
 
   QLabel *l = new QLabel(i18n("&Host or domain name:"), main);
