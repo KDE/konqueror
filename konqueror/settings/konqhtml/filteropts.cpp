@@ -155,7 +155,7 @@ void KCMFilter::updateButton()
     mRemoveButton->setEnabled(state && (mSelCount > 0));
     mInsertButton->setEnabled(state && expressionIsNotEmpty);
     mImportButton->setEnabled(state);
-    mExportButton->setEnabled(state);
+    mExportButton->setEnabled(state && mListBox->count()>0);
 
     mListBox->setEnabled(state);
     mString->setEnabled(state);
