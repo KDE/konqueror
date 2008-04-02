@@ -9,7 +9,8 @@ add_subdirectory( tests )
 set(konq_LIB_SRCS
    konq_popupmenu.cpp       # remains in libkonq, was needed by kicker applets like the trash applet
    knewmenu.cpp             # used by dolphin, KonqPopupMenu, and konqueror (File menu; to be moved to dolphinpart)
-   konq_menuactions.cpp     # used by dolphin, KonqPopupMenu
+   konq_menuactions.cpp     # used by dolphin, KonqPopupMenu. Move to kdelibs, for kickoff?
+   konq_copytomenu.cpp      # used by dolphin, KonqPopupMenu
    konq_operations.cpp      # used by dolphin and konqueror
    konq_events.cpp
    konq_fileundomanager.cpp # used by dolphin, KonqOperations, and konqueror
@@ -41,12 +42,13 @@ install( FILES
  konq_popupmenu.h
  knewmenu.h
  konq_menuactions.h
+ # konq_copytomenu.h - anyone needs it?
  konq_defaults.h
  konq_operations.h
  libkonq_export.h
  konq_events.h
  konq_fileundomanager.h
- konq_filetip.h
+ # konq_filetip.h
  konqmimedata.h
 DESTINATION ${INCLUDE_INSTALL_DIR}
 )
