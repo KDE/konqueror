@@ -22,13 +22,14 @@
 #include "konq_copytomenu.h"
 #include "konq_copytomenu_p.h"
 #include "konq_operations.h"
-#include <kfiledialog.h>
-#include <kdebug.h>
 #include <kaction.h>
-#include <QDir>
+#include <kdebug.h>
 #include <kicon.h>
+#include <kfiledialog.h>
 #include <klocale.h>
 #include <kmenu.h>
+#include <kstringhandler.h>
+#include <QDir>
 
 KonqCopyToMenuPrivate::KonqCopyToMenuPrivate()
     : m_urls(), m_readOnly(false)
@@ -121,8 +122,9 @@ void KonqCopyToMainMenu::slotAboutToShow()
     // Recent Destinations
     const QStringList recentDirs = m_recentDirsGroup.readPathEntry("Paths", QStringList());
     Q_FOREACH(const QString& recentDir, recentDirs) {
-        KUrl url(recentDir);
-        KAction* act = new KAction(url.pathOrUrl(), this);
+        const KUrl url(recentDir);
+        const QString text = KStringHandler::csqueeze(url.pathOrUrl(), 60); // shorten very long paths (#61386)
+        KAction* act = new KAction(text, this);
         act->setData(url);
         m_actionGroup.addAction(act);
         addAction(act);
