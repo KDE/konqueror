@@ -170,6 +170,12 @@ KonqMenuActions::KonqMenuActions()
 {
 }
 
+
+KonqMenuActions::~KonqMenuActions()
+{
+    delete d;
+}
+
 void KonqMenuActions::setItems(const KFileItemList& items)
 {
     Q_ASSERT(!items.isEmpty());

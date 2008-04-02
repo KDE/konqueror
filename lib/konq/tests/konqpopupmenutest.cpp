@@ -37,23 +37,35 @@ KonqPopupMenuTest::KonqPopupMenuTest()
 
 static QStringList extractActionNames(const QMenu& menu)
 {
+    QString lastObjectName;
     QStringList ret;
     foreach (const QAction* action, menu.actions()) {
         if (action->isSeparator()) {
             ret.append("separator");
         } else {
-            //qDebug() << action->objectName() << action->metaObject()->className();
+            //qDebug() << action->objectName() << action->metaObject()->className() << action->text();
             const QString objectName = action->objectName();
             if (objectName.isEmpty()) {
-                Q_ASSERT(action->menu());
+                if (action->menu()) // if this fails, then we have an unnamed action somewhere...
                 ret.append("submenu");
+                else {
+                    ret.append("UNNAMED " + action->text());
+                }
             } else {
                 if (objectName == "menuaction") // a single service-menu action: give same name as a submenu
                     ret.append("actions_submenu");
-                else
+                else if (objectName == "openWith_submenu") {
+                    ret.append("openwith");
+                } else if (objectName == "openwith_browse" && lastObjectName == "openwith") {
+                    // We had "open with foo" followed by openwith_browse, all is well.
+                    // The expected lists only say "openwith" so that they work in both cases
+                    // -> skip the browse action.
+                } else {
                     ret.append(objectName);
             }
         }
+    }
+        lastObjectName = action->objectName();
     }
     return ret;
 
@@ -157,19 +169,20 @@ void KonqPopupMenuTest::testFile()
     QStringList expectedActions;
     expectedActions << "openInNewWindow" << "openInNewTab" << "separator"
                     << "cut" << "copy" << "rename" << "trash" << "separator"
-                    << "openWith_submenu"
+                    << "openwith"
                     << "preview1";
     if (!KStandardDirs::locate("services", "ServiceMenus/encryptfile.desktop").isEmpty())
-        expectedActions << "actions_submenu" << "separator";
-
+        expectedActions << "actions_submenu";
+    expectedActions << "separator";
     // (came from arkplugin) << "compress"
-    // (came from kuick) << "copy_to" << "move_to"
     expectedActions << "properties";
+    kDebug() << "Expected:" << expectedActions;
     QCOMPARE(actions, expectedActions);
 }
 
 void KonqPopupMenuTest::testFilePreviewSubMenu()
 {
+    // Same as testFile, but this time the "preview" action group has more than one action
     KFileItemList itemList;
     itemList << m_fileItem;
     KUrl viewUrl = QDir::currentPath();
@@ -187,15 +200,18 @@ void KonqPopupMenuTest::testFilePreviewSubMenu()
 
     QStringList actions = extractActionNames(popup);
     kDebug() << actions;
-    QCOMPARE(actions, QStringList()
-             << "openInNewWindow" << "openInNewTab" << "separator"
+    QStringList expectedActions;
+    expectedActions << "openInNewWindow" << "openInNewTab" << "separator"
              << "cut" << "copy" << "rename" << "trash" << "separator"
-             << "openWith_submenu"
-             << "preview_submenu"
-             << "actions_submenu" << "separator"
+                    << "openwith"
+                    << "preview_submenu";
              // (came from arkplugin) << "compress"
-             // (came from kuick) << "copy_to" << "move_to"
-             << "properties");
+    if (!KStandardDirs::locate("services", "ServiceMenus/encryptfile.desktop").isEmpty())
+        expectedActions << "actions_submenu";
+    expectedActions << "separator";
+    expectedActions << "properties";
+    kDebug() << "Expected:" << expectedActions;
+    QCOMPARE(actions, expectedActions);
 }
 
 void KonqPopupMenuTest::testSubDirectory()
@@ -215,17 +231,18 @@ void KonqPopupMenuTest::testSubDirectory()
                         0 /*parent*/, 0 /*bookmark manager*/, actionGroups);
     QStringList actions = extractActionNames(popup);
     kDebug() << actions;
-    // It's OK to have "openwith" instead of openWith_submenu, it depends on the number of offers
-    actions.replaceInStrings("openwith", "openWith_submenu");
-    QCOMPARE(actions, QStringList()
-             << "openInNewWindow" << "openInNewTab" << "separator"
+    QStringList expectedActions;
+    expectedActions << "openInNewWindow" << "openInNewTab" << "separator"
              << "cut" << "copy" << "pasteto" << "rename" << "trash" << "separator"
-             << "openWith_submenu"
-             << "preview_submenu"
-             << "actions_submenu" << "separator"
+                    << "openwith"
+                    << "preview_submenu";
+    if (!KStandardDirs::locate("services", "ServiceMenus/konsolehere.desktop").isEmpty())
+        expectedActions << "actions_submenu";
              // (came from arkplugin) << "compress"
-             // (came from kuick) << "copy_to" << "move_to"
-             << "properties");
+    expectedActions << "separator";
+    expectedActions << "properties";
+    kDebug() << "Expected:" << expectedActions;
+    QCOMPARE(actions, expectedActions);
 }
 
 void KonqPopupMenuTest::testViewDirectory()
@@ -249,18 +266,19 @@ void KonqPopupMenuTest::testViewDirectory()
 
     QStringList actions = extractActionNames(popup);
     qDebug() << actions;
-    // It's OK to have "openwith" instead of openWith_submenu, it depends on the number of offers
-    actions.replaceInStrings("openwith", "openWith_submenu");
-    QCOMPARE(actions, QStringList()
-             << "newmenu" << "separator"
+    QStringList expectedActions;
+    expectedActions << "newmenu" << "separator"
              << "go_up" << "go_back" << "go_forward" << "separator"
              << "paste" << "separator"
-             << "openWith_submenu"
-             << "preview_submenu"
-             << "actions_submenu" << "separator"
+                    << "openwith"
+                    << "preview_submenu";
+    if (!KStandardDirs::locate("services", "ServiceMenus/konsolehere.desktop").isEmpty())
+        expectedActions << "actions_submenu";
              // (came from arkplugin) << "compress"
-             // (came from kuick) << "copy_to" << "move_to"
-             << "properties");
+    expectedActions << "separator";
+    expectedActions << "properties";
+    kDebug() << "Expected:" << expectedActions;
+    QCOMPARE(actions, expectedActions);
 }
 
 void KonqPopupMenuTest::testHtmlLink()
@@ -284,15 +302,20 @@ void KonqPopupMenuTest::testHtmlLink()
 
     QStringList actions = extractActionNames(popup);
     kDebug() << actions;
-    QCOMPARE(actions, QStringList()
-             << "openInNewWindow" << "openInNewTab" << "separator"
+    const int actionsIndex = actions.indexOf("actions_submenu");
+    if (actionsIndex > -1) {
+        actions.removeAt(actionsIndex);
+    }
+    QStringList expectedActions;
+    expectedActions << "openInNewWindow" << "openInNewTab" << "separator"
              << "bookmark_add" << "savelinkas" << "copylinklocation"
              << "separator"
-             << "openWith_submenu"
+                    << "openwith"
              << "preview_submenu"
-             << "actions_submenu" << "separator"
-             // (came from kuick) << "copy_to" << "move_to"
-             << "viewDocumentSource");
+                    << "separator"
+                    << "viewDocumentSource";
+    kDebug() << "Expected:" << expectedActions;
+    QCOMPARE(actions, expectedActions);
 }
 
 void KonqPopupMenuTest::testHtmlPage()
@@ -322,17 +345,21 @@ void KonqPopupMenuTest::testHtmlPage()
 
     QStringList actions = extractActionNames(popup);
     kDebug() << actions;
-    QCOMPARE(actions, QStringList()
-             << "go_back" << "go_forward" << "reload" << "separator"
+    const int actionsIndex = actions.indexOf("actions_submenu");
+    if (actionsIndex > -1) {
+        actions.removeAt(actionsIndex);
+    }
+    QStringList expectedActions;
+    expectedActions << "go_back" << "go_forward" << "reload" << "separator"
              << "bookmark_add"
              << "separator"
-             << "openWith_submenu"
+                    << "openwith"
              << "preview_submenu"
-             << "actions_submenu" << "separator"
+                    << "separator"
              // << TODO "stopanimations"
-             // (came from kuick - but shouldn't be there IMHO) << "copy_to" << "move_to"
-             << "viewDocumentSource" << "security" << "setEncoding"
-        );
+                    << "viewDocumentSource" << "security" << "setEncoding";
+    kDebug() << "Expected:" << expectedActions;
+    QCOMPARE(actions, expectedActions);
 }
 
 
@@ -343,7 +370,7 @@ void KonqPopupMenuTest::testHtmlPage()
 // TODO test ShowBookmark. Probably the same logic?
 // TODO separate filemanager and webbrowser bookmark managers, too (share file bookmarks with file dialog)
 
-// TODO click on background of html page; text selection in khtml
+// TODO test text selection actions in khtml
 
 // TODO trash:/ tests
 

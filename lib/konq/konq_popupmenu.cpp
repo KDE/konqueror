@@ -528,7 +528,7 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
                     if ( menu == q ) // no submenu -> prefix single offer
                         actionName = i18n( "Open with %1", actionName );
 
-                    act = new QAction(&m_ownActions);
+                    act = m_ownActions.addAction("openwith");
                     act->setIcon( KIcon( service->icon() ) );
                     act->setText( actionName );
                     m_runServiceActionGroup.addAction(act);
@@ -544,14 +544,14 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
                 } else {
                     openWithActionName = i18n( "&Open With..." );
                 }
-                QAction *openWithAct = m_ownActions.addAction( "openwith" );
+                QAction *openWithAct = m_ownActions.addAction( "openwith_browse" );
                 openWithAct->setText( openWithActionName );
                 QObject::connect(openWithAct, SIGNAL(triggered()), q, SLOT(slotPopupOpenWith()));
                 menu->addAction(openWithAct);
             }
             else // no app offers -> Open With...
             {
-                act = m_ownActions.addAction( "openwith" );
+                act = m_ownActions.addAction( "openwith_browse" );
                 act->setText( i18n( "&Open With..." ) );
                 QObject::connect(act, SIGNAL(triggered()), q, SLOT(slotPopupOpenWith()));
                 q->addAction(act);

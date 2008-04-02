@@ -44,6 +44,11 @@ public:
     KonqMenuActions();
 
     /**
+     * Destructor
+     */
+    ~KonqMenuActions();
+
+    /**
      * Sets the list of fileitems which the actions apply to.
      * This call is mandatory.
      */
