@@ -453,48 +453,48 @@ void KNewMenu::slotActionTriggered(QAction* action)
     QString name;
     if ( KDesktopFile::isDesktopFile( entry.templatePath ) )
     {
-	KDesktopFile df( entry.templatePath );
-    	//kDebug(1203) <<  df.readType();
-    	if ( df.readType() == "Link" )
-    	{
-    	    d->m_isURLDesktopFile = true;
-    	    // entry.comment contains i18n("Enter link to location (URL):"). JFYI :)
-    	    KUrlDesktopFileDlg dlg( i18n("File name:"), entry.comment, d->m_parentWidget );
-    	    // TODO dlg.setCaption( i18n( ... ) );
-    	    if ( dlg.exec() )
-    	    {
+        KDesktopFile df( entry.templatePath );
+        //kDebug(1203) <<  df.readType();
+        if ( df.readType() == "Link" )
+        {
+            d->m_isURLDesktopFile = true;
+            // entry.comment contains i18n("Enter link to location (URL):"). JFYI :)
+            KUrlDesktopFileDlg dlg( i18n("File name:"), entry.comment, d->m_parentWidget );
+            // TODO dlg.setCaption( i18n( ... ) );
+            if ( dlg.exec() )
+            {
                 name = dlg.fileName();
                 d->m_linkURL = dlg.url();
                 if ( name.isEmpty() || d->m_linkURL.isEmpty() )
-        	    return;
-            	if ( !name.endsWith( ".desktop" ) )
-            	    name += ".desktop";
-    	    }
-    	    else
+                    return;
+                if ( !name.endsWith( ".desktop" ) )
+                    name += ".desktop";
+            }
+            else
                 return;
-    	}
-    	else // any other desktop file (Device, App, etc.)
-    	{
-    	    KUrl::List::Iterator it = d->popupFiles.begin();
-    	    for ( ; it != d->popupFiles.end(); ++it )
-    	    {
+        }
+        else // any other desktop file (Device, App, etc.)
+        {
+            KUrl::List::Iterator it = d->popupFiles.begin();
+            for ( ; it != d->popupFiles.end(); ++it )
+            {
                 //kDebug(1203) << "first arg=" << entry.templatePath;
                 //kDebug(1203) << "second arg=" << (*it).url();
                 //kDebug(1203) << "third arg=" << entry.text;
                 QString text = entry.text;
                 text.replace( "...", QString() ); // the ... is fine for the menu item but not for the default filename
 
-		KUrl defaultFile( *it );
-		defaultFile.addPath( KIO::encodeFileName( text ) );
-		if ( defaultFile.isLocalFile() && QFile::exists( defaultFile.path() ) )
-		    text = KIO::RenameDialog::suggestName( *it, text);
+                KUrl defaultFile( *it );
+                defaultFile.addPath( KIO::encodeFileName( text ) );
+                if ( defaultFile.isLocalFile() && QFile::exists( defaultFile.path() ) )
+                    text = KIO::RenameDialog::suggestName( *it, text);
 
                 KUrl templateUrl( entry.templatePath );
                 KPropertiesDialog dlg( templateUrl, *it, text, d->m_parentWidget );
                 dlg.exec();
-    	    }
-    	    return; // done, exit.
-    	}
+            }
+            return; // done, exit.
+        }
     }
     else
     {
@@ -504,15 +504,15 @@ void KNewMenu::slotActionTriggered(QAction* action)
         QString text = entry.text;
         text.replace( "...", QString() ); // the ... is fine for the menu item but not for the default filename
 
-	KUrl defaultFile( *(d->popupFiles.begin()) );
-	defaultFile.addPath( KIO::encodeFileName( text ) );
-	if ( defaultFile.isLocalFile() && QFile::exists( defaultFile.path() ) )
-	    text = KIO::RenameDialog::suggestName( *(d->popupFiles.begin()), text);
+        KUrl defaultFile( *(d->popupFiles.begin()) );
+        defaultFile.addPath( KIO::encodeFileName( text ) );
+        if ( defaultFile.isLocalFile() && QFile::exists( defaultFile.path() ) )
+            text = KIO::RenameDialog::suggestName( *(d->popupFiles.begin()), text);
 
         name = KInputDialog::getText( QString(), entry.comment,
                                       text, &ok, d->m_parentWidget );
         if ( !ok )
-	    return;
+            return;
     }
 
     // The template is not a desktop file [or it's a URL one]
@@ -533,12 +533,13 @@ void KNewMenu::slotActionTriggered(QAction* action)
         job->ui()->setWindow( d->m_parentWidget );
         connect( job, SIGNAL( result( KJob * ) ),
                 SLOT( slotResult( KJob * ) ) );
-        if ( d->m_isURLDesktopFile )
-		connect( job, SIGNAL( renamed( KIO::Job *, const KUrl&, const KUrl& ) ),
-        	     SLOT( slotRenamed( KIO::Job *, const KUrl&, const KUrl& ) ) );
-    	KUrl::List lst;
-    	lst.append( uSrc );
-        KonqFileUndoManager::self()->recordJob( KonqFileUndoManager::COPY, lst, dest, job );
+        if ( d->m_isURLDesktopFile ) {
+            connect(job, SIGNAL(renamed(KIO::Job *, KUrl, KUrl)),
+                    SLOT(slotRenamed(KIO::Job *, KUrl, KUrl)));
+        }
+        KUrl::List lst;
+        lst.append(uSrc);
+        KonqFileUndoManager::self()->recordJob(KonqFileUndoManager::COPY, lst, dest, job);
     }
 }
 

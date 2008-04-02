@@ -22,7 +22,6 @@
 #ifndef KONQ_FILETIP_H
 #define KONQ_FILETIP_H
 
-#include <Qt3Support/Q3Frame>
 #include <QtGui/QPixmap>
 #include <QtGui/QLabel>
 #include <QtGui/QResizeEvent>
