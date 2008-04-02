@@ -72,13 +72,19 @@ qt4_add_dbus_interface(konqueror_KDEINIT_SRCS ${KDE4_DBUS_INTERFACES_DIR}/org.kd
 
 kde4_add_app_icon(konqueror_KDEINIT_SRCS "${KDE4_ICON_INSTALL_DIR}/oxygen/*/apps/konqueror.png")
 
-kde4_add_kdeinit_executable(konqueror ${konqueror_KDEINIT_SRCS} konqmain.cpp)
+if (WIN32)
+    add_definitions(-Dkdemain=main)
+    kde4_add_executable(konqueror ${konqueror_KDEINIT_SRCS} konqmain.cpp)
+    target_link_libraries(konqueror konquerorprivate konq ${KDE4_KPARTS_LIBS} ${KDE4_KUTILS_LIBS})
+else (WIN32)
+    kde4_add_kdeinit_executable(konqueror ${konqueror_KDEINIT_SRCS} konqmain.cpp)
+    # KDE4_KUTILS_LIBS used for KCMultiDialog, KCModuleInfo, and KPluginSelector
+    target_link_libraries(kdeinit_konqueror konquerorprivate konq ${KDE4_KPARTS_LIBS} ${KDE4_KUTILS_LIBS})
+    target_link_libraries(konqueror kdeinit_konqueror)
 
-# KDE4_KUTILS_LIBS used for KCMultiDialog, KCModuleInfo, and KPluginSelector
-target_link_libraries(kdeinit_konqueror konquerorprivate konq ${KDE4_KPARTS_LIBS} ${KDE4_KUTILS_LIBS})
-target_link_libraries(konqueror kdeinit_konqueror)
+    install(TARGETS kdeinit_konqueror  DESTINATION ${INSTALL_TARGETS_DEFAULT_ARGS} )
+endif (WIN32)
 
-install(TARGETS kdeinit_konqueror  DESTINATION ${INSTALL_TARGETS_DEFAULT_ARGS} )
 install(TARGETS konqueror DESTINATION ${BIN_INSTALL_DIR})
 
 ########### install files ###############
