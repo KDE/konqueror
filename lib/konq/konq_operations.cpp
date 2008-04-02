@@ -735,7 +735,7 @@ void KonqOperations::slotResult( KJob * job )
         // Update konq windows opened on trash:/
         org::kde::KDirNotify::emitFilesAdded( "trash:/" ); // yeah, files were removed, but we don't know which ones...
     }
-    delete this;
+    deleteLater();
 }
 
 void KonqOperations::rename( QWidget * parent, const KUrl & oldurl, const QString & name )
