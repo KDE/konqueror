@@ -19,6 +19,7 @@
 */
 
 #include "konq_popupmenu.h"
+#include "konq_copytomenu.h"
 #include "konq_menuactions.h"
 #include "kpropertiesdialog.h"
 #include "knewmenu.h"
@@ -61,8 +62,8 @@
   khtmlimage (same as above, then choose View image, then RMB)
   selected text in khtml
   embedded katepart
-  kdesktop folder
-  trash link on desktop
+  folder on the desktop
+  trash link on the desktop
   trashed file or directory
   application .desktop file
  Then the same after uninstalling kdeaddons/konq-plugins (kuick and arkplugin in particular)
@@ -107,6 +108,7 @@ public:
     KUrl::List m_lstPopupURLs;
     QMap<QAction*,KService::Ptr> m_mapPopup;
     KonqMenuActions m_menuActions;
+    KonqCopyToMenu m_copyToMenu;
     bool m_bHandleEditOperations;
     QString m_attrName;
 //    KonqPopupMenu::ProtocolInfo m_info;
@@ -207,7 +209,6 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
     QString mimeGroup   = m_sMimeType.left(m_sMimeType.indexOf('/'));
     mode_t mode         = m_lstItems.first().mode();
     bool bTrashIncluded = false;
-    bool mediaFiles     = false;
     bool isLocal        = m_lstItems.first().isLocalFile()
                        || m_lstItems.first().url().protocol()=="media"
                        || m_lstItems.first().url().protocol()=="system";
@@ -216,6 +217,8 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
     int id = 0;
 
     m_attrName = QLatin1String( "name" );
+
+    QFileInfo parentDirInfo;
 
     KUrl url;
     KFileItemList::const_iterator it = m_lstItems.begin();
@@ -265,8 +268,19 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
 
         if ( sMoving )
             sMoving = KProtocolManager::supportsMoving( url );
-        if ( (*it).mimetype().startsWith("media/") )
-            mediaFiles = true;
+
+        // For local files we can do better: check if we have write permission in parent directory
+        if (url.isLocalFile() && (sDeleting || sMoving)) {
+            const QString directory = url.directory();
+            if (parentDirInfo.filePath() != directory) {
+                parentDirInfo.setFile(directory);
+            }
+            if (!parentDirInfo.isWritable()) {
+                // kDebug(1203) << "not writable:" << directory;
+                sDeleting = false;
+                sMoving = false;
+            }
+        }
     }
     const bool isDirectory = S_ISDIR(mode);
     url = m_sViewURL;
@@ -303,7 +317,8 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
     bool isCurrentTrash = ( m_lstItems.count() == 1 && bTrashIncluded ) || isTrashLink;
     bool isIntoTrash = ( url.protocol() == "trash" || url.url().startsWith( "system:/trash" ) ) && !isCurrentTrash; // trashed file, not trash:/ itself
     //kDebug() << "isLocal=" << isLocal << " url=" << url << " isCurrentTrash=" << isCurrentTrash << " isIntoTrash=" << isIntoTrash << " bTrashIncluded=" << bTrashIncluded;
-    bool isSingleMedium = m_lstItems.count() == 1 && mediaFiles;
+
+    const bool isSingleMedium = false; // was: m_lstItems.count() == 1 && mediaFiles, not available anymore
 
     //////////////////////////////////////////////////////////////////////////
 
@@ -311,11 +326,11 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
 
     QAction * act;
 
-    bool isKDesktop = false; //QByteArray( kapp->objectName().toUtf8() ) == "kdesktop";
+    bool isOnDesktop = false; // ### remove, or re-introduced if needed for desktop icons
     QAction *actNewWindow = 0;
 
 #if 0
-    if (( flags & KParts::BrowserExtension::ShowProperties ) && isKDesktop &&
+    if (( flags & KParts::BrowserExtension::ShowProperties ) && isOnDesktop &&
         !KAuthorized::authorizeKAction("editable_desktop_icons"))
     {
         flags &= ~KParts::BrowserExtension::ShowProperties; // remove flag
@@ -326,14 +341,14 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
     // or we need to insert it ourselves (e.g. for kdesktop). In the first case, actNewWindow must remain 0.
     if ( ((kpf & KonqPopupMenu::ShowNewWindow) != 0) && sReading )
     {
-        QString openStr = isKDesktop ? i18n( "&Open" ) : i18n( "Open in New &Window" );
+        QString openStr = isOnDesktop ? i18n( "&Open" ) : i18n( "Open in New &Window" );
         actNewWindow = m_ownActions.addAction( "newview" );
         actNewWindow->setIcon( KIcon("window-new") );
         actNewWindow->setText( openStr );
         QObject::connect(actNewWindow, SIGNAL(triggered()), q, SLOT(slotPopupNewView()));
     }
 
-    if ( actNewWindow && !isKDesktop )
+    if ( actNewWindow && !isOnDesktop )
     {
         if (isCurrentTrash)
             actNewWindow->setToolTip( i18n( "Open the trash in a new window" ) );
@@ -528,7 +543,7 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
                     if ( menu == q ) // no submenu -> prefix single offer
                         actionName = i18n( "Open with %1", actionName );
 
-                    act = new QAction(&m_ownActions);
+                    act = m_ownActions.addAction("openwith");
                     act->setIcon( KIcon( service->icon() ) );
                     act->setText( actionName );
                     m_runServiceActionGroup.addAction(act);
@@ -544,14 +559,14 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
                 } else {
                     openWithActionName = i18n( "&Open With..." );
                 }
-                QAction *openWithAct = m_ownActions.addAction( "openwith" );
+                QAction *openWithAct = m_ownActions.addAction( "openwith_browse" );
                 openWithAct->setText( openWithActionName );
                 QObject::connect(openWithAct, SIGNAL(triggered()), q, SLOT(slotPopupOpenWith()));
                 menu->addAction(openWithAct);
             }
             else // no app offers -> Open With...
             {
-                act = m_ownActions.addAction( "openwith" );
+                act = m_ownActions.addAction( "openwith_browse" );
                 act->setText( i18n( "&Open With..." ) );
                 QObject::connect(act, SIGNAL(triggered()), q, SLOT(slotPopupOpenWith()));
                 q->addAction(act);
@@ -573,11 +588,19 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
 
     // Second block, builtin + user
     m_menuActions.setItems(m_lstItems);
-    if ( m_menuActions.addActionsTo(q) > 0 ) {
+    m_menuActions.addActionsTo(q);
+
+    q->addSeparator();
+
+    // CopyTo/MoveTo menus
+    if (m_itemFlags & KParts::BrowserExtension::ShowUrlOperations) {
+        m_copyToMenu.setItems(m_lstItems);
+        m_copyToMenu.setReadOnly(sMoving == false);
+        m_copyToMenu.addActionsTo(q);
         q->addSeparator();
     }
 
-    if ( !isCurrentTrash && !isIntoTrash && !mediaFiles && sReading )
+    if ( !isCurrentTrash && !isIntoTrash && sReading )
         addPlugins(); // now it's time to add plugins
 
     if ( (m_itemFlags & KParts::BrowserExtension::ShowProperties) && KPropertiesDialog::canDisplay( m_lstItems ) ) {
