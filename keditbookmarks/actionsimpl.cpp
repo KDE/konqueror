@@ -273,7 +273,9 @@ void ActionsImpl::slotSaveAs() {
 }
 
 void CurrentMgr::doExport(ExportType type, const QString & _path) {
-    KEBApp::self()->bkInfo()->commitChanges();
+    //it can be null when we use command line to export => there is not interface
+    if ( KEBApp::self() && KEBApp::self()->bkInfo() )
+        KEBApp::self()->bkInfo()->commitChanges();
     QString path(_path);
     // TODO - add a factory and make all this use the base class
     if (type == OperaExport) {
