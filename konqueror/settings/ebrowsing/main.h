@@ -28,8 +28,6 @@
 #include <kcmodule.h>
 #include <QtCore/QList>
 
-#include "filteropts.h"
-
 class KUriFilter;
 
 class KURIFilterModule : public KCModule {
@@ -47,7 +45,6 @@ private:
     KUriFilter *filter;
 
     QWidget *m_widget;
-    FilterOptions *opts;
     QList<KCModule *> modules;
 };
 

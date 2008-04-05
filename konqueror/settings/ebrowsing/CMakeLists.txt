@@ -1,4 +1,4 @@
-set(kcm_kurifilt_PART_SRCS filteropts.cpp main.cpp )
+set(kcm_kurifilt_PART_SRCS main.cpp )
 
 kde4_add_plugin(kcm_kurifilt ${kcm_kurifilt_PART_SRCS})
 

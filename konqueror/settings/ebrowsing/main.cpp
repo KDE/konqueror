@@ -41,7 +41,6 @@
 #include <kurifilter.h>
 
 // Local
-#include "filteropts.h"
 #include <KPluginFactory>
 #include <KPluginLoader>
 
@@ -49,8 +48,6 @@ K_PLUGIN_FACTORY(KURIFactory,
         registerPlugin<KURIFilterModule>();
         )
 K_EXPORT_PLUGIN(KURIFactory("kcmkurifilt"))
-
-class FilterOptions;
 
 KURIFilterModule::KURIFilterModule(QWidget *parent, const QVariantList &)
     : KCModule(KURIFactory::componentData(), parent),
@@ -70,12 +67,6 @@ KURIFilterModule::KURIFilterModule(QWidget *parent, const QVariantList &)
       " changed this shortcut) and enter the shortcut in the KDE Run Command dialog."));
 
     QVBoxLayout *layout = new QVBoxLayout(this);
-
-#if 0
-    opts = new FilterOptions(this);
-    tab->addTab(opts, i18n("&Filters"));
-    connect(opts, SIGNAL(changed(bool)), SIGNAL(changed(bool)));
-#endif
 
     QMap<QString,KCModule*> helper;
     // Load the plugins. This saves a public method in KUriFilter just for this.
