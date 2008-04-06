@@ -32,8 +32,10 @@
 #include <KDE/KConfigGroup>
 #include <KDE/KAction>
 #include <KDE/KActionCollection>
+#include <KDE/KToolInvocation>
 #include <QHttpRequestHeader>
 #include <QtWebKit/QWebHitTestResult>
+#include <QClipboard>
 
 #include "searchwidget.h"
 
@@ -267,6 +269,38 @@ void WebKitBrowserExtension::slotFrameInTop()
     emit openUrlRequest( part->view()->contextMenuResult().linkUrl(), args, browserArgs );
 }
 
+void WebKitBrowserExtension::slotSaveImageAs()
+{
+    //TODO
+}
+
+void WebKitBrowserExtension::slotSendImage()
+{
+    QStringList urls;
+    urls.append( part->view()->contextMenuResult().imageUrl().path());
+    QString subject = part->view()->contextMenuResult().imageUrl().path();
+    KToolInvocation::invokeMailer(QString(), QString(), QString(), subject,
+                       QString(), //body
+                       QString(),
+                       urls); // attachments
+}
+
+void WebKitBrowserExtension::slotCopyImage()
+{
+    KUrl safeURL(part->view()->contextMenuResult().imageUrl());
+    safeURL.setPass(QString());
+
+    // Set it in both the mouse selection and in the clipboard
+    QMimeData* mimeData = new QMimeData;
+    mimeData->setImageData(part->view()->contextMenuResult().pixmap() );
+    safeURL.populateMimeData( mimeData );
+    QApplication::clipboard()->setMimeData( mimeData, QClipboard::Clipboard );
+
+    mimeData = new QMimeData;
+    mimeData->setImageData( part->view()->contextMenuResult().pixmap() );
+    safeURL.populateMimeData( mimeData );
+    QApplication::clipboard()->setMimeData( mimeData, QClipboard::Selection );
+}
 
 typedef KParts::GenericFactory<WebKitPart> Factory;
 Q_EXPORT_PLUGIN(Factory);

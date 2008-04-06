@@ -49,6 +49,7 @@ protected:
     virtual void contextMenuEvent(QContextMenuEvent *e);
     void editActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &editGroupMap );
     void linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &linkGroupMap );
+    void partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &partGroupMap );
 
 private:
     WebKitPart *part;

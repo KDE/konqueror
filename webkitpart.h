@@ -85,6 +85,10 @@ public slots:
     void slotFrameInTab();
     void slotFrameInTop();
 
+    void slotSaveImageAs();
+    void slotSendImage();
+    void slotCopyImage();
+
 private slots:
     void updateEditActions();
 

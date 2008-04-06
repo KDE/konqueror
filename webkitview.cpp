@@ -81,6 +81,10 @@ void WebView::contextMenuEvent(QContextMenuEvent *e)
         flags |= KParts::BrowserExtension::IsLink;
         linkActionPopupMenu( mapAction );
     }
+    if ( !d->result.imageUrl().isEmpty() )
+    {
+        partActionPopupMenu( mapAction );
+    }
     if ( !selectedText().isEmpty() )
     {
         flags |= KParts::BrowserExtension::ShowTextSelectionItems;
@@ -89,7 +93,28 @@ void WebView::contextMenuEvent(QContextMenuEvent *e)
     emit part->browserExt()->popupMenu(/*guiclient */
                                        e->globalPos(), part->url(), 0, KParts::OpenUrlArguments(), KParts::BrowserArguments(),
                                        flags, mapAction);
-    e->accept();
+}
+
+void WebView::partActionPopupMenu( KParts::BrowserExtension::ActionGroupMap &partGroupMap )
+{
+    QList<QAction *>partActions;
+    KAction *action = new KAction( i18n( "Save Image As..." ), this );
+    d->m_actionCollection->addAction( "saveimageas", action );
+    connect( action, SIGNAL(triggered(bool)), part->browserExt(), SLOT( slotSaveImageAs() ) );
+    partActions.append(action);
+
+    action = new KAction( i18n( "Send Image..." ), this );
+    d->m_actionCollection->addAction( "sendimage", action );
+    connect( action, SIGNAL(triggered(bool)), part->browserExt(), SLOT( slotSendImage() ) );
+    partActions.append(action);
+
+    action = new KAction( i18n( "Copy Image" ), this );
+    d->m_actionCollection->addAction( "copyimage", action );
+    action->setEnabled( !d->result.pixmap().isNull() );
+    connect( action, SIGNAL(triggered(bool)), part->browserExt(), SLOT( slotCopyImage() ) );
+    partActions.append(action);
+
+    partGroupMap.insert( "partactions", partActions );
 }
 
 void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &linkGroupMap )
