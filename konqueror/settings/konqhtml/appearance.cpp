@@ -62,7 +62,7 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList&)
   connect( m_minSize, SIGNAL( valueChanged( int ) ), this, SLOT( slotMinimumFontSize( int ) ) );
   connect( m_minSize, SIGNAL( valueChanged( int ) ), this, SLOT( changed() ) );
   m_minSize->setWhatsThis( i18n( "Konqueror will never display text smaller than "
-                                    "this size,<br />overriding any other settings" ) );
+                                    "this size,<br />overriding any other settings." ) );
 
   m_MedSize = new KIntNumInput( fSize,m_minSize );
   laygroup1->addWidget(m_MedSize);
