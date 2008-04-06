@@ -171,7 +171,7 @@ DesktopBehavior::DesktopBehavior(KSharedConfig::Ptr config, QWidget *parent )
                        " locking the screen, and logging out of KDE.</li>"
                        " <li><em>Application menu:</em> the \"K\" menu pops up. This might be"
                        " useful for quickly accessing applications if you like to keep the"
-                       " panel (also known as \"Kicker\") hidden from view.</li></ul>");
+                       " panel hidden from view.</li></ul>");
   leftLabel->setWhatsThis( wtstr );
   leftComboBox->setWhatsThis( wtstr );
 
@@ -181,7 +181,7 @@ DesktopBehavior::DesktopBehavior(KSharedConfig::Ptr config, QWidget *parent )
   connect(middleComboBox, SIGNAL(activated(int)), this, SIGNAL(changed()));
   connect(middleComboBox, SIGNAL(activated(int)), this, SLOT(comboBoxChanged()));
   wtstr = i18n("You can choose what happens when"
-               " you click the middle button of your pointing device on the desktop:"
+               " you click on the desktop using your pointing device's middle button:"
                " <ul><li><em>No action</em></li>"
                " <li><em>Window list menu:</em> a menu showing all windows on all"
                " virtual desktops pops up. You can click on the desktop name to switch"
@@ -194,7 +194,7 @@ DesktopBehavior::DesktopBehavior(KSharedConfig::Ptr config, QWidget *parent )
                " locking the screen, and logging out of KDE.</li>"
                " <li><em>Application menu:</em> the \"K\" menu pops up. This might be"
                " useful for quickly accessing applications if you like to keep the"
-               " panel (also known as \"Kicker\") hidden from view.</li></ul>");
+               " panel hidden from view.</li></ul>");
   middleLabel->setWhatsThis( wtstr );
   middleComboBox->setWhatsThis( wtstr );
 
@@ -482,8 +482,8 @@ QString DesktopBehavior::quickHelp() const
   return i18n("<h1>Behavior</h1>\n"
     "This module allows you to choose various options\n"
     "for your desktop, including the way in which icons are arranged and\n"
-    "the pop-up menus associated with clicks of the middle and right mouse\n"
-    "buttons on the desktop.\n"
+    "the pop-up menus associated when clicking on the desktop using the middle and right mouse\n"
+    "buttons.\n"
     "Use the \"Whats This?\" (Shift+F1) to get help on specific options.");
 }
 
