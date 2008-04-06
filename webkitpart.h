@@ -81,6 +81,9 @@ public slots:
     void zoomOut();
 
     void slotFind();
+    void slotFrameInWindow();
+    void slotFrameInTab();
+    void slotFrameInTop();
 
 private slots:
     void updateEditActions();

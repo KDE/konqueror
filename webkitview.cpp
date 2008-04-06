@@ -39,6 +39,8 @@
 
 #include <QHttpRequestHeader>
 #include <QWebFrame>
+#include <QtWebKit/QWebHitTestResult>
+#include <QWebPage>
 
 class WebView::WebViewPrivate {
 public:
@@ -60,6 +62,7 @@ WebView::~WebView()
 
 void WebView::contextMenuEvent(QContextMenuEvent *e)
 {
+    QWebHitTestResult r = page()->mainFrame()->hitTestContent(e->pos());
     KParts::BrowserExtension::PopupFlags flags = KParts::BrowserExtension::DefaultPopupItems;
     flags |= KParts::BrowserExtension::ShowReload;
     flags |= KParts::BrowserExtension::ShowBookmark;
@@ -67,6 +70,11 @@ void WebView::contextMenuEvent(QContextMenuEvent *e)
     flags |= KParts::BrowserExtension::ShowUrlOperations;
 
     KParts::BrowserExtension::ActionGroupMap mapAction;
+    if ( !r.linkUrl().isEmpty() )
+    {
+        flags |= KParts::BrowserExtension::IsLink;
+        linkActionPopupMenu( mapAction );
+    }
     if ( !selectedText().isEmpty() )
     {
         flags |= KParts::BrowserExtension::ShowTextSelectionItems;
@@ -75,10 +83,31 @@ void WebView::contextMenuEvent(QContextMenuEvent *e)
     emit part->browserExt()->popupMenu(/*guiclient */
                                        e->globalPos(), part->url(), 0, KParts::OpenUrlArguments(), KParts::BrowserArguments(),
                                        flags, mapAction);
+    e->accept();
 }
 
 void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &linkGroupMap )
 {
+    QList<QAction *>linkActions;
+
+    KAction *action = new KAction( i18n( "Open in New &Window" ), this );
+    d->m_actionCollection->addAction( "frameinwindow", action );
+    action->setIcon( KIcon( "window-new" ) );
+    connect( action, SIGNAL(triggered(bool)), part->browserExt(), SLOT(slotFrameInWindow()) );
+    linkActions.append( action );
+
+    action = new KAction( i18n( "Open in &This Window" ), this );
+    d->m_actionCollection->addAction( "frameintop", action );
+    connect( action, SIGNAL(triggered(bool)), part->browserExt(), SLOT( slotFrameInTop() ) );
+    linkActions.append( action );
+
+    action = new KAction( i18n( "Open in &New Tab" ), this );
+    d->m_actionCollection->addAction( "frameintab", action );
+    action->setIcon( KIcon( "tab-new" ) );
+    connect( action, SIGNAL(triggered(bool)), part->browserExt(), SLOT( slotFrameInTab() ) );
+    linkActions.append( action );
+
+    linkGroupMap.insert( "linkactions", linkActions );
 }
 
 void WebView::editActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &editGroupMap )

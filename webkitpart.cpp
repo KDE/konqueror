@@ -240,6 +240,39 @@ void WebKitBrowserExtension::slotFind()
 }
 
 
+void WebKitBrowserExtension::slotFrameInWindow()
+{
+#if 0
+    KParts::OpenUrlArguments args = d->m_khtml->arguments();
+    args.metaData()["referrer"] = d->m_khtml->pageReferrer();
+    args.metaData()["forcenewwindow"] = "true";
+    emit d->m_khtml->browserExtension()->createNewWindow( d->m_khtml->url(), args );
+#endif
+}
+
+void WebKitBrowserExtension::slotFrameInTab()
+{
+#if 0
+    KParts::OpenUrlArguments args = d->m_khtml->arguments();
+    args.metaData()["referrer"] = d->m_khtml->pageReferrer();
+    KParts::BrowserArguments browserArgs( d->m_khtml->browserExtension()->browserArguments() );
+    browserArgs.setNewTab(true);
+    emit d->m_khtml->browserExtension()->createNewWindow( d->m_khtml->url(), args, browserArgs );
+#endif
+}
+
+void WebKitBrowserExtension::slotFrameInTop()
+{
+#if 0
+    KParts::OpenUrlArguments args = d->m_khtml->arguments();
+    args.metaData()["referrer"] = d->m_khtml->pageReferrer();
+    KParts::BrowserArguments browserArgs( d->m_khtml->browserExtension()->browserArguments() );
+    browserArgs.frameName = "_top";
+    emit d->m_khtml->browserExtension()->openUrlRequest( d->m_khtml->url(), args, browserArgs );
+#endif
+}
+
+
 typedef KParts::GenericFactory<WebKitPart> Factory;
 Q_EXPORT_PLUGIN(Factory);
 
