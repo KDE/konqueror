@@ -33,6 +33,7 @@
 #include <KDE/KAction>
 #include <KDE/KActionCollection>
 #include <QHttpRequestHeader>
+#include <QtWebKit/QWebHitTestResult>
 
 #include "searchwidget.h"
 
@@ -242,34 +243,28 @@ void WebKitBrowserExtension::slotFind()
 
 void WebKitBrowserExtension::slotFrameInWindow()
 {
-#if 0
-    KParts::OpenUrlArguments args = d->m_khtml->arguments();
-    args.metaData()["referrer"] = d->m_khtml->pageReferrer();
+    KParts::OpenUrlArguments args;// = d->m_khtml->arguments();
+    args.metaData()["referrer"] = part->view()->contextMenuResult().linkText();
     args.metaData()["forcenewwindow"] = "true";
-    emit d->m_khtml->browserExtension()->createNewWindow( d->m_khtml->url(), args );
-#endif
+    emit createNewWindow( part->view()->contextMenuResult().linkUrl(), args );
 }
 
 void WebKitBrowserExtension::slotFrameInTab()
 {
-#if 0
-    KParts::OpenUrlArguments args = d->m_khtml->arguments();
-    args.metaData()["referrer"] = d->m_khtml->pageReferrer();
-    KParts::BrowserArguments browserArgs( d->m_khtml->browserExtension()->browserArguments() );
+    KParts::OpenUrlArguments args;// = d->m_khtml->arguments();
+    args.metaData()["referrer"] = part->view()->contextMenuResult().linkText();
+    KParts::BrowserArguments browserArgs;//( d->m_khtml->browserExtension()->browserArguments() );
     browserArgs.setNewTab(true);
-    emit d->m_khtml->browserExtension()->createNewWindow( d->m_khtml->url(), args, browserArgs );
-#endif
+    emit createNewWindow( part->view()->contextMenuResult().linkUrl(), args, browserArgs );
 }
 
 void WebKitBrowserExtension::slotFrameInTop()
 {
-#if 0
-    KParts::OpenUrlArguments args = d->m_khtml->arguments();
-    args.metaData()["referrer"] = d->m_khtml->pageReferrer();
-    KParts::BrowserArguments browserArgs( d->m_khtml->browserExtension()->browserArguments() );
+    KParts::OpenUrlArguments args;// = d->m_khtml->arguments();
+    args.metaData()["referrer"] = part->view()->contextMenuResult().linkText();
+    KParts::BrowserArguments browserArgs;//( d->m_khtml->browserExtension()->browserArguments() );
     browserArgs.frameName = "_top";
-    emit d->m_khtml->browserExtension()->openUrlRequest( d->m_khtml->url(), args, browserArgs );
-#endif
+    emit openUrlRequest( part->view()->contextMenuResult().linkUrl(), args, browserArgs );
 }
 
 

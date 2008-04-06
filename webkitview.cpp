@@ -45,6 +45,7 @@
 class WebView::WebViewPrivate {
 public:
     KActionCollection* m_actionCollection;
+    QWebHitTestResult result;
 };
 
 
@@ -60,9 +61,14 @@ WebView::~WebView()
     delete d;
 }
 
+QWebHitTestResult WebView::contextMenuResult() const
+{
+    return d->result;
+}
+
 void WebView::contextMenuEvent(QContextMenuEvent *e)
 {
-    QWebHitTestResult r = page()->mainFrame()->hitTestContent(e->pos());
+    d->result = page()->mainFrame()->hitTestContent(e->pos());
     KParts::BrowserExtension::PopupFlags flags = KParts::BrowserExtension::DefaultPopupItems;
     flags |= KParts::BrowserExtension::ShowReload;
     flags |= KParts::BrowserExtension::ShowBookmark;
@@ -70,7 +76,7 @@ void WebView::contextMenuEvent(QContextMenuEvent *e)
     flags |= KParts::BrowserExtension::ShowUrlOperations;
 
     KParts::BrowserExtension::ActionGroupMap mapAction;
-    if ( !r.linkUrl().isEmpty() )
+    if ( !d->result.linkUrl().isEmpty() )
     {
         flags |= KParts::BrowserExtension::IsLink;
         linkActionPopupMenu( mapAction );

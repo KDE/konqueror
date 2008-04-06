@@ -36,12 +36,14 @@ class WebKitBrowserExtension;
 class KWebNetworkInterface;
 class QAction;
 class WebKitPart;
+class QWebHitTestResult;
 
 class WebView : public QWebView
 {
 public:
     WebView(WebKitPart *wpart, QWidget *parent);
     ~WebView();
+    QWebHitTestResult contextMenuResult() const;
 
 protected:
     virtual void contextMenuEvent(QContextMenuEvent *e);
