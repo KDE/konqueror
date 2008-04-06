@@ -24,7 +24,7 @@ int main( int argc, char ** argv )
   aboutData.addAuthor(ki18n("Stephan Kulow"), KLocalizedString(), "coolo@kde.org");
   aboutData.addAuthor(ki18n("Mario Weilguni"),KLocalizedString(), "mweilguni@sime.com");
   aboutData.addAuthor(ki18n("Alex Zepeda"),KLocalizedString(), "zipzippy@sonic.net");
-  aboutData.addAuthor(ki18n("Miroslav Fl�r"),KLocalizedString(), "flidr@kky.zcu.cz");
+  aboutData.addAuthor(ki18n("Miroslav Flídr"),KLocalizedString(), "flidr@kky.zcu.cz");
   aboutData.addAuthor(ki18n("Harri Porten"),KLocalizedString(), "porten@kde.org");
   aboutData.addAuthor(ki18n("Dima Rogozin"),KLocalizedString(), "dima@mercury.co.il");
   aboutData.addAuthor(ki18n("Carsten Pfeiffer"),KLocalizedString(), "pfeiffer@kde.org");
