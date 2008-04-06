@@ -96,7 +96,7 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
 	     "<ul>"
 	     "<li><b>?</b> matches any single character</li>"
 	     "<li><b>*</b> matches zero or more of any characters</li>"
-	     "<li><b>[...]</b> matches any of the characters in braces</li>"
+	     "<li><b>[...]</b> matches any of the characters between the braces</li>"
 	     "</ul>"
 	     "<br />"
 	     "Example searches:"
