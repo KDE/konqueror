@@ -148,9 +148,10 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
 
     m_pUnfinishedImageFrameCheckBox = new QCheckBox( i18n( "Dra&w frame around not completely loaded images"), this );
     m_pUnfinishedImageFrameCheckBox->setWhatsThis( i18n( "If this box is checked, Konqueror will draw"
-			    " a frame as placeholder around not yet fully loaded images that are embedded"
-			    " in a web page.<br />Especially if you have a slow network connection, you will"
-			    " probably want to check this box to enhance your browsing experience." ) );
+			    " a frame as a placeholder around images embedded in a web page that are"
+			    " not yet fully loaded.<br />You will probably want to check this box to"
+			    " enhance your browsing experience, especially if have a slow network"
+			    " connection." ) );
     connect(m_pUnfinishedImageFrameCheckBox, SIGNAL(toggled(bool)), SLOT(slotChanged()));
     lay->addWidget( m_pUnfinishedImageFrameCheckBox, row, 0, 1, 2 );
     row++;
@@ -165,7 +166,7 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
     // Checkbox to enable/disable Access Key activation through the Ctrl key.
 
     m_pAccessKeys = new QCheckBox( i18n( "Enable/disable Access Ke&y activation with Ctrl key"), this );
-    m_pAccessKeys->setWhatsThis( i18n( "Pressing the Ctrl key when viewing webpages activates KDE's Access Keys. Unchecking this box will disable this accessibility feature. (Konqueror needs to be restarted for changes to take effect)" ) );
+    m_pAccessKeys->setWhatsThis( i18n( "Pressing the Ctrl key when viewing webpages activates KDE's Access Keys. Unchecking this box will disable this accessibility feature. (Konqueror needs to be restarted for changes to take effect.)" ) );
     connect(m_pAccessKeys, SIGNAL(toggled(bool)), SLOT(slotChanged()));
     lay->addMultiCellWidget( m_pAccessKeys, row, row, 0, 1 );
     row++;
@@ -190,7 +191,7 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
 	    "<ul><li><b>Enabled</b>: Always underline links</li>"
 	    "<li><b>Disabled</b>: Never underline links</li>"
 	    "<li><b>Only on Hover</b>: Underline when the mouse is moved over the link</li>"
-	    "</ul><br /><i>Note: The site's CSS definitions can override this value</i>");
+	    "</ul><br /><i>Note: The site's CSS definitions can override this value.</i>");
     label->setWhatsThis(whatsThis);
     m_pUnderlineCombo->setWhatsThis(whatsThis);
     connect(m_pUnderlineCombo, SIGNAL(currentIndexChanged(int)), SLOT(slotChanged()));
@@ -209,7 +210,7 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
     row++;
     whatsThis = i18n("Controls how Konqueror shows animated images:<br />"
 	    "<ul><li><b>Enabled</b>: Show all animations completely.</li>"
-	    "<li><b>Disabled</b>: Never show animations, show the start image only.</li>"
+	    "<li><b>Disabled</b>: Never show animations, show the starting image only.</li>"
 	    "<li><b>Show only once</b>: Show all animations completely but do not repeat them.</li></ul>");
     label->setWhatsThis(whatsThis);
     m_pAnimationsCombo->setWhatsThis(whatsThis);
