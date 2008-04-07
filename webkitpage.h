@@ -46,7 +46,7 @@ protected:
 
     void initGlobalSettings();
 
-protected slots:
+protected Q_SLOTS:
     void slotHandleUnsupportedContent(QNetworkReply *);
 
 private:

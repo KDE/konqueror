@@ -26,6 +26,7 @@
 #include "webkitview.h"
 
 #include <KDE/KParts/GenericFactory>
+#include <KDE/KParts/Plugin>
 #include <KDE/KAboutData>
 #include <KDE/KUriFilterData>
 #include <KDE/KDesktopFile>
@@ -49,7 +50,7 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
     webView = new WebView(this, parentWidget);
 //     webView->setNetworkInterface(new KWebNetworkInterface(this));
     setWidget(webView);
-    setComponentData(*new KComponentData(createAboutData() ),true );
+    setComponentData(*new KComponentData(createAboutData() ) );
     connect(webView, SIGNAL(loadStarted()),
             this, SLOT(loadStarted()));
     connect(webView, SIGNAL(loadFinished()),
@@ -68,6 +69,10 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
             this, SLOT(urlChanged(const QUrl &)));
 
     initAction();
+
+    KParts::Plugin::loadPlugins( this, this, componentData(),true );
+    QList<KParts::Plugin*> plugins = KParts::Plugin::pluginObjects( this);
+    kDebug()<<" plugins.count() :"<<plugins.count();
     setXMLFile( "webkitpart.rc" );
 }
 

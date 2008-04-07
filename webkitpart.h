@@ -56,7 +56,7 @@ protected:
     virtual bool openFile();
     void initAction();
 
-private slots:
+private Q_SLOTS:
     void loadStarted();
     void loadFinished();
     void urlChanged(const QUrl &url);
@@ -73,7 +73,7 @@ class WebKitBrowserExtension : public KParts::BrowserExtension
 public:
     WebKitBrowserExtension(WebKitPart *parent);
 
-public slots:
+public Q_SLOTS:
     void cut();
     void copy();
     void paste();
@@ -91,7 +91,7 @@ public slots:
     void slotSendImage();
     void slotCopyImage();
 
-private slots:
+private Q_SLOTS:
     void updateEditActions();
 
 private:
