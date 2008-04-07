@@ -77,11 +77,11 @@ void WebKitPart::initAction()
 {
     KAction *action = new KAction( KIcon(  "zoom-in" ), i18n( "Enlarge Font" ), this );
     actionCollection()->addAction( "incFontSizes", action );
-    connect( action, SIGNAL(triggered(bool)), browserExt(), SLOT( zoomIn() ) );
+    connect( action, SIGNAL(triggered(bool)), browserExtension, SLOT( zoomIn() ) );
 
     action = new KAction( KIcon(  "zoom-out" ),i18n( "Shrink Font" ), this );
     actionCollection()->addAction( "decFontSizes", action );
-    connect( action, SIGNAL(triggered(bool)), browserExt(), SLOT( zoomOut() ) );
+    connect( action, SIGNAL(triggered(bool)), browserExtension, SLOT( zoomOut() ) );
 
 
     action = actionCollection()->addAction( KStandardAction::Find, "find", browserExt(), SLOT( slotFind() ) );

@@ -91,8 +91,8 @@ void WebView::contextMenuEvent(QContextMenuEvent *e)
         editActionPopupMenu( mapAction );
     }
     emit part->browserExt()->popupMenu(/*guiclient */
-                                       e->globalPos(), part->url(), 0, KParts::OpenUrlArguments(), KParts::BrowserArguments(),
-                                       flags, mapAction);
+        e->globalPos(), part->url(), 0, KParts::OpenUrlArguments(), KParts::BrowserArguments(),
+        flags, mapAction);
 }
 
 void WebView::partActionPopupMenu( KParts::BrowserExtension::ActionGroupMap &partGroupMap )

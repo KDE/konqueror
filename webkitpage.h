@@ -30,6 +30,7 @@ class WebKitPart;
 
 class WebPage : public QWebPage
 {
+    Q_OBJECT
 public:
     WebPage(WebKitPart *wpart, QWidget *parent);
 
@@ -44,6 +45,9 @@ protected:
 
 
     void initGlobalSettings();
+
+protected slots:
+    void slotHandleUnsupportedContent(QNetworkReply *);
 
 private:
     WebKitPart *m_part;

@@ -30,10 +30,15 @@
 #include <KDE/KMessageBox>
 #include <KDE/KProtocolManager>
 #include <QWebFrame>
+#include <QtNetwork/QNetworkReply>
 
 WebPage::WebPage(WebKitPart *wpart, QWidget *parent)
     : QWebPage(parent), m_part(wpart)
 {
+    connect(this, SIGNAL(unsupportedContent(QNetworkReply *)),
+            this, SLOT(slotHandleUnsupportedContent(QNetworkReply *)));
+    setForwardUnsupportedContent(true);
+
     initGlobalSettings();
 }
 
@@ -91,4 +96,12 @@ QString WebPage::userAgentForUrl(const QUrl& _url) const
         return userAgent;
     }
     return QWebPage::userAgentForUrl(url);
+}
+
+void WebPage::slotHandleUnsupportedContent(QNetworkReply *reply)
+{
+    //TODO
+    kDebug()<<" title :"<<reply->url().toString();
+    kDebug()<<" error :"<<reply->errorString();
+
 }
