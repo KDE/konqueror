@@ -41,13 +41,15 @@
 
 // #include "kwebnetworkinterface.h"
 
+KAboutData *WebKitPart::s_about = 0;
+
 WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList &/*args*/)
     : KParts::ReadOnlyPart(parent)
 {
     webView = new WebView(this, parentWidget);
 //     webView->setNetworkInterface(new KWebNetworkInterface(this));
     setWidget(webView);
-
+    setComponentData(*new KComponentData(createAboutData() ),true );
     connect(webView, SIGNAL(loadStarted()),
             this, SLOT(loadStarted()));
     connect(webView, SIGNAL(loadFinished()),
@@ -161,10 +163,14 @@ QWebPage::NavigationRequestResponse WebKitPart::navigationRequested(const QWebNe
 
 KAboutData *WebKitPart::createAboutData()
 {
-    return new KAboutData("webkitpart", 0, ki18n("Webkit HTML Component"),
+    if ( !s_about )
+    {
+        s_about =new KAboutData("webkitpart", 0, ki18n("Webkit HTML Component"),
                           /*version*/ "1.0", ki18n(/*shortDescription*/ ""),
                           KAboutData::License_LGPL,
                           ki18n("Copyright (c) 2007 Trolltech ASA"));
+    }
+    return s_about;
 }
 
 WebKitBrowserExtension::WebKitBrowserExtension(WebKitPart *parent)

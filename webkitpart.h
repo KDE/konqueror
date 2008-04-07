@@ -64,6 +64,7 @@ private slots:
 private:
     WebView *webView;
     WebKitBrowserExtension *browserExtension;
+    static KAboutData *s_about;
 };
 
 class WebKitBrowserExtension : public KParts::BrowserExtension
