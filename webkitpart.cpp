@@ -302,7 +302,4 @@ void WebKitBrowserExtension::slotCopyImage()
     QApplication::clipboard()->setMimeData( mimeData, QClipboard::Selection );
 }
 
-typedef KParts::GenericFactory<WebKitPart> Factory;
-Q_EXPORT_PLUGIN(Factory);
-
 #include "webkitpart.moc"

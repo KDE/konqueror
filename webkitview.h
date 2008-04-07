@@ -28,6 +28,7 @@
 #include <KDE/KParts/BrowserExtension>
 
 #include <qwebview.h>
+#include "webkitkde_export.h"
 
 class WebView;
 class QWebFrame;
@@ -38,7 +39,7 @@ class QAction;
 class WebKitPart;
 class QWebHitTestResult;
 
-class WebView : public QWebView
+class WEBKITKDE_EXPORT WebView : public QWebView
 {
 public:
     WebView(WebKitPart *wpart, QWidget *parent);

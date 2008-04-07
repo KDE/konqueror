@@ -27,6 +27,7 @@
 #include <KDE/KParts/BrowserExtension>
 
 #include <qwebview.h>
+#include "webkitkde_export.h"
 
 class WebView;
 class QWebFrame;
@@ -34,7 +35,7 @@ class KAboutData;
 class WebKitBrowserExtension;
 class KWebNetworkInterface;
 
-class WebKitPart : public KParts::ReadOnlyPart
+class WEBKITKDE_EXPORT WebKitPart : public KParts::ReadOnlyPart
 {
     Q_OBJECT
 public:

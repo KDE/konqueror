@@ -23,12 +23,12 @@
 #define WEBKITPAGE_H
 
 #include <qwebpage.h>
-
+#include "webkitkde_export.h"
 class QWebFrame;
 class WebKitBrowserExtension;
 class WebKitPart;
 
-class WebPage : public QWebPage
+class WEBKITKDE_EXPORT WebPage : public QWebPage
 {
     Q_OBJECT
 public:
