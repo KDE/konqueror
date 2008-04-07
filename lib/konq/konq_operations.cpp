@@ -276,7 +276,7 @@ bool KonqOperations::askDeleteConfirmation( const KUrl::List & selectedUrls, int
 		i18n( "Delete Files" ),
 		KStandardGuiItem::del(),
 		KStandardGuiItem::cancel(),
-		keyName, KMessageBox::Notify | KMessageBox::Dangerous);
+		keyName, KMessageBox::Notify);
             break;
 
         case MOVE:
@@ -288,7 +288,7 @@ bool KonqOperations::askDeleteConfirmation( const KUrl::List & selectedUrls, int
 		i18n( "Move to Trash" ),
 		KGuiItem( i18nc( "Verb", "&Trash" ), "user-trash"),
 		KStandardGuiItem::cancel(),
-		keyName, KMessageBox::Notify | KMessageBox::Dangerous);
+		keyName, KMessageBox::Notify);
         }
         if (!keyName.isEmpty())
         {
