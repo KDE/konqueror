@@ -48,9 +48,9 @@ KonqSideBarWebModule::KonqSideBarWebModule(const KComponentData &componentData, 
 		this,
 		SLOT(urlClicked(QString, KParts::OpenUrlArguments, KParts::BrowserArguments)));
 	connect(_htmlPart->browserExtension(),
-		SIGNAL(openUrlRequest(QString, const KParts::OpenUrlArguments&, const KParts::BrowserArguments &)),
+		SIGNAL(openUrlRequest(const KUrl &, const KParts::OpenUrlArguments&, const KParts::BrowserArguments &)),
 		this,
-		SLOT(formClicked(QString, const KParts::OpenUrlArguments&, const KParts::BrowserArguments &)) );
+		SLOT(formClicked(const KUrl &, const KParts::OpenUrlArguments&, const KParts::BrowserArguments &)) );
 	connect(_htmlPart,
 		SIGNAL(setAutoReload()), this, SLOT( setAutoReload() ));
 	connect(_htmlPart,
