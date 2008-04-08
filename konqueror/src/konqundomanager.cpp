@@ -36,7 +36,7 @@
 #include <kglobal.h>
 #include <kstandarddirs.h>
 
-Q_DECLARE_METATYPE(QList<QVariant>);
+Q_DECLARE_METATYPE(QList<QVariant>)
 
 class KonqClosedWindowsManagerPrivate
 {
@@ -46,7 +46,7 @@ public:
     bool m_amIalone;
 };
 
-K_GLOBAL_STATIC(KonqClosedWindowsManagerPrivate, myKonqClosedWindowsManagerPrivate);
+K_GLOBAL_STATIC(KonqClosedWindowsManagerPrivate, myKonqClosedWindowsManagerPrivate)
 
 
 KonqUndoManager::KonqUndoManager(QObject* parent)
