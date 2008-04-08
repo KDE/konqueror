@@ -358,9 +358,11 @@ void KonqViewManager::openClosedWindow(const KonqClosedWindowItem& closedWindowI
     }
 
     mainWindow->viewManager()->loadRootItem( closedWindowItem.configGroup(), mainWindow->viewManager()->tabContainer(), KUrl(), true, KUrl() );
+    // read window settings
+    mainWindow->applyMainWindowSettings( KConfigGroup( KGlobal::config(), "KonqMainWindow" ), true );
+    mainWindow->applyMainWindowSettings( KConfigGroup( & closedWindowItem.configGroup(), "Main Window Settings" ), true );
     mainWindow->activateChild();
     mainWindow->show();
-
     kDebug(1202) << "done";
 }
 
