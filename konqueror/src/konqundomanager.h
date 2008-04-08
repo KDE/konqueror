@@ -26,7 +26,6 @@
 #include <QList>
 #include <kconfig.h>
 #include "konqcloseditem.h"
-#include "konqundomanager_interface.h"
 class QAction;
 class KonqClosedWindowsManagerPrivate;
 class QDBusMessage;
