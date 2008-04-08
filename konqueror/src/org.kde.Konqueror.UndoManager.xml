@@ -1,0 +1,23 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="org.kde.Konqueror.UndoManager">
+    <signal name="notifyClosedWindowItem">
+      <arg name="title" type="s" direction="out"/>
+      <arg name="numTabs" type="i" direction="out"/>
+      <arg name="configFileName" type="s" direction="out"/>
+      <arg name="configGroup" type="s" direction="out"/>
+    </signal>
+    <signal name="notifyRemove">
+      <arg name="configFileName" type="s" direction="out"/>
+      <arg name="configGroup" type="s" direction="out"/>
+    </signal>
+    <signal name="requestLocalClosedWindowItems">
+    </signal>
+    <method name="localClosedWindowItems">
+      <arg name="windowItems" type="av" direction="in"/>
+      <arg name="service" type="s" direction="in"/>
+    </method>
+    <method name="pong">
+    </method>
+  </interface>
+</node>

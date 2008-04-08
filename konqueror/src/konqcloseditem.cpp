@@ -19,6 +19,7 @@
 */
 
 #include "konqcloseditem.h"
+#include "konqundomanager.h"
 #include <QFile>
 #include <QFont>
 #include <QFontMetrics>
@@ -34,27 +35,6 @@
 #include <kstandarddirs.h>
 #include <unistd.h>
 
-class KConfigNew
-{
-public:
-    KConfigNew()
-    {
-        filename = "closeditems/closeditems_" + QString::number(getpid());
-        QString file = KStandardDirs::locateLocal("appdata", filename);
-        if(QFile::exists(file))
-            QFile::remove(file);
-        
-        config = new KConfig(filename, KConfig::SimpleConfig, "appdata");
-        kDebug();
-    }
-    ~KConfigNew() {
-        QFile::remove(KStandardDirs::locateLocal("appdata", filename));
-        delete config;
-    }
-    KConfig *config;
-    QString filename;
-};
-
 class KonqIcon {
 public:
     KonqIcon()
@@ -66,11 +46,10 @@ public:
     QImage image;
 };
 
-K_GLOBAL_STATIC(KConfigNew, s_config)
 K_GLOBAL_STATIC(KonqIcon, s_lightIconImage)
 
 KonqClosedItem::KonqClosedItem(const QString& title, const QString& group, quint64 serialNumber)
-    : m_title(title), m_configGroup(s_config->config, group), m_serialNumber(serialNumber)
+    : m_title(title), m_configGroup(KonqClosedWindowsManager::self()->config(), group), m_serialNumber(serialNumber)
 {
 }
 
@@ -92,7 +71,7 @@ KonqClosedTabItem::~KonqClosedTabItem()
     kDebug(1202) << "deleted group" << m_configGroup.name();
 }
 
-QPixmap KonqClosedTabItem::icon() {
+QPixmap KonqClosedTabItem::icon() const {
     return KonqPixmapProvider::self()->pixmapFor(m_url);
 }
 
@@ -104,11 +83,12 @@ KonqClosedWindowItem::KonqClosedWindowItem(const QString& title, quint64 serialN
 
 KonqClosedWindowItem::~KonqClosedWindowItem()
 {
-    m_configGroup.deleteGroup();
-    kDebug(1202) << "deleted group" << m_configGroup.name();
+// Do this manually when needed:
+//     m_configGroup.deleteGroup();
 }
 
-QPixmap KonqClosedWindowItem::icon() {
+QPixmap KonqClosedWindowItem::icon() const
+{
     QImage overlayImg = s_lightIconImage->image.copy();
     int oldWidth = overlayImg.width();
     QString countStr = QString::number( m_numTabs );
@@ -133,4 +113,57 @@ QPixmap KonqClosedWindowItem::icon() {
     p.drawText(overlayImg.rect(), Qt::AlignCenter, countStr);
     
     return QPixmap::fromImage(overlayImg);
+}
+
+int KonqClosedWindowItem::numTabs() const
+{
+    return m_numTabs;
+}
+
+KonqClosedRemoteWindowItem::KonqClosedRemoteWindowItem(const QString& title,
+    const QString& groupName, const QString& configFileName, quint64 serialNumber,
+    int numTabs, const QString& dbusService)
+    : KonqClosedWindowItem(title, serialNumber, numTabs),
+    m_remoteGroupName(groupName), m_remoteConfigFileName(configFileName),
+    m_dbusService(dbusService), m_remoteConfigGroup(0L), m_remoteConfig(0L)
+{
+    kDebug();
+}
+
+KonqClosedRemoteWindowItem::~KonqClosedRemoteWindowItem()
+{
+    delete m_remoteConfigGroup;
+    delete m_remoteConfig;
+}
+
+void KonqClosedRemoteWindowItem::readConfig() const
+{
+    // only do this once
+    if(m_remoteConfig || m_remoteConfigGroup)
+        return;
+
+    m_remoteConfig = new KConfig(
+        KStandardDirs::locateLocal("appdata", m_remoteConfigFileName),
+        KConfig::SimpleConfig, "appdata");
+    m_remoteConfigGroup = new KConfigGroup(m_remoteConfig, m_remoteGroupName);
+    kDebug();
+}
+
+const KConfigGroup& KonqClosedRemoteWindowItem::configGroup() const
+{
+    readConfig();
+    return *m_remoteConfigGroup;
+}
+
+KConfigGroup& KonqClosedRemoteWindowItem::configGroup()
+{
+    readConfig();
+    return *m_remoteConfigGroup;
+}
+
+bool KonqClosedRemoteWindowItem::equalsTo(const QString& groupName,
+    const QString& configFileName) const
+{   
+    return (m_remoteGroupName == groupName &&
+        m_remoteConfigFileName == configFileName);
 }

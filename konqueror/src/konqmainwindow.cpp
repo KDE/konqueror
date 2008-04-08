@@ -2895,7 +2895,7 @@ void KonqMainWindow::slotClosedItemsListAboutToShow()
     QMenu* popup = m_paClosedItems->menu();
     // Clear the menu and fill it with a maximum of s_closedTabsListLength number of urls
     popup->clear();
-    QAction* clearAction = popup->addAction( i18n("Empty Closed Tabs History") );
+    QAction* clearAction = popup->addAction( i18n("Empty Closed Items History") );
     connect(clearAction, SIGNAL(triggered()), m_undoManager, SLOT(clearClosedItemsList()));
     popup->insertSeparator((QAction*)0);
 
@@ -4994,10 +4994,7 @@ void KonqMainWindow::closeEvent( QCloseEvent *e )
 
     // save size to have something to restore if the profile does not contain size
     saveWindowSize();
-    // Save the window tabs so that we can restore it later, but only if there
-    // are other windows opened
-    if(s_konqMainWindowInstancesCount > 1)
-        addClosedWindowToUndoList();
+    addClosedWindowToUndoList();
 
     hide();
     qApp->flush();
@@ -5040,7 +5037,11 @@ void KonqMainWindow::addClosedWindowToUndoList()
     closedWindowItem->configGroup().writeEntry( "Height", height() );
     closedWindowItem->configGroup().writeEntry( "FullScreen", fullScreenMode() );
     tabContainer->saveConfig( closedWindowItem->configGroup(), prefix, flags, 0L, 0, 1);
-
+    // Save window settings
+    KConfigGroup cfg( &closedWindowItem->configGroup(),  "Main Window Settings" );
+    saveMainWindowSettings( cfg );
+    closedWindowItem->configGroup().sync();
+    
     // 3. Finally add the KonqClosedWindowItem to the undo list
     m_paClosedItems->setEnabled(true);
     m_undoManager->addClosedWindowItem( closedWindowItem );
