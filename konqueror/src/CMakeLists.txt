@@ -80,7 +80,6 @@ if (WIN32)
     kde4_add_executable(konqueror ${konqueror_KDEINIT_SRCS} konqmain.cpp)
     target_link_libraries(konqueror konquerorprivate konq ${KDE4_KPARTS_LIBS} ${KDE4_KUTILS_LIBS})
 else (WIN32)
-    kde4_add_kdeinit_executable(konqueror ${konqueror_KDEINIT_SRCS} konqmain.cpp)
     # KDE4_KUTILS_LIBS used for KCMultiDialog, KCModuleInfo, and KPluginSelector
     target_link_libraries(kdeinit_konqueror konquerorprivate konq ${KDE4_KPARTS_LIBS} ${KDE4_KUTILS_LIBS})
     target_link_libraries(konqueror kdeinit_konqueror)
