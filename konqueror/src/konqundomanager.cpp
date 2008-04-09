@@ -65,6 +65,7 @@ KonqUndoManager::KonqUndoManager(QObject* parent)
     connect(KonqClosedWindowsManager::self(),
         SIGNAL(removeWindowInOtherInstances(KonqUndoManager *, const KonqClosedWindowItem *)), this,
         SLOT( slotRemoveClosedWindowItem(KonqUndoManager *, const KonqClosedWindowItem *) ));
+    populate();
 }
 
 KonqUndoManager::~KonqUndoManager()
