@@ -171,19 +171,16 @@ KRemoteEncodingPlugin::slotAboutToShow()
 void
 KRemoteEncodingPlugin::slotItemSelected(int id)
 {
-  KConfig config(("kio_" + m_currentURL.protocol() + "rc").toLatin1());
-  QString host = m_currentURL.host();
-
-  if (!m_menu->menu()->isItemChecked(id))
+    KConfig config(("kio_" + m_currentURL.protocol() + "rc").toLatin1());
+    QString host = m_currentURL.host();
+    if ( m_menu->menu()->isItemChecked(id) )
     {
-      QString charset = KGlobal::charsets()->encodingForName(m_encodingDescriptions[id - 1]);
-
-	  KConfigGroup cg(&config, host);
-      cg.writeEntry(DATA_KEY, charset);
-      config.sync();
-
-      // Update the io-slaves...
-      updateBrowser();
+        QString charset = KGlobal::charsets()->encodingForName(m_encodingDescriptions[id - 1]);
+        KConfigGroup cg(&config, host);
+        cg.writeEntry(DATA_KEY, charset);
+        config.sync();
+        // Update the io-slaves...
+        updateBrowser();
     }
 }
 
@@ -236,7 +233,6 @@ void
 KRemoteEncodingPlugin::updateBrowser()
 {
   KIO::Scheduler::emitReparseSlaveConfiguration();
-
   // Reload the page with the new charset
   KParts::OpenUrlArguments args = m_part->arguments();
   args.setReload( true );
