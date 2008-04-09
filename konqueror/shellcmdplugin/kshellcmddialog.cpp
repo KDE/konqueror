@@ -38,7 +38,7 @@ KShellCommandDialog::KShellCommandDialog(const QString& title, const QString& co
    setModal( modal );
    setButtons( KDialog::None );
    QWidget *w = new QWidget( this );
-   QVBoxLayout * box= new QVBoxLayout (this);
+   QVBoxLayout * box= new QVBoxLayout;
    box->setMargin(marginHint());
    box->setSpacing(spacingHint());
    w->setLayout( box );
