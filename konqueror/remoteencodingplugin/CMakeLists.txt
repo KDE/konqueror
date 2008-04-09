@@ -13,5 +13,5 @@ install(TARGETS konq_remoteencoding  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
 ########### install files ###############
 
-#install( FILES kremoteencodingplugin.rc kremoteencodingplugin.desktop  DESTINATION  ${DATA_INSTALL_DIR}/dolphinpart/kpartplugins )
+install( FILES kremoteencodingplugin.rc kremoteencodingplugin.desktop  DESTINATION  ${DATA_INSTALL_DIR}/dolphinpart/kpartplugins )
 

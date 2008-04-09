@@ -57,6 +57,12 @@ KRemoteEncodingPlugin::KRemoteEncodingPlugin(QObject * parent,
   m_menu->setEnabled(false);
   m_menu->setDelayed(false);
 
+  m_part = qobject_cast<KParts::ReadOnlyPart*>(parent);
+  if (m_part)
+    // if parent is not a KonqDirPart, our menu will never show
+    QObject::connect(m_part, SIGNAL(aboutToOpenURL()),
+                     this, SLOT(slotAboutToOpenURL()));
+
   m_part->installEventFilter(this);
 }
 
