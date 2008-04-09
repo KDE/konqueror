@@ -72,20 +72,15 @@ qt4_add_dbus_interface(konqueror_KDEINIT_SRCS ${KDE4_DBUS_INTERFACES_DIR}/org.kd
 qt4_add_dbus_adaptor(konqueror_KDEINIT_SRCS org.kde.Konqueror.UndoManager.xml konqundomanager.h KonqClosedWindowsManager konqundomanageradaptor KonqClosedWindowsManagerAdaptor)
 qt4_add_dbus_interface(konqueror_KDEINIT_SRCS org.kde.Konqueror.UndoManager.xml konqundomanager_interface)
 kde4_add_kdeinit_executable(konqueror ${konqueror_KDEINIT_SRCS} konqmain.cpp)
-# make sure konqpixmapprovider.h has favicon_interface.h
-add_dependencies(kdeinit_konqueror konquerorprivate)
+target_link_libraries(kdeinit_konqueror konquerorprivate konq ${KDE4_KPARTS_LIBS} ${KDE4_KUTILS_LIBS})
+target_link_libraries(konqueror kdeinit_konqueror)
 
 kde4_add_app_icon(konqueror_KDEINIT_SRCS "${KDE4_ICON_INSTALL_DIR}/oxygen/*/apps/konqueror.png")
 
 if (WIN32)
     add_definitions(-Dkdemain=main)
-    kde4_add_executable(konqueror ${konqueror_KDEINIT_SRCS} konqmain.cpp)
-    target_link_libraries(konqueror konquerorprivate konq ${KDE4_KPARTS_LIBS} ${KDE4_KUTILS_LIBS})
 else (WIN32)
     # KDE4_KUTILS_LIBS used for KCMultiDialog, KCModuleInfo, and KPluginSelector
-    target_link_libraries(kdeinit_konqueror konquerorprivate konq ${KDE4_KPARTS_LIBS} ${KDE4_KUTILS_LIBS})
-    target_link_libraries(konqueror kdeinit_konqueror)
-
     install(TARGETS kdeinit_konqueror  DESTINATION ${INSTALL_TARGETS_DEFAULT_ARGS} )
 endif (WIN32)
 
