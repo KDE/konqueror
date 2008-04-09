@@ -70,9 +70,6 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
 
     initAction();
 
-    KParts::Plugin::loadPlugins( this, this, componentData(),true );
-    QList<KParts::Plugin*> plugins = KParts::Plugin::pluginObjects( this);
-    kDebug()<<" plugins.count() :"<<plugins.count();
     setXMLFile( "webkitpart.rc" );
 }
 
