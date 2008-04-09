@@ -35,6 +35,7 @@
 #include <klocale.h>
 #include <kglobal.h>
 #include <kstandarddirs.h>
+#include <unistd.h> // getpid
 
 Q_DECLARE_METATYPE(QList<QVariant>)
 
