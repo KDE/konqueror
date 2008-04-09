@@ -40,8 +40,9 @@ KShellCommandExecutor::KShellCommandExecutor(const QString& command, QWidget* pa
 ,m_readNotifier(0)
 ,m_writeNotifier(0)
 {
-   setTextFormat(Qt::PlainText);
+    setAcceptRichText( false );
    setFont( KGlobalSettings::fixedFont() );
+   setReadOnly( true );
 }
 
 KShellCommandExecutor::~KShellCommandExecutor()
@@ -62,10 +63,8 @@ int KShellCommandExecutor::exec()
       ::kill(m_shellProcess->pid(),SIGTERM);
       delete m_shellProcess;
    };
-   if (m_readNotifier!=0)
-      delete m_readNotifier;
-   if (m_writeNotifier!=0)
-      delete m_writeNotifier;
+   delete m_readNotifier;
+   delete m_writeNotifier;
 
    m_shellProcess=new PtyProcess();
    m_shellProcess->setTerminal(true);
@@ -83,6 +82,8 @@ int KShellCommandExecutor::exec()
    if (ret < 0)
    {
       //kDebug()<<"could not execute";
+       delete m_shellProcess;
+       m_shellProcess = 0L;
       return 0;
    }
 
@@ -111,7 +112,7 @@ void KShellCommandExecutor::readDataFromShell()
       //kDebug()<<"***********************\n"<<buffer<<"###################\n";
       buffer[bytesRead]='\0';
       this->append(QString::fromLocal8Bit(buffer));
-      setTextFormat(Qt::PlainText);
+      setAcceptRichText( false );
    };
 }
 
@@ -138,7 +139,7 @@ void KShellCommandExecutor::writeDataToShell()
 
 void KShellCommandExecutor::slotFinished()
 {
-   setTextFormat(Qt::PlainText);
+    setAcceptRichText( false );
    if (m_shellProcess!=0)
    {
       delete m_readNotifier;
