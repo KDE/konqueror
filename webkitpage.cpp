@@ -35,10 +35,11 @@
 WebPage::WebPage(WebKitPart *wpart, QWidget *parent)
     : QWebPage(parent), m_part(wpart)
 {
+#if 0
     connect(this, SIGNAL(unsupportedContent(QNetworkReply *)),
             this, SLOT(slotHandleUnsupportedContent(QNetworkReply *)));
     setForwardUnsupportedContent(true);
-
+#endif
     initGlobalSettings();
 }
 
