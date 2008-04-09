@@ -45,7 +45,7 @@ SMBRoOptions::SMBRoOptions(QWidget *parent, const QVariantList &, const KCompone
    QGridLayout *layout = new QGridLayout(this );
    layout->setMargin( KDialog::marginHint() );
    layout->setSpacing( KDialog::spacingHint() );
-   QLabel *label=new QLabel(i18n("This is the configuration for the samba client only, not the server."),this);
+   QLabel *label=new QLabel(i18n("These settings apply to network browsing only."),this);
    layout->addWidget(label,0,0, 1, 2 );
 
    m_userLe=new QLineEdit(this);
