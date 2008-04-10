@@ -23,6 +23,9 @@
 #include <kactioncollection.h>
 #include <kdebug.h>
 #include <khtml_part.h> // this plugin applies to a khtml part
+#ifdef HAVE_WEBKIT
+#include <webkitpart.h>
+#endif
 #include <kicon.h>
 #include <klocale.h>
 #include <kmessagebox.h>
@@ -30,6 +33,7 @@
 #include <kservicetypetrader.h>
 #include <kspeech.h>
 #include <ktoolinvocation.h>
+
 
 #include "kspeechinterface.h"
 
@@ -55,12 +59,11 @@ KHTMLPluginKTTSD::~KHTMLPluginKTTSD()
 
 void KHTMLPluginKTTSD::slotReadOut()
 {
-    KHTMLPart *part = qobject_cast<KHTMLPart *>(parent());
-
+    KParts::ReadOnlyPart* part = static_cast<KParts::ReadOnlyPart *>(parent());
     // The parent is assumed to be a KHTMLPart
     if (!part)
-       KMessageBox::sorry( 0, i18n( "You cannot read anything except web pages with this plugin, sorry." ),
-                              i18n( "Cannot Read source" ) );
+        KMessageBox::sorry( 0, i18n( "You cannot read anything except web pages with this plugin, sorry." ),
+                            i18n( "Cannot Read source" ) );
     else
     {
         if (!QDBusConnection::sessionBus().interface()->isServiceRegistered("org.kde.kttsd"))
@@ -82,34 +85,73 @@ void KHTMLPluginKTTSD::slotReadOut()
         }
 
         QString query;
-        if (supportsXhtml)
+        bool hasSelection = false;
+        KHTMLPart *compPart = dynamic_cast<KHTMLPart *>(part);
+        if ( compPart )
         {
-            kDebug() << "KTTS claims to support rich speak (XHTML to SSML).";
-            if (part->hasSelection())
-                query = part->selectedTextAsHTML();
-            else
+            if (supportsXhtml)
             {
-                // TODO: Fooling around with the selection probably has unwanted
-                // side effects, but until a method is supplied to get valid xhtml
-                // from entire document..
-                // query = part->document().toString().string();
-                part->selectAll();
-                query = part->selectedTextAsHTML();
-                // Restore no selection.
-                part->setSelection(part->document().createRange());
+                kDebug() << "KTTS claims to support rich speak (XHTML to SSML).";
+                if (hasSelection)
+                    query = compPart->selectedTextAsHTML();
+                else
+                {
+                    // TODO: Fooling around with the selection probably has unwanted
+                    // side effects, but until a method is supplied to get valid xhtml
+                    // from entire document..
+                    // query = part->document().toString().string();
+                    compPart->selectAll();
+                    query = compPart->selectedTextAsHTML();
+                    // Restore no selection.
+                    compPart->setSelection(compPart->document().createRange());
+                }
+            } else {
+                if (hasSelection)
+                    query = compPart->selectedText();
+                else
+                    query = compPart->htmlDocument().body().innerText().string();
             }
-        } else {
-            if (part->hasSelection())
-                query = part->selectedText();
-            else
-                query = part->htmlDocument().body().innerText().string();
         }
+#ifdef HAVE_WEBKITKDE
+        else
+        {
+            WebKitPart *webkitPart = dynamic_cast<WebKitPart *>(part);
+            if ( webkitPart )
+            {
+#if 0
+                if (supportsXhtml)
+                {
+                    kDebug() << "KTTS claims to support rich speak (XHTML to SSML).";
+                    if (hasSelection)
+                        query = part->selectedTextAsHTML();
+                    else
+                    {
+                        // TODO: Fooling around with the selection probably has unwanted
+                        // side effects, but until a method is supplied to get valid xhtml
+                        // from entire document..
+                        // query = part->document().toString().string();
+                        part->selectAll();
+                        query = part->selectedTextAsHTML();
+                        // Restore no selection.
+                        part->setSelection(part->document().createRange());
+                    }
+                } else {
+                    if (hasSelection)
+                        query = part->selectedText();
+                    else
+                        query = part->htmlDocument().body().innerText().string();
+                }
+#endif
+            }
+
+        }
+#endif
         // kDebug() << "query =" << query;
 
         reply = kttsd.say(query, KSpeech::soNone);
         if ( !reply.isValid())
             KMessageBox::sorry( 0, i18n( "The D-Bus call say() failed." ),
-                                   i18n( "D-Bus Call Failed" ));
+                                i18n( "D-Bus Call Failed" ));
     }
 }
 
