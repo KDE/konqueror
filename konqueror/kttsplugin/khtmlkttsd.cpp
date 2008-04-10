@@ -23,8 +23,11 @@
 #include <kactioncollection.h>
 #include <kdebug.h>
 #include <khtml_part.h> // this plugin applies to a khtml part
-#ifdef HAVE_WEBKIT
+#include "config-kttsplugin.h"
+#ifdef HAVE_WEBKITKDE
 #include <webkitpart.h>
+#include <webkitview.h>
+#include <QWebFrame>
 #endif
 #include <kicon.h>
 #include <klocale.h>
@@ -118,30 +121,30 @@ void KHTMLPluginKTTSD::slotReadOut()
             WebKitPart *webkitPart = dynamic_cast<WebKitPart *>(part);
             if ( webkitPart )
             {
-#if 0
                 if (supportsXhtml)
                 {
                     kDebug() << "KTTS claims to support rich speak (XHTML to SSML).";
                     if (hasSelection)
-                        query = part->selectedTextAsHTML();
+                        query = webkitPart->view()->page()->currentFrame()->toHtml();
                     else
                     {
                         // TODO: Fooling around with the selection probably has unwanted
                         // side effects, but until a method is supplied to get valid xhtml
                         // from entire document..
                         // query = part->document().toString().string();
-                        part->selectAll();
-                        query = part->selectedTextAsHTML();
+#if 0
+                        webkitPart->selectAll();
+                        query = webkitPart->view()->page()->currentFrame()->toHtml();
                         // Restore no selection.
-                        part->setSelection(part->document().createRange());
+                        webkitPart->setSelection(webkitPart->document().createRange());
+#endif
                     }
                 } else {
                     if (hasSelection)
-                        query = part->selectedText();
+                        query = webkitPart->view()->selectedText();
                     else
-                        query = part->htmlDocument().body().innerText().string();
+                        query = webkitPart->view()->page()->currentFrame()->toHtml();
                 }
-#endif
             }
 
         }
