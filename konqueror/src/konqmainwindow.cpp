@@ -5036,6 +5036,7 @@ void KonqMainWindow::addClosedWindowToUndoList()
     closedWindowItem->configGroup().writeEntry( "Width", width() );
     closedWindowItem->configGroup().writeEntry( "Height", height() );
     closedWindowItem->configGroup().writeEntry( "FullScreen", fullScreenMode() );
+    closedWindowItem->configGroup().writeEntry( "XMLUIFile", xmlFile() );
     tabContainer->saveConfig( closedWindowItem->configGroup(), prefix, flags, 0L, 0, 1);
     // Save window settings
     KConfigGroup cfg( &closedWindowItem->configGroup(),  "Main Window Settings" );
