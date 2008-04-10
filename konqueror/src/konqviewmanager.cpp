@@ -311,7 +311,7 @@ void KonqViewManager::breakOffTab( KonqFrameBase* currentFrame, const QSize& win
   KonqFrameBase::Options flags = KonqFrameBase::saveURLs;
   currentFrame->saveConfig( profileGroup, prefix, flags, 0L, 0, 1);
 
-  KonqMainWindow *mainWindow = new KonqMainWindow;
+  KonqMainWindow *mainWindow = new KonqMainWindow(KUrl(), m_pMainWindow->xmlFile());
 
   mainWindow->viewManager()->loadViewProfileFromGroup( profileGroup, QString() );
 
@@ -338,7 +338,10 @@ void KonqViewManager::breakOffTab( KonqFrameBase* currentFrame, const QSize& win
 void KonqViewManager::openClosedWindow(const KonqClosedWindowItem& closedWindowItem)
 {
     kDebug(1202) << "begin";
-    KonqMainWindow *mainWindow = new KonqMainWindow;
+    const QString xmluiFile =
+        closedWindowItem.configGroup().readEntry("XMLUIFile","konqueror.rc");
+    KonqMainWindow *mainWindow = new KonqMainWindow(KUrl(), xmluiFile);
+    
     if (closedWindowItem.configGroup().readEntry( "FullScreen", false ))
     {
         // Full screen on
