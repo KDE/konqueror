@@ -16,16 +16,14 @@ kde4_add_library(konqsidebarplugin SHARED ${konqsidebarplugin_LIB_SRCS})
 target_link_libraries(konqsidebarplugin  ${KDE4_KPARTS_LIBS} ${KDE4_KDE3SUPPORT_LIBS} )
 
 set_target_properties(konqsidebarplugin PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION} )
-install(TARGETS konqsidebarplugin  DESTINATION ${INSTALL_TARGETS_DEFAULT_ARGS} )
+install(TARGETS konqsidebarplugin  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 
 ########### next target ###############
 
 set(konq_sidebar_PART_SRCS konqsidebar.cpp sidebar_widget.cpp )
 
-
 kde4_add_plugin(konq_sidebar ${konq_sidebar_PART_SRCS})
-
 
 target_link_libraries(konq_sidebar  ${KDE4_KPARTS_LIBS} konq konqsidebarplugin ${KDE4_KUTILS_LIBS} )
 

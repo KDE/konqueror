@@ -24,10 +24,11 @@ set(konquerorprivate_SRCS
 )
 qt4_add_dbus_interface(konquerorprivate_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../../lib/konq/favicons/org.kde.FavIcon.xml favicon_interface)
 qt4_add_dbus_adaptor(konquerorprivate_SRCS org.kde.Konqueror.HistoryManager.xml konqhistorymanager.h KonqHistoryManager konqhistorymanageradaptor KonqHistoryManagerAdaptor)
+
 kde4_add_library(konquerorprivate SHARED ${konquerorprivate_SRCS})
 target_link_libraries(konquerorprivate ${KDE4_KPARTS_LIBS})
 set_target_properties(konquerorprivate PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION} )
-install(TARGETS konquerorprivate DESTINATION ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS konquerorprivate ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### konqueror ###############
 if (WIN32)
@@ -71,9 +72,9 @@ qt4_add_dbus_interface(konqueror_KDEINIT_SRCS org.kde.Konqueror.Main.xml konquer
 qt4_add_dbus_interface(konqueror_KDEINIT_SRCS ${KDE4_DBUS_INTERFACES_DIR}/org.kde.kded.xml kded_interface)
 qt4_add_dbus_adaptor(konqueror_KDEINIT_SRCS org.kde.Konqueror.UndoManager.xml konqundomanager.h KonqClosedWindowsManager konqundomanageradaptor KonqClosedWindowsManagerAdaptor)
 qt4_add_dbus_interface(konqueror_KDEINIT_SRCS org.kde.Konqueror.UndoManager.xml konqundomanager_interface)
+
 kde4_add_kdeinit_executable(konqueror ${konqueror_KDEINIT_SRCS} konqmain.cpp)
 target_link_libraries(kdeinit_konqueror konquerorprivate konq ${KDE4_KPARTS_LIBS} ${KDE4_KUTILS_LIBS})
-target_link_libraries(konqueror kdeinit_konqueror)
 
 kde4_add_app_icon(konqueror_KDEINIT_SRCS "${KDE4_ICON_INSTALL_DIR}/oxygen/*/apps/konqueror.png")
 
@@ -81,10 +82,10 @@ if (WIN32)
     add_definitions(-Dkdemain=main)
 else (WIN32)
     # KDE4_KUTILS_LIBS used for KCMultiDialog, KCModuleInfo, and KPluginSelector
-    install(TARGETS kdeinit_konqueror  DESTINATION ${INSTALL_TARGETS_DEFAULT_ARGS} )
+    install(TARGETS kdeinit_konqueror  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 endif (WIN32)
 
-install(TARGETS konqueror DESTINATION ${BIN_INSTALL_DIR})
+install(TARGETS konqueror ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### install files ###############
 install( FILES konqueror.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
