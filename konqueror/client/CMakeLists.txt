@@ -17,11 +17,10 @@ if (WIN32)
 else (WIN32)
     kde4_add_kdeinit_executable( kfmclient NOGUI ${kfmclient_SRCS})
     target_link_libraries(kdeinit_kfmclient  ${KDE4_KIO_LIBS} )
-    install(TARGETS kdeinit_kfmclient  DESTINATION ${INSTALL_TARGETS_DEFAULT_ARGS} )
-    target_link_libraries( kfmclient kdeinit_kfmclient )
+    install(TARGETS kdeinit_kfmclient  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 endif (WIN32)
 
-install(TARGETS kfmclient DESTINATION ${BIN_INSTALL_DIR})
+install(TARGETS kfmclient ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### install files ###############
 if( NOT WIN32)

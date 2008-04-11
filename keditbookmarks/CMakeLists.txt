@@ -42,10 +42,8 @@ kde4_add_kdeinit_executable( keditbookmarks ${keditbookmarks_KDEINIT_SRCS})
 
 target_link_libraries(kdeinit_keditbookmarks  ${KDE4_KDE3SUPPORT_LIBS} konq )
 
-install(TARGETS kdeinit_keditbookmarks  DESTINATION ${INSTALL_TARGETS_DEFAULT_ARGS})
-
-target_link_libraries( keditbookmarks kdeinit_keditbookmarks )
-install(TARGETS keditbookmarks DESTINATION ${BIN_INSTALL_DIR})
+install(TARGETS kdeinit_keditbookmarks  ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS keditbookmarks          ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### install files ###############
 
