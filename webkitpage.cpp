@@ -106,3 +106,12 @@ void WebPage::slotHandleUnsupportedContent(QNetworkReply *reply)
     kDebug()<<" error :"<<reply->errorString();
 
 }
+
+QObject *WebPage::createPlugin(const QString &classid, const QUrl &url, const QStringList &paramNames, const QStringList &paramValues)
+{
+    kDebug()<<" create Plugin requested :";
+    kDebug()<<" classid :"<<classid;
+    kDebug()<<" url :"<<url;
+    kDebug()<<"paramNames :"<<paramNames<<" paramValues ;"<<paramValues;
+    return 0;
+}

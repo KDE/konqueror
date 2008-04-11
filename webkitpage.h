@@ -45,6 +45,7 @@ protected:
 
 
     void initGlobalSettings();
+    virtual QObject *createPlugin(const QString &classid, const QUrl &url, const QStringList &paramNames, const QStringList &paramValues);
 
 protected Q_SLOTS:
     void slotHandleUnsupportedContent(QNetworkReply *);
