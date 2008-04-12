@@ -114,6 +114,12 @@ void WebView::partActionPopupMenu( KParts::BrowserExtension::ActionGroupMap &par
     connect( action, SIGNAL(triggered(bool)), part->browserExt(), SLOT( slotCopyImage() ) );
     partActions.append(action);
 
+    action = new KAction( i18n( "View Frame Source" ), this );
+    d->m_actionCollection->addAction( "viewFrameSource", action );
+    connect( action, SIGNAL(triggered(bool)), part->browserExt(), SLOT( slotViewDocumentSource() ) );
+    partActions.append(action);
+
+
     partGroupMap.insert( "partactions", partActions );
 }
 

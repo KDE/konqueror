@@ -37,6 +37,7 @@
 #include <QHttpRequestHeader>
 #include <QtWebKit/QWebHitTestResult>
 #include <QClipboard>
+#include <QPlainTextEdit>
 
 #include "searchwidget.h"
 
@@ -308,6 +309,17 @@ void WebKitBrowserExtension::slotCopyImage()
     mimeData->setImageData( part->view()->contextMenuResult().pixmap() );
     safeURL.populateMimeData( mimeData );
     QApplication::clipboard()->setMimeData( mimeData, QClipboard::Selection );
+}
+
+void WebKitBrowserExtension::slotViewDocumentSource()
+{
+
+    QString markup = part->view()->page()->mainFrame()->toHtml();
+    QPlainTextEdit *view = new QPlainTextEdit(markup);
+    view->setWindowTitle(i18n("Page Source of %1", part->view()->title()));
+    view->setMinimumWidth(640);
+    view->setAttribute(Qt::WA_DeleteOnClose);
+    view->show();
 }
 
 #include "webkitpart.moc"
