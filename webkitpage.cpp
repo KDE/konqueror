@@ -23,12 +23,17 @@
 #include "webkitpage.h"
 #include "webkitpart.h"
 
+//Use default khtml settings (not necessary to duplicate it)
+#include <khtmldefaults.h>
+
 #include <KDE/KParts/GenericFactory>
 #include <KDE/KAboutData>
 #include <KDE/KFileDialog>
 #include <KDE/KInputDialog>
 #include <KDE/KMessageBox>
 #include <KDE/KProtocolManager>
+#include <KDE/KGlobalSettings>
+
 #include <QWebFrame>
 #include <QtNetwork/QNetworkReply>
 
@@ -56,6 +61,16 @@ void WebPage::initGlobalSettings()
     {
         QWebSettings::globalSettings()->setUserStyleSheetUrl( QUrl( userStyleSheet ) );
     }
+    if ( cgHtml.hasKey( "AutoLoadImages" ) )
+        QWebSettings::globalSettings()->setAttribute(QWebSettings::AutoLoadImages, cgHtml.readEntry( "AutoLoadImages", true ) );
+
+    QWebSettings::globalSettings()->setFontFamily(QWebSettings::StandardFont , cgHtml.readEntry( "StandardFont", KGlobalSettings::generalFont().family() ) );
+    QWebSettings::globalSettings()->setFontFamily(QWebSettings::FixedFont ,cgHtml.readEntry( "FixedFont", KGlobalSettings::fixedFont().family() ) );
+    QWebSettings::globalSettings()->setFontFamily(QWebSettings::SerifFont ,cgHtml.readEntry( "SerifFont", HTML_DEFAULT_VIEW_SERIF_FONT ) );
+    QWebSettings::globalSettings()->setFontFamily(QWebSettings::SansSerifFont , cgHtml.readEntry( "SansSerifFont", HTML_DEFAULT_VIEW_SANSSERIF_FONT ) );
+    QWebSettings::globalSettings()->setFontFamily(QWebSettings::CursiveFont , cgHtml.readEntry( "CursiveFont", HTML_DEFAULT_VIEW_CURSIVE_FONT ) );
+    QWebSettings::globalSettings()->setFontFamily(QWebSettings::FixedFont , cgHtml.readEntry( "FantasyFont", HTML_DEFAULT_VIEW_FANTASY_FONT ) );
+
 }
 
 bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request,
