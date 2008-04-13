@@ -3785,7 +3785,7 @@ void KonqMainWindow::initActions()
   connect( clearLocation, SIGNAL( triggered() ),
            SLOT( slotClearLocationBar() ) );
   clearLocation->setWhatsThis( i18n( "<html>Clear Location bar<br /><br />"
-                                     "Clears the content of the location bar.</html>" ) );
+                                     "Clears the contents of the location bar.</html>" ) );
 
   // Bookmarks menu
   m_pamBookmarks = new KBookmarkActionMenu(s_bookmarkManager->root(),
@@ -3836,7 +3836,7 @@ void KonqMainWindow::initActions()
 
 
   m_paHome->setWhatsThis( i18n( "<html>Navigate to your 'Home Location'<br /><br />"
-                                "You can configure the location this button takes you to "
+                                "You can configure the location where this button takes you "
                                 "under <b>Settings -> Configure Konqueror -> General</b>.</html>" ) );
   m_paHome->setToolTip( i18n( "Navigate to your 'Home Location'" ) );
 
