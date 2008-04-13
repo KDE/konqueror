@@ -12,7 +12,7 @@
   <property name="whatsThis" >
    <string>&lt;qt>
 Here you can modify the default browser-identification text or set a site &lt;code>(eg. www.kde.org)&lt;/code> or a domain &lt;code>(eg. kde.org)&lt;/code> specific identification text.&lt;p>
-To add a new site specific identification text, click the &lt;code>New&lt;/code> button and supply the necessary information. To change an existing site specific entry, click on the &lt;code>Change&lt;/code> button. The &lt;code>Delete&lt;/code> button will remove the selected site specific identification text, causing the default setting to be used for that site or domain.
+To add a new site-specific identification text, click the &lt;code>New&lt;/code> button and supply the necessary information. To change an existing site-specific entry, click on the &lt;code>Change&lt;/code> button. The &lt;code>Delete&lt;/code> button will remove the selected site-specific identification text, causing the default setting to be used for that site or domain.
 &lt;/qt></string>
   </property>
   <layout class="QVBoxLayout" >
@@ -127,7 +127,7 @@ By default, only minimal identification information is sent to remote sites. The
       <item>
        <widget class="QCheckBox" name="languageCheckBox" >
         <property name="whatsThis" >
-         <string>Includes your language settings in the browser identification text to obtain localised versions of the page.</string>
+         <string>Includes your language settings in the browser identification text to obtain localized versions of the page.</string>
         </property>
         <property name="text" >
          <string>Add lang&amp;uage information</string>

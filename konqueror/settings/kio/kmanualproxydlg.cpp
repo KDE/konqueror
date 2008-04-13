@@ -470,12 +470,12 @@ bool KManualProxyDlg::getException ( QString& result,
       label = i18n("Enter the address or URL that should be excluded from "
                    "using the above proxy settings:");
 
-    QString whatsThis = i18n("<qt>Enter a valid address or url.<br /><br />"
+    QString whatsThis = i18n("<qt>Enter a valid address or URL.<br /><br />"
                             "<b><u>NOTE:</u></b> Wildcard matching such as "
                             "<code>*.kde.org</code> is not supported. If you want "
                             "to match any host in the <code>.kde.org</code> domain, "
                             "e.g. <code>printing.kde.org</code>, then simply enter "
-                            "<code>.kde.org</code></qt>");
+                            "<code>.kde.org</code>.</qt>");
 
     bool ok;
     result = KInputDialog::getText( caption, label, value, &ok, this,
