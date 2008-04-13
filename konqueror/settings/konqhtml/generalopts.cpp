@@ -139,7 +139,7 @@ void KKonqGeneralOptions::save()
 
     cg.sync();
 
-    // It only matters wether the key is present, its value has no meaning
+    // It only matters whether the key is present, its value has no meaning
     cg = KConfigGroup(m_pConfig,"Notification Messages");
     if ( tabOptions->m_pTabConfirm->isChecked() )
         cg.deleteEntry( "MultipleTabConfirm" );
