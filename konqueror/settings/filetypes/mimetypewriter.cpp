@@ -21,7 +21,6 @@
 #include "mimetypewriter.h"
 
 #include <kdebug.h>
-#include <kstandarddirs.h>
 #include <kprocess.h>
 #include <kstandarddirs.h>
 

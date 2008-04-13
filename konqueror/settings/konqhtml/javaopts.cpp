@@ -35,7 +35,6 @@
 #include <klineedit.h>
 #include <klocale.h>
 #include <khtml_settings.h>
-#include <kdebug.h>
 #include <knuminput.h>
 #include <khbox.h>
 
