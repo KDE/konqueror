@@ -177,10 +177,10 @@ void SMBRoOptions::changed()
 QString SMBRoOptions::quickHelp() const
 {
    return i18n("<p><h1>Windows Shares</h1>Konqueror is able to access shared "
-        "windows filesystems if properly configured. If there is a "
+        "Microsoft Windows file systems, if properly configured. If there is a "
         "specific computer from which you want to browse, fill in "
         "the <em>Browse server</em> field. This is mandatory if you "
-        "do not run Samba locally. The <em>Broadcast address</em> "
+        "are not running Samba locally. The <em>Broadcast address</em> "
         "and <em>WINS address</em> fields will also be available, if you "
         "use the native code, or the location of the 'smb.conf' file "
         "from which the options are read, when using Samba. In any case, the "
