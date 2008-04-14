@@ -28,6 +28,7 @@
 #include <KDE/KGlobalSettings>
 #include <KDE/KGlobal>
 #include <QLinkedList>
+#include <KDE/KDebug>
 #include <assert.h>
 
 WebKitGlobal *WebKitGlobal::s_self = 0;
@@ -112,6 +113,7 @@ void WebKitGlobal::deregisterPart( WebKitPart *part )
 
 void WebKitGlobal::initGlobalSettings()
 {
+    kDebug();
     QString userStyleSheet;
     KConfigGroup cgHtml( KGlobal::config(), "HTML Settings" );
     if ( cgHtml.readEntry( "UserStyleSheetEnabled", false ) == true ) {
