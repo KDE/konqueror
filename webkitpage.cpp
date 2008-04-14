@@ -45,32 +45,6 @@ WebPage::WebPage(WebKitPart *wpart, QWidget *parent)
             this, SLOT(slotHandleUnsupportedContent(QNetworkReply *)));
     setForwardUnsupportedContent(true);
 #endif
-    initGlobalSettings();
-}
-
-
-void WebPage::initGlobalSettings()
-{
-    QString userStyleSheet;
-    KConfigGroup cgHtml( KGlobal::config(), "HTML Settings" );
-    if ( cgHtml.readEntry( "UserStyleSheetEnabled", false ) == true ) {
-        if ( cgHtml.hasKey( "UserStyleSheet" ) )
-            userStyleSheet = cgHtml.readEntry( "UserStyleSheet", "" );
-    }
-    if ( !userStyleSheet.isEmpty() )
-    {
-        QWebSettings::globalSettings()->setUserStyleSheetUrl( QUrl( userStyleSheet ) );
-    }
-    if ( cgHtml.hasKey( "AutoLoadImages" ) )
-        QWebSettings::globalSettings()->setAttribute(QWebSettings::AutoLoadImages, cgHtml.readEntry( "AutoLoadImages", true ) );
-
-    QWebSettings::globalSettings()->setFontFamily(QWebSettings::StandardFont , cgHtml.readEntry( "StandardFont", KGlobalSettings::generalFont().family() ) );
-    QWebSettings::globalSettings()->setFontFamily(QWebSettings::FixedFont ,cgHtml.readEntry( "FixedFont", KGlobalSettings::fixedFont().family() ) );
-    QWebSettings::globalSettings()->setFontFamily(QWebSettings::SerifFont ,cgHtml.readEntry( "SerifFont", HTML_DEFAULT_VIEW_SERIF_FONT ) );
-    QWebSettings::globalSettings()->setFontFamily(QWebSettings::SansSerifFont , cgHtml.readEntry( "SansSerifFont", HTML_DEFAULT_VIEW_SANSSERIF_FONT ) );
-    QWebSettings::globalSettings()->setFontFamily(QWebSettings::CursiveFont , cgHtml.readEntry( "CursiveFont", HTML_DEFAULT_VIEW_CURSIVE_FONT ) );
-    QWebSettings::globalSettings()->setFontFamily(QWebSettings::FixedFont , cgHtml.readEntry( "FantasyFont", HTML_DEFAULT_VIEW_FANTASY_FONT ) );
-
 }
 
 bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request,

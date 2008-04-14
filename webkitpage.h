@@ -43,8 +43,6 @@ protected:
     virtual bool javaScriptPrompt(QWebFrame *frame, const QString &msg, const QString &defaultValue, QString *result);
     virtual QString userAgentForUrl(const QUrl& url) const;
 
-
-    void initGlobalSettings();
     virtual QObject *createPlugin(const QString &classid, const QUrl &url, const QStringList &paramNames, const QStringList &paramValues);
 
 protected Q_SLOTS:
