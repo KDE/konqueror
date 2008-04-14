@@ -21,20 +21,93 @@
  */
 
 #include "webkitglobal.h"
+#include "webkitpart.h"
 #include <khtmldefaults.h>
 #include <QWebSettings>
 #include <KDE/KConfigGroup>
 #include <KDE/KGlobalSettings>
 #include <KDE/KGlobal>
+#include <QLinkedList>
+#include <assert.h>
+
+WebKitGlobal *WebKitGlobal::s_self = 0;
+unsigned long int WebKitGlobal::s_refcnt = 0;
+static QLinkedList<WebKitPart*> *s_parts = 0;
 
 WebKitGlobal::WebKitGlobal()
 {
-    initGlobalSettings();
+    assert(!s_self);
+    s_self = this;
+    ref();
 }
 
 WebKitGlobal::~WebKitGlobal()
 {
-    //TODO
+    if ( s_self == this )
+    {
+        if (s_parts) {
+            assert(s_parts->isEmpty());
+            delete s_parts;
+        }
+        s_parts = 0;
+    }
+    else
+        deref();
+}
+
+
+
+void WebKitGlobal::ref()
+{
+    if ( !s_refcnt && !s_self )
+    {
+        // we can't use a staticdeleter here, because that would mean
+        // that the WebKitGlobal instance gets deleted from within a qPostRoutine, called
+        // from the QApplication destructor. That however is too late, because
+        // we want to destruct a KComponentData object, which involves destructing
+        // a KConfig object, which might call KGlobal::dirs() (in sync()) which
+        // probably is not going to work ;-)
+        // well, perhaps I'm wrong here, but as I'm unsure I try to stay on the
+        // safe side ;-) -> let's use a simple reference counting scheme
+        // (Simon)
+        WebKitGlobal *webkitglobal = new WebKitGlobal; // does initial ref()
+        webkitglobal->initGlobalSettings();
+    } else {
+        ++s_refcnt;
+    }
+}
+
+void WebKitGlobal::deref()
+{
+    if ( !--s_refcnt && s_self )
+    {
+        delete s_self;
+        s_self = 0;
+    }
+}
+
+void WebKitGlobal::registerPart( WebKitPart *part )
+{
+    if ( !s_parts )
+        s_parts = new QLinkedList<WebKitPart*>;
+
+    if ( !s_parts->contains( part ) ) {
+        s_parts->append( part );
+        ref();
+    }
+}
+
+void WebKitGlobal::deregisterPart( WebKitPart *part )
+{
+    assert( s_parts );
+
+    if ( s_parts->removeAll( part ) ) {
+        if ( s_parts->isEmpty() ) {
+            delete s_parts;
+            s_parts = 0;
+        }
+        deref();
+    }
 }
 
 void WebKitGlobal::initGlobalSettings()

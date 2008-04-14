@@ -22,14 +22,25 @@
 
 #ifndef WEBKITGLOBAL_H
 #define WEBKITGLOBAL_H
+class WebKitGlobal;
+class WebKitPart;
 
 class WebKitGlobal
 {
 public:
     WebKitGlobal();
     ~WebKitGlobal();
-protected:
+
+    static void registerPart( WebKitPart *part );
+    static void deregisterPart( WebKitPart *part );
     void initGlobalSettings();
+
+private:
+    static void ref();
+    static void deref();
+private:
+    static unsigned long s_refcnt;
+    static WebKitGlobal *s_self;
 };
 
 #endif /* WEBKITGLOBAL_H */

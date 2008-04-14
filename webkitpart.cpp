@@ -24,6 +24,7 @@
 
 #include "webkitpart.h"
 #include "webkitview.h"
+#include "webkitglobal.h"
 
 #include <KDE/KParts/GenericFactory>
 #include <KDE/KParts/Plugin>
@@ -48,6 +49,7 @@ KAboutData *WebKitPart::s_about = 0;
 WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList &/*args*/)
     : KParts::ReadOnlyPart(parent)
 {
+    WebKitGlobal::registerPart( this );
     webView = new WebView(this, parentWidget);
 //     webView->setNetworkInterface(new KWebNetworkInterface(this));
     setWidget(webView);
@@ -76,6 +78,7 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
 
 WebKitPart::~WebKitPart()
 {
+    WebKitGlobal::deregisterPart( this );
 }
 
 void WebKitPart::initAction()
