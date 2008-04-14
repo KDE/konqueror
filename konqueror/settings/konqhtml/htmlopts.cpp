@@ -35,6 +35,7 @@ K_PLUGIN_FACTORY_DECLARATION(KcmKonqHtmlFactory)
 
 enum UnderlineLinkType { UnderlineAlways=0, UnderlineNever=1, UnderlineHover=2 };
 enum AnimationsType { AnimationsAlways=0, AnimationsNever=1, AnimationsLoopOnce=2 };
+enum SmoothScrollingType { SmoothScrollingAlways=0, SmoothScrollingNever=1, SmoothScrollingWhenEfficient=2 };
 //-----------------------------------------------------------------------------
 
 KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
@@ -135,23 +136,23 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
     // Misc
 
     m_pAutoLoadImagesCheckBox = new QCheckBox( i18n( "A&utomatically load images"), this );
-    m_pAutoLoadImagesCheckBox->setWhatsThis( i18n( "If this box is checked, Konqueror will"
+    m_pAutoLoadImagesCheckBox->setWhatsThis( i18n( "<html>If this box is checked, Konqueror will"
 			    " automatically load any images that are embedded in a web page."
 			    " Otherwise, it will display placeholders for the images, and"
 			    " you can then manually load the images by clicking on the image"
 			    " button.<br />Unless you have a very slow network connection, you"
 			    " will probably want to check this box to enhance your browsing"
-			    " experience." ) );
+			    " experience.</html>" ) );
     connect(m_pAutoLoadImagesCheckBox, SIGNAL(toggled(bool)), SLOT(slotChanged()));
     lay->addWidget( m_pAutoLoadImagesCheckBox, row, 0, 1, 2 );
     row++;
 
     m_pUnfinishedImageFrameCheckBox = new QCheckBox( i18n( "Dra&w frame around not completely loaded images"), this );
-    m_pUnfinishedImageFrameCheckBox->setWhatsThis( i18n( "If this box is checked, Konqueror will draw"
+    m_pUnfinishedImageFrameCheckBox->setWhatsThis( i18n( "<html>If this box is checked, Konqueror will draw"
 			    " a frame as a placeholder around images embedded in a web page that are"
 			    " not yet fully loaded.<br />You will probably want to check this box to"
 			    " enhance your browsing experience, especially if have a slow network"
-			    " connection." ) );
+			    " connection.</html>" ) );
     connect(m_pUnfinishedImageFrameCheckBox, SIGNAL(toggled(bool)), SLOT(slotChanged()));
     lay->addWidget( m_pUnfinishedImageFrameCheckBox, row, 0, 1, 2 );
     row++;
@@ -187,11 +188,11 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
     lay->addWidget(label, row, 0);
     lay->addWidget(m_pUnderlineCombo, row, 1);
     row++;
-    QString whatsThis = i18n("Controls how Konqueror handles underlining hyperlinks:<br />"
+    QString whatsThis = i18n("<html>Controls how Konqueror handles underlining hyperlinks:<br />"
 	    "<ul><li><b>Enabled</b>: Always underline links</li>"
 	    "<li><b>Disabled</b>: Never underline links</li>"
 	    "<li><b>Only on Hover</b>: Underline when the mouse is moved over the link</li>"
-	    "</ul><br /><i>Note: The site's CSS definitions can override this value.</i>");
+	    "</ul><br /><i>Note: The site's CSS definitions can override this value.</i></html>");
     label->setWhatsThis(whatsThis);
     m_pUnderlineCombo->setWhatsThis(whatsThis);
     connect(m_pUnderlineCombo, SIGNAL(currentIndexChanged(int)), SLOT(slotChanged()));
@@ -208,13 +209,31 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
     lay->addWidget(label, row, 0);
     lay->addWidget(m_pAnimationsCombo, row, 1);
     row++;
-    whatsThis = i18n("Controls how Konqueror shows animated images:<br />"
+    whatsThis = i18n("<html>Controls how Konqueror shows animated images:<br />"
 	    "<ul><li><b>Enabled</b>: Show all animations completely.</li>"
 	    "<li><b>Disabled</b>: Never show animations, show the starting image only.</li>"
-	    "<li><b>Show only once</b>: Show all animations completely but do not repeat them.</li></ul>");
+	    "<li><b>Show only once</b>: Show all animations completely but do not repeat them.</li></ul></html>");
     label->setWhatsThis(whatsThis);
     m_pAnimationsCombo->setWhatsThis(whatsThis);
     connect(m_pAnimationsCombo, SIGNAL(currentIndexChanged(int)), SLOT(slotChanged()));
+
+    label = new QLabel( i18n("S&mooth scrolling:"), this );
+    m_pSmoothScrollingCombo = new QComboBox( this );
+    label->setBuddy(m_pSmoothScrollingCombo);
+    m_pSmoothScrollingCombo->setEditable(false);
+    m_pSmoothScrollingCombo->insertItem(SmoothScrollingWhenEfficient, i18n("When Efficient"));
+    m_pSmoothScrollingCombo->insertItem(SmoothScrollingAlways, i18nc("smooth scrolling","Always"));
+    m_pSmoothScrollingCombo->insertItem(SmoothScrollingNever, i18nc("soft scrolling","Never"));
+    lay->addWidget(label, row, 0);
+    lay->addWidget(m_pSmoothScrollingCombo, row, 1);
+    row++;
+    whatsThis = i18n("<html>Determines whether Konqueror should use smooth steps to scroll HTML pages, or whole steps:<br />"
+	    "<ul><li><b>Always</b>: Always use smooth steps when scrolling.</li>"
+	    "<li><b>Never</b>: Never use smooth scrolling, scroll with whole steps instead.</li>"
+	    "<li><b>When Efficient</b>: Only use smooth scrolling on pages where it can be achieved with moderate usage of system resources.</li></ul></html>");
+    label->setWhatsThis(whatsThis);
+    m_pSmoothScrollingCombo->setWhatsThis(whatsThis);
+    connect(m_pSmoothScrollingCombo, SIGNAL(currentIndexChanged(int)), SLOT(slotChanged()));
 
     lay->setRowStretch(row, 1);
 
@@ -246,6 +265,7 @@ void KMiscHTMLOptions::load()
     bool bAutoLoadImages = READ_BOOL( "AutoLoadImages", true );
     bool bUnfinishedImageFrame = READ_BOOL( "UnfinishedImageFrame", true );
     QString strAnimations = READ_ENTRY( "ShowAnimations" ).toLower();
+    QString strSmoothScrolling = READ_ENTRY( "SmoothScrolling" ).toLower();
 
     bool bAutoRedirect = cg.readEntry( "AutoDelayedActions", true );
 
@@ -277,6 +297,13 @@ void KMiscHTMLOptions::load()
        m_pAnimationsCombo->setCurrentIndex( AnimationsLoopOnce );
     else
        m_pAnimationsCombo->setCurrentIndex( AnimationsAlways );
+
+    if (strSmoothScrolling == "disabled")
+       m_pSmoothScrollingCombo->setCurrentIndex( SmoothScrollingNever );
+    else if (strSmoothScrolling == "enabled")
+       m_pSmoothScrollingCombo->setCurrentIndex( SmoothScrollingAlways );
+    else
+       m_pSmoothScrollingCombo->setCurrentIndex( SmoothScrollingWhenEfficient );
 
     m_pFormCompletionCheckBox->setChecked( cg.readEntry( "FormCompletion", true ) );
     m_pMaxFormCompletionItems->setValue( cg.readEntry( "MaxFormCompletionItems", 10 ) );
@@ -336,6 +363,19 @@ void KMiscHTMLOptions::save()
         break;
       case AnimationsLoopOnce:
         cg.writeEntry( "ShowAnimations", "LoopOnce" );
+        break;
+    }
+
+    switch(m_pSmoothScrollingCombo->currentIndex())
+    {
+      case SmoothScrollingAlways:
+        cg.writeEntry( "SmoothScrolling", "Enabled" );
+        break;
+      case SmoothScrollingNever:
+        cg.writeEntry( "SmoothScrolling", "Disabled" );
+        break;
+      case SmoothScrollingWhenEfficient:
+        cg.writeEntry( "SmoothScrolling", "WhenEfficient" );
         break;
     }
 

@@ -46,6 +46,7 @@ private:
 
     QComboBox* m_pUnderlineCombo;
     QComboBox* m_pAnimationsCombo;
+    QComboBox* m_pSmoothScrollingCombo;
     QCheckBox* m_cbCursor;
     QCheckBox* m_pAutoLoadImagesCheckBox;
     QCheckBox* m_pUnfinishedImageFrameCheckBox;
