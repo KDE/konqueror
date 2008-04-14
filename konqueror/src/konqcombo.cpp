@@ -663,8 +663,10 @@ void KonqCombo::paintEvent( QPaintEvent *pe )
 
 void KonqCombo::setPageSecurity( int pageSecurity )
 {
+    int ops = m_pageSecurity;
     m_pageSecurity = pageSecurity;
-    repaint();
+    if (ops != pageSecurity)
+        update();
 }
 
 bool KonqCombo::hasSufficientContrast(const QColor &c1, const QColor &c2)
