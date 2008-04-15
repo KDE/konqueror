@@ -63,7 +63,7 @@ static bool askUser(const QString& filename, bool &readonly) {
             if( name == filename)
             {
                 int ret = KMessageBox::warningYesNo(0,
-                i18n("Another instance of %1 is already running, do you really "
+                i18n("Another instance of %1 is already running. Do you really "
                 "want to open another instance or continue work in the same instance?\n"
                 "Please note that, unfortunately, duplicate views are read-only.", KGlobal::caption()),
                 i18n("Warning"),
@@ -112,10 +112,10 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv) {
     options.add("exportie <filename>", ki18n("Export bookmarks to a file in Internet Explorer's Favorites format"));
     options.add("exportopera <filename>", ki18n("Export bookmarks to a file in Opera format"));
     options.add("address <address>", ki18n("Open at the given position in the bookmarks file"));
-    options.add("customcaption <caption>", ki18n("Set the user readable caption for example \"Konsole\""));
+    options.add("customcaption <caption>", ki18n("Set the user-readable caption, for example \"Konsole\""));
     options.add("nobrowser", ki18n("Hide all browser related functions"));
     options.add("dbusObjectName <name>", ki18n("A unique name that represents this bookmark collection, usually the kinstance name.\n"
-                                 "This should be \"konqueror\" for the konqueror bookmarks, \"kfile\" for KFileDialog bookmarks, etc.\n"
+                                 "This should be \"konqueror\" for the Konqueror bookmarks, \"kfile\" for KFileDialog bookmarks, etc.\n"
                                  "The final DBus object path is /KBookmarkManager/dbusObjectName"));
     options.add("+[file]", ki18n("File to edit"));
     KCmdLineArgs::addCmdLineOptions(options);
