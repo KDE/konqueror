@@ -65,8 +65,8 @@ void KHTMLPluginKTTSD::slotReadOut()
     KParts::ReadOnlyPart* part = static_cast<KParts::ReadOnlyPart *>(parent());
     // The parent is assumed to be a KHTMLPart
     if (!part)
-        KMessageBox::sorry( 0, i18n( "You cannot read anything except web pages with this plugin, sorry." ),
-                            i18n( "Cannot Read source" ) );
+        KMessageBox::sorry( 0, i18n( "You cannot read anything except web pages with this plugin." ),
+                            i18n( "Cannot Read Source" ) );
     else
     {
         if (!QDBusConnection::sessionBus().interface()->isServiceRegistered("org.kde.kttsd"))
