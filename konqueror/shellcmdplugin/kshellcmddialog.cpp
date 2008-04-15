@@ -36,9 +36,13 @@ KShellCommandDialog::KShellCommandDialog(const QString& title, const QString& co
    :KDialog(parent)
 {
    setModal( modal );
-   QVBoxLayout * box= new QVBoxLayout (this);
+   setButtons( KDialog::None );
+   QWidget *w = new QWidget( this );
+   QVBoxLayout * box= new QVBoxLayout;
    box->setMargin(marginHint());
    box->setSpacing(spacingHint());
+   w->setLayout( box );
+   setMainWidget(w);
 
    QLabel *label=new QLabel(title,this);
    m_shell=new KShellCommandExecutor(command,this);

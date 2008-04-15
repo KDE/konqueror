@@ -20,10 +20,10 @@
 #ifndef KSHELLCMDDIALOG_H
 #define KSHELLCMDDIALOG_H
 
-#include <kpushbutton.h>
 #include <kdialog.h>
 
 class KShellCommandExecutor;
+class KPushButton;
 
 class KShellCommandDialog:public KDialog
 {
