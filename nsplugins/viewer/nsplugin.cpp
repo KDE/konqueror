@@ -1395,11 +1395,6 @@ QDBusObjectPath NSPluginClass::newInstance( const QString &url, const QString &m
    memset(npp, 0, sizeof(NPP_t));
    npp->ndata = NULL;
 
-   // Create plugin instance object
-   NSPluginInstance *inst = new NSPluginInstance( npp, &_pluginFuncs, _handle,
-                                                  baseURL, mimeType, appId,
-                                                  callbackId, embed, this );
-
    // create plugin instance
    NPError error = _pluginFuncs.newp(mime, npp, embed ? NP_EMBED : NP_FULL,
                                      argc, _argn, _argv, 0);
@@ -1412,11 +1407,15 @@ QDBusObjectPath NSPluginClass::newInstance( const QString &url, const QString &m
    // check for error
    if ( error!=NPERR_NO_ERROR)
    {
-      delete inst;
-      //delete npp;    double delete!
+      ::free(npp);
       kDebug(1431) << "<- PluginClass::NewInstance = 0";
       return QDBusObjectPath();
    }
+
+   // Create plugin instance object
+   NSPluginInstance *inst = new NSPluginInstance( npp, &_pluginFuncs, _handle,
+                                                  baseURL, mimeType, appId,
+                                                  callbackId, embed, this );
 
    // create source stream
    if ( !src.isEmpty() )
