@@ -3841,12 +3841,12 @@ void KonqMainWindow::initActions()
   m_paHome->setToolTip( i18n( "Navigate to your 'Home Location'" ) );
 
   m_paReload->setWhatsThis( i18n( "<html>Reload the currently displayed document<br /><br />"
-                                  "This may, for example, be needed to refresh webpages that have been "
+                                  "This may, for example, be needed to refresh web pages that have been "
                                   "modified since they were loaded, in order to make the changes visible.</html>" ) );
   m_paReload->setToolTip( i18n( "Reload the currently displayed document" ) );
 
   m_paReloadAllTabs->setWhatsThis( i18n( "<html>Reload all currently displayed documents in tabs<br /><br />"
-                                  "This may, for example, be needed to refresh webpages that have been "
+                                  "This may, for example, be needed to refresh web pages that have been "
                                   "modified since they were loaded, in order to make the changes visible.<html>" ) );
   m_paReloadAllTabs->setToolTip( i18n( "Reload all currently displayed document in tabs" ) );
 
