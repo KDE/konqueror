@@ -484,7 +484,7 @@ QString DesktopBehavior::quickHelp() const
     "for your desktop, including the way in which icons are arranged and\n"
     "the pop-up menus associated when clicking on the desktop using the middle and right mouse\n"
     "buttons.\n"
-    "Use the \"Whats This?\" (Shift+F1) to get help on specific options.");
+    "Use the \"What's This?\" (Shift+F1) to get help on specific options.");
 }
 
 #include "desktopbehavior_impl.moc"
