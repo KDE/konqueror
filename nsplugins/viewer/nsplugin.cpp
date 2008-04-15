@@ -1404,7 +1404,7 @@ QDBusObjectPath NSPluginClass::newInstance( const QString &url, const QString &m
    // check for error
    if ( error!=NPERR_NO_ERROR)
    {
-      //delete npp;    double delete!
+      ::free(npp);
       kDebug(1431) << "<- PluginClass::NewInstance = 0";
       return QDBusObjectPath();
    }
