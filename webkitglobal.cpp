@@ -133,4 +133,7 @@ void WebKitGlobal::initGlobalSettings()
     QWebSettings::globalSettings()->setFontFamily(QWebSettings::SansSerifFont , cgHtml.readEntry( "SansSerifFont", HTML_DEFAULT_VIEW_SANSSERIF_FONT ) );
     QWebSettings::globalSettings()->setFontFamily(QWebSettings::CursiveFont , cgHtml.readEntry( "CursiveFont", HTML_DEFAULT_VIEW_CURSIVE_FONT ) );
     QWebSettings::globalSettings()->setFontFamily(QWebSettings::FixedFont , cgHtml.readEntry( "FantasyFont", HTML_DEFAULT_VIEW_FANTASY_FONT ) );
+
+    QWebSettings::globalSettings()->setFontSize(QWebSettings::MinimumFontSize, cgHtml.readEntry( "MinimumFontSize", HTML_DEFAULT_MIN_FONT_SIZE ) );
+    QWebSettings::globalSettings()->setFontSize(QWebSettings::DefaultFontSize, cgHtml.readEntry( "MediumFontSize", 12 ) );
 }
