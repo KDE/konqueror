@@ -727,11 +727,20 @@ void KonqView::createHistoryEntry()
 #ifdef DEBUG_HISTORY
     kDebug(1202) << "Append a new entry";
 #endif
-    m_lstHistory.append( new HistoryEntry );
+    appendHistoryEntry( new HistoryEntry );
     setHistoryIndex( m_lstHistory.count()-1 ); // made current
 #ifdef DEBUG_HISTORY
     kDebug(1202) << "at=" << historyIndex() << "count=" << m_lstHistory.count();
 #endif
+}
+
+void KonqView::appendHistoryEntry(HistoryEntry * historyEntry)
+{
+    // If there are too many HistoryEntries remove old ones
+    while(m_lstHistory.count() > 0 && m_lstHistory.count() >= KonqSettings::maximumHistoryEntriesPerView())
+        delete m_lstHistory.takeFirst();
+    
+    m_lstHistory.append( historyEntry );
 }
 
 void KonqView::updateHistoryEntry( bool saveLocationBarURL )
@@ -874,7 +883,7 @@ void KonqView::copyHistory( KonqView *other )
     m_lstHistory.clear();
 
     foreach ( HistoryEntry* he, other->m_lstHistory )
-        m_lstHistory.append( new HistoryEntry( *he ) );
+        appendHistoryEntry( new HistoryEntry( *he ) );
     setHistoryIndex(other->historyIndex());
 }
 
@@ -1410,7 +1419,7 @@ void KonqView::loadHistoryConfig(const KConfigGroup& config, const QString &pref
         HistoryEntry* historyEntry = new HistoryEntry;
         historyEntry->loadItem(config, QString::fromLatin1( "HistoryItem" ) + QString::number(i).prepend( prefix ));
 
-        m_lstHistory.append( historyEntry );
+        appendHistoryEntry( historyEntry );
     }
 
     // set and load the correct history index
