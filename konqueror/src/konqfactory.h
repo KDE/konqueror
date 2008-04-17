@@ -24,40 +24,34 @@
 
 #include "konqprivate_export.h"
 
-#include <QtCore/QStringList>
-
 #include <kservice.h>
 
 class KAboutData;
 class KPluginFactory;
 namespace KParts { class ReadOnlyPart; }
 
-class KonqViewFactory // TODO rename to KonqPartFactory? confusing though due to KParts::PartFactory (in the part itself)
+class KonqViewFactory // TODO rename to KonqPartLoader?
 {
 public:
-  KonqViewFactory() : m_factory( 0 ), m_createBrowser( false ) {}
+    /**
+     * Create null factory
+     */
+    KonqViewFactory() : m_factory(0), m_args() {}
 
-  KonqViewFactory( KPluginFactory *factory, const QStringList &args, bool createBrowser );
+    KonqViewFactory(const QString& libName, KPluginFactory* factory);
 
-  KonqViewFactory( const KonqViewFactory &factory )
-  { (*this) = factory; }
+    // The default copy ctor and operator= can be used, this is a value class.
 
-  KonqViewFactory &operator=( const KonqViewFactory &other )
-  {
-    m_factory = other.m_factory;
-    m_args = other.m_args;
-    m_createBrowser = other.m_createBrowser;
-    return *this;
-  }
+    void setArgs(const QVariantList &args);
 
-  KParts::ReadOnlyPart *create( QWidget *parentWidget, QObject *parent );
+    KParts::ReadOnlyPart *create(QWidget *parentWidget, QObject *parent);
 
-  bool isNull() const { return m_factory ? false : true; }
+    bool isNull() const { return m_factory ? false : true; }
 
 private:
-  KPluginFactory *m_factory;
-  QStringList m_args;
-  bool m_createBrowser;
+    QString m_libName;
+    KPluginFactory *m_factory;
+    QVariantList m_args;
 };
 
 /**
