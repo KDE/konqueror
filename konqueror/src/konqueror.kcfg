@@ -306,6 +306,12 @@
       <label></label>
       <whatsthis></whatsthis>
     </entry>
+<!-- konqview.cpp -->
+    <entry key="MaximumHistoryEntriesPerView" type="Int">
+      <label>Maximum number of history items per view</label>
+      <default>50</default>
+      <whatsthis></whatsthis>
+    </entry>
   </group>
 
   <group name="Java/JavaScript Settings" >
@@ -530,5 +536,5 @@ PATH_JAVA
       <!-- checked -->
     </entry>
   </group>
- 
+
 </kcfg>

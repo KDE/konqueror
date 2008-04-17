@@ -435,6 +435,11 @@ private:
    * Creates a new entry in the history.
    */
   void createHistoryEntry();
+  
+  /**
+   * Appends a entry in the history.
+   */
+  void appendHistoryEntry(HistoryEntry * historyEntry);
 
   /**
    * Updates the current entry in the history.
