@@ -209,8 +209,8 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
 
   m_prevMenuBarVisible = true;
 
-  // This has to be called before any action is created for this mainwindow
-  setComponentData( KGlobal::mainComponent() );
+    // This has to be called before any action is created for this mainwindow
+    setComponentData(KGlobal::mainComponent(), false /*don't load plugins yet*/);
 
   m_pViewManager = new KonqViewManager( this );
 
