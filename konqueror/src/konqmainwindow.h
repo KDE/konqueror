@@ -256,7 +256,7 @@ public:
      * For the view manager: we are loading the profile from this config file,
      * so we should save mainwindow settings into that file from now on
      */
-    void setProfileConfig(const KSharedConfigPtr& cfg);
+    void setProfileConfig(const KConfigGroup& cfg);
     void currentProfileChanged();
 
   // operates on all combos of all mainwindows of this instance

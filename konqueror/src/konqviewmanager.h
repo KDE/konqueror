@@ -342,6 +342,8 @@ private:
     // Disabled - we do it ourselves
     virtual void setActiveComponent(const KComponentData &) {}
 
+    void setCurrentProfile(const QString& profileFileName);
+
 signals:
   void aboutToRemoveTab( KonqFrameBase* tab );
 
