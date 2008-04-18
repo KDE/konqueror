@@ -136,7 +136,7 @@ KRemoteEncodingPlugin::updateMenu()
     loadSettings();
 
   // uncheck everything
-  for (unsigned i =  0; i < m_menu->menu()->count(); i++)
+  for (unsigned i =  0; i < m_menu->menu()->actions().count(); i++)
     m_menu->menu()->setItemChecked(m_menu->menu()->idAt(i), false);
 
   QString charset = KIO::SlaveConfig::self()->configData(m_currentURL.protocol(), m_currentURL.host(),
