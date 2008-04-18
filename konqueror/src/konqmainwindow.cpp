@@ -302,11 +302,15 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
       m_bNeedApplyKonqMainWindowSettings = false;
   }
 
-  // Read basic main-view settings, and set to autosave
-  setAutoSaveSettings( "KonqMainWindow", false );
+    if ( !initialGeometrySet() )
+        resize( 700, 480 );
 
-  if ( !initialGeometrySet() )
-      resize( 700, 480 );
+    // Read basic main-window settings, and enable autosave
+    // Note that this is just in case we won't use a profile, which is very rare.
+    // Normally setProfileConfig is called and we then use the profile for main window settings.
+    KConfigGroup mainWindowSettingsGroup(KonqMisc::modeDependentConfig(), "KonqMainWindow");
+    setAutoSaveSettings(mainWindowSettingsGroup);
+
   //kDebug(1202) << "KonqMainWindow::KonqMainWindow " << this << " done";
 
   if( s_initialMemoryUsage == -1 )
@@ -1213,28 +1217,30 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
        mainWindow->viewManager()->setActivePart( *part, true );
     }
 
-    QString profileName = QLatin1String( url.isLocalFile() ? "konqueror/profiles/filemanagement" : "konqueror/profiles/webbrowsing" );
+    QString profileName(url.isLocalFile() ? "konqueror/profiles/filemanagement" : "konqueror/profiles/webbrowsing");
 
     if ( windowArgs.x() != -1 )
         mainWindow->move( windowArgs.x(), mainWindow->y() );
     if ( windowArgs.y() != -1 )
         mainWindow->move( mainWindow->x(), windowArgs.y() );
 
-    KConfig cfg( KStandardDirs::locate( "data", profileName ) );
-    KConfigGroup profileGroup( &cfg, "Profile" );
-    QSize size = KonqViewManager::readConfigSize( profileGroup, mainWindow );
+    KSharedConfigPtr cfg = KSharedConfig::openConfig(KStandardDirs::locate("data",profileName), KConfig::SimpleConfig);
+    KConfigGroup profileGroup(cfg, "Profile");
+
+    // First, apply default size from profile
+    applyWindowSizeFromProfile(profileGroup);
 
     int width;
     if ( windowArgs.width() != -1 )
         width = windowArgs.width();
     else
-        width = size.isValid() ? size.width() : mainWindow->width();
+        width = mainWindow->width();
 
     int height;
     if ( windowArgs.height() != -1 )
         height = windowArgs.height();
     else
-        height = size.isValid() ? size.height() : mainWindow->height();
+        height = mainWindow->height();
 
     mainWindow->resize( width, height );
 
@@ -1331,7 +1337,7 @@ void KonqMainWindow::slotDuplicateWindow()
 {
   KTemporaryFile tempFile;
   tempFile.open();
-  m_pViewManager->saveViewProfileToFile( tempFile.fileName(), QString(), true, true );
+  m_pViewManager->saveViewProfileToFile(tempFile.fileName(), QString(), KonqFrameBase::saveURLs);
 
   KonqMainWindow *mainWindow = new KonqMainWindow( KUrl(), xmlFile() );
   mainWindow->viewManager()->loadViewProfileFromFile( tempFile.fileName(), m_pViewManager->currentProfile() );
@@ -1859,10 +1865,7 @@ void KonqMainWindow::slotConfigureSpellChecking()
 
 void KonqMainWindow::slotConfigureToolbars()
 {
-    if ( autoSaveSettings() ) {
-        KConfigGroup cg = KGlobal::config()->group( "KonqMainWindow" );
-        saveMainWindowSettings( cg );
-    }
+    slotForceSaveMainWindowSettings();
     KEditToolBar dlg(factory(), this);
     connect(&dlg,SIGNAL(newToolBarConfig()),this,SLOT(slotNewToolbarConfig()));
     connect(&dlg,SIGNAL(newToolBarConfig()),this,SLOT(initBookmarkBar()));
@@ -3274,12 +3277,9 @@ void KonqMainWindow::slotClearLocationBar()
 void KonqMainWindow::slotForceSaveMainWindowSettings()
 {
 //  kDebug(1202)<<"slotForceSaveMainWindowSettings()";
-  if ( autoSaveSettings() ) // don't do it on e.g. JS window.open windows with no toolbars!
-  {
-      KConfigGroup cg = KGlobal::config()->group( "KonqMainWindow" );
-      saveMainWindowSettings( cg );
-      KGlobal::config()->sync();
-  }
+    if ( autoSaveSettings() ) { // don't do it on e.g. JS window.open windows with no toolbars!
+        saveAutoSaveSettings();
+    }
 }
 
 void KonqMainWindow::slotShowMenuBar()
@@ -4202,12 +4202,20 @@ void KonqMainWindow::setActionText( const char * name, const QString& text )
   }
 }
 
+void KonqMainWindow::setProfileConfig(const KSharedConfigPtr& cfg)
+{
+    // Read toolbar settings and window size from profile, and autosave into that profile from now on
+    setAutoSaveSettings(KConfigGroup(cfg, "Profile"));
+
+    currentProfileChanged();
+}
+
 void KonqMainWindow::currentProfileChanged()
 {
-    bool enabled = !m_pViewManager->currentProfile().isEmpty();
-    m_paSaveViewProfile->setEnabled( enabled );
-    m_paSaveViewProfile->setText( enabled ? i18n("&Save View Profile \"%1\"...", m_pViewManager->currentProfileText())
-                                          : i18n("&Save View Profile...") );
+    const bool enabled = !m_pViewManager->currentProfile().isEmpty();
+    m_paSaveViewProfile->setEnabled(enabled);
+    m_paSaveViewProfile->setText(enabled ? i18n("&Save View Profile \"%1\"...", m_pViewManager->currentProfileText())
+                                         : i18n("&Save View Profile..."));
 }
 
 void KonqMainWindow::enableAllActions( bool enable )
@@ -4768,12 +4776,12 @@ void KonqMainWindow::reparseConfiguration()
 void KonqMainWindow::saveProperties( KConfigGroup& config )
 {
     KonqFrameBase::Options flags = KonqFrameBase::saveHistoryItems;
-    m_pViewManager->saveViewProfileToGroup( config, flags, false );
+    m_pViewManager->saveViewProfileToGroup(config, flags);
 }
 
 void KonqMainWindow::readProperties( const KConfigGroup& config )
 {
-    m_pViewManager->loadViewProfileFromGroup( config, QString() /*no profile name*/ );
+    m_pViewManager->loadViewProfileFromGroup(config, QString() /*no profile name*/);
 }
 
 void KonqMainWindow::setInitialFrameName( const QString &name )
@@ -4891,13 +4899,17 @@ void KonqMainWindow::updateViewModeActions()
 
 void KonqMainWindow::slotInternalViewModeChanged()
 {
-    const QString actionName = m_currentView->service()->desktopEntryName();
-    const QString actionData = m_currentView->internalViewMode();
-    Q_FOREACH(QAction* action, m_viewModesGroup->actions()) {
-        if (action->objectName() == actionName &&
-            action->data().toString() == actionData) {
-            action->setChecked(true);
-            break;
+    KParts::ReadOnlyPart *part = static_cast<KParts::ReadOnlyPart *>(sender());
+    KonqView * view = m_mapViews.value(part);
+    if (view) {
+        const QString actionName = view->service()->desktopEntryName();
+        const QString actionData = view->internalViewMode();
+        Q_FOREACH(QAction* action, m_viewModesGroup->actions()) {
+            if (action->objectName() == actionName &&
+                action->data().toString() == actionData) {
+                action->setChecked(true);
+                break;
+            }
         }
     }
 }
@@ -4992,12 +5004,13 @@ void KonqMainWindow::closeEvent( QCloseEvent *e )
         }
       }
 
-    // save size to have something to restore if the profile does not contain size
-    saveWindowSize();
-    addClosedWindowToUndoList();
+      if (settingsDirty() && autoSaveSettings())
+          saveAutoSaveSettings();
 
-    hide();
-    qApp->flush();
+      addClosedWindowToUndoList();
+
+      hide();
+      qApp->flush();
   }
   // We're going to close - tell the parts
   MapViews::ConstIterator it = m_mapViews.begin();
@@ -5033,16 +5046,15 @@ void KonqMainWindow::addClosedWindowToUndoList()
     QString prefix = QString::fromLatin1( childFrame()->frameType() ) + QString::number(0);
     closedWindowItem->configGroup().writeEntry( "RootItem", prefix );
     prefix.append( QLatin1Char( '_' ) );
-    closedWindowItem->configGroup().writeEntry( "Width", width() );
-    closedWindowItem->configGroup().writeEntry( "Height", height() );
+    // Done by saveMainWindowSettings already:
+    //closedWindowItem->configGroup().writeEntry( "Width", width() );
+    //closedWindowItem->configGroup().writeEntry( "Height", height() );
     closedWindowItem->configGroup().writeEntry( "FullScreen", fullScreenMode() );
     closedWindowItem->configGroup().writeEntry( "XMLUIFile", xmlFile() );
     tabContainer->saveConfig( closedWindowItem->configGroup(), prefix, flags, 0L, 0, 1);
-    // Save window settings
-    KConfigGroup cfg( &closedWindowItem->configGroup(),  "Main Window Settings" );
-    saveMainWindowSettings( cfg );
+    saveMainWindowSettings( closedWindowItem->configGroup() );
     closedWindowItem->configGroup().sync();
-    
+
     // 3. Finally add the KonqClosedWindowItem to the undo list
     m_paClosedItems->setEnabled(true);
     m_undoManager->addClosedWindowItem( closedWindowItem );
@@ -5711,19 +5723,6 @@ KonqView * KonqMainWindow::currentView() const
      return m_currentView;
 }
 
-void KonqMainWindow::saveWindowSize() const
-{
-    KConfigGroup cg( KGlobal::config()->group( "KonqMainWindow_Size" ) );
-    KParts::MainWindow::saveWindowSize( cg );
-    KGlobal::config()->sync();
-}
-
-void KonqMainWindow::restoreWindowSize()
-{
-    const KConfigGroup cg( KGlobal::config()->group( "KonqMainWindow_Size" ) );
-    KParts::MainWindow::restoreWindowSize( cg );
-}
-
 bool KonqMainWindow::accept( KonqFrameVisitor* visitor )
 {
     if ( !visitor->visit( this ) )
@@ -5746,6 +5745,15 @@ bool KonqMainWindow::hasViewWithMimeType(const QString& mimeType) const
         }
     }
     return false;
+}
+
+void KonqMainWindow::applyWindowSizeFromProfile(const KConfigGroup& profileGroup)
+{
+    // KMainWindow::restoreWindowSize is protected so this logic can't move to KonqViewManager
+    const QSize size = KonqViewManager::readDefaultSize(profileGroup, this); // example: "Width=80%"
+    if (size.isValid())
+        resize(size);
+    restoreWindowSize(profileGroup); // example: "Width 1400=1120"
 }
 
 #include "konqmainwindow.moc"

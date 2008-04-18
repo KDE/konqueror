@@ -125,7 +125,6 @@ KonqProfileDlg::KonqProfileDlg( KonqViewManager *manager, const QString & presel
   d->m_pListView->setMinimumSize( d->m_pListView->sizeHint() );
 
   d->m_cbSaveURLs->setChecked( KonqSettings::saveURLInProfile() );
-  d->m_cbSaveSize->setChecked( KonqSettings::saveWindowSizeInProfile() );
 
   connect( d->m_pListView, SIGNAL( itemSelectionChanged() ),
            this, SLOT( slotSelectionChanged() ) );
@@ -146,7 +145,6 @@ KonqProfileDlg::KonqProfileDlg( KonqViewManager *manager, const QString & presel
 KonqProfileDlg::~KonqProfileDlg()
 {
   KonqSettings::setSaveURLInProfile( d->m_cbSaveURLs->isChecked() );
-  KonqSettings::setSaveWindowSizeInProfile( d->m_cbSaveSize->isChecked() );
 }
 
 void KonqProfileDlg::loadAllProfiles(const QString & preselectProfile)
@@ -192,7 +190,7 @@ void KonqProfileDlg::slotSave()
 
   kDebug(1202) << "Saving as " << name;
   d->m_pViewManager->saveViewProfileToFile( name, d->m_pProfileNameLineEdit->text(),
-            d->m_cbSaveURLs->isChecked(), d->m_cbSaveSize->isChecked() );
+                                            d->m_cbSaveURLs->isChecked() ? KonqFrameBase::saveURLs : KonqFrameBase::None);
 
   accept();
 }

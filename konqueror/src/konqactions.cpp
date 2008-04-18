@@ -52,7 +52,6 @@ void KonqActions::fillHistoryPopup(const QList<HistoryEntry*> &history, int hist
   assert ( popup ); // kill me if this 0... :/
 
   //kDebug(1202) << "fillHistoryPopup position: " << history.at();
-  HistoryEntry * current = history[ historyIndex ];
   int index = 0;
   if (onlyBack || onlyForward)
   {

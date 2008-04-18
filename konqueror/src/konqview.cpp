@@ -739,7 +739,7 @@ void KonqView::appendHistoryEntry(HistoryEntry * historyEntry)
     // If there are too many HistoryEntries remove old ones
     while(m_lstHistory.count() > 0 && m_lstHistory.count() >= KonqSettings::maximumHistoryEntriesPerView())
         delete m_lstHistory.takeFirst();
-    
+
     m_lstHistory.append( historyEntry );
 }
 
@@ -1335,7 +1335,7 @@ KParts::StatusBarExtension * KonqView::statusBarExtension() const
 
 bool KonqView::supportsMimeType( const QString &mimeType ) const
 {
-    KMimeType::Ptr mime = KMimeType::mimeType( mimeType );
+    KMimeType::Ptr mime = KMimeType::mimeType(mimeType, KMimeType::ResolveAliases);
     if (!mime)
         return false;
     const QStringList lst = serviceTypes();
