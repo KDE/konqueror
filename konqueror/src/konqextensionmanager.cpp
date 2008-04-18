@@ -20,7 +20,6 @@
 // Qt
 #include <QtGui/QLayout>
 #include <QtCore/QTimer>
-#include <QtGui/QBoxLayout>
 
 // KDE
 #include <kxmlguifactory.h>
@@ -64,12 +63,6 @@ KonqExtensionManager::KonqExtensionManager(QWidget *parent, KonqMainWindow *main
 
     setInitialSize(QSize(640, 480)); // FIXME: hard-coded values ?
 
-    QFrame *page = new QFrame( this );
-    setMainWidget( page );
-
-    QVBoxLayout *vb = new QVBoxLayout( page );
-    vb->setAutoAdd(true);
-    vb->setSpacing( 0 );
     d->pluginSelector = new KPluginSelector(this);
     setMainWidget(d->pluginSelector);
     connect(d->pluginSelector, SIGNAL(changed(bool)), this, SLOT(setChanged(bool)));

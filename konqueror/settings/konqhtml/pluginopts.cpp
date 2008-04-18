@@ -24,7 +24,6 @@
 #include <QtGui/QLabel>
 #include <QtGui/QLayout>
 #include <QtGui/QSlider>
-#include <QtGui/QProgressDialog>
 
 // KDE
 #include <k3listview.h>
@@ -41,6 +40,7 @@
 #include <kurlrequester.h>
 #include <KPluginFactory>
 #include <KPluginLoader>
+#include <KProgressDialog>
 
 // Local
 #include "htmlopts.h"
@@ -347,8 +347,8 @@ void KPluginOptions::scan()
     }
 
     // find nspluginscan executable
-    m_progress = new QProgressDialog( i18n("Scanning for plugins"), i18n("Cancel"), 0, 100, this );
-    m_progress->setValue( 5 );
+    m_progress = new KProgressDialog( this, QString(), i18n("Scanning for plugins") );
+    m_progress->progressBar()->setValue( 5 );
 
     // start nspluginscan
     *nspluginscan << scanExe << "--verbose";
@@ -357,7 +357,7 @@ void KPluginOptions::scan()
             this, SLOT(progress(K3ProcIO*)));
     connect(nspluginscan, SIGNAL(processExited(K3Process *)),
             this, SLOT(scanDone()));
-    connect(m_progress, SIGNAL(canceled()), this, SLOT(scanDone()));
+    connect(m_progress, SIGNAL(cancelClicked()), this, SLOT(scanDone()));
 
     if (nspluginscan->start())
        kapp->enter_loop();
@@ -366,7 +366,7 @@ void KPluginOptions::scan()
 
     // update dialog
     if (m_progress) {
-        m_progress->setValue(100);
+        m_progress->progressBar()->setValue(100);
         load();
         delete m_progress;
         m_progress = 0;
@@ -380,7 +380,7 @@ void KPluginOptions::progress(K3ProcIO *proc)
     QString line;
     while(proc->readln(line) > 0)
         ;
-    m_progress->setValue(line.trimmed().toInt());
+    m_progress->progressBar()->setValue(line.trimmed().toInt());
 }
 #endif
 

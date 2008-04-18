@@ -323,7 +323,7 @@ void UserAgentDlg::save()
 
     KConfigGroup cg(m_config, *it);
     if (!cg.hasKey("UserAgent"))
-      deleteList.remove(*it);
+      deleteList.removeAll(*it);
   }
 
   QString domain;

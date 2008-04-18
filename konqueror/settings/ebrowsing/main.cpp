@@ -96,7 +96,7 @@ KURIFilterModule::KURIFilterModule(QWidget *parent, const QVariantList &)
             tab->addTab(it2.value(), it2.key());
         }
 
-        tab->showPage(modules.first());
+        tab->setCurrentIndex(tab->indexOf(modules.first()));
         m_widget = tab;
     }
     else if (modules.count() == 1)

@@ -169,7 +169,7 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
     m_pAccessKeys = new QCheckBox( i18n( "Enable/disable Access Ke&y activation with Ctrl key"), this );
     m_pAccessKeys->setWhatsThis( i18n( "Pressing the Ctrl key when viewing webpages activates KDE's Access Keys. Unchecking this box will disable this accessibility feature. (Konqueror needs to be restarted for changes to take effect.)" ) );
     connect(m_pAccessKeys, SIGNAL(toggled(bool)), SLOT(slotChanged()));
-    lay->addMultiCellWidget( m_pAccessKeys, row, row, 0, 1 );
+    lay->addWidget( m_pAccessKeys, row, 0, 1, 2 );
     row++;
 
     // More misc

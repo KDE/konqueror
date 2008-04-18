@@ -8,8 +8,8 @@
  *
  */
 
-#ifndef __PLUGINOPTS_H__
-#define __PLUGINOPTS_H__
+#ifndef PLUGINOPTS_H
+#define PLUGINOPTS_H
 
 #include <QtGui/QWidget>
 
@@ -24,7 +24,7 @@ class QCheckBox;
 
 class QBoxLayout;
 class QLabel;
-class QProgressDialog;
+class KProgressDialog;
 class QSlider;
 class KDialog;
 class KPluginOptions;
@@ -132,7 +132,7 @@ private:
  private:
   Ui::NSConfigWidget *m_widget;
   bool m_changed;
-  QProgressDialog *m_progress;
+  KProgressDialog *m_progress;
   QSlider *priority;
   QLabel *priorityLabel;
   PluginPolicies global_policies;
