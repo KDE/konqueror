@@ -26,49 +26,54 @@
 #include <kparts/browserextension.h>
 class KonqMainWindow;
 class KonqView;
+class KStandardDirs;
+class KSharedConfig;
+template <typename T> class KSharedPtr;
+typedef KSharedPtr<KSharedConfig> KSharedConfigPtr;
 
-class KONQ_TESTS_EXPORT KonqMisc
+namespace KonqMisc // TODO rename to KonqGlobal?
 {
-public:
-    /*
-    private:
-      static KonqFileManager *s_pSelf;
-    public:
-    KonqFileManager() {}
-    ~KonqFileManager() {}
+    enum Mode { FileManager, WebBrowser };
+    /**
+     * Sets the mode. ONLY called by konqmain! We cannot switch modes, we don't want to switch modes.
+     */
+    void setMode( Mode mode );
+    /**
+     * Returns the mode used by this konqueror process.
+     */
+    Mode mode();
 
-    static KonqFileManager *self()
-    {
-      if ( !s_pSelf )
-      s_pSelf = new KonqFileManager();
-      return s_pSelf;
-     }
-    */
+    /**
+     * Returns the KConfig object where to load/save mode-dependent settings
+     * (where mode is filemanager or webbrowser).
+     * For instance the HomeURL setting.
+     */
+    KSharedConfigPtr modeDependentConfig();
 
     /**
      * Stop full-screen mode in all windows.
      */
-    static void abortFullScreenMode();
+    void abortFullScreenMode();
 
     /**
      * Create a new window with a single view, showing @p url, using @p args
      */
-    static KonqMainWindow * createSimpleWindow( const KUrl &url, const KParts::OpenUrlArguments &args,
-                                                const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments(),
-						bool tempFile = false);
+    KonqMainWindow * createSimpleWindow( const KUrl &url, const KParts::OpenUrlArguments &args,
+                                         const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments(),
+                                         bool tempFile = false);
 
     /**
      * Create a new window for @p url using @p args and the appropriate profile for this URL.
      * @param forbidUseHTML internal. True when called by "Find Files"
      * @param openUrl If it is false, no url is openend in the new window. The url is used to guess the profile
      */
-    static KonqMainWindow * createNewWindow( const KUrl &url,
-                                             const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
-                                             const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments(),
-                                             bool forbidUseHTML = false,
-                                             const QStringList &filesToSelect = QStringList(),
-                                             bool tempFile = false,
-					     bool openUrl = true);
+    KonqMainWindow * createNewWindow( const KUrl &url,
+                                      const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
+                                      const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments(),
+                                      bool forbidUseHTML = false,
+                                      const QStringList &filesToSelect = QStringList(),
+                                      bool tempFile = false,
+                                      bool openUrl = true);
 
     /**
      * Create a new window from the profile defined by @p filename and @p path.
@@ -76,22 +81,22 @@ public:
      * @param forbidUseHTML internal. True when called by "Find Files"
      * @param openUrl If false no url is opened
      */
-    static KonqMainWindow * createBrowserWindowFromProfile( const QString &path,
-                                                            const QString &filename,
-                                                            const KUrl &url = KUrl(),
-                                                            const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
-                                                            const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments(),
-                                                            bool forbidUseHTML = false,
-                                                            const QStringList& filesToSelect = QStringList(),
-                                                            bool tempFile = false,
-							    bool openUrl = true);
+    KonqMainWindow * createBrowserWindowFromProfile( const QString &path,
+                                                     const QString &filename,
+                                                     const KUrl &url = KUrl(),
+                                                     const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
+                                                     const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments(),
+                                                     bool forbidUseHTML = false,
+                                                     const QStringList& filesToSelect = QStringList(),
+                                                     bool tempFile = false,
+                                                     bool openUrl = true);
 
     /**
      * Creates a new window from the history of a view, copies the history
      * @param view the History is copied from this view
      * @param steps Restore currentPos() + steps
      */
-    static KonqMainWindow * newWindowFromHistory( KonqView* view, int steps );
+    KonqMainWindow * newWindowFromHistory( KonqView* view, int steps );
 
     /**
      * Applies the URI filters to @p url.
@@ -100,8 +105,8 @@ public:
      * @p _url to be filtered.
      * @p _path the absolute path to append to the url before filtering it.
      */
-    static QString konqFilteredURL( QWidget* /*parent*/, const QString& /*_url*/, const QString& _path = QString() );
+    QString konqFilteredURL( QWidget* /*parent*/, const QString& /*_url*/, const QString& _path = QString() );
 
-};
+}
 
 #endif

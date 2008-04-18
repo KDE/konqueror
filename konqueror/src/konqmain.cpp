@@ -51,6 +51,8 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
 
   options.add("preload", ki18n("Preload for later use"));
 
+  options.add("mode <mode>", ki18n("Konqueror mode: FileManager or WebBrowser"));
+
   options.add("profile <profile>", ki18n("Profile to open"));
 
   options.add("profiles", ki18n("List available profiles"));
@@ -76,6 +78,12 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
   crashlog_file.setSuffix(".log");
   crashlog_file.open();
   KonqMainWindow::s_crashlog_file = &crashlog_file;
+
+  bool modeSet = false;
+  if (args->isSet("mode")) {
+      KonqMisc::setMode(QString::compare(args->getOption("mode"), "filemanager", Qt::CaseInsensitive) == 0 ? KonqMisc::FileManager : KonqMisc::WebBrowser);
+      modeSet = true;
+  }
 
   if ( app.isSessionRestored() )
   {
@@ -112,6 +120,12 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
        QString profilePath = profile;
        if (profile[0] != '/')
            profilePath = KStandardDirs::locate( "data", QLatin1String("konqueror/profiles/")+profile );
+       // Support for the standard kfmclient calls from Home.desktop and konqbrowser.desktop
+       if (profile.endsWith("filemanagement"))
+           KonqMisc::setMode(KonqMisc::FileManager);
+       else if (profile.endsWith("webbrowsing"))
+           KonqMisc::setMode(KonqMisc::WebBrowser);
+
        QString url;
        QStringList filesToSelect;
        if (args->count() == 1)

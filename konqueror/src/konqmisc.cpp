@@ -102,8 +102,7 @@ KonqMainWindow * KonqMisc::createBrowserWindowFromProfile( const QString &path, 
                                                            const KParts::BrowserArguments& browserArgs,
                                                            bool forbidUseHTML, const QStringList& filesToSelect, bool tempFile, bool openUrl )
 {
-  kDebug(1202) << "void KonqMisc::createBrowserWindowFromProfile() ";
-  kDebug(1202) << "path=" << path << ",filename=" << filename << ",url=" << url.prettyUrl();
+  kDebug(1202) << "path=" << path << ", filename=" << filename << ", url=" << url;
   abortFullScreenMode();
 
   KonqOpenURLRequest req;
@@ -115,7 +114,7 @@ KonqMainWindow * KonqMisc::createBrowserWindowFromProfile( const QString &path, 
   KonqMainWindow * mainWindow;
   if ( path.isEmpty() )
   {
-      // The profile doesn't exit -> creating a simple window
+      // The profile doesn't exist -> creating a simple window
       mainWindow = new KonqMainWindow;
       mainWindow->openUrl( 0, url, QString(), req );
   }
@@ -133,12 +132,12 @@ KonqMainWindow * KonqMisc::createBrowserWindowFromProfile( const QString &path, 
   }
   else
   {
-      KConfig cfg( path );
-      KConfigGroup profileGroup( &cfg, "Profile" );
-      QString xmluiFile = profileGroup.readPathEntry("XMLUIFile","konqueror.rc");
+      KSharedConfigPtr cfg = KSharedConfig::openConfig(path, KConfig::SimpleConfig);
+      const KConfigGroup profileGroup(cfg, "Profile");
+      const QString xmluiFile = profileGroup.readPathEntry("XMLUIFile","konqueror.rc");
 
-      mainWindow = new KonqMainWindow( KUrl(), xmluiFile );
-      mainWindow->viewManager()->loadViewProfileFromConfig( cfg, filename, url, req, false, openUrl );
+      mainWindow = new KonqMainWindow(KUrl(), xmluiFile);
+      mainWindow->viewManager()->loadViewProfileFromConfig(cfg, path, filename, url, req, false, openUrl);
   }
   if ( forbidUseHTML )
       mainWindow->setShowHTML( false );
@@ -203,6 +202,27 @@ QString KonqMisc::konqFilteredURL( QWidget* parent, const QString& _url, const Q
     return "about:konqueror";
   }
   return _url;  // return the original url if it cannot be filtered.
+}
+
+static KonqMisc::Mode s_mode = KonqMisc::WebBrowser;
+
+void KonqMisc::setMode( Mode mode )
+{
+    s_mode = mode;
+}
+
+KonqMisc::Mode KonqMisc::mode()
+{
+    return s_mode;
+}
+
+KSharedConfigPtr KonqMisc::modeDependentConfig()
+{
+    if (s_mode == KonqMisc::WebBrowser) {
+        return KGlobal::config();
+    } else {
+        return KSharedConfig::openConfig("kfmrc");
+    }
 }
 
 #include "konqmisc.moc"

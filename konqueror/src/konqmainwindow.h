@@ -252,8 +252,12 @@ public:
   // public for konq_guiclients
   void viewCountChanged();
 
-  // for the view manager
-  void currentProfileChanged();
+    /**
+     * For the view manager: we are loading the profile from this config file,
+     * so we should save mainwindow settings into that file from now on
+     */
+    void setProfileConfig(const KSharedConfigPtr& cfg);
+    void currentProfileChanged();
 
   // operates on all combos of all mainwindows of this instance
   // up to now adds an entry or clears all entries
@@ -313,11 +317,8 @@ public:
   QString currentTitle() const;
   QString currentURL() const;
   QString currentProfile() const;
+    void applyWindowSizeFromProfile(const KConfigGroup& profileGroup);
 
-  QStringList configModules() const;
-
-  void saveWindowSize() const;
-  void restoreWindowSize();
   void updateHistoryActions();
 
 Q_SIGNALS:

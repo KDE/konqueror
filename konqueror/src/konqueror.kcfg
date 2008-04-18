@@ -493,12 +493,6 @@ PATH_JAVA
       <whatsthis></whatsthis>
       <!-- checked -->
     </entry>
-    <entry key="SaveWindowSizeInProfile" type="Bool">
-      <default>false</default> 
-      <label></label>
-      <whatsthis></whatsthis>
-      <!-- checked -->
-    </entry>
     <entry name="SettingsCompletionMode" key="CompletionMode" type="Enum">
       <default code="true">KGlobalSettings::completionMode()</default> 
       <label></label>

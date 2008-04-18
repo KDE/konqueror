@@ -33,6 +33,7 @@
 #include <kparts/partmanager.h>
 #include "konqopenurlrequest.h"
 
+class KMainWindow;
 class KonqFrameTabs;
 class QString;
 class QTimer;
@@ -177,10 +178,9 @@ public:
    * @param fileName the name of the config file
    * @param profileName the name of the profile
    * @param saveURLs whether to save the URLs in the profile
-   * @param saveWindowSize whether to save the size of the window in the profile
    */
-  void saveViewProfileToFile( const QString & fileName, const QString & profileName,
-                              bool saveURLs, bool saveWindowSize );
+  void saveViewProfileToFile(const QString & fileName, const QString & profileName,
+                             KonqFrameBase::Options options);
 
   /**
    * Saves the current view layout to a group in a config file.
@@ -188,9 +188,8 @@ public:
    * Remove config file before saving, especially if saveURLs is false.
    * @param cfg the config file
    * @param options whether to save nothing, the URLs or the complete history of each view in the profile
-   * @param saveWindowSize whether to save the size of the window in the profile
    */
-  void saveViewProfileToGroup( KConfigGroup & cfg, const KonqFrameBase::Options &options, bool saveWindowSize );
+  void saveViewProfileToGroup(KConfigGroup & cfg, KonqFrameBase::Options options);
 
 
   /**
@@ -208,7 +207,9 @@ public:
                                 const KonqOpenURLRequest &req = KonqOpenURLRequest(),
                                 bool resetWindow = false, bool openUrl = true );
     // Overload for KonqMisc::createBrowserWindowFromProfile
-  void loadViewProfileFromConfig( const KConfig& config, const QString & filename,
+  void loadViewProfileFromConfig( const KSharedConfigPtr& config,
+                                  const QString& path,
+                                  const QString & filename,
                                   const KUrl & forcedUrl = KUrl(),
                                   const KonqOpenURLRequest &req = KonqOpenURLRequest(),
                                   bool resetWindow = false, bool openUrl = true );
@@ -225,7 +226,7 @@ public:
   void loadViewProfileFromGroup( const KConfigGroup& cfg, const QString & filename,
                                  const KUrl & forcedUrl = KUrl(),
                                  const KonqOpenURLRequest &req = KonqOpenURLRequest(),
-                                 bool resetWindow = false, bool openUrl = true );
+                                 bool openUrl = true );
   /**
    * Return the filename of the last profile that was loaded
    * by the view manager. For "save settings".
@@ -277,10 +278,10 @@ public:
 
   void showProfileDlg( const QString & preselectProfile );
 
-  /**
-   *   The widget is the one which you are referring to.
-   */
-  static QSize readConfigSize( const KConfigGroup &cfg, QWidget *widget = NULL);
+    /**
+     * Read default size from profile (e.g. Width=80%)
+     */
+    static QSize readDefaultSize(const KConfigGroup& cfg, QWidget* window);
 
 #ifndef NDEBUG
   void printFullHierarchy( KonqFrameContainerBase * container );
