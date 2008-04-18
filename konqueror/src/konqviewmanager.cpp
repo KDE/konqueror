@@ -836,6 +836,32 @@ void KonqViewManager::loadViewProfileFromFile( const QString & path, const QStri
     loadViewProfileFromConfig(config, path, filename, forcedUrl, req, resetWindow, openUrl );
 }
 
+void KonqViewManager::setCurrentProfile(const QString& profileFileName)
+{
+    m_currentProfile = profileFileName;
+
+    // We'll use the profile for saving window settings - so ensure we can save to it
+    const QString localPath = KStandardDirs::locateLocal("data", QString::fromLatin1("konqueror/profiles/") +
+                                                         profileFileName, KGlobal::mainComponent());
+    kDebug() << profileFileName << "localPath=" << localPath;
+    KSharedConfigPtr cfg = KSharedConfig::openConfig(localPath, KConfig::SimpleConfig);
+    if (!QFile::exists(localPath)) {
+        const QString globalFile = KStandardDirs::locate("data", QString::fromLatin1("konqueror/profiles/") +
+                                                         profileFileName, KGlobal::mainComponent());
+        kDebug() << "globalFile=" << globalFile;
+        if (!globalFile.isEmpty()) {
+            KSharedConfigPtr globalCfg = KSharedConfig::openConfig(globalFile, KConfig::SimpleConfig);
+            globalCfg->copyTo(localPath, cfg.data());
+        }
+    }
+
+    KConfigGroup profileGroup(cfg, "Profile");
+    m_currentProfileText = profileGroup.readPathEntry("Name", m_currentProfile);
+
+    // setProfileConfig must be done after setting m_currentProfile/m_currentProfileText
+    // We also do it after loadViewProfileFromGroup so that we can override the default size (Width=80%)
+    m_pMainWindow->setProfileConfig(profileGroup);
+}
 
 void KonqViewManager::loadViewProfileFromConfig( const KSharedConfigPtr& _cfg,
                                                  const QString& path,
@@ -844,10 +870,10 @@ void KonqViewManager::loadViewProfileFromConfig( const KSharedConfigPtr& _cfg,
                                                  const KonqOpenURLRequest &req,
                                                  bool resetWindow, bool openUrl )
 {
+    Q_UNUSED(path); // _cfg and path could be passed to setCurrentProfile for optimization
+
     KConfigGroup profileGroup(_cfg, "Profile");
 
-    m_currentProfile = filename;
-    m_currentProfileText = profileGroup.readPathEntry("Name", filename);
     m_profileHomeURL = profileGroup.readPathEntry("HomeURL", QString()); // TODO remove
 
 #if 0 // This isn't needed, the size should always be there in the profile anyway
@@ -858,20 +884,7 @@ void KonqViewManager::loadViewProfileFromConfig( const KSharedConfigPtr& _cfg,
 
     loadViewProfileFromGroup( profileGroup, filename, forcedUrl, req, openUrl );
 
-    KSharedConfigPtr cfg(_cfg);
-    if (!filename.isEmpty()) {
-        // We'll use the profile for saving window settings - so ensure we can save to it
-        const QString localPath = KStandardDirs::locateLocal("data", QString::fromLatin1("konqueror/profiles/") +
-                                                             filename, KGlobal::mainComponent());
-        if (localPath != path) {
-            cfg = KSharedConfig::openConfig(localPath, KConfig::SimpleConfig);
-            _cfg->copyTo(localPath, cfg.data());
-        }
-    }
-
-    // setProfileConfig must be done after setting m_currentProfile/m_currentProfileText
-    // We also do it after loadViewProfileFromGroup so that we can override the default size (Width=80%)
-    m_pMainWindow->setProfileConfig(cfg);
+    setCurrentProfile(filename);
 
 #ifdef DEBUG_VIEWMGR
     printFullHierarchy( m_pMainWindow );

@@ -4202,11 +4202,10 @@ void KonqMainWindow::setActionText( const char * name, const QString& text )
   }
 }
 
-void KonqMainWindow::setProfileConfig(const KSharedConfigPtr& cfg)
+void KonqMainWindow::setProfileConfig(const KConfigGroup& cfg)
 {
     // Read toolbar settings and window size from profile, and autosave into that profile from now on
-    setAutoSaveSettings(KConfigGroup(cfg, "Profile"));
-
+    setAutoSaveSettings(cfg);
     currentProfileChanged();
 }
 
