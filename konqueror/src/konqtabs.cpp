@@ -150,8 +150,7 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
   tabBar()->setDrawBase(false);
 
   tabBar()->setWhatsThis(i18n( "This bar contains the list of currently open tabs. Click on a tab to make it "
-			  "active. The option to show a close button instead of the website icon in the left "
-			  "corner of the tab is configurable. You can also use keyboard shortcuts to "
+			  "active. You can also use keyboard shortcuts to "
 			  "navigate through tabs. The text on the tab is the title of the website "
 			  "currently open in it, put your mouse over the tab too see the full title in "
 			  "case it was truncated to fit the tab size." ) );
@@ -168,11 +167,10 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
 
   m_permanentCloseButtons = KonqSettings::permanentCloseButton();
   if (m_permanentCloseButtons) {
-    setHoverCloseButton( true );
-    setHoverCloseButtonDelayed( false );
+    setCloseButtonEnabled( true );
   }
   else
-    setHoverCloseButton( KonqSettings::hoverCloseButton() );
+    setCloseButtonEnabled( KonqSettings::hoverCloseButton() );
   setTabCloseActivatePrevious( KonqSettings::tabCloseActivatePrevious() );
   if (KonqSettings::tabPosition()=="Bottom")
     setTabPosition(QTabWidget::Bottom);
@@ -280,13 +278,9 @@ void KonqFrameTabs::setTitle( const QString &title , QWidget* sender)
 void KonqFrameTabs::setTabIcon( const KUrl &url, QWidget* sender )
 {
   //kDebug(1202) << "KonqFrameTabs::setTabIcon( " << url << " , " << sender << " )";
-  KIcon iconSet;
-  if (m_permanentCloseButtons)
-    iconSet = KIcon( "window-close" );
-  else
-    iconSet = KIcon( KonqPixmapProvider::self()->iconNameFor( url ) );
+  KIcon iconSet = KIcon( KonqPixmapProvider::self()->iconNameFor( url ) );
   const int pos = indexOf(sender);
-  if (tabIcon(pos).pixmap().serialNumber() != iconSet.pixmap().serialNumber())
+  if (tabIcon(pos).pixmap(iconSize()).serialNumber() != iconSet.pixmap(iconSize()).serialNumber())
     KTabWidget::setTabIcon( pos, iconSet );
 }
 
@@ -415,7 +409,7 @@ void KonqFrameTabs::refreshSubPopupMenuTab()
 {
     m_pSubPopupMenuTab->clear();
     int i=0;
-    m_pSubPopupMenuTab->insertItem( KIcon( "reload_all_tabs" ),
+    m_pSubPopupMenuTab->addAction( KIcon( "reload_all_tabs" ),
                                     i18n( "&Reload All Tabs" ),
                                     m_pViewManager->mainWindow(),
                                     SLOT( slotReloadAllTabs() ),
@@ -554,7 +548,7 @@ void KonqFrameTabs::setAlwaysTabbedMode( bool enable )
 void KonqFrameTabs::initPopupMenu()
 {
   m_pPopupMenu = new QMenu( this );
-  m_pPopupMenu->insertItem( KIcon( "tab-new" ),
+  m_pPopupMenu->addAction( KIcon( "tab-new" ),
                             i18n("&New Tab"),
                             m_pViewManager->mainWindow(),
                             SLOT( slotAddTab() ),
