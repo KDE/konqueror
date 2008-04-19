@@ -8,7 +8,7 @@ install(TARGETS konq_aboutpage DESTINATION ${PLUGIN_INSTALL_DIR})
 
 install(FILES
     box-centre-konqueror.png
-    top-right-konqueror.png
+    top-left-konqueror.png
     lightning.png
     launch.html
     intro.html
