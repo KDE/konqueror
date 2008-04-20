@@ -1,6 +1,6 @@
 /* This file is part of the KDE project
    Copyright (C) 2000 Simon Hausmann <hausmann@kde.org>
-   Copyright (C) 2006 David Faure <faure@kde.org>
+   Copyright (C) 2006, 2008 David Faure <faure@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -18,11 +18,13 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef KONQ_UNDO_P_H
-#define KONQ_UNDO_P_H
+#ifndef KONQ_FILEUNDOMANAGER_P_H
+#define KONQ_FILEUNDOMANAGER_P_H
 
+#include "konq_fileundomanager.h"
 #include <QtCore/QStack>
 #include <QUndoCommand>
+#include <kurl.h>
 
 struct KonqBasicOperation
 {
@@ -81,6 +83,8 @@ public:
     quint64 m_serialNumber;
 };
 
+class KJob;
+
 // This class listens to a job, collects info while it's running (for copyjobs)
 // and when the job terminates, on success, it calls addCommand in the undomanager.
 class KonqCommandRecorder : public QObject
@@ -100,36 +104,87 @@ private:
   KonqCommand m_cmd;
 };
 
-QDataStream &operator<<( QDataStream &stream, const KonqBasicOperation &op )
-{
-    stream << op.m_valid << (qint8)op.m_type << op.m_renamed
-           << op.m_src << op.m_dst << op.m_target << (qint64)op.m_mtime;
-    return stream;
-}
-QDataStream &operator>>( QDataStream &stream, KonqBasicOperation &op )
-{
-    qint8 type;
-    qint64 mtime;
-    stream >> op.m_valid >> type >> op.m_renamed
-           >> op.m_src >> op.m_dst >> op.m_target >> mtime;
-    op.m_type = static_cast<KonqBasicOperation::Type>(type);
-    op.m_mtime = mtime;
-    return stream;
-}
+enum UndoState { MAKINGDIRS = 0, MOVINGFILES, STATINGFILE, REMOVINGDIRS, REMOVINGLINKS };
 
-QDataStream &operator<<( QDataStream &stream, const KonqCommand &cmd )
+// The private class is, exceptionally, a real QObject
+// so that it can be the class with the DBUS adaptor forwarding its signals.
+class KonqFileUndoManagerPrivate : public QObject
 {
-    stream << cmd.m_valid << (qint8)cmd.m_type << cmd.m_opStack << cmd.m_src << cmd.m_dst;
-    return stream;
-}
+    Q_OBJECT
+public:
+    KonqFileUndoManagerPrivate(KonqFileUndoManager* qq);
 
-QDataStream &operator>>( QDataStream &stream, KonqCommand &cmd )
-{
-    qint8 type;
-    stream >> cmd.m_valid >> type >> cmd.m_opStack >> cmd.m_src >> cmd.m_dst;
-    cmd.m_type = static_cast<KonqFileUndoManager::CommandType>( type );
-    return stream;
-}
+    ~KonqFileUndoManagerPrivate()
+    {
+        delete m_uiInterface;
+    }
 
-#endif /* KONQ_UNDO_P_H */
+    void pushCommand( const KonqCommand& cmd );
 
+    void broadcastPush( const KonqCommand &cmd );
+    void broadcastPop();
+    void broadcastLock();
+    void broadcastUnlock();
+
+    void addDirToUpdate( const KUrl& url );
+    bool initializeFromKDesky();
+
+    void undoStep();
+
+    void stepMakingDirectories();
+    void stepMovingFiles();
+    void stepRemovingLinks();
+    void stepRemovingDirectories();
+
+    /// called by KonqFileUndoManagerAdaptor
+    QByteArray get() const;
+
+    friend class KonqUndoJob;
+    /// called by KonqUndoJob
+    void stopUndo( bool step );
+
+    friend class KonqCommandRecorder;
+    /// called by KonqCommandRecorder
+    void addCommand( const KonqCommand &cmd );
+
+    bool m_syncronized;
+    bool m_lock;
+
+    KonqCommand::Stack m_commands;
+
+    KonqCommand m_current;
+    KIO::Job *m_currentJob;
+    UndoState m_undoState;
+    QStack<KUrl> m_dirStack;
+    QStack<KUrl> m_dirCleanupStack;
+    QStack<KUrl> m_linkCleanupStack;
+    QList<KUrl> m_dirsToUpdate;
+    KonqFileUndoManager::UiInterface* m_uiInterface;
+
+    KonqUndoJob *m_undoJob;
+    quint64 m_nextCommandIndex;
+
+    KonqFileUndoManager* q;
+
+    // DBUS interface
+Q_SIGNALS:
+    /// DBUS signal
+    void push(const QByteArray &command);
+    /// DBUS signal
+    void pop();
+    /// DBUS signal
+    void lock();
+    /// DBUS signal
+    void unlock();
+
+public Q_SLOTS:
+    // Those four slots are connected to DBUS signals
+    void slotPush(QByteArray);
+    void slotPop();
+    void slotLock();
+    void slotUnlock();
+
+    void slotResult(KJob*);
+};
+
+#endif /* KONQ_FILEUNDOMANAGER_P_H */
