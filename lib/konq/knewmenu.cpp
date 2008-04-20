@@ -589,6 +589,17 @@ void KNewMenu::slotResult( KJob * job )
 void KNewMenu::setPopupFiles(const KUrl::List& files)
 {
     d->popupFiles = files;
+    if (files.isEmpty()) {
+        d->m_newMenuGroup->setEnabled(false);
+    } else {
+        KUrl firstUrl = files.first();
+        if (KProtocolManager::supportsWriting(firstUrl)) {
+            d->m_newMenuGroup->setEnabled(true);
+            d->m_newDirAction->setEnabled(KProtocolManager::supportsMakeDir(firstUrl)); // e.g. trash:/
+        } else {
+            d->m_newMenuGroup->setEnabled(true);
+        }
+    }
 }
 
 //////////
