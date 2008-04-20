@@ -19,29 +19,20 @@
  * Boston, MA 02110-1301, USA.
  *
  */
-#include <KDE/KParts/GenericFactory>
-#include "webkitpart.h"
-#include "webkitpart_factory.h"
 
-WebkitFactory::WebkitFactory()
+#ifndef __WEBKITPARTFACTORY__
+#define __WEBKITPARTFACTORY__
+
+#include <kparts/factory.h>
+
+class WebkitFactory : public KParts::Factory
 {
-    kDebug() << this;
-}
+    Q_OBJECT
+public:
+    WebkitFactory();
+    virtual ~WebkitFactory();
 
-WebkitFactory::~WebkitFactory()
-{
-    kDebug() << this;
-}
+    virtual KParts::Part *createPartObject( QWidget *parentWidget, QObject *parent, const char *className, const QStringList &args );
+};
 
-KParts::Part * WebkitFactory::createPartObject( QWidget *parentWidget, QObject *parent, const char *className, const QStringList &args )
-{
-    Q_UNUSED(args);
-    return new WebKitPart( parentWidget, parent, QStringList());
-}
-
-extern "C" KDE_EXPORT void *init_webkitkdepart()
-{
-    return new WebkitFactory;
-}
-
-#include "webkitpart_factory.moc"
+#endif

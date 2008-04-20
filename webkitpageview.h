@@ -1,3 +1,4 @@
+
 /*
  * This file is part of the KDE project.
  *
@@ -19,29 +20,40 @@
  * Boston, MA 02110-1301, USA.
  *
  */
-#include <KDE/KParts/GenericFactory>
-#include "webkitpart.h"
-#include "webkitpart_factory.h"
 
-WebkitFactory::WebkitFactory()
+#ifndef WEBKITPAGEVIEW_H
+#define WEBKITPAGEVIEW_H
+
+#include <QWidget>
+#include <QWebPage>
+class WebKitPart;
+class WebView;
+class WebKitSearchBar;
+
+class WebKitPageView : public QWidget
 {
-    kDebug() << this;
-}
+    Q_OBJECT
+public:
+    WebKitPageView( WebKitPart *part, QWidget *parent );
+    ~WebKitPageView();
+    inline WebView *view() { return m_webView; }
 
-WebkitFactory::~WebkitFactory()
-{
-    kDebug() << this;
-}
+    WebKitSearchBar *searchBar() const { return m_searchBar; }
+public slots:
+    void slotFind();
+    void slotCloseSearchBarClicked();
+    void slotFindNextClicked();
+    void slotFindPreviousClicked();
+    void slotSearchChanged( const QString & );
+protected:
+    void resultSearch(QWebPage::FindFlags flags );
 
-KParts::Part * WebkitFactory::createPartObject( QWidget *parentWidget, QObject *parent, const char *className, const QStringList &args )
-{
-    Q_UNUSED(args);
-    return new WebKitPart( parentWidget, parent, QStringList());
-}
 
-extern "C" KDE_EXPORT void *init_webkitkdepart()
-{
-    return new WebkitFactory;
-}
+private:
+    WebView *m_webView;
+    WebKitSearchBar *m_searchBar;
+};
 
-#include "webkitpart_factory.moc"
+
+#endif /* WEBKITPAGEVIEW_H */
+

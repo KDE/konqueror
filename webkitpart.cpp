@@ -25,6 +25,7 @@
 #include "webkitpart.h"
 #include "webkitview.h"
 #include "webkitglobal.h"
+#include "webkitpageview.h"
 
 #include <KDE/KParts/GenericFactory>
 #include <KDE/KParts/Plugin>
@@ -38,37 +39,34 @@
 #include <QHttpRequestHeader>
 #include <QtWebKit/QWebHitTestResult>
 #include <QClipboard>
+#include <QApplication>
 #include <QPlainTextEdit>
 
-#include "searchwidget.h"
-
 // #include "kwebnetworkinterface.h"
-
-KAboutData *WebKitPart::s_about = 0;
 
 WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList &/*args*/)
     : KParts::ReadOnlyPart(parent)
 {
     WebKitGlobal::registerPart( this );
-    webView = new WebView(this, parentWidget);
-//     webView->setNetworkInterface(new KWebNetworkInterface(this));
-    setWidget(webView);
-    setComponentData(*new KComponentData(createAboutData() ) );
-    connect(webView, SIGNAL(loadStarted()),
+    webPageView = new WebKitPageView( this, parentWidget );
+    //     webView->setNetworkInterface(new KWebNetworkInterface(this));
+    setWidget(webPageView);
+    setComponentData(WebKitGlobal::componentData() );
+    connect(webPageView->view(), SIGNAL(loadStarted()),
             this, SLOT(loadStarted()));
-    connect(webView, SIGNAL(loadFinished()),
+    connect(webPageView->view(), SIGNAL(loadFinished()),
             this, SLOT(loadFinished()));
-    connect(webView, SIGNAL(titleChanged(const QString &)),
+    connect(webPageView->view(), SIGNAL(titleChanged(const QString &)),
             this, SIGNAL(setWindowCaption(const QString &)));
 
-    connect(webView->page(), SIGNAL(linkHovered(const QString &, const QString &, const QString &)),
+    connect(webPageView->view()->page(), SIGNAL(linkHovered(const QString &, const QString &, const QString &)),
             this, SIGNAL(setStatusBarText(const QString &)));
 
     browserExtension = new WebKitBrowserExtension(this);
 
-    connect(webView->page(), SIGNAL(loadProgress(int)),
+    connect( webPageView->view()->page(), SIGNAL(loadProgress(int)),
             browserExtension, SIGNAL(loadingProgress(int)));
-    connect(webView, SIGNAL(urlChanged(const QUrl &)),
+    connect(webPageView->view(), SIGNAL(urlChanged(const QUrl &)),
             this, SLOT(urlChanged(const QUrl &)));
 
     initAction();
@@ -92,7 +90,7 @@ void WebKitPart::initAction()
     connect( action, SIGNAL(triggered(bool)), browserExtension, SLOT( zoomOut() ) );
 
 
-    action = actionCollection()->addAction( KStandardAction::Find, "find", browserExt(), SLOT( slotFind() ) );
+    action = actionCollection()->addAction( KStandardAction::Find, "find", webPageView, SLOT( slotFind() ) );
     action->setWhatsThis( i18n( "Find text<br /><br />"
                                    "Shows a dialog that allows you to find text on the displayed page." ) );
 }
@@ -118,14 +116,14 @@ bool WebKitPart::openUrl(const KUrl &url)
         request.setHttpHeaderField(key, header.value(key));
 #endif
 
-    webView->load(url);
+    webPageView->view()->load(url);
 
     return true;
 }
 
 bool WebKitPart::closeUrl()
 {
-    webView->stop();
+    webPageView->view()->stop();
     return true;
 }
 
@@ -150,6 +148,12 @@ void WebKitPart::urlChanged(const QUrl &url)
     emit browserExtension->setLocationBarUrl(KUrl(url).prettyUrl());
 }
 
+WebView * WebKitPart::view()
+{
+    return webPageView->view();
+}
+
+
 #if 0
 QWebPage::NavigationRequestResponse WebKitPart::navigationRequested(const QWebNetworkRequest &request)
 {
@@ -166,18 +170,6 @@ QWebPage::NavigationRequestResponse WebKitPart::navigationRequested(const QWebNe
     return QWebPage::IgnoreNavigationRequest;
 }
 #endif
-
-KAboutData *WebKitPart::createAboutData()
-{
-    if ( !s_about )
-    {
-        s_about =new KAboutData("webkitpart", 0, ki18n("Webkit HTML Component"),
-                          /*version*/ "1.0", ki18n(/*shortDescription*/ ""),
-                          KAboutData::License_LGPL,
-                          ki18n("Copyright (c) 2007 Trolltech ASA"));
-    }
-    return s_about;
-}
 
 WebKitBrowserExtension::WebKitBrowserExtension(WebKitPart *parent)
     : KParts::BrowserExtension(parent), part(parent)
@@ -246,14 +238,6 @@ void WebKitBrowserExtension::zoomOut()
 {
     part->view()->setTextSizeMultiplier( part->view()->textSizeMultiplier()/2 );
 }
-
-void WebKitBrowserExtension::slotFind()
-{
-    SearchWidgetDialog *dlg = new SearchWidgetDialog( part->view(), part->view()->page() );
-    dlg->exec();
-    delete dlg;
-}
-
 
 void WebKitBrowserExtension::slotFrameInWindow()
 {

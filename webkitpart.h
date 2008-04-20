@@ -29,9 +29,9 @@
 #include <qwebview.h>
 #include "webkitkde_export.h"
 
-class WebView;
+class WebKitPageView;
 class QWebFrame;
-class KAboutData;
+class WebView;
 class WebKitBrowserExtension;
 class KWebNetworkInterface;
 
@@ -47,10 +47,8 @@ public:
 
 //     QWebPage::NavigationRequestResponse navigationRequested(const QWebNetworkRequest &request);
 
-    inline WebView *view() { return webView; }
+    WebView *view();
     inline WebKitBrowserExtension *browserExt() const { return browserExtension; }
-
-    static KAboutData *createAboutData();
 
 protected:
     virtual bool openFile();
@@ -62,9 +60,8 @@ private Q_SLOTS:
     void urlChanged(const QUrl &url);
 
 private:
-    WebView *webView;
+    WebKitPageView *webPageView;
     WebKitBrowserExtension *browserExtension;
-    static KAboutData *s_about;
 };
 
 class WebKitBrowserExtension : public KParts::BrowserExtension
@@ -82,7 +79,6 @@ public Q_SLOTS:
     void zoomIn();
     void zoomOut();
 
-    void slotFind();
     void slotFrameInWindow();
     void slotFrameInTab();
     void slotFrameInTop();

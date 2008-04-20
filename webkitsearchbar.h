@@ -20,37 +20,45 @@
  *
  */
 
-#ifndef SEARCHWIDGET_H
-#define SEARCHWIDGET_H
+#ifndef WEBKITSEARCHBAR_H
+#define WEBKITSEARCHBAR_H
+#include <QWidget>
 
-#include <KDialog>
-#include "ui_searchwidget.h"
+class QLineEdit;
+class QTimer;
+class QCheckBox;
 
-class QWebPage;
-
-class SearchWidget : public QWidget, public Ui::SearchWidget
-{
-public:
-  SearchWidget( QWidget *parent ) : QWidget( parent ) {
-    setupUi( this );
-  }
-};
-
-class SearchWidgetDialog : public KDialog
+class WebKitSearchBar : public QWidget
 {
     Q_OBJECT
 public:
-    SearchWidgetDialog( QWidget *parent, QWebPage *page);
-
+    WebKitSearchBar( QWidget *parent );
+    ~WebKitSearchBar();
     QString searchText() const;
     bool caseSensitive() const;
 
+    virtual void setVisible( bool visible );
+
+    void setFoundMatch( bool match );
+
 protected slots:
-    void slotSearch();
+    void notifySearchChanged();
+
+protected:
+    bool eventFilter(QObject* watched , QEvent* event );
+signals:
+    void searchChanged( const QString& text );
+    void closeClicked();
+    void findNextClicked();
+    void findPreviousClicked();
 
 private:
-    SearchWidget *m_search;
-    QWebPage *m_page;
+    QLineEdit* _searchEdit;
+    QCheckBox* _caseSensitive;
+    QTimer* _searchTimer;
+
 };
 
-#endif
+
+#endif /* WEBKITSEARCHBAR_H */
+

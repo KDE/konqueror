@@ -29,11 +29,15 @@
 #include <KDE/KGlobal>
 #include <QLinkedList>
 #include <KDE/KDebug>
+#include <KDE/KLocale>
+#include <KDE/KAboutData>
 #include <assert.h>
 
 WebKitGlobal *WebKitGlobal::s_self = 0;
 unsigned long int WebKitGlobal::s_refcnt = 0;
 static QLinkedList<WebKitPart*> *s_parts = 0;
+KAboutData *WebKitGlobal::s_about = 0;
+KComponentData *WebKitGlobal::s_componentData = 0;
 
 WebKitGlobal::WebKitGlobal()
 {
@@ -46,11 +50,15 @@ WebKitGlobal::~WebKitGlobal()
 {
     if ( s_self == this )
     {
+        delete s_componentData;
+        delete s_about;
         if (s_parts) {
             assert(s_parts->isEmpty());
             delete s_parts;
         }
         s_parts = 0;
+        s_componentData = 0;
+        s_about = 0;
     }
     else
         deref();
@@ -136,4 +144,25 @@ void WebKitGlobal::initGlobalSettings()
 
     QWebSettings::globalSettings()->setFontSize(QWebSettings::MinimumFontSize, cgHtml.readEntry( "MinimumFontSize", HTML_DEFAULT_MIN_FONT_SIZE ) );
     QWebSettings::globalSettings()->setFontSize(QWebSettings::DefaultFontSize, cgHtml.readEntry( "MediumFontSize", 12 ) );
+}
+
+
+const KComponentData &WebKitGlobal::componentData()
+{
+  assert( s_self );
+
+  if ( !s_componentData )
+  {
+      s_about =new KAboutData("webkitpart", 0, ki18n("Webkit HTML Component"),
+                              /*version*/ "1.0", ki18n(/*shortDescription*/ ""),
+                              KAboutData::License_LGPL,
+                              ki18n("Copyright (c) 2007 Trolltech ASA"));
+
+    s_about->addAuthor(ki18n("Laurent Montel"), KLocalizedString(), "montel@kde.org");
+    s_about->addAuthor( ki18n( "Urs Wolfer" ),KLocalizedString(), "uwolfer@kde.org" );
+    s_about->addAuthor( ki18n( "Dirk Mueller" ),KLocalizedString(), "mueller@kde.org" );
+    s_componentData = new KComponentData( s_about );
+  }
+
+  return *s_componentData;
 }

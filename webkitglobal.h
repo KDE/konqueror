@@ -24,6 +24,8 @@
 #define WEBKITGLOBAL_H
 class WebKitGlobal;
 class WebKitPart;
+class KAboutData;
+#include <KComponentData>
 
 class WebKitGlobal
 {
@@ -34,6 +36,7 @@ public:
     static void registerPart( WebKitPart *part );
     static void deregisterPart( WebKitPart *part );
     void initGlobalSettings();
+    static const KComponentData &componentData();
 
 private:
     static void ref();
@@ -41,6 +44,8 @@ private:
 private:
     static unsigned long s_refcnt;
     static WebKitGlobal *s_self;
+    static KAboutData *s_about;
+    static KComponentData *s_componentData;
 };
 
 #endif /* WEBKITGLOBAL_H */
