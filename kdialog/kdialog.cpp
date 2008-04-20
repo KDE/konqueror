@@ -652,6 +652,8 @@ int main(int argc, char *argv[])
   aboutData.addAuthor(ki18n("David Gümbel"),KLocalizedString(),"david.guembel@gmx.net");
   aboutData.addAuthor(ki18n("Richard Moore"),KLocalizedString(),"rich@kde.org");
   aboutData.addAuthor(ki18n("Dawit Alemayehu"),KLocalizedString(),"adawit@kde.org");
+  aboutData.setProgramIconName("system-run");
+
 
   KCmdLineArgs::init(argc, argv, &aboutData);
 
@@ -693,8 +695,6 @@ int main(int argc, char *argv[])
   KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 
   KApplication app;
-
-  QApplication::setWindowIcon(KIcon("system-run"));
 
   KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 

@@ -43,6 +43,7 @@ int main(int argc, char **argv)
             KAboutData::License_Artistic, ki18n("Copyright (c) 2000 Geert Jansen"));
     aboutData.addAuthor(ki18n("Geert Jansen"), ki18n("Maintainer"),
             "jansen@kde.org");
+    aboutData.setProgramIconName( "preferences-desktop-user-password" );
 
     KCmdLineArgs::init(argc, argv, &aboutData);
 
@@ -58,7 +59,6 @@ int main(int argc, char **argv)
     }
 
     KUniqueApplication app;
-    QApplication::setWindowIcon( KIcon( "preferences-desktop-user-password" ) );
 
     KUser ku;
     QString user;
