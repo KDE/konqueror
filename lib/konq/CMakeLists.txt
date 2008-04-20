@@ -19,7 +19,7 @@ set(konq_LIB_SRCS
    konqmimedata.cpp         # used by dolphin, KonqOperations, some filemanagement konqueror modules.
 )
 
-qt4_add_dbus_adaptor( konq_LIB_SRCS org.kde.libkonq.FileUndoManager.xml konq_fileundomanager.h KonqFileUndoManager) 
+qt4_add_dbus_adaptor(konq_LIB_SRCS org.kde.libkonq.FileUndoManager.xml konq_fileundomanager_p.h KonqFileUndoManagerPrivate konq_fileundomanager_adaptor)
 
 kde4_add_library(konq SHARED ${konq_LIB_SRCS})
 
@@ -43,7 +43,6 @@ install( FILES
  knewmenu.h
  konq_menuactions.h
  # konq_copytomenu.h - anyone needs it?
- konq_defaults.h
  konq_operations.h
  libkonq_export.h
  konq_events.h

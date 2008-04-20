@@ -123,7 +123,7 @@ static void createTestDirectory( const QString& path )
 class TestUiInterface : public KonqFileUndoManager::UiInterface
 {
 public:
-    TestUiInterface() : KonqFileUndoManager::UiInterface(0), m_nextReplyToConfirmDeletion(true) {
+    TestUiInterface() : KonqFileUndoManager::UiInterface(), m_nextReplyToConfirmDeletion(true) {
         setShowProgressInfo( false );
     }
     virtual void jobError( KIO::Job* job ) {

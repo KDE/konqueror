@@ -30,10 +30,9 @@ namespace KIO
 {
   class Job;
 }
-struct KonqBasicOperation;
+class KonqFileUndoManagerPrivate;
 class KonqCommand;
 class KonqUndoJob;
-class KJob;
 
 /**
  * KonqFileUndoManager: makes it possible to undo kio jobs.
@@ -43,49 +42,80 @@ class LIBKONQ_EXPORT KonqFileUndoManager : public QObject
 {
     Q_OBJECT
 public:
-    virtual ~KonqFileUndoManager();
-
-    static void incRef();
-    static void decRef();
+    /**
+     * @return the KonqFileUndoManager instance
+     */
     static KonqFileUndoManager *self();
 
-    // Interface for the gui handling of KonqFileUndoManager
+    /**
+     * Interface for the gui handling of KonqFileUndoManager.
+     * This includes three events currently:
+     * - error when undoing a job
+     * - confirm deletion before undoing a copy job
+     * - confirm deletion when the copied file has been modified afterwards
+     *
+     * By default UiInterface shows message boxes in all three cases;
+     * applications can reimplement this interface to provide different user interfaces.
+     */
     class LIBKONQ_EXPORT UiInterface
     {
     public:
-        UiInterface( QWidget* );
-        virtual ~UiInterface() {}
+        UiInterface();
+        virtual ~UiInterface();
 
-        void setShowProgressInfo( bool b ) { m_showProgressInfo = b; }
+        void setShowProgressInfo(bool b) { m_showProgressInfo = b; }
         bool showProgressInfo() const { return m_showProgressInfo; }
+
+        /**
+         * Sets the parent widget to use for message boxes.
+         */
+        void setParentWidget(QWidget* parentWidget);
+
+        /**
+         * @return the parent widget passed to the last call to undo(parentWidget), or 0.
+         */
+        QWidget* parentWidget() const;
 
         /**
          * Called when an undo job errors; default implementation displays a message box.
          */
-        virtual void jobError( KIO::Job* job );
+        virtual void jobError(KIO::Job* job);
 
         /**
          * Called when we are about to remove those files.
          * Return true if we should proceed with deleting them.
          */
-        virtual bool confirmDeletion( const KUrl::List& files );
+        virtual bool confirmDeletion(const KUrl::List& files);
 
         /**
          * Called when dest was modified since it was copied from src.
          * Note that this is called after confirmDeletion.
          * Return true if we should proceed with deleting dest.
          */
-        virtual bool copiedFileWasModified( const KUrl& src, const KUrl& dest, time_t srcTime, time_t destTime );
+        virtual bool copiedFileWasModified(const KUrl& src, const KUrl& dest, time_t srcTime, time_t destTime);
+
+        // TODO virtual_hook
+
     private:
         QWidget* m_parentWidget;
         bool m_showProgressInfo;
+        bool m_unused1, m_unused2, m_unused3;
+        class UiInterfacePrivate;
+        UiInterfacePrivate *d;
     };
 
     /**
      * Set a new UiInterface implementation.
      * This deletes the previous one.
+     * @param ui the UiInterface instance, which becomes owned by the undo manager.
      */
-    void setUiInterface( UiInterface* ui );
+    void setUiInterface(UiInterface* ui);
+
+    /**
+     * @return the UiInterface instance passed to setUiInterface.
+     * This is useful for calling setParentWidget on it. Never delete it!
+     */
+    UiInterface* uiInterface() const;
 
     enum CommandType { COPY, MOVE, RENAME, LINK, MKDIR, TRASH };
 
@@ -96,9 +126,15 @@ public:
      * @param dst destination url
      * @param job the job to record
      */
-    void recordJob( CommandType op, const KUrl::List &src, const KUrl &dst, KIO::Job *job );
+    void recordJob(CommandType op, const KUrl::List &src, const KUrl &dst, KIO::Job *job);
 
+    /**
+     * @return true if undo is possible. Usually used for enabling/disabling the undo action.
+     */
     bool undoAvailable() const;
+    /**
+     * @return the current text for the undo action.
+     */
     QString undoText() const;
 
     /**
@@ -108,72 +144,41 @@ public:
      * KonqFileUndoManager would undo is newer or older than your custom command.
      */
     quint64 newCommandSerialNumber();
-    quint64 currentCommandSerialNumber();
+    quint64 currentCommandSerialNumber() const;
+
+    /// @deprecated
+    static KDE_DEPRECATED void incRef() {}
+    /// @deprecated
+    static KDE_DEPRECATED void decRef() {}
 
 public Q_SLOTS:
-    // TODO: add QWidget* parameter for error boxes
-    /// Undoes the last command
+    /**
+     * Undoes the last command
+     * Remember to call uiInterface()->setParentWidget(parentWidget) first,
+     * if you have multiple mainwindows.
+     */
     void undo();
-
-    /// @internal called by KonqFileUndoManagerAdaptor
-    QByteArray get() const;
 
 Q_SIGNALS:
     /// Emitted when the value of undoAvailable() changes
-    void undoAvailable( bool avail );
+    void undoAvailable(bool avail);
 
     /// Emitted when the value of undoText() changes
-    void undoTextChanged( const QString &text );
+    void undoTextChanged(const QString &text);
 
     /// Emitted when an undo job finishes. Used for unit testing.
     void undoJobFinished();
 
-    // The four signals below are emitted to DBus
-    void push( const QByteArray &command );
-    void pop();
-    void lock();
-    void unlock();
-
-private Q_SLOTS:
-    // Those four are connected to DBUS signals
-    void slotPush( QByteArray command ); // const ref doesn't work due to QDataStream
-    void slotPop();
-    void slotLock();
-    void slotUnlock();
-
-private Q_SLOTS:
-    void slotResult( KJob *job );
-
 private:
     KonqFileUndoManager();
+    virtual ~KonqFileUndoManager();
+    friend class KonqFileUndoManagerSingleton;
 
     friend class KonqUndoJob;
-    /// called by KonqUndoJob
-    void stopUndo( bool step );
-
     friend class KonqCommandRecorder;
-    /// called by KonqCommandRecorder
-    void addCommand( const KonqCommand &cmd );
 
-    void pushCommand( const KonqCommand& cmd );
-    void undoStep();
-
-    void stepMakingDirectories();
-    void stepMovingFiles();
-    void stepRemovingLinks();
-    void stepRemovingDirectories();
-    
-    void broadcastPush( const KonqCommand &cmd );
-    void broadcastPop();
-    void broadcastLock();
-    void broadcastUnlock();
-
-    void addDirToUpdate( const KUrl& url );
-    bool initializeFromKDesky();
-
-    class KonqFileUndoManagerPrivate;
+    friend class KonqFileUndoManagerPrivate;
     KonqFileUndoManagerPrivate *d;
-    static KonqFileUndoManager *s_self;
 };
 
 #endif
