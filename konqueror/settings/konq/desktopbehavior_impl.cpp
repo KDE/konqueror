@@ -42,7 +42,6 @@
 #include <kmimetype.h>
 #include <kservicetypetrader.h>
 #include <kcustommenueditor.h>
-#include <konq_defaults.h> // include default values directly from libkonq
 #include <kprotocolinfo.h>
 #include "konqkcmfactory.h"
 

@@ -29,13 +29,15 @@
 
 // KDE
 #include <klocale.h>
-#include <konq_defaults.h>
 #include <kstandarddirs.h>
 #include <kurlrequester.h>
 #include <kconfiggroup.h>
 
 // Local
 #include "konqkcmfactory.h"
+
+static bool DEFAULT_CONFIRMDELETE = true;
+static bool DEFAULT_CONFIRMTRASH = true;
 
 KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
     : KCModule(KonqKcmFactory::componentData(), parent)
@@ -158,7 +160,7 @@ void KBehaviourOptions::slotShowTips(bool b)
 
 void KBehaviourOptions::load()
 {
-	KConfigGroup cg(g_pConfig, groupname);
+    KConfigGroup cg(g_pConfig, groupname);
     cbNewWin->setChecked( cg.readEntry("AlwaysNewWin", false) );
     updateWinPixmap(cbNewWin->isChecked());
 
@@ -170,7 +172,7 @@ void KBehaviourOptions::load()
     cbShowPreviewsInTips->setChecked( showPreviewsIntips );
 
     KSharedConfig::Ptr globalconfig = KSharedConfig::openConfig("kdeglobals", KConfig::NoGlobals);
-	KConfigGroup cg2(globalconfig, "KDE");
+    KConfigGroup cg2(globalconfig, "KDE");
     cbShowDeleteCommand->setChecked( cg2.readEntry("ShowDeleteCommand", false) );
 
 //    if (!stips) sbToolTip->setEnabled( false );
@@ -178,9 +180,10 @@ void KBehaviourOptions::load()
 
 //    sbToolTip->setValue( g_pConfig->readEntry( "FileTipItems", 6 ) );
 
-	KConfigGroup cg4(g_pConfig, "Trash");
-    cbMoveToTrash->setChecked( cg4.readEntry("ConfirmTrash", bool(DEFAULT_CONFIRMTRASH)) );
-    cbDelete->setChecked( cg4.readEntry("ConfirmDelete", bool(DEFAULT_CONFIRMDELETE)) );
+    KSharedConfigPtr kioConfig = KSharedConfig::openConfig("kiorc", KConfig::NoGlobals);
+    KConfigGroup confirmationGroup(kioConfig, "Confirmations");
+    cbMoveToTrash->setChecked(confirmationGroup.readEntry("ConfirmTrash", DEFAULT_CONFIRMTRASH));
+    cbDelete->setChecked(confirmationGroup.readEntry("ConfirmDelete", DEFAULT_CONFIRMDELETE));
 }
 
 void KBehaviourOptions::defaults()
@@ -194,14 +197,14 @@ void KBehaviourOptions::defaults()
     cbShowPreviewsInTips->setChecked( true );
     cbShowPreviewsInTips->setEnabled( true );
 
-    cbMoveToTrash->setChecked( DEFAULT_CONFIRMTRASH );
-    cbDelete->setChecked( DEFAULT_CONFIRMDELETE );
+    cbMoveToTrash->setChecked(DEFAULT_CONFIRMTRASH);
+    cbDelete->setChecked(DEFAULT_CONFIRMDELETE);
     cbShowDeleteCommand->setChecked( false );
 }
 
 void KBehaviourOptions::save()
 {
-	KConfigGroup cg(g_pConfig, groupname);
+    KConfigGroup cg(g_pConfig, groupname);
 
     cg.writeEntry( "AlwaysNewWin", cbNewWin->isChecked() );
     cg.writeEntry( "ShowFileTips", cbShowTips->isChecked() );
@@ -209,14 +212,15 @@ void KBehaviourOptions::save()
 //    g_pConfig->writeEntry( "FileTipsItems", sbToolTip->value() );
 
     KSharedConfig::Ptr globalconfig = KSharedConfig::openConfig("kdeglobals", KConfig::NoGlobals);
-	KConfigGroup cg2(globalconfig, "KDE");
+    KConfigGroup cg2(globalconfig, "KDE");
     cg2.writeEntry( "ShowDeleteCommand", cbShowDeleteCommand->isChecked());
     cg2.sync();
 
-	KConfigGroup cg3(globalconfig, "Trash");
-    cg3.writeEntry( "ConfirmTrash", cbMoveToTrash->isChecked());
-    cg3.writeEntry( "ConfirmDelete", cbDelete->isChecked());
-    cg3.sync();
+    KSharedConfigPtr kioConfig = KSharedConfig::openConfig("kiorc", KConfig::NoGlobals);
+    KConfigGroup confirmationGroup(kioConfig , "Confirmations");
+    confirmationGroup.writeEntry( "ConfirmTrash", cbMoveToTrash->isChecked());
+    confirmationGroup.writeEntry( "ConfirmDelete", cbDelete->isChecked());
+    confirmationGroup.sync();
 
     // Send signal to all konqueror instances
     QDBusMessage message =
