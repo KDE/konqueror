@@ -18,7 +18,6 @@
 */
 
 #include "konqsettings.h"
-#include "konq_defaults.h"
 #include <kprotocolmanager.h>
 #include "kglobalsettings.h"
 #include <ksharedconfig.h>
