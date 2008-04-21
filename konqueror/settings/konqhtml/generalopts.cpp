@@ -20,7 +20,6 @@
 #include <QtGui/QLabel>
 
 // KDE
-#include <konq_defaults.h> // include default values directly from konqueror
 #include <kapplication.h>
 #include <kurlrequester.h>
 

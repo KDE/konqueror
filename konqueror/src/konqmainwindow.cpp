@@ -99,7 +99,6 @@
 #include <kmenubar.h>
 #include <kmessagebox.h>
 #include <knewmenu.h>
-#include <konq_defaults.h>
 #include <konq_popupmenu.h>
 #include "konqsettings.h"
 #include <kprotocolinfo.h>
