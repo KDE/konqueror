@@ -109,6 +109,32 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
     return 0;
   }
 
+  // Use kfmclient from the session KDE version
+  if(( args->arg( 0 ) == "openURL" || args->arg( 0 ) == "newTab" )
+      && getenv( "KDE_FULL_SESSION" ) != NULL )
+  {
+    int version = KDE_VERSION_MAJOR;
+    if( getenv( "KDE_SESSION_VERSION" ) == NULL ) // this is KDE3
+        version = 3;
+    else
+        version = atoi( getenv( "KDE_SESSION_VERSION" ));
+    if( version != 0 && version != KDE_VERSION_MAJOR )
+    {
+        kDebug( 1202 ) << "Forwarding to kfmclient from KDE version " << version;
+        char wrapper[ 10 ];
+        sprintf( wrapper, "kde%d", version );
+        char** newargv = new char*[ argc + 2 ];
+        newargv[ 0 ] = wrapper;
+        for( int i = 0;
+             i < argc;
+             ++i )
+            newargv[ i + 1 ] = argv[ i ];
+        newargv[ argc + 1 ] = NULL;
+        execvp( wrapper, newargv );
+        // just continue if failed
+    }
+  }
+
   // ClientApp internally uses KConfig and hence needs a valid KComponentData
   needInstance();
   return ClientApp::doIt() ? 0 /*no error*/ : 1 /*error*/;
