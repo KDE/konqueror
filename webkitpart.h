@@ -30,10 +30,8 @@
 #include "webkitkde_export.h"
 
 class WebKitPageView;
-class QWebFrame;
 class WebView;
 class WebKitBrowserExtension;
-class KWebNetworkInterface;
 
 class WEBKITKDE_EXPORT WebKitPart : public KParts::ReadOnlyPart
 {

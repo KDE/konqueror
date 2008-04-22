@@ -48,21 +48,21 @@ WebKitSearchBar::WebKitSearchBar( QWidget *parent )
     connect( close , SIGNAL(clicked()) , this , SIGNAL(closeClicked()) );
 
     QLabel* findLabel = new QLabel(i18n("Find:"),this);
-    _searchEdit = new QLineEdit(this);
-    _searchEdit->installEventFilter(this);
-    _searchEdit->setObjectName("search-edit");
-    _searchEdit->setToolTip( i18n("Enter the text to search for here") );
+    m_searchEdit = new QLineEdit(this);
+    m_searchEdit->installEventFilter(this);
+    m_searchEdit->setObjectName("search-edit");
+    m_searchEdit->setToolTip( i18n("Enter the text to search for here") );
 
-    QFontMetrics metrics(_searchEdit->font());
+    QFontMetrics metrics(m_searchEdit->font());
     int maxWidth = metrics.maxWidth();
-    _searchEdit->setMinimumWidth(maxWidth*6);
-    _searchEdit->setMaximumWidth(maxWidth*10);
+    m_searchEdit->setMinimumWidth(maxWidth*6);
+    m_searchEdit->setMaximumWidth(maxWidth*10);
 
-    _searchTimer = new QTimer(this);
-    _searchTimer->setInterval(250);
-    _searchTimer->setSingleShot(true);
-    connect( _searchTimer , SIGNAL(timeout()) , this , SLOT(notifySearchChanged()) );
-    connect( _searchEdit , SIGNAL(textChanged(const QString&)) , _searchTimer , SLOT(start()));
+    m_searchTimer = new QTimer(this);
+    m_searchTimer->setInterval(250);
+    m_searchTimer->setSingleShot(true);
+    connect( m_searchTimer , SIGNAL(timeout()) , this , SLOT(notifySearchChanged()) );
+    connect( m_searchEdit , SIGNAL(textChanged(const QString&)) , m_searchTimer , SLOT(start()));
 
     QToolButton* findNext = new QToolButton(this);
     findNext->setObjectName("find-next-button");
@@ -82,14 +82,14 @@ WebKitSearchBar::WebKitSearchBar( QWidget *parent )
     findPrev->setToolTip( i18n("Find the previous match for the current search phrase") );
     connect( findPrev , SIGNAL(clicked()) , this , SIGNAL(findPreviousClicked()) );
 
-    _caseSensitive = new QCheckBox( i18n( "Match Case" ), this );
+    m_caseSensitive = new QCheckBox( i18n( "Match Case" ), this );
 
     layout->addWidget(close);
     layout->addWidget(findLabel);
-    layout->addWidget(_searchEdit);
+    layout->addWidget(m_searchEdit);
     layout->addWidget(findNext);
     layout->addWidget(findPrev);
-    layout->addWidget( _caseSensitive );
+    layout->addWidget( m_caseSensitive );
 
     layout->addStretch();
     layout->setMargin(4);
@@ -109,13 +109,13 @@ void WebKitSearchBar::notifySearchChanged()
 
 QString WebKitSearchBar::searchText() const
 {
-    return _searchEdit->text();
+    return m_searchEdit->text();
 }
 
 
 bool WebKitSearchBar::eventFilter(QObject* watched , QEvent* event)
 {
-    if ( watched == _searchEdit )
+    if ( watched == m_searchEdit )
     {
         if ( event->type() == QEvent::KeyPress )
         {
@@ -139,30 +139,30 @@ void WebKitSearchBar::setVisible(bool visible)
     if ( visible )
     {
         //TODO - Check if this is the correct reason value to use here
-        _searchEdit->setFocus( Qt::ActiveWindowFocusReason );
-        _searchEdit->selectAll();
+        m_searchEdit->setFocus( Qt::ActiveWindowFocusReason );
+        m_searchEdit->selectAll();
     }
 }
 
 bool WebKitSearchBar::caseSensitive() const
 {
-    return _caseSensitive->isChecked();
+    return m_caseSensitive->isChecked();
 }
 
 void WebKitSearchBar::setFoundMatch( bool match )
 {
-    if ( !match && !_searchEdit->text().isEmpty() )
+    if ( !match && !m_searchEdit->text().isEmpty() )
     {
         KStatefulBrush backgroundBrush(KColorScheme::View,KColorScheme::NegativeBackground);
 
         QString styleSheet = QString("QLineEdit{ background-color:%1 }")
-                             .arg(backgroundBrush.brush(_searchEdit).color().name());
+                             .arg(backgroundBrush.brush(m_searchEdit).color().name());
 
-        _searchEdit->setStyleSheet( styleSheet );
+        m_searchEdit->setStyleSheet( styleSheet );
     }
     else
     {
-        _searchEdit->setStyleSheet( QString() );
+        m_searchEdit->setStyleSheet( QString() );
     }
 }
 

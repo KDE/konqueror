@@ -31,11 +31,6 @@
 #include "webkitkde_export.h"
 
 class WebView;
-class QWebFrame;
-class KAboutData;
-class WebKitBrowserExtension;
-class KWebNetworkInterface;
-class QAction;
 class WebKitPart;
 class QWebHitTestResult;
 

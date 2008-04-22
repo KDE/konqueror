@@ -24,7 +24,6 @@
 #ifndef WEBKITPAGEVIEW_H
 #define WEBKITPAGEVIEW_H
 
-#include <QWidget>
 #include <QWebPage>
 class WebKitPart;
 class WebView;

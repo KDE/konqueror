@@ -53,9 +53,9 @@ signals:
     void findPreviousClicked();
 
 private:
-    QLineEdit* _searchEdit;
-    QCheckBox* _caseSensitive;
-    QTimer* _searchTimer;
+    QLineEdit* m_searchEdit;
+    QCheckBox* m_caseSensitive;
+    QTimer* m_searchTimer;
 
 };
 

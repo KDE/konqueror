@@ -25,7 +25,6 @@
 #include <qwebpage.h>
 #include "webkitkde_export.h"
 class QWebFrame;
-class WebKitBrowserExtension;
 class WebKitPart;
 
 class WEBKITKDE_EXPORT WebPage : public QWebPage
