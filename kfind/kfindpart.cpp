@@ -126,7 +126,7 @@ void KFindPart::removeFile(const KFileItem &item)
 
   m_lstFileItems.removeAll( item );  //not working ?
 
-  foreach(const KFileItem iter, m_lstFileItems) {
+  foreach(const KFileItem &iter, m_lstFileItems) {
     if(iter.url() != item.url())
       listiter.append(iter);
   }
@@ -177,7 +177,7 @@ void KFindPart::saveState( QDataStream& stream )
   m_kfindWidget->saveState( &stream );
   //Now we'll save the search result
   stream << m_lstFileItems.count();
-  foreach(const KFileItem fileitem, m_lstFileItems)
+  foreach(const KFileItem &fileitem, m_lstFileItems)
   {
         stream << fileitem;
   }
