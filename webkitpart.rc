@@ -1,5 +1,10 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<kpartgui name="webkitpart" version="1">
+<kpartgui name="webkitpart" version="2">
+<MenuBar>
+ <Menu name="edit"><text>&amp;Edit</text>
+  <Action name="find" />
+ </Menu>
+</MenuBar>
 <ToolBar name="htmlToolBar" iconText="icononly" iconSize="22" hidden="true"><text>HTML Toolbar</text>
  <Action name="incFontSizes" />
  <Action name="decFontSizes" />
