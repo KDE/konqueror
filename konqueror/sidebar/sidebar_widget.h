@@ -17,12 +17,10 @@
 #ifndef _SIDEBAR_WIDGET_
 #define _SIDEBAR_WIDGET_
 
-#include <Qt3Support/Q3PtrVector>
 #include <QtCore/QTimer>
 
 #include <QtCore/QPointer>
 
-#include <k3dockwidget.h>
 #include <kurl.h>
 #include <ktoolbar.h>
 #include <kparts/part.h>
@@ -42,14 +40,15 @@
 #endif
 
 class QHBoxLayout;
-//class QSplitter;
+class QSplitter;
 class QStringList;
+class KMenu;
 
 class ButtonInfo: public QObject, public KonqSidebarIface
 {
 	Q_OBJECT
 public:
-	ButtonInfo(const QString& file_, class KonqSidebarIface *part, K3DockWidget *dock_,
+	ButtonInfo(const QString& file_, class KonqSidebarIface *part, QWidget *dock_,
 			const QString &url_,const QString &lib,
 			const QString &dispName_, const QString &iconName_,
 			QObject *parent)
@@ -62,7 +61,7 @@ public:
 	~ButtonInfo() {}
 
 	QString file;
-	K3DockWidget *dock;
+	QWidget *dock;
 	KonqSidebarPlugin *module;
 	QString URL;
 	QString libName;
@@ -130,7 +129,6 @@ protected Q_SLOTS:
 	void createButtons();
 	void updateButtons();
 	void finishRollBack();
-  	void dockWidgetHasUndocked(K3DockWidget*);
 	void aboutToShowConfigMenu();
 	void saveConfig();
 
@@ -188,11 +186,10 @@ private:
     //bool m_userMovedSplitter;
 private:
 	KParts::ReadOnlyPart *m_partParent;
-	K3DockArea *m_area;
-	K3DockWidget *m_mainDockWidget;
+	QSplitter *m_area;
 
 	KMultiTabBar *m_buttonBar;
-	Q3PtrVector<ButtonInfo> m_buttons;
+	QVector<ButtonInfo*> m_buttons;
 	QHBoxLayout *m_layout;
 	KMenu *m_buttonPopup;
 	QAction* m_buttonPopupTitle, *m_showTabLeft;
@@ -215,6 +212,9 @@ private:
 	bool m_somethingVisible;
 	bool m_noUpdate;
 	bool m_initial;
+        
+        QAction *m_multiViews;
+        QAction *m_showConfigButton;
 
 	QString m_path;
 	QString m_relPath;
