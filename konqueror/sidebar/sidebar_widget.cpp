@@ -25,6 +25,7 @@
 #include <QtCore/QDir>
 #include <QtGui/QPushButton>
 #include <QtGui/QLayout>
+#include <QtGui/QSplitter>
 #include <QtCore/QStringList>
 #include <QtGui/QMenu>
 
@@ -243,7 +244,6 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, bool 
 		m_relPath = "konqsidebartng/" + currentProfile + "/entries/";
 	}
 	m_path = KGlobal::dirs()->saveLocation("data", m_relPath, true);
-	m_buttons.setAutoDelete(true);
 	m_hasStoredUrl = false;
 	m_latestViewed = -1;
 	setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
@@ -258,14 +258,9 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, bool 
 	}
 #endif
 
-	m_area = new K3DockArea(this);
+	m_area = new QSplitter(Qt::Vertical, this);
 	m_area->setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
-	m_mainDockWidget = m_area->createDockWidget("free", QPixmap());
-	m_mainDockWidget->setWidget(new QWidget(m_mainDockWidget));
-	m_area->setMainDockWidget(m_mainDockWidget);
 	m_area->setMinimumWidth(0);
-	m_mainDockWidget->setDockSite(K3DockWidget::DockTop);
-	m_mainDockWidget->setEnableDocking(K3DockWidget::DockNone);
 
    	m_buttonBar = new KMultiTabBar(KMultiTabBar::Left,this);
 
@@ -275,9 +270,11 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, bool 
 
 	QMenu *addMenu = m_menu->addMenu(i18n("Add New"));
 	m_menu->addSeparator();
-	m_menu->addAction(i18n("Multiple Views"), this, SLOT(slotMultipleViews()));
+	m_multiViews = m_menu->addAction(i18n("Multiple Views"), this, SLOT(slotMultipleViews()));
+        m_multiViews->setCheckable(true);
 	m_showTabLeft = m_menu->addAction(i18n("Show Tabs Left"), this, SLOT(slotShowTabsLeft()));
-	m_menu->addAction(i18n("Show Configuration Button"), this, SLOT(slotShowConfigurationButton()));
+	m_showConfigButton = m_menu->addAction(i18n("Show Configuration Button"), this, SLOT(slotShowConfigurationButton()));
+        m_showConfigButton->setCheckable(true);
 	if (!m_universalMode) {
 		m_menu->addSeparator();
 		m_menu->addAction(KIcon("window-close"), i18n("Close Navigation Panel"),
@@ -312,8 +309,6 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, bool 
 	m_somethingVisible = !m_openViews.isEmpty();
 	doLayout();
 	QTimer::singleShot(0,this,SLOT(createButtons()));
-	connect(m_area, SIGNAL(dockWidgetHasUndocked(K3DockWidget*)),
-		this, SLOT(dockWidgetHasUndocked(K3DockWidget*)));
 }
 
 void Sidebar_Widget::addWebSideBar(const KUrl& url, const QString& /*name*/) {
@@ -402,10 +397,9 @@ void Sidebar_Widget::doLayout()
 
 void Sidebar_Widget::aboutToShowConfigMenu()
 {
-	m_menu->setItemChecked(1, !m_singleWidgetMode);
+        m_multiViews->setChecked(!m_singleWidgetMode);
         m_showTabLeft->setText(m_showTabsLeft ? i18n("Show Tabs Right") : i18n("Show Tabs Left"));
-	m_menu->setItemChecked(2, m_showTabsLeft);
-	m_menu->setItemChecked(3, m_showExtraButtons);
+        m_showConfigButton->setChecked(m_showExtraButtons);
 }
 
 
@@ -562,39 +556,10 @@ void Sidebar_Widget::slotMultipleViews( )
 			{
 				if (button->dock && button->dock->isVisibleTo(this))
 					showHidePage(i);
-			} else {
-				if (button->dock)
-				{
-					m_area->setMainDockWidget(button->dock);
-					m_mainDockWidget->undock();
-				}
-			}
+			} 
 		}
 		m_latestViewed=tmpViewID;
-	} else {
-		if (!m_singleWidgetMode)
-		{
-			int tmpLatestViewed=m_latestViewed;
-			m_area->setMainDockWidget(m_mainDockWidget);
-			m_mainDockWidget->setDockSite(K3DockWidget::DockTop);
-			m_mainDockWidget->setEnableDocking(K3DockWidget::DockNone);
-			m_mainDockWidget->show();
-			if ((tmpLatestViewed>=0) && (tmpLatestViewed < (int) m_buttons.count()))
-			{
-				ButtonInfo *button = m_buttons.at(tmpLatestViewed);
-				if (button && button->dock)
-				{
-					m_noUpdate=true;
-					button->dock->undock();
-					button->dock->setEnableDocking(K3DockWidget::DockTop|
-						K3DockWidget::DockBottom/*|K3DockWidget::DockDesktop*/);
-					kDebug()<<"Reconfiguring multi view mode";
-					m_buttonBar->setTab(tmpLatestViewed,true);
-					showHidePage(tmpLatestViewed);
-				}
-			}
-		}
-	}
+	} 
 	m_configTimer.start(400);
 }
 
@@ -679,6 +644,7 @@ void Sidebar_Widget::updateButtons()
 
 		}
 	}
+        qDeleteAll(m_buttons);
 	m_buttons.clear();
 
 	readConfig();
@@ -764,7 +730,6 @@ bool Sidebar_Widget::openUrl(const class KUrl &url)
 bool Sidebar_Widget::addButton(const QString &desktoppath,int pos)
 {
 	int lastbtn = m_buttons.count();
-	m_buttons.resize(m_buttons.size()+1);
 
   	KConfigGroup *confFile;
 
@@ -893,19 +858,14 @@ bool Sidebar_Widget::createView( ButtonInfo *data)
 	    KSharedConfig::openConfig(data->file, KConfig::SimpleConfig),
 	    "Desktop Entry");
 
-	data->dock = m_area->createDockWidget(confFile->readEntry("Name",i18n("Unknown")),QString());
-	data->module = loadModule(data->dock,data->file,data->libName,data);
+	data->dock = 0;
+	data->module = loadModule(m_area, data->file,data->libName,data);
 
 	if (data->module == 0)
 	{
-		delete data->dock;
-		data->dock = 0;
 		ret = false;
 	} else {
-		data->dock->setWidget(data->module->getWidget());
-		data->dock->setEnableDocking(K3DockWidget::DockTop|
-		K3DockWidget::DockBottom/*|K3DockWidget::DockDesktop*/);
-		data->dock->setDockSite(K3DockWidget::DockTop|K3DockWidget::DockBottom);
+		data->dock = data->module->getWidget();
 		connectModule(data->module);
 		connect(this, SIGNAL(fileSelection(const KFileItemList&)),
 			data->module, SLOT(openPreview(const KFileItemList&)));
@@ -952,17 +912,10 @@ void Sidebar_Widget::showHidePage(int page)
 				SIGNAL(setCaption(const QString&)),
 				m_buttonBar->tab(page),
 				SLOT(setText(const QString&)));
-
-			if (m_singleWidgetMode)
-			{
-				m_area->setMainDockWidget(info->dock);
-				m_mainDockWidget->undock();
-			} else {
-				info->dock->manualDock(m_mainDockWidget,K3DockWidget::DockTop,100);
-			}
-
+                        
+                        m_area->addWidget(info->dock);
 			info->dock->show();
-
+                        m_area->show();
 			if (m_hasStoredUrl)
 				info->module->openUrl(m_storedUrl);
 			m_visibleViews<<info->file;
@@ -978,14 +931,8 @@ void Sidebar_Widget::showHidePage(int page)
 				}
 			}
 
-			if (m_singleWidgetMode) {
-				m_area->setMainDockWidget(info->dock);
-				m_mainDockWidget->undock();
-			} else {
-				info->dock->manualDock(m_mainDockWidget,K3DockWidget::DockTop,100);
-			}
-
 			info->dock->show();
+                        m_area->show();
 			m_latestViewed = page;
 			if (m_hasStoredUrl)
 				info->module->openUrl(m_storedUrl);
@@ -993,13 +940,10 @@ void Sidebar_Widget::showHidePage(int page)
 			m_buttonBar->setTab(page,true);
 		} else {
 			m_buttonBar->setTab(page,false);
-			if (m_singleWidgetMode) {
-				m_area->setMainDockWidget(m_mainDockWidget);
-				m_mainDockWidget->show();
-			}
-			info->dock->undock();
+			info->dock->hide();
 			m_latestViewed = -1;
 			m_visibleViews.removeAll(info->file);
+                        if (m_visibleViews.empty()) m_area->hide();
 		}
 	}
 
@@ -1032,23 +976,6 @@ QSize Sidebar_Widget::sizeHint() const
         if (m_somethingVisible)
            return QSize(m_savedWidth,200);
         return minimumSizeHint();
-}
-
-void Sidebar_Widget::dockWidgetHasUndocked(K3DockWidget* wid)
-{
-	kDebug()<<" Sidebar_Widget::dockWidgetHasUndocked(K3DockWidget*)";
-	for (unsigned int i=0;i<m_buttons.count();i++)
-	{
-		ButtonInfo *button = m_buttons.at(i);
-		if (button->dock==wid)
-		{
-			if (m_buttonBar->isTabRaised(i))
-			{
-				m_buttonBar->setTab(i,false);
-				showHidePage(i);
-			}
-		}
-	}
 }
 
 const KComponentData &Sidebar_Widget::getInstance()
@@ -1203,13 +1130,9 @@ Sidebar_Widget::~Sidebar_Widget()
 	if (m_configTimer.isActive())
 		saveConfig();
 	delete m_config;
+        qDeleteAll(m_buttons);
+        m_buttons.clear();
 	m_noUpdate = true;
-	for (uint i=0;i<m_buttons.count();i++)
-	{
-		ButtonInfo *button = m_buttons.at(i);
-		if (button->dock)
-			button->dock->undock();
-	}
 }
 
 void Sidebar_Widget::customEvent(QEvent* ev)
