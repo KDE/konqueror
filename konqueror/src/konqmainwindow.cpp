@@ -1732,10 +1732,7 @@ void KonqMainWindow::slotReloadPopup()
 
 void KonqMainWindow::slotHome(Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers)
 {
-    QString homeURL = m_pViewManager->profileHomeURL();
-
-    if (homeURL.isEmpty())
-	homeURL = KonqFMSettings::settings()->homeUrl();
+    const QString homeURL = KonqMisc::homeUrl();
 
     KonqOpenURLRequest req;
     req.newTab = true;

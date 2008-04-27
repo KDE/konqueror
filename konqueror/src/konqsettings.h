@@ -25,6 +25,8 @@
 
 class KConfigGroup;
 
+// TODO rename this file to konqfmsettings.h, or rename the class to KonqEmbedSettings in a konqembedsettings.h header
+
 /**
  * Konqueror settings coming from KControl modules.
  *
@@ -53,8 +55,6 @@ public:
     // Only makes sense in konqueror.
     bool shouldEmbed( const QString & serviceType ) const;
 
-    QString homeUrl() const;
-
 private:
     /**
      * @internal
@@ -70,8 +70,6 @@ private:
     static KonqFMSettings * s_pSettings;
 
     QMap<QString, QString> m_embedMap;
-
-    QString m_homeURL;
 
     /** Called by constructor and reparseConfiguration */
     void init(const KConfigGroup &config);

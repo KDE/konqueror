@@ -17,6 +17,7 @@
 
 class KUrlRequester;
 class Ui_advancedTabOptions;
+class QVBoxLayout;
 
 class KKonqGeneralOptions : public KCModule
 {
@@ -33,6 +34,8 @@ private Q_SLOTS:
     void slotChanged();
 
 private:
+    void addHomeUrlWidgets(QVBoxLayout*);
+
     KSharedConfig::Ptr m_pConfig;
 
     KUrlRequester *homeURL;
