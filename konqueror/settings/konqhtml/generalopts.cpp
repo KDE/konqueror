@@ -31,6 +31,9 @@
 
 K_PLUGIN_FACTORY_DECLARATION(KcmKonqHtmlFactory)
 
+// Keep in sync with konqueror.kcfg - TODO use it here
+static const char* DEFAULT_HOMEPAGE = "http://www.kde.org";
+
 //-----------------------------------------------------------------------------
 
 KKonqGeneralOptions::KKonqGeneralOptions(QWidget *parent, const QVariantList&)
@@ -41,27 +44,7 @@ KKonqGeneralOptions::KKonqGeneralOptions(QWidget *parent, const QVariantList&)
     lay->setMargin(0);
     lay->setSpacing(KDialog::spacingHint());
 
-    //HOME URL
-    QHBoxLayout *homeLayout = new QHBoxLayout;
-
-    QLabel *label = new QLabel(i18n("Home &URL:"), this);
-    homeLayout->addWidget(label);
-
-    homeURL = new KUrlRequester(this);
-    homeURL->setMode(KFile::Directory);
-    homeURL->setWindowTitle(i18n("Select Home Folder"));
-    homeLayout->addWidget(homeURL);
-    connect(homeURL, SIGNAL(textChanged(const QString &)), SLOT(slotChanged()));
-    label->setBuddy(homeURL);
-
-    lay->addLayout(homeLayout);
-
-    QString homestr = i18n("This is the URL (e.g. a folder or a web page) where "
-                           "Konqueror will jump to when the \"Home\" button is pressed. "
-                           "This is usually your home folder, symbolized by a 'tilde' (~).");
-    label->setWhatsThis(homestr);
-    homeURL->setWhatsThis(homestr);
-    //HOME URL
+    addHomeUrlWidgets(lay);
 
     QGroupBox* tabsGroup = new QGroupBox(i18n("Tabbed Browsing"));
 
@@ -85,6 +68,31 @@ KKonqGeneralOptions::KKonqGeneralOptions(QWidget *parent, const QVariantList&)
     emit changed(false);
 }
 
+void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout* lay)
+{
+    QHBoxLayout *homeLayout = new QHBoxLayout;
+
+    QLabel *label = new QLabel(i18n("Home Page:"), this);
+    homeLayout->addWidget(label);
+
+    homeURL = new KUrlRequester(this);
+    homeURL->setMode(KFile::Directory);
+    homeURL->setWindowTitle(i18n("Select Home Page"));
+    homeLayout->addWidget(homeURL);
+    connect(homeURL, SIGNAL(textChanged(QString)), SLOT(slotChanged()));
+    label->setBuddy(homeURL);
+
+    lay->addLayout(homeLayout);
+
+    QString homestr = i18n("This is the URL of the web page where "
+                           "Konqueror (as web browser) will jump to when "
+                           "the \"Home\" button is pressed. When Konqueror is "
+                           "started as a file manager, that button makes it jump "
+                           "to your local home folder instead.");
+    label->setWhatsThis(homestr);
+    homeURL->setWhatsThis(homestr);
+}
+
 KKonqGeneralOptions::~KKonqGeneralOptions()
 {
     delete tabOptions;
@@ -92,9 +100,12 @@ KKonqGeneralOptions::~KKonqGeneralOptions()
 
 void KKonqGeneralOptions::load()
 {
-    KConfigGroup cg(m_pConfig, "FMSettings");
-    
-    homeURL->setUrl(cg.readEntry("HomeURL", "~"));
+    KConfigGroup userSettings(m_pConfig, "UserSettings");
+    homeURL->setUrl(userSettings.readEntry("HomeURL", DEFAULT_HOMEPAGE));
+
+
+    KConfigGroup cg(m_pConfig, "FMSettings"); // ### what a wrong group name for these settings...
+
     tabOptions->m_pShowMMBInTabs->setChecked( cg.readEntry( "MMBOpensTab", false ) );
     tabOptions->m_pDynamicTabbarHide->setChecked( ! (cg.readEntry( "AlwaysTabbedMode", false )) );
 
@@ -113,7 +124,7 @@ void KKonqGeneralOptions::load()
 
 void KKonqGeneralOptions::defaults()
 {
-    homeURL->setUrl(KUrl("~"));
+    homeURL->setUrl(KUrl(DEFAULT_HOMEPAGE));
 
     bool old = m_pConfig->readDefaults();
     m_pConfig->setReadDefaults(true);
@@ -123,8 +134,10 @@ void KKonqGeneralOptions::defaults()
 
 void KKonqGeneralOptions::save()
 {
+    KConfigGroup userSettings(m_pConfig, "UserSettings");
+    userSettings.writeEntry("HomeURL", homeURL->url().url());
+
     KConfigGroup cg(m_pConfig, "FMSettings");
-    cg.writeEntry( "HomeURL", homeURL->url().isEmpty()? QString("~") : homeURL->url().url() );
     cg.writeEntry( "MMBOpensTab", tabOptions->m_pShowMMBInTabs->isChecked() );
     cg.writeEntry( "AlwaysTabbedMode", !(tabOptions->m_pDynamicTabbarHide->isChecked()) );
 

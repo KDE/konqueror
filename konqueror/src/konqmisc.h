@@ -51,6 +51,11 @@ namespace KonqMisc // TODO rename to KonqGlobal?
     KSharedConfigPtr modeDependentConfig();
 
     /**
+     * Returns the (mode-dependent) URL to use for the home button
+     */
+    QString homeUrl();
+
+    /**
      * Stop full-screen mode in all windows.
      */
     void abortFullScreenMode();

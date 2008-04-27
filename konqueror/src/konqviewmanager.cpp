@@ -874,12 +874,12 @@ void KonqViewManager::loadViewProfileFromConfig( const KSharedConfigPtr& _cfg,
 
     KConfigGroup profileGroup(_cfg, "Profile");
 
-    m_profileHomeURL = profileGroup.readPathEntry("HomeURL", QString()); // TODO remove
-
 #if 0 // This isn't needed, the size should always be there in the profile anyway
     if( resetWindow ) {
         m_pMainWindow->applyMainWindowSettings(KConfigGroup(KonqMisc::modeDependentConfig(),"KonqMainWindow"), true);
     }
+#else
+    Q_UNUSED(resetWindow); // cleanup the argument once the above is confirmed
 #endif
 
     loadViewProfileFromGroup( profileGroup, filename, forcedUrl, req, openUrl );

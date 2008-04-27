@@ -291,8 +291,6 @@ public:
 
   void showHTML(bool b);
 
-  QString profileHomeURL() const { return m_profileHomeURL; }
-
 public Q_SLOTS:
     /**
      * Opens a previously closed tab in a new tab
@@ -388,7 +386,6 @@ private:
   bool m_bLoadingProfile;
   QString m_currentProfile;
   QString m_currentProfileText;
-  QString m_profileHomeURL;
 
     QMap<QString /*display name*/, QString /*path to file*/> m_mapProfileNames;
 

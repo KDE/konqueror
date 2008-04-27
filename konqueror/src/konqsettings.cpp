@@ -65,7 +65,6 @@ KonqFMSettings::~KonqFMSettings()
 
 void KonqFMSettings::init(const KConfigGroup &config)
 {
-    m_homeURL = config.readPathEntry("HomeURL", "~");
     const KSharedConfig::Ptr fileTypesConfig = KSharedConfig::openConfig("filetypesrc", KConfig::NoGlobals);
     m_embedMap = fileTypesConfig->entryMap("EmbedSettings");
 }
@@ -95,9 +94,4 @@ bool KonqFMSettings::shouldEmbed( const QString & mimeType ) const
     if ( mimeTypeGroup == "image" || hasLocalProtocolRedirect )
         return true;
     return false;
-}
-
-QString KonqFMSettings::homeUrl() const
-{
-    return m_homeURL;
 }
