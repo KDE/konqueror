@@ -22,7 +22,6 @@
 
 #include <QtCore/QObject>
 #include <kurl.h>
-#include <sys/types.h> // time_t
 
 #include <libkonq_export.h>
 
@@ -33,6 +32,7 @@ namespace KIO
 class KonqFileUndoManagerPrivate;
 class KonqCommand;
 class KonqUndoJob;
+class KDateTime;
 
 /**
  * KonqFileUndoManager: makes it possible to undo kio jobs.
@@ -63,8 +63,14 @@ public:
         UiInterface();
         virtual ~UiInterface();
 
-        void setShowProgressInfo(bool b) { m_showProgressInfo = b; }
-        bool showProgressInfo() const { return m_showProgressInfo; }
+        /**
+         * Sets whether to show progress info when running the KIO jobs for undoing.
+         */
+        void setShowProgressInfo(bool b);
+        /**
+         * @returns whether progress info dialogs are shown while undoing.
+         */
+        bool showProgressInfo() const;
 
         /**
          * Sets the parent widget to use for message boxes.
@@ -92,14 +98,14 @@ public:
          * Note that this is called after confirmDeletion.
          * Return true if we should proceed with deleting dest.
          */
-        virtual bool copiedFileWasModified(const KUrl& src, const KUrl& dest, time_t srcTime, time_t destTime);
+        virtual bool copiedFileWasModified(const KUrl& src, const KUrl& dest, const KDateTime& srcTime, const KDateTime& destTime);
 
-        // TODO virtual_hook
+        /**
+         * \internal, for future extensions
+         */
+        virtual void virtual_hook(int id, void* data);
 
     private:
-        QWidget* m_parentWidget;
-        bool m_showProgressInfo;
-        bool m_unused1, m_unused2, m_unused3;
         class UiInterfacePrivate;
         UiInterfacePrivate *d;
     };
