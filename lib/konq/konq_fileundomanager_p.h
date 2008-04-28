@@ -61,16 +61,6 @@ public:
       m_valid = false;
     }
 
-    // TODO
-    //KonqCommand( Type type, KonqBasicOperation::Stack& opStack, const KUrl::List& src, const KUrl& dest )
-    //  : m_type( type ), m_opStack( opStack ), m_src( src ), m_dest( dest )
-    // {
-    //     // if using QUndoCommand: setText(...); // see code in KonqFileUndoManager::undoText()
-    // }
-
-    //virtual void undo() {} // TODO
-    //virtual void redo() {} // TODO
-
     // TODO: is ::TRASH missing?
     bool isMoveCommand() const { return m_type == KonqFileUndoManager::MOVE || m_type == KonqFileUndoManager::RENAME; }
 

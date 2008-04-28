@@ -22,32 +22,32 @@
 #include "konq_fileundomanager_p.h"
 #include "konq_fileundomanager_adaptor.h"
 
+#include <kdatetime.h>
+#include <kdebug.h>
+#include <kdirnotify.h>
+#include <kglobal.h>
 #include <kio/job.h>
 #include <kio/jobuidelegate.h>
-#include <QtDBus/QtDBus>
-#include <kdirnotify.h>
-#include <kdebug.h>
 #include <klocale.h>
 #include <kmessagebox.h>
-#include <kglobal.h>
 #include <kuiserverjobtracker.h>
 
-#include <QDateTime>
+#include <QtDBus/QtDBus>
 
 #include <assert.h>
 
-static const char* undoStateToString( UndoState state ) {
+static const char* undoStateToString(UndoState state) {
     static const char* s_undoStateToString[] = { "MAKINGDIRS", "MOVINGFILES", "STATINGFILE", "REMOVINGDIRS", "REMOVINGLINKS" };
     return s_undoStateToString[state];
 }
 
-static QDataStream &operator<<( QDataStream &stream, const KonqBasicOperation &op )
+static QDataStream &operator<<(QDataStream &stream, const KonqBasicOperation &op)
 {
     stream << op.m_valid << (qint8)op.m_type << op.m_renamed
            << op.m_src << op.m_dst << op.m_target << (qint64)op.m_mtime;
     return stream;
 }
-static QDataStream &operator>>( QDataStream &stream, KonqBasicOperation &op )
+static QDataStream &operator>>(QDataStream &stream, KonqBasicOperation &op)
 {
     qint8 type;
     qint64 mtime;
@@ -58,17 +58,17 @@ static QDataStream &operator>>( QDataStream &stream, KonqBasicOperation &op )
     return stream;
 }
 
-static QDataStream &operator<<( QDataStream &stream, const KonqCommand &cmd )
+static QDataStream &operator<<(QDataStream &stream, const KonqCommand &cmd)
 {
     stream << cmd.m_valid << (qint8)cmd.m_type << cmd.m_opStack << cmd.m_src << cmd.m_dst;
     return stream;
 }
 
-static QDataStream &operator>>( QDataStream &stream, KonqCommand &cmd )
+static QDataStream &operator>>(QDataStream &stream, KonqCommand &cmd)
 {
     qint8 type;
     stream >> cmd.m_valid >> type >> cmd.m_opStack >> cmd.m_src >> cmd.m_dst;
-    cmd.m_type = static_cast<KonqFileUndoManager::CommandType>( type );
+    cmd.m_type = static_cast<KonqFileUndoManager::CommandType>(type);
     return stream;
 }
 
@@ -220,8 +220,8 @@ KonqFileUndoManagerPrivate::KonqFileUndoManagerPrivate(KonqFileUndoManager* qq)
     dbus.registerObject(dbusPath, this);
     dbus.connect(QString(), dbusPath, dbusInterface, "lock", this, SLOT(slotLock()));
     dbus.connect(QString(), dbusPath, dbusInterface, "pop", this, SLOT(slotPop()));
-    dbus.connect(QString(), dbusPath, dbusInterface, "push", this, SLOT(slotPush(QByteArray)) );
-    dbus.connect(QString(), dbusPath, dbusInterface, "unlock", this, SLOT(slotUnlock()) );
+    dbus.connect(QString(), dbusPath, dbusInterface, "push", this, SLOT(slotPush(QByteArray)));
+    dbus.connect(QString(), dbusPath, dbusInterface, "unlock", this, SLOT(slotUnlock()));
 }
 
 KonqFileUndoManager::KonqFileUndoManager()
@@ -401,7 +401,9 @@ void KonqFileUndoManagerPrivate::slotResult(KJob *job)
         time_t mtime = statJob->statResult().numberValue(KIO::UDSEntry::UDS_MODIFICATION_TIME, -1);
         if (mtime != op.m_mtime) {
             kDebug(1203) << op.m_dst << " was modified after being copied!";
-            if (!m_uiInterface->copiedFileWasModified(op.m_src, op.m_dst, op.m_mtime, mtime)) {
+            KDateTime srcTime; srcTime.setTime_t(op.m_mtime); srcTime = srcTime.toLocalZone();
+            KDateTime destTime; destTime.setTime_t(mtime); destTime = destTime.toLocalZone();
+            if (!m_uiInterface->copiedFileWasModified(op.m_src, op.m_dst, srcTime, destTime)) {
                 stopUndo(false);
             }
         }
@@ -701,13 +703,24 @@ KonqFileUndoManager::UiInterface* KonqFileUndoManager::uiInterface() const
 
 ////
 
+class KonqFileUndoManager::UiInterface::UiInterfacePrivate
+{
+public:
+    UiInterfacePrivate()
+        : m_parentWidget(0), m_showProgressInfo(true)
+    {}
+    QWidget* m_parentWidget;
+    bool m_showProgressInfo;
+};
+
 KonqFileUndoManager::UiInterface::UiInterface()
-    : m_parentWidget(0), m_showProgressInfo(true), d(0)
+    : d(new UiInterfacePrivate)
 {
 }
 
 KonqFileUndoManager::UiInterface::~UiInterface()
 {
+    delete d;
 }
 
 void KonqFileUndoManager::UiInterface::jobError(KIO::Job* job)
@@ -715,15 +728,13 @@ void KonqFileUndoManager::UiInterface::jobError(KIO::Job* job)
     job->ui()->showErrorMessage();
 }
 
-bool KonqFileUndoManager::UiInterface::copiedFileWasModified(const KUrl& src, const KUrl& dest, time_t srcTime, time_t destTime)
+bool KonqFileUndoManager::UiInterface::copiedFileWasModified(const KUrl& src, const KUrl& dest, const KDateTime& srcTime, const KDateTime& destTime)
 {
     Q_UNUSED(srcTime); // not sure it should appear in the msgbox
-    //const QDateTime srcDt = QDateTime::fromTime_t(srcTime);
-    const QDateTime destDt = QDateTime::fromTime_t(destTime);
     // Possible improvement: only show the time if date is today
-    const QString timeStr = KGlobal::locale()->formatDateTime(destDt, KLocale::ShortDate);
+    const QString timeStr = KGlobal::locale()->formatDateTime(destTime, KLocale::ShortDate);
     return KMessageBox::warningContinueCancel(
-        m_parentWidget,
+        d->m_parentWidget,
         i18n("The file %1 was copied from %2, but since then it has apparently been modified at %3.\n"
               "Undoing the copy will delete the file, and all modifications will be lost.\n"
               "Are you sure you want to delete %4?", dest.pathOrUrl(), src.pathOrUrl(), timeStr, dest.pathOrUrl()),
@@ -731,25 +742,39 @@ bool KonqFileUndoManager::UiInterface::copiedFileWasModified(const KUrl& src, co
         KStandardGuiItem::cont(),
         KStandardGuiItem::cancel(),
         QString(),
-        KMessageBox::Notify | KMessageBox::Dangerous ) == KMessageBox::Continue;
+        KMessageBox::Notify | KMessageBox::Dangerous) == KMessageBox::Continue;
 }
 
 bool KonqFileUndoManager::UiInterface::confirmDeletion(const KUrl::List& files)
 {
     KIO::JobUiDelegate uiDelegate;
-    uiDelegate.setWindow(m_parentWidget);
+    uiDelegate.setWindow(d->m_parentWidget);
     // Because undo can happen with an accidental Ctrl-Z, we want to always confirm.
     return uiDelegate.askDeleteConfirmation(files, KIO::JobUiDelegate::Delete, KIO::JobUiDelegate::ForceConfirmation);
 }
 
 QWidget* KonqFileUndoManager::UiInterface::parentWidget() const
 {
-    return m_parentWidget;
+    return d->m_parentWidget;
 }
 
 void KonqFileUndoManager::UiInterface::setParentWidget(QWidget* parentWidget)
 {
-    m_parentWidget = parentWidget;
+    d->m_parentWidget = parentWidget;
+}
+
+void KonqFileUndoManager::UiInterface::setShowProgressInfo(bool b)
+{
+    d->m_showProgressInfo = b;
+}
+
+bool KonqFileUndoManager::UiInterface::showProgressInfo() const
+{
+    return d->m_showProgressInfo;
+}
+
+void KonqFileUndoManager::UiInterface::virtual_hook(int, void*)
+{
 }
 
 #include "konq_fileundomanager_p.moc"

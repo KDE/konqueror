@@ -129,7 +129,7 @@ public:
     virtual void jobError( KIO::Job* job ) {
         kFatal() << job->errorString() ;
     }
-    virtual bool copiedFileWasModified( const KUrl& src, const KUrl& dest, time_t srcTime, time_t destTime ) {
+    virtual bool copiedFileWasModified( const KUrl& src, const KUrl& dest, const KDateTime& srcTime, const KDateTime& destTime ) {
         Q_UNUSED( src );
         m_dest = dest;
         Q_UNUSED( srcTime );
