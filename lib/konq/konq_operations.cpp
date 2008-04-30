@@ -21,7 +21,6 @@
 */
 
 #include "konq_operations.h"
-#include "konq_fileundomanager.h"
 #include "konqmimedata.h"
 
 #include <ktoolinvocation.h>
@@ -36,8 +35,9 @@
 #include <kprocess.h>
 #include <kshortcut.h>
 #include <kprotocolmanager.h>
-#include <kio/job.h>
 #include <kio/deletejob.h>
+#include <kio/fileundomanager.h>
+#include <kio/job.h>
 #include <kio/jobuidelegate.h>
 #include <kio/jobclasses.h>
 #include <kio/copyjob.h>
@@ -120,7 +120,7 @@ KIO::SimpleJob* KonqOperations::mkdir( QWidget *parent, const KUrl & url )
     KIO::SimpleJob * job = KIO::mkdir(url);
     job->ui()->setWindow(parent);
     job->ui()->setAutoErrorHandlingEnabled(true);
-    KonqFileUndoManager::self()->recordJob( KonqFileUndoManager::MKDIR, KUrl(), url, job );
+    KIO::FileUndoManager::self()->recordJob( KIO::FileUndoManager::Mkdir, KUrl(), url, job );
     return job;
 }
 
@@ -143,7 +143,7 @@ void KonqOperations::doPaste( QWidget * parent, const KUrl & destUrl, const QPoi
         pi->mousePos = pos;
         op->setPasteInfo( pi );
         op->setOperation( job, move ? MOVE : COPY, copyJob->destUrl() );
-        KonqFileUndoManager::self()->recordJob( move ? KonqFileUndoManager::MOVE : KonqFileUndoManager::COPY, KUrl::List(), destUrl, job );
+        KIO::FileUndoManager::self()->recordJob( move ? KIO::FileUndoManager::Move : KIO::FileUndoManager::Copy, KUrl::List(), destUrl, job );
     }
 }
 
@@ -162,7 +162,7 @@ void KonqOperations::copy( QWidget * parent, Operation method, const KUrl::List 
     }
 
     KonqOperations * op = new KonqOperations( parent );
-    KIO::Job* job(0);
+    KIO::CopyJob* job;
     if (method == LINK)
         job = KIO::link( selectedUrls, destUrl );
     else if (method == MOVE)
@@ -172,10 +172,7 @@ void KonqOperations::copy( QWidget * parent, Operation method, const KUrl::List 
 
     op->setOperation( job, method, destUrl );
 
-    if (method == COPY)
-        KonqFileUndoManager::self()->recordJob( KonqFileUndoManager::COPY, selectedUrls, destUrl, job );
-    else
-        KonqFileUndoManager::self()->recordJob( method==MOVE?KonqFileUndoManager::MOVE:KonqFileUndoManager::LINK, selectedUrls, destUrl, job );
+    KIO::FileUndoManager::self()->recordCopyJob(job);
 }
 
 void KonqOperations::_del( Operation method, const KUrl::List & _selectedUrls, ConfirmationType confirmation )
@@ -199,7 +196,7 @@ void KonqOperations::_del( Operation method, const KUrl::List & _selectedUrls, C
         case TRASH:
         {
             job = KIO::trash( selectedUrls );
-            KonqFileUndoManager::self()->recordJob( KonqFileUndoManager::TRASH, selectedUrls, KUrl("trash:/"), job );
+            KIO::FileUndoManager::self()->recordJob( KIO::FileUndoManager::Trash, selectedUrls, KUrl("trash:/"), job );
             break;
         }
         case EMPTYTRASH:
@@ -315,7 +312,7 @@ void KonqOperations::doDrop( const KFileItem & destItem, const KUrl & dest, QDro
         if ( job ) // 0 if canceled by user
         {
             op->setOperation( job, COPY, job->destUrl() );
-            KonqFileUndoManager::self()->recordJob( KonqFileUndoManager::COPY, KUrl::List(), dest, job );
+            KIO::FileUndoManager::self()->recordJob( KIO::FileUndoManager::Copy, KUrl::List(), dest, job );
         }
         ev->acceptProposedAction();
     }
@@ -547,28 +544,28 @@ void KonqOperations::doDropFileCopy()
         }
     }
 
-    KIO::Job * job = 0;
+    KIO::CopyJob * job = 0;
     switch ( action ) {
     case Qt::MoveAction :
         job = KIO::move( lst, m_destUrl );
         job->setMetaData( m_info->metaData );
         setOperation( job, m_method == TRASH ? TRASH : MOVE, m_destUrl );
-        KonqFileUndoManager::self()->recordJob(
-            m_method == TRASH ? KonqFileUndoManager::TRASH : KonqFileUndoManager::MOVE,
+        KIO::FileUndoManager::self()->recordJob(
+            m_method == TRASH ? KIO::FileUndoManager::Trash : KIO::FileUndoManager::Move,
             lst, m_destUrl, job );
         return; // we still have stuff to do -> don't delete ourselves
     case Qt::CopyAction :
         job = KIO::copy( lst, m_destUrl );
         job->setMetaData( m_info->metaData );
         setOperation( job, COPY, m_destUrl );
-        KonqFileUndoManager::self()->recordJob( KonqFileUndoManager::COPY, lst, m_destUrl, job );
+        KIO::FileUndoManager::self()->recordCopyJob(job);
         return;
     case Qt::LinkAction :
         kDebug(1203) << "KonqOperations::asyncDrop lst.count=" << lst.count();
         job = KIO::link( lst, m_destUrl );
         job->setMetaData( m_info->metaData );
         setOperation( job, LINK, m_destUrl );
-        KonqFileUndoManager::self()->recordJob( KonqFileUndoManager::LINK, lst, m_destUrl, job );
+        KIO::FileUndoManager::self()->recordCopyJob(job);
         return;
     default : kError(1203) << "Unknown action " << (int)action << endl;
     }
@@ -586,7 +583,7 @@ void KonqOperations::rename( QWidget * parent, const KUrl & oldurl, const KUrl& 
     KIO::Job * job = KIO::moveAs( oldurl, newurl, oldurl.isLocalFile() ? KIO::HideProgressInfo : KIO::DefaultFlags );
     KonqOperations * op = new KonqOperations( parent );
     op->setOperation( job, MOVE, newurl );
-    KonqFileUndoManager::self()->recordJob( KonqFileUndoManager::RENAME, lst, newurl, job );
+    KIO::FileUndoManager::self()->recordJob( KIO::FileUndoManager::Rename, lst, newurl, job );
     // if moving the desktop then update config file and emit
     if ( oldurl.isLocalFile() && oldurl.path( KUrl::AddTrailingSlash ) == KGlobalSettings::desktopPath() )
     {

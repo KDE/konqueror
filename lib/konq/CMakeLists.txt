@@ -13,13 +13,10 @@ set(konq_LIB_SRCS
    konq_copytomenu.cpp      # used by dolphin, KonqPopupMenu
    konq_operations.cpp      # used by dolphin and konqueror
    konq_events.cpp
-   konq_fileundomanager.cpp # used by dolphin, KonqOperations, and konqueror
    konq_filetip.cc          # unused right now, but should be used by dolphin_part in the future.
                             # Also useful to keep separate? (e.g. in kde3  kerry used it too)
    konqmimedata.cpp         # used by dolphin, KonqOperations, some filemanagement konqueror modules.
 )
-
-qt4_add_dbus_adaptor(konq_LIB_SRCS org.kde.libkonq.FileUndoManager.xml konq_fileundomanager_p.h KonqFileUndoManagerPrivate konq_fileundomanager_adaptor)
 
 kde4_add_library(konq SHARED ${konq_LIB_SRCS})
 
@@ -46,12 +43,9 @@ install( FILES
  konq_operations.h
  libkonq_export.h
  konq_events.h
- konq_fileundomanager.h
  # konq_filetip.h
  konqmimedata.h
 DESTINATION ${INCLUDE_INSTALL_DIR}
 )
 install( FILES konqpopupmenuplugin.desktop  DESTINATION  ${SERVICETYPES_INSTALL_DIR} )
-
-install( FILES org.kde.libkonq.FileUndoManager.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR} )
 

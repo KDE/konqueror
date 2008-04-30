@@ -30,7 +30,7 @@
 #include <QtDBus/QtDBus>
 #include <QTimer>
 #include <QVariant>
-#include <konq_fileundomanager.h>
+#include <kio/fileundomanager.h>
 #include <kdebug.h>
 #include <klocale.h>
 #include <kglobal.h>
@@ -53,9 +53,9 @@ K_GLOBAL_STATIC(KonqClosedWindowsManagerPrivate, myKonqClosedWindowsManagerPriva
 KonqUndoManager::KonqUndoManager(QWidget* parent)
     : QObject(parent)
 {
-    connect( KonqFileUndoManager::self(), SIGNAL(undoAvailable(bool)),
+    connect( KIO::FileUndoManager::self(), SIGNAL(undoAvailable(bool)),
              this, SLOT(slotFileUndoAvailable(bool)) );
-    connect( KonqFileUndoManager::self(), SIGNAL(undoTextChanged(QString)),
+    connect( KIO::FileUndoManager::self(), SIGNAL(undoTextChanged(QString)),
              this, SLOT(slotFileUndoTextChanged(QString)) );
 
     connect(KonqClosedWindowsManager::self(),
@@ -69,9 +69,9 @@ KonqUndoManager::KonqUndoManager(QWidget* parent)
 
 KonqUndoManager::~KonqUndoManager()
 {
-    disconnect( KonqFileUndoManager::self(), SIGNAL(undoAvailable(bool)),
+    disconnect( KIO::FileUndoManager::self(), SIGNAL(undoAvailable(bool)),
              this, SLOT(slotFileUndoAvailable(bool)) );
-    disconnect( KonqFileUndoManager::self(), SIGNAL(undoTextChanged(QString)),
+    disconnect( KIO::FileUndoManager::self(), SIGNAL(undoTextChanged(QString)),
              this, SLOT(slotFileUndoTextChanged(QString)) );
 
     disconnect(KonqClosedWindowsManager::self(),
@@ -105,14 +105,14 @@ bool KonqUndoManager::undoAvailable() const
     if (!m_closedItemList.isEmpty())
         return true;
     else
-        return (m_supportsFileUndo && KonqFileUndoManager::self()->undoAvailable());
+        return (m_supportsFileUndo && KIO::FileUndoManager::self()->undoAvailable());
 }
 
 QString KonqUndoManager::undoText() const
 {
     if (!m_closedItemList.isEmpty()) {
         const KonqClosedItem* closedItem = m_closedItemList.first();
-        if (closedItem->serialNumber() > KonqFileUndoManager::self()->currentCommandSerialNumber()) {
+        if (closedItem->serialNumber() > KIO::FileUndoManager::self()->currentCommandSerialNumber()) {
             const KonqClosedTabItem* closedTabItem =
                 dynamic_cast<const KonqClosedTabItem *>(closedItem);
             if(closedTabItem)
@@ -121,12 +121,12 @@ QString KonqUndoManager::undoText() const
                 return i18n("Und&o: Closed Window");
         }
     }
-    return KonqFileUndoManager::self()->undoText();
+    return KIO::FileUndoManager::self()->undoText();
 }
 
 void KonqUndoManager::undo()
 {
-    KonqFileUndoManager* fileUndoManager = KonqFileUndoManager::self();
+    KIO::FileUndoManager* fileUndoManager = KIO::FileUndoManager::self();
     if (!m_closedItemList.isEmpty()) {
         KonqClosedItem* closedItem = m_closedItemList.first();
 
@@ -231,7 +231,7 @@ void KonqUndoManager::slotFileUndoTextChanged(const QString& text)
 
 quint64 KonqUndoManager::newCommandSerialNumber()
 {
-    return KonqFileUndoManager::self()->newCommandSerialNumber();
+    return KIO::FileUndoManager::self()->newCommandSerialNumber();
 }
 
 void KonqUndoManager::addClosedTabItem(KonqClosedTabItem* closedTabItem)
@@ -465,7 +465,7 @@ void KonqClosedWindowsManager::slotNotifyClosedWindowItem(
     // Create a new ClosedWindowItem and add it to the list
     KonqClosedWindowItem* closedWindowItem = new KonqClosedRemoteWindowItem(
         title, configGroup, configFileName,
-        KonqFileUndoManager::self()->newCommandSerialNumber(), numTabs,
+        KIO::FileUndoManager::self()->newCommandSerialNumber(), numTabs,
         service);
 
     // Add it to all the windows but don't propogate over dbus,
@@ -702,7 +702,7 @@ void KonqClosedWindowsManager::readConfig()
         int numTabs = configGroup.readEntry("numTabs", 0);
 
         KonqClosedWindowItem* closedWindowItem = new KonqClosedWindowItem(
-            title,  KonqFileUndoManager::self()->newCommandSerialNumber(),
+            title,  KIO::FileUndoManager::self()->newCommandSerialNumber(),
             numTabs);
         configGroup.copyTo(&closedWindowItem->configGroup());
         configGroup.writeEntry("foo", 0);
