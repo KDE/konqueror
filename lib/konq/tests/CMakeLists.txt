@@ -12,12 +12,6 @@ kde4_add_unit_test(konqpopupmenutest konqpopupmenutest.cpp)
 
 target_link_libraries(konqpopupmenutest konq ${QT_QTTEST_LIBRARY})
 
-########### konqfileundomanager ###############
-
-kde4_add_unit_test(konqfileundomanagertest konqfileundomanagertest.cpp)
-
-target_link_libraries(konqfileundomanagertest konq ${QT_QTTEST_LIBRARY})
-
 ########### favicontest ###############
 
 set(favicontest_SRCS favicontest.cpp)
