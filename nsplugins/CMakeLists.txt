@@ -1,4 +1,3 @@
-
 if (X11_Xt_LIB)
 
   add_subdirectory( viewer ) 
@@ -68,7 +67,3 @@ else (X11_Xt_LIB)
   message(STATUS "libXt not found - browser plugin support disabled")
 
 endif (X11_Xt_LIB)
-
-
-
-
