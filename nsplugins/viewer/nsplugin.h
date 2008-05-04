@@ -28,12 +28,10 @@
 
 #include <QObject>
 
-#include <Qt3Support/Q3PtrQueue>
 #include <QMap>
-#include <Qt3Support/Q3IntDict>
 #include <QPointer>
-//Added by qt3to4:
-#include <Q3PtrList>
+#include <QQueue>
+#include <QList>
 
 #include <KDebug>
 
@@ -208,6 +206,7 @@ public:
 
   QString normalizedURL(const QString& url) const;
 
+
 public Q_SLOTS:
   void streamFinished( NSPluginStreamBase *strm );
 
@@ -221,9 +220,9 @@ private:
   bool _destroyed;
   bool _embedded;
   void addTempFile(KTemporaryFile *tmpFile);
-  Q3PtrList<KTemporaryFile> _tempFiles;
+  QList<KTemporaryFile *> _tempFiles;
   OrgKdeNspluginsCallBackInterface *_callback;
-  Q3PtrList<NSPluginStreamBase> _streams;
+  QList<NSPluginStreamBase *> _streams;
   KLibrary *_handle;
   QTimer *_timer;
 
@@ -267,7 +266,7 @@ private:
       KParts::BrowserArguments browserArgs;
   };
 
-  Q3PtrQueue<Request> _waitingRequests;
+  QQueue<Request *> _waitingRequests;
   QMap<int, Request*> _jsrequests;
 };
 
@@ -307,8 +306,8 @@ private:
   NP_InitializeUPP *_NP_Initialize;
   NP_ShutdownUPP *_NP_Shutdown;
 
-  Q3PtrList<NSPluginInstance> _instances;
-  Q3PtrList<NSPluginInstance> _trash;
+  QList<NSPluginInstance *> _instances;
+  QList<NSPluginInstance *> _trash;
 
   QByteArray _app;
   NPPluginFuncs _pluginFuncs;

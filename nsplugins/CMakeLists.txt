@@ -25,7 +25,7 @@ if (X11_Xt_LIB)
 
   kde4_add_plugin(libnsplugin ${nsplugins_PART_SRCS})
 
-  target_link_libraries(libnsplugin  ${KDE4_KDE3SUPPORT_LIBS} ${KDE4_KPARTS_LIBS} ${QT_QT3SUPPORT_LIBRARY} ${QT_QTGUI_LIBRARY} )
+  target_link_libraries(libnsplugin ${KDE4_KPARTS_LIBS} ${QT_QTGUI_LIBRARY})
 
   install(TARGETS libnsplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
@@ -37,7 +37,7 @@ if (X11_Xt_LIB)
 
   kde4_add_plugin(kcminit_nsplugins WITH_PREFIX  ${kcminit_nsplugins_SRCS})
 
-  target_link_libraries(kcminit_nsplugins ${KDE4_KDE3SUPPORT_LIBS} ${KDE4_KDECORE_LIBS} )
+  target_link_libraries(kcminit_nsplugins ${KDE4_KDECORE_LIBS} )
 
   install(TARGETS kcminit_nsplugins  DESTINATION ${PLUGIN_INSTALL_DIR} )
 

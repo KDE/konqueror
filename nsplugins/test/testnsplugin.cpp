@@ -24,8 +24,9 @@
 
 #include <stdio.h>
 
+#include <QHBoxLayout>
+
 #include <kactioncollection.h>
-//Added by qt3to4:
 #include <kapplication.h>
 #include <kcmdlineargs.h>
 #include <kdebug.h>
@@ -107,7 +108,7 @@ void TestNSPlugin::closeView()
    QWidget *win = m_plugins.last();
    if ( win )
    {
-      m_plugins.remove( win );
+      m_plugins.removeAll( win );
       delete win;
    } else
    {
@@ -119,7 +120,7 @@ void TestNSPlugin::closeView()
 void TestNSPlugin::viewDestroyed( NSPluginInstance *inst )
 {
    kDebug() << "TestNSPlugin::viewDestroyed";
-   m_plugins.remove( inst );
+   m_plugins.removeAll( inst );
 }
 
 

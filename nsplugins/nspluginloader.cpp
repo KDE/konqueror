@@ -32,7 +32,7 @@
 
 
 #include <kapplication.h>
-#include <k3process.h>
+#include <kprocess.h>
 #include <kdebug.h>
 #include <kglobal.h>
 #include <klocale.h>
@@ -156,11 +156,13 @@ void NSPluginInstance::javascriptResult(int id, const QString &result)
 
 void NSPluginInstance::focusInEvent( QFocusEvent* event )
 {
+  Q_UNUSED( event );
   _instanceInterface->gotFocusIn();
 }
 
 void NSPluginInstance::focusOutEvent( QFocusEvent* event )
 {
+  Q_UNUSED( event );
   _instanceInterface->gotFocusOut();
 }
 
@@ -174,11 +176,9 @@ void NSPluginInstance::resizePlugin( int w, int h )
 
 
 NSPluginLoader::NSPluginLoader()
-   : QObject(), _mapping(7, false), _viewer(0)
+   : QObject(), _mapping(), _viewer(0)
 {
   scanPlugins();
-  _mapping.setAutoDelete( true );
-  _filetype.setAutoDelete(true);
 }
 
 
@@ -250,7 +250,7 @@ void NSPluginLoader::scanPlugins()
       if (!mime.isEmpty())
         {
           // insert the mimetype -> plugin mapping
-          _mapping.insert(mime, new QString(plugin));
+          _mapping.insert(mime, QString(plugin).toLower());
 
           // insert the suffix -> mimetype mapping
           QStringList::Iterator suffix;
@@ -266,8 +266,8 @@ void NSPluginLoader::scanPlugins()
               stripped = stripped.right( stripped.length()-p );
 
               // add filetype to list
-              if ( !stripped.isEmpty() && !_filetype.find(stripped) )
-                  _filetype.insert( stripped, new QString(mime));
+              if ( !stripped.isEmpty() && !_filetype.contains(stripped) )
+                  _filetype.insert( stripped, QString(mime));
           }
         }
     }
@@ -276,23 +276,26 @@ void NSPluginLoader::scanPlugins()
 
 QString NSPluginLoader::lookupMimeType(const QString &url)
 {
-  Q3DictIterator<QString> dit2(_filetype);
-  while (dit2.current())
-    {
-      QString ext = QString(".")+dit2.currentKey();
-      if (url.right(ext.length()) == ext)
-        return *dit2.current();
-      ++dit2;
+   QString result;
+   QHashIterator<QString, QString> dit2(_filetype);
+   while ( dit2.hasNext() ) {
+    dit2.next();
+    QString ext = QString(".")+dit2.key();
+    if (url.right(ext.length()) == ext) {
+        result = dit2.value();
+        break;
     }
-  return QString();
+    }
+    
+   return result;
 }
 
 
 QString NSPluginLoader::lookup(const QString &mimeType)
 {
     QString plugin;
-    if (  _mapping[mimeType] )
-        plugin = *_mapping[mimeType];
+    if (  _mapping.contains(mimeType) )
+        plugin = _mapping.value(mimeType);
 
   kDebug() << "Looking up plugin for mimetype " << mimeType << ": " << plugin;
 
@@ -304,35 +307,32 @@ bool NSPluginLoader::loadViewer()
 {
    kDebug() << "NSPluginLoader::loadViewer";
 
-   _process = new K3Process;
-
+   _process.clearProgram();
    // get the dbus app id
    int pid = (int)getpid();
    QString tmp;
    tmp.sprintf("org.kde.nspluginviewer-%d",pid);
    _viewerDBusId =tmp.toLatin1();
 
-   connect( _process, SIGNAL(processExited(K3Process*)),
-            this, SLOT(processTerminated(K3Process*)) );
+   connect( &_process, SIGNAL(finished(int, QProcess::ExitStatus)),
+            this, SLOT(processTerminated(int , QProcess::ExitStatus)) );
 
    // find the external viewer process
    QString viewer = KGlobal::dirs()->findExe("nspluginviewer");
    if (viewer.isEmpty())
    {
       kDebug() << "can't find nspluginviewer";
-      delete _process;
       return false;
    }
 
-   *_process << viewer;
+   _process << viewer;
 
-   // tell the process it's parameters
-   *_process << "-dbusservice";
-   *_process << _viewerDBusId;
+   _process << "-dbusservice";
+   _process << _viewerDBusId;
 
    // run the process
    kDebug() << "Running nspluginviewer";
-   _process->start();
+   _process.start();
 
    // wait for the process to run
    int cnt = 0;
@@ -352,14 +352,13 @@ bool NSPluginLoader::loadViewer()
 #endif
       {
          kDebug() << "timeout";
-         delete _process;
+         _process.kill();
          return false;
       }
 
-      if (!_process->isRunning())
+      if (_process.state() == QProcess::NotRunning)
       {
          kDebug() << "nspluginviewer terminated";
-         delete _process;
          return false;
       }
    }
@@ -380,9 +379,8 @@ void NSPluginLoader::unloadViewer()
       _viewer->shutdown();
       kDebug() << "Shutdown viewer";
       delete _viewer;
-      delete _process;
+      _process.kill();
       _viewer = 0;
-      _process = 0;
    }
 
    kDebug() << "<- NSPluginLoader::unloadViewer";
@@ -391,16 +389,11 @@ void NSPluginLoader::unloadViewer()
 
 
 
-void NSPluginLoader::processTerminated(K3Process *proc)
+void NSPluginLoader::processTerminated()
 {
-   if ( _process == proc)
-   {
       kDebug() << "Viewer process  terminated";
       delete _viewer;
-      delete _process;
       _viewer = 0;
-      _process = 0;
-   }
 }
 
 

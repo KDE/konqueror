@@ -24,24 +24,20 @@
 */
 
 
-#ifndef __NS_PLUGINLOADER_H__
-#define __NS_PLUGINLOADER_H__
+#ifndef NS_PLUGINLOADER_H
+#define NS_PLUGINLOADER_H
 
-
-
-#include <Qt3Support/Q3Dict>
+#include <QHash>
 #include <QObject>
 #include <QWidget>
 #include <QtGui/QX11EmbedContainer>
-//Added by qt3to4:
-#include <QGridLayout>
-#include <QResizeEvent>
+
 #include <kdemacros.h>
+#include <kprocess.h>
 
 #define EMBEDCLASS QX11EmbedContainer
 
 class OrgKdeNspluginsViewerInterface;
-class K3Process;
 class QPushButton;
 class QGridLayout;
 class OrgKdeNspluginsInstanceInterface;
@@ -104,13 +100,14 @@ protected:
   void unloadViewer();
 
 protected Q_SLOTS:
-  void processTerminated( K3Process *proc );
+  void processTerminated();
 
 private:
   QStringList _searchPaths;
-  Q3Dict<QString> _mapping, _filetype;
+  QMultiHash<QString, QString> _mapping;
+  QHash<QString, QString> _filetype;
 
-  K3Process *_process;
+  KProcess _process;
   QString _viewerDBusId;
   OrgKdeNspluginsViewerInterface *_viewer;
 

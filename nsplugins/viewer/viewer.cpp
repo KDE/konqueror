@@ -35,10 +35,8 @@
 #include <kglobal.h>
 #include <klocale.h>
 #include <kmessagebox.h>
-#include <Qt3Support/Q3PtrList>
 #include <QSocketNotifier>
-//Added by qt3to4:
-#include <QEvent>
+
 #include <stdlib.h>
 #include <sys/resource.h>
 #include <sys/time.h>

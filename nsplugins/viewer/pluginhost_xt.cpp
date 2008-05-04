@@ -52,7 +52,8 @@ static void doNotAskForXEmbedMapping(QX11EmbedWidget* widget)
 
 PluginHostXt::PluginHostXt(NSPluginInstance* plugin):
     _plugin(plugin), _outside(0), _toplevel(0), _form(0)
-{}
+{
+}
 
 
 void PluginHostXt::setupWindow(int winId, int width, int height)
