@@ -41,9 +41,8 @@
 #include <kglobal.h>
 
 #include <qwidgetintdict.h>
-//Added by qt3to4:
-#include <QEventLoop>
-#include <Q3MemArray>
+#include <QVector>
+#include <QHash>
 
 // resolve the conflict between X11's FocusIn and QEvent::FocusIn
 const int XFocusOut = FocusOut;
@@ -67,10 +66,10 @@ public:
     void unhook();
 
     XtAppContext appContext, ownContext;
-    Q3MemArray<XtEventDispatchProc> dispatchers;
+    QVector<XtEventDispatchProc> dispatchers;
     QWidgetIntDict mapper;
 
-    Q3IntDict<QSocketNotifier> socknotDict;
+    QHash<int, QSocketNotifier> socknotDict;
     bool activate_timers;
     XtIntervalId timerid;
 
@@ -354,7 +353,7 @@ void QXtEventLoop::unregisterWidget( QWidget* w )
 void qmotif_socknot_handler( XtPointer pointer, int *, XtInputId *id )
 {
     QXtEventLoop *eventloop = (QXtEventLoop *) pointer;
-    QSocketNotifier *socknot = static_d->socknotDict.find( *id );
+    QSocketNotifier *socknot = static_d->socknotDict.value( *id );
     if ( ! socknot ) // this shouldn't happen
 	return;
     eventloop->setSocketNotifierPending( socknot );
@@ -395,17 +394,16 @@ void QXtEventLoop::registerSocketNotifier( QSocketNotifier *notifier )
  */
 void QXtEventLoop::unregisterSocketNotifier( QSocketNotifier *notifier )
 {
-    Q3IntDictIterator<QSocketNotifier> it( d->socknotDict );
-    while ( it.current() && notifier != it.current() )
-	++it;
-    if ( ! it.current() ) {
+
+    int key = d->socknotDict.key(notifier);
+    if ( ! key ) {
 	// this shouldn't happen
 	qWarning( "QXtEventLoopEventLoop: failed to unregister socket notifier" );
 	return;
     }
 
-    XtRemoveInput( it.currentKey() );
-    d->socknotDict.remove( it.currentKey() );
+    XtRemoveInput( key );
+    d->socknotDict.remove( key );
 
     QEventLoop::unregisterSocketNotifier( notifier );
 }

@@ -20,11 +20,10 @@
 */
 
 
-#ifndef __TESTNSPLUGIN_H__
-#define __TESTNSPLUGIN_H__
+#ifndef TESTNSPLUGIN_H
+#define TESTNSPLUGIN_H
 
 #include <QWidget>
-#include <Q3PtrList>
 #include <kxmlguiwindow.h>
 #include <QList>
 
@@ -47,7 +46,7 @@ public Q_SLOTS:
 
 protected:
   NSPluginLoader *m_loader;
-  Q3PtrList<QWidget> m_plugins;
+  QList<QWidget *> m_plugins;
   QWidget *m_client;
   QBoxLayout *m_layout;
 };

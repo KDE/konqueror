@@ -37,7 +37,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-#include <Qt3Support/Q3Dict>
 #include <QDir>
 #include <QFile>
 #include <QTimer>
@@ -501,15 +500,20 @@ void g_NPN_Status(NPP instance, const char *message)
 
 
 static QByteArray uaStore;
+static QByteArray uaEmpty("Gecko");
 
 // inquire user agent
-const char *g_NPN_UserAgent(NPP /*instance*/)
+const char *g_NPN_UserAgent(NPP instance)
 {
+    if (!instance)
+	return uaEmpty.data();
+
     if (uaStore.isEmpty()) {
         KProtocolManager kpm;
         QString agent = kpm.userAgentForHost("nspluginviewer");
         uaStore = agent.toLatin1();
     }
+
     kDebug(1431) << "g_NPN_UserAgent() = " << uaStore;
     return uaStore.data();
 }
@@ -611,9 +615,6 @@ NSPluginInstance::NSPluginInstance(NPP privateData, NPPluginFuncs *pluginFuncs,
    _npp->ndata = this;
    _destroyed = false;
    _handle = handle;
-   _tempFiles.setAutoDelete( true );
-   _streams.setAutoDelete( true );
-   _waitingRequests.setAutoDelete( true );
    _callback = new org::kde::nsplugins::CallBack( appId, callbackId, QDBusConnection::sessionBus() );
 
    KUrl base(src);
@@ -653,23 +654,21 @@ NSPluginInstance::~NSPluginInstance()
    kDebug(1431) << "<- ~NSPluginInstance";
 }
 
-
 void NSPluginInstance::destroy()
 {
     if ( !_destroyed ) {
 
         kDebug(1431) << "delete streams";
-        _waitingRequests.clear();
+        qDeleteAll( _waitingRequests );
 
-	shutdown();
-
-        for( NSPluginStreamBase *s=_streams.first(); s!=0; ) {
-            NSPluginStreamBase *next = _streams.next();
+	while ( !_streams.isEmpty() ) {
+	    NSPluginStreamBase *s = _streams.takeFirst();
             s->stop();
-            s = next;
+	    delete s;
         }
 
-        _streams.clear();
+        kDebug(1431) << "delete tempfiles";
+        qDeleteAll( _tempFiles );
 
         kDebug(1431) << "delete callbacks";
         delete _callback;
@@ -728,10 +727,10 @@ void NSPluginInstance::timer()
 
     // start queued requests
     kDebug(1431) << "looking for waiting requests";
-    while ( _waitingRequests.head() ) {
+    while ( !_waitingRequests.isEmpty() ) {
         kDebug(1431) << "request found";
         Request req( *_waitingRequests.head() );
-        _waitingRequests.remove();
+        delete _waitingRequests.dequeue();
 
         QString url;
 
@@ -880,9 +879,7 @@ void NSPluginInstance::streamFinished( NSPluginStreamBase* strm )
 {
    kDebug(1431) << "-> NSPluginInstance::streamFinished";
    emitStatus( QString() );
-   _streams.setAutoDelete(false);
-   _streams.remove(strm);
-   _streams.setAutoDelete(true);
+   _streams.removeOne(strm);
    strm->deleteLater();
    _timer->setSingleShot( true );
    _timer->start( 100 );
@@ -1219,7 +1216,6 @@ NSPluginClass::NSPluginClass( const QString &library,
     _libname = library;
     _constructed = false;
     _error = true;
-    _instances.setAutoDelete( true );
     _NP_GetMIMEDescription = 0;
     _NP_Initialize = 0;
     _NP_Shutdown = 0;
@@ -1274,8 +1270,9 @@ NSPluginClass::NSPluginClass( const QString &library,
 
 NSPluginClass::~NSPluginClass()
 {
-    _instances.clear();
-    _trash.clear();
+    qDeleteAll( _instances );
+    qDeleteAll( _trash );
+
     shutdown();
     if (_handle)
       _handle->unload();
@@ -1285,10 +1282,14 @@ NSPluginClass::~NSPluginClass()
 void NSPluginClass::timer()
 {
     // delete instances
-    for ( NSPluginInstance *it=_trash.first(); it!=0; it=_trash.next() )
-        _instances.remove(it);
-
-    _trash.clear();
+    while ( !_trash.isEmpty() ) {
+        NSPluginInstance *it = _trash.takeFirst();
+        int i = _instances.indexOf(it);
+        if ( i != -1 )
+            delete _instances.takeAt(i);
+	else // there should be no instansces in trash, which are not in _instances
+    	    delete it;
+    }
 }
 
 
