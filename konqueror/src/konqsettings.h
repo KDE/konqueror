@@ -56,28 +56,21 @@ public:
     bool shouldEmbed( const QString & serviceType ) const;
 
 private:
-    /**
-     * @internal
-     * Constructs a KonqFMSettings instance from a config file.
-     */
-    KonqFMSettings(const KConfigGroup &config);
-
     /** Destructor. Don't delete any instance by yourself. */
     virtual ~KonqFMSettings();
 
 private:
-
-    static KonqFMSettings * s_pSettings;
-
     QMap<QString, QString> m_embedMap;
 
     /** Called by constructor and reparseConfiguration */
-    void init(const KConfigGroup &config);
+    void init(bool reparse);
 
     // There is no default constructor. Use the provided ones.
     KonqFMSettings();
     // No copy constructor either. What for ?
     KonqFMSettings( const KonqFMSettings &);
+
+    friend class KonqEmbedSettingsSingleton;
 };
 
 #endif

@@ -28,44 +28,39 @@
 #include <assert.h>
 #include <kconfiggroup.h>
 
-//static
-KonqFMSettings * KonqFMSettings::s_pSettings = 0L;
-
-//static
-KonqFMSettings * KonqFMSettings::settings()
+class KonqEmbedSettingsSingleton
 {
-  if (!s_pSettings)
-  {
-    KSharedConfig::Ptr config = KGlobal::config();
-    KConfigGroup cgs(config, "FMSettings");
-    s_pSettings = new KonqFMSettings(cgs);
-  }
-  return s_pSettings;
+public:
+    KonqFMSettings self;
+};
+K_GLOBAL_STATIC(KonqEmbedSettingsSingleton, globalEmbedSettings)
+
+KonqFMSettings* KonqFMSettings::settings()
+{
+    return &globalEmbedSettings->self;
 }
 
 //static
 void KonqFMSettings::reparseConfiguration()
 {
-  if (s_pSettings)
-  {
-    KSharedConfig::Ptr config = KGlobal::config();
-    KConfigGroup cgs(config, "FMSettings");
-    s_pSettings->init(cgs);
-  }
+    if (globalEmbedSettings) { // TODO .exists()
+        globalEmbedSettings->self.init(true);
+    }
 }
-
-KonqFMSettings::KonqFMSettings(const KConfigGroup &config)
+KonqFMSettings::KonqFMSettings()
 {
-    init(config);
+    init(false);
 }
 
 KonqFMSettings::~KonqFMSettings()
 {
 }
 
-void KonqFMSettings::init(const KConfigGroup &config)
+void KonqFMSettings::init(bool reparse)
 {
-    const KSharedConfig::Ptr fileTypesConfig = KSharedConfig::openConfig("filetypesrc", KConfig::NoGlobals);
+    KSharedConfig::Ptr fileTypesConfig = KSharedConfig::openConfig("filetypesrc", KConfig::NoGlobals);
+    if (reparse)
+        fileTypesConfig->reparseConfiguration();
     m_embedMap = fileTypesConfig->entryMap("EmbedSettings");
 }
 
