@@ -3817,7 +3817,7 @@ void KonqMainWindow::initActions()
   // help stuff
   m_paUp->setWhatsThis( i18n( "<html>Enter the parent folder<br /><br />"
                               "For instance, if the current location is file:/home/%1 clicking this "
-                              "button will take you to file:/home.<html>" ,  KUser().loginName() ) );
+                              "button will take you to file:/home.</html>" ,  KUser().loginName() ) );
   m_paUp->setToolTip( i18n( "Enter the parent folder" ) );
 
   m_paBack->setWhatsThis( i18n( "Move backwards one step in the browsing history" ) );
@@ -3843,7 +3843,7 @@ void KonqMainWindow::initActions()
 
   m_paReloadAllTabs->setWhatsThis( i18n( "<html>Reload all currently displayed documents in tabs<br /><br />"
                                   "This may, for example, be needed to refresh web pages that have been "
-                                  "modified since they were loaded, in order to make the changes visible.<html>" ) );
+                                  "modified since they were loaded, in order to make the changes visible.</html>" ) );
   m_paReloadAllTabs->setToolTip( i18n( "Reload all currently displayed document in tabs" ) );
 
   m_paStop->setWhatsThis( i18n( "<html>Stop loading the document<br /><br />"
