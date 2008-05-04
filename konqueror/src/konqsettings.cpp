@@ -69,6 +69,13 @@ void KonqFMSettings::init(const KConfigGroup &config)
     m_embedMap = fileTypesConfig->entryMap("EmbedSettings");
 }
 
+static bool alwaysEmbedMimeTypeGroup(const QString& mimeType)
+{
+    if ( mimeType.startsWith("inode") || mimeType.startsWith("Browser") || mimeType.startsWith("Konqueror"))
+        return true; //always embed mimetype inode/*, Browser/* and Konqueror/*
+    return false;
+}
+
 bool KonqFMSettings::shouldEmbed( const QString & mimeType ) const
 {
     // First check in user's settings whether to embed or not
@@ -79,14 +86,28 @@ bool KonqFMSettings::shouldEmbed( const QString & mimeType ) const
         return it.value() == QLatin1String("true");
     }
     // 2 - in the configuration for the group if nothing was found in the mimetype
-    QString mimeTypeGroup = mimeType.left(mimeType.indexOf('/'));
-    if ( mimeTypeGroup == "inode" || mimeTypeGroup == "Browser" || mimeTypeGroup == "Konqueror" )
+    if (alwaysEmbedMimeTypeGroup(mimeType))
         return true; //always embed mimetype inode/*, Browser/* and Konqueror/*
+    const QString mimeTypeGroup = mimeType.left(mimeType.indexOf('/'));
     it = m_embedMap.find( QString::fromLatin1("embed-")+mimeTypeGroup );
     if ( it != m_embedMap.end() ) {
         kDebug(1202) << mimeType << "group setting:" << it.value();
         return it.value() == QLatin1String("true");
     }
+    // 2 bis - configuration for group of parent mimetype, if different
+    if (mimeType[0].isLower()) {
+        QStringList parents;
+        parents.append(mimeType);
+        while (!parents.isEmpty()) {
+            const QString parent = parents.takeFirst();
+            if (alwaysEmbedMimeTypeGroup(parent)) {
+                return true;
+            }
+            KMimeType::Ptr mime = KMimeType::mimeType(parent);
+            parents += mime->parentMimeTypes();
+        }
+    }
+
     // 3 - if no config found, use default.
     // Note: if you change those defaults, also change settings/filetypes/mimetypedata.cpp !
     // Embedding is false by default except for image/* and for zip, tar etc.
