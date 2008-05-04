@@ -44,9 +44,9 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
 
   setQuickHelp( i18n("<p><h1>File Associations</h1>"
     " This module allows you to choose which applications are associated"
-    " with a given type of file. File types are also referred to MIME types"
+    " with a given type of file. File types are also referred to as MIME types"
     " (MIME is an acronym which stands for \"Multipurpose Internet Mail"
-    " Extensions\".)</p><p> A file association consists of the following:"
+    " Extensions\").</p><p> A file association consists of the following:"
     " <ul><li>Rules for determining the MIME-type of a file, for example"
     " the filename pattern *.png, which means 'all files with names that end"
     " in .png', is associated with the MIME type \"image/png\";</li>"
