@@ -646,18 +646,14 @@ void KonqView::setLocationBarURL( const KUrl& locationBarURL )
 void KonqView::setLocationBarURL( const QString & locationBarURL )
 {
     //kDebug(1202) << locationBarURL << "this=" << this;
-    if (m_sLocationBarURL != locationBarURL) {
-
-        m_sLocationBarURL = locationBarURL;
-        if ( m_pMainWindow->currentView() == this )
-        {
-            //kDebug(1202) << "is current view" << this;
-            m_pMainWindow->setLocationBarURL( m_sLocationBarURL );
-            m_pMainWindow->setPageSecurity( m_pageSecurity );
-        }
-        if (!m_bPassiveMode)
-            setTabIcon( KUrl( m_sLocationBarURL ) );
+    m_sLocationBarURL = locationBarURL;
+    if (m_pMainWindow->currentView() == this) {
+        //kDebug(1202) << "is current view" << this;
+        m_pMainWindow->setLocationBarURL( m_sLocationBarURL );
+        m_pMainWindow->setPageSecurity( m_pageSecurity );
     }
+    if (!m_bPassiveMode)
+        setTabIcon( KUrl( m_sLocationBarURL ) );
 }
 
 void KonqView::setIconURL( const KUrl & iconURL )

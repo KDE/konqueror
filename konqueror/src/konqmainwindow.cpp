@@ -1720,7 +1720,8 @@ void KonqMainWindow::slotReload( KonqView* reloadView )
       reloadView->lockHistory();
       // Reuse current servicetype for local files, but not for remote files (it could have changed, e.g. over HTTP)
       QString serviceType = reloadView->url().isLocalFile() ? reloadView->serviceType() : QString();
-      openUrl( reloadView, reloadView->url(), serviceType, req );
+      // By using locationBarURL instead of url, we preserve name filters (#54687)
+      openUrl( reloadView, reloadView->locationBarURL(), serviceType, req );
   }
 }
 
@@ -3076,8 +3077,9 @@ void KonqMainWindow::slotMakeCompletion( const QString& text )
 
 void KonqMainWindow::slotSubstringcompletion( const QString& text )
 {
-    bool filesFirst = currentURL().startsWith( "/" ) ||	//krazy:exclude=doublequote_chars
-                      currentURL().startsWith( "file:/" );
+    QString currentURL = m_currentView->url().prettyUrl();
+    bool filesFirst = currentURL.startsWith( '/' ) ||
+                      currentURL.startsWith( "file:/" );
     QStringList items;
     if ( filesFirst && m_pURLCompletion )
         items = m_pURLCompletion->substringCompletion( text );
@@ -3366,7 +3368,7 @@ void KonqMainWindow::setLocationBarURL( const KUrl &url )
 
 void KonqMainWindow::setLocationBarURL( const QString &url )
 {
-    if (url != m_combo->currentText()) {
+    if (url != m_combo->lineEdit()->text()) {
         kDebug(1202) << "KonqMainWindow::setLocationBarURL: url = " << url;
         m_combo->setURL( url );
         setIcon( KonqPixmapProvider::self()->pixmapFor( url ) );
@@ -4348,6 +4350,7 @@ QString KonqMainWindow::currentURL() const
         return QString();
     QString url = m_currentView->url().prettyUrl();
 
+#if 0 // do we want this?
     // Add the name filter (*.txt) at the end of the URL again
     if ( m_currentView->part() ) {
         const QString nameFilter = m_currentView->nameFilter();
@@ -4357,6 +4360,7 @@ QString KonqMainWindow::currentURL() const
             url += nameFilter;
         }
     }
+#endif
     return url;
 }
 

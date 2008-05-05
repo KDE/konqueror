@@ -315,6 +315,8 @@ public:
   static KonqMainWindow* preloadedWindow() { return s_preloadedWindow; }
 
   QString currentTitle() const;
+    // Not used by konqueror itself; only exists for the Q_PROPERTY,
+    // which I guess is used by scripts and plugins...
   QString currentURL() const;
   QString currentProfile() const;
     void applyWindowSizeFromProfile(const KConfigGroup& profileGroup);
