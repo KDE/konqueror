@@ -341,7 +341,8 @@ void KonqClosedWindowsManager::addClosedWindowItem(KonqUndoManager
         KonqClosedWindowItem* last = m_closedWindowItemList.last();
 
         emit removeWindowInOtherInstances(0L, last);
-        emitNotifyClosedWindowItem(closedWindowItem);
+        if(propagate)
+            emitNotifyClosedWindowItem(closedWindowItem);
 
         m_closedWindowItemList.removeLast();
         delete last;
