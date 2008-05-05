@@ -3366,11 +3366,11 @@ void KonqMainWindow::setLocationBarURL( const KUrl &url )
 
 void KonqMainWindow::setLocationBarURL( const QString &url )
 {
-  kDebug(1202) << "KonqMainWindow::setLocationBarURL: url = " << url;
-
-  m_combo->setURL( url );
-
-  setIcon( KonqPixmapProvider::self()->pixmapFor( url ) );
+    if (url != m_combo->currentText()) {
+        kDebug(1202) << "KonqMainWindow::setLocationBarURL: url = " << url;
+        m_combo->setURL( url );
+        setIcon( KonqPixmapProvider::self()->pixmapFor( url ) );
+    }
 }
 
 void KonqMainWindow::setPageSecurity( PageSecurity pageSecurity )
@@ -4348,21 +4348,15 @@ QString KonqMainWindow::currentURL() const
         return QString();
     QString url = m_currentView->url().prettyUrl();
 
-#if 0
-    // TODO implement support for nameFilter in dolphin if it doesn't have it,
-    // or add that feature from konqueror (with a new KonqDirPart that encapsulates directory parts locally?).
+    // Add the name filter (*.txt) at the end of the URL again
     if ( m_currentView->part() ) {
-        KonqDirPart* dirPart = ::qobject_cast<KonqDirPart *>(m_currentView->part());
-        if ( dirPart ) {
-            const QString nameFilter = dirPart->nameFilter();
-            if ( !nameFilter.isEmpty() ) {
-                if (!url.endsWith("/"))	//krazy:exclude=doublequote_chars
-                    url += '/';
-                url += nameFilter;
-            }
+        const QString nameFilter = m_currentView->nameFilter();
+        if (!nameFilter.isEmpty()) {
+            if (!url.endsWith('/'))
+                url += '/';
+            url += nameFilter;
         }
     }
-#endif
     return url;
 }
 
