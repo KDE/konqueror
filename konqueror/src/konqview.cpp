@@ -139,7 +139,7 @@ KonqView::~KonqView()
 void KonqView::openUrl( const KUrl &url, const QString & locationBarURL,
                         const QString & nameFilter, bool tempFile )
 {
-  kDebug(1202) << "url=" << url << "locationBarURL=" << locationBarURL;
+    kDebug(1202) << "url=" << url << "locationBarURL=" << locationBarURL;
   setPartMimeType();
 
   if (KonqMainWindow::s_crashlog_file) {
@@ -190,7 +190,7 @@ void KonqView::openUrl( const KUrl &url, const QString & locationBarURL,
   } else
     m_bLockHistory = false;
 
-  callExtensionStringMethod( "setNameFilter", nameFilter );
+  m_pPart->setProperty("nameFilter", nameFilter);
   if ( m_bDisableScrolling )
     callExtensionMethod( "disableScrolling" );
 
@@ -645,16 +645,19 @@ void KonqView::setLocationBarURL( const KUrl& locationBarURL )
 
 void KonqView::setLocationBarURL( const QString & locationBarURL )
 {
-  //kDebug(1202) << locationBarURL << "this=" << this;
+    //kDebug(1202) << locationBarURL << "this=" << this;
+    if (m_sLocationBarURL != locationBarURL) {
 
-  m_sLocationBarURL = locationBarURL;
-  if ( m_pMainWindow->currentView() == this )
-  {
-    //kDebug(1202) << "is current view" << this;
-    m_pMainWindow->setLocationBarURL( m_sLocationBarURL );
-    m_pMainWindow->setPageSecurity( m_pageSecurity );
-  }
-  if (!m_bPassiveMode) setTabIcon( KUrl( m_sLocationBarURL ) );
+        m_sLocationBarURL = locationBarURL;
+        if ( m_pMainWindow->currentView() == this )
+        {
+            //kDebug(1202) << "is current view" << this;
+            m_pMainWindow->setLocationBarURL( m_sLocationBarURL );
+            m_pMainWindow->setPageSecurity( m_pageSecurity );
+        }
+        if (!m_bPassiveMode)
+            setTabIcon( KUrl( m_sLocationBarURL ) );
+    }
 }
 
 void KonqView::setIconURL( const KUrl & iconURL )
@@ -1083,15 +1086,6 @@ bool KonqView::callExtensionBoolMethod( const char *methodName, bool value )
   return QMetaObject::invokeMethod( obj, methodName,  Qt::DirectConnection, Q_ARG(bool,value));
 }
 
-bool KonqView::callExtensionStringMethod( const char *methodName, const QString &value )
-{
-  QObject *obj = KParts::BrowserExtension::childObject( m_pPart );
-  if ( !obj ) // not all views have a browser extension !
-    return false;
-
-  return QMetaObject::invokeMethod( obj, methodName,  Qt::DirectConnection, Q_ARG(QString, value));
-}
-
 bool KonqView::callExtensionURLMethod( const char *methodName, const KUrl& value )
 {
   QObject *obj = KParts::BrowserExtension::childObject( m_pPart );
@@ -1437,6 +1431,12 @@ QString KonqView::internalViewMode() const
 void KonqView::setInternalViewMode(const QString& viewMode)
 {
     m_pPart->setProperty("currentViewMode", viewMode);
+}
+
+QString KonqView::nameFilter() const
+{
+    const QVariant nameFilterProperty = m_pPart->property("nameFilter");
+    return nameFilterProperty.toString();
 }
 
 #include "konqview.moc"

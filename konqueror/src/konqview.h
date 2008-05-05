@@ -217,6 +217,11 @@ public:
    */
   void setTypedURL( const QString & u ) { m_sTypedURL = u; }
 
+    /**
+     * Returns the name filter, if any, like *.txt
+     */
+    QString nameFilter() const;
+
   /**
    * Return the security state of page in view
    */
@@ -317,7 +322,6 @@ public:
   // return true if the method was found, false if the execution failed
   bool callExtensionMethod( const char *methodName );
   bool callExtensionBoolMethod( const char *methodName, bool value );
-  bool callExtensionStringMethod( const char *methodName, const QString &value );
   bool callExtensionURLMethod( const char *methodName, const KUrl& value );
 
   void setViewName( const QString &name );
@@ -435,7 +439,7 @@ private:
    * Creates a new entry in the history.
    */
   void createHistoryEntry();
-  
+
   /**
    * Appends a entry in the history.
    */
