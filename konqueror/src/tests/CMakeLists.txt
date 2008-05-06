@@ -1,3 +1,5 @@
+if (NOT WIN32)
+
 set( EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR} )
 include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/.. ${KDE4_INCLUDES} )
 
@@ -30,3 +32,5 @@ target_link_libraries(konqhtmltest kdeinit_konqueror ${QT_QTTEST_LIBRARY})
 
 kde4_add_unit_test(konqviewtest konqviewtest.cpp)
 target_link_libraries(konqviewtest kdeinit_konqueror ${QT_QTTEST_LIBRARY})
+
+endif (NOT WIN32)
