@@ -79,7 +79,7 @@ target_link_libraries(kdeinit_konqueror konquerorprivate konq ${KDE4_KPARTS_LIBS
 kde4_add_app_icon(konqueror_KDEINIT_SRCS "${KDE4_ICON_INSTALL_DIR}/oxygen/*/apps/konqueror.png")
 
 if (WIN32)
-    add_definitions(-Dkdemain=main)
+#    add_definitions(-Dkdemain=main)
 else (WIN32)
     # KDE4_KUTILS_LIBS used for KCMultiDialog, KCModuleInfo, and KPluginSelector
     install(TARGETS kdeinit_konqueror  ${INSTALL_TARGETS_DEFAULT_ARGS} )
