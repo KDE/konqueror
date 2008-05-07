@@ -1557,19 +1557,19 @@ void KonqMainWindow::slotIconsChanged()
 
 void KonqMainWindow::slotOpenWith()
 {
-  KUrl::List lst;
-  lst.append( m_currentView->url() );
+    KUrl::List lst;
+    lst.append(m_currentView->url());
 
-  QString serviceName = sender()->objectName();
+    const QString serviceName = sender()->objectName();
 
-  KService::List offers = m_currentView->appServiceOffers();
-  KService::List::ConstIterator it = offers.begin();
-  KService::List::ConstIterator end = offers.end();
-  for (; it != end; ++it )
-    if ( (*it)->desktopEntryName() == serviceName )
-    {
-      KRun::run( **it, lst, this );
-      return;
+    const KService::List offers = m_currentView->appServiceOffers();
+    KService::List::ConstIterator it = offers.begin();
+    const KService::List::ConstIterator end = offers.end();
+    for (; it != end; ++it ) {
+        if ((*it)->desktopEntryName() == serviceName) {
+            KRun::run(**it, lst, this);
+            return;
+        }
     }
 }
 
@@ -4794,7 +4794,7 @@ void KonqMainWindow::updateOpenWithActions()
 
   const KService::List & services = m_currentView->appServiceOffers();
   KService::List::ConstIterator it = services.begin();
-  KService::List::ConstIterator end = services.end();
+  const KService::List::ConstIterator end = services.end();
   for (; it != end; ++it )
   {
     QAction *action = actionCollection()->addAction( (*it)->desktopEntryName().toLatin1() );
