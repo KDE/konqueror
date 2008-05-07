@@ -639,26 +639,25 @@ void KonqCombo::paintEvent( QPaintEvent *pe )
             edit->setGeometry( r );
 
 	if ( useColor){
-        QPalette palette;
-        palette.setColor(edit->backgroundRole(), color);
-        edit->setPalette(palette);
-    }
+            QPalette palette;
+            palette.setColor(edit->backgroundRole(), color);
+            edit->setPalette(palette);
+        }
 
         pix = SmallIcon( m_pageSecurity==KonqMainWindow::Encrypted ? "security-high" : "security-medium" );
         if ( useColor ) {
             p.fillRect( re.right() - pix.width() - 3 , re.y(), pix.width() + 4, re.height(),
-		    QBrush( color ));
+                        QBrush( color ));
         }
         p.drawPixmap( re.right() - pix.width() -1 , re.y() + ( re.height() - pix.height() ) / 2, pix );
         p.setClipping( false );
-    }
-    else {
+    } else {
         QRect r = edit->geometry();
         r.setRight( re.right() );
         if ( r != edit->geometry() )
             edit->setGeometry( r );
-        QPalette palette;
-        palette.setColor(edit->backgroundRole(), QApplication::palette( edit ).color( QPalette::Active, QPalette::Base ));
+        QPalette palette = edit->palette();
+        palette.setColor(edit->backgroundRole(), palette.color(QPalette::Active, QPalette::Base));
         edit->setPalette(palette);
     }
 }
