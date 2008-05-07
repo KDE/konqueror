@@ -276,7 +276,7 @@ void KonqUndoManager::clearClosedItemsList(bool onlyInthisWindow)
         if(closedTabItem)
             delete closedTabItem;
         else if (closedWindowItem && !onlyInthisWindow) {
-            KonqClosedWindowsManager::self()->removeClosedWindowItem(this, closedWindowItem, false);
+            KonqClosedWindowsManager::self()->removeClosedWindowItem(this, closedWindowItem, true);
             delete closedWindowItem;
         }
     }
@@ -341,8 +341,7 @@ void KonqClosedWindowsManager::addClosedWindowItem(KonqUndoManager
         KonqClosedWindowItem* last = m_closedWindowItemList.last();
 
         emit removeWindowInOtherInstances(0L, last);
-        if(propagate)
-            emitNotifyClosedWindowItem(closedWindowItem);
+        emitNotifyRemove(last);
 
         m_closedWindowItemList.removeLast();
         delete last;
