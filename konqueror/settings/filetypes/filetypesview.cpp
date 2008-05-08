@@ -12,6 +12,8 @@
 #include <QtGui/QGridLayout>
 #include <QtGui/QBoxLayout>
 #include <QFile>
+#include <qdbusconnection.h>
+#include <qdbusmessage.h>
 
 // KDE
 #include <kapplication.h>
@@ -398,7 +400,11 @@ void FileTypesView::save()
   }
   if (didIt) {
       KBuildSycocaProgressDialog::rebuildKSycoca(this);
-      KGlobalSettings::self()->emitChange(KGlobalSettings::SettingsChanged);
+
+      // Trigger reparseConfiguration of filetypesrc in konqueror
+      QDBusMessage message =
+          QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "reparseConfiguration");
+      QDBusConnection::sessionBus().send(message);
   }
 }
 
