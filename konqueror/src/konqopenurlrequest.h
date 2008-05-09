@@ -70,7 +70,7 @@ struct KONQ_TESTS_EXPORT KonqOpenURLRequest {
   QString typedUrl; // empty if URL wasn't typed manually
   QString nameFilter; // like *.cpp, extracted from the URL
   bool followMode; // true if following another view - avoids loops
-  bool newTab; // open url in new tab
+  bool newTab; // open url in new tab (if we decide to show it embedded)
   bool newTabInFront; // new tab in front or back
   bool openAfterCurrentPage;
   bool forceAutoEmbed; // if true, override the user's FMSettings for embedding
