@@ -540,27 +540,8 @@ void KonqMainWindow::openUrl( KonqView *_view, const KUrl &_url,
   if ( view && view->isFollowActive() )
     view = m_currentView;
 
-  if ( !view  && !req.newTab )
+  if ( !view && !req.newTab )
     view = m_currentView; /* Note, this can be 0, e.g. on startup */
-  else if ( !view && req.newTab ) {
-    view = m_pViewManager->addTab("text/html",
-                                  QString(),
-                                  false,
-                                  req.openAfterCurrentPage);
-    if (view) {
-      view->setCaption( _url.host() );
-      view->setLocationBarURL( _url );
-      if ( !req.browserArgs.frameName.isEmpty() )
-          view->setViewName( req.browserArgs.frameName ); // #44961
-
-      if ( req.newTabInFront )
-        m_pViewManager->showTab( view );
-
-      updateViewActions(); //A new tab created -- we may need to enable the "remove tab" button (#56318)
-    }
-    else
-      req.newTab = false;
-  }
 
   const QString oldLocationBarURL = m_combo->currentText();
   if ( view )
@@ -615,7 +596,10 @@ void KonqMainWindow::openUrl( KonqView *_view, const KUrl &_url,
             QString protClass = KProtocolInfo::protocolClass(url.protocol());
             bool open = url.isLocalFile() || protClass==":local";
             if ( !open ) {
+                // Use askSave from filetypesrc
+                KMessageBox::setDontShowAskAgainConfig(KonqFMSettings::settings()->fileTypesConfig().data());
                 KParts::BrowserRun::AskSaveResult res = KonqRun::askSave( url, offer, mimeType );
+                KMessageBox::setDontShowAskAgainConfig(0);
                 if ( res == KParts::BrowserRun::Save )
                     KParts::BrowserRun::simpleSave( url, QString(), this );
                 open = ( res == KParts::BrowserRun::Open );
@@ -715,7 +699,6 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
       return bOthersFollowed;
   }
 
-  QString indexFile;
 
   KUrl url( _url );
 
@@ -738,35 +721,73 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
         }
     }
 
-  ///////////
 
-  // In case we open an index.html, we want the location bar
-  // to still display the original URL (so that 'up' uses that URL,
-  // and since that's what the user entered).
-  // changePart will take care of setting and storing that url.
-  QString originalURL = url.pathOrUrl();
-  if ( !req.nameFilter.isEmpty() ) // keep filter in location bar
-  {
-    if (!originalURL.endsWith("/"))	//krazy:exclude=doublequote_chars
-        originalURL += '/';
-    originalURL += req.nameFilter;
-  }
 
-  QString serviceName; // default: none provided
+    // In case we open an index.html, we want the location bar
+    // to still display the original URL (so that 'up' uses that URL,
+    // and since that's what the user entered).
+    // changePart will take care of setting and storing that url.
+    QString originalURL = url.pathOrUrl();
+    if (!req.nameFilter.isEmpty()) { // keep filter in location bar
+        if (!originalURL.endsWith('/'))
+            originalURL += '/';
+        originalURL += req.nameFilter;
+    }
 
-  if ( url.url() == "about:konqueror" || url.url() == "about:plugins" )
-  {
-      mimeType = "KonqAboutPage"; // not KParts/ReadOnlyPart, it fills the Location menu ! :)
-      serviceName = "konq_aboutpage";
-      originalURL = req.typedUrl.isEmpty() ? QString() : url.url();
-      // empty if from profile, about:konqueror if the user typed it (not req.typedUrl, it could be "about:")
-  }
-  else if ( url.url() == "about:blank" && req.typedUrl.isEmpty() )
-  {
-      originalURL.clear();
-  }
+    QString serviceName; // default: none provided
+    const QString urlStr = url.url();
+    if ( urlStr == "about:konqueror" || urlStr == "about:plugins" ) {
+        mimeType = "KonqAboutPage"; // not KParts/ReadOnlyPart, it fills the Location menu ! :)
+        serviceName = "konq_aboutpage";
+        originalURL = req.typedUrl.isEmpty() ? QString() : urlStr;
+        // empty if from profile, about:konqueror if the user typed it (not req.typedUrl, it could be "about:")
+    }
+    else if ( urlStr == "about:blank" && req.typedUrl.isEmpty() ) {
+        originalURL.clear();
+    }
 
-  // Look for which view mode to use, if a directory - not if view locked
+
+    bool forceAutoEmbed = req.forceAutoEmbed || req.userRequestedReload;
+    if (!req.typedUrl.isEmpty()) // the user _typed_ the URL, he wants it in Konq.
+        forceAutoEmbed = true;
+    if (url.protocol() == "about" || url.protocol() == "error")
+        forceAutoEmbed = true;
+    // Related to KonqFactory::createView
+    if (!forceAutoEmbed && !KonqFMSettings::settings()->shouldEmbed(mimeType)) {
+        kDebug(1202) << "openView: KonqFMSettings says: don't embed this servicetype";
+        return false;
+    }
+
+    // If the protocol doesn't support writing (e.g. HTTP) then we might want to save instead of just embedding.
+    // So (if embedding would succeed, hence the checks above) we ask the user
+    // Otherwise the user will get asked 'open or save' in openUrl anyway.
+    if (!forceAutoEmbed && !KProtocolManager::supportsWriting(url)) {
+        QString suggestedFilename;
+        KonqRun* run = childView ? childView->run() : 0;
+        int attachment = 0;
+        if (run) {
+            suggestedFilename = run->suggestedFileName();
+            attachment = (run->serverSuggestsSave()) ? KParts::BrowserRun::AttachmentDisposition : KParts::BrowserRun::InlineDisposition;
+        }
+
+        // Use askEmbedOrSave from filetypesrc
+        KMessageBox::setDontShowAskAgainConfig(KonqFMSettings::settings()->fileTypesConfig().data());
+
+        KParts::BrowserRun::AskSaveResult res = KParts::BrowserRun::askEmbedOrSave(
+            url, mimeType, suggestedFilename, attachment);
+        KMessageBox::setDontShowAskAgainConfig(0);
+        if (res == KParts::BrowserRun::Open)
+            forceAutoEmbed = true;
+        else if (res == KParts::BrowserRun::Cancel)
+            return true; // handled, don't do anything else
+        else { // Save
+            KParts::BrowserRun::simpleSave(url, suggestedFilename, this);
+            return true; // handled
+        }
+    }
+
+
+    // Look for which view mode to use, if a directory - not if view locked
   if ( ( !childView || (!childView->isLockedViewMode()) )
        && mimeType == "inode/directory" ) {
 
@@ -784,6 +805,7 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
               //serviceName = urlProperties.readEntry( "ViewMode", serviceName );
               //kDebug(1202) << "serviceName=" << serviceName;
           }
+          QString indexFile;
           if ( HTMLAllowed &&
                ( !( indexFile = findIndexFile( url.path() ) ).isEmpty() ) ) {
               mimeType = "text/html";
@@ -837,44 +859,7 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
   }
   else // We know the child view
   {
-      if ( !childView->isLockedViewMode() )
-      {
-          bool forceAutoEmbed = req.forceAutoEmbed || req.newTab || req.userRequestedReload;
-          if ( !req.typedUrl.isEmpty() ) // the user _typed_ the URL, he wants it in Konq.
-              forceAutoEmbed = true;
-          if ( url.protocol() == "about" || url.protocol() == "error" )
-              forceAutoEmbed = true;
-          // Related to KonqFactory::createView
-          if ( !forceAutoEmbed && !KonqFMSettings::settings()->shouldEmbed( mimeType ) )
-          {
-              kDebug(1202) << "openView: KonqFMSettings says: don't embed this servicetype";
-              ok = false;
-          }
-
-          // If the protocol doesn't support writing (e.g. HTTP) then we might want to save instead of just embedding.
-          // So (if embedding would succeed, hence the checks above) we ask the user
-          // Otherwise the user will get asked 'open or save' in openUrl anyway.
-          if ( ok && !forceAutoEmbed && !KProtocolManager::supportsWriting( url ) ) {
-              QString suggestedFilename;
-
-              KonqRun* run = childView->run();
-              int attachment = 0;
-              if (run) {
-                  suggestedFilename = run->suggestedFileName();
-                  attachment = (run->serverSuggestsSave()) ? KParts::BrowserRun::AttachmentDisposition : KParts::BrowserRun::InlineDisposition;
-              }
-
-              KParts::BrowserRun::AskSaveResult res = KParts::BrowserRun::askEmbedOrSave(
-                  url, mimeType, suggestedFilename, attachment );
-              if ( res == KParts::BrowserRun::Open )
-                  forceAutoEmbed = true;
-              else if ( res == KParts::BrowserRun::Cancel )
-                  return true; // handled, don't do anything else
-              else { // Save
-                  KParts::BrowserRun::simpleSave( url, suggestedFilename, this );
-                  return true; // handled
-              }
-          }
+      if ( !childView->isLockedViewMode() ) {
           if ( ok ) {
 
               // When typing a new URL, the current context doesn't matter anymore
@@ -1148,34 +1133,43 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
         }
     }
 
-    if ( KonqSettings::popupsWithinTabs() ||
-         ( KonqSettings::mmbOpensTab() &&
-           !args.metaData().contains("forcenewwindow") &&
-           !isPopupWindow( windowArgs ) ) ) {
-        /* We could do this and pass 'req' to openUrl, but then we wouldn't get the part pointer immediately...
-        KonqOpenURLRequest req;
-        req.newTab = true;
-        req.newTabInFront = KonqSettings::newTabsInFront();
-        req.openAfterCurrentPage = KonqSettings::openAfterCurrentPage();
-        */
+    bool createTab = false;
+    if (args.actionRequestedByUser()) { // MMB or some RMB popupmenu action
+        createTab = KonqSettings::mmbOpensTab() &&
+                    !args.metaData().contains("forcenewwindow"); // RMB / Frame / Open in New Window
+    } else {
+        createTab = KonqSettings::popupsWithinTabs() &&
+                    !isPopupWindow( windowArgs );
+    }
 
-        const bool aftercurrentpage = KonqSettings::openAfterCurrentPage();
+    kDebug() << "createTab=" << createTab << "part=" << part;
+
+    if ( createTab ) {
+
         bool newtabsinfront = KonqSettings::newTabsInFront();
         if ( windowArgs.lowerWindow() || (QApplication::keyboardModifiers() & Qt::ShiftModifier))
            newtabsinfront = !newtabsinfront;
+        const bool aftercurrentpage = KonqSettings::openAfterCurrentPage();
 
-        KonqView* newView = m_pViewManager->addTab("text/html", QString(), false, aftercurrentpage);
-        if (newView == 0) return;
+        // Can we use the standard way (openUrl), or do we need the part pointer immediately?
+        if (!part) {
+            KonqOpenURLRequest req;
+            req.newTab = true;
+            req.newTabInFront = newtabsinfront;
+            req.openAfterCurrentPage = aftercurrentpage;
+            openUrl(0, url, args.mimeType(), req);
+        } else {
+            KonqView* newView = m_pViewManager->addTab("text/html", QString(), false, aftercurrentpage);
+            if (newView == 0) return;
 
-        if (newtabsinfront)
-            m_pViewManager->showTab( newView );
+            if (newtabsinfront)
+                m_pViewManager->showTab( newView );
 
-        openUrl( newView, url.isEmpty() ? KUrl("about:blank") : url, QString() );
-        newView->setViewName( browserArgs.frameName );
+            openUrl( newView, url.isEmpty() ? KUrl("about:blank") : url, QString() );
+            newView->setViewName( browserArgs.frameName );
 
-        if ( part )
             *part = newView->part();
-
+        }
         return;
     }
 
@@ -2482,6 +2476,7 @@ void KonqMainWindow::popupNewTab(bool infront, bool openAfterCurrentPage)
   KonqOpenURLRequest req;
   req.newTab = true;
   req.newTabInFront = false;
+  req.forceAutoEmbed = true;
   req.openAfterCurrentPage = openAfterCurrentPage;
   req.args = m_popupUrlArgs;
   req.browserArgs = m_popupUrlBrowserArgs;
@@ -2790,6 +2785,7 @@ void KonqMainWindow::slotUpDelayed()
 {
     KonqOpenURLRequest req;
     req.newTab = true;
+    req.forceAutoEmbed = true;
 
     req.openAfterCurrentPage = KonqSettings::openAfterCurrentPage();
     req.newTabInFront = KonqSettings::newTabsInFront();
@@ -3896,6 +3892,7 @@ void KonqExtendedBookmarkOwner::openBookmark(const KBookmark & bm, Qt::MouseButt
     KonqOpenURLRequest req;
     req.newTab = true;
     req.newTabInFront = KonqSettings::newTabsInFront();
+    req.forceAutoEmbed = true;
 
     if (km & Qt::ShiftModifier) {
         req.newTabInFront = !req.newTabInFront;
@@ -4401,6 +4398,7 @@ void KonqExtendedBookmarkOwner::openInNewTab(const KBookmark &bm)
   req.newTab = true;
   req.newTabInFront = newTabsInFront;
   req.openAfterCurrentPage = false;
+  req.forceAutoEmbed = true;
 
   m_pKonqMainWindow->openUrl( 0, bm.url(), QString(), req );
 }
@@ -4414,6 +4412,7 @@ void KonqExtendedBookmarkOwner::openFolderinTabs(const KBookmarkGroup &grp)
   req.newTab = true;
   req.newTabInFront = false;
   req.openAfterCurrentPage = false;
+  req.forceAutoEmbed = true;
 
   QList<KUrl> list = grp.groupUrlList();
   QList<KUrl>::Iterator it = list.begin();

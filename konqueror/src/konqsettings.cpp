@@ -43,7 +43,7 @@ KonqFMSettings* KonqFMSettings::settings()
 //static
 void KonqFMSettings::reparseConfiguration()
 {
-    if (globalEmbedSettings) { // TODO .exists()
+    if (globalEmbedSettings /*TODO.exists()*/) {
         globalEmbedSettings->self.init(true);
     }
 }
@@ -58,10 +58,17 @@ KonqFMSettings::~KonqFMSettings()
 
 void KonqFMSettings::init(bool reparse)
 {
-    KSharedConfig::Ptr fileTypesConfig = KSharedConfig::openConfig("filetypesrc", KConfig::NoGlobals);
     if (reparse)
-        fileTypesConfig->reparseConfiguration();
-    m_embedMap = fileTypesConfig->entryMap("EmbedSettings");
+        fileTypesConfig()->reparseConfiguration();
+    m_embedMap = fileTypesConfig()->entryMap("EmbedSettings");
+}
+
+KSharedConfig::Ptr KonqFMSettings::fileTypesConfig()
+{
+    if (!m_fileTypesConfig) {
+        m_fileTypesConfig = KSharedConfig::openConfig("filetypesrc", KConfig::NoGlobals);
+    }
+    return m_fileTypesConfig;
 }
 
 static bool alwaysEmbedMimeTypeGroup(const QString& mimeType)

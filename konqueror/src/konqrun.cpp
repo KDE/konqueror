@@ -32,6 +32,7 @@
 // Local
 #include "konqview.h"
 #include "konqhistorymanager.h"
+#include "konqsettings.h"
 
 
 #define HINT_UTF8	106
@@ -92,14 +93,19 @@ void KonqRun::foundMimeType( const QString & _type )
     const bool associatedAppIsKonqueror = KonqMainWindow::isMimeTypeAssociatedWithSelf(mimeType);
 
     if (tryEmbed) {
+        KMimeType::Ptr mime = KMimeType::mimeType(mimeType);
         if (associatedAppIsKonqueror)
             m_req.forceAutoEmbed = true;
-        else if (m_pMainWindow->hasViewWithMimeType(mimeType)) {
+        else if (mime && mime->is("text/html") && m_pMainWindow->hasViewWithMimeType(mimeType)) {
             m_req.forceAutoEmbed = true;
             // When text/html is associated with another browser,
             // we need to find out if we should keep browsing the web in konq,
             // or if we are clicking on an html file in a directory view (which should
             // then open the other browser)
+
+            // The text/html check is to reduce the effects of the above!
+            // Otherwise, once you have an embedded PDF,
+            // all future PDFs are opened embedded, even after changing settings!
         }
 
         setFinished(m_pMainWindow->openView( mimeType, KRun::url(), m_pView, m_req ));
@@ -115,9 +121,12 @@ void KonqRun::foundMimeType( const QString & _type )
   if ( m_req.followMode )
     setFinished(true);
 
-  if ( !hasFinished() ) {
-    // If we couldn't embed the mimetype, call BrowserRun::handleNonEmbeddable()
-    KParts::BrowserRun::NonEmbeddableResult res = handleNonEmbeddable( mimeType );
+    if ( !hasFinished() ) {
+        // Use askSave from filetypesrc
+        KMessageBox::setDontShowAskAgainConfig(KonqFMSettings::settings()->fileTypesConfig().data());
+        // If we couldn't embed the mimetype, call BrowserRun::handleNonEmbeddable()
+        KParts::BrowserRun::NonEmbeddableResult res = handleNonEmbeddable( mimeType );
+        KMessageBox::setDontShowAskAgainConfig(0);
     if ( res == KParts::BrowserRun::Delayed )
       return;
     setFinished( res == KParts::BrowserRun::Handled );

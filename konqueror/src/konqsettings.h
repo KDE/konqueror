@@ -20,8 +20,10 @@
 #ifndef __konq_settings_h__
 #define __konq_settings_h__
 
+#include <ksharedconfig.h>
 #include <QMap>
 #include <QString>
+#include <kconfig.h>
 
 class KConfigGroup;
 
@@ -50,6 +52,8 @@ public:
      */
     static void reparseConfiguration();
 
+    KSharedConfig::Ptr fileTypesConfig();
+
     // Use settings (and mimetype definition files)
     // to find whether to embed a certain service type or not
     // Only makes sense in konqueror.
@@ -61,6 +65,8 @@ private:
 
 private:
     QMap<QString, QString> m_embedMap;
+
+    KSharedConfig::Ptr m_fileTypesConfig;
 
     /** Called by constructor and reparseConfiguration */
     void init(bool reparse);
