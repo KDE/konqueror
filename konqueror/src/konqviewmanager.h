@@ -123,7 +123,7 @@ public:
    * Removes specified tab
    * Also takes care of setting another view as active if the active view was in this tab
    */
-  void removeTab( KonqFrameBase* tab );
+  void removeTab( KonqFrameBase* tab, bool emitAboutToRemoveSignal = true );
 
   /**
    * Removes all, but the specified tab.
@@ -343,6 +343,8 @@ private:
     void setCurrentProfile(const QString& profileFileName);
 
 signals:
+// the signal is only emitted when the contents of the view represented by 
+// "tab" are going to be lost for good.
   void aboutToRemoveTab( KonqFrameBase* tab );
 
 private:
