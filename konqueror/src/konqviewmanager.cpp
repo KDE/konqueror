@@ -1226,36 +1226,11 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
     int index = cfg.readEntry( QString::fromLatin1( "activeChildIndex" ).prepend(prefix), -1 );
 
     QStringList childList = cfg.readEntry( QString::fromLatin1( "Children" ).prepend( prefix ),QStringList() );
-    if( childList.count() == 0 )
+    if( childList.count() < 2 )
     {
       kWarning() << "Profile Loading Error: Less than two children in " << name ;
       // fallback to defaults
       loadItem( cfg, parent, "InitialView", defaultURL, openUrl, forcedUrl );
-    } else if( childList.count() == 1 )
-    {
-
-        if ( !m_tabContainer ) {
-            createTabContainer(parent->asQWidget(), parent);
-            parent->insertChildFrame( m_tabContainer );
-        }
-
-        loadItem( cfg, tabContainer(), childList.at(0), defaultURL, openUrl, forcedUrl );
-        QWidget* currentPage = m_tabContainer->currentWidget();
-        if (currentPage != 0L) {
-            KonqView* activeChildView = dynamic_cast<KonqFrameBase*>(currentPage)->activeChildView();
-            if (activeChildView != 0L) {
-                activeChildView->setCaption( activeChildView->caption() );
-                activeChildView->setTabIcon( activeChildView->url() );
-            }
-        }
-
-        QWidget* w = m_tabContainer->widget(index);
-        Q_ASSERT(w);
-        m_tabContainer->setActiveChild( dynamic_cast<KonqFrameBase*>(w) );
-        m_tabContainer->setCurrentIndex( index );
-        m_tabContainer->show();
-
-
     }
     else
     {
