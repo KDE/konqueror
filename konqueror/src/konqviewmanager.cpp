@@ -320,7 +320,7 @@ void KonqViewManager::breakOffTab( KonqFrameBase* currentFrame, const QSize& win
   if(newFrame)
     newFrame->copyHistory( currentFrame );
 
-  removeTab( currentFrame );
+  removeTab( currentFrame, false );
 
   mainWindow->enableAllActions( true );
   mainWindow->resize( windowSize );
@@ -362,7 +362,7 @@ void KonqViewManager::openClosedWindow(const KonqClosedWindowItem& closedWindowI
 }
 
 
-void KonqViewManager::removeTab( KonqFrameBase* currentFrame )
+void KonqViewManager::removeTab( KonqFrameBase* currentFrame, bool emitAboutToRemoveSignal )
 {
 #ifdef DEBUG_VIEWMGR
   kDebug(1202) << "---------------- KonqViewManager::removeTab( " << currentFrame << " ) --------------";
@@ -373,7 +373,8 @@ void KonqViewManager::removeTab( KonqFrameBase* currentFrame )
   if ( m_tabContainer->count() == 1 )
     return;
 
-  emit aboutToRemoveTab(currentFrame);
+  if(emitAboutToRemoveSignal)
+    emit aboutToRemoveTab(currentFrame);
 
   if (currentFrame->asQWidget() == m_tabContainer->currentWidget())
     setActivePart( 0L, true );
