@@ -17,10 +17,6 @@ QT4_ADD_DBUS_INTERFACE( testnsplugin_SRCS ${nsplugins_instance_xml} nsplugins_in
 set(nsplugins_viewer_xml  ${CMAKE_CURRENT_SOURCE_DIR}/../viewer/org.kde.nsplugins.viewer.xml)
 QT4_ADD_DBUS_INTERFACE( testnsplugin_SRCS ${nsplugins_viewer_xml} nsplugins_viewer_interface )
 
-
-
 kde4_add_executable(testnsplugin TEST ${testnsplugin_SRCS})
 
-target_link_libraries(testnsplugin   ${KDE4_KDE3SUPPORT_LIBS} ${QT_QT3SUPPORT_LIBRARY} ${QT_QTGUI_LIBRARY}  )
-
-
+target_link_libraries(testnsplugin ${KDE4_KPARTS_LIBS} ${QT_QTDBUS_LIBRARY})
