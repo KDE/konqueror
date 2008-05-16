@@ -2564,7 +2564,7 @@ void KonqMainWindow::slotRemoveOtherTabsPopup()
 {
   if ( KMessageBox::warningContinueCancel( this,
        i18n("Do you really want to close all other tabs?"),
-       i18n("Close Other Tabs Confirmation"), KGuiItem(i18n("Close &Other Tabs"),"tab-close"),
+       i18n("Close Other Tabs Confirmation"), KGuiItem(i18n("Close &Other Tabs"),"tab-close-other"),
        KStandardGuiItem::cancel(), "CloseOtherTabConfirm") != KMessageBox::Continue )
     return;
 
@@ -3661,7 +3661,7 @@ void KonqMainWindow::initActions()
   connect(m_paRemoveTab, SIGNAL(triggered()), SLOT( slotRemoveTab() ));
   m_paRemoveTab->setShortcut(Qt::CTRL+Qt::Key_W);
   m_paRemoveOtherTabs = actionCollection()->addAction("removeothertabs");
-  m_paRemoveOtherTabs->setIcon( KIcon("tab-close") );
+  m_paRemoveOtherTabs->setIcon( KIcon("tab-close-other") );
   m_paRemoveOtherTabs->setText( i18n( "Close &Other Tabs" ) );
   connect(m_paRemoveOtherTabs, SIGNAL(triggered()), SLOT( slotRemoveOtherTabsPopup() ));
 
