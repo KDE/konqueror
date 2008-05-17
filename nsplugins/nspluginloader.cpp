@@ -54,6 +54,7 @@
 #include <config-apps.h>
 
 #include <X11/Xlib.h>
+#include <unistd.h>
 
 NSPluginLoader *NSPluginLoader::s_instance = 0;
 int NSPluginLoader::s_refCount = 0;
