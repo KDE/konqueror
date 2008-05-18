@@ -43,7 +43,7 @@ KonqFMSettings* KonqFMSettings::settings()
 //static
 void KonqFMSettings::reparseConfiguration()
 {
-    if (globalEmbedSettings /*TODO.exists()*/) {
+    if (globalEmbedSettings.exists()) {
         globalEmbedSettings->self.init(true);
     }
 }
