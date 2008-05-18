@@ -431,7 +431,7 @@ void KonqFrameTabs::refreshSubPopupMenuTab()
     }
     m_pSubPopupMenuTab->addSeparator();
     m_closeOtherTabsId =
-      m_pSubPopupMenuTab->insertItem( KIcon( "tab-close" ),
+      m_pSubPopupMenuTab->insertItem( KIcon( "tab-close-other" ),
 				      i18n( "Close &Other Tabs" ),
 				      m_pViewManager->mainWindow(),
 				      SLOT( slotRemoveOtherTabsPopup() ),
