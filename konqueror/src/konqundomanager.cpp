@@ -645,8 +645,7 @@ void KonqClosedWindowsManager::saveConfig()
     // Create / overwrite the saved closed windows list
     QString filename = "closeditems_saved";
     QString file = KStandardDirs::locateLocal("appdata", filename);
-    if(QFile::exists(file))
-        QFile::remove(file);
+    QFile::remove(file);
 
     KConfig *config = new KConfig(filename, KConfig::SimpleConfig, "appdata");
 

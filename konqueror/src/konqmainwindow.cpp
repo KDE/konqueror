@@ -22,6 +22,8 @@
 */
 
 #include "konqmainwindow.h"
+#include "konqsessionmanager.h"
+#include "konqsessiondlg.h"
 #include "konqdraggablelabel.h"
 #include "konqcloseditem.h"
 #include "konqapplication.h"
@@ -318,6 +320,7 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
       s_startupTime = time( NULL );
       s_preloadUsageCount = 0;
   }
+  KonqSessionManager::self();
 }
 
 KonqMainWindow::~KonqMainWindow()
@@ -1312,6 +1315,11 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
 
 void KonqMainWindow::slotNewWindow()
 {
+  // Ask the user to recover session if appliable when a new window is opened
+  // on user request
+  if(KonqSessionManager::self()->hasAutosavedDirtySessions())
+    KonqSessionManager::self()->askUserToRestoreAutosavedDirtySessions();
+    
   // Use profile from current window, if set
   QString profile = m_pViewManager->currentProfile();
   if ( profile.isEmpty() )
@@ -2907,6 +2915,54 @@ void KonqMainWindow::slotClosedItemsListAboutToShow()
     kDebug(1202) << "done";
 }
 
+/**
+ * Fill the sessions list action menu before it's shown
+ */
+void KonqMainWindow::slotSessionsListAboutToShow()
+{
+    kDebug(1202);
+    QMenu* popup = m_paSessions->menu();
+    // Clear the menu and fill it with a maximum of s_closedTabsListLength number of urls
+    popup->clear();
+    QAction* saveSessionAction = popup->addAction( KIcon("document-save"), i18n("Save as..") );
+    connect(saveSessionAction, SIGNAL(triggered()), this, SLOT(saveCurrentSession()));
+    QAction* manageSessionsAction = popup->addAction( KIcon("view-choose"), i18n("Manage..") );
+    connect(manageSessionsAction, SIGNAL(triggered()), this, SLOT(manageSessions()));
+    popup->insertSeparator((QAction*)0);
+
+    QString dir= KStandardDirs::locateLocal("appdata", "sessions/");
+    QDirIterator it(dir, QDir::Readable|QDir::NoDotAndDotDot|QDir::Dirs);
+    
+    while (it.hasNext())
+    {
+        QFileInfo fileInfo(it.next());
+        
+        QAction* action = popup->addAction( fileInfo.baseName() );
+        action->setActionGroup(m_sessionsGroup);
+        action->setData(fileInfo.filePath());
+    }
+    KAcceleratorManager::manage(popup);
+    kDebug(1202) << "done";
+}
+
+void KonqMainWindow::saveCurrentSession()
+{
+    KonqNewSessionDlg dlg( this );
+    dlg.exec();
+}
+
+void KonqMainWindow::manageSessions()
+{
+    KonqSessionDlg dlg( m_pViewManager, this );
+    dlg.exec();
+}
+
+void KonqMainWindow::slotSessionActivated(QAction* action)
+{
+    QString dirpath = action->data().toString();
+    KonqSessionManager::self()->restoreSessions(dirpath);
+}
+
 void KonqMainWindow::updateClosedItemsAction()
 {
     m_paClosedItems->setEnabled(!m_undoManager->closedTabsList().isEmpty());
@@ -3538,11 +3594,11 @@ void KonqMainWindow::initActions()
 
 
   // Trash bin of closed tabs
-  m_paClosedItems = new KToolBarPopupAction( KIcon("edit-undo-closed-tabs"),  i18n( "Closed Tabs" ), this );
+  m_paClosedItems = new KToolBarPopupAction( KIcon("edit-undo-closed-tabs"),  i18n( "Closed Items" ), this );
   actionCollection()->addAction( "closedtabs", m_paClosedItems );
   m_closedItemsGroup = new QActionGroup(m_paClosedItems->menu());
 
-  // set the maximum number of closed tabs list shown
+  // set the closed tabs list shown
   connect( m_paClosedItems, SIGNAL(triggered()), m_undoManager, SLOT(undoLastClosedItem()) );
   connect( m_paClosedItems->menu(), SIGNAL(aboutToShow()), this, SLOT(slotClosedItemsListAboutToShow()) );
   connect( m_closedItemsGroup, SIGNAL(triggered(QAction*)), m_undoManager, SLOT(slotClosedItemsActivated(QAction*)) );
@@ -3550,6 +3606,13 @@ void KonqMainWindow::initActions()
   connect( m_undoManager, SIGNAL(openClosedTab(const KonqClosedTabItem&)), m_pViewManager, SLOT(openClosedTab(const KonqClosedTabItem&)) );
   connect( m_undoManager, SIGNAL(openClosedWindow(const KonqClosedWindowItem&)), m_pViewManager, SLOT(openClosedWindow(const KonqClosedWindowItem&)) );
   connect( m_undoManager, SIGNAL(closedItemsListChanged()), this, SLOT(updateClosedItemsAction()));
+  
+  
+  m_paSessions = new KActionMenu( i18n( "Sessions" ), this );
+  actionCollection()->addAction( "sessions", m_paSessions );
+  m_sessionsGroup = new QActionGroup(m_paSessions->menu());
+  connect( m_paSessions->menu(), SIGNAL(aboutToShow()), this, SLOT(slotSessionsListAboutToShow()) );
+  connect( m_sessionsGroup, SIGNAL(triggered(QAction*)), this, SLOT(slotSessionActivated(QAction*)) );
 
   m_paBack = new KToolBarPopupAction( KIcon(backForward.first.iconName()), backForward.first.text(), this );
   actionCollection()->addAction( "go_back", m_paBack );
@@ -4771,9 +4834,14 @@ void KonqMainWindow::saveProperties( KConfigGroup& config )
     m_pViewManager->saveViewProfileToGroup(config, flags);
 }
 
-void KonqMainWindow::readProperties( const KConfigGroup& config )
+void KonqMainWindow::readProperties( const KConfigGroup& configGroup )
 {
-    m_pViewManager->loadViewProfileFromGroup(config, QString() /*no profile name*/);
+    const QString xmluiFile = configGroup.readEntry("XMLUIFile","konqueror.rc");
+    setXMLFile(xmluiFile);
+    
+    m_pViewManager->loadViewProfileFromGroup( configGroup, QString() /*no profile name*/ );
+    // read window settings
+    applyMainWindowSettings( configGroup, true );
 }
 
 void KonqMainWindow::setInitialFrameName( const QString &name )
@@ -5025,7 +5093,6 @@ void KonqMainWindow::addClosedWindowToUndoList()
     kDebug(1202);
 
     // 1. We get the current title
-    KonqFrameTabs* tabContainer = m_pViewManager->tabContainer();
     int numTabs = m_pViewManager->tabContainer()->childFrameList().count();
     QString title( i18n("no name") );
 
@@ -5034,17 +5101,7 @@ void KonqMainWindow::addClosedWindowToUndoList()
 
     // 2. Create the KonqClosedWindowItem and  save its config
     KonqClosedWindowItem* closedWindowItem = new KonqClosedWindowItem(title, m_undoManager->newCommandSerialNumber(), numTabs);
-    KonqFrameBase::Options flags = KonqFrameBase::saveHistoryItems;
-    QString prefix = QString::fromLatin1( childFrame()->frameType() ) + QString::number(0);
-    closedWindowItem->configGroup().writeEntry( "RootItem", prefix );
-    prefix.append( QLatin1Char( '_' ) );
-    // Done by saveMainWindowSettings already:
-    //closedWindowItem->configGroup().writeEntry( "Width", width() );
-    //closedWindowItem->configGroup().writeEntry( "Height", height() );
-    closedWindowItem->configGroup().writeEntry( "FullScreen", fullScreenMode() );
-    closedWindowItem->configGroup().writeEntry( "XMLUIFile", xmlFile() );
-    tabContainer->saveConfig( closedWindowItem->configGroup(), prefix, flags, 0L, 0, 1);
-    saveMainWindowSettings( closedWindowItem->configGroup() );
+    saveProperties( closedWindowItem->configGroup() );
     closedWindowItem->configGroup().sync();
 
     // 3. Finally add the KonqClosedWindowItem to the undo list

@@ -532,5 +532,14 @@ PATH_JAVA
       <!-- checked -->
     </entry>
   </group>
+  
+  <group name="SessionManagerSettings">
+<!-- konqsessionmanager.cpp -->
+    <entry key="AutoSaveInterval" type="Int">
+      <default>10</default>
+      <label></label>
+      <whatsthis></whatsthis>
+    </entry>
+  </group>
 
 </kcfg>

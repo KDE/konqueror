@@ -467,6 +467,12 @@ private Q_SLOTS:
 
   void slotClosedItemsListAboutToShow();
   void updateClosedItemsAction();
+  
+  
+  void slotSessionsListAboutToShow();
+  void saveCurrentSession();
+  void manageSessions();
+  void slotSessionActivated(QAction* action);
 
   void slotUpActivated(QAction* action);
   void slotBackActivated(QAction* action);
@@ -618,6 +624,7 @@ private: // members
   KToolBarPopupAction *m_paForward;
   /// Action for the trash that contains closed tabs/windows
   KToolBarPopupAction *m_paClosedItems;
+  KActionMenu *m_paSessions;
   KAction *m_paHome;
 
   KAction *m_paSaveViewProfile;
@@ -721,7 +728,8 @@ private: // members
   KActionMenu *m_viewModeMenu;
   QActionGroup* m_viewModesGroup;
   QActionGroup* m_closedItemsGroup;
-
+  QActionGroup* m_sessionsGroup;
+  
   static QList<KonqMainWindow*> *s_lstViews;
 
   QString m_currentDir; // stores current dir for relative URLs whenever applicable
