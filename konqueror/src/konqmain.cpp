@@ -21,6 +21,7 @@
 #include "konqmisc.h"
 #include "konqfactory.h"
 #include "konqmainwindow.h"
+#include "konqsessionmanager.h"
 #include "konqview.h"
 #include "konqsettingsxt.h"
 
@@ -84,6 +85,9 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
       KonqMisc::setMode(QString::compare(args->getOption("mode"), "filemanager", Qt::CaseInsensitive) == 0 ? KonqMisc::FileManager : KonqMisc::WebBrowser);
       modeSet = true;
   }
+  
+  if(KonqSessionManager::self()->hasAutosavedDirtySessions())
+    KonqSessionManager::self()->askUserToRestoreAutosavedDirtySessions();
 
   if ( app.isSessionRestored() )
   {

@@ -337,14 +337,20 @@ void KonqViewManager::breakOffTab( KonqFrameBase* currentFrame, const QSize& win
 
 void KonqViewManager::openClosedWindow(const KonqClosedWindowItem& closedWindowItem)
 {
+    openSavedWindow(closedWindowItem.configGroup());
+}
+
+void KonqViewManager::openSavedWindow(const KConfigGroup& configGroup)
+{
     kDebug(1202) << "begin";
     const QString xmluiFile =
-        closedWindowItem.configGroup().readEntry("XMLUIFile","konqueror.rc");
+        configGroup.readEntry("XMLUIFile","konqueror.rc");
 
     // TODO factorize to avoid code duplication with loadViewProfileFromGroup
     KonqMainWindow *mainWindow = new KonqMainWindow(KUrl(), xmluiFile);
 
-    if (closedWindowItem.configGroup().readEntry("FullScreen", false)) {
+    if (configGroup.readEntry( "FullScreen", false ))
+    {
         // Full screen on
         mainWindow->showFullScreen();
     } else {
@@ -354,8 +360,8 @@ void KonqViewManager::openClosedWindow(const KonqClosedWindowItem& closedWindowI
         // Window size comes from the applyMainWindowSettings call below
     }
 
-    mainWindow->viewManager()->loadRootItem(closedWindowItem.configGroup(), mainWindow->viewManager()->tabContainer(), KUrl(), true, KUrl());
-    mainWindow->applyMainWindowSettings(closedWindowItem.configGroup(), true);
+    mainWindow->viewManager()->loadRootItem( configGroup, mainWindow->viewManager()->tabContainer(), KUrl(), true, KUrl() );
+    mainWindow->applyMainWindowSettings( configGroup, true );
     mainWindow->activateChild();
     mainWindow->show();
     kDebug(1202) << "done";
