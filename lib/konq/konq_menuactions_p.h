@@ -20,11 +20,13 @@
 #ifndef KONQ_MENUACTIONS_P_H
 #define KONQ_MENUACTIONS_P_H
 
+#include "konq_popupmenuinformation.h"
 #include <kfileitem.h>
 #include <kactioncollection.h>
 #include <QActionGroup>
 #include <QObject>
 #include <kserviceaction.h>
+#include <kservice.h>
 
 typedef QList<KServiceAction> ServiceList;
 
@@ -38,22 +40,21 @@ public:
     int insertServices(const ServiceList& list, QMenu* menu, bool isBuiltin);
 
 private Q_SLOTS:
+    // For servicemenus
     void slotExecuteService(QAction* act);
+    // For "open with" applications
+    void slotRunApplication(QAction* act);
+    void slotOpenWithDialog();
 
 public:
-    KFileItemList m_items;
-    KUrl m_url;
-    KUrl::List m_urlList;
-    QString m_mimeType;
-    QString m_mimeGroup;
-    bool m_isDirectory;
-    bool m_readOnly;
-
-    // TODO try action->setData(QVariant::fromValue(service))
-    QMap<QAction *, KServiceAction> m_mapPopupServices;
+    KonqPopupMenuInformation m_info;
     QActionGroup m_executeServiceActionGroup;
+    QActionGroup m_runApplicationActionGroup;
     KActionCollection m_ownActions; // TODO connect to statusbar for help on actions
 };
+
+Q_DECLARE_METATYPE(KService::Ptr)
+Q_DECLARE_METATYPE(KServiceAction)
 
 #endif /* KONQ_MENUACTIONS_P_H */
 

@@ -8,6 +8,7 @@ add_subdirectory( tests )
 # Please use .cpp for new files
 set(konq_LIB_SRCS
    konq_popupmenu.cpp       # remains in libkonq, was needed by kicker applets like the trash applet
+   konq_popupmenuinformation.cpp # used by KonqPopupMenu, KonqMenuActions and KonqPopupMenuPlugin
    knewmenu.cpp             # used by dolphin, KonqPopupMenu, and konqueror (File menu; to be moved to dolphinpart)
    konq_menuactions.cpp     # used by dolphin, KonqPopupMenu. Move to kdelibs, for kickoff?
    konq_copytomenu.cpp      # used by dolphin, KonqPopupMenu
@@ -20,7 +21,7 @@ set(konq_LIB_SRCS
 
 kde4_add_library(konq SHARED ${konq_LIB_SRCS})
 
-target_link_libraries(konq ${QT_QTXML_LIBRARY} ${KDE4_KPARTS_LIBS})
+target_link_libraries(konq ${KDE4_KPARTS_LIBS})
 
 set_target_properties(konq PROPERTIES VERSION ${KDE_NON_GENERIC_LIB_VERSION} SOVERSION ${KDE_NON_GENERIC_LIB_SOVERSION} )
 install(TARGETS konq  ${INSTALL_TARGETS_DEFAULT_ARGS})
