@@ -133,9 +133,7 @@ private:
   Q_PRIVATE_SLOT(d, void slotPopupNewView())
   Q_PRIVATE_SLOT(d, void slotPopupEmptyTrashBin())
   Q_PRIVATE_SLOT(d, void slotPopupRestoreTrashedItems())
-  Q_PRIVATE_SLOT(d, void slotPopupOpenWith())
   Q_PRIVATE_SLOT(d, void slotPopupAddToBookmark())
-  Q_PRIVATE_SLOT(d, void slotRunService(QAction*))
   Q_PRIVATE_SLOT(d, void slotPopupMimeType())
   Q_PRIVATE_SLOT(d, void slotPopupProperties())
   Q_PRIVATE_SLOT(d, void slotOpenShareFileDialog())
@@ -146,21 +144,4 @@ private:
   KonqPopupMenuPrivate *d;
 };
 
-#if 0
-class LIBKONQ_EXPORT KonqPopupMenuPlugin : public QObject {
-	Q_OBJECT
-public:
-  /**
-  * Constructor
-  * If you want to insert a dynamic item or menu to konqpopupmenu
-  * this class is the right choice.
-  * Create a KAction and use _popup->addAction(new KAction );
-  * If you want to create a submenu use _popup->addGroup( );
-  */
-  KonqPopupMenuPlugin( KonqPopupMenu *_popup); // this should also be the parent
-  virtual ~KonqPopupMenuPlugin ( );
-};
 #endif
-
-#endif
-

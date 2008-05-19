@@ -52,7 +52,6 @@
 #include <kdebug.h>
 #include <kfileitem.h>
 #include <kdesktopfile.h>
-#include <kimageio.h>
 
 //#include <konq_iconviewwidget.h>
 #include <QtDBus/QtDBus>
@@ -245,24 +244,20 @@ bool KonqOperations::askDeleteConfirmation( const KUrl::List & selectedUrls, int
 
 void KonqOperations::doDrop( const KFileItem & destItem, const KUrl & dest, QDropEvent * ev, QWidget * parent )
 {
-    kDebug(1203) << "doDrop: dest : " << dest.url();
+    kDebug(1203) << "doDrop: dest:" << dest;
     QMap<QString, QString> metaData;
-    const KUrl::List lst = KUrl::List::fromMimeData( ev->mimeData(), &metaData );
-    if ( !lst.isEmpty() ) // Are they urls ?
-    {
-        kDebug(1203) << "KonqOperations::doDrop metaData: " << metaData.count() << " entries.";
-        QMap<QString,QString>::ConstIterator mit;
-        for( mit = metaData.begin(); mit != metaData.end(); ++mit )
-        {
-            kDebug(1203) << "metaData: key=" << mit.key() << " value=" << mit.value();
-        }
+    const KUrl::List lst = KUrl::List::fromMimeData(ev->mimeData(), &metaData);
+    if (!lst.isEmpty()) { // Are they urls ?
+        //kDebug(1203) << "metaData:" << metaData.count() << "entries.";
+        //QMap<QString,QString>::ConstIterator mit;
+        //for( mit = metaData.begin(); mit != metaData.end(); ++mit ) {
+        //    kDebug(1203) << "metaData: key=" << mit.key() << "value=" << mit.value();
+        //}
         // Check if we dropped something on itself
         KUrl::List::ConstIterator it = lst.begin();
-        for ( ; it != lst.end() ; it++ )
-        {
-            kDebug(1203) << "URL : " << (*it).url();
-            if ( dest.equals( *it, KUrl::CompareWithoutTrailingSlash ) )
-            {
+        for (; it != lst.end() ; it++) {
+            kDebug(1203) << "URL:" << (*it);
+            if (dest.equals(*it, KUrl::CompareWithoutTrailingSlash)) {
                 // The event source may be the view or an item (icon)
                 // Note: ev->source() can be 0L! (in case of kdesktop) (Simon)
                 if ( !ev->source() || ev->source() != parent && ev->source()->parent() != parent )
@@ -528,15 +523,6 @@ void KonqOperations::doDropFileCopy()
             action = Qt::MoveAction;
         else if(result == popupLinkAction)
             action = Qt::LinkAction;
-#if 0
-        else if(result == popupWallAction)
-        {
-            kDebug(1203) << "setWallpaper iconView=" << iconView << " url=" << lst.first().url();
-            if (iconView && iconView->isDesktop() ) iconView->setWallpaper(lst.first());
-            delete this;
-            return;
-        }
-#endif
         else if(result == popupCancelAction || !result)
         {
             delete this;

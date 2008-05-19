@@ -19,6 +19,7 @@
 */
 
 #include "konq_popupmenu.h"
+#include "konq_popupmenuinformation.h"
 #include "konq_copytomenu.h"
 #include "konq_menuactions.h"
 #include "kpropertiesdialog.h"
@@ -77,8 +78,7 @@ public:
           m_parentWidget(0),
           m_itemFlags(KParts::BrowserExtension::DefaultPopupItems),
           m_actions(actions),
-          m_ownActions(static_cast<QWidget *>(0)),
-          m_runServiceActionGroup(q)
+          m_ownActions(static_cast<QWidget *>(0))
     {
     }
     void addNamedAction(const QString& name);
@@ -90,9 +90,7 @@ public:
     void slotPopupNewView();
     void slotPopupEmptyTrashBin();
     void slotPopupRestoreTrashedItems();
-    void slotPopupOpenWith();
     void slotPopupAddToBookmark();
-    void slotRunService(QAction*);
     void slotPopupMimeType();
     void slotPopupProperties();
     void slotOpenShareFileDialog();
@@ -106,7 +104,6 @@ public:
     QString m_sMimeType;
     KFileItemList m_lstItems;
     KUrl::List m_lstPopupURLs;
-    QMap<QAction*,KService::Ptr> m_mapPopup;
     KonqMenuActions m_menuActions;
     KonqCopyToMenu m_copyToMenu;
     bool m_bHandleEditOperations;
@@ -115,7 +112,6 @@ public:
     KBookmarkManager* m_bookmarkManager;
     KActionCollection &m_actions;
     KActionCollection m_ownActions; // TODO connect to statusbar for help on actions
-    QActionGroup m_runServiceActionGroup;
     KParts::BrowserExtension::ActionGroupMap m_actionGroups;
 };
 
@@ -183,8 +179,6 @@ void KonqPopupMenu::init (QWidget * parentWidget, Flags kpf, KParts::BrowserExte
     d->m_parentWidget = parentWidget;
     d->m_itemFlags = flags;
     setFont(KGlobalSettings::menuFont());
-    QObject::connect(&d->m_runServiceActionGroup, SIGNAL(triggered(QAction*)),
-                     this, SLOT(slotRunService(QAction*)));
     d->setup(kpf);
 }
 
@@ -205,16 +199,12 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
     bool sDeleting      = (m_itemFlags & KParts::BrowserExtension::NoDeletion) == 0;
     bool sMoving        = sDeleting;
     bool sWriting       = sDeleting && m_lstItems.first().isWritable();
-    m_sMimeType         = m_lstItems.first().mimetype();
-    QString mimeGroup   = m_sMimeType.left(m_sMimeType.indexOf('/'));
-    mode_t mode         = m_lstItems.first().mode();
     bool bTrashIncluded = false;
     bool isLocal        = m_lstItems.first().isLocalFile()
                        || m_lstItems.first().url().protocol()=="media"
                        || m_lstItems.first().url().protocol()=="system";
     bool isTrashLink     = false;
     m_lstPopupURLs.clear();
-    int id = 0;
 
     m_attrName = QLatin1String( "name" );
 
@@ -223,40 +213,20 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
     KUrl url;
     KFileItemList::const_iterator it = m_lstItems.begin();
     const KFileItemList::const_iterator kend = m_lstItems.end();
-    QStringList mimeTypeList;
     for ( ; it != kend; ++it )
     {
         url = (*it).url();
 
-        // Build the list of URLs
-        m_lstPopupURLs.append( url );
-
-        // Determine if common mode among all URLs
-        if ( mode != (*it).mode() )
-            mode = 0; // modes are different => reset to 0
-
-        // Determine if common mimetype among all URLs
-        if ( m_sMimeType != (*it).mimetype() )
-        {
-            m_sMimeType.clear(); // mimetypes are different => null
-
-            if ( mimeGroup != (*it).mimetype().left((*it).mimetype().indexOf('/')))
-                mimeGroup.clear(); // mimetype groups are different as well!
-        }
-
-        if ( mimeTypeList.indexOf( (*it).mimetype() ) == -1 )
-            mimeTypeList << (*it).mimetype();
-
-        if ( isLocal && !url.isLocalFile() && url.protocol() != "media" && url.protocol() != "system" )
+        if ( isLocal && !url.isLocalFile())
             isLocal = false;
 
         if ( !bTrashIncluded && (
-             ( url.protocol() == "trash" && url.path().length() <= 1 )
-             || url.url() == "system:/trash" || url.url() == "system:/trash/" ) ) {
+             ( url.protocol() == "trash" && url.path().length() <= 1 ) ) ) {
             bTrashIncluded = true;
             isLocal = false;
         }
 
+        // TODO use FileItemCapabilities from Dolphin (in KonqPopupMenuInformation)
         if ( sReading )
             sReading = KProtocolManager::supportsReading( url );
 
@@ -282,7 +252,16 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
             }
         }
     }
-    const bool isDirectory = S_ISDIR(mode);
+
+    KonqPopupMenuInformation popupInfo;
+    popupInfo.setItems(m_lstItems);
+    popupInfo.setReadOnly(sWriting == false);
+    popupInfo.setParentWidget(m_parentWidget);
+
+    m_lstPopupURLs = popupInfo.urlList();
+    m_sMimeType    = popupInfo.mimeType();
+    const bool isDirectory = popupInfo.isDirectory();
+
     url = m_sViewURL;
     url.cleanPath();
 
@@ -475,104 +454,13 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
             addGroup( "linkactions" ); // see khtml
     }
 
-    //////////////////////////////////////////////////////
+    // "Open With" actions
+
+    m_menuActions.setPopupMenuInfo(popupInfo);
 
     if ( sReading ) {
-        KService::List offers;
-        if (KAuthorized::authorizeKAction("openwith")) {
-            QString constraint = "DesktopEntryName != 'kfmclient' and DesktopEntryName != 'kfmclient_dir' and DesktopEntryName != 'kfmclient_html'";
-            QString subConstraint = " and '%1' in ServiceTypes";
+        m_menuActions.addOpenWithActionsTo(q, "DesktopEntryName != 'kfmclient' and DesktopEntryName != 'kfmclient_dir' and DesktopEntryName != 'kfmclient_html'");
 
-            QStringList::ConstIterator it = mimeTypeList.begin();
-            QStringList::ConstIterator end = mimeTypeList.end();
-            Q_ASSERT( it != end );
-            QString first = *it;
-            ++it;
-            while ( it != end ) {
-                constraint += subConstraint.arg( *it );
-                ++it;
-            }
-
-            offers = KMimeTypeTrader::self()->query( first, "Application", constraint );
-        }
-
-        //// Ok, we have everything, now insert
-
-        m_mapPopup.clear();
-        // "Open With..." for folders is really not very useful, especially for remote folders.
-        // (media:/something, or trash:/, or ftp://...)
-        if ( !isDirectory || isLocal ) {
-            if ( !q->actions().isEmpty() )
-                q->addSeparator();
-
-            if ( !offers.isEmpty() ) {
-                // First block, app and preview offers
-                id = 1;
-
-                QMenu* menu = q;
-
-                if ( offers.count() > 1 ) { // submenu 'open with'
-                    menu = new QMenu(i18n("&Open With"), q);
-                    menu->menuAction()->setObjectName("openWith_submenu"); // for the unittest
-                    q->addMenu(menu);
-                }
-                kDebug() << offers.count() << "offers" << q << menu;
-
-                KService::List::ConstIterator it = offers.begin();
-                for( ; it != offers.end(); it++ ) {
-                    KService::Ptr service = (*it);
-
-                    // Skip OnlyShowIn=Foo and NotShowIn=KDE entries,
-                    // but still offer NoDisplay=true entries, that's the
-                    // whole point of such desktop files. This is why we don't
-                    // use service->noDisplay() here.
-                    const QString onlyShowIn = service->property("OnlyShowIn", QVariant::String).toString();
-                    if ( !onlyShowIn.isEmpty() ) {
-                        const QStringList aList = onlyShowIn.split(';', QString::SkipEmptyParts);
-                        if (!aList.contains("KDE"))
-                            continue;
-                    }
-                    const QString notShowIn = service->property("NotShowIn", QVariant::String).toString();
-                    if ( !notShowIn.isEmpty() ) {
-                        const QStringList aList = notShowIn.split(';', QString::SkipEmptyParts);
-                        if (aList.contains("KDE"))
-                            continue;
-                    }
-
-                    QString actionName( service->name().replace( '&', "&&" ) );
-                    if ( menu == q ) // no submenu -> prefix single offer
-                        actionName = i18n( "Open with %1", actionName );
-
-                    act = m_ownActions.addAction("openwith");
-                    act->setIcon( KIcon( service->icon() ) );
-                    act->setText( actionName );
-                    m_runServiceActionGroup.addAction(act);
-                    menu->addAction(act);
-
-                    m_mapPopup.insert(act, *it);
-                }
-
-                QString openWithActionName;
-                if ( menu != q ) { // submenu
-                    menu->addSeparator();
-                    openWithActionName = i18n( "&Other..." );
-                } else {
-                    openWithActionName = i18n( "&Open With..." );
-                }
-                QAction *openWithAct = m_ownActions.addAction( "openwith_browse" );
-                openWithAct->setText( openWithActionName );
-                QObject::connect(openWithAct, SIGNAL(triggered()), q, SLOT(slotPopupOpenWith()));
-                menu->addAction(openWithAct);
-            }
-            else // no app offers -> Open With...
-            {
-                act = m_ownActions.addAction( "openwith_browse" );
-                act->setText( i18n( "&Open With..." ) );
-                QObject::connect(act, SIGNAL(triggered()), q, SLOT(slotPopupOpenWith()));
-                q->addAction(act);
-            }
-
-        }
         QList<QAction *> previewActions = m_actionGroups.value("preview");
         if (!previewActions.isEmpty()) {
             if (previewActions.count() == 1) {
@@ -587,7 +475,6 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
     }
 
     // Second block, builtin + user
-    m_menuActions.setItems(m_lstItems);
     m_menuActions.addActionsTo(q);
 
     q->addSeparator();
@@ -671,11 +558,6 @@ void KonqPopupMenuPrivate::slotPopupRestoreTrashedItems()
   KonqOperations::restoreTrashedItems( m_lstPopupURLs, m_parentWidget );
 }
 
-void KonqPopupMenuPrivate::slotPopupOpenWith()
-{
-  KRun::displayOpenWithDialog( m_lstPopupURLs, m_parentWidget );
-}
-
 void KonqPopupMenuPrivate::slotPopupAddToBookmark()
 {
   KBookmarkGroup root;
@@ -692,15 +574,6 @@ void KonqPopupMenuPrivate::slotPopupAddToBookmark()
     for ( ; it != m_lstPopupURLs.end(); it++ )
       root.addBookmark( (*it).prettyUrl(), (*it) );
     m_bookmarkManager->emitChanged( root );
-  }
-}
-
-void KonqPopupMenuPrivate::slotRunService(QAction* act)
-{
-  // Is it a usual service (application)
-  QMap<QAction*,KService::Ptr>::Iterator it = m_mapPopup.find(act);
-  if (it != m_mapPopup.end()) {
-    KRun::run(**it, m_lstPopupURLs, m_parentWidget);
   }
 }
 
