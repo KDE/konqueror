@@ -24,7 +24,7 @@
 #include <kconfig.h>
 
 class QSpinBox;
-class QFontComboBox;
+class KFontComboBox;
 class QComboBox;
 
 class KAppearanceOptions : public KCModule
@@ -61,7 +61,7 @@ private:
   KIntNumInput* m_minSize;
   KIntNumInput* m_MedSize;
   KIntNumInput* m_pageDPI;
-  QFontComboBox* m_pFonts[6];
+  KFontComboBox* m_pFonts[6];
   QComboBox* m_pEncoding;
   QSpinBox *m_pFontSizeAdjust;
 
