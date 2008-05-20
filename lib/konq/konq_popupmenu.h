@@ -1,5 +1,5 @@
 /* This file is part of the KDE project
-   Copyright (C) 1998, 1999 David Faure <faure@kde.org>
+   Copyright (C) 1998-2008 David Faure <faure@kde.org>
    Copyright (C) 2001 Holger Freyther <freyther@yahoo.com>
 
    This library is free software; you can redistribute it and/or
@@ -35,7 +35,6 @@
 #include <libkonq_export.h>
 
 class KNewMenu;
-//class KonqPopupMenuPlugin;
 class KBookmarkManager;
 class KonqPopupMenuPrivate;
 
@@ -53,7 +52,7 @@ class LIBKONQ_EXPORT KonqPopupMenu : public QMenu
 public:
 
   /**
-   * Flags set by the calling application (konqueror/kdesktop), unlike
+   * Flags set by the calling application (e.g. konqueror), unlike
    * KParts::BrowserExtension::PopupFlags, which are set by the calling part
    */
   typedef uint Flags;
@@ -121,13 +120,6 @@ public:
   };
 #endif
 
-  KActionCollection *actionCollection() const;
-  QString mimeType( ) const;
-  KUrl url( ) const;
-  KFileItemList fileItemList() const;
-  KUrl::List popupURLList( ) const;
-    //ProtocolInfo protocolInfo() const;
-
 private:
   Q_PRIVATE_SLOT(d, void slotPopupNewDir())
   Q_PRIVATE_SLOT(d, void slotPopupNewView())
@@ -139,8 +131,6 @@ private:
   Q_PRIVATE_SLOT(d, void slotOpenShareFileDialog())
 
 private:
-  void init (QWidget * parentWidget, Flags kpf, KParts::BrowserExtension::PopupFlags itemFlags);
-
   KonqPopupMenuPrivate *d;
 };
 
