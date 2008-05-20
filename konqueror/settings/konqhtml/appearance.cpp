@@ -2,7 +2,6 @@
 #include <QtGui/QLabel>
 #include <QtGui/QLayout>
 #include <QtGui/QLineEdit>
-#include <QtGui/QFontComboBox>
 #include <QtDBus/QDBusMessage>
 #include <QtDBus/QDBusConnection>
 #include <QtGui/QGroupBox>
@@ -19,6 +18,7 @@
 #include <kglobalsettings.h>
 #include <KPluginFactory>
 #include <KPluginLoader>
+#include <KFontComboBox>
 
 #if defined Q_WS_X11 && !defined K_WS_QTONLY
 #include <X11/Xlib.h>
@@ -78,7 +78,7 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList&)
   QLabel* label = new QLabel( i18n("S&tandard font:"), this );
   lay->addWidget( label , ++r, E);
 
-  m_pFonts[0] = new QFontComboBox( this );
+  m_pFonts[0] = new KFontComboBox( this );
 
   label->setBuddy( m_pFonts[0] );
   lay->addWidget(m_pFonts[0], r, M, 1, W- M+1);
@@ -93,7 +93,7 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList&)
   label = new QLabel( i18n( "&Fixed font:"), this );
   lay->addWidget( label, ++r, E );
 
-  m_pFonts[1] = new QFontComboBox( this );
+  m_pFonts[1] = new KFontComboBox( this );
 
   label->setBuddy( m_pFonts[1] );
   lay->addWidget(m_pFonts[1], r, M, 1, W- M+1);
@@ -108,7 +108,7 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList&)
     label = new QLabel( i18n( "S&erif font:" ), this );
   lay->addWidget( label, ++r, E );
 
-  m_pFonts[2] = new QFontComboBox( this );
+  m_pFonts[2] = new KFontComboBox( this );
 
   label->setBuddy( m_pFonts[2] );
   lay->addWidget( m_pFonts[2], r, M, 1, W - M+1);
@@ -123,7 +123,7 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList&)
   label = new QLabel( i18n( "Sa&ns serif font:" ), this );
   lay->addWidget( label, ++r, E );
 
-  m_pFonts[3] = new QFontComboBox( this );
+  m_pFonts[3] = new KFontComboBox( this );
 
   label->setBuddy( m_pFonts[3] );
   lay->addWidget( m_pFonts[3], r, M, 1, W - M+1);
@@ -138,7 +138,7 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList&)
   label = new QLabel( i18n( "C&ursive font:" ), this );
   lay->addWidget( label, ++r, E );
 
-  m_pFonts[4] = new QFontComboBox( this );
+  m_pFonts[4] = new KFontComboBox( this );
 
   label->setBuddy( m_pFonts[4] );
   lay->addWidget( m_pFonts[4], r, M, 1, W - M+1);
@@ -153,7 +153,7 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList&)
   label = new QLabel( i18n( "Fantas&y font:" ), this );
   lay->addWidget( label, ++r, E );
 
-  m_pFonts[5] = new QFontComboBox( this );
+  m_pFonts[5] = new KFontComboBox( this );
 
   label->setBuddy( m_pFonts[5] );
   lay->addWidget( m_pFonts[5], r, M, 1, W-M+1 );
@@ -208,9 +208,6 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList&)
 	   SLOT( changed() ) );
 
   ++r; lay->setRowStretch(r, 8);
-
-  for(int i = 0; i < 6; ++i)
-      m_pFonts[i]->setFontFilters( QFontComboBox::AllFonts );
 
   load();
 }
