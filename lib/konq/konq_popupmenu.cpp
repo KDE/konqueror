@@ -1,5 +1,5 @@
 /* This file is part of the KDE project
-   Copyright (C) 1998-2006 David Faure <faure@kde.org>
+   Copyright (C) 1998-2008 David Faure <faure@kde.org>
    Copyright (C) 2001 Holger Freyther <freyther@yahoo.com>
 
    This library is free software; you can redistribute it and/or
@@ -44,9 +44,7 @@
 #include <kauthorized.h>
 #include <kglobal.h>
 
-#include <QDir>
-#include <QApplication>
-#include <QPixmap>
+#include <QFileInfo>
 
 /*
  Test cases:
@@ -84,7 +82,7 @@ public:
     void addNamedAction(const QString& name);
     void addGroup(const QString& name);
     void addPlugins();
-    void setup(KonqPopupMenu::Flags kpf);
+    void init(QWidget * parentWidget, KonqPopupMenu::Flags kpf, KParts::BrowserExtension::PopupFlags itemFlags);
 
     void slotPopupNewDir();
     void slotPopupNewView();
@@ -106,9 +104,6 @@ public:
     KUrl::List m_lstPopupURLs;
     KonqMenuActions m_menuActions;
     KonqCopyToMenu m_copyToMenu;
-    bool m_bHandleEditOperations;
-    QString m_attrName;
-//    KonqPopupMenu::ProtocolInfo m_info;
     KBookmarkManager* m_bookmarkManager;
     KActionCollection &m_actions;
     KActionCollection m_ownActions; // TODO connect to statusbar for help on actions
@@ -162,7 +157,7 @@ KonqPopupMenu::KonqPopupMenu(const KFileItemList &items,
                              QWidget * parentWidget,
                              KBookmarkManager *mgr,
                              const KParts::BrowserExtension::ActionGroupMap& actionGroups)
-  : QMenu( parentWidget ),
+  : QMenu(parentWidget),
     d(new KonqPopupMenuPrivate(this, actions))
 {
     d->m_actionGroups = actionGroups;
@@ -170,16 +165,7 @@ KonqPopupMenu::KonqPopupMenu(const KFileItemList &items,
     d->m_sViewURL = viewURL;
     d->m_lstItems = items;
     d->m_bookmarkManager = mgr;
-    init(parentWidget, kpf, flags);
-}
-
-void KonqPopupMenu::init (QWidget * parentWidget, Flags kpf, KParts::BrowserExtension::PopupFlags flags)
-{
-    d->m_ownActions.setObjectName("KonqPopupMenu::m_ownActions");
-    d->m_parentWidget = parentWidget;
-    d->m_itemFlags = flags;
-    setFont(KGlobalSettings::menuFont());
-    d->setup(kpf);
+    d->init(parentWidget, kpf, flags);
 }
 
 void KonqPopupMenuPrivate::addNamedAction(const QString& name)
@@ -189,8 +175,13 @@ void KonqPopupMenuPrivate::addNamedAction(const QString& name)
         q->addAction(act);
 }
 
-void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
+void KonqPopupMenuPrivate::init(QWidget* parentWidget, KonqPopupMenu::Flags kpf, KParts::BrowserExtension::PopupFlags flags)
 {
+    m_ownActions.setObjectName("KonqPopupMenu::m_ownActions");
+    m_parentWidget = parentWidget;
+    m_itemFlags = flags;
+    q->setFont(KGlobalSettings::menuFont());
+
     Q_ASSERT( m_lstItems.count() >= 1 );
 
     const bool bIsLink  = (m_itemFlags & KParts::BrowserExtension::IsLink);
@@ -205,8 +196,6 @@ void KonqPopupMenuPrivate::setup(KonqPopupMenu::Flags kpf)
                        || m_lstItems.first().url().protocol()=="system";
     bool isTrashLink     = false;
     m_lstPopupURLs.clear();
-
-    m_attrName = QLatin1String( "name" );
 
     QFileInfo parentDirInfo;
 
@@ -587,18 +576,6 @@ void KonqPopupMenuPrivate::slotPopupProperties()
     KPropertiesDialog::showDialog( m_lstItems, m_parentWidget );
 }
 
-QString KonqPopupMenu::mimeType() const
-{
-    return d->m_sMimeType;
-}
-
-#if 0
-KonqPopupMenu::ProtocolInfo KonqPopupMenu::protocolInfo() const
-{
-    return d->m_info;
-}
-#endif
-
 void KonqPopupMenuPrivate::addGroup(const QString& name)
 {
     QList<QAction *> actions = m_actionGroups.value(name);
@@ -638,35 +615,5 @@ void KonqPopupMenuPrivate::addPlugins()
     }
 #endif
 }
-
-KUrl KonqPopupMenu::url() const // ### should be viewURL()
-{
-  return d->m_sViewURL;
-}
-
-KFileItemList KonqPopupMenu::fileItemList() const
-{
-  return d->m_lstItems;
-}
-
-KUrl::List KonqPopupMenu::popupURLList() const
-{
-  return d->m_lstPopupURLs;
-}
-
-#if 0
-/**
-        Plugin
-*/
-
-KonqPopupMenuPlugin::KonqPopupMenuPlugin( KonqPopupMenu *parent )
-    : QObject( parent )
-{
-}
-
-KonqPopupMenuPlugin::~KonqPopupMenuPlugin()
-{
-}
-#endif
 
 #include "konq_popupmenu.moc"
