@@ -242,7 +242,7 @@ void KonqNewSessionDlg::slotAddSession()
     if(dir.exists())
     {
         if(KMessageBox::questionYesNo(this,
-            i18n("A session with the name '%1' already exists, ¿do you want to overwrite it?", d->m_pSessionName->text()),
+            i18n("A session with the name '%1' already exists, do you want to overwrite it?", d->m_pSessionName->text()),
             i18n("Session exists. Overwrite?")) == KMessageBox::Yes)
         {
             KIO::NetAccess::del(KUrl(dirpath), d->m_pParent);
