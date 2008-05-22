@@ -196,8 +196,10 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
     QFileInfo parentDirInfo;
 
     KUrl url;
-    KFileItemList::const_iterator it = m_popupMenuInfo.items().begin();
-    const KFileItemList::const_iterator kend = m_popupMenuInfo.items().end();
+
+    KFileItemList lstItems = m_popupMenuInfo.items();
+    KFileItemList::const_iterator it = lstItems.begin();
+    const KFileItemList::const_iterator kend = lstItems.end();
     for ( ; it != kend; ++it )
     {
         url = (*it).url();
