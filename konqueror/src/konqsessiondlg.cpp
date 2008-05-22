@@ -133,7 +133,7 @@ void KonqSessionDlg::slotSave()
     
     QFileInfo fileInfo(
         d->m_pModel->itemForIndex(d->m_pListView->currentIndex()).url().path());
-    QString dirpath = "sessions/" + fileInfo.baseName();
+    QString dirpath = "sessions/" + fileInfo.fileName();
     
     kDebug(1202) << "Saving as " << dirpath;
     

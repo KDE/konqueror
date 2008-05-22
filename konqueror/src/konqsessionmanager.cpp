@@ -211,10 +211,10 @@ bool KonqSessionManager::hasAutosavedDirtySessions()
     
     while (it.hasNext())
     {
-        QFile file(it.next());
+        QFileInfo fileInfo(it.next());
         
-        if(!idbus->isServiceRegistered(file.fileName()))
-            m_DirtyAutosavedSessions.append(file.fileName());
+        if(!idbus->isServiceRegistered(fileInfo.fileName()))
+            m_DirtyAutosavedSessions.append(fileInfo.filePath());
     }
     
     return !m_DirtyAutosavedSessions.empty();
@@ -224,6 +224,8 @@ void KonqSessionManager::askUserToRestoreAutosavedDirtySessions()
 {
     if(m_DirtyAutosavedSessions.empty())
         return;
+    
+    kDebug() << m_DirtyAutosavedSessions;
     
     switch(KMessageBox::questionYesNoCancel(0,
         i18n("Konqueror didn't close correctly. Would you like to restore session?"),
