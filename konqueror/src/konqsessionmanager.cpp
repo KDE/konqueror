@@ -68,7 +68,7 @@ KonqSessionManager::KonqSessionManager()
     dbus.connect(QString(), dbusPath, dbusInterface, "saveCurrentSession", this, SLOT(slotSaveCurrentSession(QString)));
     
     // Create the config file for autosaving current session
-    QString filename = "autosave/" + dbus.baseService();
+    QString filename = "autosave/" + encodeFilename(dbus.baseService());
     QString file = KStandardDirs::locateLocal("appdata", filename);
     QFile::remove(file);
     
@@ -119,7 +119,9 @@ void KonqSessionManager::saveCurrentSessions(const QString & path)
 
 void KonqSessionManager::slotSaveCurrentSession(const QString & path)
 {
-    QString filename = path + "/" + QDBusConnection::sessionBus().baseService();
+    kDebug();
+    QString filename = path + "/" + 
+        encodeFilename(QDBusConnection::sessionBus().baseService());
     kDebug() << filename;
     KConfig sessionConfig(filename, KConfig::SimpleConfig, "appdata");
     saveCurrentSession(&sessionConfig);
@@ -213,7 +215,7 @@ bool KonqSessionManager::hasAutosavedDirtySessions()
     {
         QFileInfo fileInfo(it.next());
         
-        if(!idbus->isServiceRegistered(fileInfo.fileName()))
+        if(!idbus->isServiceRegistered(decodeFilename(fileInfo.fileName())))
             m_DirtyAutosavedSessions.append(fileInfo.filePath());
     }
     
@@ -245,4 +247,15 @@ void KonqSessionManager::askUserToRestoreAutosavedDirtySessions()
         default:
             break;
     }
+}
+
+QString encodeFilename(QString filename)
+{
+    kDebug;
+    return filename.replace(':', "_");
+}
+
+QString decodeFilename(QString filename)
+{
+    return filename.replace('_', ":");
 }
