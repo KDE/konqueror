@@ -233,7 +233,7 @@ void KonqSessionManager::askUserToRestoreAutosavedDirtySessions()
         KGuiItem(i18n("Restore session"), "window-new"),
         KGuiItem(i18n("Do not restore"), "dialog-close"),
         KGuiItem(i18n("Ask me later"), "chronometer"),
-        i18n("Don't ask me again")
+        "Restore session when konqueror didn't close correctly"
     ))
     {
         case KMessageBox::Yes:
