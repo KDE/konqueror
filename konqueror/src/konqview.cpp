@@ -1378,7 +1378,7 @@ void KonqView::saveConfig( KConfigGroup& config, const QString &prefix, const Ko
     if (options & KonqFrameBase::saveURLs) {
         config.writePathEntry( QString::fromLatin1( "URL" ).prepend( prefix ), url().url() );
     } else if(options & KonqFrameBase::saveHistoryItems) {
-        if (m_pPart)
+        if (m_pPart && !m_bLockHistory)
             updateHistoryEntry(true);
         QList<HistoryEntry*>::Iterator it = m_lstHistory.begin();
         for ( uint i = 0; it != m_lstHistory.end(); ++it, ++i ) {
