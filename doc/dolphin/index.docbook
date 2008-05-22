@@ -168,7 +168,7 @@ The default &dolphin; interface consists of a (1) menu bar, (2) toolbar, (3) loc
 </para>
 
 <para>
-The location bar displays the path to the current folder. The location bar has two versions. There is the typical line input version which shows the path to the current folder via a string of text &eg; <filename class="directory">/home/peter/Documents</filename>.  The second version of the location bar uses the 'bread crumb' display.  The bread crumb display makes each folder a link which can be used to immediately go to the entry. The <filename class="directory">/home/peter/Documents</filename> entry in the bread crumb view would become 'Home >  peter >  Documents' with Home, peter, and Documents being clickable links which are able go to there respective locations. This makes navigation to folderss above the current folder easier and more intuitive. It also removes the need for the <guiicon>Up</guiicon> icon to be present in the toolbar. 
+The location bar displays the path to the current folder. The location bar has two versions. There is the typical line input version which shows the path to the current folder via a string of text &eg; <filename class="directory">/home/peter/Documents/</filename>.  The second version of the location bar uses the 'bread crumb' display.  The bread crumb display makes each folder a link which can be used to, immediately go to the entry. The <filename class="directory">/home/peter/Documents</filename> entry in the bread crumb view would become 'Home >  peter >  Documents' with Home, peter, and Documents being clickable links which are able go to there respective locations. This makes navigation to folders above the current folder easier and more intuitive. It also removes the need for the <guiicon>Up</guiicon> icon to be present in the toolbar. 
 </para>
 <!-- TODO
 (show picture here distinguishing the two views for clarification) -->
@@ -178,7 +178,7 @@ The workspace shows the contents of the current folder. The workspace can also b
 </para>
 
 <para>
-The status bar shows a limited amount of data relating to the file hovered over and the current folder.  When a file is hovered over, the status bar shows the file name, the file size and the file type &eg; JPEG.  When no file has been highlighted or hovered over, the status bar shows the amount of files and folders in the current folder.  At all times the status bar shows the amount of storage space that has currently been used on the current mount point, as well as the maximum space available on the mount pount &eg; <filename class="directory">/home/</filename>.
+The status bar shows a limited amount of data relating to the file hovered over and the current folder.  When a file is hovered over, the status bar shows the file name, the filesize and the file type &eg; JPEG.  When no file has been highlighted or hovered over, the status bar shows the amount of files and folders in the current folder.  At all times the status bar shows the amount of storage space that has currently been used on the current mount point, as well as the maximum space available on the mount point &eg; <filename class="directory">/home/</filename>.
 </para>
 </sect2>
 
@@ -247,7 +247,7 @@ If this option is enabled then the workspace will split apart. Two separate work
 </para>
 
 <para>
-&dolphin; is capable of remembering the workspace view on a per-folder basis.  For example, if while viewing <filename class="directory">/home/peter/Pictures/</filename> the user choses to use the previews view, then the next time the user enters that folder, the view will be changed to the previews view. This is especially useful for folders containing mainly images. The feature only works for local folders which the user has read/write permissions to. &dolphin; will also remember the viewing mode it was in when last running &eg; single workspace or split workspace.
+&dolphin; is capable of remembering the workspace view on a per-folder basis.  For example, if while viewing <filename class="directory">/home/peter/Pictures/</filename> the user choses to use the preview view, then the next time the user enters that folder, the view will be changed to the preview view. This is especially useful for folders containing mainly images. The feature only works for local folders which the user has read/write permissions to. &dolphin; will also remember the viewing mode it was in when last running &eg; single workspace or split workspace.
 </para>
 
 <para>
@@ -277,7 +277,7 @@ To enable the showing of hidden files and sub-folders you can select <menuchoice
 </para>
 
 <para>
-&dolphin; is able to sort the contents of a folder in a number of ways.  These are; By Name, By Date, By Size and Descending.  These only apply to the current folder the user is currently in and do not affect other folders.  As with the Views Modes the Sorting order is saved for this folder.
+&dolphin; is able to sort the contents of a folder in a number of ways.  These are; By Name, By Date, By Size and Descending order.  These only apply to the current folder the user is currently in and do not affect other folders.  As with the Views Modes the Sorting order is saved for this folder.
 </para>
 
 <para>
@@ -363,7 +363,7 @@ The tool bar is also used for navigating the file system.  The tool bar contains
 </para>
 
 <para>
-Other buttons can be added to the tool bar to further aid navigation or to provide short cuts for functions within &dolphin; &eg; deleting a file.
+Other buttons can be added to the toolbar to further aid navigation or to provide short cuts for functions within &dolphin; &eg; deleting a file.
 </para>
 
 <para>
@@ -429,7 +429,7 @@ If the breadcrumb view is enabled then the user is unable to enter the path to t
 </para>
 
 <para>
-In order to aid the navigation of the file system, &dolphin; can use bookmarks.  Bookmarks can be set for any location on the file system including virtual folders that do not physically exist, but &kde; creates for ease of use &eg; trash:/.  This in turn means that if the user chooses a bookmark from the list the workspace will move into that folder or virtual location.
+In order to aid the navigation of the file system, &dolphin; can use bookmarks.  Bookmarks can be set for any location on the filesystem including virtual folders that do not physically exist, but &kde; creates for ease of use &eg; trash:/.  This in turn means that if the user chooses a bookmark from the list the workspace will move into that folder or virtual location.
 </para>
 
 <para>
@@ -1322,6 +1322,3 @@ End:
 
 vim:tabstop=2:shiftwidth=2:expandtab 
 -->
-
-
-
