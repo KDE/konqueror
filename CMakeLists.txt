@@ -37,6 +37,4 @@ if ( Q_WS_X11 )
   add_subdirectory( konsole )
   add_subdirectory( kdepasswd )
 endif ( Q_WS_X11 )
-
-add_subdirectory( doc )
-
+macro_optional_add_subdirectory( doc )
