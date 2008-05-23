@@ -22,28 +22,28 @@
          <item>
           <widget class="QPushButton" name="m_pNewButton" >
            <property name="text" >
-            <string>New</string>
+            <string comment="@action:button New session">New</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="m_pSaveCurrentButton" >
            <property name="text" >
-            <string>Save current</string>
+            <string comment="@action:button Save current session">Save current</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="m_pRenameButton" >
            <property name="text" >
-            <string>Rename</string>
+            <string comment="@action:button Rename session">Rename</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="m_pDeleteButton" >
            <property name="text" >
-            <string>Delete</string>
+            <string comment="@action:button Delete session">Delete</string>
            </property>
           </widget>
          </item>
