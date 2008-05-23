@@ -108,14 +108,13 @@ revision history. (see installation appendix comment) -->
 
 <para>
 &dolphin; is a file manager for &kde; which aims to improve usability at the user interface level. 
-&dolphin; is not intended to be a competitor to &konqueror;, &kde;'s default file manager. &dolphin;
+&dolphin; is not intended to be a competitor to &konqueror;. &dolphin;
 focuses only on being a file manager whereas &konqueror; is a universal viewer of many 
 file types. This development approach allows for concentrating on optimizing the user interface 
 for the specific task of file management.
 </para>
 
 <para>
-&dolphin; is currently in beta stage, but already provides most features necessary for daily usage. 
 Please report any problems or feature requests to the &dolphin; author via the bug report dialog.
 This is accessible from the 
 <menuchoice><guimenu>Help</guimenu><guimenuitem>Report Bug...</guimenuitem></menuchoice> 
@@ -150,9 +149,10 @@ the &dolphin; main window. It's not a bug, it's a feature!
 <title>&dolphin; User Interface</title>
 
 <para>
-The default &dolphin; interface consists of a (1) menu bar, (2) toolbar, (3) location bar, (4) workspace and (5) status bar.
+The default &dolphin; interface consists of a (1) menu bar, (2) toolbar, (3) location bar, (4) workspace, (6) Places Panel, (7) Information Panel and (8) status bar.
 </para>
 
+<!--TODO this screenshot needs labelling to match above-->
 <para>
 <screenshot>
 <screeninfo>Here's a screenshot of &dolphin;</screeninfo>
@@ -168,24 +168,31 @@ The default &dolphin; interface consists of a (1) menu bar, (2) toolbar, (3) loc
 </para>
 
 <para>
-The location bar displays the path to the current folder. The location bar has two versions. There is the typical line input version which shows the path to the current folder via a string of text &eg; <filename class="directory">/home/peter/Documents/</filename>.  The second version of the location bar uses the 'bread crumb' display.  The bread crumb display makes each folder a link which can be used to, immediately go to the entry. The <filename class="directory">/home/peter/Documents</filename> entry in the bread crumb view would become 'Home >  peter >  Documents' with Home, peter, and Documents being clickable links which are able go to there respective locations. This makes navigation to folders above the current folder easier and more intuitive. It also removes the need for the <guiicon>Up</guiicon> icon to be present in the toolbar. 
+The location bar displays the path to the current directory. The location bar has two versions. By default location is chosen through the 'bread crumb' display.  The bread crumb display makes each folder a link which can be used to immediately go to the entry. The <filename class="directory">/home/peter/Documents</filename> entry in the bread crumb view would become 'Home >  peter >  Documents' with Home, peter, and Documents being clickable links which are able go to there respective locations. This makes navigation to directories above the current directory easier and more intuitive. There is also the classic "location view" which is a text box in which you can type the full path of the folder you wish to view.
 </para>
+
+<para>To switch from location view to breadcrumbs, simply double click in the breadcrumb area. To change back, click the newly appeared yellow arrow to the right of the location bar.</para>
+<para>To change the default &dolphin; view, please see the settings section</para>
+<!--TODO make that a link once written-->
+
+
 <!-- TODO
 (show picture here distinguishing the two views for clarification) -->
 
 <para>
-The workspace shows the contents of the current folder. The workspace can also be configured to show the contents of a folder with multiple views. More information about the workspace is provided in the following section.
+The workspace shows the contents of the current directory. The workspace can also be set to "Split" mode and show two directories simultaneously. 
 </para>
 
 <para>
-The status bar shows a limited amount of data relating to the file hovered over and the current folder.  When a file is hovered over, the status bar shows the file name, the filesize and the file type &eg; JPEG.  When no file has been highlighted or hovered over, the status bar shows the amount of files and folders in the current folder.  At all times the status bar shows the amount of storage space that has currently been used on the current mount point, as well as the maximum space available on the mount point &eg; <filename class="directory">/home/</filename>.
+The status bar shows a limited amount of data relating to the file hovered over and the current directory.  When a file is hovered over, the status bar shows the file name, the file size and the file type of the document &eg; JPEG.  When no file has been highlighted or hovered over, the status bar shows the number of files and folders in the current directory.  The status bar also shows the free space of the relevant disk.
 </para>
 </sect2>
 
 <sect2 id="dolphin-workspace">
 <title>&dolphin; Workspace</title>
 
-<para>The &dolphin; workspace can display the contents of a folder in a variety of views. Currently there are icons, details and previews modes.</para>
+<para>The &dolphin; workspace can display the contents of a directory in a variety of views. There are three viewing modes Icons, Details, and Columns. Each of these can have Preview enabled. This changes the icons into showing a preview of the file, rather than an simply icon.</para>
+
 
 <para>
 The <guibutton>Icons</guibutton> view shows the contents of the folder via the file icon type &eg; an <acronym>MP3</acronym> file will be represented with the icon for an <acronym>MP3</acronym>  file.  Sub-folders are represented in the form of a folder icon. The folder icon is defined by the &kde; icon theme currently in use, however individual folders can have their icon changed manually if the user wishes.  This can be done via the properties dialogue. 
@@ -193,13 +200,13 @@ The <guibutton>Icons</guibutton> view shows the contents of the folder via the f
 </para>
 
 <para>
-The <guibutton>Details</guibutton> view lists the contents of a folder in alphabetical order and by type. Sub-folders are at the top of the list in alphabetical order, while underneath, the files within the folder are in alphabetical order.
+The <guibutton>Details</guibutton> view lists the contents of a folder whilst also displaying additional properties about the file. The default &dolphin; configuration only displays the size of the file and the date it was last modified. The choice of additional information shown can be changed by right clicking on the column header and selecting the information you wish to view or in <menuchoice><guimenu>Settings<guisubmenu>Configure Dolphin</guisubmenu></guimenu></menuchoice>
 </para>
 
 <para>
-Details are displayed to the right of the files within the folder. The default &dolphin; configuration only displays the size of the file and the date it was last modified. More details can be added via the Configure &dolphin; dialog however.
-<!-- TODO (link to the details part configuring dolphin section) -->
+The <guibutton>Columns</guibutton> view allows multiple levels of the folder structure to be viewed at once. Each time a folder is clicked a new pane appears to the right of the current listing showing the contents of that folder.
 </para>
+
 
 <para>
 The <guibutton>Preview</guibutton> view is similar to the icons view. The difference is that wherever possible previews of the files are shown. This function works for a number of image types including; JPG, PNG, XCF, <acronym>SVG</acronym> and numerous others. The previews view is also capable of showing the first 14 lines from text documents. &dolphin; is also capable of displaying a preview of HTML and <acronym>PDF</acronym> files in the previews view. It is also possible to modify the size of the previews via the Configure &dolphin; dialogue.
@@ -209,6 +216,8 @@ The <guibutton>Preview</guibutton> view is similar to the icons view. The differ
 <para>
 Changing the view of the folder a user is working in is as simple as clicking the icon of the view they wish to use. This will cause the workspace view to change accordingly.
 </para>
+
+
 
 <para>
 <screenshot>
@@ -255,7 +264,7 @@ If this option is enabled then the workspace will split apart. Two separate work
 </para>
 
 <para>
-Hidden files and sub-folders can be distinguished from non-hidden file and sub-folders by their colouring.  Hidden files/sub-folders are fainter then non-hidden files/sub-folders.
+Hidden files and sub-folders can be distinguished from non-hidden file and sub-folders by their colouring.  Hidden files/sub-folders are fainter than non-hidden files/sub-folders.
 </para>
 
 <para>
@@ -285,50 +294,45 @@ To change the way the folder is sorted, via the menu <menuchoice><guimenu>View</
 </para>
 </sect2>
 
-<sect2 id="dolphin-sidebar">
-<title>&dolphin; Sidebar</title>
-
+<sect2 id="dolphin-panels">
+<title>&dolphin; Panels</title>
 <para>
-The &dolphin; sidebar has two modes.  The first mode is the Bookmarks mode.  The second mode is the Information mode.  The sidebar can be enabed and disabled via the the menu bar; Views > Sidebar.
+&dolphin; allows a number of Panels to be placed in the workspace. These can be enabled in <menuchoice><guimenu>View</guimenu><guisubmenu>Panels</guisubmenu></menuchoice>. Those chosen can then be dragged around the &dolphin; window by clicking and dragging the panel title. The panels available are described below.</para>
+
+<sect3>
+<title>Places</title>
+<para>
+The Places panel is found at the left of the window by default, The Place panel shows any locations you have bookmarked. It also shows any disk or media attached to the computer. This list corresponds with the list of places in the breadcrumbs menu.
 </para>
 
-<para>
-The sidebar mode can be changed via the drop down menu at the top.  Selecting Bookmarks will enable the bookmarks mode, while selecting Information will enable the Information mode.
-</para>
+</sect3>
 
+<sect3>
+<title>Information</title>
 <para>
-The Bookmarks sidebar mode displays the filesystem bookmarks the user has stored.  The bookmarks sidebar mode also allows the user to add more bookamrks, this can be done via right clicking the sidebar.
+The Information panel shows extended information about the selected file(s), including size, type, and date of last modification. Information also features a large preview of the selected file.
 </para>
+</sect3>
 
+<sect3>
+<title>Folders</title>
 <para>
-<screenshot>
-<screeninfo>Here's a screenshot of &dolphin;</screeninfo>
-	<mediaobject>
-	  <imageobject>
-	    <imagedata fileref="bookmarksidebar.png" format="PNG"/>
-	  </imageobject>
-	  <textobject>
-	    <phrase>&dolphin; Showing The Sidebar With The Bookmarks Mode Enabled</phrase>
-	  </textobject>
-	</mediaobject>
-</screenshot>
+The folders panel shows a tree view structure of the file system. It only shows folders. By selecting a folder the main &dolphin; area changes to show the contents of the selected directory.
 </para>
+</sect3>
 
+<sect3>
+<title>Terminal</title>
 <para>
-The Information sidebar mode also allows the user access to their service menus for a given file type.  A service menu entry that is directly under the Actions > ... menu is diaplayed as a single button.  However if a service menu entry is in a submenu under the Actions > .... menu &eg; Actions > Amarok, then this is presented as a drop down menu containing the options.
-</para>
+This panel opens a terminal inside the Dolphin workspace. The terminal will open at the directory currently shown in the Dolphin view. Changing directory in the main Dolphin view will change the working directory of the terminal to match.
+Note: Changing directory in the terminal will not affect the Dolphin view. The terminal only works with local media.
+</para> 
 
-<screenshot>
-<screeninfo>Here's a screenshot of &dolphin;</screeninfo>
-	<mediaobject>
-	  <imageobject>
-	    <imagedata fileref="informationsidebar.png" format="PNG"/>
-	  </imageobject>
-	  <textobject>
-	    <phrase>&dolphin; Showing The Sidebar With The Information Mode Enabled</phrase>
-	  </textobject>
-	</mediaobject>
-</screenshot>
+
+<!--TODO pictures of all these panels-->
+</sect3>
+
+
 
 </sect2>
 </sect1>
@@ -341,7 +345,7 @@ The Information sidebar mode also allows the user access to their service menus 
 <title>&dolphin; Navigation</title>
 
 <para>
-The main feature of &dolphin; that allows navigation of the file system is the work space.  Clicking on a sub-folder within the current folder changes to this folder.  Clicking on files within the workspace will open the file in the default application that has been assigned to it.
+The main feature of &dolphin; that allows navigation of the file system is the work space.  Clicking on a sub-folder within the current folder changes to this folder.  Clicking on files within the workspace will open the file in the default application for that file type.
 </para>
 
 <para>
@@ -429,7 +433,7 @@ If the breadcrumb view is enabled then the user is unable to enter the path to t
 </para>
 
 <para>
-In order to aid the navigation of the file system, &dolphin; can use bookmarks.  Bookmarks can be set for any location on the filesystem including virtual folders that do not physically exist, but &kde; creates for ease of use &eg; trash:/.  This in turn means that if the user chooses a bookmark from the list the workspace will move into that folder or virtual location.
+In order to aid the navigation of the file system, &dolphin; can use Places.  Places can be set for any location on the filesystem including virtual folders such as "trash:/". Selecting a Place will display that folder or virtual folder in the workspace.
 </para>
 
 <para>
@@ -447,57 +451,11 @@ In order to aid the navigation of the file system, &dolphin; can use bookmarks. 
 </para>
 
 <para>
-In order to select a bookmark, the location bar must be set to the breadcrumb view.  Clicking the image of the home button (as set by the icon theme currently in use) will drop down a list of all the available bookmarks.  The &dolphin; sidebar also contains a bookmark list.  This can be accessed via switching the the sideba to bookmarks mode.  The user then clicks the desired bookmark to open that folder.  By default &dolphin; sets bookmarks for; the users home folder <filename class="directory">/home/username/</filename>, the Root partition and the system:/ area (location were the user is able to view the storage devices).  More bookmarks can be set via the Configure &dolphin; dialogue.
+In order to select a Place, the location bar must be set to the breadcrumb view.  Clicking the image of the home button (as set by the icon theme currently in use) will drop down a list of all the available bookmarks.  The &dolphin; Places Panel also contains your Places list.  This can be accessed via switching the the sideba to bookmarks mode.  The user then clicks the desired Place to open that folder. 
 </para>
 
 <para>
 
-</para>
-</sect1>
-
-<sect1 id="dolphin-storagemedia-navigation">
-<title>&dolphin; Storage Media Navigation</title>
-
-<para>
-&dolphin; is not restricted to navigating your local file system, it is also capable of navigating Removable Storage Media.  In addition to this, &dolphin; also has the ability to mount and un-mount storage media on the system.
-</para>
-
-<para>
-When in the &kde; folder for storage Media; system:/media/ the available Storage Media are shown.  Typically this is the hard drive(s)/partitions and Floppy Drive.  Each device is named according to their name or device type.  The root Partition/Drive is named / while the home partition is named /home, the Floppy Disk is named Floppy Drive.
-</para>
-
-<para>
-<screenshot>
-<screeninfo>Here's a screenshot of &dolphin;</screeninfo>
-	<mediaobject>
-	  <imageobject>
-	    <imagedata fileref="systemmediadirectory.png" format="PNG"/>
-	  </imageobject>
-	  <textobject>
-	    <phrase>&dolphin; Displaying The System:/Media Folder</phrase>
-	  </textobject>
-	</mediaobject>
-</screenshot>
-</para>
-
-<para>
-If the user has inserted Removable Storage media &eg; a Flash USB disk, then this will be shown.  This also applies to CDROM/DVDROM drives.  As with the Hard Disks these devices will also be named accordingly, either by there drive name, device type or in the case of CDROMS/DVDROMS by their disk name.
-</para>
-
-<para>
-Each device found in this location has the appropriate icon for their device type.  However this only applies if the hal daemon is running.
-</para>
-
-<para>
-&dolphin; can mount devices found in the System:/media/ folder via  a number of ways.  Firstly right clicking on the device and via the menu Actions>Mount.  The second way is by clicking on the device icon.
-</para>
-
-<para>
-To un-mount a device right click on the device and via the menu; Actions>Safely Remove.  This will then un-mount the device.
-</para>
-
-<para>
-To open a mounted device there are two methods.  Firstly clicking the mounted device will change into that folder.  The second method is by right clicking the device and via the menu Actions>Open Device.
 </para>
 </sect1>
 
@@ -560,12 +518,9 @@ The following are a number of tips to save time when using &dolphin;.
 <title>Quick Bookmarking</title>
 
 <para>
-To quickly create a bookmark of the folder currently being viewed, right click in the work space and via the menu select Bookmark this folder.  The Bookmarking dialogue will open, enter a name for the bookmark along with an icon to represent the bookmark.
+To quickly create a bookmark of the folder currently being viewed, right click in the work space and via the menu select "Add to Places".  The Bookmarking dialogue will open, enter a name for the bookmark along with an icon to represent the bookmark.
 </para>
 
-<para>
-Another method is to have the sidebar enabled in the bookmarks mode.  Right clicking the side bar and selecting 'Add Bookmark...' will open the dialogue to add bookmarks.
-</para>
 </sect2>
 
 <sect2 id="finding-file">
@@ -582,14 +537,6 @@ Another method is to have the sidebar enabled in the bookmarks mode.  Right clic
 
 <para>
 A quick way to mount Storage Media is to click on the device.  This will mount and open the device in &dolphin;.
-</para>
-</sect2>
-
-<sect2 id="open-terminal">
-<title>Open A Terminal</title>
-
-<para>
-&dolphin; can open a terminal already in the current folder.  This can be done by pressing the <keycap>F4</keycap> button.  For example if the user were in <filename class="directory">/home/Peter/Packages/</filename> and pressed <keycap>F4</keycap> a terminal will open already in the <filename class="directory">/home/Peter/Packages/</filename> folder or using <menuchoice> <guimenu>View</guimenu> <guisubmenu>Panels</guisubmenu> <guimenuitem>Terminal</guimenuitem> </menuchoice>.
 </para>
 </sect2>
 
@@ -819,7 +766,9 @@ or menu bars. -->
 <guimenu>Edit</guimenu>
 <guimenuitem>Invert Selection</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Inverts the currently selected files &eg; if you select ten files out of twenty, then the selected ten files will be swapped for the un-selected ten files. (If you have a better way of phrasing this please let me know as I am a little stuck here).</action></para></listitem>
+<listitem><para><action>
+Selects all unselected items and deselects all selected items in the current directory.
+</action></para></listitem>
 </varlistentry>
 </variablelist>
 </para>
@@ -868,7 +817,7 @@ or menu bars. -->
 <guimenu>View</guimenu>
 <guimenuitem>Sort...</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Changes the order in white files within a folder are sorted and wether they are descending; By Name, By Size, By Date | Descending.</action></para></listitem>
+<listitem><para><action>Changes whether items are sorted by Name, Size or Date. "Descending" reverses the sort order.</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -879,7 +828,7 @@ or menu bars. -->
 <guimenu>View</guimenu>
 <guimenuitem>Show Hidden Files</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Shows all the hidden files and sud-folders within the current folder.</action></para></listitem>
+<listitem><para><action>Shows all the hidden files and sub-folders within the current folder.</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -935,7 +884,7 @@ or menu bars. -->
 <guimenu>View</guimenu>
 <guimenuitem>Sidebar</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Enables and disables the sidebar.</action></para></listitem>
+<listitem><para><action>Enables and disables the Places Panel.</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -1179,7 +1128,7 @@ To make &dolphin; the default file manager for the virtual folders &kde; creates
 </question>
 <answer>
 <para>
-The easiest way to get involved with &dolphin; is to drop the developers an email.  If you email Peter Penz (Lead Developer/Project Leader), what you can do, how much time you can devote etc and he will let you know what you can do in the project. If you wish to contribute the documentation email Michael Austin (Documentation Leader).  He can then fill you in on the situation &eg; what needs to be added/finished, the procedure for submitting documentation.
+The easiest way to get involved with &dolphin; is to drop the developers an email.  If you email Peter Penz (Lead Developer/Project Leader), what you can do, how much time you can devote etc and he will let you know what you can do in the project. If you wish to contribute to the documentation email Michael Austin (Documentation Leader).  He can then fill you in on the situation &eg; what needs to be added/finished, the procedure for submitting documentation.
 </para>
 <para>
 The email addresses of Peter Penz and Michael Austin can be found on the main page of the documentation, or in the Credits section.
