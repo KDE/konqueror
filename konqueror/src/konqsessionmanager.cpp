@@ -113,23 +113,20 @@ void KonqSessionManager::autoSaveSession()
 
 void KonqSessionManager::saveCurrentSessions(const QString & path)
 {
-    kDebug();
     emit saveCurrentSession(path);
 }
 
 void KonqSessionManager::slotSaveCurrentSession(const QString & path)
 {
-    kDebug();
     QString filename = path + "/" + 
         encodeFilename(QDBusConnection::sessionBus().baseService());
-    kDebug() << filename;
+    
     KConfig sessionConfig(filename, KConfig::SimpleConfig, "appdata");
     saveCurrentSession(&sessionConfig);
 }
 
 void KonqSessionManager::saveCurrentSession(KConfig* sessionConfig)
 {
-    kDebug();
     QList<KonqMainWindow*> *mainWindows = KonqMainWindow::mainWindowList();
     unsigned int counter = 0;
     
@@ -163,7 +160,6 @@ void KonqSessionManager::restoreSessions(const QStringList &sessionFileNamesList
 
 void KonqSessionManager::restoreSessions(const QString &sessionsDir)
 {
-    kDebug() << sessionsDir;
     QDirIterator it(sessionsDir, QDir::Readable|QDir::Files);
     
     while (it.hasNext())
@@ -182,8 +178,6 @@ void KonqSessionManager::restoreSession(const QString &sessionFileName)
     
     KConfigGroup generalGroup(&config, "General");
     int size = generalGroup.readEntry("Number of Windows", 0);
-    
-    kDebug() << size;
     
     for(int i = 0; i < size; i++)
     {
@@ -227,8 +221,6 @@ void KonqSessionManager::askUserToRestoreAutosavedDirtySessions()
     if(m_DirtyAutosavedSessions.empty())
         return;
     
-    kDebug() << m_DirtyAutosavedSessions;
-    
     switch(KMessageBox::questionYesNoCancel(0,
         i18n("Konqueror didn't close correctly. Would you like to restore session?"),
         i18n("Restore session?"),
@@ -251,7 +243,6 @@ void KonqSessionManager::askUserToRestoreAutosavedDirtySessions()
 
 QString encodeFilename(QString filename)
 {
-    kDebug;
     return filename.replace(':', "_");
 }
 

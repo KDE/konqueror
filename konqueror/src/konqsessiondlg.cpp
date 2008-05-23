@@ -36,7 +36,6 @@
 #include <kfileitemdelegate.h>
 #include <kdirlister.h>
 #include <kdirmodel.h>
-#include <konq_operations.h>
 #include <kstandardguiitem.h>
 #include <kio/global.h>
 #include <kstandarddirs.h>
@@ -135,8 +134,6 @@ void KonqSessionDlg::slotSave()
         d->m_pModel->itemForIndex(d->m_pListView->currentIndex()).url().path());
     QString dirpath = "sessions/" + fileInfo.fileName();
     
-    kDebug(1202) << "Saving as " << dirpath;
-    
     slotDelete();
     KonqSessionManager::self()->saveCurrentSessions(dirpath);
 }
@@ -153,7 +150,6 @@ void KonqSessionDlg::slotDelete()
         return;
     
     QDir dir(d->m_pModel->itemForIndex(d->m_pListView->currentIndex()).url().path());
-    kDebug() << d->m_pModel->itemForIndex(d->m_pListView->currentIndex()).url().path();
     if(dir.exists())
     {
         KIO::NetAccess::del(d->m_pModel->itemForIndex(
@@ -168,6 +164,7 @@ void KonqSessionDlg::slotRename(KUrl dirpathTo)
     
     KUrl dirpathFrom = d->m_pModel->itemForIndex(
         d->m_pListView->currentIndex()).url();
+    
     dirpathTo = (dirpathTo == KUrl()) ? dirpathFrom : dirpathTo;
     
     KIO::RenameDialog dlg(this, i18n("Rename session"), dirpathFrom,
@@ -180,7 +177,7 @@ void KonqSessionDlg::slotRename(KUrl dirpathTo)
         if(dir.exists())
             slotRename(dirpathTo);
         else
-            KonqOperations::rename(this, dirpathFrom, dlg.newDestUrl());
+            KIO::NetAccess::move(dirpathFrom, dlg.newDestUrl(), d->m_pParent);
     } 
 }
 
@@ -237,7 +234,7 @@ void KonqNewSessionDlg::slotAddSession()
 {
     QString dirpath = KStandardDirs::locateLocal("appdata", "sessions/" + 
         d->m_pSessionName->text());
-    kDebug() << dirpath;
+    
     QDir dir(dirpath);
     if(dir.exists())
     {
