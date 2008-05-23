@@ -32,7 +32,7 @@ as Authors, publish date, the abstract, and Keywords -->
 <firstname>Orville</firstname>
 <surname>Bennett</surname>
 <affiliation>
-<address><email>obennett@hartford.edu</email></address>
+<address>&Orville.Bennett.mail;</address>
 </affiliation>
 </author>
 <author>
@@ -67,7 +67,7 @@ as Authors, publish date, the abstract, and Keywords -->
 </copyright>
 <copyright>
 <year>2006</year>
-<holder>Orville Bennett</holder>
+<holder>&Orville.Bennett;</holder>
 <holder>Michael Austin</holder>
 </copyright>
 <!-- Translators: put here the copyright notice of the translation -->
@@ -200,7 +200,7 @@ The workspace shows the contents of the current directory. The workspace can als
 </para>
 
 <para>
-The status bar shows a limited amount of data relating to the file hovered over and the current directory.  When a file is hovered over, the status bar shows the file name, the file size and the file type of the document &eg; JPEG.  When no file has been highlighted or hovered over, the status bar shows the number of files and folders in the current directory.  The status bar also shows the free space of the relevant disk.
+The status bar shows a limited amount of data relating to the file hovered over and the current folder.  When a file is hovered over, the status bar shows the file name, the filesize and the file type &eg; JPEG.  When no file has been highlighted or hovered over, the status bar shows the amount of files and folders in the current folder.  At all times the status bar shows the amount of storage space that has currently been used on the current mount point, as well as the maximum space available on the mount point &eg; <filename class="directory">/home/</filename>.
 </para>
 </sect2>
 
@@ -211,7 +211,7 @@ The status bar shows a limited amount of data relating to the file hovered over 
 
 
 <para>
-The <guibutton>Icons</guibutton> view shows the contents of the folder via the file icon type &eg; an <acronym>MP3</acronym> file will be represented with the icon for an <acronym>MP3</acronym>  file.  Sub-folders are represented in the form of a folder icon. The folder icon is defined by the &kde; icon theme currently in use, however individual folders can have their icon changed manually if the user wishes.  This can be done via the properties dialogue. 
+The <guibutton>Icons</guibutton> view shows the contents of the folder via the file icon type &eg; an <acronym>MP3</acronym> file will be represented with the icon for an <acronym>MP3</acronym>  file.  Sub-folders are represented in the form of a folder icon. The folder icon is defined by the &kde; icon theme currently in use, however individual folders can have their icon changed manually if the user wishes.  This can be done via the properties dialog. 
 <!-- TODO (more? changing folder icons not really dolphin specific.) -->
 </para>
 
@@ -225,7 +225,7 @@ The <guibutton>Columns</guibutton> view allows multiple levels of the folder str
 
 
 <para>
-The <guibutton>Preview</guibutton> view is similar to the icons view. The difference is that wherever possible previews of the files are shown. This function works for a number of image types including; JPG, PNG, XCF, <acronym>SVG</acronym> and numerous others. The previews view is also capable of showing the first 14 lines from text documents. &dolphin; is also capable of displaying a preview of HTML and <acronym>PDF</acronym> files in the previews view. It is also possible to modify the size of the previews via the Configure &dolphin; dialogue.
+The <guibutton>Preview</guibutton> view is similar to the icons view. The difference is that wherever possible previews of the files are shown. This function works for a number of image types including; JPG, PNG, XCF, <acronym>SVG</acronym> and numerous others. The previews view is also capable of showing the first 14 lines from text documents. &dolphin; is also capable of displaying a preview of &HTML; and <acronym>PDF</acronym> files in the previews view. It is also possible to modify the size of the previews via the Configure &dolphin; dialog.
 <!--  (link, and info on it) -->
 </para>
 
@@ -479,11 +479,11 @@ In order to select a Place, the location bar must be set to the breadcrumb view.
 <title>&dolphin; Configuration</title>
 
 <para>
-In order to configure &dolphin; the user needs to access the &dolphin; Configuration dialogue.  This can be accessed via the menu bar; <menuchoice> <guimenu>Settings</guimenu> <guimenuitem>Configure &dolphin;...</guimenuitem> </menuchoice>.
+In order to configure &dolphin; the user needs to access the &dolphin; Configuration dialog.  This can be accessed via the menu bar; <menuchoice> <guimenu>Settings</guimenu> <guimenuitem>Configure &dolphin;...</guimenuitem> </menuchoice>.
 </para>
 
 <para>
-The &dolphin; Configuration dialogue consists of three sections; Startup, View Modes, and General.  Clicking one of these sections will make those options available accordingly.  The options available are displayed to the right of the dialogue.
+The &dolphin; Configuration dialog consists of three sections; Startup, View Modes, and General.  Clicking one of these sections will make those options available accordingly.  The options available are displayed to the right of the dialog.
 </para>
 
 <para>
@@ -519,7 +519,7 @@ The General option allows users to set a number of options for &dolphin;, these 
 </para>
 
 <para>
-The View Modes option differes slightly from the General option in that it has three tabs in the options.  The Icons tab allows users to set options to do with the Icons View Mode &eg; icon size.  The Details tab allows users to set options relating to the Details View Mode &eg; what information about files are shown.  The Previews to allows users to set options relating to the Prevews View Mode &eg; the size of the preview images.
+The View Modes option differs slightly from the General option in that it has three tabs in the options.  The Icons tab allows users to set options to do with the Icons View Mode &eg; icon size.  The Details tab allows users to set options relating to the Details View Mode &eg; what information about files are shown.  The Previews to allows users to set options relating to the Previews View Mode &eg; the size of the preview images.
 </para>
 </sect1>
 
@@ -534,7 +534,7 @@ The following are a number of tips to save time when using &dolphin;.
 <title>Quick Bookmarking</title>
 
 <para>
-To quickly create a bookmark of the folder currently being viewed, right click in the work space and via the menu select "Add to Places".  The Bookmarking dialogue will open, enter a name for the bookmark along with an icon to represent the bookmark.
+To quickly create a bookmark of the folder currently being viewed, right click in the work space and via the menu select "Add to Places".  The Bookmarking dialog will open, enter a name for the bookmark along with an icon to represent the bookmark.
 </para>
 
 </sect2>
@@ -543,7 +543,7 @@ To quickly create a bookmark of the folder currently being viewed, right click i
 <title>Finding Files</title>
 
 <para>
-&dolphin; is capable of searching for files in a filesystem.  If <keycombo action="simul">&Ctrl;<keycap>F</keycap></keycombo> is pressed or using <menuchoice> <guimenu>Tools</guimenu> <guimenuitem>Find File...</guimenuitem> </menuchoice>, <application>KFind</application> will open already set up to search within the current folder and any sub-folders contained within.
+&dolphin; is capable of searching for files in a filesystem.  If <keycombo action="simul">&Ctrl;<keycap>F</keycap></keycombo> is pressed or using <menuchoice> <guimenu>Tools</guimenu> <guimenuitem>Find File...</guimenuitem> </menuchoice>, &kfind; will open already set up to search within the current folder and any sub-folders contained within.
 </para>
 </sect2>
 
@@ -572,7 +572,7 @@ A quick way to mount Storage Media is to click on the device.  This will mount a
 </para>
 
 <para>
-If a user wishes to rename a batch of files they must first select the files to be renamed.  This can be done via dragging the mouse over the files to be renamed, or via holding &Ctrl; and clicking each file to be renamed.  The user must then open the batch-rename dialogue, this, can be done via pressing <keycap>F2</keycap> or via the File menu; <menuchoice> <guimenu>File</guimenu> <guimenuitem>Rename...</guimenuitem> </menuchoice>.
+If a user wishes to rename a batch of files they must first select the files to be renamed.  This can be done via dragging the mouse over the files to be renamed, or via holding &Ctrl; and clicking each file to be renamed.  The user must then open the batch-rename dialog, this, can be done via pressing <keycap>F2</keycap> or via the File menu; <menuchoice> <guimenu>File</guimenu> <guimenuitem>Rename...</guimenuitem> </menuchoice>.
 </para>
 
 <para>
@@ -584,11 +584,11 @@ The user must then enter the name they wish to give the files.  The # character 
 <title>Comparing A Selection Of Files</title>
 
 <para>
-&dolphin; is capable of comparing a selection of files to see the differences between them.  For a user to be able to compare files then the <application>Kompare</application> application must be installed.  &dolphin; can only compare the files that <application>Kompare</application> is capable on analyzing.
+&dolphin; is capable of comparing a selection of files to see the differences between them.  For a user to be able to compare files then the Kompare application must be installed.  &dolphin; can only compare the files that Kompare is capable on analyzing.
 </para>
 
 <para>
-If a user wishes to compare a selection of files, then first they must select the files to be compared.  Then launch the <application>Kompare</application> application via the Tools menu; <menuchoice> <guimenu>Tools</guimenu> <guimenuitem>Compare Files</guimenuitem> </menuchoice>.  <application>Kompare</application> will then open showing the differences between the files.
+If a user wishes to compare a selection of files, then first they must select the files to be compared.  Then launch the Kompare application via the Tools menu; <menuchoice> <guimenu>Tools</guimenu> <guimenuitem>Compare Files</guimenuitem> </menuchoice>. Kompare will then open showing the differences between the files.
 </para>
 </sect2>
 
@@ -685,7 +685,7 @@ or menu bars. -->
 <guimenu>File</guimenu>
 <guimenuitem>Properties</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Shows the properties dialogue for the currently selected file(s).</action></para></listitem>
+<listitem><para><action>Shows the properties dialog for the currently selected file(s).</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -908,7 +908,7 @@ Selects all unselected items and deselects all selected items in the current dir
 <guimenu>View</guimenu>
 <guimenuitem>Adjust View Proprties...</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Opens the view properties dialogue.</action></para></listitem>
+<listitem><para><action>Opens the view properties dialog.</action></para></listitem>
 </varlistentry>
 </variablelist>
 
@@ -1035,7 +1035,7 @@ Selects all unselected items and deselects all selected items in the current dir
 <guimenu>Settings</guimenu>
 <guimenuitem>Configure Shortcuts...</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Opens the shortcut configuration dialogue.</action></para></listitem>
+<listitem><para><action>Opens the shortcut configuration dialog.</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -1043,7 +1043,7 @@ Selects all unselected items and deselects all selected items in the current dir
 <guimenu>Settings</guimenu>
 <guimenuitem>Configure Toolbars...</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Opens the toolbar configuration dialogue.</action></para></listitem>
+<listitem><para><action>Opens the toolbar configuration dialog.</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -1051,7 +1051,7 @@ Selects all unselected items and deselects all selected items in the current dir
 <guimenu>Settings</guimenu>
 <guimenuitem>Configure &dolphin;...</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Opens the &dolphin; configuration dialogue.</action></para></listitem>
+<listitem><para><action>Opens the &dolphin; configuration dialog.</action></para></listitem>
 </varlistentry>
 </variablelist>
 </para>
@@ -1062,7 +1062,7 @@ Selects all unselected items and deselects all selected items in the current dir
 
 
 <!-- Assuming you have a standard help menu (help, what's this, about -->
-<!-- &dolphin;, about KDE) then the documentation is already written. -->
+<!-- &dolphin;, about &kde;) then the documentation is already written. -->
 <!-- The following entity is valid anywhere that a variablelist is -->
 <!-- valid.  -->
 
@@ -1110,7 +1110,7 @@ To add a custom service menu to &dolphin; save the service menu to the &dolphin;
 </question>
 <answer>
 <para>
-To make &dolphin; the default file manager for &kde; from the &kde; control centre open the File Associations section via; KDE Components>File Associations.  If the user adds &dolphin; to the list of applications for the folder mime type and make it the first choice, then &dolphin; will become the default application to open any folder with.  The folder mime type can be found by expanding the inode section of Known Types.
+To make &dolphin; the default file manager for &kde; from the &kde; control centre open the File Associations section via; &kde; Components>File Associations.  If the user adds &dolphin; to the list of applications for the folder mime type and make it the first choice, then &dolphin; will become the default application to open any folder with.  The folder mime type can be found by expanding the inode section of Known Types.
 </para>
 
 <para>
@@ -1133,7 +1133,7 @@ To make &dolphin; the default file manager for the virtual folders &kde; creates
 </question>
 <answer>
 <para>
-&dolphin; is not intended to be a competitor to &konqueror;: &konqueror; acts as universal viewer being able to show <acronym>HTML</acronym> pages, text documents, folders and a lot more, whereas &dolphin; focuses on being only a file manager. This approach allows to optimize the user interface for the task of file management.
+&dolphin; is not intended to be a competitor to &konqueror;: &konqueror; acts as universal viewer being able to show &HTML; pages, text documents, folders and a lot more, whereas &dolphin; focuses on being only a file manager. This approach allows to optimize the user interface for the task of file management.
 </para>
 </answer>
 </qandaentry>
@@ -1190,7 +1190,7 @@ The official channel for submitting feature requests is via the &kde; bug tracki
 
 <!-- Include credits for the programmers, documentation writers, and
 contributors here. The license for your software should then be included below
-the credits with a reference to the appropriate license file included in the KDE
+the credits with a reference to the appropriate license file included in the &kde;
 distribution. -->
 
 <title>Credits and License</title>
@@ -1207,7 +1207,7 @@ Contributors:
 <listitem><para>Cvetoslav Ludmiloff <email>ludmiloff@gmail.com</email></para></listitem>
 <listitem><para>Stefan Monov <email>logixoul@gmail.com</email></para></listitem>
 <listitem><para>Michael Austin <email>tuxedup@users.sourceforge.net</email></para></listitem>
-<listitem><para>Orville Bennett <email>obennett@hartford.edu</email></para></listitem>
+<listitem><para>&Orville.Bennett; &Orville.Bennett.mail;</para></listitem>
 </itemizedlist>
 </para>
 
@@ -1215,7 +1215,7 @@ Contributors:
 Documentation copyright 2005 Peter Penz <email>peter.penz@gmx.at</email>
 </para>
 <para>
-Documentation copyright 2006 Orville Bennett <email>obennett@hartford.edu</email>
+Documentation copyright 2006 &Orville.Bennett; &Orville.Bennett.mail;
 </para>
 <para>
 Documentation copyright 2006 Michael Austin <email>tuxedup@users.sourceforge.net</email>
@@ -1249,7 +1249,7 @@ versions of &kde;, however not all functions offered by &dolphin; may work.
 </para>
 
 <para>
-In order to compile &dolphin; you will also require libqt2-mt-dev, libx11-dev, kdebase-dev, zlibg-dev and gcc.
+In order to compile &dolphin; you will also require libqt2-mt-dev, libx11-dev, kdebase-dev, zlibg-dev and &gcc;.
 </para>
 
 <para>
@@ -1287,3 +1287,4 @@ End:
 
 vim:tabstop=2:shiftwidth=2:expandtab 
 -->
+
