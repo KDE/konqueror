@@ -103,6 +103,7 @@ private:
 private:
     QTimer m_autoSaveTimer;
     QStringList m_DirtyAutosavedSessions;
+    QStringList m_SessionsAboutToRemove;
     KConfig *m_autoSavedSessionConfig;
 Q_SIGNALS: // DBUS signals
     /**
