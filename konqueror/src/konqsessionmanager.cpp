@@ -33,11 +33,11 @@
 #include <kvbox.h>
 #include <khbox.h>
 #include <klocale.h>
+#include <kmessagebox.h>
+
 #include <QPushButton>
 #include <QtCore/QFileInfo>
 #include <QPoint>
-#include <kmessagebox.h>
-
 #include <QtDBus/QtDBus>
 #include <QtAlgorithms>
 #include <QDirIterator>
@@ -107,6 +107,16 @@ void KonqSessionManager::autoSaveSession()
     
     saveCurrentSession(m_autoSavedSessionConfig);
     
+    // Now that we have saved current session it's safe to remove previous one
+    if(!m_SessionsAboutToRemove.isEmpty())
+    {
+        foreach ( const QString& sessionFileName, m_SessionsAboutToRemove )
+        {
+            QFile::remove(sessionFileName);
+        }
+        m_SessionsAboutToRemove.clear();
+    }
+    
     if(isActive)
         m_autoSaveTimer.start();
 }
@@ -147,6 +157,7 @@ void KonqSessionManager::saveCurrentSession(KConfig* sessionConfig)
 
 void KonqSessionManager::restoreSessions()
 {
+    m_SessionsAboutToRemove = m_DirtyAutosavedSessions;
     restoreSessions(m_DirtyAutosavedSessions);
 }
 
@@ -184,8 +195,6 @@ void KonqSessionManager::restoreSession(const QString &sessionFileName)
         KConfigGroup configGroup(&config, "Window" + QString::number(i));
         KonqViewManager::openSavedWindow(configGroup);
     }
-    
-    QFile::remove(file);
 }
 
 void KonqSessionManager::doNotRestoreSessions()
