@@ -145,9 +145,7 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
               kurl.setFileName("");
            }
        }
-       if(KonqSessionManager::self()->hasAutosavedDirtySessions())
-           KonqSessionManager::self()->askUserToRestoreAutosavedDirtySessions();
-       else
+       if(!KonqSessionManager::self()->hasAutosavedDirtySessions() || !KonqSessionManager::self()->askUserToRestoreAutosavedDirtySessions())
        {
            kDebug(1202) << "main() -> createBrowserWindowFromProfile mimeType=" << urlargs.mimeType();
            KonqMisc::createBrowserWindowFromProfile( profilePath, profile, kurl, urlargs, KParts::BrowserArguments(), false, filesToSelect );
@@ -181,9 +179,7 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
                  return 0; // no preloading
 #endif
              }
-             if(KonqSessionManager::self()->hasAutosavedDirtySessions())
-                 KonqSessionManager::self()->askUserToRestoreAutosavedDirtySessions();
-             else if (!args->isSet("silent"))
+             if(!(KonqSessionManager::self()->hasAutosavedDirtySessions() && KonqSessionManager::self()->askUserToRestoreAutosavedDirtySessions()) && !args->isSet("silent"))
              {
                  // By default try to open in webbrowser mode. People can use "konqueror ." to get a filemanager.
                  QString profile = "webbrowsing";
