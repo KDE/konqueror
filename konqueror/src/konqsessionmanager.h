@@ -67,7 +67,7 @@ public Q_SLOTS:
     /**
      * Ask the user with a KPassivePopup ballon if session should be restored
      */
-    void askUserToRestoreAutosavedDirtySessions();
+    bool askUserToRestoreAutosavedDirtySessions();
     
     /**
      * Saves current session.

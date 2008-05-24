@@ -216,10 +216,10 @@ bool KonqSessionManager::hasAutosavedDirtySessions()
     return !m_DirtyAutosavedSessions.empty();
 }
 
-void KonqSessionManager::askUserToRestoreAutosavedDirtySessions()
+bool KonqSessionManager::askUserToRestoreAutosavedDirtySessions()
 {
     if(m_DirtyAutosavedSessions.empty())
-        return;
+        return false;
     
     switch(KMessageBox::questionYesNoCancel(0,
         i18n("Konqueror didn't close correctly. Would you like to restore session?"),
@@ -232,12 +232,12 @@ void KonqSessionManager::askUserToRestoreAutosavedDirtySessions()
     {
         case KMessageBox::Yes:
             restoreSessions();
-            break;
+            return true;
         case KMessageBox::No:
             doNotRestoreSessions();
-            break;
+            return false;
         default:
-            break;
+            return false;
     }
 }
 
