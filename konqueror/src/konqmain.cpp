@@ -202,7 +202,7 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
                 KonqSessionManager::self()->askUserToRestoreAutosavedDirtySessions();
              
              QList<KonqMainWindow*> *mainWindowList = KonqMainWindow::mainWindowList();
-             if(!mainWindowList->isEmpty())
+             if(mainWindowList && !mainWindowList->isEmpty())
                 mainwin = mainWindowList->first();
              
              for ( int i = 0; i < args->count(); i++ )
