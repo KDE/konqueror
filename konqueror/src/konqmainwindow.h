@@ -519,8 +519,6 @@ protected:
    */
   virtual void showEvent(QShowEvent *event);
 
-  void fillHistoryPopup( QMenu *menu, const QList<HistoryEntry*> &history );
-
   bool makeViewsFollow( const KUrl & url,
                         const KParts::OpenUrlArguments& args,
                         const KParts::BrowserArguments &browserArgs, const QString & serviceType,
