@@ -97,6 +97,7 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv) {
             ki18n("Copyright 2000-2007, KDE developers") );
     aboutData.addAuthor(ki18n("David Faure"), ki18n("Initial author"), "faure@kde.org");
     aboutData.addAuthor(ki18n("Alexander Kellett"), ki18n("Author"), "lypanov@kde.org");
+    aboutData.setProgramIconName("bookmarks");
 
     KCmdLineArgs::init(argc, argv, &aboutData);
     KCmdLineArgs::addStdCmdLineOptions();
