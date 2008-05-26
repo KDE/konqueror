@@ -8,12 +8,10 @@
  *
  */
 
-#ifndef __JAVAOPTS_H__
-#define __JAVAOPTS_H__
+#ifndef JAVAOPTS_H
+#define JAVAOPTS_H
 
-#define KDE3_SUPPORT
 #include <kcmodule.h>
-#undef KDE3_SUPPORT
 
 #include "domainlistview.h"
 #include "policies.h"
@@ -113,5 +111,5 @@ private:
     friend class JavaDomainListView;
 };
 
-#endif		// __HTML_OPTIONS_H__
+#endif		// HTML_OPTIONS_H
 

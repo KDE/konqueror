@@ -26,60 +26,6 @@
       <string>Folders</string>
      </property>
      <layout class="QGridLayout" name="gridLayout" >
-      <item row="0" column="0" >
-       <widget class="KUrlRequester" name="dirEdit" >
-        <property name="enabled" >
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1" >
-       <widget class="QPushButton" name="dirNew" >
-        <property name="text" >
-         <string>&amp;New</string>
-        </property>
-       </widget>
-      </item>
-      <item rowspan="5" row="1" column="0" >
-       <widget class="KListWidget" name="dirList" >
-        <property name="sizePolicy" >
-         <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1" >
-       <widget class="QPushButton" name="dirRemove" >
-        <property name="enabled" >
-         <bool>false</bool>
-        </property>
-        <property name="text" >
-         <string>&amp;Remove</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1" >
-       <widget class="QPushButton" name="dirUp" >
-        <property name="enabled" >
-         <bool>false</bool>
-        </property>
-        <property name="text" >
-         <string>&amp;Up</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1" >
-       <widget class="QPushButton" name="dirDown" >
-        <property name="enabled" >
-         <bool>false</bool>
-        </property>
-        <property name="text" >
-         <string>Do&amp;wn</string>
-        </property>
-       </widget>
-      </item>
       <item row="4" column="1" >
        <spacer>
         <property name="orientation" >
@@ -95,6 +41,60 @@
          </size>
         </property>
        </spacer>
+      </item>
+      <item row="1" column="1" >
+       <widget class="QPushButton" name="dirRemove" >
+        <property name="enabled" >
+         <bool>false</bool>
+        </property>
+        <property name="text" >
+         <string>&amp;Remove</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" >
+       <widget class="QPushButton" name="dirNew" >
+        <property name="text" >
+         <string>&amp;New</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" >
+       <widget class="KUrlRequester" name="dirEdit" >
+        <property name="enabled" >
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1" >
+       <widget class="QPushButton" name="dirDown" >
+        <property name="enabled" >
+         <bool>false</bool>
+        </property>
+        <property name="text" >
+         <string>Do&amp;wn</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1" >
+       <widget class="QPushButton" name="dirUp" >
+        <property name="enabled" >
+         <bool>false</bool>
+        </property>
+        <property name="text" >
+         <string>&amp;Up</string>
+        </property>
+       </widget>
+      </item>
+      <item rowspan="5" row="1" column="0" >
+       <widget class="KListWidget" name="dirList" >
+        <property name="sizePolicy" >
+         <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
       </item>
       <item row="5" column="1" >
        <widget class="QPushButton" name="scanButton" >
@@ -114,7 +114,6 @@
      <zorder>dirUp</zorder>
      <zorder>dirList</zorder>
      <zorder>scanButton</zorder>
-     <zorder>scanButton</zorder>
     </widget>
    </item>
    <item>
@@ -124,7 +123,7 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout" >
       <item>
-       <widget class="Q3ListView" name="pluginList" >
+       <widget class="QTreeWidget" name="pluginList" >
         <property name="whatsThis" >
          <string>Here you can see a list of the Netscape plugins KDE has found.</string>
         </property>
@@ -135,22 +134,10 @@
          <property name="text" >
           <string>Information</string>
          </property>
-         <property name="clickable" >
-          <bool>true</bool>
-         </property>
-         <property name="resizable" >
-          <bool>true</bool>
-         </property>
         </column>
         <column>
          <property name="text" >
           <string>Value</string>
-         </property>
-         <property name="clickable" >
-          <bool>true</bool>
-         </property>
-         <property name="resizable" >
-          <bool>true</bool>
          </property>
         </column>
        </widget>
@@ -164,11 +151,6 @@
  <layoutfunction spacing="KDialog::spacingHint" margin="KDialog::marginHint" />
  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
  <customwidgets>
-  <customwidget>
-   <class>Q3ListView</class>
-   <extends>Q3Frame</extends>
-   <header>q3listview.h</header>
-  </customwidget>
   <customwidget>
    <class>KListWidget</class>
    <extends>QListWidget</extends>

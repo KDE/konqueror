@@ -24,10 +24,10 @@
 
 // Qt
 #include <QtGui/QLayout>
+#include <QtGui/QTreeWidget>
 
 // KDE
 #include <kconfig.h>
-#include <k3listview.h>
 #include <kdebug.h>
 #include <kurlrequester.h>
 #include <klocale.h>
@@ -200,8 +200,8 @@ void JSDomainListView::updateDomainListLegacy(const QStringList &domainConfig)
       KHTMLSettings::KJavaScriptAdvice javaScriptAdvice;
       KHTMLSettings::splitDomainAdvice(*it, domain, javaAdvice, javaScriptAdvice);
       if (javaScriptAdvice != KHTMLSettings::KJavaScriptDunno) {
-        Q3ListViewItem *index =
-          new Q3ListViewItem( domainSpecificLV, domain,
+        QTreeWidgetItem *index =
+          new QTreeWidgetItem( domainSpecificLV, QStringList() << domain <<
                 i18n(KHTMLSettings::adviceToStr(javaScriptAdvice)) );
 
         pol.setDomain(domain);

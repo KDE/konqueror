@@ -26,10 +26,10 @@
 #include <QtGui/QLayout>
 #include <QtGui/QGroupBox>
 #include <QtGui/QLabel>
+#include <QtGui/QTreeWidget>
 
 // KDE
 #include <config-apps.h>
-#include <k3listview.h>
 #include <kurlrequester.h>
 #include <kdebug.h>
 #include <klineedit.h>
@@ -332,7 +332,7 @@ void JavaDomainListView::updateDomainListLegacy(const QStringList &domainConfig)
         KHTMLSettings::KJavaScriptAdvice javaScriptAdvice;
         KHTMLSettings::splitDomainAdvice(*it, domain, javaAdvice, javaScriptAdvice);
 	if (javaAdvice != KHTMLSettings::KJavaScriptDunno) {
-          Q3ListViewItem* index = new Q3ListViewItem( domainSpecificLV, domain,
+          QTreeWidgetItem* index = new QTreeWidgetItem( domainSpecificLV, QStringList() << domain <<
                                                   i18n(KHTMLSettings::adviceToStr(javaAdvice))  );
           pol.setDomain(domain);
           pol.setFeatureEnabled(javaAdvice != KHTMLSettings::KJavaScriptReject);
