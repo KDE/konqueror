@@ -342,8 +342,8 @@ The folders panel shows a tree view structure of the file system. It only shows 
 <sect3>
 <title>Terminal</title>
 <para>
-This panel opens a terminal inside the Dolphin workspace. The terminal will open at the folder currently shown in the Dolphin view. Changing folder in the main Dolphin view will change the working folder of the terminal to match.
-Note: Changing folder in the terminal will not affect the Dolphin view. The terminal only works with local media.
+This panel opens a terminal inside the &dolphin; workspace. The terminal will open at the folder currently shown in the &dolphin; view. Changing folder in the main &dolphin; view will change the working folder of the terminal to match.
+Note: Changing folder in the terminal will not affect the &dolphin; view. The terminal only works with local media.
 </para>
 
 
@@ -451,7 +451,7 @@ If the breadcrumb view is enabled then the user is unable to enter the path to t
 </para>
 
 <para>
-In order to aid the navigation of the file system, &dolphin; can use Places.  Places can be set for any location on the filesystem including virtual folders such as "trash:/". Selecting a Place will display that folder or virtual folder in the workspace.
+In order to aid the navigation of the file system, &dolphin; can use Places.  Places can be set for any location on the file system including virtual folders such as "trash:/". Selecting a Place will display that folder or virtual folder in the workspace.
 </para>
 
 <para>
@@ -545,7 +545,7 @@ To quickly create a bookmark of the folder currently being viewed, right click i
 <title>Finding Files</title>
 
 <para>
-&dolphin; is capable of searching for files in a filesystem.  If <keycombo action="simul">&Ctrl;<keycap>F</keycap></keycombo> is pressed or using <menuchoice> <guimenu>Tools</guimenu> <guimenuitem>Find File...</guimenuitem> </menuchoice>, <application>KFind</application> will open already set up to search within the current folder and any sub-folders contained within.
+&dolphin; is capable of searching for files in a filesystem.  If <keycombo action="simul">&Ctrl;<keycap>F</keycap></keycombo> is pressed or using <menuchoice> <guimenu>Tools</guimenu> <guimenuitem>Find File...</guimenuitem> </menuchoice>, &kfind; will open already set up to search within the current folder and any sub-folders contained within.
 </para>
 </sect2>
 
@@ -586,11 +586,11 @@ The user must then enter the name they wish to give the files.  The # character 
 <title>Comparing A Selection Of Files</title>
 
 <para>
-&dolphin; is capable of comparing a selection of files to see the differences between them.  For a user to be able to compare files then the <application>Kompare</application> application must be installed.  &dolphin; can only compare the files that <application>Kompare</application> is capable on analyzing.
+&dolphin; is capable of comparing a selection of files to see the differences between them.  For a user to be able to compare files then the &kompare; application must be installed.  &dolphin; can only compare the files that &kompare; is capable on analyzing.
 </para>
 
 <para>
-If a user wishes to compare a selection of files, then first they must select the files to be compared.  Then launch the <application>Kompare</application> application via the Tools menu; <menuchoice> <guimenu>Tools</guimenu> <guimenuitem>Compare Files</guimenuitem> </menuchoice>.  <application>Kompare</application> will then open showing the differences between the files.
+If a user wishes to compare a selection of files, then first they must select the files to be compared.  Then launch the &kompare; application via the Tools menu; <menuchoice> <guimenu>Tools</guimenu> <guimenuitem>Compare Files</guimenuitem> </menuchoice>.  &kompare; will then open showing the differences between the files.
 </para>
 </sect2>
 
@@ -993,7 +993,7 @@ Selects all unselected items and deselects all selected items in the current fol
 <guimenu>Tools</guimenu>
 <guimenuitem>Find File...</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Opens Kfind already within the current folder.</action></para></listitem>
+<listitem><para><action>Opens &kfind; already within the current folder.</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -1146,7 +1146,7 @@ To make &dolphin; the default file manager for the virtual folders &kde; creates
 </question>
 <answer>
 <para>
-The easiest way to get involved with &dolphin; is to drop the developers an email.  If you email Peter Penz (Lead Developer/Project Leader), what you can do, how much time you can devote etc and he will let you know what you can do in the project. If you wish to contribute to the documentation email Michael Austin (Documentation Leader).  He can then fill you in on the situation &eg; what needs to be added/finished, the procedure for submitting documentation.
+The easiest way to get involved with &dolphin; is to drop the developers an email.  If you email Peter Penz (Lead Developer/Project Leader), what you can do, how much time you can devote &etc; and he will let you know what you can do in the project. If you wish to contribute to the documentation email Michael Austin (Documentation Leader).  He can then fill you in on the situation &eg; what needs to be added/finished, the procedure for submitting documentation.
 </para>
 <para>
 The email addresses of Peter Penz and Michael Austin can be found on the main page of the documentation, or in the Credits section.
