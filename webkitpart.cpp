@@ -42,14 +42,11 @@
 #include <QApplication>
 #include <QPlainTextEdit>
 
-// #include "kwebnetworkinterface.h"
-
 WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList &/*args*/)
     : KParts::ReadOnlyPart(parent)
 {
     WebKitGlobal::registerPart( this );
     webPageView = new WebKitPageView( this, parentWidget );
-    //     webView->setNetworkInterface(new KWebNetworkInterface(this));
     setWidget(webPageView);
     setComponentData(WebKitGlobal::componentData() );
     connect(webPageView->view(), SIGNAL(loadStarted()),

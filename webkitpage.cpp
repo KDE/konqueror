@@ -37,6 +37,8 @@
 #include <QWebFrame>
 #include <QtNetwork/QNetworkReply>
 
+#include "knetworkaccessmanager.h"
+
 WebPage::WebPage(WebKitPart *wpart, QWidget *parent)
     : QWebPage(parent), m_part(wpart)
 {
@@ -45,6 +47,7 @@ WebPage::WebPage(WebKitPart *wpart, QWidget *parent)
             this, SLOT(slotHandleUnsupportedContent(QNetworkReply *)));
     setForwardUnsupportedContent(true);
 #endif
+    setNetworkAccessManager(new KNetworkAccessManager(this));
 }
 
 bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request,

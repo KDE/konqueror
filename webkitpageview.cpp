@@ -21,10 +21,12 @@
  */
 
 #include "webkitpageview.h"
-#include "webkitsearchbar.h"
+
 #include <QTextEdit>
 #include <QVBoxLayout>
+
 #include "webkitview.h"
+#include "webkitsearchbar.h"
 
 WebKitPageView::WebKitPageView( WebKitPart *part, QWidget *parent )
     :QWidget( parent )
