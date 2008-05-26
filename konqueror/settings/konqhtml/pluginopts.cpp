@@ -24,12 +24,10 @@
 #include <QtGui/QLabel>
 #include <QtGui/QLayout>
 #include <QtGui/QSlider>
+#include <QtGui/QTreeWidget>
 
 // KDE
-#include <k3listview.h>
-#ifndef Q_WS_WIN
-#include <k3procio.h>
-#endif
+#include <kprocess.h>
 #include <kapplication.h>
 #include <kdebug.h>
 #include <kfiledialog.h>
@@ -177,10 +175,8 @@ KPluginOptions::KPluginOptions( QWidget *parent, const QVariantList& )
     pluginsSettingsContainer->setObjectName( "configwidget" );
     m_widget->dirEdit->setMode(KFile::ExistingOnly | KFile::LocalOnly | KFile::Directory);
 
-#ifndef Q_WS_WIN
     // setup widgets
     connect( m_widget->scanButton, SIGNAL(clicked()), SLOT(scan()) );
-#endif
 
     m_changed = false;
 
@@ -318,7 +314,6 @@ void KPluginOptions::slotShowDomainDlg() {
 
 void KPluginOptions::scan()
 {
-#ifndef Q_WS_WIN
     m_widget->scanButton->setEnabled(false);
     if ( m_changed ) {
         int ret = KMessageBox::warningYesNoCancel( this,
@@ -333,11 +328,11 @@ void KPluginOptions::scan()
              save();
     }
 
-    K3ProcIO* nspluginscan = new K3ProcIO;
+    nspluginscan = new KProcess(this);
+    nspluginscan->setOutputChannelMode(KProcess::SeparateChannels);
     QString scanExe = KGlobal::dirs()->findExe("nspluginscan");
     if (scanExe.isEmpty()) {
         kDebug() << "can't find nspluginviewer";
-        delete nspluginscan;
 
         KMessageBox::sorry ( this,
                              i18n("The nspluginscan executable cannot be found. "
@@ -353,40 +348,38 @@ void KPluginOptions::scan()
     // start nspluginscan
     *nspluginscan << scanExe << "--verbose";
     kDebug() << "Running nspluginscan";
-    connect(nspluginscan, SIGNAL(readReady(K3ProcIO*)),
-            this, SLOT(progress(K3ProcIO*)));
-    connect(nspluginscan, SIGNAL(processExited(K3Process *)),
+    connect(nspluginscan, SIGNAL(readyReadStandardOutput()),
+            this, SLOT(progress()));
+    connect(nspluginscan, SIGNAL(finished(int, QProcess::ExitStatus)),
             this, SLOT(scanDone()));
     connect(m_progress, SIGNAL(cancelClicked()), this, SLOT(scanDone()));
 
-    if (nspluginscan->start())
-       kapp->enter_loop();
+    nspluginscan->start();
+}
 
-    delete nspluginscan;
+void KPluginOptions::progress()
+{
+    // we do not know if the output array ends in the middle of an utf-8 sequence
+    m_output += nspluginscan->readAllStandardOutput();
+    QString line;
+    int pos;
+    while ((pos = m_output.indexOf('\n')) != -1) {
+        line = QString::fromLocal8Bit(m_output, pos + 1);
+        m_output.remove(0, pos + 1);
+    }
+    m_progress->progressBar()->setValue(line.trimmed().toInt());
+}
 
+void KPluginOptions::scanDone()
+{
     // update dialog
     if (m_progress) {
         m_progress->progressBar()->setValue(100);
         load();
-        delete m_progress;
+        m_progress->deleteLater();
         m_progress = 0;
     }
-#endif
     m_widget->scanButton->setEnabled(true);
-}
-#ifndef Q_WS_WIN
-void KPluginOptions::progress(K3ProcIO *proc)
-{
-    QString line;
-    while(proc->readln(line) > 0)
-        ;
-    m_progress->progressBar()->setValue(line.trimmed().toInt());
-}
-#endif
-
-void KPluginOptions::scanDone()
-{
-    kapp->exit_loop();
 }
 
 /***********************************************************************************/
@@ -551,6 +544,8 @@ void KPluginOptions::pluginInit()
 
 void KPluginOptions::pluginLoad( KSharedConfig::Ptr /*config*/ )
 {
+    m_widget->pluginList->setRootIsDecorated(false);
+    m_widget->pluginList->setColumnWidth( 0, 200 );
     kDebug() << "-> KPluginOptions::fillPluginList";
     m_widget->pluginList->clear();
     QRegExp version(";version=[^:]*:");
@@ -565,16 +560,15 @@ void KPluginOptions::pluginLoad( KSharedConfig::Ptr /*config*/ )
     QTextStream cache(&cachef);
 
     // root object
-    Q3ListViewItem *root = new Q3ListViewItem( m_widget->pluginList, i18n("Netscape Plugins") );
-    root->setOpen( true );
-    root->setSelectable( false );
-    root->setExpandable( true );
-    root->setPixmap(0, SmallIcon("netscape"));
+    QTreeWidgetItem *root = new QTreeWidgetItem( m_widget->pluginList, QStringList() << i18n("Netscape Plugins") );
+    root->setFlags( Qt::ItemIsEnabled );
+    root->setExpanded( true );
+    root->setIcon(0, KIcon("netscape"));
 
     // read in cache
     QString line, plugin;
-    Q3ListViewItem *next = 0;
-    Q3ListViewItem *lastMIME = 0;
+    QTreeWidgetItem *next = 0;
+    QTreeWidgetItem *lastMIME = 0;
     while ( !cache.atEnd() ) {
 
         line = cache.readLine();
@@ -588,10 +582,8 @@ void KPluginOptions::pluginLoad( KSharedConfig::Ptr /*config*/ )
             //kDebug() << "plugin=" << plugin;
 
             // add plugin root item
-            next = new Q3ListViewItem( root, i18n("Plugin"), plugin );
-            next->setOpen( false );
-            next->setSelectable( false );
-            next->setExpandable( true );
+            next = new QTreeWidgetItem( root, QStringList() << i18n("Plugin") << plugin );
+            next->setFlags( Qt::ItemIsEnabled );
 
             lastMIME = 0;
 
@@ -609,20 +601,14 @@ void KPluginOptions::pluginLoad( KSharedConfig::Ptr /*config*/ )
 
         if (!mime.isEmpty() && next) {
             //kDebug() << "mime=" << mime << " desc=" << name << " suffix=" << suffixes;
-            lastMIME = new Q3ListViewItem( next, lastMIME, i18n("MIME type"), mime );
-            lastMIME->setOpen( false );
-            lastMIME->setSelectable( false );
-            lastMIME->setExpandable( true );
+            lastMIME = new QTreeWidgetItem( next, QStringList() << i18n("MIME type") << mime );
+            lastMIME->setFlags( Qt::ItemIsEnabled );
 
-            Q3ListViewItem *last = new Q3ListViewItem( lastMIME, 0, i18n("Description"), name );
-            last->setOpen( false );
-            last->setSelectable( false );
-            last->setExpandable( false );
+            QTreeWidgetItem *last = new QTreeWidgetItem( lastMIME, QStringList() << i18n("Description") << name );
+            last->setFlags( Qt::ItemIsEnabled );
 
-            last = new Q3ListViewItem( lastMIME, last, i18n("Suffixes"), suffixes );
-            last->setOpen( false );
-            last->setSelectable( false );
-            last->setExpandable( false );
+            last = new QTreeWidgetItem( lastMIME, QStringList() << i18n("Suffixes") << suffixes );
+            last->setFlags( Qt::ItemIsEnabled );
         }
     }
 

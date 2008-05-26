@@ -28,7 +28,7 @@ class KProgressDialog;
 class QSlider;
 class KDialog;
 class KPluginOptions;
-class K3ProcIO;
+class KProcess;
 namespace Ui {
 class NSConfigWidget;
 }
@@ -114,14 +114,14 @@ private:
 
     KSharedConfig::Ptr m_pConfig;
     QString  m_groupname;
+    KProcess *nspluginscan;
+    QByteArray m_output;
 
     QCheckBox *enablePluginsGloballyCB, *enableHTTPOnly, *enableUserDemand;
 
 
  protected Q_SLOTS:
-#ifndef Q_WS_WIN
-  void progress(K3ProcIO *);
-#endif
+  void progress();
   void updatePLabel(int);
   void change() { change( true ); }
   void change( bool c ) { emit changed(c); m_changed = c; }

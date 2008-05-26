@@ -26,10 +26,10 @@
 #include <QtGui/QLayout>
 #include <QtGui/QPushButton>
 #include <QtGui/QGridLayout>
+#include <QtGui/QTreeWidget>
 
 // KDE
 #include <kconfig.h>
-#include <k3listview.h>
 #include <klocale.h>
 #include <kmessagebox.h>
 
@@ -46,13 +46,12 @@ DomainListView::DomainListView(KSharedConfig::Ptr config,const QString &title,
   thisLayout->setSpacing(KDialog::spacingHint());
   thisLayout->setMargin(KDialog::marginHint());
 
-  domainSpecificLV = new K3ListView(this);
-  domainSpecificLV->addColumn(i18n("Host/Domain"));
-  domainSpecificLV->addColumn(i18n("Policy"), 100);
-  connect(domainSpecificLV,SIGNAL(doubleClicked(Q3ListViewItem *)), SLOT(changePressed()));
-  connect(domainSpecificLV,SIGNAL(returnPressed(Q3ListViewItem *)), SLOT(changePressed()));
-  connect(domainSpecificLV, SIGNAL( executed( Q3ListViewItem *)), SLOT( updateButton()));
-  connect(domainSpecificLV, SIGNAL(selectionChanged()), SLOT(updateButton()));
+  domainSpecificLV = new QTreeWidget(this);
+  domainSpecificLV->setRootIsDecorated(false);
+  domainSpecificLV->setHeaderLabels(QStringList() << i18n("Host/Domain") << i18n("Policy"));
+  domainSpecificLV->setColumnWidth(0, 100);
+  connect(domainSpecificLV,SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)), SLOT(changePressed()));
+  connect(domainSpecificLV, SIGNAL(currentItemChanged(QTreeWidgetItem*, QTreeWidgetItem*)), SLOT(updateButton()));
   thisLayout->addWidget(domainSpecificLV, 0, 0, 6, 1);
 
   addDomainPB = new QPushButton(i18n("&New..."), this);
@@ -101,7 +100,7 @@ DomainListView::~DomainListView() {
 
 void DomainListView::updateButton()
 {
-    Q3ListViewItem *index = domainSpecificLV->currentItem();
+    QTreeWidgetItem *index = domainSpecificLV->currentItem();
     bool enable = ( index != 0 );
     changeDomainPB->setEnabled( enable );
     deleteDomainPB->setEnabled( enable );
@@ -116,9 +115,9 @@ void DomainListView::addPressed()
     PolicyDialog pDlg(pol, this);
     setupPolicyDlg(AddButton,pDlg,pol);
     if( pDlg.exec() ) {
-        Q3ListViewItem* index = new Q3ListViewItem( domainSpecificLV, pDlg.domain(),
+        QTreeWidgetItem* index = new QTreeWidgetItem( domainSpecificLV, QStringList() << pDlg.domain() <<
                                                   pDlg.featureEnabledPolicyText() );
-	pol->setDomain(pDlg.domain());
+        pol->setDomain(pDlg.domain());
         domainPolicies.insert(index, pol);
         domainSpecificLV->setCurrentItem( index );
         emit changed(true);
@@ -130,7 +129,7 @@ void DomainListView::addPressed()
 
 void DomainListView::changePressed()
 {
-    Q3ListViewItem *index = domainSpecificLV->currentItem();
+    QTreeWidgetItem *index = domainSpecificLV->currentItem();
     if ( index == 0 )
     {
         KMessageBox::information( 0, i18n("You must first select a policy to be changed." ) );
@@ -149,7 +148,7 @@ void DomainListView::changePressed()
     {
         pol_copy->setDomain(pDlg.domain());
         domainPolicies[index] = pol_copy;
-	pol_copy = pol;
+        pol_copy = pol;
         index->setText(0, pDlg.domain() );
         index->setText(1, pDlg.featureEnabledPolicyText());
         emit changed(true);
@@ -159,7 +158,7 @@ void DomainListView::changePressed()
 
 void DomainListView::deletePressed()
 {
-    Q3ListViewItem *index = domainSpecificLV->currentItem();
+    QTreeWidgetItem *index = domainSpecificLV->currentItem();
     if ( index == 0 )
     {
         KMessageBox::information( 0, i18n("You must first select a policy to delete." ) );
@@ -205,8 +204,8 @@ void DomainListView::initialize(const QStringList &domainList)
         policy = i18n("Accept");
       else
         policy = i18n("Reject");
-      Q3ListViewItem *index =
-        new Q3ListViewItem( domainSpecificLV, domain, policy );
+      QTreeWidgetItem *index =
+        new QTreeWidgetItem( domainSpecificLV, QStringList() << domain << policy );
 
       domainPolicies[index] = pol;
     }
@@ -216,7 +215,7 @@ void DomainListView::save(const QString &group, const QString &domainListKey) {
     QStringList domainList;
     DomainPolicyMap::Iterator it = domainPolicies.begin();
     for (; it != domainPolicies.end(); ++it) {
-    	Q3ListViewItem *current = it.key();
+    	QTreeWidgetItem *current = it.key();
 	Policies *pol = it.value();
 	pol->save();
 	domainList.append(current->text(0));

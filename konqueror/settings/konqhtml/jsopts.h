@@ -7,12 +7,10 @@
 // Port to KControl
 // (c) Torben Weis 1998
 
-#ifndef __JSOPTS_H__
-#define __JSOPTS_H__
+#ifndef JSOPTS_H
+#define JSOPTS_H
 
-#define KDE3_SUPPORT
 #include <kcmodule.h>
-#undef KDE3_SUPPORT
 
 #include "domainlistview.h"
 #include "jspolicies.h"
@@ -78,5 +76,5 @@ private:
   friend class JSDomainListView;
 };
 
-#endif		// __JSOPTS_H__
+#endif		// JSOPTS_H
 

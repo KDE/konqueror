@@ -19,8 +19,8 @@
 
 */
 
-#ifndef __DOMAINLISTVIEW_H__
-#define __DOMAINLISTVIEW_H__
+#ifndef DOMAINLISTVIEW_H
+#define DOMAINLISTVIEW_H
 
 #include <QtGui/QGroupBox>
 #include <QtCore/QMap>
@@ -28,11 +28,11 @@
 #include <kconfig.h>
 #include <ksharedconfig.h>
 
-class Q3ListViewItem;
+class QTreeWidgetItem;
 class QPushButton;
 class QStringList;
 
-class K3ListView;
+class QTreeWidget;
 
 class Policies;
 class PolicyDialog;
@@ -81,7 +81,7 @@ public:
   /**
    * returns the list view displaying the domains
    */
-  K3ListView *listView() const { return domainSpecificLV; }
+  QTreeWidget *listView() const { return domainSpecificLV; }
 
   /**
    * returns the add push-button.
@@ -194,7 +194,7 @@ protected:
 
   KSharedConfig::Ptr config;
 
-  K3ListView *domainSpecificLV;
+  QTreeWidget *domainSpecificLV;
 
   QPushButton* addDomainPB;
   QPushButton* changeDomainPB;
@@ -202,9 +202,9 @@ protected:
   QPushButton* importDomainPB;
   QPushButton* exportDomainPB;
 
-  typedef QMap<Q3ListViewItem*, Policies *> DomainPolicyMap;
+  typedef QMap<QTreeWidgetItem*, Policies *> DomainPolicyMap;
   DomainPolicyMap domainPolicies;
 };
 
-#endif		// __DOMAINLISTVIEW_H__
+#endif		// DOMAINLISTVIEW_H
 
