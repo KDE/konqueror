@@ -47,7 +47,7 @@ as Authors, publish date, the abstract, and Keywords -->
 <firstname>David</firstname>
 <surname>Edmundson</surname>
 <affiliation>
-<address><email>kde@davidedmundson.oc.uk</email></address>
+<address><email>kde@davidedmundson.co.uk</email></address>
 </affiliation>
 </author>
 
@@ -124,8 +124,8 @@ revision history. (see installation appendix comment) -->
 
 <para>
 &dolphin; is a file manager for &kde; which aims to improve usability at the user interface level. 
-&dolphin; is not intended to be a competitor to &konqueror;. &dolphin;
-focuses only on being a file manager whereas &konqueror; is a universal viewer of many 
+&dolphin; is not intended to be a competitor to &konqueror;.
+&dolphin; focuses only on being a file manager whereas &konqueror; is a universal viewer of many 
 file types. This development approach allows for concentrating on optimizing the user interface 
 for the specific task of file management.
 </para>
@@ -184,7 +184,7 @@ The default &dolphin; interface consists of a (1) menu bar, (2) toolbar, (3) loc
 </para>
 
 <para>
-The location bar displays the path to the current directory. The location bar has two versions. By default location is chosen through the 'bread crumb' display.  The bread crumb display makes each folder a link which can be used to immediately go to the entry. The <filename class="directory">/home/peter/Documents</filename> entry in the bread crumb view would become 'Home >  peter >  Documents' with Home, peter, and Documents being clickable links which are able go to there respective locations. This makes navigation to directories above the current directory easier and more intuitive. There is also the classic "location view" which is a text box in which you can type the full path of the folder you wish to view.
+The location bar displays the path to the current folder. The location bar has two versions. By default location is chosen through the 'bread crumb' display.  The bread crumb display makes each folder a link which can be used to immediately go to the entry. The <filename class="directory">/home/peter/Documents</filename> entry in the bread crumb view would become 'Home >  peter >  Documents' with Home, peter, and Documents being clickable links which are able go to there respective locations. This makes navigation to folders above the current folder easier and more intuitive. There is also the classic "location view" which is a text box in which you can type the full path of the folder you wish to view.
 </para>
 
 <para>To switch from location view to breadcrumbs, simply double click in the breadcrumb area. To change back, click the newly appeared yellow arrow to the right of the location bar.</para>
@@ -196,7 +196,7 @@ The location bar displays the path to the current directory. The location bar ha
 (show picture here distinguishing the two views for clarification) -->
 
 <para>
-The workspace shows the contents of the current directory. The workspace can also be set to "Split" mode and show two directories simultaneously. 
+The workspace shows the contents of the current folder. The workspace can also be set to "Split" mode and show two folders simultaneously. 
 </para>
 
 <para>
@@ -207,7 +207,7 @@ The status bar shows a limited amount of data relating to the file hovered over 
 <sect2 id="dolphin-workspace">
 <title>&dolphin; Workspace</title>
 
-<para>The &dolphin; workspace can display the contents of a directory in a variety of views. There are three viewing modes Icons, Details, and Columns. Each of these can have Preview enabled. This changes the icons into showing a preview of the file, rather than an simply icon.</para>
+<para>The &dolphin; workspace can display the contents of a folder in a variety of views. There are three viewing modes Icons, Details, and Columns. Each of these can have Preview enabled. This changes the icons into showing a preview of the file, rather than an simply icon.</para>
 
 
 <para>
@@ -256,6 +256,8 @@ The workspace in &dolphin; is capable of showing two folders within the same win
 <para>
 If this option is enabled then the workspace will split apart. Two separate workspace areas will be available for use, along with two separate location bars.  Clicking on either workspace will make it the active workspace.  If the user toggles the split workspace mode off, then the currently active workspace will remain, while the inactive workspace will close.
 </para>
+
+
 
 <para>
 <screenshot>
@@ -333,16 +335,16 @@ The Information panel shows extended information about the selected file(s), inc
 <sect3>
 <title>Folders</title>
 <para>
-The folders panel shows a tree view structure of the file system. It only shows folders. By selecting a folder the main &dolphin; area changes to show the contents of the selected directory.
+The folders panel shows a tree view structure of the file system. It only shows folders. By selecting a folder the main &dolphin; area changes to show the contents of the selected folders.
 </para>
 </sect3>
 
 <sect3>
 <title>Terminal</title>
 <para>
-This panel opens a terminal inside the Dolphin workspace. The terminal will open at the directory currently shown in the Dolphin view. Changing directory in the main Dolphin view will change the working directory of the terminal to match.
-Note: Changing directory in the terminal will not affect the Dolphin view. The terminal only works with local media.
-</para> 
+This panel opens a terminal inside the Dolphin workspace. The terminal will open at the folder currently shown in the Dolphin view. Changing folder in the main Dolphin view will change the working folder of the terminal to match.
+Note: Changing folder in the terminal will not affect the Dolphin view. The terminal only works with local media.
+</para>
 
 
 <!--TODO pictures of all these panels-->
@@ -365,7 +367,7 @@ The main feature of &dolphin; that allows navigation of the file system is the w
 </para>
 
 <para>
-The tool bar is also used for navigating the file system.  The tool bar contains two buttons essential for navigating the file system quickly and easily, these are; <guiicon>Back</guiicon> and <guiicon>Forward</guiicon>.
+The toolbar is also used for navigating the file system.  The toolbar contains two buttons essential for navigating the file system quickly and easily, these are; <guiicon>Back</guiicon> and <guiicon>Forward</guiicon>.
 </para>
 
 <para>
@@ -543,7 +545,7 @@ To quickly create a bookmark of the folder currently being viewed, right click i
 <title>Finding Files</title>
 
 <para>
-&dolphin; is capable of searching for files in a filesystem.  If <keycombo action="simul">&Ctrl;<keycap>F</keycap></keycombo> is pressed or using <menuchoice> <guimenu>Tools</guimenu> <guimenuitem>Find File...</guimenuitem> </menuchoice>, &kfind; will open already set up to search within the current folder and any sub-folders contained within.
+&dolphin; is capable of searching for files in a filesystem.  If <keycombo action="simul">&Ctrl;<keycap>F</keycap></keycombo> is pressed or using <menuchoice> <guimenu>Tools</guimenu> <guimenuitem>Find File...</guimenuitem> </menuchoice>, <application>KFind</application> will open already set up to search within the current folder and any sub-folders contained within.
 </para>
 </sect2>
 
@@ -584,11 +586,11 @@ The user must then enter the name they wish to give the files.  The # character 
 <title>Comparing A Selection Of Files</title>
 
 <para>
-&dolphin; is capable of comparing a selection of files to see the differences between them.  For a user to be able to compare files then the Kompare application must be installed.  &dolphin; can only compare the files that Kompare is capable on analyzing.
+&dolphin; is capable of comparing a selection of files to see the differences between them.  For a user to be able to compare files then the <application>Kompare</application> application must be installed.  &dolphin; can only compare the files that <application>Kompare</application> is capable on analyzing.
 </para>
 
 <para>
-If a user wishes to compare a selection of files, then first they must select the files to be compared.  Then launch the Kompare application via the Tools menu; <menuchoice> <guimenu>Tools</guimenu> <guimenuitem>Compare Files</guimenuitem> </menuchoice>. Kompare will then open showing the differences between the files.
+If a user wishes to compare a selection of files, then first they must select the files to be compared.  Then launch the <application>Kompare</application> application via the Tools menu; <menuchoice> <guimenu>Tools</guimenu> <guimenuitem>Compare Files</guimenuitem> </menuchoice>.  <application>Kompare</application> will then open showing the differences between the files.
 </para>
 </sect2>
 
@@ -783,7 +785,7 @@ or menu bars. -->
 <guimenuitem>Invert Selection</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>
-Selects all unselected items and deselects all selected items in the current directory.
+Selects all unselected items and deselects all selected items in the current folder.
 </action></para></listitem>
 </varlistentry>
 </variablelist>
@@ -1010,7 +1012,7 @@ Selects all unselected items and deselects all selected items in the current dir
 <guimenu>Tools</guimenu>
 <guimenuitem>Compare Files</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Compare the currently selected files with Kompare.</action></para></listitem>
+<listitem><para><action>Compare the currently selected files with <application>&kompare;</application>.</action></para></listitem>
 </varlistentry>
 </variablelist>
 
@@ -1287,4 +1289,3 @@ End:
 
 vim:tabstop=2:shiftwidth=2:expandtab 
 -->
-
