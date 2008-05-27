@@ -52,7 +52,7 @@ if (X11_Xt_LIB)
 
   target_link_libraries(nspluginscan  ${KDE4_KIO_LIBS} ${X11_Xt_LIB})
 
-  install(TARGETS nspluginscan DESTINATION ${BIN_INSTALL_DIR})
+  install(TARGETS nspluginscan ${INSTALL_TARGETS_DEFAULT_ARGS})
 
   ########### install files ###############
 

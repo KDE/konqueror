@@ -32,7 +32,7 @@ target_link_libraries(keditfiletype  ${KDE4_KIO_LIBS}
 	              ${QT_QT3SUPPORT_LIBRARY}
 		      ${KDE4_KDE3SUPPORT_LIBRARY})
 
-install(TARGETS keditfiletype DESTINATION ${BIN_INSTALL_DIR})
+install(TARGETS keditfiletype ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### install files ###############
 

@@ -7,7 +7,7 @@ kde4_add_executable(kbookmarkmerger ${kbookmarkmerger_SRCS})
 
 target_link_libraries(kbookmarkmerger  ${KDE4_KIO_LIBS} )
 
-install(TARGETS kbookmarkmerger DESTINATION ${BIN_INSTALL_DIR})
+install(TARGETS kbookmarkmerger ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 
 ########### next target ###############

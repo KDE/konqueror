@@ -24,7 +24,7 @@ kde4_add_executable(kfind ${kfind_SRCS})
 
 target_link_libraries(kfind  ${KDE4_KDE3SUPPORT_LIBS} )
 
-install(TARGETS kfind DESTINATION ${BIN_INSTALL_DIR})
+install(TARGETS kfind ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 
 ########### install files ###############
