@@ -20,8 +20,8 @@
  *
  */
 
-#ifndef __WEBKITPARTFACTORY__
-#define __WEBKITPARTFACTORY__
+#ifndef WEBKITPARTFACTORY
+#define WEBKITPARTFACTORY
 
 #include <kparts/factory.h>
 
@@ -35,4 +35,4 @@ public:
     virtual KParts::Part *createPartObject( QWidget *parentWidget, QObject *parent, const char *className, const QStringList &args );
 };
 
-#endif
+#endif // WEBKITPARTFACTORY

@@ -22,9 +22,10 @@
 
 #ifndef WEBKITSEARCHBAR_H
 #define WEBKITSEARCHBAR_H
+
 #include <QWidget>
 
-class QLineEdit;
+class KLineEdit;
 class QTimer;
 class QCheckBox;
 
@@ -53,12 +54,10 @@ signals:
     void findPreviousClicked();
 
 private:
-    QLineEdit* m_searchEdit;
+    KLineEdit* m_searchEdit;
     QCheckBox* m_caseSensitive;
     QTimer* m_searchTimer;
 
 };
 
-
 #endif /* WEBKITSEARCHBAR_H */
-

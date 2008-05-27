@@ -27,12 +27,13 @@
 #include <QFontMetrics>
 #include <QLabel>
 #include <KLocale>
-#include <QLineEdit>
 #include <QTimer>
 #include <QEvent>
 #include <QKeyEvent>
 #include <QCheckBox>
+
 #include <KIcon>
+#include <KLineEdit>
 #include <KColorScheme>
 
 WebKitSearchBar::WebKitSearchBar( QWidget *parent )
@@ -48,8 +49,9 @@ WebKitSearchBar::WebKitSearchBar( QWidget *parent )
     connect( close , SIGNAL(clicked()) , this , SIGNAL(closeClicked()) );
 
     QLabel* findLabel = new QLabel(i18n("Find:"),this);
-    m_searchEdit = new QLineEdit(this);
+    m_searchEdit = new KLineEdit(this);
     m_searchEdit->installEventFilter(this);
+    m_searchEdit->setClearButtonShown(true);
     m_searchEdit->setObjectName("search-edit");
     m_searchEdit->setToolTip( i18n("Enter the text to search for here") );
 

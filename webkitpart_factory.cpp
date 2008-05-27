@@ -19,9 +19,11 @@
  * Boston, MA 02110-1301, USA.
  *
  */
+
+#include "webkitpart_factory.h"
+
 #include <KDE/KParts/GenericFactory>
 #include "webkitpart.h"
-#include "webkitpart_factory.h"
 
 WebkitFactory::WebkitFactory()
 {

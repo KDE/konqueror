@@ -46,24 +46,24 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
     : KParts::ReadOnlyPart(parent)
 {
     WebKitGlobal::registerPart( this );
-    webPageView = new WebKitPageView( this, parentWidget );
-    setWidget(webPageView);
-    setComponentData(WebKitGlobal::componentData() );
-    connect(webPageView->view(), SIGNAL(loadStarted()),
+    m_webPageView = new WebKitPageView(this, parentWidget);
+    setWidget(m_webPageView);
+    setComponentData(WebKitGlobal::componentData());
+    connect(m_webPageView->view(), SIGNAL(loadStarted()),
             this, SLOT(loadStarted()));
-    connect(webPageView->view(), SIGNAL(loadFinished()),
+    connect(m_webPageView->view(), SIGNAL(loadFinished()),
             this, SLOT(loadFinished()));
-    connect(webPageView->view(), SIGNAL(titleChanged(const QString &)),
+    connect(m_webPageView->view(), SIGNAL(titleChanged(const QString &)),
             this, SIGNAL(setWindowCaption(const QString &)));
 
-    connect(webPageView->view()->page(), SIGNAL(linkHovered(const QString &, const QString &, const QString &)),
+    connect(m_webPageView->view()->page(), SIGNAL(linkHovered(const QString &, const QString &, const QString &)),
             this, SIGNAL(setStatusBarText(const QString &)));
 
-    browserExtension = new WebKitBrowserExtension(this);
+    m_browserExtension = new WebKitBrowserExtension(this);
 
-    connect( webPageView->view()->page(), SIGNAL(loadProgress(int)),
-            browserExtension, SIGNAL(loadingProgress(int)));
-    connect(webPageView->view(), SIGNAL(urlChanged(const QUrl &)),
+    connect(m_webPageView->view()->page(), SIGNAL(loadProgress(int)),
+            m_browserExtension, SIGNAL(loadingProgress(int)));
+    connect(m_webPageView->view(), SIGNAL(urlChanged(const QUrl &)),
             this, SLOT(urlChanged(const QUrl &)));
 
     initAction();
@@ -80,14 +80,14 @@ void WebKitPart::initAction()
 {
     KAction *action = new KAction( KIcon(  "zoom-in" ), i18n( "Enlarge Font" ), this );
     actionCollection()->addAction( "incFontSizes", action );
-    connect( action, SIGNAL(triggered(bool)), browserExtension, SLOT( zoomIn() ) );
+    connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(zoomIn()));
 
     action = new KAction( KIcon(  "zoom-out" ),i18n( "Shrink Font" ), this );
     actionCollection()->addAction( "decFontSizes", action );
-    connect( action, SIGNAL(triggered(bool)), browserExtension, SLOT( zoomOut() ) );
+    connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(zoomOut()));
 
 
-    action = actionCollection()->addAction( KStandardAction::Find, "find", webPageView, SLOT( slotFind() ) );
+    action = actionCollection()->addAction(KStandardAction::Find, "find", m_webPageView, SLOT( slotFind()));
     action->setWhatsThis( i18n( "Find text<br /><br />"
                                    "Shows a dialog that allows you to find text on the displayed page." ) );
 }
@@ -113,15 +113,20 @@ bool WebKitPart::openUrl(const KUrl &url)
         request.setHttpHeaderField(key, header.value(key));
 #endif
 
-    webPageView->view()->load(url);
+    m_webPageView->view()->load(url);
 
     return true;
 }
 
 bool WebKitPart::closeUrl()
 {
-    webPageView->view()->stop();
+    m_webPageView->view()->stop();
     return true;
+}
+
+WebKitBrowserExtension *WebKitPart::browserExtension() const
+{
+    return m_browserExtension;
 }
 
 bool WebKitPart::openFile()
@@ -142,12 +147,12 @@ void WebKitPart::loadFinished()
 
 void WebKitPart::urlChanged(const QUrl &url)
 {
-    emit browserExtension->setLocationBarUrl(KUrl(url).prettyUrl());
+    emit m_browserExtension->setLocationBarUrl(KUrl(url).prettyUrl());
 }
 
 WebView * WebKitPart::view()
 {
-    return webPageView->view();
+    return m_webPageView->view();
 }
 
 
@@ -162,7 +167,7 @@ QWebPage::NavigationRequestResponse WebKitPart::navigationRequested(const QWebNe
 
     arguments.metaData().unite(KWebNetworkInterface::metaDataForRequest(request.httpHeader()));
 
-    emit browserExtension->openUrlRequest(request.url(), arguments, browserArguments);
+    emit m_browserExtension->openUrlRequest(request.url(), arguments, browserArguments);
 
     return QWebPage::IgnoreNavigationRequest;
 }

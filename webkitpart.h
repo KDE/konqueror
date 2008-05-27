@@ -26,7 +26,8 @@
 #include <KDE/KParts/ReadOnlyPart>
 #include <KDE/KParts/BrowserExtension>
 
-#include <qwebview.h>
+#include <QtWebKit/QWebView>
+
 #include "webkitkde_export.h"
 
 class WebKitPageView;
@@ -46,7 +47,7 @@ public:
 //     QWebPage::NavigationRequestResponse navigationRequested(const QWebNetworkRequest &request);
 
     WebView *view();
-    inline WebKitBrowserExtension *browserExt() const { return browserExtension; }
+    WebKitBrowserExtension *browserExtension() const;
 
 protected:
     virtual bool openFile();
@@ -58,8 +59,8 @@ private Q_SLOTS:
     void urlChanged(const QUrl &url);
 
 private:
-    WebKitPageView *webPageView;
-    WebKitBrowserExtension *browserExtension;
+    WebKitPageView *m_webPageView;
+    WebKitBrowserExtension *m_browserExtension;
 };
 
 class WebKitBrowserExtension : public KParts::BrowserExtension

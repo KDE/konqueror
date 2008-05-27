@@ -27,7 +27,8 @@
 #include <KDE/KParts/ReadOnlyPart>
 #include <KDE/KParts/BrowserExtension>
 
-#include <qwebview.h>
+#include <QtWebKit/QWebView>
+
 #include "webkitkde_export.h"
 
 class WebView;
