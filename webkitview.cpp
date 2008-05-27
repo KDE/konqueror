@@ -37,10 +37,10 @@
 #include <KStandardDirs>
 #include <KActionMenu>
 
-#include <QHttpRequestHeader>
-#include <QWebFrame>
+#include <QtNetwork/QHttpRequestHeader>
+#include <QtWebKit/QWebFrame>
 #include <QtWebKit/QWebHitTestResult>
-#include <QWebPage>
+#include <QtWebKit/QWebPage>
 
 class WebView::WebViewPrivate {
 public:

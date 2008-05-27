@@ -24,7 +24,7 @@
 #ifndef WEBKITPAGEVIEW_H
 #define WEBKITPAGEVIEW_H
 
-#include <QWebPage>
+#include <QtWebKit/QWebPage>
 class WebKitPart;
 class WebView;
 class WebKitSearchBar;
