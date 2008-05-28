@@ -15,6 +15,7 @@
    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include <kdebug.h>
 #include <QScrollArea>
 #include <qtest_kde.h>
 #include <qtest_gui.h>
@@ -53,11 +54,8 @@ private Q_SLOTS:
                 "</script>"), QString("text/html"));
         QPointer<KonqView> view = mainWindow->currentView();
         QVERIFY(view);
-        QVERIFY(view->part());
-        QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 5000));
-        QWidget* widget = view->part()->widget();
-        if ( QScrollArea* scrollArea = qobject_cast<QScrollArea*>(widget))
-            widget = scrollArea->widget();
+        QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 10000));
+        QWidget* widget = partWidget(view);
         qDebug() << "Clicking on" << widget;
         QTest::mousePress(widget, Qt::RightButton);
         qApp->processEvents();
@@ -65,6 +63,45 @@ private Q_SLOTS:
         QVERIFY(!mainWindow); // the whole window gets deleted, in fact
     }
 
+    void windowOpen()
+    {
+        KonqMainWindow* mainWindow = new KonqMainWindow;
+        mainWindow->openUrl(0, KUrl(
+                "data:text/html, <script type=\"text/javascript\">"
+                "function openWindow() { window.open('data:text/html, <p>Hello world</p>'); } "
+                "document.onmousedown = openWindow; "
+                "</script>"), QString("text/html"));
+        QCOMPARE(KMainWindow::memberList().count(), 1);
+        KonqView* view = mainWindow->currentView();
+        QVERIFY(view);
+        QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 50000));
+        qApp->processEvents();
+        QWidget* widget = partWidget(view);
+        QTest::mousePress(widget, Qt::LeftButton);
+        qApp->processEvents(); // openurlrequestdelayed
+        qApp->processEvents(); // browserrun
+        QTest::qWait(10); // just in case there's more :)
+        // Did it open a window?
+        QCOMPARE(KMainWindow::memberList().count(), 2);
+        deleteAllMainWindows();
+    }
+
+private:
+    // Return the main widget for the given KonqView; used for clicking onto it
+    static QWidget* partWidget(KonqView* view)
+    {
+        QWidget* widget = view->part()->widget();
+        if (QScrollArea* scrollArea = qobject_cast<QScrollArea*>(widget))
+            widget = scrollArea->widget();
+        return widget;
+    }
+
+    // Delete all KonqMainWindows
+    static void deleteAllMainWindows()
+    {
+        const QList<KMainWindow*> windows = KMainWindow::memberList();
+        qDeleteAll(windows);
+    }
 };
 
 
