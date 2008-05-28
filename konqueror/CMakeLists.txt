@@ -26,10 +26,11 @@ install( FILES
    DESTINATION  ${XDG_APPS_INSTALL_DIR} )
 install( FILES konqueror.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
 
-install(FILES profile_webbrowsing.desktop DESTINATION ${DATA_INSTALL_DIR}/konqueror/profiles/ RENAME webbrowsing)
+install(FILES profile_webbrowsing.desktop    DESTINATION ${DATA_INSTALL_DIR}/konqueror/profiles/ RENAME webbrowsing)
 install(FILES profile_filemanagement.desktop DESTINATION ${DATA_INSTALL_DIR}/konqueror/profiles/ RENAME filemanagement)
-if(NOT WIN32)
-install(FILES profile_midnightcommander.desktop DESTINATION ${DATA_INSTALL_DIR}/konqueror/profiles/ RENAME midnightcommander)
-endif(NOT WIN32)
 install(FILES profile_tabbedbrowsing.desktop DESTINATION ${DATA_INSTALL_DIR}/konqueror/profiles/ RENAME tabbedbrowsing)
-install(FILES profile_kde_devel.desktop DESTINATION ${DATA_INSTALL_DIR}/konqueror/profiles/ RENAME kde_devel)
+install(FILES profile_kde_devel.desktop      DESTINATION ${DATA_INSTALL_DIR}/konqueror/profiles/ RENAME kde_devel)
+
+if(NOT WIN32)
+   install(FILES profile_midnightcommander.desktop DESTINATION ${DATA_INSTALL_DIR}/konqueror/profiles/ RENAME midnightcommander)
+endif(NOT WIN32)
