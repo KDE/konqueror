@@ -1183,6 +1183,7 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
     KonqOpenURLRequest req;
     req.args = args;
     req.browserArgs = browserArgs;
+    req.forceAutoEmbed = true;
 
     if ( args.mimeType().isEmpty() )
       mainWindow->openUrl( 0, url, QString(), req );
@@ -1319,7 +1320,7 @@ void KonqMainWindow::slotNewWindow()
   // on user request
   if(KonqSessionManager::self()->hasAutosavedDirtySessions())
     KonqSessionManager::self()->askUserToRestoreAutosavedDirtySessions();
-    
+
   // Use profile from current window, if set
   QString profile = m_pViewManager->currentProfile();
   if ( profile.isEmpty() )
@@ -2932,11 +2933,11 @@ void KonqMainWindow::slotSessionsListAboutToShow()
 
     QString dir= KStandardDirs::locateLocal("appdata", "sessions/");
     QDirIterator it(dir, QDir::Readable|QDir::NoDotAndDotDot|QDir::Dirs);
-    
+
     while (it.hasNext())
     {
         QFileInfo fileInfo(it.next());
-        
+
         QAction* action = popup->addAction( fileInfo.baseName() );
         action->setActionGroup(m_sessionsGroup);
         action->setData(fileInfo.filePath());
@@ -3606,8 +3607,8 @@ void KonqMainWindow::initActions()
   connect( m_undoManager, SIGNAL(openClosedTab(const KonqClosedTabItem&)), m_pViewManager, SLOT(openClosedTab(const KonqClosedTabItem&)) );
   connect( m_undoManager, SIGNAL(openClosedWindow(const KonqClosedWindowItem&)), m_pViewManager, SLOT(openClosedWindow(const KonqClosedWindowItem&)) );
   connect( m_undoManager, SIGNAL(closedItemsListChanged()), this, SLOT(updateClosedItemsAction()));
-  
-  
+
+
   m_paSessions = new KActionMenu( i18n( "Sessions" ), this );
   actionCollection()->addAction( "sessions", m_paSessions );
   m_sessionsGroup = new QActionGroup(m_paSessions->menu());
@@ -4838,7 +4839,7 @@ void KonqMainWindow::readProperties( const KConfigGroup& configGroup )
 {
     const QString xmluiFile = configGroup.readEntry("XMLUIFile","konqueror.rc");
     setXMLFile(xmluiFile);
-    
+
     m_pViewManager->loadViewProfileFromGroup( configGroup, QString() /*no profile name*/ );
     // read window settings
     applyMainWindowSettings( configGroup, true );
