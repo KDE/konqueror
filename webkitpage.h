@@ -35,7 +35,7 @@ public:
 
 protected:
     virtual bool acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request,
-            NavigationType type);
+                                         NavigationType type);
     virtual QString chooseFile(QWebFrame *parentFrame, const QString &suggestedFile);
     virtual void javaScriptAlert(QWebFrame *frame, const QString &msg);
     virtual bool javaScriptConfirm(QWebFrame *frame, const QString &msg);

@@ -42,7 +42,8 @@
 #include <QtWebKit/QWebHitTestResult>
 #include <QtWebKit/QWebPage>
 
-class WebView::WebViewPrivate {
+class WebView::WebViewPrivate
+{
 public:
     KActionCollection* m_actionCollection;
     QWebHitTestResult result;
@@ -50,10 +51,10 @@ public:
 
 
 WebView::WebView(WebKitPart *wpart, QWidget *parent)
-    : QWebView(parent), part(wpart), d( new WebView::WebViewPrivate )
+    : QWebView(parent), part(wpart), d(new WebView::WebViewPrivate)
 {
     setPage(new WebPage(wpart, parent));
-    d->m_actionCollection = new KActionCollection( this );
+    d->m_actionCollection = new KActionCollection(this);
 }
 
 WebView::~WebView()
@@ -76,85 +77,82 @@ void WebView::contextMenuEvent(QContextMenuEvent *e)
     flags |= KParts::BrowserExtension::ShowUrlOperations;
 
     KParts::BrowserExtension::ActionGroupMap mapAction;
-    if ( !d->result.linkUrl().isEmpty() )
-    {
+    if (!d->result.linkUrl().isEmpty()) {
         flags |= KParts::BrowserExtension::IsLink;
-        linkActionPopupMenu( mapAction );
+        linkActionPopupMenu(mapAction);
     }
-    if ( !d->result.imageUrl().isEmpty() )
-    {
-        partActionPopupMenu( mapAction );
+    if (!d->result.imageUrl().isEmpty()) {
+        partActionPopupMenu(mapAction);
     }
-    if ( !selectedText().isEmpty() )
-    {
+    if (!selectedText().isEmpty()) {
         flags |= KParts::BrowserExtension::ShowTextSelectionItems;
-        editActionPopupMenu( mapAction );
+        editActionPopupMenu(mapAction);
     }
     emit part->browserExtension()->popupMenu(/*guiclient */
         e->globalPos(), part->url(), 0, KParts::OpenUrlArguments(), KParts::BrowserArguments(),
         flags, mapAction);
 }
 
-void WebView::partActionPopupMenu( KParts::BrowserExtension::ActionGroupMap &partGroupMap )
+void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &partGroupMap)
 {
     QList<QAction *>partActions;
-    KAction *action = new KAction( i18n( "Save Image As..." ), this );
-    d->m_actionCollection->addAction( "saveimageas", action );
-    connect( action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT( slotSaveImageAs() ) );
+    KAction *action = new KAction(i18n("Save Image As..."), this);
+    d->m_actionCollection->addAction("saveimageas", action);
+    connect(action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT(slotSaveImageAs()));
     partActions.append(action);
 
-    action = new KAction( i18n( "Send Image..." ), this );
-    d->m_actionCollection->addAction( "sendimage", action );
-    connect( action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT( slotSendImage() ) );
+    action = new KAction(i18n("Send Image..."), this);
+    d->m_actionCollection->addAction("sendimage", action);
+    connect(action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT(slotSendImage()));
     partActions.append(action);
 
-    action = new KAction( i18n( "Copy Image" ), this );
-    d->m_actionCollection->addAction( "copyimage", action );
-    action->setEnabled( !d->result.pixmap().isNull() );
-    connect( action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT( slotCopyImage() ) );
+    action = new KAction(i18n("Copy Image"), this);
+    d->m_actionCollection->addAction("copyimage", action);
+    action->setEnabled(!d->result.pixmap().isNull());
+    connect(action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT(slotCopyImage()));
     partActions.append(action);
 
-    action = new KAction( i18n( "View Frame Source" ), this );
-    d->m_actionCollection->addAction( "viewFrameSource", action );
-    connect( action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT( slotViewDocumentSource() ) );
+    action = new KAction(i18n("View Frame Source"), this);
+    d->m_actionCollection->addAction("viewFrameSource", action);
+    connect(action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT(slotViewDocumentSource()));
     partActions.append(action);
 
 
-    partGroupMap.insert( "partactions", partActions );
+    partGroupMap.insert("partactions", partActions);
 }
 
-void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &linkGroupMap )
+void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &linkGroupMap)
 {
     QList<QAction *>linkActions;
 
-    KAction *action = new KAction( i18n( "Open in New &Window" ), this );
-    d->m_actionCollection->addAction( "frameinwindow", action );
-    action->setIcon( KIcon( "window-new" ) );
-    connect( action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT(slotFrameInWindow()) );
-    linkActions.append( action );
+    KAction *action = new KAction(i18n("Open in New &Window"), this);
+    d->m_actionCollection->addAction("frameinwindow", action);
+    action->setIcon(KIcon("window-new"));
+    connect(action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT(slotFrameInWindow()));
+    linkActions.append(action);
 
-    action = new KAction( i18n( "Open in &This Window" ), this );
-    d->m_actionCollection->addAction( "frameintop", action );
-    connect( action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT( slotFrameInTop() ) );
-    linkActions.append( action );
+    action = new KAction(i18n("Open in &This Window"), this);
+    d->m_actionCollection->addAction("frameintop", action);
+    connect(action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT(slotFrameInTop()));
+    linkActions.append(action);
 
-    action = new KAction( i18n( "Open in &New Tab" ), this );
-    d->m_actionCollection->addAction( "frameintab", action );
-    action->setIcon( KIcon( "tab-new" ) );
-    connect( action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT( slotFrameInTab() ) );
-    linkActions.append( action );
+    action = new KAction(i18n("Open in &New Tab"), this);
+    d->m_actionCollection->addAction("frameintab", action);
+    action->setIcon(KIcon("tab-new"));
+    connect(action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT(slotFrameInTab()));
+    linkActions.append(action);
 
-    linkGroupMap.insert( "linkactions", linkActions );
+    linkGroupMap.insert("linkactions", linkActions);
 }
 
-void WebView::editActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &editGroupMap )
+void WebView::editActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &editGroupMap)
 {
     QList<QAction *>editActions;
 
 
-    QAction* copyAction = d->m_actionCollection->addAction( KStandardAction::Copy, "copy",  part->browserExtension(), SLOT( copy() ) );
+    QAction* copyAction = d->m_actionCollection->addAction(KStandardAction::Copy, "copy",  part->browserExtension(), SLOT(copy()));
     copyAction->setText(i18n("&Copy Text"));
-    copyAction->setEnabled( part->browserExtension()->isActionEnabled( "copy" ));
+    copyAction->setEnabled(part->browserExtension()->isActionEnabled("copy"));
     editActions.append(copyAction);
 
 
@@ -167,9 +165,9 @@ void WebView::editActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &edit
     // search text
     QString selectedText = this->selectedText();
     selectedText.replace("&", "&&");
-    if ( selectedText.length()>18 ) {
+    if (selectedText.length() > 18) {
         selectedText.truncate(15);
-        selectedText+="...";
+        selectedText += "...";
     }
 
     // default search provider
@@ -179,77 +177,73 @@ void WebView::editActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &edit
     KIcon icon;
     KUriFilterData data;
     QStringList list;
-    data.setData( QString("some keyword") );
+    data.setData(QString("some keyword"));
     list << "kurisearchfilter" << "kuriikwsfilter";
 
     QString name;
-    if ( KUriFilter::self()->filterUri(data, list) )
-    {
+    if (KUriFilter::self()->filterUri(data, list)) {
         QString iconPath = KStandardDirs::locate("cache", KMimeType::favIconForUrl(data.uri()) + ".png");
-        if ( iconPath.isEmpty() )
+        if (iconPath.isEmpty())
             icon = KIcon("edit-find");
         else
-            icon = KIcon( QPixmap( iconPath ) );
+            icon = KIcon(QPixmap(iconPath));
         name = service->name();
-    }
-    else
-    {
+    } else {
         icon = KIcon("google");
         name = "Google";
     }
 
-    KAction *action = new KAction( i18n( "Search for '%1' with %2", selectedText, name ), this );
-    d->m_actionCollection->addAction( "searchProvider", action );
+    KAction *action = new KAction(i18n("Search for '%1' with %2", selectedText, name), this);
+    d->m_actionCollection->addAction("searchProvider", action);
     editActions.append(action);
-    action->setIcon( icon );
-    connect( action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT( searchProvider() ) );
+    action->setIcon(icon);
+    connect(action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT(searchProvider()));
 
     // favorite search providers
     QStringList favoriteEngines;
     favoriteEngines << "google" << "google_groups" << "google_news" << "webster" << "dmoz" << "wikipedia";
     favoriteEngines = cg.readEntry("FavoriteSearchEngines", favoriteEngines);
 
-    if ( !favoriteEngines.isEmpty()) {
-        KActionMenu* providerList = new KActionMenu( i18n( "Search for '%1' with" ,  selectedText ), this );
-        d->m_actionCollection->addAction( "searchProviderList", providerList );
+    if (!favoriteEngines.isEmpty()) {
+        KActionMenu* providerList = new KActionMenu(i18n("Search for '%1' with",  selectedText), this);
+        d->m_actionCollection->addAction("searchProviderList", providerList);
         editActions.append(providerList);
 
         QStringList::ConstIterator it = favoriteEngines.begin();
-        for ( ; it != favoriteEngines.end(); ++it ) {
-            if (*it==defaultEngine)
+        for (; it != favoriteEngines.end(); ++it) {
+            if (*it == defaultEngine)
                 continue;
             service = KService::serviceByDesktopPath(QString("searchproviders/%1.desktop").arg(*it));
             if (!service)
                 continue;
             const QString searchProviderPrefix = *(service->property("Keys").toStringList().begin()) + keywordDelimiter;
-            data.setData( searchProviderPrefix + "some keyword" );
+            data.setData(searchProviderPrefix + "some keyword");
 
-            if ( KUriFilter::self()->filterUri(data, list) )
-            {
+            if (KUriFilter::self()->filterUri(data, list)) {
                 QString iconPath = KStandardDirs::locate("cache", KMimeType::favIconForUrl(data.uri()) + ".png");
-                if ( iconPath.isEmpty() )
+                if (iconPath.isEmpty())
                     icon = KIcon("edit-find");
                 else
-                    icon = KIcon( QPixmap( iconPath ) );
+                    icon = KIcon(QPixmap(iconPath));
                 name = service->name();
 
-                KAction *action = new KAction( name, this  );
-                d->m_actionCollection->addAction( QString( "searchProvider" + searchProviderPrefix ).toLatin1().constData(), action );
-                action->setIcon( icon );
-                connect( action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT( searchProvider() ) );
+                KAction *action = new KAction(name, this);
+                d->m_actionCollection->addAction(QString("searchProvider" + searchProviderPrefix).toLatin1().constData(), action);
+                action->setIcon(icon);
+                connect(action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT(searchProvider()));
 
                 providerList->addAction(action);
             }
         }
     }
 
-    if ( selectedText.contains("://") && KUrl(selectedText).isValid() ) {
-        KAction *action = new KAction( i18n( "Open '%1'", selectedText ), this );
-        d->m_actionCollection->addAction( "openSelection", action );
-        action->setIcon( KIcon( "window-new" ) );
-        connect( action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT( openSelection() ) );
+    if (selectedText.contains("://") && KUrl(selectedText).isValid()) {
+        KAction *action = new KAction(i18n("Open '%1'", selectedText), this);
+        d->m_actionCollection->addAction("openSelection", action);
+        action->setIcon(KIcon("window-new"));
+        connect(action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT(openSelection()));
         editActions.append(action);
     }
 
-    editGroupMap.insert( "editactions", editActions );
+    editGroupMap.insert("editactions", editActions);
 }

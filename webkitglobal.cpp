@@ -31,7 +31,6 @@
 #include <KDE/KDebug>
 #include <KDE/KLocale>
 #include <KDE/KAboutData>
-#include <assert.h>
 
 WebKitGlobal *WebKitGlobal::s_self = 0;
 unsigned long int WebKitGlobal::s_refcnt = 0;
@@ -41,26 +40,24 @@ KComponentData *WebKitGlobal::s_componentData = 0;
 
 WebKitGlobal::WebKitGlobal()
 {
-    assert(!s_self);
+    Q_ASSERT(!s_self);
     s_self = this;
     ref();
 }
 
 WebKitGlobal::~WebKitGlobal()
 {
-    if ( s_self == this )
-    {
+    if (s_self == this) {
         delete s_componentData;
         delete s_about;
         if (s_parts) {
-            assert(s_parts->isEmpty());
+            Q_ASSERT(s_parts->isEmpty());
             delete s_parts;
         }
         s_parts = 0;
         s_componentData = 0;
         s_about = 0;
-    }
-    else
+    } else
         deref();
 }
 
@@ -68,8 +65,7 @@ WebKitGlobal::~WebKitGlobal()
 
 void WebKitGlobal::ref()
 {
-    if ( !s_refcnt && !s_self )
-    {
+    if (!s_refcnt && !s_self) {
         // we can't use a staticdeleter here, because that would mean
         // that the WebKitGlobal instance gets deleted from within a qPostRoutine, called
         // from the QApplication destructor. That however is too late, because
@@ -88,30 +84,29 @@ void WebKitGlobal::ref()
 
 void WebKitGlobal::deref()
 {
-    if ( !--s_refcnt && s_self )
-    {
+    if (!--s_refcnt && s_self) {
         delete s_self;
         s_self = 0;
     }
 }
 
-void WebKitGlobal::registerPart( WebKitPart *part )
+void WebKitGlobal::registerPart(WebKitPart *part)
 {
-    if ( !s_parts )
+    if (!s_parts)
         s_parts = new QLinkedList<WebKitPart*>;
 
-    if ( !s_parts->contains( part ) ) {
-        s_parts->append( part );
+    if (!s_parts->contains(part)) {
+        s_parts->append(part);
         ref();
     }
 }
 
-void WebKitGlobal::deregisterPart( WebKitPart *part )
+void WebKitGlobal::deregisterPart(WebKitPart *part)
 {
-    assert( s_parts );
+    Q_ASSERT(s_parts);
 
-    if ( s_parts->removeAll( part ) ) {
-        if ( s_parts->isEmpty() ) {
+    if (s_parts->removeAll(part)) {
+        if (s_parts->isEmpty()) {
             delete s_parts;
             s_parts = 0;
         }
@@ -123,46 +118,44 @@ void WebKitGlobal::initGlobalSettings()
 {
     kDebug();
     QString userStyleSheet;
-    KConfigGroup cgHtml( KGlobal::config(), "HTML Settings" );
-    if ( cgHtml.readEntry( "UserStyleSheetEnabled", false ) == true ) {
-        if ( cgHtml.hasKey( "UserStyleSheet" ) )
-            userStyleSheet = cgHtml.readEntry( "UserStyleSheet", "" );
+    KConfigGroup cgHtml(KGlobal::config(), "HTML Settings");
+    if (cgHtml.readEntry("UserStyleSheetEnabled", false) == true) {
+        if (cgHtml.hasKey("UserStyleSheet"))
+            userStyleSheet = cgHtml.readEntry("UserStyleSheet", "");
     }
-    if ( !userStyleSheet.isEmpty() )
-    {
-        QWebSettings::globalSettings()->setUserStyleSheetUrl( QUrl( userStyleSheet ) );
+    if (!userStyleSheet.isEmpty()) {
+        QWebSettings::globalSettings()->setUserStyleSheetUrl(QUrl(userStyleSheet));
     }
-    if ( cgHtml.hasKey( "AutoLoadImages" ) )
-        QWebSettings::globalSettings()->setAttribute(QWebSettings::AutoLoadImages, cgHtml.readEntry( "AutoLoadImages", true ) );
+    if (cgHtml.hasKey("AutoLoadImages"))
+        QWebSettings::globalSettings()->setAttribute(QWebSettings::AutoLoadImages, cgHtml.readEntry("AutoLoadImages", true));
 
-    QWebSettings::globalSettings()->setFontFamily(QWebSettings::StandardFont , cgHtml.readEntry( "StandardFont", KGlobalSettings::generalFont().family() ) );
-    QWebSettings::globalSettings()->setFontFamily(QWebSettings::FixedFont ,cgHtml.readEntry( "FixedFont", KGlobalSettings::fixedFont().family() ) );
-    QWebSettings::globalSettings()->setFontFamily(QWebSettings::SerifFont ,cgHtml.readEntry( "SerifFont", HTML_DEFAULT_VIEW_SERIF_FONT ) );
-    QWebSettings::globalSettings()->setFontFamily(QWebSettings::SansSerifFont , cgHtml.readEntry( "SansSerifFont", HTML_DEFAULT_VIEW_SANSSERIF_FONT ) );
-    QWebSettings::globalSettings()->setFontFamily(QWebSettings::CursiveFont , cgHtml.readEntry( "CursiveFont", HTML_DEFAULT_VIEW_CURSIVE_FONT ) );
-    QWebSettings::globalSettings()->setFontFamily(QWebSettings::FixedFont , cgHtml.readEntry( "FantasyFont", HTML_DEFAULT_VIEW_FANTASY_FONT ) );
+    QWebSettings::globalSettings()->setFontFamily(QWebSettings::StandardFont, cgHtml.readEntry("StandardFont", KGlobalSettings::generalFont().family()));
+    QWebSettings::globalSettings()->setFontFamily(QWebSettings::FixedFont, cgHtml.readEntry("FixedFont", KGlobalSettings::fixedFont().family()));
+    QWebSettings::globalSettings()->setFontFamily(QWebSettings::SerifFont, cgHtml.readEntry("SerifFont", HTML_DEFAULT_VIEW_SERIF_FONT));
+    QWebSettings::globalSettings()->setFontFamily(QWebSettings::SansSerifFont, cgHtml.readEntry("SansSerifFont", HTML_DEFAULT_VIEW_SANSSERIF_FONT));
+    QWebSettings::globalSettings()->setFontFamily(QWebSettings::CursiveFont, cgHtml.readEntry("CursiveFont", HTML_DEFAULT_VIEW_CURSIVE_FONT));
+    QWebSettings::globalSettings()->setFontFamily(QWebSettings::FixedFont, cgHtml.readEntry("FantasyFont", HTML_DEFAULT_VIEW_FANTASY_FONT));
 
-    QWebSettings::globalSettings()->setFontSize(QWebSettings::MinimumFontSize, cgHtml.readEntry( "MinimumFontSize", HTML_DEFAULT_MIN_FONT_SIZE ) );
-    QWebSettings::globalSettings()->setFontSize(QWebSettings::DefaultFontSize, cgHtml.readEntry( "MediumFontSize", 12 ) );
+    QWebSettings::globalSettings()->setFontSize(QWebSettings::MinimumFontSize, cgHtml.readEntry("MinimumFontSize", HTML_DEFAULT_MIN_FONT_SIZE));
+    QWebSettings::globalSettings()->setFontSize(QWebSettings::DefaultFontSize, cgHtml.readEntry("MediumFontSize", 12));
 }
 
 
 const KComponentData &WebKitGlobal::componentData()
 {
-  assert( s_self );
+    Q_ASSERT(s_self);
 
-  if ( !s_componentData )
-  {
-      s_about =new KAboutData("webkitpart", 0, ki18n("Webkit HTML Component"),
-                              /*version*/ "1.0", ki18n(/*shortDescription*/ ""),
-                              KAboutData::License_LGPL,
-                              ki18n("Copyright (c) 2007 Trolltech ASA"));
+    if (!s_componentData) {
+        s_about = new KAboutData("webkitpart", 0, ki18n("Webkit HTML Component"),
+                                 /*version*/ "1.0", ki18n(/*shortDescription*/ ""),
+                                 KAboutData::License_LGPL,
+                                 ki18n("Copyright (c) 2007 Trolltech ASA"));
 
-    s_about->addAuthor(ki18n("Laurent Montel"), KLocalizedString(), "montel@kde.org");
-    s_about->addAuthor( ki18n( "Urs Wolfer" ),KLocalizedString(), "uwolfer@kde.org" );
-    s_about->addAuthor( ki18n( "Dirk Mueller" ),KLocalizedString(), "mueller@kde.org" );
-    s_componentData = new KComponentData( s_about );
-  }
+        s_about->addAuthor(ki18n("Laurent Montel"), KLocalizedString(), "montel@kde.org");
+        s_about->addAuthor(ki18n("Urs Wolfer"), KLocalizedString(), "uwolfer@kde.org");
+        s_about->addAuthor(ki18n("Dirk Mueller"), KLocalizedString(), "mueller@kde.org");
+        s_componentData = new KComponentData(s_about);
+    }
 
-  return *s_componentData;
+    return *s_componentData;
 }

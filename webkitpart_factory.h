@@ -32,7 +32,7 @@ public:
     WebkitFactory();
     virtual ~WebkitFactory();
 
-    virtual KParts::Part *createPartObject( QWidget *parentWidget, QObject *parent, const char *className, const QStringList &args );
+    virtual KParts::Part *createPartObject(QWidget *parentWidget, QObject *parent, const char *className, const QStringList &args);
 };
 
 #endif // WEBKITPARTFACTORY

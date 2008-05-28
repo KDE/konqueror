@@ -35,10 +35,10 @@ WebkitFactory::~WebkitFactory()
     kDebug() << this;
 }
 
-KParts::Part * WebkitFactory::createPartObject( QWidget *parentWidget, QObject *parent, const char *className, const QStringList &args )
+KParts::Part *WebkitFactory::createPartObject(QWidget *parentWidget, QObject *parent, const char *className, const QStringList &args)
 {
     Q_UNUSED(args);
-    return new WebKitPart( parentWidget, parent, QStringList());
+    return new WebKitPart(parentWidget, parent, QStringList());
 }
 
 extern "C" KDE_EXPORT void *init_webkitkdepart()

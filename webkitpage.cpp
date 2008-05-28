@@ -51,7 +51,7 @@ WebPage::WebPage(WebKitPart *wpart, QWidget *parent)
 }
 
 bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request,
-            NavigationType type)
+                                      NavigationType type)
 {
     kDebug() << "acceptNavigationRequest";
     return true;
@@ -82,7 +82,7 @@ bool WebPage::javaScriptPrompt(QWebFrame *frame, const QString &msg, const QStri
 
 QString WebPage::userAgentForUrl(const QUrl& _url) const
 {
-    KUrl url( _url );
+    KUrl url(_url);
     QString host = url.isLocalFile() ? "localhost" : url.host();
     QString userAgent = KProtocolManager::userAgentForHost(host);
     if (userAgent != KProtocolManager::userAgentForHost(QString())) {
@@ -94,16 +94,16 @@ QString WebPage::userAgentForUrl(const QUrl& _url) const
 void WebPage::slotHandleUnsupportedContent(QNetworkReply *reply)
 {
     //TODO
-    kDebug()<<" title :"<<reply->url().toString();
-    kDebug()<<" error :"<<reply->errorString();
+    kDebug() << " title :" << reply->url().toString();
+    kDebug() << " error :" << reply->errorString();
 
 }
 
 QObject *WebPage::createPlugin(const QString &classid, const QUrl &url, const QStringList &paramNames, const QStringList &paramValues)
 {
-    kDebug()<<" create Plugin requested :";
-    kDebug()<<" classid :"<<classid;
-    kDebug()<<" url :"<<url;
-    kDebug()<<"paramNames :"<<paramNames<<" paramValues ;"<<paramValues;
+    kDebug() << " create Plugin requested :";
+    kDebug() << " classid :" << classid;
+    kDebug() << " url :" << url;
+    kDebug() << "paramNames :" << paramNames << " paramValues ;" << paramValues;
     return 0;
 }

@@ -33,19 +33,20 @@ class WebKitPageView : public QWidget
 {
     Q_OBJECT
 public:
-    WebKitPageView( WebKitPart *part, QWidget *parent );
+    WebKitPageView(WebKitPart *part, QWidget *parent);
     ~WebKitPageView();
     inline WebView *view() { return m_webView; }
 
     WebKitSearchBar *searchBar() const { return m_searchBar; }
+
 public slots:
     void slotFind();
     void slotCloseSearchBarClicked();
     void slotFindNextClicked();
     void slotFindPreviousClicked();
-    void slotSearchChanged( const QString & );
+    void slotSearchChanged(const QString &);
 protected:
-    void resultSearch(QWebPage::FindFlags flags );
+    void resultSearch(QWebPage::FindFlags flags);
 
 
 private:

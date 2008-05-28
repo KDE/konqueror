@@ -28,23 +28,23 @@
 #include "webkitview.h"
 #include "webkitsearchbar.h"
 
-WebKitPageView::WebKitPageView( WebKitPart *part, QWidget *parent )
-    :QWidget( parent )
+WebKitPageView::WebKitPageView(WebKitPart *part, QWidget *parent)
+    : QWidget(parent)
 {
-    QVBoxLayout *lay = new QVBoxLayout( this );
+    QVBoxLayout *lay = new QVBoxLayout(this);
     m_webView = new WebView(part, parent);
-    setLayout( lay );
-    lay->addWidget( m_webView );
-    m_searchBar = new WebKitSearchBar( parent );
-    m_searchBar->setVisible( false );
-    lay->setMargin( 0 );
-    lay->setSpacing( 0 );
-    lay->addWidget( m_searchBar );
+    setLayout(lay);
+    lay->addWidget(m_webView);
+    m_searchBar = new WebKitSearchBar(parent);
+    m_searchBar->setVisible(false);
+    lay->setMargin(0);
+    lay->setSpacing(0);
+    lay->addWidget(m_searchBar);
 
-    connect( m_searchBar, SIGNAL( closeClicked() ), this, SLOT( slotCloseSearchBarClicked() ) );
-    connect( m_searchBar, SIGNAL( findNextClicked() ), this, SLOT( slotFindNextClicked() ) );
-    connect( m_searchBar, SIGNAL( findPreviousClicked() ),  this, SLOT( slotFindPreviousClicked() ) );
-    connect( m_searchBar, SIGNAL( searchChanged( const QString& ) ), this, SLOT( slotSearchChanged( const QString & ) ) );
+    connect(m_searchBar, SIGNAL(closeClicked()), this, SLOT(slotCloseSearchBarClicked()));
+    connect(m_searchBar, SIGNAL(findNextClicked()), this, SLOT(slotFindNextClicked()));
+    connect(m_searchBar, SIGNAL(findPreviousClicked()),  this, SLOT(slotFindPreviousClicked()));
+    connect(m_searchBar, SIGNAL(searchChanged(const QString&)), this, SLOT(slotSearchChanged(const QString &)));
 }
 
 
@@ -55,39 +55,39 @@ WebKitPageView::~WebKitPageView()
 
 void WebKitPageView::slotCloseSearchBarClicked()
 {
-    m_searchBar->setVisible( false );
+    m_searchBar->setVisible(false);
 }
 
 void WebKitPageView::slotFind()
 {
-    m_searchBar->setVisible( true );
+    m_searchBar->setVisible(true);
 }
 
 void WebKitPageView::slotFindPreviousClicked()
 {
     QWebPage::FindFlags flags;
-    flags|= QWebPage::FindBackward;
-    resultSearch( flags );
+    flags |= QWebPage::FindBackward;
+    resultSearch(flags);
 }
 
 void WebKitPageView::slotFindNextClicked()
 {
     QWebPage::FindFlags flags;
-    resultSearch( flags );
+    resultSearch(flags);
 }
 
-void WebKitPageView::slotSearchChanged( const QString & text )
+void WebKitPageView::slotSearchChanged(const QString & text)
 {
     QWebPage::FindFlags flags;
-    resultSearch( flags );
+    resultSearch(flags);
 }
 
-void WebKitPageView::resultSearch(QWebPage::FindFlags flags )
+void WebKitPageView::resultSearch(QWebPage::FindFlags flags)
 {
-    if ( m_searchBar->caseSensitive() )
+    if (m_searchBar->caseSensitive())
         flags |= QWebPage::FindCaseSensitively;
-    bool status = m_webView->page()->findText( m_searchBar->searchText(), flags );
-    m_searchBar->setFoundMatch( status );
+    bool status = m_webView->page()->findText(m_searchBar->searchText(), flags);
+    m_searchBar->setFoundMatch(status);
 }
 
 #include "webkitpageview.moc"

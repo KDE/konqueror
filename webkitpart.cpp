@@ -45,7 +45,7 @@
 WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList &/*args*/)
     : KParts::ReadOnlyPart(parent)
 {
-    WebKitGlobal::registerPart( this );
+    WebKitGlobal::registerPart(this);
     m_webPageView = new WebKitPageView(this, parentWidget);
     setWidget(m_webPageView);
     setComponentData(WebKitGlobal::componentData());
@@ -68,28 +68,28 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
 
     initAction();
 
-    setXMLFile( "webkitpart.rc" );
+    setXMLFile("webkitpart.rc");
 }
 
 WebKitPart::~WebKitPart()
 {
-    WebKitGlobal::deregisterPart( this );
+    WebKitGlobal::deregisterPart(this);
 }
 
 void WebKitPart::initAction()
 {
-    KAction *action = new KAction( KIcon(  "zoom-in" ), i18n( "Enlarge Font" ), this );
-    actionCollection()->addAction( "incFontSizes", action );
+    KAction *action = new KAction(KIcon("zoom-in"), i18n("Enlarge Font"), this);
+    actionCollection()->addAction("incFontSizes", action);
     connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(zoomIn()));
 
-    action = new KAction( KIcon(  "zoom-out" ),i18n( "Shrink Font" ), this );
-    actionCollection()->addAction( "decFontSizes", action );
+    action = new KAction(KIcon("zoom-out"), i18n("Shrink Font"), this);
+    actionCollection()->addAction("decFontSizes", action);
     connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(zoomOut()));
 
 
-    action = actionCollection()->addAction(KStandardAction::Find, "find", m_webPageView, SLOT( slotFind()));
-    action->setWhatsThis( i18n( "Find text<br /><br />"
-                                   "Shows a dialog that allows you to find text on the displayed page." ) );
+    action = actionCollection()->addAction(KStandardAction::Find, "find", m_webPageView, SLOT(slotFind()));
+    action->setWhatsThis(i18n("Find text<br /><br />"
+                              "Shows a dialog that allows you to find text on the displayed page."));
 }
 
 bool WebKitPart::openUrl(const KUrl &url)
@@ -101,7 +101,7 @@ bool WebKitPart::openUrl(const KUrl &url)
     KParts::BrowserArguments browserArguments = browserExtension->browserArguments();
     QString headerString = browserArguments.doPost() ? "POST" : "GET";
     headerString += QLatin1Char(' ');
-    headerString += url.toEncoded(QUrl::RemoveScheme|QUrl::RemoveAuthority);
+    headerString += url.toEncoded(QUrl::RemoveScheme | QUrl::RemoveAuthority);
     headerString += QLatin1String(" HTTP/1.1\n\n"); // ### does it matter?
     headerString += arguments.metaData().value("customHTTPHeader");
     QHttpRequestHeader header(headerString);
@@ -109,7 +109,7 @@ bool WebKitPart::openUrl(const KUrl &url)
     QWebNetworkRequest request(url, browserArguments.doPost() ? QWebNetworkRequest::Post : QWebNetworkRequest::Get,
                                browserArguments.postData);
 
-    foreach (QString key, header.keys())
+    foreach(QString key, header.keys())
         request.setHttpHeaderField(key, header.value(key));
 #endif
 
@@ -210,15 +210,14 @@ void WebKitBrowserExtension::updateEditActions()
 void WebKitBrowserExtension::searchProvider()
 {
     // action name is of form "previewProvider[<searchproviderprefix>:]"
-    const QString searchProviderPrefix = QString( sender()->objectName() ).mid( 14 );
+    const QString searchProviderPrefix = QString(sender()->objectName()).mid(14);
 
     KUriFilterData data;
     QStringList list;
-    data.setData( searchProviderPrefix + part->view()->page()->selectedText() );
+    data.setData(searchProviderPrefix + part->view()->page()->selectedText());
     list << "kurisearchfilter" << "kuriikwsfilter";
 
-    if( !KUriFilter::self()->filterUri(data, list) )
-    {
+    if (!KUriFilter::self()->filterUri(data, list)) {
         KDesktopFile file("services", "searchproviders/google.desktop");
         QString encodedSearchTerm = QUrl::toPercentEncoding(part->view()->page()->selectedText());
         KConfigGroup cg(file.desktopGroup());
@@ -228,17 +227,17 @@ void WebKitBrowserExtension::searchProvider()
     KParts::BrowserArguments browserArgs;
     browserArgs.frameName = "_blank";
 
-    emit openUrlRequest( data.uri(), KParts::OpenUrlArguments(), browserArgs );
+    emit openUrlRequest(data.uri(), KParts::OpenUrlArguments(), browserArgs);
 }
 
 void WebKitBrowserExtension::zoomIn()
 {
-    part->view()->setTextSizeMultiplier( part->view()->textSizeMultiplier()*2 );
+    part->view()->setTextSizeMultiplier(part->view()->textSizeMultiplier() * 2);
 }
 
 void WebKitBrowserExtension::zoomOut()
 {
-    part->view()->setTextSizeMultiplier( part->view()->textSizeMultiplier()/2 );
+    part->view()->setTextSizeMultiplier(part->view()->textSizeMultiplier() / 2);
 }
 
 void WebKitBrowserExtension::slotFrameInWindow()
@@ -246,7 +245,7 @@ void WebKitBrowserExtension::slotFrameInWindow()
     KParts::OpenUrlArguments args;// = d->m_khtml->arguments();
     args.metaData()["referrer"] = part->view()->contextMenuResult().linkText();
     args.metaData()["forcenewwindow"] = "true";
-    emit createNewWindow( part->view()->contextMenuResult().linkUrl(), args );
+    emit createNewWindow(part->view()->contextMenuResult().linkUrl(), args);
 }
 
 void WebKitBrowserExtension::slotFrameInTab()
@@ -255,7 +254,7 @@ void WebKitBrowserExtension::slotFrameInTab()
     args.metaData()["referrer"] = part->view()->contextMenuResult().linkText();
     KParts::BrowserArguments browserArgs;//( d->m_khtml->browserExtension()->browserArguments() );
     browserArgs.setNewTab(true);
-    emit createNewWindow( part->view()->contextMenuResult().linkUrl(), args, browserArgs );
+    emit createNewWindow(part->view()->contextMenuResult().linkUrl(), args, browserArgs);
 }
 
 void WebKitBrowserExtension::slotFrameInTop()
@@ -264,7 +263,7 @@ void WebKitBrowserExtension::slotFrameInTop()
     args.metaData()["referrer"] = part->view()->contextMenuResult().linkText();
     KParts::BrowserArguments browserArgs;//( d->m_khtml->browserExtension()->browserArguments() );
     browserArgs.frameName = "_top";
-    emit openUrlRequest( part->view()->contextMenuResult().linkUrl(), args, browserArgs );
+    emit openUrlRequest(part->view()->contextMenuResult().linkUrl(), args, browserArgs);
 }
 
 void WebKitBrowserExtension::slotSaveImageAs()
@@ -275,12 +274,12 @@ void WebKitBrowserExtension::slotSaveImageAs()
 void WebKitBrowserExtension::slotSendImage()
 {
     QStringList urls;
-    urls.append( part->view()->contextMenuResult().imageUrl().path());
+    urls.append(part->view()->contextMenuResult().imageUrl().path());
     QString subject = part->view()->contextMenuResult().imageUrl().path();
     KToolInvocation::invokeMailer(QString(), QString(), QString(), subject,
-                       QString(), //body
-                       QString(),
-                       urls); // attachments
+                                  QString(), //body
+                                  QString(),
+                                  urls); // attachments
 }
 
 void WebKitBrowserExtension::slotCopyImage()
@@ -290,14 +289,14 @@ void WebKitBrowserExtension::slotCopyImage()
 
     // Set it in both the mouse selection and in the clipboard
     QMimeData* mimeData = new QMimeData;
-    mimeData->setImageData(part->view()->contextMenuResult().pixmap() );
-    safeURL.populateMimeData( mimeData );
-    QApplication::clipboard()->setMimeData( mimeData, QClipboard::Clipboard );
+    mimeData->setImageData(part->view()->contextMenuResult().pixmap());
+    safeURL.populateMimeData(mimeData);
+    QApplication::clipboard()->setMimeData(mimeData, QClipboard::Clipboard);
 
     mimeData = new QMimeData;
-    mimeData->setImageData( part->view()->contextMenuResult().pixmap() );
-    safeURL.populateMimeData( mimeData );
-    QApplication::clipboard()->setMimeData( mimeData, QClipboard::Selection );
+    mimeData->setImageData(part->view()->contextMenuResult().pixmap());
+    safeURL.populateMimeData(mimeData);
+    QApplication::clipboard()->setMimeData(mimeData, QClipboard::Selection);
 }
 
 void WebKitBrowserExtension::slotViewDocumentSource()

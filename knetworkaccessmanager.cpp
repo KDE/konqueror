@@ -33,7 +33,7 @@ KNetworkAccessManager::KNetworkAccessManager(QObject *parent)
 
 QNetworkReply *KNetworkAccessManager::createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData)
 {
-    switch(op) {
+    switch (op) {
         case HeadOperation: {
             kDebug() << "HeadOperation:" << req.url();
             break;

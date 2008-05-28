@@ -33,22 +33,22 @@ class WebKitSearchBar : public QWidget
 {
     Q_OBJECT
 public:
-    WebKitSearchBar( QWidget *parent );
+    WebKitSearchBar(QWidget *parent);
     ~WebKitSearchBar();
     QString searchText() const;
     bool caseSensitive() const;
 
-    virtual void setVisible( bool visible );
+    virtual void setVisible(bool visible);
 
-    void setFoundMatch( bool match );
+    void setFoundMatch(bool match);
 
 protected slots:
     void notifySearchChanged();
 
 protected:
-    bool eventFilter(QObject* watched , QEvent* event );
+    bool eventFilter(QObject* watched, QEvent* event);
 signals:
-    void searchChanged( const QString& text );
+    void searchChanged(const QString& text);
     void closeClicked();
     void findNextClicked();
     void findPreviousClicked();

@@ -33,8 +33,8 @@ public:
     WebKitGlobal();
     ~WebKitGlobal();
 
-    static void registerPart( WebKitPart *part );
-    static void deregisterPart( WebKitPart *part );
+    static void registerPart(WebKitPart *part);
+    static void deregisterPart(WebKitPart *part);
     void initGlobalSettings();
     static const KComponentData &componentData();
 
