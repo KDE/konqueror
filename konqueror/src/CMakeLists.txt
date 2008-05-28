@@ -67,6 +67,7 @@ set(konqueror_KDEINIT_SRCS
    konqsessionmanager.cpp
    konqcloseditem.cpp
 )
+
 kde4_add_kcfg_files(konqueror_KDEINIT_SRCS konqsettingsxt.kcfgc)
 kde4_add_ui_files(konqueror_KDEINIT_SRCS konqprofiledlg_base.ui)
 kde4_add_ui_files(konqueror_KDEINIT_SRCS konqsessiondlg_base.ui)
@@ -83,16 +84,12 @@ target_link_libraries(kdeinit_konqueror konquerorprivate konq ${KDE4_KPARTS_LIBS
 
 kde4_add_app_icon(konqueror_KDEINIT_SRCS "${KDE4_ICON_INSTALL_DIR}/oxygen/*/apps/konqueror.png")
 
-if (WIN32)
-#    add_definitions(-Dkdemain=main)
-else (WIN32)
-    # KDE4_KUTILS_LIBS used for KCMultiDialog, KCModuleInfo, and KPluginSelector
+if (NOT WIN32)
     install(TARGETS kdeinit_konqueror  ${INSTALL_TARGETS_DEFAULT_ARGS} )
-endif (WIN32)
-
+endif (NOT WIN32)
 install(TARGETS konqueror ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### install files ###############
 install( FILES konqueror.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
 install( FILES konqueror.rc konq-webbrowsing.rc konq-filemanagement.rc DESTINATION  ${DATA_INSTALL_DIR}/konqueror )
-install(FILES org.kde.Konqueror.Main.xml org.kde.Konqueror.MainWindow.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR} )
+install( FILES org.kde.Konqueror.Main.xml org.kde.Konqueror.MainWindow.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR} )
