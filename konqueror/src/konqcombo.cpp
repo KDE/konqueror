@@ -117,7 +117,6 @@ KonqCombo::KonqCombo( QWidget *parent )
           : KHistoryComboBox( parent ),
             m_returnPressed( false ),
             m_permanent( false ),
-            m_modifier( Qt::NoButton ),
 	    m_pageSecurity( KonqMainWindow::NotCrypted )
 {
     setInsertPolicy( NoInsertion );
@@ -409,14 +408,9 @@ bool KonqCombo::eventFilter( QObject *o, QEvent *ev )
     // jumps to the next whitespace.
     QLineEdit *edit = lineEdit();
     if ( o == edit ) {
-        int type = ev->type();
-        if ( type == QEvent::KeyPress ) {
+        const int type = ev->type();
+        if (type == QEvent::KeyPress) {
             QKeyEvent *e = static_cast<QKeyEvent *>( ev );
-
-            if ( e->key() == Qt::Key_Return || e->key() == Qt::Key_Enter ) {
-                m_modifier = e->state();
-                return false;
-            }
 
             KShortcut key( e->key() | e->modifiers() );
 
@@ -590,11 +584,9 @@ void KonqCombo::mouseMoveEvent( QMouseEvent *e )
 
 void KonqCombo::slotActivated( const QString& text )
 {
-    //kDebug(1202) << "KonqCombo::slotActivated: " << text;
     applyPermanent();
     m_returnPressed = true;
-    emit activated( text, m_modifier );
-    m_modifier = Qt::NoButton;
+    emit activated( text, qApp->keyboardModifiers() );
 }
 
 void KonqCombo::setConfig( KConfig *kc )

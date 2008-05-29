@@ -2314,22 +2314,21 @@ KParts::ReadOnlyPart * KonqMainWindow::currentPart() const
     return 0;
 }
 
-void KonqMainWindow::slotURLEntered( const QString &text, int state )
+void KonqMainWindow::slotURLEntered(const QString &text, Qt::KeyboardModifiers modifiers)
 {
-  if ( m_bURLEnterLock || text.isEmpty() )
-    return;
+    if (m_bURLEnterLock || text.isEmpty())
+        return;
 
-  m_bURLEnterLock = true;
+    m_bURLEnterLock = true;
 
-  if (state & Qt::ControlModifier || state & Qt::AltModifier)
-  {
-      m_combo->setURL( m_currentView ? m_currentView->url().prettyUrl() : QString() );
-      openFilteredUrl( text.trimmed(), true );
-  }
-  else
-      openFilteredUrl( text.trimmed() );
+    if ((modifiers & Qt::ControlModifier) || (modifiers & Qt::AltModifier)) {
+        m_combo->setURL(m_currentView ? m_currentView->url().prettyUrl() : QString());
+        openFilteredUrl(text.trimmed(), true /*inNewTab*/);
+    } else {
+        openFilteredUrl(text.trimmed());
+    }
 
-  m_bURLEnterLock = false;
+    m_bURLEnterLock = false;
 }
 
 void KonqMainWindow::slotFileNewAboutToShow()
@@ -3033,8 +3032,8 @@ void KonqMainWindow::initCombo()
 
   m_combo->init( s_pCompletion );
 
-  connect( m_combo, SIGNAL(activated(const QString&,int)),
-           this, SLOT(slotURLEntered(const QString&,int)) );
+  connect( m_combo, SIGNAL(activated(const QString&,Qt::KeyboardModifiers)),
+           this, SLOT(slotURLEntered(const QString&,Qt::KeyboardModifiers)) );
   connect( m_combo, SIGNAL(showPageSecurity()),
            this, SLOT(showPageSecurity()) );
 
@@ -4893,7 +4892,7 @@ void KonqMainWindow::updateOpenWithActions()
     else
         m_openWithMenu->addAction(action);
   }
- 
+
   if ( services.count() > 0 )
   {
       plugActionList("openwithbase", m_openWithActions);
