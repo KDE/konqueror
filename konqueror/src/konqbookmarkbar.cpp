@@ -132,7 +132,7 @@ void KBookmarkBar::slotBookmarksChanged( const QString & group )
 
     if ( tb.isNull() )
         return;
-    
+
     if( d->m_filteredToolbar )
     {
         clear();
@@ -178,7 +178,7 @@ void KBookmarkBar::fillBookmarkBar(const KBookmarkGroup & parent)
         if(d->m_filteredToolbar)
         {
             if(bm.isGroup() && !bm.showInToolbar() )
-		fillBookmarkBar(bm.toGroup());	       
+		fillBookmarkBar(bm.toGroup());
 
 	    if(!bm.showInToolbar())
 		continue;
@@ -212,7 +212,7 @@ void KBookmarkBar::removeTempSep()
 {
     if (m_toolBarSeparator)
         m_toolBar->removeAction(m_toolBarSeparator);
-	    
+
 }
 
 /**
@@ -314,7 +314,7 @@ void KBookmarkBar::contextMenu(const QPoint & pos)
 // open submenus on drop interactions
 bool KBookmarkBar::eventFilter( QObject *, QEvent *e )
 {
-    if (d->m_filteredToolbar) 
+    if (d->m_filteredToolbar)
         return false; // todo: make this limit the actions
 
     if ( e->type() == QEvent::DragLeave )
@@ -331,7 +331,7 @@ bool KBookmarkBar::eventFilter( QObject *, QEvent *e )
             return false;
         if (list.count() > 1)
             kWarning(7043) << "Sorry, currently you can only drop one address "
-                "onto the bookmark bar!" << endl;
+                "onto the bookmark bar!";
         KBookmark toInsert = list.first();
 
         KBookmarkGroup parentBookmark = getToolbar();
