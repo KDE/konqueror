@@ -1,41 +1,31 @@
 #ifndef __konq_aboutpage_h__
 #define __konq_aboutpage_h__
 
-#include <kparts/factory.h>
 #include <khtml_part.h>
 
-class KHTMLPart;
-class KComponentData;
-
-class KonqAboutPageFactory : public KParts::Factory
+class KonqAboutPageSingleton
 {
 public:
-    KonqAboutPageFactory( QObject *parent = 0 );
-    virtual ~KonqAboutPageFactory();
+    KonqAboutPageSingleton();
+    ~KonqAboutPageSingleton();
 
-    virtual KParts::Part *createPartObject( QWidget *parentWidget, QObject *parent,
-                                            const char *classname, const QStringList &args );
-
-    static const KComponentData &componentData() { return *s_instance; }
-
-    static QString launch();
-    static QString intro();
-    static QString specs();
-    static QString tips();
-    static QString plugins();
+    QString launch();
+    QString intro();
+    QString specs();
+    QString tips();
+    QString plugins();
 
 private:
     static QString loadFile( const QString& file );
 
-    static KComponentData *s_instance;
-    static QString *s_launch_html, *s_intro_html, *s_specs_html, *s_tips_html, *s_plugins_html;
+    QString m_launch_html, m_intro_html, m_specs_html, m_tips_html, m_plugins_html;
 };
 
 class KonqAboutPage : public KHTMLPart
 {
     Q_OBJECT
 public:
-    KonqAboutPage( QWidget *parentWidget, QObject *parent );
+    KonqAboutPage(QWidget *parentWidget, QObject *parent, const QVariantList& args);
     ~KonqAboutPage();
 
     virtual bool openUrl( const KUrl &url );
@@ -54,7 +44,6 @@ private:
     void serve( const QString&, const QString& );
 
     KHTMLPart *m_doc;
-    //KonqMainWindow *m_mainWindow;
     QString m_htmlDoc;
     QString m_what;
 };
