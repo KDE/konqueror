@@ -31,7 +31,8 @@ private Q_SLOTS:
 
         KonqMainWindow mainWindow;
         // we specify the mimetype so that we don't have to wait for a KonqRun
-        mainWindow.openUrl(0, KUrl("data:text/plain, Hello World"), "text/plain");
+        KonqOpenURLRequest req; req.forceAutoEmbed = true;
+        mainWindow.openUrl(0, KUrl("data:text/plain, Hello World"), "text/plain", req);
         KonqView* view = mainWindow.currentView();
         QVERIFY(view);
         QVERIFY(view->part());
@@ -42,8 +43,8 @@ private Q_SLOTS:
         QVERIFY(view->supportsMimeType("text/html")); // it does, since that's a mimetype subclass
 
         // Now open HTML, as if we typed a URL in the location bar.
-        KonqOpenURLRequest req; req.typedUrl = "http://www.kde.org";
-        mainWindow.openUrl(0, KUrl("data:text/html, <p>Hello World</p>"), "text/html", req);
+        KonqOpenURLRequest req2; req2.typedUrl = "http://www.kde.org";
+        mainWindow.openUrl(0, KUrl("data:text/html, <p>Hello World</p>"), "text/html", req2);
         qDebug() << view->service()->entryPath();
         QVERIFY(view->service()->entryPath() != firstService);
     }
