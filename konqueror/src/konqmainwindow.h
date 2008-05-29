@@ -723,6 +723,7 @@ private: // members
   QString m_initialFrameName;
 
   QList<QAction *> m_openWithActions;
+  KActionMenu *m_openWithMenu;
   KActionMenu *m_viewModeMenu;
   QActionGroup* m_viewModesGroup;
   QActionGroup* m_closedItemsGroup;
