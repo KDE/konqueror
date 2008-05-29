@@ -78,7 +78,7 @@ Q_SIGNALS:
       Specialized signal that emits the state of the modifier
       keys along with the actual activated text.
      */
-    void activated( const QString &, int );
+    void activated( const QString &, Qt::KeyboardModifiers );
 
     /**
       User has clicked on the security lock in the combobar
@@ -103,7 +103,6 @@ private:
     bool m_permanent;
     int m_cursorPos;
     int m_currentIndex;
-    int m_modifier;
     QString m_currentText;
     QPoint m_dragStart;
     int m_pageSecurity;

@@ -411,7 +411,7 @@ public Q_SLOTS:
 private Q_SLOTS:
   void slotViewCompleted( KonqView * view );
 
-  void slotURLEntered( const QString &text, int );
+  void slotURLEntered(const QString &text, Qt::KeyboardModifiers);
 
   void slotFileNewAboutToShow();
   void slotLocationLabelActivated();
@@ -467,8 +467,8 @@ private Q_SLOTS:
 
   void slotClosedItemsListAboutToShow();
   void updateClosedItemsAction();
-  
-  
+
+
   void slotSessionsListAboutToShow();
   void saveCurrentSession();
   void manageSessions();
@@ -728,7 +728,7 @@ private: // members
   QActionGroup* m_viewModesGroup;
   QActionGroup* m_closedItemsGroup;
   QActionGroup* m_sessionsGroup;
-  
+
   static QList<KonqMainWindow*> *s_lstViews;
 
   QString m_currentDir; // stores current dir for relative URLs whenever applicable
