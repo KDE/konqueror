@@ -198,12 +198,10 @@ void KonqRun::scanFile()
 void KonqRun::slotRedirection( KIO::Job *job, const KUrl& redirectedToURL )
 {
     KUrl redirectFromURL = static_cast<KIO::TransferJob *>(job)->url();
-    kDebug(1202) << "KonqRun::slotRedirection from " <<
-        redirectFromURL.prettyUrl() << " to " << redirectedToURL.prettyUrl() << endl;
+    kDebug(1202) << redirectFromURL << "->" << redirectedToURL;
     KonqHistoryManager::kself()->confirmPending( redirectFromURL );
 
-    if (redirectedToURL.protocol() == "mailto")
-    {
+    if (redirectedToURL.protocol() == "mailto") {
        m_mailto = redirectedToURL;
        return; // Error will follow
     }

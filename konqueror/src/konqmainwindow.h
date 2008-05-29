@@ -182,8 +182,6 @@ public:
 
   KonqView *currentView() const;
 
-  KParts::ReadOnlyPart *currentPart() const;
-
   /** URL of current part, or URLs of selected items for directory views */
   KUrl::List currentURLs() const;
 
