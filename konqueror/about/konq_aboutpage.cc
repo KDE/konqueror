@@ -1,61 +1,35 @@
 #include "konq_aboutpage.h"
 
 #include <QtCore/QTextCodec>
+#include <QApplication>
 #include <QtCore/QDir>
 
 #include <kaboutdata.h>
 #include <kaction.h>
 #include <kactioncollection.h>
-#include <kapplication.h>
 #include <kdebug.h>
 #include <kiconloader.h>
 #include <klocale.h>
 #include <kmessagebox.h>
+#include <kpluginfactory.h>
 #include <ksavefile.h>
 #include <kstandarddirs.h>
 #include <ktoolinvocation.h>
 
-K_EXPORT_COMPONENT_FACTORY( konq_aboutpage, KonqAboutPageFactory )
+K_PLUGIN_FACTORY(KonqAboutPageFactory, registerPlugin<KonqAboutPage>();)
+K_EXPORT_PLUGIN(KonqAboutPageFactory("konqaboutpage"))
 
-KComponentData *KonqAboutPageFactory::s_instance = 0;
-QString *KonqAboutPageFactory::s_launch_html = 0;
-QString *KonqAboutPageFactory::s_intro_html = 0;
-QString *KonqAboutPageFactory::s_specs_html = 0;
-QString *KonqAboutPageFactory::s_tips_html = 0;
-QString *KonqAboutPageFactory::s_plugins_html = 0;
+K_GLOBAL_STATIC(KonqAboutPageSingleton, s_staticData)
 
-KonqAboutPageFactory::KonqAboutPageFactory( QObject *parent )
-    : KParts::Factory( parent )
+KonqAboutPageSingleton::KonqAboutPageSingleton()
 {
-    s_instance = new KComponentData("konqaboutpage");
 }
 
-KonqAboutPageFactory::~KonqAboutPageFactory()
+KonqAboutPageSingleton::~KonqAboutPageSingleton()
 {
-    delete s_instance;
-    s_instance = 0;
-    delete s_launch_html;
-    s_launch_html = 0;
-    delete s_intro_html;
-    s_intro_html = 0;
-    delete s_specs_html;
-    s_specs_html = 0;
-    delete s_tips_html;
-    s_tips_html = 0;
-    delete s_plugins_html;
-    s_plugins_html = 0;
 }
 
-KParts::Part *KonqAboutPageFactory::createPartObject( QWidget *parentWidget, QObject *parent,
-                                                      const char *, const QStringList & )
-{
-    //KonqFrame *frame = dynamic_cast<KonqFrame *>( parentWidget );
-    //if ( !frame ) return 0;
-
-    return new KonqAboutPage( parentWidget, parent );
-}
-
-QString KonqAboutPageFactory::loadFile( const QString& file )
+QString KonqAboutPageSingleton::loadFile( const QString& file )
 {
     QString res;
     if ( file.isEmpty() )
@@ -74,16 +48,14 @@ QString KonqAboutPageFactory::loadFile( const QString& file )
     QString basehref = QLatin1String("<BASE HREF=\"file:") +
 		       file.left( file.lastIndexOf( '/' )) +
 		       QLatin1String("/\">\n");
-    QRegExp reg("<head>");
-    reg.setCaseSensitivity(Qt::CaseInsensitive);
-    res.replace(reg, "<head>\n\t" + basehref);
+    res.replace("<head>", "<head>\n\t" + basehref, Qt::CaseInsensitive);
     return res;
 }
 
-QString KonqAboutPageFactory::launch()
+QString KonqAboutPageSingleton::launch()
 {
-  if ( s_launch_html )
-    return *s_launch_html;
+    if (!m_launch_html.isEmpty())
+        return m_launch_html;
 
   QString res = loadFile( KStandardDirs::locate( "data", "konqueror/about/launch.html" ));
   if ( res.isEmpty() )
@@ -101,7 +73,7 @@ QString KonqAboutPageFactory::launch()
   QString continue_icon_path = iconloader->iconPath(QApplication::isRightToLeft() ? "go-previous" : "go-next", KIconLoader::Small );
 
   res = res.arg( KStandardDirs::locate( "data", "kdeui/about/kde_infopage.css" ) );
-  if ( kapp->layoutDirection() == Qt::RightToLeft )
+  if ( qApp->layoutDirection() == Qt::RightToLeft )
     res = res.arg( "@import \"%1\";" ).arg( KStandardDirs::locate( "data", "kdeui/about/kde_infopage_rtl.css" ) );
   else
     res = res.arg( "" );
@@ -138,15 +110,14 @@ QString KonqAboutPageFactory::launch()
       ;
   i18n("Search the Web");//i18n for possible future use
 
-  s_launch_html = new QString( res );
-
+  m_launch_html = res;
   return res;
 }
 
-QString KonqAboutPageFactory::intro()
+QString KonqAboutPageSingleton::intro()
 {
-    if ( s_intro_html )
-        return *s_intro_html;
+    if (!m_intro_html.isEmpty())
+        return m_intro_html;
 
     QString res = loadFile( KStandardDirs::locate( "data", "konqueror/about/intro.html" ));
     if ( res.isEmpty() )
@@ -158,7 +129,7 @@ QString KonqAboutPageFactory::intro()
     QString continue_icon_path = iconloader->iconPath(QApplication::isRightToLeft() ? "go-previous" : "go-next", KIconLoader::Small );
 
     res = res.arg( KStandardDirs::locate( "data", "kdeui/about/kde_infopage.css" ) );
-    if ( kapp->layoutDirection() == Qt::RightToLeft )
+    if ( qApp->layoutDirection() == Qt::RightToLeft )
 	res = res.arg( "@import \"%1\";" ).arg( KStandardDirs::locate( "data", "kdeui/about/kde_infopage_rtl.css" ) );
     else
 	res = res.arg( "" );
@@ -196,15 +167,14 @@ QString KonqAboutPageFactory::intro()
 	;
 
 
-    s_intro_html = new QString( res );
-
+    m_intro_html = res;
     return res;
 }
 
-QString KonqAboutPageFactory::specs()
+QString KonqAboutPageSingleton::specs()
 {
-    if ( s_specs_html )
-        return *s_specs_html;
+    if (!m_specs_html.isEmpty())
+        return m_specs_html;
 
     KIconLoader *iconloader = KIconLoader::global();
     QString res = loadFile( KStandardDirs::locate( "data", "konqueror/about/specs.html" ));
@@ -213,7 +183,7 @@ QString KonqAboutPageFactory::specs()
 	return res;
 
     res = res.arg( KStandardDirs::locate( "data", "kdeui/about/kde_infopage.css" ) );
-    if ( kapp->layoutDirection() == Qt::RightToLeft )
+    if ( qApp->layoutDirection() == Qt::RightToLeft )
 	res = res.arg( "@import \"%1\";" ).arg( KStandardDirs::locate( "data", "kdeui/about/kde_infopage_rtl.css" ) );
     else
 	res = res.arg( "" );
@@ -279,15 +249,14 @@ QString KonqAboutPageFactory::specs()
 
           ;
 
-    s_specs_html = new QString( res );
-
+    m_specs_html = res;
     return res;
 }
 
-QString KonqAboutPageFactory::tips()
+QString KonqAboutPageSingleton::tips()
 {
-    if ( s_tips_html )
-        return *s_tips_html;
+    if (!m_tips_html.isEmpty())
+        return m_tips_html;
 
     QString res = loadFile( KStandardDirs::locate( "data", "konqueror/about/tips.html" ));
     if ( res.isEmpty() )
@@ -311,7 +280,7 @@ QString KonqAboutPageFactory::tips()
     QString continue_icon_path = iconloader->iconPath(QApplication::isRightToLeft() ? "go-previous" : "go-next", KIconLoader::Small );
 
     res = res.arg( KStandardDirs::locate( "data", "kdeui/about/kde_infopage.css" ) );
-    if ( kapp->layoutDirection() == Qt::RightToLeft )
+    if ( qApp->layoutDirection() == Qt::RightToLeft )
 	res = res.arg( "@import \"%1\";" ).arg( KStandardDirs::locate( "data", "kdeui/about/kde_infopage_rtl.css" ) );
     else
 	res = res.arg( "" );
@@ -362,18 +331,17 @@ QString KonqAboutPageFactory::tips()
           ;
 
 
-    s_tips_html = new QString( res );
-
+    m_tips_html = res;
     return res;
 }
 
 
-QString KonqAboutPageFactory::plugins()
+QString KonqAboutPageSingleton::plugins()
 {
-    if ( s_plugins_html )
-        return *s_plugins_html;
+    if (!m_plugins_html.isEmpty())
+        return m_plugins_html;
 
-    QString res = loadFile( KStandardDirs::locate( "data", kapp->layoutDirection() == Qt::RightToLeft ? "konqueror/about/plugins_rtl.html" : "konqueror/about/plugins.html" ))
+    QString res = loadFile( KStandardDirs::locate( "data", qApp->layoutDirection() == Qt::RightToLeft ? "konqueror/about/plugins_rtl.html" : "konqueror/about/plugins.html" ))
                   .arg(i18n("Installed Plugins"))
                   .arg(i18n("<td>Plugin</td><td>Description</td><td>File</td><td>Types</td>"))
                   .arg(i18n("Installed"))
@@ -381,37 +349,38 @@ QString KonqAboutPageFactory::plugins()
     if ( res.isEmpty() )
 	return res;
 
-    s_plugins_html = new QString( res );
-
+    m_plugins_html = res;
     return res;
 }
 
 
-KonqAboutPage::KonqAboutPage( //KonqMainWindow *
-                              QWidget *parentWidget, QObject *parent )
+KonqAboutPage::KonqAboutPage(QWidget *parentWidget, QObject *parent, const QVariantList& args)
     : KHTMLPart( parentWidget, parent, BrowserViewGUI )
 {
-    //m_mainWindow = mainWindow;
+    Q_UNUSED(args)
     QTextCodec* codec = KGlobal::locale()->codecForEncoding();
     if (codec)
       setEncoding(codec->name(), true);
     else
       setEncoding("iso-8859-1", true);
+#if 0
     // about:blah isn't a kioslave -> disable View source
     QAction * act = actionCollection()->action("viewDocumentSource");
     if ( act )
       act->setEnabled( false );
+#endif
 }
 
 KonqAboutPage::~KonqAboutPage()
 {
 }
 
-bool KonqAboutPage::openUrl( const KUrl &u )
+bool KonqAboutPage::openUrl(const KUrl &u)
 {
     if (u.url() == "about:plugins")
-       serve( KonqAboutPageFactory::plugins(), "plugins" );
-    else serve( KonqAboutPageFactory::launch(), "konqueror" );
+        serve(s_staticData->plugins(), "plugins");
+    else
+        serve(s_staticData->launch(), "konqueror");
     return true;
 }
 
@@ -459,25 +428,25 @@ bool KonqAboutPage::urlSelected( const QString &url, int button, int state, cons
     if ( url == QLatin1String("launch.html") )
     {
         emit browserExtension()->openUrlNotify();
-	serve( KonqAboutPageFactory::launch(), "konqueror" );
+	serve(s_staticData->launch(), "konqueror");
         return true;
     }
     else if ( url == QLatin1String("intro.html") )
     {
         emit browserExtension()->openUrlNotify();
-        serve( KonqAboutPageFactory::intro(), "konqueror" );
+        serve(s_staticData->intro(), "konqueror");
         return true;
     }
     else if ( url == QLatin1String("specs.html") )
     {
         emit browserExtension()->openUrlNotify();
-	serve( KonqAboutPageFactory::specs(), "konqueror" );
+	serve(s_staticData->specs(), "konqueror");
         return true;
     }
     else if ( url == QLatin1String("tips.html") )
     {
         emit browserExtension()->openUrlNotify();
-        serve( KonqAboutPageFactory::tips(), "konqueror" );
+        serve(s_staticData->tips(), "konqueror");
         return true;
     }
 
