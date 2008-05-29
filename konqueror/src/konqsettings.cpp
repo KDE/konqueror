@@ -106,7 +106,8 @@ bool KonqFMSettings::shouldEmbed( const QString & mimeType ) const
                 return true;
             }
             KMimeType::Ptr mime = KMimeType::mimeType(parent);
-            parents += mime->parentMimeTypes();
+            if (mime)
+                parents += mime->parentMimeTypes();
         }
     }
 
