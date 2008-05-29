@@ -1088,9 +1088,6 @@ void KonqViewManager::loadRootItem( const KConfigGroup &cfg, KonqFrameContainerB
                                     int pos )
 {
     const QString rootItem = cfg.readEntry("RootItem", "empty");
-    if (rootItem.isNull() || rootItem == "empty") {
-        return;
-    }
 
     // This flag is used by KonqView, to distinguish manual view creation
     // from profile loading (e.g. in switchView)
