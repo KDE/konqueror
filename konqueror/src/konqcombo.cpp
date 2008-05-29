@@ -568,7 +568,7 @@ void KonqCombo::mouseMoveEvent( QMouseEvent *e )
     if ( m_dragStart.isNull() || currentText().isEmpty() )
         return;
 
-    if ( e->state() & Qt::LeftButton &&
+    if ( e->buttons() & Qt::LeftButton &&
          (e->pos() - m_dragStart).manhattanLength() >
          KGlobalSettings::dndEventDelay() )
     {

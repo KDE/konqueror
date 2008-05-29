@@ -218,6 +218,7 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
   m_toggleViewGUIClient = new ToggleViewGUIClient( this );
 
   m_viewModeMenu = 0;
+  m_openWithMenu = 0;
   m_paCopyFiles = 0;
   m_paMoveFiles = 0;
   m_bookmarkBarInitialized = false;
@@ -4852,34 +4853,59 @@ void KonqMainWindow::setInitialFrameName( const QString &name )
 
 void KonqMainWindow::updateOpenWithActions()
 {
+  unplugActionList( "openwithbase" );
   unplugActionList( "openwith" );
 
   qDeleteAll(m_openWithActions);
   m_openWithActions.clear();
 
+  delete m_openWithMenu;
+  m_openWithMenu = 0;
+
   if (!KAuthorized::authorizeKAction("openwith"))
      return;
+
+  m_openWithMenu = new KActionMenu( i18n("&Open With"), this );
 
   const KService::List & services = m_currentView->appServiceOffers();
   KService::List::ConstIterator it = services.begin();
   const KService::List::ConstIterator end = services.end();
-  for (; it != end; ++it )
+
+  const int baseOpenWithItems = qMax(KonqSettings::openWithItems(), 0);
+
+  int idxService = 0;
+  for (; it != end; ++it, ++idxService)
   {
-    QAction *action = actionCollection()->addAction( (*it)->desktopEntryName().toLatin1() );
-    action->setText( i18n( "Open with %1", (*it)->name() ) );
+    QAction *action;
+
+    if (idxService < baseOpenWithItems)
+       action = new QAction(i18n("Open with %1", (*it)->name()), this);
+    else
+       action = new QAction((*it)->name(), this);
     action->setIcon( KIcon( (*it)->icon() ) );
 
     connect( action, SIGNAL( activated() ),
              this, SLOT( slotOpenWith() ) );
 
-    m_openWithActions.append( action );
+    actionCollection()->addAction((*it)->desktopEntryName(), action);
+    if (idxService < baseOpenWithItems)
+        m_openWithActions.append(action);
+    else
+        m_openWithMenu->addAction(action);
   }
+ 
   if ( services.count() > 0 )
   {
+      plugActionList("openwithbase", m_openWithActions);
+      QList<QAction*> openWithActionsMenu;
+      if (idxService > baseOpenWithItems)
+      {
+          openWithActionsMenu.append(m_openWithMenu);
+      }
       QAction *sep = new QAction( this );
       sep->setSeparator( true );
-      m_openWithActions.append( sep );
-      plugActionList( "openwith", m_openWithActions );
+      openWithActionsMenu.append(sep);
+      plugActionList("openwith", openWithActionsMenu);
   }
 }
 

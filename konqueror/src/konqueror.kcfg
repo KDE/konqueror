@@ -146,6 +146,12 @@
       <whatsthis></whatsthis>
       <!-- checked -->
     </entry>
+    <entry key="OpenWithItems" type="Int">
+      <default>2</default>
+      <label>Number of Open With items in the File menu</label>
+      <whatsthis>Number of Open With items in the File menu</whatsthis>
+      <!-- no writeEntry / hidden-->
+    </entry>
   </group>
 
   <group name="HTML Settings" >
