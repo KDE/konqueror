@@ -21,7 +21,7 @@
 #ifndef KONQ_POPUPMENUINFORMATION_H
 #define KONQ_POPUPMENUINFORMATION_H
 
-#include <QSharedDataPointer>
+#include <QtCore/QSharedDataPointer>
 #include <libkonq_export.h>
 #include <kurl.h>
 
