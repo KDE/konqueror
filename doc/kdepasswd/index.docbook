@@ -53,8 +53,8 @@
 </screenshot>
 </para>
 
-<para>This is a system settings module to configure basic user settings such as
-the password and icon. These settings will be used by various &kde;
+<para>This is a system settings module to enter user information and configure basic user settings such as
+the password and icon. This information and these settings will be used by various &kde;
 applications (mail programs and word processors for example) if they are filled. You can:</para>
 
 <itemizedlist>
@@ -114,7 +114,7 @@ This is an information only, it gives you your User ID. This number is defined i
 <varlistentry><term><guibutton>Change password...</guibutton></term>
 <listitem>
 <para>
-Clicking this will display a dialog to change your user password. Your user password is the on you log in your system with. You will be asked for your current password then twice for your new password.
+Clicking this button will display a dialog to change your user password. Your user password is the one you log in your system with. You will be asked for your current password then twice for your new password.
 </para>
 </listitem>
 </varlistentry>
@@ -126,7 +126,7 @@ Clicking this will display a dialog to change your user password. Your user pass
 <title>At Password Prompt</title>
 
 <para>
-This section allows you to choose how you want to input your password when you are asked for it. Default is to have one star for each letter you type. You can change that to have three stars for each letter you type (making it more difficult if someone is looking to guess the number of letters). You can also choose to have nothing displayed while you type your password, making this operation even more secure but also more difficult for you.
+This section allows you to choose how you want to input your password when you are asked for it. Default is to have one star for each letter you type. You can change that to have three stars for each letter you type (making it more difficult to guess the number of letters if someone is looking). You can also choose to have nothing displayed while you type your password, making this operation even more secure.
 </para>
 
 </sect2>
