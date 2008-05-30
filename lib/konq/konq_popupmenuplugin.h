@@ -22,7 +22,7 @@
 #define KONQ_POPUPMENUPLUGIN_H
 
 #include "libkonq_export.h"
-#include <QObject>
+#include <QtCore/QObject>
 
 class QMenu;
 class KActionCollection;
