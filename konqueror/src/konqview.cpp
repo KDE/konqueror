@@ -131,6 +131,9 @@ KonqView::~KonqView()
 
     delete m_pPart;
   }
+  
+  qDeleteAll( m_lstHistory );
+  m_lstHistory.clear();
 
   setRun( 0L );
   //kDebug(1202) << this << "done";
