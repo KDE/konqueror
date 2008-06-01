@@ -81,7 +81,7 @@ KonqUndoManager::~KonqUndoManager()
         SIGNAL(removeWindowInOtherInstances(KonqUndoManager *, const KonqClosedWindowItem *)), this,
         SLOT( slotRemoveClosedWindowItem(KonqUndoManager *, const KonqClosedWindowItem *) ));
 
-    // Clear the closed item lists but only removed closed windows items
+    // Clear the closed item lists but only remove closed windows items
     // in this window
     clearClosedItemsList(true);
 }

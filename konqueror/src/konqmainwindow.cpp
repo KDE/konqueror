@@ -5502,11 +5502,13 @@ void KonqMainWindow::setPreloadedFlag( bool preloaded )
     if( s_preloaded )
     {
         kapp->disableSessionManagement(); // don't restore preloaded konqy's
+        KonqSessionManager::self()->disableAutosave(); // don't save sessions
         return; // was registered before calling this
     }
     delete s_preloadedWindow; // preloaded state was abandoned without reusing the window
     s_preloadedWindow = NULL;
     kapp->enableSessionManagement(); // enable SM again
+    KonqSessionManager::self()->enableAutosave(); // enable session saving again
     QDBusInterface ref( "org.kde.kded", "/modules/konqy_preloader", "org.kde.konqueror.Preloader", QDBusConnection::sessionBus() );
     ref.call( "unregisterPreloadedKonqy", QDBusConnection::sessionBus().baseService() );
 }
