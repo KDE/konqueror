@@ -45,8 +45,6 @@
 #include <QFile>
 #include <QSize>
 
-#include <unistd.h> // getpid
-
 class KonqSessionManagerPrivate
 {
 public:
@@ -66,13 +64,6 @@ KonqSessionManager::KonqSessionManager()
     QDBusConnection dbus = QDBusConnection::sessionBus();
     dbus.registerObject( dbusPath, this );
     dbus.connect(QString(), dbusPath, dbusInterface, "saveCurrentSession", this, SLOT(slotSaveCurrentSession(QString)));
-    
-    // Create the config file for autosaving current session
-    QString filename = "autosave/" + encodeFilename(dbus.baseService());
-    QString file = KStandardDirs::locateLocal("appdata", filename);
-    QFile::remove(file);
-    
-    m_autoSavedSessionConfig = new KConfig(filename, KConfig::SimpleConfig, "appdata");
 
     // Initialize the timer
     int interval = KonqSettings::autoSaveInterval();
@@ -81,8 +72,9 @@ KonqSessionManager::KonqSessionManager()
         m_autoSaveTimer.setInterval(interval*1000);
         connect( &m_autoSaveTimer, SIGNAL( timeout() ), this,
             SLOT( autoSaveSession() ) );
-        m_autoSaveTimer.start();
     }
+    
+    enableAutosave();
 }
 
 KonqSessionManager::~KonqSessionManager()
@@ -94,6 +86,28 @@ KonqSessionManager::~KonqSessionManager()
     delete m_autoSavedSessionConfig;
 }
 
+void KonqSessionManager::disableAutosave()
+{
+    m_autosaveEnabled = false;
+    m_autoSaveTimer.stop();
+    QString file = KStandardDirs::locateLocal("appdata", m_autoSavedSessionConfig->name());
+    QFile::remove(file);
+    delete m_autoSavedSessionConfig;
+}
+
+void KonqSessionManager::enableAutosave()
+{
+    // Create the config file for autosaving current session
+    QString filename = "autosave/" +
+        encodeFilename(QDBusConnection::sessionBus().baseService());
+    QString file = KStandardDirs::locateLocal("appdata", filename);
+    QFile::remove(file);
+    
+    m_autoSavedSessionConfig = new KConfig(filename, KConfig::SimpleConfig, "appdata");
+    m_autosaveEnabled = true;
+    m_autoSaveTimer.start();
+}
+
 KonqSessionManager* KonqSessionManager::self()
 {
     return &myKonqSessionManagerPrivate->instance;
@@ -101,6 +115,9 @@ KonqSessionManager* KonqSessionManager::self()
 
 void KonqSessionManager::autoSaveSession()
 {
+    if(!m_autosaveEnabled)
+        return;
+    
     bool isActive = m_autoSaveTimer.isActive();
     if(isActive)
         m_autoSaveTimer.stop();

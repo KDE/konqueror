@@ -62,6 +62,18 @@ public:
      * Restore saved session.
      */
     void restoreSession(const QString &sessionFileName);
+    
+    /**
+     * Disable the autosave feature. It's called when a konqueror instance is
+     * being preloaded
+     */
+    void disableAutosave();
+    
+    /**
+     * Enable the autosave feature. It's called when a konqueror instance stops
+     * being preloaded and starts having a window showed to the user.
+     */
+    void enableAutosave();
 
 public Q_SLOTS:
     /**
@@ -71,7 +83,8 @@ public Q_SLOTS:
     
     /**
      * Saves current session.
-     * This is function is called by the autosave timer.
+     * This is function is called by the autosave timer, but you can call it too
+     * if you want. It won't do anything if m_autosaveEnabled is false.
      */
     void autoSaveSession();
     
@@ -105,6 +118,7 @@ private:
     QStringList m_DirtyAutosavedSessions;
     QStringList m_SessionsAboutToRemove;
     KConfig *m_autoSavedSessionConfig;
+    bool m_autosaveEnabled;
 Q_SIGNALS: // DBUS signals
     /**
      * Save current session of all konqueror running instances in a given
