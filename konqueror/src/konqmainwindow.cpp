@@ -568,6 +568,31 @@ void KonqMainWindow::openUrl( KonqView *_view, const KUrl &_url,
         mimeType = KMimeType::findByUrl( url, buff.st_mode )->name();
   }
 
+    if (url.isLocalFile()) {
+        // Generic mechanism for redirecting to tar:/<path>/ when clicking on a tar file,
+        // zip:/<path>/ when clicking on a zip file, etc.
+        // The .protocol file specifies the mimetype that the kioslave handles.
+        // Note that we don't use mimetype inheritance since we don't want to
+        // open OpenDocument files as zip folders...
+        // Also note that we do this here and not in openView anymore,
+        // because in the case of foo.bz2 we don't know the final mimetype, we need a konqrun...
+        const QString protocol = KProtocolManager::protocolForArchiveMimetype(mimeType);
+        if (!protocol.isEmpty() && KonqFMSettings::settings()->shouldEmbed(mimeType)) {
+            url.setProtocol( protocol );
+            if (mimeType == "application/x-webarchive") {
+                url.addPath("index.html");
+                mimeType = "text/html";
+            } else {
+                if (KProtocolManager::outputType(url) == KProtocolInfo::T_FILESYSTEM) {
+                    url.adjustPath(KUrl::AddTrailingSlash);
+                    mimeType = "inode/directory";
+                } else
+                    mimeType.clear();
+            }
+        }
+    }
+
+
   kDebug(1202) << "trying openView for" << url << "( mimeType" << mimeType << ")";
   if ( ( !mimeType.isEmpty() && mimeType != "application/octet-stream") ||
          url.url() == "about:konqueror" || url.url() == "about:plugins" )
@@ -700,29 +725,7 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
       return bOthersFollowed;
   }
 
-
-  KUrl url( _url );
-
-    // Generic mechanism for redirecting to tar:/<path>/ when clicking on a tar file,
-    // zip:/<path>/ when clicking on a zip file, etc.
-    // The .protocol file specifies the mimetype that the kioslave handles.
-    // Note that we don't use mimetype inheritance since we don't want to
-    // open OpenDocument files as zip folders...
-    if (url.isLocalFile()) {
-        const QString protocol = KProtocolManager::protocolForArchiveMimetype(mimeType);
-        if (!protocol.isEmpty() && KonqFMSettings::settings()->shouldEmbed(mimeType)) {
-            url.setProtocol( protocol );
-            if (mimeType == "application/x-webarchive") {
-                url.addPath("index.html");
-                mimeType = "text/html";
-            } else {
-                url.setPath( url.path() + '/' );
-                mimeType = "inode/directory";
-            }
-        }
-    }
-
-
+    KUrl url(_url);
 
     // In case we open an index.html, we want the location bar
     // to still display the original URL (so that 'up' uses that URL,
