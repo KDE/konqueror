@@ -407,18 +407,33 @@ void KonqMenuActions::addOpenWithActionsTo(QMenu* topMenu, const QString& trader
     }
 
     QString constraint = traderConstraint;
-    QString subConstraint = " and '%1' in ServiceTypes";
+    const QString subConstraint = " and '%1' in ServiceTypes";
 
     QStringList::ConstIterator it = mimeTypeList.begin();
-    QStringList::ConstIterator end = mimeTypeList.end();
+    const QStringList::ConstIterator end = mimeTypeList.end();
     Q_ASSERT( it != end );
     QString firstMimeType = *it;
     ++it;
-    for ( ; it != end ; ++it ) {
-        constraint += subConstraint.arg( *it );
+    for (; it != end ; ++it) {
+        constraint += subConstraint.arg(*it);
     }
 
-    const KService::List offers = KMimeTypeTrader::self()->query( firstMimeType, "Application", constraint );
+    KService::List offers = KMimeTypeTrader::self()->query(firstMimeType, "Application", constraint);
+
+    QSet<QString> seenTexts;
+    for (KService::List::iterator it = offers.begin(); it != offers.end(); ) {
+        // The offer list from the KTrader returns duplicate
+        // application entries (kde3 and kde4). Although this is a configuration
+        // problem, duplicated entries just will be skipped here.
+        const QString appName((*it)->name());
+        if (!seenTexts.contains(appName)) {
+            seenTexts.insert(appName);
+            ++it;
+        } else {
+            it = offers.erase(it);
+        }
+    }
+
 
     //// Ok, we have everything, now insert
 
@@ -434,6 +449,7 @@ void KonqMenuActions::addOpenWithActionsTo(QMenu* topMenu, const QString& trader
             QMenu* menu = topMenu;
 
             if ( offers.count() > 1 ) { // submenu 'open with'
+                // TODO i18nc("@title:menu", "Open With")
                 menu = new QMenu(i18n("&Open With"), topMenu);
                 menu->menuAction()->setObjectName("openWith_submenu"); // for the unittest
                 topMenu->addMenu(menu);
@@ -476,8 +492,10 @@ void KonqMenuActions::addOpenWithActionsTo(QMenu* topMenu, const QString& trader
             QString openWithActionName;
             if ( menu != topMenu ) { // submenu
                 menu->addSeparator();
+                // TODO i18nc("@action:inmenu Open With", "&Other...")
                 openWithActionName = i18n("&Other...");
             } else {
+                // TODO i18nc("@title:menu", "Open With...")
                 openWithActionName = i18n("&Open With...");
             }
             QAction *openWithAct = d->m_ownActions.addAction( "openwith_browse" );
@@ -488,6 +506,7 @@ void KonqMenuActions::addOpenWithActionsTo(QMenu* topMenu, const QString& trader
         else // no app offers -> Open With...
         {
             KAction* act = d->m_ownActions.addAction( "openwith_browse" );
+            // TODO i18nc("@title:menu", "Open With...")
             act->setText( i18n( "&Open With..." ) );
             QObject::connect(act, SIGNAL(triggered()), d, SLOT(slotOpenWithDialog()));
             topMenu->addAction(act);
@@ -508,5 +527,6 @@ void KonqMenuActionsPrivate::slotRunApplication(QAction* act)
 
 void KonqMenuActionsPrivate::slotOpenWithDialog()
 {
+    // The item 'Other...' or 'Open With...' has been selected
     KRun::displayOpenWithDialog(m_info.urlList(), m_info.parentWidget());
 }
