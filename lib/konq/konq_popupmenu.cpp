@@ -107,42 +107,6 @@ public:
     KParts::BrowserExtension::ActionGroupMap m_actionGroups;
 };
 
-#if 0
-KonqPopupMenu::ProtocolInfo::ProtocolInfo()
-{
-  m_Reading = false;
-  m_Writing = false;
-  m_Deleting = false;
-  m_Moving = false;
-  m_TrashIncluded = false;
-}
-
-bool KonqPopupMenu::ProtocolInfo::supportsReading() const
-{
-  return m_Reading;
-}
-
-bool KonqPopupMenu::ProtocolInfo::supportsWriting() const
-{
-  return m_Writing;
-}
-
-bool KonqPopupMenu::ProtocolInfo::supportsDeleting() const
-{
-  return m_Deleting;
-}
-
-bool KonqPopupMenu::ProtocolInfo::supportsMoving() const
-{
-  return m_Moving;
-}
-
-bool KonqPopupMenu::ProtocolInfo::trashIncluded() const
-{
-  return m_TrashIncluded;
-}
-#endif
-
 //////////////////
 
 KonqPopupMenu::KonqPopupMenu(const KFileItemList &items,
@@ -181,71 +145,34 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
 
     Q_ASSERT(m_popupMenuInfo.items().count() >= 1);
 
-    const bool bIsLink  = (m_itemFlags & KParts::BrowserExtension::IsLink);
-    bool currentDir     = false;
-    bool sReading       = true;
-    bool sDeleting      = (m_itemFlags & KParts::BrowserExtension::NoDeletion) == 0;
-    bool sMoving        = sDeleting;
-    bool sWriting       = sDeleting && m_popupMenuInfo.items().first().isWritable();
     bool bTrashIncluded = false;
-    bool isLocal        = m_popupMenuInfo.items().first().isLocalFile()
-                       || m_popupMenuInfo.items().first().url().protocol()=="media"
-                       || m_popupMenuInfo.items().first().url().protocol()=="system";
-    bool isTrashLink     = false;
-
-    QFileInfo parentDirInfo;
-
-    KUrl url;
 
     KFileItemList lstItems = m_popupMenuInfo.items();
     KFileItemList::const_iterator it = lstItems.begin();
     const KFileItemList::const_iterator kend = lstItems.end();
     for ( ; it != kend; ++it )
     {
-        url = (*it).url();
-
-        if ( isLocal && !url.isLocalFile())
-            isLocal = false;
-
+        const KUrl url = (*it).url();
         if ( !bTrashIncluded && (
              ( url.protocol() == "trash" && url.path().length() <= 1 ) ) ) {
             bTrashIncluded = true;
-            isLocal = false;
-        }
-
-        // TODO use FileItemCapabilities from Dolphin (in KonqPopupMenuInformation)
-        if ( sReading )
-            sReading = KProtocolManager::supportsReading( url );
-
-        if ( sWriting )
-            sWriting = KProtocolManager::supportsWriting( url ) && (*it).isWritable();
-
-        if ( sDeleting )
-            sDeleting = KProtocolManager::supportsDeleting( url );
-
-        if ( sMoving )
-            sMoving = KProtocolManager::supportsMoving( url );
-
-        // For local files we can do better: check if we have write permission in parent directory
-        if (url.isLocalFile() && (sDeleting || sMoving)) {
-            const QString directory = url.directory();
-            if (parentDirInfo.filePath() != directory) {
-                parentDirInfo.setFile(directory);
-            }
-            if (!parentDirInfo.isWritable()) {
-                // kDebug(1203) << "not writable:" << directory;
-                sDeleting = false;
-                sMoving = false;
-            }
         }
     }
 
-    m_popupMenuInfo.setReadOnly(sWriting == false);
-
     const bool isDirectory = m_popupMenuInfo.isDirectory();
+    const bool sReading = m_popupMenuInfo.capabilities().supportsReading();
+    bool sDeleting = (m_itemFlags & KParts::BrowserExtension::NoDeletion) == 0
+                     && m_popupMenuInfo.capabilities().supportsDeleting();
+    const bool sWriting = m_popupMenuInfo.capabilities().supportsWriting();
+    const bool sMoving = sDeleting && m_popupMenuInfo.capabilities().supportsMoving();
+    const bool isLocal = m_popupMenuInfo.capabilities().isLocal();
 
-    url = m_sViewURL;
+    KUrl url = m_sViewURL;
     url.cleanPath();
+
+    bool isTrashLink     = false;
+    bool isCurrentTrash = false;
+    bool currentDir     = false;
 
     //check if url is current directory
     if ( m_popupMenuInfo.items().count() == 1 )
@@ -261,22 +188,19 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
             isTrashLink = ( cfg.readEntry("Type") == "Link" && cfg.readEntry("URL") == "trash:/" );
         }
 
-        if ( isTrashLink ) {
+        if (isTrashLink) {
             sDeleting = false;
         }
+
+        // isCurrentTrash: popup on trash:/ itself, or on the trash.desktop link
+        isCurrentTrash = (firstPopupURL.protocol() == "trash" && firstPopupURL.path().length() <= 1)
+                         || isTrashLink;
     }
 
-#if 0
-    m_info.m_Reading = sReading;
-    m_info.m_Writing = sWriting;
-    m_info.m_Deleting = sDeleting;
-    m_info.m_Moving = sMoving;
-    m_info.m_TrashIncluded = bTrashIncluded;
-#endif
+    const bool isIntoTrash = (url.protocol() == "trash") && !isCurrentTrash; // trashed file, not trash:/ itself
 
-    // isCurrentTrash: popup on trash:/ itself, or on the trash.desktop link
-    bool isCurrentTrash = ( m_popupMenuInfo.items().count() == 1 && bTrashIncluded ) || isTrashLink;
-    bool isIntoTrash = ( url.protocol() == "trash" || url.url().startsWith( "system:/trash" ) ) && !isCurrentTrash; // trashed file, not trash:/ itself
+    const bool bIsLink  = (m_itemFlags & KParts::BrowserExtension::IsLink);
+
     //kDebug() << "isLocal=" << isLocal << " url=" << url << " isCurrentTrash=" << isCurrentTrash << " isIntoTrash=" << isIntoTrash << " bTrashIncluded=" << bTrashIncluded;
 
     //////////////////////////////////////////////////////////////////////////

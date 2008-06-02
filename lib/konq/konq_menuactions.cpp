@@ -294,7 +294,7 @@ int KonqMenuActions::addActionsTo(QMenu* mainMenu)
 
         if ( cfg.hasKey( "X-KDE-Require" ) ) {
             const QStringList capabilities = cfg.readEntry( "X-KDE-Require" , QStringList() );
-            if ( capabilities.contains( "Write" ) && d->m_info.readOnly() )
+            if (capabilities.contains("Write") && !d->m_info.capabilities().supportsWriting())
                 continue;
         }
         if ( cfg.hasKey( "Actions" ) || cfg.hasKey( "X-KDE-GetActionMenu") ) {

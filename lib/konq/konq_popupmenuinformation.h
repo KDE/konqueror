@@ -21,8 +21,7 @@
 #ifndef KONQ_POPUPMENUINFORMATION_H
 #define KONQ_POPUPMENUINFORMATION_H
 
-#include <QtCore/QSharedDataPointer>
-#include <libkonq_export.h>
+#include "konq_fileitemcapabilities.h"
 #include <kurl.h>
 
 class KonqPopupMenuInformationPrivate;
@@ -73,14 +72,10 @@ public:
     KUrl::List urlList() const;
 
     /**
-     * Call this if the items are readonly, i.e. no actions should modify them.
+     * Returns the capabilities of the items.
+     * For instance, if they are readonly, then no action should modify those files.
      */
-    void setReadOnly(bool ro);
-
-    /**
-     * @return true if some the items are readonly
-     */
-    bool readOnly() const;
+    KonqFileItemCapabilities capabilities() const;
 
     /**
      * @return true if all items are directories

@@ -29,10 +29,10 @@ class KonqFileItemCapabilitiesPrivate : public QSharedData
 {
 public:
     KonqFileItemCapabilitiesPrivate()
-        : m_supportsReading(true),
-          m_supportsDeleting(true),
-          m_supportsWriting(true),
-          m_supportsMoving(true),
+        : m_supportsReading(false),
+          m_supportsDeleting(false),
+          m_supportsWriting(false),
+          m_supportsMoving(false),
           m_isLocal(true)
     { }
     bool m_supportsReading : 1;
@@ -42,19 +42,36 @@ public:
     bool m_isLocal : 1;
 };
 
+
+KonqFileItemCapabilities::KonqFileItemCapabilities()
+    : d(new KonqFileItemCapabilitiesPrivate)
+{
+}
+
 KonqFileItemCapabilities::KonqFileItemCapabilities(const KFileItemList& items)
     : d(new KonqFileItemCapabilitiesPrivate)
 {
+    setItems(items);
+}
+
+void KonqFileItemCapabilities::setItems(const KFileItemList& items)
+{
+    const bool initialValue = !items.isEmpty();
+    d->m_supportsReading = initialValue;
+    d->m_supportsDeleting = initialValue;
+    d->m_supportsWriting = initialValue;
+    d->m_supportsMoving = initialValue;
+    d->m_isLocal = true;
+
     QFileInfo parentDirInfo;
     foreach (const KFileItem &item, items) {
         const KUrl url = item.url();
         d->m_isLocal = d->m_isLocal && url.isLocalFile();
         d->m_supportsReading  = d->m_supportsReading  && KProtocolManager::supportsReading(url);
         d->m_supportsDeleting = d->m_supportsDeleting && KProtocolManager::supportsDeleting(url);
-        d->m_supportsWriting  = d->m_supportsWriting  && KProtocolManager::supportsWriting(url);
+        d->m_supportsWriting  = d->m_supportsWriting  && KProtocolManager::supportsWriting(url) && item.isWritable();
         d->m_supportsMoving   = d->m_supportsMoving   && KProtocolManager::supportsMoving(url);
 
-        // The following code has been taken from kdebase/apps/lib/konq/konq_popupmenu.cpp:
         // For local files we can do better: check if we have write permission in parent directory
         if (d->m_isLocal && (d->m_supportsDeleting || d->m_supportsMoving)) {
             const QString directory = url.directory();
