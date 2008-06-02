@@ -279,18 +279,15 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
     bool isIntoTrash = ( url.protocol() == "trash" || url.url().startsWith( "system:/trash" ) ) && !isCurrentTrash; // trashed file, not trash:/ itself
     //kDebug() << "isLocal=" << isLocal << " url=" << url << " isCurrentTrash=" << isCurrentTrash << " isIntoTrash=" << isIntoTrash << " bTrashIncluded=" << bTrashIncluded;
 
-    const bool isSingleMedium = false; // was: m_popupMenuInfo.items().count() == 1 && mediaFiles, not available anymore
-
     //////////////////////////////////////////////////////////////////////////
 
     addGroup( "topactions" ); // used e.g. for ShowMenuBar. includes a separator at the end
 
     QAction * act;
 
-    bool isOnDesktop = false; // ### remove, or re-introduced if needed for desktop icons
     QAction *actNewWindow = 0;
 
-#if 0
+#if 0 // TODO in the desktop code itself.
     if (( flags & KParts::BrowserExtension::ShowProperties ) && isOnDesktop &&
         !KAuthorized::authorizeKAction("editable_desktop_icons"))
     {
@@ -299,24 +296,15 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
 #endif
 
     // Either 'newview' is in the actions we're given (probably in the tabhandling group)
-    // or we need to insert it ourselves (e.g. for kdesktop). In the first case, actNewWindow must remain 0.
+    // or we need to insert it ourselves (e.g. for the desktop).
+    // In the first case, actNewWindow must remain 0.
     if ( ((kpf & KonqPopupMenu::ShowNewWindow) != 0) && sReading )
     {
-        QString openStr = isOnDesktop ? i18n( "&Open" ) : i18n( "Open in New &Window" );
+        const QString openStr = i18n("&Open");
         actNewWindow = m_ownActions.addAction( "newview" );
         actNewWindow->setIcon( KIcon("window-new") );
         actNewWindow->setText( openStr );
         QObject::connect(actNewWindow, SIGNAL(triggered()), q, SLOT(slotPopupNewView()));
-    }
-
-    if ( actNewWindow && !isOnDesktop )
-    {
-        if (isCurrentTrash)
-            actNewWindow->setToolTip( i18n( "Open the trash in a new window" ) );
-        else if (isSingleMedium)
-            actNewWindow->setToolTip( i18n( "Open the medium in a new window") );
-        else
-            actNewWindow->setToolTip( i18n( "Open the document in a new window" ) );
     }
 
     if ( isDirectory && sWriting && !isCurrentTrash ) // A dir, and we can create things into it
