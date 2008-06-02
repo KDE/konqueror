@@ -18,6 +18,7 @@ set(konq_LIB_SRCS
    konq_filetip.cc          # unused right now, but should be used by dolphin_part in the future.
                             # Also useful to keep separate? (e.g. in kde3  kerry used it too)
    konqmimedata.cpp         # used by dolphin, KonqOperations, some filemanagement konqueror modules.
+   konq_fileitemcapabilities.cpp # used in dolphin and dolphinpart already.
 )
 
 kde4_add_library(konq SHARED ${konq_LIB_SRCS})
@@ -49,6 +50,7 @@ install( FILES
  konq_events.h
  # konq_filetip.h
  konqmimedata.h
+ konq_fileitemcapabilities.h
 DESTINATION ${INCLUDE_INSTALL_DIR}
 )
 install( FILES konqpopupmenuplugin.desktop  DESTINATION  ${SERVICETYPES_INSTALL_DIR} )
