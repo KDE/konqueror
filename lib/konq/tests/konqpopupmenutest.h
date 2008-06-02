@@ -34,9 +34,11 @@ class KonqPopupMenuTest : public QObject
 private slots:
     void initTestCase();
     void testFile();
+    void testFileInReadOnlyDirectory();
     void testFilePreviewSubMenu();
     void testSubDirectory();
     void testViewDirectory();
+    void testViewReadOnlyDirectory();
 
     void testHtmlLink();
     void testHtmlPage();
@@ -45,7 +47,7 @@ private:
     KFileItem m_fileItem;
     KFileItem m_linkItem;
     KFileItem m_subDirItem;
-    KFileItem m_rootItem;
+    KFileItem m_thisDirectoryItem;
     QAction* m_back;
     QAction* m_forward;
     QAction* m_up;

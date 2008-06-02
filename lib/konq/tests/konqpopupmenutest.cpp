@@ -27,6 +27,7 @@
 #include <knewmenu.h>
 #include <kdebug.h>
 #include <konq_popupmenu.h>
+#include <konq_fileitemcapabilities.h>
 
 QTEST_KDEMAIN(KonqPopupMenuTest, GUI)
 
@@ -73,7 +74,7 @@ static QStringList extractActionNames(const QMenu& menu)
 
 void KonqPopupMenuTest::initTestCase()
 {
-    m_rootItem = KFileItem(QDir::currentPath(), "inode/directory", S_IFDIR + 0777);
+    m_thisDirectoryItem = KFileItem(QDir::currentPath(), "inode/directory", S_IFDIR + 0777);
     m_fileItem = KFileItem(QDir::currentPath() + "/Makefile", "text/x-makefile", S_IFREG + 0660);
     m_linkItem = KFileItem(QDir::currentPath() + "/cmake_install.cmake", "text/html", S_IFREG + 0660);
     m_subDirItem = KFileItem(QDir::currentPath() + "/CMakeFiles", "inode/directory", S_IFDIR + 0755);
@@ -181,6 +182,44 @@ void KonqPopupMenuTest::testFile()
     QCOMPARE(actions, expectedActions);
 }
 
+void KonqPopupMenuTest::testFileInReadOnlyDirectory()
+{
+    const KFileItem item(KFileItem::Unknown, KFileItem::Unknown, KUrl("/etc/passwd"));
+    KFileItemList itemList;
+    itemList << item;
+
+    KonqFileItemCapabilities capabilities(itemList);
+    QVERIFY(!capabilities.supportsMoving());
+
+    KUrl viewUrl("/etc");
+    KonqPopupMenu::Flags flags = 0;
+    KParts::BrowserExtension::PopupFlags beflags = KParts::BrowserExtension::ShowProperties
+                                                   | KParts::BrowserExtension::ShowReload
+                                                   | KParts::BrowserExtension::ShowUrlOperations;
+    KParts::BrowserExtension::ActionGroupMap actionGroups;
+    actionGroups.insert("tabhandling", m_tabHandlingActions->actions());
+    // DolphinPart doesn't add rename/trash when supportsMoving is false
+    // Maybe we should test dolphinpart directly :)
+    //actionGroups.insert("editactions", m_fileEditActions->actions());
+    actionGroups.insert("preview", QList<QAction *>() << m_preview1);
+
+    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags, beflags,
+                        0 /*parent*/, 0 /*bookmark manager*/, actionGroups);
+
+    QStringList actions = extractActionNames(popup);
+    kDebug() << actions;
+    QStringList expectedActions;
+    expectedActions << "openInNewWindow" << "openInNewTab" << "separator"
+                    << "copy" << "separator"
+                    << "openwith"
+                    << "preview1";
+    expectedActions << "separator";
+    expectedActions << "copyTo_submenu" << "separator";
+    expectedActions << "properties";
+    kDebug() << "Expected:" << expectedActions;
+    QCOMPARE(actions, expectedActions);
+}
+
 void KonqPopupMenuTest::testFilePreviewSubMenu()
 {
     // Same as testFile, but this time the "preview" action group has more than one action
@@ -251,8 +290,8 @@ void KonqPopupMenuTest::testSubDirectory()
 void KonqPopupMenuTest::testViewDirectory()
 {
     KFileItemList itemList;
-    itemList << m_rootItem;
-    KUrl viewUrl = QDir::currentPath();
+    itemList << m_thisDirectoryItem;
+    KUrl viewUrl = m_thisDirectoryItem.url();
     KonqPopupMenu::Flags flags = 0;
     KParts::BrowserExtension::PopupFlags beflags =
         KParts::BrowserExtension::ShowNavigationItems |
@@ -280,6 +319,43 @@ void KonqPopupMenuTest::testViewDirectory()
     // (came from arkplugin) << "compress"
     expectedActions << "separator";
     expectedActions << "copyTo_submenu" << "moveTo_submenu" << "separator";
+    expectedActions << "properties";
+    kDebug() << "Expected:" << expectedActions;
+    QCOMPARE(actions, expectedActions);
+}
+
+void KonqPopupMenuTest::testViewReadOnlyDirectory()
+{
+    KFileItem rootItem(QDir::rootPath(), "inode/directory", KFileItem::Unknown);
+    KFileItemList itemList;
+    itemList << rootItem;
+    KUrl viewUrl = rootItem.url();
+    KonqPopupMenu::Flags flags = 0;
+    KParts::BrowserExtension::PopupFlags beflags =
+        KParts::BrowserExtension::ShowNavigationItems |
+        KParts::BrowserExtension::ShowUp |
+        KParts::BrowserExtension::ShowCreateDirectory |
+        KParts::BrowserExtension::ShowUrlOperations |
+        KParts::BrowserExtension::ShowProperties;
+    // KonqMainWindow says: doTabHandling = !openedForViewURL && ... So we don't add tabhandling here
+    KParts::BrowserExtension::ActionGroupMap actionGroups;
+    actionGroups.insert("preview", m_previewActions->actions());
+
+    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags, beflags,
+                        0 /*parent*/, 0 /*bookmark manager*/, actionGroups);
+
+    QStringList actions = extractActionNames(popup);
+    qDebug() << actions;
+    QStringList expectedActions;
+    expectedActions << "go_up" << "go_back" << "go_forward" << "separator"
+                    // << "paste" // no paste since readonly
+                    << "separator"  // the doubled separator doesn't hurt, QMenu removes them
+                    << "openwith"
+                    << "preview_submenu";
+    if (!KStandardDirs::locate("services", "ServiceMenus/konsolehere.desktop").isEmpty())
+        expectedActions << "actions_submenu";
+    expectedActions << "separator";
+    expectedActions << "copyTo_submenu" << "separator"; // no moveTo_submenu, since readonly
     expectedActions << "properties";
     kDebug() << "Expected:" << expectedActions;
     QCOMPARE(actions, expectedActions);
