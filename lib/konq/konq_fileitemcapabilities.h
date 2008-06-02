@@ -29,7 +29,7 @@ class KonqFileItemCapabilitiesPrivate;
 class KFileItemList;
 
 /**
- * @brief Provides information about the access capabilities of a group of 
+ * @brief Provides information about the access capabilities of a group of
  *        KFileItem objects.
  *
  * As soon as one file item does not support a specific capability, it is
@@ -37,10 +37,16 @@ class KFileItemList;
  *
  * This class is implicitly shared, which means it can be used as a value and
  * copied around at almost no cost.
+ *
+ * @since 4.1
  */
 class LIBKONQ_EXPORT KonqFileItemCapabilities
 {
 public:
+    /**
+     * @brief Default constructor. Use setItems to specify the items.
+     */
+    KonqFileItemCapabilities();
     /**
      * @brief Constructor that takes a KFileItemList and sets the capabilities
      *        supported by all the FileItems as true.
@@ -56,6 +62,11 @@ public:
      * @brief Destructor
      */
     virtual ~KonqFileItemCapabilities();
+    /**
+     * Sets the items that are to have their supported capabilities checked.
+     */
+    void setItems(const KFileItemList& items);
+
     /**
      * @brief Check if reading capability is supported
      * @return true if all the FileItems support reading, otherwise false.
@@ -77,8 +88,8 @@ public:
      */
     bool supportsMoving() const;
     /**
-     * @brief Check if files are loca
-     * @return true if all the FileItems are local, othwise there is one or more
+     * @brief Check if files are local
+     * @return true if all the FileItems are local, otherwise there is one or more
      *         remote file, so false.
      */
     bool isLocal() const;

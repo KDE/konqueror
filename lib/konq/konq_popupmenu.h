@@ -101,25 +101,6 @@ public:
    */
   void setURLTitle( const QString& urlTitle );
 
-#if 0 // was only used by plugins
-  class LIBKONQ_EXPORT ProtocolInfo {
-   public:
-    ProtocolInfo();
-    bool supportsReading()  const;
-    bool supportsWriting()  const;
-    bool supportsDeleting() const;
-    bool supportsMoving()   const;
-    bool trashIncluded()    const;
-   private:
-    friend class KonqPopupMenuPrivate;
-    bool m_Reading:1;
-    bool m_Writing:1;
-    bool m_Deleting:1;
-    bool m_Moving:1;
-    bool m_TrashIncluded:1;
-  };
-#endif
-
 private:
   Q_PRIVATE_SLOT(d, void slotPopupNewDir())
   Q_PRIVATE_SLOT(d, void slotPopupNewView())

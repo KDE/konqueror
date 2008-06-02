@@ -27,16 +27,15 @@ class KonqPopupMenuInformationPrivate : public QSharedData
 public:
     KonqPopupMenuInformationPrivate()
         : m_parentWidget(0),
-      m_isDirectory(false),
-      m_readOnly(false)
+      m_isDirectory(false)
     {}
     QWidget* m_parentWidget;
     KFileItemList m_items;
+    KonqFileItemCapabilities m_capabilities;
     KUrl::List m_urlList;
     QString m_mimeType;
     QString m_mimeGroup;
     bool m_isDirectory;
-    bool m_readOnly;
 };
 
 KonqPopupMenuInformation::KonqPopupMenuInformation()
@@ -63,6 +62,7 @@ void KonqPopupMenuInformation::setItems(const KFileItemList& items)
 {
     Q_ASSERT(!items.isEmpty());
     d->m_items = items;
+    d->m_capabilities.setItems(items);
     d->m_mimeType = items.first().mimetype();
     d->m_mimeGroup = d->m_mimeType.left(d->m_mimeType.indexOf('/'));
     d->m_isDirectory = items.first().isDir();
@@ -94,18 +94,6 @@ KUrl::List KonqPopupMenuInformation::urlList() const
     return d->m_urlList;
 }
 
-// TODO replace this with FileItemCapabilities from Dolphin
-
-void KonqPopupMenuInformation::setReadOnly(bool ro)
-{
-    d->m_readOnly = ro;
-}
-
-bool KonqPopupMenuInformation::readOnly() const
-{
-    return d->m_readOnly;
-}
-
 bool KonqPopupMenuInformation::isDirectory() const
 {
     return d->m_isDirectory;
@@ -129,4 +117,9 @@ QString KonqPopupMenuInformation::mimeType() const
 QString KonqPopupMenuInformation::mimeGroup() const
 {
     return d->m_mimeGroup;
+}
+
+KonqFileItemCapabilities KonqPopupMenuInformation::capabilities() const
+{
+    return d->m_capabilities;
 }
