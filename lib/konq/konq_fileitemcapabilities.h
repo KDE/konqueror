@@ -63,6 +63,10 @@ public:
      */
     virtual ~KonqFileItemCapabilities();
     /**
+     * @brief Assignment operator
+     */
+    KonqFileItemCapabilities& operator=(const KonqFileItemCapabilities& other);
+    /**
      * Sets the items that are to have their supported capabilities checked.
      */
     void setItems(const KFileItemList& items);

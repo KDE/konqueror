@@ -90,6 +90,13 @@ KonqFileItemCapabilities::KonqFileItemCapabilities(const KonqFileItemCapabilitie
     : d(other.d)
 { }
 
+
+KonqFileItemCapabilities& KonqFileItemCapabilities::operator=(const KonqFileItemCapabilities& other)
+{
+    d = other.d;
+    return *this;
+}
+
 KonqFileItemCapabilities::~KonqFileItemCapabilities()
 {
 }
