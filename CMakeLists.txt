@@ -39,3 +39,7 @@ if ( Q_WS_X11 )
   add_subdirectory( kdepasswd )
 endif ( Q_WS_X11 )
 macro_optional_add_subdirectory( doc )
+
+if(CMAKE_SOURCE_DIR STREQUAL "${CMAKE_CURRENT_SOURCE_DIR}")
+    macro_display_feature_log()
+endif(CMAKE_SOURCE_DIR STREQUAL "${CMAKE_CURRENT_SOURCE_DIR}")
