@@ -78,8 +78,15 @@ static bool alwaysEmbedMimeTypeGroup(const QString& mimeType)
     return false;
 }
 
-bool KonqFMSettings::shouldEmbed( const QString & mimeType ) const
+bool KonqFMSettings::shouldEmbed(const QString & _mimeType) const
 {
+    KMimeType::Ptr mime = KMimeType::mimeType(_mimeType, KMimeType::ResolveAliases);
+    if (!mime) {
+        kWarning() << "Unknown mimetype" << _mimeType;
+        return false; // unknown mimetype!
+    }
+    const QString mimeType = mime->name();
+
     // First check in user's settings whether to embed or not
     // 1 - in the filetypesrc config file (written by the configuration module)
     QMap<QString, QString>::const_iterator it = m_embedMap.find( QString::fromLatin1("embed-")+mimeType );
@@ -106,6 +113,7 @@ bool KonqFMSettings::shouldEmbed( const QString & mimeType ) const
                 return true;
             }
             KMimeType::Ptr mime = KMimeType::mimeType(parent);
+            Q_ASSERT(mime); // how could the -parent- be null?
             if (mime)
                 parents += mime->parentMimeTypes();
         }

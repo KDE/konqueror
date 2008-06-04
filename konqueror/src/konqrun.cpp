@@ -93,7 +93,7 @@ void KonqRun::foundMimeType( const QString & _type )
     const bool associatedAppIsKonqueror = KonqMainWindow::isMimeTypeAssociatedWithSelf(mimeType);
 
     if (tryEmbed) {
-        KMimeType::Ptr mime = KMimeType::mimeType(mimeType);
+        KMimeType::Ptr mime = KMimeType::mimeType(mimeType, KMimeType::ResolveAliases);
         if (associatedAppIsKonqueror)
             m_req.forceAutoEmbed = true;
         else if (mime && mime->is("text/html") && m_pMainWindow->hasViewWithMimeType(mimeType)) {
