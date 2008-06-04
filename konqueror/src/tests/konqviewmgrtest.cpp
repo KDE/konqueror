@@ -198,7 +198,7 @@ void ViewMgrTest::testSplitView()
     QVERIFY( frame->height() > 240 ); // usually 325, but can be 256 with oxygen when three toolbars are shown
     //qDebug() << "view2 geom:" << frame2->geometry();
     QVERIFY( frame2->width() > 300 && frame2->width() < 400 ); // horiz split, so half the mainWindow width
-    QVERIFY( frame->height() > 240 ); // usually 325, but can be 256 with oxygen when three toolbars are shown
+    QVERIFY( frame2->height() > 240 ); // usually 325, but can be 256 with oxygen when three toolbars are shown
     // Both frames should have the same size; well, if the width was odd then there can be an off-by-one...
     QCOMPARE( frame->height(), frame2->height() );
     QVERIFY( qAbs(frame->width() - frame2->width()) <= 1 ); // e.g. 173 and 172 are "close enough"

@@ -353,7 +353,6 @@ public Q_SLOTS:
   void slotSendFile();
   void slotCopyFiles();
   void slotMoveFiles();
-  void slotOpenTerminal();
   void slotOpenLocation();
   void slotOpenFile();
 

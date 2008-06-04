@@ -1,7 +1,7 @@
 <?xml version = '1.0'?>
 <!-- This file is used by the simplebrowser profile -->
 <!DOCTYPE gui SYSTEM "kpartgui.dtd">
-<gui version="53" name="Konqueror" >
+<gui name="Konqueror" version="56">
  <MenuBar>
   <Menu noMerge="1" name="file" >
    <text>&amp;Location</text>
@@ -36,11 +36,6 @@
    <Merge/>
   </Menu>
   <Action name="bookmarks" />
-  <Menu name="tools" >
-   <text>&amp;Tools</text>
-   <WeakSeparator/>
-   <Merge/>
-  </Menu>
   <Menu noMerge="1" name="settings" >
    <text>&amp;Settings</text>
    <Merge name="StandardToolBarMenuHandler" />
