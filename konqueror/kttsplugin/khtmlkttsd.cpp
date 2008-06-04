@@ -43,17 +43,12 @@
 KHTMLPluginKTTSD::KHTMLPluginKTTSD( QObject* parent, const QVariantList& )
     : Plugin( parent )
 {
-    // If KTTSD is not installed, hide action.
-    KService::List offers = KServiceTypeTrader::self()->query("DBUS/Text-to-Speech", "Name == 'KTTSD'");
-    if (offers.count() > 0)
-    {
+    if (qobject_cast<KHTMLPart*>(parent)) { // should always be true, but let's make sure
         QAction *action = actionCollection()->addAction( "tools_kttsd" );
         action->setIcon( KIcon("text-speak") );
         action->setText( i18n("&Speak Text") );
         connect(action, SIGNAL(triggered(bool) ), SLOT(slotReadOut()));
     }
-    else
-        kDebug() << "KServiceTypeTrader did not find KTTSD.";
 }
 
 KHTMLPluginKTTSD::~KHTMLPluginKTTSD()
@@ -62,103 +57,106 @@ KHTMLPluginKTTSD::~KHTMLPluginKTTSD()
 
 void KHTMLPluginKTTSD::slotReadOut()
 {
+    // The parent is assumed to be a KHTMLPart (checked in constructor)
     KParts::ReadOnlyPart* part = static_cast<KParts::ReadOnlyPart *>(parent());
-    // The parent is assumed to be a KHTMLPart
-    if (!part)
-        KMessageBox::sorry( 0, i18n( "You cannot read anything except web pages with this plugin." ),
-                            i18n( "Cannot Read Source" ) );
+
+    if (!QDBusConnection::sessionBus().interface()->isServiceRegistered("org.kde.kttsd"))
+    {
+        QString error;
+        if (KToolInvocation::startServiceByDesktopName("kttsd", QStringList(), &error)) {
+            KMessageBox::error(part->widget(), error, i18n("Starting KTTSD Failed") );
+        }
+    }
+    // Find out if KTTSD supports xhtml (rich speak).
+    bool supportsXhtml = false;
+    org::kde::KSpeech kttsd( "org.kde.kttsd", "/KSpeech", QDBusConnection::sessionBus() );
+    QString talker = kttsd.defaultTalker();
+    QDBusReply<int> reply = kttsd.getTalkerCapabilities2(talker);
+    if ( !reply.isValid())
+        kDebug() << "D-Bus call getTalkerCapabilities2() failed, assuming non-XHTML support.";
     else
     {
-        if (!QDBusConnection::sessionBus().interface()->isServiceRegistered("org.kde.kttsd"))
-        {
-            QString error;
-            if (KToolInvocation::startServiceByDesktopName("kttsd", QStringList(), &error))
-                KMessageBox::error(0, error, i18n( "Starting KTTSD Failed") );
-        }
-        // Find out if KTTSD supports xhtml (rich speak).
-        bool supportsXhtml = false;
-        org::kde::KSpeech kttsd( "org.kde.kttsd", "/KSpeech", QDBusConnection::sessionBus() );
-        QString talker = kttsd.defaultTalker();
-        QDBusReply<int> reply = kttsd.getTalkerCapabilities2(talker);
-        if ( !reply.isValid())
-            kDebug() << "D-Bus call getTalkerCapabilities2() failed, assuming non-XHTML support.";
-        else
-        {
-            supportsXhtml = reply.value() & KSpeech::tcCanParseHtml;
-        }
+        supportsXhtml = reply.value() & KSpeech::tcCanParseHtml;
+    }
 
-        QString query;
-        bool hasSelection = false;
-        KHTMLPart *compPart = dynamic_cast<KHTMLPart *>(part);
-        if ( compPart )
+    QString query;
+    bool hasSelection = false;
+    KHTMLPart *compPart = dynamic_cast<KHTMLPart *>(part);
+    if ( compPart )
+    {
+        if (supportsXhtml)
+        {
+            kDebug() << "KTTS claims to support rich speak (XHTML to SSML).";
+            if (hasSelection)
+                query = compPart->selectedTextAsHTML();
+            else
+            {
+                // TODO: Fooling around with the selection probably has unwanted
+                // side effects, but until a method is supplied to get valid xhtml
+                // from entire document..
+                // query = part->document().toString().string();
+                compPart->selectAll();
+                query = compPart->selectedTextAsHTML();
+                // Restore no selection.
+                compPart->setSelection(compPart->document().createRange());
+            }
+        } else {
+            if (hasSelection)
+                query = compPart->selectedText();
+            else
+                query = compPart->htmlDocument().body().innerText().string();
+        }
+    }
+#ifdef HAVE_WEBKITKDE
+    else
+    {
+        WebKitPart *webkitPart = dynamic_cast<WebKitPart *>(part);
+        if ( webkitPart )
         {
             if (supportsXhtml)
             {
                 kDebug() << "KTTS claims to support rich speak (XHTML to SSML).";
                 if (hasSelection)
-                    query = compPart->selectedTextAsHTML();
+                    query = webkitPart->view()->page()->currentFrame()->toHtml();
                 else
                 {
                     // TODO: Fooling around with the selection probably has unwanted
                     // side effects, but until a method is supplied to get valid xhtml
                     // from entire document..
                     // query = part->document().toString().string();
-                    compPart->selectAll();
-                    query = compPart->selectedTextAsHTML();
+#if 0
+                    webkitPart->selectAll();
+                    query = webkitPart->view()->page()->currentFrame()->toHtml();
                     // Restore no selection.
-                    compPart->setSelection(compPart->document().createRange());
+                    webkitPart->setSelection(webkitPart->document().createRange());
+#endif
                 }
             } else {
                 if (hasSelection)
-                    query = compPart->selectedText();
+                    query = webkitPart->view()->selectedText();
                 else
-                    query = compPart->htmlDocument().body().innerText().string();
+                    query = webkitPart->view()->page()->currentFrame()->toHtml();
             }
         }
-#ifdef HAVE_WEBKITKDE
-        else
-        {
-            WebKitPart *webkitPart = dynamic_cast<WebKitPart *>(part);
-            if ( webkitPart )
-            {
-                if (supportsXhtml)
-                {
-                    kDebug() << "KTTS claims to support rich speak (XHTML to SSML).";
-                    if (hasSelection)
-                        query = webkitPart->view()->page()->currentFrame()->toHtml();
-                    else
-                    {
-                        // TODO: Fooling around with the selection probably has unwanted
-                        // side effects, but until a method is supplied to get valid xhtml
-                        // from entire document..
-                        // query = part->document().toString().string();
-#if 0
-                        webkitPart->selectAll();
-                        query = webkitPart->view()->page()->currentFrame()->toHtml();
-                        // Restore no selection.
-                        webkitPart->setSelection(webkitPart->document().createRange());
-#endif
-                    }
-                } else {
-                    if (hasSelection)
-                        query = webkitPart->view()->selectedText();
-                    else
-                        query = webkitPart->view()->page()->currentFrame()->toHtml();
-                }
-            }
 
-        }
+    }
 #endif
-        // kDebug() << "query =" << query;
+    // kDebug() << "query =" << query;
 
-        reply = kttsd.say(query, KSpeech::soNone);
-        if ( !reply.isValid())
-            KMessageBox::sorry( 0, i18n( "The D-Bus call say() failed." ),
-                                i18n( "D-Bus Call Failed" ));
+    reply = kttsd.say(query, KSpeech::soNone);
+    if ( !reply.isValid()) {
+        KMessageBox::sorry(part->widget(), i18n("The D-Bus call say() failed."),
+                            i18n("D-Bus Call Failed"));
     }
 }
 
-K_PLUGIN_FACTORY( KHTMLPluginKTTSDFactory, registerPlugin< KHTMLPluginKTTSD >(); )
+K_PLUGIN_FACTORY(KHTMLPluginKTTSDFactory,
+                 const KService::List offers = KServiceTypeTrader::self()->query("DBUS/Text-to-Speech", "Name == 'KTTSD'");
+                 // If KTTSD is not installed, don't create the plugin at all.
+                 if (!offers.isEmpty()) {
+                     registerPlugin<KHTMLPluginKTTSD>();
+                 }
+    )
 K_EXPORT_PLUGIN( KHTMLPluginKTTSDFactory( "khtmlkttsd" ) )
 
 #include "khtmlkttsd.moc"
