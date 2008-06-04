@@ -123,7 +123,6 @@
 #include <kiconloader.h>
 #include <kmenu.h>
 #include <kprocess.h>
-#include <kshell.h>
 #include <kio/scheduler.h>
 #include <kio/netaccess.h>
 #include <kacceleratormanager.h>
@@ -283,14 +282,6 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
     m_toggleViewGUIClient = 0;
   }
 
-  // Those menus are created by konqueror.rc so their address will never change
-  QMenu *popup = static_cast<QMenu*>(factory()->container("edit",this));
-  if (popup)
-    KAcceleratorManager::manage(popup);
-  popup = static_cast<QMenu*>(factory()->container("tools",this));
-  if (popup)
-    KAcceleratorManager::manage(popup);
-
   m_bHTMLAllowed = KonqSettings::htmlAllowed();
 
   m_ptaUseHTML->setChecked( m_bHTMLAllowed );
@@ -397,6 +388,14 @@ QWidget * KonqMainWindow::createContainer( QWidget *parent, int index, const QDo
         DelayedInitializer *initializer = new DelayedInitializer( QEvent::Show, res );
         connect( initializer, SIGNAL( initialize() ), this, SLOT(initBookmarkBar()) );
     }
+  }
+
+  if (res && element.tagName() == QLatin1String("Menu")) {
+      const QString& menuName = element.attribute("name");
+      if (menuName == "edit" || menuName == "tools") {
+          Q_ASSERT(qobject_cast<QMenu*>(res));
+          KAcceleratorManager::manage(static_cast<QMenu *>(res));
+      }
   }
 
   return res;
@@ -1417,42 +1416,6 @@ void KonqMainWindow::slotSendFile()
                      QString(), //body
                      QString(),
                      urls); // attachments
-}
-
-void KonqMainWindow::slotOpenTerminal()
-{
-  QString term = KonqSettings::terminalApplication();
-
-  QString dir ( QDir::homePath() );
-
-  //Try to get the directory of the current view
-  if ( m_currentView )
-  {
-      KUrl u( m_currentView->url() );
-
-      // If the given directory is not local, it can still be the URL of an
-      // ioslave using UDS_LOCAL_PATH which to be converted first.
-      u = KIO::NetAccess::mostLocalUrl(u, this);
-
-      //If the URL is local after the above conversion, set the directory.
-      if ( u.isLocalFile() )
-      {
-          if ( m_currentView->supportsMimeType( "inode/directory" ) )
-              dir = u.path();
-          else
-              dir = u.directory();
-      }
-  }
-
-  // Compensate for terminal having arguments.
-  QStringList args = KShell::splitArgs(term);
-  if(args.count() == 0)
-    return;
-  QString prog = args.takeFirst();
-
-  QProcess::startDetached(prog, args, dir, NULL);
-
-  kDebug(1202) << "directory" << dir << ", terminal:" << term;
 }
 
 void KonqMainWindow::slotOpenLocation()
@@ -3489,14 +3452,6 @@ void KonqMainWindow::initActions()
   action->setIcon(KIcon("mail-message-new"));
   action->setText(i18n( "S&end File..." ));
   connect(action, SIGNAL(triggered()), SLOT( slotSendFile() ));
-  if (KAuthorized::authorizeKAction("shell_access"))
-  {
-      action = actionCollection()->addAction("open_terminal");
-      action->setIcon(KIcon("utilities-terminal"));
-      action->setText(i18n( "Open &Terminal" ));
-      connect(action, SIGNAL(triggered()), SLOT( slotOpenTerminal() ));
-      action->setShortcut(Qt::Key_F4);
-  }
   action = actionCollection()->addAction("open_location");
   action->setIcon(KIcon("document-open-remote"));
   action->setText(i18n( "&Open Location" ));

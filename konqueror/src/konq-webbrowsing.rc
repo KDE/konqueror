@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE gui SYSTEM "kpartgui.dtd">
-<gui name="Konqueror" version="65">
+<gui name="Konqueror" version="66">
 <MenuBar>
  <Menu name="file" noMerge="1"><text>&amp;File</text>
   <Action name="new_window"/>
@@ -17,7 +17,7 @@
   <Action name="print"/>
   <DefineGroup name="print" />
   <Separator/>
-  <ActionList name="openwithbase" />
+  <ActionList name="openwithbase"/>
   <ActionList name="openwith" /> <!--Includes termination separator-->
   <Action name="quit"/>
  </Menu>
@@ -55,12 +55,6 @@
   <Action name="closedtabs"/>
  </Menu>
  <Action name="bookmarks"/>
- <Menu name="tools"><text>&amp;Tools</text>
-  <Action name="open_terminal"/>
-  <Action name="findfile"/>
-  <WeakSeparator/>
-  <Merge/>
- </Menu>
  <Menu name="settings" noMerge="1"><text>&amp;Settings</text>
   <Merge name="StandardToolBarMenuHandler" />
   <Action name="options_show_menubar"/>

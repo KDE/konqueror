@@ -529,16 +529,6 @@ PATH_JAVA
     </entry>
   </group>
 
-  <group name="General" >
-<!-- konqmainwindow.cpp, setting comes from kdeglobals, set by componentchooser kcm -->
-    <entry key="TerminalApplication" type="String">
-      <default>konsole</default>
-      <label></label>
-      <whatsthis></whatsthis>
-      <!-- checked -->
-    </entry>
-  </group>
-  
   <group name="SessionManagerSettings">
 <!-- konqsessionmanager.cpp -->
     <entry key="AutoSaveInterval" type="Int">
