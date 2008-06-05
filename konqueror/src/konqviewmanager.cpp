@@ -661,47 +661,46 @@ void KonqViewManager::clear()
     m_tabContainer = 0;
 }
 
-// TODO move to KonqMainWindow
-KonqView *KonqViewManager::chooseNextView( KonqView *view )
+KonqView *KonqViewManager::chooseNextView(KonqView *view)
 {
-  //kDebug(1202) << view;
-  KonqMainWindow::MapViews mapViews = m_pMainWindow->viewMap();
+    //kDebug(1202) << view;
+    const KonqMainWindow::MapViews& mapViews = m_pMainWindow->viewMap();
 
-  KonqMainWindow::MapViews::Iterator it = mapViews.begin();
-  KonqMainWindow::MapViews::Iterator end = mapViews.end();
-  if ( view ) // find it in the map - can't use the key since view->part() might be 0L
-      while ( it != end && it.value() != view )
-          ++it;
+    KonqMainWindow::MapViews::const_iterator it = mapViews.begin();
+    const KonqMainWindow::MapViews::const_iterator end = mapViews.end();
+    if (view) { // find it in the map - can't use the key since view->part() might be 0L
+        while (it != end && it.value() != view)
+            ++it;
+    }
 
-  // the view should always be in the list
-   if ( it == end ) {
-     if ( view )
-       kWarning() << "View" << view << "is not in list!" ;
-     it = mapViews.begin();
-     if ( it == end )
-       return 0L; // We have no view at all - this used to happen with totally-empty-profiles
-   }
+    // the view should always be in the list
+    if (it == end) {
+        if (view)
+            kWarning() << "View" << view << "is not in list!" ;
+        it = mapViews.begin();
+        if (it == end)
+            return 0; // We have no view at all - this used to happen with totally-empty-profiles
+    }
 
-  KonqMainWindow::MapViews::Iterator startIt = it;
+    KonqMainWindow::MapViews::const_iterator startIt = it;
 
-  //kDebug(1202) << "count=" << mapViews.count();
-  while ( true )
-  {
-    //kDebug(1202) << "*KonqViewManager::chooseNextView going next";
-    if ( ++it == end ) // move to next
-      it = mapViews.begin(); // rewind on end
+    //kDebug(1202) << "count=" << mapViews.count();
+    while (true) {
+        //kDebug(1202) << "*KonqViewManager::chooseNextView going next";
+        if (++it == end) // move to next
+            it = mapViews.begin(); // rewind on end
 
-    if ( it == startIt && view )
-      break; // no next view found
+        if (it == startIt && view)
+            break; // no next view found
 
-    KonqView *nextView = it.value();
-    if ( nextView && !nextView->isPassiveMode() )
-      return nextView;
-    //kDebug(1202) << "nextView=" << nextView << "passive=" << nextView->isPassiveMode();
-  }
+        KonqView *nextView = it.value();
+        if (nextView && !nextView->isPassiveMode())
+            return nextView;
+        //kDebug(1202) << "nextView=" << nextView << "passive=" << nextView->isPassiveMode();
+    }
 
-  //kDebug(1202) << "returning 0L";
-  return 0L; // no next view found
+    //kDebug(1202) << "returning 0";
+    return 0; // no next view found
 }
 
 KonqViewFactory KonqViewManager::createView( const QString &serviceType,
@@ -864,31 +863,26 @@ void KonqViewManager::setCurrentProfile(const QString& profileFileName)
     m_pMainWindow->setProfileConfig(profileGroup);
 }
 
-void KonqViewManager::loadViewProfileFromConfig( const KSharedConfigPtr& _cfg,
-                                                 const QString& path,
-                                                 const QString & filename,
-                                                 const KUrl & forcedUrl,
-                                                 const KonqOpenURLRequest &req,
-                                                 bool resetWindow, bool openUrl )
+void KonqViewManager::loadViewProfileFromConfig(const KSharedConfigPtr& _cfg,
+                                                const QString& path,
+                                                const QString & filename,
+                                                const KUrl & forcedUrl,
+                                                const KonqOpenURLRequest &req,
+                                                bool resetWindow, bool openUrl)
 {
     Q_UNUSED(path); // _cfg and path could be passed to setCurrentProfile for optimization
+    // resetWindow was used to resize the window to a default size,
+    // not needed anymore, since the size is in the profile (## what about about:blank?)
+    Q_UNUSED(resetWindow);
 
     KConfigGroup profileGroup(_cfg, "Profile");
 
-#if 0 // This isn't needed, the size should always be there in the profile anyway
-    if( resetWindow ) {
-        m_pMainWindow->applyMainWindowSettings(KConfigGroup(KonqMisc::modeDependentConfig(),"KonqMainWindow"), true);
-    }
-#else
-    Q_UNUSED(resetWindow); // cleanup the argument once the above is confirmed
-#endif
-
-    loadViewProfileFromGroup( profileGroup, filename, forcedUrl, req, openUrl );
+    loadViewProfileFromGroup(profileGroup, filename, forcedUrl, req, openUrl);
 
     setCurrentProfile(filename);
 
 #ifdef DEBUG_VIEWMGR
-    printFullHierarchy( m_pMainWindow );
+    printFullHierarchy(m_pMainWindow);
 #endif
 }
 
@@ -902,31 +896,29 @@ void KonqViewManager::loadViewProfileFromGroup( const KConfigGroup &profileGroup
     if (m_pMainWindow->currentView())
         defaultURL = m_pMainWindow->currentView()->url();
 
-  clear();
+    clear();
 
-  if ( forcedUrl.url() != "about:blank" )
-  {
-    loadRootItem( profileGroup, m_pMainWindow, defaultURL, openUrl && forcedUrl.isEmpty(), forcedUrl );
-  }
-  else
-  {
-    m_pMainWindow->disableActionsNoView();
-    m_pMainWindow->action( "clear_location" )->trigger();
-  }
+    if (forcedUrl.url() != "about:blank") {
+        loadRootItem( profileGroup, m_pMainWindow, defaultURL, openUrl && forcedUrl.isEmpty(), forcedUrl );
+    } else {
+        // ## in this case we won't resize the window, so bool resetWindow could be useful after all?
+        m_pMainWindow->disableActionsNoView();
+        m_pMainWindow->action("clear_location")->trigger();
+    }
 
-  //kDebug(1202) << "after loadRootItem";
+    //kDebug(1202) << "after loadRootItem";
 
-  // Set an active part first so that we open the URL in the current view
-  // (to set the location bar correctly and asap)
-  KonqView *nextChildView = 0L;
-  nextChildView = m_pMainWindow->activeChildView();
-  if (nextChildView == 0L) nextChildView = chooseNextView( 0L );
-  setActivePart( nextChildView ? nextChildView->part() : 0L, true /* immediate */);
+    // Set an active part first so that we open the URL in the current view
+    // (to set the location bar correctly and asap)
+    KonqView *nextChildView = 0;
+    nextChildView = m_pMainWindow->activeChildView();
+    if (nextChildView == 0) nextChildView = chooseNextView(0);
+    setActivePart(nextChildView ? nextChildView->part() : 0L, true /* immediate */);
 
-  // #71164
-  if ( !req.browserArgs.frameName.isEmpty() && nextChildView ) {
-      nextChildView->setViewName( req.browserArgs.frameName );
-  }
+    // #71164
+    if (!req.browserArgs.frameName.isEmpty() && nextChildView) {
+      nextChildView->setViewName(req.browserArgs.frameName);
+    }
 
     if (openUrl && !forcedUrl.isEmpty()) {
       KonqOpenURLRequest _req(req);
@@ -958,9 +950,9 @@ void KonqViewManager::loadViewProfileFromGroup( const KConfigGroup &profileGroup
     //kDebug(1202) << "done";
 }
 
-void KonqViewManager::setActivePart( KParts::Part *part, QWidget * )
+void KonqViewManager::setActivePart(KParts::Part *part, QWidget *)
 {
-    setActivePart( part, false );
+    setActivePart(part, false);
 }
 
 void KonqViewManager::setActivePart( KParts::Part *part, bool immediate )

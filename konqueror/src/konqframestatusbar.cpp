@@ -152,7 +152,6 @@ void KonqFrameStatusBar::splitFrameMenu()
    KAction actRemoveView(KIcon("view-close"), i18n("Close View"), 0);
    actRemoveView.setObjectName("removethisview");
    connect(&actRemoveView, SIGNAL(triggered(bool)), m_pParentKonqFrame, SLOT(slotRemoveView()));
-   //KonqView * nextView = mw->viewManager()->chooseNextView( m_pParentKonqFrame->childView() );
    actRemoveView.setEnabled( mw->mainViewsCount() > 1 || m_pParentKonqFrame->childView()->isToggleView() || m_pParentKonqFrame->childView()->isPassiveMode() );
 
    // For the rest, we borrow them from the main window
