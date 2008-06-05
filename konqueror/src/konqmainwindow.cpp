@@ -298,13 +298,7 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
     if ( !initialGeometrySet() )
         resize( 700, 480 );
 
-    // Read basic main-window settings, and enable autosave
-    // Note that this is just in case we won't use a profile, which is very rare.
-    // Normally setProfileConfig is called and we then use the profile for main window settings.
-    KConfigGroup mainWindowSettingsGroup(KonqMisc::modeDependentConfig(), "KonqMainWindow");
-    setAutoSaveSettings(mainWindowSettingsGroup);
-
-  //kDebug(1202) << this << "done";
+    //kDebug(1202) << this << "done";
 
   if( s_initialMemoryUsage == -1 )
   {

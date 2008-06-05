@@ -52,8 +52,6 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
 
   options.add("preload", ki18n("Preload for later use"));
 
-  options.add("mode <mode>", ki18n("Konqueror mode: FileManager or WebBrowser"));
-
   options.add("profile <profile>", ki18n("Profile to open"));
 
   options.add("profiles", ki18n("List available profiles"));
@@ -80,17 +78,11 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
   crashlog_file.open();
   KonqMainWindow::s_crashlog_file = &crashlog_file;
 
-  bool modeSet = false;
-  if (args->isSet("mode")) {
-      KonqMisc::setMode(QString::compare(args->getOption("mode"), "filemanager", Qt::CaseInsensitive) == 0 ? KonqMisc::FileManager : KonqMisc::WebBrowser);
-      modeSet = true;
-  }
-
   if ( app.isSessionRestored() )
   {
     if(KonqSessionManager::self()->hasAutosavedDirtySessions())
       KonqSessionManager::self()->askUserToRestoreAutosavedDirtySessions();
-    
+
     int n = 1;
     while ( KonqMainWindow::canBeRestored( n ) )
     {
@@ -124,11 +116,6 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
        QString profilePath = profile;
        if (profile[0] != '/')
            profilePath = KStandardDirs::locate( "data", QLatin1String("konqueror/profiles/")+profile );
-       // Support for the standard kfmclient calls from Home.desktop and konqbrowser.desktop
-       if (profile.endsWith("filemanagement"))
-           KonqMisc::setMode(KonqMisc::FileManager);
-       else if (profile.endsWith("webbrowsing"))
-           KonqMisc::setMode(KonqMisc::WebBrowser);
 
        QString url;
        QStringList filesToSelect;
@@ -189,14 +176,14 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
          {
              KUrl::List urlList;
              KonqMainWindow * mainwin = 0L;
-             
+
              if(args->count() > 0 && KonqSessionManager::self()->hasAutosavedDirtySessions())
                 KonqSessionManager::self()->askUserToRestoreAutosavedDirtySessions();
-             
+
              QList<KonqMainWindow*> *mainWindowList = KonqMainWindow::mainWindowList();
              if(mainWindowList && !mainWindowList->isEmpty())
                 mainwin = mainWindowList->first();
-             
+
              for ( int i = 0; i < args->count(); i++ )
              {
                  // KonqMisc::konqFilteredURL doesn't cope with local files... A bit of hackery below

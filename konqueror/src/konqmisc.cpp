@@ -224,25 +224,4 @@ QString KonqMisc::konqFilteredURL( QWidget* parent, const QString& _url, const Q
   return _url;  // return the original url if it cannot be filtered.
 }
 
-static KonqMisc::Mode s_mode = KonqMisc::WebBrowser;
-
-void KonqMisc::setMode( Mode mode )
-{
-    s_mode = mode;
-}
-
-KonqMisc::Mode KonqMisc::mode()
-{
-    return s_mode;
-}
-
-KSharedConfigPtr KonqMisc::modeDependentConfig()
-{
-    if (s_mode == KonqMisc::WebBrowser) {
-        return KGlobal::config();
-    } else {
-        return KSharedConfig::openConfig("kfmrc");
-    }
-}
-
 #include "konqmisc.moc"

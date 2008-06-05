@@ -33,22 +33,6 @@ typedef KSharedPtr<KSharedConfig> KSharedConfigPtr;
 
 namespace KonqMisc // TODO rename to KonqGlobal?
 {
-    enum Mode { FileManager, WebBrowser };
-    /**
-     * Sets the mode. ONLY called by konqmain! We cannot switch modes, we don't want to switch modes.
-     */
-    void setMode( Mode mode );
-    /**
-     * Returns the mode used by this konqueror process.
-     */
-    Mode mode();
-
-    /**
-     * Returns the KConfig object where to load/save mode-dependent settings
-     * (where mode is filemanager or webbrowser).
-     */
-    KSharedConfigPtr modeDependentConfig();
-
     /**
      * Stop full-screen mode in all windows.
      */
