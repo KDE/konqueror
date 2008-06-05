@@ -56,8 +56,11 @@ By default, only minimal identification information is sent to remote sites. The
         <property name="whatsThis" >
          <string>The browser identification text sent to the sites you visit. You can customize it using the options provided below.</string>
         </property>
+        <property name="text" >
+         <string comment="just a placeholder; do not translate" >KSqueezedTextLabel</string>
+        </property>
         <property name="textInteractionFlags" >
-         <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse|Qt::NoTextInteraction|Qt::TextBrowserInteraction|Qt::TextEditable|Qt::TextEditorInteraction|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+         <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse|Qt::TextBrowserInteraction|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
         </property>
        </widget>
       </item>
@@ -81,7 +84,7 @@ By default, only minimal identification information is sent to remote sites. The
           <property name="sizeType" >
            <enum>QSizePolicy::Fixed</enum>
           </property>
-          <property name="sizeHint" >
+          <property name="sizeHint" stdset="0" >
            <size>
             <width>14</width>
             <height>10</height>
@@ -173,16 +176,7 @@ By default, only minimal identification information is sent to remote sites. The
       </item>
       <item>
        <layout class="QVBoxLayout" >
-        <property name="leftMargin" >
-         <number>0</number>
-        </property>
-        <property name="topMargin" >
-         <number>0</number>
-        </property>
-        <property name="rightMargin" >
-         <number>0</number>
-        </property>
-        <property name="bottomMargin" >
+        <property name="margin" >
          <number>0</number>
         </property>
         <item>
@@ -233,7 +227,7 @@ By default, only minimal identification information is sent to remote sites. The
           <property name="sizeType" >
            <enum>QSizePolicy::Expanding</enum>
           </property>
-          <property name="sizeHint" >
+          <property name="sizeHint" stdset="0" >
            <size>
             <width>21</width>
             <height>16</height>
@@ -251,6 +245,13 @@ By default, only minimal identification information is sent to remote sites. The
  <layoutdefault spacing="6" margin="11" />
  <layoutfunction spacing="KDialog::spacingHint" margin="KDialog::marginHint" />
  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+ <customwidgets>
+  <customwidget>
+   <class>KSqueezedTextLabel</class>
+   <extends>QLabel</extends>
+   <header>ksqueezedtextlabel.h</header>
+  </customwidget>
+ </customwidgets>
  <includes>
   <include location="local" >klineedit.h</include>
   <include location="local" >k3listview.h</include>
