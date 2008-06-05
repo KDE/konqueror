@@ -44,8 +44,6 @@
 #include <kdialog.h>
 #include <kiconloader.h>
 #include <klineedit.h>
-#include <k3listview.h>
-#include <k3listviewsearchline.h>
 #include <kmessagebox.h>
 #include <kurl.h>
 
@@ -65,14 +63,14 @@ struct CookieProp
     bool allLoaded;
 };
 
-CookieListViewItem::CookieListViewItem(Q3ListView *parent, const QString &dom)
-                   :Q3ListViewItem(parent)
+CookieListViewItem::CookieListViewItem(QTreeWidget *parent, const QString &dom)
+                   :QTreeWidgetItem(parent)
 {
     init( 0, dom );
 }
 
-CookieListViewItem::CookieListViewItem(Q3ListViewItem *parent, CookieProp *cookie)
-                   :Q3ListViewItem(parent)
+CookieListViewItem::CookieListViewItem(QTreeWidgetItem *parent, CookieProp *cookie)
+                   :QTreeWidgetItem(parent)
 {
     init( cookie );
 }
@@ -88,6 +86,11 @@ void CookieListViewItem::init( CookieProp* cookie, const QString &domain,
     mCookie = cookie;
     mDomain = domain;
     mCookiesLoaded = cookieLoaded;
+
+    if (mCookie)
+        setText(1, KUrl::fromAce(mCookie->host.toLatin1()));
+    else
+        setText(0, KUrl::fromAce(mDomain.toLatin1()));
 }
 
 CookieProp* CookieListViewItem::leaveCookie()
@@ -95,14 +98,6 @@ CookieProp* CookieListViewItem::leaveCookie()
     CookieProp *ret = mCookie;
     mCookie = 0;
     return ret;
-}
-
-QString CookieListViewItem::text(int f) const
-{
-    if (mCookie)
-        return f == 0 ? QString() : KUrl::fromAce(mCookie->host.toLatin1());
-    else
-        return f == 0 ? KUrl::fromAce(mDomain.toLatin1()) : QString();
 }
 
 KCookiesManagement::KCookiesManagement(const KComponentData &componentData, QWidget *parent)
@@ -115,23 +110,25 @@ KCookiesManagement::KCookiesManagement(const KComponentData &componentData, QWid
 
   dlg = new KCookiesManagementDlgUI (this);
 
-  dlg->kListViewSearchLine->setListView(dlg->lvCookies);
+  dlg->kListViewSearchLine->setTreeWidget(dlg->lvCookies);
+
+  dlg->lvCookies->setColumnWidth(0, 150);
 
   mainLayout->addWidget(dlg);
-  dlg->lvCookies->setSorting(0);
 
-  connect(dlg->lvCookies, SIGNAL(expanded(Q3ListViewItem*)), SLOT(getCookies(Q3ListViewItem*)) );
-  connect(dlg->lvCookies, SIGNAL(selectionChanged(Q3ListViewItem*)), SLOT(showCookieDetails(Q3ListViewItem*)) );
+  connect(dlg->lvCookies, SIGNAL(itemExpanded(QTreeWidgetItem*)), SLOT(getCookies(QTreeWidgetItem*)) );
+  connect(dlg->lvCookies, SIGNAL(currentItemChanged(QTreeWidgetItem*, QTreeWidgetItem*)), SLOT(showCookieDetails(QTreeWidgetItem*)) );
 
   connect(dlg->pbDelete, SIGNAL(clicked()), SLOT(deleteCookie()));
   connect(dlg->pbDeleteAll, SIGNAL(clicked()), SLOT(deleteAllCookies()));
   connect(dlg->pbReload, SIGNAL(clicked()), SLOT(getDomains()));
   connect(dlg->pbPolicy, SIGNAL(clicked()), SLOT(doPolicy()));
 
-  connect(dlg->lvCookies, SIGNAL(doubleClicked (Q3ListViewItem *)), SLOT(doPolicy()));
-  deletedCookies.setAutoDelete(true);
+  connect(dlg->lvCookies, SIGNAL(itemDoubleClicked(QTreeWidgetItem *, int)), SLOT(doPolicy()));
   m_bDeleteAll = false;
   mainWidget = parent;
+
+  deletedCookies.setAutoDelete(true);
 
   load();
 }
@@ -265,7 +262,7 @@ void KCookiesManagement::getDomains()
 
   QStringList domains = reply;
 
-  if ( dlg->lvCookies->childCount() )
+  if ( dlg->lvCookies->topLevelItemCount() > 0 )
   {
     reset();
     dlg->lvCookies->setCurrentItem( 0L );
@@ -275,19 +272,21 @@ void KCookiesManagement::getDomains()
   for(QStringList::Iterator dIt = domains.begin(); dIt != domains.end(); dIt++)
   {
     dom = new CookieListViewItem(dlg->lvCookies, *dIt);
-    dom->setExpandable(true);
+    dom->setChildIndicatorPolicy(QTreeWidgetItem::ShowIndicator);
   }
 
   // are ther any cookies?
-  dlg->pbDeleteAll->setEnabled(dlg->lvCookies->childCount());
+  dlg->pbDeleteAll->setEnabled(dlg->lvCookies->topLevelItemCount() > 0);
+
+  dlg->lvCookies->sortItems(0, Qt::AscendingOrder);
 }
 
 Q_DECLARE_METATYPE( QList<int> )
 
-void KCookiesManagement::getCookies(Q3ListViewItem *cookieDom)
+void KCookiesManagement::getCookies(QTreeWidgetItem *cookieDom)
 {
   CookieListViewItem* ckd = static_cast<CookieListViewItem*>(cookieDom);
-  if ( ckd->cookiesLoaded() )
+  if ( ckd && ckd->cookiesLoaded() )
     return;
 
   QList<int> fields;
@@ -338,6 +337,8 @@ bool KCookiesManagement::cookieDetails(CookieProp *cookie)
   QStringList fieldVal = reply;
 
   QStringList::Iterator c = fieldVal.begin();
+  if (c == fieldVal.end()) // empty list, do not crash
+    return false;
   cookie->value = *c++;
   unsigned tmp = (*c++).toUInt();
 
@@ -356,20 +357,22 @@ bool KCookiesManagement::cookieDetails(CookieProp *cookie)
   return true;
 }
 
-void KCookiesManagement::showCookieDetails(Q3ListViewItem* item)
+void KCookiesManagement::showCookieDetails(QTreeWidgetItem* item)
 {
   kDebug () << "::showCookieDetails... ";
+  if (!item)
+    return;
   CookieProp *cookie = static_cast<CookieListViewItem*>(item)->cookie();
   if( cookie )
   {
     if( cookie->allLoaded || cookieDetails(cookie) )
     {
-      dlg->leName->validateAndSet(cookie->name,0,0,0);
-      dlg->leValue->validateAndSet(cookie->value,0,0,0);
-      dlg->leDomain->validateAndSet(cookie->domain,0,0,0);
-      dlg->lePath->validateAndSet(cookie->path,0,0,0);
-      dlg->leExpires->validateAndSet(cookie->expireDate,0,0,0);
-      dlg->leSecure->validateAndSet(cookie->secure,0,0,0);
+      dlg->leName->setText(cookie->name);
+      dlg->leValue->setText(cookie->value);
+      dlg->leDomain->setText(cookie->domain);
+      dlg->lePath->setText(cookie->path);
+      dlg->leExpires->setText(cookie->expireDate);
+      dlg->leSecure->setText(cookie->secure);
     }
 
     dlg->pbPolicy->setEnabled (true);
@@ -417,7 +420,7 @@ void KCookiesManagement::doPolicy()
 
 void KCookiesManagement::deleteCookie()
 {
-  Q3ListViewItem* currentItem = dlg->lvCookies->currentItem();
+  QTreeWidgetItem* currentItem = dlg->lvCookies->currentItem();
   CookieListViewItem *item = static_cast<CookieListViewItem*>( currentItem );
   if( item->cookie() )
   {
@@ -443,15 +446,15 @@ void KCookiesManagement::deleteCookie()
   currentItem = dlg->lvCookies->currentItem();
   if ( currentItem )
   {
-    dlg->lvCookies->setSelected( currentItem, true );
+    dlg->lvCookies->setCurrentItem( currentItem );
     showCookieDetails( currentItem );
   }
   else
     clearCookieDetails();
 
-  dlg->pbDelete->setEnabled(dlg->lvCookies->selectedItem());
-  dlg->pbDeleteAll->setEnabled(dlg->lvCookies->childCount());
-  dlg->pbPolicy->setEnabled(dlg->lvCookies->selectedItem());
+  dlg->pbDelete->setEnabled(dlg->lvCookies->currentItem());
+  dlg->pbDeleteAll->setEnabled(dlg->lvCookies->topLevelItemCount() > 0);
+  dlg->pbPolicy->setEnabled(dlg->lvCookies->currentItem());
 
   emit changed( true );
 }
