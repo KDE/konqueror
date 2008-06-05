@@ -5,138 +5,103 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>572</width>
-    <height>445</height>
+    <width>526</width>
+    <height>443</height>
    </rect>
   </property>
-  <layout class="QGridLayout" >
-   <item row="0" column="0" >
-    <widget class="QLabel" name="textLabel1" >
-     <property name="text" >
-      <string>&amp;Search:</string>
-     </property>
-     <property name="wordWrap" >
-      <bool>false</bool>
-     </property>
-     <property name="buddy" >
-      <cstring>kListViewSearchLine</cstring>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="1" >
-    <widget class="K3ListViewSearchLine" name="kListViewSearchLine" >
-     <property name="toolTip" >
-      <string>Search interactively for domains and hosts</string>
-     </property>
-     <property name="whatsThis" >
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="0" colspan="2" >
-    <widget class="K3ListView" name="lvCookies" >
-     <property name="selectionMode" >
-      <enum>Q3ListView::Single</enum>
-     </property>
-     <property name="allColumnsShowFocus" >
-      <bool>true</bool>
-     </property>
-     <property name="showSortIndicator" >
-      <bool>true</bool>
-     </property>
-     <property name="rootIsDecorated" >
-      <bool>true</bool>
-     </property>
-     <property name="treeStepSize" >
-      <number>15</number>
-     </property>
-     <column>
-      <property name="text" >
-       <string>Domain [Group]</string>
-      </property>
-     </column>
-     <column>
-      <property name="text" >
-       <string>Host [Set By]</string>
-      </property>
-     </column>
-    </widget>
-   </item>
-   <item row="1" column="2" >
-    <layout class="QVBoxLayout" >
+  <layout class="QVBoxLayout" name="verticalLayout_3" >
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout" >
      <item>
-      <widget class="QPushButton" name="pbDelete" >
-       <property name="text" >
-        <string>D&amp;elete</string>
-       </property>
-      </widget>
+      <layout class="QVBoxLayout" name="verticalLayout_2" >
+       <item>
+        <widget class="KTreeWidgetSearchLine" name="kListViewSearchLine" >
+         <property name="enabled" >
+          <bool>true</bool>
+         </property>
+         <property name="clickMessage" >
+          <string>Search</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTreeWidget" name="lvCookies" >
+         <property name="toolTip" >
+          <string>Search interactively for domains and hosts</string>
+         </property>
+         <property name="sortingEnabled" >
+          <bool>true</bool>
+         </property>
+         <property name="allColumnsShowFocus" >
+          <bool>true</bool>
+         </property>
+         <column>
+          <property name="text" >
+           <string>Domain [Group]</string>
+          </property>
+         </column>
+         <column>
+          <property name="text" >
+           <string>Host [Set By]</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item>
-      <widget class="QPushButton" name="pbDeleteAll" >
-       <property name="text" >
-        <string>Delete A&amp;ll</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pbPolicy" >
-       <property name="text" >
-        <string>Change &amp;Policy...</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pbReload" >
-       <property name="text" >
-        <string>&amp;Reload List</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer>
-       <property name="orientation" >
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeType" >
-        <enum>QSizePolicy::MinimumExpanding</enum>
-       </property>
-       <property name="sizeHint" >
-        <size>
-         <width>117</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
+      <layout class="QVBoxLayout" name="verticalLayout" >
+       <item>
+        <widget class="QPushButton" name="pbDelete" >
+         <property name="text" >
+          <string>D&amp;elete</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pbDeleteAll" >
+         <property name="text" >
+          <string>Delete A&amp;ll</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pbPolicy" >
+         <property name="text" >
+          <string>Change &amp;Policy...</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pbReload" >
+         <property name="text" >
+          <string>&amp;Reload List</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer" >
+         <property name="orientation" >
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0" >
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
      </item>
     </layout>
    </item>
-   <item row="2" column="0" colspan="3" >
+   <item>
     <widget class="QGroupBox" name="gbDetails" >
      <property name="title" >
       <string>Details</string>
      </property>
-     <layout class="QGridLayout" >
-      <item row="2" column="1" >
-       <widget class="KLineEdit" name="leDomain" >
-        <property name="readOnly" >
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="1" >
-       <widget class="KLineEdit" name="lePath" >
-        <property name="readOnly" >
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="1" >
-       <widget class="KLineEdit" name="leSecure" >
-        <property name="readOnly" >
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
+     <layout class="QGridLayout" name="gridLayout" >
       <item row="0" column="0" >
        <widget class="QLabel" name="lbName" >
         <property name="text" >
@@ -147,6 +112,13 @@
         </property>
         <property name="buddy" >
          <cstring>leName</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" >
+       <widget class="KLineEdit" name="leName" >
+        <property name="readOnly" >
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -163,6 +135,13 @@
         </property>
        </widget>
       </item>
+      <item row="1" column="1" >
+       <widget class="KLineEdit" name="leValue" >
+        <property name="readOnly" >
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
       <item row="2" column="0" >
        <widget class="QLabel" name="lbDomain" >
         <property name="text" >
@@ -173,6 +152,13 @@
         </property>
         <property name="buddy" >
          <cstring>leDomain</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1" >
+       <widget class="KLineEdit" name="leDomain" >
+        <property name="readOnly" >
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -189,6 +175,13 @@
         </property>
        </widget>
       </item>
+      <item row="3" column="1" >
+       <widget class="KLineEdit" name="lePath" >
+        <property name="readOnly" >
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
       <item row="4" column="0" >
        <widget class="QLabel" name="lbExpires" >
         <property name="text" >
@@ -199,6 +192,13 @@
         </property>
         <property name="buddy" >
          <cstring>leExpires</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1" >
+       <widget class="KLineEdit" name="leExpires" >
+        <property name="readOnly" >
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -215,22 +215,8 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="1" >
-       <widget class="KLineEdit" name="leValue" >
-        <property name="readOnly" >
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="1" >
-       <widget class="KLineEdit" name="leExpires" >
-        <property name="readOnly" >
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1" >
-       <widget class="KLineEdit" name="leName" >
+      <item row="5" column="1" >
+       <widget class="KLineEdit" name="leSecure" >
         <property name="readOnly" >
          <bool>true</bool>
         </property>
@@ -246,19 +232,14 @@
  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
  <customwidgets>
   <customwidget>
-   <class>K3ListView</class>
-   <extends>Q3ListView</extends>
-   <header>k3listview.h</header>
-  </customwidget>
-  <customwidget>
    <class>KLineEdit</class>
    <extends>QLineEdit</extends>
    <header>klineedit.h</header>
   </customwidget>
   <customwidget>
-   <class>K3ListViewSearchLine</class>
+   <class>KTreeWidgetSearchLine</class>
    <extends>KLineEdit</extends>
-   <header>k3listviewsearchline.h</header>
+   <header>ktreewidgetsearchline.h</header>
   </customwidget>
  </customwidgets>
  <includes>

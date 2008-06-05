@@ -21,12 +21,14 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#ifndef __KCOOKIESMANAGEMENT_H
-#define __KCOOKIESMANAGEMENT_H
+#ifndef KCOOKIESMANAGEMENT_H
+#define KCOOKIESMANAGEMENT_H
 
-#include <Qt3Support/Q3Dict>
+#include <QtCore/QList>
 #include <QtCore/QStringList>
-#include <Qt3Support/Q3ListView>
+#include <QtGui/QTreeWidget>
+#include <QtCore/QMultiHash>
+#include <Qt3Support/Q3Dict>
 #include <Qt3Support/Q3PtrList>
 
 #include <kcmodule.h>
@@ -44,11 +46,11 @@ public:
 };
 
 
-class CookieListViewItem : public Q3ListViewItem
+class CookieListViewItem : public QTreeWidgetItem
 {
 public:
-    CookieListViewItem(Q3ListView *parent, const QString &dom);
-    CookieListViewItem(Q3ListViewItem *parent, CookieProp *cookie);
+    CookieListViewItem(QTreeWidget *parent, const QString &dom);
+    CookieListViewItem(QTreeWidgetItem *parent, CookieProp *cookie);
     ~CookieListViewItem();
 
     QString domain() const { return mDomain; }
@@ -56,7 +58,6 @@ public:
     CookieProp* leaveCookie();
     void setCookiesLoaded() { mCookiesLoaded = true; }
     bool cookiesLoaded() const { return mCookiesLoaded; }
-    virtual QString text(int f) const;
 
 private:
     void init( CookieProp* cookie,
@@ -84,8 +85,8 @@ private Q_SLOTS:
     void deleteCookie();
     void deleteAllCookies();
     void getDomains();
-    void getCookies(Q3ListViewItem*);
-    void showCookieDetails(Q3ListViewItem*);
+    void getCookies(QTreeWidgetItem*);
+    void showCookieDetails(QTreeWidgetItem*);
     void doPolicy();
 
 private:
@@ -103,4 +104,4 @@ private:
     Q3Dict<CookiePropList> deletedCookies;
 };
 
-#endif // __KCOOKIESMANAGEMENT_H
+#endif // KCOOKIESMANAGEMENT_H
