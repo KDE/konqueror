@@ -268,6 +268,7 @@ const KAboutData *KonqFactory::aboutData()
     s_aboutData->addAuthor( ki18n("Joseph Wenninger"), ki18n("Developer (navigation panel framework)"),"jowenn@kde.org");
     s_aboutData->addAuthor( ki18n("Stephan Binner"), ki18n("Developer (misc stuff)"),"binner@kde.org");
     s_aboutData->addAuthor( ki18n("Ivor Hewitt"), ki18n("Developer (AdBlock filter)"),"ivor@ivor.org");
+    s_aboutData->addAuthor( ki18n("Eduardo Robles Elvira"), ki18n("Developer (Session Management, Undo closed item)"),"edulix@gmail.com");
     qAddPostRoutine(cleanupKAboutData);
   }
   return s_aboutData;
