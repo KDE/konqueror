@@ -1072,9 +1072,9 @@ bool KonqMainWindow::makeViewsFollow( const KUrl & url,
         // file, e.g. in a separate viewer.
         // This happens in views locked to a directory mode,
         // like sidebar and konsolepart (#52161).
-        const bool ignore = view->isLockedViewMode() && view->supportsMimeType("inode/directory");
+        const bool ignore = view->isLockedViewMode() && view->showsDirectory();
         //kDebug(1202) << "View " << view->service()->name()
-        //              << " supports dirs: " << view->supportsMimeType( "inode/directory" )
+        //              << " supports dirs: " << view->showsDirectory()
         //              << " is locked-view-mode:" << view->isLockedViewMode()
         //              << " ignore=" << ignore;
         if ( !ignore )
@@ -1359,7 +1359,7 @@ void KonqMainWindow::slotSendURL()
     fileNameList += (*it).fileName();
   }
   QString subject;
-  if ( m_currentView && !m_currentView->supportsMimeType( "inode/directory" ) )
+  if (m_currentView && !m_currentView->showsDirectory())
     subject = m_currentView->caption();
   else // directory view
       subject = fileNameList;
@@ -1403,7 +1403,7 @@ void KonqMainWindow::slotSendFile()
     }
   }
   QString subject;
-  if ( m_currentView && !m_currentView->supportsMimeType( "inode/directory" ) )
+  if ( m_currentView && !m_currentView->showsDirectory())
     subject = m_currentView->caption();
   else
     subject = fileNameList;
@@ -1577,8 +1577,7 @@ void KonqMainWindow::showHTML( KonqView * _view, bool b, bool _activateView )
     if ( _activateView )
         m_bHTMLAllowed = b;
 
-  if ( b && _view->supportsMimeType( "inode/directory" ) )
-  {
+    if ( b && _view->showsDirectory()) {
     _view->lockHistory();
     openView( "inode/directory", _view->url(), _view );
   }
@@ -1686,7 +1685,10 @@ void KonqMainWindow::slotReloadPopup()
 
 void KonqMainWindow::slotHome(Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers)
 {
-    const QString homeURL = KonqMisc::homeUrl();
+    // TODO: it would be good to give the home button a different icon in webbrowsing
+    // and in filemanager mode.
+    const QString homeURL = m_currentView && m_currentView->showsDirectory() ? QDir::homePath()
+                            : KonqSettings::homeURL();
 
     KonqOpenURLRequest req;
     req.newTab = true;
@@ -2030,7 +2032,7 @@ void KonqMainWindow::slotPartActivated( KParts::Part *part )
   updateViewActions(); // undo, lock, link and other view-dependent actions
   updateViewModeActions();
 
-  m_pMenuNew->setEnabled( m_currentView->supportsMimeType( QLatin1String("inode/directory") ));
+  m_pMenuNew->setEnabled(m_currentView->showsDirectory());
 
   m_currentView->frame()->statusbar()->updateActiveStatus();
 
@@ -3919,9 +3921,9 @@ void KonqMainWindow::updateToolBarActions( bool pendingAction /*=false*/)
 
   if ( m_currentView && m_currentView->url().isLocalFile() &&
        !m_currentView->isLockedViewMode() ) {
-      if ( m_currentView->serviceTypes().contains( "inode/directory" ) )
+      if (m_currentView->showsDirectory())
           m_ptaUseHTML->setEnabled( true );
-      else if ( m_currentView->serviceTypes().contains(  "text/html" ) ) {
+      else if ( m_currentView->serviceTypes().contains("text/html") ) {
           // Currently viewing an index.html file via this feature (i.e. url points to a dir)
           QString locPath = KUrl( m_currentView->locationBarURL() ).path();
           m_ptaUseHTML->setEnabled( QFileInfo( locPath ).isDir() );

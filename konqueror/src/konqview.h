@@ -260,6 +260,9 @@ public:
 
   bool supportsMimeType( const QString &mimeType ) const;
 
+    // True if showing a directory
+    bool showsDirectory() const;
+
   // True if "Use index.html" is set (->the view doesn't necessarily show HTML!)
   bool allowHTML() const { return m_bAllowHTML; }
   void setAllowHTML( bool allow ) { m_bAllowHTML = allow; }
