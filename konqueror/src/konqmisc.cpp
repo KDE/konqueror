@@ -127,7 +127,7 @@ KonqMainWindow * KonqMisc::createBrowserWindowFromProfile( const QString &path, 
           mainWindow = mainWindowList->first();
       else // This should never happen but just to be sure
           mainWindow = new KonqMainWindow;
-    
+
       if(!url.isEmpty())
           mainWindow->openUrl( 0, url, QString(), req );
   }
@@ -243,24 +243,6 @@ KSharedConfigPtr KonqMisc::modeDependentConfig()
     } else {
         return KSharedConfig::openConfig("kfmrc");
     }
-}
-
-QString KonqMisc::homeUrl()
-{
-    // Note that we have a GUI for configuring konquerorrc [UserSettings] HomeURL
-    // but there is no GUI for kfmrc [UserSettings] HomeURL -- hidden config key for now,
-    // I think that breaking "the home icon is your home directory" would be quite a strange idea.
-
-    // TODO: however it would be good to give the home button a different icon in webbrowsing
-    // and in filemanager mode.
-
-    if (s_mode == KonqMisc::WebBrowser)
-        return KonqSettings::homeURL();
-
-    // Note that the default value is different for konquerorrc and kfmrc so we can't use a single code path anyway.
-
-    const QString homeUrl = modeDependentConfig()->group("UserSettings").readEntry("HomeURL", QDir::homePath());
-    return homeUrl;
 }
 
 #include "konqmisc.moc"

@@ -46,14 +46,8 @@ namespace KonqMisc // TODO rename to KonqGlobal?
     /**
      * Returns the KConfig object where to load/save mode-dependent settings
      * (where mode is filemanager or webbrowser).
-     * For instance the HomeURL setting.
      */
     KSharedConfigPtr modeDependentConfig();
-
-    /**
-     * Returns the (mode-dependent) URL to use for the home button
-     */
-    QString homeUrl();
 
     /**
      * Stop full-screen mode in all windows.

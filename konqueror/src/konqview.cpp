@@ -131,7 +131,7 @@ KonqView::~KonqView()
 
     delete m_pPart;
   }
-  
+
   qDeleteAll( m_lstHistory );
   m_lstHistory.clear();
 
@@ -1436,6 +1436,11 @@ QString KonqView::nameFilter() const
 {
     const QVariant nameFilterProperty = m_pPart->property("nameFilter");
     return nameFilterProperty.toString();
+}
+
+bool KonqView::showsDirectory() const
+{
+    return supportsMimeType(QString::fromLatin1("inode/directory"));
 }
 
 #include "konqview.moc"
