@@ -179,8 +179,9 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
                  return 0; // no preloading
 #endif
              }
-             if(!(KonqSessionManager::self()->hasAutosavedDirtySessions() && KonqSessionManager::self()->askUserToRestoreAutosavedDirtySessions()) && !args->isSet("silent"))
+             if(!args->isSet("silent") && !(KonqSessionManager::self()->hasAutosavedDirtySessions() && KonqSessionManager::self()->askUserToRestoreAutosavedDirtySessions()))
              {
+                 kDebug() << "YUJUU";
                  // By default try to open in webbrowser mode. People can use "konqueror ." to get a filemanager.
                  QString profile = "webbrowsing";
                  QString profilePath = KStandardDirs::locate( "data", QLatin1String("konqueror/profiles/")+profile );
