@@ -2026,7 +2026,6 @@ void KonqMainWindow::slotPartActivated( KParts::Part *part )
   updateViewActions(); // undo, lock, link and other view-dependent actions
   updateViewModeActions();
 
-  m_pMenuNew->setEnabled(m_currentView->showsDirectory());
   m_paHome->setIcon(KIcon(m_currentView->showsDirectory() ? "user-home" : "go-home"));
 
   m_currentView->frame()->statusbar()->updateActiveStatus();
@@ -2260,14 +2259,6 @@ void KonqMainWindow::slotURLEntered(const QString &text, Qt::KeyboardModifiers m
     }
 
     m_bURLEnterLock = false;
-}
-
-void KonqMainWindow::slotFileNewAboutToShow()
-{
-  // As requested by KNewMenu :
-  m_pMenuNew->slotCheckUpToDate();
-  // And set the files that the menu apply on :
-  m_pMenuNew->setPopupFiles( m_currentView->url() );
 }
 
 void KonqMainWindow::slotSplitViewHorizontal()
@@ -3421,10 +3412,10 @@ void KonqMainWindow::initActions()
   // They are all disabled then re-enabled with enableAllActions
   // If any one needs to be initially disabled, put that code in enableAllActions
 
+  // For the popup menu only.
+  m_pMenuNew = new KNewMenu(actionCollection(), this, "new_menu");
+
   // File menu
-  m_pMenuNew = new KNewMenu ( actionCollection(), this, "new_menu" );
-  QObject::connect( m_pMenuNew->menu(), SIGNAL(aboutToShow()),
-                    this, SLOT(slotFileNewAboutToShow()) );
 
   KAction* action = actionCollection()->addAction("new_window");
   action->setIcon(KIcon("window-new"));
@@ -4223,7 +4214,6 @@ void KonqMainWindow::disableActionsNoView()
     m_paBack->setEnabled( false );
     m_paForward->setEnabled( false );
     m_ptaUseHTML->setEnabled( false );
-    m_pMenuNew->setEnabled( false );
     m_paLockView->setEnabled( false );
     m_paLockView->setChecked( false );
     m_paSplitViewVer->setEnabled( false );
@@ -4596,8 +4586,6 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
                           this, SLOT(slotItemsRemoved(const KFileItemList &)) );
     }
 
-  QObject::disconnect( m_pMenuNew->menu(), SIGNAL(aboutToShow()),
-                       this, SLOT(slotFileNewAboutToShow()) );
 
   QPointer<QObject> guard( this ); // #149736, window could be deleted inside popupmenu event loop
   pPopupMenu->exec( global );
@@ -4614,9 +4602,6 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
 
   if ( guard.isNull() ) // the placement of this test is very important, double-check #149736 if moving stuff around
       return;
-
-  QObject::connect( m_pMenuNew->menu(), SIGNAL(aboutToShow()),
-                       this, SLOT(slotFileNewAboutToShow()) );
 
   if (be) {
     QObject::disconnect( be, SIGNAL(itemsRemoved(const KFileItemList &)),

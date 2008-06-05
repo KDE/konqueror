@@ -410,7 +410,6 @@ private Q_SLOTS:
 
   void slotURLEntered(const QString &text, Qt::KeyboardModifiers);
 
-  void slotFileNewAboutToShow();
   void slotLocationLabelActivated();
 
   void slotDuplicateTab();
