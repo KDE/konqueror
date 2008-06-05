@@ -1313,11 +1313,6 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
 
 void KonqMainWindow::slotNewWindow()
 {
-  // Ask the user to recover session if appliable when a new window is opened
-  // on user request
-  if(KonqSessionManager::self()->hasAutosavedDirtySessions())
-    KonqSessionManager::self()->askUserToRestoreAutosavedDirtySessions();
-
   // Use profile from current window, if set
   QString profile = m_pViewManager->currentProfile();
   if ( profile.isEmpty() )
