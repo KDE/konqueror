@@ -490,7 +490,7 @@ void KonqPopupMenuPrivate::addGroup(const QString& name)
 void KonqPopupMenuPrivate::addPlugins()
 {
     const QString commonMimeType = m_popupMenuInfo.mimeType();
-    const KService::List plugin_offers = KMimeTypeTrader::self()->query(commonMimeType.isEmpty() ? QLatin1String("application/octet-stream") : commonMimeType, "KonqPopupMenu/Plugin");
+    const KService::List plugin_offers = KMimeTypeTrader::self()->query(commonMimeType.isEmpty() ? QLatin1String("application/octet-stream") : commonMimeType, "KonqPopupMenu/Plugin", "exist Library");
 
     KService::List::ConstIterator iterator = plugin_offers.begin();
     const KService::List::ConstIterator end = plugin_offers.end();
