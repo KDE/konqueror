@@ -17,6 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 #include "konqmisc.h"
+#include "konqsessionmanager.h"
 #include "konqsettingsxt.h"
 #include "konqmainwindow.h"
 #include "konqviewmanager.h"
@@ -34,6 +35,7 @@
 #include <kiconloader.h>
 #include <kconfiggroup.h>
 #include <QDir>
+#include <QList>
 
 //#ifdef Q_WS_WIN
 // windows defines ERROR
@@ -116,11 +118,25 @@ KonqMainWindow * KonqMisc::createBrowserWindowFromProfile( const QString &path, 
   req.tempFile = tempFile;
 
   KonqMainWindow * mainWindow;
-  if ( path.isEmpty() )
+  // Ask the user to recover session if appliable
+  if(KonqSessionManager::self()->hasAutosavedDirtySessions() &&
+    KonqSessionManager::self()->askUserToRestoreAutosavedDirtySessions())
+  {
+      QList<KonqMainWindow*> *mainWindowList = KonqMainWindow::mainWindowList();
+      if(mainWindowList && !mainWindowList->isEmpty())
+          mainWindow = mainWindowList->first();
+      else // This should never happen but just to be sure
+          mainWindow = new KonqMainWindow;
+    
+      if(!url.isEmpty())
+          mainWindow->openUrl( 0, url, QString(), req );
+  }
+  else if ( path.isEmpty() )
   {
       // The profile doesn't exist -> creating a simple window
       mainWindow = new KonqMainWindow;
-      mainWindow->openUrl( 0, url, QString(), req );
+      if(!url.isEmpty())
+          mainWindow->openUrl( 0, url, QString(), req );
   }
   else if( KonqMainWindow::isPreloaded() && KonqMainWindow::preloadedWindow() != NULL )
   {
