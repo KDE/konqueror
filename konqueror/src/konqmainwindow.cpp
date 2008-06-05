@@ -2027,6 +2027,7 @@ void KonqMainWindow::slotPartActivated( KParts::Part *part )
   updateViewModeActions();
 
   m_pMenuNew->setEnabled(m_currentView->showsDirectory());
+  m_paHome->setIcon(KIcon(m_currentView->showsDirectory() ? "user-home" : "go-home"));
 
   m_currentView->frame()->statusbar()->updateActiveStatus();
 
