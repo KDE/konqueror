@@ -10,6 +10,10 @@
 
 // Own
 #include "generalopts.h"
+#include <kdebug.h>
+#include <kconfig.h>
+#include <kstandarddirs.h>
+#include <kcombobox.h>
 
 // Qt
 #include <QtDBus/QDBusConnection>
@@ -31,8 +35,9 @@
 
 K_PLUGIN_FACTORY_DECLARATION(KcmKonqHtmlFactory)
 
-// Keep in sync with konqueror.kcfg - TODO use it here
+// Keep in sync with konqueror.kcfg
 static const char* DEFAULT_HOMEPAGE = "http://www.kde.org";
+enum StartPage { ShowHomePage, ShowBlankPage, ShowAboutPage };
 
 //-----------------------------------------------------------------------------
 
@@ -70,8 +75,25 @@ KKonqGeneralOptions::KKonqGeneralOptions(QWidget *parent, const QVariantList&)
 
 void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout* lay)
 {
-    QHBoxLayout *homeLayout = new QHBoxLayout;
+    QHBoxLayout *startLayout = new QHBoxLayout;
+    lay->addLayout(startLayout);
 
+    QLabel* startLabel = new QLabel(i18nc("@label:listbox", "When &Konqueror starts:"), this);
+    startLayout->addWidget(startLabel);
+
+    m_startCombo = new KComboBox(this);
+    m_startCombo->setEditable(false);
+    m_startCombo->addItem(i18nc("@item:inlistbox", "Show the introduction page"), ShowAboutPage);
+    m_startCombo->addItem(i18nc("@item:inlistbox", "Show my home page"), ShowHomePage);
+    m_startCombo->addItem(i18nc("@item:inlistbox", "Show a blank page"), ShowBlankPage);
+    startLayout->addWidget(m_startCombo);
+    connect(m_startCombo, SIGNAL(currentIndexChanged(int)), SLOT(slotChanged()));
+
+    startLabel->setBuddy(m_startCombo);
+
+    ////
+
+    QHBoxLayout *homeLayout = new QHBoxLayout;
     QLabel *label = new QLabel(i18n("Home Page:"), this);
     homeLayout->addWidget(label);
 
@@ -98,11 +120,45 @@ KKonqGeneralOptions::~KKonqGeneralOptions()
     delete tabOptions;
 }
 
+static QString readStartUrlFromProfile()
+{
+    const QString blank = "about:blank";
+    const QString profile = KStandardDirs::locate("data", QLatin1String("konqueror/profiles/webbrowsing"));
+    if (profile.isEmpty())
+        return blank;
+    KConfig cfg(profile, KConfig::SimpleConfig);
+    KConfigGroup profileGroup(&cfg, "Profile");
+    const QString rootItem = profileGroup.readEntry("RootItem");
+    if (rootItem.isEmpty())
+        return blank;
+    if (rootItem.startsWith("View")) {
+        const QString prefix = rootItem + '_';
+        const QString urlKey = QString("URL").prepend(prefix);
+        return profileGroup.readPathEntry(urlKey, blank);
+    }
+    // simplify the other cases: whether root is a splitter or directly the tabwidget,
+    // we want to look at the first view inside the tabs, i.e. ViewT0.
+    return profileGroup.readPathEntry("ViewT0_URL", blank);
+}
+
+static StartPage urlToStartPageEnum(const QString& startUrl)
+{
+    if (startUrl == "about:blank")
+        return ShowBlankPage;
+    if (startUrl == "about:" || startUrl == "about:konqueror")
+        return ShowAboutPage;
+    return ShowHomePage;
+}
+
 void KKonqGeneralOptions::load()
 {
     KConfigGroup userSettings(m_pConfig, "UserSettings");
     homeURL->setUrl(userSettings.readEntry("HomeURL", DEFAULT_HOMEPAGE));
-
+    const QString startUrl = readStartUrlFromProfile();
+    const StartPage startPage = urlToStartPageEnum(readStartUrlFromProfile());
+    const int startComboIndex = m_startCombo->findData(startPage);
+    Q_ASSERT(startComboIndex != -1);
+    m_startCombo->setCurrentIndex(startComboIndex);
 
     KConfigGroup cg(m_pConfig, "FMSettings"); // ### what a wrong group name for these settings...
 
@@ -132,10 +188,77 @@ void KKonqGeneralOptions::defaults()
     m_pConfig->setReadDefaults(old);
 }
 
+static void updateWebbrowsingProfile(const QString& homeUrl, StartPage startPage)
+{
+    QString url;
+    QString serviceType;
+    QString serviceName;
+    switch(startPage) {
+    case ShowHomePage:
+        url = homeUrl;
+        serviceType = "text/html";
+        serviceName = "khtml";
+        break;
+    case ShowAboutPage:
+        url = "about:";
+        serviceType = "KonqAboutPage";
+        serviceName = "konq_aboutpage";
+        break;
+    case ShowBlankPage:
+        url = "about:blank";
+        serviceType = "text/html";
+        serviceName = "khtml";
+        break;
+    }
+
+    const QString profileFileName = "webbrowsing";
+
+    // Create local copy of the profile if needed -- copied from KonqViewManager::setCurrentProfile
+    const QString localPath = KStandardDirs::locateLocal("data", QString::fromLatin1("konqueror/profiles/") +
+                                                         profileFileName, KGlobal::mainComponent());
+    KSharedConfigPtr cfg = KSharedConfig::openConfig(localPath, KConfig::SimpleConfig);
+    if (!QFile::exists(localPath)) {
+        const QString globalFile = KStandardDirs::locate("data", QString::fromLatin1("konqueror/profiles/") +
+                                                         profileFileName, KGlobal::mainComponent());
+        if (!globalFile.isEmpty()) {
+            KSharedConfigPtr globalCfg = KSharedConfig::openConfig(globalFile, KConfig::SimpleConfig);
+            globalCfg->copyTo(localPath, cfg.data());
+        }
+    }
+    KConfigGroup profileGroup(cfg, "Profile");
+
+    QString rootItem = profileGroup.readEntry("RootItem");
+    if (rootItem.isEmpty()) {
+        rootItem = "View0";
+        profileGroup.writeEntry("RootItem", rootItem);
+    }
+    QString prefix;
+    if (rootItem.startsWith("View")) {
+        prefix = rootItem + '_';
+    } else {
+        // simplify the other cases: whether root is a splitter or directly the tabwidget,
+        // we want to look at the first view inside the tabs, i.e. ViewT0.
+        prefix = "ViewT0_";
+    }
+    profileGroup.writeEntry(prefix + "URL", url);
+    profileGroup.writeEntry(prefix + "ServiceType", serviceType);
+    profileGroup.writeEntry(prefix + "ServiceName", serviceName);
+}
+
 void KKonqGeneralOptions::save()
 {
     KConfigGroup userSettings(m_pConfig, "UserSettings");
     userSettings.writeEntry("HomeURL", homeURL->url().url());
+    const int startComboIndex = m_startCombo->currentIndex();
+    const int choice = m_startCombo->itemData(startComboIndex).toInt();
+    updateWebbrowsingProfile(homeURL->url().url(), static_cast<StartPage>(choice));
+
+    // TODO create local webbrowsing profile,
+    // look for View0_ServiceName=konq_aboutpage or ViewT0_ServiceName=khtml
+    // and replace with
+    // ViewT0_ServiceName=khtml (if http)
+    // ViewT0_ServiceType=text/html (if http)
+    // ViewT0_URL[$e]=http://www.kde.org/
 
     KConfigGroup cg(m_pConfig, "FMSettings");
     cg.writeEntry( "MMBOpensTab", tabOptions->m_pShowMMBInTabs->isChecked() );
