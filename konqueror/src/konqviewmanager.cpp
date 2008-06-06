@@ -1104,7 +1104,7 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
                                 bool openAfterCurrentPage, int pos )
 {
     QString prefix;
-    if (name != "InitialView") {
+    if (name != "InitialView") { // InitialView is old stuff, not in use anymore
         prefix = name + QLatin1Char( '_' );
     }
 
@@ -1172,7 +1172,7 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
                 KUrl url;
                 if (cfg.hasKey(urlKey)) {
                     url = cfg.readPathEntry(urlKey, QString::fromLatin1("about:blank"));
-                } else if (urlKey == "empty_URL") {
+                } else if (urlKey == "empty_URL") { // old stuff, not in use anymore
                     url = QString::fromLatin1("about:blank");
                 } else {
                     url = defaultURL;
