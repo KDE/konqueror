@@ -377,10 +377,12 @@ KonqAboutPage::~KonqAboutPage()
 
 bool KonqAboutPage::openUrl(const KUrl &u)
 {
+    emit started(0);
     if (u.url() == "about:plugins")
         serve(s_staticData->plugins(), "plugins");
     else
         serve(s_staticData->launch(), "konqueror");
+    emit completed();
     return true;
 }
 
