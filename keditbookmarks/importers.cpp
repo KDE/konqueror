@@ -189,7 +189,8 @@ QString IEImportCommand::requestFilename() const {
 QString GaleonImportCommand::requestFilename() const {
     return KFileDialog::getOpenFileName(
             QDir::homePath() + "/.galeon",
-            i18n("*.xbel|Galeon Bookmark Files (*.xbel)"));
+            i18n("*.xbel|Galeon Bookmark Files (*.xbel)"),
+            KEBApp::self());
 }
 
 #include "kstandarddirs.h"
@@ -197,7 +198,8 @@ QString GaleonImportCommand::requestFilename() const {
 QString KDE2ImportCommand::requestFilename() const {
     return KFileDialog::getOpenFileName(
             KStandardDirs::locateLocal("data", "konqueror"),
-            i18n("*.xml|KDE Bookmark Files (*.xml)"));
+            i18n("*.xml|KDE Bookmark Files (*.xml)"),
+            KEBApp::self());
 }
 
 /* -------------------------------------- */

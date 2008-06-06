@@ -289,7 +289,8 @@ void CurrentMgr::doExport(ExportType type, const QString & _path) {
         if (path.isNull())
             path = KFileDialog::getSaveFileName(
                         QDir::homePath(),
-                        i18n("*.html|HTML Bookmark Listing") );
+                        i18n("*.html|HTML Bookmark Listing"),
+                        KEBApp::self() );
         HTMLExporter exporter;
         exporter.write(mgr()->root(), path);
         return;
@@ -368,7 +369,7 @@ void ActionsImpl::slotNewFolder()
     KEBApp::self()->bkInfo()->commitChanges();
     bool ok;
     QString str = KInputDialog::getText( i18n( "Create New Bookmark Folder" ),
-            i18n( "New folder:" ), QString(), &ok );
+            i18n( "New folder:" ), QString(), &ok, KEBApp::self() );
     if (!ok)
         return;
 
@@ -563,7 +564,7 @@ void ActionsImpl::slotSetAsToolbar() {
 void ActionsImpl::slotChangeIcon() {
     KEBApp::self()->bkInfo()->commitChanges();
     KBookmark bk = KEBApp::self()->firstSelected();
-    QString newIcon = KIconDialog::getIcon(KIconLoader::Small, KIconLoader::FileSystem);
+    QString newIcon = KIconDialog::getIcon(KIconLoader::Small, KIconLoader::FileSystem, false, 0, false, KEBApp::self());
     if (newIcon.isEmpty())
         return;
     EditCommand *cmd = new EditCommand(bk.address(), -1, newIcon);
