@@ -215,11 +215,8 @@ QString KonqMisc::konqFilteredURL( QWidget* parent, const QString& _url, const Q
         return data.uri().url();
     }
   }
-  else if ( _url.startsWith( "about:" ) && _url != "about:blank" ) {
-    // We can't use "about:" as it is, KUrl doesn't parse it.
-    if (_url == "about:plugins")
-       return "about:plugins";
-    return "about:konqueror";
+  else if ( _url != "about:blank" && _url != "about:plugins" ) {
+    return "about:";
   }
   return _url;  // return the original url if it cannot be filtered.
 }

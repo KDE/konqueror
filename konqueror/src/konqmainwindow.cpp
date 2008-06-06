@@ -588,7 +588,7 @@ void KonqMainWindow::openUrl( KonqView *_view, const KUrl &_url,
 
   kDebug(1202) << "trying openView for" << url << "( mimeType" << mimeType << ")";
   if ( ( !mimeType.isEmpty() && mimeType != "application/octet-stream") ||
-         url.url() == "about:konqueror" || url.url() == "about:plugins" )
+       url.url() == "about:" || url.url() == "about:konqueror" || url.url() == "about:plugins" )
   {
     KService::Ptr offer = KMimeTypeTrader::self()->preferredService(mimeType, "Application");
     const bool associatedAppIsKonqueror = isMimeTypeAssociatedWithSelf( mimeType, offer );
@@ -733,11 +733,10 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
 
     QString serviceName; // default: none provided
     const QString urlStr = url.url();
-    if ( urlStr == "about:konqueror" || urlStr == "about:plugins" ) {
+    if ( urlStr == "about:" || urlStr == "about:konqueror" || urlStr == "about:plugins" ) {
         mimeType = "KonqAboutPage"; // not KParts/ReadOnlyPart, it fills the Location menu ! :)
         serviceName = "konq_aboutpage";
-        originalURL = req.typedUrl.isEmpty() ? QString() : urlStr;
-        // empty if from profile, about:konqueror if the user typed it (not req.typedUrl, it could be "about:")
+        originalURL = req.typedUrl.isEmpty() ? QString() : req.typedUrl;
     }
     else if ( urlStr == "about:blank" && req.typedUrl.isEmpty() ) {
         originalURL.clear();
@@ -5031,7 +5030,7 @@ void KonqMainWindow::setIcon( const QPixmap& pix )
 
 void KonqMainWindow::slotIntro()
 {
-  openUrl( 0, KUrl("about:konqueror") );
+  openUrl( 0, KUrl("about:") );
 }
 
 void KonqMainWindow::goURL()
