@@ -15,12 +15,9 @@
     the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
     Boston, MA 02110-1301, USA.
 */
-//
-// File previews configuration
-//
 
-#ifndef _PREVIEWS_OPTIONS_H
-#define _PREVIEWS_OPTIONS_H
+#ifndef PREVIEWS_OPTIONS_H
+#define PREVIEWS_OPTIONS_H
 
 /*
 
@@ -31,15 +28,12 @@ Configuration of the maximum image size
 
 */
 
-
-//Added by qt3to4:
-#include <Qt3Support/Q3PtrList>
-
 #include <kcmodule.h>
 #include <QtCore/QStringList>
 
 class QCheckBox;
-class Q3CheckListItem;
+class PreviewCheckListItem;
+class QTreeWidgetItem;
 class KDoubleNumInput;
 
 class KPreviewOptions : public KCModule
@@ -58,10 +52,13 @@ public Q_SLOTS:
     void changed();
 
 private:
-    Q3PtrList<Q3CheckListItem> m_items;
+    QList<PreviewCheckListItem *> m_items;
     KDoubleNumInput *m_maxSize;
     QCheckBox *m_boostSize;
     QCheckBox *m_useFileThumbnails;
+
+private Q_SLOTS:
+    void itemChanged(QTreeWidgetItem *item);
 };
 
 #endif
