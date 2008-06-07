@@ -1,10 +1,5 @@
 /*
- * main.cpp
- *
- * Copyright (c) 2000 Yves Arrouye <yves@realnames.com>
- *
- * Requires the Qt widget libraries, available at no cost at
- * http://www.troll.no/
+ *  Copyright (c) 2000 Yves Arrouye <yves@realnames.com>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -24,25 +19,17 @@
 // Own
 #include "main.h"
 
-// std
-#include <unistd.h>
-
 // Qt
-#include <QtGui/QLayout>
-#include <QtCore/QMap>
 #include <QtGui/QTabWidget>
 #include <QtGui/QBoxLayout>
+
+// KDE
+#include <kurifilter.h>
 #include <klocale.h>
 #include <kservice.h>
 #include <kservicetypetrader.h>
-
-// KDE
-#include <kdialog.h>
-#include <kurifilter.h>
-
-// Local
 #include <KPluginFactory>
-#include <KPluginLoader>
+
 
 K_PLUGIN_FACTORY(KURIFactory,
         registerPlugin<KURIFilterModule>();
@@ -75,7 +62,7 @@ KURIFilterModule::KURIFilterModule(QWidget *parent, const QVariantList &)
     const KService::List::ConstIterator end = offers.end();
     for (; it != end; ++it )
     {
-        KUriFilterPlugin *plugin = KService::createInstance<KUriFilterPlugin>( *it );
+        KUriFilterPlugin *plugin = ( *it )->createInstance<KUriFilterPlugin>( this );
         if (plugin) {
             KCModule *module = plugin->configModule(this, 0);
             if (module) {
@@ -115,10 +102,11 @@ KURIFilterModule::KURIFilterModule(QWidget *parent, const QVariantList &)
 
 void KURIFilterModule::load()
 {
-    foreach( KCModule* module, modules )
-    {
-	  module->load();
-    }
+// seems not to be neccesary, since modules automatically call load() on show (uwolfer)
+//     foreach( KCModule* module, modules )
+//     {
+// 	  module->load();
+//     }
 }
 
 void KURIFilterModule::save()

@@ -1,10 +1,5 @@
 /*
- * main.h
- *
- * Copyright (c) 2000 Yves Arrouye <yves@realnames.com>
- *
- * Requires the Qt widget libraries, available at no cost at
- * http://www.troll.no/
+ *  Copyright (c) 2000 Yves Arrouye <yves@realnames.com>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -22,11 +17,10 @@
  */
 
 
-#ifndef __MAIN_H__
-#define __MAIN_H__
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <kcmodule.h>
-#include <QtCore/QList>
 
 class KUriFilter;
 
