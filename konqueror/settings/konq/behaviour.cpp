@@ -142,8 +142,6 @@ KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
                                            "while calling 'Move to Trash'."));
 
     mainLayout->addStretch();
-
-    load();
 }
 
 KBehaviourOptions::~KBehaviourOptions()
