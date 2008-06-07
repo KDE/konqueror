@@ -144,8 +144,6 @@ DesktopPathConfig::DesktopPathConfig(QWidget *parent, const QVariantList &)
 
   // -- Bottom --
   Q_ASSERT( row == RO_LASTROW-1 ); // if it fails here, check the row++ and RO_LASTROW above
-
-  load();
 }
 
 void DesktopPathConfig::load()
