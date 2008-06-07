@@ -25,15 +25,11 @@
 // Qt
 #include <QtGui/QCheckBox>
 #include <QtGui/QLabel>
-#include <QtGui/QLayout>
 #include <QtGui/QBoxLayout>
+#include <QtGui/QTreeWidget>
 #include <QtDBus/QtDBus>
 
 // KDE
-#include <kconfig.h>
-#include <kdialog.h>
-#include <kglobal.h>
-#include <k3listview.h>
 #include <klocale.h>
 #include <knuminput.h>
 #include <kprotocolmanager.h>
@@ -44,21 +40,17 @@
 
 //-----------------------------------------------------------------------------
 
-class PreviewCheckListItem : public Q3CheckListItem
+class PreviewCheckListItem : public QTreeWidgetItem
 {
   public:
-    PreviewCheckListItem( Q3ListView *parent, const QString &text )
-      : Q3CheckListItem( parent, text, CheckBoxController )
+    PreviewCheckListItem( QTreeWidget *parent, const QString &text )
+      : QTreeWidgetItem( parent, QStringList() << text )
     {}
 
-    PreviewCheckListItem( Q3ListViewItem *parent, const QString &text )
-      : Q3CheckListItem( parent, text, CheckBox )
-    {}
-
-  protected:
-    void stateChange( bool )
+    PreviewCheckListItem( QTreeWidgetItem *parent, const QString &text )
+      : QTreeWidgetItem( parent, QStringList() << text )
     {
-        static_cast<KPreviewOptions *>( listView()->parent() )->changed();
+        setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
     }
 };
 
@@ -66,7 +58,7 @@ KPreviewOptions::KPreviewOptions( QWidget *parent, const QVariantList & )
     : KCModule( KonqKcmFactory::componentData(), parent )
 {
     QVBoxLayout *lay = new QVBoxLayout(this);
-    lay->setSpacing(KDialog::spacingHint());
+
     QLabel *label = new QLabel( i18n("<p>Allow previews, \"Folder Icons Reflect Contents\", and "
                                      "retrieval of meta-data on protocols:</p>"), this );
     label->setWordWrap(true);
@@ -84,9 +76,9 @@ KPreviewOptions::KPreviewOptions( QWidget *parent, const QVariantList & )
                 "no preview will be generated for files bigger than 1 MB, for speed reasons."));
 
     // Listview containing checkboxes for all protocols that support listing
-    K3ListView *listView = new K3ListView( this );
-    listView->addColumn( i18n( "Select Protocols" ) );
-    listView->setFullWidth( true );
+    QTreeWidget *listView = new QTreeWidget( this );
+    listView->setHeaderLabel( i18n( "Select Protocols" ) );
+    listView->setRootIsDecorated( false );
 
     QHBoxLayout *hbox = new QHBoxLayout();
     lay->addItem( hbox );
@@ -95,8 +87,10 @@ KPreviewOptions::KPreviewOptions( QWidget *parent, const QVariantList & )
 
     PreviewCheckListItem *localItems = new PreviewCheckListItem( listView,
         i18n( "Local Protocols" ) );
+    localItems->setCheckState( 0, Qt::Unchecked );
     PreviewCheckListItem *inetItems = new PreviewCheckListItem( listView,
         i18n( "Internet Protocols" ) );
+    inetItems->setCheckState( 0, Qt::Unchecked );
 
     QStringList protocolList = KProtocolInfo::protocols();
     protocolList.sort();
@@ -110,7 +104,7 @@ KPreviewOptions::KPreviewOptions( QWidget *parent, const QVariantList & )
         url.setProtocol( *it );
         if ( KProtocolManager::supportsListing( url ) )
         {
-            Q3CheckListItem *item;
+            PreviewCheckListItem *item;
             if ( KProtocolInfo::protocolClass( *it ) == ":local" )
                 item = new PreviewCheckListItem( localItems, ( *it ) );
             else
@@ -120,8 +114,8 @@ KPreviewOptions::KPreviewOptions( QWidget *parent, const QVariantList & )
         }
     }
 
-    listView->setOpen( localItems, true );
-    listView->setOpen( inetItems, true );
+    listView->setItemExpanded( localItems, true );
+    listView->setItemExpanded( inetItems, true );
 
     listView->setWhatsThis(
                      i18n("This option makes it possible to choose when the file previews, "
@@ -155,9 +149,9 @@ KPreviewOptions::KPreviewOptions( QWidget *parent, const QVariantList & )
                 "disk usage. Deselect it if you have files that have been processed "
                 "by programs which create inaccurate thumbnails, such as ImageMagick.") );
 
-    lay->addWidget( new QWidget(this), 10 );
+    lay->addStretch();
 
-    load();
+    connect(listView, SIGNAL(itemChanged(QTreeWidgetItem *, int)), SLOT(itemChanged(QTreeWidgetItem *)));
 }
 
 // Default: 1 MB
@@ -168,16 +162,15 @@ void KPreviewOptions::load(bool useDefaults)
     // *** load and apply to GUI ***
     KGlobal::config()->setReadDefaults(useDefaults);
     KConfigGroup group( KGlobal::config(), "PreviewSettings" );
-    Q3PtrListIterator<Q3CheckListItem> it( m_items );
-
-    for ( ; it.current() ; ++it ) {
-        QString protocol( it.current()->text() );
-        if ( ( protocol == "file" ) && ( !group.hasKey ( protocol ) ) )
+    foreach( PreviewCheckListItem *item, m_items ) {
+        QString protocol( item->text(0) );
+        if ( ( protocol == "file" ) && ( !group.hasKey ( protocol ) ) ) {
           // file should be enabled in case is not defined because if not so
           // than preview's lost when size is changed from default one
-          it.current()->setOn( true );
-        else
-          it.current()->setOn( group.readEntry( protocol, false ));
+          item->setCheckState( 0, Qt::Checked );
+        } else {
+          item->setCheckState( 0, group.readEntry( protocol, false ) ? Qt::Checked : Qt::Unchecked);
+        }
     }
     // config key is in bytes (default value 1MB), numinput is in MB
     m_maxSize->setValue( ((double)group.readEntry( "MaximumSize", DEFAULT_MAXSIZE )) / (1024*1024) );
@@ -200,10 +193,9 @@ void KPreviewOptions::defaults()
 void KPreviewOptions::save()
 {
     KConfigGroup group( KGlobal::config(), "PreviewSettings" );
-    Q3PtrListIterator<Q3CheckListItem> it( m_items );
-    for ( ; it.current() ; ++it ) {
-        QString protocol( it.current()->text() );
-        group.writeEntry( protocol, it.current()->isOn(), KConfigBase::Normal | KConfigBase::Global );
+    foreach( PreviewCheckListItem *item, m_items ) {
+        QString protocol( item->text(0) );
+        group.writeEntry( protocol, item->checkState(0) == Qt::Checked, KConfigBase::Normal | KConfigBase::Global );
     }
     // config key is in bytes, numinput is in MB
     group.writeEntry( "MaximumSize", qRound( m_maxSize->value() *1024*1024 ), KConfigBase::Normal | KConfigBase::Global );
@@ -220,6 +212,15 @@ void KPreviewOptions::save()
 void KPreviewOptions::changed()
 {
     emit KCModule::changed(true);
+}
+
+void KPreviewOptions::itemChanged(QTreeWidgetItem *item)
+{
+    if (!item->parent()) { // a root item
+        for (int i = 0; i < item->childCount(); i++)
+            item->child(i)->setCheckState(0, item->checkState(0));
+    }
+    changed();
 }
 
 #include "previews.moc"
