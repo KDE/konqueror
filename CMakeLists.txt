@@ -18,6 +18,8 @@ include_directories (${CMAKE_CURRENT_BINARY_DIR})
 add_definitions (${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 include_directories (${CMAKE_CURRENT_SOURCE_DIR}/lib/konq ${CMAKE_BINARY_DIR} ${KDE4_INCLUDES})
 
+find_package(Plasma)
+
 add_subdirectory( lib )
 add_subdirectory( dolphin )
 add_subdirectory( kwrite )
@@ -37,6 +39,9 @@ if ( Q_WS_X11 )
   add_subdirectory( nsplugins )
   add_subdirectory( konsole )
   add_subdirectory( kdepasswd )
+  if ( PLASMA_FOUND )
+    add_subdirectory( plasma )
+  endif ( PLASMA_FOUND )
 endif ( Q_WS_X11 )
 macro_optional_add_subdirectory( doc )
 
