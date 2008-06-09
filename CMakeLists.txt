@@ -18,7 +18,16 @@ include_directories (${CMAKE_CURRENT_BINARY_DIR})
 add_definitions (${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 include_directories (${CMAKE_CURRENT_SOURCE_DIR}/lib/konq ${CMAKE_BINARY_DIR} ${KDE4_INCLUDES})
 
-find_package(Plasma)
+if (EXISTS "${kdebase_SOURCE_DIR}")
+  # compiling kdebase as a whole, so Plasma is always there
+  set (PLASMA_FOUND TRUE)
+  set (PLASMA_INCLUDE_DIR ${kdebase_SOURCE_DIR}/workspace/libs)
+  set (PLASMA_LIBS plasma)
+  set (PLASMA_OPENGL_FOUND ${PLASMA_INCLUDE_DIR}/plasma/glapplet.h)
+else (EXISTS "${kdebase_SOURCE_DIR}")
+  # compiling kdebase-apps separately, look for already an installed Plasma
+  find_package(Plasma)
+endif (EXISTS "${kdebase_SOURCE_DIR}")
 
 add_subdirectory( lib )
 add_subdirectory( dolphin )
