@@ -53,14 +53,14 @@ void KonqActions::fillHistoryPopup(const QList<HistoryEntry*> &history, int hist
 
   //kDebug(1202) << "fillHistoryPopup position: " << history.at();
   int index = 0;
-  if (onlyBack || onlyForward)
+  if (onlyBack || onlyForward) // this if() is always true nowadays.
   {
       index += historyIndex; // Jump to current item
       if ( !onlyForward ) --index; else ++index; // And move off it
   }
 
   QFontMetrics fm = popup->fontMetrics();
-  uint i = 0;
+  int i = 0;
   while ( index < history.count() && index >= 0 )
   {
         QString text = history[ index ]->title;
@@ -68,7 +68,8 @@ void KonqActions::fillHistoryPopup(const QList<HistoryEntry*> &history, int hist
         text.replace( "&", "&&" );
         const QString iconName = KonqPixmapProvider::self()->iconNameFor(history[index]->url);
         QAction* action = new QAction(KIcon(iconName), text, popup);
-        action->setData(i);
+        action->setData(index - historyIndex);
+        //kDebug(1202) << text << index - historyIndex;
         popup->addAction(action);
         if (++i > 10)
             break;

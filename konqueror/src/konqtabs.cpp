@@ -25,7 +25,6 @@
 #include <QtGui/QClipboard>
 #include <QtGui/QMenu>
 #include <QtGui/QToolButton>
-#include <QtGui/QKeyEvent>
 
 #include <kapplication.h>
 #include <kcolorscheme.h>
