@@ -2889,7 +2889,7 @@ void KonqMainWindow::slotBack(Qt::MouseButtons buttons, Qt::KeyboardModifiers mo
 void KonqMainWindow::slotBackActivated(QAction* action)
 {
     KMenu* backMenu = static_cast<KMenu *>( m_paBack->menu() );
-    slotGoHistoryActivated( -action->data().toInt(), backMenu->mouseButtons(), backMenu->keyboardModifiers());
+    slotGoHistoryActivated( action->data().toInt(), backMenu->mouseButtons(), backMenu->keyboardModifiers());
 }
 
 void KonqMainWindow::slotForwardAboutToShow()
