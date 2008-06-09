@@ -51,7 +51,7 @@ install( FILES
  # konq_filetip.h
  konqmimedata.h
  konq_fileitemcapabilities.h
-DESTINATION ${INCLUDE_INSTALL_DIR}
+DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel
 )
 install( FILES konqpopupmenuplugin.desktop  DESTINATION  ${SERVICETYPES_INSTALL_DIR} )
 
