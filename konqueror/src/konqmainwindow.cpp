@@ -2740,7 +2740,6 @@ void KonqMainWindow::slotGoHistoryActivated( int steps )
 
 void KonqMainWindow::slotGoHistoryActivated( int steps, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers )
 {
-  kDebug() << "steps=" << steps << buttons << modifiers;
   if (!m_goBuffer)
   {
     // Only start 1 timer.
@@ -2883,7 +2882,7 @@ void KonqMainWindow::slotBack()
 
 void KonqMainWindow::slotBack(Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers)
 {
-  slotGoHistoryActivated( -1, buttons, modifiers );
+    slotGoHistoryActivated( -1, buttons, modifiers );
 }
 
 void KonqMainWindow::slotBackActivated(QAction* action)
@@ -3405,6 +3404,32 @@ void KonqMainWindow::setUpEnabled( const KUrl &url )
       m_paUp->setEnabled(bHasUpURL);
 }
 
+
+int KonqMainWindow::maxThrobberHeight()
+{
+    // This comes from QMenuBar::sizeHint and QMenuBarPrivate::calcActionRects
+    const QFontMetrics fm = menuBar()->fontMetrics();
+    QSize sz(100, fm.height());
+    //let the style modify the above size..
+    QStyleOptionMenuItem opt;
+    opt.fontMetrics = fm;
+    opt.state = QStyle::State_Enabled;
+    opt.menuRect = menuBar()->rect();
+    sz = menuBar()->style()->sizeFromContents(QStyle::CT_MenuBarItem, &opt, sz, menuBar());
+    //kDebug() << "maxThrobberHeight=" << sz.height();
+    return sz.height();
+}
+
+int KonqMainWindow::throbberIconSize()
+{
+    const int buttonHeight = maxThrobberHeight();
+    QStyleOptionToolButton opt;
+    opt.iconSize = QSize(22, 22); // a dummy icon size, just to see what CT_ToolButton does.
+    const QSize finalSize = style()->sizeFromContents(QStyle::CT_ToolButton, &opt, opt.iconSize, this);
+    //kDebug() << "throbberIconSize=" << buttonHeight << "-" << finalSize.height() - opt.iconSize.height();
+    return buttonHeight - (finalSize.height() - opt.iconSize.height());
+}
+
 void KonqMainWindow::initActions()
 {
   // Note about this method : don't call setEnabled() on any of the actions.
@@ -3695,7 +3720,7 @@ void KonqMainWindow::initActions()
   m_paAnimatedLogo->setFocusPolicy(Qt::NoFocus);
   m_paAnimatedLogo->setToolButtonStyle(Qt::ToolButtonIconOnly);
 
-  int size = style()->pixelMetric(QStyle::PM_SmallIconSize, NULL, m_paAnimatedLogo);
+  const int size = throbberIconSize();
   m_paAnimatedLogo->setIconSize(QSize(size, size));
   m_paAnimatedLogo->setIcons("process-working-kde");
 
@@ -4477,6 +4502,7 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
       devicesFile = firstURL.protocol().indexOf("device", 0, Qt::CaseInsensitive) == 0;
       //dirsSelected = S_ISDIR( items.first()->mode() );
     }
+    //kDebug(1202) << "viewURL=" << viewURL;
 
     KUrl url = viewURL;
     url.cleanPath();
@@ -4510,8 +4536,6 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
     qRegisterMetaType<KService::Ptr>("KService::Ptr");
     connect(konqyMenuClient, SIGNAL(openEmbedded(KService::Ptr)),
             this, SLOT(slotOpenEmbedded(KService::Ptr)), Qt::QueuedConnection);
-
-    //kDebug(1202) << "viewURL=" << viewURL;
 
 
     // Those actions go into the PopupMenuGUIClient, since that's the one defining them.
