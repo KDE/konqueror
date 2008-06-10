@@ -69,7 +69,6 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
   app.setQuitOnLastWindowClosed(false);
 
   KGlobal::locale()->insertCatalog("libkonq"); // needed for apps using libkonq
-  KGlobal::locale()->insertCatalog("dolphin"); // needed for some file manager menus
 
   KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
