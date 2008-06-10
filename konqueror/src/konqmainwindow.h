@@ -604,6 +604,11 @@ private:
 
   QObject* lastFrame( KonqView *view );
 
+    // Maximum height of the animated logo qtoolbutton (m_paAnimatedLogo)
+    int maxThrobberHeight();
+    // Maximum icon size of the animated logo qtoolbutton (m_paAnimatedLogo)
+    int throbberIconSize();
+
 private: // members
   KonqUndoManager* m_undoManager;
 
