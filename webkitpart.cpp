@@ -51,7 +51,7 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
     setComponentData(WebKitGlobal::componentData());
     connect(m_webPageView->view(), SIGNAL(loadStarted()),
             this, SLOT(loadStarted()));
-    connect(m_webPageView->view(), SIGNAL(loadFinished()),
+    connect(m_webPageView->view(), SIGNAL(loadFinished(bool)),
             this, SLOT(loadFinished()));
     connect(m_webPageView->view(), SIGNAL(titleChanged(const QString &)),
             this, SIGNAL(setWindowCaption(const QString &)));
