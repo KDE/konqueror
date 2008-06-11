@@ -606,8 +606,7 @@ private:
 
     // Maximum height of the animated logo qtoolbutton (m_paAnimatedLogo)
     int maxThrobberHeight();
-    // Maximum icon size of the animated logo qtoolbutton (m_paAnimatedLogo)
-    int throbberIconSize();
+    void setAnimatedLogoSize();
 
 private: // members
   KonqUndoManager* m_undoManager;
