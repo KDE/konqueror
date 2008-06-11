@@ -3415,19 +3415,39 @@ int KonqMainWindow::maxThrobberHeight()
     opt.fontMetrics = fm;
     opt.state = QStyle::State_Enabled;
     opt.menuRect = menuBar()->rect();
+    opt.text = "dummy";
     sz = menuBar()->style()->sizeFromContents(QStyle::CT_MenuBarItem, &opt, sz, menuBar());
     //kDebug() << "maxThrobberHeight=" << sz.height();
     return sz.height();
 }
 
-int KonqMainWindow::throbberIconSize()
+void KonqMainWindow::setAnimatedLogoSize()
 {
     const int buttonHeight = maxThrobberHeight();
+    // This gives the best results: we force a bigger icon size onto the style, and it'll just have to eat up its margin.
+    // So we don't need to ask sizeFromContents at all.
+    int iconSize = buttonHeight;
+#if 0
     QStyleOptionToolButton opt;
-    opt.iconSize = QSize(22, 22); // a dummy icon size, just to see what CT_ToolButton does.
-    const QSize finalSize = style()->sizeFromContents(QStyle::CT_ToolButton, &opt, opt.iconSize, this);
+    opt.initFrom(m_paAnimatedLogo);
+    const QSize finalSize = style()->sizeFromContents(QStyle::CT_ToolButton, &opt, opt.iconSize, m_paAnimatedLogo);
     //kDebug() << "throbberIconSize=" << buttonHeight << "-" << finalSize.height() - opt.iconSize.height();
-    return buttonHeight - (finalSize.height() - opt.iconSize.height());
+    int iconSize = buttonHeight - (finalSize.height() - opt.iconSize.height());
+#endif
+
+    m_paAnimatedLogo->setFixedSize(QSize(buttonHeight, buttonHeight));
+
+    kDebug() << "buttonHeight=" << buttonHeight << "max iconSize=" << iconSize;
+    if ( iconSize < KIconLoader::SizeSmallMedium )
+        iconSize = KIconLoader::SizeSmall;
+    else if ( iconSize < KIconLoader::SizeMedium  )
+        iconSize = KIconLoader::SizeSmallMedium;
+    else if ( iconSize < KIconLoader::SizeLarge )
+        iconSize = KIconLoader::SizeMedium ;
+    else if ( iconSize < KIconLoader::SizeHuge )
+        iconSize = KIconLoader::SizeLarge;
+    kDebug() << "final iconSize=" << iconSize;
+    m_paAnimatedLogo->setIconSize(QSize(iconSize, iconSize));
 }
 
 void KonqMainWindow::initActions()
@@ -3719,11 +3739,8 @@ void KonqMainWindow::initActions()
   m_paAnimatedLogo->setAutoRaise(true);
   m_paAnimatedLogo->setFocusPolicy(Qt::NoFocus);
   m_paAnimatedLogo->setToolButtonStyle(Qt::ToolButtonIconOnly);
-
-  const int size = throbberIconSize();
-  m_paAnimatedLogo->setIconSize(QSize(size, size));
+  setAnimatedLogoSize();
   m_paAnimatedLogo->setIcons("process-working-kde");
-
   menuBar()->setCornerWidget(m_paAnimatedLogo);
 
   // Location bar
