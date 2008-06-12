@@ -485,7 +485,7 @@ void KonqOperations::doDropFileCopy()
         QString seq = QKeySequence( Qt::ShiftModifier ).toString();
         seq.chop(1); // chop superfluous '+'
         QAction* popupMoveAction = new QAction(i18n( "&Move Here" ) + '\t' + seq, this);
-        popupMoveAction->setIcon(KIcon("goto-page"));
+        popupMoveAction->setIcon(KIcon("go-jump"));
         seq = QKeySequence( Qt::ControlModifier ).toString();
         seq.chop(1);
         QAction* popupCopyAction = new QAction(i18n( "&Copy Here" ) + '\t' + seq, this);
@@ -493,17 +493,17 @@ void KonqOperations::doDropFileCopy()
         seq = QKeySequence( Qt::ControlModifier + Qt::ShiftModifier ).toString();
         seq.chop(1);
         QAction* popupLinkAction = new QAction(i18n( "&Link Here" ) + '\t' + seq, this);
-        popupLinkAction->setIcon(KIcon("www"));
+        popupLinkAction->setIcon(KIcon("edit-link"));
         QAction* popupWallAction = new QAction( i18n( "Set as &Wallpaper" ), this );
-        popupWallAction->setIcon(KIcon("background"));
+        popupWallAction->setIcon(KIcon("preferences-desktop-wallpaper"));
         QAction* popupCancelAction = new QAction(i18n( "C&ancel" ) + '\t' + QKeySequence( Qt::Key_Escape ).toString(), this);
-        popupCancelAction->setIcon(KIcon("cancel"));
-
-        if ( sReading && !linkOnly)
-            popup.addAction(popupCopyAction);
+        popupCancelAction->setIcon(KIcon("process-stop"));
 
         if (!mlst.isEmpty() && (sMoving || (sReading && sDeleting)) && !linkOnly )
             popup.addAction(popupMoveAction);
+
+        if ( sReading && !linkOnly)
+            popup.addAction(popupCopyAction);
 
         popup.addAction(popupLinkAction);
 
