@@ -49,6 +49,7 @@
 #include <kconfig.h>
 
 #include "xtevents.h"
+#include "glibevents.h"
 #include <QtDBus/QtDBus>
 
 /**
@@ -102,9 +103,11 @@ int main(int argc, char** argv)
    
    KApplication app;
 
-   kDebug(1430) << "4 - create XtEvents";
+   kDebug(1430) << "4 - create XtEvents and GlibEvents";
    XtEvents xtevents;
-
+#ifdef HAVE_GLIB2
+   GlibEvents glibevents;
+#endif
    {
       KConfig _cfg( "kcmnspluginrc" );
       KConfigGroup cfg(&_cfg, "Misc");

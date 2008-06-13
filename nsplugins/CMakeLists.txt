@@ -1,3 +1,12 @@
+macro_optional_find_package(GLIB2)
+if(GLIB2_FOUND)
+    set( HAVE_GLIB2 1 )
+else(GLIB2_FOUND)
+    MESSAGE(STATUS "Glib2 not found, Glib event loop integration from Qt required for Netscape plugins support.")
+endif( GLIB2_FOUND)
+
+configure_file (config-nsplugins.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-nsplugins.h )
+
 if (X11_Xt_LIB)
 
   add_subdirectory( viewer ) 
