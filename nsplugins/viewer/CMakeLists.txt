@@ -1,9 +1,8 @@
-include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/.. )
-
+include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/.. ${CMAKE_CURRENT_BINARY_DIR}/.. ${GLIB2_INCLUDE_DIR})
 
 ########### next target ###############
 
-set(nspluginviewer_SRCS nsplugin.cpp viewer.cpp xtevents.cpp 
+set(nspluginviewer_SRCS nsplugin.cpp viewer.cpp xtevents.cpp glibevents.cpp
     pluginhost_xembed.cpp pluginhost_xt.cpp pluginhost.cpp)
 
 qt4_add_dbus_adaptor( nspluginviewer_SRCS org.kde.nsplugins.class.xml nsplugin.h NSPluginClass )
@@ -16,7 +15,7 @@ QT4_ADD_DBUS_INTERFACE( nspluginviewer_SRCS ${nsplugins_callback_xml} nsplugins_
 
 kde4_add_executable(nspluginviewer ${nspluginviewer_SRCS})
 
-target_link_libraries(nspluginviewer ${KDE4_KPARTS_LIBS} ${X11_Xt_LIB} ${QT_QTDBUS_LIBRARY} ${CMAKE_DL_LIBS})
+target_link_libraries(nspluginviewer ${KDE4_KPARTS_LIBS} ${X11_Xt_LIB} ${QT_QTDBUS_LIBRARY} ${CMAKE_DL_LIBS} ${GLIB2_LIBRARIES})
 
 install(TARGETS nspluginviewer ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES org.kde.nsplugins.class.xml org.kde.nsplugins.instance.xml org.kde.nsplugins.viewer.xml DESTINATION ${DBUS_INTERFACES_INSTALL_DIR} )
