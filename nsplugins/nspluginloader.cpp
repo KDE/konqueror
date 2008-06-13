@@ -316,7 +316,7 @@ bool NSPluginLoader::loadViewer()
    _viewerDBusId =tmp.toLatin1();
 
    connect( &_process, SIGNAL(finished(int, QProcess::ExitStatus)),
-            this, SLOT(processTerminated(int , QProcess::ExitStatus)) );
+            this, SLOT(processTerminated()) );
 
    // find the external viewer process
    QString viewer = KGlobal::dirs()->findExe("nspluginviewer");
