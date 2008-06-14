@@ -1,0 +1,97 @@
+<ui version="4.0" >
+ <class>SearchBar</class>
+ <widget class="QWidget" name="SearchBar" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>686</width>
+    <height>37</height>
+   </rect>
+  </property>
+  <property name="sizePolicy" >
+   <sizepolicy vsizetype="Minimum" hsizetype="Preferred" >
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout" >
+   <item>
+    <widget class="QToolButton" name="closeButton" >
+     <property name="toolTip" >
+      <string>Close the search bar</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="searchInfo" >
+     <property name="text" >
+      <string>Text to find:</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="KLineEdit" name="searchLineEdit" >
+     <property name="toolTip" >
+      <string>Enter the text to search for here</string>
+     </property>
+     <property name="showClearButton" stdset="0" >
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QToolButton" name="nextButton" >
+     <property name="toolTip" >
+      <string>Find the next match for the current search phrase</string>
+     </property>
+     <property name="text" >
+      <string>Next</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QToolButton" name="previousButton" >
+     <property name="toolTip" >
+      <string>Find the previous match for the current search phrase</string>
+     </property>
+     <property name="text" >
+      <string>Previous</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="matchCaseCheckBox" >
+     <property name="text" >
+      <string>Match Case</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="horizontalSpacer" >
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0" >
+      <size>
+       <width>26</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>klineedit.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

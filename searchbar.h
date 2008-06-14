@@ -2,6 +2,8 @@
  * This file is part of the KDE project.
  *
  * Copyright (C) 2008 Laurent Montel <montel@kde.org>
+ * Copyright 2008 Benjamin C. Meyer <ben@meyerhome.net>
+ * Copyright (C) 2008 Urs Wolfer <uwolfer @ kde.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -18,35 +20,40 @@
  * the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  *
- */
 
-#ifndef WEBKITSEARCHBAR_H
-#define WEBKITSEARCHBAR_H
+#ifndef SEARCHBAR_H
+#define SEARCHBAR_H
 
 #include <QWidget>
 
-class KLineEdit;
-class QTimer;
-class QCheckBox;
+#include "ui_searchbar.h"
 
-class WebKitSearchBar : public QWidget
+class QTimeLine;
+class QWebView;
+
+class SearchBar : public QWidget
 {
     Q_OBJECT
+
 public:
-    WebKitSearchBar(QWidget *parent);
-    ~WebKitSearchBar();
+    SearchBar(QWidget *parent = 0);
+
     QString searchText() const;
     bool caseSensitive() const;
-
-    virtual void setVisible(bool visible);
-
     void setFoundMatch(bool match);
 
-protected slots:
-    void notifySearchChanged();
+public slots:
+    void animateHide();
+    void clear();
+    void showFind();
 
 protected:
-    bool eventFilter(QObject* watched, QEvent* event);
+    void resizeEvent(QResizeEvent *event);
+
+private slots:
+    void frameChanged(int frame);
+    void notifySearchChanged();
+
 signals:
     void searchChanged(const QString& text);
     void closeClicked();
@@ -54,10 +61,13 @@ signals:
     void findPreviousClicked();
 
 private:
-    KLineEdit* m_searchEdit;
-    QCheckBox* m_caseSensitive;
-    QTimer* m_searchTimer;
+    void initializeSearchWidget();
 
+    Ui::SearchBar ui;
+    QWidget *m_widget;
+
+    QWebView *m_webView;
+    QTimeLine *m_timeLine;
 };
 
-#endif /* WEBKITSEARCHBAR_H */
+#endif // SEARCHBAR_H

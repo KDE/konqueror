@@ -26,7 +26,7 @@
 #include <QVBoxLayout>
 
 #include "webkitview.h"
-#include "webkitsearchbar.h"
+#include "searchbar.h"
 
 WebKitPageView::WebKitPageView(WebKitPart *part, QWidget *parent)
     : QWidget(parent)
@@ -34,8 +34,8 @@ WebKitPageView::WebKitPageView(WebKitPart *part, QWidget *parent)
     QVBoxLayout *lay = new QVBoxLayout(this);
     m_webView = new WebView(part, parent);
     setLayout(lay);
-    lay->addWidget(m_webView);
-    m_searchBar = new WebKitSearchBar(parent);
+    lay->addWidget(m_webView, 10);
+    m_searchBar = new SearchBar(parent);
     m_searchBar->setVisible(false);
     lay->setMargin(0);
     lay->setSpacing(0);
@@ -55,12 +55,12 @@ WebKitPageView::~WebKitPageView()
 
 void WebKitPageView::slotCloseSearchBarClicked()
 {
-    m_searchBar->setVisible(false);
+    m_searchBar->animateHide();
 }
 
 void WebKitPageView::slotFind()
 {
-    m_searchBar->setVisible(true);
+    m_searchBar->showFind();
 }
 
 void WebKitPageView::slotFindPreviousClicked()
@@ -78,6 +78,7 @@ void WebKitPageView::slotFindNextClicked()
 
 void WebKitPageView::slotSearchChanged(const QString & text)
 {
+    Q_UNUSED(text);
     QWebPage::FindFlags flags;
     resultSearch(flags);
 }

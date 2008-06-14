@@ -27,7 +27,7 @@
 #include <QtWebKit/QWebPage>
 class WebKitPart;
 class WebView;
-class WebKitSearchBar;
+class SearchBar;
 
 class WebKitPageView : public QWidget
 {
@@ -37,7 +37,7 @@ public:
     ~WebKitPageView();
     inline WebView *view() { return m_webView; }
 
-    WebKitSearchBar *searchBar() const { return m_searchBar; }
+    SearchBar *searchBar() const { return m_searchBar; }
 
 public slots:
     void slotFind();
@@ -51,7 +51,7 @@ protected:
 
 private:
     WebView *m_webView;
-    WebKitSearchBar *m_searchBar;
+    SearchBar *m_searchBar;
 };
 
 
