@@ -130,6 +130,7 @@ int main(int argc, char ** argv)
                         ki18n("(c) 2000, KDE developers") );
   aboutData.addAuthor(ki18n("Preston Brown"),KLocalizedString(), "pbrown@kde.org");
   aboutData.addAuthor(ki18n("David Faure"),KLocalizedString(), "faure@kde.org");
+  aboutData.setProgramIconName("preferences-desktop-filetype-association");
 
   KCmdLineArgs::init( argc, argv, &aboutData );
 
