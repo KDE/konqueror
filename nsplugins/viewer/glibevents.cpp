@@ -21,7 +21,7 @@
 
 #ifdef HAVE_GLIB2
 
-#include <qapplication.h>
+#include <QApplication>
 
 GlibEvents::GlibEvents()
     {

@@ -24,8 +24,8 @@
 
 #ifdef HAVE_GLIB2
 
-#include <qwidget.h>
-#include <qtimer.h>
+#include <QWidget>
+#include <QTimer>
 
 #include <glib.h>
 
