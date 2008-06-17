@@ -55,10 +55,6 @@ public:
 
     void accept();
 
-
-protected:
-    bool checkPassword(const char *password);
-
 private:
     const char *m_Pass;
     QByteArray m_User;
