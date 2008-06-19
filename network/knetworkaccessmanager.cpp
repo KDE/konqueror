@@ -22,9 +22,15 @@
 
 #include "knetworkaccessmanager.h"
 
+#include "network/knetworkreply.h"
+
 #include <QNetworkRequest>
+#include <QNetworkReply>
 
 #include <KDebug>
+#include <kio/job.h>
+
+Q_DECLARE_METATYPE(KNetworkReply *);
 
 KNetworkAccessManager::KNetworkAccessManager(QObject *parent)
     : QNetworkAccessManager(parent)
@@ -33,6 +39,11 @@ KNetworkAccessManager::KNetworkAccessManager(QObject *parent)
 
 QNetworkReply *KNetworkAccessManager::createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData)
 {
+    return QNetworkAccessManager::createRequest(op, req, outgoingData); //TODO: remove
+
+    KNetworkReply *reply = new KNetworkReply(this);
+    KIO::Job *kioJob = 0;
+
     switch (op) {
         case HeadOperation: {
             kDebug() << "HeadOperation:" << req.url();
@@ -40,6 +51,14 @@ QNetworkReply *KNetworkAccessManager::createRequest(Operation op, const QNetwork
         }
         case GetOperation: {
             kDebug() << "GetOperation:" << req.url();
+
+            kioJob = KIO::get(req.url(), KIO::NoReload, KIO::HideProgressInfo);
+
+            connect(kioJob, SIGNAL(data(KIO::Job *, const QByteArray &)),
+                this, SLOT(forwardJobData(KIO::Job *, const QByteArray &)));
+            connect(kioJob, SIGNAL(result(KJob *)),
+                this, SLOT(forwardJobResult(KJob *)));
+
             break;
         }
         case PutOperation: {
@@ -53,7 +72,10 @@ QNetworkReply *KNetworkAccessManager::createRequest(Operation op, const QNetwork
         default:
             kDebug() << "Unknown operation";
     }
-    return QNetworkAccessManager::createRequest(op, req, outgoingData);
+
+    kioJob->setProperty("KNetworkReply", QVariant::fromValue(reply));
+
+    return reply;
 }
 
 #include "knetworkaccessmanager.moc"

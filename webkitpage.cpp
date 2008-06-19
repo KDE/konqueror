@@ -22,6 +22,7 @@
 
 #include "webkitpage.h"
 #include "webkitpart.h"
+#include "network/knetworkaccessmanager.h"
 
 //Use default khtml settings (not necessary to duplicate it)
 #include <khtmldefaults.h>
@@ -36,8 +37,6 @@
 
 #include <QWebFrame>
 #include <QtNetwork/QNetworkReply>
-
-#include "knetworkaccessmanager.h"
 
 WebPage::WebPage(WebKitPart *wpart, QWidget *parent)
     : QWebPage(parent), m_part(wpart)
