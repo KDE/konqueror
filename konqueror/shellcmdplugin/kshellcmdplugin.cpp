@@ -47,7 +47,7 @@ void KShellCmdPlugin::slotExecuteShellCommand()
     KParts::ReadOnlyPart * part = dynamic_cast<KParts::ReadOnlyPart *>(parent());
     if ( !part )
     {
-        KMessageBox::sorry(0L, "KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug.");
+        KMessageBox::sorry(0L, i18n("KShellCmdPlugin::slotExecuteShellCommand: Program error, please report a bug."));
         return;
     }
     KUrl url = KIO::NetAccess::mostLocalUrl(part->url(),NULL);
