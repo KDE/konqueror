@@ -174,6 +174,13 @@ int PasswdProcess::ConversePasswd(const char *oldpass, const char *newpass,
 
             case 2:
                 m_Error = "";
+                if( line.contains("again"))
+                {
+                    m_Error = line;
+                    kill(m_Pid, SIGKILL);
+                    waitForChild();
+                    return PasswordIncorrect;
+                }
                 // Wait for second prompt.
                 errline = line;  // use first line for error message
                 while (!isPrompt(line, "new"))
