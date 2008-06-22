@@ -52,6 +52,11 @@ public:
 
     /**
      * Constructor
+     * @param parent the parent KActionCollection this KAction should be
+     * added to.
+     * @param parentWidget the parent widget that will be the owner of
+     * this KNewMenu and that will take care of destroying this instance
+     * once the parentWidget itself got destroyed.
      * @param name action name, when adding the action to the collection
      */
     KNewMenu( KActionCollection * parent, QWidget* parentWidget, const QString& name );
