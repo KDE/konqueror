@@ -25,6 +25,11 @@
 
 #include <qnetworkaccessmanager.h>
 
+namespace KIO
+{
+    class Job;
+};
+
 class KNetworkAccessManager : public QNetworkAccessManager
 {
     Q_OBJECT
@@ -33,6 +38,9 @@ public:
 
 protected:
     QNetworkReply *createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData = 0);
+
+private slots:
+    void forwardJobData(KIO::Job *kioJob, const QByteArray &data);
 };
 
 #endif // KNETWORKACCESSMANAGER_H

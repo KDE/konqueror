@@ -35,6 +35,7 @@ void KNetworkReply::abort()
 qint64 KNetworkReply::readData(char *data, qint64 maxSize)
 {
     //TODO implement
+    return 0;
 }
 
 #include "knetworkreply.moc"

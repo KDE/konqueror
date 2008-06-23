@@ -2,6 +2,7 @@
  * This file is part of the KDE project.
  *
  * Copyright (C) 2008 Urs Wolfer <uwolfer @ kde.org>
+ * Copyright (C) 2007 Trolltech ASA
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -54,11 +55,6 @@ QNetworkReply *KNetworkAccessManager::createRequest(Operation op, const QNetwork
 
             kioJob = KIO::get(req.url(), KIO::NoReload, KIO::HideProgressInfo);
 
-            connect(kioJob, SIGNAL(data(KIO::Job *, const QByteArray &)),
-                this, SLOT(forwardJobData(KIO::Job *, const QByteArray &)));
-            connect(kioJob, SIGNAL(result(KJob *)),
-                this, SLOT(forwardJobResult(KJob *)));
-
             break;
         }
         case PutOperation: {
@@ -67,15 +63,32 @@ QNetworkReply *KNetworkAccessManager::createRequest(Operation op, const QNetwork
         }
         case PostOperation: {
             kDebug() << "PostOperation:" << req.url();
+
+            kioJob = KIO::http_post(req.url(), outgoingData->readAll(), KIO::HideProgressInfo);
+
             break;
         }
         default:
             kDebug() << "Unknown operation";
+            return 0;
     }
 
     kioJob->setProperty("KNetworkReply", QVariant::fromValue(reply));
 
+    connect(kioJob, SIGNAL(data(KIO::Job *, const QByteArray &)),
+        this, SLOT(forwardJobData(KIO::Job *, const QByteArray &)));
+
     return reply;
+}
+
+void KNetworkAccessManager::forwardJobData(KIO::Job *kioJob, const QByteArray &data)
+{
+    kDebug();
+    KNetworkReply *job = kioJob->property("KNetworkReply").value<KNetworkReply *>();
+    if (!job)
+        return;
+
+    job->write(data);
 }
 
 #include "knetworkaccessmanager.moc"
