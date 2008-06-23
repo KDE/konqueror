@@ -1215,7 +1215,7 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
     KConfigGroup profileGroup(cfg, "Profile");
 
     // First, apply default size from profile
-    applyWindowSizeFromProfile(profileGroup);
+    mainWindow->applyWindowSizeFromProfile(profileGroup);
 
     int width;
     if ( windowArgs.width() != -1 )
