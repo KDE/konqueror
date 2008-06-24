@@ -324,18 +324,11 @@ void KonqCombo::loadItems()
     const QStringList items = locationBarGroup.readPathEntry( "ComboContents", QStringList() );
     QStringList::ConstIterator it = items.begin();
     QString item;
-    bool first = true;
     while ( it != items.end() ) {
         item = *it;
         if ( !item.isEmpty() ) { // only insert non-empty items
-	    if( first ) {
-                insertItem( KonqPixmapProvider::self()->pixmapFor( item, KIconLoader::SizeSmall ),
-                            item, i++, titleOfURL( item ) );
-	    }
-            else
-                // icons will be loaded on-demand
-                insertItem( item, i++, titleOfURL( item ) );
-            first = false;
+            insertItem( KonqPixmapProvider::self()->pixmapFor( item, KIconLoader::SizeSmall ),
+                        item, i++, titleOfURL( item ) );
         }
         ++it;
     }
