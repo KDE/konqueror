@@ -22,14 +22,18 @@
 
 #include "knetworkreply.h"
 
-KNetworkReply::KNetworkReply(QObject *parent)
-    : QNetworkReply(parent)
+#include <kio/job.h>
+
+KNetworkReply::KNetworkReply(const QNetworkRequest &request, KIO::Job *kioJob, QObject *parent)
+    : QNetworkReply(parent),
+    m_kioJob(kioJob)
 {
+    setRequest(request);
 }
 
 void KNetworkReply::abort()
 {
-    //TODO implement
+    m_kioJob->deleteLater();
 }
 
 qint64 KNetworkReply::readData(char *data, qint64 maxSize)

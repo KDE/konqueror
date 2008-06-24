@@ -42,8 +42,9 @@ QNetworkReply *KNetworkAccessManager::createRequest(Operation op, const QNetwork
 {
     return QNetworkAccessManager::createRequest(op, req, outgoingData); //TODO: remove
 
-    KNetworkReply *reply = new KNetworkReply(this);
     KIO::Job *kioJob = 0;
+
+    KNetworkReply *reply = new KNetworkReply(req, kioJob, this);
 
     switch (op) {
         case HeadOperation: {

@@ -25,16 +25,24 @@
 
 #include <QNetworkReply>
 
+namespace KIO
+{
+    class Job;
+};
+
 class KNetworkReply : public QNetworkReply
 {
     Q_OBJECT
 public:
-    KNetworkReply(QObject *parent);
+    KNetworkReply(const QNetworkRequest &request, KIO::Job *kioJob, QObject *parent);
 
     virtual void abort();
 
 protected:
     virtual qint64 readData(char *data, qint64 maxSize);
+
+private:
+    KIO::Job *m_kioJob;
 };
 
 #endif // KNETWORKREPLY_H
