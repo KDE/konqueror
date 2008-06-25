@@ -81,7 +81,6 @@ Q_SIGNALS:
 
 protected:
     virtual bool eventFilter(QObject*,QEvent *);
-    virtual void resizeEvent( QResizeEvent* );
     virtual void mousePressEvent( QMouseEvent* );
     /**
      * Brings up the context menu for this frame
