@@ -18,6 +18,7 @@
 */
 
 #include "konqframestatusbar.h"
+#include <kdebug.h>
 #include "konqframe.h"
 #include "konqview.h"
 #include <kiconloader.h>
@@ -120,13 +121,6 @@ void KonqFrameStatusBar::fontChange(const QFont & /* oldFont */)
 
 }
 
-void KonqFrameStatusBar::resizeEvent( QResizeEvent* ev )
-{
-    //m_progressBar->setGeometry( width()-160, 0, 140, height() );
-    //m_pLinkedViewCheckBox->move( width()-15, m_yOffset ); // right justify
-    KStatusBar::resizeEvent( ev );
-}
-
 // I don't think this code _ever_ gets called!
 // I don't want to remove it, though.  :-)
 void KonqFrameStatusBar::mousePressEvent( QMouseEvent* event )
@@ -202,12 +196,12 @@ void KonqFrameStatusBar::message( const QString &msg )
 
 void KonqFrameStatusBar::slotDisplayStatusText(const QString& text)
 {
-    //kDebug(1202)<<"KonqFrameHeader::slotDisplayStatusText("<<text<<")";
-    //m_pStatusLabel->resize(fontMetrics().width(text),fontMetrics().height()+2);
+    //kDebug(1202) << text;
     m_pStatusLabel->setText(text);
     m_savedMessage = text;
 }
 
+// ### TODO: was also used in kde3 for the signals from kactioncollection...
 void KonqFrameStatusBar::slotClear()
 {
     slotDisplayStatusText( m_savedMessage );
@@ -215,15 +209,13 @@ void KonqFrameStatusBar::slotClear()
 
 void KonqFrameStatusBar::slotLoadingProgress( int percent )
 {
-  if ( percent != -1 && percent != 100 ) // hide on 100 too
-  {
-    if ( !m_progressBar->isVisible() )
-      m_progressBar->show();
-  }
-  else
-    m_progressBar->hide();
+    if (percent == -1 || percent == 100) { // hide on error and on success
+        m_progressBar->hide();
+    } else {
+        m_progressBar->show();
+    }
 
-  m_progressBar->setValue( percent );
+    m_progressBar->setValue(percent);
 }
 
 void KonqFrameStatusBar::slotSpeedProgress( int bytesPerSecond )
