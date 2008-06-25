@@ -116,19 +116,22 @@ public:
    */
   void openFilteredUrl( const QString &_url, bool inNewTab = false, bool tempFile = false );
 
+public Q_SLOTS:
   /**
    * The main openUrl method.
+   * TODO make req a const ref!
    */
   void openUrl( KonqView * view, const KUrl & url,
                 const QString &serviceType = QString(),
                 KonqOpenURLRequest & req = KonqOpenURLRequest::null, bool trustedSource = false );
 
+public:
   /**
    * Called by openUrl when it knows the service type (either directly,
    * or using KonqRun)
    */
   bool openView( QString serviceType, const KUrl &_url, KonqView *childView,
-                 KonqOpenURLRequest & req = KonqOpenURLRequest::null );
+                 const KonqOpenURLRequest & req = KonqOpenURLRequest::null );
 
 
   void abortLoading();

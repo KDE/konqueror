@@ -674,7 +674,7 @@ void KonqMainWindow::openUrl( KonqView *_view, const KUrl &_url,
   }
 }
 
-bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *childView, KonqOpenURLRequest& req )
+bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *childView, const KonqOpenURLRequest& req )
 {
   // Second argument is referring URL
   if ( !KAuthorized::authorizeUrlAction("open", childView ? childView->url() : KUrl(), _url) )
