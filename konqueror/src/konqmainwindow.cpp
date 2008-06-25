@@ -179,7 +179,6 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
   incInstancesCount();
   setPreloadedFlag( false );
 
-
   if ( !s_lstViews )
     s_lstViews = new QList<KonqMainWindow*>;
 
@@ -460,7 +459,7 @@ QString KonqMainWindow::detectNameFilter( KUrl & url )
     return nameFilter;
 }
 
-void KonqMainWindow::openFilteredUrl( const QString & url, KonqOpenURLRequest & req )
+void KonqMainWindow::openFilteredUrl(const QString & url, const KonqOpenURLRequest & req)
 {
     // Filter URL to build a correct one
     if (m_currentDir.isEmpty() && m_currentView)
@@ -474,7 +473,7 @@ void KonqMainWindow::openFilteredUrl( const QString & url, KonqOpenURLRequest & 
 
     m_currentDir.clear();
 
-    openUrl( 0, filteredURL, QString(), req );
+    openUrl(0, filteredURL, QString(), req);
 
     // #4070: Give focus to view after URL was entered manually
     // Note: we do it here if the view mode (i.e. part) wasn't changed
@@ -484,7 +483,7 @@ void KonqMainWindow::openFilteredUrl( const QString & url, KonqOpenURLRequest & 
 
 }
 
-void KonqMainWindow::openFilteredUrl( const QString & _url, bool inNewTab, bool tempFile )
+void KonqMainWindow::openFilteredUrl(const QString & _url, bool inNewTab, bool tempFile)
 {
     KonqOpenURLRequest req( _url );
     req.newTab = inNewTab;
@@ -494,17 +493,20 @@ void KonqMainWindow::openFilteredUrl( const QString & _url, bool inNewTab, bool 
     openFilteredUrl( _url, req );
 }
 
-void KonqMainWindow::openUrl( KonqView *_view, const KUrl &_url,
-                              const QString &_mimeType, KonqOpenURLRequest& req,
-                              bool trustedSource )
+void KonqMainWindow::openUrl(KonqView *_view, const KUrl &_url,
+                             const QString &_mimeType, const KonqOpenURLRequest& _req,
+                             bool trustedSource)
 {
 #ifndef NDEBUG // needed for req.debug()
     kDebug(1202) << "url=" << _url << "mimeType=" << _mimeType
-                 << "req=" << req.debug() << "view=" << _view;
+                 << "_req=" << _req.debug() << "view=" << _view;
 #endif
 
-  KUrl url( _url );
-  QString mimeType( _mimeType );
+    // We like modifying args in this method :)
+    KUrl url(_url);
+    QString mimeType(_mimeType);
+    KonqOpenURLRequest req(_req);
+
   if ( url.url() == "about:blank" )
   {
     mimeType = "text/html";
