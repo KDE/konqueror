@@ -1519,6 +1519,9 @@ void KonqViewManager::createTabContainer(QWidget* parent, KonqFrameContainerBase
     //kDebug(1202) << "createTabContainer" << parent << parentContainer;
     m_tabContainer = new KonqFrameTabs( parent, parentContainer, this );
     connect( m_tabContainer, SIGNAL(ctrlTabPressed()), m_pMainWindow, SLOT(slotCtrlTabPressed()) );
+    // Delay the opening of the URL for #106641
+    bool ok = connect( m_tabContainer, SIGNAL(openUrl(KonqView*, KUrl)), m_pMainWindow, SLOT(openUrl(KonqView*, KUrl)), Qt::QueuedConnection);
+    Q_ASSERT(ok);
     applyConfiguration();
 }
 

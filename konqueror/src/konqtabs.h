@@ -88,6 +88,7 @@ public Q_SLOTS:
 Q_SIGNALS:
   void ctrlTabPressed();
   void removeTabPopup();
+    void openUrl(KonqView* view, const KUrl& url);
 
 private:
   void refreshSubPopupMenuTab();
