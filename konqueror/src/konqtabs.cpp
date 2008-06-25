@@ -505,9 +505,10 @@ void KonqFrameTabs::slotReceivedDropEvent( QWidget *w, QDropEvent *e )
   KUrl::List lstDragURLs = KUrl::List::fromMimeData( e->mimeData() );
   KonqFrameBase* frame = dynamic_cast<KonqFrameBase*>(w);
   if ( lstDragURLs.count() && frame ) {
-    KUrl lstDragURL = lstDragURLs.first();
-    if ( lstDragURL != frame->activeChildView()->url() )
-      m_pViewManager->mainWindow()->openUrl( frame->activeChildView(), lstDragURL );
+    const KUrl dragUrl = lstDragURLs.first();
+    if ( dragUrl != frame->activeChildView()->url() ) {
+        emit openUrl(frame->activeChildView(), dragUrl);
+    }
   }
 }
 
