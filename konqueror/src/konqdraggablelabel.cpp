@@ -89,3 +89,5 @@ void KonqDraggableLabel::delayedOpenURL()
     m_mw->openUrl( 0L, _savedLst.first() );
 }
 
+
+#include "konqdraggablelabel.moc"

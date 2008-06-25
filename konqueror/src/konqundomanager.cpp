@@ -711,3 +711,5 @@ void KonqClosedWindowsManager::readConfig()
         addClosedWindowItem(0L, closedWindowItem, true);
     }
 }
+
+#include "konqundomanager.moc"
