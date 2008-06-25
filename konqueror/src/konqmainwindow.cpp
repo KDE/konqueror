@@ -536,8 +536,32 @@ void KonqMainWindow::openUrl(KonqView *_view, const KUrl &_url,
   if ( view && view->isFollowActive() )
     view = m_currentView;
 
-  if ( !view && !req.newTab )
-    view = m_currentView; /* Note, this can be 0, e.g. on startup */
+    if (!view && !req.newTab)
+        view = m_currentView; /* Note, this can be 0, e.g. on startup */
+    else if (!view && req.newTab) {
+        // The URL should be opened in a new tab. Let's create the tab right away,
+        // it gives faster user feedback (#163628). For a short while (kde-4.1-beta1)
+        // I removed this entire block so that we wouldn't end up with a useless tab when
+        // launching an external application for this mimetype. But user feedback
+        // in all cases is more important than empty tabs in some cases.
+        view = m_pViewManager->addTab("text/html",
+                                      QString(),
+                                      false,
+                                      req.openAfterCurrentPage);
+        if (view) {
+            view->setCaption(_url.host()); // TODO i18nc("@title:tab", "Loading...")
+            view->setLocationBarURL(_url);
+            if (!req.browserArgs.frameName.isEmpty())
+                view->setViewName(req.browserArgs.frameName); // #44961
+
+            if (req.newTabInFront)
+                m_pViewManager->showTab(view);
+
+            updateViewActions(); //A new tab created -- we may need to enable the "remove tab" button (#56318)
+        } else {
+            req.newTab = false;
+        }
+    }
 
   const QString oldLocationBarURL = m_combo->currentText();
   if ( view )
@@ -1887,21 +1911,21 @@ void KonqMainWindow::slotRunFinished()
     return;
   }
 
-  if ( childView )
-  {
-    childView->setLoading( false );
+    // An error happened in KonqRun - stop wheel etc.
 
-    if ( childView == m_currentView )
-    {
-      stopAnimation();
+    if (childView) {
+        childView->setLoading(false);
 
-      // Revert to working URL - unless the URL was typed manually
-      if ( run->typedUrl().isEmpty() && childView->currentHistoryEntry() ) // not typed
-        childView->setLocationBarURL( childView->currentHistoryEntry()->locationBarURL );
+        if (childView == m_currentView) {
+            stopAnimation();
+
+            // Revert to working URL - unless the URL was typed manually
+            if (run->typedUrl().isEmpty() && childView->currentHistoryEntry()) // not typed
+                childView->setLocationBarURL(childView->currentHistoryEntry()->locationBarURL);
+        }
+    } else { // No view, e.g. empty webbrowsing profile
+        stopAnimation();
     }
-  }
-  else // No view, e.g. empty webbrowsing profile
-    stopAnimation();
 }
 
 void KonqMainWindow::applyKonqMainWindowSettings()
