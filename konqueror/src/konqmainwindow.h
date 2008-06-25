@@ -106,24 +106,24 @@ public:
   ~KonqMainWindow();
 
 
-  /**
-   * Filters the URL and calls the main openUrl method.
-   */
-  void openFilteredUrl( const QString & _url, KonqOpenURLRequest& _req);
+    /**
+     * Filters the URL and calls the main openUrl method.
+     */
+    void openFilteredUrl(const QString& url, const KonqOpenURLRequest& req);
 
-  /**
-   * Filters the URL and calls the main openUrl method.
-   */
-  void openFilteredUrl( const QString &_url, bool inNewTab = false, bool tempFile = false );
+    /**
+     * Convenience overload for openFilteredUrl(url, req)
+     */
+    void openFilteredUrl(const QString& url, bool inNewTab = false, bool tempFile = false);
 
 public Q_SLOTS:
   /**
    * The main openUrl method.
-   * TODO make req a const ref!
    */
-  void openUrl( KonqView * view, const KUrl & url,
-                const QString &serviceType = QString(),
-                KonqOpenURLRequest & req = KonqOpenURLRequest::null, bool trustedSource = false );
+  void openUrl(KonqView * view, const KUrl & url,
+               const QString &serviceType = QString(),
+               const KonqOpenURLRequest & req = KonqOpenURLRequest::null,
+               bool trustedSource = false); // trustedSource should be part of KonqOpenURLRequest, probably
 
 public:
   /**
