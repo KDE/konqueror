@@ -276,3 +276,5 @@ QString decodeFilename(QString filename)
 {
     return filename.replace('_', ":");
 }
+
+#include "konqsessionmanager.moc"
