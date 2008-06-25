@@ -4402,6 +4402,9 @@ void KonqExtendedBookmarkOwner::openFolderinTabs(const KBookmarkGroup &grp)
   req.forceAutoEmbed = true;
 
   QList<KUrl> list = grp.groupUrlList();
+  if (list.isEmpty())
+    return;
+
   QList<KUrl>::Iterator it = list.begin();
   QList<KUrl>::Iterator end = list.end();
   --end;
