@@ -31,6 +31,7 @@
 
 // Local
 #include "konqview.h"
+#include "konqframestatusbar.h"
 #include "konqhistorymanager.h"
 #include "konqsettings.h"
 
@@ -127,7 +128,10 @@ void KonqRun::foundMimeType(const QString & _type)
         if (res == KParts::BrowserRun::Delayed)
             return;
         setFinished(res == KParts::BrowserRun::Handled);
-        if (!hasFinished() && !tryEmbed) // Open selected for a serverSuggestsSave() file
+        if (hasFinished()) {
+            // save or cancel -> nothing else will happen in m_pView, so clear statusbar (#163628)
+            m_pView->frame()->statusbar()->slotClear();
+        } else if (!tryEmbed) // Open selected for a serverSuggestsSave() file
             setFinished(m_pMainWindow->openView(mimeType, KRun::url(), m_pView, m_req));
     }
 
