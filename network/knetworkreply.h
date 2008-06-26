@@ -37,7 +37,11 @@ public:
     KNetworkReply(const QNetworkRequest &request, KIO::Job *kioJob, QObject *parent);
 
     void appendData(const QByteArray &data);
+    virtual qint64 bytesAvailable() const;
     virtual void abort();
+
+public slots:
+    void setContentType(KIO::Job *kioJob, const QString &contentType);
 
 protected:
     virtual qint64 readData(char *data, qint64 maxSize);

@@ -30,6 +30,7 @@ KNetworkReply::KNetworkReply(const QNetworkRequest &request, KIO::Job *kioJob, Q
     m_kioJob(kioJob)
 {
     setRequest(request);
+    setOpenMode(QIODevice::ReadOnly);
 }
 
 void KNetworkReply::abort()
@@ -38,15 +39,28 @@ void KNetworkReply::abort()
 //     m_kioJob->deleteLater();
 }
 
+qint64 KNetworkReply::bytesAvailable() const
+{
+    return QNetworkReply::bytesAvailable() + m_data.length();
+}
+
 qint64 KNetworkReply::readData(char *data, qint64 maxSize)
 {
-    QByteArray tempData = m_data.left(maxSize);
-    m_data.remove(0, maxSize);
-    data = tempData.data();
+    kDebug();
+    qint64 length = qMin(qint64(m_data.length()), maxSize);
+    if (length) {
+        qMemCopy(data, m_data.constData(), length);
+        m_data.remove(0, length);
+    }
 
-    kDebug()<<data;
+    return length;
+}
 
-    return tempData.size();
+void KNetworkReply::setContentType(KIO::Job *kioJob, const QString &contentType)
+{
+    Q_UNUSED(kioJob);
+    setHeader(QNetworkRequest::ContentTypeHeader, contentType);
+    emit metaDataChanged();
 }
 
 void KNetworkReply::appendData(const QByteArray &data)
