@@ -40,7 +40,7 @@ KNetworkAccessManager::KNetworkAccessManager(QObject *parent)
 
 QNetworkReply *KNetworkAccessManager::createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData)
 {
-//     return QNetworkAccessManager::createRequest(op, req, outgoingData); //TODO: remove
+    return QNetworkAccessManager::createRequest(op, req, outgoingData); //TODO: remove
 
     KIO::Job *kioJob = 0;
 
