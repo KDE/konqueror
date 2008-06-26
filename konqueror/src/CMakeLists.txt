@@ -26,7 +26,7 @@ qt4_add_dbus_interface(konquerorprivate_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../../l
 qt4_add_dbus_adaptor(konquerorprivate_SRCS org.kde.Konqueror.HistoryManager.xml konqhistorymanager.h KonqHistoryManager konqhistorymanageradaptor KonqHistoryManagerAdaptor)
 
 kde4_add_library(konquerorprivate SHARED ${konquerorprivate_SRCS})
-target_link_libraries(konquerorprivate ${KDE4_KPARTS_LIBS})
+target_link_libraries(konquerorprivate ${KDE4_KPARTS_LIBS} ${ZLIB_LIBRARY})
 set_target_properties(konquerorprivate PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION} )
 install(TARGETS konquerorprivate ${INSTALL_TARGETS_DEFAULT_ARGS})
 
@@ -83,6 +83,10 @@ qt4_add_dbus_interface(konqueror_KDEINIT_SRCS org.kde.Konqueror.SessionManager.x
 kde4_add_app_icon(konqueror_KDEINIT_SRCS "${KDE4_ICON_INSTALL_DIR}/oxygen/*/apps/konqueror.png")
 kde4_add_kdeinit_executable(konqueror ${konqueror_KDEINIT_SRCS} konqmain.cpp)
 target_link_libraries(kdeinit_konqueror konquerorprivate konq ${KDE4_KPARTS_LIBS} ${KDE4_KUTILS_LIBS})
+if (UNIX)
+  target_link_libraries(kdeinit_konqueror ${X11_LIBRARIES})
+endif (UNIX)
+
 
 if (NOT WIN32)
     install(TARGETS kdeinit_konqueror  ${INSTALL_TARGETS_DEFAULT_ARGS} )

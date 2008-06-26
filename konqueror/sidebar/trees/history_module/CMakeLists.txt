@@ -19,9 +19,10 @@ if(WIN32)
 # please remove next lib and add the sources here for 4.1 if cmake > 2.6 is available
 target_link_libraries(konq_sidebartree_history sidebar_tree )
 endif(WIN32)
-target_link_libraries(konq_sidebartree_history  konqsidebarplugin konquerorprivate konq )
+target_link_libraries(konq_sidebartree_history  konqsidebarplugin konquerorprivate konq 
+   ${KDE4_KDEUI_LIBS} ${KDE4_KPARTS_LIBS} ${KDE4_KDE3SUPPORT_LIBS})
 
-install(TARGETS konq_sidebartree_history  DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(TARGETS konq_sidebartree_history  DESTINATION ${PLUGIN_INSTALL_DIR})
 
 
 ########### next target ###############
@@ -33,7 +34,7 @@ kde4_add_ui_files(kcm_history_SRCS history_dlg.ui )
 
 kde4_add_plugin(kcm_history ${kcm_history_SRCS})
 
-target_link_libraries(kcm_history konquerorprivate konq )
+target_link_libraries(kcm_history konquerorprivate konq ${KDE4_KPARTS_LIBS} ${KDE4_KDEUI_LIBS} )
 
 install(TARGETS kcm_history  DESTINATION ${PLUGIN_INSTALL_DIR} )
 

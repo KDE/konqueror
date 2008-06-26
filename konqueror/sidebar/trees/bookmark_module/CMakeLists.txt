@@ -16,7 +16,7 @@ if(WIN32)
 # please remove next lib and add the sources here for 4.1 if cmake > 2.6 is available
 target_link_libraries(konq_sidebartree_bookmarks sidebar_tree)
 endif(WIN32)
-target_link_libraries(konq_sidebartree_bookmarks  ${KDE4_KDEUI_LIBS} konqsidebarplugin konq)
+target_link_libraries(konq_sidebartree_bookmarks  ${KDE4_KDEUI_LIBS} konqsidebarplugin konq ${KDE4_KDE3SUPPORT_LIBS})
 
 install(TARGETS konq_sidebartree_bookmarks  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
