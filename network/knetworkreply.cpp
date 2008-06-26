@@ -22,6 +22,7 @@
 
 #include "knetworkreply.h"
 
+#include <KDebug>
 #include <kio/job.h>
 
 KNetworkReply::KNetworkReply(const QNetworkRequest &request, KIO::Job *kioJob, QObject *parent)
@@ -33,13 +34,26 @@ KNetworkReply::KNetworkReply(const QNetworkRequest &request, KIO::Job *kioJob, Q
 
 void KNetworkReply::abort()
 {
-    m_kioJob->deleteLater();
+//     m_kioJob->kill();
+//     m_kioJob->deleteLater();
 }
 
 qint64 KNetworkReply::readData(char *data, qint64 maxSize)
 {
-    //TODO implement
-    return 0;
+    QByteArray tempData = m_data.left(maxSize);
+    m_data.remove(0, maxSize);
+    data = tempData.data();
+
+    kDebug()<<data;
+
+    return tempData.size();
+}
+
+void KNetworkReply::appendData(const QByteArray &data)
+{
+    kDebug();
+    m_data += data;
+    emit readyRead();
 }
 
 #include "knetworkreply.moc"

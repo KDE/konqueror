@@ -36,6 +36,7 @@ class KNetworkReply : public QNetworkReply
 public:
     KNetworkReply(const QNetworkRequest &request, KIO::Job *kioJob, QObject *parent);
 
+    void appendData(const QByteArray &data);
     virtual void abort();
 
 protected:
@@ -43,6 +44,7 @@ protected:
 
 private:
     KIO::Job *m_kioJob;
+    QByteArray m_data;
 };
 
 #endif // KNETWORKREPLY_H

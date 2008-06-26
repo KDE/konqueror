@@ -40,7 +40,7 @@ KNetworkAccessManager::KNetworkAccessManager(QObject *parent)
 
 QNetworkReply *KNetworkAccessManager::createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData)
 {
-    return QNetworkAccessManager::createRequest(op, req, outgoingData); //TODO: remove
+//     return QNetworkAccessManager::createRequest(op, req, outgoingData); //TODO: remove
 
     KIO::Job *kioJob = 0;
 
@@ -78,6 +78,8 @@ QNetworkReply *KNetworkAccessManager::createRequest(Operation op, const QNetwork
 
     connect(kioJob, SIGNAL(data(KIO::Job *, const QByteArray &)),
         this, SLOT(forwardJobData(KIO::Job *, const QByteArray &)));
+    connect(kioJob, SIGNAL(result(KJob *)),
+        reply, SIGNAL(finished()));
 
     return reply;
 }
@@ -89,7 +91,7 @@ void KNetworkAccessManager::forwardJobData(KIO::Job *kioJob, const QByteArray &d
     if (!job)
         return;
 
-    job->write(data);
+    job->appendData(data);
 }
 
 #include "knetworkaccessmanager.moc"
