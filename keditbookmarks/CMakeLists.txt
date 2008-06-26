@@ -40,7 +40,7 @@ kde4_add_kcfg_files(keditbookmarks_KDEINIT_SRCS settings.kcfgc )
 
 kde4_add_kdeinit_executable( keditbookmarks ${keditbookmarks_KDEINIT_SRCS})
 
-target_link_libraries(kdeinit_keditbookmarks  ${KDE4_KDE3SUPPORT_LIBS} konq )
+target_link_libraries(kdeinit_keditbookmarks  ${KDE4_KDE3SUPPORT_LIBS} konq ${KDE4_KPARTS_LIBS})
 
 install(TARGETS kdeinit_keditbookmarks  ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(TARGETS keditbookmarks          ${INSTALL_TARGETS_DEFAULT_ARGS})
