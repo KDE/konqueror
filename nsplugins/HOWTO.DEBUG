@@ -4,8 +4,8 @@ Want to run nspluginviewer in valgrind?  It's not easy.  Here's how:
 - ps awwww | grep nspluginviewer
 - Record the commandline, then kill -11 the process
 - close drkonqi
-- in a konsole, export ARTSDSP_MMAP=1
-	- run LD_PRELOAD=$KDEDIR/lib/libartsdsp.so.0:$KDEDIR/lib/libartsc.so.0 valgrind -v --num-callers=15 --error-limit=no nspluginviewer <commandline that you saved>
+- in a konsole
+	- run valgrind --num-callers=15 --error-limit=no nspluginviewer <commandline that you saved>
 
 - WAIT for four lines to be printed to the screen that start with:
 5 ............
