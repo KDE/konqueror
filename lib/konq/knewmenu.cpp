@@ -595,7 +595,9 @@ void KNewMenu::setPopupFiles(const KUrl::List& files)
         KUrl firstUrl = files.first();
         if (KProtocolManager::supportsWriting(firstUrl)) {
             d->m_newMenuGroup->setEnabled(true);
-            d->m_newDirAction->setEnabled(KProtocolManager::supportsMakeDir(firstUrl)); // e.g. trash:/
+            if (d->m_newDirAction) {
+                d->m_newDirAction->setEnabled(KProtocolManager::supportsMakeDir(firstUrl)); // e.g. trash:/
+            }
         } else {
             d->m_newMenuGroup->setEnabled(true);
         }
