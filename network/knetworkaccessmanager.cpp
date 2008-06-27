@@ -31,8 +31,6 @@
 #include <KDebug>
 #include <kio/job.h>
 
-Q_DECLARE_METATYPE(KNetworkReply *);
-
 KNetworkAccessManager::KNetworkAccessManager(QObject *parent)
     : QNetworkAccessManager(parent)
 {
@@ -49,6 +47,9 @@ QNetworkReply *KNetworkAccessManager::createRequest(Operation op, const QNetwork
     switch (op) {
         case HeadOperation: {
             kDebug() << "HeadOperation:" << req.url();
+
+            // TODO
+
             break;
         }
         case GetOperation: {
@@ -60,6 +61,9 @@ QNetworkReply *KNetworkAccessManager::createRequest(Operation op, const QNetwork
         }
         case PutOperation: {
             kDebug() << "PutOperation:" << req.url();
+
+            kioJob = KIO::put(req.url(), -1, KIO::HideProgressInfo);
+
             break;
         }
         case PostOperation: {
@@ -74,26 +78,47 @@ QNetworkReply *KNetworkAccessManager::createRequest(Operation op, const QNetwork
             return 0;
     }
 
-    kioJob->setProperty("KNetworkReply", QVariant::fromValue(reply));
+    kioJob->addMetaData(metaDataForRequest(req));
 
     connect(kioJob, SIGNAL(data(KIO::Job *, const QByteArray &)),
-        this, SLOT(forwardJobData(KIO::Job *, const QByteArray &)));
+        reply, SLOT(appendData(KIO::Job *, const QByteArray &)));
     connect(kioJob, SIGNAL(mimetype(KIO::Job *, const QString &)),
         reply, SLOT(setContentType(KIO::Job *, const QString &)));
-    connect(kioJob, SIGNAL(result(KJob *)),
-        reply, SIGNAL(finished()));
+    connect(kioJob, SIGNAL(result(KJob *)), reply, SIGNAL(finished()));
 
     return reply;
 }
 
-void KNetworkAccessManager::forwardJobData(KIO::Job *kioJob, const QByteArray &data)
-{
-    kDebug();
-    KNetworkReply *job = kioJob->property("KNetworkReply").value<KNetworkReply *>();
-    if (!job)
-        return;
 
-    job->appendData(data);
+KIO::MetaData KNetworkAccessManager::metaDataForRequest(QNetworkRequest request)
+{
+    KIO::MetaData metaData;
+
+    metaData.insert("PropagateHttpHeader", "true");
+
+    metaData.insert("UserAgent", request.rawHeader("User-Agent"));
+    request.setRawHeader("User-Agent", QByteArray());
+
+    metaData.insert("accept", request.rawHeader("Accept"));
+    request.setRawHeader("Accept", QByteArray());
+
+    request.setRawHeader("content-length", QByteArray());
+    request.setRawHeader("Connection", QByteArray());
+
+    QString additionHeaders;
+    Q_FOREACH(const QByteArray &headerKey, request.rawHeaderList()) {
+        const QByteArray value = request.rawHeader(headerKey);
+        if (value.isNull())
+            continue;
+
+        if (additionHeaders.length() > 0) {
+            additionHeaders += "\r\n";
+        }
+        additionHeaders += headerKey + ": " + value;
+    }
+    metaData.insert("customHTTPHeader", additionHeaders);
+
+    return metaData;
 }
 
 #include "knetworkaccessmanager.moc"

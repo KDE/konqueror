@@ -25,10 +25,7 @@
 
 #include <qnetworkaccessmanager.h>
 
-namespace KIO
-{
-    class Job;
-};
+#include <KIO/MetaData>
 
 class KNetworkAccessManager : public QNetworkAccessManager
 {
@@ -36,11 +33,10 @@ class KNetworkAccessManager : public QNetworkAccessManager
 public:
     KNetworkAccessManager(QObject *parent);
 
+    static KIO::MetaData metaDataForRequest(QNetworkRequest request);
+
 protected:
     QNetworkReply *createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData = 0);
-
-private slots:
-    void forwardJobData(KIO::Job *kioJob, const QByteArray &data);
 };
 
 #endif // KNETWORKACCESSMANAGER_H

@@ -28,6 +28,7 @@
 KNetworkReply::KNetworkReply(const QNetworkRequest &request, KIO::Job *kioJob, QObject *parent)
     : QNetworkReply(parent),
     m_kioJob(kioJob)
+    , m_metaDataRead(false)
 {
     setRequest(request);
     setOpenMode(QIODevice::ReadOnly);
@@ -35,8 +36,10 @@ KNetworkReply::KNetworkReply(const QNetworkRequest &request, KIO::Job *kioJob, Q
 
 void KNetworkReply::abort()
 {
-//     m_kioJob->kill();
-//     m_kioJob->deleteLater();
+    if (m_kioJob) {
+        m_kioJob->kill();
+        m_kioJob->deleteLater();
+    }
 }
 
 qint64 KNetworkReply::bytesAvailable() const
@@ -63,9 +66,26 @@ void KNetworkReply::setContentType(KIO::Job *kioJob, const QString &contentType)
     emit metaDataChanged();
 }
 
-void KNetworkReply::appendData(const QByteArray &data)
+void KNetworkReply::appendData(KIO::Job *kioJob, const QByteArray &data)
 {
+    Q_UNUSED(kioJob);
     kDebug();
+
+    if (!m_metaDataRead) {
+        QString headers = kioJob->queryMetaData("HTTP-Headers");
+        if (!headers.isEmpty()) {
+            QStringList headerList = headers.split('\n');
+            Q_FOREACH(const QString &header, headerList) {
+                QStringList headerPair = header.split(": ");
+                if (headerPair.size() == 2) {
+                    kDebug() << headerPair.at(0) << headerPair.at(1);
+                    setRawHeader(headerPair.at(0).toUtf8(), headerPair.at(1).toUtf8());
+                }
+            }
+        }
+        m_metaDataRead = true;
+    }
+
     m_data += data;
     emit readyRead();
 }

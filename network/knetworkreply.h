@@ -36,12 +36,12 @@ class KNetworkReply : public QNetworkReply
 public:
     KNetworkReply(const QNetworkRequest &request, KIO::Job *kioJob, QObject *parent);
 
-    void appendData(const QByteArray &data);
     virtual qint64 bytesAvailable() const;
     virtual void abort();
 
 public slots:
     void setContentType(KIO::Job *kioJob, const QString &contentType);
+    void appendData(KIO::Job *kioJob, const QByteArray &data);
 
 protected:
     virtual qint64 readData(char *data, qint64 maxSize);
@@ -49,6 +49,7 @@ protected:
 private:
     KIO::Job *m_kioJob;
     QByteArray m_data;
+    bool m_metaDataRead;
 };
 
 #endif // KNETWORKREPLY_H
