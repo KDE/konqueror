@@ -537,7 +537,7 @@ KonqSidebarBookmarkItem * KonqSidebarBookmarkModule::findByAddress( const QStrin
 {
     Q3ListViewItem * item = m_topLevelItem;
     // The address is something like /5/10/2
-    QStringList addresses = address.split( '/');
+    QStringList addresses = address.split('/', QString::SkipEmptyParts);
     for ( QStringList::Iterator it = addresses.begin() ; it != addresses.end() ; ++it )
     {
         uint number = (*it).toUInt();
