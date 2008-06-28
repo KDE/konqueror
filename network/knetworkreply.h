@@ -40,7 +40,6 @@ public:
     virtual void abort();
 
 public slots:
-    void setContentType(KIO::Job *kioJob, const QString &contentType);
     void appendData(KIO::Job *kioJob, const QByteArray &data);
 
 protected:

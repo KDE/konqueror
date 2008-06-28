@@ -23,7 +23,7 @@
 #ifndef KNETWORKACCESSMANAGER_H
 #define KNETWORKACCESSMANAGER_H
 
-#include <qnetworkaccessmanager.h>
+#include <QNetworkAccessManager>
 
 #include <KIO/MetaData>
 

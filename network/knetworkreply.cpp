@@ -23,11 +23,11 @@
 #include "knetworkreply.h"
 
 #include <KDebug>
-#include <kio/job.h>
+#include <KIO/Job>
 
 KNetworkReply::KNetworkReply(const QNetworkRequest &request, KIO::Job *kioJob, QObject *parent)
-    : QNetworkReply(parent),
-    m_kioJob(kioJob)
+    : QNetworkReply(parent)
+    , m_kioJob(kioJob)
     , m_metaDataRead(false)
 {
     setRequest(request);
@@ -49,7 +49,7 @@ qint64 KNetworkReply::bytesAvailable() const
 
 qint64 KNetworkReply::readData(char *data, qint64 maxSize)
 {
-    kDebug();
+//     kDebug();
     qint64 length = qMin(qint64(m_data.length()), maxSize);
     if (length) {
         qMemCopy(data, m_data.constData(), length);
@@ -59,17 +59,10 @@ qint64 KNetworkReply::readData(char *data, qint64 maxSize)
     return length;
 }
 
-void KNetworkReply::setContentType(KIO::Job *kioJob, const QString &contentType)
-{
-    Q_UNUSED(kioJob);
-    setHeader(QNetworkRequest::ContentTypeHeader, contentType);
-    emit metaDataChanged();
-}
-
 void KNetworkReply::appendData(KIO::Job *kioJob, const QByteArray &data)
 {
     Q_UNUSED(kioJob);
-    kDebug();
+//     kDebug();
 
     if (!m_metaDataRead) {
         QString headers = kioJob->queryMetaData("HTTP-Headers");

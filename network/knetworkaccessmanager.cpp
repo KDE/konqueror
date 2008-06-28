@@ -38,8 +38,6 @@ KNetworkAccessManager::KNetworkAccessManager(QObject *parent)
 
 QNetworkReply *KNetworkAccessManager::createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData)
 {
-    return QNetworkAccessManager::createRequest(op, req, outgoingData); //TODO: remove
-
     KIO::Job *kioJob = 0;
 
     KNetworkReply *reply = new KNetworkReply(req, kioJob, this);
@@ -48,7 +46,7 @@ QNetworkReply *KNetworkAccessManager::createRequest(Operation op, const QNetwork
         case HeadOperation: {
             kDebug() << "HeadOperation:" << req.url();
 
-            // TODO
+            return QNetworkAccessManager::createRequest(op, req, outgoingData); //TODO: replace with KIO implementation
 
             break;
         }
@@ -82,8 +80,6 @@ QNetworkReply *KNetworkAccessManager::createRequest(Operation op, const QNetwork
 
     connect(kioJob, SIGNAL(data(KIO::Job *, const QByteArray &)),
         reply, SLOT(appendData(KIO::Job *, const QByteArray &)));
-    connect(kioJob, SIGNAL(mimetype(KIO::Job *, const QString &)),
-        reply, SLOT(setContentType(KIO::Job *, const QString &)));
     connect(kioJob, SIGNAL(result(KJob *)), reply, SIGNAL(finished()));
 
     return reply;
