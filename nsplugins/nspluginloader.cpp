@@ -76,7 +76,7 @@ NSPluginInstance::NSPluginInstance(QWidget *parent, const QString& viewerDBusId,
     KConfig _cfg( "kcmnspluginrc" );
     KConfigGroup cfg(&_cfg, "Misc");
     if ( cfg.readEntry("demandLoad", false) ) {
-        _button = new QPushButton(i18n("Start Plugin"), dynamic_cast<EMBEDCLASS*>(this));
+        _button = new QPushButton(i18n("Start Plugin"), this);
         _layout->addWidget(_button, 0, 0);
         connect(_button, SIGNAL(clicked()), this, SLOT(doLoadPlugin()));
         show();
