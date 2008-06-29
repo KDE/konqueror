@@ -590,7 +590,19 @@ NPError g_NPN_SetValue(NPP /*instance*/, NPPVariable variable, void* /*value*/)
 
 
 
+/**
+ These two are in the ABI version 16 which we don't claim to support, but 
+ flash uses anyway.
+*/
+static void g_NPN_PushPopupsEnabledState(NPP /*instance*/, NPBool enabled)
+{
+   kDebug(1431) << "[unimplemented]" << enabled;
+}
 
+static void g_NPN_PopPopupsEnabledState(NPP /*instance*/)
+{
+   kDebug(1431) << "[unimplemented]";
+}
 
 /******************************************************************/
 
@@ -1328,6 +1340,9 @@ int NSPluginClass::initialize()
    _nsFuncs.invalidaterect = g_NPN_InvalidateRect;
    _nsFuncs.invalidateregion = g_NPN_InvalidateRegion;
    _nsFuncs.forceredraw = g_NPN_ForceRedraw;
+   
+   _nsFuncs.pushpopupsenabledstate = g_NPN_PushPopupsEnabledState;
+   _nsFuncs.poppopupsenabledstate =  g_NPN_PopPopupsEnabledState;
 
    // initialize plugin
    NPError error = _NP_Initialize(&_nsFuncs, &_pluginFuncs);
