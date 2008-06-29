@@ -163,7 +163,7 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
                  return 0; // no preloading
 #endif
              }
-             if(!args->isSet("silent"))
+             else if(!args->isSet("silent"))
              {
                  // By default try to open in webbrowser mode. People can use "konqueror ." to get a filemanager.
                  QString profile = "webbrowsing";
