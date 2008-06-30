@@ -90,6 +90,16 @@ namespace KonqMisc // TODO rename to KonqGlobal?
      */
     QString konqFilteredURL( QWidget* /*parent*/, const QString& /*_url*/, const QString& _path = QString() );
 
+    /**
+     * Name of the default profile
+     */
+    QString defaultProfileName();
+
+    /**
+     * Path to the default profile
+     */
+    QString defaultProfilePath();
+
 }
 
 #endif

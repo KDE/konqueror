@@ -114,8 +114,13 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
      {
        QString profile = args->getOption("profile");
        QString profilePath = profile;
-       if (profile[0] != '/')
+       if (profile[0] != '/') {
            profilePath = KStandardDirs::locate( "data", QLatin1String("konqueror/profiles/")+profile );
+           if (profilePath.isEmpty()) {
+               profile = KonqMisc::defaultProfileName();
+               profilePath = KonqMisc::defaultProfilePath();
+           }
+       }
 
        QString url;
        QStringList filesToSelect;
@@ -163,12 +168,9 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
                  return 0; // no preloading
 #endif
              }
-             else if(!args->isSet("silent"))
-             {
-                 // By default try to open in webbrowser mode. People can use "konqueror ." to get a filemanager.
-                 QString profile = "webbrowsing";
-                 QString profilePath = KStandardDirs::locate( "data", QLatin1String("konqueror/profiles/")+profile );
-                 KonqMisc::createBrowserWindowFromProfile( profilePath, profile );
+             else if(!args->isSet("silent")) {
+                 const QString profile = KonqMisc::defaultProfileName();
+                 KonqMisc::createBrowserWindowFromProfile( KonqMisc::defaultProfilePath(), profile );
              }
              kDebug(1202) << "main() -> no args";
          }
