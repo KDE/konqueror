@@ -34,14 +34,7 @@
 #include <kstartupinfo.h>
 #include <kiconloader.h>
 #include <kconfiggroup.h>
-#include <QDir>
 #include <QList>
-
-//#ifdef Q_WS_WIN
-// windows defines ERROR
-// DF: so? we are not using it here...
-//#undef ERROR
-//#endif
 
 /**********************************************
  *
@@ -103,12 +96,18 @@ KonqMainWindow * KonqMisc::createNewWindow( const KUrl &url, const KParts::OpenU
 					forbidUseHTML, filesToSelect, tempFile, openUrl );
 }
 
-KonqMainWindow * KonqMisc::createBrowserWindowFromProfile( const QString &path, const QString &filename, const KUrl &url,
+KonqMainWindow * KonqMisc::createBrowserWindowFromProfile( const QString& _path, const QString &filename, const KUrl &url,
                                                            const KParts::OpenUrlArguments &args,
                                                            const KParts::BrowserArguments& browserArgs,
                                                            bool forbidUseHTML, const QStringList& filesToSelect, bool tempFile, bool openUrl )
 {
-  kDebug(1202) << "path=" << path << ", filename=" << filename << ", url=" << url;
+    QString path(_path);
+    kDebug(1202) << "path=" << path << ", filename=" << filename << ", url=" << url;
+    Q_ASSERT(!path.isEmpty());
+    // Well the path can be empty when misusing DBUS calls....
+    if (path.isEmpty())
+        path = defaultProfilePath();
+
   abortFullScreenMode();
 
   KonqOpenURLRequest req;
@@ -128,13 +127,6 @@ KonqMainWindow * KonqMisc::createBrowserWindowFromProfile( const QString &path, 
       else // This should never happen but just to be sure
           mainWindow = new KonqMainWindow;
 
-      if(!url.isEmpty())
-          mainWindow->openUrl( 0, url, QString(), req );
-  }
-  else if ( path.isEmpty() )
-  {
-      // The profile doesn't exist -> creating a simple window
-      mainWindow = new KonqMainWindow;
       if(!url.isEmpty())
           mainWindow->openUrl( 0, url, QString(), req );
   }
@@ -219,6 +211,17 @@ QString KonqMisc::konqFilteredURL( QWidget* parent, const QString& _url, const Q
     return "about:";
   }
   return _url;  // return the original url if it cannot be filtered.
+}
+
+QString KonqMisc::defaultProfileName()
+{
+    // By default try to open in webbrowser mode. People can use "konqueror ." to get a filemanager.
+    return "webbrowsing";
+}
+
+QString KonqMisc::defaultProfilePath()
+{
+    return KStandardDirs::locate("data", QLatin1String("konqueror/profiles/")+ defaultProfileName());
 }
 
 #include "konqmisc.moc"
