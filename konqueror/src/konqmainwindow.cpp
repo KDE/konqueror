@@ -1779,6 +1779,8 @@ void KonqMainWindow::slotConfigure()
     {
         m_configureDialog = new KCMultiDialog( this );
         m_configureDialog->setObjectName( "configureDialog" );
+        connect(m_configureDialog, SIGNAL(finished()), this, SLOT(slotConfigureDone()));
+        connect(m_configureDialog, SIGNAL(hidden()),   this, SLOT(slotConfigureDone()));
 
         if (KAuthorized::authorizeControlModule("khtml_general") )
                 m_configureDialog->addModule("khtml_general");
@@ -1825,6 +1827,16 @@ void KonqMainWindow::slotConfigure()
 
     m_configureDialog->show();
 
+}
+
+void KonqMainWindow::slotConfigureDone()
+{
+    // Cleanup the dialog so other instances can use it..
+    if ( m_configureDialog )
+    {
+        m_configureDialog->deleteLater();
+        m_configureDialog = 0;
+    }
 }
 
 void KonqMainWindow::slotConfigureSpellChecking()

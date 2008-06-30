@@ -382,6 +382,7 @@ public Q_SLOTS:
   void slotAddClosedUrl(KonqFrameBase *tab);
 
   void slotConfigure();
+  void slotConfigureDone();
   void slotConfigureToolbars();
   void slotConfigureExtensions();
   void slotConfigureSpellChecking();
