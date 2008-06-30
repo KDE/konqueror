@@ -38,8 +38,8 @@ class KonqyPreloader
         void reconfigure();
         void unloadAllPreloaded();
     private Q_SLOTS:
-        void appRemoved( const QString& id );
-	void checkAlwaysPreloaded();
+        void appChanged( const QString &id, const QString &oldOwner, const QString &newOwner );
+        void checkAlwaysPreloaded();
     private:
         void updateCount();
         struct KonqyData
