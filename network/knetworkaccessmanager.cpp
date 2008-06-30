@@ -46,7 +46,7 @@ QNetworkReply *KNetworkAccessManager::createRequest(Operation op, const QNetwork
         case HeadOperation: {
             kDebug() << "HeadOperation:" << req.url();
 
-            return QNetworkAccessManager::createRequest(op, req, outgoingData); //TODO: replace with KIO implementation
+            kioJob = KIO::mimetype(req.url(), KIO::HideProgressInfo);
 
             break;
         }
