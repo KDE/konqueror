@@ -39,8 +39,9 @@ KonqyPreloader::KonqyPreloader(QObject* parent, const QList<QVariant>&)
 
     (void)new PreloaderAdaptor(this);
 
-    connect( QDBusConnection::sessionBus().interface(), SIGNAL( serviceUnregistered( const QString & )),
-        SLOT( appRemoved( const QString& )));
+    connect( QDBusConnection::sessionBus().interface(),
+            SIGNAL( serviceOwnerChanged( const QString&, const QString&, const QString& )),
+            SLOT  ( appChanged( const QString&, const QString&, const QString& )));
     check_always_preloaded_timer.setSingleShot( true );
     connect( &check_always_preloaded_timer, SIGNAL( timeout()),
 	SLOT( checkAlwaysPreloaded()));
@@ -90,9 +91,12 @@ void KonqyPreloader::unregisterPreloadedKonqy( const QString &id_P )
             }
     }
 
-void KonqyPreloader::appRemoved( const QString& id )
+void KonqyPreloader::appChanged( const QString & /*id*/,  const QString &oldOwner, const QString &newOwner )
     {
-    unregisterPreloadedKonqy( id );
+    if ( oldOwner.isEmpty() || !newOwner.isEmpty() )
+        return;
+
+    unregisterPreloadedKonqy( oldOwner );
     }
 
 void KonqyPreloader::reconfigure()
