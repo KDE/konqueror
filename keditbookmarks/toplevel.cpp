@@ -343,7 +343,6 @@ SelcAbilities KEBApp::getSelectionAbilities() const
     if(sel.count())
     {
         nbk = mBookmarkListView->bookmarkForIndex(sel.first());
-        selctionAbilities.deleteEnabled = true;
         columnCount = mBookmarkListView->model()->columnCount();
     }
     else
@@ -356,7 +355,7 @@ SelcAbilities KEBApp::getSelectionAbilities() const
 
     if ( sel.count() > 0)
     {
-       
+        selctionAbilities.deleteEnabled = true;       
         selctionAbilities.itemSelected   = true;
         selctionAbilities.group          = nbk.isGroup();
         selctionAbilities.separator      = nbk.isSeparator();
@@ -435,7 +434,7 @@ KBookmark KEBApp::firstSelected() const
     if(list.count()) // selection in main listview, return bookmark for firstSelected
         return mBookmarkListView->bookmarkForIndex(*list.constBegin());
 
-    // no selection in main listview, fall back to selection in right tree
+    // no selection in main listview, fall back to selection in left tree
     const QModelIndexList & list2 = mBookmarkFolderView->selectionModel()->selectedIndexes();
     return mBookmarkFolderView->bookmarkForIndex(*list2.constBegin());
 }
@@ -514,17 +513,20 @@ KBookmark::List KEBApp::selectedBookmarks() const
 {
     KBookmark::List bookmarks;
     const QModelIndexList & list = mBookmarkListView->selectionModel()->selectedIndexes();
-    QModelIndexList::const_iterator it, end;
-    end = list.constEnd();
-    for( it = list.constBegin(); it != end; ++it)
-    {
-        if((*it).column() != 0)
-            continue;
-        KBookmark bk = mBookmarkListView->bookmarkModel()->bookmarkForIndex(*it);;
-        if(bk.address() != CurrentMgr::self()->root().address())
-            bookmarks.push_back( bk );
+    if (!list.isEmpty()) {
+      QModelIndexList::const_iterator it, end;
+      end = list.constEnd();
+      for( it = list.constBegin(); it != end; ++it) {
+	  if((*it).column() != 0)
+	      continue;
+	  KBookmark bk = mBookmarkListView->bookmarkModel()->bookmarkForIndex(*it);;
+	  if(bk.address() != CurrentMgr::self()->root().address())
+              bookmarks.push_back( bk );
+      }
+      qSort(bookmarks.begin(), bookmarks.end(), lessBookmark);
+    } else {
+        bookmarks.push_back(firstSelected());
     }
-    qSort(bookmarks.begin(), bookmarks.end(), lessBookmark);
 
     return bookmarks;
 }
