@@ -22,6 +22,7 @@
 #define MIMETYPEDATA_H
 
 #include <kmimetype.h>
+#include "filetypes-config.h"
 
 /**
  * This is a non-gui (data) class, that represents a mimetype.
@@ -54,8 +55,8 @@ public:
      * (see KMimeType::checkEssentialMimeTypes)
      */
     bool isEssential() const;
-    QString icon() const { return m_icon; }
-    //void setIcon(const QString& icon);
+    QString icon() const;
+    void setUserSpecifiedIcon(const QString& icon);
     QStringList patterns() const { return m_patterns; }
     void setPatterns(const QStringList &p);
     QStringList appServices() const;
@@ -119,7 +120,7 @@ private:
     bool m_isGroup:1;
     bool m_appServicesModified:1;
     bool m_embedServicesModified:1;
-    QString m_major, m_minor, m_comment, m_icon;
+    QString m_major, m_minor, m_comment, m_userSpecifiedIcon;
     QStringList m_patterns;
     mutable QStringList m_appServices;
     mutable QStringList m_embedServices;

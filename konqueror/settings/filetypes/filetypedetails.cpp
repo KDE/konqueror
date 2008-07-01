@@ -182,20 +182,20 @@ void FileTypeDetails::updateRemoveButton()
     removeExtButton->setEnabled(extensionLB->count()>0);
 }
 
-#if 0
 void FileTypeDetails::updateIcon(const QString &icon)
 {
+#if ENABLE_CHANGING_ICON
   if (!m_mimeTypeData)
     return;
 
-  m_mimeTypeData->setIcon(icon);
+  m_mimeTypeData->setUserSpecifiedIcon(icon);
 
   if (m_item)
       m_item->setIcon(icon);
 
   emit changed(true);
-}
 #endif
+}
 
 void FileTypeDetails::updateDescription(const QString &desc)
 {

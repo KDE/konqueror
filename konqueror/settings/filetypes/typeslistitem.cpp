@@ -56,15 +56,19 @@ void TypesListItem::paintCell(QPainter *painter, const QColorGroup & cg, int col
     if (parent() && !pixmap(0)) {
         // Load icon here instead of loading it in the constructor. This way
         // the user won't wait for icons he won't see.
-        setPixmap(0, KIconLoader::global()->loadMimeTypeIcon(m_mimetypeData.icon(), KIconLoader::Small));
+        loadIcon();
     }
     Q3ListViewItem::paintCell(painter, cg, column, width, align);
 }
 
-#if 0
 void TypesListItem::setIcon( const QString& icon )
 {
-    m_mimetypeData.setIcon(icon);
-    setPixmap( 0, SmallIcon( icon ) );
+    m_mimetypeData.setUserSpecifiedIcon(icon);
+    loadIcon();
 }
-#endif
+
+void TypesListItem::loadIcon()
+{
+    setPixmap(0, KIconLoader::global()->loadMimeTypeIcon(m_mimetypeData.icon(), KIconLoader::Small));
+}
+

@@ -21,6 +21,7 @@
 #define _FILETYPEDETAILS_H
 
 #include <QtGui/QTabWidget>
+#include "filetypes-config.h"
 class KIconButton;
 class MimeTypeData;
 class TypesListItem;
@@ -33,9 +34,6 @@ class QCheckBox;
 class QRadioButton;
 class QPushButton;
 class KServiceListWidget;
-
-// TODO enable once update-mime-database is fixed not to abort on <icon>
-#define ENABLE_CHANGING_ICON 0
 
 /**
  * This widget contains the right part of the file type configuration
@@ -69,7 +67,7 @@ Q_SIGNALS:
   void changed(bool);
 
 protected Q_SLOTS:
-    //void updateIcon(const QString &icon);
+  void updateIcon(const QString &icon);
   void updateDescription(const QString &desc);
   void addExtension();
   void removeExtension();
