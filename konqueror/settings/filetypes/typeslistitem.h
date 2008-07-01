@@ -47,7 +47,7 @@ public:
 
     ~TypesListItem();
 
-    //void setIcon( const QString& icon );
+    void setIcon( const QString& icon );
 
     QString name() const { return m_mimetypeData.name(); }
     const MimeTypeData& mimeTypeData() const { return m_mimetypeData; }
@@ -56,6 +56,8 @@ public:
     virtual void paintCell(QPainter *painter, const QColorGroup & cg, int column, int width, int align);
 
 private:
+    void loadIcon();
+
     MimeTypeData m_mimetypeData;
 };
 

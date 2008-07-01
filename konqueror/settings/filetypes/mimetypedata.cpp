@@ -83,7 +83,9 @@ MimeTypeData::MimeTypeData(const QString& mimeName, bool)
 void MimeTypeData::initFromKMimeType()
 {
     m_comment = m_mimetype->comment();
-    m_icon = m_mimetype->iconName();
+#if ENABLE_CHANGING_ICON
+    m_userSpecifiedIcon = m_mimetype->userSpecifiedIconName();
+#endif
     setPatterns(m_mimetype->patterns());
     m_autoEmbed = readAutoEmbed();
 }
@@ -149,12 +151,10 @@ bool MimeTypeData::isEssential() const
     return false;
 }
 
-#if 0
-void MimeTypeData::setIcon(const QString& icon)
+void MimeTypeData::setUserSpecifiedIcon(const QString& icon)
 {
-    m_icon = icon;
+    m_userSpecifiedIcon = icon;
 }
-#endif
 
 QStringList MimeTypeData::getAppOffers() const
 {
@@ -212,10 +212,12 @@ bool MimeTypeData::isMimeTypeDirty() const
         kDebug() << "Mimetype Comment Dirty: old=" << m_mimetype->comment() << "m_comment=" << m_comment;
         return true;
     }
-    if (m_mimetype->iconName() != m_icon) {
-        kDebug() << "Mimetype Icon Dirty: old=" << m_mimetype->iconName() << "m_icon=" << m_icon;
+#if ENABLE_CHANGING_ICON
+    if (m_mimetype->userSpecifiedIconName() != m_userSpecifiedIcon) {
+        kDebug() << "Mimetype Icon Dirty: old=" << m_mimetype->iconName() << "m_userSpecifiedIcon=" << m_userSpecifiedIcon;
         return true;
     }
+#endif
 
     QStringList storedPatterns = m_mimetype->patterns();
     storedPatterns.sort(); // see ctor
@@ -285,6 +287,11 @@ bool MimeTypeData::sync()
     if (isMimeTypeDirty()) {
         MimeTypeWriter mimeTypeWriter(name());
         mimeTypeWriter.setComment(m_comment);
+#if ENABLE_CHANGING_ICON
+        if (!m_userSpecifiedIcon.isEmpty()) {
+            mimeTypeWriter.setIconName(m_userSpecifiedIcon);
+        }
+#endif
         mimeTypeWriter.setPatterns(m_patterns);
         if (!mimeTypeWriter.write())
             return false;
@@ -385,7 +392,6 @@ void MimeTypeData::refresh()
         if (m_bNewItem) {
             kDebug() << "OK, created" << name();
             m_bNewItem = false; // if this was a new mimetype, we just created it
-            m_icon = m_mimetype->iconName();
         }
         if (!isMimeTypeDirty()) {
             // Update from ksycoca, in case something was changed from out of this kcm
@@ -454,4 +460,13 @@ void MimeTypeData::setEmbedServices(const QStringList &dsl)
 {
     m_embedServices = dsl;
     m_embedServicesModified = true;
+}
+
+QString MimeTypeData::icon() const
+{
+    if (!m_userSpecifiedIcon.isEmpty())
+        return m_userSpecifiedIcon;
+    if (m_mimetype)
+        return m_mimetype->iconName();
+    return QString();
 }
