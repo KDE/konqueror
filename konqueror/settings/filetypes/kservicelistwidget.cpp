@@ -283,64 +283,67 @@ void KServiceListWidget::addService()
 
 void KServiceListWidget::editService()
 {
-  if (!m_mimeTypeData)
-      return;
-  int selected = servicesLB->currentRow();
-  if ( selected >= 0 ) {
+    if (!m_mimeTypeData)
+        return;
+    const int selected = servicesLB->currentRow();
+    if (selected < 0)
+        return;
 
     // Only edit applications, not services as
     // they don't have any parameters
-    if ( m_kind == SERVICELIST_APPLICATIONS )
-    {
-      // Just like popping up an add dialog except that we
-      // pass the current command line as a default
-      QListWidgetItem *selItem = servicesLB->item(selected);
-
-      KService::Ptr service = KService::serviceByDesktopPath(
-          ((KServiceListItem*)selItem)->desktopPath );
-      if (!service)
+    if (m_kind != SERVICELIST_APPLICATIONS)
         return;
 
-      QString path = service->entryPath();
+    // Just like popping up an add dialog except that we
+    // pass the current command line as a default
+    KServiceListItem *selItem = (KServiceListItem*)servicesLB->item(selected);
+    const QString desktopPath = selItem->desktopPath;
 
-      // If the path to the desktop file is relative, try to get the full
-      // path from KStandardDirs.
-      path = KStandardDirs::locate("apps", path); // TODO use xdgdata-apps instead?
-      KFileItem item( KUrl(path), "application/x-desktop", KFileItem::Unknown );
-      KPropertiesDialog dlg( item, this );
-      if ( dlg.exec() != QDialog::Accepted )
+    KService::Ptr service = KService::serviceByDesktopPath(desktopPath);
+    if (!service)
         return;
 
-      // Reload service
-      service = KService::serviceByDesktopPath(
-          ((KServiceListItem*)selItem)->desktopPath );
-      if (!service)
+    QString path = service->entryPath();
+
+    // If the path to the desktop file is relative, try to get the full
+    // path from KStandardDirs.
+    path = KStandardDirs::locate("apps", path); // TODO use xdgdata-apps instead?
+
+    KFileItem item(KUrl(path), "application/x-desktop", KFileItem::Unknown);
+    KPropertiesDialog dlg(item, this);
+    if (dlg.exec() != QDialog::Accepted)
         return;
 
-      // Remove the old one...
-      delete servicesLB->takeItem( selected );
+    // Note that at this point, ksycoca has been updated,
+    // and setMimeTypeData has been called again, so all the items have been recreated.
 
-      // ...check that it's not a duplicate entry...
-      bool addIt = true;
-      for ( int index = 0; index < servicesLB->count(); index++ ) {
-        if (static_cast<KServiceListItem*>( servicesLB->item(index) )->desktopPath
-                == service->entryPath()) {
-          addIt = false;
-          break;
+    // Reload service
+    service = KService::serviceByDesktopPath(desktopPath);
+    if (!service)
+        return;
+
+    // Remove the old one...
+    delete servicesLB->takeItem(selected);
+
+    // ...check that it's not a duplicate entry...
+    bool addIt = true;
+    for (int index = 0; index < servicesLB->count(); index++) {
+        if (static_cast<KServiceListItem*>(servicesLB->item(index))->desktopPath
+            == service->entryPath()) {
+            addIt = false;
+            break;
         }
-      }
-
-      // ...and add it in the same place as the old one:
-      if ( addIt ) {
-        servicesLB->insertItem( selected , new KServiceListItem(service, m_kind) );
-        servicesLB->setCurrentRow(selected);
-      }
-
-      updatePreferredServices();
-
-      emit changed(true);
     }
-  }
+
+    // ...and add it in the same place as the old one:
+    if (addIt) {
+        servicesLB->insertItem(selected, new KServiceListItem(service, m_kind));
+        servicesLB->setCurrentRow(selected);
+    }
+
+    updatePreferredServices();
+
+    emit changed(true);
 }
 
 void KServiceListWidget::removeService()
