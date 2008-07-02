@@ -94,9 +94,6 @@ private Q_SLOTS:
      */
     void slotFillTemplates();
 
-    // Special case (filename conflict when creating a link=url file)
-    void slotRenamed( KIO::Job *, const KUrl&, const KUrl& );
-
 private:
     void newDir();
 
