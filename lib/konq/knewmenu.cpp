@@ -18,8 +18,8 @@
 */
 
 #include "knewmenu.h"
+#include "knewmenu_p.h"
 #include "konq_operations.h"
-#include <kio/fileundomanager.h>
 
 #include <QDir>
 #include <QVBoxLayout>
@@ -41,9 +41,11 @@
 #include <kio/copyjob.h>
 #include <kio/jobuidelegate.h>
 #include <kio/renamedialog.h>
+#include <kio/netaccess.h>
+#include <kio/fileundomanager.h>
 
 #include <kpropertiesdialog.h>
-#include "knewmenu_p.h"
+#include <ktemporaryfile.h>
 #include <utime.h>
 
 // For KUrlDesktopFileDlg
@@ -110,7 +112,6 @@ public:
         : menuItemsVersion(0)
     {}
     KActionCollection * m_actionCollection;
-    QString m_destPath;
     QWidget *m_parentWidget;
     KActionMenu *m_menuDev;
     QAction* m_newDirAction;
@@ -126,8 +127,8 @@ public:
     /**
      * True when a desktop file with Type=URL is being copied
      */
-    bool m_isURLDesktopFile;
-    KUrl m_linkURL; // the url to put in the file
+    bool m_isUrlDesktopFile;
+    QString m_tempFileToDelete; // set when a tempfile was created for a Type=URL desktop file
 
     /**
      * The action group that our actions belong to
@@ -449,7 +450,11 @@ void KNewMenu::slotActionTriggered(QAction* action)
         KMessageBox::sorry( 0L, i18n("<qt>The template file <b>%1</b> does not exist.</qt>", entry.templatePath));
         return;
     }
-    d->m_isURLDesktopFile = false;
+
+    // true when a desktop file with Type=URL is being copied
+    d->m_isUrlDesktopFile = false;
+    KUrl linkUrl; // the url to put in the file
+
     QString name;
     if ( KDesktopFile::isDesktopFile( entry.templatePath ) )
     {
@@ -457,15 +462,15 @@ void KNewMenu::slotActionTriggered(QAction* action)
         //kDebug(1203) <<  df.readType();
         if ( df.readType() == "Link" )
         {
-            d->m_isURLDesktopFile = true;
+            d->m_isUrlDesktopFile = true;
             // entry.comment contains i18n("Enter link to location (URL):"). JFYI :)
             KUrlDesktopFileDlg dlg( i18n("File name:"), entry.comment, d->m_parentWidget );
             // TODO dlg.setCaption( i18n( ... ) );
             if ( dlg.exec() )
             {
                 name = dlg.fileName();
-                d->m_linkURL = dlg.url();
-                if ( name.isEmpty() || d->m_linkURL.isEmpty() )
+                linkUrl = dlg.url();
+                if ( name.isEmpty() || linkUrl.isEmpty() )
                     return;
                 if ( !name.endsWith( ".desktop" ) )
                     name += ".desktop";
@@ -515,43 +520,56 @@ void KNewMenu::slotActionTriggered(QAction* action)
             return;
     }
 
+    QString src = entry.templatePath;
+
+    if (d->m_isUrlDesktopFile) {
+        // It's a "URL" desktop file; we need to make a temp copy of it, to modify it
+        // before copying it to the final destination [which could be a remote protocol]
+        KTemporaryFile tmpFile;
+        tmpFile.setAutoRemove(false); // done below
+        if (!tmpFile.open()) {
+            kError() << "Couldn't create temp file!";
+            return;
+        }
+        // First copy the template into the temp file
+        QFile file(src);
+        if (!file.open(QIODevice::ReadOnly)) {
+            kError() << "Couldn't open template" << src;
+            return;
+        }
+        const QByteArray data = file.readAll();
+        tmpFile.write(data);
+        const QString tempFileName = tmpFile.fileName();
+        Q_ASSERT(!tempFileName.isEmpty());
+        tmpFile.close();
+
+        KDesktopFile df(tempFileName);
+        KConfigGroup group = df.desktopGroup();
+        group.writeEntry("Icon", KProtocolInfo::icon(linkUrl.protocol()));
+        group.writePathEntry("URL", linkUrl.prettyUrl());
+        df.sync();
+        src = tempFileName;
+        d->m_tempFileToDelete = tempFileName;
+    }
+
     // The template is not a desktop file [or it's a URL one]
     // Copy it.
     KUrl::List::const_iterator it = d->popupFiles.begin();
-    QString src = entry.templatePath;
     for ( ; it != d->popupFiles.end(); ++it )
     {
         KUrl dest( *it );
         dest.addPath( KIO::encodeFileName(name) ); // Chosen destination file name
-        d->m_destPath = dest.path(); // will only be used if m_isURLDesktopFile and dest is local
 
-        KUrl uSrc;
-        uSrc.setPath( src );
+        KUrl uSrc(src);
         //kDebug(1203) << "KNewMenu : KIO::copyAs(" << uSrc.url() << "," << dest.url() << ")";
         KIO::CopyJob * job = KIO::copyAs( uSrc, dest );
         job->setDefaultPermissions( true );
         job->ui()->setWindow( d->m_parentWidget );
         connect( job, SIGNAL( result( KJob * ) ),
                 SLOT( slotResult( KJob * ) ) );
-        if ( d->m_isURLDesktopFile ) {
-            connect(job, SIGNAL(renamed(KIO::Job *, KUrl, KUrl)),
-                    SLOT(slotRenamed(KIO::Job *, KUrl, KUrl)));
-        }
         KUrl::List lst;
         lst.append(uSrc);
         KIO::FileUndoManager::self()->recordJob(KIO::FileUndoManager::Copy, lst, dest, job);
-    }
-}
-
-// Special case (filename conflict when creating a link=url file)
-// We need to update m_destURL
-void KNewMenu::slotRenamed( KIO::Job *, const KUrl& from , const KUrl& to )
-{
-    if ( from.isLocalFile() )
-    {
-        kDebug() << from << "->" << to << "(m_destPath=" << d->m_destPath << ")";
-        Q_ASSERT( from.path() == d->m_destPath );
-        d->m_destPath = to.path();
     }
 }
 
@@ -563,27 +581,16 @@ void KNewMenu::slotResult( KJob * job )
         // Was this a copy or a mkdir?
         KIO::CopyJob* copyJob = ::qobject_cast<KIO::CopyJob*>(job);
         if (copyJob) {
-            KUrl destUrl = copyJob->destUrl();
-            if ( destUrl.isLocalFile() ) {
-                if ( d->m_isURLDesktopFile )
-                {
-                    // destURL is the original destination for the new file.
-                    // But in case of a renaming (due to a conflict), the real path is in m_destPath
-                    kDebug(1203) << " destUrl=" << destUrl.path() << "d->m_destPath=" << d->m_destPath;
-                    KDesktopFile df( d->m_destPath );
-                    KConfigGroup group = df.desktopGroup();
-                    group.writeEntry( "Icon", KProtocolInfo::icon( d->m_linkURL.protocol() ) );
-                    group.writePathEntry( "URL", d->m_linkURL.prettyUrl() );
-                    df.sync();
-                }
-                else
-                {
-                    // Normal (local) file. Need to "touch" it, kio_file copied the mtime.
-                    (void) ::utime( QFile::encodeName( destUrl.path() ), 0 );
-                }
+            const KUrl destUrl = copyJob->destUrl();
+            const KUrl localUrl = KIO::NetAccess::mostLocalUrl(destUrl, d->m_parentWidget);
+            if (localUrl.isLocalFile()) {
+                // Normal (local) file. Need to "touch" it, kio_file copied the mtime.
+                (void) ::utime(QFile::encodeName(localUrl.path()), 0);
             }
         }
     }
+    if (!d->m_tempFileToDelete.isEmpty())
+        QFile::remove(d->m_tempFileToDelete);
 }
 
 void KNewMenu::setPopupFiles(const KUrl::List& files)
@@ -694,7 +701,7 @@ void KUrlDesktopFileDlg::slotURLTextChanged( const QString& )
         // (we copy only its filename if protocol supports listing,
         // but for HTTP we don't want tons of index.html links)
         KUrl url( m_urlRequester->url() );
-        if ( KProtocolManager::supportsListing( url ) )
+        if (KProtocolManager::supportsListing(url) && !url.fileName().isEmpty())
             m_leFileName->setText( url.fileName() );
         else
             m_leFileName->setText( url.url() );
