@@ -40,7 +40,18 @@ private Q_SLOTS:
         QVERIFY(view->part());
         QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 1000));
         QCOMPARE(view->serviceType(), QString("text/html"));
+        //KHTMLPart* part = qobject_cast<KHTMLPart *>(view->part());
+        //QVERIFY(part);
+    }
 
+    void loadDirectory() // #164495
+    {
+        KonqMainWindow mainWindow;
+        mainWindow.openUrl(0, KUrl(QDir::homePath()), "text/html");
+        KonqView* view = mainWindow.currentView();
+        QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 1000)); // error calls openUrlRequest
+        QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 1000)); // which then opens the right part
+        QCOMPARE(view->serviceType(), QString("inode/directory"));
     }
 
     void rightClickClose() // #149736
