@@ -1004,8 +1004,9 @@ void KonqMainWindow::openUrlRequestHelper( KonqView *childView, const KUrl &url,
 
   // Clicking on a link that points to the page itself (e.g. anchor)
   if ( !browserArgs.doPost() && !args.reload() &&
-          childView && urlcmp( url.url(), childView->url().url(),
-                               KUrl::CompareWithoutTrailingSlash | KUrl::CompareWithoutFragment ) )
+       childView && !childView->aborted() && // #164495
+       urlcmp( url.url(), childView->url().url(),
+               KUrl::CompareWithoutTrailingSlash | KUrl::CompareWithoutFragment ) )
   {
     QString serviceType = args.mimeType();
     if ( serviceType.isEmpty() )

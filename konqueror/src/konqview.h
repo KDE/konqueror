@@ -237,6 +237,12 @@ public:
    */
   void partDeleted() { m_pPart = 0L; }
 
+    /**
+     * Return true if the loading in the view was aborted due to an error
+     * or to user cancellation
+     */
+    bool aborted() const { return m_bAborted; }
+
   KParts::BrowserExtension *browserExtension() const;
 
   KParts::StatusBarExtension *statusBarExtension() const;
