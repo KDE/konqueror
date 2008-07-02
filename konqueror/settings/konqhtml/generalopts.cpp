@@ -10,10 +10,6 @@
 
 // Own
 #include "generalopts.h"
-#include <kdebug.h>
-#include <kconfig.h>
-#include <kstandarddirs.h>
-#include <kcombobox.h>
 
 // Qt
 #include <QtDBus/QDBusConnection>
@@ -24,7 +20,11 @@
 #include <QtGui/QLabel>
 
 // KDE
-#include <kapplication.h>
+#include <kcombobox.h>
+#include <kconfig.h>
+#include <kdebug.h>
+#include <kmimetype.h>
+#include <kstandarddirs.h>
 #include <kurlrequester.h>
 
 // Local
@@ -195,10 +195,19 @@ static void updateWebbrowsingProfile(const QString& homeUrl, StartPage startPage
     QString serviceName;
     switch(startPage) {
     case ShowHomePage:
+    {
         url = homeUrl;
-        serviceType = "text/html";
-        serviceName = "khtml";
-        break;
+        // Check if we can determine the mimetype of that URL; profile loading requires the mimetype to be known
+        // This handles the case of a local directory, at least.
+        KMimeType::Ptr mime = KMimeType::findByUrl(url);
+        if (mime && !mime->isDefault()) {
+            serviceType = mime->name();
+        } else {
+            serviceType = "text/html";
+            serviceName = "khtml";
+        }
+    }
+    break;
     case ShowAboutPage:
         url = "about:";
         serviceType = "KonqAboutPage";
