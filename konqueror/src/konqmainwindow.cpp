@@ -1351,16 +1351,13 @@ void KonqMainWindow::slotDuplicateWindow()
 {
   KTemporaryFile tempFile;
   tempFile.open();
-  m_pViewManager->saveViewProfileToFile(tempFile.fileName(), QString(), KonqFrameBase::saveURLs);
-
-  KonqMainWindow *mainWindow = new KonqMainWindow( KUrl(), xmlFile() );
-  mainWindow->viewManager()->loadViewProfileFromFile( tempFile.fileName(), m_pViewManager->currentProfile() );
-  if (mainWindow->currentView())
-  {
-      mainWindow->copyHistory( childFrame() );
-  }
-  mainWindow->activateChild();
-  mainWindow->show();
+  KConfig config( tempFile.fileName() );
+  KConfigGroup profileGroup( &config, "Profile" );
+  KonqFrameBase::Options flags = KonqFrameBase::saveURLs;
+  m_pViewManager->saveViewProfileToGroup(profileGroup, flags);
+  
+  KonqMainWindow *mainWindow = m_pViewManager->openSavedWindow(profileGroup);
+  mainWindow->copyHistory( childFrame() );
 #ifndef NDEBUG
   mainWindow->viewManager()->printFullHierarchy( this );
 #endif

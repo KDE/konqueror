@@ -337,7 +337,7 @@ void KonqViewManager::openClosedWindow(const KonqClosedWindowItem& closedWindowI
     openSavedWindow(closedWindowItem.configGroup());
 }
 
-void KonqViewManager::openSavedWindow(const KConfigGroup& configGroup)
+KonqMainWindow *KonqViewManager::openSavedWindow(const KConfigGroup& configGroup)
 {
     kDebug(1202) << "begin";
     const QString xmluiFile =
@@ -362,6 +362,7 @@ void KonqViewManager::openSavedWindow(const KConfigGroup& configGroup)
     mainWindow->activateChild();
     mainWindow->show();
     kDebug(1202) << "done";
+    return mainWindow;
 }
 
 
