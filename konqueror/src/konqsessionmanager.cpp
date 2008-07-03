@@ -79,15 +79,14 @@ KonqSessionManager::KonqSessionManager()
 
 KonqSessionManager::~KonqSessionManager()
 {
-    // Session correctly closed
-    QString file = KStandardDirs::locateLocal("appdata", m_autoSavedSessionConfig->name());
-    QFile::remove(file);
-    
-    delete m_autoSavedSessionConfig;
+    disableAutosave();
 }
 
 void KonqSessionManager::disableAutosave()
 {
+    if(!m_autosaveEnabled)
+        return;
+
     m_autosaveEnabled = false;
     m_autoSaveTimer.stop();
     QString file = KStandardDirs::locateLocal("appdata", m_autoSavedSessionConfig->name());
@@ -97,6 +96,9 @@ void KonqSessionManager::disableAutosave()
 
 void KonqSessionManager::enableAutosave()
 {
+    if(m_autosaveEnabled)
+        return;
+
     // Create the config file for autosaving current session
     QString filename = "autosave/" +
         encodeFilename(QDBusConnection::sessionBus().baseService());
