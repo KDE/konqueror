@@ -478,7 +478,7 @@ void KonqPopupMenuPrivate::slotPopupMimeType()
 
 void KonqPopupMenuPrivate::slotPopupProperties()
 {
-    KPropertiesDialog::showDialog(m_popupMenuInfo.items(), m_popupMenuInfo.parentWidget());
+    KPropertiesDialog::showDialog(m_popupMenuInfo.items(), m_popupMenuInfo.parentWidget(), false);
 }
 
 void KonqPopupMenuPrivate::addGroup(const QString& name)
