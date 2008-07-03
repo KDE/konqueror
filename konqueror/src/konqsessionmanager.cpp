@@ -73,7 +73,7 @@ KonqSessionManager::KonqSessionManager()
         connect( &m_autoSaveTimer, SIGNAL( timeout() ), this,
             SLOT( autoSaveSession() ) );
     }
-    
+    m_autosaveEnabled = false; // so that enableAutosave works
     enableAutosave();
 }
 
