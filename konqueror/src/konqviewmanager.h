@@ -300,7 +300,7 @@ public Q_SLOTS:
      * Opens a previously closed window in a new window
      */
     static void openClosedWindow(const KonqClosedWindowItem& closedTab);
-    static void openSavedWindow(const KConfigGroup& configGroup);
+    static KonqMainWindow *openSavedWindow(const KConfigGroup& configGroup);
 
 private Q_SLOTS:
   void emitActivePartChanged();
