@@ -284,7 +284,7 @@ public:
     static QSize readDefaultSize(const KConfigGroup& cfg, QWidget* window);
 
 #ifndef NDEBUG
-  void printFullHierarchy( KonqFrameContainerBase * container );
+  void printFullHierarchy();
 #endif
 
   void setLoading( KonqView *view, bool loading );
