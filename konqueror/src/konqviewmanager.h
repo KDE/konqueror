@@ -291,16 +291,23 @@ public:
 
   void showHTML(bool b);
 
-public Q_SLOTS:
+
     /**
-     * Opens a previously closed tab in a new tab
+     * Creates a copy of the current window
      */
-    void openClosedTab(const KonqClosedTabItem& closedTab);
+    KonqMainWindow* duplicateWindow();
+
     /**
      * Opens a previously closed window in a new window
      */
     static void openClosedWindow(const KonqClosedWindowItem& closedTab);
     static KonqMainWindow *openSavedWindow(const KConfigGroup& configGroup);
+
+public Q_SLOTS:
+    /**
+     * Opens a previously closed tab in a new tab
+     */
+    void openClosedTab(const KonqClosedTabItem& closedTab);
 
 private Q_SLOTS:
   void emitActivePartChanged();
@@ -344,7 +351,7 @@ private:
     void setCurrentProfile(const QString& profileFileName);
 
 signals:
-// the signal is only emitted when the contents of the view represented by 
+// the signal is only emitted when the contents of the view represented by
 // "tab" are going to be lost for good.
   void aboutToRemoveTab( KonqFrameBase* tab );
 

@@ -334,7 +334,7 @@ void KonqViewManager::breakOffTab( KonqFrameBase* currentFrame, const QSize& win
 
 void KonqViewManager::openClosedWindow(const KonqClosedWindowItem& closedWindowItem)
 {
-    openSavedWindow(closedWindowItem.configGroup());
+    openSavedWindow(closedWindowItem.configGroup())->show();
 }
 
 KonqMainWindow *KonqViewManager::openSavedWindow(const KConfigGroup& configGroup)
@@ -360,7 +360,6 @@ KonqMainWindow *KonqViewManager::openSavedWindow(const KConfigGroup& configGroup
     mainWindow->viewManager()->loadRootItem( configGroup, mainWindow->viewManager()->tabContainer(), KUrl(), true, KUrl() );
     mainWindow->applyMainWindowSettings( configGroup, true );
     mainWindow->activateChild();
-    mainWindow->show();
     kDebug(1202) << "done";
     return mainWindow;
 }
@@ -1529,6 +1528,23 @@ void KonqViewManager::createTabContainer(QWidget* parent, KonqFrameContainerBase
 void KonqViewManager::applyConfiguration()
 {
     tabContainer()->setAlwaysTabbedMode( KonqSettings::alwaysTabbedMode() );
+}
+
+KonqMainWindow* KonqViewManager::duplicateWindow()
+{
+    KTemporaryFile tempFile;
+    tempFile.open();
+    KConfig config( tempFile.fileName() );
+    KConfigGroup profileGroup( &config, "Profile" );
+    KonqFrameBase::Options flags = KonqFrameBase::saveURLs;
+    saveViewProfileToGroup(profileGroup, flags);
+
+    KonqMainWindow *mainWindow = openSavedWindow(profileGroup);
+    mainWindow->copyHistory( m_pMainWindow->childFrame() );
+#ifndef NDEBUG
+    mainWindow->viewManager()->printFullHierarchy( m_pMainWindow );
+#endif
+    return mainWindow;
 }
 
 #include "konqviewmanager.moc"

@@ -1349,18 +1349,7 @@ void KonqMainWindow::slotNewWindow()
 
 void KonqMainWindow::slotDuplicateWindow()
 {
-  KTemporaryFile tempFile;
-  tempFile.open();
-  KConfig config( tempFile.fileName() );
-  KConfigGroup profileGroup( &config, "Profile" );
-  KonqFrameBase::Options flags = KonqFrameBase::saveURLs;
-  m_pViewManager->saveViewProfileToGroup(profileGroup, flags);
-  
-  KonqMainWindow *mainWindow = m_pViewManager->openSavedWindow(profileGroup);
-  mainWindow->copyHistory( childFrame() );
-#ifndef NDEBUG
-  mainWindow->viewManager()->printFullHierarchy( this );
-#endif
+    m_pViewManager->duplicateWindow();
 }
 
 void KonqMainWindow::slotSendURL()

@@ -314,6 +314,19 @@ void ViewMgrTest::testDuplicateSplittedTab()
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, one tab
 }
 
+void ViewMgrTest::testDuplicateWindow()
+{
+    KonqMainWindow mainWindow;
+    mainWindow.openUrl(0, KUrl("data:text/html, <p>Hello World</p>"), "text/html");
+    KonqViewManager* viewManager = mainWindow.viewManager();
+    KonqView* viewTab2 = viewManager->addTab("text/html");
+    KonqView* splitted = viewManager->splitView( viewTab2, Qt::Horizontal );
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[FC(FF)].") ); // mainWindow, tab widget, first tab = one frame, second tab = splitter with two frames
+    KonqMainWindow* secondWindow = viewManager->duplicateWindow();
+    QCOMPARE( DebugFrameVisitor::inspect(secondWindow), QString("MT[FC(FF)].") ); // mainWindow, tab widget, first tab = one frame, second tab = splitter with two frames
+    delete secondWindow;
+}
+
 // Like in http://bugs.kde.org/show_bug.cgi?id=153533,
 // where the part deletes itself.
 void ViewMgrTest::testDeletePartInTab()
