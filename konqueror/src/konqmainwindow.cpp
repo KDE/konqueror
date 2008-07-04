@@ -2604,7 +2604,7 @@ void KonqMainWindow::slotDumpDebugInfo()
 {
 #ifndef NDEBUG
   dumpViewList();
-  m_pViewManager->printFullHierarchy( 0 );
+  m_pViewManager->printFullHierarchy();
 #endif
 }
 

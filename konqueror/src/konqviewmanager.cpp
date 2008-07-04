@@ -105,7 +105,7 @@ KonqView* KonqViewManager::splitView( KonqView* currentView,
 #ifdef DEBUG_VIEWMGR
   kDebug(1202);
   m_pMainWindow->dumpViewList();
-  printFullHierarchy( m_pMainWindow );
+  printFullHierarchy();
 #endif
 
   KonqFrame* splitFrame = currentView->frame();
@@ -152,7 +152,7 @@ KonqView* KonqViewManager::splitView( KonqView* currentView,
 
 #ifdef DEBUG_VIEWMGR
   m_pMainWindow->dumpViewList();
-  printFullHierarchy( m_pMainWindow );
+  printFullHierarchy();
   kDebug(1202) << "done";
 #endif
 
@@ -196,7 +196,7 @@ KonqView* KonqViewManager::splitMainContainer( KonqView* currentView,
 
 #ifdef DEBUG_VIEWMGR
     m_pMainWindow->dumpViewList();
-    printFullHierarchy( m_pMainWindow );
+    printFullHierarchy();
     kDebug(1202) << "done";
 #endif
 
@@ -208,7 +208,7 @@ KonqView* KonqViewManager::addTab(const QString &serviceType, const QString &ser
 #ifdef DEBUG_VIEWMGR
   kDebug(1202) << "------------- KonqViewManager::addTab starting -------------";
   m_pMainWindow->dumpViewList();
-  printFullHierarchy( m_pMainWindow );
+  printFullHierarchy();
 #endif
 
   KService::Ptr service;
@@ -225,7 +225,7 @@ KonqView* KonqViewManager::addTab(const QString &serviceType, const QString &ser
 
 #ifdef DEBUG_VIEWMGR
   m_pMainWindow->dumpViewList();
-  printFullHierarchy( m_pMainWindow );
+  printFullHierarchy();
   kDebug(1202) << "------------- KonqViewManager::addTab done -------------";
 #endif
 
@@ -260,7 +260,7 @@ void KonqViewManager::duplicateTab( KonqFrameBase* currentFrame, bool openAfterC
 #ifdef DEBUG_VIEWMGR
   kDebug(1202) << currentFrame;
   m_pMainWindow->dumpViewList();
-  printFullHierarchy( m_pMainWindow );
+  printFullHierarchy();
 #endif
 
   KTemporaryFile tempFile;
@@ -287,7 +287,7 @@ void KonqViewManager::duplicateTab( KonqFrameBase* currentFrame, bool openAfterC
 
 #ifdef DEBUG_VIEWMGR
   m_pMainWindow->dumpViewList();
-  printFullHierarchy( m_pMainWindow );
+  printFullHierarchy();
 #endif
 }
 
@@ -296,7 +296,7 @@ void KonqViewManager::breakOffTab( KonqFrameBase* currentFrame, const QSize& win
 #ifdef DEBUG_VIEWMGR
   kDebug(1202) << currentFrame;
   m_pMainWindow->dumpViewList();
-  printFullHierarchy( m_pMainWindow );
+  printFullHierarchy();
 #endif
 
   KTemporaryFile tempFile;
@@ -328,7 +328,7 @@ void KonqViewManager::breakOffTab( KonqFrameBase* currentFrame, const QSize& win
 
 #ifdef DEBUG_VIEWMGR
   m_pMainWindow->dumpViewList();
-  printFullHierarchy( m_pMainWindow );
+  printFullHierarchy();
 #endif
 }
 
@@ -370,7 +370,7 @@ void KonqViewManager::removeTab( KonqFrameBase* currentFrame, bool emitAboutToRe
 #ifdef DEBUG_VIEWMGR
   kDebug(1202) << currentFrame;
   m_pMainWindow->dumpViewList();
-  printFullHierarchy( m_pMainWindow );
+  printFullHierarchy();
 #endif
 
   if ( m_tabContainer->count() == 1 )
@@ -399,7 +399,7 @@ void KonqViewManager::removeTab( KonqFrameBase* currentFrame, bool emitAboutToRe
 
 #ifdef DEBUG_VIEWMGR
   m_pMainWindow->dumpViewList();
-  printFullHierarchy( m_pMainWindow );
+  printFullHierarchy();
 #endif
 }
 
@@ -508,7 +508,7 @@ void KonqViewManager::removeView( KonqView *view )
 #ifdef DEBUG_VIEWMGR
   kDebug(1202) << view;
   m_pMainWindow->dumpViewList();
-  printFullHierarchy( m_pMainWindow );
+  printFullHierarchy();
 #endif
 
   if (!view)
@@ -561,7 +561,7 @@ void KonqViewManager::removeView( KonqView *view )
     kDebug(1202) << "Unrecognized frame type, not removing.";
 
 #ifdef DEBUG_VIEWMGR
-  printFullHierarchy( m_pMainWindow );
+  printFullHierarchy();
   m_pMainWindow->dumpViewList();
 
   kDebug(1202) << "done";
@@ -882,7 +882,7 @@ void KonqViewManager::loadViewProfileFromConfig(const KSharedConfigPtr& _cfg,
     setCurrentProfile(filename);
 
 #ifdef DEBUG_VIEWMGR
-    printFullHierarchy(m_pMainWindow);
+    printFullHierarchy();
 #endif
 }
 
@@ -1492,16 +1492,11 @@ private:
     QString m_spaces;
 };
 
-void KonqViewManager::printFullHierarchy( KonqFrameContainerBase * container )
+void KonqViewManager::printFullHierarchy()
 {
     kDebug(1202) << "currentView=" << m_pMainWindow->currentView();
-
     KonqDebugFrameVisitor visitor;
-
-    if (container)
-        container->accept( &visitor );
-    else
-        m_pMainWindow->accept( &visitor );
+    m_pMainWindow->accept( &visitor );
 }
 #endif
 
@@ -1542,7 +1537,7 @@ KonqMainWindow* KonqViewManager::duplicateWindow()
     KonqMainWindow *mainWindow = openSavedWindow(profileGroup);
     mainWindow->copyHistory( m_pMainWindow->childFrame() );
 #ifndef NDEBUG
-    mainWindow->viewManager()->printFullHierarchy( m_pMainWindow );
+    mainWindow->viewManager()->printFullHierarchy();
 #endif
     return mainWindow;
 }
