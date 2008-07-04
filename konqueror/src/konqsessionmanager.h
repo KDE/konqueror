@@ -134,13 +134,4 @@ private Q_SLOTS:// connected to DBUS signals
     void slotSaveCurrentSession( const QString& path );
 };
 
-/**
- * These are some helper functions to encode/decode session filenames. The 
- * problem here is that windows doesn't like files with ':' inside.
- */
-
-QString encodeFilename(QString filename);
-
-QString decodeFilename(QString filename);
-
 #endif /* KONQSESSIONMANAGER_H */
