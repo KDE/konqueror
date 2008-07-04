@@ -54,6 +54,15 @@ public:
     KonqSessionManager instance;
 };
 
+/**
+ * These are some helper functions to encode/decode session filenames. The 
+ * problem here is that windows doesn't like files with ':' inside.
+ */
+
+static QString encodeFilename(QString filename);
+
+static QString decodeFilename(QString filename);
+
 K_GLOBAL_STATIC(KonqSessionManagerPrivate, myKonqSessionManagerPrivate)
 
 KonqSessionManager::KonqSessionManager()
@@ -332,12 +341,12 @@ bool KonqSessionManager::askUserToRestoreAutosavedAbandonedSessions()
 
 QString encodeFilename(QString filename)
 {
-    return filename.replace(':', "_");
+    return filename.replace(':', '_');
 }
 
 QString decodeFilename(QString filename)
 {
-    return filename.replace('_', ":");
+    return filename.replace('_', ':');
 }
 
 #include "konqsessionmanager.moc"
