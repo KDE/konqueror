@@ -118,8 +118,7 @@ KonqMainWindow * KonqMisc::createBrowserWindowFromProfile( const QString& _path,
 
   KonqMainWindow * mainWindow;
   // Ask the user to recover session if appliable
-  if(KonqSessionManager::self()->hasAutosavedDirtySessions() &&
-    KonqSessionManager::self()->askUserToRestoreAutosavedDirtySessions())
+  if(KonqSessionManager::self()->askUserToRestoreAutosavedAbandonedSessions())
   {
       QList<KonqMainWindow*> *mainWindowList = KonqMainWindow::mainWindowList();
       if(mainWindowList && !mainWindowList->isEmpty())

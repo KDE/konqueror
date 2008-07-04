@@ -34,6 +34,8 @@
 #include <khbox.h>
 #include <klocale.h>
 #include <kmessagebox.h>
+#include <kurl.h>
+#include <kio/netaccess.h>
 
 #include <QPushButton>
 #include <QtCore/QFileInfo>
@@ -41,6 +43,7 @@
 #include <QtDBus/QtDBus>
 #include <QtAlgorithms>
 #include <QDirIterator>
+#include <QtCore/QDir>
 #include <QDBusArgument>
 #include <QFile>
 #include <QSize>
@@ -54,6 +57,7 @@ public:
 K_GLOBAL_STATIC(KonqSessionManagerPrivate, myKonqSessionManagerPrivate)
 
 KonqSessionManager::KonqSessionManager()
+    : m_autosaveDir(KStandardDirs::locateLocal("appdata", "autosave"))
 {
     // Initialize dbus interfaces
     new KonqSessionManagerAdaptor ( this );
@@ -63,6 +67,7 @@ KonqSessionManager::KonqSessionManager()
     
     QDBusConnection dbus = QDBusConnection::sessionBus();
     dbus.registerObject( dbusPath, this );
+    m_baseService = encodeFilename(dbus.baseService());
     dbus.connect(QString(), dbusPath, dbusInterface, "saveCurrentSession", this, SLOT(slotSaveCurrentSession(QString)));
 
     // Initialize the timer
@@ -80,6 +85,7 @@ KonqSessionManager::KonqSessionManager()
 KonqSessionManager::~KonqSessionManager()
 {
     disableAutosave();
+    deleteOwnedSessions(); // we closed normally
 }
 
 void KonqSessionManager::disableAutosave()
@@ -89,7 +95,8 @@ void KonqSessionManager::disableAutosave()
 
     m_autosaveEnabled = false;
     m_autoSaveTimer.stop();
-    QString file = KStandardDirs::locateLocal("appdata", m_autoSavedSessionConfig->name());
+    QString file = KStandardDirs::locateLocal("appdata", 
+        m_autoSavedSessionConfig->name());
     QFile::remove(file);
     delete m_autoSavedSessionConfig;
 }
@@ -100,12 +107,12 @@ void KonqSessionManager::enableAutosave()
         return;
 
     // Create the config file for autosaving current session
-    QString filename = "autosave/" +
-        encodeFilename(QDBusConnection::sessionBus().baseService());
+    QString filename = "autosave/" + m_baseService;
     QString file = KStandardDirs::locateLocal("appdata", filename);
     QFile::remove(file);
     
-    m_autoSavedSessionConfig = new KConfig(filename, KConfig::SimpleConfig, "appdata");
+    m_autoSavedSessionConfig = new KConfig(filename, KConfig::SimpleConfig,
+        "appdata");
     m_autosaveEnabled = true;
     m_autoSaveTimer.start();
 }
@@ -114,6 +121,16 @@ KonqSessionManager* KonqSessionManager::self()
 {
     return &myKonqSessionManagerPrivate->instance;
 }
+
+void KonqSessionManager::deleteOwnedSessions()
+{
+    // Not dealing with the sessions about to remove anymore
+    QDir dir(dirForMyOwnedSessionFiles());
+    
+    if(dir.exists())
+        KIO::NetAccess::del(KUrl(dir.path()), NULL);
+}
+
 
 void KonqSessionManager::autoSaveSession()
 {
@@ -126,15 +143,9 @@ void KonqSessionManager::autoSaveSession()
     
     saveCurrentSession(m_autoSavedSessionConfig);
     
-    // Now that we have saved current session it's safe to remove previous one
-    if(!m_SessionsAboutToRemove.isEmpty())
-    {
-        foreach ( const QString& sessionFileName, m_SessionsAboutToRemove )
-        {
-            QFile::remove(sessionFileName);
-        }
-        m_SessionsAboutToRemove.clear();
-    }
+    // Now that we have saved current session it's safe to remove our owned_by
+    // directory
+    deleteOwnedSessions();
     
     if(isActive)
         m_autoSaveTimer.start();
@@ -147,8 +158,7 @@ void KonqSessionManager::saveCurrentSessions(const QString & path)
 
 void KonqSessionManager::slotSaveCurrentSession(const QString & path)
 {
-    QString filename = path + "/" + 
-        encodeFilename(QDBusConnection::sessionBus().baseService());
+    QString filename = path + "/" + m_baseService;
     
     KConfig sessionConfig(filename, KConfig::SimpleConfig, "appdata");
     saveCurrentSession(&sessionConfig);
@@ -174,17 +184,78 @@ void KonqSessionManager::saveCurrentSession(KConfig* sessionConfig)
     sessionConfig->sync();
 }
 
-void KonqSessionManager::restoreSessions()
+bool KonqSessionManager::takeSessionsOwnership()
 {
-    m_SessionsAboutToRemove = m_DirtyAutosavedSessions;
-    restoreSessions(m_DirtyAutosavedSessions);
+    bool found = false;
+    // Tell to other konqueror instances that we are the one dealing with
+    // these sessions
+    QDir dir(dirForMyOwnedSessionFiles());
+    QDir parentDir(m_autosaveDir);
+    
+    if(!dir.exists())
+        parentDir.mkdir("owned_by" + m_baseService);
+
+    QDirIterator it(m_autosaveDir, QDir::Writable|QDir::Files|QDir::Dirs|
+        QDir::NoDotAndDotDot);
+    
+    QDBusConnectionInterface *idbus = QDBusConnection::sessionBus().interface();
+    
+    while (it.hasNext())
+    {
+        it.next();
+        // this is the case where another konq started to restore that session, 
+        // but crashed immediately. So we try to restore that session again
+        if(it.fileInfo().isDir())
+        {
+            // The remove() removes the "owned_by" part
+            if(!idbus->isServiceRegistered(
+                decodeFilename(it.fileName().remove(0, 8))))
+            {
+                QDirIterator it2(it.filePath(), QDir::Writable|QDir::Files);
+                while (it2.hasNext())
+                {
+                    found = true;
+                    it2.next();
+                    // take ownership of the abandoned file
+                    QFile::rename(it2.filePath(), dirForMyOwnedSessionFiles() +
+                        "/" + it2.fileName());
+                }
+                // Remove the old directory
+                KIO::NetAccess::del(KUrl(it.filePath()), NULL);
+            }
+        } else { // it's a file
+            if(!idbus->isServiceRegistered(decodeFilename(it.fileName())))
+            {
+                // and it's abandoned: take its ownership
+                QFile::rename(it.filePath(), dirForMyOwnedSessionFiles() + "/" + 
+                    it.fileName());
+                found = true;
+            }
+        }
+    }
+    
+    return found;
 }
 
-void KonqSessionManager::restoreSessions(const QStringList &sessionFileNamesList)
+
+void KonqSessionManager::restoreSessions()
 {
-    foreach ( const QString& sessionFileName, sessionFileNamesList )
+    QStringList ownedSessions;
+    QDirIterator it(dirForMyOwnedSessionFiles(), QDir::Writable|QDir::Files);
+    
+    while (it.hasNext())
     {
-        restoreSession(sessionFileName);
+        it.next();
+        ownedSessions.append(it.filePath());
+    }
+    restoreSessions(ownedSessions);
+}
+
+void KonqSessionManager::restoreSessions(const QStringList &sessionFilePathsList)
+{
+    foreach ( const QString& sessionFilePath, sessionFilePathsList )
+    {
+        restoreSession(sessionFilePath);
     }
 }
 
@@ -198,13 +269,13 @@ void KonqSessionManager::restoreSessions(const QString &sessionsDir)
         restoreSession(fi.filePath());
     }
 }
-void KonqSessionManager::restoreSession(const QString &sessionFileName)
+void KonqSessionManager::restoreSession(const QString &sessionFilePath)
 {
-    QString file(sessionFileName);
+    QString file(sessionFilePath);
     if(!QFile::exists(file))
         return;
     
-    KConfig config(sessionFileName, KConfig::SimpleConfig);
+    KConfig config(sessionFilePath, KConfig::SimpleConfig);
     
     KConfigGroup generalGroup(&config, "General");
     int size = generalGroup.readEntry("Number of Windows", 0);
@@ -216,38 +287,13 @@ void KonqSessionManager::restoreSession(const QString &sessionFileName)
     }
 }
 
-void KonqSessionManager::doNotRestoreSessions()
-{
-    foreach ( const QString& sessionFileName, m_DirtyAutosavedSessions )
-    {
-        QFile::remove(sessionFileName);
-    }
-    m_DirtyAutosavedSessions.clear();
-}
 
-bool KonqSessionManager::hasAutosavedDirtySessions()
+bool KonqSessionManager::askUserToRestoreAutosavedAbandonedSessions()
 {
-    QString dir= KStandardDirs::locateLocal("appdata", "autosave/");
-    QDirIterator it(dir, QDir::Writable|QDir::Files);
-    
-    m_DirtyAutosavedSessions.clear();
-    QDBusConnectionInterface *idbus = QDBusConnection::sessionBus().interface();
-    
-    while (it.hasNext())
-    {
-        QFileInfo fileInfo(it.next());
-        
-        if(!idbus->isServiceRegistered(decodeFilename(fileInfo.fileName())))
-            m_DirtyAutosavedSessions.append(fileInfo.filePath());
-    }
-    
-    return !m_DirtyAutosavedSessions.empty();
-}
-
-bool KonqSessionManager::askUserToRestoreAutosavedDirtySessions()
-{
-    if(m_DirtyAutosavedSessions.empty())
+    if(!takeSessionsOwnership())
         return false;
+
+    disableAutosave();
     
     switch(KMessageBox::questionYesNoCancel(0,
         i18n("Konqueror didn't close correctly. Would you like to restore session?"),
@@ -260,11 +306,26 @@ bool KonqSessionManager::askUserToRestoreAutosavedDirtySessions()
     {
         case KMessageBox::Yes:
             restoreSessions();
+            enableAutosave();
             return true;
         case KMessageBox::No:
-            doNotRestoreSessions();
+            deleteOwnedSessions();
+            enableAutosave();
             return false;
         default:
+            // Remove the ownership of the currently owned files
+            QDirIterator it(dirForMyOwnedSessionFiles(),
+                QDir::Writable|QDir::Files);
+            
+            while (it.hasNext())
+            {
+                it.next();
+                // remove ownership of the abandoned file
+                QFile::rename(it.filePath(), m_autosaveDir + "/" + it.fileName());
+            }
+            // Remove the owned_by directory
+            KIO::NetAccess::del(KUrl(dirForMyOwnedSessionFiles()), NULL);            
+            enableAutosave();
             return false;
     }
 }

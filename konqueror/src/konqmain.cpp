@@ -80,8 +80,7 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
 
   if ( app.isSessionRestored() )
   {
-    if(KonqSessionManager::self()->hasAutosavedDirtySessions())
-      KonqSessionManager::self()->askUserToRestoreAutosavedDirtySessions();
+    KonqSessionManager::self()->askUserToRestoreAutosavedAbandonedSessions();
 
     int n = 1;
     while ( KonqMainWindow::canBeRestored( n ) )
@@ -179,8 +178,8 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
              KUrl::List urlList;
              KonqMainWindow * mainwin = 0L;
 
-             if(args->count() > 0 && KonqSessionManager::self()->hasAutosavedDirtySessions())
-                KonqSessionManager::self()->askUserToRestoreAutosavedDirtySessions();
+             if(args->count() > 0)
+                KonqSessionManager::self()->askUserToRestoreAutosavedAbandonedSessions();
 
              QList<KonqMainWindow*> *mainWindowList = KonqMainWindow::mainWindowList();
              if(mainWindowList && !mainWindowList->isEmpty())
