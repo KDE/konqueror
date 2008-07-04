@@ -42,16 +42,11 @@ public:
     friend class KonqSessionManagerPrivate;
     
     static KonqSessionManager *self();
-
-    /**
-     * Find out if there is any session that hasn't been cleanly closed.
-     */
-    bool hasAutosavedDirtySessions();
     
     /**
      * Restore saved session(s).
      */
-    void restoreSessions(const QStringList &sessionFileNamesList);
+    void restoreSessions(const QStringList &sessionFilePathsList);
     
     /**
      * Restore saved session(s) given a directory.
@@ -61,7 +56,7 @@ public:
     /**
      * Restore saved session.
      */
-    void restoreSession(const QString &sessionFileName);
+    void restoreSession(const QString &sessionFilePath);
     
     /**
      * Disable the autosave feature. It's called when a konqueror instance is
@@ -79,7 +74,7 @@ public Q_SLOTS:
     /**
      * Ask the user with a KPassivePopup ballon if session should be restored
      */
-    bool askUserToRestoreAutosavedDirtySessions();
+    bool askUserToRestoreAutosavedAbandonedSessions();
     
     /**
      * Saves current session.
@@ -89,14 +84,9 @@ public Q_SLOTS:
     void autoSaveSession();
     
     /**
-     * Restore saved sessions
+     * Restore owned sessions
      */
     void restoreSessions();
-    
-    /**
-     * Do not restore sessions and remove the restorable saved sessions.
-     */
-    void doNotRestoreSessions();
     
     /**
      * Save current session in a custom KConfig
@@ -112,11 +102,26 @@ private:
     KonqSessionManager();
     
     ~KonqSessionManager();
+    
+    /**
+     * Creates the owned_by directory with files inside referencing the owned
+     * sessions and returns if there was any file to own/restore.
+     */
+    bool takeSessionsOwnership();
 
+    /**
+     * Removes the owned_by directory and all its files inside (which were 
+     * referencing the owned sessions).
+     */
+    void deleteOwnedSessions();
+    
+    QString dirForMyOwnedSessionFiles() const {
+        return m_autosaveDir + "/owned_by" + m_baseService;
+    }
 private:
     QTimer m_autoSaveTimer;
-    QStringList m_DirtyAutosavedSessions;
-    QStringList m_SessionsAboutToRemove;
+    QString m_autosaveDir;
+    QString m_baseService;
     KConfig *m_autoSavedSessionConfig;
     bool m_autosaveEnabled;
 Q_SIGNALS: // DBUS signals

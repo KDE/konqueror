@@ -31,6 +31,7 @@
 
 #include <kdebug.h>
 #include <kurl.h>
+#include <kio/copyjob.h>
 #include <kio/netaccess.h>
 #include <kio/renamedialog.h>
 #include <kfileitemdelegate.h>
@@ -176,8 +177,10 @@ void KonqSessionDlg::slotRename(KUrl dirpathTo)
         QDir dir(dirpathTo.path());
         if(dir.exists())
             slotRename(dirpathTo);
-        else
-            KIO::NetAccess::move(dirpathFrom, dlg.newDestUrl(), d->m_pParent);
+        else {
+            QDir dir(KStandardDirs::locateLocal("appdata", "sessions/"));
+            dir.rename(dirpathFrom.fileName(), dlg.newDestUrl().fileName());
+        }
     } 
 }
 
