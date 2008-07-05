@@ -297,13 +297,14 @@ public:
      */
     KonqMainWindow* duplicateWindow();
 
+    static KonqMainWindow *openSavedWindow(const KConfigGroup& configGroup);
+
+public Q_SLOTS:
     /**
      * Opens a previously closed window in a new window
      */
     static void openClosedWindow(const KonqClosedWindowItem& closedTab);
-    static KonqMainWindow *openSavedWindow(const KConfigGroup& configGroup);
-
-public Q_SLOTS:
+    
     /**
      * Opens a previously closed tab in a new tab
      */
