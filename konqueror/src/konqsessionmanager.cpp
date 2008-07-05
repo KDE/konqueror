@@ -137,7 +137,18 @@ void KonqSessionManager::deleteOwnedSessions()
     QDir dir(dirForMyOwnedSessionFiles());
 
     if(dir.exists())
-        KIO::NetAccess::del(KUrl(dir.path()), NULL);
+    {
+        QDirIterator it(dirForMyOwnedSessionFiles(), QDir::Writable|QDir::Files);
+        while (it.hasNext())
+        {
+            it.next();
+            // take ownership of the abandoned file
+            dir.remove(it.fileName());
+        }
+        QDir dirUp = dir;
+        dirUp.cdUp();
+        dirUp.rmdir(dir.dirName());
+    }
 }
 
 
