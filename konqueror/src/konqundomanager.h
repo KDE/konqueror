@@ -239,6 +239,13 @@ public Q_SLOTS: // DBUS methods
      * them from disk.
      */
     void pong();
+    
+    /**
+     * Needed for asynchronous QDBus calls
+     */
+    void dbusReturnFunction(QDBusMessage) {}
+    void dbusErrorFunction(QDBusError) {}
+    
 
 private Q_SLOTS:// connected to DBUS signals
     void slotNotifyClosedWindowItem( const QString& title, const int& numTabs,

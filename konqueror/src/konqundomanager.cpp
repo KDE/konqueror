@@ -558,7 +558,13 @@ void KonqClosedWindowsManager::emitPong(const QString & service)
     if(!interface.isValid())
         return;
 
-    interface.pong();
+    // We call to pong() DBUS function asynchronously because otherwise
+    // launching 2 or more konqueror instances at the same time would make it
+    // freeze for ~40:
+    QList<QVariant> args;
+    interface.callWithCallback("pong", args, this,
+        SLOT(dbusReturnFunction(QDBusMessage)),
+        SLOT(dbusErrorFunction(QDBusError)));
 }
 
 void KonqClosedWindowsManager::localClosedWindowItems(
@@ -576,7 +582,6 @@ void KonqClosedWindowsManager::localClosedWindowItems(
         slotNotifyClosedWindowItem(title, numTabs, configFileName, configGroup,
             service);
     }
-
 }
 
 void KonqClosedWindowsManager::pong()
