@@ -56,6 +56,15 @@ public:
     {
     }
 
+    ~KonqSessionManagerPrivate()
+    {
+        if (instance)
+        {
+            instance->disableAutosave();
+            instance->deleteOwnedSessions(); // we closed normally
+        }
+    }
+
     KonqSessionManager *instance;
 };
 
@@ -98,8 +107,6 @@ KonqSessionManager::KonqSessionManager()
 
 KonqSessionManager::~KonqSessionManager()
 {
-    disableAutosave();
-    deleteOwnedSessions(); // we closed normally
 }
 
 void KonqSessionManager::disableAutosave()
