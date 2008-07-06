@@ -153,20 +153,7 @@ void KonqSessionManager::deleteOwnedSessions()
 
     if(dir.exists())
     {
-        // This doesn't crash anymore if you want to add it back. I fixed the problem,
-        // and was because the object was created before the application instance.
-        // KIO::NetAccess::del(KUrl(dir.path()), NULL);
-
-        QDirIterator it(dirForMyOwnedSessionFiles(), QDir::Writable|QDir::Files);
-        while (it.hasNext())
-        {
-            it.next();
-            // take ownership of the abandoned file
-            dir.remove(it.fileName());
-        }
-        QDir dirUp = dir;
-        dirUp.cdUp();
-        dirUp.rmdir(dir.dirName());
+        KIO::NetAccess::del(KUrl(dir.path()), NULL);
     }
 }
 
