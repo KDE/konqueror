@@ -51,7 +51,12 @@
 class KonqSessionManagerPrivate
 {
 public:
-    KonqSessionManager instance;
+    KonqSessionManagerPrivate()
+        : instance(0)
+    {
+    }
+
+    KonqSessionManager *instance;
 };
 
 /**
@@ -128,7 +133,10 @@ void KonqSessionManager::enableAutosave()
 
 KonqSessionManager* KonqSessionManager::self()
 {
-    return &myKonqSessionManagerPrivate->instance;
+    if (!myKonqSessionManagerPrivate->instance)
+        myKonqSessionManagerPrivate->instance = new KonqSessionManager();
+
+    return myKonqSessionManagerPrivate->instance;
 }
 
 void KonqSessionManager::deleteOwnedSessions()
