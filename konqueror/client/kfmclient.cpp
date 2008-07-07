@@ -209,10 +209,12 @@ static bool startNewKonqueror( QString url, QString mimetype, const QString& pro
 	if( urls.count() != 1 )
 	    return true;
 	url = urls.first();
-	mimetype = QLatin1String( "" );
+	mimetype = QString();
     }
-    if( mimetype.isEmpty())
-	mimetype = KMimeType::findByUrl( KUrl( url ) )->name();
+    if (mimetype.isEmpty())
+	mimetype = KMimeType::findByUrl(KUrl(url))->name();
+    if (mimetype == "application/octet-stream")
+        return true;
     KService::List offers = KMimeTypeTrader::self()->query( mimetype, QLatin1String( "KParts/ReadOnlyPart" ) );
     KService::Ptr serv;
     if( offers.count() > 0 )
