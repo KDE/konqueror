@@ -248,7 +248,7 @@ private Q_SLOTS:
 
         MimeTypeData data(mimeTypeName, true);
         data.setComment("Fake MimeType");
-        QStringList patterns = QStringList() << "*.fake";
+        QStringList patterns = QStringList() << "*.pkg.tar.gz";
         data.setPatterns(patterns);
         QVERIFY(data.isDirty());
         QVERIFY(data.sync());
@@ -257,7 +257,11 @@ private Q_SLOTS:
         KMimeType::Ptr mime = KMimeType::mimeType(mimeTypeName);
         QVERIFY(mime);
         QCOMPARE(mime->comment(), QString("Fake MimeType"));
-        QCOMPARE(mime->patterns(), patterns);
+        QCOMPARE(mime->patterns(), patterns); // must sort them if more than one
+
+        // Testcase for the shaman.xml bug
+        QCOMPARE(KMimeType::findByPath("/whatever/foo.pkg.tar.gz")->name(), QString("fake/unit-test-fake-mimetype"));
+
         m_mimeTypeCreatedSuccessfully = true;
     }
 
