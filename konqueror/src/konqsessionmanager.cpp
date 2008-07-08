@@ -56,6 +56,11 @@ public:
     {
     }
 
+    ~KonqSessionManagerPrivate()
+    {
+        delete instance;
+    }
+
     KonqSessionManager *instance;
 };
 
