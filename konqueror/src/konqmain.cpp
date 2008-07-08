@@ -235,5 +235,9 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
       delete KonqMainWindow::mainWindowList()->first();
   }
 
+  // Notify the session manager that the instance was closed without errors, and normally.
+  KonqSessionManager::self()->disableAutosave();
+  KonqSessionManager::self()->deleteOwnedSessions();
+
   return 0;
 }
