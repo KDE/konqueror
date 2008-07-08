@@ -69,7 +69,7 @@ public:
 };
 
 /**
- * These are some helper functions to encode/decode session filenames. The 
+ * These are some helper functions to encode/decode session filenames. The
  * problem here is that windows doesn't like files with ':' inside.
  */
 
@@ -153,7 +153,8 @@ void KonqSessionManager::deleteOwnedSessions()
 
     if(dir.exists())
     {
-        KIO::NetAccess::del(KUrl(dir.path()), NULL);
+        KIO::Job *delJob = KIO::del(KUrl(dir.path()), KIO::HideProgressInfo);
+        KIO::NetAccess::synchronousRun(delJob, NULL);
     }
 }
 
@@ -247,7 +248,8 @@ bool KonqSessionManager::takeSessionsOwnership()
                         "/" + it2.fileName());
                 }
                 // Remove the old directory
-                KIO::NetAccess::del(KUrl(it.filePath()), NULL);
+                KIO::Job *delJob = KIO::del(KUrl(it.filePath()), KIO::HideProgressInfo);
+                KIO::NetAccess::synchronousRun(delJob, NULL);
             }
         } else { // it's a file
             if(!idbus->isServiceRegistered(decodeFilename(it.fileName())))
@@ -350,7 +352,8 @@ bool KonqSessionManager::askUserToRestoreAutosavedAbandonedSessions()
                 QFile::rename(it.filePath(), m_autosaveDir + "/" + it.fileName());
             }
             // Remove the owned_by directory
-            KIO::NetAccess::del(KUrl(dirForMyOwnedSessionFiles()), NULL);
+            KIO::Job *delJob = KIO::del(KUrl(dirForMyOwnedSessionFiles()), KIO::HideProgressInfo);
+            KIO::NetAccess::synchronousRun(delJob, NULL);
             enableAutosave();
             return false;
     }
