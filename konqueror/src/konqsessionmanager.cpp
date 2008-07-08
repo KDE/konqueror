@@ -56,15 +56,6 @@ public:
     {
     }
 
-    ~KonqSessionManagerPrivate()
-    {
-        if (instance)
-        {
-            instance->disableAutosave();
-            instance->deleteOwnedSessions(); // we closed normally
-        }
-    }
-
     KonqSessionManager *instance;
 };
 
@@ -138,14 +129,6 @@ void KonqSessionManager::enableAutosave()
     m_autoSaveTimer.start();
 }
 
-KonqSessionManager* KonqSessionManager::self()
-{
-    if (!myKonqSessionManagerPrivate->instance)
-        myKonqSessionManagerPrivate->instance = new KonqSessionManager();
-
-    return myKonqSessionManagerPrivate->instance;
-}
-
 void KonqSessionManager::deleteOwnedSessions()
 {
     // Not dealing with the sessions about to remove anymore
@@ -158,6 +141,13 @@ void KonqSessionManager::deleteOwnedSessions()
     }
 }
 
+KonqSessionManager* KonqSessionManager::self()
+{
+    if(!myKonqSessionManagerPrivate->instance)
+        myKonqSessionManagerPrivate->instance = new KonqSessionManager();
+
+    return myKonqSessionManagerPrivate->instance;
+}
 
 void KonqSessionManager::autoSaveSession()
 {

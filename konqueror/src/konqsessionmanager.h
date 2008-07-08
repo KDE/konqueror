@@ -69,6 +69,12 @@ public:
      * being preloaded and starts having a window showed to the user.
      */
     void enableAutosave();
+    
+    /**
+     * Removes the owned_by directory and all its files inside (which were 
+     * referencing the owned sessions).
+     */
+    void deleteOwnedSessions();
 
 public Q_SLOTS:
     /**
@@ -108,12 +114,6 @@ private:
      * sessions and returns if there was any file to own/restore.
      */
     bool takeSessionsOwnership();
-
-    /**
-     * Removes the owned_by directory and all its files inside (which were 
-     * referencing the owned sessions).
-     */
-    void deleteOwnedSessions();
     
     QString dirForMyOwnedSessionFiles() const {
         return m_autosaveDir + "/owned_by" + m_baseService;
