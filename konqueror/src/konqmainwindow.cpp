@@ -1349,7 +1349,7 @@ void KonqMainWindow::slotNewWindow()
 
 void KonqMainWindow::slotDuplicateWindow()
 {
-    m_pViewManager->duplicateWindow();
+    m_pViewManager->duplicateWindow()->show();
 }
 
 void KonqMainWindow::slotSendURL()
