@@ -18,6 +18,7 @@
    Boston, MA 02110-1301, USA.
 */
 
+#include "konqmisc.h"
 #include "konqsessionmanager.h"
 #include "konqsessionmanager_interface.h"
 #include "konqsessionmanageradaptor.h"
@@ -64,15 +65,6 @@ public:
     KonqSessionManager *instance;
 };
 
-/**
- * These are some helper functions to encode/decode session filenames. The
- * problem here is that windows doesn't like files with ':' inside.
- */
-
-static QString encodeFilename(QString filename);
-
-static QString decodeFilename(QString filename);
-
 K_GLOBAL_STATIC(KonqSessionManagerPrivate, myKonqSessionManagerPrivate)
 
 KonqSessionManager::KonqSessionManager()
@@ -86,7 +78,7 @@ KonqSessionManager::KonqSessionManager()
 
     QDBusConnection dbus = QDBusConnection::sessionBus();
     dbus.registerObject( dbusPath, this );
-    m_baseService = encodeFilename(dbus.baseService());
+    m_baseService = KonqMisc::encodeFilename(dbus.baseService());
     dbus.connect(QString(), dbusPath, dbusInterface, "saveCurrentSession", this, SLOT(slotSaveCurrentSession(QString)));
 
     // Initialize the timer
@@ -231,7 +223,7 @@ bool KonqSessionManager::takeSessionsOwnership()
         {
             // The remove() removes the "owned_by" part
             if(!idbus->isServiceRegistered(
-                decodeFilename(it.fileName().remove(0, 8))))
+                KonqMisc::decodeFilename(it.fileName().remove(0, 8))))
             {
                 QDirIterator it2(it.filePath(), QDir::Writable|QDir::Files);
                 while (it2.hasNext())
@@ -247,7 +239,7 @@ bool KonqSessionManager::takeSessionsOwnership()
                 KIO::NetAccess::synchronousRun(delJob, NULL);
             }
         } else { // it's a file
-            if(!idbus->isServiceRegistered(decodeFilename(it.fileName())))
+            if(!idbus->isServiceRegistered(KonqMisc::decodeFilename(it.fileName())))
             {
                 // and it's abandoned: take its ownership
                 QFile::rename(it.filePath(), dirForMyOwnedSessionFiles() + "/" +
@@ -352,16 +344,6 @@ bool KonqSessionManager::askUserToRestoreAutosavedAbandonedSessions()
             enableAutosave();
             return false;
     }
-}
-
-QString encodeFilename(QString filename)
-{
-    return filename.replace(':', '_');
-}
-
-QString decodeFilename(QString filename)
-{
-    return filename.replace('_', ':');
 }
 
 #include "konqsessionmanager.moc"

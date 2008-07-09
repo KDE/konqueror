@@ -18,12 +18,14 @@
    Boston, MA 02110-1301, USA.
 */
 
+#include "konqmisc.h"
 #include "konqundomanager.h"
 #include "konqundomanageradaptor.h"
 #include "konqundomanager_interface.h"
 #include <QAction>
 #include <QByteArray>
 #include <QDBusArgument>
+#include <QDBusConnectionInterface>
 #include <QDirIterator>
 #include <QFile>
 #include <QMetaType>
@@ -91,8 +93,13 @@ void KonqUndoManager::populate()
     const QList<KonqClosedWindowItem *> closedWindowItemList =
         KonqClosedWindowsManager::self()->closedWindowItemList();
 
-    foreach(KonqClosedWindowItem *closedWindowItem, closedWindowItemList)
-        slotAddClosedWindowItem(0L, closedWindowItem);
+    QListIterator<KonqClosedWindowItem *> i(closedWindowItemList);
+    
+    // This loop is done backwards because slotAddClosedWindowItem prepends the
+    // elements to the list, so if we do it forwards the we would get an inverse
+    // order lost of closed windows
+    for(i.toBack(); i.hasPrevious(); )
+        slotAddClosedWindowItem(0L, i.previous());
 }
 
 void KonqUndoManager::slotFileUndoAvailable(bool)
@@ -183,7 +190,7 @@ void KonqUndoManager::slotRemoveClosedWindowItem(KonqUndoManager *real_sender, c
     }
 }
 
-const QList<KonqClosedItem *>& KonqUndoManager::closedTabsList() const
+const QList<KonqClosedItem *>& KonqUndoManager::closedItemsList() const
 {
     return m_closedItemList;
 }
@@ -304,19 +311,17 @@ KonqClosedWindowsManager::KonqClosedWindowsManager()
     dbus.registerObject( dbusPath, this );
     dbus.connect(QString(), dbusPath, dbusInterface, "notifyClosedWindowItem", this, SLOT(slotNotifyClosedWindowItem(QString,int,QString,QString,QDBusMessage)));
     dbus.connect(QString(), dbusPath, dbusInterface, "notifyRemove", this, SLOT(slotNotifyRemove(QString,QString,QDBusMessage)));
-    dbus.connect(QString(), dbusPath, dbusInterface, "requestLocalClosedWindowItems", this, SLOT(slotRequestLocalClosedWindowItems(QDBusMessage)));
 
-    QString filename = "closeditems/closeditems_" + QString::number(getpid());
-    QString file = KStandardDirs::locateLocal("appdata", filename);
+    QString filename = "closeditems/" + KonqMisc::encodeFilename(dbus.baseService());
+    QString file = KStandardDirs::locateLocal("tmp", filename);
     QFile::remove(file);
-
-    m_konqClosedItemsConfig = new KConfig(filename, KConfig::SimpleConfig, "appdata");
-
+    m_konqClosedItemsConfig = new KConfig(file, KConfig::SimpleConfig);
 }
 
 KonqClosedWindowsManager::~KonqClosedWindowsManager()
 {
-    saveConfig();
+    // Do some file cleaning
+    removeClosedItemsConfigFiles();
 
     delete m_konqClosedItemsConfig;
 }
@@ -351,7 +356,14 @@ void KonqClosedWindowsManager::addClosedWindowItem(KonqUndoManager
     emit addWindowInOtherInstances(real_sender, closedWindowItem);
 
     if(propagate)
+    {
         emitNotifyClosedWindowItem(closedWindowItem);
+        
+        // if it needs to be propagated means that it's a local window and thus
+        // we need to call to saveConfig() to keep updated the kconfig file, so
+        // that new konqueror instances can read it correctly updated.
+        saveConfig();
+    }
 }
 
 void KonqClosedWindowsManager::removeClosedWindowItem(KonqUndoManager
@@ -393,13 +405,7 @@ void KonqClosedWindowsManager::readSettings()
     m_maxNumClosedItems = configGroup.readEntry("Maximum number of Closed Items", 20 );
     m_maxNumClosedItems = qMax(1, m_maxNumClosedItems);
 
-    m_amIalone = true;
-    populate();
-
-    // If in 0.5 seconds no other konqueror instance answer, we will assume that
-    // we're alone and therefore instead of getting the undo closed window list
-    // via dbus, we'll read it from disk
-    QTimer::singleShot(500, this, SLOT(readConfig()));
+    readConfig();
 }
 
 
@@ -503,92 +509,6 @@ void KonqClosedWindowsManager::slotNotifyRemove(
     removeClosedWindowItem(0L, closedWindowItem, false);
 }
 
-void KonqClosedWindowsManager::slotRequestLocalClosedWindowItems(
-    const QDBusMessage& msg)
-{
-    if ( isSenderOfSignal( msg ) )
-        return;
-
-    emitPong(msg.service());
-
-
-    if ( closedWindowItemList().empty() )
-        return;
-
-    QList<QVariant> windowItems;
-    KonqClosedWindowItem *closedWindowItem;
-    for (QList<KonqClosedWindowItem *>::const_iterator it = closedWindowItemList().begin();
-        it != closedWindowItemList().end(); ++it)
-    {
-        closedWindowItem = *it;
-        KonqClosedRemoteWindowItem* closedRemoteWindowItem =
-            dynamic_cast<KonqClosedRemoteWindowItem *>(closedWindowItem);
-
-        if(!closedRemoteWindowItem && closedWindowItem)
-        {
-            // Add to the list
-            QByteArray data;
-            QDataStream stream( &data, QIODevice::WriteOnly );
-            stream << closedWindowItem->title();
-            stream << closedWindowItem->numTabs();
-            stream << closedWindowItem->configGroup().config()->name();
-            stream << closedWindowItem->configGroup().name();
-            QVariant variant(data);
-            windowItems.append(variant);
-        }
-    }
-
-    if(!windowItems.empty())
-    {
-        org::kde::Konqueror::UndoManager interface(msg.service(),
-            "/KonqUndoManager", QDBusConnection::sessionBus(), this);
-
-        if(!interface.isValid())
-            return;
-
-        interface.localClosedWindowItems(windowItems, dbusService());
-    }
-}
-
-void KonqClosedWindowsManager::emitPong(const QString & service)
-{
-    org::kde::Konqueror::UndoManager interface(service,
-            "/KonqUndoManager", QDBusConnection::sessionBus(), this);
-
-    if(!interface.isValid())
-        return;
-
-    // We call to pong() DBUS function asynchronously because otherwise
-    // launching 2 or more konqueror instances at the same time would make it
-    // freeze for ~40:
-    QList<QVariant> args;
-    interface.callWithCallback("pong", args, this,
-        SLOT(dbusReturnFunction(QDBusMessage)),
-        SLOT(dbusErrorFunction(QDBusError)));
-}
-
-void KonqClosedWindowsManager::localClosedWindowItems(
-    const QList<QVariant>& windowItems, const QString& service)
-{
-
-    QListIterator<QVariant> it(windowItems);
-    for (it.toBack(); it.hasPrevious(); )
-    {
-        QString title, configFileName, configGroup;
-        int numTabs;
-        QByteArray data = (it.previous()).toByteArray();
-        QDataStream stream( const_cast<QByteArray *>( &data ), QIODevice::ReadOnly );
-        stream >> title >> numTabs >> configFileName >> configGroup;
-        slotNotifyClosedWindowItem(title, numTabs, configFileName, configGroup,
-            service);
-    }
-}
-
-void KonqClosedWindowsManager::pong()
-{
-    m_amIalone = false;
-}
-
 KonqClosedRemoteWindowItem* KonqClosedWindowsManager::findClosedRemoteWindowItem(
     const QString& configFileName,
     const QString& configGroup)
@@ -628,19 +548,18 @@ KonqClosedWindowItem* KonqClosedWindowsManager::findClosedLocalWindowItem(
     return closedWindowItem;
 }
 
-void KonqClosedWindowsManager::populate()
-{
-    emit requestLocalClosedWindowItems();
-}
-
 void KonqClosedWindowsManager::removeClosedItemsConfigFiles()
 {
-    QString dir= KStandardDirs::locateLocal("appdata", "closeditems/");
-
+    kDebug() << KStandardDirs::locateLocal("tmp", "closeditems/");
+    QString dir = KStandardDirs::locateLocal("tmp", "closeditems/");
+    QDBusConnectionInterface *idbus = QDBusConnection::sessionBus().interface();
     QDirIterator it(dir, QDir::Writable|QDir::Files);
     while (it.hasNext())
     {
-        QFile::remove(it.next());
+        // Only remove the files for those konqueror instances not running anymore
+        QString filename = it.next();
+        if(!idbus->isServiceRegistered(KonqMisc::decodeFilename(it.fileName())))
+            QFile::remove(filename);
     }
 }
 
@@ -675,18 +594,6 @@ void KonqClosedWindowsManager::saveConfig()
 
 void KonqClosedWindowsManager::readConfig()
 {
-    // We will read the configuration file *only* if we are alone, which means
-    // only if we couldn't get the closed windows list via dbus because no
-    // dbus instance answered/exists
-    if(!m_amIalone)
-        return;
-
-    // Simplification: we assume there was no time to open and close
-    // a konqueror window in 500ms of konqueror life time and thus there
-    // shouldn't be any file in closeditem/* to do some houskeeping everytime
-    // konqueror starts
-    removeClosedItemsConfigFiles();
-
     QString filename = "closeditems_saved";
     QString file = KStandardDirs::locateLocal("appdata", filename);
 
@@ -712,8 +619,8 @@ void KonqClosedWindowsManager::readConfig()
         configGroup.writeEntry("foo", 0);
         closedWindowItem->configGroup().config()->sync();
 
-        // Add the item to all the windows and propagate over dbus
-        addClosedWindowItem(0L, closedWindowItem, true);
+        // Add the item only to this window
+        addClosedWindowItem(0L, closedWindowItem, false);
     }
 }
 

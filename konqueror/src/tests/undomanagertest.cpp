@@ -53,7 +53,7 @@ void UndoManagerTest::testAddClosedTabItem()
     QVERIFY(manager.undoAvailable());
     QCOMPARE(spyUndoAvailable.count(), 1);
     QCOMPARE(spyTextChanged.count(), 1);
-    QCOMPARE(manager.closedTabsList().count(), 1);
+    QCOMPARE(manager.closedItemsList().count(), 1);
     configGroup.writeEntry( "RootItem", "test" );
     QVERIFY(!configGroup.keyList().isEmpty());
 
@@ -64,7 +64,7 @@ void UndoManagerTest::testAddClosedTabItem()
     QCOMPARE(spyUndoAvailable.count(), 2);
     QVERIFY(!manager.undoAvailable());
     QCOMPARE(spyOpenClosedTab.count(), 1);
-    QCOMPARE(manager.closedTabsList().count(), 0);
+    QCOMPARE(manager.closedItemsList().count(), 0);
     QVERIFY(configGroup.keyList().isEmpty()); // was deleted by the KonqClosedTabItem destructor
 }
 
