@@ -11,13 +11,5 @@
       <arg name="configFileName" type="s" direction="out"/>
       <arg name="configGroup" type="s" direction="out"/>
     </signal>
-    <signal name="requestLocalClosedWindowItems">
-    </signal>
-    <method name="localClosedWindowItems">
-      <arg name="windowItems" type="av" direction="in"/>
-      <arg name="service" type="s" direction="in"/>
-    </method>
-    <method name="pong">
-    </method>
   </interface>
 </node>

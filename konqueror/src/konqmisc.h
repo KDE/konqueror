@@ -99,7 +99,15 @@ namespace KonqMisc // TODO rename to KonqGlobal?
      * Path to the default profile
      */
     QString defaultProfilePath();
+    
+    /**
+    * These are some helper functions to encode/decode session filenames. The
+    * problem here is that windows doesn't like files with ':' inside.
+    */
 
+    QString encodeFilename(QString filename);
+
+    QString decodeFilename(QString filename);
 }
 
 #endif

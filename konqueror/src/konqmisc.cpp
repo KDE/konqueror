@@ -223,4 +223,14 @@ QString KonqMisc::defaultProfilePath()
     return KStandardDirs::locate("data", QLatin1String("konqueror/profiles/")+ defaultProfileName());
 }
 
+QString KonqMisc::encodeFilename(QString filename)
+{
+    return filename.replace(':', '_');
+}
+
+QString KonqMisc::decodeFilename(QString filename)
+{
+    return filename.replace('_', ':');
+}
+
 #include "konqmisc.moc"

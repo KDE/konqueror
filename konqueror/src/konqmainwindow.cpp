@@ -164,7 +164,7 @@ KonqOpenURLRequest KonqOpenURLRequest::null;
 
 static int current_memory_usage( int* limit = NULL );
 
-static unsigned short int s_closedTabsListLength = 10;
+static unsigned short int s_closedItemsListLength = 10;
 static unsigned long s_konqMainWindowInstancesCount = 0;
 
 KonqExtendedBookmarkOwner::KonqExtendedBookmarkOwner(KonqMainWindow *w)
@@ -2832,15 +2832,17 @@ void KonqMainWindow::slotBackAboutToShow()
 void KonqMainWindow::slotClosedItemsListAboutToShow()
 {
     QMenu* popup = m_paClosedItems->menu();
-    // Clear the menu and fill it with a maximum of s_closedTabsListLength number of urls
+    // Clear the menu and fill it with a maximum of s_closedItemsListLength number of urls
     popup->clear();
     QAction* clearAction = popup->addAction( i18n("Empty Closed Items History") );
     connect(clearAction, SIGNAL(triggered()), m_undoManager, SLOT(clearClosedItemsList()));
     popup->insertSeparator((QAction*)0);
 
-    QList<KonqClosedItem *>::ConstIterator it = m_undoManager->closedTabsList().begin();
-    const QList<KonqClosedItem *>::ConstIterator end = m_undoManager->closedTabsList().end();
-    for ( int i = 0; it != end && i < s_closedTabsListLength; ++it, ++i ) {
+    QList<KonqClosedItem *>::ConstIterator it =
+        m_undoManager->closedItemsList().constBegin();
+    const QList<KonqClosedItem *>::ConstIterator end = 
+        m_undoManager->closedItemsList().constEnd();
+    for ( int i = 0; it != end && i < s_closedItemsListLength; ++it, ++i ) {
         const QString text = QString::number(i) + ' ' + (*it)->title();
         QAction* action = popup->addAction( (*it)->icon(), text );
         action->setActionGroup(m_closedItemsGroup);
@@ -2855,7 +2857,7 @@ void KonqMainWindow::slotClosedItemsListAboutToShow()
 void KonqMainWindow::slotSessionsListAboutToShow()
 {
     QMenu* popup = m_paSessions->menu();
-    // Clear the menu and fill it with a maximum of s_closedTabsListLength number of urls
+    // Clear the menu and fill it with a maximum of s_closedItemsListLength number of urls
     popup->clear();
     QAction* saveSessionAction = popup->addAction( KIcon("document-save"), i18n("Save as..") );
     connect(saveSessionAction, SIGNAL(triggered()), this, SLOT(saveCurrentSession()));
@@ -2897,7 +2899,7 @@ void KonqMainWindow::slotSessionActivated(QAction* action)
 
 void KonqMainWindow::updateClosedItemsAction()
 {
-    m_paClosedItems->setEnabled(!m_undoManager->closedTabsList().isEmpty());
+    m_paClosedItems->setEnabled(!m_undoManager->closedItemsList().isEmpty());
 }
 
 void KonqMainWindow::slotBack()
