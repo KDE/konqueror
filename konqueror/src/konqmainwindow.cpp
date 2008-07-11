@@ -779,6 +779,15 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
         kDebug(1202) << "KonqFMSettings says: don't embed this servicetype";
         return false;
     }
+    // Do we even have a part to embed? Otherwise don't ask, since we'd ask twice.
+    if (!forceAutoEmbed) {
+        KService::List partServiceOffers;
+        KonqFactory::getOffers(mimeType, &partServiceOffers);
+        if (partServiceOffers.isEmpty()) {
+            kDebug(1202) << "No part available for" << mimeType;
+        }
+        return false;
+    }
 
     // If the protocol doesn't support writing (e.g. HTTP) then we might want to save instead of just embedding.
     // So (if embedding would succeed, hence the checks above) we ask the user
@@ -2840,7 +2849,7 @@ void KonqMainWindow::slotClosedItemsListAboutToShow()
 
     QList<KonqClosedItem *>::ConstIterator it =
         m_undoManager->closedItemsList().constBegin();
-    const QList<KonqClosedItem *>::ConstIterator end = 
+    const QList<KonqClosedItem *>::ConstIterator end =
         m_undoManager->closedItemsList().constEnd();
     for ( int i = 0; it != end && i < s_closedItemsListLength; ++it, ++i ) {
         const QString text = QString::number(i) + ' ' + (*it)->title();
