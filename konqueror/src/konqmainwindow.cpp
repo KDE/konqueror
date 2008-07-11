@@ -549,7 +549,7 @@ void KonqMainWindow::openUrl(KonqView *_view, const KUrl &_url,
                                       false,
                                       req.openAfterCurrentPage);
         if (view) {
-            view->setCaption(_url.host()); // TODO i18nc("@title:tab", "Loading...")
+            view->setCaption(i18nc("@title:tab", "Loading..."));
             view->setLocationBarURL(_url);
             if (!req.browserArgs.frameName.isEmpty())
                 view->setViewName(req.browserArgs.frameName); // #44961
