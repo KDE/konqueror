@@ -64,11 +64,9 @@ QString KonqAboutPageSingleton::launch()
   KIconLoader *iconloader = KIconLoader::global();
   int iconSize = iconloader->currentSize(KIconLoader::Desktop);
   QString home_icon_path = iconloader->iconPath("go-home", KIconLoader::Desktop );
-  QString storage_icon_path = iconloader->iconPath("computer", KIconLoader::Desktop );
   QString remote_icon_path = iconloader->iconPath("folder-remote", KIconLoader::Desktop );
   QString wastebin_icon_path = iconloader->iconPath("user-trash-full", KIconLoader::Desktop );
   QString applications_icon_path = iconloader->iconPath("start-here-kde", KIconLoader::Desktop );
-  QString settings_icon_path = iconloader->iconPath("preferences-system", KIconLoader::Desktop );
   QString home_folder = QDir::homePath();
   QString continue_icon_path = iconloader->iconPath(QApplication::isRightToLeft() ? "go-previous" : "go-next", KIconLoader::Small );
 
