@@ -2,6 +2,7 @@
  * This file is part of the KDE project.
  *
  * Copyright (C) 2008 Dirk Mueller <mueller@kde.org>
+ * Copyright (C) 2008 Urs Wolfer <uwolfer @ kde.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -36,7 +37,7 @@ public:
 protected:
     virtual bool acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request,
                                          NavigationType type);
-    virtual QString chooseFile(QWebFrame *parentFrame, const QString &suggestedFile);
+    virtual QString chooseFile(QWebFrame *frame, const QString &suggestedFile);
     virtual void javaScriptAlert(QWebFrame *frame, const QString &msg);
     virtual bool javaScriptConfirm(QWebFrame *frame, const QString &msg);
     virtual bool javaScriptPrompt(QWebFrame *frame, const QString &msg, const QString &defaultValue, QString *result);
@@ -44,8 +45,12 @@ protected:
 
     virtual QObject *createPlugin(const QString &classid, const QUrl &url, const QStringList &paramNames, const QStringList &paramValues);
 
+    virtual QWebPage *createWindow(WebWindowType type);
+
 protected Q_SLOTS:
     void slotHandleUnsupportedContent(QNetworkReply *);
+    void slotGeometryChangeRequested(const QRect &rect);
+    void slotWindowCloseRequested();
 
 private:
     WebKitPart *m_part;
