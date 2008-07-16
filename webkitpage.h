@@ -48,9 +48,10 @@ protected:
     virtual QWebPage *createWindow(WebWindowType type);
 
 protected Q_SLOTS:
-    void slotHandleUnsupportedContent(QNetworkReply *);
+    void slotHandleUnsupportedContent(QNetworkReply *reply);
     void slotGeometryChangeRequested(const QRect &rect);
     void slotWindowCloseRequested();
+    void slotDownloadRequested(const QNetworkRequest &request);
 
 private:
     WebKitPart *m_part;

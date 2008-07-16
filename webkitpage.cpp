@@ -30,12 +30,18 @@
 #include <khtmldefaults.h>
 
 #include <KDE/KParts/GenericFactory>
+#include <KDE/KParts/BrowserRun>
 #include <KDE/KAboutData>
 #include <KDE/KFileDialog>
 #include <KDE/KInputDialog>
 #include <KDE/KMessageBox>
 #include <KDE/KProtocolManager>
 #include <KDE/KGlobalSettings>
+#include <KDE/KJobUiDelegate>
+#include <KDE/KRun>
+#include <KDE/KShell>
+#include <KDE/KStandardDirs>
+#include <KIO/Job>
 
 #include <QWebFrame>
 #include <QtNetwork/QNetworkReply>
@@ -44,17 +50,17 @@ WebPage::WebPage(WebKitPart *wpart, QWidget *parent)
     : QWebPage(parent)
     , m_part(wpart)
 {
-#if 0
-    connect(this, SIGNAL(unsupportedContent(QNetworkReply *)),
-            this, SLOT(slotHandleUnsupportedContent(QNetworkReply *)));
-    setForwardUnsupportedContent(true);
-#endif
     setNetworkAccessManager(new KNetworkAccessManager(this));
 
     connect(this, SIGNAL(geometryChangeRequested(const QRect &)),
             this, SLOT(slotGeometryChangeRequested(const QRect &)));
     connect(this, SIGNAL(windowCloseRequested()),
             this, SLOT(slotWindowCloseRequested()));
+    connect(this, SIGNAL(downloadRequested(const QNetworkRequest &)),
+            this, SLOT(slotDownloadRequested(const QNetworkRequest &)));
+    setForwardUnsupportedContent(true);
+    connect(this, SIGNAL(unsupportedContent(QNetworkReply *)),
+            this, SLOT(slotHandleUnsupportedContent(QNetworkReply *)));
 }
 
 bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request,
@@ -100,10 +106,23 @@ QString WebPage::userAgentForUrl(const QUrl& _url) const
 
 void WebPage::slotHandleUnsupportedContent(QNetworkReply *reply)
 {
-    //TODO
-    kDebug() << "title:" << reply->url().toString();
+    KUrl url(reply->request().url());
+    kDebug() << "title:" << url;
     kDebug() << "error:" << reply->errorString();
 
+    KParts::BrowserRun::AskSaveResult res = KParts::BrowserRun::askEmbedOrSave(
+                                                url,
+                                                reply->header(QNetworkRequest::ContentTypeHeader).toString(),
+                                                url.fileName());
+    switch (res) {
+    case KParts::BrowserRun::Save:
+        slotDownloadRequested(reply->request());
+        return;
+    case KParts::BrowserRun::Cancel:
+        return;
+    default: // Open
+        break;
+    }
 }
 
 QObject *WebPage::createPlugin(const QString &classid, const QUrl &url, const QStringList &paramNames, const QStringList &paramValues)
@@ -150,7 +169,7 @@ void WebPage::slotGeometryChangeRequested(const QRect &rect)
 
     QRect sg = KGlobalSettings::desktopGeometry(view());
 
-    if ( width > sg.width() || height > sg.height() ) {
+    if (width > sg.width() || height > sg.height()) {
         kDebug() << "Window resize refused, window would be too big (" << width << "," << height << ")";
         return;
     }
@@ -181,5 +200,48 @@ void WebPage::slotWindowCloseRequested()
       == KMessageBox::Yes) {
         m_part->deleteLater();
         m_part = 0;
+    }
+}
+
+void WebPage::slotDownloadRequested(const QNetworkRequest &request)
+{
+    KUrl url(request.url());
+    kDebug() << url;
+
+    // parts of following code are based on khtml_ext.cpp
+    // DownloadManager <-> konqueror integration
+    // find if the integration is enabled
+    // the empty key  means no integration
+    // only use download manager for non-local urls!
+    bool downloadViaKIO = true;
+    if (!url.isLocalFile()) {
+        KConfigGroup cfg = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals)->group("HTML Settings");
+        QString downloadManger = cfg.readPathEntry("DownloadManager", QString());
+        if (!downloadManger.isEmpty()) {
+            // then find the download manager location
+            kDebug() << "Using: " << downloadManger << " as Download Manager";
+            QString cmd = KStandardDirs::findExe(downloadManger);
+            if (cmd.isEmpty()) {
+                QString errMsg = i18n("The Download Manager (%1) could not be found in your $PATH.", downloadManger);
+                QString errMsgEx = i18n("Try to reinstall it. \n\nThe integration with Konqueror will be disabled.");
+                KMessageBox::detailedSorry(view(), errMsg, errMsgEx);
+                cfg.writePathEntry("DownloadManager", QString());
+                cfg.sync ();
+            } else {
+                downloadViaKIO = false;
+                cmd += ' ' + KShell::quoteArg(url.url());
+                kDebug() << "Calling command" << cmd;
+                KRun::runCommand(cmd, view());
+            }
+        }
+    }
+
+    if (downloadViaKIO) {
+        QString destUrl = KFileDialog::getOpenFileName(url.fileName(), QString(), view());
+        KIO::Job *job = KIO::file_copy(url, KUrl(destUrl), -1, KIO::Overwrite);
+        //job->setMetaData(metadata); //TODO: add metadata from request
+        job->addMetaData("MaxCacheSize", "0"); // Don't store in http cache.
+        job->addMetaData("cache", "cache"); // Use entry from cache if available.
+        job->uiDelegate()->setAutoErrorHandlingEnabled(true);
     }
 }
