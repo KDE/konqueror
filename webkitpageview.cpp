@@ -25,7 +25,7 @@
 #include <QTextEdit>
 #include <QVBoxLayout>
 
-#include "webkitview.h"
+#include "webview.h"
 #include "searchbar.h"
 
 WebKitPageView::WebKitPageView(WebKitPart *part, QWidget *parent)

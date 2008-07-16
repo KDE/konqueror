@@ -21,8 +21,8 @@
  * Boston, MA 02110-1301, USA.
  *
  */
-#ifndef WEBKITVIEW_H
-#define WEBKITVIEW_H
+#ifndef WEBVIEW_H
+#define WEBVIEW_H
 
 #include <KDE/KParts/ReadOnlyPart>
 #include <KDE/KParts/BrowserExtension>
@@ -56,4 +56,4 @@ private:
 
 };
 
-#endif // WEBKITVIEW_H
+#endif // WEBVIEW_H

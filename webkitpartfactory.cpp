@@ -20,30 +20,31 @@
  *
  */
 
-#include "webkitpart_factory.h"
+#include "webkitpartfactory.h"
 
 #include <KDE/KParts/GenericFactory>
 #include "webkitpart.h"
 
-WebkitFactory::WebkitFactory()
+WebKitFactory::WebKitFactory()
 {
     kDebug() << this;
 }
 
-WebkitFactory::~WebkitFactory()
+WebKitFactory::~WebKitFactory()
 {
     kDebug() << this;
 }
 
-KParts::Part *WebkitFactory::createPartObject(QWidget *parentWidget, QObject *parent, const char *className, const QStringList &args)
+KParts::Part *WebKitFactory::createPartObject(QWidget *parentWidget, QObject *parent, const char *className, const QStringList &args)
 {
+    Q_UNUSED(className);
     Q_UNUSED(args);
     return new WebKitPart(parentWidget, parent, QStringList());
 }
 
 extern "C" KDE_EXPORT void *init_webkitkdepart()
 {
-    return new WebkitFactory;
+    return new WebKitFactory;
 }
 
-#include "webkitpart_factory.moc"
+#include "webkitpartfactory.moc"

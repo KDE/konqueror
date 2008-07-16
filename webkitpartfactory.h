@@ -25,12 +25,12 @@
 
 #include <kparts/factory.h>
 
-class WebkitFactory : public KParts::Factory
+class WebKitFactory : public KParts::Factory
 {
     Q_OBJECT
 public:
-    WebkitFactory();
-    virtual ~WebkitFactory();
+    WebKitFactory();
+    virtual ~WebKitFactory();
 
     virtual KParts::Part *createPartObject(QWidget *parentWidget, QObject *parent, const char *className, const QStringList &args);
 };

@@ -22,9 +22,9 @@
  *
  */
 
-#include "webkitview.h"
+#include "webview.h"
 #include "webkitpart.h"
-#include "webkitpage.h"
+#include "webpage.h"
 
 #include <KDE/KParts/GenericFactory>
 #include <KDE/KAboutData>

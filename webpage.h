@@ -20,11 +20,12 @@
  * Boston, MA 02110-1301, USA.
  *
  */
-#ifndef WEBKITPAGE_H
-#define WEBKITPAGE_H
+#ifndef WEBPAGE_H
+#define WEBPAGE_H
 
 #include <qwebpage.h>
 #include "webkitkde_export.h"
+
 class QWebFrame;
 class WebKitPart;
 
@@ -57,4 +58,4 @@ private:
     WebKitPart *m_part;
 };
 
-#endif // WEBKITPAGE_H
+#endif // WEBPAGE_H

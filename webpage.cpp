@@ -21,9 +21,9 @@
  *
  */
 
-#include "webkitpage.h"
+#include "webpage.h"
 #include "webkitpart.h"
-#include "webkitview.h"
+#include "webview.h"
 #include "network/knetworkaccessmanager.h"
 
 //Use default khtml settings (not necessary to duplicate it)
