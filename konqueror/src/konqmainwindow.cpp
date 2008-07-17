@@ -785,8 +785,8 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
         KonqFactory::getOffers(mimeType, &partServiceOffers);
         if (partServiceOffers.isEmpty()) {
             kDebug(1202) << "No part available for" << mimeType;
+            return false;
         }
-        return false;
     }
 
     // If the protocol doesn't support writing (e.g. HTTP) then we might want to save instead of just embedding.
