@@ -26,7 +26,7 @@
 #include "config-kttsplugin.h"
 #ifdef HAVE_WEBKITKDE
 #include <webkitpart.h>
-#include <webkitview.h>
+#include <webview.h>
 #include <QWebFrame>
 #endif
 #include <kicon.h>
