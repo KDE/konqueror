@@ -14,12 +14,14 @@ endif(DEPEND_PACKAGE_WebKitKde)
 
 macro_bool_to_01(WEBKITKDE_FOUND HAVE_WEBKITKDE)
 
-configure_file(config-kttsplugin.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-kttsplugin.h )
-
-
 if( WEBKITKDE_FOUND )
    include_directories(${WEBKITKDE_INCLUDE_DIR})
+   FIND_PATH(WEBVIEW_PATH webkitkde/webview.h PATH ${WEBKITKDE_INCLUDE_DIR})
+   macro_bool_to_01(WEBVIEW_PATH HAVE_WEBVIEW )
 endif(WEBKITKDE_FOUND)
+
+
+configure_file(config-kttsplugin.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-kttsplugin.h )
 
 
 set(khtmlkttsdplugin_PART_SRCS khtmlkttsd.cpp )
