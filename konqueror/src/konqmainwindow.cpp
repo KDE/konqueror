@@ -4501,8 +4501,17 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
   // It has to be a KActionCollection instead of a KActionPtrList because we need
   // the actionStatusText signal...
   KActionCollection popupMenuCollection( (QWidget*)0 );
-  popupMenuCollection.addAction( "go_back", m_paBack );
-  popupMenuCollection.addAction( "go_forward", m_paForward );
+
+  // m_paBack is a submenu, for the toolbar & edit menu "back",
+  // but in the RMB we want a simple one-click back instead.
+  KAction* simpleBack = KStandardAction::back( this, SLOT(slotBack()), &popupMenuCollection );
+  simpleBack->setEnabled( m_paBack->isEnabled() );
+  popupMenuCollection.addAction( "go_back", simpleBack );
+
+  KAction* simpleForward = KStandardAction::forward( this, SLOT(slotForward()), &popupMenuCollection );
+  simpleForward->setEnabled( m_paForward->isEnabled() );
+  popupMenuCollection.addAction( "go_forward", simpleForward );
+
   popupMenuCollection.addAction( "go_up", m_paUp );
   popupMenuCollection.addAction( "reload", m_paReload );
   popupMenuCollection.addAction( "closedtabs", m_paClosedItems );
