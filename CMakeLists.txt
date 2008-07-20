@@ -9,7 +9,6 @@ find_package(Strigi REQUIRED)
 find_package(ZLIB REQUIRED)
 include (KDE4Defaults)
 include (MacroLibrary)
-include(MacroOptionalAddSubdirectory)
 
 include(ConfigureChecks.cmake)
 configure_file (config-apps.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-apps.h )
