@@ -32,6 +32,9 @@
        <property name="text" >
         <string>Save open tabs and windows for easy retrieval</string>
        </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
        <property name="buddy" >
         <cstring>m_pSessionName</cstring>
        </property>
