@@ -22,9 +22,12 @@
 
 #ifndef WEBKITGLOBAL_H
 #define WEBKITGLOBAL_H
+
 class WebKitGlobal;
 class WebKitPart;
 class KAboutData;
+class WebKitSettings;
+
 #include <KComponentData>
 
 class WebKitGlobal
@@ -37,6 +40,7 @@ public:
     static void deregisterPart(WebKitPart *part);
     void initGlobalSettings();
     static const KComponentData &componentData();
+    static WebKitSettings *settings();
 
 private:
     static void ref();

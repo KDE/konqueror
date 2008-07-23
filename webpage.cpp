@@ -26,9 +26,6 @@
 #include "webview.h"
 #include "network/knetworkaccessmanager.h"
 
-//Use default khtml settings (not necessary to duplicate it)
-#include <khtmldefaults.h>
-
 #include <KDE/KParts/GenericFactory>
 #include <KDE/KParts/BrowserRun>
 #include <KDE/KAboutData>
@@ -66,7 +63,8 @@ WebPage::WebPage(WebKitPart *wpart, QWidget *parent)
 bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request,
                                       NavigationType type)
 {
-    kDebug() << "acceptNavigationRequest";
+    kDebug() << "acceptNavigationRequest" << request.url();
+
     return true;
 }
 

@@ -23,7 +23,9 @@
 
 #include "knetworkaccessmanager.h"
 
+#include "webkitglobal.h"
 #include "network/knetworkreply.h"
+#include "settings/webkitsettings.h"
 
 #include <QNetworkRequest>
 #include <QNetworkReply>
@@ -38,9 +40,11 @@ KNetworkAccessManager::KNetworkAccessManager(QObject *parent)
 
 QNetworkReply *KNetworkAccessManager::createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData)
 {
-    KIO::Job *kioJob = 0;
+    if (WebKitGlobal::settings()->isAdFiltered(req.url().toString())) {
+        return new KNetworkReply(req, 0, this);
+    }
 
-    KNetworkReply *reply = new KNetworkReply(req, kioJob, this);
+    KIO::Job *kioJob = 0;
 
     switch (op) {
         case HeadOperation: {
@@ -75,6 +79,8 @@ QNetworkReply *KNetworkAccessManager::createRequest(Operation op, const QNetwork
             kDebug() << "Unknown operation";
             return 0;
     }
+
+    KNetworkReply *reply = new KNetworkReply(req, kioJob, this);
 
     kioJob->addMetaData(metaDataForRequest(req));
 

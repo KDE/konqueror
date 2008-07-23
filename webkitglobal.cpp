@@ -22,12 +22,15 @@
 
 #include "webkitglobal.h"
 #include "webkitpart.h"
-#include <khtmldefaults.h>
+#include "settings/webkitsettings.h"
+#include "settings/webkitdefaults.h"
+
+#include <QLinkedList>
 #include <QWebSettings>
+
 #include <KDE/KConfigGroup>
 #include <KDE/KGlobalSettings>
 #include <KDE/KGlobal>
-#include <QLinkedList>
 #include <KDE/KDebug>
 #include <KDE/KLocale>
 #include <KDE/KAboutData>
@@ -37,6 +40,7 @@ unsigned long int WebKitGlobal::s_refcnt = 0;
 static QLinkedList<WebKitPart*> *s_parts = 0;
 KAboutData *WebKitGlobal::s_about = 0;
 KComponentData *WebKitGlobal::s_componentData = 0;
+K_GLOBAL_STATIC(WebKitSettings, s_webKitSettings)
 
 WebKitGlobal::WebKitGlobal()
 {
@@ -140,6 +144,10 @@ void WebKitGlobal::initGlobalSettings()
     QWebSettings::globalSettings()->setFontSize(QWebSettings::DefaultFontSize, cgHtml.readEntry("MediumFontSize", 12));
 }
 
+WebKitSettings *WebKitGlobal::settings()
+{
+    return s_webKitSettings;
+}
 
 const KComponentData &WebKitGlobal::componentData()
 {

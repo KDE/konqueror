@@ -25,6 +25,8 @@
 #include <KDebug>
 #include <KIO/Job>
 
+#include <QTimer>
+
 KNetworkReply::KNetworkReply(const QNetworkRequest &request, KIO::Job *kioJob, QObject *parent)
     : QNetworkReply(parent)
     , m_kioJob(kioJob)
@@ -32,6 +34,10 @@ KNetworkReply::KNetworkReply(const QNetworkRequest &request, KIO::Job *kioJob, Q
 {
     setRequest(request);
     setOpenMode(QIODevice::ReadOnly);
+
+    if (!kioJob) { // a blocked request
+        QTimer::singleShot(0, this, SIGNAL(finished()));
+    }
 }
 
 void KNetworkReply::abort()
@@ -71,7 +77,7 @@ void KNetworkReply::appendData(KIO::Job *kioJob, const QByteArray &data)
             Q_FOREACH(const QString &header, headerList) {
                 QStringList headerPair = header.split(": ");
                 if (headerPair.size() == 2) {
-                    kDebug() << headerPair.at(0) << headerPair.at(1);
+//                     kDebug() << headerPair.at(0) << headerPair.at(1);
                     setRawHeader(headerPair.at(0).toUtf8(), headerPair.at(1).toUtf8());
                 }
             }
