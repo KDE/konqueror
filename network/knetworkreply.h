@@ -28,7 +28,7 @@
 namespace KIO
 {
     class Job;
-};
+}
 
 class KNetworkReply : public QNetworkReply
 {
