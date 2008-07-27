@@ -1,4 +1,4 @@
-dbusRef=`./kdialog --geometry 300x200+100-100 --progressbar "Initialising" 6`
+dbusRef=`kdialog --geometry 300x200+100-100 --progressbar "Initialising" 6`
 qdbus $dbusRef Set org.kde.kdialog.ProgressDialog value 1
 qdbus $dbusRef setLabelText "Thinking really hard"
 sleep 2

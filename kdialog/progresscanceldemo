@@ -1,4 +1,4 @@
-dbusRef=`./kdialog --progressbar "Press Cancel at Any time" 10`
+dbusRef=`kdialog --progressbar "Press Cancel at Any time" 10`
 qdbus $dbusRef org.kde.kdialog.ProgressDialog.showCancelButton true
 
 until test "true" = `qdbus $dbusRef org.kde.kdialog.ProgressDialog.wasCancelled`; do
