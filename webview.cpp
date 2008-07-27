@@ -69,6 +69,9 @@ QWebHitTestResult WebView::contextMenuResult() const
 
 void WebView::contextMenuEvent(QContextMenuEvent *e)
 {
+    QWebView::contextMenuEvent(e);
+    return; // FIXME: remove these two lines as soon as a stable and useful impl. has been done
+
     d->result = page()->mainFrame()->hitTestContent(e->pos());
     KParts::BrowserExtension::PopupFlags flags = KParts::BrowserExtension::DefaultPopupItems;
     flags |= KParts::BrowserExtension::ShowReload;
@@ -84,10 +87,15 @@ void WebView::contextMenuEvent(QContextMenuEvent *e)
     if (!d->result.imageUrl().isEmpty()) {
         partActionPopupMenu(mapAction);
     }
-    if (!selectedText().isEmpty()) {
-        flags |= KParts::BrowserExtension::ShowTextSelectionItems;
-        editActionPopupMenu(mapAction);
+    if (d->result.isContentEditable()) {
+        QWebView::contextMenuEvent(e); // TODO: better KDE integration if possible
+        return;
     }
+    if (d->result.isContentSelected()) {
+        flags |= KParts::BrowserExtension::ShowTextSelectionItems;
+        selectActionPopupMenu(mapAction);
+    }
+
     emit part->browserExtension()->popupMenu(/*guiclient */
         e->globalPos(), part->url(), 0, KParts::OpenUrlArguments(), KParts::BrowserArguments(),
         flags, mapAction);
@@ -117,7 +125,6 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &part
     connect(action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT(slotViewDocumentSource()));
     partActions.append(action);
 
-
     partGroupMap.insert("partactions", partActions);
 }
 
@@ -145,17 +152,16 @@ void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &link
     linkGroupMap.insert("linkactions", linkActions);
 }
 
-void WebView::editActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &editGroupMap)
+void WebView::selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &selectGroupMap)
 {
-    QList<QAction *>editActions;
-
+    QList<QAction *>selectActions;
 
     QAction* copyAction = d->m_actionCollection->addAction(KStandardAction::Copy, "copy",  part->browserExtension(), SLOT(copy()));
     copyAction->setText(i18n("&Copy Text"));
     copyAction->setEnabled(part->browserExtension()->isActionEnabled("copy"));
-    editActions.append(copyAction);
+    selectActions.append(copyAction);
 
-    addSearchActions(editActions);
+    addSearchActions(selectActions);
 
     QString selectedTextURL = selectedTextAsOneLine();
     if (selectedTextURL.contains("://") && KUrl(selectedTextURL).isValid()) {
@@ -167,13 +173,13 @@ void WebView::editActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &edit
         d->m_actionCollection->addAction("openSelection", action);
         action->setIcon(KIcon("window-new"));
         connect(action, SIGNAL(triggered(bool)), this, SLOT(openSelection()));
-        editActions.append(action);
+        selectActions.append(action);
     }
 
-    editGroupMap.insert("editactions", editActions);
+    selectGroupMap.insert("editactions", selectActions);
 }
 
-void WebView::addSearchActions(QList<QAction *>& editActions)
+void WebView::addSearchActions(QList<QAction *>& selectActions)
 {
     // Fill search provider entries
     KConfig config("kuriikwsfilterrc");
@@ -217,7 +223,7 @@ void WebView::addSearchActions(QList<QAction *>& editActions)
 
     KAction *action = new KAction(i18n("Search for '%1' with %2", selectedText, name), this);
     d->m_actionCollection->addAction("searchProvider", action);
-    editActions.append(action);
+    selectActions.append(action);
     action->setIcon(icon);
     connect(action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT(searchProvider()));
 
@@ -229,7 +235,7 @@ void WebView::addSearchActions(QList<QAction *>& editActions)
     if (!favoriteEngines.isEmpty()) {
         KActionMenu* providerList = new KActionMenu(i18n("Search for '%1' with",  selectedText), this);
         d->m_actionCollection->addAction("searchProviderList", providerList);
-        editActions.append(providerList);
+        selectActions.append(providerList);
 
         QStringList::ConstIterator it = favoriteEngines.begin();
         for (; it != favoriteEngines.end(); ++it) {

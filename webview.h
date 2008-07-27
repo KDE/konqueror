@@ -45,7 +45,7 @@ public:
 
 protected:
     virtual void contextMenuEvent(QContextMenuEvent *e);
-    void editActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &editGroupMap);
+    void selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &selectGroupMap);
     void linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &linkGroupMap);
     void partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &partGroupMap);
 
@@ -53,7 +53,7 @@ private slots:
     void openSelection();
 
 private:
-    void addSearchActions(QList<QAction *>& editActions);
+    void addSearchActions(QList<QAction *>& selectActions);
     QString selectedTextAsOneLine() const;
 
     /**
