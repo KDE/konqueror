@@ -37,6 +37,7 @@ class QWebHitTestResult;
 
 class WEBKITKDE_EXPORT WebView : public QWebView
 {
+    Q_OBJECT
 public:
     WebView(WebKitPart *wpart, QWidget *parent);
     ~WebView();
@@ -48,11 +49,25 @@ protected:
     void linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &linkGroupMap);
     void partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &partGroupMap);
 
+private slots:
+    void openSelection();
+
 private:
+    void addSearchActions(QList<QAction *>& editActions);
+    QString selectedTextAsOneLine() const;
+
+    /**
+    * Returns selectedText without any leading or trailing whitespace,
+    * and with non-breaking-spaces turned into normal spaces.
+    *
+    * Note that hasSelection can return true and yet simplifiedSelectedText can be empty,
+    * e.g. when selecting a single space.
+    */
+    QString simplifiedSelectedText() const;
+
     WebKitPart *part;
     class WebViewPrivate;
     WebViewPrivate* const d;
-
 
 };
 

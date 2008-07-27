@@ -177,14 +177,15 @@ void WebKitBrowserExtension::searchProvider()
     // action name is of form "previewProvider[<searchproviderprefix>:]"
     const QString searchProviderPrefix = QString(sender()->objectName()).mid(14);
 
+    const QString text = part->view()->page()->selectedText();
     KUriFilterData data;
     QStringList list;
-    data.setData(searchProviderPrefix + part->view()->page()->selectedText());
+    data.setData(searchProviderPrefix + text);
     list << "kurisearchfilter" << "kuriikwsfilter";
 
     if (!KUriFilter::self()->filterUri(data, list)) {
         KDesktopFile file("services", "searchproviders/google.desktop");
-        QString encodedSearchTerm = QUrl::toPercentEncoding(part->view()->page()->selectedText());
+        QString encodedSearchTerm = QUrl::toPercentEncoding(text);
         KConfigGroup cg(file.desktopGroup());
         data.setData(cg.readEntry("Query").replace("\\{@}", encodedSearchTerm));
     }

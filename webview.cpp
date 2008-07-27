@@ -155,7 +155,26 @@ void WebView::editActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &edit
     copyAction->setEnabled(part->browserExtension()->isActionEnabled("copy"));
     editActions.append(copyAction);
 
+    addSearchActions(editActions);
 
+    QString selectedTextURL = selectedTextAsOneLine();
+    if (selectedTextURL.contains("://") && KUrl(selectedTextURL).isValid()) {
+        if (selectedTextURL.length() > 18) {
+            selectedTextURL.truncate(15);
+            selectedTextURL += "...";
+        }
+        KAction *action = new KAction(i18n("Open '%1'", selectedTextURL), this);
+        d->m_actionCollection->addAction("openSelection", action);
+        action->setIcon(KIcon("window-new"));
+        connect(action, SIGNAL(triggered(bool)), this, SLOT(openSelection()));
+        editActions.append(action);
+    }
+
+    editGroupMap.insert("editactions", editActions);
+}
+
+void WebView::addSearchActions(QList<QAction *>& editActions)
+{
     // Fill search provider entries
     KConfig config("kuriikwsfilterrc");
     KConfigGroup cg = config.group("General");
@@ -163,7 +182,10 @@ void WebView::editActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &edit
     const char keywordDelimiter = cg.readEntry("KeywordDelimiter", static_cast<int>(':'));
 
     // search text
-    QString selectedText = this->selectedText();
+    QString selectedText = this->simplifiedSelectedText();
+    if (selectedText.isEmpty())
+        return;
+
     selectedText.replace("&", "&&");
     if (selectedText.length() > 18) {
         selectedText.truncate(15);
@@ -236,14 +258,34 @@ void WebView::editActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &edit
             }
         }
     }
+}
 
-    if (selectedText.contains("://") && KUrl(selectedText).isValid()) {
-        KAction *action = new KAction(i18n("Open '%1'", selectedText), this);
-        d->m_actionCollection->addAction("openSelection", action);
-        action->setIcon(KIcon("window-new"));
-        connect(action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT(openSelection()));
-        editActions.append(action);
-    }
+QString WebView::simplifiedSelectedText() const
+{
+    QString text = selectedText();
+    text.replace(QChar(0xa0), ' ');
+    // remove leading and trailing whitespace
+    while (!text.isEmpty() && text[0].isSpace())
+        text = text.mid(1);
+    while (!text.isEmpty() && text[text.length()-1].isSpace())
+        text.truncate(text.length()-1);
+    return text;
+}
 
-    editGroupMap.insert("editactions", editActions);
+QString WebView::selectedTextAsOneLine() const
+{
+    QString text = this->simplifiedSelectedText();
+    // in addition to what simplifiedSelectedText does,
+    // remove linefeeds and any whitespace surrounding it (#113177),
+    // to get it all in a single line.
+    text.remove(QRegExp("[\\s]*\\n+[\\s]*"));
+    return text;
+}
+
+void WebView::openSelection()
+{
+    KParts::BrowserArguments browserArgs;
+    browserArgs.frameName = "_blank";
+
+    emit part->browserExtension()->openUrlRequest(selectedTextAsOneLine(), KParts::OpenUrlArguments(), browserArgs);
 }
