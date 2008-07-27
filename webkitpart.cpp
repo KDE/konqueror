@@ -96,23 +96,6 @@ bool WebKitPart::openUrl(const KUrl &url)
 {
     setUrl(url);
 
-#if 0
-    KParts::OpenUrlArguments arguments;
-    KParts::BrowserArguments browserArguments = browserExtension->browserArguments();
-    QString headerString = browserArguments.doPost() ? "POST" : "GET";
-    headerString += QLatin1Char(' ');
-    headerString += url.toEncoded(QUrl::RemoveScheme | QUrl::RemoveAuthority);
-    headerString += QLatin1String(" HTTP/1.1\n\n"); // ### does it matter?
-    headerString += arguments.metaData().value("customHTTPHeader");
-    QHttpRequestHeader header(headerString);
-
-    QWebNetworkRequest request(url, browserArguments.doPost() ? QWebNetworkRequest::Post : QWebNetworkRequest::Get,
-                               browserArguments.postData);
-
-    foreach(QString key, header.keys())
-        request.setHttpHeaderField(key, header.value(key));
-#endif
-
     m_webPageView->view()->load(url);
 
     return true;
@@ -154,24 +137,6 @@ WebView * WebKitPart::view()
 {
     return m_webPageView->view();
 }
-
-
-#if 0
-QWebPage::NavigationRequestResponse WebKitPart::navigationRequested(const QWebNetworkRequest &request)
-{
-    KParts::OpenUrlArguments arguments;
-    KParts::BrowserArguments browserArguments;
-    browserArguments.postData = request.postData();
-    if (!browserArguments.postData.isEmpty())
-        browserArguments.setDoPost(true);
-
-    arguments.metaData().unite(KWebNetworkInterface::metaDataForRequest(request.httpHeader()));
-
-    emit m_browserExtension->openUrlRequest(request.url(), arguments, browserArguments);
-
-    return QWebPage::IgnoreNavigationRequest;
-}
-#endif
 
 WebKitBrowserExtension::WebKitBrowserExtension(WebKitPart *parent)
     : KParts::BrowserExtension(parent), part(parent)
@@ -301,7 +266,6 @@ void WebKitBrowserExtension::slotCopyImage()
 
 void WebKitBrowserExtension::slotViewDocumentSource()
 {
-
     QString markup = part->view()->page()->mainFrame()->toHtml();
     QPlainTextEdit *view = new QPlainTextEdit(markup);
     view->setWindowTitle(i18n("Page Source of %1", part->view()->title()));

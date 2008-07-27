@@ -121,27 +121,25 @@ void WebKitGlobal::deregisterPart(WebKitPart *part)
 void WebKitGlobal::initGlobalSettings()
 {
     kDebug();
-    QString userStyleSheet;
-    KConfigGroup cgHtml(KGlobal::config(), "HTML Settings");
-    if (cgHtml.readEntry("UserStyleSheetEnabled", false) == true) {
-        if (cgHtml.hasKey("UserStyleSheet"))
-            userStyleSheet = cgHtml.readEntry("UserStyleSheet", "");
+    if (!settings()->userStyleSheet().isEmpty()) {
+        QWebSettings::globalSettings()->setUserStyleSheetUrl(QUrl(settings()->userStyleSheet()));
     }
-    if (!userStyleSheet.isEmpty()) {
-        QWebSettings::globalSettings()->setUserStyleSheetUrl(QUrl(userStyleSheet));
-    }
-    if (cgHtml.hasKey("AutoLoadImages"))
-        QWebSettings::globalSettings()->setAttribute(QWebSettings::AutoLoadImages, cgHtml.readEntry("AutoLoadImages", true));
+    QWebSettings::globalSettings()->setAttribute(QWebSettings::AutoLoadImages, settings()->autoLoadImages());
+    QWebSettings::globalSettings()->setAttribute(QWebSettings::JavascriptEnabled, settings()->isJavaScriptEnabled());
+    QWebSettings::globalSettings()->setAttribute(QWebSettings::JavaEnabled, settings()->isJavaEnabled());
+    QWebSettings::globalSettings()->setAttribute(QWebSettings::PluginsEnabled, settings()->isPluginsEnabled());
+    QWebSettings::globalSettings()->setAttribute(QWebSettings::JavascriptCanOpenWindows,
+                                                 settings()->windowOpenPolicy() != WebKitSettings::KJSWindowOpenDeny);
 
-    QWebSettings::globalSettings()->setFontFamily(QWebSettings::StandardFont, cgHtml.readEntry("StandardFont", KGlobalSettings::generalFont().family()));
-    QWebSettings::globalSettings()->setFontFamily(QWebSettings::FixedFont, cgHtml.readEntry("FixedFont", KGlobalSettings::fixedFont().family()));
-    QWebSettings::globalSettings()->setFontFamily(QWebSettings::SerifFont, cgHtml.readEntry("SerifFont", HTML_DEFAULT_VIEW_SERIF_FONT));
-    QWebSettings::globalSettings()->setFontFamily(QWebSettings::SansSerifFont, cgHtml.readEntry("SansSerifFont", HTML_DEFAULT_VIEW_SANSSERIF_FONT));
-    QWebSettings::globalSettings()->setFontFamily(QWebSettings::CursiveFont, cgHtml.readEntry("CursiveFont", HTML_DEFAULT_VIEW_CURSIVE_FONT));
-    QWebSettings::globalSettings()->setFontFamily(QWebSettings::FixedFont, cgHtml.readEntry("FantasyFont", HTML_DEFAULT_VIEW_FANTASY_FONT));
+    QWebSettings::globalSettings()->setFontFamily(QWebSettings::StandardFont, settings()->stdFontName());
+    QWebSettings::globalSettings()->setFontFamily(QWebSettings::FixedFont, settings()->fixedFontName());
+    QWebSettings::globalSettings()->setFontFamily(QWebSettings::SerifFont, settings()->serifFontName());
+    QWebSettings::globalSettings()->setFontFamily(QWebSettings::SansSerifFont, settings()->sansSerifFontName());
+    QWebSettings::globalSettings()->setFontFamily(QWebSettings::CursiveFont, settings()->cursiveFontName());
+    QWebSettings::globalSettings()->setFontFamily(QWebSettings::FantasyFont, settings()->fantasyFontName());
 
-    QWebSettings::globalSettings()->setFontSize(QWebSettings::MinimumFontSize, cgHtml.readEntry("MinimumFontSize", HTML_DEFAULT_MIN_FONT_SIZE));
-    QWebSettings::globalSettings()->setFontSize(QWebSettings::DefaultFontSize, cgHtml.readEntry("MediumFontSize", 12));
+    QWebSettings::globalSettings()->setFontSize(QWebSettings::MinimumFontSize, settings()->minFontSize());
+    QWebSettings::globalSettings()->setFontSize(QWebSettings::DefaultFontSize, settings()->mediumFontSize());
 }
 
 WebKitSettings *WebKitGlobal::settings()
@@ -155,9 +153,10 @@ const KComponentData &WebKitGlobal::componentData()
 
     if (!s_componentData) {
         s_about = new KAboutData("webkitpart", 0, ki18n("Webkit HTML Component"),
-                                 /*version*/ "1.0", ki18n(/*shortDescription*/ ""),
+                                 /*version*/ "0.1", ki18n(/*shortDescription*/ ""),
                                  KAboutData::License_LGPL,
-                                 ki18n("Copyright (c) 2007 Trolltech ASA"));
+                                 ki18n("(c) 2008, Urs Wolfer\n"
+                                       "(c) 2007 Trolltech ASA"));
 
         s_about->addAuthor(ki18n("Laurent Montel"), KLocalizedString(), "montel@kde.org");
         s_about->addAuthor(ki18n("Urs Wolfer"), KLocalizedString(), "uwolfer@kde.org");

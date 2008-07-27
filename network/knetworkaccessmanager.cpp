@@ -40,7 +40,7 @@ KNetworkAccessManager::KNetworkAccessManager(QObject *parent)
 
 QNetworkReply *KNetworkAccessManager::createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData)
 {
-    if (WebKitGlobal::settings()->isAdFiltered(req.url().toString())) {
+    if (WebKitGlobal::settings()->isAdFilterEnabled() && WebKitGlobal::settings()->isAdFiltered(req.url().toString())) {
         return new KNetworkReply(req, 0, this);
     }
 
