@@ -49,7 +49,7 @@ protected:
     void linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &linkGroupMap);
     void partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &partGroupMap);
 
-private slots:
+private Q_SLOTS:
     void openSelection();
 
 private:

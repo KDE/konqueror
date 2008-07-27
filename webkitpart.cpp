@@ -22,8 +22,9 @@
  *
  */
 
-#include "webview.h"
 #include "webkitpart.h"
+
+#include "webview.h"
 #include "webkitglobal.h"
 #include "webkitpageview.h"
 

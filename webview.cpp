@@ -192,7 +192,7 @@ void WebView::addSearchActions(QList<QAction *>& selectActions)
     if (selectedText.isEmpty())
         return;
 
-    selectedText.replace("&", "&&");
+    selectedText.replace('&', "&&");
     if (selectedText.length() > 18) {
         selectedText.truncate(15);
         selectedText += "...";

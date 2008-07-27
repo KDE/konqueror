@@ -335,7 +335,7 @@ void WebKitSettings::init( KConfig * config, bool reset )
           QString name = it.key();
           QString url = it.value();
 
-          if (url.startsWith("!"))
+          if (url.startsWith('!'))
               continue;
 
           if (name.startsWith("Filter"))
@@ -900,7 +900,7 @@ const QString &WebKitSettings::availableFamilies()
         const QStringList::Iterator fEnd = families.end();
 
         for ( ; f != fEnd; ++f ) {
-                (*f).replace( foundryExp, "");
+                (*f).remove(foundryExp);
                 if (!s.contains(*f))
                         s << *f;
         }

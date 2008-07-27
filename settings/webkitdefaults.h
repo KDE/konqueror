@@ -18,6 +18,9 @@
    Boston, MA 02110-1301, USA.
 */
 
+#ifndef WEBKITDEFAULTS_H
+#define WEBKITDEFAULTS_H
+
 // browser window color defaults -- Bernd
 #define HTML_DEFAULT_LNK_COLOR Qt::blue
 #define HTML_DEFAULT_TXT_COLOR Qt::black
@@ -31,3 +34,5 @@
 #define HTML_DEFAULT_VIEW_CURSIVE_FONT "Sans Serif"
 #define HTML_DEFAULT_VIEW_FANTASY_FONT "Sans Serif"
 #define HTML_DEFAULT_MIN_FONT_SIZE 7 // everything smaller is usually unreadable.
+
+#endif // WEBKITDEFAULTS_H
