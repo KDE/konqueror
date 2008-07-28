@@ -3713,7 +3713,7 @@ void KonqMainWindow::initActions()
   m_paMoveTabRight = actionCollection()->addAction("tab_move_right");
   m_paMoveTabRight->setText( i18n("Move Tab Right") );
   m_paMoveTabRight->setIcon( KIcon("tab-move-right") );
-  connect(m_paMoveTabRight, SIGNAL(triggered()), SLOT( slotMo  m_paMoveTabRight->setveTabRight()));
+  connect(m_paMoveTabRight, SIGNAL(triggered()), SLOT( slotMoveTabRight()));
   m_paMoveTabRight->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_Right);
 
 #ifndef NDEBUG
