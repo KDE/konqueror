@@ -19,7 +19,7 @@ QT4_ADD_DBUS_INTERFACE( nspluginviewer_SRCS ${nsplugins_callback_xml} nsplugins_
 
 kde4_add_executable(nspluginviewer ${nspluginviewer_SRCS})
 
-target_link_libraries(nspluginviewer ${KDE4_KPARTS_LIBS} ${X11_Xt_LIB} ${QT_QTDBUS_LIBRARY} ${CMAKE_DL_LIBS})
+target_link_libraries(nspluginviewer ${KDE4_KPARTS_LIBS} ${X11_Xt_LIB} ${X11_X11_LIB} ${QT_QTDBUS_LIBRARY} ${CMAKE_DL_LIBS})
 if (GLIB2_FOUND)
    target_link_libraries(nspluginviewer ${GLIB2_LIBRARIES})
 endif (GLIB2_FOUND)

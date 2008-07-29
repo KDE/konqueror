@@ -5,7 +5,10 @@ set(kbookmarkmerger_SRCS kbookmarkmerger.cpp )
 
 kde4_add_executable(kbookmarkmerger ${kbookmarkmerger_SRCS})
 
-target_link_libraries(kbookmarkmerger  ${KDE4_KIO_LIBS} )
+target_link_libraries(kbookmarkmerger  ${KDE4_KIO_LIBS})
+if (Q_WS_X11)
+  target_link_libraries(kbookmarkmerger ${X11_X11_LIB})
+endif (Q_WS_X11)
 
 install(TARGETS kbookmarkmerger ${INSTALL_TARGETS_DEFAULT_ARGS})
 
@@ -41,6 +44,9 @@ kde4_add_kcfg_files(keditbookmarks_KDEINIT_SRCS settings.kcfgc )
 kde4_add_kdeinit_executable( keditbookmarks ${keditbookmarks_KDEINIT_SRCS})
 
 target_link_libraries(kdeinit_keditbookmarks  ${KDE4_KDE3SUPPORT_LIBS} konq ${KDE4_KPARTS_LIBS})
+if (Q_WS_X11)
+  target_link_libraries(kdeinit_keditbookmarks ${X11_X11_LIB})
+endif (Q_WS_X11)
 
 install(TARGETS kdeinit_keditbookmarks  ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(TARGETS keditbookmarks          ${INSTALL_TARGETS_DEFAULT_ARGS})
