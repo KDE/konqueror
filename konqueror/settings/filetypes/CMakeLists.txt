@@ -31,6 +31,9 @@ kde4_add_executable(keditfiletype ${keditfiletype_SRCS})
 target_link_libraries(keditfiletype  ${KDE4_KIO_LIBS} 
 	              ${QT_QT3SUPPORT_LIBRARY}
 		      ${KDE4_KDE3SUPPORT_LIBRARY})
+if (Q_WS_X11)
+  target_link_libraries(keditfiletype ${X11_X11_LIB})
+endif (Q_WS_X11)
 
 install(TARGETS keditfiletype ${INSTALL_TARGETS_DEFAULT_ARGS})
 
