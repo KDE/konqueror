@@ -28,12 +28,14 @@ endif( NOT WIN32 )
 FIND_PATH(WEBKITKDE_INCLUDE_DIR NAMES webkitpart.h
   PATHS
   ${_WebKitKdeIncDir}
+  ${KDE4_INCLUDE_INSTALL_DIR}
   PATH_SUFFIXES webkitkde
 )
 
 FIND_LIBRARY(WEBKITKDE_LIBRARIES NAMES webkitkde
   PATHS
   ${_WebKitKdeLinkDir}
+  ${KDE4_LIB_INSTALL_DIR}
 )
 
 include(FindPackageHandleStandardArgs)
