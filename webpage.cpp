@@ -99,11 +99,15 @@ QString WebPage::userAgentForUrl(const QUrl& _url) const
 {
     KUrl url(_url);
     QString host = url.isLocalFile() ? "localhost" : url.host();
+
     QString userAgent = KProtocolManager::userAgentForHost(host);
-    if (userAgent != KProtocolManager::userAgentForHost(QString())) {
-        return userAgent;
-    }
-    return QWebPage::userAgentForUrl(url);
+    userAgent = userAgent.left(userAgent.indexOf("KHTML/"));
+
+    QString webKitUserAgent = QWebPage::userAgentForUrl(url);
+    webKitUserAgent = webKitUserAgent.mid(webKitUserAgent.indexOf("AppleWebKit/"));
+    webKitUserAgent = webKitUserAgent.left(webKitUserAgent.indexOf(')') + 1);
+    userAgent += webKitUserAgent;
+    return userAgent;
 }
 
 void WebPage::slotHandleUnsupportedContent(QNetworkReply *reply)
