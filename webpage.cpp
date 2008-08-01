@@ -101,7 +101,10 @@ QString WebPage::userAgentForUrl(const QUrl& _url) const
     QString host = url.isLocalFile() ? "localhost" : url.host();
 
     QString userAgent = KProtocolManager::userAgentForHost(host);
-    userAgent = userAgent.left(userAgent.indexOf("KHTML/"));
+    int indexOfKhtml = userAgent.indexOf("KHTML/");
+    if (indexOfKhtml == -1) // not a KHTML user agent, so no need to "update" it
+        return userAgent;
+    userAgent = userAgent.left(indexOfKhtml);
 
     QString webKitUserAgent = QWebPage::userAgentForUrl(url);
     webKitUserAgent = webKitUserAgent.mid(webKitUserAgent.indexOf("AppleWebKit/"));
