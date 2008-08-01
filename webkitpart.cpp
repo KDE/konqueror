@@ -139,6 +139,12 @@ WebView * WebKitPart::view()
     return m_webPageView->view();
 }
 
+void WebKitPart::setStatusBarTextProxy(const QString &message)
+{
+    emit setStatusBarText(message);
+}
+
+
 WebKitBrowserExtension::WebKitBrowserExtension(WebKitPart *parent)
     : KParts::BrowserExtension(parent), part(parent)
 {

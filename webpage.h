@@ -53,6 +53,7 @@ protected Q_SLOTS:
     void slotGeometryChangeRequested(const QRect &rect);
     void slotWindowCloseRequested();
     void slotDownloadRequested(const QNetworkRequest &request);
+    void slotStatusBarMessage(const QString &message);
 
 private:
     WebKitPart *m_part;

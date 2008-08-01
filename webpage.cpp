@@ -24,7 +24,9 @@
 #include "webpage.h"
 #include "webkitpart.h"
 #include "webview.h"
+#include "webkitglobal.h"
 #include "network/knetworkaccessmanager.h"
+#include "settings/webkitsettings.h"
 
 #include <KDE/KParts/GenericFactory>
 #include <KDE/KParts/BrowserRun>
@@ -58,6 +60,8 @@ WebPage::WebPage(WebKitPart *wpart, QWidget *parent)
     setForwardUnsupportedContent(true);
     connect(this, SIGNAL(unsupportedContent(QNetworkReply *)),
             this, SLOT(slotHandleUnsupportedContent(QNetworkReply *)));
+    connect(this, SIGNAL(statusBarMessage(const QString &)),
+            this, SLOT(slotStatusBarMessage(const QString &)));
 }
 
 bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request,
@@ -134,6 +138,9 @@ QObject *WebPage::createPlugin(const QString &classid, const QUrl &url, const QS
 
 QWebPage *WebPage::createWindow(WebWindowType type)
 {
+    if (WebKitGlobal::settings()->windowOpenPolicy(mainFrame()->url().host()) != WebKitSettings::KJSWindowOpenDeny)
+        return 0;
+
     kDebug() << type;
     KParts::ReadOnlyPart *part = 0;
     KParts::OpenUrlArguments args;
@@ -153,7 +160,11 @@ QWebPage *WebPage::createWindow(WebWindowType type)
 
 void WebPage::slotGeometryChangeRequested(const QRect &rect)
 {
-    emit m_part->browserExtension()->moveTopLevelWidget(rect.x(), rect.y());
+    const QString host = mainFrame()->url().host();
+
+    if (WebKitGlobal::settings()->windowMovePolicy(host) == WebKitSettings::KJSWindowMoveAllow) {
+        emit m_part->browserExtension()->moveTopLevelWidget(rect.x(), rect.y());
+    }
 
     int height = rect.height();
     int width = rect.width();
@@ -172,8 +183,10 @@ void WebPage::slotGeometryChangeRequested(const QRect &rect)
         return;
     }
 
-    kDebug() << "resizing to " << width << "x" << height;
-    emit m_part->browserExtension()->resizeTopLevelWidget(width, height);
+    if (WebKitGlobal::settings()->windowResizePolicy(host) == WebKitSettings::KJSWindowResizeAllow) {
+        kDebug() << "resizing to " << width << "x" << height;
+        emit m_part->browserExtension()->resizeTopLevelWidget(width, height);
+    }
 
     // If the window is out of the desktop, move it up/left
     // (maybe we should use workarea instead of sg, otherwise the window ends up below kicker)
@@ -185,8 +198,10 @@ void WebPage::slotGeometryChangeRequested(const QRect &rect)
         moveByX = - right + sg.right(); // always <0
     if (bottom > sg.bottom())
         moveByY = - bottom + sg.bottom(); // always <0
-    if (moveByX || moveByY)
+    if ((moveByX || moveByY) &&
+      WebKitGlobal::settings()->windowMovePolicy(host) == WebKitSettings::KJSWindowMoveAllow) {
         emit m_part->browserExtension()->moveTopLevelWidget(view()->x() + moveByX, view()->y() + moveByY);
+    }
 }
 
 void WebPage::slotWindowCloseRequested()
@@ -241,5 +256,12 @@ void WebPage::slotDownloadRequested(const QNetworkRequest &request)
         job->addMetaData("MaxCacheSize", "0"); // Don't store in http cache.
         job->addMetaData("cache", "cache"); // Use entry from cache if available.
         job->uiDelegate()->setAutoErrorHandlingEnabled(true);
+    }
+}
+
+void WebPage::slotStatusBarMessage(const QString &message)
+{
+    if (WebKitGlobal::settings()->windowStatusPolicy(mainFrame()->url().host()) == WebKitSettings::KJSWindowStatusAllow) {
+        m_part->setStatusBarTextProxy(message);
     }
 }

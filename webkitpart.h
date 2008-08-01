@@ -49,6 +49,9 @@ public:
     WebView *view();
     WebKitBrowserExtension *browserExtension() const;
 
+    /** required because KPart::setStatusBarText(..) is protected **/
+    void setStatusBarTextProxy(const QString &message);
+
 protected:
     virtual bool openFile();
     void initAction();
@@ -87,7 +90,6 @@ public Q_SLOTS:
     void slotCopyImage();
 
     void slotViewDocumentSource();
-
 
 private Q_SLOTS:
     void updateEditActions();
