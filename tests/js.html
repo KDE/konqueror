@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>Window</title>
+<script type="text/javascript">
+function resize()
+{
+    window.resizeTo(580, 420);
+}
+
+function move()
+{
+    window.moveTo(180, 120);
+}
+
+function promptAndAlertMessage()
+{
+    var message = prompt("Enter a message.", "");
+    alert(message);
+}
+
+function statusMessage()
+{
+    window.status = 'A new status message.';
+}
+
+</script>
+</head>
+<body>
+<script type="text/javascript">
+document.writeln("navigator.appName: " + navigator.appName + "<br />");
+document.writeln("navigator.appVersion: " + navigator.appVersion + "<br />");
+</script>
+<a href="javascript:resize()">resizeTo</a><br />
+<a href="javascript:move()">moveTo</a><br />
+<a href="javascript:promptAndAlertMessage()">promptAndAlertMessage</a><br />
+<a href="javascript:statusMessage()">status</a><br />
+</body>
+</html>
