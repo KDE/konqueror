@@ -3,6 +3,7 @@
  *
  * Copyright (C) 2008 Dirk Mueller <mueller@kde.org>
  * Copyright (C) 2008 Urs Wolfer <uwolfer @ kde.org>
+ * Copyright (C) 2008 Michael Howell <mhowell123@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -20,35 +21,38 @@
  * Boston, MA 02110-1301, USA.
  *
  */
-#ifndef WEBPAGE_H
-#define WEBPAGE_H
+#ifndef KWEBPAGE_H
+#define KWEBPAGE_H
 
-#include "kwebpage.h"
+#include <kdemacros.h>
 
-#include "webkitkde_export.h"
+#include <qwebpage.h>
 
 class QWebFrame;
-class WebKitPart;
 
-class WEBKITKDE_EXPORT WebPage : public KWebPage
+class KDE_EXPORT KWebPage : public QWebPage
 {
     Q_OBJECT
 public:
-    WebPage(WebKitPart *wpart, QWidget *parent);
+    KWebPage(QObject *parent);
+    virtual ~KWebPage();
 
 protected:
-    virtual bool acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request,
-                                         NavigationType type);
+    virtual QString chooseFile(QWebFrame *frame, const QString &suggestedFile);
+    virtual void javaScriptAlert(QWebFrame *frame, const QString &msg);
+    virtual bool javaScriptConfirm(QWebFrame *frame, const QString &msg);
+    virtual bool javaScriptPrompt(QWebFrame *frame, const QString &msg, const QString &defaultValue, QString *result);
+    virtual QString userAgentForUrl(const QUrl& url) const;
 
-    virtual QWebPage *createWindow(WebWindowType type);
+    virtual QObject *createPlugin(const QString &classid, const QUrl &url, const QStringList &paramNames, const QStringList &paramValues);
 
 protected Q_SLOTS:
-    void slotGeometryChangeRequested(const QRect &rect);
-    void slotWindowCloseRequested();
-    void slotStatusBarMessage(const QString &message);
+    void slotHandleUnsupportedContent(QNetworkReply *reply);
+    void slotDownloadRequested(const QNetworkRequest &request);
 
 private:
-    WebKitPart *m_part;
+    class KWebPagePrivate;
+    KWebPagePrivate* const d;
 };
 
-#endif // WEBPAGE_H
+#endif // KWEBPAGE_H

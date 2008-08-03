@@ -51,7 +51,7 @@ public:
 
 
 WebView::WebView(WebKitPart *wpart, QWidget *parent)
-    : QWebView(parent), part(wpart), d(new WebView::WebViewPrivate)
+    : KWebView(parent), part(wpart), d(new WebView::WebViewPrivate)
 {
     setPage(new WebPage(wpart, parent));
     d->m_actionCollection = new KActionCollection(this);

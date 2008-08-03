@@ -1,8 +1,10 @@
 /*
  * This file is part of the KDE project.
  *
- * Copyright (C) 2008 Dirk Mueller <mueller@kde.org>
+ * Copyright (C) 2007 Trolltech ASA
  * Copyright (C) 2008 Urs Wolfer <uwolfer @ kde.org>
+ * Copyright (C) 2008 Laurent Montel <montel@kde.org>
+ * Copyright (C) 2008 Michael Howell <mhowell123@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -20,35 +22,34 @@
  * Boston, MA 02110-1301, USA.
  *
  */
-#ifndef WEBPAGE_H
-#define WEBPAGE_H
+#ifndef KWEBVIEW_H
+#define KWEBVIEW_H
 
-#include "kwebpage.h"
+#include <kdemacros.h>
 
-#include "webkitkde_export.h"
+#include <QtWebKit/QWebView>
 
-class QWebFrame;
-class WebKitPart;
+class QWebHitTestResult;
 
-class WEBKITKDE_EXPORT WebPage : public KWebPage
+class KDE_EXPORT KWebView : public QWebView
 {
     Q_OBJECT
 public:
-    WebPage(WebKitPart *wpart, QWidget *parent);
+    KWebView(QWidget *parent = 0);
+    virtual ~KWebView();
+
+public Q_SLOTS:
+    void setCustomContextMenu(bool show);
+
+Q_SIGNALS:
+    void showContextMenu();
 
 protected:
-    virtual bool acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request,
-                                         NavigationType type);
-
-    virtual QWebPage *createWindow(WebWindowType type);
-
-protected Q_SLOTS:
-    void slotGeometryChangeRequested(const QRect &rect);
-    void slotWindowCloseRequested();
-    void slotStatusBarMessage(const QString &message);
+    virtual void contextMenuEvent(QContextMenuEvent *event);
 
 private:
-    WebKitPart *m_part;
+    class KWebViewPrivate;
+    KWebViewPrivate* const d;
 };
 
-#endif // WEBPAGE_H
+#endif // KWEBVIEW_H
