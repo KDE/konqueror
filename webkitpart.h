@@ -38,7 +38,7 @@ class WEBKITKDE_EXPORT WebKitPart : public KParts::ReadOnlyPart
 {
     Q_OBJECT
 public:
-    WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList &/*args*/);
+    WebKitPart(QWidget *parentWidget = 0, QObject *parent = 0, const QStringList &/*args*/ = QStringList());
     ~WebKitPart();
 
     virtual bool openUrl(const KUrl &url);

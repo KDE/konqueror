@@ -31,6 +31,7 @@
 #include <KDE/KParts/GenericFactory>
 #include <KDE/KParts/BrowserRun>
 #include <KDE/KAboutData>
+#include <KDE/KAction>
 #include <KDE/KFileDialog>
 #include <KDE/KInputDialog>
 #include <KDE/KMessageBox>
@@ -40,6 +41,7 @@
 #include <KDE/KRun>
 #include <KDE/KShell>
 #include <KDE/KStandardDirs>
+#include <KDE/KStandardShortcut>
 #include <KIO/Job>
 
 #include <QWebFrame>
@@ -50,6 +52,45 @@ WebPage::WebPage(WebKitPart *wpart, QWidget *parent)
     , m_part(wpart)
 {
     setNetworkAccessManager(new KNetworkAccessManager(this));
+    
+    action(QWebPage::Back)->setIcon(KIcon("go-previous"));
+    action(QWebPage::Back)->setShortcut(KStandardShortcut::back().primary());
+
+    action(QWebPage::Forward)->setIcon(KIcon("go-next"));
+    action(QWebPage::Forward)->setShortcut(KStandardShortcut::forward().primary());
+
+    action(QWebPage::Reload)->setIcon(KIcon("view-refresh"));
+    action(QWebPage::Reload)->setShortcut(KStandardShortcut::reload().primary());
+
+    action(QWebPage::Stop)->setIcon(KIcon("process-stop"));
+    action(QWebPage::Stop)->setShortcut(Qt::Key_Escape);
+
+    action(QWebPage::Cut)->setIcon(KIcon("edit-cut"));
+    action(QWebPage::Cut)->setShortcut(KStandardShortcut::cut().primary());
+
+    action(QWebPage::Copy)->setIcon(KIcon("edit-copy"));
+    action(QWebPage::Copy)->setShortcut(KStandardShortcut::copy().primary());
+
+    action(QWebPage::Paste)->setIcon(KIcon("edit-paste"));
+    action(QWebPage::Paste)->setShortcut(KStandardShortcut::paste().primary());
+
+    action(QWebPage::Undo)->setIcon(KIcon("edit-undo"));
+    action(QWebPage::Undo)->setShortcut(KStandardShortcut::undo().primary());
+
+    action(QWebPage::Redo)->setIcon(KIcon("edit-redo"));
+    action(QWebPage::Redo)->setShortcut(KStandardShortcut::redo().primary());
+
+    action(QWebPage::InspectElement)->setIcon(KIcon("view-process-all"));
+    action(QWebPage::OpenLinkInNewWindow)->setIcon(KIcon("window-new"));
+    action(QWebPage::OpenFrameInNewWindow)->setIcon(KIcon("window-new"));
+    action(QWebPage::OpenImageInNewWindow)->setIcon(KIcon("window-new"));
+    action(QWebPage::CopyLinkToClipboard)->setIcon(KIcon("edit-copy"));
+    action(QWebPage::CopyImageToClipboard)->setIcon(KIcon("edit-copy"));
+    action(QWebPage::ToggleBold)->setIcon(KIcon("format-text-bold"));
+    action(QWebPage::ToggleItalic)->setIcon(KIcon("format-text-italic"));
+    action(QWebPage::ToggleUnderline)->setIcon(KIcon("format-text-underline"));
+    action(QWebPage::DownloadLinkToDisk)->setIcon(KIcon("document-save"));
+    action(QWebPage::DownloadImageToDisk)->setIcon(KIcon("document-save"));
 
     connect(this, SIGNAL(geometryChangeRequested(const QRect &)),
             this, SLOT(slotGeometryChangeRequested(const QRect &)));
