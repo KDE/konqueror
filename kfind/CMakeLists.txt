@@ -10,7 +10,7 @@ set(kfindpart_PART_SRCS kfindpart.cpp ${libkfindcommon_SRCS})
 kde4_add_plugin(kfindpart WITH_PREFIX ${kfindpart_PART_SRCS})
 
 
-target_link_libraries(kfindpart  ${KDE4_KDE3SUPPORT_LIBS} konq )
+target_link_libraries(kfindpart  ${KDE4_KDE3SUPPORT_LIBS} konq ${KDE4_KPARTS_LIBS})
 
 install(TARGETS kfindpart  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
