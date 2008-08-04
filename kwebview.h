@@ -42,7 +42,7 @@ public Q_SLOTS:
     void setCustomContextMenu(bool show);
 
 Q_SIGNALS:
-    void showContextMenu();
+    void showContextMenu(QContextMenuEvent *event);
 
 protected:
     virtual void contextMenuEvent(QContextMenuEvent *event);

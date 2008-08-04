@@ -50,7 +50,7 @@ void KWebView::contextMenuEvent(QContextMenuEvent *event)
     if (!d->customContextMenu) {
         QWebView::contextMenuEvent(event);
     } else {
-        emit showContextMenu();
+        emit showContextMenu(event);
     }
 }
 
