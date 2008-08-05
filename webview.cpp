@@ -26,17 +26,19 @@
 #include "webkitpart.h"
 #include "webpage.h"
 
-#include <KDE/KParts/GenericFactory>
-#include <KDE/KAboutData>
-#include <KDE/KAction>
-#include <KDE/KActionCollection>
-#include <KDE/KConfigGroup>
+#include <KParts/GenericFactory>
+#include <KAboutData>
+#include <KAction>
+#include <KActionCollection>
+#include <KConfigGroup>
 #include <KMimeType>
 #include <KService>
 #include <KUriFilterData>
 #include <KStandardDirs>
 #include <KActionMenu>
 
+#include <QtGui/QApplication>
+#include <QtGui/QClipboard>
 #include <QtNetwork/QHttpRequestHeader>
 #include <QtWebKit/QWebFrame>
 #include <QtWebKit/QWebHitTestResult>
@@ -45,16 +47,40 @@
 class WebView::WebViewPrivate
 {
 public:
-    KActionCollection* m_actionCollection;
+    WebViewPrivate(WebView *webView)
+    : webView(webView)
+    , keyboardModifiers(Qt::NoModifier)
+    , pressedButtons(Qt::NoButton)
+    {}
+
+    void addSearchActions(QList<QAction *>& selectActions);
+    QString selectedTextAsOneLine() const;
+
+    /**
+    * Returns selectedText without any leading or trailing whitespace,
+    * and with non-breaking-spaces turned into normal spaces.
+    *
+    * Note that hasSelection can return true and yet simplifiedSelectedText can be empty,
+    * e.g. when selecting a single space.
+    */
+    QString simplifiedSelectedText() const;
+
+    WebView *webView;
+    KActionCollection* actionCollection;
     QWebHitTestResult result;
+    WebKitPart *part;
+    Qt::KeyboardModifiers keyboardModifiers;
+    Qt::MouseButtons pressedButtons;
 };
 
 
 WebView::WebView(WebKitPart *wpart, QWidget *parent)
-    : KWebView(parent), part(wpart), d(new WebView::WebViewPrivate)
+    : KWebView(parent), d(new WebViewPrivate(this))
 {
+    d->part = wpart;
     setPage(new WebPage(wpart, parent));
-    d->m_actionCollection = new KActionCollection(this);
+    d->actionCollection = new KActionCollection(this);
+    setAcceptDrops(true);
 }
 
 WebView::~WebView()
@@ -65,6 +91,36 @@ WebView::~WebView()
 QWebHitTestResult WebView::contextMenuResult() const
 {
     return d->result;
+}
+
+void WebView::wheelEvent(QWheelEvent *event)
+{
+    if (QApplication::keyboardModifiers() & Qt::ControlModifier) {
+        int numDegrees = event->delta() / 8;
+        int numSteps = numDegrees / 15;
+        setTextSizeMultiplier(textSizeMultiplier() + numSteps * 0.1);
+        event->accept();
+        return;
+    }
+    KWebView::wheelEvent(event);
+}
+
+void WebView::mousePressEvent(QMouseEvent *event)
+{
+    d->pressedButtons = event->buttons();
+    d->keyboardModifiers = event->modifiers();
+    KWebView::mousePressEvent(event);
+}
+
+void WebView::mouseReleaseEvent(QMouseEvent *event)
+{
+    KWebView::mouseReleaseEvent(event);
+    if (!event->isAccepted() && (d->pressedButtons & Qt::MidButton)) {
+        QUrl url(QApplication::clipboard()->text(QClipboard::Selection));
+        if (!url.isEmpty() && url.isValid() && !url.scheme().isEmpty()) {
+            emit d->part->browserExtension()->openUrlRequest(url, KParts::OpenUrlArguments(), KParts::BrowserArguments());
+        }
+    }
 }
 
 void WebView::contextMenuEvent(QContextMenuEvent *e)
@@ -96,8 +152,8 @@ void WebView::contextMenuEvent(QContextMenuEvent *e)
         selectActionPopupMenu(mapAction);
     }
 
-    emit part->browserExtension()->popupMenu(/*guiclient */
-        e->globalPos(), part->url(), 0, KParts::OpenUrlArguments(), KParts::BrowserArguments(),
+    emit d->part->browserExtension()->popupMenu(/*guiclient */
+        e->globalPos(), d->part->url(), 0, KParts::OpenUrlArguments(), KParts::BrowserArguments(),
         flags, mapAction);
 }
 
@@ -105,24 +161,24 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &part
 {
     QList<QAction *>partActions;
     KAction *action = new KAction(i18n("Save Image As..."), this);
-    d->m_actionCollection->addAction("saveimageas", action);
-    connect(action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT(slotSaveImageAs()));
+    d->actionCollection->addAction("saveimageas", action);
+    connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotSaveImageAs()));
     partActions.append(action);
 
     action = new KAction(i18n("Send Image..."), this);
-    d->m_actionCollection->addAction("sendimage", action);
-    connect(action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT(slotSendImage()));
+    d->actionCollection->addAction("sendimage", action);
+    connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotSendImage()));
     partActions.append(action);
 
     action = new KAction(i18n("Copy Image"), this);
-    d->m_actionCollection->addAction("copyimage", action);
+    d->actionCollection->addAction("copyimage", action);
     action->setEnabled(!d->result.pixmap().isNull());
-    connect(action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT(slotCopyImage()));
+    connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotCopyImage()));
     partActions.append(action);
 
     action = new KAction(i18n("View Frame Source"), this);
-    d->m_actionCollection->addAction("viewFrameSource", action);
-    connect(action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT(slotViewDocumentSource()));
+    d->actionCollection->addAction("viewFrameSource", action);
+    connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotViewDocumentSource()));
     partActions.append(action);
 
     partGroupMap.insert("partactions", partActions);
@@ -133,20 +189,20 @@ void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &link
     QList<QAction *>linkActions;
 
     KAction *action = new KAction(i18n("Open in New &Window"), this);
-    d->m_actionCollection->addAction("frameinwindow", action);
+    d->actionCollection->addAction("frameinwindow", action);
     action->setIcon(KIcon("window-new"));
-    connect(action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT(slotFrameInWindow()));
+    connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotFrameInWindow()));
     linkActions.append(action);
 
     action = new KAction(i18n("Open in &This Window"), this);
-    d->m_actionCollection->addAction("frameintop", action);
-    connect(action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT(slotFrameInTop()));
+    d->actionCollection->addAction("frameintop", action);
+    connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotFrameInTop()));
     linkActions.append(action);
 
     action = new KAction(i18n("Open in &New Tab"), this);
-    d->m_actionCollection->addAction("frameintab", action);
+    d->actionCollection->addAction("frameintab", action);
     action->setIcon(KIcon("tab-new"));
-    connect(action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT(slotFrameInTab()));
+    connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotFrameInTab()));
     linkActions.append(action);
 
     linkGroupMap.insert("linkactions", linkActions);
@@ -156,21 +212,21 @@ void WebView::selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &se
 {
     QList<QAction *>selectActions;
 
-    QAction* copyAction = d->m_actionCollection->addAction(KStandardAction::Copy, "copy",  part->browserExtension(), SLOT(copy()));
+    QAction* copyAction = d->actionCollection->addAction(KStandardAction::Copy, "copy",  d->part->browserExtension(), SLOT(copy()));
     copyAction->setText(i18n("&Copy Text"));
-    copyAction->setEnabled(part->browserExtension()->isActionEnabled("copy"));
+    copyAction->setEnabled(d->part->browserExtension()->isActionEnabled("copy"));
     selectActions.append(copyAction);
 
-    addSearchActions(selectActions);
+    d->addSearchActions(selectActions);
 
-    QString selectedTextURL = selectedTextAsOneLine();
+    QString selectedTextURL = d->selectedTextAsOneLine();
     if (selectedTextURL.contains("://") && KUrl(selectedTextURL).isValid()) {
         if (selectedTextURL.length() > 18) {
             selectedTextURL.truncate(15);
             selectedTextURL += "...";
         }
         KAction *action = new KAction(i18n("Open '%1'", selectedTextURL), this);
-        d->m_actionCollection->addAction("openSelection", action);
+        d->actionCollection->addAction("openSelection", action);
         action->setIcon(KIcon("window-new"));
         connect(action, SIGNAL(triggered(bool)), this, SLOT(openSelection()));
         selectActions.append(action);
@@ -179,7 +235,7 @@ void WebView::selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &se
     selectGroupMap.insert("editactions", selectActions);
 }
 
-void WebView::addSearchActions(QList<QAction *>& selectActions)
+void WebView::WebViewPrivate::addSearchActions(QList<QAction *>& selectActions)
 {
     // Fill search provider entries
     KConfig config("kuriikwsfilterrc");
@@ -188,7 +244,7 @@ void WebView::addSearchActions(QList<QAction *>& selectActions)
     const char keywordDelimiter = cg.readEntry("KeywordDelimiter", static_cast<int>(':'));
 
     // search text
-    QString selectedText = this->simplifiedSelectedText();
+    QString selectedText = simplifiedSelectedText();
     if (selectedText.isEmpty())
         return;
 
@@ -221,8 +277,8 @@ void WebView::addSearchActions(QList<QAction *>& selectActions)
         name = "Google";
     }
 
-    KAction *action = new KAction(i18n("Search for '%1' with %2", selectedText, name), this);
-    d->m_actionCollection->addAction("searchProvider", action);
+    KAction *action = new KAction(i18n("Search for '%1' with %2", selectedText, name), webView);
+    actionCollection->addAction("searchProvider", action);
     selectActions.append(action);
     action->setIcon(icon);
     connect(action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT(searchProvider()));
@@ -233,8 +289,8 @@ void WebView::addSearchActions(QList<QAction *>& selectActions)
     favoriteEngines = cg.readEntry("FavoriteSearchEngines", favoriteEngines);
 
     if (!favoriteEngines.isEmpty()) {
-        KActionMenu* providerList = new KActionMenu(i18n("Search for '%1' with",  selectedText), this);
-        d->m_actionCollection->addAction("searchProviderList", providerList);
+        KActionMenu* providerList = new KActionMenu(i18n("Search for '%1' with",  selectedText), webView);
+        actionCollection->addAction("searchProviderList", providerList);
         selectActions.append(providerList);
 
         QStringList::ConstIterator it = favoriteEngines.begin();
@@ -255,8 +311,8 @@ void WebView::addSearchActions(QList<QAction *>& selectActions)
                     icon = KIcon(QPixmap(iconPath));
                 name = service->name();
 
-                KAction *action = new KAction(name, this);
-                d->m_actionCollection->addAction(QString("searchProvider" + searchProviderPrefix).toLatin1().constData(), action);
+                KAction *action = new KAction(name, webView);
+                actionCollection->addAction(QString("searchProvider" + searchProviderPrefix).toLatin1().constData(), action);
                 action->setIcon(icon);
                 connect(action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT(searchProvider()));
 
@@ -266,9 +322,9 @@ void WebView::addSearchActions(QList<QAction *>& selectActions)
     }
 }
 
-QString WebView::simplifiedSelectedText() const
+QString WebView::WebViewPrivate::simplifiedSelectedText() const
 {
-    QString text = selectedText();
+    QString text = webView->selectedText();
     text.replace(QChar(0xa0), ' ');
     // remove leading and trailing whitespace
     while (!text.isEmpty() && text[0].isSpace())
@@ -278,7 +334,7 @@ QString WebView::simplifiedSelectedText() const
     return text;
 }
 
-QString WebView::selectedTextAsOneLine() const
+QString WebView::WebViewPrivate::selectedTextAsOneLine() const
 {
     QString text = this->simplifiedSelectedText();
     // in addition to what simplifiedSelectedText does,
@@ -293,5 +349,5 @@ void WebView::openSelection()
     KParts::BrowserArguments browserArgs;
     browserArgs.frameName = "_blank";
 
-    emit part->browserExtension()->openUrlRequest(selectedTextAsOneLine(), KParts::OpenUrlArguments(), browserArgs);
+    emit d->part->browserExtension()->openUrlRequest(d->selectedTextAsOneLine(), KParts::OpenUrlArguments(), browserArgs);
 }

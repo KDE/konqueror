@@ -31,7 +31,6 @@
 
 #include "webkitkde_export.h"
 
-class WebView;
 class WebKitPart;
 class QWebHitTestResult;
 
@@ -44,7 +43,10 @@ public:
     QWebHitTestResult contextMenuResult() const;
 
 protected:
-    virtual void contextMenuEvent(QContextMenuEvent *e);
+    void mousePressEvent(QMouseEvent *event);
+    void mouseReleaseEvent(QMouseEvent *event);
+    void wheelEvent(QWheelEvent *event);
+    void contextMenuEvent(QContextMenuEvent *e);
     void selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &selectGroupMap);
     void linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &linkGroupMap);
     void partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &partGroupMap);
@@ -53,22 +55,8 @@ private Q_SLOTS:
     void openSelection();
 
 private:
-    void addSearchActions(QList<QAction *>& selectActions);
-    QString selectedTextAsOneLine() const;
-
-    /**
-    * Returns selectedText without any leading or trailing whitespace,
-    * and with non-breaking-spaces turned into normal spaces.
-    *
-    * Note that hasSelection can return true and yet simplifiedSelectedText can be empty,
-    * e.g. when selecting a single space.
-    */
-    QString simplifiedSelectedText() const;
-
-    WebKitPart *part;
     class WebViewPrivate;
     WebViewPrivate* const d;
-
 };
 
 #endif // WEBVIEW_H
