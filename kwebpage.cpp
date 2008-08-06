@@ -92,6 +92,10 @@ KWebPage::KWebPage(QObject *parent)
     action(QWebPage::DownloadLinkToDisk)->setIcon(KIcon("document-save"));
     action(QWebPage::DownloadImageToDisk)->setIcon(KIcon("document-save"));
 
+    settings()->setWebGraphic(QWebSettings::MissingPluginGraphic, KIcon("preferences-plugin").pixmap(32, 32));
+    settings()->setWebGraphic(QWebSettings::MissingImageGraphic, KIcon("image-missing").pixmap(32, 32));
+    settings()->setWebGraphic(QWebSettings::DefaultFrameIconGraphic, KIcon("applications-internet").pixmap(32, 32));
+
     connect(this, SIGNAL(downloadRequested(const QNetworkRequest &)),
             this, SLOT(slotDownloadRequested(const QNetworkRequest &)));
     setForwardUnsupportedContent(true);
