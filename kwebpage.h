@@ -26,7 +26,7 @@
 
 #include <kdemacros.h>
 
-#include <qwebpage.h>
+#include <QtWebKit/QWebPage>
 
 class QWebFrame;
 
@@ -35,16 +35,16 @@ class KDE_EXPORT KWebPage : public QWebPage
     Q_OBJECT
 public:
     KWebPage(QObject *parent);
-    virtual ~KWebPage();
+    ~KWebPage();
 
 protected:
-    virtual QString chooseFile(QWebFrame *frame, const QString &suggestedFile);
-    virtual void javaScriptAlert(QWebFrame *frame, const QString &msg);
-    virtual bool javaScriptConfirm(QWebFrame *frame, const QString &msg);
-    virtual bool javaScriptPrompt(QWebFrame *frame, const QString &msg, const QString &defaultValue, QString *result);
-    virtual QString userAgentForUrl(const QUrl& url) const;
+    QString chooseFile(QWebFrame *frame, const QString &suggestedFile);
+    void javaScriptAlert(QWebFrame *frame, const QString &msg);
+    bool javaScriptConfirm(QWebFrame *frame, const QString &msg);
+    bool javaScriptPrompt(QWebFrame *frame, const QString &msg, const QString &defaultValue, QString *result);
+    QString userAgentForUrl(const QUrl& url) const;
 
-    virtual QObject *createPlugin(const QString &classid, const QUrl &url, const QStringList &paramNames, const QStringList &paramValues);
+    QObject *createPlugin(const QString &classid, const QUrl &url, const QStringList &paramNames, const QStringList &paramValues);
 
 protected Q_SLOTS:
     void slotHandleUnsupportedContent(QNetworkReply *reply);

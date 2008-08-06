@@ -36,7 +36,7 @@ class KDE_EXPORT KWebView : public QWebView
     Q_OBJECT
 public:
     KWebView(QWidget *parent = 0);
-    virtual ~KWebView();
+    ~KWebView();
 
 public Q_SLOTS:
     void setCustomContextMenu(bool show);
@@ -45,7 +45,7 @@ Q_SIGNALS:
     void showContextMenu(QContextMenuEvent *event);
 
 protected:
-    virtual void contextMenuEvent(QContextMenuEvent *event);
+    void contextMenuEvent(QContextMenuEvent *event);
 
 private:
     class KWebViewPrivate;
