@@ -37,7 +37,9 @@
 #include <KDE/KAction>
 #include <KDE/KActionCollection>
 #include <KDE/KToolInvocation>
+
 #include <QHttpRequestHeader>
+#include <QtWebKit/QWebHistory>
 #include <QtWebKit/QWebHitTestResult>
 #include <QClipboard>
 #include <QApplication>
@@ -131,6 +133,15 @@ void WebKitPart::loadFinished()
 
 void WebKitPart::urlChanged(const QUrl &url)
 {
+    const QList<QWebHistoryItem> backItemsList = view()->history()->backItems(2);
+    if (backItemsList.count() > 0)
+        kDebug() << backItemsList.at(0).url() << url;
+
+    if (!((backItemsList.count() > 0) && (backItemsList.at(0).url() == url))) {
+        emit m_browserExtension->openUrlNotify();
+    }
+
+    setUrl(url);
     emit m_browserExtension->setLocationBarUrl(KUrl(url).prettyUrl());
 }
 
