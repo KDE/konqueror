@@ -58,6 +58,10 @@ WebPage::WebPage(WebKitPart *wpart, QWidget *parent)
             this, SLOT(slotWindowCloseRequested()));
     connect(this, SIGNAL(statusBarMessage(const QString &)),
             this, SLOT(slotStatusBarMessage(const QString &)));
+
+    const QString host = mainFrame()->url().host();
+    settings()->setAttribute(QWebSettings::PluginsEnabled, WebKitGlobal::settings()->isPluginsEnabled(host));
+    settings()->setAttribute(QWebSettings::DeveloperExtrasEnabled, WebKitGlobal::settings()->isJavaScriptDebugEnabled(host));
 }
 
 bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request,
