@@ -15,18 +15,20 @@
 <author>&Jonathan.Singer; &Jonathan.Singer.mail;</author>
 <author>&Kurt.Hindenburg; &Kurt.Hindenburg.mail;</author>
 
+<othercredit role="maintainer">
+&Robert.Knight; &Robert.Knight.mail;
+</othercredit>
+
 <othercredit role="developer">
 &Kurt.Hindenburg; &Kurt.Hindenburg.mail;
 </othercredit>
 
 <othercredit role="developer">
 &Waldo.Bastian; &Waldo.Bastian.mail;
-<!-- <contrib>Maintainer</contrib> -->
 </othercredit>
 
 <othercredit role="reviewer">
 &Mike.McBride; &Mike.McBride.mail;
-<!-- <contrib>Reviewer</contrib> -->
 </othercredit>
 
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
@@ -38,18 +40,16 @@
 <holder>&Jonathan.Singer;</holder>
 </copyright>
 <copyright>
-<year>2005</year>
+<year>2005</year><year>2008</year>
 <holder>&Kurt.Hindenburg;</holder>
 </copyright>
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2006-08-16</date>
-<releaseinfo>1.6.2</releaseinfo>
+<date>2008-08-01</date>
+<releaseinfo>2.1.0</releaseinfo>
 
-<abstract><para>This document is the user handbook for the &konsole;
- application.</para>
-<para>&konsole; is an X terminal emulator for &kde;.</para></abstract>
+<abstract><para>&konsole; is &kde;'s terminal emulator.</para></abstract>
 
 <keywordset>
 <keyword>KDE</keyword>
@@ -57,199 +57,74 @@
 <keyword>kdebase</keyword>
 <keyword>command</keyword>
 <keyword>line</keyword>
+<keyword>terminal</keyword>
+<keyword>cli</keyword>
 </keywordset>
 
 </bookinfo>
 
 <chapter id="introduction">
-<title>Introduction to &konsole;</title>
+<title>Introduction</title>
 
 <sect1 id="terminal">
 <title>What is a terminal?</title>
-<para>&UNIX; operating systems were originally designed as 
-text-only systems, controlled by keyboard commands -- what 
-is known as a command-line interface (<acronym>CLI</acronym>). 
-The &X-Window; and &kde; and other projects have since added the 
-graphical interface you are now using. However, the underlying 
-<acronym>CLI</acronym> system is still there, and is frequently 
-the easiest, fastest and most powerful way to perform many tasks.
+
+<para>&konsole; is an X terminal 
+emulator, often referred to as a terminal or a shell. It emulates a command line interface in a text only window.
 </para>
 
-<para>&konsole; is what is known as an X terminal
-emulator, often referred to as a terminal or a shell. It gives you the
-equivalent of an old-fashioned text screen on your desktop, but one
-which can easily share the screen with your graphical
-applications. &Windows; users may be familiar with the 
-<application>MS-DOS Prompt</application> utility, which has the analogous 
-function of offering a <trademark>DOS</trademark> command-line under
-&Windows;. (Although the &UNIX; <acronym>CLI</acronym>s offer far more
-power and ease of use than does <acronym>DOS</acronym>!)</para>
-
-<para>Explaining the use of the &UNIX; <acronym>CLI</acronym> is
-beyond the scope of this document, as it would require a lengthy
-book. Fortunately, many such books are available in every language in
-any good bookstore or library. There are also tutorials available on
-the Internet. Enjoy &kde;, but don't be shy about learning to use the
-command-line! You will find that even learning just the basics will
-make your computer use much more efficient and enjoyable.</para>
+<para>Explaining the use of the &UNIX; <acronym>CLI</acronym> is beyond the scope of this document.  A search of the web for these terms will produce more information.
+</para>
 </sect1>
 
-<sect1 id="features">
-<title>What makes &konsole; special?</title>
-<para>&konsole;'s
-advanced features include simple configuration and the ability to use
-multiple terminal shells in a single window, making for a less
-cluttered desktop.</para>
+<sect1 id="scrollback">
+<title>Scrollback</title>
 
-<para>Using &konsole;, a user can open:</para>
-<itemizedlist>
-<listitem><para>&Linux; console sessions</para></listitem>
-<listitem><para>Shell sessions</para></listitem>
-<listitem><para><application>Screen</application> sessions</para></listitem>
-<listitem><para><application>Midnight Commander</application> file manager
-sessions</para></listitem>
-<listitem><para><systemitem class="username">Root</systemitem> console
- sessions</para></listitem>
-<listitem><para><systemitem class="username">Root</systemitem>
- <application>Midnight Commander</application> sessions</para></listitem>
-<listitem><para>User created sessions</para></listitem>
-</itemizedlist>
-
-<para>These sessions can be renamed to help you keep track of all your shells,
-or signaled (<errorcode>STOP</errorcode>, <errorcode>CONT</errorcode>,
-<errorcode>HUP</errorcode>, <errorcode>INT</errorcode>,
-<errorcode>TERM</errorcode>, <errorcode>KILL</errorcode>).</para>
-
-<para>For more control over &konsole;, a user can:</para>
-<itemizedlist>
-<listitem><para>hide/show the menubar and/or
-frame</para></listitem>
-<listitem><para>select the size of a &konsole; window, fonts, color
-schemes, and key mapping</para></listitem>
-<listitem><para>change location of the scrollbar or hide the
-scrollbar</para></listitem>
-<listitem><para>change location of the tabbar or hide the
-tabbar</para></listitem>
-</itemizedlist>
-
-<para>All chosen settings can be made the default for forthcoming sessions by
-saving them.</para>
-
-<para>For those with a deep interest in the taxonomy of free X
-terminals, there are two others of this kind:
-<application>xterm</application>, the original, written even before X
-itself (a month or two), and <application>xvt</application>, a
-lightweight <application>xterm</application> clone, on which most
-other currently available derivatives (notably
-<application>eterm</application>) are based.</para>
-
-</sect1>
-</chapter>
-
-<chapter id="use-of-konsole">
-<title>Use of &konsole;</title>
-
-<sect1 id="startup">
-<title>Startup</title>
-
-<para>When &konsole; is started, an application (typically a &UNIX;
-shell) runs in the window. Simply type at the prompt.</para>
-
-<screenshot>
-<screeninfo>&konsole; Screen</screeninfo>
-<mediaobject>
-<imageobject>
-<imagedata fileref="konsole.png" format="PNG"/>
-</imageobject>
-<textobject>
-<phrase>&konsole; Screen</phrase>
-</textobject>
-<caption><para>&konsole; with 4 
-terminal sessions open.</para></caption>
-</mediaobject>
-</screenshot>
-<para>A <quote>Tip of the Day</quote> window may also appear on
-startup, offering hints on the use of &konsole;. If you do not wish to
-receive tips, uncheck the <guilabel>Show tips on startup</guilabel>
-box.</para>
-</sect1>
-
-<sect1 id="history-option">
-<title>History</title>
-
-<para>As lines scroll off the top of the screen, they can be reviewed
+<para>&konsole; uses the notion of scrollback 
+to allow user's to view previously displayed output.
+By default, scrollback is on 
+and set to save 1000 lines of
+output in addition to what is currently displayed on the screen.
+As lines of text scroll off the top of the screen, they can be reviewed
 by moving the scroll bar upwards, scrolling with a mouse wheel or through
-the use of the <keycombo
-action="simul">&Shift;<keycap>Page Up</keycap></keycombo> (to move
-back a page), <keycombo action="simul">&Shift;<keycap>Page
-Down</keycap></keycombo> (to move forward a page), <keycombo
-action="simul">&Shift;<keycap>Up Arrow</keycap></keycombo> (to move up a
-line) and <keycombo
-action="simul">&Shift;<keycap>Down Arrow</keycap></keycombo> (to move down a
-line) keys (provided the <link
-linkend="settings-menu">History</link> option is on).</para>
+the use of the 
+<keycombo action="simul">&Shift;<keycap>Page Up</keycap></keycombo> (to move
+back a page), 
+<keycombo action="simul">&Shift;<keycap>Page Down</keycap></keycombo> (to move forward a page), 
+<keycombo action="simul">&Shift;<keycap>Up Arrow</keycap></keycombo> (to move up a line) and 
+<keycombo action="simul">&Shift;<keycap>Down Arrow</keycap></keycombo> (to move down a line) keys.
+</para>
 
-<para>In addition, &konsole; mimics the FreeBSD console when
-<keycap>scroll lock</keycap> is pressed. When scroll lock is on,
-ordinary in- and output from the shell is suspended, and you can
-scroll through the history with <keycap>Page Up</keycap>, <keycap>Page
-Down</keycap>, and <keycap>Up Arrow</keycap> and <keycap>Down
-Arrow</keycap>.</para>
-
-<para>&konsole;'s history can be configured via 
-<menuchoice><guimenu>Scrollback</guimenu><guimenuitem>Scrollback Options...</guimenuitem>
-</menuchoice>.
+<para>When the <keycap>scrolllock</keycap> is on,
+ordinary input and output from the shell is suspended, and you can
+scroll through the history with 
+<keycap>Page Up</keycap>, 
+<keycap>Page Down</keycap>,  
+<keycap>Up Arrow</keycap> and 
+<keycap>Down Arrow</keycap>.
 </para>
 
 <para>&konsole; provides a number of history related actions located in the 
 <menuchoice><guimenu>Scrollback</guimenu></menuchoice> menu.
 </para>
 
-<itemizedlist>
-<listitem>
-<para><guimenuitem>Search Output...</guimenuitem></para>
-</listitem>
-<listitem>
-<para><guimenuitem>Find Next</guimenuitem></para>
-</listitem>
-<listitem>
-<para><guimenuitem>Find Previous</guimenuitem></para>
-</listitem>
-<listitem>
-<para><guimenuitem>Save Output...</guimenuitem></para>
-</listitem>
-<listitem>
-<para><guimenuitem>Scrollback Options...</guimenuitem></para>
-</listitem>
-<listitem>
-<para><guimenuitem>Clear Scrollback</guimenuitem></para>
-</listitem>
-<listitem>
-<para><guimenuitem>Clear Scrollback &amp; reset</guimenuitem></para>
-</listitem>
-</itemizedlist>
-
-<note><para>In &konsole;, references to history are to 
-the text that is displayed in &konsole;'s window.
-The shell that is running in &konsole; (e.g. bash) also
-has a <quote>history</quote> which is unrelated to &konsole;'s
-history.</para></note>
-
 </sect1>
 
-<sect1 id="sessions">
-<title>Sessions</title>
-<para>If you often have to log into remote machines, or always run a similar set of
-terminal applications, you can use &konsole;'s <quote>Session</quote> feature
-along with &kde;'s session management to automate a lot of this for you.
-Let's take the following example:
-You often have open an <application>ssh</application> session to the machine
-<replaceable>administration</replaceable> ready for generic administration
-tasks.
-You may have noticed the <guibutton>New Session</guibutton> button on &konsole;'s tab
-bar contains a menu if you click and hold on it, and you can choose new session
-types here. We are going to add new entries to this menu.
+<sect1 id="profiles">
+<title>Profiles</title>
+<para>Profiles allow the user to quickly and easily automate the running
+of common commands.  Examples could include:
 
+<itemizedlist>
+<listitem><para>ssh into another machine</para></listitem>
+<listitem><para>starting an irc session</para></listitem>
+<listitem><para>use tail to watch a file</para></listitem>
+</itemizedlist>
+
+</para>
+
+<para>
+Procedure to create a new profile:
 <orderedlist>
 <listitem><para>Click on the menu entry <menuchoice><guimenu>Settings</guimenu><guimenuitem>Manage Profiles...</guimenuitem>
 </menuchoice></para></listitem>
@@ -278,36 +153,11 @@ is now available in the <guilabel>Manage Profiles</guilabel> dialog.
 </orderedlist>
 </para>
 
-<para>You should now be able to press and hold the <guibutton>New Session</guibutton> button 
-on the tab bar, and select your new session type from the list.  A new shell 
-session will open within the &konsole; window, with the result of your executed 
-command.  In our example, you will be at an <application>ssh</application> 
-passphrase prompt, and when you provide your passphrase, you will be logged 
-into the remote machine. 
-<footnote id="use-ssh-agent"><para>You can avoid this step also, by using 
-ssh-agent, but that is a topic for another goodie.</para></footnote>
-Perhaps you want to remotely tail your <acronym>http</acronym> error logs on a 
-webserver, you could use a commandline something like
-<userinput><command>ssh</command> <option>-f</option>
-<replaceable>webserver</replaceable> <command>tail</command>
-<option>-f</option>
-<filename><replaceable>/var/log/httpd-error.log</replaceable></filename></userinput>.</para>
-
-<para>You can use this to execute local commands as well. Try creating a
-session where the command is <userinput><command>tail</command> <option>-f</option> <filename><replaceable>/var/log/messages</replaceable></filename></userinput>. <!--or 'screen
-<someone who uses screen please supply some sensible command switches here, say -->
-<!--to attach to an irc session>'. -->  In this case, exiting the
-running application will close the shell session as well.</para>
-
-<para>One really nice use of this feature is if you find you always have the
-same set of open sessions, &kde; can open them all for you automatically
-when you start a new &kde; session. Simply have them open as you like
-when you exit &kde;, and they will be saved with your &kde; session, and
-restored just like any other application when you restart &kde;.</para>
-
-<note><para>You can assign 
-<link linkend="settings-menu">shortcuts</link> 
-to any session.</para></note>
+<para>
+After creating profiles, they are listed by their name in the 
+<menuchoice><guimenu>File</guimenu></menuchoice> menu
+underneath the default <guimenuitem>Shell</guimenuitem> item.
+</para>
 
 </sect1>
 
@@ -385,7 +235,7 @@ it to &konsole;.</para>
 the &LMB; and &RMB; together emulates the &MMB; of a three button mouse.</para></note>
 
 <para>If you have a <mousebutton>wheel</mousebutton> as the middle button,
-rolling it in a mouse-unaware program will move &konsole;'s scrollbar.</para>
+rolling it in a mouse unaware program will move &konsole;'s scrollbar.</para>
 
 </listitem>
 </varlistentry>
@@ -393,40 +243,22 @@ rolling it in a mouse-unaware program will move &konsole;'s scrollbar.</para>
 <varlistentry>
 <term><mousebutton>Right</mousebutton></term>
 <listitem>
-<para>The items that appear in the menu when the &RMB;
-is pressed depend on whether the menubar is visible.</para>
+<para>These items appear in the menu when the &RMB;
+is pressed:
 
-<para>Menubar is visible:
-<guimenuitem>Set Selection End</guimenuitem>,
 <guimenuitem>Copy</guimenuitem>,
 <guimenuitem>Paste</guimenuitem>,
-<guimenuitem>Send Signal</guimenuitem>,
-<guimenuitem>Detach Session</guimenuitem>,
-<guimenuitem>Rename Session...</guimenuitem>,
-<guimenuitem>Bookmarks</guimenuitem>
-and <guimenuitem>Close Session</guimenuitem>
-menu items.</para>
-
-<para>Menubar is hidden:
-<guimenuitem>Show Menubar</guimenuitem>,
-<guimenuitem>Set Selection End</guimenuitem>,
-<guimenuitem>Copy</guimenuitem>,
-<guimenuitem>Paste</guimenuitem>,
-<guimenuitem>Send Signal</guimenuitem>,
-<guimenuitem>New Session</guimenuitem>,
-<guimenuitem>Detach Session</guimenuitem>,
-<guimenuitem>Rename Session...</guimenuitem>,
-<guimenuitem>Bookmarks</guimenuitem>,
-<guimenuitem>Settings</guimenuitem>
-and <guimenuitem>Close Session</guimenuitem>
-menu items.</para>
-
-<para>In a mouse-aware application, press the &Shift; key along with the
-&RMB; to get the pop-up menu.
+<guimenuitem>Clear Scrollback &amp; Reset</guimenuitem>,
+<guimenuitem>Open Browser Here</guimenuitem>,
+<guimenuitem>Change Profile</guimenuitem>,
+<guimenuitem>Edit Current Profile...</guimenuitem>,
+<guimenuitem>Show MenuBar</guimenuitem>,
+<guimenuitem>Character Encoding</guimenuitem>
+and <guimenuitem>Close Tab</guimenuitem>
 </para>
 
-<para>Pressing the &Ctrl; key and &RMB; brings up the 
-<guimenu>Session</guimenu> menu.
+<para>In a mouse aware application, press the &Shift; key along with the
+&RMB; to get the popup menu.
 </para>
 
 </listitem>
@@ -434,152 +266,86 @@ menu items.</para>
 </variablelist>
 
 </sect1>
+</chapter>
+
+<chapter id="commandreference">
+<title>Command Reference</title>
 
 <sect1 id="menubar">
-<title>Menu Bar</title>
+<title>The Menubar</title>
 
 <para>The menubar is at the top of the &konsole; window. 
-The menubar can be activated and deactivated by the 
-<keycombo>&Alt;</keycombo> key.</para>
-
-<para><menuchoice><guimenu>Settings</guimenu><guimenuitem>Hide Menubar</guimenuitem></menuchoice> 
-allows the menubar to be hidden. When the menubar is hidden, 
-<guimenuitem>Show Menubar</guimenuitem> can be reached by 
-<mousebutton>right</mousebutton> clicking in the window or by 
-<keycombo action="simul">&Alt;&Ctrl;<keycap>M</keycap></keycombo>, 
-which is the default shortcut for activating the menubar. 
-The menubar can also be toggled by assigning it a shortcut.</para>
-
+If the menubar is hidden, 
+<guimenuitem>Show Menu bar</guimenuitem> can be reached by 
+<mousebutton>right</mousebutton> clicking in the window
+(as long as no full screen application is running in that 
+window such as vi, minicom, etc.).  The default shortcut
+is listed after each menu item.
+</para>
 
 <sect2 id="file-menu">
 <title><guimenu>File</guimenu> Menu</title>
 
 <variablelist>
 <varlistentry>
+<term><menuchoice><guimenu>File</guimenu><guimenuitem>New Tab</guimenuitem>
+</menuchoice>
+(<keycombo action="simul">&Ctrl;&Shift;<keycap>N</keycap></keycombo>)
+</term>
+<listitem><para><action>Opens a new tab with the default profile</action>
+</para></listitem></varlistentry>
+
+<varlistentry>
+<term><menuchoice><guimenu>File</guimenu><guimenuitem>New Window</guimenuitem></menuchoice>
+(<keycombo action="simul">&Ctrl;&Shift;<keycap>M</keycap></keycombo>)
+</term>
+<listitem><para><action>Opens a new seperate &konsole; window with the default profile</action>
+</para></listitem></varlistentry>
+
+<varlistentry>
 <term><menuchoice><guimenu>File</guimenu><guimenuitem>Shell</guimenuitem></menuchoice></term>
-<listitem><para><action>Open a new session</action> with a terminal
-shell. <keycombo action="simul">&Ctrl;&Shift;<keycap>N</keycap>
-</keycombo> can also be used, as described in more detail below.
-</para></listitem></varlistentry>
-
-<varlistentry>
-<term><menuchoice><guimenu>File</guimenu><guimenuitem>New Window</guimenuitem></menuchoice></term>
-<listitem><para><action>Open a new &konsole; window</action>. 
-<keycombo action="simul">&Ctrl;&Shift;<keycap>M</keycap></keycombo> can also be used to open a new &konsole; window.
-</para></listitem></varlistentry>
-
-<varlistentry>
-<term><menuchoice><guimenu>File</guimenu><guimenuitem>New Linux
-Console</guimenuitem></menuchoice></term>
-<listitem><para><action>Open a new session emulating a text-only &Linux;
-system</action>.</para>
-<note><para>See the file <filename>README.linux.console</filename> in
-the &konsole; source package for detailed information on how the &Linux;
-console differs from a typical &UNIX; console. If this doesn't mean anything
-to you, you almost certainly don't need to worry about it.</para></note>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice><guimenu>File</guimenu><guimenuitem>New Midnight
-Commander</guimenuitem></menuchoice></term>
-<listitem><para><action>Open a new session</action> with the
- <application>Midnight
-Commander</application> file browser.</para>
-<note><para>This menu entry will only be visible if Midnight Commander 
-(<command>mc</command>) is installed on your system.
+<listitem><para><action>Opens a new tab with the Shell profile</action></para>
+<note><para>&konsole; ships with the Shell profile as the default.
+Any new profiles added by the user will have its own menu item
+below <menuchoice><guimenu>File</guimenu><guimenuitem>Shell</guimenuitem></menuchoice>.
 </para></note>
 </listitem>
 </varlistentry>
 
 <varlistentry>
-<term>
-<menuchoice><guimenu>File</guimenu>
-<guimenuitem>New Root Midnight Commander</guimenuitem></menuchoice>
+<term><menuchoice><guimenu>File</guimenu>
+<guimenuitem>Open Browser Here</guimenuitem></menuchoice>
 </term>
-<listitem>
-<para><action>Open a new session</action> with the <application>Midnight
-Commander</application> file browser, as the <systemitem
-class="username">root</systemitem> user.</para>
+<listitem><para><action>Opens &kde;'s file manager
+at the current directory</action>.  By default, that is   
+<ulink url="help:/khelpcenter/userguide/dolphin.html">dolphin</ulink>.
+</para></listitem>
+</varlistentry>
 
-<para>After being prompted for the <systemitem
-class="username">root</systemitem> password, the <prompt>#</prompt>
-prompt appears under the browser window, indicating that the user is
-working with <systemitem class="username">root</systemitem>
-privileges. Again, working as <systemitem
-class="username">root</systemitem> is frequently necessary but care
-should be taken to avoid accidental damage.</para>
+<varlistentry>
+<term><menuchoice><guimenu>File</guimenu>
+<guimenuitem>Close Tab</guimenuitem></menuchoice>
+(<keycombo action="simul">&Ctrl;&Shift;<keycap>W</keycap></keycombo>)
+</term>
+<listitem><para><action>Closes the current tab</action>
+</para></listitem>
+</varlistentry>
 
-<note><para>This menu entry will only be visible if Midnight Commander 
-(<command>mc</command>) is installed on your system.
+<varlistentry>
+<term><menuchoice><guimenu>File</guimenu>
+<guimenuitem>Quit</guimenuitem></menuchoice>
+(<keycombo action="simul">&Ctrl;&Shift;<keycap>Q</keycap></keycombo>)
+</term>
+<listitem><para><action>Quits &konsole;</action></para>
+<note><para>&konsole; will display a window if there is more than one
+tab open.  This window can be disabled by clicking on the <guibutton>Do not ask again</guibutton> checkbox.
 </para></note>
 </listitem>
-</varlistentry>
-
-<varlistentry>
-<term>
-<menuchoice><guimenu>File</guimenu>
-<guimenuitem>New Root Shell</guimenuitem></menuchoice>
-</term>
-<listitem>
-<para><action>Open a new session with a terminal shell</action>, as the
-<systemitem class="username">root</systemitem> user.</para>
-
-<para>After being prompted for the <systemitem
-class="username">root</systemitem> password, the <prompt>#</prompt>
-prompt appears, indicating that the user is working with <systemitem
-class="username">root</systemitem> privileges. This is frequently
-necessary for installing new software and other system maintenance, but
-care should be taken to avoid accidental damage.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice><guimenu>File</guimenu><guimenuitem>New
-Screen Session</guimenuitem></menuchoice></term>
-<listitem><para><action>Open a new session</action> with the
- <application>Screen</application> virtual terminal manager.
-See <userinput><command>man</command> <option>screen</option>
-</userinput>for more information.
-<note><para>This menu entry will only be visible if Screen
-(<command>screen</command>) is installed on your system.</para></note>
-</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice><guimenu>File</guimenu>
-<guimenuitem>Close Tab</guimenuitem></menuchoice></term>
-<listitem><para><action>Close</action> the current tab and the session within.
-</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice><guimenu>File</guimenu>
-<guimenuitem>Quit</guimenuitem></menuchoice></term>
-<listitem><para><action>Quit</action> &konsole;, closing all sessions and any
-applications launched from them.</para></listitem>
 </varlistentry>
 
 </variablelist>
 
-<para>You can also open a new session with a key shortcut. By default, 
-<keycombo action="simul">&Ctrl;&Shift;<keycap>N</keycap></keycombo>
-is used. You can also define your own key shortcuts through the
-<menuchoice><guimenu>Settings</guimenu>
-<guimenuitem>Configure Shortcuts...</guimenuitem></menuchoice> menu command.</para>
-
-<para>The list of available sessions will reflect what programs are
-installed along with any user defined sessions.  
-The session list will be alphabetized for quick viewing.</para>
-
-<para>Finally, note that the session types can be modified, and new
-types created, by using the configuration dialog, reached from the
-<menuchoice><guimenu>Settings</guimenu>
-<guimenuitem>Manage Profiles...</guimenuitem></menuchoice>
-menu entry.</para>
 </sect2>
-
-
 
 <sect2 id="edit-menu">
 <title><guimenu>Edit</guimenu> Menu</title>
@@ -587,8 +353,10 @@ menu entry.</para>
 
 <varlistentry>
 <term><menuchoice><guimenu>Edit</guimenu>
-<guimenuitem>Copy</guimenuitem></menuchoice></term>
-<listitem><para><action>Copy the selected text to the clipboard</action>.</para></listitem>
+<guimenuitem>Copy</guimenuitem></menuchoice>
+(<keycombo action="simul">&Ctrl;&Shift;<keycap>C</keycap></keycombo>)
+</term>
+<listitem><para><action>Copies the selected text to the clipboard</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -597,8 +365,8 @@ menu entry.</para>
  action="simul">&Ctrl;&Shift;<keycap>V</keycap></keycombo></shortcut>
 <guimenu>Edit</guimenu><guimenuitem>Paste
 </guimenuitem></menuchoice></term>
-<listitem><para><action>Paste text from the clipboard at the cursor
-location</action>.</para></listitem>
+<listitem><para><action>Pastes text from the clipboard at the cursor
+location</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -606,91 +374,26 @@ location</action>.</para></listitem>
 <shortcut><keycombo
  action="simul">&Ctrl;&Alt;<keycap>S</keycap></keycombo></shortcut>
 <guimenu>Edit</guimenu><guimenuitem>Rename Tab...</guimenuitem></menuchoice></term>
-<listitem><para><action>Open a dialog box allowing you to change
-the name of the current session</action>. The name is displayed
-on the session tab.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice><guimenu>Edit</guimenu><guimenuitem>Send
-Input to All</guimenuitem></menuchoice></term>
-<listitem><para><action>Flag the current session so any commands entered
-into it will be sent to all sessions</action>. The session will have a small
-icon in its tab to remind you to be careful of what you enter!
-<userinput><command>rm</command> <parameter>-rf *</parameter></userinput>,
-for instance, is probably not a good idea.</para></listitem>
-</varlistentry>
-
-
-<varlistentry>
-<term><menuchoice><guimenu>Edit</guimenu>
-<guisubmenu>Send Signal</guisubmenu></menuchoice></term>
-<listitem><para><action>Send Signal - Send the specified signal to the shell
-process, or other process, that was launched when the new session was
-started</action>.</para><para>Currently available signals are:</para>
-
-<informaltable>
-<tgroup cols="2">
-<tbody>
-<row>
-<entry><errorcode>STOP</errorcode></entry>
-<entry>to stop process</entry>
-</row>
-<row>
-<entry><errorcode>CONT</errorcode></entry>
-<entry>continue if stopped</entry>
-</row>
-<row>
-<entry><errorcode>HUP</errorcode></entry>
-<entry>hangup detected on controlling terminal, or death of controlling
-process</entry>
-</row>
-<row>
-<entry><errorcode>INT</errorcode></entry>
-<entry>interrupt from keyboard</entry>
-</row>
-<row>
-<entry><errorcode>TERM</errorcode></entry>
-<entry>termination signal</entry>
-</row>
-<row>
-<entry><errorcode>KILL</errorcode></entry>
-<entry>kill signal</entry>
-</row>
-<row>
-<entry><errorcode>USR1</errorcode></entry>
-<entry>user signal 1</entry>
-</row>
-<row>
-<entry><errorcode>USR2</errorcode></entry>
-<entry>user signal 2</entry>
-</row>
-</tbody>
-</tgroup>
-</informaltable>
-
-<para>Refer to your system manual pages for further details by giving the
-command <userinput><command>man</command> <option>7
-signal</option></userinput>.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<shortcut><keycombo
- action="simul">&Alt;&Ctrl;<keycap>U</keycap></keycombo></shortcut>
-<guimenu>Edit</guimenu><guimenuitem>ZModem Upload...</guimenuitem></menuchoice></term>
-<listitem><para><action>Send a file via ZModem</action>.</para></listitem>
+<listitem><para><action>Opens a dialog box allowing you to change
+the name of the current tab</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice><guimenu>Edit</guimenu><guimenuitem>Clear Display</guimenuitem></menuchoice></term>
-<listitem><para><action>Clear all text from the session window</action>.</para></listitem>
+<listitem><para><action>Clears all text from the tab</action></para>
+<para>All the text cleared will be stored in the 
+<link linkend="scrollback">Scrollback</link>.
+</para>
+</listitem>
 </varlistentry>
-
 
 <varlistentry>
 <term><menuchoice><guimenu>Edit</guimenu><guimenuitem>Clear &amp; Reset</guimenuitem></menuchoice></term>
-<listitem><para><action>Reset and clear the session window</action>.</para></listitem>
+<listitem><para><action>Clears all text from the tab and reset the session</action></para>
+<para>All the text cleared will be stored in the 
+<link linkend="scrollback">Scrollback</link>.
+</para>
+</listitem>
 </varlistentry>
 
 </variablelist>
@@ -701,17 +404,79 @@ signal</option></userinput>.</para></listitem>
 <variablelist>
 
 <varlistentry>
-<term><menuchoice><guimenu>View</guimenu><guimenuitem>Detach 
-View</guimenuitem></menuchoice></term>
-<listitem><para><action>Open the current session in a 
-separate window</action>. The name of the session is 
-displayed on the titlebar of the new window.</para></listitem>
+<term><menuchoice><guimenu>View</guimenu><guimenuitem>Split 
+View  Left/Right</guimenuitem></menuchoice>
+(<keycombo action="simul">&Ctrl;&Shift;<keycap>L</keycap></keycombo>)
+</term>
+<listitem><para><action>Splits all the tabs into left and right views</action>
+</para><para>
+Any output on one view is duplicated in the other view.
+</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>View</guimenu><guimenuitem>Hide
+<term><menuchoice><guimenu>View</guimenu><guimenuitem>Split 
+View Top/Bottom</guimenuitem></menuchoice>
+(<keycombo action="simul">&Ctrl;&Shift;<keycap>T</keycap></keycombo>)
+</term>
+<listitem><para><action>Splits all the tabs into top and bottom views</action>
+</para><para>
+Any output on one view is duplicated in the other view.
+</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice><guimenu>View</guimenu><guimenuitem>Split 
+Close Active</guimenuitem></menuchoice>
+(<keycombo action="simul">&Ctrl;&Shift;<keycap>S</keycap></keycombo>)
+</term>
+<listitem><para><action>Closes the current view</action>
+</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice><guimenu>View</guimenu><guimenuitem>Split 
+Close Other</guimenuitem></menuchoice>
+(<keycombo action="simul">&Ctrl;&Shift;<keycap>O</keycap></keycombo>)
+</term>
+<listitem><para><action>Closes the non-current view</action>
+</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice><guimenu>View</guimenu><guimenuitem>Expand View</guimenuitem></menuchoice>
+(<keycombo action="simul">&Ctrl;&Shift;<keycap>]</keycap></keycombo>)
+</term>
+<listitem><para><action>Makes the current view larger</action>
+</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice><guimenu>View</guimenu><guimenuitem>Shrink View</guimenuitem></menuchoice>
+(<keycombo action="simul">&Ctrl;&Shift;<keycap>[</keycap></keycombo>)
+</term>
+<listitem><para><action>Makes the current view smaller</action>
+</para></listitem>
+</varlistentry>
+
+
+<varlistentry>
+<term><menuchoice><guimenu>View</guimenu><guimenuitem>Detach 
+View</guimenuitem></menuchoice>
+(<keycombo action="simul">&Ctrl;&Shift;<keycap>H</keycap></keycombo>)
+</term>
+<listitem><para><action>Opens the current tab in a 
+separate window</action>
+</para><para>
+Quiting the previous &konsole; window will not
+affect the newly created window.
+</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice><guimenu>View</guimenu><guimenuitem>Show
 Menu Bar</guimenuitem></menuchoice></term>
-<listitem><para><action>Hide the menubar</action>.</para></listitem>
+<listitem><para><action>Toggles the menubar being visible</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -719,94 +484,120 @@ Menu Bar</guimenuitem></menuchoice></term>
 <shortcut><keycombo
  action="simul">&Ctrl;&Shift;<keycap>F11</keycap></keycombo></shortcut>
 <guimenu>View</guimenu><guimenuitem>Full Screen Mode</guimenuitem></menuchoice></term>
-<listitem><para><action>Toggles Full Screen Mode</action>.</para></listitem>
+<listitem><para><action>Toggles &konsole; filling the entire screen</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice><guimenu>View</guimenu><guimenuitem>Monitor for 
 Silence</guimenuitem></menuchoice></term>
-<listitem><para><action>Flag the current session so it will show an alert
-if no activity occurs for 10 seconds</action>. An icon of a dark light bulb will
-appear in the session's tab. Use this to alert you if a task stops
-while you are working in another session. The time before an alert can be
-modified in the &konsole; preferences.</para></listitem>
+<listitem><para><action>Toggles the monitoring of the current tab for 
+lack of activity</action>
+</para><para>
+By default, after 10 seconds of inactivity, an info icon will appear on
+the session's tab.
+The type of alerts can be changed through  
+<menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure Notifications</guimenuitem><guimenuitem>Silence in monitored session</guimenuitem></menuchoice>.
+</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>View</guimenu><guimenuitem>Monitor for
+<term><menuchoice><guimenu>View</guimenu><guimenuitem>Monitor for 
 Activity</guimenuitem></menuchoice></term>
-<listitem><para><action>Flag the current session so it will show
-an alert if activity occurs</action>. An icon of a lit light bulb will
-appear in the session's tab. Use this to alert you if something
-happens while you are working in another session. The time before an alert can be
-modified in the &konsole; preferences.</para></listitem>
+<listitem><para><action>Toggles the monitoring of the current tab for 
+activity</action>
+</para><para>
+Upon any activity, an info icon will appear on the session's tab.
+The type of alerts can be changed through  
+<menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure Notifications</guimenuitem><guimenuitem>Activity in monitored session</guimenuitem></menuchoice>.
+</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice><guimenu>View</guimenu>
 <guimenuitem>Set Character Encoding</guimenuitem></menuchoice></term>
-<listitem><para><action>Select character encoding for current session</action>.</para></listitem>
+<listitem><para><action>Sets the character encoding</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut><keycombo
+ action="simul">&Ctrl;<keycap>+</keycap></keycombo></shortcut>
+<guimenu>View</guimenu><guimenuitem>Increase Text Size</guimenuitem></menuchoice></term>
+<listitem><para><action>Increases the text font size</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut><keycombo
+ action="simul">&Ctrl;<keycap>-</keycap></keycombo></shortcut>
+<guimenu>View</guimenu><guimenuitem>Decrease Text Size</guimenuitem></menuchoice></term>
+<listitem><para><action>Decreases the text font size</action></para></listitem>
 </varlistentry>
 
 </variablelist>
 </sect2>
-
 
 <sect2 id="scrollback-menu">
 <title><guimenu>Scrollback</guimenu> Menu</title>
 <variablelist>
 
 <varlistentry>
-<term><menuchoice><guimenu>Scrollback</guimenu><guimenuitem>Search 
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>F</keycap></keycombo></shortcut>
+<guimenu>Scrollback</guimenu><guimenuitem>Search 
 Output</guimenuitem></menuchoice></term>
-<listitem><para><action>Find a word or string of text</action> in the current
-history. Options allow case sensitive or backwards searches, and the use of regular
-expressions in searches.</para></listitem>
+<listitem><para><action>Opens a search bar at the bottom of &konsole;'s window
+</action></para>
+<para>This allows for case sensitive, forward or backwards, and regular expressions searches.</para>
+</listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Scrollback</guimenu><guimenuitem>Find 
+<term><menuchoice>
+<shortcut><keycombo><keycap>F3</keycap></keycombo></shortcut>
+<guimenu>Scrollback</guimenu><guimenuitem>Find 
 Next</guimenuitem></menuchoice></term>
-<listitem><para><action>Move to the next instance of the 
-text for which you are searching</action>.</para></listitem>
+<listitem><para><action>Moves to the next search instance
+</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Scrollback</guimenu><guimenuitem>Find 
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Shift;<keycap>F3</keycap></keycombo></shortcut>
+<guimenu>Scrollback</guimenu><guimenuitem>Find 
 Previous</guimenuitem></menuchoice></term>
-<listitem><para><action>Move to the previous instance of the 
-text for which you are searching</action>.</para></listitem>
+<listitem><para><action>Moves to the previous search instance
+</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice><guimenu>Scrollback</guimenu><guimenuitem>Save 
 Output...</guimenuitem></menuchoice></term>
-<listitem><para><action>Save the current history</action> as a text
- file.</para></listitem>
+<listitem><para><action>Saves the current scrollback as a text
+ file</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice><guimenu>Scrollback</guimenu><guimenuitem>Scrollback 
 Options...</guimenuitem></menuchoice></term>
-<listitem><para><action>Opens the Scrollback Options dialog</action> 
-where you can to configure how many lines of history should be kept.
+<listitem><para><action>Opens a dialog to configure number of lines to save</action>
 </para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice><guimenu>Scrollback</guimenu><guimenuitem>Clear 
 Scrollback</guimenuitem></menuchoice></term>
-<listitem><para><action>Clear the history for the current 
-session</action>.</para></listitem>
+<listitem><para><action>Clears all text saved in current tab</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Scrollback</guimenu><guimenuitem>Clear 
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>X</keycap></keycombo></shortcut>
+<guimenu>Scrollback</guimenu><guimenuitem>Clear 
 Scrollback &amp; Reset</guimenuitem></menuchoice></term>
-<listitem><para><action>Clear the history the current session 
-and reset the terminal</action>.</para></listitem>
+<listitem><para><action>Clears all text saved in current tab  
+and resets the terminal</action></para></listitem>
 </varlistentry>
-
 
 </variablelist>
 </sect2>
@@ -818,32 +609,35 @@ and reset the terminal</action>.</para></listitem>
 
 <varlistentry>
 <term><menuchoice><guimenu>Bookmarks</guimenu><guimenuitem>Add Bookmark</guimenuitem></menuchoice></term>
-<listitem><para><action>Add the current location</action> to the bookmark list.</para></listitem>
+<listitem><para><action>Adds the current location</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice><guimenu>Bookmarks</guimenu><guimenuitem>Bookmark Tabs as Folder...</guimenuitem></menuchoice></term>
-<listitem><para><action>Add all tabs as bookmark folder</action>. This will open a dialog where you can type 
-the name for the new bookmark folder.</para></listitem>
+<listitem><para><action>Adds all tabs to a bookmark folder</action>
+</para><para>
+A dialog will open for the bookmark folder name.
+</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice><guimenu>Bookmarks</guimenu><guimenuitem>New Bookmark Folder...</guimenuitem></menuchoice></term>
-<listitem><para><action>Add a new folder</action> to the bookmark list.</para></listitem>
+<listitem><para><action>Adds a new folder to the bookmark list</action>
+</para><para>
+A dialog will open for the bookmark folder name.
+</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice><guimenu>Bookmarks</guimenu><guimenuitem>Edit Bookmarks</guimenuitem></menuchoice></term>
-<listitem><para><action>Edit</action> the bookmark list.</para></listitem>
-</varlistentry>
-
-</variablelist>
-
-<para>The bookmark list is displayed at the bottom of the menu. Select a bookmark to change to
-that location.</para>
+<listitem><para><action>Opens the bookmark editor</action></para>
 
 <note><para>You can use the bookmark editor to manually add URLs
 like ssh://user@host or telnet://host to open remote connections.</para></note>
+</listitem>
+</varlistentry>
+
+</variablelist>
 </sect2>
 
 <sect2 id="settings-menu">
@@ -853,37 +647,36 @@ like ssh://user@host or telnet://host to open remote connections.</para></note>
 <varlistentry>
 <term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Change 
 Profile</guimenuitem></menuchoice></term>
-<listitem><para><action>Change profile for current session</action>.</para>
+<listitem><para><action>Changes the profile for the current tab</action></para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Edit 
 Current Profile</guimenuitem></menuchoice></term>
-<listitem><para><action>Edit profile settings for current session</action>.</para>
+<listitem><para><action>Opens the profile editor for the current tab</action></para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Manage 
 Profiles</guimenuitem></menuchoice></term>
-<listitem><para><action>Open a dialog for managing session profiles</action>. 
-You can add new, remove and edit profiles. Also lets you choose your default 
-profile.</para>
+<listitem><para><action>Opens a editor for managing profiles</action> 
+</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure 
 Shortcuts...</guimenuitem></menuchoice></term>
-<listitem><para><action>Customize keyboard shortcuts for &konsole; commands</action>.</para>
+<listitem><para><action>Opens the keyboard shortcut editor</action></para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure
 Notifications...</guimenuitem></menuchoice></term>
-<listitem><para><action>Customize notifications for &konsole;</action>.</para>
+<listitem><para><action>Opens the notifications editor</action></para>
 </listitem>
 </varlistentry>
 
@@ -892,129 +685,58 @@ Notifications...</guimenuitem></menuchoice></term>
 
 <sect2 id="help-menu">
 <title><guimenu>Help</guimenu> Menu</title>
-
-<variablelist>
-<varlistentry>
-<term><menuchoice><guimenu>Help</guimenu><guimenuitem>Konsole 
-Handbook</guimenuitem></menuchoice></term>
-<listitem><para><action>Open the table of contents of this
-document</action>.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice><guimenu>Help</guimenu><guimenuitem>Report
-Bug...</guimenuitem></menuchoice></term>
-<listitem><para><action>Submit a bug report or a feature request</action> for
-&konsole;.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice><guimenu>Help</guimenu><guimenuitem>About
-Konsole</guimenuitem></menuchoice></term>
-<listitem><para><action>Information about</action> &konsole;'s
-author</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice><guimenu>Help</guimenu><guimenuitem>About
-KDE</guimenuitem></menuchoice></term>
-<listitem><para><action>Information about the &kde;
-project</action></para></listitem>
-</varlistentry>
-</variablelist>
-
+<!-- Only negative to using this is it shows shortcut F1 for Handbook -->
+&help.menu.documentation;
 </sect2>
-
 </sect1>
 
-<sect1 id="tabbar">
-<title>Tab Bar</title>
+</chapter>
 
-<para>The tabbar allows multiple terminal sessions to be attached to a single &konsole; window.</para>
-
-<screenshot>
-<screeninfo>Tabbar Image</screeninfo>
-<mediaobject>
-<imageobject>
-<imagedata fileref="tabbar.png" format="PNG"/>
-</imageobject>
-<textobject>
-<phrase>Tabbar Image</phrase>
-</textobject>
-<caption><para>&konsole; with 4 terminal sessions open with the tabbar on the bottom.</para></caption>
-</mediaobject>
-</screenshot>
-
-<para>The <menuchoice><guimenu>Settings</guimenu><guimenuitem>Edit 
-Current Profile...</guimenuitem><guimenuitem>Tabs</guimenuitem>
-</menuchoice> menu item allows the tabbar to be displayed 
-<guimenuitem>Above Terminal displays</guimenuitem> or 
-<guimenuitem>Below Terminal displays</guimenuitem>. 
-The tabbar can also be hidden by selecting <guimenuitem>Always hide tab bar</guimenuitem> 
-or automatically shown by selecting <guimenuitem>Show tab bar when needed</guimenuitem>.</para>
-
-<para>On the left side of the tabbar is a button which allows for a multitude of actions.
-<itemizedlist>
-<listitem><para>Click on the button to start a new 
-default session.</para></listitem>
-<listitem><para>Clicking and holding on the button will popup 
-a list of sessions to select.</para></listitem>
-<listitem><para>Right-clicking on the button (or any empty 
-space on the tabbar) will popup up a menu to set certain options:
-<itemizedlist>
-	<listitem><para><guimenu>Tab Bar</guimenu>: 
-	<guimenuitem>Hide</guimenuitem>, 
-	<guimenuitem>Top</guimenuitem>, 
-	<guimenuitem>Bottom</guimenuitem>.</para></listitem>
-</itemizedlist>
-<itemizedlist>
-	<listitem><para><guimenu>Tab Options</guimenu>: 
-	<guimenuitem>Text &amp; Icons</guimenuitem>, 
-	<guimenuitem>Text Only</guimenuitem>, 
-	<guimenuitem>Icons Only</guimenuitem>.</para></listitem>
-</itemizedlist>
-<itemizedlist>
-	<listitem><para><guimenuitem>Dynamic Hide</guimenuitem> 
-	will hide the tabbar when there is only one session opened.</para>
-	</listitem>
-</itemizedlist>
-<itemizedlist>
-	<listitem><para><guimenuitem>Auto Resize Tabs</guimenuitem> 
-	will automatically resize the tabs to the width of the tabbar.</para>
-	</listitem>
-</itemizedlist>
-</para></listitem>
-</itemizedlist>
-</para>
-
-<para>On the right side of the tabbar is a button that closes 
-the current session. This button will be disabled when there 
-is only one session running.</para>
-
-<para>Right-clicking on any tab will popup another menu:
-<itemizedlist>
-<listitem><para><guimenu>Detach Session</guimenu></para></listitem>
-<listitem><para><guimenu>Rename Session...</guimenu></para></listitem>
-<listitem><para><guimenu>Monitor for Activity</guimenu></para></listitem>
-<listitem><para><guimenu>Monitor for Silence</guimenu></para></listitem>
-<listitem><para><guimenu>Send Input to All Sessions</guimenu></para></listitem>
-<listitem><para><guimenu>Select Tab Color...</guimenu></para></listitem>
-<listitem><para><guimenu>Switch to Tab...</guimenu></para></listitem>
-<listitem><para><guimenu>Close Session</guimenu></para></listitem>
-</itemizedlist></para>
-
-</sect1>
-
-<sect1 id="command-line-options">
+<chapter id="command-line-options">
 <title>Command-line Options</title>
 
-<para>When &konsole; is started from the command-line, various options
+<para>When &konsole; is started from the command line, various options
 can be specified to modify its behavior.</para>
 
 <variablelist>
 <varlistentry>
 <term><option>--help</option></term>
 <listitem><para><action>List the various options</action>.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><option>--profile</option> <parameter>file</parameter></term>
+<listitem><para><action>Start &konsole; using a saved set of sessions</action>.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><option>--list-profiles</option></term>
+<listitem><para><action>List all of the available profiles.
+</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><option>--background-mode</option></term>
+<listitem><para><action>
+</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><option>--new-tab</option></term>
+<listitem><para><action>
+</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><option>--workdir</option> <parameter>dir</parameter></term>
+<listitem><para><action>Open with</action>
+<parameter>dir</parameter> as the working (starting) directory.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><option>--enable-transparency</option></term>
+<listitem><para><action>
+</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -1026,165 +748,7 @@ can be specified to modify its behavior.</para>
 </listitem>
 </varlistentry>
 
-<varlistentry>
-<term><option>--keytab</option> <parameter>file</parameter></term>
-<listitem><para><action>Start &konsole; using a specified .keytab
-file</action> to customize key bindings.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><option>--keytabs</option></term>
-<listitem><para><action>List all of the available keytabs</action>.
-</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><option>--ls</option></term>
-<listitem><para><action>Start with a login shell environment</action>.
-What that does varies depending on your system, but generally it
-means that files such as <filename>~/.profile</filename> or
-<filename>~/.bash_profile</filename> will be read. (If that doesn't mean
-anything to you, don't worry about it, but keep in the back of your mind
-for when you realize you need it.)</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><option>--name</option> <parameter>name</parameter></term>
-<listitem><para><action>Set the name that appears in the
-titlebar</action>.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><option>--noclose</option></term>
-<listitem><para><action>Prevent &konsole; from closing</action> when an
-<userinput><command>exit</command></userinput>
-command is issued in the only session window.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><option>--noframe</option></term>
-<listitem><para><action>Start &konsole; without a
- frame</action>.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><option>--nohist</option></term>
-<listitem><para><action>Disable the saving of lines</action>
- that scroll off the top of the window.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><option>--nomenubar</option></term>
-<listitem><para><action>Start &konsole; with 
-the menubar hidden</action>.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><option>--noresize</option></term>
-<listitem><para><action>Disable the resizing</action>
- of the terminal window.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><option>--noscrollbar</option></term>
-<listitem><para><action>Start &konsole; with 
-the scrollbar hidden</action>.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><option>--notabbar</option></term>
-<listitem><para><action>Start &konsole; 
-with the tabbar hidden</action>.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><option>--noxft</option></term>
-<listitem><para><action>Start &konsole; without Xft antialiasing</action>.
-Antialiasing of a small font may be difficult to read.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><option>--profile</option> <parameter>file</parameter></term>
-<listitem><para><action>Start &konsole; using a saved set of sessions</action>.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><option>--profiles</option></term>
-<listitem><para><action>List all of the available profiles.
-</action></para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><option>--schema</option> <parameter>name</parameter> | <parameter>file</parameter></term>
-<listitem><para><action>Start &konsole; using schema 'name' or specified in 'file'</action> to customize appearance.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><option>--schemata</option></term>
-<listitem><para><action>List all of the available schemata.
-</action></para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><option>--script</option></term>
-<listitem><para><action>Enable extended &DCOP; &Qt; functions.
-</action></para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><option>-T</option> <parameter>title</parameter></term>
-<listitem><para><action>Set the window title</action>.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><option>--tn</option> <parameter>terminal</parameter></term>
-<listitem><para><action>Sets the environment variable TERM to the specified
-value</action>. Read <userinput><command>man</command> <option>xterm</option>
-</userinput> for more information on TERM.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><option>--type</option> <parameter>type</parameter></term>
-<listitem><para><action>Start a session of the given type</action>
- rather than the default.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><option>--types</option></term>
-<listitem><para><action>List all of the available session types.
-</action></para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><option>--vt_sz</option> <parameter>CCxLL</parameter></term>
-<listitem><para><action>Start a terminal window of CC Columns and LL
-lines</action>.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><option>--workdir</option> <parameter>dir</parameter></term>
-<listitem><para><action>Open with</action>
-<parameter>dir</parameter> as the working folder.</para></listitem>
-</varlistentry>
-
 </variablelist>
-
-<informalexample>
-<para>Examples:</para>
-<screen><prompt>&percnt;</prompt> <userinput><command>konsole</command> <option>--vt_sz</option> <parameter>90x25</parameter> <option>--nohist</option></userinput></screen>
-
-<para>Starts a &konsole; window with 90 columns and 25 rows, with no
-history</para>
-
-<screen><prompt>&percnt;</prompt> <userinput><command>konsole</command> <option>--noclose</option> <option>-e</option> <parameter>echo_args</parameter> <parameter>Hello, thanks for using &konsole;!</parameter></userinput></screen>
-
-<para>Starts a &konsole; window with the text printed 'Hello, thanks for using &konsole;!'
-</para>
-<para>The <parameter>echo_args</parameter> is a simple Bash script:
-<programlisting>#!/bin/bash
-echo $*</programlisting>
-</para>
-</informalexample>
 
 <para>&konsole; also accepts generic &Qt; and &kde; options:</para>
 
@@ -1251,34 +815,38 @@ echo $*</programlisting>
 </varlistentry>
 </variablelist>
 
-</sect1>
+</chapter>
 
-<sect1 id="dcop">
-<title>&DCOP;</title>
+<chapter id="scripting">
+<title>Scripting &konsole;</title>
 
-<para>For an introduction to 
-&DCOP; and using <command>dcop</command> please look at
-<ulink url="help:/khelpcenter/userguide/kde-diy.html#dcop">the User Guide entry on &DCOP;</ulink>.
+<para>For &kde; 4, the old &DCOP; has been replaced with <acronym>dbus</acronym>.
+However, &konsole; has not been updated yet to handle this.
 </para>
+<para>For a somewhat primitive, non-user friendly &GUI; for <acronym>dbus</acronym>, try &Qt;'s qdbusviewer.
+</para>
+<para> More info to follow...</para>
 
-</sect1>
 
 </chapter>
 
 <chapter id="credits">
 <title>Credits and Copyright</title>
 
-<para>As of &kde; 3.4, &konsole; is maintained by &Kurt.Hindenburg; &Kurt.Hindenburg.mail;</para>
+<para>&konsole; is currently maintained by &Robert.Knight;  &Robert.Knight.mail;</para>
 
-<para>Previously, &konsole; was maintained by &Waldo.Bastian; &Waldo.Bastian.mail;</para>
+<para>Previous &konsole; maintainers include: &Kurt.Hindenburg; &Kurt.Hindenburg.mail; and &Waldo.Bastian; &Waldo.Bastian.mail;</para>
 
-<para>The application &konsole; Copyright &copy; 1997-2005
+<para>The application &konsole; Copyright &copy; 1997-2008
 &Lars.Doelle; &Lars.Doelle.mail;</para>
 
 <para>This document was written by &Jonathan.Singer;
 &Jonathan.Singer.mail;</para>
 
 <para>This document was updated for &kde; 3.4 by
+&Kurt.Hindenburg; &Kurt.Hindenburg.mail;</para>
+
+<para>This document was updated for &kde; 4.1 by
 &Kurt.Hindenburg; &Kurt.Hindenburg.mail;</para>
 
 <para>Originally converted to DocBook <acronym>SGML</acronym> by
@@ -1290,17 +858,13 @@ echo $*</programlisting>
 &underGPL;
 </chapter>
 
-<appendix id="porting">
-<title>&konsole; on non-&Linux; platforms</title>
+<appendix id="links">
+<title>Links</title>
 
-<para>Information on building &konsole; on platforms other than &Linux;
-is available in the <filename>README.ports</filename> file in the
-&konsole; source package. It provides a list of experts for certain
-platforms (Tru64, &Solaris;, OpenBSD) and requests volunteers from other
-&UNIX; platforms.</para>
-
-<para>For more infomation please visit these websites:</para>
+<para>For more information please visit these websites:</para>
 <itemizedlist>
+<listitem><para><ulink url="http://konsole.kde.org/">&konsole;'s homepage</ulink></para></listitem>
+<listitem><para><ulink url="http://mail.kde.org/mailman/listinfo/konsole-devel">&konsole;'s mailing list</ulink></para></listitem>
 <listitem><para><ulink url="http://freebsd.kde.org/">&kde; on 
 FreeBSD</ulink></para></listitem>
 <listitem><para><ulink url="http://solaris.kde.org/">&kde; on &Solaris;</ulink></para></listitem>
