@@ -33,32 +33,9 @@
 
 #include <QtCore/QDir>
 #include <QtXml/qdom.h>
-#include <QtCore/QFile>
-
-#ifdef Q_WS_X11
-#include <X11/Xlib.h>
-#endif
-
-// The code for this function was taken from kdesktop/kcheckrunning.cpp
-static bool kdeIsRunning()
-{
-#ifdef Q_WS_X11
-	Display *dpy = XOpenDisplay( NULL );
-	if ( !dpy ) {
-		return false;
-	}
-
-	Atom atom = XInternAtom( dpy, "_KDE_RUNNING", False );
-	return XGetSelectionOwner( dpy, atom ) != None;
-#else
-	return true;
-#endif
-}
 
 int main( int argc, char**argv )
 {
-	const bool kdeRunning = kdeIsRunning();
-
 	KAboutData aboutData( "kbookmarkmerger", "keditbookmarks", ki18n( "KBookmarkMerger" ),
 	                      "1.0", ki18n( "Merges bookmarks installed by 3rd parties into the user's bookmarks" ),
 	                      KAboutData::License_BSD,
@@ -126,15 +103,10 @@ int main( int argc, char**argv )
 	}
 
 	if ( didMergeBookmark ) {
-		if ( kdeRunning ) {
-			konqBookmarks->emitChanged( konqBookmarks->root() ); // calls save
-			//konqBookmarks->notifyChanged( "" );
-		} else {
-			if ( !konqBookmarks->save() ) {
-				kError() << "Failed to write merged bookmarks." << endl;
-				return 1;
-			}
-		}
+		konqBookmarks->emitChanged( konqBookmarks->root() ); // calls save
+		// see TODO in emitChanged... if it returns false, it would be nice to return 1
+		// here.
 	}
+	return 0;
 }
 
