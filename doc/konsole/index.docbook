@@ -104,8 +104,10 @@ scroll through the history with
 <keycap>Down Arrow</keycap>.
 </para>
 
-<para>&konsole; provides a number of history related actions located in the 
-<menuchoice><guimenu>Scrollback</guimenu></menuchoice> menu.
+<para>&konsole; provides a number of actions located in the 
+<menuchoice><guimenu>
+<link linkend="scrollback-menu">Scrollback</link>
+</guimenu></menuchoice>menu.
 </para>
 
 </sect1>
@@ -288,16 +290,18 @@ is listed after each menu item.
 
 <variablelist>
 <varlistentry>
-<term><menuchoice><guimenu>File</guimenu><guimenuitem>New Tab</guimenuitem>
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>N</keycap></keycombo></shortcut>
+<guimenu>File</guimenu><guimenuitem>New Tab</guimenuitem>
 </menuchoice>
-(<keycombo action="simul">&Ctrl;&Shift;<keycap>N</keycap></keycombo>)
 </term>
 <listitem><para><action>Opens a new tab with the default profile</action>
 </para></listitem></varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>File</guimenu><guimenuitem>New Window</guimenuitem></menuchoice>
-(<keycombo action="simul">&Ctrl;&Shift;<keycap>M</keycap></keycombo>)
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>M</keycap></keycombo></shortcut>
+<guimenu>File</guimenu><guimenuitem>New Window</guimenuitem></menuchoice>
 </term>
 <listitem><para><action>Opens a new seperate &konsole; window with the default profile</action>
 </para></listitem></varlistentry>
@@ -323,18 +327,20 @@ at the current directory</action>.  By default, that is
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>File</guimenu>
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>W</keycap></keycombo></shortcut>
+<guimenu>File</guimenu>
 <guimenuitem>Close Tab</guimenuitem></menuchoice>
-(<keycombo action="simul">&Ctrl;&Shift;<keycap>W</keycap></keycombo>)
 </term>
 <listitem><para><action>Closes the current tab</action>
 </para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>File</guimenu>
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>Q</keycap></keycombo></shortcut>
+<guimenu>File</guimenu>
 <guimenuitem>Quit</guimenuitem></menuchoice>
-(<keycombo action="simul">&Ctrl;&Shift;<keycap>Q</keycap></keycombo>)
 </term>
 <listitem><para><action>Quits &konsole;</action></para>
 <note><para>&konsole; will display a window if there is more than one
@@ -352,10 +358,10 @@ tab open.  This window can be disabled by clicking on the <guibutton>Do not ask 
 <variablelist>
 
 <varlistentry>
-<term><menuchoice><guimenu>Edit</guimenu>
-<guimenuitem>Copy</guimenuitem></menuchoice>
-(<keycombo action="simul">&Ctrl;&Shift;<keycap>C</keycap></keycombo>)
-</term>
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>C</keycap></keycombo></shortcut>
+<guimenu>Edit</guimenu>
+<guimenuitem>Copy</guimenuitem></menuchoice></term>
 <listitem><para><action>Copies the selected text to the clipboard</action></para></listitem>
 </varlistentry>
 
@@ -404,9 +410,10 @@ the name of the current tab</action></para></listitem>
 <variablelist>
 
 <varlistentry>
-<term><menuchoice><guimenu>View</guimenu><guimenuitem>Split 
-View  Left/Right</guimenuitem></menuchoice>
-(<keycombo action="simul">&Ctrl;&Shift;<keycap>L</keycap></keycombo>)
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>L</keycap></keycombo></shortcut>
+<guimenu>View</guimenu><guimenuitem>Split 
+View Left/Right</guimenuitem></menuchoice>
 </term>
 <listitem><para><action>Splits all the tabs into left and right views</action>
 </para><para>
@@ -415,9 +422,10 @@ Any output on one view is duplicated in the other view.
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>View</guimenu><guimenuitem>Split 
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>T</keycap></keycombo></shortcut>
+<guimenu>View</guimenu><guimenuitem>Split 
 View Top/Bottom</guimenuitem></menuchoice>
-(<keycombo action="simul">&Ctrl;&Shift;<keycap>T</keycap></keycombo>)
 </term>
 <listitem><para><action>Splits all the tabs into top and bottom views</action>
 </para><para>
@@ -426,34 +434,38 @@ Any output on one view is duplicated in the other view.
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>View</guimenu><guimenuitem>Split 
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>S</keycap></keycombo></shortcut>
+<guimenu>View</guimenu><guimenuitem>Split 
 Close Active</guimenuitem></menuchoice>
-(<keycombo action="simul">&Ctrl;&Shift;<keycap>S</keycap></keycombo>)
 </term>
 <listitem><para><action>Closes the current view</action>
 </para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>View</guimenu><guimenuitem>Split 
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>O</keycap></keycombo></shortcut>
+<guimenu>View</guimenu><guimenuitem>Split 
 Close Other</guimenuitem></menuchoice>
-(<keycombo action="simul">&Ctrl;&Shift;<keycap>O</keycap></keycombo>)
 </term>
 <listitem><para><action>Closes the non-current view</action>
 </para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>View</guimenu><guimenuitem>Expand View</guimenuitem></menuchoice>
-(<keycombo action="simul">&Ctrl;&Shift;<keycap>]</keycap></keycombo>)
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>]</keycap></keycombo></shortcut>
+<guimenu>View</guimenu><guimenuitem>Expand View</guimenuitem></menuchoice>
 </term>
 <listitem><para><action>Makes the current view larger</action>
 </para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>View</guimenu><guimenuitem>Shrink View</guimenuitem></menuchoice>
-(<keycombo action="simul">&Ctrl;&Shift;<keycap>[</keycap></keycombo>)
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>[</keycap></keycombo></shortcut>
+<guimenu>View</guimenu><guimenuitem>Shrink View</guimenuitem></menuchoice>
 </term>
 <listitem><para><action>Makes the current view smaller</action>
 </para></listitem>
@@ -461,9 +473,10 @@ Close Other</guimenuitem></menuchoice>
 
 
 <varlistentry>
-<term><menuchoice><guimenu>View</guimenu><guimenuitem>Detach 
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>H</keycap></keycombo></shortcut>
+<guimenu>View</guimenu><guimenuitem>Detach 
 View</guimenuitem></menuchoice>
-(<keycombo action="simul">&Ctrl;&Shift;<keycap>H</keycap></keycombo>)
 </term>
 <listitem><para><action>Opens the current tab in a 
 separate window</action>
