@@ -367,7 +367,7 @@ KonqMainWindow *KonqViewManager::openSavedWindow(const KConfigGroup& configGroup
 {
     if(!openTabsInsideCurrentWindow)
     {
-        KonqViewManager::openSavedWindow(configGroup);
+        return KonqViewManager::openSavedWindow(configGroup);
     } else {
         loadRootItem( configGroup, tabContainer(), KUrl(), true, KUrl() );
         return m_pMainWindow;
