@@ -19,6 +19,7 @@
 */
 
 #include "konqmisc.h"
+#include "konqsettingsxt.h"
 #include "konqundomanager.h"
 #include "konqundomanageradaptor.h"
 #include "konqundomanager_interface.h"
@@ -151,7 +152,7 @@ void KonqUndoManager::slotAddClosedWindowItem(KonqUndoManager *real_sender, Konq
     if(real_sender == this)
         return;
 
-    if(m_closedItemList.size() >= KonqClosedWindowsManager::self()->maxNumClosedItems())
+    if(m_closedItemList.size() >= KonqSettings::maxNumClosedItems())
     {
         const KonqClosedItem* last = m_closedItemList.last();
         const KonqClosedTabItem* lastTab =
@@ -242,7 +243,7 @@ quint64 KonqUndoManager::newCommandSerialNumber()
 
 void KonqUndoManager::addClosedTabItem(KonqClosedTabItem* closedTabItem)
 {
-    if(m_closedItemList.size() >= KonqClosedWindowsManager::self()->maxNumClosedItems())
+    if(m_closedItemList.size() >= KonqSettings::maxNumClosedItems())
     {
         const KonqClosedItem* last = m_closedItemList.last();
         const KonqClosedTabItem* lastTab =
@@ -340,7 +341,7 @@ void KonqClosedWindowsManager::addClosedWindowItem(KonqUndoManager
 {
     // If we are off the limit, remove the last closed window item
     if(m_closedWindowItemList.size() >=
-        maxNumClosedItems())
+        KonqSettings::maxNumClosedItems())
     {
         KonqClosedWindowItem* last = m_closedWindowItemList.last();
 
@@ -386,35 +387,12 @@ const QList<KonqClosedWindowItem *>& KonqClosedWindowsManager::closedWindowItemL
     return m_closedWindowItemList;
 }
 
-int KonqClosedWindowsManager::maxNumClosedItems()
-{
-    return m_maxNumClosedItems;
-}
-
-void KonqClosedWindowsManager::setMaxNumClosedItems(int max)
-{
-    m_maxNumClosedItems = qMax(1, max);
-}
-
 void KonqClosedWindowsManager::readSettings()
 {
-    KSharedConfigPtr config = KGlobal::config();
-
-    KConfigGroup configGroup( config, "UndoManagerSettings");
-    m_maxNumClosedItems = configGroup.readEntry("Maximum number of Closed Items", 20 );
-    m_maxNumClosedItems = qMax(1, m_maxNumClosedItems);
-
     readConfig();
 }
 
 
-
-void KonqClosedWindowsManager::applySettings()
-{
-    KConfigGroup configGroup(KSharedConfig::openConfig("konquerorrc"), "UndoManagerSettings");
-
-    configGroup.writeEntry("Value youngerThan", m_maxNumClosedItems );
-}
 
 static QString dbusService()
 {
