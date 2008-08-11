@@ -14,6 +14,17 @@
     </entry>
   </group>
 
+<!-- konqundomanager.cpp -->
+  <group name="UndoManagerSettings">
+    <entry key="maxNumClosedItems" type="Int">
+      <default>20</default> 
+      <min>0</min>
+      <label>Maximum number of Closed Items</label>
+      <whatsthis>This sets the maximum number of closed items that will be stored in memory. This limit will not be surpassed.</whatsthis>
+      <!-- checked -->
+    </entry>
+  </group>
+
   <group name="FMSettings">
 <!-- behaviour.cpp -->  
     <entry key="AlwaysNewWin" type="Bool"> <!--TODO dolphinpart-->

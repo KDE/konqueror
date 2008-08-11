@@ -136,12 +136,6 @@ public:
 
     KonqClosedWindowItem *closedWindowItem, bool propagate = true);
 
-    void applySettings();
-
-    int maxNumClosedItems();
-
-    void setMaxNumClosedItems(int max);
-
     KConfig* config();
 
     /**
