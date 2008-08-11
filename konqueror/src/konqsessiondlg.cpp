@@ -18,6 +18,7 @@
 */
 
 #include "konqsessiondlg.h"
+#include "konqsettingsxt.h"
 #include "konqviewmanager.h"
 #include "konqsessionmanager.h"
 #include "ui_konqsessiondlg_base.h"
@@ -102,7 +103,10 @@ KonqSessionDlg::KonqSessionDlg( KonqViewManager *manager, QWidget *parent )
     
     enableButton( BTN_OPEN, d->m_pListView->currentIndex().isValid() );
     slotSelectionChanged();
-    
+
+    d->m_pOpenTabsInsideCurrentWindow->setChecked(
+	KonqSettings::openTabsInsideCurrentWindow());
+
     connect( this,SIGNAL(user1Clicked()),SLOT(slotOpen()));
     connect( d->m_pNewButton, SIGNAL(clicked()),SLOT(slotNew()));
     connect( d->m_pSaveCurrentButton, SIGNAL(clicked()),SLOT(slotSave()));
@@ -114,6 +118,8 @@ KonqSessionDlg::KonqSessionDlg( KonqViewManager *manager, QWidget *parent )
 
 KonqSessionDlg::~KonqSessionDlg()
 {
+    KonqSettings::setOpenTabsInsideCurrentWindow(
+	d->m_pOpenTabsInsideCurrentWindow->isChecked());
 }
 
 void KonqSessionDlg::slotOpen()
@@ -122,7 +128,9 @@ void KonqSessionDlg::slotOpen()
         return;
     
     KonqSessionManager::self()->restoreSessions(d->m_pModel->itemForIndex(
-        d->m_pListView->currentIndex()).url().path());
+        d->m_pListView->currentIndex()).url().path(),
+	d->m_pOpenTabsInsideCurrentWindow->isChecked(), 
+	reinterpret_cast<KonqMainWindow*>(parent()));
     close();
 }
 

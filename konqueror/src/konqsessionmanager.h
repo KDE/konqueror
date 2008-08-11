@@ -29,6 +29,7 @@
 #include <kconfig.h>
 
 class QDBusMessage;
+class KonqMainWindow;
 
 /**
  * This class is a singleton. It does some session related tasks:
@@ -45,18 +46,39 @@ public:
     
     /**
      * Restore saved session(s).
+     * 
+     * @param sessionFilePathsList list of session files to restore.
+     * @param openTabsInsideCurrentWindow indicates if you want to open the tabs
+     * in current window or not. False by default.
+     * @param parent indicates in which window the tabs will be opened if
+     * openTabsInsideCurrentWindow is set to true. Otherwise it won't be used.
      */
-    void restoreSessions(const QStringList &sessionFilePathsList);
+    void restoreSessions(const QStringList &sessionFilePathsList, bool 
+        openTabsInsideCurrentWindow = false, KonqMainWindow *parent = 0L);
     
     /**
-     * Restore saved session(s) given a directory.
+     * Restore saved session(s).
+     * 
+     * @param sessionsDir directory containing the session files to
+     * restore.
+     * @param openTabsInsideCurrentWindow indicates if you want to open the tabs
+     * in current window or not. False by default.
+     * @param parent indicates in which window the tabs will be opened if
+     * openTabsInsideCurrentWindow is set to true. Otherwise it won't be used.
      */
-    void restoreSessions(const QString &sessionsDir);
+    void restoreSessions(const QString &sessionsDir, bool
+        openTabsInsideCurrentWindow = false, KonqMainWindow *parent = 0L);
     
     /**
      * Restore saved session.
+     * @param sessionFilePath session file to restore.
+     * @param openTabsInsideCurrentWindow indicates if you want to open the tabs
+     * in current window or not. False by default.
+     * @param parent indicates in which window the tabs will be opened if
+     * openTabsInsideCurrentWindow is set to true. Otherwise it won't be used.
      */
-    void restoreSession(const QString &sessionFilePath);
+    void restoreSession(const QString &sessionFilePath, bool
+        openTabsInsideCurrentWindow = false, KonqMainWindow *parent = 0L);
     
     /**
      * Disable the autosave feature. It's called when a konqueror instance is

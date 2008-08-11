@@ -297,6 +297,20 @@ public:
      */
     KonqMainWindow* duplicateWindow();
 
+    /**
+     * Open a saved window.
+     * 
+     * @param openTabsInsideCurrentWindow if true, it will try to open the
+     * tabs inside current window.
+     */
+    KonqMainWindow *openSavedWindow(const KConfigGroup& configGroup,
+        bool openTabsInsideCurrentWindow);
+    
+    /**
+     * Open a saved window in a new KonqMainWindow instance.
+     * It doesn't have the openTabsInsideCurrentWindow because this is the
+     * static version.
+     */
     static KonqMainWindow *openSavedWindow(const KConfigGroup& configGroup);
 
 public Q_SLOTS:
