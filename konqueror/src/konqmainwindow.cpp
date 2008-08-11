@@ -246,8 +246,8 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
 
   connect( prov, SIGNAL( changed() ), SLOT( slotIconsChanged() ) );
 
-  m_undoManager = new KonqUndoManager(this);
-  connect( m_undoManager, SIGNAL( undoAvailable( bool ) ),
+  m_pUndoManager = new KonqUndoManager(this);
+  connect( m_pUndoManager, SIGNAL( undoAvailable( bool ) ),
            this, SLOT( slotUndoAvailable( bool ) ) );
 
   initCombo();
@@ -343,8 +343,8 @@ KonqMainWindow::~KonqMainWindow()
   m_combo = 0;
   delete m_locationLabel;
   m_locationLabel = 0;
-  m_undoManager->disconnect();
-  delete m_undoManager;
+  m_pUndoManager->disconnect();
+  delete m_pUndoManager;
   decInstancesCount();
 
     //kDebug(1202) << this << "done";
@@ -2844,13 +2844,13 @@ void KonqMainWindow::slotClosedItemsListAboutToShow()
     // Clear the menu and fill it with a maximum of s_closedItemsListLength number of urls
     popup->clear();
     QAction* clearAction = popup->addAction( i18n("Empty Closed Items History") );
-    connect(clearAction, SIGNAL(triggered()), m_undoManager, SLOT(clearClosedItemsList()));
+    connect(clearAction, SIGNAL(triggered()), m_pUndoManager, SLOT(clearClosedItemsList()));
     popup->insertSeparator((QAction*)0);
 
     QList<KonqClosedItem *>::ConstIterator it =
-        m_undoManager->closedItemsList().constBegin();
+        m_pUndoManager->closedItemsList().constBegin();
     const QList<KonqClosedItem *>::ConstIterator end =
-        m_undoManager->closedItemsList().constEnd();
+        m_pUndoManager->closedItemsList().constEnd();
     for ( int i = 0; it != end && i < s_closedItemsListLength; ++it, ++i ) {
         const QString text = QString::number(i) + ' ' + (*it)->title();
         QAction* action = popup->addAction( (*it)->icon(), text );
@@ -2908,7 +2908,7 @@ void KonqMainWindow::slotSessionActivated(QAction* action)
 
 void KonqMainWindow::updateClosedItemsAction()
 {
-    m_paClosedItems->setEnabled(!m_undoManager->closedItemsList().isEmpty());
+    m_paClosedItems->setEnabled(!m_pUndoManager->closedItemsList().isEmpty());
 }
 
 void KonqMainWindow::slotBack()
@@ -3561,17 +3561,17 @@ void KonqMainWindow::initActions()
 
   // Trash bin of closed tabs
   m_paClosedItems = new KToolBarPopupAction( KIcon("edit-undo-closed-tabs"),  i18n( "Closed Items" ), this );
-  actionCollection()->addAction( "closedtabs", m_paClosedItems );
+  actionCollection()->addAction( "closeditems", m_paClosedItems );
   m_closedItemsGroup = new QActionGroup(m_paClosedItems->menu());
 
   // set the closed tabs list shown
-  connect( m_paClosedItems, SIGNAL(triggered()), m_undoManager, SLOT(undoLastClosedItem()) );
+  connect( m_paClosedItems, SIGNAL(triggered()), m_pUndoManager, SLOT(undoLastClosedItem()) );
   connect( m_paClosedItems->menu(), SIGNAL(aboutToShow()), this, SLOT(slotClosedItemsListAboutToShow()) );
-  connect( m_closedItemsGroup, SIGNAL(triggered(QAction*)), m_undoManager, SLOT(slotClosedItemsActivated(QAction*)) );
+  connect( m_closedItemsGroup, SIGNAL(triggered(QAction*)), m_pUndoManager, SLOT(slotClosedItemsActivated(QAction*)) );
   connect( m_pViewManager, SIGNAL(aboutToRemoveTab(KonqFrameBase*)), this, SLOT(slotAddClosedUrl(KonqFrameBase*)) );
-  connect( m_undoManager, SIGNAL(openClosedTab(const KonqClosedTabItem&)), m_pViewManager, SLOT(openClosedTab(const KonqClosedTabItem&)) );
-  connect( m_undoManager, SIGNAL(openClosedWindow(const KonqClosedWindowItem&)), m_pViewManager, SLOT(openClosedWindow(const KonqClosedWindowItem&)) );
-  connect( m_undoManager, SIGNAL(closedItemsListChanged()), this, SLOT(updateClosedItemsAction()));
+  connect( m_pUndoManager, SIGNAL(openClosedTab(const KonqClosedTabItem&)), m_pViewManager, SLOT(openClosedTab(const KonqClosedTabItem&)) );
+  connect( m_pUndoManager, SIGNAL(openClosedWindow(const KonqClosedWindowItem&)), m_pViewManager, SLOT(openClosedWindow(const KonqClosedWindowItem&)) );
+  connect( m_pUndoManager, SIGNAL(closedItemsListChanged()), this, SLOT(updateClosedItemsAction()));
 
 
   m_paSessions = new KActionMenu( i18n( "Sessions" ), this );
@@ -3751,9 +3751,9 @@ void KonqMainWindow::initActions()
   connect(m_paReloadAllTabs, SIGNAL(triggered()), SLOT( slotReloadAllTabs() ));
   m_paReloadAllTabs->setShortcut(Qt::SHIFT+Qt::Key_F5);
 
-  m_paUndo = KStandardAction::undo( m_undoManager, SLOT( undo() ), this );
+  m_paUndo = KStandardAction::undo( m_pUndoManager, SLOT( undo() ), this );
   actionCollection()->addAction( "undo", m_paUndo );
-  connect( m_undoManager, SIGNAL( undoTextChanged(QString) ),
+  connect( m_pUndoManager, SIGNAL( undoTextChanged(QString) ),
            this, SLOT( slotUndoTextChanged(QString) ) );
 
   // Those are connected to the browserextension directly
@@ -4022,9 +4022,9 @@ void KonqMainWindow::updateViewActions()
     }
   }
 
-  m_undoManager->updateSupportsFileUndo(enable);
+  m_pUndoManager->updateSupportsFileUndo(enable);
 
-//   slotUndoAvailable( m_undoManager->undoAvailable() );
+//   slotUndoAvailable( m_pUndoManager->undoAvailable() );
 
   m_paLockView->setEnabled( true );
   m_paLockView->setChecked( m_currentView && m_currentView->isLockedLocation() );
@@ -4516,7 +4516,7 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
 
   popupMenuCollection.addAction( "go_up", m_paUp );
   popupMenuCollection.addAction( "reload", m_paReload );
-  popupMenuCollection.addAction( "closedtabs", m_paClosedItems );
+  popupMenuCollection.addAction( "closeditems", m_paClosedItems );
 
 #if 0
   popupMenuCollection.addAction( "find", m_paFindFiles );
@@ -5087,13 +5087,13 @@ void KonqMainWindow::addClosedWindowToUndoList()
         title = m_currentView->caption();
 
     // 2. Create the KonqClosedWindowItem and  save its config
-    KonqClosedWindowItem* closedWindowItem = new KonqClosedWindowItem(title, m_undoManager->newCommandSerialNumber(), numTabs);
+    KonqClosedWindowItem* closedWindowItem = new KonqClosedWindowItem(title, m_pUndoManager->newCommandSerialNumber(), numTabs);
     saveProperties( closedWindowItem->configGroup() );
     closedWindowItem->configGroup().sync();
 
     // 3. Finally add the KonqClosedWindowItem to the undo list
     m_paClosedItems->setEnabled(true);
-    m_undoManager->addClosedWindowItem( closedWindowItem );
+    m_pUndoManager->addClosedWindowItem( closedWindowItem );
 
     kDebug(1202) << "done";
 }
@@ -5163,7 +5163,7 @@ void KonqMainWindow::slotAddClosedUrl(KonqFrameBase *tab)
     // Now we get the position of the tab
     const int index =  m_pViewManager->tabContainer()->childFrameList().indexOf(tab);
 
-    KonqClosedTabItem* closedTabItem = new KonqClosedTabItem(url, title, index, m_undoManager->newCommandSerialNumber());
+    KonqClosedTabItem* closedTabItem = new KonqClosedTabItem(url, title, index, m_pUndoManager->newCommandSerialNumber());
 
     QString prefix = QString::fromLatin1( tab->frameType() ) + QString::number(0);
     closedTabItem->configGroup().writeEntry( "RootItem", prefix );
@@ -5172,7 +5172,7 @@ void KonqMainWindow::slotAddClosedUrl(KonqFrameBase *tab)
     tab->saveConfig( closedTabItem->configGroup(), prefix, flags, 0L, 0, 1);
 
     m_paClosedItems->setEnabled(true);
-    m_undoManager->addClosedTabItem( closedTabItem );
+    m_pUndoManager->addClosedTabItem( closedTabItem );
 
     kDebug(1202) << "done";
 }

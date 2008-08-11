@@ -613,7 +613,7 @@ private:
     void setAnimatedLogoSize();
 
 private: // members
-  KonqUndoManager* m_undoManager;
+  KonqUndoManager* m_pUndoManager;
 
   KNewMenu * m_pMenuNew;
 
