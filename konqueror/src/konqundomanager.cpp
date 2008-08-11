@@ -46,7 +46,6 @@ class KonqClosedWindowsManagerPrivate
 public:
     KonqClosedWindowsManager instance;
     int m_maxNumClosedItems;
-    bool m_amIalone;
 };
 
 K_GLOBAL_STATIC(KonqClosedWindowsManagerPrivate, myKonqClosedWindowsManagerPrivate)
