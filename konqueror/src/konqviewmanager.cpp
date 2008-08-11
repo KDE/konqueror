@@ -339,7 +339,6 @@ void KonqViewManager::openClosedWindow(const KonqClosedWindowItem& closedWindowI
 
 KonqMainWindow *KonqViewManager::openSavedWindow(const KConfigGroup& configGroup)
 {
-    kDebug(1202) << "begin";
     const QString xmluiFile =
         configGroup.readEntry("XMLUIFile","konqueror.rc");
 
@@ -360,8 +359,19 @@ KonqMainWindow *KonqViewManager::openSavedWindow(const KConfigGroup& configGroup
     mainWindow->viewManager()->loadRootItem( configGroup, mainWindow->viewManager()->tabContainer(), KUrl(), true, KUrl() );
     mainWindow->applyMainWindowSettings( configGroup, true );
     mainWindow->activateChild();
-    kDebug(1202) << "done";
     return mainWindow;
+}
+
+KonqMainWindow *KonqViewManager::openSavedWindow(const KConfigGroup& configGroup,
+    bool openTabsInsideCurrentWindow)
+{
+    if(!openTabsInsideCurrentWindow)
+    {
+        KonqViewManager::openSavedWindow(configGroup);
+    } else {
+        loadRootItem( configGroup, tabContainer(), KUrl(), true, KUrl() );
+        return m_pMainWindow;
+    }
 }
 
 

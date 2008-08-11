@@ -20,6 +20,7 @@
 
 #include "konqmisc.h"
 #include "konqsessionmanager.h"
+#include "konqmainwindow.h"
 #include "konqsessionmanager_interface.h"
 #include "konqsessionmanageradaptor.h"
 #include "konqmainwindow.h"
@@ -266,25 +267,29 @@ void KonqSessionManager::restoreSessions()
     restoreSessions(ownedSessions);
 }
 
-void KonqSessionManager::restoreSessions(const QStringList &sessionFilePathsList)
+void KonqSessionManager::restoreSessions(const QStringList &sessionFilePathsList,
+    bool openTabsInsideCurrentWindow, KonqMainWindow *parent)
 {
     foreach ( const QString& sessionFilePath, sessionFilePathsList )
     {
-        restoreSession(sessionFilePath);
+        restoreSession(sessionFilePath, openTabsInsideCurrentWindow, parent);
     }
 }
 
-void KonqSessionManager::restoreSessions(const QString &sessionsDir)
+void KonqSessionManager::restoreSessions(const QString &sessionsDir, bool 
+    openTabsInsideCurrentWindow, KonqMainWindow *parent)
 {
     QDirIterator it(sessionsDir, QDir::Readable|QDir::Files);
 
     while (it.hasNext())
     {
         QFileInfo fi(it.next());
-        restoreSession(fi.filePath());
+        restoreSession(fi.filePath(), openTabsInsideCurrentWindow, parent);
     }
 }
-void KonqSessionManager::restoreSession(const QString &sessionFilePath)
+
+void KonqSessionManager::restoreSession(const QString &sessionFilePath, bool
+    openTabsInsideCurrentWindow, KonqMainWindow *parent)
 {
     QString file(sessionFilePath);
     if(!QFile::exists(file))
@@ -298,7 +303,11 @@ void KonqSessionManager::restoreSession(const QString &sessionFilePath)
     for(int i = 0; i < size; i++)
     {
         KConfigGroup configGroup(&config, "Window" + QString::number(i));
-        KonqViewManager::openSavedWindow(configGroup)->show();
+        
+        if(!openTabsInsideCurrentWindow)
+            KonqViewManager::openSavedWindow(configGroup)->show();
+        else
+            parent->viewManager()->openSavedWindow(configGroup, true);
     }
 }
 

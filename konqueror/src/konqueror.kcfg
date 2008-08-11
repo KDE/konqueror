@@ -538,6 +538,12 @@ PATH_JAVA
       <whatsthis>This option tells Konqueror whether to ask for a confirmation when you move the file to your trash folder, from where it can be recovered very easily.</whatsthis>
       <!-- checked -->
     </entry>
+    <!-- konqsessiondlg.cpp -->
+    <entry key="OpenTabsInsideCurrentWindow" type="Bool">
+      <default>false</default>
+      <label>Open tabs inside current window</label>
+      <whatsthis>If true, when opening a session from within the sessions dialog the tabs will be opened inside current window.</whatsthis>
+    </entry>
   </group>
 
   <group name="SessionManagerSettings">

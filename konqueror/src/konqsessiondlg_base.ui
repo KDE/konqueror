@@ -66,6 +66,13 @@
      </item>
     </layout>
    </item>
+   <item row="1" column="0" >
+    <widget class="QCheckBox" name="m_pOpenTabsInsideCurrentWindow" >
+     <property name="text" >
+      <string>Open tabs inside current window</string>
+     </property>
+    </widget>
+   </item>
   </layout>
  </widget>
  <resources/>
