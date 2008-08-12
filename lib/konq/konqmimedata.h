@@ -52,6 +52,18 @@ public:
      * @return true if the urls in @p mimeData were cut
      */
     static bool decodeIsCutSelection( const QMimeData *mimeData );
+
+    /**
+     * Remove urls from the list if an ancestor is present on the list. This can
+     * be used to delete only the ancestor url and skip a potential error of a non-existant url.
+     *
+     * For example, for a list of "/home/foo/a", "/home/foo/a/a.txt", "/home/foo/a/a/a.txt", "/home/foo/a/b/b.txt",
+     * "home/foo/b/b.txt", this method will return the list "/home/foo/a", "/home/foo/b/b.txt".
+     *
+     * @return the list @p urls without parented urls inside.
+     * @since 4.2
+     */
+    static KUrl::List simplifiedUrlList( const KUrl::List & urls );
 };
 
 #endif /* KONQMIMEDATA_H */
