@@ -185,6 +185,8 @@ void KonqOperations::_del( Operation method, const KUrl::List & _selectedUrls, C
         return;
     }
 
+    selectedUrls = KonqMimeData::simplifiedUrlList( selectedUrls );
+
     if ( confirmation == SKIP_CONFIRMATION || askDeleteConfirmation( selectedUrls, method, confirmation, parentWidget() ) )
     {
         //m_srcUrls = selectedUrls;
