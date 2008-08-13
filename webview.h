@@ -43,9 +43,6 @@ public:
     QWebHitTestResult contextMenuResult() const;
 
 protected:
-    void mousePressEvent(QMouseEvent *event);
-    void mouseReleaseEvent(QMouseEvent *event);
-    void wheelEvent(QWheelEvent *event);
     void contextMenuEvent(QContextMenuEvent *e);
     void selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &selectGroupMap);
     void linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &linkGroupMap);

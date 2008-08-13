@@ -23,14 +23,24 @@
  *
  */
 
-#include "webview.h"
+#include "kwebview.h"
 #include "kwebpage.h"
+#include <KDE/KUrl>
+#include <QtGui/QApplication>
+#include <QtGui/QClipboard>
+#include <QtGui/QMouseEvent>
 
 class KWebView::KWebViewPrivate
 {
 public:
-    KWebViewPrivate() : customContextMenu(false) {}
+    KWebViewPrivate()
+    : customContextMenu(false)
+    , keyboardModifiers(Qt::NoModifier)
+    , pressedButtons(Qt::NoButton)
+    {}
     bool customContextMenu;
+    Qt::KeyboardModifiers keyboardModifiers;
+    Qt::MouseButtons pressedButtons;
 };
 
 
@@ -66,5 +76,36 @@ KWebPage *KWebView::page()
         return 0;
     }
     return webPage;
+}
+
+void KWebView::wheelEvent(QWheelEvent *event)
+{
+    if (QApplication::keyboardModifiers() & Qt::ControlModifier) {
+        int numDegrees = event->delta() / 8;
+        int numSteps = numDegrees / 15;
+        setTextSizeMultiplier(textSizeMultiplier() + numSteps * 0.1);
+        event->accept();
+        return;
+    }
+    QWebView::wheelEvent(event);
+}
+
+
+void KWebView::mousePressEvent(QMouseEvent *event)
+{
+    d->pressedButtons = event->buttons();
+    d->keyboardModifiers = event->modifiers();
+    QWebView::mousePressEvent(event);
+}
+
+void KWebView::mouseReleaseEvent(QMouseEvent *event)
+{
+    QWebView::mouseReleaseEvent(event);
+    if (!event->isAccepted() && (d->pressedButtons & Qt::MidButton)) {
+        KUrl url(QApplication::clipboard()->text(QClipboard::Selection));
+        if (!url.isEmpty() && url.isValid() && !url.scheme().isEmpty()) {
+            emit openUrl(url);
+        }
+    }
 }
 

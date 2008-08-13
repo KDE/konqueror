@@ -37,8 +37,6 @@
 #include <KStandardDirs>
 #include <KActionMenu>
 
-#include <QtGui/QApplication>
-#include <QtGui/QClipboard>
 #include <QtNetwork/QHttpRequestHeader>
 #include <QtWebKit/QWebFrame>
 #include <QtWebKit/QWebHitTestResult>
@@ -48,8 +46,6 @@ class WebView::WebViewPrivate
 public:
     WebViewPrivate(WebView *webView)
     : webView(webView)
-    , keyboardModifiers(Qt::NoModifier)
-    , pressedButtons(Qt::NoButton)
     {}
 
     void addSearchActions(QList<QAction *>& selectActions);
@@ -68,8 +64,6 @@ public:
     KActionCollection* actionCollection;
     QWebHitTestResult result;
     WebKitPart *part;
-    Qt::KeyboardModifiers keyboardModifiers;
-    Qt::MouseButtons pressedButtons;
 };
 
 
@@ -90,36 +84,6 @@ WebView::~WebView()
 QWebHitTestResult WebView::contextMenuResult() const
 {
     return d->result;
-}
-
-void WebView::wheelEvent(QWheelEvent *event)
-{
-    if (QApplication::keyboardModifiers() & Qt::ControlModifier) {
-        int numDegrees = event->delta() / 8;
-        int numSteps = numDegrees / 15;
-        setTextSizeMultiplier(textSizeMultiplier() + numSteps * 0.1);
-        event->accept();
-        return;
-    }
-    KWebView::wheelEvent(event);
-}
-
-void WebView::mousePressEvent(QMouseEvent *event)
-{
-    d->pressedButtons = event->buttons();
-    d->keyboardModifiers = event->modifiers();
-    KWebView::mousePressEvent(event);
-}
-
-void WebView::mouseReleaseEvent(QMouseEvent *event)
-{
-    KWebView::mouseReleaseEvent(event);
-    if (!event->isAccepted() && (d->pressedButtons & Qt::MidButton)) {
-        QUrl url(QApplication::clipboard()->text(QClipboard::Selection));
-        if (!url.isEmpty() && url.isValid() && !url.scheme().isEmpty()) {
-            emit d->part->browserExtension()->openUrlRequest(url, KParts::OpenUrlArguments(), KParts::BrowserArguments());
-        }
-    }
 }
 
 void WebView::contextMenuEvent(QContextMenuEvent *e)

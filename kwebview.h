@@ -31,6 +31,9 @@
 #include <kwebpage.h>
 
 class QWebHitTestResult;
+class KUrl;
+class QMouseEvent;
+class QWheelEvent;
 
 class KDE_EXPORT KWebView : public QWebView
 {
@@ -45,9 +48,13 @@ public Q_SLOTS:
 
 Q_SIGNALS:
     void showContextMenu(QContextMenuEvent *event);
+    void openUrl(const KUrl &url);
 
 protected:
     void contextMenuEvent(QContextMenuEvent *event);
+    void wheelEvent(QWheelEvent *event);
+    void mousePressEvent(QMouseEvent *event);
+    void mouseReleaseEvent(QMouseEvent *event);
 
 private:
     class KWebViewPrivate;
