@@ -57,7 +57,7 @@ namespace KParts
 
 typedef QList<KonqView*> ChildViewList;
 
-class KonqFrameBase
+class KONQ_TESTS_EXPORT KonqFrameBase
 {
  public:
   enum Option {
@@ -66,6 +66,8 @@ class KonqFrameBase
      saveHistoryItems = 0x02
   };
   Q_DECLARE_FLAGS(Options, Option)
+
+  enum FrameType { View, Tabs, ContainerBase, Container, MainWindow };
 
   virtual ~KonqFrameBase() {}
 
@@ -85,12 +87,15 @@ class KonqFrameBase
 
   virtual QWidget* asQWidget() = 0;
 
-  virtual QByteArray frameType() = 0;
+  virtual FrameType frameType() const = 0;
 
   virtual void activateChild() = 0;
 
   virtual KonqView* activeChildView() const = 0;
 
+  static QString frameTypeToString( const FrameType frameType );
+  static FrameType frameTypeFromString( const QString& str );
+  
 protected:
   KonqFrameBase() {}
 
@@ -162,7 +167,7 @@ public:
   virtual void setTabIcon( const KUrl &url, QWidget* sender );
 
   virtual QWidget* asQWidget() { return this; }
-  virtual QByteArray frameType() { return QByteArray("View"); }
+  virtual KonqFrameBase::FrameType frameType() const { return KonqFrameBase::View; }
 
   QVBoxLayout *layout()const { return m_pLayout; }
 

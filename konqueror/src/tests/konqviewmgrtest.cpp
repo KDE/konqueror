@@ -19,6 +19,7 @@
 #include "konqviewmgrtest.h"
 #include <QToolBar>
 
+#include <konqframe.h>
 #include <konqmainwindow.h>
 #include <konqviewmanager.h>
 #include <konqview.h>
@@ -178,7 +179,7 @@ void ViewMgrTest::testSplitView()
     QVERIFY(!frame2->isHidden());
 
     // Check container
-    QVERIFY(view->frame()->parentContainer()->frameType() == "Container");
+    QVERIFY(view->frame()->parentContainer()->frameType() == KonqFrameBase::Container);
     KonqFrameContainer* container = static_cast<KonqFrameContainer *>(view->frame()->parentContainer());
     QVERIFY(container);
     QCOMPARE(container->count(), 2);
@@ -252,8 +253,8 @@ void ViewMgrTest::testSplitMainContainer()
     QVERIFY(!frame2->isHidden());
 
     // Check container
-    QVERIFY(view->frame()->parentContainer()->frameType() == "Tabs");
-    QVERIFY(view2->frame()->parentContainer()->frameType() == "Container");
+    QVERIFY(view->frame()->parentContainer()->frameType() == KonqFrameBase::Tabs);
+    QVERIFY(view2->frame()->parentContainer()->frameType() == KonqFrameBase::Container);
     KonqFrameContainer* container = static_cast<KonqFrameContainer *>(view2->frame()->parentContainer());
     QVERIFY(container);
     QCOMPARE(container->count(), 2);
@@ -305,7 +306,7 @@ void ViewMgrTest::testDuplicateSplittedTab()
 
     KonqFrameContainer* container = static_cast<KonqFrameContainer *>(view->frame()->parentContainer());
     QVERIFY( container );
-    QVERIFY( container->parentContainer()->frameType() == "Tabs" ); // TODO enum instead
+    QVERIFY(container->parentContainer()->frameType() == KonqFrameBase::Tabs); 
 
     viewManager->duplicateTab(container); // TODO shouldn't it return a KonqFrameBase?
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)C(FF)].") ); // mainWindow, tab widget, two tabs
@@ -351,15 +352,15 @@ void ViewMgrTest::testLoadProfile()
 
     QVERIFY(mainWindow.width() > 680);
     // QCOMPARE(frameType,QByteArray("Container")) leads to unreadable output on a mismatch :)
-    QCOMPARE(QString(mainWindow.childFrame()->frameType()), QString("Container"));
+    QCOMPARE(mainWindow.childFrame()->frameType(), KonqFrameBase::Container);
     KonqFrameContainer* container = static_cast<KonqFrameContainer *>(mainWindow.childFrame());
     KonqFrameBase* firstChild = container->firstChild();
     QWidget* sidebarFrame = container->widget(0);
     QCOMPARE(firstChild->asQWidget(), sidebarFrame);
-    QCOMPARE(QString(firstChild->frameType()), QString("View"));
+    QCOMPARE(firstChild->frameType(), KonqFrameBase::View);
     //QVERIFY(qobject_cast<KonqFrame*>(sidebarFrame));
     KonqFrameBase* secondChild = container->secondChild();
-    QCOMPARE(QString(secondChild->frameType()), QString("Tabs"));
+    QCOMPARE(secondChild->frameType(), KonqFrameBase::Tabs);
     QWidget* tabFrame = container->widget(1);
     QCOMPARE(secondChild->asQWidget(), tabFrame);
     QCOMPARE(sidebarFrame->sizePolicy().horizontalPolicy(), QSizePolicy::Preferred);

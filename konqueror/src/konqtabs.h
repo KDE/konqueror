@@ -60,7 +60,7 @@ public:
   virtual void setTabIcon( const KUrl &url, QWidget* sender );
 
   virtual QWidget* asQWidget() { return this; }
-  virtual QByteArray frameType() { return QByteArray("Tabs"); }
+  virtual KonqFrameBase::FrameType frameType() const { return KonqFrameBase::Tabs; }
 
   void activateChild();
 

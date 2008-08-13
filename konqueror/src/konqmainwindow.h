@@ -291,7 +291,7 @@ public:
 
   QWidget* asQWidget();
 
-  QByteArray frameType();
+  KonqFrameBase::FrameType frameType() const;
 
   KonqFrameBase* childFrame()const;
 

@@ -5165,7 +5165,7 @@ void KonqMainWindow::slotAddClosedUrl(KonqFrameBase *tab)
 
     KonqClosedTabItem* closedTabItem = new KonqClosedTabItem(url, title, index, m_pUndoManager->newCommandSerialNumber());
 
-    QString prefix = QString::fromLatin1( tab->frameType() ) + QString::number(0);
+    QString prefix = KonqFrameBase::frameTypeToString( tab->frameType() ) + QString::number(0);
     closedTabItem->configGroup().writeEntry( "RootItem", prefix );
     prefix.append( QLatin1Char( '_' ) );
     KonqFrameBase::Options flags = KonqFrameBase::saveHistoryItems;
@@ -5487,7 +5487,7 @@ void KonqMainWindow::setTabIcon( const KUrl &/*url*/, QWidget* /*sender*/ ) { re
 
 QWidget* KonqMainWindow::asQWidget() { return this; }
 
-QByteArray KonqMainWindow::frameType() { return QByteArray("MainWindow"); }
+KonqFrameBase::FrameType KonqMainWindow::frameType() const { return KonqFrameBase::MainWindow; }
 
 KonqFrameBase* KonqMainWindow::childFrame()const { return m_pChildFrame; }
 

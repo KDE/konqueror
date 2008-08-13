@@ -72,9 +72,9 @@ void KonqFrameContainer::saveConfig( KConfigGroup& config, const QString &prefix
   //write children
   QStringList strlst;
   if( firstChild() )
-    strlst.append( QString::fromLatin1( firstChild()->frameType() ) + QString::number(idSecond - 1) );
+      strlst.append( KonqFrameBase::frameTypeToString(firstChild()->frameType()) + QString::number(idSecond - 1) );
   if( secondChild() )
-    strlst.append( QString::fromLatin1( secondChild()->frameType() ) + QString::number( idSecond ) );
+      strlst.append( KonqFrameBase::frameTypeToString(secondChild()->frameType()) + QString::number( idSecond ) );
 
   config.writeEntry( QString::fromLatin1( "Children" ).prepend( prefix ), strlst );
 
@@ -94,13 +94,13 @@ void KonqFrameContainer::saveConfig( KConfigGroup& config, const QString &prefix
 
   //write child configs
   if( firstChild() ) {
-    QString newPrefix = QString::fromLatin1( firstChild()->frameType() ) + QString::number(idSecond - 1);
+      QString newPrefix = KonqFrameBase::frameTypeToString(firstChild()->frameType()) + QString::number(idSecond - 1);
     newPrefix.append( QLatin1Char( '_' ) );
     firstChild()->saveConfig( config, newPrefix, options, docContainer, id, depth + 1 );
   }
 
   if( secondChild() ) {
-    QString newPrefix = QString::fromLatin1( secondChild()->frameType() ) + QString::number( idSecond );
+      QString newPrefix = KonqFrameBase::frameTypeToString(secondChild()->frameType()) + QString::number( idSecond );
     newPrefix.append( QLatin1Char( '_' ) );
     secondChild()->saveConfig( config, newPrefix, options, docContainer, idSecond, depth + 1 );
   }
@@ -108,7 +108,7 @@ void KonqFrameContainer::saveConfig( KConfigGroup& config, const QString &prefix
 
 void KonqFrameContainer::copyHistory( KonqFrameBase *other )
 {
-    Q_ASSERT( other->frameType() == "Container" );
+    Q_ASSERT(other->frameType() == KonqFrameBase::Container);
     if ( firstChild() )
         firstChild()->copyHistory( static_cast<KonqFrameContainer *>( other )->firstChild() );
     if ( secondChild() )

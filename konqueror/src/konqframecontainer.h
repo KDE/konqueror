@@ -52,7 +52,7 @@ public:
 
     virtual bool isContainer() const { return true; }
 
-  virtual QByteArray frameType() { return QByteArray("ContainerBase"); }
+    virtual KonqFrameBase::FrameType frameType() const { return KonqFrameBase::ContainerBase; }
 
   KonqFrameBase* activeChild() const { return m_pActiveChild; }
 
@@ -103,7 +103,7 @@ public:
   virtual void setTabIcon( const KUrl &url, QWidget* sender );
 
   virtual QWidget* asQWidget() { return this; }
-  virtual QByteArray frameType() { return QByteArray("Container"); }
+  virtual KonqFrameBase::FrameType frameType() const { return KonqFrameBase::Container; }
 
     /**
      * Insert a new frame into the splitter.

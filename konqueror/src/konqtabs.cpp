@@ -236,7 +236,7 @@ void KonqFrameTabs::saveConfig( KConfigGroup& config, const QString &prefix, con
   QString newPrefix;
   foreach (KonqFrameBase* frame, m_childFrameList)
     {
-      newPrefix = QString::fromLatin1( frame->frameType() ) + 'T' + QString::number(i);
+        newPrefix = KonqFrameBase::frameTypeToString(frame->frameType()) + 'T' + QString::number(i);
       strlst.append( newPrefix );
       newPrefix.append( QLatin1Char( '_' ) );
       frame->saveConfig( config, newPrefix, options, docContainer, id, depth + i );
@@ -257,7 +257,7 @@ void KonqFrameTabs::copyHistory( KonqFrameBase *other )
     return;
   }
 
-  if( other->frameType() != "Tabs" ) {
+  if(other->frameType() != KonqFrameBase::Tabs) {
     kDebug(1202) << "Frame types are not the same";
     return;
   }
