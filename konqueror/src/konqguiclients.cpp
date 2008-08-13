@@ -202,7 +202,7 @@ void ToggleViewGUIClient::slotToggleView( bool toggle )
 
     KonqFrameContainerBase *newContainer = childView->frame()->parentContainer();
 
-    if (newContainer->frameType()=="Container")
+    if (newContainer->frameType() == KonqFrameBase::Container)
       static_cast<KonqFrameContainer*>(newContainer)->setSizes( newSplitterSizes );
 
 #if 0 // already done by splitWindow

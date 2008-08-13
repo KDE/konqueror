@@ -268,7 +268,7 @@ void KonqViewManager::duplicateTab( KonqFrameBase* currentFrame, bool openAfterC
   KConfig config( tempFile.fileName() );
   KConfigGroup profileGroup( &config, "Profile" );
 
-  QString prefix = QString::fromLatin1( currentFrame->frameType() ) + QString::number(0);
+  QString prefix = KonqFrameBase::frameTypeToString(currentFrame->frameType()) + QString::number(0);
   profileGroup.writeEntry( "RootItem", prefix );
   prefix.append( QLatin1Char( '_' ) );
   KonqFrameBase::Options flags = KonqFrameBase::saveURLs;
@@ -304,7 +304,7 @@ void KonqViewManager::breakOffTab( KonqFrameBase* currentFrame, const QSize& win
   KConfig config( tempFile.fileName() );
   KConfigGroup profileGroup( &config, "Profile" );
 
-  QString prefix = QString::fromLatin1( currentFrame->frameType() ) + QString::number(0);
+  QString prefix = KonqFrameBase::frameTypeToString(currentFrame->frameType()) + QString::number(0);
   profileGroup.writeEntry( "RootItem", prefix );
   prefix.append( QLatin1Char( '_' ) );
   KonqFrameBase::Options flags = KonqFrameBase::saveURLs;
@@ -529,7 +529,7 @@ void KonqViewManager::removeView( KonqView *view )
 
   kDebug(1202) << "view=" << view << "frame=" << frame << "parentContainer=" << parentContainer;
 
-  if (parentContainer->frameType()=="Container")
+  if (parentContainer->frameType() == KonqFrameBase::Container)
   {
     setActivePart( 0L, true );
 
@@ -560,12 +560,12 @@ void KonqViewManager::removeView( KonqView *view )
     grandParentContainer->setActiveChild( otherFrame );
     grandParentContainer->activateChild();
   }
-  else if (parentContainer->frameType()=="Tabs") {
+  else if (parentContainer->frameType() == KonqFrameBase::Tabs) {
     kDebug(1202) << "parentContainer" << parentContainer << "is a KonqFrameTabs";
 
     removeTab( frame );
   }
-  else if (parentContainer->frameType()=="MainWindow")
+  else if (parentContainer->frameType() == KonqFrameBase::MainWindow)
     kDebug(1202) << "parentContainer is a KonqMainWindow.  This shouldn't be removeable, not removing.";
   else
     kDebug(1202) << "Unrecognized frame type, not removing.";
@@ -789,7 +789,7 @@ KonqView *KonqViewManager::setupView( KonqFrameContainerBase *parentContainer,
 
   parentContainer->insertChildFrame( newViewFrame, index );
 
-  if (parentContainer->frameType() != "Tabs") newViewFrame->show();
+  if (parentContainer->frameType() != KonqFrameBase::Tabs) newViewFrame->show();
 
   // Don't register passive views to the part manager
   if ( !v->isPassiveMode() ) // note that KonqView's constructor could set this to true even if passiveMode is false
@@ -825,7 +825,7 @@ void KonqViewManager::saveViewProfileToFile(const QString & fileName, const QStr
 void KonqViewManager::saveViewProfileToGroup(KConfigGroup & profileGroup, KonqFrameBase::Options options)
 {
     if( m_pMainWindow->childFrame() ) {
-        QString prefix = QString::fromLatin1( m_pMainWindow->childFrame()->frameType() )
+        QString prefix = KonqFrameBase::frameTypeToString(m_pMainWindow->childFrame()->frameType())
                          + QString::number(0);
         profileGroup.writeEntry( "RootItem", prefix );
         prefix.append( QLatin1Char( '_' ) );
@@ -987,7 +987,7 @@ void KonqViewManager::setActivePart( KParts::Part *part, bool immediate )
     if (partView)
     {
       KonqFrameContainerBase* parentContainer = partView->frame()->parentContainer();
-      if (parentContainer->frameType()=="Tabs")
+      if (parentContainer->frameType() == KonqFrameBase::Tabs)
       {
         KonqFrameTabs* parentFrameTabs = static_cast<KonqFrameTabs*>(parentContainer);
         if (partView->frame() != parentFrameTabs->currentWidget())
@@ -1237,7 +1237,7 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
       connect(newContainer,SIGNAL(ctrlTabPressed()),m_pMainWindow,SLOT(slotCtrlTabPressed()));
 
       int tabindex = pos;
-      if(openAfterCurrentPage && parent->frameType() == "Tabs") // Need to honor it, if possible
+      if(openAfterCurrentPage && parent->frameType() == KonqFrameBase::Tabs) // Need to honor it, if possible
 	tabindex = static_cast<KonqFrameTabs*>(parent)->currentIndex() + 1;
       parent->insertChildFrame( newContainer, tabindex );
 
@@ -1440,7 +1440,7 @@ void KonqViewManager::printSizeInfo( KonqFrameBase* frame,
     const QRect r = frame->asQWidget()->geometry();
     qDebug("Child size %s : x: %d, y: %d, w: %d, h: %d", msg, r.x(),r.y(),r.width(),r.height() );
 
-    if ( parent->frameType() == "Container" ) {
+    if (parent->frameType() == KonqFrameBase::Container) {
         const QList<int> sizes = static_cast<KonqFrameContainer*>(parent)->sizes();
         printf( "Parent sizes %s :", msg );
         foreach( int i, sizes ) {

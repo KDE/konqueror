@@ -47,6 +47,36 @@
 #include <konq_events.h>
 #include <kconfiggroup.h>
 
+QString KonqFrameBase::frameTypeToString( const KonqFrameBase::FrameType frameType )
+{
+    switch ( frameType ) {
+        case View :
+            return QString("View");
+        case Tabs :
+            return QString("Tabs");
+        case ContainerBase :
+            return QString("ContainerBase");
+        case Container :
+            return QString("Container");
+        case MainWindow :
+            return QString("MainWindow");
+    }
+}
+
+KonqFrameBase::FrameType frameTypeFromString( const QString& str )
+{
+    if ( str == "View" )
+        return KonqFrameBase::View;
+    if ( str == "Tabs" )
+        return KonqFrameBase::Tabs;
+    if ( str == "ContainerBase" )
+        return KonqFrameBase::ContainerBase;
+    if ( str == "Container" )
+        return KonqFrameBase::Container;
+    if ( str == "MainWindow" )
+        return KonqFrameBase::MainWindow;
+}
+
 KonqFrame::KonqFrame( QWidget* parent, KonqFrameContainerBase *parentContainer )
     : QWidget ( parent )
 {
@@ -89,7 +119,7 @@ void KonqFrame::saveConfig( KConfigGroup& config, const QString &prefix, const K
 
 void KonqFrame::copyHistory( KonqFrameBase *other )
 {
-    assert( other->frameType() == "View" );
+    assert(other->frameType() == KonqFrameBase::View);
     childView()->copyHistory( static_cast<KonqFrame *>( other )->childView() );
 }
 
