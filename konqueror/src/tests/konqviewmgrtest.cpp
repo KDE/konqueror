@@ -314,19 +314,6 @@ void ViewMgrTest::testDuplicateSplittedTab()
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, one tab
 }
 
-void ViewMgrTest::testDuplicateWindow()
-{
-    KonqMainWindow mainWindow;
-    mainWindow.openUrl(0, KUrl("data:text/html, <p>Hello World</p>"), "text/html");
-    KonqViewManager* viewManager = mainWindow.viewManager();
-    KonqView* viewTab2 = viewManager->addTab("text/html");
-    KonqView* splitted = viewManager->splitView( viewTab2, Qt::Horizontal );
-    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[FC(FF)].") ); // mainWindow, tab widget, first tab = one frame, second tab = splitter with two frames
-    KonqMainWindow* secondWindow = viewManager->duplicateWindow();
-    QCOMPARE( DebugFrameVisitor::inspect(secondWindow), QString("MT[FC(FF)].") ); // mainWindow, tab widget, first tab = one frame, second tab = splitter with two frames
-    delete secondWindow;
-}
-
 // Like in http://bugs.kde.org/show_bug.cgi?id=153533,
 // where the part deletes itself.
 void ViewMgrTest::testDeletePartInTab()
@@ -344,17 +331,21 @@ void ViewMgrTest::testDeletePartInTab()
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, tab widget, one tab
 }
 
-void ViewMgrTest::testLoadProfile()
+static void loadFileManagementProfile(KonqMainWindow& mainWindow)
 {
-    KonqMainWindow mainWindow;
-    KonqViewManager* viewManager = mainWindow.viewManager();
     const QString profile = KStandardDirs::locate("data", "konqueror/profiles/filemanagement");
     QVERIFY(!profile.isEmpty());
-    QString path = QDir::homePath();
-    viewManager->loadViewProfileFromFile(profile, "filemanagement", KUrl(path));
+    const QString path = QDir::homePath();
+    mainWindow.viewManager()->loadViewProfileFromFile(profile, "filemanagement", KUrl(path));
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MC(FT[F]).") ); // mainWindow, splitter, frame, tab widget, one frame
     QCOMPARE(mainWindow.locationBarURL(), path);
     QCOMPARE(mainWindow.currentView()->locationBarURL(), path);
+}
+
+void ViewMgrTest::testLoadProfile()
+{
+    KonqMainWindow mainWindow;
+    loadFileManagementProfile(mainWindow);
 
     sendAllPendingResizeEvents( &mainWindow );
 
@@ -378,6 +369,30 @@ void ViewMgrTest::testLoadProfile()
     const QList<int> sizes = container->sizes();
     QCOMPARE(sizes.count(), 2);
     QVERIFY(sizes[0] < sizes[1]);
+}
+
+void ViewMgrTest::testDuplicateWindow()
+{
+    KonqMainWindow mainWindow;
+    mainWindow.openUrl(0, KUrl("data:text/html, <p>Hello World</p>"), "text/html");
+    KonqViewManager* viewManager = mainWindow.viewManager();
+    KonqView* viewTab2 = viewManager->addTab("text/html");
+    KonqView* splitted = viewManager->splitView( viewTab2, Qt::Horizontal );
+    Q_UNUSED(splitted);
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[FC(FF)].") ); // mainWindow, tab widget, first tab = one frame, second tab = splitter with two frames
+    KonqMainWindow* secondWindow = viewManager->duplicateWindow();
+    QCOMPARE( DebugFrameVisitor::inspect(secondWindow), QString("MT[FC(FF)].") ); // mainWindow, tab widget, first tab = one frame, second tab = splitter with two frames
+    delete secondWindow;
+}
+
+void ViewMgrTest::testDuplicateWindowWithSidebar()
+{
+    KonqMainWindow mainWindow;
+    loadFileManagementProfile(mainWindow);
+    KonqViewManager* viewManager = mainWindow.viewManager();
+    KonqMainWindow* secondWindow = viewManager->duplicateWindow();
+    QCOMPARE( DebugFrameVisitor::inspect(secondWindow), QString("MC(FT[F]).") ); // mainWindow, splitter, frame, tab widget, one frame
+    delete secondWindow;
 }
 
 #include "konqviewmgrtest.moc"

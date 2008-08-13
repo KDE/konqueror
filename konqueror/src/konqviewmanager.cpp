@@ -356,7 +356,7 @@ KonqMainWindow *KonqViewManager::openSavedWindow(const KConfigGroup& configGroup
         // Window size comes from the applyMainWindowSettings call below
     }
 
-    mainWindow->viewManager()->loadRootItem( configGroup, mainWindow->viewManager()->tabContainer(), KUrl(), true, KUrl() );
+    mainWindow->viewManager()->loadRootItem( configGroup, mainWindow, KUrl(), true, KUrl() );
     mainWindow->applyMainWindowSettings( configGroup, true );
     mainWindow->activateChild();
     return mainWindow;

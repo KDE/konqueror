@@ -39,10 +39,12 @@ private Q_SLOTS:
     void testAddTab();
     void testDuplicateTab();
     void testDuplicateSplittedTab();
-    void testDuplicateWindow();
     void testDeletePartInTab();
-
     void testLoadProfile();
+
+    void testDuplicateWindow();
+    void testDuplicateWindowWithSidebar();
+
 
 private:
     KComponentData m_konqComponentData;
