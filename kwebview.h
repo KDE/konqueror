@@ -28,6 +28,7 @@
 #include <kdemacros.h>
 
 #include <QtWebKit/QWebView>
+#include <kwebpage.h>
 
 class QWebHitTestResult;
 
@@ -37,6 +38,7 @@ class KDE_EXPORT KWebView : public QWebView
 public:
     KWebView(QWidget *parent = 0);
     ~KWebView();
+    KWebPage *page();
 
 public Q_SLOTS:
     void setCustomContextMenu(bool show);

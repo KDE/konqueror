@@ -29,7 +29,7 @@
 #include "ui_searchbar.h"
 
 class QTimeLine;
-class QWebView;
+class KWebView;
 
 class SearchBar : public QWidget
 {
@@ -66,7 +66,7 @@ private:
     Ui::SearchBar ui;
     QWidget *m_widget;
 
-    QWebView *m_webView;
+    KWebView *m_webView;
     QTimeLine *m_timeLine;
 };
 

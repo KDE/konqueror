@@ -58,3 +58,13 @@ void KWebView::setCustomContextMenu(bool show)
 {
     d->customContextMenu = show;
 }
+
+KWebPage *KWebView::page()
+{
+    KWebPage *webPage = qobject_cast<KWebPage*>(QWebView::page());
+    if (!webPage) {
+        return 0;
+    }
+    return webPage;
+}
+

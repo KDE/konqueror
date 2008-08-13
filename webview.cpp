@@ -42,7 +42,6 @@
 #include <QtNetwork/QHttpRequestHeader>
 #include <QtWebKit/QWebFrame>
 #include <QtWebKit/QWebHitTestResult>
-#include <QtWebKit/QWebPage>
 
 class WebView::WebViewPrivate
 {
@@ -125,7 +124,7 @@ void WebView::mouseReleaseEvent(QMouseEvent *event)
 
 void WebView::contextMenuEvent(QContextMenuEvent *e)
 {
-    QWebView::contextMenuEvent(e);
+    KWebView::contextMenuEvent(e);
     return; // FIXME: remove these two lines as soon as a stable and useful impl. has been done
 
     d->result = page()->mainFrame()->hitTestContent(e->pos());
@@ -144,7 +143,7 @@ void WebView::contextMenuEvent(QContextMenuEvent *e)
         partActionPopupMenu(mapAction);
     }
     if (d->result.isContentEditable()) {
-        QWebView::contextMenuEvent(e); // TODO: better KDE integration if possible
+        KWebView::contextMenuEvent(e); // TODO: better KDE integration if possible
         return;
     }
     if (d->result.isContentSelected()) {

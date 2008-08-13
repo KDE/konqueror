@@ -26,8 +26,6 @@
 #include <KDE/KParts/ReadOnlyPart>
 #include <KDE/KParts/BrowserExtension>
 
-#include <QtWebKit/QWebView>
-
 #include "webkitkde_export.h"
 
 class WebKitPageView;

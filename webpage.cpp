@@ -72,7 +72,7 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
     return KWebPage::acceptNavigationRequest(frame, request, type);
 }
 
-QWebPage *WebPage::createWindow(WebWindowType type)
+KWebPage *WebPage::createWindow(WebWindowType type)
 {
     if (WebKitGlobal::settings()->windowOpenPolicy(mainFrame()->url().host()) != WebKitSettings::KJSWindowOpenDeny)
         return 0;
