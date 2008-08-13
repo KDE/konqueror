@@ -68,19 +68,31 @@ bool KonqMimeData::decodeIsCutSelection( const QMimeData *mimeData )
     }
 }
 
+bool lessThan( const KUrl &left, const KUrl &right )
+{
+    return left.url().compare( right.url() ) < 0;
+}
+
 KUrl::List KonqMimeData::simplifiedUrlList( const KUrl::List &urls )
 {
-    KUrl::List ret( urls );
-    KUrl::List::const_iterator it = urls.begin();
-    while ( it != urls.end() ) {
-        KUrl::List::const_iterator it2 = urls.begin();
-        while ( it2 != urls.end() ) {
-            if ( it != it2 && it->isParentOf( *it2 ) ) {
-                ret.removeAll( *it2 );
-            }
-            ++it2;
-        }
-        ++it;
+    if (!urls.count()) {
+        return urls;
     }
+
+    KUrl::List ret( urls );
+    qSort( ret.begin(), ret.end(), lessThan );
+
+    KUrl::List::iterator it = ret.begin();
+    KUrl url = *it;
+    ++it;
+    while ( it != ret.end() ) {
+        if ( url.isParentOf( *it ) ) {
+            it = ret.erase( it );
+        } else {
+            url = *it;
+            ++it;
+        }
+    }
+
     return ret;
 }
