@@ -162,6 +162,7 @@ WebKitBrowserExtension::WebKitBrowserExtension(WebKitPart *parent)
     connect(part->view()->page(), SIGNAL(selectionChanged()),
             this, SLOT(updateEditActions()));
     connect(part->view(), SIGNAL(openUrl(const KUrl &)), this, SIGNAL(openUrlRequest(const KUrl &)));
+    connect(part->view(), SIGNAL(openUrlInNewTab(const KUrl &)), this, SIGNAL(createNewWindow(const KUrl &)));
 
     enableAction("cut", false);
     enableAction("copy", false);

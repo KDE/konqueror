@@ -49,6 +49,7 @@ public Q_SLOTS:
 Q_SIGNALS:
     void showContextMenu(QContextMenuEvent *event);
     void openUrl(const KUrl &url);
+    void openUrlInNewTab(const KUrl &url);
 
 protected:
     void contextMenuEvent(QContextMenuEvent *event);

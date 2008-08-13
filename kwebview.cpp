@@ -25,10 +25,14 @@
 
 #include "kwebview.h"
 #include "kwebpage.h"
+
 #include <KDE/KUrl>
+#include <KDE/KDebug>
+
 #include <QtGui/QApplication>
 #include <QtGui/QClipboard>
 #include <QtGui/QMouseEvent>
+#include <QtWebKit/QWebFrame>
 
 class KWebView::KWebViewPrivate
 {
@@ -100,6 +104,14 @@ void KWebView::mousePressEvent(QMouseEvent *event)
 
 void KWebView::mouseReleaseEvent(QMouseEvent *event)
 {
+    const QWebHitTestResult result = page()->mainFrame()->hitTestContent(event->pos());
+    const QUrl url = result.linkUrl();
+    if (!url.isEmpty() && (d->pressedButtons & Qt::MidButton)) {
+        kDebug() << "middle clicked url" << url;
+        emit openUrlInNewTab(url);
+        return;
+    }
+
     QWebView::mouseReleaseEvent(event);
     if (!event->isAccepted() && (d->pressedButtons & Qt::MidButton)) {
         KUrl url(QApplication::clipboard()->text(QClipboard::Selection));
