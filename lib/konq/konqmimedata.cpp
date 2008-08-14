@@ -22,18 +22,14 @@
 #include <kdebug.h>
 
 void KonqMimeData::populateMimeData( QMimeData* mimeData,
-                                     const KUrl::List& _kdeURLs,
+                                     const KUrl::List& kdeURLs,
                                      const KUrl::List& mostLocalURLs,
                                      bool cut )
 {
     mostLocalURLs.populateMimeData( mimeData );
 
-    KUrl::List kdeURLs( _kdeURLs );
     if ( !kdeURLs.isEmpty() )
     {
-        if ( cut ) {
-            kdeURLs = simplifiedUrlList( kdeURLs );
-        }
         QMimeData tmpMimeData;
         kdeURLs.populateMimeData(&tmpMimeData);
         mimeData->setData("application/x-kde-urilist",tmpMimeData.data("text/uri-list"));
@@ -66,33 +62,4 @@ bool KonqMimeData::decodeIsCutSelection( const QMimeData *mimeData )
         kDebug(1203) << "KonqDrag::decodeIsCutSelection : a=" << a;
         return (a.at(0) == '1'); // true if 1
     }
-}
-
-bool lessThan( const KUrl &left, const KUrl &right )
-{
-    return left.url().compare( right.url() ) < 0;
-}
-
-KUrl::List KonqMimeData::simplifiedUrlList( const KUrl::List &urls )
-{
-    if (!urls.count()) {
-        return urls;
-    }
-
-    KUrl::List ret( urls );
-    qSort( ret.begin(), ret.end(), lessThan );
-
-    KUrl::List::iterator it = ret.begin();
-    KUrl url = *it;
-    ++it;
-    while ( it != ret.end() ) {
-        if ( url.isParentOf( *it ) ) {
-            it = ret.erase( it );
-        } else {
-            url = *it;
-            ++it;
-        }
-    }
-
-    return ret;
 }
