@@ -330,7 +330,7 @@ public:
    QDBusObjectPath newClass( const QString& plugin, const QString& senderId );
 
 private Q_SLOTS:
-   void appUnregistered(const QString& id);
+   void appChanged( const QString& id,  const QString& oldOwner, const QString& newOwner);
 
 private:
    QMap<QString, NSPluginClass *> _classes;
