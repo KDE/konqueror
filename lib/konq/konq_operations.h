@@ -149,6 +149,18 @@ public:
      */
     static bool askDeleteConfirmation( const KUrl::List & selectedUrls, int method, ConfirmationType confirmation, QWidget* widget );
 
+    /**
+     * Remove urls from the list if an ancestor is present on the list. This can
+     * be used to delete only the ancestor url and skip a potential error of a non-existant url.
+     *
+     * For example, for a list of "/home/foo/a", "/home/foo/a/a.txt", "/home/foo/a/a/a.txt", "/home/foo/a/b/b.txt",
+     * "home/foo/b/b.txt", this method will return the list "/home/foo/a", "/home/foo/b/b.txt".
+     *
+     * @return the list @p urls without parented urls inside.
+     * @since 4.2
+     */
+    static KUrl::List simplifiedUrlList( const KUrl::List & urls );
+
 Q_SIGNALS:
     void statFinished( const KFileItem & item );
     void aboutToCreate(const QPoint &pos, const QList<KIO::CopyInfo> &files);
