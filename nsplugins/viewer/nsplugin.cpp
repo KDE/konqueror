@@ -1144,8 +1144,8 @@ NSPluginViewer::NSPluginViewer( QObject *parent )
    QDBusConnection::sessionBus().registerObject( "/Viewer", this );
 
     QObject::connect(QDBusConnection::sessionBus().interface(),
-                     SIGNAL(serviceUnregistered(const QString&)),
-                     this, SLOT(appUnregistered(const QString&)));
+                     SIGNAL(serviceOwnerChanged(const QString&, const QString&, const QString&)),
+                     this, SLOT(appChanged( const QString&, const QString&, const QString&)));
 }
 
 
@@ -1155,16 +1155,15 @@ NSPluginViewer::~NSPluginViewer()
 }
 
 
-void NSPluginViewer::appUnregistered(const QString& id) {
-   if (id.isEmpty()) {
-      return;
-   }
+void NSPluginViewer::appChanged( const QString& id, const QString& oldOwner, const QString& newOwner) {
+   if ( oldOwner.isEmpty() || !newOwner.isEmpty() ) // only care about unregistering apps
+        return;
 
    QMap<QString, NSPluginClass*>::iterator it = _classes.begin();
    const QMap<QString, NSPluginClass*>::iterator end = _classes.end();
    for ( ; it != end; ++it )
    {
-      if (it.value()->app() == id) {
+      if (it.value()->app() == oldOwner) {
          it = _classes.erase(it);
       }
    }
