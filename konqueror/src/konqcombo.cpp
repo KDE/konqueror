@@ -119,6 +119,7 @@ KonqCombo::KonqCombo( QWidget *parent )
             m_permanent( false ),
 	    m_pageSecurity( KonqMainWindow::NotCrypted )
 {
+    setLayoutDirection(Qt::LeftToRight);
     setInsertPolicy( NoInsertion );
     setSizePolicy( QSizePolicy( QSizePolicy::Expanding, QSizePolicy::Fixed ));
     setSizeAdjustPolicy( QComboBox::AdjustToMinimumContentsLength );
@@ -892,7 +893,10 @@ void KonqComboLineEdit::setCompletedItems( const QStringList& items, bool )
 ///////////////////////////////////////////////////////////////////////////////
 
 KonqComboCompletionBox::KonqComboCompletionBox( QWidget *parent )
-                       :KCompletionBox( parent ) {}
+                       :KCompletionBox( parent ) 
+{
+    setLayoutDirection(Qt::LeftToRight);
+}
 
 void KonqComboCompletionBox::setItems( const QStringList& items )
 {
