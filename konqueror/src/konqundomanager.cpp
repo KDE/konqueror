@@ -565,6 +565,7 @@ void KonqClosedWindowsManager::saveConfig()
 
     KConfigGroup configGroup(config, "General");
     configGroup.writeEntry("Number of Closed Windows", closedWindowItemList().size());
+    configGroup.sync();
 
     delete config;
 }
