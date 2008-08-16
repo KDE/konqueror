@@ -87,6 +87,8 @@ QNetworkReply *KNetworkAccessManager::createRequest(Operation op, const QNetwork
     connect(kioJob, SIGNAL(data(KIO::Job *, const QByteArray &)),
         reply, SLOT(appendData(KIO::Job *, const QByteArray &)));
     connect(kioJob, SIGNAL(result(KJob *)), reply, SIGNAL(finished()));
+    connect(kioJob, SIGNAL(mimetype(KIO::Job *, const QString&)),
+        reply, SLOT(setMimeType(KIO::Job *, const QString&)));
 
     return reply;
 }

@@ -67,7 +67,6 @@ qint64 KNetworkReply::readData(char *data, qint64 maxSize)
 
 void KNetworkReply::appendData(KIO::Job *kioJob, const QByteArray &data)
 {
-    Q_UNUSED(kioJob);
 //     kDebug();
 
     if (!m_metaDataRead) {
@@ -87,6 +86,14 @@ void KNetworkReply::appendData(KIO::Job *kioJob, const QByteArray &data)
 
     m_data += data;
     emit readyRead();
+}
+
+void KNetworkReply::setMimeType(KIO::Job *kioJob, const QString &mimeType)
+{
+    Q_UNUSED(kioJob);
+
+    kDebug() << mimeType;
+    setHeader(QNetworkRequest::ContentTypeHeader, mimeType.toUtf8());
 }
 
 #include "knetworkreply.moc"

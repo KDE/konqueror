@@ -41,6 +41,7 @@ public:
 
 public slots:
     void appendData(KIO::Job *kioJob, const QByteArray &data);
+    void setMimeType(KIO::Job *kioJob, const QString &mimeType);
 
 protected:
     virtual qint64 readData(char *data, qint64 maxSize);
