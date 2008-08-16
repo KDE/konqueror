@@ -36,6 +36,8 @@
 #include <KDE/KConfigGroup>
 #include <KDE/KAction>
 #include <KDE/KActionCollection>
+#include <KDE/KRun>
+#include <KDE/KTemporaryFile>
 #include <KDE/KToolInvocation>
 
 #include <QHttpRequestHeader>
@@ -44,6 +46,7 @@
 #include <QClipboard>
 #include <QApplication>
 #include <QPlainTextEdit>
+#include <QPrintPreviewDialog>
 
 WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList &/*args*/)
     : KParts::ReadOnlyPart(parent)
@@ -81,14 +84,23 @@ WebKitPart::~WebKitPart()
 
 void WebKitPart::initAction()
 {
-    KAction *action = new KAction(KIcon("zoom-in"), i18n("Enlarge Font"), this);
+    KAction *action = new KAction(KIcon("format-font-size-more"), i18n("Enlarge Font"), this);
     actionCollection()->addAction("incFontSizes", action);
+    action->setShortcut(KShortcut("CTRL++; CTRL+="));
     connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(zoomIn()));
 
-    action = new KAction(KIcon("zoom-out"), i18n("Shrink Font"), this);
+    action = new KAction(KIcon("format-font-size-less"), i18n("Shrink Font"), this);
     actionCollection()->addAction("decFontSizes", action);
+    action->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Minus));
     connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(zoomOut()));
 
+    action = actionCollection()->addAction(KStandardAction::SelectAll, "selectAll",
+                                           m_browserExtension, SLOT(slotSelectAll()));
+
+    action = new KAction(i18n("View Do&cument Source"), this);
+    actionCollection()->addAction("viewDocumentSource", action);
+    action->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_U));
+    connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(slotViewDocumentSource()));
 
     action = actionCollection()->addAction(KStandardAction::Find, "find", m_webPageView, SLOT(slotFind()));
     action->setWhatsThis(i18n("Find text<br /><br />"
@@ -167,6 +179,7 @@ WebKitBrowserExtension::WebKitBrowserExtension(WebKitPart *parent)
     enableAction("cut", false);
     enableAction("copy", false);
     enableAction("paste", false);
+    enableAction("print", true);
 }
 
 void WebKitBrowserExtension::cut()
@@ -182,6 +195,14 @@ void WebKitBrowserExtension::copy()
 void WebKitBrowserExtension::paste()
 {
     part->view()->page()->triggerAction(QWebPage::Paste);
+}
+
+void WebKitBrowserExtension::print()
+{
+    QPrintPreviewDialog dlg(part->view());
+    connect(&dlg, SIGNAL(paintRequested(QPrinter *)),
+            part->view(), SLOT(print(QPrinter *)));
+    dlg.exec();
 }
 
 void WebKitBrowserExtension::updateEditActions()
@@ -224,6 +245,11 @@ void WebKitBrowserExtension::zoomIn()
 void WebKitBrowserExtension::zoomOut()
 {
     part->view()->setTextSizeMultiplier(part->view()->textSizeMultiplier() / 2);
+}
+
+void WebKitBrowserExtension::slotSelectAll()
+{
+//     part->view()->selectAll(); //TODO implement in QWebView (?)
 }
 
 void WebKitBrowserExtension::slotFrameInWindow()
@@ -287,12 +313,25 @@ void WebKitBrowserExtension::slotCopyImage()
 
 void WebKitBrowserExtension::slotViewDocumentSource()
 {
-    QString markup = part->view()->page()->mainFrame()->toHtml();
-    QPlainTextEdit *view = new QPlainTextEdit(markup);
-    view->setWindowTitle(i18n("Page Source of %1", part->view()->title()));
-    view->setMinimumWidth(640);
-    view->setAttribute(Qt::WA_DeleteOnClose);
-    view->show();
+    //TODO test http requests
+    KUrl currentUrl(part->view()->page()->mainFrame()->url());
+    bool isTempFile = false;
+#if 0
+    if (!(currentUrl.isLocalFile())/* && KHTMLPageCache::self()->isComplete(d->m_cacheId)*/) { //TODO implement
+        KTemporaryFile sourceFile;
+//         sourceFile.setSuffix(defaultExtension());
+        sourceFile.setAutoRemove(false);
+        if (sourceFile.open()) {
+//             QDataStream stream (&sourceFile);
+//             KHTMLPageCache::self()->saveData(d->m_cacheId, &stream);
+            currentUrl = KUrl();
+            currentUrl.setPath(sourceFile.fileName());
+            isTempFile = true;
+        }
+    }
+#endif
+
+    KRun::runUrl(currentUrl, QLatin1String("text/plain"), part->view(), isTempFile);
 }
 
 #include "webkitpart.moc"

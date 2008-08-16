@@ -74,10 +74,12 @@ public Q_SLOTS:
     void cut();
     void copy();
     void paste();
+    void print();
     void searchProvider();
 
     void zoomIn();
     void zoomOut();
+    void slotSelectAll();
 
     void slotFrameInWindow();
     void slotFrameInTab();
