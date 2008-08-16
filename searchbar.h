@@ -43,9 +43,9 @@ public:
     void setFoundMatch(bool match);
 
 public slots:
-    void animateHide();
     void clear();
-    void showFind();
+    void show();
+    void hide();
 
 protected:
     void resizeEvent(QResizeEvent *event);
@@ -68,6 +68,10 @@ private:
 
     KWebView *m_webView;
     QTimeLine *m_timeLine;
+
+private Q_SLOTS:
+    void slotHide();
+
 };
 
 #endif // SEARCHBAR_H

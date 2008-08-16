@@ -25,6 +25,7 @@
 
 #include "kwebview.h"
 #include "kwebpage.h"
+#include "searchbar.h"
 
 #include <KDE/KUrl>
 #include <KDE/KDebug>
@@ -41,10 +42,12 @@ public:
     : customContextMenu(false)
     , keyboardModifiers(Qt::NoModifier)
     , pressedButtons(Qt::NoButton)
+    , searchBar(0)
     {}
     bool customContextMenu;
     Qt::KeyboardModifiers keyboardModifiers;
     Qt::MouseButtons pressedButtons;
+    SearchBar *searchBar;
 };
 
 
@@ -119,5 +122,47 @@ void KWebView::mouseReleaseEvent(QMouseEvent *event)
             emit openUrl(url);
         }
     }
+}
+
+QWidget *KWebView::searchBar()
+{
+    if (!d->searchBar) {
+        d->searchBar = new SearchBar;
+        kDebug() << "Created new SearchBar" << d->searchBar;
+        d->searchBar->setVisible(false);
+
+        connect(d->searchBar, SIGNAL(closeClicked()), this, SLOT(hideSearchBar()));
+        connect(d->searchBar, SIGNAL(findNextClicked()), this, SLOT(slotFindNextClicked()));
+        connect(d->searchBar, SIGNAL(findPreviousClicked()),  this, SLOT(slotFindPreviousClicked()));
+        connect(d->searchBar, SIGNAL(searchChanged(const QString&)), this, SLOT(slotSearchChanged(const QString &)));
+        connect(this, SIGNAL(destroyed()), d->searchBar, SLOT(deleteLater()));
+    }
+    return d->searchBar;
+}
+
+void KWebView::slotFindPreviousClicked()
+{
+    resultSearch(KWebPage::FindBackward);
+}
+
+void KWebView::slotFindNextClicked()
+{
+    KWebPage::FindFlags flags;
+    resultSearch(flags);
+}
+
+void KWebView::slotSearchChanged(const QString & text)
+{
+    Q_UNUSED(text);
+    KWebPage::FindFlags flags;
+    resultSearch(flags);
+}
+
+void KWebView::resultSearch(KWebPage::FindFlags flags)
+{
+    if (d->searchBar->caseSensitive())
+        flags |= KWebPage::FindCaseSensitively;
+    bool status = page()->findText(d->searchBar->searchText(), flags);
+    d->searchBar->setFoundMatch(status);
 }
 

@@ -28,7 +28,6 @@
 
 #include "webkitkde_export.h"
 
-class WebKitPageView;
 class WebView;
 class WebKitBrowserExtension;
 
@@ -60,7 +59,7 @@ private Q_SLOTS:
     void urlChanged(const QUrl &url);
 
 private:
-    WebKitPageView *m_webPageView;
+    WebView *m_webView;
     WebKitBrowserExtension *m_browserExtension;
 };
 

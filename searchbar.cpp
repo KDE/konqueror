@@ -42,12 +42,12 @@ SearchBar::SearchBar(QWidget *parent)
     setMaximumHeight(0);
     m_widget->setGeometry(0, -1 * m_widget->height(),
                           m_widget->width(), m_widget->height());
-    hide();
+    QWidget::hide();
 
     connect(m_timeLine, SIGNAL(frameChanged(int)),
             this, SLOT(frameChanged(int)));
 
-    new QShortcut(QKeySequence(Qt::Key_Escape), this, SLOT(animateHide()));
+    new QShortcut(QKeySequence(Qt::Key_Escape), this, SLOT(hide()));
 }
 
 void SearchBar::initializeSearchWidget()
@@ -68,7 +68,7 @@ void SearchBar::initializeSearchWidget()
     connect(ui.searchLineEdit, SIGNAL(returnPressed()),
             this, SIGNAL(findNextClicked()));
     connect(ui.closeButton, SIGNAL(clicked()),
-            this, SLOT(animateHide()));
+            this, SLOT(hide()));
 
     setMinimumWidth(m_widget->minimumWidth());
     setMaximumWidth(m_widget->maximumWidth());
@@ -80,19 +80,19 @@ void SearchBar::clear()
     ui.searchLineEdit->setText(QString());
 }
 
-void SearchBar::showFind()
+void SearchBar::show()
 {
     if (isVisible())
         return;
 
-    show();
+    QWidget::show();
     ui.searchLineEdit->setFocus();
     ui.searchLineEdit->selectAll();
 
     m_timeLine->setFrameRange(-1 * m_widget->height(), 0);
     m_timeLine->setDirection(QTimeLine::Forward);
     disconnect(m_timeLine, SIGNAL(finished()),
-               this, SLOT(hide()));
+               this, SLOT(slotHide()));
     m_timeLine->start();
 }
 
@@ -103,11 +103,16 @@ void SearchBar::resizeEvent(QResizeEvent *event)
     QWidget::resizeEvent(event);
 }
 
-void SearchBar::animateHide()
+void SearchBar::hide()
 {
     m_timeLine->setDirection(QTimeLine::Backward);
     m_timeLine->start();
-    connect(m_timeLine, SIGNAL(finished()), this, SLOT(hide()));
+    connect(m_timeLine, SIGNAL(finished()), this, SLOT(slotHide()));
+}
+
+void SearchBar::slotHide()
+{
+    QWidget::hide();
 }
 
 void SearchBar::frameChanged(int frame)

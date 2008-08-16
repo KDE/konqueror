@@ -26,7 +26,6 @@
 
 #include "webview.h"
 #include "webkitglobal.h"
-#include "webkitpageview.h"
 
 #include <KDE/KParts/GenericFactory>
 #include <KDE/KParts/Plugin>
@@ -46,30 +45,36 @@
 #include <QClipboard>
 #include <QApplication>
 #include <QPlainTextEdit>
+#include <QVBoxLayout>
 #include <QPrintPreviewDialog>
 
 WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList &/*args*/)
     : KParts::ReadOnlyPart(parent)
 {
+    setWidget(new QWidget(parentWidget));
+    QVBoxLayout* lay = new QVBoxLayout(widget());
+    lay->setMargin(0);
+    lay->setSpacing(0);
     WebKitGlobal::registerPart(this);
-    m_webPageView = new WebKitPageView(this, parentWidget);
-    setWidget(m_webPageView);
+    m_webView = new WebView(this, widget());
+    lay->addWidget(m_webView);
+    lay->addWidget(m_webView->searchBar());
     setComponentData(WebKitGlobal::componentData());
-    connect(m_webPageView->view(), SIGNAL(loadStarted()),
+    connect(m_webView, SIGNAL(loadStarted()),
             this, SLOT(loadStarted()));
-    connect(m_webPageView->view(), SIGNAL(loadFinished(bool)),
+    connect(m_webView, SIGNAL(loadFinished(bool)),
             this, SLOT(loadFinished()));
-    connect(m_webPageView->view(), SIGNAL(titleChanged(const QString &)),
+    connect(m_webView, SIGNAL(titleChanged(const QString &)),
             this, SIGNAL(setWindowCaption(const QString &)));
 
-    connect(m_webPageView->view()->page(), SIGNAL(linkHovered(const QString &, const QString &, const QString &)),
+    connect(m_webView->page(), SIGNAL(linkHovered(const QString &, const QString &, const QString &)),
             this, SIGNAL(setStatusBarText(const QString &)));
 
     m_browserExtension = new WebKitBrowserExtension(this);
 
-    connect(m_webPageView->view()->page(), SIGNAL(loadProgress(int)),
+    connect(m_webView->page(), SIGNAL(loadProgress(int)),
             m_browserExtension, SIGNAL(loadingProgress(int)));
-    connect(m_webPageView->view(), SIGNAL(urlChanged(const QUrl &)),
+    connect(m_webView, SIGNAL(urlChanged(const QUrl &)),
             this, SLOT(urlChanged(const QUrl &)));
 
     initAction();
@@ -102,7 +107,7 @@ void WebKitPart::initAction()
     action->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_U));
     connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(slotViewDocumentSource()));
 
-    action = actionCollection()->addAction(KStandardAction::Find, "find", m_webPageView, SLOT(slotFind()));
+    action = actionCollection()->addAction(KStandardAction::Find, "find", m_webView->searchBar(), SLOT(show()));
     action->setWhatsThis(i18n("Find text<br /><br />"
                               "Shows a dialog that allows you to find text on the displayed page."));
 }
@@ -111,14 +116,14 @@ bool WebKitPart::openUrl(const KUrl &url)
 {
     setUrl(url);
 
-    m_webPageView->view()->load(url);
+    m_webView->load(url);
 
     return true;
 }
 
 bool WebKitPart::closeUrl()
 {
-    m_webPageView->view()->stop();
+    m_webView->stop();
     return true;
 }
 
@@ -159,7 +164,7 @@ void WebKitPart::urlChanged(const QUrl &url)
 
 WebView * WebKitPart::view()
 {
-    return m_webPageView->view();
+    return m_webView;
 }
 
 void WebKitPart::setStatusBarTextProxy(const QString &message)

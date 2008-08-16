@@ -42,6 +42,7 @@ public:
     KWebView(QWidget *parent = 0);
     ~KWebView();
     KWebPage *page();
+    QWidget *searchBar();
 
 public Q_SLOTS:
     void setCustomContextMenu(bool show);
@@ -56,6 +57,12 @@ protected:
     void wheelEvent(QWheelEvent *event);
     void mousePressEvent(QMouseEvent *event);
     void mouseReleaseEvent(QMouseEvent *event);
+
+protected Q_SLOTS:
+    void slotFindNextClicked();
+    void slotFindPreviousClicked();
+    void slotSearchChanged(const QString &);
+    void resultSearch(QWebPage::FindFlags flags);
 
 private:
     class KWebViewPrivate;
