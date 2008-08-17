@@ -74,15 +74,19 @@ void BookmarkInfoWidget::showBookmark(const KBookmark &bk) {
     }
 
     // read/write fields
-    m_title_le->setReadOnly( (bk.isSeparator()|| !bk.hasParent() )? true : false);
-    m_title_le->setText(bk.fullText());
+    m_title_le->setReadOnly( (bk.isSeparator()|| !bk.hasParent() )? true : false);    
+    if (bk.fullText() != m_title_le->text())
+        m_title_le->setText(bk.fullText());
 
     m_url_le->setReadOnly(bk.isGroup() || bk.isSeparator());
-    m_url_le->setText(bk.isGroup() ? QString() : bk.url().pathOrUrl());
+    QString urlText = bk.isGroup() ? QString() : bk.url().pathOrUrl();
+    if (m_url_le->text() != urlText)
+        m_url_le->setText(urlText);
 
     m_comment_le->setReadOnly((bk.isSeparator()|| !bk.hasParent()) ? true : false );
-    m_comment_le->setText(
-            EditCommand::getNodeText(bk, QStringList() << "desc"));
+    QString commentText = EditCommand::getNodeText(bk, QStringList() << "desc");
+    if (m_comment_le->text() != commentText)
+        m_comment_le->setText(commentText);
 
     // readonly fields
     updateStatus();
