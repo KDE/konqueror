@@ -4443,9 +4443,9 @@ void KonqExtendedBookmarkOwner::openFolderinTabs(const KBookmarkGroup &grp)
 
   if (list.size() > 20) {
     if(KMessageBox::questionYesNo(m_pKonqMainWindow, 
-				  "You have requsted to open more than 20 bookmakrs in tabs."
-				  "This might take a while. Continue?", 
-				  "Open folder in new tabs") != KMessageBox::Yes)
+				  i18n("You have requsted to open more than 20 bookmakrs in tabs."
+                                       "This might take a while. Continue?"), 
+				  i18n("Open folder in new tabs")) != KMessageBox::Yes)
       return;
   }
 
