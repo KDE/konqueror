@@ -126,7 +126,7 @@ static int directCommand(KCmdLineArgs *args)
       WId id = 0;
       if (embed) {
           bool ok;
-          long l = QString(args->getOption("embed")).toLong(&ok);
+          long l = QString(args->getOption("embed")).toLong(&ok,0);
           if (ok)
               id = (WId)l;
       }
