@@ -40,6 +40,7 @@
 #include <KIO/Job>
 
 #include <QWebFrame>
+#include <QUiLoader>
 #include <QtNetwork/QNetworkReply>
 
 class KWebPage::KWebPagePrivate
@@ -174,13 +175,15 @@ void KWebPage::slotHandleUnsupportedContent(QNetworkReply *reply)
     }
 }
 
-QObject *KWebPage::createPlugin(const QString &classid, const QUrl &url, const QStringList &paramNames, const QStringList &paramValues)
+QObject *KWebPage::createPlugin(const QString &classId, const QUrl &url, const QStringList &paramNames, const QStringList &paramValues)
 {
     kDebug() << "create Plugin requested:";
-    kDebug() << "classid:" << classid;
+    kDebug() << "classid:" << classId;
     kDebug() << "url:" << url;
     kDebug() << "paramNames:" << paramNames << " paramValues:" << paramValues;
-    return 0;
+
+    QUiLoader loader;
+    return loader.createWidget(classId, view());
 }
 
 void KWebPage::slotDownloadRequested(const QNetworkRequest &request)

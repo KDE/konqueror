@@ -44,7 +44,7 @@ protected:
     bool javaScriptPrompt(QWebFrame *frame, const QString &msg, const QString &defaultValue, QString *result);
     QString userAgentForUrl(const QUrl& url) const;
 
-    QObject *createPlugin(const QString &classid, const QUrl &url, const QStringList &paramNames, const QStringList &paramValues);
+    QObject *createPlugin(const QString &classId, const QUrl &url, const QStringList &paramNames, const QStringList &paramValues);
 
 protected Q_SLOTS:
     void slotHandleUnsupportedContent(QNetworkReply *reply);
