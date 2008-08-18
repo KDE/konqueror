@@ -46,6 +46,7 @@ SearchBar::SearchBar(QWidget *parent)
 
     connect(m_timeLine, SIGNAL(frameChanged(int)),
             this, SLOT(frameChanged(int)));
+    connect(this, SIGNAL(closeClicked()), this, SLOT(hide()));
 
     new QShortcut(QKeySequence(Qt::Key_Escape), this, SLOT(hide()));
 }

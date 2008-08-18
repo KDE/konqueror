@@ -131,7 +131,6 @@ QWidget *KWebView::searchBar()
         kDebug() << "Created new SearchBar" << d->searchBar;
         d->searchBar->setVisible(false);
 
-        connect(d->searchBar, SIGNAL(closeClicked()), this, SLOT(hideSearchBar()));
         connect(d->searchBar, SIGNAL(findNextClicked()), this, SLOT(slotFindNextClicked()));
         connect(d->searchBar, SIGNAL(findPreviousClicked()),  this, SLOT(slotFindPreviousClicked()));
         connect(d->searchBar, SIGNAL(searchChanged(const QString&)), this, SLOT(slotSearchChanged(const QString &)));
