@@ -36,17 +36,12 @@
 #include <kservicetypeprofile.h>
 #include <kstandarddirs.h>
 #include <klocale.h>
+#include <kwindowsystem.h>
 
 // Local
 #include "filetypedetails.h"
 #include "typeslistitem.h"
 
-
-#if defined Q_WS_X11
-#include <QX11Info>
-#include <X11/Xlib.h>
-#include <X11/Xutil.h>
-#endif
 
 FileTypeDialog::FileTypeDialog( MimeTypeData* mime )
   : KDialog( 0 ),
@@ -181,14 +176,12 @@ int main(int argc, char ** argv)
   }
 
   FileTypeDialog dlg( mimeTypeData );
-#if defined Q_WS_X11
   if( args->isSet( "parent" )) {
     bool ok;
     long id = QString(args->getOption("parent")).toLong(&ok);
     if (ok)
-      XSetTransientForHint( QX11Info::display(), dlg.winId(), id );
+      KWindowSystem::setMainWindow( &dlg, id );
   }
-#endif
   args->clear();
   if ( !createType )
     dlg.setCaption( i18n("Edit File Type %1", mimeTypeData->name()) );

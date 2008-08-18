@@ -30,6 +30,7 @@
 #include <kicondialog.h>
 #include <kdirselectdialog.h>
 #include <kcolordialog.h>
+#include <kwindowsystem.h>
 
 #include <QtCore/QTimer>
 #include <QtGui/QDesktopWidget>
@@ -46,10 +47,6 @@
 #include <unistd.h>
 
 using namespace std;
-
-#if defined(Q_WS_X11)
-extern "C" { int XSetTransientForHint( Display *, unsigned long, unsigned long ); }
-#endif // Q_WS_X11
 
 // this class hooks into the eventloop and outputs the id
 // of shown dialogs or makes the dialog transient for other winids.
@@ -78,10 +75,8 @@ bool WinIdEmbedder::eventFilter(QObject *o, QEvent *e)
         QWidget *w = static_cast<QWidget*>(o);
         if (print)
             cout << "winId: " << w->winId() << endl;
-#ifdef Q_WS_X11
         if (id)
-            XSetTransientForHint(w->x11Info().display(), w->winId(), id);
-#endif
+            KWindowSystem::setMainWindow(w, id);
         deleteLater(); // WinIdEmbedder is not needed anymore after the first dialog was shown
         return false;
     }
