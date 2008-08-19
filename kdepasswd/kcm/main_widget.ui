@@ -99,6 +99,9 @@
         <property name="text" >
          <string>&amp;Name:</string>
         </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
         <property name="wordWrap" >
          <bool>false</bool>
         </property>
@@ -118,6 +121,9 @@
        <widget class="QLabel" name="lblOrganisation" >
         <property name="text" >
          <string>&amp;Organization:</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
         <property name="wordWrap" >
          <bool>false</bool>
@@ -139,6 +145,9 @@
         <property name="text" >
          <string>&amp;Email address:</string>
         </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
         <property name="wordWrap" >
          <bool>false</bool>
         </property>
@@ -159,6 +168,9 @@
         <property name="text" >
          <string>&amp;SMTP server:</string>
         </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
         <property name="wordWrap" >
          <bool>false</bool>
         </property>
@@ -178,6 +190,9 @@
        <widget class="QLabel" name="lblUIDTell" >
         <property name="text" >
          <string>User ID:</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
         <property name="wordWrap" >
          <bool>false</bool>
