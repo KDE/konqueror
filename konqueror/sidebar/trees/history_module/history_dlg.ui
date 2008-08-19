@@ -1,204 +1,209 @@
-<ui version="4.0" stdsetdef="1" >
-  <author></author>
-  <comment></comment>
-  <exportmacro></exportmacro>
-  <class>KonqSidebarHistoryDlg</class>
-  <widget class="QWidget" name="KonqSidebarHistoryDlg" >
-    <property name="geometry" >
-      <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>450</width>
-        <height>290</height>
-      </rect>
-    </property>
-    <layout class="QVBoxLayout" >
+<ui version="4.0" >
+ <class>KonqSidebarHistoryDlg</class>
+ <widget class="QWidget" name="KonqSidebarHistoryDlg" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>450</width>
+    <height>310</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" >
+   <property name="margin" >
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QGroupBox" name="gbLimits" >
+     <property name="title" >
+      <string>Limits</string>
+     </property>
+     <layout class="QGridLayout" >
       <property name="margin" >
-        <number>0</number>
+       <number>0</number>
+      </property>
+      <item row="1" column="2" >
+       <spacer name="Spacer1" >
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType" >
+         <enum>QSizePolicy::Expanding</enum>
+        </property>
+        <property name="sizeHint" stdset="0" >
+         <size>
+          <width>240</width>
+          <height>16</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="1" column="0" >
+       <widget class="QCheckBox" name="cbExpire" >
+        <property name="text" >
+         <string>URLs e&amp;xpire after</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" >
+       <widget class="QSpinBox" name="spinExpire" />
+      </item>
+      <item row="0" column="0" >
+       <widget class="QLabel" name="lEntries" >
+        <property name="text" >
+         <string>Maximum &amp;number of URLs:</string>
+        </property>
+        <property name="wordWrap" >
+         <bool>false</bool>
+        </property>
+        <property name="buddy" >
+         <cstring>spinEntries</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" >
+       <widget class="QSpinBox" name="spinEntries" />
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="gbFonts" >
+     <property name="title" >
+      <string>Custom Fonts For</string>
+     </property>
+     <layout class="QGridLayout" >
+      <property name="margin" >
+       <number>0</number>
+      </property>
+      <item row="0" column="1" >
+       <widget class="QSpinBox" name="spinNewer" />
+      </item>
+      <item row="1" column="1" >
+       <widget class="QSpinBox" name="spinOlder" />
+      </item>
+      <item row="1" column="2" >
+       <widget class="QComboBox" name="comboOlder" />
+      </item>
+      <item row="0" column="0" >
+       <widget class="QLabel" name="lbNewer" >
+        <property name="text" >
+         <string>URLs newer than</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="wordWrap" >
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2" >
+       <widget class="QComboBox" name="comboNewer" />
+      </item>
+      <item row="1" column="3" >
+       <widget class="QPushButton" name="btnFontOlder" >
+        <property name="text" >
+         <string>Choose Font...</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" >
+       <widget class="QLabel" name="lbOlder" >
+        <property name="text" >
+         <string>URLs older than</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="wordWrap" >
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3" >
+       <widget class="QPushButton" name="btnFontNewer" >
+        <property name="text" >
+         <string>Choose Font...</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="gbDetails" >
+     <property name="title" >
+      <string>Details</string>
+     </property>
+     <layout class="QHBoxLayout" >
+      <property name="margin" >
+       <number>0</number>
       </property>
       <item>
-        <widget class="QGroupBox" name="gbLimits" >
-          <property name="title" >
-            <string>Limits</string>
-          </property>
-          <layout class="QGridLayout" >
-            <property name="margin" >
-              <number>0</number>
-            </property>
-            <item row="1" column="2" >
-              <spacer name="Spacer1" >
-                <property name="sizeHint" >
-                  <size>
-                    <width>240</width>
-                    <height>16</height>
-                  </size>
-                </property>
-                <property name="sizeType" >
-                  <enum>Expanding</enum>
-                </property>
-                <property name="orientation" >
-                  <enum>Horizontal</enum>
-                </property>
-              </spacer>
-            </item>
-            <item row="1" column="0" >
-              <widget class="QCheckBox" name="cbExpire" >
-                <property name="text" >
-                  <string>URLs e&amp;xpire after</string>
-                </property>
-              </widget>
-            </item>
-            <item row="1" column="1" >
-              <widget class="QSpinBox" name="spinExpire" />
-            </item>
-            <item row="0" column="0" >
-              <widget class="QLabel" name="lEntries" >
-                <property name="text" >
-                  <string>Maximum &amp;number of URLs:</string>
-                </property>
-                <property name="buddy" stdset="0" >
-                  <cstring>spinEntries</cstring>
-                </property>
-                <property name="wordWrap" >
-                  <bool>false</bool>
-                </property>
-              </widget>
-            </item>
-            <item row="0" column="1" >
-              <widget class="QSpinBox" name="spinEntries" />
-            </item>
-          </layout>
-        </widget>
+       <widget class="QCheckBox" name="cbDetailedTips" >
+        <property name="toolTip" >
+         <string>Shows the number of times visited and the dates of the first and last visits, in addition to the URL</string>
+        </property>
+        <property name="text" >
+         <string>Detailed tooltips</string>
+        </property>
+       </widget>
       </item>
-      <item>
-        <widget class="QGroupBox" name="gbFonts" >
-          <property name="title" >
-            <string>Custom Fonts For</string>
-          </property>
-          <layout class="QGridLayout" >
-            <property name="margin" >
-              <number>0</number>
-            </property>
-            <item row="0" column="1" >
-              <widget class="QSpinBox" name="spinNewer" />
-            </item>
-            <item row="1" column="1" >
-              <widget class="QSpinBox" name="spinOlder" />
-            </item>
-            <item row="1" column="2" >
-              <widget class="QComboBox" name="comboOlder" />
-            </item>
-            <item row="0" column="0" >
-              <widget class="QLabel" name="lbNewer" >
-                <property name="text" >
-                  <string>URLs newer than</string>
-                </property>
-                <property name="wordWrap" >
-                  <bool>false</bool>
-                </property>
-              </widget>
-            </item>
-            <item row="0" column="2" >
-              <widget class="QComboBox" name="comboNewer" />
-            </item>
-            <item row="1" column="3" >
-              <widget class="QPushButton" name="btnFontOlder" >
-                <property name="text" >
-                  <string>Choose Font...</string>
-                </property>
-              </widget>
-            </item>
-            <item row="1" column="0" >
-              <widget class="QLabel" name="lbOlder" >
-                <property name="text" >
-                  <string>URLs older than</string>
-                </property>
-                <property name="wordWrap" >
-                  <bool>false</bool>
-                </property>
-              </widget>
-            </item>
-            <item row="0" column="3" >
-              <widget class="QPushButton" name="btnFontNewer" >
-                <property name="text" >
-                  <string>Choose Font...</string>
-                </property>
-              </widget>
-            </item>
-          </layout>
-        </widget>
-      </item>
-      <item>
-        <widget class="QGroupBox" name="gbDetails" >
-          <property name="title" >
-            <string>Details</string>
-          </property>
-          <layout class="QHBoxLayout" >
-            <property name="margin" >
-              <number>0</number>
-            </property>
-            <item>
-              <widget class="QCheckBox" name="cbDetailedTips" >
-                <property name="text" >
-                  <string>Detailed tooltips</string>
-                </property>
-                <property name="toolTip" stdset="0" >
-                  <string>Shows the number of times visited and the dates of the first and last visits, in addition to the URL</string>
-                </property>
-              </widget>
-            </item>
-          </layout>
-        </widget>
-      </item>
-      <item>
-        <layout class="QHBoxLayout" >
-          <property name="margin" >
-            <number>0</number>
-          </property>
-          <item>
-            <widget class="QPushButton" name="btnClearHistory" >
-              <property name="text" >
-                <string>Clear History</string>
-              </property>
-            </widget>
-          </item>
-          <item>
-            <spacer name="Spacer3" >
-              <property name="sizeHint" >
-                <size>
-                  <width>418</width>
-                  <height>0</height>
-                </size>
-              </property>
-              <property name="sizeType" >
-                <enum>Expanding</enum>
-              </property>
-              <property name="orientation" >
-                <enum>Horizontal</enum>
-              </property>
-            </spacer>
-          </item>
-        </layout>
-      </item>
-      <item>
-        <spacer name="Spacer2" >
-          <property name="sizeHint" >
-            <size>
-              <width>16</width>
-              <height>30</height>
-            </size>
-          </property>
-          <property name="sizeType" >
-            <enum>Expanding</enum>
-          </property>
-          <property name="orientation" >
-            <enum>Vertical</enum>
-          </property>
-        </spacer>
-      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" >
+     <property name="margin" >
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="btnClearHistory" >
+       <property name="text" >
+        <string>Clear History</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="Spacer3" >
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType" >
+        <enum>QSizePolicy::Expanding</enum>
+       </property>
+       <property name="sizeHint" stdset="0" >
+        <size>
+         <width>418</width>
+         <height>0</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
     </layout>
-  </widget>
-  <layoutdefault spacing="6" margin="0" />
-  <layoutfunction spacing="KDialog::spacingHint" margin="KDialog::marginHint" />
-  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+   </item>
+   <item>
+    <spacer name="Spacer2" >
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType" >
+      <enum>QSizePolicy::Expanding</enum>
+     </property>
+     <property name="sizeHint" stdset="0" >
+      <size>
+       <width>16</width>
+       <height>30</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="0" />
+ <layoutfunction spacing="KDialog::spacingHint" margin="KDialog::marginHint" />
+ <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+ <resources/>
+ <connections/>
 </ui>

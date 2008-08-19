@@ -19,16 +19,7 @@ If you are uncertain whether or not you need to use a proxy server to connect to
 &lt;/qt></string>
   </property>
   <layout class="QVBoxLayout" >
-   <property name="leftMargin" >
-    <number>0</number>
-   </property>
-   <property name="topMargin" >
-    <number>0</number>
-   </property>
-   <property name="rightMargin" >
-    <number>0</number>
-   </property>
-   <property name="bottomMargin" >
+   <property name="margin" >
     <number>0</number>
    </property>
    <item>
@@ -88,16 +79,7 @@ Automatic detection is performed using the &lt;b>Web Proxy Auto-Discovery Protoc
         <property name="spacing" >
          <number>6</number>
         </property>
-        <property name="leftMargin" >
-         <number>0</number>
-        </property>
-        <property name="topMargin" >
-         <number>0</number>
-        </property>
-        <property name="rightMargin" >
-         <number>0</number>
-        </property>
-        <property name="bottomMargin" >
+        <property name="margin" >
          <number>0</number>
         </property>
         <item>
@@ -108,7 +90,7 @@ Automatic detection is performed using the &lt;b>Web Proxy Auto-Discovery Protoc
           <property name="sizeType" >
            <enum>QSizePolicy::Fixed</enum>
           </property>
-          <property name="sizeHint" >
+          <property name="sizeHint" stdset="0" >
            <size>
             <width>16</width>
             <height>20</height>
@@ -139,16 +121,7 @@ Automatic detection is performed using the &lt;b>Web Proxy Auto-Discovery Protoc
         <property name="spacing" >
          <number>6</number>
         </property>
-        <property name="leftMargin" >
-         <number>0</number>
-        </property>
-        <property name="topMargin" >
-         <number>0</number>
-        </property>
-        <property name="rightMargin" >
-         <number>0</number>
-        </property>
-        <property name="bottomMargin" >
+        <property name="margin" >
          <number>0</number>
         </property>
         <item>
@@ -193,16 +166,7 @@ Environment variables such as &lt;b>HTTP_PROXY&lt;/b> and &lt;b>NO_PROXY&lt;/b> 
         <property name="spacing" >
          <number>6</number>
         </property>
-        <property name="leftMargin" >
-         <number>0</number>
-        </property>
-        <property name="topMargin" >
-         <number>0</number>
-        </property>
-        <property name="rightMargin" >
-         <number>0</number>
-        </property>
-        <property name="bottomMargin" >
+        <property name="margin" >
          <number>0</number>
         </property>
         <item>
@@ -282,22 +246,10 @@ Environment variables such as &lt;b>HTTP_PROXY&lt;/b> and &lt;b>NO_PROXY&lt;/b> 
       </item>
       <item>
        <layout class="QGridLayout" >
-        <property name="leftMargin" >
+        <property name="margin" >
          <number>0</number>
         </property>
-        <property name="topMargin" >
-         <number>0</number>
-        </property>
-        <property name="rightMargin" >
-         <number>0</number>
-        </property>
-        <property name="bottomMargin" >
-         <number>0</number>
-        </property>
-        <property name="horizontalSpacing" >
-         <number>6</number>
-        </property>
-        <property name="verticalSpacing" >
+        <property name="spacing" >
          <number>6</number>
         </property>
         <item rowspan="2" row="0" column="0" >
@@ -308,7 +260,7 @@ Environment variables such as &lt;b>HTTP_PROXY&lt;/b> and &lt;b>NO_PROXY&lt;/b> 
           <property name="sizeType" >
            <enum>QSizePolicy::Fixed</enum>
           </property>
-          <property name="sizeHint" >
+          <property name="sizeHint" stdset="0" >
            <size>
             <width>16</width>
             <height>20</height>
@@ -326,6 +278,9 @@ Environment variables such as &lt;b>HTTP_PROXY&lt;/b> and &lt;b>NO_PROXY&lt;/b> 
           </property>
           <property name="text" >
            <string>Username:</string>
+          </property>
+          <property name="alignment" >
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
           </property>
           <property name="wordWrap" >
            <bool>false</bool>
@@ -352,6 +307,9 @@ Environment variables such as &lt;b>HTTP_PROXY&lt;/b> and &lt;b>NO_PROXY&lt;/b> 
           </property>
           <property name="text" >
            <string>Password:</string>
+          </property>
+          <property name="alignment" >
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
           </property>
           <property name="wordWrap" >
            <bool>false</bool>
@@ -409,7 +367,7 @@ Although a persistent proxy connection is faster, note that it only works correc
      <property name="orientation" >
       <enum>Qt::Vertical</enum>
      </property>
-     <property name="sizeHint" >
+     <property name="sizeHint" stdset="0" >
       <size>
        <width>369</width>
        <height>16</height>
@@ -424,12 +382,6 @@ Although a persistent proxy connection is faster, note that it only works correc
  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
  <customwidgets>
   <customwidget>
-   <class>Q3ButtonGroup</class>
-   <extends>Q3GroupBox</extends>
-   <header>Qt3Support/Q3ButtonGroup</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>KLineEdit</class>
    <extends>QLineEdit</extends>
    <header>klineedit.h</header>
@@ -438,6 +390,12 @@ Although a persistent proxy connection is faster, note that it only works correc
    <class>KUrlRequester</class>
    <extends>QFrame</extends>
    <header>kurlrequester.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>Q3ButtonGroup</class>
+   <extends>Q3GroupBox</extends>
+   <header>Qt3Support/Q3ButtonGroup</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
