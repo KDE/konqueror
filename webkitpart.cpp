@@ -189,17 +189,17 @@ WebKitBrowserExtension::WebKitBrowserExtension(WebKitPart *parent)
 
 void WebKitBrowserExtension::cut()
 {
-    part->view()->page()->triggerAction(QWebPage::Cut);
+    part->view()->page()->triggerAction(KWebPage::Cut);
 }
 
 void WebKitBrowserExtension::copy()
 {
-    part->view()->page()->triggerAction(QWebPage::Copy);
+    part->view()->page()->triggerAction(KWebPage::Copy);
 }
 
 void WebKitBrowserExtension::paste()
 {
-    part->view()->page()->triggerAction(QWebPage::Paste);
+    part->view()->page()->triggerAction(KWebPage::Paste);
 }
 
 void WebKitBrowserExtension::print()
@@ -212,10 +212,10 @@ void WebKitBrowserExtension::print()
 
 void WebKitBrowserExtension::updateEditActions()
 {
-    QWebPage *page = part->view()->page();
-    enableAction("cut", page->action(QWebPage::Cut));
-    enableAction("copy", page->action(QWebPage::Copy));
-    enableAction("paste", page->action(QWebPage::Paste));
+    KWebPage *page = part->view()->page();
+    enableAction("cut", page->action(KWebPage::Cut));
+    enableAction("copy", page->action(KWebPage::Copy));
+    enableAction("paste", page->action(KWebPage::Paste));
 }
 
 void WebKitBrowserExtension::searchProvider()

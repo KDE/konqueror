@@ -54,44 +54,44 @@ KWebPage::KWebPage(QObject *parent)
 {
     setNetworkAccessManager(new KNetworkAccessManager(this));
     
-    action(QWebPage::Back)->setIcon(KIcon("go-previous"));
-    action(QWebPage::Back)->setShortcut(KStandardShortcut::back().primary());
+    action(Back)->setIcon(KIcon("go-previous"));
+    action(Back)->setShortcut(KStandardShortcut::back().primary());
 
-    action(QWebPage::Forward)->setIcon(KIcon("go-next"));
-    action(QWebPage::Forward)->setShortcut(KStandardShortcut::forward().primary());
+    action(Forward)->setIcon(KIcon("go-next"));
+    action(Forward)->setShortcut(KStandardShortcut::forward().primary());
 
-    action(QWebPage::Reload)->setIcon(KIcon("view-refresh"));
-    action(QWebPage::Reload)->setShortcut(KStandardShortcut::reload().primary());
+    action(Reload)->setIcon(KIcon("view-refresh"));
+    action(Reload)->setShortcut(KStandardShortcut::reload().primary());
 
-    action(QWebPage::Stop)->setIcon(KIcon("process-stop"));
-    action(QWebPage::Stop)->setShortcut(Qt::Key_Escape);
+    action(Stop)->setIcon(KIcon("process-stop"));
+    action(Stop)->setShortcut(Qt::Key_Escape);
 
-    action(QWebPage::Cut)->setIcon(KIcon("edit-cut"));
-    action(QWebPage::Cut)->setShortcut(KStandardShortcut::cut().primary());
+    action(Cut)->setIcon(KIcon("edit-cut"));
+    action(Cut)->setShortcut(KStandardShortcut::cut().primary());
 
-    action(QWebPage::Copy)->setIcon(KIcon("edit-copy"));
-    action(QWebPage::Copy)->setShortcut(KStandardShortcut::copy().primary());
+    action(Copy)->setIcon(KIcon("edit-copy"));
+    action(Copy)->setShortcut(KStandardShortcut::copy().primary());
 
-    action(QWebPage::Paste)->setIcon(KIcon("edit-paste"));
-    action(QWebPage::Paste)->setShortcut(KStandardShortcut::paste().primary());
+    action(Paste)->setIcon(KIcon("edit-paste"));
+    action(Paste)->setShortcut(KStandardShortcut::paste().primary());
 
-    action(QWebPage::Undo)->setIcon(KIcon("edit-undo"));
-    action(QWebPage::Undo)->setShortcut(KStandardShortcut::undo().primary());
+    action(Undo)->setIcon(KIcon("edit-undo"));
+    action(Undo)->setShortcut(KStandardShortcut::undo().primary());
 
-    action(QWebPage::Redo)->setIcon(KIcon("edit-redo"));
-    action(QWebPage::Redo)->setShortcut(KStandardShortcut::redo().primary());
+    action(Redo)->setIcon(KIcon("edit-redo"));
+    action(Redo)->setShortcut(KStandardShortcut::redo().primary());
 
-    action(QWebPage::InspectElement)->setIcon(KIcon("view-process-all"));
-    action(QWebPage::OpenLinkInNewWindow)->setIcon(KIcon("window-new"));
-    action(QWebPage::OpenFrameInNewWindow)->setIcon(KIcon("window-new"));
-    action(QWebPage::OpenImageInNewWindow)->setIcon(KIcon("window-new"));
-    action(QWebPage::CopyLinkToClipboard)->setIcon(KIcon("edit-copy"));
-    action(QWebPage::CopyImageToClipboard)->setIcon(KIcon("edit-copy"));
-    action(QWebPage::ToggleBold)->setIcon(KIcon("format-text-bold"));
-    action(QWebPage::ToggleItalic)->setIcon(KIcon("format-text-italic"));
-    action(QWebPage::ToggleUnderline)->setIcon(KIcon("format-text-underline"));
-    action(QWebPage::DownloadLinkToDisk)->setIcon(KIcon("document-save"));
-    action(QWebPage::DownloadImageToDisk)->setIcon(KIcon("document-save"));
+    action(InspectElement)->setIcon(KIcon("view-process-all"));
+    action(OpenLinkInNewWindow)->setIcon(KIcon("window-new"));
+    action(OpenFrameInNewWindow)->setIcon(KIcon("window-new"));
+    action(OpenImageInNewWindow)->setIcon(KIcon("window-new"));
+    action(CopyLinkToClipboard)->setIcon(KIcon("edit-copy"));
+    action(CopyImageToClipboard)->setIcon(KIcon("edit-copy"));
+    action(ToggleBold)->setIcon(KIcon("format-text-bold"));
+    action(ToggleItalic)->setIcon(KIcon("format-text-italic"));
+    action(ToggleUnderline)->setIcon(KIcon("format-text-underline"));
+    action(DownloadLinkToDisk)->setIcon(KIcon("document-save"));
+    action(DownloadImageToDisk)->setIcon(KIcon("document-save"));
 
     settings()->setWebGraphic(QWebSettings::MissingPluginGraphic, KIcon("preferences-plugin").pixmap(32, 32));
     settings()->setWebGraphic(QWebSettings::MissingImageGraphic, KIcon("image-missing").pixmap(32, 32));

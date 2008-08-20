@@ -41,7 +41,7 @@ public:
     virtual bool openUrl(const KUrl &url);
     virtual bool closeUrl();
 
-//     QWebPage::NavigationRequestResponse navigationRequested(const QWebNetworkRequest &request);
+//     KWebPage::NavigationRequestResponse navigationRequested(const QWebNetworkRequest &request);
 
     WebView *view();
     WebKitBrowserExtension *browserExtension() const;

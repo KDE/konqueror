@@ -62,7 +62,7 @@ protected Q_SLOTS:
     void slotFindNextClicked();
     void slotFindPreviousClicked();
     void slotSearchChanged(const QString &);
-    void resultSearch(QWebPage::FindFlags flags);
+    void resultSearch(KWebPage::FindFlags flags);
 
 private:
     class KWebViewPrivate;

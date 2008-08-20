@@ -80,7 +80,7 @@ KWebPage *WebPage::createWindow(WebWindowType type)
     kDebug() << type;
     KParts::ReadOnlyPart *part = 0;
     KParts::OpenUrlArguments args;
-    //if (type == QWebPage::WebModalDialog) //TODO: correct behavior?
+    //if (type == WebModalDialog) //TODO: correct behavior?
         args.metaData()["forcenewwindow"] = "true";
 
     emit m_part->browserExtension()->createNewWindow(KUrl("about:blank"), args,
