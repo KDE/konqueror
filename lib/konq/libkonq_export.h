@@ -1,6 +1,6 @@
 /*
    This file is part of the KDE project
-   Copyright (C) 2004 Jaroslaw Staniek <js@iidea.pl>
+   Copyright (C) 2004 Jarosław Staniek <staniek@kde.org>
 	     (C) 2004 Dirk Mueller <mueller@kde.org>
 
    This library is free software; you can redistribute it and/or
