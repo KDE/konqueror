@@ -43,6 +43,7 @@
 #include <klocale.h>
 #include <kconfig.h>
 #include <kurl.h>
+#include <kdebug.h>
 
 #include "ksaveioconfig.h"
 
@@ -64,6 +65,45 @@ KCookiesPolicies::KCookiesPolicies(const KComponentData &componentData, QWidget 
     dlg->kListViewSearchLine->setSearchColumns(columns);
 
     mainLayout->addWidget(dlg);
+
+    // Connect the main swicth :) Enable/disable cookie support
+    connect( dlg->cbEnableCookies, SIGNAL( toggled(bool) ),
+             SLOT( cookiesEnabled(bool) ) );
+    connect( dlg->cbEnableCookies, SIGNAL( toggled(bool) ),
+             SLOT( configChanged() ) );
+
+    // Connect the preference check boxes...
+    connect ( dlg->cbRejectCrossDomainCookies, SIGNAL(toggled(bool)),
+              SLOT(configChanged()));
+    connect ( dlg->cbAutoAcceptSessionCookies, SIGNAL(toggled(bool)),
+              SLOT(configChanged()));
+    connect ( dlg->cbIgnoreCookieExpirationDate, SIGNAL(toggled(bool)),
+              SLOT(configChanged()));
+
+    connect ( dlg->cbAutoAcceptSessionCookies, SIGNAL(toggled(bool)),
+              SLOT(autoAcceptSessionCookies(bool)));
+    connect ( dlg->cbIgnoreCookieExpirationDate, SIGNAL(toggled(bool)),
+              SLOT(ignoreCookieExpirationDate(bool)));
+
+    connect ( dlg->rbPolicyAsk, SIGNAL(toggled(bool)),
+              SLOT(configChanged()));
+    connect ( dlg->rbPolicyAccept, SIGNAL(toggled(bool)),
+              SLOT(configChanged()));
+    connect ( dlg->rbPolicyReject, SIGNAL(toggled(bool)),
+              SLOT(configChanged()));
+    // Connect signals from the domain specific policy listview.
+    connect( dlg->lvDomainPolicy, SIGNAL(selectionChanged()),
+             SLOT(selectionChanged()) );
+    connect( dlg->lvDomainPolicy, SIGNAL(doubleClicked (Q3ListViewItem *)),
+             SLOT(changePressed() ) );
+    connect( dlg->lvDomainPolicy, SIGNAL(returnPressed ( Q3ListViewItem * )),
+             SLOT(changePressed() ) );
+
+    // Connect the buttons...
+    connect( dlg->pbNew, SIGNAL(clicked()), SLOT( addPressed() ) );
+    connect( dlg->pbChange, SIGNAL( clicked() ), SLOT( changePressed() ) );
+    connect( dlg->pbDelete, SIGNAL( clicked() ), SLOT( deletePressed() ) );
+    connect( dlg->pbDeleteAll, SIGNAL( clicked() ), SLOT( deleteAllPressed() ) );
 
     load();
 }
@@ -323,45 +363,6 @@ void KCookiesPolicies::load()
     autoAcceptSessionCookies( sessionCookies );
     updateButtons();
   }
-
-  // Connect the main swicth :) Enable/disable cookie support
-  connect( dlg->cbEnableCookies, SIGNAL( toggled(bool) ),
-           SLOT( cookiesEnabled(bool) ) );
-  connect( dlg->cbEnableCookies, SIGNAL( toggled(bool) ),
-           SLOT( configChanged() ) );
-
-  // Connect the preference check boxes...
-  connect ( dlg->cbRejectCrossDomainCookies, SIGNAL(toggled(bool)),
-            SLOT(configChanged()));
-  connect ( dlg->cbAutoAcceptSessionCookies, SIGNAL(toggled(bool)),
-            SLOT(configChanged()));
-  connect ( dlg->cbIgnoreCookieExpirationDate, SIGNAL(toggled(bool)),
-            SLOT(configChanged()));
-
-  connect ( dlg->cbAutoAcceptSessionCookies, SIGNAL(toggled(bool)),
-            SLOT(autoAcceptSessionCookies(bool)));
-  connect ( dlg->cbIgnoreCookieExpirationDate, SIGNAL(toggled(bool)),
-            SLOT(ignoreCookieExpirationDate(bool)));
-
-  connect ( dlg->rbPolicyAsk, SIGNAL(toggled(bool)),
-            SLOT(configChanged()));
-  connect ( dlg->rbPolicyAccept, SIGNAL(toggled(bool)),
-            SLOT(configChanged()));
-  connect ( dlg->rbPolicyReject, SIGNAL(toggled(bool)),
-            SLOT(configChanged()));
-  // Connect signals from the domain specific policy listview.
-  connect( dlg->lvDomainPolicy, SIGNAL(selectionChanged()),
-           SLOT(selectionChanged()) );
-  connect( dlg->lvDomainPolicy, SIGNAL(doubleClicked (Q3ListViewItem *)),
-           SLOT(changePressed() ) );
-  connect( dlg->lvDomainPolicy, SIGNAL(returnPressed ( Q3ListViewItem * )),
-           SLOT(changePressed() ) );
-
-  // Connect the buttons...
-  connect( dlg->pbNew, SIGNAL(clicked()), SLOT( addPressed() ) );
-  connect( dlg->pbChange, SIGNAL( clicked() ), SLOT( changePressed() ) );
-  connect( dlg->pbDelete, SIGNAL( clicked() ), SLOT( deletePressed() ) );
-  connect( dlg->pbDeleteAll, SIGNAL( clicked() ), SLOT( deleteAllPressed() ) );
 }
 
 void KCookiesPolicies::save()
