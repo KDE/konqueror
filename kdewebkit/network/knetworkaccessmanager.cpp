@@ -23,9 +23,7 @@
 
 #include "knetworkaccessmanager.h"
 
-#include "webkitglobal.h"
 #include "network/knetworkreply.h"
-#include "settings/webkitsettings.h"
 
 #include <QNetworkRequest>
 #include <QNetworkReply>
@@ -40,9 +38,11 @@ KNetworkAccessManager::KNetworkAccessManager(QObject *parent)
 
 QNetworkReply *KNetworkAccessManager::createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData)
 {
+#if 0 //TODO move to webkit part and enable there again
     if (WebKitGlobal::settings()->isAdFilterEnabled() && WebKitGlobal::settings()->isAdFiltered(req.url().toString())) {
         return new KNetworkReply(req, 0, this);
     }
+#endif
 
     KIO::Job *kioJob = 0;
 
