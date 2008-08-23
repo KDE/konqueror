@@ -2,6 +2,7 @@
  * This file is part of the KDE project.
  *
  * Copyright (C) 2008 Laurent Montel <montel@kde.org>
+ * Copyright (C) 2008 Michael Howell <mhowell123@gmail.com>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -128,6 +129,7 @@ const KComponentData &WebKitGlobal::componentData()
                                        "(c) 2007 Trolltech ASA"));
 
         s_about->addAuthor(ki18n("Laurent Montel"), KLocalizedString(), "montel@kde.org");
+        s_about->addAuthor(ki18n("Michael Howell"), KLocalizedString(), "mhowell123@gmail.com");
         s_about->addAuthor(ki18n("Urs Wolfer"), KLocalizedString(), "uwolfer@kde.org");
         s_about->addAuthor(ki18n("Dirk Mueller"), KLocalizedString(), "mueller@kde.org");
         s_componentData = new KComponentData(s_about);
