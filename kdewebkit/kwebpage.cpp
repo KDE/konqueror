@@ -42,6 +42,7 @@
 #include <QWebFrame>
 #include <QUiLoader>
 #include <QtNetwork/QNetworkReply>
+#include "kwebpluginfactory.h"
 
 class KWebPage::KWebPagePrivate
 {
@@ -53,6 +54,7 @@ KWebPage::KWebPage(QObject *parent)
     : QWebPage(parent), d(new KWebPage::KWebPagePrivate())
 {
     setNetworkAccessManager(new KNetworkAccessManager(this));
+    setPluginFactory(new KWebPluginFactory(this));
     
     action(Back)->setIcon(KIcon("go-previous"));
     action(Back)->setShortcut(KStandardShortcut::back().primary());

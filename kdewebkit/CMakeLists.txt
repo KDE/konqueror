@@ -3,6 +3,7 @@ project(kdewebkit)
 set(kdewebkit_LIB_SRCS
     kwebview.cpp
     kwebpage.cpp
+    kwebpluginfactory.cpp
     network/knetworkreply.cpp
     network/knetworkaccessmanager.cpp
     searchbar.cpp
@@ -28,4 +29,5 @@ install(TARGETS kdewebkit ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES
     kwebpage.h
     kwebview.h
+    kwebpluginfactory.h
     DESTINATION ${INCLUDE_INSTALL_DIR}/webkitkde/ COMPONENT Devel)
