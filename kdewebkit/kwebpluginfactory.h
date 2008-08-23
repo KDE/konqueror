@@ -25,8 +25,8 @@
 #include <kdemacros.h>
 
 #include <QtWebKit/QWebPluginFactory>
-#include <QList>
-#include <QWidget>
+#include <QtCore/QList>
+#include <QtGui/QWidget>
 
 class QStringList;
 
@@ -41,6 +41,10 @@ public:
                             const QStringList &argumentNames,
                             const QStringList &argumentValues) const;
     virtual QList<Plugin> plugins() const;
+    
+private:
+    class KWebPluginFactoryPrivate;
+    KWebPluginFactoryPrivate* const d;
 };
 
 #endif // KWEBPLUGINFACTORY_H

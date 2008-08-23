@@ -245,5 +245,7 @@ KWebPage *KWebPage::createWindow(WebWindowType type)
 
 KWebPage *KWebPage::newWindow(WebWindowType type)
 {
+    Q_UNUSED(type);
+    return 0;
 }
 

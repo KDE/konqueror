@@ -21,15 +21,25 @@
  */
 
 #include "kwebpluginfactory.h"
+
 #include <QWebPluginFactory>
 #include <QStringList>
+
 #include <KParts/ReadOnlyPart>
 #include <KMimeTypeTrader>
 #include <KServiceTypeTrader>
 #include <KMimeType>
 #include <KDebug>
 
-KWebPluginFactory::KWebPluginFactory(QObject* parent) : QWebPluginFactory(parent)
+class KWebPluginFactory::KWebPluginFactoryPrivate
+{
+public:
+    KWebPluginFactoryPrivate() {}
+};
+
+KWebPluginFactory::KWebPluginFactory(QObject* parent)
+  : QWebPluginFactory(parent)
+    , d(new KWebPluginFactory::KWebPluginFactoryPrivate())
 {
 }
 
@@ -39,6 +49,8 @@ KWebPluginFactory::~KWebPluginFactory()
 
 QObject* KWebPluginFactory::create(const QString& mimeType, const QUrl& url, const QStringList& argumentNames, const QStringList& argumentValues) const
 {
+    Q_UNUSED(argumentNames);
+    Q_UNUSED(argumentValues);
     QWidget* w = new QWidget;
     KParts::ReadOnlyPart* part = KMimeTypeTrader::createPartInstanceFromQuery<KParts::ReadOnlyPart>(mimeType, w, w);
     part->openUrl(url);
