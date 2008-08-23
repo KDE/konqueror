@@ -25,7 +25,7 @@
 #include "webkitpart.h"
 
 #include "webview.h"
-#include "webkitglobal.h"
+#include "kdewebkit/webkitglobal.h"
 
 #include <KDE/KParts/GenericFactory>
 #include <KDE/KParts/Plugin>
@@ -55,7 +55,6 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
     QVBoxLayout* lay = new QVBoxLayout(widget());
     lay->setMargin(0);
     lay->setSpacing(0);
-    WebKitGlobal::registerPart(this);
     m_webView = new WebView(this, widget());
     lay->addWidget(m_webView);
     lay->addWidget(m_webView->searchBar());
@@ -84,7 +83,6 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
 
 WebKitPart::~WebKitPart()
 {
-    WebKitGlobal::deregisterPart(this);
 }
 
 void WebKitPart::initAction()

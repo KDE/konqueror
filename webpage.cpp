@@ -25,9 +25,9 @@
 #include "kwebpage.h"
 #include "webkitpart.h"
 #include "webview.h"
-#include "webkitglobal.h"
 #include "network/knetworkaccessmanager.h"
-#include "settings/webkitsettings.h"
+#include "kdewebkit/webkitglobal.h"
+#include "kdewebkit/settings/webkitsettings.h"
 
 #include <KDE/KParts/GenericFactory>
 #include <KDE/KParts/BrowserRun>
@@ -59,9 +59,6 @@ WebPage::WebPage(WebKitPart *wpart, QWidget *parent)
     connect(this, SIGNAL(statusBarMessage(const QString &)),
             this, SLOT(slotStatusBarMessage(const QString &)));
 
-    const QString host = mainFrame()->url().host();
-    settings()->setAttribute(QWebSettings::PluginsEnabled, WebKitGlobal::settings()->isPluginsEnabled(host));
-    settings()->setAttribute(QWebSettings::DeveloperExtrasEnabled, WebKitGlobal::settings()->isJavaScriptDebugEnabled(host));
 }
 
 bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request,
@@ -72,11 +69,8 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
     return KWebPage::acceptNavigationRequest(frame, request, type);
 }
 
-KWebPage *WebPage::createWindow(WebWindowType type)
+KWebPage *WebPage::newWindow(WebWindowType type)
 {
-    if (WebKitGlobal::settings()->windowOpenPolicy(mainFrame()->url().host()) != WebKitSettings::KJSWindowOpenDeny)
-        return 0;
-
     kDebug() << type;
     KParts::ReadOnlyPart *part = 0;
     KParts::OpenUrlArguments args;
@@ -98,7 +92,7 @@ void WebPage::slotGeometryChangeRequested(const QRect &rect)
 {
     const QString host = mainFrame()->url().host();
 
-    if (WebKitGlobal::settings()->windowMovePolicy(host) == WebKitSettings::KJSWindowMoveAllow) {
+    if (WebKitGlobal::settings()->windowMovePolicy(host) == WebKitSettings::KJSWindowMoveAllow) { // Why doesn't this work?
         emit m_part->browserExtension()->moveTopLevelWidget(rect.x(), rect.y());
     }
 

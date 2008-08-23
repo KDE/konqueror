@@ -24,6 +24,8 @@
 
 #include "kwebpage.h"
 #include "network/knetworkaccessmanager.h"
+#include "webkitglobal.h"
+#include "settings/webkitsettings.h"
 
 #include <KDE/KParts/GenericFactory>
 #include <KDE/KParts/BrowserRun>
@@ -98,6 +100,9 @@ KWebPage::KWebPage(QObject *parent)
     settings()->setWebGraphic(QWebSettings::MissingPluginGraphic, KIcon("preferences-plugin").pixmap(32, 32));
     settings()->setWebGraphic(QWebSettings::MissingImageGraphic, KIcon("image-missing").pixmap(32, 32));
     settings()->setWebGraphic(QWebSettings::DefaultFrameIconGraphic, KIcon("applications-internet").pixmap(32, 32));
+    const QString host = mainFrame()->url().host();
+    settings()->setAttribute(QWebSettings::PluginsEnabled, WebKitGlobal::settings()->isPluginsEnabled(host));
+    settings()->setAttribute(QWebSettings::DeveloperExtrasEnabled, WebKitGlobal::settings()->isJavaScriptDebugEnabled(host));
 
     connect(this, SIGNAL(downloadRequested(const QNetworkRequest &)),
             this, SLOT(slotDownloadRequested(const QNetworkRequest &)));
@@ -230,3 +235,15 @@ void KWebPage::slotDownloadRequested(const QNetworkRequest &request)
         job->uiDelegate()->setAutoErrorHandlingEnabled(true);
     }
 }
+
+KWebPage *KWebPage::createWindow(WebWindowType type)
+{
+    if (WebKitGlobal::settings()->windowOpenPolicy(mainFrame()->url().host()) != WebKitSettings::KJSWindowOpenDeny)
+        return 0;
+    return newWindow(type);
+}
+
+KWebPage *KWebPage::newWindow(WebWindowType type)
+{
+}
+

@@ -40,7 +40,7 @@ protected:
     virtual bool acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request,
                                          NavigationType type);
 
-    virtual KWebPage *createWindow(WebWindowType type);
+    virtual KWebPage *newWindow(WebWindowType type);
 
 protected Q_SLOTS:
     void slotGeometryChangeRequested(const QRect &rect);

@@ -24,20 +24,17 @@
 #define WEBKITGLOBAL_H
 
 class WebKitGlobal;
-class WebKitPart;
 class KAboutData;
 class WebKitSettings;
 
 #include <KComponentData>
 
-class WebKitGlobal
+class KDE_EXPORT WebKitGlobal
 {
 public:
     WebKitGlobal();
     ~WebKitGlobal();
 
-    static void registerPart(WebKitPart *part);
-    static void deregisterPart(WebKitPart *part);
     void initGlobalSettings();
     static const KComponentData &componentData();
     static WebKitSettings *settings();

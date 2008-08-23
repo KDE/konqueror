@@ -38,6 +38,8 @@ public:
     ~KWebPage();
 
 protected:
+    virtual KWebPage *createWindow(WebWindowType type);
+    virtual KWebPage *newWindow(WebWindowType type);
     QString chooseFile(QWebFrame *frame, const QString &suggestedFile);
     void javaScriptAlert(QWebFrame *frame, const QString &msg);
     bool javaScriptConfirm(QWebFrame *frame, const QString &msg);

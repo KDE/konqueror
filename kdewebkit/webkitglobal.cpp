@@ -21,7 +21,6 @@
  */
 
 #include "webkitglobal.h"
-#include "webkitpart.h"
 #include "settings/webkitsettings.h"
 #include "settings/webkitdefaults.h"
 
@@ -37,7 +36,6 @@
 
 WebKitGlobal *WebKitGlobal::s_self = 0;
 unsigned long int WebKitGlobal::s_refcnt = 0;
-static QLinkedList<WebKitPart*> *s_parts = 0;
 KAboutData *WebKitGlobal::s_about = 0;
 KComponentData *WebKitGlobal::s_componentData = 0;
 K_GLOBAL_STATIC(WebKitSettings, s_webKitSettings)
@@ -54,11 +52,6 @@ WebKitGlobal::~WebKitGlobal()
     if (s_self == this) {
         delete s_componentData;
         delete s_about;
-        if (s_parts) {
-            Q_ASSERT(s_parts->isEmpty());
-            delete s_parts;
-        }
-        s_parts = 0;
         s_componentData = 0;
         s_about = 0;
     } else
@@ -91,30 +84,6 @@ void WebKitGlobal::deref()
     if (!--s_refcnt && s_self) {
         delete s_self;
         s_self = 0;
-    }
-}
-
-void WebKitGlobal::registerPart(WebKitPart *part)
-{
-    if (!s_parts)
-        s_parts = new QLinkedList<WebKitPart*>;
-
-    if (!s_parts->contains(part)) {
-        s_parts->append(part);
-        ref();
-    }
-}
-
-void WebKitGlobal::deregisterPart(WebKitPart *part)
-{
-    Q_ASSERT(s_parts);
-
-    if (s_parts->removeAll(part)) {
-        if (s_parts->isEmpty()) {
-            delete s_parts;
-            s_parts = 0;
-        }
-        deref();
     }
 }
 
@@ -152,7 +121,7 @@ const KComponentData &WebKitGlobal::componentData()
     Q_ASSERT(s_self);
 
     if (!s_componentData) {
-        s_about = new KAboutData("webkitpart", 0, ki18n("Webkit HTML Component"),
+        s_about = new KAboutData("webkitkde", 0, ki18n("Webkit HTML Component"),
                                  /*version*/ "0.1", ki18n(/*shortDescription*/ ""),
                                  KAboutData::License_LGPL,
                                  ki18n("(c) 2008, Urs Wolfer\n"
