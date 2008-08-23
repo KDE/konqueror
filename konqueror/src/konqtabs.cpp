@@ -133,7 +133,8 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
     m_pPopupMenu(0),
     m_pSubPopupMenuTab(0),
     m_rightWidget(0), m_leftWidget(0), m_alwaysTabBar(false),
-    m_closeOtherTabsId(0)
+    m_closeOtherTabsId(0),
+    m_konqTabsStyle( new KonqTabsStyle( this ) )
 {
   // Set an object name so the widget style can identify this widget.
   setObjectName("kde_konq_tabwidget");
@@ -142,7 +143,7 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
 
   // Set the widget style to a forwarding proxy style that removes the tabwidget frame,
   // and draws a tabbar base underneath the tabbar.
-  setStyle(new KonqTabsStyle(this));
+  setStyle(m_konqTabsStyle);
 
   // The base will be drawn on the frame instead of on the tabbar, so it extends across
   // the whole widget.
@@ -225,6 +226,7 @@ KonqFrameTabs::~KonqFrameTabs()
   //kDebug(1202) << "KonqFrameTabs::~KonqFrameTabs() " << this << " - " << className();
   qDeleteAll( m_childFrameList );
   m_childFrameList.clear();
+  delete m_konqTabsStyle;
 }
 
 void KonqFrameTabs::saveConfig( KConfigGroup& config, const QString &prefix, const KonqFrameBase::Options &options,
