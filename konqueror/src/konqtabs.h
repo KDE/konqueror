@@ -36,6 +36,7 @@ class KonqView;
 class KonqViewManager;
 class KonqFrameContainerBase;
 class KonqFrameContainer;
+class KonqTabsStyle;
 class KConfig;
 
 class KonqFrameTabs : public KTabWidget, public KonqFrameContainerBase
@@ -127,6 +128,7 @@ private:
   bool m_alwaysTabBar;
   bool m_MouseMiddleClickClosesTab;
   int m_closeOtherTabsId;
+  KonqTabsStyle *m_konqTabsStyle;
 
   friend class KonqTabsStyle;
 };
