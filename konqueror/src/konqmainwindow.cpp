@@ -1795,6 +1795,7 @@ void KonqMainWindow::slotConfigure()
             ADD_MODULE("kcmdolphin")
             ADD_MODULE("filepreviews")
             ADD_MODULE("filetypes")
+            ADD_MODULE("kcmtrash")
 #undef ADD_MODULE
         }
 
