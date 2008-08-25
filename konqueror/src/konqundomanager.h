@@ -49,8 +49,12 @@ public:
     bool undoAvailable() const;
     QString undoText() const;
     quint64 newCommandSerialNumber();
-
-    const QList<KonqClosedItem* >& closedItemsList() const;
+    
+    /**
+     * This method is not constant because when calling it the m_closedItemsList
+     * might get filled because of delayed initilization.
+     */
+    const QList<KonqClosedItem* >& closedItemsList();
     void undoClosedItem(int index);
     void addClosedTabItem(KonqClosedTabItem* closedTabItem);
     /**
@@ -105,6 +109,7 @@ private:
 
     QList<KonqClosedItem *> m_closedItemList;
     bool m_supportsFileUndo;
+    bool m_populated;
 };
 
 /**
@@ -144,11 +149,15 @@ public:
      */
     void saveConfig();
 public Q_SLOTS:
+    bool undoAvailable() const;
     void readSettings();
 
     /**
      * Reads the list of closed window from the configuration file if it couldn't
-     * be retrieved from running konqueror windows
+     * be retrieved from running konqueror windows and if it hasn't been read
+     * already. By default the closeditems_list file is not read, so each
+     * function which needs that file to be read first must call this function
+     * to ensure the closeditems list is filled.
      */
     void readConfig();
 
@@ -194,8 +203,16 @@ private:
     void removeClosedItemsConfigFiles();
 private:
     QList<KonqClosedWindowItem *> m_closedWindowItemList;
+    int m_numUndoClosedItems;
     KConfig *m_konqClosedItemsConfig;
     int m_maxNumClosedItems;
+    /**
+     * This bool var is used internally to allow delayed initialization of the
+     * closed items list. When active, this flag prevents addClosedWindowItem()
+     * from emiting addWindowInOtherInstances() as the windows are already
+     * being dealt with inside KonqUndoManager::populate().
+     */
+    bool m_blockClosedItems;
 Q_SIGNALS: // DBUS signals
     /**
      * Every konqueror instance broadcasts new closed windows to other

@@ -2908,7 +2908,10 @@ void KonqMainWindow::slotSessionActivated(QAction* action)
 
 void KonqMainWindow::updateClosedItemsAction()
 {
-    m_paClosedItems->setEnabled(!m_pUndoManager->closedItemsList().isEmpty());
+    bool available = m_pUndoManager->undoAvailable();
+    m_paClosedItems->setEnabled(available);
+    if(available)
+        m_paUndo->setText(m_pUndoManager->undoText());
 }
 
 void KonqMainWindow::slotBack()
