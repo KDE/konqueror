@@ -35,6 +35,7 @@ class KWebPluginFactory::KWebPluginFactoryPrivate
 {
 public:
     KWebPluginFactoryPrivate() {}
+    QList<KWebPluginFactory::Plugin> plugins;
 };
 
 KWebPluginFactory::KWebPluginFactory(QObject* parent)
@@ -62,6 +63,7 @@ QObject* KWebPluginFactory::create(const QString& mimeType, const QUrl& url, con
 
 QList<KWebPluginFactory::Plugin> KWebPluginFactory::plugins() const
 {
+    if (!d->plugins.isEmpty()) return d->plugins;
     QList<Plugin> plugins;
     KService::List services = KServiceTypeTrader::self()->query("KParts/ReadOnlyPart");
     kDebug() << "Asked for list of plugins. Got:";
@@ -88,6 +90,7 @@ QList<KWebPluginFactory::Plugin> KWebPluginFactory::plugins() const
         plugins.append(plugin);
     }
     kDebug() << "Total:" << plugins.count();
+    d->plugins = plugins;
     return plugins;
 }
 
