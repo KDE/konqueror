@@ -1103,9 +1103,8 @@ bool WebKitSettings::jsPopupBlockerPassivePopup() const
 
 K_GLOBAL_STATIC(WebKitSettings, s_webKitSettings)
 
-QBasicAtomicPointer<WebKitSettings > WebKitSettings::self()
+WebKitSettings* WebKitSettings::self()
 {
-    if (!s_webKitSettings.exists()) return s_webKitSettings->self();
-    return _k_static_s_webKitSettings;
+    return s_webKitSettings;
 }
 

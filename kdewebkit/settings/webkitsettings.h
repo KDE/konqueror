@@ -220,7 +220,7 @@ public:
     bool jsPopupBlockerPassivePopup() const;
 
     // Global config object stuff.
-    static QBasicAtomicPointer<WebKitSettings > self();
+    static WebKitSettings* self();
     /**
      * @internal Constructor
      */
