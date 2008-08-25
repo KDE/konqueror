@@ -26,7 +26,6 @@
 #include "webkitpart.h"
 #include "webview.h"
 #include "network/knetworkaccessmanager.h"
-#include "kdewebkit/webkitglobal.h"
 #include "kdewebkit/settings/webkitsettings.h"
 
 #include <KDE/KParts/GenericFactory>
@@ -92,7 +91,7 @@ void WebPage::slotGeometryChangeRequested(const QRect &rect)
 {
     const QString host = mainFrame()->url().host();
 
-    if (WebKitGlobal::settings()->windowMovePolicy(host) == WebKitSettings::KJSWindowMoveAllow) { // Why doesn't this work?
+    if (WebKitSettings::self()->windowMovePolicy(host) == WebKitSettings::KJSWindowMoveAllow) { // Why doesn't this work?
         emit m_part->browserExtension()->moveTopLevelWidget(rect.x(), rect.y());
     }
 
@@ -113,7 +112,7 @@ void WebPage::slotGeometryChangeRequested(const QRect &rect)
         return;
     }
 
-    if (WebKitGlobal::settings()->windowResizePolicy(host) == WebKitSettings::KJSWindowResizeAllow) {
+    if (WebKitSettings::self()->windowResizePolicy(host) == WebKitSettings::KJSWindowResizeAllow) {
         kDebug() << "resizing to " << width << "x" << height;
         emit m_part->browserExtension()->resizeTopLevelWidget(width, height);
     }
@@ -129,7 +128,7 @@ void WebPage::slotGeometryChangeRequested(const QRect &rect)
     if (bottom > sg.bottom())
         moveByY = - bottom + sg.bottom(); // always <0
     if ((moveByX || moveByY) &&
-      WebKitGlobal::settings()->windowMovePolicy(host) == WebKitSettings::KJSWindowMoveAllow) {
+      WebKitSettings::self()->windowMovePolicy(host) == WebKitSettings::KJSWindowMoveAllow) {
         emit m_part->browserExtension()->moveTopLevelWidget(view()->x() + moveByX, view()->y() + moveByY);
     }
 }
@@ -148,7 +147,7 @@ void WebPage::slotWindowCloseRequested()
 
 void WebPage::slotStatusBarMessage(const QString &message)
 {
-    if (WebKitGlobal::settings()->windowStatusPolicy(mainFrame()->url().host()) == WebKitSettings::KJSWindowStatusAllow) {
+    if (WebKitSettings::self()->windowStatusPolicy(mainFrame()->url().host()) == WebKitSettings::KJSWindowStatusAllow) {
         m_part->setStatusBarTextProxy(message);
     }
 }

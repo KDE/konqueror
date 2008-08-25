@@ -25,7 +25,6 @@
 #include "webkitpart.h"
 
 #include "webview.h"
-#include "kdewebkit/webkitglobal.h"
 
 #include <KDE/KParts/GenericFactory>
 #include <KDE/KParts/Plugin>
@@ -58,7 +57,20 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
     m_webView = new WebView(this, widget());
     lay->addWidget(m_webView);
     lay->addWidget(m_webView->searchBar());
-    setComponentData(WebKitGlobal::componentData());
+
+    KAboutData* about = new KAboutData("webkitkde", 0, ki18n("Webkit HTML Component"),
+                           /*version*/ "0.1", ki18n(/*shortDescription*/ ""),
+                           KAboutData::License_LGPL,
+                           ki18n("(c) 2008, Urs Wolfer\n"
+                                 "(c) 2007 Trolltech ASA"));
+
+    about->addAuthor(ki18n("Laurent Montel"), KLocalizedString(), "montel@kde.org");
+    about->addAuthor(ki18n("Michael Howell"), KLocalizedString(), "mhowell123@gmail.com");
+    about->addAuthor(ki18n("Urs Wolfer"), KLocalizedString(), "uwolfer@kde.org");
+    about->addAuthor(ki18n("Dirk Mueller"), KLocalizedString(), "mueller@kde.org");
+    KComponentData componentData(about);
+    setComponentData(componentData);
+
     connect(m_webView, SIGNAL(loadStarted()),
             this, SLOT(loadStarted()));
     connect(m_webView, SIGNAL(loadFinished(bool)),
