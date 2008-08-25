@@ -102,12 +102,6 @@ public:
     };
 
     /**
-     * @internal Constructor
-     */
-    WebKitSettings();
-    WebKitSettings(const WebKitSettings &other);
-
-    /**
      * Called by constructor and reparseConfiguration
      */
     void init();
@@ -224,6 +218,14 @@ public:
     // Whether to show passive popup when windows are blocked
     void setJSPopupBlockerPassivePopup(bool enabled);
     bool jsPopupBlockerPassivePopup() const;
+
+    // Global config object stuff.
+    static QBasicAtomicPointer<WebKitSettings > self();
+    /**
+     * @internal Constructor
+     */
+    WebKitSettings();
+    WebKitSettings(const WebKitSettings &other);
 
 private:
     QString lookupFont(int i) const;

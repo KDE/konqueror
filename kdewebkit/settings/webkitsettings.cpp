@@ -27,6 +27,7 @@
 #include <kglobalsettings.h>
 #include <klocale.h>
 #include <kmessagebox.h>
+#include <QWebSettings>
 
 #include <QtGui/QFontDatabase>
 
@@ -299,6 +300,7 @@ void WebKitSettings::init()
     return;
 
   init( local.data(), false );
+
 }
 
 void WebKitSettings::init( KConfig * config, bool reset )
@@ -647,6 +649,26 @@ void WebKitSettings::init( KConfig * config, bool reset )
 #endif
     }
   }
+
+  // Sync with QWebSettings.
+  if (!userStyleSheet().isEmpty()) {
+      QWebSettings::globalSettings()->setUserStyleSheetUrl(QUrl(userStyleSheet()));
+  }
+  QWebSettings::globalSettings()->setAttribute(QWebSettings::AutoLoadImages, autoLoadImages());
+  QWebSettings::globalSettings()->setAttribute(QWebSettings::JavascriptEnabled, isJavaScriptEnabled());
+  QWebSettings::globalSettings()->setAttribute(QWebSettings::JavaEnabled, isJavaEnabled());
+  QWebSettings::globalSettings()->setAttribute(QWebSettings::PluginsEnabled, isPluginsEnabled());
+  QWebSettings::globalSettings()->setAttribute(QWebSettings::JavascriptCanOpenWindows,
+                                               windowOpenPolicy() != WebKitSettings::KJSWindowOpenDeny);
+
+  QWebSettings::globalSettings()->setFontFamily(QWebSettings::StandardFont, stdFontName());
+  QWebSettings::globalSettings()->setFontFamily(QWebSettings::FixedFont, fixedFontName());
+  QWebSettings::globalSettings()->setFontFamily(QWebSettings::SerifFont, serifFontName());
+  QWebSettings::globalSettings()->setFontFamily(QWebSettings::SansSerifFont, sansSerifFontName());
+  QWebSettings::globalSettings()->setFontFamily(QWebSettings::CursiveFont, cursiveFontName());
+  QWebSettings::globalSettings()->setFontFamily(QWebSettings::FantasyFont, fantasyFontName());
+  QWebSettings::globalSettings()->setFontSize(QWebSettings::MinimumFontSize, minFontSize());
+  QWebSettings::globalSettings()->setFontSize(QWebSettings::DefaultFontSize, mediumFontSize());
 }
 
 
@@ -1078,3 +1100,12 @@ bool WebKitSettings::jsPopupBlockerPassivePopup() const
 {
     return d->m_jsPopupBlockerPassivePopup;
 }
+
+K_GLOBAL_STATIC(WebKitSettings, s_webKitSettings)
+
+QBasicAtomicPointer<WebKitSettings > WebKitSettings::self()
+{
+    if (!s_webKitSettings.exists()) return s_webKitSettings->self();
+    return _k_static_s_webKitSettings;
+}
+

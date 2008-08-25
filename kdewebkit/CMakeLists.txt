@@ -8,7 +8,6 @@ set(kdewebkit_LIB_SRCS
     network/knetworkaccessmanager.cpp
     searchbar.cpp
     settings/webkitsettings.cpp
-    webkitglobal.cpp
 )
 
 kde4_add_ui_files(kdewebkit_LIB_SRCS
