@@ -611,11 +611,11 @@ void KonqClosedWindowsManager ::readConfig()
     QString filename = "closeditems_saved";
     QString file = KStandardDirs::locateLocal("appdata", filename);
 
+    m_konqClosedItemsConfig = new KConfig(file, KConfig::SimpleConfig);
+    
     // If the config file doesn't exists, there's nothing to read
     if(!QFile::exists(file))
         return;
-
-    m_konqClosedItemsConfig = new KConfig(file, KConfig::SimpleConfig);
     
     m_blockClosedItems = true;
     for(int i = 0; i < m_numUndoClosedItems; i++)
