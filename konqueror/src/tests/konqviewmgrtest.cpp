@@ -389,12 +389,6 @@ void ViewMgrTest::testDuplicateWindow()
 
 void ViewMgrTest::testCloseOtherTabs()
 {
-    // Set the default value of the dialog "discardchangescloseother" to true
-    // so that we don't get asked in the test
-    KSharedConfig::Ptr config = KGlobal::config();
-    KConfigGroup cg( config, QLatin1String("Notification Messages") );
-    cg.writeEntry("CloseOtherTabConfirm", false);
-    
     KonqMainWindow mainWindow;
     mainWindow.openUrl(0, KUrl("data:text/html, <p>Hello World</p>"), "text/html");
     KonqViewManager* viewManager = mainWindow.viewManager();
