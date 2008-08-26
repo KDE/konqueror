@@ -1,5 +1,15 @@
 project(kdewebkit)
 
+# search packages used by KDE
+find_package(KDE4 REQUIRED)
+include(KDE4Defaults)
+include(MacroLibrary)
+
+include_directories(${KDE4_INCLUDES})
+add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
+
+add_subdirectory(includes)
+
 set(kdewebkit_LIB_SRCS
     kwebview.cpp
     kwebpage.cpp
