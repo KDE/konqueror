@@ -116,16 +116,9 @@ void KSocksConfig::enableChanged()
   emit changed(true);
 }
 
-
 void KSocksConfig::methodChanged(int id)
 {
-  if (id == 2) {
-    base->_c_customLabel->setEnabled(true);
-    base->_c_customPath->setEnabled(true);
-  } else {
-    base->_c_customLabel->setEnabled(false);
-    base->_c_customPath->setEnabled(false);
-  }
+  setCustomPathEnabled(id);
   emit changed(true);
 }
 
@@ -135,6 +128,16 @@ void KSocksConfig::customPathChanged(const QString&)
   emit changed(true);
 }
 
+void KSocksConfig::setCustomPathEnabled(int id)
+{
+  if (id == 2) {
+    base->_c_customLabel->setEnabled(true);
+    base->_c_customPath->setEnabled(true);
+  } else {
+    base->_c_customLabel->setEnabled(false);
+    base->_c_customPath->setEnabled(false);
+  }
+}
 
 void KSocksConfig::testClicked()
 {
@@ -217,13 +220,7 @@ void KSocksConfig::load()
   base->_c_enableSocks->setChecked(config.readEntry("SOCKS_enable", false));
   int id = config.readEntry("SOCKS_method", 1);
   base->bg->setButton(id);
-  if (id == 4) {
-    base->_c_customLabel->setEnabled(true);
-    base->_c_customPath->setEnabled(true);
-  } else {
-    base->_c_customLabel->setEnabled(false);
-    base->_c_customPath->setEnabled(false);
-  }
+  setCustomPathEnabled(id);
   base->_c_customPath->setPath(config.readPathEntry("SOCKS_lib", QString()));
 
   Q3ListViewItem *thisitem;
