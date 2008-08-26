@@ -618,22 +618,20 @@ void KonqFrameTabs::slotCurrentChanged( QWidget* newPage )
     }
 }
 
-#if 0
 /**
  * Returns the index position of the tab that contains (directly or indirectly) the frame @p frame,
  * or -1 if the frame is not in the tab widget.
  */
-int KonqFrameTabs::tabContaining(KonqFrameBase* frame) const
+KonqFrameBase* KonqFrameTabs::tabContaining(KonqFrameBase* frame) const
 {
     KonqFrameBase* frameBase = frame;
     while (frameBase && frameBase->parentContainer() != this)
         frameBase = frameBase->parentContainer();
     if (frameBase)
-        return indexOf(frameBase->asQWidget());
+        return frameBase;
     else
-        return -1;
+        return 0;
 }
-#endif
 
 int KonqFrameTabs::tabWhereActive(KonqFrameBase* frame) const
 {
