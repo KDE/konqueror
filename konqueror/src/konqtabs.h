@@ -81,6 +81,12 @@ public:
   void moveTabForward(int index);
 
   void setLoading(KonqFrameBase* frame, bool loading);
+  
+  /**
+   * Returns the tab that contains (directly or indirectly) the frame @p frame,
+   * or 0 if the frame is not in the tab widget.
+   */
+  KonqFrameBase* tabContaining(KonqFrameBase* frame) const;
 
 public Q_SLOTS:
   void slotCurrentChanged( QWidget* newPage );

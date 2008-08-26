@@ -417,9 +417,14 @@ void KonqViewManager::reloadAllTabs( )
 
 void KonqViewManager::removeOtherTabs( KonqFrameBase* currentFrame )
 {
+  Q_ASSERT(currentFrame);
+  
+  // currentFrame might be a frame contained inside a splitted frame so what we'll
+  // do here is just compare if the frames are inside the same tab.
+  currentFrame = m_tabContainer->tabContaining(currentFrame);
   foreach ( KonqFrameBase* frame, m_tabContainer->childFrameList() )
   {
-    if ( frame && frame != currentFrame )
+    if ( frame && m_tabContainer->tabContaining(frame) != currentFrame )
       removeTab(frame);
   }
 

@@ -408,6 +408,8 @@ public Q_SLOTS:
   void slotAddTab();
   void slotSplitViewHorizontal();
   void slotSplitViewVertical();
+  void slotRemoveOtherTabs();
+  void slotRemoveOtherTabsPopupDelayed();
 
 private Q_SLOTS:
   void slotViewCompleted( KonqView * view );
@@ -430,7 +432,6 @@ private Q_SLOTS:
   void slotRemoveView();
 
   void slotRemoveOtherTabsPopup();
-  void slotRemoveOtherTabsPopupDelayed();
 
   void slotReloadPopup();
   void slotReloadAllTabs();
