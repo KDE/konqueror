@@ -2528,6 +2528,14 @@ void KonqMainWindow::slotRemoveTabPopupDelayed()
   m_pViewManager->removeTab( m_pWorkingTab );
 }
 
+void KonqMainWindow::slotRemoveOtherTabs()
+{
+    // This action is triggered by the shortcut that removes other tabs, so
+    // we need to set the working tab to the current tab
+    m_pWorkingTab = m_pViewManager->tabContainer()->tabContaining(m_currentView->frame());
+    slotRemoveOtherTabsPopup();
+}
+
 void KonqMainWindow::slotRemoveOtherTabsPopup()
 {
   if ( KMessageBox::warningContinueCancel( this,
@@ -2541,7 +2549,10 @@ void KonqMainWindow::slotRemoveOtherTabsPopup()
   MapViews::ConstIterator end = m_mapViews.end();
   for (; it != end; ++it ) {
     KonqView *view = it.value();
-    if ( view != originalView && view && view->part() && (view->part()->metaObject()->indexOfProperty("modified") != -1) ) {
+    // m_currentView might be a view contained inside a splitted view so what we'll
+    // do here is just compare if the views are inside the same tab.
+    if ( view != originalView && view && m_pViewManager->tabContainer()->tabContaining(view->frame()) != m_pWorkingTab &&
+        view->part() && (view->part()->metaObject()->indexOfProperty("modified") != -1) ) {
       QVariant prop = view->part()->property("modified");
       if (prop.isValid() && prop.toBool()) {
         m_pViewManager->showTab( view );
@@ -3690,7 +3701,7 @@ void KonqMainWindow::initActions()
   m_paRemoveOtherTabs = actionCollection()->addAction("removeothertabs");
   m_paRemoveOtherTabs->setIcon( KIcon("tab-close-other") );
   m_paRemoveOtherTabs->setText( i18n( "Close &Other Tabs" ) );
-  connect(m_paRemoveOtherTabs, SIGNAL(triggered()), SLOT( slotRemoveOtherTabsPopup() ));
+  connect(m_paRemoveOtherTabs, SIGNAL(triggered()), SLOT( slotRemoveOtherTabs() ));
 
   m_paActivateNextTab = actionCollection()->addAction("activatenexttab");
   m_paActivateNextTab->setText( i18n( "Activate Next Tab" ) );
