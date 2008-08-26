@@ -84,7 +84,7 @@ static int s_maxEntries = 0;
 
 KonqMostOftenURLSAction::KonqMostOftenURLSAction( const QString& text,
 						  QObject* parent )
-    : KActionMenu( KIcon("goto-page"), text, parent ),
+    : KActionMenu( KIcon("go-jump"), text, parent ),
       m_parsingDone(false)
 {
     setDelayed( false );
@@ -214,7 +214,7 @@ void KonqMostOftenURLSAction::slotActivated(QAction* action)
 ///////////////////////////////
 
 KonqHistoryAction::KonqHistoryAction(const QString& text, QObject* parent)
-    : KActionMenu(KIcon("goto-page"), text, parent)
+    : KActionMenu(KIcon("go-jump"), text, parent)
 {
     setDelayed(false);
     connect(menu(), SIGNAL(aboutToShow()), SLOT(slotFillMenu()));
