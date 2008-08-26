@@ -120,7 +120,7 @@ private Q_SLOTS:
   void slotReceivedDropEvent( QDropEvent* );
   void slotInitiateDrag( QWidget * );
   void slotReceivedDropEvent( QWidget *, QDropEvent * );
-  void slotSubPopupMenuTabActivated( int );
+  void slotSubPopupMenuTabActivated( QAction * );
 
 private:
   QList<KonqFrameBase*> m_childFrameList;
@@ -133,8 +133,8 @@ private:
   bool m_permanentCloseButtons;
   bool m_alwaysTabBar;
   bool m_MouseMiddleClickClosesTab;
-  int m_closeOtherTabsId;
   KonqTabsStyle *m_konqTabsStyle;
+  QMap<QString,QAction*> m_popupActions;
 
   friend class KonqTabsStyle;
 };
