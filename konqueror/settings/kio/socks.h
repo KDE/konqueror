@@ -71,6 +71,7 @@ private Q_SLOTS:
   void libSelection();
 
 private:
+  void setCustomPathEnabled(int id);
 
   bool _socksEnabled;
   int _useWhat;
