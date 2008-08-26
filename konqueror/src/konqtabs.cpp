@@ -47,12 +47,6 @@
 
 #include <QtGui/QStyle>
 
-#define DUPLICATE_ID 3
-#define RELOAD_ID 4
-#define BREAKOFF_ID 5
-#define CLOSETAB_ID 6
-#define OTHERTABS_ID 7
-
 //###################################################################
 
 class KonqTabsStyle : public KonqProxyStyle
@@ -133,7 +127,6 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
     m_pPopupMenu(0),
     m_pSubPopupMenuTab(0),
     m_rightWidget(0), m_leftWidget(0), m_alwaysTabBar(false),
-    m_closeOtherTabsId(0),
     m_konqTabsStyle( new KonqTabsStyle( this ) )
 {
   // Set an object name so the widget style can identify this widget.
@@ -377,12 +370,12 @@ void KonqFrameTabs::slotMovedTab( int from, int to )
 void KonqFrameTabs::slotContextMenu( const QPoint &p )
 {
   refreshSubPopupMenuTab();
-  m_pPopupMenu->setItemEnabled( RELOAD_ID, false );
-  m_pPopupMenu->setItemEnabled( DUPLICATE_ID, false );
-  m_pPopupMenu->setItemEnabled( BREAKOFF_ID, false );
-  m_pPopupMenu->setItemEnabled( CLOSETAB_ID, false );
-  m_pPopupMenu->setItemEnabled( OTHERTABS_ID, true );
-  m_pSubPopupMenuTab->setItemEnabled( m_closeOtherTabsId, false );
+  m_popupActions["reload"]->setEnabled( false );
+  m_popupActions["duplicatecurrenttab"]->setEnabled( false );
+  m_popupActions["breakoffcurrenttab"]->setEnabled( false );
+  m_popupActions["removecurrenttab"]->setEnabled( false );
+  m_popupActions["othertabs"]->setEnabled( true );
+  m_popupActions["closeothertabs"]->setEnabled( false );
 
   m_pPopupMenu->exec( p );
 }
@@ -391,12 +384,12 @@ void KonqFrameTabs::slotContextMenu( QWidget *w, const QPoint &p )
 {
   refreshSubPopupMenuTab();
   uint tabCount = m_childFrameList.count();
-  m_pPopupMenu->setItemEnabled( RELOAD_ID, true );
-  m_pPopupMenu->setItemEnabled( DUPLICATE_ID, true );
-  m_pPopupMenu->setItemEnabled( BREAKOFF_ID, tabCount>1 );
-  m_pPopupMenu->setItemEnabled( CLOSETAB_ID, tabCount>1 );
-  m_pPopupMenu->setItemEnabled( OTHERTABS_ID, tabCount>1 );
-  m_pSubPopupMenuTab->setItemEnabled( m_closeOtherTabsId, true );
+  m_popupActions["reload"]->setEnabled( true );
+  m_popupActions["duplicatecurrenttab"]->setEnabled( true );
+  m_popupActions["breakoffcurrenttab"]->setEnabled( tabCount > 1 );
+  m_popupActions["removecurrenttab"]->setEnabled( tabCount > 1 );
+  m_popupActions["othertabs"]->setEnabled( true );
+  m_popupActions["closeothertabs"]->setEnabled( true );
 
   // Yes, I know this is an unchecked dynamic_cast - I'm casting sideways in a
   // class hierarchy and it could crash one day, but I haven't checked
@@ -426,13 +419,14 @@ void KonqFrameTabs::refreshSubPopupMenuTab()
             if ( title.isEmpty() )
                 title = url.pathOrUrl();
             title = KStringHandler::csqueeze( title, 50 );
-            m_pSubPopupMenuTab->insertItem( KIcon( KonqPixmapProvider::self()->iconNameFor(url) ), title, i );
+            QAction *action = m_pSubPopupMenuTab->addAction( KIcon( KonqPixmapProvider::self()->iconNameFor(url) ), title );
+            action->setData( i );
         }
-        i++;
+        ++i;
     }
     m_pSubPopupMenuTab->addSeparator();
-    m_closeOtherTabsId =
-      m_pSubPopupMenuTab->insertItem( KIcon( "tab-close-other" ),
+    m_popupActions["closeothertabs"] =
+      m_pSubPopupMenuTab->addAction( KIcon( "tab-close-other" ),
 				      i18n( "Close &Other Tabs" ),
 				      m_pViewManager->mainWindow(),
 				      SLOT( slotRemoveOtherTabsPopup() ),
@@ -448,9 +442,9 @@ void KonqFrameTabs::slotCloseRequest( QWidget *w )
   }
 }
 
-void KonqFrameTabs::slotSubPopupMenuTabActivated( int _id)
+void KonqFrameTabs::slotSubPopupMenuTabActivated( QAction *action )
 {
-    setCurrentIndex( _id );
+    setCurrentIndex( action->data().toInt() );
 }
 
 void KonqFrameTabs::slotMouseMiddleClick()
@@ -550,41 +544,39 @@ void KonqFrameTabs::setAlwaysTabbedMode( bool enable )
 void KonqFrameTabs::initPopupMenu()
 {
   m_pPopupMenu = new QMenu( this );
-  m_pPopupMenu->addAction( KIcon( "tab-new" ),
+  m_popupActions["newtab"] = m_pPopupMenu->addAction( KIcon( "tab-new" ),
                             i18n("&New Tab"),
                             m_pViewManager->mainWindow(),
                             SLOT( slotAddTab() ),
                             m_pViewManager->mainWindow()->action("newtab")->shortcut() );
-  m_pPopupMenu->insertItem( KIcon( "tab-duplicate" ),
+  m_popupActions["duplicatecurrenttab"] = m_pPopupMenu->addAction( KIcon( "tab-duplicate" ),
                             i18n("&Duplicate Tab"),
                             m_pViewManager->mainWindow(),
                             SLOT( slotDuplicateTabPopup() ),
-                            m_pViewManager->mainWindow()->action("duplicatecurrenttab")->shortcut(),
-                            DUPLICATE_ID );
-  m_pPopupMenu->insertItem( KIcon( "view-refresh" ),
+                            m_pViewManager->mainWindow()->action("duplicatecurrenttab")->shortcut() );
+  m_popupActions["reload"] = m_pPopupMenu->addAction( KIcon( "view-refresh" ),
                             i18n( "&Reload Tab" ),
                             m_pViewManager->mainWindow(),
                             SLOT( slotReloadPopup() ),
-                            m_pViewManager->mainWindow()->action("reload")->shortcut(), RELOAD_ID );
+                            m_pViewManager->mainWindow()->action("reload")->shortcut() );
   m_pPopupMenu->addSeparator();
   m_pSubPopupMenuTab = new QMenu( this );
-  m_pPopupMenu->insertItem( i18n("Other Tabs" ), m_pSubPopupMenuTab, OTHERTABS_ID );
-  connect( m_pSubPopupMenuTab, SIGNAL( activated ( int ) ),
-           this, SLOT( slotSubPopupMenuTabActivated( int ) ) );
+  m_popupActions["othertabs"] = m_pPopupMenu->addMenu( m_pSubPopupMenuTab );
+  m_popupActions["othertabs"]->setText( i18n("Other Tabs") );
+  connect( m_pSubPopupMenuTab, SIGNAL( triggered ( QAction * ) ),
+           this, SLOT( slotSubPopupMenuTabActivated( QAction * ) ) );
   m_pPopupMenu->addSeparator();
-  m_pPopupMenu->insertItem( KIcon( "tab-detach" ),
+  m_popupActions["breakoffcurrenttab"] = m_pPopupMenu->addAction( KIcon( "tab-detach" ),
                             i18n("D&etach Tab"),
                             m_pViewManager->mainWindow(),
                             SLOT( slotBreakOffTabPopup() ),
-                            m_pViewManager->mainWindow()->action("breakoffcurrenttab")->shortcut(),
-                            BREAKOFF_ID );
+                            m_pViewManager->mainWindow()->action("breakoffcurrenttab")->shortcut() );
   m_pPopupMenu->addSeparator();
-  m_pPopupMenu->insertItem( KIcon( "tab-close" ),
+  m_popupActions["removecurrenttab"] = m_pPopupMenu->addAction( KIcon( "tab-close" ),
                             i18n("&Close Tab"),
                             m_pViewManager->mainWindow(),
                             SLOT( slotRemoveTabPopup() ),
-                            m_pViewManager->mainWindow()->action("removecurrenttab")->shortcut(),
-                            CLOSETAB_ID );
+                            m_pViewManager->mainWindow()->action("removecurrenttab")->shortcut() );
   connect( this, SIGNAL( contextMenu( QWidget *, const QPoint & ) ),
            SLOT(slotContextMenu( QWidget *, const QPoint & ) ) );
   connect( this, SIGNAL( contextMenu( const QPoint & ) ),
