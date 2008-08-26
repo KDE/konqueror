@@ -180,7 +180,11 @@ int main(int argc, char ** argv)
     bool ok;
     long id = QString(args->getOption("parent")).toLong(&ok);
     if (ok)
-      KWindowSystem::setMainWindow( &dlg, id );
+#ifdef Q_WS_WIN
+        KWindowSystem::setMainWindow( &dlg, reinterpret_cast<WId>( id ) );
+#else
+        KWindowSystem::setMainWindow( &dlg, id );
+#endif
   }
   args->clear();
   if ( !createType )
