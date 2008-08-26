@@ -31,6 +31,7 @@ class ViewMgrTest : public QObject
 private Q_SLOTS:
     void initTestCase();
 
+    void testCloseOtherTabs();
     void testCreateFirstView();
     void testRemoveFirstView();
     void testSplitView();

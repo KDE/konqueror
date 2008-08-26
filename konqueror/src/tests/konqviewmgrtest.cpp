@@ -26,6 +26,7 @@
 #include <konqtabs.h>
 #include <konqframevisitor.h>
 #include <kstandarddirs.h>
+#include <kconfiggroup.h>
 #include <QLayout>
 
 QTEST_KDEMAIN_WITH_COMPONENTNAME( ViewMgrTest, GUI, "konqueror" )
@@ -384,6 +385,27 @@ void ViewMgrTest::testDuplicateWindow()
     KonqMainWindow* secondWindow = viewManager->duplicateWindow();
     QCOMPARE( DebugFrameVisitor::inspect(secondWindow), QString("MT[FC(FF)].") ); // mainWindow, tab widget, first tab = one frame, second tab = splitter with two frames
     delete secondWindow;
+}
+
+void ViewMgrTest::testCloseOtherTabs()
+{
+    // Set the default value of the dialog "discardchangescloseother" to true
+    // so that we don't get asked in the test
+    KSharedConfig::Ptr config = KGlobal::config();
+    KConfigGroup cg( config, QLatin1String("Notification Messages") );
+    cg.writeEntry("CloseOtherTabConfirm", false);
+    
+    KonqMainWindow mainWindow;
+    mainWindow.openUrl(0, KUrl("data:text/html, <p>Hello World</p>"), "text/html");
+    KonqViewManager* viewManager = mainWindow.viewManager();
+    viewManager->addTab("text/html");
+    KonqView* viewTab2 = viewManager->addTab("text/html");
+    viewManager->splitView( viewTab2, Qt::Horizontal );
+    viewManager->addTab("text/html");
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[FFC(FF)F].") ); // mainWindow, tab widget, first tab = one frame, second tab = one frame, third tab = splitter with two frames, fourth tab = one frame
+    mainWindow.setWorkingTab(viewTab2->frame()); // This actually sets a frame which is not a tab, but KonqViewManager::removeOtherTabs should be able to deal with these cases
+    mainWindow.slotRemoveOtherTabsPopupDelayed();
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, first tab = splitter with two frames
 }
 
 void ViewMgrTest::testDuplicateWindowWithSidebar()
