@@ -308,7 +308,6 @@ void KonqViewManager::breakOffTab( KonqFrameBase* currentFrame, const QSize& win
   KonqMainWindow *mainWindow = new KonqMainWindow(KUrl(), m_pMainWindow->xmlFile());
 
   mainWindow->viewManager()->loadViewProfileFromGroup( profileGroup, QString() );
-  mainWindow->applyMainWindowSettings( m_pMainWindow->autoSaveConfigGroup() );
 
   KonqFrameTabs * kft = mainWindow->viewManager()->tabContainer();
   KonqFrameBase *newFrame = dynamic_cast<KonqFrameBase*>(kft->currentWidget());
