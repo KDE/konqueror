@@ -296,8 +296,8 @@ void KonqViewManager::breakOffTab( KonqFrameBase* currentFrame, const QSize& win
 
   KTemporaryFile tempFile;
   tempFile.open();
-  KConfig config( tempFile.fileName() );
-  KConfigGroup profileGroup( &config, "Profile" );
+  KSharedConfigPtr config = KSharedConfig::openConfig( tempFile.fileName() );
+  KConfigGroup profileGroup( config, "Profile" );
 
   QString prefix = KonqFrameBase::frameTypeToString(currentFrame->frameType()) + QString::number(0);
   profileGroup.writeEntry( "RootItem", prefix );
@@ -307,7 +307,7 @@ void KonqViewManager::breakOffTab( KonqFrameBase* currentFrame, const QSize& win
 
   KonqMainWindow *mainWindow = new KonqMainWindow(KUrl(), m_pMainWindow->xmlFile());
 
-  mainWindow->viewManager()->loadViewProfileFromGroup( profileGroup, QString() );
+  mainWindow->viewManager()->loadViewProfileFromConfig( config, QString(), currentProfile() );
 
   KonqFrameTabs * kft = mainWindow->viewManager()->tabContainer();
   KonqFrameBase *newFrame = dynamic_cast<KonqFrameBase*>(kft->currentWidget());
@@ -423,7 +423,7 @@ void KonqViewManager::reloadAllTabs( )
 void KonqViewManager::removeOtherTabs( KonqFrameBase* currentFrame )
 {
   Q_ASSERT(currentFrame);
-  
+
   // currentFrame might be a frame contained inside a splitted frame so what we'll
   // do here is just compare if the frames are inside the same tab.
   currentFrame = m_tabContainer->tabContaining(currentFrame);
