@@ -31,6 +31,7 @@ target_link_libraries(kdewebkit
     ${KDE4_KPARTS_LIBS}
     ${QT_QTWEBKIT_LIBRARY}
     ${QT_QTUITOOLS_LIBRARY}
+    ${QT_QTXML_LIBRARY}
 )
 
 #set_target_properties(kdewebkit PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION})
