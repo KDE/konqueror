@@ -414,8 +414,6 @@ private:
   QString m_currentProfileText;
 
     QMap<QString /*display name*/, QString /*path to file*/> m_mapProfileNames;
-
-  QTimer *m_activePartChangedTimer;
 };
 
 #endif
