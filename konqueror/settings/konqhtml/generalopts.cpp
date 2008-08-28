@@ -162,7 +162,7 @@ void KKonqGeneralOptions::load()
 
     KConfigGroup cg(m_pConfig, "FMSettings"); // ### what a wrong group name for these settings...
 
-    tabOptions->m_pShowMMBInTabs->setChecked( cg.readEntry( "MMBOpensTab", false ) );
+    tabOptions->m_pShowMMBInTabs->setChecked( cg.readEntry( "MMBOpensTab", true ) );
     tabOptions->m_pDynamicTabbarHide->setChecked( ! (cg.readEntry( "AlwaysTabbedMode", false )) );
 
     tabOptions->m_pNewTabsInBackground->setChecked( ! (cg.readEntry( "NewTabsInFront", false)) );
