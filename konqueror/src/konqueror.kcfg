@@ -71,7 +71,7 @@
       <whatsthis></whatsthis>
       <!-- checked -->
     </entry>
-<!-- advancedTabDialog.cpp -->
+<!-- konqtabs.cpp, gui in generalopts.cpp (advancedTabOptions.ui) -->
     <entry key="NewTabsInFront" type="Bool">
       <default>false</default> 
       <label></label>
@@ -108,19 +108,12 @@
       <whatsthis></whatsthis>
       <!-- checked -->
     </entry>
-<!-- konqsettings.cpp --> 
-    <entry key="WordWrapText" type="Bool"> <!--LIBKONQ-->
-      <default>true</default> 
-      <label></label>
-      <whatsthis></whatsthis>
-      <!-- no writeEntry -->
-    </entry>
-<!-- konqtabs.cpp --> 
+<!-- konqtabs.cpp, gui in generalopts.cpp --> 
     <entry key="MouseMiddleClickClosesTab" type="Bool">
       <default>false</default> 
       <label></label>
       <whatsthis></whatsthis>
-      <!-- no writeEntry / hidden-->
+      <!-- checked -->
     </entry>
     <entry key="HoverCloseButton" type="Bool">
       <default>false</default> 
@@ -167,7 +160,7 @@
 
   <group name="HTML Settings" >
 <!-- appearance.cpp -->
-    <entry key="StandardFont" type="Font"> <!--LIBKONQ-->
+    <entry key="StandardFont" type="Font"> <!--KHTML-->
       <default code="true">QFont(HTML_DEFAULT_VIEW_SANSSERIF_FONT)</default> 
       <label>Standard font</label>
       <whatsthis>This is the font used to display text in Konqueror windows.</whatsthis>
@@ -226,7 +219,7 @@
       <whatsthis></whatsthis>
       <!-- checked -->
     </entry>
-    <entry key="AutoDelayedActions" type="Bool">
+    <entry key="AutoDelayedActions" type="Bool"> <!--KHTML-->
       <default>true</default> 
       <label></label>
       <whatsthis></whatsthis>
@@ -249,7 +242,7 @@
       <default>true</default> 
       <label></label>
       <whatsthis></whatsthis>
-      <!-- Can't find writeEntry -->
+      <!-- No writeEntry; hidden -->
     </entry>
 <!-- KDELIBS/khtml_part.cpp -->
     <entry key="AutomaticDetectionLanguage" type="Int"> <!--KHTML-->
