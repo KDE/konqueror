@@ -62,6 +62,8 @@ void SearchBar::initializeSearchWidget()
     ui.nextButton->setIcon(KIcon("go-down-search"));
     ui.nextButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     ui.searchInfo->setText(QString());
+    connect(ui.searchLineEdit, SIGNAL(textChanged(const QString&)),
+            this, SIGNAL(searchChanged(const QString&)));
     connect(ui.nextButton, SIGNAL(clicked()),
             this, SIGNAL(findNextClicked()));
     connect(ui.previousButton, SIGNAL(clicked()),
