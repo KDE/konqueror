@@ -1133,7 +1133,8 @@ static bool isPopupWindow( const KParts::WindowArgs &windowArgs )
         !windowArgs.isStatusBarVisible();
 }
 
-// This is called for the javascript window.open call. Also called for MMB on link.
+// This is called for the javascript window.open call.
+// Also called for MMB on link, target="_blank" link, MMB on folder, etc.
 void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
                                           const KParts::OpenUrlArguments& args,
                                           const KParts::BrowserArguments &browserArgs,
@@ -1202,8 +1203,8 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
         return;
     }
 
-    mainWindow = new KonqMainWindow;
-    mainWindow->setInitialFrameName( browserArgs.frameName );
+    // Pass the URL to createNewWindow so that it can select the right profile for it
+    mainWindow = KonqMisc::createNewWindow(url, args, browserArgs, false, QStringList(), false, false /*do not open URL*/);
     mainWindow->resetAutoSaveSettings(); // Don't autosave
 
     KonqOpenURLRequest req;
@@ -1226,6 +1227,7 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
     KonqView * view = 0;
     // cannot use activePart/currentView, because the activation through the partmanager
     // is delayed by a singleshot timer (see KonqViewManager::setActivePart)
+    // ### TODO: not true anymore
     if ( mainWindow->viewMap().count() )
     {
       MapViews::ConstIterator it = mainWindow->viewMap().begin();
