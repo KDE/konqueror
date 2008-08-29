@@ -71,6 +71,7 @@ private:
 
 private Q_SLOTS:
     void slotHide();
+    void searchAsYouTypeChanged(int state);
 
 };
 

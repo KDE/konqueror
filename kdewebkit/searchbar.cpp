@@ -62,8 +62,11 @@ void SearchBar::initializeSearchWidget()
     ui.nextButton->setIcon(KIcon("go-down-search"));
     ui.nextButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     ui.searchInfo->setText(QString());
+    if (ui.searchAsYouType->checkState() == Qt::Checked) {
     connect(ui.searchLineEdit, SIGNAL(textChanged(const QString&)),
             this, SIGNAL(searchChanged(const QString&)));
+    }
+    connect(ui.searchAsYouType, SIGNAL(stateChanged(int)), this, SLOT(searchAsYouTypeChanged(int)));
     connect(ui.nextButton, SIGNAL(clicked()),
             this, SIGNAL(findNextClicked()));
     connect(ui.previousButton, SIGNAL(clicked()),
@@ -155,6 +158,15 @@ void SearchBar::setFoundMatch(bool match)
     } else {
         ui.searchLineEdit->setStyleSheet(QString());
     }
+}
+void SearchBar::searchAsYouTypeChanged(int state)
+{
+    if (state == 0) {
+        disconnect(ui.searchLineEdit, SIGNAL(textChanged(const QString&)),
+                   this, SIGNAL(searchChanged(const QString&)));
+    }
+    connect(ui.searchLineEdit, SIGNAL(textChanged(const QString&)),
+               this, SIGNAL(searchChanged(const QString&)));
 }
 
 #include "searchbar.moc"
