@@ -1247,12 +1247,6 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
     if ( windowArgs.y() != -1 )
         mainWindow->move( mainWindow->x(), windowArgs.y() );
 
-    KSharedConfigPtr cfg = KSharedConfig::openConfig(KonqMisc::defaultProfilePath(), KConfig::SimpleConfig);
-    KConfigGroup profileGroup(cfg, "Profile");
-
-    // First, load profile and apply its default size
-    mainWindow->applyMainWindowSettings(profileGroup);
-
     int width;
     if ( windowArgs.width() != -1 )
         width = windowArgs.width();
