@@ -49,7 +49,7 @@ public:
     bool undoAvailable() const;
     QString undoText() const;
     quint64 newCommandSerialNumber();
-    
+
     /**
      * This method is not constant because when calling it the m_closedItemsList
      * might get filled because of delayed initilization.
@@ -129,7 +129,7 @@ public:
     static KonqClosedWindowsManager *self();
 
     const QList<KonqClosedWindowItem *>& closedWindowItemList();
-    
+
     /**
      * When a window is closed it's added with this function to
      * m_closedWindowItemList.
@@ -144,7 +144,7 @@ public:
     KConfig* config();
 
     /**
-     * Called by the KonqUndoManager when a local window is being closed. 
+     * Called by the KonqUndoManager when a local window is being closed.
      * Saves the closed windows list to disk inside a config file.
      */
     void saveConfig();
@@ -179,17 +179,6 @@ private:
     KonqClosedWindowsManager();
 
     virtual ~KonqClosedWindowsManager();
-
-    /**
-     * Called by readSettings(), which is called by a singleShot timer inside
-     * the constructor. Fills the closed window list with items from other
-     * konqueror instances, being the list retrieved via DBUS using the method
-     * localClosedWindowItems();
-     *
-     * It also sets a timer so that if no other konqueror instance pings back in
-     * X miliseconds, then the closed window list is read from disk.
-     */
-    void populate();
 
     KonqClosedRemoteWindowItem* findClosedRemoteWindowItem(const QString& configFileName,
         const QString& configGroup);
