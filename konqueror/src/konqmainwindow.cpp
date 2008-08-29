@@ -259,7 +259,7 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
   connect( KGlobalSettings::self(), SIGNAL( kdisplayFontChanged()), SLOT(slotReconfigure()));
 
   //load the xmlui file specified in the profile or the default konqueror.rc
-  setXMLFile( xmluiFile );
+  setXMLFile( KonqViewManager::normalizedXMLFileName(xmluiFile) );
 
   setStandardToolBarMenuEnabled( true );
 
@@ -4824,9 +4824,10 @@ void KonqMainWindow::readProperties( const KConfigGroup& configGroup )
 {
     // ######### THIS CANNOT WORK. It's too late to change the xmlfile, the GUI has been built already!
     // We need to delay doing setXMLFile+createGUI until we know which profile we are going to use, then...
-    // TODO: Big refactoring ahead.
+    // TODO: Big refactoring needed for this feature. On the other hand, all default profiles shipped with
+    // konqueror use konqueror.rc again, so the need for this is almost zero now.
     const QString xmluiFile = configGroup.readEntry("XMLUIFile","konqueror.rc");
-    setXMLFile(xmluiFile);
+    setXMLFile( KonqViewManager::normalizedXMLFileName(xmluiFile) );
 
     m_pViewManager->loadViewProfileFromGroup( configGroup, QString() /*no profile name*/ );
     // read window settings
@@ -5819,17 +5820,6 @@ void KonqMainWindow::applyWindowSizeFromProfile(const KConfigGroup& profileGroup
     if (size.isValid())
         resize(size);
     restoreWindowSize(profileGroup); // example: "Width 1400=1120"
-}
-
-void KonqMainWindow::setXMLFile(const QString& _xmluiFile, bool merge, bool setXMLDoc)
-{
-    QString xmluiFile = _xmluiFile;
-    // Compatibility with pre-kde-4.2 times where there were 2 forks of konqueror.rc
-    // Those have been merged back again, so convert to "konqueror.rc".
-    if (xmluiFile == "konq-filemanagement.rc" || xmluiFile == "konq-webbrowsing.rc")
-        xmluiFile = "konqueror.rc";
-
-    KParts::MainWindow::setXMLFile(xmluiFile, merge, setXMLDoc); // it's in KXMLGUIClient in fact
 }
 
 #include "konqmainwindow.moc"

@@ -1353,7 +1353,7 @@ void KonqViewManager::slotProfileActivated(QAction* action)
     const QString fileName = KUrl(profilePath).fileName();
     KConfig cfg(profilePath);
     KConfigGroup profileGroup( &cfg, "Profile" );
-    const QString xmluiFile = profileGroup.readEntry("XMLUIFile","konqueror.rc");
+    const QString xmluiFile = normalizedXMLFileName(profileGroup.readEntry("XMLUIFile","konqueror.rc"));
 
     //If the profile specifies an xmlgui file that differs from the currently
     //loaded one, then we have no choice but to recreate the window.  I've
@@ -1535,6 +1535,15 @@ KonqMainWindow* KonqViewManager::duplicateWindow()
     mainWindow->viewManager()->printFullHierarchy();
 #endif
     return mainWindow;
+}
+
+QString KonqViewManager::normalizedXMLFileName(const QString& xmluiFile)
+{
+    // Compatibility with pre-kde-4.2 times where there were 2 forks of konqueror.rc
+    // Those have been merged back again, so convert to "konqueror.rc".
+    if (xmluiFile == "konq-filemanagement.rc" || xmluiFile == "konq-webbrowsing.rc")
+        return "konqueror.rc";
+    return xmluiFile;
 }
 
 #include "konqviewmanager.moc"
