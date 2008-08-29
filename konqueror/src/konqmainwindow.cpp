@@ -5821,4 +5821,15 @@ void KonqMainWindow::applyWindowSizeFromProfile(const KConfigGroup& profileGroup
     restoreWindowSize(profileGroup); // example: "Width 1400=1120"
 }
 
+void KonqMainWindow::setXMLFile(const QString& _xmluiFile, bool merge, bool setXMLDoc)
+{
+    QString xmluiFile = _xmluiFile;
+    // Compatibility with pre-kde-4.2 times where there were 2 forks of konqueror.rc
+    // Those have been merged back again, so convert to "konqueror.rc".
+    if (xmluiFile == "konq-filemanagement.rc" || xmluiFile == "konq-webbrowsing.rc")
+        xmluiFile = "konqueror.rc";
+
+    KParts::MainWindow::setXMLFile(xmluiFile, merge, setXMLDoc); // it's in KXMLGUIClient in fact
+}
+
 #include "konqmainwindow.moc"
