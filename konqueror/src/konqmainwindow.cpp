@@ -1240,18 +1240,16 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
        mainWindow->viewManager()->setActivePart( *part, true );
     }
 
-    QString profileName(url.isLocalFile() ? "konqueror/profiles/filemanagement" : "konqueror/profiles/webbrowsing");
-
     if ( windowArgs.x() != -1 )
         mainWindow->move( windowArgs.x(), mainWindow->y() );
     if ( windowArgs.y() != -1 )
         mainWindow->move( mainWindow->x(), windowArgs.y() );
 
-    KSharedConfigPtr cfg = KSharedConfig::openConfig(KStandardDirs::locate("data",profileName), KConfig::SimpleConfig);
+    KSharedConfigPtr cfg = KSharedConfig::openConfig(KonqMisc::defaultProfilePath(), KConfig::SimpleConfig);
     KConfigGroup profileGroup(cfg, "Profile");
 
-    // First, apply default size from profile
-    mainWindow->applyWindowSizeFromProfile(profileGroup);
+    // First, load profile and apply its default size
+    mainWindow->applyMainWindowSettings(profileGroup);
 
     int width;
     if ( windowArgs.width() != -1 )
