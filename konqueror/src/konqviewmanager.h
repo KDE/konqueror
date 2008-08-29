@@ -292,6 +292,12 @@ public:
 
   void showHTML(bool b);
 
+    /**
+     * Normalize the name of the .rc file to use; this is just
+     * for handling compatibility with old profiles mentionning
+     * konq-webbrowsing.rc or konq-filemanagement.rc
+     */
+    static QString normalizedXMLFileName(const QString& xmluiFile);
 
     /**
      * Creates a copy of the current window
@@ -300,13 +306,13 @@ public:
 
     /**
      * Open a saved window.
-     * 
+     *
      * @param openTabsInsideCurrentWindow if true, it will try to open the
      * tabs inside current window.
      */
     KonqMainWindow *openSavedWindow(const KConfigGroup& configGroup,
         bool openTabsInsideCurrentWindow);
-    
+
     /**
      * Open a saved window in a new KonqMainWindow instance.
      * It doesn't have the openTabsInsideCurrentWindow because this is the
@@ -319,7 +325,7 @@ public Q_SLOTS:
      * Opens a previously closed window in a new window
      */
     static void openClosedWindow(const KonqClosedWindowItem& closedTab);
-    
+
     /**
      * Opens a previously closed tab in a new tab
      */

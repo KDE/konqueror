@@ -559,8 +559,6 @@ private Q_SLOTS:
 private:
   QString detectNameFilter( KUrl & url );
 
-    void setXMLFile(const QString& xmluiFile, bool merge = false, bool setXMLDoc = true);
-
   /**
    * takes care of hiding the bookmarkbar and calling setChecked( false ) on the
    * corresponding action
