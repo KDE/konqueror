@@ -26,7 +26,7 @@
   <Action name="cut"/>
   <Action name="copy"/>
   <Action name="paste"/>
-  <ActionList name="operations" /><!-- copy files and move files, when two directory views -->
+  <!--<ActionList name="operations" />--><!-- copy files and move files, when two directory views -->
   <WeakSeparator/>
   <Merge/>
  </Menu>
@@ -57,9 +57,6 @@
   <ActionList name="toggleview" />
   <Separator/>
   <Action name="fullscreen"/>
-  <Separator/>
-  <Action name="webmode"/>
-  <Action name="filemode"/>
   <Separator/>
   <Action name="loadviewprofile"/>
   <Action name="saveviewprofile"/>
@@ -108,7 +105,6 @@
   <Action name="removeview" />
 </ToolBar>
 <ToolBar fullWidth="true" iconText="icononly" name="locationToolBar" newline="true"><text>Location Toolbar</text>
-  <Action name="location_label" />
   <Action name="toolbar_url_combo" />
   <Action name="go_url" />
 </ToolBar>

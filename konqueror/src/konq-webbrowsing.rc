@@ -41,12 +41,8 @@
   <WeakSeparator/>
   <Merge/>
  </Menu>
- <Menu name="go" noMerge="1"><text>&amp;Go</text>
-  <!--<Action name="go_up"/>-->
-  <Action name="go_back"/>
-  <Action name="go_forward"/>
-  <Action name="go_home"/>
-  <Separator/>
+ <Menu name="go"><text>&amp;Go</text>
+  <!-- go_up, go_back, go_forward, go_home: coming from ui_standards.rc -->
   <Merge/>
   <Action name="go_history"/>
   <Separator/>
@@ -61,9 +57,6 @@
   <ActionList name="toggleview" />
   <Separator/>
   <Action name="fullscreen"/>
-  <Separator/>
-  <Action name="webmode"/>
-  <Action name="filemode"/>
   <Separator/>
   <Action name="loadviewprofile"/>
   <Action name="saveviewprofile"/>
