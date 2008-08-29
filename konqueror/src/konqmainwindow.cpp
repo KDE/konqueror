@@ -4457,9 +4457,9 @@ void KonqExtendedBookmarkOwner::openFolderinTabs(const KBookmarkGroup &grp)
     return;
 
   if (list.size() > 20) {
-    if(KMessageBox::questionYesNo(m_pKonqMainWindow, 
+    if(KMessageBox::questionYesNo(m_pKonqMainWindow,
 				  i18n("You have requested to open more than 20 bookmarks in tabs. "
-                                       "This might take a while. Continue?"), 
+                                       "This might take a while. Continue?"),
 				  i18n("Open folder in new tabs")) != KMessageBox::Yes)
       return;
   }
@@ -4822,6 +4822,9 @@ void KonqMainWindow::saveProperties( KConfigGroup& config )
 
 void KonqMainWindow::readProperties( const KConfigGroup& configGroup )
 {
+    // ######### THIS CANNOT WORK. It's too late to change the xmlfile, the GUI has been built already!
+    // We need to delay doing setXMLFile+createGUI until we know which profile we are going to use, then...
+    // TODO: Big refactoring ahead.
     const QString xmluiFile = configGroup.readEntry("XMLUIFile","konqueror.rc");
     setXMLFile(xmluiFile);
 
