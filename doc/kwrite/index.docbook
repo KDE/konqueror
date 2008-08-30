@@ -794,7 +794,7 @@ to provide a way to transfer data between applications.</para>
 <varlistentry>
 <term><anchor id="copy-as-html"/><menuchoice>
 <guimenu>Edit</guimenu><guimenuitem>Copy as
-HTML</guimenuitem></menuchoice></term>
+HTML...</guimenuitem></menuchoice></term>
 <listitem>
 <para>This copies the currently selected text to the clipboard as &HTML;.</para>
  </listitem>
@@ -1128,28 +1128,28 @@ hidden.</para>
 <listitem>
 <variablelist>
 <varlistentry>
-<term><menuchoice><shortcut><keycombo action="simul"><keycap>Ctrl</keycap>
-<keycap>Shift</keycap><keycap>-</keycap></keycombo></shortcut>
+<term><menuchoice><shortcut><keycombo action="simul">&Ctrl;
+&Shift;<keycap>-</keycap></keycombo></shortcut>
 <guimenuitem>Collapse Toplevel</guimenuitem></menuchoice>
 </term>
 <listitem><para>Collapse all toplevel regions in the document.</para></listitem>
 </varlistentry>
 <varlistentry>
-<term><menuchoice><shortcut><keycombo action="simul"><keycap>Ctrl</keycap>
-<keycap>Shift</keycap><keycap>+</keycap></keycombo></shortcut>
+<term><menuchoice><shortcut><keycombo action="simul">&Ctrl;
+&Shift;<keycap>+</keycap></keycombo></shortcut>
 <guimenuitem>Expand Toplevel</guimenuitem></menuchoice>
 </term>
 <listitem><para>Expand all toplevel regions in the document.</para></listitem>
 </varlistentry>
 <varlistentry>
-<term><menuchoice><shortcut><keycombo action="simul"><keycap>Ctrl</keycap>
+<term><menuchoice><shortcut><keycombo action="simul">&Ctrl;
 <keycap>-</keycap></keycombo></shortcut>
 <guimenuitem>Collapse One Local Level</guimenuitem></menuchoice>
 </term>
 <listitem><para>Collapse the region closest to the cursor.</para></listitem>
 </varlistentry>
 <varlistentry>
-<term><menuchoice><shortcut><keycombo action="simul"><keycap>Ctrl</keycap>
+<term><menuchoice><shortcut><keycombo action="simul">&Ctrl;
 <keycap>+</keycap></keycombo></shortcut>
 <guimenuitem>Expand One Local Level</guimenuitem></menuchoice>
 </term>
@@ -1201,7 +1201,7 @@ the list of markers which is appended at the bottom of this menu item.
 </varlistentry>
 
 <varlistentry id="bookmarks-previous">
-<term><menuchoice><shortcut><keycombo action="simul"><keycap>Alt</keycap>
+<term><menuchoice><shortcut><keycombo action="simul">&Alt;
 <keycap>Page Up</keycap></keycombo></shortcut>
 <guimenu>Bookmarks</guimenu><guimenuitem>Previous</guimenuitem></menuchoice>
 </term>
@@ -1212,7 +1212,7 @@ in a line above the cursor.</para></listitem>
 </varlistentry>
 
 <varlistentry id="bookmarks-next">
-<term><menuchoice><shortcut><keycombo action="simul"><keycap>Alt</keycap>
+<term><menuchoice><shortcut><keycombo action="simul">&Alt;
 <keycap>Page Down</keycap></keycombo></shortcut>
 <guimenu>Bookmarks</guimenu><guimenuitem>Next</guimenuitem></menuchoice></term>
 <listitem><para>This will move the cursor to beginning of the next line with a
@@ -1680,9 +1680,9 @@ have a 'default' shortcut.)  Selecting the Custom Key option activates the three
 check boxes and key button at the bottom of the dialog. The user may then select
 a key combination for the command in question by means of the check boxes and
 key button. For example, with the About &kde; command selected in the display
-window, the user could select &Ctrl; and <keycap>Alt</keycap>, click on  the key
+window, the user could select &Ctrl; and &Alt;, click on  the key
 button, and then press the <keycap>K</keycap> key on the keyboard.  This would
-mean that anytime he or she held down the &Ctrl; and  <keycap>Alt</keycap>
+mean that anytime he or she held down the &Ctrl; and  &Alt;
 buttons and pressed <keycap>K</keycap> (while using
 &kwrite;) the About &kde; display box would be called. </para>
 </listitem>
@@ -2166,7 +2166,7 @@ cursor movement.</para>
 <listitem>
 <para>When this is enabled the editor will insert a calculated number of spaces
 according to the position in the text and the <option>tab-width</option> setting
-when you press the <keycap>TAB</keycap> key.</para>
+when you press the &Tab; key.</para>
 </listitem>
 </varlistentry>
 <varlistentry>
@@ -2363,7 +2363,7 @@ will not be shortened.</para></listitem>
 <term><guilabel>Tab key indents</guilabel></term>
 <listitem>
 <para>This  allows the <keycombo
-action="simul"><keycap>tab</keycap></keycombo> key to be used to indent.</para>
+action="simul">&Tab;</keycombo> key to be used to indent.</para>
 </listitem>
 </varlistentry>
 <varlistentry>
@@ -2386,7 +2386,7 @@ indent.</para>
 <term><guilabel>Insert indent characters</guilabel></term>
 <listitem>
 <para>This allows the <keycombo
-action="simul"><keycap>Tab</keycap></keycombo> key insert indent
+action="simul">&Tab;</keycombo> key insert indent
 characters.</para>
 </listitem>
 </varlistentry>
@@ -2394,14 +2394,14 @@ characters.</para>
 <term><guilabel>Insert tab character</guilabel></term>
 <listitem>
 <para>This allows the <keycombo
-action="simul"><keycap>Tab</keycap></keycombo> key insert a tab.</para>
+action="simul">&Tab;</keycombo> key insert a tab.</para>
 </listitem>
 </varlistentry>
 <varlistentry>
 <term><guilabel>Indent current line</guilabel></term>
 <listitem>
 <para>This allows the <keycombo
-action="simul"><keycap>Tab</keycap></keycombo> key indent the current
+action="simul">&Tab;</keycombo> key indent the current
 line.</para>
 </listitem>
 </varlistentry>

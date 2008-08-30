@@ -187,8 +187,8 @@ The default &dolphin; interface consists of a (1) menu bar, (2) toolbar, (3) loc
 The location bar displays the path to the current folder. The location bar has two versions. By default location is chosen through the 'bread crumb' display.  The bread crumb display makes each folder a link which can be used to immediately go to the entry. The <filename class="directory">/home/peter/Documents</filename> entry in the bread crumb view would become 'Home >  peter >  Documents' with Home, peter, and Documents being clickable links which are able go to there respective locations. This makes navigation to folders above the current folder easier and more intuitive. There is also the classic "location view" which is a text box in which you can type the full path of the folder you wish to view.
 </para>
 
-<para>To switch from location view to breadcrumbs, simply double click in the breadcrumb area. To change back, click the newly appeared yellow arrow to the right of the location bar.</para>
-<para>To change the default &dolphin; view, please see the settings section</para>
+<para>To switch from breadcrumbs to location view, simply click to the right of the breadcrumb area. To change back, click the newly appeared yellow arrow to the right of the location bar.</para>
+<para>To change the default &dolphin; view, please see the settings section.</para>
 <!--TODO make that a link once written-->
 
 
@@ -216,7 +216,7 @@ The <guibutton>Icons</guibutton> view shows the contents of the folder via the f
 </para>
 
 <para>
-The <guibutton>Details</guibutton> view lists the contents of a folder whilst also displaying additional properties about the file. The default &dolphin; configuration only displays the size of the file and the date it was last modified. The choice of additional information shown can be changed by right clicking on the column header and selecting the information you wish to view or in <menuchoice><guimenu>Settings</guimenu><guisubmenu>Configure Dolphin</guisubmenu></menuchoice>
+The <guibutton>Details</guibutton> view lists the contents of a folder whilst also displaying additional properties about the file. The default &dolphin; configuration only displays the size of the file and the date it was last modified. The choice of additional information shown can be changed by right clicking on the column header and selecting the information you wish to view or in <menuchoice><guimenu>Settings</guimenu><guisubmenu>Configure &dolphin;...</guisubmenu></menuchoice>
 </para>
 
 <para>
@@ -250,7 +250,7 @@ Changing the view of the folder a user is working in is as simple as clicking th
 </para>
 
 <para>
-The workspace in &dolphin; is capable of showing two folders within the same window, known as split workspaces. In order to enable or disable the split workspace mode toggle the icon on the taskbar. Another way to enable or disable the split workspace mode is to use the <menuchoice><guimenu>View</guimenu><guimenuitem>Split View</guimenuitem></menuchoice> menu option.
+The workspace in &dolphin; is capable of showing two folders within the same window, known as split workspaces. In order to enable or disable the split workspace mode toggle the icon on the taskbar. Another way to enable or disable the split workspace mode is to use the <menuchoice><guimenu>View</guimenu><guimenuitem>Split</guimenuitem></menuchoice> menu option.
 </para>
 
 <para>
@@ -278,7 +278,7 @@ If this option is enabled then the workspace will split apart. Two separate work
 </para>
 
 <para>
-&dolphin; can also display files and sub-folders that are hidden in the the current folder &eg; files such as <filename>.dolphin</filename> and sub-folder such as <filename class="directory">.kde/</filename>.
+&dolphin; can also display files and sub-folders that are hidden in the current folder &eg; files such as <filename>.dolphin</filename> and sub-folder such as <filename class="directory">.kde/</filename>.
 </para>
 
 <para>
@@ -320,7 +320,7 @@ To change the way the folder is sorted, via the menu <menuchoice><guimenu>View</
 <sect3>
 <title>Places</title>
 <para>
-The Places panel is found at the left of the window by default, The Place panel shows any locations you have bookmarked. It also shows any disk or media attached to the computer. This list corresponds with the list of places in the breadcrumbs menu.
+The <guilabel>Places</guilabel> panel is found at the left of the window by default, The <guilabel>Places</guilabel> panel shows any locations you have bookmarked. It also shows any disk or media attached to the computer. This list corresponds with the list of places in the breadcrumbs menu.
 </para>
 
 </sect3>
@@ -328,14 +328,14 @@ The Places panel is found at the left of the window by default, The Place panel 
 <sect3>
 <title>Information</title>
 <para>
-The Information panel shows extended information about the selected file(s), including size, type, and date of last modification. Information also features a large preview of the selected file.
+The <guilabel>Information</guilabel> panel shows extended information about the selected file(s), including size, type, and date of last modification. Information also features a large preview of the selected file.
 </para>
 </sect3>
 
 <sect3>
 <title>Folders</title>
 <para>
-The folders panel shows a tree view structure of the file system. It only shows folders. By selecting a folder the main &dolphin; area changes to show the contents of the selected folders.
+The <guilabel>Folders</guilabel> panel shows a tree view structure of the file system. It only shows folders. By selecting a folder the main &dolphin; area changes to show the contents of the selected folder.
 </para>
 </sect3>
 
@@ -385,7 +385,7 @@ The toolbar is also used for navigating the file system.  The toolbar contains t
 </para>
 
 <para>
-Other buttons can be added to the toolbar to further aid navigation or to provide short cuts for functions within &dolphin; &eg; deleting a file.
+Other buttons can be added to the toolbar to further aid navigation or to provide shortcuts for functions within &dolphin; &eg; deleting a file.
 </para>
 
 <para>
@@ -425,7 +425,7 @@ The second view is the breadcrumb view.  This allows the user to move to a folde
 </para>
 
 <para>
-In order to change between the two location bar views, click on the the browse button.  This will toggle the view between the folder path view and the bread crumb view.  A second way of switching between the folder path view and the breadcrumb view is via <menuchoice> <guimenu>View</guimenu> <guisubmenu>Navigation Bar</guisubmenu> <guimenuitem>Edit Location</guimenuitem> </menuchoice>.
+To switch from breadcrumbs to location view, simply click in the right part of the breadcrumb area or use <menuchoice> <guimenu>View</guimenu> <guisubmenu>Navigation Bar</guisubmenu> <guimenuitem>Edit Location</guimenuitem> </menuchoice>. To change back, click the newly appeared yellow arrow to the right of the location bar or use <menuchoice> <guimenu>View</guimenu> <guisubmenu>Navigation Bar</guisubmenu> <guimenuitem>Show Full Location</guimenuitem> </menuchoice>.
 </para>
 
 <para>
@@ -469,7 +469,7 @@ In order to aid the navigation of the file system, &dolphin; can use Places.  Pl
 </para>
 
 <para>
-In order to select a Place, the location bar must be set to the breadcrumb view.  Clicking the image of the home button (as set by the icon theme currently in use) will drop down a list of all the available bookmarks.  The &dolphin; Places Panel also contains your Places list.  This can be accessed via switching the the sideba to bookmarks mode.  The user then clicks the desired Place to open that folder. 
+In order to select a Place, the location bar must be set to the breadcrumb view.  Clicking the image of the home button (as set by the icon theme currently in use) will drop down a list of all the available bookmarks.  The &dolphin; Places Panel also contains your Places list.  This can be accessed via switching the sidebar to bookmarks mode.  The user then clicks the desired Place to open that folder. 
 </para>
 
 <para>
@@ -485,7 +485,7 @@ In order to configure &dolphin; the user needs to access the &dolphin; Configura
 </para>
 
 <para>
-The &dolphin; Configuration dialog consists of three sections; Startup, View Modes, and General.  Clicking one of these sections will make those options available accordingly.  The options available are displayed to the right of the dialog.
+The &dolphin; Configuration dialog consists of three sections; <guilabel>Startup</guilabel>, <guilabel>View Modes</guilabel>, and <guilabel>General</guilabel>.  Clicking one of these sections will make those options available accordingly.  The options available are displayed to the right of the dialog.
 </para>
 
 <para>
@@ -503,7 +503,7 @@ The &dolphin; Configuration dialog consists of three sections; Startup, View Mod
 </para>
 
 <para>
-The General option allows users to set a number of options for &dolphin;, these are; the default home location for the user &eg; /home/Peter, the default view mode (all folders will use this view unless they have already been changed) and wether or not split view is anable by default.
+The <guilabel>General</guilabel> option allows users to set a number of options for &dolphin;, these are; the default home location for the user &eg; /home/Peter, the default view mode (all folders will use this view unless they have already been changed) and wether or not split view is enabled by default.
 </para>
 
 <para>
@@ -521,7 +521,8 @@ The General option allows users to set a number of options for &dolphin;, these 
 </para>
 
 <para>
-The View Modes option differs slightly from the General option in that it has three tabs in the options.  The Icons tab allows users to set options to do with the Icons View Mode &eg; icon size.  The Details tab allows users to set options relating to the Details View Mode &eg; what information about files are shown.  The Previews to allows users to set options relating to the Previews View Mode &eg; the size of the preview images.
+The <guilabel>View Modes</guilabel> option differs slightly from the <guilabel>General</guilabel> option in that it has four tabs in the options.  The <guilabel>Icons</guilabel> tab allows users to set options to do with the Icons View Mode &eg; icon size.  The <guilabel>Details</guilabel> tab allows users to set options relating to the Details View Mode &eg; what information about files are shown.  The Previews to allows users to set options relating to the Previews View Mode &eg; the size of the preview images.
+<!-- <guilabel>Column</guilabel> -->
 </para>
 </sect1>
 
@@ -562,7 +563,7 @@ A quick way to mount Storage Media is to click on the device.  This will mount a
 <title>Undo Actions</title>
 
 <para>
-&dolphin; is capable of undoing changes users have made to files.  For example if a user sent a file to the Trash, &dolphin; can undo this and move it back to the folder it previously belonged in.  To undo an action via the menu <menuchoice> <guimenu>Edit</guimenu> <guimenuitem>Undo: (action name)</guimenuitem> </menuchoice>, &eg; <guilabel>Undo: Rename</guilabel> or by pressing <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>.
+&dolphin; is capable of undoing changes users have made to files.  For example if a user sent a file to the Trash, &dolphin; can undo this and move it back to the folder it previously belonged in.  To undo an action via the menu <menuchoice> <guimenu>Edit</guimenu> <guimenuitem>Undo: (action name)</guimenuitem> </menuchoice>, &eg; <guimenuitem>Undo: Rename</guimenuitem> or by pressing <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>.
 </para>
 </sect2>
 
@@ -602,7 +603,8 @@ If a user wishes to compare a selection of files, then first they must select th
 </para>
 
 <para>
-If a user wishes to filter a selection of files this can be done via the filter bar.  The user then enters the text they wish to filter for within that folder.  To enable the filter bar the user must press either the <keycap>/</keycap> key or via the Menu Bar; <menuchoice> <guimenu>Tools</guimenu> <guimenuitem>Show Filter Bar</guimenuitem> </menuchoice>.  To disable the filter bar the user must press either the <keycap>Esc</keycap> Key, or via the <menuchoice> <guimenu>Tools</guimenu> <guimenuitem>Show Filter Bar</guimenuitem> </menuchoice>.
+If a user wishes to filter a selection of files this can be done via the filter bar.  The user then enters the text they wish to filter for within that folder.  To enable the filter bar the user must press either the <keycombo 
+action="simul">&Ctrl;<keycap>I</keycap></keycombo> key or via the Menu Bar; <menuchoice> <guimenu>Tools</guimenu> <guimenuitem>Show Filter Bar</guimenuitem> </menuchoice>.  To disable the filter bar the user must press either the &Esc; key, or via the <menuchoice> <guimenu>Tools</guimenu> <guimenuitem>Show Filter Bar</guimenuitem> </menuchoice>.
 </para>
 </sect2>
 
@@ -629,7 +631,7 @@ or menu bars. -->
 <varlistentry>
 <term><menuchoice>
 <guimenu>File</guimenu>
-<guisubmenu>New</guisubmenu>
+<guisubmenu>Create New</guisubmenu>
 </menuchoice></term>
 <listitem><para><action>Creates a new object in the current folder.</action></para></listitem>
 </varlistentry>
@@ -648,6 +650,17 @@ or menu bars. -->
 <varlistentry>
 <term><menuchoice>
 <shortcut>
+<keycombo action="simul">&Ctrl;&Shift;<keycap>N</keycap></keycombo>
+</shortcut>
+<guimenu>File</guimenu>
+<guimenuitem>New Tab</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Opens a new tab.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
 <keycombo action="simul"><keycap>F2</keycap></keycombo>
 </shortcut>
 <guimenu>File</guimenu>
@@ -659,7 +672,7 @@ or menu bars. -->
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul"><keycap>Delete</keycap></keycombo>
+<keycombo action="simul"><keycap>Del</keycap></keycombo>
 </shortcut>
 <guimenu>File</guimenu>
 <guimenuitem>Move to Trash</guimenuitem>
@@ -671,7 +684,7 @@ or menu bars. -->
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul"><keycap>Shift+Delete</keycap></keycombo>
+<keycombo action="simul">&Shift;<keycap>Del</keycap></keycombo>
 </shortcut>
 <guimenu>File</guimenu>
 <guimenuitem>Delete</guimenuitem>
@@ -682,7 +695,7 @@ or menu bars. -->
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul"><keycap>Alt+Returm</keycap></keycombo>
+<keycombo action="simul">&Alt;<keycap>Return</keycap></keycombo>
 </shortcut>
 <guimenu>File</guimenu>
 <guimenuitem>Properties</guimenuitem>
@@ -724,17 +737,6 @@ or menu bars. -->
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Ctrl;&Shift;<keycap>Z</keycap></keycombo>
-</shortcut>
-<guimenu>Edit</guimenu>
-<guimenuitem>Redo</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Redoes the last action previouly undone.</action></para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<shortcut>
 <keycombo action="simul">&Ctrl;<keycap>X</keycap></keycombo>
 </shortcut>
 <guimenu>Edit</guimenu>
@@ -749,7 +751,7 @@ or menu bars. -->
 <keycombo action="simul">&Ctrl;<keycap>C</keycap></keycombo>
 </shortcut>
 <guimenu>Edit</guimenu>
-<guimenuitem>Cut</guimenuitem>
+<guimenuitem>Copy</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Copies the currently selected file(s).</action></para></listitem>
 </varlistentry>
@@ -821,27 +823,48 @@ Selects all unselected items and deselects all selected items in the current fol
 
 <varlistentry>
 <term><menuchoice>
-<shortcut>
-<keycombo action="simul"><keycap>Ctrl+1 Ctrl+2 Ctrl+3</keycap></keycombo>
-</shortcut>
 <guimenu>View</guimenu>
-<guimenuitem>View Mode...</guimenuitem>
+<guisubmenu>View Mode...</guisubmenu>
 </menuchoice></term>
-<listitem><para><action>Changes the workspace view; Icons, Details, Previews.</action></para></listitem>
+<listitem><para><action>Changes the workspace view to show <guimenuitem>Icons</guimenuitem> (<keycombo action="simul">&Ctrl;<keycap>1</keycap></keycombo>), <guimenuitem>Details</guimenuitem> (<keycombo action="simul">&Ctrl;<keycap>3</keycap></keycombo>) or <guimenuitem>Columns</guimenuitem> (<keycombo action="simul">&Ctrl;<keycap>3</keycap></keycombo>).</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
 <guimenu>View</guimenu>
-<guimenuitem>Sort...</guimenuitem>
+<guisubmenu>Sort By</guisubmenu>
 </menuchoice></term>
-<listitem><para><action>Changes whether items are sorted by Name, Size or Date. "Descending" reverses the sort order.</action></para></listitem>
+<listitem><para><action>Changes whether items are sorted by <guimenuitem>Name</guimenuitem>, <guimenuitem>Size</guimenuitem>, <guimenuitem>Date</guimenuitem>, <guimenuitem>Permissions</guimenuitem>, <guimenuitem>Owner</guimenuitem>, <guimenuitem>Group</guimenuitem> or <guimenuitem>Type</guimenuitem>. <guimenuitem>Descending</guimenuitem> reverses the sort order.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>View</guimenu>
+<guisubmenu>Additional Information</guisubmenu>
+</menuchoice></term>
+<listitem><para><action>Displays additional information</action> like <guimenuitem>Size</guimenuitem>, <guimenuitem>Date</guimenuitem>, <guimenuitem>Permissions</guimenuitem>, <guimenuitem>Owner</guimenuitem>, <guimenuitem>Group</guimenuitem> or <guimenuitem>Type</guimenuitem> in the different views.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>View</guimenu>
+<guimenuitem>Preview</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Displays a symbolic preview of the file contents </action> in the different view modes.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>View</guimenu>
+<guimenuitem>Show in Groups</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Displays</action> the content of the current folder grouped by file type.</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Ctrl;<keycap>.</keycap></keycombo>
+<keycombo action="simul">&Alt;<keycap>.</keycap></keycombo>
 </shortcut>
 <guimenu>View</guimenu>
 <guimenuitem>Show Hidden Files</guimenuitem>
@@ -852,10 +875,10 @@ Selects all unselected items and deselects all selected items in the current fol
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul"><keycap>F10</keycap></keycombo>
+<keycombo action="simul"><keycap>F3</keycap></keycombo>
 </shortcut>
 <guimenu>View</guimenu>
-<guimenuitem>Split View</guimenuitem>
+<guimenuitem>Split</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Enables and disables the split view workspace mode.</action></para></listitem>
 </varlistentry>
@@ -873,13 +896,18 @@ Selects all unselected items and deselects all selected items in the current fol
 
 <varlistentry>
 <term><menuchoice>
-<shortcut>
-<keycombo action="simul"><keycap>F5</keycap></keycombo>
-</shortcut>
 <guimenu>View</guimenu>
 <guimenuitem>Stop</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Stops loading/reading the contents of the current folder.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>View</guimenu>
+<guisubmenu>Panels</guisubmenu>
+</menuchoice></term>
+<listitem><para><action>Enables and disables</action> the different panels, &eg; <guimenuitem>Places</guimenuitem> (<keycap>F9</keycap>), <guimenuitem>Information</guimenuitem> (<keycap>F11</keycap>), <guimenuitem>Folders</guimenuitem> (<keycap>F7</keycap>) and <guimenuitem>Terminal</guimenuitem> (<keycap>F4</keycap>).</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -889,26 +917,14 @@ Selects all unselected items and deselects all selected items in the current fol
 </shortcut>
 <guimenu>View</guimenu>
 <guisubmenu>Navigation Bar</guisubmenu>
-<guimenuitem>Show Full Location</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Changes the address bar between the two modes; the line input mode and the breadcrumb mode.</action></para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul"><keycap>F9</keycap></keycombo>
-</shortcut>
-<guimenu>View</guimenu>
-<guimenuitem>Sidebar</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Enables and disables the Places Panel.</action></para></listitem>
+<listitem><para><action>Changes the address bar between the two modes; the line input mode <guimenuitem>Show Full Location</guimenuitem> and the breadcrumb mode <guimenuitem>Edit Location</guimenuitem>.</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
 <guimenu>View</guimenu>
-<guimenuitem>Adjust View Proprties...</guimenuitem>
+<guimenuitem>Adjust View Properties...</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Opens the view properties dialog.</action></para></listitem>
 </varlistentry>
@@ -925,7 +941,7 @@ Selects all unselected items and deselects all selected items in the current fol
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul"><keycap>Alt+Up</keycap></keycombo>
+<keycombo action="simul">&Alt;<keycap>Up</keycap></keycombo>
 </shortcut>
 <guimenu>Go</guimenu>
 <guimenuitem>Up</guimenuitem>
@@ -936,7 +952,7 @@ Selects all unselected items and deselects all selected items in the current fol
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul"><keycap>Backspace</keycap></keycombo>
+<keycombo action="simul">&Alt;<keycap>Left</keycap></keycombo>
 </shortcut>
 <guimenu>Go</guimenu>
 <guimenuitem>Back</guimenuitem>
@@ -947,7 +963,7 @@ Selects all unselected items and deselects all selected items in the current fol
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul"><keycap>Alt+Right</keycap></keycombo>
+<keycombo action="simul">&Alt;<keycap>Right</keycap></keycombo>
 </shortcut>
 <guimenu>Go</guimenu>
 <guimenuitem>Forward</guimenuitem>
@@ -958,7 +974,7 @@ Selects all unselected items and deselects all selected items in the current fol
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul"><keycap>Alt+Home</keycap></keycombo>
+<keycombo action="simul">&Alt;<keycap>Home</keycap></keycombo>
 </shortcut>
 <guimenu>Go</guimenu>
 <guimenuitem>Home</guimenuitem>
@@ -974,17 +990,6 @@ Selects all unselected items and deselects all selected items in the current fol
 <para>
 
 <variablelist>
-<varlistentry>
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul"><keycap>F4</keycap></keycombo>
-</shortcut>
-<guimenu>Tools</guimenu>
-<guimenuitem>Open Terminal</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Opens a terminal already within the current folder.</action></para></listitem>
-</varlistentry>
-
 <varlistentry>
 <term><menuchoice>
 <shortcut>
@@ -1012,7 +1017,7 @@ Selects all unselected items and deselects all selected items in the current fol
 <guimenu>Tools</guimenu>
 <guimenuitem>Compare Files</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Compare the currently selected files with <application>&kompare;</application>.</action></para></listitem>
+<listitem><para><action>Compare the currently selected files with &kompare;.</action></para></listitem>
 </varlistentry>
 </variablelist>
 
@@ -1026,10 +1031,21 @@ Selects all unselected items and deselects all selected items in the current fol
 <variablelist>
 <varlistentry>
 <term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>M</keycap></keycombo>
+</shortcut>
 <guimenu>Settings</guimenu>
-<guimenuitem>Hide Toolbar</guimenuitem>
+<guimenuitem>Show Menubar</guimenuitem>
 </menuchoice></term>
-<listitem><para><action>Hides and Shows the toolbar.</action></para></listitem>
+<listitem><para><action>Hides and shows the menubar.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Show Toolbar</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Hides and shows the toolbar.</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -1097,7 +1113,7 @@ application work. -->
 </question>
 <answer>
 <para>
-&dolphin; can use the majority of service menus created for &konqueror;, however &dolphin; does impose one limitation on the service menus: Service menu entries that add them selves to the top level of the context menu will automatically be placed below the Actions sub-menu. This prevents that the context menu will get crowded.
+&dolphin; can use the majority of service menus created for &konqueror;, however &dolphin; does impose one limitation on the service menus: Service menu entries that add themselves to the top level of the context menu will automatically be placed below the Actions sub-menu. This prevents that the context menu will get crowded.
 </para>
 
 <para>
@@ -1108,15 +1124,15 @@ To add a custom service menu to &dolphin; save the service menu to the &dolphin;
 
 <qandaentry>
 <question>
-<para>How do I make &dolphin; my default file manager</para>
+<para>How do I make &dolphin; my default file manager?</para>
 </question>
 <answer>
 <para>
-To make &dolphin; the default file manager for &kde; from the &kde; control centre open the File Associations section via; &kde; Components>File Associations.  If the user adds &dolphin; to the list of applications for the folder mime type and make it the first choice, then &dolphin; will become the default application to open any folder with.  The folder mime type can be found by expanding the inode section of Known Types.
+To make &dolphin; the default file manager for &kde; from the &kde; control center open the File Associations section via; &kde; Components>File Associations.  If the user adds &dolphin; to the list of applications for the folder mime type and make it the first choice, then &dolphin; will become the default application to open any folder with. The folder mime type can be found by expanding the inode section of Known Types.
 </para>
 
 <para>
-To make &dolphin; the default file manager for the virtual folders &kde; creates &eg; system:/ then again in the File Associations section of the control centre expand the inode section of Known Types.  Under the system_directory mime type, add &dolphin; to the list of applications, however instead of choosing &dolphin; from the kmenu, type the following in to the text box at the top;  dolphin %u The virtual folders created by &kde; will then be opened by &dolphin; as default.
+To make &dolphin; the default file manager for the virtual folders created by &kde; &eg; system:/ then again in the File Associations section of the control center expand the inode section of Known Types.  Under the system_directory mime type, add &dolphin; to the list of applications, however instead of choosing &dolphin; from the kmenu, type the following in to the text box at the top;  dolphin %u. The virtual folders created by &kde; will then be opened by &dolphin; as default.
 </para>
 </answer>
 </qandaentry>
