@@ -164,9 +164,10 @@ void SearchBar::searchAsYouTypeChanged(int state)
     if (state == 0) {
         disconnect(ui.searchLineEdit, SIGNAL(textChanged(const QString&)),
                    this, SIGNAL(searchChanged(const QString&)));
-    }
-    connect(ui.searchLineEdit, SIGNAL(textChanged(const QString&)),
+    } else {
+        connect(ui.searchLineEdit, SIGNAL(textChanged(const QString&)),
                this, SIGNAL(searchChanged(const QString&)));
+    }
 }
 
 #include "searchbar.moc"
