@@ -266,7 +266,7 @@ void KonqViewManager::duplicateTab( KonqFrameBase* currentFrame, bool openAfterC
   QString prefix = KonqFrameBase::frameTypeToString(currentFrame->frameType()) + QString::number(0);
   profileGroup.writeEntry( "RootItem", prefix );
   prefix.append( QLatin1Char( '_' ) );
-  KonqFrameBase::Options flags = KonqFrameBase::saveURLs;
+  KonqFrameBase::Options flags = KonqFrameBase::saveHistoryItems;
   currentFrame->saveConfig( profileGroup, prefix, flags, 0L, 0, 1);
 
   loadRootItem( profileGroup, tabContainer(), KUrl(), true, KUrl(), openAfterCurrentPage );
@@ -275,10 +275,6 @@ void KonqViewManager::duplicateTab( KonqFrameBase* currentFrame, bool openAfterC
     m_tabContainer->setCurrentIndex( m_tabContainer->currentIndex () + 1 );
   else
     m_tabContainer->setCurrentIndex( m_tabContainer->count() - 1 );
-
-  KonqFrameBase* duplicatedFrame = dynamic_cast<KonqFrameBase*>(m_tabContainer->currentWidget());
-  if (duplicatedFrame)
-    duplicatedFrame->copyHistory( currentFrame );
 
 #ifdef DEBUG_VIEWMGR
   m_pMainWindow->dumpViewList();
@@ -302,17 +298,12 @@ void KonqViewManager::breakOffTab( KonqFrameBase* currentFrame, const QSize& win
   QString prefix = KonqFrameBase::frameTypeToString(currentFrame->frameType()) + QString::number(0);
   profileGroup.writeEntry( "RootItem", prefix );
   prefix.append( QLatin1Char( '_' ) );
-  KonqFrameBase::Options flags = KonqFrameBase::saveURLs;
+  KonqFrameBase::Options flags = KonqFrameBase::saveHistoryItems;
   currentFrame->saveConfig( profileGroup, prefix, flags, 0L, 0, 1);
 
   KonqMainWindow *mainWindow = new KonqMainWindow(KUrl(), m_pMainWindow->xmlFile());
 
   mainWindow->viewManager()->loadViewProfileFromConfig( config, QString(), currentProfile() );
-
-  KonqFrameTabs * kft = mainWindow->viewManager()->tabContainer();
-  KonqFrameBase *newFrame = dynamic_cast<KonqFrameBase*>(kft->currentWidget());
-  if(newFrame)
-    newFrame->copyHistory( currentFrame );
 
   removeTab( currentFrame, false );
 
@@ -1526,11 +1517,10 @@ KonqMainWindow* KonqViewManager::duplicateWindow()
     tempFile.open();
     KConfig config( tempFile.fileName() );
     KConfigGroup profileGroup( &config, "Profile" );
-    KonqFrameBase::Options flags = KonqFrameBase::saveURLs;
+    KonqFrameBase::Options flags = KonqFrameBase::saveHistoryItems;
     saveViewProfileToGroup(profileGroup, flags);
 
     KonqMainWindow *mainWindow = openSavedWindow(profileGroup);
-    mainWindow->copyHistory( m_pMainWindow->childFrame() );
 #ifndef NDEBUG
     mainWindow->viewManager()->printFullHierarchy();
 #endif
