@@ -102,7 +102,6 @@ static int directCommand(KCmdLineArgs *args)
     QString title;
     bool separateOutput = false;
     bool printWId = args->isSet("print-winid");
-    bool embed = args->isSet("embed");
     QString defaultEntry;
 
     // --title text
@@ -116,16 +115,21 @@ static int directCommand(KCmdLineArgs *args)
     {
       separateOutput = true;
     }
-    if (printWId || embed)
+
+    WId winid = 0;
+    bool attach = args->isSet("attach");
+    if(attach) {
+        winid = args->getOption("attach").toLong(&attach, 0);  //C style parsing.  If the string begins with "0x", base 16 is used; if the string begins with "0", base 8 is used; otherwise, base 10 is used.
+    } else if(args->isSet("embed")) {
+        /* KDialog originally used --embed for attaching the dialog box.  However this is misleading and so we changed to --attach.
+         * For consistancy, we silently map --embed to --attach */
+        attach = true;
+        winid = args->getOption("embed").toLong(&attach, 0);  //C style parsing.  If the string begins with "0x", base 16 is used; if the string begins with "0", base 8 is used; otherwise, base 10 is used.
+    }
+
+    if (printWId || attach)
     {
-      WId id = 0;
-      if (embed) {
-          bool ok;
-          long l = QString(args->getOption("embed")).toLong(&ok,0);
-          if (ok)
-              id = (WId)l;
-      }
-      (void)new WinIdEmbedder(printWId, id);
+      (void)new WinIdEmbedder(printWId, winid);
     }
 
     // --yesno and other message boxes
@@ -684,9 +688,15 @@ int main(int argc, char *argv[])
   options.add("multiple", ki18n("Allows the --getopenurl and --getopenfilename options to return multiple files"));
   options.add("separate-output", ki18n("Return list items on separate lines (for checklist option and file open with --multiple)"));
   options.add("print-winid", ki18n("Outputs the winId of each dialog"));
-  options.add("embed <winid>", ki18n("Makes the dialog transient for an X app specified by winid"));
   options.add("dontagain <file:entry>", ki18n("Config file and option name for saving the \"do-not-show/ask-again\" state"));
+#ifdef Q_WS_X11
+    /* kdialog originally used --embed for attaching the dialog box.  However this is misleading and so we changed to --attach.
+     * For backwards compatibility, we silently map --embed to --attach */
+    options.add("attach <winid>", ki18n("Makes the dialog transient for an X app specified by winid"));
+    options.add("embed <winid>");
+#endif
   options.add("+[arg]", ki18n("Arguments - depending on main option"));
+
   KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 
   KApplication app;
