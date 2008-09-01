@@ -23,11 +23,13 @@
 #ifndef KNETWORKACCESSMANAGER_H
 #define KNETWORKACCESSMANAGER_H
 
+#include <kdemacros.h>
+
 #include <QNetworkAccessManager>
 
 #include <KIO/MetaData>
 
-class KNetworkAccessManager : public QNetworkAccessManager
+class KDE_EXPORT KNetworkAccessManager : public QNetworkAccessManager
 {
     Q_OBJECT
 public:

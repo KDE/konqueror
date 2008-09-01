@@ -23,8 +23,8 @@
 
 #include "knetworkaccessmanager.h"
 
-#include "network/knetworkreply.h"
-#include "settings/webkitsettings.h"
+#include "knetworkreply.h"
+//#include "settings/webkitsettings.h"
 
 #include <QNetworkRequest>
 #include <QNetworkReply>
@@ -39,9 +39,9 @@ KNetworkAccessManager::KNetworkAccessManager(QObject *parent)
 
 QNetworkReply *KNetworkAccessManager::createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData)
 {
-    if (WebKitSettings::self()->isAdFilterEnabled() && WebKitSettings::self()->isAdFiltered(req.url().toString())) {
-        return new KNetworkReply(req, 0, this);
-    }
+//    if (WebKitSettings::self()->isAdFilterEnabled() && WebKitSettings::self()->isAdFiltered(req.url().toString())) {
+//        return new KNetworkReply(req, 0, this);
+//    }
 
     KIO::Job *kioJob = 0;
 

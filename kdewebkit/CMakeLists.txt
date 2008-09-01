@@ -9,13 +9,12 @@ include_directories(${KDE4_INCLUDES})
 add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 
 add_subdirectory(includes)
+add_subdirectory(network)
 
 set(kdewebkit_LIB_SRCS
     kwebview.cpp
     kwebpage.cpp
     kwebpluginfactory.cpp
-    network/knetworkreply.cpp
-    network/knetworkaccessmanager.cpp
     searchbar.cpp
     settings/webkitsettings.cpp
     settings/khtml_filter.cpp
@@ -28,6 +27,7 @@ kde4_add_ui_files(kdewebkit_LIB_SRCS
 kde4_add_library(kdewebkit SHARED ${kdewebkit_LIB_SRCS})
 
 target_link_libraries(kdewebkit
+    kdenetwork
     ${KDE4_KPARTS_LIBS}
     ${QT_QTWEBKIT_LIBRARY}
     ${QT_QTUITOOLS_LIBRARY}

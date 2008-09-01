@@ -25,12 +25,14 @@
 
 #include <QNetworkReply>
 
+#include <kdemacros.h>
+
 namespace KIO
 {
     class Job;
 }
 
-class KNetworkReply : public QNetworkReply
+class KDE_EXPORT KNetworkReply : public QNetworkReply
 {
     Q_OBJECT
 public:
