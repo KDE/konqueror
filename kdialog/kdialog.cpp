@@ -119,12 +119,12 @@ static int directCommand(KCmdLineArgs *args)
     WId winid = 0;
     bool attach = args->isSet("attach");
     if(attach) {
-        winid = args->getOption("attach").toLong(&attach, 0);  //C style parsing.  If the string begins with "0x", base 16 is used; if the string begins with "0", base 8 is used; otherwise, base 10 is used.
+        winid = reinterpret_cast<WId>(args->getOption("attach").toLong(&attach, 0));  //C style parsing.  If the string begins with "0x", base 16 is used; if the string begins with "0", base 8 is used; otherwise, base 10 is used.
     } else if(args->isSet("embed")) {
         /* KDialog originally used --embed for attaching the dialog box.  However this is misleading and so we changed to --attach.
          * For consistancy, we silently map --embed to --attach */
         attach = true;
-        winid = args->getOption("embed").toLong(&attach, 0);  //C style parsing.  If the string begins with "0x", base 16 is used; if the string begins with "0", base 8 is used; otherwise, base 10 is used.
+        winid = reinterpret_cast<WId>(args->getOption("embed").toLong(&attach, 0));  //C style parsing.  If the string begins with "0x", base 16 is used; if the string begins with "0", base 8 is used; otherwise, base 10 is used.
     }
 
     if (printWId || attach)
