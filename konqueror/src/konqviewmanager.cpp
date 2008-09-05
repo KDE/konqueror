@@ -644,11 +644,11 @@ void KonqViewManager::clear()
 
     const QList<KonqView*> viewList = KonqViewCollector::collect(m_pMainWindow);
     if ( !viewList.isEmpty() ) {
-        kDebug(1202) << viewList.count() << "items";
+        //kDebug(1202) << viewList.count() << "items";
 
         foreach ( KonqView* view, viewList ) {
             m_pMainWindow->removeChildView( view );
-            kDebug(1202) << "Deleting" << view;
+            //kDebug(1202) << "Deleting" << view;
             delete view;
         }
     }
@@ -711,7 +711,6 @@ KonqViewFactory KonqViewManager::createView( const QString &serviceType,
                                              KService::List &appServiceOffers,
                                              bool forceAutoEmbed )
 {
-  kDebug(1202) << serviceName;
   KonqViewFactory viewFactory;
 
   if( serviceType.isEmpty() && m_pMainWindow->currentView() ) {
