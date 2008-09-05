@@ -64,6 +64,7 @@ set(konqueror_KDEINIT_SRCS
    KonqViewAdaptor.cpp
    konqproxystyle.cpp
    konqundomanager.cpp
+   konqclosedwindowsmanager.cpp
    konqsessionmanager.cpp
    konqcloseditem.cpp
 )
@@ -75,8 +76,8 @@ kde4_add_ui_files(konqueror_KDEINIT_SRCS konqnewsessiondlg_base.ui)
 
 qt4_add_dbus_interface(konqueror_KDEINIT_SRCS org.kde.Konqueror.Main.xml konqueror_interface)
 qt4_add_dbus_interface(konqueror_KDEINIT_SRCS ${KDE4_DBUS_INTERFACES_DIR}/org.kde.kded.xml kded_interface)
-qt4_add_dbus_adaptor(konqueror_KDEINIT_SRCS org.kde.Konqueror.UndoManager.xml konqundomanager.h KonqClosedWindowsManager konqundomanageradaptor KonqClosedWindowsManagerAdaptor)
-qt4_add_dbus_interface(konqueror_KDEINIT_SRCS org.kde.Konqueror.UndoManager.xml konqundomanager_interface)
+qt4_add_dbus_adaptor(konqueror_KDEINIT_SRCS org.kde.Konqueror.UndoManager.xml konqclosedwindowsmanager.h KonqClosedWindowsManager konqclosedwindowsmanageradaptor KonqClosedWindowsManagerAdaptor)
+qt4_add_dbus_interface(konqueror_KDEINIT_SRCS org.kde.Konqueror.UndoManager.xml konqclosedwindowsmanager_interface)
 qt4_add_dbus_adaptor(konqueror_KDEINIT_SRCS org.kde.Konqueror.SessionManager.xml konqsessionmanager.h KonqSessionManager konqsessionmanageradaptor KonqSessionManagerAdaptor)
 qt4_add_dbus_interface(konqueror_KDEINIT_SRCS org.kde.Konqueror.SessionManager.xml konqsessionmanager_interface)
 
