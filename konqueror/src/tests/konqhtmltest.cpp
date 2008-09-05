@@ -30,6 +30,15 @@ class KonqHtmlTest : public QObject
 {
     Q_OBJECT
 private Q_SLOTS:
+    void initTestCase()
+    {
+        //qRegisterMetaType<KonqView *>("KonqView*");
+    }
+    void cleanupTestCase()
+    {
+        // in case some test broke, don't assert in khtmlglobal...
+        deleteAllMainWindows();
+    }
     void loadSimpleHtml()
     {
         KonqMainWindow mainWindow;
@@ -38,7 +47,7 @@ private Q_SLOTS:
         KonqView* view = mainWindow.currentView();
         QVERIFY(view);
         QVERIFY(view->part());
-        QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 1000));
+        QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 20000));
         QCOMPARE(view->serviceType(), QString("text/html"));
         //KHTMLPart* part = qobject_cast<KHTMLPart *>(view->part());
         //QVERIFY(part);
@@ -49,8 +58,10 @@ private Q_SLOTS:
         KonqMainWindow mainWindow;
         mainWindow.openUrl(0, KUrl(QDir::homePath()), "text/html");
         KonqView* view = mainWindow.currentView();
-        QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 1000)); // error calls openUrlRequest
-        QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 1000)); // which then opens the right part
+        kDebug() << "Waiting for first completed signal";
+        QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 20000)); // error calls openUrlRequest
+        kDebug() << "Waiting for first second signal";
+        QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 20000)); // which then opens the right part
         QCOMPARE(view->serviceType(), QString("inode/directory"));
     }
 
@@ -85,13 +96,14 @@ private Q_SLOTS:
         QCOMPARE(KMainWindow::memberList().count(), 1);
         KonqView* view = mainWindow->currentView();
         QVERIFY(view);
-        QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 50000));
+        QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 10000));
         qApp->processEvents();
         QWidget* widget = partWidget(view);
         QTest::mousePress(widget, Qt::LeftButton);
         qApp->processEvents(); // openurlrequestdelayed
         qApp->processEvents(); // browserrun
-        QTest::qWait(10); // just in case there's more :)
+        hideAllMainWindows(); // TODO: why does it appear nonetheless? hiding too early? hiding too late?
+        QTest::qWait(10); // just in case there's more delayed calls :)
         // Did it open a window?
         QCOMPARE(KMainWindow::memberList().count(), 2);
         deleteAllMainWindows();
@@ -112,6 +124,14 @@ private:
     {
         const QList<KMainWindow*> windows = KMainWindow::memberList();
         qDeleteAll(windows);
+    }
+
+    static void hideAllMainWindows()
+    {
+        const QList<KMainWindow*> windows = KMainWindow::memberList();
+        kDebug() << "hiding" << windows.count() << "windows";
+        Q_FOREACH(KMainWindow* window, windows)
+            window->hide();
     }
 };
 
