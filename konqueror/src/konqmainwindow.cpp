@@ -22,6 +22,7 @@
 */
 
 #include "konqmainwindow.h"
+#include "konqclosedwindowsmanager.h"
 #include "konqsessionmanager.h"
 #include "konqsessiondlg.h"
 #include "konqdraggablelabel.h"

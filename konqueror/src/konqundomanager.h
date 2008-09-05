@@ -21,14 +21,14 @@
 #ifndef KONQUNDOMANAGER_H
 #define KONQUNDOMANAGER_H
 
+#include "konqprivate_export.h"
 #include <QObject>
 #include <QString>
 #include <QList>
-#include <kconfig.h>
-#include "konqcloseditem.h"
+class KonqClosedWindowItem;
+class KonqClosedTabItem;
+class KonqClosedItem;
 class QAction;
-class KonqClosedWindowsManagerPrivate;
-class QDBusMessage;
 
 /**
  * Note that there is one KonqUndoManager per mainwindow.
@@ -112,128 +112,4 @@ private:
     bool m_populated;
 };
 
-/**
- * Provides a shared singleton for all Konq window instances.
- * This class is a singleton, use self() to access its only instance.
- *
- *  - it synchronizes the closed window list with other
- * Konqueror instances via DBUS.
- *
- */
-class KONQ_TESTS_EXPORT KonqClosedWindowsManager : public QObject
-{
-    Q_OBJECT
-public:
-    friend class KonqClosedWindowsManagerPrivate;
-
-    static KonqClosedWindowsManager *self();
-
-    const QList<KonqClosedWindowItem *>& closedWindowItemList();
-
-    /**
-     * When a window is closed it's added with this function to
-     * m_closedWindowItemList.
-     */
-    void addClosedWindowItem(KonqUndoManager *real_sender, KonqClosedWindowItem
-        *closedWindowItem, bool propagate = true);
-
-    void removeClosedWindowItem(KonqUndoManager *real_sender, const
-
-    KonqClosedWindowItem *closedWindowItem, bool propagate = true);
-
-    KConfig* config();
-
-    /**
-     * Called by the KonqUndoManager when a local window is being closed.
-     * Saves the closed windows list to disk inside a config file.
-     */
-    void saveConfig();
-public Q_SLOTS:
-    bool undoAvailable() const;
-    void readSettings();
-
-    /**
-     * Reads the list of closed window from the configuration file if it couldn't
-     * be retrieved from running konqueror windows and if it hasn't been read
-     * already. By default the closeditems_list file is not read, so each
-     * function which needs that file to be read first must call this function
-     * to ensure the closeditems list is filled.
-     */
-    void readConfig();
-
-Q_SIGNALS:
-    /**
-     * Notifies the addition the closed window list in all the konqueror windows of
-     * this konqueror instance.
-     */
-    void addWindowInOtherInstances(KonqUndoManager *real_sender,
-        KonqClosedWindowItem *closedWindowItem);
-
-    /**
-     * Notifies the removal the closed window list in all the konqueror windows of
-     * this konqueror instance.
-     */
-    void removeWindowInOtherInstances(KonqUndoManager *real_sender, const
-        KonqClosedWindowItem *closedWindowItem);
-private:
-    KonqClosedWindowsManager();
-
-    virtual ~KonqClosedWindowsManager();
-
-    KonqClosedRemoteWindowItem* findClosedRemoteWindowItem(const QString& configFileName,
-        const QString& configGroup);
-
-    KonqClosedWindowItem* findClosedLocalWindowItem(const QString& configFileName,
-        const QString& configGroup);
-
-    /**
-     * This function removes all the closed items temporary files.
-     */
-    void removeClosedItemsConfigFiles();
-private:
-    QList<KonqClosedWindowItem *> m_closedWindowItemList;
-    int m_numUndoClosedItems;
-    KConfig *m_konqClosedItemsConfig;
-    int m_maxNumClosedItems;
-    /**
-     * This bool var is used internally to allow delayed initialization of the
-     * closed items list. When active, this flag prevents addClosedWindowItem()
-     * from emiting addWindowInOtherInstances() as the windows are already
-     * being dealt with inside KonqUndoManager::populate().
-     */
-    bool m_blockClosedItems;
-Q_SIGNALS: // DBUS signals
-    /**
-     * Every konqueror instance broadcasts new closed windows to other
-     * konqueror instances.
-     */
-    void notifyClosedWindowItem( const QString& title, const int& numTabs,
-        const QString& configFileName, const QString& configGroup );
-
-    /**
-     * Every konqueror instance broadcasts removed closed windows to other
-     * konqueror instances.
-     */
-    void notifyRemove( const QString& configFileName,
-        const QString& configGroup );
-
-private Q_SLOTS:// connected to DBUS signals
-    void slotNotifyClosedWindowItem( const QString& title, const int& numTabs,
-        const QString& configFileName, const QString& configGroup,
-        const QString& service );
-
-    void slotNotifyClosedWindowItem( const QString& title, const int& numTabs,
-        const QString& configFileName, const QString& configGroup,
-        const QDBusMessage& msg );
-
-    void slotNotifyRemove( const QString& configFileName,
-        const QString& configGroup, const QDBusMessage& msg );
-
-private:
-    void emitNotifyClosedWindowItem(const KonqClosedWindowItem *closedWindowItem);
-
-    void emitNotifyRemove(const KonqClosedWindowItem *closedWindowItem);
-};
-
 #endif /* KONQUNDOMANAGER_H */
-

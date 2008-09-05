@@ -19,7 +19,7 @@
 */
 
 #include "konqcloseditem.h"
-#include "konqundomanager.h"
+#include "konqclosedwindowsmanager.h"
 #include <QFile>
 #include <QFont>
 #include <QFontMetrics>
@@ -42,7 +42,7 @@ public:
     {
         KIconEffect::deSaturate(image, 0.60f);
     }
-    
+
     QImage image;
 };
 
@@ -92,7 +92,7 @@ QPixmap KonqClosedWindowItem::icon() const
     QImage overlayImg = s_lightIconImage->image.copy();
     int oldWidth = overlayImg.width();
     QString countStr = QString::number( m_numTabs );
-    
+
     QFont f = KGlobalSettings::generalFont();
     f.setBold(true);
 
@@ -111,7 +111,7 @@ QPixmap KonqClosedWindowItem::icon() const
     KColorScheme scheme(QPalette::Active, KColorScheme::Window);
     p.setPen(scheme.foreground(KColorScheme::LinkText).color());
     p.drawText(overlayImg.rect(), Qt::AlignCenter, countStr);
-    
+
     return QPixmap::fromImage(overlayImg);
 }
 
@@ -163,7 +163,7 @@ KConfigGroup& KonqClosedRemoteWindowItem::configGroup()
 
 bool KonqClosedRemoteWindowItem::equalsTo(const QString& groupName,
     const QString& configFileName) const
-{   
+{
     return (m_remoteGroupName == groupName &&
         m_remoteConfigFileName == configFileName);
 }
