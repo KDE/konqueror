@@ -1971,80 +1971,69 @@ void KonqMainWindow::slotViewCompleted( KonqView * view )
   }
 }
 
-void KonqMainWindow::slotPartActivated( KParts::Part *part )
+void KonqMainWindow::slotPartActivated(KParts::Part *part)
 {
-  kDebug(1202) << part
-               << (part && part->componentData().isValid() && part->componentData().aboutData() ? part->componentData().aboutData()->appName() : "");
+    //kDebug(1202) << part
+    //           << (part && part->componentData().isValid() && part->componentData().aboutData() ? part->componentData().aboutData()->appName() : "");
 
   KonqView *newView = 0;
   KonqView *oldView = m_currentView;
 
-  if ( part )
-  {
-    newView = m_mapViews.value( static_cast<KParts::ReadOnlyPart *>( part ) );
-
-    if ( newView->isPassiveMode() )
-    {
+    if (part) {
+        newView = m_mapViews.value( static_cast<KParts::ReadOnlyPart *>(part) );
+        if (newView->isPassiveMode()) {
       // Passive view. Don't connect anything, don't change m_currentView
       // Another view will become the current view very soon
-      kDebug(1202) << "Passive mode - return";
+            //kDebug(1202) << "Passive mode - return";
       return;
     }
   }
 
   KParts::BrowserExtension *ext = 0;
 
-  if ( oldView )
-  {
+    if (oldView) {
     ext = oldView->browserExtension();
-    if ( ext )
-    {
+        if (ext) {
       //kDebug(1202) << "Disconnecting extension for view" << oldView;
       disconnectExtension( ext );
     }
   }
 
-  kDebug(1202) << "New current view" << newView;
+    //kDebug(1202) << "New current view" << newView;
   m_currentView = newView;
-  if ( !part )
-  {
-    kDebug(1202) << "No part activated - returning";
+    if (!part) {
+      //kDebug(1202) << "No part activated - returning";
     unplugViewModeActions();
-    createGUI( 0 );
-    KParts::MainWindow::setCaption( "" );
+      createGUI(0);
+      KParts::MainWindow::setCaption(QString());
     return;
   }
 
   ext = m_currentView->browserExtension();
 
-  if ( ext )
-  {
-    connectExtension( ext );
-  }
-  else
-  {
+    if (ext) {
+        connectExtension(ext);
+    } else {
     kDebug(1202) << "No Browser Extension for the new part";
     // Disable all browser-extension actions
 
     KParts::BrowserExtension::ActionSlotMap * actionSlotMap = KParts::BrowserExtension::actionSlotMapPtr();
     KParts::BrowserExtension::ActionSlotMap::ConstIterator it = actionSlotMap->begin();
-    KParts::BrowserExtension::ActionSlotMap::ConstIterator itEnd = actionSlotMap->end();
-
-    for ( ; it != itEnd ; ++it )
-    {
-      QAction * act = actionCollection()->action( it.key().data() );
+        const KParts::BrowserExtension::ActionSlotMap::ConstIterator itEnd = actionSlotMap->end();
+        for (; it != itEnd ; ++it) {
+            QAction * act = actionCollection()->action(QString::fromLatin1(it.key()));
       Q_ASSERT(act);
       if (act)
         act->setEnabled( false );
     }
 
-    if ( m_paCopyFiles )
-      m_paCopyFiles->setEnabled( false );
-    if ( m_paMoveFiles )
-      m_paMoveFiles->setEnabled( false );
+        if (m_paCopyFiles)
+            m_paCopyFiles->setEnabled(false);
+        if (m_paMoveFiles)
+            m_paMoveFiles->setEnabled(false);
   }
 
-  createGUI( part );
+    createGUI(part);
 
   // View-dependent GUI
 
@@ -2113,7 +2102,7 @@ void KonqMainWindow::removeChildView( KonqView *childView )
       return;
   }
 
-  kDebug(1202) << "Removing view" << childView;
+  //kDebug(1202) << "Removing view" << childView;
 
   m_mapViews.erase( it );
 
@@ -2121,7 +2110,7 @@ void KonqMainWindow::removeChildView( KonqView *childView )
   emit viewRemoved( childView );
 
 #ifndef NDEBUG
-  dumpViewList();
+  //dumpViewList();
 #endif
 
   // KonqViewManager takes care of m_currentView
@@ -3482,7 +3471,7 @@ void KonqMainWindow::setAnimatedLogoSize()
 
     m_paAnimatedLogo->setFixedSize(QSize(buttonHeight, buttonHeight));
 
-    kDebug() << "buttonHeight=" << buttonHeight << "max iconSize=" << iconSize;
+    //kDebug() << "buttonHeight=" << buttonHeight << "max iconSize=" << iconSize;
     if ( iconSize < KIconLoader::SizeSmallMedium )
         iconSize = KIconLoader::SizeSmall;
     else if ( iconSize < KIconLoader::SizeMedium  )
@@ -3491,7 +3480,7 @@ void KonqMainWindow::setAnimatedLogoSize()
         iconSize = KIconLoader::SizeMedium ;
     else if ( iconSize < KIconLoader::SizeHuge )
         iconSize = KIconLoader::SizeLarge;
-    kDebug() << "final iconSize=" << iconSize;
+    //kDebug() << "final iconSize=" << iconSize;
     m_paAnimatedLogo->setIconSize(QSize(iconSize, iconSize));
 }
 
