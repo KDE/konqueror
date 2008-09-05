@@ -101,10 +101,12 @@ public:
   enum ComboAction { ComboClear, ComboAdd, ComboRemove };
   enum PageSecurity { NotCrypted, Encrypted, Mixed };
 
-  explicit KonqMainWindow( const KUrl &initialURL = KUrl(),
-                           const QString& xmluiFile="konqueror.rc");
-  ~KonqMainWindow();
+    // TODO remove xmluiFile argument, this solution can't work for session management,
+    // see readProperties.
 
+    explicit KonqMainWindow(const KUrl &initialURL = KUrl(),
+                            const QString& xmluiFile = "konqueror.rc");
+    ~KonqMainWindow();
 
     /**
      * Filters the URL and calls the main openUrl method.

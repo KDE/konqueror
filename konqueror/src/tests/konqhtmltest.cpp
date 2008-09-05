@@ -15,6 +15,8 @@
    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include <kstandarddirs.h>
+#include <ktoolbar.h>
 #include <kdebug.h>
 #include <QScrollArea>
 #include <qtest_kde.h>
@@ -88,6 +90,8 @@ private Q_SLOTS:
     void windowOpen()
     {
         KonqMainWindow* mainWindow = new KonqMainWindow;
+        const QString profile = KStandardDirs::locate("data", "konqueror/profiles/webbrowsing");
+        mainWindow->viewManager()->loadViewProfileFromFile(profile, "webbrowsing");
         mainWindow->openUrl(0, KUrl(
                 "data:text/html, <script type=\"text/javascript\">"
                 "function openWindow() { window.open('data:text/html, <p>Hello world</p>'); } "
@@ -106,6 +110,9 @@ private Q_SLOTS:
         QTest::qWait(10); // just in case there's more delayed calls :)
         // Did it open a window?
         QCOMPARE(KMainWindow::memberList().count(), 2);
+        KMainWindow* newWindow = KMainWindow::memberList().last();
+        QVERIFY(newWindow != mainWindow);
+        compareToolbarSettings(mainWindow, newWindow);
         deleteAllMainWindows();
     }
 
@@ -132,6 +139,16 @@ private:
         kDebug() << "hiding" << windows.count() << "windows";
         Q_FOREACH(KMainWindow* window, windows)
             window->hide();
+    }
+
+    void compareToolbarSettings(KMainWindow* mainWindow, KMainWindow* newWindow)
+    {
+        QVERIFY(mainWindow != newWindow);
+        KToolBar* firstToolBar = mainWindow->toolBars().first();
+        QVERIFY(firstToolBar);
+        KToolBar* newFirstToolBar = newWindow->toolBars().first();
+        QVERIFY(newFirstToolBar);
+        QCOMPARE(firstToolBar->toolButtonStyle(), newFirstToolBar->toolButtonStyle());
     }
 };
 

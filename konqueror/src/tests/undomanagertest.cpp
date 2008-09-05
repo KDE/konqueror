@@ -26,12 +26,25 @@ class UndoManagerTest : public QObject
     Q_OBJECT
 
 private Q_SLOTS:
+    void initTestCase();
     void testAddClosedTabItem();
     void testUndoLastClosedTab();
 };
 
 
 QTEST_KDEMAIN( UndoManagerTest, GUI )
+
+void UndoManagerTest::initTestCase()
+{
+    // Make sure we start clean
+    KonqUndoManager manager(0);
+    QSignalSpy spyUndoAvailable(&manager, SIGNAL(undoAvailable(bool)) );
+    QVERIFY(spyUndoAvailable.isValid());
+    manager.clearClosedItemsList();
+    QCOMPARE(spyUndoAvailable.count(), 1);
+    QCOMPARE(spyUndoAvailable[0][0], QVariant(false));
+    QVERIFY(!manager.undoAvailable());
+}
 
 void UndoManagerTest::testAddClosedTabItem()
 {

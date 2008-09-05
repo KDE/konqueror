@@ -259,7 +259,7 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
   connect( KGlobalSettings::self(), SIGNAL( kdisplayFontChanged()), SLOT(slotReconfigure()));
 
   //load the xmlui file specified in the profile or the default konqueror.rc
-  setXMLFile( xmluiFile );
+  setXMLFile( KonqViewManager::normalizedXMLFileName(xmluiFile) );
 
   setStandardToolBarMenuEnabled( true );
 
@@ -1133,7 +1133,8 @@ static bool isPopupWindow( const KParts::WindowArgs &windowArgs )
         !windowArgs.isStatusBarVisible();
 }
 
-// This is called for the javascript window.open call. Also called for MMB on link.
+// This is called for the javascript window.open call.
+// Also called for MMB on link, target="_blank" link, MMB on folder, etc.
 void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
                                           const KParts::OpenUrlArguments& args,
                                           const KParts::BrowserArguments &browserArgs,
@@ -1202,8 +1203,8 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
         return;
     }
 
-    mainWindow = new KonqMainWindow;
-    mainWindow->setInitialFrameName( browserArgs.frameName );
+    // Pass the URL to createNewWindow so that it can select the right profile for it
+    mainWindow = KonqMisc::createNewWindow(url, args, browserArgs, false, QStringList(), false, false /*do not open URL*/);
     mainWindow->resetAutoSaveSettings(); // Don't autosave
 
     KonqOpenURLRequest req;
@@ -1226,6 +1227,7 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
     KonqView * view = 0;
     // cannot use activePart/currentView, because the activation through the partmanager
     // is delayed by a singleshot timer (see KonqViewManager::setActivePart)
+    // ### TODO: not true anymore
     if ( mainWindow->viewMap().count() )
     {
       MapViews::ConstIterator it = mainWindow->viewMap().begin();
@@ -1240,18 +1242,10 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
        mainWindow->viewManager()->setActivePart( *part, true );
     }
 
-    QString profileName(url.isLocalFile() ? "konqueror/profiles/filemanagement" : "konqueror/profiles/webbrowsing");
-
     if ( windowArgs.x() != -1 )
         mainWindow->move( windowArgs.x(), mainWindow->y() );
     if ( windowArgs.y() != -1 )
         mainWindow->move( mainWindow->x(), windowArgs.y() );
-
-    KSharedConfigPtr cfg = KSharedConfig::openConfig(KStandardDirs::locate("data",profileName), KConfig::SimpleConfig);
-    KConfigGroup profileGroup(cfg, "Profile");
-
-    // First, apply default size from profile
-    mainWindow->applyWindowSizeFromProfile(profileGroup);
 
     int width;
     if ( windowArgs.width() != -1 )
@@ -4797,8 +4791,12 @@ void KonqMainWindow::saveProperties( KConfigGroup& config )
 
 void KonqMainWindow::readProperties( const KConfigGroup& configGroup )
 {
+    // ######### THIS CANNOT WORK. It's too late to change the xmlfile, the GUI has been built already!
+    // We need to delay doing setXMLFile+createGUI until we know which profile we are going to use, then...
+    // TODO: Big refactoring needed for this feature. On the other hand, all default profiles shipped with
+    // konqueror use konqueror.rc again, so the need for this is almost zero now.
     const QString xmluiFile = configGroup.readEntry("XMLUIFile","konqueror.rc");
-    setXMLFile(xmluiFile);
+    setXMLFile( KonqViewManager::normalizedXMLFileName(xmluiFile) );
 
     m_pViewManager->loadViewProfileFromGroup( configGroup, QString() /*no profile name*/ );
     // read window settings

@@ -26,7 +26,7 @@
   <Action name="cut"/>
   <Action name="copy"/>
   <Action name="paste"/>
-  <ActionList name="operations" /><!-- copy files and move files, when two directory views -->
+  <!--<ActionList name="operations" />--><!-- copy files and move files, when two directory views -->
   <WeakSeparator/>
   <Merge/>
  </Menu>
@@ -89,21 +89,15 @@
  </Menu>
  <Merge/>
 </MenuBar>
-<ToolBar fullWidth="true" name="mainToolBar" newline="true"><text>Main Toolbar</text>
+<ToolBar iconText="icononly" name="mainToolBar" newline="true"><text>Main Toolbar</text>
  <Action name="go_back"/>
  <Action name="go_forward"/>
  <Action name="go_up"/>
- <Action name="go_home"/>
- <Separator/>
  <Action name="reload"/>
  <Action name="stop"/>
- <Separator/>
- <Action name="print"/>
+ <Action name="go_home"/>
  <WeakSeparator/>
  <Merge/>
- <Separator/>
- <ActionList name="fullscreen" />
- <WeakSeparator/>
 </ToolBar>
 <ToolBar hidden="true" name="extraToolBar" newline="false" index="1"><text>Extra Toolbar</text>
   <Action name="konq_sidebartng" />
@@ -112,8 +106,7 @@
   <Action name="splitviewh" />
   <Action name="removeview" />
 </ToolBar>
-<ToolBar fullWidth="true" name="locationToolBar" newline="true"><text>Location Toolbar</text>
-  <Action name="location_label" />
+<ToolBar fullWidth="true" iconText="icononly" name="locationToolBar" newline="false"><text>Location Toolbar</text>
   <Action name="toolbar_url_combo" />
   <Action name="go_url" />
 </ToolBar>

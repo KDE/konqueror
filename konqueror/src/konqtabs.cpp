@@ -308,14 +308,15 @@ void KonqFrameTabs::insertChildFrame( KonqFrameBase* frame, int index )
     //flicker...
     setUpdatesEnabled(false);
 
-    insertTab(index, frame->asQWidget(), "");
-
     frame->setParentContainer(this);
     if (index == -1) {
         m_childFrameList.append(frame);
     } else {
         m_childFrameList.insert(index, frame);
     }
+
+    // note that this can call slotCurrentChanged (e.g. when inserting/replacing the first tab)
+    insertTab(index, frame->asQWidget(), "");
 
     if (m_rightWidget) {
       m_rightWidget->setEnabled( m_childFrameList.count() > 1 );

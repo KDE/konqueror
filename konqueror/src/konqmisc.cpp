@@ -139,7 +139,7 @@ KonqMainWindow * KonqMisc::createBrowserWindowFromProfile( const QString& _path,
       KonqMainWindow::setPreloadedFlag( false );
       mainWindow->resetWindow();
       mainWindow->reparseConfiguration();
-      mainWindow->viewManager()->loadViewProfileFromFile( path, filename, url, req, true );
+      mainWindow->viewManager()->loadViewProfileFromFile(path, filename, url, req, true, openUrl);
   }
   else
   {
