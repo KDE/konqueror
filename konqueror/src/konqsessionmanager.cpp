@@ -173,7 +173,7 @@ void KonqSessionManager::saveCurrentSessions(const QString & path)
 
 void KonqSessionManager::slotSaveCurrentSession(const QString & path)
 {
-    QString filename = path + "/" + m_baseService;
+    QString filename = path + '/' + m_baseService;
 
     KConfig sessionConfig(filename, KConfig::SimpleConfig, "appdata");
     saveCurrentSession(&sessionConfig);
@@ -233,7 +233,7 @@ bool KonqSessionManager::takeSessionsOwnership()
                     it2.next();
                     // take ownership of the abandoned file
                     QFile::rename(it2.filePath(), dirForMyOwnedSessionFiles() +
-                        "/" + it2.fileName());
+                        '/' + it2.fileName());
                 }
                 // Remove the old directory
                 KIO::Job *delJob = KIO::del(KUrl(it.filePath()), KIO::HideProgressInfo);
@@ -243,7 +243,7 @@ bool KonqSessionManager::takeSessionsOwnership()
             if(!idbus->isServiceRegistered(KonqMisc::decodeFilename(it.fileName())))
             {
                 // and it's abandoned: take its ownership
-                QFile::rename(it.filePath(), dirForMyOwnedSessionFiles() + "/" +
+                QFile::rename(it.filePath(), dirForMyOwnedSessionFiles() + '/' +
                     it.fileName());
                 found = true;
             }
@@ -276,7 +276,7 @@ void KonqSessionManager::restoreSessions(const QStringList &sessionFilePathsList
     }
 }
 
-void KonqSessionManager::restoreSessions(const QString &sessionsDir, bool 
+void KonqSessionManager::restoreSessions(const QString &sessionsDir, bool
     openTabsInsideCurrentWindow, KonqMainWindow *parent)
 {
     QDirIterator it(sessionsDir, QDir::Readable|QDir::Files);
@@ -303,7 +303,7 @@ void KonqSessionManager::restoreSession(const QString &sessionFilePath, bool
     for(int i = 0; i < size; i++)
     {
         KConfigGroup configGroup(&config, "Window" + QString::number(i));
-        
+
         if(!openTabsInsideCurrentWindow)
             KonqViewManager::openSavedWindow(configGroup)->show();
         else
@@ -345,7 +345,7 @@ bool KonqSessionManager::askUserToRestoreAutosavedAbandonedSessions()
             {
                 it.next();
                 // remove ownership of the abandoned file
-                QFile::rename(it.filePath(), m_autosaveDir + "/" + it.fileName());
+                QFile::rename(it.filePath(), m_autosaveDir + '/' + it.fileName());
             }
             // Remove the owned_by directory
             KIO::Job *delJob = KIO::del(KUrl(dirForMyOwnedSessionFiles()), KIO::HideProgressInfo);
