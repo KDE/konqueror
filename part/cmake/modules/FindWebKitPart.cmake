@@ -15,6 +15,12 @@ if ( WEBKITPART_INCLUDE_DIR AND WEBKITPART_LIBRARIES )
    SET(WebKitPart_FIND_QUIETLY TRUE)
 endif ( WEBKITPART_INCLUDE_DIR AND WEBKITPART_LIBRARIES )
 
+# Little trick I found in FindKDE4Interal... If we're building WebKitPart, set the variables to point to the build directory.
+if(webkitpart_SOURCE_DIR)
+    set(WEBKITPART_LIBRARIES webkitkpart)
+    set(WEBKITPART_INCLUDE_DIR ${CMAKE_SOURCE_DIR})
+endif(webkitpart_SOURCE_DIR)
+
 # use pkg-config to get the directories and then use these values
 # in the FIND_PATH() and FIND_LIBRARY() calls
 if( NOT WIN32 )

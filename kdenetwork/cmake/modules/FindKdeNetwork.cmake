@@ -15,6 +15,12 @@ if ( KDENETWORK_INCLUDE_DIR AND KDENETWORK_LIBRARIES )
    SET(KdeNetwork_FIND_QUIETLY TRUE)
 endif ( KDENETWORK_INCLUDE_DIR AND KDENETWORK_LIBRARIES )
 
+# Little trick I found in FindKDE4Interal... If we're building KdeNetwork, set the variables to point to the build directory.
+if(kdenetwork_SOURCE_DIR)
+    set(KDENETWORK_LIBRARIES kdenetwork)
+    set(KDENETWORK_INCLUDE_DIR ${CMAKE_SOURCE_DIR})
+endif(kdenetwork_SOURCE_DIR)
+
 # use pkg-config to get the directories and then use these values
 # in the FIND_PATH() and FIND_LIBRARY() calls
 if( NOT WIN32 )

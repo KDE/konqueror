@@ -5,15 +5,14 @@ find_package(KDE4 REQUIRED)
 include(KDE4Defaults)
 include(MacroLibrary)
 
-include_directories(${KDE4_INCLUDES})
+# QtWebKit uses QtNetwork, to KdeWebKit uses....
+find_package(KdeNetwork REQUIRED)
+
+include_directories(${KDE4_INCLUDES} ${KDENETWORK_INCLUDES})
 add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 
 add_subdirectory(includes)
 add_subdirectory(cmake)
-
-include_directories( # XXX
-    ${CMAKE_SOURCE_DIR}
-)
 
 set(kdewebkit_LIB_SRCS
     kwebview.cpp
@@ -31,7 +30,7 @@ kde4_add_ui_files(kdewebkit_LIB_SRCS
 kde4_add_library(kdewebkit SHARED ${kdewebkit_LIB_SRCS})
 
 target_link_libraries(kdewebkit
-    kdenetwork
+    ${KDENETWORK_LIBRARIES}
     ${KDE4_KPARTS_LIBS}
     ${QT_QTWEBKIT_LIBRARY}
     ${QT_QTUITOOLS_LIBRARY}
