@@ -22,10 +22,9 @@
  */
 
 #include "webpage.h"
-#include "kwebpage.h"
+#include <kdewebkit/kwebpage.h>
 #include "webkitpart.h"
 #include "webview.h"
-#include "network/knetworkaccessmanager.h"
 #include "kdewebkit/settings/webkitsettings.h"
 
 #include <KDE/KParts/GenericFactory>

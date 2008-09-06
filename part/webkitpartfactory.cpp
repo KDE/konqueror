@@ -42,7 +42,7 @@ KParts::Part *WebKitFactory::createPartObject(QWidget *parentWidget, QObject *pa
     return new WebKitPart(parentWidget, parent, QStringList());
 }
 
-extern "C" KDE_EXPORT void *init_webkitkdepart()
+extern "C" KDE_EXPORT void *init_webkitpart()
 {
     return new WebKitFactory;
 }

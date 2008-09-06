@@ -23,7 +23,7 @@
  */
 
 #include "kwebpage.h"
-#include "network/knetworkaccessmanager.h"
+#include <kdenetwork/knetworkaccessmanager.h>
 #include "settings/webkitsettings.h"
 
 #include <KDE/KParts/GenericFactory>

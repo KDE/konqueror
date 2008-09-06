@@ -1,4 +1,5 @@
 # install the cmake files
+find_package(KDE4 REQUIRED)
 
 file(GLOB cmakeFiles "${CMAKE_CURRENT_SOURCE_DIR}/*.cmake")
 

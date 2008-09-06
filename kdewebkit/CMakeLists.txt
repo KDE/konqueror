@@ -11,6 +11,10 @@ add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 add_subdirectory(includes)
 add_subdirectory(network)
 
+include_directories( # XXX
+    ${CMAKE_SOURCE_DIR}
+)
+
 set(kdewebkit_LIB_SRCS
     kwebview.cpp
     kwebpage.cpp

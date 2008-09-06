@@ -23,7 +23,7 @@
 #ifndef WEBPAGE_H
 #define WEBPAGE_H
 
-#include "kwebpage.h"
+#include <kdewebkit/kwebpage.h>
 
 #include "webkitkde_export.h"
 
