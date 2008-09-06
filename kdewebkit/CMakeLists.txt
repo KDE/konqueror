@@ -9,6 +9,7 @@ include_directories(${KDE4_INCLUDES})
 add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 
 add_subdirectory(includes)
+add_subdirectory(cmake)
 
 include_directories( # XXX
     ${CMAKE_SOURCE_DIR}

@@ -8,6 +8,7 @@ include(MacroLibrary)
 include_directories(${KDE4_INCLUDES})
 add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 
+add_subdirectory(cmake)
 add_subdirectory(includes)
 
 set(kdenetwork_LIB_SRCS
