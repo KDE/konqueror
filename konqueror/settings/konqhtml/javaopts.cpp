@@ -23,7 +23,7 @@
 #include "javaopts.h"
 
 // Qt
-#include <QtGui/QLayout>
+#include <QtGui/QFormLayout>
 #include <QtGui/QGroupBox>
 #include <QtGui/QLabel>
 #include <QtGui/QTreeWidget>
@@ -76,15 +76,10 @@ KJavaOptions::KJavaOptions( KSharedConfig::Ptr config, const QString &group,
     /***************************************************************************
      ********************* Global Settings *************************************
      **************************************************************************/
-    QGroupBox* globalGB = new QGroupBox( i18n( "Global Settings" ), this );
-    QVBoxLayout *laygroup = new QVBoxLayout();
-    globalGB->setLayout( laygroup );
-    laygroup->setSpacing(KDialog::spacingHint());
-    toplevel->addWidget( globalGB );
-    enableJavaGloballyCB = new QCheckBox( i18n( "Enable Ja&va globally" ), globalGB );
-    laygroup->addWidget( enableJavaGloballyCB );
+    enableJavaGloballyCB = new QCheckBox( i18n( "Enable Ja&va globally" ), this );
     connect( enableJavaGloballyCB, SIGNAL( clicked() ), this, SLOT( slotChanged() ) );
     connect( enableJavaGloballyCB, SIGNAL( clicked() ), this, SLOT( toggleJavaControls() ) );
+    toplevel->addWidget(enableJavaGloballyCB);
 
 
     /***************************************************************************
@@ -98,54 +93,36 @@ KJavaOptions::KJavaOptions( KSharedConfig::Ptr config, const QString &group,
      ***************** Java Runtime Settings ***********************************
      **************************************************************************/
     QGroupBox* javartGB = new QGroupBox( i18n( "Java Runtime Settings" ), this );
-    QVBoxLayout *laygroup1 = new QVBoxLayout();
-    javartGB->setLayout( laygroup1 );
+    QFormLayout* laygroup1 = new QFormLayout(javartGB);
     laygroup1->setSpacing(KDialog::spacingHint());
     toplevel->addWidget( javartGB );
 
-    QWidget* checkboxes = new QWidget( javartGB );
-    laygroup1->addWidget( checkboxes );
-    QGridLayout* grid = new QGridLayout( checkboxes );
-
-    javaSecurityManagerCB = new QCheckBox( i18n("&Use security manager" ), checkboxes );
-    grid->addWidget( javaSecurityManagerCB, 0, 0 );
+    javaSecurityManagerCB = new QCheckBox( i18n("&Use security manager" ), this);
+    laygroup1->addRow( javaSecurityManagerCB );
     connect( javaSecurityManagerCB, SIGNAL(toggled( bool )), this, SLOT(slotChanged()) );
 
-    useKioCB = new QCheckBox( i18n("Use &KIO"), checkboxes );
-    grid->addWidget( useKioCB, 0, 1 );
+    useKioCB = new QCheckBox( i18n("Use &KIO"), this );
+    laygroup1->addRow( useKioCB);
     connect( useKioCB, SIGNAL(toggled( bool )), this, SLOT(slotChanged()) );
 
-    enableShutdownCB = new QCheckBox( i18n("Shu&tdown applet server when inactive"), checkboxes );
-
-    grid->addWidget( enableShutdownCB, 1, 0 );
+    enableShutdownCB = new QCheckBox( i18n("Shu&tdown applet server when inactive for more than"), this);
     connect( enableShutdownCB, SIGNAL(toggled( bool )), this, SLOT(slotChanged()) );
     connect( enableShutdownCB, SIGNAL(clicked()), this, SLOT(toggleJavaControls()) );
-
     KHBox* secondsHB = new KHBox( javartGB );
     laygroup1->addWidget( secondsHB );
     serverTimeoutSB = new KIntNumInput( secondsHB );
     serverTimeoutSB->setRange( 0, 1000, 5 );
-    serverTimeoutSB->setLabel( i18n("App&let server timeout:"), Qt::AlignLeft );
     serverTimeoutSB->setSuffix(i18n(" sec"));
     connect(serverTimeoutSB, SIGNAL(valueChanged(int)),this,SLOT(slotChanged()));
+    laygroup1->addRow( enableShutdownCB, serverTimeoutSB);
 
-    KHBox* pathHB = new KHBox( javartGB );
-    laygroup1->addWidget( pathHB );
-    pathHB->setSpacing( 10 );
-    QLabel* pathLA = new QLabel( i18n( "&Path to Java executable, or 'java':" ),
-                                 pathHB );
-    pathED = new  KUrlRequester( pathHB );
+    pathED = new  KUrlRequester(this);
     connect( pathED, SIGNAL(textChanged( const QString& )), this, SLOT(slotChanged()) );
-    pathLA->setBuddy( pathED );
+    laygroup1->addRow(i18n( "&Path to Java executable, or 'java':" ), pathED);
 
-    KHBox* addArgHB = new KHBox( javartGB );
-    laygroup1->addWidget( addArgHB );
-
-    addArgHB->setSpacing( 10 );
-    QLabel* addArgLA = new QLabel( i18n( "Additional Java a&rguments:" ), addArgHB );
-    addArgED = new QLineEdit( addArgHB );
+    addArgED = new QLineEdit( this );
     connect( addArgED, SIGNAL(textChanged( const QString& )), this, SLOT(slotChanged()) );
-    addArgLA->setBuddy( addArgED );
+    laygroup1->addRow(i18n( "Additional Java a&rguments:" ),addArgED);
 
     /***************************************************************************
      ********************** WhatsThis? items ***********************************
@@ -312,7 +289,7 @@ void KJavaOptions::toggleJavaControls()
 
 JavaDomainListView::JavaDomainListView(KSharedConfig::Ptr config,const QString &group,
 	KJavaOptions *options,QWidget *parent)
-	: DomainListView(config,i18n( "Doma&in-Specific" ), parent),
+	: DomainListView(config,i18nc("@title:group", "Doma&in-Specific" ), parent),
 	group(group), options(options) {
 }
 

@@ -54,31 +54,30 @@ KJavaScriptOptions::KJavaScriptOptions( KSharedConfig::Ptr config, const QString
   toplevel->setMargin( 10 );
   toplevel->setSpacing( 5 );
 
-  // the global checkbox
-  QGroupBox* globalGB = new QGroupBox(i18n( "Global Settings" ));
-  QGridLayout *hbox = new QGridLayout;
-  toplevel->addWidget( globalGB );
-
   enableJavaScriptGloballyCB = new QCheckBox( i18n( "Ena&ble JavaScript globally" ));
   enableJavaScriptGloballyCB->setWhatsThis( i18n("Enables the execution of scripts written in ECMA-Script "
         "(also known as JavaScript) that can be contained in HTML pages. "
         "Note that, as with any browser, enabling scripting languages can be a security problem.") );
   connect( enableJavaScriptGloballyCB, SIGNAL( clicked() ), SLOT( changed() ) );
   connect( enableJavaScriptGloballyCB, SIGNAL( clicked() ), this, SLOT( slotChangeJSEnabled() ) );
-  hbox->addWidget(enableJavaScriptGloballyCB, 0, 0);
-  
+  toplevel->addWidget(enableJavaScriptGloballyCB);
+
+  // the global checkbox
+  QGroupBox* globalGB = new QGroupBox(i18n( "Debugging" ));
+  QHBoxLayout *hbox = new QHBoxLayout(globalGB);
+  toplevel->addWidget( globalGB );
+
+  jsDebugWindow = new QCheckBox( i18n( "Enable debu&gger" ) );
+  jsDebugWindow->setWhatsThis( i18n( "Enables builtin JavaScript debugger." ) );
+  connect( jsDebugWindow, SIGNAL( clicked() ), SLOT( changed() ) );
+  hbox->addWidget(jsDebugWindow);
+
   reportErrorsCB = new QCheckBox( i18n( "Report &errors" ) );
   reportErrorsCB->setWhatsThis( i18n("Enables the reporting of errors that occur when JavaScript "
 	"code is executed.") );
   connect( reportErrorsCB, SIGNAL( clicked() ), SLOT( changed() ) );
-  hbox->addWidget(reportErrorsCB,1,0);
-  
-  jsDebugWindow = new QCheckBox( i18n( "Enable debu&gger" ) );
-  jsDebugWindow->setWhatsThis( i18n( "Enables builtin JavaScript debugger." ) );
-  connect( jsDebugWindow, SIGNAL( clicked() ), SLOT( changed() ) );
-  hbox->addWidget(jsDebugWindow,0,1);
-  globalGB->setLayout(hbox);
-  
+  hbox->addWidget(reportErrorsCB);
+
   // the domain-specific listview
   domainSpecific = new JSDomainListView(m_pConfig,m_groupname,this,this);
   connect(domainSpecific,SIGNAL(changed(bool)),SLOT(changed()));
@@ -181,7 +180,7 @@ void KJavaScriptOptions::slotChangeJSEnabled() {
 
 JSDomainListView::JSDomainListView(KSharedConfig::Ptr config,const QString &group,
 	KJavaScriptOptions *options, QWidget *parent)
-	: DomainListView(config,i18n( "Do&main-Specific" ), parent),
+	: DomainListView(config,i18nc("@title:group", "Do&main-Specific" ), parent),
 	group(group), options(options) {
 }
 

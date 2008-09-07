@@ -23,9 +23,9 @@
 #include "domainlistview.h"
 
 // Qt
-#include <QtGui/QLayout>
+#include <QtGui/QHBoxLayout>
+#include <QtGui/QVBoxLayout>
 #include <QtGui/QPushButton>
-#include <QtGui/QGridLayout>
 #include <QtGui/QTreeWidget>
 
 // KDE
@@ -40,9 +40,7 @@
 DomainListView::DomainListView(KSharedConfig::Ptr config,const QString &title,
 		QWidget *parent) :
 	QGroupBox(title, parent), config(config) {
-  QGridLayout* thisLayout = new QGridLayout();
-  setLayout( thisLayout );
-  thisLayout->setAlignment(Qt::AlignTop);
+  QHBoxLayout* thisLayout = new QHBoxLayout(this);
   thisLayout->setSpacing(KDialog::spacingHint());
   thisLayout->setMargin(KDialog::marginHint());
 
@@ -52,34 +50,35 @@ DomainListView::DomainListView(KSharedConfig::Ptr config,const QString &title,
   domainSpecificLV->setColumnWidth(0, 100);
   connect(domainSpecificLV,SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)), SLOT(changePressed()));
   connect(domainSpecificLV, SIGNAL(currentItemChanged(QTreeWidgetItem*, QTreeWidgetItem*)), SLOT(updateButton()));
-  thisLayout->addWidget(domainSpecificLV, 0, 0, 6, 1);
+  thisLayout->addWidget(domainSpecificLV);
 
+  QVBoxLayout* btnsLayout = new QVBoxLayout;
+  thisLayout->addLayout(btnsLayout);
   addDomainPB = new QPushButton(i18n("&New..."), this);
-  thisLayout->addWidget(addDomainPB, 0, 1);
+  btnsLayout->addWidget(addDomainPB);
   connect(addDomainPB, SIGNAL(clicked()), SLOT(addPressed()));
 
   changeDomainPB = new QPushButton( i18n("Chan&ge..."), this);
-  thisLayout->addWidget(changeDomainPB, 1, 1);
+  btnsLayout->addWidget(changeDomainPB);
   connect(changeDomainPB, SIGNAL(clicked()), this, SLOT(changePressed()));
 
   deleteDomainPB = new QPushButton(i18n("De&lete"), this);
-  thisLayout->addWidget(deleteDomainPB, 2, 1);
+  btnsLayout->addWidget(deleteDomainPB);
   connect(deleteDomainPB, SIGNAL(clicked()), this, SLOT(deletePressed()));
 
   importDomainPB = new QPushButton(i18n("&Import..."), this);
-  thisLayout->addWidget(importDomainPB, 3, 1);
+  btnsLayout->addWidget(importDomainPB);
   connect(importDomainPB, SIGNAL(clicked()), this, SLOT(importPressed()));
   importDomainPB->setEnabled(false);
   importDomainPB->hide();
 
   exportDomainPB = new QPushButton(i18n("&Export..."), this);
-  thisLayout->addWidget(exportDomainPB, 4, 1);
+  btnsLayout->addWidget(exportDomainPB);
   connect(exportDomainPB, SIGNAL(clicked()), this, SLOT(exportPressed()));
   exportDomainPB->setEnabled(false);
   exportDomainPB->hide();
 
-  QSpacerItem* spacer = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Expanding);
-  thisLayout->addItem(spacer, 5, 1);
+  btnsLayout->addStretch();
 
   addDomainPB->setWhatsThis( i18n("Click on this button to manually add a host or domain "
                                        "specific policy.") );
