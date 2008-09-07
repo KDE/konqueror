@@ -80,13 +80,19 @@ void BookmarkInfoWidget::showBookmark(const KBookmark &bk) {
 
     m_url_le->setReadOnly(bk.isGroup() || bk.isSeparator());
     QString urlText = bk.isGroup() ? QString() : bk.url().pathOrUrl();
-    if (m_url_le->text() != urlText)
+    if (m_url_le->text() != urlText) {
+        const int cursorPosition = m_url_le->cursorPosition(); 
         m_url_le->setText(urlText);
+        m_url_le->setCursorPosition(cursorPosition); 
+    }
 
     m_comment_le->setReadOnly((bk.isSeparator()|| !bk.hasParent()) ? true : false );
     QString commentText = EditCommand::getNodeText(bk, QStringList() << "desc");
-    if (m_comment_le->text() != commentText)
+    if (m_comment_le->text() != commentText) {
+        const int cursorPosition = m_comment_le->cursorPosition(); 
         m_comment_le->setText(commentText);
+        m_comment_le->setCursorPosition(cursorPosition); 
+    }
 
     // readonly fields
     updateStatus();
@@ -133,11 +139,9 @@ void BookmarkInfoWidget::commitTitle()
 
 void BookmarkInfoWidget::slotTextChangedTitle(const QString &str)
 {
-    Q_UNUSED(str);
     if (m_bk.isNull() || !m_title_le->isModified())
         return;
 
-    timer->setSingleShot(true);
     timer->start(1000);
 
     if(titlecmd)
@@ -163,11 +167,9 @@ void BookmarkInfoWidget::commitURL()
 }
 
 void BookmarkInfoWidget::slotTextChangedURL(const QString &str) {
-    Q_UNUSED(str);
     if (m_bk.isNull() || !m_url_le->isModified())
         return;
 
-    timer->setSingleShot(true);
     timer->start(1000);
 
     if(urlcmd)
@@ -193,11 +195,9 @@ void BookmarkInfoWidget::commitComment()
 }
 
 void BookmarkInfoWidget::slotTextChangedComment(const QString &str) {
-    Q_UNUSED(str);
     if (m_bk.isNull() || !m_comment_le->isModified())
         return;
 
-    timer->setSingleShot(true);
     timer->start(1000);
 
     if(commentcmd)
@@ -235,6 +235,7 @@ BookmarkInfoWidget::BookmarkInfoWidget(BookmarkListView * lv, QWidget *parent)
             SLOT( slotUpdate()));
 
     timer = new QTimer(this);
+    timer->setSingleShot(true);
     connect(timer, SIGNAL( timeout() ), SLOT( commitChanges()));
 
 
@@ -246,6 +247,7 @@ BookmarkInfoWidget::BookmarkInfoWidget(BookmarkListView * lv, QWidget *parent)
     grid->setSpacing(4);
 
     m_title_le = new KLineEdit(this);
+    m_title_le->setClearButtonShown(true);
     grid->addWidget(m_title_le, 0, 1);
     QLabel* label = new QLabel(i18n("Name:"), this);
     label->setBuddy(m_title_le);
@@ -256,6 +258,7 @@ BookmarkInfoWidget::BookmarkInfoWidget(BookmarkListView * lv, QWidget *parent)
     connect(m_title_le, SIGNAL( editingFinished() ), SLOT( commitTitle() ));
 
     m_url_le = new KLineEdit(this);
+    m_url_le->setClearButtonShown(true);
     grid->addWidget(m_url_le, 1, 1);
     label = new QLabel(i18n("Location:"), this);
     label->setBuddy(m_url_le);
@@ -266,6 +269,7 @@ BookmarkInfoWidget::BookmarkInfoWidget(BookmarkListView * lv, QWidget *parent)
     connect(m_url_le, SIGNAL( editingFinished() ), SLOT( commitURL() ));
 
     m_comment_le = new KLineEdit(this);
+    m_comment_le->setClearButtonShown(true);
     grid->addWidget(m_comment_le, 2, 1);
     label = new QLabel(i18n("Comment:"), this);
     label->setBuddy(m_comment_le);

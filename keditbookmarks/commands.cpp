@@ -197,8 +197,11 @@ EditCommand::EditCommand(const QString & address, int col, const QString & newVa
 {
     if(mCol == 1)
     {
-        KUrl u(newValue);
-        mNewValue = u.url( KUrl::LeaveTrailingSlash );
+        const KUrl u(newValue);
+        if (!(u.isEmpty() && !newValue.isEmpty())) // prevent emptied line if the currently entered url is invalid
+            mNewValue = u.url(KUrl::LeaveTrailingSlash);
+        else
+            mNewValue = newValue;
     }
     else
         mNewValue = newValue;
@@ -239,7 +242,9 @@ void EditCommand::execute()
     else if(mCol==1)
     {
         mOldValue = bk.url().prettyUrl();
-        bk.setUrl(KUrl(mNewValue));
+        const KUrl newUrl(mNewValue);
+        if (!(newUrl.isEmpty() && !mNewValue.isEmpty())) // prevent emptied line if the currently entered url is invalid
+            bk.setUrl(newUrl);
     }
     else if(mCol==2)
     {
@@ -280,8 +285,11 @@ void EditCommand::modify(const QString &newValue)
 {
     if(mCol == 1)
     {
-        KUrl u(newValue);
-        mNewValue = u.url( KUrl::LeaveTrailingSlash );
+        const KUrl u(newValue);
+        if (!(u.isEmpty() && !newValue.isEmpty())) // prevent emptied line if the currently entered url is invalid
+            mNewValue = u.url(KUrl::LeaveTrailingSlash);
+        else
+            mNewValue = newValue;
     }
     else
         mNewValue = newValue;
