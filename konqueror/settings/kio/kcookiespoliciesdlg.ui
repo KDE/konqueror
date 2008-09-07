@@ -6,7 +6,7 @@
     <x>0</x>
     <y>0</y>
     <width>568</width>
-    <height>493</height>
+    <height>663</height>
    </rect>
   </property>
   <layout class="QVBoxLayout" >
@@ -83,7 +83,7 @@ Determines how cookies received from a remote machine will be handled:
      <property name="title" >
       <string>Default Policy</string>
      </property>
-     <layout class="QVBoxLayout" >
+     <layout class="QHBoxLayout" >
       <item>
        <widget class="QRadioButton" name="rbPolicyAsk" >
         <property name="text" >
@@ -165,10 +165,22 @@ List of sites for which you have set a specific cookie policy. Specific policies
          <property name="text" >
           <string>Domain</string>
          </property>
+         <property name="clickable" >
+          <bool>true</bool>
+         </property>
+         <property name="resizable" >
+          <bool>true</bool>
+         </property>
         </column>
         <column>
          <property name="text" >
           <string>Policy</string>
+         </property>
+         <property name="clickable" >
+          <bool>true</bool>
+         </property>
+         <property name="resizable" >
+          <bool>true</bool>
          </property>
         </column>
        </widget>
@@ -211,7 +223,7 @@ List of sites for which you have set a specific cookie policy. Specific policies
           <property name="sizeType" >
            <enum>QSizePolicy::Expanding</enum>
           </property>
-          <property name="sizeHint" >
+          <property name="sizeHint" stdset="0" >
            <size>
             <width>81</width>
             <height>16</height>

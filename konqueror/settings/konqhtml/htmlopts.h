@@ -25,6 +25,7 @@
 #include <kcmodule.h>
 #include <ksharedconfig.h>
 class KIntNumInput;
+class QGroupBox;
 
 class KMiscHTMLOptions : public KCModule
 {
@@ -53,7 +54,7 @@ private:
     QCheckBox* m_pAutoRedirectCheckBox;
     QCheckBox* m_pOpenMiddleClick;
     QCheckBox* m_pBackRightClick;
-    QCheckBox* m_pFormCompletionCheckBox;
+    QGroupBox* m_pFormCompletionCheckBox;
     QCheckBox* m_pAdvancedAddBookmarkCheckBox;
     QCheckBox* m_pOnlyMarkedBookmarksCheckBox;
     QCheckBox* m_pAccessKeys;

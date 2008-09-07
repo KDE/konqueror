@@ -12,7 +12,7 @@
 
 // Qt
 #include <QtGui/QGroupBox>
-#include <QtGui/QLayout>
+#include <QtGui/QFormLayout>
 #include <QtGui/QLabel>
 #include <QtGui/QPushButton>
 #include <QtDBus/QDBusMessage>
@@ -79,34 +79,30 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
 
      // Form completion
 
-    QGroupBox *bgForm = new QGroupBox( i18n("Form Com&pletion") );
-
-    QVBoxLayout *laygroup2 = new QVBoxLayout();
+    m_pFormCompletionCheckBox = new QGroupBox( i18n("Form Com&pletion"), this );
+    m_pFormCompletionCheckBox->setCheckable(true);
+    QVBoxLayout *laygroup2 = new QVBoxLayout(m_pFormCompletionCheckBox);
     laygroup2->setSpacing(KDialog::spacingHint());
-
-    m_pFormCompletionCheckBox = new QCheckBox(i18n( "Enable completion of &forms" ));
-    laygroup2->addWidget( m_pFormCompletionCheckBox );
 
     m_pFormCompletionCheckBox->setWhatsThis( i18n( "If this box is checked, Konqueror will remember"
                   " the data you enter in web forms and suggest it in similar fields for all forms." ) );
     connect(m_pFormCompletionCheckBox, SIGNAL(toggled(bool)), SLOT(slotChanged()));
 
-    m_pMaxFormCompletionItems = new KIntNumInput;
-    m_pMaxFormCompletionItems->setLabel( i18n( "&Maximum completions:" ) );
+    m_pMaxFormCompletionItems = new KIntNumInput(this);
+    m_pMaxFormCompletionItems->setLabel( i18n( "&Maximum completions:" ),  Qt::AlignLeft|Qt::AlignVCenter );
     m_pMaxFormCompletionItems->setRange( 0, 100 );
     laygroup2->addWidget( m_pMaxFormCompletionItems );
     m_pMaxFormCompletionItems->setWhatsThis(
         i18n( "Here you can select how many values Konqueror will remember for a form field." ) );
     connect(m_pMaxFormCompletionItems, SIGNAL(valueChanged(int)), SLOT(slotChanged()));
-    bgForm->setLayout(laygroup2);
 
-    lay->addWidget( bgForm, row, 0, 1, 2 );
+    lay->addWidget( m_pFormCompletionCheckBox, row, 0, 1, 2 );
     row++;
 
     // Mouse behavior
 
     QGroupBox *bgMouse = new QGroupBox( i18n("Mouse Beha&vior") );
-    QVBoxLayout *laygroup3 = new QVBoxLayout();
+    QVBoxLayout *laygroup3 = new QVBoxLayout(bgMouse);
     laygroup3->setSpacing(KDialog::spacingHint());
 
     m_cbCursor = new QCheckBox(i18n("Chan&ge cursor over links") );
@@ -115,25 +111,27 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
        "(usually to a hand) if it is moved over a hyperlink.") );
     connect(m_cbCursor, SIGNAL(toggled(bool)), SLOT(slotChanged()));
 
-    m_pOpenMiddleClick = new QCheckBox( i18n ("M&iddle click opens URL in selection" ) );
+    m_pOpenMiddleClick = new QCheckBox( i18n ("M&iddle click opens URL in selection" ), bgMouse);
     laygroup3->addWidget( m_pOpenMiddleClick );
     m_pOpenMiddleClick->setWhatsThis( i18n (
       "If this box is checked, you can open the URL in the selection by middle clicking on a "
       "Konqueror view." ) );
     connect(m_pOpenMiddleClick, SIGNAL(toggled(bool)), SLOT(slotChanged()));
 
-    m_pBackRightClick = new QCheckBox( i18n( "Right click goes &back in history" ) );
+    m_pBackRightClick = new QCheckBox( i18n( "Right click goes &back in history" ),bgMouse);
     laygroup3->addWidget( m_pBackRightClick );
     m_pBackRightClick->setWhatsThis( i18n(
       "If this box is checked, you can go back in history by right clicking on a Konqueror view. "
       "To access the context menu, press the right mouse button and move." ) );
     connect(m_pBackRightClick, SIGNAL(toggled(bool)), SLOT(slotChanged()));
 
-    bgMouse->setLayout(laygroup3);
     lay->addWidget( bgMouse, row, 0, 1, 2 );
     row++;
 
-    // Misc
+    //Images
+    QGroupBox *bgImages = new QGroupBox( i18n("Images"),this );
+    QFormLayout *laygroup4 = new QFormLayout(bgImages);
+    laygroup4->setSpacing(KDialog::spacingHint());
 
     m_pAutoLoadImagesCheckBox = new QCheckBox( i18n( "A&utomatically load images"), this );
     m_pAutoLoadImagesCheckBox->setWhatsThis( i18n( "<html>If this box is checked, Konqueror will"
@@ -144,8 +142,7 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
 			    " will probably want to check this box to enhance your browsing"
 			    " experience.</html>" ) );
     connect(m_pAutoLoadImagesCheckBox, SIGNAL(toggled(bool)), SLOT(slotChanged()));
-    lay->addWidget( m_pAutoLoadImagesCheckBox, row, 0, 1, 2 );
-    row++;
+    laygroup4->addRow( m_pAutoLoadImagesCheckBox);
 
     m_pUnfinishedImageFrameCheckBox = new QCheckBox( i18n( "Dra&w frame around not completely loaded images"), this );
     m_pUnfinishedImageFrameCheckBox->setWhatsThis( i18n( "<html>If this box is checked, Konqueror will draw"
@@ -154,8 +151,25 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
 			    " enhance your browsing experience, especially if have a slow network"
 			    " connection.</html>" ) );
     connect(m_pUnfinishedImageFrameCheckBox, SIGNAL(toggled(bool)), SLOT(slotChanged()));
-    lay->addWidget( m_pUnfinishedImageFrameCheckBox, row, 0, 1, 2 );
+    laygroup4->addRow( m_pUnfinishedImageFrameCheckBox );
+
+
+    m_pAnimationsCombo = new QComboBox( this );
+    m_pAnimationsCombo->setEditable(false);
+    m_pAnimationsCombo->insertItem(AnimationsAlways, i18nc("animations","Enabled"));
+    m_pAnimationsCombo->insertItem(AnimationsNever, i18nc("animations","Disabled"));
+    m_pAnimationsCombo->insertItem(AnimationsLoopOnce, i18n("Show Only Once"));
+    m_pAnimationsCombo->setWhatsThis(i18n("<html>Controls how Konqueror shows animated images:<br />"
+	    "<ul><li><b>Enabled</b>: Show all animations completely.</li>"
+	    "<li><b>Disabled</b>: Never show animations, show the starting image only.</li>"
+	    "<li><b>Show only once</b>: Show all animations completely but do not repeat them.</li></ul></html>"));
+    connect(m_pAnimationsCombo, SIGNAL(currentIndexChanged(int)), SLOT(slotChanged()));
+    laygroup4->addRow(i18n("A&nimations:"), m_pAnimationsCombo);
+
+    lay->addWidget( bgImages, row, 0, 1, 2 );
     row++;
+
+    // Misc
 
     m_pAutoRedirectCheckBox = new QCheckBox( i18n( "Allow automatic delayed &reloading/redirecting"), this );
     m_pAutoRedirectCheckBox->setWhatsThis( i18n( "Some web pages request an automatic reload or redirection after"
@@ -197,25 +211,6 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
     m_pUnderlineCombo->setWhatsThis(whatsThis);
     connect(m_pUnderlineCombo, SIGNAL(currentIndexChanged(int)), SLOT(slotChanged()));
 
-
-
-    label = new QLabel( i18n("A&nimations:"), this );
-    m_pAnimationsCombo = new QComboBox( this );
-    label->setBuddy(m_pAnimationsCombo);
-    m_pAnimationsCombo->setEditable(false);
-    m_pAnimationsCombo->insertItem(AnimationsAlways, i18nc("animations","Enabled"));
-    m_pAnimationsCombo->insertItem(AnimationsNever, i18nc("animations","Disabled"));
-    m_pAnimationsCombo->insertItem(AnimationsLoopOnce, i18n("Show Only Once"));
-    lay->addWidget(label, row, 0);
-    lay->addWidget(m_pAnimationsCombo, row, 1);
-    row++;
-    whatsThis = i18n("<html>Controls how Konqueror shows animated images:<br />"
-	    "<ul><li><b>Enabled</b>: Show all animations completely.</li>"
-	    "<li><b>Disabled</b>: Never show animations, show the starting image only.</li>"
-	    "<li><b>Show only once</b>: Show all animations completely but do not repeat them.</li></ul></html>");
-    label->setWhatsThis(whatsThis);
-    m_pAnimationsCombo->setWhatsThis(whatsThis);
-    connect(m_pAnimationsCombo, SIGNAL(currentIndexChanged(int)), SLOT(slotChanged()));
 
     label = new QLabel( i18n("S&mooth scrolling:"), this );
     m_pSmoothScrollingCombo = new QComboBox( this );
