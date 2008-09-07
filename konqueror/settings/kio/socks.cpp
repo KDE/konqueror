@@ -75,20 +75,14 @@ KSocksConfig::KSocksConfig(const KComponentData &componentData, QWidget *parent)
   connect(base->bg, SIGNAL(clicked(int)), this, SLOT(methodChanged(int)));
 
   // The custom library
-  connect(base->_c_customPath, SIGNAL(openFileDialog(KUrlRequester *)), this, SLOT(chooseCustomLib(KUrlRequester *)));
   connect(base->_c_customPath, SIGNAL(textChanged(const QString&)),
                      this, SLOT(customPathChanged(const QString&)));
+  base->_c_customPath->setMode( KFile::Directory );
 
   // Additional libpaths
-  base->_c_newPath->setMode(KFile::File|KFile::ExistingOnly|KFile::LocalOnly);
-  connect(base->_c_newPath, SIGNAL(openFileDialog(KUrlRequester *)), this, SLOT(chooseCustomLib(KUrlRequester *)));
-  connect(base->_c_newPath, SIGNAL(returnPressed(const QString&)),
-          this, SLOT(addThisLibrary(const QString&)));
-  connect(base->_c_newPath, SIGNAL(textChanged(const QString&)),
-          this, SLOT(libTextChanged(const QString&)));
-  connect(base->_c_add, SIGNAL(clicked()), this, SLOT(addLibrary()));
-  connect(base->_c_remove, SIGNAL(clicked()), this, SLOT(removeLibrary()));
-  connect(base->_c_libs, SIGNAL(selectionChanged()), this, SLOT(libSelection()));
+  KUrlRequester* urlRequester=new KUrlRequester(base->_c_libs);
+  urlRequester->setMode(KFile::Directory|KFile::ExistingOnly|KFile::LocalOnly);
+  base->_c_libs->setCustomEditor(urlRequester->customEditor());
 
   // The "Test" button
   connect(base->_c_test, SIGNAL(clicked()), this, SLOT(testClicked()));
@@ -127,14 +121,12 @@ void KSocksConfig::customPathChanged(const QString&)
 {
   emit changed(true);
 }
-
+//TODO
 void KSocksConfig::setCustomPathEnabled(int id)
 {
   if (id == 2) {
-    base->_c_customLabel->setEnabled(true);
     base->_c_customPath->setEnabled(true);
   } else {
-    base->_c_customLabel->setEnabled(false);
     base->_c_customPath->setEnabled(false);
   }
 }
@@ -158,7 +150,7 @@ void KSocksConfig::testClicked()
 #endif  
 }
 
-
+#if 0
 void KSocksConfig::chooseCustomLib(KUrlRequester * url)
 {
   url->setMode( KFile::Directory );
@@ -168,50 +160,7 @@ void KSocksConfig::chooseCustomLib(KUrlRequester * url)
     emit changed(true);
   }*/
 }
-
-
-
-void KSocksConfig::libTextChanged(const QString& lib)
-{
-   if (lib.length() > 0)
-     base-> _c_add->setEnabled(true);
-   else base->_c_add->setEnabled(false);
-}
-
-
-void KSocksConfig::addThisLibrary(const QString& lib)
-{
-   if (lib.length() > 0) {
-      new Q3ListViewItem(base->_c_libs, lib);
-      base->_c_newPath->clear();
-      base->_c_add->setEnabled(false);
-      base->_c_newPath->setFocus();
-      emit changed(true);
-   }
-}
-
-
-void KSocksConfig::addLibrary()
-{
-   addThisLibrary(base->_c_newPath->url().path());
-}
-
-
-void KSocksConfig::removeLibrary()
-{
- Q3ListViewItem *thisitem = base->_c_libs->selectedItem();
-   base->_c_libs->takeItem(thisitem);
-   delete thisitem;
-   base->_c_libs->clearSelection();
-   base->_c_remove->setEnabled(false);
-   emit changed(true);
-}
-
-
-void KSocksConfig::libSelection()
-{
-   base->_c_remove->setEnabled(true);
-}
+#endif
 
 
 void KSocksConfig::load()
@@ -223,22 +172,9 @@ void KSocksConfig::load()
   setCustomPathEnabled(id);
   base->_c_customPath->setPath(config.readPathEntry("SOCKS_lib", QString()));
 
-  Q3ListViewItem *thisitem;
-  while ((thisitem = base->_c_libs->firstChild())) {
-     base->_c_libs->takeItem(thisitem);
-     delete thisitem;
-  }
-
   QStringList libs = config.readPathEntry("SOCKS_lib_path", QStringList());
-  for(QStringList::Iterator it = libs.begin();
-                            it != libs.end();
-                            ++it ) {
-     new Q3ListViewItem(base->_c_libs, *it);
-  }
-  base->_c_libs->clearSelection();
-  base->_c_remove->setEnabled(false);
-  base->_c_add->setEnabled(false);
-  base->_c_newPath->clear();
+  base->_c_libs->setItems(libs);
+
   emit changed(false);
 }
 
@@ -248,14 +184,8 @@ void KSocksConfig::save()
   config.writeEntry("SOCKS_enable",base-> _c_enableSocks->isChecked(), KConfigBase::Normal | KConfigBase::Global);
   config.writeEntry("SOCKS_method", base->bg->id(base->bg->selected()), KConfigBase::Normal | KConfigBase::Global);
   config.writePathEntry("SOCKS_lib", base->_c_customPath->url().path(), KConfigBase::Normal | KConfigBase::Global);
-  Q3ListViewItem *thisitem = base->_c_libs->firstChild();
 
-  QStringList libs;
-  while (thisitem) {
-    libs << thisitem->text(0);
-    thisitem = thisitem->itemBelow();
-  }
-  config.writePathEntry("SOCKS_lib_path", libs, KConfigBase::Normal | KConfigBase::Global);
+  config.writePathEntry("SOCKS_lib_path", base->_c_libs->items(), KConfigBase::Normal | KConfigBase::Global);
 
   KGlobal::config()->sync();
 
@@ -267,17 +197,9 @@ void KSocksConfig::defaults()
 
   base->_c_enableSocks->setChecked(false);
   base->bg->setButton(1);
-  base->_c_customLabel->setEnabled(false);
   base->_c_customPath->setEnabled(false);
   base->_c_customPath->clear();
-  Q3ListViewItem *thisitem;
-  while ((thisitem = base->_c_libs->firstChild())) {
-     base->_c_libs->takeItem(thisitem);
-     delete thisitem;
-  }
-  base->_c_newPath->clear();
-  base->_c_add->setEnabled(false);
-  base->_c_remove->setEnabled(false);
+  base->_c_libs->setItems(QStringList());
 }
 
 QString KSocksConfig::quickHelp() const
