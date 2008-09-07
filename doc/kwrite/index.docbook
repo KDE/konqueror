@@ -76,7 +76,7 @@ allowing you to edit one file at the time per window.
 &kappname; features two different modes, a simple mode with a straightforward interface 
 and an advanced mode with more features and more extensive menu items.
 The advanced mode is enabled by checking the option <link linkend="appearance">
-Enable Power User Mode (KDE 3 mode)</link> 
+Enable Power User Mode (&kde; 3 mode)</link> 
 on the <guilabel>Appearance</guilabel> page in &kappname;s 
 settings.
 </para>
@@ -524,7 +524,7 @@ action="simul"><keycap>F11</keycap></keycombo></para></entry>
 
 <para>There are different menus and menu items in simple and advanced mode.
 The advanced mode is enabled by checking the option <link linkend="appearance">
-Enable Power User Mode (KDE 3 mode)</link> 
+Enable Power User Mode (&kde; 3 mode)</link> 
 on the <guilabel>Appearance</guilabel> page in &kappname;s settings.</para>
 <!-- This is also valid for kates menu file, kate has additional Save All Ctrl+L, Reload All, Close Other, Close All items-->
 <sect1 id="file"> 
@@ -621,7 +621,7 @@ the &kde; User Guide.</para>
 This is a shortcut to open recently saved documents. Clicking on this
 item opens a list to the side of the menu with several of the most
 recently saved files. Clicking on a specific file will open it in
-&kwrite; - if the file still resides at the same
+&kappname; - if the file still resides at the same
 location.
 </para>
 </listitem>
@@ -676,7 +676,7 @@ linkend="open">Open</link> section of this help file.
 <listitem>
 <para>
 Reloads the active file from disk. This command is useful if another program or
-process has changed the file while you have it open in &kwrite;.
+process has changed the file while you have it open in &kappname;.
 </para>
 </listitem>
 </varlistentry>
@@ -724,7 +724,7 @@ Export your file in &HTML; format so your document can be viewed as a web page.
 <listitem>
 <para>
 Close the active file with this command. If you have made unsaved changes, you
-will be prompted to save the file before &kwrite; closes it.
+will be prompted to save the file before &kappname; closes it.
 </para>
 </listitem>
 </varlistentry>
@@ -742,7 +742,7 @@ will be prompted to save the file before &kwrite; closes it.
 <listitem>
 <para>
 This will close the editor window, if you have more than one instance of
-&kwrite; running, through the <guimenuitem>New</guimenuitem> or
+&kappname; running, through the <guimenuitem>New</guimenuitem> or
 <guimenuitem>New Window</guimenuitem> menu items, those instances will
 not be closed.
 </para>
@@ -1259,7 +1259,7 @@ hidden.</para>
 <sect1 id="go"><!-- This is also valid for kates menu bookmarks-->
 <title>The <guimenu>Bookmarks</guimenu> Menu</title>
 <para>This menu is only displayed, if you check the option <link linkend="appearance">
-Enable Power User Mode (KDE 3 mode)</link> 
+Enable Power User Mode (&kde; 3 mode)</link> 
 on the <guilabel>Appearance</guilabel> page in &kappname;s settings.</para>
 <variablelist>
 
@@ -1519,7 +1519,7 @@ spellcheck dialog.  They are:</para>
 <variablelist>
 <varlistentry>
 <term><guibutton>Help</guibutton></term>
-<listitem><para> This invokes the &kde; help system starting at the &kwrite; help
+<listitem><para> This invokes the &kde; help system starting at the &kappname; help
 pages (this document).</para></listitem>
 </varlistentry>
 
@@ -1787,22 +1787,25 @@ only available if you have KDevelop installed on your system). If you choose
 Shortcuts...</guimenuitem></menuchoice></term>
 <listitem>
 <para>This command opens a dialog box whereby the <link
-linkend="keybindings">shortcuts</link> may be changed.  A display window at the
-top of the dialog box shows the list of commands (actions) that can have
-keyboard shortcuts.  Below the display are three radio buttons.  The user may
-choose between No Key, Default Key, and Custom Key.  (Note that a set of radio
-buttons only allows the selection of one of the offered items - in the way that
-buttons on a car radio only offer the selection of one preset station.  Also,
-the Default Key selection  is only available for those commands that actually
-have a 'default' shortcut.)  Selecting the Custom Key option activates the three
-check boxes and key button at the bottom of the dialog. The user may then select
-a key combination for the command in question by means of the check boxes and
-key button. For example, with the About &kde; command selected in the display
-window, the user could select &Ctrl; and &Alt;, click on  the key
-button, and then press the <keycap>K</keycap> key on the keyboard.  This would
-mean that anytime he or she held down the &Ctrl; and  &Alt;
+linkend="keybindings">shortcuts</link> may be changed.
+A display window shows the list of commands (actions) and their assigned 
+shortcuts, alternates and global shortcuts. The <guilabel>Search</guilabel> line above 
+the list window is used to filter the shortcut list.
+Selecting an action with a &LMB; click (either on the action name or shortcut cell
+for the default shortcut or on the alternate cell for an alternative) displays the 
+<guilabel>Default</guilabel> and <guilabel>Custom</guilabel> radio buttons 
+below the selected action.</para>
+<para>To assign or change a shortcut click on the <guilabel>None</guilabel> button. Its 
+label changes then to <guilabel>Input</guilabel>, now press the new key combination 
+for the action.</para>
+<para>For example, with the <guilabel>About &kde;</guilabel> action selected in the display
+window, press  the &Ctrl;, &Alt; and the <keycap>K</keycap> key on the keyboard.  This would
+mean that anytime you hold down the &Ctrl; and  &Alt;
 buttons and pressed <keycap>K</keycap> (while using
-&kwrite;) the About &kde; display box would be called. </para>
+&kappname;) the <guilabel>About &kde;</guilabel> display box would be called. </para>
+<para>Use the buttons at the bottom of the dialog to set all shortcuts back to their defaults,
+print the the shortcut list or cancel all changes. Click the <guilabel>OK</guilabel>
+button to close the dialog and accept all changes. </para>
 </listitem>
 </varlistentry>
 
@@ -1837,7 +1840,7 @@ in the toolbar.</para> </listitem>
 </chapter>
 
 <chapter id="pref-dialog">
-<title>Configure &kwrite;</title>
+<title>Configure &kappname;</title>
 
 <para>
 Selecting <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure
@@ -1932,7 +1935,7 @@ for instance show bookmarks.</para></listitem>
 <term><guilabel>Sort Bookmarks Menu
 </guilabel></term>
 <listitem><para>These options are only displayed, if <guilabel>Enable Power User Mode 
-(KDE 3 mode)</guilabel> in the next section is checked.</para>
+(&kde; 3 mode)</guilabel> in the next section is checked.</para>
 <para>
 <variablelist>
 <varlistentry>
@@ -1957,11 +1960,11 @@ independently from where it is placed in the document.</para></listitem>
 <listitem><para>
 <variablelist>
 <varlistentry>
-<term><guilabel>Enable Power User Mode (KDE 3 mode)
+<term><guilabel>Enable Power User Mode (&kde; 3 mode)
 </guilabel></term>
 <listitem><para>Switch between simple and advanced mode. 
 Changing this mode affects only newly opened / created documents. 
-In &kwrite; a restart is recommended.</para></listitem>
+In &kappname; a restart is recommended.</para></listitem>
 </varlistentry>
 <varlistentry>
 <term><guilabel>Show identation lines
@@ -1990,11 +1993,11 @@ ones. Each scheme has settings for colors, fonts and normal and highlight text
 styles.
 </para>
 
-<para>&kwrite; will preselect the currently active scheme for you, if you want to
+<para>&kappname; will preselect the currently active scheme for you, if you want to
 work on a different scheme start by selecting that from the
 <guilabel>Schema</guilabel> combobox. With the <guibutton>New</guibutton> and <guibutton>Delete</guibutton>
  button you can create a new scheme or delete existing ones.</para>
-<para>At the bottom of the page you can select the <guilabel>Default schema for &kwrite;</guilabel>.</para>
+<para>At the bottom of the page you can select the <guilabel>Default schema for &kappname;</guilabel>.</para>
 
 <sect2 id="prefcolors-colors">
 <title>Colors</title>
@@ -2146,10 +2149,10 @@ when you press the &Tab; key.</para>
 <varlistentry>
 <term><guilabel>Show tabulators</guilabel></term>
 <listitem>
-<para>When this is enabled &kwrite; will display a small dot as a visual
+<para>When this is enabled &kappname; will display a small dot as a visual
 representation of tabulator characters.</para>
 <note><para>This also causes dots to be drawn to indicate trailing white space.
-This will be fixed in a future version of &kwrite;</para></note>
+This will be fixed in a future version of &kappname;</para></note>
 </listitem>
 </varlistentry>
 <varlistentry>
@@ -2167,7 +2170,7 @@ tabs.</para></listitem>
 <term id="pref-word-wrap"><guilabel>Static Word Wrap</guilabel></term>
 <listitem><para>
 Word wrap is a feature that causes the editor to automatically start a new line
-of text and move (wrap) the cursor to the beginning of that new line.  &kwrite;
+of text and move (wrap) the cursor to the beginning of that new line.  &kappname;
 will automatically start a new line of text when  the current line reaches the
 length specified by the <link linkend="pref-wrap-words-at">Wrap Words
 At:</link> option.</para>
@@ -2207,17 +2210,17 @@ automatically start a new line.</para>
 <variablelist>
 <varlistentry>
 <term><guilabel>Remove trailing spaces</guilabel></term>
-<listitem><para>&kwrite; will automatically eliminate extra spaces
+<listitem><para>&kappname; will automatically eliminate extra spaces
 at the ends of lines of text.</para></listitem> </varlistentry>
 
 <varlistentry>
 <term><guilabel>Highlight trailing spaces</guilabel></term>
-<listitem><para>&kwrite; will highlight extra spaces
+<listitem><para>&kappname; will highlight extra spaces
 at the ends of lines of text.</para></listitem> </varlistentry>
 
 <varlistentry>
 <term><guilabel>Auto brackets</guilabel></term> <listitem><para>When
-the user types a left bracket ([, (, or {) &kwrite; automatically enters the
+the user types a left bracket ([, (, or {) &kappname; automatically enters the
 right bracket (}, ), or ]) to the right of the cursor.</para></listitem>
 </varlistentry>
 </variablelist>
@@ -2266,7 +2269,7 @@ beginning does nothing.</para>
 <para>This option changes the behavior of the cursor when the user presses
 the <keycap>Page Up</keycap> or <keycap>Page Down</keycap> key. If unselected
 the text cursor will maintain its relative position within the visible text in
-&kwrite; as new text becomes visible as a result of the operation.  So if the
+&kappname; as new text becomes visible as a result of the operation.  So if the
 cursor is in the middle of the visible text when the operation occurs it will
 remain there (except when one reaches the beginning or end.)  With this option
 selected, the first key press will cause the cursor to move to either the top or
@@ -2506,7 +2509,7 @@ of text while loading/saving the file.</para>
 <term><guilabel>Search depth for config file:</guilabel></term>
 <listitem>
 <para>The editor will search the given number of folder levels upwards
-for &kwrite; config file and load the settings line from it.</para>
+for &kappname; config file and load the settings line from it.</para>
 </listitem>
 </varlistentry>
 </variablelist>
@@ -2515,7 +2518,7 @@ for &kwrite; config file and load the settings line from it.</para>
 
 <varlistentry>
 <term><guilabel>Backup on Save</guilabel></term>
-<listitem><para>Backing up on save will cause &kwrite; to copy the disk file to
+<listitem><para>Backing up on save will cause &kappname; to copy the disk file to
 &lt;prefix&gt;&lt;filename&gt;&lt;suffix&gt;' before saving changes.
 The suffix defaults to <emphasis role="bold">~</emphasis> and prefix is empty by
 default. </para>
@@ -2604,8 +2607,8 @@ menus. This is also used in the
 </varlistentry>
 <varlistentry>
 <term><guilabel>Variables:</guilabel></term>
-<listitem><para>This string allows you to configure &kwrite;'s settings for the
-files selected by this mimetype using &kwrite; variables. You can set almost any
+<listitem><para>This string allows you to configure &kappname;'s settings for the
+files selected by this mimetype using &kappname; variables. You can set almost any
 configuration option, such as highlight, indent-mode, encoding,
 etc.</para><para>For a full list of known variables, see the
 manual.</para></listitem>
@@ -2653,7 +2656,8 @@ from the &kate; website.
 <sect1 id="pref-shortcuts">
 <title>Shortcuts</title> <!-- this is only in 4.1 in kate and kwrite only cursor shortcuts??? -->
 <para>You can change here the shortcut keys configuration. Select an
-action and click on <guilabel>Custom</guilabel> if you want a different shortcut
+action and click on <guilabel>None</guilabel> next to the <guilabel>Custom</guilabel> radio button
+and press the key combination, if you want a different shortcut
 for this action.</para>
 <para>The search line allows you to look for a specific action and see
 its associated shortcut.</para>
