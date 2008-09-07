@@ -1,4 +1,4 @@
 install(FILES
     WebKitPart
     WebView
-    DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/WebKitPart)
+    DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/WebKitPart COMPONENT Devel)

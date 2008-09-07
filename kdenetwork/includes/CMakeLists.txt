@@ -1,4 +1,4 @@
 install(FILES
     KNetworkReply
     KNetworkAccessManager
-    DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/KdeNetwork)
+    DESTINATION ${INCLUDE_INSTALL_DIR}/KDE/KdeNetwork COMPONENT Devel)
