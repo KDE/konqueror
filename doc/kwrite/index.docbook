@@ -324,12 +324,22 @@ action="simul">&Shift;<keycap>F1</keycap></keycombo></para></entry>
 <row>
 <entry><para><keycombo
 action="simul"><keycap>F3</keycap></keycombo></para></entry>
-<entry><para><link linkend="find-again"> Find again</link></para></entry>
+<entry><para><link linkend="find-again"> Find Next</link></para></entry>
 </row>
 <row>
 <entry><para><keycombo
 action="simul">&Shift;<keycap>F3</keycap></keycombo></para></entry>
 <entry><para><link linkend="find-previous"> Find Previous</link></para></entry>
+</row>
+<row>
+<entry><para><keycombo
+action="simul">&Ctrl;<keycap>H</keycap></keycombo></para></entry>
+<entry><para><link linkend="find-selected">Find Selected</link></para></entry>
+</row>
+<row>
+<entry><para><keycombo
+action="simul">&Ctrl;&Shift;<keycap>H</keycap></keycombo></para></entry>
+<entry><para><link linkend="find-selected-backwords">Find Selected Backwords</link></para></entry>
 </row>
 <row>
 <entry><para><keycombo
@@ -434,7 +444,7 @@ action="simul">&Ctrl;&Shift;<keycap>U</keycap></keycombo></para></entry>
 </row>
 <row>
 <entry><para><keycombo
-action="simul">&Alt;&Ctrl;<keycap>U</keycap></keycombo></para></entry>
+action="simul">&Ctrl;&Alt;<keycap>U</keycap></keycombo></para></entry>
 <entry><para>Capitalize</para></entry>
 </row>
 <row>
@@ -482,6 +492,18 @@ action="simul">&Ctrl;<keycap>+</keycap></keycombo></para></entry>
 <entry><para><keycombo
 action="simul">&Ctrl;&Shift;<keycap>+</keycap></keycombo></para></entry>
 <entry><para>Expand Toplevel</para></entry>
+</row>
+<!-- only in 4.2 uncomment after backport to 4.1
+<row>
+<entry><para><keycombo
+action="simul">Meta&Ctrl;<keycap>V</keycap></keycombo></para></entry>
+<entry><para>VI input mode</para></entry>
+</row>
+-->
+<row>
+<entry><para><keycombo
+action="simul">&Ctrl;<keycap>Space</keycap></keycombo></para></entry>
+<entry><para>Invoke Code Completion</para></entry>
 </row>
 <row>
 <entry><para><keycombo
@@ -1415,7 +1437,7 @@ Editor...</guimenuitem></menuchoice> for your current document only.</para>
 <keycombo action="simul">&Ctrl;<keycap>Space</keycap></keycombo>
 </shortcut>
 <guimenu>Tools</guimenu>
-<guimenuitem>Invoke Code Completition</guimenuitem>
+<guimenuitem>Invoke Code Completion</guimenuitem>
 </menuchoice></term>
 <listitem>
 <para>Manually invoke command completion, usually by using a shortcut bound to this action.</para>
