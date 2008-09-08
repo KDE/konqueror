@@ -28,7 +28,7 @@
 #include <kdemacros.h>
 
 #include <QtWebKit/QWebView>
-#include <kwebpage.h>
+#include <kdewebkit/kwebpage.h>
 
 class QWebHitTestResult;
 class KUrl;
