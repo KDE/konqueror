@@ -339,7 +339,7 @@ action="simul">&Ctrl;<keycap>H</keycap></keycombo></para></entry>
 <row>
 <entry><para><keycombo
 action="simul">&Ctrl;&Shift;<keycap>H</keycap></keycombo></para></entry>
-<entry><para><link linkend="find-selected-backwords">Find Selected Backwords</link></para></entry>
+<entry><para><link linkend="find-selected-backwards">Find Selected Backwards</link></para></entry>
 </row>
 <row>
 <entry><para><keycombo
@@ -881,7 +881,7 @@ copying the entire file to another application.</para>
 Selection Mode</guimenuitem></menuchoice></term>
 <listitem>
 <para>Toggles Selection Mode. When the Selection Mode is <guilabel>BLOCK</guilabel>, 
-you can makevertical selections, &ie; select column 5 to 10 in lines 9 to 15.
+you can make vertical selections, &eg; select column 5 to 10 in lines 9 to 15.
 The status bar shows the current state of the Selection Mode, either <guilabel>BLOCK</guilabel> or
 <guilabel>LINE</guilabel>.</para>
 </listitem>
@@ -1028,11 +1028,11 @@ action="simul">&Ctrl;<keycap>H</keycap></keycombo></shortcut>
 </varlistentry>
 
 <varlistentry>
-<term id="find-selected-backwords">
+<term id="find-selected-backwards">
 <menuchoice>
 <shortcut><keycombo
 action="simul">&Ctrl;&Shift;<keycap>H</keycap></keycombo></shortcut>
-<guimenu>Edit</guimenu><guimenuitem>Find Selected Backwords</guimenuitem></menuchoice></term>
+<guimenu>Edit</guimenu><guimenuitem>Find Selected Backwards</guimenuitem></menuchoice></term>
 <listitem>
 <para>Finds previous occurrence of selected text.</para>
 </listitem>
