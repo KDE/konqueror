@@ -37,6 +37,8 @@
 #include <KDE/KRun>
 #include <KDE/KTemporaryFile>
 #include <KDE/KToolInvocation>
+#include <KDE/KIO/NetAccess>
+#include <KDE/KFileDialog>
 
 #include <QHttpRequestHeader>
 #include <QtWebKit/QWebHistory>
@@ -295,7 +297,12 @@ void WebKitBrowserExtension::slotFrameInTop()
 
 void WebKitBrowserExtension::slotSaveImageAs()
 {
-    //TODO
+    QList<KUrl> urls;
+    urls.append(part->view()->contextMenuResult().imageUrl());
+    for (int i = 0; i != urls.count(); i++) {
+        QString file = KFileDialog::getSaveFileName(KUrl(), QString(), part->widget());
+        KIO::NetAccess::file_copy(urls.at(i), file, part->widget());
+    }
 }
 
 void WebKitBrowserExtension::slotSendImage()
