@@ -345,7 +345,8 @@ void KonqOperations::doDrop( const KFileItem & destItem, const KUrl & dest, QDro
 void KonqOperations::asyncDrop( const KFileItem & destItem )
 {
     assert(m_info); // setDropInfo should have been called before asyncDrop
-    m_destUrl = destItem.url();
+    bool m_destIsLocal = false;
+    m_destUrl = destItem.mostLocalUrl(m_destIsLocal); // #168154
 
     //kDebug(1203) << "KonqOperations::asyncDrop destItem->mode=" << destItem->mode() << " url=" << m_destUrl;
     // Check what the destination is
@@ -354,7 +355,7 @@ void KonqOperations::asyncDrop( const KFileItem & destItem )
         doDropFileCopy();
         return;
     }
-    if ( !m_destUrl.isLocalFile() )
+    if ( !m_destIsLocal )
     {
         // We dropped onto a remote URL that is not a directory!
         // (e.g. an HTTP link in the sidebar).
@@ -363,7 +364,7 @@ void KonqOperations::asyncDrop( const KFileItem & destItem )
         delete this;
         return;
     }
-    if ( destItem.mimetype() == "application/x-desktop")
+    if ( destItem.isDesktopFile() )
     {
         // Local .desktop file. What type ?
         KDesktopFile desktopFile( m_destUrl.path() );
