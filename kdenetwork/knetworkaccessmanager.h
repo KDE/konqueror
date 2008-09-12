@@ -25,9 +25,9 @@
 
 #include <kdemacros.h>
 
-#include <QNetworkAccessManager>
+#include <QtNetwork/QNetworkAccessManager>
 
-#include <KIO/MetaData>
+#include <KDE/KIO/MetaData>
 
 class KDE_EXPORT KNetworkAccessManager : public QNetworkAccessManager
 {
@@ -39,6 +39,10 @@ public:
 
 protected:
     QNetworkReply *createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData = 0);
+
+private:
+    class KNetworkAccessManagerPrivate;
+    KNetworkAccessManagerPrivate* const d;
 };
 
 #endif // KNETWORKACCESSMANAGER_H

@@ -32,8 +32,14 @@
 #include <KDebug>
 #include <kio/job.h>
 
+class KNetworkAccessManager::KNetworkAccessManagerPrivate
+{
+public:
+    KNetworkAccessManagerPrivate() {}
+};
+
 KNetworkAccessManager::KNetworkAccessManager(QObject *parent)
-    : QNetworkAccessManager(parent)
+    : QNetworkAccessManager(parent), d(new KNetworkAccessManager::KNetworkAccessManagerPrivate())
 {
 }
 

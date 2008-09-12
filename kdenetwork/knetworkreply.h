@@ -23,7 +23,7 @@
 #ifndef KNETWORKREPLY_H
 #define KNETWORKREPLY_H
 
-#include <QNetworkReply>
+#include <QtNetwork/QNetworkReply>
 
 #include <kdemacros.h>
 
@@ -41,17 +41,17 @@ public:
     virtual qint64 bytesAvailable() const;
     virtual void abort();
 
-public slots:
+public Q_SLOTS:
     void appendData(KIO::Job *kioJob, const QByteArray &data);
     void setMimeType(KIO::Job *kioJob, const QString &mimeType);
 
 protected:
     virtual qint64 readData(char *data, qint64 maxSize);
-
+    
 private:
-    KIO::Job *m_kioJob;
-    QByteArray m_data;
-    bool m_metaDataRead;
+    class KNetworkReplyPrivate;
+    KNetworkReplyPrivate* const d;
+
 };
 
 #endif // KNETWORKREPLY_H

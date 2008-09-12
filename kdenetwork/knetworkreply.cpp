@@ -27,11 +27,23 @@
 
 #include <QTimer>
 
-KNetworkReply::KNetworkReply(const QNetworkRequest &request, KIO::Job *kioJob, QObject *parent)
-    : QNetworkReply(parent)
-    , m_kioJob(kioJob)
-    , m_metaDataRead(false)
+class KNetworkReply::KNetworkReplyPrivate
 {
+public:
+    KNetworkReplyPrivate()
+    : m_metaDataRead(false)
+    {}
+
+    KIO::Job *m_kioJob;
+    QByteArray m_data;
+    bool m_metaDataRead;
+};
+
+KNetworkReply::KNetworkReply(const QNetworkRequest &request, KIO::Job *kioJob, QObject *parent)
+    : QNetworkReply(parent), d(new KNetworkReply::KNetworkReplyPrivate())
+
+{
+    d->m_kioJob = kioJob;
     setRequest(request);
     setOpenMode(QIODevice::ReadOnly);
 
@@ -42,24 +54,24 @@ KNetworkReply::KNetworkReply(const QNetworkRequest &request, KIO::Job *kioJob, Q
 
 void KNetworkReply::abort()
 {
-    if (m_kioJob) {
-        m_kioJob->kill();
-        m_kioJob->deleteLater();
+    if (d->m_kioJob) {
+        d->m_kioJob->kill();
+        d->m_kioJob->deleteLater();
     }
 }
 
 qint64 KNetworkReply::bytesAvailable() const
 {
-    return QNetworkReply::bytesAvailable() + m_data.length();
+    return QNetworkReply::bytesAvailable() + d->m_data.length();
 }
 
 qint64 KNetworkReply::readData(char *data, qint64 maxSize)
 {
 //     kDebug();
-    qint64 length = qMin(qint64(m_data.length()), maxSize);
+    qint64 length = qMin(qint64(d->m_data.length()), maxSize);
     if (length) {
-        qMemCopy(data, m_data.constData(), length);
-        m_data.remove(0, length);
+        qMemCopy(data, d->m_data.constData(), length);
+        d->m_data.remove(0, length);
     }
 
     return length;
@@ -69,7 +81,7 @@ void KNetworkReply::appendData(KIO::Job *kioJob, const QByteArray &data)
 {
 //     kDebug();
 
-    if (!m_metaDataRead) {
+    if (!d->m_metaDataRead) {
         QString headers = kioJob->queryMetaData("HTTP-Headers");
         if (!headers.isEmpty()) {
             QStringList headerList = headers.split('\n');
@@ -81,10 +93,10 @@ void KNetworkReply::appendData(KIO::Job *kioJob, const QByteArray &data)
                 }
             }
         }
-        m_metaDataRead = true;
+        d->m_metaDataRead = true;
     }
 
-    m_data += data;
+    d->m_data += data;
     emit readyRead();
 }
 
