@@ -1815,7 +1815,7 @@ void KonqMainWindow::slotConfigureDone()
 void KonqMainWindow::slotConfigureSpellChecking()
 {
     Sonnet::ConfigDialog dialog( KGlobal::config().data(), this);
-    setWindowIcon( KIcon( "konqueror" ));
+    dialog.setWindowIcon( KIcon( "konqueror" ));
     dialog.exec();
 }
 
