@@ -60,10 +60,9 @@ QString KonqFrameBase::frameTypeToString( const KonqFrameBase::FrameType frameTy
             return QString("Container");
         case MainWindow :
             return QString("MainWindow");
-        default:
-            Q_ASSERT(0);
-            return QString();
     }
+    Q_ASSERT(0);
+    return QString();
 }
 
 KonqFrameBase::FrameType frameTypeFromString( const QString& str )
@@ -79,6 +78,7 @@ KonqFrameBase::FrameType frameTypeFromString( const QString& str )
     if ( str == "MainWindow" )
         return KonqFrameBase::MainWindow;
     Q_ASSERT(0);
+    return KonqFrameBase::View;
 }
 
 KonqFrame::KonqFrame( QWidget* parent, KonqFrameContainerBase *parentContainer )
