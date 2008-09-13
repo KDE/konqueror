@@ -1496,7 +1496,7 @@ void KonqMainWindow::slotIconsChanged()
     kDebug(1202);
     m_combo->updatePixmaps();
     m_pViewManager->updatePixmaps();
-    setIcon( KonqPixmapProvider::self()->pixmapFor( m_combo->currentText() ));
+    updateWindowIcon();
 }
 
 void KonqMainWindow::slotOpenWith()
@@ -3337,7 +3337,7 @@ void KonqMainWindow::setLocationBarURL( const QString &url )
     if (url != m_combo->lineEdit()->text()) {
         //kDebug(1202) << "url=" << url;
         m_combo->setURL( url );
-        setIcon( KonqPixmapProvider::self()->pixmapFor( url ) );
+        updateWindowIcon();
     }
 }
 
@@ -5099,18 +5099,19 @@ bool KonqMainWindow::queryExit()
     return !stayPreloaded();
 }
 
-void KonqMainWindow::setIcon( const QPixmap& pix )
+void KonqMainWindow::updateWindowIcon()
 {
+    const QString url = m_combo->currentText();
+    // TODO (kfm-devel email 13/09/2008) should we use a profile-defined icon instead of a url-dependent window icon?
+    const QPixmap pix = KonqPixmapProvider::self()->pixmapFor( url );
     KParts::MainWindow::setWindowIcon( pix );
 
-  QPixmap big = pix;
+    QPixmap big = pix;
+    if (!url.isEmpty()) {
+       big = KonqPixmapProvider::self()->pixmapFor( url, KIconLoader::SizeMedium );
+    }
 
-  QString url = m_combo->currentText();
-
-  if ( !url.isEmpty() )
-    big = KonqPixmapProvider::self()->pixmapFor( url, KIconLoader::SizeMedium );
-
-  KWindowSystem::setIcons( winId(), big, pix );
+    KWindowSystem::setIcons( winId(), big, pix );
 }
 
 void KonqMainWindow::slotIntro()

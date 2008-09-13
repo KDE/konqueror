@@ -403,7 +403,6 @@ public Q_SLOTS:
   // public for KonqViewManager
   void slotPartActivated( KParts::Part *part );
 
-  virtual void setIcon( const QPixmap& );
   void slotGoHistoryActivated( int steps );
   void slotGoHistoryActivated( int steps, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers );
 
@@ -557,6 +556,8 @@ private Q_SLOTS:
   void showPageSecurity();
 
 private:
+  void updateWindowIcon();
+
   QString detectNameFilter( KUrl & url );
 
   /**
