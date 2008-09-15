@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE gui SYSTEM "kpartgui.dtd">
-<gui name="Konqueror" version="67">
+<gui name="Konqueror" version="68">
 <MenuBar>
  <Menu name="file" noMerge="1"><text>&amp;File</text>
   <Action name="new_window"/>
@@ -89,7 +89,7 @@
  </Menu>
  <Merge/>
 </MenuBar>
-<ToolBar iconText="icononly" name="mainToolBar" newline="true"><text>Main Toolbar</text>
+<ToolBar iconText="icononly" name="mainToolBar" newline="true" noMerge="1"><text>Main Toolbar</text>
  <Action name="go_back"/>
  <Action name="go_forward"/>
  <Action name="go_up"/>
