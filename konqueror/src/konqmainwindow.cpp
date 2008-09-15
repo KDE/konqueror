@@ -1194,10 +1194,10 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
     req.browserArgs = browserArgs;
     req.forceAutoEmbed = true;
 
-    if ( args.mimeType().isEmpty() )
+    // Do we know the mimetype? If not, go to generic openUrl which will use a KonqRun.
+    if ( args.mimeType().isEmpty() ) {
       mainWindow->openUrl( 0, url, QString(), req );
-    else if ( !mainWindow->openView( args.mimeType(), url, 0, req ) )
-    {
+    } else if (!mainWindow->openView(args.mimeType(), url, m_currentView, req)) {
       // we have problems. abort.
       delete mainWindow;
 
