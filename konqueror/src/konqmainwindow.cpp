@@ -2845,9 +2845,9 @@ void KonqMainWindow::slotSessionsListAboutToShow()
     QMenu* popup = m_paSessions->menu();
     // Clear the menu and fill it with a maximum of s_closedItemsListLength number of urls
     popup->clear();
-    QAction* saveSessionAction = popup->addAction( KIcon("document-save"), i18n("Save as..") );
+    QAction* saveSessionAction = popup->addAction( KIcon("document-save"), i18n("Save As...") );
     connect(saveSessionAction, SIGNAL(triggered()), this, SLOT(saveCurrentSession()));
-    QAction* manageSessionsAction = popup->addAction( KIcon("view-choose"), i18n("Manage..") );
+    QAction* manageSessionsAction = popup->addAction( KIcon("view-choose"), i18n("Manage...") );
     connect(manageSessionsAction, SIGNAL(triggered()), this, SLOT(manageSessions()));
     popup->insertSeparator((QAction*)0);
 
