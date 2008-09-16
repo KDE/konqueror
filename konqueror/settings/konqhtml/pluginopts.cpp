@@ -591,6 +591,10 @@ void KPluginOptions::pluginLoad( KSharedConfig::Ptr /*config*/ )
         }
 
         QStringList desc = line.split(':');
+        // avoid crash on broken lines
+        if (desc.size()<2)
+            continue;
+
         QString mime = desc[0].trimmed();
         QString name;
         QString suffixes;
