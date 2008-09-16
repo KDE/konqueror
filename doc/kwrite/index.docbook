@@ -911,6 +911,11 @@ action="simul">&Ctrl;<keycap>F</keycap></keycombo></shortcut>
 <para>This opens the incremental search bar at the bottom of the editor window.
 On the left side of the bar is an icon to close the bar, followed by a small text 
 box for entering the search pattern.</para>
+<para>When you start entering characters of your search pattern, the search starts 
+immediately. If there is a match in the text this is highlighted and the background color
+of the entry field changes to light green. If the search pattern does not match any 
+string in the text, this is indicated by a light red background color of the entry field 
+and <guilabel>Not found</guilabel> is displayed at the right side of the bar.</para>
 <para>Use the <guilabel>Next</guilabel> or <guilabel>Previous</guilabel> button 
 to jump to the next or previous match in the document.</para> 
 <para>You can modify the search behaviour by selecting different 
@@ -947,8 +952,8 @@ the beginning.-->
 <shortcut><keycombo action="simul"><keycap>F3</keycap></keycombo></shortcut>
 <guimenu>Edit</guimenu><guimenuitem>Find Next</guimenuitem></menuchoice></term>
  <listitem>
-<para>This repeats the last find operation, if any, without calling the find
-dialog box.
+<para>This repeats the last find operation, if any, without calling the incremental 
+search bar.
 </para>
 </listitem>
 </varlistentry>
@@ -965,8 +970,8 @@ dialog box.
 </term>
 <listitem>
 <para>
-This repeats the last find operation, if any, without calling the find
-dialog box, and searching backwards instead of forwards through the
+This repeats the last find operation, if any, without calling the incremental 
+search bar, and searching backwards instead of forwards through the
 document.
 </para>
 </listitem>
