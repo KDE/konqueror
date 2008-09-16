@@ -243,6 +243,10 @@ void NSPluginLoader::scanPlugins()
         }
 
       QStringList desc = line.split(':', QString::KeepEmptyParts);
+      // avoid crash on broken lines
+      if (desc.size()<2)
+        continue;
+
       QString mime = desc[0].trimmed();
       QStringList suffixes;
       // If there are no suffixes, this would cause a crash
