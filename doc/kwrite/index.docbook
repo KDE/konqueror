@@ -1996,7 +1996,7 @@ In &kappname; a restart is recommended.</para></listitem>
 <varlistentry>
 <term><guilabel>Show identation lines
 </guilabel></term>
-<listitem><para>If this is checked, the editor wil display
+<listitem><para>If this is checked, the editor will display
 vertical lines to help identifying indent lines.</para></listitem>
 </varlistentry>
 <varlistentry>
@@ -2120,7 +2120,7 @@ displays at the bottom of the dialog, so you can see the effect of your choices.
 <title>Normal Text Styles</title>
 <para>The normal text styles are inherited by the highlight text styles,
 allowing the editor to present text in a very consistent way, for example comment
-text is using the same style in allmost all of the text formats that kate can
+text is using the same style in allmost all of the text formats that &kappname; can
 highlight.</para>
 <para>The name in the list of styles is using the style configured for
 the item, providing you with an immediate preview when configuring a style.
@@ -2407,7 +2407,7 @@ like in emacs, make &Tab; a shortcut to the action <guimenuitem>Align</guimenuit
 <term><guilabel>Always advance to the next tab position</guilabel></term>
 <listitem>
 <para>If this option is selected, the &Tab; key always inserts white space 
-so that the next tab postion is reached. If the option <guilabel>Insert spaces instead of tabulators</guilabel> 
+so that the next tab position is reached. If the option <guilabel>Insert spaces instead of tabulators</guilabel> 
 on the <guilabel>General</guilabel> tab in the <guilabel>Editing</guilabel> 
 page is enabled, spaces are inserted; otherwise, a single tabulator is inserted.</para>
 </listitem>
@@ -2546,7 +2546,7 @@ for &kappname; config file and load the settings line from it.</para>
 <varlistentry>
 <term><guilabel>Backup on Save</guilabel></term>
 <listitem><para>Backing up on save will cause &kappname; to copy the disk file to
-&lt;prefix&gt;&lt;filename&gt;&lt;suffix&gt;' before saving changes.
+&lt;prefix&gt;&lt;filename&gt;&lt;suffix&gt; before saving changes.
 The suffix defaults to <emphasis role="bold">~</emphasis> and prefix is empty by
 default. </para>
 <variablelist>
@@ -2642,7 +2642,7 @@ manual.</para></listitem>
 </varlistentry>
 <varlistentry>
 <term><guilabel>Highlighting:</guilabel></term>
-<listitem><para>if you create a new file typ, this drop down box allows you to
+<listitem><para>If you create a new file type, this drop down box allows you to
 select a filetype for highlighting.</para></listitem>
 </varlistentry>
 <varlistentry>
