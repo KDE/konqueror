@@ -30,9 +30,7 @@ install(TARGETS webkitkde ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 kde4_add_plugin(webkitkdepart webkitpartfactory.cpp)
 
-target_link_libraries(webkitkdepart webkitkde)
-
-target_link_libraries(webkitkdepart kdewebkit ${KDEWEBKIT_LIBRARIES} ${QT_QTWEBKIT_LIBRARY})
+target_link_libraries(webkitkdepart webkitkde kdewebkit ${KDEWEBKIT_LIBRARIES} ${KDE4_KPARTS_LIBS} ${QT_QTWEBKIT_LIBRARY})
 
 install(FILES
     webkitkde_export.h
