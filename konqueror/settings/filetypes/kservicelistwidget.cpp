@@ -86,7 +86,7 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
           " over the others.") :
      i18n("This is a list of services associated with files of the selected"
           " file type. This list is shown in Konqueror's context menus when you select"
-          " a \"Preview with...\" option. If more than one application is associated with this file type,"
+          " a \"Preview with...\" option. If more than one service is associated with this file type,"
           " then the list is ordered by priority with the uppermost item taking precedence"
           " over the others."));
 
