@@ -542,7 +542,10 @@ void KonqCombo::mousePressEvent( QMouseEvent *e )
         }
     }
 
-    if ( e->button() == Qt::LeftButton && m_pageSecurity!=KonqMainWindow::NotCrypted )
+    QStyleOptionComboBox optCombo;
+    optCombo.initFrom(this);
+    if ( e->button() == Qt::LeftButton && m_pageSecurity != KonqMainWindow::NotCrypted &&
+         style()->subElementRect( QStyle::SE_ComboBoxFocusRect, &optCombo, this ).contains( e->pos() ) )
         emit showPageSecurity();
 
     KComboBox::mousePressEvent( e );
