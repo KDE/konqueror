@@ -266,7 +266,7 @@ void XBELImportCommand::doExecute(const KBookmarkGroup &/*bkGroup*/) {
         QStringList tags;
         for (int i = 0; i < subDoc.attributes().count(); i++)
             tags << subDoc.attributes().item(i).toAttr().name();
-        for (QStringList::Iterator it = tags.begin(); it != tags.end(); ++it)
+        for (QStringList::const_iterator it = tags.begin(); it != tags.end(); ++it)
             subDoc.attributes().removeNamedItem((*it));
 
         subDoc.toElement().setAttribute("icon", m_icon);

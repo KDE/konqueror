@@ -408,7 +408,7 @@ KEBMacroCommand* DeleteCommand::deleteAll(const KBookmarkGroup & parentGroup) {
     for (KBookmark bk = parentGroup.first();
             !bk.isNull(); bk = parentGroup.next(bk))
         lstToDelete.prepend(bk.address());
-    for (QStringList::Iterator it = lstToDelete.begin();
+    for (QStringList::const_iterator it = lstToDelete.begin();
             it != lstToDelete.end(); ++it)
         cmd->addCommand(new DeleteCommand((*it)));
     return cmd;

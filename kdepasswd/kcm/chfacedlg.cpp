@@ -81,14 +81,14 @@ ChFaceDlg::ChFaceDlg(const QString& picsdir, QWidget *parent)
   if ( facesDir.exists() )
   {
     QStringList picslist = facesDir.entryList( QDir::Files );
-    for ( QStringList::Iterator it = picslist.begin(); it != picslist.end(); ++it )
+    for ( QStringList::const_iterator it = picslist.begin(); it != picslist.end(); ++it )
       new QListWidgetItem( QIcon( picsdir + *it ), (*it).section(".",0,0), ui.m_FacesWidget );
   }
   facesDir.setPath( KCFGUserAccount::userFaceDir() );
   if ( facesDir.exists() )
   {
     QStringList picslist = facesDir.entryList( QDir::Files );
-    for ( QStringList::Iterator it = picslist.begin(); it != picslist.end(); ++it )
+    for ( QStringList::const_iterator it = picslist.begin(); it != picslist.end(); ++it )
       new QListWidgetItem( QIcon( KCFGUserAccount::userFaceDir() + *it ),
                            '/'+(*it) == KCFGUserAccount::customFaceFile() ? 
                            i18n("(Custom)") : (*it).section(".",0,0),

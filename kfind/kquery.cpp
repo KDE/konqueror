@@ -155,8 +155,8 @@ void KQuery::slotListEntries( QStringList  list )
   metaKeyRx=new QRegExp(m_metainfokey);
   metaKeyRx->setPatternSyntax( QRegExp::Wildcard );
 
-  QStringList::Iterator it = list.begin();
-  QStringList::Iterator end = list.end();
+  QStringList::const_iterator it = list.begin();
+  QStringList::const_iterator end = list.end();
 
   for (; it != end; ++it)
   {
@@ -268,7 +268,7 @@ void KQuery::processQuery( const KFileItem &file)
        QString strmetakeycontent;
 
        metakeys = metadatas.supportedKeys();
-       for (QStringList::Iterator it = metakeys.begin(); it != metakeys.end(); ++it )
+       for (QStringList::const_iterator it = metakeys.begin(); it != metakeys.end(); ++it )
        {
           if (!metaKeyRx->exactMatch(*it))
              continue;

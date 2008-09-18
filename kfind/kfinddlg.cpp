@@ -143,7 +143,7 @@ void KfindDlg::startSearch()
   if(tabWidget->isSearchRecursive() && (dirwatch->internalMethod() == KDirWatch::FAM))
   {
     QStringList subdirs=getAllSubdirs(query->url().path());
-    for(QStringList::Iterator it = subdirs.begin(); it != subdirs.end(); ++it)
+    for(QStringList::const_iterator it = subdirs.begin(); it != subdirs.end(); ++it)
       dirwatch->addDir(*it,true);
   }
 #endif
@@ -284,7 +284,7 @@ QStringList KfindDlg::getAllSubdirs(QDir d)
   d.setFilter( QDir::Dirs );
   dirs = d.entryList();
 
-  for(QStringList::Iterator it = dirs.begin(); it != dirs.end(); ++it)
+  for(QStringList::const_iterator it = dirs.begin(); it != dirs.end(); ++it)
   {
     if((*it==".")||(*it==".."))
       continue;
