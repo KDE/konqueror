@@ -202,7 +202,7 @@ extern "C" {
 		KUrl url;
 		url.setProtocol("file");
 		QStringList paths = KGlobal::dirs()->resourceDirs("websidebardata");
-		for (QStringList::Iterator i = paths.begin(); i != paths.end(); ++i) {
+		for (QStringList::const_iterator i = paths.begin(); i != paths.end(); ++i) {
 			if (QFileInfo(*i + "websidebar.html").exists()) {
 				url.setPath(*i + "websidebar.html");
 				break;

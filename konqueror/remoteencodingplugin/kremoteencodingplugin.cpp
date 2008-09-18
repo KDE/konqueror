@@ -144,7 +144,7 @@ KRemoteEncodingPlugin::updateMenu()
   if (!charset.isEmpty())
     {
       int id = 1;
-      QStringList::Iterator it;
+      QStringList::const_iterator it;
       for (it = m_encodingDescriptions.begin(); it != m_encodingDescriptions.end(); ++it, ++id)
 	if ((*it).indexOf(charset) != -1)
 	  break;
@@ -213,7 +213,7 @@ KRemoteEncodingPlugin::slotDefault()
 	  partList.erase(partList.begin());
 	}
 
-      for (QStringList::Iterator it = domains.begin(); it != domains.end();
+      for (QStringList::const_iterator it = domains.begin(); it != domains.end();
 	   ++it)
 	{
 	  kDebug() << "Domain to remove: " << *it;

@@ -76,7 +76,7 @@ void addBackEnd::aboutToShowAddMenu()
 	menu->clear();
 	int i = 0;
 
-	for (QStringList::Iterator it = list.begin(); it != list.end(); ++it, i++ )
+	for (QStringList::const_iterator it = list.begin(); it != list.end(); ++it, i++ )
 	{
 		KDesktopFile confFile( *it );
 		KConfigGroup desktopGroup = confFile.desktopGroup();
@@ -121,7 +121,7 @@ void addBackEnd::doRollBack()
 		QStringList dirEntries = dir.entryList( QDir::Dirs | QDir::NoSymLinks );
 		dirEntries.removeAll(".");
 		dirEntries.removeAll("..");
-		for ( QStringList::Iterator it = dirEntries.begin(); it != dirEntries.end(); ++it ) {
+		for ( QStringList::const_iterator it = dirEntries.begin(); it != dirEntries.end(); ++it ) {
 			if ((*it)!="add")
 				 KIO::NetAccess::del(KUrl( loc+(*it) ), m_parent);
 		}
@@ -323,7 +323,7 @@ void Sidebar_Widget::addWebSideBar(const KUrl& url, const QString& /*name*/) {
 
 	// Go through list to see which ones exist.  Check them for the URL
 	QStringList files = QDir(list).entryList("websidebarplugin*.desktop");
-	for (QStringList::Iterator it = files.begin(); it != files.end(); ++it){
+	for (QStringList::const_iterator it = files.begin(); it != files.end(); ++it){
 		KConfig _scf( list + *it, KConfig::SimpleConfig );
 		KConfigGroup scf(&_scf, "Desktop Entry");
 		if (scf.readPathEntry("URL", QString()) == url.url()) {
@@ -659,7 +659,7 @@ void Sidebar_Widget::createButtons()
 		kDebug()<<"m_path: "<<m_path;
 		QDir dir(m_path);
 		QStringList list=dir.entryList("*.desktop");
-		for (QStringList::Iterator it=list.begin(); it!=list.end(); ++it)
+		for (QStringList::const_iterator it=list.begin(); it!=list.end(); ++it)
 		{
 			addButton(*it);
 		}

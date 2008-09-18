@@ -269,7 +269,7 @@ void KCookiesManagement::getDomains()
   }
 
   CookieListViewItem *dom;
-  for(QStringList::Iterator dIt = domains.begin(); dIt != domains.end(); dIt++)
+  for(QStringList::const_iterator dIt = domains.begin(); dIt != domains.end(); dIt++)
   {
     dom = new CookieListViewItem(dlg->lvCookies, *dIt);
     dom->setChildIndicatorPolicy(QTreeWidgetItem::ShowIndicator);
@@ -302,7 +302,7 @@ void KCookiesManagement::getCookies(QTreeWidgetItem *cookieDom)
   if(reply.isValid())
   {
     QStringList fieldVal = reply;
-    QStringList::Iterator fIt = fieldVal.begin();
+    QStringList::const_iterator fIt = fieldVal.begin();
 
     while(fIt != fieldVal.end())
     {
@@ -336,7 +336,7 @@ bool KCookiesManagement::cookieDetails(CookieProp *cookie)
 
   QStringList fieldVal = reply;
 
-  QStringList::Iterator c = fieldVal.begin();
+  QStringList::const_iterator c = fieldVal.begin();
   if (c == fieldVal.end()) // empty list, do not crash
     return false;
   cookie->value = *c++;

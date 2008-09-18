@@ -1241,7 +1241,7 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
     }
 
     QStringList childList = cfg.readEntry( QString::fromLatin1( "Children" ).prepend( prefix ),QStringList() );
-    for ( QStringList::Iterator it = childList.begin(); it != childList.end(); ++it )
+    for ( QStringList::const_iterator it = childList.begin(); it != childList.end(); ++it )
     {
         loadItem( cfg, tabContainer(), *it, defaultURL, openUrl, forcedUrl );
         QWidget* currentPage = m_tabContainer->currentWidget();

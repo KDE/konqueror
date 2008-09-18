@@ -383,7 +383,7 @@ void KNewMenu::slotFillTemplates()
     // Look into "templates" dirs.
     QStringList files = d->m_actionCollection->componentData().dirs()->findAllResources("templates");
     QMap<QString, KNewMenuSingleton::Entry> slist; // used for sorting
-    for ( QStringList::Iterator it = files.begin() ; it != files.end() ; ++it )
+    for ( QStringList::const_iterator it = files.begin() ; it != files.end() ; ++it )
     {
         //kDebug(1203) << *it;
         if ( (*it)[0] != '.' )
