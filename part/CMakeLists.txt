@@ -7,7 +7,7 @@ include(MacroLibrary)
 
 find_package(KdeWebKit REQUIRED)
 
-include_directories(${KDE4_INCLUDES} ${KDEWEBKIT_INCLUDES} ${CMAKE_SOURCE_DIR})
+include_directories(${KDE4_INCLUDES} ${KDEWEBKIT_INCLUDE_DIR} ${CMAKE_SOURCE_DIR})
 add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 
 add_subdirectory(cmake)
