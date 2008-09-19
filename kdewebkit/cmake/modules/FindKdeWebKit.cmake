@@ -18,7 +18,7 @@ endif ( KDEWEBKIT_INCLUDE_DIR AND KDEWEBKIT_LIBRARIES )
 # Little trick I found in FindKDE4Interal... If we're building KdeWebKit, set the variables to point to the build directory.
 if(kdewebkit_SOURCE_DIR)
     set(KDEWEBKIT_LIBRARIES kdewebkit)
-    set(KDEWEBKIT_INCLUDE_DIR ${CMAKE_SOURCE_DIR})
+    get_directory_property(KDEWEBKIT_INCLUDE_DIR DIRECTORY "${kdewebkit_SOURCE_DIR}" PARENT_DIRECTORY)
 endif(kdewebkit_SOURCE_DIR)
 
 # use pkg-config to get the directories and then use these values

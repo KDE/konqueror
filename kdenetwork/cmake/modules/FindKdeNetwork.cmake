@@ -18,7 +18,7 @@ endif ( KDENETWORK_INCLUDE_DIR AND KDENETWORK_LIBRARIES )
 # Little trick I found in FindKDE4Interal... If we're building KdeNetwork, set the variables to point to the build directory.
 if(kdenetwork_SOURCE_DIR)
     set(KDENETWORK_LIBRARIES kdenetwork)
-    set(KDENETWORK_INCLUDE_DIR ${CMAKE_SOURCE_DIR})
+    get_directory_property(KDENETWORK_INCLUDE_DIR DIRECTORY "${kdenetwork_SOURCE_DIR}" PARENT_DIRECTORY)
 endif(kdenetwork_SOURCE_DIR)
 
 # use pkg-config to get the directories and then use these values
