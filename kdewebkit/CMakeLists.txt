@@ -8,7 +8,7 @@ include(MacroLibrary)
 # QtWebKit uses QtNetwork, to KdeWebKit uses....
 find_package(KdeNetwork REQUIRED)
 
-include_directories(${KDE4_INCLUDES} ${KDENETWORK_INCLUDES} ${CMAKE_SOURCE_DIR})
+include_directories(${KDE4_INCLUDES} ${KDENETWORK_INCLUDE_DIR} ${CMAKE_SOURCE_DIR})
 add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 
 add_subdirectory(includes)
