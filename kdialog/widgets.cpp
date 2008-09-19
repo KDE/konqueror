@@ -112,7 +112,7 @@ int Widgets::textBox(QWidget *parent, int width, int height, const QString& titl
   QFile f(file);
   if (!f.open(QIODevice::ReadOnly))
   {
-    kError() << i18n("kdialog: could not open file ") << file << endl;
+    kError() << i18n("kdialog: could not open file %1", file) << endl;
     return -1;
   }
   QTextStream s(&f);
