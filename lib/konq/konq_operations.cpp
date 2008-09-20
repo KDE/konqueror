@@ -415,8 +415,8 @@ void KonqOperations::asyncDrop( const KFileItem & destItem )
         Q_ASSERT ( access( QFile::encodeName(m_destUrl.path()), X_OK ) == 0 );
         // Launch executable for each of the files
         QStringList args;
-        KUrl::List lst = m_info->urls;
-        KUrl::List::Iterator it = lst.begin();
+        const KUrl::List lst = m_info->urls;
+        KUrl::List::ConstIterator it = lst.begin();
         for ( ; it != lst.end() ; it++ )
             args << (*it).path(); // assume local files
         kDebug(1203) << "starting " << m_destUrl.path() << " with " << lst.count() << " arguments";

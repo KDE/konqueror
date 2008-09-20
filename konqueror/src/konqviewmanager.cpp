@@ -624,9 +624,9 @@ void KonqViewManager::viewCountChanged()
   bool bShowActiveViewIndicator = ( m_pMainWindow->viewCount() > 1 );
   bool bShowLinkedViewIndicator = ( m_pMainWindow->linkableViewsCount() > 1 );
 
-  KonqMainWindow::MapViews mapViews = m_pMainWindow->viewMap();
-  KonqMainWindow::MapViews::Iterator it = mapViews.begin();
-  KonqMainWindow::MapViews::Iterator end = mapViews.end();
+  const KonqMainWindow::MapViews mapViews = m_pMainWindow->viewMap();
+  KonqMainWindow::MapViews::ConstIterator it = mapViews.begin();
+  KonqMainWindow::MapViews::ConstIterator end = mapViews.end();
   for (  ; it != end ; ++it )
   {
     KonqFrameStatusBar* sb = it.value()->frame()->statusbar();

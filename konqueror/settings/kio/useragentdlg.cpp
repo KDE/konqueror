@@ -255,11 +255,11 @@ void UserAgentDlg::load()
   if (!m_userAgentInfo)
     m_userAgentInfo = new UserAgentInfo();
 
-  QStringList list = m_config->groupList();
+  const QStringList list = m_config->groupList();
   QStringList::ConstIterator endIt = list.end();
   QString agentStr;
 
-  for ( QStringList::Iterator it = list.begin(); it != endIt; ++it )
+  for ( QStringList::ConstIterator it = list.begin(); it != endIt; ++it )
   {
     if ( (*it) == "<default>")
         continue;

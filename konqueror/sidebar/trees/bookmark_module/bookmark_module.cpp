@@ -288,10 +288,10 @@ void KonqSidebarBookmarkModule::slotDropped(K3ListView *, QDropEvent *e, Q3ListV
         parentGroup = s_bookmarkManager->root();
     }
 
-    KBookmark::List bookmarks = KBookmark::List::fromMimeData(e->mimeData());
+    const KBookmark::List bookmarks = KBookmark::List::fromMimeData(e->mimeData());
 
     // copy
-    KBookmark::List::iterator it = bookmarks.begin();
+    KBookmark::List::const_iterator it = bookmarks.begin();
     for (;it != bookmarks.end(); ++it) {
         // insert new item.
         parentGroup.moveItem(*it, afterBookmark);
