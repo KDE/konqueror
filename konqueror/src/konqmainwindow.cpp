@@ -1339,10 +1339,10 @@ void KonqMainWindow::slotDuplicateWindow()
 
 void KonqMainWindow::slotSendURL()
 {
-  KUrl::List lst = currentURLs();
+  const KUrl::List lst = currentURLs();
   QString body;
   QString fileNameList;
-  for ( KUrl::List::Iterator it = lst.begin() ; it != lst.end() ; ++it )
+  for ( KUrl::List::ConstIterator it = lst.begin() ; it != lst.end() ; ++it )
   {
     if ( !body.isEmpty() ) body += '\n';
     body += (*it).prettyUrl();
@@ -1360,10 +1360,10 @@ void KonqMainWindow::slotSendURL()
 
 void KonqMainWindow::slotSendFile()
 {
-  KUrl::List lst = currentURLs();
+  const KUrl::List lst = currentURLs();
   QStringList urls;
   QString fileNameList;
-  for ( KUrl::List::Iterator it = lst.begin() ; it != lst.end() ; ++it )
+  for ( KUrl::List::ConstIterator it = lst.begin() ; it != lst.end() ; ++it )
   {
     if ( !fileNameList.isEmpty() ) fileNameList += ", ";
     if ( (*it).isLocalFile() && QFileInfo((*it).path()).isDir() )
@@ -4222,9 +4222,9 @@ void KonqMainWindow::enableAllActions( bool enable )
     //kDebug(1202) << enable;
   KParts::BrowserExtension::ActionSlotMap * actionSlotMap = KParts::BrowserExtension::actionSlotMapPtr();
 
-  QList<QAction *> actions = actionCollection()->actions();
-  QList<QAction *>::Iterator it = actions.begin();
-  QList<QAction *>::Iterator end = actions.end();
+  const QList<QAction *> actions = actionCollection()->actions();
+  QList<QAction *>::ConstIterator it = actions.begin();
+  QList<QAction *>::ConstIterator end = actions.end();
   for (; it != end; ++it )
   {
     QAction *act = *it;
@@ -4417,7 +4417,7 @@ void KonqExtendedBookmarkOwner::openFolderinTabs(const KBookmarkGroup &grp)
   req.openAfterCurrentPage = false;
   req.forceAutoEmbed = true;
 
-  QList<KUrl> list = grp.groupUrlList();
+  const QList<KUrl> list = grp.groupUrlList();
   if (list.isEmpty())
     return;
 
@@ -4429,8 +4429,8 @@ void KonqExtendedBookmarkOwner::openFolderinTabs(const KBookmarkGroup &grp)
       return;
   }
 
-  QList<KUrl>::Iterator it = list.begin();
-  QList<KUrl>::Iterator end = list.end();
+  QList<KUrl>::ConstIterator it = list.begin();
+  QList<KUrl>::ConstIterator end = list.end();
   --end;
   for (; it != end; ++it )
   {
