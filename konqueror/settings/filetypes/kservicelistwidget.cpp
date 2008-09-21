@@ -260,7 +260,7 @@ void KServiceListWidget::addService()
   }
 
   // if None is the only item, then there currently is no default
-  if (servicesLB->item(0)->text() == i18n("None")) {
+  if (servicesLB->count() >= 1 && servicesLB->item(0)->text() == i18n("None")) {
       delete servicesLB->takeItem(0);
       servicesLB->setEnabled(true);
   }
