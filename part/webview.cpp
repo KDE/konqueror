@@ -256,8 +256,8 @@ void WebView::WebViewPrivate::addSearchActions(QList<QAction *>& selectActions)
         actionCollection->addAction("searchProviderList", providerList);
         selectActions.append(providerList);
 
-        QStringList::ConstIterator it = favoriteEngines.begin();
-        for (; it != favoriteEngines.end(); ++it) {
+        QStringList::ConstIterator it = favoriteEngines.constBegin();
+        for (; it != favoriteEngines.constEnd(); ++it) {
             if (*it == defaultEngine)
                 continue;
             service = KService::serviceByDesktopPath(QString("searchproviders/%1.desktop").arg(*it));

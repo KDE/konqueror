@@ -524,8 +524,8 @@ void WebKitSettings::init( KConfig * config, bool reset )
       d->domainPolicy.clear();
 
     {
-      QMap<QString,int>::ConstIterator it = domainList.begin();
-      const QMap<QString,int>::ConstIterator itEnd = domainList.end();
+      QMap<QString,int>::ConstIterator it = domainList.constBegin();
+      const QMap<QString,int>::ConstIterator itEnd = domainList.constEnd();
       for ( ; it != itEnd; ++it)
       {
         const QString domain = it.key();
@@ -543,8 +543,8 @@ void WebKitSettings::init( KConfig * config, bool reset )
     {
       check_old_java = false;
       const QStringList domainList = cgJava.readEntry( "JavaDomainSettings", QStringList() );
-      QStringList::ConstIterator it = domainList.begin();
-      const QStringList::ConstIterator itEnd = domainList.end();
+      QStringList::ConstIterator it = domainList.constBegin();
+      const QStringList::ConstIterator itEnd = domainList.constEnd();
       for ( ; it != itEnd; ++it)
       {
         QString domain;
@@ -565,8 +565,8 @@ void WebKitSettings::init( KConfig * config, bool reset )
     {
       check_old_ecma = false;
       const QStringList domainList = cgJava.readEntry( "ECMADomainSettings", QStringList() );
-      QStringList::ConstIterator it = domainList.begin();
-      const QStringList::ConstIterator itEnd = domainList.end();
+      QStringList::ConstIterator it = domainList.constBegin();
+      const QStringList::ConstIterator itEnd = domainList.constEnd();
       for ( ; it != itEnd; ++it)
       {
         QString domain;
@@ -586,8 +586,8 @@ void WebKitSettings::init( KConfig * config, bool reset )
 	     && ( check_old_ecma_settings || check_old_java_settings ) )
     {
       const QStringList domainList = cgJava.readEntry( "JavaScriptDomainAdvice", QStringList() );
-      QStringList::ConstIterator it = domainList.begin();
-      const QStringList::ConstIterator itEnd = domainList.end();
+      QStringList::ConstIterator it = domainList.constBegin();
+      const QStringList::ConstIterator itEnd = domainList.constEnd();
       for ( ; it != itEnd; ++it)
       {
         QString domain;
@@ -676,7 +676,7 @@ static const KPerDomainSettings &lookup_hostname_policy(
     return d->global;
   }
 
-  const PolicyMap::const_iterator notfound = d->domainPolicy.end();
+  const PolicyMap::const_iterator notfound = d->domainPolicy.constEnd();
 
   // First check whether there is a perfect match.
   PolicyMap::const_iterator it = d->domainPolicy.find(hostname);
