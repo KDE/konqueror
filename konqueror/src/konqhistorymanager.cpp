@@ -443,7 +443,7 @@ void KonqHistoryManager::slotNotifyHistoryEntry( const QByteArray & data,
     KonqHistoryEntry e;
     QDataStream stream( const_cast<QByteArray *>( &data ), QIODevice::ReadOnly );
     stream >> e;
-    kDebug(1202) << "Got new entry from Broadcast:" << e.url;
+    //kDebug(1202) << "Got new entry from Broadcast:" << e.url;
 
     KonqHistoryList::iterator existingEntry = findEntry( e.url );
     QString urlString = e.url.url();
