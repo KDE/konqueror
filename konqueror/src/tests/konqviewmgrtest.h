@@ -35,6 +35,7 @@ private Q_SLOTS:
     void testRemoveFirstView();
     void testSplitView();
     void testSplitMainContainer();
+    void testLinkedViews();
 
     void testAddTab();
     void testDuplicateTab();

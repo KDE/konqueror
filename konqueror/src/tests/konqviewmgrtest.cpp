@@ -27,6 +27,10 @@
 #include <kstandarddirs.h>
 #include <QLayout>
 
+#include <khtml_part.h>
+#include <dom/html_inline.h>
+#include <dom/html_document.h>
+
 QTEST_KDEMAIN_WITH_COMPONENTNAME( ViewMgrTest, GUI, "konqueror" )
 
 #if 0
@@ -266,6 +270,43 @@ void ViewMgrTest::testSplitMainContainer()
     // Now test removing the view we added last
     viewManager->removeView( view2 );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, tab widget, one frame
+}
+
+void ViewMgrTest::testLinkedViews()
+{
+    // First part is much like KonqHtmlTest::loadSimpleHtml.
+    KonqMainWindow mainWindow;
+    //KonqViewManager* viewManager = mainWindow.viewManager();
+    mainWindow.openUrl(0, KUrl("data:text/html, <a href=\"data:text/html, Link target\">Click me</a>"), "text/html");
+    KonqView* view = mainWindow.currentView();
+    QVERIFY(view);
+    QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 20000));
+    QCOMPARE(view->serviceType(), QString("text/html"));
+    // Split it
+    qDebug() << "SPLITTING";
+    mainWindow.slotSplitViewHorizontal();
+    KonqView* view2 = mainWindow.currentView();
+    QVERIFY( view2 );
+    QCOMPARE(view2->serviceType(), QString("text/html"));
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, one splitter, two frames
+    QVERIFY(QTest::kWaitForSignal(view2, SIGNAL(viewCompleted(KonqView*)), 20000));
+    KUrl origUrl = view->url();
+    QCOMPARE(view2->url().url(), origUrl.url());
+    view->setLinkedView(true);
+    view2->setLinkedView(true);
+    view->setLockedLocation(true);
+    // "Click" on the link
+    qDebug() << "ACTIVATING LINK";
+    KHTMLPart* part = qobject_cast<KHTMLPart *>(view->part());
+    DOM::HTMLAnchorElement anchor = part->htmlDocument().getElementsByTagName(DOM::DOMString("a")).item(0);
+    Q_ASSERT(!anchor.isNull());
+    anchor.focus();
+    QKeyEvent ev( QKeyEvent::KeyPress, Qt::Key_Return, 0, "\n" );
+    QApplication::sendEvent( part->widget(), &ev );
+    qApp->processEvents(); // openUrlRequestDelayed
+    // Check that the link opened in the 2nd view, not the first one
+    QCOMPARE(view->url().url(), origUrl.url());
+    QCOMPARE(view2->url().url(), KUrl("data:text/html, Link target").url());
 }
 
 void ViewMgrTest::testAddTab()
