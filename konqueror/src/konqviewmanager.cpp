@@ -143,7 +143,7 @@ KonqView* KonqViewManager::splitView( KonqView* currentView,
   assert( newView->frame() );
   assert( newView->part() );
   newContainer->setActiveChild( newView->frame() );
-  setActivePart( newView->part(), false );
+  setActivePart( newView->part() );
 
 #ifdef DEBUG_VIEWMGR
   m_pMainWindow->dumpViewList();
@@ -376,7 +376,7 @@ void KonqViewManager::removeTab( KonqFrameBase* currentFrame, bool emitAboutToRe
     emit aboutToRemoveTab(currentFrame);
 
   if (currentFrame->asQWidget() == m_tabContainer->currentWidget())
-    setActivePart( 0L, true );
+    setActivePart(0);
 
   m_tabContainer->childFrameRemoved(currentFrame);
 
@@ -384,7 +384,7 @@ void KonqViewManager::removeTab( KonqFrameBase* currentFrame, bool emitAboutToRe
   foreach ( KonqView* view, viewList )
   {
     if (view == m_pMainWindow->currentView())
-      setActivePart( 0L, true );
+      setActivePart(0);
     m_pMainWindow->removeChildView( view );
     delete view;
   }
@@ -522,7 +522,7 @@ void KonqViewManager::removeView( KonqView *view )
 
   if (parentContainer->frameType() == KonqFrameBase::Container)
   {
-    setActivePart( 0L, true );
+    setActivePart(0);
 
     kDebug(1202) << "parentContainer is a KonqFrameContainer";
 
@@ -638,7 +638,7 @@ void KonqViewManager::viewCountChanged()
 void KonqViewManager::clear()
 {
     //kDebug(1202);
-    setActivePart( 0L, true /* immediate */ );
+    setActivePart(0);
 
     if (m_pMainWindow->childFrame() == 0) return;
 
@@ -913,7 +913,7 @@ void KonqViewManager::loadViewProfileFromGroup( const KConfigGroup &profileGroup
     KonqView *nextChildView = 0;
     nextChildView = m_pMainWindow->activeChildView();
     if (nextChildView == 0) nextChildView = chooseNextView(0);
-    setActivePart(nextChildView ? nextChildView->part() : 0L, true /* immediate */);
+    setActivePart(nextChildView ? nextChildView->part() : 0);
 
     // #71164
     if (!req.browserArgs.frameName.isEmpty() && nextChildView) {
@@ -952,10 +952,10 @@ void KonqViewManager::loadViewProfileFromGroup( const KConfigGroup &profileGroup
 
 void KonqViewManager::setActivePart(KParts::Part *part, QWidget *)
 {
-    setActivePart(part, false);
+    doSetActivePart( part );
 }
 
-void KonqViewManager::setActivePart( KParts::Part *part, bool immediate )
+void KonqViewManager::doSetActivePart( KParts::Part *part )
 {
     //kDebug(1202) << part;
     //if ( part )
@@ -963,7 +963,7 @@ void KonqViewManager::setActivePart( KParts::Part *part, bool immediate )
 
     KParts::Part* mainWindowActivePart = m_pMainWindow->currentView()
                                          ? m_pMainWindow->currentView()->part() : 0;
-    if (part == activePart() && (!immediate || mainWindowActivePart == part))
+    if (part == activePart() && mainWindowActivePart == part)
     {
       if ( part )
         kDebug(1202) << "Part is already active!";
