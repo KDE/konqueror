@@ -13,7 +13,7 @@ target_link_libraries(centralwidget konq ${KDE4_KDECORE_LIBS} ${QT_QTCORE_LIBRAR
 
 kde4_add_unit_test(konqviewmgrtest TEST konqviewmgrtest.cpp)
 target_link_libraries(konqviewmgrtest kdeinit_konqueror ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY}
-                      ${QT_QTTEST_LIBRARY})
+                      ${KDE4_KHTML_LIBS} ${QT_QTTEST_LIBRARY})
 
 ########### historymanagertest ###############
 
