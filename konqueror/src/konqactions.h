@@ -24,7 +24,6 @@
 #include <konqhistorymanager.h>
 #include <kactionmenu.h>
 #include <QtGui/QWidget>
-#include <QtGui/QToolBar>
 #include <QtCore/QList>
 
 struct HistoryEntry;

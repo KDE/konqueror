@@ -21,8 +21,6 @@
 
 #include <assert.h>
 
-#include <QToolButton>
-
 #include <ktoolbar.h>
 #include <kdebug.h>
 
