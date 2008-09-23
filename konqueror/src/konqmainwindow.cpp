@@ -733,6 +733,7 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
         abortLoading();
         setLocationBarURL( _url );
         KonqOpenURLRequest newreq;
+        newreq.forceAutoEmbed = true;
         newreq.followMode = true;
         newreq.args = req.args;
         newreq.browserArgs = req.browserArgs;
@@ -1038,6 +1039,7 @@ bool KonqMainWindow::makeViewsFollow( const KUrl & url,
   bool res = false;
   //kDebug(1202) << senderView->metaObject()->className() << "url=" << url << "serviceType=" << serviceType;
   KonqOpenURLRequest req;
+  req.forceAutoEmbed = true;
   req.followMode = true;
   req.args = args;
   req.browserArgs = browserArgs;
@@ -2268,7 +2270,9 @@ void KonqMainWindow::slotSplitViewHorizontal()
     KonqView* newView = m_pViewManager->splitView(m_currentView, Qt::Horizontal);
     if (newView == 0)
         return;
-    newView->openUrl( oldView->url(), oldView->locationBarURL() );
+    KonqOpenURLRequest req;
+    req.forceAutoEmbed = true;
+    openView(oldView->serviceType(), oldView->url(), newView, req);
 }
 
 void KonqMainWindow::slotSplitViewVertical()
@@ -2279,7 +2283,9 @@ void KonqMainWindow::slotSplitViewVertical()
     KonqView* newView = m_pViewManager->splitView(m_currentView, Qt::Vertical);
     if (newView == 0)
         return;
-    newView->openUrl(oldView->url(), oldView->locationBarURL());
+    KonqOpenURLRequest req;
+    req.forceAutoEmbed = true;
+    openView(oldView->serviceType(), oldView->url(), newView, req);
 }
 
 void KonqMainWindow::slotAddTab()
