@@ -612,7 +612,7 @@ void KonqMainWindow::openUrl(KonqView *_view, const KUrl &_url,
     }
 
 
-  kDebug(1202) << "trying openView for" << url << "( mimeType" << mimeType << ")";
+    //kDebug(1202) << "trying openView for" << url << "( mimeType" << mimeType << ")";
   if ( ( !mimeType.isEmpty() && mimeType != "application/octet-stream") ||
        url.url() == "about:" || url.url() == "about:konqueror" || url.url() == "about:plugins" )
   {
@@ -1237,9 +1237,9 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
         *part = it.key();
     }
 
-    // activate the view _now_ in order to make the menuBar() hide call work
+    // activate the view now in order to make the menuBar() hide call work
     if ( part && *part ) {
-       mainWindow->viewManager()->setActivePart( *part, true );
+       mainWindow->viewManager()->setActivePart(*part);
     }
 
     if ( windowArgs.x() != -1 )
@@ -1874,7 +1874,7 @@ void KonqMainWindow::slotPartChanged( KonqView *childView, KParts::ReadOnlyPart 
 
   m_pViewManager->replacePart( oldPart, newPart, false );
   // Set active immediately
-  m_pViewManager->setActivePart( newPart, true );
+  m_pViewManager->setActivePart(newPart);
 
   viewsChanged();
 }
@@ -2281,18 +2281,22 @@ void KonqMainWindow::slotSplitViewHorizontal()
 {
     if ( !m_currentView )
         return;
-    KonqView * newView = m_pViewManager->splitView( m_currentView, Qt::Horizontal );
-    if (newView == 0) return;
-    newView->openUrl( m_currentView->url(), m_currentView->locationBarURL() );
+    KonqView* oldView = m_currentView;
+    KonqView* newView = m_pViewManager->splitView(m_currentView, Qt::Horizontal);
+    if (newView == 0)
+        return;
+    newView->openUrl( oldView->url(), oldView->locationBarURL() );
 }
 
 void KonqMainWindow::slotSplitViewVertical()
 {
     if ( !m_currentView )
         return;
-    KonqView * newView = m_pViewManager->splitView( m_currentView, Qt::Vertical );
-    if (newView == 0) return;
-    newView->openUrl( m_currentView->url(), m_currentView->locationBarURL() );
+    KonqView* oldView = m_currentView;
+    KonqView* newView = m_pViewManager->splitView(m_currentView, Qt::Vertical);
+    if (newView == 0)
+        return;
+    newView->openUrl(oldView->url(), oldView->locationBarURL());
 }
 
 void KonqMainWindow::slotAddTab()
