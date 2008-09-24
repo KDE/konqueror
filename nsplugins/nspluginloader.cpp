@@ -416,7 +416,7 @@ NSPluginInstance *NSPluginLoader::newInstance(QWidget *parent, const QString& ur
 
       if ( !_viewer )
       {
-         kDebug() << "No viewer dcop stub found";
+         kDebug() << "No viewer dbus stub found";
          return 0;
       }
    }
