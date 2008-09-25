@@ -165,7 +165,10 @@ void KonqView::openUrl( const KUrl &url, const QString & locationBarURL,
      KonqMainWindow::s_crashlog_file->flush();
   }
 
-  KParts::OpenUrlArguments args = m_pPart->arguments();
+  KParts::OpenUrlArguments args;
+  if ( m_pPart )
+      args = m_pPart->arguments();
+
   KParts::BrowserExtension *ext = browserExtension();
   KParts::BrowserArguments browserArgs;
   if ( ext )
@@ -193,7 +196,9 @@ void KonqView::openUrl( const KUrl &url, const QString & locationBarURL,
   } else
     m_bLockHistory = false;
 
-  m_pPart->setProperty("nameFilter", nameFilter);
+  if ( m_pPart )
+    m_pPart->setProperty("nameFilter", nameFilter);
+
   if ( m_bDisableScrolling )
     callExtensionMethod( "disableScrolling" );
 
