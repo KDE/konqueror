@@ -34,7 +34,7 @@ public:
     /**
      * Populate a QMimeData with urls, and whether they were cut or copied.
      *
-     * @param mimeData pointer to the the mimeData object to be populated.
+     * @param mimeData pointer to the mimeData object to be populated.
      *                 Must not be 0.
      * @param kdeURLs list of urls (which can include kde-specific protocols).
      * This list can be empty if only local urls are being used anyway.
