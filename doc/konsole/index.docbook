@@ -46,7 +46,7 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2008-08-01</date>
+<date>2008-09-07</date>
 <releaseinfo>2.1.0</releaseinfo>
 
 <abstract><para>&konsole; is &kde;'s terminal emulator.</para></abstract>
@@ -133,7 +133,7 @@ Procedure to create a new profile:
 <listitem><para>Click on the menu entry <menuchoice><guimenu>Settings</guimenu><guimenuitem>Manage Profiles...</guimenuitem>
 </menuchoice></para></listitem>
 
-<listitem><para>Click on the button <guibutton>New Profile</guibutton>.</para></listitem>
+<listitem><para>Click on the button <guibutton>New Profile...</guibutton>.</para></listitem>
 
 <listitem><para>Fill in the first entry with a name.  This is the
 name that will show in the menu, and will be the default label instead
@@ -149,10 +149,8 @@ You can configure a different font, colour scheme, $<envar>TERM</envar> type and
 other settings for each session.</para></listitem>
 
 <listitem><para>Press the <guibutton>OK</guibutton> button. The new session 
-is now available in the <guilabel>Manage Profiles</guilabel> dialog.
+is now available in the <guilabel>Manage Profiles...</guilabel> dialog.
 </para></listitem>
-
-<listitem><para>Press <guibutton>OK</guibutton>.</para></listitem>
 
 </orderedlist>
 </para>
@@ -280,7 +278,7 @@ and <guimenuitem>Close Tab</guimenuitem>
 
 <para>The menubar is at the top of the &konsole; window. 
 If the menubar is hidden, 
-<guimenuitem>Show Menu bar</guimenuitem> can be reached by 
+<guimenuitem>Show Menu Bar</guimenuitem> can be reached by 
 <mousebutton>right</mousebutton> clicking in the window
 (as long as no full screen application is running in that 
 window such as vi, minicom, etc.).  The default shortcut
@@ -323,8 +321,8 @@ below <menuchoice><guimenu>File</guimenu><guimenuitem>Shell</guimenuitem></menuc
 <guimenuitem>Open Browser Here</guimenuitem></menuchoice>
 </term>
 <listitem><para><action>Opens &kde;'s file manager
-at the current directory</action>.  By default, that is   
-<ulink url="help:/khelpcenter/userguide/dolphin.html">dolphin</ulink>.
+at the current directory</action>.  By default, that is 
+<ulink url="help:/dolphin/index.html">&dolphin;</ulink>.
 </para></listitem>
 </varlistentry>
 
@@ -420,7 +418,7 @@ the name of the current tab</action></para></listitem>
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>L</keycap></keycombo></shortcut>
-<guimenu>View</guimenu><guimenuitem>Split 
+<guimenu>View</guimenu><guisubmenu>Split View</guisubmenu><guimenuitem>Split 
 View Left/Right</guimenuitem></menuchoice>
 </term>
 <listitem><para><action>Splits all the tabs into left and right views</action>
@@ -432,7 +430,7 @@ Any output on one view is duplicated in the other view.
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>T</keycap></keycombo></shortcut>
-<guimenu>View</guimenu><guimenuitem>Split 
+<guimenu>View</guimenu><guisubmenu>Split View</guisubmenu><guimenuitem>Split 
 View Top/Bottom</guimenuitem></menuchoice>
 </term>
 <listitem><para><action>Splits all the tabs into top and bottom views</action>
@@ -444,7 +442,7 @@ Any output on one view is duplicated in the other view.
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>S</keycap></keycombo></shortcut>
-<guimenu>View</guimenu><guimenuitem>Split 
+<guimenu>View</guimenu><guisubmenu>Split View</guisubmenu><guimenuitem>
 Close Active</guimenuitem></menuchoice>
 </term>
 <listitem><para><action>Closes the current view</action>
@@ -454,8 +452,8 @@ Close Active</guimenuitem></menuchoice>
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>O</keycap></keycombo></shortcut>
-<guimenu>View</guimenu><guimenuitem>Split 
-Close Other</guimenuitem></menuchoice>
+<guimenu>View</guimenu><guisubmenu>Split View</guisubmenu><guimenuitem>
+Close Others</guimenuitem></menuchoice>
 </term>
 <listitem><para><action>Closes the non-current view</action>
 </para></listitem>
@@ -464,7 +462,7 @@ Close Other</guimenuitem></menuchoice>
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>]</keycap></keycombo></shortcut>
-<guimenu>View</guimenu><guimenuitem>Expand View</guimenuitem></menuchoice>
+<guimenu>View</guimenu><guisubmenu>Split View</guisubmenu><guimenuitem>Expand View</guimenuitem></menuchoice>
 </term>
 <listitem><para><action>Makes the current view larger</action>
 </para></listitem>
@@ -473,7 +471,7 @@ Close Other</guimenuitem></menuchoice>
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>[</keycap></keycombo></shortcut>
-<guimenu>View</guimenu><guimenuitem>Shrink View</guimenuitem></menuchoice>
+<guimenu>View</guimenu><guisubmenu>Split View</guisubmenu><guimenuitem>Shrink View</guimenuitem></menuchoice>
 </term>
 <listitem><para><action>Makes the current view smaller</action>
 </para></listitem>
@@ -509,7 +507,9 @@ Menu Bar</guimenuitem></menuchoice></term>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>View</guimenu><guimenuitem>Monitor for 
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>I</keycap></keycombo></shortcut>
+<guimenu>View</guimenu><guimenuitem>Monitor for 
 Silence</guimenuitem></menuchoice></term>
 <listitem><para><action>Toggles the monitoring of the current tab for 
 lack of activity</action>
@@ -522,7 +522,9 @@ The type of alerts can be changed through
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>View</guimenu><guimenuitem>Monitor for 
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>A</keycap></keycombo></shortcut>
+<guimenu>View</guimenu><guimenuitem>Monitor for 
 Activity</guimenuitem></menuchoice></term>
 <listitem><para><action>Toggles the monitoring of the current tab for 
 activity</action>
@@ -566,7 +568,7 @@ The type of alerts can be changed through
 <term><menuchoice>
 <shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>F</keycap></keycombo></shortcut>
 <guimenu>Scrollback</guimenu><guimenuitem>Search 
-Output</guimenuitem></menuchoice></term>
+Output...</guimenuitem></menuchoice></term>
 <listitem><para><action>Opens a search bar at the bottom of &konsole;'s window
 </action></para>
 <para>This allows for case sensitive, forward or backwards, and regular expressions searches.</para>
@@ -629,7 +631,9 @@ and resets the terminal</action></para></listitem>
 <variablelist>
 
 <varlistentry>
-<term><menuchoice><guimenu>Bookmarks</guimenu><guimenuitem>Add Bookmark</guimenuitem></menuchoice></term>
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;<keycap>B</keycap></keycombo></shortcut>
+<guimenu>Bookmarks</guimenu><guimenuitem>Add Bookmark</guimenuitem></menuchoice></term>
 <listitem><para><action>Adds the current location</action></para></listitem>
 </varlistentry>
 
@@ -674,14 +678,14 @@ Profile</guimenuitem></menuchoice></term>
 
 <varlistentry>
 <term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Edit 
-Current Profile</guimenuitem></menuchoice></term>
+Current Profile...</guimenuitem></menuchoice></term>
 <listitem><para><action>Opens the profile editor for the current tab</action></para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Manage 
-Profiles</guimenuitem></menuchoice></term>
+Profiles...</guimenuitem></menuchoice></term>
 <listitem><para><action>Opens a editor for managing profiles</action> 
 </para>
 </listitem>
@@ -727,25 +731,25 @@ can be specified to modify its behavior.</para>
 
 <varlistentry>
 <term><option>--profile</option> <parameter>file</parameter></term>
-<listitem><para><action>Start &konsole; using a saved set of sessions</action>.</para></listitem>
+<listitem><para><action>Start &konsole;</action> using a saved set of sessions.</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><option>--list-profiles</option></term>
-<listitem><para><action>List all of the available profiles.
-</action></para></listitem>
+<listitem><para><action>List</action> all of the available profiles.
+</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><option>--background-mode</option></term>
-<listitem><para><action>
-</action></para></listitem>
+<listitem><para><action>Start &konsole;</action> in the background and bring to the front when the F12 key is pressed.
+</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><option>--new-tab</option></term>
-<listitem><para><action>
-</action></para></listitem>
+<listitem><para><action>Create a new tab</action> in an existing window rather than creating a new window.
+</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -755,9 +759,27 @@ can be specified to modify its behavior.</para>
 </varlistentry>
 
 <varlistentry>
-<term><option>--enable-transparency</option></term>
-<listitem><para><action>
-</action></para></listitem>
+<term><option>--notransparency</option></term>
+<listitem><para><action>Disable</action> transparent backgrounds, even if the system supports them.
+</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><option>--force-transparency</option></term>
+<listitem><para><action>Try to enable transparency</action>, even if the system does not appear to support it.
+</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><option>--hold, --noclose</option></term>
+<listitem><para><action>Do not close</action> the initial session automatically when it ends.
+</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><option>-p</option> <parameter>property=value</parameter></term>
+<listitem><para><action>Change</action> the value of a profile property.</para>
+</listitem>
 </varlistentry>
 
 <varlistentry>
@@ -841,10 +863,10 @@ can be specified to modify its behavior.</para>
 <chapter id="scripting">
 <title>Scripting &konsole;</title>
 
-<para>For &kde; 4, the old &DCOP; has been replaced with <acronym>dbus</acronym>.
+<para>For &kde; 4, the old &DCOP; has been replaced with &DBus;.
 However, &konsole; has not been updated yet to handle this.
 </para>
-<para>For a somewhat primitive, non-user friendly &GUI; for <acronym>dbus</acronym>, try &Qt;'s qdbusviewer.
+<para>For a somewhat primitive, non-user friendly &GUI; for &DBus;, try &Qt;'s qdbusviewer.
 </para>
 <para> More info to follow...</para>
 
