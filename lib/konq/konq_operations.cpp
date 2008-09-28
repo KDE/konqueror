@@ -310,7 +310,7 @@ void KonqOperations::doDrop( const KFileItem & destItem, const KUrl & dest, QDro
         }
 
         KonqOperations * op = new KonqOperations(parent);
-        op->setDropInfo( new DropInfo( modifiers, lst, metaData, ev->pos(), action ) );
+        op->setDropInfo( new DropInfo( modifiers, lst, metaData, QCursor::pos(), action ) );
 
         // Ok, now we need destItem.
         if ( !destItem.isNull() )
