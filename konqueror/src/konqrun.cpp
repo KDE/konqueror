@@ -90,34 +90,14 @@ void KonqRun::foundMimeType(const QString & _type)
 
     const bool associatedAppIsKonqueror = KonqMainWindow::isMimeTypeAssociatedWithSelf(mimeType);
 
-    if (tryEmbed) {
-        KMimeType::Ptr mime = KMimeType::mimeType(mimeType, KMimeType::ResolveAliases);
-        if (associatedAppIsKonqueror)
-            m_req.forceAutoEmbed = true;
-        else if (mime && mime->is("text/html") && m_pMainWindow->hasViewWithMimeType(mimeType)) {
-            m_req.forceAutoEmbed = true;
-            // When text/html is associated with another browser,
-            // we need to find out if we should keep browsing the web in konq,
-            // or if we are clicking on an html file in a directory view (which should
-            // then open the other browser)
-
-            // The text/html check is to reduce the effects of the above!
-            // Otherwise, once you have an embedded PDF,
-            // all future PDFs are opened embedded, even after changing settings!
-        }
-
-        setFinished(m_pMainWindow->openView(mimeType, KRun::url(), m_pView, m_req));
-
-        if (hasFinished()) {
-            m_pMainWindow = 0;
-            timer().start(0);
-            return;
-        }
+    if (tryEmbed && tryOpenView(mimeType, associatedAppIsKonqueror)) {
+        return;
     }
 
     // If we were following another view, do nothing if opening didn't work.
-    if (m_req.followMode)
+    if (m_req.followMode) {
         setFinished(true);
+    }
 
     if (!hasFinished()) {
         // Use askSave from filetypesrc
@@ -131,8 +111,11 @@ void KonqRun::foundMimeType(const QString & _type)
         if (hasFinished()) {
             // save or cancel -> nothing else will happen in m_pView, so clear statusbar (#163628)
             m_pView->frame()->statusbar()->slotClear();
-        } else if (!tryEmbed) // Open selected for a serverSuggestsSave() file
-            setFinished(m_pMainWindow->openView(mimeType, KRun::url(), m_pView, m_req));
+        } else if (!tryEmbed) {
+            // "Open" selected for a serverSuggestsSave() file - let's open. #171869
+            if (tryOpenView(mimeType, associatedAppIsKonqueror))
+                return;
+        }
     }
 
     // make Konqueror think there was an error, in order to stop the spinning wheel
@@ -153,6 +136,33 @@ void KonqRun::foundMimeType(const QString & _type)
 
     kDebug(1202) << "Nothing special to do in KonqRun, falling back to KRun";
     KRun::foundMimeType(mimeType);
+}
+
+bool KonqRun::tryOpenView(const QString& mimeType, bool associatedAppIsKonqueror)
+{
+    KMimeType::Ptr mime = KMimeType::mimeType(mimeType, KMimeType::ResolveAliases);
+    if (associatedAppIsKonqueror)
+        m_req.forceAutoEmbed = true;
+    else if (mime && mime->is("text/html") && m_pMainWindow->hasViewWithMimeType(mimeType)) {
+        m_req.forceAutoEmbed = true;
+        // When text/html is associated with another browser,
+        // we need to find out if we should keep browsing the web in konq,
+        // or if we are clicking on an html file in a directory view (which should
+        // then open the other browser)
+
+        // The text/html check is to reduce the effects of the above!
+        // Otherwise, once you have an embedded PDF,
+        // all future PDFs are opened embedded, even after changing settings!
+    }
+
+    const bool ok = m_pMainWindow->openView(mimeType, KRun::url(), m_pView, m_req);
+    setFinished(ok);
+
+    if (ok) {
+        m_pMainWindow = 0;
+        timer().start(0);
+    }
+    return ok;
 }
 
 void KonqRun::handleError(KJob *job)
