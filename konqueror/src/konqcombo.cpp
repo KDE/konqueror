@@ -923,13 +923,13 @@ void KonqComboCompletionBox::setItems( const QStringList& items )
             if ( rowIndex < count() ) {
                 const bool changed = ((KonqListWidgetItem*)item(rowIndex))->reuse( *it );
                 dirty = dirty || changed;
-                rowIndex++;
             }
             else {
                 dirty = true;
                 //Inserting an item is a way of making this dirty
                 addItem( new KonqListWidgetItem( *it ) );
             }
+            rowIndex++;
         }
 
         //If there is an unused item, mark as dirty -> less items now
