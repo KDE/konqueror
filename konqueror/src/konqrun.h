@@ -62,7 +62,8 @@ protected:
 protected Q_SLOTS:
   void slotRedirection( KIO::Job *, const KUrl& );
 
-protected:
+private:
+    bool tryOpenView(const QString& mimeType, bool associatedAppIsKonqueror);
   QPointer<KonqMainWindow> m_pMainWindow;
   QPointer<KonqView> m_pView;
   bool m_bFoundMimeType;
