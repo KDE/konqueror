@@ -827,10 +827,18 @@ void KonqComboLineEdit::mouseDoubleClickEvent( QMouseEvent *e )
     KLineEdit::mouseDoubleClickEvent( e );
 }
 
-void KonqComboLineEdit::setCompletedItems( const QStringList& items, bool )
+bool lessThanString( const QString &left, const QString &right )
+{
+    return KStringHandler::naturalCompare( left, right, Qt::CaseInsensitive ) < 0;
+}
+
+void KonqComboLineEdit::setCompletedItems( const QStringList& _items, bool )
 {
     QString txt;
     KonqComboCompletionBox *completionbox = static_cast<KonqComboCompletionBox*>( completionBox() );
+
+    QStringList items( _items );
+    qStableSort(items.begin(), items.end(), lessThanString);
 
     if ( completionbox && completionbox->isVisible() )
         // The popup is visible already - do the matching on the initial string,
