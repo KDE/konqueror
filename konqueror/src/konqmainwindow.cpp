@@ -1008,29 +1008,10 @@ void KonqMainWindow::slotOpenURLRequest( const KUrl &url, const KParts::OpenUrlA
 void KonqMainWindow::openUrlRequestHelper( KonqView *childView, const KUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments &browserArgs )
 {
     //kDebug(1202) << "url=" << url;
-  KonqOpenURLRequest req;
-  req.args = args;
-  req.browserArgs = browserArgs;
-
-  // Clicking on a link that points to the page itself (e.g. anchor)
-  if ( !browserArgs.doPost() && !args.reload() &&
-       childView && !childView->aborted() && // #164495
-       urlcmp( url.url(), childView->url().url(),
-               KUrl::CompareWithoutTrailingSlash | KUrl::CompareWithoutFragment ) )
-  {
-    QString serviceType = args.mimeType();
-    if ( serviceType.isEmpty() )
-      serviceType = childView->serviceType();
-
-    childView->stop();
-    req.forceAutoEmbed = true;
-
-    req.openAfterCurrentPage = KonqSettings::openAfterCurrentPage();
-    openView( serviceType, url, childView, req );
-    return;
-  }
-
-  openUrl( childView, url, args.mimeType(), req, browserArgs.trustedSource );
+    KonqOpenURLRequest req;
+    req.args = args;
+    req.browserArgs = browserArgs;
+    openUrl(childView, url, args.mimeType(), req, browserArgs.trustedSource);
 }
 
 QObject *KonqMainWindow::lastFrame( KonqView *view )
@@ -1214,10 +1195,10 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
     req.browserArgs = browserArgs;
     req.forceAutoEmbed = true;
 
-    if ( args.mimeType().isEmpty() )
+    // Do we know the mimetype? If not, go to generic openUrl which will use a KonqRun.
+    if ( args.mimeType().isEmpty() ) {
       mainWindow->openUrl( 0, url, QString(), req );
-    else if ( !mainWindow->openView( args.mimeType(), url, 0, req ) )
-    {
+    } else if (!mainWindow->openView(args.mimeType(), url, m_currentView, req)) {
       // we have problems. abort.
       delete mainWindow;
 

@@ -128,12 +128,16 @@ public Q_SLOTS:
                bool trustedSource = false); // trustedSource should be part of KonqOpenURLRequest, probably
 
 public:
-  /**
-   * Called by openUrl when it knows the service type (either directly,
-   * or using KonqRun)
-   */
-  bool openView( QString serviceType, const KUrl &_url, KonqView *childView,
-                 const KonqOpenURLRequest & req = KonqOpenURLRequest::null );
+    /**
+     * Called by openUrl when it knows the mime type (either directly,
+     * or using KonqRun).
+     * \param mimeType the mimetype of the URL to open. Always set.
+     * \param url the URL to open.
+     * \param childView the view in which to open the URL. Can be 0, in which
+     * case a new tab (or the very first view) will be created.
+     */
+    bool openView(QString mimeType, const KUrl& url, KonqView *childView,
+                  const KonqOpenURLRequest & req = KonqOpenURLRequest::null);
 
 
   void abortLoading();

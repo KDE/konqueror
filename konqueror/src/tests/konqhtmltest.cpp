@@ -113,6 +113,10 @@ private Q_SLOTS:
         KMainWindow* newWindow = KMainWindow::memberList().last();
         QVERIFY(newWindow != mainWindow);
         compareToolbarSettings(mainWindow, newWindow);
+        // Does the window contain exactly one tab?
+        QTabBar* tab = newWindow->findChild<QTabBar*>();
+        QVERIFY(tab);
+        QCOMPARE(tab->count(), 1);
         deleteAllMainWindows();
     }
 
