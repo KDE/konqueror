@@ -1,0 +1,36 @@
+[Desktop Entry]
+Type=Service
+X-KDE-ServiceTypes=KCModule
+X-DocPath=kcontrol/bookmarks/index.html
+Icon=bookmarks
+Exec=kcmshell4 bookmarks
+
+X-KDE-Library=kcm_kio
+X-KDE-PluginKeyword=bookmarks
+X-KDE-ParentApp=kcontrol
+
+Name=Bookmarks
+Name[el]=Σελιδοδείκτες
+Name[es]=Marcadores
+Name[et]=Järjehoidjad
+Name[gl]=Marcadores
+Name[nds]=Leestekens
+Name[pt]=Favoritos
+Name[pt_BR]=Favoritos
+Name[sv]=Bokmärken
+Name[uk]=Закладки
+Name[x-test]=xxBookmarksxx
+Name[zh_TW]=書籤
+Comment=Configure the bookmarks home page
+Comment[el]=Ρύθμιση της αρχικής σελίδας σελιδοδεικτών
+Comment[es]=Configurar la página de inicio de los marcadores
+Comment[et]=Järjehoidjate kodulehekülje seadistamine
+Comment[gl]=Configura a páxina de inicio de marcadores
+Comment[nds]=De Leesteken-Tohuussiet instellen
+Comment[pt]=Configurar a página pessoal dos favoritos
+Comment[pt_BR]=Configurar a página pessoal dos favoritos
+Comment[sv]=Anpassa startsidan med bokmärken
+Comment[uk]=Налаштуйте домашню сторінку закладок
+Comment[x-test]=xxConfigure the bookmarks home pagexx
+Comment[zh_TW]=設定書籤的首頁
+X-KDE-Keywords=Bookmarks

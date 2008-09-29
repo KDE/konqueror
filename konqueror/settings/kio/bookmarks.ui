@@ -1,0 +1,148 @@
+<ui version="4.0" >
+ <class>BookmarksConfigUI</class>
+ <widget class="QWidget" name="BookmarksConfigUI" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>704</width>
+    <height>636</height>
+   </rect>
+  </property>
+  <layout class="QGridLayout" >
+   <item row="1" column="0" >
+    <widget class="QGroupBox" name="groupBox" >
+     <property name="title" >
+      <string>Bookmarks</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout" >
+      <item>
+       <widget class="QCheckBox" name="cbShowRoot" >
+        <property name="whatsThis" >
+         <string>If this option is unchecked, bookmarks at the root of the hierarchy (not in a folder) are not displayed.
+If checked, they are gathered in a "root" folder.</string>
+        </property>
+        <property name="text" >
+         <string>&amp;Show bookmarks without folder</string>
+        </property>
+        <property name="checked" >
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="cbFlattenTree" >
+        <property name="whatsThis" >
+         <string>Sub-folders are show within their parent by default. If you activate this option, sub-folders are displayed on their own.
+It looks less nice but it may help if you have a very big folder you want to spread in two columns.</string>
+        </property>
+        <property name="text" >
+         <string>&amp;Flatten bookmarks tree</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="cbShowPlaces" >
+        <property name="whatsThis" >
+         <string>Show a box with KDE places (Home, Network, ...). Useful if you use konqueror as a file manager.</string>
+        </property>
+        <property name="text" >
+         <string>Show system &amp;places</string>
+        </property>
+        <property name="checked" >
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="0" >
+    <widget class="QGroupBox" name="groupBox_2" >
+     <property name="title" >
+      <string>General settings</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2" >
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout" >
+        <item>
+         <widget class="QLabel" name="label" >
+          <property name="whatsThis" >
+           <string>Folders are automatically distributed in several columns. The optimal number of columns depends on the width of the konqueror window and the number of bookmarks you have.</string>
+          </property>
+          <property name="text" >
+           <string>Number of columns to show</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="KIntSpinBox" name="sbColumns" >
+          <property name="whatsThis" >
+           <string/>
+          </property>
+          <property name="minimum" >
+           <number>1</number>
+          </property>
+          <property name="value" >
+           <number>4</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer" >
+          <property name="orientation" >
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0" >
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="cbShowBackgrounds" >
+        <property name="whatsThis" >
+         <string>Disable it on slow system to disable background images.</string>
+        </property>
+        <property name="text" >
+         <string>Show folder &amp;backgrounds</string>
+        </property>
+        <property name="checked" >
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="0" >
+    <spacer name="verticalSpacer" >
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0" >
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+ <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+ <customwidgets>
+  <customwidget>
+   <class>KIntSpinBox</class>
+   <extends>QSpinBox</extends>
+   <header>knuminput.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

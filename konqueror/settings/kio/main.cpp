@@ -42,7 +42,7 @@
 #include "useragentdlg.h"
 #include "kproxydlg.h"
 #include "cache.h"
-
+#include "bookmarks.h"
 
 K_PLUGIN_FACTORY(KioConfigFactory,
         registerPlugin<LanBrowser>("lanbrowser");
@@ -52,7 +52,8 @@ K_PLUGIN_FACTORY(KioConfigFactory,
         registerPlugin<KProxyOptions>("proxy");
         registerPlugin<KCookiesMain>("cookie");
         registerPlugin<CacheConfigModule>("cache");
-        )
+        registerPlugin<BookmarksConfigModule>("bookmarks");
+	)
 K_EXPORT_PLUGIN(KioConfigFactory("kcmkio"))
 
 LanBrowser::LanBrowser(QWidget *parent, const QVariantList &)
