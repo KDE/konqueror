@@ -37,7 +37,7 @@ K_PLUGIN_FACTORY_DECLARATION(KcmKonqHtmlFactory)
 
 // Keep in sync with konqueror.kcfg
 static const char* DEFAULT_HOMEPAGE = "http://www.kde.org";
-enum StartPage { ShowHomePage, ShowBlankPage, ShowAboutPage };
+enum StartPage { ShowHomePage, ShowBlankPage, ShowAboutPage, ShowBookmarksPage };
 
 //-----------------------------------------------------------------------------
 
@@ -86,6 +86,7 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout* lay)
     m_startCombo->addItem(i18nc("@item:inlistbox", "Show the introduction page"), ShowAboutPage);
     m_startCombo->addItem(i18nc("@item:inlistbox", "Show my home page"), ShowHomePage);
     m_startCombo->addItem(i18nc("@item:inlistbox", "Show a blank page"), ShowBlankPage);
+    m_startCombo->addItem(i18nc("@item:inlistbox", "Show my bookmarks"), ShowBookmarksPage);
     startLayout->addWidget(m_startCombo);
     connect(m_startCombo, SIGNAL(currentIndexChanged(int)), SLOT(slotChanged()));
 
@@ -147,6 +148,8 @@ static StartPage urlToStartPageEnum(const QString& startUrl)
         return ShowBlankPage;
     if (startUrl == "about:" || startUrl == "about:konqueror")
         return ShowAboutPage;
+    if (startUrl == "bookmarks:" || startUrl == "bookmarks:/")
+        return ShowBookmarksPage;
     return ShowHomePage;
 }
 
@@ -215,6 +218,11 @@ static void updateWebbrowsingProfile(const QString& homeUrl, StartPage startPage
         break;
     case ShowBlankPage:
         url = "about:blank";
+        serviceType = "text/html";
+        serviceName = "khtml";
+        break;
+    case ShowBookmarksPage:
+        url = "bookmarks:";
         serviceType = "text/html";
         serviceName = "khtml";
         break;
