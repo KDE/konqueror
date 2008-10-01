@@ -169,11 +169,8 @@ void KBookmarkBar::fillBookmarkBar(const KBookmarkGroup & parent)
     if (parent.isNull())
         return;
 
-    qDebug()<<"fillBookmarkBar"<<parent.text();
-
     for (KBookmark bm = parent.first(); !bm.isNull(); bm = parent.next(bm))
     {
-        qDebug()<<"bm is "<<bm.text();
         // Filtered special cases
         if(d->m_filteredToolbar)
         {
