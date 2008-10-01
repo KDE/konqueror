@@ -76,7 +76,7 @@ void KonqPopupMenuTest::initTestCase()
 {
     m_thisDirectoryItem = KFileItem(QDir::currentPath(), "inode/directory", S_IFDIR + 0777);
     m_fileItem = KFileItem(QDir::currentPath() + "/Makefile", "text/x-makefile", S_IFREG + 0660);
-    m_linkItem = KFileItem(QDir::currentPath() + "/cmake_install.cmake", "text/html", S_IFREG + 0660);
+    m_linkItem = KFileItem(KUrl("http://www.kde.org/foo"), "text/html", S_IFREG + 0660);
     m_subDirItem = KFileItem(QDir::currentPath() + "/CMakeFiles", "inode/directory", S_IFDIR + 0755);
     m_cut = KStandardAction::cut(0, 0, this);
     m_actionCollection.addAction("cut", m_cut);
@@ -174,6 +174,8 @@ void KonqPopupMenuTest::testFile()
                     << "preview1";
     if (!KStandardDirs::locate("services", "ServiceMenus/encryptfile.desktop").isEmpty())
         expectedActions << "actions_submenu";
+    if (!KStandardDirs::locate("services", "ServiceMenus/ark_addtoservicemenu.desktop").isEmpty())
+        expectedActions << "services_submenu";
     expectedActions << "separator";
     expectedActions << "copyTo_submenu" << "moveTo_submenu" << "separator";
     // (came from arkplugin) << "compress"
@@ -207,12 +209,15 @@ void KonqPopupMenuTest::testFileInReadOnlyDirectory()
                         0 /*parent*/, 0 /*bookmark manager*/, actionGroups);
 
     QStringList actions = extractActionNames(popup);
+    actions.removeAll("services_submenu");
     kDebug() << actions;
     QStringList expectedActions;
     expectedActions << "openInNewWindow" << "openInNewTab" << "separator"
                     << "copy" << "separator"
                     << "openwith"
                     << "preview1";
+    if (!KStandardDirs::locate("services", "ServiceMenus/konsolehere.desktop").isEmpty())
+        expectedActions << "actions_submenu";
     expectedActions << "separator";
     expectedActions << "copyTo_submenu" << "separator";
     expectedActions << "properties";
@@ -245,9 +250,10 @@ void KonqPopupMenuTest::testFilePreviewSubMenu()
                     << "cut" << "copy" << "rename" << "trash" << "separator"
                     << "openwith"
                     << "preview_submenu";
-             // (came from arkplugin) << "compress"
     if (!KStandardDirs::locate("services", "ServiceMenus/encryptfile.desktop").isEmpty())
         expectedActions << "actions_submenu";
+    if (!KStandardDirs::locate("services", "ServiceMenus/ark_addtoservicemenu.desktop").isEmpty())
+        expectedActions << "services_submenu";
     expectedActions << "separator";
     expectedActions << "copyTo_submenu" << "moveTo_submenu" << "separator";
     expectedActions << "properties";
@@ -271,6 +277,7 @@ void KonqPopupMenuTest::testSubDirectory()
     KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags, beflags,
                         0 /*parent*/, 0 /*bookmark manager*/, actionGroups);
     QStringList actions = extractActionNames(popup);
+    actions.removeAll("services_submenu");
     kDebug() << actions;
     QStringList expectedActions;
     expectedActions << "openInNewWindow" << "openInNewTab" << "separator"
@@ -279,7 +286,6 @@ void KonqPopupMenuTest::testSubDirectory()
                     << "preview_submenu";
     if (!KStandardDirs::locate("services", "ServiceMenus/konsolehere.desktop").isEmpty())
         expectedActions << "actions_submenu";
-    // (came from arkplugin) << "compress"
     expectedActions << "separator";
     expectedActions << "copyTo_submenu" << "moveTo_submenu" << "separator";
     expectedActions << "properties";
@@ -307,6 +313,7 @@ void KonqPopupMenuTest::testViewDirectory()
                         0 /*parent*/, 0 /*bookmark manager*/, actionGroups);
 
     QStringList actions = extractActionNames(popup);
+    actions.removeAll("services_submenu");
     qDebug() << actions;
     QStringList expectedActions;
     expectedActions << "newmenu" << "separator"
@@ -316,7 +323,6 @@ void KonqPopupMenuTest::testViewDirectory()
                     << "preview_submenu";
     if (!KStandardDirs::locate("services", "ServiceMenus/konsolehere.desktop").isEmpty())
         expectedActions << "actions_submenu";
-    // (came from arkplugin) << "compress"
     expectedActions << "separator";
     expectedActions << "copyTo_submenu" << "moveTo_submenu" << "separator";
     expectedActions << "properties";
@@ -346,6 +352,7 @@ void KonqPopupMenuTest::testViewReadOnlyDirectory()
 
     QStringList actions = extractActionNames(popup);
     qDebug() << actions;
+    actions.removeAll("services_submenu");
     QStringList expectedActions;
     expectedActions << "go_up" << "go_back" << "go_forward" << "separator"
                     // << "paste" // no paste since readonly
@@ -365,7 +372,8 @@ void KonqPopupMenuTest::testHtmlLink()
 {
     KFileItemList itemList;
     itemList << m_linkItem;
-    KUrl viewUrl = m_fileItem.url();
+    //KUrl viewUrl = m_fileItem.url();
+    KUrl viewUrl("http://www.kde.org");
     KonqPopupMenu::Flags flags = 0;
     KParts::BrowserExtension::PopupFlags beflags = KParts::BrowserExtension::ShowBookmark
                                                    | KParts::BrowserExtension::ShowReload
@@ -401,8 +409,8 @@ void KonqPopupMenuTest::testHtmlLink()
 void KonqPopupMenuTest::testHtmlPage()
 {
     KFileItemList itemList;
-    itemList << m_fileItem;
-    KUrl viewUrl = m_fileItem.url();
+    itemList << m_linkItem;
+    KUrl viewUrl = m_linkItem.url();
     KonqPopupMenu::Flags flags = 0;
     KParts::BrowserExtension::PopupFlags beflags = KParts::BrowserExtension::ShowBookmark
                                                    | KParts::BrowserExtension::ShowReload
