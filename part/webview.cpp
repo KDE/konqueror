@@ -88,24 +88,18 @@ QWebHitTestResult WebView::contextMenuResult() const
 
 void WebView::contextMenuEvent(QContextMenuEvent *e)
 {
-    KWebView::contextMenuEvent(e);
-    return; // FIXME: remove these two lines as soon as a stable and useful impl. has been done
-
     d->result = page()->mainFrame()->hitTestContent(e->pos());
     KParts::BrowserExtension::PopupFlags flags = KParts::BrowserExtension::DefaultPopupItems;
     flags |= KParts::BrowserExtension::ShowReload;
     flags |= KParts::BrowserExtension::ShowBookmark;
     flags |= KParts::BrowserExtension::ShowNavigationItems;
-    flags |= KParts::BrowserExtension::ShowUrlOperations;
 
     KParts::BrowserExtension::ActionGroupMap mapAction;
     if (!d->result.linkUrl().isEmpty()) {
         flags |= KParts::BrowserExtension::IsLink;
         linkActionPopupMenu(mapAction);
     }
-    if (!d->result.imageUrl().isEmpty()) {
-        partActionPopupMenu(mapAction);
-    }
+    partActionPopupMenu(mapAction);
     if (d->result.isContentEditable()) {
         KWebView::contextMenuEvent(e); // TODO: better KDE integration if possible
         return;
@@ -115,33 +109,35 @@ void WebView::contextMenuEvent(QContextMenuEvent *e)
         selectActionPopupMenu(mapAction);
     }
 
+    KParts::OpenUrlArguments args;
+    args.setMimeType("text/html");
     emit d->part->browserExtension()->popupMenu(/*guiclient */
-        e->globalPos(), d->part->url(), 0, KParts::OpenUrlArguments(), KParts::BrowserArguments(),
+        e->globalPos(), d->part->url(), 0, args, KParts::BrowserArguments(),
         flags, mapAction);
 }
 
 void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &partGroupMap)
 {
     QList<QAction *>partActions;
-    KAction *action = new KAction(i18n("Save Image As..."), this);
-    d->actionCollection->addAction("saveimageas", action);
-    connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotSaveImageAs()));
-    partActions.append(action);
+    if (!d->result.imageUrl().isEmpty()) {
+        KAction *action = new KAction(i18n("Save Image As..."), this);
+        d->actionCollection->addAction("saveimageas", action);
+        connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotSaveImageAs()));
+        partActions.append(action);
 
-    action = new KAction(i18n("Send Image..."), this);
-    d->actionCollection->addAction("sendimage", action);
-    connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotSendImage()));
-    partActions.append(action);
+        action = new KAction(i18n("Send Image..."), this);
+        d->actionCollection->addAction("sendimage", action);
+        connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotSendImage()));
+        partActions.append(action);
 
-    action = new KAction(i18n("Copy Image"), this);
-    d->actionCollection->addAction("copyimage", action);
-    action->setEnabled(!d->result.pixmap().isNull());
-    connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotCopyImage()));
-    partActions.append(action);
+        action = new KAction(i18n("Copy Image"), this);
+        d->actionCollection->addAction("copyimage", action);
+        action->setEnabled(!d->result.pixmap().isNull());
+        connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotCopyImage()));
+        partActions.append(action);
+    }
 
-    action = new KAction(i18n("View Frame Source"), this);
-    d->actionCollection->addAction("viewFrameSource", action);
-    connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotViewDocumentSource()));
+    QAction* action = d->part->actionCollection()->action("viewDocumentSource");
     partActions.append(action);
 
     partGroupMap.insert("partactions", partActions);
