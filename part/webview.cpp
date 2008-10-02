@@ -89,34 +89,35 @@ QWebHitTestResult WebView::contextMenuResult() const
 void WebView::contextMenuEvent(QContextMenuEvent *e)
 {
     d->result = page()->mainFrame()->hitTestContent(e->pos());
-    KParts::BrowserExtension::PopupFlags flags = KParts::BrowserExtension::DefaultPopupItems;
-    flags |= KParts::BrowserExtension::ShowReload;
-    flags |= KParts::BrowserExtension::ShowBookmark;
-    flags |= KParts::BrowserExtension::ShowNavigationItems;
-
-    KParts::BrowserExtension::ActionGroupMap mapAction;
-    partActionPopupMenu(mapAction);
     if (d->result.isContentEditable()) {
         KWebView::contextMenuEvent(e); // TODO: better KDE integration if possible
         return;
     }
-    if (d->result.isContentSelected()) {
-        flags |= KParts::BrowserExtension::ShowTextSelectionItems;
-        selectActionPopupMenu(mapAction);
+
+    KParts::BrowserExtension::PopupFlags flags = KParts::BrowserExtension::DefaultPopupItems;
+    flags |= KParts::BrowserExtension::ShowBookmark;
+    flags |= KParts::BrowserExtension::ShowReload;
+    KParts::BrowserExtension::ActionGroupMap mapAction;
+
+    KUrl emitUrl;
+    if (!d->result.linkUrl().isEmpty()) {
+        flags |= KParts::BrowserExtension::IsLink;
+        emitUrl = d->result.linkUrl();
+    } else {
+        flags |= KParts::BrowserExtension::ShowNavigationItems;
+        emitUrl = d->part->url();
+        if (d->result.isContentSelected()) {
+            flags |= KParts::BrowserExtension::ShowTextSelectionItems;
+            selectActionPopupMenu(mapAction);
+        }
     }
 
+    partActionPopupMenu(mapAction);
     KParts::OpenUrlArguments args;
     args.setMimeType("text/html");
-    if (d->result.linkUrl().isEmpty()) {
-        emit d->part->browserExtension()->popupMenu(/*guiclient */
-            e->globalPos(), d->part->url(), 0, args, KParts::BrowserArguments(),
-            flags, mapAction);
-    } else {
-        flags |= KParts::BrowserExtension::IsLink;
-        emit d->part->browserExtension()->popupMenu(/*guiclient */
-            e->globalPos(), d->result.linkUrl(), 0, args, KParts::BrowserArguments(),
-            flags, mapAction);
-    }
+    emit d->part->browserExtension()->popupMenu(/*guiclient */
+        e->globalPos(), emitUrl, 0, args, KParts::BrowserArguments(),
+        flags, mapAction);
 }
 
 void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &partGroupMap)
@@ -140,8 +141,10 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &part
         partActions.append(action);
     }
 
-    QAction* action = d->part->actionCollection()->action("viewDocumentSource");
-    partActions.append(action);
+    if (d->result.linkUrl().isEmpty()) {
+        QAction* action = d->part->actionCollection()->action("viewDocumentSource");
+        partActions.append(action);
+    }
 
     partGroupMap.insert("partactions", partActions);
 }
