@@ -1188,6 +1188,7 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
     }
 
     // Pass the URL to createNewWindow so that it can select the right profile for it
+    // Note that it's always empty in case of window.open, though.
     mainWindow = KonqMisc::createNewWindow(url, args, browserArgs, false, QStringList(), false, false /*do not open URL*/);
     mainWindow->resetAutoSaveSettings(); // Don't autosave
 

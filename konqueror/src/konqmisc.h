@@ -31,7 +31,7 @@ class KSharedConfig;
 template <typename T> class KSharedPtr;
 typedef KSharedPtr<KSharedConfig> KSharedConfigPtr;
 
-namespace KonqMisc // TODO rename to KonqGlobal?
+namespace KonqMisc // TODO split into something like KonqWindowFactory or KonqWindowCreator, and KonqGlobal?
 {
     /**
      * Stop full-screen mode in all windows.
@@ -48,7 +48,8 @@ namespace KonqMisc // TODO rename to KonqGlobal?
     /**
      * Create a new window for @p url using @p args and the appropriate profile for this URL.
      * @param forbidUseHTML internal. True when called by "Find Files"
-     * @param openUrl If it is false, no url is openend in the new window. The url is used to guess the profile
+     * @param openUrl If it is false, no url is opened in the new window (and the aboutpage is not shown).
+     * The url is used to guess the profile.
      */
     KonqMainWindow * createNewWindow( const KUrl &url,
                                       const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
@@ -99,7 +100,7 @@ namespace KonqMisc // TODO rename to KonqGlobal?
      * Path to the default profile
      */
     QString defaultProfilePath();
-    
+
     /**
     * These are some helper functions to encode/decode session filenames. The
     * problem here is that windows doesn't like files with ':' inside.
