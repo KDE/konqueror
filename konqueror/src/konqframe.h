@@ -107,7 +107,7 @@ protected:
  * We create a vertical layout in the frame, with the view and the KonqFrameStatusBar.
  */
 
-class KonqFrame : public QWidget, public KonqFrameBase
+class KONQ_TESTS_EXPORT KonqFrame : public QWidget, public KonqFrameBase
 {
   Q_OBJECT
 
