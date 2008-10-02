@@ -83,12 +83,12 @@ KonqMainWindow * KonqMisc::createNewWindow( const KUrl &url, const KParts::OpenU
                                             const KParts::BrowserArguments& browserArgs,
                                             bool forbidUseHTML, const QStringList &filesToSelect, bool tempFile, bool openUrl )
 {
-  kDebug() << "KonqMisc::createNewWindow url=" << url;
-
-  // For HTTP or html files, use the web browsing profile, otherwise use filemanager profile
-  QString profileName = (!(KProtocolManager::supportsListing(url)) ||
-                        KMimeType::findByUrl(url)->name() == "text/html")
-          ? "webbrowsing" : "filemanagement";
+    //kDebug() << "url=" << url;
+    // For HTTP or html files, use the web browsing profile, otherwise use filemanager profile
+    const QString profileName = url.isEmpty() || // e.g. in window.open
+                                (!(KProtocolManager::supportsListing(url)) || // e.g. any HTTP url
+                                 KMimeType::findByUrl(url)->name() == "text/html")
+                                ? "webbrowsing" : "filemanagement";
 
   QString profile = KStandardDirs::locate( "data", QLatin1String("konqueror/profiles/") + profileName );
   return createBrowserWindowFromProfile(profile, profileName,

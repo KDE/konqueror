@@ -28,7 +28,7 @@ target_link_libraries(undomanagertest kdeinit_konqueror ${QT_QTCORE_LIBRARY} ${Q
 ########### konqhtmltest ###############
 
 kde4_add_unit_test(konqhtmltest konqhtmltest.cpp)
-target_link_libraries(konqhtmltest kdeinit_konqueror ${QT_QTCORE_LIBRARY} ${QT_QTTEST_LIBRARY})
+target_link_libraries(konqhtmltest kdeinit_konqueror ${KDE4_KHTML_LIBS} ${QT_QTCORE_LIBRARY} ${QT_QTTEST_LIBRARY})
 
 ########### konqviewtest ###############
 
