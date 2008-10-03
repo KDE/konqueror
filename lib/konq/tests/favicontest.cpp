@@ -29,8 +29,8 @@
 
 QTEST_KDEMAIN( FavIconTest, NoGUI )
 
-static const char* s_hostUrl = "http://www.kde.org";
-static const char* s_iconUrl = "http://www.kde.org/favicon.ico";
+static const char* s_hostUrl = "http://wiki.kde.org";
+static const char* s_iconUrl = "http://wiki.kde.org/favicon.ico";
 static const char* s_altIconUrl = "http://www.ibm.com/favicon.ico";
 
 static int s_downloadTime; // in ms
@@ -116,7 +116,7 @@ void FavIconTest::testSetIconForURL()
     QCOMPARE( spy.count(), 2 );
     QCOMPARE( spy[1][0].toBool(), false );
     QCOMPARE( spy[1][1].toString(), QString( s_hostUrl ) );
-    QCOMPARE( spy[1][2].toString(), QString( "favicons/www.kde.org" ) );
+    QCOMPARE( spy[1][2].toString(), QString( "favicons/wiki.kde.org" ) );
 
     disconnect(&m_favIconModule, SIGNAL( iconChanged(bool,QString,QString) ), &m_eventLoop, SLOT(quit()));
 }
@@ -127,7 +127,7 @@ void FavIconTest::testIconForURL()
     if ( icon.isEmpty() && !checkNetworkAccess() )
         QSKIP( "no network access", SkipAll );
 
-    QCOMPARE( icon, QString( "favicons/www.kde.org" ) );
+    QCOMPARE( icon, QString( "favicons/wiki.kde.org" ) );
 }
 
 #if 0
