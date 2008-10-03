@@ -125,8 +125,9 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &part
 {
     QList<QAction *>partActions;
     if (!d->result.imageUrl().isEmpty()) {
+        KAction *action;
         if (!d->actionCollection->action("saveimageas")) {
-            KAction *action = new KAction(i18n("Save Image As..."), this);
+            action = new KAction(i18n("Save Image As..."), this);
             d->actionCollection->addAction("saveimageas", action);
             connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotSaveImageAs()));
         }
