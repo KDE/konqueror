@@ -1110,7 +1110,7 @@ to get a list ofcommands.</para>
 <anchor id="view-schema"/>
 <menuchoice>
 <guimenu>View</guimenu>
-<guimenuitem>Schema</guimenuitem>
+<guisubmenu>Schema</guisubmenu>
 </menuchoice>
 </term>
 <listitem>
@@ -1139,7 +1139,7 @@ border on the screen.</para>
 <menuchoice>
 <shortcut><keycombo action="simul"><keycap>F10</keycap></keycombo></shortcut>
 <guimenu>View</guimenu>
-<guimenuitem>Dynamic Word Wrap Indicators</guimenuitem>
+<guisubmenu>Dynamic Word Wrap Indicators</guisubmenu>
 </menuchoice>
 </term>
 <listitem>
@@ -1230,7 +1230,7 @@ hidden.</para>
 <term>
 <anchor id="view-code-folding"/>
 <menuchoice>
-<guimenuitem>Code Folding</guimenuitem>
+<guisubmenu>Code Folding</guisubmenu>
 </menuchoice>
 </term>
 <listitem>
@@ -1372,7 +1372,7 @@ addition and any changes in the document formatting.</para>
 <varlistentry><!-- only in power mode-->
 <term><anchor id="tools-filetype"/><menuchoice>
 <guimenu>Tools</guimenu>
-<guimenuitem>Mode</guimenuitem></menuchoice></term>
+<guisubmenu>Mode</guisubmenu></menuchoice></term>
  <listitem>
 <para>Choose the filetype scheme you prefer for the active document. This
 overwrites the global filetype mode set in <menuchoice>
@@ -1386,7 +1386,7 @@ document only.</para>
 <varlistentry><!-- only in power mode-->
 <term><anchor id="tools-highlighting"/><menuchoice>
 <guimenu>Tools</guimenu>
-<guimenuitem>Highlighting</guimenuitem></menuchoice></term>
+<guisubmenu>Highlighting</guisubmenu></menuchoice></term>
  <listitem>
 <para>Choose the Highlighting scheme you prefer for the active document. This
 overwrites the global highlighting mode set in <menuchoice>
@@ -1399,7 +1399,7 @@ Editor...</guimenuitem></menuchoice> for your current document only.</para>
 <varlistentry><!-- only in power mode-->
 <term><anchor id="tools-indentation"/><menuchoice>
 <guimenu>Tools</guimenu>
-<guimenuitem>Indentation</guimenuitem></menuchoice></term>
+<guisubmenu>Indentation</guisubmenu></menuchoice></term>
  <listitem>
 <para>Choose the style of indentation you want for your active document.
 This overwrites the global indentation mode set in <menuchoice>
@@ -1412,7 +1412,7 @@ Editor...</guimenuitem></menuchoice> for your current document only.</para>
 <varlistentry><!-- only in power mode-->
 <term><anchor id="tools-encoding"/><menuchoice>
 <guimenu>Tools</guimenu>
-<guimenuitem>Encoding</guimenuitem></menuchoice></term>
+<guisubmenu>Encoding</guisubmenu></menuchoice></term>
  <listitem>
 <para>You can overwrite the default encoding set in <menuchoice>
 <guimenu>Settings</guimenu>
@@ -1426,7 +1426,7 @@ set here will be only valid for your current document.</para>
 <varlistentry><!-- only in power mode-->
 <term><anchor id="tools-end-of-line"/><menuchoice>
 <guimenu>Tools</guimenu>
-<guimenuitem>End of Line</guimenuitem></menuchoice></term>
+<guisubmenu>End of Line</guisubmenu></menuchoice></term>
  <listitem>
 <para>Choose your prefered end of line mode for your active
 document. This overwrites the global end of line mode set in <menuchoice>
