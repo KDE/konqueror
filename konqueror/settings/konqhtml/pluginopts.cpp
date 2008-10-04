@@ -183,8 +183,6 @@ KPluginOptions::KPluginOptions( QWidget *parent, const QVariantList& )
     dirInit();
     pluginInit();
 
-    // Finally do the loading
-    load();
 }
 
 void KPluginOptions::updatePLabel(int p) {

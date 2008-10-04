@@ -232,7 +232,6 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
 
     lay->setRowStretch(row, 1);
 
-    load();
     emit changed(false);
 }
 
