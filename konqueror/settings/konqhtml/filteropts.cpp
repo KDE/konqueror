@@ -108,7 +108,6 @@ KCMFilter::KCMFilter( QWidget *parent, const QVariantList& )
                                    "a filename style wildcard e.g. http://www.site.com/ads* or as a full "
                                    "regular expression by surrounding the string with '/' e.g. "
                                    " //(ad|banner)\\./"));
-    load();
     updateButton();
 }
 
