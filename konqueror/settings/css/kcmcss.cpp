@@ -102,8 +102,6 @@ CSSConfig::CSSConfig(QWidget *parent, const QVariantList &)
   vbox->setSpacing(0);
   vbox->addWidget(configDialog);
   configDialog->layout()->setMargin(0);
-
-  load();
 }
 
 
