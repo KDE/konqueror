@@ -84,7 +84,7 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
 
   KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
-  if ( args->isSet("commands") )
+  if (argc == 1 || args->isSet("commands") )
   {
     KCmdLineArgs::enable_i18n();
     puts(i18n("\nSyntax:\n").toLocal8Bit());
