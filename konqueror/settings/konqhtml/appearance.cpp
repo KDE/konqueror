@@ -208,8 +208,6 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList&)
 	   SLOT( changed() ) );
 
   ++r; lay->setRowStretch(r, 8);
-
-  load();
 }
 
 KAppearanceOptions::~KAppearanceOptions()
