@@ -29,7 +29,6 @@
 #include <kservicetypetrader.h>
 #include <kparts/componentfactory.h>
 #include <kstandarddirs.h>
-#include <kiconloader.h>
 #include "kquery.h"
 // Static utility functions
 static void save_pattern(QComboBox *, const QString &, const QString &);
@@ -334,7 +333,10 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
           it != m_types.end(); ++it )
     {
       KMimeType::Ptr typ = *it;
-      typeBox->addItem(KIconLoader::global()->loadMimeTypeIcon( typ->iconName(), KIconLoader::Small ), typ->comment());
+// TODO: needs to move to thread (increases startup time to bizzare amount)
+//       and replaced with a better concept 16x16 icons don't cut the cheese
+//       typeBox->addItem(KIconLoader::global()->loadMimeTypeIcon( typ->iconName(), KIconLoader::Small ), typ->comment());
+      typeBox->addItem(typ->comment());
     }
 
     if ( editRegExp ) {
