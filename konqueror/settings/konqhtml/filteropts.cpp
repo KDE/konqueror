@@ -68,7 +68,7 @@ KCMFilter::KCMFilter( QWidget *parent, const QVariantList& )
     mListBox = new QListWidget;
     mListBox->setSelectionMode(QListWidget::ExtendedSelection);
     vbox->addWidget(mListBox);
-    vbox->addWidget(new QLabel( i18n("Expression (e.g. http://www.site.com/ad/*):")));
+    vbox->addWidget(new QLabel( i18n("Expression (e.g. http://www.example.com/ad/*):")));
     mString = new QLineEdit;
     vbox->addWidget(mString);
 
@@ -105,7 +105,7 @@ KCMFilter::KCMFilter( QWidget *parent, const QVariantList& )
                                     "images and frames. The filters are processed in order so place "
                                     "more generic filters towards the top of the list."));
     mString->setWhatsThis( i18n("Enter an expression to filter. Expressions can be defined as either "
-                                   "a filename style wildcard e.g. http://www.site.com/ads* or as a full "
+                                   "a filename style wildcard e.g. http://www.example.com/ads* or as a full "
                                    "regular expression by surrounding the string with '/' e.g. "
                                    " //(ad|banner)\\./"));
     updateButton();
