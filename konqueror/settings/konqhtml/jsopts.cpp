@@ -42,7 +42,7 @@
 #endif
 
 // == class KJavaScriptOptions =====
-
+#include <KDebug>
 KJavaScriptOptions::KJavaScriptOptions( KSharedConfig::Ptr config, const QString &group, const KComponentData &componentData, QWidget *parent) :
   KCModule(componentData, parent),
   _removeJavaScriptDomainAdvice(false),
@@ -113,8 +113,6 @@ KJavaScriptOptions::KJavaScriptOptions( KSharedConfig::Ptr config, const QString
   toplevel->addWidget(js_policies_frame);
   connect(js_policies_frame, SIGNAL(changed()), SLOT(changed()));
 
-  // Finally do the loading
-  load();
 }
 
 
@@ -122,7 +120,6 @@ void KJavaScriptOptions::load()
 {
     // *** load ***
     KConfigGroup cg(m_pConfig, m_groupname);
-
     if( cg.hasKey( "ECMADomains" ) )
 	domainSpecific->initialize(cg.readEntry("ECMADomains", QStringList() ));
     else if( cg.hasKey( "ECMADomainSettings" ) ) {
