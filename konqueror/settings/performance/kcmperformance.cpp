@@ -33,7 +33,6 @@
 #include "system.h"
 #include <KPluginFactory>
 #include <KPluginLoader>
-
 K_PLUGIN_FACTORY(KCMPerformanceConfigFactory,
         registerPlugin<KCMPerformance::Config>("performance");
         registerPlugin<KCMPerformance::KonquerorConfig>("konqueror");
@@ -60,7 +59,6 @@ Config::Config( QWidget* parent_P, const QVariantList & )
     connect( system_widget, SIGNAL( changed()), SLOT( changed()));
     tabs->addTab( system_widget, i18n( "System" ));
     topLayout->addWidget( tabs );
-    load();
     }
 
 void Config::load()
