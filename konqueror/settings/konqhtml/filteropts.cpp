@@ -67,6 +67,7 @@ KCMFilter::KCMFilter( QWidget *parent, const QVariantList& )
 
     mListBox = new QListWidget;
     mListBox->setSelectionMode(QListWidget::ExtendedSelection);
+    mListBox->setSortingEnabled( true );
     vbox->addWidget(mListBox);
     vbox->addWidget(new QLabel( i18n("Expression (e.g. http://www.example.com/ad/*):")));
     mString = new QLineEdit;
