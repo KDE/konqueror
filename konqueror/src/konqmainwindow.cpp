@@ -2985,7 +2985,7 @@ void KonqMainWindow::initCombo()
   connect( m_pURLCompletion, SIGNAL( match(const QString&) ),
            SLOT( slotMatch(const QString&) ));
 
-  m_combo->lineEdit()->installEventFilter(this);
+  m_combo->installEventFilter(this);
 
   static bool bookmarkCompletionInitialized = false;
   if ( !bookmarkCompletionInitialized )
@@ -3137,7 +3137,7 @@ void KonqMainWindow::slotClearComboHistory()
 bool KonqMainWindow::eventFilter(QObject*obj,QEvent *ev)
 {
   if ( ( ev->type()==QEvent::FocusIn || ev->type()==QEvent::FocusOut ) &&
-       m_combo && m_combo->lineEdit() == obj )
+       m_combo && m_combo->lineEdit() && m_combo == obj )
   {
     //kDebug(1202) << obj << obj->metaObject()->className() << obj->name();
 
