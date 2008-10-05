@@ -2990,7 +2990,7 @@ void KonqMainWindow::initCombo()
   connect( m_pURLCompletion, SIGNAL( match(const QString&) ),
            SLOT( slotMatch(const QString&) ));
 
-  m_combo->lineEdit()->installEventFilter(this);
+  m_combo->installEventFilter(this);
 
   static bool bookmarkCompletionInitialized = false;
   if ( !bookmarkCompletionInitialized )
