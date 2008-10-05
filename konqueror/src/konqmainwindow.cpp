@@ -3142,7 +3142,7 @@ void KonqMainWindow::slotClearComboHistory()
 bool KonqMainWindow::eventFilter(QObject*obj,QEvent *ev)
 {
   if ( ( ev->type()==QEvent::FocusIn || ev->type()==QEvent::FocusOut ) &&
-       m_combo && m_combo->lineEdit() == obj )
+       m_combo && m_combo->lineEdit() && m_combo == obj )
   {
     //kDebug(1202) << obj << obj->metaObject()->className() << obj->name();
 
