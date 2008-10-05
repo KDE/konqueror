@@ -69,7 +69,6 @@ KKonqGeneralOptions::KKonqGeneralOptions(QWidget *parent, const QVariantList&)
 
     lay->addWidget(tabsGroup);
 
-    load();
     emit changed(false);
 }
 
