@@ -370,7 +370,8 @@ public Q_SLOTS:
   void slotShowHTML();
   void slotLockView();
   void slotLinkView();
-  void slotReload( KonqView* view = 0L );
+  void slotReload( KonqView* view = 0L, bool softReload = true );
+  void slotForceReload();
   void slotStop();
 
   // Go menu
@@ -656,6 +657,7 @@ private: // members
   KToggleAction *m_paLockView;
   KToggleAction *m_paLinkView;
   KAction *m_paReload;
+  KAction *m_paForceReload;
   KAction *m_paReloadAllTabs;
   KAction *m_paUndo;
   KAction *m_paCut;
