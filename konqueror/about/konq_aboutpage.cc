@@ -66,7 +66,7 @@ QString KonqAboutPageSingleton::launch()
   QString home_icon_path = iconloader->iconPath("go-home", KIconLoader::Desktop );
   QString remote_icon_path = iconloader->iconPath("folder-remote", KIconLoader::Desktop );
   QString wastebin_icon_path = iconloader->iconPath("user-trash-full", KIconLoader::Desktop );
-  QString applications_icon_path = iconloader->iconPath("start-here-kde", KIconLoader::Desktop );
+  QString bookmarks_icon_path = iconloader->iconPath("bookmarks", KIconLoader::Desktop );
   QString home_folder = QDir::homePath();
   QString continue_icon_path = iconloader->iconPath(QApplication::isRightToLeft() ? "go-previous" : "go-next", KIconLoader::Small );
 
@@ -98,10 +98,10 @@ QString KonqAboutPageSingleton::launch()
       .arg(iconSize).arg(iconSize)
       .arg( i18n( "Network Folders" ) )
       .arg( i18n( "Shared files and folders" ) )
-      .arg( applications_icon_path )
+      .arg( bookmarks_icon_path )
       .arg(iconSize).arg(iconSize)
-      .arg( i18n( "Applications" ) )
-      .arg( i18n( "Installed programs" ) )
+      .arg( i18n( "My Bookmarks" ) )
+      .arg( i18n( "Quick access to your bookmarks" ) )
       .arg( continue_icon_path )
       .arg( KIconLoader::SizeSmall ).arg( KIconLoader::SizeSmall )
       .arg( i18n( "Next: An Introduction to Konqueror" ) )
