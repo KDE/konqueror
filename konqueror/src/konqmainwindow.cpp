@@ -1642,7 +1642,7 @@ void KonqMainWindow::slotLinkView()
     m_currentView->setLinkedView( mode );
 }
 
-void KonqMainWindow::slotReload( KonqView* reloadView )
+void KonqMainWindow::slotReload( KonqView* reloadView, bool softReload )
 {
   if ( !reloadView )
     reloadView = m_currentView;
@@ -1661,7 +1661,7 @@ void KonqMainWindow::slotReload( KonqView* reloadView )
 
   KonqOpenURLRequest req( reloadView->typedUrl() );
   req.userRequestedReload = true;
-  if ( reloadView->prepareReload( req.args, req.browserArgs, true /* softReload */ ) )
+  if ( reloadView->prepareReload( req.args, req.browserArgs, softReload ) )
   {
       reloadView->lockHistory();
       // Reuse current servicetype for local files, but not for remote files (it could have changed, e.g. over HTTP)
@@ -1669,6 +1669,12 @@ void KonqMainWindow::slotReload( KonqView* reloadView )
       // By using locationBarURL instead of url, we preserve name filters (#54687)
       openUrl( reloadView, reloadView->locationBarURL(), serviceType, req );
   }
+}
+
+void KonqMainWindow::slotForceReload()
+{
+    // A forced reload is simply a "hard" (i.e. - not soft!) reload.
+    slotReload(0L /* Current view */, false /* Not softReload*/); 
 }
 
 void KonqMainWindow::slotReloadPopup()
@@ -3742,6 +3748,14 @@ void KonqMainWindow::initActions()
   m_paReloadAllTabs->setText( i18n( "&Reload All Tabs" ) );
   connect(m_paReloadAllTabs, SIGNAL(triggered()), SLOT( slotReloadAllTabs() ));
   m_paReloadAllTabs->setShortcut(Qt::SHIFT+Qt::Key_F5);
+  // "Forced"/ "Hard" reload action - re-downloads all e.g. images even if a cached 
+  // version already exists.
+  m_paForceReload = actionCollection()->addAction("hard_reload");
+  // TODO - request new icon? (view-refresh will do for the time being)
+  m_paForceReload->setIcon( KIcon("view-refresh") ); 
+  m_paForceReload->setText( i18n( "&Force Reload" ) );
+  connect(m_paForceReload, SIGNAL(triggered()), SLOT( slotForceReload()));
+  m_paForceReload->setShortcuts(KShortcut(Qt::CTRL+Qt::Key_F5, Qt::CTRL+Qt::SHIFT+Qt::Key_R));
 
   m_paUndo = KStandardAction::undo( m_pUndoManager, SLOT( undo() ), this );
   actionCollection()->addAction( "undo", m_paUndo );
@@ -3867,6 +3881,14 @@ void KonqMainWindow::initActions()
   m_paStop->setWhatsThis( i18n( "<html>Stop loading the document<br /><br />"
                                 "All network transfers will be stopped and Konqueror will display the content "
                                 "that has been received so far.</html>" ) );
+  
+  m_paForceReload->setWhatsThis( i18n( "<html>Reload the currently displayed document<br /><br />"
+          "This may, for example, be needed to refresh web pages that have been "
+          "modified since they were loaded, in order to make the changes visible.  Any images on the page are downloaded again, even if cached copies exist.</html>" ) );
+    
+  m_paForceReload->setToolTip( i18n( "Force a reload of the currently displayed document and any contained images" ) );
+  
+  
   m_paStop->setToolTip( i18n( "Stop loading the document" ) );
 
   m_paCut->setWhatsThis( i18n( "<html>Cut the currently selected text or item(s) and move it "
