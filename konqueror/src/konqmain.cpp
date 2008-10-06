@@ -55,6 +55,10 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
   options.add("profile <profile>", ki18n("Profile to open"));
 
   options.add("profiles", ki18n("List available profiles"));
+  
+  options.add("sessions", ki18n("List available sessions"));
+  
+  options.add("open-session <session>", ki18n("Session to open"));
 
   options.add("mimetype <mimetype>", ki18n("Mimetype to use for this URL (e.g. text/html or inode/directory)"));
 
@@ -109,7 +113,7 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
 
        return 0;
      }
-     if (args->isSet("profile"))
+     else if (args->isSet("profile"))
      {
        QString profile = args->getOption("profile");
        QString profilePath = profile;
@@ -138,6 +142,35 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
        }
        kDebug(1202) << "main() -> createBrowserWindowFromProfile mimeType=" << urlargs.mimeType();
        KonqMisc::createBrowserWindowFromProfile( profilePath, profile, kurl, urlargs, KParts::BrowserArguments(), false, filesToSelect );
+     }
+     else if (args->isSet("sessions"))
+     {
+       QString dir = KStandardDirs::locateLocal("appdata", "sessions/");
+       QDirIterator it(dir, QDir::Readable|QDir::NoDotAndDotDot|QDir::Dirs);
+
+       while (it.hasNext())
+       {
+           QFileInfo fileInfo(it.next());
+           printf("%s\n", QFile::encodeName(fileInfo.baseName()).data());
+       }
+
+       return 0;
+     }
+     else if (args->isSet("open-session"))
+     {
+       QString session = args->getOption("open-session");
+       QString sessionPath = session;
+       if (session[0] != '/') {
+           sessionPath = KStandardDirs::locateLocal("appdata", "sessions/" + session);
+       }
+       
+       QDirIterator it(sessionPath, QDir::Readable|QDir::Files);
+       if (!it.hasNext()) {
+           kError() << "session " << session << " not found or empty";
+           return -1;
+       }
+       
+       KonqSessionManager::self()->restoreSessions(sessionPath);
      }
      else
      {
