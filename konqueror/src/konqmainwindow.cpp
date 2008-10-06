@@ -1786,6 +1786,7 @@ void KonqMainWindow::slotConfigure()
                                 m_configureDialog->addModule(KCModuleInfo(name),webGroup);
             ADD_MODULE("khtml_filter")
             ADD_MODULE("ebrowsing")
+            ADD_MODULE("bookmarks")
             ADD_MODULE("cache")
             ADD_MODULE("proxy")
             ADD_MODULE("khtml_fonts")
