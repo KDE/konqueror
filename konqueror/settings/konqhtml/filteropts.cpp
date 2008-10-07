@@ -222,9 +222,10 @@ void KCMFilter::importFilters()
 void KCMFilter::exportFilters()
 {
   QString outFile = KFileDialog::getSaveFileName(KUrl(), QString(), this);
-  if (outFile.length() > 0)
+  if (!outFile.isEmpty())
   {
-    QFile f(outFile);
+
+      QFile f(outFile);
     if ( f.open( QIODevice::WriteOnly ) )
     {
       QTextStream ts( &f );
