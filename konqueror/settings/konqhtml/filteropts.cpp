@@ -27,7 +27,6 @@
 #include <QtGui/QLabel>
 #include <QtGui/QLayout>
 #include <QtGui/QLineEdit>
-#include <QtGui/QListWidget>
 #include <QtGui/QPushButton>
 #include <QtGui/QGroupBox>
 
@@ -40,6 +39,8 @@
 #include <klocale.h>
 #include <KPluginFactory>
 #include <KPluginLoader>
+#include <KListWidget>
+#include <klistwidgetsearchline.h>
 
 K_PLUGIN_FACTORY_DECLARATION(KcmKonqHtmlFactory)
 
@@ -65,9 +66,14 @@ KCMFilter::KCMFilter( QWidget *parent, const QVariantList& )
 
     QVBoxLayout *vbox = new QVBoxLayout;
 
-    mListBox = new QListWidget;
+
+    mListBox = new KListWidget;
     mListBox->setSelectionMode(QListWidget::ExtendedSelection);
     mListBox->setSortingEnabled( true );
+
+    mSearchLine = new KListWidgetSearchLine( this, mListBox );
+    vbox->addWidget( mSearchLine );
+
     vbox->addWidget(mListBox);
     vbox->addWidget(new QLabel( i18n("Expression (e.g. http://www.example.com/ad/*):")));
     mString = new QLineEdit;

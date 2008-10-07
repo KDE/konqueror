@@ -21,10 +21,11 @@
 #include <kcmodule.h>
 #include <ksharedconfig.h>
 
-class QListWidget;
+class KListWidget;
 class QPushButton;
 class QLineEdit;
 class QCheckBox;
+class KListWidgetSearchLine;
 
 class KCMFilter : public KCModule
 {
@@ -53,7 +54,8 @@ protected Q_SLOTS:
     void updateButton();
 
 private:
-    QListWidget *mListBox;
+    KListWidget *mListBox;
+    KListWidgetSearchLine *mSearchLine;
     QLineEdit *mString;
     QCheckBox *mEnableCheck;
     QCheckBox *mKillCheck;
