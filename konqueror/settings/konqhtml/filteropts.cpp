@@ -170,7 +170,7 @@ void KCMFilter::updateButton()
 void KCMFilter::importFilters()
 {
     QString inFile = KFileDialog::getOpenFileName(KUrl(), QString(), this);
-    if (inFile.length() > 0)
+    if (!inFile.isEmpty())
     {
         QFile f(inFile);
         if ( f.open( QIODevice::ReadOnly ) )
@@ -297,7 +297,7 @@ void KCMFilter::load()
 
 void KCMFilter::insertFilter()
 {
-    if ( !mString->text().isEmpty() )
+    if ( !mString->text().isEmpty() && mListBox->findItems (mString->text(),Qt::MatchCaseSensitive|Qt::MatchExactly).isEmpty() )
     {
         mListBox->addItem( mString->text() );
         int id=mListBox->count()-1;
