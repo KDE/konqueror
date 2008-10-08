@@ -202,12 +202,12 @@ void KCMFilter::importFilters()
                         if (!rx.isValid())
                             continue;
                     }
-                }
 
-                if (!line.isEmpty() &&
-                     mListBox->findItems(line,
-                                        Qt::MatchCaseSensitive|Qt::MatchExactly).isEmpty()) {
-                    paths.append(line);
+                    if (!line.isEmpty() &&
+                        mListBox->findItems(line, Qt::MatchCaseSensitive|Qt::MatchExactly).isEmpty())
+                    {
+                        paths.append(line);
+                    }
                 }
             }
             f.close();
