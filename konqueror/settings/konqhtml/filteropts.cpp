@@ -317,6 +317,7 @@ void KCMFilter::removeFilter()
         if (mListBox->item(i) && mListBox->item(i)->isSelected())
             delete mListBox->takeItem(i);
     }
+    mString->clear();
     emit changed( true );
     updateButton();
 }
