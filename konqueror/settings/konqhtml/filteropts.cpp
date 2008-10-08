@@ -181,7 +181,7 @@ void KCMFilter::importFilters()
             while (!ts.atEnd())
             {
                 line = ts.readLine();
-                if (line.toLower().compare("[adblock]") == 0)
+                if (line.toLower().compare("[adblock]") == 0 || line.isEmpty())
                     continue;
 
                 // Treat leading ! as filter comment, otherwise check expressions
@@ -203,8 +203,7 @@ void KCMFilter::importFilters()
                             continue;
                     }
 
-                    if (!line.isEmpty() &&
-                        mListBox->findItems(line, Qt::MatchCaseSensitive|Qt::MatchExactly).isEmpty())
+                    if (mListBox->findItems(line, Qt::MatchCaseSensitive|Qt::MatchExactly).isEmpty())
                     {
                         paths.append(line);
                     }
