@@ -230,8 +230,8 @@ void KCMFilter::exportFilters()
       ts.setCodec( "UTF-8" );
       ts << "[AdBlock]" << endl;
 
-      int i;
-      for( i = 0; i < mListBox->count(); ++i )
+      int nbLine =  mListBox->count();
+      for( int i = 0; i < nbLine; ++i )
         ts << mListBox->item(i)->text() << endl;
 
       f.close();
