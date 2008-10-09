@@ -244,6 +244,7 @@ void KCMFilter::defaults()
     mListBox->clear();
     mEnableCheck->setChecked(false);
     mKillCheck->setChecked(false);
+    mString->clear();
     updateButton();
 }
 
@@ -303,10 +304,9 @@ void KCMFilter::insertFilter()
         mListBox->clearSelection();
         mListBox->item(id)->setSelected(true);
         mListBox->setCurrentRow(id);
-
+        updateButton();
         emit changed( true );
     }
-    updateButton();
 }
 
 void KCMFilter::removeFilter()
