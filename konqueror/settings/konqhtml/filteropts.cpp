@@ -304,7 +304,6 @@ void KCMFilter::insertFilter()
         mListBox->item(id)->setSelected(true);
         mListBox->setCurrentRow(id);
 
-        mListBox->scrollToItem ( mListBox->item( id ) );
         emit changed( true );
     }
     updateButton();
