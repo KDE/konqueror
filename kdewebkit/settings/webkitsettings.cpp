@@ -781,7 +781,10 @@ void WebKitSettings::addAdFilter( const QString &url )
         config.writeEntry("Count",last+1);
         config.sync();
 
-        d->adBlackList.addFilter(url);
+        if (url.startsWith(QLatin1String("@@")))
+            d->adWhiteList.addFilter(url);
+        else
+            d->adBlackList.addFilter(url);
     }
     else
     {
