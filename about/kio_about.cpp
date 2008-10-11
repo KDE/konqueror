@@ -20,12 +20,7 @@
 
 #include "kio_about.h"
 
-#include <stdlib.h>
-#include <QByteArray>
-//Added by qt3to4:
-#include <QTextStream>
 #include <kcomponentdata.h>
-#include <kurl.h>
 
 using namespace KIO;
 
