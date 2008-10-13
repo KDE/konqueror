@@ -46,6 +46,8 @@ namespace KIO { class Job; }
 class FavIconsModule : public KDEDModule
 {
     Q_OBJECT
+    Q_CLASSINFO("D-Bus Interface", "org.kde.FavIcon")
+
 public:
     FavIconsModule(QObject* parent, const QList<QVariant>&);
     virtual ~FavIconsModule();

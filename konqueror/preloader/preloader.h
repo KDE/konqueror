@@ -27,6 +27,8 @@ class KonqyPreloader
     : public KDEDModule
     {
     Q_OBJECT
+    Q_CLASSINFO("D-Bus Interface", "org.kde.konqueror.Preloader")
+
     public:
         KonqyPreloader(QObject* parent, const QList<QVariant>&);
         virtual ~KonqyPreloader();
