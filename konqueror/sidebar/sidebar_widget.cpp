@@ -485,7 +485,7 @@ void Sidebar_Widget::slotSetName( )
 		// Write the name in the .desktop file of this side button.
 		KConfig _ksc( m_path+m_currentButton->file, KConfig::SimpleConfig );
 		KConfigGroup ksc(&_ksc, "Desktop Entry");
-		ksc.writeEntry("Name", name, KConfigBase::Localized);
+		ksc.writeEntry("Name", name, KConfigBase::Normal|KConfigBase::Localized);
 		ksc.sync();
 
 		// Update the buttons with a QTimer (why?)
