@@ -599,10 +599,7 @@ QString BookmarkEditDialog::finalUrl() const
 
 QString BookmarkEditDialog::finalTitle() const
 {
-    if (m_title!=0)
-        return m_title->text();
-    else
-        return QString();
+    return m_title->text();
 }
 
 extern "C"
