@@ -64,7 +64,7 @@ QDBusObjectPath KonquerorAdaptor::openBrowserWindow( const QString& url, const Q
 #endif
     KonqMainWindow *res = KonqMisc::createSimpleWindow( KUrl(url), KParts::OpenUrlArguments() );
     if ( !res )
-        return QDBusObjectPath();
+        return QDBusObjectPath("/");
     return QDBusObjectPath( res->dbusName() );
 }
 
@@ -80,7 +80,7 @@ QDBusObjectPath KonquerorAdaptor::createNewWindow( const QString& url, const QSt
     KUrl finalURL = KonqMisc::konqFilteredURL( 0, url );
     KonqMainWindow *res = KonqMisc::createNewWindow( finalURL, args, KParts::BrowserArguments(), false, QStringList(), tempFile );
     if ( !res )
-        return QDBusObjectPath();
+        return QDBusObjectPath("/");
     return QDBusObjectPath( res->dbusName() );
 }
 
@@ -92,7 +92,7 @@ QDBusObjectPath KonquerorAdaptor::createNewWindowWithSelection( const QString& u
 #endif
     KonqMainWindow *res = KonqMisc::createNewWindow( KUrl(url), KParts::OpenUrlArguments(), KParts::BrowserArguments(), false, filesToSelect );
     if ( !res )
-        return QDBusObjectPath();
+        return QDBusObjectPath("/");
     return QDBusObjectPath( res->dbusName() );
 }
 
@@ -106,7 +106,7 @@ QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfile( const QString&
     kDebug(1202) << path << "," << filename;
     KonqMainWindow *res = KonqMisc::createBrowserWindowFromProfile( path, filename );
     if ( !res )
-        return QDBusObjectPath();
+        return QDBusObjectPath("/");
     return QDBusObjectPath( res->dbusName() );
 }
 
@@ -118,7 +118,7 @@ QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfileAndUrl( const QS
 #endif
     KonqMainWindow *res = KonqMisc::createBrowserWindowFromProfile( path, filename, KUrl(url) );
     if ( !res )
-        return QDBusObjectPath();
+        return QDBusObjectPath("/");
     return QDBusObjectPath( res->dbusName() );
 }
 
@@ -132,7 +132,7 @@ QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfileUrlAndMimeType( 
     args.setMimeType( mimetype );
     KonqMainWindow *res = KonqMisc::createBrowserWindowFromProfile( path, filename, KUrl(url), args );
     if ( !res )
-        return QDBusObjectPath();
+        return QDBusObjectPath("/");
     return QDBusObjectPath( res->dbusName() );
 }
 
@@ -175,11 +175,14 @@ QDBusObjectPath KonquerorAdaptor::windowForTab()
 	    if(
 #endif
                 !KonqMainWindow::isPreloaded() ) { // we want a tab in an already shown window
+                Q_ASSERT(!window->dbusName().isEmpty());
                 return QDBusObjectPath( window->dbusName() );
             }
         }
     }
-    return QDBusObjectPath();
+    // We can't use QDBusObjectPath(), dbus type 'o' must be a valid object path.
+    // So we use "/" as an indicator for not found.
+    return QDBusObjectPath("/");
 }
 
 bool KonquerorAdaptor::processCanBeReused( int screen )

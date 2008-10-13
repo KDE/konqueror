@@ -365,7 +365,8 @@ bool ClientApp::createNewWindow(const KUrl & url, bool newTab, bool tempFile, co
                     QDBusReply<QDBusObjectPath> windowReply = konq.windowForTab();
                     if ( windowReply.isValid() ) {
                         QDBusObjectPath path = windowReply;
-                        if ( !path.path().isEmpty() ) {
+                        // "/" is the indicator for "no object found", since we can't use an empty path
+                        if ( path.path() != "/" ) {
                             foundApp = service;
                             foundObj = path;
                         }
