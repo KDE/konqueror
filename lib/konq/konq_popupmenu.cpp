@@ -233,7 +233,8 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
 
     if ( isDirectory && sWriting && !isCurrentTrash ) // A dir, and we can create things into it
     {
-        if ( currentDir && m_pMenuNew ) // Current dir -> add the "new" menu
+        const bool mkdirRequested = m_itemFlags & KParts::BrowserExtension::ShowCreateDirectory;
+        if ( (currentDir || mkdirRequested) && m_pMenuNew ) // Current dir -> add the "new" menu
         {
             // As requested by KNewMenu :
             m_pMenuNew->slotCheckUpToDate();
@@ -242,17 +243,14 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
             q->addAction( m_pMenuNew );
             q->addSeparator();
         }
-        else
+        else if (mkdirRequested)
         {
-            if (m_itemFlags & KParts::BrowserExtension::ShowCreateDirectory)
-            {
-                QAction *actNewDir = m_ownActions.addAction( "newdir" );
-                actNewDir->setIcon( KIcon("folder-new") );
-                actNewDir->setText( i18n( "Create &Folder..." ) );
-                QObject::connect(actNewDir, SIGNAL(triggered()), q, SLOT(slotPopupNewDir()));
-                q->addAction( actNewDir );
-                q->addSeparator();
-            }
+            KAction *actNewDir = m_ownActions.addAction( "newdir" );
+            actNewDir->setIcon( KIcon("folder-new") );
+            actNewDir->setText( i18n( "Create &Folder..." ) );
+            QObject::connect(actNewDir, SIGNAL(triggered()), q, SLOT(slotPopupNewDir()));
+            q->addAction( actNewDir );
+            q->addSeparator();
         }
     } else if ( isIntoTrash ) {
         // Trashed item, offer restoring
