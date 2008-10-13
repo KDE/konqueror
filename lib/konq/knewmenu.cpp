@@ -143,6 +143,7 @@ KNewMenu::KNewMenu( KActionCollection *parent, QWidget* parentWidget, const QStr
     // We'll do that in slotCheckUpToDate (should be connected to aboutToShow)
     d = new KNewMenuPrivate;
     d->m_newMenuGroup = new QActionGroup(this);
+    connect(d->m_newMenuGroup, SIGNAL(triggered(QAction*)), this, SLOT(slotActionTriggered(QAction*)));
     d->m_actionCollection = parent;
     d->m_parentWidget = parentWidget;
 
@@ -352,7 +353,6 @@ void KNewMenu::fillMenu()
     Q_ASSERT(d->m_menuDev);
     menu()->addAction( d->m_menuDev );
 
-    connect(d->m_newMenuGroup, SIGNAL(triggered(QAction*)), this, SLOT(slotActionTriggered(QAction*)));
 }
 
 void KNewMenu::slotFillTemplates()
