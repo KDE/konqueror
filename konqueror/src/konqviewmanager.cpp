@@ -1498,6 +1498,14 @@ KonqFrameTabs * KonqViewManager::tabContainer()
     return m_tabContainer;
 }
 
+bool KonqViewManager::isTabBarVisible() const
+{
+    if (!m_tabContainer)
+        return false;
+    return !m_tabContainer->isTabBarHidden();
+}
+
+
 void KonqViewManager::createTabContainer(QWidget* parent, KonqFrameContainerBase* parentContainer)
 {
     //kDebug(1202) << "createTabContainer" << parent << parentContainer;

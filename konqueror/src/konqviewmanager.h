@@ -155,8 +155,15 @@ public:
 
     void reloadAllTabs();
 
-
+    /**
+     * Creates the tabwidget on demand and returns it.
+     */
     KonqFrameTabs *tabContainer();
+
+    /**
+     * Returns true if the tabwidget exists and the tabbar is visible
+     */
+    bool isTabBarVisible() const;
 
     // Apply configuration that applies to us, like alwaysTabbedMode.
     void applyConfiguration();

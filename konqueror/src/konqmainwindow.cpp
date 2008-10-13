@@ -1674,7 +1674,7 @@ void KonqMainWindow::slotReload( KonqView* reloadView, bool softReload )
 void KonqMainWindow::slotForceReload()
 {
     // A forced reload is simply a "hard" (i.e. - not soft!) reload.
-    slotReload(0L /* Current view */, false /* Not softReload*/); 
+    slotReload(0L /* Current view */, false /* Not softReload*/);
 }
 
 void KonqMainWindow::slotReloadPopup()
@@ -3748,11 +3748,11 @@ void KonqMainWindow::initActions()
   m_paReloadAllTabs->setText( i18n( "&Reload All Tabs" ) );
   connect(m_paReloadAllTabs, SIGNAL(triggered()), SLOT( slotReloadAllTabs() ));
   m_paReloadAllTabs->setShortcut(Qt::SHIFT+Qt::Key_F5);
-  // "Forced"/ "Hard" reload action - re-downloads all e.g. images even if a cached 
+  // "Forced"/ "Hard" reload action - re-downloads all e.g. images even if a cached
   // version already exists.
   m_paForceReload = actionCollection()->addAction("hard_reload");
   // TODO - request new icon? (view-refresh will do for the time being)
-  m_paForceReload->setIcon( KIcon("view-refresh") ); 
+  m_paForceReload->setIcon( KIcon("view-refresh") );
   m_paForceReload->setText( i18n( "&Force Reload" ) );
   connect(m_paForceReload, SIGNAL(triggered()), SLOT( slotForceReload()));
   m_paForceReload->setShortcuts(KShortcut(Qt::CTRL+Qt::Key_F5, Qt::CTRL+Qt::SHIFT+Qt::Key_R));
@@ -3881,14 +3881,14 @@ void KonqMainWindow::initActions()
   m_paStop->setWhatsThis( i18n( "<html>Stop loading the document<br /><br />"
                                 "All network transfers will be stopped and Konqueror will display the content "
                                 "that has been received so far.</html>" ) );
-  
+
   m_paForceReload->setWhatsThis( i18n( "<html>Reload the currently displayed document<br /><br />"
           "This may, for example, be needed to refresh web pages that have been "
           "modified since they were loaded, in order to make the changes visible.  Any images on the page are downloaded again, even if cached copies exist.</html>" ) );
-    
+
   m_paForceReload->setToolTip( i18n( "Force a reload of the currently displayed document and any contained images" ) );
-  
-  
+
+
   m_paStop->setToolTip( i18n( "Stop loading the document" ) );
 
   m_paCut->setWhatsThis( i18n( "<html>Cut the currently selected text or item(s) and move it "
@@ -5064,10 +5064,10 @@ void KonqMainWindow::closeEvent( QCloseEvent *e )
           QVariant prop = view->part()->property("modified");
           if (prop.isValid() && prop.toBool()) {
             m_pViewManager->showTab( view );
-            // TODO if tabbar is not shown, use this instead:
-            //i18n("This page contains changes that have not been submitted.\nClosing the window will discard these changes."),
-            if ( KMessageBox::warningContinueCancel( this,
-              i18n("This tab contains changes that have not been submitted.\nClosing the window will discard these changes."),
+            const QString question = m_pViewManager->isTabBarVisible()
+                                     ? i18n("This tab contains changes that have not been submitted.\nClosing the window will discard these changes.")
+                                     : i18n("This page contains changes that have not been submitted.\nClosing the window will discard these changes.");
+            if ( KMessageBox::warningContinueCancel( this, question,
               i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"application-exit"), KStandardGuiItem::cancel(), "discardchangesclose") != KMessageBox::Continue )
             {
               e->ignore();
