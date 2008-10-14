@@ -73,5 +73,24 @@
 </varlistentry>
 </variablelist>
 </sect2>
+
+<sect2 id="conf-cache">
+<title>Pixmap cache</title>
+<variablelist>
+<varlistentry>
+<term><guilabel>Disk cache size</guilabel></term>
+<listitem>
+<para>Specify how many disk space is used to cache the pixmaps.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Clear Cache</guilabel></term>
+<listitem>
+<para>Remove all cached images. This may be necessary if some favicons become corrupt and don't refresh automatically.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</sect2>
 </sect1>
 </article>
