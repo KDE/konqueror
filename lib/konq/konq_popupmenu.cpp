@@ -175,15 +175,16 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
     bool currentDir     = false;
 
     //check if url is current directory
-    if ( m_popupMenuInfo.items().count() == 1 )
+    if ( lstItems.count() == 1 )
     {
-        KUrl firstPopupURL( m_popupMenuInfo.items().first().url() );
+        KFileItem firstPopupItem( lstItems.first() );
+        KUrl firstPopupURL( firstPopupItem.url() );
         firstPopupURL.cleanPath();
         //kDebug(1203) << "View path is " << url.url();
         //kDebug(1203) << "First popup path is " << firstPopupURL.url();
         currentDir = firstPopupURL.equals( url, KUrl::CompareWithoutTrailingSlash );
-        if ( isLocal && m_popupMenuInfo.mimeType() == "application/x-desktop" ) {
-            KDesktopFile desktopFile( firstPopupURL.path() );
+        if ( firstPopupItem.isDesktopFile() ) {
+            KDesktopFile desktopFile( firstPopupItem.localPath() );
             const KConfigGroup cfg = desktopFile.desktopGroup();
             isTrashLink = ( cfg.readEntry("Type") == "Link" && cfg.readEntry("URL") == "trash:/" );
         }
@@ -338,7 +339,7 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
         act->setIcon( KIcon("bookmark-new") );
         act->setText( caption );
         QObject::connect(act, SIGNAL(triggered()), q, SLOT(slotPopupAddToBookmark()));
-        if (m_popupMenuInfo.items().count() > 1)
+        if (lstItems.count() > 1)
             act->setEnabled(false);
         if (KAuthorized::authorizeKAction("bookmarks"))
             q->addAction( act );
@@ -373,7 +374,7 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
 
     // CopyTo/MoveTo menus
     if (m_itemFlags & KParts::BrowserExtension::ShowUrlOperations) {
-        m_copyToMenu.setItems(m_popupMenuInfo.items());
+        m_copyToMenu.setItems(lstItems);
         m_copyToMenu.setReadOnly(sMoving == false);
         m_copyToMenu.addActionsTo(q);
         q->addSeparator();
@@ -382,7 +383,7 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
     if ( !isCurrentTrash && !isIntoTrash && sReading )
         addPlugins(); // now it's time to add plugins
 
-    if ( (m_itemFlags & KParts::BrowserExtension::ShowProperties) && KPropertiesDialog::canDisplay( m_popupMenuInfo.items() ) ) {
+    if ( (m_itemFlags & KParts::BrowserExtension::ShowProperties) && KPropertiesDialog::canDisplay( lstItems ) ) {
         act = m_ownActions.addAction( "properties" );
         act->setText( i18n( "&Properties" ) );
         QObject::connect(act, SIGNAL(triggered()), q, SLOT(slotPopupProperties()));
