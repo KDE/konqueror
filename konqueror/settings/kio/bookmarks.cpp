@@ -32,7 +32,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include <kgenericfactory.h>
 #include <klocale.h>
 #include <knuminput.h>
-
+#include <kpixmapcache.h>
 
 K_PLUGIN_FACTORY_DECLARATION(KioConfigFactory)
 
@@ -47,6 +47,13 @@ BookmarksConfigModule::~BookmarksConfigModule()
 {
 }
 
+void BookmarksConfigModule::clearCache()
+{
+  KPixmapCache* cache = new KPixmapCache("kio_bookmarks");
+  cache->discard();
+  delete cache;
+}
+
 void BookmarksConfigModule::load()
 {
   KConfig *c = new KConfig("kiobookmarksrc");
@@ -57,6 +64,7 @@ void BookmarksConfigModule::load()
   ui.cbShowRoot->setChecked(group.readEntry("ShowRoot", true));
   ui.cbFlattenTree->setChecked(group.readEntry("FlattenTree", false));
   ui.cbShowPlaces->setChecked(group.readEntry("ShowPlaces", true));
+  ui.sbCacheSize->setValue(group.readEntry("CacheSize", 4));
 
   // Config changed notifications...
   connect ( ui.sbColumns, SIGNAL(valueChanged(int)), SLOT(configChanged()) );
@@ -64,6 +72,9 @@ void BookmarksConfigModule::load()
   connect ( ui.cbShowRoot, SIGNAL(toggled(bool)), SLOT(configChanged()) );
   connect ( ui.cbFlattenTree, SIGNAL(toggled(bool)), SLOT(configChanged()) );
   connect ( ui.cbShowPlaces, SIGNAL(toggled(bool)), SLOT(configChanged()) );
+  connect ( ui.sbCacheSize, SIGNAL(valueChanged(int)), SLOT(configChanged()) );
+
+  connect ( ui.clearCacheButton, SIGNAL(clicked(bool)), SLOT(clearCache()) );
 
   delete c;
   emit changed( false );
@@ -78,6 +89,7 @@ void BookmarksConfigModule::save()
   group.writeEntry("ShowRoot", ui.cbShowRoot->isChecked() );
   group.writeEntry("FlattenTree", ui.cbFlattenTree->isChecked() );
   group.writeEntry("ShowPlaces", ui.cbShowPlaces->isChecked() );
+  group.writeEntry("CacheSize", ui.sbCacheSize->value() );
 
   c->sync();
   delete c;
@@ -91,6 +103,7 @@ void BookmarksConfigModule::defaults()
   ui.cbShowRoot->setChecked( true );
   ui.cbShowPlaces->setChecked( true );
   ui.cbFlattenTree->setChecked( false );
+  ui.sbCacheSize->setValue( 5*1024 );
 }
 
 QString BookmarksConfigModule::quickHelp() const

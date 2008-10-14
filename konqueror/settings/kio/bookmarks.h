@@ -33,12 +33,13 @@ public:
   BookmarksConfigModule(QWidget *parent, const QVariantList &args);
   ~BookmarksConfigModule();
 
-  virtual void load();
-  virtual void save();
-  virtual void defaults();
+  void load();
+  void save();
+  void defaults();
   QString quickHelp() const;
 
 private Q_SLOTS:
+  void clearCache();
   void configChanged();
 
 private:
