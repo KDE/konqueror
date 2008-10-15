@@ -70,7 +70,7 @@ void addBackEnd::aboutToShowAddMenu()
 	if (!menu)
 		return;
 	KStandardDirs *dirs = KGlobal::dirs();
-	QStringList list = dirs->findAllResources("data","konqsidebartng/add/*.desktop",
+	const QStringList list = dirs->findAllResources("data","konqsidebartng/add/*.desktop",
 						KStandardDirs::Recursive |
 						KStandardDirs::NoDuplicates);
 	menu->clear();
@@ -167,7 +167,7 @@ void addBackEnd::triggeredAddMenu(QAction* action)
 	if (!action->data().canConvert(QVariant::StringList))
 		return;
 
-	QStringList libs = action->data().toStringList();
+	const QStringList libs = action->data().toStringList();
 
 	KLibLoader *loader = KLibLoader::self();
 
@@ -322,7 +322,7 @@ void Sidebar_Widget::addWebSideBar(const KUrl& url, const QString& /*name*/) {
 	list = KStandardDirs::locateLocal("data", m_relPath);
 
 	// Go through list to see which ones exist.  Check them for the URL
-	QStringList files = QDir(list).entryList(QStringList() << "websidebarplugin*.desktop");
+	const QStringList files = QDir(list).entryList(QStringList() << "websidebarplugin*.desktop");
 	for (QStringList::const_iterator it = files.begin(); it != files.end(); ++it){
 		KConfig _scf( list + *it, KConfig::SimpleConfig );
 		KConfigGroup scf(&_scf, "Desktop Entry");
@@ -437,7 +437,7 @@ void Sidebar_Widget::initialCopy()
 				continue;
 
 	 	        QDir dir(m_path);
-    		        QStringList entries = dir.entryList( QDir::Files );
+    		        const QStringList entries = dir.entryList( QDir::Files );
                 	QStringList dirEntries = dir.entryList( QDir::Dirs | QDir::NoSymLinks );
 	                dirEntries.removeAll( "." );
         	        dirEntries.removeAll( ".." );
@@ -445,7 +445,7 @@ void Sidebar_Widget::initialCopy()
 	                QDir globalDir( dirtree_dir );
         	        Q_ASSERT( globalDir.isReadable() );
 	                // Only copy the entries that don't exist yet in the local dir
-        	        QStringList globalDirEntries = globalDir.entryList();
+        	        const QStringList globalDirEntries = globalDir.entryList();
                 	QStringList::ConstIterator eIt = globalDirEntries.begin();
 	                QStringList::ConstIterator eEnd = globalDirEntries.end();
         	        for (; eIt != eEnd; ++eIt )
@@ -658,7 +658,7 @@ void Sidebar_Widget::createButtons()
 	{
 		kDebug()<<"m_path: "<<m_path;
 		QDir dir(m_path);
-		QStringList list=dir.entryList(QStringList() << "*.desktop");
+		const QStringList list=dir.entryList(QStringList() << "*.desktop");
 		for (QStringList::const_iterator it=list.begin(); it!=list.end(); ++it)
 		{
 			addButton(*it);
