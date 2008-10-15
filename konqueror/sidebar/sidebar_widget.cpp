@@ -322,7 +322,7 @@ void Sidebar_Widget::addWebSideBar(const KUrl& url, const QString& /*name*/) {
 	list = KStandardDirs::locateLocal("data", m_relPath);
 
 	// Go through list to see which ones exist.  Check them for the URL
-	QStringList files = QDir(list).entryList("websidebarplugin*.desktop");
+	QStringList files = QDir(list).entryList(QStringList() << "websidebarplugin*.desktop");
 	for (QStringList::const_iterator it = files.begin(); it != files.end(); ++it){
 		KConfig _scf( list + *it, KConfig::SimpleConfig );
 		KConfigGroup scf(&_scf, "Desktop Entry");
@@ -550,7 +550,7 @@ void Sidebar_Widget::slotMultipleViews( )
 	if ((m_singleWidgetMode) && (m_visibleViews.count()>1))
 	{
 		int tmpViewID=m_latestViewed;
-		for (uint i=0; i<m_buttons.count(); i++) {
+		for (int i=0; i<m_buttons.count(); i++) {
 			ButtonInfo *button = m_buttons.at(i);
 			if ((int) i != tmpViewID)
 			{
@@ -627,7 +627,7 @@ void Sidebar_Widget::updateButtons()
 
 	if (m_buttons.count() > 0)
 	{
-		for (uint i = 0; i < m_buttons.count(); i++)
+		for (int i = 0; i < m_buttons.count(); i++)
 		{
 			ButtonInfo *button = m_buttons.at(i);
 			if (button->dock)
@@ -658,7 +658,7 @@ void Sidebar_Widget::createButtons()
 	{
 		kDebug()<<"m_path: "<<m_path;
 		QDir dir(m_path);
-		QStringList list=dir.entryList("*.desktop");
+		QStringList list=dir.entryList(QStringList() << "*.desktop");
 		for (QStringList::const_iterator it=list.begin(); it!=list.end(); ++it)
 		{
 			addButton(*it);
@@ -676,7 +676,7 @@ void Sidebar_Widget::createButtons()
 		m_buttonBar->button(-1)->hide();
 	}
 
-	for (uint i = 0; i < m_buttons.count(); i++)
+	for (int i = 0; i < m_buttons.count(); i++)
 	{
 		ButtonInfo *button = m_buttons.at(i);
 		if (m_openViews.contains(button->file))
@@ -698,7 +698,7 @@ bool Sidebar_Widget::openUrl(const class KUrl &url)
 {
 	if (url.protocol()=="sidebar")
 	{
-		for (unsigned int i=0;i<m_buttons.count();i++)
+		for (int i=0;i<m_buttons.count();i++)
 			if (m_buttons.at(i)->file==url.path())
 			{
 				KMultiTabBarTab *tab = m_buttonBar->tab(i);
@@ -712,7 +712,7 @@ bool Sidebar_Widget::openUrl(const class KUrl &url)
 	m_storedUrl=url;
 	m_hasStoredUrl=true;
         bool ret = false;
-	for (unsigned int i=0;i<m_buttons.count();i++)
+	for (int i=0;i<m_buttons.count();i++)
 	{
 		ButtonInfo *button = m_buttons.at(i);
 		if (button->dock)
@@ -777,7 +777,7 @@ bool Sidebar_Widget::eventFilter(QObject *obj, QEvent *ev)
 		{
 			kDebug()<<"Request for popup";
 			m_currentButton = 0;
-			for (uint i=0;i<m_buttons.count();i++)
+			for (int i=0;i<m_buttons.count();i++)
 			{
 				if (bt==m_buttonBar->tab(i))
 				{
