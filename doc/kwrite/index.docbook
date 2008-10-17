@@ -1001,7 +1001,7 @@ search pattern from a predefined list.
 </para>
 <para>Use the <guilabel>Next</guilabel> or <guilabel>Previous</guilabel> button to jump 
 to the next or previous match in the document.</para>
-<para>Enter the text to replace with in the text box labelled <guilabel>Replace</guilabel>
+<para>Enter the text to replace with in the text box labeled <guilabel>Replace</guilabel>
 and click the <guibutton>Replace</guibutton> button to replace only the highlighted text or
 the <guibutton>Replace All</guibutton> button to replace the search text in the whole document.
 If the option <guilabel>Use placeholders</guilabel> is checked you can add special items 
@@ -1108,7 +1108,7 @@ action="simul"><keycap>F7</keycap></keycombo></shortcut>
 <listitem>
 <para>Displays the Katepart command line at the bottom of the window.
 In the command line, type <userinput>help</userinput> to get help and <userinput>help list</userinput>
-to get a list ofcommands.</para>
+to get a list of commands.</para>
 </listitem>
 </varlistentry>
 
@@ -1435,7 +1435,7 @@ set here will be only valid for your current document.</para>
 <guimenu>Tools</guimenu>
 <guisubmenu>End of Line</guisubmenu></menuchoice></term>
  <listitem>
-<para>Choose your prefered end of line mode for your active
+<para>Choose your preferred end of line mode for your active
 document. This overwrites the global end of line mode set in <menuchoice>
 <guimenu>Settings</guimenu>
 <guimenuitem>Configure
@@ -1636,7 +1636,7 @@ all your selected text follows the indentation mode you choose.</para>
 </menuchoice></term>
 <listitem>
 <para>Causes a realign of the current line or selected lines using the
-indentation mode and indentation settings in the doucment.</para>
+indentation mode and indentation settings in the document.</para>
 </listitem>
 </varlistentry>
 
@@ -2435,7 +2435,7 @@ or advances to the next tab position. If the insertion point is at or before the
 first non-space character in the line, or if there is a selection, the current line 
 is indented by the number of character positions specified in <guilabel>Indentation width</guilabel>.
 If the insertion point is located after the first non-space character in the line 
-and there is no selection, white space is inserted so that the next tab postion is 
+and there is no selection, white space is inserted so that the next tab position is 
 reached: if the option <guilabel>Insert spaces instead of tabulators</guilabel> 
 on the <guilabel>General</guilabel> tab in the <guilabel>Editing</guilabel> 
 page is enabled, spaces are inserted; otherwise, a single tabulator is inserted.</para>
@@ -2498,7 +2498,7 @@ and insert that number of spaces instead of a &Tab; character.</para>
 <varlistentry>
 <term><guilabel>End of line:</guilabel></term>
 <listitem>
-<para>Choose your prefered end of line mode for your active
+<para>Choose your preferred end of line mode for your active
 document. You have the choice between &UNIX;, DOS/&Windows; or Macintosh.</para>
 </listitem>
 </varlistentry>
