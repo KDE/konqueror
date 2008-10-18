@@ -37,7 +37,7 @@ private Q_SLOTS:
     void testSplitMainContainer();
     void testLinkedViews();
 
-    void testAddTab();
+    void testAddTabs();
     void testDuplicateTab();
     void testDuplicateSplittedTab();
     void testDeletePartInTab();
@@ -46,6 +46,7 @@ private Q_SLOTS:
     void testDuplicateWindow();
     void testDuplicateWindowWithSidebar();
 
+    static void sendAllPendingResizeEvents(QWidget*);
 
 private:
     KComponentData m_konqComponentData;
