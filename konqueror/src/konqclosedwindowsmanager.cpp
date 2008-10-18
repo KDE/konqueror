@@ -376,7 +376,6 @@ void KonqClosedWindowsManager ::readConfig()
             numTabs);
         configGroup.copyTo(&closedWindowItem->configGroup());
         configGroup.writeEntry("foo", 0);
-        closedWindowItem->configGroup().config()->sync();
 
         // Add the item only to this window
         addClosedWindowItem(0L, closedWindowItem, false);

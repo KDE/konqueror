@@ -44,8 +44,8 @@ namespace KParts
 
 struct HistoryEntry
 {
-  void loadItem( const KConfigGroup& config, const QString &prefix);
-  void saveConfig( KConfigGroup& config, const QString &prefix);
+  void loadItem( const KConfigGroup& config, const QString &prefix, const KonqFrameBase::Options &options);
+  void saveConfig( KConfigGroup& config, const QString &prefix, const KonqFrameBase::Options &options);
 
   KUrl url;
   QString locationBarURL; // can be different from url when showing a index.html
@@ -58,6 +58,7 @@ struct HistoryEntry
   bool doPost;
   QString pageReferrer;
   KonqMainWindow::PageSecurity pageSecurity;
+  bool reload; // This is used when History entry is restored from a config file
 };
 
 /* This class represents a child of the main view. The main view maintains
