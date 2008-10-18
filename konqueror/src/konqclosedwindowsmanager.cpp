@@ -106,21 +106,28 @@ void KonqClosedWindowsManager::addClosedWindowItem(KonqUndoManager
         delete last;
     }
 
-    m_closedWindowItemList.prepend(closedWindowItem);
     if(!m_blockClosedItems)
     {
         m_numUndoClosedItems++;
         emit addWindowInOtherInstances(real_sender, closedWindowItem);
     }
+    
+    // The prepend goes after emit addWindowInOtherInstances() because otherwise
+    // the first time addWindowInOtherInstances() is emitted, KonqUndoManager
+    // will catch it and it will call to its private populate() function which
+    // will add to the undo list closedWindowItem, and then it will add it again
+    // but we want it to be added only once.
+    m_closedWindowItemList.prepend(closedWindowItem);
 
     if(propagate)
     {
-        emitNotifyClosedWindowItem(closedWindowItem);
-
         // if it needs to be propagated means that it's a local window and thus
         // we need to call to saveConfig() to keep updated the kconfig file, so
         // that new konqueror instances can read it correctly updated.
         saveConfig();
+
+        // Once saved, tell to other konqi processes
+        emitNotifyClosedWindowItem(closedWindowItem);
     }
 }
 
