@@ -5123,9 +5123,7 @@ void KonqMainWindow::addClosedWindowToUndoList()
     // 3. Add the KonqClosedWindowItem to the undo list
     m_paClosedItems->setEnabled(true);
     m_pUndoManager->addClosedWindowItem( closedWindowItem );
-
-    // 4. Update the saved windows list written in the HD
-    KonqClosedWindowsManager::self()->saveConfig();
+    
     kDebug(1202) << "done";
 }
 
