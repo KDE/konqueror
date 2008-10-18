@@ -35,7 +35,7 @@ TreeItem * TreeItem::child(int row)
 {
     if(!init)
         initChildren();
-    if(row < 0 || row > children.count())
+    if(row < 0 || row >= children.count())
       return parent();
     return children.at(row);
 }
@@ -127,3 +127,4 @@ TreeItem * TreeItem::treeItemForBookmark(const KBookmark& bk)
     }
 }
 
+// kate: space-indent on; indent-width 4; replace-tabs on;

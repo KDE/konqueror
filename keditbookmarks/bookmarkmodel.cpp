@@ -80,10 +80,12 @@ QVariant KBookmarkModel::data(const QModelIndex &index, int role) const
     {
         KBookmark bk = bookmarkForIndex(index);
         if(bk.address().isEmpty())
+        {
             if(index.column() == 0)
                 return QVariant( i18n("Bookmarks") );
             else
                 return QVariant();
+        }
 
         switch( index.column() )
         {
@@ -185,6 +187,10 @@ QModelIndex KBookmarkModel::index(int row, int column, const QModelIndex &parent
         return createIndex(row, column, d->mRootItem);
 
     TreeItem * item = static_cast<TreeItem *>(parent.internalPointer());
+    if(row == item->childCount()) {// Received drop below last row, simulate drop on last row
+        return createIndex(row-1, column, item->child(row-1));
+    }
+
     return createIndex(row, column, item->child(row));
 }
 
@@ -281,6 +287,7 @@ bool KBookmarkModel::dropMimeData(const QMimeData * data, Qt::DropAction action,
     Q_UNUSED(action)
 
     //FIXME this only works for internal drag and drops
+    //FIXME Moving is *very* buggy
 
     QModelIndex idx;
     if(row == -1)
