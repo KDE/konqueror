@@ -5119,7 +5119,6 @@ void KonqMainWindow::addClosedWindowToUndoList()
     // 2. Create the KonqClosedWindowItem and  save its config
     KonqClosedWindowItem* closedWindowItem = new KonqClosedWindowItem(title, m_pUndoManager->newCommandSerialNumber(), numTabs);
     saveProperties( closedWindowItem->configGroup() );
-    closedWindowItem->configGroup().sync();
 
     // 3. Add the KonqClosedWindowItem to the undo list
     m_paClosedItems->setEnabled(true);

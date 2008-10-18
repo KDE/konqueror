@@ -856,7 +856,7 @@ void KonqView::restoreHistory()
 
   aboutToOpenURL( h.url );
 
-  if ( browserExtension() )
+  if ( h.reload == false && browserExtension() )
   {
     //kDebug(1202) << "Restoring view from stream";
     QDataStream stream( h.buffer );
@@ -1344,34 +1344,52 @@ bool KonqView::supportsMimeType( const QString &mimeType ) const
     return false;
 }
 
-void HistoryEntry::saveConfig( KConfigGroup& config, const QString &prefix)
+void HistoryEntry::saveConfig( KConfigGroup& config, const QString &prefix, const KonqFrameBase::Options &options)
 {
-    config.writeEntry( QString::fromLatin1( "Url" ).prepend( prefix ), url.url() );
-    config.writeEntry( QString::fromLatin1( "LocationBarURL" ).prepend( prefix ), locationBarURL );
-    config.writeEntry( QString::fromLatin1( "Title" ).prepend( prefix ), title );
-    config.writeEntry( QString::fromLatin1( "Buffer" ).prepend( prefix ), buffer );
-    config.writeEntry( QString::fromLatin1( "StrServiceType" ).prepend( prefix ), strServiceType );
-    config.writeEntry( QString::fromLatin1( "StrServiceName" ).prepend( prefix ), strServiceName );
-    config.writeEntry( QString::fromLatin1( "PostData" ).prepend( prefix ), postData );
-    config.writeEntry( QString::fromLatin1( "PostContentType" ).prepend( prefix ), postContentType );
-    config.writeEntry( QString::fromLatin1( "DoPost" ).prepend( prefix ), doPost );
-    config.writeEntry( QString::fromLatin1( "PageReferrer" ).prepend( prefix ), pageReferrer );
-    config.writeEntry( QString::fromLatin1( "PageSecurity" ).prepend( prefix ), (int)pageSecurity );
+    if (options & KonqFrameBase::saveURLs) {
+        config.writeEntry( QString::fromLatin1( "Url" ).prepend( prefix ), url.url() );
+        config.writeEntry( QString::fromLatin1( "LocationBarURL" ).prepend( prefix ), locationBarURL );
+        config.writeEntry( QString::fromLatin1( "Title" ).prepend( prefix ), title );
+        config.writeEntry( QString::fromLatin1( "StrServiceType" ).prepend( prefix ), strServiceType );
+        config.writeEntry( QString::fromLatin1( "StrServiceName" ).prepend( prefix ), strServiceName );
+    } else if(options & KonqFrameBase::saveHistoryItems) {
+        config.writeEntry( QString::fromLatin1( "Url" ).prepend( prefix ), url.url() );
+        config.writeEntry( QString::fromLatin1( "LocationBarURL" ).prepend( prefix ), locationBarURL );
+        config.writeEntry( QString::fromLatin1( "Title" ).prepend( prefix ), title );
+        config.writeEntry( QString::fromLatin1( "Buffer" ).prepend( prefix ), buffer );
+        config.writeEntry( QString::fromLatin1( "StrServiceType" ).prepend( prefix ), strServiceType );
+        config.writeEntry( QString::fromLatin1( "StrServiceName" ).prepend( prefix ), strServiceName );
+        config.writeEntry( QString::fromLatin1( "PostData" ).prepend( prefix ), postData );
+        config.writeEntry( QString::fromLatin1( "PostContentType" ).prepend( prefix ), postContentType );
+        config.writeEntry( QString::fromLatin1( "DoPost" ).prepend( prefix ), doPost );
+        config.writeEntry( QString::fromLatin1( "PageReferrer" ).prepend( prefix ), pageReferrer );
+        config.writeEntry( QString::fromLatin1( "PageSecurity" ).prepend( prefix ), (int)pageSecurity );
+    }
 }
 
-void HistoryEntry::loadItem( const KConfigGroup& config, const QString &prefix)
+void HistoryEntry::loadItem( const KConfigGroup& config, const QString &prefix, const KonqFrameBase::Options &options)
 {
-    url = KUrl(config.readEntry( QString::fromLatin1( "Url" ).prepend( prefix ), "" ));
-    locationBarURL = config.readEntry( QString::fromLatin1( "LocationBarURL" ).prepend( prefix ), "" );
-    title = config.readEntry( QString::fromLatin1( "Title" ).prepend( prefix ), "" );
-    buffer = config.readEntry( QString::fromLatin1( "Buffer" ).prepend( prefix ), QByteArray() );
-    strServiceType = config.readEntry( QString::fromLatin1( "StrServiceType" ).prepend( prefix ), "" );
-    strServiceName = config.readEntry( QString::fromLatin1( "StrServiceName" ).prepend( prefix ), "" );
-    postData = config.readEntry( QString::fromLatin1( "PostData" ).prepend( prefix ), QByteArray() );
-    postContentType = config.readEntry( QString::fromLatin1( "PostContentType" ).prepend( prefix ), "" );
-    doPost = config.readEntry( QString::fromLatin1( "DoPost" ).prepend( prefix ), false );
-    pageReferrer = config.readEntry( QString::fromLatin1( "PageReferrer" ).prepend( prefix ), "" );
-    pageSecurity = (KonqMainWindow::PageSecurity)config.readEntry( QString::fromLatin1( "PageSecurity" ).prepend( prefix ), 0 );
+
+    if (options & KonqFrameBase::saveURLs) {
+        url = KUrl(config.readEntry( QString::fromLatin1( "Url" ).prepend( prefix ), "" ));
+        locationBarURL = config.readEntry( QString::fromLatin1( "LocationBarURL" ).prepend( prefix ), "" );
+        title = config.readEntry( QString::fromLatin1( "Title" ).prepend( prefix ), "" );
+        strServiceType = config.readEntry( QString::fromLatin1( "StrServiceType" ).prepend( prefix ), "" );
+        strServiceName = config.readEntry( QString::fromLatin1( "StrServiceName" ).prepend( prefix ), "" );
+        reload = true;
+    } else if(options & KonqFrameBase::saveHistoryItems) {
+        url = KUrl(config.readEntry( QString::fromLatin1( "Url" ).prepend( prefix ), "" ));
+        locationBarURL = config.readEntry( QString::fromLatin1( "LocationBarURL" ).prepend( prefix ), "" );
+        title = config.readEntry( QString::fromLatin1( "Title" ).prepend( prefix ), "" );
+        buffer = config.readEntry( QString::fromLatin1( "Buffer" ).prepend( prefix ), QByteArray() );
+        strServiceType = config.readEntry( QString::fromLatin1( "StrServiceType" ).prepend( prefix ), "" );
+        strServiceName = config.readEntry( QString::fromLatin1( "StrServiceName" ).prepend( prefix ), "" );
+        postData = config.readEntry( QString::fromLatin1( "PostData" ).prepend( prefix ), QByteArray() );
+        postContentType = config.readEntry( QString::fromLatin1( "PostContentType" ).prepend( prefix ), "" );
+        doPost = config.readEntry( QString::fromLatin1( "DoPost" ).prepend( prefix ), false );
+        pageReferrer = config.readEntry( QString::fromLatin1( "PageReferrer" ).prepend( prefix ), "" );
+        pageSecurity = (KonqMainWindow::PageSecurity)config.readEntry( QString::fromLatin1( "PageSecurity" ).prepend( prefix ), 0 );
+    }
 }
 
 void KonqView::saveConfig( KConfigGroup& config, const QString &prefix, const KonqFrameBase::Options &options)
@@ -1389,8 +1407,18 @@ void KonqView::saveConfig( KConfigGroup& config, const QString &prefix, const Ko
         if (m_pPart && !m_bLockHistory)
             updateHistoryEntry(true);
         QList<HistoryEntry*>::Iterator it = m_lstHistory.begin();
-        for ( uint i = 0; it != m_lstHistory.end(); ++it, ++i ) {
-            (*it)->saveConfig(config, QString::fromLatin1( "HistoryItem" ) + QString::number(i).prepend( prefix ));
+        for ( int i = 0; it != m_lstHistory.end(); ++it, ++i )
+        {
+            // In order to not end up with a huge config file, we only save full
+            // history for current history item
+            KonqFrameBase::Options options;
+            if(i == m_lstHistoryIndex)
+                options = KonqFrameBase::saveHistoryItems;
+            else
+                options = KonqFrameBase::saveURLs;
+            
+            (*it)->saveConfig(config, QString::fromLatin1( "HistoryItem" )
+                + QString::number(i).prepend( prefix ), options);
         }
         config.writeEntry( QString::fromLatin1( "CurrentHistoryItem" ).prepend( prefix ), m_lstHistoryIndex );
         config.writeEntry( QString::fromLatin1( "NumberOfHistoryItems" ).prepend( prefix ), historyLength() );
@@ -1403,25 +1431,39 @@ void KonqView::loadHistoryConfig(const KConfigGroup& config, const QString &pref
     qDeleteAll(m_lstHistory);
     m_lstHistory.clear();
 
-    const int m_lstHistorySize = config.readEntry( QString::fromLatin1( "NumberOfHistoryItems" ).prepend( prefix ), 0 );
-
+    int historySize = config.readEntry( QString::fromLatin1( "NumberOfHistoryItems" ).prepend( prefix ), 0 );
+    int currentIndex = config.readEntry( QString::fromLatin1( "CurrentHistoryItem" ).prepend( prefix ), historySize-1 );
+    
     // No history to restore..
-    if (m_lstHistorySize == 0) {
+    if (historySize == 0)
+    {
         createHistoryEntry();
         return;
     }
 
     // restore history list
-    for ( int i = 0; i < m_lstHistorySize; ++i )
+    for ( int i = 0; i < historySize; ++i )
     {
         HistoryEntry* historyEntry = new HistoryEntry;
-        historyEntry->loadItem(config, QString::fromLatin1( "HistoryItem" ) + QString::number(i).prepend( prefix ));
+        
+        // Only current history item saves completely its HistoryEntry
+        KonqFrameBase::Options options;
+        if(i == currentIndex)
+            options = KonqFrameBase::saveHistoryItems;
+        else
+            options = KonqFrameBase::saveURLs;
+        
+        historyEntry->loadItem(config, QString::fromLatin1( "HistoryItem" ) + QString::number(i).prepend( prefix ), options);
 
         appendHistoryEntry( historyEntry );
     }
 
+    // Shouldn't happen, but just in case..
+    if(currentIndex >= historyLength())
+        currentIndex = historyLength()-1;
+    
     // set and load the correct history index
-    setHistoryIndex( config.readEntry( QString::fromLatin1( "CurrentHistoryItem" ).prepend( prefix ), historyLength()-1 ) );
+    setHistoryIndex( currentIndex );
     restoreHistory();
 }
 
