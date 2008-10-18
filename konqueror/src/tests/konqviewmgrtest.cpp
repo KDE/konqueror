@@ -51,7 +51,7 @@ public:
 };
 #endif
 
-static void sendAllPendingResizeEvents( QWidget* mainWindow )
+void ViewMgrTest::sendAllPendingResizeEvents( QWidget* mainWindow )
 {
     bool foundOne = true;
     while ( foundOne ) {
@@ -72,6 +72,12 @@ static void sendAllPendingResizeEvents( QWidget* mainWindow )
         // Process LayoutRequest events, in particular
         qApp->sendPostedEvents();
         //qDebug() << "Loop done, checking again";
+
+        if (!foundOne) { // about to exit, reset visible flag, to avoid crashes in qt
+            foreach( QWidget* w, allChildWidgets ) {
+                w->setAttribute(Qt::WA_WState_Visible, false);
+            }
+        }
     }
 }
 
@@ -311,19 +317,67 @@ void ViewMgrTest::testLinkedViews()
     QCOMPARE(view2->url().url(), KUrl("data:text/html, Link target").url());
 }
 
-void ViewMgrTest::testAddTab()
+static void openTabWithTitle(KonqMainWindow& mainWindow, const QString& title, KonqView*& view)
+{
+    KonqViewManager* viewManager = mainWindow.viewManager();
+    view = viewManager->addTab("text/html");
+    QVERIFY( view );
+    QVERIFY(view->supportsMimeType("text/html"));
+    QVERIFY(!view->supportsMimeType("text/plain"));
+    // correct since it's a subclass of text/html, khtml can display it
+    QVERIFY(view->supportsMimeType("application/x-netscape-bookmarks"));
+    // Tab caption test
+    view->openUrl(KUrl("data:text/html, <title>" + title.toUtf8() + "</title>"), QString("http://loc.bar.url"));
+    QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 10000));
+    QCOMPARE(view->caption(), title);
+    QCOMPARE(view->locationBarURL(), QString("http://loc.bar.url"));
+}
+
+void ViewMgrTest::testAddTabs()
 {
     KonqMainWindow mainWindow;
     KonqViewManager* viewManager = mainWindow.viewManager();
+
     KonqView* view = viewManager->createFirstView( "KonqAboutPage", "konq_aboutpage" );
     QVERIFY( view );
-    KonqView* viewTab2 = viewManager->addTab("text/html");
-    QVERIFY( viewTab2 );
-    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].") ); // mainWindow, tab widget, two tabs
-    QVERIFY(viewTab2->supportsMimeType("text/html"));
-    QVERIFY(!viewTab2->supportsMimeType("text/plain"));
-    // correct since it's a subclass of text/html, khtml can display it
-    QVERIFY(viewTab2->supportsMimeType("application/x-netscape-bookmarks"));
+    QStringList titles;
+    // The testcase was "konqueror www.kde.org www.google.fr bugs.kde.org www.cuil.com www.davidfaure.fr"
+    titles << "K Desktop Environment - Be free"
+           << "Google"
+           << "KDE Bug Tracking System"
+           << "Cuil"
+           << "http://www.davidfaure.fr/";
+    view->setCaption(titles[0]);
+
+    KTabWidget* tabWidget = mainWindow.findChild<KTabWidget*>();
+    QVERIFY(tabWidget);
+    KonqView* viewTab2, *viewTab3, *viewTab4, *viewTab5;
+    openTabWithTitle(mainWindow, titles[1], viewTab2);
+    openTabWithTitle(mainWindow, titles[2], viewTab3);
+    openTabWithTitle(mainWindow, titles[3], viewTab4);
+    openTabWithTitle(mainWindow, titles[4], viewTab5);
+    for (int i = 0; i < titles.count(); ++i)
+        QCOMPARE(tabWidget->tabText(i), QString(titles[i]));
+
+    // Ensure tabwidget has a nice size
+    mainWindow.resize(599, 699);
+    sendAllPendingResizeEvents( &mainWindow );
+
+    // Remove active tab (#170470)
+    tabWidget->setCurrentIndex(2);
+    KonqFrameBase* frame = dynamic_cast<KonqFrameBase*>(viewManager->tabContainer()->currentWidget());
+    QVERIFY(frame);
+    viewManager->removeTab(frame);
+    QList<int> expectedTitles; expectedTitles << 0 << 1 << 3 << 4;
+    for (int i = 0; i < expectedTitles.count(); ++i)
+        QCOMPARE(tabWidget->tabText(i), titles[expectedTitles[i]]);
+    for (int i = 0; i < expectedTitles.count(); ++i)
+        QCOMPARE(tabWidget->QTabWidget::tabText(i).left(10), titles[expectedTitles[i]].left(10));
+
+    tabWidget->removeTab(0);
+    expectedTitles.removeAt(0);
+    for (int i = 0; i < expectedTitles.count(); ++i)
+        QCOMPARE(tabWidget->tabText(i), QString(titles[expectedTitles[i]]));
 }
 
 void ViewMgrTest::testDuplicateTab()
