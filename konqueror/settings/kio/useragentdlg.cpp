@@ -74,20 +74,21 @@ void UserAgentDlg::on_sendUACheckBox_clicked()
 
 void UserAgentDlg::on_newButton_clicked()
 {
-  UserAgentSelectorDlg pdlg (i18n("Add Identification"), m_userAgentInfo, this );
+  const QPointer<UserAgentSelectorDlg> pdlg( new UserAgentSelectorDlg( i18n("Add Identification"), m_userAgentInfo, this ) );
 
-  if ( pdlg.exec() == QDialog::Accepted )
+  if ( pdlg->exec() == QDialog::Accepted && pdlg )
   {
-    if ( !handleDuplicate( pdlg.siteName(), pdlg.identity(), pdlg.alias() ) )
+    if ( !handleDuplicate( pdlg->siteName(), pdlg->identity(), pdlg->alias() ) )
     {
       QTreeWidgetItem* item = new QTreeWidgetItem( ui.sitePolicyTreeWidget);
-      item->setText(0, pdlg.siteName());
-      item->setText(1, pdlg.identity());
-      item->setText(2, pdlg.alias());
+      item->setText(0, pdlg->siteName());
+      item->setText(1, pdlg->identity());
+      item->setText(2, pdlg->alias());
       ui.sitePolicyTreeWidget->setCurrentItem( item );
       configChanged();
     }
   }
+  delete pdlg;
 }
 
 void UserAgentDlg::on_changeButton_clicked()
