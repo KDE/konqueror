@@ -283,8 +283,6 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, bool 
         connect(m_menu, SIGNAL(aboutToShow()),
 		this, SLOT(aboutToShowConfigMenu()));
 
-	m_buttonPopup = 0;
-	m_buttonPopupTitle = 0;
 	addBackEnd *ab = new addBackEnd(this, addMenu,universalMode,currentProfile,"Sidebar_Widget-addBackEnd");
 	connect(ab, SIGNAL(updateNeeded()),
 		this, SLOT(updateButtons()));
@@ -788,22 +786,18 @@ bool Sidebar_Widget::eventFilter(QObject *obj, QEvent *ev)
 
 			if (m_currentButton)
 			{
-				if (!m_buttonPopup)
-				{
-					m_buttonPopup=new KMenu(this);
-					m_buttonPopupTitle = m_buttonPopup->addTitle(SmallIcon("unknown"), "");
-					m_buttonPopup->addAction(KIcon("edit-rename"), i18n("Set Name..."), this, SLOT(slotSetName())); // Item to open a dialog to change the name of the sidebar item (by Pupeno)
-					m_buttonPopup->addAction(KIcon("internet-web-browser"), i18n("Set URL..."), this, SLOT(slotSetURL()));
-					m_buttonPopup->addAction(KIcon("preferences-desktop-icons"), i18n("Set Icon..."), this, SLOT(slotSetIcon()));
-					m_buttonPopup->addSeparator();
-					m_buttonPopup->addAction(KIcon("edit-delete"), i18n("Remove"), this, SLOT(slotRemove()));
-					m_buttonPopup->addSeparator();
-					m_buttonPopup->addMenu(m_menu);
-				}
-				m_buttonPopup->setItemEnabled(2,!m_currentButton->URL.isEmpty());
-				m_buttonPopupTitle->setIcon(SmallIcon(m_currentButton->iconName));
-			        m_buttonPopupTitle->setText(m_currentButton->displayName);
-				m_buttonPopup->exec(QCursor::pos());
+				KMenu *buttonPopup=new KMenu(this);
+				buttonPopup->addTitle(SmallIcon(m_currentButton->iconName), m_currentButton->displayName);
+				buttonPopup->addAction(KIcon("edit-rename"), i18n("Set Name..."), this, SLOT(slotSetName())); // Item to open a dialog to change the name of the sidebar item (by Pupeno)
+				buttonPopup->addAction(KIcon("internet-web-browser"), i18n("Set URL..."), this, SLOT(slotSetURL()));
+				buttonPopup->addAction(KIcon("preferences-desktop-icons"), i18n("Set Icon..."), this, SLOT(slotSetIcon()));
+				buttonPopup->addSeparator();
+				buttonPopup->addAction(KIcon("edit-delete"), i18n("Remove"), this, SLOT(slotRemove()));
+				buttonPopup->addSeparator();
+				buttonPopup->addMenu(m_menu);
+				buttonPopup->setItemEnabled(2,!m_currentButton->URL.isEmpty());
+				buttonPopup->exec(QCursor::pos());
+				delete buttonPopup;
 			}
 			return true;
 
