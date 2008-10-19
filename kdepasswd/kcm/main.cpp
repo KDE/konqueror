@@ -80,7 +80,7 @@ KCMUserAccount::KCMUserAccount( QWidget *parent, const QVariantList &)
 	_mw->lblUsername->setText( _ku->loginName() );
 	_mw->lblUID->setText( QString().number(_ku->uid()) );
 
-	KAboutData *about = new KAboutData(I18N_NOOP("kcm_useraccount"), 0,
+	KAboutData *about = new KAboutData("kcm_useraccount", 0,
 		ki18n("Password & User Information"), 0, KLocalizedString(),
 		KAboutData::License_GPL,
 		ki18n("(C) 2002, Braden MacDonald, "
@@ -88,7 +88,7 @@ KCMUserAccount::KCMUserAccount( QWidget *parent, const QVariantList &)
 
 	about->addAuthor(ki18n("Frans Englich"), ki18n("Maintainer"), "frans.englich@telia.com");
 	about->addAuthor(ki18n("Ravikiran Rajagopal"), KLocalizedString(), "ravi@kde.org");
-	about->addAuthor(ki18n("Michael H\303\244ckel"), ki18n("haeckel@kde.org") );
+	about->addAuthor(ki18n("Michael H\303\244ckel"), KLocalizedString(), "haeckel@kde.org" );
 
 	about->addAuthor(ki18n("Braden MacDonald"), ki18n("Face editor"), "bradenm_k@shaw.ca");
 	about->addAuthor(ki18n("Geert Jansen"), ki18n("Password changer"), "jansen@kde.org",
@@ -101,7 +101,7 @@ KCMUserAccount::KCMUserAccount( QWidget *parent, const QVariantList &)
 
 	setQuickHelp( i18n("<qt>Here you can change your personal information, which "
 			"will be used in mail programs and word processors, for example. You can "
-			"change your login password by clicking <em>Change Password</em>.</qt>") );
+			"change your login password by clicking <em>Change Password...</em>.</qt>") );
 
 	addConfig( KCFGPassword::self(), this );
 	load();
