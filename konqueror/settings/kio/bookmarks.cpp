@@ -64,7 +64,7 @@ void BookmarksConfigModule::load()
   ui.cbShowRoot->setChecked(group.readEntry("ShowRoot", true));
   ui.cbFlattenTree->setChecked(group.readEntry("FlattenTree", false));
   ui.cbShowPlaces->setChecked(group.readEntry("ShowPlaces", true));
-  ui.sbCacheSize->setValue(group.readEntry("CacheSize", 4));
+  ui.sbCacheSize->setValue(group.readEntry("CacheSize", 5*1024));
 
   // Config changed notifications...
   connect ( ui.sbColumns, SIGNAL(valueChanged(int)), SLOT(configChanged()) );
