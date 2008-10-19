@@ -144,9 +144,9 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
 
   tabBar()->setWhatsThis(i18n( "This bar contains the list of currently open tabs. Click on a tab to make it "
 			  "active. You can also use keyboard shortcuts to "
-			  "navigate through tabs. The text on the tab is the title of the website "
+			  "navigate through tabs. The text on the tab shows the content "
 			  "currently open in it; place your mouse over the tab to see the full title, in "
-			  "case it has been truncated to fit the tab width." ) );
+			  "case it has been shortened to fit the tab width." ) );
   //kDebug(1202) << "KonqFrameTabs::KonqFrameTabs()";
 
   m_pParentContainer = parentContainer;
