@@ -201,7 +201,7 @@ extern "C" {
 		KGlobal::dirs()->addResourceType("websidebardata", "data", "konqsidebartng/websidebar");
 		KUrl url;
 		url.setProtocol("file");
-		QStringList paths = KGlobal::dirs()->resourceDirs("websidebardata");
+		const QStringList paths = KGlobal::dirs()->resourceDirs("websidebardata");
 		for (QStringList::const_iterator i = paths.begin(); i != paths.end(); ++i) {
 			if (QFileInfo(*i + "websidebar.html").exists()) {
 				url.setPath(*i + "websidebar.html");

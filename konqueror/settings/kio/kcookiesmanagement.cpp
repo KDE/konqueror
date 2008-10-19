@@ -260,7 +260,7 @@ void KCookiesManagement::getDomains()
     return;
   }
 
-  QStringList domains = reply;
+  const QStringList domains = reply;
 
   if ( dlg->lvCookies->topLevelItemCount() > 0 )
   {
@@ -301,7 +301,7 @@ void KCookiesManagement::getCookies(QTreeWidgetItem *cookieDom)
 
   if(reply.isValid())
   {
-    QStringList fieldVal = reply;
+    const QStringList fieldVal = reply;
     QStringList::const_iterator fIt = fieldVal.begin();
 
     while(fIt != fieldVal.end())
@@ -334,7 +334,7 @@ bool KCookiesManagement::cookieDetails(CookieProp *cookie)
   if( !reply.isValid() )
     return false;
 
-  QStringList fieldVal = reply;
+  const QStringList fieldVal = reply;
 
   QStringList::const_iterator c = fieldVal.begin();
   if (c == fieldVal.end()) // empty list, do not crash

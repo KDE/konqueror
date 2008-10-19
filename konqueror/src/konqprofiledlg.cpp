@@ -53,7 +53,7 @@ KonqProfileMap KonqProfileDlg::readAllProfiles()
 {
   KonqProfileMap mapProfiles;
 
-  QStringList profiles = KGlobal::dirs()->findAllResources( "data", "konqueror/profiles/*", KStandardDirs::NoDuplicates );
+  const QStringList profiles = KGlobal::dirs()->findAllResources( "data", "konqueror/profiles/*", KStandardDirs::NoDuplicates );
   QStringList::ConstIterator pIt = profiles.begin();
   QStringList::ConstIterator pEnd = profiles.end();
   for (; pIt != pEnd; ++pIt )

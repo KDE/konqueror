@@ -158,7 +158,7 @@ void
 KCustomMenuEditor::save(KConfig *cfg)
 {
    // First clear the whole config file.
-   QStringList groups = cfg->groupList();
+   const QStringList groups = cfg->groupList();
    for(QStringList::ConstIterator it = groups.begin();
       it != groups.end(); ++it)
    {

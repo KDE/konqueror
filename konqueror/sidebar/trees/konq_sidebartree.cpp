@@ -92,7 +92,7 @@ void KonqSidebarTree::loadModuleFactories()
   pluginFactories.clear();
   pluginInfo.clear();
   KStandardDirs *dirs=KGlobal::dirs();
-  QStringList list=dirs->findAllResources("data","konqsidebartng/dirtree/*.desktop",KStandardDirs::NoDuplicates);
+  const QStringList list=dirs->findAllResources("data","konqsidebartng/dirtree/*.desktop",KStandardDirs::NoDuplicates);
 
 
   for (QStringList::ConstIterator it=list.begin();it!=list.end();++it)
@@ -644,7 +644,7 @@ void KonqSidebarTree::scanDir( KonqSidebarTreeItem *parent, const QString &path,
         if (copyConfig)
         {
             // We will copy over the configuration for the dirtree, from the global directory
-            QStringList dirtree_dirs = KGlobal::dirs()->findDirs("data","konqsidebartng/virtual_folders/"+m_dirtreeDir.relDir+'/');
+            const QStringList dirtree_dirs = KGlobal::dirs()->findDirs("data","konqsidebartng/virtual_folders/"+m_dirtreeDir.relDir+'/');
 
 
 //            QString dirtree_dir = KGlobal::dirs()->findDirs("data","konqsidebartng/virtual_folders/"+m_dirtreeDir.relDir+"/").last();  // most global
@@ -669,7 +669,7 @@ void KonqSidebarTree::scanDir( KonqSidebarTreeItem *parent, const QString &path,
         	        QDir globalDir( dirtree_dir );
                 	Q_ASSERT( globalDir.isReadable() );
 	                // Only copy the entries that don't exist yet in the local dir
-        	        QStringList globalDirEntries = globalDir.entryList();
+        	        const QStringList globalDirEntries = globalDir.entryList();
                 	QStringList::ConstIterator eIt = globalDirEntries.begin();
 	                QStringList::ConstIterator eEnd = globalDirEntries.end();
         	        for (; eIt != eEnd; ++eIt )
