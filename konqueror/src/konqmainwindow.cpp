@@ -2842,7 +2842,7 @@ void KonqMainWindow::slotClosedItemsListAboutToShow()
     QMenu* popup = m_paClosedItems->menu();
     // Clear the menu and fill it with a maximum of s_closedItemsListLength number of urls
     popup->clear();
-    QAction* clearAction = popup->addAction( i18n("Empty Closed Items History") );
+    QAction* clearAction = popup->addAction( i18nc("This menu entry empties the closed items history", "Empty Closed Items History") );
     connect(clearAction, SIGNAL(triggered()), m_pUndoManager, SLOT(clearClosedItemsList()));
     popup->insertSeparator((QAction*)0);
 
@@ -3545,7 +3545,7 @@ void KonqMainWindow::initActions()
   m_paLockView = new KToggleAction( i18n( "Lock to Current Location"), this );
   actionCollection()->addAction( "lock", m_paLockView );
   connect(m_paLockView, SIGNAL(triggered() ), SLOT( slotLockView() ));
-  m_paLinkView = new KToggleAction( i18n( "Lin&k View"), this );
+  m_paLinkView = new KToggleAction( i18nc( "This option links konqueror views", "Lin&k View"), this );
   actionCollection()->addAction( "link", m_paLinkView );
   connect(m_paLinkView, SIGNAL(triggered() ), SLOT( slotLinkView() ));
 
@@ -4463,7 +4463,7 @@ void KonqExtendedBookmarkOwner::openFolderinTabs(const KBookmarkGroup &grp)
     if(KMessageBox::questionYesNo(m_pKonqMainWindow,
 				  i18n("You have requested to open more than 20 bookmarks in tabs. "
                                        "This might take a while. Continue?"),
-				  i18n("Open folder in new tabs")) != KMessageBox::Yes)
+				  i18n("Open bookmarks folder in new tabs")) != KMessageBox::Yes)
       return;
   }
 
