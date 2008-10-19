@@ -54,7 +54,7 @@ KfindDlg::KfindDlg(const KUrl & url, QWidget *parent)
   win = new KfindWindow(frame );
 
   mStatusBar = new KStatusBar(frame);
-  mStatusBar->insertFixedItem(i18n("AMiddleLengthText..."), 0);
+  mStatusBar->insertFixedItem("AMiddleLengthText...", 0);
   setStatusMsg(i18n("Ready."));
   mStatusBar->setItemAlignment(0, Qt::AlignLeft | Qt::AlignVCenter);
   mStatusBar->insertPermanentItem(QString(), 1, 1);
