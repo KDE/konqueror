@@ -1244,7 +1244,7 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
         parent->insertChildFrame( m_tabContainer );
     }
 
-    QStringList childList = cfg.readEntry( QString::fromLatin1( "Children" ).prepend( prefix ),QStringList() );
+    const QStringList childList = cfg.readEntry( QString::fromLatin1( "Children" ).prepend( prefix ),QStringList() );
     for ( QStringList::const_iterator it = childList.begin(); it != childList.end(); ++it )
     {
         loadItem( cfg, tabContainer(), *it, defaultURL, openUrl, forcedUrl );
@@ -1374,12 +1374,12 @@ void KonqViewManager::slotProfileListAboutToShow()
   m_mapProfileNames = KonqProfileDlg::readAllProfiles();
 
   // Generate accelerators
-  QStringList profileNames = m_mapProfileNames.keys();
+  const QStringList profileNames = m_mapProfileNames.keys();
   QStringList accel_strings;
   KAccelGen::generate(profileNames, accel_strings);
 
   // Store menu items
-  QStringList profilePaths = m_mapProfileNames.values();
+  const QStringList profilePaths = m_mapProfileNames.values();
   for (int i = 0; i < accel_strings.count(); ++i) {
       QAction* action = new QAction(accel_strings.at(i), popup);
       action->setData(profilePaths.at(i));

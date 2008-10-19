@@ -588,7 +588,7 @@ void KPluginOptions::pluginLoad( KSharedConfig::Ptr /*config*/ )
             continue;
         }
 
-        QStringList desc = line.split(':');
+        const QStringList desc = line.split(':');
         // avoid crash on broken lines
         if (desc.size()<2)
             continue;

@@ -1925,7 +1925,7 @@ void KonqMainWindow::slotRunFinished()
 
 void KonqMainWindow::applyKonqMainWindowSettings()
 {
-  QStringList toggableViewsShown = KonqSettings::toggableViewsShown();
+  const QStringList toggableViewsShown = KonqSettings::toggableViewsShown();
   QStringList::ConstIterator togIt = toggableViewsShown.begin();
   QStringList::ConstIterator togEnd = toggableViewsShown.end();
   for ( ; togIt != togEnd ; ++togIt )
