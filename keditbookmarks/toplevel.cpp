@@ -268,6 +268,7 @@ KEBApp::KEBApp(
     hsplitter->setOrientation(Qt::Horizontal);
     hsplitter->addWidget(mBookmarkFolderView);
     hsplitter->addWidget(rightSide);
+    hsplitter->setStretchFactor(1,1);
 
     setCentralWidget(hsplitter);
 
