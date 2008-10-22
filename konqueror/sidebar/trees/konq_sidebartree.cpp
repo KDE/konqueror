@@ -274,6 +274,7 @@ void KonqSidebarTree::contentsDragEnterEvent( QDragEnterEvent *ev )
     for( int i = 0; ev->format( i ); i++ )
       if ( *( ev->format( i ) ) )
          m_lstDropFormats.append( ev->format( i ) );
+    K3ListView::contentsDragEnterEvent(ev);
 }
 
 void KonqSidebarTree::contentsDragMoveEvent( QDragMoveEvent *e )
