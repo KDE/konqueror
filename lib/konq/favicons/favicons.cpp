@@ -195,7 +195,7 @@ void FavIconsModule::startDownload(const QString &hostOrURL, bool isHost, const 
 
     KIO::Job *job = KIO::get(iconURL, KIO::NoReload, KIO::HideProgressInfo);
     job->addMetaData(d->metaData);
-    job->addMetaData("errorPage", false);
+    job->addMetaData("errorPage", "false");
     connect(job, SIGNAL(data(KIO::Job *, const QByteArray &)), SLOT(slotData(KIO::Job *, const QByteArray &)));
     connect(job, SIGNAL(result(KJob *)), SLOT(slotResult(KJob *)));
     connect(job, SIGNAL(infoMessage(KJob *, const QString &, const QString &)), SLOT(slotInfoMessage(KJob *, const QString &)));
