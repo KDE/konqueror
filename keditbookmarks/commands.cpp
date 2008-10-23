@@ -591,7 +591,7 @@ KEBMacroCommand* CmdGen::itemsMoved(const QList<KBookmark> & items,
         } else /* if (move) */ {
             QString oldAddress = (*it).address();
             if (bkInsertAddr.startsWith(oldAddress)) 
-                continue; // trying to insert a parent into one of its childs, ignore :)
+                continue; // trying to insert a parent into one of its children, ignore :)
 
             MoveCommand *cmd = new MoveCommand(oldAddress, bkInsertAddr,
                     (*it).text());

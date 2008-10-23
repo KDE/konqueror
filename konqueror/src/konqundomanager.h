@@ -52,7 +52,7 @@ public:
 
     /**
      * This method is not constant because when calling it the m_closedItemsList
-     * might get filled because of delayed initilization.
+     * might get filled because of delayed initialization.
      */
     const QList<KonqClosedItem* >& closedItemsList();
     void undoClosedItem(int index);

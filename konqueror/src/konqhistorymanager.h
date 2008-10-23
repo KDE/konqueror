@@ -99,7 +99,7 @@ public:
     void emitSetMaxAge( int days );
 
     /**
-     * Removes the history entry for @p url, if existant. Tells all other
+     * Removes the history entry for @p url, if existent. Tells all other
      * Konqueror instances via DBUS to do the same.
      *
      * The history is saved after receiving the DBUS call.

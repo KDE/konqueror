@@ -151,7 +151,7 @@ public:
 
     /**
      * Remove urls from the list if an ancestor is present on the list. This can
-     * be used to delete only the ancestor url and skip a potential error of a non-existant url.
+     * be used to delete only the ancestor url and skip a potential error of a non-existent url.
      *
      * For example, for a list of "/home/foo/a", "/home/foo/a/a.txt", "/home/foo/a/a/a.txt", "/home/foo/a/b/b.txt",
      * "home/foo/b/b.txt", this method will return the list "/home/foo/a", "/home/foo/b/b.txt".
