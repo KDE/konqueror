@@ -219,7 +219,7 @@ void KonqClosedWindowsManager::slotNotifyClosedWindowItem(
         KIO::FileUndoManager::self()->newCommandSerialNumber(), numTabs,
         service);
 
-    // Add it to all the windows but don't propogate over dbus,
+    // Add it to all the windows but don't propagate over dbus,
     // as it already comes from dbus)
     addClosedWindowItem(0L, closedWindowItem, false);
 }
@@ -249,7 +249,7 @@ void KonqClosedWindowsManager::slotNotifyRemove(
             return;
     }
 
-    // Remove it in all the windows but don't propogate over dbus,
+    // Remove it in all the windows but don't propagate over dbus,
     // as it already comes from dbus)
     removeClosedWindowItem(0L, closedWindowItem, false);
 }

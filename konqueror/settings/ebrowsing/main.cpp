@@ -102,7 +102,7 @@ KURIFilterModule::KURIFilterModule(QWidget *parent, const QVariantList &)
 
 void KURIFilterModule::load()
 {
-// seems not to be neccesary, since modules automatically call load() on show (uwolfer)
+// seems not to be necessary, since modules automatically call load() on show (uwolfer)
 //     foreach( KCModule* module, modules )
 //     {
 // 	  module->load();
