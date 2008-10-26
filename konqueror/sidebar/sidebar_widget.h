@@ -61,7 +61,7 @@ public:
 	~ButtonInfo() {}
 
 	QString file;
-	QWidget *dock;
+	QPointer<QWidget> dock;
 	KonqSidebarPlugin *module;
 	QString URL;
 	QString libName;
