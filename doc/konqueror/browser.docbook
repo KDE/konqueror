@@ -184,18 +184,18 @@ page from the current &konqueror; window and opens it in a new instance of
 </listitem>
 </varlistentry>
 <varlistentry>
-<term><guimenuitem>Reload all Tabs</guimenuitem></term>
-<listitem><para>Reloads the content of every tab.</para>
-</listitem>
-</varlistentry>
-<varlistentry>
-<term><guimenuitem>Switch to Tab</guimenuitem></term>
+<term><guimenuitem>Other Tabs</guimenuitem></term>
 <listitem><para>Displays a submenu showing all other tabs. Choosing a tab from
 this list makes it the active tab.</para>
 </listitem>
 </varlistentry>
 <varlistentry>
-<term><guimenuitem>Close Other Tabs</guimenuitem></term>
+<term><menuchoice><guisubmenu>Other Tabs</guisubmenu><guimenuitem>Reload all Tabs</guimenuitem></menuchoice></term>
+<listitem><para>Reloads the content of every tab.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term><menuchoice><guisubmenu>Other Tabs</guisubmenu><guimenuitem>Close Other Tabs</guimenuitem></menuchoice></term>
 <listitem><para>To close all but the selected tab page.</para>
 </listitem>
 </varlistentry>
