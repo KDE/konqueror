@@ -1976,6 +1976,7 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
 
     if (part) {
         newView = m_mapViews.value( static_cast<KParts::ReadOnlyPart *>(part) );
+        Q_ASSERT(newView);
         if (newView->isPassiveMode()) {
       // Passive view. Don't connect anything, don't change m_currentView
       // Another view will become the current view very soon
