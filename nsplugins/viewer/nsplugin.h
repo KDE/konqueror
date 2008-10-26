@@ -176,6 +176,10 @@ public:
   void gotFocusIn();
   void gotFocusOut();
 
+  // sets and returns the current/last used NSPluginInstance instance.
+  static NSPluginInstance* currentPluginView();
+  static void setCurrentPluginView(NSPluginInstance*);
+
   // value handling
   NPError NPGetValue(NPPVariable variable, void *value);
   NPError NPSetValue(NPNVariable variable, void *value);
@@ -268,6 +272,8 @@ private:
 
   QQueue<Request *> _waitingRequests;
   QMap<int, Request*> _jsrequests;
+  
+  static NSPluginInstance* s_currentPluginView;
 };
 
 
