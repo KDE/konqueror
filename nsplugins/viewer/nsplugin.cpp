@@ -103,10 +103,12 @@ extern "C" void __pure_virtual()
 }
 #endif
 
-// The plugin view is always the ndata of the instance. Sometimes, plug-ins will call an instance-specific function
-// with a NULL instance. To workaround this, call the last plug-in view that made a call to a plug-in.
-// Currently, the current plug-in view is only set before NPP_New in PluginView::start.
-// This specifically works around Flash and Shockwave. When we call NPP_New, they call NPN_Useragent with a NULL instance.
+// The NSPluginInstance is always the ndata of the instance. Sometimes, plug-ins will call an instance-specific function
+// with a NULL instance. To workaround this, we remember the last NSPluginInstance that made a call to a plug-in and
+// returns those one in such cases. This specifically works around Flash and Shockwave which do e.g. call NPN_Useragent
+// with a NULL instance When we call NPP_New.
+// At the moment we do setCurrentPluginView() only if the NSPluginInstance is created. Probably it would be more logical
+// to do that more often to prevent some wired situations where we may end with the wrong NSPluginInstance for a plugin.
 NSPluginInstance* NSPluginInstance::s_currentPluginView = 0;
 NSPluginInstance* NSPluginInstance::currentPluginView() { return s_currentPluginView; }
 void NSPluginInstance::setCurrentPluginView(NSPluginInstance* inst) { s_currentPluginView = inst; }
