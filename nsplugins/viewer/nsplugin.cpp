@@ -1,12 +1,13 @@
 /*
-
   This is an encapsulation of the  Netscape plugin API.
-
 
   Copyright (c) 2000 Matthias Hoelzer-Kluepfel <hoelzer@kde.org>
                      Stefan Schimanski <1Stein@gmx.de>
                 2003-2005 George Staikos <staikos@kde.org>
                 2007, 2008 Maksim Orlovich     <maksim@kde.org>
+                2006, 2007, 2008 Apple Inc.
+                2008 Collabora, Ltd.
+                2008 Sebastian Sauer <mail@dipe.org>
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -21,7 +22,6 @@
   You should have received a copy of the GNU General Public License
   along with this program; if not, write to the Free Software
   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
-
 */
 
 #include "nsplugin.h"
@@ -102,6 +102,22 @@ extern "C" void __pure_virtual()
    abort();
 }
 #endif
+
+// The NSPluginInstance is always the ndata of the instance. Sometimes, plug-ins will call an instance-specific function
+// with a NULL instance. To workaround this, we remember the last NSPluginInstance produced with the
+// NSPluginClass::newInstance() method. This specifically works around Flash and Shockwave which do e.g. call NPN_Useragent
+// with a NULL instance When we call NPP_New.
+// At the moment we do setLastPluginInstance() only if the NSPluginInstance is created. Probably it would be more logical
+// to do that more often to prevent some wired situations where we may end with the wrong NSPluginInstance for a plugin.
+NSPluginInstance* NSPluginInstance::s_lastPluginInstance = 0;
+NSPluginInstance* NSPluginInstance::lastPluginInstance() { return s_lastPluginInstance; }
+void NSPluginInstance::setLastPluginInstance(NSPluginInstance* inst) { s_lastPluginInstance = inst; }
+static NSPluginInstance* pluginViewForInstance(NPP instance)
+{
+    if (instance && instance->ndata)
+        return static_cast<NSPluginInstance*>(instance->ndata);
+    return NSPluginInstance::lastPluginInstance();
+}
 
 // server side functions -----------------------------------------------------
 
@@ -211,7 +227,7 @@ NPError g_NPN_DestroyStream(NPP instance, NPStream* stream,
    // FIXME: is this correct?  I imagine it is not.  (GS)
    kDebug(1431) << "g_NPN_DestroyStream()";
 
-   NSPluginInstance *inst = (NSPluginInstance*) instance->ndata;
+   NSPluginInstance *inst = pluginViewForInstance(instance);
    inst->streamFinished( (NSPluginStream *)stream->ndata );
 
    switch (reason) {
@@ -263,7 +279,7 @@ NPError g_NPN_GetURL(NPP instance, const char *url, const char *target)
 {
    kDebug(1431) << "g_NPN_GetURL: url=" << url << " target=" << target;
 
-   NSPluginInstance *inst = static_cast<NSPluginInstance*>(instance->ndata);
+   NSPluginInstance *inst = pluginViewForInstance(instance);
    if (inst) {
       inst->requestURL( QString::fromLatin1(url), QString(),
                         QString::fromLatin1(target), 0 );
@@ -277,7 +293,7 @@ NPError g_NPN_GetURLNotify(NPP instance, const char *url, const char *target,
                          void* notifyData)
 {
     kDebug(1431) << "g_NPN_GetURLNotify: url=" << url << " target=" << target << " inst=" << (void*)instance;
-   NSPluginInstance *inst = static_cast<NSPluginInstance*>(instance->ndata);
+   NSPluginInstance *inst = pluginViewForInstance(instance);
    if (inst) {
       kDebug(1431) << "g_NPN_GetURLNotify: ndata=" << (void*)inst;
       inst->requestURL( QString::fromLatin1(url), QString(),
@@ -373,7 +389,7 @@ NPError g_NPN_PostURLNotify(NPP instance, const char* url, const char* target,
       // FIXME
    }
 
-   NSPluginInstance *inst = static_cast<NSPluginInstance*>(instance->ndata);
+   NSPluginInstance *inst = pluginViewForInstance(instance);
    if (inst && !inst->normalizedURL(QString::fromLatin1(url)).isNull()) {
       inst->postURL( QString::fromLatin1(url), postdata, browserArgs.contentType(),
                      QString::fromLatin1(target), notifyData, args, browserArgs, true );
@@ -471,7 +487,7 @@ NPError g_NPN_PostURL(NPP instance, const char* url, const char* target,
       // FIXME
    }
 
-   NSPluginInstance *inst = static_cast<NSPluginInstance*>(instance->ndata);
+   NSPluginInstance *inst = pluginViewForInstance(instance);
    if (inst && !inst->normalizedURL(QString::fromLatin1(url)).isNull()) {
       inst->postURL( QString::fromLatin1(url), postdata, browserArgs.contentType(),
                      QString::fromLatin1(target), 0L, args, browserArgs, false );
@@ -493,7 +509,7 @@ void g_NPN_Status(NPP instance, const char *message)
       return;
 
    // turn into an instance signal
-   NSPluginInstance *inst = (NSPluginInstance*) instance->ndata;
+   NSPluginInstance *inst = pluginViewForInstance(instance);
 
    inst->emitStatus(message);
 }
@@ -1429,6 +1445,8 @@ QDBusObjectPath NSPluginClass::newInstance( const QString &url, const QString &m
                                                   baseURL, mimeType, appId,
                                                   callbackId, embed, this );
 
+   // set the current plugin instance
+   NSPluginInstance::setLastPluginInstance(inst);
 
    // create source stream
    if ( !src.isEmpty() )
@@ -1441,6 +1459,10 @@ QDBusObjectPath NSPluginClass::newInstance( const QString &url, const QString &m
 
 void NSPluginClass::destroyInstance( NSPluginInstance* inst )
 {
+    // be sure we don't deal with a dangling pointer
+    if ( NSPluginInstance::lastPluginInstance() == inst )
+        NSPluginInstance::setLastPluginInstance(0);
+
     // mark for destruction
     _trash.append( inst );
     timer(); //_timer->start( 0, TRUE );

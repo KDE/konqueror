@@ -1,10 +1,13 @@
 /*
-
   This is an encapsulation of the  Netscape plugin API.
 
   Copyright (c) 2000 Matthias Hoelzer-Kluepfel <hoelzer@kde.org>
                      Stefan Schimanski <1Stein@gmx.de>
-  Copyright (c) 2003-2005 George Staikos <staikos@kde.org>
+                2003-2005 George Staikos <staikos@kde.org>
+                2007, 2008 Maksim Orlovich     <maksim@kde.org>
+                2006, 2007, 2008 Apple Inc.
+                2008 Collabora, Ltd.
+                2008 Sebastian Sauer <mail@dipe.org>
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
@@ -19,9 +22,7 @@
   You should have received a copy of the GNU General Public License
   along with this program; if not, write to the Free Software
   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
-
 */
-
 
 #ifndef __NS_PLUGIN_H__
 #define __NS_PLUGIN_H__
@@ -176,6 +177,10 @@ public:
   void gotFocusIn();
   void gotFocusOut();
 
+  // last via NSPluginClass::newInstance() produced NSPluginInstance instance.
+  static NSPluginInstance* lastPluginInstance();
+  static void setLastPluginInstance(NSPluginInstance*);
+
   // value handling
   NPError NPGetValue(NPPVariable variable, void *value);
   NPError NPSetValue(NPNVariable variable, void *value);
@@ -268,6 +273,8 @@ private:
 
   QQueue<Request *> _waitingRequests;
   QMap<int, Request*> _jsrequests;
+  
+  static NSPluginInstance* s_lastPluginInstance;
 };
 
 
