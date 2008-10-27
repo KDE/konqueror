@@ -226,6 +226,9 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
   if ( !s_pCompletion ) {
       s_bookmarkManager = KBookmarkManager::userBookmarksManager();
 
+      // let the KBookmarkManager know that we are a browser, equals to "keditbookmarks --browser"
+      s_bookmarkManager->setEditorOptions("konqueror", true);
+
       KonqHistoryManager* mgr = new KonqHistoryManager(s_bookmarkManager);
       s_pCompletion = mgr->completionObject();
 
