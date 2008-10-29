@@ -24,7 +24,6 @@
 #include <kparts/part.h>
 #include <kfileitem.h>
 #include <kdebug.h>
-#include <Qt3Support/Q3PtrList>
 
 class KQuery;
 class KAboutData;
