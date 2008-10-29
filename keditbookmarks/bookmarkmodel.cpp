@@ -130,7 +130,7 @@ QVariant KBookmarkModel::data(const QModelIndex &index, int role) const
 Qt::ItemFlags KBookmarkModel::flags(const QModelIndex &index) const
 {
     if (!index.isValid())
-        return Qt::ItemIsEnabled;
+        return Qt::ItemIsDropEnabled;
 
     KBookmark bk = bookmarkForIndex(index);
     if( !bk.address().isEmpty() ) // non root
