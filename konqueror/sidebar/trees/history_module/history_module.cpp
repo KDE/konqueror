@@ -258,7 +258,7 @@ void KonqSidebarHistoryModule::showPopupMenu( int which, const QPoint& pos )
 
     menu->addAction( m_collection->action("clear") );
     menu->addSeparator();
-    menu->insertItem( i18n("Sort"), sortMenu );
+    menu->insertItem( i18nc("@action:inmenu Parent of 'By Name' and 'By Date'", "Sort"), sortMenu );
     menu->addSeparator();
     menu->addAction( m_collection->action("preferences") );
 
