@@ -33,7 +33,6 @@
 SearchBar::SearchBar(QWidget *parent)
     : QWidget(parent)
     , m_widget(0)
-    , m_webView(0)
     , m_timeLine(new QTimeLine(150, this))
 {
     initializeSearchWidget();

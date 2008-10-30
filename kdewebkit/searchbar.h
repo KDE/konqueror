@@ -69,7 +69,6 @@ private:
     Ui::SearchBar ui;
     QWidget *m_widget;
 
-    KWebView *m_webView;
     QTimeLine *m_timeLine;
 
 private Q_SLOTS:
