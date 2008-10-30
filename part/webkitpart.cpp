@@ -113,6 +113,8 @@ void WebKitPart::initAction()
 
     action = actionCollection()->addAction(KStandardAction::SelectAll, "selectAll",
                                            m_browserExtension, SLOT(slotSelectAll()));
+    action->setShortcutContext(Qt::WidgetShortcut);
+    m_webView->addAction(action);
 
     action = new KAction(i18n("View Do&cument Source"), this);
     actionCollection()->addAction("viewDocumentSource", action);
