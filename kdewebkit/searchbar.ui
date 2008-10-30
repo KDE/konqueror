@@ -1,88 +1,101 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>SearchBar</class>
- <widget class="QWidget" name="SearchBar" >
-  <property name="geometry" >
+ <widget class="QWidget" name="SearchBar">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>686</width>
-    <height>37</height>
+    <width>464</width>
+    <height>31</height>
    </rect>
   </property>
-  <property name="sizePolicy" >
-   <sizepolicy vsizetype="Minimum" hsizetype="Preferred" >
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout" >
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <property name="leftMargin">
+    <number>6</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>6</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
    <item>
-    <widget class="QToolButton" name="closeButton" >
-     <property name="toolTip" >
+    <widget class="QToolButton" name="closeButton">
+     <property name="toolTip">
       <string>Close the search bar</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLabel" name="searchInfo" >
-     <property name="text" >
+    <widget class="QLabel" name="searchInfo">
+     <property name="text">
       <string>Text to find:</string>
      </property>
-     <property name="buddy" >
+     <property name="buddy">
       <cstring>searchLineEdit</cstring>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="KLineEdit" name="searchLineEdit" >
-     <property name="toolTip" >
+    <widget class="KLineEdit" name="searchLineEdit">
+     <property name="toolTip">
       <string>Enter the text to search for here</string>
      </property>
-     <property name="showClearButton" stdset="0" >
+     <property name="showClearButton" stdset="0">
       <bool>true</bool>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QToolButton" name="nextButton" >
-     <property name="toolTip" >
+    <widget class="QToolButton" name="nextButton">
+     <property name="toolTip">
       <string>Find the next match for the current search phrase</string>
      </property>
-     <property name="text" >
-      <string>Next</string>
+     <property name="text">
+      <string>&amp;Next</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QToolButton" name="previousButton" >
-     <property name="toolTip" >
+    <widget class="QToolButton" name="previousButton">
+     <property name="toolTip">
       <string>Find the previous match for the current search phrase</string>
      </property>
-     <property name="text" >
-      <string>Previous</string>
+     <property name="text">
+      <string>&amp;Previous</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QCheckBox" name="matchCaseCheckBox" >
-     <property name="text" >
+    <widget class="QCheckBox" name="matchCaseCheckBox">
+     <property name="text">
       <string>Match Case</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QCheckBox" name="searchAsYouType" >
-     <property name="text" >
+    <widget class="QCheckBox" name="searchAsYouType">
+     <property name="text">
       <string>Search Automatically</string>
      </property>
     </widget>
    </item>
    <item>
-    <spacer name="horizontalSpacer" >
-     <property name="orientation" >
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
-     <property name="sizeHint" stdset="0" >
+     <property name="sizeHint" stdset="0">
       <size>
        <width>26</width>
        <height>20</height>

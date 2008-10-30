@@ -31,6 +31,9 @@
 class QTimeLine;
 class KWebView;
 
+/**
+ * This is the widget that shows up when the search is initiated.
+ */
 class SearchBar : public QWidget
 {
     Q_OBJECT
