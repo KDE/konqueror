@@ -114,7 +114,7 @@ const KComponentData &KonqSidebarFactory::componentData()
 	if( !s_instance )
 	{
 		s_about = new KAboutData("konqsidebartng", 0, ki18n("Extended Sidebar"), "0.1");
-		s_about->addAuthor(ki18n("Joseph WENNINGER"), KLocalizedString(), "jowenn@bigfoot.com");
+		s_about->addAuthor(ki18n("Joseph Wenninger"), KLocalizedString(), "jowenn@bigfoot.com");
 		s_instance = new KComponentData(s_about);
 	}
 	return *s_instance;
