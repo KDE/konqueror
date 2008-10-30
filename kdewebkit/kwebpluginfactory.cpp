@@ -55,8 +55,11 @@ QObject* KWebPluginFactory::create(const QString& mimeType, const QUrl& url, con
     Q_UNUSED(argumentValues);
     QWidget* w = new QWidget;
     KParts::ReadOnlyPart* part = KMimeTypeTrader::createPartInstanceFromQuery<KParts::ReadOnlyPart>(mimeType, w, w);
-    part->openUrl(url);
-    if (part->widget() != w) part->widget()->setParent(w);
+    if (part) {
+        part->openUrl(url);
+        if (part->widget() != w)
+            part->widget()->setParent(w);
+    }
     kDebug() << "Asked for plugin, got" << part;
     return w;
 }
