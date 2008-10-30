@@ -76,11 +76,11 @@ QString KonqAboutPageSingleton::launch()
   else
     res = res.arg( "" );
 
-  res = res.arg( i18n("Be free.") )
+  res = res.arg( i18nc("KDE 4 tag line, see http://kde.org/img/kde40.png", "Be free.") )
       .arg( i18n( "Konqueror" ) )
-      .arg( i18n("Be free.") )
+      .arg( i18nc("KDE 4 tag line, see http://kde.org/img/kde40.png", "Be free.") )
       .arg( i18n("Konqueror is a web browser, file manager and universal document viewer.") )
-      .arg( i18n( "Starting Points" ) )
+      .arg( i18nc( "Link that points to the first page of the Konqueror 'about page', Starting Points contains links to Home, Network Folders, Trash, etc.", "Starting Points" ) )
       .arg( i18n( "Introduction" ) )
       .arg( i18n( "Tips" ) )
       .arg( i18n( "Specifications" ) )
@@ -132,11 +132,11 @@ QString KonqAboutPageSingleton::intro()
     else
 	res = res.arg( "" );
 
-    res = res.arg( i18n("Be free.") )
+    res = res.arg( i18nc("KDE 4 tag line, see http://kde.org/img/kde40.png", "Be free.") )
 	.arg( i18n( "Konqueror" ) )
-	.arg( i18n( "Be free.") )
+	.arg( i18nc("KDE 4 tag line, see http://kde.org/img/kde40.png", "Be free.") )
 	.arg( i18n( "Konqueror is your file manager, web browser and universal document viewer.") )
-	.arg( i18n( "Starting Points" ) )
+	.arg( i18nc( "Link that points to the first page of the Konqueror 'about page', Starting Points contains links to Home, Network Folders, Trash, etc.", "Starting Points" ) )
 	.arg( i18n( "Introduction" ) )
           .arg( i18n( "Tips" ) )
           .arg( i18n( "Specifications" ) )
@@ -186,11 +186,11 @@ QString KonqAboutPageSingleton::specs()
     else
 	res = res.arg( "" );
 
-    res = res.arg( i18n("Be free.") )
+    res = res.arg( i18nc("KDE 4 tag line, see http://kde.org/img/kde40.png", "Be free.") )
 	.arg( i18n( "Konqueror" ) )
-	.arg( i18n("Be free.") )
+	.arg( i18nc("KDE 4 tag line, see http://kde.org/img/kde40.png", "Be free.") )
 	.arg( i18n("Konqueror is your file manager, web browser and universal document viewer.") )
-	.arg( i18n( "Starting Points" ) )
+	.arg( i18nc( "Link that points to the first page of the Konqueror 'about page', Starting Points contains links to Home, Network Folders, Trash, etc.", "Starting Points" ) )
 	.arg( i18n( "Introduction" ) )
 	.arg( i18n( "Tips" ) )
 	.arg( i18n( "Specifications" ) )
@@ -238,12 +238,12 @@ QString KonqAboutPageSingleton::specs()
           .arg( i18n("HTTP 1.1 (including gzip/bzip2 compression)") )
           .arg( i18n("FTP") )
           .arg( i18n("and <A HREF=\"%1\">many more...</A>", QString("exec:/kcmshell4 ioslaveinfo")) )
-          .arg( i18n("URL-Completion") )
+          .arg( i18nc("A feature of Konqueror", "URL-Completion") )
           .arg( i18n("Manual"))
 	  .arg( i18n("Popup"))
 	  .arg( i18n("(Short-) Automatic"))
 	  .arg( "<img width='16' height='16' src=\"%1\">" ).arg( continue_icon_path )
-	  .arg( i18n("<a href=\"%1\">Return to Starting Points</a>", QString("launch.html")) )
+	  .arg( i18nc("Link that points to the first page of the Konqueror 'about page', Starting Points contains links to Home, Network Folders, Trash, etc.", "<a href=\"%1\">Return to Starting Points</a>", QString("launch.html")) )
 
           ;
 
@@ -283,11 +283,11 @@ QString KonqAboutPageSingleton::tips()
     else
 	res = res.arg( "" );
 
-    res = res.arg( i18n("Be free.") )
+    res = res.arg( i18nc("KDE 4 tag line, see http://kde.org/img/kde40.png", "Be free.") )
 	.arg( i18n( "Konqueror" ) )
-	.arg( i18n("Be free.") )
+	.arg( i18nc("KDE 4 tag line, see http://kde.org/img/kde40.png", "Be free.") )
 	.arg( i18n("Konqueror is your file manager, web browser and universal document viewer.") )
-	.arg( i18n( "Starting Points" ) )
+	.arg( i18nc( "Link that points to the first page of the Konqueror 'about page', Starting Points contains links to Home, Network Folders, Trash, etc.", "Starting Points" ) )
 	.arg( i18n( "Introduction" ) )
 	.arg( i18n( "Tips" ) )
 	.arg( i18n( "Specifications" ) )
@@ -324,7 +324,7 @@ QString KonqAboutPageSingleton::tips()
 	  .arg( i18n( "Advanced users will appreciate the Konsole which you can embed into "
 		      "Konqueror (Window -> <img width='16' height='16' SRC=\"%1\"></img> Show "
  		      "Terminal Emulator).", openterm_icon_path))
-	  .arg( i18n( "<img width='16' height='16' src=\"%1\"></img>" ,  continue_icon_path ) )
+	  .arg( "<img width='16' height='16' src=\"%1\">" ).arg( continue_icon_path )
 	  .arg( i18n( "Next: Specifications" ) )
           ;
 
