@@ -63,7 +63,7 @@ PopupMenuGUIClient::PopupMenuGUIClient( const KService::List &embeddingServices,
         QList<QAction *> previewActions;
         if (embeddingServices.count() == 1) {
             KService::Ptr service = embeddingServices.first();
-            QAction* act = addEmbeddingService( 0, i18n( "Preview in %1", service->name() ), service );
+            QAction* act = addEmbeddingService( 0, i18n( "Preview &in %1", service->name() ), service );
             previewActions.append(act);
         } else if (embeddingServices.count() > 1) {
             KService::List::ConstIterator it = embeddingServices.begin();

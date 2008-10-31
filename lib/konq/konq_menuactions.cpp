@@ -368,7 +368,7 @@ int KonqMenuActions::addActionsTo(QMenu* mainMenu)
         s.userPriority.count() + s.userPrioritySubmenus.count() > 1)
     {
         // we have more than one item, so let's make a submenu
-        actionMenu = new KMenu(i18nc("@title:menu", "Actions"), mainMenu);
+        actionMenu = new KMenu(i18nc("@title:menu", "&Actions"), mainMenu);
         actionMenu->menuAction()->setObjectName("actions_submenu"); // for the unittest
         mainMenu->addMenu(actionMenu);
     }
@@ -479,7 +479,7 @@ void KonqMenuActions::addOpenWithActionsTo(QMenu* topMenu, const QString& trader
 
                 QString actionName(service->name().replace('&', "&&"));
                 if (menu == topMenu) // no submenu -> prefix single offer
-                    actionName = i18n("Open with %1", actionName);
+                    actionName = i18n("Open &with %1", actionName);
 
                 KAction* act = d->m_ownActions.addAction("openwith");
                 act->setIcon(KIcon(service->icon()));
