@@ -36,6 +36,7 @@
 #include <klocale.h>
 #include <kstandardguiitem.h>
 #include <kdirlister.h>
+#include <KLineEdit>
 
 #include "kftabdlg.h"
 #include "kquery.h"

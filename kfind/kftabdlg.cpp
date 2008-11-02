@@ -275,7 +275,7 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     QLabel * typeL   =new QLabel( i18n("File &type:"), pages[2] );
     typeL->setBuddy( typeBox );
     textEdit=new KLineEdit(pages[2]);
-    dynamic_cast<KLineEdit *>(textEdit)->setClearButtonShown(true);
+    textEdit->setClearButtonShown(true);
     textEdit->setObjectName( "textEdit" );
     QLabel * textL   =new QLabel(i18n("C&ontaining text:"), pages[2]);
     textL->setBuddy( textEdit );

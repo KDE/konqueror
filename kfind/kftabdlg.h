@@ -27,6 +27,7 @@ class QDialog;
 class QComboBox;
 class QSpinBox;
 class QLabel;
+class KLineEdit;
 
 class KfDirDialog;
 
@@ -73,7 +74,7 @@ public:
   QCheckBox *useLocateCb;
   // for third page
   QComboBox *typeBox;
-  QLineEdit * textEdit;
+  KLineEdit * textEdit;
   QCheckBox *caseSensCb;
   QComboBox *m_usernameBox;
   QComboBox *m_groupBox;
