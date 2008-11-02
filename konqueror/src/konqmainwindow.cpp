@@ -1688,8 +1688,6 @@ void KonqMainWindow::slotReloadPopup()
 
 void KonqMainWindow::slotHome(Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers)
 {
-    // TODO: it would be good to give the home button a different icon in webbrowsing
-    // and in filemanager mode.
     const QString homeURL = m_currentView && m_currentView->showsDirectory() ? QDir::homePath()
                             : KonqSettings::homeURL();
 
@@ -2044,6 +2042,12 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
   updateViewModeActions();
 
   m_paHome->setIcon(KIcon(m_currentView->showsDirectory() ? "user-home" : "go-home"));
+  m_paHome->setText( m_currentView->showsDirectory() ?  i18n( "Home Folder") : i18n( "Home Page"  ) );
+  m_paHome->setToolTip( m_currentView->showsDirectory() ? i18n( "Navigate to your 'Home Folder'") : i18n( "Navigate to your 'Home Page'"  ) );
+  m_paHome->setWhatsThis(m_currentView->showsDirectory() ?  i18n( "Navigate to your local 'Home Folder'" ) : 
+                                i18n( "<html>Navigate to your 'Home Page'<br /><br />"
+                                "You can configure the location where this button takes you "
+                                "under <b>Settings -> Configure Konqueror -> General</b>.</html>" )  );
 
   m_currentView->frame()->statusbar()->updateActiveStatus();
 
@@ -3871,11 +3875,6 @@ void KonqMainWindow::initActions()
   m_paClosedItems->setWhatsThis( i18n( "Move backwards one step in the closed tabs history" ) );
   m_paClosedItems->setToolTip( i18n( "Move backwards one step in the closed tabs history" ) );
 
-
-  m_paHome->setWhatsThis( i18n( "<html>Navigate to your 'Home Location'<br /><br />"
-                                "You can configure the location where this button takes you "
-                                "under <b>Settings -> Configure Konqueror -> General</b>.</html>" ) );
-  m_paHome->setToolTip( i18n( "Navigate to your 'Home Location'" ) );
 
   m_paReload->setWhatsThis( i18n( "<html>Reload the currently displayed document<br /><br />"
                                   "This may, for example, be needed to refresh web pages that have been "
