@@ -1,8 +1,7 @@
 macro_optional_find_package(GLIB2)
+macro_log_feature(GLIB2_FOUND "glib2" "Low-level core library for data structure handling, portability wrappers, etc." "http://www.gtk.org" FALSE "2.x" "Glib event loop integration from Qt is required for Netscape plugins support.")
 if(GLIB2_FOUND)
-    set( HAVE_GLIB2 1 )
-else(GLIB2_FOUND)
-    MESSAGE(STATUS "Glib2 not found, Glib event loop integration from Qt required for Netscape plugins support.")
+  set(HAVE_GLIB2 1)
 endif( GLIB2_FOUND)
 
 configure_file (config-nsplugins.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-nsplugins.h )
