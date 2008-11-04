@@ -23,46 +23,15 @@
 #define KPROXYDLG_H
 
 #include <kcmodule.h>
+#include "kproxydlgbase.h"
 #include "ui_kproxydlg.h"
-
-class QTabWidget;
-
-class KProxyData;
-
-class KProxyDialogUI : public QWidget, public Ui::KProxyDialogUI
-{
-public:
-  KProxyDialogUI( QWidget *parent ) : QWidget( parent ) {
-    setupUi( this );
-  }
-};
-
-
-class KProxyOptions : public KCModule
-{
-  Q_OBJECT
-
-public:
-  KProxyOptions(QWidget *parent, const QVariantList &args);
-  ~KProxyOptions();
-
-  virtual void load();
-  virtual void save();
-  virtual void defaults();
-  virtual QString quickHelp() const;
-
-private:
-  KCModule* mProxy;
-  KCModule* mSocks;
-  QTabWidget* mTab;
-};
 
 class KProxyDialog : public KCModule
 {
   Q_OBJECT
 
 public:
-  KProxyDialog(const KComponentData &componentData, QWidget* parent );
+  KProxyDialog(QWidget *parent, const QVariantList &args);
   ~KProxyDialog();
 
   virtual void load();
@@ -81,8 +50,8 @@ private:
   void showInvalidMessage( const QString& _msg = QString() );
 
 private:
-  KProxyDialogUI* mDlg;
-  KProxyData* mData;
+  Ui::KProxyDialogUI mUi;
+  KProxyData mData;
   bool mDefaultData;
 };
 

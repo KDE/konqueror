@@ -49,7 +49,7 @@ K_PLUGIN_FACTORY(KioConfigFactory,
         registerPlugin<UserAgentDlg>("useragent");
         registerPlugin<SMBRoOptions>("smb");
         registerPlugin<KIOPreferences>("netpref");
-        registerPlugin<KProxyOptions>("proxy");
+        registerPlugin<KProxyDialog>("proxy");
         registerPlugin<KCookiesMain>("cookie");
         registerPlugin<CacheConfigModule>("cache");
         registerPlugin<BookmarksConfigModule>("bookmarks");
