@@ -65,41 +65,12 @@ KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
 
     miscLayout->addWidget(cbNewWin);
 
-    cbShowTips = new QCheckBox(i18n("Show file &tips"), this);
-    connect(cbShowTips, SIGNAL(toggled(bool)), this, SLOT(changed()));
-
-    cbShowTips->setWhatsThis( i18n("Here you can control if, when moving the mouse over a file, you want to see a "
-                                    "small popup window with additional information about that file"));
-
-    connect(cbShowTips, SIGNAL(toggled(bool)), SLOT(slotShowTips(bool)));
-
-    miscLayout->addWidget(cbShowTips);
-/*
-    //connect(cbShowTips, SIGNAL(toggled(bool)), sbToolTip, SLOT(setEnabled(bool)));
-    //connect(cbShowTips, SIGNAL(toggled(bool)), fileTips, SLOT(setEnabled(bool)));
-    fileTips->setBuddy(sbToolTip);
-    QString tipstr = i18n("If you move the mouse over a file, you usually see a small popup window that shows some "
-                          "additional information about that file. Here, you can set how many items of information "
-                          "are displayed");
-    QWhatsThis::add( fileTips, tipstr );
-    QWhatsThis::add( sbToolTip, tipstr );
-*/
-
     QHBoxLayout *previewLayout = new QHBoxLayout;
     QWidget* spacer = new QWidget(this);
     spacer->setMinimumSize( 20, 0 );
     spacer->setSizePolicy( QSizePolicy::Fixed, QSizePolicy::Minimum );
 
     previewLayout->addWidget(spacer);
-
-    cbShowPreviewsInTips = new QCheckBox(i18n("Show &previews in file tips"), this);
-    connect(cbShowPreviewsInTips, SIGNAL(toggled(bool)), this, SLOT(changed()));
-
-    cbShowPreviewsInTips->setWhatsThis( i18n("Here you can control if you want the "
-                                             "popup window to contain a larger preview for the file, "
-                                             "when moving the mouse over it."));
-
-    previewLayout->addWidget(cbShowPreviewsInTips);
 
     miscLayout->addLayout(previewLayout);
 
@@ -148,35 +119,15 @@ KBehaviourOptions::~KBehaviourOptions()
 {
 }
 
-void KBehaviourOptions::slotShowTips(bool b)
-{
-//    sbToolTip->setEnabled( b );
-    cbShowPreviewsInTips->setEnabled( b );
-//    fileTips->setEnabled( b );
-
-}
-
 void KBehaviourOptions::load()
 {
     KConfigGroup cg(g_pConfig, groupname);
     cbNewWin->setChecked( cg.readEntry("AlwaysNewWin", false) );
     updateWinPixmap(cbNewWin->isChecked());
 
-    bool stips = cg.readEntry( "ShowFileTips", true);
-    cbShowTips->setChecked( stips );
-    slotShowTips( stips );
-
-    bool showPreviewsIntips = cg.readEntry( "ShowPreviewsInFileTips", true);
-    cbShowPreviewsInTips->setChecked( showPreviewsIntips );
-
     KSharedConfig::Ptr globalconfig = KSharedConfig::openConfig("kdeglobals", KConfig::NoGlobals);
     KConfigGroup cg2(globalconfig, "KDE");
     cbShowDeleteCommand->setChecked( cg2.readEntry("ShowDeleteCommand", false) );
-
-//    if (!stips) sbToolTip->setEnabled( false );
-    if (!stips) cbShowPreviewsInTips->setEnabled( false );
-
-//    sbToolTip->setValue( g_pConfig->readEntry( "FileTipItems", 6 ) );
 
     KSharedConfigPtr kioConfig = KSharedConfig::openConfig("kiorc", KConfig::NoGlobals);
     KConfigGroup confirmationGroup(kioConfig, "Confirmations");
@@ -188,13 +139,6 @@ void KBehaviourOptions::defaults()
 {
     cbNewWin->setChecked(false);
 
-    cbShowTips->setChecked( true );
-    //sbToolTip->setEnabled( true );
-    //sbToolTip->setValue( 6 );
-
-    cbShowPreviewsInTips->setChecked( true );
-    cbShowPreviewsInTips->setEnabled( true );
-
     cbMoveToTrash->setChecked(DEFAULT_CONFIRMTRASH);
     cbDelete->setChecked(DEFAULT_CONFIRMDELETE);
     cbShowDeleteCommand->setChecked( false );
@@ -205,9 +149,6 @@ void KBehaviourOptions::save()
     KConfigGroup cg(g_pConfig, groupname);
 
     cg.writeEntry( "AlwaysNewWin", cbNewWin->isChecked() );
-    cg.writeEntry( "ShowFileTips", cbShowTips->isChecked() );
-    cg.writeEntry( "ShowPreviewsInFileTips", cbShowPreviewsInTips->isChecked() );
-//    g_pConfig->writeEntry( "FileTipsItems", sbToolTip->value() );
 
     KSharedConfig::Ptr globalconfig = KSharedConfig::openConfig("kdeglobals", KConfig::NoGlobals);
     KConfigGroup cg2(globalconfig, "KDE");

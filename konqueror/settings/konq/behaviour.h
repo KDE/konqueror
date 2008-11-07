@@ -41,22 +41,15 @@ public:
   virtual void defaults();
 
 protected Q_SLOTS:
-
   void updateWinPixmap(bool);
-  void slotShowTips(bool);
-private:
 
+private:
   KSharedConfig::Ptr g_pConfig;
   QString groupname;
 
   QCheckBox *cbNewWin;
 
   QLabel *winPixmap;
-
-  //QLabel *fileTips;
-  //QSpinBox  *sbToolTip;
-  QCheckBox *cbShowTips;
-  QCheckBox *cbShowPreviewsInTips;
 
   QCheckBox *cbMoveToTrash;
   QCheckBox *cbDelete;
