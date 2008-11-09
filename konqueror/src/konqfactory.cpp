@@ -230,7 +230,7 @@ const KAboutData *KonqFactory::aboutData()
                         KDE_VERSION_STRING,
                         ki18n("Web browser, file manager and document viewer."),
                         KAboutData::License_GPL,
-                        ki18n("(C) 1999-2007, The Konqueror developers"),
+                        ki18n("(C) 1999-2008, The Konqueror developers"),
                         KLocalizedString(),
                         I18N_NOOP("http://konqueror.kde.org") );
     s_aboutData->addAuthor( ki18n("David Faure"), ki18n("Developer (framework, parts, JavaScript, I/O library) and maintainer"), "faure@kde.org" );
