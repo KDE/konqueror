@@ -126,9 +126,9 @@ extern "C"
    KDE_EXPORT bool add_konqsidebar_tree(QString* fn, QString*, QMap<QString,QString> *map)
    {
 	  KStandardDirs *dirs=KGlobal::dirs();
-	  QStringList list=dirs->findAllResources("data","konqsidebartng/dirtree/*.desktop",KStandardDirs::NoDuplicates);
+	  const QStringList list=dirs->findAllResources("data","konqsidebartng/dirtree/*.desktop",KStandardDirs::NoDuplicates);
 	  QStringList names;
-	  for (QStringList::ConstIterator it=list.begin();it!=list.end();++it)
+	  for (QStringList::ConstIterator it=list.constBegin();it!=list.constEnd();++it)
 	  {
 		KConfig _sc( *it, KConfig::SimpleConfig );
 		KConfigGroup sc(&_sc, "Desktop Entry");

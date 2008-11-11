@@ -138,8 +138,8 @@ KonqViewFactory KonqFactory::createView( const QString &serviceType,
 
     // Look for this service
     if (!serviceName.isEmpty()) {
-        KService::List::const_iterator it = offers.begin();
-        for ( ; it != offers.end() && !service ; ++it ) {
+        KService::List::const_iterator it = offers.constBegin();
+        for ( ; it != offers.constEnd() && !service ; ++it ) {
             if ( (*it)->desktopEntryName() == serviceName ) {
                 kDebug(1202) << "Found requested service" << serviceName;
                 service = *it;

@@ -316,8 +316,8 @@ void UserAgentDlg::save()
   QStringList deleteList = m_config->groupList();
 
   //Remove all the groups that DO NOT contain a "UserAgent" entry...
-  QStringList::ConstIterator endIt = deleteList.end();
-  for (QStringList::ConstIterator it = deleteList.begin(); it != endIt; ++it)
+  QStringList::ConstIterator endIt = deleteList.constEnd();
+  for (QStringList::ConstIterator it = deleteList.constBegin(); it != endIt; ++it)
   {
     if ( (*it) == QLatin1String("<default>") )
       continue;
@@ -355,10 +355,10 @@ void UserAgentDlg::save()
   if (!deleteList.isEmpty())
   {
     // Remove entries from local file.
-    endIt = deleteList.end();
+    endIt = deleteList.constEnd();
     KConfig cfg ("kio_httprc", KConfig::SimpleConfig);
 
-    for ( QStringList::ConstIterator it = deleteList.begin(); it != endIt; ++it )
+    for ( QStringList::ConstIterator it = deleteList.constBegin(); it != endIt; ++it )
     {
       KConfigGroup cg(&cfg, *it);
       cg.deleteEntry("UserAgent");
@@ -372,8 +372,8 @@ void UserAgentDlg::save()
 
     // Check everything is gone, reset to blank otherwise.
     m_config->reparseConfiguration();
-    endIt = deleteList.end();
-    for (QStringList::ConstIterator it = deleteList.begin(); it != endIt; ++it )
+    endIt = deleteList.constEnd();
+    for (QStringList::ConstIterator it = deleteList.constBegin(); it != endIt; ++it )
     {
       KConfigGroup cg(m_config, *it);
       if (cg.hasKey("UserAgent"))

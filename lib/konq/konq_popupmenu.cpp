@@ -147,9 +147,9 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
 
     bool bTrashIncluded = false;
 
-    KFileItemList lstItems = m_popupMenuInfo.items();
-    KFileItemList::const_iterator it = lstItems.begin();
-    const KFileItemList::const_iterator kend = lstItems.end();
+    const KFileItemList lstItems = m_popupMenuInfo.items();
+    KFileItemList::const_iterator it = lstItems.constBegin();
+    const KFileItemList::const_iterator kend = lstItems.constEnd();
     for ( ; it != kend; ++it )
     {
         const KUrl url = (*it).url();

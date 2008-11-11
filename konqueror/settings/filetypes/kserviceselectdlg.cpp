@@ -41,9 +41,9 @@ KServiceSelectDlg::KServiceSelectDlg( const QString& /*serviceType*/, const QStr
     // we want all services that are not applications.......
     // So we have to do it the slow way
     // ### Why can't we query for KParts/ReadOnlyPart as the servicetype? Should work fine!
-    KService::List allServices = KService::allServices();
-    KService::List::const_iterator it(allServices.begin());
-    for ( ; it != allServices.end() ; ++it )
+    const KService::List allServices = KService::allServices();
+    KService::List::const_iterator it(allServices.constBegin());
+    for ( ; it != allServices.constEnd() ; ++it )
       if ( (*it)->hasServiceType( "KParts/ReadOnlyPart" ) )
       {
           m_listbox->addItem( new KServiceListItem( (*it), KServiceListWidget::SERVICELIST_SERVICES ) );

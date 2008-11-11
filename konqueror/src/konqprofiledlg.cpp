@@ -54,8 +54,8 @@ KonqProfileMap KonqProfileDlg::readAllProfiles()
   KonqProfileMap mapProfiles;
 
   const QStringList profiles = KGlobal::dirs()->findAllResources( "data", "konqueror/profiles/*", KStandardDirs::NoDuplicates );
-  QStringList::ConstIterator pIt = profiles.begin();
-  QStringList::ConstIterator pEnd = profiles.end();
+  QStringList::ConstIterator pIt = profiles.constBegin();
+  QStringList::ConstIterator pEnd = profiles.constEnd();
   for (; pIt != pEnd; ++pIt )
   {
     QFileInfo info( *pIt );
@@ -153,8 +153,8 @@ void KonqProfileDlg::loadAllProfiles(const QString & preselectProfile)
     d->m_mapEntries.clear();
     d->m_pListView->clear();
     d->m_mapEntries = readAllProfiles();
-    KonqProfileMap::ConstIterator eIt = d->m_mapEntries.begin();
-    KonqProfileMap::ConstIterator eEnd = d->m_mapEntries.end();
+    KonqProfileMap::ConstIterator eIt = d->m_mapEntries.constBegin();
+    KonqProfileMap::ConstIterator eEnd = d->m_mapEntries.constEnd();
     for (; eIt != eEnd; ++eIt )
     {
         QListWidgetItem *item = new KonqProfileItem( d->m_pListView, eIt.key() );
@@ -232,9 +232,9 @@ void KonqProfileDlg::slotItemRenamed( QListWidgetItem * item )
 
   if (!newName.isEmpty())
   {
-    KonqProfileMap::ConstIterator it = d->m_mapEntries.find( oldName );
+    KonqProfileMap::ConstIterator it = d->m_mapEntries.constFind( oldName );
 
-    if ( it != d->m_mapEntries.end() )
+    if ( it != d->m_mapEntries.constEnd() )
     {
       QString fileName = it.value();
       KConfig _cfg( fileName, KConfig::SimpleConfig );

@@ -81,8 +81,8 @@ void UserAgentInfo::parseDescription()
 {
   QString tmp;
 
-  KService::List::ConstIterator it = m_providers.begin();
-  KService::List::ConstIterator lastItem = m_providers.end();
+  KService::List::ConstIterator it = m_providers.constBegin();
+  KService::List::ConstIterator lastItem = m_providers.constEnd();
 
   for ( ; it != lastItem; ++it )
   {
