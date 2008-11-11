@@ -128,8 +128,8 @@ ToggleViewGUIClient::ToggleViewGUIClient( KonqMainWindow *mainWindow )
   if ( m_empty )
     return;
 
-  KService::List::ConstIterator cIt = offers.begin();
-  KService::List::ConstIterator cEnd = offers.end();
+  KService::List::ConstIterator cIt = offers.constBegin();
+  KService::List::ConstIterator cEnd = offers.constEnd();
   for (; cIt != cEnd; ++cIt )
   {
     QString description = i18n( "Show %1" ,  (*cIt)->name() );

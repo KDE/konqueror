@@ -420,8 +420,8 @@ void KEBApp::setActionsEnabled(SelcAbilities sa) {
         }
     }
 
-    for ( QStringList::const_iterator it = toEnable.begin();
-            it != toEnable.end(); ++it )
+    for ( QStringList::const_iterator it = toEnable.constBegin();
+            it != toEnable.constEnd(); ++it )
     {
         //kDebug() <<" enabling action "<<(*it);
         coll->action((*it).toAscii().data())->setEnabled(true);

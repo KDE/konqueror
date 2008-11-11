@@ -261,8 +261,8 @@ KonqClosedRemoteWindowItem* KonqClosedWindowsManager::findClosedRemoteWindowItem
     readConfig();
 
     KonqClosedRemoteWindowItem* closedRemoteWindowItem = 0L;
-    for (QList<KonqClosedWindowItem *>::const_iterator it = m_closedWindowItemList.begin();
-        it != m_closedWindowItemList.end(); ++it)
+    for (QList<KonqClosedWindowItem *>::const_iterator it = m_closedWindowItemList.constBegin();
+        it != m_closedWindowItemList.constEnd(); ++it)
     {
         closedRemoteWindowItem = dynamic_cast<KonqClosedRemoteWindowItem *>(*it);
 
@@ -280,8 +280,8 @@ KonqClosedWindowItem* KonqClosedWindowsManager::findClosedLocalWindowItem(
 {
     readConfig();
     KonqClosedWindowItem* closedWindowItem = 0L;
-    for (QList<KonqClosedWindowItem *>::const_iterator it = m_closedWindowItemList.begin();
-        it != m_closedWindowItemList.end(); ++it)
+    for (QList<KonqClosedWindowItem *>::const_iterator it = m_closedWindowItemList.constBegin();
+        it != m_closedWindowItemList.constEnd(); ++it)
     {
         closedWindowItem = *it;
         KonqClosedRemoteWindowItem* closedRemoteWindowItem =
@@ -325,8 +325,8 @@ void KonqClosedWindowsManager::saveConfig()
     // Populate the config file
     KonqClosedWindowItem* closedWindowItem = 0L;
     uint counter = m_closedWindowItemList.size()-1;
-    for (QList<KonqClosedWindowItem *>::const_iterator it = m_closedWindowItemList.begin();
-        it != m_closedWindowItemList.end(); ++it, --counter)
+    for (QList<KonqClosedWindowItem *>::const_iterator it = m_closedWindowItemList.constBegin();
+        it != m_closedWindowItemList.constEnd(); ++it, --counter)
     {
         closedWindowItem = *it;
         KConfigGroup configGroup(config, "Closed_Window" + QString::number(counter));

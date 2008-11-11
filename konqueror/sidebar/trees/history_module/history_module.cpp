@@ -155,8 +155,8 @@ void KonqSidebarHistoryModule::slotCreateItems()
 
     // the group item and the item of the serverroot '/' get a fav-icon
     // if available. All others get the protocol icon.
-    KonqHistoryList::const_iterator it = entries.begin();
-    const KonqHistoryList::const_iterator end = entries.end();
+    KonqHistoryList::const_iterator it = entries.constBegin();
+    const KonqHistoryList::const_iterator end = entries.constEnd();
     for ( ; it != end ; ++it ) {
 	KonqSidebarHistoryGroupItem *group = getGroupItem( (*it).url );
 	item = new KonqSidebarHistoryItem( (*it), group, m_topLevelItem );
@@ -164,10 +164,10 @@ void KonqSidebarHistoryModule::slotCreateItems()
 
     KSharedConfig::Ptr kc = KGlobal::config();
     KConfigGroup cs( kc, "HistorySettings" );
-    QStringList openGroups = cs.readEntry("OpenGroups",QStringList());
-    QStringList::const_iterator it2 = openGroups.begin();
+    const QStringList openGroups = cs.readEntry("OpenGroups",QStringList());
+    QStringList::const_iterator it2 = openGroups.constBegin();
     KonqSidebarHistoryGroupItem *group;
-    while ( it2 != openGroups.end() ) {
+    while ( it2 != openGroups.constEnd() ) {
 	group = m_dict.find( *it2 );
 	if ( group )
 	    group->setOpen( true );

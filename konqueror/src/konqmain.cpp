@@ -103,8 +103,8 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
      {
        QStringList profiles = KGlobal::dirs()->findAllResources("data", "konqueror/profiles/*", KStandardDirs::NoDuplicates);
        profiles.sort();
-       for(QStringList::ConstIterator it = profiles.begin();
-           it != profiles.end(); ++it)
+       for(QStringList::ConstIterator it = profiles.constBegin();
+           it != profiles.constEnd(); ++it)
        {
          QString file = *it;
          file = file.mid(file.lastIndexOf('/')+1);

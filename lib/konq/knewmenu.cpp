@@ -273,8 +273,8 @@ void KNewMenu::fillMenu()
 
     KNewMenuSingleton* s = kNewMenuGlobals;
     int i = 1;
-    KNewMenuSingleton::EntryList::const_iterator templ = s->templatesList->begin();
-    const KNewMenuSingleton::EntryList::const_iterator templ_end = s->templatesList->end();
+    KNewMenuSingleton::EntryList::const_iterator templ = s->templatesList->constBegin();
+    const KNewMenuSingleton::EntryList::const_iterator templ_end = s->templatesList->constEnd();
     for ( ; templ != templ_end; ++templ, ++i)
     {
         if ( (*templ).entryType != SEPARATOR )
@@ -362,8 +362,8 @@ void KNewMenu::slotFillTemplates()
     // Ensure any changes in the templates dir will call this
     if ( ! s->dirWatch ) {
         s->dirWatch = new KDirWatch;
-        QStringList dirs = d->m_actionCollection->componentData().dirs()->resourceDirs("templates");
-        for ( QStringList::const_iterator it = dirs.begin() ; it != dirs.end() ; ++it ) {
+        const QStringList dirs = d->m_actionCollection->componentData().dirs()->resourceDirs("templates");
+        for ( QStringList::const_iterator it = dirs.constBegin() ; it != dirs.constEnd() ; ++it ) {
             //kDebug(1203) << "Templates resource dir:" << *it;
             s->dirWatch->addDir( *it );
         }
@@ -381,9 +381,9 @@ void KNewMenu::slotFillTemplates()
     s->templatesList->clear();
 
     // Look into "templates" dirs.
-    QStringList files = d->m_actionCollection->componentData().dirs()->findAllResources("templates");
+    const QStringList files = d->m_actionCollection->componentData().dirs()->findAllResources("templates");
     QMap<QString, KNewMenuSingleton::Entry> slist; // used for sorting
-    for ( QStringList::const_iterator it = files.begin() ; it != files.end() ; ++it )
+    for ( QStringList::const_iterator it = files.constBegin() ; it != files.constEnd() ; ++it )
     {
         //kDebug(1203) << *it;
         if ( (*it)[0] != '.' )
@@ -554,8 +554,8 @@ void KNewMenu::slotActionTriggered(QAction* action)
 
     // The template is not a desktop file [or it's a URL one]
     // Copy it.
-    KUrl::List::const_iterator it = d->popupFiles.begin();
-    for ( ; it != d->popupFiles.end(); ++it )
+    KUrl::List::const_iterator it = d->popupFiles.constBegin();
+    for ( ; it != d->popupFiles.constEnd(); ++it )
     {
         KUrl dest( *it );
         dest.addPath( KIO::encodeFileName(name) ); // Chosen destination file name

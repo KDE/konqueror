@@ -146,7 +146,7 @@ void KBookmarkBar::slotBookmarksChanged( const QString & group )
     else
     {
         // Iterate recursively into child menus
-        for ( QList<KBookmarkMenu *>::ConstIterator smit = m_lstSubMenus.begin(), smend = m_lstSubMenus.end();
+        for ( QList<KBookmarkMenu *>::ConstIterator smit = m_lstSubMenus.constBegin(), smend = m_lstSubMenus.constEnd();
               smit != smend; ++smit )
         {
             (*smit)->slotBookmarksChanged( group );

@@ -123,8 +123,8 @@ void KQuery::slotCanceled( KJob * _job )
 
 void KQuery::slotListEntries(KIO::Job*, const KIO::UDSEntryList& list)
 {
-  const KIO::UDSEntryList::ConstIterator end = list.end();
-  for (KIO::UDSEntryList::ConstIterator it = list.begin(); it != end; ++it)
+  const KIO::UDSEntryList::ConstIterator end = list.constEnd();
+  for (KIO::UDSEntryList::ConstIterator it = list.constBegin(); it != end; ++it)
   {
     m_fileItems.enqueue(KFileItem(*it, m_url, true, true));
   }
@@ -155,8 +155,8 @@ void KQuery::slotListEntries( QStringList  list )
   metaKeyRx=new QRegExp(m_metainfokey);
   metaKeyRx->setPatternSyntax( QRegExp::Wildcard );
 
-  QStringList::const_iterator it = list.begin();
-  QStringList::const_iterator end = list.end();
+  QStringList::const_iterator it = list.constBegin();
+  QStringList::const_iterator end = list.constEnd();
 
   for (; it != end; ++it)
   {
@@ -268,7 +268,7 @@ void KQuery::processQuery( const KFileItem &file)
        QString strmetakeycontent;
 
        metakeys = metadatas.supportedKeys();
-       for (QStringList::const_iterator it = metakeys.begin(); it != metakeys.end(); ++it )
+       for (QStringList::const_iterator it = metakeys.constBegin(); it != metakeys.constEnd(); ++it )
        {
           if (!metaKeyRx->exactMatch(*it))
              continue;
@@ -453,13 +453,13 @@ void KQuery::setRegExp(const QString &regexp, bool caseSensitive)
 {
   QRegExp *regExp;
   QRegExp sep(";");
-  QStringList strList=regexp.split( sep, QString::SkipEmptyParts);
+  const QStringList strList=regexp.split( sep, QString::SkipEmptyParts);
 //  QRegExp globChars ("[\\*\\?\\[\\]]", TRUE, FALSE);
   while (!m_regexps.isEmpty())
       delete m_regexps.takeFirst();
 
 //  m_regexpsContainsGlobs.clear();
-  for ( QStringList::ConstIterator it = strList.begin(); it != strList.end(); ++it ) {
+  for ( QStringList::ConstIterator it = strList.constBegin(); it != strList.constEnd(); ++it ) {
     regExp = new QRegExp((*it),( caseSensitive ? Qt::CaseSensitive : Qt::CaseInsensitive ), QRegExp::Wildcard);
 //    m_regexpsContainsGlobs.append(regExp->pattern().contains(globChars));
     m_regexps.append(regExp);

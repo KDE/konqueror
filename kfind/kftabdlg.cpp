@@ -330,8 +330,8 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     initMimeTypes();
     initSpecialMimeTypes();
 
-    for ( KMimeType::List::ConstIterator it = m_types.begin();
-          it != m_types.end(); ++it )
+    for ( KMimeType::List::ConstIterator it = m_types.constBegin();
+          it != m_types.constEnd(); ++it )
     {
       KMimeType::Ptr typ = *it;
 // TODO: needs to move to thread (increases startup time to bizzare amount)
@@ -466,9 +466,9 @@ void KfindTabWidget::initMimeTypes()
 
 void KfindTabWidget::initSpecialMimeTypes()
 {
-    KMimeType::List tmp = KMimeType::allMimeTypes();
+    const KMimeType::List tmp = KMimeType::allMimeTypes();
 
-    for ( KMimeType::List::ConstIterator it = tmp.begin(); it != tmp.end(); ++it )
+    for ( KMimeType::List::ConstIterator it = tmp.constBegin(); it != tmp.constEnd(); ++it )
     {
 	  const KMimeType* type = (*it).data();
 

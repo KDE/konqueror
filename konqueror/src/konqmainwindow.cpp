@@ -2012,8 +2012,8 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
     // Disable all browser-extension actions
 
     KParts::BrowserExtension::ActionSlotMap * actionSlotMap = KParts::BrowserExtension::actionSlotMapPtr();
-    KParts::BrowserExtension::ActionSlotMap::ConstIterator it = actionSlotMap->begin();
-        const KParts::BrowserExtension::ActionSlotMap::ConstIterator itEnd = actionSlotMap->end();
+    KParts::BrowserExtension::ActionSlotMap::ConstIterator it = actionSlotMap->constBegin();
+        const KParts::BrowserExtension::ActionSlotMap::ConstIterator itEnd = actionSlotMap->constEnd();
         for (; it != itEnd ; ++it) {
             QAction * act = actionCollection()->action(QString::fromLatin1(it.key()));
       Q_ASSERT(act);
@@ -2152,8 +2152,8 @@ void KonqMainWindow::viewsChanged()
 
 KonqView * KonqMainWindow::childView( KParts::ReadOnlyPart *view )
 {
-  MapViews::ConstIterator it = m_mapViews.find( view );
-  if ( it != m_mapViews.end() )
+  MapViews::ConstIterator it = m_mapViews.constFind( view );
+  if ( it != m_mapViews.constEnd() )
     return it.value();
   else
     return 0;
@@ -2163,8 +2163,8 @@ KonqView * KonqMainWindow::childView( KParts::ReadOnlyPart *callingPart, const Q
 {
     //kDebug() << "this=" << this << "looking for" << name;
 
-  MapViews::ConstIterator it = m_mapViews.begin();
-  MapViews::ConstIterator end = m_mapViews.end();
+  MapViews::ConstIterator it = m_mapViews.constBegin();
+  MapViews::ConstIterator end = m_mapViews.constEnd();
   for (; it != end; ++it )
   {
     KonqView* view = it.value();
@@ -2218,8 +2218,8 @@ KonqView * KonqMainWindow::childView( KParts::ReadOnlyPart *callingPart, const Q
 int KonqMainWindow::activeViewsCount() const
 {
   int res = 0;
-  MapViews::ConstIterator end = m_mapViews.end();
-  for (MapViews::ConstIterator it = m_mapViews.begin(); it != end; ++it )
+  MapViews::ConstIterator end = m_mapViews.constEnd();
+  for (MapViews::ConstIterator it = m_mapViews.constBegin(); it != end; ++it )
     if ( !it.value()->isPassiveMode() )
       ++res;
 
@@ -2229,8 +2229,8 @@ int KonqMainWindow::activeViewsCount() const
 int KonqMainWindow::activeViewsNotLockedCount() const
 {
   int res = 0;
-  MapViews::ConstIterator end = m_mapViews.end();
-  for (MapViews::ConstIterator it = m_mapViews.begin(); it != end; ++it ) {
+  MapViews::ConstIterator end = m_mapViews.constEnd();
+  for (MapViews::ConstIterator it = m_mapViews.constBegin(); it != end; ++it ) {
       if ( !it.value()->isPassiveMode() && !it.value()->isLockedLocation() )
           ++res;
   }
@@ -2241,8 +2241,8 @@ int KonqMainWindow::activeViewsNotLockedCount() const
 int KonqMainWindow::linkableViewsCount() const
 {
   int res = 0;
-  MapViews::ConstIterator it = m_mapViews.begin();
-  MapViews::ConstIterator end = m_mapViews.end();
+  MapViews::ConstIterator it = m_mapViews.constBegin();
+  MapViews::ConstIterator end = m_mapViews.constEnd();
   for (; it != end; ++it )
     if ( !it.value()->isFollowActive() )
       ++res;
@@ -2253,8 +2253,8 @@ int KonqMainWindow::linkableViewsCount() const
 int KonqMainWindow::mainViewsCount() const
 {
   int res = 0;
-  MapViews::ConstIterator it = m_mapViews.begin();
-  const MapViews::ConstIterator end = m_mapViews.end();
+  MapViews::ConstIterator it = m_mapViews.constBegin();
+  const MapViews::ConstIterator end = m_mapViews.constEnd();
   for (; it != end; ++it ) {
     if ( !it.value()->isPassiveMode() && !it.value()->isToggleView() ) {
       //kDebug(1202) << res << it.value() << it.value()->part()->widget();
@@ -2400,8 +2400,8 @@ void KonqMainWindow::slotBreakOffTabPopupDelayed()
 
 void KonqMainWindow::slotPopupNewWindow()
 {
-    KFileItemList::const_iterator it = m_popupItems.begin();
-    const KFileItemList::const_iterator end = m_popupItems.end();
+    KFileItemList::const_iterator it = m_popupItems.constBegin();
+    const KFileItemList::const_iterator end = m_popupItems.constEnd();
     for ( ; it != end; ++it ) {
       KonqMisc::createNewWindow((*it).targetUrl(), m_popupUrlArgs, m_popupUrlBrowserArgs);
     }
@@ -2445,8 +2445,8 @@ void KonqMainWindow::popupNewTab(bool infront, bool openAfterCurrentPage)
 
 void KonqMainWindow::openMultiURL( const KUrl::List& url )
 {
-    KUrl::List::ConstIterator it = url.begin();
-    const KUrl::List::ConstIterator end = url.end();
+    KUrl::List::ConstIterator it = url.constBegin();
+    const KUrl::List::ConstIterator end = url.constEnd();
     for (; it != end; ++it )
     {
         KonqView* newView = m_pViewManager->addTab("text/html");
@@ -2540,8 +2540,8 @@ void KonqMainWindow::slotRemoveOtherTabsPopup()
     return;
 
   KonqView *originalView = m_currentView;
-  MapViews::ConstIterator it = m_mapViews.begin();
-  MapViews::ConstIterator end = m_mapViews.end();
+  MapViews::ConstIterator it = m_mapViews.constBegin();
+  MapViews::ConstIterator end = m_mapViews.constEnd();
   for (; it != end; ++it ) {
     KonqView *view = it.value();
     // m_currentView might be a view contained inside a splitted view so what we'll
@@ -2576,8 +2576,8 @@ void KonqMainWindow::slotRemoveOtherTabsPopupDelayed()
 void KonqMainWindow::slotReloadAllTabs()
 {
   KonqView *originalView = m_currentView;
-  MapViews::ConstIterator it = m_mapViews.begin();
-  MapViews::ConstIterator end = m_mapViews.end();
+  MapViews::ConstIterator it = m_mapViews.constBegin();
+  MapViews::ConstIterator end = m_mapViews.constEnd();
   for (; it != end; ++it ) {
     KonqView *view = it.value();
     if (view && view->part() && (view->part()->metaObject()->indexOfProperty("modified") != -1) ) {
@@ -2690,10 +2690,10 @@ KUrl::List KonqMainWindow::currentURLs() const
 KonqView * KonqMainWindow::otherView( KonqView * view ) const
 {
   assert( viewCount() <= 2 );
-  MapViews::ConstIterator it = m_mapViews.begin();
+  MapViews::ConstIterator it = m_mapViews.constBegin();
   if ( (*it) == view )
     ++it;
-  if ( it != m_mapViews.end() )
+  if ( it != m_mapViews.constEnd() )
     return (*it);
   return 0;
 }
@@ -4162,8 +4162,8 @@ QString KonqMainWindow::findIndexFile( const QString &dir )
 void KonqMainWindow::connectExtension( KParts::BrowserExtension *ext )
 {
   KParts::BrowserExtension::ActionSlotMap * actionSlotMap = KParts::BrowserExtension::actionSlotMapPtr();
-  KParts::BrowserExtension::ActionSlotMap::ConstIterator it = actionSlotMap->begin();
-  KParts::BrowserExtension::ActionSlotMap::ConstIterator itEnd = actionSlotMap->end();
+  KParts::BrowserExtension::ActionSlotMap::ConstIterator it = actionSlotMap->constBegin();
+  KParts::BrowserExtension::ActionSlotMap::ConstIterator itEnd = actionSlotMap->constEnd();
 
   for ( ; it != itEnd ; ++it )
   {
@@ -4192,8 +4192,8 @@ void KonqMainWindow::connectExtension( KParts::BrowserExtension *ext )
 void KonqMainWindow::disconnectExtension( KParts::BrowserExtension *ext )
 {
   KParts::BrowserExtension::ActionSlotMap * actionSlotMap = KParts::BrowserExtension::actionSlotMapPtr();
-  KParts::BrowserExtension::ActionSlotMap::ConstIterator it = actionSlotMap->begin();
-  KParts::BrowserExtension::ActionSlotMap::ConstIterator itEnd = actionSlotMap->end();
+  KParts::BrowserExtension::ActionSlotMap::ConstIterator it = actionSlotMap->constBegin();
+  KParts::BrowserExtension::ActionSlotMap::ConstIterator itEnd = actionSlotMap->constEnd();
 
   for ( ; it != itEnd ; ++it )
   {
@@ -4265,8 +4265,8 @@ void KonqMainWindow::enableAllActions( bool enable )
   KParts::BrowserExtension::ActionSlotMap * actionSlotMap = KParts::BrowserExtension::actionSlotMapPtr();
 
   const QList<QAction *> actions = actionCollection()->actions();
-  QList<QAction *>::ConstIterator it = actions.begin();
-  QList<QAction *>::ConstIterator end = actions.end();
+  QList<QAction *>::ConstIterator it = actions.constBegin();
+  QList<QAction *>::ConstIterator end = actions.constEnd();
   for (; it != end; ++it )
   {
     QAction *act = *it;
@@ -4471,8 +4471,8 @@ void KonqExtendedBookmarkOwner::openFolderinTabs(const KBookmarkGroup &grp)
       return;
   }
 
-  QList<KUrl>::ConstIterator it = list.begin();
-  QList<KUrl>::ConstIterator end = list.end();
+  QList<KUrl>::ConstIterator it = list.constBegin();
+  QList<KUrl>::ConstIterator end = list.constEnd();
   --end;
   for (; it != end; ++it )
   {
@@ -4784,8 +4784,8 @@ void KonqMainWindow::slotDatabaseChanged()
 {
   if ( KSycoca::isChanged("mimetypes") )
   {
-    MapViews::ConstIterator it = m_mapViews.begin();
-    MapViews::ConstIterator end = m_mapViews.end();
+    MapViews::ConstIterator it = m_mapViews.constBegin();
+    MapViews::ConstIterator end = m_mapViews.constEnd();
     for (; it != end; ++it )
       (*it)->callExtensionMethod( "refreshMimeTypes" );
   }
@@ -4815,8 +4815,8 @@ void KonqMainWindow::reparseConfiguration()
   if (m_combo)
       m_combo->setFont( KGlobalSettings::generalFont() );
 
-  MapViews::ConstIterator it = m_mapViews.begin();
-  MapViews::ConstIterator end = m_mapViews.end();
+  MapViews::ConstIterator it = m_mapViews.constBegin();
+  MapViews::ConstIterator end = m_mapViews.constEnd();
   for (; it != end; ++it )
       (*it)->reparseConfiguration();
 }
@@ -4863,8 +4863,8 @@ void KonqMainWindow::updateOpenWithActions()
   m_openWithMenu = new KActionMenu( i18n("&Open With"), this );
 
   const KService::List & services = m_currentView->appServiceOffers();
-  KService::List::ConstIterator it = services.begin();
-  const KService::List::ConstIterator end = services.end();
+  KService::List::ConstIterator it = services.constBegin();
+  const KService::List::ConstIterator end = services.constEnd();
 
   const int baseOpenWithItems = qMax(KonqSettings::openWithItems(), 0);
 
@@ -4923,8 +4923,8 @@ void KonqMainWindow::updateViewModeActions()
     m_viewModeMenu = new KActionMenu( i18nc("@action:inmenu View", "&View Mode"), this );
     //actionCollection()->addAction( "viewModeMenu", m_viewModeMenu );
 
-    KService::List::ConstIterator it = services.begin();
-    const KService::List::ConstIterator end = services.end();
+    KService::List::ConstIterator it = services.constBegin();
+    const KService::List::ConstIterator end = services.constEnd();
     for (; it != end; ++it) {
         const KService::Ptr service = *it;
         const QVariant prop = service->property( "X-KDE-BrowserView-Toggable" );
@@ -5064,8 +5064,8 @@ void KonqMainWindow::closeEvent( QCloseEvent *e )
       }
 
       KonqView *originalView = m_currentView;
-      MapViews::ConstIterator it = m_mapViews.begin();
-      MapViews::ConstIterator end = m_mapViews.end();
+      MapViews::ConstIterator it = m_mapViews.constBegin();
+      MapViews::ConstIterator end = m_mapViews.constEnd();
       for (; it != end; ++it ) {
         KonqView *view = it.value();
         if (view && view->part() && (view->part()->metaObject()->indexOfProperty("modified") != -1) ) {
@@ -5095,8 +5095,8 @@ void KonqMainWindow::closeEvent( QCloseEvent *e )
       qApp->flush();
   }
   // We're going to close - tell the parts
-  MapViews::ConstIterator it = m_mapViews.begin();
-  MapViews::ConstIterator end = m_mapViews.end();
+  MapViews::ConstIterator it = m_mapViews.constBegin();
+  MapViews::ConstIterator end = m_mapViews.constEnd();
   for (; it != end; ++it )
   {
       if ( (*it)->part() && (*it)->part()->widget() )
@@ -5259,7 +5259,7 @@ void KonqMainWindow::slotAddWebSideBar(const KUrl& url, const QString& name)
 
         // Tell it to add a new panel
         MapViews::ConstIterator it;
-        for (it = viewMap().begin(); it != viewMap().end(); ++it) {
+        for (it = viewMap().constBegin(); it != viewMap().constEnd(); ++it) {
             KonqView *view = it.value();
             if (view) {
                 KService::Ptr svc = view->service();
@@ -5636,8 +5636,8 @@ bool KonqMainWindow::event( QEvent* e )
          KonqFileMouseOverEvent::test( e ) )
     {
         // Forward the event to all views
-        MapViews::ConstIterator it = m_mapViews.begin();
-        MapViews::ConstIterator end = m_mapViews.end();
+        MapViews::ConstIterator it = m_mapViews.constBegin();
+        MapViews::ConstIterator end = m_mapViews.constEnd();
         for (; it != end; ++it )
             QApplication::sendEvent( (*it)->part(), e );
         return true;
@@ -5647,8 +5647,8 @@ bool KonqMainWindow::event( QEvent* e )
         KParts::OpenUrlEvent * ev = static_cast<KParts::OpenUrlEvent*>(e);
 
         // Forward the event to all views
-        MapViews::ConstIterator it = m_mapViews.begin();
-        MapViews::ConstIterator end = m_mapViews.end();
+        MapViews::ConstIterator it = m_mapViews.constBegin();
+        MapViews::ConstIterator end = m_mapViews.constEnd();
         for (; it != end; ++it )
         {
             // Don't resend to sender
@@ -5807,8 +5807,8 @@ bool KonqMainWindow::accept( KonqFrameVisitor* visitor )
 
 bool KonqMainWindow::hasViewWithMimeType(const QString& mimeType) const
 {
-    MapViews::const_iterator it = m_mapViews.begin();
-    const MapViews::const_iterator end = m_mapViews.end();
+    MapViews::const_iterator it = m_mapViews.constBegin();
+    const MapViews::const_iterator end = m_mapViews.constEnd();
     for (; it != end; ++it) {
         if ((*it)->supportsMimeType(mimeType)) {
             //kDebug(1202) << *it << "supports" << mimeType << "!";

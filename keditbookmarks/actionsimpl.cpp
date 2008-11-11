@@ -499,7 +499,7 @@ void ActionsImpl::slotRecursiveSort() {
     KBookmarkGroupList lister(CurrentMgr::self()->mgr());
     QList<KBookmark> bookmarks = lister.getList(bk.toGroup());
     bookmarks << bk.toGroup();
-    for (QList<KBookmark>::ConstIterator it = bookmarks.begin(); it != bookmarks.end(); ++it) {
+    for (QList<KBookmark>::ConstIterator it = bookmarks.constBegin(); it != bookmarks.constEnd(); ++it) {
         SortCommand *cmd = new SortCommand("", (*it).address());
         cmd->execute();
         mcmd->addCommand(cmd);

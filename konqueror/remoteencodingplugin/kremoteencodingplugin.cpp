@@ -120,7 +120,7 @@ KRemoteEncodingPlugin::fillMenu()
 
   QStringList::ConstIterator it;
   int count = 0;
-  for (it = m_encodingDescriptions.begin(); it != m_encodingDescriptions.end(); ++it)
+  for (it = m_encodingDescriptions.constBegin(); it != m_encodingDescriptions.constEnd(); ++it)
     menu->insertItem(*it, this, SLOT(slotItemSelected(int)), 0, ++count);
   menu->addSeparator();
 
@@ -145,13 +145,13 @@ KRemoteEncodingPlugin::updateMenu()
     {
       int id = 1;
       QStringList::const_iterator it;
-      for (it = m_encodingDescriptions.begin(); it != m_encodingDescriptions.end(); ++it, ++id)
+      for (it = m_encodingDescriptions.constBegin(); it != m_encodingDescriptions.constEnd(); ++it, ++id)
 	if ((*it).indexOf(charset) != -1)
 	  break;
 
       kDebug() << "URL=" << m_currentURL << " charset=" << charset;
 
-      if (it == m_encodingDescriptions.end())
+      if (it == m_encodingDescriptions.constEnd())
 	kWarning() << "could not find entry for charset=" << charset ;
       else
 	m_menu->menu()->setItemChecked(id, true);
@@ -213,7 +213,7 @@ KRemoteEncodingPlugin::slotDefault()
 	  partList.erase(partList.begin());
 	}
 
-      for (QStringList::const_iterator it = domains.begin(); it != domains.end();
+      for (QStringList::const_iterator it = domains.constBegin(); it != domains.constEnd();
 	   ++it)
 	{
 	  kDebug() << "Domain to remove: " << *it;

@@ -186,9 +186,9 @@ void FileTypesView::readFileTypes()
     m_majorMap.clear();
     m_itemList.clear();
 
-    KMimeType::List mimetypes = KMimeType::allMimeTypes();
-    KMimeType::List::const_iterator it2(mimetypes.begin());
-    for (; it2 != mimetypes.end(); ++it2) {
+    const KMimeType::List mimetypes = KMimeType::allMimeTypes();
+    KMimeType::List::const_iterator it2(mimetypes.constBegin());
+    for (; it2 != mimetypes.constEnd(); ++it2) {
 	QString mimetype = (*it2)->name();
 	int index = mimetype.indexOf("/");
 	QString maj = mimetype.left(index);

@@ -286,8 +286,8 @@ void KCMFilter::load()
     for (int i=0; i<num; ++i)
     {
         QString key = "Filter-" + QString::number(i);
-        it = entryMap.find(key);
-        if (it != entryMap.end())
+        it = entryMap.constFind(key);
+        if (it != entryMap.constEnd())
             paths.append(it.value());
     }
 

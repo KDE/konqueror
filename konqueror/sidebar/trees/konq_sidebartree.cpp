@@ -345,8 +345,8 @@ void KonqSidebarTree::contentsDropEvent( QDropEvent *ev )
             KUrl::List urls;
             if ( K3URLDrag::decode( ev, urls ) )
             {
-               for(KUrl::List::ConstIterator it = urls.begin();
-                   it != urls.end(); ++it)
+               for(KUrl::List::ConstIterator it = urls.constBegin();
+                   it != urls.constEnd(); ++it)
                {
                   addUrl(0, *it);
                }
@@ -583,7 +583,7 @@ void KonqSidebarTree::slotFilesAdded( const QString & dir )
 void KonqSidebarTree::slotFilesRemoved( const QStringList & urls )
 {
     //kDebug(1201) << "KonqSidebarTree::slotFilesRemoved " << urls.count();
-    for ( QStringList::ConstIterator it = urls.begin() ; it != urls.end() ; ++it )
+    for ( QStringList::ConstIterator it = urls.constBegin() ; it != urls.constEnd() ; ++it )
     {
         KUrl u( *it );
         //kDebug(1201) <<  "KonqSidebarTree::slotFilesRemoved " << u;
@@ -654,15 +654,15 @@ void KonqSidebarTree::scanDir( KonqSidebarTreeItem *parent, const QString &path,
             /*
             // debug code
 
-            QStringList blah = m_part->getInterfaces->getInstance()->dirs()->dirs()->findDirs( "data", "konqueror/dirtree" );
-            QStringList::ConstIterator eIt = blah.begin();
-            QStringList::ConstIterator eEnd = blah.end();
+            const QStringList blah = m_part->getInterfaces->getInstance()->dirs()->dirs()->findDirs( "data", "konqueror/dirtree" );
+            QStringList::ConstIterator eIt = blah.constBegin();
+            QStringList::ConstIterator eEnd = blah.constEnd();
             for (; eIt != eEnd; ++eIt )
                 kDebug(1201) << "KonqSidebarTree::scanDir findDirs got me " << *eIt;
             // end debug code
             */
 
-	    for (QStringList::const_iterator ddit=dirtree_dirs.begin();ddit!=dirtree_dirs.end();++ddit) {
+	    for (QStringList::const_iterator ddit=dirtree_dirs.constBegin();ddit!=dirtree_dirs.constEnd();++ddit) {
 		QString dirtree_dir=*ddit;
 		if (dirtree_dir==path) continue;
 	        //    if ( !dirtree_dir.isEmpty() && dirtree_dir != path )
@@ -671,8 +671,8 @@ void KonqSidebarTree::scanDir( KonqSidebarTreeItem *parent, const QString &path,
                 	Q_ASSERT( globalDir.isReadable() );
 	                // Only copy the entries that don't exist yet in the local dir
         	        const QStringList globalDirEntries = globalDir.entryList();
-                	QStringList::ConstIterator eIt = globalDirEntries.begin();
-	                QStringList::ConstIterator eEnd = globalDirEntries.end();
+                	QStringList::ConstIterator eIt = globalDirEntries.constBegin();
+	                QStringList::ConstIterator eEnd = globalDirEntries.constEnd();
         	        for (; eIt != eEnd; ++eIt )
                 	{
 	                    //kDebug(1201) << "KonqSidebarTree::scanDir dirtree_dir contains " << *eIt;
@@ -697,8 +697,8 @@ void KonqSidebarTree::scanDir( KonqSidebarTreeItem *parent, const QString &path,
 	                dirEntries.removeAll( ".." );
              }
 	}
-    QStringList::ConstIterator eIt = entries.begin();
-    QStringList::ConstIterator eEnd = entries.end();
+    QStringList::ConstIterator eIt = entries.constBegin();
+    QStringList::ConstIterator eEnd = entries.constEnd();
 
     for (; eIt != eEnd; ++eIt )
     {
@@ -709,8 +709,8 @@ void KonqSidebarTree::scanDir( KonqSidebarTreeItem *parent, const QString &path,
             loadTopLevelItem( parent, filePath );
     }
 
-    eIt = dirEntries.begin();
-    eEnd = dirEntries.end();
+    eIt = dirEntries.constBegin();
+    eEnd = dirEntries.constEnd();
 
     for (; eIt != eEnd; eIt++ )
     {

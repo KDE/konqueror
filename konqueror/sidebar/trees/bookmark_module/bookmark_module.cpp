@@ -291,8 +291,8 @@ void KonqSidebarBookmarkModule::slotDropped(K3ListView *, QDropEvent *e, Q3ListV
     const KBookmark::List bookmarks = KBookmark::List::fromMimeData(e->mimeData());
 
     // copy
-    KBookmark::List::const_iterator it = bookmarks.begin();
-    for (;it != bookmarks.end(); ++it) {
+    KBookmark::List::const_iterator it = bookmarks.constBegin();
+    for (;it != bookmarks.constEnd(); ++it) {
         // insert new item.
         parentGroup.moveItem(*it, afterBookmark);
     }
@@ -537,8 +537,8 @@ KonqSidebarBookmarkItem * KonqSidebarBookmarkModule::findByAddress( const QStrin
 {
     Q3ListViewItem * item = m_topLevelItem;
     // The address is something like /5/10/2
-    QStringList addresses = address.split('/', QString::SkipEmptyParts);
-    for ( QStringList::const_iterator it = addresses.begin() ; it != addresses.end() ; ++it )
+    const QStringList addresses = address.split('/', QString::SkipEmptyParts);
+    for ( QStringList::const_iterator it = addresses.constBegin() ; it != addresses.constEnd() ; ++it )
     {
         uint number = (*it).toUInt();
         item = item->firstChild();

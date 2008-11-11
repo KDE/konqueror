@@ -336,7 +336,7 @@ void KAppearanceOptions::updateGUI()
     }
 
     int i = 0;
-    for ( QStringList::const_iterator it = encodings.begin(); it != encodings.end(); ++it, ++i )
+    for ( QStringList::const_iterator it = encodings.constBegin(); it != encodings.constEnd(); ++it, ++i )
         if ( encodingName == *it )
             m_pEncoding->setCurrentIndex( i );
     if(encodingName.isEmpty())

@@ -408,8 +408,8 @@ KEBMacroCommand* DeleteCommand::deleteAll(const KBookmarkGroup & parentGroup) {
     for (KBookmark bk = parentGroup.first();
             !bk.isNull(); bk = parentGroup.next(bk))
         lstToDelete.prepend(bk.address());
-    for (QStringList::const_iterator it = lstToDelete.begin();
-            it != lstToDelete.end(); ++it)
+    for (QStringList::const_iterator it = lstToDelete.constBegin();
+            it != lstToDelete.constEnd(); ++it)
         cmd->addCommand(new DeleteCommand((*it)));
     return cmd;
 }
@@ -570,8 +570,8 @@ KEBMacroCommand* CmdGen::itemsMoved(const QList<KBookmark> & items,
             : i18n("Move Items"));
 
     QList<KBookmark>::const_iterator it, end;
-    it = items.begin();
-    end = items.end();
+    it = items.constBegin();
+    end = items.constEnd();
 
     QString bkInsertAddr = newAddress;
     for (; it != end; ++it) {

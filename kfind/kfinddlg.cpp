@@ -142,8 +142,8 @@ void KfindDlg::startSearch()
   //Getting a list of all subdirs
   if(tabWidget->isSearchRecursive() && (dirwatch->internalMethod() == KDirWatch::FAM))
   {
-    QStringList subdirs=getAllSubdirs(query->url().path());
-    for(QStringList::const_iterator it = subdirs.begin(); it != subdirs.end(); ++it)
+    const QStringList subdirs=getAllSubdirs(query->url().path());
+    for(QStringList::const_iterator it = subdirs.constBegin(); it != subdirs.constEnd(); ++it)
       dirwatch->addDir(*it,true);
   }
 #endif
@@ -284,7 +284,7 @@ QStringList KfindDlg::getAllSubdirs(QDir d)
   d.setFilter( QDir::Dirs );
   dirs = d.entryList();
 
-  for(QStringList::const_iterator it = dirs.begin(); it != dirs.end(); ++it)
+  for(QStringList::const_iterator it = dirs.constBegin(); it != dirs.constEnd(); ++it)
   {
     if((*it==".")||(*it==".."))
       continue;

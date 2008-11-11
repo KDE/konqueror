@@ -81,10 +81,10 @@ QDBusObjectPath KonqMainWindowAdaptor::currentPart()
 QDBusObjectPath KonqMainWindowAdaptor::view(int viewNumber)
 {
   KonqMainWindow::MapViews viewMap = m_pMainWindow->viewMap();
-  KonqMainWindow::MapViews::const_iterator it = viewMap.begin();
-  for ( int i = 0; it != viewMap.end() && i < viewNumber; ++i )
+  KonqMainWindow::MapViews::const_iterator it = viewMap.constBegin();
+  for ( int i = 0; it != viewMap.constEnd() && i < viewNumber; ++i )
       ++it;
-  if ( it == viewMap.end() )
+  if ( it == viewMap.constEnd() )
       return QDBusObjectPath();
   return QDBusObjectPath( (*it)->dbusObjectPath() );
 }
@@ -92,10 +92,10 @@ QDBusObjectPath KonqMainWindowAdaptor::view(int viewNumber)
 QDBusObjectPath KonqMainWindowAdaptor::part(int partNumber)
 {
   KonqMainWindow::MapViews viewMap = m_pMainWindow->viewMap();
-  KonqMainWindow::MapViews::const_iterator it = viewMap.begin();
-  for ( int i = 0; it != viewMap.end() && i < partNumber; ++i )
+  KonqMainWindow::MapViews::const_iterator it = viewMap.constBegin();
+  for ( int i = 0; it != viewMap.constEnd() && i < partNumber; ++i )
       ++it;
-  if ( it == viewMap.end() )
+  if ( it == viewMap.constEnd() )
       return QDBusObjectPath();
   return QDBusObjectPath( (*it)->partObjectPath() );
 }

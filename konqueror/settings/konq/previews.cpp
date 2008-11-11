@@ -94,12 +94,12 @@ KPreviewOptions::KPreviewOptions( QWidget *parent, const QVariantList & )
 
     QStringList protocolList = KProtocolInfo::protocols();
     protocolList.sort();
-    QStringList::const_iterator it = protocolList.begin();
+    QStringList::const_iterator it = protocolList.constBegin();
 
     KUrl url;
     url.setPath("/");
 
-    for ( ; it != protocolList.end() ; ++it )
+    for ( ; it != protocolList.constEnd() ; ++it )
     {
         url.setProtocol( *it );
         if ( KProtocolManager::supportsListing( url ) )

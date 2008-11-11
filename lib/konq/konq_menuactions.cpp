@@ -44,8 +44,8 @@ static bool KIOSKAuthorizedAction(const KConfigGroup& cfg)
         return true;
     }
     const QStringList list = cfg.readEntry("X-KDE-AuthorizeAction", QStringList() );
-    for(QStringList::ConstIterator it = list.begin();
-        it != list.end(); ++it) {
+    for(QStringList::ConstIterator it = list.constBegin();
+        it != list.constEnd(); ++it) {
         if (!KAuthorized::authorize((*it).trimmed())) {
             return false;
         }
@@ -310,8 +310,8 @@ int KonqMenuActions::addActionsTo(QMenu* mainMenu)
             bool ok = false;
 
             // check for exact matches or a typeglob'd mimetype if we have a mimetype
-            for (QStringList::ConstIterator it = types.begin();
-                 it != types.end() && !ok;
+            for (QStringList::ConstIterator it = types.constBegin();
+                 it != types.constEnd() && !ok;
                  ++it)
             {
                 // first check if we have an all mimetype
@@ -339,7 +339,7 @@ int KonqMenuActions::addActionsTo(QMenu* mainMenu)
 
                 if (checkTheMimetypes) {
                     ok = true;
-                    for (QStringList::ConstIterator itex = excludeTypes.begin(); itex != excludeTypes.end(); ++itex)
+                    for (QStringList::ConstIterator itex = excludeTypes.constBegin(); itex != excludeTypes.constEnd(); ++itex)
                     {
                         if( ((*itex).endsWith('*') && (*itex).left((*itex).indexOf('/')) == commonMimeGroup) ||
                             ((*itex) == commonMimeType) ) {
@@ -409,8 +409,8 @@ void KonqMenuActions::addOpenWithActionsTo(QMenu* topMenu, const QString& trader
     QString constraint = traderConstraint;
     const QString subConstraint = " and '%1' in ServiceTypes";
 
-    QStringList::ConstIterator it = mimeTypeList.begin();
-    const QStringList::ConstIterator end = mimeTypeList.end();
+    QStringList::ConstIterator it = mimeTypeList.constBegin();
+    const QStringList::ConstIterator end = mimeTypeList.constEnd();
     Q_ASSERT( it != end );
     QString firstMimeType = *it;
     ++it;
@@ -456,8 +456,8 @@ void KonqMenuActions::addOpenWithActionsTo(QMenu* topMenu, const QString& trader
             }
             //kDebug() << offers.count() << "offers" << topMenu << menu;
 
-            KService::List::ConstIterator it = offers.begin();
-            for( ; it != offers.end(); it++ ) {
+            KService::List::ConstIterator it = offers.constBegin();
+            for( ; it != offers.constEnd(); it++ ) {
                 KService::Ptr service = (*it);
 
                 // Skip OnlyShowIn=Foo and NotShowIn=KDE entries,
