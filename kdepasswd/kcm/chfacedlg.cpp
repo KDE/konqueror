@@ -80,15 +80,15 @@ ChFaceDlg::ChFaceDlg(const QString& picsdir, QWidget *parent)
   QDir facesDir( picsdir );
   if ( facesDir.exists() )
   {
-    QStringList picslist = facesDir.entryList( QDir::Files );
-    for ( QStringList::const_iterator it = picslist.begin(); it != picslist.end(); ++it )
+    const QStringList picslist = facesDir.entryList( QDir::Files );
+    for ( QStringList::const_iterator it = picslist.constBegin(); it != picslist.constEnd(); ++it )
       new QListWidgetItem( QIcon( picsdir + *it ), (*it).section(".",0,0), ui.m_FacesWidget );
   }
   facesDir.setPath( KCFGUserAccount::userFaceDir() );
   if ( facesDir.exists() )
   {
-    QStringList picslist = facesDir.entryList( QDir::Files );
-    for ( QStringList::const_iterator it = picslist.begin(); it != picslist.end(); ++it )
+    const QStringList picslist = facesDir.entryList( QDir::Files );
+    for ( QStringList::const_iterator it = picslist.constBegin(); it != picslist.constEnd(); ++it )
       new QListWidgetItem( QIcon( KCFGUserAccount::userFaceDir() + *it ),
                            '/'+(*it) == KCFGUserAccount::customFaceFile() ? 
                            i18n("(Custom)") : (*it).section(".",0,0),
