@@ -186,7 +186,7 @@ static void generateMimeType( const QString &mime, const QString &extensions, co
     if (!extensions.isEmpty()) {
         const QStringList exts = extensions.split(",");
         QStringList patterns;
-        for (QStringList::const_iterator it=exts.begin(); it != exts.end(); ++it)
+        for (QStringList::const_iterator it=exts.constBegin(); it != exts.constEnd(); ++it)
             patterns.append( "*." + (*it).trimmed() );
         mimeTypeWriter.setPatterns(patterns);
     }
@@ -398,7 +398,7 @@ void scanDirectory( const QString &dir, QStringList &mimeInfoList,
            // get mime types from string
            QStringList types = mimeInfo.split( ';' );
            QStringList::const_iterator type;
-           for ( type=types.begin(); type!=types.end(); ++type ) {
+           for ( type=types.constBegin(); type!=types.constEnd(); ++type ) {
 
               kDebug(1433) << " - type=" << *type;
               name = name.replace( ':', "%3A" );
@@ -414,10 +414,10 @@ void scanDirectory( const QString &dir, QStringList &mimeInfoList,
                   // write into type cache
                   QStringList tokens = (*type).split(':', QString::KeepEmptyParts);
                   QStringList::const_iterator token;
-                  token = tokens.begin();
+                  token = tokens.constBegin();
                   cache << (*token).toLower();
                   ++token;
-                  for ( ; token!=tokens.end(); ++token )
+                  for ( ; token!=tokens.constEnd(); ++token )
                       cache << ":" << *token;
                   cache << endl;
 
@@ -484,7 +484,7 @@ void removeExistingExtensions( QString &extension )
 {
     QStringList filtered;
     const QStringList exts = extension.split( "," );
-    for ( QStringList::const_iterator it=exts.begin(); it!=exts.end(); ++it ) {
+    for ( QStringList::const_iterator it=exts.constBegin(); it!=exts.constEnd(); ++it ) {
         QString ext = (*it).trimmed();
         if ( ext == "*" ) // some plugins have that, but we don't want to associate a mimetype with *.*!
             continue;
@@ -578,8 +578,8 @@ int main( int argc, char **argv )
     kDebug(1433) << "Scanning directories";
     int count = searchPaths.count();
     int i = 0;
-    for ( QStringList::const_iterator it = searchPaths.begin();
-          it != searchPaths.end(); ++it, ++i)
+    for ( QStringList::const_iterator it = searchPaths.constBegin();
+          it != searchPaths.constEnd(); ++it, ++i)
     {
         if ((*it).isEmpty())
             continue;
@@ -609,8 +609,8 @@ int main( int argc, char **argv )
     // write mimetype files
     kDebug(1433) << "Creating MIME type descriptions";
     QStringList mimeTypes;
-    for ( QStringList::const_iterator it=mimeInfoList.begin();
-          it!=mimeInfoList.end(); ++it) {
+    for ( QStringList::const_iterator it=mimeInfoList.constBegin();
+          it!=mimeInfoList.constEnd(); ++it) {
 
       kDebug(1433) << "Handling MIME type " << *it;
 

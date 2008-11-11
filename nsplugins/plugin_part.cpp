@@ -222,8 +222,8 @@ bool PluginPart::openUrl(const KUrl &url)
     // handle arguments
     QStringList argn, argv;
 
-    QStringList::const_iterator it = _args.begin();
-    for ( ; it != _args.end(); ) {
+    QStringList::const_iterator it = _args.constBegin();
+    for ( ; it != _args.constEnd(); ) {
 
         int equalPos = (*it).indexOf("=");
         if (equalPos>0) {

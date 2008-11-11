@@ -62,9 +62,9 @@ QStringList getSearchPaths()
     searchPaths = config.readPathEntry( "scanPaths", QStringList() );
 
     // append environment variable NPX_PLUGIN_PATH
-    QStringList envs = QString( qgetenv("NPX_PLUGIN_PATH") ).split(':');
+    const QStringList envs = QString( qgetenv("NPX_PLUGIN_PATH") ).split(':');
     QStringList::const_iterator it;
-    for (it = envs.begin(); it != envs.end(); ++it)
+    for (it = envs.constBegin(); it != envs.constEnd(); ++it)
         searchPaths.append(*it);
 
     return searchPaths;

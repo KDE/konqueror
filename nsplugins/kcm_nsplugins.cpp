@@ -40,9 +40,9 @@ static QDateTime lastChanged( const QString &dir )
     QDateTime t = QFileInfo( dir ).lastModified();
     if( t.isNull())
         return t;
-    QStringList subdirs = QDir( dir ).entryList();
-    for( QStringList::ConstIterator it = subdirs.begin();
-         it != subdirs.end();
+    const QStringList subdirs = QDir( dir ).entryList();
+    for( QStringList::ConstIterator it = subdirs.constBegin();
+         it != subdirs.constEnd();
          ++it )
     {
         if( *it == "." || *it == ".." )
@@ -58,9 +58,9 @@ static bool checkSearchPathTimestamps( const QStringList &paths, const QStringLi
 {
     QStringList currentTimestamps;
     bool changed = false;
-    QStringList::ConstIterator t = timestamps.begin();
-    for( QStringList::ConstIterator it = paths.begin();
-         it != paths.end();
+    QStringList::ConstIterator t = timestamps.constBegin();
+    for( QStringList::ConstIterator it = paths.constBegin();
+         it != paths.constEnd();
          ++it, ++t )
     {
         QDateTime current = lastChanged( *it );
