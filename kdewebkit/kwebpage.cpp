@@ -24,6 +24,7 @@
 
 #include "kwebpage.h"
 #include <kdenetwork/knetworkaccessmanager.h>
+#include <kdenetwork/knetworkreply.h>
 #include "settings/webkitsettings.h"
 
 #include <KDE/KParts/GenericFactory>
@@ -45,6 +46,20 @@
 #include <QtNetwork/QNetworkReply>
 #include "kwebpluginfactory.h"
 
+class NetworkAccessManager : public KNetworkAccessManager
+{
+public:
+    NetworkAccessManager(QObject *parent) : KNetworkAccessManager(parent) {}
+protected:
+    virtual QNetworkReply *createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData = 0)
+    {
+        if (WebKitSettings::self()->isAdFilterEnabled() && WebKitSettings::self()->isAdFiltered(req.url().toString())) {
+            return new KNetworkReply(req, 0, this);
+        }
+        return KNetworkAccessManager::createRequest(op, req, outgoingData);
+    }
+};
+
 class KWebPage::KWebPagePrivate
 {
 public:
@@ -54,7 +69,7 @@ public:
 KWebPage::KWebPage(QObject *parent)
     : QWebPage(parent), d(new KWebPage::KWebPagePrivate())
 {
-    setNetworkAccessManager(new KNetworkAccessManager(this));
+    setNetworkAccessManager(new NetworkAccessManager(this));
     setPluginFactory(new KWebPluginFactory(this));
     
     action(Back)->setIcon(KIcon("go-previous"));

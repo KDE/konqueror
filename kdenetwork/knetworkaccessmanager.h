@@ -34,11 +34,12 @@ class KDE_EXPORT KNetworkAccessManager : public QNetworkAccessManager
     Q_OBJECT
 public:
     KNetworkAccessManager(QObject *parent);
+    virtual ~KNetworkAccessManager();
 
     static KIO::MetaData metaDataForRequest(QNetworkRequest request);
 
 protected:
-    QNetworkReply *createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData = 0);
+    virtual QNetworkReply *createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData = 0);
 
 private:
     class KNetworkAccessManagerPrivate;
