@@ -115,7 +115,10 @@ void  KDEpasswd2Dialog::accept()
 {
     PasswdProcess proc(m_User);
 
-    QString p=password();
+    QString p;
+    if(!checkAndGetPassword(&p)){
+        return;
+    }
 
     if (p.length() > 8)
     {
