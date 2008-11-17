@@ -82,10 +82,10 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout* lay)
 
     m_startCombo = new KComboBox(this);
     m_startCombo->setEditable(false);
-    m_startCombo->addItem(i18nc("@item:inlistbox", "Show the introduction page"), ShowAboutPage);
-    m_startCombo->addItem(i18nc("@item:inlistbox", "Show my home page"), ShowHomePage);
-    m_startCombo->addItem(i18nc("@item:inlistbox", "Show a blank page"), ShowBlankPage);
-    m_startCombo->addItem(i18nc("@item:inlistbox", "Show my bookmarks"), ShowBookmarksPage);
+    m_startCombo->addItem(i18nc("@item:inlistbox", "Show Introduction Page"), ShowAboutPage);
+    m_startCombo->addItem(i18nc("@item:inlistbox", "Show My Home Page"), ShowHomePage);
+    m_startCombo->addItem(i18nc("@item:inlistbox", "Show Blank Page"), ShowBlankPage);
+    m_startCombo->addItem(i18nc("@item:inlistbox", "Show My Bookmarks"), ShowBookmarksPage);
     startLayout->addWidget(m_startCombo);
     connect(m_startCombo, SIGNAL(currentIndexChanged(int)), SLOT(slotChanged()));
 
@@ -94,7 +94,7 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout* lay)
     ////
 
     QHBoxLayout *homeLayout = new QHBoxLayout;
-    QLabel *label = new QLabel(i18n("Home Page:"), this);
+    QLabel *label = new QLabel(i18n("Home page:"), this);
     homeLayout->addWidget(label);
 
     homeURL = new KUrlRequester(this);
