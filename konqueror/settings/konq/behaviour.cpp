@@ -82,7 +82,7 @@ KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
     mainLayout->addWidget(miscGb);
 
     QGroupBox *bg = new QGroupBox(this);
-    bg->setTitle(i18n("Ask Confirmation For"));
+    bg->setTitle(i18nc("@title:group what to do when a file is deleted", "Ask Confirmation For"));
     bg->setWhatsThis(i18n("This option tells Konqueror whether to ask"
                           " for a confirmation when you \"delete\" a file."
                           " <ul><li><em>Move To Trash:</em> moves the file to your trash folder,"
@@ -90,10 +90,10 @@ KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
                           " <li><em>Delete:</em> simply deletes the file.</li>"
                           " </ul>"));
 
-    cbMoveToTrash = new QCheckBox(i18n("&Move to trash"), bg);
+    cbMoveToTrash = new QCheckBox(i18nc("@option:check Ask for confirmation when moving to trash", "&Move to trash"), bg);
     connect(cbMoveToTrash, SIGNAL(toggled(bool)), this, SLOT(changed()));
 
-    cbDelete = new QCheckBox(i18n("D&elete"), bg);
+    cbDelete = new QCheckBox(i18nc("@option:check Ask for confirmation when deleting", "D&elete"), bg);
     connect(cbDelete, SIGNAL(toggled(bool)), this, SLOT(changed()));
 
     QVBoxLayout *confirmationLayout = new QVBoxLayout;
