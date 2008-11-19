@@ -152,7 +152,7 @@ void DesktopPathConfig::load()
     urDesktop->setPath( KGlobalSettings::desktopPath() );
     urAutostart->setPath( KGlobalSettings::autostartPath() );
     urDocument->setPath( KGlobalSettings::documentPath() );
-    changed();
+    emit changed(false);
 }
 
 void DesktopPathConfig::defaults()
