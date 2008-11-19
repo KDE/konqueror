@@ -160,7 +160,7 @@ void DesktopPathConfig::defaults()
     // Desktop Paths - keep defaults in sync with kglobalsettings.cpp
     urDesktop->setPath( QDir::homePath() + "/Desktop/" );
     urAutostart->setPath( KGlobal::dirs()->localkdedir() + "Autostart/" );
-    urDocument->setPath( QDir::homePath() );
+    urDocument->setPath( QDir::homePath() + "/Documents/");
 }
 
 void DesktopPathConfig::save()
@@ -221,8 +221,16 @@ void DesktopPathConfig::save()
 
         if ( moveDir( KUrl( KGlobalSettings::desktopPath() ), KUrl( urlDesktop ), i18n("Desktop") ) )
         {
+	    //save in kdeglobals -- is it still needed?
             configGroup.writePathEntry( "Desktop", urlDesktop, KConfigBase::Normal | KConfigBase::Global );
-            pathChanged = true;
+            //save in XDG path
+	    QString xdgUserDirs = QDir::homePath() + QLatin1String( "/.config/user-dirs.dirs" );
+	    if( QFile::exists( xdgUserDirs ) ) {
+		KConfig xdgUserConf( xdgUserDirs, KConfig::SimpleConfig );
+		KConfigGroup g( &xdgUserConf, "" );
+		g.writePathEntry( "XDG_DESKTOP_DIR", urlDesktop );
+	    }
+	    pathChanged = true;
         }
     }
 
@@ -254,8 +262,16 @@ void DesktopPathConfig::save()
 
         if (pathOk)
         {
+	    //save in kdeglobals -- is it still needed?
             configGroup.writePathEntry( "Documents", path, KConfigBase::Normal | KConfigBase::Global );
-            pathChanged = true;
+            //save in XDG path
+	    QString xdgUserDirs = QDir::homePath() + QLatin1String( "/.config/user-dirs.dirs" );
+	    if( QFile::exists( xdgUserDirs ) ) {
+		KConfig xdgUserConf( xdgUserDirs, KConfig::SimpleConfig );
+		KConfigGroup g( &xdgUserConf, "" );
+		g.writePathEntry( "XDG_DOCUMENTS_DIR", path );
+	    }
+	    pathChanged = true;
         }
     }
 
