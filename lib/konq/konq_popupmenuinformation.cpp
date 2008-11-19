@@ -58,6 +58,19 @@ KonqPopupMenuInformation & KonqPopupMenuInformation::operator=(const KonqPopupMe
     return *this;
 }
 
+// FIXME: use KFileItemList::targetUrlList on Monday
+namespace {
+    KUrl::List targetUrlList( const KFileItemList& list ) {
+        KUrl::List lst;
+        KFileItemList::const_iterator it = list.begin();
+        const KFileItemList::const_iterator itend = list.end();
+        for ( ; it != itend ; ++it ) {
+            lst.append( (*it).targetUrl() );
+        }
+        return lst;
+    }
+}
+
 void KonqPopupMenuInformation::setItems(const KFileItemList& items)
 {
     Q_ASSERT(!items.isEmpty());
@@ -66,7 +79,7 @@ void KonqPopupMenuInformation::setItems(const KFileItemList& items)
     d->m_mimeType = items.first().mimetype();
     d->m_mimeGroup = d->m_mimeType.left(d->m_mimeType.indexOf('/'));
     d->m_isDirectory = items.first().isDir();
-    d->m_urlList = items.urlList();
+    d->m_urlList = targetUrlList( items );
     if (items.count() > 1) {
         KFileItemList::const_iterator kit = items.begin();
         const KFileItemList::const_iterator kend = items.end();
