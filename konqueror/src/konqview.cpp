@@ -315,8 +315,12 @@ void KonqView::switchView( KonqViewFactory &viewFactory )
 bool KonqView::ensureViewSupports( const QString &mimeType,
                                    bool forceAutoEmbed )
 {
-    if (supportsMimeType(mimeType))
+    if (supportsMimeType(mimeType)) {
+        // could be more specific, let's store it so that OpenUrlArguments::mimeType is correct
+        // testcase: http://acid3.acidtests.org/svg.xml should be opened as image/svg+xml
+        m_serviceType = mimeType;
         return true;
+    }
     return changePart(mimeType, QString(), forceAutoEmbed);
 }
 
@@ -1416,7 +1420,7 @@ void KonqView::saveConfig( KConfigGroup& config, const QString &prefix, const Ko
                 options = KonqFrameBase::saveHistoryItems;
             else
                 options = KonqFrameBase::saveURLs;
-            
+
             (*it)->saveConfig(config, QString::fromLatin1( "HistoryItem" )
                 + QString::number(i).prepend( prefix ), options);
         }
@@ -1433,7 +1437,7 @@ void KonqView::loadHistoryConfig(const KConfigGroup& config, const QString &pref
 
     int historySize = config.readEntry( QString::fromLatin1( "NumberOfHistoryItems" ).prepend( prefix ), 0 );
     int currentIndex = config.readEntry( QString::fromLatin1( "CurrentHistoryItem" ).prepend( prefix ), historySize-1 );
-    
+
     // No history to restore..
     if (historySize == 0)
     {
@@ -1445,14 +1449,14 @@ void KonqView::loadHistoryConfig(const KConfigGroup& config, const QString &pref
     for ( int i = 0; i < historySize; ++i )
     {
         HistoryEntry* historyEntry = new HistoryEntry;
-        
+
         // Only current history item saves completely its HistoryEntry
         KonqFrameBase::Options options;
         if(i == currentIndex)
             options = KonqFrameBase::saveHistoryItems;
         else
             options = KonqFrameBase::saveURLs;
-        
+
         historyEntry->loadItem(config, QString::fromLatin1( "HistoryItem" ) + QString::number(i).prepend( prefix ), options);
 
         appendHistoryEntry( historyEntry );
@@ -1461,7 +1465,7 @@ void KonqView::loadHistoryConfig(const KConfigGroup& config, const QString &pref
     // Shouldn't happen, but just in case..
     if(currentIndex >= historyLength())
         currentIndex = historyLength()-1;
-    
+
     // set and load the correct history index
     setHistoryIndex( currentIndex );
     restoreHistory();
