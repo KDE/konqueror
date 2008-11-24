@@ -446,14 +446,10 @@ void KonqMenuActions::addOpenWithActionsTo(QMenu* topMenu, const QString& trader
             topMenu->addSeparator();
 
         if ( !offers.isEmpty() ) {
-            QMenu* menu = topMenu;
-
-            if ( offers.count() > 1 ) { // submenu 'open with'
-                // TODO i18nc("@title:menu", "Open With")
-                menu = new QMenu(i18n("&Open With"), topMenu);
-                menu->menuAction()->setObjectName("openWith_submenu"); // for the unittest
-                topMenu->addMenu(menu);
-            }
+            // TODO i18nc("@title:menu", "Open With")
+            QMenu* menu = new QMenu(i18n("&Open With"), topMenu);
+            menu->menuAction()->setObjectName("openWith_submenu"); // for the unittest
+            topMenu->addMenu(menu);
             //kDebug() << offers.count() << "offers" << topMenu << menu;
 
             KService::List::ConstIterator it = offers.constBegin();
@@ -490,14 +486,10 @@ void KonqMenuActions::addOpenWithActionsTo(QMenu* topMenu, const QString& trader
             }
 
             QString openWithActionName;
-            if ( menu != topMenu ) { // submenu
-                menu->addSeparator();
-                // TODO i18nc("@action:inmenu Open With", "&Other...")
-                openWithActionName = i18n("&Other...");
-            } else {
-                // TODO i18nc("@title:menu", "Open With...")
-                openWithActionName = i18n("&Open With...");
-            }
+            menu->addSeparator();
+            // TODO i18nc("@action:inmenu Open With", "&Other...")
+            openWithActionName = i18n("&Other...");
+
             QAction *openWithAct = d->m_ownActions.addAction( "openwith_browse" );
             openWithAct->setText( openWithActionName );
             QObject::connect(openWithAct, SIGNAL(triggered()), d, SLOT(slotOpenWithDialog()));
