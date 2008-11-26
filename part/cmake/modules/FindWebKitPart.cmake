@@ -26,7 +26,7 @@ endif(webkitpart_SOURCE_DIR)
 if( NOT WIN32 )
   INCLUDE(UsePkgConfig)
 
-  PKGCONFIG(webkitkpart _WebKitPartIncDir _WebKitPartLinkDir _WebKitPartLinkFlags _WebKitPartCflags)
+  PKGCONFIG(webkitpart _WebKitPartIncDir _WebKitPartLinkDir _WebKitPartLinkFlags _WebKitPartCflags)
 
   SET(WEBKITPART_DEFINITIONS ${_WebKitPartCflags})
 endif( NOT WIN32 )
@@ -35,10 +35,10 @@ FIND_PATH(WEBKITPART_INCLUDE_DIR NAMES webkitpart.h
   PATHS
   ${_WebKitPartIncDir}
   ${KDE4_INCLUDE_INSTALL_DIR}
-  PATH_SUFFIXES webkitkpart
+  PATH_SUFFIXES webkitkde
 )
 
-FIND_LIBRARY(WEBKITPART_LIBRARIES NAMES webkitkpart
+FIND_LIBRARY(WEBKITPART_LIBRARIES NAMES webkitkde
   PATHS
   ${_WebKitPartLinkDir}
   ${KDE4_LIB_INSTALL_DIR}
