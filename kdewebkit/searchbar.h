@@ -45,17 +45,13 @@ public:
     bool caseSensitive() const;
     void setFoundMatch(bool match);
 
-public slots:
+public Q_SLOTS:
     void clear();
     void show();
     void hide();
 
 protected:
     void resizeEvent(QResizeEvent *event);
-
-private slots:
-    void frameChanged(int frame);
-    void notifySearchChanged();
 
 signals:
     void searchChanged(const QString& text);
@@ -72,6 +68,8 @@ private:
     QTimeLine *m_timeLine;
 
 private Q_SLOTS:
+    void frameChanged(int frame);
+    void notifySearchChanged();
     void slotHide();
     void searchAsYouTypeChanged(int state);
 
