@@ -695,6 +695,7 @@ private: // members
   bool m_bNeedApplyKonqMainWindowSettings:1;
   bool m_urlCompletionStarted:1;
   bool m_prevMenuBarVisible:1;
+  bool m_fullyConstructed:1;
 
   int m_goBuffer;
   Qt::MouseButtons m_goMouseState;
