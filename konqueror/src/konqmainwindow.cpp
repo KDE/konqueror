@@ -175,7 +175,8 @@ KonqExtendedBookmarkOwner::KonqExtendedBookmarkOwner(KonqMainWindow *w)
 
 KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile)
     : KParts::MainWindow(),
-      m_paClosedItems(0)
+      m_paClosedItems(0),
+      m_fullyConstructed(false)
 {
   incInstancesCount();
   setPreloadedFlag( false );
@@ -214,13 +215,14 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
 
   m_pViewManager = new KonqViewManager( this );
 
-  m_toggleViewGUIClient = new ToggleViewGUIClient( this );
-
   m_viewModeMenu = 0;
   m_openWithMenu = 0;
   m_paCopyFiles = 0;
   m_paMoveFiles = 0;
   m_bookmarkBarInitialized = false;
+
+  m_toggleViewGUIClient = new ToggleViewGUIClient( this );
+
   m_pBookmarksOwner = new KonqExtendedBookmarkOwner(this);
 
   // init history-manager, load history, get completion object
@@ -310,6 +312,7 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
       s_preloadUsageCount = 0;
   }
   KonqSessionManager::self();
+  m_fullyConstructed = true;
 }
 
 KonqMainWindow::~KonqMainWindow()
@@ -2044,7 +2047,7 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
   m_paHome->setIcon(KIcon(m_currentView->showsDirectory() ? "user-home" : "go-home"));
   m_paHome->setText( m_currentView->showsDirectory() ?  i18n( "Home Folder") : i18n( "Home Page"  ) );
   m_paHome->setToolTip( m_currentView->showsDirectory() ? i18n( "Navigate to your 'Home Folder'") : i18n( "Navigate to your 'Home Page'"  ) );
-  m_paHome->setWhatsThis(m_currentView->showsDirectory() ?  i18n( "Navigate to your local 'Home Folder'" ) : 
+  m_paHome->setWhatsThis(m_currentView->showsDirectory() ?  i18n( "Navigate to your local 'Home Folder'" ) :
                                 i18n( "<html>Navigate to your 'Home Page'<br /><br />"
                                 "You can configure the location where this button takes you "
                                 "under <b>Settings -> Configure Konqueror -> General</b>.</html>" )  );
@@ -4823,8 +4826,13 @@ void KonqMainWindow::reparseConfiguration()
 
 void KonqMainWindow::saveProperties( KConfigGroup& config )
 {
-    KonqFrameBase::Options flags = KonqFrameBase::saveHistoryItems;
-    m_pViewManager->saveViewProfileToGroup(config, flags);
+    // Ensure no crash if the sessionmanager timer fires before the ctor is done
+    // This can happen via ToggleViewGUIClient -> KServiceTypeTrader::query
+    // -> KSycoca running kbuildsycoca -> nested event loop.
+    if (m_fullyConstructed) {
+        KonqFrameBase::Options flags = KonqFrameBase::saveHistoryItems;
+        m_pViewManager->saveViewProfileToGroup(config, flags);
+    }
 }
 
 void KonqMainWindow::readProperties( const KConfigGroup& configGroup )
@@ -5127,7 +5135,7 @@ void KonqMainWindow::addClosedWindowToUndoList()
     // 3. Add the KonqClosedWindowItem to the undo list
     m_paClosedItems->setEnabled(true);
     m_pUndoManager->addClosedWindowItem( closedWindowItem );
-    
+
     kDebug(1202) << "done";
 }
 
