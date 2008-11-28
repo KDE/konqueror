@@ -1,18 +1,16 @@
-
-########### next target ###############
-
 set(kcm_konq_PART_SRCS
    behaviour.cpp
    globalpaths.cpp
    previews.cpp
    browser.cpp
    konqkcmfactory.cpp
-   kcustommenueditor.cpp)
+#    kcustommenueditor.cpp
+)
 
 kde4_add_plugin(kcm_konq ${kcm_konq_PART_SRCS})
 
 
-target_link_libraries(kcm_konq  ${KDE4_KDE3SUPPORT_LIBS} ${KDE4_KUTILS_LIBS} )
+target_link_libraries(kcm_konq ${KDE4_KUTILS_LIBS} ${KDE4_KIO_LIBS})
 
 install(TARGETS kcm_konq  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
