@@ -119,97 +119,31 @@ To add a new policy, simply click on the &lt;b>Add...&lt;/b> button and supply t
       <string>Site Policy</string>
      </property>
      <layout class="QGridLayout" >
-      <item row="0" column="0" >
-       <widget class="QLabel" name="textLabel1" >
-        <property name="text" >
-         <string>&amp;Search:</string>
-        </property>
-        <property name="wordWrap" >
-         <bool>false</bool>
-        </property>
-        <property name="buddy" >
-         <cstring>kListViewSearchLine</cstring>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1" >
-       <widget class="K3ListViewSearchLine" name="kListViewSearchLine" >
-        <property name="toolTip" >
-         <string>Search interactively for domains</string>
-        </property>
-        <property name="text" >
-         <string/>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0" colspan="2" >
-       <widget class="K3ListView" name="lvDomainPolicy" >
-        <property name="whatsThis" >
-         <string>&lt;qt>
-List of sites for which you have set a specific cookie policy. Specific policies override the default policy setting for these sites.
-&lt;/qt></string>
-        </property>
-        <property name="selectionMode" >
-         <enum>Q3ListView::Single</enum>
-        </property>
-        <property name="showSortIndicator" >
-         <bool>true</bool>
-        </property>
-        <property name="rootIsDecorated" >
-         <bool>true</bool>
-        </property>
-        <property name="treeStepSize" >
-         <number>0</number>
-        </property>
-        <column>
-         <property name="text" >
-          <string>Domain</string>
-         </property>
-         <property name="clickable" >
-          <bool>true</bool>
-         </property>
-         <property name="resizable" >
-          <bool>true</bool>
-         </property>
-        </column>
-        <column>
-         <property name="text" >
-          <string>Policy</string>
-         </property>
-         <property name="clickable" >
-          <bool>true</bool>
-         </property>
-         <property name="resizable" >
-          <bool>true</bool>
-         </property>
-        </column>
-       </widget>
-      </item>
       <item row="1" column="2" >
        <layout class="QVBoxLayout" >
         <item>
-         <widget class="QPushButton" name="pbNew" >
+         <widget class="KPushButton" name="pbNew" >
           <property name="text" >
            <string>&amp;New...</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pbChange" >
+         <widget class="KPushButton" name="pbChange" >
           <property name="text" >
            <string>Chan&amp;ge...</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pbDelete" >
+         <widget class="KPushButton" name="pbDelete" >
           <property name="text" >
            <string>D&amp;elete</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pbDeleteAll" >
+         <widget class="KPushButton" name="pbDeleteAll" >
           <property name="text" >
            <string>Delete A&amp;ll</string>
           </property>
@@ -233,6 +167,50 @@ List of sites for which you have set a specific cookie policy. Specific policies
         </item>
        </layout>
       </item>
+      <item row="1" column="0" >
+       <widget class="QTreeWidget" name="lvDomainPolicy" >
+        <property name="whatsThis" >
+         <string>&lt;qt>
+List of sites for which you have set a specific cookie policy. Specific policies override the default policy setting for these sites.
+&lt;/qt></string>
+        </property>
+        <property name="selectionMode" >
+         <enum>QAbstractItemView::ExtendedSelection</enum>
+        </property>
+        <property name="rootIsDecorated" >
+         <bool>false</bool>
+        </property>
+        <property name="sortingEnabled" >
+         <bool>true</bool>
+        </property>
+        <property name="allColumnsShowFocus" >
+         <bool>true</bool>
+        </property>
+        <column>
+         <property name="text" >
+          <string>Domain</string>
+         </property>
+        </column>
+        <column>
+         <property name="text" >
+          <string>Policy</string>
+         </property>
+        </column>
+       </widget>
+      </item>
+      <item row="0" column="0" >
+       <widget class="KTreeWidgetSearchLine" name="kListViewSearchLine" >
+        <property name="enabled" >
+         <bool>true</bool>
+        </property>
+        <property name="toolTip" >
+         <string>Search interactively for domains</string>
+        </property>
+        <property name="clickMessage" >
+         <string>Search</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
    </item>
@@ -243,20 +221,16 @@ List of sites for which you have set a specific cookie policy. Specific policies
  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
  <customwidgets>
   <customwidget>
-   <class>K3ListView</class>
-   <extends>Q3ListView</extends>
-   <header>k3listview.h</header>
+   <class>KPushButton</class>
+   <extends>QPushButton</extends>
+   <header>kpushbutton.h</header>
   </customwidget>
   <customwidget>
-   <class>K3ListViewSearchLine</class>
+   <class>KTreeWidgetSearchLine</class>
    <extends>KLineEdit</extends>
-   <header>k3listviewsearchline.h</header>
+   <header>ktreewidgetsearchline.h</header>
   </customwidget>
  </customwidgets>
- <includes>
-  <include location="local" >k3listview.h</include>
-  <include location="local" >k3listviewsearchline.h</include>
- </includes>
  <resources/>
  <connections/>
 </ui>

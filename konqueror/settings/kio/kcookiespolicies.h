@@ -23,16 +23,16 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#ifndef __KCOOKIESPOLICIES_H
-#define __KCOOKIESPOLICIES_H
+#ifndef KCOOKIESPOLICIES_H
+#define KCOOKIESPOLICIES_H
 
 #include <QtCore/QMap>
 #include <kcmodule.h>
 
 #include "policydlg.h"
 #include "ui_kcookiespoliciesdlg.h"
-class Q3ListViewItem;
 
+class QTreeWidgetItem;
 
 class KCookiesPolicyDlgUI : public QWidget, public Ui::KCookiesPolicyDlgUI
 {
@@ -82,7 +82,7 @@ private:
     int d_itemsSelected;
     bool d_configChanged;
     KCookiesPolicyDlgUI* dlg;
-    QMap<Q3ListViewItem*, const char*> m_pDomainPolicy;
+    QMap<QTreeWidgetItem*, const char*> m_pDomainPolicy;
 };
 
-#endif // __KCOOKIESPOLICIES_H
+#endif // KCOOKIESPOLICIES_H
