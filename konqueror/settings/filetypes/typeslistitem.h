@@ -18,22 +18,22 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef _TYPESLISTITEM_H
-#define _TYPESLISTITEM_H
+#ifndef TYPESLISTITEM_H
+#define TYPESLISTITEM_H
 
 #include "mimetypedata.h"
-#include <Qt3Support/Q3ListView>
+#include <QtGui/QTreeWidgetItem>
 
 #include <kmimetype.h>
 
 // TODO different subclasses for mimetypes and groups?
-class TypesListItem : public Q3ListViewItem
+class TypesListItem : public QTreeWidgetItem
 {
 public:
     /**
      * Create a filetype group
      */
-    TypesListItem(Q3ListView *parent, const QString & major );
+    TypesListItem(QTreeWidget *parent, const QString &major);
 
     /**
      * Create a filetype item inside a group, for an existing mimetype
@@ -53,11 +53,9 @@ public:
     const MimeTypeData& mimeTypeData() const { return m_mimetypeData; }
     MimeTypeData& mimeTypeData() { return m_mimetypeData; }
 
-    virtual void paintCell(QPainter *painter, const QColorGroup & cg, int column, int width, int align);
+    void loadIcon(bool forceReload = false);
 
 private:
-    void loadIcon();
-
     MimeTypeData m_mimetypeData;
 };
 

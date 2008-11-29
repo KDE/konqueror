@@ -37,6 +37,7 @@
 #include <kinputdialog.h>
 #include <klineedit.h>
 #include <klocale.h>
+#include <kpushbutton.h>
 
 // Local
 #include "kservicelistwidget.h"
@@ -92,7 +93,8 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
     " associated with the file type 'text/plain'; all files ending in '.txt' are recognized"
     " as plain text files.") );
 
-  addExtButton = new QPushButton(i18n("Add..."), gb);
+  addExtButton = new KPushButton(i18n("Add..."), gb);
+  addExtButton->setIcon(KIcon("list-add"));
   addExtButton->setEnabled(false);
   connect(addExtButton, SIGNAL(clicked()),
           this, SLOT(addExtension()));
@@ -100,7 +102,8 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
 
   addExtButton->setWhatsThis( i18n("Add a new pattern for the selected file type.") );
 
-  removeExtButton = new QPushButton(i18n("Remove"), gb);
+  removeExtButton = new KPushButton(i18n("Remove"), gb);
+  removeExtButton->setIcon(KIcon("list-remove"));
   removeExtButton->setEnabled(false);
   connect(removeExtButton, SIGNAL(clicked()),
           this, SLOT(removeExtension()));
@@ -108,12 +111,11 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
 
   removeExtButton->setWhatsThis( i18n("Remove the selected filename pattern.") );
 
-  grid->addItem(new QSpacerItem(0, 0, QSizePolicy::Fixed, QSizePolicy::Expanding), 2, 1);
-
   gb = new QGroupBox(i18n("Description"), firstWidget);
   firstLayout->addWidget(gb);
 
   description = new KLineEdit(gb);
+  description->setClearButtonShown(true);
   connect(description, SIGNAL(textChanged(const QString &)),
           SLOT(updateDescription(const QString &)));
 

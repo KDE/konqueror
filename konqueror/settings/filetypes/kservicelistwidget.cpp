@@ -25,7 +25,6 @@
 #include <unistd.h>
 
 // Qt
-#include <QtGui/QPushButton>
 #include <QtGui/QLayout>
 #include <QtGui/QGridLayout>
 
@@ -37,6 +36,7 @@
 #include <knotification.h>
 #include <kopenwithdialog.h>
 #include <kpropertiesdialog.h>
+#include <kpushbutton.h>
 #include <kstandarddirs.h>
 
 // Local
@@ -67,12 +67,11 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
                : i18n("Services Preference Order"), parent ),
     m_kind( kind ), m_mimeTypeData( 0L )
 {
-  QWidget * gb = this;
-  QGridLayout * grid = new QGridLayout(gb);
+  QGridLayout * grid = new QGridLayout(this);
   grid->setMargin(KDialog::marginHint());
   grid->setSpacing(KDialog::spacingHint());
 
-  servicesLB = new QListWidget(gb);
+  servicesLB = new QListWidget(this);
   connect(servicesLB, SIGNAL(itemSelectionChanged()), SLOT(enableMoveButtons()));
   grid->addWidget(servicesLB, 0, 0, 6, 1);
   connect( servicesLB, SIGNAL( itemDoubleClicked(QListWidgetItem*)), this, SLOT( editService()));
@@ -90,10 +89,11 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
           " then the list is ordered by priority with the uppermost item taking precedence"
           " over the others."));
 
-  gb->setWhatsThis( wtstr );
+  setWhatsThis( wtstr );
   servicesLB->setWhatsThis( wtstr );
 
-  servUpButton = new QPushButton(i18n("Move &Up"), gb);
+  servUpButton = new KPushButton(i18n("Move &Up"), this);
+  servUpButton->setIcon(KIcon("arrow-up"));
   servUpButton->setEnabled(false);
   connect(servUpButton, SIGNAL(clicked()), SLOT(promoteService()));
   grid->addWidget(servUpButton, 1, 1);
@@ -106,7 +106,8 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
                    i18n("Assigns a higher priority to the selected\n"
                         "service, moving it up in the list."));
 
-  servDownButton = new QPushButton(i18n("Move &Down"), gb);
+  servDownButton = new KPushButton(i18n("Move &Down"), this);
+  servDownButton->setIcon(KIcon("arrow-down"));
   servDownButton->setEnabled(false);
   connect(servDownButton, SIGNAL(clicked()), SLOT(demoteService()));
   grid->addWidget(servDownButton, 2, 1);
@@ -119,7 +120,8 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
                    i18n("Assigns a lower priority to the selected\n"
                         "service, moving it down in the list."));
 
-  servNewButton = new QPushButton(i18n("Add..."), gb);
+  servNewButton = new KPushButton(i18n("Add..."), this);
+  servNewButton->setIcon(KIcon("list-add"));
   servNewButton->setEnabled(false);
   connect(servNewButton, SIGNAL(clicked()), SLOT(addService()));
   grid->addWidget(servNewButton, 0, 1);
@@ -127,7 +129,8 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
   servNewButton->setWhatsThis( i18n( "Add a new application for this file type." ) );
 
 
-  servEditButton = new QPushButton(i18n("Edit..."), gb);
+  servEditButton = new KPushButton(i18n("Edit..."), this);
+  servEditButton->setIcon(KIcon("edit-rename"));
   servEditButton->setEnabled(false);
   connect(servEditButton, SIGNAL(clicked()), SLOT(editService()));
   grid->addWidget(servEditButton, 3, 1);
@@ -135,14 +138,13 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
   servEditButton->setWhatsThis( i18n( "Edit command line of the selected application." ) );
 
 
-  servRemoveButton = new QPushButton(i18n("Remove"), gb);
+  servRemoveButton = new KPushButton(i18n("Remove"), this);
+  servRemoveButton->setIcon(KIcon("list-remove"));
   servRemoveButton->setEnabled(false);
   connect(servRemoveButton, SIGNAL(clicked()), SLOT(removeService()));
   grid->addWidget(servRemoveButton, 4, 1);
 
   servRemoveButton->setWhatsThis( i18n( "Remove the selected application from the list." ) );
-
-  grid->addItem(new QSpacerItem(0, 0, QSizePolicy::Fixed, QSizePolicy::Expanding), 5, 1);
 }
 
 void KServiceListWidget::setMimeTypeData( MimeTypeData * mimeTypeData )

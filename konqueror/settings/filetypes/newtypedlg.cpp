@@ -25,7 +25,7 @@
 #include <QtGui/QBoxLayout>
 #include <QtGui/QComboBox>
 #include <QtGui/QFrame>
-#include <QtGui/QGridLayout>
+#include <QtGui/QFormLayout>
 #include <QtGui/QLabel>
 #include <QtGui/QLayout>
 
@@ -44,20 +44,14 @@ NewTypeDialog::NewTypeDialog(const QStringList &groups, QWidget *parent)
 
   QWidget* main = mainWidget();
 
-  QGridLayout *grid = new QGridLayout(main);
-  grid->setColumnStretch(1, 1);
-  grid->setSpacing(spacingHint());
-
-  // Line 0: group selection
+  QFormLayout *formLayout = new QFormLayout(main);
 
   QLabel *l = new QLabel(i18n("Group:"), main);
-  grid->addWidget(l, 0, 0);
 
   m_groupCombo = new QComboBox(main);
   m_groupCombo->setEditable(true);
   m_groupCombo->addItems(groups);
-  grid->addWidget(m_groupCombo, 0, 1);
-  l->setBuddy(m_groupCombo);
+  formLayout->addRow(l, m_groupCombo);
 
   m_groupCombo->setWhatsThis( i18n("Select the category under which"
     " the new file type should be added.") );
@@ -65,18 +59,16 @@ NewTypeDialog::NewTypeDialog(const QStringList &groups, QWidget *parent)
   // Line 1: mimetype name
 
   l = new QLabel(i18n("Type name:"), main);
-  grid->addWidget(l, 1, 0);
 
   m_typeEd = new KLineEdit(main);
-  grid->addWidget(m_typeEd, 1, 1);
-  l->setBuddy(m_typeEd);
+  formLayout->addRow(l, m_typeEd);
 
   m_typeEd->setWhatsThis(i18n("Type the name of the file type. For instance, if you selected 'image' as category and you type 'custom' here, the file type 'image/custom' will be created."));
 
   m_typeEd->setFocus();
 
-  // Set a minimum size so that caption is not half-hidden
-  setMinimumSize( 300, 50 );
+  // Set a minimum width so that caption is not half-hidden
+  setMinimumWidth(300);
 }
 
 QString NewTypeDialog::group() const

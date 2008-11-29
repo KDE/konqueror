@@ -17,12 +17,12 @@
    the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
    Boston, MA 02110-1301, USA.
 */
-#ifndef _FILEGROUPDETAILS_H
-#define _FILEGROUPDETAILS_H
+#ifndef FILEGROUPDETAILS_H
+#define FILEGROUPDETAILS_H
 
 #include <QtGui/QWidget>
 class MimeTypeData;
-class Q3ButtonGroup;
+class QButtonGroup;
 
 /**
  * This widget contains the details for a filetype group.
@@ -46,7 +46,7 @@ private:
     MimeTypeData * m_mimeTypeData;
 
   // Embedding config
-  Q3ButtonGroup *m_autoEmbed;
+  QButtonGroup *m_autoEmbed;
 };
 
 #endif

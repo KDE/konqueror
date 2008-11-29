@@ -1,4 +1,23 @@
-/* Missing license header */
+/*  This file is part of the KDE project
+    Copyright (C) 2000 - 2008 David Faure <faure@kde.org>
+    Copyright (C) 2008 Urs Wolfer <uwolfer @ kde.org>
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License or ( at
+    your option ) version 3 or, at the discretion of KDE e.V. ( which shall
+    act as a proxy as in section 14 of the GPLv3 ), any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; see the file COPYING.  If not, write to
+    the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+    Boston, MA 02110-1301, USA.
+*/
 
 // Own
 #include "filetypesview.h"
@@ -7,7 +26,6 @@
 // Qt
 #include <QtGui/QLabel>
 #include <QtGui/QLayout>
-#include <QtGui/QPushButton>
 #include <QtCore/QTimer>
 #include <QtGui/QGridLayout>
 #include <QtGui/QBoxLayout>
@@ -22,8 +40,8 @@
 #include <kdebug.h>
 #include <kdesktopfile.h>
 #include <klineedit.h>
-#include <k3listview.h>
 #include <klocale.h>
+#include <kpushbutton.h>
 #include <kservicetypeprofile.h>
 #include <ksycoca.h>
 #include <kpluginfactory.h>
@@ -93,16 +111,14 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
   patternFilterLE->setWhatsThis( wtstr );
   patternFilterLBL->setWhatsThis( wtstr );
 
-  typesLV = new K3ListView(this);
-  typesLV->setRootIsDecorated(true);
-  typesLV->setFullWidth(true);
+  typesLV = new TypesListTreeWidget(this);
 
-  typesLV->addColumn(i18n("Known Types"));
+  typesLV->setHeaderLabel(i18n("Known Types"));
   leftLayout->addWidget(typesLV, 2, 0, 1, 3);
-  connect(typesLV, SIGNAL(selectionChanged(Q3ListViewItem *)),
-          this, SLOT(updateDisplay(Q3ListViewItem *)));
-  connect(typesLV, SIGNAL(doubleClicked(Q3ListViewItem *)),
-          this, SLOT(slotDoubleClicked(Q3ListViewItem *)));
+  connect(typesLV, SIGNAL(currentItemChanged(QTreeWidgetItem *, QTreeWidgetItem *)),
+          this, SLOT(updateDisplay(QTreeWidgetItem *)));
+  connect(typesLV, SIGNAL(itemDoubleClicked(QTreeWidgetItem *, int)),
+          this, SLOT(slotDoubleClicked(QTreeWidgetItem *)));
 
   typesLV->setWhatsThis( i18n("Here you can see a hierarchical list of"
     " the file types which are known on your system. Click on the '+' sign"
@@ -110,13 +126,15 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
     " (e.g. text/html for HTML files) to view/edit the information for that"
     " file type using the controls on the right.") );
 
-  QPushButton *addTypeB = new QPushButton(i18n("Add..."), this);
+  KPushButton *addTypeB = new KPushButton(i18n("Add..."), this);
+  addTypeB->setIcon(KIcon("list-add"));
   connect(addTypeB, SIGNAL(clicked()), SLOT(addType()));
   leftLayout->addWidget(addTypeB, 3, 0);
 
   addTypeB->setWhatsThis( i18n("Click here to add a new file type.") );
 
-  m_removeTypeB = new QPushButton(i18n("&Remove"), this);
+  m_removeTypeB = new KPushButton(i18n("&Remove"), this);
+  m_removeTypeB->setIcon(KIcon("list-remove"));
   connect(m_removeTypeB, SIGNAL(clicked()), SLOT(removeType()));
   leftLayout->addWidget(m_removeTypeB, 3, 2);
   m_removeTypeB->setEnabled(false);
@@ -190,7 +208,7 @@ void FileTypesView::readFileTypes()
     KMimeType::List::const_iterator it2(mimetypes.constBegin());
     for (; it2 != mimetypes.constEnd(); ++it2) {
 	QString mimetype = (*it2)->name();
-	int index = mimetype.indexOf("/");
+	int index = mimetype.indexOf('/');
 	QString maj = mimetype.left(index);
 	QString min = mimetype.right(mimetype.length() - index+1);
 
@@ -218,28 +236,23 @@ void FileTypesView::slotEmbedMajor(const QString &major, bool &embed)
 
 void FileTypesView::slotFilter(const QString & patternFilter)
 {
-    // one of the few ways to clear a listview without destroying the
-    // listviewitems and without making QListView crash.
-    Q3ListViewItem *item;
-    while ( (item = typesLV->firstChild()) ) {
-	while ( item->firstChild() )
-	    item->takeItem( item->firstChild() );
-
-	typesLV->takeItem( item );
+    for (int i = 0; i < typesLV->topLevelItemCount(); ++i) {
+        typesLV->topLevelItem(i)->setHidden(true);
     }
 
     // insert all items and their group that match the filter
     Q_FOREACH(TypesListItem* it, m_itemList) {
         const MimeTypeData& mimeTypeData = it->mimeTypeData();
-	if ( patternFilter.isEmpty() || mimeTypeData.matchesFilter(patternFilter) ) {
-	    TypesListItem *group = m_majorMap.value( mimeTypeData.majorType() );
+        if ( patternFilter.isEmpty() || mimeTypeData.matchesFilter(patternFilter) ) {
+            TypesListItem *group = m_majorMap.value( mimeTypeData.majorType() );
             Q_ASSERT(group);
             if (group) {
-                // QListView makes sure we don't insert a group-item more than once
-                typesLV->insertItem(group);
-                group->insertItem(it);
+                group->setHidden(false);
+                it->setHidden(false);
             }
-	}
+        } else {
+            it->setHidden(true);
+        }
     }
 }
 
@@ -252,7 +265,7 @@ void FileTypesView::addType()
     if (dialog.exec()) {
         QString newMimeType = dialog.group() + '/' + dialog.text();
 
-        Q3ListViewItemIterator it(typesLV);
+        QTreeWidgetItemIterator it(typesLV);
 
         TypesListItem *group = m_majorMap.value(dialog.group());
         if ( !group ) {
@@ -261,23 +274,23 @@ void FileTypesView::addType()
         }
 
         // find out if our group has been filtered out -> insert if necessary
-        Q3ListViewItem *item = typesLV->firstChild();
+        QTreeWidgetItem *item = typesLV->topLevelItem(0);
         bool insert = true;
         while ( item ) {
             if ( item == group ) {
                 insert = false;
                 break;
             }
-            item = item->nextSibling();
+            item = typesLV->itemBelow(item);
         }
         if ( insert )
-            typesLV->insertItem( group );
+            typesLV->addTopLevelItem( group );
 
         TypesListItem *tli = new TypesListItem(group, newMimeType);
         m_itemList.append( tli );
 
-        group->setOpen(true);
-        typesLV->setSelected(tli, true);
+        group->setExpanded(true);
+        tli->setSelected(true);
 
         setDirty(true);
     }
@@ -298,30 +311,30 @@ void FileTypesView::removeType()
   // nor essential mimetypes
   if ( mimeTypeData.isEssential() )
       return;
-
-  Q3ListViewItem *li = current->itemAbove();
+      
+  QTreeWidgetItem *li = typesLV->itemAbove(current);
   if (!li)
-      li = current->itemBelow();
+      li = typesLV->itemBelow(current);
   if (!li)
       li = current->parent();
 
   if (!mimeTypeData.isNew())
       removedList.append(mimeTypeData.name());
-  current->parent()->takeItem(current);
+  current->parent()->takeChild(current->parent()->indexOfChild(current));
   m_itemList.removeAll(current);
   setDirty(true);
 
   if ( li )
-      typesLV->setSelected(li, true);
+      li->setSelected(true);
 }
 
-void FileTypesView::slotDoubleClicked(Q3ListViewItem *item)
+void FileTypesView::slotDoubleClicked(QTreeWidgetItem *item)
 {
   if ( !item ) return;
-  item->setOpen( !item->isOpen() );
+  item->setExpanded( !item->isExpanded() );
 }
 
-void FileTypesView::updateDisplay(Q3ListViewItem *item)
+void FileTypesView::updateDisplay(QTreeWidgetItem *item)
 {
   if (!item)
   {
