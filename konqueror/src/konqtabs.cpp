@@ -153,8 +153,8 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
   m_pActiveChild = 0L;
   m_pViewManager = viewManager;
 
-  connect( this, SIGNAL( currentChanged ( QWidget * ) ),
-           this, SLOT( slotCurrentChanged( QWidget* ) ) );
+  connect( this, SIGNAL( currentChanged ( int ) ),
+           this, SLOT( slotCurrentChanged( int ) ) );
 
   m_MouseMiddleClickClosesTab = KonqSettings::mouseMiddleClickClosesTab();
 
@@ -599,12 +599,12 @@ bool KonqFrameTabs::accept( KonqFrameVisitor* visitor )
     return true;
 }
 
-void KonqFrameTabs::slotCurrentChanged( QWidget* newPage )
+void KonqFrameTabs::slotCurrentChanged( int index )
 {
     const KColorScheme colorScheme(QPalette::Active, KColorScheme::Window);
-    setTabTextColor(indexOf(newPage), colorScheme.foreground(KColorScheme::NormalText));
+    setTabTextColor(index, colorScheme.foreground(KColorScheme::NormalText));
 
-    KonqFrameBase* currentFrame = dynamic_cast<KonqFrameBase*>(newPage);
+    KonqFrameBase* currentFrame = dynamic_cast<KonqFrameBase*>(widget( index ));
     if (currentFrame && !m_pViewManager->isLoadingProfile()) {
         m_pActiveChild = currentFrame;
         currentFrame->activateChild();
