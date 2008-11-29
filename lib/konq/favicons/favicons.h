@@ -95,8 +95,6 @@ signals: // DBUS signals
 
 private:
     void startDownload(const QString &, bool, const KUrl &);
-    QString simplifyURL(const KUrl &);
-    QString iconNameFromURL(const KUrl &);
     bool isIconOld(const QString &);
 
 private Q_SLOTS:

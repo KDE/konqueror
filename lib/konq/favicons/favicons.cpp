@@ -43,6 +43,34 @@ K_PLUGIN_FACTORY(FavIconsFactory,
     )
 K_EXPORT_PLUGIN(FavIconsFactory("favicons"))
 
+static QString simplifyURL(const KUrl &url)
+{
+    // splat any = in the URL so it can be safely used as a config key
+    QString result = url.host() + url.path();
+    for (int i = 0; i < result.length(); ++i)
+        if (result[i] == '=')
+            result[i] = '_';
+    return result;
+}
+
+static QString iconNameFromURL(const KUrl &iconURL)
+{
+    if (iconURL.path() == "/favicon.ico")
+       return iconURL.host();
+
+    QString result = simplifyURL(iconURL);
+    // splat / so it can be safely used as a file name
+    for (int i = 0; i < result.length(); ++i)
+        if (result[i] == '/')
+            result[i] = '_';
+
+    QString ext = result.right(4);
+    if (ext == ".ico" || ext == ".png" || ext == ".xpm")
+        result.remove(result.length() - 4, 4);
+
+    return result;
+}
+
 struct FavIconsModulePrivate
 {
     virtual ~FavIconsModulePrivate() { delete config; }
@@ -53,6 +81,17 @@ struct FavIconsModulePrivate
         bool isHost;
         QByteArray iconData;
     };
+    QString makeIconName(const DownloadInfo& download, const KUrl& iconURL)
+    {
+        QString iconName;
+        if (download.isHost)
+            iconName = download.hostOrURL;
+        else
+            iconName = iconNameFromURL(iconURL);
+
+        return "favicons/" + iconName;
+    }
+
     QMap<KJob *, DownloadInfo> downloads;
     QStringList failedDownloads;
     KConfig *config;
@@ -124,34 +163,6 @@ QString FavIconsModule::iconForUrl(const KUrl &url)
     return QString();
 }
 
-QString FavIconsModule::simplifyURL(const KUrl &url)
-{
-    // splat any = in the URL so it can be safely used as a config key
-    QString result = url.host() + url.path();
-    for (int i = 0; i < result.length(); ++i)
-        if (result[i] == '=')
-            result[i] = '_';
-    return result;
-}
-
-QString FavIconsModule::iconNameFromURL(const KUrl &iconURL)
-{
-    if (iconURL.path() == "/favicon.ico")
-       return iconURL.host();
-
-    QString result = simplifyURL(iconURL);
-    // splat / so it can be safely used as a file name
-    for (int i = 0; i < result.length(); ++i)
-        if (result[i] == '/')
-            result[i] = '_';
-
-    QString ext = result.right(4);
-    if (ext == ".ico" || ext == ".png" || ext == ".xpm")
-        result.remove(result.length() - 4, 4);
-
-    return result;
-}
-
 bool FavIconsModule::isIconOld(const QString &icon)
 {
     struct stat st;
@@ -216,6 +227,8 @@ void FavIconsModule::slotData(KIO::Job *job, const QByteArray &data)
         kDebug() << "Favicon too big, aborting download of" << tjob->url();
         d->killJobs.append(job);
         QTimer::singleShot(0, this, SLOT(slotKill()));
+        const KUrl iconURL = tjob->url();
+        d->failedDownloads.append(iconURL.url());
     }
     download.iconData.resize(oldSize + data.size());
     memcpy(download.iconData.data() + oldSize, data.data(), data.size());
@@ -227,7 +240,7 @@ void FavIconsModule::slotResult(KJob *job)
     FavIconsModulePrivate::DownloadInfo download = d->downloads[job];
     d->killJobs.removeAll(tjob);
     d->downloads.remove(job);
-    KUrl iconURL = tjob->url();
+    const KUrl iconURL = tjob->url();
     QString iconName;
     if (!job->error())
     {
@@ -246,12 +259,7 @@ void FavIconsModule::slotResult(KJob *job)
             ir.setScaledSize( desired );
             QImage img = ir.read();
             if( !img.isNull() ) {
-                if (download.isHost)
-                    iconName = download.hostOrURL;
-                else
-                    iconName = iconNameFromURL(iconURL);
-
-                iconName = "favicons/" + iconName;
+                iconName = d->makeIconName(download, iconURL);
                 if( !img.save( d->faviconsDir + iconName + ".png", "PNG" ) )
                     iconName.clear();
                 else if (!download.isHost)
