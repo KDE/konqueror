@@ -101,7 +101,7 @@
      <property name="title" >
       <string>Details</string>
      </property>
-     <layout class="QGridLayout" name="gridLayout" >
+     <layout class="QFormLayout" name="formLayout" >
       <item row="0" column="0" >
        <widget class="QLabel" name="lbName" >
         <property name="text" >
@@ -260,9 +260,6 @@
    <header>ktreewidgetsearchline.h</header>
   </customwidget>
  </customwidgets>
- <includes>
-  <include location="local" >k3listviewsearchline.h</include>
- </includes>
  <resources/>
  <connections/>
 </ui>

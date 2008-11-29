@@ -58,7 +58,10 @@ UserAgentDlg::UserAgentDlg(QWidget *parent, const QVariantList &)
               m_config(0)
 {
   ui.setupUi(this);
-  load();
+  ui.newButton->setIcon(KIcon("list-add"));
+  ui.changeButton->setIcon(KIcon("edit-rename"));
+  ui.deleteButton->setIcon(KIcon("list-remove"));
+  ui.deleteAllButton->setIcon(KIcon("edit-delete"));
 }
 
 UserAgentDlg::~UserAgentDlg()
@@ -93,7 +96,7 @@ void UserAgentDlg::on_newButton_clicked()
 
 void UserAgentDlg::on_changeButton_clicked()
 {
-  on_sitePolicyTreeWidget_itemActivated(ui.sitePolicyTreeWidget->currentItem(), -1);
+  on_sitePolicyTreeWidget_itemDoubleClicked(ui.sitePolicyTreeWidget->currentItem(), -1);
 }
 
 void UserAgentDlg::on_deleteButton_clicked()
@@ -141,7 +144,7 @@ void UserAgentDlg::on_languageCheckBox_clicked()
   changeDefaultUAModifiers();
 }
 
-void UserAgentDlg::on_sitePolicyTreeWidget_itemActivated(QTreeWidgetItem* item, int)
+void UserAgentDlg::on_sitePolicyTreeWidget_itemDoubleClicked(QTreeWidgetItem* item, int)
 {
   if(item)
   {

@@ -180,7 +180,7 @@ By default, only minimal identification information is sent to remote sites. The
          <number>0</number>
         </property>
         <item>
-         <widget class="QPushButton" name="newButton" >
+         <widget class="KPushButton" name="newButton" >
           <property name="whatsThis" >
            <string>Add new identification text for a site.</string>
           </property>
@@ -190,7 +190,7 @@ By default, only minimal identification information is sent to remote sites. The
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="changeButton" >
+         <widget class="KPushButton" name="changeButton" >
           <property name="whatsThis" >
            <string>Change the selected identifier text.</string>
           </property>
@@ -200,7 +200,7 @@ By default, only minimal identification information is sent to remote sites. The
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="deleteButton" >
+         <widget class="KPushButton" name="deleteButton" >
           <property name="whatsThis" >
            <string>Delete the selected identifier text.</string>
           </property>
@@ -210,7 +210,7 @@ By default, only minimal identification information is sent to remote sites. The
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="deleteAllButton" >
+         <widget class="KPushButton" name="deleteAllButton" >
           <property name="whatsThis" >
            <string>Delete all identifiers.</string>
           </property>
@@ -247,6 +247,11 @@ By default, only minimal identification information is sent to remote sites. The
  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
  <customwidgets>
   <customwidget>
+   <class>KPushButton</class>
+   <extends>QPushButton</extends>
+   <header>kpushbutton.h</header>
+  </customwidget>
+  <customwidget>
    <class>KSqueezedTextLabel</class>
    <extends>QLabel</extends>
    <header>ksqueezedtextlabel.h</header>
@@ -254,7 +259,6 @@ By default, only minimal identification information is sent to remote sites. The
  </customwidgets>
  <includes>
   <include location="local" >klineedit.h</include>
-  <include location="local" >k3listview.h</include>
  </includes>
  <resources/>
  <connections>

@@ -60,7 +60,7 @@ private Q_SLOTS:
   void on_processorTypeCheckBox_clicked();
   void on_languageCheckBox_clicked();
   void on_sitePolicyTreeWidget_itemSelectionChanged();
-  void on_sitePolicyTreeWidget_itemActivated(QTreeWidgetItem*, int);
+  void on_sitePolicyTreeWidget_itemDoubleClicked(QTreeWidgetItem*, int);
 
 private:
   void changeDefaultUAModifiers();

@@ -6,49 +6,174 @@
     <x>0</x>
     <y>0</y>
     <width>526</width>
-    <height>195</height>
+    <height>296</height>
    </rect>
   </property>
-  <layout class="QGridLayout" >
+  <layout class="QGridLayout" name="gridLayout" >
    <item row="0" column="0" >
-    <widget class="QLabel" name="lbHttp" >
-     <property name="whatsThis" >
-      <string>&lt;qt>
+    <layout class="QFormLayout" name="formLayout" >
+     <item row="0" column="0" >
+      <widget class="QLabel" name="lbHttp" >
+       <property name="whatsThis" >
+        <string>&lt;qt>
 Enter the name of the environment variable, e.g. &lt;b>HTTP_PROXY&lt;/b>, used to store the address of the HTTP proxy server.&lt;p>
 Alternatively, you can click on the &lt;b>"Auto Detect"&lt;/b> button to attempt automatic discovery of this variable.
 &lt;/qt></string>
-     </property>
-     <property name="text" >
-      <string>H&amp;TTP:</string>
-     </property>
-     <property name="alignment" >
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-     <property name="wordWrap" >
-      <bool>false</bool>
-     </property>
-     <property name="buddy" >
-      <cstring>leHttp</cstring>
-     </property>
-    </widget>
+       </property>
+       <property name="text" >
+        <string>H&amp;TTP:</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="wordWrap" >
+        <bool>false</bool>
+       </property>
+       <property name="buddy" >
+        <cstring>leHttp</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1" >
+      <widget class="KLineEdit" name="leHttp" >
+       <property name="sizePolicy" >
+        <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="whatsThis" >
+        <string>&lt;qt>
+Enter the name of the environment variable, e.g. &lt;b>HTTP_PROXY&lt;/b>, used to store the address of the HTTP proxy server.&lt;p>
+Alternatively, you can click on the &lt;b>"Auto Detect"&lt;/b> button to attempt automatic discovery of this variable.
+&lt;/qt></string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0" >
+      <widget class="QLabel" name="lbHttps" >
+       <property name="whatsThis" >
+        <string>&lt;qt>
+Enter the name of the environment variable, e.g. &lt;b>HTTPS_PROXY&lt;/b>, used to store the address of the HTTPS proxy server.&lt;p>
+Alternatively, you can click on the &lt;b>"Auto Detect"&lt;/b> button to attempt an automatic discovery of this variable.
+&lt;/qt></string>
+       </property>
+       <property name="text" >
+        <string>HTTP&amp;S:</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="wordWrap" >
+        <bool>false</bool>
+       </property>
+       <property name="buddy" >
+        <cstring>leHttps</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1" >
+      <widget class="KLineEdit" name="leHttps" >
+       <property name="sizePolicy" >
+        <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="whatsThis" >
+        <string>&lt;qt>
+Enter the name of the environment variable, e.g. &lt;b>HTTPS_PROXY&lt;/b>, used to store the address of the HTTPS proxy server.&lt;p>
+Alternatively, you can click on the &lt;b>"Auto Detect"&lt;/b> button to attempt an automatic discovery of this variable.
+&lt;/qt></string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0" >
+      <widget class="QLabel" name="lbFtp" >
+       <property name="whatsThis" >
+        <string>&lt;qt>
+Enter the name of the environment variable, e.g. &lt;b>FTP_PROXY&lt;/b>, used to store the address of the FTP proxy server.&lt;p>
+Alternatively, you can click on the &lt;b>"Auto Detect"&lt;/b> button to attempt an automatic discovery of this variable.
+&lt;/qt></string>
+       </property>
+       <property name="text" >
+        <string>&amp;FTP:</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="wordWrap" >
+        <bool>false</bool>
+       </property>
+       <property name="buddy" >
+        <cstring>leFtp</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1" >
+      <widget class="KLineEdit" name="leFtp" >
+       <property name="sizePolicy" >
+        <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="whatsThis" >
+        <string>&lt;qt>
+Enter the name of the environment variable, e.g. &lt;b>FTP_PROXY&lt;/b>, used to store the address of the FTP proxy server.&lt;p>
+Alternatively, you can click on the &lt;b>"Auto Detect"&lt;/b> button to attempt an automatic discovery of this variable.
+&lt;/qt></string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" >
+      <widget class="QLabel" name="lnNoProxy" >
+       <property name="whatsThis" >
+        <string>&lt;qt>
+Enter the environment variable, e.g. &lt;b>NO_PROXY&lt;/b>, used to store the addresses of sites for which the proxy server should not be used.&lt;p>
+Alternatively, you can click on the &lt;b>"Auto Detect"&lt;/b> button to attempt an automatic discovery of this variable.
+&lt;/qt></string>
+       </property>
+       <property name="text" >
+        <string>NO &amp;PROXY:</string>
+       </property>
+       <property name="alignment" >
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="wordWrap" >
+        <bool>false</bool>
+       </property>
+       <property name="buddy" >
+        <cstring>leNoProxy</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1" >
+      <widget class="KLineEdit" name="leNoProxy" >
+       <property name="sizePolicy" >
+        <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="whatsThis" >
+        <string>&lt;qt>
+Enter the environment variable, e.g. &lt;b>NO_PROXY&lt;/b>, used to store the addresses of sites for which the proxy server should not be used.&lt;p>
+Alternatively, you can click on the &lt;b>"Auto Detect"&lt;/b> button to attempt an automatic discovery of this variable.
+&lt;/qt></string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1" >
+      <widget class="QCheckBox" name="cbShowValue" >
+       <property name="text" >
+        <string>Show the &amp;value of the environment variables</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
    <item row="0" column="1" >
-    <widget class="KLineEdit" name="leHttp" >
-     <property name="sizePolicy" >
-      <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="whatsThis" >
-      <string>&lt;qt>
-Enter the name of the environment variable, e.g. &lt;b>HTTP_PROXY&lt;/b>, used to store the address of the HTTP proxy server.&lt;p>
-Alternatively, you can click on the &lt;b>"Auto Detect"&lt;/b> button to attempt automatic discovery of this variable.
-&lt;/qt></string>
-     </property>
-    </widget>
-   </item>
-   <item rowspan="4" row="0" column="2" >
     <layout class="QVBoxLayout" >
      <item>
       <widget class="QPushButton" name="pbVerify" >
@@ -89,127 +214,6 @@ Alternatively, you can click on the &lt;b>"Auto Detect"&lt;/b> button to attempt
     </layout>
    </item>
    <item row="1" column="0" >
-    <widget class="QLabel" name="lbHttps" >
-     <property name="whatsThis" >
-      <string>&lt;qt>
-Enter the name of the environment variable, e.g. &lt;b>HTTPS_PROXY&lt;/b>, used to store the address of the HTTPS proxy server.&lt;p>
-Alternatively, you can click on the &lt;b>"Auto Detect"&lt;/b> button to attempt an automatic discovery of this variable.
-&lt;/qt></string>
-     </property>
-     <property name="text" >
-      <string>HTTP&amp;S:</string>
-     </property>
-     <property name="alignment" >
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-     <property name="wordWrap" >
-      <bool>false</bool>
-     </property>
-     <property name="buddy" >
-      <cstring>leHttps</cstring>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="1" >
-    <widget class="KLineEdit" name="leHttps" >
-     <property name="sizePolicy" >
-      <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="whatsThis" >
-      <string>&lt;qt>
-Enter the name of the environment variable, e.g. &lt;b>HTTPS_PROXY&lt;/b>, used to store the address of the HTTPS proxy server.&lt;p>
-Alternatively, you can click on the &lt;b>"Auto Detect"&lt;/b> button to attempt an automatic discovery of this variable.
-&lt;/qt></string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="0" >
-    <widget class="QLabel" name="lbFtp" >
-     <property name="whatsThis" >
-      <string>&lt;qt>
-Enter the name of the environment variable, e.g. &lt;b>FTP_PROXY&lt;/b>, used to store the address of the FTP proxy server.&lt;p>
-Alternatively, you can click on the &lt;b>"Auto Detect"&lt;/b> button to attempt an automatic discovery of this variable.
-&lt;/qt></string>
-     </property>
-     <property name="text" >
-      <string>&amp;FTP:</string>
-     </property>
-     <property name="alignment" >
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-     <property name="wordWrap" >
-      <bool>false</bool>
-     </property>
-     <property name="buddy" >
-      <cstring>leFtp</cstring>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="1" >
-    <widget class="KLineEdit" name="leFtp" >
-     <property name="sizePolicy" >
-      <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="whatsThis" >
-      <string>&lt;qt>
-Enter the name of the environment variable, e.g. &lt;b>FTP_PROXY&lt;/b>, used to store the address of the FTP proxy server.&lt;p>
-Alternatively, you can click on the &lt;b>"Auto Detect"&lt;/b> button to attempt an automatic discovery of this variable.
-&lt;/qt></string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="0" >
-    <widget class="QLabel" name="lnNoProxy" >
-     <property name="whatsThis" >
-      <string>&lt;qt>
-Enter the environment variable, e.g. &lt;b>NO_PROXY&lt;/b>, used to store the addresses of sites for which the proxy server should not be used.&lt;p>
-Alternatively, you can click on the &lt;b>"Auto Detect"&lt;/b> button to attempt an automatic discovery of this variable.
-&lt;/qt></string>
-     </property>
-     <property name="text" >
-      <string>NO &amp;PROXY:</string>
-     </property>
-     <property name="alignment" >
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-     <property name="wordWrap" >
-      <bool>false</bool>
-     </property>
-     <property name="buddy" >
-      <cstring>leNoProxy</cstring>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="1" >
-    <widget class="KLineEdit" name="leNoProxy" >
-     <property name="sizePolicy" >
-      <sizepolicy vsizetype="Fixed" hsizetype="Expanding" >
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="whatsThis" >
-      <string>&lt;qt>
-Enter the environment variable, e.g. &lt;b>NO_PROXY&lt;/b>, used to store the addresses of sites for which the proxy server should not be used.&lt;p>
-Alternatively, you can click on the &lt;b>"Auto Detect"&lt;/b> button to attempt an automatic discovery of this variable.
-&lt;/qt></string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="1" >
-    <widget class="QCheckBox" name="cbShowValue" >
-     <property name="text" >
-      <string>Show the &amp;value of the environment variables</string>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="1" >
     <spacer>
      <property name="orientation" >
       <enum>Qt::Vertical</enum>
