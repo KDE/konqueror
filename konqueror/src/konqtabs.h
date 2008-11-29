@@ -89,7 +89,7 @@ public:
   KonqFrameBase* tabContaining(KonqFrameBase* frame) const;
 
 public Q_SLOTS:
-  void slotCurrentChanged( QWidget* newPage );
+  void slotCurrentChanged( int index );
   void setAlwaysTabbedMode( bool );
 
 Q_SIGNALS:

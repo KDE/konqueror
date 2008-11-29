@@ -391,7 +391,7 @@ void KonqViewManager::removeTab( KonqFrameBase* currentFrame, bool emitAboutToRe
 
   delete currentFrame;
 
-  m_tabContainer->slotCurrentChanged(m_tabContainer->currentWidget());
+  m_tabContainer->slotCurrentChanged(m_tabContainer->currentIndex());
 
 #ifdef DEBUG_VIEWMGR
   m_pMainWindow->dumpViewList();

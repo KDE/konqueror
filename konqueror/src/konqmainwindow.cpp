@@ -277,7 +277,7 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
 
   checkDisableClearButton();
 
-  connect(toolBarMenuAction(),SIGNAL(activated()),this,SLOT(slotForceSaveMainWindowSettings()) );
+  connect(toolBarMenuAction(),SIGNAL(triggered()),this,SLOT(slotForceSaveMainWindowSettings()) );
 
   if ( !m_toggleViewGUIClient->empty() )
     plugActionList( QLatin1String( "toggleview" ), m_toggleViewGUIClient->actions() );
@@ -3200,9 +3200,9 @@ bool KonqMainWindow::eventFilter(QObject*obj,QEvent *ev)
       if ( duplicate->shortcuts().contains( QKeySequence(Qt::CTRL+Qt::Key_D) ))
           duplicate->setEnabled( false );
 
-      connect( m_paCut, SIGNAL( activated() ), m_combo->lineEdit(), SLOT( cut() ) );
-      connect( m_paCopy, SIGNAL( activated() ), m_combo->lineEdit(), SLOT( copy() ) );
-      connect( m_paPaste, SIGNAL( activated() ), m_combo->lineEdit(), SLOT( paste() ) );
+      connect( m_paCut, SIGNAL( triggered() ), m_combo->lineEdit(), SLOT( cut() ) );
+      connect( m_paCopy, SIGNAL( triggered() ), m_combo->lineEdit(), SLOT( copy() ) );
+      connect( m_paPaste, SIGNAL( triggered() ), m_combo->lineEdit(), SLOT( paste() ) );
       connect( QApplication::clipboard(), SIGNAL(dataChanged()), this, SLOT(slotClipboardDataChanged()) );
       connect( m_combo->lineEdit(), SIGNAL(textChanged(const QString &)), this, SLOT(slotCheckComboSelection()) );
       connect( m_combo->lineEdit(), SIGNAL(selectionChanged()), this, SLOT(slotCheckComboSelection()) );
@@ -3226,9 +3226,9 @@ bool KonqMainWindow::eventFilter(QObject*obj,QEvent *ev)
       if ( duplicate->shortcuts().contains( QKeySequence(Qt::CTRL+Qt::Key_D) ) )
           duplicate->setEnabled( actionCollection()->action("new_window")->isEnabled() );
 
-      disconnect( m_paCut, SIGNAL( activated() ), m_combo->lineEdit(), SLOT( cut() ) );
-      disconnect( m_paCopy, SIGNAL( activated() ), m_combo->lineEdit(), SLOT( copy() ) );
-      disconnect( m_paPaste, SIGNAL( activated() ), m_combo->lineEdit(), SLOT( paste() ) );
+      disconnect( m_paCut, SIGNAL( triggered() ), m_combo->lineEdit(), SLOT( cut() ) );
+      disconnect( m_paCopy, SIGNAL( triggered() ), m_combo->lineEdit(), SLOT( copy() ) );
+      disconnect( m_paPaste, SIGNAL( triggered() ), m_combo->lineEdit(), SLOT( paste() ) );
       disconnect( QApplication::clipboard(), SIGNAL(dataChanged()), this, SLOT(slotClipboardDataChanged()) );
       disconnect( m_combo->lineEdit(), SIGNAL(textChanged(const QString &)), this, SLOT(slotCheckComboSelection()) );
       disconnect( m_combo->lineEdit(), SIGNAL(selectionChanged()), this, SLOT(slotCheckComboSelection()) );
@@ -4177,7 +4177,7 @@ void KonqMainWindow::connectExtension( KParts::BrowserExtension *ext )
       // Does the extension have a slot with the name of this action ?
       if ( ext->metaObject()->indexOfSlot( it.key()+"()" ) != -1 )
       {
-          connect( act, SIGNAL( activated() ), ext, it.value() /* SLOT(slot name) */ );
+          connect( act, SIGNAL( triggered() ), ext, it.value() /* SLOT(slot name) */ );
           act->setEnabled( ext->isActionEnabled( it.key() ) );
           const QString text = ext->actionText( it.key() );
           if ( !text.isEmpty() )
@@ -4887,7 +4887,7 @@ void KonqMainWindow::updateOpenWithActions()
        action = new QAction((*it)->name(), this);
     action->setIcon( KIcon( (*it)->icon() ) );
 
-    connect( action, SIGNAL( activated() ),
+    connect( action, SIGNAL( triggered() ),
              this, SLOT( slotOpenWith() ) );
 
     actionCollection()->addAction((*it)->desktopEntryName(), action);
