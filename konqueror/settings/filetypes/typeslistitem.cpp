@@ -1,6 +1,7 @@
 /* This file is part of the KDE project
    Copyright (C) 2003 Waldo Bastian <bastian@kde.org>
    Copyright (C) 2003, 2007 David Faure <faure@kde.org>
+   Copyright (C) 2008 Urs Wolfer <uwolfer @ kde.org>
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -23,25 +24,25 @@
 
 // KDE
 #include <kdebug.h>
-#include <kiconloader.h>
+#include <kicon.h>
 
 
-TypesListItem::TypesListItem(Q3ListView *parent, const QString & major)
-  : Q3ListViewItem(parent),
+TypesListItem::TypesListItem(QTreeWidget *parent, const QString & major)
+  : QTreeWidgetItem(parent),
     m_mimetypeData(major)
 {
     setText(0, major);
 }
 
 TypesListItem::TypesListItem(TypesListItem *parent, KMimeType::Ptr mimetype)
-  : Q3ListViewItem(parent),
+  : QTreeWidgetItem(parent),
     m_mimetypeData(mimetype)
 {
     setText(0, m_mimetypeData.minorType());
 }
 
 TypesListItem::TypesListItem(TypesListItem *parent, const QString& newMimetype)
-  : Q3ListViewItem(parent),
+  : QTreeWidgetItem(parent),
     m_mimetypeData(newMimetype, true)
 {
     setText(0, m_mimetypeData.minorType());
@@ -51,24 +52,16 @@ TypesListItem::~TypesListItem()
 {
 }
 
-void TypesListItem::paintCell(QPainter *painter, const QColorGroup & cg, int column, int width, int align)
-{
-    if (parent() && !pixmap(0)) {
-        // Load icon here instead of loading it in the constructor. This way
-        // the user won't wait for icons he won't see.
-        loadIcon();
-    }
-    Q3ListViewItem::paintCell(painter, cg, column, width, align);
-}
-
 void TypesListItem::setIcon( const QString& icon )
 {
     m_mimetypeData.setUserSpecifiedIcon(icon);
-    loadIcon();
+    loadIcon(true);
 }
 
-void TypesListItem::loadIcon()
+void TypesListItem::loadIcon(bool forceReload)
 {
-    setPixmap(0, KIconLoader::global()->loadMimeTypeIcon(m_mimetypeData.icon(), KIconLoader::Small));
+    if ((!m_mimetypeData.icon().isEmpty() && icon(0).isNull()) || forceReload) {
+        QTreeWidgetItem::setIcon(0, KIcon(m_mimetypeData.icon()));
+    }
 }
 

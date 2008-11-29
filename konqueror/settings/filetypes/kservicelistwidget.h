@@ -26,7 +26,7 @@
 #include <QtGui/QListWidget>
 #include <kservice.h>
 class MimeTypeData;
-class QPushButton;
+class KPushButton;
 class KService;
 
 class KServiceListItem : public QListWidgetItem
@@ -71,8 +71,8 @@ protected:
 private:
   int m_kind;
   QListWidget *servicesLB;
-  QPushButton *servUpButton, *servDownButton;
-  QPushButton *servNewButton, *servEditButton, *servRemoveButton;
+  KPushButton *servUpButton, *servDownButton;
+  KPushButton *servNewButton, *servEditButton, *servRemoveButton;
   MimeTypeData *m_mimeTypeData;
 };
 

@@ -19,46 +19,45 @@
 */
 #include "filegroupdetails.h"
 #include "mimetypedata.h"
+
 #include <QtGui/QLayout>
 #include <QtGui/QRadioButton>
-#include <Qt3Support/Q3ButtonGroup>
-#include <QtGui/QWhatsThis>
-#include <kdialog.h>
+#include <QtGui/QButtonGroup>
+#include <QtGui/QGroupBox>
+
 #include <klocale.h>
 
 FileGroupDetails::FileGroupDetails(QWidget *parent)
     : QWidget( parent )
 {
-  QVBoxLayout *secondLayout = new QVBoxLayout;
-  secondLayout->setMargin(0);
-  secondLayout->setSpacing(KDialog::spacingHint());
+  QVBoxLayout *secondLayout = new QVBoxLayout(this);
 
-  m_autoEmbed = new Q3ButtonGroup( i18n("Left Click Action"));
-  m_autoEmbed->setOrientation( Qt::Vertical );
-  m_autoEmbed->layout()->setSpacing( KDialog::spacingHint() );
-  secondLayout->addWidget( m_autoEmbed );
+  QGroupBox *autoEmbedBox = new QGroupBox( i18n("Left Click Action") );
+  m_autoEmbed = new QButtonGroup( autoEmbedBox );
+  secondLayout->addWidget( autoEmbedBox );
   // The order of those two items is very important. If you change it, fix typeslistitem.cpp !
   QRadioButton *r1 = new QRadioButton( i18n("Show file in embedded viewer"));
   QRadioButton *r2 = new QRadioButton( i18n("Show file in separate viewer"));
-  m_autoEmbed->layout()->addWidget(r1);
-  m_autoEmbed->layout()->addWidget(r2);
-  connect(m_autoEmbed, SIGNAL( clicked( int ) ), SLOT( slotAutoEmbedClicked( int ) ));
+  QVBoxLayout *autoEmbedBoxLayout = new QVBoxLayout(autoEmbedBox);
+  autoEmbedBoxLayout->addWidget(r1);
+  autoEmbedBoxLayout->addWidget(r2);
+  m_autoEmbed->addButton(r1, 0);
+  m_autoEmbed->addButton(r2, 1);
+  connect(m_autoEmbed, SIGNAL( buttonClicked( int ) ), SLOT( slotAutoEmbedClicked( int ) ));
 
-  m_autoEmbed->setWhatsThis( i18n("Here you can configure what the Konqueror file manager"
+  autoEmbedBox->setWhatsThis( i18n("Here you can configure what the Konqueror file manager"
     " will do when you click on a file belonging to this group. Konqueror can display the file in"
     " an embedded viewer or start up a separate application. You can change this setting for a"
     " specific file type in the 'Embedding' tab of the file type configuration.") );
 
   secondLayout->addStretch();
-  secondLayout->addWidget(m_autoEmbed);
-  setLayout(secondLayout);
 }
 
 void FileGroupDetails::setMimeTypeData( MimeTypeData * mimeTypeData )
 {
     Q_ASSERT( mimeTypeData->isMeta() );
     m_mimeTypeData = mimeTypeData;
-    m_autoEmbed->setButton( m_mimeTypeData->autoEmbed() );
+    m_autoEmbed->button( m_mimeTypeData->autoEmbed() )->setChecked( true );
 }
 
 void FileGroupDetails::slotAutoEmbedClicked(int button)

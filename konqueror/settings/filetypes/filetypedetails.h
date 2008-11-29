@@ -17,22 +17,23 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef _FILETYPEDETAILS_H
-#define _FILETYPEDETAILS_H
+#ifndef FILETYPEDETAILS_H
+#define FILETYPEDETAILS_H
 
 #include <QtGui/QTabWidget>
 #include "filetypes-config.h"
+
 class KIconButton;
 class MimeTypeData;
 class TypesListItem;
 class QLabel;
-class QLineEdit;
 class QListWidget;
 class QGroupBox;
 class QButtonGroup;
 class QCheckBox;
 class QRadioButton;
-class QPushButton;
+class KLineEdit;
+class KPushButton;
 class KServiceListWidget;
 
 /**
@@ -90,8 +91,8 @@ private:
     QLabel *iconButton;
 #endif
   QListWidget *extensionLB;
-  QPushButton *addExtButton, *removeExtButton;
-  QLineEdit *description;
+  KPushButton *addExtButton, *removeExtButton;
+  KLineEdit *description;
   KServiceListWidget *serviceListWidget;
 
   // Second tab - Embedding
