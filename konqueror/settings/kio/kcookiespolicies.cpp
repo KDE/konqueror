@@ -4,6 +4,7 @@
  * Original Authors
  * Copyright (c) Waldo Bastian <bastian@kde.org>
  * Copyright (c) 1999 David Faure <faure@kde.org>
+ * Copyright (c) 2008 Urs Wolfer <uwolfer @ kde.org>
  *
  * Re-written by:
  * Copyright (c) 2000- Dawit Alemayehu <adawit@kde.org>
@@ -38,8 +39,6 @@
 // KDE
 #include <kiconloader.h>
 #include <kmessagebox.h>
-#include <k3listview.h>
-#include <k3listviewsearchline.h>
 #include <klocale.h>
 #include <kconfig.h>
 #include <kurl.h>
@@ -56,13 +55,15 @@ KCookiesPolicies::KCookiesPolicies(const KComponentData &componentData, QWidget 
     mainLayout->setSpacing(0);
 
     dlg = new KCookiesPolicyDlgUI (this);
-    dlg->lvDomainPolicy->header()->setStretchEnabled(true, 0);
-    dlg->lvDomainPolicy->setColumnWidthMode(0, K3ListView::Manual);
-    dlg->lvDomainPolicy->setColumnWidthMode(1, K3ListView::Maximum);
-    dlg->kListViewSearchLine->setListView(dlg->lvDomainPolicy);
+    dlg->kListViewSearchLine->setTreeWidget(dlg->lvDomainPolicy);
     QList<int> columns;
     columns.append(0);
     dlg->kListViewSearchLine->setSearchColumns(columns);
+
+    dlg->pbNew->setIcon(KIcon("list-add"));
+    dlg->pbChange->setIcon(KIcon("edit-rename"));
+    dlg->pbDelete->setIcon(KIcon("list-remove"));
+    dlg->pbDeleteAll->setIcon(KIcon("edit-delete"));
 
     mainLayout->addWidget(dlg);
 
@@ -92,11 +93,9 @@ KCookiesPolicies::KCookiesPolicies(const KComponentData &componentData, QWidget 
     connect ( dlg->rbPolicyReject, SIGNAL(toggled(bool)),
               SLOT(configChanged()));
     // Connect signals from the domain specific policy listview.
-    connect( dlg->lvDomainPolicy, SIGNAL(selectionChanged()),
+    connect( dlg->lvDomainPolicy, SIGNAL(itemSelectionChanged()),
              SLOT(selectionChanged()) );
-    connect( dlg->lvDomainPolicy, SIGNAL(doubleClicked (Q3ListViewItem *)),
-             SLOT(changePressed() ) );
-    connect( dlg->lvDomainPolicy, SIGNAL(returnPressed ( Q3ListViewItem * )),
+    connect( dlg->lvDomainPolicy, SIGNAL(itemDoubleClicked(QTreeWidgetItem *, int)),
              SLOT(changePressed() ) );
 
     // Connect the buttons...
@@ -104,8 +103,6 @@ KCookiesPolicies::KCookiesPolicies(const KComponentData &componentData, QWidget 
     connect( dlg->pbChange, SIGNAL( clicked() ), SLOT( changePressed() ) );
     connect( dlg->pbDelete, SIGNAL( clicked() ), SLOT( deletePressed() ) );
     connect( dlg->pbDeleteAll, SIGNAL( clicked() ), SLOT( deleteAllPressed() ) );
-
-    load();
 }
 
 KCookiesPolicies::~KCookiesPolicies()
@@ -167,8 +164,8 @@ void KCookiesPolicies::addNewPolicy(const QString& domain)
     if ( !handleDuplicate(domain, advice) )
     {
       const char* strAdvice = KCookieAdvice::adviceToStr(advice);
-      Q3ListViewItem* index = new Q3ListViewItem (dlg->lvDomainPolicy,
-                                                domain, i18n(strAdvice));
+      QTreeWidgetItem* index = new QTreeWidgetItem (dlg->lvDomainPolicy,
+                                                QStringList()<< domain << i18n(strAdvice));
       m_pDomainPolicy.insert (index, strAdvice);
       configChanged();
     }
@@ -183,7 +180,7 @@ void KCookiesPolicies::addPressed()
 
 void KCookiesPolicies::changePressed()
 {
-  Q3ListViewItem* index = dlg->lvDomainPolicy->currentItem();
+  QTreeWidgetItem* index = dlg->lvDomainPolicy->currentItem();
 
   if (!index)
     return;
@@ -210,7 +207,7 @@ void KCookiesPolicies::changePressed()
 
 bool KCookiesPolicies::handleDuplicate( const QString& domain, int advice )
 {
-  Q3ListViewItem* item = dlg->lvDomainPolicy->firstChild();
+  QTreeWidgetItem* item = dlg->lvDomainPolicy->topLevelItem(0);
   while ( item != 0 )
   {
     if ( item->text(0) == domain )
@@ -232,35 +229,25 @@ bool KCookiesPolicies::handleDuplicate( const QString& domain, int advice )
       else
         return true;  // User Cancelled!!
     }
-    item = item->nextSibling();
+    item = dlg->lvDomainPolicy->itemBelow(item);
   }
   return false;
 }
 
 void KCookiesPolicies::deletePressed()
 {
-  Q3ListViewItem* nextItem = 0L;
-  Q3ListViewItem* item = dlg->lvDomainPolicy->firstChild ();
+  QTreeWidgetItem* nextItem = 0L;
+  
+  Q_FOREACH(QTreeWidgetItem* item, dlg->lvDomainPolicy->selectedItems()) {
+    nextItem = dlg->lvDomainPolicy->itemBelow(item);
+    if (!nextItem)
+      nextItem = dlg->lvDomainPolicy->itemAbove(item);
 
-  while (item != 0L)
-  {
-    if (dlg->lvDomainPolicy->isSelected (item))
-    {
-      nextItem = item->itemBelow();
-      if ( !nextItem )
-        nextItem = item->itemAbove();
-
-      delete item;
-      item = nextItem;
-    }
-    else
-    {
-      item = item->itemBelow();
-    }
+    delete item;
   }
 
   if (nextItem)
-    dlg->lvDomainPolicy->setSelected (nextItem, true);
+    nextItem->setSelected(true);
 
   updateButtons();
   configChanged();
@@ -276,7 +263,7 @@ void KCookiesPolicies::deleteAllPressed()
 
 void KCookiesPolicies::updateButtons()
 {
-  bool hasItems = dlg->lvDomainPolicy->childCount() > 0;
+  bool hasItems = dlg->lvDomainPolicy->topLevelItemCount() > 0;
 
   dlg->pbChange->setEnabled ((hasItems && d_itemsSelected == 1));
   dlg->pbDelete->setEnabled ((hasItems && d_itemsSelected > 0));
@@ -297,7 +284,7 @@ void KCookiesPolicies::updateDomainList(const QStringList &domainConfig)
 
     if (!domain.isEmpty())
     {
-        Q3ListViewItem* index = new Q3ListViewItem( dlg->lvDomainPolicy, KUrl::fromAce(domain.toLatin1()),
+        QTreeWidgetItem* index = new QTreeWidgetItem( dlg->lvDomainPolicy, QStringList() << KUrl::fromAce(domain.toLatin1()) <<
                                                   i18n(KCookieAdvice::adviceToStr(advice)) );
         m_pDomainPolicy[index] = KCookieAdvice::adviceToStr(advice);
     }
@@ -306,16 +293,7 @@ void KCookiesPolicies::updateDomainList(const QStringList &domainConfig)
 
 void KCookiesPolicies::selectionChanged ()
 {
-  Q3ListViewItem* item = dlg->lvDomainPolicy->firstChild ();
-
-  d_itemsSelected = 0;
-
-  while (item != 0L)
-  {
-    if (dlg->lvDomainPolicy->isSelected (item))
-      d_itemsSelected++;
-    item = item->nextSibling ();
-  }
+  d_itemsSelected = dlg->lvDomainPolicy->selectedItems().count();
 
   updateButtons ();
 }
@@ -394,12 +372,12 @@ void KCookiesPolicies::save()
   group.writeEntry("CookieGlobalAdvice", advice);
 
   QStringList domainConfig;
-  Q3ListViewItem *at = dlg->lvDomainPolicy->firstChild();
+  QTreeWidgetItem *at = dlg->lvDomainPolicy->topLevelItem(0);
 
   while( at )
   {
     domainConfig.append(QString::fromLatin1("%1:%2").arg(QString(KUrl::toAce(at->text(0)))).arg(m_pDomainPolicy[at]));
-    at = at->nextSibling();
+    at = dlg->lvDomainPolicy->itemBelow(at);
   }
 
   group.writeEntry("CookieDomainAdvice", domainConfig);
