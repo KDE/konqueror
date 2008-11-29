@@ -1,8 +1,16 @@
 <ui version="4.0" >
  <class>PolicyDlgUI</class>
  <widget class="QWidget" name="PolicyDlgUI" >
-  <layout class="QVBoxLayout" >
-   <item>
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>301</width>
+    <height>125</height>
+   </rect>
+  </property>
+  <layout class="QFormLayout" name="formLayout" >
+   <item row="0" column="0" >
     <widget class="QLabel" name="lbDomain" >
      <property name="whatsThis" >
       <string>&lt;qt>
@@ -20,7 +28,7 @@ Enter the host or domain to which this policy applies, e.g. &lt;b>www.kde.org&lt
      </property>
     </widget>
    </item>
-   <item>
+   <item row="0" column="1" >
     <widget class="KLineEdit" name="leDomain" >
      <property name="whatsThis" >
       <string>&lt;qt>
@@ -29,7 +37,7 @@ Enter the host or domain to which this policy applies, e.g. &lt;b>www.kde.org&lt
      </property>
     </widget>
    </item>
-   <item>
+   <item row="1" column="0" >
     <widget class="QLabel" name="lbPolicy" >
      <property name="whatsThis" >
       <string>&lt;qt>
@@ -52,7 +60,7 @@ Select the desired policy:
      </property>
     </widget>
    </item>
-   <item>
+   <item row="1" column="1" >
     <widget class="KComboBox" name="cbPolicy" >
      <property name="whatsThis" >
       <string>&lt;qt>
@@ -81,12 +89,12 @@ Select the desired policy:
      </item>
     </widget>
    </item>
-   <item>
+   <item row="2" column="0" >
     <spacer>
      <property name="orientation" >
       <enum>Qt::Vertical</enum>
      </property>
-     <property name="sizeHint" >
+     <property name="sizeHint" stdset="0" >
       <size>
        <width>20</width>
        <height>40</height>
