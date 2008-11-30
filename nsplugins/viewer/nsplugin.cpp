@@ -1285,7 +1285,13 @@ NSPluginClass::NSPluginClass( const QString &library,
         gtkInitFunc* gtkInit = (gtkInitFunc*)_handle->resolveFunction("gtk_init");
         if (gtkInit) {
             kDebug(1431) << "Calling gtk_init for the plugin";
+            // Prevent gtk_init() from replacing the X error handlers, since the Gtk
+            // handlers abort when they receive an X error, thus killing the viewer.
+            int (*old_error_handler)(Display*,XErrorEvent*) = XSetErrorHandler(0);
+            int (*old_io_error_handler)(Display*) = XSetIOErrorHandler(0);
             gtkInit(0, 0);
+            XSetErrorHandler(old_error_handler);
+            XSetIOErrorHandler(old_io_error_handler);
             s_initedGTK = true;
         }
     }
