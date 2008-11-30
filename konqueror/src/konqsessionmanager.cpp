@@ -18,18 +18,16 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "konqmisc.h"
 #include "konqsessionmanager.h"
+#include "konqmisc.h"
 #include "konqmainwindow.h"
 #include "konqsessionmanager_interface.h"
 #include "konqsessionmanageradaptor.h"
-#include "konqmainwindow.h"
 #include "konqviewmanager.h"
 #include "konqsettingsxt.h"
 
 #include <kglobal.h>
 #include <kdebug.h>
-#include <kurl.h>
 #include <kio/deletejob.h>
 #include <kstandarddirs.h>
 #include <kvbox.h>

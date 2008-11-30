@@ -18,8 +18,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "konqsettingsxt.h"
 #include "konqundomanager.h"
+#include "konqsettingsxt.h"
 #include "konqcloseditem.h"
 #include "konqclosedwindowsmanager.h"
 #include <QAction>

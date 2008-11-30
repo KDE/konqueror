@@ -16,8 +16,8 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#ifndef USERAGENTCONFIGDLG_H
-#define USERAGENTCONFIGDLG_H
+#ifndef USERAGENTSELECTORDLG_H
+#define USERAGENTSELECTORDLG_H
 
 // KDE
 #include <kdialog.h>
@@ -51,4 +51,4 @@ private:
   UserAgentSelectorWidget* m_widget;
 };
 
-#endif // UAGENTPROVIDERDLG_H
+#endif // USERAGENTSELECTORDLG_H

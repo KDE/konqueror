@@ -36,7 +36,7 @@ class KonqSessionDlg : public KDialog
 {
     Q_OBJECT
 public:
-    KonqSessionDlg( KonqViewManager *manager, QWidget *parent = 0L );
+    explicit KonqSessionDlg( KonqViewManager *manager, QWidget *parent = 0L );
     ~KonqSessionDlg();
 
 protected Q_SLOTS:
@@ -57,7 +57,7 @@ class KonqNewSessionDlg : public KDialog
 {
     Q_OBJECT
 public:
-    KonqNewSessionDlg( QWidget *parent = 0L, QString sessionName = QString() );
+    explicit KonqNewSessionDlg( QWidget *parent = 0L, QString sessionName = QString() );
     ~KonqNewSessionDlg();
 
 protected Q_SLOTS:

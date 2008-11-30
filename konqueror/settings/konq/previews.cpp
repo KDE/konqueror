@@ -77,7 +77,7 @@ KPreviewOptions::KPreviewOptions( QWidget *parent, const QVariantList & )
 
     // Listview containing checkboxes for all protocols that support listing
     QTreeWidget *listView = new QTreeWidget( this );
-    listView->setHeaderLabel( i18nc( "@title:column Header of a colum where the user has to select in which protocols he wants to see file previews", "Select Protocols" ) );
+    listView->setHeaderLabel( i18nc( "@title:column Header of a column where the user has to select in which protocols he wants to see file previews", "Select Protocols" ) );
     listView->setRootIsDecorated( false );
 
     QHBoxLayout *hbox = new QHBoxLayout();
