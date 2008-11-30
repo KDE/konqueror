@@ -104,7 +104,8 @@ NSPluginInstance::~NSPluginInstance()
    kDebug() << "-> NSPluginInstance::~NSPluginInstance";
    _instanceInterface->shutdown();
    kDebug() << "release";
-   _loader->release();
+   if (_loader)
+        _loader->release();
    kDebug() << "<- NSPluginInstance::~NSPluginInstance";
 }
 
