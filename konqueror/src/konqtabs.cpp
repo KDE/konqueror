@@ -404,7 +404,7 @@ void KonqFrameTabs::refreshSubPopupMenuTab()
 {
     m_pSubPopupMenuTab->clear();
     int i=0;
-    m_pSubPopupMenuTab->addAction( KIcon( "reload_all_tabs" ),
+    m_pSubPopupMenuTab->addAction( KIcon( "view-refresh" ),
                                     i18n( "&Reload All Tabs" ),
                                     m_pViewManager->mainWindow(),
                                     SLOT( slotReloadAllTabs() ),
