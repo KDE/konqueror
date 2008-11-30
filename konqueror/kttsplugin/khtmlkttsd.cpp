@@ -23,7 +23,7 @@
 #include <kactioncollection.h>
 #include <kdebug.h>
 #include <khtml_part.h> // this plugin applies to a khtml part
-#include "config-kttsplugin.h"
+#include <config-kttsplugin.h>
 #ifdef HAVE_WEBKITKDE
 #include <webkitpart.h>
 #ifdef HAVE_WEBVIEW

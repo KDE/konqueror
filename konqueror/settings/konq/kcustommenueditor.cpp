@@ -63,7 +63,7 @@ public:
 
       // item names may contain ampersands. To avoid them being converted
       // to accelators, replace them with two ampersands.
-      serviceName.replace("&", "&&");
+      serviceName.replace('&', "&&");
 
       QPixmap normal = KIconLoader::global()->loadIcon(s->icon(), KIconLoader::Small,
                               0, KIconLoader::DefaultState, QStringList(), 0L, true);

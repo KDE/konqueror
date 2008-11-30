@@ -209,7 +209,7 @@ static bool startNewKonqueror( QString url, QString mimetype, const QString& pro
 	if( urls.count() != 1 )
 	    return true;
 	url = urls.first();
-	mimetype = QString();
+	mimetype.clear();
     }
     if (mimetype.isEmpty())
 	mimetype = KMimeType::findByUrl(KUrl(url))->name();

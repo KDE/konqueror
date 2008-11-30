@@ -63,7 +63,7 @@ void KonqActions::fillHistoryPopup(const QList<HistoryEntry*> &history, int hist
   {
         QString text = history[ index ]->title;
         text = fm.elidedText(text, Qt::ElideMiddle, fm.maxWidth() * 30);
-        text.replace( "&", "&&" );
+        text.replace( '&', "&&" );
         const QString iconName = KonqPixmapProvider::self()->iconNameFor(history[index]->url);
         QAction* action = new QAction(KIcon(iconName), text, popup);
         action->setData(index - historyIndex);
