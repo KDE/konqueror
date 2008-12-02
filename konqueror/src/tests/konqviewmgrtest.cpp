@@ -30,6 +30,7 @@
 #include <QLayout>
 
 #include <khtml_part.h>
+#include <khtmlview.h>
 #include <dom/html_inline.h>
 #include <dom/html_document.h>
 
@@ -310,7 +311,7 @@ void ViewMgrTest::testLinkedViews()
     Q_ASSERT(!anchor.isNull());
     anchor.focus();
     QKeyEvent ev( QKeyEvent::KeyPress, Qt::Key_Return, 0, "\n" );
-    QApplication::sendEvent( part->widget(), &ev );
+    QApplication::sendEvent( part->view(), &ev );
     qApp->processEvents(); // openUrlRequestDelayed
     // Check that the link opened in the 2nd view, not the first one
     QCOMPARE(view->url().url(), origUrl.url());
