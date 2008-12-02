@@ -17,6 +17,7 @@
 
 #include <konqmisc.h>
 #include <khtml_part.h>
+#include <khtmlview.h>
 #include <ktemporaryfile.h>
 #include <kstandarddirs.h>
 #include <ktoolbar.h>
@@ -149,6 +150,9 @@ private:
     static QWidget* partWidget(KonqView* view)
     {
         QWidget* widget = view->part()->widget();
+        KHTMLPart* htmlPart = qobject_cast<KHTMLPart *>(view->part());
+        if (htmlPart)
+            widget = htmlPart->view(); // khtmlview != widget() nowadays, due to find bar
         if (QScrollArea* scrollArea = qobject_cast<QScrollArea*>(widget))
             widget = scrollArea->widget();
         return widget;
