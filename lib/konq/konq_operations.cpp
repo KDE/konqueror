@@ -45,6 +45,7 @@
 #include <kio/renamedialog.h>
 #include <kdirnotify.h>
 #include <kuiserverjobtracker.h>
+#include <kstandarddirs.h>
 // For doDrop
 #include <kauthorized.h>
 #include <kglobal.h>
@@ -499,7 +500,7 @@ void KonqOperations::doDropFileCopy()
 #endif
 
         // Check what the source can do
-        KUrl url = lst.first(); // we'll assume it's the same for all URLs (hack)
+        const KUrl url = lst.first(); // we'll assume it's the same for all URLs (hack)
         bool sReading = KProtocolManager::supportsReading( url );
         bool sDeleting = KProtocolManager::supportsDeleting( url );
         bool sMoving = KProtocolManager::supportsMoving( url );
@@ -509,6 +510,16 @@ void KonqOperations::doDropFileCopy()
         {
             delete this;
             return;
+        }
+
+        // We don't want to offer "move" for temp files. They might come from
+        // kmail using a tempfile for attachments, or ark using a tempdir for
+        // extracting an archive -- in all cases, we can't implement a real move,
+        // it's just a copy of the tempfile [and the source app will delete it later].
+        // https://www.intevation.de/roundup/kolab/issue2026
+        if (url.isLocalFile() && url.path().startsWith(KStandardDirs::locateLocal("tmp", QString()))) {
+            sMoving = false;
+            sDeleting = false;
         }
 
         QMenu popup;
