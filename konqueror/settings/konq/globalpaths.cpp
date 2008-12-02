@@ -168,6 +168,13 @@ void DesktopPathConfig::save()
     KSharedConfig::Ptr config = KGlobal::config();
     KConfigGroup configGroup( config, "Paths" );
 
+    QString xdgConfigHome = QLatin1String(qgetenv("XDG_CONFIG_HOME"));
+    if (xdgConfigHome.isEmpty())
+    {
+        xdgConfigHome = QDir::homePath() + QLatin1String("/.config");
+    }
+    QString userDirsFile(xdgConfigHome + QLatin1String("/user-dirs.dirs"));
+
     bool pathChanged = false;
     bool autostartMoved = false;
 
@@ -222,13 +229,10 @@ void DesktopPathConfig::save()
         if ( moveDir( KUrl( KGlobalSettings::desktopPath() ), KUrl( urlDesktop ), i18n("Desktop") ) )
         {
             //save in XDG path
-	    QString xdgUserDirs = QDir::homePath() + QLatin1String( "/.config/user-dirs.dirs" );
-	    if( QFile::exists( xdgUserDirs ) ) {
-		KConfig xdgUserConf( xdgUserDirs, KConfig::SimpleConfig );
-		KConfigGroup g( &xdgUserConf, "" );
-		g.writePathEntry( "XDG_DESKTOP_DIR", urlDesktop );
-	    }
-	    pathChanged = true;
+            KConfig xdgUserConf( userDirsFile, KConfig::SimpleConfig );
+            KConfigGroup g( &xdgUserConf, "" );
+            g.writePathEntry( "XDG_DESKTOP_DIR", urlDesktop );
+            pathChanged = true;
         }
     }
 
@@ -261,13 +265,10 @@ void DesktopPathConfig::save()
         if (pathOk)
         {
             //save in XDG path
-	    QString xdgUserDirs = QDir::homePath() + QLatin1String( "/.config/user-dirs.dirs" );
-	    if( QFile::exists( xdgUserDirs ) ) {
-		KConfig xdgUserConf( xdgUserDirs, KConfig::SimpleConfig );
-		KConfigGroup g( &xdgUserConf, "" );
-		g.writePathEntry( "XDG_DOCUMENTS_DIR", path );
-	    }
-	    pathChanged = true;
+            KConfig xdgUserConf( userDirsFile, KConfig::SimpleConfig );
+            KConfigGroup g( &xdgUserConf, "" );
+            g.writePathEntry( "XDG_DOCUMENTS_DIR", path );
+            pathChanged = true;
         }
     }
 
