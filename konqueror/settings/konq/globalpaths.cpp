@@ -163,6 +163,49 @@ void DesktopPathConfig::defaults()
     urDocument->setPath( QDir::homePath() + "/Documents/");
 }
 
+// the following method is copied from kdelibs/kdecore/config/kconfiggroup.cpp
+static bool cleanHomeDirPath( QString &path, const QString &homeDir )
+{
+#ifdef Q_WS_WIN //safer
+    if (!QDir::convertSeparators(path).startsWith(QDir::convertSeparators(homeDir)))
+        return false;
+#else
+    if (!path.startsWith(homeDir))
+        return false;
+#endif
+
+    int len = homeDir.length();
+    // replace by "$HOME" if possible
+    if (len && (path.length() == len || path[len] == '/')) {
+        path.replace(0, len, QString::fromLatin1("$HOME"));
+        return true;
+    } else
+        return false;
+}
+
+static QString translatePath( QString path ) // krazy:exclude=passbyvalue
+{
+    // keep only one single '/' at the beginning - needed for cleanHomeDirPath()
+    while (path[0] == '/' && path[1] == '/')
+        path.remove(0,1);
+
+    // we probably should escape any $ ` and \ characters that may occur in the path, but the Qt code that reads back
+    // the file doesn't unescape them so not much point in doing so
+
+    // All of the 3 following functions to return the user's home directory
+    // can return different paths. We have to test all them.
+    const QString homeDir0 = QFile::decodeName(qgetenv("HOME"));
+    const QString homeDir1 = QDir::homePath();
+    const QString homeDir2 = QDir(homeDir1).canonicalPath();
+    if (cleanHomeDirPath(path, homeDir0) ||
+        cleanHomeDirPath(path, homeDir1) ||
+        cleanHomeDirPath(path, homeDir2) ) {
+        // kDebug() << "Path was replaced\n";
+    }
+
+    return path;
+}
+
 void DesktopPathConfig::save()
 {
     KSharedConfig::Ptr config = KGlobal::config();
@@ -231,7 +274,7 @@ void DesktopPathConfig::save()
             //save in XDG path
             KConfig xdgUserConf( userDirsFile, KConfig::SimpleConfig );
             KConfigGroup g( &xdgUserConf, "" );
-            g.writePathEntry( "XDG_DESKTOP_DIR", urlDesktop );
+            g.writeEntry( "XDG_DESKTOP_DIR", translatePath( urlDesktop ) );
             pathChanged = true;
         }
     }
@@ -267,7 +310,7 @@ void DesktopPathConfig::save()
             //save in XDG path
             KConfig xdgUserConf( userDirsFile, KConfig::SimpleConfig );
             KConfigGroup g( &xdgUserConf, "" );
-            g.writePathEntry( "XDG_DOCUMENTS_DIR", path );
+            g.writeEntry( "XDG_DOCUMENTS_DIR", translatePath( path ) );
             pathChanged = true;
         }
     }
