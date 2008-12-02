@@ -26,14 +26,10 @@ void KonqMimeData::populateMimeData( QMimeData* mimeData,
                                      const KUrl::List& mostLocalURLs,
                                      bool cut )
 {
-    mostLocalURLs.populateMimeData( mimeData );
-
-    if ( !kdeURLs.isEmpty() )
-    {
-        QMimeData tmpMimeData;
-        kdeURLs.populateMimeData(&tmpMimeData);
-        mimeData->setData("application/x-kde-urilist",tmpMimeData.data("text/uri-list"));
-    }
+    if (mostLocalURLs.isEmpty())
+        kdeURLs.populateMimeData(mimeData);
+    else
+        kdeURLs.populateMimeData(mostLocalURLs, mimeData);
 
     QByteArray cutSelectionData = cut ? "1" : "0";
     mimeData->setData( "application/x-kde-cutselection", cutSelectionData );
@@ -48,8 +44,7 @@ void KonqMimeData::populateMimeData( QMimeData* mimeData,
 	application_x_qiconlist+=tmp;
     }
     mimeData->setData("application/x-qiconlist",application_x_qiconlist.toLatin1());
-    kDebug(1203)<<"setting application/x-qiconlist to "<<application_x_qiconlist;
-
+    //kDebug(1203)<<"setting application/x-qiconlist to "<<application_x_qiconlist;
 }
 
 bool KonqMimeData::decodeIsCutSelection( const QMimeData *mimeData )
