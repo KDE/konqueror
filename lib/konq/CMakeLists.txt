@@ -24,11 +24,11 @@ set(konq_LIB_SRCS
 kde4_add_library(konq SHARED ${konq_LIB_SRCS})
 
 target_link_libraries(konq ${KDE4_KPARTS_LIBS})
+target_link_libraries(konq LINK_INTERFACE_LIBRARIES ${KDE4_KPARTS_LIBS})
 
 set_target_properties(konq PROPERTIES
      VERSION ${KDE_NON_GENERIC_LIB_VERSION}
      SOVERSION ${KDE_NON_GENERIC_LIB_SOVERSION}
-     ${KDE4_DISABLE_PROPERTY_}LINK_INTERFACE_LIBRARIES "${KDE4_KPARTS_LIBRARY}"
 )
 
 install(TARGETS konq  ${INSTALL_TARGETS_DEFAULT_ARGS})
