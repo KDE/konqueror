@@ -46,7 +46,15 @@ public:
                                   const KUrl::List& mostLocalURLs,
                                   bool cut = false );
 
-    // TODO other methods for icon positions
+    /**
+     * Add the information whether the files were cut, into the mimedata.
+     * @param mimeData pointer to the mimeData object to be populated.
+     *                 Must not be 0.
+     * @param cut if true, the user selected "cut" (saved as application/x-kde-cutselection in the mimedata).
+     * @since 4.2
+     */
+    static void addIsCutSelection(QMimeData* mimeData,
+                                  bool cut);
 
     /**
      * @return true if the urls in @p mimeData were cut

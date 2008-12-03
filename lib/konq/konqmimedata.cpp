@@ -31,8 +31,7 @@ void KonqMimeData::populateMimeData( QMimeData* mimeData,
     else
         kdeURLs.populateMimeData(mostLocalURLs, mimeData);
 
-    QByteArray cutSelectionData = cut ? "1" : "0";
-    mimeData->setData( "application/x-kde-cutselection", cutSelectionData );
+    addIsCutSelection(mimeData, cut);
 
     // for compatibility reasons
     QString application_x_qiconlist;
@@ -57,4 +56,11 @@ bool KonqMimeData::decodeIsCutSelection( const QMimeData *mimeData )
         kDebug(1203) << "KonqDrag::decodeIsCutSelection : a=" << a;
         return (a.at(0) == '1'); // true if 1
     }
+}
+
+void KonqMimeData::addIsCutSelection(QMimeData* mimeData,
+                                     bool cut)
+{
+    const QByteArray cutSelectionData = cut ? "1" : "0";
+    mimeData->setData("application/x-kde-cutselection", cutSelectionData);
 }
