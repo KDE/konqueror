@@ -78,18 +78,22 @@ NSPluginInstance::NSPluginInstance(QWidget *parent, const QString& viewerDBusId,
     if ( cfg.readEntry("demandLoad", false) ) {
         _button = new QPushButton(i18n("Start Plugin"), this);
         _layout->addWidget(_button, 0, 0);
-        connect(_button, SIGNAL(clicked()), this, SLOT(doLoadPlugin()));
+        connect(_button, SIGNAL(clicked()), this, SLOT(loadPlugin()));
         show();
     } else {
         _button = 0;
     }
 }
 
+void NSPluginInstance::loadPlugin()
+{
+    delete _button;
+    _button = 0;
+    doLoadPlugin(width(), height());
+}
 
 void NSPluginInstance::doLoadPlugin(int w, int h) {
-    if (!inited) {
-        delete _button;
-        _button = 0L;
+    if (!inited && !_button) {
         _loader = NSPluginLoader::instance();
         // resize before showing, some plugins are stupid and can't handle repeated
         // NPSetWindow() calls very well (viewer will avoid the call if not shown yet)
