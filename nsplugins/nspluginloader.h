@@ -53,8 +53,10 @@ public:
     void javascriptResult(int id, const QString &result);
 
     void pluginResized(int w, int h);
+
 private Q_SLOTS:
-    void doLoadPlugin(int w, int h);
+    void loadPlugin();
+
 protected:
     void resizeEvent(QResizeEvent *event);
     void showEvent(QShowEvent *event);
@@ -66,6 +68,7 @@ private:
     OrgKdeNspluginsInstanceInterface *_instanceInterface;
     bool inited;
     bool haveSize;
+    void doLoadPlugin(int w, int h);
     void embedIfNeeded(int w, int h);
     void resizePlugin(int w, int h );
 

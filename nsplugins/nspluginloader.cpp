@@ -78,16 +78,23 @@ NSPluginInstance::NSPluginInstance(QWidget *parent, const QString& viewerDBusId,
     if ( cfg.readEntry("demandLoad", false) ) {
         _button = new QPushButton(i18n("Start Plugin"), this);
         _layout->addWidget(_button, 0, 0);
-        connect(_button, SIGNAL(clicked()), this, SLOT(doLoadPlugin()));
+        connect(_button, SIGNAL(clicked()), this, SLOT(loadPlugin()));
         show();
     } else {
         _button = 0;
     }
 }
 
+void NSPluginInstance::loadPlugin()
+{
+    delete _button;
+    _button = 0;
+    doLoadPlugin(width(), height());
+}
+
 
 void NSPluginInstance::doLoadPlugin(int w, int h) {
-    if (!inited) {
+    if (!inited && !_button) {
         delete _button;
         _button = 0L;
         _loader = NSPluginLoader::instance();
