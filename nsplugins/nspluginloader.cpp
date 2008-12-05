@@ -60,28 +60,30 @@ NSPluginLoader *NSPluginLoader::s_instance = 0;
 int NSPluginLoader::s_refCount = 0;
 
 
-NSPluginInstance::NSPluginInstance(QWidget *parent, const QString& viewerDBusId, const QString& id)
-  : EMBEDCLASS(parent)
+NSPluginInstance::NSPluginInstance(QWidget *parent, const QString& viewerDBusId, const QString& id, const KUrl& baseUrl)
+  : EMBEDCLASS(parent), _loader(0), inited(false), haveSize(false), _button(0)
 {
     setWindowTitle("nsp.host"); // for debugging..
     _instanceInterface = new org::kde::nsplugins::Instance( viewerDBusId, id, QDBusConnection::sessionBus() );
-
-    _loader = 0;
-    haveSize = false;
-    inited   = false;
 
     QGridLayout *_layout = new QGridLayout(this);
     _layout->setMargin(1);
     _layout->setSpacing(1);
     KConfig _cfg( "kcmnspluginrc" );
     KConfigGroup cfg(&_cfg, "Misc");
-    if ( cfg.readEntry("demandLoad", false) ) {
+    if (cfg.readEntry("demandLoad", false)) {
+        KSharedConfigPtr config = KSharedConfig::openConfig("konquerorrc");
+        KConfigGroup settings(config, "Java/JavaScript Settings");
+        if (settings.readEntry("PluginDomains", QStringList()).contains(baseUrl.host())) {
+            KConfigGroup pluginDomains(config, baseUrl.host());
+            if (pluginDomains.readEntry("plugins.EnablePlugins", false)) {
+                return;
+            }
+        }
         _button = new QPushButton(i18n("Start Plugin"), this);
         _layout->addWidget(_button, 0, 0);
         connect(_button, SIGNAL(clicked()), this, SLOT(loadPlugin()));
         show();
-    } else {
-        _button = 0;
     }
 }
 
@@ -477,7 +479,9 @@ NSPluginInstance *NSPluginLoader::newInstance(QWidget *parent, const QString& ur
       return 0;
    }
 
-   NSPluginInstance *plugin = new NSPluginInstance( parent, _viewerDBusId, inst_ref.path() );
+   const KUrl baseUrl( argv.at( argn.indexOf("__KHTML__PLUGINBASEURL") ) );
+
+   NSPluginInstance *plugin = new NSPluginInstance( parent, _viewerDBusId, inst_ref.path(), baseUrl);
 
    kDebug() << "<- NSPluginLoader::NewInstance = " << (void*)plugin;
 

@@ -32,6 +32,7 @@
 #include <QWidget>
 #include <QtGui/QX11EmbedContainer>
 
+#include <KUrl>
 #include <kdemacros.h>
 #include <kprocess.h>
 
@@ -47,7 +48,7 @@ class NSPluginInstance : public EMBEDCLASS
   Q_OBJECT
 
 public:
-    NSPluginInstance(QWidget *parent, const QString& app, const QString& id);
+    NSPluginInstance(QWidget *parent, const QString& app, const QString& id, const KUrl& baseUrl);
     ~NSPluginInstance();
 
     void javascriptResult(int id, const QString &result);
