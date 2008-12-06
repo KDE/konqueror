@@ -545,7 +545,8 @@ void KonqOperations::doDropFileCopy()
             bool equalDestination = true;
             foreach ( const KUrl & src, lst )
             {
-                if ( !m_destUrl.equals( src.upUrl(), KUrl::CompareWithoutTrailingSlash ) )
+                const bool equalProtocol = ( m_destUrl.protocol() == src.protocol() );
+                if ( !equalProtocol || m_destUrl.path(KUrl::RemoveTrailingSlash) != src.directory() )
                 {
                     equalDestination = false;
                     break;
