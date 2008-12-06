@@ -80,10 +80,7 @@ KPreviewOptions::KPreviewOptions( QWidget *parent, const QVariantList & )
     listView->setHeaderLabel( i18nc( "@title:column Header of a column where the user has to select in which protocols he wants to see file previews", "Select Protocols" ) );
     listView->setRootIsDecorated( false );
 
-    QHBoxLayout *hbox = new QHBoxLayout();
-    lay->addItem( hbox );
-    hbox->addWidget( listView );
-    hbox->addStretch();
+    lay->addWidget( listView );
 
     PreviewCheckListItem *localItems = new PreviewCheckListItem( listView,
         i18n( "Local Protocols" ) );
@@ -123,14 +120,12 @@ KPreviewOptions::KPreviewOptions( QWidget *parent, const QVariantList & )
                           "In the list of protocols that appear, select which ones are fast "
                           "enough for you to allow previews to be generated.") );
 
-    label = new QLabel( i18n( "&Maximum file size:" ), this );
-    lay->addWidget( label );
 
     m_maxSize = new KDoubleNumInput( this );
+    m_maxSize->setLabel( i18n( "&Maximum file size:" ),   Qt::AlignLeft|Qt::AlignVCenter);
     m_maxSize->setSuffix( i18n(" MB") );
     m_maxSize->setRange( 0.02, 10, 0.02, true );
     m_maxSize->setDecimals( 1 );
-    label->setBuddy( m_maxSize );
     lay->addWidget( m_maxSize );
     connect( m_maxSize, SIGNAL( valueChanged(double) ), SLOT( changed() ) );
 
@@ -148,8 +143,6 @@ KPreviewOptions::KPreviewOptions( QWidget *parent, const QVariantList & )
                 "file types (e.g. JPEG). This will increase speed and reduce "
                 "disk usage. Deselect it if you have files that have been processed "
                 "by programs which create inaccurate thumbnails, such as ImageMagick.") );
-
-    lay->addStretch();
 
     connect(listView, SIGNAL(itemChanged(QTreeWidgetItem *, int)), SLOT(itemChanged(QTreeWidgetItem *)));
 }
