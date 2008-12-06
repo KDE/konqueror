@@ -70,8 +70,9 @@ KJavaOptions::KJavaOptions( KSharedConfig::Ptr config, const QString &group,
       _removeJavaDomainSettings(false)
 {
     QVBoxLayout* toplevel = new QVBoxLayout( this );
-    toplevel->setMargin( 10 );
-    toplevel->setSpacing( 5 );
+    toplevel->setMargin(KDialog::marginHint());
+    toplevel->setSpacing(KDialog::spacingHint());
+
 
     /***************************************************************************
      ********************* Global Settings *************************************
