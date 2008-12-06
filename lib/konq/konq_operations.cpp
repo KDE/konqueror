@@ -541,7 +541,20 @@ void KonqOperations::doDropFileCopy()
         popupCancelAction->setIcon(KIcon("process-stop"));
 
         if (!mlst.isEmpty() && (sMoving || (sReading && sDeleting)) && !linkOnly )
-            popup.addAction(popupMoveAction);
+        {
+            bool equalDestination = true;
+            foreach ( const KUrl & src, lst )
+            {
+                if ( !m_destUrl.equals( src.upUrl(), KUrl::CompareWithoutTrailingSlash ) )
+                {
+                    equalDestination = false;
+                    break;
+                }
+            }
+            
+            if ( !equalDestination )
+                popup.addAction(popupMoveAction);
+        }
 
         if ( sReading && !linkOnly)
             popup.addAction(popupCopyAction);
