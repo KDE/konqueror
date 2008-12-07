@@ -1,6 +1,7 @@
 /*
  * This file is part of the KDE project.
  *
+ * Copyright (C) 2008 Alex Merry <alex.merry @ kdemail.net>
  * Copyright (C) 2008 Urs Wolfer <uwolfer @ kde.org>
  *
  * This library is free software; you can redistribute it and/or
@@ -31,7 +32,7 @@ class KNetworkReply::KNetworkReplyPrivate
 {
 public:
     KNetworkReplyPrivate()
-    : m_metaDataRead(false)
+    : m_kioJob(0), m_data(), m_metaDataRead(false)
     {}
 
     KIO::Job *m_kioJob;
@@ -106,6 +107,56 @@ void KNetworkReply::setMimeType(KIO::Job *kioJob, const QString &mimeType)
 
     kDebug() << mimeType;
     setHeader(QNetworkRequest::ContentTypeHeader, mimeType.toUtf8());
+}
+
+void KNetworkReply::jobDone(KJob *kJob)
+{
+    switch (kJob->error())
+    {
+        case 0:
+            setError(QNetworkReply::NoError, errorString());
+            break;
+        case KIO::ERR_COULD_NOT_CONNECT:
+            setError(QNetworkReply::ConnectionRefusedError, errorString());
+            break;
+        case KIO::ERR_UNKNOWN_HOST:
+            setError(QNetworkReply::HostNotFoundError, errorString());
+            break;
+        case KIO::ERR_SERVER_TIMEOUT:
+            setError(QNetworkReply::TimeoutError, errorString());
+            break;
+        case KIO::ERR_USER_CANCELED:
+        case KIO::ERR_ABORTED:
+            setError(QNetworkReply::OperationCanceledError, errorString());
+            break;
+        case KIO::ERR_UNKNOWN_PROXY_HOST:
+            setError(QNetworkReply::ProxyNotFoundError, errorString());
+            break;
+        case KIO::ERR_ACCESS_DENIED:
+            setError(QNetworkReply::ContentAccessDenied, errorString());
+            break;
+        case KIO::ERR_WRITE_ACCESS_DENIED:
+            setError(QNetworkReply::ContentOperationNotPermittedError, errorString());
+            break;
+        case KIO::ERR_NO_CONTENT:
+        case KIO::ERR_DOES_NOT_EXIST:
+            setError(QNetworkReply::ContentNotFoundError, errorString());
+            break;
+        case KIO::ERR_COULD_NOT_AUTHENTICATE:
+            setError(QNetworkReply::AuthenticationRequiredError, errorString());
+            break;
+        case KIO::ERR_UNSUPPORTED_PROTOCOL:
+        case KIO::ERR_NO_SOURCE_PROTOCOL:
+            setError(QNetworkReply::ProtocolUnknownError, errorString());
+            break;
+        case KIO::ERR_UNSUPPORTED_ACTION:
+            setError(QNetworkReply::ProtocolInvalidOperationError, errorString());
+            break;
+        default:
+            setError(QNetworkReply::UnknownNetworkError, errorString());
+    }
+
+    emit finished();
 }
 
 #include "knetworkreply.moc"
