@@ -1767,6 +1767,7 @@ void KonqMainWindow::slotConfigure()
         connect(m_configureDialog, SIGNAL(finished()), this, SLOT(slotConfigureDone()));
         connect(m_configureDialog, SIGNAL(hidden()),   this, SLOT(slotConfigureDone()));
 
+        //BEGIN SYNC with initActions()
         const char* toplevelModules[]={
                 "khtml_general",
 #ifndef Q_WS_WIN
@@ -1813,6 +1814,7 @@ void KonqMainWindow::slotConfigure()
                     m_configureDialog->addModule(KCModuleInfo(webModules[i]),webGroup);
 
         }
+        //END SYNC with initActions()
 
     }
 
@@ -3639,8 +3641,8 @@ void KonqMainWindow::initActions()
 
   // This list is just for the call to authorizeControlModule; see slotConfigure for the real code
   QStringList configureModules;
-  configureModules << "khtml_general" <<
-      "filebehavior" << "filepreviews" << "filetypes" <<
+  configureModules << "khtml_general" << "bookmarks" <<
+      "filebehavior" << "filetypes" << "kcmtrash" <<
       "khtml_appearance" << "khtml_behavior" << "khtml_java_js" <<
       "khtml_filter" << "ebrowsing" <<
       "kcmhistory" << "cookies" <<
