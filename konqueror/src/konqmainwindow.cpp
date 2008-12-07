@@ -174,9 +174,9 @@ KonqExtendedBookmarkOwner::KonqExtendedBookmarkOwner(KonqMainWindow *w)
 }
 
 KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile)
-    : KParts::MainWindow(),
-      m_paClosedItems(0),
-      m_fullyConstructed(false)
+    : KParts::MainWindow()
+    , m_paClosedItems(0)
+    , m_fullyConstructed(false)
 {
   incInstancesCount();
   setPreloadedFlag( false );
@@ -1767,47 +1767,51 @@ void KonqMainWindow::slotConfigure()
         connect(m_configureDialog, SIGNAL(finished()), this, SLOT(slotConfigureDone()));
         connect(m_configureDialog, SIGNAL(hidden()),   this, SLOT(slotConfigureDone()));
 
-        if (KAuthorized::authorizeControlModule("khtml_general") )
-                m_configureDialog->addModule("khtml_general");
+        const char* toplevelModules[]={
+                "khtml_general",
 #ifndef Q_WS_WIN
-		// results in a real bad crash, will be fixed later
-        if (KAuthorized::authorizeControlModule("kcmkonqyperformance") )
-                m_configureDialog->addModule("kcmkonqyperformance");
+                "kcmkonqyperformance",
 #endif
+                "bookmarks"};
+        for (uint i=0;i<sizeof(toplevelModules)/sizeof(char*);++i)
+            if (KAuthorized::authorizeControlModule(toplevelModules[i]))
+                m_configureDialog->addModule(KCModuleInfo(toplevelModules[i]));
+
+
         if (KAuthorized::authorizeControlModule("filebehavior") )
         {
             KPageWidgetItem * fileManagementGroup = m_configureDialog->addModule("filebehavior");
             fileManagementGroup->setName(i18n("File Management"));
-#define ADD_MODULE(name)    if (KAuthorized::authorizeControlModule(name))\
-                                m_configureDialog->addModule(KCModuleInfo(name),fileManagementGroup);
-
-            ADD_MODULE("kcmdolphin")
-            ADD_MODULE("filepreviews")
-            ADD_MODULE("filetypes")
-            ADD_MODULE("kcmtrash")
-#undef ADD_MODULE
+            const char* fmModules[]={
+                "kcmdolphin",
+                "filetypes",
+                "kcmtrash"};
+            for (uint i=0;i<sizeof(fmModules)/sizeof(char*);++i)
+                if (KAuthorized::authorizeControlModule(fmModules[i]))
+                    m_configureDialog->addModule(KCModuleInfo(fmModules[i]),fileManagementGroup);
         }
 
         if (KAuthorized::authorizeControlModule("khtml_behavior"))
         {
             KPageWidgetItem * webGroup = m_configureDialog->addModule("khtml_behavior");
             webGroup->setName(i18n("Web Browsing"));
-#define ADD_MODULE(name)    if (KAuthorized::authorizeControlModule(name))\
-                                m_configureDialog->addModule(KCModuleInfo(name),webGroup);
-            ADD_MODULE("khtml_filter")
-            ADD_MODULE("ebrowsing")
-            ADD_MODULE("bookmarks")
-            ADD_MODULE("cache")
-            ADD_MODULE("proxy")
-            ADD_MODULE("khtml_fonts")
-            ADD_MODULE("kcmcss")
-            ADD_MODULE("kcmhistory")
-            ADD_MODULE("cookies")
-            ADD_MODULE("crypto")
-            ADD_MODULE("useragent")
-            ADD_MODULE("khtml_java_js")
-            ADD_MODULE("khtml_plugins")
-#undef ADD_MODULE
+                                
+            const char* webModules[]={
+                "khtml_appearance",
+                "khtml_filter",
+                "ebrowsing",
+                "cache",
+                "proxy",
+                "kcmhistory",
+                "cookies",
+                "crypto",
+                "useragent",
+                "khtml_java_js",
+                "khtml_plugins"};
+            for (uint i=0;i<sizeof(webModules)/sizeof(char*);++i)
+                if (KAuthorized::authorizeControlModule(webModules[i]))
+                    m_configureDialog->addModule(KCModuleInfo(webModules[i]),webGroup);
+
         }
 
     }
@@ -3637,11 +3641,10 @@ void KonqMainWindow::initActions()
   QStringList configureModules;
   configureModules << "khtml_general" <<
       "filebehavior" << "filepreviews" << "filetypes" <<
-      "khtml_behavior" << "khtml_java_js" <<
-      "khtml_filter" <<
-      "khtml_fonts" << "ebrowsing" <<
+      "khtml_appearance" << "khtml_behavior" << "khtml_java_js" <<
+      "khtml_filter" << "ebrowsing" <<
       "kcmhistory" << "cookies" <<
-      "cache" << "proxy" << "kcmcss" <<
+      "cache" << "proxy" <<
       "crypto" << "useragent" <<
       "khtml_plugins" << "kcmkonqyperformance";
 
@@ -5516,6 +5519,7 @@ void KonqMainWindow::insertChildFrame( KonqFrameBase * frame, int /*index*/ )
 void KonqMainWindow::childFrameRemoved(KonqFrameBase* frame)
 {
     Q_ASSERT(frame == m_pChildFrame);
+    Q_UNUSED(frame)
     m_pChildFrame = 0;
     m_pActiveChild = 0;
 }

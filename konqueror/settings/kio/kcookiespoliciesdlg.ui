@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>568</width>
-    <height>663</height>
+    <width>650</width>
+    <height>366</height>
    </rect>
   </property>
   <layout class="QVBoxLayout" >
@@ -68,9 +68,11 @@ Treat all cookies as session cookies. Session cookies are small pieces of data t
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="bgDefault" >
-     <property name="whatsThis" >
-      <string>&lt;qt>
+    <layout class="QHBoxLayout" name="horizontalLayout" >
+     <item>
+      <widget class="QGroupBox" name="bgDefault" >
+       <property name="whatsThis" >
+        <string>&lt;qt>
 Determines how cookies received from a remote machine will be handled: 
 &lt;ul>
 &lt;li>&lt;b>Ask&lt;/b> will cause KDE to ask for your confirmation whenever a server wants to set a cookie.&lt;/li>
@@ -79,140 +81,155 @@ Determines how cookies received from a remote machine will be handled:
 &lt;/ul>&lt;p>
 &lt;u>NOTE:&lt;/u> Domain specific policies, which can be set below, always take precedence over the default policy.
 &lt;/qt></string>
-     </property>
-     <property name="title" >
-      <string>Default Policy</string>
-     </property>
-     <layout class="QHBoxLayout" >
-      <item>
-       <widget class="QRadioButton" name="rbPolicyAsk" >
-        <property name="text" >
-         <string>Ask &amp;for confirmation</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="rbPolicyAccept" >
-        <property name="text" >
-         <string>Accep&amp;t all cookies</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="rbPolicyReject" >
-        <property name="text" >
-         <string>Re&amp;ject all cookies</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item>
-    <widget class="QGroupBox" name="gbDomainSpecific" >
-     <property name="whatsThis" >
-      <string>&lt;qt>
-To add a new policy, simply click on the &lt;b>Add...&lt;/b> button and supply the necessary information. To change an existing policy, use the &lt;b>Change...&lt;/b> button and choose the new policy from the policy dialog box. Clicking on the &lt;b>Delete&lt;/b> button will remove the currently selected policy causing the default policy setting to be used for that domain, whereas &lt;b>Delete All&lt;/b> will remove all the site specific policies.
-&lt;/qt></string>
-     </property>
-     <property name="title" >
-      <string>Site Policy</string>
-     </property>
-     <layout class="QGridLayout" >
-      <item row="1" column="2" >
+       </property>
+       <property name="title" >
+        <string>Default Policy</string>
+       </property>
        <layout class="QVBoxLayout" >
         <item>
-         <widget class="KPushButton" name="pbNew" >
+         <widget class="QRadioButton" name="rbPolicyAsk" >
           <property name="text" >
-           <string>&amp;New...</string>
+           <string>Ask &amp;for confirmation</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="KPushButton" name="pbChange" >
+         <widget class="QRadioButton" name="rbPolicyAccept" >
           <property name="text" >
-           <string>Chan&amp;ge...</string>
+           <string>Accep&amp;t all cookies</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="KPushButton" name="pbDelete" >
+         <widget class="QRadioButton" name="rbPolicyReject" >
           <property name="text" >
-           <string>D&amp;elete</string>
+           <string>Re&amp;ject all cookies</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="KPushButton" name="pbDeleteAll" >
-          <property name="text" >
-           <string>Delete A&amp;ll</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer>
+         <spacer name="verticalSpacer" >
           <property name="orientation" >
            <enum>Qt::Vertical</enum>
           </property>
-          <property name="sizeType" >
-           <enum>QSizePolicy::Expanding</enum>
-          </property>
           <property name="sizeHint" stdset="0" >
            <size>
-            <width>81</width>
-            <height>16</height>
+            <width>20</width>
+            <height>40</height>
            </size>
           </property>
          </spacer>
         </item>
        </layout>
-      </item>
-      <item row="1" column="0" >
-       <widget class="QTreeWidget" name="lvDomainPolicy" >
-        <property name="whatsThis" >
-         <string>&lt;qt>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="gbDomainSpecific" >
+       <property name="whatsThis" >
+        <string>&lt;qt>
+To add a new policy, simply click on the &lt;b>Add...&lt;/b> button and supply the necessary information. To change an existing policy, use the &lt;b>Change...&lt;/b> button and choose the new policy from the policy dialog box. Clicking on the &lt;b>Delete&lt;/b> button will remove the currently selected policy causing the default policy setting to be used for that domain, whereas &lt;b>Delete All&lt;/b> will remove all the site specific policies.
+&lt;/qt></string>
+       </property>
+       <property name="title" >
+        <string>Site Policy</string>
+       </property>
+       <layout class="QGridLayout" >
+        <item row="1" column="2" >
+         <layout class="QVBoxLayout" >
+          <item>
+           <widget class="KPushButton" name="pbNew" >
+            <property name="text" >
+             <string>&amp;New...</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="KPushButton" name="pbChange" >
+            <property name="text" >
+             <string>Chan&amp;ge...</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="KPushButton" name="pbDelete" >
+            <property name="text" >
+             <string>D&amp;elete</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="KPushButton" name="pbDeleteAll" >
+            <property name="text" >
+             <string>Delete A&amp;ll</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer>
+            <property name="orientation" >
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType" >
+             <enum>QSizePolicy::Expanding</enum>
+            </property>
+            <property name="sizeHint" stdset="0" >
+             <size>
+              <width>81</width>
+              <height>16</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="0" >
+         <widget class="QTreeWidget" name="lvDomainPolicy" >
+          <property name="whatsThis" >
+           <string>&lt;qt>
 List of sites for which you have set a specific cookie policy. Specific policies override the default policy setting for these sites.
 &lt;/qt></string>
-        </property>
-        <property name="selectionMode" >
-         <enum>QAbstractItemView::ExtendedSelection</enum>
-        </property>
-        <property name="rootIsDecorated" >
-         <bool>false</bool>
-        </property>
-        <property name="sortingEnabled" >
-         <bool>true</bool>
-        </property>
-        <property name="allColumnsShowFocus" >
-         <bool>true</bool>
-        </property>
-        <column>
-         <property name="text" >
-          <string>Domain</string>
-         </property>
-        </column>
-        <column>
-         <property name="text" >
-          <string>Policy</string>
-         </property>
-        </column>
-       </widget>
-      </item>
-      <item row="0" column="0" >
-       <widget class="KTreeWidgetSearchLine" name="kListViewSearchLine" >
-        <property name="enabled" >
-         <bool>true</bool>
-        </property>
-        <property name="toolTip" >
-         <string>Search interactively for domains</string>
-        </property>
-        <property name="clickMessage" >
-         <string>Search</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
+          </property>
+          <property name="selectionMode" >
+           <enum>QAbstractItemView::ExtendedSelection</enum>
+          </property>
+          <property name="rootIsDecorated" >
+           <bool>false</bool>
+          </property>
+          <property name="sortingEnabled" >
+           <bool>true</bool>
+          </property>
+          <property name="allColumnsShowFocus" >
+           <bool>true</bool>
+          </property>
+          <column>
+           <property name="text" >
+            <string>Domain</string>
+           </property>
+          </column>
+          <column>
+           <property name="text" >
+            <string>Policy</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item row="0" column="0" >
+         <widget class="KTreeWidgetSearchLine" name="kListViewSearchLine" >
+          <property name="enabled" >
+           <bool>true</bool>
+          </property>
+          <property name="toolTip" >
+           <string>Search interactively for domains</string>
+          </property>
+          <property name="clickMessage" >
+           <string>Search</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>

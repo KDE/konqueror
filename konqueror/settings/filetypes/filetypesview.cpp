@@ -27,7 +27,6 @@
 #include <QtGui/QLabel>
 #include <QtGui/QLayout>
 #include <QtCore/QTimer>
-#include <QtGui/QGridLayout>
 #include <QtGui/QBoxLayout>
 #include <QFile>
 #include <qdbusconnection.h>
@@ -86,20 +85,15 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
   setButtons(Help | Apply);
   QString wtstr;
 
-  QHBoxLayout *l = new QHBoxLayout(this);
-  QGridLayout *leftLayout = new QGridLayout((QWidget*)0L);
+  QHBoxLayout* l = new QHBoxLayout(this);
+  QVBoxLayout* leftLayout = new QVBoxLayout();
   leftLayout->setSpacing(KDialog::spacingHint());
-  leftLayout->setColumnStretch(1, 1);
-
   l->addLayout( leftLayout );
-
-  QLabel *patternFilterLBL = new QLabel(i18n("F&ind file type or filename pattern:"), this);
-  leftLayout->addWidget(patternFilterLBL, 0, 0, 1, 3);
 
   patternFilterLE = new KLineEdit(this);
   patternFilterLE->setClearButtonShown(true);
-  patternFilterLBL->setBuddy( patternFilterLE );
-  leftLayout->addWidget(patternFilterLE, 1, 0, 1, 3);
+  patternFilterLE->setClickMessage( i18n("F&ind file type or filename pattern:").remove(':').remove('&')/*TODO remove colon*/ );
+  leftLayout->addWidget(patternFilterLE);
 
   connect(patternFilterLE, SIGNAL(textChanged(const QString &)),
           this, SLOT(slotFilter(const QString &)));
@@ -109,12 +103,11 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
                "a part of a file type name as it appears in the list.");
 
   patternFilterLE->setWhatsThis( wtstr );
-  patternFilterLBL->setWhatsThis( wtstr );
 
   typesLV = new TypesListTreeWidget(this);
 
   typesLV->setHeaderLabel(i18n("Known Types"));
-  leftLayout->addWidget(typesLV, 2, 0, 1, 3);
+  leftLayout->addWidget(typesLV);
   connect(typesLV, SIGNAL(currentItemChanged(QTreeWidgetItem *, QTreeWidgetItem *)),
           this, SLOT(updateDisplay(QTreeWidgetItem *)));
   connect(typesLV, SIGNAL(itemDoubleClicked(QTreeWidgetItem *, int)),
@@ -126,17 +119,20 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
     " (e.g. text/html for HTML files) to view/edit the information for that"
     " file type using the controls on the right.") );
 
+  QHBoxLayout* btnsLay = new QHBoxLayout();
+  leftLayout->addLayout(btnsLay);
+  btnsLay->addStretch(1);
   KPushButton *addTypeB = new KPushButton(i18n("Add..."), this);
   addTypeB->setIcon(KIcon("list-add"));
   connect(addTypeB, SIGNAL(clicked()), SLOT(addType()));
-  leftLayout->addWidget(addTypeB, 3, 0);
+  btnsLay->addWidget(addTypeB);
 
   addTypeB->setWhatsThis( i18n("Click here to add a new file type.") );
 
   m_removeTypeB = new KPushButton(i18n("&Remove"), this);
   m_removeTypeB->setIcon(KIcon("list-remove"));
   connect(m_removeTypeB, SIGNAL(clicked()), SLOT(removeType()));
-  leftLayout->addWidget(m_removeTypeB, 3, 2);
+  btnsLay->addWidget(m_removeTypeB);
   m_removeTypeB->setEnabled(false);
 
   m_removeTypeB->setWhatsThis( i18n("Click here to remove the selected file type.") );
@@ -163,7 +159,6 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
   // Widget shown on startup
   m_emptyWidget = new QLabel( i18n("Select a file type by name or by extension"), m_widgetStack);
   m_emptyWidget->setAlignment( Qt::AlignCenter );
-
   m_widgetStack->insertWidget( 3,m_emptyWidget );
 
   m_widgetStack->setCurrentWidget( m_emptyWidget );

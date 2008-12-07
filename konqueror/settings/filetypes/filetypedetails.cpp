@@ -24,7 +24,6 @@
 #include <QtGui/QBoxLayout>
 #include <QtGui/QButtonGroup>
 #include <QtGui/QCheckBox>
-#include <QtGui/QGridLayout>
 #include <QtGui/QLayout>
 #include <QtGui/QListWidget>
 #include <QtGui/QRadioButton>
@@ -64,7 +63,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
 
   QHBoxLayout *hBox = new QHBoxLayout();
   hBox->setSpacing(KDialog::spacingHint());
-  firstLayout->addLayout(hBox, 1);
+  firstLayout->addLayout(hBox);
 
 #if ENABLE_CHANGING_ICON
   iconButton = new KIconButton(firstWidget);
@@ -82,24 +81,32 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   QGroupBox *gb = new QGroupBox(i18n("Filename Patterns"), firstWidget);
   hBox->addWidget(gb);
 
-  QGridLayout *grid = new QGridLayout(gb);
+  hBox = new QHBoxLayout(gb);
+  hBox->setSpacing(KDialog::spacingHint());
 
   extensionLB = new QListWidget(gb);
   connect(extensionLB, SIGNAL(itemSelectionChanged()), SLOT(enableExtButtons()));
-  grid->addWidget(extensionLB, 0, 0, 3, 1);
+  hBox->addWidget(extensionLB);
+
+  extensionLB->setFixedHeight(extensionLB->minimumSizeHint().height());
+
 
   extensionLB->setWhatsThis( i18n("This box contains a list of patterns that can be"
     " used to identify files of the selected type. For example, the pattern *.txt is"
     " associated with the file type 'text/plain'; all files ending in '.txt' are recognized"
     " as plain text files.") );
 
+  QVBoxLayout *vbox = new QVBoxLayout();
+  hBox->addLayout(vbox);
+  vbox->setSpacing(KDialog::spacingHint());
+//   vbox->setMargins(KDialog::spacingHint());
+
   addExtButton = new KPushButton(i18n("Add..."), gb);
   addExtButton->setIcon(KIcon("list-add"));
   addExtButton->setEnabled(false);
   connect(addExtButton, SIGNAL(clicked()),
           this, SLOT(addExtension()));
-  grid->addWidget(addExtButton, 0, 1);
-
+  vbox->addWidget(addExtButton);
   addExtButton->setWhatsThis( i18n("Add a new pattern for the selected file type.") );
 
   removeExtButton = new KPushButton(i18n("Remove"), gb);
@@ -107,31 +114,31 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   removeExtButton->setEnabled(false);
   connect(removeExtButton, SIGNAL(clicked()),
           this, SLOT(removeExtension()));
-  grid->addWidget(removeExtButton, 1, 1);
-
+  vbox->addWidget(removeExtButton);
   removeExtButton->setWhatsThis( i18n("Remove the selected filename pattern.") );
 
-  gb = new QGroupBox(i18n("Description"), firstWidget);
-  firstLayout->addWidget(gb);
+  vbox->addStretch(1);
 
-  description = new KLineEdit(gb);
+  gb->setFixedHeight(gb->minimumSizeHint().height());
+  
+  description = new KLineEdit(firstWidget);
   description->setClearButtonShown(true);
   connect(description, SIGNAL(textChanged(const QString &)),
           SLOT(updateDescription(const QString &)));
 
-  QVBoxLayout *descriptionBox = new QVBoxLayout;
+  QHBoxLayout *descriptionBox = new QHBoxLayout;
+  descriptionBox->addWidget(new QLabel(i18n("Description"),firstWidget));
   descriptionBox->addWidget(description);
-  gb->setLayout(descriptionBox);
+  firstLayout->addLayout(descriptionBox);
 
   wtstr = i18n("You can enter a short description for files of the selected"
     " file type (e.g. 'HTML Page'). This description will be used by applications"
     " like Konqueror to display directory content.");
-  gb->setWhatsThis( wtstr );
   description->setWhatsThis( wtstr );
 
   serviceListWidget = new KServiceListWidget( KServiceListWidget::SERVICELIST_APPLICATIONS, firstWidget );
   connect( serviceListWidget, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)));
-  firstLayout->addWidget(serviceListWidget, 5);
+  firstLayout->addWidget(serviceListWidget,5);
 
   // Second tab - Embedding
   QWidget * secondWidget = new QWidget(m_tabWidget);
@@ -158,7 +165,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   m_autoEmbedGroup->addButton(m_rbGroupSettings, 2);
   connect(m_autoEmbedGroup, SIGNAL( buttonClicked(int) ), SLOT( slotAutoEmbedClicked(int) ));
 
-  QVBoxLayout *vbox = new QVBoxLayout(m_autoEmbedBox);
+  vbox = new QVBoxLayout(m_autoEmbedBox);
   vbox->addWidget(embViewerRadio);
   vbox->addWidget(sepViewerRadio);
   vbox->addWidget(m_rbGroupSettings);
@@ -196,6 +203,8 @@ void FileTypeDetails::updateIcon(const QString &icon)
       m_item->setIcon(icon);
 
   emit changed(true);
+#else
+  Q_UNUSED(icon)
 #endif
 }
 

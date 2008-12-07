@@ -19,20 +19,16 @@
 
 #include "konqkcmfactory.h"
 #include "behaviour.h"
-#include "browser.h"
 #include "globalpaths.h"
-#include "previews.h"
 
 #include <KPluginFactory>
 #include <KPluginLoader>
 
 K_PLUGIN_FACTORY_DEFINITION(KonqKcmFactory,
         registerPlugin<KBehaviourOptions>("behavior");
-        registerPlugin<KBrowserOptions>("browser");
         //registerPlugin<DesktopBehaviorModule>("dbehavior");
         //registerPlugin<KonqFontOptions>("appearance");
         //registerPlugin<KonqFontOptionsDesktop>("dappearance");
         registerPlugin<DesktopPathConfig>("dpath");
-        registerPlugin<KPreviewOptions>("previews");
         )
 K_EXPORT_PLUGIN(KonqKcmFactory("kcmkonq"))

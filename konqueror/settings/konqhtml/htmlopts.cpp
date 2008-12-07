@@ -33,9 +33,6 @@
 
 K_PLUGIN_FACTORY_DECLARATION(KcmKonqHtmlFactory)
 
-enum UnderlineLinkType { UnderlineAlways=0, UnderlineNever=1, UnderlineHover=2 };
-enum AnimationsType { AnimationsAlways=0, AnimationsNever=1, AnimationsLoopOnce=2 };
-enum SmoothScrollingType { SmoothScrollingAlways=0, SmoothScrollingNever=1, SmoothScrollingWhenEfficient=2 };
 //-----------------------------------------------------------------------------
 
 KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
@@ -43,7 +40,7 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
 {
     m_pConfig = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
     int row = 0;
-    QGridLayout *lay = new QGridLayout(this);
+    QVBoxLayout *lay = new QVBoxLayout(this);
 
     // Bookmarks
     setQuickHelp( i18n("<h1>Konqueror Browser</h1> Here you can configure Konqueror's browser "
@@ -65,42 +62,38 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
     m_pAdvancedAddBookmarkCheckBox->setWhatsThis( i18n( "If this box is checked, Konqueror will allow you to"
                                                         " change the title of the bookmark and choose a folder"
 							" in which to store it when you add a new bookmark." ) );
-    connect(m_pAdvancedAddBookmarkCheckBox, SIGNAL(toggled(bool)), SLOT(slotChanged()));
+    connect(m_pAdvancedAddBookmarkCheckBox, SIGNAL(toggled(bool)), SLOT(changed()));
     bgBookmarks->setLayout(laygroup1);
 
     m_pOnlyMarkedBookmarksCheckBox = new QCheckBox(i18n( "Show only marked bookmarks in bookmark toolbar" ), bgBookmarks);
     laygroup1->addWidget(m_pOnlyMarkedBookmarksCheckBox);
     m_pOnlyMarkedBookmarksCheckBox->setWhatsThis( i18n( "If this box is checked, Konqueror will show only those"
                      " bookmarks in the bookmark toolbar which you have marked to do so in the bookmark editor." ) );
-    connect(m_pOnlyMarkedBookmarksCheckBox, SIGNAL(toggled(bool)), SLOT(slotChanged()));
+    connect(m_pOnlyMarkedBookmarksCheckBox, SIGNAL(toggled(bool)), SLOT(changed()));
 
-    lay->addWidget( bgBookmarks, row, 0, 1, 2 );
-    row++;
+    lay->addWidget( bgBookmarks);
 
      // Form completion
-
     m_pFormCompletionCheckBox = new QGroupBox( i18n("Form Com&pletion"), this );
     m_pFormCompletionCheckBox->setCheckable(true);
-    QVBoxLayout *laygroup2 = new QVBoxLayout(m_pFormCompletionCheckBox);
+    QFormLayout *laygroup2 = new QFormLayout(m_pFormCompletionCheckBox);
     laygroup2->setSpacing(KDialog::spacingHint());
 
     m_pFormCompletionCheckBox->setWhatsThis( i18n( "If this box is checked, Konqueror will remember"
                   " the data you enter in web forms and suggest it in similar fields for all forms." ) );
-    connect(m_pFormCompletionCheckBox, SIGNAL(toggled(bool)), SLOT(slotChanged()));
+    connect(m_pFormCompletionCheckBox, SIGNAL(triggered(bool)), SLOT(changed()));
 
     m_pMaxFormCompletionItems = new KIntNumInput(this);
-    m_pMaxFormCompletionItems->setLabel( i18n( "&Maximum completions:" ),  Qt::AlignLeft|Qt::AlignVCenter );
     m_pMaxFormCompletionItems->setRange( 0, 100 );
-    laygroup2->addWidget( m_pMaxFormCompletionItems );
+    laygroup2->addRow(i18n( "&Maximum completions:" ), m_pMaxFormCompletionItems );
     m_pMaxFormCompletionItems->setWhatsThis(
         i18n( "Here you can select how many values Konqueror will remember for a form field." ) );
-    connect(m_pMaxFormCompletionItems, SIGNAL(valueChanged(int)), SLOT(slotChanged()));
+    connect(m_pMaxFormCompletionItems, SIGNAL(valueChanged(int)), SLOT(changed()));
+    connect(m_pFormCompletionCheckBox, SIGNAL(toggled(bool)), m_pMaxFormCompletionItems, SLOT(setEnabled(bool)));
 
-    lay->addWidget( m_pFormCompletionCheckBox, row, 0, 1, 2 );
-    row++;
+    lay->addWidget( m_pFormCompletionCheckBox);
 
     // Mouse behavior
-
     QGroupBox *bgMouse = new QGroupBox( i18n("Mouse Beha&vior") );
     QVBoxLayout *laygroup3 = new QVBoxLayout(bgMouse);
     laygroup3->setSpacing(KDialog::spacingHint());
@@ -109,128 +102,44 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
     laygroup3->addWidget( m_cbCursor );
     m_cbCursor->setWhatsThis( i18n("If this option is set, the shape of the cursor will change "
        "(usually to a hand) if it is moved over a hyperlink.") );
-    connect(m_cbCursor, SIGNAL(toggled(bool)), SLOT(slotChanged()));
+    connect(m_cbCursor, SIGNAL(toggled(bool)), SLOT(changed()));
 
     m_pOpenMiddleClick = new QCheckBox( i18n ("M&iddle click opens URL in selection" ), bgMouse);
     laygroup3->addWidget( m_pOpenMiddleClick );
     m_pOpenMiddleClick->setWhatsThis( i18n (
       "If this box is checked, you can open the URL in the selection by middle clicking on a "
       "Konqueror view." ) );
-    connect(m_pOpenMiddleClick, SIGNAL(toggled(bool)), SLOT(slotChanged()));
+    connect(m_pOpenMiddleClick, SIGNAL(toggled(bool)), SLOT(changed()));
 
     m_pBackRightClick = new QCheckBox( i18n( "Right click goes &back in history" ),bgMouse);
     laygroup3->addWidget( m_pBackRightClick );
     m_pBackRightClick->setWhatsThis( i18n(
       "If this box is checked, you can go back in history by right clicking on a Konqueror view. "
       "To access the context menu, press the right mouse button and move." ) );
-    connect(m_pBackRightClick, SIGNAL(toggled(bool)), SLOT(slotChanged()));
+    connect(m_pBackRightClick, SIGNAL(toggled(bool)), SLOT(changed()));
 
-    lay->addWidget( bgMouse, row, 0, 1, 2 );
-    row++;
-
-    //Images
-    QGroupBox *bgImages = new QGroupBox( i18n("Images"),this );
-    QFormLayout *laygroup4 = new QFormLayout(bgImages);
-    laygroup4->setSpacing(KDialog::spacingHint());
-
-    m_pAutoLoadImagesCheckBox = new QCheckBox( i18n( "A&utomatically load images"), this );
-    m_pAutoLoadImagesCheckBox->setWhatsThis( i18n( "<html>If this box is checked, Konqueror will"
-			    " automatically load any images that are embedded in a web page."
-			    " Otherwise, it will display placeholders for the images, and"
-			    " you can then manually load the images by clicking on the image"
-			    " button.<br />Unless you have a very slow network connection, you"
-			    " will probably want to check this box to enhance your browsing"
-			    " experience.</html>" ) );
-    connect(m_pAutoLoadImagesCheckBox, SIGNAL(toggled(bool)), SLOT(slotChanged()));
-    laygroup4->addRow( m_pAutoLoadImagesCheckBox);
-
-    m_pUnfinishedImageFrameCheckBox = new QCheckBox( i18n( "Dra&w frame around not completely loaded images"), this );
-    m_pUnfinishedImageFrameCheckBox->setWhatsThis( i18n( "<html>If this box is checked, Konqueror will draw"
-			    " a frame as a placeholder around images embedded in a web page that are"
-			    " not yet fully loaded.<br />You will probably want to check this box to"
-			    " enhance your browsing experience, especially if have a slow network"
-			    " connection.</html>" ) );
-    connect(m_pUnfinishedImageFrameCheckBox, SIGNAL(toggled(bool)), SLOT(slotChanged()));
-    laygroup4->addRow( m_pUnfinishedImageFrameCheckBox );
-
-
-    m_pAnimationsCombo = new QComboBox( this );
-    m_pAnimationsCombo->setEditable(false);
-    m_pAnimationsCombo->insertItem(AnimationsAlways, i18nc("animations","Enabled"));
-    m_pAnimationsCombo->insertItem(AnimationsNever, i18nc("animations","Disabled"));
-    m_pAnimationsCombo->insertItem(AnimationsLoopOnce, i18n("Show Only Once"));
-    m_pAnimationsCombo->setWhatsThis(i18n("<html>Controls how Konqueror shows animated images:<br />"
-	    "<ul><li><b>Enabled</b>: Show all animations completely.</li>"
-	    "<li><b>Disabled</b>: Never show animations, show the starting image only.</li>"
-	    "<li><b>Show only once</b>: Show all animations completely but do not repeat them.</li></ul></html>"));
-    connect(m_pAnimationsCombo, SIGNAL(currentIndexChanged(int)), SLOT(slotChanged()));
-    laygroup4->addRow(i18n("A&nimations:"), m_pAnimationsCombo);
-
-    lay->addWidget( bgImages, row, 0, 1, 2 );
-    row++;
+    lay->addWidget( bgMouse);
 
     // Misc
+    QGroupBox *bgMisc = new QGroupBox( i18nc("@title:group","Miscelanous"));
+    QFormLayout *fl=new QFormLayout(bgMisc);
+
 
     m_pAutoRedirectCheckBox = new QCheckBox( i18n( "Allow automatic delayed &reloading/redirecting"), this );
     m_pAutoRedirectCheckBox->setWhatsThis( i18n( "Some web pages request an automatic reload or redirection after"
 			    " a certain period of time. By unchecking this box Konqueror will ignore these requests." ) );
-    connect(m_pAutoRedirectCheckBox, SIGNAL(toggled(bool)), SLOT(slotChanged()));
-    lay->addWidget( m_pAutoRedirectCheckBox, row, 0, 1, 2 );
-    row++;
+    connect(m_pAutoRedirectCheckBox, SIGNAL(toggled(bool)), SLOT(changed()));
+    fl->addRow( m_pAutoRedirectCheckBox );
+
+    lay->addWidget( bgMisc);
 
     // Checkbox to enable/disable Access Key activation through the Ctrl key.
-
-    m_pAccessKeys = new QCheckBox( i18n( "Enable/disable Access Ke&y activation with Ctrl key"), this );
+    m_pAccessKeys = new QCheckBox( i18n( "Enable/disable Access Ke&y activation with Ctrl key"), this );//TODO remove Enable/disable part
     m_pAccessKeys->setWhatsThis( i18n( "Pressing the Ctrl key when viewing webpages activates KDE's Access Keys. Unchecking this box will disable this accessibility feature. (Konqueror needs to be restarted for changes to take effect.)" ) );
-    connect(m_pAccessKeys, SIGNAL(toggled(bool)), SLOT(slotChanged()));
-    lay->addWidget( m_pAccessKeys, row, 0, 1, 2 );
-    row++;
+    connect(m_pAccessKeys, SIGNAL(toggled(bool)), SLOT(changed()));
+    fl->addRow( m_pAccessKeys);
 
-    // More misc
-
-    KSeparator *sep = new KSeparator(this);
-    lay->addWidget(sep, row, 0, 1, 2 );
-    row++;
-
-    QLabel *label = new QLabel( i18n("Und&erline links:"), this );
-    m_pUnderlineCombo = new QComboBox( this );
-    label->setBuddy(m_pUnderlineCombo);
-    m_pUnderlineCombo->setEditable(false);
-    m_pUnderlineCombo->insertItem(UnderlineAlways, i18nc("underline","Enabled"));
-    m_pUnderlineCombo->insertItem(UnderlineNever, i18nc("underline","Disabled"));
-    m_pUnderlineCombo->insertItem(UnderlineHover, i18n("Only on Hover"));
-    lay->addWidget(label, row, 0);
-    lay->addWidget(m_pUnderlineCombo, row, 1);
-    row++;
-    QString whatsThis = i18n("<html>Controls how Konqueror handles underlining hyperlinks:<br />"
-	    "<ul><li><b>Enabled</b>: Always underline links</li>"
-	    "<li><b>Disabled</b>: Never underline links</li>"
-	    "<li><b>Only on Hover</b>: Underline when the mouse is moved over the link</li>"
-	    "</ul><br /><i>Note: The site's CSS definitions can override this value.</i></html>");
-    label->setWhatsThis(whatsThis);
-    m_pUnderlineCombo->setWhatsThis(whatsThis);
-    connect(m_pUnderlineCombo, SIGNAL(currentIndexChanged(int)), SLOT(slotChanged()));
-
-
-    label = new QLabel( i18n("S&mooth scrolling:"), this );
-    m_pSmoothScrollingCombo = new QComboBox( this );
-    label->setBuddy(m_pSmoothScrollingCombo);
-    m_pSmoothScrollingCombo->setEditable(false);
-    m_pSmoothScrollingCombo->insertItem(SmoothScrollingWhenEfficient, i18n("When Efficient"));
-    m_pSmoothScrollingCombo->insertItem(SmoothScrollingAlways, i18nc("smooth scrolling","Always"));
-    m_pSmoothScrollingCombo->insertItem(SmoothScrollingNever, i18nc("soft scrolling","Never"));
-    lay->addWidget(label, row, 0);
-    lay->addWidget(m_pSmoothScrollingCombo, row, 1);
-    row++;
-    whatsThis = i18n("<html>Determines whether Konqueror should use smooth steps to scroll HTML pages, or whole steps:<br />"
-	    "<ul><li><b>Always</b>: Always use smooth steps when scrolling.</li>"
-	    "<li><b>Never</b>: Never use smooth scrolling, scroll with whole steps instead.</li>"
-	    "<li><b>When Efficient</b>: Only use smooth scrolling on pages where it can be achieved with moderate usage of system resources.</li></ul></html>");
-    label->setWhatsThis(whatsThis);
-    m_pSmoothScrollingCombo->setWhatsThis(whatsThis);
-    connect(m_pSmoothScrollingCombo, SIGNAL(currentIndexChanged(int)), SLOT(slotChanged()));
-
-    lay->setRowStretch(row, 1);
+    lay->addStretch(5);
 
     emit changed(false);
 }
@@ -254,50 +163,13 @@ void KMiscHTMLOptions::load()
     bool bBackRightClick = READ_BOOL( "BackRightClick", false );
     SET_GROUP( "HTML Settings" );
     bool changeCursor = READ_BOOL("ChangeCursor", KDE_DEFAULT_CHANGECURSOR);
-    bool underlineLinks = READ_BOOL("UnderlineLinks", true /*was DEFAULT_UNDERLINELINKS, but comes from khtml in fact */ );
-    bool hoverLinks = READ_BOOL("HoverLinks", true);
-    bool bAutoLoadImages = READ_BOOL( "AutoLoadImages", true );
-    bool bUnfinishedImageFrame = READ_BOOL( "UnfinishedImageFrame", true );
-    QString strAnimations = READ_ENTRY( "ShowAnimations" ).toLower();
-    QString strSmoothScrolling = READ_ENTRY( "SmoothScrolling" ).toLower();
-
     bool bAutoRedirect = cg.readEntry( "AutoDelayedActions", true );
 
     // *** apply to GUI ***
     m_cbCursor->setChecked( changeCursor );
-    m_pAutoLoadImagesCheckBox->setChecked( bAutoLoadImages );
-    m_pUnfinishedImageFrameCheckBox->setChecked( bUnfinishedImageFrame );
     m_pAutoRedirectCheckBox->setChecked( bAutoRedirect );
     m_pOpenMiddleClick->setChecked( bOpenMiddleClick );
     m_pBackRightClick->setChecked( bBackRightClick );
-
-    // we use two keys for link underlining so that this config file
-    // is backwards compatible with KDE 2.0.  the HoverLink setting
-    // has precedence over the UnderlineLinks setting
-    if (hoverLinks)
-    {
-        m_pUnderlineCombo->setCurrentIndex( UnderlineHover );
-    }
-    else
-    {
-        if (underlineLinks)
-            m_pUnderlineCombo->setCurrentIndex( UnderlineAlways );
-        else
-            m_pUnderlineCombo->setCurrentIndex( UnderlineNever );
-    }
-    if (strAnimations == "disabled")
-       m_pAnimationsCombo->setCurrentIndex( AnimationsNever );
-    else if (strAnimations == "looponce")
-       m_pAnimationsCombo->setCurrentIndex( AnimationsLoopOnce );
-    else
-       m_pAnimationsCombo->setCurrentIndex( AnimationsAlways );
-
-    if (strSmoothScrolling == "disabled")
-       m_pSmoothScrollingCombo->setCurrentIndex( SmoothScrollingNever );
-    else if (strSmoothScrolling == "enabled")
-       m_pSmoothScrollingCombo->setCurrentIndex( SmoothScrollingAlways );
-    else
-       m_pSmoothScrollingCombo->setCurrentIndex( SmoothScrollingWhenEfficient );
 
     m_pFormCompletionCheckBox->setChecked( cg.readEntry( "FormCompletion", true ) );
     m_pMaxFormCompletionItems->setValue( cg.readEntry( "MaxFormCompletionItems", 10 ) );
@@ -329,50 +201,7 @@ void KMiscHTMLOptions::save()
     cg.writeEntry( "BackRightClick", m_pBackRightClick->isChecked() );
     cg = KConfigGroup(m_pConfig, "HTML Settings" );
     cg.writeEntry( "ChangeCursor", m_cbCursor->isChecked() );
-    cg.writeEntry( "AutoLoadImages", m_pAutoLoadImagesCheckBox->isChecked() );
-    cg.writeEntry( "UnfinishedImageFrame", m_pUnfinishedImageFrameCheckBox->isChecked() );
     cg.writeEntry( "AutoDelayedActions", m_pAutoRedirectCheckBox->isChecked() );
-    switch(m_pUnderlineCombo->currentIndex())
-    {
-      case UnderlineAlways:
-        cg.writeEntry( "UnderlineLinks", true );
-        cg.writeEntry( "HoverLinks", false );
-        break;
-      case UnderlineNever:
-        cg.writeEntry( "UnderlineLinks", false );
-        cg.writeEntry( "HoverLinks", false );
-        break;
-      case UnderlineHover:
-        cg.writeEntry( "UnderlineLinks", false );
-        cg.writeEntry( "HoverLinks", true );
-        break;
-    }
-    switch(m_pAnimationsCombo->currentIndex())
-    {
-      case AnimationsAlways:
-        cg.writeEntry( "ShowAnimations", "Enabled" );
-        break;
-      case AnimationsNever:
-        cg.writeEntry( "ShowAnimations", "Disabled" );
-        break;
-      case AnimationsLoopOnce:
-        cg.writeEntry( "ShowAnimations", "LoopOnce" );
-        break;
-    }
-
-    switch(m_pSmoothScrollingCombo->currentIndex())
-    {
-      case SmoothScrollingAlways:
-        cg.writeEntry( "SmoothScrolling", "Enabled" );
-        break;
-      case SmoothScrollingNever:
-        cg.writeEntry( "SmoothScrolling", "Disabled" );
-        break;
-      case SmoothScrollingWhenEfficient:
-        cg.writeEntry( "SmoothScrolling", "WhenEfficient" );
-        break;
-    }
-
     cg.writeEntry( "FormCompletion", m_pFormCompletionCheckBox->isChecked() );
     cg.writeEntry( "MaxFormCompletionItems", m_pMaxFormCompletionItems->value() );
 
@@ -399,12 +228,6 @@ void KMiscHTMLOptions::save()
     emit changed(false);
 }
 
-
-void KMiscHTMLOptions::slotChanged()
-{
-    m_pMaxFormCompletionItems->setEnabled( m_pFormCompletionCheckBox->isChecked() );
-    emit changed(true);
-}
 
 #include "htmlopts.moc"
 

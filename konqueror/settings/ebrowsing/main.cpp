@@ -79,9 +79,7 @@ KURIFilterModule::KURIFilterModule(QWidget *parent, const QVariantList &)
 
         QMap<QString,KCModule*>::iterator it2;
         for (it2 = helper.begin(); it2 != helper.end(); ++it2)
-        {
             tab->addTab(it2.value(), it2.key());
-        }
 
         tab->setCurrentIndex(tab->indexOf(modules.first()));
         m_widget = tab;
@@ -90,9 +88,7 @@ KURIFilterModule::KURIFilterModule(QWidget *parent, const QVariantList &)
     {
         m_widget = modules.first();
         if (m_widget->layout())
-        {
             m_widget->layout()->setMargin(0);
-        }
     }
 
     if (m_widget) {
