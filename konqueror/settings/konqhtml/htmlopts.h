@@ -38,19 +38,11 @@ public:
     virtual void save();
     virtual void defaults();
 
-private Q_SLOTS:
-    void slotChanged();
-
 private:
     KSharedConfig::Ptr m_pConfig;
     QString  m_groupname;
 
-    QComboBox* m_pUnderlineCombo;
-    QComboBox* m_pAnimationsCombo;
-    QComboBox* m_pSmoothScrollingCombo;
     QCheckBox* m_cbCursor;
-    QCheckBox* m_pAutoLoadImagesCheckBox;
-    QCheckBox* m_pUnfinishedImageFrameCheckBox;
     QCheckBox* m_pAutoRedirectCheckBox;
     QCheckBox* m_pOpenMiddleClick;
     QCheckBox* m_pBackRightClick;

@@ -26,6 +26,9 @@
 class QSpinBox;
 class KFontComboBox;
 class QComboBox;
+class QCheckBox;
+class CSSConfig;
+
 
 class KAppearanceOptions : public KCModule
 {
@@ -54,6 +57,15 @@ private:
   void updateGUI();
 
 private:
+  CSSConfig* cssConfig;
+  
+  QCheckBox* m_pAutoLoadImagesCheckBox;
+  QCheckBox* m_pUnfinishedImageFrameCheckBox;
+  QComboBox* m_pAnimationsCombo;
+  QComboBox* m_pUnderlineCombo;
+  QComboBox* m_pSmoothScrollingCombo;
+
+
 
   KSharedConfig::Ptr m_pConfig;
   QString m_groupname;

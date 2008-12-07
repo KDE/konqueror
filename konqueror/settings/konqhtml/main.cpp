@@ -54,7 +54,7 @@ K_PLUGIN_FACTORY(KcmKonqHtmlFactory,
         registerPlugin<KMiscHTMLOptions>("khtml_behavior");
         registerPlugin<KKonqGeneralOptions>("khtml_general");
         registerPlugin<KCMFilter>("khtml_filter");
-        registerPlugin<KAppearanceOptions>("khtml_fonts");
+        registerPlugin<KAppearanceOptions>("khtml_appearance");
         )
 K_EXPORT_PLUGIN(KcmKonqHtmlFactory("kcmkonqhtml"))
 

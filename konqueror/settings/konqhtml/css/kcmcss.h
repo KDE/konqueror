@@ -23,41 +23,31 @@
 
 #include <kcmodule.h>
 #include "ui_csscustom.h"
-#include "ui_cssconfig.h"
-#include "ui_preview.h"
 
 class KDialog;
+class CSSConfigWidget;
+class KHTMLPart;
 
-class PreviewDialog : public QDialog, public Ui::PreviewDialog
+class CSSCustomDialog: public QWidget, public Ui::CSSCustomDialog
 {
+    Q_OBJECT
 public:
-  PreviewDialog( QWidget *parent ) : QDialog( parent ) {
-    setModal(true);
-    setupUi( this );
-  }
-};
+  CSSCustomDialog( QWidget *parent );
+  QMap<QString,QString> cssDict();
 
+public Q_SLOTS:
+  void slotPreview();
+  
+Q_SIGNALS:
+  void changed();
 
-class CSSConfigDialog : public QWidget, public Ui::CSSConfigDialog
-{
-public:
-  CSSConfigDialog( QWidget *parent ) : QWidget( parent ) {
-    setupUi( this );
-  }
-};
-
-
-class CSSCustomDialog : public QWidget, public Ui::CSSCustomDialog
-{
-public:
-  CSSCustomDialog( QWidget *parent ) : QWidget( parent ) {
-    setupUi( this );
-  }
+private:
+  KHTMLPart* part;
 };
 
 
 
-class CSSConfig : public KCModule
+class CSSConfig : public QWidget
 {
   Q_OBJECT
 
@@ -71,16 +61,17 @@ public:
 
 public Q_SLOTS:
  
-  void slotPreview();
   void slotCustomize();
+
+Q_SIGNALS:
+  void changed(bool);//connected to KCModule signal
+  void changed();//connected to KCModule slot
 
 private:
 
-  QMap<QString,QString> cssDict();
-
-  CSSConfigDialog *configDialog;
-  CSSCustomDialog *customDialog;
+  CSSConfigWidget *configWidget;
   KDialog *customDialogBase;
+  CSSCustomDialog *customDialog;
 };
 
 
