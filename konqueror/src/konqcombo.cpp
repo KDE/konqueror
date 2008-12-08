@@ -120,7 +120,7 @@ KonqCombo::KonqCombo( QWidget *parent )
 	    m_pageSecurity( KonqMainWindow::NotCrypted )
 {
     setLayoutDirection(Qt::LeftToRight);
-    setInsertPolicy( NoInsertion );
+    setInsertPolicy( NoInsert );
     setSizePolicy( QSizePolicy( QSizePolicy::Expanding, QSizePolicy::Fixed ));
     setSizeAdjustPolicy( QComboBox::AdjustToMinimumContentsLength );
 
