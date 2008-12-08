@@ -166,7 +166,7 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
     setCloseButtonEnabled( KonqSettings::hoverCloseButton() );
   setTabCloseActivatePrevious( KonqSettings::tabCloseActivatePrevious() );
   if (KonqSettings::tabPosition()=="Bottom")
-    setTabPosition(QTabWidget::Bottom);
+    setTabPosition( QTabWidget::South );
   connect( this, SIGNAL( closeRequest( QWidget * )), SLOT(slotCloseRequest( QWidget * )));
   connect( this, SIGNAL( removeTabPopup() ),
            m_pViewManager->mainWindow(), SLOT( slotRemoveTabPopup() ) );
@@ -602,7 +602,7 @@ bool KonqFrameTabs::accept( KonqFrameVisitor* visitor )
 void KonqFrameTabs::slotCurrentChanged( int index )
 {
     const KColorScheme colorScheme(QPalette::Active, KColorScheme::Window);
-    setTabTextColor(index, colorScheme.foreground(KColorScheme::NormalText));
+    setTabTextColor(index, colorScheme.foreground(KColorScheme::NormalText).color());
 
     KonqFrameBase* currentFrame = dynamic_cast<KonqFrameBase*>(widget( index ));
     if (currentFrame && !m_pViewManager->isLoadingProfile()) {
@@ -648,14 +648,14 @@ void KonqFrameTabs::setLoading(KonqFrameBase* frame, bool loading)
     const KColorScheme colorScheme(QPalette::Active, KColorScheme::Window);
     QColor color;
     if (loading) {
-        color = colorScheme.foreground(KColorScheme::NeutralText); // a tab is currently loading
+        color = colorScheme.foreground(KColorScheme::NeutralText).color(); // a tab is currently loading
     } else {
         if (currentIndex() != pos) {
             // another tab has newly loaded contents. Use "link" because you can click on it to read it.
-            color = colorScheme.foreground(KColorScheme::LinkText);
+            color = colorScheme.foreground(KColorScheme::LinkText).color();
         } else {
             // the current tab has finished loading.
-            color = colorScheme.foreground(KColorScheme::NormalText);
+            color = colorScheme.foreground(KColorScheme::NormalText).color();
         }
     }
     setTabTextColor(pos, color);
