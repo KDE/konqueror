@@ -371,14 +371,17 @@ bool KBookmarkBar::eventFilter( QObject *, QEvent *e )
             d->widgetPositions.clear();
 
             for (int i = 0; i < m_toolBar->actions().count(); ++i)
-                if (QWidget* button = m_toolBar->widgetForAction(m_toolBar->actions()[i]))
-                    if(m_toolBar->orientation() == Qt::Horizontal)
-                        if(QApplication::isLeftToRight())
+                if (QWidget* button = m_toolBar->widgetForAction(m_toolBar->actions()[i])) {
+                    if(m_toolBar->orientation() == Qt::Horizontal) {
+                        if(QApplication::isLeftToRight()) {
                             d->widgetPositions.push_back(button->geometry().right());
-                        else
+                        } else {
                             d->widgetPositions.push_back(button->geometry().left());
-                    else
+                        }
+                    } else {
                         d->widgetPositions.push_back(button->geometry().bottom());
+                    }
+                }
         }
 
         bool accept = handleToolbarDragMoveEvent(dme->pos(), d->m_actions, d->tempLabel);
