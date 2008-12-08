@@ -243,35 +243,6 @@ bool KonqOperations::askDeleteConfirmation( const KUrl::List & selectedUrls, int
     return uiDelegate.askDeleteConfirmation(selectedUrls, deletionType, confirmationType);
 }
 
-bool lessThan( const KUrl &left, const KUrl &right )
-{
-    return left.url().compare( right.url() ) < 0;
-}
-
-KUrl::List KonqOperations::simplifiedUrlList( const KUrl::List &urls )
-{
-    if (!urls.count()) {
-        return urls;
-    }
-
-    KUrl::List ret( urls );
-    qSort( ret.begin(), ret.end(), lessThan );
-
-    KUrl::List::iterator it = ret.begin();
-    KUrl url = *it;
-    ++it;
-    while ( it != ret.end() ) {
-        if ( url.isParentOf( *it ) ) {
-            it = ret.erase( it );
-        } else {
-            url = *it;
-            ++it;
-        }
-    }
-
-    return ret;
-}
-
 void KonqOperations::doDrop( const KFileItem & destItem, const KUrl & dest, QDropEvent * ev, QWidget * parent )
 {
     kDebug(1203) << "doDrop: dest:" << dest;
