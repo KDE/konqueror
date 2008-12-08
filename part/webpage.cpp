@@ -150,3 +150,12 @@ void WebPage::slotStatusBarMessage(const QString &message)
         m_part->setStatusBarTextProxy(message);
     }
 }
+
+void WebPage::slotHandleUnsupportedContent(QNetworkReply *reply)
+{
+    KUrl url(reply->request().url());
+    KParts::OpenUrlArguments args;
+    args.setMimeType(reply->header(QNetworkRequest::ContentTypeHeader).toString());
+    emit m_part->browserExtension()->openUrlRequest(url, args, KParts::BrowserArguments());
+}
+

@@ -46,6 +46,7 @@ protected Q_SLOTS:
     void slotGeometryChangeRequested(const QRect &rect);
     void slotWindowCloseRequested();
     void slotStatusBarMessage(const QString &message);
+    void slotHandleUnsupportedContent(QNetworkReply *reply);
 
 private:
     WebKitPart *m_part;
