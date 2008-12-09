@@ -235,7 +235,7 @@ int KonqMenuActions::addActionsTo(QMenu* mainMenu)
     const KMimeType::Ptr mimeTypePtr = commonMimeType.isEmpty() ? KMimeType::Ptr() : KMimeType::mimeType(commonMimeType);
     const KService::List entries = KServiceTypeTrader::self()->query( "KonqPopupMenu/Plugin");
     KService::List::const_iterator eEnd = entries.end();
-    for (KService::List::const_iterator it2 = entries.begin(); it2 != eEnd; it2++ ) {
+    for (KService::List::const_iterator it2 = entries.begin(); it2 != eEnd; ++it2 ) {
         QString file = KStandardDirs::locate("services", (*it2)->entryPath());
         KDesktopFile desktopFile( file );
         const KConfigGroup cfg = desktopFile.desktopGroup();
