@@ -41,9 +41,9 @@
 #include <netwm.h>
 #endif
 
-// #ifdef Q_WS_WIN
-// #include <QtGui/QFileDialog>
-// #endif
+#ifdef Q_WS_WIN
+#include <QtGui/QFileDialog>
+#endif
 #include <unistd.h>
 
 using namespace std;
@@ -487,9 +487,9 @@ static int directCommand(KCmdLineArgs *args)
         startDir = args->getOption("getexistingdirectory");
 	QString result;
 #ifdef Q_WS_WIN
-	result = KFileDialog::getExistingDirectory( 0, title, startDir,
-	                                            KFileDialog::DontResolveSymlinks |
-	                                            KFileDialog::ShowDirsOnly);
+	result = QFileDialog::getExistingDirectory( 0, title, startDir,
+	                                            QFileDialog::DontResolveSymlinks |
+	                                            QFileDialog::ShowDirsOnly);
 #else
 	KUrl url;
 	KDirSelectDialog myDialog( startDir, true, 0 );
