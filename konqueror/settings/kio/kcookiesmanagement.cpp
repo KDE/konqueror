@@ -127,10 +127,6 @@ KCookiesManagement::KCookiesManagement(const KComponentData &componentData, QWid
   connect(dlg->lvCookies, SIGNAL(itemDoubleClicked(QTreeWidgetItem *, int)), SLOT(doPolicy()));
   m_bDeleteAll = false;
   mainWidget = parent;
-
-  deletedCookies.setAutoDelete(true);
-
-  load();
 }
 
 KCookiesManagement::~KCookiesManagement()
@@ -180,32 +176,30 @@ void KCookiesManagement::save()
 
   // Individual cookies were deleted...
   bool success = true; // Maybe we can go on...
-  Q3DictIterator<CookiePropList> cookiesDom(deletedCookies);
-
-  while(cookiesDom.current())
+  QHashIterator<QString, CookiePropList> cookiesDom(deletedCookies);
+  while(cookiesDom.hasNext())
   {
-    CookiePropList *list = cookiesDom.current();
-    Q3PtrListIterator<CookieProp> cookie(*list);
-
-    while(*cookie)
+    cookiesDom.next();
+    CookiePropList list = cookiesDom.value();
+    foreach(CookieProp *cookie, list)
     {
         QDBusInterface kded("org.kde.kded", "/modules/kcookiejar", "org.kde.KCookieServer", QDBusConnection::sessionBus());
-        QDBusReply<void> reply = kded.call( "deleteCookie",(*cookie)->domain,
-                                              (*cookie)->host, (*cookie)->path,
-                                             (*cookie)->name );
+        QDBusReply<void> reply = kded.call( "deleteCookie", cookie->domain,
+                                            cookie->host, cookie->path,
+                                            cookie->name );
         if( !reply.isValid() )
       {
         success = false;
         break;
       }
 
-      list->removeRef(*cookie);
+      list.removeOne(cookie);
     }
 
     if(!success)
       break;
 
-    deletedCookies.remove(cookiesDom.currentKey());
+    deletedCookies.remove(cookiesDom.key());
   }
 
   emit changed( false );
@@ -417,7 +411,6 @@ void KCookiesManagement::doPolicy()
   }
 }
 
-
 void KCookiesManagement::deleteCookie()
 {
   QTreeWidgetItem* currentItem = dlg->lvCookies->currentItem();
@@ -425,14 +418,9 @@ void KCookiesManagement::deleteCookie()
   if( item->cookie() )
   {
     CookieListViewItem *parent = static_cast<CookieListViewItem*>(item->parent());
-    CookiePropList *list = deletedCookies.find(parent->domain());
-    if(!list)
-    {
-      list = new CookiePropList;
-      list->setAutoDelete(true);
-      deletedCookies.insert(parent->domain(), list);
-    }
-    list->append(item->leaveCookie());
+    CookiePropList list = deletedCookies.value(parent->domain());
+    list.append(item->leaveCookie());
+    deletedCookies.insert(parent->domain(), list);
     delete item;
     if(parent->childCount() == 0)
       delete parent;

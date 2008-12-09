@@ -66,13 +66,6 @@ KCookiesMain::~KCookiesMain()
 {
 }
 
-void KCookiesMain::load()
-{
-  policies->load();
-  if( management )
-      management->load();
-}
-
 void KCookiesMain::save()
 {
   policies->save();

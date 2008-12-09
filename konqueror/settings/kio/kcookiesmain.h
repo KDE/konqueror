@@ -25,7 +25,6 @@ public:
 
     KCookiesPolicies* policyDlg() { return policies; }
 
-    virtual void load();
     virtual void save();
     virtual void defaults();
     virtual QString quickHelp() const;
