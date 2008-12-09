@@ -51,8 +51,8 @@ KManualProxyDlg::KManualProxyDlg( QWidget* parent, const char* name )
     mDlg = new ManualProxyDlgUI (this);
     setMainWidget(mDlg);
     mDlg->pbCopyDown->setIcon( KIcon("go-down") );
-    QSizePolicy sizePolicy( QSizePolicy::Fixed, QSizePolicy::Fixed,
-                            mDlg->pbCopyDown->sizePolicy().hasHeightForWidth() );
+    QSizePolicy sizePolicy( QSizePolicy::Fixed, QSizePolicy::Fixed );
+    sizePolicy.setHeightForWidth( mDlg->pbCopyDown->sizePolicy().hasHeightForWidth() );
     mDlg->pbCopyDown->setSizePolicy( sizePolicy );
 
     init();

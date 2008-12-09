@@ -27,9 +27,7 @@
 #include <QtCore/QList>
 #include <QtCore/QStringList>
 #include <QtGui/QTreeWidget>
-#include <QtCore/QMultiHash>
-#include <Qt3Support/Q3Dict>
-#include <Qt3Support/Q3PtrList>
+#include <QtCore/QHash>
 
 #include <kcmodule.h>
 #include "ui_kcookiesmanagementdlg.h"
@@ -100,8 +98,8 @@ private:
     KCookiesManagementDlgUI* dlg;
 
     QStringList deletedDomains;
-    typedef Q3PtrList<CookieProp> CookiePropList;
-    Q3Dict<CookiePropList> deletedCookies;
+    typedef QList<CookieProp *> CookiePropList;
+    QHash<QString, CookiePropList> deletedCookies;
 };
 
 #endif // KCOOKIESMANAGEMENT_H

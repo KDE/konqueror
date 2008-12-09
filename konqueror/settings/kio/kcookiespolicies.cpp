@@ -112,7 +112,7 @@ KCookiesPolicies::~KCookiesPolicies()
 void KCookiesPolicies::configChanged ()
 {
   //kDebug() << "KCookiesPolicies::configChanged...";
-  emit changed((d_configChanged=true));
+  emit changed(true);
 }
 
 void KCookiesPolicies::cookiesEnabled( bool enable )
@@ -301,7 +301,6 @@ void KCookiesPolicies::selectionChanged ()
 void KCookiesPolicies::load()
 {
   d_itemsSelected = 0;
-  d_configChanged = false;
 
   KConfig cfg ("kcookiejarrc");
   KConfigGroup group = cfg.group ("Cookie Policy");
@@ -345,10 +344,6 @@ void KCookiesPolicies::load()
 
 void KCookiesPolicies::save()
 {
-  // If nothing changed, ignore the save request.
-  if (!d_configChanged)
-    return;
-
   KConfig cfg ( "kcookiejarrc" );
   KConfigGroup group = cfg.group( "Cookie Policy" );
 

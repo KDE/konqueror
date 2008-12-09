@@ -80,7 +80,6 @@ private:
 
 private:
     int d_itemsSelected;
-    bool d_configChanged;
     KCookiesPolicyDlgUI* dlg;
     QMap<QTreeWidgetItem*, const char*> m_pDomainPolicy;
 };
