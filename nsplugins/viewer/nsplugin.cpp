@@ -333,7 +333,7 @@ NPError g_NPN_PostURLNotify(NPP instance, const char* url, const char* target,
       uint32 l;
       bool previousCR = true;
 
-      for (l = 1;; l++) {
+      for (l = 1;; ++l) {
          if (l == len) {
             break;
          }
@@ -431,7 +431,7 @@ NPError g_NPN_PostURL(NPP instance, const char* url, const char* target,
       uint32 l;
       bool previousCR = true;
 
-      for (l = 1;; l++) {
+      for (l = 1;; ++l) {
          if (l == len) {
             break;
          }

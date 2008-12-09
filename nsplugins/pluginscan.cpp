@@ -184,7 +184,7 @@ static void generateMimeType( const QString &mime, const QString &extensions, co
     mimeTypeWriter.setIconName("x-kde-nsplugin-generated");
 
     if (!extensions.isEmpty()) {
-        const QStringList exts = extensions.split(",");
+        const QStringList exts = extensions.split(',');
         QStringList patterns;
         for (QStringList::const_iterator it=exts.constBegin(); it != exts.constEnd(); ++it)
             patterns.append( "*." + (*it).trimmed() );
@@ -483,7 +483,7 @@ void writeServicesFile( const QStringList &mimeTypes )
 void removeExistingExtensions( QString &extension )
 {
     QStringList filtered;
-    const QStringList exts = extension.split( "," );
+    const QStringList exts = extension.split( ',' );
     for ( QStringList::const_iterator it=exts.constBegin(); it!=exts.constEnd(); ++it ) {
         QString ext = (*it).trimmed();
         if ( ext == "*" ) // some plugins have that, but we don't want to associate a mimetype with *.*!
@@ -614,7 +614,7 @@ int main( int argc, char **argv )
 
       kDebug(1433) << "Handling MIME type " << *it;
 
-      QStringList info = (*it).split(":", QString::KeepEmptyParts);
+      QStringList info = (*it).split(':', QString::KeepEmptyParts);
       if ( info.count()==4 ) {
           QString pluginName = info[0];
           QString type = info[1].toLower();
