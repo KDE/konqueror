@@ -121,7 +121,7 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
     lay->addWidget( bgMouse);
 
     // Misc
-    QGroupBox *bgMisc = new QGroupBox( i18nc("@title:group","Miscelanous"));
+    QGroupBox *bgMisc = new QGroupBox( i18nc("@title:group","Miscellaneous"));
     QFormLayout *fl=new QFormLayout(bgMisc);
 
 
