@@ -100,6 +100,7 @@ DesktopPathConfig::DesktopPathConfig(QWidget *parent, const QVariantList &)
   // Desktop Paths
   row++;
   tmpLabel = new QLabel(i18n("Des&ktop path:"), this);
+  tmpLabel->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
   lay->addWidget(tmpLabel, row, 0);
   urDesktop = new KUrlRequester(this);
   urDesktop->setMode( KFile::Directory | KFile::LocalOnly );
@@ -115,6 +116,7 @@ DesktopPathConfig::DesktopPathConfig(QWidget *parent, const QVariantList &)
 
   row++;
   tmpLabel = new QLabel(i18n("A&utostart path:"), this);
+  tmpLabel->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
   lay->addWidget(tmpLabel, row, 0);
   urAutostart = new KUrlRequester(this);
   urAutostart->setMode( KFile::Directory | KFile::LocalOnly );
@@ -131,6 +133,7 @@ DesktopPathConfig::DesktopPathConfig(QWidget *parent, const QVariantList &)
 
   row++;
   tmpLabel = new QLabel(i18n("D&ocuments path:"), this);
+  tmpLabel->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
   lay->addWidget(tmpLabel, row, 0);
   urDocument = new KUrlRequester(this);
   urDocument->setMode( KFile::Directory | KFile::LocalOnly );
