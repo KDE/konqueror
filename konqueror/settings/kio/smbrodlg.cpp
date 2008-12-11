@@ -50,6 +50,7 @@ SMBRoOptions::SMBRoOptions(QWidget *parent, const QVariantList &, const KCompone
 
    m_userLe=new QLineEdit(this);
    label=new QLabel(i18n("Default user name:"),this);
+   label->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
    label->setBuddy( m_userLe );
    layout->addWidget(label,1,0);
    layout->addWidget(m_userLe,1,1);
@@ -57,6 +58,7 @@ SMBRoOptions::SMBRoOptions(QWidget *parent, const QVariantList &, const KCompone
    m_passwordLe=new QLineEdit(this);
    m_passwordLe->setEchoMode(QLineEdit::Password);
    label=new QLabel(i18n("Default password:"),this);
+   label->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
    label->setBuddy( m_passwordLe );
    layout->addWidget(label,2,0);
    layout->addWidget(m_passwordLe,2,1);
