@@ -102,7 +102,7 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList&)
  
   
   //Other
-  box = new QGroupBox(i18nc("@title:group","Miscelanous"),mainTab);
+  box = new QGroupBox(i18nc("@title:group","Miscellaneous"),mainTab);
   l->addWidget(box);
   fl=new QFormLayout(box);
   m_pUnderlineCombo = new QComboBox( this );
