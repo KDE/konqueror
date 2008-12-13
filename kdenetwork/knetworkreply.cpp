@@ -25,6 +25,7 @@
 
 #include <KDebug>
 #include <KIO/Job>
+#include <KLocale>
 
 #include <QTimer>
 
@@ -49,6 +50,7 @@ KNetworkReply::KNetworkReply(const QNetworkRequest &request, KIO::Job *kioJob, Q
     setOpenMode(QIODevice::ReadOnly);
 
     if (!kioJob) { // a blocked request
+        setError(QNetworkReply::OperationCanceledError, i18n("Blocked request."));
         QTimer::singleShot(0, this, SIGNAL(finished()));
     }
 }
@@ -105,7 +107,7 @@ void KNetworkReply::setMimeType(KIO::Job *kioJob, const QString &mimeType)
 {
     Q_UNUSED(kioJob);
 
-    kDebug() << mimeType;
+//     kDebug() << mimeType;
     setHeader(QNetworkRequest::ContentTypeHeader, mimeType.toUtf8());
 }
 
