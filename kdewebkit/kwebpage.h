@@ -36,6 +36,11 @@ class KDE_EXPORT KWebPage : public QWebPage
 public:
     KWebPage(QObject *parent);
     ~KWebPage();
+    void setCustomUnsupportedContent(bool forward);
+    bool customUnsupportedContent() const;
+
+Q_SIGNALS:
+    void customUnsupportedContent(QNetworkReply *reply);
 
 protected:
     virtual KWebPage *createWindow(WebWindowType type);
@@ -55,6 +60,7 @@ protected Q_SLOTS:
 private:
     class KWebPagePrivate;
     KWebPagePrivate* const d;
+    bool m_unsup;
 };
 
 #endif // KWEBPAGE_H

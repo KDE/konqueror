@@ -119,6 +119,8 @@ KWebPage::KWebPage(QObject *parent)
     connect(this, SIGNAL(downloadRequested(const QNetworkRequest &)),
             this, SLOT(slotDownloadRequested(const QNetworkRequest &)));
     setForwardUnsupportedContent(true);
+    connect(this, SIGNAL(unsupportedContent(QNetworkReply *)),
+            this, SLOT(slotHandleUnsupportedContent(QNetworkReply *)));
 }
 
 KWebPage::~KWebPage()
@@ -173,6 +175,9 @@ QString KWebPage::userAgentForUrl(const QUrl& _url) const
 
 void KWebPage::slotHandleUnsupportedContent(QNetworkReply *reply)
 {
+    if (customUnsupportedContent()) {
+        return customUnsupportedContent(reply);
+    }
     KUrl url(reply->request().url());
     kDebug() << "title:" << url;
     kDebug() << "error:" << reply->errorString();
@@ -257,5 +262,15 @@ KWebPage *KWebPage::newWindow(WebWindowType type)
 {
     Q_UNUSED(type);
     return 0;
+}
+
+void KWebPage::setCustomUnsupportedContent(bool forward)
+{
+    m_unsup = forward;
+}
+
+bool KWebPage::customUnsupportedContent() const
+{
+    return m_unsup;
 }
 
