@@ -119,8 +119,6 @@ KWebPage::KWebPage(QObject *parent)
     connect(this, SIGNAL(downloadRequested(const QNetworkRequest &)),
             this, SLOT(slotDownloadRequested(const QNetworkRequest &)));
     setForwardUnsupportedContent(true);
-    connect(this, SIGNAL(unsupportedContent(QNetworkReply *)),
-            this, SLOT(slotHandleUnsupportedContent(QNetworkReply *)));
 }
 
 KWebPage::~KWebPage()
