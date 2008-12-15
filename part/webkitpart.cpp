@@ -61,7 +61,7 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
     lay->addWidget(m_webView->searchBar());
 
     KAboutData* about = new KAboutData("webkitpart", "webkitkde", ki18n("WebKit HTML Component"),
-                           /*version*/ "0.1", ki18n(/*shortDescription*/ ""),
+                           /*version*/ "0.1", /*ki18n("shortDescription")*/ KLocalizedString(),
                            KAboutData::License_LGPL,
                            ki18n("(c) 2008, Urs Wolfer\n"
                                  "(c) 2007 Trolltech ASA"));
