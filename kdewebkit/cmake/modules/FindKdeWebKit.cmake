@@ -24,23 +24,26 @@ endif(kdewebkit_SOURCE_DIR)
 # use pkg-config to get the directories and then use these values
 # in the FIND_PATH() and FIND_LIBRARY() calls
 if( NOT WIN32 )
-  INCLUDE(UsePkgConfig)
+  find_package(PkgConfig)
 
-  PKGCONFIG(kdewebkit _KdeWebKitIncDir _KdeWebKitLinkDir _KdeWebKitLinkFlags _KdeWebKitCflags)
+  pkg_check_modules(PC_KDEWEBKIT kdewebkit)
 
-  SET(KDEWEBKIT_DEFINITIONS ${_KdeWebKitCflags})
+  set(KDEWEBKIT_DEFINITIONS ${PC_KDEWEBKIT_CFLAGS_OTHER})
+
 endif( NOT WIN32 )
 
 FIND_PATH(KDEWEBKIT_INCLUDE_DIR NAMES kwebview.h
   PATHS
-  ${_KdeWebKitIncDir}
+  ${PC_KDEWEBKIT_INCLUDEDIR}
+  ${PC_KDEWEBKIT_INCLUDE_DIRS}
   ${KDE4_INCLUDE_INSTALL_DIR}
   PATH_SUFFIXES kdewebkit
 )
 
 FIND_LIBRARY(KDEWEBKIT_LIBRARIES NAMES kdewebkit
   PATHS
-  ${_KdeWebKitLinkDir}
+  ${PC_KDEWEBKIT_LIBDIR}
+  ${PC_KDEWEBKIT_LIBRARY_DIRS}
   ${KDE4_LIB_INSTALL_DIR}
 )
 
