@@ -261,7 +261,7 @@ void KonqOperations::doDrop( const KFileItem & destItem, const KUrl & dest, QDro
             if (dest.equals(*it, KUrl::CompareWithoutTrailingSlash)) {
                 // The event source may be the view or an item (icon)
                 // Note: ev->source() can be 0L! (in case of kdesktop) (Simon)
-                if ( !ev->source() || ev->source() != parent && ev->source()->parent() != parent )
+                if ( !ev->source() || ( ev->source() != parent && ev->source()->parent() != parent ) )
                     KMessageBox::sorry( parent, i18n("You cannot drop a folder on to itself") );
                 kDebug(1203) << "Dropped on itself";
                 ev->setAccepted( false );

@@ -329,11 +329,11 @@ int KonqMenuActions::addActionsTo(QMenu* mainMenu)
                 }
 
                 // if we have a mimetype, see if we have an exact or a type globbed match
-                if (!ok &&
+                if (!ok && (
                     (mimeTypePtr && mimeTypePtr->is(*it)) ||
                     (!commonMimeGroup.isEmpty() &&
                      ((*it).right(1) == "*" &&
-                      (*it).left((*it).indexOf('/')) == commonMimeGroup))) {
+                      (*it).left((*it).indexOf('/')) == commonMimeGroup)))) {
                     checkTheMimetypes = true;
                 }
 
