@@ -24,23 +24,25 @@ endif(webkitpart_SOURCE_DIR)
 # use pkg-config to get the directories and then use these values
 # in the FIND_PATH() and FIND_LIBRARY() calls
 if( NOT WIN32 )
-  INCLUDE(UsePkgConfig)
+  find_package(PkgConfig)
 
-  PKGCONFIG(webkitpart _WebKitPartIncDir _WebKitPartLinkDir _WebKitPartLinkFlags _WebKitPartCflags)
+  pkg_check_modules(PC_WEBKITPART webkitpart)
 
-  SET(WEBKITPART_DEFINITIONS ${_WebKitPartCflags})
+  set(PCRE_DEFINITIONS ${PC_WEBKITPART_CFLAGS_OTHER})
 endif( NOT WIN32 )
 
 FIND_PATH(WEBKITPART_INCLUDE_DIR NAMES webkitpart.h
   PATHS
-  ${_WebKitPartIncDir}
+  ${PC_WEBKITPART_INCLUDEDIR} 
+  ${PC_WEBKITPART_INCLUDE_DIRS}
   ${KDE4_INCLUDE_INSTALL_DIR}
   PATH_SUFFIXES webkitkde
 )
 
 FIND_LIBRARY(WEBKITPART_LIBRARIES NAMES webkitkde
   PATHS
-  ${_WebKitPartLinkDir}
+  ${PC_WEBKITPART_LIBDIR} 
+  ${PC_WEBKITPART_LIBRARY_DIRS}
   ${KDE4_LIB_INSTALL_DIR}
 )
 
