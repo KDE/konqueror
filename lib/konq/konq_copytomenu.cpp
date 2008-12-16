@@ -193,7 +193,10 @@ void KonqCopyToDirectoryMenu::slotAboutToShow()
     const QStringList entries = dir.entryList(QDir::Dirs | QDir::NoDotAndDotDot, QDir::LocaleAware);
     KMimeType::Ptr dirMime = KMimeType::mimeType("inode/directory");
     Q_FOREACH(const QString& subDir, entries) {
-        const QString subPath = m_path + '/' + subDir;
+        QString subPath = m_path;
+        if (!subPath.endsWith('/'))
+            subPath.append('/');
+        subPath += subDir;
         KonqCopyToDirectoryMenu* subMenu = new KonqCopyToDirectoryMenu(this, m_mainMenu, subPath);
         subMenu->setTitle(subDir);
         const QString iconName = dirMime->iconName(KUrl(subPath));
