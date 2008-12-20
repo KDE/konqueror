@@ -90,7 +90,11 @@ void KWebView::wheelEvent(QWheelEvent *event)
     if (QApplication::keyboardModifiers() & Qt::ControlModifier) {
         int numDegrees = event->delta() / 8;
         int numSteps = numDegrees / 15;
+#if QT_VERSION < 0x040500
         setTextSizeMultiplier(textSizeMultiplier() + numSteps * 0.1);
+#else
+        setZoomFactor(zoomFactor() + numSteps * 0.1);
+#endif
         event->accept();
         return;
     }

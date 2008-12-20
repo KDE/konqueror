@@ -261,12 +261,20 @@ void WebKitBrowserExtension::searchProvider()
 
 void WebKitBrowserExtension::zoomIn()
 {
+#if QT_VERSION < 0x040500
     part->view()->setTextSizeMultiplier(part->view()->textSizeMultiplier() * 2);
+#else
+    part->view()->setZoomFactor(part->view()->zoomFactor() * 2);
+#endif
 }
 
 void WebKitBrowserExtension::zoomOut()
 {
+#if QT_VERSION < 0x040500
     part->view()->setTextSizeMultiplier(part->view()->textSizeMultiplier() / 2);
+#else
+    part->view()->setZoomFactor(part->view()->zoomFactor() / 2);
+#endif
 }
 
 void WebKitBrowserExtension::slotSelectAll()
