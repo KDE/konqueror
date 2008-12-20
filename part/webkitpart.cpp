@@ -279,7 +279,7 @@ void WebKitBrowserExtension::zoomOut()
 
 void WebKitBrowserExtension::slotSelectAll()
 {
-//     part->view()->selectAll(); //TODO implement in QWebView (?)
+//     part->view()->selectAll(); //TODO enable when added in Qt (see https://bugs.webkit.org/show_bug.cgi?id=22946)
 }
 
 void WebKitBrowserExtension::slotFrameInWindow()
