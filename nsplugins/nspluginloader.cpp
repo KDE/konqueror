@@ -414,7 +414,7 @@ NSPluginInstance *NSPluginLoader::newInstance(QWidget *parent, const QString& ur
                                               const QStringList& _argn, const QStringList& _argv,
                                               const QString& ownDBusId, const QString& callbackId, bool reload )
 {
-   kDebug() << "-> NSPluginLoader::NewInstance( parent=" << (void*)parent << ", url=" << url << ", mime=" << mimeType << ", ...)";
+   kDebug() << "-> NSPluginLoader::NewInstance( parent=" << (void*)parent << ", url=" << url << ", mime=" << mimeType << ", " << _argn << _argv << ")";
 
    if ( !_viewer )
    {
@@ -479,7 +479,11 @@ NSPluginInstance *NSPluginLoader::newInstance(QWidget *parent, const QString& ur
       return 0;
    }
 
-   const KUrl baseUrl( argv.at( argn.indexOf("__KHTML__PLUGINBASEURL") ) );
+   KUrl baseUrl;
+   const int indexOfBaseurl = argn.indexOf( "__KHTML__PLUGINBASEURL" );
+   if ( indexOfBaseurl > 0 ) {
+      baseUrl = argv.at( indexOfBaseurl );
+   }
 
    NSPluginInstance *plugin = new NSPluginInstance( parent, _viewerDBusId, inst_ref.path(), baseUrl);
 
