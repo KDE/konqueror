@@ -63,7 +63,11 @@ protected:
 class KWebPage::KWebPagePrivate
 {
 public:
-    KWebPagePrivate() {}
+    KWebPagePrivate()
+    : unsupportedContent(false)
+    {}
+
+    bool unsupportedContent;
 };
 
 KWebPage::KWebPage(QObject *parent)
@@ -153,11 +157,11 @@ bool KWebPage::javaScriptPrompt(QWebFrame *frame, const QString &msg, const QStr
 
 QString KWebPage::userAgentForUrl(const QUrl& _url) const
 {
-    KUrl url(_url);
-    QString host = url.isLocalFile() ? "localhost" : url.host();
+    const KUrl url(_url);
+    const QString host = url.isLocalFile() ? "localhost" : url.host();
 
     QString userAgent = KProtocolManager::userAgentForHost(host);
-    int indexOfKhtml = userAgent.indexOf("KHTML/");
+    const int indexOfKhtml = userAgent.indexOf("KHTML/");
     if (indexOfKhtml == -1) // not a KHTML user agent, so no need to "update" it
         return userAgent;
 
@@ -178,7 +182,7 @@ void KWebPage::slotHandleUnsupportedContent(QNetworkReply *reply)
     if (customUnsupportedContent()) {
         return customUnsupportedContent(reply);
     }
-    KUrl url(reply->request().url());
+    const KUrl url(reply->request().url());
     kDebug() << "title:" << url;
     kDebug() << "error:" << reply->errorString();
 
@@ -210,7 +214,7 @@ QObject *KWebPage::createPlugin(const QString &classId, const QUrl &url, const Q
 
 void KWebPage::slotDownloadRequested(const QNetworkRequest &request)
 {
-    KUrl url(request.url());
+    const KUrl url(request.url());
     kDebug() << url;
 
     // parts of following code are based on khtml_ext.cpp
@@ -221,7 +225,7 @@ void KWebPage::slotDownloadRequested(const QNetworkRequest &request)
     bool downloadViaKIO = true;
     if (!url.isLocalFile()) {
         KConfigGroup cfg = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals)->group("HTML Settings");
-        QString downloadManger = cfg.readPathEntry("DownloadManager", QString());
+        const QString downloadManger = cfg.readPathEntry("DownloadManager", QString());
         if (!downloadManger.isEmpty()) {
             // then find the download manager location
             kDebug() << "Using: " << downloadManger << " as Download Manager";
@@ -242,7 +246,7 @@ void KWebPage::slotDownloadRequested(const QNetworkRequest &request)
     }
 
     if (downloadViaKIO) {
-        QString destUrl = KFileDialog::getOpenFileName(url.fileName(), QString(), view());
+        const QString destUrl = KFileDialog::getOpenFileName(url.fileName(), QString(), view());
         KIO::Job *job = KIO::file_copy(url, KUrl(destUrl), -1, KIO::Overwrite);
         //job->setMetaData(metadata); //TODO: add metadata from request
         job->addMetaData("MaxCacheSize", "0"); // Don't store in http cache.
@@ -266,11 +270,11 @@ KWebPage *KWebPage::newWindow(WebWindowType type)
 
 void KWebPage::setCustomUnsupportedContent(bool forward)
 {
-    m_unsup = forward;
+    d->unsupportedContent = forward;
 }
 
 bool KWebPage::customUnsupportedContent() const
 {
-    return m_unsup;
+    return d->unsupportedContent;
 }
 

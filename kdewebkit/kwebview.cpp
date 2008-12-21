@@ -88,8 +88,8 @@ KWebPage *KWebView::page()
 void KWebView::wheelEvent(QWheelEvent *event)
 {
     if (QApplication::keyboardModifiers() & Qt::ControlModifier) {
-        int numDegrees = event->delta() / 8;
-        int numSteps = numDegrees / 15;
+        const int numDegrees = event->delta() / 8;
+        const int numSteps = numDegrees / 15;
 #if QT_VERSION < 0x040500
         setTextSizeMultiplier(textSizeMultiplier() + numSteps * 0.1);
 #else
@@ -121,7 +121,7 @@ void KWebView::mouseReleaseEvent(QMouseEvent *event)
 
     QWebView::mouseReleaseEvent(event);
     if (!event->isAccepted() && (d->pressedButtons & Qt::MidButton)) {
-        KUrl url(QApplication::clipboard()->text(QClipboard::Selection));
+        const KUrl url(QApplication::clipboard()->text(QClipboard::Selection));
         if (!url.isEmpty() && url.isValid() && !url.scheme().isEmpty()) {
             emit openUrl(url);
         }
@@ -165,7 +165,7 @@ void KWebView::resultSearch(KWebPage::FindFlags flags)
 {
     if (d->searchBar->caseSensitive())
         flags |= KWebPage::FindCaseSensitively;
-    bool status = page()->findText(d->searchBar->searchText(), flags);
+    const bool status = page()->findText(d->searchBar->searchText(), flags);
     d->searchBar->setFoundMatch(status);
 }
 

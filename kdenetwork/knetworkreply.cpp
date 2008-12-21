@@ -71,7 +71,7 @@ qint64 KNetworkReply::bytesAvailable() const
 qint64 KNetworkReply::readData(char *data, qint64 maxSize)
 {
 //     kDebug();
-    qint64 length = qMin(qint64(d->m_data.length()), maxSize);
+    const qint64 length = qMin(qint64(d->m_data.length()), maxSize);
     if (length) {
         qMemCopy(data, d->m_data.constData(), length);
         d->m_data.remove(0, length);
@@ -85,11 +85,11 @@ void KNetworkReply::appendData(KIO::Job *kioJob, const QByteArray &data)
 //     kDebug();
 
     if (!d->m_metaDataRead) {
-        QString headers = kioJob->queryMetaData("HTTP-Headers");
+        const QString headers = kioJob->queryMetaData("HTTP-Headers");
         if (!headers.isEmpty()) {
             QStringList headerList = headers.split('\n');
             Q_FOREACH(const QString &header, headerList) {
-                QStringList headerPair = header.split(": ");
+                const QStringList headerPair = header.split(": ");
                 if (headerPair.size() == 2) {
 //                     kDebug() << headerPair.at(0) << headerPair.at(1);
                     setRawHeader(headerPair.at(0).toUtf8(), headerPair.at(1).toUtf8());

@@ -60,7 +60,6 @@ protected Q_SLOTS:
 private:
     class KWebPagePrivate;
     KWebPagePrivate* const d;
-    bool m_unsup;
 };
 
 #endif // KWEBPAGE_H

@@ -248,7 +248,7 @@ void WebKitBrowserExtension::searchProvider()
 
     if (!KUriFilter::self()->filterUri(data, list)) {
         KDesktopFile file("services", "searchproviders/google.desktop");
-        QString encodedSearchTerm = QUrl::toPercentEncoding(text);
+        const QString encodedSearchTerm = QUrl::toPercentEncoding(text);
         KConfigGroup cg(file.desktopGroup());
         data.setData(cg.readEntry("Query").replace("\\{@}", encodedSearchTerm));
     }
@@ -322,7 +322,7 @@ void WebKitBrowserExtension::slotSendImage()
 {
     QStringList urls;
     urls.append(part->view()->contextMenuResult().imageUrl().path());
-    QString subject = part->view()->contextMenuResult().imageUrl().path();
+    const QString subject = part->view()->contextMenuResult().imageUrl().path();
     KToolInvocation::invokeMailer(QString(), QString(), QString(), subject,
                                   QString(), //body
                                   QString(),

@@ -120,8 +120,8 @@ void WebPage::slotGeometryChangeRequested(const QRect &rect)
 
     // If the window is out of the desktop, move it up/left
     // (maybe we should use workarea instead of sg, otherwise the window ends up below kicker)
-    int right = view()->x() + view()->frameGeometry().width();
-    int bottom = view()->y() + view()->frameGeometry().height();
+    const int right = view()->x() + view()->frameGeometry().width();
+    const int bottom = view()->y() + view()->frameGeometry().height();
     int moveByX = 0;
     int moveByY = 0;
     if (right > sg.right())
@@ -155,7 +155,7 @@ void WebPage::slotStatusBarMessage(const QString &message)
 
 void WebPage::slotHandleUnsupportedContent(QNetworkReply *reply)
 {
-    KUrl url(reply->request().url());
+    const KUrl url(reply->request().url());
     KParts::OpenUrlArguments args;
     args.setMimeType(reply->header(QNetworkRequest::ContentTypeHeader).toString());
     emit m_part->browserExtension()->openUrlRequest(url, args, KParts::BrowserArguments());
