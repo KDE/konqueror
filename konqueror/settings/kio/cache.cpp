@@ -37,6 +37,7 @@
 #include <kio/http_slave_defaults.h>
 #include <klocale.h>
 #include <knuminput.h>
+#include <kstandarddirs.h>
 
 // Local
 #include "ksaveioconfig.h"
@@ -47,7 +48,6 @@ CacheConfigModule::CacheConfigModule(QWidget *parent, const QVariantList &)
                   :KCModule(KioConfigFactory::componentData(), parent)
 {
   ui.setupUi(this);
-  load();
 }
 
 CacheConfigModule::~CacheConfigModule()
@@ -123,7 +123,7 @@ void CacheConfigModule::configChanged()
 
 void CacheConfigModule::on_clearCacheButton_clicked()
 {
-  KProcess::startDetached(QLatin1String("kio_http_cache_cleaner"),
+  KProcess::startDetached(KStandardDirs::findExe("kio_http_cache_cleaner"),
                           QStringList(QLatin1String("--clear-all")));
 }
 
