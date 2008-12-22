@@ -82,7 +82,6 @@ KIOPreferences::KIOPreferences(QWidget *parent, const QVariantList &)
     ftpLayout->addWidget(cb_ftpMarkPartial);
 
     mainLayout->addStretch( 1 );
-    load();
 }
 
 KIOPreferences::~KIOPreferences()
