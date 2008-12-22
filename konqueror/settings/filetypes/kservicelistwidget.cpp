@@ -154,11 +154,6 @@ void KServiceListWidget::setMimeTypeData( MimeTypeData * mimeTypeData )
   servUpButton->setEnabled(false);
   servDownButton->setEnabled(false);
 
-  if ( servRemoveButton )
-    servRemoveButton->setEnabled(false);
-  if ( servEditButton )
-    servEditButton->setEnabled(false);
-
   servicesLB->clear();
   servicesLB->setEnabled(false);
 
@@ -181,6 +176,11 @@ void KServiceListWidget::setMimeTypeData( MimeTypeData * mimeTypeData )
             servicesLB->setEnabled(true);
         }
     }
+
+    if (servRemoveButton)
+        servRemoveButton->setEnabled(servicesLB->currentRow() > -1);
+    if (servEditButton)
+        servEditButton->setEnabled(servicesLB->currentRow() > -1);
 }
 
 void KServiceListWidget::promoteService()
@@ -259,21 +259,26 @@ void KServiceListWidget::addService()
            return;
   }
 
-  // if None is the only item, then there currently is no default
-  if (servicesLB->count() >= 1 && servicesLB->item(0)->text() == i18n("None")) {
-      delete servicesLB->takeItem(0);
+  // Did the list simply show "None"?
+  const bool hadDummyEntry = ( m_kind == SERVICELIST_APPLICATIONS )
+                               ? m_mimeTypeData->appServices().isEmpty()
+                               : m_mimeTypeData->embedServices().isEmpty();
+
+  if (hadDummyEntry) {
+      delete servicesLB->takeItem(0); // Remove the "None" item.
       servicesLB->setEnabled(true);
-  }
-  else
-  {
+  } else {
       // check if it is a duplicate entry
-      for (int index = 0; index < servicesLB->count(); index++)
+      for (int index = 0; index < servicesLB->count(); index++) {
         if (static_cast<KServiceListItem*>( servicesLB->item(index) )->desktopPath
-            == service->entryPath())
+            == service->entryPath()) {
+          // ##### shouldn't we make the existing entry the default one?
           return;
+        }
+      }
   }
 
-  servicesLB->insertItem( 0 , new KServiceListItem(service, m_kind) );
+  servicesLB->insertItem(0, new KServiceListItem(service, m_kind));
   servicesLB->setCurrentItem(0);
 
   updatePreferredServices();
@@ -368,11 +373,8 @@ void KServiceListWidget::removeService()
     }
   }
 
-  if ( servRemoveButton && servicesLB->currentRow() == -1 )
-    servRemoveButton->setEnabled(false);
-
-  if ( servEditButton && servicesLB->currentRow() == -1 )
-    servEditButton->setEnabled(false);
+    // Update buttons and service list again (e.g. to re-add "None")
+    setMimeTypeData(m_mimeTypeData);
 }
 
 void KServiceListWidget::updatePreferredServices()
