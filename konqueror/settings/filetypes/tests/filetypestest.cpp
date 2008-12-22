@@ -184,6 +184,8 @@ private Q_SLOTS:
         QVERIFY(!data.isDirty());
         // Check what's in ksycoca
         checkMimeTypeServices(mimeTypeName, appServices);
+        // Check what's in mimeapps.list
+        checkAddedAssociationsContains(mimeTypeName, fakeApplication);
 
         // Now test removing (in the same test, since it's inter-dependent)
         QVERIFY(appServices.removeAll(fakeApplication) > 0);
@@ -285,6 +287,17 @@ private Q_SLOTS:
     }
 
 private: // helper methods
+
+    void checkAddedAssociationsContains(const QString& mimeTypeName, const QString& application)
+    {
+        const KConfig config(m_localApps + "mimeapps.list", KConfig::NoGlobals);
+        const KConfigGroup group(&config, "Added Associations");
+        const QStringList addedEntries = group.readXdgListEntry(mimeTypeName);
+        if (!addedEntries.contains(application)) {
+            kWarning() << addedEntries << "does not contain" << application;
+            QVERIFY(addedEntries.contains(application));
+        }
+    }
 
     void checkRemovedAssociationsContains(const QString& mimeTypeName, const QString& application)
     {
