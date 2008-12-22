@@ -40,7 +40,6 @@ BookmarksConfigModule::BookmarksConfigModule(QWidget *parent, const QVariantList
                   :KCModule(KioConfigFactory::componentData(), parent)
 {
   ui.setupUi(this);
-  load();
 }
 
 BookmarksConfigModule::~BookmarksConfigModule()

@@ -72,7 +72,6 @@ KProxyDialog::KProxyDialog(QWidget *parent, const QVariantList &args)
   connect( mUi.pbEnvSetup, SIGNAL( clicked() ), SLOT( setupEnvProxy() ) );
   connect( mUi.pbManSetup, SIGNAL( clicked() ), SLOT( setupManProxy() ) );
   
-  load();
 }
 
 KProxyDialog::~KProxyDialog()
