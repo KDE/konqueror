@@ -91,8 +91,6 @@ SMBRoOptions::SMBRoOptions(QWidget *parent, const QVariantList &, const KCompone
 
    layout->setRowStretch(4, 1);
 
-   // finaly read the options
-   load();
 }
 
 SMBRoOptions::~SMBRoOptions()

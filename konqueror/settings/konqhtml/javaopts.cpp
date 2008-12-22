@@ -183,8 +183,6 @@ KJavaOptions::KJavaOptions( KSharedConfig::Ptr config, const QString &group,
                                            "leave the Shutdown Applet Server checkbox unchecked.");
     serverTimeoutSB->setWhatsThis(shutdown);
     enableShutdownCB->setWhatsThis(shutdown);
-    // Finally do the loading
-    load();
 }
 
 void KJavaOptions::load()
