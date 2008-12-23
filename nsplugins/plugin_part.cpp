@@ -295,7 +295,7 @@ bool PluginPart::closeUrl()
 void PluginPart::reloadPage()
 {
     kDebug(1432) << "PluginPart::reloadPage()";
-    _extension->browserInterface()->callMethod("goHistory(int)", 0);
+    _extension->browserInterface()->callMethod("goHistory", 0);
 }
 
 void PluginPart::postURL(const QString& url, const QString& target, const QByteArray& data, const QString& mime)
