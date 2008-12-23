@@ -762,6 +762,7 @@ void KonqView::updateHistoryEntry( bool saveLocationBarURL )
   if ( !current )
     return;
 
+  current->reload = false; // We have a state for it now.
   if ( browserExtension() )
   {
     current->buffer = QByteArray(); // Start with empty buffer.
@@ -1393,6 +1394,7 @@ void HistoryEntry::loadItem( const KConfigGroup& config, const QString &prefix, 
         doPost = config.readEntry( QString::fromLatin1( "DoPost" ).prepend( prefix ), false );
         pageReferrer = config.readEntry( QString::fromLatin1( "PageReferrer" ).prepend( prefix ), "" );
         pageSecurity = (KonqMainWindow::PageSecurity)config.readEntry( QString::fromLatin1( "PageSecurity" ).prepend( prefix ), 0 );
+        reload = false;
     }
 }
 
