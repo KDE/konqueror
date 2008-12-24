@@ -403,7 +403,7 @@ void scanDirectory( const QString &dir, QStringList &mimeInfoList,
               kDebug(1433) << " - type=" << *type;
               name = name.replace( ':', "%3A" );
 
-              QString entry = name + ':' + *type;
+              QString entry = name + ':' + (*type).trimmed();
               if ( !mimeInfoList.contains( entry ) ) {
                   if (!actuallyUsing) {
                       // note the plugin name
