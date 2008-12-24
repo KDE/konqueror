@@ -3977,6 +3977,8 @@ void KonqMainWindow::slotMoveTabLeft()
     m_pViewManager->moveTabForward();
   else
     m_pViewManager->moveTabBackward();
+
+  updateViewActions();
 }
 
 void KonqMainWindow::slotMoveTabRight()
@@ -3985,6 +3987,8 @@ void KonqMainWindow::slotMoveTabRight()
     m_pViewManager->moveTabBackward();
   else
     m_pViewManager->moveTabForward();
+
+  updateViewActions();
 }
 
 void KonqMainWindow::updateHistoryActions()
