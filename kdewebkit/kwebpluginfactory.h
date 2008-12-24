@@ -35,6 +35,7 @@ class KDE_EXPORT KWebPluginFactory : public QWebPluginFactory
     Q_OBJECT
 public:
     KWebPluginFactory(QObject *parent);
+    KWebPluginFactory(QWebPluginFactory *delegate, QObject *parent);
     ~KWebPluginFactory();
     virtual QObject *create(const QString &mimeType,
                             const QUrl &url,

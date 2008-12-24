@@ -25,6 +25,7 @@
 #include "kwebpage.h"
 
 #include <QWebPluginFactory>
+#include <QWebView>
 #include <QStringList>
 
 #include <KParts/ReadOnlyPart>
@@ -36,13 +37,20 @@
 class KWebPluginFactory::KWebPluginFactoryPrivate
 {
 public:
-    KWebPluginFactoryPrivate() {}
+    KWebPluginFactoryPrivate(QWebPluginFactory *del) : delegate(del) {}
     QList<KWebPluginFactory::Plugin> plugins;
+    QWebPluginFactory *delegate;
 };
 
-KWebPluginFactory::KWebPluginFactory(QObject* parent)
+KWebPluginFactory::KWebPluginFactory(QObject *parent)
   : QWebPluginFactory(parent)
-    , d(new KWebPluginFactory::KWebPluginFactoryPrivate())
+    , d(new KWebPluginFactory::KWebPluginFactoryPrivate(0))
+{
+}
+
+KWebPluginFactory::KWebPluginFactory(QWebPluginFactory *delegate, QObject *parent)
+  : QWebPluginFactory(parent)
+    , d(new KWebPluginFactory::KWebPluginFactoryPrivate(delegate))
 {
 }
 
@@ -53,6 +61,10 @@ KWebPluginFactory::~KWebPluginFactory()
 
 QObject* KWebPluginFactory::create(const QString& mimeType, const QUrl& url, const QStringList& argumentNames, const QStringList& argumentValues) const
 {
+    if (d->delegate) {
+        QObject* q = d->delegate->create(mimeType, url, argumentNames, argumentValues);
+        if (q) return q;
+    }
     QVariantList arguments;
     int i = 0;
     Q_FOREACH(const QString &key, argumentNames) {
@@ -82,7 +94,14 @@ QObject* KWebPluginFactory::create(const QString& mimeType, const QUrl& url, con
         kDebug()<< part->arguments().metaData();
         part->openUrl(url);
     }
-    kDebug() << "Asked for plugin, got" << part;
+    kDebug() << "Asked for" << mimeType << "plugin, got" << part;
+    if (!part) {
+        kDebug() << "No plugins found for" << mimeType;
+        kDebug() << "Trying a QWebView (known work-around for QtWebKit's built-in flash support).";
+        QWebView* webView = new QWebView;
+        webView->load(url);
+        return webView;
+    }
     return part->widget();
 }
 
@@ -90,6 +109,7 @@ QList<KWebPluginFactory::Plugin> KWebPluginFactory::plugins() const
 {
     if (!d->plugins.isEmpty()) return d->plugins;
     QList<Plugin> plugins;
+    if (d->delegate) plugins = d->delegate->plugins();
     KService::List services = KServiceTypeTrader::self()->query("KParts/ReadOnlyPart");
     kDebug() << "Asked for list of plugins. Got:";
     for (int i = 0; i < services.size(); i++) {

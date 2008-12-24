@@ -74,7 +74,7 @@ KWebPage::KWebPage(QObject *parent)
     : QWebPage(parent), d(new KWebPage::KWebPagePrivate())
 {
     setNetworkAccessManager(new NetworkAccessManager(this));
-    setPluginFactory(new KWebPluginFactory(this));
+    setPluginFactory(new KWebPluginFactory(pluginFactory(), this));
     
     action(Back)->setIcon(KIcon("go-previous"));
     action(Back)->setShortcut(KStandardShortcut::back().primary());
