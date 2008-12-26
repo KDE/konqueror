@@ -55,7 +55,7 @@ int main(int argc, char **argv)
 
     if (!KUniqueApplication::start()) {
         kDebug() << "kdepasswd is already running";
-        return 0;
+        return 2;
     }
 
     KUniqueApplication app;
@@ -72,7 +72,7 @@ int main(int argc, char **argv)
     if ( !user.isEmpty() && user!=KUser().loginName() && !bRoot)
     {
         KMessageBox::sorry(0, i18n("You need to be root to change the password of other users."));
-        return 0;
+        return 1;
     }
 
     QByteArray oldpass;
@@ -80,13 +80,15 @@ int main(int argc, char **argv)
     {
         int result = KDEpasswd1Dialog::getPassword(oldpass);
         if (result != KDEpasswd1Dialog::Accepted)
-            return 0;
+            return 1;
     }
 
     KDEpasswd2Dialog *dlg = new KDEpasswd2Dialog(oldpass, user.toLocal8Bit());
 
 
     dlg->exec();
+    if (dlg->result() == KDEpasswd2Dialog::Rejected)
+        return 1;
 
     return 0;
 }
