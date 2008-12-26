@@ -37,7 +37,6 @@
 #include <kbuildsycocaprogressdialog.h>
 #include <kcursor.h>
 #include <kdebug.h>
-#include <kdesktopfile.h>
 #include <klineedit.h>
 #include <klocale.h>
 #include <kpushbutton.h>
