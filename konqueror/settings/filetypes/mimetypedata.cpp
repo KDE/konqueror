@@ -26,7 +26,6 @@
 #include <ksharedconfig.h>
 #include <kconfiggroup.h>
 #include <kmimetypetrader.h>
-#include <kdesktopfile.h>
 
 MimeTypeData::MimeTypeData(const QString& major)
     : m_askSave(AskSaveDefault),
