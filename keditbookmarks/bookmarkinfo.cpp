@@ -79,11 +79,18 @@ void BookmarkInfoWidget::showBookmark(const KBookmark &bk) {
         m_title_le->setText(bk.fullText());
 
     m_url_le->setReadOnly(bk.isGroup() || bk.isSeparator());
-    QString urlText = bk.isGroup() ? QString() : bk.url().pathOrUrl();
-    if (m_url_le->text() != urlText) {
-        const int cursorPosition = m_url_le->cursorPosition(); 
-        m_url_le->setText(urlText);
-        m_url_le->setCursorPosition(cursorPosition); 
+    if (bk.isGroup()) {
+         m_url_le->setText(QString());
+    }
+    else {
+        // Update the text if and only if the text represents a different URL to that
+        // of the current bookmark - the old method, "m_url_le->text() != bk.url().pathOrUrl()",
+        // created difficulties due to the ambiguity of converting URLs to text. (#172647)
+        if (KUrl(m_url_le->text()) != bk.url()) {
+            const int cursorPosition = m_url_le->cursorPosition(); 
+            m_url_le->setText(bk.url().pathOrUrl());
+            m_url_le->setCursorPosition(cursorPosition);
+        }
     }
 
     m_comment_le->setReadOnly((bk.isSeparator()|| !bk.hasParent()) ? true : false );
