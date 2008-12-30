@@ -5,7 +5,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>487</width>
+    <width>622</width>
     <height>473</height>
    </rect>
   </property>
@@ -18,169 +18,177 @@ A proxy server is an intermediate machine that sits between your computer and th
 If you are uncertain whether or not you need to use a proxy server to connect to the Internet, consult your Internet service provider's setup guide or your system administrator.
 &lt;/qt></string>
   </property>
-  <layout class="QVBoxLayout" >
-   <property name="margin" >
-    <number>0</number>
-   </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2" >
    <item>
-    <layout class="QVBoxLayout" >
-     <item>
-      <widget class="QRadioButton" name="rbNoProxy" >
-       <property name="whatsThis" >
-        <string>Connect to the Internet directly.</string>
-       </property>
-       <property name="text" >
-        <string>Connect to the &amp;Internet directly</string>
-       </property>
-       <property name="checked" >
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QRadioButton" name="rbAutoDiscover" >
-       <property name="enabled" >
-        <bool>true</bool>
-       </property>
-       <property name="whatsThis" >
-        <string>&lt;qt>
+    <widget class="QGroupBox" name="gbMain" >
+     <property name="title" >
+      <string/>
+     </property>
+     <property name="flat" >
+      <bool>true</bool>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout" >
+      <property name="margin" >
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QRadioButton" name="rbNoProxy" >
+        <property name="whatsThis" >
+         <string>Connect to the Internet directly.</string>
+        </property>
+        <property name="text" >
+         <string>Connect to the &amp;Internet directly</string>
+        </property>
+        <property name="checked" >
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="rbAutoDiscover" >
+        <property name="enabled" >
+         <bool>true</bool>
+        </property>
+        <property name="whatsThis" >
+         <string>&lt;qt>
 Automatically detect and configure the proxy settings.&lt;p>
 Automatic detection is performed using the &lt;b>Web Proxy Auto-Discovery Protocol (WPAD)&lt;/b>.&lt;p>
 &lt;b>NOTE:&lt;/b> This option might not work properly or not work at all in some UNIX/Linux distributions. If you encounter a problem when using this option, please check the FAQ section at http://konqueror.kde.org.
 &lt;/qt></string>
-       </property>
-       <property name="text" >
-        <string>A&amp;utomatically detect proxy configuration</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" >
-       <property name="spacing" >
-        <number>6</number>
-       </property>
-       <property name="margin" >
-        <number>0</number>
-       </property>
-       <item>
-        <widget class="QRadioButton" name="rbAutoScript" >
-         <property name="enabled" >
-          <bool>true</bool>
-         </property>
-         <property name="whatsThis" >
-          <string>Use the specified proxy script URL to configure the proxy settings.</string>
-         </property>
-         <property name="text" >
-          <string>U&amp;se proxy configuration URL:</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="KUrlRequester" name="location" >
-         <property name="enabled" >
-          <bool>false</bool>
-         </property>
-         <property name="sizePolicy" >
-          <sizepolicy vsizetype="Preferred" hsizetype="Expanding" >
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="whatsThis" >
-          <string>Enter the address for the proxy configuration script.</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" >
-       <property name="spacing" >
-        <number>6</number>
-       </property>
-       <property name="margin" >
-        <number>0</number>
-       </property>
-       <item>
-        <widget class="QRadioButton" name="rbEnvVar" >
-         <property name="enabled" >
-          <bool>true</bool>
-         </property>
-         <property name="sizePolicy" >
-          <sizepolicy vsizetype="Fixed" hsizetype="MinimumExpanding" >
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="whatsThis" >
-          <string>&lt;qt>
+        </property>
+        <property name="text" >
+         <string>A&amp;utomatically detect proxy configuration</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" >
+        <property name="spacing" >
+         <number>6</number>
+        </property>
+        <property name="margin" >
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QRadioButton" name="rbAutoScript" >
+          <property name="enabled" >
+           <bool>true</bool>
+          </property>
+          <property name="whatsThis" >
+           <string>Use the specified proxy script URL to configure the proxy settings.</string>
+          </property>
+          <property name="text" >
+           <string>U&amp;se proxy configuration URL:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="KUrlRequester" name="location" >
+          <property name="enabled" >
+           <bool>false</bool>
+          </property>
+          <property name="sizePolicy" >
+           <sizepolicy vsizetype="Preferred" hsizetype="Expanding" >
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="whatsThis" >
+           <string>Enter the address for the proxy configuration script.</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" >
+        <property name="spacing" >
+         <number>6</number>
+        </property>
+        <property name="margin" >
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QRadioButton" name="rbEnvVar" >
+          <property name="enabled" >
+           <bool>true</bool>
+          </property>
+          <property name="sizePolicy" >
+           <sizepolicy vsizetype="Fixed" hsizetype="MinimumExpanding" >
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="whatsThis" >
+           <string>&lt;qt>
 Use environment variables to configure the proxy settings.&lt;p>
 Environment variables such as &lt;b>HTTP_PROXY&lt;/b> and &lt;b>NO_PROXY&lt;/b> are usually used in multi-user UNIX installations, where both graphical and non-graphical applications need to share the same proxy configuration information.
 &lt;/qt></string>
-         </property>
-         <property name="text" >
-          <string>Use preset proxy environment &amp;variables</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pbEnvSetup" >
-         <property name="enabled" >
-          <bool>true</bool>
-         </property>
-         <property name="whatsThis" >
-          <string>Show the proxy environment variable configuration dialog.</string>
-         </property>
-         <property name="text" >
-          <string>Setup...</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" >
-       <property name="spacing" >
-        <number>6</number>
-       </property>
-       <property name="margin" >
-        <number>0</number>
-       </property>
-       <item>
-        <widget class="QRadioButton" name="rbManual" >
-         <property name="enabled" >
-          <bool>true</bool>
-         </property>
-         <property name="sizePolicy" >
-          <sizepolicy vsizetype="Fixed" hsizetype="MinimumExpanding" >
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="whatsThis" >
-          <string>Manually enter proxy server configuration information.</string>
-         </property>
-         <property name="text" >
-          <string>&amp;Manually specify the proxy settings</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pbManSetup" >
-         <property name="enabled" >
-          <bool>true</bool>
-         </property>
-         <property name="whatsThis" >
-          <string>Show the manual proxy configuration dialog.</string>
-         </property>
-         <property name="text" >
-          <string>Setup...</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
+          </property>
+          <property name="text" >
+           <string>Use preset proxy environment &amp;variables</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pbEnvSetup" >
+          <property name="enabled" >
+           <bool>true</bool>
+          </property>
+          <property name="whatsThis" >
+           <string>Show the proxy environment variable configuration dialog.</string>
+          </property>
+          <property name="text" >
+           <string>Setup...</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" >
+        <property name="spacing" >
+         <number>6</number>
+        </property>
+        <property name="margin" >
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QRadioButton" name="rbManual" >
+          <property name="enabled" >
+           <bool>true</bool>
+          </property>
+          <property name="sizePolicy" >
+           <sizepolicy vsizetype="Fixed" hsizetype="MinimumExpanding" >
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="whatsThis" >
+           <string>Manually enter proxy server configuration information.</string>
+          </property>
+          <property name="text" >
+           <string>&amp;Manually specify the proxy settings</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pbManSetup" >
+          <property name="enabled" >
+           <bool>true</bool>
+          </property>
+          <property name="whatsThis" >
+           <string>Show the manual proxy configuration dialog.</string>
+          </property>
+          <property name="text" >
+           <string>Setup...</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
    </item>
    <item>
     <widget class="QGroupBox" name="gbAuth" >
