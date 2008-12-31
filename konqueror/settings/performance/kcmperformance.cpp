@@ -27,7 +27,7 @@
 // KDE
 #include <klocale.h>
 #include <kdialog.h>
-
+#include <KDebug>
 // Local
 #include "konqueror.h"
 #include "system.h"
@@ -92,7 +92,6 @@ KonquerorConfig::KonquerorConfig( QWidget* parent_P, const QVariantList & )
     widget = new Konqueror( this );
     connect( widget, SIGNAL( changed()), SLOT( changed()));
     topLayout->addWidget( widget );
-    load();
     }
 
 void KonquerorConfig::load()
