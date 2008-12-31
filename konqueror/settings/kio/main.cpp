@@ -107,7 +107,6 @@ LanBrowser::LanBrowser(QWidget *parent, const QVariantList &)
    }
 
    setButtons(Apply|Help);
-   load();
 }
 
 void LanBrowser::load()
