@@ -206,7 +206,7 @@ QString KonqMisc::konqFilteredURL( QWidget* parent, const QString& _url, const Q
         return data.uri().url();
     }
   }
-  else if ( _url != "about:blank" && _url != "about:plugins" ) {
+  else if (_url != "about:blank" && _url != "about:plugins" && !_url.startsWith("about:konqueror")) {
     return "about:";
   }
   return _url;  // return the original url if it cannot be filtered.
