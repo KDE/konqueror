@@ -243,7 +243,7 @@ QString KonqAboutPageSingleton::specs()
 	  .arg( i18n("Popup"))
 	  .arg( i18n("(Short-) Automatic"))
 	  .arg( "<img width='16' height='16' src=\"%1\">" ).arg( continue_icon_path )
-	  .arg( i18nc("Link that points to the first page of the Konqueror 'about page', Starting Points contains links to Home, Network Folders, Trash, etc.", "<a href=\"%1\">Return to Starting Points</a>", QString("launch.html")) )
+	  .arg( i18nc("Link that points to the first page of the Konqueror 'about page', Starting Points contains links to Home, Network Folders, Trash, etc.", "<a href=\"%1\">Return to Starting Points</a>", QString("about:konqueror")) )
 
           ;
 
@@ -378,6 +378,12 @@ bool KonqAboutPage::openUrl(const KUrl &u)
     emit started(0);
     if (u.url() == "about:plugins")
         serve(s_staticData->plugins(), "plugins");
+    else if (u.url() == "about:konqueror/intro")
+        serve(s_staticData->intro(), "konqueror/intro");
+    else if (u.url() == "about:konqueror/specs")
+        serve(s_staticData->specs(), "konqueror/specs");
+    else if (u.url() == "about:konqueror/tips")
+        serve(s_staticData->tips(), "konqueror/tips");
     else
         serve(s_staticData->launch(), "konqueror");
     emit completed();
@@ -425,28 +431,28 @@ bool KonqAboutPage::urlSelected( const QString &url, int button, int state, cons
         return true;
     }
 
-    if ( url == QLatin1String("launch.html") )
+    if ( url == QLatin1String("about:konqueror") )
     {
         emit browserExtension()->openUrlNotify();
 	serve(s_staticData->launch(), "konqueror");
         return true;
     }
-    else if ( url == QLatin1String("intro.html") )
+    else if ( url == QLatin1String("about:konqueror/intro") )
     {
         emit browserExtension()->openUrlNotify();
-        serve(s_staticData->intro(), "konqueror");
+        serve(s_staticData->intro(), "konqueror/intro");
         return true;
     }
-    else if ( url == QLatin1String("specs.html") )
+    else if ( url == QLatin1String("about:konqueror/specs") )
     {
         emit browserExtension()->openUrlNotify();
-	serve(s_staticData->specs(), "konqueror");
+	serve(s_staticData->specs(), "konqueror/specs");
         return true;
     }
-    else if ( url == QLatin1String("tips.html") )
+    else if ( url == QLatin1String("about:konqueror/tips") )
     {
         emit browserExtension()->openUrlNotify();
-        serve(s_staticData->tips(), "konqueror");
+        serve(s_staticData->tips(), "konqueror/tips");
         return true;
     }
 
