@@ -508,4 +508,23 @@ void ViewMgrTest::testDuplicateWindowWithSidebar()
     delete secondWindow;
 }
 
+void ViewMgrTest::testBrowserArgumentsNewTab()
+{
+    KonqMainWindow mainWindow;
+    mainWindow.openUrl(0, KUrl("data:text/html, <p>Hello World</p>"), "text/html");
+    KParts::OpenUrlArguments urlArgs;
+    KParts::BrowserArguments browserArgs;
+    browserArgs.setNewTab(true);
+    KonqView* view = mainWindow.currentView();
+    KParts::BrowserExtension* ext = view->browserExtension();
+    QVERIFY(ext);
+    emit ext->openUrlRequest(KUrl("data:text/html, <p>Second tab test</p>"), urlArgs, browserArgs);
+    QTest::qWait(5000);
+    QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].")); // mainWindow, tab widget, two tabs
+    QCOMPARE(view->url(), KUrl("data:text/html, <p>Hello World</p>"));
+
+    // compare the url of the new view... how to?
+//    QCOMPARE(view->url(), KUrl("data:text/html, <p>Second tab test</p>"));
+}
+
 #include "konqviewmgrtest.moc"

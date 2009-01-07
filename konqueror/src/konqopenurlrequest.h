@@ -29,12 +29,12 @@
 struct KONQ_TESTS_EXPORT KonqOpenURLRequest {
 
   KonqOpenURLRequest() :
-      followMode(false), newTab(false), newTabInFront(false),
+      followMode(false), newTabInFront(false),
       openAfterCurrentPage(false), forceAutoEmbed(false),
       tempFile(false), userRequestedReload(false) {}
 
   KonqOpenURLRequest( const QString & url ) :
-    typedUrl(url), followMode(false), newTab(false), newTabInFront(false),
+    typedUrl(url), followMode(false), newTabInFront(false),
     openAfterCurrentPage(false), forceAutoEmbed(false),
     tempFile(false), userRequestedReload(false) {}
 
@@ -43,14 +43,14 @@ struct KONQ_TESTS_EXPORT KonqOpenURLRequest {
       QStringList s;
       if ( !browserArgs.frameName.isEmpty() )
           s << "frameName=" + browserArgs.frameName;
+      if ( browserArgs.newTab() )
+          s << "newTab";
       if ( !nameFilter.isEmpty() )
           s << "nameFilter=" + nameFilter;
       if ( !typedUrl.isEmpty() )
           s << "typedUrl=" + typedUrl;
       if ( followMode )
           s << "followMode";
-      if ( newTab )
-          s << "newTab";
       if ( newTabInFront )
           s << "newTabInFront";
       if ( openAfterCurrentPage )
@@ -70,8 +70,7 @@ struct KONQ_TESTS_EXPORT KonqOpenURLRequest {
   QString typedUrl; // empty if URL wasn't typed manually
   QString nameFilter; // like *.cpp, extracted from the URL
   bool followMode; // true if following another view - avoids loops
-  bool newTab; // open url in new tab
-  bool newTabInFront; // new tab in front or back
+  bool newTabInFront; // new tab in front or back (when browserArgs.newTab() == true)
   bool openAfterCurrentPage;
   bool forceAutoEmbed; // if true, override the user's FMSettings for embedding
   bool tempFile; // if true, the url should be deleted after use
