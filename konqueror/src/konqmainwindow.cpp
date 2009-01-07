@@ -1007,7 +1007,7 @@ void KonqMainWindow::slotOpenURLRequest( const KUrl &url, const KParts::OpenUrlA
     }
   }
 
-  KonqView *view = childView( callingPart );
+  KonqView *view = browserArgs.newTab() ? 0 : childView( callingPart );
   openUrlRequestHelper( view, url, args, browserArgs );
 }
 
@@ -1018,6 +1018,7 @@ void KonqMainWindow::openUrlRequestHelper( KonqView *childView, const KUrl &url,
     KonqOpenURLRequest req;
     req.args = args;
     req.browserArgs = browserArgs;
+    req.newTab = browserArgs.newTab();
     openUrl(childView, url, args.mimeType(), req, browserArgs.trustedSource);
 }
 
