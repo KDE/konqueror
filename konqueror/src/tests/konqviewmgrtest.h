@@ -47,6 +47,8 @@ private Q_SLOTS:
     void testDuplicateWindow();
     void testDuplicateWindowWithSidebar();
 
+    void testBrowserArgumentsNewTab();
+
     static void sendAllPendingResizeEvents(QWidget*);
 
 private:

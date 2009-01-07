@@ -493,7 +493,7 @@ void KonqMainWindow::openFilteredUrl(const QString & url, const KonqOpenURLReque
 void KonqMainWindow::openFilteredUrl(const QString & _url, bool inNewTab, bool tempFile)
 {
     KonqOpenURLRequest req( _url );
-    req.newTab = inNewTab;
+    req.browserArgs.setNewTab(inNewTab);
     req.newTabInFront = true;
     req.tempFile = tempFile;
 
@@ -536,16 +536,16 @@ void KonqMainWindow::openUrl(KonqView *_view, const KUrl &_url,
     url.setFileName( QString() );
   }
 
-  KonqView *view = _view;
+    KonqView *view = _view;
 
-  // When clicking a 'follow active' view (e.g. view is the sidebar),
-  // open the URL in the active view
-  if ( view && view->isFollowActive() )
-    view = m_currentView;
+    // When clicking a 'follow active' view (e.g. view is the sidebar),
+    // open the URL in the active view
+    if (view && view->isFollowActive())
+        view = m_currentView;
 
-    if (!view && !req.newTab)
+    if (!view && !req.browserArgs.newTab())
         view = m_currentView; /* Note, this can be 0, e.g. on startup */
-    else if (!view && req.newTab) {
+    else if (!view && req.browserArgs.newTab()) {
         // The URL should be opened in a new tab. Let's create the tab right away,
         // it gives faster user feedback (#163628). For a short while (kde-4.1-beta1)
         // I removed this entire block so that we wouldn't end up with a useless tab when
@@ -566,7 +566,7 @@ void KonqMainWindow::openUrl(KonqView *_view, const KUrl &_url,
 
             updateViewActions(); //A new tab created -- we may need to enable the "remove tab" button (#56318)
         } else {
-            req.newTab = false;
+            req.browserArgs.setNewTab(false);
         }
     }
 
@@ -681,7 +681,7 @@ void KonqMainWindow::openUrl(KonqView *_view, const KUrl &_url,
           earlySetLocationBarURL = true;
       else if (view == m_currentView && view->url().isEmpty()) // opening in current view
           earlySetLocationBarURL = true;
-      if (req.newTab) // it's going into a new tab anyway
+      if (req.browserArgs.newTab()) // it's going into a new tab anyway
           earlySetLocationBarURL = false;
       if (earlySetLocationBarURL) {
           // Show it for now in the location bar, but we'll need to store it in the view
@@ -860,7 +860,7 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
   bool ok = true;
   if ( !childView )
   {
-      if (req.newTab)
+      if (req.browserArgs.newTab())
       {
           KonqFrameTabs* tabContainer = m_pViewManager->tabContainer();
           int index = tabContainer->currentIndex();
@@ -1007,7 +1007,7 @@ void KonqMainWindow::slotOpenURLRequest( const KUrl &url, const KParts::OpenUrlA
     }
   }
 
-  KonqView *view = childView( callingPart );
+  KonqView *view = browserArgs.newTab() ? 0 : childView( callingPart );
   openUrlRequestHelper( view, url, args, browserArgs );
 }
 
@@ -1174,7 +1174,7 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
         // Can we use the standard way (openUrl), or do we need the part pointer immediately?
         if (!part) {
             KonqOpenURLRequest req;
-            req.newTab = true;
+            req.browserArgs.setNewTab(true);
             req.newTabInFront = newtabsinfront;
             req.openAfterCurrentPage = aftercurrentpage;
             openUrl(0, url, args.mimeType(), req);
@@ -1695,7 +1695,7 @@ void KonqMainWindow::slotHome(Qt::MouseButtons buttons, Qt::KeyboardModifiers mo
                             : KonqSettings::homeURL();
 
     KonqOpenURLRequest req;
-    req.newTab = true;
+    req.browserArgs.setNewTab(true);
     req.newTabInFront = KonqSettings::newTabsInFront();
 
     if (modifiers & Qt::ShiftModifier)
@@ -1796,7 +1796,7 @@ void KonqMainWindow::slotConfigure()
         {
             KPageWidgetItem * webGroup = m_configureDialog->addModule("khtml_behavior");
             webGroup->setName(i18n("Web Browsing"));
-                                
+
             const char* webModules[]={
                 "khtml_appearance",
                 "khtml_filter",
@@ -2435,7 +2435,7 @@ void KonqMainWindow::slotPopupNewTab()
 void KonqMainWindow::popupNewTab(bool infront, bool openAfterCurrentPage)
 {
   KonqOpenURLRequest req;
-  req.newTab = true;
+  req.browserArgs.setNewTab(true);
   req.newTabInFront = false;
   req.forceAutoEmbed = true;
   req.openAfterCurrentPage = openAfterCurrentPage;
@@ -2754,7 +2754,7 @@ void KonqMainWindow::slotUp()
 void KonqMainWindow::slotUpDelayed()
 {
     KonqOpenURLRequest req;
-    req.newTab = true;
+    req.browserArgs.setNewTab(true);
     req.forceAutoEmbed = true;
 
     req.openAfterCurrentPage = KonqSettings::openAfterCurrentPage();
@@ -3948,7 +3948,7 @@ void KonqExtendedBookmarkOwner::openBookmark(const KBookmark & bm, Qt::MouseButt
     const QString url = bm.url().url();
 
     KonqOpenURLRequest req;
-    req.newTab = true;
+    req.browserArgs.setNewTab(true);
     req.newTabInFront = KonqSettings::newTabsInFront();
     req.forceAutoEmbed = true;
 
@@ -4452,7 +4452,7 @@ void KonqExtendedBookmarkOwner::openInNewTab(const KBookmark &bm)
     newTabsInFront = !newTabsInFront;
 
   KonqOpenURLRequest req;
-  req.newTab = true;
+  req.browserArgs.setNewTab(true);
   req.newTabInFront = newTabsInFront;
   req.openAfterCurrentPage = false;
   req.forceAutoEmbed = true;
@@ -4466,7 +4466,7 @@ void KonqExtendedBookmarkOwner::openFolderinTabs(const KBookmarkGroup &grp)
   if (QApplication::keyboardModifiers() & Qt::ShiftModifier)
     newTabsInFront = !newTabsInFront;
   KonqOpenURLRequest req;
-  req.newTab = true;
+  req.browserArgs.setNewTab(true);
   req.newTabInFront = false;
   req.openAfterCurrentPage = false;
   req.forceAutoEmbed = true;
