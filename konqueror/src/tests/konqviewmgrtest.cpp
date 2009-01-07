@@ -113,6 +113,7 @@ void ViewMgrTest::initTestCase()
 {
     QCOMPARE(KGlobal::mainComponent().componentName(), QString("konqueror"));
     QCOMPARE(KonqSettings::mmbOpensTab(), true);
+    QCOMPARE(KonqSettings::popupsWithinTabs(), false);
 }
 
 void ViewMgrTest::testCreateFirstView()
