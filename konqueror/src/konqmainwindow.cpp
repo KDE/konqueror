@@ -2435,12 +2435,12 @@ void KonqMainWindow::slotPopupNewTab()
 void KonqMainWindow::popupNewTab(bool infront, bool openAfterCurrentPage)
 {
   KonqOpenURLRequest req;
-  req.browserArgs.setNewTab(true);
   req.newTabInFront = false;
   req.forceAutoEmbed = true;
   req.openAfterCurrentPage = openAfterCurrentPage;
   req.args = m_popupUrlArgs;
   req.browserArgs = m_popupUrlBrowserArgs;
+  req.browserArgs.setNewTab(true);
 
   for ( int i = 0; i < m_popupItems.count(); ++i )
   {
