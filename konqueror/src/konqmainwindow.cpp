@@ -1201,6 +1201,7 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
     KonqOpenURLRequest req;
     req.args = args;
     req.browserArgs = browserArgs;
+    req.browserArgs.setNewTab(false); // we got a new window, no need for a new tab in that window
     req.forceAutoEmbed = true;
 
     // Do we know the mimetype? If not, go to generic openUrl which will use a KonqRun.
