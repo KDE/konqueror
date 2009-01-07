@@ -182,7 +182,7 @@ void KonqOperations::_del( Operation method, const KUrl::List & _selectedUrls, C
         if (KProtocolManager::supportsDeleting(*it))
             selectedUrls.append(*it);
     if (selectedUrls.isEmpty()) {
-        delete this;
+        delete this; // this one is ok, _del is always called directly
         return;
     }
 
@@ -214,14 +214,15 @@ void KonqOperations::_del( Operation method, const KUrl::List & _selectedUrls, C
             break;
         default:
             kWarning() << "Unknown operation: " << method ;
-            delete this;
+            delete this; // this one is ok, _del is always called directly
             return;
         }
         job->ui()->setWindow(parentWidget());
         connect( job, SIGNAL( result( KJob * ) ),
                  SLOT( slotResult( KJob * ) ) );
-    } else
-        delete this;
+    } else {
+        delete this; // this one is ok, _del is always called directly
+    }
 }
 
 void KonqOperations::_restoreTrashedItems( const KUrl::List& urls )
@@ -333,7 +334,7 @@ void KonqOperations::asyncDrop( const KFileItem & destItem )
         // (e.g. an HTTP link in the sidebar).
         // Can't do that, but we can't prevent it before stating the dest....
         kWarning(1203) << "Cannot drop onto " << m_destUrl ;
-        delete this;
+        deleteLater();
         return;
     }
     if ( destItem.isDesktopFile() )
@@ -394,7 +395,7 @@ void KonqOperations::asyncDrop( const KFileItem & destItem )
         kDebug(1203) << "starting " << m_destUrl.path() << " with " << lst.count() << " arguments";
         KProcess::startDetached( m_destUrl.path(), args );
     }
-    delete this;
+    deleteLater();
 }
 
 void KonqOperations::doDropFileCopy()
@@ -430,7 +431,7 @@ void KonqOperations::doDropFileCopy()
     {
         if ( itemIsOnDesktop && !KAuthorized::authorizeKAction("editable_desktop_icons") )
         {
-            delete this;
+            deleteLater();
             return;
         }
 
@@ -439,7 +440,7 @@ void KonqOperations::doDropFileCopy()
             action = Qt::MoveAction;
         else
         {
-            delete this;
+            deleteLater();
             return;
         }
     }
@@ -479,7 +480,7 @@ void KonqOperations::doDropFileCopy()
         bool dWriting = KProtocolManager::supportsWriting( m_destUrl );
         if ( !dWriting )
         {
-            delete this;
+            deleteLater();
             return;
         }
 
@@ -551,7 +552,7 @@ void KonqOperations::doDropFileCopy()
             action = Qt::LinkAction;
         else if(result == popupCancelAction || !result)
         {
-            delete this;
+            deleteLater();
             return;
         }
     }
@@ -581,7 +582,7 @@ void KonqOperations::doDropFileCopy()
         return;
     default : kError(1203) << "Unknown action " << (int)action << endl;
     }
-    delete this;
+    deleteLater();
 }
 
 void KonqOperations::rename( QWidget * parent, const KUrl & oldurl, const KUrl& newurl )
@@ -669,7 +670,7 @@ void KonqOperations::slotStatResult( KJob * job )
     }
     // If we're only here for a stat, we're done. But not if we used _statUrl internally
     if ( m_method == STAT )
-        delete this;
+        deleteLater();
 }
 
 void KonqOperations::slotResult( KJob * job )
