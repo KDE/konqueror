@@ -328,7 +328,10 @@ public:
   QString currentProfile() const;
     void applyWindowSizeFromProfile(const KConfigGroup& profileGroup);
 
-  void updateHistoryActions();
+    void updateHistoryActions();
+
+    // Public for unit tests
+    void prepareForPopupMenu(const KFileItemList &items, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments& browserArgs);
 
 Q_SIGNALS:
   void viewAdded( KonqView *view );
