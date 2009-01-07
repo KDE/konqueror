@@ -17,6 +17,7 @@
 
 #include <qtest_kde.h>
 #include "konqviewmgrtest.h"
+#include "../konqsettingsxt.h"
 #include <QToolBar>
 #include <qtestmouse.h>
 
@@ -110,7 +111,8 @@ private:
 
 void ViewMgrTest::initTestCase()
 {
-    QVERIFY( KGlobal::mainComponent().componentName() == "konqueror" );
+    QCOMPARE(KGlobal::mainComponent().componentName(), QString("konqueror"));
+    QCOMPARE(KonqSettings::mmbOpensTab(), true);
 }
 
 void ViewMgrTest::testCreateFirstView()
@@ -333,6 +335,16 @@ void ViewMgrTest::testPopupNewTab() // RMB, "Open in new tab"
     QMetaObject::invokeMethod(&mainWindow, "slotPopupNewTab");
     QTest::qWait(1000);
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].")); // mainWindow, tab widget, two tabs
+    QCOMPARE(KMainWindow::memberList().count(), 1);
+}
+
+static void checkSecondWindowHasOneTab() // and delete it.
+{
+    QCOMPARE(KMainWindow::memberList().count(), 2);
+    KonqMainWindow* newWindow = qobject_cast<KonqMainWindow*>(KMainWindow::memberList().last());
+    QVERIFY(newWindow);
+    QCOMPARE(DebugFrameVisitor::inspect(newWindow), QString("MT[F].")); // mainWindow, tab widget, one tab
+    delete newWindow;
 }
 
 void ViewMgrTest::testPopupNewWindow() // RMB, "Open new window"
@@ -344,13 +356,8 @@ void ViewMgrTest::testPopupNewWindow() // RMB, "Open new window"
     QMetaObject::invokeMethod(&mainWindow, "slotPopupNewWindow");
     QTest::qWait(100);
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].")); // mainWindow, tab widget, one tab
-    // Did it open a window?
-    QCOMPARE(KMainWindow::memberList().count(), 2);
-    KonqMainWindow* newWindow = qobject_cast<KonqMainWindow*>(KMainWindow::memberList().last());
-    QVERIFY(newWindow);
-    QVERIFY(newWindow != &mainWindow);
-    QCOMPARE(DebugFrameVisitor::inspect(newWindow), QString("MT[F].")); // mainWindow, tab widget, one tab
-    delete newWindow;
+    QVERIFY(KMainWindow::memberList().last() != &mainWindow);
+    checkSecondWindowHasOneTab();
 }
 
 void ViewMgrTest::testCtrlClickOnLink()
@@ -362,7 +369,27 @@ void ViewMgrTest::testCtrlClickOnLink()
     qDebug() << "CLICKING NOW";
     QTest::mouseClick(part->view()->widget(), Qt::LeftButton, Qt::ControlModifier, QPoint(10, 10));
     QTest::qWait(100);
-    QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].")); // mainWindow, tab widget, two tabs
+    // Expected behavior for Ctrl+click:
+    //  new tab, if mmbOpensTab
+    //  new window, if !mmbOpensTab
+    if (KonqSettings::mmbOpensTab()) {
+        QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].")); // mainWindow, tab widget, two tabs
+        QCOMPARE(KMainWindow::memberList().count(), 1);
+    } else {
+        QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].")); // mainWindow, tab widget, one tab
+        checkSecondWindowHasOneTab();
+    }
+}
+
+void ViewMgrTest::sameTestsWithMmbOpenTabsFalse()
+{
+    // Redo testPopupNewTab, testPopupNewWindow and testCtrlClickOnLink,
+    // but as if the user (e.g. Pino) had disabled the setting "Open links in new tabs".
+    KonqSettings::setMmbOpensTab(false);
+    testPopupNewTab();
+    testPopupNewWindow();
+    testCtrlClickOnLink();
+    KonqSettings::setMmbOpensTab(true);
 }
 
 static void openTabWithTitle(KonqMainWindow& mainWindow, const QString& title, KonqView*& view)

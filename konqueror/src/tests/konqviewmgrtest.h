@@ -37,9 +37,11 @@ private Q_SLOTS:
     void testSplitView();
     void testSplitMainContainer();
     void testLinkedViews();
+
     void testPopupNewTab();
     void testPopupNewWindow();
     void testCtrlClickOnLink();
+    void sameTestsWithMmbOpenTabsFalse();
 
     void testAddTabs();
     void testDuplicateTab();
