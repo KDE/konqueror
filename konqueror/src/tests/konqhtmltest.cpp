@@ -93,6 +93,8 @@ private Q_SLOTS:
 
     void windowOpen()
     {
+        // Simple test for window.open in a onmousedown handler.
+
         // We have to use the same protocol for both the orig and dest urls.
         // KAuthorized would forbid a data: URL to redirect to a file: URL for instance.
         KTemporaryFile tempFile;

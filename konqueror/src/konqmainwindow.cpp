@@ -4574,21 +4574,12 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
   actPaste->setEnabled( m_paPaste->isEnabled() );
   popupMenuCollection.addAction( "pasteto", actPaste );
 
+  prepareForPopupMenu(items, args, browserArgs);
+
   bool sReading = false;
-  if ( items.count() > 0 )
-  {
-    m_popupUrl = items.first().url();
-    sReading = KProtocolManager::supportsReading( m_popupUrl );
-    if (sReading)
-      m_popupMimeType = items.first().mimetype();
+  if (!m_popupUrl.isEmpty()) {
+      sReading = KProtocolManager::supportsReading(m_popupUrl);
   }
-  else
-  {
-    m_popupUrl = KUrl();
-    m_popupMimeType.clear();
-  }
-
-
 
   // Don't set the view URL for a toggle view.
   // (This is a bit of a hack for the directory tree....)
@@ -4704,12 +4695,6 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
     if ( openedForViewURL && !viewURL.isLocalFile() )
         pPopupMenu->setURLTitle( currentView->caption() );
 
-    // We will need these if we call the newTab slot
-    m_popupItems = items;
-    m_popupUrlArgs = args;
-    m_popupUrlArgs.setMimeType( QString() ); // Reset so that Open in New Window/Tab does mimetype detection
-    m_popupUrlBrowserArgs = browserArgs;
-
     QPointer<KParts::BrowserExtension> be = ::qobject_cast<KParts::BrowserExtension *>(sender());
 
     if (be) {
@@ -4768,6 +4753,24 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
         m_oldView->part()->widget()->setFocus();
     }
   }
+}
+
+void KonqMainWindow::prepareForPopupMenu(const KFileItemList &items, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments& browserArgs)
+{
+    if (!items.isEmpty()) {
+        m_popupUrl = items.first().url();
+        m_popupMimeType = items.first().mimetype();
+    }
+    else
+    {
+        m_popupUrl = KUrl();
+        m_popupMimeType.clear();
+    }
+    // We will need these if we call the newTab slot
+    m_popupItems = items;
+    m_popupUrlArgs = args;
+    m_popupUrlArgs.setMimeType( QString() ); // Reset so that Open in New Window/Tab does mimetype detection
+    m_popupUrlBrowserArgs = browserArgs;
 }
 
 void KonqMainWindow::slotItemsRemoved(const KFileItemList &items)

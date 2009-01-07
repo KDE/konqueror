@@ -18,6 +18,7 @@
 #include <qtest_kde.h>
 #include "konqviewmgrtest.h"
 #include <QToolBar>
+#include <qtestmouse.h>
 
 #include <konqframe.h>
 #include <konqmainwindow.h>
@@ -281,16 +282,21 @@ void ViewMgrTest::testSplitMainContainer()
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, tab widget, one frame
 }
 
-void ViewMgrTest::testLinkedViews()
+static void openHtmlWithLink(KonqMainWindow& mainWindow)
 {
-    // First part is much like KonqHtmlTest::loadSimpleHtml.
-    KonqMainWindow mainWindow;
-    //KonqViewManager* viewManager = mainWindow.viewManager();
+    // Much like KonqHtmlTest::loadSimpleHtml.
     mainWindow.openUrl(0, KUrl("data:text/html, <a href=\"data:text/html, Link target\">Click me</a>"), "text/html");
     KonqView* view = mainWindow.currentView();
     QVERIFY(view);
     QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 20000));
     QCOMPARE(view->serviceType(), QString("text/html"));
+}
+
+void ViewMgrTest::testLinkedViews()
+{
+    KonqMainWindow mainWindow;
+    openHtmlWithLink(mainWindow);
+    KonqView* view = mainWindow.currentView();
     // Split it
     qDebug() << "SPLITTING";
     mainWindow.slotSplitViewHorizontal();
@@ -316,6 +322,47 @@ void ViewMgrTest::testLinkedViews()
     // Check that the link opened in the 2nd view, not the first one
     QCOMPARE(view->url().url(), origUrl.url());
     QCOMPARE(view2->url().url(), KUrl("data:text/html, Link target").url());
+}
+
+void ViewMgrTest::testPopupNewTab() // RMB, "Open in new tab"
+{
+    KonqMainWindow mainWindow;
+    openHtmlWithLink(mainWindow);
+    KFileItem item(KUrl("data:text/html, hello"), "text/html", S_IFREG);
+    mainWindow.prepareForPopupMenu(KFileItemList() << item, KParts::OpenUrlArguments(), KParts::BrowserArguments());
+    QMetaObject::invokeMethod(&mainWindow, "slotPopupNewTab");
+    QTest::qWait(1000);
+    QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].")); // mainWindow, tab widget, two tabs
+}
+
+void ViewMgrTest::testPopupNewWindow() // RMB, "Open new window"
+{
+    KonqMainWindow mainWindow;
+    openHtmlWithLink(mainWindow);
+    KFileItem item(KUrl("data:text/html, hello"), "text/html", S_IFREG);
+    mainWindow.prepareForPopupMenu(KFileItemList() << item, KParts::OpenUrlArguments(), KParts::BrowserArguments());
+    QMetaObject::invokeMethod(&mainWindow, "slotPopupNewWindow");
+    QTest::qWait(100);
+    QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].")); // mainWindow, tab widget, one tab
+    // Did it open a window?
+    QCOMPARE(KMainWindow::memberList().count(), 2);
+    KonqMainWindow* newWindow = qobject_cast<KonqMainWindow*>(KMainWindow::memberList().last());
+    QVERIFY(newWindow);
+    QVERIFY(newWindow != &mainWindow);
+    QCOMPARE(DebugFrameVisitor::inspect(newWindow), QString("MT[F].")); // mainWindow, tab widget, one tab
+    delete newWindow;
+}
+
+void ViewMgrTest::testCtrlClickOnLink()
+{
+    KonqMainWindow mainWindow;
+    openHtmlWithLink(mainWindow);
+    KonqView* view = mainWindow.currentView();
+    KHTMLPart* part = qobject_cast<KHTMLPart *>(view->part());
+    qDebug() << "CLICKING NOW";
+    QTest::mouseClick(part->view()->widget(), Qt::LeftButton, Qt::ControlModifier, QPoint(10, 10));
+    QTest::qWait(100);
+    QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].")); // mainWindow, tab widget, two tabs
 }
 
 static void openTabWithTitle(KonqMainWindow& mainWindow, const QString& title, KonqView*& view)
