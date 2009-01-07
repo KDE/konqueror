@@ -233,4 +233,3 @@ QString KonqMisc::decodeFilename(QString filename)
     return filename.replace('_', ':');
 }
 
-#include "konqmisc.moc"
