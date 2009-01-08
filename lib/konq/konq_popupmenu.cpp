@@ -44,6 +44,7 @@
 #include <kfileshare.h>
 #include <kauthorized.h>
 #include <kglobal.h>
+#include <kacceleratormanager.h>
 
 #include <QFileInfo>
 
@@ -128,6 +129,8 @@ KonqPopupMenu::KonqPopupMenu(const KFileItemList &items,
     d->m_popupMenuInfo.setItems(items);
     d->m_popupMenuInfo.setParentWidget(parentWidget);
     d->init(kpf, flags);
+
+    KAcceleratorManager::manage(this);
 }
 
 void KonqPopupMenuPrivate::addNamedAction(const QString& name)
