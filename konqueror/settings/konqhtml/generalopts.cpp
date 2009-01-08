@@ -157,7 +157,7 @@ void KKonqGeneralOptions::load()
     KConfigGroup userSettings(m_pConfig, "UserSettings");
     homeURL->setUrl(userSettings.readEntry("HomeURL", DEFAULT_HOMEPAGE));
     const QString startUrl = readStartUrlFromProfile();
-    const StartPage startPage = urlToStartPageEnum(readStartUrlFromProfile());
+    const StartPage startPage = urlToStartPageEnum(startUrl);
     const int startComboIndex = m_startCombo->findData(startPage);
     Q_ASSERT(startComboIndex != -1);
     m_startCombo->setCurrentIndex(startComboIndex);
@@ -259,6 +259,7 @@ static void updateWebbrowsingProfile(const QString& homeUrl, StartPage startPage
     profileGroup.writeEntry(prefix + "URL", url);
     profileGroup.writeEntry(prefix + "ServiceType", serviceType);
     profileGroup.writeEntry(prefix + "ServiceName", serviceName);
+    profileGroup.sync();
 }
 
 void KKonqGeneralOptions::save()
@@ -287,16 +288,13 @@ void KKonqGeneralOptions::save()
     cg.writeEntry( "PopupsWithinTabs", tabOptions->m_pPopupsWithinTabs->isChecked() );
     cg.writeEntry( "TabCloseActivatePrevious", tabOptions->m_pTabCloseActivatePrevious->isChecked() );
     cg.writeEntry( "MouseMiddleClickClosesTab", tabOptions->m_pMiddleClickClose->isChecked() );
-
     cg.sync();
-
     // It only matters whether the key is present, its value has no meaning
     cg = KConfigGroup(m_pConfig,"Notification Messages");
     if ( tabOptions->m_pTabConfirm->isChecked() )
         cg.deleteEntry( "MultipleTabConfirm" );
     else
         cg.writeEntry( "MultipleTabConfirm", true );
-
     // Send signal to all konqueror instances
     QDBusMessage message =
         QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "reparseConfiguration");
