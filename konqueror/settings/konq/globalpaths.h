@@ -35,6 +35,7 @@
 #include <kio/udsentry.h>
 #include <kurl.h>
 
+class QGridLayout;
 class KJob;
 class KUrlRequester;
 class QStringList;
@@ -58,10 +59,17 @@ private Q_SLOTS:
     void slotEntries( KIO::Job * job, const KIO::UDSEntryList& list);
 
 private:
+    KUrlRequester* addRow(int row, QGridLayout *lay, const QString& label, const QString& whatsThis);
+    bool xdgSavePath(KUrlRequester* ur, const KUrl& currentUrl, const char* xdgKey, const QString& type);
+
     // Desktop Paths
     KUrlRequester *urDesktop;
     KUrlRequester *urAutostart;
     KUrlRequester *urDocument;
+    KUrlRequester *urDownload;
+    KUrlRequester *urMovie;
+    KUrlRequester *urPicture;
+    KUrlRequester *urMusic;
 
     bool moveDir( const KUrl & src, const KUrl & dest, const QString & type );
     bool m_ok;
