@@ -16,6 +16,7 @@ install(FILES
     op403onwinnt4.desktop
     op85oncurrent.desktop
     op90oncurrent.desktop
+    op962oncurrent.desktop
     lynxoncurrent.desktop
     w3moncurrent.desktop
     wgetoncurrent.desktop
