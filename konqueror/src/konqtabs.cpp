@@ -172,9 +172,13 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
            m_pViewManager->mainWindow(), SLOT( slotRemoveTabPopup() ) );
 
   if ( KonqSettings::addTabButton() ) {
-    m_leftWidget = new QToolButton( this );
+    m_leftWidget = new NewTabToolButton( this );
     connect( m_leftWidget, SIGNAL( clicked() ),
              m_pViewManager->mainWindow(), SLOT( slotAddTab() ) );
+    connect( m_leftWidget, SIGNAL( testCanDecode(const QDragMoveEvent *, bool & )),
+             SLOT( slotTestCanDecode(const QDragMoveEvent *, bool & ) ) );
+    connect( m_leftWidget, SIGNAL( receivedDropEvent( QDropEvent * )),
+             SLOT( slotReceivedDropEvent( QDropEvent * ) ) );
     m_leftWidget->setIcon( KIcon( "tab-new" ) );
     m_leftWidget->adjustSize();
     m_leftWidget->setToolTip( i18n("Open a new tab"));

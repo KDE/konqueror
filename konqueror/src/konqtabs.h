@@ -39,6 +39,8 @@ class KonqFrameContainer;
 class KonqTabsStyle;
 class KConfig;
 
+class NewTabToolButton;
+
 class KonqFrameTabs : public KTabWidget, public KonqFrameContainerBase
 {
   Q_OBJECT
@@ -129,7 +131,7 @@ private:
   QMenu* m_pPopupMenu;
   QMenu* m_pSubPopupMenuTab;
   QToolButton* m_rightWidget;
-  QToolButton* m_leftWidget;
+  NewTabToolButton* m_leftWidget;
   bool m_permanentCloseButtons;
   bool m_alwaysTabBar;
   bool m_MouseMiddleClickClosesTab;
@@ -137,6 +139,38 @@ private:
   QMap<QString,QAction*> m_popupActions;
 
   friend class KonqTabsStyle;
+};
+
+#include <QToolButton>
+
+class NewTabToolButton : public QToolButton // subclass with drag'n'drop functionality for links
+{
+    Q_OBJECT
+public:
+    NewTabToolButton( QWidget *parent )
+            : QToolButton( parent ) {
+        setAcceptDrops( true );
+    }
+
+Q_SIGNALS:
+    void testCanDecode( const QDragMoveEvent *event, bool &accept );
+    void receivedDropEvent( QDropEvent *event );
+
+protected:
+    void dragEnterEvent( QDragEnterEvent *event )
+    {
+        bool accept = false;
+        emit testCanDecode( event, accept );
+        if ( accept ) {
+            event->acceptProposedAction();
+        }
+    }
+
+    void dropEvent( QDropEvent *event )
+    {
+        emit receivedDropEvent( event );
+        event->acceptProposedAction();
+    }
 };
 
 #endif // KONQTABS_H
