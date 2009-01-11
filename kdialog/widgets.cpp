@@ -105,7 +105,7 @@ int Widgets::textBox(QWidget *parent, int width, int height, const QString& titl
   kapp->setTopWidget( &dlg );
   KVBox* vbox = new KVBox(&dlg);
   dlg.setMainWidget(vbox);
- 
+
   KTextEdit *edit = new KTextEdit( vbox );
   edit->setReadOnly(true);
 
@@ -139,7 +139,7 @@ int Widgets::textInputBox(QWidget *parent, int width, int height, const QString&
   dlg.setCaption( title );
   dlg.setButtons( KDialog::Ok );
   dlg.setModal( true );
-  
+
   kapp->setTopWidget( &dlg );
   KVBox* vbox = new KVBox(&dlg);
 
@@ -304,4 +304,35 @@ bool Widgets::progressBar(QWidget *parent, const QString& title, const QString& 
   handleXGeometry(&dlg);
   dlg.exec();
   return dlg.wasCancelled();
+}
+
+
+bool Widgets::slider( QWidget *parent, const QString& title, const QString& text, int minValue, int maxValue, int step, int &result )
+{
+    KDialog dlg( parent );
+    kapp->setTopWidget( &dlg );
+    dlg.setCaption( title );
+    dlg.setButtons( KDialog::Ok|KDialog::Cancel );
+    dlg.setModal( true );
+    dlg.setDefaultButton( KDialog::Ok );
+
+    KVBox* vbox = new KVBox( &dlg );
+    dlg.setMainWidget( vbox );
+
+    QLabel label (vbox);
+    label.setText (text);
+    QSlider slider (vbox);
+    slider.setMinimum( minValue );
+    slider.setMaximum( maxValue );
+    slider.setSingleStep( step );
+    slider.setTickPosition ( QSlider::TicksAbove );
+    slider.setOrientation( Qt::Horizontal );
+    handleXGeometry(&dlg);
+
+    bool retcode = (dlg.exec() == QDialog::Accepted);
+
+    if (retcode)
+        result = slider.value();
+
+    return retcode;
 }

@@ -36,6 +36,7 @@ namespace Widgets
     bool radioBox(QWidget *parent, const QString& title, const QString& text, const QStringList& args, QString &result);
     bool comboBox(QWidget *parent, const QString& title, const QString& text, const QStringList& args, const QString& defaultEntry, QString &result);
     bool progressBar(QWidget *parent, const QString& title, const QString& text, int totalSteps);
+    bool slider( QWidget *parent, const QString& title, const QString& test, int minValue, int maxValue, int step, int &result );
 
     void handleXGeometry(QWidget * dlg);
 

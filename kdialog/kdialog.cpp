@@ -18,6 +18,7 @@
 //  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 //
 
+#include <kdebug.h>
 #include "widgets.h"
 
 #include <kmessagebox.h>
@@ -640,7 +641,25 @@ static int directCommand(KCmdLineArgs *args)
         }
         return 1; // cancelled
     }
+    if (args->isSet("slider"))
+    {
+       int miniValue = 0;
+       int maxValue = 0;
+       int step = 0;
+       QString text = args->getOption( "slider" );
+       if ( args->count() == 3 )
+       {
+           miniValue = args->arg(0).toInt();
+           maxValue = args->arg( 1 ).toInt();
+           step = args->arg( 2 ).toInt();
+       }
+       int result = 0;
 
+       bool returnCode = Widgets::slider(0, title, text, miniValue, maxValue, step, result);
+       if ( returnCode )
+           cout << result << endl;
+       return returnCode;
+    }
     KCmdLineArgs::usage();
     return -2; // NOTREACHED
 }
@@ -697,6 +716,7 @@ int main(int argc, char *argv[])
   options.add("separate-output", ki18n("Return list items on separate lines (for checklist option and file open with --multiple)"));
   options.add("print-winid", ki18n("Outputs the winId of each dialog"));
   options.add("dontagain <file:entry>", ki18n("Config file and option name for saving the \"do-not-show/ask-again\" state"));
+  options.add( "slider <text> [minvalue] [maxvalue] [step]", ki18n( "Slider dialogbox, returns value selected" ) );
 
   /* kdialog originally used --embed for attaching the dialog box.  However this is misleading and so we changed to --attach.
      * For backwards compatibility, we silently map --embed to --attach */
