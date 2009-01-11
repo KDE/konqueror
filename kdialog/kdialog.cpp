@@ -18,6 +18,7 @@
 //  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 //
 
+#include <QDate>
 #include <kdebug.h>
 #include "widgets.h"
 
@@ -660,6 +661,17 @@ static int directCommand(KCmdLineArgs *args)
            cout << result << endl;
        return returnCode;
     }
+    if (args->isSet("calendar"))
+    {
+       QString text = args->getOption( "calendar" );
+       QDate result;
+
+       bool returnCode = Widgets::calendar(0, title, text, result);
+       if ( returnCode )
+           cout << result.toString().toLocal8Bit().data() << endl;
+       return returnCode;
+    }
+
     KCmdLineArgs::usage();
     return -2; // NOTREACHED
 }
@@ -717,7 +729,7 @@ int main(int argc, char *argv[])
   options.add("print-winid", ki18n("Outputs the winId of each dialog"));
   options.add("dontagain <file:entry>", ki18n("Config file and option name for saving the \"do-not-show/ask-again\" state"));
   options.add( "slider <text> [minvalue] [maxvalue] [step]", ki18n( "Slider dialogbox, returns value selected" ) );
-
+  options.add( "calendar <text>", ki18n( "Calendar dialogbox, return selected date" ) );
   /* kdialog originally used --embed for attaching the dialog box.  However this is misleading and so we changed to --attach.
      * For backwards compatibility, we silently map --embed to --attach */
   options.add("attach <winid>", ki18n("Makes the dialog transient for an X app specified by winid"));

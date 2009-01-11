@@ -20,6 +20,7 @@
 
 // Own
 #include "widgets.h"
+#include <kdatepicker.h>
 
 // Qt
 #include <QtCore/QFile>
@@ -333,6 +334,31 @@ bool Widgets::slider( QWidget *parent, const QString& title, const QString& text
 
     if (retcode)
         result = slider.value();
+
+    return retcode;
+}
+
+bool Widgets::calendar( QWidget *parent, const QString &title, const QString &text, QDate & result )
+{
+    KDialog dlg( parent );
+    kapp->setTopWidget( &dlg );
+    dlg.setCaption( title );
+    dlg.setButtons( KDialog::Ok|KDialog::Cancel );
+    dlg.setModal( true );
+    dlg.setDefaultButton( KDialog::Ok );
+
+    KVBox* vbox = new KVBox( &dlg );
+    dlg.setMainWidget( vbox );
+
+    QLabel label (vbox);
+    label.setText (text);
+    KDatePicker dateWidget( vbox );
+    handleXGeometry(&dlg);
+
+    bool retcode = (dlg.exec() == QDialog::Accepted);
+
+    if (retcode)
+        result = dateWidget.date();
 
     return retcode;
 }

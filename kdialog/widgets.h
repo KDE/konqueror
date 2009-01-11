@@ -21,6 +21,7 @@
 #ifndef WIDGETS_H
 #define WIDGETS_H
 
+#include <QDate>
 #include <QtCore/QByteRef>
 #include <QtGui/QWidget>
 #include <QtCore/QStringList>
@@ -37,6 +38,7 @@ namespace Widgets
     bool comboBox(QWidget *parent, const QString& title, const QString& text, const QStringList& args, const QString& defaultEntry, QString &result);
     bool progressBar(QWidget *parent, const QString& title, const QString& text, int totalSteps);
     bool slider( QWidget *parent, const QString& title, const QString& test, int minValue, int maxValue, int step, int &result );
+    bool calendar( QWidget *parent, const QString &title, const QString &text, QDate & result );
 
     void handleXGeometry(QWidget * dlg);
 
