@@ -997,7 +997,7 @@ void KonqSidebarTree::slotCreateFolder()
     while(true)
     {
         name = KInputDialog::getText(i18n("Create New Folder"),
-    			i18n("Enter folder name:"), name);
+                                     i18n("Enter folder name:"), name);
         if (name.isEmpty())
             return;
 
@@ -1006,7 +1006,7 @@ void KonqSidebarTree::slotCreateFolder()
         else
             path = m_dirtreeDir.dir.path();
 
-        if (!path.endsWith("/"))	//krazy:exclude=doublequote_chars
+        if (!path.endsWith('/'))
             path += '/';
 
         path = path + name;
