@@ -168,9 +168,11 @@ int main(int argc, char ** argv)
   }
   else {
       const QString mimeTypeName = arg;
-      KMimeType::Ptr mime = KMimeType::mimeType(mimeTypeName);
-      if (!mime)
-          kFatal() << "Mimetype" << mimeTypeName << "not found" ;
+      KMimeType::Ptr mime = KMimeType::mimeType(mimeTypeName, KMimeType::ResolveAliases);
+      if (!mime) {
+          kError() << "Mimetype" << mimeTypeName << "not found" ;
+          return 1;
+      }
 
       mimeTypeData = new MimeTypeData(mime);
   }
