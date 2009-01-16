@@ -117,7 +117,7 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv) {
     options.add("nobrowser", ki18n("Hide all browser related functions"));
     options.add("dbusObjectName <name>", ki18n("A unique name that represents this bookmark collection, usually the kinstance name.\n"
                                  "This should be \"konqueror\" for the Konqueror bookmarks, \"kfile\" for KFileDialog bookmarks, etc.\n"
-                                 "The final DBus object path is /KBookmarkManager/dbusObjectName"));
+                                 "The final D-Bus object path is /KBookmarkManager/dbusObjectName"));
     options.add("+[file]", ki18n("File to edit"));
     KCmdLineArgs::addCmdLineOptions(options);
 
