@@ -1785,7 +1785,7 @@ void KonqMainWindow::slotConfigure()
             KPageWidgetItem * fileManagementGroup = m_configureDialog->addModule("filebehavior");
             fileManagementGroup->setName(i18n("File Management"));
             const char* fmModules[]={
-                "kcmdolphin",
+                "kcmdolphinviewmodes",
                 "filetypes",
                 "kcmtrash"};
             for (uint i=0;i<sizeof(fmModules)/sizeof(char*);++i)
