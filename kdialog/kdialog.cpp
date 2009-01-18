@@ -2,6 +2,7 @@
 //  Copyright (C) 1998 Matthias Hoelzer <hoelzer@kde.org>
 //  Copyright (C) 2002 David Faure <faure@kde.org>
 //  Copyright (C) 2005 Brad Hards <bradh@frogmouth.net>
+//  Copyright (C) 2008 by Dmitry Suzdalev <dimsuz@gmail.com>
 //
 //  This program is free software; you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -41,6 +42,12 @@
 
 #if defined Q_WS_X11 && ! defined K_WS_QTONLY
 #include <netwm.h>
+#endif
+
+#include "../config-apps.h"
+#ifdef QT_QTDBUS_FOUND
+#include <QtDBus/QDBusConnection>
+#include <QtDBus/QDBusConnectionInterface>
 #endif
 
 #ifdef Q_WS_WIN
@@ -83,6 +90,63 @@ bool WinIdEmbedder::eventFilter(QObject *o, QEvent *e)
         return false;
     }
     return QObject::eventFilter(o, e);
+}
+
+/**
+ * Display a passive notification popup using the D-Bus interface, if possible.
+ * @return true if the notification was successfully sent, false otherwise.
+ */
+bool sendVisualNotification(QString text, QString title, int timeout)
+{
+#ifdef QT_QTDBUS_FOUND
+  const QString dbusServiceName = "org.kde.VisualNotifications";
+  const QString dbusInterfaceName = "org.kde.VisualNotifications";
+  const QString dbusPath = "/VisualNotifications";
+
+  // check if service already exists on plugin instantiation
+  QDBusConnectionInterface* interface = QDBusConnection::sessionBus().interface();
+
+  if (!interface || !interface->isServiceRegistered(dbusServiceName)) {
+    //kDebug() << dbusServiceName << "D-Bus service not registered";
+    return false;
+  }
+
+  if (timeout == 0)
+    timeout = 10 * 1000;
+
+  QDBusMessage m = QDBusMessage::createMethodCall(dbusServiceName, dbusPath, dbusInterfaceName, "Notify");
+  QList<QVariant> args;
+
+  args.append("kdialog"); // app_name
+  args.append(0U); // replaces_id
+  args.append("kdialogPassivePopup"); // event_id
+  args.append("dialog-information"); // app_icon
+  args.append(title); // summary
+  args.append(text); // body
+  args.append(QStringList()); // actions - unused for plain passive popups
+  args.append(QVariantMap()); // hints - unused atm
+  args.append(timeout); // expire timout
+
+  m.setArguments(args);
+
+  QDBusMessage replyMsg = QDBusConnection::sessionBus().call(m);
+  if(replyMsg.type() == QDBusMessage::ReplyMessage) {
+    if (!replyMsg.arguments().isEmpty()) {
+      return true;
+    }
+    // Not displaying any error messages as this is optional for kdialog
+    // and KPassivePopup is a perfectly valid fallback.
+    //else {
+    //  kDebug() << "Error: received reply with no arguments.";
+    //}
+  } else if (replyMsg.type() == QDBusMessage::ErrorMessage) {
+    //kDebug() << "Error: failed to send D-Bus message";
+    //kDebug() << replyMsg;
+  } else {
+    //kDebug() << "Unexpected reply type";
+  }
+#endif
+  return false;
 }
 
 static void outputStringList(const QStringList &list, bool separateOutput)
@@ -252,6 +316,12 @@ static int directCommand(KCmdLineArgs *args)
             duration = 1000 * args->arg(0).toInt();
         if (duration == 0)
             duration = 10000;
+
+        // try to use more stylish notifications
+        if (sendVisualNotification(args->getOption("passivepopup"), title, duration))
+          return 0;
+
+        // ...did not work, use KPassivePopup as fallback
     KPassivePopup *popup = KPassivePopup::message( KPassivePopup::Boxed, // style
                                                    title,
                                                    args->getOption("passivepopup"),
