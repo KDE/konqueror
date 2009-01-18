@@ -50,6 +50,7 @@ public:
     void setStatusBarTextProxy(const QString &message);
 
 protected:
+    void guiActivateEvent(KParts::GUIActivateEvent *event);
     virtual bool openFile();
     void initAction();
 

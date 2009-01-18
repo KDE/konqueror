@@ -2,7 +2,7 @@
  * This file is part of the KDE project.
  *
  * Copyright (C) 2007 Trolltech ASA
- * Copyright (C) 2008 Urs Wolfer <uwolfer @ kde.org>
+ * Copyright (C) 2008 - 2009 Urs Wolfer <uwolfer @ kde.org>
  * Copyright (C) 2008 Laurent Montel <montel@kde.org>
  *
  * This library is free software; you can redistribute it and/or
@@ -52,6 +52,19 @@
 WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList &/*args*/)
     : KParts::ReadOnlyPart(parent)
 {
+    KAboutData about = KAboutData("webkitpart", "webkitkde", ki18n("WebKit HTML Component"),
+                           /*version*/ "0.1", /*ki18n("shortDescription")*/ KLocalizedString(),
+                           KAboutData::License_LGPL,
+                           ki18n("(c) 2008 - 2009, Urs Wolfer\n"
+                                 "(c) 2007 Trolltech ASA"));
+
+    about.addAuthor(ki18n("Laurent Montel"), KLocalizedString(), "montel@kde.org");
+    about.addAuthor(ki18n("Michael Howell"), KLocalizedString(), "mhowell123@gmail.com");
+    about.addAuthor(ki18n("Urs Wolfer"), KLocalizedString(), "uwolfer@kde.org");
+    about.addAuthor(ki18n("Dirk Mueller"), KLocalizedString(), "mueller@kde.org");
+    KComponentData componentData(&about);
+    setComponentData(componentData);
+
     setWidget(new QWidget(parentWidget));
     QVBoxLayout* lay = new QVBoxLayout(widget());
     lay->setMargin(0);
@@ -59,19 +72,6 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
     m_webView = new WebView(this, widget());
     lay->addWidget(m_webView);
     lay->addWidget(m_webView->searchBar());
-
-    KAboutData* about = new KAboutData("webkitpart", "webkitkde", ki18n("WebKit HTML Component"),
-                           /*version*/ "0.1", /*ki18n("shortDescription")*/ KLocalizedString(),
-                           KAboutData::License_LGPL,
-                           ki18n("(c) 2008, Urs Wolfer\n"
-                                 "(c) 2007 Trolltech ASA"));
-
-    about->addAuthor(ki18n("Laurent Montel"), KLocalizedString(), "montel@kde.org");
-    about->addAuthor(ki18n("Michael Howell"), KLocalizedString(), "mhowell123@gmail.com");
-    about->addAuthor(ki18n("Urs Wolfer"), KLocalizedString(), "uwolfer@kde.org");
-    about->addAuthor(ki18n("Dirk Mueller"), KLocalizedString(), "mueller@kde.org");
-    KComponentData componentData(about);
-    setComponentData(componentData);
 
     connect(m_webView, SIGNAL(loadStarted()),
             this, SLOT(loadStarted()));
@@ -124,6 +124,12 @@ void WebKitPart::initAction()
     action = actionCollection()->addAction(KStandardAction::Find, "find", m_webView->searchBar(), SLOT(show()));
     action->setWhatsThis(i18n("Find text<br /><br />"
                               "Shows a dialog that allows you to find text on the displayed page."));
+}
+
+void WebKitPart::guiActivateEvent(KParts::GUIActivateEvent *event)
+{
+    Q_UNUSED(event);
+    // just overwrite, but do nothing for the moment
 }
 
 bool WebKitPart::openUrl(const KUrl &url)
