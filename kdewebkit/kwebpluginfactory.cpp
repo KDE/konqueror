@@ -111,30 +111,24 @@ QList<KWebPluginFactory::Plugin> KWebPluginFactory::plugins() const
     QList<Plugin> plugins;
     if (d->delegate) plugins = d->delegate->plugins();
     KService::List services = KServiceTypeTrader::self()->query("KParts/ReadOnlyPart");
-    kDebug() << "Asked for list of plugins. Got:";
     for (int i = 0; i < services.size(); i++) {
         KService::Ptr s = services.at(i);
         Plugin plugin;
         plugin.name = s->desktopEntryName();
         plugin.description = s->comment();
-        kDebug() << "- " << plugin.name << "with support for:";
         QList<MimeType> mimes;
         QStringList servicetypes = s->serviceTypes();
         for (int z = 0; z < servicetypes.size(); z++) {
             MimeType mime;
             mime.name = servicetypes.at(z);
-            kDebug() << "-- " << mime.name;
             KMimeType::Ptr kmime = KMimeType::mimeType(mime.name);
             if (kmime) {
                 mime.fileExtensions = kmime->patterns().replaceInStrings("*.","");
-                for (int w = 0; w < mime.fileExtensions.size(); w++)
-                    kDebug() << "--- " << mime.fileExtensions.at(w);
             }
             mimes.append(mime);
         }
         plugins.append(plugin);
     }
-    kDebug() << "Total:" << plugins.count();
     d->plugins = plugins;
     return plugins;
 }
