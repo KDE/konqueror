@@ -25,15 +25,14 @@
 #include <QObject>
 #include <kurl.h>
 
-class KonqCopyToMenuPrivate : public QObject
+class KonqCopyToMenuPrivate
 {
-    Q_OBJECT
 public:
-    KonqCopyToMenuPrivate();
+    KonqCopyToMenuPrivate(QWidget* parentWidget = 0);
 
-public:
     KUrl::List m_urls;
     bool m_readOnly;
+    QWidget* m_parentWidget;
 };
 
 enum MenuType { Copy, Move };
