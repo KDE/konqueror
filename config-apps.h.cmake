@@ -69,6 +69,9 @@
 /* Define to 1 if you have the `vsnprintf' function. */
 #cmakedefine HAVE_VSNPRINTF 1
 
+/* Define to 1 if the QtDBus module is present. */
+#cmakedefine QT_QTDBUS_FOUND 1
+
 /* KDE's binaries directory */
 #define KDE_BINDIR "${BIN_INSTALL_DIR}"
 
