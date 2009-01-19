@@ -55,6 +55,11 @@ KNetworkReply::KNetworkReply(const QNetworkRequest &request, KIO::Job *kioJob, Q
     }
 }
 
+KNetworkReply::~KNetworkReply()
+{
+    delete d;
+}
+
 void KNetworkReply::abort()
 {
     if (d->m_kioJob) {

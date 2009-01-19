@@ -38,7 +38,7 @@ class KDE_EXPORT KNetworkReply : public QNetworkReply
     Q_OBJECT
 public:
     KNetworkReply(const QNetworkRequest &request, KIO::Job *kioJob, QObject *parent);
-
+    virtual ~KNetworkReply();
     virtual qint64 bytesAvailable() const;
     virtual void abort();
 
