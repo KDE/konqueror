@@ -3700,7 +3700,7 @@ void KonqMainWindow::initActions()
   m_paRemoveTab = actionCollection()->addAction("removecurrenttab");
   m_paRemoveTab->setIcon( KIcon("tab-close") );
   m_paRemoveTab->setText( i18n( "Close Current Tab" ) );
-  connect(m_paRemoveTab, SIGNAL(triggered()), SLOT( slotRemoveTab() ));
+  connect(m_paRemoveTab, SIGNAL(triggered()), SLOT(slotRemoveTab()), Qt::QueuedConnection /* exit Ctrl+W handler before deleting */);
   m_paRemoveTab->setShortcut(Qt::CTRL+Qt::Key_W);
   m_paRemoveTab->setAutoRepeat(false);
   m_paRemoveOtherTabs = actionCollection()->addAction("removeothertabs");
