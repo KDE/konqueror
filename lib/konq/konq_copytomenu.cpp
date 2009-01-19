@@ -31,17 +31,21 @@
 #include <kstringhandler.h>
 #include <QDir>
 
-KonqCopyToMenuPrivate::KonqCopyToMenuPrivate()
-    : m_urls(), m_readOnly(false)
+KonqCopyToMenuPrivate::KonqCopyToMenuPrivate(QWidget* parentWidget)
+    : m_urls(), m_readOnly(false), m_parentWidget(parentWidget)
 {
 }
 
 ////
 
 KonqCopyToMenu::KonqCopyToMenu()
-    : d(new KonqCopyToMenuPrivate)
+    : d(new KonqCopyToMenuPrivate())
 {
+}
 
+KonqCopyToMenu::KonqCopyToMenu(QWidget* parentWidget)
+    : d(new KonqCopyToMenuPrivate(parentWidget))
+{
 }
 
 KonqCopyToMenu::~KonqCopyToMenu()
@@ -133,7 +137,8 @@ void KonqCopyToMainMenu::slotAboutToShow()
 
 void KonqCopyToMainMenu::slotBrowse()
 {
-    const KUrl dest = KFileDialog::getExistingDirectoryUrl(KUrl("kfiledialog:///copyto"), this);
+    const KUrl dest = KFileDialog::getExistingDirectoryUrl(KUrl("kfiledialog:///copyto"),
+                                             d->m_parentWidget ? d->m_parentWidget : this);
     if (!dest.isEmpty()) {
         copyOrMoveTo(dest);
     }
@@ -160,7 +165,8 @@ void KonqCopyToMainMenu::copyOrMoveTo(const KUrl& dest)
     }
 
     // And now let's do the copy or move -- with undo/redo support.
-    KonqOperations::copy(this, m_menuType == Copy ? KonqOperations::COPY : KonqOperations::MOVE,
+    KonqOperations::copy(d->m_parentWidget ? d->m_parentWidget : this,
+                         m_menuType == Copy ? KonqOperations::COPY : KonqOperations::MOVE,
                          d->m_urls, dest);
 }
 
