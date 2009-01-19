@@ -53,19 +53,15 @@ public Q_SLOTS:
 protected:
     void resizeEvent(QResizeEvent *event);
 
-signals:
+Q_SIGNALS:
     void searchChanged(const QString& text);
     void closeClicked();
     void findNextClicked();
     void findPreviousClicked();
 
 private:
-    void initializeSearchWidget();
-
-    Ui::SearchBar ui;
-    QWidget *m_widget;
-
-    QTimeLine *m_timeLine;
+    class SearchBarPrivate;
+    SearchBarPrivate* d;
 
 private Q_SLOTS:
     void frameChanged(int frame);
