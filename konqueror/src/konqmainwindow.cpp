@@ -1786,6 +1786,8 @@ void KonqMainWindow::slotConfigure()
             fileManagementGroup->setName(i18n("File Management"));
             const char* fmModules[]={
                 "kcmdolphinviewmodes",
+                "kcmdolphinnavigation",
+                "kcmdolphingeneral",
                 "filetypes",
                 "kcmtrash"};
             for (uint i=0;i<sizeof(fmModules)/sizeof(char*);++i)
