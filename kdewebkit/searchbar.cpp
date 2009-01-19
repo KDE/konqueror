@@ -87,6 +87,11 @@ SearchBar::SearchBar(QWidget *parent)
     new QShortcut(QKeySequence(Qt::Key_Escape), this, SLOT(hide()));
 }
 
+SearchBar::~SearchBar()
+{
+    delete d;
+}
+
 void SearchBar::clear()
 {
     d->ui.searchLineEdit->setText(QString());

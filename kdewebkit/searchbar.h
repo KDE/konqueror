@@ -40,6 +40,7 @@ class SearchBar : public QWidget
 
 public:
     SearchBar(QWidget *parent = 0);
+    ~SearchBar();
 
     QString searchText() const;
     bool caseSensitive() const;
