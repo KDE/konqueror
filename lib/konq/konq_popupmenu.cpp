@@ -73,9 +73,10 @@
 class KonqPopupMenuPrivate
 {
 public:
-    KonqPopupMenuPrivate(KonqPopupMenu* qq, KActionCollection & actions)
+    KonqPopupMenuPrivate(KonqPopupMenu* qq, KActionCollection & actions, QWidget* parentWidget)
         : q(qq),
           m_itemFlags(KParts::BrowserExtension::DefaultPopupItems),
+          m_copyToMenu(parentWidget),
           m_actions(actions),
           m_ownActions(static_cast<QWidget *>(0))
     {
@@ -120,7 +121,7 @@ KonqPopupMenu::KonqPopupMenu(const KFileItemList &items,
                              KBookmarkManager *mgr,
                              const KParts::BrowserExtension::ActionGroupMap& actionGroups)
   : QMenu(parentWidget),
-    d(new KonqPopupMenuPrivate(this, actions))
+    d(new KonqPopupMenuPrivate(this, actions, parentWidget))
 {
     d->m_actionGroups = actionGroups;
     d->m_pMenuNew = newMenu;
