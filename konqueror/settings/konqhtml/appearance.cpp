@@ -44,6 +44,7 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList&)
       fSize( 10 ), fMinSize( HTML_DEFAULT_MIN_FONT_SIZE )
 
 {
+  KGlobal::locale()->insertCatalog("kcmcss");
   QVBoxLayout* l=new QVBoxLayout(this);
   KTabWidget* tab=new KTabWidget(this);
   l->addWidget(tab);
