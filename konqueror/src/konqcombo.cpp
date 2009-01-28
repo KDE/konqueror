@@ -102,6 +102,7 @@ public:
     void setCompletedItems( const QStringList& items, bool );
 
 protected:
+    virtual bool event(QEvent*);
     void mouseDoubleClickEvent( QMouseEvent *e );
 };
 
@@ -816,6 +817,30 @@ KonqComboLineEdit::KonqComboLineEdit( QWidget *parent )
                   :KLineEdit( parent )
 {
     setClearButtonShown( true );
+}
+
+bool KonqComboLineEdit::event(QEvent* e)
+{
+    // QLineEdit doesn't dare make "Ctrl+U" have priority in the lineedit
+    // compared to app-global shortcuts; I guess in some apps with lots of
+    // lineedits it would be annoying to trigger a Ctrl+U action (on X11).
+    // But in our case the focus is normally in the view anyway, so no problem.
+    if (e->type() == QEvent::ShortcutOverride && !isReadOnly()) {
+        QKeyEvent* ke = static_cast<QKeyEvent*>(e);
+        if (ke->modifiers() & Qt::ControlModifier) {
+            switch (ke->key()) {
+                case Qt::Key_A:
+#ifdef Q_WS_X11
+                case Qt::Key_E:
+                case Qt::Key_U:
+#endif
+                    ke->accept();
+                default:
+                    break;
+            }
+        }
+    }
+    return KLineEdit::event(e);
 }
 
 void KonqComboLineEdit::mouseDoubleClickEvent( QMouseEvent *e )
