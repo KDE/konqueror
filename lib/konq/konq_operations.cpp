@@ -288,7 +288,10 @@ void KonqOperations::doDrop( const KFileItem & destItem, const KUrl & dest, QDro
         // Ok, now we need destItem.
         if ( !destItem.isNull() )
         {
-            op->asyncDrop( destItem ); // we have it already
+            // We have it already, we could just call asyncDrop.
+            // But popping up a menu in the middle of a DND operation confuses and crashes Qt (#157630)
+            // So let's delay it.
+            QMetaObject::invokeMethod(op, "asyncDrop", Q_ARG(KFileItem, destItem));
         }
         else
         {
