@@ -66,6 +66,8 @@ KonqHistoryManager::KonqHistoryManager( KBookmarkManager* bookmarkManager, QObje
 
     QDBusConnection dbus = QDBusConnection::sessionBus();
     dbus.registerObject( dbusPath, this );
+    // We add a QDBusMessage argument to find the sender of the message,
+    // but a simpler solution is to just inherit from QDBusContext.
     dbus.connect(QString(), dbusPath, dbusInterface, "notifyClear", this, SLOT(slotNotifyClear(QDBusMessage)));
     dbus.connect(QString(), dbusPath, dbusInterface, "notifyHistoryEntry", this, SLOT(slotNotifyHistoryEntry(QByteArray,QDBusMessage)));
     dbus.connect(QString(), dbusPath, dbusInterface, "notifyMaxAge", this, SLOT(slotNotifyMaxAge(int,QDBusMessage)));

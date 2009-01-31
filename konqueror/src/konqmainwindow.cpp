@@ -2055,7 +2055,7 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
 
   m_paHome->setIcon(KIcon(m_currentView->showsDirectory() ? "user-home" : "go-home"));
   m_paHome->setText( m_currentView->showsDirectory() ?  i18n( "Home Folder") : i18n( "Home Page"  ) );
-  m_paHome->setToolTip( m_currentView->showsDirectory() ? i18n( "Navigate to your 'Home Folder'") : i18n( "Navigate to your 'Home Page'"  ) );
+  m_paHome->setStatusTip( m_currentView->showsDirectory() ? i18n( "Navigate to your 'Home Folder'") : i18n( "Navigate to your 'Home Page'"  ) );
   m_paHome->setWhatsThis(m_currentView->showsDirectory() ?  i18n( "Navigate to your local 'Home Folder'" ) :
                                 i18n( "<html>Navigate to your 'Home Page'<br /><br />"
                                 "You can configure the location where this button takes you "
@@ -3874,28 +3874,28 @@ void KonqMainWindow::initActions()
   m_paUp->setWhatsThis( i18n( "<html>Enter the parent folder<br /><br />"
                               "For instance, if the current location is file:/home/%1 clicking this "
                               "button will take you to file:/home.</html>" ,  KUser().loginName() ) );
-  m_paUp->setToolTip( i18n( "Enter the parent folder" ) );
+  m_paUp->setStatusTip( i18n( "Enter the parent folder" ) );
 
   m_paBack->setWhatsThis( i18n( "Move backwards one step in the browsing history" ) );
-  m_paBack->setToolTip( i18n( "Move backwards one step in the browsing history" ) );
+  m_paBack->setStatusTip( i18n( "Move backwards one step in the browsing history" ) );
 
   m_paForward->setWhatsThis( i18n( "Move forward one step in the browsing history" ) );
-  m_paForward->setToolTip( i18n( "Move forward one step in the browsing history" ) );
+  m_paForward->setStatusTip( i18n( "Move forward one step in the browsing history" ) );
 
 
   m_paClosedItems->setWhatsThis( i18n( "Move backwards one step in the closed tabs history" ) );
-  m_paClosedItems->setToolTip( i18n( "Move backwards one step in the closed tabs history" ) );
+  m_paClosedItems->setStatusTip( i18n( "Move backwards one step in the closed tabs history" ) );
 
 
   m_paReload->setWhatsThis( i18n( "<html>Reload the currently displayed document<br /><br />"
                                   "This may, for example, be needed to refresh web pages that have been "
                                   "modified since they were loaded, in order to make the changes visible.</html>" ) );
-  m_paReload->setToolTip( i18n( "Reload the currently displayed document" ) );
+  m_paReload->setStatusTip( i18n( "Reload the currently displayed document" ) );
 
   m_paReloadAllTabs->setWhatsThis( i18n( "<html>Reload all currently displayed documents in tabs<br /><br />"
                                   "This may, for example, be needed to refresh web pages that have been "
                                   "modified since they were loaded, in order to make the changes visible.</html>" ) );
-  m_paReloadAllTabs->setToolTip( i18n( "Reload all currently displayed document in tabs" ) );
+  m_paReloadAllTabs->setStatusTip( i18n( "Reload all currently displayed document in tabs" ) );
 
   m_paStop->setWhatsThis( i18n( "<html>Stop loading the document<br /><br />"
                                 "All network transfers will be stopped and Konqueror will display the content "
@@ -3905,27 +3905,27 @@ void KonqMainWindow::initActions()
           "This may, for example, be needed to refresh web pages that have been "
           "modified since they were loaded, in order to make the changes visible.  Any images on the page are downloaded again, even if cached copies exist.</html>" ) );
 
-  m_paForceReload->setToolTip( i18n( "Force a reload of the currently displayed document and any contained images" ) );
+  m_paForceReload->setStatusTip( i18n( "Force a reload of the currently displayed document and any contained images" ) );
 
 
-  m_paStop->setToolTip( i18n( "Stop loading the document" ) );
+  m_paStop->setStatusTip( i18n( "Stop loading the document" ) );
 
   m_paCut->setWhatsThis( i18n( "<html>Cut the currently selected text or item(s) and move it "
                                "to the system clipboard<br /><br />"
                                "This makes it available to the <b>Paste</b> command in Konqueror "
                                "and other KDE applications.</html>" ) );
-  m_paCut->setToolTip( i18n( "Move the selected text or item(s) to the clipboard" ) );
+  m_paCut->setStatusTip( i18n( "Move the selected text or item(s) to the clipboard" ) );
 
   m_paCopy->setWhatsThis( i18n( "<html>Copy the currently selected text or item(s) to the "
                                 "system clipboard<br /><br />"
                                 "This makes it available to the <b>Paste</b> command in Konqueror "
                                 "and other KDE applications.</html>" ) );
-  m_paCopy->setToolTip( i18n( "Copy the selected text or item(s) to the clipboard" ) );
+  m_paCopy->setStatusTip( i18n( "Copy the selected text or item(s) to the clipboard" ) );
 
   m_paPaste->setWhatsThis( i18n( "<html>Paste the previously cut or copied clipboard "
                                  "contents<br /><br />"
                                  "This also works for text copied or cut from other KDE applications.</html>" ) );
-  m_paPaste->setToolTip( i18n( "Paste the clipboard contents" ) );
+  m_paPaste->setStatusTip( i18n( "Paste the clipboard contents" ) );
 
   m_paPrint->setWhatsThis( i18n( "<html>Print the currently displayed document<br /><br />"
                                  "You will be presented with a dialog where you can set various "
@@ -3933,15 +3933,15 @@ void KonqMainWindow::initActions()
                                  "to use.<br /><br />"
                                  "This dialog also provides access to special KDE printing "
                                  "services such as creating a PDF file from the current document.</html>" ) );
-  m_paPrint->setToolTip( i18n( "Print the current document" ) );
+  m_paPrint->setStatusTip( i18n( "Print the current document" ) );
 
 
 
   // Please proof-read those (David)
 
-  m_ptaUseHTML->setToolTip( i18n("If present, open index.html when entering a folder.") );
-  m_paLockView->setToolTip( i18n("A locked view cannot change folders. Use in combination with 'link view' to explore many files from one folder") );
-  m_paLinkView->setToolTip( i18n("Sets the view as 'linked'. A linked view follows folder changes made in other linked views.") );
+  m_ptaUseHTML->setStatusTip( i18n("If present, open index.html when entering a folder.") );
+  m_paLockView->setStatusTip( i18n("A locked view cannot change folders. Use in combination with 'link view' to explore many files from one folder") );
+  m_paLinkView->setStatusTip( i18n("Sets the view as 'linked'. A linked view follows folder changes made in other linked views.") );
 }
 
 void KonqExtendedBookmarkOwner::openBookmark(const KBookmark & bm, Qt::MouseButtons mb, Qt::KeyboardModifiers km)
@@ -4648,14 +4648,14 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
         if (browserArgs.forcesNewWindow()) {
             QAction* act = konqyMenuClient->actionCollection()->addAction( "sameview" );
             act->setText( i18n( "Open in T&his Window" ) );
-            act->setToolTip( i18n( "Open the document in current window" ) );
+            act->setStatusTip( i18n( "Open the document in current window" ) );
             connect(act, SIGNAL(triggered() ), SLOT( slotPopupThisWindow() ));
             tabHandlingActions.append(act);
         }
         QAction* actNewWindow = konqyMenuClient->actionCollection()->addAction( "newview" );
         actNewWindow->setIcon( KIcon("window-new") );
         actNewWindow->setText( i18n( "Open in New &Window" ) );
-        actNewWindow->setToolTip( i18n( "Open the document in a new window" ) );
+        actNewWindow->setStatusTip( i18n( "Open the document in a new window" ) );
         connect(actNewWindow, SIGNAL(triggered()), SLOT( slotPopupNewWindow() ));
         tabHandlingActions.append(actNewWindow);
 
@@ -4663,7 +4663,7 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
         actNewTab->setIcon( KIcon("tab-new") );
         actNewTab->setText( i18n( "Open in &New Tab" ) );
         connect(actNewTab, SIGNAL(triggered()), SLOT( slotPopupNewTab() ));
-        actNewTab->setToolTip( i18n( "Open the document in a new tab" ) );
+        actNewTab->setStatusTip( i18n( "Open the document in a new tab" ) );
         tabHandlingActions.append(actNewTab);
 
         QAction* separator = new QAction(konqyMenuClient->actionCollection());
