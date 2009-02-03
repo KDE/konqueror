@@ -141,9 +141,7 @@ KonqCombo::KonqCombo( QWidget *parent )
     setLineEdit( edit );
     setItemDelegate( new KonqComboItemDelegate( this ) );
 
-    // we use KUrlCompletion, so let KLineEdit handle Key_Tab so that subdir<tab>/subdir<tab> works (#65877).
-    // KCompletionBox's handling of Key_Tab is just the same as Up/Down keys, not very useful.
-    completionBox()->setTabHandling(false);
+    completionBox()->setTabHandling(true); // #167135
     completionBox()->setItemDelegate( new KonqComboItemDelegate( this ) );
 
     // Make the lineedit consume the Qt::Key_Enter event...
@@ -896,7 +894,7 @@ void KonqComboLineEdit::setCompletedItems( const QStringList& items, bool )
 ///////////////////////////////////////////////////////////////////////////////
 
 KonqComboCompletionBox::KonqComboCompletionBox( QWidget *parent )
-                       :KCompletionBox( parent ) 
+                       :KCompletionBox( parent )
 {
     setLayoutDirection(Qt::LeftToRight);
 }
