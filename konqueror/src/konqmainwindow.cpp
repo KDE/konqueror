@@ -1769,7 +1769,7 @@ void KonqMainWindow::slotConfigure()
         connect(m_configureDialog, SIGNAL(hidden()),   this, SLOT(slotConfigureDone()));
 
         //BEGIN SYNC with initActions()
-        const char* toplevelModules[]={
+        const char* const toplevelModules[]={
                 "khtml_general",
 #ifndef Q_WS_WIN
                 "kcmkonqyperformance",
@@ -1784,7 +1784,7 @@ void KonqMainWindow::slotConfigure()
         {
             KPageWidgetItem * fileManagementGroup = m_configureDialog->addModule("filebehavior");
             fileManagementGroup->setName(i18n("File Management"));
-            const char* fmModules[]={
+            const char* const fmModules[]={
                 "kcmdolphinviewmodes",
                 "kcmdolphinnavigation",
                 "kcmdolphingeneral",
@@ -1800,7 +1800,7 @@ void KonqMainWindow::slotConfigure()
             KPageWidgetItem * webGroup = m_configureDialog->addModule("khtml_behavior");
             webGroup->setName(i18n("Web Browsing"));
 
-            const char* webModules[]={
+            const char* const webModules[]={
                 "khtml_appearance",
                 "khtml_filter",
                 "ebrowsing",

@@ -31,10 +31,10 @@
 
 K_PLUGIN_FACTORY_DECLARATION(KcmKonqHtmlFactory)
 
-static const char* animationValues[]={"Enabled","Disabled","LoopOnce"};
+static const char* const animationValues[]={"Enabled","Disabled","LoopOnce"};
 enum AnimationsType { AnimationsAlways=0, AnimationsNever=1, AnimationsLoopOnce=2 };
 
-static const char* smoothScrollingValues[]={"Enabled","Disabled","WhenEfficient"};
+static const char* const smoothScrollingValues[]={"Enabled","Disabled","WhenEfficient"};
 enum SmoothScrollingType { SmoothScrollingAlways=0, SmoothScrollingNever=1, SmoothScrollingWhenEfficient=2 };
 
 enum UnderlineLinkType { UnderlineAlways=0, UnderlineNever=1, UnderlineHover=2 };
@@ -324,7 +324,7 @@ void KAppearanceOptions::slotEncoding(const QString& n)
 }
 
 
-static int stringToIndex(const char** possibleValues, int possibleValuesCount, int defaultValue, const QString& value)
+static int stringToIndex(const char* const *possibleValues, int possibleValuesCount, int defaultValue, const QString& value)
 {
     int i=possibleValuesCount;
     while (--i>=0)
