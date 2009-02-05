@@ -1091,56 +1091,6 @@ Selects all unselected items and deselects all selected items in the current fol
 </sect1>
 </chapter>
 
-
-
-<chapter id="faq">
-<title>Frequently asked Questions</title>
-
-<!-- (OPTIONAL but recommended) This chapter should include all of the silly
-(and not-so-silly) newbie questions that fill up your mailbox. This chapter
-should be reserved for BRIEF questions and answers! If one question uses more
-than a page or so then it should probably be part of the
-"Using this Application" chapter instead. You should use links to
-cross-reference questions to the parts of your documentation that answer them.
-This is also a great place to provide pointers to other FAQ's if your users
-must do some complicated configuration on other programs in order for your
-application work. -->
-
-<qandaset id="faqlist">
-<qandaentry>
-<question>
-<para>How do I add my own custom service menus to &dolphin;?</para>
-</question>
-<answer>
-<para>
-&dolphin; can use the majority of service menus created for &konqueror;, however &dolphin; does impose one limitation on the service menus: Service menu entries that add themselves to the top level of the context menu will automatically be placed below the Actions sub-menu. This prevents that the context menu will get crowded.
-</para>
-
-<para>
-To add a custom service menu to &dolphin; save the service menu to the &dolphin; service menu folder, this can be found in /home/house/.kde/share/apps/dolphin/servicemenus/. If the servicemenus sub-folder does not exist in the &dolphin; folder, then create the sub-folder and save the service menu to that folder.  The next time the user launch &dolphin; the service menu will be available.
-</para>
-</answer>
-</qandaentry>
-
-<qandaentry>
-<question>
-<para>How do I make &dolphin; my default file manager?</para>
-</question>
-<answer>
-<para>
-To make &dolphin; the default file manager for &kde; from the &kde; control center open the File Associations section via; &kde; Components>File Associations.  If the user adds &dolphin; to the list of applications for the folder mime type and make it the first choice, then &dolphin; will become the default application to open any folder with. The folder mime type can be found by expanding the inode section of Known Types.
-</para>
-
-<para>
-To make &dolphin; the default file manager for the virtual folders created by &kde; &eg; system:/ then again in the File Associations section of the control center expand the inode section of Known Types.  Under the system_directory mime type, add &dolphin; to the list of applications, however instead of choosing &dolphin; from the kmenu, type the following in to the text box at the top;  dolphin %u. The virtual folders created by &kde; will then be opened by &dolphin; as default.
-</para>
-</answer>
-</qandaentry>
-</qandaset>
-</chapter>
-
-
-
 <chapter id="misc">
 <title>Miscellaneous Questions</title>
 
@@ -1179,9 +1129,7 @@ The email addresses of Peter Penz and Michael Austin can be found on the main pa
 Bug reports should only be submitted for released versions of &dolphin;, please do not submit bug reports for the Subversion release of &dolphin; as this is expected to break due to its constant development.
 </para>
 <para>
-The official channel for submitting bug reports is via the &kde; bug tracking system.  Alternatively bug reports can be emailed to Peter Penz (email address is found on the main page or the credits section).
-</para> 
-<para>
+The official channel for submitting bug reports is via the &kde; bug tracking system.
 The &kde; bug tracker can be found at <ulink url="http://bugs.kde.org">http://bugs.kde.org</ulink>.
 </para>
 </answer>
@@ -1193,7 +1141,7 @@ The &kde; bug tracker can be found at <ulink url="http://bugs.kde.org">http://bu
 </question>
 <answer>
 <para>
-The official channel for submitting feature requests is via the &kde; bug tracking system.  Alternatively feature requests can be emailed to Peter Penz  (email address is found on the main page or the credits section).
+The official channel for submitting feature requests is via the &kde; bug tracking system.
 </para>
 
 </answer>
