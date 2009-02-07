@@ -136,7 +136,7 @@ public:
    virtual void execute();
    virtual void unexecute();
    virtual QString name() const {
-      // NOTE - DeleteCommand needs no name, its always embedded in a macrocommand
+      // NOTE - DeleteCommand needs no name, it is always embedded in a macrocommand
       return QString();
    }
    virtual QString affectedBookmarks() const;
