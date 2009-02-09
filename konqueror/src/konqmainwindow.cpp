@@ -5062,7 +5062,7 @@ void KonqMainWindow::closeEvent( QCloseEvent *e )
                   i18n("You have multiple tabs open in this window, "
                         "are you sure you want to quit?"),
                   i18n("Confirmation"),
-                  KStandardGuiItem::quit(),
+                  KStandardGuiItem::closeWindow(),
                   KGuiItem(i18n( "C&lose Current Tab" ), "tab-close"),
                   KStandardGuiItem::cancel(),
                   "MultipleTabConfirm"
