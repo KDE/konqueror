@@ -131,14 +131,17 @@ void KonqPixmapProvider::save( KConfigGroup& kc, const QString& key,
 void KonqPixmapProvider::notifyChange( bool isHost, const QString& hostOrURL,
     const QString& iconName )
 {
+    KUrl u;
+    if ( !isHost ) u = hostOrURL;
+
     for ( QMap<KUrl,QString>::iterator it = iconMap.begin();
           it != iconMap.end();
           ++it )
     {
         KUrl url( it.key() );
-        if ( url.protocol().startsWith("http") &&
-            ( ( isHost && url.host() == hostOrURL ) ||
-                ( url.host() + url.path() == hostOrURL ) ) )
+        if ( !url.protocol().startsWith( "http" ) ) continue;
+        if ( ( isHost && url.host() == hostOrURL ) ||
+             ( !isHost && url.host() == u.host() && url.path() == u.path() ) )
         {
             // For host default-icons still query the favicon manager to get
             // the correct icon for pages that have an own one.
