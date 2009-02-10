@@ -36,9 +36,6 @@
 // Local
 #include "konqkcmfactory.h"
 
-static bool DEFAULT_CONFIRMDELETE = true;
-static bool DEFAULT_CONFIRMTRASH = true;
-
 KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
     : KCModule(KonqKcmFactory::componentData(), parent)
     , g_pConfig(KSharedConfig::openConfig("konquerorrc", KConfig::IncludeGlobals))
@@ -81,28 +78,6 @@ KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
 
     mainLayout->addWidget(miscGb);
 
-    QGroupBox *bg = new QGroupBox(this);
-    bg->setTitle(i18nc("@title:group what to do when a file is deleted", "Ask Confirmation For"));
-    bg->setWhatsThis(i18n("This option tells Konqueror whether to ask"
-                          " for a confirmation when you \"delete\" a file."
-                          " <ul><li><em>Move To Trash:</em> moves the file to your trash folder,"
-                          " from where it can be recovered very easily.</li>"
-                          " <li><em>Delete:</em> simply deletes the file.</li>"
-                          " </ul>"));
-
-    cbMoveToTrash = new QCheckBox(i18nc("@option:check Ask for confirmation when moving to trash", "&Move to trash"), bg);
-    connect(cbMoveToTrash, SIGNAL(toggled(bool)), this, SLOT(changed()));
-
-    cbDelete = new QCheckBox(i18nc("@option:check Ask for confirmation when deleting", "D&elete"), bg);
-    connect(cbDelete, SIGNAL(toggled(bool)), this, SLOT(changed()));
-
-    QVBoxLayout *confirmationLayout = new QVBoxLayout;
-    confirmationLayout->addWidget(cbMoveToTrash);
-    confirmationLayout->addWidget(cbDelete);
-    bg->setLayout(confirmationLayout);
-
-    mainLayout->addWidget(bg);
-
     cbShowDeleteCommand = new QCheckBox(i18n("Show 'Delete' context me&nu entries which bypass the trashcan"), this);
     mainLayout->addWidget(cbShowDeleteCommand);
     connect(cbShowDeleteCommand, SIGNAL(toggled(bool)), this, SLOT(changed()));
@@ -128,19 +103,12 @@ void KBehaviourOptions::load()
     KSharedConfig::Ptr globalconfig = KSharedConfig::openConfig("kdeglobals", KConfig::NoGlobals);
     KConfigGroup cg2(globalconfig, "KDE");
     cbShowDeleteCommand->setChecked( cg2.readEntry("ShowDeleteCommand", false) );
-
-    KSharedConfigPtr kioConfig = KSharedConfig::openConfig("kiorc", KConfig::NoGlobals);
-    KConfigGroup confirmationGroup(kioConfig, "Confirmations");
-    cbMoveToTrash->setChecked(confirmationGroup.readEntry("ConfirmTrash", DEFAULT_CONFIRMTRASH));
-    cbDelete->setChecked(confirmationGroup.readEntry("ConfirmDelete", DEFAULT_CONFIRMDELETE));
 }
 
 void KBehaviourOptions::defaults()
 {
     cbNewWin->setChecked(false);
 
-    cbMoveToTrash->setChecked(DEFAULT_CONFIRMTRASH);
-    cbDelete->setChecked(DEFAULT_CONFIRMDELETE);
     cbShowDeleteCommand->setChecked( false );
 }
 
@@ -154,12 +122,6 @@ void KBehaviourOptions::save()
     KConfigGroup cg2(globalconfig, "KDE");
     cg2.writeEntry( "ShowDeleteCommand", cbShowDeleteCommand->isChecked());
     cg2.sync();
-
-    KSharedConfigPtr kioConfig = KSharedConfig::openConfig("kiorc", KConfig::NoGlobals);
-    KConfigGroup confirmationGroup(kioConfig , "Confirmations");
-    confirmationGroup.writeEntry( "ConfirmTrash", cbMoveToTrash->isChecked());
-    confirmationGroup.writeEntry( "ConfirmDelete", cbDelete->isChecked());
-    confirmationGroup.sync();
 
     // Send signal to all konqueror instances
     QDBusMessage message =
