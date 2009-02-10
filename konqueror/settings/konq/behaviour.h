@@ -51,8 +51,6 @@ private:
 
   QLabel *winPixmap;
 
-  QCheckBox *cbMoveToTrash;
-  QCheckBox *cbDelete;
   QCheckBox *cbShowDeleteCommand;
 };
 
