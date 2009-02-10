@@ -94,6 +94,7 @@ public:
     void slotPopupMimeType();
     void slotPopupProperties();
     void slotOpenShareFileDialog();
+    void slotShowOriginalFile();
 
     KonqPopupMenu* q;
     QString m_urlTitle;
@@ -177,11 +178,17 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
     bool isTrashLink     = false;
     bool isCurrentTrash = false;
     bool currentDir     = false;
+    bool isSymLink = false;
+    bool isSymLinkInSameDir = false; // true for "ln -s foo bar", false for links to foo/sub or /foo
 
     //check if url is current directory
     if ( lstItems.count() == 1 )
     {
         KFileItem firstPopupItem( lstItems.first() );
+        if (firstPopupItem.isLink()) {
+            isSymLink = true;
+            isSymLinkInSameDir = !firstPopupItem.linkDest().contains('/');
+        }
         KUrl firstPopupURL( firstPopupItem.url() );
         firstPopupURL.cleanPath();
         //kDebug(1203) << "View path is " << url.url();
@@ -212,7 +219,7 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
 
     addGroup( "topactions" ); // used e.g. for ShowMenuBar. includes a separator at the end
 
-    QAction * act;
+    KAction * act;
 
     QAction *actNewWindow = 0;
 
@@ -274,6 +281,15 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
         if (m_itemFlags & KParts::BrowserExtension::ShowReload)
             addNamedAction( "reload" );
         q->addSeparator();
+    }
+
+    if (!currentDir && isSymLink && !isSymLinkInSameDir) {
+        // #65151: offer to open the target's parent dir
+        act = m_ownActions.addAction("show_original");
+        act->setText(isDirectory ? i18n("Show Original Directory") : i18n("Show Original File"));
+        act->setHelpText(i18n("Opens a new file manager window showing the target of this link, in its parent directory."));
+        QObject::connect(act, SIGNAL(triggered()), q, SLOT(slotShowOriginalFile()));
+        q->addAction(act);
     }
 
     // "open in new window" is either provided by us, or by the tabhandling group
@@ -504,6 +520,21 @@ void KonqPopupMenuPrivate::addPlugins()
             continue;
         plugin->setup(&m_ownActions, m_popupMenuInfo, q);
     }
+}
+
+void KonqPopupMenuPrivate::slotShowOriginalFile()
+{
+    const KFileItem item = m_popupMenuInfo.items().first();
+    const QString dest = item.linkDest();
+    KUrl destUrl = m_sViewURL;
+    if (dest.startsWith('/')) {
+        destUrl.setPath(dest);
+    } else {
+        destUrl.addPath(dest);
+    }
+    // Now destUrl points to the target file, let's go up to parent dir
+    destUrl.setPath(destUrl.directory());
+    KRun::runUrl(destUrl, "inode/directory", m_popupMenuInfo.parentWidget());
 }
 
 #include "konq_popupmenu.moc"
