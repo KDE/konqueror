@@ -110,6 +110,7 @@ private:
   Q_PRIVATE_SLOT(d, void slotPopupMimeType())
   Q_PRIVATE_SLOT(d, void slotPopupProperties())
   Q_PRIVATE_SLOT(d, void slotOpenShareFileDialog())
+  Q_PRIVATE_SLOT(d, void slotShowOriginalFile())
 
 private:
   KonqPopupMenuPrivate *d;
