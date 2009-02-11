@@ -1777,7 +1777,7 @@ void KonqMainWindow::slotConfigure()
                 "bookmarks"};
         for (uint i=0;i<sizeof(toplevelModules)/sizeof(char*);++i)
             if (KAuthorized::authorizeControlModule(toplevelModules[i]))
-                m_configureDialog->addModule(KCModuleInfo(toplevelModules[i]));
+                m_configureDialog->addModule(KCModuleInfo(QString(toplevelModules[i])+".desktop"));
 
 
         if (KAuthorized::authorizeControlModule("filebehavior") )
@@ -1792,7 +1792,7 @@ void KonqMainWindow::slotConfigure()
                 "kcmtrash"};
             for (uint i=0;i<sizeof(fmModules)/sizeof(char*);++i)
                 if (KAuthorized::authorizeControlModule(fmModules[i]))
-                    m_configureDialog->addModule(KCModuleInfo(fmModules[i]),fileManagementGroup);
+                    m_configureDialog->addModule(KCModuleInfo(QString(fmModules[i])+".desktop"),fileManagementGroup);
         }
 
         if (KAuthorized::authorizeControlModule("khtml_behavior"))
@@ -1814,7 +1814,7 @@ void KonqMainWindow::slotConfigure()
                 "khtml_plugins"};
             for (uint i=0;i<sizeof(webModules)/sizeof(char*);++i)
                 if (KAuthorized::authorizeControlModule(webModules[i]))
-                    m_configureDialog->addModule(KCModuleInfo(webModules[i]),webGroup);
+                    m_configureDialog->addModule(KCModuleInfo(QString(webModules[i])+".desktop"),webGroup);
 
         }
         //END SYNC with initActions()
