@@ -536,6 +536,8 @@ void KonqMainWindow::openUrl(KonqView *_view, const KUrl &_url,
     url.setFileName( QString() );
   }
 
+  m_combo->lineEdit()->setModified(false);
+
   KonqView *view = _view;
 
   // When clicking a 'follow active' view (e.g. view is the sidebar),
@@ -3374,7 +3376,9 @@ void KonqMainWindow::setLocationBarURL( const KUrl &url )
 
 void KonqMainWindow::setLocationBarURL( const QString &url )
 {
-    if (url != m_combo->lineEdit()->text()) {
+    // Don't set the location bar URL if it hasn't changed
+    // or if the user had time to edit the url since the last call to openUrl (#64868)
+    if (url != m_combo->lineEdit()->text() && !m_combo->lineEdit()->isModified()) {
         //kDebug(1202) << "url=" << url;
         m_combo->setURL( url );
         updateWindowIcon();
