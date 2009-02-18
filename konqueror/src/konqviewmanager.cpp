@@ -965,8 +965,8 @@ void KonqViewManager::doSetActivePart( KParts::Part *part )
                                          ? m_pMainWindow->currentView()->part() : 0;
     if (part == activePart() && mainWindowActivePart == part)
     {
-      if ( part )
-        kDebug(1202) << "Part is already active!";
+      //if (part)
+      //    kDebug(1202) << "Part is already active!";
       return;
     }
 
