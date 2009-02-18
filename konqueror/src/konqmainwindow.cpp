@@ -485,8 +485,9 @@ void KonqMainWindow::openFilteredUrl(const QString & url, const KonqOpenURLReque
     // #4070: Give focus to view after URL was entered manually
     // Note: we do it here if the view mode (i.e. part) wasn't changed
     // If it is changed, then it's done in KonqView::changePart
-    if ( m_currentView && m_currentView->part() )
-      m_currentView->part()->widget()->setFocus();
+    if ( m_currentView && m_currentView->part() ) {
+        m_currentView->part()->widget()->setFocus();
+    }
 
 }
 
@@ -2339,13 +2340,14 @@ void KonqMainWindow::slotAddTab()
     //or keep focus...
     QWidget *widget = newView->frame() && newView->frame()->part() ?
                       newView->frame()->part()->widget() : 0;
+    QWidget* origFocusProxy = widget ? widget->focusProxy() : 0;
     if (widget)
         widget->setFocusProxy(m_combo);
 
     m_pViewManager->showTab( newView );
 
     if (widget)
-        widget->setFocusProxy(0);
+        widget->setFocusProxy(origFocusProxy);
 
     m_pWorkingTab = 0;
 }
