@@ -118,6 +118,8 @@ KWebPage::KWebPage(QObject *parent)
     settings()->setWebGraphic(QWebSettings::MissingPluginGraphic, KIcon("preferences-plugin").pixmap(32, 32));
     settings()->setWebGraphic(QWebSettings::MissingImageGraphic, KIcon("image-missing").pixmap(32, 32));
     settings()->setWebGraphic(QWebSettings::DefaultFrameIconGraphic, KIcon("applications-internet").pixmap(32, 32));
+    settings()->setUserStyleSheetUrl( QUrl( WebKitSettings::self()->userStyleSheet() ) );
+    
     const QString host = mainFrame()->url().host();
 
     connect(this, SIGNAL(downloadRequested(const QNetworkRequest &)),
