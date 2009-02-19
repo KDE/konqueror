@@ -119,7 +119,11 @@ KWebPage::KWebPage(QObject *parent)
     settings()->setWebGraphic(QWebSettings::MissingImageGraphic, KIcon("image-missing").pixmap(32, 32));
     settings()->setWebGraphic(QWebSettings::DefaultFrameIconGraphic, KIcon("applications-internet").pixmap(32, 32));
     settings()->setUserStyleSheetUrl( QUrl( WebKitSettings::self()->userStyleSheet() ) );
-    
+    settings()->setFontSize( QWebSettings::MinimumFontSize, WebKitSettings::self()->minFontSize() );
+    settings()->setFontSize( QWebSettings::MinimumLogicalFontSize, WebKitSettings::self()->minFontSize() );
+    settings()->setFontSize( QWebSettings::DefaultFontSize, WebKitSettings::self()->mediumFontSize() );
+    settings()->setFontSize( QWebSettings::DefaultFixedFontSize, WebKitSettings::self()->mediumFontSize() );
+
     const QString host = mainFrame()->url().host();
 
     connect(this, SIGNAL(downloadRequested(const QNetworkRequest &)),
