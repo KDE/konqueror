@@ -36,7 +36,6 @@ class KonqView;
 class KonqViewManager;
 class KonqFrameContainerBase;
 class KonqFrameContainer;
-class KonqTabsStyle;
 class KConfig;
 
 class NewTabToolButton;
@@ -135,10 +134,7 @@ private:
   bool m_permanentCloseButtons;
   bool m_alwaysTabBar;
   bool m_MouseMiddleClickClosesTab;
-  KonqTabsStyle *m_konqTabsStyle;
   QMap<QString,QAction*> m_popupActions;
-
-  friend class KonqTabsStyle;
 };
 
 #include <QToolButton>

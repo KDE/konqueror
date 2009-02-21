@@ -62,7 +62,6 @@ set(konqueror_KDEINIT_SRCS
    KonquerorAdaptor.cpp
    KonqMainWindowAdaptor.cpp
    KonqViewAdaptor.cpp
-   konqproxystyle.cpp
    konqundomanager.cpp
    konqclosedwindowsmanager.cpp
    konqsessionmanager.cpp
