@@ -82,7 +82,7 @@ ChFaceDlg::ChFaceDlg(const QString& picsdir, QWidget *parent)
   {
     const QStringList picslist = facesDir.entryList( QDir::Files );
     for ( QStringList::const_iterator it = picslist.constBegin(); it != picslist.constEnd(); ++it )
-      new QListWidgetItem( QIcon( picsdir + *it ), (*it).section(".",0,0), ui.m_FacesWidget );
+      new QListWidgetItem( QIcon( picsdir + *it ), (*it).section('.',0,0), ui.m_FacesWidget );
   }
   facesDir.setPath( KCFGUserAccount::userFaceDir() );
   if ( facesDir.exists() )
@@ -91,7 +91,7 @@ ChFaceDlg::ChFaceDlg(const QString& picsdir, QWidget *parent)
     for ( QStringList::const_iterator it = picslist.constBegin(); it != picslist.constEnd(); ++it )
       new QListWidgetItem( QIcon( KCFGUserAccount::userFaceDir() + *it ),
                            '/'+(*it) == KCFGUserAccount::customFaceFile() ? 
-                           i18n("(Custom)") : (*it).section(".",0,0),
+                           i18n("(Custom)") : (*it).section('.',0,0),
                            ui.m_FacesWidget );
   }
 
@@ -125,14 +125,14 @@ void ChFaceDlg::addCustomPixmap( const QString &imPath, bool saveCopy )
       userfaces.mkdir( userfaces.absolutePath() );
 
     pix.save( userfaces.absolutePath() + "/.userinfo-tmp" , "PNG" );
-    KonqOperations::copy( this, KonqOperations::COPY, KUrl::List( KUrl( userfaces.absolutePath() + "/.userinfo-tmp" ) ), KUrl( userfaces.absolutePath() + '/' + QFileInfo(imPath).fileName().section(".",0,0) ) );
+    KonqOperations::copy( this, KonqOperations::COPY, KUrl::List( KUrl( userfaces.absolutePath() + "/.userinfo-tmp" ) ), KUrl( userfaces.absolutePath() + '/' + QFileInfo(imPath).fileName().section('.',0,0) ) );
 #if 0
   if ( !pix.save( userfaces.absolutePath() + '/' + imPath , "PNG" ) )
     KMessageBox::sorry(this, i18n("There was an error saving the image:\n%1", userfaces.absolutePath() ) );
 #endif
   }
 
-  QListWidgetItem* newface = new QListWidgetItem( QIcon(QPixmap::fromImage(pix)), QFileInfo(imPath).fileName().section(".",0,0), ui.m_FacesWidget );
+  QListWidgetItem* newface = new QListWidgetItem( QIcon(QPixmap::fromImage(pix)), QFileInfo(imPath).fileName().section('.',0,0), ui.m_FacesWidget );
   ui.m_FacesWidget->scrollToItem( newface );
   ui.m_FacesWidget->setCurrentItem( newface );
 }
