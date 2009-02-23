@@ -575,7 +575,7 @@ int main( int argc, char **argv )
     }
 
     // read in the plugins mime information
-    kDebug(1433) << "Scanning directories";
+    kDebug(1433) << "Scanning directories" << searchPaths;
     int count = searchPaths.count();
     int i = 0;
     for ( QStringList::const_iterator it = searchPaths.constBegin();

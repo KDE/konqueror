@@ -1,5 +1,5 @@
 /*  This file is part of the KDE project
-    Copyright (C) 2008 David Faure <faure@kde.org>
+    Copyright (C) 2009 David Faure <faure@kde.org>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -17,12 +17,14 @@
     the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
     Boston, MA 02110-1301, USA.
 */
-#ifndef FILETYPES_CONFIG_H
-#define FILETYPES_CONFIG_H
 
-// TODO enable only with shared-mime-info >= 0.40. Earlier versions abort on <icon>.
-// Also needs kdelibs API changes (KMimeType::setUserSpecifiedIcon) which will only be
-// committed for KDE-4.2.
-#define ENABLE_CHANGING_ICON 0
+#ifndef SHAREDMIMEINFOVERSION_H
+#define SHAREDMIMEINFOVERSION_H
 
-#endif /* FILETYPES_CONFIG_H */
+namespace SharedMimeInfoVersion
+{
+    bool supportsIcon();
+}
+
+#endif /* SHAREDMIMEINFOVERSION_H */
+

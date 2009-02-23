@@ -10,6 +10,7 @@ set(libfiletypes_SRCS
  mimetypewriter.cpp
  newtypedlg.cpp
  kserviceselectdlg.cpp
+ sharedmimeinfoversion.cpp
 )
 
 ########### next target ###############
