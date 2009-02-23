@@ -22,7 +22,6 @@
 #define MIMETYPEDATA_H
 
 #include <kmimetype.h>
-#include "filetypes-config.h"
 
 /**
  * This is a non-gui (data) class, that represents a mimetype.

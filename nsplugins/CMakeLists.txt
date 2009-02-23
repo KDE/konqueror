@@ -52,7 +52,7 @@ if (X11_Xt_LIB)
 
   ########### nspluginscan ###############
 
-  set(nspluginscan_SRCS pluginscan.cpp plugin_paths.cpp ../konqueror/settings/filetypes/mimetypewriter.cpp)
+  set(nspluginscan_SRCS pluginscan.cpp plugin_paths.cpp ../konqueror/settings/filetypes/mimetypewriter.cpp ../konqueror/settings/filetypes/sharedmimeinfoversion.cpp)
 
   include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../konqueror/settings/filetypes/)
 

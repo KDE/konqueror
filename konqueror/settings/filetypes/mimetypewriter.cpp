@@ -19,7 +19,7 @@
 */
 
 #include "mimetypewriter.h"
-#include "filetypes-config.h"
+#include "sharedmimeinfoversion.h"
 
 #include <kdebug.h>
 #include <kprocess.h>
@@ -100,15 +100,12 @@ bool MimeTypeWriter::write()
     }
 
     if (!d->m_iconName.isEmpty()) {
-        // User-specified icon name; requires update-mime-database >= 0.24 at least
-        // Otherwise update-mime-database fails with an error about an unknown attribute!
-#if ENABLE_CHANGING_ICON
-        // TODO re-enable once update-mime-database is fixed
-        // and either we require a version with the fix or we have a check on the version number
-        writer.writeStartElement(nsUri, "icon");
-        writer.writeAttribute("name", d->m_iconName);
-        writer.writeEndElement(); // icon
-#endif
+        // User-specified icon name
+        if (SharedMimeInfoVersion::supportsIcon()) {
+            writer.writeStartElement(nsUri, "icon");
+            writer.writeAttribute("name", d->m_iconName);
+            writer.writeEndElement(); // icon
+        }
     }
 
     foreach(const QString& pattern, d->m_patterns) {

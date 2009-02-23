@@ -21,7 +21,6 @@
 #define FILETYPEDETAILS_H
 
 #include <QtGui/QTabWidget>
-#include "filetypes-config.h"
 
 class KIconButton;
 class MimeTypeData;
@@ -84,12 +83,10 @@ private:
 
     QTabWidget* m_tabWidget;
 
-  // First tab - General
-#if ENABLE_CHANGING_ICON
+    // First tab - General
     KIconButton* iconButton;
-#else
-    QLabel *iconButton;
-#endif
+    QLabel* iconLabel; // if icon cannot be changed
+
   QListWidget *extensionLB;
   KPushButton *addExtButton, *removeExtButton;
   KLineEdit *description;

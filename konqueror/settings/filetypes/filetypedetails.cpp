@@ -19,6 +19,7 @@
 
 // Own
 #include "filetypedetails.h"
+#include "sharedmimeinfoversion.h"
 
 // Qt
 #include <QtGui/QBoxLayout>
@@ -65,18 +66,23 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   hBox->setSpacing(KDialog::spacingHint());
   firstLayout->addLayout(hBox);
 
-#if ENABLE_CHANGING_ICON
-  iconButton = new KIconButton(firstWidget);
-  iconButton->setIconType(KIconLoader::Desktop, KIconLoader::MimeType);
-  connect(iconButton, SIGNAL(iconChanged(QString)), SLOT(updateIcon(QString)));
-  iconButton->setWhatsThis( i18n("This button displays the icon associated"
-                                 " with the selected file type. Click on it to choose a different icon.") );
-#else
-  iconButton = new QLabel(firstWidget);
-#endif
-
-  iconButton->setFixedSize(70, 70);
-  hBox->addWidget(iconButton);
+    if (SharedMimeInfoVersion::supportsIcon()) {
+        iconButton = new KIconButton(firstWidget);
+        iconButton->setIconType(KIconLoader::Desktop, KIconLoader::MimeType);
+        connect(iconButton, SIGNAL(iconChanged(QString)), SLOT(updateIcon(QString)));
+        iconButton->setWhatsThis( i18n("This button displays the icon associated"
+                                       " with the selected file type. Click on it to choose a different icon.") );
+        iconButton->setFixedSize(70, 70);
+        iconLabel = 0;
+        hBox->addWidget(iconButton);
+    } else {
+        iconButton = 0;
+        iconLabel = new QLabel(firstWidget);
+        iconLabel->setWhatsThis( i18n("This is the icon associated with the selected file type. "
+                                      "Choosing a different icon requires shared-mime-info to be at least version 0.40.") );
+        iconLabel->setFixedSize(70, 70);
+        hBox->addWidget(iconLabel);
+    }
 
   QGroupBox *gb = new QGroupBox(i18n("Filename Patterns"), firstWidget);
   hBox->addWidget(gb);
@@ -120,7 +126,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   vbox->addStretch(1);
 
   gb->setFixedHeight(gb->minimumSizeHint().height());
-  
+
   description = new KLineEdit(firstWidget);
   description->setClearButtonShown(true);
   connect(description, SIGNAL(textChanged(const QString &)),
@@ -193,7 +199,6 @@ void FileTypeDetails::updateRemoveButton()
 
 void FileTypeDetails::updateIcon(const QString &icon)
 {
-#if ENABLE_CHANGING_ICON
   if (!m_mimeTypeData)
     return;
 
@@ -203,9 +208,6 @@ void FileTypeDetails::updateIcon(const QString &icon)
       m_item->setIcon(icon);
 
   emit changed(true);
-#else
-  Q_UNUSED(icon)
-#endif
 }
 
 void FileTypeDetails::updateDescription(const QString &desc)
@@ -338,11 +340,10 @@ void FileTypeDetails::setMimeTypeData( MimeTypeData * mimeTypeData, TypesListIte
   m_item = item; // can be 0
   Q_ASSERT(mimeTypeData);
   m_mimeTypeLabel->setText(i18n("File type %1", mimeTypeData->name()));
-#if ENABLE_CHANGING_ICON
-  iconButton->setIcon(mimeTypeData->icon());
-#else
-  iconButton->setPixmap(DesktopIcon(mimeTypeData->icon()));
-#endif
+  if (iconButton)
+      iconButton->setIcon(mimeTypeData->icon());
+  else
+      iconLabel->setPixmap(DesktopIcon(mimeTypeData->icon()));
   description->setText(mimeTypeData->comment());
   m_rbGroupSettings->setText( i18n("Use settings for '%1' group", mimeTypeData->majorType() ) );
   extensionLB->clear();

@@ -19,6 +19,7 @@
 */
 
 #include "mimetypedata.h"
+#include "sharedmimeinfoversion.h"
 #include <kprotocolmanager.h>
 #include "mimetypewriter.h"
 #include <kdebug.h>
@@ -82,9 +83,7 @@ MimeTypeData::MimeTypeData(const QString& mimeName, bool)
 void MimeTypeData::initFromKMimeType()
 {
     m_comment = m_mimetype->comment();
-#if ENABLE_CHANGING_ICON
     m_userSpecifiedIcon = m_mimetype->userSpecifiedIconName();
-#endif
     setPatterns(m_mimetype->patterns());
     m_autoEmbed = readAutoEmbed();
 }
@@ -211,12 +210,10 @@ bool MimeTypeData::isMimeTypeDirty() const
         kDebug() << "Mimetype Comment Dirty: old=" << m_mimetype->comment() << "m_comment=" << m_comment;
         return true;
     }
-#if ENABLE_CHANGING_ICON
     if (m_mimetype->userSpecifiedIconName() != m_userSpecifiedIcon) {
         kDebug() << "Mimetype Icon Dirty: old=" << m_mimetype->iconName() << "m_userSpecifiedIcon=" << m_userSpecifiedIcon;
         return true;
     }
-#endif
 
     QStringList storedPatterns = m_mimetype->patterns();
     storedPatterns.sort(); // see ctor
@@ -286,11 +283,13 @@ bool MimeTypeData::sync()
     if (isMimeTypeDirty()) {
         MimeTypeWriter mimeTypeWriter(name());
         mimeTypeWriter.setComment(m_comment);
-#if ENABLE_CHANGING_ICON
-        if (!m_userSpecifiedIcon.isEmpty()) {
-            mimeTypeWriter.setIconName(m_userSpecifiedIcon);
+        if (SharedMimeInfoVersion::supportsIcon()) {
+            // Very important: don't write <icon> if shared-mime-info doesn't support it,
+            // it would abort on it!
+            if (!m_userSpecifiedIcon.isEmpty()) {
+                mimeTypeWriter.setIconName(m_userSpecifiedIcon);
+            }
         }
-#endif
         mimeTypeWriter.setPatterns(m_patterns);
         if (!mimeTypeWriter.write())
             return false;
