@@ -490,6 +490,8 @@ void KonqView::connectPart()
   //  b) the part is a plain krop (no BE)
   m_bURLDropHandling = ( urlDropHandling.type() == QVariant::Bool &&
                          urlDropHandling.toBool() );
+  if (m_bURLDropHandling)
+      m_pPart->widget()->setAcceptDrops(true);
 
   m_pPart->widget()->installEventFilter( this );
 
