@@ -487,7 +487,7 @@ void KNewMenu::slotActionTriggered(QAction* action)
                 //kDebug(1203) << "second arg=" << (*it).url();
                 //kDebug(1203) << "third arg=" << entry.text;
                 QString text = entry.text;
-                text.replace( "...", QString() ); // the ... is fine for the menu item but not for the default filename
+                text.remove( "..." ); // the ... is fine for the menu item but not for the default filename
 
                 KUrl defaultFile( *it );
                 defaultFile.addPath( KIO::encodeFileName( text ) );
@@ -507,7 +507,7 @@ void KNewMenu::slotActionTriggered(QAction* action)
         // Show the small dialog for getting the destination filename
         bool ok;
         QString text = entry.text;
-        text.replace( "...", QString() ); // the ... is fine for the menu item but not for the default filename
+        text.remove( "..." ); // the ... is fine for the menu item but not for the default filename
 
         KUrl defaultFile( *(d->popupFiles.begin()) );
         defaultFile.addPath( KIO::encodeFileName( text ) );
