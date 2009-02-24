@@ -40,8 +40,8 @@
 </copyright>
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2008-09-01</date>
-<releaseinfo>4.1.1</releaseinfo>
+<date>2009-02-05</date>
+<releaseinfo>4.2.00</releaseinfo>
 
 <abstract>
 <para>&kwrite; is a text editor for &kde; allowing you to edit one file at the time per window.</para>
@@ -76,7 +76,7 @@ allowing you to edit one file at the time per window.
 &kappname; features two different modes, a simple mode with a straightforward interface 
 and an advanced mode with more features and more extensive menu items.
 The advanced mode is enabled by checking the option <link linkend="appearance">
-Enable Power User Mode (&kde; 3 mode)</link> 
+Enable power user mode (&kde; 3 mode)</link> 
 on the <guilabel>Appearance</guilabel> page in &kappname;s 
 settings.
 </para>
@@ -125,10 +125,10 @@ option might look something like the following:</para>
 </informalexample>
 </sect2>
 <sect2 id="editing-files-on-the-internet">
-<title>Specify a file on the internet</title>
+<title>Specify a file on the Internet</title>
 
 <para>The above-mentioned method could even be used to open files on the
-internet (if the user has an active connection at the time.)  An example of
+Internet (if the user has an active connection at the time.)  An example of
 this might look like the following:</para>
 
 <informalexample><screen>
@@ -222,7 +222,7 @@ programs, and allows you to pipe command output into &kwrite;.</para></listitem>
 </sect2>
 </sect1>
 
-<sect1 id="keybindings"> <!--to be checked lueck-->
+<sect1 id="keybindings"> <!--has to be checked lueck-->
 <title>Shortcuts</title>
 
 <para>Many of the shortcuts are configurable by way of the <link
@@ -500,13 +500,11 @@ action="simul">&Ctrl;<keycap>+</keycap></keycombo></para></entry>
 action="simul">&Ctrl;&Shift;<keycap>+</keycap></keycombo></para></entry>
 <entry><para>Expand Toplevel</para></entry>
 </row>
-<!-- only in 4.2 uncomment after backport to 4.1
 <row>
 <entry><para><keycombo
-action="simul">Meta&Ctrl;<keycap>V</keycap></keycombo></para></entry>
+action="simul"><keysym>Meta</keysym>&Ctrl;<keycap>V</keycap></keycombo></para></entry>
 <entry><para>VI input mode</para></entry>
 </row>
--->
 <row>
 <entry><para><keycombo
 action="simul">&Ctrl;<keycap>Space</keycap></keycombo></para></entry>
@@ -553,9 +551,9 @@ action="simul"><keycap>F11</keycap></keycombo></para></entry>
 
 <para>There are different menus and menu items in simple and advanced mode.
 The advanced mode is enabled by checking the option <link linkend="appearance">
-Enable Power User Mode (&kde; 3 mode)</link> 
+Enable power user mode (&kde; 3 mode)</link> 
 on the <guilabel>Appearance</guilabel> page in &kappname;s settings.</para>
-<!-- This is also valid for kates menu file, kate has additional Save All Ctrl+L, Reload All, Close Other, Close All items-->
+<!-- This is also valid for kates menu file, kate has additional Save All Ctrl+L, Reload All, Close Other, Close All-->
 <sect1 id="file"> 
 <title>The <guimenu>File</guimenu> Menu</title>
 
@@ -731,7 +729,7 @@ and how to print.
 <term id="export-as-html">
 <menuchoice>
 <guimenu>File</guimenu>
-<guimenuitem>Export as HTML...</guimenuitem>
+<guimenuitem>Export as HTML</guimenuitem>
 </menuchoice>
 </term>
 <listitem>
@@ -893,6 +891,22 @@ The status bar shows the current state of the Selection Mode, either <guilabel>B
 <guilabel>LINE</guilabel>.</para>
 </listitem>
 </varlistentry>
+<varlistentry><!-- only in power user mode -->
+<term><anchor id="vi-input-mode"/><menuchoice>
+<shortcut>
+<keycombo action="simul"><keysym>Meta</keysym>&Ctrl;<keycap>V</keycap></keycombo>
+</shortcut>
+<guimenu>Edit</guimenu><guimenuitem>VI input
+Mode</guimenuitem></menuchoice></term>
+<listitem>
+<para>Switch to a vi-like, modal editing mode. This mode supports the most used commands 
+and motions from vim's normal and visual mode and has an optional vi mode statusbar
+This status bar shows commands while they are being entered, output from commands and 
+the current mode.The behavior of this mode can be configured in the 
+<link linkend="pref-edit-vi-input-mode">Vi Input Mode</link> section of the  
+<guilabel>Editing</guilabel> page in &kappname;s settings dialog.</para>
+</listitem>
+</varlistentry>
 <varlistentry>
 <term><anchor id="overwrite-mode"/><menuchoice>
 <shortcut>
@@ -925,7 +939,7 @@ string in the text, this is indicated by a light red background color of the ent
 and <guilabel>Not found</guilabel> is displayed at the right side of the bar.</para>
 <para>Use the <guilabel>Next</guilabel> or <guilabel>Previous</guilabel> button 
 to jump to the next or previous match in the document.</para> 
-<para>You can modify the search behaviour by selecting different 
+<para>You can modify the search behavior by selecting different 
 <guilabel>Options</guilabel>: 
 The <guilabel>Highlight all</guilabel> option highlights all matches in the document.
 Selecting <guilabel>Match case</guilabel> will limit finds to entries that match the
@@ -993,20 +1007,19 @@ action="simul">&Ctrl;<keycap>R</keycap></keycombo></shortcut>
 <para>This command opens the power search and replace bar.
 On the upper left side of the bar is an icon to close the bar, followed by a small text 
 box for entering the search pattern.</para>
-<para>You can control the search mode by selecting <guilabel>Plain Text</guilabel>,
-<guilabel>Whole Words</guilabel>, <guilabel>Escape Sequences</guilabel> or 
-<guilabel>Regular Expression</guilabel>. For the last two options the 
-<guibutton>Add</guibutton> button is enabled and allows you to add special items to the
-search pattern from a predefined list.
+<para>You can control the search mode by selecting <guilabel>Plain text</guilabel>
+<keycombo action="simul">&Alt;<keycap>1</keycap></keycombo>,
+<guilabel>Whole words</guilabel><keycombo action="simul">&Alt;<keycap>2</keycap></keycombo>, 
+<guilabel>Escape sequences</guilabel><keycombo action="simul">&Alt;<keycap>3</keycap></keycombo>
+or <guilabel>Regular expression</guilabel><keycombo action="simul">&Alt;<keycap>4</keycap></keycombo>. 
 </para>
 <para>Use the <guilabel>Next</guilabel> or <guilabel>Previous</guilabel> button to jump 
 to the next or previous match in the document.</para>
 <para>Enter the text to replace with in the text box labeled <guilabel>Replace</guilabel>
 and click the <guibutton>Replace</guibutton> button to replace only the highlighted text or
 the <guibutton>Replace All</guibutton> button to replace the search text in the whole document.
-If the option <guilabel>Use placeholders</guilabel> is checked you can add special items 
-to the replacement text by clicking the <guibutton>Add</guibutton> button.</para>
-<para>You can modify the search and replace behaviour by selecting different 
+</para>
+<para>You can modify the search and replace behavior by selecting different 
 options on the right side of the bar.
 The <guilabel>Highlight all</guilabel> option highlights all matches in the document.
 Selecting <guilabel>Match case</guilabel> will limit finds to entries that match the
@@ -1073,7 +1086,7 @@ arrow decrease it. Close the bar with a click on the icon on the left side of th
 
 </sect1>
 <sect1 id="view-menu">
-<!-- This is also valid for kates menu edit, only New Window is replaced by Vi input mode-->
+<!-- This is also valid for kates menu view, but kate does not have the New Window item -->
 <title>The <guimenu>View</guimenu> menu</title>
 
 <para>The <guimenu>View</guimenu> menu allows you to manage settings
@@ -1094,7 +1107,7 @@ specific to the active editor, and to manage frames.</para>
 document in one window are reflected in the other window and vice versa.</para>
 </listitem>
 </varlistentry>
-<!--kwrite in 4.2 has VI Input mode Meta+Ctrl+V -->
+
 <varlistentry>
 <term>
 <anchor id="view-command-line"/><!-- only in power user mode -->
@@ -1273,7 +1286,6 @@ hidden.</para>
 </listitem>
 </varlistentry>
 
-<!-- only in 4.2, uncomment when backported to 4.1
 <varlistentry>
 <term><menuchoice><guimenuitem>Enlarge Font</guimenuitem></menuchoice>
 </term>
@@ -1285,7 +1297,6 @@ hidden.</para>
 </term>
 <listitem><para>This decreases the display font size.</para></listitem>
 </varlistentry>
--->
 </variablelist>
 
 </sect1>
@@ -1865,7 +1876,7 @@ in the toolbar.</para> </listitem>
 <sect1 id="help">
 <title>The <guimenu>Help</guimenu> Menu</title>
 
-<!-- additional "About Editor Component" + "Tip of the Day", but no "Switch Language"-->
+<!-- additional "About Editor Component" + "Tip of the Day"-->
 
 &help.menu.documentation;
 
@@ -1891,7 +1902,7 @@ current settings and close the dialog by means of the
 <guibutton>OK</guibutton> button, or <guibutton>Cancel</guibutton> the
 process. The categories <guilabel>Appearance</guilabel>,
 <guilabel>Fonts &amp; Colors</guilabel>, <guilabel>Editing</guilabel>,
-<guilabel>Open/Save</guilabel>, <guilabel>Shortcuts</guilabel>  and 
+<guilabel>Open/Save</guilabel> and 
 <guilabel>Extensions</guilabel> are detailed below.
 </para>
 
@@ -1904,7 +1915,7 @@ process. The categories <guilabel>Appearance</guilabel>,
 <listitem>
 <variablelist>
 <varlistentry id="appearance-settings">
-<term><guilabel>Dynamic word wrap</guilabel></term>
+<term><guilabel>Dynamic Word Wrap</guilabel></term>
 <listitem><para>If this option is checked, the text lines
 will be wrapped at the view border on the screen.</para></listitem>
 </varlistentry>
@@ -1967,7 +1978,7 @@ for instance show bookmarks.</para></listitem>
 <varlistentry>
 <term><guilabel>Sort Bookmarks Menu
 </guilabel></term>
-<listitem><para>These options are only displayed, if <guilabel>Enable Power User Mode 
+<listitem><para>These options are only displayed, if <guilabel>Enable power user mode 
 (&kde; 3 mode)</guilabel> in the next section is checked.</para>
 <para>
 <variablelist>
@@ -1993,7 +2004,7 @@ independently from where it is placed in the document.</para></listitem>
 <listitem><para>
 <variablelist>
 <varlistentry>
-<term><guilabel>Enable Power User Mode (&kde; 3 mode)
+<term><guilabel>Enable power user mode (&kde; 3 mode)
 </guilabel></term>
 <listitem><para>Switch between simple and advanced mode. 
 Changing this mode affects only newly opened / created documents. 
@@ -2180,7 +2191,7 @@ when you press the &Tab; key.</para>
 </listitem>
 </varlistentry>
 <varlistentry>
-<term><guilabel>Show tabulators</guilabel></term>
+<term><guilabel>Highlight tabulators</guilabel></term>
 <listitem>
 <para>When this is enabled &kappname; will display a small dot as a visual
 representation of tabulator characters.</para>
@@ -2474,6 +2485,45 @@ and insert that number of spaces instead of a &Tab; character.</para>
 
 </sect2>
 
+<sect2 id="pref-edit-vi-input-mode">
+<title>Vi Input Mode</title>
+<variablelist>
+<varlistentry>
+<term><guilabel>General</guilabel></term>
+<listitem>
+<variablelist>
+<varlistentry>
+<term><guilabel>Use the VI Input mode</guilabel></term>
+<listitem>
+<para>When selected, the vi input mode will be enabled when opening a new view.
+You can still toggle the vi input mode on/off for a particular view in the
+<guilabel>Edit</guilabel> menu.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term><guilabel>Let VI commands override Kate shortcuts</guilabel></term>
+<listitem>
+<para>When selected, vi commands will override &kate;'s built-in commands. For 
+example: <keycombo action="simul">&Ctrl;<keycap>R</keycap></keycombo> will redo, 
+and override the standard action (showing the search and replace dialog).</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term><guilabel>Hide the VI mode status bar</guilabel></term>
+<listitem>
+<para>By default, an extra status bar will be used when the Vi input mode is
+enabled. This status bar shows commands while they are being typed and
+messages/errors produced by Vi commands.</para>
+<para>Checking this options will hide this extra status line.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
 </sect1>
 
 <sect1 id="pref-open-save">
@@ -2492,6 +2542,15 @@ and insert that number of spaces instead of a &Tab; character.</para>
 <term><guilabel>Encoding:</guilabel></term>
 <listitem>
 <para>This sets the default character encoding for your files.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term><guilabel>Encoding autodetection</guilabel></term>
+<listitem>
+<para>Select an item from the drop down box, either to disable autodetection or
+use <guilabel>Universal</guilabel> to enable autodetection for all encodings. But as
+this may probably only detect utf-8/utf-16, selecting a region will use custom heuristics
+for better results.</para>
 </listitem>
 </varlistentry>
 <varlistentry>
@@ -2684,16 +2743,6 @@ from the &kate; website.
 </variablelist>
 </sect2>
 
-</sect1>
-
-<sect1 id="pref-shortcuts">
-<title>Shortcuts</title> <!-- this is only in 4.1 in kate and kwrite only cursor shortcuts??? -->
-<para>You can change here the shortcut keys configuration. Select an
-action and click on <guilabel>None</guilabel> next to the <guilabel>Custom</guilabel> radio button
-and press the key combination, if you want a different shortcut
-for this action.</para>
-<para>The search line allows you to look for a specific action and see
-its associated shortcut.</para>
 </sect1>
 
 <sect1 id="pref-plugins">
