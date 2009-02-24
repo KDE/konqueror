@@ -177,6 +177,14 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
     : KParts::MainWindow()
     , m_paClosedItems(0)
     , m_fullyConstructed(false)
+    , m_bLocationBarConnected(false)
+    , m_bURLEnterLock(false)
+    , m_urlCompletionStarted(false)
+    , m_prevMenuBarVisible(true)
+    , m_goBuffer(0)
+    , m_pBookmarkMenu(0)
+    , m_configureDialog(0)
+    , m_pURLCompletion(0)
 {
   incInstancesCount();
   setPreloadedFlag( false );
@@ -186,29 +194,17 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
 
   s_lstViews->append( this );
 
-  m_urlCompletionStarted = false;
-
-  m_currentView = 0;
   m_pChildFrame = 0;
   m_pActiveChild = 0;
   m_pWorkingTab = 0;
-  m_pBookmarkMenu = 0;
   (void) new KonqMainWindowAdaptor( this );
-  m_combo = 0;
-  m_bURLEnterLock = false;
-  m_bLocationBarConnected = false;
   m_paBookmarkBar = 0;
-  m_pURLCompletion = 0;
-  m_goBuffer = 0;
-  m_configureDialog = 0;
 
   m_viewModesGroup = new QActionGroup(this);
   m_viewModesGroup->setExclusive(true);
   connect(m_viewModesGroup, SIGNAL(triggered(QAction*)),
           this, SLOT(slotViewModeTriggered(QAction*)),
           Qt::QueuedConnection); // Queued so that we don't delete the action from the code that triggered it.
-
-  m_prevMenuBarVisible = true;
 
     // This has to be called before any action is created for this mainwindow
     setComponentData(KGlobal::mainComponent(), false /*don't load plugins yet*/);
@@ -5826,21 +5822,15 @@ KonqView * KonqMainWindow::currentView() const
 
 bool KonqMainWindow::accept( KonqFrameVisitor* visitor )
 {
-    if ( !visitor->visit( this ) )
-        return false;
-    if ( m_pChildFrame && !m_pChildFrame->accept( visitor ) )
-        return false;
-    if ( !visitor->endVisit( this ) )
-        return false;
-    return true;
+    return visitor->visit( this )
+           && (!m_pChildFrame || m_pChildFrame->accept( visitor ))
+           && visitor->endVisit( this );
 }
 
 bool KonqMainWindow::hasViewWithMimeType(const QString& mimeType) const
 {
-    MapViews::const_iterator it = m_mapViews.constBegin();
-    const MapViews::const_iterator end = m_mapViews.constEnd();
-    for (; it != end; ++it) {
-        if ((*it)->supportsMimeType(mimeType)) {
+    foreach (KonqView* view, m_mapViews.values()) {
+        if (view->supportsMimeType(mimeType)) {
             //kDebug(1202) << *it << "supports" << mimeType << "!";
             return true;
         }

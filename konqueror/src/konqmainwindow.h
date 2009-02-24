@@ -690,6 +690,7 @@ private: // members
 
   KToggleFullScreenAction *m_ptaFullScreen;
 
+  bool m_fullyConstructed:1;
   bool m_bLocationBarConnected:1;
   bool m_bURLEnterLock:1;
   // Global settings
@@ -698,7 +699,6 @@ private: // members
   bool m_bNeedApplyKonqMainWindowSettings:1;
   bool m_urlCompletionStarted:1;
   bool m_prevMenuBarVisible:1;
-  bool m_fullyConstructed:1;
 
   int m_goBuffer;
   Qt::MouseButtons m_goMouseState;
