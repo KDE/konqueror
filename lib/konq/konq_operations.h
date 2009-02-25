@@ -89,6 +89,14 @@ public:
     static void doPaste( QWidget * parent, const KUrl & destUrl, const QPoint &pos = QPoint() );
 
     /**
+     * Returns the state of the paste action:
+     * first is whether the action should be enabled
+     * second is the text for the action
+     * @since 4.3
+     */
+    static QPair<bool, QString> pasteInfo(const KUrl& targetUrl);
+
+    /**
      * Empty the trash
      */
     static void emptyTrash( QWidget* parent );

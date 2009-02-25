@@ -21,6 +21,7 @@
 */
 
 #include "konq_operations.h"
+#include "konq_fileitemcapabilities.h"
 #include "konqmimedata.h"
 
 #include <ktoolinvocation.h>
@@ -126,17 +127,12 @@ KIO::SimpleJob* KonqOperations::mkdir( QWidget *parent, const KUrl & url )
 
 void KonqOperations::doPaste( QWidget * parent, const KUrl & destUrl, const QPoint &pos )
 {
-    // move or not move ?
-    bool move = false;
-    const QMimeData *data = QApplication::clipboard()->mimeData();
-    if ( data->hasFormat( "application/x-kde-cutselection" ) ) {
-      move = KonqMimeData::decodeIsCutSelection( data );
-      kDebug(1203) << "move (from clipboard data) = " << move;
-    }
+    QClipboard* clipboard = QApplication::clipboard();
+    const QMimeData *data = clipboard->mimeData();
+    const bool move = KonqMimeData::decodeIsCutSelection(data);
 
     KIO::Job *job = KIO::pasteClipboard( destUrl, parent, move );
-    if ( job )
-    {
+    if (job) {
         KonqOperations * op = new KonqOperations( parent );
         KIO::CopyJob * copyJob = static_cast<KIO::CopyJob *>(job);
         KIOPasteInfo * pi = new KIOPasteInfo;
@@ -527,7 +523,7 @@ void KonqOperations::doDropFileCopy()
                     break;
                 }
             }
-            
+
             if ( !equalDestination )
                 popup.addAction(popupMoveAction);
         }
@@ -788,6 +784,37 @@ void KonqMultiRestoreJob::slotResult( KJob *job )
 QWidget* KonqOperations::parentWidget() const
 {
     return static_cast<QWidget *>( parent() );
+}
+
+QPair<bool, QString> KonqOperations::pasteInfo(const KUrl& targetUrl)
+{
+    QPair<bool, QString> ret;
+    QClipboard* clipboard = QApplication::clipboard();
+    const QMimeData* mimeData = clipboard->mimeData();
+
+    const bool canPasteData = mimeData->hasText(); // TODO KIO::canPasteMimeSource(mimeData)
+    KUrl::List urls = KUrl::List::fromMimeData(mimeData);
+    if (!urls.isEmpty() || canPasteData) {
+        // disable the paste action if no writing is supported
+        KFileItem item(KFileItem::Unknown, KFileItem::Unknown, targetUrl);
+        ret.first = KonqFileItemCapabilities(KFileItemList() << item).supportsWriting();
+
+        if (urls.count() == 1) {
+            const KFileItem item(KFileItem::Unknown, KFileItem::Unknown, urls.first(), true);
+            ret.second = item.isDir() ? i18nc("@action:inmenu", "Paste One Folder") :
+                                        i18nc("@action:inmenu", "Paste One File");
+
+        } else if (!urls.isEmpty()) {
+            ret.second = i18ncp("@action:inmenu", "Paste One Item", "Paste %1 Items", urls.count());
+        } else {
+            ret.second = i18nc("@action:inmenu", "Paste Clipboard Contents");
+        }
+    } else {
+        ret.first = false;
+        ret.second = i18nc("@action:inmenu", "Paste");
+    }
+
+    return ret;
 }
 
 #include "konq_operations.moc"

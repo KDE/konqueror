@@ -3259,6 +3259,8 @@ bool KonqMainWindow::eventFilter(QObject*obj,QEvent *ev)
   return KParts::MainWindow::eventFilter( obj, ev );
 }
 
+// Only called when m_bLocationBarConnected, i.e. when the combobox has focus.
+// The rest of the time, the part handles the cut/copy/paste actions.
 void KonqMainWindow::slotClipboardDataChanged()
 {
   const QMimeData *data = QApplication::clipboard()->mimeData();
