@@ -900,11 +900,11 @@ The status bar shows the current state of the Selection Mode, either <guilabel>B
 Mode</guimenuitem></menuchoice></term>
 <listitem>
 <para>Switch to a vi-like, modal editing mode. This mode supports the most used commands 
-and motions from vim's normal and visual mode and has an optional vi mode statusbar
+and motions from vim's normal and visual mode and has an optional vi mode statusbar.
 This status bar shows commands while they are being entered, output from commands and 
 the current mode.The behavior of this mode can be configured in the 
 <link linkend="pref-edit-vi-input-mode">Vi Input Mode</link> section of the  
-<guilabel>Editing</guilabel> page in &kappname;s settings dialog.</para>
+<guilabel>Editing</guilabel> page in &kappname;'s settings dialog.</para>
 </listitem>
 </varlistentry>
 <varlistentry>
@@ -1371,7 +1371,7 @@ available for this window.
 </sect1>
 
 <!-- This is also valid for kates menu tools, kate has additional items:
-Pipe to Terminal, Syncronizise Terminal with Current Dokument, Focus Terminal at top-->
+Pipe to Terminal, Syncronizise Terminal with Current Document, Focus Terminal at top-->
 <sect1 id="tools">
 <title>The <guimenu>Tools</guimenu> Menu</title>
 
@@ -2137,7 +2137,7 @@ displays at the bottom of the dialog, so you can see the effect of your choices.
 <title>Normal Text Styles</title>
 <para>The normal text styles are inherited by the highlight text styles,
 allowing the editor to present text in a very consistent way, for example comment
-text is using the same style in allmost all of the text formats that &kappname; can
+text is using the same style in almost all of the text formats that &kappname; can
 highlight.</para>
 <para>The name in the list of styles is using the style configured for
 the item, providing you with an immediate preview when configuring a style.
@@ -2798,7 +2798,7 @@ Based on the original &kwrite;, which was Copyright 2000 by Jochen Wilhelmy
 </listitem>
 
 <listitem>
-<para>Jochen Wilhely <email>digisnap@cs.tu-berlin.de</email></para>
+<para>Jochen Wilhelmy <email>digisnap@cs.tu-berlin.de</email></para>
 </listitem>
 
 <listitem>
