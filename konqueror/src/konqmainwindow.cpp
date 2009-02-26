@@ -1786,6 +1786,7 @@ void KonqMainWindow::slotConfigure()
             const char* const fmModules[]={
                 "kcmdolphinviewmodes",
                 "kcmdolphinnavigation",
+                "kcmdolphinservices",
                 "kcmdolphingeneral",
                 "filetypes",
                 "kcmtrash"};
