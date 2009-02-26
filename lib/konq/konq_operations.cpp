@@ -807,7 +807,7 @@ QPair<bool, QString> KonqOperations::pasteInfo(const KUrl& targetUrl)
         } else if (!urls.isEmpty()) {
             ret.second = i18ncp("@action:inmenu", "Paste One Item", "Paste %1 Items", urls.count());
         } else {
-            ret.second = i18nc("@action:inmenu", "Paste Clipboard Contents");
+            ret.second = i18nc("@action:inmenu", "Paste Clipboard Contents...");
         }
     } else {
         ret.first = false;
