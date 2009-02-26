@@ -68,6 +68,7 @@ KonqClosedWindowsManager::KonqClosedWindowsManager()
 
     m_konqClosedItemsConfig = 0L;
     m_blockClosedItems = false;
+    m_konqClosedItemsMemoryStore = new KConfig(QString(), KConfig::SimpleConfig);
 }
 
 KonqClosedWindowsManager::~KonqClosedWindowsManager()
@@ -76,12 +77,12 @@ KonqClosedWindowsManager::~KonqClosedWindowsManager()
     removeClosedItemsConfigFiles();
 
     delete m_konqClosedItemsConfig;
+    delete m_konqClosedItemsMemoryStore;
 }
 
-KConfig* KonqClosedWindowsManager::config()
+KConfig* KonqClosedWindowsManager::memoryStore()
 {
-    readConfig();
-    return m_konqClosedItemsConfig;
+    return m_konqClosedItemsMemoryStore;
 }
 
 KonqClosedWindowsManager *KonqClosedWindowsManager::self()

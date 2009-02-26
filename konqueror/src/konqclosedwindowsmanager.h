@@ -61,7 +61,11 @@ public:
 
     KonqClosedWindowItem *closedWindowItem, bool propagate = true);
 
-    KConfig* config();
+    /**
+     * Returns an anonymous config (which exists only in memory). Only used by
+     * KonqClosedItems for storing in memory closed items.
+     */
+    KConfig* memoryStore();
 
     /**
      * Called by the KonqUndoManager when a local window is being closed.
@@ -115,7 +119,7 @@ private:
 private:
     QList<KonqClosedWindowItem *> m_closedWindowItemList;
     int m_numUndoClosedItems;
-    KConfig *m_konqClosedItemsConfig;
+    KConfig *m_konqClosedItemsConfig, *m_konqClosedItemsMemoryStore;
     int m_maxNumClosedItems;
     /**
      * This bool var is used internally to allow delayed initialization of the

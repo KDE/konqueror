@@ -49,7 +49,7 @@ public:
 K_GLOBAL_STATIC(KonqIcon, s_lightIconImage)
 
 KonqClosedItem::KonqClosedItem(const QString& title, const QString& group, quint64 serialNumber)
-    : m_title(title), m_configGroup(KonqClosedWindowsManager::self()->config(), group), m_serialNumber(serialNumber)
+    : m_title(title), m_configGroup(KonqClosedWindowsManager::self()->memoryStore(), group), m_serialNumber(serialNumber)
 {
 }
 
