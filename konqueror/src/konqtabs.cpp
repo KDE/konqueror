@@ -81,10 +81,10 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
 
   m_permanentCloseButtons = KonqSettings::permanentCloseButton();
   if (m_permanentCloseButtons) {
-    setCloseButtonEnabled( true );
+    setTabsClosable( true );
   }
   else
-    setCloseButtonEnabled( KonqSettings::hoverCloseButton() );
+    setTabsClosable( KonqSettings::hoverCloseButton() );
   setTabCloseActivatePrevious( KonqSettings::tabCloseActivatePrevious() );
   if (KonqSettings::tabPosition()=="Bottom")
     setTabPosition( QTabWidget::South );
