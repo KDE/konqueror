@@ -792,7 +792,7 @@ QPair<bool, QString> KonqOperations::pasteInfo(const KUrl& targetUrl)
     QClipboard* clipboard = QApplication::clipboard();
     const QMimeData* mimeData = clipboard->mimeData();
 
-    const bool canPasteData = mimeData->hasText(); // TODO KIO::canPasteMimeSource(mimeData)
+    const bool canPasteData = KIO::canPasteMimeSource(mimeData);
     KUrl::List urls = KUrl::List::fromMimeData(mimeData);
     if (!urls.isEmpty() || canPasteData) {
         // disable the paste action if no writing is supported
