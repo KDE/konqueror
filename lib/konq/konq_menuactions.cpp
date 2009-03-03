@@ -230,6 +230,9 @@ int KonqMenuActions::addActionsTo(QMenu* mainMenu)
         }
     }
 
+    const KConfig config( "kservicemenurc", KConfig::NoGlobals );
+    const KConfigGroup showGroup = config.group( "Show" );
+
     const QString commonMimeType = d->m_info.mimeType();
     const QString commonMimeGroup = d->m_info.mimeGroup();
     const KMimeType::Ptr mimeTypePtr = commonMimeType.isEmpty() ? KMimeType::Ptr() : KMimeType::mimeType(commonMimeType);
@@ -355,7 +358,12 @@ int KonqMenuActions::addActionsTo(QMenu* mainMenu)
                 const QString submenuName = cfg.readEntry( "X-KDE-Submenu" );
 
                 ServiceList& list = s.selectList( priority, submenuName );
-                list += KDesktopFileActions::userDefinedServices(*(*it2), isLocal, urlList);
+                const ServiceList userServices = KDesktopFileActions::userDefinedServices(*(*it2), isLocal, urlList);
+                foreach ( const KServiceAction& action, userServices ) {
+                    if ( showGroup.readEntry( action.name(), true) ) {
+                        list += action;
+                    }
+                }
             }
         }
     }
