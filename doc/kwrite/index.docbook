@@ -1013,6 +1013,10 @@ box for entering the search pattern.</para>
 <guilabel>Escape sequences</guilabel><keycombo action="simul">&Alt;<keycap>3</keycap></keycombo>
 or <guilabel>Regular expression</guilabel><keycombo action="simul">&Alt;<keycap>4</keycap></keycombo>. 
 </para>
+<para>If <guilabel>Escape sequences</guilabel> or <guilabel>Regular expression</guilabel> are
+selected, the <guibutton>Add...</guibutton> menuitem at the bottom of the context menu of the text boxes will be enabled
+and allows you to add escape sequences or regular expression items to the
+search or replace pattern from predefined lists.</para>
 <para>Use the <guilabel>Next</guilabel> or <guilabel>Previous</guilabel> button to jump 
 to the next or previous match in the document.</para>
 <para>Enter the text to replace with in the text box labeled <guilabel>Replace</guilabel>
