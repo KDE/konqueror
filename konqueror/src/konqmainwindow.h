@@ -182,9 +182,6 @@ public:
     // Number of main views (non-toggle non-passive views)
     int mainViewsCount() const;
 
-    // Return true if we are showing a view that supports this mimeType.
-    bool hasViewWithMimeType(const QString& mimeType) const;
-
   typedef QMap<KParts::ReadOnlyPart *, KonqView *> MapViews;
 
   const MapViews & viewMap() const { return m_mapViews; }
