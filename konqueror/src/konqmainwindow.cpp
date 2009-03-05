@@ -5830,17 +5830,6 @@ bool KonqMainWindow::accept( KonqFrameVisitor* visitor )
            && visitor->endVisit( this );
 }
 
-bool KonqMainWindow::hasViewWithMimeType(const QString& mimeType) const
-{
-    foreach (KonqView* view, m_mapViews.values()) {
-        if (view->supportsMimeType(mimeType)) {
-            //kDebug(1202) << *it << "supports" << mimeType << "!";
-            return true;
-        }
-    }
-    return false;
-}
-
 void KonqMainWindow::applyWindowSizeFromProfile(const KConfigGroup& profileGroup)
 {
     // KMainWindow::restoreWindowSize is protected so this logic can't move to KonqViewManager
