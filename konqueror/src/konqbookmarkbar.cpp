@@ -301,10 +301,21 @@ void KBookmarkBar::contextMenu(const QPoint & pos)
 {
     KBookmarkActionInterface * action = dynamic_cast<KBookmarkActionInterface *>( m_toolBar->actionAt(pos) );
     if(!action)
-        return;
-    KMenu * menu = new KonqBookmarkContextMenu(action->bookmark(), m_pManager, m_pOwner);
-    menu->setAttribute(Qt::WA_DeleteOnClose);
-    menu->popup(m_toolBar->mapToGlobal(pos));
+    {
+        //Show default (ktoolbar) menu
+        m_toolBar->setContextMenuPolicy( Qt::DefaultContextMenu );
+        //Recreate event with the same position
+        QContextMenuEvent evt( QContextMenuEvent::Other, pos );
+        QCoreApplication::sendEvent( m_toolBar, &evt );
+        //Reassign custom context menu
+        m_toolBar->setContextMenuPolicy( Qt::CustomContextMenu );
+    }
+    else
+    {
+        KMenu * menu = new KonqBookmarkContextMenu(action->bookmark(), m_pManager, m_pOwner);
+        menu->setAttribute(Qt::WA_DeleteOnClose);
+        menu->popup(m_toolBar->mapToGlobal(pos));
+    }
 }
 
 // TODO    *** drop improvements ***
