@@ -164,9 +164,9 @@ int Widgets::textInputBox(QWidget *parent, int width, int height, const QString&
 
   handleXGeometry(&dlg);
   dlg.setCaption(title);
-  dlg.exec();
+  int returnDialogCode = dlg.exec();
   result = edit->toPlainText();
-  return 0;
+  return (returnDialogCode == KDialog::Accepted ? 0 : 1);
 }
 
 bool Widgets::comboBox(QWidget *parent, const QString& title, const QString& text, const QStringList& args,
