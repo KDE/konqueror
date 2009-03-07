@@ -165,7 +165,7 @@ int Widgets::textInputBox(QWidget *parent, int width, int height, const QString&
   handleXGeometry(&dlg);
   dlg.setCaption(title);
   dlg.exec();
-  result = edit->toPlainText().toLocal8Bit();
+  result = edit->toPlainText();
   return 0;
 }
 
