@@ -336,9 +336,7 @@ void KQuery::processQuery( const KFileItem &file)
            kWarning() << "Cannot open supposed ZIP file " << file.url() ;
          }
        } else if( !m_search_binary && !file.mimetype().startsWith("text/") &&
-           file.url().isLocalFile() ) {
-           
-         if ( !file.url().path().startsWith("/dev") ) //Skip /dev files (isBinaryData reads from it)
+           file.url().isLocalFile() && !file.url().path().startsWith("/dev") ) {
          if ( KMimeType::isBinaryData(file.url().path()) ) {
            kDebug() << "ignoring, not a text file: " << file.url();
            return;
