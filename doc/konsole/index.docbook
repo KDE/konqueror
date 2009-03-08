@@ -40,14 +40,14 @@
 <holder>&Jonathan.Singer;</holder>
 </copyright>
 <copyright>
-<year>2005</year><year>2008</year>
+<year>2005</year><year>2008</year><year>2009</year>
 <holder>&Kurt.Hindenburg;</holder>
 </copyright>
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2008-09-07</date>
-<releaseinfo>2.1.0</releaseinfo>
+<date>2009-02-23</date>
+<releaseinfo>2.2.0</releaseinfo>
 
 <abstract><para>&konsole; is &kde;'s terminal emulator.</para></abstract>
 
@@ -303,7 +303,7 @@ is listed after each menu item.
 <shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>M</keycap></keycombo></shortcut>
 <guimenu>File</guimenu><guimenuitem>New Window</guimenuitem></menuchoice>
 </term>
-<listitem><para><action>Opens a new seperate &konsole; window with the default profile</action>
+<listitem><para><action>Opens a new separate &konsole; window with the default profile</action>
 </para></listitem></varlistentry>
 
 <varlistentry>
@@ -381,12 +381,16 @@ location</action></para></listitem>
  action="simul">&Ctrl;&Alt;<keycap>S</keycap></keycombo></shortcut>
 <guimenu>Edit</guimenu><guimenuitem>Rename Tab...</guimenuitem></menuchoice></term>
 <listitem><para><action>Opens a dialog box allowing you to change
-the name of the current tab</action></para></listitem>
+the name of the current tab</action>
+(<link linkend="rename-tab-dialog">more info</link>)
+</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice><guimenu>Edit</guimenu><guimenuitem>Copy Input To...</guimenuitem></menuchoice></term>
-<listitem><para><action>Allows input from the current session to be inputted simultaneously to other sessions</action></para>
+<listitem><para><action>Allows input from the current session to be sent simultaneously to other sessions</action>
+(<link linkend="copy-input-dialog">more info</link>)
+</para>
 </listitem>
 </varlistentry>
 
@@ -604,6 +608,7 @@ Output...</guimenuitem></menuchoice></term>
 <term><menuchoice><guimenu>Scrollback</guimenu><guimenuitem>Scrollback 
 Options...</guimenuitem></menuchoice></term>
 <listitem><para><action>Opens a dialog to configure number of lines to save</action>
+(<link linkend="scrollback-options-dialog">more info</link>)
 </para></listitem>
 </varlistentry>
 
@@ -658,7 +663,7 @@ A dialog will open for the bookmark folder name.
 <listitem><para><action>Opens the bookmark editor</action></para>
 
 <note><para>You can use the bookmark editor to manually add URLs
-like ssh://user@host or telnet://host to open remote connections.</para></note>
+like ssh://user@host:port to open remote connections.</para></note>
 </listitem>
 </varlistentry>
 
@@ -713,6 +718,98 @@ Notifications...</guimenuitem></menuchoice></term>
 <!-- Only negative to using this is it shows shortcut F1 for Handbook -->
 &help.menu.documentation;
 </sect2>
+</sect1>
+
+<sect1 id="rename-tab-dialog">
+<title>Rename Tab Dialog</title>
+
+<para>The name of the current tab can be changed from this dialog.
+The dialog can be display via the menu, the shortcut or by 
+double-clicking on the tab in the tab bar.
+These changes can be made permanent by editing the current profile.
+</para>
+
+<para>
+&konsole; will subsitute these tokens:
+<itemizedlist mark='opencircle'>
+<listitem><para>%n : program name</para></listitem>
+<listitem><para>%d : current directory (short)</para></listitem>
+<listitem><para>%D : current directory (long)</para></listitem>
+<listitem><para>%w : window title set by shell</para></listitem>
+<listitem><para>%# : session number</para></listitem>
+
+<!--
+<listitem><para>%u : user name [Remote]</para></listitem>
+<listitem><para>%h : remote host name (short) [Remote]</para></listitem>
+<listitem><para>%H : remote host name (long) [Remote]</para></listitem>
+-->
+</itemizedlist>
+
+</para>
+<para>
+Examples:
+<itemizedlist mark='opencircle'>
+
+<listitem><para>
+<userinput>%d : %n</userinput>
+ with /usr/src as current directory and running
+<application>bash</application> will display 
+<guibutton>usr/s : bash</guibutton>
+</para></listitem>
+
+<listitem><para>
+<userinput>%D : %n</userinput>
+ with /usr/src as current directory and running 
+<application>top</application> will display
+<guibutton>/usr/src : top</guibutton>
+</para></listitem>
+
+<listitem><para>
+<userinput>%w (%#)</userinput>
+ with ~ as current directory and running 
+<application>vim</application> in the first tab will display 
+<guibutton>[No Name] (~) - VIM(1)</guibutton>
+</para></listitem>
+
+</itemizedlist>
+
+</para>
+
+</sect1>
+
+<sect1 id="copy-input-dialog">
+<title>Copy Input Dialog</title>
+
+<para>The text entered in one tab can simultaneously be sent to other tabs.
+This dialog allows you to select which tabs will get that input. 
+The current tab will be greyed out.
+<!--
+<screenshot>
+<screeninfo>A picture of the copy input dialog</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="copyinputdialog.png" format="PNG" />
+</imageobject>
+<textobject>
+<phrase>A picture of the copy input dialog</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+-->
+
+</para>
+
+</sect1>
+
+<sect1 id="scrollback-options-dialog">
+<title>Scrollback Options Dialog</title>
+
+<para>The 
+<link linkend="scrollback">scrollback</link>
+options can be changed in this dialog.  There is also
+a check box to save these settings to the current profile.
+</para>
+
 </sect1>
 
 </chapter>
