@@ -162,8 +162,6 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
 
   m_widgetStack->setCurrentWidget( m_emptyWidget );
 
-  QTimer::singleShot( 0, this, SLOT( init() ) ); // this takes some time
-
   connect( KSycoca::self(), SIGNAL( databaseChanged() ), SLOT( slotDatabaseChanged() ) );
 }
 
@@ -177,21 +175,8 @@ void FileTypesView::setDirty(bool state)
   m_dirty = state;
 }
 
-void FileTypesView::init()
-{
-  show();
-  setEnabled( false );
-
-  setCursor( Qt::WaitCursor );
-  readFileTypes();
-  unsetCursor();
-
-  setDirty(false);
-  setEnabled( true );
-}
-
-// only call this method once on startup, then never again! Otherwise, newly
-// added Filetypes will be lost.
+// Note that this method loses any newly-added (and not saved yet) mimetypes.
+// So this is really only for load().
 void FileTypesView::readFileTypes()
 {
     typesLV->clear();
@@ -417,7 +402,14 @@ void FileTypesView::save()
 
 void FileTypesView::load()
 {
+    setEnabled(false);
+    setCursor( Qt::WaitCursor );
+
     readFileTypes();
+
+    unsetCursor();
+    setDirty(false);
+    setEnabled(true);
 }
 
 void FileTypesView::slotDatabaseChanged()

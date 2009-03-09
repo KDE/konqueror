@@ -54,9 +54,6 @@ public:
   void defaults();
 
 protected Q_SLOTS:
-  /** fill in the various graphical elements, set up other stuff. */
-  void init();
-
   void addType();
   void removeType();
   void updateDisplay(QTreeWidgetItem *);
