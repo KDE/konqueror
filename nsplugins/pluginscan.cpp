@@ -175,8 +175,7 @@ static void generateMimeType( const QString &mime, const QString &extensions, co
     if (!description.isEmpty()) {
         mimeTypeWriter.setComment(description);
     } else {
-        // TODO remove mimeinfo here, after message freeze
-        mimeTypeWriter.setComment(i18n("Netscape plugin mimeinfo") + ' ' + pluginName);
+        mimeTypeWriter.setComment(i18n("Netscape plugin") + ' ' + pluginName);
     }
 
     // Maybe we should do it only if the icon named after the mimetype doesn't exist on the system...
