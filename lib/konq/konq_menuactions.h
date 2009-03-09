@@ -23,6 +23,7 @@
 #include <kfileitem.h>
 #include <libkonq_export.h>
 
+class KAction;
 class KonqPopupMenuInformation;
 class QMenu;
 class KonqMenuActionsPrivate;
@@ -80,6 +81,15 @@ public:
      * from the "open with" list. Example: "DesktopEntryName != 'kfmclient'".
      */
     void addOpenWithActionsTo(QMenu* menu, const QString& traderConstraint);
+
+    /**
+     * Returns an action for the preferred app only.
+     * @param traderConstraint this constraint allows to exclude the current application
+     * from the "open with" list. Example: "DesktopEntryName != 'kfmclient'".
+     * @return the action - or 0 if no application was found.
+     * @since 4.3
+     */
+    KAction* preferredOpenWithAction(const QString& traderConstraint);
 
 private:
     KonqMenuActionsPrivate* const d;
