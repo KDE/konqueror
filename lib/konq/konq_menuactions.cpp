@@ -430,15 +430,41 @@ void KonqMenuActions::addOpenWithActionsTo(QMenu* topMenu, const QString& trader
 
     QSet<QString> seenTexts;
     for (KService::List::iterator it = offers.begin(); it != offers.end(); ) {
+        bool skipThisEntry = false;
         // The offer list from the KTrader returns duplicate
         // application entries (kde3 and kde4). Although this is a configuration
         // problem, duplicated entries just will be skipped here.
-        const QString appName((*it)->name());
+        const KService::Ptr service = (*it);
+        const QString appName(service->name());
         if (!seenTexts.contains(appName)) {
             seenTexts.insert(appName);
-            ++it;
         } else {
+            skipThisEntry = true;
+        }
+
+        if (!skipThisEntry) {
+            // Skip OnlyShowIn=Foo and NotShowIn=KDE entries,
+            // but still offer NoDisplay=true entries, that's the
+            // whole point of such desktop files. This is why we don't
+            // use service->noDisplay() here.
+            const QString onlyShowIn = service->property("OnlyShowIn", QVariant::String).toString();
+            if ( !onlyShowIn.isEmpty() ) {
+                const QStringList aList = onlyShowIn.split(';', QString::SkipEmptyParts);
+                if (!aList.contains("KDE"))
+                    skipThisEntry = true;
+            }
+            const QString notShowIn = service->property("NotShowIn", QVariant::String).toString();
+            if ( !notShowIn.isEmpty() ) {
+                const QStringList aList = notShowIn.split(';', QString::SkipEmptyParts);
+                if (aList.contains("KDE"))
+                    skipThisEntry = true;
+            }
+        }
+
+        if (skipThisEntry) {
             it = offers.erase(it);
+        } else {
+            ++it;
         }
     }
 
@@ -457,8 +483,7 @@ void KonqMenuActions::addOpenWithActionsTo(QMenu* topMenu, const QString& trader
             QMenu* menu = topMenu;
 
             if ( offers.count() > 1 ) { // submenu 'open with'
-                // TODO i18nc("@title:menu", "Open With")
-                menu = new QMenu(i18n("&Open With"), topMenu);
+                menu = new QMenu(i18nc("@title:menu", "&Open With"), topMenu);
                 menu->menuAction()->setObjectName("openWith_submenu"); // for the unittest
                 topMenu->addMenu(menu);
             }
@@ -467,24 +492,6 @@ void KonqMenuActions::addOpenWithActionsTo(QMenu* topMenu, const QString& trader
             KService::List::ConstIterator it = offers.constBegin();
             for( ; it != offers.constEnd(); it++ ) {
                 KService::Ptr service = (*it);
-
-                // Skip OnlyShowIn=Foo and NotShowIn=KDE entries,
-                // but still offer NoDisplay=true entries, that's the
-                // whole point of such desktop files. This is why we don't
-                // use service->noDisplay() here.
-                const QString onlyShowIn = service->property("OnlyShowIn", QVariant::String).toString();
-                if ( !onlyShowIn.isEmpty() ) {
-                    const QStringList aList = onlyShowIn.split(';', QString::SkipEmptyParts);
-                    if (!aList.contains("KDE"))
-                        continue;
-                }
-                const QString notShowIn = service->property("NotShowIn", QVariant::String).toString();
-                if ( !notShowIn.isEmpty() ) {
-                    const QStringList aList = notShowIn.split(';', QString::SkipEmptyParts);
-                    if (aList.contains("KDE"))
-                        continue;
-                }
-
                 QString actionName(service->name().replace('&', "&&"));
                 if (menu == topMenu) // no submenu -> prefix single offer
                     actionName = i18n("Open &with %1", actionName);
@@ -500,11 +507,9 @@ void KonqMenuActions::addOpenWithActionsTo(QMenu* topMenu, const QString& trader
             QString openWithActionName;
             if ( menu != topMenu ) { // submenu
                 menu->addSeparator();
-                // TODO i18nc("@action:inmenu Open With", "&Other...")
-                openWithActionName = i18n("&Other...");
+                openWithActionName = i18nc("@action:inmenu Open With", "&Other...");
             } else {
-                // TODO i18nc("@title:menu", "Open With...")
-                openWithActionName = i18n("&Open With...");
+                openWithActionName = i18nc("@title:menu", "&Open With...");
             }
             QAction *openWithAct = d->m_ownActions.addAction( "openwith_browse" );
             openWithAct->setText( openWithActionName );
@@ -514,8 +519,7 @@ void KonqMenuActions::addOpenWithActionsTo(QMenu* topMenu, const QString& trader
         else // no app offers -> Open With...
         {
             KAction* act = d->m_ownActions.addAction( "openwith_browse" );
-            // TODO i18nc("@title:menu", "Open With...")
-            act->setText( i18n( "&Open With..." ) );
+            act->setText(i18nc("@title:menu", "&Open With..."));
             QObject::connect(act, SIGNAL(triggered()), d, SLOT(slotOpenWithDialog()));
             topMenu->addAction(act);
         }
