@@ -175,7 +175,7 @@ static void generateMimeType( const QString &mime, const QString &extensions, co
     if (!description.isEmpty()) {
         mimeTypeWriter.setComment(description);
     } else {
-        mimeTypeWriter.setComment(i18n("Netscape plugin") + ' ' + pluginName);
+        mimeTypeWriter.setComment(i18nc("Name of the netscape-plugin which generated this mimetype", "Netscape plugin %1", pluginName));
     }
 
     // Maybe we should do it only if the icon named after the mimetype doesn't exist on the system...
