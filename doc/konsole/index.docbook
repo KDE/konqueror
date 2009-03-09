@@ -724,7 +724,8 @@ Notifications...</guimenuitem></menuchoice></term>
 <title>Rename Tab Dialog</title>
 
 <para>The name of the current tab can be changed from this dialog.
-The dialog can be display via the menu, the shortcut or by 
+The dialog can be display via the menu, the shortcut <keycombo
+ action="simul">&Ctrl;&Alt;<keycap>S</keycap></keycombo> or by 
 double-clicking on the tab in the tab bar.
 These changes can be made permanent by editing the current profile.
 </para>
@@ -806,7 +807,7 @@ The current tab will be greyed out.
 
 <para>The 
 <link linkend="scrollback">scrollback</link>
-options can be changed in this dialog.  There is also
+option for the history size can be changed in this dialog. There is also
 a check box to save these settings to the current profile.
 </para>
 
