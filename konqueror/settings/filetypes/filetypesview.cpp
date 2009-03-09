@@ -186,19 +186,19 @@ void FileTypesView::readFileTypes()
     const KMimeType::List mimetypes = KMimeType::allMimeTypes();
     KMimeType::List::const_iterator it2(mimetypes.constBegin());
     for (; it2 != mimetypes.constEnd(); ++it2) {
-	QString mimetype = (*it2)->name();
-	int index = mimetype.indexOf('/');
-	QString maj = mimetype.left(index);
-	QString min = mimetype.right(mimetype.length() - index+1);
+        QString mimetype = (*it2)->name();
+        int index = mimetype.indexOf('/');
+        QString maj = mimetype.left(index);
+        QString min = mimetype.right(mimetype.length() - index+1);
 
         TypesListItem* groupItem = m_majorMap.value(maj);
-	if ( !groupItem ) {
-	    groupItem = new TypesListItem( typesLV, maj );
-	    m_majorMap.insert( maj, groupItem );
-	}
+        if ( !groupItem ) {
+            groupItem = new TypesListItem( typesLV, maj );
+            m_majorMap.insert( maj, groupItem );
+        }
 
-	TypesListItem *item = new TypesListItem(groupItem, (*it2));
-	m_itemList.append( item );
+        TypesListItem *item = new TypesListItem(groupItem, (*it2));
+        m_itemList.append( item );
     }
     updateDisplay(0L);
 
@@ -290,7 +290,7 @@ void FileTypesView::removeType()
   // nor essential mimetypes
   if ( mimeTypeData.isEssential() )
       return;
-      
+
   QTreeWidgetItem *li = typesLV->itemAbove(current);
   if (!li)
       li = typesLV->itemBelow(current);
