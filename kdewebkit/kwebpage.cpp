@@ -54,7 +54,7 @@ protected:
     virtual QNetworkReply *createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData = 0)
     {
         if (WebKitSettings::self()->isAdFilterEnabled() && WebKitSettings::self()->isAdFiltered(req.url().toString())) {
-            return new KNetworkReply(req, 0, this);
+            return new KNetworkReply(KNetworkAccessManager::Operation(), req, 0, this);
         }
         return KNetworkAccessManager::createRequest(op, req, outgoingData);
     }

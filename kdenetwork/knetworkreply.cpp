@@ -41,7 +41,7 @@ public:
     bool m_metaDataRead;
 };
 
-KNetworkReply::KNetworkReply(const QNetworkRequest &request, KIO::Job *kioJob, QObject *parent)
+KNetworkReply::KNetworkReply(const QNetworkAccessManager::Operation &op, const QNetworkRequest &request, KIO::Job *kioJob, QObject *parent)
     : QNetworkReply(parent), d(new KNetworkReply::KNetworkReplyPrivate())
 
 {
@@ -49,6 +49,7 @@ KNetworkReply::KNetworkReply(const QNetworkRequest &request, KIO::Job *kioJob, Q
     setRequest(request);
     setOpenMode(QIODevice::ReadOnly);
     setUrl(request.url());
+    setOperation(op);
 
     if (!kioJob) { // a blocked request
         setError(QNetworkReply::OperationCanceledError, i18n("Blocked request."));
@@ -101,6 +102,10 @@ void KNetworkReply::appendData(KIO::Job *kioJob, const QByteArray &data)
                     setRawHeader(headerPair.at(0).toUtf8(), headerPair.at(1).toUtf8());
                 }
             }
+        }
+        if (hasRawHeader("location")) {
+            QUrl url = QUrl::fromEncoded(rawHeader("location"));
+            setAttribute(QNetworkRequest::RedirectionTargetAttribute, url);
         }
         d->m_metaDataRead = true;
     }

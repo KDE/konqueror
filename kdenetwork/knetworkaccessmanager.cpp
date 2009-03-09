@@ -85,7 +85,7 @@ QNetworkReply *KNetworkAccessManager::createRequest(Operation op, const QNetwork
             return 0;
     }
 
-    KNetworkReply *reply = new KNetworkReply(req, kioJob, this);
+    KNetworkReply *reply = new KNetworkReply(op, req, kioJob, this);
 
     kioJob->addMetaData(metaDataForRequest(req));
 
