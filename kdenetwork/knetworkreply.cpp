@@ -50,6 +50,7 @@ KNetworkReply::KNetworkReply(const QNetworkAccessManager::Operation &op, const Q
     setOpenMode(QIODevice::ReadOnly);
     setUrl(request.url());
     setOperation(op);
+    setSslConfiguration(req.sslConfiguration());
 
     if (!kioJob) { // a blocked request
         setError(QNetworkReply::OperationCanceledError, i18n("Blocked request."));
