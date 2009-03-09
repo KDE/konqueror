@@ -50,33 +50,35 @@ KNetworkAccessManager::~KNetworkAccessManager()
 QNetworkReply *KNetworkAccessManager::createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData)
 {
     KIO::Job *kioJob = 0;
+    QUrl url = req.url();
+    // TODO: Fix a weird bug where the urls don't resolve properly.
 
     switch (op) {
         case HeadOperation: {
-            kDebug() << "HeadOperation:" << req.url();
+            kDebug() << "HeadOperation:" << url;
 
-            kioJob = KIO::mimetype(req.url(), KIO::HideProgressInfo);
+            kioJob = KIO::mimetype(url, KIO::HideProgressInfo);
 
             break;
         }
         case GetOperation: {
-            kDebug() << "GetOperation:" << req.url();
+            kDebug() << "GetOperation:" << url;
 
-            kioJob = KIO::get(req.url(), KIO::NoReload, KIO::HideProgressInfo);
+            kioJob = KIO::get(url, KIO::NoReload, KIO::HideProgressInfo);
 
             break;
         }
         case PutOperation: {
-            kDebug() << "PutOperation:" << req.url();
+            kDebug() << "PutOperation:" << url;
 
-            kioJob = KIO::put(req.url(), -1, KIO::HideProgressInfo);
+            kioJob = KIO::put(url, -1, KIO::HideProgressInfo);
 
             break;
         }
         case PostOperation: {
-            kDebug() << "PostOperation:" << req.url();
+            kDebug() << "PostOperation:" << url;
 
-            kioJob = KIO::http_post(req.url(), outgoingData->readAll(), KIO::HideProgressInfo);
+            kioJob = KIO::http_post(url, outgoingData->readAll(), KIO::HideProgressInfo);
 
             break;
         }
