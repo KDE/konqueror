@@ -48,6 +48,7 @@ KNetworkReply::KNetworkReply(const QNetworkRequest &request, KIO::Job *kioJob, Q
     d->m_kioJob = kioJob;
     setRequest(request);
     setOpenMode(QIODevice::ReadOnly);
+    setUrl(request.url());
 
     if (!kioJob) { // a blocked request
         setError(QNetworkReply::OperationCanceledError, i18n("Blocked request."));
