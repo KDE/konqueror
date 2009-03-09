@@ -1,5 +1,5 @@
 /* This file is part of the KDE project
-   Copyright (C) 1998-2007 David Faure <faure@kde.org>
+   Copyright (C) 1998-2009 David Faure <faure@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -38,6 +38,10 @@ public:
 
     int insertServicesSubmenus(const QMap<QString, ServiceList>& list, QMenu* menu, bool isBuiltin);
     int insertServices(const ServiceList& list, QMenu* menu, bool isBuiltin);
+
+    // For "open with"
+    KService::List associatedApplications(const QString& traderConstraint);
+    KAction* createAppAction(const KService::Ptr& service, bool singleOffer);
 
 private Q_SLOTS:
     // For servicemenus

@@ -400,12 +400,13 @@ int KonqMenuActions::addActionsTo(QMenu* mainMenu)
     return userItemCount;
 }
 
-void KonqMenuActions::addOpenWithActionsTo(QMenu* topMenu, const QString& traderConstraint)
+
+KService::List KonqMenuActionsPrivate::associatedApplications(const QString& traderConstraint)
 {
     if (!KAuthorized::authorizeKAction("openwith"))
-        return;
+        return KService::List();
 
-    const KFileItemList items = d->m_info.items();
+    const KFileItemList items = m_info.items();
     QStringList mimeTypeList;
     KFileItemList::const_iterator kit = items.constBegin();
     const KFileItemList::const_iterator kend = items.constEnd();
@@ -467,10 +468,16 @@ void KonqMenuActions::addOpenWithActionsTo(QMenu* topMenu, const QString& trader
             ++it;
         }
     }
+    return offers;
+}
 
+void KonqMenuActions::addOpenWithActionsTo(QMenu* topMenu, const QString& traderConstraint)
+{
+    const KService::List offers = d->associatedApplications(traderConstraint);
 
     //// Ok, we have everything, now insert
 
+    const KFileItemList items = d->m_info.items();
     const KFileItem firstItem = items.first();
     const bool isLocal = firstItem.url().isLocalFile();
     // "Open With..." for folders is really not very useful, especially for remote folders.
@@ -491,16 +498,9 @@ void KonqMenuActions::addOpenWithActionsTo(QMenu* topMenu, const QString& trader
 
             KService::List::ConstIterator it = offers.constBegin();
             for( ; it != offers.constEnd(); it++ ) {
-                KService::Ptr service = (*it);
-                QString actionName(service->name().replace('&', "&&"));
-                if (menu == topMenu) // no submenu -> prefix single offer
-                    actionName = i18n("Open &with %1", actionName);
-
-                KAction* act = d->m_ownActions.addAction("openwith");
-                act->setIcon(KIcon(service->icon()));
-                act->setText(actionName);
-                act->setData(QVariant::fromValue(service));
-                d->m_runApplicationActionGroup.addAction(act);
+                KAction* act = d->createAppAction(*it,
+                                                  // no submenu -> prefix single offer
+                                                  menu == topMenu);
                 menu->addAction(act);
             }
 
@@ -541,4 +541,26 @@ void KonqMenuActionsPrivate::slotOpenWithDialog()
 {
     // The item 'Other...' or 'Open With...' has been selected
     KRun::displayOpenWithDialog(m_info.urlList(), m_info.parentWidget());
+}
+
+KAction* KonqMenuActionsPrivate::createAppAction(const KService::Ptr& service, bool singleOffer)
+{
+    QString actionName(service->name().replace('&', "&&"));
+    if (singleOffer)
+        actionName = i18n("Open &with %1", actionName);
+
+    KAction* act = m_ownActions.addAction("openwith");
+    act->setIcon(KIcon(service->icon()));
+    act->setText(actionName);
+    act->setData(QVariant::fromValue(service));
+    m_runApplicationActionGroup.addAction(act);
+    return act;
+}
+
+KAction* KonqMenuActions::preferredOpenWithAction(const QString& traderConstraint)
+{
+    const KService::List offers = d->associatedApplications(traderConstraint);
+    if (offers.isEmpty())
+        return 0;
+    return d->createAppAction(offers.first(), true);
 }
