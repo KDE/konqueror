@@ -190,33 +190,39 @@ void FileTypesView::init()
   setEnabled( true );
 }
 
-// only call this method once on startup, then never again! Otherwise, newly
-// added Filetypes will be lost.
+// To order the mimetype list
+static bool mimeTypeLessThan(const KMimeType::Ptr& m1, const KMimeType::Ptr& m2)
+{
+    return m1->name() < m2->name();
+}
+
+// Note that this method loses any newly-added (and not saved yet) mimetypes.
+// So this is really only for load().
 void FileTypesView::readFileTypes()
 {
     typesLV->clear();
     m_majorMap.clear();
     m_itemList.clear();
 
-    const KMimeType::List mimetypes = KMimeType::allMimeTypes();
+    KMimeType::List mimetypes = KMimeType::allMimeTypes();
+    qSort(mimetypes.begin(), mimetypes.end(), mimeTypeLessThan);
     KMimeType::List::const_iterator it2(mimetypes.constBegin());
     for (; it2 != mimetypes.constEnd(); ++it2) {
-	QString mimetype = (*it2)->name();
-	int index = mimetype.indexOf('/');
-	QString maj = mimetype.left(index);
-	QString min = mimetype.right(mimetype.length() - index+1);
+        const QString mimetype = (*it2)->name();
+        const int index = mimetype.indexOf('/');
+        const QString maj = mimetype.left(index);
+        const QString min = mimetype.right(mimetype.length() - index+1);
 
         TypesListItem* groupItem = m_majorMap.value(maj);
-	if ( !groupItem ) {
-	    groupItem = new TypesListItem( typesLV, maj );
-	    m_majorMap.insert( maj, groupItem );
-	}
+        if ( !groupItem ) {
+            groupItem = new TypesListItem(typesLV, maj);
+            m_majorMap.insert(maj, groupItem);
+        }
 
 	TypesListItem *item = new TypesListItem(groupItem, (*it2));
 	m_itemList.append( item );
     }
     updateDisplay(0L);
-
 }
 
 void FileTypesView::slotEmbedMajor(const QString &major, bool &embed)
