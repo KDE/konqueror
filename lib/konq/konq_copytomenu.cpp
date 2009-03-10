@@ -204,7 +204,10 @@ void KonqCopyToDirectoryMenu::slotAboutToShow()
             subPath.append('/');
         subPath += subDir;
         KonqCopyToDirectoryMenu* subMenu = new KonqCopyToDirectoryMenu(this, m_mainMenu, subPath);
-        subMenu->setTitle(subDir);
+        QString menuTitle(subDir);
+        // Replace '&' by "&&" to make sure that '&' inside the directory name is displayed
+        // correctly and not misinterpreted as an indicator for a keyboard shortcut 
+        subMenu->setTitle(menuTitle.replace('&', "&&"));
         const QString iconName = dirMime->iconName(KUrl(subPath));
         subMenu->setIcon(KIcon(iconName));
         if (QFileInfo(subPath).isSymLink()) { // I hope this isn't too slow...
