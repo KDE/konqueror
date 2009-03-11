@@ -97,6 +97,10 @@ void KNetworkReply::appendData(KIO::Job *kioJob, const QByteArray &data)
 //     kDebug();
 
     if (!d->m_metaDataRead) {
+        const QString responseCode = kioJob->queryMetaData("responsecode");
+        if (!responseCode.isEmpty()) 
+            setAttribute(QNetworkRequest::HttpStatusCodeAttribute, responseCode.toInt());
+
         const QString headers = kioJob->queryMetaData("HTTP-Headers");
         if (!headers.isEmpty()) {
             QStringList headerList = headers.split('\n');
