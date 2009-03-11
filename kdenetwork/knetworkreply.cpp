@@ -26,7 +26,7 @@
 #include <KDebug>
 #include <KIO/Job>
 #include <KLocale>
-#include <KSSLSettings>
+#include <QSslConfiguration>
 
 #include <QTimer>
 
@@ -51,9 +51,9 @@ KNetworkReply::KNetworkReply(const QNetworkAccessManager::Operation &op, const Q
     setOpenMode(QIODevice::ReadOnly);
     setUrl(request.url());
     setOperation(op);
-    if (!req.sslConfiguration().isNull()) {
-        setSslConfiguration(req.sslConfiguration());
-        kDebug << "QSslConfiguration not supported (currently).";
+    if (!request.sslConfiguration().isNull()) {
+        setSslConfiguration(request.sslConfiguration());
+        kDebug() << "QSslConfiguration not supported (currently).";
     }
 
     if (!kioJob) { // a blocked request
