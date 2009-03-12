@@ -46,7 +46,7 @@ class KonqPopupMenuPrivate;
  * Users of KonqPopupMenu include: konqueror, the media applet, the trash applet
  * (and the desktop icons, in kde3)
  */
-class LIBKONQ_EXPORT KonqPopupMenu : public QMenu
+class LIBKONQ_EXPORT KonqPopupMenu : public QMenu // KDE5 TODO: inherit KMenu to benefit from KAcceleratorManager automatically
 {
   Q_OBJECT
 public:
