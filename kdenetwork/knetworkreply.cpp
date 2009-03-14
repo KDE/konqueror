@@ -51,6 +51,8 @@ KNetworkReply::KNetworkReply(const QNetworkAccessManager::Operation &op, const Q
     setOpenMode(QIODevice::ReadOnly);
     setUrl(request.url());
     setOperation(op);
+    connect(kioJob, SIGNAL(redirection(KIO::Job*, const KUrl&)), this, SLOT(slotRedirection(KIO::Job*, const KUrl&)));
+    connect(kioJob, SIGNAL(permanentRedirection(KIO::Job*, const KUrl&, const KUrl&)), this, SLOT(slotPermanentRedirection(KIO::Job*, const KUrl&, const KUrl&)));
     if (!request.sslConfiguration().isNull()) {
         setSslConfiguration(request.sslConfiguration());
         kDebug() << "QSslConfiguration not supported (currently).";
@@ -111,10 +113,6 @@ void KNetworkReply::appendData(KIO::Job *kioJob, const QByteArray &data)
                     setRawHeader(headerPair.at(0).toUtf8(), headerPair.at(1).toUtf8());
                 }
             }
-        }
-        if (hasRawHeader("location")) {
-            QUrl url = QUrl::fromEncoded(rawHeader("location"));
-            setAttribute(QNetworkRequest::RedirectionTargetAttribute, url);
         }
         d->m_metaDataRead = true;
     }
@@ -192,6 +190,12 @@ void KNetworkReply::jobDone(KJob *kJob)
     }
 
     emit finished();
+}
+
+void KNetworkReply::slotRedirection(KIO::Job* job, const KUrl& url)
+{
+    job->kill();
+    setAttribute(QNetworkRequest::RedirectionTargetAttribute, url);
 }
 
 #include "knetworkreply.moc"

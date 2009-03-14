@@ -32,6 +32,7 @@ namespace KIO
     class Job;
 }
 class KJob;
+class KUrl;
 
 class KDE_EXPORT KNetworkReply : public QNetworkReply
 {
@@ -49,6 +50,13 @@ public Q_SLOTS:
 
 protected:
     virtual qint64 readData(char *data, qint64 maxSize);
+
+private Q_SLOTS:
+    void slotRedirection(KIO::Job *job, const KUrl &url);
+    inline void slotPermanentRedirection(KIO::Job *job, const KUrl &fromUrl, const KUrl &toUrl) {
+        Q_UNUSED(fromUrl);
+        slotRedirection(job, toUrl);
+    }
     
 private:
     class KNetworkReplyPrivate;
