@@ -644,6 +644,7 @@ NSPluginInstance::NSPluginInstance(NPP privateData, NPPluginFuncs *pluginFuncs,
    _destroyed = false;
    _handle = handle;
    _callback = new org::kde::nsplugins::CallBack( appId, callbackId, QDBusConnection::sessionBus() );
+   _numJSRequests = 0;
 
    KUrl base(src);
    base.setFileName( QString() );
@@ -742,6 +743,10 @@ void NSPluginInstance::shutdown()
     }
 }
 
+bool NSPluginInstance::hasPendingJSRequests() const
+{
+    return _numJSRequests > 0;
+}
 
 void NSPluginInstance::timer()
 {
@@ -761,6 +766,8 @@ void NSPluginInstance::timer()
         delete _waitingRequests.dequeue();
 
         QString url;
+
+        // Note: sync javascript: handling with requestURL
 
         // make absolute url
         if ( req.url.left(11).toLower()=="javascript:" )
@@ -809,9 +816,10 @@ void NSPluginInstance::timer()
                 } else if (url.toLower().startsWith("javascript:")){
                     if (_callback) {
                         static int _jsrequestid = 0;
-			_jsrequests.insert(_jsrequestid, new Request(req));
+                        _jsrequests.insert(_jsrequestid, new Request(req));
                         _callback->evalJavaScript(_jsrequestid++, url.mid(11));
                     } else {
+                        --_numJSRequests;
                         kDebug() << "No callback for javascript: url!";
                     }
                 } else {
@@ -868,8 +876,12 @@ void NSPluginInstance::requestURL( const QString &url, const QString &mime,
     if (nurl.isNull()) {
         return;
     }
+    
+    // We dispatch JS events in target for empty target GET only.(see timer());
+    if (target.isEmpty() && nurl.left(11).toLower()=="javascript:")
+         ++_numJSRequests;
 
-    kDebug(1431) << "NSPluginInstance::requestURL url=" << nurl << " target=" << target << " notify=" << notify;
+    kDebug(1431) << "NSPluginInstance::requestURL url=" << nurl << " target=" << target << " notify=" << notify << "JS jobs now:" << _numJSRequests;
     _waitingRequests.enqueue( new Request( nurl, mime, target, notify, forceNotify, reload ) );
     _timer->setSingleShot( true );
     _timer->start( 100 );
@@ -943,6 +955,8 @@ void NSPluginInstance::resizePlugin(int clientWinId, int w, int h)
 void NSPluginInstance::javascriptResult(int id, const QString &result) {
     QMap<int, Request*>::iterator i = _jsrequests.find( id );
     if (i != _jsrequests.end()) {
+        --_numJSRequests;
+
         Request *req = i.value();
         _jsrequests.erase( i );
         NSPluginStream *s = new NSPluginStream( this );
@@ -952,7 +966,7 @@ void NSPluginInstance::javascriptResult(int id, const QString &result) {
 
         int len = result.length();
         s->create( req->url, QString("text/plain"), req->notify, req->forceNotify );
-        kDebug(1431) << "javascriptResult has been called with: "<<result;
+        kDebug(1431) << "javascriptResult has been called with: "<<result << "num JS requests now:" << _numJSRequests;
         if (len > 0) {
             QByteArray data(len + 1, 0);
             memcpy(data.data(), result.toLatin1(), len);
@@ -1633,6 +1647,10 @@ bool NSPluginStreamBase::pump()
     //kDebug(1431) << "queue pos " << _queuePos << ", size " << _queue.size();
 
     inform();
+
+    // Suspend until JS handled..
+    if (_instance->hasPendingJSRequests())
+       return false;
 
     if ( _queuePos<_queue.size() ) {
         int newPos;
