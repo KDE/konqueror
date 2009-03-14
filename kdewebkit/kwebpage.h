@@ -50,7 +50,7 @@ protected:
 
 protected Q_SLOTS:
     virtual void slotHandleUnsupportedContent(QNetworkReply *reply);
-    void slotDownloadRequested(const QNetworkRequest &request);
+    virtual void slotDownloadRequested(const QNetworkRequest &request);
 
 private:
     class KWebPagePrivate;

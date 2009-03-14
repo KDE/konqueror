@@ -59,10 +59,10 @@ protected:
     void mouseReleaseEvent(QMouseEvent *event);
 
 protected Q_SLOTS:
-    void slotFindNextClicked();
-    void slotFindPreviousClicked();
-    void slotSearchChanged(const QString &);
-    void resultSearch(KWebPage::FindFlags flags);
+    virtual void slotFindNextClicked();
+    virtual void slotFindPreviousClicked();
+    virtual void slotSearchChanged(const QString &);
+    virtual void resultSearch(KWebPage::FindFlags flags);
 
 private:
     class KWebViewPrivate;
