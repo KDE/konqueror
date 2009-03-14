@@ -63,11 +63,7 @@ protected:
 class KWebPage::KWebPagePrivate
 {
 public:
-    KWebPagePrivate()
-    : unsupportedContent(false)
-    {}
-
-    bool unsupportedContent;
+    KWebPagePrivate() {}
 };
 
 KWebPage::KWebPage(QObject *parent)
@@ -180,9 +176,6 @@ QString KWebPage::userAgentForUrl(const QUrl& _url) const
 
 void KWebPage::slotHandleUnsupportedContent(QNetworkReply *reply)
 {
-    if (customUnsupportedContent()) {
-        return customUnsupportedContent(reply);
-    }
     const KUrl url(reply->request().url());
     kDebug() << "title:" << url;
     kDebug() << "error:" << reply->errorString();
@@ -267,15 +260,5 @@ KWebPage *KWebPage::newWindow(WebWindowType type)
 {
     Q_UNUSED(type);
     return 0;
-}
-
-void KWebPage::setCustomUnsupportedContent(bool forward)
-{
-    d->unsupportedContent = forward;
-}
-
-bool KWebPage::customUnsupportedContent() const
-{
-    return d->unsupportedContent;
 }
 

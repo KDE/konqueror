@@ -56,9 +56,6 @@ WebPage::WebPage(WebKitPart *wpart, QWidget *parent)
             this, SLOT(slotWindowCloseRequested()));
     connect(this, SIGNAL(statusBarMessage(const QString &)),
             this, SLOT(slotStatusBarMessage(const QString &)));
-
-    setCustomUnsupportedContent(true);
-    connect(this, SIGNAL(customUnsupportedContent(QNetworkReply *)), this, SLOT(slotHandleUnsupportedContent(QNetworkReply *)));
 }
 
 bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request,
