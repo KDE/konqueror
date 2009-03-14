@@ -210,7 +210,8 @@ public:
                 const KParts::BrowserArguments& browserArgs, bool forceNotify = false );
 
   QString normalizedURL(const QString& url) const;
-
+  
+  bool hasPendingJSRequests() const;
 
 public Q_SLOTS:
   void streamFinished( NSPluginStreamBase *strm );
@@ -273,6 +274,7 @@ private:
 
   QQueue<Request *> _waitingRequests;
   QMap<int, Request*> _jsrequests;
+  int _numJSRequests; // entered in earlier than _jsrequests.
   
   static NSPluginInstance* s_lastPluginInstance;
 };
