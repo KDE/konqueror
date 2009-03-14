@@ -653,8 +653,8 @@ void WebKitSettings::init( KConfig * config, bool reset )
   QWebSettings::globalSettings()->setFontFamily(QWebSettings::SansSerifFont, sansSerifFontName());
   QWebSettings::globalSettings()->setFontFamily(QWebSettings::CursiveFont, cursiveFontName());
   QWebSettings::globalSettings()->setFontFamily(QWebSettings::FantasyFont, fantasyFontName());
-  QWebSettings::globalSettings()->setFontSize(QWebSettings::MinimumFontSize, minFontSize());
-  QWebSettings::globalSettings()->setFontSize(QWebSettings::DefaultFontSize, mediumFontSize());
+  QWebSettings::globalSettings()->setFontSize(QWebSettings::MinimumFontSize, minFontSize() * 1.45);
+  QWebSettings::globalSettings()->setFontSize(QWebSettings::DefaultFontSize, mediumFontSize() * 1.45);
 }
 
 
