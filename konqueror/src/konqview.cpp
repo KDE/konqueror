@@ -221,7 +221,7 @@ void KonqView::openUrl( const KUrl &url, const QString & locationBarURL,
       // but this would be more dangerous. If anything goes wrong in the code,
       // we might end up deleting a real file.
       if ( url.isLocalFile() )
-          m_tempFile = url.path();
+          m_tempFile = url.toLocalFile();
       else
           kWarning(1202) << "Tempfile option is set, but URL is remote:" << url ;
   }

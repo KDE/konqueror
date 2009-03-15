@@ -327,19 +327,19 @@ bool DesktopPathConfig::moveDir( const KUrl & src, const KUrl & dest, const QStr
 {
     if (!src.isLocalFile() || !dest.isLocalFile())
         return true;
-    if (!QFile::exists(src.path()))
+    if (!QFile::exists(src.toLocalFile()))
         return true;
     m_ok = true;
     // TODO: check if the src dir is empty? Nothing to move, then...
 
     // Ask for confirmation before moving the files
     if ( KMessageBox::questionYesNo( this, i18n("The path for '%1' has been changed.\nDo you want the files to be moved from '%2' to '%3'?",
-                                                type, src.path(), dest.path()), i18n("Confirmation Required"),
+                                                type, src.toLocalFile(), dest.toLocalFile()), i18n("Confirmation Required"),
                                      KGuiItem(i18nc("Move files from old to new place", "Move")),
                                      KGuiItem(i18nc("Use the new directory but do not move files", "Do not Move")))
             == KMessageBox::Yes )
     {
-        if (QFile::exists(dest.path())) {
+        if (QFile::exists(dest.toLocalFile())) {
             // Destination already exists -- should always be the case, for most types,
             // but maybe not for the complex autostart case (to be checked...)
             m_copyToDest = dest;
@@ -353,7 +353,7 @@ bool DesktopPathConfig::moveDir( const KUrl & src, const KUrl & dest, const QStr
             // slotEntries will move every file/subdir individually into the dest
             job->exec();
             if (m_ok) {
-                QDir().rmdir(src.path()); // hopefully it's empty by now
+                QDir().rmdir(src.toLocalFile()); // hopefully it's empty by now
             }
             delete job;
         }

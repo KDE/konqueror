@@ -450,7 +450,7 @@ QString KonqMainWindow::detectNameFilter( KUrl & url )
         if ( fileName.indexOf( '*' ) != -1 || fileName.indexOf( '[' ) != -1 || fileName.indexOf( '?' ) != -1 )
         {
             // Check that a file or dir with all the special chars in the filename doesn't exist
-            if ( url.isLocalFile() ? !QFile::exists( path ) : !KIO::NetAccess::exists( url, KIO::NetAccess::DestinationSide, this ) )
+            if ( url.isLocalFile() ? !QFile::exists( url.toLocalFile() ) : !KIO::NetAccess::exists( url, KIO::NetAccess::DestinationSide, this ) )
             {
                 nameFilter = fileName;
                 url.setFileName( QString() );
@@ -587,9 +587,8 @@ void KonqMainWindow::openUrl(KonqView *_view, const KUrl &_url,
   // Fast mode for local files: do the stat ourselves instead of letting KRun do it.
   if ( mimeType.isEmpty() && url.isLocalFile() )
   {
-    QByteArray _path( QFile::encodeName(url.path()));
     KDE_struct_stat buff;
-    if ( KDE_stat( _path.data(), &buff ) != -1 )
+    if ( KDE::stat( url.toLocalFile(), &buff ) != -1 )
         mimeType = KMimeType::findByUrl( url, buff.st_mode )->name();
   }
 
@@ -834,7 +833,7 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
           KUrl urlDotDir( url );
           urlDotDir.addPath(".directory");
           bool HTMLAllowed = m_bHTMLAllowed;
-          QFile f( urlDotDir.path() );
+          QFile f( urlDotDir.toLocalFile() );
           if ( f.open(QIODevice::ReadOnly) ) {
               f.close();
               KConfig config(urlDotDir.path(), KConfig::SimpleConfig);
@@ -845,7 +844,7 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
           }
           QString indexFile;
           if ( HTMLAllowed &&
-               ( !( indexFile = findIndexFile( url.path() ) ).isEmpty() ) ) {
+               ( !( indexFile = findIndexFile( url.toLocalFile() ) ).isEmpty() ) ) {
               mimeType = "text/html";
               url = KUrl(indexFile);
               //serviceName.clear(); // cancel what we just set, this is not a dir finally
@@ -1375,7 +1374,7 @@ void KonqMainWindow::slotSendFile()
   for ( KUrl::List::ConstIterator it = lst.begin() ; it != lst.end() ; ++it )
   {
     if ( !fileNameList.isEmpty() ) fileNameList += ", ";
-    if ( (*it).isLocalFile() && QFileInfo((*it).path()).isDir() )
+    if ( (*it).isLocalFile() && QFileInfo((*it).toLocalFile()).isDir() )
     {
         // Create a temp dir, so that we can put the ZIP file in it with a proper name
         QString zipFileName;
@@ -1970,7 +1969,7 @@ void KonqMainWindow::slotViewCompleted( KonqView * view )
   {
     KUrl u( view->locationBarURL() );
     if( u.isLocalFile() )
-      m_pURLCompletion->setDir( u.path() );
+      m_pURLCompletion->setDir( u.toLocalFile() );
     else
       m_pURLCompletion->setDir( u.url() );  //needs work!! (DA)
   }
@@ -4032,7 +4031,7 @@ void KonqMainWindow::updateToolBarActions( bool pendingAction /*=false*/)
           m_ptaUseHTML->setEnabled( true );
       else if ( m_currentView->serviceTypes().contains("text/html") ) {
           // Currently viewing an index.html file via this feature (i.e. url points to a dir)
-          QString locPath = KUrl( m_currentView->locationBarURL() ).path();
+          QString locPath = KUrl( m_currentView->locationBarURL() ).toLocalFile();
           m_ptaUseHTML->setEnabled( QFileInfo( locPath ).isDir() );
       } else
           m_ptaUseHTML->setEnabled( false );
@@ -5323,7 +5322,7 @@ void KonqMainWindow::bookmarksIntoCompletion( const KBookmarkGroup& group )
         s_pCompletion->addItem( u );
 
         if ( url.isLocalFile() )
-            s_pCompletion->addItem( url.path() );
+            s_pCompletion->addItem( url.toLocalFile() );
         else if ( url.protocol() == http )
             s_pCompletion->addItem( u.mid( 7 ));
         else if ( url.protocol() == ftp &&

@@ -69,7 +69,7 @@ void KShellCmdPlugin::slotExecuteShellCommand()
     else
 #endif
     {
-        path = url.path();
+        path = url.toLocalFile();
     }
    bool ok;
    QString cmd = KInputDialog::getText( i18n("Execute Shell Command"),

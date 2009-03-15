@@ -210,7 +210,7 @@ void KfindWindow::saveResults()
   if (!u.isValid() || !u.isLocalFile())
      return;
 
-  QString filename = u.path();
+  QString filename = u.toLocalFile();
 
   QFile file(filename);
 
