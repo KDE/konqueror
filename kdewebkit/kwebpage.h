@@ -25,6 +25,7 @@
 #define KWEBPAGE_H
 
 #include <kdemacros.h>
+#include <KUrl>
 
 #include <QtWebKit/QWebPage>
 
