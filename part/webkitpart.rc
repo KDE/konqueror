@@ -1,18 +1,18 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<kpartgui name="webkitpart" version="4">
+<kpartgui name="webkitpart" version="5">
 <MenuBar>
- <Menu name="file"><text>&amp;File</text>
+ <Menu name="file">
   <Action name="saveDocument" />
   <Action name="saveFrame" />
   <Separator />
   <Action name="printFrame" group="print" />
  </Menu>
- <Menu name="edit"><text>&amp;Edit</text>
+ <Menu name="edit">
   <Action name="selectAll" />
   <Separator />
   <Action name="find" />
  </Menu>
- <Menu name="view"><text>&amp;View</text>
+ <Menu name="view">
   <Action name="incFontSizes" />
   <Action name="decFontSizes" />
   <Action name="viewDocumentSource" />
