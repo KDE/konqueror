@@ -241,6 +241,7 @@ void KWebPage::slotDownloadRequested(const QNetworkRequest &request)
 
     if (downloadViaKIO) {
         const QString destUrl = KFileDialog::getSaveFileName(url.fileName(), QString(), view());
+        if (destUrl.isEmpty()) return;
         KIO::Job *job = KIO::file_copy(url, KUrl(destUrl), -1, KIO::Overwrite);
         //job->setMetaData(metadata); //TODO: add metadata from request
         job->addMetaData("MaxCacheSize", "0"); // Don't store in http cache.
