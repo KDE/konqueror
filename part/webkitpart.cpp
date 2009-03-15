@@ -315,7 +315,7 @@ void WebKitBrowserExtension::zoomOut()
 
 void WebKitBrowserExtension::slotSelectAll()
 {
-#if QT_VERSION >= 0x040600
+#if QT_VERSION >= 0x040500
     part->view()->page()->triggerAction(KWebPage::SelectAll);
 #endif
 }
