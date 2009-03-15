@@ -36,6 +36,8 @@ class WEBKITKDE_EXPORT WebPage : public KWebPage
 public:
     WebPage(WebKitPart *wpart, QWidget *parent);
 
+    void saveUrl(const KUrl &url);
+
 protected:
     virtual bool acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request,
                                          NavigationType type);

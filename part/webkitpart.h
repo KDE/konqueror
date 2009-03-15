@@ -74,7 +74,10 @@ public Q_SLOTS:
     void cut();
     void copy();
     void paste();
+    void slotSaveDocument();
+    void slotSaveFrame();
     void print();
+    void printFrame();
     void searchProvider();
 
     void zoomIn();

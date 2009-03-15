@@ -25,6 +25,7 @@
 #include "webkitpart.h"
 
 #include "webview.h"
+#include "webpage.h"
 
 #include <KDE/KParts/GenericFactory>
 #include <KDE/KParts/Plugin>
@@ -101,7 +102,18 @@ WebKitPart::~WebKitPart()
 
 void WebKitPart::initAction()
 {
-    KAction *action = new KAction(KIcon("format-font-size-more"), i18n("Enlarge Font"), this);
+    KAction *action = actionCollection()->addAction(KStandardAction::SaveAs, "saveDocument",
+                                                    m_browserExtension, SLOT(slotSaveDocument()));
+
+    action = new KAction(i18n("Save &Frame As..."), this);
+    actionCollection()->addAction("saveFrame", action);
+    connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(slotSaveFrame()));
+
+    action = new KAction(KIcon("document-print-frame"), i18n("Print Frame..."), this);
+    actionCollection()->addAction("printFrame", action);
+    connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(printFrame()));
+
+    action = new KAction(KIcon("format-font-size-more"), i18n("Enlarge Font"), this);
     actionCollection()->addAction("incFontSizes", action);
     action->setShortcut(KShortcut("CTRL++; CTRL+="));
     connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(zoomIn()));
@@ -225,11 +237,29 @@ void WebKitBrowserExtension::paste()
     part->view()->page()->triggerAction(KWebPage::Paste);
 }
 
+void WebKitBrowserExtension::slotSaveDocument()
+{
+    qobject_cast<WebPage*>(part->view()->page())->saveUrl(part->view()->url());
+}
+
+void WebKitBrowserExtension::slotSaveFrame()
+{
+    qobject_cast<WebPage*>(part->view()->page())->saveUrl(part->view()->page()->currentFrame()->url());
+}
+
 void WebKitBrowserExtension::print()
 {
     QPrintPreviewDialog dlg(part->view());
     connect(&dlg, SIGNAL(paintRequested(QPrinter *)),
             part->view(), SLOT(print(QPrinter *)));
+    dlg.exec();
+}
+
+void WebKitBrowserExtension::printFrame()
+{
+    QPrintPreviewDialog dlg(part->view());
+    connect(&dlg, SIGNAL(paintRequested(QPrinter *)),
+            part->view()->page()->currentFrame(), SLOT(print(QPrinter *)));
     dlg.exec();
 }
 

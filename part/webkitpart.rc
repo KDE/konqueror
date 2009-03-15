@@ -1,6 +1,12 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<kpartgui name="webkitpart" version="3">
+<kpartgui name="webkitpart" version="4">
 <MenuBar>
+ <Menu name="file"><text>&amp;File</text>
+  <Action name="saveDocument" />
+  <Action name="saveFrame" />
+  <Separator />
+  <Action name="printFrame" group="print" />
+ </Menu>
  <Menu name="edit"><text>&amp;Edit</text>
   <Action name="selectAll" />
   <Separator />

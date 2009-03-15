@@ -158,3 +158,7 @@ void WebPage::slotHandleUnsupportedContent(QNetworkReply *reply)
     emit m_part->browserExtension()->openUrlRequest(url, args, KParts::BrowserArguments());
 }
 
+void WebPage::saveUrl(const KUrl &url)
+{
+    slotDownloadRequested(QNetworkRequest(url));
+}
