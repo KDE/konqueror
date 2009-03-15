@@ -192,9 +192,27 @@ void WebView::selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &se
 
 void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &linkGroupMap)
 {
-    // TODO: Add something to this.
-    QList<QAction *>linkActions;
     Q_ASSERT(!d->result.linkUrl().isEmpty());
+
+    const KUrl url(d->result.linkUrl());
+
+    QList<QAction *>linkActions;
+    if (url.protocol() == "mailto") {
+        KAction *action = new KAction(i18n("&Copy Email Address"), this);
+        d->actionCollection->addAction("copylinklocation", action);
+        connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotCopyLinkLocation()));
+        linkActions.append(action);
+    } else {
+        KAction *action = new KAction(i18n("&Save Link As..."), this);
+        d->actionCollection->addAction("savelinkas", action);
+        connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotSaveLinkAs()));
+        linkActions.append(action);
+
+        action = new KAction(i18n("&Copy Link Address"), this);
+        d->actionCollection->addAction("copylinklocation", action);
+        connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotCopyLinkLocation()));
+        linkActions.append(action);
+    }
     linkGroupMap.insert("linkactions", linkActions);
 }
 

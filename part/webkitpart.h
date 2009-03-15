@@ -92,6 +92,9 @@ public Q_SLOTS:
     void slotSendImage();
     void slotCopyImage();
 
+    void slotCopyLinkLocation();
+    void slotSaveLinkAs();
+
     void slotViewDocumentSource();
 
 private Q_SLOTS:

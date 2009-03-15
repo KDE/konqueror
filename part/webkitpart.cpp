@@ -384,6 +384,25 @@ void WebKitBrowserExtension::slotCopyImage()
     QApplication::clipboard()->setMimeData(mimeData, QClipboard::Selection);
 }
 
+void WebKitBrowserExtension::slotCopyLinkLocation()
+{
+    KUrl safeURL(part->view()->contextMenuResult().linkUrl());
+    safeURL.setPass(QString());
+    // Set it in both the mouse selection and in the clipboard
+    QMimeData* mimeData = new QMimeData;
+    safeURL.populateMimeData(mimeData);
+    QApplication::clipboard()->setMimeData(mimeData, QClipboard::Clipboard);
+
+    mimeData = new QMimeData;
+    safeURL.populateMimeData(mimeData);
+    QApplication::clipboard()->setMimeData(mimeData, QClipboard::Selection);
+}
+
+void WebKitBrowserExtension::slotSaveLinkAs()
+{
+    qobject_cast<WebPage*>(part->view()->page())->saveUrl(part->view()->contextMenuResult().linkUrl());
+}
+
 void WebKitBrowserExtension::slotViewDocumentSource()
 {
     //TODO test http requests
