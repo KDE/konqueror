@@ -491,7 +491,7 @@ void KNewMenu::slotActionTriggered(QAction* action)
 
                 KUrl defaultFile( *it );
                 defaultFile.addPath( KIO::encodeFileName( text ) );
-                if ( defaultFile.isLocalFile() && QFile::exists( defaultFile.path() ) )
+                if ( defaultFile.isLocalFile() && QFile::exists( defaultFile.toLocalFile() ) )
                     text = KIO::RenameDialog::suggestName( *it, text);
 
                 KUrl templateUrl( entry.templatePath );
@@ -511,7 +511,7 @@ void KNewMenu::slotActionTriggered(QAction* action)
 
         KUrl defaultFile( *(d->popupFiles.begin()) );
         defaultFile.addPath( KIO::encodeFileName( text ) );
-        if ( defaultFile.isLocalFile() && QFile::exists( defaultFile.path() ) )
+        if ( defaultFile.isLocalFile() && QFile::exists( defaultFile.toLocalFile() ) )
             text = KIO::RenameDialog::suggestName( *(d->popupFiles.begin()), text);
 
         name = KInputDialog::getText( QString(), entry.comment,
@@ -585,7 +585,7 @@ void KNewMenu::slotResult( KJob * job )
             const KUrl localUrl = KIO::NetAccess::mostLocalUrl(destUrl, d->m_parentWidget);
             if (localUrl.isLocalFile()) {
                 // Normal (local) file. Need to "touch" it, kio_file copied the mtime.
-                (void) ::utime(QFile::encodeName(localUrl.path()), 0);
+                (void) ::utime(QFile::encodeName(localUrl.toLocalFile()), 0);
             }
         }
     }

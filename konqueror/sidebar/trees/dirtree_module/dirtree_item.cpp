@@ -33,6 +33,7 @@
 #include <kiconloader.h>
 #include <QtGui/QCursor>
 #include <konqmimedata.h>
+#include <kde_file.h>
 
 #define MYMODULE static_cast<KonqSidebarDirTreeModule*>(module())
 
@@ -65,9 +66,8 @@ void KonqSidebarDirTreeItem::reset()
         KUrl url = m_fileItem.url();
         if ( url.isLocalFile() )
         {
-            QByteArray path( QFile::encodeName(url.path()));
             struct stat buff;
-            if ( ::stat( path.data(), &buff ) != -1 )
+            if ( KDE::stat( url.toLocalFile(), &buff ) != -1 )
             {
                 //kDebug() << "KonqSidebarDirTreeItem::init " << path << " : " << buff.st_nlink;
                 // The link count for a directory is generally subdir_count + 2.

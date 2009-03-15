@@ -411,7 +411,7 @@ void KonqOperations::doDropFileCopy()
         bool local = (*it).isLocalFile();
         if ( KProtocolManager::supportsDeleting( *it ) && (!local || QFileInfo((*it).directory()).isWritable() ))
             mlst.append(*it);
-        if ( local && KDesktopFile::isDesktopFile((*it).path()))
+        if ( local && KDesktopFile::isDesktopFile((*it).toLocalFile()))
             isDesktopFile = true;
         if ( local && (*it).path().startsWith(KGlobalSettings::desktopPath()))
             itemIsOnDesktop = true;
@@ -488,7 +488,7 @@ void KonqOperations::doDropFileCopy()
         // extracting an archive -- in all cases, we can't implement a real move,
         // it's just a copy of the tempfile [and the source app will delete it later].
         // https://www.intevation.de/roundup/kolab/issue2026
-        if (url.isLocalFile() && url.path().startsWith(KStandardDirs::locateLocal("tmp", QString()))) {
+        if (url.isLocalFile() && url.toLocalFile().startsWith(KStandardDirs::locateLocal("tmp", QString()))) {
             sMoving = false;
             sDeleting = false;
         }
@@ -597,7 +597,7 @@ void KonqOperations::rename( QWidget * parent, const KUrl & oldurl, const KUrl& 
     op->setOperation( job, MOVE, newurl );
     KIO::FileUndoManager::self()->recordJob( KIO::FileUndoManager::Rename, lst, newurl, job );
     // if moving the desktop then update config file and emit
-    if ( oldurl.isLocalFile() && oldurl.path( KUrl::AddTrailingSlash ) == KGlobalSettings::desktopPath() )
+    if ( oldurl.isLocalFile() && oldurl.toLocalFile( KUrl::AddTrailingSlash ) == KGlobalSettings::desktopPath() )
     {
         kDebug(1203) << "That rename was the Desktop path, updating config files";
         KSharedConfig::Ptr globalConfig = KGlobal::config();
@@ -697,7 +697,7 @@ KIO::SimpleJob* KonqOperations::newDir( QWidget * parent, const KUrl & baseUrl )
 {
     bool ok;
     QString name = i18n( "New Folder" );
-    if ( baseUrl.isLocalFile() && QFileInfo( baseUrl.path( KUrl::AddTrailingSlash ) + name ).exists() )
+    if ( baseUrl.isLocalFile() && QFileInfo( baseUrl.toLocalFile( KUrl::AddTrailingSlash ) + name ).exists() )
         name = KIO::RenameDialog::suggestName( baseUrl, i18n( "New Folder" ) );
 
     name = KInputDialog::getText ( i18n( "New Folder" ),

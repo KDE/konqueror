@@ -1541,7 +1541,7 @@ void NSPluginStreamBase::inform()
             if ( KUrl(_url).isLocalFile() )  {
                 kDebug(1431) << "local file";
                 // local file can be passed directly
-                _fileURL = KUrl(_url).path();
+                _fileURL = KUrl(_url).toLocalFile();
 
                 // without streaming stream is finished already
                 if ( _onlyAsFile ) {
