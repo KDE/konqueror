@@ -151,6 +151,10 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &part
     }
 
     if (d->result.linkUrl().isEmpty()) {
+        QAction *separatorAction = new QAction(this);
+        separatorAction->setSeparator(true);
+        partActions.append(separatorAction);
+
         QAction* action = d->part->actionCollection()->action("viewDocumentSource");
         partActions.append(action);
     }
