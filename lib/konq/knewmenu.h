@@ -75,6 +75,12 @@ public Q_SLOTS:
      */
     void slotCheckUpToDate();
 
+Q_SIGNALS:
+    /**
+     * Emitted once @p url has been successfully created
+     */
+    void itemCreated(const KUrl& url);
+
 protected Q_SLOTS:
     /**
      * Called when the job that copied the template has finished.

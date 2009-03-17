@@ -587,6 +587,9 @@ void KNewMenu::slotResult( KJob * job )
                 // Normal (local) file. Need to "touch" it, kio_file copied the mtime.
                 (void) ::utime(QFile::encodeName(localUrl.toLocalFile()), 0);
             }
+            emit itemCreated(destUrl);
+        } else if (KIO::SimpleJob* mkdirJob = ::qobject_cast<KIO::SimpleJob*>(job)) {
+            emit itemCreated(mkdirJob->url());
         }
     }
     if (!d->m_tempFileToDelete.isEmpty())
