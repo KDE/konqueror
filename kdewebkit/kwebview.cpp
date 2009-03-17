@@ -113,8 +113,9 @@ void KWebView::mouseReleaseEvent(QMouseEvent *event)
 {
     const QWebHitTestResult result = page()->mainFrame()->hitTestContent(event->pos());
     const QUrl url = result.linkUrl();
-    if (!url.isEmpty() && (d->pressedButtons & Qt::MidButton)) {
-        kDebug() << "middle clicked url" << url;
+    if (!url.isEmpty() && ((d->pressedButtons & Qt::MidButton) || 
+        ((d->pressedButtons & Qt::LeftButton) && (d->keyboardModifiers & Qt::ControlModifier)))) {
+        kDebug() << "middle clicked or ctrl-clicked url" << url;
         emit openUrlInNewTab(url);
         return;
     }
