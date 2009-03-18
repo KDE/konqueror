@@ -54,6 +54,12 @@ KNetworkReply::KNetworkReply(const QNetworkAccessManager::Operation &op, const Q
     connect(kioJob, SIGNAL(redirection(KIO::Job*, const KUrl&)), SLOT(slotRedirection(KIO::Job*, const KUrl&)));
     connect(kioJob, SIGNAL(permanentRedirection(KIO::Job*, const KUrl&, const KUrl&)), SLOT(slotPermanentRedirection(KIO::Job*, const KUrl&, const KUrl&)));
     connect(kioJob, SIGNAL(percent(KJob*, unsigned long)), SLOT(slotPercent(KJob*, unsigned long)));
+    connect(kioJob, SIGNAL(data(KIO::Job *, const QByteArray &)),
+        SLOT(appendData(KIO::Job *, const QByteArray &)));
+    connect(kioJob, SIGNAL(result(KJob *)), SLOT(jobDone(KJob *)));
+    connect(kioJob, SIGNAL(mimetype(KIO::Job *, const QString&)),
+        SLOT(setMimeType(KIO::Job *, const QString&)));
+
     if (!request.sslConfiguration().isNull()) {
         setSslConfiguration(request.sslConfiguration());
         kDebug() << "QSslConfiguration not supported (currently).";
