@@ -51,8 +51,9 @@ KNetworkReply::KNetworkReply(const QNetworkAccessManager::Operation &op, const Q
     setOpenMode(QIODevice::ReadOnly);
     setUrl(request.url());
     setOperation(op);
-    connect(kioJob, SIGNAL(redirection(KIO::Job*, const KUrl&)), this, SLOT(slotRedirection(KIO::Job*, const KUrl&)));
-    connect(kioJob, SIGNAL(permanentRedirection(KIO::Job*, const KUrl&, const KUrl&)), this, SLOT(slotPermanentRedirection(KIO::Job*, const KUrl&, const KUrl&)));
+    connect(kioJob, SIGNAL(redirection(KIO::Job*, const KUrl&)), SLOT(slotRedirection(KIO::Job*, const KUrl&)));
+    connect(kioJob, SIGNAL(permanentRedirection(KIO::Job*, const KUrl&, const KUrl&)), SLOT(slotPermanentRedirection(KIO::Job*, const KUrl&, const KUrl&)));
+    connect(kioJob, SIGNAL(percent(KJob*, unsigned long)), SLOT(slotPercent(KJob*, unsigned long)));
     if (!request.sslConfiguration().isNull()) {
         setSslConfiguration(request.sslConfiguration());
         kDebug() << "QSslConfiguration not supported (currently).";
@@ -197,6 +198,12 @@ void KNetworkReply::slotRedirection(KIO::Job* job, const KUrl& url)
     job->kill();
     setAttribute(QNetworkRequest::RedirectionTargetAttribute, url);
     emit finished();
+}
+
+void KNetworkReply::slotPercent(KJob *job, unsigned long percent)
+{
+    qulonglong kiloBytes = job->totalAmount(KJob::Bytes) / 2046;
+    emit downloadProgress(kiloBytes / ((double)percent / 100), kiloBytes);
 }
 
 #include "knetworkreply.moc"

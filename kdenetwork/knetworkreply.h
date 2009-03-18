@@ -53,6 +53,7 @@ protected:
 
 private Q_SLOTS:
     void slotRedirection(KIO::Job *job, const KUrl &url);
+    void slotPercent(KJob *job, unsigned long percent);
     inline void slotPermanentRedirection(KIO::Job *job, const KUrl &fromUrl, const KUrl &toUrl) {
         Q_UNUSED(fromUrl);
         slotRedirection(job, toUrl);
