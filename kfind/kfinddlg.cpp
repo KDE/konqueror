@@ -215,9 +215,8 @@ void KfindDlg::addFile(const KFileItem &item, const QString& matchingLine)
     isResultReported = true;
   }
 
-  int count = win->childCount();
-  QString str = i18np("one file found", "%1 files found", count);
-  setProgressMsg(str);
+  QString str = i18np("one file found", "%1 files found", win->itemCount());
+  setProgressMsg( str );
 }
 
 void KfindDlg::setFocus()
@@ -239,41 +238,27 @@ void  KfindDlg::about ()
 void KfindDlg::slotDeleteItem(const QString& file)
 {
   kDebug()<<QString("Will remove one item: %1").arg(file);
-  Q3ListViewItem *iter;
-  QString iterwithpath;
-
-  iter=win->firstChild();
-  while( iter ) {
-    iterwithpath=query->url().path(KUrl::AddTrailingSlash)+iter->text(1)+iter->text(0);
-
-    if(iterwithpath==file)
-    {
-      win->takeItem(iter);
-      break;
-    }
-    iter = iter->nextSibling();
-  }
+  
+  KUrl url;
+  url.setPath( file );
+  
+  win->removeItem( url );
+  
+  QString str = i18np("one file found", "%1 files found", win->itemCount());
+  setProgressMsg( str );
 }
 
 void KfindDlg::slotNewItems( const QString& file )
 {
-  kDebug()<<QString("Will add this item");
-  QStringList newfiles;
-  Q3ListViewItem *checkiter;
-  QString checkiterwithpath;
-
-  if(file.indexOf(query->url().path(KUrl::AddTrailingSlash))==0)
-  {
-    kDebug()<<QString("Can be added, path OK");
-    checkiter=win->firstChild();
-    while( checkiter ) {
-      checkiterwithpath=query->url().path(KUrl::AddTrailingSlash)+checkiter->text(1)+checkiter->text(0);
-      if(file==checkiterwithpath)
-        return;
-      checkiter = checkiter->nextSibling();
+    kDebug()<<QString("Will add this item") << file;
+    
+    if( file.indexOf(query->url().path(KUrl::AddTrailingSlash))==0 )
+    {
+        KUrl url;
+        url.setPath ( file );
+        if ( !win->isInserted( url ) )
+            query->slotListEntries( QStringList() << file );
     }
-    query->slotListEntries(QStringList(file));
-  }
 }
 
 QStringList KfindDlg::getAllSubdirs(QDir d)

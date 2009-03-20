@@ -5,44 +5,26 @@
  **********************************************************************/
 #include "kfwin.h"
 
-#include "kfwin.moc"
-
-#include <stdlib.h>
-#include <stdio.h>
-#include <pwd.h>
-#include <grp.h>
-#include <sys/types.h>
-#include <unistd.h>
-#include <errno.h>
-#include <sys/stat.h>
-#include <time.h>
-
 #include <QtCore/QTextStream>
 #include <QtCore/QFileInfo>
-#include <QtCore/QDir>
 #include <QtGui/QClipboard>
-#include <QtGui/QPixmap>
-#include <Qt3Support/Q3UriDrag>
-#include <QtGui/QTextDocument>
-#include <Qt3Support/Q3PtrList>
+#include <QtGui/QHeaderView>
 #include <QtCore/QDate>
 
 #include <kfiledialog.h>
 #include <klocale.h>
 #include <kapplication.h>
 #include <krun.h>
-#include <kpropertiesdialog.h>
-#include <kstandarddirs.h>
 #include <kmessagebox.h>
-#include <kmimetype.h>
 #include <kglobal.h>
-#include <kmenu.h>
-#include <kio/netaccess.h>
-#include <k3urldrag.h>
 #include <kdebug.h>
 #include <kiconloader.h>
 
-template class Q3PtrList<KfFileLVI>;
+#include <kio/netaccess.h>
+#include <kio/copyjob.h>
+#include <konq_popupmenu.h>
+#include <konq_operations.h>
+#include <knewmenu.h>
 
 // Permission strings
 static const char* perm[4] = {
@@ -55,112 +37,223 @@ static const char* perm[4] = {
 #define WO 2
 #define NA 3
 
-KfFileLVI::KfFileLVI(KfindWindow* lv, const KFileItem &item, const QString& matchingLine)
-  : Q3ListViewItem(lv),
-    fileitem(item)
+//BEGIN KFindItemModel
+
+KFindItemModel::KFindItemModel( KfindWindow * parentView ) : 
+    QStandardItemModel( parentView )
 {
-  fileInfo = new QFileInfo(item.url().path());
-
-  QString size = KGlobal::locale()->formatNumber(item.size(), 0);
-
-  QString date = item.timeString(KFileItem::ModificationTime);
-
-  int perm_index;
-  if(fileInfo->isReadable())
-    perm_index = fileInfo->isWritable() ? RW : RO;
-  else
-    perm_index = fileInfo->isWritable() ? WO : NA;
-
-  // Fill the item with data
-  setText(0, item.url().fileName(KUrl::ObeyTrailingSlash));
-  setText(1, lv->reducedDir(item.url().directory(KUrl::AppendTrailingSlash)));
-  setText(2, size);
-  setText(3, date);
-  setText(4, i18n(perm[perm_index]));
-  setText(5, matchingLine);
-
-  // put the icon into the leftmost column
-  setPixmap(0, item.pixmap(16));
+    reset();
 }
 
-KfFileLVI::~KfFileLVI()
+void KFindItemModel::insertFileItem( KFileItem fileItem, QString matchingLine )
 {
-  delete fileInfo;
+    QFileInfo fileInfo(fileItem.url().path());
+
+    int perm_index;
+    if(fileInfo.isReadable())
+        perm_index = fileInfo.isWritable() ? RW : RO;
+    else
+        perm_index = fileInfo.isWritable() ? WO : NA;
+
+    //Generate list item
+    QList<QStandardItem*> items;
+    
+    //Size item (visible size + bytes for sorting)
+    QStandardItem * sizeItem = new QStandardItem( KIO::convertSize( fileItem.size() ) );
+    sizeItem->setData( fileItem.size(), Qt::UserRole ); 
+    
+    QStandardItem * dateItem = new QStandardItem( fileItem.timeString(KFileItem::ModificationTime) );
+    dateItem->setData( fileItem.time(KFileItem::ModificationTime).toTime_t() , Qt::UserRole );
+    
+    items.append( new KFindItem( fileItem ) );
+    items.append( new QStandardItem( (static_cast<KfindWindow*>(parent()))->reducedDir(fileItem.url().directory(KUrl::AppendTrailingSlash)) ) );
+    items.append( sizeItem );
+    items.append( dateItem );
+    items.append( new QStandardItem( i18n(perm[perm_index]) ) );
+    items.append( new QStandardItem( matchingLine ) );
+    
+    m_urlMap.insert( fileItem.url(), items.at(0) );
+    
+    appendRow( items );
 }
 
-QString KfFileLVI::key(int column, bool) const
+/*
+KUrl KFindItemModel::urlFromItem( QStandardItem * item )
 {
-  switch (column) {
-  case 2:
-    // Returns size in bytes. Used for sorting
-    return QString().sprintf("%010ld", (long int)fileInfo->size());
-  case 3:
-  {
-    unsigned long l_time = fileitem.time(KFileItem::ModificationTime).toTime_t();
-    // Returns time in secs from 1/1/1970. Used for sorting
-    return QString().sprintf("%010lu", l_time);
-  }
-  }
-
-  return text(column);
+    return m_urlMap.key( item );
 }
+
+KUrl KFindItemModel::urlFromIndex( const QModelIndex & index )
+{
+    return m_urlMap.key( item( index.row() ) );
+}
+
+QStandardItem * KFindItemModel::itemFromUrl( KUrl url )
+{
+    return m_urlMap.value( url );
+}
+*/
+
+void KFindItemModel::removeItem( const KUrl & url )
+{
+    QStandardItem * item = m_urlMap.value( url );
+    removeRow( item->index().row() );
+    m_urlMap.remove( url );
+}
+
+bool KFindItemModel::isInserted( const KUrl & url )
+{
+    return m_urlMap.contains( url );
+}
+
+void KFindItemModel::reset()
+{
+    clear();
+    setHorizontalHeaderLabels( QStringList() << i18n("Name") << i18n("In Subfolder") << i18n("Size") << i18n("Modified") << i18n("Permissions") << i18n("First Matching Line"));
+}
+
+Qt::ItemFlags KFindItemModel::flags(const QModelIndex &index) const
+{
+    Qt::ItemFlags defaultFlags = Qt::ItemIsSelectable | Qt::ItemIsEnabled;
+    if (index.isValid())
+        return Qt::ItemIsDragEnabled | defaultFlags;
+    return defaultFlags;
+}
+ 
+QMimeData * KFindItemModel::mimeData(const QModelIndexList &indexes) const
+{
+    KUrl::List uris;
+    
+    foreach ( const QModelIndex & index, indexes )
+    {
+        if( index.isValid())
+        {
+            if( index.column() == 0 ) //Only use the first column item
+            {
+                KFindItem * findItem = (KFindItem*)item( index.row() );
+                if( findItem )
+                    uris.append( findItem->fileItem.url() );
+            }
+        }
+    }
+
+    if ( uris.count() <= 0 )
+        return 0;
+
+    QMimeData * mimeData = new QMimeData();
+    uris.populateMimeData( mimeData );
+    
+    return mimeData;
+}
+
+//END KFindItemModel
+
+//BEGIN KFindItem
+
+KFindItem::KFindItem( KFileItem _fileItem ):
+    QStandardItem()
+{
+    fileItem = _fileItem;
+    setText( fileItem.url().fileName(KUrl::ObeyTrailingSlash) );
+    setIcon( QIcon( fileItem.pixmap( 16 ) ) );
+}
+
+//END KFindItem
+
+//BEGIN KFindSortFilterProxyModel
+
+bool KFindSortFilterProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
+{
+    //Order by UserData size in bytes or unix date
+    if( left.column() == 2 || left.column() == 3)
+    {
+        qulonglong leftData = sourceModel()->data( left, Qt::UserRole ).toULongLong();
+        qulonglong rightData = sourceModel()->data( right, Qt::UserRole ).toULongLong();
+
+        return leftData < rightData;
+    }
+    // Default sorting rules for string values
+    else
+    {
+        return QSortFilterProxyModel::lessThan( left, right );
+    }
+}
+
+//END KFindSortFilterProxyModel
+
+//BEGIN KfindWindow
 
 KfindWindow::KfindWindow( QWidget *parent )
-  : K3ListView( parent )
-,m_baseDir()
-,m_menu(0)
+    : QTreeView( parent ) ,
+    m_baseDir()
 {
-  setSelectionMode( Q3ListView::Extended );
-  setShowSortIndicator( true );
+    //Configure model and proxy model
+    m_model = new KFindItemModel( this );
+    m_proxyModel = new KFindSortFilterProxyModel();
+    m_proxyModel->setSourceModel( m_model );
+    setModel( m_proxyModel );
+    
+    //Configure QTreeView
+    setRootIsDecorated( false );
+    setSelectionMode( QAbstractItemView::ExtendedSelection );
+    setSortingEnabled( true );
+    setDragEnabled( true );
+    setContextMenuPolicy( Qt::CustomContextMenu );
+    
+    connect( this, SIGNAL( customContextMenuRequested( const QPoint &) ),
+                 this, SLOT( contextMenuRequested( const QPoint & )));
+    connect( this, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(slotExecute(QModelIndex)) );
+    
+    //Generate popup menu actions
+    m_actionCollection = new KActionCollection( this );
 
-  addColumn(i18n("Name"));
-  addColumn(i18n("In Subfolder"));
-  addColumn(i18n("Size"));
-  setColumnAlignment(2, Qt::AlignRight);
-  addColumn(i18n("Modified"));
-  setColumnAlignment(3, Qt::AlignRight);
-  addColumn(i18n("Permissions"));
-  setColumnAlignment(4, Qt::AlignRight);
-
-  addColumn(i18n("First Matching Line"));
-  setColumnAlignment(5, Qt::AlignLeft);
-
-  // Disable autoresize for all columns
-  // Resizing is done by resetColumns() function
-  for (int i = 0; i < 6; i++)
-    setColumnWidthMode(i, Manual);
-
-  resetColumns(true);
-
-  connect( this, SIGNAL(selectionChanged()),
-	   this, SLOT( selectionHasChanged() ));
-
-  connect(this, SIGNAL(contextMenu(K3ListView *, Q3ListViewItem*,const QPoint&)),
-	  this, SLOT(slotContextMenu(K3ListView *,Q3ListViewItem*,const QPoint&)));
-
-  connect(this, SIGNAL(executed(Q3ListViewItem*)),
-	  this, SLOT(slotExecute(Q3ListViewItem*)));
-  setDragEnabled(true);
-
+    KAction * open = KStandardAction::open(this, SLOT( slotExecuteSelected() ), this);
+    m_actionCollection->addAction( "file_open", open );
+    
+    KAction * copy = KStandardAction::copy(this, SLOT( copySelection() ), this);
+    m_actionCollection->addAction( "edit_copy", copy );
+    
+    KAction * openFolder = new KAction( KIcon("window-new"), i18n("&Open containing folder(s)"), this );
+    connect( openFolder, SIGNAL(triggered()), this, SLOT( openContainingFolder() ) );
+    m_actionCollection->addAction( "openfolder", openFolder );
+    
+    KAction * del = new KAction( KIcon("edit-delete"), i18n("&Delete"), this );
+    connect( del, SIGNAL(triggered()), this, SLOT( deleteSelectedFiles() ) );
+    del->setShortcut(Qt::SHIFT + Qt::Key_Delete);
+    m_actionCollection->addAction( "del", del );
+   
+    KAction * trash = new KAction( KIcon("user-trash"), i18n("&Move to Trash"), this );
+    connect( trash, SIGNAL(triggered()), this, SLOT( moveToTrashSelectedFiles() ) );
+    trash->setShortcut(Qt::Key_Delete);
+    m_actionCollection->addAction( "trash", trash );
+    
+    header()->setStretchLastSection( true );
+    
+    resetColumns();
 }
 
+KfindWindow::~KfindWindow()
+{
+    delete m_model;
+    delete m_proxyModel;
+    delete m_actionCollection;
+}
 
 QString KfindWindow::reducedDir(const QString& fullDir)
 {
-   if (fullDir.indexOf(m_baseDir)==0)
-   {
-      QString tmp=fullDir.mid(m_baseDir.length());
-      return tmp;
-   };
-   return fullDir;
+    if (fullDir.indexOf(m_baseDir)==0)
+    {
+        QString tmp=fullDir.mid(m_baseDir.length());
+        return tmp;
+    };
+    return fullDir;
 }
 
 void KfindWindow::beginSearch(const KUrl& baseUrl)
 {
-  kDebug()<<QString("beginSearch in: %1").arg(baseUrl.path());
-  m_baseDir=baseUrl.path(KUrl::AddTrailingSlash);
-  haveSelection = false;
-  clear();
+    kDebug() << QString("beginSearch in: %1").arg(baseUrl.path());
+    m_baseDir = baseUrl.path(KUrl::AddTrailingSlash);
+    m_model->reset();
 }
 
 void KfindWindow::endSearch()
@@ -169,264 +262,240 @@ void KfindWindow::endSearch()
 
 void KfindWindow::insertItem(const KFileItem &item, const QString& matchingLine)
 {
-  new KfFileLVI(this, item, matchingLine);
+    m_model->insertFileItem( item, matchingLine );
+    sortByColumn( 0, Qt::AscendingOrder );
+    resetColumns();
 }
 
-// copy to clipboard aka X11 selection
+// copy to clipboard
 void KfindWindow::copySelection()
 {
-  Q3DragObject *drag_obj = dragObject();
-
-  if (drag_obj)
-  {
-    QClipboard *cb = kapp->clipboard();
-    cb->setData(drag_obj);
-  }
+    QMimeData * mime = m_model->mimeData( m_proxyModel->mapSelectionToSource( selectionModel()->selection() ).indexes() );
+    if (mime)
+    {
+        QClipboard * cb = kapp->clipboard();
+        cb->setMimeData( mime );
+    }
 }
 
 void KfindWindow::saveResults()
 {
-  Q3ListViewItem *item;
+    QMap<KUrl, QStandardItem*> urls = m_model->urls();
 
-  KFileDialog *dlg = new KFileDialog(QString(), QString(), this);
-  dlg->setOperationMode (KFileDialog::Saving);
+    KFileDialog *dlg = new KFileDialog(QString(), QString(), this);
+    dlg->setOperationMode (KFileDialog::Saving);
+    dlg->setCaption( i18n("Save Results As") );
+    dlg->setFilter( QString("*.html|%1\n*.txt|%2").arg( i18n("HTML page"), i18n("Text file") ) );
+    dlg->setConfirmOverwrite(true);    
+    
+    dlg->exec();
 
-  dlg->setCaption(i18n("Save Results As"));
+    KUrl u = dlg->selectedUrl();
+    
+    QString filter = dlg->currentFilter();
+    delete dlg;
 
-  QStringList list;
+    if (!u.isValid() || !u.isLocalFile())
+        return;
 
-  list << "text/plain" << "text/html";
+    QString filename = u.toLocalFile();
 
-  dlg->setOperationMode(KFileDialog::Saving);
+    QFile file(filename);
 
-  dlg->setMimeFilter(list, QString("text/plain"));
-
-  dlg->exec();
-
-  KUrl u = dlg->selectedUrl();
-  KMimeType::Ptr mimeType = dlg->currentFilterMimeType();
-  delete dlg;
-
-  if (!u.isValid() || !u.isLocalFile())
-     return;
-
-  QString filename = u.toLocalFile();
-
-  QFile file(filename);
-
-  if ( !file.open(QIODevice::WriteOnly) )
-    KMessageBox::error(parentWidget(),
-		       i18n("Unable to save results."));
-  else {
-    QTextStream stream( &file );
-    stream.setCodec( QTextCodec::codecForLocale() );
-
-    if ( mimeType->name() == "text/html") {
-      stream << QString::fromLatin1("<HTML><HEAD>\n"
-				    "<!DOCTYPE %1>\n"
-				    "<TITLE>%2</TITLE></HEAD>\n"
-				    "<BODY><H1>%3</H1>"
-				    "<DL><p>\n")
-	.arg(i18n("KFind Results File"))
-	.arg(i18n("KFind Results File"))
-	.arg(i18n("KFind Results File"));
-
-      item = firstChild();
-      while(item != NULL)
-	{
-	  QString path=((KfFileLVI*)item)->fileitem.url().url();
-	  QString pretty=Qt::escape(((KfFileLVI*)item)->fileitem.url().prettyUrl());
-	  stream << QString::fromLatin1("<DT><A HREF=\"") << path
-		 << QString::fromLatin1("\">") << pretty
-		 << QString::fromLatin1("</A>\n");
-
-	  item = item->nextSibling();
-	}
-      stream << QString::fromLatin1("</DL><P></BODY></HTML>\n");
+    if ( !file.open(QIODevice::WriteOnly) )
+    {
+        KMessageBox::error(parentWidget(),
+                i18n("Unable to save results."));
     }
-    else {
-      item = firstChild();
-      while(item != NULL)
-      {
-	QString path=((KfFileLVI*)item)->fileitem.url().url();
-	stream << path << endl;
-	item = item->nextSibling();
-      }
-    }
+    else
+    {
+        QTextStream stream( &file );
+        stream.setCodec( QTextCodec::codecForLocale() );
 
-    file.close();
-    KMessageBox::information(parentWidget(),
-			     i18n("Results were saved to file\n")+
-			     filename);
-  }
+        if ( filter == "*.html" ) 
+        {
+            stream << QString::fromLatin1("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\""
+            "\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\"><html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+                            "<head>\n"
+                            "<title>%2</title></head>\n"
+                            "<body>\n<h1>%2</h1>\n"
+                            "<dl>\n")
+            .arg(i18n("KFind Results File"));
+
+            Q_FOREACH( const KUrl & url, urls.keys() )
+            {
+                QString path = url.url();
+                QString pretty = url.prettyUrl();
+                
+                stream << QString::fromLatin1("<dt><a href=\"%1\">%2</a></dt>\n").arg( path, pretty );
+
+            }
+            stream << QString::fromLatin1("</dl>\n</body>\n</html>\n");
+        }
+        else 
+        {
+            Q_FOREACH( const KUrl & url, urls.keys() )
+            {
+                QString path= url.url();
+                stream << path << endl;
+            }
+        }
+
+        file.close();
+        KMessageBox::information(parentWidget(),
+                    i18n("Results were saved to file\n")+
+                    filename);
+    }
 }
 
-// This function is called when selection is changed (both selected/deselected)
-// It notifies the parent about selection status and enables/disables menubar
-void KfindWindow::selectionHasChanged()
+void KfindWindow::openContainingFolder()
 {
-  emit resultSelected(true);
-
-  Q3ListViewItem *item = firstChild();
-  while(item != 0L)
-  {
-    if(isSelected(item)) {
-      emit resultSelected( true );
-      haveSelection = true;
-      return;
+    KUrl::List uris = selectedUrls();
+    QMap<KUrl, int> folderMaps;
+    
+    //Generate *unique* folders
+    Q_FOREACH( const KUrl & url, uris )
+    {
+        KUrl dir = url;
+        dir.setFileName( QString() );
+        folderMaps.insert( dir, 0 );
     }
 
-    item = item->nextSibling();
-  }
-
-  haveSelection = false;
-  emit resultSelected(false);
+    Q_FOREACH( const KUrl & url, folderMaps.keys() )
+    {
+        (void) new KRun(url, this);
+    }
 }
 
-void KfindWindow::deleteFiles()
+void KfindWindow::slotExecuteSelected()
 {
-  QString tmp = i18np("Do you really want to delete the selected file?",
-                     "Do you really want to delete the %1 selected files?",selectedItems().count());
-  if (KMessageBox::warningContinueCancel(parentWidget(), tmp, "", KStandardGuiItem::del()) == KMessageBox::Cancel)
-    return;
-
-  // Iterate on all selected elements
-  QList<Q3ListViewItem*> selected = selectedItems();
-  foreach ( Q3ListViewItem* listViewItem, selected ) {
-    KfFileLVI *item = static_cast<KfFileLVI*>(listViewItem);
-    KFileItem file = item->fileitem;
-
-    KIO::NetAccess::del(file.url(), this);
-  }
-  qDeleteAll(selected);
+    QModelIndexList selected = m_proxyModel->mapSelectionToSource( selectionModel()->selection() ).indexes();
+    if ( selected.size() == 0 )
+        return;
+        
+    Q_FOREACH( const QModelIndex & index, selected )
+    {
+        if( index.column() == 0 )
+        {
+            KFindItem * findItem = (KFindItem*)m_model->itemFromIndex( index );
+            if( findItem )
+                findItem->fileItem.run();
+        }
+    }
 }
 
-void KfindWindow::fileProperties()
+void KfindWindow::slotExecute( const QModelIndex & index )
 {
-  // This dialog must be modal because it parent dialog is modal as well.
-  // Non-modal property dialog will hide behind the main window
-  KPropertiesDialog::showDialog( ((KfFileLVI *)currentItem())->fileitem, this, true );
+    if ( !index.isValid() )
+        return;
+        
+    QModelIndex realIndex = m_proxyModel->mapToSource( index );
+    
+    if ( !realIndex.isValid() )
+        return;
+        
+    KFindItem * findItem = (KFindItem *)m_model->item( realIndex.row() );
+    if( findItem )
+        findItem->fileItem.run();
 }
 
-void KfindWindow::openFolder()
-{
-  KFileItem fileitem = ((KfFileLVI *)currentItem())->fileitem;
-  KUrl url = fileitem.url();
-  url.setFileName(QString());
-
-  (void) new KRun(url, this);
-}
-
-void KfindWindow::openBinding()
-{
-  ((KfFileLVI*)currentItem())->fileitem.run();
-}
-
-void KfindWindow::slotExecute(Q3ListViewItem* item)
-{
-   if (item==0)
-      return;
-  ((KfFileLVI*)item)->fileitem.run();
-}
-
-// Resizes K3ListView to occupy all visible space
 void KfindWindow::resizeEvent(QResizeEvent *e)
 {
-  K3ListView::resizeEvent(e);
-  resetColumns(false);
-  clipper()->repaint();
+    Q_UNUSED( e );
+    resetColumns();
 }
 
-Q3DragObject * KfindWindow::dragObject()
+void KfindWindow::resetColumns()
 {
-  KUrl::List uris;
-  QList<Q3ListViewItem*> selected = selectedItems();
-
-  // create a list of URIs from selection
-  foreach ( Q3ListViewItem* listViewItem, selected )
-  {
-    KfFileLVI *item = static_cast<KfFileLVI*>(listViewItem);
-
-    uris.append( item->fileitem.url() );
-  }
-
-  if ( uris.count() <= 0 )
-     return 0;
-
-  Q3UriDrag *ud = new K3URLDrag( uris, (QWidget *) this );
-  ud->setObjectName( "kfind uridrag" );
-
-  const QPixmap *pix = currentItem()->pixmap(0);
-  if ( pix && !pix->isNull() )
-    ud->setPixmap( *pix );
-
-  return ud;
+    resizeColumnToContents( 0 );
+    resizeColumnToContents( 1 );
 }
 
-void KfindWindow::resetColumns(bool init)
+void KfindWindow::contextMenuRequested( const QPoint & p)
 {
-   QFontMetrics fm = fontMetrics();
-  if (init)
-  {
-    setColumnWidth(2, qMax(fm.width(columnText(2)), fm.width("0000000")) + 15);
-    QString sampleDate =
-      KGlobal::locale()->formatDateTime(QDateTime::currentDateTime());
-    setColumnWidth(3, qMax(fm.width(columnText(3)), fm.width(sampleDate)) + 15);
-    setColumnWidth(4, qMax(fm.width(columnText(4)), fm.width(i18n(perm[RO]))) + 15);
-    setColumnWidth(5, qMax(fm.width(columnText(5)), fm.width("some text")) + 15);
-  }
+    KFileItemList fileList;
+    
+    QModelIndexList selected = m_proxyModel->mapSelectionToSource( selectionModel()->selection() ).indexes();
+    if ( selected.size() == 0 )
+        return;
+    
+    Q_FOREACH( const QModelIndex & index, selected )
+    {
+        if( index.column() == 0 )
+        {
+            KFindItem * findItem = (KFindItem*)m_model->itemFromIndex( index );
+            if( findItem )
+                fileList.append( findItem->fileItem );
+        }
+    }
+    
+    KParts::BrowserExtension::PopupFlags flags = KParts::BrowserExtension::ShowProperties; // | KParts::BrowserExtension::ShowUrlOperations;
+    
+    QList<QAction*> editActions;
+    editActions.append(m_actionCollection->action("file_open"));
+    editActions.append(m_actionCollection->action("openfolder"));
+    editActions.append(m_actionCollection->action("edit_copy"));
+    editActions.append(m_actionCollection->action("del"));
+    editActions.append(m_actionCollection->action("trash"));
+    
+    KParts::BrowserExtension::ActionGroupMap actionGroups;
+    actionGroups.insert("editactions", editActions);
+    
+    KonqPopupMenu * menu = new KonqPopupMenu( fileList, KUrl(), *m_actionCollection, new KNewMenu( m_actionCollection, this, "new_menu"), 0, flags, this, 0, actionGroups);
 
-  int free_space = visibleWidth() -
-    columnWidth(2) - columnWidth(3) - columnWidth(4) - columnWidth(5);
-
-//  int name_w = qMin((int)(free_space*0.5), 150);
-//  int dir_w = free_space - name_w;
-  int name_w = qMax((int)(free_space*0.5), fm.width("some long filename"));
-  int dir_w = name_w;
-
-  setColumnWidth(0, name_w);
-  setColumnWidth(1, dir_w);
+    menu->popup( this->mapToGlobal( p ) );
+    connect( menu, SIGNAL(aboutToHide()), menu, SLOT(deleteLater()) );
 }
 
-void KfindWindow::slotContextMenu(K3ListView *,Q3ListViewItem *item,const QPoint&p)
+KUrl::List KfindWindow::selectedUrls()
 {
-  if (!item) return;
-  int count = selectedItems().count();
-
-  if (count == 0)
-  {
-     return;
-  };
-
-  if (m_menu==0)
-     m_menu = new KMenu(this);
-  else
-     m_menu->clear();
-
-  if (count == 1)
-  {
-     //menu = new KMenu(item->text(0), this);
-     m_menu->addTitle(item->text(0));
-     m_menu->addAction(SmallIcon("document-open"),i18nc("Menu item", "Open"), this, SLOT(openBinding()));
-     m_menu->addAction(SmallIcon("window-new"),i18n("Open Folder"), this, SLOT(openFolder()));
-     m_menu->addSeparator();
-     m_menu->addAction(SmallIcon("edit-copy"),i18n("Copy"), this, SLOT(copySelection()));
-     m_menu->addAction(SmallIcon("edit-delete"),i18n("Delete"), this, SLOT(deleteFiles()));
-     m_menu->addSeparator();
-     m_menu->addAction(i18n("Open With..."), this, SLOT(slotOpenWith()));
-     m_menu->addSeparator();
-     m_menu->addAction(i18n("Properties"), this, SLOT(fileProperties()));
-  }
-  else
-  {
-     m_menu->addTitle(i18n("Selected Files"));
-     m_menu->addAction(SmallIcon("edit-copy"),i18n("Copy"), this, SLOT(copySelection()));
-     m_menu->addAction(SmallIcon("edit-delete"),i18n("Delete"), this, SLOT(deleteFiles()));
-  }
-  m_menu->exec(p);
+    KUrl::List uris;
+    
+    QModelIndexList indexes = m_proxyModel->mapSelectionToSource( selectionModel()->selection() ).indexes();
+    Q_FOREACH( const QModelIndex & index, indexes )
+    {
+        if( index.column() == 0 && index.isValid() )
+        {
+            KFindItem * item = (KFindItem*)m_model->itemFromIndex( index );
+            if( item )
+                uris.append( item->fileItem.url() );
+        }
+    }
+    
+    return uris;
 }
 
-void KfindWindow::slotOpenWith()
+void KfindWindow::deleteSelectedFiles()
 {
-   KRun::displayOpenWithDialog( KUrl::split(((KfFileLVI*)currentItem())->fileitem.url()), window() );
+    KUrl::List uris = selectedUrls();
+    
+    bool done = KonqOperations::askDeleteConfirmation( uris, KonqOperations::DEL, KonqOperations::FORCE_CONFIRMATION, this );
+    if ( done )
+    {
+        Q_FOREACH( const KUrl & url, uris )
+            KIO::NetAccess::del( url, this );
+        
+        //This should be done by KDirWatch integration in the main dialog, but it could fail?
+        Q_FOREACH( const KUrl & url, uris )
+            m_model->removeItem( url );
+    }
 }
+
+void KfindWindow::moveToTrashSelectedFiles()
+{
+    KUrl::List uris = selectedUrls();
+    
+    bool done = KonqOperations::askDeleteConfirmation( uris, KonqOperations::TRASH, KonqOperations::FORCE_CONFIRMATION, this );
+    if ( done )
+    {
+        KIO::trash( uris );
+
+        //This should be done by KDirWatch integration in the main dialog, but it could fail?
+        Q_FOREACH( const KUrl & url, uris )
+            m_model->removeItem( url );
+    }
+}
+
+//END KfindWindow
+
+#include "kfwin.moc"

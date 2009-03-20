@@ -4,70 +4,122 @@
  *
  ***********************************************************************/
 
-#ifndef KFWIN_H
-#define KFWIN_H
+#ifndef KFWIN__H
+#define KFWIN__H
 
-#include <k3listview.h>
-#include <kfileitem.h>
+#include <QtGui/QTreeView>
+#include <QtGui/QStandardItemModel>
+#include <QtGui/QSortFilterProxyModel>
+#include <QtGui/QDragMoveEvent>
+
 #include <kurl.h>
+#include <kfileitem.h>
 
-class QFileInfo;
-class KMenu;
 class KfindWindow;
+class KActionCollection;
 
-class KfFileLVI : public Q3ListViewItem
+
+class KFindItem: public QStandardItem
 {
- public:
-  KfFileLVI(KfindWindow* lv, const KFileItem &item,const QString& matchingLine);
-  ~KfFileLVI();
-
-  QString key(int column, bool) const;
-
-  QFileInfo *fileInfo;
-  KFileItem fileitem;
+    public:
+        KFindItem( KFileItem );
+        KFileItem  fileItem;
 };
 
-class KfindWindow: public   K3ListView
+class KFindItemModel: public QStandardItemModel
+{
+    public:
+        KFindItemModel( KfindWindow* parent);
+
+        void insertFileItem( KFileItem, QString );
+        void removeItem(const KUrl &);
+        bool isInserted(const KUrl &);
+        void reset();
+        
+        Qt::DropActions supportedDropActions() const
+        {
+            return Qt::CopyAction | Qt::MoveAction;
+        }
+        
+        Qt::ItemFlags flags(const QModelIndex &) const;
+        QMimeData * mimeData(const QModelIndexList &) const;
+        
+        /*
+        KUrl urlFromItem( QStandardItem * );
+        KUrl urlFromIndex( const QModelIndex & );
+        QStandardItem * itemFromUrl( KUrl );
+        */
+        
+        QMap<KUrl, QStandardItem*> urls() { return m_urlMap; }
+        
+    private:
+        QMap<KUrl, QStandardItem*> m_urlMap;
+};
+
+class KFindSortFilterProxyModel: public QSortFilterProxyModel
+{
+    Q_OBJECT
+    
+    public:
+        KFindSortFilterProxyModel(QObject * parent = 0):
+            QSortFilterProxyModel(parent){};
+
+    protected:
+        bool lessThan(const QModelIndex &left, const QModelIndex &right) const;
+
+};
+
+class KfindWindow: public QTreeView
 {
   Q_OBJECT
-public:
-  KfindWindow( QWidget * parent = 0 );
+    public:
+        KfindWindow( QWidget * parent = 0 );
+        ~KfindWindow();
 
-  void beginSearch(const KUrl& baseUrl);
-  void endSearch();
+        void beginSearch(const KUrl& baseUrl);
+        void endSearch();
 
-  void insertItem(const KFileItem &item, const QString& matchingLine);
+        void insertItem(const KFileItem &item, const QString& matchingLine);
+        void removeItem(const KUrl & url) { m_model->removeItem( url ); }
+        
+        bool isInserted(const KUrl & url) { return m_model->isInserted( url ); }
+        
+        QString reducedDir(const QString& fullDir);
+        
+        int itemCount() { return m_model->rowCount(); }
+        
+    public Q_SLOTS:
+        void copySelection();
+        void contextMenuRequested( const QPoint & p );
 
-  QString reducedDir(const QString& fullDir);
+    private Q_SLOTS:
+    
+        KUrl::List selectedUrls();
+        
+        void deleteSelectedFiles();
+        void moveToTrashSelectedFiles();
+        
+        void slotExecute( const QModelIndex & index );
+        void slotExecuteSelected();
+        
+        void openContainingFolder();
+        void saveResults();
+   
+    protected:
+        void dragMoveEvent( QDragMoveEvent *e ) { e->accept(); }
+        void resizeEvent( QResizeEvent *e );
 
-public Q_SLOTS:
-  void copySelection();
-  void slotContextMenu(K3ListView *,Q3ListViewItem *item,const QPoint&p);
+    Q_SIGNALS:
+        void resultSelected(bool);
 
-private Q_SLOTS:
-  void deleteFiles();
-  void fileProperties();
-  void openFolder();
-  void saveResults();
-  void openBinding();
-  void selectionHasChanged();
-  void slotExecute(Q3ListViewItem*);
-  void slotOpenWith();
-  
-protected:
-  virtual void resizeEvent(QResizeEvent *e);
-
-  virtual Q3DragObject *dragObject();
-
-Q_SIGNALS:
-  void resultSelected(bool);
-
-private:
-  QString m_baseDir;
-  KMenu *m_menu;
-  bool haveSelection;
-  bool m_pressed;
-  void resetColumns(bool init);
+    private:
+        void resetColumns();
+        
+        QString m_baseDir;
+        
+        KFindItemModel *    m_model;
+        KFindSortFilterProxyModel * m_proxyModel;
+        KActionCollection *     m_actionCollection;
 };
 
 #endif
