@@ -52,9 +52,7 @@ if (X11_Xt_LIB)
 
   ########### nspluginscan ###############
 
-  set(nspluginscan_SRCS pluginscan.cpp plugin_paths.cpp ../konqueror/settings/filetypes/mimetypewriter.cpp ../konqueror/settings/filetypes/sharedmimeinfoversion.cpp)
-
-  include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../konqueror/settings/filetypes/)
+  set(nspluginscan_SRCS pluginscan.cpp plugin_paths.cpp mimetypewriter.cpp)
 
   kde4_add_executable(nspluginscan ${nspluginscan_SRCS})
 

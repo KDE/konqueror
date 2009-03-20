@@ -19,46 +19,10 @@
 */
 
 #include "sharedmimeinfoversion.h"
-#include <kdebug.h>
-#include <kprocess.h>
-
-static int version()
-{
-    static int s_version = 0;
-    if (s_version == 0) {
-        KProcess proc;
-        proc << "update-mime-database";
-        proc << "-v";
-        proc.setOutputChannelMode(KProcess::OnlyStderrChannel);
-        proc.setReadChannel(KProcess::StandardError);
-        const int exitCode = proc.execute();
-        if (exitCode) {
-            kWarning() << proc.program() << "exited with error code" << exitCode;
-        }
-        QByteArray versionLine = proc.readLine();
-        const QByteArray expectedStart = "update-mime-database (shared-mime-info) ";
-        if (versionLine.startsWith(expectedStart)) {
-            versionLine = versionLine.mid(expectedStart.length());
-            versionLine.chop(1); // \n
-            const int dot = versionLine.indexOf('.');
-            if (dot != -1) {
-                const int major = versionLine.left(dot).toInt();
-                const int minor = versionLine.mid(dot+1).toInt();
-                s_version = major * 100 + minor; // 1.04 -> 104
-            } else {
-                kWarning() << "Unexpected version scheme from update-mime-database: got" << versionLine;
-                s_version = -1;
-            }
-        } else {
-            kWarning() << "Unexpected output from update-mime-database -v:" << versionLine;
-            kWarning() << "Expected that it would start with:" << expectedStart;
-            s_version = -1;
-        }
-    }
-    return s_version;
-}
+#include <kmimetype.h>
+#include <kdeversion.h>
 
 bool SharedMimeInfoVersion::supportsIcon()
 {
-    return version() >= 40;
+    return KMimeType::sharedMimeInfoVersion() >= KDE_MAKE_VERSION(0, 40, 0);
 }
