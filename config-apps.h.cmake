@@ -18,9 +18,6 @@
 /* Define to 1 if you have the <sasl/sasl.h> header file. */
 #cmakedefine HAVE_SASL_SASL_H 1
 
-/* Define to 1 if you have the `setpriority' function. */
-#cmakedefine HAVE_SETPRIORITY 1
-
 /* Define to 1 if you have the `sigaction' function. */
 #define HAVE_SIGACTION 1
 
