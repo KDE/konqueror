@@ -7,10 +7,10 @@
 /* #undef HAVE_KSTAT */
 
 /* Define if you have long long as datatype */
-#define HAVE_LONG_LONG 1
+#cmakedefine HAVE_LONG_LONG 1
 
 /* Define to 1 if you have the `nice' function. */
-#define HAVE_NICE 1
+#cmakedefine HAVE_NICE 1
 
 /* Define to 1 if you have the <sasl.h> header file. */
 #cmakedefine HAVE_SASL_H 1
@@ -19,10 +19,10 @@
 #cmakedefine HAVE_SASL_SASL_H 1
 
 /* Define to 1 if you have the `sigaction' function. */
-#define HAVE_SIGACTION 1
+#cmakedefine HAVE_SIGACTION 1
 
 /* Define to 1 if you have the `sigset' function. */
-#define HAVE_SIGSET 1
+#cmakedefine HAVE_SIGSET 1
 
 /* Define to 1 if you have the <string.h> header file. */
 #cmakedefine HAVE_STRING_H 1
