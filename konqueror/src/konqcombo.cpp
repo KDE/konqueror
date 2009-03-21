@@ -642,9 +642,10 @@ void KonqCombo::paintEvent( QPaintEvent *pe )
         r.setRight( re.right() );
         if ( r != edit->geometry() )
             edit->setGeometry( r );
-        QPalette palette = edit->palette();
-        palette.setColor(edit->backgroundRole(), palette.color(QPalette::Active, QPalette::Base));
-        edit->setPalette(palette);
+        // ### disabled for now, see above note
+        //QPalette palette = edit->palette();
+        //palette.setColor(edit->backgroundRole(), palette.color(QPalette::Active, QPalette::Base));
+        //edit->setPalette(palette);
     }
 }
 
