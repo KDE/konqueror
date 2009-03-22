@@ -51,14 +51,6 @@ KNetworkReply::KNetworkReply(const QNetworkAccessManager::Operation &op, const Q
     setOpenMode(QIODevice::ReadOnly);
     setUrl(request.url());
     setOperation(op);
-    connect(kioJob, SIGNAL(redirection(KIO::Job*, const KUrl&)), SLOT(slotRedirection(KIO::Job*, const KUrl&)));
-    connect(kioJob, SIGNAL(permanentRedirection(KIO::Job*, const KUrl&, const KUrl&)), SLOT(slotPermanentRedirection(KIO::Job*, const KUrl&, const KUrl&)));
-    connect(kioJob, SIGNAL(percent(KJob*, unsigned long)), SLOT(slotPercent(KJob*, unsigned long)));
-    connect(kioJob, SIGNAL(data(KIO::Job *, const QByteArray &)),
-        SLOT(appendData(KIO::Job *, const QByteArray &)));
-    connect(kioJob, SIGNAL(result(KJob *)), SLOT(jobDone(KJob *)));
-    connect(kioJob, SIGNAL(mimetype(KIO::Job *, const QString&)),
-        SLOT(setMimeType(KIO::Job *, const QString&)));
 
     if (!request.sslConfiguration().isNull()) {
         setSslConfiguration(request.sslConfiguration());
@@ -68,6 +60,15 @@ KNetworkReply::KNetworkReply(const QNetworkAccessManager::Operation &op, const Q
     if (!kioJob) { // a blocked request
         setError(QNetworkReply::OperationCanceledError, i18n("Blocked request."));
         QTimer::singleShot(0, this, SIGNAL(finished()));
+    } else {
+        connect(kioJob, SIGNAL(redirection(KIO::Job*, const KUrl&)), SLOT(slotRedirection(KIO::Job*, const KUrl&)));
+        connect(kioJob, SIGNAL(permanentRedirection(KIO::Job*, const KUrl&, const KUrl&)), SLOT(slotPermanentRedirection(KIO::Job*, const KUrl&, const KUrl&)));
+        connect(kioJob, SIGNAL(percent(KJob*, unsigned long)), SLOT(slotPercent(KJob*, unsigned long)));
+        connect(kioJob, SIGNAL(data(KIO::Job *, const QByteArray &)),
+            SLOT(appendData(KIO::Job *, const QByteArray &)));
+        connect(kioJob, SIGNAL(result(KJob *)), SLOT(jobDone(KJob *)));
+        connect(kioJob, SIGNAL(mimetype(KIO::Job *, const QString&)),
+            SLOT(setMimeType(KIO::Job *, const QString&)));
     }
 }
 
@@ -202,6 +203,7 @@ void KNetworkReply::jobDone(KJob *kJob)
 void KNetworkReply::slotRedirection(KIO::Job* job, const KUrl& url)
 {
     job->kill();
+    d->m_kioJob=0;
     setAttribute(QNetworkRequest::RedirectionTargetAttribute, url);
     emit finished();
 }
