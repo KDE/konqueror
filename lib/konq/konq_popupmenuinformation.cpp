@@ -20,22 +20,16 @@
 */
 
 #include "konq_popupmenuinformation.h"
+#include <kfileitemlistproperties.h>
 #include <kfileitem.h>
 
-class KonqPopupMenuInformationPrivate : public QSharedData
+class KonqPopupMenuInformationPrivate : public QSharedData, public KFileItemListProperties /*it all moved there*/
 {
 public:
     KonqPopupMenuInformationPrivate()
-        : m_parentWidget(0),
-      m_isDirectory(false)
+        : m_parentWidget(0)
     {}
     QWidget* m_parentWidget;
-    KFileItemList m_items;
-    KonqFileItemCapabilities m_capabilities;
-    KUrl::List m_urlList;
-    QString m_mimeType;
-    QString m_mimeGroup;
-    bool m_isDirectory;
 };
 
 KonqPopupMenuInformation::KonqPopupMenuInformation()
@@ -60,43 +54,22 @@ KonqPopupMenuInformation & KonqPopupMenuInformation::operator=(const KonqPopupMe
 
 void KonqPopupMenuInformation::setItems(const KFileItemList& items)
 {
-    Q_ASSERT(!items.isEmpty());
-    d->m_items = items;
-    d->m_capabilities.setItems(items);
-    d->m_mimeType = items.first().mimetype();
-    d->m_mimeGroup = d->m_mimeType.left(d->m_mimeType.indexOf('/'));
-    d->m_isDirectory = items.first().isDir();
-    d->m_urlList = items.targetUrlList();
-    if (items.count() > 1) {
-        KFileItemList::const_iterator kit = items.begin();
-        const KFileItemList::const_iterator kend = items.end();
-        for ( ; kit != kend; ++kit ) {
-            const QString itemMimeType = (*kit).mimetype();
-            // Determine if common mimetype among all items
-            if (d->m_mimeType != itemMimeType) {
-                d->m_mimeType.clear();
-                if (d->m_mimeGroup != itemMimeType.left(itemMimeType.indexOf('/')))
-                    d->m_mimeGroup.clear(); // mimetype groups are different as well!
-            }
-            if (d->m_isDirectory && !(*kit).isDir())
-                d->m_isDirectory = false;
-        }
-    }
+    d->setItems(items);
 }
 
 KFileItemList KonqPopupMenuInformation::items() const
 {
-    return d->m_items;
+    return d->items();
 }
 
 KUrl::List KonqPopupMenuInformation::urlList() const
 {
-    return d->m_urlList;
+    return d->urlList();
 }
 
 bool KonqPopupMenuInformation::isDirectory() const
 {
-    return d->m_isDirectory;
+    return d->isDirectory();
 }
 
 void KonqPopupMenuInformation::setParentWidget(QWidget* parentWidget)
@@ -111,15 +84,25 @@ QWidget* KonqPopupMenuInformation::parentWidget() const
 
 QString KonqPopupMenuInformation::mimeType() const
 {
-    return d->m_mimeType;
+    return d->mimeType();
 }
 
 QString KonqPopupMenuInformation::mimeGroup() const
 {
-    return d->m_mimeGroup;
+    return d->mimeGroup();
 }
 
 KonqFileItemCapabilities KonqPopupMenuInformation::capabilities() const
 {
-    return d->m_capabilities;
+    return KonqFileItemCapabilities(d->items());
+}
+
+void KonqPopupMenuInformation::setItemListProperties(const KFileItemListProperties& items)
+{
+    (KFileItemListProperties &)*d = items;
+}
+
+KFileItemListProperties KonqPopupMenuInformation::itemListProperties() const
+{
+    return *d;
 }

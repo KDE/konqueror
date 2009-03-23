@@ -10,14 +10,15 @@
     License as published by the Free Software Foundation; either
     version 2 of the License, or (at your option) version 3.
 
-    This program is distributed in the hope that it will be useful,
+    This library is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Library General Public License for more details.
 
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+    You should have received a copy of the GNU Library General Public License
+    along with this library; see the file COPYING.LIB.  If not, write to
+    the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+    Boston, MA 02110-1301, USA.
 */
 
 #include "konq_operations.h"
@@ -471,7 +472,10 @@ void KonqOperations::doDropFileCopy()
 #endif
 
         // Check what the source can do
-        const KUrl url = lst.first(); // we'll assume it's the same for all URLs (hack)
+        // we'll assume it's the same for all URLs (hack)
+        // TODO: if we had a KFileItemList instead of a KUrl::List,
+        // we could use KFileItemsCapabilities
+        const KUrl url = lst.first();
         bool sReading = KProtocolManager::supportsReading( url );
         bool sDeleting = KProtocolManager::supportsDeleting( url );
         bool sMoving = KProtocolManager::supportsMoving( url );

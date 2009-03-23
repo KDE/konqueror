@@ -19,6 +19,7 @@
 */
 
 #include "konq_popupmenu.h"
+#include <kfileitemlistproperties.h>
 #include "konq_popupmenuplugin.h"
 #include "konq_popupmenuinformation.h"
 #include "konq_copytomenu.h"
@@ -75,12 +76,19 @@ class KonqPopupMenuPrivate
 public:
     KonqPopupMenuPrivate(KonqPopupMenu* qq, KActionCollection & actions, QWidget* parentWidget)
         : q(qq),
+          m_parentWidget(parentWidget),
           m_itemFlags(KParts::BrowserExtension::DefaultPopupItems),
           m_copyToMenu(parentWidget),
           m_actions(actions),
-          m_ownActions(static_cast<QWidget *>(0))
+          m_ownActionCollection(static_cast<QWidget *>(0))
     {
     }
+
+    ~KonqPopupMenuPrivate()
+    {
+        qDeleteAll(m_ownActions);
+    }
+
     void addNamedAction(const QString& name);
     void addGroup(const QString& name);
     void addPlugins();
@@ -97,16 +105,19 @@ public:
     void slotShowOriginalFile();
 
     KonqPopupMenu* q;
+    QWidget* m_parentWidget;
     QString m_urlTitle;
     KParts::BrowserExtension::PopupFlags m_itemFlags;
     KNewMenu *m_pMenuNew;
     KUrl m_sViewURL;
-    KonqPopupMenuInformation m_popupMenuInfo;
+    KFileItemListProperties m_popupItemProperties;
+    KonqPopupMenuInformation m_popupMenuInfo; // only used by plugins
     KonqMenuActions m_menuActions;
     KonqCopyToMenu m_copyToMenu;
     KBookmarkManager* m_bookmarkManager;
     KActionCollection &m_actions;
-    KActionCollection m_ownActions; // TODO connect to statusbar for help on actions
+    KActionCollection m_ownActionCollection; // only used by plugins; KDE5: pass m_ownActions instead
+    QList<KAction*> m_ownActions;
     KParts::BrowserExtension::ActionGroupMap m_actionGroups;
 };
 
@@ -128,8 +139,8 @@ KonqPopupMenu::KonqPopupMenu(const KFileItemList &items,
     d->m_pMenuNew = newMenu;
     d->m_sViewURL = viewURL;
     d->m_bookmarkManager = mgr;
-    d->m_popupMenuInfo.setItems(items);
-    d->m_popupMenuInfo.setParentWidget(parentWidget);
+    d->m_popupItemProperties.setItems(items);
+    d->m_menuActions.setParentWidget(parentWidget);
     d->init(kpf, flags);
 
     KAcceleratorManager::manage(this);
@@ -144,15 +155,14 @@ void KonqPopupMenuPrivate::addNamedAction(const QString& name)
 
 void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtension::PopupFlags flags)
 {
-    m_ownActions.setObjectName("KonqPopupMenu::m_ownActions");
     m_itemFlags = flags;
     q->setFont(KGlobalSettings::menuFont());
 
-    Q_ASSERT(m_popupMenuInfo.items().count() >= 1);
+    Q_ASSERT(m_popupItemProperties.items().count() >= 1);
 
     bool bTrashIncluded = false;
 
-    const KFileItemList lstItems = m_popupMenuInfo.items();
+    const KFileItemList lstItems = m_popupItemProperties.items();
     KFileItemList::const_iterator it = lstItems.constBegin();
     const KFileItemList::const_iterator kend = lstItems.constEnd();
     for ( ; it != kend; ++it )
@@ -164,13 +174,13 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
         }
     }
 
-    const bool isDirectory = m_popupMenuInfo.isDirectory();
-    const bool sReading = m_popupMenuInfo.capabilities().supportsReading();
+    const bool isDirectory = m_popupItemProperties.isDirectory();
+    const bool sReading = m_popupItemProperties.supportsReading();
     bool sDeleting = (m_itemFlags & KParts::BrowserExtension::NoDeletion) == 0
-                     && m_popupMenuInfo.capabilities().supportsDeleting();
-    const bool sWriting = m_popupMenuInfo.capabilities().supportsWriting();
-    const bool sMoving = sDeleting && m_popupMenuInfo.capabilities().supportsMoving();
-    const bool isLocal = m_popupMenuInfo.capabilities().isLocal();
+                     && m_popupItemProperties.supportsDeleting();
+    const bool sWriting = m_popupItemProperties.supportsWriting();
+    const bool sMoving = sDeleting && m_popupItemProperties.supportsMoving();
+    const bool isLocal = m_popupItemProperties.isLocal();
 
     KUrl url = m_sViewURL;
     url.cleanPath();
@@ -221,7 +231,7 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
 
     KAction * act;
 
-    QAction *actNewWindow = 0;
+    KAction *actNewWindow = 0;
 
 #if 0 // TODO in the desktop code itself.
     if (( flags & KParts::BrowserExtension::ShowProperties ) && isOnDesktop &&
@@ -237,7 +247,8 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
     if ( ((kpf & KonqPopupMenu::ShowNewWindow) != 0) && sReading )
     {
         const QString openStr = i18n("&Open");
-        actNewWindow = m_ownActions.addAction( "newview" );
+        actNewWindow = new KAction(m_parentWidget /*for status tips*/);
+        m_ownActions.append(actNewWindow);
         actNewWindow->setIcon( KIcon("window-new") );
         actNewWindow->setText( openStr );
         QObject::connect(actNewWindow, SIGNAL(triggered()), q, SLOT(slotPopupNewView()));
@@ -250,14 +261,15 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
         {
             // As requested by KNewMenu :
             m_pMenuNew->slotCheckUpToDate();
-            m_pMenuNew->setPopupFiles(m_popupMenuInfo.urlList());
+            m_pMenuNew->setPopupFiles(m_popupItemProperties.urlList());
 
             q->addAction( m_pMenuNew );
             q->addSeparator();
         }
         else if (mkdirRequested)
         {
-            KAction *actNewDir = m_ownActions.addAction( "newdir" );
+            KAction *actNewDir = new KAction(m_parentWidget);
+            m_ownActions.append(actNewDir);
             actNewDir->setIcon( KIcon("folder-new") );
             actNewDir->setText( i18n( "Create &Folder..." ) );
             QObject::connect(actNewDir, SIGNAL(triggered()), q, SLOT(slotPopupNewDir()));
@@ -266,8 +278,10 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
         }
     } else if ( isIntoTrash ) {
         // Trashed item, offer restoring
-        act = m_ownActions.addAction( "restore" );
+        act = new KAction(m_parentWidget /*for status tips*/);
+        m_ownActions.append(act);
         act->setText( i18n( "&Restore" ) );
+        act->setHelpText(i18n("Restores this file or directory, back to the location where it was deleted from initially"));
         QObject::connect(act, SIGNAL(triggered()), q, SLOT(slotPopupRestoreTrashedItems()));
         q->addAction(act);
     }
@@ -285,7 +299,8 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
 
     if (!currentDir && isSymLink && !isSymLinkInSameDir) {
         // #65151: offer to open the target's parent dir
-        act = m_ownActions.addAction("show_original");
+        act = new KAction(m_parentWidget);
+        m_ownActions.append(act);
         act->setText(isDirectory ? i18n("Show Original Directory") : i18n("Show Original File"));
         act->setHelpText(i18n("Opens a new file manager window showing the target of this link, in its parent directory."));
         QObject::connect(act, SIGNAL(triggered()), q, SLOT(slotShowOriginalFile()));
@@ -316,7 +331,8 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
     }
     if ( isCurrentTrash )
     {
-        act = m_ownActions.addAction( "emptytrash" );
+        act = new KAction(m_parentWidget);
+        m_ownActions.append(act);
         act->setIcon( KIcon("trash-empty") );
         act->setText( i18n( "&Empty Trash Bin" ) );
         KConfig trashConfig( "trashrc", KConfig::SimpleConfig);
@@ -355,7 +371,9 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
         else
            caption = i18n("&Bookmark This File");
 
-        act = m_ownActions.addAction( "bookmark_add" );
+        act = new KAction(m_parentWidget);
+        m_ownActions.append(act);
+        act->setObjectName("bookmark_add"); // for unittest
         act->setIcon( KIcon("bookmark-new") );
         act->setText( caption );
         QObject::connect(act, SIGNAL(triggered()), q, SLOT(slotPopupAddToBookmark()));
@@ -369,7 +387,7 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
 
     // "Open With" actions
 
-    m_menuActions.setPopupMenuInfo(m_popupMenuInfo);
+    m_menuActions.setItemListProperties(m_popupItemProperties);
 
     if ( sReading ) {
         m_menuActions.addOpenWithActionsTo(q, "DesktopEntryName != 'kfmclient' and DesktopEntryName != 'kfmclient_dir' and DesktopEntryName != 'kfmclient_html'");
@@ -404,7 +422,9 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
         addPlugins(); // now it's time to add plugins
 
     if ( (m_itemFlags & KParts::BrowserExtension::ShowProperties) && KPropertiesDialog::canDisplay( lstItems ) ) {
-        act = m_ownActions.addAction( "properties" );
+        act = new KAction(m_parentWidget);
+        m_ownActions.append(act);
+        act->setObjectName("properties"); // for unittest
         act->setText( i18n( "&Properties" ) );
         QObject::connect(act, SIGNAL(triggered()), q, SLOT(slotPopupProperties()));
         q->addAction(act);
@@ -417,7 +437,8 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
     if ( isDirectory && isLocal ) {
         if ( KFileShare::authorization() == KFileShare::Authorized ) {
             q->addSeparator();
-            act = m_ownActions.addAction( "sharefile" );
+            act = new KAction(m_parentWidget);
+            m_ownActions.append(act);
             act->setText( i18n("Share") );
             QObject::connect(act, SIGNAL(triggered()), q, SLOT(slotOpenShareFileDialog()));
             q->addAction(act);
@@ -430,7 +451,7 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
 
 void KonqPopupMenuPrivate::slotOpenShareFileDialog()
 {
-    KPropertiesDialog* dlg = new KPropertiesDialog( m_popupMenuInfo.items(), m_popupMenuInfo.parentWidget() );
+    KPropertiesDialog* dlg = new KPropertiesDialog( m_popupItemProperties.items(), m_parentWidget );
     dlg->showFileSharingPage();
     dlg->exec();
 }
@@ -448,42 +469,42 @@ void KonqPopupMenu::setURLTitle( const QString& urlTitle )
 
 void KonqPopupMenuPrivate::slotPopupNewView()
 {
-    Q_FOREACH(const KUrl& url, m_popupMenuInfo.urlList()) {
-        (void) new KRun(url, m_popupMenuInfo.parentWidget());
+    Q_FOREACH(const KUrl& url, m_popupItemProperties.urlList()) {
+        (void) new KRun(url, m_parentWidget);
     }
 }
 
 void KonqPopupMenuPrivate::slotPopupNewDir()
 {
-  if (m_popupMenuInfo.urlList().empty())
+  if (m_popupItemProperties.urlList().empty())
     return;
 
-  KonqOperations::newDir(m_popupMenuInfo.parentWidget(), m_popupMenuInfo.urlList().first());
+  KonqOperations::newDir(m_parentWidget, m_popupItemProperties.urlList().first());
 }
 
 void KonqPopupMenuPrivate::slotPopupEmptyTrashBin()
 {
-  KonqOperations::emptyTrash(m_popupMenuInfo.parentWidget());
+  KonqOperations::emptyTrash(m_parentWidget);
 }
 
 void KonqPopupMenuPrivate::slotPopupRestoreTrashedItems()
 {
-  KonqOperations::restoreTrashedItems(m_popupMenuInfo.urlList(), m_popupMenuInfo.parentWidget());
+  KonqOperations::restoreTrashedItems(m_popupItemProperties.urlList(), m_parentWidget);
 }
 
 void KonqPopupMenuPrivate::slotPopupAddToBookmark()
 {
     KBookmarkGroup root;
-    if (m_popupMenuInfo.urlList().count() == 1) {
-        const KUrl url = m_popupMenuInfo.urlList().first();
+    if (m_popupItemProperties.urlList().count() == 1) {
+        const KUrl url = m_popupItemProperties.urlList().first();
         const QString title = m_urlTitle.isEmpty() ? url.prettyUrl() : m_urlTitle;
-        KBookmarkDialog dlg(m_bookmarkManager, m_popupMenuInfo.parentWidget());
+        KBookmarkDialog dlg(m_bookmarkManager, m_parentWidget);
         dlg.addBookmark(title, url.url());
     }
     else
     {
         root = m_bookmarkManager->root();
-        Q_FOREACH(const KUrl& url, m_popupMenuInfo.urlList()) {
+        Q_FOREACH(const KUrl& url, m_popupItemProperties.urlList()) {
             root.addBookmark(url.prettyUrl(), url);
         }
         m_bookmarkManager->emitChanged(root);
@@ -492,12 +513,12 @@ void KonqPopupMenuPrivate::slotPopupAddToBookmark()
 
 void KonqPopupMenuPrivate::slotPopupMimeType()
 {
-    KonqOperations::editMimeType(m_popupMenuInfo.mimeType(), m_popupMenuInfo.parentWidget());
+    KonqOperations::editMimeType(m_popupItemProperties.mimeType(), m_parentWidget);
 }
 
 void KonqPopupMenuPrivate::slotPopupProperties()
 {
-    KPropertiesDialog::showDialog(m_popupMenuInfo.items(), m_popupMenuInfo.parentWidget(), false);
+    KPropertiesDialog::showDialog(m_popupItemProperties.items(), m_parentWidget, false);
 }
 
 void KonqPopupMenuPrivate::addGroup(const QString& name)
@@ -508,23 +529,27 @@ void KonqPopupMenuPrivate::addGroup(const QString& name)
 
 void KonqPopupMenuPrivate::addPlugins()
 {
-    const QString commonMimeType = m_popupMenuInfo.mimeType();
+    const QString commonMimeType = m_popupItemProperties.mimeType();
     const KService::List plugin_offers = KMimeTypeTrader::self()->query(commonMimeType.isEmpty() ? QLatin1String("application/octet-stream") : commonMimeType, "KonqPopupMenu/Plugin", "exist Library");
 
-    KService::List::ConstIterator iterator = plugin_offers.begin();
-    const KService::List::ConstIterator end = plugin_offers.end();
-    for(; iterator != end; ++iterator) {
-        //kDebug() << (*iterator)->name() << (*iterator)->library();
-        KonqPopupMenuPlugin *plugin = (*iterator)->createInstance<KonqPopupMenuPlugin>(q);
-        if (!plugin)
-            continue;
-        plugin->setup(&m_ownActions, m_popupMenuInfo, q);
+    if (!plugin_offers.isEmpty()) {
+        m_popupMenuInfo.setItemListProperties(m_popupItemProperties);
+        m_popupMenuInfo.setParentWidget(m_parentWidget);
+        KService::List::ConstIterator iterator = plugin_offers.begin();
+        const KService::List::ConstIterator end = plugin_offers.end();
+        for(; iterator != end; ++iterator) {
+            //kDebug() << (*iterator)->name() << (*iterator)->library();
+            KonqPopupMenuPlugin *plugin = (*iterator)->createInstance<KonqPopupMenuPlugin>(q);
+            if (!plugin)
+                continue;
+            plugin->setup(&m_ownActionCollection, m_popupMenuInfo, q);
+        }
     }
 }
 
 void KonqPopupMenuPrivate::slotShowOriginalFile()
 {
-    const KFileItem item = m_popupMenuInfo.items().first();
+    const KFileItem item = m_popupItemProperties.items().first();
     const QString dest = item.linkDest();
     KUrl destUrl = m_sViewURL;
     if (dest.startsWith('/')) {
@@ -534,7 +559,7 @@ void KonqPopupMenuPrivate::slotShowOriginalFile()
     }
     // Now destUrl points to the target file, let's go up to parent dir
     destUrl.setPath(destUrl.directory());
-    KRun::runUrl(destUrl, "inode/directory", m_popupMenuInfo.parentWidget());
+    KRun::runUrl(destUrl, "inode/directory", m_parentWidget);
 }
 
 #include "konq_popupmenu.moc"

@@ -24,6 +24,7 @@
 #include "konq_fileitemcapabilities.h"
 #include <kurl.h>
 
+class KFileItemListProperties;
 class KonqPopupMenuInformationPrivate;
 class KFileItemList;
 class QWidget;
@@ -35,6 +36,9 @@ class QWidget;
  * and by KonqPopupMenuPlugin for plugins to decide what to show.
  *
  * KonqPopupMenuInformation is implicitly shared, i.e. it can be used as a value and copied around at almost no cost.
+ *
+ * This class exists only for KonqPopupMenu plugins.
+ * Everything else should use KFileItemListProperties since 4.3.
  */
 class LIBKONQ_EXPORT KonqPopupMenuInformation
 {
@@ -58,8 +62,21 @@ public:
 
     /**
      * Sets the list of fileitems which the actions apply to.
+     * @deprecated use setItemListProperties
      */
-    void setItems(const KFileItemList& items);
+    KDE_DEPRECATED void setItems(const KFileItemList& items);
+
+    /**
+     * Sets a list of items and their properties
+     * @since 4.3
+     */
+    void setItemListProperties(const KFileItemListProperties& items);
+
+    /**
+     * Returns the list of items and their properties
+     * @since 4.3
+     */
+    KFileItemListProperties itemListProperties() const;
 
     /**
      * List of fileitems
@@ -93,12 +110,12 @@ public:
     QString mimeGroup() const;
 
     /**
-     * Call this to set a parent widget (e.g. for error message boxes)
+     * Call this to set a parent widget (e.g. for error message boxes, open with dialog, etc.)
      */
     void setParentWidget(QWidget* parentWidget);
 
     /**
-     * Parent widget (e.g. for error message boxes)
+     * Parent widget (e.g. for error message boxes, open with dialog, etc.)
      */
     QWidget* parentWidget() const;
 
@@ -107,4 +124,3 @@ private:
 };
 
 #endif /* KONQ_POPUPMENUINFORMATION_H */
-
