@@ -1,5 +1,5 @@
 /* This file is part of the KDE project
-   Copyright (C) 1998-2006 David Faure <faure@kde.org>
+   Copyright (C) 1998-2009 David Faure <faure@kde.org>
                  2003      Sven Leiber <s.leiber@web.de>
 
    This library is free software; you can redistribute it and/or
@@ -74,6 +74,17 @@ public Q_SLOTS:
      * IMPORTANT : Call this in the slot for aboutToShow.
      */
     void slotCheckUpToDate();
+
+    /**
+     * Call this to create a new directory as if the user had done it using
+     * a popupmenu. This is useful to make sure that creating a directory with
+     * a key shortcut (e.g. F10) triggers the exact same code as when using
+     * the New menu.
+     * Requirements: call setPopupFiles first, and keep this KNewMenu instance
+     * alive (the mkdir is async).
+     * @since 4.3
+     */
+    void createDirectory();
 
 Q_SIGNALS:
     /**
