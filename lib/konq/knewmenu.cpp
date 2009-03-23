@@ -415,7 +415,7 @@ void KNewMenu::slotFillTemplates()
     (*s->templatesList) += slist.values();
 }
 
-void KNewMenu::newDir()
+void KNewMenu::createDirectory()
 {
     if (d->popupFiles.isEmpty())
        return;
@@ -432,10 +432,10 @@ void KNewMenu::newDir()
 
 void KNewMenu::slotActionTriggered(QAction* action)
 {
-    trigger(); // for KDIconView::slotNewMenuActivated()
+    trigger(); // was for kdesktop's slotNewMenuActivated() in kde3 times. Can't hurt to keep it...
 
     if (action == d->m_newDirAction) {
-        newDir();
+        createDirectory();
         return;
     }
     const int id = action->data().toInt();
