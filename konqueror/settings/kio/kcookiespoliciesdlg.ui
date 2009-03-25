@@ -14,8 +14,8 @@
     <widget class="QCheckBox" name="cbEnableCookies" >
      <property name="whatsThis" >
       <string>&lt;qt>
-Enable cookie support. Normally you will want to have cookie support enabled and customize it to suit your privacy needs.&lt;p>
-Please note that disabling cookie support might make many web sites unbrowsable.
+&lt;p>Enable cookie support. Normally you will want to have cookie support enabled and customize it to suit your privacy needs.&lt;/p>&lt;p>
+Please note that disabling cookie support might make many web sites unbrowsable.&lt;/p>
 &lt;/qt></string>
      </property>
      <property name="text" >
@@ -42,8 +42,8 @@ Reject the so called third-party cookies. These are cookies that originate from 
        <widget class="QCheckBox" name="cbAutoAcceptSessionCookies" >
         <property name="whatsThis" >
          <string>&lt;qt>
-Automatically accept temporary cookies meant to expire at the end of the current session. Such cookies will not be stored in your computer's hard drive or storage device. Instead, they are deleted when you close all applications (e.g. your browser) that use them.&lt;p>
-&lt;u>NOTE:&lt;/u> Checking this option along with the next one will override your default as well as site specific cookie policies. However, doing so also increases your privacy since all cookies will be removed when the current session ends.
+&lt;p>Automatically accept temporary cookies meant to expire at the end of the current session. Such cookies will not be stored in your computer's hard drive or storage device. Instead, they are deleted when you close all applications (e.g. your browser) that use them.&lt;/p>&lt;p>
+&lt;u>NOTE:&lt;/u> Checking this option along with the next one will override your default as well as site specific cookie policies. However, doing so also increases your privacy since all cookies will be removed when the current session ends.&lt;/p>
 &lt;/qt></string>
         </property>
         <property name="text" >
@@ -55,8 +55,8 @@ Automatically accept temporary cookies meant to expire at the end of the current
        <widget class="QCheckBox" name="cbIgnoreCookieExpirationDate" >
         <property name="whatsThis" >
          <string>&lt;qt>
-Treat all cookies as session cookies. Session cookies are small pieces of data that are temporarily stored in your computer's memory until you quit or close all applications (e.g. your browser) that use them. Unlike regular cookies, session cookies are never stored on your hard drive or other storage medium.&lt;p>
-&lt;u>NOTE:&lt;/u> Checking this option along with the previous one will override your default as well as site specific cookie policies. However, doing so also increases your privacy since all cookies will be removed when the current session ends.
+&lt;p>Treat all cookies as session cookies. Session cookies are small pieces of data that are temporarily stored in your computer's memory until you quit or close all applications (e.g. your browser) that use them. Unlike regular cookies, session cookies are never stored on your hard drive or other storage medium.&lt;/p>&lt;p>
+&lt;u>NOTE:&lt;/u> Checking this option along with the previous one will override your default as well as site specific cookie policies. However, doing so also increases your privacy since all cookies will be removed when the current session ends.&lt;/p>
 &lt;/qt></string>
         </property>
         <property name="text" >
@@ -79,7 +79,7 @@ Determines how cookies received from a remote machine will be handled:
 &lt;li>&lt;b>Accept&lt;/b> will cause cookies to be accepted without prompting you.&lt;/li>
 &lt;li>&lt;b>Reject&lt;/b> will cause the cookiejar to refuse all cookies it receives.&lt;/li>
 &lt;/ul>&lt;p>
-&lt;u>NOTE:&lt;/u> Domain specific policies, which can be set below, always take precedence over the default policy.
+&lt;u>NOTE:&lt;/u> Domain specific policies, which can be set below, always take precedence over the default policy.&lt;/p>
 &lt;/qt></string>
        </property>
        <property name="title" >
