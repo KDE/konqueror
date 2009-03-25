@@ -11,7 +11,6 @@ add_subdirectory( pics )
 add_subdirectory( sidebar )
 add_subdirectory( preloader )
 #add_subdirectory( quickprint )
-#add_subdirectory( remoteencodingplugin )
 add_subdirectory( settings )
 add_subdirectory( kttsplugin )
 
