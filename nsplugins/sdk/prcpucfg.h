@@ -49,7 +49,7 @@
 
 #define PR_AF_INET6 10  /* same as AF_INET6 */
 
-#ifdef __powerpc__
+#if defined(__powerpc__) || defined(__POWERPC__)
 
 #undef  IS_LITTLE_ENDIAN
 #define IS_BIG_ENDIAN    1
