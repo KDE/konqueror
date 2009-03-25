@@ -269,7 +269,7 @@ void KCookiesManagement::getDomains()
     dom->setChildIndicatorPolicy(QTreeWidgetItem::ShowIndicator);
   }
 
-  // are ther any cookies?
+  // are there any cookies?
   dlg->pbDeleteAll->setEnabled(dlg->lvCookies->topLevelItemCount() > 0);
 
   dlg->lvCookies->sortItems(0, Qt::AscendingOrder);
@@ -310,6 +310,7 @@ void KCookiesManagement::getCookies(QTreeWidgetItem *cookieDom)
     }
 
     static_cast<CookieListViewItem*>(cookieDom)->setCookiesLoaded();
+    dlg->kListViewSearchLine->updateSearch();
   }
 }
 
