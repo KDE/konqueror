@@ -46,6 +46,24 @@
 
 #include "ksaveioconfig.h"
 
+// Workaround for Qt-4.4 bug fixed in 4.5 already (#183720)
+static QString QUrl__fromAce(const QByteArray& domain)
+{
+    QString ret = QUrl::fromAce(domain);
+    if (domain.startsWith('.') && !ret.startsWith('.')) {
+        ret.prepend('.');
+    }
+    return ret;
+}
+static QByteArray QUrl__toAce(const QString& domain)
+{
+    QByteArray ret = QUrl::toAce(domain);
+    if (domain.startsWith('.') && !ret.startsWith('.')) {
+        ret.prepend('.');
+    }
+    return ret;
+}
+
 
 KCookiesPolicies::KCookiesPolicies(const KComponentData &componentData, QWidget *parent)
                  :KCModule(componentData, parent)
@@ -158,7 +176,7 @@ void KCookiesPolicies::addNewPolicy(const QString& domain)
 
   if (pdlg.exec() && !pdlg.domain().isEmpty())
   {
-    QString domain = KUrl::fromAce(pdlg.domain().toLatin1());
+    QString domain = QUrl__fromAce(pdlg.domain().toLatin1());
     int advice = pdlg.advice();
 
     if ( !handleDuplicate(domain, advice) )
@@ -193,7 +211,7 @@ void KCookiesPolicies::changePressed()
 
   if( pdlg.exec() && !pdlg.domain().isEmpty())
   {
-    QString newDomain = KUrl::fromAce(pdlg.domain().toLatin1());
+    QString newDomain = QUrl__fromAce(pdlg.domain().toLatin1());
     int advice = pdlg.advice();
     if (newDomain == oldDomain || !handleDuplicate(newDomain, advice))
     {
@@ -284,7 +302,7 @@ void KCookiesPolicies::updateDomainList(const QStringList &domainConfig)
 
     if (!domain.isEmpty())
     {
-        QTreeWidgetItem* index = new QTreeWidgetItem( dlg->lvDomainPolicy, QStringList() << KUrl::fromAce(domain.toLatin1()) <<
+        QTreeWidgetItem* index = new QTreeWidgetItem( dlg->lvDomainPolicy, QStringList() << QUrl__fromAce(domain.toLatin1()) <<
                                                   i18n(KCookieAdvice::adviceToStr(advice)) );
         m_pDomainPolicy[index] = KCookieAdvice::adviceToStr(advice);
     }
@@ -371,7 +389,7 @@ void KCookiesPolicies::save()
 
   while( at )
   {
-    domainConfig.append(QString::fromLatin1("%1:%2").arg(QString(KUrl::toAce(at->text(0)))).arg(m_pDomainPolicy[at]));
+    domainConfig.append(QString::fromLatin1("%1:%2").arg(QString(QUrl__toAce(at->text(0)))).arg(m_pDomainPolicy[at]));
     at = dlg->lvDomainPolicy->itemBelow(at);
   }
 
