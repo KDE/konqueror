@@ -46,6 +46,34 @@
 
 #include "ksaveioconfig.h"
 
+// QUrl::fromAce/toAce don't accept a domain that starts with a '.', like we do here.
+// So we use these wrappers.
+static QString tolerantFromAce(const QByteArray& _domain)
+{
+    QByteArray domain(_domain);
+    const bool hasDot = domain.startsWith('.');
+    if (hasDot)
+        domain.remove(0, 1);
+    QString ret = QUrl::fromAce(domain);
+    if (hasDot) {
+        ret.prepend('.');
+    }
+    return ret;
+}
+
+static QByteArray tolerantToAce(const QString& _domain)
+{
+    QString domain(_domain);
+    const bool hasDot = domain.startsWith('.');
+    if (hasDot)
+        domain.remove(0, 1);
+    QByteArray ret = QUrl::toAce(domain);
+    if (hasDot) {
+        ret.prepend('.');
+    }
+    return ret;
+}
+
 
 KCookiesPolicies::KCookiesPolicies(const KComponentData &componentData, QWidget *parent)
                  :KCModule(componentData, parent)
@@ -158,7 +186,7 @@ void KCookiesPolicies::addNewPolicy(const QString& domain)
 
   if (pdlg.exec() && !pdlg.domain().isEmpty())
   {
-    QString domain = KUrl::fromAce(pdlg.domain().toLatin1());
+    QString domain = tolerantFromAce(pdlg.domain().toLatin1());
     int advice = pdlg.advice();
 
     if ( !handleDuplicate(domain, advice) )
@@ -193,7 +221,7 @@ void KCookiesPolicies::changePressed()
 
   if( pdlg.exec() && !pdlg.domain().isEmpty())
   {
-    QString newDomain = KUrl::fromAce(pdlg.domain().toLatin1());
+    QString newDomain = tolerantFromAce(pdlg.domain().toLatin1());
     int advice = pdlg.advice();
     if (newDomain == oldDomain || !handleDuplicate(newDomain, advice))
     {
@@ -237,7 +265,7 @@ bool KCookiesPolicies::handleDuplicate( const QString& domain, int advice )
 void KCookiesPolicies::deletePressed()
 {
   QTreeWidgetItem* nextItem = 0L;
-  
+
   Q_FOREACH(QTreeWidgetItem* item, dlg->lvDomainPolicy->selectedItems()) {
     nextItem = dlg->lvDomainPolicy->itemBelow(item);
     if (!nextItem)
@@ -284,7 +312,7 @@ void KCookiesPolicies::updateDomainList(const QStringList &domainConfig)
 
     if (!domain.isEmpty())
     {
-        QTreeWidgetItem* index = new QTreeWidgetItem( dlg->lvDomainPolicy, QStringList() << KUrl::fromAce(domain.toLatin1()) <<
+        QTreeWidgetItem* index = new QTreeWidgetItem( dlg->lvDomainPolicy, QStringList() << tolerantFromAce(domain.toLatin1()) <<
                                                   i18n(KCookieAdvice::adviceToStr(advice)) );
         m_pDomainPolicy[index] = KCookieAdvice::adviceToStr(advice);
     }
@@ -371,7 +399,7 @@ void KCookiesPolicies::save()
 
   while( at )
   {
-    domainConfig.append(QString::fromLatin1("%1:%2").arg(QString(KUrl::toAce(at->text(0)))).arg(m_pDomainPolicy[at]));
+    domainConfig.append(QString::fromLatin1("%1:%2").arg(QString(tolerantToAce(at->text(0)))).arg(m_pDomainPolicy[at]));
     at = dlg->lvDomainPolicy->itemBelow(at);
   }
 
