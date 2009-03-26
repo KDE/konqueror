@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 #include <QtCore/QFileInfo>
+#include <QtCore/QTextCodec>
 #include <QtCore/QTextStream>
 #include <QtCore/QList>
 #include <kdebug.h>

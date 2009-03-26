@@ -6,6 +6,7 @@
 #include "kfwin.h"
 
 #include <QtCore/QTextStream>
+#include <QtCore/QTextCodec>
 #include <QtCore/QFileInfo>
 #include <QtGui/QClipboard>
 #include <QtGui/QHeaderView>

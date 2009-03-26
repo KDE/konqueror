@@ -1,8 +1,3 @@
-
-add_definitions (-DQT3_SUPPORT -DQT3_SUPPORT_WARNINGS)
-
-########### next target ###############
-
 set(libkfindcommon_SRCS kftabdlg.cpp kfind.cpp kquery.cpp kdatecombo.cpp)
 set(kfindpart_PART_SRCS kfindpart.cpp ${libkfindcommon_SRCS})
 
@@ -23,7 +18,7 @@ kde4_add_app_icon(kfind_SRCS "hi*-app-kfind.png")
 
 kde4_add_executable(kfind ${kfind_SRCS})
 
-target_link_libraries(kfind  ${KDE4_KDE3SUPPORT_LIBS} konq ${KDE4_KFILE_LIBS})
+target_link_libraries(kfind konq ${KDE4_KFILE_LIBS})
 
 install(TARGETS kfind ${INSTALL_TARGETS_DEFAULT_ARGS})
 

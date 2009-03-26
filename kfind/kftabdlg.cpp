@@ -84,8 +84,8 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     nameBox->setFocus();
     dirBox->setDuplicatesEnabled(false);
 
-    nameBox->setInsertPolicy(QComboBox::AtTop);
-    dirBox->setInsertPolicy(QComboBox::AtTop);
+    nameBox->setInsertPolicy(QComboBox::InsertAtTop);
+    dirBox->setInsertPolicy(QComboBox::InsertAtTop);
 
     const QString nameWhatsThis
       = i18n("<qt>Enter the filename you are looking for. <br />"
@@ -215,8 +215,8 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
 
     m_usernameBox->setDuplicatesEnabled(false);
     m_groupBox->setDuplicatesEnabled(false);
-    m_usernameBox->setInsertPolicy(QComboBox::AtTop);
-    m_groupBox->setInsertPolicy(QComboBox::AtTop);
+    m_usernameBox->setInsertPolicy(QComboBox::InsertAtTop);
+    m_groupBox->setInsertPolicy(QComboBox::InsertAtTop);
 
 
     // Setup
