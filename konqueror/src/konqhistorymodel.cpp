@@ -80,6 +80,7 @@ struct GroupEntry : public Entry
 
     virtual QVariant data(int role, int column) const;
     HistoryEntry* findChild(const KonqHistoryEntry &entry, int *index = 0) const;
+    KUrl::List urls() const;
 
     QList<HistoryEntry *> entries;
     KUrl url;
@@ -214,6 +215,15 @@ HistoryEntry* GroupEntry::findChild(const KonqHistoryEntry &entry, int *index) c
     return item;
 }
 
+KUrl::List GroupEntry::urls() const
+{
+    KUrl::List list;
+    Q_FOREACH (HistoryEntry *e, entries) {
+        list.append(e->entry.url);
+    }
+    return list;
+}
+
 }
 
 
@@ -330,6 +340,26 @@ int KonqHistoryModel::rowCount(const QModelIndex &parent) const
         return static_cast<KHM::RootEntry *>(entry)->groups.count();
     }
     return 0;
+}
+
+void KonqHistoryModel::deleteItem(const QModelIndex &index)
+{
+    KHM::Entry* entry = entryFromIndex(index);
+    if (!entry) {
+        return;
+    }
+
+    KonqHistoryManager *manager = KonqHistoryManager::kself();
+    switch (entry->type) {
+    case KHM::Entry::History:
+        manager->emitRemoveFromHistory(static_cast<KHM::HistoryEntry *>(entry)->entry.url);
+        break;
+    case KHM::Entry::Group:
+        manager->emitRemoveListFromHistory(static_cast<KHM::GroupEntry *>(entry)->urls());
+        break;
+    case KHM::Entry::Root:
+        break;
+    }
 }
 
 void KonqHistoryModel::clear()
