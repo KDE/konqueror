@@ -10,6 +10,7 @@
 #include <QtCore/QFileInfo>
 #include <QtGui/QClipboard>
 #include <QtGui/QHeaderView>
+
 #include <QtCore/QDate>
 
 #include <kfiledialog.h>
@@ -43,7 +44,7 @@ static const char* perm[4] = {
 KFindItemModel::KFindItemModel( KfindWindow * parentView ) : 
     QStandardItemModel( parentView )
 {
-    reset();
+    setHorizontalHeaderLabels( QStringList() << i18n("Name") << i18n("In Subfolder") << i18n("Size") << i18n("Modified") << i18n("Permissions") << i18n("First Matching Line"));
 }
 
 void KFindItemModel::insertFileItem( KFileItem fileItem, QString matchingLine )
@@ -109,8 +110,7 @@ bool KFindItemModel::isInserted( const KUrl & url )
 
 void KFindItemModel::reset()
 {
-    clear();
-    setHorizontalHeaderLabels( QStringList() << i18n("Name") << i18n("In Subfolder") << i18n("Size") << i18n("Modified") << i18n("Permissions") << i18n("First Matching Line"));
+    removeRows( 0, rowCount() );
 }
 
 Qt::ItemFlags KFindItemModel::flags(const QModelIndex &index) const
@@ -200,6 +200,8 @@ KfindWindow::KfindWindow( QWidget *parent )
     setSortingEnabled( true );
     setDragEnabled( true );
     setContextMenuPolicy( Qt::CustomContextMenu );
+    
+    header()->setResizeMode( 0, QHeaderView::ResizeToContents );
     
     connect( this, SIGNAL( customContextMenuRequested( const QPoint &) ),
                  this, SLOT( contextMenuRequested( const QPoint & )));
@@ -400,15 +402,8 @@ void KfindWindow::slotExecute( const QModelIndex & index )
         findItem->fileItem.run();
 }
 
-void KfindWindow::resizeEvent(QResizeEvent *e)
-{
-    Q_UNUSED( e );
-    resetColumns();
-}
-
 void KfindWindow::resetColumns()
 {
-    resizeColumnToContents( 0 );
     resizeColumnToContents( 1 );
 }
 

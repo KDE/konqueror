@@ -33,7 +33,9 @@ class KFindItemModel: public QStandardItemModel
 
         void insertFileItem( KFileItem, QString );
         void removeItem(const KUrl &);
+        
         bool isInserted(const KUrl &);
+        
         void reset();
         
         Qt::DropActions supportedDropActions() const
@@ -93,7 +95,6 @@ class KfindWindow: public QTreeView
         void contextMenuRequested( const QPoint & p );
 
     private Q_SLOTS:
-    
         KUrl::List selectedUrls();
         
         void deleteSelectedFiles();
@@ -107,7 +108,6 @@ class KfindWindow: public QTreeView
    
     protected:
         void dragMoveEvent( QDragMoveEvent *e ) { e->accept(); }
-        void resizeEvent( QResizeEvent *e );
 
     Q_SIGNALS:
         void resultSelected(bool);
