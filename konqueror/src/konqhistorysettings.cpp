@@ -70,6 +70,8 @@ void KonqHistorySettings::readSettings(bool global)
 					       m_fontYoungerThan );
     m_fontOlderThan   = cg.readEntry( "Font olderThan",
 					       m_fontOlderThan );
+
+    m_sortsByName = cg.readEntry( "SortHistory", "byDate" ) == "byName";
 }
 
 void KonqHistorySettings::applySettings()
@@ -90,6 +92,8 @@ void KonqHistorySettings::applySettings()
 
     config.writeEntry("Font youngerThan", m_fontYoungerThan );
     config.writeEntry("Font olderThan", m_fontOlderThan );
+
+    config.writeEntry( "SortHistory", m_sortsByName ? "byName" : "byDate" );
 
     // notify konqueror instances about the new configuration
     emit notifySettingsChanged();

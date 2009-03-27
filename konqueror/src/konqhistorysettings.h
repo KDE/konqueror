@@ -48,6 +48,8 @@ public:
     QFont m_fontYoungerThan;
     QFont m_fontOlderThan;
 
+    bool m_sortsByName;
+
 Q_SIGNALS:
     void settingsChanged();
 
