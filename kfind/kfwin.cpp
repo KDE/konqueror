@@ -80,7 +80,7 @@ KfFileLVI::KfFileLVI(KfindWindow* lv, const KFileItem &item, const QString& matc
   setText(5, matchingLine);
 
   // put the icon into the leftmost column
-  setPixmap(0, item.pixmap(16));
+  setPixmap(0, KIcon(item.iconName()).pixmap(16,16) );
 }
 
 KfFileLVI::~KfFileLVI()
