@@ -17,22 +17,22 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef HISTORY_SETTINGS_H
-#define HISTORY_SETTINGS_H
+#ifndef KONQ_HISTORYSETTINGS_H
+#define KONQ_HISTORYSETTINGS_H
 
 #include <QtGui/QFont>
 #include <QtCore/QObject>
 #include <QtDBus/QtDBus>
 
-class KonqSidebarHistorySettings : public QObject
+class KonqHistorySettings : public QObject
 {
     Q_OBJECT
 
 public:
     enum { MINUTES, DAYS };
 
-    KonqSidebarHistorySettings( QObject *parent );
-    virtual ~KonqSidebarHistorySettings();
+    KonqHistorySettings( QObject *parent );
+    virtual ~KonqHistorySettings();
 
     void readSettings(bool global);
     void applySettings();
@@ -55,20 +55,20 @@ private Q_SLOTS:
     void slotSettingsChanged();
 
 protected:
-    //KonqSidebarHistorySettings( const KonqSidebarHistorySettings& );
-    Q_DISABLE_COPY( KonqSidebarHistorySettings )
+    //KonqHistorySettings( const KonqHistorySettings& );
+    Q_DISABLE_COPY( KonqHistorySettings )
 
 Q_SIGNALS:
     // DBus signals
     void notifySettingsChanged();
 };
 
-class KonqSidebarHistorySettingsAdaptor : public QDBusAbstractAdaptor
+class KonqHistorySettingsAdaptor : public QDBusAbstractAdaptor
 {
     Q_OBJECT
     Q_CLASSINFO("D-Bus Interface", "org.kde.Konqueror.SidebarHistorySettings")
 public:
-    KonqSidebarHistorySettingsAdaptor( KonqSidebarHistorySettings* parent )
+    KonqHistorySettingsAdaptor( KonqHistorySettings* parent )
         : QDBusAbstractAdaptor( parent ) {
         setAutoRelaySignals( true );
     }
@@ -77,4 +77,4 @@ Q_SIGNALS:
     void notifySettingsChanged();
 };
 
-#endif // HISTORY_SETTINGS_H
+#endif // KONQ_HISTORYSETTINGS_H

@@ -10,13 +10,13 @@
 #include <kconfiggroup.h>
 
 
-KonqSidebarHistorySettings::KonqSidebarHistorySettings( QObject *parent )
+KonqHistorySettings::KonqHistorySettings( QObject *parent )
     : QObject( parent )
 {
     m_fontOlderThan.setItalic( true ); // default
 
-    new KonqSidebarHistorySettingsAdaptor( this );
-    const QString dbusPath = "/KonqSidebarHistorySettings";
+    new KonqHistorySettingsAdaptor( this );
+    const QString dbusPath = "/KonqHistorySettings";
     const QString dbusInterface = "org.kde.Konqueror.SidebarHistorySettings";
     QDBusConnection dbus = QDBusConnection::sessionBus();
     dbus.registerObject( dbusPath, this );
@@ -24,7 +24,7 @@ KonqSidebarHistorySettings::KonqSidebarHistorySettings( QObject *parent )
 }
 
 #if 0 // huh? copying a QObject?
-KonqSidebarHistorySettings::KonqSidebarHistorySettings( const KonqSidebarHistorySettings& s )
+KonqHistorySettings::KonqHistorySettings( const KonqHistorySettings& s )
     : QObject()
 {
     m_valueYoungerThan = s.m_valueYoungerThan;
@@ -40,11 +40,11 @@ KonqSidebarHistorySettings::KonqSidebarHistorySettings( const KonqSidebarHistory
 }
 #endif
 
-KonqSidebarHistorySettings::~KonqSidebarHistorySettings()
+KonqHistorySettings::~KonqHistorySettings()
 {
 }
 
-void KonqSidebarHistorySettings::readSettings(bool global)
+void KonqHistorySettings::readSettings(bool global)
 {
     KSharedConfigPtr config;
 
@@ -72,7 +72,7 @@ void KonqSidebarHistorySettings::readSettings(bool global)
 					       m_fontOlderThan );
 }
 
-void KonqSidebarHistorySettings::applySettings()
+void KonqHistorySettings::applySettings()
 {
     KConfigGroup config(KSharedConfig::openConfig("konquerorrc"), "HistorySettings");
 
@@ -95,7 +95,7 @@ void KonqSidebarHistorySettings::applySettings()
     emit notifySettingsChanged();
 }
 
-void KonqSidebarHistorySettings::slotSettingsChanged()
+void KonqHistorySettings::slotSettingsChanged()
 {
     readSettings(false);
     emit settingsChanged();
