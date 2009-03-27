@@ -48,6 +48,8 @@ public:
     virtual QModelIndex parent(const QModelIndex &index) const;
     virtual int rowCount(const QModelIndex &parent = QModelIndex()) const;
 
+    void deleteItem(const QModelIndex &index);
+
 public Q_SLOTS:
     void clear();
 
