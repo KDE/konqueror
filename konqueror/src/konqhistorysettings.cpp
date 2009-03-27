@@ -1,6 +1,6 @@
 
 // Own
-#include "history_settings.h"
+#include "konqhistorysettings.h"
 
 // KDE
 #include <kapplication.h>
@@ -105,4 +105,4 @@ void KonqHistorySettings::slotSettingsChanged()
     emit settingsChanged();
 }
 
-#include "history_settings.moc"
+#include "konqhistorysettings.moc"
