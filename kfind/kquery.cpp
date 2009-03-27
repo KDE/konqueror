@@ -174,6 +174,8 @@ void KQuery::processQuery( const KFileItem &file)
     if ( file.name() == "." || file.name() == ".." )
       return;
 
+    if ( !m_showHiddenFiles && file.isHidden() ) return;
+    
     bool matched=false;
 
     QListIterator<QRegExp *> nextItem( m_regexps );
@@ -480,6 +482,11 @@ void KQuery::setPath(const KUrl &url)
 void KQuery::setUseFileIndex(bool useLocate)
 {
   m_useLocate=useLocate;
+}
+
+void KQuery::setShowHiddenFiles(bool showHidden)
+{
+  m_showHiddenFiles = showHidden;
 }
 
 void KQuery::slotreadyReadStandardError()

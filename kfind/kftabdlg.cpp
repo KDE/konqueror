@@ -71,12 +71,13 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     caseSensCb  = new QCheckBox(i18n("Case s&ensitive search"), pages[0]);
     browseB    = new QPushButton(i18n("&Browse..."), pages[0]);
     useLocateCb = new QCheckBox(i18n("&Use files index"), pages[0]);
-
+    hiddenFilesCb = new QCheckBox(i18n("Show &hidden files"), pages[0]);
     // Setup
 
     subdirsCb->setChecked(true);
     caseSensCb->setChecked(false);
     useLocateCb->setChecked(false);
+    hiddenFilesCb->setChecked(false);
     if(KStandardDirs::findExe("locate").isEmpty())
         useLocateCb->setEnabled(false);
 
@@ -120,7 +121,7 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     QGridLayout *grid = new QGridLayout( pages[0] );
     grid->setMargin( KDialog::marginHint() );
     grid->setSpacing( KDialog::spacingHint() );
-    QBoxLayout *subgrid = new QVBoxLayout();
+    QVBoxLayout *subgrid = new QVBoxLayout();
     grid->addWidget( namedL, 0, 0 );
     grid->addWidget( nameBox, 0, 1, 1, 3 );
     grid->addWidget( lookinL, 1, 0 );
@@ -128,9 +129,18 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     grid->addWidget( browseB, 1, 2);
     grid->setColumnStretch(1,1);
     grid->addLayout( subgrid, 2, 1, 1, 2 );
-    subgrid->addWidget( subdirsCb );
-    subgrid->addWidget( caseSensCb);
-    subgrid->addWidget( useLocateCb );
+    
+    QHBoxLayout * layoutOne = new QHBoxLayout();
+    layoutOne->addWidget( subdirsCb );
+    layoutOne->addWidget( hiddenFilesCb );
+    
+    QHBoxLayout * layoutTwo = new QHBoxLayout();
+    layoutTwo->addWidget( caseSensCb);
+    layoutTwo->addWidget( useLocateCb );
+    
+    subgrid->addLayout( layoutOne );
+    subgrid->addLayout( layoutTwo );
+    
     subgrid->addStretch(1);
 
     // Signals
@@ -758,6 +768,8 @@ void KfindTabWidget::setQuery(KQuery *query)
   //Use locate to speed-up search ?
   query->setUseFileIndex(useLocateCb->isChecked());
 
+  query->setShowHiddenFiles(hiddenFilesCb->isChecked());
+  
   query->setContext(textEdit->text(), caseContextCb->isChecked(),
   	binaryContextCb->isChecked(), regexpContentCb->isChecked());
 }

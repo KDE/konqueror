@@ -37,6 +37,7 @@ class KQuery : public QObject
   void setGroupname( const QString &groupname );
   void setMetaInfo(const QString &metainfo, const QString &metainfokey);
   void setUseFileIndex(bool);
+  void setShowHiddenFiles(bool);
 
   void start();
   void kill();
@@ -84,6 +85,7 @@ class KQuery : public QObject
   bool m_search_binary;
   bool m_regexpForContent;
   bool m_useLocate;
+  bool m_showHiddenFiles;
   QByteArray bufferLocate;
   QStringList locateList;
   KProcess *processLocate;

@@ -72,6 +72,7 @@ public:
   // for first page
   QCheckBox   *subdirsCb;
   QCheckBox *useLocateCb;
+  QCheckBox *hiddenFilesCb;
   // for third page
   QComboBox *typeBox;
   KLineEdit * textEdit;
