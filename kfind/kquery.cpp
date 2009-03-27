@@ -17,8 +17,11 @@
 
 KQuery::KQuery(QObject *parent)
   : QObject(parent),
-    m_sizemode(0), m_sizeboundary1(0), m_sizeboundary2(0),
-    m_timeFrom(0), m_timeTo(0),
+    m_filetype(0), m_sizemode(0), m_sizeboundary1(0),
+    m_sizeboundary2(0), m_timeFrom(0), m_timeTo(0),
+    m_recursive(false),m_casesensitive(false),
+    m_search_binary(false), m_regexpForContent(false),
+    m_useLocate(false), m_showHiddenFiles(false),
     job(0), m_insideCheckEntries(false), m_result(0)
 {
   processLocate = new KProcess(this);
