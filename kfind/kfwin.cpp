@@ -1,8 +1,21 @@
-/***********************************************************************
- *
- *  Kfwin.cpp
- *
- **********************************************************************/
+/*******************************************************************
+* kfwin.cpp
+* Copyright 2009    Dario Andres Rodriguez <andresbajotierra@gmail.com>
+* 
+* This program is free software; you can redistribute it and/or
+* modify it under the terms of the GNU General Public License as
+* published by the Free Software Foundation; either version 2 of 
+* the License, or (at your option) any later version.
+* 
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+* 
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+* 
+******************************************************************/
 #include "kfwin.h"
 
 #include <QtCore/QTextStream>
@@ -44,7 +57,7 @@ static const char* perm[4] = {
 KFindItemModel::KFindItemModel( KfindWindow * parentView ) : 
     QStandardItemModel( parentView )
 {
-    setHorizontalHeaderLabels( QStringList() << i18n("Name") << i18n("In Subfolder") << i18n("Size") << i18n("Modified") << i18n("Permissions") << i18n("First Matching Line"));
+    setHorizontalHeaderLabels( QStringList() << i18nc("file name column","Name") << i18n("name of the containing folder","In Subfolder") << i18n("file size column","Size") << i18n("modified date column","Modified") << i18n("file permissions column","Permissions") << i18n("first matching line of the query string in this file", "First Matching Line"));
 }
 
 void KFindItemModel::insertFileItem( KFileItem fileItem, QString matchingLine )
@@ -99,8 +112,11 @@ QStandardItem * KFindItemModel::itemFromUrl( KUrl url )
 void KFindItemModel::removeItem( const KUrl & url )
 {
     QStandardItem * item = m_urlMap.value( url );
-    removeRow( item->index().row() );
-    m_urlMap.remove( url );
+    if( item )
+    {
+        removeRow( item->index().row() );
+        m_urlMap.remove( url );
+    }
 }
 
 bool KFindItemModel::isInserted( const KUrl & url )
@@ -156,7 +172,7 @@ KFindItem::KFindItem( KFileItem _fileItem ):
 {
     fileItem = _fileItem;
     setText( fileItem.url().fileName(KUrl::ObeyTrailingSlash) );
-    setIcon( QIcon( fileItem.pixmap( 16 ) ) );
+    setIcon( KIcon( fileItem.iconName() ) );
 }
 
 //END KFindItem
@@ -232,6 +248,7 @@ KfindWindow::KfindWindow( QWidget *parent )
     
     header()->setStretchLastSection( true );
     
+    sortByColumn( 0, Qt::AscendingOrder );
     resetColumns();
 }
 
@@ -266,8 +283,6 @@ void KfindWindow::endSearch()
 void KfindWindow::insertItem(const KFileItem &item, const QString& matchingLine)
 {
     m_model->insertFileItem( item, matchingLine );
-    sortByColumn( 0, Qt::AscendingOrder );
-    resetColumns();
 }
 
 // copy to clipboard
