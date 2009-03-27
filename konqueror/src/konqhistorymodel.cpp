@@ -19,6 +19,7 @@
 
 #include "konqhistorymodel.h"
 
+#include "konqhistory.h"
 #include "konqhistorymanager.h"
 
 #include <kglobal.h>
@@ -127,17 +128,21 @@ QVariant HistoryEntry::data(int role, int /*column*/) const
     }
     case Qt::DecorationRole:
         return icon;
-    case Qt::ToolTipRole: {
-        if (/*s_settings->m_detailedTips*/ true) {
-            return i18n("<qt><center><b>%1</b></center><hr />Last visited: %2<br />"
-                        "First visited: %3<br />Number of times visited: %4</qt>",
-                        entry.url.url(),
-                        KGlobal::locale()->formatDateTime(entry.lastVisited),
-                        KGlobal::locale()->formatDateTime(entry.firstVisited),
-                        entry.numberOfTimesVisited);
-        }
+    case Qt::ToolTipRole:
         return entry.url.url();
-    }
+    case KonqHistory::TypeRole:
+        return (int)KonqHistory::HistoryType;
+    case KonqHistory::DetailedToolTipRole:
+        return i18n("<qt><center><b>%1</b></center><hr />Last visited: %2<br />"
+                    "First visited: %3<br />Number of times visited: %4</qt>",
+                    entry.url.url(),
+                    KGlobal::locale()->formatDateTime(entry.lastVisited),
+                    KGlobal::locale()->formatDateTime(entry.firstVisited),
+                    entry.numberOfTimesVisited);
+    case KonqHistory::LastVisitedRole:
+        return entry.lastVisited;
+    case KonqHistory::UrlRole:
+        return entry.url;
     }
     return QVariant();
 }
@@ -174,6 +179,20 @@ QVariant GroupEntry::data(int role, int /*column*/) const
         return key;
     case Qt::DecorationRole:
         return icon;
+    case KonqHistory::TypeRole:
+        return (int)KonqHistory::GroupType;
+    case KonqHistory::LastVisitedRole: {
+        if (entries.isEmpty()) {
+            return QDateTime();
+        }
+        QDateTime dt = entries.first()->entry.lastVisited;
+        Q_FOREACH (HistoryEntry *e, entries) {
+            if (e->entry.lastVisited > dt) {
+                dt = e->entry.lastVisited;
+            }
+        }
+        return dt;
+    }
     }
     return QVariant();
 }
