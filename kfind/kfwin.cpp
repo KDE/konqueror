@@ -57,7 +57,7 @@ static const char* perm[4] = {
 KFindItemModel::KFindItemModel( KfindWindow * parentView ) : 
     QStandardItemModel( parentView )
 {
-    setHorizontalHeaderLabels( QStringList() << i18nc("file name column","Name") << i18n("name of the containing folder","In Subfolder") << i18n("file size column","Size") << i18n("modified date column","Modified") << i18n("file permissions column","Permissions") << i18n("first matching line of the query string in this file", "First Matching Line"));
+    setHorizontalHeaderLabels( QStringList() << i18nc("file name column","Name") << i18nc("name of the containing folder","In Subfolder") << i18nc("file size column","Size") << i18nc("modified date column","Modified") << i18nc("file permissions column","Permissions") << i18nc("first matching line of the query string in this file", "First Matching Line"));
 }
 
 void KFindItemModel::insertFileItem( KFileItem fileItem, QString matchingLine )
