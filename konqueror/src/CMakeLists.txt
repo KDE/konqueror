@@ -66,6 +66,10 @@ set(konqueror_KDEINIT_SRCS
    konqclosedwindowsmanager.cpp
    konqsessionmanager.cpp
    konqcloseditem.cpp
+   konqhistorymodel.cpp
+   konqhistoryproxymodel.cpp
+   konqhistorydialog.cpp
+   konqhistorysettings.cpp
 )
 
 kde4_add_kcfg_files(konqueror_KDEINIT_SRCS konqsettingsxt.kcfgc)
