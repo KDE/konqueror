@@ -44,9 +44,9 @@
 #include <KPluginLoader>
 
 #include <konqhistorymanager.h>
+#include <konqhistorysettings.h>
 
 // Local
-#include "history_settings.h"
 
 K_PLUGIN_FACTORY(KCMHistoryFactory,
         registerPlugin<HistorySidebarConfig>();
@@ -58,7 +58,7 @@ HistorySidebarConfig::HistorySidebarConfig( QWidget *parent, const QVariantList 
 {
     KGlobal::locale()->insertCatalog("konqueror");
 
-    m_settings = new KonqSidebarHistorySettings( this );
+    m_settings = new KonqHistorySettings( this );
     m_settings->readSettings( false );
 
     QVBoxLayout *topLayout = new QVBoxLayout(this);
@@ -72,14 +72,14 @@ HistorySidebarConfig::HistorySidebarConfig( QWidget *parent, const QVariantList 
     dialog->spinNewer->setRange( 0, INT_MAX );
     dialog->spinOlder->setRange( 0, INT_MAX );
 
-    dialog->comboNewer->insertItem( KonqSidebarHistorySettings::MINUTES,
+    dialog->comboNewer->insertItem( KonqHistorySettings::MINUTES,
 		                    i18n("Minutes") );
-    dialog->comboNewer->insertItem( KonqSidebarHistorySettings::DAYS,
+    dialog->comboNewer->insertItem( KonqHistorySettings::DAYS,
 		                    i18n("Days") );
 
-    dialog->comboOlder->insertItem( KonqSidebarHistorySettings::MINUTES,
+    dialog->comboOlder->insertItem( KonqHistorySettings::MINUTES,
 		                    i18n("Minutes") );
-    dialog->comboOlder->insertItem( KonqSidebarHistorySettings::DAYS,
+    dialog->comboOlder->insertItem( KonqHistorySettings::DAYS,
 		                    i18n("Days") );
 
     connect( dialog->cbExpire, SIGNAL( toggled( bool )),
@@ -182,8 +182,8 @@ void HistorySidebarConfig::defaults()
     dialog->spinNewer->setValue( 1 );
     dialog->spinOlder->setValue( 2 );
 
-    dialog->comboNewer->setCurrentIndex( KonqSidebarHistorySettings::DAYS );
-    dialog->comboOlder->setCurrentIndex( KonqSidebarHistorySettings::DAYS );
+    dialog->comboNewer->setCurrentIndex( KonqHistorySettings::DAYS );
+    dialog->comboOlder->setCurrentIndex( KonqHistorySettings::DAYS );
 
     dialog->cbDetailedTips->setChecked( true );
 
@@ -209,9 +209,9 @@ void HistorySidebarConfig::slotExpireChanged( int value )
 // to enfore newer <= older.
 void HistorySidebarConfig::slotNewerChanged( int value )
 {
-    dialog->comboNewer->setItemText( KonqSidebarHistorySettings::DAYS,
+    dialog->comboNewer->setItemText( KonqHistorySettings::DAYS,
                                      i18np ( "Day", "Days", value) );
-    dialog->comboNewer->setItemText( KonqSidebarHistorySettings::MINUTES,
+    dialog->comboNewer->setItemText( KonqHistorySettings::MINUTES,
 		                     i18np ( "Minute", "Minutes", value) );
 
     if ( dialog->spinNewer->value() > dialog->spinOlder->value() )
@@ -221,9 +221,9 @@ void HistorySidebarConfig::slotNewerChanged( int value )
 
 void HistorySidebarConfig::slotOlderChanged( int value )
 {
-    dialog->comboOlder->setItemText( KonqSidebarHistorySettings::DAYS,
+    dialog->comboOlder->setItemText( KonqHistorySettings::DAYS,
 		                     i18np ( "Day", "Days", value) );
-    dialog->comboOlder->setItemText( KonqSidebarHistorySettings::MINUTES,
+    dialog->comboOlder->setItemText( KonqHistorySettings::MINUTES,
 		                     i18np ( "Minute", "Minutes", value) );
 
     if ( dialog->spinNewer->value() > dialog->spinOlder->value() )
