@@ -72,6 +72,7 @@ class KonqRun;
 class KConfigGroup;
 class KUrlRequester;
 class KBookmarkManager;
+class KonqHistoryDialog;
 struct HistoryEntry;
 
 namespace KParts {
@@ -747,6 +748,8 @@ private: // members
   static QList<KonqMainWindow*> *s_lstViews;
 
   QString m_currentDir; // stores current dir for relative URLs whenever applicable
+
+  QPointer<KonqHistoryDialog> m_historyDialog;
 
     // TODO: move to a KonqPreloadHandler class
   static bool s_preloaded;
