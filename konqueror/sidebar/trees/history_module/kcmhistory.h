@@ -25,7 +25,7 @@
 #include "ui_history_dlg.h"
 
 class KonqHistoryManager;
-class KonqSidebarHistorySettings;
+class KonqHistorySettings;
 
 class KonqSidebarHistoryDlg : public QWidget, public Ui::KonqSidebarHistoryDlg
 {
@@ -67,7 +67,7 @@ private:
   QFont m_fontOlder;
 
   KonqSidebarHistoryDlg* dialog;
-  KonqSidebarHistorySettings *m_settings;
+  KonqHistorySettings *m_settings;
   KonqHistoryManager *mgr;
 };
 
