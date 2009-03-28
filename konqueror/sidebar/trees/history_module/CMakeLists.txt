@@ -27,7 +27,7 @@ install(TARGETS konq_sidebartree_history  DESTINATION ${PLUGIN_INSTALL_DIR})
 
 ########### next target ###############
 
-set(kcm_history_SRCS kcmhistory.cpp history_settings.cpp )
+set(kcm_history_SRCS kcmhistory.cpp ../../../src/konqhistorysettings.cpp)
 
 
 kde4_add_ui_files(kcm_history_SRCS history_dlg.ui )
