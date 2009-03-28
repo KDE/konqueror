@@ -46,6 +46,7 @@
 #include "konqframevisitor.h"
 #include "konqbookmarkbar.h"
 #include "konqundomanager.h"
+#include "konqhistorydialog.h"
 #include <config-konqueror.h>
 #include <kstringhandler.h>
 
@@ -1723,32 +1724,12 @@ void KonqMainWindow::slotHome()
 
 void KonqMainWindow::slotGoHistory()
 {
-  QAction *a = m_toggleViewGUIClient->action("konq_sidebartng");
-  if (!a) {
-    KMessageBox::sorry(0, i18n("Your sidebar is not functional or unavailable."), i18n("Show History Sidebar"));
-    return;
-  }
-
-  // Show the sidebar
-  if (!static_cast<KToggleAction*>(a)->isChecked()) {
-    a->trigger();
-    QTimer::singleShot( 0, this, SLOT(slotGoHistory()));
-    return;
-  }
-
-  // Tell it to show the history plugin
-  MapViews::ConstIterator it;
-  for (it = viewMap().begin(); it != viewMap().end(); ++it) {
-    KonqView *view = it.value();
-    if (view) {
-      KService::Ptr svc = view->service();
-      if (svc->desktopEntryName() == "konq_sidebartng") {
-        if (!view->part()->openUrl( KUrl( "sidebar:history.desktop" ) ) )
-          KMessageBox::sorry(0, i18n("Cannot find running history plugin in your sidebar."), i18n("Show History Sidebar"));
-        break;
-      }
+    if (!m_historyDialog) {
+        m_historyDialog = new KonqHistoryDialog();
+        m_historyDialog->setAttribute(Qt::WA_DeleteOnClose);
+        m_historyDialog->setModal(false);
     }
-  }
+    m_historyDialog->show();
 }
 
 void KonqMainWindow::slotConfigureExtensions()
@@ -3637,7 +3618,7 @@ void KonqMainWindow::initActions()
 
   action = actionCollection()->addAction("go_history");
   action->setIcon(KIcon("view-history"));
-  action->setText(i18nc("@action:inmenu Go", "Show History in Sidebar"));
+  action->setText(i18nc("@action:inmenu Go", "Show History"));
   connect(action, SIGNAL(triggered()), SLOT(slotGoHistory()));
 
   // Settings menu
