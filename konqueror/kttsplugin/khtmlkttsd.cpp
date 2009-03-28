@@ -69,6 +69,7 @@ void KHTMLPluginKTTSD::slotReadOut()
         QString error;
         if (KToolInvocation::startServiceByDesktopName("kttsd", QStringList(), &error)) {
             KMessageBox::error(part->widget(), error, i18n("Starting KTTSD Failed") );
+	    return;
         }
     }
     // Find out if KTTSD supports xhtml (rich speak).
