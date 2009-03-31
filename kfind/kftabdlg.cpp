@@ -1,8 +1,21 @@
-/***********************************************************************
- *
- *  kftabdlg.cpp
- *
- **********************************************************************/
+/*******************************************************************
+* kftabdlg.cpp
+* 
+* This program is free software; you can redistribute it and/or
+* modify it under the terms of the GNU General Public License as
+* published by the Free Software Foundation; either version 2 of 
+* the License, or (at your option) any later version.
+* 
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+* 
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+* 
+******************************************************************/
+
 #include "kftabdlg.h"
 
 #include <QtGui/QButtonGroup>
@@ -12,7 +25,6 @@
 #include <QtGui/QCheckBox>
 #include <QtGui/QWhatsThis>
 
-#include <QtGui/QComboBox>
 #include <QtGui/QSpinBox>
 #include <QtGui/QPushButton>
 #include <QtGui/QApplication>
@@ -29,9 +41,10 @@
 #include <kservicetypetrader.h>
 #include <kparts/componentfactory.h>
 #include <kstandarddirs.h>
+
 #include "kquery.h"
 // Static utility functions
-static void save_pattern(QComboBox *, const QString &, const QString &);
+static void save_pattern(KComboBox *, const QString &, const QString &);
 
 #define SPECIAL_TYPES 7
 
@@ -44,7 +57,7 @@ struct LessMimeType_ByComment
 };
 
 KfindTabWidget::KfindTabWidget(QWidget *parent)
-  : QTabWidget( parent ), regExpDialog(0)
+  : KTabWidget( parent ), regExpDialog(0)
 {
     // This validator will be used for all numeric edit fields
     //KDigitValidator *digitV = new KDigitValidator(this);
@@ -57,7 +70,7 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     nameBox = new KComboBox(pages[0]);
     nameBox->setEditable( true );
     nameBox->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);  // allow smaller than widest entry
-    QLabel * namedL = new QLabel(i18n("&Named:"), pages[0]);
+    QLabel * namedL = new QLabel(i18nc("this is the label for the name textfield","&Named:"), pages[0]);
     namedL->setBuddy( nameBox );
     namedL->setObjectName( "named" );
     namedL->setToolTip( i18n("You can use wildcard matching and \";\" for separating multiple names") );
@@ -167,7 +180,7 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     betweenType->setObjectName( "comboBetweenType" );
     betweenType->addItem(i18n("minute(s)"));
     betweenType->addItem(i18n("hour(s)"));
-    betweenType->addItem(i18n("day(s)"));
+    betweenType->addItem(i18nc("use date ranges to search files by modified time","day(s)"));
     betweenType->addItem(i18n("month(s)"));
     betweenType->addItem(i18n("year(s)"));
     betweenType->setCurrentIndex(1);
@@ -209,7 +222,7 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     QLabel *groupLabel= new QLabel(i18n("Owned by &group:"),pages[1]);
     groupLabel->setBuddy( m_groupBox );
 
-    sizeBox ->addItem( i18n("(none)") );
+    sizeBox ->addItem( i18nc("file size isn't considered in the search","(none)") );
     sizeBox ->addItem( i18n("At Least") );
     sizeBox ->addItem( i18n("At Most") );
     sizeBox ->addItem( i18n("Equal To") );
@@ -282,7 +295,7 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     typeBox->setEditable( false );
     typeBox->setObjectName( "typeBox" );
     typeBox->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);  // allow smaller than widest entry
-    QLabel * typeL   =new QLabel( i18n("File &type:"), pages[2] );
+    QLabel * typeL   =new QLabel( i18nc("label for the file type combobox","File &type:"), pages[2] );
     typeL->setBuddy( typeBox );
     textEdit=new KLineEdit(pages[2]);
     textEdit->setClearButtonShown(true);
@@ -387,7 +400,7 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     }
 
     addTab( pages[0], i18n("Name/&Location") );
-    addTab( pages[2], i18n("C&ontents") );
+    addTab( pages[2], i18nc("tab name: search by contents","C&ontents") );
     addTab( pages[1], i18n("&Properties") );
 
 
@@ -541,7 +554,7 @@ void KfindTabWidget::loadHistory()
 void KfindTabWidget::slotEditRegExp()
 {
   if ( ! regExpDialog )
-    regExpDialog = KServiceTypeTrader::createInstanceFromQuery<QDialog>( "KRegExpEditor/KRegExpEditor", QString(), this );
+    regExpDialog = KServiceTypeTrader::createInstanceFromQuery<KDialog>( "KRegExpEditor/KRegExpEditor", QString(), this );
 
   KRegExpEditorInterface *iface = qobject_cast<KRegExpEditorInterface *>( regExpDialog );
   if ( !iface )
@@ -882,7 +895,7 @@ QValidator::State KDigitValidator::validate( QString & input, int & ) const
 //*******************************************************
 //             Static utility functions
 //*******************************************************
-static void save_pattern(QComboBox *obj,
+static void save_pattern(KComboBox *obj,
 			 const QString & group, const QString & entry)
 {
   // QComboBox allows insertion of items more than specified by
@@ -910,7 +923,7 @@ QSize KfindTabWidget::sizeHint() const
   // Like in minicli, we changed the combobox size policy so that they can resize down,
   // and then we simply provide a reasonable size hint for the whole window, depending
   // on the screen width.
-  QSize sz = QTabWidget::sizeHint();
+  QSize sz = KTabWidget::sizeHint();
   KfindTabWidget* me = const_cast<KfindTabWidget*>( this );
   const int screenWidth = qApp->desktop()->screenGeometry(me).width();
   if ( sz.width() > screenWidth / 2 )

@@ -1,8 +1,21 @@
-/***********************************************************************
- *
- *  Kfinddlg.cpp
- *
- **********************************************************************/
+/*******************************************************************
+* kfinddlg.cpp
+* 
+* This program is free software; you can redistribute it and/or
+* modify it under the terms of the GNU General Public License as
+* published by the Free Software Foundation; either version 2 of 
+* the License, or (at your option) any later version.
+* 
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+* 
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+* 
+******************************************************************/
+
 #include "kfinddlg.h"
 #include "kfinddlg.moc"
 
@@ -55,7 +68,7 @@ KfindDlg::KfindDlg(const KUrl & url, QWidget *parent)
 
   mStatusBar = new KStatusBar(frame);
   mStatusBar->insertFixedItem("AMiddleLengthText...", 0);
-  setStatusMsg(i18n("Ready."));
+  setStatusMsg( i18nc("the application is currently idle, there is no active search", "Idle.") );
   mStatusBar->setItemAlignment(0, Qt::AlignLeft | Qt::AlignVCenter);
   mStatusBar->insertPermanentItem(QString(), 1, 1);
   mStatusBar->setItemAlignment(1, Qt::AlignRight | Qt::AlignVCenter);
@@ -175,7 +188,7 @@ void KfindDlg::newSearch()
 void KfindDlg::slotResult(int errorCode)
 {
   if (errorCode == 0)
-    setStatusMsg(i18n("Ready."));
+    setStatusMsg( i18nc("the application is currently idle, there is no active search", "Idle.") );
   else if (errorCode == KIO::ERR_USER_CANCELED)
     setStatusMsg(i18n("Aborted."));
   else if (errorCode == KIO::ERR_MALFORMED_URL)

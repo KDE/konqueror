@@ -1,16 +1,28 @@
-/***********************************************************************
- *
- *  kftabdlg.h
- *
- ***********************************************************************/
+/*******************************************************************
+* kftabdlg.h
+* 
+* This program is free software; you can redistribute it and/or
+* modify it under the terms of the GNU General Public License as
+* published by the Free Software Foundation; either version 2 of 
+* the License, or (at your option) any later version.
+* 
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+* 
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+* 
+******************************************************************/
 
 #ifndef KFTABDLG_H
 #define KFTABDLG_H
 
-#include <QtGui/QTabWidget>
 #include <QtGui/QValidator> // for KDigitValidator
 
 #include <kurl.h>
+#include <ktabwidget.h>
 #include <kmimetype.h>
 
 #include "kdatecombo.h"
@@ -19,19 +31,18 @@ class QButtonGroup;
 class QPushButton;
 class QRadioButton;
 class QCheckBox;
-class QLineEdit;
+class KLineEdit;
 class QString;
 class QDate;
 class QRegExp;
-class QDialog;
-class QComboBox;
+class KDialog;
+class KComboBox;
 class QSpinBox;
 class QLabel;
-class KLineEdit;
 
 class KfDirDialog;
 
-class KfindTabWidget: public QTabWidget
+class KfindTabWidget: public KTabWidget
 {
   Q_OBJECT
 
@@ -67,21 +78,21 @@ Q_SIGNALS:
 
 protected:
 public:
-  QComboBox   *nameBox;
-  QComboBox   *dirBox;
+  KComboBox   *nameBox;
+  KComboBox   *dirBox;
   // for first page
   QCheckBox   *subdirsCb;
   QCheckBox *useLocateCb;
   QCheckBox *hiddenFilesCb;
   // for third page
-  QComboBox *typeBox;
+  KComboBox *typeBox;
   KLineEdit * textEdit;
   QCheckBox *caseSensCb;
-  QComboBox *m_usernameBox;
-  QComboBox *m_groupBox;
+  KComboBox *m_usernameBox;
+  KComboBox *m_groupBox;
   //for fourth page
-  QLineEdit *metainfoEdit;
-  QLineEdit *metainfokeyEdit;
+  KLineEdit *metainfoEdit;
+  KLineEdit *metainfokeyEdit;
 
 private:
   bool isDateValid();
@@ -98,7 +109,7 @@ private:
 
   //2nd page
   QCheckBox   *findCreated;
-  QComboBox   *betweenType;
+  KComboBox   *betweenType;
   QLabel      *andL;
   QButtonGroup *bg;
   QRadioButton *rb[2];
@@ -107,13 +118,13 @@ private:
   QSpinBox *timeBox;
 
   //3rd page
-  QComboBox *sizeBox;
-  QComboBox *sizeUnitBox;
+  KComboBox *sizeBox;
+  KComboBox *sizeUnitBox;
   QSpinBox *sizeEdit;
   QCheckBox *caseContextCb;
   QCheckBox *binaryContextCb;
   QCheckBox *regexpContentCb;
-  QDialog *regExpDialog;
+  KDialog *regExpDialog;
 
   KUrl m_url;
 

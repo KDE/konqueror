@@ -17,8 +17,8 @@
 * 
 ******************************************************************/
 
-#ifndef KFWIN__H
-#define KFWIN__H
+#ifndef KFINDTREEVIEW__H
+#define KFINDTREEVIEW__H
 
 #include <QtGui/QTreeView>
 #include <QtCore/QAbstractTableModel>
