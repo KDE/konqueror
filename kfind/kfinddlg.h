@@ -18,7 +18,7 @@ class KQuery;
 class KUrl;
 class KFileItem;
 class KfindTabWidget;
-class KfindWindow;
+class KFindTreeView;
 class KStatusBar;
 
 class KfindDlg: public KDialog
@@ -56,7 +56,7 @@ Q_SIGNALS:
 
 private:
   KfindTabWidget *tabWidget;
-  KfindWindow * win;
+  KFindTreeView * win;
 
   bool isResultReported;
   KQuery *query;

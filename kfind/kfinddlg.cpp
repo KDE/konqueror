@@ -20,7 +20,7 @@
 
 #include "kftabdlg.h"
 #include "kquery.h"
-#include "kfwin.h"
+#include "kfindtreeview.h"
 
 KfindDlg::KfindDlg(const KUrl & url, QWidget *parent)
   : KDialog( parent )
@@ -51,7 +51,7 @@ KfindDlg::KfindDlg(const KUrl & url, QWidget *parent)
   tabWidget->setURL( url );
 
   // prepare window for find results
-  win = new KfindWindow(frame );
+  win = new KFindTreeView(frame );
 
   mStatusBar = new KStatusBar(frame);
   mStatusBar->insertFixedItem("AMiddleLengthText...", 0);

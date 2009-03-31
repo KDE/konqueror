@@ -275,7 +275,7 @@ void KQuery::processQuery( const KFileItem &file)
        bool foundmeta=false;
        QString filename = file.url().path();
 
-       if(filename.startsWith("/dev/"))
+       if(filename.startsWith( QString("/dev/") ))
           return;
 
        KFileMetaInfo metadatas(filename);
@@ -350,8 +350,8 @@ void KQuery::processQuery( const KFileItem &file)
          } else {
            kWarning() << "Cannot open supposed ZIP file " << file.url() ;
          }
-       } else if( !m_search_binary && !file.mimetype().startsWith("text/") &&
-           file.url().isLocalFile() && !file.url().path().startsWith("/dev") ) {
+       } else if( !m_search_binary && !file.mimetype().startsWith( QString("text/") ) &&
+           file.url().isLocalFile() && !file.url().path().startsWith( QString("/dev") ) ) {
          if ( KMimeType::isBinaryData(file.url().path()) ) {
            kDebug() << "ignoring, not a text file: " << file.url();
            return;
@@ -361,7 +361,7 @@ void KQuery::processQuery( const KFileItem &file)
        if(!isZippedOfficeDocument) //any other file or non-compressed KWord
        {
          filename = file.url().path();
-         if(filename.startsWith("/dev/"))
+         if(filename.startsWith(QString("/dev/")))
             return;
          qf.setFileName(filename);
          qf.open(QIODevice::ReadOnly);

@@ -12,7 +12,7 @@ install(TARGETS kfindpart  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
 ########### next target ###############
 
-set(kfind_SRCS kfwin.cpp kfinddlg.cpp main.cpp ${libkfindcommon_SRCS})
+set(kfind_SRCS kfindtreeview.cpp kfinddlg.cpp main.cpp ${libkfindcommon_SRCS})
 
 kde4_add_app_icon(kfind_SRCS "hi*-app-kfind.png")
 

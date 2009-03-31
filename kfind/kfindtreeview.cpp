@@ -1,5 +1,5 @@
 /*******************************************************************
-* kfwin.cpp
+* kfindtreeview.cpp
 * Copyright 2009    Dario Andres Rodriguez <andresbajotierra@gmail.com>
 * 
 * This program is free software; you can redistribute it and/or
@@ -16,7 +16,7 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 * 
 ******************************************************************/
-#include "kfwin.h"
+#include "kfindtreeview.h"
 
 #include <QtCore/QTextStream>
 #include <QtCore/QTextCodec>
@@ -54,7 +54,7 @@ static const char* perm[4] = {
 
 //BEGIN KFindItemModel
 
-KFindItemModel::KFindItemModel( KfindWindow * parentView ) : 
+KFindItemModel::KFindItemModel( KFindTreeView * parentView ) : 
     QAbstractTableModel( parentView )
 {
     m_view = parentView;
@@ -304,9 +304,9 @@ bool KFindSortFilterProxyModel::lessThan(const QModelIndex &left, const QModelIn
 
 //END KFindSortFilterProxyModel
 
-//BEGIN KfindWindow
+//BEGIN KFindTreeView
 
-KfindWindow::KfindWindow( QWidget *parent )
+KFindTreeView::KFindTreeView( QWidget *parent )
     : QTreeView( parent ) ,
     m_contextMenu(0)
 {
@@ -355,14 +355,14 @@ KfindWindow::KfindWindow( QWidget *parent )
     sortByColumn( 0, Qt::AscendingOrder );
 }
 
-KfindWindow::~KfindWindow()
+KFindTreeView::~KFindTreeView()
 {
     delete m_model;
     delete m_proxyModel;
     delete m_actionCollection;
 }
 
-void KfindWindow::resizeToContents()
+void KFindTreeView::resizeToContents()
 {
     resizeColumnToContents( 0 );
     resizeColumnToContents( 1 );
@@ -370,7 +370,7 @@ void KfindWindow::resizeToContents()
     resizeColumnToContents( 3 );
 }
 
-QString KfindWindow::reducedDir(const QString& fullDir)
+QString KFindTreeView::reducedDir(const QString& fullDir)
 {
     if (fullDir.indexOf(m_baseDir)==0)
     {
@@ -380,24 +380,24 @@ QString KfindWindow::reducedDir(const QString& fullDir)
     return fullDir;
 }
 
-void KfindWindow::beginSearch(const KUrl& baseUrl)
+void KFindTreeView::beginSearch(const KUrl& baseUrl)
 {
     kDebug() << QString("beginSearch in: %1").arg(baseUrl.path());
     m_baseDir = baseUrl.path(KUrl::AddTrailingSlash);
     m_model->clear();
 }
 
-void KfindWindow::endSearch()
+void KFindTreeView::endSearch()
 {
     resizeToContents();
 }
 
-void KfindWindow::insertItems (const QList< QPair<KFileItem,QString> > & pairs)
+void KFindTreeView::insertItems (const QList< QPair<KFileItem,QString> > & pairs)
 {
     m_model->insertFileItems( pairs );
 }
 
-void KfindWindow::removeItem(const KUrl & url)
+void KFindTreeView::removeItem(const KUrl & url)
 {
     KUrl::List list = selectedUrls();
     if ( list.contains(url) )
@@ -414,7 +414,7 @@ void KfindWindow::removeItem(const KUrl & url)
 }
 
 // copy to clipboard
-void KfindWindow::copySelection()
+void KFindTreeView::copySelection()
 {
     QMimeData * mime = m_model->mimeData( m_proxyModel->mapSelectionToSource( selectionModel()->selection() ).indexes() );
     if (mime)
@@ -424,7 +424,7 @@ void KfindWindow::copySelection()
     }
 }
 
-void KfindWindow::saveResults()
+void KFindTreeView::saveResults()
 {
     KFileDialog *dlg = new KFileDialog(QString(), QString(), this);
     dlg->setOperationMode (KFileDialog::Saving);
@@ -491,7 +491,7 @@ void KfindWindow::saveResults()
     }
 }
 
-void KfindWindow::openContainingFolder()
+void KFindTreeView::openContainingFolder()
 {
     KUrl::List uris = selectedUrls();
     QMap<KUrl, int> folderMaps;
@@ -510,7 +510,7 @@ void KfindWindow::openContainingFolder()
     }
 }
 
-void KfindWindow::slotExecuteSelected()
+void KFindTreeView::slotExecuteSelected()
 {
     QModelIndexList selected = m_proxyModel->mapSelectionToSource( selectionModel()->selection() ).indexes();
     if ( selected.size() == 0 )
@@ -527,7 +527,7 @@ void KfindWindow::slotExecuteSelected()
     }
 }
 
-void KfindWindow::slotExecute( const QModelIndex & index )
+void KFindTreeView::slotExecute( const QModelIndex & index )
 {
     if ( !index.isValid() )
         return;
@@ -541,7 +541,7 @@ void KfindWindow::slotExecute( const QModelIndex & index )
         item.getFileItem().run();
 }
 
-void KfindWindow::contextMenuRequested( const QPoint & p)
+void KFindTreeView::contextMenuRequested( const QPoint & p)
 {
     KFileItemList fileList;
     
@@ -582,7 +582,7 @@ void KfindWindow::contextMenuRequested( const QPoint & p)
     m_contextMenu->exec( this->mapToGlobal( p ) );
 }
 
-KUrl::List KfindWindow::selectedUrls()
+KUrl::List KFindTreeView::selectedUrls()
 {
     KUrl::List uris;
     
@@ -600,7 +600,7 @@ KUrl::List KfindWindow::selectedUrls()
     return uris;
 }
 
-void KfindWindow::deleteSelectedFiles()
+void KFindTreeView::deleteSelectedFiles()
 {
     KUrl::List uris = selectedUrls();
     
@@ -616,7 +616,7 @@ void KfindWindow::deleteSelectedFiles()
     }
 }
 
-void KfindWindow::moveToTrashSelectedFiles()
+void KFindTreeView::moveToTrashSelectedFiles()
 {
     KUrl::List uris = selectedUrls();
     
@@ -631,6 +631,6 @@ void KfindWindow::moveToTrashSelectedFiles()
     }
 }
 
-//END KfindWindow
+//END KFindTreeView
 
-#include "kfwin.moc"
+#include "kfindtreeview.moc"

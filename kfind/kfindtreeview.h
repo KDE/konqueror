@@ -1,5 +1,5 @@
 /*******************************************************************
-* kfwin.h
+* kfindtreeview.h
 * Copyright 2009    Dario Andres Rodriguez <andresbajotierra@gmail.com>
 * 
 * This program is free software; you can redistribute it and/or
@@ -31,7 +31,7 @@
 #include <kfileitem.h>
 #include <konq_popupmenu.h>
 
-class KfindWindow;
+class KFindTreeView;
 class KActionCollection;
 
 class KFindItem
@@ -55,7 +55,7 @@ class KFindItem
 class KFindItemModel: public QAbstractTableModel
 {
     public:
-        KFindItemModel( KfindWindow* parent);
+        KFindItemModel( KFindTreeView* parent);
 
         void insertFileItems( const QList< QPair<KFileItem,QString> > &);
 
@@ -80,7 +80,7 @@ class KFindItemModel: public QAbstractTableModel
         
     private:
         QList<KFindItem>    m_itemList;
-        KfindWindow*        m_view;
+        KFindTreeView*        m_view;
 };
 
 class KFindSortFilterProxyModel: public QSortFilterProxyModel
@@ -96,12 +96,12 @@ class KFindSortFilterProxyModel: public QSortFilterProxyModel
 
 };
 
-class KfindWindow: public QTreeView
+class KFindTreeView: public QTreeView
 {
   Q_OBJECT
     public:
-        KfindWindow( QWidget * parent = 0 );
-        ~KfindWindow();
+        KFindTreeView( QWidget * parent = 0 );
+        ~KFindTreeView();
 
         void beginSearch(const KUrl& baseUrl);
         void endSearch();

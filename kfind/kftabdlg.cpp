@@ -466,8 +466,8 @@ void KfindTabWidget::initMimeTypes()
     foreach ( KMimeType::Ptr type, KMimeType::allMimeTypes() )
     {
       if ( (!type->comment().isEmpty())
-           && (!type->name().startsWith("kdedevice/"))
-           && (!type->name().startsWith("all/")) )
+           && (!type->name().startsWith( QString("kdedevice/") ))
+           && (!type->name().startsWith( QString("all/") )) )
         sortedList.append(type);
     }
     qSort( sortedList.begin(), sortedList.end(), LessMimeType_ByComment() );
@@ -483,11 +483,11 @@ void KfindTabWidget::initSpecialMimeTypes()
 	  const KMimeType* type = (*it).data();
 
       if(!type->comment().isEmpty()) {
-        if(type->name().startsWith("image/"))
+        if(type->name().startsWith( QString("image/") ))
            m_ImageTypes.append(type->name());
-        else if(type->name().startsWith("video/"))
+        else if(type->name().startsWith( QString("video/") ))
           m_VideoTypes.append(type->name());
-        else if(type->name().startsWith("audio/"))
+        else if(type->name().startsWith( QString("audio/") ))
           m_AudioTypes.append(type->name());
       }
     }
