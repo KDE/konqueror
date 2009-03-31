@@ -21,54 +21,66 @@
 #define KFWIN__H
 
 #include <QtGui/QTreeView>
-#include <QtGui/QStandardItemModel>
+#include <QtCore/QAbstractTableModel>
 #include <QtGui/QSortFilterProxyModel>
 #include <QtGui/QDragMoveEvent>
 
 #include <kurl.h>
+#include <kicon.h>
+#include <kdebug.h>
 #include <kfileitem.h>
+#include <konq_popupmenu.h>
 
 class KfindWindow;
 class KActionCollection;
 
-
-class KFindItem: public QStandardItem
+class KFindItem
 {
     public:
-        KFindItem( KFileItem );
-        KFileItem  fileItem;
+        explicit KFindItem( const KFileItem & = KFileItem(), const QString & subDir = QString(), const QString & matchingLine = QString() );
+        
+        QVariant data(int column, int role) const;
+        
+        KFileItem getFileItem() const { return m_fileItem; }
+        bool isValid() const { return !m_fileItem.isNull(); }
+        
+    private:
+        KFileItem       m_fileItem;
+        QString         m_matchingLine;
+        QString         m_subDir;
+        QString         m_permission;
+        KIcon           m_icon;
 };
-
-class KFindItemModel: public QStandardItemModel
+ 
+class KFindItemModel: public QAbstractTableModel
 {
     public:
         KFindItemModel( KfindWindow* parent);
 
-        void insertFileItem( KFileItem, QString );
+        void insertFileItems( const QList< QPair<KFileItem,QString> > &);
+
         void removeItem(const KUrl &);
-        
         bool isInserted(const KUrl &);
         
-        void reset();
+        void clear();
         
-        Qt::DropActions supportedDropActions() const
-        {
-            return Qt::CopyAction | Qt::MoveAction;
-        }
+        Qt::DropActions supportedDropActions() const { return Qt::CopyAction | Qt::MoveAction; }
         
         Qt::ItemFlags flags(const QModelIndex &) const;
         QMimeData * mimeData(const QModelIndexList &) const;
         
-        /*
-        KUrl urlFromItem( QStandardItem * );
-        KUrl urlFromIndex( const QModelIndex & );
-        QStandardItem * itemFromUrl( KUrl );
-        */
+        int columnCount ( const QModelIndex & parent = QModelIndex() ) const {  Q_UNUSED(parent); return 6; }
+        int rowCount ( const QModelIndex & parent = QModelIndex() ) const;
+        QVariant data ( const QModelIndex & index, int role = Qt::DisplayRole ) const;
+        QVariant headerData(int section, Qt::Orientation orientation, int role) const;
         
-        QMap<KUrl, QStandardItem*> urls() { return m_urlMap; }
+        KFindItem itemAtIndex( const QModelIndex & index ) const;
+        
+        QList<KFindItem> getItemList() const { return m_itemList; }
         
     private:
-        QMap<KUrl, QStandardItem*> m_urlMap;
+        QList<KFindItem>    m_itemList;
+        KfindWindow*        m_view;
 };
 
 class KFindSortFilterProxyModel: public QSortFilterProxyModel
@@ -94,8 +106,8 @@ class KfindWindow: public QTreeView
         void beginSearch(const KUrl& baseUrl);
         void endSearch();
 
-        void insertItem(const KFileItem &item, const QString& matchingLine);
-        void removeItem(const KUrl & url) { m_model->removeItem( url ); }
+        void insertItems(const QList< QPair<KFileItem,QString> > &);
+        void removeItem(const KUrl & url);
         
         bool isInserted(const KUrl & url) { return m_model->isInserted( url ); }
         
@@ -126,13 +138,14 @@ class KfindWindow: public QTreeView
         void resultSelected(bool);
 
     private:
-        void resetColumns();
+        void resizeToContents();
         
-        QString m_baseDir;
+        QString                     m_baseDir;
         
-        KFindItemModel *    m_model;
+        KFindItemModel *            m_model;
         KFindSortFilterProxyModel * m_proxyModel;
-        KActionCollection *     m_actionCollection;
+        KActionCollection *         m_actionCollection;
+        KonqPopupMenu *             m_contextMenu;
 };
 
 #endif

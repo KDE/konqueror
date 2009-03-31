@@ -76,9 +76,8 @@ KfindDlg::KfindDlg(const KUrl & url, QWidget *parent)
 	  this,SIGNAL(resultSelected(bool)));
 
   query = new KQuery(frame);
-  connect(query, SIGNAL(addFile(const KFileItem&,const QString&)),
-	  SLOT(addFile(const KFileItem&,const QString&)));
-  connect(query, SIGNAL(result(int)), SLOT(slotResult(int)));
+    connect(query, SIGNAL(result(int)), SLOT(slotResult(int)));
+    connect(query, SIGNAL(foundFileList(QList< QPair<KFileItem,QString> >)), SLOT(addFiles(QList< QPair<KFileItem,QString> >)));
 
   dirwatch=NULL;
 }
@@ -205,9 +204,9 @@ void KfindDlg::slotResult(int errorCode)
 
 }
 
-void KfindDlg::addFile(const KFileItem &item, const QString& matchingLine)
+void KfindDlg::addFiles( const QList< QPair<KFileItem,QString> > & pairs)
 {
-  win->insertItem(item,matchingLine);
+  win->insertItems( pairs );
 
   if (!isResultReported)
   {

@@ -42,7 +42,7 @@ public Q_SLOTS:
   void startSearch();
   void stopSearch();
   void newSearch();
-  void addFile(const KFileItem& item, const QString& matchingLine);
+  void addFiles( const QList< QPair<KFileItem,QString> > & );
   void setFocus();
   void slotResult(int);
 //  void slotSearchDone();

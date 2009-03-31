@@ -37,7 +37,7 @@
 
 #include <kio/netaccess.h>
 #include <kio/copyjob.h>
-#include <konq_popupmenu.h>
+
 #include <konq_operations.h>
 #include <knewmenu.h>
 
@@ -55,78 +55,126 @@ static const char* perm[4] = {
 //BEGIN KFindItemModel
 
 KFindItemModel::KFindItemModel( KfindWindow * parentView ) : 
-    QStandardItemModel( parentView )
+    QAbstractTableModel( parentView )
 {
-    setHorizontalHeaderLabels( QStringList() << i18nc("file name column","Name") << i18nc("name of the containing folder","In Subfolder") << i18nc("file size column","Size") << i18nc("modified date column","Modified") << i18nc("file permissions column","Permissions") << i18nc("first matching line of the query string in this file", "First Matching Line"));
+    m_view = parentView;
 }
 
-void KFindItemModel::insertFileItem( KFileItem fileItem, QString matchingLine )
+QVariant KFindItemModel::headerData(int section, Qt::Orientation orientation, int role) const
 {
-    QFileInfo fileInfo(fileItem.url().path());
+    if ( role == Qt::DisplayRole && orientation == Qt::Horizontal) {
+        switch (section) {
+            case 0:
+                return i18nc("file name column","Name");
+            case 1:
+                return i18nc("name of the containing folder","In Subfolder");
+            case 2:
+                return i18nc("file size column","Size");
+            case 3:
+                return i18nc("modified date column","Modified");
+            case 4:
+                return i18nc("file permissions column","Permissions");
+            case 5:
+                return i18nc("first matching line of the query string in this file", "First Matching Line");
+            default:
+                return QVariant();
+        }
+    }
+    return QVariant();
+}
 
-    int perm_index;
-    if(fileInfo.isReadable())
-        perm_index = fileInfo.isWritable() ? RW : RO;
+void KFindItemModel::insertFileItems( const QList< QPair<KFileItem,QString> > & pairs)
+{
+    if ( pairs.size() > 0 )
+    {
+        beginInsertRows( QModelIndex(), m_itemList.size(), m_itemList.size()+pairs.size()-1 );
+        
+        QList< QPair<KFileItem,QString> >::const_iterator it = pairs.constBegin();
+        QList< QPair<KFileItem,QString> >::const_iterator end = pairs.constEnd();
+        
+        for (; it != end; ++it)
+        {
+            QPair<KFileItem,QString> pair = *it;
+
+            QString subDir = m_view->reducedDir(pair.first.url().directory(KUrl::AppendTrailingSlash));
+            m_itemList.append( KFindItem( pair.first, subDir, pair.second ) );
+        }
+
+        endInsertRows();
+    }
+}
+
+int KFindItemModel::rowCount ( const QModelIndex & parent ) const
+{ 
+    if( !parent.isValid() )
+        return m_itemList.count(); //Return itemcount for toplevel
     else
-        perm_index = fileInfo.isWritable() ? WO : NA;
-
-    //Generate list item
-    QList<QStandardItem*> items;
-    
-    //Size item (visible size + bytes for sorting)
-    QStandardItem * sizeItem = new QStandardItem( KIO::convertSize( fileItem.size() ) );
-    sizeItem->setData( fileItem.size(), Qt::UserRole ); 
-    
-    QStandardItem * dateItem = new QStandardItem( fileItem.timeString(KFileItem::ModificationTime) );
-    dateItem->setData( fileItem.time(KFileItem::ModificationTime).toTime_t() , Qt::UserRole );
-    
-    items.append( new KFindItem( fileItem ) );
-    items.append( new QStandardItem( (static_cast<KfindWindow*>(parent()))->reducedDir(fileItem.url().directory(KUrl::AppendTrailingSlash)) ) );
-    items.append( sizeItem );
-    items.append( dateItem );
-    items.append( new QStandardItem( i18n(perm[perm_index]) ) );
-    items.append( new QStandardItem( matchingLine ) );
-    
-    m_urlMap.insert( fileItem.url(), items.at(0) );
-    
-    appendRow( items );
+        return 0;
 }
 
-/*
-KUrl KFindItemModel::urlFromItem( QStandardItem * item )
+KFindItem KFindItemModel::itemAtIndex( const QModelIndex & index ) const
 {
-    return m_urlMap.key( item );
+    if ( index.isValid() && m_itemList.size() >= index.row() )
+        return m_itemList.at( index.row() );
+
+    return KFindItem();
 }
 
-KUrl KFindItemModel::urlFromIndex( const QModelIndex & index )
+QVariant KFindItemModel::data ( const QModelIndex & index, int role ) const
 {
-    return m_urlMap.key( item( index.row() ) );
-}
+    if (!index.isValid())
+        return QVariant();
 
-QStandardItem * KFindItemModel::itemFromUrl( KUrl url )
-{
-    return m_urlMap.value( url );
+    if (index.column() > 6 || index.row() >= m_itemList.count() )
+        return QVariant();
+
+    switch( role )
+    {
+        case Qt::DisplayRole:
+        case Qt::DecorationRole:
+        case Qt::UserRole:
+            return m_itemList.at( index.row() ).data( index.column(), role );
+        default:
+            return QVariant();
+    }
+    return QVariant();
 }
-*/
 
 void KFindItemModel::removeItem( const KUrl & url )
 {
-    QStandardItem * item = m_urlMap.value( url );
-    if( item )
+    int itemCount = m_itemList.size();
+    for ( int i = 0; i < itemCount; i++)
     {
-        removeRow( item->index().row() );
-        m_urlMap.remove( url );
+        KFindItem item = m_itemList.at(i);
+        if ( item.getFileItem().url() == url )
+        {
+            beginRemoveRows( QModelIndex(), i, i+1 ); 
+            m_itemList.removeAt( i );
+            endRemoveRows();
+            return;
+        }
     }
 }
 
 bool KFindItemModel::isInserted( const KUrl & url )
 {
-    return m_urlMap.contains( url );
+    int itemCount = m_itemList.size();
+    for ( int i = 0; i < itemCount; i++)
+    {
+        KFindItem item = m_itemList.at(i);
+        if ( item.getFileItem().url() == url )
+        {
+            return true;
+        }
+    }
+    return false;
 }
 
-void KFindItemModel::reset()
+void KFindItemModel::clear()
 {
-    removeRows( 0, rowCount() );
+    beginRemoveRows( QModelIndex(), 0, m_itemList.size() );
+    m_itemList.clear();
+    endRemoveRows();
 }
 
 Qt::ItemFlags KFindItemModel::flags(const QModelIndex &index) const
@@ -147,9 +195,7 @@ QMimeData * KFindItemModel::mimeData(const QModelIndexList &indexes) const
         {
             if( index.column() == 0 ) //Only use the first column item
             {
-                KFindItem * findItem = (KFindItem*)item( index.row() );
-                if( findItem )
-                    uris.append( findItem->fileItem.url() );
+                uris.append( m_itemList.at( index.row() ).getFileItem().url() );
             }
         }
     }
@@ -167,12 +213,73 @@ QMimeData * KFindItemModel::mimeData(const QModelIndexList &indexes) const
 
 //BEGIN KFindItem
 
-KFindItem::KFindItem( KFileItem _fileItem ):
-    QStandardItem()
+KFindItem::KFindItem( const KFileItem & _fileItem, const QString & subDir, const QString & matchingLine )
 {
-    fileItem = _fileItem;
-    setText( fileItem.url().fileName(KUrl::ObeyTrailingSlash) );
-    setIcon( KIcon( fileItem.iconName() ) );
+    m_fileItem = _fileItem;
+    m_subDir = subDir;
+    m_matchingLine = matchingLine;
+
+    //TODO more caching ?
+    if ( !m_fileItem.isNull() && m_fileItem.isLocalFile() )
+    {
+        QFileInfo fileInfo(m_fileItem.url().toLocalFile());
+
+        int perm_index;
+        if(fileInfo.isReadable())
+            perm_index = fileInfo.isWritable() ? RW : RO;
+        else
+            perm_index = fileInfo.isWritable() ? WO : NA;
+            
+        m_permission = i18n(perm[perm_index]);
+        
+        m_icon = KIcon( m_fileItem.iconName() );
+    }
+}
+
+QVariant KFindItem::data( int column, int role ) const
+{
+    if ( m_fileItem.isNull() )
+        return QVariant();
+        
+    if( role == Qt::DecorationRole )
+    {
+        if (column == 0)
+            return m_icon;
+        else
+            return QVariant();
+    }
+        
+    if( role == Qt::DisplayRole )
+        switch( column )
+        {
+            case 0:
+                return m_fileItem.url().fileName(KUrl::ObeyTrailingSlash);
+            case 1:
+                return m_subDir;
+            case 2:
+                return KIO::convertSize( m_fileItem.size() );
+            case 3:
+                return m_fileItem.timeString(KFileItem::ModificationTime);
+            case 4:
+                return m_permission;
+            case 5:
+                return m_matchingLine;
+            default:
+                return QVariant();
+        }
+        
+    if( role == Qt::UserRole )
+        switch( column )
+        {
+            case 2:
+                return m_fileItem.size();
+            case 3:
+                return m_fileItem.time(KFileItem::ModificationTime).toTime_t();
+            default:
+                return QVariant();
+        }
+    
+    return QVariant();
 }
 
 //END KFindItem
@@ -186,7 +293,6 @@ bool KFindSortFilterProxyModel::lessThan(const QModelIndex &left, const QModelIn
     {
         qulonglong leftData = sourceModel()->data( left, Qt::UserRole ).toULongLong();
         qulonglong rightData = sourceModel()->data( right, Qt::UserRole ).toULongLong();
-
         return leftData < rightData;
     }
     // Default sorting rules for string values
@@ -202,7 +308,7 @@ bool KFindSortFilterProxyModel::lessThan(const QModelIndex &left, const QModelIn
 
 KfindWindow::KfindWindow( QWidget *parent )
     : QTreeView( parent ) ,
-    m_baseDir()
+    m_contextMenu(0)
 {
     //Configure model and proxy model
     m_model = new KFindItemModel( this );
@@ -216,9 +322,7 @@ KfindWindow::KfindWindow( QWidget *parent )
     setSortingEnabled( true );
     setDragEnabled( true );
     setContextMenuPolicy( Qt::CustomContextMenu );
-    
-    header()->setResizeMode( 0, QHeaderView::ResizeToContents );
-    
+
     connect( this, SIGNAL( customContextMenuRequested( const QPoint &) ),
                  this, SLOT( contextMenuRequested( const QPoint & )));
     connect( this, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(slotExecute(QModelIndex)) );
@@ -249,7 +353,6 @@ KfindWindow::KfindWindow( QWidget *parent )
     header()->setStretchLastSection( true );
     
     sortByColumn( 0, Qt::AscendingOrder );
-    resetColumns();
 }
 
 KfindWindow::~KfindWindow()
@@ -257,6 +360,14 @@ KfindWindow::~KfindWindow()
     delete m_model;
     delete m_proxyModel;
     delete m_actionCollection;
+}
+
+void KfindWindow::resizeToContents()
+{
+    resizeColumnToContents( 0 );
+    resizeColumnToContents( 1 );
+    resizeColumnToContents( 2 );
+    resizeColumnToContents( 3 );
 }
 
 QString KfindWindow::reducedDir(const QString& fullDir)
@@ -273,16 +384,33 @@ void KfindWindow::beginSearch(const KUrl& baseUrl)
 {
     kDebug() << QString("beginSearch in: %1").arg(baseUrl.path());
     m_baseDir = baseUrl.path(KUrl::AddTrailingSlash);
-    m_model->reset();
+    m_model->clear();
 }
 
 void KfindWindow::endSearch()
 {
+    resizeToContents();
 }
 
-void KfindWindow::insertItem(const KFileItem &item, const QString& matchingLine)
+void KfindWindow::insertItems (const QList< QPair<KFileItem,QString> > & pairs)
 {
-    m_model->insertFileItem( item, matchingLine );
+    m_model->insertFileItems( pairs );
+}
+
+void KfindWindow::removeItem(const KUrl & url)
+{
+    KUrl::List list = selectedUrls();
+    if ( list.contains(url) )
+    {
+        //Close menu
+        if( m_contextMenu )
+        {
+            m_contextMenu->hide();
+            delete m_contextMenu;
+            m_contextMenu = 0;
+        }
+    }
+    m_model->removeItem( url );
 }
 
 // copy to clipboard
@@ -298,8 +426,6 @@ void KfindWindow::copySelection()
 
 void KfindWindow::saveResults()
 {
-    QMap<KUrl, QStandardItem*> urls = m_model->urls();
-
     KFileDialog *dlg = new KFileDialog(QString(), QString(), this);
     dlg->setOperationMode (KFileDialog::Saving);
     dlg->setCaption( i18n("Save Results As") );
@@ -329,7 +455,8 @@ void KfindWindow::saveResults()
     {
         QTextStream stream( &file );
         stream.setCodec( QTextCodec::codecForLocale() );
-
+        
+        QList<KFindItem> itemList = m_model->getItemList();
         if ( filter == "*.html" ) 
         {
             stream << QString::fromLatin1("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\""
@@ -340,22 +467,20 @@ void KfindWindow::saveResults()
                             "<dl>\n")
             .arg(i18n("KFind Results File"));
 
-            Q_FOREACH( const KUrl & url, urls.keys() )
+            Q_FOREACH( const KFindItem & item, itemList )
             {
-                QString path = url.url();
-                QString pretty = url.prettyUrl();
-                
-                stream << QString::fromLatin1("<dt><a href=\"%1\">%2</a></dt>\n").arg( path, pretty );
+                const KFileItem fileItem = item.getFileItem();
+                stream << QString::fromLatin1("<dt><a href=\"%1\">%2</a></dt>\n").arg( 
+                    fileItem.url().url(), fileItem.url().prettyUrl() );
 
             }
             stream << QString::fromLatin1("</dl>\n</body>\n</html>\n");
         }
         else 
         {
-            Q_FOREACH( const KUrl & url, urls.keys() )
+            Q_FOREACH( const KFindItem & item, itemList )
             {
-                QString path= url.url();
-                stream << path << endl;
+                stream << item.getFileItem().url().url() << endl;
             }
         }
 
@@ -395,9 +520,9 @@ void KfindWindow::slotExecuteSelected()
     {
         if( index.column() == 0 )
         {
-            KFindItem * findItem = (KFindItem*)m_model->itemFromIndex( index );
-            if( findItem )
-                findItem->fileItem.run();
+            KFindItem item = m_model->itemAtIndex( index );
+            if ( item.isValid() )
+                item.getFileItem().run();
         }
     }
 }
@@ -408,18 +533,12 @@ void KfindWindow::slotExecute( const QModelIndex & index )
         return;
         
     QModelIndex realIndex = m_proxyModel->mapToSource( index );
-    
     if ( !realIndex.isValid() )
         return;
-        
-    KFindItem * findItem = (KFindItem *)m_model->item( realIndex.row() );
-    if( findItem )
-        findItem->fileItem.run();
-}
-
-void KfindWindow::resetColumns()
-{
-    resizeColumnToContents( 1 );
+      
+    KFindItem item = m_model->itemAtIndex( realIndex );
+    if ( item.isValid() )
+        item.getFileItem().run();
 }
 
 void KfindWindow::contextMenuRequested( const QPoint & p)
@@ -434,9 +553,9 @@ void KfindWindow::contextMenuRequested( const QPoint & p)
     {
         if( index.column() == 0 )
         {
-            KFindItem * findItem = (KFindItem*)m_model->itemFromIndex( index );
-            if( findItem )
-                fileList.append( findItem->fileItem );
+            const KFindItem item = m_model->itemAtIndex( index );
+            if( item.isValid() )
+                fileList.append( item.getFileItem() );
         }
     }
     
@@ -452,10 +571,15 @@ void KfindWindow::contextMenuRequested( const QPoint & p)
     KParts::BrowserExtension::ActionGroupMap actionGroups;
     actionGroups.insert("editactions", editActions);
     
-    KonqPopupMenu * menu = new KonqPopupMenu( fileList, KUrl(), *m_actionCollection, new KNewMenu( m_actionCollection, this, "new_menu"), 0, flags, this, 0, actionGroups);
+    if( m_contextMenu )
+    {
+        m_contextMenu->hide();
+        delete m_contextMenu;
+        m_contextMenu = 0;
+    }
+    m_contextMenu = new KonqPopupMenu( fileList, KUrl(), *m_actionCollection, new KNewMenu( m_actionCollection, this, "new_menu"), 0, flags, this, 0, actionGroups);
 
-    menu->popup( this->mapToGlobal( p ) );
-    connect( menu, SIGNAL(aboutToHide()), menu, SLOT(deleteLater()) );
+    m_contextMenu->exec( this->mapToGlobal( p ) );
 }
 
 KUrl::List KfindWindow::selectedUrls()
@@ -467,9 +591,9 @@ KUrl::List KfindWindow::selectedUrls()
     {
         if( index.column() == 0 && index.isValid() )
         {
-            KFindItem * item = (KFindItem*)m_model->itemFromIndex( index );
-            if( item )
-                uris.append( item->fileItem.url() );
+            KFindItem item = m_model->itemAtIndex( index );
+            if( item.isValid() )
+                uris.append( item.getFileItem().url() );
         }
     }
     

@@ -142,11 +142,17 @@ void KQuery::checkEntries()
   m_insideCheckEntries=true;
   metaKeyRx=new QRegExp(m_metainfokey);
   metaKeyRx->setPatternSyntax( QRegExp::Wildcard );
+  
+  m_foundFilesList.clear();
+  
   while ( !m_fileItems.isEmpty() )
   {
-      processQuery( m_fileItems.dequeue() );
+    processQuery( m_fileItems.dequeue() );
   }
-
+   
+    if( m_foundFilesList.size() > 0 )
+        emit foundFileList( m_foundFilesList );
+  
   delete metaKeyRx;
   m_insideCheckEntries=false;
   if (job==0)
@@ -154,7 +160,7 @@ void KQuery::checkEntries()
 }
 
 /* List of files found using slocate */
-void KQuery::slotListEntries( QStringList  list )
+void KQuery::slotListEntries( QStringList list )
 {
   metaKeyRx=new QRegExp(m_metainfokey);
   metaKeyRx->setPatternSyntax( QRegExp::Wildcard );
@@ -162,11 +168,13 @@ void KQuery::slotListEntries( QStringList  list )
   QStringList::const_iterator it = list.constBegin();
   QStringList::const_iterator end = list.constEnd();
 
+    m_foundFilesList.clear();
   for (; it != end; ++it)
   {
     processQuery( KFileItem( KFileItem::Unknown, KFileItem::Unknown, KUrl(*it)) );
   }
-
+    if( m_foundFilesList.size() > 0 )
+        emit foundFileList( m_foundFilesList );
   delete metaKeyRx;
 }
 
@@ -175,9 +183,10 @@ void KQuery::processQuery( const KFileItem &file)
 {
 
     if ( file.name() == "." || file.name() == ".." )
-      return;
-
-    if ( !m_showHiddenFiles && file.isHidden() ) return;
+        return;
+      
+    if ( !m_showHiddenFiles && file.isHidden() )
+        return;
     
     bool matched=false;
 
@@ -367,7 +376,7 @@ void KQuery::processQuery( const KFileItem &file)
 
           if (str.isNull()) break;
           if(isZippedOfficeDocument)
-            str.replace(xmlTags, "");
+            str.remove(xmlTags);
 
           if (m_regexpForContent)
           {
@@ -394,7 +403,10 @@ void KQuery::processQuery( const KFileItem &file)
        if (!found)
           return;
     }
-    emit addFile(file,matchingLine);
+    
+    QPair<KFileItem,QString> pair(file, matchingLine);
+    m_foundFilesList.append( pair );
+
 }
 
 void KQuery::setContext(const QString & context, bool casesensitive,

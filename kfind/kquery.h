@@ -8,6 +8,7 @@
 #include <QtCore/QQueue>
 #include <QtCore/QList>
 #include <QtCore/QDir>
+#include <QtCore/QPair>
 #include <QtCore/QStringList>
 
 #include <kio/job.h>
@@ -24,6 +25,7 @@ class KQuery : public QObject
   KQuery(QObject *parent = 0);
   ~KQuery();
 
+    /* Functions to set Query requirements */
   void setSizeRange( int mode, KIO::filesize_t value1, KIO::filesize_t value2);
   void setTimeRange( time_t from, time_t to );
   void setRegExp( const QString &regexp, bool caseSensitive );
@@ -50,18 +52,20 @@ class KQuery : public QObject
  public Q_SLOTS:
   /* List of files found using slocate */
   void slotListEntries(QStringList);
+  
  protected Q_SLOTS:
   /* List of files found using KIO */
   void slotListEntries(KIO::Job *, const KIO::UDSEntryList &);
   void slotResult(KJob *);
   void slotCanceled(KJob *);
+  
   void slotreadyReadStandardOutput();
   void slotreadyReadStandardError();
   void slotendProcessLocate(int, QProcess::ExitStatus);
 
  Q_SIGNALS:
-  void addFile(const KFileItem &filename, const QString& matchingLine);
-  void result(int);
+    void foundFileList( QList< QPair<KFileItem,QString> >);
+    void result(int);
 
  private:
   void checkEntries();
@@ -99,6 +103,8 @@ class KQuery : public QObject
   QStringList ignore_mimetypes;
   QStringList ooo_mimetypes;     // OpenOffice.org mimetypes
   QStringList koffice_mimetypes;
+  
+  QList< QPair<KFileItem,QString> > m_foundFilesList;
 };
 
 #endif
