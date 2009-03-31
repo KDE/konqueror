@@ -54,7 +54,7 @@ public:
 KWebView::KWebView(QWidget *parent)
     : QWebView(parent), d(new KWebView::KWebViewPrivate())
 {
-    setPage(new KWebPage(parent));
+    setPage(new KWebPage(this));
 }
 
 KWebView::~KWebView()
