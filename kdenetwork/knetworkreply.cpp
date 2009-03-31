@@ -204,7 +204,7 @@ void KNetworkReply::slotRedirection(KIO::Job* job, const KUrl& url)
 {
     job->kill();
     d->m_kioJob=0;
-    setAttribute(QNetworkRequest::RedirectionTargetAttribute, url);
+    setAttribute(QNetworkRequest::RedirectionTargetAttribute, QUrl(url));
     emit finished();
 }
 
