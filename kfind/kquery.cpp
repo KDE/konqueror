@@ -79,47 +79,52 @@ KQuery::KQuery(QObject *parent)
 KQuery::~KQuery()
 {
   while (!m_regexps.isEmpty())
-      delete m_regexps.takeFirst();
-  while (!m_fileItems.isEmpty())
-      m_fileItems.dequeue();
+    delete m_regexps.takeFirst();
+  m_fileItems.clear();
+  if( processLocate->state() == QProcess::Running)
+  {
+    disconnect( processLocate );
+    processLocate->kill();
+    processLocate->waitForFinished( 5000 );
+    delete processLocate;
+  }
 }
 
 void KQuery::kill()
 {
   if (job)
-     job->kill(KJob::EmitResult);
+    job->kill(KJob::EmitResult);
   if (processLocate->state() == QProcess::Running)
-     processLocate->kill();
-  while (!m_fileItems.isEmpty())
-      m_fileItems.dequeue();
+    processLocate->kill();
+  m_fileItems.clear();
 }
 
 void KQuery::start()
 {
-    while (!m_fileItems.isEmpty())
-      m_fileItems.dequeue();
-  if(m_useLocate) //use "locate" instead of the internal search method
+  m_fileItems.clear();
+  if( m_useLocate ) //Use "locate" instead of the internal search method
   {
-    m_url.cleanPath();
-    processLocate->clearProgram();
-    *processLocate << "locate";
-    *processLocate << m_url.path( KUrl::AddTrailingSlash ).toLatin1();
     bufferLocate.clear();
-    processLocate->setNextOpenMode(QIODevice::Text);
+    m_url.cleanPath();
+
+    processLocate->clearProgram();
+    processLocate->setProgram( "locate", QStringList() <<  m_url.path( KUrl::AddTrailingSlash ) );
+
     processLocate->setOutputChannelMode(KProcess::SeparateChannels);
     processLocate->start();
-    return;
   }
+  else //Use KIO
+  {
+    if (m_recursive)
+      job = KIO::listRecursive( m_url, KIO::HideProgressInfo );
+    else
+      job = KIO::listDir( m_url, KIO::HideProgressInfo );
 
-  if (m_recursive)
-    job = KIO::listRecursive( m_url, KIO::HideProgressInfo );
-  else
-    job = KIO::listDir( m_url, KIO::HideProgressInfo );
-
-  connect(job, SIGNAL(entries(KIO::Job *, const KIO::UDSEntryList &)),
-	  SLOT(slotListEntries(KIO::Job *, const KIO::UDSEntryList &)));
-  connect(job, SIGNAL(result(KJob *)), SLOT(slotResult(KJob *)));
-  connect(job, SIGNAL(canceled(KJob *)), SLOT(slotCanceled(KJob *)));
+    connect(job, SIGNAL(entries(KIO::Job *, const KIO::UDSEntryList &)),
+        SLOT(slotListEntries(KIO::Job *, const KIO::UDSEntryList &)));
+    connect(job, SIGNAL(result(KJob *)), SLOT(slotResult(KJob *)));
+    connect(job, SIGNAL(canceled(KJob *)), SLOT(slotCanceled(KJob *)));
+  }
 }
 
 void KQuery::slotResult( KJob * _job )
@@ -136,8 +141,7 @@ void KQuery::slotCanceled( KJob * _job )
   if (job != _job) return;
   job = 0;
 
-  while (!m_fileItems.isEmpty())
-      m_fileItems.dequeue();
+  m_fileItems.clear();
 
   m_result=KIO::ERR_USER_CANCELED;
   checkEntries();
@@ -146,35 +150,36 @@ void KQuery::slotCanceled( KJob * _job )
 void KQuery::slotListEntries(KIO::Job*, const KIO::UDSEntryList& list)
 {
   const KIO::UDSEntryList::ConstIterator end = list.constEnd();
+  
   for (KIO::UDSEntryList::ConstIterator it = list.constBegin(); it != end; ++it)
-  {
     m_fileItems.enqueue(KFileItem(*it, m_url, true, true));
-  }
+      
   checkEntries();
 }
 
 void KQuery::checkEntries()
 {
-  if (m_insideCheckEntries)
-     return;
+  if (m_insideCheckEntries) return;
+      
   m_insideCheckEntries=true;
+  
   metaKeyRx=new QRegExp(m_metainfokey);
   metaKeyRx->setPatternSyntax( QRegExp::Wildcard );
   
   m_foundFilesList.clear();
-  
+
   while ( !m_fileItems.isEmpty() )
-  {
     processQuery( m_fileItems.dequeue() );
-  }
-   
-    if( m_foundFilesList.size() > 0 )
-        emit foundFileList( m_foundFilesList );
+
+  if( m_foundFilesList.size() > 0 )
+    emit foundFileList( m_foundFilesList );
   
   delete metaKeyRx;
-  m_insideCheckEntries=false;
+  
   if (job==0)
-     emit result(m_result);
+    emit result(m_result);
+      
+  m_insideCheckEntries=false;
 }
 
 /* List of files found using slocate */
@@ -186,245 +191,252 @@ void KQuery::slotListEntries( QStringList list )
   QStringList::const_iterator it = list.constBegin();
   QStringList::const_iterator end = list.constEnd();
 
-    m_foundFilesList.clear();
+  m_foundFilesList.clear();
   for (; it != end; ++it)
-  {
     processQuery( KFileItem( KFileItem::Unknown, KFileItem::Unknown, KUrl(*it)) );
-  }
-    if( m_foundFilesList.size() > 0 )
-        emit foundFileList( m_foundFilesList );
+
+  if( m_foundFilesList.size() > 0 )
+    emit foundFileList( m_foundFilesList );
+      
   delete metaKeyRx;
 }
 
 /* Check if file meets the find's requirements*/
 void KQuery::processQuery( const KFileItem &file)
 {
-
-    if ( file.name() == "." || file.name() == ".." )
-        return;
-      
-    if ( !m_showHiddenFiles && file.isHidden() )
-        return;
+  if ( file.name() == "." || file.name() == ".." )
+    return;
     
-    bool matched=false;
+  if ( !m_showHiddenFiles && file.isHidden() )
+    return;
+  
+  bool matched=false;
 
-    QListIterator<QRegExp *> nextItem( m_regexps );
-    while ( nextItem.hasNext() )
-    {
-        QRegExp *reg = nextItem.next();
-        matched = matched || ( reg == 0L ) || ( reg->exactMatch( file.url().fileName( KUrl::IgnoreTrailingSlash ) ) ) ;
-    }
+  QListIterator<QRegExp *> nextItem( m_regexps );
+  while ( nextItem.hasNext() )
+  {
+    QRegExp *reg = nextItem.next();
+    matched = matched || ( reg == 0L ) || ( reg->exactMatch( file.url().fileName( KUrl::IgnoreTrailingSlash ) ) ) ;
+  }
+  if (!matched)
+    return;
 
-    if (!matched)
-      return;
+  // make sure the files are in the correct range
+  switch( m_sizemode )
+  {
+    case 1: // "at least"
+      if ( file.size() < m_sizeboundary1 ) return;
+      break;
+    case 2: // "at most"
+      if ( file.size() > m_sizeboundary1 ) return;
+      break;
+    case 3: // "equal"
+      if ( file.size() != m_sizeboundary1 ) return;
+      break;
+    case 4: // "between"
+      if ( (file.size() < m_sizeboundary1) ||
+              (file.size() > m_sizeboundary2) ) return;
+      break;
+    case 0: // "none" -> Fall to default
+    default:
+            break;
+  }
 
-    // make sure the files are in the correct range
-    switch( m_sizemode )
-	{
-		case 1: // "at least"
-				if ( file.size() < m_sizeboundary1 ) return;
-				break;
-		case 2: // "at most"
-				if ( file.size() > m_sizeboundary1 ) return;
-				break;
-		case 3: // "equal"
-				if ( file.size() != m_sizeboundary1 ) return;
-				break;
-		case 4: // "between"
-				if ( (file.size() < m_sizeboundary1) ||
-		 				(file.size() > m_sizeboundary2) ) return;
-				break;
-		case 0: // "none" -> Fall to default
-        default:
-				break;
-	}
+  // make sure it's in the correct date range
+  // what about 0 times?
+  if ( m_timeFrom && ((uint) m_timeFrom) > file.time(KFileItem::ModificationTime).toTime_t() )
+    return;
+  if ( m_timeTo && ((uint) m_timeTo) < file.time(KFileItem::ModificationTime).toTime_t() )
+    return;
 
-    // make sure it's in the correct date range
-    // what about 0 times?
-    if ( m_timeFrom && ((uint) m_timeFrom) > file.time(KFileItem::ModificationTime).toTime_t() )
-      return;
-    if ( m_timeTo && ((uint) m_timeTo) < file.time(KFileItem::ModificationTime).toTime_t() )
-      return;
+  // username / group match
+  if ( (!m_username.isEmpty()) && (m_username != file.user()) )
+    return;
+  if ( (!m_groupname.isEmpty()) && (m_groupname != file.group()) )
+    return;
 
-    // username / group match
-    if ( (!m_username.isEmpty()) && (m_username != file.user()) )
-       return;
-    if ( (!m_groupname.isEmpty()) && (m_groupname != file.group()) )
-       return;
-
-    // file type
-    switch (m_filetype)
-    {
-      case 0:
-        break;
-      case 1: // plain file
-        if ( !S_ISREG( file.mode() ) )
-          return;
-        break;
-      case 2:
-        if ( !file.isDir() )
-          return;
-        break;
-      case 3:
-        if ( !file.isLink() )
-          return;
-        break;
-      case 4:
-        if ( !S_ISCHR ( file.mode() ) && !S_ISBLK ( file.mode() ) &&
-              !S_ISFIFO( file.mode() ) && !S_ISSOCK( file.mode() ) )
-              return;
-        break;
-      case 5: // binary
-        if ( (file.permissions() & 0111) != 0111 || file.isDir() )
-          return;
-        break;
-      case 6: // suid
-        if ( (file.permissions() & 04000) != 04000 ) // fixme
-          return;
-        break;
-      default:
-        if (!m_mimetype.isEmpty() && !m_mimetype.contains(file.mimetype()))
-          return;
-    }
-
-    // match data in metainfo...
-    if ((!m_metainfo.isEmpty())  && (!m_metainfokey.isEmpty()))
-    {
-       bool foundmeta=false;
-       QString filename = file.url().path();
-
-       if(filename.startsWith( QString("/dev/") ))
-          return;
-
-       KFileMetaInfo metadatas(filename);
-       QStringList metakeys;
-       QString strmetakeycontent;
-
-       metakeys = metadatas.supportedKeys();
-       for (QStringList::const_iterator it = metakeys.constBegin(); it != metakeys.constEnd(); ++it )
-       {
-          if (!metaKeyRx->exactMatch(*it))
-             continue;
-          strmetakeycontent=metadatas.item(*it).value().toString();
-          if(strmetakeycontent.indexOf(m_metainfo)!=-1)
-          {
-             foundmeta=true;
-             break;
-          }
-       }
-       if (!foundmeta)
-          return;
-    }
-
-    // match contents...
-    QString matchingLine;
-    if (!m_context.isEmpty())
-    {
-
-       if( !m_search_binary && ignore_mimetypes.indexOf(file.mimetype()) != -1 ) {
-         kDebug() << "ignoring, mime type is in exclusion list: " << file.url();
-         return;
-       }
-
-       bool found = false;
-       bool isZippedOfficeDocument=false;
-       int matchingLineNumber=0;
-
-       // FIXME: doesn't work with non local files
-
-       QString filename;
-       QTextStream* stream=0;
-       QFile qf;
-       QRegExp xmlTags;
-       QByteArray zippedXmlFileContent;
-
-       // KWord's and OpenOffice.org's files are zipped...
-       if( ooo_mimetypes.indexOf(file.mimetype()) != -1 ||
-           koffice_mimetypes.indexOf(file.mimetype()) != -1 )
-       {
-         KZip zipfile(file.url().path());
-         KZipFileEntry *zipfileEntry;
-
-         if(zipfile.open(QIODevice::ReadOnly))
-         {
-           const KArchiveDirectory *zipfileContent = zipfile.directory();
-
-           if( koffice_mimetypes.indexOf(file.mimetype()) != -1 )
-             zipfileEntry = (KZipFileEntry*)zipfileContent->entry("maindoc.xml");
-           else
-             zipfileEntry = (KZipFileEntry*)zipfileContent->entry("content.xml"); //for OpenOffice.org
-
-           if(!zipfileEntry) {
-             kWarning() << "Expected XML file not found in ZIP archive " << file.url() ;
-             return;
-           }
-
-           zippedXmlFileContent = zipfileEntry->data();
-           xmlTags.setPattern("<.*>");
-           xmlTags.setMinimal(true);
-           stream = new QTextStream(zippedXmlFileContent, QIODevice::ReadOnly);
-           stream->setCodec("UTF-8");
-           isZippedOfficeDocument = true;
-         } else {
-           kWarning() << "Cannot open supposed ZIP file " << file.url() ;
-         }
-       } else if( !m_search_binary && !file.mimetype().startsWith( QString("text/") ) &&
-           file.url().isLocalFile() && !file.url().path().startsWith( QString("/dev") ) ) {
-         if ( KMimeType::isBinaryData(file.url().path()) ) {
-           kDebug() << "ignoring, not a text file: " << file.url();
-           return;
-         }
-       }
-
-       if(!isZippedOfficeDocument) //any other file or non-compressed KWord
-       {
-         filename = file.url().path();
-         if(filename.startsWith(QString("/dev/")))
+  // file type
+  switch (m_filetype)
+  {
+    case 0:
+      break;
+    case 1: // plain file
+      if ( !S_ISREG( file.mode() ) )
+        return;
+      break;
+    case 2:
+      if ( !file.isDir() )
+        return;
+      break;
+    case 3:
+      if ( !file.isLink() )
+        return;
+      break;
+    case 4:
+      if ( !S_ISCHR ( file.mode() ) && !S_ISBLK ( file.mode() ) &&
+            !S_ISFIFO( file.mode() ) && !S_ISSOCK( file.mode() ) )
             return;
-         qf.setFileName(filename);
-         qf.open(QIODevice::ReadOnly);
-         stream=new QTextStream(&qf);
-         stream->setCodec(QTextCodec::codecForLocale());
-       }
+      break;
+    case 5: // binary
+      if ( (file.permissions() & 0111) != 0111 || file.isDir() )
+        return;
+      break;
+    case 6: // suid
+      if ( (file.permissions() & 04000) != 04000 ) // fixme
+        return;
+      break;
+    default:
+      if (!m_mimetype.isEmpty() && !m_mimetype.contains(file.mimetype()))
+        return;
+  }
 
-       while ( ! stream->atEnd() )
-       {
-          QString str = stream->readLine();
-          matchingLineNumber++;
+  // match data in metainfo...
+  if ((!m_metainfo.isEmpty())  && (!m_metainfokey.isEmpty()))
+  {
+      //Avoid sequential files (fifo,char devices)
+      if (S_ISCHR ( file.mode() ) || S_ISBLK ( file.mode() ) ||
+            S_ISFIFO( file.mode() ) || S_ISSOCK( file.mode() ) )
+        return;
+          
+      bool foundmeta=false;
+      QString filename = file.url().path();
 
-          if (str.isNull()) break;
-          if(isZippedOfficeDocument)
-            str.remove(xmlTags);
+      if(filename.startsWith( QString("/dev/") ))
+        return;
 
-          if (m_regexpForContent)
-          {
-             if (m_regexp.indexIn(str)>=0)
-             {
-                matchingLine=QString::number(matchingLineNumber)+": "+str;
-                found = true;
-                break;
-             }
-          }
-          else
-          {
-             if (str.indexOf(m_context, 0, m_casesensitive?Qt::CaseSensitive:Qt::CaseInsensitive) != -1)
-             {
-                matchingLine=QString::number(matchingLineNumber)+": "+str;
-                found = true;
-                break;
-             }
-          }
-          kapp->processEvents();
-       }
-       delete stream;
+      KFileMetaInfo metadatas(filename);
+      QStringList metakeys;
+      QString strmetakeycontent;
 
-       if (!found)
+      metakeys = metadatas.supportedKeys();
+      for (QStringList::const_iterator it = metakeys.constBegin(); it != metakeys.constEnd(); ++it )
+      {
+        if (!metaKeyRx->exactMatch(*it))
+          continue;
+        strmetakeycontent=metadatas.item(*it).value().toString();
+        if(strmetakeycontent.indexOf(m_metainfo)!=-1)
+        {
+          foundmeta=true;
+          break;
+        }
+      }
+      if (!foundmeta)
+        return;
+  }
+
+  // match contents...
+  QString matchingLine;
+  if (!m_context.isEmpty())
+  {
+    //Avoid sequential files (fifo,char devices)
+    if (S_ISCHR ( file.mode() ) || S_ISBLK ( file.mode() ) ||
+          S_ISFIFO( file.mode() ) || S_ISSOCK( file.mode() ) )
+        return;
+        
+    if( !m_search_binary && ignore_mimetypes.indexOf(file.mimetype()) != -1 ) {
+      kDebug() << "ignoring, mime type is in exclusion list: " << file.url();
+      return;
+    }
+
+    bool found = false;
+    bool isZippedOfficeDocument=false;
+    int matchingLineNumber=0;
+
+    // FIXME: doesn't work with non local files
+
+    QString filename;
+    QTextStream* stream=0;
+    QFile qf;
+    QRegExp xmlTags;
+    QByteArray zippedXmlFileContent;
+
+    // KWord's and OpenOffice.org's files are zipped...
+    if( ooo_mimetypes.indexOf(file.mimetype()) != -1 ||
+        koffice_mimetypes.indexOf(file.mimetype()) != -1 )
+    {
+      KZip zipfile(file.url().path());
+      KZipFileEntry *zipfileEntry;
+
+      if(zipfile.open(QIODevice::ReadOnly))
+      {
+        const KArchiveDirectory *zipfileContent = zipfile.directory();
+
+        if( koffice_mimetypes.indexOf(file.mimetype()) != -1 )
+          zipfileEntry = (KZipFileEntry*)zipfileContent->entry("maindoc.xml");
+        else
+          zipfileEntry = (KZipFileEntry*)zipfileContent->entry("content.xml"); //for OpenOffice.org
+
+        if(!zipfileEntry) {
+          kWarning() << "Expected XML file not found in ZIP archive " << file.url() ;
           return;
+        }
+
+        zippedXmlFileContent = zipfileEntry->data();
+        xmlTags.setPattern("<.*>");
+        xmlTags.setMinimal(true);
+        stream = new QTextStream(zippedXmlFileContent, QIODevice::ReadOnly);
+        stream->setCodec("UTF-8");
+        isZippedOfficeDocument = true;
+      } else {
+        kWarning() << "Cannot open supposed ZIP file " << file.url() ;
+      }
+      
+    } else if( !m_search_binary && !file.mimetype().startsWith( QString("text/") ) &&
+        file.url().isLocalFile() && !file.url().path().startsWith( QString("/dev") ) ) {
+      if ( KMimeType::isBinaryData(file.url().path()) ) {
+        kDebug() << "ignoring, not a text file: " << file.url();
+        return;
+      }
+    }
+
+    if(!isZippedOfficeDocument) //any other file or non-compressed KWord
+    {
+      filename = file.url().path();
+      if(filename.startsWith(QString("/dev/")))
+        return;
+      qf.setFileName(filename);
+      qf.open(QIODevice::ReadOnly);
+      stream=new QTextStream(&qf);
+      stream->setCodec(QTextCodec::codecForLocale());
+    }
+
+    while ( ! stream->atEnd() )
+    {
+      QString str = stream->readLine();
+      matchingLineNumber++;
+
+      if (str.isNull()) break;
+      if(isZippedOfficeDocument)
+        str.remove(xmlTags);
+
+      if (m_regexpForContent)
+      {
+        if (m_regexp.indexIn(str)>=0)
+        {
+          matchingLine=QString::number(matchingLineNumber)+": "+str;
+          found = true;
+          break;
+        }
+      }
+      else
+      {
+        if (str.indexOf(m_context, 0, m_casesensitive?Qt::CaseSensitive:Qt::CaseInsensitive) != -1)
+        {
+          matchingLine=QString::number(matchingLineNumber)+": "+str;
+          found = true;
+          break;
+        }
+      }
+      kapp->processEvents();
     }
     
-    QPair<KFileItem,QString> pair(file, matchingLine);
-    m_foundFilesList.append( pair );
+    delete stream;
 
+    if (!found)
+      return;
+  }
+  
+  m_foundFilesList.append( QPair<KFileItem,QString>(file, matchingLine) );
 }
 
 void KQuery::setContext(const QString & context, bool casesensitive,
@@ -477,12 +489,12 @@ void KQuery::setTimeRange(time_t from, time_t to)
 
 void KQuery::setUsername(const QString &username)
 {
-   m_username = username;
+  m_username = username;
 }
 
 void KQuery::setGroupname(const QString &groupname)
 {
-   m_groupname = groupname;
+  m_groupname = groupname;
 }
 
 void KQuery::setRegExp(const QString &regexp, bool caseSensitive)
@@ -490,14 +502,14 @@ void KQuery::setRegExp(const QString &regexp, bool caseSensitive)
   QRegExp *regExp;
   QRegExp sep(";");
   const QStringList strList=regexp.split( sep, QString::SkipEmptyParts);
-//  QRegExp globChars ("[\\*\\?\\[\\]]", TRUE, FALSE);
+  //  QRegExp globChars ("[\\*\\?\\[\\]]", TRUE, FALSE);
   while (!m_regexps.isEmpty())
       delete m_regexps.takeFirst();
 
-//  m_regexpsContainsGlobs.clear();
+  //  m_regexpsContainsGlobs.clear();
   for ( QStringList::ConstIterator it = strList.constBegin(); it != strList.constEnd(); ++it ) {
     regExp = new QRegExp((*it),( caseSensitive ? Qt::CaseSensitive : Qt::CaseInsensitive ), QRegExp::Wildcard);
-//    m_regexpsContainsGlobs.append(regExp->pattern().contains(globChars));
+    //m_regexpsContainsGlobs.append(regExp->pattern().contains(globChars));
     m_regexps.append(regExp);
   }
 }
@@ -532,17 +544,17 @@ void KQuery::slotreadyReadStandardOutput()
   bufferLocate += processLocate->readAllStandardOutput();
 }
 
-void KQuery::slotendProcessLocate(int, QProcess::ExitStatus)
+void KQuery::slotendProcessLocate(int code, QProcess::ExitStatus)
 {
-  if(bufferLocate.isEmpty())
+  if (code == 0 )
   {
-    emit result(0);
-    return;
+    if( !bufferLocate.isEmpty() )
+    {
+      QString str = QString::fromLocal8Bit(bufferLocate);
+      bufferLocate.clear();
+      slotListEntries(str.split('\n', QString::SkipEmptyParts));
+    }
   }
-
-  QString str = QString::fromLocal8Bit(bufferLocate);
-  bufferLocate.clear();
-  slotListEntries(str.split('\n'));
   emit result(0);
 }
 
