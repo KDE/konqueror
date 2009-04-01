@@ -79,11 +79,9 @@ void KQuery::start()
   if(m_useLocate) //use "locate" instead of the internal search method
   {
     m_url.cleanPath();
-    processLocate->clearProgram();
-    *processLocate << "locate";
-    *processLocate << m_url.path( KUrl::AddTrailingSlash ).toLatin1();
     bufferLocate.clear();
-    processLocate->setNextOpenMode(QIODevice::Text);
+    processLocate->clearProgram();
+    processLocate->setProgram( "locate", QStringList() << m_url.path( KUrl::AddTrailingSlash ) );
     processLocate->setOutputChannelMode(KProcess::SeparateChannels);
     processLocate->start();
     return;
@@ -501,7 +499,7 @@ void KQuery::slotendProcessLocate(int, QProcess::ExitStatus)
 
   QString str = QString::fromLocal8Bit(bufferLocate);
   bufferLocate.clear();
-  slotListEntries(str.split('\n'));
+  slotListEntries(str.split('\n',QString::SkipEmptyParts));
   emit result(0);
 }
 
