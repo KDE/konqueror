@@ -22,7 +22,6 @@
 */
 
 #include "konq_operations.h"
-#include "konq_fileitemcapabilities.h"
 #include "konqmimedata.h"
 
 #include <ktoolinvocation.h>
@@ -45,6 +44,7 @@
 #include <kio/copyjob.h>
 #include <kio/paste.h>
 #include <kio/renamedialog.h>
+#include <kfileitemlistproperties.h>
 #include <kdirnotify.h>
 #include <kuiserverjobtracker.h>
 #include <kstandarddirs.h>
@@ -801,7 +801,7 @@ QPair<bool, QString> KonqOperations::pasteInfo(const KUrl& targetUrl)
     if (!urls.isEmpty() || canPasteData) {
         // disable the paste action if no writing is supported
         KFileItem item(KFileItem::Unknown, KFileItem::Unknown, targetUrl);
-        ret.first = KonqFileItemCapabilities(KFileItemList() << item).supportsWriting();
+        ret.first = KFileItemListProperties(KFileItemList() << item).supportsWriting();
 
         if (urls.count() == 1) {
             const KFileItem item(KFileItem::Unknown, KFileItem::Unknown, urls.first(), true);
