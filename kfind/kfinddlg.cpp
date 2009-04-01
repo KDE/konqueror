@@ -74,7 +74,9 @@ KfindDlg::KfindDlg(const KUrl & url, QWidget *parent)
 
   connect(win ,SIGNAL(resultSelected(bool)),
 	  this,SIGNAL(resultSelected(bool)));
-
+      
+  connect( this, SIGNAL(closeClicked()), this, SLOT(finishAndClose()) );
+  
   query = new KQuery(frame);
   connect(query, SIGNAL(addFile(const KFileItem&,const QString&)),
 	  SLOT(addFile(const KFileItem&,const QString&)));
@@ -88,9 +90,11 @@ KfindDlg::~KfindDlg()
    stopSearch();
 }
 
-void KfindDlg::closeEvent(QCloseEvent *)
+void KfindDlg::finishAndClose()
 {
-   slotButtonClicked(KDialog::Close);
+  //Stop the current search and closes the dialog
+  stopSearch();
+  close();
 }
 
 void KfindDlg::setProgressMsg(const QString &msg)

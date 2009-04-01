@@ -34,7 +34,6 @@ public:
   void setProgressMsg(const QString &);
 
 private:
-  void closeEvent(QCloseEvent *);
   /*Return a QStringList of all subdirs of d*/
   QStringList getAllSubdirs(QDir d);
 
@@ -50,6 +49,8 @@ public Q_SLOTS:
   void slotDeleteItem(const QString&);
   void slotNewItems( const QString&  );
 
+  void finishAndClose();
+  
 Q_SIGNALS:
   void haveResults(bool);
   void resultSelected(bool);
