@@ -85,6 +85,8 @@ KfindDlg::KfindDlg(const KUrl & url, QWidget *parent)
   connect(this, SIGNAL(user1Clicked()),
 	  win, SLOT(saveResults()));
 
+  connect( this, SIGNAL(closeClicked()), this, SLOT(finishAndClose()) );
+
   connect(win ,SIGNAL(resultSelected(bool)),
 	  this,SIGNAL(resultSelected(bool)));
 
@@ -100,9 +102,11 @@ KfindDlg::~KfindDlg()
    stopSearch();
 }
 
-void KfindDlg::closeEvent(QCloseEvent *)
+void KfindDlg::finishAndClose()
 {
-   slotButtonClicked(KDialog::Close);
+  //Stop the current search and closes the dialog
+  stopSearch();
+  close();
 }
 
 void KfindDlg::setProgressMsg(const QString &msg)
