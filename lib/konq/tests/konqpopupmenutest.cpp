@@ -27,7 +27,7 @@
 #include <knewmenu.h>
 #include <kdebug.h>
 #include <konq_popupmenu.h>
-#include <konq_fileitemcapabilities.h>
+#include <kfileitemlistproperties.h>
 
 QTEST_KDEMAIN(KonqPopupMenuTest, GUI)
 
@@ -190,7 +190,7 @@ void KonqPopupMenuTest::testFileInReadOnlyDirectory()
     KFileItemList itemList;
     itemList << item;
 
-    KonqFileItemCapabilities capabilities(itemList);
+    KFileItemListProperties capabilities(itemList);
     QVERIFY(!capabilities.supportsMoving());
 
     KUrl viewUrl("/etc");
