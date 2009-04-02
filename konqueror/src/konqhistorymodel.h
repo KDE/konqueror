@@ -22,7 +22,7 @@
 
 #include <QtCore/QAbstractItemModel>
 
-#include "konqhistoryentry.h"
+#include "konq_historyentry.h"
 
 class KonqHistoryManager;
 namespace KHM
