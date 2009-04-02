@@ -21,7 +21,7 @@
 #include "konq_historyentry.h"
 
 KonqHistoryEntry::KonqHistoryEntry()
-    : d(0)
+    : numberOfTimesVisited(1), d(0)
 {
 }
 
@@ -67,4 +67,15 @@ void KonqHistoryEntry::save(QDataStream& s, Flags flags) const
     s << numberOfTimesVisited;
     s << firstVisited;
     s << lastVisited;
+}
+
+KonqHistoryEntry::KonqHistoryEntry(const KonqHistoryEntry& e)
+{
+    url = e.url;
+    typedUrl = e.typedUrl;
+    title = e.title;
+    numberOfTimesVisited = e.numberOfTimesVisited;
+    firstVisited = e.firstVisited;
+    lastVisited = e.lastVisited;
+    d = 0;
 }
