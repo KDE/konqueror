@@ -5,23 +5,28 @@ add_subdirectory( tests )
 
 ########### libkonq ###############
 
-# Please use .cpp for new files
+# For crc32 in konq_historyloader.cpp
+include_directories( ${ZLIB_INCLUDE_DIR} )
+
 set(konq_LIB_SRCS
-   konq_popupmenu.cpp       # remains in libkonq, was needed by kicker applets like the trash applet
-   konq_popupmenuinformation.cpp # used by KonqPopupMenu, KonqMenuActions and KonqPopupMenuPlugin
+   konq_popupmenu.cpp       # used by konqueror, kfind, folderview, kickoff
    konq_popupmenuplugin.cpp # for KonqPopupMenu and its plugins
    knewmenu.cpp             # used by dolphin, KonqPopupMenu, and konqueror (File menu; to be moved to dolphinpart)
-   konq_menuactions.cpp     # used by dolphin, KonqPopupMenu. Move to kdelibs, for kickoff?
    konq_copytomenu.cpp      # used by dolphin, KonqPopupMenu
    konq_operations.cpp      # used by dolphin and konqueror
    konq_events.cpp
    konqmimedata.cpp         # used by dolphin, KonqOperations, some filemanagement konqueror modules.
-   konq_fileitemcapabilities.cpp # used in dolphin and dolphinpart already.
+   konq_historyentry.cpp
+   konq_historyloader.cpp
+   
+   konq_popupmenuinformation.cpp # deprecated (functionality has moved to kdelibs)
+   konq_menuactions.cpp     # deprecated (functionality has moved to kdelibs)
+   konq_fileitemcapabilities.cpp # deprecated (functionality has moved to kdelibs)
 )
 
 kde4_add_library(konq SHARED ${konq_LIB_SRCS})
 
-target_link_libraries(konq ${KDE4_KPARTS_LIBS})
+target_link_libraries(konq ${KDE4_KPARTS_LIBS} ${ZLIB_LIBRARY})
 target_link_libraries(konq LINK_INTERFACE_LIBRARIES ${KDE4_KPARTS_LIBS})
 
 set_target_properties(konq PROPERTIES

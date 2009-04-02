@@ -20,13 +20,12 @@ include_directories( ${ZLIB_INCLUDE_DIR} )
 set(konquerorprivate_SRCS
    konqpixmapprovider.cpp
    konqhistorymanager.cpp
-   konqhistoryentry.cpp
 )
 qt4_add_dbus_interface(konquerorprivate_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../../lib/konq/favicons/org.kde.FavIcon.xml favicon_interface)
 qt4_add_dbus_adaptor(konquerorprivate_SRCS org.kde.Konqueror.HistoryManager.xml konqhistorymanager.h KonqHistoryManager konqhistorymanageradaptor KonqHistoryManagerAdaptor)
 
 kde4_add_library(konquerorprivate SHARED ${konquerorprivate_SRCS})
-target_link_libraries(konquerorprivate ${KDE4_KPARTS_LIBS} ${ZLIB_LIBRARY})
+target_link_libraries(konquerorprivate konq ${KDE4_KPARTS_LIBS} ${ZLIB_LIBRARY})
 set_target_properties(konquerorprivate PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION} )
 install(TARGETS konquerorprivate ${INSTALL_TARGETS_DEFAULT_ARGS})
 

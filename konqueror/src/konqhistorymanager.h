@@ -28,30 +28,13 @@
 
 #include <kparts/historyprovider.h>
 
-#include "konqhistoryentry.h"
+#include <konqprivate_export.h>
+
+#include "konq_historyentry.h"
 
 class KBookmarkManager;
 class QDBusMessage;
 class KCompletion;
-
-class KONQUERORPRIVATE_EXPORT KonqHistoryList : public QList<KonqHistoryEntry>
-{
-public:
-    /**
-     * Finds an entry by URL and return an iterator to it.
-     * If no matching entry is found, end() is returned.
-     */
-    iterator findEntry( const KUrl& url );
-
-    /**
-     * Finds an entry by URL and removes it
-     */
-    void removeEntry( const KUrl& url );
-};
-
-
-///////////////////////////////////////////////////////////////////
-
 
 /**
  * This class maintains and manages a history of all URLs visited by one
@@ -182,29 +165,13 @@ public:
 
 public Q_SLOTS:
     /**
-     * Loads the history and fills the completion object.
-     */
-    bool loadHistory();
-
-    /**
-     * Saves the entire history.
-     */
-    bool saveHistory();
-
-    /**
      * Clears the history and tells all other Konqueror instances via DBUS
      * to do the same.
      * The history is saved afterwards, if necessary.
      */
     void emitClear();
 
-
 Q_SIGNALS:
-    /**
-     * Emitted after the entire history was loaded from disk.
-     */
-    void loadingFinished();
-
     /**
      * Emitted after a new entry was added
      */
@@ -286,6 +253,16 @@ private Q_SLOTS: // connected to DBUS signals
 
 private:
     /**
+     * Loads the history and fills the completion object.
+     */
+    bool loadHistory();
+
+    /**
+     * Saves the entire history.
+     */
+    bool saveHistory();
+
+    /**
      * Does the work for @ref addPending() and @ref confirmPending().
      *
      * Adds an entry to the history. If an entry with @p url already exists,
@@ -343,25 +320,9 @@ private:
      */
     KonqHistoryList::iterator findEntry( const KUrl& url );
 
-    /**
-     * Stuff to create a proper history out of KDE 2.0's konq_history for
-     * completion.
-     */
-    bool loadFallback();
-    KonqHistoryEntry createFallbackEntry( const QString& ) const;
-
     void addToCompletion( const QString& url, const QString& typedUrl, int numberOfTimesVisited = 1 );
     void removeFromCompletion( const QString& url, const QString& typedUrl );
 
-    /**
-     * Ensures that the items are sorted by the lastVisited date
-     * (oldest goes first)
-     */
-    static bool lastVisitedOrder( const KonqHistoryEntry& lhs, const KonqHistoryEntry& rhs ) {
-        return lhs.lastVisited < rhs.lastVisited;
-    }
-
-    QString m_filename;
     KonqHistoryList m_history;
 
     /**

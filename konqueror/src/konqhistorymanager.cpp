@@ -20,6 +20,7 @@
 
 #include "konqhistorymanager.h"
 #include "konqhistorymanageradaptor.h"
+#include <konq_historyloader.h>
 #include <kbookmarkmanager.h>
 
 #include <QtDBus/QtDBus>
@@ -33,9 +34,6 @@
 #include <zlib.h> // for crc32
 #include <kconfiggroup.h>
 
-
-const int KonqHistoryManager::s_historyVersion = 4;
-
 KonqHistoryManager::KonqHistoryManager( KBookmarkManager* bookmarkManager, QObject *parent )
     : KParts::HistoryProvider( parent ),
       m_bookmarkManager(bookmarkManager)
@@ -48,8 +46,6 @@ KonqHistoryManager::KonqHistoryManager( KBookmarkManager* bookmarkManager, QObje
     m_maxCount = cs.readEntry( "Maximum of History entries", 500 );
     m_maxCount = qMax( 1, m_maxCount );
     m_maxAgeDays = cs.readEntry( "Maximum age of History entries", 90);
-
-    m_filename = KStandardDirs::locateLocal( "data", QLatin1String("konqueror/konq_history"));
 
     // take care of the completion object
     m_pCompletion = new KCompletion;
@@ -93,149 +89,58 @@ bool KonqHistoryManager::isSenderOfSignal( const QDBusMessage& msg )
     return dbusService() == msg.service();
 }
 
-// loads the entire history
 bool KonqHistoryManager::loadHistory()
 {
     clearPending();
-    m_history.clear();
     m_pCompletion->clear();
 
-    QFile file( m_filename );
-    if ( !file.open( QIODevice::ReadOnly ) ) {
-	if ( file.exists() )
-	    kWarning() << "Can't open " << file.fileName() ;
-
-	// try to load the old completion history
-	bool ret = loadFallback();
-	emit loadingFinished();
-	return ret;
+    KonqHistoryLoader loader;
+    if (!loader.loadHistory()) {
+        return false;
     }
 
-    QDataStream fileStream( &file );
-    QByteArray data; // only used for version == 2
-    // we construct the stream object now but fill in the data later.
-    QDataStream crcStream( &data, QIODevice::ReadOnly );
+    m_history = loader.entries();
+    adjustSize();
 
-    if ( !fileStream.atEnd() ) {
-	quint32 version;
-        fileStream >> version;
+    QListIterator<KonqHistoryEntry> it(m_history);
+    while (it.hasNext()) {
+        const KonqHistoryEntry& entry = it.next();
+        const QString prettyUrlString = entry.url.prettyUrl();
+        addToCompletion(prettyUrlString, entry.typedUrl, entry.numberOfTimesVisited);
 
-        QDataStream *stream = &fileStream;
-
-        bool crcChecked = false;
-        bool crcOk = false;
-
-        if ( version >= 2 && version <= 4) {
-            quint32 crc;
-            crcChecked = true;
-            fileStream >> crc >> data;
-            crcOk = crc32( 0, reinterpret_cast<unsigned char *>( data.data() ), data.size() ) == crc;
-            stream = &crcStream; // pick up the right stream
-        }
-
-        // We can't read v3 history anymore, because operator<<(KURL) disappeared.
-        if ( version == 4)
-        {
-            // Use QUrl marshalling for V4 format.
-	    KonqHistoryEntry::marshalURLAsStrings = false;
-	}
-
-	if ( version != 0 && version < 3 ) //Versions 1,2 (but not 0) are also valid
-	{
-	    //Turn on backwards compatibility mode..
-	    KonqHistoryEntry::marshalURLAsStrings = true;
-	    // it doesn't make sense to save to save maxAge and maxCount  in the
-	    // binary file, this would make backups impossible (they would clear
-	    // themselves on startup, because all entries expire).
-	    // [But V1 and V2 formats did it, so we do a dummy read]
-	    quint32 dummy;
-	    *stream >> dummy;
-	    *stream >> dummy;
-
-	    //OK.
-	    version = 3;
-	}
-
-        if ( s_historyVersion != (int)version || ( crcChecked && !crcOk ) ) {
-	    kWarning() << "The history version doesn't match, aborting loading" ;
-	    file.close();
-	    emit loadingFinished();
-	    return false;
-	}
-
-
-        while ( !stream->atEnd() ) {
-	    KonqHistoryEntry entry;
-            *stream >> entry;
-	    // kDebug(1202) << "loaded entry:" << entry.url << ", Title:" << entry.title;
-	    m_history.append( entry );
-	    QString urlString2 = entry.url.prettyUrl();
-
-	    addToCompletion( urlString2, entry.typedUrl, entry.numberOfTimesVisited );
-
-	    // and fill our baseclass.
-            QString urlString = entry.url.url();
-	    KParts::HistoryProvider::insert( urlString );
-            // DF: also insert the "pretty" version if different
-            // This helps getting 'visited' links on websites which don't use fully-escaped urls.
-
-            if ( urlString != urlString2 )
-                KParts::HistoryProvider::insert( urlString2 );
-	}
-
-	//kDebug(1202) << "loaded:" << m_history.count() << "entries.";
-
-	qSort( m_history.begin(), m_history.end(), lastVisitedOrder );
-	adjustSize();
+        // and fill our baseclass.
+        const QString urlString = entry.url.url();
+        KParts::HistoryProvider::insert(urlString);
+        // DF: also insert the "pretty" version if different
+        // This helps getting 'visited' links on websites which don't use fully-escaped urls.
+        if (urlString != prettyUrlString)
+            KParts::HistoryProvider::insert(prettyUrlString);
     }
-
-
-    //This is important - we need to switch to a consistent marshalling format for
-    //communicating between different konqueror instances. Since during an upgrade
-    //some "old" copies may still running, we use the old format for the DBUS transfers.
-    //This doesn't make that much difference performance-wise for single entries anyway.
-    KonqHistoryEntry::marshalURLAsStrings = true;
-
-
-    // Theoretically, we should emit update() here, but as we only ever
-    // load items on startup up to now, this doesn't make much sense. Same
-    // thing for the above loadFallback().
-    // emit KParts::HistoryProvider::update( some list );
-
-
-
-    file.close();
-    emit loadingFinished();
 
     return true;
 }
 
-
-// saves the entire history
 bool KonqHistoryManager::saveHistory()
 {
-    KSaveFile file( m_filename );
+    const QString filename = KStandardDirs::locateLocal("data", QLatin1String("konqueror/konq_history"));
+    KSaveFile file(filename);
     if ( !file.open() ) {
         kWarning() << "Can't open " << file.fileName() ;
         return false;
     }
 
     QDataStream fileStream ( &file );
-    fileStream << s_historyVersion;
+    fileStream << KonqHistoryLoader::historyVersion();
 
     QByteArray data;
     QDataStream stream( &data, QIODevice::WriteOnly );
 
-    //We use QUrl for marshalling URLs in entries in the V4
-    //file format
-    KonqHistoryEntry::marshalURLAsStrings = false;
     QListIterator<KonqHistoryEntry> it( m_history );
     while ( it.hasNext() ) {
-        stream << it.next();
+        //We use QUrl for marshalling URLs in entries in the V4
+        //file format
+        it.next().save(stream, KonqHistoryEntry::NoFlags);
     }
-
-    //For DBUS, transfer strings instead - wire compat.
-    KonqHistoryEntry::marshalURLAsStrings = true;
 
     quint32 crc = crc32( 0, reinterpret_cast<unsigned char *>( data.data() ), data.size() );
     fileStream << crc << data;
@@ -372,7 +277,8 @@ void KonqHistoryManager::emitAddToHistory( const KonqHistoryEntry& entry )
 {
     QByteArray data;
     QDataStream stream( &data, QIODevice::WriteOnly );
-    stream << entry << dbusService();
+    entry.save(stream, KonqHistoryEntry::MarshalUrlAsStrings);
+    stream << dbusService();
     // Protection against very long urls (like data:)
     if ( data.size() > 4096 )
         return;
@@ -444,7 +350,12 @@ void KonqHistoryManager::slotNotifyHistoryEntry( const QByteArray & data,
 {
     KonqHistoryEntry e;
     QDataStream stream( const_cast<QByteArray *>( &data ), QIODevice::ReadOnly );
-    stream >> e;
+
+    //This is important - we need to switch to a consistent marshalling format for
+    //communicating between different konqueror instances. Since during an upgrade
+    //some "old" copies may still running, we use the old format for the DBUS transfers.
+    //This doesn't make that much difference performance-wise for single entries anyway.
+    e.load(stream, KonqHistoryEntry::MarshalUrlAsStrings);
     //kDebug(1202) << "Got new entry from Broadcast:" << e.url;
 
     KonqHistoryList::iterator existingEntry = findEntry( e.url );
@@ -593,68 +504,6 @@ void KonqHistoryManager::slotNotifyRemoveList( const QStringList& urls, const QD
 
     if ( doSave && isSenderOfSignal( msg ) )
         saveHistory();
-}
-
-// compatibility fallback, try to load the old completion history
-bool KonqHistoryManager::loadFallback()
-{
-    QString file = KStandardDirs::locateLocal( "config", QLatin1String("konq_history"));
-    if ( file.isEmpty() )
-	return false;
-
-    KConfig config(  file, KConfig::SimpleConfig);
-    const KConfigGroup group = config.group("History");
-    const QStringList items = group.readEntry( "CompletionItems", QStringList() );
-    QStringList::const_iterator it = items.begin();
-
-    while ( it != items.end() ) {
-	KonqHistoryEntry entry = createFallbackEntry( *it );
-	if ( entry.url.isValid() ) {
-	    m_history.append( entry );
-	    addToCompletion( entry.url.prettyUrl(), QString(), entry.numberOfTimesVisited );
-
-	    KParts::HistoryProvider::insert( entry.url.url() );
-   	}
-	++it;
-    }
-
-    qSort( m_history.begin(), m_history.end(), lastVisitedOrder );
-    adjustSize();
-    saveHistory();
-
-    return true;
-}
-
-// tries to create a small KonqHistoryEntry out of a string, where the string
-// looks like "http://www.bla.com/bla.html:23"
-// the attached :23 is the weighting from KCompletion
-KonqHistoryEntry KonqHistoryManager::createFallbackEntry(const QString& item) const
-{
-    // code taken from KCompletion::addItem(), adjusted to use weight = 1
-    uint len = item.length();
-    uint weight = 1;
-
-    // find out the weighting of this item (appended to the string as ":num")
-    int index = item.lastIndexOf(':');
-    if ( index > 0 ) {
-	bool ok;
-	weight = item.mid( index + 1 ).toUInt( &ok );
-	if ( !ok )
-	    weight = 1;
-
-	len = index; // only insert until the ':'
-    }
-
-
-    KonqHistoryEntry entry;
-    KUrl u( item.left( len ));
-    // that's the only entries we know about...
-    entry.url = u;
-    entry.numberOfTimesVisited = weight;
-    // to make it not expire immediately...
-    entry.lastVisited = QDateTime::currentDateTime();
-
-    return entry;
 }
 
 KonqHistoryList::iterator KonqHistoryManager::findEntry( const KUrl& url )
