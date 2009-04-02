@@ -2156,12 +2156,15 @@ KonqView * KonqMainWindow::childView( KParts::ReadOnlyPart *view )
 KonqView * KonqMainWindow::childView( KParts::ReadOnlyPart *callingPart, const QString &name, KParts::BrowserHostExtension *&hostExtension, KParts::ReadOnlyPart **part )
 {
     //kDebug() << "this=" << this << "looking for" << name;
+    QList<KonqView *> views = m_mapViews.values();
+    KonqView* callingView = m_mapViews.value(callingPart);
+    if (callingView) {
+        // Move the callingView in front of the list, in case of duplicate frame names (#133967)
+        if (views.removeAll(callingView))
+            views.prepend(callingView);
+    }
 
-  MapViews::ConstIterator it = m_mapViews.constBegin();
-  MapViews::ConstIterator end = m_mapViews.constEnd();
-  for (; it != end; ++it )
-  {
-    KonqView* view = it.value();
+  Q_FOREACH(KonqView* view, views) {
     QString viewName = view->viewName();
     //kDebug() << "       - viewName=" << viewName
     //          << "frame names:" << view->frameNames();
