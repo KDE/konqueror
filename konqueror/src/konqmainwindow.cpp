@@ -1174,10 +1174,12 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
         if ( windowArgs.lowerWindow() || (QApplication::keyboardModifiers() & Qt::ShiftModifier))
            newtabsinfront = !newtabsinfront;
         const bool aftercurrentpage = KonqSettings::openAfterCurrentPage();
+        KonqOpenURLRequest req;
+        req.args = args;
+        req.browserArgs = browserArgs;
 
         // Can we use the standard way (openUrl), or do we need the part pointer immediately?
         if (!part) {
-            KonqOpenURLRequest req;
             req.newTab = true;
             req.newTabInFront = newtabsinfront;
             req.openAfterCurrentPage = aftercurrentpage;
@@ -1189,7 +1191,7 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
             if (newtabsinfront)
                 m_pViewManager->showTab( newView );
 
-            openUrl( newView, url.isEmpty() ? KUrl("about:blank") : url, QString() );
+            openUrl( newView, url.isEmpty() ? KUrl("about:blank") : url, QString(), req );
             newView->setViewName( browserArgs.frameName );
 
             *part = newView->part();
