@@ -18,7 +18,7 @@ target_link_libraries(konqviewmgrtest kdeinit_konqueror ${QT_QTCORE_LIBRARY} ${Q
 ########### historymanagertest ###############
 
 kde4_add_unit_test(historymanagertest historymanagertest.cpp)
-target_link_libraries(historymanagertest konquerorprivate ${KDE4_KDEUI_LIBS} ${QT_QTCORE_LIBRARY} ${QT_QTTEST_LIBRARY})
+target_link_libraries(historymanagertest konq konquerorprivate ${KDE4_KDEUI_LIBS} ${QT_QTCORE_LIBRARY} ${QT_QTTEST_LIBRARY})
 
 ########### undomanagertest ###############
 
