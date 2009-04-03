@@ -19,6 +19,7 @@
 */
 
 #include "konq_historyentry.h"
+#include <kdebug.h>
 
 KonqHistoryEntry::KonqHistoryEntry()
     : numberOfTimesVisited(1), d(0)
@@ -79,3 +80,25 @@ KonqHistoryEntry::KonqHistoryEntry(const KonqHistoryEntry& e)
     lastVisited = e.lastVisited;
     d = 0;
 }
+
+////
+
+KonqHistoryList::iterator KonqHistoryList::findEntry( const KUrl& url )
+{
+    // we search backwards, probably faster to find an entry
+    KonqHistoryList::iterator it = end();
+    while ( it != begin() ) {
+        --it;
+	if ( (*it).url == url )
+	    return it;
+    }
+    return end();
+}
+
+void KonqHistoryList::removeEntry( const KUrl& url )
+{
+    iterator it = findEntry( url );
+    if ( it != end() )
+        erase( it );
+}
+
