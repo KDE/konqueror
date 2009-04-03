@@ -23,17 +23,15 @@
 
 #include <QtCore/QObject>
 #include <QtCore/QMap>
-#include <QtCore/QTimer>
 #include <QtCore/QStringList>
-
-#include <kparts/historyprovider.h>
 
 #include <konqprivate_export.h>
 
 #include "konq_historyentry.h"
+#include "konq_historyprovider.h"
 
+class QTimer;
 class KBookmarkManager;
-class QDBusMessage;
 class KCompletion;
 
 /**
@@ -43,7 +41,7 @@ class KCompletion;
  *
  * It keeps the history in sync with one KCompletion object
  */
-class KONQUERORPRIVATE_EXPORT KonqHistoryManager : public KParts::HistoryProvider
+class KONQUERORPRIVATE_EXPORT KonqHistoryManager : public KonqHistoryProvider
 {
     Q_OBJECT
 
@@ -60,52 +58,6 @@ public:
 
     explicit KonqHistoryManager( KBookmarkManager* bookmarkManager, QObject *parent = 0 );
     ~KonqHistoryManager();
-
-    /**
-     * Sets a new maximum size of history and truncates the current history
-     * if necessary. Notifies all other Konqueror instances via DBUS
-     * to do the same.
-     *
-     * The history is saved after receiving the DBUS call.
-     */
-    void emitSetMaxCount( int count );
-
-    /**
-     * Sets a new maximum age of history entries and removes all entries that
-     * are older than @p days. Notifies all other Konqueror instances via DBUS
-     * to do the same.
-     *
-     * An age of 0 means no expiry based on the age.
-     *
-     * The history is saved after receiving the DBUS call.
-     */
-    void emitSetMaxAge( int days );
-
-    /**
-     * Removes the history entry for @p url, if existent. Tells all other
-     * Konqueror instances via DBUS to do the same.
-     *
-     * The history is saved after receiving the DBUS call.
-     */
-    void emitRemoveFromHistory( const KUrl& url );
-
-    /**
-     * Removes the history entries for the given list of @p urls. Tells all
-     * other Konqueror instances via DBUS to do the same.
-     *
-     * The history is saved after receiving the DBUS call.
-     */
-    void emitRemoveListFromHistory( const KUrl::List& urls );
-
-    /**
-     * @returns the current maximum number of history entries.
-     */
-    int maxCount() const { return m_maxCount; }
-
-    /**
-     * @returns the current maximum age (in days) of history entries.
-     */
-    int maxAge() const { return m_maxAgeDays; }
 
     /**
      * Adds a pending entry to the history. Pending means, that the entry is
@@ -145,12 +97,6 @@ public:
      */
     KCompletion * completionObject() const { return m_pCompletion; }
 
-    /**
-     * @returns the list of all history entries, sorted by date
-     * (oldest entries first)
-     */
-    const KonqHistoryList& entries() const { return m_history; }
-
     // HistoryProvider interface, let konq handle this
     /**
      * Reimplemented in such a way that all URLs that would be filtered
@@ -162,105 +108,11 @@ public:
     virtual void remove( const QString& ) {}
     virtual void clear() {}
 
-
-public Q_SLOTS:
-    /**
-     * Clears the history and tells all other Konqueror instances via DBUS
-     * to do the same.
-     * The history is saved afterwards, if necessary.
-     */
-    void emitClear();
-
-Q_SIGNALS:
-    /**
-     * Emitted after a new entry was added
-     */
-    void entryAdded( const KonqHistoryEntry& entry );
-
-    /**
-     * Emitted after an entry was removed from the history
-     * Note, that this entry will be deleted immediately after you got
-     * that signal.
-     */
-    void entryRemoved( const KonqHistoryEntry& entry );
-
-protected:
-    /**
-     * Resizes the history list to contain less or equal than m_maxCount
-     * entries. The first (oldest) entries are removed.
-     */
-    void adjustSize();
-
-    /**
-     * Notifes all running instances about a new HistoryEntry via DBUS
-     */
-    void emitAddToHistory( const KonqHistoryEntry& entry );
-
-Q_SIGNALS: // DBUS methods/signals
-
-    /**
-     * Every konqueror instance broadcasts new history entries to the other
-     * konqueror instances. Those add the entry to their list, but don't
-     * save the list, because the sender saves the list.
-     *
-     * @param e the new history entry
-     * @param saveId is the dbus service of the sender so that
-     * only the sender saves the new history.
-     */
-    void notifyHistoryEntry( const QByteArray & historyEntry );
-
-    /**
-     * Called when the configuration of the maximum count changed.
-     * Called via DBUS by some config-module
-     */
-    void notifyMaxCount( int count );
-
-    /**
-     * Called when the configuration of the maximum age of history-entries
-     * changed. Called via DBUS by some config-module
-     */
-    void notifyMaxAge( int days );
-
-    /**
-     * Clears the history completely. Called via DBUS by some config-module
-     */
-    void notifyClear();
-
-    /**
-     * Notifes about a url that has to be removed from the history.
-     * The sender instance has to save the history.
-     */
-    void notifyRemove( const QString& url );
-
-    /**
-     * Notifes about a list of urls that has to be removed from the history.
-     * The sender instance has to save the history.
-     */
-    void notifyRemoveList( const QStringList& urls );
-
-private Q_SLOTS: // connected to DBUS signals
-    /**
-     * @returns a list of all urls in the history.
-     */
-    //QStringList allURLs() const;
-
-    void slotNotifyHistoryEntry( const QByteArray & historyEntry, const QDBusMessage& msg );
-    void slotNotifyMaxCount( int count, const QDBusMessage& msg );
-    void slotNotifyMaxAge( int days, const QDBusMessage& msg );
-    void slotNotifyClear( const QDBusMessage& msg );
-    void slotNotifyRemove( const QString& url, const QDBusMessage& msg );
-    void slotNotifyRemoveList( const QStringList& urls, const QDBusMessage& msg );
-
 private:
     /**
      * Loads the history and fills the completion object.
      */
     bool loadHistory();
-
-    /**
-     * Saves the entire history.
-     */
-    bool saveHistory();
 
     /**
      * Does the work for @ref addPending() and @ref confirmPending().
@@ -285,11 +137,7 @@ private:
      */
     virtual bool filterOut( const KUrl& url );
 
-    void addToUpdateList( const QString& url ) {
-        m_updateURLs.append( url );
-        m_updateTimer->setSingleShot( true );
-        m_updateTimer->start( 500 );
-    }
+    void addToUpdateList( const QString& url );
 
     /**
      * The list of urls that is going to be emitted in slotEmitUpdated. Add
@@ -305,25 +153,15 @@ private Q_SLOTS:
      */
     void slotEmitUpdated();
 
-private:
-    /**
-     * Returns whether the DBUS call we are handling was a call from us self
-     */
-    bool isSenderOfSignal( const QDBusMessage& msg );
+    void slotCleared();
+    void slotEntryRemoved(const KonqHistoryEntry& entry);
 
+private:
+    virtual void finishAddingEntry(const KonqHistoryEntry& entry, bool isSender);
     void clearPending();
-    /**
-     * a little optimization for KonqHistoryList::findEntry(),
-     * checking the dict of KParts::HistoryProvider before traversing the list.
-     * Can't be used everywhere, because it always returns end() for "pending"
-     * entries, as those are not added to the dict, currently.
-     */
-    KonqHistoryList::iterator findEntry( const KUrl& url );
 
     void addToCompletion( const QString& url, const QString& typedUrl, int numberOfTimesVisited = 1 );
     void removeFromCompletion( const QString& url, const QString& typedUrl );
-
-    KonqHistoryList m_history;
 
     /**
      * List of pending entries, which were added to the history, but not yet
@@ -332,9 +170,6 @@ private:
      * of the item you remove.
      */
     QMap<QString,KonqHistoryEntry*> m_pending;
-
-    int m_maxCount;   // maximum of history entries
-    int m_maxAgeDays; // maximum age of a history entry
 
     KCompletion *m_pCompletion; // the completion object we sync with
 

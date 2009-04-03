@@ -18,6 +18,7 @@ set(konq_LIB_SRCS
    konqmimedata.cpp         # used by dolphin, KonqOperations, some filemanagement konqueror modules.
    konq_historyentry.cpp
    konq_historyloader.cpp
+   konq_historyprovider.cpp
    
    konq_popupmenuinformation.cpp # deprecated (functionality has moved to kdelibs)
    konq_menuactions.cpp     # deprecated (functionality has moved to kdelibs)

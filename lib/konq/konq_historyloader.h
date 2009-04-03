@@ -28,10 +28,10 @@ class KonqHistoryList;
 class KonqHistoryLoaderPrivate;
 
 /**
- * This class loads the Konqueror history file, and can optionally
- * be set up to receive updates via DBUS as well.
- *
+ * This class loads the Konqueror history file.
  * @since 4.3
+ *
+ * NOTE: might not be exported much longer
  */
 class LIBKONQ_EXPORT KonqHistoryLoader : public QObject
 {
