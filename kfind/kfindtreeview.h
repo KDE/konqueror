@@ -130,6 +130,8 @@ class KFindTreeView: public QTreeView
         
         void openContainingFolder();
         void saveResults();
+        
+        void reconfigureMouseSettings();
    
     protected:
         void dragMoveEvent( QDragMoveEvent *e ) { e->accept(); }

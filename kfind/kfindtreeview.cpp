@@ -35,6 +35,7 @@
 #include <kglobal.h>
 #include <kdebug.h>
 #include <kiconloader.h>
+#include <kglobalsettings.h>
 
 #include <kio/netaccess.h>
 #include <kio/copyjob.h>
@@ -326,7 +327,10 @@ KFindTreeView::KFindTreeView( QWidget *parent )
 
     connect( this, SIGNAL( customContextMenuRequested( const QPoint &) ),
                  this, SLOT( contextMenuRequested( const QPoint & )));
-    connect( this, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(slotExecute(QModelIndex)) );
+           
+    //Mouse single/double click settings
+    connect( KGlobalSettings::self(), SIGNAL(settingsChanged(int)), this, SLOT(reconfigureMouseSettings()) );
+    reconfigureMouseSettings();
     
     //Generate popup menu actions
     m_actionCollection = new KActionCollection( this );
@@ -629,6 +633,19 @@ void KFindTreeView::moveToTrashSelectedFiles()
         //This should be done by KDirWatch integration in the main dialog, but it could fail?
         Q_FOREACH( const KUrl & url, uris )
             m_model->removeItem( url );
+    }
+}
+
+void KFindTreeView::reconfigureMouseSettings()
+{
+    disconnect( SIGNAL(clicked(QModelIndex)) );
+    disconnect( SIGNAL(doubleClicked(QModelIndex)) );
+    
+    if ( KGlobalSettings::singleClick() ) 
+    {
+        connect( this, SIGNAL(clicked(QModelIndex)), this, SLOT(slotExecute(QModelIndex)) );
+    } else {
+        connect( this, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(slotExecute(QModelIndex)) );
     }
 }
 
