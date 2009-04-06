@@ -24,7 +24,7 @@
 #include <QtCore/QFileInfo>
 #include <QtGui/QClipboard>
 #include <QtGui/QHeaderView>
-
+#include <QtGui/QApplication>
 #include <QtCore/QDate>
 
 #include <kfiledialog.h>
@@ -332,6 +332,9 @@ KFindTreeView::KFindTreeView( QWidget *parent )
     connect( KGlobalSettings::self(), SIGNAL(settingsChanged(int)), this, SLOT(reconfigureMouseSettings()) );
     reconfigureMouseSettings();
     
+    // TODO: this is a workaround until  Qt-issue 176832 has been fixed (from Dolphin)
+    connect(this, SIGNAL(pressed(const QModelIndex&)), this, SLOT(updateMouseButtons()));
+                
     //Generate popup menu actions
     m_actionCollection = new KActionCollection( this );
 
@@ -509,6 +512,7 @@ void KFindTreeView::openContainingFolder()
         folderMaps.insert( dir, 0 );
     }
 
+    //TODO if >1 add a warn ?
     Q_FOREACH( const KUrl & url, folderMaps.keys() )
     {
         (void) new KRun(url, this);
@@ -520,7 +524,8 @@ void KFindTreeView::slotExecuteSelected()
     QModelIndexList selected = m_proxyModel->mapSelectionToSource( selectionModel()->selection() ).indexes();
     if ( selected.size() == 0 )
         return;
-        
+    
+    //TODO if >X add a warn ?
     Q_FOREACH( const QModelIndex & index, selected )
     {
         if( index.column() == 0 )
@@ -534,16 +539,19 @@ void KFindTreeView::slotExecuteSelected()
 
 void KFindTreeView::slotExecute( const QModelIndex & index )
 {
-    if ( !index.isValid() )
-        return;
-        
-    QModelIndex realIndex = m_proxyModel->mapToSource( index );
-    if ( !realIndex.isValid() )
-        return;
-      
-    KFindItem item = m_model->itemAtIndex( realIndex );
-    if ( item.isValid() )
-        item.getFileItem().run();
+    if( (m_mouseButtons & Qt::LeftButton) && QApplication::keyboardModifiers() == Qt::NoModifier )
+    {
+        if ( !index.isValid() )
+            return;
+            
+        QModelIndex realIndex = m_proxyModel->mapToSource( index );
+        if ( !realIndex.isValid() )
+            return;
+            
+        KFindItem item = m_model->itemAtIndex( realIndex );
+        if ( item.isValid() )
+            item.getFileItem().run();
+    }        
 }
 
 void KFindTreeView::contextMenuRequested( const QPoint & p)
@@ -647,6 +655,11 @@ void KFindTreeView::reconfigureMouseSettings()
     } else {
         connect( this, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(slotExecute(QModelIndex)) );
     }
+}
+
+void KFindTreeView::updateMouseButtons()
+{
+    m_mouseButtons = QApplication::mouseButtons();
 }
 
 //END KFindTreeView

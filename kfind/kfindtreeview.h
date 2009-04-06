@@ -132,6 +132,7 @@ class KFindTreeView: public QTreeView
         void saveResults();
         
         void reconfigureMouseSettings();
+        void updateMouseButtons();
    
     protected:
         void dragMoveEvent( QDragMoveEvent *e ) { e->accept(); }
@@ -148,6 +149,8 @@ class KFindTreeView: public QTreeView
         KFindSortFilterProxyModel * m_proxyModel;
         KActionCollection *         m_actionCollection;
         KonqPopupMenu *             m_contextMenu;
+        
+        Qt::MouseButtons            m_mouseButtons;
 };
 
 #endif
