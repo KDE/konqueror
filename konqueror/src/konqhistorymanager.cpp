@@ -139,9 +139,8 @@ void KonqHistoryManager::addToHistory( bool pending, const KUrl& _url,
 	// We add a copy of the current history entry of the url to the
 	// pending list, so that we can restore it if the user canceled.
 	// If there is no entry for the url yet, we just store the url.
-        KonqHistoryList::const_iterator oldEntry = (KonqHistoryList::const_iterator)findEntry( url );
-        KonqHistoryList::const_iterator endEntry = entries().constEnd();
-	m_pending.insert( u, (oldEntry != endEntry) ?
+        KonqHistoryList::iterator oldEntry = findEntry( url );
+	m_pending.insert( u, (oldEntry != entries().end()) ?
                           new KonqHistoryEntry( *oldEntry ) : 0 );
     }
 
