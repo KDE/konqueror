@@ -167,7 +167,6 @@ bool KonqRun::tryOpenView(const QString& mimeType, bool associatedAppIsKonqueror
 
 void KonqRun::handleError(KJob *job)
 {
-    kDebug(1202) << "KonqRun::handleError error:" << job->errorString();
     if (!m_mailto.isEmpty()) {
         setJob(0);
         setFinished(true);
