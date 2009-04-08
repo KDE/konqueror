@@ -144,6 +144,7 @@ protected: // only to be used by konqueror's KonqHistoryManager
      * entries, as those are not added to the dict, currently.
      */
     KonqHistoryList::iterator findEntry(const KUrl& url);
+    KonqHistoryList::const_iterator constFindEntry(const KUrl& url) const;
 
     /**
      * Notifies all running instances about a new HistoryEntry via D-Bus.

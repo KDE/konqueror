@@ -69,6 +69,12 @@ public:
     iterator findEntry( const KUrl& url );
 
     /**
+     * Finds an entry by URL and return an iterator to it.
+     * If no matching entry is found, end() is returned.
+     */
+    const_iterator constFindEntry( const KUrl& url ) const;
+
+    /**
      * Finds an entry by URL and removes it
      */
     void removeEntry( const KUrl& url );

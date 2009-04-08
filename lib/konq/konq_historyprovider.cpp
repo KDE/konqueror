@@ -423,6 +423,14 @@ KonqHistoryList::iterator KonqHistoryProvider::findEntry(const KUrl& url)
     return d->m_history.findEntry(url);
 }
 
+KonqHistoryList::const_iterator KonqHistoryProvider::constFindEntry(const KUrl& url) const
+{
+    // small optimization (dict lookup) for items _not_ in our history
+    if (!KParts::HistoryProvider::contains(url.url()))
+        return d->m_history.constEnd();
+    return d->m_history.constFindEntry(url);
+}
+
 void KonqHistoryProvider::finishAddingEntry(const KonqHistoryEntry& entry, bool isSender)
 {
     Q_UNUSED(entry); // this arg is used by konq's reimplementation
