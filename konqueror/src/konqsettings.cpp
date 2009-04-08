@@ -120,10 +120,10 @@ bool KonqFMSettings::shouldEmbed(const QString & _mimeType) const
     }
 
     // 3 - if no config found, use default.
-    // Note: if you change those defaults, also change settings/filetypes/mimetypedata.cpp !
+    // Note: if you change those defaults, also change keditfiletype/mimetypedata.cpp !
     // Embedding is false by default except for image/* and for zip, tar etc.
     const bool hasLocalProtocolRedirect = !KProtocolManager::protocolForArchiveMimetype(mimeType).isEmpty();
-    if ( mimeTypeGroup == "image" || hasLocalProtocolRedirect )
+    if (mimeTypeGroup == "image" || mimeTypeGroup == "multipart" || hasLocalProtocolRedirect)
         return true;
     return false;
 }
