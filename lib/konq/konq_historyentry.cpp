@@ -95,6 +95,18 @@ KonqHistoryList::iterator KonqHistoryList::findEntry( const KUrl& url )
     return end();
 }
 
+KonqHistoryList::const_iterator KonqHistoryList::constFindEntry( const KUrl& url ) const
+{
+    // we search backwards, probably faster to find an entry
+    KonqHistoryList::const_iterator it = constEnd();
+    while ( it != constBegin() ) {
+        --it;
+	if ( (*it).url == url )
+	    return it;
+    }
+    return constEnd();
+}
+
 void KonqHistoryList::removeEntry( const KUrl& url )
 {
     iterator it = findEntry( url );
