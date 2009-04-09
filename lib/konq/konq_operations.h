@@ -85,6 +85,34 @@ public:
     static void doDrop( const KFileItem & destItem, const KUrl & destUrl, QDropEvent * ev, QWidget * parent );
 
     /**
+     * Drop
+     * @param destItem destination KFileItem for the drop (background or item)
+     * @param destUrl destination URL for the drop.
+     * @param ev the drop event
+     * @param parent parent widget (for error dialog box if any)
+     * @param userActions additional actions to include in the drop menu
+     *
+     * This is an overloaded member function that lets you add your own actions
+     * to the drop menu shown by KonqOperations.
+     *
+     * The drop menu will be shown when the application re-enters the event loop.
+     *
+     * If destItem is 0L, doDrop will stat the URL to determine it.
+     *
+     * Note that the returned KonqOperations object will be deleted automatically
+     * when the drop is completed.
+     *
+     * It is still valid when a slot connected to a triggered() signal in one
+     * of the user actions is invoked, but should not be assumed to be valid
+     * after the slot returns.
+     *
+     * @return The KonqOperations object
+     * @since 4.3
+     */
+    static KonqOperations *doDrop( const KFileItem & destItem, const KUrl & destUrl, QDropEvent * ev, QWidget * parent,
+                                   const QList<QAction*> &userActions );
+
+    /**
      * Paste the clipboard contents
      */
     static void doPaste( QWidget * parent, const KUrl & destUrl, const QPoint &pos = QPoint() );
@@ -158,6 +186,22 @@ public:
      */
     static bool askDeleteConfirmation( const KUrl::List & selectedUrls, int method, ConfirmationType confirmation, QWidget* widget );
 
+    /**
+     * Returns the list of dropped URL's.
+     *
+     * You can call this method on the object returned by KonqOperations::doDrop(),
+     * to obtain the list of URL's this object handles.
+     *
+     * @since 4.3
+     */
+    KUrl::List droppedUrls() const;
+
+    /**
+     * Returns the position where the drop occurred.
+     * @since 4.3
+     */
+    QPoint dropPosition() const;
+
 Q_SIGNALS:
     void statFinished( const KFileItem & item );
     void aboutToCreate(const QPoint &pos, const QList<KIO::CopyInfo> &files);
@@ -174,14 +218,15 @@ private:
     struct DropInfo
     {
         DropInfo( Qt::KeyboardModifiers k, const KUrl::List & u, const QMap<QString,QString> &m,
-                  const QPoint& pos, Qt::DropAction a ) :
-            keyboardModifiers(k), urls(u), metaData(m), mousePos(pos), action(a)
+                  const QPoint& pos, Qt::DropAction a, const QList<QAction *> &actions) :
+            keyboardModifiers(k), urls(u), metaData(m), mousePos(pos), action(a), userActions(actions)
         {}
         Qt::KeyboardModifiers keyboardModifiers;
         KUrl::List urls;
         QMap<QString,QString> metaData;
         QPoint mousePos;
         Qt::DropAction action;
+        QList<QAction*> userActions;
     };
     // internal, for doDrop
     void setDropInfo( DropInfo * info ) { m_info = info; }

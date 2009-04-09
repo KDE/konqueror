@@ -243,6 +243,12 @@ bool KonqOperations::askDeleteConfirmation( const KUrl::List & selectedUrls, int
 
 void KonqOperations::doDrop( const KFileItem & destItem, const KUrl & dest, QDropEvent * ev, QWidget * parent )
 {
+    (void) KonqOperations::doDrop( destItem, dest, ev, parent, QList<QAction*>() );
+}
+
+KonqOperations *KonqOperations::doDrop( const KFileItem & destItem, const KUrl & dest, QDropEvent * ev, QWidget * parent,
+                                        const QList<QAction*> & userActions  )
+{
     kDebug(1203) << "doDrop: dest:" << dest;
     QMap<QString, QString> metaData;
     const KUrl::List lst = KUrl::List::fromMimeData(ev->mimeData(), &metaData);
@@ -263,7 +269,7 @@ void KonqOperations::doDrop( const KFileItem & destItem, const KUrl & dest, QDro
                     KMessageBox::sorry( parent, i18n("You cannot drop a folder on to itself") );
                 kDebug(1203) << "Dropped on itself";
                 ev->setAccepted( false );
-                return; // do nothing instead of displaying kfm's annoying error box
+                return 0; // do nothing instead of displaying kfm's annoying error box
             }
         }
 
@@ -280,7 +286,7 @@ void KonqOperations::doDrop( const KFileItem & destItem, const KUrl & dest, QDro
         }
 
         KonqOperations * op = new KonqOperations(parent);
-        op->setDropInfo( new DropInfo( modifiers, lst, metaData, QCursor::pos(), action ) );
+        op->setDropInfo( new DropInfo( modifiers, lst, metaData, QCursor::pos(), action, userActions ) );
 
         // Ok, now we need destItem.
         if ( !destItem.isNull() )
@@ -288,7 +294,7 @@ void KonqOperations::doDrop( const KFileItem & destItem, const KUrl & dest, QDro
             // We have it already, we could just call asyncDrop.
             // But popping up a menu in the middle of a DND operation confuses and crashes Qt (#157630)
             // So let's delay it.
-            QMetaObject::invokeMethod(op, "asyncDrop", Q_ARG(KFileItem, destItem));
+            QMetaObject::invokeMethod(op, "asyncDrop", Qt::QueuedConnection, Q_ARG(KFileItem, destItem));
         }
         else
         {
@@ -298,6 +304,7 @@ void KonqOperations::doDrop( const KFileItem & destItem, const KUrl & dest, QDro
         // In both cases asyncDrop will delete op when done
 
         ev->acceptProposedAction();
+        return op;
     }
     else
     {
@@ -312,6 +319,7 @@ void KonqOperations::doDrop( const KFileItem & destItem, const KUrl & dest, QDro
             KIO::FileUndoManager::self()->recordJob( KIO::FileUndoManager::Copy, KUrl::List(), dest, job );
         }
         ev->acceptProposedAction();
+        return op;
     }
 }
 
@@ -396,6 +404,16 @@ void KonqOperations::asyncDrop( const KFileItem & destItem )
         KProcess::startDetached( m_destUrl.path(), args );
     }
     deleteLater();
+}
+
+KUrl::List KonqOperations::droppedUrls() const
+{
+    return m_info->urls;
+}
+
+QPoint KonqOperations::dropPosition() const
+{
+   return m_info->mousePos;
 }
 
 void KonqOperations::doDropFileCopy()
@@ -541,7 +559,11 @@ void KonqOperations::doDropFileCopy()
         if (bSetWallpaper)
             popup.addAction(popupWallAction);
 #endif
-
+        if (!m_info->userActions.isEmpty()) {
+            popup.addSeparator();
+            popup.addActions(m_info->userActions);
+        }
+ 
         popup.addSeparator();
         popup.addAction(popupCancelAction);
 
@@ -553,8 +575,7 @@ void KonqOperations::doDropFileCopy()
             action = Qt::MoveAction;
         else if(result == popupLinkAction)
             action = Qt::LinkAction;
-        else if(result == popupCancelAction || !result)
-        {
+        else {
             deleteLater();
             return;
         }
