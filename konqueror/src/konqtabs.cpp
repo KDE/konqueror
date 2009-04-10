@@ -190,7 +190,9 @@ void KonqFrameTabs::copyHistory( KonqFrameBase *other )
 void KonqFrameTabs::setTitle( const QString &title , QWidget* sender)
 {
   // kDebug(1202) << "KonqFrameTabs::setTitle( " << title << " , " << sender << " )";
-  setTabText( indexOf( sender ), title );
+  // Make sure that '&' is displayed correctly
+  QString tabText( title );
+  setTabText( indexOf( sender ), tabText.replace('&', "&&") );
 }
 
 void KonqFrameTabs::setTabIcon( const KUrl &url, QWidget* sender )
