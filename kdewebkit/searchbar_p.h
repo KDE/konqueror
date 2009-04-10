@@ -21,15 +21,17 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef SEARCHBAR_H
-#define SEARCHBAR_H
+#ifndef SEARCHBAR_P_H
+#define SEARCHBAR_P_H
 
 #include <QWidget>
 
-#include "ui_searchbar.h"
+#include "ui_searchbar_p.h"
 
 class QTimeLine;
 class KWebView;
+
+namespace KDEPrivate {
 
 /**
  * This is the widget that shows up when the search is initiated.
@@ -72,4 +74,6 @@ private Q_SLOTS:
 
 };
 
-#endif // SEARCHBAR_H
+}
+
+#endif // SEARCHBAR_P_H

@@ -25,7 +25,7 @@
 
 #include "kwebview.h"
 #include "kwebpage.h"
-#include "searchbar.h"
+#include "searchbar_p.h"
 
 #include <KDE/KUrl>
 #include <KDE/KDebug>
@@ -47,7 +47,7 @@ public:
     bool customContextMenu;
     Qt::KeyboardModifiers keyboardModifiers;
     Qt::MouseButtons pressedButtons;
-    SearchBar *searchBar;
+    KDEPrivate::SearchBar *searchBar;
 };
 
 
@@ -132,7 +132,7 @@ void KWebView::mouseReleaseEvent(QMouseEvent *event)
 QWidget *KWebView::searchBar()
 {
     if (!d->searchBar) {
-        d->searchBar = new SearchBar;
+        d->searchBar = new KDEPrivate::SearchBar;
         kDebug() << "Created new SearchBar" << d->searchBar;
         d->searchBar->setVisible(false);
 

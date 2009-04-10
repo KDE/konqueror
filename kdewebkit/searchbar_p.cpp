@@ -22,13 +22,15 @@
  *
  */
 
-#include "searchbar.h"
+#include "searchbar_p.h"
 
 #include <QResizeEvent>
 #include <QShortcut>
 #include <QTimeLine>
 
 #include <KColorScheme>
+
+namespace KDEPrivate {
 
 class SearchBar::SearchBarPrivate {
 public:
@@ -181,4 +183,6 @@ void SearchBar::searchAsYouTypeChanged(int state)
     }
 }
 
-#include "searchbar.moc"
+}
+
+#include "searchbar_p.moc"

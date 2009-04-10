@@ -18,13 +18,13 @@ set(kdewebkit_LIB_SRCS
     kwebview.cpp
     kwebpage.cpp
     kwebpluginfactory.cpp
-    searchbar.cpp
+    searchbar_p.cpp
     settings/webkitsettings.cpp
     settings/khtml_filter.cpp
 )
 
 kde4_add_ui_files(kdewebkit_LIB_SRCS
-    searchbar.ui
+    searchbar_p.ui
 )
 
 kde4_add_library(kdewebkit SHARED ${kdewebkit_LIB_SRCS})
