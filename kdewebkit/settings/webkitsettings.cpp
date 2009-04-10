@@ -341,7 +341,7 @@ void WebKitSettings::init( KConfig * config, bool reset )
           QString name = it.key();
           QString url = it.value();
 
-          if (name.startsWith("Filter"))
+          if (name.startsWith(QLatin1String("Filter")))
           {
               if (url.startsWith(QLatin1String("@@")))
                   d->adWhiteList.addFilter(url);
@@ -748,7 +748,7 @@ bool WebKitSettings::isAdFiltered( const QString &url ) const
 {
     if (d->m_adFilterEnabled)
     {
-        if (!url.startsWith("data:"))
+        if (!url.startsWith(QLatin1String("data:")))
         {
             // Check the blacklist, and only if that matches, the whitelist
             return d->adBlackList.isUrlMatched(url) && !d->adWhiteList.isUrlMatched(url);

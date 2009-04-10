@@ -20,6 +20,9 @@
    Boston, MA 02110-1301, USA.
 */
 
+#ifndef KHTML_FILTER_P_H
+#define KHTML_FILTER_P_H
+
 #include <QString>
 #include <QRegExp>
 #include <QVector>
@@ -70,5 +73,7 @@ private:
 };
 
 }
+
+#endif // KHTML_FILTER_P_H
 
 // kate: indent-width 4; replace-tabs on; tab-width 4; space-indent on;

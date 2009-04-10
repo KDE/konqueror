@@ -214,4 +214,10 @@ void KNetworkReply::slotPercent(KJob *job, unsigned long percent)
     emit downloadProgress(kiloBytes / ((double)percent / 100), kiloBytes);
 }
 
+void KNetworkReply::slotPermanentRedirection(KIO::Job *job, const KUrl &fromUrl, const KUrl &toUrl)
+{
+    Q_UNUSED(fromUrl);
+    slotRedirection(job, toUrl);
+}
+
 #include "knetworkreply.moc"

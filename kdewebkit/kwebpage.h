@@ -25,7 +25,7 @@
 #define KWEBPAGE_H
 
 #include <kdemacros.h>
-#include <KUrl>
+#include <KDE/KUrl>
 
 #include <QtWebKit/QWebPage>
 
