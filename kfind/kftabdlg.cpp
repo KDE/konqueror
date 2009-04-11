@@ -476,7 +476,7 @@ void KfindTabWidget::setURL( const KUrl & url )
 void KfindTabWidget::initMimeTypes()
 {
     KMimeType::List sortedList;
-    foreach ( KMimeType::Ptr type, KMimeType::allMimeTypes() )
+    foreach ( const KMimeType::Ptr &type, KMimeType::allMimeTypes() )
     {
       if ( (!type->comment().isEmpty())
            && (!type->name().startsWith( QString("kdedevice/") ))
