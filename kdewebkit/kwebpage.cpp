@@ -50,7 +50,18 @@
 #include <QWebFrame>
 #include <QUiLoader>
 #include <QtNetwork/QNetworkReply>
+
 #if KDE_IS_VERSION(4, 2, 70)
+class NullNetworkReply : public QNetworkReply
+{
+public:
+    NullNetworkReply() { QTimer::singleShot(0, this, SIGNAL(finished())); }
+    virtual void abort() {};
+    virtual qint64 bytesAvailable() const { return -1; };
+protected:
+    virtual qint64 readData(char*, qint64) { return -1; };
+};
+
 class NetworkAccessManager : public KIO::AccessManager
 {
 public:
@@ -59,7 +70,7 @@ protected:
     virtual QNetworkReply *createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData = 0)
     {
         if (WebKitSettings::self()->isAdFilterEnabled() && WebKitSettings::self()->isAdFiltered(req.url().toString())) {
-            return 0; //FIXME!
+            return new NullNetworkReply();
         }
         return KIO::AccessManager::createRequest(op, req, outgoingData);
     }
