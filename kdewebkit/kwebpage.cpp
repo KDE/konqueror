@@ -23,8 +23,8 @@
  */
 
 #include "kwebpage.h"
-#include <kdenetwork/knetworkaccessmanager.h>
-#include <kdenetwork/knetworkreply.h>
+
+#include "kwebpluginfactory.h"
 #include "settings/webkitsettings.h"
 
 #include <KDE/KParts/GenericFactory>
@@ -40,12 +40,31 @@
 #include <KDE/KStandardDirs>
 #include <KDE/KStandardShortcut>
 #include <KIO/Job>
+#if KDE_IS_VERSION(4, 2, 70)
+#include <KIO/AccessManager>
+#else
+#include <kdenetwork/knetworkaccessmanager.h>
+#include <kdenetwork/knetworkreply.h>
+#endif
 
 #include <QWebFrame>
 #include <QUiLoader>
 #include <QtNetwork/QNetworkReply>
-#include "kwebpluginfactory.h"
-
+#if KDE_IS_VERSION(4, 2, 70)
+class NetworkAccessManager : public KIO::AccessManager
+{
+public:
+    NetworkAccessManager(QObject *parent) : KIO::AccessManager(parent) {}
+protected:
+    virtual QNetworkReply *createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData = 0)
+    {
+        if (WebKitSettings::self()->isAdFilterEnabled() && WebKitSettings::self()->isAdFiltered(req.url().toString())) {
+            return 0; //FIXME!
+        }
+        return KIO::AccessManager::createRequest(op, req, outgoingData);
+    }
+};
+#else
 class NetworkAccessManager : public KNetworkAccessManager
 {
 public:
@@ -59,6 +78,7 @@ protected:
         return KNetworkAccessManager::createRequest(op, req, outgoingData);
     }
 };
+#endif
 
 class KWebPage::KWebPagePrivate
 {
@@ -69,9 +89,13 @@ public:
 KWebPage::KWebPage(QObject *parent)
     : QWebPage(parent), d(new KWebPage::KWebPagePrivate())
 {
-    setNetworkAccessManager(new NetworkAccessManager(this));
+#if KDE_IS_VERSION(4, 2, 70)
+    setNetworkAccessManager(new KIO::AccessManager(this));
+#else
+    setNetworkAccessManager(new KNetworkAccessManager(this));
+#endif
     setPluginFactory(new KWebPluginFactory(pluginFactory(), this));
-    
+
     action(Back)->setIcon(KIcon("go-previous"));
     action(Back)->setShortcut(KStandardShortcut::back().primary());
 

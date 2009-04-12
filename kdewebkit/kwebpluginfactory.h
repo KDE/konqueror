@@ -42,7 +42,7 @@ public:
                             const QStringList &argumentNames,
                             const QStringList &argumentValues) const;
     virtual QList<Plugin> plugins() const;
-    
+
 private:
     class KWebPluginFactoryPrivate;
     KWebPluginFactoryPrivate* const d;
