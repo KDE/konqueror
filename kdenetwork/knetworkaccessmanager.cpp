@@ -1,7 +1,7 @@
 /*
  * This file is part of the KDE project.
  *
- * Copyright (C) 2008 Urs Wolfer <uwolfer @ kde.org>
+ * Copyright (C) 2008 - 2009 Urs Wolfer <uwolfer @ kde.org>
  * Copyright (C) 2007 Trolltech ASA
  *
  * This library is free software; you can redistribute it and/or

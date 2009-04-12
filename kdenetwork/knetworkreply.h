@@ -1,7 +1,7 @@
 /*
  * This file is part of the KDE project.
  *
- * Copyright (C) 2008 Urs Wolfer <uwolfer @ kde.org>
+ * Copyright (C) 2008 - 2009 Urs Wolfer <uwolfer @ kde.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -34,6 +34,10 @@ namespace KIO
 class KJob;
 class KUrl;
 
+/**
+ * Used for KNetworkAccessManager, KDE implementation of QNetworkReply.
+ */
+
 class KDE_EXPORT KNetworkReply : public QNetworkReply
 {
     Q_OBJECT
@@ -55,7 +59,7 @@ private Q_SLOTS:
     void slotRedirection(KIO::Job *job, const KUrl &url);
     void slotPercent(KJob *job, unsigned long percent);
     void slotPermanentRedirection(KIO::Job *job, const KUrl &fromUrl, const KUrl &toUrl);
-    
+
 private:
     class KNetworkReplyPrivate;
     KNetworkReplyPrivate* const d;

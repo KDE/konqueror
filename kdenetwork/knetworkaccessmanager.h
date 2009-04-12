@@ -1,7 +1,7 @@
 /*
  * This file is part of the KDE project.
  *
- * Copyright (C) 2008 Urs Wolfer <uwolfer @ kde.org>
+ * Copyright (C) 2008 - 2009 Urs Wolfer <uwolfer @ kde.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -28,6 +28,11 @@
 #include <QtNetwork/QNetworkAccessManager>
 
 #include <KDE/KIO/MetaData>
+
+/**
+ * KDE implementation of QNetworkAccessManager. Use this class instead of QNetworkAccessManager
+ * for any KDE application since it uses KIO for network operations.
+ */
 
 class KDE_EXPORT KNetworkAccessManager : public QNetworkAccessManager
 {
