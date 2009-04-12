@@ -46,8 +46,8 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2009-02-23</date>
-<releaseinfo>2.2.0</releaseinfo>
+<date>2009-04-12</date>
+<releaseinfo>2.3.0</releaseinfo>
 
 <abstract><para>&konsole; is &kde;'s terminal emulator.</para></abstract>
 
@@ -738,12 +738,7 @@ These changes can be made permanent by editing the current profile.
 <listitem><para>%D : current directory (long)</para></listitem>
 <listitem><para>%w : window title set by shell</para></listitem>
 <listitem><para>%# : session number</para></listitem>
-
-<!--
-<listitem><para>%u : user name [Remote]</para></listitem>
-<listitem><para>%h : remote host name (short) [Remote]</para></listitem>
-<listitem><para>%H : remote host name (long) [Remote]</para></listitem>
--->
+<listitem><para>%u : user name</para></listitem>
 </itemizedlist>
 
 </para>
@@ -962,12 +957,59 @@ can be specified to modify its behavior.</para>
 <title>Scripting &konsole;</title>
 
 <para>For &kde; 4, the old &DCOP; has been replaced with &DBus;.
-However, &konsole; has not been updated yet to handle this.
+Konsole does support numerous methods that can be used with &DBus;.
 </para>
-<para>For a somewhat primitive, non-user friendly &GUI; for &DBus;, try &Qt;'s qdbusviewer.
+<para>There are two ways to use the &DBus; interface: &Qt;'s GUI
+<application>qdbusviewer</application>
+and the command line
+<application>qdbus</application>.
 </para>
-<para> More info to follow...</para>
 
+<para>
+Examples:
+<itemizedlist mark='opencircle'>
+
+<listitem><para>
+<prompt>&percnt;</prompt>
+<command>qdbus</command>
+will display all services available.
+</para></listitem>
+
+<listitem><para>
+<prompt>&percnt;</prompt>
+<command>qdbus</command>
+<option>org.kde.konsole-`pidof -s konsole`</option>
+will display the &DBus; interface for &konsole;.
+</para></listitem>
+
+<listitem><para>
+<prompt>&percnt;</prompt>
+<command>qdbus</command>
+<option>org.kde.konsole-`pidof -s konsole` /Konsole</option>
+will display methods for controlling the main &konsole; window.
+</para></listitem>
+
+<listitem><para>
+<prompt>&percnt;</prompt>
+<command>qdbus</command>
+<option>org.kde.konsole-`pidof -s konsole` /Session/1</option>
+will display methods for session 1.
+</para></listitem>
+
+</itemizedlist>
+</para>
+
+<para>
+In the above examples, <option>`pidof -s konsole`</option>
+will work if you have only one &konsole; window running.  If you have
+more than one &konsole; running, you'll have to replace the above text
+with that pid of the &konsole; you want to control.
+</para>
+
+<para>
+For more information, please visit 
+<ulink url="http://techbase.kde.org/Development/Tutorials/D-Bus/Introduction">&DBus; tutorial</ulink>.
+</para>
 
 </chapter>
 
