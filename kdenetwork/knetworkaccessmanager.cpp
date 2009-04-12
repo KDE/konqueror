@@ -35,6 +35,8 @@ class KNetworkAccessManager::KNetworkAccessManagerPrivate
 {
 public:
     KNetworkAccessManagerPrivate() {}
+
+    static KIO::MetaData metaDataForRequest(QNetworkRequest request);
 };
 
 KNetworkAccessManager::KNetworkAccessManager(QObject *parent)
@@ -87,13 +89,13 @@ QNetworkReply *KNetworkAccessManager::createRequest(Operation op, const QNetwork
 
     KNetworkReply *reply = new KNetworkReply(op, req, kioJob, this);
 
-    kioJob->addMetaData(metaDataForRequest(req));
+    kioJob->addMetaData(d->metaDataForRequest(req));
 
     return reply;
 }
 
 
-KIO::MetaData KNetworkAccessManager::metaDataForRequest(QNetworkRequest request)
+KIO::MetaData KNetworkAccessManager::KNetworkAccessManagerPrivate::metaDataForRequest(QNetworkRequest request)
 {
     KIO::MetaData metaData;
 

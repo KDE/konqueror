@@ -36,8 +36,6 @@ public:
     KNetworkAccessManager(QObject *parent);
     virtual ~KNetworkAccessManager();
 
-    static KIO::MetaData metaDataForRequest(QNetworkRequest request);
-
 protected:
     virtual QNetworkReply *createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData = 0);
 
