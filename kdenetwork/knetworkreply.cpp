@@ -33,11 +33,18 @@
 class KNetworkReply::KNetworkReplyPrivate
 {
 public:
-    KNetworkReplyPrivate()
-    : m_kioJob(0)
+    KNetworkReplyPrivate(KNetworkReply *qq)
+    : q(qq)
+    , m_kioJob(0)
     , m_data()
     , m_metaDataRead(false)
     {}
+
+    void _k_redirection(KIO::Job *job, const KUrl &url);
+    void _k_percent(KJob *job, unsigned long percent);
+    void _k_permanentRedirection(KIO::Job *job, const KUrl &fromUrl, const KUrl &toUrl);
+
+    KNetworkReply *q;
 
     KIO::Job *m_kioJob;
     QByteArray m_data;
@@ -45,7 +52,7 @@ public:
 };
 
 KNetworkReply::KNetworkReply(const QNetworkAccessManager::Operation &op, const QNetworkRequest &request, KIO::Job *kioJob, QObject *parent)
-    : QNetworkReply(parent), d(new KNetworkReply::KNetworkReplyPrivate())
+    : QNetworkReply(parent), d(new KNetworkReply::KNetworkReplyPrivate(this))
 
 {
     d->m_kioJob = kioJob;
@@ -63,10 +70,10 @@ KNetworkReply::KNetworkReply(const QNetworkAccessManager::Operation &op, const Q
         setError(QNetworkReply::OperationCanceledError, i18n("Blocked request."));
         QTimer::singleShot(0, this, SIGNAL(finished()));
     } else {
-        connect(kioJob, SIGNAL(redirection(KIO::Job*, const KUrl&)), SLOT(slotRedirection(KIO::Job*, const KUrl&)));
+        connect(kioJob, SIGNAL(redirection(KIO::Job*, const KUrl&)), SLOT(_k_redirection(KIO::Job*, const KUrl&)));
         connect(kioJob, SIGNAL(permanentRedirection(KIO::Job*, const KUrl&, const KUrl&)),
-            SLOT(slotPermanentRedirection(KIO::Job*, const KUrl&, const KUrl&)));
-        connect(kioJob, SIGNAL(percent(KJob*, unsigned long)), SLOT(slotPercent(KJob*, unsigned long)));
+            SLOT(_k_permanentRedirection(KIO::Job*, const KUrl&, const KUrl&)));
+        connect(kioJob, SIGNAL(percent(KJob*, unsigned long)), SLOT(_k_percent(KJob*, unsigned long)));
         connect(kioJob, SIGNAL(data(KIO::Job *, const QByteArray &)),
             SLOT(appendData(KIO::Job *, const QByteArray &)));
         connect(kioJob, SIGNAL(result(KJob *)), SLOT(jobDone(KJob *)));
@@ -203,24 +210,24 @@ void KNetworkReply::jobDone(KJob *kJob)
     emit finished();
 }
 
-void KNetworkReply::slotRedirection(KIO::Job* job, const KUrl& url)
+void KNetworkReply::KNetworkReplyPrivate::_k_redirection(KIO::Job* job, const KUrl& url)
 {
     job->kill();
-    d->m_kioJob=0;
-    setAttribute(QNetworkRequest::RedirectionTargetAttribute, QUrl(url));
-    emit finished();
+    m_kioJob = 0;
+    q->setAttribute(QNetworkRequest::RedirectionTargetAttribute, QUrl(url));
+    emit q->finished();
 }
 
-void KNetworkReply::slotPercent(KJob *job, unsigned long percent)
+void KNetworkReply::KNetworkReplyPrivate::_k_percent(KJob *job, unsigned long percent)
 {
     qulonglong kiloBytes = job->totalAmount(KJob::Bytes) / 2046;
-    emit downloadProgress(kiloBytes / ((double)percent / 100), kiloBytes);
+    emit q->downloadProgress(kiloBytes / ((double)percent / 100), kiloBytes);
 }
 
-void KNetworkReply::slotPermanentRedirection(KIO::Job *job, const KUrl &fromUrl, const KUrl &toUrl)
+void KNetworkReply::KNetworkReplyPrivate::_k_permanentRedirection(KIO::Job *job, const KUrl &fromUrl, const KUrl &toUrl)
 {
     Q_UNUSED(fromUrl);
-    slotRedirection(job, toUrl);
+    _k_redirection(job, toUrl);
 }
 
 #include "knetworkreply.moc"

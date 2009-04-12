@@ -55,15 +55,13 @@ public Q_SLOTS:
 protected:
     virtual qint64 readData(char *data, qint64 maxSize);
 
-private Q_SLOTS:
-    void slotRedirection(KIO::Job *job, const KUrl &url);
-    void slotPercent(KJob *job, unsigned long percent);
-    void slotPermanentRedirection(KIO::Job *job, const KUrl &fromUrl, const KUrl &toUrl);
-
 private:
     class KNetworkReplyPrivate;
     KNetworkReplyPrivate* const d;
 
+    Q_PRIVATE_SLOT(d, void _k_redirection(KIO::Job *job, const KUrl &url))
+    Q_PRIVATE_SLOT(d, void _k_percent(KJob *job, unsigned long percent))
+    Q_PRIVATE_SLOT(d, void _k_permanentRedirection(KIO::Job *job, const KUrl &fromUrl, const KUrl &toUrl))
 };
 
 #endif // KNETWORKREPLY_H
