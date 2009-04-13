@@ -11,6 +11,7 @@ include_directories( ${ZLIB_INCLUDE_DIR} )
 set(konq_LIB_SRCS
    konq_popupmenu.cpp       # used by konqueror, kfind, folderview, kickoff
    konq_popupmenuplugin.cpp # for KonqPopupMenu and its plugins
+   konq_dndpopupmenuplugin.cpp # for KonqDndPopupMenu and its plugins
    knewmenu.cpp             # used by dolphin, KonqPopupMenu, and konqueror (File menu; to be moved to dolphinpart)
    konq_copytomenu.cpp      # used by dolphin, KonqPopupMenu
    konq_operations.cpp      # used by dolphin and konqueror
@@ -61,5 +62,5 @@ install( FILES
  konq_fileitemcapabilities.h
 DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel
 )
-install( FILES konqpopupmenuplugin.desktop  DESTINATION  ${SERVICETYPES_INSTALL_DIR} )
+install( FILES konqpopupmenuplugin.desktop konqdndpopupmenuplugin.desktop  DESTINATION  ${SERVICETYPES_INSTALL_DIR} )
 

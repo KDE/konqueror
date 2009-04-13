@@ -33,6 +33,7 @@ class KJob;
 namespace KIO { class Job; class SimpleJob; struct CopyInfo; }
 class QWidget;
 class KFileItem;
+class KFileItemListProperties;
 
 /**
  * Implements file operations (move,del,trash,paste,copy,move,link...)
@@ -211,6 +212,7 @@ private:
     void _del( Operation method, const KUrl::List & selectedUrls, ConfirmationType confirmation );
     void _restoreTrashedItems( const KUrl::List& urls );
     void _statUrl( const KUrl & url, const QObject *receiver, const char *member );
+    void _addPluginActions(QList<QAction*>& pluginActions, const KUrl& destination, const KFileItemListProperties& info);
 
     // internal, for COPY/MOVE/LINK/MKDIR
     void setOperation( KIO::Job * job, Operation method, const KUrl & dest );
