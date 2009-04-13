@@ -22,6 +22,7 @@
 */
 
 #include "konq_operations.h"
+#include "konq_dndpopupmenuplugin.h"
 #include "konqmimedata.h"
 
 #include <ktoolinvocation.h>
@@ -55,6 +56,11 @@
 #include <kdebug.h>
 #include <kfileitem.h>
 #include <kdesktopfile.h>
+
+//for _addPluginActions
+#include <kfileitemlistproperties.h>
+#include <kservice.h>
+#include <kmimetypetrader.h>
 
 //#include <konq_iconviewwidget.h>
 #include <QtDBus/QtDBus>
@@ -559,11 +565,27 @@ void KonqOperations::doDropFileCopy()
         if (bSetWallpaper)
             popup.addAction(popupWallAction);
 #endif
-        if (!m_info->userActions.isEmpty()) {
+
+        //now initialize the drop plugins
+        KFileItemList fileItems;
+        foreach(const KUrl& url, lst) {
+            fileItems.append(KFileItem(
+                        KFileItem::Unknown,
+                        KFileItem::Unknown,
+                        url));
+
+        }
+
+        QList<QAction*> pluginActions;
+        KFileItemListProperties info(fileItems);
+        _addPluginActions(pluginActions, m_destUrl, info);
+
+        if (!m_info->userActions.isEmpty() || !pluginActions.isEmpty()) {
             popup.addSeparator();
             popup.addActions(m_info->userActions);
+            popup.addActions(pluginActions);
         }
- 
+
         popup.addSeparator();
         popup.addAction(popupCancelAction);
 
@@ -608,6 +630,25 @@ void KonqOperations::doDropFileCopy()
     }
     deleteLater();
 }
+
+void KonqOperations::_addPluginActions(QList<QAction*>& pluginActions,const KUrl& destination, const KFileItemListProperties& info)
+{
+    kDebug(1203);
+    const QString commonMimeType = info.mimeType();
+    kDebug() << commonMimeType;
+    const KService::List plugin_offers = KMimeTypeTrader::self()->query(commonMimeType.isEmpty() ? QLatin1String("application/octet-stream") : commonMimeType, "KonqDndPopupMenu/Plugin", "exist Library");
+
+    KService::List::ConstIterator iterator = plugin_offers.begin();
+    const KService::List::ConstIterator end = plugin_offers.end();
+    for(; iterator != end; ++iterator) {
+        //kDebug() << (*iterator)->name() << (*iterator)->library();
+        KonqDndPopupMenuPlugin *plugin = (*iterator)->createInstance<KonqDndPopupMenuPlugin>(this);
+        if (!plugin)
+            continue;
+        plugin->setup(info, destination, pluginActions);
+    }
+}
+
 
 void KonqOperations::rename( QWidget * parent, const KUrl & oldurl, const KUrl& newurl )
 {
