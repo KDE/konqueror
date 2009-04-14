@@ -3278,10 +3278,7 @@ void KonqMainWindow::slotForceSaveMainWindowSettings()
 
 void KonqMainWindow::slotShowMenuBar()
 {
-  if (menuBar()->isVisible())
-    menuBar()->hide();
-  else
-    menuBar()->show();
+  menuBar()->setVisible(!menuBar()->isVisible());
   slotForceSaveMainWindowSettings();
 }
 
