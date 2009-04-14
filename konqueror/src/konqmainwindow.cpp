@@ -4008,21 +4008,15 @@ void KonqMainWindow::updateToolBarActions( bool pendingAction /*=false*/)
     m_paStop->setEnabled( pendingAction );  //enable/disable based on any pending actions...
   }
 
-  if ( m_currentView && m_currentView->url().isLocalFile() &&
-       !m_currentView->isLockedViewMode() ) {
-      if (m_currentView->showsDirectory())
-          m_ptaUseHTML->setEnabled( true );
-      else if ( m_currentView->serviceTypes().contains("text/html") ) {
-          // Currently viewing an index.html file via this feature (i.e. url points to a dir)
-          QString locPath = KUrl( m_currentView->locationBarURL() ).toLocalFile();
-          m_ptaUseHTML->setEnabled( QFileInfo( locPath ).isDir() );
-      } else
-          m_ptaUseHTML->setEnabled( false );
-  }
-  else
-  {
-      m_ptaUseHTML->setEnabled( false );
-  }
+  bool ptaUseHTMLEnable=m_currentView
+                        && m_currentView->url().isLocalFile()
+                        && !m_currentView->isLockedViewMode();
+
+  ptaUseHTMLEnable=ptaUseHTMLEnable
+                   && ( m_currentView->showsDirectory()
+                        || (m_currentView->serviceTypes().contains("text/html") && QFileInfo( KUrl( m_currentView->locationBarURL() ).toLocalFile() ).isDir())
+                      );
+  m_ptaUseHTML->setEnabled( ptaUseHTMLEnable );
 }
 
 void KonqMainWindow::updateViewActions()
