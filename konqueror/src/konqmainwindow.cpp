@@ -56,7 +56,6 @@
 #include <kbookmarkmanager.h>
 #include <kinputdialog.h>
 #include <klineedit.h>
-#include <kanimatedbutton.h>
 #include <kzip.h>
 #include <pwd.h>
 // we define STRICT_ANSI to get rid of some warnings in glibc
@@ -105,6 +104,7 @@
 #include <knewmenu.h>
 #include <konq_popupmenu.h>
 #include "konqsettings.h"
+#include "konqanimatedlogo_p.h"
 #include <kprotocolinfo.h>
 #include <kprotocolmanager.h>
 #include <kstandardshortcut.h>
@@ -3450,51 +3450,6 @@ void KonqMainWindow::setUpEnabled( const KUrl &url )
 }
 
 
-int KonqMainWindow::maxThrobberHeight()
-{
-    // This comes from QMenuBar::sizeHint and QMenuBarPrivate::calcActionRects
-    const QFontMetrics fm = menuBar()->fontMetrics();
-    QSize sz(100, fm.height());
-    //let the style modify the above size..
-    QStyleOptionMenuItem opt;
-    opt.fontMetrics = fm;
-    opt.state = QStyle::State_Enabled;
-    opt.menuRect = menuBar()->rect();
-    opt.text = "dummy";
-    sz = menuBar()->style()->sizeFromContents(QStyle::CT_MenuBarItem, &opt, sz, menuBar());
-    //kDebug() << "maxThrobberHeight=" << sz.height();
-    return sz.height();
-}
-
-void KonqMainWindow::setAnimatedLogoSize()
-{
-    const int buttonHeight = maxThrobberHeight();
-    // This gives the best results: we force a bigger icon size onto the style, and it'll just have to eat up its margin.
-    // So we don't need to ask sizeFromContents at all.
-    int iconSize = buttonHeight;
-#if 0
-    QStyleOptionToolButton opt;
-    opt.initFrom(m_paAnimatedLogo);
-    const QSize finalSize = style()->sizeFromContents(QStyle::CT_ToolButton, &opt, opt.iconSize, m_paAnimatedLogo);
-    //kDebug() << "throbberIconSize=" << buttonHeight << "-" << finalSize.height() - opt.iconSize.height();
-    int iconSize = buttonHeight - (finalSize.height() - opt.iconSize.height());
-#endif
-
-    m_paAnimatedLogo->setFixedSize(QSize(buttonHeight, buttonHeight));
-
-    //kDebug() << "buttonHeight=" << buttonHeight << "max iconSize=" << iconSize;
-    if ( iconSize < KIconLoader::SizeSmallMedium )
-        iconSize = KIconLoader::SizeSmall;
-    else if ( iconSize < KIconLoader::SizeMedium  )
-        iconSize = KIconLoader::SizeSmallMedium;
-    else if ( iconSize < KIconLoader::SizeLarge )
-        iconSize = KIconLoader::SizeMedium ;
-    else if ( iconSize < KIconLoader::SizeHuge )
-        iconSize = KIconLoader::SizeLarge;
-    //kDebug() << "final iconSize=" << iconSize;
-    m_paAnimatedLogo->setIconSize(QSize(iconSize, iconSize));
-}
-
 void KonqMainWindow::initActions()
 {
   // Note about this method : don't call setEnabled() on any of the actions.
@@ -3790,13 +3745,9 @@ void KonqMainWindow::initActions()
   connect(m_paStop, SIGNAL(triggered()), SLOT( slotStop() ));
   m_paStop->setShortcut(Qt::Key_Escape);
 
-  m_paAnimatedLogo = new KAnimatedButton( this );
-  m_paAnimatedLogo->setAutoRaise(true);
-  m_paAnimatedLogo->setFocusPolicy(Qt::NoFocus);
-  m_paAnimatedLogo->setToolButtonStyle(Qt::ToolButtonIconOnly);
-  setAnimatedLogoSize();
-  m_paAnimatedLogo->setIcons("process-working-kde");
+  m_paAnimatedLogo = new KonqAnimatedLogo( menuBar(), this );
   menuBar()->setCornerWidget(m_paAnimatedLogo);
+  m_paAnimatedLogo->setIcons("process-working-kde");
 
   // Location bar
   m_locationLabel = new KonqDraggableLabel( this, i18n("L&ocation: ") );

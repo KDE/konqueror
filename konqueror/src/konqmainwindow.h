@@ -63,7 +63,7 @@ class KonqView;
 class KonqFrameContainerBase;
 class KonqFrameContainer;
 class KToolBarPopupAction;
-class KAnimatedButton;
+class KonqAnimatedLogo;
 class KonqViewManager;
 class ToggleViewGUIClient;
 class KonqMainWindowIface;
@@ -618,10 +618,6 @@ private:
 
   QObject* lastFrame( KonqView *view );
 
-    // Maximum height of the animated logo qtoolbutton (m_paAnimatedLogo)
-    int maxThrobberHeight();
-    void setAnimatedLogoSize();
-
 private: // members
   KonqUndoManager* m_pUndoManager;
 
@@ -675,7 +671,7 @@ private: // members
   KAction *m_paConfigureExtensions;
   KAction *m_paConfigureSpellChecking;
 
-  KAnimatedButton *m_paAnimatedLogo;
+  KonqAnimatedLogo *m_paAnimatedLogo;
 
   KBookmarkBar *m_paBookmarkBar;
 
