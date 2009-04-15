@@ -175,7 +175,7 @@ void KWebPage::setAllowExternalContent(bool allow)
     d->accessManager->setExternalContentAllowed(allow);
 }
 
-bool KWebPage::allowExternalContent()
+bool KWebPage::allowExternalContent() const
 {
     return d->accessManager->externalContentAllowed();
 }
