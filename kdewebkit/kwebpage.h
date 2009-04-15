@@ -46,7 +46,7 @@ public:
     /**
      * returns if external content is fetched, see setAllowExternalContent().
      */
-    bool allowExternalContent() const;
+    bool isExternalContentAllowed() const;
 
 protected:
     virtual KWebPage *createWindow(WebWindowType type);

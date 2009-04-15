@@ -175,9 +175,9 @@ void KWebPage::setAllowExternalContent(bool allow)
     d->accessManager->setExternalContentAllowed(allow);
 }
 
-bool KWebPage::allowExternalContent() const
+bool KWebPage::isExternalContentAllowed() const
 {
-    return d->accessManager->externalContentAllowed();
+    return d->accessManager->isExternalContentAllowed();
 }
 
 QString KWebPage::chooseFile(QWebFrame *frame, const QString &suggestedFile)

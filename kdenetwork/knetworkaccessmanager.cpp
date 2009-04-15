@@ -55,7 +55,7 @@ void KNetworkAccessManager::setExternalContentAllowed(bool allowed)
     d->externalContentAllowed = allowed;
 }
 
-bool KNetworkAccessManager::externalContentAllowed() const
+bool KNetworkAccessManager::isExternalContentAllowed() const
 {
     return d->externalContentAllowed;
 }

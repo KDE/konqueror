@@ -41,7 +41,7 @@ public:
     KNetworkAccessManager(QObject *parent);
     virtual ~KNetworkAccessManager();
     void setExternalContentAllowed(bool allowed);
-    bool externalContentAllowed() const;
+    bool isExternalContentAllowed() const;
 
 protected:
     virtual QNetworkReply *createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData = 0);
