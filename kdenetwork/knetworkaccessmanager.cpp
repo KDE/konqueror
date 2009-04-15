@@ -34,7 +34,8 @@
 class KNetworkAccessManager::KNetworkAccessManagerPrivate
 {
 public:
-    KNetworkAccessManagerPrivate() {}
+    KNetworkAccessManagerPrivate():externalContentAllowed(true) {}
+    bool externalContentAllowed;
 
     static KIO::MetaData metaDataForRequest(QNetworkRequest request);
 };
@@ -49,9 +50,24 @@ KNetworkAccessManager::~KNetworkAccessManager()
     delete d;
 }
 
+void KNetworkAccessManager::setExternalContentAllowed(bool allowed)
+{
+    d->externalContentAllowed = allowed;
+}
+
+bool KNetworkAccessManager::externalContentAllowed()
+{
+    return d->externalContentAllowed;
+}
+
 QNetworkReply *KNetworkAccessManager::createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData)
 {
     KIO::Job *kioJob = 0;
+
+    if ( !d->externalContentAllowed ) {
+        kDebug() << "Blocked: " << req.url();
+        return new KNetworkReply(op, req, kioJob, this);
+    }
 
     switch (op) {
         case HeadOperation: {

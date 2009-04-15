@@ -37,6 +37,16 @@ class KDE_EXPORT KWebPage : public QWebPage
 public:
     KWebPage(QObject *parent);
     ~KWebPage();
+    /**
+     * Set @p allow to false if you don't want to allow showing external content,
+     * so no external images for example. By default external content is fetched.
+     */
+    void setAllowExternalContent(bool allow);
+
+    /**
+     * returns if external content is fetched, see setAllowExternalContent().
+     */
+    bool allowExternalContent();
 
 protected:
     virtual KWebPage *createWindow(WebWindowType type);

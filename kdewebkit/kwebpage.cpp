@@ -95,16 +95,22 @@ class KWebPage::KWebPagePrivate
 {
 public:
     KWebPagePrivate() {}
+#if KDE_IS_VERSION(4, 2, 70)
+    KIO::AccessManager* accessManager;
+#else
+    KNetworkAccessManager* accessManager;
+#endif
 };
 
 KWebPage::KWebPage(QObject *parent)
     : QWebPage(parent), d(new KWebPage::KWebPagePrivate())
 {
 #if KDE_IS_VERSION(4, 2, 70)
-    setNetworkAccessManager(new KIO::AccessManager(this));
+    d->accessManager = new KIO::AccessManager(this);
 #else
-    setNetworkAccessManager(new KNetworkAccessManager(this));
+    d->accessManager = new KNetworkAccessManager(this);
 #endif
+    setNetworkAccessManager(d->accessManager);
     setPluginFactory(new KWebPluginFactory(pluginFactory(), this));
 
     action(Back)->setIcon(KIcon("go-previous"));
@@ -162,6 +168,16 @@ KWebPage::KWebPage(QObject *parent)
 KWebPage::~KWebPage()
 {
     delete d;
+}
+
+void KWebPage::setAllowExternalContent(bool allow)
+{
+    d->accessManager->setExternalContentAllowed(allow);
+}
+
+bool KWebPage::allowExternalContent()
+{
+    return d->accessManager->externalContentAllowed();
 }
 
 QString KWebPage::chooseFile(QWebFrame *frame, const QString &suggestedFile)
