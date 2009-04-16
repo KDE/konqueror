@@ -5,12 +5,13 @@ find_package(KDE4 REQUIRED)
 include(KDE4Defaults)
 include(MacroLibrary)
 
-if(NOT (${KDE_VERSION_MINOR} EQUAL "2" AND ${KDE_VERSION_RELEASE} GREATER "69"))
+if(${KDE_VERSION_MINOR} EQUAL "2" AND ${KDE_VERSION_RELEASE} GREATER "69")
+else(${KDE_VERSION_MINOR} EQUAL "2" AND ${KDE_VERSION_RELEASE} GREATER "69")
     # QtWebKit uses QtNetwork, to KdeWebKit uses....
     # Starting from kdelibs 4.2.70, KIO does contain the network part.
     find_package(KdeNetwork REQUIRED)
     include_directories(${KDENETWORK_INCLUDE_DIR})
-endif(NOT (${KDE_VERSION_MINOR} EQUAL "2" AND ${KDE_VERSION_RELEASE} GREATER "69"))
+endif(${KDE_VERSION_MINOR} EQUAL "2" AND ${KDE_VERSION_RELEASE} GREATER "69")
 
 include_directories(${KDE4_INCLUDES} ${CMAKE_SOURCE_DIR})
 add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
@@ -40,9 +41,10 @@ target_link_libraries(kdewebkit
     ${QT_QTXML_LIBRARY}
 )
 
-if(NOT (${KDE_VERSION_MINOR} EQUAL "2" AND ${KDE_VERSION_RELEASE} GREATER "69"))
+if(${KDE_VERSION_MINOR} EQUAL "2" AND ${KDE_VERSION_RELEASE} GREATER "69")
+else(${KDE_VERSION_MINOR} EQUAL "2" AND ${KDE_VERSION_RELEASE} GREATER "69")
     target_link_libraries(kdewebkit ${KDENETWORK_LIBRARIES})
-endif(NOT (${KDE_VERSION_MINOR} EQUAL "2" AND ${KDE_VERSION_RELEASE} GREATER "69"))
+endif(${KDE_VERSION_MINOR} EQUAL "2" AND ${KDE_VERSION_RELEASE} GREATER "69")
 
 #set_target_properties(kdewebkit PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION})
 set_target_properties(kdewebkit PROPERTIES VERSION 1.0.0 SOVERSION 1) # for the moment keep something low...
