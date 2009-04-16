@@ -3959,14 +3959,20 @@ void KonqMainWindow::updateToolBarActions( bool pendingAction /*=false*/)
     m_paStop->setEnabled( pendingAction );  //enable/disable based on any pending actions...
   }
 
-  bool ptaUseHTMLEnable=m_currentView
+  bool ptaUseHTMLEnable=m_currentView 
                         && m_currentView->url().isLocalFile()
                         && !m_currentView->isLockedViewMode();
 
-  ptaUseHTMLEnable=ptaUseHTMLEnable
-                   && ( m_currentView->showsDirectory()
-                        || (m_currentView->serviceTypes().contains("text/html") && QFileInfo( KUrl( m_currentView->locationBarURL() ).toLocalFile() ).isDir())
-                      );
+  ptaUseHTMLEnable=ptaUseHTMLEnable &&
+                   (
+                     m_currentView->showsDirectory() ||
+                     (
+                       // Currently viewing an index.html file via this feature (i.e. url points to a dir)
+                       m_currentView->serviceTypes().contains("text/html") &&
+                       QFileInfo( KUrl( m_currentView->locationBarURL() ).toLocalFile() ).isDir()
+                     )
+                   );
+
   m_ptaUseHTML->setEnabled( ptaUseHTMLEnable );
 }
 
