@@ -410,8 +410,13 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
 
     q->addSeparator();
 
+    // Use the Dolphin setting for showing the "Copy To" and "Move To" actions
+    KSharedConfig::Ptr dolphin = KSharedConfig::openConfig("dolphinrc");
+
     // CopyTo/MoveTo menus
-    if (m_itemFlags & KParts::BrowserExtension::ShowUrlOperations) {
+    if (m_itemFlags & KParts::BrowserExtension::ShowUrlOperations &&
+        KConfigGroup(dolphin, "General").readEntry("ShowCopyMoveMenu", false)) {
+
         m_copyToMenu.setItems(lstItems);
         m_copyToMenu.setReadOnly(sMoving == false);
         m_copyToMenu.addActionsTo(q);
