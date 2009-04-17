@@ -121,9 +121,15 @@ void KWebView::mouseReleaseEvent(QMouseEvent *event)
     }
 
     QWebView::mouseReleaseEvent(event);
-    if (!event->isAccepted() && (d->pressedButtons & Qt::MidButton)) {
-        const KUrl url(QApplication::clipboard()->text(QClipboard::Selection));
-        if (!url.isEmpty() && url.isValid() && !url.scheme().isEmpty()) {
+
+    // just leave if the site has not modified by the user (for example pasted text with mouse middle click)
+    if (!isModified() && d->pressedButtons & Qt::MidButton) {
+        const QString clipboardText(QApplication::clipboard()->text(QClipboard::Selection));
+        KUrl url(clipboardText);
+        if (!url.isEmpty() && url.isValid() && clipboardText.contains('.')) { // contains '.' -> domain
+            if (url.scheme().isEmpty()) {
+                url = "http://" + clipboardText;
+            }
             emit openUrl(url);
         }
     }
