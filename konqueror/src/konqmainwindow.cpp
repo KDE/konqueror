@@ -3959,7 +3959,7 @@ void KonqMainWindow::updateToolBarActions( bool pendingAction /*=false*/)
     m_paStop->setEnabled( pendingAction );  //enable/disable based on any pending actions...
   }
 
-  bool ptaUseHTMLEnable=m_currentView 
+  bool ptaUseHTMLEnable=m_currentView
                         && m_currentView->url().isLocalFile()
                         && !m_currentView->isLockedViewMode();
 
@@ -4888,8 +4888,12 @@ void KonqMainWindow::updateViewModeActions()
     const KService::List::ConstIterator end = services.constEnd();
     for (; it != end; ++it) {
         const KService::Ptr service = *it;
-        const QVariant prop = service->property( "X-KDE-BrowserView-Toggable" );
-        if (prop.isValid() && prop.toBool()) // No toggable views in view mode
+        const QVariant propToggable = service->property( "X-KDE-BrowserView-Toggable" );
+        const bool toggable = propToggable.isValid() && propToggable.toBool();
+        const QVariant propHierarchical = service->property( "X-KDE-BrowserView-HierarchicalView" );
+        const bool hierarchical = propHierarchical.isValid() && propHierarchical.toBool();
+        // No hierarchical toggable views in view mode (i.e. konsole ok, but no sidebar)
+        if (toggable && hierarchical)
             continue;
 
         const QString desktopEntryName = service->desktopEntryName();
