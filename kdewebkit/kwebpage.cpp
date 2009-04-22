@@ -303,7 +303,7 @@ void KWebPage::slotDownloadRequested(const QNetworkRequest &request)
 
 KWebPage *KWebPage::createWindow(WebWindowType type)
 {
-    if (WebKitSettings::self()->windowOpenPolicy(mainFrame()->url().host()) != WebKitSettings::KJSWindowOpenDeny)
+    if (WebKitSettings::self()->windowOpenPolicy(mainFrame()->url().host()) == WebKitSettings::KJSWindowOpenDeny)
         return 0;
     return newWindow(type);
 }
