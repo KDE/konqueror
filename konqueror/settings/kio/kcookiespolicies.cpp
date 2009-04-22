@@ -337,8 +337,9 @@ void KCookiesPolicies::load()
   dlg->cbEnableCookies->setChecked (enableCookies);
   cookiesEnabled( enableCookies );
 
+  // Warning: the default values are duplicated in kcookiejar.cpp
   KCookieAdvice::Value advice = KCookieAdvice::strToAdvice (group.readEntry(
-                                               "CookieGlobalAdvice", "Ask"));
+                                               "CookieGlobalAdvice", "Accept"));
   switch (advice)
   {
     case KCookieAdvice::Accept:
