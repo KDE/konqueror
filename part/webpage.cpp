@@ -71,6 +71,7 @@ KWebPage *WebPage::newWindow(WebWindowType type)
     kDebug() << type;
     KParts::ReadOnlyPart *part = 0;
     KParts::OpenUrlArguments args;
+    args.metaData()["referrer"] = mainFrame()->url().toString();
     //if (type == WebModalDialog) //TODO: correct behavior?
         args.metaData()["forcenewwindow"] = "true";
 

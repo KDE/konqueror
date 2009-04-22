@@ -29,11 +29,14 @@
 
 #include <KDE/KUrl>
 #include <KDE/KDebug>
+#include <kparts/part.h> // Where's the Qt includes?
+#include <kparts/browserextension.h>
 
 #include <QtGui/QApplication>
 #include <QtGui/QClipboard>
 #include <QtGui/QMouseEvent>
 #include <QtWebKit/QWebFrame>
+#include <QtNetwork/QNetworkRequest>
 
 class KWebView::KWebViewPrivate
 {
@@ -174,5 +177,19 @@ void KWebView::resultSearch(KWebPage::FindFlags flags)
         flags |= KWebPage::FindCaseSensitively;
     const bool status = page()->findText(d->searchBar->searchText(), flags);
     d->searchBar->setFoundMatch(status);
+}
+
+void KWebView::load(const KUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &bargs) {
+    QNetworkRequest req;
+
+    req.setUrl(url);
+    if (args.reload()) pageAction(KWebPage::Reload)->trigger();
+    req.setRawHeader("Referer", args.metaData()["referrer"].toUtf8());
+
+    if (bargs.postData.isEmpty()) {
+        QWebView::load(req);
+    } else {
+        QWebView::load(req, QNetworkAccessManager::PostOperation, bargs.postData);
+    }
 }
 

@@ -34,6 +34,11 @@ class QWebHitTestResult;
 class KUrl;
 class QMouseEvent;
 class QWheelEvent;
+namespace KParts
+{
+class OpenUrlArguments;
+class BrowserArguments;
+}
 
 class KDE_EXPORT KWebView : public QWebView
 {
@@ -46,6 +51,11 @@ public:
 
 public Q_SLOTS:
     void setCustomContextMenu(bool show);
+
+    /**
+     * similar to load(const QNetworkRequest&, QNetworkAccessManager::Operation), but for KParts-style arguments instead.
+     */
+    void load(const KUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &bargs);
 
 Q_SIGNALS:
     void showContextMenu(QContextMenuEvent *event);
