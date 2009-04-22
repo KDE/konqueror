@@ -154,7 +154,9 @@ void WebPage::slotHandleUnsupportedContent(QNetworkReply *reply)
 {
     const KUrl url(reply->request().url());
     KParts::OpenUrlArguments args;
-    args.setMimeType(reply->header(QNetworkRequest::ContentTypeHeader).toString());
+    Q_FOREACH (const QByteArray &headerName, reply->rawHeaderList()) {
+        args.metaData().insert(QString(headerName), QString(reply->rawHeader(headerName)));
+    }
     emit m_part->browserExtension()->openUrlRequest(url, args, KParts::BrowserArguments());
 }
 

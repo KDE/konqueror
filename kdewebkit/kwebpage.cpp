@@ -95,12 +95,30 @@ class KWebPage::KWebPagePrivate
 {
 public:
     KWebPagePrivate() {}
+
+    QString getFileNameForDownload(const QNetworkRequest &request, QNetworkReply *reply) const;
 #if KDE_IS_VERSION(4, 2, 70)
     KIO::AccessManager* accessManager;
 #else
     KNetworkAccessManager* accessManager;
 #endif
 };
+
+QString KWebPage::KWebPagePrivate::getFileNameForDownload(const QNetworkRequest &request, QNetworkReply *reply) const
+{
+    QString fileName = KUrl(request.url()).fileName();
+    if (reply && reply->hasRawHeader("Content-Disposition")) { // based on code from arora, downloadmanger.cpp
+        const QString value = QLatin1String(reply->rawHeader("Content-Disposition"));
+        const int pos = value.indexOf(QLatin1String("filename="));
+        if (pos != -1) {
+            QString name = value.mid(pos + 9);
+            if (name.startsWith(QLatin1Char('"')) && name.endsWith(QLatin1Char('"')))
+                name = name.mid(1, name.size() - 2);
+            fileName = name;
+        }
+    }
+    return fileName;
+}
 
 KWebPage::KWebPage(QObject *parent)
     : QWebPage(parent), d(new KWebPage::KWebPagePrivate())
@@ -234,10 +252,10 @@ void KWebPage::slotHandleUnsupportedContent(QNetworkReply *reply)
     KParts::BrowserRun::AskSaveResult res = KParts::BrowserRun::askEmbedOrSave(
                                                 url,
                                                 reply->header(QNetworkRequest::ContentTypeHeader).toString(),
-                                                url.fileName());
+                                                d->getFileNameForDownload(reply->request(), reply));
     switch (res) {
     case KParts::BrowserRun::Save:
-        slotDownloadRequested(reply->request());
+        slotDownloadRequested(reply->request(), reply);
         return;
     case KParts::BrowserRun::Cancel:
         return;
@@ -257,10 +275,18 @@ QObject *KWebPage::createPlugin(const QString &classId, const QUrl &url, const Q
     return loader.createWidget(classId, view());
 }
 
+
 void KWebPage::slotDownloadRequested(const QNetworkRequest &request)
+{
+    slotDownloadRequested(request, 0);
+}
+
+void KWebPage::slotDownloadRequested(const QNetworkRequest &request, QNetworkReply *reply)
 {
     const KUrl url(request.url());
     kDebug() << url;
+
+    const QString fileName = d->getFileNameForDownload(request, reply);
 
     // parts of following code are based on khtml_ext.cpp
     // DownloadManager <-> konqueror integration
