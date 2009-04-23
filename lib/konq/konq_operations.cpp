@@ -247,7 +247,12 @@ void KonqOperations::doDrop( const KFileItem & destItem, const KUrl & dest, QDro
 {
     kDebug(1203) << "doDrop: dest:" << dest;
     QMap<QString, QString> metaData;
+#ifdef KURL_HAS_DECODEOPTIONS
+    // Prefer local urls if possible, to avoid problems with desktop:/ urls from other users (#184403)
+    const KUrl::List lst = KUrl::List::fromMimeData(ev->mimeData(), KUrl::List::PreferLocalUrls, &metaData);
+#else
     const KUrl::List lst = KUrl::List::fromMimeData(ev->mimeData(), &metaData);
+#endif
     if (!lst.isEmpty()) { // Are they urls ?
         //kDebug(1203) << "metaData:" << metaData.count() << "entries.";
         //QMap<QString,QString>::ConstIterator mit;
@@ -526,7 +531,7 @@ void KonqOperations::doDropFileCopy()
                     break;
                 }
             }
-            
+
             if ( !equalDestination )
                 popup.addAction(popupMoveAction);
         }
