@@ -2915,8 +2915,7 @@ void KonqMainWindow::updateClosedItemsAction()
 {
     bool available = m_pUndoManager->undoAvailable();
     m_paClosedItems->setEnabled(available);
-    if(available)
-        m_paUndo->setText(m_pUndoManager->undoText());
+    m_paUndo->setText(m_pUndoManager->undoText());
 }
 
 void KonqMainWindow::slotBack()
