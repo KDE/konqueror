@@ -380,8 +380,7 @@ void KonqClosedWindowsManager ::readConfig()
         int numTabs = configGroup.readEntry("numTabs", 0);
 
         KonqClosedWindowItem* closedWindowItem = new KonqClosedWindowItem(
-            title,  KIO::FileUndoManager::self()->newCommandSerialNumber(),
-            numTabs);
+            title,  i, numTabs);
         configGroup.copyTo(&closedWindowItem->configGroup());
         configGroup.writeEntry("foo", 0);
 

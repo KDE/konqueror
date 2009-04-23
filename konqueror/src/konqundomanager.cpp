@@ -103,18 +103,23 @@ QString KonqUndoManager::undoText() const
 {
     if (!m_closedItemList.isEmpty()) {
         const KonqClosedItem* closedItem = m_closedItemList.first();
-        if (closedItem->serialNumber() > KIO::FileUndoManager::self()->currentCommandSerialNumber()) {
+        if (!m_supportsFileUndo || !KIO::FileUndoManager::self()->undoAvailable() || closedItem->serialNumber() > KIO::FileUndoManager::self()->currentCommandSerialNumber()) {
             const KonqClosedTabItem* closedTabItem =
                 dynamic_cast<const KonqClosedTabItem *>(closedItem);
             if(closedTabItem)
                 return i18n("Und&o: Closed Tab");
             else
                 return i18n("Und&o: Closed Window");
-        }
-    } else if(KonqClosedWindowsManager::self()->undoAvailable())
+        } else
+          return KIO::FileUndoManager::self()->undoText();
+          
+    } else if(m_supportsFileUndo && KIO::FileUndoManager::self()->undoAvailable())
+        return KIO::FileUndoManager::self()->undoText();
+        
+    else if(KonqClosedWindowsManager::self()->undoAvailable())
         return i18n("Und&o: Closed Window");
-
-    return KIO::FileUndoManager::self()->undoText();
+    else
+        return i18n("Und&o");
 }
 
 void KonqUndoManager::undo()
@@ -125,7 +130,7 @@ void KonqUndoManager::undo()
         KonqClosedItem* closedItem = m_closedItemList.first();
 
         // Check what to undo
-        if (closedItem->serialNumber() > fileUndoManager->currentCommandSerialNumber()) {
+        if (!m_supportsFileUndo || !KIO::FileUndoManager::self()->undoAvailable() || closedItem->serialNumber() > fileUndoManager->currentCommandSerialNumber()) {
             undoClosedItem(0);
             return;
         }
@@ -224,10 +229,13 @@ void KonqUndoManager::slotClosedItemsActivated(QAction* action)
     undoClosedItem(index);
 }
 
-void KonqUndoManager::slotFileUndoTextChanged(const QString& text)
+void KonqUndoManager::slotFileUndoTextChanged(const QString& /*text*/)
 {
-    // I guess we can always just forward that one?
-    emit undoTextChanged(text);
+    // We will forward this call but changing the text, because if for example
+    // there' no more files to undo, the text will be "Und&o" but maybe
+    // we want it to be "Und&o: Closed Tab" if we have a closed tab that can be
+    // reopened.
+    emit undoTextChanged(undoText());
 }
 
 quint64 KonqUndoManager::newCommandSerialNumber()
