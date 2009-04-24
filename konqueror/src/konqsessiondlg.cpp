@@ -141,7 +141,7 @@ void KonqSessionDlg::slotSave()
     
     QFileInfo fileInfo(
         d->m_pModel->itemForIndex(d->m_pListView->currentIndex()).url().path());
-    QString dirpath = "sessions/" + fileInfo.fileName();
+    QString dirpath = "sessions/" + KIO::encodeFileName(fileInfo.fileName());
     
     slotDelete();
     KonqSessionManager::self()->saveCurrentSessions(dirpath);
@@ -244,7 +244,7 @@ KonqNewSessionDlg::KonqNewSessionDlg( QWidget *parent, QString sessionName )
 void KonqNewSessionDlg::slotAddSession()
 {
     QString dirpath = KStandardDirs::locateLocal("appdata", "sessions/" + 
-        d->m_pSessionName->text());
+        KIO::encodeFileName(d->m_pSessionName->text()));
     
     QDir dir(dirpath);
     if(dir.exists())
