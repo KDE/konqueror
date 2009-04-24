@@ -2886,7 +2886,7 @@ void KonqMainWindow::slotSessionsListAboutToShow()
     {
         QFileInfo fileInfo(it.next());
 
-        QAction* action = popup->addAction( fileInfo.baseName() );
+        QAction* action = popup->addAction( KIO::decodeFileName(fileInfo.baseName()) );
         action->setActionGroup(m_sessionsGroup);
         action->setData(fileInfo.filePath());
     }
