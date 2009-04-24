@@ -27,6 +27,7 @@
 #include <konqview.h>
 #include <konqtabs.h>
 #include <konqframevisitor.h>
+#include <konqsessionmanager.h>
 #include <kstandarddirs.h>
 #include <kconfiggroup.h>
 #include <QLayout>
@@ -111,6 +112,7 @@ private:
 
 void ViewMgrTest::initTestCase()
 {
+    KonqSessionManager::self()->disableAutosave();
     QCOMPARE(KGlobal::mainComponent().componentName(), QString("konqueror"));
     QCOMPARE(KonqSettings::mmbOpensTab(), true);
     QCOMPARE(KonqSettings::popupsWithinTabs(), false);

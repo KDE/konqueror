@@ -20,6 +20,7 @@
 #include <konqcloseditem.h>
 #include <qtest_kde.h>
 #include <konqundomanager.h>
+#include <konqsessionmanager.h>
 
 class UndoManagerTest : public QObject
 {
@@ -37,6 +38,7 @@ QTEST_KDEMAIN( UndoManagerTest, GUI )
 void UndoManagerTest::initTestCase()
 {
     // Make sure we start clean
+    KonqSessionManager::self()->disableAutosave();
     KonqUndoManager manager(0);
     QSignalSpy spyUndoAvailable(&manager, SIGNAL(undoAvailable(bool)) );
     QVERIFY(spyUndoAvailable.isValid());
