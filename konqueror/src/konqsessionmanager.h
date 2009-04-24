@@ -27,6 +27,7 @@
 #include <QString>
 
 #include <kconfig.h>
+#include <konqprivate_export.h>
 
 class QDBusMessage;
 class KonqMainWindow;
@@ -37,7 +38,7 @@ class KonqMainWindow;
  *  - Restore a saved session if konqueror crashed
  *  - Restore a given session manually
  */
-class KonqSessionManager : public QObject {
+class KONQ_TESTS_EXPORT KonqSessionManager : public QObject {
     Q_OBJECT
 public:
     friend class KonqSessionManagerPrivate;
