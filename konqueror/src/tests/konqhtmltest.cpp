@@ -29,6 +29,7 @@
 #include <konqmainwindow.h>
 #include <konqviewmanager.h>
 #include <konqview.h>
+#include <konqsessionmanager.h>
 
 #include <QObject>
 
@@ -38,6 +39,7 @@ class KonqHtmlTest : public QObject
 private Q_SLOTS:
     void initTestCase()
     {
+        KonqSessionManager::self()->disableAutosave();
         //qRegisterMetaType<KonqView *>("KonqView*");
     }
     void cleanupTestCase()
