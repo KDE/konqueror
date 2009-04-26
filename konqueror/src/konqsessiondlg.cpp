@@ -176,7 +176,7 @@ void KonqSessionDlg::slotRename(KUrl dirpathTo)
     
     dirpathTo = (dirpathTo == KUrl()) ? dirpathFrom : dirpathTo;
     
-    KIO::RenameDialog dlg(this, i18n("Rename session"), dirpathFrom,
+    KIO::RenameDialog dlg(this, i18n("Rename Session"), dirpathFrom,
         dirpathTo, KIO::RenameDialog_Mode(0));
         
     if(dlg.exec() == KIO::R_RENAME)
