@@ -117,7 +117,7 @@ KonqView* KonqViewManager::splitView( KonqView* currentView,
   assert( splitFrame );
 
   KonqFrameContainerBase* parentContainer = splitFrame->parentContainer();
-  
+
   // We need the sizes of the views in the parentContainer to restore these after the new container is inserted.
   // To access the sizes via QSplitter::sizes(), a pointer to a KonqFrameContainerBase is not sufficient.
   // We need a pointer to a KonqFrameContainer which is derived from QSplitter.
