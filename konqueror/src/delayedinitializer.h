@@ -27,7 +27,7 @@ class DelayedInitializer : public QObject
 {
     Q_OBJECT
 public:
-    DelayedInitializer( int eventType, QObject *parent, const char *name = 0 );
+    DelayedInitializer(int eventType, QObject *parent);
 
 protected:
     virtual bool eventFilter( QObject *receiver, QEvent *event );
