@@ -1441,17 +1441,22 @@ public:
             className = "NoWidget!";
         else
             className = frame->part()->widget()->metaObject()->className();
-        kDebug(1202) << m_spaces << "KonqFrame" << frame
-                     << "visible=" << frame->isVisible()
+        kDebug(1202) << m_spaces << frame
+                     << "parent=" << frame->parentContainer()
+                     << (frame->isVisible() ? "visible" : "invisible")
                      << "containing view" << frame->childView()
                      << "and part" << frame->part()
                      << "whose widget is a" << className;
         return true;
     }
     virtual bool visit(KonqFrameContainer* container) {
-        kDebug(1202) << m_spaces << "KonqFrameContainer" << container
-                     << "visible=" << container->isVisible()
+        kDebug(1202) << m_spaces << container
+                     << (container->isVisible() ? "visible" : "invisible")
+                     << (container->orientation() == Qt::Horizontal ? "horizontal" : "vertical")
+                     << "sizes=" << container->sizes()
+                     << "parent=" << container->parentContainer()
                      << "activeChild=" << container->activeChild();
+
         if (!container->activeChild())
             kDebug(1202) << "WARNING:" << container << "has a null active child!";
 
