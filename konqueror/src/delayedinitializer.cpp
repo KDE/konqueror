@@ -20,13 +20,12 @@
 
 #include "delayedinitializer.h"
 #include <QtCore/QTimer>
-//Added by qt3to4:
+#include <kdebug.h>
 #include <QtCore/QEvent>
 
-DelayedInitializer::DelayedInitializer( int eventType, QObject *parent, const char *name )
+DelayedInitializer::DelayedInitializer( int eventType, QObject *parent )
     : QObject( parent ), m_eventType( eventType ), m_signalEmitted( false )
 {
-    setObjectName( name );
     parent->installEventFilter( this );
 }
 

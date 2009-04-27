@@ -3012,7 +3012,7 @@ void KonqMainWindow::initCombo()
   if ( !bookmarkCompletionInitialized )
   {
       bookmarkCompletionInitialized = true;
-      DelayedInitializer *initializer = new DelayedInitializer( QEvent::KeyPress, m_combo->lineEdit() );
+      DelayedInitializer *initializer = new DelayedInitializer( QEvent::KeyPress, m_combo );
       connect( initializer, SIGNAL( initialize() ), this, SLOT( bookmarksIntoCompletion() ) );
   }
 }
