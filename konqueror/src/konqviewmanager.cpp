@@ -550,6 +550,15 @@ void KonqViewManager::removeView( KonqView *view )
 
     static_cast<KonqFrameContainer*>(parentContainer)->setAboutToBeDeleted();
 
+    // If the grand parent is a KonqFrameContainer, we need the sizes of the views inside it to restore these after
+    // the parent is replaced. To access the sizes via QSplitter::sizes(), a pointer to a KonqFrameContainerBase
+    //  is not sufficient. We need a pointer to a KonqFrameContainer which is derived from QSplitter.
+    KonqFrameContainer* grandParentKonqFrameContainer = dynamic_cast<KonqFrameContainer*> ( grandParentContainer );
+    QList<int> grandParentSplitterSizes;
+    if ( grandParentKonqFrameContainer ) {
+      grandParentSplitterSizes = grandParentKonqFrameContainer->sizes();
+    }
+
     grandParentContainer->replaceChildFrame(parentContainer, otherFrame);
 
     //kDebug(1202) << "--- Removing otherFrame from parentContainer";
@@ -560,6 +569,10 @@ void KonqViewManager::removeView( KonqView *view )
     delete view; // This deletes the view, which deletes the part, which deletes its widget
 
     delete parentContainer;
+
+    if ( grandParentKonqFrameContainer ) {
+      grandParentKonqFrameContainer->setSizes( grandParentSplitterSizes );
+    }
 
     grandParentContainer->setActiveChild( otherFrame );
     grandParentContainer->activateChild();
