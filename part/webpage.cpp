@@ -80,7 +80,11 @@ KWebPage *WebPage::newWindow(WebWindowType type)
                                                      KParts::WindowArgs(), &part);
     WebKitPart *webKitPart = qobject_cast<WebKitPart*>(part);
     if (!webKitPart) {
-        kDebug() << "got NOT a WebKitPart but a" << part->metaObject()->className();
+        if (part)
+            kDebug() << "got NOT a WebKitPart but a" << part->metaObject()->className();
+        else
+            kDebug() << "part is null";
+
         return 0;
     }
     return webKitPart->view()->page();
