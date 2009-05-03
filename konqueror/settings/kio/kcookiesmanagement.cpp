@@ -238,7 +238,7 @@ void KCookiesManagement::clearCookieDetails()
 
 QString KCookiesManagement::quickHelp() const
 {
-  return i18n("<h1>Cookies Management Quick Help</h1>" );
+  return i18n("<h1>Cookie Management Quick Help</h1>" );
 }
 
 void KCookiesManagement::getDomains()
