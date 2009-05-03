@@ -29,10 +29,14 @@ KIOPreferences::KIOPreferences(QWidget *parent, const QVariantList &)
     QVBoxLayout* mainLayout = new QVBoxLayout( this );
     mainLayout->setMargin(0);
     gb_Timeout = new QGroupBox( i18n("Timeout Values"), this );
-    gb_Timeout->setWhatsThis( i18n("Here you can set timeout values. "
-                                   "You might want to tweak them if your "
-                                   "connection is very slow. The maximum "
-                                   "allowed value is %1 seconds.", MAX_TIMEOUT_VALUE));
+    gb_Timeout->setWhatsThis( i18np("Here you can set timeout values. "
+                                    "You might want to tweak them if your "
+                                    "connection is very slow. The maximum "
+                                    "allowed value is 1 second." ,
+                                    "Here you can set timeout values. "
+                                    "You might want to tweak them if your "
+                                    "connection is very slow. The maximum "
+                                    "allowed value is %1 seconds.", MAX_TIMEOUT_VALUE));
     mainLayout->addWidget( gb_Timeout );
 
     QVBoxLayout* timeoutLayout = new QVBoxLayout(gb_Timeout);
