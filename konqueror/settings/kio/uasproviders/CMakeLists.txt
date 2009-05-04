@@ -7,9 +7,6 @@ install(FILES
     ie60onwinnt51.desktop
     ie60oncurrent.desktop
     ie70onwinnt51.desktop
-    mozonwinxp.desktop
-    mozoncurrent12.desktop
-    mozoncurrent.desktop
     nn301oncurrent.desktop
     nn475onwin95.desktop
     nn475oncurrent.desktop
