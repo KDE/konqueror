@@ -22,8 +22,10 @@
 
 #include <kdialog.h>
 
+class QTimer;
 class QTreeView;
 class KActionCollection;
+class KLineEdit;
 class KonqHistoryModel;
 class KonqHistoryProxyModel;
 
@@ -44,12 +46,16 @@ private slots:
     void slotClearHistory();
     void slotPreferences();
     void slotSortChange(QAction *action);
+    void slotFilterTextChanged(const QString &text);
+    void slotTimerTimeout();
 
 private:
     QTreeView *m_treeView;
     KActionCollection *m_collection;
     KonqHistoryModel *m_historyModel;
     KonqHistoryProxyModel *m_historyProxyModel;
+    KLineEdit *m_searchLineEdit;
+    QTimer *m_searchTimer;
 };
 
 #endif // KONQ_HISTORYDIALOG_H
