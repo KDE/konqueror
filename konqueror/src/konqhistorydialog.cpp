@@ -130,15 +130,19 @@ KonqHistoryDialog::KonqHistoryDialog(QWidget *parent)
     mainLayout->addWidget(toolBar);
     mainLayout->addWidget(m_searchLineEdit);
     mainLayout->addWidget(m_treeView);
+
+    restoreDialogSize(KGlobal::config()->group("History Dialog"));
 }
 
 KonqHistoryDialog::~KonqHistoryDialog()
 {
+    KConfigGroup group(KGlobal::config(), "History Dialog");
+    saveDialogSize(group);
 }
 
 QSize KonqHistoryDialog::sizeHint() const
 {
-    return QSize(300, 400);
+    return QSize(500, 400);
 }
 
 void KonqHistoryDialog::slotContextMenu(const QPoint &pos)
