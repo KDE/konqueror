@@ -26,12 +26,17 @@
 #include "konqhistorysettings.h"
 #include "konqmisc.h"
 
+#include <QtCore/QTimer>
 #include <QtGui/QMenu>
+#include <QtGui/QToolBar>
+#include <QtGui/QToolButton>
 #include <QtGui/QTreeView>
+#include <QtGui/QVBoxLayout>
 
 #include <kaction.h>
 #include <kactioncollection.h>
 #include <kguiitem.h>
+#include <klineedit.h>
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <krun.h>
@@ -41,6 +46,7 @@ K_GLOBAL_STATIC_WITH_ARGS(KonqHistorySettings, s_settings, (0))
 
 KonqHistoryDialog::KonqHistoryDialog(QWidget *parent)
     : KDialog(parent)
+    , m_searchTimer(0)
 {
     setCaption(i18n("History"));
     setButtons(KDialog::Close);
@@ -49,17 +55,20 @@ KonqHistoryDialog::KonqHistoryDialog(QWidget *parent)
         s_settings->readSettings(true);
     }
 
-    m_treeView = new QTreeView();
+    QVBoxLayout *mainLayout = new QVBoxLayout(mainWidget());
+    mainLayout->setMargin(0);
+
+    m_treeView = new QTreeView(mainWidget());
     m_treeView->setContextMenuPolicy(Qt::CustomContextMenu);
     m_treeView->setHeaderHidden(true);
     m_historyProxyModel = new KonqHistoryProxyModel(s_settings, m_treeView);
     connect(m_treeView, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(slotContextMenu(QPoint)));
     m_historyProxyModel->setDynamicSortFilter(true);
+    m_historyProxyModel->setFilterCaseSensitivity(Qt::CaseInsensitive);
     m_historyModel = new KonqHistoryModel(m_historyProxyModel);
     m_treeView->setModel(m_historyProxyModel);
     m_historyProxyModel->setSourceModel(m_historyModel);
     m_treeView->model()->sort(0);
-    setMainWidget(m_treeView);
 
     m_collection = new KActionCollection(this);
     QAction *action = m_collection->addAction("open_new");
@@ -96,6 +105,31 @@ KonqHistoryDialog::KonqHistoryDialog(QWidget *parent)
 
     sortGroup->actions().at(s_settings->m_sortsByName ? 0 : 1)->setChecked(true);
     connect(sortGroup, SIGNAL(triggered(QAction *)), this, SLOT(slotSortChange(QAction *)));
+
+    QToolBar *toolBar = new QToolBar(mainWidget());
+    toolBar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    QToolButton *sortButton = new QToolButton(toolBar);
+    sortButton->setText(i18nc("@action:inmenu Parent of 'By Name' and 'By Date'", "Sort"));
+    sortButton->setIcon(KIcon("view-sort-ascending"));
+    sortButton->setPopupMode(QToolButton::InstantPopup);
+    sortButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    QMenu *sortMenu = new QMenu(sortButton);
+    sortMenu->addAction(m_collection->action("byName"));
+    sortMenu->addAction(m_collection->action("byDate"));
+    sortButton->setMenu(sortMenu);
+    toolBar->addWidget(sortButton);
+    toolBar->addSeparator();
+    toolBar->addAction(m_collection->action("preferences"));
+
+    m_searchLineEdit = new KLineEdit(mainWidget());
+    m_searchLineEdit->setClickMessage(i18n("Search in history"));
+    m_searchLineEdit->setClearButtonShown(true);
+
+    connect(m_searchLineEdit, SIGNAL(textChanged(QString)), this, SLOT(slotFilterTextChanged(QString)));
+
+    mainLayout->addWidget(toolBar);
+    mainLayout->addWidget(m_searchLineEdit);
+    mainLayout->addWidget(m_treeView);
 }
 
 KonqHistoryDialog::~KonqHistoryDialog()
@@ -197,6 +231,22 @@ void KonqHistoryDialog::slotSortChange(QAction *action)
         break;
     }
     s_settings->applySettings();
+}
+
+void KonqHistoryDialog::slotFilterTextChanged(const QString &text)
+{
+    Q_UNUSED(text);
+    if (!m_searchTimer) {
+        m_searchTimer = new QTimer(this);
+        m_searchTimer->setSingleShot(true);
+        connect(m_searchTimer, SIGNAL(timeout()), this, SLOT(slotTimerTimeout()));
+    }
+    m_searchTimer->start(600);
+}
+
+void KonqHistoryDialog::slotTimerTimeout()
+{
+    m_historyProxyModel->setFilterFixedString(m_searchLineEdit->text());
 }
 
 #include "konqhistorydialog.moc"
