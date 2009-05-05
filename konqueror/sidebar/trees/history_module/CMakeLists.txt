@@ -7,21 +7,10 @@ include_directories(
 
 
 ########### next target ###############
-if(WIN32)
-set(konq_sidebartree_history_SRCS history_module.cpp history_item.cpp history_settings.cpp )
-else(WIN32)
-set(konq_sidebartree_history_SRCS history_module.cpp history_item.cpp history_settings.cpp ${libkonq_sidebar_tree_SRCS} )
-endif(WIN32)
 
-kde4_add_plugin(konq_sidebartree_history ${konq_sidebartree_history_SRCS})
-
-if(WIN32)
-# please remove next lib and add the sources here for 4.1 if cmake > 2.6 is available
-target_link_libraries(konq_sidebartree_history sidebar_tree )
-endif(WIN32)
-target_link_libraries(konq_sidebartree_history  konqsidebarplugin konquerorprivate konq 
-   ${KDE4_KDEUI_LIBS} ${KDE4_KPARTS_LIBS} ${KDE4_KDE3SUPPORT_LIBS})
-
+# dummy module
+kde4_add_plugin(konq_sidebartree_history dummy.cpp)
+target_link_libraries(konq_sidebartree_history ${QT_QT3SUPPORT_LIBRARY})
 install(TARGETS konq_sidebartree_history  DESTINATION ${PLUGIN_INSTALL_DIR})
 
 
