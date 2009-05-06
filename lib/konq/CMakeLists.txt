@@ -52,6 +52,7 @@ install( FILES
  konq_popupmenu.h
  konq_popupmenuinformation.h
  konq_popupmenuplugin.h
+ konq_dndpopupmenuplugin.h
  knewmenu.h
  konq_menuactions.h
  # konq_copytomenu.h - anyone needs it?
