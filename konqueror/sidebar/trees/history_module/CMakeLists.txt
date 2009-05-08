@@ -10,7 +10,7 @@ include_directories(
 
 # dummy module
 kde4_add_plugin(konq_sidebartree_history dummy.cpp)
-target_link_libraries(konq_sidebartree_history ${QT_QT3SUPPORT_LIBRARY})
+target_link_libraries(konq_sidebartree_history ${QT_QT3SUPPORT_LIBRARY} ${QT_QTCORE_LIBRARY})
 install(TARGETS konq_sidebartree_history  DESTINATION ${PLUGIN_INSTALL_DIR})
 
 
