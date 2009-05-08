@@ -42,25 +42,25 @@ KIOPreferences::KIOPreferences(QWidget *parent, const QVariantList &)
     QVBoxLayout* timeoutLayout = new QVBoxLayout(gb_Timeout);
     sb_socketRead = new KIntNumInput( this );
     sb_socketRead->setSuffix( i18n( " sec" ) );
-    sb_socketRead->setLabel( i18n( "Soc&ket read:" ), Qt::AlignVCenter);
+    sb_socketRead->setLabel( i18n( "Soc&ket read:" ), Qt::AlignVCenter | Qt::AlignRight);
     connect(sb_socketRead, SIGNAL(valueChanged(int)), SLOT(configChanged()));
     timeoutLayout->addWidget(sb_socketRead);
 
     sb_proxyConnect = new KIntNumInput( sb_socketRead, 0, this );
     sb_proxyConnect->setSuffix( i18n( " sec" ) );
-    sb_proxyConnect->setLabel( i18n( "Pro&xy connect:" ), Qt::AlignVCenter);
+    sb_proxyConnect->setLabel( i18n( "Pro&xy connect:" ), Qt::AlignVCenter | Qt::AlignRight);
     connect(sb_proxyConnect, SIGNAL(valueChanged(int)), SLOT(configChanged()));
     timeoutLayout->addWidget(sb_proxyConnect);
 
     sb_serverConnect = new KIntNumInput( sb_proxyConnect, 0, this );
     sb_serverConnect->setSuffix( i18n( " sec" ) );
-    sb_serverConnect->setLabel( i18n("Server co&nnect:"), Qt::AlignVCenter);
+    sb_serverConnect->setLabel( i18n("Server co&nnect:"), Qt::AlignVCenter | Qt::AlignRight);
     connect(sb_serverConnect, SIGNAL(valueChanged(int)), SLOT(configChanged()));
     timeoutLayout->addWidget(sb_serverConnect);
 
     sb_serverResponse = new KIntNumInput( sb_serverConnect, 0, this );
     sb_serverResponse->setSuffix( i18n( " sec" ) );
-    sb_serverResponse->setLabel( i18n("&Server response:"), Qt::AlignVCenter);
+    sb_serverResponse->setLabel( i18n("&Server response:"), Qt::AlignVCenter | Qt::AlignRight);
     connect(sb_serverResponse, SIGNAL(valueChanged(int)), SLOT(configChanged()));
     timeoutLayout->addWidget(sb_serverResponse);
 
