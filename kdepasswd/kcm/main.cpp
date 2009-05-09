@@ -78,6 +78,10 @@ KCMUserAccount::KCMUserAccount( QWidget *parent, const QVariantList &)
 	_kes = new KEMailSettings();
 
 	_mw->lblUsername->setText( _ku->loginName() );
+	QFont font( _mw->lblUsername->font() );
+	font.setPointSizeF( font.pointSizeF()  * 1.41 );
+	font.setBold( true );
+	_mw->lblUsername->setFont( font );
 	_mw->lblUID->setText( QString().number(_ku->uid()) );
 
 	KAboutData *about = new KAboutData("kcm_useraccount", 0,

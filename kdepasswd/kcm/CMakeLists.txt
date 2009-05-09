@@ -9,8 +9,6 @@ kde4_add_ui_files(kcm_useraccount_PART_SRCS
     main_widget.ui
     faceDlg.ui)
 
-kde4_add_ui_files(kcm_useraccount_PART_SRCS main_widget.ui)
-
 kde4_add_kcfg_files(kcm_useraccount_PART_SRCS settings.kcfgc pass.kcfgc)
 
 kde4_add_plugin(kcm_useraccount ${kcm_useraccount_PART_SRCS})
