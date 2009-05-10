@@ -81,7 +81,7 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
 
     m_pFormCompletionCheckBox->setWhatsThis( i18n( "If this box is checked, Konqueror will remember"
                   " the data you enter in web forms and suggest it in similar fields for all forms." ) );
-    connect(m_pFormCompletionCheckBox, SIGNAL(triggered(bool)), SLOT(changed()));
+    connect(m_pFormCompletionCheckBox, SIGNAL(toggled(bool)), SLOT(changed()));
 
     m_pMaxFormCompletionItems = new KIntNumInput(this);
     m_pMaxFormCompletionItems->setRange( 0, 100 );
