@@ -24,23 +24,25 @@
 #include <KDE/KIconLoader>
 
 #include <QtCore/QEvent>
+#include <QtGui/QMenuBar>
 #include <QtGui/QStyle>
 #include <QtGui/QStyleOptionMenuItem>
 
-KonqAnimatedLogo::KonqAnimatedLogo(QWidget *menuBar, QWidget *parent)
+KonqAnimatedLogo::KonqAnimatedLogo(QWidget *parent)
     : KAnimatedButton(parent)
-    , m_menuBar(menuBar)
 {
     setAutoRaise(true);
     setFocusPolicy(Qt::NoFocus);
     setToolButtonStyle(Qt::ToolButtonIconOnly);
     setAnimatedLogoSize(maxThrobberHeight());
-    m_menuBar->installEventFilter(this);
+    if (qobject_cast<QMenuBar *>(parent))
+        parent->installEventFilter(this);
 }
 
 KonqAnimatedLogo::~KonqAnimatedLogo()
 {
-    m_menuBar->removeEventFilter(this);
+    if (parentWidget())
+        parentWidget()->removeEventFilter(this);
 }
 
 QSize KonqAnimatedLogo::sizeHint() const
@@ -48,9 +50,21 @@ QSize KonqAnimatedLogo::sizeHint() const
     return m_size;
 }
 
+void KonqAnimatedLogo::changeEvent(QEvent *event)
+{
+    KAnimatedButton::changeEvent(event);
+    if (event->type() == QEvent::ParentAboutToChange) {
+        if (parentWidget())
+            parentWidget()->removeEventFilter(this);
+    } else if (event->type() == QEvent::ParentChange) {
+        if (qobject_cast<QMenuBar *>(parentWidget()))
+            parentWidget()->installEventFilter(this);
+    }
+}
+
 bool KonqAnimatedLogo::eventFilter(QObject *watched, QEvent *event)
 {
-    if (qobject_cast<QWidget *>(watched) == m_menuBar) {
+    if (qobject_cast<QWidget *>(watched) == parentWidget()) {
         if (event->type() == QEvent::StyleChange || event->type() == QEvent::FontChange
             || event->type() == QEvent::ApplicationFontChange) {
             // make sure the logo is resized before the menu bar gets the
@@ -63,16 +77,20 @@ bool KonqAnimatedLogo::eventFilter(QObject *watched, QEvent *event)
 
 int KonqAnimatedLogo::maxThrobberHeight()
 {
+    QMenuBar *menuBar = qobject_cast<QMenuBar *>(parentWidget());
+    if (!menuBar)
+        return 22;
+
     // This comes from QMenuBar::sizeHint and QMenuBarPrivate::calcActionRects
-    const QFontMetrics fm = m_menuBar->fontMetrics();
+    const QFontMetrics fm = menuBar->fontMetrics();
     QSize sz(100, fm.height());
     //let the style modify the above size..
     QStyleOptionMenuItem opt;
     opt.fontMetrics = fm;
     opt.state = QStyle::State_Enabled;
-    opt.menuRect = m_menuBar->rect();
+    opt.menuRect = menuBar->rect();
     opt.text = "dummy";
-    sz = m_menuBar->style()->sizeFromContents(QStyle::CT_MenuBarItem, &opt, sz, m_menuBar);
+    sz = menuBar->style()->sizeFromContents(QStyle::CT_MenuBarItem, &opt, sz, menuBar);
     //kDebug() << "maxThrobberHeight=" << sz.height();
     return sz.height();
 }
