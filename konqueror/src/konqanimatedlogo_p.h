@@ -34,19 +34,19 @@ public:
      *
      * The button is not added to the menu bar.
      */
-    KonqAnimatedLogo(QWidget *menuBar, QWidget *parent = 0);
+    KonqAnimatedLogo(QWidget *parent = 0);
     ~KonqAnimatedLogo();
 
     QSize sizeHint() const;
 
 protected:
     bool eventFilter(QObject *watched, QEvent *event);
+    void changeEvent(QEvent *event);
 
 private:
     int maxThrobberHeight();
     void setAnimatedLogoSize(int buttonHeight);
 
-    QWidget *m_menuBar;
     QSize m_size;
 };
 

@@ -3744,7 +3744,7 @@ void KonqMainWindow::initActions()
   connect(m_paStop, SIGNAL(triggered()), SLOT( slotStop() ));
   m_paStop->setShortcut(Qt::Key_Escape);
 
-  m_paAnimatedLogo = new KonqAnimatedLogo( menuBar(), this );
+  m_paAnimatedLogo = new KonqAnimatedLogo( menuBar() );
   menuBar()->setCornerWidget(m_paAnimatedLogo);
   m_paAnimatedLogo->setIcons("process-working-kde");
 
