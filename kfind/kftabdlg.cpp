@@ -841,12 +841,12 @@ void KfindTabWidget::fixLayout()
     toDate->setEnabled(false);
     andL->setEnabled(false);
     timeBox->setEnabled(false);
-    for(i=0; i<2; i++)
+    for(i=0; i<2; ++i)
       rb[i]->setEnabled(false);
     betweenType->setEnabled(false);
   }
   else {
-    for(i=0; i<2; i++)
+    for(i=0; i<2; ++i)
       rb[i]->setEnabled(true);
 
     fromDate->setEnabled(rb[0]->isChecked());
