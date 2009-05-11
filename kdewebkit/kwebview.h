@@ -44,9 +44,19 @@ class KDE_EXPORT KWebView : public QWebView
 {
     Q_OBJECT
 public:
-    KWebView(QWidget *parent = 0);
+    explicit KWebView(QWidget *parent = 0);
     ~KWebView();
-    KWebPage *page();
+    /**
+     * This method returns the current KWebPage, if there is none, one will be created.
+     * It calles virtual method setNewPage() to create new (K)WebPage, so
+     * of you reimplements KWebPage ypu should reimplement this setNewPage()
+     * @see setPage()
+     * @see setNewPage()
+     * @short Getter for KWebPage
+     * @return current KWebPage
+     */
+    KWebPage *page() const;
+    void setPage(KWebPage *page);
     QWidget *searchBar();
 
 public Q_SLOTS:
@@ -63,6 +73,18 @@ Q_SIGNALS:
     void openUrlInNewTab(const KUrl &url);
 
 protected:
+    /**
+     * Creates new (K)WebPage. This virtual method is called by page() to create new (K)WebPage if necessary.
+     * Reimplement this method if you reimplement KWebPage, e.g:
+     * @code
+     * void MyWebView::setNewPage()
+     * {
+     *     setPage(new MyWebPage(this));
+     * }
+     * @endcode
+     * @see page()
+     */
+    virtual void setNewPage();
     void contextMenuEvent(QContextMenuEvent *event);
     void wheelEvent(QWheelEvent *event);
     void mousePressEvent(QMouseEvent *event);

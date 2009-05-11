@@ -43,6 +43,7 @@ public:
     QWebHitTestResult contextMenuResult() const;
 
 protected:
+    void setNewPage();
     void contextMenuEvent(QContextMenuEvent *e);
     void selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &selectGroupMap);
     void linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &linkGroupMap);

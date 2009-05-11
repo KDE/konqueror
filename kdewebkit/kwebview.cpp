@@ -46,19 +46,20 @@ public:
     , keyboardModifiers(Qt::NoModifier)
     , pressedButtons(Qt::NoButton)
     , searchBar(0)
+    , page(0)
     {}
+    
     bool customContextMenu;
     Qt::KeyboardModifiers keyboardModifiers;
     Qt::MouseButtons pressedButtons;
     KDEPrivate::SearchBar *searchBar;
+    KWebPage *page;
 };
 
 
 KWebView::KWebView(QWidget *parent)
     : QWebView(parent), d(new KWebView::KWebViewPrivate())
-{
-    setPage(new KWebPage(this));
-}
+{}
 
 KWebView::~KWebView()
 {
@@ -79,13 +80,24 @@ void KWebView::setCustomContextMenu(bool show)
     d->customContextMenu = show;
 }
 
-KWebPage *KWebView::page()
+KWebPage *KWebView::page() const
 {
-    KWebPage *webPage = qobject_cast<KWebPage*>(QWebView::page());
-    if (!webPage) {
-        return 0;
+    if (!d->page) {
+        KWebView *that = const_cast<KWebView *>(this);
+        that->setNewPage();
     }
-    return webPage;
+    return d->page;
+}
+
+void KWebView::setNewPage()
+{
+    setPage(new KWebPage(this));
+}
+
+void KWebView::setPage(KWebPage *page)
+{
+    d->page = page;
+    QWebView::setPage(page);
 }
 
 void KWebView::wheelEvent(QWheelEvent *event)

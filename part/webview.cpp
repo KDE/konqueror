@@ -71,7 +71,6 @@ WebView::WebView(WebKitPart *wpart, QWidget *parent)
     : KWebView(parent), d(new WebViewPrivate(this))
 {
     d->part = wpart;
-    setPage(new WebPage(wpart, this));
     d->actionCollection = new KActionCollection(this);
     setAcceptDrops(true);
 }
@@ -84,6 +83,11 @@ WebView::~WebView()
 QWebHitTestResult WebView::contextMenuResult() const
 {
     return d->result;
+}
+
+void WebView::setNewPage()
+{
+    setPage(new WebPage(d->part, this));
 }
 
 void WebView::contextMenuEvent(QContextMenuEvent *e)
