@@ -157,11 +157,11 @@ WebKitSettings::KJavaScriptAdvice WebKitSettings::strToAdvice(const QString& _st
 const char* WebKitSettings::adviceToStr(KJavaScriptAdvice _advice)
 {
     switch( _advice ) {
-    case KJavaScriptAccept: return I18N_NOOP("Accept");
-    case KJavaScriptReject: return I18N_NOOP("Reject");
-    default: return 0;
+        case KJavaScriptAccept: return I18N_NOOP("Accept");
+        case KJavaScriptReject: return I18N_NOOP("Reject");
+        default: return 0;
     }
-        return 0;
+    return 0;
 }
 
 
@@ -195,7 +195,8 @@ void WebKitSettings::splitDomainAdvice(const QString& configStr, QString &domain
 }
 
 void WebKitSettings::readDomainSettings(const KConfigGroup &config, bool reset,
-	bool global, KPerDomainSettings &pd_settings) {
+                                        bool global, KPerDomainSettings &pd_settings)
+{
   QString jsPrefix = global ? QString()
   				: QString::fromLatin1("javascript.");
   QString javaPrefix = global ? QString()
@@ -510,19 +511,19 @@ void WebKitSettings::init( KConfig * config, bool reset )
     // merge all domains into one list
     QMap<QString,int> domainList;	// why can't Qt have a QSet?
     for (unsigned i = 0; i < sizeof domain_keys/sizeof domain_keys[0]; ++i) {
-      if ( reset || cgJava.hasKey(domain_keys[i]) ) {
-        if (i == 0) check_old_ecma_settings = false;
-	else if (i == 1) check_old_java_settings = false;
-        const QStringList dl = cgJava.readEntry( domain_keys[i], QStringList() );
-	const QMap<QString,int>::Iterator notfound = domainList.end();
-	QStringList::ConstIterator it = dl.begin();
-	const QStringList::ConstIterator itEnd = dl.end();
-	for (; it != itEnd; ++it) {
-	  const QString domain = (*it).toLower();
-	  QMap<QString,int>::Iterator pos = domainList.find(domain);
-	  if (pos == notfound) domainList.insert(domain,0);
-	}/*next it*/
-      }
+        if (reset || cgJava.hasKey(domain_keys[i])) {
+            if (i == 0) check_old_ecma_settings = false;
+            else if (i == 1) check_old_java_settings = false;
+            const QStringList dl = cgJava.readEntry( domain_keys[i], QStringList() );
+            const QMap<QString,int>::Iterator notfound = domainList.end();
+            QStringList::ConstIterator it = dl.begin();
+            const QStringList::ConstIterator itEnd = dl.end();
+            for (; it != itEnd; ++it) {
+                const QString domain = (*it).toLower();
+                QMap<QString,int>::Iterator pos = domainList.find(domain);
+                if (pos == notfound) domainList.insert(domain,0);
+            }/*next it*/
+        }
     }/*next i*/
 
     if (reset)
