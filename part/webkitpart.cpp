@@ -113,16 +113,29 @@ void WebKitPart::initAction()
     actionCollection()->addAction("printFrame", action);
     connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(printFrame()));
 
-    action = new KAction(KIcon("format-font-size-more"), i18n("Enlarge Font"), this);
-    actionCollection()->addAction("incFontSizes", action);
+    action = new KAction(KIcon("zoom-in"), i18n("Zoom In"), this);
+    actionCollection()->addAction("zoomIn", action);
     action->setShortcut(KShortcut("CTRL++; CTRL+="));
     connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(zoomIn()));
 
-    action = new KAction(KIcon("format-font-size-less"), i18n("Shrink Font"), this);
-    actionCollection()->addAction("decFontSizes", action);
-    action->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Minus));
+    action = new KAction(KIcon("zoom-out"), i18n("Zoom Out"), this);
+    actionCollection()->addAction("zoomOut", action);
+    action->setShortcut(KShortcut("CTRL+-; CTRL+_"));
     connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(zoomOut()));
 
+    action = new KAction(KIcon("zoom-original"), i18n("Actual Size"), this);
+    actionCollection()->addAction("zoomNormal", action);
+    action->setShortcut(KShortcut("CTRL+0"));
+    connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(zoomNormal()));
+#if QT_VERSION >= 0x040500
+    action = new KAction(i18n("Zoom Text Only"), this);
+    action->setCheckable(true);
+    KConfigGroup cgHtml(KGlobal::config(), "HTML Settings");
+    bool zoomTextOnly = cgHtml.readEntry("ZoomTextOnly", false);
+    action->setChecked(zoomTextOnly);
+    actionCollection()->addAction("zoomTextOnly", action);
+    connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(toogleZoomTextOnly()));
+#endif
     action = actionCollection()->addAction(KStandardAction::SelectAll, "selectAll",
                                            m_browserExtension, SLOT(slotSelectAll()));
     action->setShortcutContext(Qt::WidgetShortcut);
@@ -297,19 +310,40 @@ void WebKitBrowserExtension::searchProvider()
 
 void WebKitBrowserExtension::zoomIn()
 {
-#if QT_VERSION < 0x040500
-    part->view()->setTextSizeMultiplier(part->view()->textSizeMultiplier() * 2);
+#if QT_VERSION >= 0x040500
+    part->view()->setZoomFactor(part->view()->zoomFactor() + 0.1);
 #else
-    part->view()->setZoomFactor(part->view()->zoomFactor() * 1.25);
+    part->view()->setTextSizeMultiplier(part->view()->textSizeMultiplier() + 0.1);
 #endif
 }
 
 void WebKitBrowserExtension::zoomOut()
 {
-#if QT_VERSION < 0x040500
-    part->view()->setTextSizeMultiplier(part->view()->textSizeMultiplier() * 2);
+#if QT_VERSION >= 0x040500
+    part->view()->setZoomFactor(part->view()->zoomFactor() - 0.1);
 #else
-    part->view()->setZoomFactor(part->view()->zoomFactor() * 0.8);
+    part->view()->setTextSizeMultiplier(part->view()->textSizeMultiplier() - 0.1);
+#endif
+}
+
+void WebKitBrowserExtension::zoomNormal()
+{
+#if QT_VERSION >= 0x040500
+    part->view()->setZoomFactor(1);
+#else
+    part->view()->setTextSizeMultiplier(1);
+#endif
+}
+
+void WebKitBrowserExtension::toogleZoomTextOnly()
+{
+#if QT_VERSION >= 0x040500
+    KConfigGroup cgHtml(KGlobal::config(), "HTML Settings");
+    bool zoomTextOnly = cgHtml.readEntry( "ZoomTextOnly", false );
+    cgHtml.writeEntry("ZoomTextOnly", !zoomTextOnly);
+    KGlobal::config()->reparseConfiguration();
+
+    part->view()->settings()->setAttribute(QWebSettings::ZoomTextOnly, !zoomTextOnly);
 #endif
 }
 

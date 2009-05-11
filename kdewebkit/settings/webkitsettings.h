@@ -126,6 +126,7 @@ public:
     bool autoSpellCheck() const;
     KAnimationAdvice showAnimations() const;
     KSmoothScrollingMode smoothScrolling() const;
+    bool zoomTextOnly() const;
 
     // Font settings
     QString stdFontName() const;

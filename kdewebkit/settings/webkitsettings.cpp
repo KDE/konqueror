@@ -90,6 +90,7 @@ public:
     bool m_hideAdsEnabled : 1;
     bool m_jsPopupBlockerPassivePopup : 1;
     bool m_accessKeysEnabled : 1;
+    bool m_zoomTextOnly : 1;
 
     // the virtual global "domain"
     KPerDomainSettings global;
@@ -428,6 +429,10 @@ void WebKitSettings::init( KConfig * config, bool reset )
          d->m_smoothScrolling = KSmoothScrollingEnabled;
     }
 
+    if ( reset || cgHtml.hasKey( "ZoomTextOnly" ) ) {
+        d->m_zoomTextOnly = cgHtml.readEntry( "ZoomTextOnly", false );
+    }
+
     if ( cgHtml.readEntry( "UserStyleSheetEnabled", false ) == true ) {
         if ( reset || cgHtml.hasKey( "UserStyleSheet" ) )
             d->m_userSheet = cgHtml.readEntry( "UserStyleSheet", "" );
@@ -646,7 +651,9 @@ void WebKitSettings::init( KConfig * config, bool reset )
   QWebSettings::globalSettings()->setAttribute(QWebSettings::PluginsEnabled, isPluginsEnabled());
   QWebSettings::globalSettings()->setAttribute(QWebSettings::JavascriptCanOpenWindows,
                                                windowOpenPolicy() != WebKitSettings::KJSWindowOpenDeny);
-
+#if QT_VERSION >= 0x040500
+  QWebSettings::globalSettings()->setAttribute(QWebSettings::ZoomTextOnly, zoomTextOnly());
+#endif
   QWebSettings::globalSettings()->setFontFamily(QWebSettings::StandardFont, stdFontName());
   QWebSettings::globalSettings()->setFontFamily(QWebSettings::FixedFont, fixedFontName());
   QWebSettings::globalSettings()->setFontFamily(QWebSettings::SerifFont, serifFontName());
@@ -1033,6 +1040,11 @@ WebKitSettings::KAnimationAdvice WebKitSettings::showAnimations() const
 WebKitSettings::KSmoothScrollingMode WebKitSettings::smoothScrolling() const
 {
   return d->m_smoothScrolling;
+}
+
+bool WebKitSettings::zoomTextOnly() const
+{
+  return d->m_zoomTextOnly;
 }
 
 bool WebKitSettings::isAutoDelayedActionsEnabled() const
