@@ -43,14 +43,14 @@ public:
 };
 
 KWebPluginFactory::KWebPluginFactory(QObject *parent)
-  : QWebPluginFactory(parent)
-    , d(new KWebPluginFactory::KWebPluginFactoryPrivate(0))
+        : QWebPluginFactory(parent)
+        , d(new KWebPluginFactory::KWebPluginFactoryPrivate(0))
 {
 }
 
 KWebPluginFactory::KWebPluginFactory(QWebPluginFactory *delegate, QObject *parent)
-  : QWebPluginFactory(parent)
-    , d(new KWebPluginFactory::KWebPluginFactoryPrivate(delegate))
+        : QWebPluginFactory(parent)
+        , d(new KWebPluginFactory::KWebPluginFactoryPrivate(delegate))
 {
 }
 
@@ -91,7 +91,7 @@ QObject* KWebPluginFactory::create(const QString& mimeType, const QUrl& url, con
         openUrlArgs.metaData() = metaData;
         openUrlArgs.setMimeType(mimeType);
         part->setArguments(openUrlArgs);
-        kDebug()<< part->arguments().metaData();
+        kDebug() << part->arguments().metaData();
         part->openUrl(url);
     }
     kDebug() << "Asked for" << mimeType << "plugin, got" << part;
@@ -123,7 +123,7 @@ QList<KWebPluginFactory::Plugin> KWebPluginFactory::plugins() const
             mime.name = servicetypes.at(z);
             KMimeType::Ptr kmime = KMimeType::mimeType(mime.name);
             if (kmime) {
-                mime.fileExtensions = kmime->patterns().replaceInStrings("*.","");
+                mime.fileExtensions = kmime->patterns().replaceInStrings("*.", "");
             }
             mimes.append(mime);
         }

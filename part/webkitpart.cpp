@@ -51,13 +51,13 @@
 #include <QPrintPreviewDialog>
 
 WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList &/*args*/)
-    : KParts::ReadOnlyPart(parent)
+        : KParts::ReadOnlyPart(parent)
 {
     KAboutData about = KAboutData("webkitpart", "webkitkde", ki18n("WebKit HTML Component"),
-                           /*version*/ "0.1", /*ki18n("shortDescription")*/ KLocalizedString(),
-                           KAboutData::License_LGPL,
-                           ki18n("(c) 2008 - 2009, Urs Wolfer\n"
-                                 "(c) 2007 Trolltech ASA"));
+                                  /*version*/ "0.1", /*ki18n("shortDescription")*/ KLocalizedString(),
+                                  KAboutData::License_LGPL,
+                                  ki18n("(c) 2008 - 2009, Urs Wolfer\n"
+                                        "(c) 2007 Trolltech ASA"));
 
     about.addAuthor(ki18n("Laurent Montel"), KLocalizedString(), "montel@kde.org");
     about.addAuthor(ki18n("Michael Howell"), KLocalizedString(), "mhowell123@gmail.com");
@@ -222,7 +222,7 @@ void WebKitPart::setStatusBarTextProxy(const QString &message)
 
 
 WebKitBrowserExtension::WebKitBrowserExtension(WebKitPart *parent)
-    : KParts::BrowserExtension(parent), part(parent)
+        : KParts::BrowserExtension(parent), part(parent)
 {
     connect(part->view()->page(), SIGNAL(selectionChanged()),
             this, SLOT(updateEditActions()));

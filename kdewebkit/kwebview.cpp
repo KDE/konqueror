@@ -128,8 +128,9 @@ void KWebView::mouseReleaseEvent(QMouseEvent *event)
 {
     const QWebHitTestResult result = page()->mainFrame()->hitTestContent(event->pos());
     const QUrl url = result.linkUrl();
-    if (!url.isEmpty() && ((d->pressedButtons & Qt::MidButton) || 
-        ((d->pressedButtons & Qt::LeftButton) && (d->keyboardModifiers & Qt::ControlModifier)))) {
+    if (!url.isEmpty() 
+      && ((d->pressedButtons & Qt::MidButton) 
+          || ((d->pressedButtons & Qt::LeftButton) && (d->keyboardModifiers & Qt::ControlModifier)))) {
         kDebug() << "middle clicked or ctrl-clicked url" << url;
         emit openUrlInNewTab(url);
         return;
@@ -191,7 +192,8 @@ void KWebView::resultSearch(KWebPage::FindFlags flags)
     d->searchBar->setFoundMatch(status);
 }
 
-void KWebView::load(const KUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &bargs) {
+void KWebView::load(const KUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &bargs)
+{
     QNetworkRequest req;
 
     req.setUrl(url);

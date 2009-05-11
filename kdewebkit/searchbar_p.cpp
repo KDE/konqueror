@@ -32,10 +32,11 @@
 
 namespace KDEPrivate {
 
-class SearchBar::SearchBarPrivate {
+class SearchBar::SearchBarPrivate
+{
 public:
-      SearchBarPrivate(SearchBar* searchBar, QWidget* widget, QTimeLine* timeLine)
-      : widget(widget), timeLine(timeLine), m_searchBar(searchBar) {}
+    SearchBarPrivate(SearchBar* searchBar, QWidget* widget, QTimeLine* timeLine)
+            : widget(widget), timeLine(timeLine), m_searchBar(searchBar) {}
     void initializeSearchWidget() {
         widget = new QWidget(m_searchBar);
         widget->setContentsMargins(0, 0, 0, 0);
@@ -47,8 +48,8 @@ public:
         ui.nextButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
         ui.searchInfo->setText(QString());
         if (ui.searchAsYouType->checkState() == Qt::Checked) {
-        connect(ui.searchLineEdit, SIGNAL(textChanged(const QString&)),
-                m_searchBar, SIGNAL(searchChanged(const QString&)));
+            connect(ui.searchLineEdit, SIGNAL(textChanged(const QString&)),
+                    m_searchBar, SIGNAL(searchChanged(const QString&)));
         }
         connect(ui.searchAsYouType, SIGNAL(stateChanged(int)), m_searchBar, SLOT(searchAsYouTypeChanged(int)));
         connect(ui.nextButton, SIGNAL(clicked()),
@@ -71,7 +72,7 @@ private:
 };
 
 SearchBar::SearchBar(QWidget *parent)
-    : QWidget(parent)
+        : QWidget(parent)
 {
     d = new SearchBarPrivate(this, 0, new QTimeLine(150, this));
     d->initializeSearchWidget();
@@ -79,7 +80,7 @@ SearchBar::SearchBar(QWidget *parent)
     // we start off hidden
     setMaximumHeight(0);
     d->widget->setGeometry(0, -1 * d->widget->height(),
-                          d->widget->width(), d->widget->height());
+                           d->widget->width(), d->widget->height());
     QWidget::hide();
 
     connect(d->timeLine, SIGNAL(frameChanged(int)),
@@ -179,7 +180,7 @@ void SearchBar::searchAsYouTypeChanged(int state)
                    this, SIGNAL(searchChanged(const QString&)));
     } else {
         connect(d->ui.searchLineEdit, SIGNAL(textChanged(const QString&)),
-               this, SIGNAL(searchChanged(const QString&)));
+                this, SIGNAL(searchChanged(const QString&)));
     }
 }
 

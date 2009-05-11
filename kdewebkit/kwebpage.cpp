@@ -121,7 +121,7 @@ QString KWebPage::KWebPagePrivate::getFileNameForDownload(const QNetworkRequest 
 }
 
 KWebPage::KWebPage(QObject *parent)
-    : QWebPage(parent), d(new KWebPage::KWebPagePrivate())
+        : QWebPage(parent), d(new KWebPage::KWebPagePrivate())
 {
 #if KDE_IS_VERSION(4, 2, 70)
     d->accessManager = new KIO::AccessManager(this);
@@ -306,7 +306,7 @@ void KWebPage::slotDownloadRequested(const QNetworkRequest &request, QNetworkRep
                 QString errMsgEx = i18n("Try to reinstall it. \n\nThe integration with Konqueror will be disabled.");
                 KMessageBox::detailedSorry(view(), errMsg, errMsgEx);
                 cfg.writePathEntry("DownloadManager", QString());
-                cfg.sync ();
+                cfg.sync();
             } else {
                 downloadViaKIO = false;
                 cmd += ' ' + KShell::quoteArg(url.url());

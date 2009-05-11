@@ -47,8 +47,8 @@
 #include <QtNetwork/QNetworkReply>
 
 WebPage::WebPage(WebKitPart *wpart, QWidget *parent)
-    : KWebPage(parent)
-    , m_part(wpart)
+        : KWebPage(parent)
+        , m_part(wpart)
 {
     connect(this, SIGNAL(geometryChangeRequested(const QRect &)),
             this, SLOT(slotGeometryChangeRequested(const QRect &)));
@@ -130,8 +130,8 @@ void WebPage::slotGeometryChangeRequested(const QRect &rect)
         moveByX = - right + sg.right(); // always <0
     if (bottom > sg.bottom())
         moveByY = - bottom + sg.bottom(); // always <0
-    if ((moveByX || moveByY) &&
-      WebKitSettings::self()->windowMovePolicy(host) == WebKitSettings::KJSWindowMoveAllow) {
+    if ((moveByX || moveByY) 
+      && WebKitSettings::self()->windowMovePolicy(host) == WebKitSettings::KJSWindowMoveAllow) {
         emit m_part->browserExtension()->moveTopLevelWidget(view()->x() + moveByX, view()->y() + moveByY);
     }
 }

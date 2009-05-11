@@ -45,8 +45,7 @@ class WebView::WebViewPrivate
 {
 public:
     WebViewPrivate(WebView *webView)
-    : webView(webView)
-    {}
+            : webView(webView) {}
 
     void addSearchActions(QList<QAction *>& selectActions);
     QString selectedTextAsOneLine() const;
@@ -68,7 +67,7 @@ public:
 
 
 WebView::WebView(WebKitPart *wpart, QWidget *parent)
-    : KWebView(parent), d(new WebViewPrivate(this))
+        : KWebView(parent), d(new WebViewPrivate(this))
 {
     d->part = wpart;
     d->actionCollection = new KActionCollection(this);
@@ -315,7 +314,7 @@ QString WebView::WebViewPrivate::simplifiedSelectedText() const
     while (!text.isEmpty() && text[0].isSpace())
         text = text.mid(1);
     while (!text.isEmpty() && text[text.length()-1].isSpace())
-        text.truncate(text.length()-1);
+        text.truncate(text.length() - 1);
     return text;
 }
 
