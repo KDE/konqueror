@@ -168,8 +168,26 @@ void KQuery::checkEntries()
   
   m_foundFilesList.clear();
 
-  while ( !m_fileItems.isEmpty() )
+  int processingCount = 0;
+  while( !m_fileItems.isEmpty() ) 
+  {
     processQuery( m_fileItems.dequeue() );
+    processingCount++;
+    
+    /* This is a workaround. As the kapp->processEvents() call inside processQuery
+     * will bring more KIO entries, m_fileItems will increase even inside this loop
+     * and that will lead to a big loop, it will take time to report found items to the GUI
+     * so we are going to force emit results every 100 files processed */
+    if( processingCount==100 )
+    {
+      processingCount = 0;
+      if( m_foundFilesList.size() > 0 )
+      {
+        emit foundFileList( m_foundFilesList );
+        m_foundFilesList.clear();
+      }
+    }
+  }
 
   if( m_foundFilesList.size() > 0 )
     emit foundFileList( m_foundFilesList );
