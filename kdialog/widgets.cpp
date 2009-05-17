@@ -286,7 +286,9 @@ bool Widgets::radioBox(QWidget *parent, const QString& title, const QString& tex
   table.addItems(entries);
 
   for (int i=0; i+2<args.count(); i += 3) {
-    table.item( i/3 )->setSelected( args[i+2] == QLatin1String("on") );
+    if (args[i+2] == QLatin1String("on")) {
+      table.setCurrentRow(i/3);
+    }
   }
 
   handleXGeometry(&box);
