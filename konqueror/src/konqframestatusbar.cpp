@@ -44,22 +44,42 @@ public:
       : QCheckBox( parent ) {}
 protected:
     void paintEvent( QPaintEvent * );
+
+    QSize sizeHint() const
+    {
+        QSize size = connectPixmap().size();
+        // Add some room around the pixmap. Makes it a bit easier to click and
+        // ensure it does not look crowded with styles which draw a frame
+        // around statusbar items.
+        size.rwidth() += 4;
+        return size;
+    }
+
+private:
+    const QPixmap& connectPixmap() const
+    {
+        static QPixmap indicator_connect( UserIcon( "indicator_connect" ) );
+        return indicator_connect;
+    }
+
+    const QPixmap& noConnectPixmap() const
+    {
+        static QPixmap indicator_noconnect( UserIcon( "indicator_noconnect" ) );
+        return indicator_noconnect;
+    }
 };
 
 #define DEFAULT_HEADER_HEIGHT 13
 
 void KonqCheckBox::paintEvent( QPaintEvent * )
 {
-    //static QPixmap indicator_anchor( UserIcon( "indicator_anchor" ) );
-    static QPixmap indicator_connect( UserIcon( "indicator_connect" ) );
-    static QPixmap indicator_noconnect( UserIcon( "indicator_noconnect" ) );
+    QPainter p(this);
 
-   QPainter p(this);
-
-   if (isChecked() || isDown())
-      p.drawPixmap(0,0,indicator_connect);
-   else
-      p.drawPixmap(0,0,indicator_noconnect);
+    const QPixmap &pixmap = (isChecked() || isDown()) ? connectPixmap() : noConnectPixmap();
+    p.drawPixmap(
+        (width() - pixmap.width()) / 2,
+        (height() - pixmap.height()) / 2,
+        pixmap);
 }
 
 KonqFrameStatusBar::KonqFrameStatusBar( KonqFrame *_parent )
@@ -83,7 +103,7 @@ KonqFrameStatusBar::KonqFrameStatusBar( KonqFrame *_parent )
     m_pLinkedViewCheckBox = new KonqCheckBox( this );
     m_pLinkedViewCheckBox->setObjectName( "m_pLinkedViewCheckBox" );
     m_pLinkedViewCheckBox->setFocusPolicy(Qt::NoFocus);
-    m_pLinkedViewCheckBox->setSizePolicy(QSizePolicy( QSizePolicy::Fixed, QSizePolicy::Fixed ));
+    m_pLinkedViewCheckBox->setSizePolicy(QSizePolicy( QSizePolicy::Fixed, QSizePolicy::Minimum ));
     m_pLinkedViewCheckBox->setWhatsThis( i18n("Checking this box on at least two views sets those views as 'linked'. "
                           "Then, when you change directories in one view, the other views "
                           "linked with it will automatically update to show the current directory. "
