@@ -146,6 +146,7 @@ KNewMenu::KNewMenu( KActionCollection *parent, QWidget* parentWidget, const QStr
     connect(d->m_newMenuGroup, SIGNAL(triggered(QAction*)), this, SLOT(slotActionTriggered(QAction*)));
     d->m_actionCollection = parent;
     d->m_parentWidget = parentWidget;
+    d->m_newDirAction = 0;
 
     d->m_actionCollection->addAction( name, this );
 
