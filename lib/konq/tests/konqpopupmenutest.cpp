@@ -18,6 +18,7 @@
 */
 
 #include "konqpopupmenutest.h"
+#include <kconfiggroup.h>
 #include <kstandarddirs.h>
 #include <kbookmarkmanager.h>
 #include <assert.h>
@@ -74,6 +75,9 @@ static QStringList extractActionNames(const QMenu& menu)
 
 void KonqPopupMenuTest::initTestCase()
 {
+    KSharedConfig::Ptr dolphin = KSharedConfig::openConfig("dolphinrc");
+    KConfigGroup(dolphin, "General").writeEntry("ShowCopyMoveMenu", true);
+
     m_thisDirectoryItem = KFileItem(QDir::currentPath(), "inode/directory", S_IFDIR + 0777);
     m_fileItem = KFileItem(QDir::currentPath() + "/Makefile", "text/x-makefile", S_IFREG + 0660);
     m_linkItem = KFileItem(KUrl("http://www.kde.org/foo"), "text/html", S_IFREG + 0660);
