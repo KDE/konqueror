@@ -54,7 +54,7 @@ void UndoManagerTest::testAddClosedTabItem()
     QVERIFY(!manager.undoAvailable());
     KonqClosedTabItem* item = new KonqClosedTabItem("url", "title", 0, manager.newCommandSerialNumber());
     QCOMPARE(item->url(), QString("url"));
-    QCOMPARE(item->serialNumber(), (quint64)1);
+    QCOMPARE(item->serialNumber(), (quint64)1001);
     QCOMPARE(item->pos(), 0);
     KConfigGroup configGroup = item->configGroup();
     QVERIFY(!configGroup.exists());
