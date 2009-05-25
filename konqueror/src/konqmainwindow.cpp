@@ -2362,7 +2362,10 @@ void KonqMainWindow::slotBreakOffTab()
         return;
   }
 
-  m_pViewManager->breakOffTab( m_currentView->frame(), size() );
+  KonqFrameBase* frame = dynamic_cast<KonqFrameBase*>(m_pViewManager->tabContainer()->currentWidget());
+  if( frame )
+      m_pViewManager->breakOffTab( frame, size() );
+
   updateViewActions();
 }
 
