@@ -316,7 +316,7 @@ void KonqViewManager::breakOffTab( KonqFrameBase* currentFrame, const QSize& win
 
   KonqMainWindow *mainWindow = new KonqMainWindow(KUrl(), m_pMainWindow->xmlFile());
 
-  mainWindow->viewManager()->loadViewProfileFromConfig( config, QString(), currentProfile() );
+  mainWindow->viewManager()->loadRootItem( profileGroup, mainWindow->viewManager()->tabContainer(), KUrl(), true, KUrl() );
 
   removeTab( currentFrame, false );
 
