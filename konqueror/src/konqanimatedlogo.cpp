@@ -118,14 +118,13 @@ void KonqAnimatedLogo::setAnimatedLogoSize(int buttonHeight)
         iconSize = KIconLoader::SizeSmallMedium;
     else if ( iconSize < KIconLoader::SizeLarge )
         iconSize = KIconLoader::SizeMedium ;
-    else if ( iconSize < KIconLoader::SizeHuge )
+    else
         iconSize = KIconLoader::SizeLarge;
     //kDebug() << "final iconSize=" << iconSize;
     if (iconDimensions() != iconSize) {
         setIconSize(QSize(iconSize, iconSize));
         if (!icons().isEmpty()) {
-            // ### check why this crashes
-            // updateIcons();
+            updateIcons();
         }
     }
 }
