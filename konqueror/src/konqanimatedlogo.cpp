@@ -124,7 +124,10 @@ void KonqAnimatedLogo::setAnimatedLogoSize(int buttonHeight)
     if (iconDimensions() != iconSize) {
         setIconSize(QSize(iconSize, iconSize));
         if (!icons().isEmpty()) {
+// ### temporary compatibility check, remove before release
+#ifdef KANIMATEDBUTTON_HAS_FIXED_UPDATE_ICONS
             updateIcons();
+#endif
         }
     }
 }
