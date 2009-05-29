@@ -51,7 +51,6 @@
 #include <QUiLoader>
 #include <QtNetwork/QNetworkReply>
 
-#if KDE_IS_VERSION(4, 2, 70)
 class NullNetworkReply : public QNetworkReply
 {
 public:
@@ -62,34 +61,31 @@ protected:
     virtual qint64 readData(char*, qint64) { return -1; };
 };
 
+#if KDE_IS_VERSION(4, 2, 70)
 class NetworkAccessManager : public KIO::AccessManager
+#else
+class NetworkAccessManager : public KNetworkAccessManager
+#endif
 {
 public:
+    #if KDE_IS_VERSION(4, 2, 70)
     NetworkAccessManager(QObject *parent) : KIO::AccessManager(parent) {}
+    #else
+    NetworkAccessManager(QObject *parent) : KNetworkAccessManager(parent) {}
+    #endif
 protected:
     virtual QNetworkReply *createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData = 0)
     {
         if (WebKitSettings::self()->isAdFilterEnabled() && WebKitSettings::self()->isAdFiltered(req.url().toString())) {
             return new NullNetworkReply();
         }
+	#if KDE_IS_VERSION(4, 2, 70)
         return KIO::AccessManager::createRequest(op, req, outgoingData);
+	#else
+	return KNetworkAccessManager::createRequest(op, req, outgoingData);
+	#endif
     }
 };
-#else
-class NetworkAccessManager : public KNetworkAccessManager
-{
-public:
-    NetworkAccessManager(QObject *parent) : KNetworkAccessManager(parent) {}
-protected:
-    virtual QNetworkReply *createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData = 0)
-    {
-        if (WebKitSettings::self()->isAdFilterEnabled() && WebKitSettings::self()->isAdFiltered(req.url().toString())) {
-            return new KNetworkReply(KNetworkAccessManager::Operation(), req, 0, this);
-        }
-        return KNetworkAccessManager::createRequest(op, req, outgoingData);
-    }
-};
-#endif
 
 class KWebPage::KWebPagePrivate
 {
@@ -97,11 +93,7 @@ public:
     KWebPagePrivate() {}
 
     QString getFileNameForDownload(const QNetworkRequest &request, QNetworkReply *reply) const;
-#if KDE_IS_VERSION(4, 2, 70)
-    KIO::AccessManager* accessManager;
-#else
-    KNetworkAccessManager* accessManager;
-#endif
+    NetworkAccessManager* accessManager;
 };
 
 QString KWebPage::KWebPagePrivate::getFileNameForDownload(const QNetworkRequest &request, QNetworkReply *reply) const
@@ -123,11 +115,7 @@ QString KWebPage::KWebPagePrivate::getFileNameForDownload(const QNetworkRequest 
 KWebPage::KWebPage(QObject *parent)
         : QWebPage(parent), d(new KWebPage::KWebPagePrivate())
 {
-#if KDE_IS_VERSION(4, 2, 70)
-    d->accessManager = new KIO::AccessManager(this);
-#else
-    d->accessManager = new KNetworkAccessManager(this);
-#endif
+    d->accessManager = new NetworkAccessManager(this);
     setNetworkAccessManager(d->accessManager);
     setPluginFactory(new KWebPluginFactory(pluginFactory(), this));
 
