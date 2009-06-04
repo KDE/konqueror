@@ -48,13 +48,14 @@ bool XtEvents::x11Event( XEvent* e )
 
 void XtEvents::idleProcess()
     {
-    for(;;)
+    for( int i = 0; 
+         i < 1000; // only up to 1000 iterations, in order to avoid starving
+         ++i )
         {
         XtInputMask mask = XtAppPending( context );
         mask &= ~XtIMXEvent; // these are processed in x11Event()
         if( mask == 0 )
             break;
-        // TODO protect from zero timers starving everything
         XtAppProcessEvent( context, mask );
         }
     }
