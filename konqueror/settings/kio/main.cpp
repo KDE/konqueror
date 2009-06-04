@@ -83,7 +83,7 @@ LanBrowser::LanBrowser(QWidget *parent, const QVariantList &)
 
    smbPage = new SMBRoOptions(&tabs, QVariantList(), componentData());
    tabs.addTab(smbPage, i18n("&Windows Shares"));
-   connect(smbPage,SIGNAL(changed(bool)), SLOT( changed() ));
+   connect(smbPage,SIGNAL(changed(bool)), SIGNAL( changed(bool) ));
 
    lisaPage = KCModuleLoader::loadModule("kcmlisa", KCModuleLoader::None,&tabs);
    if (lisaPage)
