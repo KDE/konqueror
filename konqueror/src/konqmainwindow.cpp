@@ -3626,7 +3626,7 @@ void KonqMainWindow::initActions()
   m_paAddTab->setIcon( KIcon("tab-new") );
   m_paAddTab->setText( i18n( "&New Tab" ) );
   connect(m_paAddTab, SIGNAL(triggered()), SLOT( slotAddTab() ));
-  m_paAddTab->setShortcuts(KShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_N, Qt::CTRL+Qt::Key_T));
+  m_paAddTab->setShortcuts(KShortcut(Qt::CTRL+Qt::Key_T, Qt::CTRL+Qt::SHIFT+Qt::Key_N));
 
   m_paDuplicateTab = actionCollection()->addAction("duplicatecurrenttab");
   m_paDuplicateTab->setIcon( KIcon("tab-duplicate") );
