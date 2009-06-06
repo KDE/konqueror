@@ -3190,10 +3190,12 @@ bool KonqMainWindow::eventFilter(QObject*obj,QEvent *ev)
       m_bLocationBarConnected = true;
 
       // Workaround for Qt issue: usually, QLineEdit reacts on Ctrl-D,
-      // but the duplicate_window action also has Ctrl-D as accel and
+      // but the duplicatecurrenttab action also has Ctrl-D as accel and
       // prevents the lineedit from getting this event. IMHO the accel
       // should be disabled in favor of the focus-widget.
-      QAction *duplicate = actionCollection()->action("duplicate_window");
+      // TODO: decide if the delete-character behaviour of QLineEdit
+      // really is useful enough to warrant this workaround
+      QAction *duplicate = actionCollection()->action("duplicatecurrenttab");
       if ( duplicate->shortcuts().contains( QKeySequence(Qt::CTRL+Qt::Key_D) ))
           duplicate->setEnabled( false );
 
@@ -3217,11 +3219,10 @@ bool KonqMainWindow::eventFilter(QObject*obj,QEvent *ev)
       m_bLocationBarConnected = false;
 
       // see above in FocusIn for explanation
-      // we use new_window as reference, as it's always in the same state
-      // as duplicate_window
-      QAction *duplicate = actionCollection()->action("duplicate_window");
+      // action is reenabled if a view exists
+      QAction *duplicate = actionCollection()->action("duplicatecurrenttab");
       if ( duplicate->shortcuts().contains( QKeySequence(Qt::CTRL+Qt::Key_D) ) )
-          duplicate->setEnabled( actionCollection()->action("new_window")->isEnabled() );
+          duplicate->setEnabled( currentView() && currentView()->frame() );
 
       disconnect( m_paCut, SIGNAL( triggered() ), m_combo->lineEdit(), SLOT( cut() ) );
       disconnect( m_paCopy, SIGNAL( triggered() ), m_combo->lineEdit(), SLOT( copy() ) );
@@ -3472,7 +3473,7 @@ void KonqMainWindow::initActions()
   action->setIcon(KIcon("window-duplicate"));
   action->setText(i18n( "&Duplicate Window" ));
   connect(action, SIGNAL(triggered()), SLOT( slotDuplicateWindow() ));
-  action->setShortcut(Qt::CTRL+Qt::Key_D);
+  action->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_D);
   action = actionCollection()->addAction("sendURL");
   action->setIcon(KIcon("mail-message-new"));
   action->setText(i18n( "Send &Link Address..." ));
@@ -3632,7 +3633,7 @@ void KonqMainWindow::initActions()
   m_paDuplicateTab->setIcon( KIcon("tab-duplicate") );
   m_paDuplicateTab->setText( i18n( "&Duplicate Current Tab" ) );
   connect(m_paDuplicateTab, SIGNAL(triggered()), SLOT( slotDuplicateTab() ));
-  m_paDuplicateTab->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_D);
+  m_paDuplicateTab->setShortcut(Qt::CTRL+Qt::Key_D);
   m_paBreakOffTab = actionCollection()->addAction("breakoffcurrenttab");
   m_paBreakOffTab->setIcon( KIcon("tab-detach") );
   m_paBreakOffTab->setText( i18n( "Detach Current Tab" ) );
