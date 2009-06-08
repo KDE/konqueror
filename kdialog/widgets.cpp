@@ -74,7 +74,7 @@ void Widgets::handleXGeometry(QWidget * dlg)
 bool Widgets::inputBox(QWidget *parent, const QString& title, const QString& text, const QString& init, QString &result)
 {
   bool ok;
-  QString str = KInputDialog::getText( title, text, init, &ok, parent, 0, 0, QString() );
+  const QString str = KInputDialog::getText( title, text, init, &ok, parent, 0, 0, QString() );
   if ( ok )
     result = str;
   return ok;
@@ -164,7 +164,7 @@ int Widgets::textInputBox(QWidget *parent, int width, int height, const QString&
 
   handleXGeometry(&dlg);
   dlg.setCaption(title);
-  int returnDialogCode = dlg.exec();
+  const int returnDialogCode = dlg.exec();
   result = edit->toPlainText();
   return (returnDialogCode == KDialog::Accepted ? 0 : 1);
 }
@@ -213,7 +213,7 @@ bool Widgets::listBox(QWidget *parent, const QString& title, const QString& text
 
   handleXGeometry(&box);
 
-  bool retcode = (box.exec() == QDialog::Accepted);
+  const bool retcode = (box.exec() == QDialog::Accepted);
   if ( retcode )
     result = args[ box.currentItem()*2 ];
   return retcode;
@@ -249,7 +249,7 @@ bool Widgets::checkList(QWidget *parent, const QString& title, const QString& te
 
   handleXGeometry(&box);
 
-  bool retcode = (box.exec() == QDialog::Accepted);
+  const bool retcode = (box.exec() == QDialog::Accepted);
 
   if ( retcode ) {
     if (separateOutput) {
@@ -293,7 +293,7 @@ bool Widgets::radioBox(QWidget *parent, const QString& title, const QString& tex
 
   handleXGeometry(&box);
 
-  bool retcode = (box.exec() == QDialog::Accepted);
+  const bool retcode = (box.exec() == QDialog::Accepted);
   if ( retcode )
     result = tags[ table.currentRow() ];
   return retcode;
@@ -332,7 +332,7 @@ bool Widgets::slider( QWidget *parent, const QString& title, const QString& text
     slider.setOrientation( Qt::Horizontal );
     handleXGeometry(&dlg);
 
-    bool retcode = (dlg.exec() == QDialog::Accepted);
+    const bool retcode = (dlg.exec() == QDialog::Accepted);
 
     if (retcode)
         result = slider.value();
@@ -357,10 +357,11 @@ bool Widgets::calendar( QWidget *parent, const QString &title, const QString &te
     KDatePicker dateWidget( vbox );
     handleXGeometry(&dlg);
 
-    bool retcode = (dlg.exec() == QDialog::Accepted);
+    const bool retcode = (dlg.exec() == QDialog::Accepted);
 
     if (retcode)
         result = dateWidget.date();
 
     return retcode;
 }
+

@@ -57,7 +57,7 @@ void KListBoxDialog::setCurrentItem(const QString& item)
   }
 }
 
-int KListBoxDialog::currentItem()
+int KListBoxDialog::currentItem() const
 {
   return table->currentRow();
 }

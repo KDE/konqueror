@@ -40,7 +40,7 @@ public:
 
   void insertItem( const QString& text );
   void setCurrentItem ( const QString& text );
-  int currentItem();
+  int currentItem() const;
 
 protected:
 
