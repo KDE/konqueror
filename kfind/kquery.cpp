@@ -312,8 +312,7 @@ void KQuery::processQuery( const KFileItem &file)
   if ((!m_metainfo.isEmpty())  && (!m_metainfokey.isEmpty()))
   {
       //Avoid sequential files (fifo,char devices)
-      if (S_ISCHR ( file.mode() ) || S_ISBLK ( file.mode() ) ||
-            S_ISFIFO( file.mode() ) || S_ISSOCK( file.mode() ) )
+      if (!file.isRegularFile())
         return;
           
       bool foundmeta=false;
@@ -347,8 +346,7 @@ void KQuery::processQuery( const KFileItem &file)
   if (!m_context.isEmpty())
   {
     //Avoid sequential files (fifo,char devices)
-    if (S_ISCHR ( file.mode() ) || S_ISBLK ( file.mode() ) ||
-          S_ISFIFO( file.mode() ) || S_ISSOCK( file.mode() ) )
+    if (!file.isRegularFile())
         return;
         
     if( !m_search_binary && ignore_mimetypes.indexOf(file.mimetype()) != -1 ) {
