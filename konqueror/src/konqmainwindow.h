@@ -485,6 +485,7 @@ private Q_SLOTS:
   void slotUpActivated(QAction* action);
   void slotBackActivated(QAction* action);
   void slotForwardActivated(QAction* action);
+  void slotHomePopupActivated(QAction* action);
   void slotGoHistoryDelayed();
 
   void slotCompletionModeChanged( KGlobalSettings::Completion );
@@ -630,6 +631,7 @@ private: // members
   KToolBarPopupAction *m_paUp;
   KToolBarPopupAction *m_paBack;
   KToolBarPopupAction *m_paForward;
+  KToolBarPopupAction *m_paHomePopup;
   /// Action for the trash that contains closed tabs/windows
   KToolBarPopupAction *m_paClosedItems;
   KActionMenu *m_paSessions;
