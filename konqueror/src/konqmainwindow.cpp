@@ -1693,8 +1693,7 @@ void KonqMainWindow::slotReloadPopup()
 
 void KonqMainWindow::slotHome(Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers)
 {
-    const QString homeURL = m_currentView && m_currentView->showsDirectory() ? QDir::homePath()
-                            : KonqSettings::homeURL();
+    const QString homeURL = m_paHomePopup->data().toString();
 
     KonqOpenURLRequest req;
     req.browserArgs.setNewTab(true);
@@ -1722,6 +1721,11 @@ void KonqMainWindow::slotHome(Qt::MouseButtons buttons, Qt::KeyboardModifiers mo
 void KonqMainWindow::slotHome()
 {
     slotHome(Qt::LeftButton, Qt::NoModifier);
+}
+
+void KonqMainWindow::slotHomePopupActivated(QAction* action)
+{
+    openUrl( 0, action->data().toString() );
 }
 
 void KonqMainWindow::slotGoHistory()
@@ -2035,13 +2039,45 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
   updateViewActions(); // undo, lock, link and other view-dependent actions
   updateViewModeActions();
 
-  m_paHome->setIcon(KIcon(m_currentView->showsDirectory() ? "user-home" : "go-home"));
-  m_paHome->setText( m_currentView->showsDirectory() ?  i18n( "Home Folder") : i18n( "Home Page"  ) );
-  m_paHome->setStatusTip( m_currentView->showsDirectory() ? i18n( "Navigate to your 'Home Folder'") : i18n( "Navigate to your 'Home Page'"  ) );
-  m_paHome->setWhatsThis(m_currentView->showsDirectory() ?  i18n( "Navigate to your local 'Home Folder'" ) :
-                                i18n( "<html>Navigate to your 'Home Page'<br /><br />"
-                                "You can configure the location where this button takes you "
-                                "under <b>Settings -> Configure Konqueror -> General</b>.</html>" )  );
+  bool viewShowsDir = m_currentView->showsDirectory();
+  bool buttonShowsFolder = m_paHomePopup->text() == i18n("Home Folder");
+  if ( m_paHomePopup->text() == i18n("Home") || viewShowsDir != buttonShowsFolder ) {
+    KAction *actHomeFolder = new KAction( this );
+    KAction *actHomePage = new KAction ( this );
+
+    actHomeFolder->setIcon( KIcon("user-home") );
+    actHomeFolder->setText( i18n("Home Folder") );
+    actHomeFolder->setStatusTip( i18n("Navigate to your 'Home Folder'") );
+    actHomeFolder->setWhatsThis( i18n("Navigate to your local 'Home Folder'") );
+    actHomeFolder->setData(QDir::homePath());
+    actHomePage->setIcon( KIcon("go-home") );
+    actHomePage->setText( i18n("Home Page") );
+
+    actHomePage->setStatusTip( i18n("Navigate to your 'Home Page'") );
+    actHomePage->setWhatsThis( i18n("<html>Navigate to your 'Home Page'<br /><br />"
+                              "You can configure the location where this button takes you "
+                              "under <b>Settings -> Configure Konqueror -> General</b>.</html>") );
+    actHomePage->setData(KonqSettings::homeURL());
+
+    m_paHome->setIcon( viewShowsDir ? actHomeFolder->icon() : actHomePage->icon() );
+    m_paHome->setText( viewShowsDir ? actHomeFolder->text() : actHomePage->text() );
+    m_paHome->setStatusTip( viewShowsDir ? actHomeFolder->statusTip() : actHomePage->statusTip() );
+    m_paHome->setWhatsThis( viewShowsDir ? actHomeFolder->whatsThis() : actHomePage->whatsThis() );
+    m_paHomePopup->setIcon( viewShowsDir ? actHomeFolder->icon() : actHomePage->icon() );
+    m_paHomePopup->setText( viewShowsDir ? actHomeFolder->text() : actHomePage->text() );
+    m_paHomePopup->setStatusTip( viewShowsDir ? actHomeFolder->statusTip() : actHomePage->statusTip() );
+    m_paHomePopup->setWhatsThis( viewShowsDir ? actHomeFolder->whatsThis() : actHomePage->whatsThis() );
+    m_paHomePopup->setData( viewShowsDir ? actHomeFolder->data() : actHomePage->data() );
+    m_paHomePopup->menu()->clear();
+    if ( viewShowsDir ) {
+      m_paHomePopup->menu()->addAction( actHomePage );
+      delete actHomeFolder;
+    }
+    else {
+      m_paHomePopup->menu()->addAction( actHomeFolder );
+      delete actHomePage;
+    }
+  }
 
   m_currentView->frame()->statusbar()->updateActiveStatus();
 
@@ -3564,9 +3600,13 @@ void KonqMainWindow::initActions()
   connect( m_paForward->menu(), SIGNAL(triggered(QAction*)), this, SLOT(slotForwardActivated(QAction *)) );
 
   m_paHome = actionCollection()->addAction( KStandardAction::Home );
-  m_paHome->setEnabled( true );
   connect( m_paHome, SIGNAL( triggered( Qt::MouseButtons, Qt::KeyboardModifiers) ), this,
 	   SLOT( slotHome(Qt::MouseButtons, Qt::KeyboardModifiers) ) );
+  m_paHomePopup = new KToolBarPopupAction ( KIcon("go-home"), i18n("Home"), this );
+  actionCollection()->addAction( "go_home_popup", m_paHomePopup );
+  connect( m_paHomePopup, SIGNAL( triggered( Qt::MouseButtons, Qt::KeyboardModifiers) ), this,
+           SLOT( slotHome(Qt::MouseButtons, Qt::KeyboardModifiers) ) );
+  connect( m_paHomePopup->menu(), SIGNAL(triggered(QAction*)), this, SLOT(slotHomePopupActivated(QAction*)) );
 
   KonqMostOftenURLSAction *mostOften = new KonqMostOftenURLSAction( i18nc("@action:inmenu Go", "Most Often Visited"), this );
   actionCollection()->addAction( "go_most_often", mostOften );
@@ -4286,8 +4326,6 @@ void KonqMainWindow::disableActionsNoView()
     }
     // There are things we can do, though : bookmarks, view profile, location bar, new window,
     // settings, etc.
-    m_paHome->setEnabled( true );
-    m_pamBookmarks->setEnabled( true );
     static const char* const s_enActions[] = { "new_window", "duplicate_window", "open_location",
                                          "toolbar_url_combo", "clear_location", "animated_logo",
                                          "konqintro", "go_most_often", "go_applications",
