@@ -1225,7 +1225,7 @@ QDBusObjectPath NSPluginViewer::newClass( const QString& plugin, const QString& 
        if ( cls->error() ) {
            kError(1431) << "Can't create plugin class" << endl;
            delete cls;
-           return QDBusObjectPath();
+           return QDBusObjectPath("/null");
        }
 
        _classes.insert( plugin, cls );
@@ -1407,7 +1407,7 @@ QDBusObjectPath NSPluginClass::newInstance( const QString &url, const QString &m
    kDebug(1431) << "-> NSPluginClass::NewInstance";
 
    if ( !_constructed )
-       return QDBusObjectPath();
+       return QDBusObjectPath("/null");
 
    // copy parameters over
    unsigned int argc = argn.count();
@@ -1457,7 +1457,7 @@ QDBusObjectPath NSPluginClass::newInstance( const QString &url, const QString &m
    {
       ::free(npp);
       kDebug(1431) << "<- PluginClass::NewInstance = 0";
-      return QDBusObjectPath();
+      return QDBusObjectPath("/null");
    }
 
    // Create plugin instance object
