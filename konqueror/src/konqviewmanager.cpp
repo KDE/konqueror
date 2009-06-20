@@ -1285,10 +1285,14 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
     }
 
     QWidget* w = m_tabContainer->widget(index);
-    Q_ASSERT(w);
-    m_tabContainer->setActiveChild( dynamic_cast<KonqFrameBase*>(w) );
-    m_tabContainer->setCurrentIndex( index );
-    m_tabContainer->show();
+    if(w)
+    {
+        m_tabContainer->setActiveChild( dynamic_cast<KonqFrameBase*>(w) );
+        m_tabContainer->setCurrentIndex( index );
+        m_tabContainer->show();
+    } else
+        kWarning() << "Profile Loading Error: Unknown current item index";  
+    
   }
   else
       kWarning() << "Profile Loading Error: Unknown item" << name;
