@@ -47,8 +47,6 @@ K_GLOBAL_STATIC(KonqClosedWindowsManagerPrivate, myKonqClosedWindowsManagerPriva
 
 KonqClosedWindowsManager::KonqClosedWindowsManager()
 {
-    //qDBusRegisterMetaType<QList<QVariant> >();
-
     new KonqClosedWindowsManagerAdaptor ( this );
 
     const QString dbusPath = "/KonqUndoManager";
@@ -68,7 +66,7 @@ KonqClosedWindowsManager::KonqClosedWindowsManager()
 
     m_konqClosedItemsConfig = 0L;
     m_blockClosedItems = false;
-    m_konqClosedItemsMemoryStore = new KConfig(QString(), KConfig::SimpleConfig);
+    m_konqClosedItemsStore = new KConfig(filename, KConfig::SimpleConfig, "tmp");
 }
 
 KonqClosedWindowsManager::~KonqClosedWindowsManager()
@@ -77,12 +75,12 @@ KonqClosedWindowsManager::~KonqClosedWindowsManager()
     removeClosedItemsConfigFiles();
 
     delete m_konqClosedItemsConfig;
-    delete m_konqClosedItemsMemoryStore;
+    delete m_konqClosedItemsStore;
 }
 
 KConfig* KonqClosedWindowsManager::memoryStore()
 {
-    return m_konqClosedItemsMemoryStore;
+    return m_konqClosedItemsStore;
 }
 
 KonqClosedWindowsManager *KonqClosedWindowsManager::self()
@@ -126,7 +124,7 @@ void KonqClosedWindowsManager::addClosedWindowItem(KonqUndoManager
         // we need to call to saveConfig() to keep updated the kconfig file, so
         // that new konqueror instances can read it correctly updated.
         saveConfig();
-
+        
         // Once saved, tell to other konqi processes
         emitNotifyClosedWindowItem(closedWindowItem);
     }
@@ -182,11 +180,15 @@ bool isSenderOfSignal( const QString& service )
 }
 
 void KonqClosedWindowsManager::emitNotifyClosedWindowItem(
-    const KonqClosedWindowItem *closedWindowItem)
+    const KonqClosedWindowItem *closedWindowItem) 
 {
+    
+    QString filename = "closeditems/" + KonqMisc::encodeFilename(QDBusConnection::sessionBus().baseService());
+    QString file = KStandardDirs::locateLocal("tmp", filename);
+    
     emit notifyClosedWindowItem( closedWindowItem->title(),
         closedWindowItem->numTabs(),
-        closedWindowItem->configGroup().config()->name(),
+        m_konqClosedItemsStore->name(),
         closedWindowItem->configGroup().name() );
 }
 
@@ -297,8 +299,41 @@ KonqClosedWindowItem* KonqClosedWindowsManager::findClosedLocalWindowItem(
     return closedWindowItem;
 }
 
+/**
+ * @returns the number of konqueror processes by counting the number of 
+ * org.kde.konqueror services in dbus.
+ * 
+ * If dbus fails it returns -1.
+ */
+static int numberOfKonquerorProcesses()
+{
+    QDBusConnection dbus = QDBusConnection::sessionBus();
+    QDBusReply<QStringList> reply = dbus.interface()->registeredServiceNames();
+    if ( !reply.isValid() )
+        return -1;
+
+    const QStringList allServices = reply;
+    int count = 0; // count the number of running konqueror processes. Should be at least one, us.
+    for ( QStringList::const_iterator it = allServices.begin(), end = allServices.end() ; it != end ; ++it ) {
+        const QString service = *it;
+        if ( service.startsWith( "org.kde.konqueror" ) ) {
+                count++;
+        }
+    }
+    return count;
+}
+
 void KonqClosedWindowsManager::removeClosedItemsConfigFiles()
 {
+    // We'll only remove closed items config files if we are the only process
+    // left or if dbus fails (just in case there is any other konqi process
+    // but we couldn't see it).
+    int count = numberOfKonquerorProcesses();
+    if(count > 1 || count == -1)
+        return;
+    
+    // We are the only instance of konqueror left and thus we can safely remove
+    // all those temporary files.
     QString dir = KStandardDirs::locateLocal("tmp", "closeditems/");
     QDBusConnectionInterface *idbus = QDBusConnection::sessionBus().interface();
     QDirIterator it(dir, QDir::Writable|QDir::Files);
@@ -310,7 +345,6 @@ void KonqClosedWindowsManager::removeClosedItemsConfigFiles()
             QFile::remove(filename);
     }
 }
-
 
 void KonqClosedWindowsManager::saveConfig()
 {
@@ -339,6 +373,10 @@ void KonqClosedWindowsManager::saveConfig()
     KConfigGroup configGroup(KGlobal::config(), "Undo");
     configGroup.writeEntry("Number of Closed Windows", m_closedWindowItemList.size());
     configGroup.sync();
+    
+    // Finally the most important thing, which is to save the store config
+    // so that other konqi processes can reopen windows closed in this process.
+    m_konqClosedItemsStore->sync();
 
     delete config;
 }

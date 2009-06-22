@@ -113,13 +113,15 @@ private:
         const QString& configGroup);
 
     /**
-     * This function removes all the closed items temporary files.
+     * This function removes all the closed items temporary files. Only done if
+     * there's no other konqueror process running than us, otherwise that process
+     * might want to use that temporary file.
      */
     void removeClosedItemsConfigFiles();
 private:
     QList<KonqClosedWindowItem *> m_closedWindowItemList;
     int m_numUndoClosedItems;
-    KConfig *m_konqClosedItemsConfig, *m_konqClosedItemsMemoryStore;
+    KConfig *m_konqClosedItemsConfig, *m_konqClosedItemsStore;
     int m_maxNumClosedItems;
     /**
      * This bool var is used internally to allow delayed initialization of the
