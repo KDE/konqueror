@@ -215,6 +215,9 @@ void KonqUndoManager::undoClosedItem(int index)
         emit openClosedWindow(*closedWindowItem);
         KonqClosedWindowsManager::self()->removeClosedWindowItem(this, closedWindowItem);
         closedWindowItem->configGroup().deleteGroup();
+        
+        // Save config so that this window won't appear in new konqueror processes
+        KonqClosedWindowsManager::self()->saveConfig();
     }
     delete closedItem;
     emit undoAvailable(this->undoAvailable());
@@ -273,8 +276,6 @@ void KonqUndoManager::updateSupportsFileUndo(bool enable)
 void KonqUndoManager::clearClosedItemsList(bool onlyInthisWindow)
 {
     populate();
-// we only DELETE tab items! So we can't do this anymore:
-//     qDeleteAll(m_closedItemList);
     QList<KonqClosedItem *>::iterator it = m_closedItemList.begin();
     for (; it != m_closedItemList.end(); ++it)
     {
@@ -292,8 +293,12 @@ void KonqUndoManager::clearClosedItemsList(bool onlyInthisWindow)
             delete closedWindowItem;
         }
     }
+    
     emit closedItemsListChanged();
     emit undoAvailable(this->undoAvailable());
+    
+    // Save config so that this window won't appear in new konqueror processes
+    KonqClosedWindowsManager::self()->saveConfig();
 }
 
 void KonqUndoManager::undoLastClosedItem()
