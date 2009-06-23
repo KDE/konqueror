@@ -162,6 +162,10 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &part
         partActions.append(action);
     }
 
+    if (settings()->testAttribute(QWebSettings::DeveloperExtrasEnabled)) {
+        partActions.append(pageAction(QWebPage::InspectElement));
+    }
+
     partGroupMap.insert("partactions", partActions);
 }
 
