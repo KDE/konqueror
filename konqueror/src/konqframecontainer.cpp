@@ -215,6 +215,4 @@ void KonqFrameContainer::replaceChildFrame(KonqFrameBase* oldFrame, KonqFrameBas
     setSizes(splitterSizes);
 }
 
-// TODO remove hasWidgetAfter
-
 #include "konqframecontainer.moc"
