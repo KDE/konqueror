@@ -45,7 +45,6 @@
 #include <kio/copyjob.h>
 #include <kio/paste.h>
 #include <kio/renamedialog.h>
-#include <kfileitemlistproperties.h>
 #include <kdirnotify.h>
 #include <kuiserverjobtracker.h>
 #include <kstandarddirs.h>
