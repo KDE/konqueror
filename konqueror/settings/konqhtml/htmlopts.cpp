@@ -134,8 +134,8 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
     lay->addWidget( bgMisc);
 
     // Checkbox to enable/disable Access Key activation through the Ctrl key.
-    m_pAccessKeys = new QCheckBox( i18n( "Enable/disable Access Ke&y activation with Ctrl key"), this );//TODO remove Enable/disable part
-    m_pAccessKeys->setWhatsThis( i18n( "Pressing the Ctrl key when viewing webpages activates KDE's Access Keys. Unchecking this box will disable this accessibility feature. (Konqueror needs to be restarted for changes to take effect.)" ) );
+    m_pAccessKeys = new QCheckBox( i18n( "Enable Access Ke&y activation with Ctrl key"), this );//TODO remove Enable/disable part
+    m_pAccessKeys->setWhatsThis( i18n( "Pressing the Ctrl key when viewing webpages activates Access Keys. Unchecking this box will disable this accessibility feature. (Konqueror needs to be restarted for this change to take effect.)" ) );
     connect(m_pAccessKeys, SIGNAL(toggled(bool)), SLOT(changed()));
     fl->addRow( m_pAccessKeys);
 
