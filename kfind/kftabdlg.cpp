@@ -25,7 +25,6 @@
 #include <QtGui/QCheckBox>
 #include <QtGui/QWhatsThis>
 
-#include <QtGui/QSpinBox>
 #include <QtGui/QPushButton>
 #include <QtGui/QApplication>
 #include <QtGui/QDesktopWidget>
@@ -36,6 +35,7 @@
 #include <klineedit.h>
 #include <klocale.h>
 #include <kmessagebox.h>
+#include <KNumInput>
 #include <kfiledialog.h>
 #include <kregexpeditorinterface.h>
 #include <kservicetypetrader.h>
@@ -192,7 +192,7 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     fromDate->setObjectName( "fromDate" );
     toDate = new KDateCombo(pages[1] );
     toDate->setObjectName( "toDate" );
-    timeBox = new QSpinBox( pages[1] );
+    timeBox = new KIntSpinBox( pages[1] );
     timeBox->setRange( 1, 60 );
     timeBox->setSingleStep( 1 );
     timeBox->setObjectName( "timeBox" );
@@ -202,7 +202,7 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     sizeBox->setObjectName( "sizeBox" );
     QLabel * sizeL   =new QLabel(i18n("File &size is:"), pages[1]);
     sizeL->setBuddy( sizeBox );
-    sizeEdit=new QSpinBox(pages[1] );
+    sizeEdit=new KIntSpinBox(pages[1] );
     sizeEdit->setRange( 0, INT_MAX );
     sizeEdit->setSingleStep( 1 );
     sizeEdit->setObjectName( "sizeEdit" );

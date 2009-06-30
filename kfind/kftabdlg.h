@@ -37,7 +37,7 @@ class QDate;
 class QRegExp;
 class KDialog;
 class KComboBox;
-class QSpinBox;
+class KIntSpinBox;
 class QLabel;
 
 class KfDirDialog;
@@ -115,12 +115,12 @@ private:
   QRadioButton *rb[2];
   KDateCombo * fromDate;
   KDateCombo * toDate;
-  QSpinBox *timeBox;
+  KIntSpinBox *timeBox;
 
   //3rd page
   KComboBox *sizeBox;
   KComboBox *sizeUnitBox;
-  QSpinBox *sizeEdit;
+  KIntSpinBox *sizeEdit;
   QCheckBox *caseContextCb;
   QCheckBox *binaryContextCb;
   QCheckBox *regexpContentCb;

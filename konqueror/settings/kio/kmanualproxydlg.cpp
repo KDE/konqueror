@@ -27,7 +27,6 @@
 #include <QtGui/QLabel>
 #include <QtGui/QLayout>
 #include <QtGui/QPushButton>
-#include <QtGui/QSpinBox>
 
 // KDE
 #include <kdebug.h>
@@ -392,7 +391,7 @@ void KManualProxyDlg::updateButtons()
 }
 
 QString KManualProxyDlg::urlFromInput(const KLineEdit* edit,
-                                      const QSpinBox* spin) const
+                                      const KIntSpinBox* spin) const
 {
   if (!edit)
     return QString();

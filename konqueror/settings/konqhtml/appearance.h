@@ -23,7 +23,7 @@
 #include <kcmodule.h>
 #include <kconfig.h>
 
-class QSpinBox;
+class KIntSpinBox;
 class KFontComboBox;
 class QComboBox;
 class QCheckBox;
@@ -75,7 +75,7 @@ private:
   KIntNumInput* m_pageDPI;
   KFontComboBox* m_pFonts[6];
   QComboBox* m_pEncoding;
-  QSpinBox *m_pFontSizeAdjust;
+  KIntSpinBox *m_pFontSizeAdjust;
 
   int fSize;
   int fMinSize;

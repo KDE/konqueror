@@ -24,7 +24,7 @@
 
 #include "kproxydlgbase.h"
 #include "ui_manualproxy.h"
-class QSpinBox;
+class KIntSpinBox;
 class KLineEdit;
 
 class ManualProxyDlgUI : public QWidget, public Ui::ManualProxyDlgUI
@@ -66,7 +66,7 @@ protected Q_SLOTS:
   void deleteAllPressed();
   
 private:
-  QString urlFromInput( const KLineEdit* edit, const QSpinBox* spin ) const;
+  QString urlFromInput( const KLineEdit* edit, const KIntSpinBox* spin ) const;
   bool isValidURL( const QString&, KUrl* = 0 ) const;
   bool handleDuplicate( const QString& );
   bool getException ( QString&, const QString&,

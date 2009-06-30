@@ -26,7 +26,6 @@
 
 class QCheckBox;
 class QLabel;
-class QSpinBox;
 
 class KUrlRequester;
 

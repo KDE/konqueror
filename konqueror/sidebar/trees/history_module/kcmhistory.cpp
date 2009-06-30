@@ -68,6 +68,7 @@ HistorySidebarConfig::HistorySidebarConfig( QWidget *parent, const QVariantList 
 
     dialog->spinEntries->setRange( 0, INT_MAX );
     dialog->spinExpire->setRange(  0, INT_MAX );
+    dialog->spinExpire->setSuffix( ki18np(" day", " days") );
 
     dialog->spinNewer->setRange( 0, INT_MAX );
     dialog->spinOlder->setRange( 0, INT_MAX );
@@ -85,7 +86,7 @@ HistorySidebarConfig::HistorySidebarConfig( QWidget *parent, const QVariantList 
     connect( dialog->cbExpire, SIGNAL( toggled( bool )),
 	     dialog->spinExpire, SLOT( setEnabled( bool )));
     connect( dialog->spinExpire, SIGNAL( valueChanged( int )),
-	     this, SLOT( slotExpireChanged( int )));
+	     this, SLOT( slotExpireChanged()));
 
     connect( dialog->spinNewer, SIGNAL( valueChanged( int )),
 	     SLOT( slotNewerChanged( int )));
@@ -142,7 +143,7 @@ void HistorySidebarConfig::load()
     // enable/disable widgets
     dialog->spinExpire->setEnabled( dialog->cbExpire->isChecked() );
 
-    slotExpireChanged( dialog->spinExpire->value() );
+    slotExpireChanged();
     slotNewerChanged( dialog->spinNewer->value() );
     slotOlderChanged( dialog->spinOlder->value() );
 
@@ -198,9 +199,8 @@ QString HistorySidebarConfig::quickHelp() const
                 " You can configure the history sidebar here.");
 }
 
-void HistorySidebarConfig::slotExpireChanged( int value )
+void HistorySidebarConfig::slotExpireChanged()
 {
-    dialog->spinExpire->setSuffix( i18np(" day", " days", value) );
     configChanged();
 }
 

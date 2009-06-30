@@ -46,7 +46,7 @@
        </widget>
       </item>
       <item row="1" column="1" >
-       <widget class="QSpinBox" name="spinExpire" />
+       <widget class="KIntSpinBox" name="spinExpire" />
       </item>
       <item row="0" column="0" >
        <widget class="QLabel" name="lEntries" >
@@ -62,7 +62,7 @@
        </widget>
       </item>
       <item row="0" column="1" >
-       <widget class="QSpinBox" name="spinEntries" />
+       <widget class="KIntSpinBox" name="spinEntries" />
       </item>
      </layout>
     </widget>
@@ -77,10 +77,10 @@
        <number>0</number>
       </property>
       <item row="0" column="1" >
-       <widget class="QSpinBox" name="spinNewer" />
+       <widget class="KIntSpinBox" name="spinNewer" />
       </item>
       <item row="1" column="1" >
-       <widget class="QSpinBox" name="spinOlder" />
+       <widget class="KIntSpinBox" name="spinOlder" />
       </item>
       <item row="1" column="2" >
        <widget class="QComboBox" name="comboOlder" />
@@ -201,6 +201,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KIntSpinBox</class>
+   <extends>QSpinBox</extends>
+   <header>knuminput.h</header>
+  </customwidget>
+ </customwidgets>
   <resources/>
  <connections/>
 </ui>

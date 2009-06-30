@@ -21,7 +21,6 @@
 #include <kconfig.h>
 #include <QtDBus/QtDBus>
 #include <QtGui/QRadioButton>
-#include <QtGui/QSpinBox>
 #include <QtGui/QLabel>
 #include <QtGui/QCheckBox>
 #include <klocale.h>
