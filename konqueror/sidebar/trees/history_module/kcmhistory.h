@@ -56,7 +56,7 @@ private Q_SLOTS:
   void slotGetFontNewer();
   void slotGetFontOlder();
 
-  void slotExpireChanged( int );
+  void slotExpireChanged();
   void slotNewerChanged( int );
   void slotOlderChanged( int );
 
