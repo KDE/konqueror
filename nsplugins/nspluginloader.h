@@ -42,6 +42,7 @@ class OrgKdeNspluginsViewerInterface;
 class QPushButton;
 class QGridLayout;
 class OrgKdeNspluginsInstanceInterface;
+class QFrame;
 
 class NSPluginInstance : public EMBEDCLASS
 {
@@ -73,7 +74,7 @@ private:
     void embedIfNeeded(int w, int h);
     void resizePlugin(int w, int h );
 
-    QPushButton *_button;
+    QFrame *_frame;
     QGridLayout *_layout;
 };
 
