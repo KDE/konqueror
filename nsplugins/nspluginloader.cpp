@@ -46,6 +46,7 @@
 #include <QTextStream>
 #include <QRegExp>
 #include <QTimer>
+#include <QFrame>
 
 #include "nsplugins_class_interface.h"
 #include "nsplugins_instance_interface.h"
@@ -61,7 +62,7 @@ int NSPluginLoader::s_refCount = 0;
 
 
 NSPluginInstance::NSPluginInstance(QWidget *parent, const QString& viewerDBusId, const QString& id, const KUrl& baseUrl)
-  : EMBEDCLASS(parent), _loader(0), inited(false), haveSize(false), _button(0)
+  : EMBEDCLASS(parent), _loader(0), inited(false), haveSize(false), _frame(0)
 {
     setWindowTitle("nsp.host"); // for debugging..
     _instanceInterface = new org::kde::nsplugins::Instance( viewerDBusId, id, QDBusConnection::sessionBus() );
@@ -80,22 +81,28 @@ NSPluginInstance::NSPluginInstance(QWidget *parent, const QString& viewerDBusId,
                 return;
             }
         }
-        _button = new QPushButton(i18n("Start Plugin"), this);
-        _layout->addWidget(_button, 0, 0);
-        connect(_button, SIGNAL(clicked()), this, SLOT(loadPlugin()));
+        _frame = new QFrame(this);
+        _frame->setFrameShape(QFrame::Box);
+        _frame->setFrameShadow(QFrame::Plain);
+        _frame->setLineWidth(1);
+        _layout->addWidget(_frame, 0, 0);
+        QVBoxLayout *vlay = new QVBoxLayout(_frame);
+        QPushButton *startPluginButton = new QPushButton(i18n("Start Plugin"), _frame);
+        vlay->addWidget(startPluginButton);
+        connect(startPluginButton, SIGNAL(clicked()), this, SLOT(loadPlugin()));
         show();
     }
 }
 
 void NSPluginInstance::loadPlugin()
 {
-    delete _button;
-    _button = 0;
+    delete _frame;
+    _frame = 0;
     doLoadPlugin(width(), height());
 }
 
 void NSPluginInstance::doLoadPlugin(int w, int h) {
-    if (!inited && !_button) {
+    if (!inited && !_frame) {
         _loader = NSPluginLoader::instance();
         // resize before showing, some plugins are stupid and can't handle repeated
         // NPSetWindow() calls very well (viewer will avoid the call if not shown yet)
