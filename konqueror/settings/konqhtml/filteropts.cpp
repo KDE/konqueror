@@ -26,7 +26,6 @@
 #include <QtGui/QCheckBox>
 #include <QtGui/QLabel>
 #include <QtGui/QLayout>
-#include <QtGui/QLineEdit>
 #include <QtGui/QPushButton>
 #include <QtGui/QGroupBox>
 
@@ -41,6 +40,7 @@
 #include <KPluginLoader>
 #include <KListWidget>
 #include <klistwidgetsearchline.h>
+#include <klineedit.h>
 
 K_PLUGIN_FACTORY_DECLARATION(KcmKonqHtmlFactory)
 
@@ -76,7 +76,7 @@ KCMFilter::KCMFilter( QWidget *parent, const QVariantList& )
 
     vbox->addWidget(mListBox);
     vbox->addWidget(new QLabel( i18n("Expression (e.g. http://www.example.com/ad/*):")));
-    mString = new QLineEdit;
+    mString = new KLineEdit;
     vbox->addWidget(mString);
 
     KHBox *buttonBox = new KHBox;
