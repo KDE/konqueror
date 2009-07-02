@@ -1751,7 +1751,6 @@ void KonqMainWindow::slotConfigure()
         m_configureDialog = new KCMultiDialog( this );
         m_configureDialog->setObjectName( "configureDialog" );
         connect(m_configureDialog, SIGNAL(finished()), this, SLOT(slotConfigureDone()));
-        connect(m_configureDialog, SIGNAL(hidden()),   this, SLOT(slotConfigureDone()));
 
         //BEGIN SYNC with initActions()
         const char* const toplevelModules[]={
