@@ -161,7 +161,7 @@ bool WebKitPart::openUrl(const KUrl &url)
 {
     setUrl(url);
 
-    m_webView->load(url, arguments(), browserExtension()->browserArguments());
+    m_webView->loadUrl(url, arguments(), browserExtension()->browserArguments());
 
     return true;
 }
