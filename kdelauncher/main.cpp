@@ -37,7 +37,9 @@
 
 #include <qwebframe.h>
 #include <qwebsettings.h>
+#if QT_VERSION >= 0x040600
 #include <qwebelement.h>
+#endif
 
 #include <QtGui>
 #include <QDebug>
@@ -81,7 +83,11 @@ public:
 
         setupUI();
 
+#if QT_VERSION >= 0x040600
         QUrl qurl = view->guessUrlFromString(url);
+#else
+        QUrl qurl(url);
+#endif
         if (qurl.isValid()) {
             urlEdit->setText(qurl.toEncoded());
             view->load(qurl);
@@ -105,7 +111,11 @@ protected slots:
 
     void changeLocation() {
         QString string = urlEdit->text();
+#if QT_VERSION >= 0x040600
         QUrl url = view->guessUrlFromString(string);
+#else
+        QUrl url(url);
+#endif
         if (!url.isValid())
             url = QUrl("http://" + string + "/");
         urlEdit->setText(url.toEncoded());
@@ -190,10 +200,12 @@ protected slots:
         QString str = QInputDialog::getText(this, "Select elements", "Choose elements",
                                             QLineEdit::Normal, "a", &ok);
         if (ok && !str.isEmpty()) {
+#if QT_VERSION >= 0x040600
             QList<QWebElement> result =  view->page()->mainFrame()->findAllElements(str);
             foreach (QWebElement e, result)
                 e.setStyleProperty("background-color", "yellow");
             statusBar()->showMessage(QString("%1 element(s) selected").arg(result.count()), 5000);
+#endif
         }
     }
 
