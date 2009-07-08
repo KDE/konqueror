@@ -192,7 +192,7 @@ void KWebView::resultSearch(KWebPage::FindFlags flags)
     d->searchBar->setFoundMatch(status);
 }
 
-void KWebView::load(const KUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &bargs)
+void KWebView::loadUrl(const KUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &bargs)
 {
     QNetworkRequest req;
 

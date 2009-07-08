@@ -65,7 +65,7 @@ public Q_SLOTS:
     /**
      * similar to load(const QNetworkRequest&, QNetworkAccessManager::Operation), but for KParts-style arguments instead.
      */
-    void load(const KUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &bargs);
+    void loadUrl(const KUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &bargs);
 
 Q_SIGNALS:
     void showContextMenu(QContextMenuEvent *event);
