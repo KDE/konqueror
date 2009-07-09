@@ -197,14 +197,14 @@ protected slots:
 
     void selectElements() {
         bool ok;
-        QString str = QInputDialog::getText(this, "Select elements", "Choose elements",
+        QString str = QInputDialog::getText(this, i18n("Select elements"), i18n("Choose elements"),
                                             QLineEdit::Normal, "a", &ok);
         if (ok && !str.isEmpty()) {
 #if QT_VERSION >= 0x040600
             QList<QWebElement> result =  view->page()->mainFrame()->findAllElements(str);
             foreach (QWebElement e, result)
                 e.setStyleProperty("background-color", "yellow");
-            statusBar()->showMessage(QString("%1 element(s) selected").arg(result.count()), 5000);
+            statusBar()->showMessage(i18n("%1 element(s) selected",result.count()), 5000);
 #endif
         }
     }
@@ -249,14 +249,14 @@ private:
         bar->addAction(view->pageAction(QWebPage::Stop));
         bar->addWidget(urlEdit);
 
-        QMenu *fileMenu = menuBar()->addMenu("&File");
-        QAction *newWindow = fileMenu->addAction("New Window", this, SLOT(newWindow()));
+        QMenu *fileMenu = menuBar()->addMenu(i18n("&File"));
+        QAction *newWindow = fileMenu->addAction(i18n("New Window"), this, SLOT(newWindow()));
 #if QT_VERSION >= 0x040400
-        fileMenu->addAction(tr("Print"), this, SLOT(print()));
+        fileMenu->addAction(i18n("Print"), this, SLOT(print()));
 #endif
-        fileMenu->addAction("Close", this, SLOT(close()));
+        fileMenu->addAction(i18n("Close"), this, SLOT(close()));
 
-        QMenu *editMenu = menuBar()->addMenu("&Edit");
+        QMenu *editMenu = menuBar()->addMenu(i18n("&Edit"));
         editMenu->addAction(view->pageAction(QWebPage::Undo));
         editMenu->addAction(view->pageAction(QWebPage::Redo));
         editMenu->addSeparator();
@@ -264,29 +264,29 @@ private:
         editMenu->addAction(view->pageAction(QWebPage::Copy));
         editMenu->addAction(view->pageAction(QWebPage::Paste));
         editMenu->addSeparator();
-        QAction *setEditable = editMenu->addAction("Set Editable", this, SLOT(setEditable(bool)));
+        QAction *setEditable = editMenu->addAction(i18n("Set Editable"), this, SLOT(setEditable(bool)));
         setEditable->setCheckable(true);
 
-        QMenu *viewMenu = menuBar()->addMenu("&View");
+        QMenu *viewMenu = menuBar()->addMenu(i18n("&View"));
         viewMenu->addAction(view->pageAction(QWebPage::Stop));
         viewMenu->addAction(view->pageAction(QWebPage::Reload));
         viewMenu->addSeparator();
-        QAction *zoomIn = viewMenu->addAction("Zoom &In", this, SLOT(zoomIn()));
-        QAction *zoomOut = viewMenu->addAction("Zoom &Out", this, SLOT(zoomOut()));
-        QAction *resetZoom = viewMenu->addAction("Reset Zoom", this, SLOT(resetZoom()));
-        QAction *zoomTextOnly = viewMenu->addAction("Zoom Text Only", this, SLOT(toggleZoomTextOnly(bool)));
+        QAction *zoomIn = viewMenu->addAction(i18n("Zoom &In"), this, SLOT(zoomIn()));
+        QAction *zoomOut = viewMenu->addAction(i18n("Zoom &Out"), this, SLOT(zoomOut()));
+        QAction *resetZoom = viewMenu->addAction(i18n("Reset Zoom"), this, SLOT(resetZoom()));
+        QAction *zoomTextOnly = viewMenu->addAction(i18n("Zoom Text Only"), this, SLOT(toggleZoomTextOnly(bool)));
         zoomTextOnly->setCheckable(true);
         zoomTextOnly->setChecked(false);
         viewMenu->addSeparator();
-        viewMenu->addAction("Dump HTML", this, SLOT(dumpHtml()));
+        viewMenu->addAction(i18n("Dump HTML"), this, SLOT(dumpHtml()));
 
-        QMenu *formatMenu = new QMenu("F&ormat");
+        QMenu *formatMenu = new QMenu(i18n("F&ormat"));
         formatMenuAction = menuBar()->addMenu(formatMenu);
         formatMenuAction->setVisible(false);
         formatMenu->addAction(view->pageAction(QWebPage::ToggleBold));
         formatMenu->addAction(view->pageAction(QWebPage::ToggleItalic));
         formatMenu->addAction(view->pageAction(QWebPage::ToggleUnderline));
-        QMenu *writingMenu = formatMenu->addMenu(tr("Writing Direction"));
+        QMenu *writingMenu = formatMenu->addMenu(i18n("Writing Direction"));
         writingMenu->addAction(view->pageAction(QWebPage::SetTextDirectionDefault));
         writingMenu->addAction(view->pageAction(QWebPage::SetTextDirectionLeftToRight));
         writingMenu->addAction(view->pageAction(QWebPage::SetTextDirectionRightToLeft));
@@ -308,8 +308,8 @@ private:
         view->pageAction(QWebPage::ToggleItalic)->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_I));
         view->pageAction(QWebPage::ToggleUnderline)->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_U));
 
-        QMenu *toolsMenu = menuBar()->addMenu("&Tools");
-        toolsMenu->addAction("Select elements...", this, SLOT(selectElements()));
+        QMenu *toolsMenu = menuBar()->addMenu(i18n("&Tools"));
+        toolsMenu->addAction(i18n("Select elements..."), this, SLOT(selectElements()));
 
     }
 
