@@ -384,7 +384,8 @@ void WebKitBrowserExtension::slotSaveImageAs()
 {
     QList<KUrl> urls;
     urls.append(part->view()->contextMenuResult().imageUrl());
-    for (int i = 0; i != urls.count(); i++) {
+    const int nbUrls = urls.count();
+    for (int i = 0; i != nbUrls; i++) {
         QString file = KFileDialog::getSaveFileName(KUrl(), QString(), part->widget());
         KIO::NetAccess::file_copy(urls.at(i), file, part->widget());
     }
