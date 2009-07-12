@@ -652,7 +652,7 @@ void KonqMainWindow::openUrl(KonqView *_view, const KUrl &_url,
                 KParts::BrowserRun::AskSaveResult res = KonqRun::askSave( url, offer, mimeType );
                 KMessageBox::setDontShowAskAgainConfig(0);
                 if ( res == KParts::BrowserRun::Save )
-                    KParts::BrowserRun::simpleSave( url, QString(), this );
+                    KParts::BrowserRun::saveUrl( url, QString(), this, req.args );
                 open = ( res == KParts::BrowserRun::Open );
             }
             if ( open )
@@ -819,7 +819,7 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
         else if (res == KParts::BrowserRun::Cancel)
             return true; // handled, don't do anything else
         else { // Save
-            KParts::BrowserRun::simpleSave(url, suggestedFilename, this);
+            KParts::BrowserRun::saveUrl(url, suggestedFilename, this, req.args);
             return true; // handled
         }
     }
@@ -3486,7 +3486,6 @@ void KonqMainWindow::setUpEnabled( const KUrl &url )
 
       m_paUp->setEnabled(bHasUpURL);
 }
-
 
 void KonqMainWindow::initActions()
 {
