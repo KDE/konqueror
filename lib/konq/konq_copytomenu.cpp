@@ -1,6 +1,6 @@
 /* This file is part of the KDE project
 
-   Copyright 2008 David Faure <faure@kde.org>
+   Copyright 2008, 2009 David Faure <faure@kde.org>
 
    This library is free software; you can redistribute it and/or modify
    it under the terms of the GNU Library General Public License as published
@@ -164,10 +164,16 @@ void KonqCopyToMainMenu::copyOrMoveTo(const KUrl& dest)
         m_recentDirsGroup.writePathEntry("Paths", recentDirs);
     }
 
+    // #199549: add a trailing slash to avoid unexpected results when the
+    // dest doesn't exist anymore: it was creating a file with the name of
+    // the now non-existing dest.
+    KUrl dirDest = dest;
+    dirDest.adjustPath(KUrl::AddTrailingSlash);
+
     // And now let's do the copy or move -- with undo/redo support.
     KonqOperations::copy(d->m_parentWidget ? d->m_parentWidget : this,
                          m_menuType == Copy ? KonqOperations::COPY : KonqOperations::MOVE,
-                         d->m_urls, dest);
+                         d->m_urls, dirDest);
 }
 
 ////
@@ -206,7 +212,7 @@ void KonqCopyToDirectoryMenu::slotAboutToShow()
         KonqCopyToDirectoryMenu* subMenu = new KonqCopyToDirectoryMenu(this, m_mainMenu, subPath);
         QString menuTitle(subDir);
         // Replace '&' by "&&" to make sure that '&' inside the directory name is displayed
-        // correctly and not misinterpreted as an indicator for a keyboard shortcut 
+        // correctly and not misinterpreted as an indicator for a keyboard shortcut
         subMenu->setTitle(menuTitle.replace('&', "&&"));
         const QString iconName = dirMime->iconName(KUrl(subPath));
         subMenu->setIcon(KIcon(iconName));

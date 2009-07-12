@@ -151,7 +151,7 @@ void KonqOperations::doPaste( QWidget * parent, const KUrl & destUrl, const QPoi
 
 void KonqOperations::copy( QWidget * parent, Operation method, const KUrl::List & selectedUrls, const KUrl& destUrl )
 {
-    kDebug(1203) << "KonqOperations::copy() " << parent->metaObject()->className();
+    kDebug(1203) << parent->metaObject()->className() << selectedUrls << destUrl;
     if ((method!=COPY) && (method!=MOVE) && (method!=LINK))
     {
         kWarning(1203) << "Illegal copy method !" ;
