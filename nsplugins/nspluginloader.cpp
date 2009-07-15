@@ -262,7 +262,7 @@ void NSPluginLoader::scanPlugins()
       if (!mime.isEmpty())
         {
           // insert the mimetype -> plugin mapping
-          _mapping.insert(mime, QString(plugin).toLower());
+          _mapping.insert(mime, QString(plugin));
 
           // insert the suffix -> mimetype mapping
           QStringList::Iterator suffix;
