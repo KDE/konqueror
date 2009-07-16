@@ -99,9 +99,9 @@ bool WinIdEmbedder::eventFilter(QObject *o, QEvent *e)
 bool sendVisualNotification(QString text, QString title, int timeout)
 {
 #ifdef QT_QTDBUS_FOUND
-  const QString dbusServiceName = "org.kde.VisualNotifications";
-  const QString dbusInterfaceName = "org.kde.VisualNotifications";
-  const QString dbusPath = "/VisualNotifications";
+  const QString dbusServiceName = "org.freedesktop.Notifications";
+  const QString dbusInterfaceName = "org.freedesktop.Notifications";
+  const QString dbusPath = "/org/freedesktop/Notifications";
 
   // check if service already exists on plugin instantiation
   QDBusConnectionInterface* interface = QDBusConnection::sessionBus().interface();
