@@ -119,7 +119,6 @@ bool sendVisualNotification(QString text, QString title, int timeout)
 
   args.append("kdialog"); // app_name
   args.append(0U); // replaces_id
-  args.append("kdialogPassivePopup"); // event_id
   args.append("dialog-information"); // app_icon
   args.append(title); // summary
   args.append(text); // body
