@@ -62,8 +62,6 @@ HistorySidebarConfig::HistorySidebarConfig( QWidget *parent, const QVariantList 
     m_settings->readSettings( false );
 
     QVBoxLayout *topLayout = new QVBoxLayout(this);
-    topLayout->setMargin(0);
-    topLayout->setSpacing(KDialog::spacingHint());
     dialog = new KonqSidebarHistoryDlg(this);
 
     dialog->spinEntries->setRange( 0, INT_MAX );

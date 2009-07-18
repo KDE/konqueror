@@ -75,7 +75,6 @@ CSSConfig::CSSConfig(QWidget *parent, const QVariantList &)
   vbox->setMargin(0);
   vbox->setSpacing(0);
   vbox->addWidget(configWidget);
-  configWidget->layout()->setMargin(0);
 }
 
 
