@@ -457,7 +457,7 @@ NSPluginInstance *NSPluginLoader::newInstance(QWidget *parent, const QString& ur
 
    // get plugin class object
    QDBusObjectPath cls_ref = _viewer->newClass( plugin_name, ownDBusId );
-   if ( cls_ref.path() == QLatin1String("/null") )
+   if ( cls_ref.path() == QLatin1String("/null") || cls_ref.path().isEmpty() )
    {
       kDebug() << "Couldn't create plugin class";
       return 0;
@@ -472,7 +472,7 @@ NSPluginInstance *NSPluginLoader::newInstance(QWidget *parent, const QString& ur
 
    // get plugin instance
    QDBusObjectPath inst_ref = cls->newInstance( url, mime, embed, argn, argv, ownDBusId, callbackId, reload );
-   if ( inst_ref.path() == QLatin1String("/null"))
+   if ( inst_ref.path() == QLatin1String("/null") || inst_ref.path().isEmpty() )
    {
       kDebug() << "Couldn't create plugin instance";
       delete cls;
