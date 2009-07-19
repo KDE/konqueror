@@ -55,10 +55,10 @@ class NullNetworkReply : public QNetworkReply
 {
 public:
     NullNetworkReply() { QTimer::singleShot(0, this, SIGNAL(finished())); }
-    virtual void abort() {};
-    virtual qint64 bytesAvailable() const { return -1; };
+    virtual void abort() {}
+    virtual qint64 bytesAvailable() const { return -1; }
 protected:
-    virtual qint64 readData(char*, qint64) { return -1; };
+    virtual qint64 readData(char*, qint64) { return -1; }
 };
 
 #if KDE_IS_VERSION(4, 2, 70)
@@ -234,21 +234,28 @@ QString KWebPage::userAgentForUrl(const QUrl& _url) const
 void KWebPage::slotHandleUnsupportedContent(QNetworkReply *reply)
 {
     const KUrl url(reply->request().url());
-    kDebug() << "title:" << url;
-    kDebug() << "error:" << reply->errorString();
+    kDebug() << "url:" << reply->request().url();
+    kDebug() << "location:" << reply->header(QNetworkRequest::LocationHeader).toString();
+    kDebug() << "error:" << reply->error();
 
-    KParts::BrowserRun::AskSaveResult res = KParts::BrowserRun::askEmbedOrSave(
-                                                url,
-                                                reply->header(QNetworkRequest::ContentTypeHeader).toString(),
-                                                d->getFileNameForDownload(reply->request(), reply));
-    switch (res) {
-    case KParts::BrowserRun::Save:
-        slotDownloadRequested(reply->request(), reply);
-        return;
-    case KParts::BrowserRun::Cancel:
-        return;
-    default: // Open
-        break;
+    // TODO: Determine out why the unsupportedContent signal is emitted with
+    // with a QNetworkReply that contains invalid (read: empty) url and error message
+    // set to "Unknown error". For now ignore all such signals...
+    if (url.isValid())
+    {
+      KParts::BrowserRun::AskSaveResult res = KParts::BrowserRun::askEmbedOrSave(
+                                                  url,
+                                                  reply->header(QNetworkRequest::ContentTypeHeader).toString(),
+                                                  d->getFileNameForDownload(reply->request(), reply));
+      switch (res) {
+      case KParts::BrowserRun::Save:
+          slotDownloadRequested(reply->request(), reply);
+          return;
+      case KParts::BrowserRun::Cancel:
+          return;
+      default: // Open
+          break;
+      }
     }
 }
 
