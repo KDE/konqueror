@@ -43,8 +43,6 @@ SMBRoOptions::SMBRoOptions(QWidget *parent, const QVariantList &, const KCompone
   : KCModule(componentData.isValid() ? componentData : KioConfigFactory::componentData(), parent)
 {
    QGridLayout *layout = new QGridLayout(this );
-   layout->setMargin( KDialog::marginHint() );
-   layout->setSpacing( KDialog::spacingHint() );
    QLabel *label=new QLabel(i18n("These settings apply to network browsing only."),this);
    layout->addWidget(label,0,0, 1, 2 );
 

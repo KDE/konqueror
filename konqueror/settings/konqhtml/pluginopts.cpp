@@ -639,7 +639,6 @@ PluginDomainDialog::PluginDomainDialog(QWidget *parent) :
   thisLayout->addSpacing(6);
 
   QBoxLayout *hl = new QHBoxLayout(this);
-  hl->setSpacing(6);
   hl->setMargin(0);
   hl->addStretch(10);
 

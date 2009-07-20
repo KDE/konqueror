@@ -64,7 +64,6 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList&)
   QGroupBox *box = new QGroupBox( i18n("Images"),mainTab);
   l->addWidget(box);
   QFormLayout *fl= new QFormLayout(box);
-  fl->setSpacing(KDialog::spacingHint());
 
   m_pAutoLoadImagesCheckBox = new QCheckBox( i18n( "A&utomatically load images"), this );
   m_pAutoLoadImagesCheckBox->setWhatsThis( i18n( "<html>If this box is checked, Konqueror will"
@@ -151,7 +150,6 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList&)
     fonts.append(empty);
 
   QVBoxLayout *lay = new QVBoxLayout(fontsTab);
-  lay->setSpacing(KDialog::spacingHint());
 
   QGroupBox* gb = new QGroupBox( i18n("Font Si&ze"));
   lay->addWidget(gb);

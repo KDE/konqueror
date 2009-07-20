@@ -51,8 +51,6 @@ KJavaScriptOptions::KJavaScriptOptions( KSharedConfig::Ptr config, const QString
   _removeECMADomainSettings(false)
 {
   QVBoxLayout* toplevel = new QVBoxLayout( this );
-  toplevel->setMargin( 10 );
-  toplevel->setSpacing( 5 );
 
   enableJavaScriptGloballyCB = new QCheckBox( i18n( "Ena&ble JavaScript globally" ));
   enableJavaScriptGloballyCB->setWhatsThis( i18n("Enables the execution of scripts written in ECMA-Script "

@@ -41,8 +41,6 @@ DomainListView::DomainListView(KSharedConfig::Ptr config,const QString &title,
 		QWidget *parent) :
 	QGroupBox(title, parent), config(config) {
   QHBoxLayout* thisLayout = new QHBoxLayout(this);
-  thisLayout->setSpacing(KDialog::spacingHint());
-  thisLayout->setMargin(KDialog::marginHint());
 
   domainSpecificLV = new QTreeWidget(this);
   domainSpecificLV->setRootIsDecorated(false);

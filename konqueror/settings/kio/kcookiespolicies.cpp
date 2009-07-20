@@ -80,7 +80,6 @@ KCookiesPolicies::KCookiesPolicies(const KComponentData &componentData, QWidget 
 {
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mainLayout->setMargin(0);
-    mainLayout->setSpacing(0);
 
     dlg = new KCookiesPolicyDlgUI (this);
     dlg->kListViewSearchLine->setTreeWidget(dlg->lvDomainPolicy);

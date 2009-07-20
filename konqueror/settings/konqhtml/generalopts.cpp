@@ -47,7 +47,6 @@ KKonqGeneralOptions::KKonqGeneralOptions(QWidget *parent, const QVariantList&)
     m_pConfig = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals);
     QVBoxLayout *lay = new QVBoxLayout(this);
     lay->setMargin(0);
-    lay->setSpacing(KDialog::spacingHint());
 
     addHomeUrlWidgets(lay);
 

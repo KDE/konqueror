@@ -53,7 +53,6 @@ KCMFilter::KCMFilter( QWidget *parent, const QVariantList& )
     setButtons(Default|Apply);
 
     QVBoxLayout *topLayout = new QVBoxLayout(this);
-    topLayout->setSpacing(KDialog::spacingHint());
 
     mEnableCheck = new QCheckBox(i18n("Enable filters"), this);
     topLayout->addWidget( mEnableCheck );
@@ -81,7 +80,6 @@ KCMFilter::KCMFilter( QWidget *parent, const QVariantList& )
 
     KHBox *buttonBox = new KHBox;
     vbox->addWidget(buttonBox);
-    buttonBox->setSpacing( KDialog::spacingHint() );
 
     topBox->setLayout(vbox);
     mInsertButton = new QPushButton( i18n("Insert"), buttonBox );
