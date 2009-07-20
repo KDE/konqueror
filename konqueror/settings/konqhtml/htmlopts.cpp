@@ -54,8 +54,6 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
     QGroupBox *bgBookmarks = new QGroupBox( i18n("Boo&kmarks"));
     QVBoxLayout *laygroup1 = new QVBoxLayout;
 
-    laygroup1->setSpacing(KDialog::spacingHint());
-
     m_pAdvancedAddBookmarkCheckBox = new QCheckBox(i18n( "Ask for name and folder when adding bookmarks" ));
     laygroup1->addWidget(m_pAdvancedAddBookmarkCheckBox);
 
@@ -77,7 +75,6 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
     m_pFormCompletionCheckBox = new QGroupBox( i18n("Form Com&pletion"), this );
     m_pFormCompletionCheckBox->setCheckable(true);
     QFormLayout *laygroup2 = new QFormLayout(m_pFormCompletionCheckBox);
-    laygroup2->setSpacing(KDialog::spacingHint());
 
     m_pFormCompletionCheckBox->setWhatsThis( i18n( "If this box is checked, Konqueror will remember"
                   " the data you enter in web forms and suggest it in similar fields for all forms." ) );
@@ -96,7 +93,6 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
     // Mouse behavior
     QGroupBox *bgMouse = new QGroupBox( i18n("Mouse Beha&vior") );
     QVBoxLayout *laygroup3 = new QVBoxLayout(bgMouse);
-    laygroup3->setSpacing(KDialog::spacingHint());
 
     m_cbCursor = new QCheckBox(i18n("Chan&ge cursor over links") );
     laygroup3->addWidget( m_cbCursor );

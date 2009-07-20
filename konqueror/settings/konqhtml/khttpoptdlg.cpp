@@ -22,8 +22,6 @@ KHTTPOptions::KHTTPOptions(KSharedConfig::Ptr config, const QString &group, cons
   : KCModule( componentData, parent ), m_pConfig(config), m_groupname(group)
 {
   QVBoxLayout *lay = new QVBoxLayout(this);
-  lay->setMargin(10);
-  lay->setSpacing(5);
 
   lay->addWidget( new QLabel(i18n("Accept languages:"), this) );
 

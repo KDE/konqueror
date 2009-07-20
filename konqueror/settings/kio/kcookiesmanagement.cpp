@@ -106,7 +106,6 @@ KCookiesManagement::KCookiesManagement(const KComponentData &componentData, QWid
   // Toplevel layout
   QVBoxLayout* mainLayout = new QVBoxLayout(this);
   mainLayout->setMargin(0);
-  mainLayout->setSpacing(KDialog::spacingHint());
 
   dlg = new KCookiesManagementDlgUI (this);
 

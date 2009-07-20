@@ -70,8 +70,6 @@ KJavaOptions::KJavaOptions( KSharedConfig::Ptr config, const QString &group,
       _removeJavaDomainSettings(false)
 {
     QVBoxLayout* toplevel = new QVBoxLayout( this );
-    toplevel->setMargin(KDialog::marginHint());
-    toplevel->setSpacing(KDialog::spacingHint());
 
 
     /***************************************************************************
@@ -95,7 +93,6 @@ KJavaOptions::KJavaOptions( KSharedConfig::Ptr config, const QString &group,
      **************************************************************************/
     QGroupBox* javartGB = new QGroupBox( i18n( "Java Runtime Settings" ), this );
     QFormLayout* laygroup1 = new QFormLayout(javartGB);
-    laygroup1->setSpacing(KDialog::spacingHint());
     toplevel->addWidget( javartGB );
 
     javaSecurityManagerCB = new QCheckBox( i18n("&Use security manager" ), this);

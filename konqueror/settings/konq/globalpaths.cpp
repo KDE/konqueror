@@ -42,7 +42,7 @@
 #include <QtGui/QComboBox>
 #include <QtGui/QLabel>
 #include <QtGui/QLayout>
-#include <QtGui/QGridLayout>
+#include <QtGui/QFormLayout>
 #include <QtGui/QDesktopWidget>
 #include <QtGui/QApplication>
 #include <QtDBus/QtDBus>
@@ -73,70 +73,55 @@
 DesktopPathConfig::DesktopPathConfig(QWidget *parent, const QVariantList &)
     : KCModule( KonqKcmFactory::componentData(), parent )
 {
-  int row = 0;
-  QGridLayout *lay = new QGridLayout(this);
-  lay->setSpacing(KDialog::spacingHint());
+  QFormLayout *lay = new QFormLayout(this);
   lay->setMargin(0);
-
-  lay->setColumnStretch(0,0);
-  lay->setColumnStretch(1,0);
-  lay->setColumnStretch(2,10);
-
 
   setQuickHelp( i18n("<h1>Paths</h1>\n"
     "This module allows you to choose where in the filesystem the "
     "files on your desktop should be stored.\n"
     "Use the \"Whats This?\" (Shift+F1) to get help on specific options."));
 
-  urDesktop = addRow(++row, lay, i18n("Desktop path:"),
+  urDesktop = addRow(lay, i18n("Desktop path:"),
                      i18n("This folder contains all the files"
                           " which you see on your desktop. You can change the location of this"
                           " folder if you want to, and the contents will move automatically"
                           " to the new location as well."));
 
-  urAutostart = addRow(++row, lay, i18n("Autostart path:"),
+  urAutostart = addRow(lay, i18n("Autostart path:"),
                        i18n("This folder contains applications or"
                             " links to applications (shortcuts) that you want to have started"
                             " automatically whenever KDE starts. You can change the location of this"
                             " folder if you want to, and the contents will move automatically"
                             " to the new location as well."));
 
-  urDocument = addRow(++row, lay, i18n("Documents path:"),
+  urDocument = addRow(lay, i18n("Documents path:"),
                       i18n("This folder will be used by default to "
                            "load or save documents from or to."));
 
-  urDownload = addRow(++row, lay, i18n("Downloads path:"),
+  urDownload = addRow(lay, i18n("Downloads path:"),
                       i18n("This folder will be used by default to "
                            "save your downloaded items."));
 
-  urMovie = addRow(++row, lay, i18n("Movies path:"),
+  urMovie = addRow(lay, i18n("Movies path:"),
                    i18n("This folder will be used by default to "
                         "load or save movies from or to."));
 
-  urPicture = addRow(++row, lay, i18n("Pictures path:"),
+  urPicture = addRow(lay, i18n("Pictures path:"),
                      i18n("This folder will be used by default to "
                           "load or save pictures from or to."));
 
-  urMusic = addRow(++row, lay, i18n("Music path:"),
+  urMusic = addRow(lay, i18n("Music path:"),
                    i18n("This folder will be used by default to "
                         "load or save music from or to."));
-
-  row++;
-
-  lay->setRowStretch(row, 10); // last line grows
 }
 
-KUrlRequester* DesktopPathConfig::addRow(int row, QGridLayout *lay, const QString& label, const QString& whatsThis)
+KUrlRequester* DesktopPathConfig::addRow(QFormLayout *lay, const QString& label, const QString& whatsThis)
 {
-    QLabel* tmpLabel = new QLabel(label, this);
-    tmpLabel->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
-    lay->addWidget(tmpLabel, row, 0);
     KUrlRequester* ur = new KUrlRequester(this);
     ur->setMode(KFile::Directory | KFile::LocalOnly);
-    tmpLabel->setBuddy(ur);
-    lay->addWidget(ur, row, 1, 1, 2);
+    lay->addRow(label, ur);
     connect(ur, SIGNAL(textChanged(QString)), this, SLOT(changed()));
-    tmpLabel->setWhatsThis(whatsThis);
+    lay->labelForField(ur)->setWhatsThis(whatsThis);
     ur->setWhatsThis(whatsThis);
     return ur;
 }

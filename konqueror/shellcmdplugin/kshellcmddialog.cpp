@@ -39,8 +39,6 @@ KShellCommandDialog::KShellCommandDialog(const QString& title, const QString& co
    setButtons( KDialog::None );
    QWidget *w = new QWidget( this );
    QVBoxLayout * box= new QVBoxLayout;
-   box->setMargin(marginHint());
-   box->setSpacing(spacingHint());
    w->setLayout( box );
    setMainWidget(w);
 
@@ -61,7 +59,6 @@ KShellCommandDialog::KShellCommandDialog(const QString& title, const QString& co
 
    QHBoxLayout * hlayout = new QHBoxLayout();
    box->addItem(hlayout);
-   hlayout->setSpacing( spacingHint() );
    hlayout->addWidget( cancelButton );
    hlayout->addWidget( closeButton );
 

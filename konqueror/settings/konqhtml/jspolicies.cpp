@@ -143,8 +143,6 @@ JSPoliciesFrame::JSPoliciesFrame(JSPolicies *policies, const QString &title,
   QGridLayout *this_layout = new QGridLayout();
   setLayout(this_layout);
   this_layout->setAlignment(Qt::AlignTop);
-  this_layout->setSpacing(3);
-  this_layout->setMargin(11);
 
   QString wtstr;	// what's this description
   int colIdx;		// column index

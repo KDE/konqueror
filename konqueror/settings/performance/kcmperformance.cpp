@@ -51,11 +51,9 @@ Config::Config( QWidget* parent_P, const QVariantList & )
     QVBoxLayout *topLayout = new QVBoxLayout( this );
     QTabWidget* tabs = new QTabWidget( this );
     konqueror_widget = new Konqueror;
-    konqueror_widget->layout()->setMargin( KDialog::marginHint() );
     connect( konqueror_widget, SIGNAL( changed()), SLOT( changed()));
     tabs->addTab( konqueror_widget, i18n( "Konqueror" ));
     system_widget = new SystemWidget;
-    system_widget->layout()->setMargin( KDialog::marginHint() );
     connect( system_widget, SIGNAL( changed()), SLOT( changed()));
     tabs->addTab( system_widget, i18n( "System" ));
     topLayout->addWidget( tabs );

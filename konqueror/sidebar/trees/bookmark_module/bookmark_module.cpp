@@ -568,7 +568,6 @@ BookmarkEditDialog::BookmarkEditDialog(const QString& title, const QString& url,
 
     bool folder = url.isNull();
     QGridLayout *grid = new QGridLayout( main );
-    grid->setSpacing( spacingHint() );
 
     QLabel *nameLabel = new QLabel(i18n("Name:"), main);
     nameLabel->setObjectName("title label");

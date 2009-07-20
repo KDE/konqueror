@@ -7,6 +7,7 @@
 #include <QtGui/QCheckBox>
 #include <QtGui/QGroupBox>
 #include <QtGui/QBoxLayout>
+#include <QtGui/QFormLayout>
 
 // KDE
 #include <kio/ioslave_defaults.h>
@@ -39,30 +40,26 @@ KIOPreferences::KIOPreferences(QWidget *parent, const QVariantList &)
                                     "allowed value is %1 seconds.", MAX_TIMEOUT_VALUE));
     mainLayout->addWidget( gb_Timeout );
 
-    QVBoxLayout* timeoutLayout = new QVBoxLayout(gb_Timeout);
+    QFormLayout* timeoutLayout = new QFormLayout(gb_Timeout);
     sb_socketRead = new KIntNumInput( this );
     sb_socketRead->setSuffix( i18n( " sec" ) );
-    sb_socketRead->setLabel( i18n( "Soc&ket read:" ), Qt::AlignVCenter | Qt::AlignRight);
     connect(sb_socketRead, SIGNAL(valueChanged(int)), SLOT(configChanged()));
-    timeoutLayout->addWidget(sb_socketRead);
+    timeoutLayout->addRow(i18n( "Soc&ket read:" ), sb_socketRead);
 
     sb_proxyConnect = new KIntNumInput( sb_socketRead, 0, this );
     sb_proxyConnect->setSuffix( i18n( " sec" ) );
-    sb_proxyConnect->setLabel( i18n( "Pro&xy connect:" ), Qt::AlignVCenter | Qt::AlignRight);
     connect(sb_proxyConnect, SIGNAL(valueChanged(int)), SLOT(configChanged()));
-    timeoutLayout->addWidget(sb_proxyConnect);
+    timeoutLayout->addRow(i18n( "Pro&xy connect:" ), sb_proxyConnect);
 
     sb_serverConnect = new KIntNumInput( sb_proxyConnect, 0, this );
     sb_serverConnect->setSuffix( i18n( " sec" ) );
-    sb_serverConnect->setLabel( i18n("Server co&nnect:"), Qt::AlignVCenter | Qt::AlignRight);
     connect(sb_serverConnect, SIGNAL(valueChanged(int)), SLOT(configChanged()));
-    timeoutLayout->addWidget(sb_serverConnect);
+    timeoutLayout->addRow(i18n("Server co&nnect:"), sb_serverConnect);
 
     sb_serverResponse = new KIntNumInput( sb_serverConnect, 0, this );
     sb_serverResponse->setSuffix( i18n( " sec" ) );
-    sb_serverResponse->setLabel( i18n("&Server response:"), Qt::AlignVCenter | Qt::AlignRight);
     connect(sb_serverResponse, SIGNAL(valueChanged(int)), SLOT(configChanged()));
-    timeoutLayout->addWidget(sb_serverResponse);
+    timeoutLayout->addRow(i18n("&Server response:"), sb_serverResponse);
 
     gb_Ftp = new QGroupBox( i18n( "FTP Options" ), this );
     mainLayout->addWidget( gb_Ftp );
