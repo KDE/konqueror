@@ -168,7 +168,7 @@ void KKonqGeneralOptions::load()
 
     tabOptions->m_pNewTabsInBackground->setChecked( ! (cg.readEntry( "NewTabsInFront", false)) );
     tabOptions->m_pOpenAfterCurrentPage->setChecked( cg.readEntry( "OpenAfterCurrentPage", false) );
-    tabOptions->m_pPermanentCloseButton->setChecked( cg.readEntry( "PermanentCloseButton", false) );
+    tabOptions->m_pPermanentCloseButton->setChecked( cg.readEntry( "PermanentCloseButton", true) );
     tabOptions->m_pKonquerorTabforExternalURL->setChecked( cg.readEntry( "KonquerorTabforExternalURL", false) );
     tabOptions->m_pPopupsWithinTabs->setChecked( cg.readEntry( "PopupsWithinTabs", false) );
     tabOptions->m_pTabCloseActivatePrevious->setChecked( cg.readEntry( "TabCloseActivatePrevious", false) );
