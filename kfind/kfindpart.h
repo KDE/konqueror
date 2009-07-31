@@ -27,7 +27,6 @@
 
 class KQuery;
 class KAboutData;
-class KAction;
 class Kfind;
 
 class KFindPart : public KParts::ReadOnlyPart
