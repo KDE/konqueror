@@ -29,6 +29,7 @@
 
 #include <KDE/KUrl>
 #include <KDE/KDebug>
+#include <kio/global.h>
 #include <kparts/part.h> // Where's the Qt includes?
 #include <kparts/browserextension.h>
 
@@ -197,8 +198,14 @@ void KWebView::loadUrl(const KUrl &url, const KParts::OpenUrlArguments &args, co
     QNetworkRequest req;
 
     req.setUrl(url);
-    if (args.reload()) pageAction(KWebPage::Reload)->trigger();
+
+    if (args.reload())
+      pageAction(KWebPage::Reload)->trigger();
+
     req.setRawHeader("Referer", args.metaData()["referrer"].toUtf8());
+
+    if (!args.metaData().isEmpty())
+      req.setAttribute(QNetworkRequest::User, KIO::MetaData(args.metaData()).toVariant());
 
     if (bargs.postData.isEmpty()) {
         QWebView::load(req);
@@ -206,4 +213,3 @@ void KWebView::loadUrl(const KUrl &url, const KParts::OpenUrlArguments &args, co
         QWebView::load(req, QNetworkAccessManager::PostOperation, bargs.postData);
     }
 }
-
