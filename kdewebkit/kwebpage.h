@@ -25,11 +25,13 @@
 #define KWEBPAGE_H
 
 #include <kdemacros.h>
-#include <KDE/KUrl>
 
 #include <QtWebKit/QWebPage>
 
+class QUrl;
 class QWebFrame;
+class QNetworkReply;
+class KWebPageSslInfo;
 
 class KDE_EXPORT KWebPage : public QWebPage
 {
@@ -57,6 +59,9 @@ protected:
     bool javaScriptPrompt(QWebFrame *frame, const QString &msg, const QString &defaultValue, QString *result);
     QString userAgentForUrl(const QUrl& url) const;
 
+    void setMetaData(const QString& key, const QString& value);
+
+    bool acceptNavigationRequest (QWebFrame * frame, const QNetworkRequest & request, NavigationType type);
     QObject *createPlugin(const QString &classId, const QUrl &url, const QStringList &paramNames, const QStringList &paramValues);
 
 protected Q_SLOTS:
