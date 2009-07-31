@@ -88,7 +88,7 @@ public:
 #else
         QUrl qurl(url);
 #endif
-        if (qurl.isValid()) {
+        if (qurl.isRelative()) {
             urlEdit->setText(qurl.toEncoded());
             view->load(qurl);
 
