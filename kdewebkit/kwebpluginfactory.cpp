@@ -38,25 +38,26 @@ class KWebPluginFactory::KWebPluginFactoryPrivate
 {
 public:
     KWebPluginFactoryPrivate(QWebPluginFactory *del) : delegate(del) {}
+
     QList<KWebPluginFactory::Plugin> plugins;
     QWebPluginFactory *delegate;
 };
 
 KWebPluginFactory::KWebPluginFactory(QObject *parent)
-        : QWebPluginFactory(parent)
-        , d(new KWebPluginFactory::KWebPluginFactoryPrivate(0))
+                  :QWebPluginFactory(parent),
+                   d(new KWebPluginFactory::KWebPluginFactoryPrivate(0))
 {
 }
 
 KWebPluginFactory::KWebPluginFactory(QWebPluginFactory *delegate, QObject *parent)
-        : QWebPluginFactory(parent)
-        , d(new KWebPluginFactory::KWebPluginFactoryPrivate(delegate))
+                  :QWebPluginFactory(parent),
+                   d(new KWebPluginFactory::KWebPluginFactoryPrivate(delegate))
 {
 }
 
 KWebPluginFactory::~KWebPluginFactory()
 {
-    delete d;
+  delete d;
 }
 
 QObject* KWebPluginFactory::create(const QString& mimeType, const QUrl& url, const QStringList& argumentNames, const QStringList& argumentValues) const
@@ -77,24 +78,30 @@ QObject* KWebPluginFactory::create(const QString& mimeType, const QUrl& url, con
 
     KParts::ReadOnlyPart* part = KMimeTypeTrader::createPartInstanceFromQuery<KParts::ReadOnlyPart>(mimeType, qobject_cast<KWebPage*>(parent())->view(), parent(), QString(), arguments);
     if (part) {
+
+#if 0
         QMap<QString, QString> metaData = part->arguments().metaData();
         metaData.insert("PropagateHttpHeader", "true");
         metaData.insert("cross-domain", url.scheme() + "://" + url.host() + "/");
         metaData.insert("main_frame_request", "TRUE");
-//         metaData.insert("referrer", url.scheme() + "://" + url.host() + "/"); //### following metadata is also set by khtml
-//         metaData.insert("ssl_activate_warnings", "TRUE");
-//         metaData.insert("ssl_parent_cert", "");
-//         metaData.insert("ssl_parent_ip", "");
-//         metaData.insert("ssl_was_in_use", "FALSE");
+
+        metaData.insert("referrer", url.scheme() + "://" + url.host() + "/"); //### following metadata is also set by khtml
+        metaData.insert("ssl_activate_warnings", "TRUE");
+        metaData.insert("ssl_parent_cert", "");
+        metaData.insert("ssl_parent_ip", "");
+        metaData.insert("ssl_was_in_use", "FALSE");
+#endif
 
         KParts::OpenUrlArguments openUrlArgs = part->arguments();
-        openUrlArgs.metaData() = metaData;
+//        openUrlArgs.metaData() = metaData;
         openUrlArgs.setMimeType(mimeType);
         part->setArguments(openUrlArgs);
         kDebug() << part->arguments().metaData();
         part->openUrl(url);
     }
+
     kDebug() << "Asked for" << mimeType << "plugin, got" << part;
+
     if (!part) {
         kDebug() << "No plugins found for" << mimeType;
         kDebug() << "Trying a QWebView (known work-around for QtWebKit's built-in flash support).";
@@ -107,9 +114,14 @@ QObject* KWebPluginFactory::create(const QString& mimeType, const QUrl& url, con
 
 QList<KWebPluginFactory::Plugin> KWebPluginFactory::plugins() const
 {
-    if (!d->plugins.isEmpty()) return d->plugins;
+    if (!d->plugins.isEmpty())
+      return d->plugins;
+
     QList<Plugin> plugins;
-    if (d->delegate) plugins = d->delegate->plugins();
+
+    if (d->delegate)
+      plugins = d->delegate->plugins();
+
     KService::List services = KServiceTypeTrader::self()->query("KParts/ReadOnlyPart");
     for (int i = 0; i < services.size(); i++) {
         KService::Ptr s = services.at(i);
@@ -129,7 +141,9 @@ QList<KWebPluginFactory::Plugin> KWebPluginFactory::plugins() const
         }
         plugins.append(plugin);
     }
+
     d->plugins = plugins;
+
     return plugins;
 }
 
