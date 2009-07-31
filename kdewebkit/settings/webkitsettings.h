@@ -220,6 +220,9 @@ public:
     void setJSPopupBlockerPassivePopup(bool enabled);
     bool jsPopupBlockerPassivePopup() const;
 
+    // CookieJar...
+    bool isCookieJarEnabled() const;
+
     // Global config object stuff.
     static WebKitSettings* self();
     /**
