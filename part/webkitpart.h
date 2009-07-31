@@ -28,6 +28,8 @@
 
 #include "webkitkde_export.h"
 
+class QNetworkReply;
+
 class WebView;
 class WebKitBrowserExtension;
 
@@ -41,8 +43,6 @@ public:
     virtual bool openUrl(const KUrl &url);
     virtual bool closeUrl();
 
-//     KWebPage::NavigationRequestResponse navigationRequested(const QWebNetworkRequest &request);
-
     WebView *view();
     WebKitBrowserExtension *browserExtension() const;
 
@@ -53,15 +53,19 @@ protected:
     void guiActivateEvent(KParts::GUIActivateEvent *event);
     virtual bool openFile();
     void initAction();
+    void showError(const QString&);
+    void setSslInfo(const QVariant&, const QUrl&);
 
 private Q_SLOTS:
     void loadStarted();
     void loadFinished();
+    void showSecurity();
     void urlChanged(const QUrl &url);
+    void requestFinished(QNetworkReply*);
 
 private:
-    WebView *m_webView;
-    WebKitBrowserExtension *m_browserExtension;
+    class WebKitPartPrivate;
+    WebKitPartPrivate* d;
 };
 
 class WebKitBrowserExtension : public KParts::BrowserExtension
@@ -79,6 +83,7 @@ public Q_SLOTS:
     void print();
     void printFrame();
     void searchProvider();
+    void reparseConfiguration();
 
     void zoomIn();
     void zoomOut();

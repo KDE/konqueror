@@ -26,6 +26,9 @@
 
 #include "webview.h"
 #include "webpage.h"
+#include "websslinfo.h"
+
+#include <kdewebkit/settings/webkitsettings.h>
 
 #include <KDE/KParts/GenericFactory>
 #include <KDE/KParts/Plugin>
@@ -38,10 +41,25 @@
 #include <KDE/KRun>
 #include <KDE/KTemporaryFile>
 #include <KDE/KToolInvocation>
-#include <KDE/KIO/NetAccess>
 #include <KDE/KFileDialog>
+#include <KDE/KMessageBox>
+#include <KDE/KStandardDirs>
+#include <KDE/KIconLoader>
+#include <KDE/KGlobal>
+
+#include <KDE/KIO/NetAccess>
+#include <kio/global.h>
+
+#ifdef HAS_SSL_INFO_DIALOG
+#include <kio/ksslinfodialog.h>
+#endif
 
 #include <QHttpRequestHeader>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
+#include <QUrl>
+#include <QFile>
+
 #include <QtWebKit/QWebHistory>
 #include <QtWebKit/QWebHitTestResult>
 #include <QClipboard>
@@ -50,19 +68,153 @@
 #include <QVBoxLayout>
 #include <QPrintPreviewDialog>
 
+
+static QString htmlError (int code, const QString& text, const KUrl& reqUrl)
+{
+  kDebug(6050) << "errorCode" << code << "text" << text;
+
+  QString errorName, techName, description;
+  QStringList causes, solutions;
+
+  QByteArray raw = KIO::rawErrorDetail( code, text, &reqUrl );
+  QDataStream stream(raw);
+
+  stream >> errorName >> techName >> description >> causes >> solutions;
+
+  QString url, protocol, datetime;
+  url = Qt::escape( reqUrl.prettyUrl() );
+  protocol = reqUrl.protocol();
+  datetime = KGlobal::locale()->formatDateTime( QDateTime::currentDateTime(),
+                                                KLocale::LongDate );
+
+  QString filename( KStandardDirs::locate( "data", "khtml/error.html" ) );
+  QFile file( filename );
+  bool isOpened = file.open( QIODevice::ReadOnly );
+  if ( !isOpened )
+    kWarning() << "Could not open error html template:" << filename;
+
+  QString html = QString( QLatin1String( file.readAll() ) );
+
+  html.replace( QLatin1String( "TITLE" ), i18n( "Error: %1 - %2", errorName, url ) );
+  html.replace( QLatin1String( "DIRECTION" ), QApplication::isRightToLeft() ? "rtl" : "ltr" );
+  html.replace( QLatin1String( "ICON_PATH" ), KIconLoader::global()->iconPath( "dialog-warning", -KIconLoader::SizeHuge ) );
+
+  QString doc = QLatin1String( "<h1>" );
+  doc += i18n( "The requested operation could not be completed" );
+  doc += QLatin1String( "</h1><h2>" );
+  doc += errorName;
+  doc += QLatin1String( "</h2>" );
+  if ( !techName.isNull() ) {
+    doc += QLatin1String( "<h2>" );
+    doc += i18n( "Technical Reason: " );
+    doc += techName;
+    doc += QLatin1String( "</h2>" );
+  }
+  doc += QLatin1String( "<h3>" );
+  doc += i18n( "Details of the Request:" );
+  doc += QLatin1String( "</h3><ul><li>" );
+  doc += i18n( "URL: %1" ,  url );
+  doc += QLatin1String( "</li><li>" );
+  if ( !protocol.isNull() ) {
+    doc += i18n( "Protocol: %1", protocol );
+    doc += QLatin1String( "</li><li>" );
+  }
+  doc += i18n( "Date and Time: %1" ,  datetime );
+  doc += QLatin1String( "</li><li>" );
+  doc += i18n( "Additional Information: %1" ,  text );
+  doc += QLatin1String( "</li></ul><h3>" );
+  doc += i18n( "Description:" );
+  doc += QLatin1String( "</h3><p>" );
+  doc += description;
+  doc += QLatin1String( "</p>" );
+  if ( causes.count() ) {
+    doc += QLatin1String( "<h3>" );
+    doc += i18n( "Possible Causes:" );
+    doc += QLatin1String( "</h3><ul><li>" );
+    doc += causes.join( "</li><li>" );
+    doc += QLatin1String( "</li></ul>" );
+  }
+  if ( solutions.count() ) {
+    doc += QLatin1String( "<h3>" );
+    doc += i18n( "Possible Solutions:" );
+    doc += QLatin1String( "</h3><ul><li>" );
+    doc += solutions.join( "</li><li>" );
+    doc += QLatin1String( "</li></ul>" );
+  }
+
+  html.replace( QLatin1String("TEXT"), doc );
+
+  return html;
+}
+
+// Converts QNetworkReply::Error to KIO::Error...
+// NOTE: This probably needs to be moved somewhere more convenient
+// in the future. Perhaps KIO::AccessManager itself ???
+static int convertErrorCode(int code)
+{
+  switch (code)
+  {
+    case QNetworkReply::NoError:
+      return 0;
+    case QNetworkReply::ConnectionRefusedError:
+      return KIO::ERR_COULD_NOT_CONNECT;
+    case QNetworkReply::HostNotFoundError:
+      return KIO::ERR_UNKNOWN_HOST;
+    case QNetworkReply::TimeoutError:
+      return KIO::ERR_SERVER_TIMEOUT;
+    case QNetworkReply::OperationCanceledError:
+      return KIO::ERR_USER_CANCELED;
+    case QNetworkReply::ProxyNotFoundError:
+      return KIO::ERR_UNKNOWN_PROXY_HOST;
+    case QNetworkReply::ContentAccessDenied:
+      return KIO::ERR_ACCESS_DENIED;
+    case QNetworkReply::ContentOperationNotPermittedError:
+      return KIO::ERR_WRITE_ACCESS_DENIED;
+    case QNetworkReply::ContentNotFoundError:
+      return KIO::ERR_NO_CONTENT;
+    case QNetworkReply::AuthenticationRequiredError:
+      return KIO::ERR_COULD_NOT_AUTHENTICATE;
+    case QNetworkReply::ProtocolUnknownError:
+      return KIO::ERR_UNSUPPORTED_PROTOCOL;
+    case QNetworkReply::ProtocolInvalidOperationError:
+      return KIO::ERR_UNSUPPORTED_ACTION;
+    default:
+      return KIO::ERR_UNKNOWN;
+  }
+}
+
+class SslInfo : public WebSslInfo
+{
+  friend class WebKitPart;
+};
+
+class WebKitPart::WebKitPartPrivate
+{
+public:
+  enum PageSecurity { Unencrypted, Encrypted, Mixed };
+  WebKitPartPrivate() {}
+
+  KUrl workingURL;
+  WebView *webView;
+  SslInfo sslInfo;
+  WebKitBrowserExtension *browserExtension;
+};
+
 WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList &/*args*/)
-        : KParts::ReadOnlyPart(parent)
+        : KParts::ReadOnlyPart(parent), d(new WebKitPart::WebKitPartPrivate())
 {
     KAboutData about = KAboutData("webkitpart", "webkitkde", ki18n("WebKit HTML Component"),
-                                  /*version*/ "0.1", /*ki18n("shortDescription")*/ KLocalizedString(),
+                                  /*version*/ "0.2", /*ki18n("shortDescription")*/ KLocalizedString(),
                                   KAboutData::License_LGPL,
-                                  ki18n("(c) 2008 - 2009, Urs Wolfer\n"
+                                  ki18n("(c) 2009 Dawit Alemayehu\n"
+                                        "(c) 2008-2009 Urs Wolfer\n"
                                         "(c) 2007 Trolltech ASA"));
 
     about.addAuthor(ki18n("Laurent Montel"), KLocalizedString(), "montel@kde.org");
     about.addAuthor(ki18n("Michael Howell"), KLocalizedString(), "mhowell123@gmail.com");
     about.addAuthor(ki18n("Urs Wolfer"), KLocalizedString(), "uwolfer@kde.org");
     about.addAuthor(ki18n("Dirk Mueller"), KLocalizedString(), "mueller@kde.org");
+    about.addAuthor(ki18n("Dawit Alemayehu"), KLocalizedString(), "adawit@kde.org");
     KComponentData componentData(&about);
     setComponentData(componentData);
 
@@ -70,26 +222,31 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
     QVBoxLayout* lay = new QVBoxLayout(widget());
     lay->setMargin(0);
     lay->setSpacing(0);
-    m_webView = new WebView(this, widget());
-    lay->addWidget(m_webView);
-    lay->addWidget(m_webView->searchBar());
+    d->webView = new WebView(this, widget());
+    lay->addWidget(d->webView);
+    lay->addWidget(d->webView->searchBar());
 
-    connect(m_webView, SIGNAL(loadStarted()),
+    connect(d->webView, SIGNAL(loadStarted()),
             this, SLOT(loadStarted()));
-    connect(m_webView, SIGNAL(loadFinished(bool)),
+    connect(d->webView, SIGNAL(loadFinished(bool)),
             this, SLOT(loadFinished()));
-    connect(m_webView, SIGNAL(titleChanged(const QString &)),
+    connect(d->webView, SIGNAL(titleChanged(const QString &)),
             this, SIGNAL(setWindowCaption(const QString &)));
-
-    connect(m_webView->page(), SIGNAL(linkHovered(const QString &, const QString &, const QString &)),
-            this, SIGNAL(setStatusBarText(const QString &)));
-
-    m_browserExtension = new WebKitBrowserExtension(this);
-
-    connect(m_webView->page(), SIGNAL(loadProgress(int)),
-            m_browserExtension, SIGNAL(loadingProgress(int)));
-    connect(m_webView, SIGNAL(urlChanged(const QUrl &)),
+    connect(d->webView, SIGNAL(urlChanged(const QUrl &)),
             this, SLOT(urlChanged(const QUrl &)));
+
+
+    KWebPage* webPage = d->webView->page();
+
+    connect(webPage, SIGNAL(linkHovered(const QString &, const QString &, const QString &)),
+            this, SIGNAL(setStatusBarText(const QString &)));
+    connect(webPage->networkAccessManager(), SIGNAL(finished(QNetworkReply*)),
+            SLOT(requestFinished(QNetworkReply*)));
+
+    d->browserExtension = new WebKitBrowserExtension(this);
+
+    connect(webPage, SIGNAL(loadProgress(int)),
+            d->browserExtension, SIGNAL(loadingProgress(int)));
 
     initAction();
 
@@ -98,35 +255,36 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
 
 WebKitPart::~WebKitPart()
 {
+    delete d;
 }
 
 void WebKitPart::initAction()
 {
     KAction *action = actionCollection()->addAction(KStandardAction::SaveAs, "saveDocument",
-                                                    m_browserExtension, SLOT(slotSaveDocument()));
+                                                    d->browserExtension, SLOT(slotSaveDocument()));
 
     action = new KAction(i18n("Save &Frame As..."), this);
     actionCollection()->addAction("saveFrame", action);
-    connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(slotSaveFrame()));
+    connect(action, SIGNAL(triggered(bool)), d->browserExtension, SLOT(slotSaveFrame()));
 
     action = new KAction(KIcon("document-print-frame"), i18n("Print Frame..."), this);
     actionCollection()->addAction("printFrame", action);
-    connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(printFrame()));
+    connect(action, SIGNAL(triggered(bool)), d->browserExtension, SLOT(printFrame()));
 
     action = new KAction(KIcon("zoom-in"), i18n("Zoom In"), this);
     actionCollection()->addAction("zoomIn", action);
     action->setShortcut(KShortcut("CTRL++; CTRL+="));
-    connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(zoomIn()));
+    connect(action, SIGNAL(triggered(bool)), d->browserExtension, SLOT(zoomIn()));
 
     action = new KAction(KIcon("zoom-out"), i18n("Zoom Out"), this);
     actionCollection()->addAction("zoomOut", action);
     action->setShortcut(KShortcut("CTRL+-; CTRL+_"));
-    connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(zoomOut()));
+    connect(action, SIGNAL(triggered(bool)), d->browserExtension, SLOT(zoomOut()));
 
     action = new KAction(KIcon("zoom-original"), i18n("Actual Size"), this);
     actionCollection()->addAction("zoomNormal", action);
     action->setShortcut(KShortcut("CTRL+0"));
-    connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(zoomNormal()));
+    connect(action, SIGNAL(triggered(bool)), d->browserExtension, SLOT(zoomNormal()));
 #if QT_VERSION >= 0x040500
     action = new KAction(i18n("Zoom Text Only"), this);
     action->setCheckable(true);
@@ -134,19 +292,23 @@ void WebKitPart::initAction()
     bool zoomTextOnly = cgHtml.readEntry("ZoomTextOnly", false);
     action->setChecked(zoomTextOnly);
     actionCollection()->addAction("zoomTextOnly", action);
-    connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(toogleZoomTextOnly()));
+    connect(action, SIGNAL(triggered(bool)), d->browserExtension, SLOT(toogleZoomTextOnly()));
 #endif
     action = actionCollection()->addAction(KStandardAction::SelectAll, "selectAll",
-                                           m_browserExtension, SLOT(slotSelectAll()));
+                                           d->browserExtension, SLOT(slotSelectAll()));
     action->setShortcutContext(Qt::WidgetShortcut);
-    m_webView->addAction(action);
+    d->webView->addAction(action);
 
     action = new KAction(i18n("View Do&cument Source"), this);
     actionCollection()->addAction("viewDocumentSource", action);
     action->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_U));
-    connect(action, SIGNAL(triggered(bool)), m_browserExtension, SLOT(slotViewDocumentSource()));
+    connect(action, SIGNAL(triggered(bool)), d->browserExtension, SLOT(slotViewDocumentSource()));
 
-    action = actionCollection()->addAction(KStandardAction::Find, "find", m_webView->searchBar(), SLOT(show()));
+    action = new KAction(i18n("SSL"), this);
+    actionCollection()->addAction("security", action);
+    connect(action, SIGNAL(triggered(bool)), this, SLOT(showSecurity()));
+
+    action = actionCollection()->addAction(KStandardAction::Find, "find", d->webView->searchBar(), SLOT(show()));
     action->setWhatsThis(i18n("Find text<br /><br />"
                               "Shows a dialog that allows you to find text on the displayed page."));
 }
@@ -159,22 +321,61 @@ void WebKitPart::guiActivateEvent(KParts::GUIActivateEvent *event)
 
 bool WebKitPart::openUrl(const KUrl &url)
 {
-    setUrl(url);
+    kDebug() << url;
 
-    m_webView->loadUrl(url, arguments(), browserExtension()->browserArguments());
+    if ( url.protocol() == "error" && url.hasSubUrl() )
+    {
+      closeUrl();
 
+      /**
+       * The format of the error url is that two variables are passed in the query:
+       * error = int kio error code, errText = QString error text from kio
+       * and the URL where the error happened is passed as a sub URL.
+       */
+      KUrl::List urls = KUrl::split( url );
+      //kDebug() << "Handling error URL. URL count:" << urls.count();
+
+      if ( urls.count() > 1 ) {
+        KUrl mainURL = urls.first();
+        int error = mainURL.queryItem( "error" ).toInt();
+        // error=0 isn't a valid error code, so 0 means it's missing from the URL
+        if ( error == 0 ) error = KIO::ERR_UNKNOWN;
+        QString errorText = mainURL.queryItem( "errText" );
+        urls.pop_front();
+        KUrl reqUrl = KUrl::join( urls );
+
+        kDebug() << "Setting Url back to => " << reqUrl;
+        emit d->browserExtension->setLocationBarUrl(reqUrl.prettyUrl());
+        setUrl(reqUrl);
+
+        emit started(0);
+        showError(htmlError(error, errorText, reqUrl));
+        emit completed();
+
+        return true;
+      }
+    }
+
+    KParts::OpenUrlArguments args (arguments());
+
+    KIO::MetaData metaData (args.metaData());
+    setSslInfo(metaData.toVariant(), url);
+    args.metaData().insert("ssl_was_in_use", (d->sslInfo.isValid() ? "TRUE" : "FALSE"));
+
+    //setUrl(url); // urlChanged will take care of this for us...
+    d->webView->loadUrl(url, args, browserExtension()->browserArguments());
     return true;
 }
 
 bool WebKitPart::closeUrl()
 {
-    m_webView->stop();
+    d->webView->stop();
     return true;
 }
 
 WebKitBrowserExtension *WebKitPart::browserExtension() const
 {
-    return m_browserExtension;
+    return d->browserExtension;
 }
 
 bool WebKitPart::openFile()
@@ -185,6 +386,9 @@ bool WebKitPart::openFile()
 
 void WebKitPart::loadStarted()
 {
+    // Make sure the visual SSL indicator does not get rendered when we
+    // navigate away from the current page.
+    d->browserExtension->setPageSecurity(WebKitPart::WebKitPartPrivate::Unencrypted);
     emit started(0);
 }
 
@@ -192,6 +396,40 @@ void WebKitPart::loadFinished()
 {
     emit completed();
 }
+
+void WebKitPart::requestFinished(QNetworkReply* reply)
+{
+    KUrl currentUrl(url());
+    KUrl requestUrl(reply->request().url());
+
+    kDebug() << "current url: " << currentUrl.url();
+    kDebug() << "request url: " << requestUrl.url();
+
+    if (urlcmp(currentUrl.url(), requestUrl.url(), KUrl::CompareWithoutTrailingSlash)) {
+        QVariant metaData = reply->attribute(QNetworkRequest::User);
+
+        //  Set the SSL information from the meta data sent by the ioslave...
+        setSslInfo(metaData, reply->request().url());
+
+        // Enable/disable the visual SSL indicator...
+        int pageSecurity;
+        if (d->sslInfo.isValid())
+            pageSecurity = WebKitPart::WebKitPartPrivate::Encrypted;
+        else
+            pageSecurity = WebKitPart::WebKitPartPrivate::Unencrypted;
+
+        d->browserExtension->setPageSecurity(pageSecurity);
+
+        // Handle any error messages...
+        if (reply->error() != QNetworkReply::NoError) {
+            emit canceled(reply->errorString());
+            showError(htmlError(convertErrorCode(reply->error()),
+                                reply->errorString(), reply->url()));
+        }
+    }
+}
+
+
 
 void WebKitPart::urlChanged(const QUrl &url)
 {
@@ -203,21 +441,85 @@ void WebKitPart::urlChanged(const QUrl &url)
 #endif
 
     if (!(backItemsList.count() > 0 && backItemsList.at(0).url() == url)) {
-        emit m_browserExtension->openUrlNotify();
+        emit d->browserExtension->openUrlNotify();
     }
 
+    // If the current host and the requested host are not the same, then
+    // invalidate any stored SSL information...
+    kDebug() << "current host: " << this->url().host() << ", requested host: " << url.host();
+
+    if (this->url().isValid() && this->url().host() != url.host()) {
+      kDebug() << "Reseting SSL information";
+      d->sslInfo.reset();
+    }
+
+    kDebug() << url;
     setUrl(url);
-    emit m_browserExtension->setLocationBarUrl(KUrl(url).prettyUrl());
+    emit d->browserExtension->setLocationBarUrl(KUrl(url).prettyUrl());
+}
+
+void WebKitPart::showSecurity()
+{
+    if (d->sslInfo.isValid()) {
+#ifdef HAS_SSL_INFO_DIALOG
+        KSslInfoDialog *kid = new KSslInfoDialog(0);
+        kid->setSslInfo(d->sslInfo.certificateChain(),
+                        d->sslInfo.peerAddress().toString(),
+                        d->sslInfo.url().host(),
+                        d->sslInfo.protocol(),
+                        d->sslInfo.ciphers(),
+                        d->sslInfo.usedChiperBits(),
+                        d->sslInfo.supportedChiperBits(),
+                        KSslInfoDialog::errorsFromString(d->sslInfo.certificateErrors()));
+        kid->exec();
+#else
+        kDebug() << "Host: " << d->sslInfo.url().host();
+        kDebug() << "Peer address: " << d->sslInfo.peerAddress().toString();
+        kDebug() << "Protocol: " << d->sslInfo.protocol();
+        kDebug() << "Cipher: " << d->sslInfo.ciphers().split("\n").join(",");
+        kDebug() << "Bits Used: " << d->sslInfo.usedChiperBits();
+        kDebug() << "Bits Available: " << d->sslInfo.supportedChiperBits();
+#endif
+    } else {
+        KMessageBox::information(0, i18n("The peer SSL certificate chain "
+                                         "appears to be corrupt."),
+                                 i18n("SSL"));
+    }
 }
 
 WebView * WebKitPart::view()
 {
-    return m_webView;
+    return d->webView;
 }
 
 void WebKitPart::setStatusBarTextProxy(const QString &message)
 {
     emit setStatusBarText(message);
+}
+
+void WebKitPart::showError(const QString& html)
+{
+    const bool signalsBlocked = d->webView->blockSignals(true);
+    d->webView->setHtml(html);
+    d->webView->blockSignals(signalsBlocked);
+}
+
+void WebKitPart::setSslInfo(const QVariant& metaData, const QUrl& url)
+{
+  if (metaData.isValid() && metaData.type() == QVariant::Map) {
+    QMap<QString,QVariant> metaDataMap = metaData.toMap();
+    if (metaDataMap.value("ssl_in_use").toBool()) {
+      d->sslInfo.setUrl(url);
+      d->sslInfo.setCertificateChain(metaDataMap.value("ssl_peer_chain").toByteArray());
+      d->sslInfo.setPeerAddress(metaDataMap.value("ssl_peer_ip").toString());
+      d->sslInfo.setParentAddress(metaDataMap.value("ssl_parent_ip").toString());
+      d->sslInfo.setProtocol(metaDataMap.value("ssl_protocol_version").toString());
+      d->sslInfo.setCiphers(metaDataMap.value("ssl_cipher").toString());
+      d->sslInfo.setCertificateErrors(metaDataMap.value("ssl_cert_errors").toString());
+      d->sslInfo.setUsedCipherBits(metaDataMap.value("ssl_cipher_used_bits").toString());
+      d->sslInfo.setSupportedCipherBits(metaDataMap.value("ssl_cipher_bits").toString());
+    }
+  }
 }
 
 
@@ -306,6 +608,12 @@ void WebKitBrowserExtension::searchProvider()
     browserArgs.frameName = "_blank";
 
     emit openUrlRequest(data.uri(), KParts::OpenUrlArguments(), browserArgs);
+}
+
+void WebKitBrowserExtension::reparseConfiguration()
+{
+  // Force the configuration stuff to repase...
+  WebKitSettings::self()->init();
 }
 
 void WebKitBrowserExtension::zoomIn()
