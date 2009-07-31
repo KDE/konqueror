@@ -27,6 +27,7 @@
 
 #include "webkitkde_export.h"
 
+class KUrl;
 class QWebFrame;
 class WebKitPart;
 

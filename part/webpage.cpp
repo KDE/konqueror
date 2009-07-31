@@ -22,10 +22,11 @@
  */
 
 #include "webpage.h"
-#include <kdewebkit/kwebpage.h>
 #include "webkitpart.h"
 #include "webview.h"
-#include "kdewebkit/settings/webkitsettings.h"
+
+#include <kdewebkit/kwebpage.h>
+#include <kdewebkit/settings/webkitsettings.h>
 
 #include <KDE/KParts/GenericFactory>
 #include <KDE/KParts/BrowserRun>
@@ -46,16 +47,17 @@
 #include <QWebFrame>
 #include <QtNetwork/QNetworkReply>
 
-WebPage::WebPage(WebKitPart *wpart, QWidget *parent)
-        : KWebPage(parent)
-        , m_part(wpart)
+WebPage::WebPage(WebKitPart *part, QWidget *parent)
+        :KWebPage(parent), m_part(part)
 {
+    setMetaData("ssl_activate_warnings", "TRUE");
+
     connect(this, SIGNAL(geometryChangeRequested(const QRect &)),
             this, SLOT(slotGeometryChangeRequested(const QRect &)));
     connect(this, SIGNAL(windowCloseRequested()),
             this, SLOT(slotWindowCloseRequested()));
     connect(this, SIGNAL(statusBarMessage(const QString &)),
-            this, SLOT(slotStatusBarMessage(const QString &)));
+            this, SLOT(slotStatusBarMessage(const QString &))); 
 }
 
 bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request,
