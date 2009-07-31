@@ -17,6 +17,7 @@ set(webkitkde_LIB_SRCS
     webkitpart.cpp
     webview.cpp
     webpage.cpp
+    websslinfo.cpp
 )
 
 kde4_add_library(webkitkde SHARED ${webkitkde_LIB_SRCS})
