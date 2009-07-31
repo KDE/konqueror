@@ -154,7 +154,7 @@ void KFindPart::slotResult(int errorCode)
     //setStatusMsg(i18n("Ready."));
   else if (errorCode == KIO::ERR_USER_CANCELED)
     emit canceled();
-    //setStatusMsg(i18n("Aborted."));
+    //setStatusMsg(i18n("Canceled."));
   else
     emit canceled(); // TODO ?
     //setStatusMsg(i18n("Error."));

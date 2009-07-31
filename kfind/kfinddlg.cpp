@@ -194,7 +194,7 @@ void KfindDlg::slotResult(int errorCode)
   if (errorCode == 0)
     setStatusMsg( i18nc("the application is currently idle, there is no active search", "Idle.") );
   else if (errorCode == KIO::ERR_USER_CANCELED)
-    setStatusMsg(i18n("Aborted."));
+    setStatusMsg(i18n("Canceled."));
   else if (errorCode == KIO::ERR_MALFORMED_URL)
   {
      setStatusMsg(i18n("Error."));

@@ -68,7 +68,7 @@ Kfind::Kfind(QWidget *parent)
   mSearch = new KPushButton( KStandardGuiItem::find(), mButtonBox );
   mButtonBox->setSpacing( (tabWidget->sizeHint().height()-4*mSearch->sizeHint().height()) / 4);
   connect( mSearch, SIGNAL(clicked()), this, SLOT( startSearch() ) );
-  mStop = new KPushButton( KStandardGuiItem::stop(), mButtonBox );
+  mStop = new KPushButton( KStandardGuiItem::cancel(), mButtonBox );
   connect( mStop, SIGNAL(clicked()), this, SLOT( stopSearch() ) );
   mSave = new KPushButton( KStandardGuiItem::saveAs(), mButtonBox );
   connect( mSave, SIGNAL(clicked()), this, SLOT( saveResults() ) );
