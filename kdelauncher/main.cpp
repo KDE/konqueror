@@ -88,7 +88,7 @@ public:
 #else
         QUrl qurl(url);
 #endif
-        if (qurl.isRelative()) {
+        if (qurl.isValid()) {
             urlEdit->setText(qurl.toEncoded());
             view->load(qurl);
 
@@ -116,7 +116,7 @@ protected slots:
 #else
         QUrl url(string);
 #endif
-        if (!url.isValid())
+        if (url.isRelative())
             url = QUrl("http://" + string + "/");
         urlEdit->setText(url.toEncoded());
         view->load(url);
