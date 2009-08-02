@@ -206,7 +206,8 @@ KWebPage::KWebPage(QObject *parent)
     d->accessManager->setCookieJar(cookiejar);
 
     // TODO: Disabled for now since flash plugin does not work using
-    // in our plugin factory, but works fine in the default Qt library.
+    // our plugin factory, but works fine with the default QWebPluginFactory
+    // allbeit with a crash when leaving the site with the flash content...
     //setPluginFactory(new KWebPluginFactory(pluginFactory(), this));
 
     action(Back)->setIcon(KIcon("go-previous"));
