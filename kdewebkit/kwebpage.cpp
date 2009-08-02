@@ -62,17 +62,22 @@ typedef KNetworkAccessManager BaseAccessManager;
 
 
 /* Null network reply */
-class NullNetworkReply : public QNetworkReply {
+class NullNetworkReply : public QNetworkReply
+{
 public:
     NullNetworkReply() {
-      setHeader(QNetworkRequest::ContentLengthHeader, 1);
-      setHeader(QNetworkRequest::ContentTypeHeader, "text/plain");
-      QTimer::singleShot(0, this, SIGNAL(finished()));
+        setHeader(QNetworkRequest::ContentLengthHeader, 0);
+        setHeader(QNetworkRequest::ContentTypeHeader, "text/plain");
+        QTimer::singleShot(0, this, SIGNAL(finished()));
     }
     virtual void abort() {}
-    virtual qint64 bytesAvailable() const { return 1; }
+    virtual qint64 bytesAvailable() const {
+        return 0;
+    }
 protected:
-    virtual qint64 readData(char* data, qint64) { qMemCopy(data, "\0", 1); return 1; }
+    virtual qint64 readData(char* data, qint64) {
+        qMemCopy(data, "\0", 1); return 0;
+    }
 };
 
 /* Re-implementation of QNetworkAccessManager for integration with KIO. */
@@ -80,7 +85,9 @@ class NetworkAccessManager : public BaseAccessManager
 {
 public:
     NetworkAccessManager(QObject *parent) : BaseAccessManager(parent) {}
-    KIO::MetaData& metaData() { return m_metaData; }
+    KIO::MetaData& metaData() {
+        return m_metaData;
+    }
 
 protected:
     virtual QNetworkReply *createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData = 0) {
@@ -90,17 +97,17 @@ protected:
             return new NullNetworkReply();
         }
 
-        QNetworkRequest request (req);
-        KIO::MetaData metaData (m_metaData);
+        QNetworkRequest request(req);
+        KIO::MetaData metaData(m_metaData);
 
         QVariant attr = req.attribute(QNetworkRequest::User);
         if (attr.isValid() && attr.type() == QVariant::Map)
-          metaData += attr.toMap();        
+            metaData += attr.toMap();
         request.setAttribute(QNetworkRequest::User, metaData.toVariant());
 
         return BaseAccessManager::createRequest(op, request, outgoingData);
     }
- private:
+private:
     KIO::MetaData m_metaData;
 };
 
@@ -108,51 +115,52 @@ protected:
 class CookieJar : public QNetworkCookieJar
 {
 public:
-  CookieJar(QObject* parent = 0) : QNetworkCookieJar(parent), m_windowId(-1) {}
-  virtual ~CookieJar() {}
+    CookieJar(QObject* parent = 0) : QNetworkCookieJar(parent), m_windowId(-1) {}
+    virtual ~CookieJar() {}
 
-  virtual QList<QNetworkCookie> cookiesForUrl ( const QUrl & url ) const {
-    QList<QNetworkCookie> cookieList;
+    virtual QList<QNetworkCookie> cookiesForUrl(const QUrl & url) const {
+        QList<QNetworkCookie> cookieList;
 
-    if (WebKitSettings::self()->isCookieJarEnabled()) {
-      QDBusInterface kcookiejar( "org.kde.kded", "/modules/kcookiejar", "org.kde.KCookieServer" );
-      QDBusReply<QString> reply = kcookiejar.call( "findCookies", url.toString(), m_windowId );
+        if (WebKitSettings::self()->isCookieJarEnabled()) {
+            QDBusInterface kcookiejar("org.kde.kded", "/modules/kcookiejar", "org.kde.KCookieServer");
+            QDBusReply<QString> reply = kcookiejar.call("findCookies", url.toString(), m_windowId);
 
-      if (reply.isValid()) {
-        cookieList << reply.value().toUtf8();
-        //kDebug() << reply.value();
-      }
-      else {
-        kWarning() << "Unable to communicate with the cookiejar!";
-      }
+            if (reply.isValid()) {
+                cookieList << reply.value().toUtf8();
+                //kDebug() << reply.value();
+            } else {
+                kWarning() << "Unable to communicate with the cookiejar!";
+            }
+        }
+
+        return cookieList;
     }
 
-    return cookieList;
-  }
+    virtual bool setCookiesFromUrl(const QList<QNetworkCookie> & cookieList, const QUrl & url) {
 
-  virtual bool setCookiesFromUrl ( const QList<QNetworkCookie> & cookieList, const QUrl & url ) {
+        if (WebKitSettings::self()->isCookieJarEnabled()) {
+            QDBusInterface kcookiejar("org.kde.kded", "/modules/kcookiejar", "org.kde.KCookieServer");
 
-    if (WebKitSettings::self()->isCookieJarEnabled()) {
-      QDBusInterface kcookiejar("org.kde.kded", "/modules/kcookiejar", "org.kde.KCookieServer");
+            QByteArray cookieHeader;
+            Q_FOREACH(const QNetworkCookie& cookie, cookieList) {
+                cookieHeader = "Set-Cookie: ";
+                cookieHeader += cookie.toRawForm();
+                kcookiejar.call("addCookies", url.toString(), cookieHeader, m_windowId);
+                //kDebug() << "url: " << url.host() << ", cookie: " << cookieHeader;
+            }
 
-      QByteArray cookieHeader;
-      Q_FOREACH(const QNetworkCookie& cookie, cookieList) {
-        cookieHeader = "Set-Cookie: ";
-        cookieHeader += cookie.toRawForm();
-        kcookiejar.call("addCookies", url.toString(), cookieHeader, m_windowId);
-        //kDebug() << "url: " << url.host() << ", cookie: " << cookieHeader;
-      }
+            return !kcookiejar.lastError().isValid();
+        }
 
-      return !kcookiejar.lastError().isValid();
+        return false;
     }
 
-    return false;
-  }
-
-  void setWindowId(qlonglong id) { m_windowId = id; }
+    void setWindowId(qlonglong id) {
+        m_windowId = id;
+    }
 
 private:
-  qlonglong m_windowId;
+    qlonglong m_windowId;
 };
 
 class KWebPage::KWebPagePrivate
@@ -190,14 +198,16 @@ KWebPage::KWebPage(QObject *parent)
     KWebView * webView = qobject_cast<KWebView*>(view());
 
     if (webView) {
-      const qlonglong winId = webView->window()->winId();
-      cookiejar->setWindowId(winId);
-      d->accessManager->metaData().insert("window-id", QString::number(winId));
+        const qlonglong winId = webView->window()->winId();
+        cookiejar->setWindowId(winId);
+        d->accessManager->metaData().insert("window-id", QString::number(winId));
     }
 
     d->accessManager->setCookieJar(cookiejar);
 
-    setPluginFactory(new KWebPluginFactory(pluginFactory(), this));
+    // TODO: Disabled for now since flash plugin does not work using
+    // in our plugin factory, but works fine in the default Qt library.
+    //setPluginFactory(new KWebPluginFactory(pluginFactory(), this));
 
     action(Back)->setIcon(KIcon("go-previous"));
     action(Back)->setShortcut(KStandardShortcut::back().primary());
@@ -315,11 +325,11 @@ QString KWebPage::userAgentForUrl(const QUrl& _url) const
 
 void KWebPage::setMetaData(const QString& key, const QString& value)
 {
-    Q_ASSERT (d->accessManager);
+    Q_ASSERT(d->accessManager);
     d->accessManager->metaData()[key] = value;
 }
 
-bool KWebPage::acceptNavigationRequest ( QWebFrame * frame, const QNetworkRequest & request, NavigationType type )
+bool KWebPage::acceptNavigationRequest(QWebFrame * frame, const QNetworkRequest & request, NavigationType type)
 {
     /*
       QWebPage calls acceptNavigationRequest when:
@@ -332,20 +342,36 @@ bool KWebPage::acceptNavigationRequest ( QWebFrame * frame, const QNetworkReques
       (cookiejar) and "main_frame_request" (SSL) meta datas are set.
     */
 
-    if (frame)
-    {
+    if (frame) {
         QWebFrame* parentFrame = frame->parentFrame();
-        QUrl url (request.url());
+        QUrl url(request.url());
 
         kDebug() << "url: " << request.url() << ", type: " << type
-                 << ", main frame ? " << (parentFrame == 0);
+        << ", main frame ? " << (parentFrame == 0);
 
-        if (url.isValid() && url.host().toLower() != QString::fromUtf8("blank"))
-        {
+        if (url.isValid() && url.host().toLower() != QString::fromUtf8("blank")) {
             if (!parentFrame)
                 d->accessManager->metaData()["cross-domain"] = url.toString();
 
-            d->accessManager->metaData()["main_frame_request"] = (parentFrame ? "FALSE":"TRUE");
+            d->accessManager->metaData()["main_frame_request"] = (parentFrame ? "FALSE" : "TRUE");
+        }
+    } else {
+        // Here we handle request for opening a new window based on the
+        // user's setting...
+        switch (WebKitSettings::self()->windowOpenPolicy(request.url().host())) {
+        case WebKitSettings::KJSWindowOpenAsk:
+            // TODO: Implement this without resotring to showing a KMessgaeBox. Perhaps
+            // how FF3 does it ?
+            break;
+        case WebKitSettings::KJSWindowOpenSmart:
+            if (type != QWebPage::NavigationTypeLinkClicked)
+                return false;
+            break;
+        case WebKitSettings::KJSWindowOpenDeny:
+            return false;
+        case WebKitSettings::KJSWindowOpenAllow:
+        default:
+            break;
         }
     }
 
@@ -369,8 +395,7 @@ void KWebPage::slotHandleUnsupportedContent(QNetworkReply *reply)
     kDebug() << "location:" << reply->header(QNetworkRequest::LocationHeader).toString();
     kDebug() << "error:" << reply->error();
 
-    if (reply->url().isValid())
-    {
+    if (reply->url().isValid()) {
         KParts::BrowserRun::AskSaveResult res = KParts::BrowserRun::askEmbedOrSave(
                                                     reply->url(),
                                                     reply->header(QNetworkRequest::ContentTypeHeader).toString(),
@@ -441,8 +466,6 @@ void KWebPage::slotDownloadRequested(const QNetworkRequest &request, QNetworkRep
 
 KWebPage *KWebPage::createWindow(WebWindowType type)
 {
-    if (WebKitSettings::self()->windowOpenPolicy(mainFrame()->url().host()) == WebKitSettings::KJSWindowOpenDeny)
-        return 0;
     return newWindow(type);
 }
 
