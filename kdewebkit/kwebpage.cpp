@@ -43,14 +43,8 @@
 #include <KIO/Job>
 #include <KDE/KUrl>
 
-#if KDE_IS_VERSION(4, 2, 70)
 #include <KIO/AccessManager>
 typedef KIO::AccessManager BaseAccessManager;
-#else
-#include <kdenetwork/knetworkaccessmanager.h>
-#include <kdenetwork/knetworkreply.h>
-typedef KNetworkAccessManager BaseAccessManager;
-#endif
 
 #include <QWebFrame>
 #include <QUiLoader>
