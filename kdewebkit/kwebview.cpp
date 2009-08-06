@@ -32,6 +32,7 @@
 #include <kio/global.h>
 #include <kparts/part.h> // Where's the Qt includes?
 #include <kparts/browserextension.h>
+#include <kdeversion.h>
 
 #include <QtGui/QApplication>
 #include <QtGui/QClipboard>
@@ -204,8 +205,10 @@ void KWebView::loadUrl(const KUrl &url, const KParts::OpenUrlArguments &args, co
 
     req.setRawHeader("Referer", args.metaData()["referrer"].toUtf8());
 
+#if KDE_IS_VERSION(4, 3, 63)
     if (!args.metaData().isEmpty())
       req.setAttribute(QNetworkRequest::User, KIO::MetaData(args.metaData()).toVariant());
+#endif
 
     if (bargs.postData.isEmpty()) {
         QWebView::load(req);
