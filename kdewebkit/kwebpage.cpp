@@ -92,6 +92,7 @@ protected:
             return new NullNetworkReply();
         }
 
+#if KDE_IS_VERSION(4, 3, 63)
         QNetworkRequest request(req);
         KIO::MetaData metaData(m_metaData);
 
@@ -99,6 +100,7 @@ protected:
         if (attr.isValid() && attr.type() == QVariant::Map)
             metaData += attr.toMap();
         request.setAttribute(QNetworkRequest::User, metaData.toVariant());
+#endif
 
         return BaseAccessManager::createRequest(op, request, outgoingData);
     }
