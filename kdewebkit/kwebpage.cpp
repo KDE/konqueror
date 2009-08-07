@@ -53,6 +53,7 @@ typedef KIO::AccessManager BaseAccessManager;
 #include <QtDBus/QDBusInterface>
 #include <QtDBus/QDBusConnection>
 #include <QtDBus/QDBusReply>
+#include <QtCore/QPointer>
 
 
 /* Null network reply */
@@ -163,7 +164,7 @@ public:
     KWebPagePrivate() {}
 
     QString getFileNameForDownload(const QNetworkRequest &request, QNetworkReply *reply) const;
-    NetworkAccessManager* accessManager;
+    QPointer<NetworkAccessManager> accessManager;
 };
 
 QString KWebPage::KWebPagePrivate::getFileNameForDownload(const QNetworkRequest &request, QNetworkReply *reply) const
@@ -284,14 +285,20 @@ void KWebPage::javaScriptAlert(QWebFrame *frame, const QString &msg)
 
 bool KWebPage::javaScriptConfirm(QWebFrame *frame, const QString &msg)
 {
-    return (KMessageBox::warningYesNo(frame->page()->view(), msg, i18n("JavaScript"), KStandardGuiItem::ok(), KStandardGuiItem::cancel())
+    return (KMessageBox::warningYesNo(frame->page()->view(), msg, i18n("JavaScript"),
+                                      KStandardGuiItem::ok(), KStandardGuiItem::cancel())
             == KMessageBox::Yes);
 }
 
 bool KWebPage::javaScriptPrompt(QWebFrame *frame, const QString &msg, const QString &defaultValue, QString *result)
 {
     bool ok = false;
-    *result = KInputDialog::getText(i18n("JavaScript"), msg, defaultValue, &ok, frame->page()->view());
+
+    QString text = KInputDialog::getText(i18n("JavaScript"), msg, defaultValue, &ok, frame->page()->view());
+
+    if (result)
+      *result = text;
+
     return ok;
 }
 
@@ -305,15 +312,24 @@ QString KWebPage::userAgentForUrl(const QUrl& _url) const
     if (indexOfKhtml == -1) // not a KHTML user agent, so no need to "update" it
         return userAgent;
 
-    userAgent = userAgent.left(indexOfKhtml);
-
     QString webKitUserAgent = QWebPage::userAgentForUrl(url);
-    webKitUserAgent = webKitUserAgent.mid(webKitUserAgent.indexOf("AppleWebKit/"));
-    webKitUserAgent = webKitUserAgent.left(webKitUserAgent.indexOf(')') + 1);
-    userAgent += webKitUserAgent;
 
-    userAgent.remove(QLatin1String("; X11"));
-    userAgent.replace(QLatin1String("compatible;"), QLatin1String("X11;"));
+    if (userAgent == KProtocolManager::defaultUserAgent())
+    {
+        const int index = webKitUserAgent.lastIndexOf(QChar(')')) + 1;
+        QString konqVer = userAgent.split(QChar(';')).at(1);
+        userAgent = webKitUserAgent;
+        userAgent.replace(index, (webKitUserAgent.length() - index),
+                          konqVer);
+    }
+    else
+    {
+      userAgent = userAgent.left(indexOfKhtml);
+      webKitUserAgent = webKitUserAgent.mid(webKitUserAgent.indexOf("AppleWebKit/"));
+      webKitUserAgent = webKitUserAgent.left(webKitUserAgent.indexOf(')') + 1);
+      userAgent += webKitUserAgent;
+      userAgent.remove("compatible; ");
+    }
 
     return userAgent;
 }
@@ -351,8 +367,8 @@ bool KWebPage::acceptNavigationRequest(QWebFrame * frame, const QNetworkRequest 
             d->accessManager->metaData()["main_frame_request"] = (parentFrame ? "FALSE" : "TRUE");
         }
     } else {
-        // Here we handle request for opening a new window based on the
-        // user's setting...
+        // if frame is NULL, it means that a new window is requested so we enforce
+        // the user's preferred choice here from the settings...
         switch (WebKitSettings::self()->windowOpenPolicy(request.url().host())) {
         case WebKitSettings::KJSWindowOpenAsk:
             // TODO: Implement this without resotring to showing a KMessgaeBox. Perhaps
