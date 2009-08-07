@@ -92,8 +92,9 @@ protected:
             return new NullNetworkReply();
         }
 
-#if KDE_IS_VERSION(4, 3, 63)
         QNetworkRequest request(req);
+
+#if KDE_IS_VERSION(4, 3, 01)
         KIO::MetaData metaData(m_metaData);
 
         QVariant attr = req.attribute(QNetworkRequest::User);
