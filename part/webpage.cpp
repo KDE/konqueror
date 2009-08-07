@@ -63,8 +63,7 @@ WebPage::WebPage(WebKitPart *part, QWidget *parent)
 bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request,
                                       NavigationType type)
 {
-    kDebug() << "acceptNavigationRequest" << request.url();
-
+    kDebug() << request.url();
     return KWebPage::acceptNavigationRequest(frame, request, type);
 }
 
