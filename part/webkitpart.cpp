@@ -362,7 +362,7 @@ bool WebKitPart::openUrl(const KUrl &url)
     setSslInfo(metaData.toVariant(), url);
     args.metaData().insert("ssl_was_in_use", (d->sslInfo.isValid() ? "TRUE" : "FALSE"));
 
-    //setUrl(url); // urlChanged will take care of this for us...
+    setUrl(url); //We can't wait that urlChanged is calling otherwise some plugins as babelfish can't be enabled
     d->webView->loadUrl(url, args, browserExtension()->browserArguments());
     return true;
 }
