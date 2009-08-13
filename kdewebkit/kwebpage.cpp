@@ -307,34 +307,24 @@ bool KWebPage::javaScriptPrompt(QWebFrame *frame, const QString &msg, const QStr
 
 QString KWebPage::userAgentForUrl(const QUrl& _url) const
 {
-    const KUrl url(_url);
-    const QString host = url.isLocalFile() ? "localhost" : url.host();
+  const KUrl url(_url);
+  QString userAgent = KProtocolManager::userAgentForHost((url.isLocalFile() ? "localhost":url.host()));
+  const int index = userAgent.indexOf("KHTML/");
 
-    QString userAgent = KProtocolManager::userAgentForHost(host);
-    const int indexOfKhtml = userAgent.indexOf("KHTML/");
-    if (indexOfKhtml == -1) // not a KHTML user agent, so no need to "update" it
-        return userAgent;
+  if (userAgent == KProtocolManager::defaultUserAgent() || index == -1)
+    userAgent = QWebPage::userAgentForUrl(_url);
+  else
+  {
+    QString webKitUserAgent = QWebPage::userAgentForUrl(_url);
+    userAgent = userAgent.left(index);
+    webKitUserAgent = webKitUserAgent.mid(webKitUserAgent.indexOf("AppleWebKit/"));
+    webKitUserAgent = webKitUserAgent.left(webKitUserAgent.indexOf(')') + 1);
+    userAgent += webKitUserAgent;
+    userAgent.remove("compatible; ");
+  }
 
-    QString webKitUserAgent = QWebPage::userAgentForUrl(url);
-
-    if (userAgent == KProtocolManager::defaultUserAgent())
-    {
-        const int index = webKitUserAgent.lastIndexOf(QChar(')')) + 1;
-        QString konqVer = userAgent.split(QChar(';')).at(1);
-        userAgent = webKitUserAgent;
-        userAgent.replace(index, (webKitUserAgent.length() - index),
-                          konqVer);
-    }
-    else
-    {
-      userAgent = userAgent.left(indexOfKhtml);
-      webKitUserAgent = webKitUserAgent.mid(webKitUserAgent.indexOf("AppleWebKit/"));
-      webKitUserAgent = webKitUserAgent.left(webKitUserAgent.indexOf(')') + 1);
-      userAgent += webKitUserAgent;
-      userAgent.remove("compatible; ");
-    }
-
-    return userAgent;
+  //kDebug() << userAgent;
+  return userAgent;
 }
 
 void KWebPage::setMetaData(const QString& key, const QString& value)
@@ -345,6 +335,8 @@ void KWebPage::setMetaData(const QString& key, const QString& value)
 
 bool KWebPage::acceptNavigationRequest(QWebFrame * frame, const QNetworkRequest & request, NavigationType type)
 {
+    kDebug() << "url: " << request.url() << ", type: " << type << ", frame: " << frame;
+
     /*
       QWebPage calls acceptNavigationRequest when:
         ** a load url operation is requested... (e.g. user types in the url)
@@ -355,13 +347,9 @@ bool KWebPage::acceptNavigationRequest(QWebFrame * frame, const QNetworkRequest 
       We catch the first 3 scenarios here to make sure the "cross-domain"
       (cookiejar) and "main_frame_request" (SSL) meta datas are set.
     */
-
     if (frame) {
         QWebFrame* parentFrame = frame->parentFrame();
         QUrl url(request.url());
-
-        kDebug() << "url: " << request.url() << ", type: " << type
-        << ", main frame ? " << (parentFrame == 0);
 
         if (url.isValid() && url.host().toLower() != QString::fromUtf8("blank")) {
             if (!parentFrame)
