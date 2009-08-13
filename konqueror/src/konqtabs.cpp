@@ -68,7 +68,7 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
 			  "navigate through tabs. The text on the tab shows the content "
 			  "currently open in it; place your mouse over the tab to see the full title, in "
 			  "case it has been shortened to fit the tab width." ) );
-  //kDebug(1202) << "KonqFrameTabs::KonqFrameTabs()";
+  //kDebug() << "KonqFrameTabs::KonqFrameTabs()";
 
   m_pParentContainer = parentContainer;
   m_pActiveChild = 0L;
@@ -139,7 +139,7 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
 
 KonqFrameTabs::~KonqFrameTabs()
 {
-  //kDebug(1202) << "KonqFrameTabs::~KonqFrameTabs() " << this << " - " << className();
+  //kDebug() << "KonqFrameTabs::~KonqFrameTabs() " << this << " - " << className();
   qDeleteAll( m_childFrameList );
   m_childFrameList.clear();
 }
@@ -170,12 +170,12 @@ void KonqFrameTabs::copyHistory( KonqFrameBase *other )
 {
 
   if( !other ) {
-    kDebug(1202) << "The Frame does not exist";
+    kDebug() << "The Frame does not exist";
     return;
   }
 
   if(other->frameType() != KonqFrameBase::Tabs) {
-    kDebug(1202) << "Frame types are not the same";
+    kDebug() << "Frame types are not the same";
     return;
   }
 
@@ -187,7 +187,7 @@ void KonqFrameTabs::copyHistory( KonqFrameBase *other )
 
 void KonqFrameTabs::setTitle( const QString &title , QWidget* sender)
 {
-  // kDebug(1202) << "KonqFrameTabs::setTitle( " << title << " , " << sender << " )";
+  // kDebug() << "KonqFrameTabs::setTitle( " << title << " , " << sender << " )";
   // Make sure that '&' is displayed correctly
   QString tabText( title );
   setTabText( indexOf( sender ), tabText.replace('&', "&&") );
@@ -195,7 +195,7 @@ void KonqFrameTabs::setTitle( const QString &title , QWidget* sender)
 
 void KonqFrameTabs::setTabIcon( const KUrl &url, QWidget* sender )
 {
-  //kDebug(1202) << "KonqFrameTabs::setTabIcon( " << url << " , " << sender << " )";
+  //kDebug() << "KonqFrameTabs::setTabIcon( " << url << " , " << sender << " )";
   KIcon iconSet = KIcon( KonqPixmapProvider::self()->iconNameFor( url ) );
   const int pos = indexOf(sender);
   if (tabIcon(pos).pixmap(iconSize()).serialNumber() != iconSet.pixmap(iconSize()).serialNumber())
@@ -212,14 +212,14 @@ void KonqFrameTabs::activateChild()
 
 void KonqFrameTabs::insertChildFrame( KonqFrameBase* frame, int index )
 {
-    //kDebug(1202) << "KonqFrameTabs " << this << ": insertChildFrame " << frame;
+    //kDebug() << "KonqFrameTabs " << this << ": insertChildFrame " << frame;
 
     if (!frame) {
-        kWarning(1202) << "KonqFrameTabs " << this << ": insertChildFrame(0) !" ;
+        kWarning() << "KonqFrameTabs " << this << ": insertChildFrame(0) !" ;
         return;
     }
 
-    //kDebug(1202) << "Adding frame";
+    //kDebug() << "Adding frame";
 
     //QTabWidget docs say that inserting tabs while already shown causes
     //flicker...
@@ -250,7 +250,7 @@ void KonqFrameTabs::insertChildFrame( KonqFrameBase* frame, int index )
 
 void KonqFrameTabs::childFrameRemoved( KonqFrameBase * frame )
 {
-  //kDebug(1202) << "KonqFrameTabs::RemoveChildFrame " << this << ". Child " << frame << " removed";
+  //kDebug() << "KonqFrameTabs::RemoveChildFrame " << this << ". Child " << frame << " removed";
   if (frame) {
     removeTab(indexOf(frame->asQWidget()));
     m_childFrameList.removeAll(frame);
@@ -260,9 +260,9 @@ void KonqFrameTabs::childFrameRemoved( KonqFrameBase * frame )
       updateTabBarVisibility();
   }
   else
-    kWarning(1202) << "KonqFrameTabs " << this << ": childFrameRemoved(0L) !" ;
+    kWarning() << "KonqFrameTabs " << this << ": childFrameRemoved(0L) !" ;
 
-  //kDebug(1202) << "KonqFrameTabs::RemoveChildFrame finished";
+  //kDebug() << "KonqFrameTabs::RemoveChildFrame finished";
 }
 
 void KonqFrameTabs::moveTabBackward( int index )

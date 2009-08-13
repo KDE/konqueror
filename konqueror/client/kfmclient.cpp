@@ -120,7 +120,7 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
         version = atoi( getenv( "KDE_SESSION_VERSION" ));
     if( version != 0 && version != KDE_VERSION_MAJOR )
     {
-        kDebug( 1202 ) << "Forwarding to kfmclient from KDE version " << version;
+        kDebug() << "Forwarding to kfmclient from KDE version " << version;
         char wrapper[ 10 ];
         sprintf( wrapper, "kde%d", version );
         char** newargv = new char*[ argc + 2 ];
@@ -321,7 +321,7 @@ static bool krun_has_error = false;
 
 bool ClientApp::createNewWindow(const KUrl & url, bool newTab, bool tempFile, const QString & mimetype)
 {
-    kDebug( 1202 ) << url << "mimetype=" << mimetype;
+    kDebug() << url << "mimetype=" << mimetype;
     needInstance();
 
     if (url.protocol().startsWith(QLatin1String("http")))
@@ -389,7 +389,7 @@ bool ClientApp::createNewWindow(const KUrl & url, bool newTab, bool tempFile, co
     QString appId = konqyToReuse( url.url(), mimetype, QString() );
     if( !appId.isEmpty())
     {
-        kDebug( 1202 ) << "ClientApp::createNewWindow using existing konqueror";
+        kDebug() << "ClientApp::createNewWindow using existing konqueror";
         org::kde::Konqueror::Main konq( appId, "/KonqMain", dbus );
         konq.createNewWindow( url.url(), mimetype, startup_id_str, tempFile );
         sendASNChange();
@@ -420,7 +420,7 @@ bool ClientApp::createNewWindow(const KUrl & url, bool newTab, bool tempFile, co
 #ifdef Q_WS_X11
             KStartupInfo::resetStartupEnv();
 #endif
-            kDebug( 1202 ) << "ClientApp::createNewWindow KProcess started";
+            kDebug() << "ClientApp::createNewWindow KProcess started";
         //}
     }
     return true;

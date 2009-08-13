@@ -49,7 +49,7 @@ void KonqActions::fillHistoryPopup(const QList<HistoryEntry*> &history, int hist
 {
   assert ( popup ); // kill me if this 0... :/
 
-  //kDebug(1202) << "fillHistoryPopup position: " << history.at();
+  //kDebug() << "fillHistoryPopup position: " << history.at();
   int index = 0;
   if (onlyBack || onlyForward) // this if() is always true nowadays.
   {
@@ -67,13 +67,13 @@ void KonqActions::fillHistoryPopup(const QList<HistoryEntry*> &history, int hist
         const QString iconName = KonqPixmapProvider::self()->iconNameFor(history[index]->url);
         QAction* action = new QAction(KIcon(iconName), text, popup);
         action->setData(index - historyIndex);
-        //kDebug(1202) << text << index - historyIndex;
+        //kDebug() << text << index - historyIndex;
         popup->addAction(action);
         if (++i > 10)
             break;
         if (!onlyForward) --index; else ++index;
   }
-  //kDebug(1202) << "After fillHistoryPopup position: " << history.at();
+  //kDebug() << "After fillHistoryPopup position: " << history.at();
 }
 
 ///////////////////////////////

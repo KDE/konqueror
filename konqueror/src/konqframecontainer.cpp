@@ -131,21 +131,21 @@ void KonqFrameContainer::swapChildren()
 
 void KonqFrameContainer::setTitle( const QString &title , QWidget* sender)
 {
-    //kDebug(1202) << title << sender;
+    //kDebug() << title << sender;
   if (m_pParentContainer && activeChild() && (sender == activeChild()->asQWidget()))
       m_pParentContainer->setTitle( title , this);
 }
 
 void KonqFrameContainer::setTabIcon( const KUrl &url, QWidget* sender )
 {
-    //kDebug(1202) << url << sender;
+    //kDebug() << url << sender;
   if (m_pParentContainer && activeChild() && (sender == activeChild()->asQWidget()))
       m_pParentContainer->setTabIcon( url, this );
 }
 
 void KonqFrameContainer::insertChildFrame(KonqFrameBase* frame, int index)
 {
-    //kDebug(1202) << this << frame;
+    //kDebug() << this << frame;
     if (frame) {
         QSplitter::insertWidget(index, frame->asQWidget());
         // Insert before existing child? Move first to second.
@@ -155,23 +155,23 @@ void KonqFrameContainer::insertChildFrame(KonqFrameBase* frame, int index)
         if( !m_pFirstChild ) {
             m_pFirstChild = frame;
             frame->setParentContainer(this);
-            //kDebug(1202) << "Setting as first child";
+            //kDebug() << "Setting as first child";
         } else if( !m_pSecondChild ) {
             m_pSecondChild = frame;
             frame->setParentContainer(this);
-            //kDebug(1202) << "Setting as second child";
+            //kDebug() << "Setting as second child";
         } else {
-            kWarning(1202) << this << "already has two children..."
+            kWarning() << this << "already has two children..."
                            << m_pFirstChild << "and" << m_pSecondChild;
         }
     } else {
-        kWarning(1202) << "KonqFrameContainer" << this << ": insertChildFrame(NULL)!" ;
+        kWarning() << "KonqFrameContainer" << this << ": insertChildFrame(NULL)!" ;
     }
 }
 
 void KonqFrameContainer::childFrameRemoved(KonqFrameBase * frame)
 {
-    //kDebug(1202) << this << "Child" << frame << "removed";
+    //kDebug() << this << "Child" << frame << "removed";
 
     if( m_pFirstChild == frame ) {
         m_pFirstChild = m_pSecondChild;
@@ -179,7 +179,7 @@ void KonqFrameContainer::childFrameRemoved(KonqFrameBase * frame)
     } else if( m_pSecondChild == frame ) {
         m_pSecondChild = 0;
     } else {
-        kWarning(1202) << this << "Can't find this child:" << frame ;
+        kWarning() << this << "Can't find this child:" << frame ;
     }
 }
 

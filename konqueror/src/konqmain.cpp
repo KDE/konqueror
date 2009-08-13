@@ -140,7 +140,7 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
               kurl.setFileName("");
            }
        }
-       kDebug(1202) << "main() -> createBrowserWindowFromProfile mimeType=" << urlargs.mimeType();
+       kDebug() << "main() -> createBrowserWindowFromProfile mimeType=" << urlargs.mimeType();
        KonqMisc::createBrowserWindowFromProfile( profilePath, profile, kurl, urlargs, KParts::BrowserArguments(), false, filesToSelect );
      }
      else if (args->isSet("sessions"))
@@ -190,7 +190,7 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
 		     // KonqMainWindow ctor sets always the preloaded flag to false, so create the window before this
                      KonqMainWindow::setPreloadedFlag( true );
 		     KonqMainWindow::setPreloadedWindow( win );
-                     kDebug(1202) << "Konqy preloaded :" << QDBusConnection::sessionBus().baseService();
+                     kDebug() << "Konqy preloaded :" << QDBusConnection::sessionBus().baseService();
                  }
                  else
                  {
@@ -204,7 +204,7 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
                  const QString profile = KonqMisc::defaultProfileName();
                  KonqMisc::createBrowserWindowFromProfile( KonqMisc::defaultProfilePath(), profile );
              }
-             kDebug(1202) << "main() -> no args";
+             kDebug() << "main() -> no args";
          }
          else
          {
@@ -232,7 +232,7 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
                      if (args->isSet("mimetype"))
                      {
                          urlargs.setMimeType( args->getOption("mimetype") );
-                         kDebug(1202) << "main() : setting mimeType to " << urlargs.mimeType();
+                         kDebug() << "main() : setting mimeType to " << urlargs.mimeType();
                      }
                      if (args->isSet("select"))
                      {

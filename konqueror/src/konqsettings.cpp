@@ -91,7 +91,7 @@ bool KonqFMSettings::shouldEmbed(const QString & _mimeType) const
     // 1 - in the filetypesrc config file (written by the configuration module)
     QMap<QString, QString>::const_iterator it = m_embedMap.find( QString::fromLatin1("embed-")+mimeType );
     if ( it != m_embedMap.end() ) {
-        kDebug(1202) << mimeType << it.value();
+        kDebug() << mimeType << it.value();
         return it.value() == QLatin1String("true");
     }
     // 2 - in the configuration for the group if nothing was found in the mimetype
@@ -100,7 +100,7 @@ bool KonqFMSettings::shouldEmbed(const QString & _mimeType) const
     const QString mimeTypeGroup = mimeType.left(mimeType.indexOf('/'));
     it = m_embedMap.find( QString::fromLatin1("embed-")+mimeTypeGroup );
     if ( it != m_embedMap.end() ) {
-        kDebug(1202) << mimeType << "group setting:" << it.value();
+        kDebug() << mimeType << "group setting:" << it.value();
         return it.value() == QLatin1String("true");
     }
     // 2 bis - configuration for group of parent mimetype, if different

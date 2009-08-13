@@ -91,7 +91,7 @@ void KonqHistoryManager::addToHistory( bool pending, const KUrl& _url,
 				       const QString& typedUrl,
 				       const QString& title )
 {
-    //kDebug(1202) << _url << "Typed URL:" << typedUrl << ", Title:" << title;
+    //kDebug() << _url << "Typed URL:" << typedUrl << ", Title:" << title;
 
     if ( filterOut( _url ) ) // we only want remote URLs
 	return;
@@ -169,7 +169,7 @@ void KonqHistoryManager::insert( const QString& url )
 
 void KonqHistoryManager::removePending( const KUrl& url )
 {
-    // kDebug(1202) << "Removing pending..." << url;
+    // kDebug() << "Removing pending..." << url;
 
     if ( url.isLocalFile() )
 	return;

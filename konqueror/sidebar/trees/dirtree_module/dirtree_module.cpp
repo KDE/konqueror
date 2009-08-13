@@ -622,7 +622,7 @@ void KonqSidebarDirTreeModule::followURL( const KUrl & url )
         kDebug() << "No parent found for url " << url.prettyUrl();
         return;
     }
-    kDebug(1202) << "Found parent " << uParent.prettyUrl();
+    kDebug() << "Found parent " << uParent.prettyUrl();
 
     // That's the parent directory we found. Open if not open...
     if ( !parentItem->isOpen() )
@@ -635,7 +635,7 @@ void KonqSidebarDirTreeModule::followURL( const KUrl & url )
         } else
         {
             m_selectAfterOpening = url;
-            kDebug(1202) << "KonqSidebarDirTreeModule::followURL: m_selectAfterOpening=" << m_selectAfterOpening.url();
+            kDebug() << "KonqSidebarDirTreeModule::followURL: m_selectAfterOpening=" << m_selectAfterOpening.url();
         }
     }
 }
