@@ -456,10 +456,7 @@ private Q_SLOTS:
 
     void slotOpenEmbedded(KService::Ptr);
 
-  // Connected to KSycoca
-  void slotDatabaseChanged();
-
-  // Connected to KApp
+  // Connected to KGlobalSettings
   void slotReconfigure();
 
   void slotForceSaveMainWindowSettings();
