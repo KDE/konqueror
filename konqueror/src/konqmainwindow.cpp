@@ -256,9 +256,6 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
   initCombo();
   initActions();
 
-  connect( KSycoca::self(), SIGNAL( databaseChanged() ),
-           this, SLOT( slotDatabaseChanged() ) );
-
   connect( KGlobalSettings::self(), SIGNAL( kdisplayFontChanged()), SLOT(slotReconfigure()));
 
   //load the xmlui file specified in the profile or the default konqueror.rc
@@ -4773,17 +4770,6 @@ void KonqMainWindow::slotOpenEmbedded(KService::Ptr service)
     if ( m_currentView->changePart( m_popupMimeType,
                                         service->desktopEntryName(), true ) )
         m_currentView->openUrl( m_popupUrl, m_popupUrl.pathOrUrl() );
-}
-
-void KonqMainWindow::slotDatabaseChanged()
-{
-  if ( KSycoca::isChanged("mimetypes") )
-  {
-    MapViews::ConstIterator it = m_mapViews.constBegin();
-    MapViews::ConstIterator end = m_mapViews.constEnd();
-    for (; it != end; ++it )
-      (*it)->callExtensionMethod( "refreshMimeTypes" );
-  }
 }
 
 void KonqMainWindow::slotPopupPasteTo()
