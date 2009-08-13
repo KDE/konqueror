@@ -134,7 +134,7 @@ ToggleViewGUIClient::ToggleViewGUIClient( KonqMainWindow *mainWindow )
   {
     QString description = i18n( "Show %1" ,  (*cIt)->name() );
     QString name = (*cIt)->desktopEntryName();
-    //kDebug(1202) << "ToggleViewGUIClient: name=" << name;
+    //kDebug() << "ToggleViewGUIClient: name=" << name;
     KToggleAction *action = new KToggleAction( description, this );
     mainWindow->actionCollection()->addAction( name.toLatin1(), action );
     action->setCheckedState( KGuiItem(i18n( "Hide %1" ,  (*cIt)->name() )) );

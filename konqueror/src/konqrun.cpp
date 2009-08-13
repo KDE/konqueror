@@ -47,7 +47,7 @@ KonqRun::KonqRun(KonqMainWindow* mainWindow, KonqView *_childView,
                           !req.args.reload() || req.userRequestedReload),
       m_pMainWindow(mainWindow), m_pView(_childView), m_bFoundMimeType(false), m_req(req)
 {
-    //kDebug(1202) << "KonqRun::KonqRun() " << this;
+    //kDebug() << "KonqRun::KonqRun() " << this;
     assert(!m_pMainWindow.isNull());
     if (m_pView)
         m_pView->setLoading(true);
@@ -55,14 +55,14 @@ KonqRun::KonqRun(KonqMainWindow* mainWindow, KonqView *_childView,
 
 KonqRun::~KonqRun()
 {
-    //kDebug(1202) << "KonqRun::~KonqRun() " << this;
+    //kDebug() << "KonqRun::~KonqRun() " << this;
     if (m_pView && m_pView->run() == this)
         m_pView->setRun(0);
 }
 
 void KonqRun::foundMimeType(const QString & _type)
 {
-    //kDebug(1202) << "KonqRun::foundMimeType " << _type << " m_req=" << m_req.debug();
+    //kDebug() << "KonqRun::foundMimeType " << _type << " m_req=" << m_req.debug();
 
     QString mimeType = _type; // this ref comes from the job, we lose it when using KIO again
 
@@ -134,7 +134,7 @@ void KonqRun::foundMimeType(const QString & _type)
         return;
     }
 
-    kDebug(1202) << "Nothing special to do in KonqRun, falling back to KRun";
+    kDebug() << "Nothing special to do in KonqRun, falling back to KRun";
     KRun::foundMimeType(mimeType);
 }
 
@@ -207,7 +207,7 @@ void KonqRun::scanFile()
 void KonqRun::slotRedirection(KIO::Job *job, const KUrl& redirectedToURL)
 {
     KUrl redirectFromURL = static_cast<KIO::TransferJob *>(job)->url();
-    kDebug(1202) << redirectFromURL << "->" << redirectedToURL;
+    kDebug() << redirectFromURL << "->" << redirectedToURL;
     KonqHistoryManager::kself()->confirmPending(redirectFromURL);
 
     if (redirectedToURL.protocol() == "mailto") {

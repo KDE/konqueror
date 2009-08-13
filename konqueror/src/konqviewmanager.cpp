@@ -70,13 +70,13 @@ KonqViewManager::KonqViewManager( KonqMainWindow *mainWindow )
 
 KonqView* KonqViewManager::createFirstView( const QString &mimeType, const QString &serviceName )
 {
-    //kDebug(1202) << serviceName;
+    //kDebug() << serviceName;
   KService::Ptr service;
   KService::List partServiceOffers, appServiceOffers;
   KonqViewFactory newViewFactory = createView( mimeType, serviceName, service, partServiceOffers, appServiceOffers, true /*forceAutoEmbed*/ );
   if ( newViewFactory.isNull() )
   {
-    kDebug(1202) << "No suitable factory found.";
+    kDebug() << "No suitable factory found.";
     return 0;
   }
 
@@ -98,7 +98,7 @@ KonqView* KonqViewManager::splitView( KonqView* currentView,
                                       bool newOneFirst, bool forceAutoEmbed )
 {
 #ifdef DEBUG_VIEWMGR
-  kDebug(1202);
+  kDebug();
   m_pMainWindow->dumpViewList();
   printFullHierarchy();
 #endif
@@ -130,7 +130,7 @@ KonqView* KonqViewManager::splitView( KonqView* currentView,
   KonqFrameContainer* newContainer = parentContainer->splitChildFrame(splitFrame, orientation);
   connect(newContainer, SIGNAL(ctrlTabPressed()), m_pMainWindow, SLOT(slotCtrlTabPressed()));
 
-  //kDebug(1202) << "Create new child";
+  //kDebug() << "Create new child";
   KonqView *newView = setupView( newContainer, newViewFactory, service, partServiceOffers, appServiceOffers, serviceType, false );
 
 #ifndef DEBUG
@@ -161,7 +161,7 @@ KonqView* KonqViewManager::splitView( KonqView* currentView,
 #ifdef DEBUG_VIEWMGR
   m_pMainWindow->dumpViewList();
   printFullHierarchy();
-  kDebug(1202) << "done";
+  kDebug() << "done";
 #endif
 
   return newView;
@@ -173,7 +173,7 @@ KonqView* KonqViewManager::splitMainContainer( KonqView* currentView,
                                                const QString &serviceName,
                                                bool newOneFirst )
 {
-    //kDebug(1202);
+    //kDebug();
 
     KService::Ptr service;
     KService::List partServiceOffers, appServiceOffers;
@@ -205,7 +205,7 @@ KonqView* KonqViewManager::splitMainContainer( KonqView* currentView,
 #ifdef DEBUG_VIEWMGR
     m_pMainWindow->dumpViewList();
     printFullHierarchy();
-    kDebug(1202) << "done";
+    kDebug() << "done";
 #endif
 
     return childView;
@@ -214,7 +214,7 @@ KonqView* KonqViewManager::splitMainContainer( KonqView* currentView,
 KonqView* KonqViewManager::addTab(const QString &serviceType, const QString &serviceName, bool passiveMode, bool openAfterCurrentPage, int pos  )
 {
 #ifdef DEBUG_VIEWMGR
-  kDebug(1202) << "------------- KonqViewManager::addTab starting -------------";
+  kDebug() << "------------- KonqViewManager::addTab starting -------------";
   m_pMainWindow->dumpViewList();
   printFullHierarchy();
 #endif
@@ -234,7 +234,7 @@ KonqView* KonqViewManager::addTab(const QString &serviceType, const QString &ser
 #ifdef DEBUG_VIEWMGR
   m_pMainWindow->dumpViewList();
   printFullHierarchy();
-  kDebug(1202) << "------------- KonqViewManager::addTab done -------------";
+  kDebug() << "------------- KonqViewManager::addTab done -------------";
 #endif
 
   return childView;
@@ -266,7 +266,7 @@ KonqView* KonqViewManager::addTabFromHistory( KonqView* currentView, int steps, 
 void KonqViewManager::duplicateTab( KonqFrameBase* currentFrame, bool openAfterCurrentPage )
 {
 #ifdef DEBUG_VIEWMGR
-  kDebug(1202) << currentFrame;
+  kDebug() << currentFrame;
   m_pMainWindow->dumpViewList();
   printFullHierarchy();
 #endif
@@ -298,7 +298,7 @@ void KonqViewManager::duplicateTab( KonqFrameBase* currentFrame, bool openAfterC
 void KonqViewManager::breakOffTab( KonqFrameBase* currentFrame, const QSize& windowSize )
 {
 #ifdef DEBUG_VIEWMGR
-  kDebug(1202) << currentFrame;
+  kDebug() << currentFrame;
   m_pMainWindow->dumpViewList();
   printFullHierarchy();
 #endif
@@ -377,7 +377,7 @@ KonqMainWindow *KonqViewManager::openSavedWindow(const KConfigGroup& configGroup
 void KonqViewManager::removeTab( KonqFrameBase* currentFrame, bool emitAboutToRemoveSignal )
 {
 #ifdef DEBUG_VIEWMGR
-  kDebug(1202) << currentFrame;
+  kDebug() << currentFrame;
   m_pMainWindow->dumpViewList();
   printFullHierarchy();
 #endif
@@ -508,11 +508,11 @@ void KonqViewManager::updatePixmaps()
 
 void KonqViewManager::openClosedTab(const KonqClosedTabItem& closedTab)
 {
-    kDebug(1202);
+    kDebug();
     loadRootItem( closedTab.configGroup(), m_tabContainer, KUrl(), true, KUrl(), false, closedTab.pos() );
 
     int pos = ( closedTab.pos() < m_tabContainer->count() ) ? closedTab.pos() : m_tabContainer->count()-1;
-    kDebug(1202) << "pos, m_tabContainer->count():" << pos << m_tabContainer->count()-1;
+    kDebug() << "pos, m_tabContainer->count():" << pos << m_tabContainer->count()-1;
 
     m_tabContainer->setCurrentIndex( pos );
 }
@@ -520,7 +520,7 @@ void KonqViewManager::openClosedTab(const KonqClosedTabItem& closedTab)
 void KonqViewManager::removeView( KonqView *view )
 {
 #ifdef DEBUG_VIEWMGR
-  kDebug(1202) << view;
+  kDebug() << view;
   m_pMainWindow->dumpViewList();
   printFullHierarchy();
 #endif
@@ -531,20 +531,20 @@ void KonqViewManager::removeView( KonqView *view )
   KonqFrame* frame = view->frame();
   KonqFrameContainerBase* parentContainer = frame->parentContainer();
 
-  kDebug(1202) << "view=" << view << "frame=" << frame << "parentContainer=" << parentContainer;
+  kDebug() << "view=" << view << "frame=" << frame << "parentContainer=" << parentContainer;
 
   if (parentContainer->frameType() == KonqFrameBase::Container)
   {
     setActivePart(0);
 
-    kDebug(1202) << "parentContainer is a KonqFrameContainer";
+    kDebug() << "parentContainer is a KonqFrameContainer";
 
     KonqFrameContainerBase* grandParentContainer = parentContainer->parentContainer();
-    kDebug(1202) << "grandParentContainer=" << grandParentContainer;
+    kDebug() << "grandParentContainer=" << grandParentContainer;
 
     KonqFrameBase* otherFrame = static_cast<KonqFrameContainer*>(parentContainer)->otherChild( frame );
     if( !otherFrame ) {
-        kWarning(1202) << "This shouldn't happen!" ;
+        kWarning() << "This shouldn't happen!" ;
         return;
     }
 
@@ -561,11 +561,11 @@ void KonqViewManager::removeView( KonqView *view )
 
     grandParentContainer->replaceChildFrame(parentContainer, otherFrame);
 
-    //kDebug(1202) << "--- Removing otherFrame from parentContainer";
+    //kDebug() << "--- Removing otherFrame from parentContainer";
     parentContainer->childFrameRemoved( otherFrame );
 
     m_pMainWindow->removeChildView(view);
-    //kDebug(1202) << "--- Deleting view" << view;
+    //kDebug() << "--- Deleting view" << view;
     delete view; // This deletes the view, which deletes the part, which deletes its widget
 
     delete parentContainer;
@@ -578,27 +578,27 @@ void KonqViewManager::removeView( KonqView *view )
     grandParentContainer->activateChild();
   }
   else if (parentContainer->frameType() == KonqFrameBase::Tabs) {
-    kDebug(1202) << "parentContainer" << parentContainer << "is a KonqFrameTabs";
+    kDebug() << "parentContainer" << parentContainer << "is a KonqFrameTabs";
 
     removeTab( frame );
   }
   else if (parentContainer->frameType() == KonqFrameBase::MainWindow)
-    kDebug(1202) << "parentContainer is a KonqMainWindow.  This shouldn't be removeable, not removing.";
+    kDebug() << "parentContainer is a KonqMainWindow.  This shouldn't be removeable, not removing.";
   else
-    kDebug(1202) << "Unrecognized frame type, not removing.";
+    kDebug() << "Unrecognized frame type, not removing.";
 
 #ifdef DEBUG_VIEWMGR
   printFullHierarchy();
   m_pMainWindow->dumpViewList();
 
-  kDebug(1202) << "done";
+  kDebug() << "done";
 #endif
 }
 
 // reimplemented from PartManager
 void KonqViewManager::removePart( KParts::Part * part )
 {
-    //kDebug(1202) << part;
+    //kDebug() << part;
   // This is called when a part auto-deletes itself (case 1), or when
   // the "delete view" above deletes, in turn, the part (case 2)
 
@@ -610,15 +610,15 @@ void KonqViewManager::removePart( KParts::Part * part )
   KonqView * view = m_pMainWindow->childView( static_cast<KParts::ReadOnlyPart *>(part) );
   if ( view ) // the child view still exists, so we are in case 1
   {
-      kDebug(1202) << "Found a child view";
+      kDebug() << "Found a child view";
 
       view->partDeleted(); // tell the child view that the part auto-deletes itself
 
       if (m_pMainWindow->mainViewsCount() == 1)
       {
-        kDebug(1202) << "Deleting last view -> closing the window";
+        kDebug() << "Deleting last view -> closing the window";
         clear();
-        kDebug(1202) << "Closing m_pMainWindow" << m_pMainWindow;
+        kDebug() << "Closing m_pMainWindow" << m_pMainWindow;
         m_pMainWindow->close(); // will delete it
         return;
       } else { // normal case
@@ -626,7 +626,7 @@ void KonqViewManager::removePart( KParts::Part * part )
       }
   }
 
-  //kDebug(1202) << part << "done";
+  //kDebug() << part << "done";
 }
 
 void KonqViewManager::slotPassiveModePartDeleted()
@@ -635,9 +635,9 @@ void KonqViewManager::slotPassiveModePartDeleted()
   // so we have to handle suicidal ones ourselves
   KParts::ReadOnlyPart * part = const_cast<KParts::ReadOnlyPart *>( static_cast<const KParts::ReadOnlyPart *>( sender() ) );
   disconnect( part, SIGNAL( destroyed() ), this, SLOT( slotPassiveModePartDeleted() ) );
-  kDebug(1202) << "part=" << part;
+  kDebug() << "part=" << part;
   KonqView * view = m_pMainWindow->childView( part );
-  kDebug(1202) << "view=" << view;
+  kDebug() << "view=" << view;
   if ( view != 0L) // the child view still exists, so the part suicided
   {
     view->partDeleted(); // tell the child view that the part deleted itself
@@ -663,25 +663,25 @@ void KonqViewManager::viewCountChanged()
 
 void KonqViewManager::clear()
 {
-    //kDebug(1202);
+    //kDebug();
     setActivePart(0);
 
     if (m_pMainWindow->childFrame() == 0) return;
 
     const QList<KonqView*> viewList = KonqViewCollector::collect(m_pMainWindow);
     if ( !viewList.isEmpty() ) {
-        //kDebug(1202) << viewList.count() << "items";
+        //kDebug() << viewList.count() << "items";
 
         foreach ( KonqView* view, viewList ) {
             m_pMainWindow->removeChildView( view );
-            //kDebug(1202) << "Deleting" << view;
+            //kDebug() << "Deleting" << view;
             delete view;
         }
     }
 
     KonqFrameBase* frame = m_pMainWindow->childFrame();
     Q_ASSERT( frame );
-    //kDebug(1202) << "deleting mainFrame ";
+    //kDebug() << "deleting mainFrame ";
     m_pMainWindow->childFrameRemoved( frame ); // will set childFrame() to NULL
     delete frame;
     // tab container was deleted by the above
@@ -690,7 +690,7 @@ void KonqViewManager::clear()
 
 KonqView *KonqViewManager::chooseNextView(KonqView *view)
 {
-    //kDebug(1202) << view;
+    //kDebug() << view;
     const KonqMainWindow::MapViews& mapViews = m_pMainWindow->viewMap();
 
     KonqMainWindow::MapViews::const_iterator it = mapViews.begin();
@@ -711,9 +711,9 @@ KonqView *KonqViewManager::chooseNextView(KonqView *view)
 
     KonqMainWindow::MapViews::const_iterator startIt = it;
 
-    //kDebug(1202) << "count=" << mapViews.count();
+    //kDebug() << "count=" << mapViews.count();
     while (true) {
-        //kDebug(1202) << "*KonqViewManager::chooseNextView going next";
+        //kDebug() << "*KonqViewManager::chooseNextView going next";
         if (++it == end) // move to next
             it = mapViews.begin(); // rewind on end
 
@@ -723,10 +723,10 @@ KonqView *KonqViewManager::chooseNextView(KonqView *view)
         KonqView *nextView = it.value();
         if (nextView && !nextView->isPassiveMode())
             return nextView;
-        //kDebug(1202) << "nextView=" << nextView << "passive=" << nextView->isPassiveMode();
+        //kDebug() << "nextView=" << nextView << "passive=" << nextView->isPassiveMode();
     }
 
-    //kDebug(1202) << "returning 0";
+    //kDebug() << "returning 0";
     return 0; // no next view found
 }
 
@@ -775,21 +775,21 @@ KonqView *KonqViewManager::setupView( KonqFrameContainerBase *parentContainer,
                                       bool openAfterCurrentPage,
                                       int pos )
 {
-    //kDebug(1202) << "passiveMode=" << passiveMode;
+    //kDebug() << "passiveMode=" << passiveMode;
 
   QString sType = serviceType;
 
   if ( sType.isEmpty() ) // TODO remove this -- after checking all callers; splitMainContainer seems to need this logic
     sType = m_pMainWindow->currentView()->serviceType();
 
-  //kDebug(1202) << "creating KonqFrame with parent=" << parentContainer;
+  //kDebug() << "creating KonqFrame with parent=" << parentContainer;
   KonqFrame* newViewFrame = new KonqFrame( parentContainer->asQWidget(), parentContainer );
   newViewFrame->setGeometry( 0, 0, m_pMainWindow->width(), m_pMainWindow->height() );
 
-  //kDebug(1202) << "Creating KonqView";
+  //kDebug() << "Creating KonqView";
   KonqView *v = new KonqView( viewFactory, newViewFrame,
                               m_pMainWindow, service, partServiceOffers, appServiceOffers, sType, passiveMode );
-  //kDebug(1202) << "KonqView created - v=" << v << "v->part()=" << v->part();
+  //kDebug() << "KonqView created - v=" << v << "v->part()=" << v->part();
 
   QObject::connect( v, SIGNAL( sigPartChanged( KonqView *, KParts::ReadOnlyPart *, KParts::ReadOnlyPart * ) ),
                     m_pMainWindow, SLOT( slotPartChanged( KonqView *, KParts::ReadOnlyPart *, KParts::ReadOnlyPart * ) ) );
@@ -816,7 +816,7 @@ KonqView *KonqViewManager::setupView( KonqFrameContainerBase *parentContainer,
     connect( v->part(), SIGNAL( destroyed() ), this, SLOT( slotPassiveModePartDeleted() ) );
   }
 
-  //kDebug(1202) << "done";
+  //kDebug() << "done";
   return v;
 }
 
@@ -932,7 +932,7 @@ void KonqViewManager::loadViewProfileFromGroup( const KConfigGroup &profileGroup
         m_pMainWindow->action("clear_location")->trigger();
     }
 
-    //kDebug(1202) << "after loadRootItem";
+    //kDebug() << "after loadRootItem";
 
     // Set an active part first so that we open the URL in the current view
     // (to set the location bar correctly and asap)
@@ -973,7 +973,7 @@ void KonqViewManager::loadViewProfileFromGroup( const KConfigGroup &profileGroup
         }
     }
 
-    //kDebug(1202) << "done";
+    //kDebug() << "done";
 }
 
 void KonqViewManager::setActivePart(KParts::Part *part, QWidget *)
@@ -983,16 +983,16 @@ void KonqViewManager::setActivePart(KParts::Part *part, QWidget *)
 
 void KonqViewManager::doSetActivePart( KParts::Part *part )
 {
-    //kDebug(1202) << part;
+    //kDebug() << part;
     //if ( part )
-    //    kDebug(1202) << part->metaObject()->className() << part->name();
+    //    kDebug() << part->metaObject()->className() << part->name();
 
     KParts::Part* mainWindowActivePart = m_pMainWindow->currentView()
                                          ? m_pMainWindow->currentView()->part() : 0;
     if (part == activePart() && mainWindowActivePart == part)
     {
       //if (part)
-      //    kDebug(1202) << "Part is already active!";
+      //    kDebug() << "Part is already active!";
       return;
     }
 
@@ -1022,9 +1022,9 @@ void KonqViewManager::doSetActivePart( KParts::Part *part )
 
 void KonqViewManager::slotActivePartChanged ( KParts::Part *newPart )
 {
-    //kDebug(1202) << newPart;
+    //kDebug() << newPart;
     if (newPart == 0L) {
-      //kDebug(1202) << "newPart = 0L , returning";
+      //kDebug() << "newPart = 0L , returning";
       return;
     }
     // Send event to mainwindow - this is useful for plugins (like searchbar)
@@ -1033,7 +1033,7 @@ void KonqViewManager::slotActivePartChanged ( KParts::Part *newPart )
 
     KonqView * view = m_pMainWindow->childView( static_cast<KParts::ReadOnlyPart *>(newPart) );
     if (view == 0L) {
-      kDebug(1202) << "No view associated with this part";
+      kDebug() << "No view associated with this part";
       return;
     }
     if (view->frame()->parentContainer() == 0L) return;
@@ -1041,7 +1041,7 @@ void KonqViewManager::slotActivePartChanged ( KParts::Part *newPart )
         view->frame()->statusbar()->updateActiveStatus();
         view->frame()->parentContainer()->setActiveChild( view->frame() );
     }
-    //kDebug(1202) << "done";
+    //kDebug() << "done";
 }
 
 void KonqViewManager::emitActivePartChanged()
@@ -1119,7 +1119,7 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
         prefix = name + QLatin1Char( '_' );
     }
 
-    //kDebug(1202) << "begin name=" << name << "openUrl=" << openUrl;
+    //kDebug() << "begin name=" << name << "openUrl=" << openUrl;
 
     if (name.startsWith("View") || name == "empty") {
         // load view config
@@ -1144,7 +1144,7 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
                 }
             }
         }
-        //kDebug(1202) << "serviceType" << serviceType << serviceName;
+        //kDebug() << "serviceType" << serviceType << serviceName;
 
         KService::Ptr service;
         KService::List partServiceOffers, appServiceOffers;
@@ -1152,13 +1152,13 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
         KonqFactory konqFactory;
         KonqViewFactory viewFactory = konqFactory.createView( serviceType, serviceName, &service, &partServiceOffers, &appServiceOffers, true /*forceAutoEmbed*/ );
         if (viewFactory.isNull()) {
-          kWarning(1202) << "Profile Loading Error: View creation failed" ;
+          kWarning() << "Profile Loading Error: View creation failed" ;
           return; //ugh..
         }
 
         bool passiveMode = cfg.readEntry( QString::fromLatin1( "PassiveMode" ).prepend( prefix ), false );
 
-        //kDebug(1202) << "Creating View Stuff; parent=" << parent;
+        //kDebug() << "Creating View Stuff; parent=" << parent;
         if ( parent == m_pMainWindow )
             parent = tabContainer();
         KonqView *childView = setupView( parent, viewFactory, service, partServiceOffers, appServiceOffers, serviceType, passiveMode, openAfterCurrentPage, pos );
@@ -1194,7 +1194,7 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
                 }
 
                 if ( !url.isEmpty() ) {
-                    //kDebug(1202) << "calling openUrl" << url;
+                    //kDebug() << "calling openUrl" << url;
                     //childView->openUrl( url, url.prettyUrl() );
                     // We need view-follows-view (for the dirtree, for instance)
                     KonqOpenURLRequest req;
@@ -1202,18 +1202,18 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
                         req.typedUrl = url.prettyUrl();
                     m_pMainWindow->openView( serviceType, url, childView, req );
                 }
-                //else kDebug(1202) << "url is empty";
+                //else kDebug() << "url is empty";
             }
         }
         // Do this after opening the URL, so that it's actually possible to open it :)
         childView->setLockedLocation( cfg.readEntry( QString::fromLatin1( "LockedLocation" ).prepend( prefix ), false ) );
     }
   else if( name.startsWith("Container") ) {
-    //kDebug(1202) << "Item is Container";
+    //kDebug() << "Item is Container";
 
     //load container config
     QString ostr = cfg.readEntry( QString::fromLatin1( "Orientation" ).prepend( prefix ), QString() );
-    //kDebug(1202) << "Orientation:" << ostr;
+    //kDebug() << "Orientation:" << ostr;
     Qt::Orientation o;
     if( ostr == "Vertical" )
       o = Qt::Vertical;
@@ -1249,7 +1249,7 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
       loadItem( cfg, newContainer, childList.at(0), defaultURL, openUrl, forcedUrl );
       loadItem( cfg, newContainer, childList.at(1), defaultURL, openUrl, forcedUrl );
 
-      //kDebug(1202) << "setSizes" << sizes;
+      //kDebug() << "setSizes" << sizes;
       newContainer->setSizes( sizes );
 
       if (index == 1)
@@ -1262,7 +1262,7 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
   }
   else if( name.startsWith("Tabs") )
   {
-    //kDebug(1202) << "Item is a Tabs";
+    //kDebug() << "Item is a Tabs";
 
     int index = cfg.readEntry( QString::fromLatin1( "activeChildIndex" ).prepend(prefix), 0 );
     if ( !m_tabContainer ) {
@@ -1297,7 +1297,7 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
   else
       kWarning() << "Profile Loading Error: Unknown item" << name;
 
-    //kDebug(1202) << "end" << name;
+    //kDebug() << "end" << name;
 }
 
 void KonqViewManager::setProfiles( KActionMenu *profiles )
@@ -1471,7 +1471,7 @@ public:
             className = "NoWidget!";
         else
             className = frame->part()->widget()->metaObject()->className();
-        kDebug(1202) << m_spaces << frame
+        kDebug() << m_spaces << frame
                      << "parent=" << frame->parentContainer()
                      << (frame->isVisible() ? "visible" : "invisible")
                      << "containing view" << frame->childView()
@@ -1480,7 +1480,7 @@ public:
         return true;
     }
     virtual bool visit(KonqFrameContainer* container) {
-        kDebug(1202) << m_spaces << container
+        kDebug() << m_spaces << container
                      << (container->isVisible() ? "visible" : "invisible")
                      << (container->orientation() == Qt::Horizontal ? "horizontal" : "vertical")
                      << "sizes=" << container->sizes()
@@ -1488,17 +1488,17 @@ public:
                      << "activeChild=" << container->activeChild();
 
         if (!container->activeChild())
-            kDebug(1202) << "WARNING:" << container << "has a null active child!";
+            kDebug() << "WARNING:" << container << "has a null active child!";
 
         m_spaces += "  ";
         return true;
     }
     virtual bool visit(KonqFrameTabs* tabs) {
-        kDebug(1202) << m_spaces << "KonqFrameTabs" << tabs
+        kDebug() << m_spaces << "KonqFrameTabs" << tabs
                      << "visible=" << tabs->isVisible()
                      << "activeChild=" << tabs->activeChild();
         if (!tabs->activeChild())
-            kDebug(1202) << "WARNING:" << tabs << "has a null active child!";
+            kDebug() << "WARNING:" << tabs << "has a null active child!";
         m_spaces += "  ";
         return true;
     }
@@ -1518,7 +1518,7 @@ private:
 
 void KonqViewManager::printFullHierarchy()
 {
-    kDebug(1202) << "currentView=" << m_pMainWindow->currentView();
+    kDebug() << "currentView=" << m_pMainWindow->currentView();
     KonqDebugFrameVisitor visitor;
     m_pMainWindow->accept( &visitor );
 }
@@ -1543,7 +1543,7 @@ bool KonqViewManager::isTabBarVisible() const
 
 void KonqViewManager::createTabContainer(QWidget* parent, KonqFrameContainerBase* parentContainer)
 {
-    //kDebug(1202) << "createTabContainer" << parent << parentContainer;
+    //kDebug() << "createTabContainer" << parent << parentContainer;
     m_tabContainer = new KonqFrameTabs( parent, parentContainer, this );
     connect( m_tabContainer, SIGNAL(ctrlTabPressed()), m_pMainWindow, SLOT(slotCtrlTabPressed()) );
     // Delay the opening of the URL for #106641

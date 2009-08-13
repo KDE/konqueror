@@ -77,7 +77,7 @@ void KonqSidebarTreeTopLevelItem::drop( QDropEvent * ev )
                 tree()->addUrl(this, *it);
             }
         } else
-            kError(1202) << "No URL !?  " << endl;
+            kError() << "No URL !?  " << endl;
     }
     else // Top level item, not group
     {

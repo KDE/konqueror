@@ -102,7 +102,7 @@ KonqMainWindow * KonqMisc::createBrowserWindowFromProfile( const QString& _path,
                                                            bool forbidUseHTML, const QStringList& filesToSelect, bool tempFile, bool openUrl )
 {
     QString path(_path);
-    kDebug(1202) << "path=" << path << ", filename=" << filename << ", url=" << url;
+    kDebug() << "path=" << path << ", filename=" << filename << ", url=" << url;
     Q_ASSERT(!path.isEmpty());
     // Well the path can be empty when misusing DBUS calls....
     if (path.isEmpty())

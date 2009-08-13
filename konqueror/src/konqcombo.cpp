@@ -169,7 +169,7 @@ void KonqCombo::init( KCompletion *completion )
 
 void KonqCombo::setURL( const QString& url )
 {
-    //kDebug(1202) << url << "returnPressed=" << m_returnPressed;
+    //kDebug() << url << "returnPressed=" << m_returnPressed;
     setTemporary( url );
 
     if ( m_returnPressed ) { // Really insert...
@@ -190,7 +190,7 @@ void KonqCombo::setTemporary( const QString& text )
 
 void KonqCombo::setTemporary( const QString& url, const QPixmap& pix )
 {
-    //kDebug(1202) << url << "temporary=" << temporary;
+    //kDebug() << url << "temporary=" << temporary;
 
     // Insert a temporary item when we don't have one yet
     if ( count() == 0 )
@@ -208,7 +208,7 @@ void KonqCombo::setTemporary( const QString& url, const QPixmap& pix )
 
 void KonqCombo::removeDuplicates( int index )
 {
-    //kDebug(1202) << "starting index= " << index;
+    //kDebug() << "starting index= " << index;
 
     QString url(temporaryItem());
     if (url.endsWith('/'))
@@ -229,7 +229,7 @@ void KonqCombo::removeDuplicates( int index )
 // called via DBUS in all instances
 void KonqCombo::insertPermanent( const QString& url )
 {
-    //kDebug(1202) << "url=" << url;
+    //kDebug() << "url=" << url;
     saveState();
     setTemporary( url );
     m_permanent = true;
@@ -249,7 +249,7 @@ void KonqCombo::applyPermanent()
 
         QString item = temporaryItem();
         insertItem( KonqPixmapProvider::self()->pixmapFor( item ), item, 1, titleOfURL( item ) );
-        //kDebug(1202) << url;
+        //kDebug() << url;
 
         // Remove all duplicates starting from index = 2
         removeDuplicates( 2 );
@@ -274,7 +274,7 @@ void KonqCombo::updateItem( const QPixmap& pix, const QString& t, int index, con
         (!itemIcon(index).isNull() && itemIcon(index).pixmap(iconSize()).serialNumber() == pix.serialNumber()))
         return;
 
-    // kDebug(1202) << "item=" << t << "index=" << index;
+    // kDebug() << "item=" << t << "index=" << index;
 
     setItemText( index, t );
     setItemIcon( index, pix );
