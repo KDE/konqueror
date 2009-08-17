@@ -912,7 +912,7 @@ void KonqViewManager::loadViewProfileFromConfig(const KSharedConfigPtr& _cfg,
     KConfigGroup profileGroup(_cfg, "Profile");
 
 
-    // Repair profiles without tabs (#201366)
+    // Repair profiles without tabs (#203166)
     const QString rootItem = profileGroup.readEntry("RootItem", "empty");
     const QString childrenKey = rootItem + "_Children";
     if (profileGroup.readEntry(childrenKey, QStringList()) == (QStringList() << "View1" << "View2")) {
