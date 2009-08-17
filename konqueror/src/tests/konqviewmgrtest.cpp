@@ -30,6 +30,7 @@
 #include <konqsessionmanager.h>
 #include <kstandarddirs.h>
 #include <kconfiggroup.h>
+#include <kio/job.h>
 #include <QLayout>
 
 #include <khtml_part.h>
@@ -545,6 +546,24 @@ void ViewMgrTest::testLoadProfile()
     QCOMPARE(sizes.count(), 2);
     QVERIFY(sizes[0] < sizes[1]);
 }
+
+void ViewMgrTest::testLoadOldProfile()
+{
+    KonqMainWindow mainWindow;
+
+    const QString profileSrc = KDESRCDIR "/filemanagement.old.profile";
+    const QString profile = profileSrc + ".copy";
+    // KonqViewManager fixes up the old profile, so let's make a copy of it first.
+    KIO::FileCopyJob* job = KIO::file_copy(profileSrc, profile, -1, KIO::Overwrite);
+    QVERIFY(job->exec());
+    const QString path = QDir::homePath();
+    mainWindow.viewManager()->loadViewProfileFromFile(profile, "filemanagement", KUrl(path));
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MC(FT[F]).") ); // mainWindow, splitter, frame, tab widget, one frame
+    QCOMPARE(mainWindow.locationBarURL(), path);
+    QCOMPARE(mainWindow.currentView()->locationBarURL(), path);
+    QFile::remove(profile);
+}
+
 
 void ViewMgrTest::testDuplicateWindow()
 {

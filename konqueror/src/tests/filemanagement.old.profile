@@ -1,0 +1,22 @@
+[Profile]
+Container0_Children=View1,View2
+Container0_Orientation=Horizontal
+Container0_SplitterSizes=24,100
+Height=578
+Height 1200=745
+Name=File Management
+RootItem=Container0
+View1_LinkedView=true
+View1_LockedLocation=false
+View1_PassiveMode=true
+View1_ServiceName=konq_sidebartng
+View1_ServiceType=Browser/View
+View1_ToggleView=true
+View1_URL=
+View2_LinkedView=true
+View2_LockedLocation=false
+View2_PassiveMode=false
+View2_ServiceName=konq_iconview
+View2_ServiceType=inode/directory
+View2_ToggleView=false
+View2_URL=file:///tmp
