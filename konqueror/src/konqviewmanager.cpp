@@ -709,13 +709,21 @@ KonqView *KonqViewManager::chooseNextView(KonqView *view)
             return 0; // We have no view at all - this used to happen with totally-empty-profiles
     }
 
+    bool rewinded = false;
     KonqMainWindow::MapViews::const_iterator startIt = it;
 
     //kDebug() << "count=" << mapViews.count();
     while (true) {
         //kDebug() << "*KonqViewManager::chooseNextView going next";
-        if (++it == end) // move to next
-            it = mapViews.begin(); // rewind on end
+        if (++it == end) { // move to next
+            // end reached: restart from begin (but only once)
+            if (!rewinded) {
+                it = mapViews.begin();
+                rewinded = true;
+            } else {
+                break; // nothing found, probably buggy profile
+            }
+        }
 
         if (it == startIt && view)
             break; // no next view found
@@ -1291,8 +1299,8 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
         m_tabContainer->setCurrentIndex( index );
         m_tabContainer->show();
     } else
-        kWarning() << "Profile Loading Error: Unknown current item index";  
-    
+        kWarning() << "Profile Loading Error: Unknown current item index" << index;
+
   }
   else
       kWarning() << "Profile Loading Error: Unknown item" << name;
