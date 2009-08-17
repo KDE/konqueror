@@ -903,6 +903,16 @@ void KonqViewManager::loadViewProfileFromConfig(const KSharedConfigPtr& _cfg,
 
     KConfigGroup profileGroup(_cfg, "Profile");
 
+
+    // Repair profiles without tabs (#203166)
+    const QString rootItem = profileGroup.readEntry("RootItem", "empty");
+    const QString childrenKey = rootItem + "_Children";
+    if (profileGroup.readEntry(childrenKey, QStringList()) == (QStringList() << "View1" << "View2")) {
+        kDebug() << "Activating special tabwidget-insertion-hack";
+        profileGroup.writeEntry(childrenKey, QStringList() << "View1" << "Tabs1");
+        profileGroup.writeEntry("Tabs1_Children", "View2");
+    }
+
     loadViewProfileFromGroup(profileGroup, filename, forcedUrl, req, openUrl);
 
     setCurrentProfile(filename);
