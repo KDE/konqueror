@@ -151,6 +151,7 @@ void ViewMgrTest::testCreateFirstView()
     //    if (!toolbar->isHidden())
     //        qDebug() << toolbar << toolbar->geometry();
     //}
+    //qDebug() << "frame geom: " << frame->geometry();
     QVERIFY( frame->width() > 680 );
     QVERIFY( frame->height() > 240 ); // usually 325, but can be 256 with oxygen when three toolbars are shown
     //qDebug() << "partWidget geom:" << partWidget->geometry();
@@ -158,7 +159,7 @@ void ViewMgrTest::testCreateFirstView()
     QVERIFY( partWidget->height() > frame->height() - 50 /*statusbar*/ );
     //qDebug() << "tabWidget geom: " << tabWidget->geometry();
     QVERIFY( tabWidget->width() > 680 );
-    QVERIFY( tabWidget->height() > frame->height() );
+    QVERIFY( tabWidget->height() >= frame->height() ); // equal, unless there's a border in the frame
 }
 
 void ViewMgrTest::testRemoveFirstView()
