@@ -48,6 +48,7 @@ private Q_SLOTS:
     void testDuplicateSplittedTab();
     void testDeletePartInTab();
     void testLoadProfile();
+    void testLoadOldProfile();
 
     void testDuplicateWindow();
     void testDuplicateWindowWithSidebar();
