@@ -20,6 +20,7 @@
 #ifndef KONQPOPUPMENUTEST_H
 #define KONQPOPUPMENUTEST_H
 
+#include <konq_popupmenu.h>
 #include <QObject>
 #include <KFileItem>
 #include <KActionCollection>
@@ -44,6 +45,8 @@ private slots:
     void testHtmlPage();
 
 private:
+    KonqPopupMenu::Flags m_appFlags;
+
     KFileItem m_fileItem;
     KFileItem m_linkItem;
     KFileItem m_subDirItem;
