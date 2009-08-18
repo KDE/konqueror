@@ -423,8 +423,10 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
         q->addSeparator();
     }
 
-    if ( !isCurrentTrash && !isIntoTrash && sReading )
+    if (!isCurrentTrash && !isIntoTrash && sReading &&
+        (kpf & KonqPopupMenu::NoPlugins) == 0) {
         addPlugins(); // now it's time to add plugins
+    }
 
     if ( (m_itemFlags & KParts::BrowserExtension::ShowProperties) && KPropertiesDialog::canDisplay( lstItems ) ) {
         act = new KAction(m_parentWidget);

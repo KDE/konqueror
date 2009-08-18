@@ -27,7 +27,6 @@
 #include <kparts/browserextension.h>
 #include <knewmenu.h>
 #include <kdebug.h>
-#include <konq_popupmenu.h>
 #include <kfileitemlistproperties.h>
 
 QTEST_KDEMAIN(KonqPopupMenuTest, GUI)
@@ -35,16 +34,21 @@ QTEST_KDEMAIN(KonqPopupMenuTest, GUI)
 KonqPopupMenuTest::KonqPopupMenuTest()
     : m_actionCollection(this)
 {
+    m_appFlags = KonqPopupMenu::NoPlugins;
 }
 
 static QStringList extractActionNames(const QMenu& menu)
 {
     QString lastObjectName;
     QStringList ret;
+    bool lastIsSeparator = false;
     foreach (const QAction* action, menu.actions()) {
         if (action->isSeparator()) {
-            ret.append("separator");
+            if (!lastIsSeparator) // Qt gets rid of duplicate separators, so we should too
+                ret.append("separator");
+            lastIsSeparator = true;
         } else {
+            lastIsSeparator = false;
             //qDebug() << action->objectName() << action->metaObject()->className() << action->text();
             const QString objectName = action->objectName();
             if (objectName.isEmpty()) {
@@ -157,7 +161,6 @@ void KonqPopupMenuTest::testFile()
     KFileItemList itemList;
     itemList << m_fileItem;
     KUrl viewUrl = QDir::currentPath();
-    KonqPopupMenu::Flags flags = 0;
     KParts::BrowserExtension::PopupFlags beflags = KParts::BrowserExtension::ShowProperties
                                                    | KParts::BrowserExtension::ShowReload
                                                    | KParts::BrowserExtension::ShowUrlOperations;
@@ -166,7 +169,7 @@ void KonqPopupMenuTest::testFile()
     actionGroups.insert("editactions", m_fileEditActions->actions());
     actionGroups.insert("preview", QList<QAction *>() << m_preview1);
 
-    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags, beflags,
+    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, m_appFlags, beflags,
                         0 /*parent*/, 0 /*bookmark manager*/, actionGroups);
 
     QStringList actions = extractActionNames(popup);
@@ -198,7 +201,6 @@ void KonqPopupMenuTest::testFileInReadOnlyDirectory()
     QVERIFY(!capabilities.supportsMoving());
 
     KUrl viewUrl("/etc");
-    KonqPopupMenu::Flags flags = 0;
     KParts::BrowserExtension::PopupFlags beflags = KParts::BrowserExtension::ShowProperties
                                                    | KParts::BrowserExtension::ShowReload
                                                    | KParts::BrowserExtension::ShowUrlOperations;
@@ -209,7 +211,7 @@ void KonqPopupMenuTest::testFileInReadOnlyDirectory()
     //actionGroups.insert("editactions", m_fileEditActions->actions());
     actionGroups.insert("preview", QList<QAction *>() << m_preview1);
 
-    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags, beflags,
+    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, m_appFlags, beflags,
                         0 /*parent*/, 0 /*bookmark manager*/, actionGroups);
 
     QStringList actions = extractActionNames(popup);
@@ -235,7 +237,6 @@ void KonqPopupMenuTest::testFilePreviewSubMenu()
     KFileItemList itemList;
     itemList << m_fileItem;
     KUrl viewUrl = QDir::currentPath();
-    KonqPopupMenu::Flags flags = 0;
     KParts::BrowserExtension::PopupFlags beflags = KParts::BrowserExtension::ShowProperties
                                                    | KParts::BrowserExtension::ShowReload
                                                    | KParts::BrowserExtension::ShowUrlOperations;
@@ -244,7 +245,7 @@ void KonqPopupMenuTest::testFilePreviewSubMenu()
     actionGroups.insert("editactions", m_fileEditActions->actions());
     actionGroups.insert("preview", m_previewActions->actions());
 
-    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags, beflags,
+    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, m_appFlags, beflags,
                         0 /*parent*/, 0 /*bookmark manager*/, actionGroups);
 
     QStringList actions = extractActionNames(popup);
@@ -270,7 +271,6 @@ void KonqPopupMenuTest::testSubDirectory()
     KFileItemList itemList;
     itemList << m_subDirItem;
     KUrl viewUrl = QDir::currentPath();
-    KonqPopupMenu::Flags flags = 0;
     KParts::BrowserExtension::PopupFlags beflags = KParts::BrowserExtension::ShowProperties
                                                    | KParts::BrowserExtension::ShowUrlOperations;
     KParts::BrowserExtension::ActionGroupMap actionGroups;
@@ -278,7 +278,7 @@ void KonqPopupMenuTest::testSubDirectory()
     actionGroups.insert("editactions", m_fileEditActions->actions());
     actionGroups.insert("preview", m_previewActions->actions());
 
-    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags, beflags,
+    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, m_appFlags, beflags,
                         0 /*parent*/, 0 /*bookmark manager*/, actionGroups);
     QStringList actions = extractActionNames(popup);
     actions.removeAll("services_submenu");
@@ -302,7 +302,6 @@ void KonqPopupMenuTest::testViewDirectory()
     KFileItemList itemList;
     itemList << m_thisDirectoryItem;
     KUrl viewUrl = m_thisDirectoryItem.url();
-    KonqPopupMenu::Flags flags = 0;
     KParts::BrowserExtension::PopupFlags beflags =
         KParts::BrowserExtension::ShowNavigationItems |
         KParts::BrowserExtension::ShowUp |
@@ -313,7 +312,7 @@ void KonqPopupMenuTest::testViewDirectory()
     KParts::BrowserExtension::ActionGroupMap actionGroups;
     actionGroups.insert("preview", m_previewActions->actions());
 
-    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags, beflags,
+    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, m_appFlags, beflags,
                         0 /*parent*/, 0 /*bookmark manager*/, actionGroups);
 
     QStringList actions = extractActionNames(popup);
@@ -340,7 +339,6 @@ void KonqPopupMenuTest::testViewReadOnlyDirectory()
     KFileItemList itemList;
     itemList << rootItem;
     KUrl viewUrl = rootItem.url();
-    KonqPopupMenu::Flags flags = 0;
     KParts::BrowserExtension::PopupFlags beflags =
         KParts::BrowserExtension::ShowNavigationItems |
         KParts::BrowserExtension::ShowUp |
@@ -351,7 +349,7 @@ void KonqPopupMenuTest::testViewReadOnlyDirectory()
     KParts::BrowserExtension::ActionGroupMap actionGroups;
     actionGroups.insert("preview", m_previewActions->actions());
 
-    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags, beflags,
+    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, m_appFlags, beflags,
                         0 /*parent*/, 0 /*bookmark manager*/, actionGroups);
 
     QStringList actions = extractActionNames(popup);
@@ -360,7 +358,6 @@ void KonqPopupMenuTest::testViewReadOnlyDirectory()
     QStringList expectedActions;
     expectedActions << "go_up" << "go_back" << "go_forward" << "separator"
                     // << "paste" // no paste since readonly
-                    << "separator"  // the doubled separator doesn't hurt, QMenu removes them
                     << "openwith"
                     << "preview_submenu";
     if (!KStandardDirs::locate("services", "ServiceMenus/konsolehere.desktop").isEmpty())
@@ -378,7 +375,6 @@ void KonqPopupMenuTest::testHtmlLink()
     itemList << m_linkItem;
     //KUrl viewUrl = m_fileItem.url();
     KUrl viewUrl("http://www.kde.org");
-    KonqPopupMenu::Flags flags = 0;
     KParts::BrowserExtension::PopupFlags beflags = KParts::BrowserExtension::ShowBookmark
                                                    | KParts::BrowserExtension::ShowReload
                                                    | KParts::BrowserExtension::IsLink;
@@ -389,7 +385,7 @@ void KonqPopupMenuTest::testHtmlLink()
     actionGroups.insert("linkactions", m_linkActions->actions());
     actionGroups.insert("partactions", m_partActions->actions());
 
-    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags, beflags,
+    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, m_appFlags, beflags,
                         0 /*parent*/, KBookmarkManager::userBookmarksManager(), actionGroups);
 
     QStringList actions = extractActionNames(popup);
@@ -415,7 +411,6 @@ void KonqPopupMenuTest::testHtmlPage()
     KFileItemList itemList;
     itemList << m_linkItem;
     KUrl viewUrl = m_linkItem.url();
-    KonqPopupMenu::Flags flags = 0;
     KParts::BrowserExtension::PopupFlags beflags = KParts::BrowserExtension::ShowBookmark
                                                    | KParts::BrowserExtension::ShowReload
                                                    | KParts::BrowserExtension::ShowNavigationItems;
@@ -432,7 +427,7 @@ void KonqPopupMenuTest::testHtmlPage()
     m_actionCollection.addAction("setEncoding", setEncoding);
     actionGroups.insert("partactions", m_partActions->actions());
 
-    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, flags, beflags,
+    KonqPopupMenu popup(itemList, viewUrl, m_actionCollection, m_newMenu, m_appFlags, beflags,
                         0 /*parent*/, KBookmarkManager::userBookmarksManager(), actionGroups);
 
     QStringList actions = extractActionNames(popup);

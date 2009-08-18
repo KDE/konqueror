@@ -57,8 +57,9 @@ public:
    */
   typedef uint Flags;
   enum { NoFlags = 0,
-         ShowNewWindow = 1 };
-         // WARNING: bitfield. Next item is 2
+         ShowNewWindow = 1,
+         NoPlugins = 2 /*for the unittest*/ };
+         // WARNING: bitfield. Next item is 4
 
   /**
    * Constructor
