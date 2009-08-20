@@ -5020,7 +5020,7 @@ void KonqMainWindow::closeEvent( QCloseEvent *e )
     KonquerorApplication* konqApp = qobject_cast<KonquerorApplication *>(qApp);
 
     // konqApp is 0 in unit tests
-    if (konqApp && konqApp->closedByUser()) {
+    if (konqApp && !konqApp->sessionSaving()) {
       KonqFrameTabs* tabContainer = m_pViewManager->tabContainer();
       if ( tabContainer->count() > 1 )
       {
