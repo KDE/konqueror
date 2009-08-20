@@ -31,16 +31,6 @@ class KONQ_TESTS_EXPORT KonquerorApplication : public KApplication
 public:
   KonquerorApplication();
 
-  // This is used to know if we are being closed by session management
-  // or by the user. See KonqMainWindow::~KonqMainWindow.
-  // Credits to Matthias Ettrich for the idea.
-  bool closedByUser() const { return !closed_by_sm; }
-  void commitData(QSessionManager& sm) {
-    closed_by_sm = true;
-    KApplication::commitData( sm );
-    closed_by_sm = false;
-  }
-
 public slots:
   void slotReparseConfiguration();
   void slotUpdateProfileList();
@@ -49,10 +39,6 @@ private slots:
   void slotAddToCombo( const QString& url, const QDBusMessage& msg );
   void slotRemoveFromCombo( const QString& url, const QDBusMessage& msg );
   void slotComboCleared( const QDBusMessage& msg );
-
-private:
-  bool closed_by_sm;
-
 };
 
 #endif

@@ -25,8 +25,7 @@
 #include "konqviewmanager.h"
 
 KonquerorApplication::KonquerorApplication()
-    : KApplication(),
-      closed_by_sm( false )
+    : KApplication()
 {
     new KonquerorAdaptor; // not really an adaptor
     const QString dbusInterface = "org.kde.Konqueror.Main";
