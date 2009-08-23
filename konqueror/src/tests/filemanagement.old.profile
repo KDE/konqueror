@@ -38,6 +38,7 @@ Name[hne]=फाइल प्रबंधन
 Name[hr]=Upravitelj datotekama
 Name[hsb]=Datajowy manager
 Name[hu]=Fájlkezelő
+Name[id]=Manajemen Berkas
 Name[is]=Skráastjóri
 Name[it]=Gestione file
 Name[ja]=ファイルマネージャ
