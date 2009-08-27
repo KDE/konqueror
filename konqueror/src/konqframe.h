@@ -97,7 +97,7 @@ class KONQ_TESTS_EXPORT KonqFrameBase
   static FrameType frameTypeFromString( const QString& str );
 
 protected:
-  KonqFrameBase() {}
+  KonqFrameBase();
 
   KonqFrameContainerBase* m_pParentContainer;
 };
