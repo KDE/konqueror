@@ -473,8 +473,6 @@ void KNewMenu::slotActionTriggered(QAction* action)
                 linkUrl = dlg.url();
                 if ( name.isEmpty() || linkUrl.isEmpty() )
                     return;
-                if ( !name.endsWith( ".desktop" ) )
-                    name += ".desktop";
             }
             else
                 return;
