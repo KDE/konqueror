@@ -74,6 +74,7 @@ KonqClosedWindowsManager::~KonqClosedWindowsManager()
     // Do some file cleaning
     removeClosedItemsConfigFiles();
 
+    qDeleteAll(m_closedWindowItemList); // must be done before deleting the kconfigs
     delete m_konqClosedItemsConfig;
     delete m_konqClosedItemsStore;
 }
