@@ -83,8 +83,6 @@ KonqClosedWindowItem::KonqClosedWindowItem(const QString& title, quint64 serialN
 
 KonqClosedWindowItem::~KonqClosedWindowItem()
 {
-// Do this manually when needed:
-//     m_configGroup.deleteGroup();
 }
 
 QPixmap KonqClosedWindowItem::icon() const
