@@ -28,6 +28,7 @@ class KJob;
 namespace KIO { class Job; }
 
 class KActionCollection;
+class KNewMenuPrivate;
 
 /**
  * The 'New' submenu, both for the File menu and the RMB popup menu.
@@ -130,16 +131,6 @@ private:
      */
     void makeMenus();
 
-    /**
-     * For entryType
-     * LINKTOTEMPLATE: a desktop file that points to a file or dir to copy
-     * TEMPLATE: a real file to copy as is (the KDE-1.x solution)
-     * SEPARATOR: to put a separator in the menu
-     * 0 means: not parsed, i.e. we don't know
-     */
-    enum { LINKTOTEMPLATE = 1, TEMPLATE, SEPARATOR };
-
-    class KNewMenuPrivate;
     KNewMenuPrivate* d;
 };
 
