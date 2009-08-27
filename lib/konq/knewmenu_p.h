@@ -34,7 +34,7 @@ class KUrlDesktopFileDlg : public KDialog
 {
     Q_OBJECT
 public:
-    KUrlDesktopFileDlg( const QString& textFileName, const QString& textUrl, QWidget *parent = 0 );
+    KUrlDesktopFileDlg(const QString& textFileName, const QString& textUrl, const KUrl& dirUrl, QWidget *parent);
     virtual ~KUrlDesktopFileDlg() {}
 
     /**
@@ -51,7 +51,8 @@ protected Q_SLOTS:
     void slotNameTextChanged( const QString& );
     void slotURLTextChanged( const QString& );
 private:
-    void initDialog( const QString& textFileName, const QString& defaultName, const QString& textUrl, const QString& defaultUrl );
+    void initDialog(const QString& textFileName, const QString& defaultName, const QString& textUrl,
+                    const QString& defaultUrl, const KUrl& dirUrl);
 
     /**
      * The line edit widget for the fileName
