@@ -129,26 +129,26 @@ KUrlRequester* DesktopPathConfig::addRow(QFormLayout *lay, const QString& label,
 void DesktopPathConfig::load()
 {
     // Desktop Paths
-    urDesktop->setPath( KGlobalSettings::desktopPath() );
-    urAutostart->setPath( KGlobalSettings::autostartPath() );
-    urDocument->setPath( KGlobalSettings::documentPath() );
-    urDownload->setPath( KGlobalSettings::downloadPath() );
-    urMovie->setPath( KGlobalSettings::videosPath() );
-    urPicture->setPath( KGlobalSettings::picturesPath() );
-    urMusic->setPath( KGlobalSettings::musicPath() );
+    urDesktop->setUrl( KGlobalSettings::desktopPath() );
+    urAutostart->setUrl( KGlobalSettings::autostartPath() );
+    urDocument->setUrl( KGlobalSettings::documentPath() );
+    urDownload->setUrl( KGlobalSettings::downloadPath() );
+    urMovie->setUrl( KGlobalSettings::videosPath() );
+    urPicture->setUrl( KGlobalSettings::picturesPath() );
+    urMusic->setUrl( KGlobalSettings::musicPath() );
     emit changed(false);
 }
 
 void DesktopPathConfig::defaults()
 {
     // Desktop Paths - keep defaults in sync with kglobalsettings.cpp
-    urDesktop->setPath( QDir::homePath() + "/Desktop" );
-    urAutostart->setPath( KGlobal::dirs()->localkdedir() + "Autostart/" );
-    urDocument->setPath( QDir::homePath() + "/Documents" );
-    urDownload->setPath( QDir::homePath() + "/Downloads" );
-    urMovie->setPath( QDir::homePath() + "/Movies" );
-    urPicture->setPath( QDir::homePath() + "/Pictures" );
-    urMusic->setPath( QDir::homePath() + "/Music" );
+    urDesktop->setUrl( QDir::homePath() + "/Desktop" );
+    urAutostart->setUrl( KGlobal::dirs()->localkdedir() + "Autostart/" );
+    urDocument->setUrl( QDir::homePath() + "/Documents" );
+    urDownload->setUrl( QDir::homePath() + "/Downloads" );
+    urMovie->setUrl( QDir::homePath() + "/Movies" );
+    urPicture->setUrl( QDir::homePath() + "/Pictures" );
+    urMusic->setUrl( QDir::homePath() + "/Music" );
 }
 
 // the following method is copied from kdelibs/kdecore/config/kconfiggroup.cpp
@@ -215,7 +215,7 @@ void DesktopPathConfig::save()
         // * Not inside destination -> move first
         // !!!
         kDebug() << "desktopURL=" << desktopURL;
-        QString urlDesktop = urDesktop->url().path();
+        QString urlDesktop = urDesktop->url().toLocalFile();
         if ( !urlDesktop.endsWith('/'))
             urlDesktop+='/';
 
@@ -227,7 +227,7 @@ void DesktopPathConfig::save()
             if ( newAutostartURL.equals( autostartURL, KUrl::CompareWithoutTrailingSlash ) )
             {
                 // Hack. It could be in a subdir inside desktop. Hmmm... Argl.
-                urAutostart->setPath( urlDesktop + "Autostart/" );
+                urAutostart->setUrl( urlDesktop + "Autostart/" );
                 kDebug() << "Autostart is moved with the desktop";
                 autostartMoved = true;
             }
@@ -235,7 +235,7 @@ void DesktopPathConfig::save()
             else
             {
                 KUrl futureAutostartURL;
-                futureAutostartURL.setPath( urlDesktop + "Autostart/" );
+                futureAutostartURL.setUrl( urlDesktop + "Autostart/" );
                 if ( newAutostartURL.equals( futureAutostartURL, KUrl::CompareWithoutTrailingSlash ) )
                     autostartMoved = true;
                 else
@@ -260,7 +260,7 @@ void DesktopPathConfig::save()
             autostartMoved = moveDir( KUrl( KGlobalSettings::autostartPath() ), KUrl( urAutostart->url() ), i18n("Autostart") );
         if (autostartMoved)
         {
-            configGroup.writePathEntry( "Autostart", urAutostart->url().path(), KConfigBase::Normal | KConfigBase::Global );
+            configGroup.writePathEntry( "Autostart", urAutostart->url().toLocalFile(), KConfigBase::Normal | KConfigBase::Global );
             pathChanged = true;
         }
     }
@@ -292,11 +292,18 @@ bool DesktopPathConfig::xdgSavePath(KUrlRequester* ur, const KUrl& currentUrl, c
 {
     const KUrl newUrl = ur->url();
     if (!newUrl.equals(currentUrl, KUrl::CompareWithoutTrailingSlash)) {
-        const QString path = newUrl.path();
-        if (!QDir(path).exists() && !KStandardDirs::makeDir(path)) {
-            KMessageBox::sorry(this, KIO::buildErrorString(KIO::ERR_COULD_NOT_MKDIR, path));
-            ur->setPath(currentUrl.path()); // revert
-        } else if (moveDir(currentUrl, newUrl, type)) {
+        const QString path = newUrl.toLocalFile();
+        if (!QDir(path).exists()) {
+            // Check permissions
+            if (KStandardDirs::makeDir(path)) {
+                QDir().rmdir(path); // rmdir again, so that we get a fast rename
+            } else {
+                KMessageBox::sorry(this, KIO::buildErrorString(KIO::ERR_COULD_NOT_MKDIR, path));
+                ur->setUrl(currentUrl); // revert
+                return false;
+            }
+        }
+        if (moveDir(currentUrl, newUrl, type)) {
             //save in XDG user-dirs.dirs config file, this is where KGlobalSettings/QDesktopServices reads from.
             const QString userDirsFile(KGlobal::dirs()->localxdgconfdir() + QLatin1String("user-dirs.dirs"));
             KConfig xdgUserConf(userDirsFile, KConfig::SimpleConfig);
@@ -315,13 +322,28 @@ bool DesktopPathConfig::moveDir( const KUrl & src, const KUrl & dest, const QStr
     if (!QFile::exists(src.toLocalFile()))
         return true;
     m_ok = true;
-    // TODO: check if the src dir is empty? Nothing to move, then...
+
+    QString question;
+    KGuiItem yesItem;
+    KGuiItem noItem;
+    if (QFile::exists(dest.toLocalFile())) {
+        // TODO: check if the src dir is empty? Nothing to move, then...
+        question = i18n("The path for '%1' has been changed.\nDo you want the files to be moved from '%2' to '%3'?",
+                        type, src.toLocalFile(),
+                        dest.toLocalFile());
+        yesItem = KGuiItem(i18nc("Move files from old to new place", "Move"));
+        noItem = KGuiItem(i18nc("Use the new directory but do not move files", "Do not Move"));
+    } else {
+        question = i18n("The path for '%1' has been changed.\nDo you want to move '%2' to '%3'?",
+                        type, src.toLocalFile(),
+                        dest.toLocalFile());
+        yesItem = KGuiItem(i18nc("Move the directory", "Move"));
+        noItem = KGuiItem(i18nc("Use the new directory but do not move anything", "Do not Move"));
+    }
 
     // Ask for confirmation before moving the files
-    if ( KMessageBox::questionYesNo( this, i18n("The path for '%1' has been changed.\nDo you want the files to be moved from '%2' to '%3'?",
-                                                type, src.toLocalFile(), dest.toLocalFile()), i18n("Confirmation Required"),
-                                     KGuiItem(i18nc("Move files from old to new place", "Move")),
-                                     KGuiItem(i18nc("Use the new directory but do not move files", "Do not Move")))
+    if (KMessageBox::questionYesNo(this, question, i18n("Confirmation Required"),
+                                   yesItem, noItem)
             == KMessageBox::Yes )
     {
         if (QFile::exists(dest.toLocalFile())) {
