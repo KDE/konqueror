@@ -47,6 +47,11 @@
 #include <konq_events.h>
 #include <kconfiggroup.h>
 
+KonqFrameBase::KonqFrameBase()
+    : m_pParentContainer(0)
+{
+}
+
 QString KonqFrameBase::frameTypeToString( const KonqFrameBase::FrameType frameType )
 {
     switch ( frameType ) {
