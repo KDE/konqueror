@@ -656,7 +656,8 @@ void Sidebar_Widget::createButtons()
 	{
 		kDebug()<<"m_path: "<<m_path;
 		QDir dir(m_path);
-		const QStringList list=dir.entryList(QStringList() << "*.desktop");
+		QStringList list=dir.entryList(QStringList() << "*.desktop");
+		list.removeAll( "history.desktop" ); // #205521
 		for (QStringList::const_iterator it=list.constBegin(); it!=list.constEnd(); ++it)
 		{
 			addButton(*it);
