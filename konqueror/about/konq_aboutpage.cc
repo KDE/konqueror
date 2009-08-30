@@ -322,7 +322,7 @@ QString KonqAboutPageSingleton::tips()
 	  .arg( i18n( "Use a caching <a href=\"%1\">proxy</a> to speed up your"
 		      " Internet connection.", QString("exec:/kcmshell4 proxy")) )
 	  .arg( i18n( "Advanced users will appreciate the Konsole which you can embed into "
-		      "Konqueror (Window -> <img width='16' height='16' SRC=\"%1\"></img> Show "
+		      "Konqueror (Settings -> <img width='16' height='16' SRC=\"%1\"></img> Show "
  		      "Terminal Emulator).", openterm_icon_path))
 	  .arg( "<img width='16' height='16' src=\"%1\">" ).arg( continue_icon_path )
 	  .arg( i18n( "Next: Specifications" ) )
