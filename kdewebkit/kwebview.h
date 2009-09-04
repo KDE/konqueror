@@ -30,7 +30,6 @@
 #include <QtWebKit/QWebView>
 #include "kwebpage.h"
 
-class QWebHitTestResult;
 class KUrl;
 class QMouseEvent;
 class QWheelEvent;

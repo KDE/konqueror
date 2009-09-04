@@ -28,8 +28,6 @@
 
 #include "ui_searchbar_p.h"
 
-class QTimeLine;
-class KWebView;
 
 namespace KDEPrivate {
 

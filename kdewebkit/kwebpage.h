@@ -31,7 +31,6 @@
 class QUrl;
 class QWebFrame;
 class QNetworkReply;
-class KWebPageSslInfo;
 
 class KDE_EXPORT KWebPage : public QWebPage
 {
