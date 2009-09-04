@@ -378,7 +378,7 @@ private:
                 m_urls.append(line);
             }
         } else {
-            qDebug() << "Cant't open list file";
+            qDebug() << "Can't open list file";
             exit(0);
         }
         m_index = 0;
