@@ -490,8 +490,8 @@ void removeExistingExtensions( QString &extension )
 
         KMimeType::Ptr mime = KMimeType::findByUrl( KUrl("file:///foo."+ext ),
                                                     0, true, true );
-        if( mime->name()=="application/octet-stream" ||
-            mime->comment().left(8)=="Netscape" ) {
+        if( mime->isDefault() ||
+            mime->comment().startsWith("Netscape") ) {
             kDebug() << "accepted";
             filtered.append( ext );
         }
