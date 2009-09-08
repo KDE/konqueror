@@ -46,8 +46,8 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2009-04-12</date>
-<releaseinfo>2.3.0</releaseinfo>
+<date>2009-09-04</date>
+<releaseinfo>2.4.0</releaseinfo>
 
 <abstract><para>&konsole; is &kde;'s terminal emulator.</para></abstract>
 
@@ -251,7 +251,7 @@ is pressed:
 <guimenuitem>Copy</guimenuitem>,
 <guimenuitem>Paste</guimenuitem>,
 <guimenuitem>Clear Scrollback &amp; Reset</guimenuitem>,
-<guimenuitem>Open Browser Here</guimenuitem>,
+<guimenuitem>Open File Manager</guimenuitem>,
 <guimenuitem>Change Profile</guimenuitem>,
 <guimenuitem>Edit Current Profile...</guimenuitem>,
 <guimenuitem>Show MenuBar</guimenuitem>,
@@ -318,7 +318,7 @@ below <menuchoice><guimenu>File</guimenu><guimenuitem>Shell</guimenuitem></menuc
 
 <varlistentry>
 <term><menuchoice><guimenu>File</guimenu>
-<guimenuitem>Open Browser Here</guimenuitem></menuchoice>
+<guimenuitem>Open File Manager</guimenuitem></menuchoice>
 </term>
 <listitem><para><action>Opens &kde;'s file manager
 at the current directory</action>.  By default, that is 
@@ -390,15 +390,6 @@ the name of the current tab</action>
 <term><menuchoice><guimenu>Edit</guimenu><guimenuitem>Copy Input To...</guimenuitem></menuchoice></term>
 <listitem><para><action>Allows input from the current session to be sent simultaneously to other sessions</action>
 (<link linkend="copy-input-dialog">more info</link>)
-</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice><guimenu>Edit</guimenu><guimenuitem>Clear Display</guimenuitem></menuchoice></term>
-<listitem><para><action>Clears all text from the tab</action></para>
-<para>All the text cleared will be stored in the 
-<link linkend="scrollback">Scrollback</link>.
 </para>
 </listitem>
 </varlistentry>
@@ -610,12 +601,6 @@ Options...</guimenuitem></menuchoice></term>
 <listitem><para><action>Opens a dialog to configure number of lines to save</action>
 (<link linkend="scrollback-options-dialog">more info</link>)
 </para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice><guimenu>Scrollback</guimenu><guimenuitem>Clear 
-Scrollback</guimenuitem></menuchoice></term>
-<listitem><para><action>Clears all text saved in current tab</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
