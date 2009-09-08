@@ -391,8 +391,6 @@ void KonqViewManager::removeTab( KonqFrameBase* currentFrame, bool emitAboutToRe
   if (currentFrame->asQWidget() == m_tabContainer->currentWidget())
     setActivePart(0);
 
-  m_tabContainer->childFrameRemoved(currentFrame);
-
   const QList<KonqView*> viewList = KonqViewCollector::collect(currentFrame);
   foreach ( KonqView* view, viewList )
   {
@@ -401,6 +399,8 @@ void KonqViewManager::removeTab( KonqFrameBase* currentFrame, bool emitAboutToRe
     m_pMainWindow->removeChildView( view );
     delete view;
   }
+
+  m_tabContainer->childFrameRemoved(currentFrame);
 
   delete currentFrame;
 
@@ -559,12 +559,13 @@ void KonqViewManager::removeView( KonqView *view )
       grandParentSplitterSizes = grandParentKonqFrameContainer->sizes();
     }
 
+    m_pMainWindow->removeChildView(view);
+
     grandParentContainer->replaceChildFrame(parentContainer, otherFrame);
 
     //kDebug(1202) << "--- Removing otherFrame from parentContainer";
     parentContainer->childFrameRemoved( otherFrame );
 
-    m_pMainWindow->removeChildView(view);
     //kDebug(1202) << "--- Deleting view" << view;
     delete view; // This deletes the view, which deletes the part, which deletes its widget
 
