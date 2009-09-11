@@ -130,7 +130,7 @@ private:
   void scanDone();
 
  private:
-  Ui::NSConfigWidget *m_widget;
+  Ui::NSConfigWidget m_widget;
   bool m_changed;
   KProgressDialog *m_progress;
   QSlider *priority;
