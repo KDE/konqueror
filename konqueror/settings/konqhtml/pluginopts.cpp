@@ -170,13 +170,12 @@ KPluginOptions::KPluginOptions( QWidget *parent, const QVariantList& )
     topleveltab->addTab( pluginsSettingsContainer, i18n( "Plugins" ) );
 
     // create Designer made widget
-    m_widget = new Ui::NSConfigWidget();
-    m_widget->setupUi( pluginsSettingsContainer );
+    m_widget.setupUi( pluginsSettingsContainer );
     pluginsSettingsContainer->setObjectName( "configwidget" );
-    m_widget->dirEdit->setMode(KFile::ExistingOnly | KFile::LocalOnly | KFile::Directory);
+    m_widget.dirEdit->setMode(KFile::ExistingOnly | KFile::LocalOnly | KFile::Directory);
 
     // setup widgets
-    connect( m_widget->scanButton, SIGNAL(clicked()), SLOT(scan()) );
+    connect( m_widget.scanButton, SIGNAL(clicked()), SLOT(scan()) );
 
     m_changed = false;
 
@@ -220,11 +219,11 @@ void KPluginOptions::load()
   KSharedConfig::Ptr config = KSharedConfig::openConfig("kcmnspluginrc");
   KConfigGroup cg(config, "Misc");
 
-  m_widget->dirEdit->setUrl(KUrl());
-  m_widget->dirEdit->setEnabled( false );
-  m_widget->dirRemove->setEnabled( false );
-  m_widget->dirUp->setEnabled( false );
-  m_widget->dirDown->setEnabled( false );
+  m_widget.dirEdit->setUrl(KUrl());
+  m_widget.dirEdit->setEnabled( false );
+  m_widget.dirRemove->setEnabled( false );
+  m_widget.dirUp->setEnabled( false );
+  m_widget.dirDown->setEnabled( false );
   enableHTTPOnly->setChecked( cg.readEntry("HTTP URLs Only", false) );
   enableUserDemand->setChecked( cg.readEntry("demandLoad", false) );
   priority->setValue(100 - qBound(0, cg.readEntry("Nice Level", 0), 19) * 5);
@@ -248,9 +247,9 @@ void KPluginOptions::defaults()
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig( QString(), KConfig::NoGlobals );
 
-    m_widget->dirEdit->setUrl(KUrl());
-    m_widget->dirEdit->setEnabled( false );
-    m_widget->dirRemove->setEnabled( false );
+    m_widget.dirEdit->setUrl(KUrl());
+    m_widget.dirEdit->setEnabled( false );
+    m_widget.dirRemove->setEnabled( false );
 
     dirLoad( config, true );
     pluginLoad( config );
@@ -312,14 +311,14 @@ void KPluginOptions::slotShowDomainDlg() {
 
 void KPluginOptions::scan()
 {
-    m_widget->scanButton->setEnabled(false);
+    m_widget.scanButton->setEnabled(false);
     if ( m_changed ) {
         int ret = KMessageBox::warningYesNoCancel( this,
                                                     i18n("Do you want to apply your changes "
                                                          "before the scan? Otherwise the "
                                                          "changes will be lost."), QString(), KStandardGuiItem::save(), KStandardGuiItem::discard() );
         if ( ret==KMessageBox::Cancel ) {
-            m_widget->scanButton->setEnabled(true);
+            m_widget.scanButton->setEnabled(true);
             return;
         }
         if ( ret==KMessageBox::Yes )
@@ -335,7 +334,7 @@ void KPluginOptions::scan()
         KMessageBox::sorry ( this,
                              i18n("The nspluginscan executable cannot be found. "
                                   "Netscape plugins will not be scanned.") );
-        m_widget->scanButton->setEnabled(true);
+        m_widget.scanButton->setEnabled(true);
         return;
     }
 
@@ -377,7 +376,7 @@ void KPluginOptions::scanDone()
         m_progress->deleteLater();
         m_progress = 0;
     }
-    m_widget->scanButton->setEnabled(true);
+    m_widget.scanButton->setEnabled(true);
 }
 
 /***********************************************************************************/
@@ -385,20 +384,20 @@ void KPluginOptions::scanDone()
 
 void KPluginOptions::dirInit()
 {
-    m_widget->dirEdit->setWindowTitle(i18n("Select Plugin Scan Folder"));
-    connect( m_widget->dirNew, SIGNAL(clicked()), SLOT(dirNew()));
-    connect( m_widget->dirRemove, SIGNAL(clicked()), SLOT(dirRemove()));
-    connect( m_widget->dirUp, SIGNAL(clicked()), SLOT(dirUp()));
-    connect( m_widget->dirDown, SIGNAL(clicked()), SLOT(dirDown()) );
-    connect( m_widget->dirEdit,
+    m_widget.dirEdit->setWindowTitle(i18n("Select Plugin Scan Folder"));
+    connect( m_widget.dirNew, SIGNAL(clicked()), SLOT(dirNew()));
+    connect( m_widget.dirRemove, SIGNAL(clicked()), SLOT(dirRemove()));
+    connect( m_widget.dirUp, SIGNAL(clicked()), SLOT(dirUp()));
+    connect( m_widget.dirDown, SIGNAL(clicked()), SLOT(dirDown()) );
+    connect( m_widget.dirEdit,
              SIGNAL(textChanged(const QString&)),
              SLOT(dirEdited(const QString &)) );
 
-    connect( m_widget->dirList,
+    connect( m_widget.dirList,
              SIGNAL(executed(QListWidgetItem*)),
              SLOT(dirSelect(QListWidgetItem*)) );
 
-    connect( m_widget->dirList,
+    connect( m_widget.dirList,
              SIGNAL(itemChanged(QListWidgetItem*)),
              SLOT(dirSelect(QListWidgetItem*)) );
 }
@@ -434,8 +433,8 @@ void KPluginOptions::dirLoad( KSharedConfig::Ptr config, bool useDefault )
     }
 
     // fill list
-    m_widget->dirList->clear();
-    m_widget->dirList->addItems( paths );
+    m_widget.dirList->clear();
+    m_widget.dirList->addItems( paths );
 
 }
 
@@ -445,9 +444,9 @@ void KPluginOptions::dirSave( KSharedConfig::Ptr config )
     // create stringlist
     QStringList paths;
     
-    for ( int rowIndex = 0 ; rowIndex < m_widget->dirList->count() ; rowIndex++ ) {
-        if ( !m_widget->dirList->item(rowIndex)->text().isEmpty() )
-            paths << m_widget->dirList->item(rowIndex)->text();
+    for ( int rowIndex = 0 ; rowIndex < m_widget.dirList->count() ; rowIndex++ ) {
+        if ( !m_widget.dirList->item(rowIndex)->text().isEmpty() )
+            paths << m_widget.dirList->item(rowIndex)->text();
     }
 
     // write entry
@@ -458,49 +457,49 @@ void KPluginOptions::dirSave( KSharedConfig::Ptr config )
 
 void KPluginOptions::dirSelect( QListWidgetItem *item )
 {
-    m_widget->dirEdit->setEnabled( item!=0 );
-    m_widget->dirRemove->setEnabled( item!=0 );
+    m_widget.dirEdit->setEnabled( item!=0 );
+    m_widget.dirRemove->setEnabled( item!=0 );
 
-    int cur = m_widget->dirList->currentRow();
-    m_widget->dirDown->setEnabled( item!=0 && cur<m_widget->dirList->count()-1 );
-    m_widget->dirUp->setEnabled( item!=0 && cur>0 );
-    m_widget->dirEdit->setUrl( item!=0 ? item->text() : QString() );
+    int cur = m_widget.dirList->currentRow();
+    m_widget.dirDown->setEnabled( item!=0 && cur<m_widget.dirList->count()-1 );
+    m_widget.dirUp->setEnabled( item!=0 && cur>0 );
+    m_widget.dirEdit->setUrl( item!=0 ? item->text() : QString() );
  }
 
 
 void KPluginOptions::dirNew()
 {
-    m_widget->dirList->insertItem( 0 , QString() );
-    m_widget->dirList->setCurrentRow( 0 );
-    dirSelect( m_widget->dirList->currentItem() );
-    m_widget->dirEdit->setUrl(QString());
-    m_widget->dirEdit->setFocus();
+    m_widget.dirList->insertItem( 0 , QString() );
+    m_widget.dirList->setCurrentRow( 0 );
+    dirSelect( m_widget.dirList->currentItem() );
+    m_widget.dirEdit->setUrl(QString());
+    m_widget.dirEdit->setFocus();
     change();
 }
 
 
 void KPluginOptions::dirRemove()
 {
-    m_widget->dirEdit->setUrl(QString());
-    delete m_widget->dirList->currentItem();
-    m_widget->dirRemove->setEnabled( false );
-    m_widget->dirUp->setEnabled( false );
-    m_widget->dirDown->setEnabled( false );
-    m_widget->dirEdit->setEnabled( false );
+    m_widget.dirEdit->setUrl(QString());
+    delete m_widget.dirList->currentItem();
+    m_widget.dirRemove->setEnabled( false );
+    m_widget.dirUp->setEnabled( false );
+    m_widget.dirDown->setEnabled( false );
+    m_widget.dirEdit->setEnabled( false );
     change();
 }
 
 
 void KPluginOptions::dirUp()
 {
-    int cur = m_widget->dirList->currentRow();
+    int cur = m_widget.dirList->currentRow();
     if ( cur>0 ) {
-        QString txt = m_widget->dirList->item(cur-1)->text();
-        delete m_widget->dirList->takeItem( cur-1 );
-        m_widget->dirList->insertItem( cur , txt );
+        QString txt = m_widget.dirList->item(cur-1)->text();
+        delete m_widget.dirList->takeItem( cur-1 );
+        m_widget.dirList->insertItem( cur , txt );
 
-        m_widget->dirUp->setEnabled( cur-1>0 );
-        m_widget->dirDown->setEnabled( true );
+        m_widget.dirUp->setEnabled( cur-1>0 );
+        m_widget.dirDown->setEnabled( true );
         change();
     }
 }
@@ -508,14 +507,14 @@ void KPluginOptions::dirUp()
 
 void KPluginOptions::dirDown()
 {
-    int cur = m_widget->dirList->currentRow();
-    if ( cur < m_widget->dirList->count()-1 ) {
-        QString txt = m_widget->dirList->item(cur+1)->text();
-        delete m_widget->dirList->takeItem( cur+1 );
-        m_widget->dirList->insertItem( cur , txt );
+    int cur = m_widget.dirList->currentRow();
+    if ( cur < m_widget.dirList->count()-1 ) {
+        QString txt = m_widget.dirList->item(cur+1)->text();
+        delete m_widget.dirList->takeItem( cur+1 );
+        m_widget.dirList->insertItem( cur , txt );
 
-        m_widget->dirUp->setEnabled( true );
-        m_widget->dirDown->setEnabled( cur+1<m_widget->dirList->count()-1 );
+        m_widget.dirUp->setEnabled( true );
+        m_widget.dirDown->setEnabled( cur+1<m_widget.dirList->count()-1 );
         change();
     }
 }
@@ -523,10 +522,10 @@ void KPluginOptions::dirDown()
 
 void KPluginOptions::dirEdited(const QString &txt )
 {
-    if ( m_widget->dirList->currentItem()->text() != txt ) {
-        m_widget->dirList->blockSignals(true);
-        m_widget->dirList->currentItem()->setText(txt);
-        m_widget->dirList->blockSignals(false);
+    if ( m_widget.dirList->currentItem()->text() != txt ) {
+        m_widget.dirList->blockSignals(true);
+        m_widget.dirList->currentItem()->setText(txt);
+        m_widget.dirList->blockSignals(false);
         change();
     }
 }
@@ -542,10 +541,10 @@ void KPluginOptions::pluginInit()
 
 void KPluginOptions::pluginLoad( KSharedConfig::Ptr /*config*/ )
 {
-    m_widget->pluginList->setRootIsDecorated(false);
-    m_widget->pluginList->setColumnWidth( 0, 200 );
+    m_widget.pluginList->setRootIsDecorated(false);
+    m_widget.pluginList->setColumnWidth( 0, 200 );
     kDebug() << "-> KPluginOptions::fillPluginList";
-    m_widget->pluginList->clear();
+    m_widget.pluginList->clear();
     QRegExp version(";version=[^:]*:");
 
     // open the cache file
@@ -558,7 +557,7 @@ void KPluginOptions::pluginLoad( KSharedConfig::Ptr /*config*/ )
     QTextStream cache(&cachef);
 
     // root object
-    QTreeWidgetItem *root = new QTreeWidgetItem( m_widget->pluginList, QStringList() << i18n("Netscape Plugins") );
+    QTreeWidgetItem *root = new QTreeWidgetItem( m_widget.pluginList, QStringList() << i18n("Netscape Plugins") );
     root->setFlags( Qt::ItemIsEnabled );
     root->setExpanded( true );
     root->setIcon(0, KIcon("netscape"));
