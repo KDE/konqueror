@@ -143,6 +143,8 @@ public:
     int minFontSize() const;
     int mediumFontSize() const;
 
+    void computeFontSizes(int logicalDpi);
+
     bool jsErrorsEnabled() const;
     void setJSErrorsEnabled(bool enabled);
 

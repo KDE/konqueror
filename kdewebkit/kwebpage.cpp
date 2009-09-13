@@ -46,6 +46,7 @@
 #include <KIO/AccessManager>
 typedef KIO::AccessManager BaseAccessManager;
 
+#include <QPaintEngine>
 #include <QWebFrame>
 #include <QUiLoader>
 #include <QtNetwork/QNetworkReply>
@@ -250,6 +251,9 @@ KWebPage::KWebPage(QObject *parent)
     settings()->setWebGraphic(QWebSettings::MissingPluginGraphic, KIcon("preferences-plugin").pixmap(32, 32));
     settings()->setWebGraphic(QWebSettings::MissingImageGraphic, KIcon("image-missing").pixmap(32, 32));
     settings()->setWebGraphic(QWebSettings::DefaultFrameIconGraphic, KIcon("applications-internet").pixmap(32, 32));
+
+    if (webView)
+        WebKitSettings::self()->computeFontSizes(webView->logicalDpiY());
 
     //const QString host = mainFrame()->url().host();
 
