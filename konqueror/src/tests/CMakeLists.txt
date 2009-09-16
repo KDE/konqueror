@@ -3,10 +3,6 @@ if (NOT WIN32)
 set( EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR} )
 include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/.. ${KDE4_INCLUDES} )
 
-# QtTest needs this in order to include the gui stuff.
-# The alternative (which requires Qt>=4.6) is #include <QTestGui>
-add_definitions( -DQT_GUI_LIB )
-
 ########### centralwidget ###############
 
 kde4_add_executable(centralwidget TEST centralwidget.cpp)
