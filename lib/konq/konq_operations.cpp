@@ -511,14 +511,19 @@ void KonqOperations::doDropFileCopy()
             return;
         }
 
+        bool enableLinking = true;			// for now, but see below
+
         // We don't want to offer "move" for temp files. They might come from
         // kmail using a tempfile for attachments, or ark using a tempdir for
         // extracting an archive -- in all cases, we can't implement a real move,
         // it's just a copy of the tempfile [and the source app will delete it later].
         // https://www.intevation.de/roundup/kolab/issue2026
+        //
+        // Similarly, linking to a temp file is pointless.
         if (url.isLocalFile() && url.toLocalFile().startsWith(KStandardDirs::locateLocal("tmp", QString()))) {
             sMoving = false;
             sDeleting = false;
+            enableLinking = false;
         }
 
         QMenu popup;
@@ -559,7 +564,8 @@ void KonqOperations::doDropFileCopy()
         if ( sReading && !linkOnly)
             popup.addAction(popupCopyAction);
 
-        popup.addAction(popupLinkAction);
+        if ( enableLinking )
+            popup.addAction(popupLinkAction);
 
 #if 0
         if (bSetWallpaper)
