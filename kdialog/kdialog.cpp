@@ -64,10 +64,10 @@ class WinIdEmbedder: public QObject
 {
 public:
     WinIdEmbedder(bool printID, WId winId):
-        QObject(kapp), print(printID), id(winId)
+        QObject(qApp), print(printID), id(winId)
     {
-        if (kapp)
-            kapp->installEventFilter(this);
+        if (qApp)
+            qApp->installEventFilter(this);
     }
 protected:
     bool eventFilter(QObject *o, QEvent *e);
@@ -292,7 +292,7 @@ static int directCommand(KCmdLineArgs *args)
       if (args->count() > 0)
           init = args->arg(0);
 
-      bool retcode = Widgets::inputBox(0, title, args->getOption("inputbox"), init, result);
+      const bool retcode = Widgets::inputBox(0, title, args->getOption("inputbox"), init, result);
       cout << result.toLocal8Bit().data() << endl;
       return retcode ? 0 : 1;
     }
@@ -302,7 +302,7 @@ static int directCommand(KCmdLineArgs *args)
     if (args->isSet("password"))
     {
       QString result;
-      bool retcode = Widgets::passwordBox(0, title, args->getOption("password"), result);
+      const bool retcode = Widgets::passwordBox(0, title, args->getOption("password"), result);
       cout << qPrintable(result) << endl;
       return retcode ? 0 : 1;
     }
@@ -329,8 +329,8 @@ static int directCommand(KCmdLineArgs *args)
                                                    duration );
     KDialog::centerOnScreen( popup );
     QTimer *timer = new QTimer();
-    QObject::connect( timer, SIGNAL( timeout() ), kapp, SLOT( quit() ) );
-    QObject::connect( popup, SIGNAL( clicked() ), kapp, SLOT( quit() ) );
+    QObject::connect( timer, SIGNAL( timeout() ), qApp, SLOT( quit() ) );
+    QObject::connect( popup, SIGNAL( clicked() ), qApp, SLOT( quit() ) );
     timer->setSingleShot( true );
     timer->start( duration );
 
@@ -350,7 +350,7 @@ static int directCommand(KCmdLineArgs *args)
 	    popup->setAnchor( QPoint(x, y) );
 	}
 #endif
-	kapp->exec();
+	qApp->exec();
 	return 0;
       }
 
@@ -400,12 +400,12 @@ static int directCommand(KCmdLineArgs *args)
             for (int i = 0; i < args->count(); i++) {
                 list.append(args->arg(i));
             }
-            QString text = args->getOption("combobox");
+            const QString text = args->getOption("combobox");
 	    if (args->isSet("default")) {
 	        defaultEntry = args->getOption("default");
 	    }
             QString result;
-	    bool retcode = Widgets::comboBox(0, title, text, list, defaultEntry, result);
+	    const bool retcode = Widgets::comboBox(0, title, text, list, defaultEntry, result);
             cout << result.toLocal8Bit().data() << endl;
             return retcode ? 0 : 1;
         }
@@ -419,12 +419,12 @@ static int directCommand(KCmdLineArgs *args)
             for (int i = 0; i < args->count(); i++) {
                 list.append(args->arg(i));
             }
-            QString text = args->getOption("menu");
+            const QString text = args->getOption("menu");
 	    if (args->isSet("default")) {
 	        defaultEntry = args->getOption("default");
 	    }
             QString result;
-            bool retcode = Widgets::listBox(0, title, text, list, defaultEntry, result);
+            const bool retcode = Widgets::listBox(0, title, text, list, defaultEntry, result);
             if (1 == retcode) { // OK was selected
 	        cout << result.toLocal8Bit().data() << endl;
 	    }
@@ -441,10 +441,10 @@ static int directCommand(KCmdLineArgs *args)
                 list.append(args->arg(i));
             }
 
-            QString text = args->getOption("checklist");
+            const QString text = args->getOption("checklist");
             QStringList result;
 
-            bool retcode = Widgets::checkList(0, title, text, list, separateOutput, result);
+            const bool retcode = Widgets::checkList(0, title, text, list, separateOutput, result);
 
             for (int i=0; i<result.count(); i++)
                 if (!result.at(i).toLocal8Bit().isEmpty()) {
@@ -463,9 +463,9 @@ static int directCommand(KCmdLineArgs *args)
                 list.append(args->arg(i));
             }
 
-            QString text = args->getOption("radiolist");
+            const QString text = args->getOption("radiolist");
             QString result;
-            bool retcode = Widgets::radioBox(0, title, text, list, result);
+            const bool retcode = Widgets::radioBox(0, title, text, list, result);
             cout << result.toLocal8Bit().data() << endl;
             exit( retcode ? 0 : 1 );
         }
@@ -679,7 +679,7 @@ static int directCommand(KCmdLineArgs *args)
        close(1);
 
        int totalsteps = 100;
-       QString text = args->getOption("progressbar");
+       const QString text = args->getOption("progressbar");
 
        if (args->count() == 1)
            totalsteps = args->arg(0).toInt();
@@ -716,7 +716,7 @@ static int directCommand(KCmdLineArgs *args)
        int miniValue = 0;
        int maxValue = 0;
        int step = 0;
-       QString text = args->getOption( "slider" );
+       const QString text = args->getOption( "slider" );
        if ( args->count() == 3 )
        {
            miniValue = args->arg(0).toInt();
@@ -725,17 +725,17 @@ static int directCommand(KCmdLineArgs *args)
        }
        int result = 0;
 
-       bool returnCode = Widgets::slider(0, title, text, miniValue, maxValue, step, result);
+       const bool returnCode = Widgets::slider(0, title, text, miniValue, maxValue, step, result);
        if ( returnCode )
            cout << result << endl;
        return returnCode;
     }
     if (args->isSet("calendar"))
     {
-       QString text = args->getOption( "calendar" );
+       const QString text = args->getOption( "calendar" );
        QDate result;
 
-       bool returnCode = Widgets::calendar(0, title, text, result);
+       const bool returnCode = Widgets::calendar(0, title, text, result);
        if ( returnCode )
            cout << result.toString().toLocal8Bit().data() << endl;
        return returnCode;
