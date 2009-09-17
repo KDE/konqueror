@@ -393,7 +393,7 @@ static int directCommand(KCmdLineArgs *args)
       return ret;
     }
 
-    // --combobox <text> [tag item] [tag item] ..."
+    // --combobox <text> item [item] ..."
     if (args->isSet("combobox")) {
         QStringList list;
         if (args->count() >= 1) {
@@ -777,7 +777,7 @@ int main(int argc, char *argv[])
   options.add("password <text>", ki18n("Password dialog"));
   options.add("textbox <file> [width] [height]", ki18n("Text Box dialog"));
   options.add("textinputbox <text> <init> [width] [height]", ki18n("Text Input Box dialog"));
-  options.add("combobox <text> [tag item] [tag item] ...", ki18n("ComboBox dialog"));
+  options.add("combobox <text> item [item] [item] ...", ki18n("ComboBox dialog"));
   options.add("menu <text> [tag item] [tag item] ...", ki18n("Menu dialog"));
   options.add("checklist <text> [tag item status] ...", ki18n("Check List dialog"));
   options.add("radiolist <text> [tag item status] ...", ki18n("Radio List dialog"));
