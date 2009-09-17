@@ -396,7 +396,7 @@ static int directCommand(KCmdLineArgs *args)
     // --combobox <text> [tag item] [tag item] ..."
     if (args->isSet("combobox")) {
         QStringList list;
-        if (args->count() >= 2) {
+        if (args->count() >= 1) {
             for (int i = 0; i < args->count(); i++) {
                 list.append(args->arg(i));
             }
