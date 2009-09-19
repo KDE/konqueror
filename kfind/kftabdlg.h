@@ -66,6 +66,8 @@ public:
 
 public Q_SLOTS:
   void setFocus();
+  void slotUpdateDateLabels(int value);
+  void slotUpdateByteComboBox(int value);
 
 private Q_SLOTS:
   void getDirectory();

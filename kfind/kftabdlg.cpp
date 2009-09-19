@@ -172,19 +172,17 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     findCreated =  new QCheckBox(i18n("Find all files created or &modified:"), pages[1]);
     bg  = new QButtonGroup();
     rb[0] = new QRadioButton(i18n("&between"), pages[1] );
-    rb[1] = new QRadioButton(i18n("&during the previous"), pages[1] );
+    rb[1] = new QRadioButton(i18ncp("&during the previous day(s)", "&during the previous", "&during the previous", 1), pages[1] );
     andL = new QLabel(i18n("and"), pages[1]);
     andL->setObjectName( "and" );
     betweenType = new KComboBox( pages[1] );
-    betweenType->setEditable( false );
     betweenType->setObjectName( "comboBetweenType" );
-    betweenType->addItem(i18n("minute(s)"));
-    betweenType->addItem(i18n("hour(s)"));
-    betweenType->addItem(i18nc("use date ranges to search files by modified time","day(s)"));
-    betweenType->addItem(i18n("month(s)"));
-    betweenType->addItem(i18n("year(s)"));
+    betweenType->addItem(i18ncp("use date ranges to search files by modified time", "minute", "minutes", 1));
+    betweenType->addItem(i18ncp("use date ranges to search files by modified time", "hour", "hours", 1));
+    betweenType->addItem(i18ncp("use date ranges to search files by modified time", "day", "days", 1));
+    betweenType->addItem(i18ncp("use date ranges to search files by modified time", "month", "months", 1));
+    betweenType->addItem(i18ncp("use date ranges to search files by modified time", "year", "years", 1));
     betweenType->setCurrentIndex(1);
-
 
     QDate dt = KGlobal::locale()->calendar()->addYears(QDate::currentDate(), -1);
 
@@ -198,7 +196,6 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     timeBox->setObjectName( "timeBox" );
 
     sizeBox =new KComboBox( pages[1] );
-    sizeBox->setEditable( false );
     sizeBox->setObjectName( "sizeBox" );
     QLabel * sizeL   =new QLabel(i18n("File &size is:"), pages[1]);
     sizeL->setBuddy( sizeBox );
@@ -208,7 +205,6 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     sizeEdit->setObjectName( "sizeEdit" );
     sizeEdit->setValue(1);
     sizeUnitBox =new KComboBox( pages[1] );
-    sizeUnitBox->setEditable( false );
     sizeUnitBox->setObjectName( "sizeUnitBox" );
 
     m_usernameBox = new KComboBox( pages[1] );
@@ -227,7 +223,7 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     sizeBox ->addItem( i18n("At Most") );
     sizeBox ->addItem( i18n("Equal To") );
 
-    sizeUnitBox ->addItem( i18n("Bytes") );
+    sizeUnitBox ->addItem( i18np("Byte", "Bytes", 1) );
     sizeUnitBox ->addItem( i18n("KiB") );
     sizeUnitBox ->addItem( i18n("MiB") );
     sizeUnitBox ->addItem( i18n("GiB") );
@@ -284,6 +280,8 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     connect( findCreated, SIGNAL(toggled(bool)),  SLOT(fixLayout()) );
     connect( bg, SIGNAL(buttonClicked(QAbstractButton*)), this,  SLOT(fixLayout()) );
     connect( sizeBox, SIGNAL(activated(int)), this, SLOT(slotSizeBoxChanged(int)));
+    connect( timeBox, SIGNAL(valueChanged(int)), this, SLOT(slotUpdateDateLabels(int)));
+    connect( sizeEdit, SIGNAL(valueChanged(int)), this, SLOT(slotUpdateByteComboBox(int)));
 
 
     // ************ Page Three
@@ -292,7 +290,6 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     pages[2]->setObjectName( "page3" );
 
     typeBox =new KComboBox( pages[2] );
-    typeBox->setEditable( false );
     typeBox->setObjectName( "typeBox" );
     typeBox->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);  // allow smaller than widest entry
     QLabel * typeL   =new QLabel( i18nc("label for the file type combobox","File &type:"), pages[2] );
@@ -864,6 +861,21 @@ void KfindTabWidget::fixLayout()
 bool KfindTabWidget::isSearchRecursive()
 {
   return subdirsCb->isChecked();
+}
+
+void KfindTabWidget::slotUpdateDateLabels(int value)
+{
+  rb[1]->setText(i18ncp("&during the previous day(s)", "&during the previous", "&during the previous", value));
+  betweenType->setItemText(0, i18ncp("use date ranges to search files by modified time", "minute", "minutes", value));
+  betweenType->setItemText(1, i18ncp("use date ranges to search files by modified time", "hour", "hours", value));
+  betweenType->setItemText(2, i18ncp("use date ranges to search files by modified time", "day", "days", value));
+  betweenType->setItemText(3, i18ncp("use date ranges to search files by modified time", "month", "months", value));
+  betweenType->setItemText(4, i18ncp("use date ranges to search files by modified time", "year", "years", value));
+}
+
+void KfindTabWidget::slotUpdateByteComboBox(int value)
+{
+  sizeUnitBox->setItemText(0, i18np("Byte", "Bytes", value) );
 }
 
 
