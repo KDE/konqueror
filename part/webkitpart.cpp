@@ -385,13 +385,6 @@ void WebKitPart::loadFinished(bool ok)
         urlChanged(d->webView->url());
     }
 
-#if 0
-    if (qobject_cast<WebPage*>(d->webView->page())->isSecurePage())
-        d->browserExtension->setPageSecurity(WebKitPart::WebKitPartPrivate::Encrypted);
-    else
-        d->browserExtension->setPageSecurity(WebKitPart::WebKitPartPrivate::Unencrypted);
-#endif
-
     // NOTE #1: QtWebKit will not kill a META redirect request even if one triggers
     // the WebPage::Stop action!! As such the code below is disabled for now...
 
