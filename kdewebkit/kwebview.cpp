@@ -60,8 +60,9 @@ public:
 
 
 KWebView::KWebView(QWidget *parent)
-    : QWebView(parent), d(new KWebView::KWebViewPrivate())
-{}
+         :QWebView(parent), d(new KWebView::KWebViewPrivate())
+{
+}
 
 KWebView::~KWebView()
 {
@@ -196,19 +197,20 @@ void KWebView::resultSearch(KWebPage::FindFlags flags)
 
 void KWebView::loadUrl(const KUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &bargs)
 {
-    QNetworkRequest req;
+    if (args.reload()) {
+      pageAction(KWebPage::Reload)->trigger();
+      return;
+    }
 
+    QNetworkRequest req;
     req.setUrl(url);
 
-    if (args.reload())
-      pageAction(KWebPage::Reload)->trigger();
+    KIO::MetaData metaData (args.metaData());
+    req.setRawHeader("Referer", metaData.value("referrer").toUtf8());
 
-    req.setRawHeader("Referer", args.metaData()["referrer"].toUtf8());
-
-#if KDE_IS_VERSION(4, 3, 63)
-    if (!args.metaData().isEmpty())
-      req.setAttribute(QNetworkRequest::User, KIO::MetaData(args.metaData()).toVariant());
-#endif
+    if (!metaData.isEmpty()) {
+        req.setAttribute(QNetworkRequest::User, metaData.toVariant());
+    }
 
     if (bargs.postData.isEmpty()) {
         QWebView::load(req);

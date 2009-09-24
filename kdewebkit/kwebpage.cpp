@@ -44,7 +44,6 @@
 #include <KDE/KUrl>
 
 #include <KIO/AccessManager>
-typedef KIO::AccessManager BaseAccessManager;
 
 #include <QPaintEngine>
 #include <QWebFrame>
@@ -77,12 +76,16 @@ protected:
 };
 
 /* Re-implementation of QNetworkAccessManager for integration with KIO. */
-class NetworkAccessManager : public BaseAccessManager
+class NetworkAccessManager : public KIO::AccessManager
 {
 public:
-    NetworkAccessManager(QObject *parent) : BaseAccessManager(parent) {}
-    KIO::MetaData& metaData() {
-        return m_metaData;
+    NetworkAccessManager(QObject *parent) : KIO::AccessManager(parent) {}
+    KIO::MetaData& sessionMetaData() {
+        return m_sessionMetaData;
+    }
+
+    KIO::MetaData& requestMetaData() {
+        return m_requestMetaData;
     }
 
 protected:
@@ -94,20 +97,26 @@ protected:
         }
 
         QNetworkRequest request(req);
-
-#if KDE_IS_VERSION(4, 3, 01)
-        KIO::MetaData metaData(m_metaData);
+        KIO::MetaData metaData = m_sessionMetaData;
+        metaData += m_requestMetaData;
 
         QVariant attr = req.attribute(QNetworkRequest::User);
-        if (attr.isValid() && attr.type() == QVariant::Map)
+        if (attr.isValid() && attr.type() == QVariant::Map) {
             metaData += attr.toMap();
-        request.setAttribute(QNetworkRequest::User, metaData.toVariant());
-#endif
+        }
 
-        return BaseAccessManager::createRequest(op, request, outgoingData);
+        if (!metaData.isEmpty()) {
+            attr = metaData.toVariant();
+            request.setAttribute(QNetworkRequest::User, attr);
+        }
+
+        // Clear the per request meta data...
+        m_requestMetaData.clear();
+        return KIO::AccessManager::createRequest(op, request, outgoingData);
     }
 private:
-    KIO::MetaData m_metaData;
+    KIO::MetaData m_sessionMetaData;
+    KIO::MetaData m_requestMetaData;
 };
 
 /* Re-implementation of QNetworkCookieJar for integration with KCookieJar */
@@ -122,11 +131,11 @@ public:
 
         if (WebKitSettings::self()->isCookieJarEnabled()) {
             QDBusInterface kcookiejar("org.kde.kded", "/modules/kcookiejar", "org.kde.KCookieServer");
-            QDBusReply<QString> reply = kcookiejar.call("findCookies", url.toString(), m_windowId);
+            QDBusReply<QString> reply = kcookiejar.call("findDOMCookies", url.toString(), m_windowId);
 
             if (reply.isValid()) {
                 cookieList << reply.value().toUtf8();
-                //kDebug() << reply.value();
+                //kDebug() << url.host() << reply.value();
             } else {
                 kWarning() << "Unable to communicate with the cookiejar!";
             }
@@ -199,14 +208,13 @@ KWebPage::KWebPage(QObject *parent)
     if (webView) {
         const qlonglong winId = webView->window()->winId();
         cookiejar->setWindowId(winId);
-        d->accessManager->metaData().insert("window-id", QString::number(winId));
+        d->accessManager->sessionMetaData().insert("window-id", QString::number(winId));
     }
 
     d->accessManager->setCookieJar(cookiejar);
 
-    // TODO: Disabled for now since flash plugin does not work using
-    // our plugin factory, but works fine with the default QWebPluginFactory
-    // allbeit with a crash when leaving the site with the flash content...
+    // TODO: Determine if and for what our own KParts implementation
+    // of QWebPluginFactory is necessary...
     //setPluginFactory(new KWebPluginFactory(pluginFactory(), this));
 
     action(Back)->setIcon(KIcon("go-previous"));
@@ -313,28 +321,37 @@ QString KWebPage::userAgentForUrl(const QUrl& _url) const
 {
   const KUrl url(_url);
   QString userAgent = KProtocolManager::userAgentForHost((url.isLocalFile() ? "localhost":url.host()));
-  const int index = userAgent.indexOf("KHTML/");
 
-  if (userAgent == KProtocolManager::defaultUserAgent() || index == -1)
+
+  if (userAgent == KProtocolManager::defaultUserAgent())
     userAgent = QWebPage::userAgentForUrl(_url);
   else
   {
-    QString webKitUserAgent = QWebPage::userAgentForUrl(_url);
-    userAgent = userAgent.left(index);
-    webKitUserAgent = webKitUserAgent.mid(webKitUserAgent.indexOf("AppleWebKit/"));
-    webKitUserAgent = webKitUserAgent.left(webKitUserAgent.indexOf(')') + 1);
-    userAgent += webKitUserAgent;
-    userAgent.remove("compatible; ");
+    const int index = userAgent.indexOf("KHTML/");
+    if (index > -1) {
+      QString webKitUserAgent = QWebPage::userAgentForUrl(_url);
+      userAgent = userAgent.left(index);
+      webKitUserAgent = webKitUserAgent.mid(webKitUserAgent.indexOf("AppleWebKit/"));
+      webKitUserAgent = webKitUserAgent.left(webKitUserAgent.indexOf(')') + 1);
+      userAgent += webKitUserAgent;
+      userAgent.remove("compatible; ");
+    }
   }
 
   //kDebug() << userAgent;
   return userAgent;
 }
 
-void KWebPage::setMetaData(const QString& key, const QString& value)
+void KWebPage::setSessionMetaData(const QString& key, const QString& value)
 {
     Q_ASSERT(d->accessManager);
-    d->accessManager->metaData()[key] = value;
+    d->accessManager->sessionMetaData()[key] = value;
+}
+
+void KWebPage::setRequestMetaData(const QString& key, const QString& value)
+{
+    Q_ASSERT(d->accessManager);
+    d->accessManager->requestMetaData()[key] = value;
 }
 
 bool KWebPage::acceptNavigationRequest(QWebFrame * frame, const QNetworkRequest & request, NavigationType type)
@@ -346,38 +363,16 @@ bool KWebPage::acceptNavigationRequest(QWebFrame * frame, const QNetworkRequest 
         ** a load url operation is requested... (e.g. user types in the url)
         ** a link on a web page is clicked...
         ** a "location.href" javascript command is executed...
-        ** a load url operation is requested from framesets within a page.
+        ** a load url operation is requested from a frame within the main frame...
 
-      We catch the first 3 scenarios here to make sure the "cross-domain"
-      (cookiejar) and "main_frame_request" (SSL) meta datas are set.
+        When frame is NULL, a new window/tab is requested ; so we enforce the user's
+        open window policy settings. Otherwise, we make sure the cross-domain variable is
+        set properly for proper cookie integration with KDE's KCookiejar.
     */
-    if (frame) {
-        QWebFrame* parentFrame = frame->parentFrame();
+    if (frame && frame == mainFrame()) {
         QUrl url(request.url());
-
-        if (url.isValid() && url.host().toLower() != QString::fromUtf8("blank")) {
-            if (!parentFrame)
-                d->accessManager->metaData()["cross-domain"] = url.toString();
-
-            d->accessManager->metaData()["main_frame_request"] = (parentFrame ? "FALSE" : "TRUE");
-        }
-    } else {
-        // if frame is NULL, it means that a new window is requested so we enforce
-        // the user's preferred choice here from the settings...
-        switch (WebKitSettings::self()->windowOpenPolicy(request.url().host())) {
-        case WebKitSettings::KJSWindowOpenAsk:
-            // TODO: Implement this without resotring to showing a KMessgaeBox. Perhaps
-            // how FF3 does it ?
-            break;
-        case WebKitSettings::KJSWindowOpenSmart:
-            if (type != QWebPage::NavigationTypeLinkClicked)
-                return false;
-            break;
-        case WebKitSettings::KJSWindowOpenDeny:
-            return false;
-        case WebKitSettings::KJSWindowOpenAllow:
-        default:
-            break;
+        if (url.host().toLower() != QString::fromUtf8("blank")) {
+            d->accessManager->sessionMetaData()["cross-domain"] = url.toString();
         }
     }
 
@@ -462,8 +457,12 @@ void KWebPage::slotDownloadRequested(const QNetworkRequest &request, QNetworkRep
         const QString destUrl = KFileDialog::getSaveFileName(url.fileName(), QString(), view());
         if (destUrl.isEmpty()) return;
         KIO::Job *job = KIO::file_copy(url, KUrl(destUrl), -1, KIO::Overwrite);
-        KIO::MetaData metaData = request.attribute(QNetworkRequest::User).toMap();
-        job->setMetaData(metaData);
+
+        QVariant attr = request.attribute(QNetworkRequest::User);
+        if (attr.isValid() && attr.type() == QVariant::Map) {
+            KIO::MetaData metaData (attr.toMap());
+            job->setMetaData(metaData);
+        }
         job->addMetaData("MaxCacheSize", "0"); // Don't store in http cache.
         job->addMetaData("cache", "cache"); // Use entry from cache if available.
         job->uiDelegate()->setAutoErrorHandlingEnabled(true);

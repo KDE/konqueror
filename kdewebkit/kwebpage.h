@@ -58,7 +58,8 @@ protected:
     bool javaScriptPrompt(QWebFrame *frame, const QString &msg, const QString &defaultValue, QString *result);
     QString userAgentForUrl(const QUrl& url) const;
 
-    void setMetaData(const QString& key, const QString& value);
+    void setSessionMetaData(const QString& key, const QString& value);
+    void setRequestMetaData(const QString& key, const QString& value);
 
     bool acceptNavigationRequest (QWebFrame * frame, const QNetworkRequest & request, NavigationType type);
     QObject *createPlugin(const QString &classId, const QUrl &url, const QStringList &paramNames, const QStringList &paramValues);
