@@ -38,7 +38,7 @@ public:
   virtual ~WebSslInfo();
 
   bool isValid() const;
-
+  QUrl url() const;
   QHostAddress peerAddress() const;
   QHostAddress parentAddress() const;
   QString ciphers() const;
@@ -53,6 +53,7 @@ public:
 protected:
   void reset();
 
+  void setUrl (const QUrl &url);
   void setCiphers(const QString& ciphers);
   void setProtocol(const QString& protocol);
   void setPeerAddress(const QString& address);

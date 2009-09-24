@@ -28,6 +28,7 @@ public:
   WebSslInfoPrivate()
       : usedCipherBits(0), supportedCipherBits(0) {}
 
+  QUrl url;
   QString ciphers;
   QString protocol;
   QString certErrors;
@@ -54,6 +55,16 @@ WebSslInfo::~WebSslInfo()
 {
   delete d;
   d = 0;
+}
+
+bool WebSslInfo::isValid() const
+{
+  return !d->peerAddress.isNull();
+}
+
+QUrl WebSslInfo::url() const
+{
+  return d->url;
 }
 
 QHostAddress WebSslInfo::parentAddress() const
@@ -96,11 +107,6 @@ QList<QSslCertificate> WebSslInfo::certificateChain() const
   return d->certificateChain;
 }
 
-bool WebSslInfo::isValid() const
-{
-  return !d->peerAddress.isNull();
-}
-
 WebSslInfo& WebSslInfo::operator=(const WebSslInfo& other)
 {
   d->ciphers = other.ciphers();
@@ -118,6 +124,7 @@ WebSslInfo& WebSslInfo::operator=(const WebSslInfo& other)
 
 void WebSslInfo::reset()
 {
+  d->url.clear();
   d->ciphers.clear();
   d->protocol.clear();
   d->certErrors.clear();
@@ -127,6 +134,11 @@ void WebSslInfo::reset()
 
   d->usedCipherBits = 0;
   d->supportedCipherBits = 0;
+}
+
+void WebSslInfo::setUrl (const QUrl &url)
+{
+  d->url = url;
 }
 
 void WebSslInfo::setPeerAddress(const QString& address)
