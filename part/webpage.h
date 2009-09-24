@@ -28,6 +28,7 @@
 #include "webkitkde_export.h"
 
 class KUrl;
+class KSslInfoDialog;
 class QWebFrame;
 class WebKitPart;
 
@@ -36,8 +37,17 @@ class WEBKITKDE_EXPORT WebPage : public KWebPage
     Q_OBJECT
 public:
     WebPage(WebKitPart *wpart, QWidget *parent);
+    ~WebPage();
 
     void saveUrl(const KUrl &url);
+    KSslInfoDialog *sslDialog() const;
+    bool isSecurePage() const;
+
+Q_SIGNALS:
+    void loadMainPageFinished();
+    void loadStarted(const QUrl& url);    
+    void loadAborted(const QUrl& newUrl);
+    void loadError(int, const QString&);
 
 protected:
     virtual bool acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request,
@@ -50,9 +60,11 @@ protected Q_SLOTS:
     void slotWindowCloseRequested();
     void slotStatusBarMessage(const QString &message);
     void slotHandleUnsupportedContent(QNetworkReply *reply);
+    void slotRequestFinished(QNetworkReply *reply);
 
 private:
-    WebKitPart *m_part;
+    class WebPagePrivate;
+    WebPagePrivate* const d;
 };
 
 #endif // WEBPAGE_H

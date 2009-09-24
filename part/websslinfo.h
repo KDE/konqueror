@@ -34,9 +34,11 @@ class WebSslInfo
 {
 public:
   WebSslInfo();
+  WebSslInfo(const WebSslInfo&);
   virtual ~WebSslInfo();
 
-  QUrl url() const;
+  bool isValid() const;
+
   QHostAddress peerAddress() const;
   QHostAddress parentAddress() const;
   QString ciphers() const;
@@ -45,12 +47,11 @@ public:
   int supportedChiperBits () const;
   int usedChiperBits () const;
   QList<QSslCertificate> certificateChain() const;
-  bool isValid() const;
+
+  WebSslInfo& operator = (const WebSslInfo&);
 
 protected:
   void reset();
-  void setUrl (const QUrl& url);
-  void setUrl (const QString& url);
 
   void setCiphers(const QString& ciphers);
   void setProtocol(const QString& protocol);
@@ -58,7 +59,6 @@ protected:
   void setParentAddress(const QString& address);
   void setCertificateChain(const QByteArray& chain);
   void setCertificateErrors(const QString& certErrors);
-
   void setUsedCipherBits(const QString& bits);
   void setSupportedCipherBits(const QString& bits);
 
@@ -68,4 +68,3 @@ private:
 };
 
 #endif 
-

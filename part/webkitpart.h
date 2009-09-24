@@ -40,28 +40,31 @@ public:
     explicit WebKitPart(QWidget *parentWidget = 0, QObject *parent = 0, const QStringList &/*args*/ = QStringList());
     ~WebKitPart();
 
-    virtual bool openUrl(const KUrl &url);
+    virtual bool openUrl(const KUrl &);
     virtual bool closeUrl();
 
     WebView *view();
     WebKitBrowserExtension *browserExtension() const;
 
     /** required because KPart::setStatusBarText(..) is protected **/
-    void setStatusBarTextProxy(const QString &message);
+    void setStatusBarTextProxy(const QString &);
 
 protected:
-    void guiActivateEvent(KParts::GUIActivateEvent *event);
+    void guiActivateEvent(KParts::GUIActivateEvent *);
     virtual bool openFile();
     void initAction();
-    void showError(const QString&);
-    void setSslInfo(const QVariant&, const QUrl&);
+    void showError(const QString &);
+    void setSslInfo(const QVariant &);
 
 private Q_SLOTS:
-    void loadStarted();
-    void loadFinished();
     void showSecurity();
-    void urlChanged(const QUrl &url);
-    void requestFinished(QNetworkReply*);
+    void loadStarted();
+    void loadFinished(bool);
+    void loadMainPageFinished();
+    void loadAborted(const QUrl &);
+    void loadError(int, const QString &);
+    void urlChanged(const QUrl &);
+    void setWindowTitle(const QString &);
 
 private:
     class WebKitPartPrivate;
