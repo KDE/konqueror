@@ -52,35 +52,41 @@
 // Converts QNetworkReply::Error to KIO::Error...
 // NOTE: This probably needs to be moved somewhere more convenient
 // in the future. Perhaps KIO::AccessManager itself ???
-static int convertErrorCode(int code)
+static int convertErrorCode(QNetworkReply* reply)
 {
-    switch (code) {
-    case QNetworkReply::NoError:
-        return 0;
-    case QNetworkReply::ConnectionRefusedError:
-        return KIO::ERR_COULD_NOT_CONNECT;
-    case QNetworkReply::HostNotFoundError:
-        return KIO::ERR_UNKNOWN_HOST;
-    case QNetworkReply::TimeoutError:
-        return KIO::ERR_SERVER_TIMEOUT;
-    case QNetworkReply::OperationCanceledError:
-        return KIO::ERR_USER_CANCELED;
-    case QNetworkReply::ProxyNotFoundError:
-        return KIO::ERR_UNKNOWN_PROXY_HOST;
-    case QNetworkReply::ContentAccessDenied:
-        return KIO::ERR_ACCESS_DENIED;
-    case QNetworkReply::ContentOperationNotPermittedError:
-        return KIO::ERR_WRITE_ACCESS_DENIED;
-    case QNetworkReply::ContentNotFoundError:
-        return KIO::ERR_NO_CONTENT;
-    case QNetworkReply::AuthenticationRequiredError:
-        return KIO::ERR_COULD_NOT_AUTHENTICATE;
-    case QNetworkReply::ProtocolUnknownError:
-        return KIO::ERR_UNSUPPORTED_PROTOCOL;
-    case QNetworkReply::ProtocolInvalidOperationError:
-        return KIO::ERR_UNSUPPORTED_ACTION;
-    default:
-        return (code - QNetworkReply::ProtocolFailure);
+    switch (reply->error()) {
+        case QNetworkReply::ConnectionRefusedError:
+            return KIO::ERR_COULD_NOT_CONNECT;
+        case QNetworkReply::HostNotFoundError:
+            return KIO::ERR_UNKNOWN_HOST;
+        case QNetworkReply::TimeoutError:
+            return KIO::ERR_SERVER_TIMEOUT;
+        case QNetworkReply::OperationCanceledError:
+            return KIO::ERR_USER_CANCELED;
+        case QNetworkReply::ProxyNotFoundError:
+            return KIO::ERR_UNKNOWN_PROXY_HOST;
+        case QNetworkReply::ContentAccessDenied:
+            return KIO::ERR_ACCESS_DENIED;
+        case QNetworkReply::ContentOperationNotPermittedError:
+            return KIO::ERR_WRITE_ACCESS_DENIED;
+        case QNetworkReply::ContentNotFoundError:
+            return KIO::ERR_NO_CONTENT;
+        case QNetworkReply::AuthenticationRequiredError:
+            return KIO::ERR_COULD_NOT_AUTHENTICATE;
+        case QNetworkReply::ProtocolUnknownError:
+            return KIO::ERR_UNSUPPORTED_PROTOCOL;
+        case QNetworkReply::ProtocolInvalidOperationError:
+            return KIO::ERR_UNSUPPORTED_ACTION;
+        case QNetworkReply::UnknownNetworkError:{
+            QVariant attr = reply->attribute(QNetworkRequest::UserMax);
+            if (attr.isValid() && attr.type() == QVariant::Int)
+              return attr.toInt();
+            else
+              return KIO::ERR_UNKNOWN;
+        }
+        case QNetworkReply::NoError:
+        default:
+            return 0;
     }
 }
 
@@ -119,11 +125,12 @@ public:
 
     inline void clear () { reset(); }
 
-    void setup (const QVariant& attr)
+    void setup (const QVariant& attr, const QUrl& url)
     {
         if (attr.isValid() && attr.type() == QVariant::Map) {
             QMap<QString,QVariant> metaData = attr.toMap();
             if (metaData.value("ssl_in_use", false).toBool()) {
+                setUrl(url);
                 setCertificateChain(metaData.value("ssl_peer_chain").toByteArray());
                 setPeerAddress(metaData.value("ssl_peer_ip").toString());
                 setParentAddress(metaData.value("ssl_parent_ip").toString());
@@ -214,7 +221,7 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
         // the container of this part did a stat to determine mime-type.
         // ahhh... the price one pays for overly flexiable architecture.
         if (type ==  QWebPage::NavigationTypeOther)
-            d->sslInfo.setup(request.attribute(QNetworkRequest::User));
+            d->sslInfo.setup(request.attribute(QNetworkRequest::User), request.url());
 
     } else {
         // if frame is NULL, it means a new window is requested so we enforce
@@ -345,9 +352,7 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
     QUrl frameUrl (mainFrame()->url());
 
     if (replyUrl == frameUrl) {
-        kDebug() << replyUrl;
-
-        if (d->sslInfo.isValid() && !domainSchemeMatch(replyUrl, frameUrl))
+        if (d->sslInfo.isValid() && !domainSchemeMatch(replyUrl, d->sslInfo.url()))
             d->sslInfo.clear();
 
         const int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
@@ -357,7 +362,7 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
             emit d->part->browserExtension()->setLocationBarUrl(KUrl(replyUrl).prettyUrl());
         } else {
             // Handle any error messages...
-            const int code = convertErrorCode(reply->error());
+            const int code = convertErrorCode(reply);
             switch (code) {
                 case 0:
                     break;
@@ -375,7 +380,7 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
             }
 
             if (!d->sslInfo.isValid())
-                d->sslInfo.setup(reply->attribute(QNetworkRequest::User));
+                d->sslInfo.setup(reply->attribute(QNetworkRequest::User), reply->url());
 
             emit loadMainPageFinished();
         }
