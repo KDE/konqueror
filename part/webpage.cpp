@@ -80,7 +80,7 @@ static int convertErrorCode(int code)
     case QNetworkReply::ProtocolInvalidOperationError:
         return KIO::ERR_UNSUPPORTED_ACTION;
     default:
-        return (code - QNetworkReply::UnknownNetworkError);
+        return (code - QNetworkReply::ProtocolFailure);
     }
 }
 
