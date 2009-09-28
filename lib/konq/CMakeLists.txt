@@ -63,6 +63,8 @@ install( FILES
  konqmimedata.h
  konq_fileitemcapabilities.h
  kversioncontrolplugin.h
+ konq_historyprovider.h
+ konq_historyentry.h
 DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel
 )
 install( FILES konqpopupmenuplugin.desktop konqdndpopupmenuplugin.desktop  DESTINATION  ${SERVICETYPES_INSTALL_DIR} )
