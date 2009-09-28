@@ -28,12 +28,11 @@ class KonqHistoryList;
 class KonqHistoryLoaderPrivate;
 
 /**
+ * @internal
  * This class loads the Konqueror history file.
  * @since 4.3
- *
- * NOTE: might not be exported much longer
  */
-class LIBKONQ_EXPORT KonqHistoryLoader : public QObject
+class KonqHistoryLoader : public QObject
 {
     Q_OBJECT
 
