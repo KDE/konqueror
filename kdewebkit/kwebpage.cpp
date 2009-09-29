@@ -4,6 +4,7 @@
  * Copyright (C) 2008 Dirk Mueller <mueller@kde.org>
  * Copyright (C) 2008 Urs Wolfer <uwolfer @ kde.org>
  * Copyright (C) 2008 Michael Howell <mhowell123@gmail.com>
+ * Copyright (C) 2009 Dawit Alemayehu <adawit@kde.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -42,18 +43,19 @@
 #include <KDE/KStandardShortcut>
 #include <KIO/Job>
 #include <KDE/KUrl>
-
 #include <KIO/AccessManager>
 
-#include <QPaintEngine>
-#include <QWebFrame>
-#include <QUiLoader>
+#include <QtCore/QPair>
+#include <QtCore/QPointer>
+#include <QtGui/QTextDocument>
+#include <QtGui/QPaintEngine>
+#include <QtWebKit/QWebFrame>
+#include <QtUiTools/QUiLoader>
 #include <QtNetwork/QNetworkReply>
 #include <QtNetwork/QNetworkCookieJar>
 #include <QtDBus/QDBusInterface>
 #include <QtDBus/QDBusConnection>
 #include <QtDBus/QDBusReply>
-#include <QtCore/QPointer>
 
 
 /* Null network reply */
@@ -319,27 +321,25 @@ bool KWebPage::javaScriptPrompt(QWebFrame *frame, const QString &msg, const QStr
 
 QString KWebPage::userAgentForUrl(const QUrl& _url) const
 {
-  const KUrl url(_url);
-  QString userAgent = KProtocolManager::userAgentForHost((url.isLocalFile() ? "localhost":url.host()));
+    const KUrl url(_url);
+    QString userAgent = KProtocolManager::userAgentForHost((url.isLocalFile() ? "localhost" : url.host()));
 
-
-  if (userAgent == KProtocolManager::defaultUserAgent())
-    userAgent = QWebPage::userAgentForUrl(_url);
-  else
-  {
-    const int index = userAgent.indexOf("KHTML/");
-    if (index > -1) {
-      QString webKitUserAgent = QWebPage::userAgentForUrl(_url);
-      userAgent = userAgent.left(index);
-      webKitUserAgent = webKitUserAgent.mid(webKitUserAgent.indexOf("AppleWebKit/"));
-      webKitUserAgent = webKitUserAgent.left(webKitUserAgent.indexOf(')') + 1);
-      userAgent += webKitUserAgent;
-      userAgent.remove("compatible; ");
+    if (userAgent == KProtocolManager::defaultUserAgent())
+        userAgent = QWebPage::userAgentForUrl(_url);
+    else {
+        const int index = userAgent.indexOf("KHTML/");
+        if (index > -1) {
+          QString webKitUserAgent = QWebPage::userAgentForUrl(_url);
+          userAgent = userAgent.left(index);
+          webKitUserAgent = webKitUserAgent.mid(webKitUserAgent.indexOf("AppleWebKit/"));
+          webKitUserAgent = webKitUserAgent.left(webKitUserAgent.indexOf(')') + 1);
+          userAgent += webKitUserAgent;
+          userAgent.remove("compatible; ");
+        }
     }
-  }
 
-  //kDebug() << userAgent;
-  return userAgent;
+    //kDebug() << userAgent;
+    return userAgent;
 }
 
 void KWebPage::setSessionMetaData(const QString& key, const QString& value)
@@ -356,8 +356,7 @@ void KWebPage::setRequestMetaData(const QString& key, const QString& value)
 
 bool KWebPage::acceptNavigationRequest(QWebFrame * frame, const QNetworkRequest & request, NavigationType type)
 {
-    kDebug() << "url: " << request.url() << ", type: " << type << ", frame: " << frame;
-
+    kDebug() << "url: " << request.url() << ", type: " << type << ", frame: " << frame;   
     /*
       QWebPage calls acceptNavigationRequest when:
         ** a load url operation is requested... (e.g. user types in the url)
@@ -365,9 +364,8 @@ bool KWebPage::acceptNavigationRequest(QWebFrame * frame, const QNetworkRequest 
         ** a "location.href" javascript command is executed...
         ** a load url operation is requested from a frame within the main frame...
 
-        When frame is NULL, a new window/tab is requested ; so we enforce the user's
-        open window policy settings. Otherwise, we make sure the cross-domain variable is
-        set properly for proper cookie integration with KDE's KCookiejar.
+        If the navigation request is from the main frame, set the cross-domain meta-data
+        value to the current url when for proper integration with KCookieJar...
     */
     if (frame && frame == mainFrame()) {
         QUrl url(request.url());

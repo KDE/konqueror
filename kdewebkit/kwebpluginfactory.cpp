@@ -66,10 +66,12 @@ QObject* KWebPluginFactory::create(const QString& mimeType, const QUrl& url, con
         QObject* q = d->delegate->create(mimeType, url, argumentNames, argumentValues);
         if (q) return q;
     }
+
     QVariantList arguments;
-    int i = 0;
-    Q_FOREACH(const QString &key, argumentNames) {
-        arguments << key + "=\"" + argumentValues.at(i) + '\"';
+    const int count = argumentNames.count();
+
+    for(int i = 0; i < count; ++i) {
+        arguments << argumentNames.at(i) + "=\"" + argumentValues.at(i) + '\"';
         ++i;
     }
 //     arguments << "__KHTML__PLUGINEMBED=\"YES\""; //### following arguments are also set by khtml
@@ -109,6 +111,7 @@ QObject* KWebPluginFactory::create(const QString& mimeType, const QUrl& url, con
         webView->load(url);
         return webView;
     }
+
     return part->widget();
 }
 

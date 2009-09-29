@@ -70,6 +70,7 @@ Q_SIGNALS:
     void showContextMenu(QContextMenuEvent *event);
     void openUrl(const KUrl &url);
     void openUrlInNewTab(const KUrl &url);
+    void saveUrl(const KUrl &url);
 
 protected:
     /**
