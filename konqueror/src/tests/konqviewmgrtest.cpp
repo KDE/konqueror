@@ -500,11 +500,13 @@ void ViewMgrTest::testDeletePartInTab()
     KonqView* view = viewManager->createFirstView( "KonqAboutPage", "konq_aboutpage" );
     QVERIFY( view );
     QPointer<KonqView> viewTab2 = viewManager->addTab("text/html");
+    QPointer<QWidget> partWidget = viewTab2->part()->widget();
     QVERIFY(!viewTab2.isNull());
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].") ); // mainWindow, tab widget, two tabs
 
     delete viewTab2->part();
     QVERIFY(viewTab2.isNull());
+    QVERIFY(partWidget.isNull());
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, tab widget, one tab
 }
 

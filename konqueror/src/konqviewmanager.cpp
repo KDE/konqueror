@@ -613,6 +613,11 @@ void KonqViewManager::removePart( KParts::Part * part )
   {
       kDebug() << "Found a child view";
 
+      // Make sure that deleting the frame won't delete the part's widget;
+      // that's already taken care of by the part.
+      view->part()->widget()->hide();
+      view->part()->widget()->setParent(0);
+
       view->partDeleted(); // tell the child view that the part auto-deletes itself
 
       if (m_pMainWindow->mainViewsCount() == 1)
