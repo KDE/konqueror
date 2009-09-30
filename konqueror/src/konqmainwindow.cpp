@@ -5017,10 +5017,9 @@ void KonqMainWindow::closeEvent( QCloseEvent *e )
 {
     // This breaks session management (the window is withdrawn in kwin)
     // so let's do this only when closed by the user.
-    KonquerorApplication* konqApp = qobject_cast<KonquerorApplication *>(qApp);
 
-    // konqApp is 0 in unit tests
-    if (konqApp && !konqApp->sessionSaving()) {
+    // kapp is 0 in unit tests
+    if (kapp && !kapp->sessionSaving()) {
       KonqFrameTabs* tabContainer = m_pViewManager->tabContainer();
       if ( tabContainer->count() > 1 )
       {
