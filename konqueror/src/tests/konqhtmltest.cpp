@@ -129,7 +129,7 @@ private Q_SLOTS:
         qApp->processEvents(); // openurlrequestdelayed
         qApp->processEvents(); // browserrun
         hideAllMainWindows(); // TODO: why does it appear nonetheless? hiding too early? hiding too late?
-        QTest::qWait(10); // just in case there's more delayed calls :)
+        QTest::qWait(100); // just in case there's more delayed calls :)
         // Did it open a window?
         QCOMPARE(KMainWindow::memberList().count(), 2);
         KMainWindow* newWindow = KMainWindow::memberList().last();
