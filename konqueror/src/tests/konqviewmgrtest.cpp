@@ -495,19 +495,28 @@ void ViewMgrTest::testDuplicateSplittedTab()
 // where the part deletes itself.
 void ViewMgrTest::testDeletePartInTab()
 {
-    KonqMainWindow mainWindow;
-    KonqViewManager* viewManager = mainWindow.viewManager();
-    KonqView* view = viewManager->createFirstView( "KonqAboutPage", "konq_aboutpage" );
-    QVERIFY( view );
+    QPointer<KonqMainWindow> mainWindow = new KonqMainWindow;
+    QVERIFY(mainWindow->testAttribute(Qt::WA_DeleteOnClose));
+    KonqViewManager* viewManager = mainWindow->viewManager();
+    QPointer<KonqView> view = viewManager->createFirstView( "KonqAboutPage", "konq_aboutpage" );
+    QVERIFY(!view.isNull());
+    QPointer<QWidget> partWidget = view->part()->widget();
+
     QPointer<KonqView> viewTab2 = viewManager->addTab("text/html");
-    QPointer<QWidget> partWidget = viewTab2->part()->widget();
+    QPointer<QWidget> partWidget2 = viewTab2->part()->widget();
     QVERIFY(!viewTab2.isNull());
-    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].") ); // mainWindow, tab widget, two tabs
+    QCOMPARE( DebugFrameVisitor::inspect(mainWindow), QString("MT[FF].") ); // mainWindow, tab widget, two tabs
 
     delete viewTab2->part();
     QVERIFY(viewTab2.isNull());
+    QVERIFY(partWidget2.isNull());
+    QCOMPARE( DebugFrameVisitor::inspect(mainWindow), QString("MT[F].") ); // mainWindow, tab widget, one tab
+
+    delete view->part();
+    QVERIFY(view.isNull());
     QVERIFY(partWidget.isNull());
-    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, tab widget, one tab
+    qApp->sendPostedEvents(0, QEvent::DeferredDelete);
+    QVERIFY(mainWindow.isNull());
 }
 
 static void loadFileManagementProfile(KonqMainWindow& mainWindow)
