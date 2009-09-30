@@ -4,6 +4,7 @@
  * Copyright (C) 2007 Trolltech ASA
  * Copyright (C) 2008 - 2009 Urs Wolfer <uwolfer @ kde.org>
  * Copyright (C) 2008 Laurent Montel <montel@kde.org>
+ * Copyright (C) 2009 Dawit Alemayehu <adawit@kde.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -60,14 +61,17 @@
 #include <QPlainTextEdit>
 #include <QVBoxLayout>
 #include <QPrintPreviewDialog>
+#include <QPair>
 
 #include <QtWebKit/QWebHistory>
 #include <QtWebKit/QWebHitTestResult>
 
+#define QL1(x)    QLatin1String(x)
+
 
 static QString htmlError (int code, const QString& text, const KUrl& reqUrl)
 {
-  kDebug(6050) << "errorCode" << code << "text" << text;
+  kDebug() << "errorCode" << code << "text" << text;
 
   QString errorName, techName, description;
   QStringList causes, solutions;
@@ -89,62 +93,62 @@ static QString htmlError (int code, const QString& text, const KUrl& reqUrl)
   if ( !isOpened )
     kWarning() << "Could not open error html template:" << filename;
 
-  QString html = QString( QLatin1String( file.readAll() ) );
+  QString html = QString( QL1( file.readAll() ) );
 
-  html.replace( QLatin1String( "TITLE" ), i18n( "Error: %1 - %2", errorName, url ) );
-  html.replace( QLatin1String( "DIRECTION" ), QApplication::isRightToLeft() ? "rtl" : "ltr" );
-  html.replace( QLatin1String( "ICON_PATH" ), KIconLoader::global()->iconPath( "dialog-warning", -KIconLoader::SizeHuge ) );
+  html.replace( QL1( "TITLE" ), i18n( "Error: %1 - %2", errorName, url ) );
+  html.replace( QL1( "DIRECTION" ), QApplication::isRightToLeft() ? "rtl" : "ltr" );
+  html.replace( QL1( "ICON_PATH" ), KIconLoader::global()->iconPath( "dialog-warning", -KIconLoader::SizeHuge ) );
 
-  QString doc = QLatin1String( "<h1>" );
+  QString doc = QL1( "<h1>" );
   doc += i18n( "The requested operation could not be completed" );
-  doc += QLatin1String( "</h1><h2>" );
+  doc += QL1( "</h1><h2>" );
   doc += errorName;
-  doc += QLatin1String( "</h2>" );
+  doc += QL1( "</h2>" );
 
   if ( !techName.isNull() ) {
-    doc += QLatin1String( "<h2>" );
+    doc += QL1( "<h2>" );
     doc += i18n( "Technical Reason: " );
     doc += techName;
-    doc += QLatin1String( "</h2>" );
+    doc += QL1( "</h2>" );
   }
 
-  doc += QLatin1String( "<h3>" );
+  doc += QL1( "<h3>" );
   doc += i18n( "Details of the Request:" );
-  doc += QLatin1String( "</h3><ul><li>" );
+  doc += QL1( "</h3><ul><li>" );
   doc += i18n( "URL: %1" ,  url );
-  doc += QLatin1String( "</li><li>" );
+  doc += QL1( "</li><li>" );
 
   if ( !protocol.isNull() ) {
     doc += i18n( "Protocol: %1", protocol );
-    doc += QLatin1String( "</li><li>" );
+    doc += QL1( "</li><li>" );
   }
 
   doc += i18n( "Date and Time: %1" ,  datetime );
-  doc += QLatin1String( "</li><li>" );
+  doc += QL1( "</li><li>" );
   doc += i18n( "Additional Information: %1" ,  text );
-  doc += QLatin1String( "</li></ul><h3>" );
+  doc += QL1( "</li></ul><h3>" );
   doc += i18n( "Description:" );
-  doc += QLatin1String( "</h3><p>" );
+  doc += QL1( "</h3><p>" );
   doc += description;
-  doc += QLatin1String( "</p>" );
+  doc += QL1( "</p>" );
 
   if ( causes.count() ) {
-    doc += QLatin1String( "<h3>" );
+    doc += QL1( "<h3>" );
     doc += i18n( "Possible Causes:" );
-    doc += QLatin1String( "</h3><ul><li>" );
+    doc += QL1( "</h3><ul><li>" );
     doc += causes.join( "</li><li>" );
-    doc += QLatin1String( "</li></ul>" );
+    doc += QL1( "</li></ul>" );
   }
 
   if ( solutions.count() ) {
-    doc += QLatin1String( "<h3>" );
+    doc += QL1( "<h3>" );
     doc += i18n( "Possible Solutions:" );
-    doc += QLatin1String( "</h3><ul><li>" );
+    doc += QL1( "</h3><ul><li>" );
     doc += solutions.join( "</li><li>" );
-    doc += QLatin1String( "</li></ul>" );
+    doc += QL1( "</li></ul>" );
   }
 
-  html.replace( QLatin1String("TEXT"), doc );
+  html.replace( QL1("TEXT"), doc );
 
   return html;
 }
@@ -204,6 +208,10 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
             this, SLOT(loadFinished(bool)));
     connect(d->webView, SIGNAL(urlChanged(const QUrl &)),
             this, SLOT(urlChanged(const QUrl &)));
+#if 0
+    connect(d->webView, SIGNAL(statusBarMessage(const QString&)),
+            this, SIGNAL(setStatusBarText(const QString &)));
+#endif
 
     WebPage* webPage = qobject_cast<WebPage*>(d->webView->page());
     Q_ASSERT(webPage);
@@ -217,15 +225,17 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
     connect(webPage, SIGNAL(loadError(int, const QString &)),
             this, SLOT(loadError(int, const QString &)));
     connect(webPage, SIGNAL(linkHovered(const QString &, const QString &, const QString &)),
-            this, SIGNAL(setStatusBarText(const QString &)));
+            this, SLOT(linkHovered(const QString &, const QString&, const QString &)));
+
+    connect(d->webView, SIGNAL(saveUrl(const KUrl &)),
+            webPage, SLOT(saveUrl(const KUrl &)));
 
     d->browserExtension = new WebKitBrowserExtension(this);
     connect(webPage, SIGNAL(loadProgress(int)),
             d->browserExtension, SIGNAL(loadingProgress(int)));
 
-    initAction();
-
     setXMLFile("webkitpart.rc");
+    initAction();
 }
 
 WebKitPart::~WebKitPart()
@@ -260,6 +270,7 @@ void WebKitPart::initAction()
     actionCollection()->addAction("zoomNormal", action);
     action->setShortcut(KShortcut("CTRL+0"));
     connect(action, SIGNAL(triggered(bool)), d->browserExtension, SLOT(zoomNormal()));
+
 #if QT_VERSION >= 0x040500
     action = new KAction(i18n("Zoom Text Only"), this);
     action->setCheckable(true);
@@ -269,6 +280,7 @@ void WebKitPart::initAction()
     actionCollection()->addAction("zoomTextOnly", action);
     connect(action, SIGNAL(triggered(bool)), d->browserExtension, SLOT(toogleZoomTextOnly()));
 #endif
+
     action = actionCollection()->addAction(KStandardAction::SelectAll, "selectAll",
                                            d->browserExtension, SLOT(slotSelectAll()));
     action->setShortcutContext(Qt::WidgetShortcut);
@@ -297,6 +309,10 @@ void WebKitPart::guiActivateEvent(KParts::GUIActivateEvent *event)
 bool WebKitPart::openUrl(const KUrl &url)
 {
     kDebug() << url;
+
+   // Ignore empty requests...
+   if (url.isEmpty())
+      return false;
 
     if ( url.protocol() == "error" && url.hasSubUrl() ) {
         closeUrl();
@@ -339,10 +355,14 @@ bool WebKitPart::openUrl(const KUrl &url)
         }
     }
 
-    // Do not update history when user types in the url...
-    d->updateHistory = false;
-    setUrl(url);
-    d->webView->loadUrl(url, arguments(), browserExtension()->browserArguments());
+    if (url.url() == "about:blank") {
+        setWindowTitle (url.url());
+    } else {
+        setUrl(url);
+        d->updateHistory = false;  // Do not update history when url is typed in since konqueror automatically does this itself!
+        d->webView->loadUrl(url, arguments(), browserExtension()->browserArguments());
+    }
+
     return true;
 }
 
@@ -373,25 +393,29 @@ void WebKitPart::loadFinished(bool ok)
     d->updateHistory = true;
 
     if (ok && d->webView->title().trimmed().isEmpty()) {
-          // If the document title is null, then set it to the current
-          // url squeezed at the center...
-
+        // If the document title is null, then set it to the current url
+        // squeezed at the center.
         QString caption (d->webView->url().toString((QUrl::RemoveQuery|QUrl::RemoveFragment)));
         emit setWindowCaption(KStringHandler::csqueeze(caption));
 
-        // QtWebKit only emits urlChanged if the page received contains a <title> tag!!!
-        // So if the link points to a text document which it will happily render you are
-        // screwed because there will be no <title>.
+        // The urlChanged signal is emitted if and only if the main frame
+        // receives the title of the page so we manually invoke the slot as
+        // a work around here for pages that do not contain it, such as
+        // text documents...
         urlChanged(d->webView->url());
     }
 
-    // NOTE #1: QtWebKit will not kill a META redirect request even if one triggers
-    // the WebPage::Stop action!! As such the code below is disabled for now...
+    /*
+      NOTE #1: QtWebKit will not kill a META redirect request even if one
+      triggers the WebPage::Stop action!! As such the code below is useless
+      and disabled for now.
 
-    // NOTE #2: QWebFrame::metaData only provides access to META tags that contain a
-    // 'name' attribute and completely ignores those that do not such as the one used
-    // to do HTML based delayed redirection, i.e. the 'http-equiv' attribute.
-    // Hence the convoluted code below!! *sigh*
+      NOTE #2: QWebFrame::metaData only provides access to META tags that
+      contain a 'name' attribute and completely ignores those that do not.
+      This of course includes yes the meta redirect tag, i.e. the 'http-equiv'
+      attribute. Hence the convoluted code below just to check if we have a
+      redirect request!
+    */
 #if 0
     bool refresh = false;
     QMapIterator<QString,QString> it (d->webView->page()->mainFrame()->metaData());
@@ -422,7 +446,6 @@ void  WebKitPart::loadMainPageFinished()
 
 void WebKitPart::loadAborted(const QUrl & url)
 {  
-    //canceled(QString());
     closeUrl();
     if (url.isValid())
       emit d->browserExtension->openUrlRequest(url);
@@ -435,22 +458,39 @@ void WebKitPart::loadError(int errCode, const QString &errStr)
     showError(htmlError(errCode, errStr, url()));
 }
 
-void WebKitPart::urlChanged(const QUrl& url)
+void WebKitPart::urlChanged(const QUrl& _url)
 {
-    kDebug() << url;
-    setUrl(url);
-    emit d->browserExtension->setLocationBarUrl(KUrl(url).prettyUrl());
+    QUrl currentUrl (url());
+    if ((_url.toString(QUrl::RemoveFragment) == currentUrl.toString(QUrl::RemoveFragment)) &&
+        (_url.fragment() != currentUrl.fragment()))
+        updateHistory(true);
+
+    setUrl(_url);
+    emit d->browserExtension->setLocationBarUrl(KUrl(_url).prettyUrl());
 }
 
 void WebKitPart::showSecurity()
 {
-    KSslInfoDialog* dlg = qobject_cast<WebPage*>(d->webView->page())->sslDialog();
-    
-    if (dlg) {
+    WebPage* page = qobject_cast<WebPage*>(d->webView->page());
+    if (page->isSecurePage()) {
+        KSslInfoDialog *dlg = new KSslInfoDialog(0);
+        page->setupSslDialog(*dlg);
         dlg->exec();
     } else {
         KMessageBox::information(0, i18n("The SSL information for this site "
                                          "appears to be corrupt."), i18n("SSL"));
+    }
+}
+
+void WebKitPart::updateHistory(bool enable)
+{
+    // Send a history update request to Konqueror whenever QtWebKit requests
+    // the clearing of the Window title which indicates content change...
+    kDebug() <<  "update history ? "<< d->updateHistory;
+
+    if (d->updateHistory) {
+        emit d->browserExtension->openUrlNotify();
+        d->updateHistory = enable;
     }
 }
 
@@ -461,6 +501,52 @@ WebView * WebKitPart::view()
 
 void WebKitPart::setStatusBarTextProxy(const QString &message)
 {
+    //kDebug() << message;
+    emit setStatusBarText(message);
+}
+
+void WebKitPart::linkHovered(const QString &link, const QString &, const QString &)
+{
+    QString message;
+    QUrl linkUrl (link);
+    const QString scheme = linkUrl.scheme();
+
+    if (QString::compare(scheme, QL1("mailto"), Qt::CaseInsensitive) == 0) {
+        message += i18n("Email: ");
+
+        // Workaround: QUrl's parsing deficiencies "mailto:foo@bar.com".
+        if (!linkUrl.hasQuery())
+          linkUrl = QUrl(scheme + '?' + linkUrl.path());
+
+        QMap<QString, QStringList> fields;
+        QPair<QString, QString> queryItem;
+
+        Q_FOREACH (queryItem, linkUrl.queryItems()) {
+            //kDebug() << "query: " << queryItem.first << queryItem.second;
+            if (queryItem.first.contains(QChar('@')) && queryItem.second.isEmpty())
+                fields["to"] << queryItem.first;
+            if (QString::compare(queryItem.first, QL1("to"), Qt::CaseInsensitive) == 0)
+                fields["to"] << queryItem.second;
+            if (QString::compare(queryItem.first, QL1("cc"), Qt::CaseInsensitive) == 0)
+                fields["cc"] << queryItem.second;
+            if (QString::compare(queryItem.first, QL1("bcc"), Qt::CaseInsensitive) == 0)
+                fields["bcc"] << queryItem.second;
+            if (QString::compare(queryItem.first, QL1("subject"), Qt::CaseInsensitive) == 0)
+                fields["subject"] << queryItem.second;
+        }
+
+        if (fields.contains(QL1("to")))
+            message += fields.value(QL1("to")).join(QL1(", "));
+        if (fields.contains(QL1("cc")))
+            message += QL1(" - CC: ") + fields.value(QL1("cc")).join(QL1(", "));
+        if (fields.contains(QL1("bcc")))
+            message += QL1(" - BCC: ") + fields.value(QL1("bcc")).join(QL1(", "));
+        if (fields.contains(QL1("subject")))
+            message += QL1(" - Subject: ") + fields.value(QL1("subject")).join(QL1(" "));
+    } else {
+        message = link;
+    }
+
     emit setStatusBarText(message);
 }
 
@@ -473,16 +559,8 @@ void WebKitPart::showError(const QString& html)
 
 void WebKitPart::setWindowTitle(const QString &title)
 {
-    if (title.isEmpty()) {
-        // Send a history update request to Konqueror whenever QtWebKit requests
-        // the clearing of the Window title which indicates content change...
-        kDebug() <<  "update history ? "<< d->updateHistory;
-
-        if (d->updateHistory) {
-            emit d->browserExtension->openUrlNotify();
-            d->updateHistory = false;
-        }
-    }
+    if (title.isEmpty())
+      updateHistory();
 
     emit setWindowCaption(title);
 }
@@ -733,7 +811,7 @@ void WebKitBrowserExtension::slotViewDocumentSource()
     }
 #endif
 
-    KRun::runUrl(currentUrl, QLatin1String("text/plain"), part->view(), isTempFile);
+    KRun::runUrl(currentUrl, QL1("text/plain"), part->view(), isTempFile);
 }
 
 #include "webkitpart.moc"

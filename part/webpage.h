@@ -3,6 +3,7 @@
  *
  * Copyright (C) 2008 Dirk Mueller <mueller@kde.org>
  * Copyright (C) 2008 Urs Wolfer <uwolfer @ kde.org>
+ * Copyright (C) 2009 Dawit Alemayehu <adawit@kde.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -39,21 +40,27 @@ public:
     WebPage(WebKitPart *wpart, QWidget *parent);
     ~WebPage();
 
-    void saveUrl(const KUrl &url);
-    KSslInfoDialog *sslDialog() const;
     bool isSecurePage() const;
+    void setupSslDialog(KSslInfoDialog &dlg) const;
 
 Q_SIGNALS:
+    void updateHistory();
     void loadMainPageFinished();
     void loadStarted(const QUrl& url);    
     void loadAborted(const QUrl& newUrl);
     void loadError(int, const QString&);
+
+public Q_SLOTS:
+    void saveUrl(const KUrl &url);
 
 protected:
     virtual bool acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request,
                                          NavigationType type);
 
     virtual KWebPage *newWindow(WebWindowType type);
+
+    virtual bool authorizedRequest(const QNetworkRequest &req, NavigationType type) const;
+    virtual bool checkFormData(const QNetworkRequest &req) const;
 
 protected Q_SLOTS:
     void slotGeometryChangeRequested(const QRect &rect);

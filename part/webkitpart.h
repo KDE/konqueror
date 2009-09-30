@@ -3,6 +3,7 @@
  *
  * Copyright (C) 2007 Trolltech ASA
  * Copyright (C) 2008 Urs Wolfer <uwolfer @ kde.org>
+ * Copyright (C) 2009 Dawit Alemayehu <adawit@kde.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -53,6 +54,7 @@ protected:
     void guiActivateEvent(KParts::GUIActivateEvent *);
     virtual bool openFile();
     void initAction();
+    void updateHistory(bool enable = false);
     void showError(const QString &);
     void setSslInfo(const QVariant &);
 
@@ -63,6 +65,8 @@ private Q_SLOTS:
     void loadMainPageFinished();
     void loadAborted(const QUrl &);
     void loadError(int, const QString &);
+    void linkHovered(const QString &, const QString&, const QString &);
+
     void urlChanged(const QUrl &);
     void setWindowTitle(const QString &);
 

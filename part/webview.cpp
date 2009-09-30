@@ -4,6 +4,7 @@
  * Copyright (C) 2007 Trolltech ASA
  * Copyright (C) 2008 Urs Wolfer <uwolfer @ kde.org>
  * Copyright (C) 2008 Laurent Montel <montel@kde.org>
+ * Copyright (C) 2009 Dawit Alemayehu <adawit@kde.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -339,4 +340,3 @@ void WebView::openSelection()
 
     emit d->part->browserExtension()->openUrlRequest(d->selectedTextAsOneLine(), KParts::OpenUrlArguments(), browserArgs);
 }
-
