@@ -74,9 +74,6 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
   m_pActiveChild = 0L;
   m_pViewManager = viewManager;
 
-  connect( this, SIGNAL( currentChanged ( int ) ),
-           this, SLOT( slotCurrentChanged( int ) ) );
-
   m_MouseMiddleClickClosesTab = KonqSettings::mouseMiddleClickClosesTab();
 
   m_permanentCloseButtons = KonqSettings::permanentCloseButton();
@@ -234,6 +231,15 @@ void KonqFrameTabs::insertChildFrame( KonqFrameBase* frame, int index )
 
     // note that this can call slotCurrentChanged (e.g. when inserting/replacing the first tab)
     insertTab(index, frame->asQWidget(), "");
+
+    // Connect to currentChanged only after inserting the first tab,
+    // otherwise insertTab() can call slotCurrentChanged, which we don't expect
+    // (the part isn't in the partmanager yet; better let konqviewmanager take care
+    // of setting the active part)
+    disconnect(this, SIGNAL(currentChanged(int)),
+            this, SLOT(slotCurrentChanged(int)));
+    connect(this, SIGNAL(currentChanged(int)),
+            this, SLOT(slotCurrentChanged(int))); // TODO Qt >= 4.6: Qt::UniqueConnection
 
     if (m_rightWidget) {
       m_rightWidget->setEnabled( m_childFrameList.count() > 1 );
