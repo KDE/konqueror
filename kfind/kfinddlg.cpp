@@ -99,7 +99,10 @@ KfindDlg::KfindDlg(const KUrl & url, QWidget *parent)
 
 KfindDlg::~KfindDlg()
 {
-   stopSearch();
+  stopSearch();
+   
+  if (dirwatch)
+    delete dirwatch;
 }
 
 void KfindDlg::finishAndClose()

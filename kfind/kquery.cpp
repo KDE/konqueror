@@ -163,8 +163,8 @@ void KQuery::checkEntries()
       
   m_insideCheckEntries=true;
   
-  metaKeyRx=new QRegExp(m_metainfokey);
-  metaKeyRx->setPatternSyntax( QRegExp::Wildcard );
+  metaKeyRx = QRegExp(m_metainfokey);
+  metaKeyRx.setPatternSyntax( QRegExp::Wildcard );
   
   m_foundFilesList.clear();
 
@@ -192,8 +192,6 @@ void KQuery::checkEntries()
   if( m_foundFilesList.size() > 0 )
     emit foundFileList( m_foundFilesList );
   
-  delete metaKeyRx;
-  
   if (job==0)
     emit result(m_result);
       
@@ -203,8 +201,8 @@ void KQuery::checkEntries()
 /* List of files found using slocate */
 void KQuery::slotListEntries( QStringList list )
 {
-  metaKeyRx=new QRegExp(m_metainfokey);
-  metaKeyRx->setPatternSyntax( QRegExp::Wildcard );
+  metaKeyRx = QRegExp(m_metainfokey);
+  metaKeyRx.setPatternSyntax( QRegExp::Wildcard );
 
   QStringList::const_iterator it = list.constBegin();
   QStringList::const_iterator end = list.constEnd();
@@ -216,7 +214,6 @@ void KQuery::slotListEntries( QStringList list )
   if( m_foundFilesList.size() > 0 )
     emit foundFileList( m_foundFilesList );
       
-  delete metaKeyRx;
 }
 
 /* Check if file meets the find's requirements*/
@@ -328,7 +325,7 @@ void KQuery::processQuery( const KFileItem &file)
       metakeys = metadatas.supportedKeys();
       for (QStringList::const_iterator it = metakeys.constBegin(); it != metakeys.constEnd(); ++it )
       {
-        if (!metaKeyRx->exactMatch(*it))
+        if (!metaKeyRx.exactMatch(*it))
           continue;
         strmetakeycontent=metadatas.item(*it).value().toString();
         if(strmetakeycontent.indexOf(m_metainfo)!=-1)

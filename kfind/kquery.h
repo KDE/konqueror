@@ -116,7 +116,7 @@ class KQuery : public QObject
   KIO::ListJob *job;
   bool m_insideCheckEntries;
   QQueue<KFileItem> m_fileItems;
-  QRegExp* metaKeyRx;
+  QRegExp metaKeyRx;
   int m_result;
   QStringList ignore_mimetypes;
   QStringList ooo_mimetypes;     // OpenOffice.org mimetypes
