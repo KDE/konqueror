@@ -114,6 +114,8 @@ public:
      */
     QAbstractItemView *view() const;
 
+    using KLineEdit::setVisible;
+
 public Q_SLOTS:
     /**
      * Updates search to only make visible the items that match \a s.  If

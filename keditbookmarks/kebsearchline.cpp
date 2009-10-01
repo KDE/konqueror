@@ -616,7 +616,7 @@ bool KViewSearchLine::checkItemParentsVisible(QModelIndex index)
     for(int i = 0; i<rowCount; ++i)
     {
         index = model()->index(i, column, index.parent());
-        if(model()->rowCount(index) && checkItemParentsVisible(index.child(0,column))
+        if((model()->rowCount(index) && checkItemParentsVisible(index.child(0,column)))
            || itemMatches(index, d->search))
         {
             visible = true;
