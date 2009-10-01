@@ -548,7 +548,8 @@ KEBMacroCommand* CmdGen::insertMimeSource(const QString &cmdName, const QMimeDat
 {
     KEBMacroCommand *mcmd = new KEBMacroCommand(cmdName);
     QString currentAddress = addr;
-    KBookmark::List bookmarks = KBookmark::List::fromMimeData(data);
+    QDomDocument doc;
+    const KBookmark::List bookmarks = KBookmark::List::fromMimeData(data, doc);
     KBookmark::List::const_iterator it, end;
     end = bookmarks.constEnd();
 
@@ -590,7 +591,7 @@ KEBMacroCommand* CmdGen::itemsMoved(const QList<KBookmark> & items,
 
         } else /* if (move) */ {
             QString oldAddress = (*it).address();
-            if (bkInsertAddr.startsWith(oldAddress)) 
+            if (bkInsertAddr.startsWith(oldAddress))
                 continue; // trying to insert a parent into one of its children, ignore :)
 
             MoveCommand *cmd = new MoveCommand(oldAddress, bkInsertAddr,

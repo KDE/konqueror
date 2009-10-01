@@ -84,7 +84,9 @@ public:
    CreateCommand(const QString &address,
                  const KBookmark &original, const QString &name = QString())
       : K3Command(), m_to(address), m_group(false), m_separator(false),
-        m_open(false), m_originalBookmark(original), m_mytext(name)
+        m_open(false), m_originalBookmark(original),
+        m_originalBookmarkDocRef(m_originalBookmark.internalElement().ownerDocument()),
+        m_mytext(name)
    {}
 
    QString finalAddress() const;
@@ -103,6 +105,7 @@ private:
    bool m_separator:1;
    bool m_open:1;
    KBookmark m_originalBookmark;
+   QDomDocument m_originalBookmarkDocRef; // so that it lives at least as long as m_originalBookmark
    QString m_mytext;
 };
 

@@ -43,7 +43,7 @@ public:
     ~Private()
     {
         delete mRootItem;
-        
+
         //TESTING
         mRootItem = 0;
     }
@@ -299,7 +299,7 @@ bool KBookmarkModel::dropMimeData(const QMimeData * data, Qt::DropAction action,
     QString addr = bk.address();
     if(bk.isGroup())
         addr += "/0";
-        
+
     if(action == Qt::CopyAction)
     {
         KEBMacroCommand * cmd = CmdGen::insertMimeSource("Copy", data, addr);
@@ -307,9 +307,9 @@ bool KBookmarkModel::dropMimeData(const QMimeData * data, Qt::DropAction action,
     }
     else if(action == Qt::MoveAction)
     {
-        KBookmark::List bookmarks;
         if(data->hasFormat("application/x-keditbookmarks"))
         {
+            KBookmark::List bookmarks;
             QList<QByteArray> addresses = data->data("application/x-keditbookmarks").split(';');
             QList<QByteArray>::const_iterator it, end;
             end = addresses.constEnd();
@@ -321,12 +321,11 @@ bool KBookmarkModel::dropMimeData(const QMimeData * data, Qt::DropAction action,
             }
 
             KEBMacroCommand * cmd = CmdGen::itemsMoved(bookmarks, addr, false);
-            CmdHistory::self()->didCommand(cmd);            
+            CmdHistory::self()->didCommand(cmd);
         }
         else
         {
             kDebug()<<"NO FORMAT";
-            bookmarks = KBookmark::List::fromMimeData(data);
             KEBMacroCommand * cmd = CmdGen::insertMimeSource("Copy", data, addr);
             CmdHistory::self()->didCommand(cmd);
         }
