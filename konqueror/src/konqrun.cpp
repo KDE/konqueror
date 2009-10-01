@@ -73,9 +73,8 @@ void KonqRun::foundMimeType(const QString & _type)
 
     // Check if the main window wasn't deleted meanwhile
     if (!m_pMainWindow) {
-        setFinished(true);
         setError(true);
-        timer().start(0);
+        setFinished(true);
         return;
     }
 
@@ -128,14 +127,10 @@ void KonqRun::foundMimeType(const QString & _type)
         }
     }
 
-    if (hasFinished()) {
-        m_pMainWindow = 0L;
-        timer().start(0);
-        return;
+    if (!hasFinished()) {
+        kDebug() << "Nothing special to do in KonqRun, falling back to KRun";
+        KRun::foundMimeType(mimeType);
     }
-
-    kDebug() << "Nothing special to do in KonqRun, falling back to KRun";
-    KRun::foundMimeType(mimeType);
 }
 
 bool KonqRun::tryOpenView(const QString& mimeType, bool associatedAppIsKonqueror)
@@ -157,11 +152,6 @@ bool KonqRun::tryOpenView(const QString& mimeType, bool associatedAppIsKonqueror
 
     const bool ok = m_pMainWindow->openView(mimeType, KRun::url(), m_pView, m_req);
     setFinished(ok);
-
-    if (ok) {
-        m_pMainWindow = 0;
-        timer().start(0);
-    }
     return ok;
 }
 
