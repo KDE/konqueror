@@ -3,6 +3,7 @@
  *
  * Copyright (C) 2008 Michael Howell <mhowell123@gmail.com>
  * Copyright (C) 2008 Urs Wolfer <uwolfer @ kde.org>
+ * Copyright (C) 2009 Dawit Alemayehu <adawit @ kde.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -24,34 +25,32 @@
 #include "kwebpluginfactory.h"
 #include "kwebpage.h"
 
+#include <kparts/part.h>
+#include <kmimetypetrader.h>
+#include <kservicetypetrader.h>
+#include <kmimetype.h>
+#include <kdebug.h>
+
 #include <QWebPluginFactory>
 #include <QWebView>
+#include <QWebFrame>
 #include <QStringList>
+#include <QList>
+#include <QListIterator>
 
-#include <KParts/ReadOnlyPart>
-#include <KMimeTypeTrader>
-#include <KServiceTypeTrader>
-#include <KMimeType>
-#include <KDebug>
+#define QL1(x)  QLatin1String(x)
+
 
 class KWebPluginFactory::KWebPluginFactoryPrivate
 {
 public:
-    KWebPluginFactoryPrivate(QWebPluginFactory *del) : delegate(del) {}
-
+    QStringList supportedMimeTypes;
     QList<KWebPluginFactory::Plugin> plugins;
-    QWebPluginFactory *delegate;
 };
 
 KWebPluginFactory::KWebPluginFactory(QObject *parent)
                   :QWebPluginFactory(parent),
-                   d(new KWebPluginFactory::KWebPluginFactoryPrivate(0))
-{
-}
-
-KWebPluginFactory::KWebPluginFactory(QWebPluginFactory *delegate, QObject *parent)
-                  :QWebPluginFactory(parent),
-                   d(new KWebPluginFactory::KWebPluginFactoryPrivate(delegate))
+                   d(new KWebPluginFactory::KWebPluginFactoryPrivate)
 {
 }
 
@@ -60,59 +59,83 @@ KWebPluginFactory::~KWebPluginFactory()
   delete d;
 }
 
-QObject* KWebPluginFactory::create(const QString& mimeType, const QUrl& url, const QStringList& argumentNames, const QStringList& argumentValues) const
+QObject* KWebPluginFactory::create(const QString& _mimeType, const QUrl& url, const QStringList& argumentNames, const QStringList& argumentValues) const
 {
-    if (d->delegate) {
-        QObject* q = d->delegate->create(mimeType, url, argumentNames, argumentValues);
-        if (q) return q;
+    QString mimeType (_mimeType.trimmed());
+
+    /*
+       HACK: This is a big time hack to determine the mime-type from the url
+       when no mime-type is provided. Since we do not want to make async calls,
+       here, i.e. use apis like KIO::mimeType, we resort a the hack below
+       to determine the requests mime-type from the filename.
+
+       NOTE: this hack is not full proof and is not guranteed to always work.
+       See the KMimeType::findByPath docs for details. It is however the best
+       option to properly handle documents, images, and other resources embedded
+       into html content with the <embed> tag without the "type" attribute, e.g.
+
+       <embed
+
+       http://blogs.adobe.com/pdfdevjunkie/2007/08/using_the_html_embed_tag_to_di.html
+    */
+    if (mimeType.isEmpty()) {
+       KMimeType::Ptr ptr = KMimeType::findByPath(url.path());
+       mimeType = ptr->name();
+       kDebug() << "Changed mimetype from " << _mimeType << " to " << mimeType;
     }
 
-    QVariantList arguments;
-    const int count = argumentNames.count();
+    KParts::ReadOnlyPart* part = 0;
 
-    for(int i = 0; i < count; ++i) {
-        arguments << argumentNames.at(i) + "=\"" + argumentValues.at(i) + '\"';
-        ++i;
-    }
-//     arguments << "__KHTML__PLUGINEMBED=\"YES\""; //### following arguments are also set by khtml
-//     arguments << "__KHTML__PLUGINBASEURL=\"" + url.scheme() + "://" + url.host() + "/\"";
-//     arguments << "Browser/View";
+    // Only attempt to find a KPart for the supported mime types...
+    if (d->supportedMimeTypes.contains(mimeType)) {
 
-    KParts::ReadOnlyPart* part = KMimeTypeTrader::createPartInstanceFromQuery<KParts::ReadOnlyPart>(mimeType, qobject_cast<KWebPage*>(parent())->view(), parent(), QString(), arguments);
-    if (part) {
+        QVariantList arguments;
+        const int count = argumentNames.count();
 
-#if 0
-        QMap<QString, QString> metaData = part->arguments().metaData();
-        metaData.insert("PropagateHttpHeader", "true");
-        metaData.insert("cross-domain", url.scheme() + "://" + url.host() + "/");
-        metaData.insert("main_frame_request", "TRUE");
+        for(int i = 0; i < count; ++i) {
+            arguments << argumentNames.at(i) + "=\"" + argumentValues.at(i) + '\"';
+            ++i;
+        }
 
-        metaData.insert("referrer", url.scheme() + "://" + url.host() + "/"); //### following metadata is also set by khtml
-        metaData.insert("ssl_activate_warnings", "TRUE");
-        metaData.insert("ssl_parent_cert", "");
-        metaData.insert("ssl_parent_ip", "");
-        metaData.insert("ssl_was_in_use", "FALSE");
-#endif
+        KWebPage *page = qobject_cast<KWebPage*>(parent());
+        QWidget *view = 0;
+        if (page)
+          view = page->view();
 
-        KParts::OpenUrlArguments openUrlArgs = part->arguments();
-//        openUrlArgs.metaData() = metaData;
-        openUrlArgs.setMimeType(mimeType);
-        part->setArguments(openUrlArgs);
-        kDebug() << part->arguments().metaData();
-        part->openUrl(url);
+        part = KMimeTypeTrader::createPartInstanceFromQuery<KParts::ReadOnlyPart>(mimeType, view, parent(), QString(), arguments);
+
+        if (part) {
+            QMap<QString, QString> metaData = part->arguments().metaData();
+            QString urlStr = url.toString(QUrl::RemovePath | QUrl::RemoveQuery | QUrl::RemoveFragment);
+            metaData.insert("PropagateHttpHeader", "true");
+            metaData.insert("referrer", urlStr);
+            metaData.insert("cross-domain", urlStr);
+            metaData.insert("main_frame_request", "TRUE");
+            metaData.insert("ssl_activate_warnings", "TRUE");
+
+            const QString scheme = page->mainFrame()->url().scheme();
+            if (page && (QString::compare(scheme, QL1("https"), Qt::CaseInsensitive) == 0 ||
+                         QString::compare(scheme, QL1("webdavs"), Qt::CaseInsensitive) == 0))
+              metaData.insert("ssl_was_in_use", "TRUE");
+            else
+              metaData.insert("ssl_was_in_use", "FALSE");
+
+            KParts::OpenUrlArguments openUrlArgs = part->arguments();
+            openUrlArgs.metaData() = metaData;
+            openUrlArgs.setMimeType(mimeType);
+            part->setArguments(openUrlArgs);
+
+            kDebug() << part->arguments().metaData();
+            part->openUrl(url);
+        }
     }
 
     kDebug() << "Asked for" << mimeType << "plugin, got" << part;
 
-    if (!part) {
-        kDebug() << "No plugins found for" << mimeType;
-        kDebug() << "Trying a QWebView (known work-around for QtWebKit's built-in flash support).";
-        QWebView* webView = new QWebView;
-        webView->load(url);
-        return webView;
-    }
+    if (part)
+      return part->widget();
 
-    return part->widget();
+    return part;
 }
 
 QList<KWebPluginFactory::Plugin> KWebPluginFactory::plugins() const
@@ -121,13 +144,16 @@ QList<KWebPluginFactory::Plugin> KWebPluginFactory::plugins() const
       return d->plugins;
 
     QList<Plugin> plugins;
-
-    if (d->delegate)
-      plugins = d->delegate->plugins();
-
+    QStringList supportedMimeTypes;
     KService::List services = KServiceTypeTrader::self()->query("KParts/ReadOnlyPart");
+
     for (int i = 0; i < services.size(); i++) {
         KService::Ptr s = services.at(i);
+        // The part that handles (nspluginpart) Adobe Flash is skipped because
+        // it does not work in webkitpart. Instead we defer then handling of
+        // flash content to QtWebKit's built-in flash viewer...
+        if (s->hasMimeType(KMimeType::mimeType("application/x-shockwave-flash").data()))
+          continue;
         Plugin plugin;
         plugin.name = s->desktopEntryName();
         plugin.description = s->comment();
@@ -141,11 +167,14 @@ QList<KWebPluginFactory::Plugin> KWebPluginFactory::plugins() const
                 mime.fileExtensions = kmime->patterns().replaceInStrings("*.", "");
             }
             mimes.append(mime);
+            supportedMimeTypes << mime.name;
         }
+        //kDebug() << "Adding plugin: " << s->desktopEntryName() << servicetypes;
         plugins.append(plugin);
     }
 
     d->plugins = plugins;
+    d->supportedMimeTypes = supportedMimeTypes;
 
     return plugins;
 }

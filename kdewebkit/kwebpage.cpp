@@ -23,28 +23,33 @@
  *
  */
 
+// Own
 #include "kwebpage.h"
-#include "kwebview.h"
 
+// Local
+#include "kwebview.h"
 #include "kwebpluginfactory.h"
 #include "settings/webkitsettings.h"
 
-#include <KDE/KParts/GenericFactory>
-#include <KDE/KParts/BrowserRun>
-#include <KDE/KAction>
-#include <KDE/KFileDialog>
-#include <KDE/KInputDialog>
-#include <KDE/KMessageBox>
-#include <KDE/KProtocolManager>
-#include <KDE/KJobUiDelegate>
-#include <KDE/KRun>
-#include <KDE/KShell>
-#include <KDE/KStandardDirs>
-#include <KDE/KStandardShortcut>
-#include <KIO/Job>
-#include <KDE/KUrl>
-#include <KIO/AccessManager>
+// KDE
+#include <kaction.h>
+#include <kfiledialog.h>
+#include <kinputdialog.h>
+#include <kmessagebox.h>
+#include <kprotocolmanager.h>
+#include <kjobuidelegate.h>
+#include <krun.h>
+#include <kshell.h>
+#include <kstandarddirs.h>
+#include <kstandardshortcut.h>
+#include <kurl.h>
+#include <kdebug.h>
+#include <klocalizedstring.h>
+#include <kparts/browserrun.h>
+#include <kio/accessmanager.h>
+#include <kio/job.h>
 
+// Qt
 #include <QtCore/QPair>
 #include <QtCore/QPointer>
 #include <QtGui/QTextDocument>
@@ -215,9 +220,7 @@ KWebPage::KWebPage(QObject *parent)
 
     d->accessManager->setCookieJar(cookiejar);
 
-    // TODO: Determine if and for what our own KParts implementation
-    // of QWebPluginFactory is necessary...
-    //setPluginFactory(new KWebPluginFactory(pluginFactory(), this));
+    setPluginFactory(new KWebPluginFactory(this));
 
     action(Back)->setIcon(KIcon("go-previous"));
     action(Back)->setShortcut(KStandardShortcut::back().primary());
