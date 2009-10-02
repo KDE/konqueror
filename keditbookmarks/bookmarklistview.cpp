@@ -43,6 +43,7 @@ BookmarkView::~BookmarkView()
 
 }
 
+
 /* ----------- */
 
 BookmarkFolderView::BookmarkFolderView( BookmarkListView * view, QWidget * parent )
@@ -53,6 +54,7 @@ BookmarkFolderView::BookmarkFolderView( BookmarkListView * view, QWidget * paren
     setModel(mmodel);
     header()->setVisible(false);
     setRootIsDecorated(false);
+    setDropIndicatorShown(true);
     expandAll();
     setCurrentIndex( mmodel->index(0,0, QModelIndex()));
     
@@ -87,7 +89,6 @@ KBookmark BookmarkFolderView::bookmarkForIndex(const QModelIndex & idx) const
     const QModelIndex & index = mmodel->mapToSource(idx);
     return static_cast<KBookmarkModel *>(mmodel->sourceModel())->bookmarkForIndex(index);
 }
-
 
 /********/
 
@@ -173,15 +174,32 @@ QStringList BookmarkFolderViewFilterModel::mimeTypes() const
 
 bool BookmarkFolderViewFilterModel::dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent)
 {
-    // FIXME Probably bug in QT, send bug report
-    kDebug()<<"BookmarkFolderViewFilterModel::dropMimeData"<<endl;
-    QModelIndex idx;
+    QModelIndex dropDestProxyIndex;
+    bool isInsertBetweenOp = false;
     if(row == -1)
-        idx = parent;
+    {
+        dropDestProxyIndex = parent;
+    }
     else
-        idx = index(row, column, parent);
-    QModelIndex src = mapToSource(idx);
-    return sourceModel()->dropMimeData( data, action, -1, -1, src);
+    {
+        dropDestProxyIndex = index(row, column, parent);
+        isInsertBetweenOp = true;
+    }
+    QModelIndex dropDestIndex = mapToSource(dropDestProxyIndex);
+    if (!isInsertBetweenOp)
+    {
+        // Just dropping it onto dropDestIndex - ignore row and column.
+        return sourceModel()->dropMimeData( data, action, -1, -1, dropDestIndex);
+    }
+    else
+    {
+        // Dropping before dropDestIndex.  We want to keep row and column
+        // relative to the parent.
+        // I'm reasonably certain the parent must be valid in this case.  If you get a crash here - nag me!
+        Q_ASSERT(parent.isValid());
+        QModelIndex dropDestParentIndex = mapToSource(parent);
+        return sourceModel()->dropMimeData( data, action, dropDestIndex.row(), dropDestIndex.column(), dropDestParentIndex);
+    }
 }
 
 BookmarkFolderViewFilterModel::~BookmarkFolderViewFilterModel()
