@@ -1179,6 +1179,7 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
         // Can we use the standard way (openUrl), or do we need the part pointer immediately?
         if (!part) {
             req.browserArgs.setNewTab(true);
+            req.forceAutoEmbed = true; // testcase: MMB on link-to-PDF, when pdf setting is "show file in external browser".
             req.newTabInFront = newtabsinfront;
             req.openAfterCurrentPage = aftercurrentpage;
             openUrl(0, url, args.mimeType(), req);
