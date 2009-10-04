@@ -480,7 +480,7 @@ bool WebPage::authorizedRequest(const QNetworkRequest &req, NavigationType type)
     switch (type) {
         case QWebPage::NavigationTypeLinkClicked:
             message = i18n("<qt>This untrusted page links to<br/><b>%1</b>."
-                           "<br/>Do you want to follow the link?</qt>").arg(linkUrl.url());
+                           "<br/>Do you want to follow the link?</qt>", linkUrl.url());
             title = i18n("Security Warning");
             buttonText = i18n("Follow");
             break;

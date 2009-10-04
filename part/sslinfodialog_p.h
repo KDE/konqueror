@@ -19,8 +19,8 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef _KSSLINFODIALOG_H
-#define _KSSLINFODIALOG_H
+#ifndef SSLINFODIALOG_P_H
+#define SSLINFODIALOG_P_H
 
 #include <kdemacros.h>
 
@@ -101,4 +101,4 @@ private:
     KSslInfoDialogPrivate* const d;
 };
 
-#endif
+#endif // SSLINFODIALOG_P_H

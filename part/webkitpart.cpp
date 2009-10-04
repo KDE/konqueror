@@ -473,7 +473,7 @@ void WebKitPart::showSecurity()
 {
     WebPage* page = qobject_cast<WebPage*>(d->webView->page());
     if (page->isSecurePage()) {
-        KSslInfoDialog *dlg = new KSslInfoDialog(0);
+        QPointer<KSslInfoDialog> dlg = new KSslInfoDialog(0);
         page->setupSslDialog(*dlg);
         dlg->exec();
     } else {

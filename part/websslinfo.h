@@ -19,8 +19,8 @@
  * Boston, MA 02110-1301, USA.
  *
  */
-#ifndef KWEBPAGESSLINFO_H
-#define KWEBPAGESSLINFO_H
+#ifndef WEBSSLINFO_H
+#define WEBSSLINFO_H
 
 #include <kdemacros.h>
 
@@ -68,4 +68,4 @@ private:
   WebSslInfoPrivate* d;
 };
 
-#endif 
+#endif // WEBSSLINFO_H

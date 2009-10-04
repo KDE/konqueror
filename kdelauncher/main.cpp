@@ -41,7 +41,6 @@
 #include <qwebelement.h>
 #endif
 
-#include <QtGui>
 #include <QDebug>
 #if QT_VERSION >= 0x040400 && !defined(QT_NO_PRINTER)
 #include <QPrintPreviewDialog>
@@ -49,10 +48,22 @@
 
 #include <QtUiTools/QUiLoader>
 
-#include <QVector>
-#include <QTextStream>
+#include <QAction>
+#include <QCompleter>
+#include <QDir>
 #include <QFile>
-#include <cstdio>
+#include <QInputDialog>
+#include <QLineEdit>
+#include <QMainWindow>
+#include <QMenu>
+#include <QMenuBar>
+#include <QProgressBar>
+#include <QStatusBar>
+#include <QStringListModel>
+#include <QTextStream>
+#include <QToolBar>
+#include <QToolTip>
+#include <QVector>
 
 class WebPage : public KWebPage
 {
