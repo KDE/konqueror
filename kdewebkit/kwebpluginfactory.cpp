@@ -72,9 +72,8 @@ QObject* KWebPluginFactory::create(const QString& _mimeType, const QUrl& url, co
        NOTE: this hack is not full proof and is not guranteed to always work.
        See the KMimeType::findByPath docs for details. It is however the best
        option to properly handle documents, images, and other resources embedded
-       into html content with the <embed> tag without the "type" attribute, e.g.
-
-       <embed
+       into html content with the <embed> tag without the "type" attribute. Here
+       is an example of such a site:
 
        http://blogs.adobe.com/pdfdevjunkie/2007/08/using_the_html_embed_tag_to_di.html
     */
