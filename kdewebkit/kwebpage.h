@@ -33,12 +33,27 @@ class QUrl;
 class QWebFrame;
 class QNetworkReply;
 
+/**
+ * An enhanced QWebPage with integration into the KDE environment.
+ *
+ * @author Urs Wolfer <uwolfer @ kde.org>
+ * @since 4.4
+ */
+
 class KDE_EXPORT KWebPage : public QWebPage
 {
     Q_OBJECT
 public:
-    KWebPage(QObject *parent);
+    /**
+     * Constructs an empty KWebPage with parent @p parent.
+     */
+    explicit KWebPage(QObject *parent = 0);
+
+    /**
+     * Destroys the KWebPage.
+     */
     ~KWebPage();
+
     /**
      * Set @p allow to false if you don't want to allow showing external content,
      * so no external images for example. By default external content is fetched.
@@ -46,23 +61,62 @@ public:
     void setAllowExternalContent(bool allow);
 
     /**
-     * returns if external content is fetched, see setAllowExternalContent().
+     * Returns true if external content is fetched, @see setAllowExternalContent().
      */
     bool isExternalContentAllowed() const;
 
 protected:
+    /**
+     * Reimplemented for internal reasons, the API is not affected.
+     * @internal
+     */
     virtual KWebPage *createWindow(WebWindowType type);
+
     virtual KWebPage *newWindow(WebWindowType type);
+
+    /**
+     * Reimplemented for internal reasons, the API is not affected.
+     * @internal
+     */
     QString chooseFile(QWebFrame *frame, const QString &suggestedFile);
+
+    /**
+     * Reimplemented for internal reasons, the API is not affected.
+     * @internal
+     */
     void javaScriptAlert(QWebFrame *frame, const QString &msg);
+
+    /**
+     * Reimplemented for internal reasons, the API is not affected.
+     * @internal
+     */
     bool javaScriptConfirm(QWebFrame *frame, const QString &msg);
+
+    /**
+     * Reimplemented for internal reasons, the API is not affected.
+     * @internal
+     */
     bool javaScriptPrompt(QWebFrame *frame, const QString &msg, const QString &defaultValue, QString *result);
+
+    /**
+     * Reimplemented for internal reasons, the API is not affected.
+     * @internal
+     */
     QString userAgentForUrl(const QUrl& url) const;
 
     void setSessionMetaData(const QString& key, const QString& value);
     void setRequestMetaData(const QString& key, const QString& value);
 
+    /**
+     * Reimplemented for internal reasons, the API is not affected.
+     * @internal
+     */
     bool acceptNavigationRequest (QWebFrame * frame, const QNetworkRequest & request, NavigationType type);
+
+    /**
+     * Reimplemented for internal reasons, the API is not affected.
+     * @internal
+     */
     QObject *createPlugin(const QString &classId, const QUrl &url, const QStringList &paramNames, const QStringList &paramValues);
 
 protected Q_SLOTS:

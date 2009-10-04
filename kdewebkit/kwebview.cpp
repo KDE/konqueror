@@ -44,14 +44,12 @@ class KWebView::KWebViewPrivate
 {
 public:
     KWebViewPrivate()
-    : customContextMenu(false)
-    , keyboardModifiers(Qt::NoModifier)
+    : keyboardModifiers(Qt::NoModifier)
     , pressedButtons(Qt::NoButton)
     , searchBar(0)
     , page(0)
     {}
-    
-    bool customContextMenu;
+
     Qt::KeyboardModifiers keyboardModifiers;
     Qt::MouseButtons pressedButtons;
     KDEPrivate::SearchBar *searchBar;
@@ -67,20 +65,6 @@ KWebView::KWebView(QWidget *parent)
 KWebView::~KWebView()
 {
     delete d;
-}
-
-void KWebView::contextMenuEvent(QContextMenuEvent *event)
-{
-    if (!d->customContextMenu) {
-        QWebView::contextMenuEvent(event);
-    } else {
-        emit showContextMenu(event);
-    }
-}
-
-void KWebView::setCustomContextMenu(bool show)
-{
-    d->customContextMenu = show;
 }
 
 KWebPage *KWebView::page() const
@@ -224,4 +208,14 @@ void KWebView::loadUrl(const KUrl &url, const KParts::OpenUrlArguments &args, co
     } else {
         QWebView::load(req, QNetworkAccessManager::PostOperation, bargs.postData);
     }
+}
+
+void KWebView::setAllowExternalContent(bool allow)
+{
+    page()->setAllowExternalContent(allow);
+}
+
+bool KWebView::isExternalContentAllowed() const
+{
+    return page()->isExternalContentAllowed();
 }

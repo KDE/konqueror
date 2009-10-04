@@ -35,15 +35,29 @@ class QMouseEvent;
 class QWheelEvent;
 namespace KParts
 {
-class OpenUrlArguments;
-class BrowserArguments;
+    class OpenUrlArguments;
+    class BrowserArguments;
 }
+
+/**
+ * An enhanced QWebView with integration into the KDE environment.
+ *
+ * @author Urs Wolfer <uwolfer @ kde.org>
+ * @since 4.4
+ */
 
 class KDE_EXPORT KWebView : public QWebView
 {
     Q_OBJECT
 public:
+    /**
+     * Constructs an empty KWebView with parent @p parent.
+     */
     explicit KWebView(QWidget *parent = 0);
+
+    /**
+     * Destroys the KWebView.
+     */
     ~KWebView();
     /**
      * This method returns the current KWebPage, if there is none, one will be created.
@@ -58,16 +72,24 @@ public:
     void setPage(KWebPage *page);
     QWidget *searchBar();
 
-public Q_SLOTS:
-    void setCustomContextMenu(bool show);
+    /**
+     * Set @p allow to false if you don't want to allow showing external content,
+     * so no external images for example. By default external content is fetched.
+     */
+    void setAllowExternalContent(bool allow);
 
+    /**
+     * Returns true if external content is fetched, @see setAllowExternalContent().
+     */
+    bool isExternalContentAllowed() const;
+
+public Q_SLOTS:
     /**
      * similar to load(const QNetworkRequest&, QNetworkAccessManager::Operation), but for KParts-style arguments instead.
      */
     void loadUrl(const KUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &bargs);
 
 Q_SIGNALS:
-    void showContextMenu(QContextMenuEvent *event);
     void openUrl(const KUrl &url);
     void openUrlInNewTab(const KUrl &url);
     void saveUrl(const KUrl &url);
@@ -85,9 +107,23 @@ protected:
      * @see page()
      */
     virtual void setNewPage();
-    void contextMenuEvent(QContextMenuEvent *event);
+
+    /**
+     * Reimplemented for internal reasons, the API is not affected.
+     * @internal
+     */
     void wheelEvent(QWheelEvent *event);
+
+    /**
+     * Reimplemented for internal reasons, the API is not affected.
+     * @internal
+     */
     void mousePressEvent(QMouseEvent *event);
+
+    /**
+     * Reimplemented for internal reasons, the API is not affected.
+     * @internal
+     */
     void mouseReleaseEvent(QMouseEvent *event);
 
 protected Q_SLOTS:

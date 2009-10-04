@@ -30,16 +30,41 @@
 
 class QStringList;
 
+
+/**
+ * An enhanced QWebPluginFactory with integration into the KDE environment.
+ *
+ * @author Michael Howell <mhowell123@gmail.com>
+ * @since 4.4
+ */
+
 class KDE_EXPORT KWebPluginFactory : public QWebPluginFactory
 {
     Q_OBJECT
 public:
+    /**
+     * Constructs a KWebPluginFactory with parent @p parent.
+     */
     KWebPluginFactory(QObject *parent);
+
+    /**
+     * Destroys the KWebPage.
+     */
     ~KWebPluginFactory();
+
+    /**
+     * Reimplemented for internal reasons, the API is not affected.
+     * @internal
+     */
     virtual QObject *create(const QString &mimeType,
                             const QUrl &url,
                             const QStringList &argumentNames,
                             const QStringList &argumentValues) const;
+
+    /**
+     * Reimplemented for internal reasons, the API is not affected.
+     * @internal
+     */
     virtual QList<Plugin> plugins() const;
 
 private:
