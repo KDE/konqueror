@@ -22,7 +22,7 @@
 #ifndef KWEBPLUGINFACTORY_H
 #define KWEBPLUGINFACTORY_H
 
-#include <kdemacros.h>
+#include <kdewebkit_export.h>
 
 #include <QtWebKit/QWebPluginFactory>
 #include <QtCore/QList>
@@ -38,7 +38,7 @@ class QStringList;
  * @since 4.4
  */
 
-class KDE_EXPORT KWebPluginFactory : public QWebPluginFactory
+class KDEWEBKIT_EXPORT KWebPluginFactory : public QWebPluginFactory
 {
     Q_OBJECT
 public:

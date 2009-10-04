@@ -26,7 +26,7 @@ class KConfigGroup;
 #include <QtGui/QColor>
 #include <QtCore/QStringList>
 #include <QtCore/QPair>
-#include <kdemacros.h>
+#include <kdewebkit_export.h>
 
 struct KPerDomainSettings;
 class WebKitSettingsPrivate;
@@ -34,7 +34,7 @@ class WebKitSettingsPrivate;
 /**
  * Settings for the HTML view.
  */
-class KDE_EXPORT WebKitSettings
+class KDEWEBKIT_EXPORT WebKitSettings
 {
 public:
 

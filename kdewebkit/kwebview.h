@@ -25,7 +25,7 @@
 #ifndef KWEBVIEW_H
 #define KWEBVIEW_H
 
-#include <kdemacros.h>
+#include <kdewebkit_export.h>
 
 #include <QtWebKit/QWebView>
 #include "kwebpage.h"
@@ -46,7 +46,7 @@ namespace KParts
  * @since 4.4
  */
 
-class KDE_EXPORT KWebView : public QWebView
+class KDEWEBKIT_EXPORT KWebView : public QWebView
 {
     Q_OBJECT
 public:

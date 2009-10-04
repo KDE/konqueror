@@ -5,7 +5,7 @@ find_package(KDE4 REQUIRED)
 include(KDE4Defaults)
 include(MacroLibrary)
 
-include_directories(${KDE4_INCLUDES} ${CMAKE_SOURCE_DIR})
+include_directories(${KDE4_INCLUDES} ${CMAKE_SOURCE_DIR}/kdewebkit)
 add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 
 add_subdirectory(includes)
@@ -33,13 +33,16 @@ target_link_libraries(kdewebkit
     ${QT_QTXML_LIBRARY}
 )
 
-#set_target_properties(kdewebkit PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION})
+#set_target_properties(kdewebkit PROPERTIES VERSION ${KDE_NON_GENERIC_LIB_VERSION} SOVERSION ${KDE_NON_GENERIC_LIB_SOVERSION}) ### for kdelibs
 set_target_properties(kdewebkit PROPERTIES VERSION 1.0.0 SOVERSION 1) # for the moment keep something low...
 
+#install(TARGETS kdewebkit EXPORT kdelibsLibraryTargets ${INSTALL_TARGETS_DEFAULT_ARGS}) ### for kdelibs
 install(TARGETS kdewebkit ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES
+    kdewebkit_export.h
     kwebpage.h
     kwebview.h
     kwebpluginfactory.h
     DESTINATION ${INCLUDE_INSTALL_DIR}/kdewebkit/ COMPONENT Devel)
+#     DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel) ### for kdelibs

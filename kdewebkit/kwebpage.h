@@ -25,7 +25,7 @@
 #ifndef KWEBPAGE_H
 #define KWEBPAGE_H
 
-#include <kdemacros.h>
+#include <kdewebkit_export.h>
 
 #include <QtWebKit/QWebPage>
 
@@ -40,7 +40,7 @@ class QNetworkReply;
  * @since 4.4
  */
 
-class KDE_EXPORT KWebPage : public QWebPage
+class KDEWEBKIT_EXPORT KWebPage : public QWebPage
 {
     Q_OBJECT
 public:
