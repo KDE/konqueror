@@ -51,6 +51,8 @@
 #include "kcookiesmain.h"
 #include "kcookiespolicies.h"
 
+QString tolerantFromAce(const QByteArray& _domain);
+
 struct CookieProp
 {
     QString host;
@@ -88,9 +90,9 @@ void CookieListViewItem::init( CookieProp* cookie, const QString &domain,
     mCookiesLoaded = cookieLoaded;
 
     if (mCookie)
-        setText(1, KUrl::fromAce(mCookie->host.toLatin1()));
+        setText(1, tolerantFromAce(mCookie->host.toLatin1()));
     else
-        setText(0, KUrl::fromAce(mDomain.toLatin1()));
+        setText(0, tolerantFromAce(mDomain.toLatin1()));
 }
 
 CookieProp* CookieListViewItem::leaveCookie()

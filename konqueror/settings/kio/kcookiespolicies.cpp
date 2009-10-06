@@ -48,7 +48,7 @@
 
 // QUrl::fromAce/toAce don't accept a domain that starts with a '.', like we do here.
 // So we use these wrappers.
-static QString tolerantFromAce(const QByteArray& _domain)
+QString tolerantFromAce(const QByteArray& _domain)
 {
     QByteArray domain(_domain);
     const bool hasDot = domain.startsWith('.');
