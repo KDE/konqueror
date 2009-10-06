@@ -86,7 +86,7 @@ extern "C"
     KDE_EXPORT void kcminit_nsplugin()
     {
         KConfigGroup config(KSharedConfig::openConfig( "kcmnspluginrc", KConfig::NoGlobals ), "Misc");
-        if( true ) // I don't think this needs to be configurable now
+        if( config.readEntry( "StartupCheck", true ))
         {
             bool update = false;
             QStringList searchPaths = getSearchPaths();
