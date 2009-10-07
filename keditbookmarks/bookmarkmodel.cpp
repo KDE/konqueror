@@ -78,7 +78,7 @@ QVariant KBookmarkModel::data(const QModelIndex &index, int role) const
     //Text
     if(index.isValid() && (role == Qt::DisplayRole || role == Qt::EditRole))
     {
-        KBookmark bk = bookmarkForIndex(index);
+        const KBookmark bk = bookmarkForIndex(index);
         if(bk.address().isEmpty())
         {
             if(index.column() == 0)
@@ -100,12 +100,12 @@ QVariant KBookmarkModel::data(const QModelIndex &index, int role) const
                     : subnode.firstChild().toText().data();
             }
             case 3: { //Status column
-                QString text1 = ""; //FIXME favicon state
-                QString text2 = ""; //FIXME link state
-                if(text1.isNull() || text2.isNull())
-                    return QVariant( text1 + text2);
+                QString text1; //FIXME favicon state
+                QString text2; //FIXME link state
+                if(text1.isEmpty() || text2.isEmpty())
+                    return QVariant( text1 + text2 );
                 else
-                    return QVariant( text1 + "  --  " + text2);
+                    return QVariant( text1 + "  --  " + text2 );
             }
             default:
                 return QVariant( QString() ); //can't happen
@@ -141,12 +141,14 @@ Qt::ItemFlags KBookmarkModel::flags(const QModelIndex &index) const
                 return Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsEditable | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled;
         }
         else
+        {
             if(index.column() < 3)
                 return Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsEditable | Qt::ItemIsDragEnabled;
+        }
     }
 
     // root
-    return Qt::ItemIsEnabled | Qt::ItemIsSelectable;
+    return Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDropEnabled;
 }
 
 bool KBookmarkModel::setData(const QModelIndex &index, const QVariant &value, int role)
