@@ -78,7 +78,7 @@ QVariant KBookmarkModel::data(const QModelIndex &index, int role) const
     //Text
     if(index.isValid() && (role == Qt::DisplayRole || role == Qt::EditRole))
     {
-        KBookmark bk = bookmarkForIndex(index);
+        const KBookmark bk = bookmarkForIndex(index);
         if(bk.address().isEmpty())
         {
             if(index.column() == 0)
@@ -100,12 +100,12 @@ QVariant KBookmarkModel::data(const QModelIndex &index, int role) const
                     : subnode.firstChild().toText().data();
             }
             case 3: { //Status column
-                QString text1 = ""; //FIXME favicon state
-                QString text2 = ""; //FIXME link state
-                if(text1.isNull() || text2.isNull())
-                    return QVariant( text1 + text2);
+                QString text1; //FIXME favicon state
+                QString text2; //FIXME link state
+                if(text1.isEmpty() || text2.isEmpty())
+                    return QVariant( text1 + text2 );
                 else
-                    return QVariant( text1 + "  --  " + text2);
+                    return QVariant( text1 + "  --  " + text2 );
             }
             default:
                 return QVariant( QString() ); //can't happen
@@ -141,12 +141,14 @@ Qt::ItemFlags KBookmarkModel::flags(const QModelIndex &index) const
                 return Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsEditable | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled;
         }
         else
+        {
             if(index.column() < 3)
-                return Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsEditable | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled;
+                return Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsEditable | Qt::ItemIsDragEnabled;
+        }
     }
 
     // root
-    return Qt::ItemIsEnabled | Qt::ItemIsSelectable;
+    return Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDropEnabled;
 }
 
 bool KBookmarkModel::setData(const QModelIndex &index, const QVariant &value, int role)
@@ -187,7 +189,7 @@ QModelIndex KBookmarkModel::index(int row, int column, const QModelIndex &parent
         return createIndex(row, column, d->mRootItem);
 
     TreeItem * item = static_cast<TreeItem *>(parent.internalPointer());
-    if(row == item->childCount()) {// Received drop below last row, simulate drop on last row
+        if(row == item->childCount()) {// Received drop below last row, simulate drop on last row
         return createIndex(row-1, column, item->child(row-1));
     }
 
@@ -284,21 +286,41 @@ QStringList KBookmarkModel::mimeTypes () const
 
 bool KBookmarkModel::dropMimeData(const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent)
 {
-    Q_UNUSED(action)
-
     //FIXME this only works for internal drag and drops
     //FIXME Moving is *very* buggy
-
-    QModelIndex idx;
+    QModelIndex dropDestIndex;
+    bool isInsertBetweenOp = false;
     if(row == -1)
-        idx = parent;
+    {
+        dropDestIndex = parent;
+    }
     else
-        idx = index(row, column, parent);
+    {
+        isInsertBetweenOp = true;
+        dropDestIndex= index(row, column, parent);
+    }
 
-    KBookmark bk = bookmarkForIndex(idx);
-    QString addr = bk.address();
-    if(bk.isGroup())
-        addr += "/0";
+    KBookmark dropDestBookmark = bookmarkForIndex(dropDestIndex);
+    if (dropDestBookmark.isNull())
+    {
+        // Presumably an invalid index: assume we want to place this in the root bookmark
+        // folder.
+        dropDestBookmark = d->mRoot;
+    }
+
+    QString addr = dropDestBookmark.address();
+    if(dropDestBookmark.isGroup() && !isInsertBetweenOp)
+    {
+      addr += "/0";
+    }
+    // bookmarkForIndex(...) does not distinguish between the last item in the folder
+    // and the point *after* the last item in the folder (and its hard to see how to
+    // modify it so it does), so do the check here.
+    if (isInsertBetweenOp && row == dropDestBookmark.positionInParent() + 1)
+    {
+        // Attempting to insert underneath the last item in a folder; adjust the address.
+        addr = KBookmark::nextAddress(addr);
+    }
 
     if(action == Qt::CopyAction)
     {
@@ -338,6 +360,10 @@ bool KBookmarkModel::dropMimeData(const QMimeData * data, Qt::DropAction action,
 
 KBookmark KBookmarkModel::bookmarkForIndex(const QModelIndex& index) const
 {
+    if (!index.isValid())
+    {
+      return KBookmark();
+    }
     return static_cast<TreeItem *>(index.internalPointer())->bookmark();
 }
 
