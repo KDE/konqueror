@@ -738,7 +738,7 @@ bool Sidebar_Widget::addButton(const QString &desktoppath,int pos)
     	QString icon = df.readIcon();
 	QString name = df.readName();
 	QString comment = df.readComment();
-	QString url = df.readPath();
+	QString url = df.desktopGroup().readPathEntry("URL",QString());
 	QString lib = df.desktopGroup().readEntry("X-KDE-KonqSidebarModule");
 
 	if (pos == -1)
