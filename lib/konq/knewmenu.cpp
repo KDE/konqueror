@@ -224,14 +224,13 @@ void KNewMenu::parseFiles()
             // Otherwise (or if no name in it?) use file name
             if ( KDesktopFile::isDesktopFile( filePath ) ) {
                 KDesktopFile desktopFile(  filePath );
-                const KConfigGroup config = desktopFile.desktopGroup();
-                text = config.readEntry("Name");
-                (*templ).icon = config.readEntry("Icon");
-                (*templ).comment = config.readEntry("Comment");
-                QString type = config.readEntry( "Type" );
+                text = desktopFile.readName();
+                (*templ).icon = desktopFile.readIcon();
+                (*templ).comment = desktopFile.readComment();
+                QString type = desktopFile.readType();
                 if ( type == "Link" )
                 {
-                    templatePath = config.readPathEntry("URL", QString());
+                    templatePath = desktopFile.readPath();
                     if ( templatePath[0] != '/' && !templatePath.startsWith("__"))
                     {
                         if ( templatePath.startsWith("file:/") )
