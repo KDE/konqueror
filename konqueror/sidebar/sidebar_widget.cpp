@@ -34,6 +34,7 @@
 #include <kconfig.h>
 #include <kstandarddirs.h>
 #include <kdebug.h>
+#include <kdesktopfile.h>
 #include <kiconloader.h>
 #include <kicondialog.h>
 #include <kmessagebox.h>
@@ -730,21 +731,15 @@ bool Sidebar_Widget::addButton(const QString &desktoppath,int pos)
 {
 	int lastbtn = m_buttons.count();
 
-  	KConfigGroup *confFile;
-
 	kDebug() << "addButton:" << (m_path+desktoppath);
 
-	confFile = new KConfigGroup(
-	    KSharedConfig::openConfig(m_path+desktoppath, KConfig::SimpleConfig),
-	    "Desktop Entry");
+	KDesktopFile df(m_path+desktoppath);
 
-    	QString icon = confFile->readEntry("Icon");
-	QString name = confFile->readEntry("Name");
-	QString comment = confFile->readEntry("Comment");
-	QString url = confFile->readPathEntry("URL",QString());
-	QString lib = confFile->readEntry("X-KDE-KonqSidebarModule");
-
-        delete confFile;
+    	QString icon = df.readIcon();
+	QString name = df.readName();
+	QString comment = df.readComment();
+	QString url = df.readPath();
+	QString lib = df.desktopGroup().readEntry("X-KDE-KonqSidebarModule");
 
 	if (pos == -1)
 	{
@@ -848,11 +843,6 @@ KParts::BrowserExtension *Sidebar_Widget::getExtension()
 bool Sidebar_Widget::createView( ButtonInfo *data)
 {
 	bool ret = true;
-	KConfigGroup *confFile;
-	confFile = new KConfigGroup(
-	    KSharedConfig::openConfig(data->file, KConfig::SimpleConfig),
-	    "Desktop Entry");
-
 	data->dock = 0;
 	data->module = loadModule(m_area, data->file,data->libName,data);
 
@@ -869,7 +859,6 @@ bool Sidebar_Widget::createView( ButtonInfo *data)
 			data->module, SLOT(openPreviewOnMouseOver(const KFileItem&)));
 	}
 
-	delete confFile;
 	return ret;
 }
 
