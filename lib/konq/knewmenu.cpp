@@ -230,7 +230,7 @@ void KNewMenu::parseFiles()
                 QString type = desktopFile.readType();
                 if ( type == "Link" )
                 {
-                    templatePath = desktopFile.readPath();
+                    templatePath = desktopFile.desktopGroup().readPathEntry("URL", QString());
                     if ( templatePath[0] != '/' && !templatePath.startsWith("__"))
                     {
                         if ( templatePath.startsWith("file:/") )
