@@ -650,6 +650,47 @@ void KonqOperations::_addPluginActions(QList<QAction*>& pluginActions,const KUrl
     }
 }
 
+// these two are from /apps/konqueror/settings/konq/globalpaths.cpp
+static bool cleanHomeDirPath( QString &path, const QString &homeDir )
+{
+#ifdef Q_WS_WIN //safer
+    if (!QDir::convertSeparators(path).startsWith(QDir::convertSeparators(homeDir)))
+        return false;
+#else
+    if (!path.startsWith(homeDir))
+        return false;
+#endif
+
+    int len = homeDir.length();
+    // replace by "$HOME" if possible
+    if (len && (path.length() == len || path[len] == '/')) {
+        path.replace(0, len, QString::fromLatin1("$HOME"));
+        return true;
+    } else
+        return false;
+}
+static QString translatePath( QString path ) // krazy:exclude=passbyvalue
+{
+    // keep only one single '/' at the beginning - needed for cleanHomeDirPath()
+    while (path[0] == '/' && path[1] == '/')
+        path.remove(0,1);
+
+    // we probably should escape any $ ` and \ characters that may occur in the path, but the Qt code that reads back
+    // the file doesn't unescape them so not much point in doing so
+
+    // All of the 3 following functions to return the user's home directory
+    // can return different paths. We have to test all them.
+    const QString homeDir0 = QFile::decodeName(qgetenv("HOME"));
+    const QString homeDir1 = QDir::homePath();
+    const QString homeDir2 = QDir(homeDir1).canonicalPath();
+    if (cleanHomeDirPath(path, homeDir0) ||
+        cleanHomeDirPath(path, homeDir1) ||
+        cleanHomeDirPath(path, homeDir2) ) {
+        // kDebug() << "Path was replaced\n";
+    }
+
+    return path;
+}
 
 void KonqOperations::rename( QWidget * parent, const KUrl & oldurl, const KUrl& newurl )
 {
@@ -667,10 +708,11 @@ void KonqOperations::rename( QWidget * parent, const KUrl & oldurl, const KUrl& 
     if ( oldurl.isLocalFile() && oldurl.toLocalFile( KUrl::AddTrailingSlash ) == KGlobalSettings::desktopPath() )
     {
         kDebug(1203) << "That rename was the Desktop path, updating config files";
-        KSharedConfig::Ptr globalConfig = KGlobal::config();
-        KConfigGroup cgs( globalConfig, "Paths" );
-        cgs.writePathEntry("Desktop" , newurl.path(), KConfigBase::Persistent|KConfigBase::Global );
-        cgs.sync();
+        //save in XDG path
+        const QString userDirsFile(KGlobal::dirs()->localxdgconfdir() + QLatin1String("user-dirs.dirs"));
+        KConfig xdgUserConf( userDirsFile, KConfig::SimpleConfig );
+        KConfigGroup g( &xdgUserConf, "" );
+        g.writeEntry( "XDG_DESKTOP_DIR", translatePath( newurl.path() ) );
         KGlobalSettings::self()->emitChange(KGlobalSettings::SettingsChanged, KGlobalSettings::SETTINGS_PATHS);
     }
 }
