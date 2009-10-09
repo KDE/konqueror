@@ -334,7 +334,8 @@ bool KBookmarkBar::eventFilter( QObject *, QEvent *e )
         removeTempSep();
 
         QDropEvent *dev = static_cast<QDropEvent*>( e );
-        QList<KBookmark> list = KBookmark::List::fromMimeData( dev->mimeData() );
+        QDomDocument doc;
+        QList<KBookmark> list = KBookmark::List::fromMimeData( dev->mimeData(), doc );
         if ( list.isEmpty() )
             return false;
         if (list.count() > 1)
@@ -374,7 +375,8 @@ bool KBookmarkBar::eventFilter( QObject *, QEvent *e )
         //cache text, save positions (inserting the temporary widget changes the positions)
         if(e->type() == QEvent::DragEnter)
         {
-            QList<KBookmark> list = KBookmark::List::fromMimeData( dme->mimeData() );
+            QDomDocument doc;
+            const QList<KBookmark> list = KBookmark::List::fromMimeData( dme->mimeData(), doc );
             if ( list.isEmpty() )
                 return false;
             d->tempLabel  = list.first().url().pathOrUrl();
