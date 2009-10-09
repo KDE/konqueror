@@ -160,7 +160,6 @@ void KonqRun::handleError(KJob *job)
     if (!m_mailto.isEmpty()) {
         setJob(0);
         setFinished(true);
-        timer().start(0);
         return;
     }
     KParts::BrowserRun::handleError(job);
