@@ -51,7 +51,7 @@
  * ONLY be used to to provide KDE integration in applications that cannot use
  * the standard KDE API directly.
 
- * @see QNetworkAccessManager::seCookieJar for details.
+ * @see QNetworkAccessManager::setCookieJar for details.
  *
  * @since 4.4
  */
