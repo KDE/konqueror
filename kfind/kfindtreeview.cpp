@@ -39,6 +39,7 @@
 
 #include <kio/netaccess.h>
 #include <kio/copyjob.h>
+#include <kio/deletejob.h>
 
 #include <konq_operations.h>
 #include <knewmenu.h>
@@ -150,7 +151,7 @@ void KFindItemModel::removeItem( const KUrl & url )
         KFindItem item = m_itemList.at(i);
         if ( item.getFileItem().url() == url )
         {
-            beginRemoveRows( QModelIndex(), i, i+1 ); 
+            beginRemoveRows( QModelIndex(), i, i ); 
             m_itemList.removeAt( i );
             endRemoveRows();
             return;
@@ -620,8 +621,7 @@ void KFindTreeView::deleteSelectedFiles()
     bool done = KonqOperations::askDeleteConfirmation( uris, KonqOperations::DEL, KonqOperations::FORCE_CONFIRMATION, this );
     if ( done )
     {
-        Q_FOREACH( const KUrl & url, uris )
-            KIO::NetAccess::del( url, this );
+        KIO::del( uris );
         
         //This should be done by KDirWatch integration in the main dialog, but it could fail?
         Q_FOREACH( const KUrl & url, uris )
