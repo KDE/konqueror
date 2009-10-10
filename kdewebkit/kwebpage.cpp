@@ -51,8 +51,6 @@
 #include <kio/job.h>
 
 // Qt
-#include <QtCore/QPair>
-#include <QtCore/QPointer>
 #include <QtGui/QTextDocument>
 #include <QtGui/QPaintEngine>
 #include <QtWebKit/QWebFrame>
