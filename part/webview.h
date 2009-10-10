@@ -44,9 +44,13 @@ public:
     ~WebView();   
 
     /**
-     * Similar to the above function, but with KParts style arguments instead.
+     * Same as QWebPage::load, but with KParts style arguments instead.
      *
      * @see KParts::OpenUrlArguments, KParts::BrowserArguments.
+     *
+     * @param url     the url to load.
+     * @param args    reference to a OpenUrlArguments object.
+     * @param bargs   reference to a BrowserArguments object.
      */
     void loadUrl(const KUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &bargs);
 
