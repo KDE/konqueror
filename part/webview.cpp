@@ -48,11 +48,10 @@
 class WebView::WebViewPrivate
 {
 public:
-    WebViewPrivate(WebView *webView)
-            : webView(webView) {}
+    WebViewPrivate() {}
 
-    void addSearchActions(QList<QAction *>& selectActions);
-    QString selectedTextAsOneLine() const;
+    void addSearchActions(QList<QAction *>& selectActions, QWebView*);
+    QString selectedTextAsOneLine(const QString &) const;
 
     /**
     * Returns selectedText without any leading or trailing whitespace,
@@ -61,17 +60,16 @@ public:
     * Note that hasSelection can return true and yet simplifiedSelectedText can be empty,
     * e.g. when selecting a single space.
     */
-    QString simplifiedSelectedText() const;
+    QString simplifiedSelectedText(const QString&) const;
 
-    WebView *webView;
     KActionCollection* actionCollection;
     QWebHitTestResult result;
-    WebKitPart *part;
+    QPointer<WebKitPart> part;
 };
 
 
 WebView::WebView(WebKitPart *wpart, QWidget *parent)
-        :KWebView(parent), d(new WebViewPrivate(this))
+        :KWebView(parent), d(new WebViewPrivate())
 {
     d->part = wpart;
     d->actionCollection = new KActionCollection(this);
@@ -210,9 +208,9 @@ void WebView::selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &se
     }
     selectActions.append(d->actionCollection->action("copy"));
 
-    d->addSearchActions(selectActions);
+    d->addSearchActions(selectActions, this);
 
-    QString selectedTextURL = d->selectedTextAsOneLine();
+    QString selectedTextURL = d->selectedTextAsOneLine(selectedText());
     if (selectedTextURL.contains("://") && KUrl(selectedTextURL).isValid()) {
         if (selectedTextURL.length() > 18) {
             selectedTextURL.truncate(15);
@@ -254,7 +252,7 @@ void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &link
     linkGroupMap.insert("linkactions", linkActions);
 }
 
-void WebView::WebViewPrivate::addSearchActions(QList<QAction *>& selectActions)
+void WebView::WebViewPrivate::addSearchActions(QList<QAction *>& selectActions, QWebView *view)
 {
     // Fill search provider entries
     KConfig config("kuriikwsfilterrc");
@@ -263,7 +261,7 @@ void WebView::WebViewPrivate::addSearchActions(QList<QAction *>& selectActions)
     const char keywordDelimiter = cg.readEntry("KeywordDelimiter", static_cast<int>(':'));
 
     // search text
-    QString selectedText = simplifiedSelectedText();
+    QString selectedText = simplifiedSelectedText(view->selectedText());
     if (selectedText.isEmpty())
         return;
 
@@ -296,7 +294,7 @@ void WebView::WebViewPrivate::addSearchActions(QList<QAction *>& selectActions)
         name = "Google";
     }
 
-    KAction *action = new KAction(i18n("Search for '%1' with %2", selectedText, name), webView);
+    KAction *action = new KAction(i18n("Search for '%1' with %2", selectedText, name), view);
     actionCollection->addAction("searchProvider", action);
     selectActions.append(action);
     action->setIcon(icon);
@@ -308,7 +306,7 @@ void WebView::WebViewPrivate::addSearchActions(QList<QAction *>& selectActions)
     favoriteEngines = cg.readEntry("FavoriteSearchEngines", favoriteEngines);
 
     if (!favoriteEngines.isEmpty()) {
-        KActionMenu* providerList = new KActionMenu(i18n("Search for '%1' with",  selectedText), webView);
+        KActionMenu* providerList = new KActionMenu(i18n("Search for '%1' with",  selectedText), view);
         actionCollection->addAction("searchProviderList", providerList);
         selectActions.append(providerList);
 
@@ -330,7 +328,7 @@ void WebView::WebViewPrivate::addSearchActions(QList<QAction *>& selectActions)
                     icon = KIcon(QPixmap(iconPath));
                 name = service->name();
 
-                KAction *action = new KAction(name, webView);
+                KAction *action = new KAction(name, view);
                 actionCollection->addAction(QString("searchProvider" + searchProviderPrefix).toLatin1().constData(), action);
                 action->setIcon(icon);
                 connect(action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT(searchProvider()));
@@ -341,9 +339,9 @@ void WebView::WebViewPrivate::addSearchActions(QList<QAction *>& selectActions)
     }
 }
 
-QString WebView::WebViewPrivate::simplifiedSelectedText() const
+QString WebView::WebViewPrivate::simplifiedSelectedText(const QString &_text) const
 {
-    QString text = webView->selectedText();
+    QString text (_text);
     text.replace(QChar(0xa0), ' ');
     // remove leading and trailing whitespace
     while (!text.isEmpty() && text[0].isSpace())
@@ -353,9 +351,9 @@ QString WebView::WebViewPrivate::simplifiedSelectedText() const
     return text;
 }
 
-QString WebView::WebViewPrivate::selectedTextAsOneLine() const
+QString WebView::WebViewPrivate::selectedTextAsOneLine(const QString &_text) const
 {
-    QString text = this->simplifiedSelectedText();
+    QString text = this->simplifiedSelectedText(_text);
     // in addition to what simplifiedSelectedText does,
     // remove linefeeds and any whitespace surrounding it (#113177),
     // to get it all in a single line.
@@ -368,5 +366,5 @@ void WebView::openSelection()
     KParts::BrowserArguments browserArgs;
     browserArgs.frameName = "_blank";
 
-    emit d->part->browserExtension()->openUrlRequest(d->selectedTextAsOneLine(), KParts::OpenUrlArguments(), browserArgs);
+    emit d->part->browserExtension()->openUrlRequest(d->selectedTextAsOneLine(selectedText()), KParts::OpenUrlArguments(), browserArgs);
 }

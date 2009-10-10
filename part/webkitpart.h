@@ -24,15 +24,15 @@
 #ifndef WEBKITPART_H
 #define WEBKITPART_H
 
-#include <KDE/KParts/ReadOnlyPart>
-#include <KDE/KParts/BrowserExtension>
-
 #include "webkitkde_export.h"
 
-class QNetworkReply;
+#include <KDE/KParts/ReadOnlyPart>
 
-class WebView;
-class WebKitBrowserExtension;
+namespace KParts {
+  class BrowserExtension;
+}
+class QNetworkReply;
+class QWebView;
 
 class WEBKITKDE_EXPORT WebKitPart : public KParts::ReadOnlyPart
 {
@@ -44,8 +44,8 @@ public:
     virtual bool openUrl(const KUrl &);
     virtual bool closeUrl();
 
-    WebView *view();
-    WebKitBrowserExtension *browserExtension() const;
+    QWebView *view();
+    KParts::BrowserExtension *browserExtension() const;
 
     /** required because KPart::setStatusBarText(..) is protected **/
     void setStatusBarTextProxy(const QString &);
@@ -76,49 +76,6 @@ private Q_SLOTS:
 private:
     class WebKitPartPrivate;
     WebKitPartPrivate* d;
-};
-
-class WebKitBrowserExtension : public KParts::BrowserExtension
-{
-    Q_OBJECT
-public:
-    WebKitBrowserExtension(WebKitPart *parent);
-
-public Q_SLOTS:
-    void cut();
-    void copy();
-    void paste();
-    void slotSaveDocument();
-    void slotSaveFrame();
-    void print();
-    void printFrame();
-    void searchProvider();
-    void reparseConfiguration();
-
-    void zoomIn();
-    void zoomOut();
-    void zoomNormal();
-    void toogleZoomTextOnly();
-    void slotSelectAll();
-
-    void slotFrameInWindow();
-    void slotFrameInTab();
-    void slotFrameInTop();
-
-    void slotSaveImageAs();
-    void slotSendImage();
-    void slotCopyImage();
-
-    void slotCopyLinkLocation();
-    void slotSaveLinkAs();
-
-    void slotViewDocumentSource();
-
-private Q_SLOTS:
-    void updateEditActions();
-
-private:
-    WebKitPart *part;
 };
 
 #endif // WEBKITPART_H

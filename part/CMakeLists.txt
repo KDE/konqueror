@@ -15,6 +15,7 @@ add_subdirectory(includes)
 
 set(webkitkde_LIB_SRCS
     webkitpart.cpp
+    webkitpart_ext.cpp
     webview.cpp
     webpage.cpp
     websslinfo.cpp
@@ -43,7 +44,6 @@ target_link_libraries(webkitkdepart webkitkde ${KDEWEBKIT_LIBRARIES} ${KDE4_KPAR
 install(FILES
     webkitkde_export.h
     webkitpart.h
-    webview.h
     DESTINATION ${INCLUDE_INSTALL_DIR}/webkitkde/ COMPONENT Devel)
 
 install(TARGETS webkitkdepart DESTINATION ${PLUGIN_INSTALL_DIR})

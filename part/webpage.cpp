@@ -151,13 +151,13 @@ static bool domainSchemeMatch(const QUrl& u1, const QUrl& u2)
 class WebPage::WebPagePrivate
 {
 public:
-    WebPagePrivate():part(0) {}
+    WebPagePrivate() {}
 
     QUrl requestUrl;
     QString frameName;
     KDEPrivate::WebSslInfo sslInfo;
 
-    WebKitPart *part;    
+    QPointer<WebKitPart> part;
 };
 
 WebPage::WebPage(WebKitPart *part, QWidget *parent)
@@ -222,13 +222,8 @@ void WebPage::saveUrl(const KUrl &url)
 
 bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request, NavigationType type)
 {
-    kDebug() << "url:" << request.url() << ", type:" << type << ", frame:" << frame;
-
     // Clear the request destination frame name...
     d->frameName.clear();
-
-    // Clear the request url...
-    d->requestUrl.clear();
 
     if (frame) {
         /*
@@ -236,11 +231,12 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
           javascript and interactive (user-generated) requests, we resort to
           replying on the fact that the only time the part and request urls
           will be the same at this point is when the request orignates from
-          a call to the part's openUrl function.
-        */
-        if (d->part->url() == request.url()) {
-            d->requestUrl = request.url();
+          the part's 'openUrl' function.
+        */      
+        if (type == QWebPage::NavigationTypeOther && d->part->url() != request.url()) {
+            d->requestUrl.clear();
         } else {
+            d->requestUrl = request.url();
             const QString proto = d->part->url().scheme().toLower();
             if (proto == "https" || proto == "webdavs")
                 setRequestMetaData("ssl_was_in_use", "TRUE");
@@ -439,6 +435,7 @@ void WebPage::handleUnsupportedContent(QNetworkReply *reply)
     Q_FOREACH (const QByteArray &headerName, reply->rawHeaderList()) {
         args.metaData().insert(QString(headerName), QString(reply->rawHeader(headerName)));
     }
+
     emit d->part->browserExtension()->openUrlRequest(url, args, KParts::BrowserArguments());
 }
 
@@ -482,8 +479,9 @@ void WebPage::slotGeometryChangeRequested(const QRect &rect)
         moveByX = - right + sg.right(); // always <0
     if (bottom > sg.bottom())
         moveByY = - bottom + sg.bottom(); // always <0
-    if ((moveByX || moveByY)
-      && WebKitSettings::self()->windowMovePolicy(host) == WebKitSettings::KJSWindowMoveAllow) {
+    if ((moveByX || moveByY) &&
+        WebKitSettings::self()->windowMovePolicy(host) == WebKitSettings::KJSWindowMoveAllow) {
+
         emit d->part->browserExtension()->moveTopLevelWidget(view()->x() + moveByX, view()->y() + moveByY);
     }
 }
@@ -509,12 +507,9 @@ void WebPage::slotStatusBarMessage(const QString &message)
 
 void WebPage::slotRequestFinished(QNetworkReply *reply)
 {
-    Q_ASSERT(reply);
-
-    if (d->requestUrl == reply->request().url()) {
+    if (reply && d->requestUrl == reply->request().url()) {
 
         kDebug() << "Got request finished for" << d->requestUrl;
-
         QUrl replyUrl (reply->url());
 
         if (d->sslInfo.isValid() && !domainSchemeMatch(replyUrl, d->sslInfo.url())) {
