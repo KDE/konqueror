@@ -23,13 +23,12 @@
  */
 
 #include "webpage.h"
+
 #include "webkitpart.h"
 #include "websslinfo.h"
 #include "webview.h"
 #include "sslinfodialog_p.h"
-
-#include <kdewebkit/kwebpage.h>
-#include <kdewebkit/settings/webkitsettings.h>
+#include "settings/webkitsettings.h"
 
 #include <KDE/KParts/GenericFactory>
 #include <KDE/KParts/BrowserRun>
@@ -49,11 +48,14 @@
 #include <KIO/Job>
 #include <KIO/AccessManager>
 
-#include <QtWebKit/QWebFrame>
+#include <QtCore/QTimer>
 #include <QtGui/QTextDocument>
 #include <QtNetwork/QNetworkReply>
+#include <QtUiTools/QUiLoader>
+#include <QtWebKit/QWebFrame>
 
 #define QL1(x)  QLatin1String(x)
+
 typedef QPair<QString, QString> StringPair;
 
 // Sanitizes the "mailto:" url, e.g. strips out any "attach" parameters.
@@ -85,11 +87,15 @@ static QUrl sanitizeMailToUrl(const QUrl &url, QStringList& files) {
     return sanitizedUrl;
 }
 
-// Converts QNetworkReply::Error to KIO::Error...
-// NOTE: This probably needs to be moved somewhere more convenient
-// in the future. Perhaps KIO::AccessManager itself ???
+// Converts QNetworkReply::NetworkError codes to the KIO equivalent ones...
 static int convertErrorCode(QNetworkReply* reply)
 {
+    // First check if there is a KIO error code sent back and use that,
+    // if not attempt to convert the QNetworkReply::
+    QVariant attr = reply->attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::KioError));
+    if (attr.isValid() && attr.type() == QVariant::Int)
+        return attr.toInt();
+
     switch (reply->error()) {
         case QNetworkReply::ConnectionRefusedError:
             return KIO::ERR_COULD_NOT_CONNECT;
@@ -113,83 +119,45 @@ static int convertErrorCode(QNetworkReply* reply)
             return KIO::ERR_UNSUPPORTED_PROTOCOL;
         case QNetworkReply::ProtocolInvalidOperationError:
             return KIO::ERR_UNSUPPORTED_ACTION;
-        case QNetworkReply::UnknownNetworkError:{
-#if KDE_IS_VERSION(4,3,2)
-            QVariant attr = reply->attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::KioError));
-            if (attr.isValid() && attr.type() == QVariant::Int)
-              return attr.toInt();
-            else
-#endif
-              return KIO::ERR_UNKNOWN;
-        }
+        case QNetworkReply::UnknownNetworkError:
+            return KIO::ERR_UNKNOWN;
         case QNetworkReply::NoError:
         default:
             return 0;
     }
 }
 
+// Returns true if the scheme and domain of the two urls match...
 static bool domainSchemeMatch(const QUrl& u1, const QUrl& u2)
 {
-  if (u1.scheme() != u2.scheme())
-    return false;
+    if (u1.scheme() != u2.scheme())
+        return false;
 
-  QStringList u1List = u1.host().split(QChar('.'), QString::SkipEmptyParts);
-  QStringList u2List = u2.host().split(QChar('.'), QString::SkipEmptyParts);
+    QStringList u1List = u1.host().split(QChar('.'), QString::SkipEmptyParts);
+    QStringList u2List = u2.host().split(QChar('.'), QString::SkipEmptyParts);
 
-  if (qMin(u1List.count(), u2List.count()) < 2) {
-      return false;  // better safe than sorry...
-  }
+    if (qMin(u1List.count(), u2List.count()) < 2)
+        return false;  // better safe than sorry...
 
-  while (u1List.count() > 2)
-      u1List.removeFirst();
+    while (u1List.count() > 2)
+        u1List.removeFirst();
 
-  while (u2List.count() > 2)
-      u2List.removeFirst();
+    while (u2List.count() > 2)
+        u2List.removeFirst();
 
-  return (u1List == u2List);
+    return (u1List == u2List);
 }
-
-class SslInfo : public WebSslInfo
-{
-public:
-    SslInfo() {}
-    SslInfo(const WebSslInfo& other) : WebSslInfo(other) {}
-
-    SslInfo& operator = (const WebSslInfo& other)
-    {
-        WebSslInfo::operator =(other);
-        return *this;
-    }
-
-    inline void clear () { reset(); }
-
-    void setup (const QVariant& attr, const QUrl& url)
-    {
-        if (attr.isValid() && attr.type() == QVariant::Map) {
-            QMap<QString,QVariant> metaData = attr.toMap();
-            if (metaData.value("ssl_in_use", false).toBool()) {
-                setUrl(url);
-                setCertificateChain(metaData.value("ssl_peer_chain").toByteArray());
-                setPeerAddress(metaData.value("ssl_peer_ip").toString());
-                setParentAddress(metaData.value("ssl_parent_ip").toString());
-                setProtocol(metaData.value("ssl_protocol_version").toString());
-                setCiphers(metaData.value("ssl_cipher").toString());
-                setCertificateErrors(metaData.value("ssl_cert_errors").toString());
-                setUsedCipherBits(metaData.value("ssl_cipher_used_bits").toString());
-                setSupportedCipherBits(metaData.value("ssl_cipher_bits").toString());
-            }
-        }
-    }
-};
 
 class WebPage::WebPagePrivate
 {
 public:
-   WebPagePrivate():part(0) {}
+    WebPagePrivate():part(0) {}
 
-    QUrl workingUrl;
-    SslInfo sslInfo;
-    WebKitPart *part;
+    QUrl requestUrl;
+    QString frameName;
+    KDEPrivate::WebSslInfo sslInfo;
+
+    WebKitPart *part;    
 };
 
 WebPage::WebPage(WebKitPart *part, QWidget *parent)
@@ -197,6 +165,11 @@ WebPage::WebPage(WebKitPart *part, QWidget *parent)
 {
     d->part = part;
     setSessionMetaData("ssl_activate_warnings", "TRUE");
+
+    // Set font sizes accordingly...
+    if (view())
+        WebKitSettings::self()->computeFontSizes(view()->logicalDpiY());
+
     connect(this, SIGNAL(geometryChangeRequested(const QRect &)),
             this, SLOT(slotGeometryChangeRequested(const QRect &)));
     connect(this, SIGNAL(windowCloseRequested()),
@@ -212,9 +185,20 @@ WebPage::~WebPage()
     delete d;
 }
 
-void WebPage::saveUrl(const KUrl &url)
+bool WebPage::isSecurePage() const
 {
-    slotDownloadRequested(QNetworkRequest(url));
+    return d->sslInfo.isValid();
+}
+
+bool WebPage::authorizedRequest(const QUrl &url) const
+{
+    // Check for ad filtering...
+    return !(WebKitSettings::self()->isAdFilterEnabled() && WebKitSettings::self()->isAdFiltered(url.toString()));
+}
+
+void WebPage::setSslInfo(const QVariant &info)
+{
+    d->sslInfo.fromMetaData(info);
 }
 
 void WebPage::setupSslDialog(KSslInfoDialog &dlg) const
@@ -231,73 +215,54 @@ void WebPage::setupSslDialog(KSslInfoDialog &dlg) const
     }
 }
 
-bool WebPage::isSecurePage() const
+void WebPage::saveUrl(const KUrl &url)
 {
-    return d->sslInfo.isValid();
+    slotDownloadRequest(QNetworkRequest(url));
 }
 
-bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request,
-                                      NavigationType type)
+bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request, NavigationType type)
 {
-    if (frame) {      
+    kDebug() << "url:" << request.url() << ", type:" << type << ", frame:" << frame;
+
+    // Clear the request destination frame name...
+    d->frameName.clear();
+
+    // Clear the request url...
+    d->requestUrl.clear();
+
+    if (frame) {
         /*
-          NOTE: At this point, the only way the request and part urls are equal is
-          if the navigation request was generated by through a call to the part's
-          openUrl function, i.e. a request from the embedding application.
+          HACK: Since QWebPage::NavigationType does not distinguish between
+          javascript and interactive (user-generated) requests, we resort to
+          replying on the fact that the only time the part and request urls
+          will be the same at this point is when the request orignates from
+          a call to the part's openUrl function.
         */
         if (d->part->url() == request.url()) {
-            d->sslInfo.setup(request.attribute(QNetworkRequest::User), request.url());
+            d->requestUrl = request.url();
         } else {
             const QString proto = d->part->url().scheme().toLower();
             if (proto == "https" || proto == "webdavs")
                 setRequestMetaData("ssl_was_in_use", "TRUE");
 
             // Check whether or not the request is authorized...
-            if (!authorizedRequest(request, type))
-              return false;
+            if (!checkLinkSecurity(request, type))
+                return false;
         }
 
-        // Sanitize and handle "mailto:" url ourselves...
-        if (QString::compare(request.url().scheme(), QL1("mailto"), Qt::CaseInsensitive) == 0) {
-            QStringList files;
-            QUrl url (sanitizeMailToUrl(request.url(), files));
+        // Sanitize and handle "mailto:" url here...
+        if (handleMailToUrl(request.url(), type))
+          return false;
 
-            switch (type) {
-                case QWebPage::NavigationTypeLinkClicked:
-                    if (!files.isEmpty() && KMessageBox::warningContinueCancelList(0,
-                                                                                   i18n("<qt>Do you want to allow this site to attach "
-                                                                                        "the following files to the email message ?</qt>"),
-                                                                                   files, i18n("Email Attachment Confirmation"),
-                                                                                   KGuiItem(i18n("&Allow attachements")),
-                                                                                   KGuiItem(i18n("&Ignore attachements")), QL1("WarnEmailAttachment")) == KMessageBox::Continue) {
-
-                        Q_FOREACH(const QString& file, files) {
-                            url.addQueryItem(QL1("attach"), file); // Re-add back the attachments...
-                        }
-                    }
-                    break;
-                case QWebPage::NavigationTypeFormSubmitted:
-                case QWebPage::NavigationTypeFormResubmitted:
-                    if (!files.isEmpty()) {
-                      KMessageBox::information(0, i18n("This site attempted to attach a file from your "
-                                                       "computer in the form submission. The attachment "
-                                                       "was removed for your protection."),
-                                               i18n("KDE"), "InfoTriedAttach");
-                    }
-                    break;
-                default:
-                     break;
-            }
-
-            kDebug() << "Emitting openUrlRequest " << url;
-            emit d->part->browserExtension()->openUrlRequest(url);
-            return false;
-        }
-
+        // Set the main frame request meta data...
         setRequestMetaData("main_frame_request", (frame->parentFrame() ? "FALSE" : "TRUE"));
 
+        // Set the current frame name...
+        if (frame != mainFrame())
+            d->frameName = frame->frameName();
+
     } else {
-        kDebug() << "open in new window" << request.url();
+        kDebug() << "open in new window" << request.url() << ", type: " << type;
 
         // if frame is NULL, it means a new window is requested so we enforce
         // the user's preferred choice here from the settings...
@@ -317,11 +282,10 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
         }
     }
 
-    d->workingUrl = request.url();
     return KWebPage::acceptNavigationRequest(frame, request, type);
 }
 
-KWebPage *WebPage::newWindow(WebWindowType type)
+QWebPage *WebPage::createWindow(WebWindowType type)
 {
     kDebug() << type;
     KParts::ReadOnlyPart *part = 0;
@@ -330,145 +294,26 @@ KWebPage *WebPage::newWindow(WebWindowType type)
     //if (type == WebModalDialog) //TODO: correct behavior?
         args.metaData()["forcenewwindow"] = "true";
 
-    emit d->part->browserExtension()->createNewWindow(KUrl("about:blank"), args,
-                                                     KParts::BrowserArguments(),
-                                                     KParts::WindowArgs(), &part);
+    KParts::BrowserArguments bargs;
+    bargs.setLockHistory(true);
+    emit d->part->browserExtension()->createNewWindow(KUrl("about:blank"), args, bargs,
+                                                      KParts::WindowArgs(), &part);
+
     WebKitPart *webKitPart = qobject_cast<WebKitPart*>(part);
+
     if (!webKitPart) {
         if (part)
-            kDebug() << "got NOT a WebKitPart but a" << part->metaObject()->className();
+            kDebug() << "Got a non WebKitPart" << part->metaObject()->className();
         else
             kDebug() << "part is null";
 
         return 0;
     }
+
     return webKitPart->view()->page();
 }
 
-void WebPage::slotGeometryChangeRequested(const QRect &rect)
-{
-    const QString host = mainFrame()->url().host();
-
-    if (WebKitSettings::self()->windowMovePolicy(host) == WebKitSettings::KJSWindowMoveAllow) { // Why doesn't this work?
-        emit d->part->browserExtension()->moveTopLevelWidget(rect.x(), rect.y());
-    }
-
-    int height = rect.height();
-    int width = rect.width();
-
-    // parts of following code are based on kjs_window.cpp
-    // Security check: within desktop limits and bigger than 100x100 (per spec)
-    if (width < 100 || height < 100) {
-        kDebug() << "Window resize refused, window would be too small (" << width << "," << height << ")";
-        return;
-    }
-
-    QRect sg = KGlobalSettings::desktopGeometry(view());
-
-    if (width > sg.width() || height > sg.height()) {
-        kDebug() << "Window resize refused, window would be too big (" << width << "," << height << ")";
-        return;
-    }
-
-    if (WebKitSettings::self()->windowResizePolicy(host) == WebKitSettings::KJSWindowResizeAllow) {
-        kDebug() << "resizing to " << width << "x" << height;
-        emit d->part->browserExtension()->resizeTopLevelWidget(width, height);
-    }
-
-    // If the window is out of the desktop, move it up/left
-    // (maybe we should use workarea instead of sg, otherwise the window ends up below kicker)
-    const int right = view()->x() + view()->frameGeometry().width();
-    const int bottom = view()->y() + view()->frameGeometry().height();
-    int moveByX = 0;
-    int moveByY = 0;
-    if (right > sg.right())
-        moveByX = - right + sg.right(); // always <0
-    if (bottom > sg.bottom())
-        moveByY = - bottom + sg.bottom(); // always <0
-    if ((moveByX || moveByY) 
-      && WebKitSettings::self()->windowMovePolicy(host) == WebKitSettings::KJSWindowMoveAllow) {
-        emit d->part->browserExtension()->moveTopLevelWidget(view()->x() + moveByX, view()->y() + moveByY);
-    }
-}
-
-void WebPage::slotWindowCloseRequested()
-{
-    emit d->part->browserExtension()->requestFocus(d->part);
-    if (KMessageBox::questionYesNo(view(),
-                                   i18n("Close window ?"), i18n("Confirmation Required"),
-                                   KStandardGuiItem::close(), KStandardGuiItem::cancel())
-        == KMessageBox::Yes) {
-        d->part->deleteLater();
-        d->part = 0;
-    }
-}
-
-void WebPage::slotStatusBarMessage(const QString &message)
-{
-    if (WebKitSettings::self()->windowStatusPolicy(mainFrame()->url().host()) == WebKitSettings::KJSWindowStatusAllow) {
-        d->part->setStatusBarTextProxy(message);
-    }
-}
-
-void WebPage::slotHandleUnsupportedContent(QNetworkReply *reply)
-{
-    const KUrl url(reply->request().url());
-    kDebug() << url;
-    KParts::OpenUrlArguments args;
-    Q_FOREACH (const QByteArray &headerName, reply->rawHeaderList()) {
-        args.metaData().insert(QString(headerName), QString(reply->rawHeader(headerName)));
-    }
-    emit d->part->browserExtension()->openUrlRequest(url, args, KParts::BrowserArguments());
-}
-
-void WebPage::slotRequestFinished(QNetworkReply *reply)
-{
-    Q_ASSERT(reply);
-
-    QUrl replyUrl (reply->url());
-
-    if (replyUrl == d->workingUrl) {
-        if (d->sslInfo.isValid() && !domainSchemeMatch(replyUrl, d->sslInfo.url()))
-            d->sslInfo.clear();
-
-        const int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
-
-        if (statusCode > 300 && statusCode < 304) {
-            kDebug() << "Redirected to " << replyUrl;
-            emit d->part->browserExtension()->setLocationBarUrl(KUrl(replyUrl).prettyUrl());
-        } else {
-            // Handle any error messages...
-            const int code = convertErrorCode(reply);
-            switch (code) {
-                case 0:
-                    break;
-                case KIO::ERR_USER_CANCELED: // Do nothing if request is cancelled.
-                    kDebug() << "User aborted request!";
-                    emit loadAborted(QUrl());
-                    return;
-                // Handle the user clicking on a link that refers to a directory
-                // Since KIO cannot automatically convert a GET request to a LISTDIR one.
-                case KIO::ERR_IS_DIRECTORY:
-                    emit loadAborted(replyUrl);
-                    return;
-                default:
-                    emit loadError(code, reply->errorString());
-                    return;
-            }
-
-            if (!d->sslInfo.isValid())
-#if KDE_IS_VERSION(4,3,2)
-                d->sslInfo.setup(reply->attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData)), reply->url());
-#else
-                d->sslInfo.setup(reply->attribute(QNetworkRequest::User), reply->url());
-#endif
-
-            emit loadMainPageFinished();
-        }
-    }
-}
-
-bool WebPage::authorizedRequest(const QNetworkRequest &req, NavigationType type) const
+bool WebPage::checkLinkSecurity(const QNetworkRequest &req, NavigationType type) const
 {
     QString buttonText;
     QString title (i18n("Security Alert"));
@@ -484,8 +329,8 @@ bool WebPage::authorizedRequest(const QNetworkRequest &req, NavigationType type)
             title = i18n("Security Warning");
             buttonText = i18n("Follow");
             break;
-        case QWebPage::NavigationTypeFormSubmitted:
         case QWebPage::NavigationTypeFormResubmitted:
+        case QWebPage::NavigationTypeFormSubmitted:
             if (!checkFormData(req))
                 return false;
             break;
@@ -544,4 +389,172 @@ bool WebPage::checkFormData(const QNetworkRequest &req) const
     }
 
     return true;
+}
+
+bool WebPage::handleMailToUrl (const QUrl& url, NavigationType type) const
+{
+    if (QString::compare(url.scheme(), QL1("mailto"), Qt::CaseInsensitive) == 0) {
+        QStringList files;
+        QUrl mailtoUrl (sanitizeMailToUrl(url, files));
+
+        switch (type) {
+            case QWebPage::NavigationTypeLinkClicked:
+                if (!files.isEmpty() && KMessageBox::warningContinueCancelList(0,
+                                                                               i18n("<qt>Do you want to allow this site to attach "
+                                                                                    "the following files to the email message ?</qt>"),
+                                                                               files, i18n("Email Attachment Confirmation"),
+                                                                               KGuiItem(i18n("&Allow attachements")),
+                                                                               KGuiItem(i18n("&Ignore attachements")), QL1("WarnEmailAttachment")) == KMessageBox::Continue) {
+
+                    Q_FOREACH(const QString& file, files) {
+                        mailtoUrl.addQueryItem(QL1("attach"), file); // Re-add the attachments...
+                    }
+                }
+                break;
+            case QWebPage::NavigationTypeFormSubmitted:                
+            case QWebPage::NavigationTypeFormResubmitted:
+                if (!files.isEmpty()) {
+                  KMessageBox::information(0, i18n("This site attempted to attach a file from your "
+                                                   "computer in the form submission. The attachment "
+                                                   "was removed for your protection."),
+                                           i18n("KDE"), "InfoTriedAttach");
+                }
+                break;
+            default:
+                 break;
+        }
+
+        kDebug() << "Emitting openUrlRequest with " << mailtoUrl;
+        emit d->part->browserExtension()->openUrlRequest(mailtoUrl);
+        return false;
+    }
+    return false;
+}
+
+void WebPage::handleUnsupportedContent(QNetworkReply *reply)
+{
+    const KUrl url(reply->request().url());
+    kDebug() << url;
+    KParts::OpenUrlArguments args;
+    Q_FOREACH (const QByteArray &headerName, reply->rawHeaderList()) {
+        args.metaData().insert(QString(headerName), QString(reply->rawHeader(headerName)));
+    }
+    emit d->part->browserExtension()->openUrlRequest(url, args, KParts::BrowserArguments());
+}
+
+void WebPage::slotGeometryChangeRequested(const QRect &rect)
+{
+    const QString host = mainFrame()->url().host();
+
+    if (WebKitSettings::self()->windowMovePolicy(host) == WebKitSettings::KJSWindowMoveAllow) { // Why doesn't this work?
+        emit d->part->browserExtension()->moveTopLevelWidget(rect.x(), rect.y());
+    }
+
+    int height = rect.height();
+    int width = rect.width();
+
+    // parts of following code are based on kjs_window.cpp
+    // Security check: within desktop limits and bigger than 100x100 (per spec)
+    if (width < 100 || height < 100) {
+        kDebug() << "Window resize refused, window would be too small (" << width << "," << height << ")";
+        return;
+    }
+
+    QRect sg = KGlobalSettings::desktopGeometry(view());
+
+    if (width > sg.width() || height > sg.height()) {
+        kDebug() << "Window resize refused, window would be too big (" << width << "," << height << ")";
+        return;
+    }
+
+    if (WebKitSettings::self()->windowResizePolicy(host) == WebKitSettings::KJSWindowResizeAllow) {
+        kDebug() << "resizing to " << width << "x" << height;
+        emit d->part->browserExtension()->resizeTopLevelWidget(width, height);
+    }
+
+    // If the window is out of the desktop, move it up/left
+    // (maybe we should use workarea instead of sg, otherwise the window ends up below kicker)
+    const int right = view()->x() + view()->frameGeometry().width();
+    const int bottom = view()->y() + view()->frameGeometry().height();
+    int moveByX = 0;
+    int moveByY = 0;
+    if (right > sg.right())
+        moveByX = - right + sg.right(); // always <0
+    if (bottom > sg.bottom())
+        moveByY = - bottom + sg.bottom(); // always <0
+    if ((moveByX || moveByY)
+      && WebKitSettings::self()->windowMovePolicy(host) == WebKitSettings::KJSWindowMoveAllow) {
+        emit d->part->browserExtension()->moveTopLevelWidget(view()->x() + moveByX, view()->y() + moveByY);
+    }
+}
+
+void WebPage::slotWindowCloseRequested()
+{
+    emit d->part->browserExtension()->requestFocus(d->part);
+    if (KMessageBox::questionYesNo(view(),
+                                   i18n("Close window ?"), i18n("Confirmation Required"),
+                                   KStandardGuiItem::close(), KStandardGuiItem::cancel())
+        == KMessageBox::Yes) {
+        d->part->deleteLater();
+        d->part = 0;
+    }
+}
+
+void WebPage::slotStatusBarMessage(const QString &message)
+{
+    if (WebKitSettings::self()->windowStatusPolicy(mainFrame()->url().host()) == WebKitSettings::KJSWindowStatusAllow) {
+        d->part->setStatusBarTextProxy(message);
+    }
+}
+
+void WebPage::slotRequestFinished(QNetworkReply *reply)
+{
+    Q_ASSERT(reply);
+
+    if (d->requestUrl == reply->request().url()) {
+
+        kDebug() << "Got request finished for" << d->requestUrl;
+
+        QUrl replyUrl (reply->url());
+
+        if (d->sslInfo.isValid() && !domainSchemeMatch(replyUrl, d->sslInfo.url())) {
+            kDebug() << "About to reset ssl info...";
+            d->sslInfo.reset();
+        }
+
+        const int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+
+        if (statusCode > 300 && statusCode < 304) {
+            kDebug() << "Redirected to " << replyUrl;
+            emit d->part->browserExtension()->setLocationBarUrl(KUrl(replyUrl).prettyUrl());
+        } else {
+            // Handle any error messages...
+            const int code = convertErrorCode(reply);
+            switch (code) {
+                case 0:
+                    break;
+                case KIO::ERR_ABORTED:
+                case KIO::ERR_USER_CANCELED: // Do nothing if request is cancelled/aborted
+                    kDebug() << "User aborted request!";
+                    emit loadAborted(QUrl());
+                    return;
+                // Handle the user clicking on a link that refers to a directory
+                // Since KIO cannot automatically convert a GET request to a LISTDIR one.
+                case KIO::ERR_IS_DIRECTORY:
+                    emit loadAborted(replyUrl);
+                    return;
+                default:
+                    emit loadError(code, reply->errorString(), d->frameName);
+                    return;
+            }
+
+            if (!d->sslInfo.isValid()) {
+                const QNetworkRequest::Attribute attr = static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData);
+                d->sslInfo.fromMetaData(reply->attribute(attr));
+                d->sslInfo.setUrl(reply->url());
+            }
+
+            emit navigationRequestFinished();
+        }
+    }
 }

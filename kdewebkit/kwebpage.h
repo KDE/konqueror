@@ -55,74 +55,90 @@ public:
     ~KWebPage();
 
     /**
+     * Returns true if external content is fetched, @see setAllowExternalContent().
+     */
+    bool isExternalContentAllowed() const;
+
+    /**
      * Set @p allow to false if you don't want to allow showing external content,
      * so no external images for example. By default external content is fetched.
      */
     void setAllowExternalContent(bool allow);
 
     /**
-     * Returns true if external content is fetched, @see setAllowExternalContent().
+     * Returns true if access to the requested @p url is authorized.
+     *
+     * You should reimplement this function if you want to add features such as
+     * content filtering or ad blocking. The default implementation simply
+     * returns true.
+     *
+     * @param url the url to be authorized.
      */
-    bool isExternalContentAllowed() const;
+    virtual bool authorizedRequest(const QUrl&) const;
 
 protected:
     /**
-     * Reimplemented for internal reasons, the API is not affected.
-     * @internal
+     * Set meta data that will be sent to KIO slave with every request.
+     *
+     * Note that meta data set using this function will be sent with
+     * every request
      */
-    virtual KWebPage *createWindow(WebWindowType type);
-
-    virtual KWebPage *newWindow(WebWindowType type);
-
-    /**
-     * Reimplemented for internal reasons, the API is not affected.
-     * @internal
-     */
-    QString chooseFile(QWebFrame *frame, const QString &suggestedFile);
-
-    /**
-     * Reimplemented for internal reasons, the API is not affected.
-     * @internal
-     */
-    void javaScriptAlert(QWebFrame *frame, const QString &msg);
-
-    /**
-     * Reimplemented for internal reasons, the API is not affected.
-     * @internal
-     */
-    bool javaScriptConfirm(QWebFrame *frame, const QString &msg);
-
-    /**
-     * Reimplemented for internal reasons, the API is not affected.
-     * @internal
-     */
-    bool javaScriptPrompt(QWebFrame *frame, const QString &msg, const QString &defaultValue, QString *result);
-
-    /**
-     * Reimplemented for internal reasons, the API is not affected.
-     * @internal
-     */
-    QString userAgentForUrl(const QUrl& url) const;
-
     void setSessionMetaData(const QString& key, const QString& value);
+
+    /**
+     * Set meta data that will be sent to KIO slave with the first request.
+     *
+     * Note that a meta data set using this function will be deleted after
+     * it has been sent the first time.
+     */
     void setRequestMetaData(const QString& key, const QString& value);
 
     /**
      * Reimplemented for internal reasons, the API is not affected.
      * @internal
      */
-    bool acceptNavigationRequest (QWebFrame * frame, const QNetworkRequest & request, NavigationType type);
+    virtual QString chooseFile(QWebFrame *frame, const QString &suggestedFile);
 
     /**
      * Reimplemented for internal reasons, the API is not affected.
      * @internal
      */
-    QObject *createPlugin(const QString &classId, const QUrl &url, const QStringList &paramNames, const QStringList &paramValues);
+    virtual void javaScriptAlert(QWebFrame *frame, const QString &msg);
+
+    /**
+     * Reimplemented for internal reasons, the API is not affected.
+     * @internal
+     */
+    virtual bool javaScriptConfirm(QWebFrame *frame, const QString &msg);
+
+    /**
+     * Reimplemented for internal reasons, the API is not affected.
+     * @internal
+     */
+    virtual bool javaScriptPrompt(QWebFrame *frame, const QString &msg, const QString &defaultValue, QString *result);
+
+    /**
+     * Reimplemented for internal reasons, the API is not affected.
+     * @internal
+     */
+    virtual QString userAgentForUrl(const QUrl& url) const;
+
+    /**
+     * Reimplemented for internal reasons, the API is not affected.
+     * @internal
+     */
+    virtual bool acceptNavigationRequest (QWebFrame * frame, const QNetworkRequest & request, NavigationType type);
+
+    /**
+     * Reimplemented for internal reasons, the API is not affected.
+     * @internal
+     */
+    virtual QObject *createPlugin(const QString &classId, const QUrl &url, const QStringList &paramNames, const QStringList &paramValues);
 
 protected Q_SLOTS:
-    virtual void slotHandleUnsupportedContent(QNetworkReply *reply);
-    virtual void slotDownloadRequested(const QNetworkRequest &request);
-    virtual void slotDownloadRequested(const QNetworkRequest &request, QNetworkReply *reply);
+    virtual void slotUnsupportedContent(QNetworkReply *reply);
+    virtual void slotDownloadRequest(const QNetworkRequest &request);
+    virtual void slotDownloadRequest(const QNetworkRequest &request, QNetworkReply *reply);
 
 private:
     class KWebPagePrivate;

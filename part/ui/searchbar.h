@@ -26,7 +26,7 @@
 
 #include <QWidget>
 
-#include "ui_searchbar_p.h"
+#include "ui_searchbar.h"
 
 
 namespace KDEPrivate {
@@ -45,31 +45,23 @@ public:
     QString searchText() const;
     bool caseSensitive() const;
     void setFoundMatch(bool match);
+    void setSearchText(const QString&);
 
 public Q_SLOTS:
     void clear();
     void show();
-    void hide();
-
-protected:
-    void resizeEvent(QResizeEvent *event);
+    void findNext();
+    void findPrevious();
 
 Q_SIGNALS:
-    void searchChanged(const QString& text);
-    void closeClicked();
-    void findNextClicked();
-    void findPreviousClicked();
+    void searchTextChanged(const QString& text, bool backward = false);
+
+private Q_SLOTS:
+    void searchAsYouTypeChanged(bool);
 
 private:
     class SearchBarPrivate;
     SearchBarPrivate* d;
-
-private Q_SLOTS:
-    void frameChanged(int frame);
-    void notifySearchChanged();
-    void slotHide();
-    void searchAsYouTypeChanged(int state);
-
 };
 
 }

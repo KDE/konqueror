@@ -29,7 +29,9 @@
 #include "webpage.h"
 #include "websslinfo.h"
 #include "sslinfodialog_p.h"
-#include <kdewebkit/settings/webkitsettings.h>
+
+#include <ui/searchbar.h>
+#include <settings/webkitsettings.h>
 
 #include <KDE/KParts/GenericFactory>
 #include <KDE/KParts/Plugin>
@@ -163,6 +165,7 @@ public:
   bool updateHistory;
 
   WebView *webView;
+  KDEPrivate::SearchBar *searchBar;
   WebKitBrowserExtension *browserExtension;
 };
 
@@ -193,14 +196,20 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
                                                 .arg(KDE::versionMinor())
                                                 .arg(KDE::versionRelease()));
 
-    setWidget(new QWidget(parentWidget));
-    QVBoxLayout* lay = new QVBoxLayout(widget());
+    QWidget *mainWidget = new QWidget (parentWidget);
+    mainWidget->setObjectName("webkitpart");
+    setWidget(mainWidget);
+
+    QVBoxLayout* lay = new QVBoxLayout(mainWidget);
     lay->setMargin(0);
     lay->setSpacing(0);
 
-    d->webView = new WebView(this, widget());
+    d->webView = new WebView (this, mainWidget);
+    d->searchBar = new KDEPrivate::SearchBar;
+
     lay->addWidget(d->webView);
-    lay->addWidget(d->webView->searchBar());
+    lay->addWidget(d->searchBar);
+
 
     connect(d->webView, SIGNAL(titleChanged(const QString &)),
             this, SLOT(setWindowTitle(const QString &)));
@@ -213,22 +222,23 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
             this, SIGNAL(setStatusBarText(const QString &)));
 #endif
 
+    connect(d->searchBar, SIGNAL(searchTextChanged(const QString &, bool)),
+            this, SLOT(searchForText(const QString &, bool)));
+
     WebPage* webPage = qobject_cast<WebPage*>(d->webView->page());
+    kDebug() << webPage;
     Q_ASSERT(webPage);
 
     connect(webPage, SIGNAL(loadStarted()),
             this, SLOT(loadStarted()));
-    connect(webPage, SIGNAL(loadMainPageFinished()),
-            this, SLOT(loadMainPageFinished()));
+    connect(webPage, SIGNAL(navigationRequestFinished()),
+            this, SLOT(navigationRequestFinished()));
     connect(webPage, SIGNAL(loadAborted(const QUrl &)),
             this, SLOT(loadAborted(const QUrl &)));
-    connect(webPage, SIGNAL(loadError(int, const QString &)),
-            this, SLOT(loadError(int, const QString &)));
+    connect(webPage, SIGNAL(loadError(int, const QString &, const QString &)),
+            this, SLOT(loadError(int, const QString &, const QString &)));
     connect(webPage, SIGNAL(linkHovered(const QString &, const QString &, const QString &)),
             this, SLOT(linkHovered(const QString &, const QString&, const QString &)));
-
-    connect(d->webView, SIGNAL(saveUrl(const KUrl &)),
-            webPage, SLOT(saveUrl(const KUrl &)));
 
     d->browserExtension = new WebKitBrowserExtension(this);
     connect(webPage, SIGNAL(loadProgress(int)),
@@ -295,9 +305,14 @@ void WebKitPart::initAction()
     actionCollection()->addAction("security", action);
     connect(action, SIGNAL(triggered(bool)), this, SLOT(showSecurity()));
 
-    action = actionCollection()->addAction(KStandardAction::Find, "find", d->webView->searchBar(), SLOT(show()));
+    action = actionCollection()->addAction(KStandardAction::Find, "find", this, SLOT(showSearchBar()));
     action->setWhatsThis(i18n("Find text<br /><br />"
                               "Shows a dialog that allows you to find text on the displayed page."));
+
+    action = actionCollection()->addAction(KStandardAction::FindNext, "findnext",
+                                           d->searchBar, SLOT(findNext()));
+    action = actionCollection()->addAction(KStandardAction::FindPrev, "findprev",
+                                           d->searchBar, SLOT(findPrevious()));
 }
 
 void WebKitPart::guiActivateEvent(KParts::GUIActivateEvent *event)
@@ -336,7 +351,7 @@ bool WebKitPart::openUrl(const KUrl &url)
             if (error == KIO::ERR_USER_CANCELED) {
                 setUrl(d->webView->url());
                 emit d->browserExtension->setLocationBarUrl(KUrl(d->webView->url()).prettyUrl());
-                loadMainPageFinished();
+                navigationRequestFinished();
             } else {
                 QString errorText = mainURL.queryItem( "errText" );
                 urls.pop_front();
@@ -359,8 +374,12 @@ bool WebKitPart::openUrl(const KUrl &url)
         setWindowTitle (url.url());
     } else {
         setUrl(url);
-        d->updateHistory = false;  // Do not update history when url is typed in since konqueror automatically does this itself!
-        d->webView->loadUrl(url, arguments(), browserExtension()->browserArguments());
+        d->updateHistory = false;  // Do not update history when url is typed in since konqueror automatically does this itself!        
+        KParts::OpenUrlArguments args (arguments());
+        KIO::MetaData metaData (args.metaData());
+        WebPage *page = qobject_cast<WebPage*>(d->webView->page());
+        if (page) page->setSslInfo(metaData.toVariant());
+        d->webView->loadUrl(url, args, browserExtension()->browserArguments());
     }
 
     return true;
@@ -436,12 +455,14 @@ void WebKitPart::loadFinished(bool ok)
 #endif
 }
 
-void  WebKitPart::loadMainPageFinished()
+void  WebKitPart::navigationRequestFinished()
 {
-     if (qobject_cast<WebPage*>(d->webView->page())->isSecurePage())
-        d->browserExtension->setPageSecurity(WebKitPart::WebKitPartPrivate::Encrypted);
-     else
-        d->browserExtension->setPageSecurity(WebKitPart::WebKitPartPrivate::Unencrypted);
+    kDebug();
+    updateHistory();
+    if (qobject_cast<WebPage*>(d->webView->page())->isSecurePage())
+      d->browserExtension->setPageSecurity(WebKitPart::WebKitPartPrivate::Encrypted);
+    else
+      d->browserExtension->setPageSecurity(WebKitPart::WebKitPartPrivate::Unencrypted);
 }
 
 void WebKitPart::loadAborted(const QUrl & url)
@@ -453,9 +474,9 @@ void WebKitPart::loadAborted(const QUrl & url)
       setUrl(d->webView->url());
 }
 
-void WebKitPart::loadError(int errCode, const QString &errStr)
+void WebKitPart::loadError(int errCode, const QString &errStr, const QString &frameName)
 {
-    showError(htmlError(errCode, errStr, url()));
+    showError(htmlError(errCode, errStr, url()), frameName);
 }
 
 void WebKitPart::urlChanged(const QUrl& _url)
@@ -550,11 +571,29 @@ void WebKitPart::linkHovered(const QString &link, const QString &, const QString
     emit setStatusBarText(message);
 }
 
-void WebKitPart::showError(const QString& html)
+void WebKitPart::showError(const QString &html, const QString &frameName)
 {
-    const bool signalsBlocked = d->webView->blockSignals(true);
-    d->webView->setHtml(html);
-    d->webView->blockSignals(signalsBlocked);
+  QWebFrame *frame = 0;
+
+  if (frameName.isEmpty()) {
+      frame = d->webView->page()->mainFrame();
+  } else {
+      QWebFrame *childFrame;
+      QListIterator<QWebFrame*> it (d->webView->page()->mainFrame()->childFrames());
+      while (it.hasNext()) {
+          childFrame = it.next();
+          if (childFrame->frameName() == frameName) {
+              frame = childFrame;
+              break;
+          }
+      }
+  }
+
+  Q_ASSERT (frame);
+
+  const bool signalsBlocked = d->webView->blockSignals(true);
+  frame->setHtml(html);
+  d->webView->blockSignals(signalsBlocked);
 }
 
 void WebKitPart::setWindowTitle(const QString &title)
@@ -564,6 +603,38 @@ void WebKitPart::setWindowTitle(const QString &title)
 
     emit setWindowCaption(title);
 }
+
+void WebKitPart::searchForText(const QString &text, bool backward)
+{
+    QWebPage::FindFlags flags;
+
+    if (backward)
+      flags = QWebPage::FindBackward;
+
+    if (d->searchBar->caseSensitive())
+        flags |= QWebPage::FindCaseSensitively;
+
+    kDebug() << text;
+    const bool found = d->webView->page()->findText(text, flags);
+    d->searchBar->setFoundMatch(found);
+    if (!found)
+      d->webView->pageAction(QWebPage::NoWebAction);
+}
+
+void WebKitPart::showSearchBar()
+{
+    const QString text = d->webView->selectedText();
+    
+    if (text.isEmpty())
+        d->webView->pageAction(QWebPage::Undo);
+    else
+        d->searchBar->setSearchText(text.left(150));
+
+    d->searchBar->show();
+}
+
+
+
 
 
 WebKitBrowserExtension::WebKitBrowserExtension(WebKitPart *parent)
@@ -584,17 +655,17 @@ WebKitBrowserExtension::WebKitBrowserExtension(WebKitPart *parent)
 
 void WebKitBrowserExtension::cut()
 {
-    part->view()->page()->triggerAction(KWebPage::Cut);
+    part->view()->page()->triggerAction(QWebPage::Cut);
 }
 
 void WebKitBrowserExtension::copy()
 {
-    part->view()->page()->triggerAction(KWebPage::Copy);
+    part->view()->page()->triggerAction(QWebPage::Copy);
 }
 
 void WebKitBrowserExtension::paste()
 {
-    part->view()->page()->triggerAction(KWebPage::Paste);
+    part->view()->page()->triggerAction(QWebPage::Paste);
 }
 
 void WebKitBrowserExtension::slotSaveDocument()
@@ -625,10 +696,10 @@ void WebKitBrowserExtension::printFrame()
 
 void WebKitBrowserExtension::updateEditActions()
 {
-    KWebPage *page = part->view()->page();
-    enableAction("cut", page->action(KWebPage::Cut));
-    enableAction("copy", page->action(KWebPage::Copy));
-    enableAction("paste", page->action(KWebPage::Paste));
+    QWebPage *page = part->view()->page();
+    enableAction("cut", page->action(QWebPage::Cut));
+    enableAction("copy", page->action(QWebPage::Copy));
+    enableAction("paste", page->action(QWebPage::Paste));
 }
 
 void WebKitBrowserExtension::searchProvider()
@@ -703,7 +774,7 @@ void WebKitBrowserExtension::toogleZoomTextOnly()
 void WebKitBrowserExtension::slotSelectAll()
 {
 #if QT_VERSION >= 0x040500
-    part->view()->page()->triggerAction(KWebPage::SelectAll);
+    part->view()->page()->triggerAction(QWebPage::SelectAll);
 #endif
 }
 

@@ -25,13 +25,14 @@
 #ifndef WEBVIEW_H
 #define WEBVIEW_H
 
-#include <kdewebkit/kwebview.h>
+#include "webkitkde_export.h"
 
 #include <KDE/KParts/ReadOnlyPart>
 #include <KDE/KParts/BrowserExtension>
 
-#include "webkitkde_export.h"
+#include <kdewebkit/kwebview.h>
 
+class KUrl;
 class WebKitPart;
 class QWebHitTestResult;
 
@@ -39,13 +40,27 @@ class WEBKITKDE_EXPORT WebView : public KWebView
 {
     Q_OBJECT
 public:
-    WebView(WebKitPart *wpart, QWidget *parent);
-    ~WebView();
+    WebView(WebKitPart *part, QWidget *parent);
+    ~WebView();   
+
+    /**
+     * Similar to the above function, but with KParts style arguments instead.
+     *
+     * @see KParts::OpenUrlArguments, KParts::BrowserArguments.
+     */
+    void loadUrl(const KUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &bargs);
+
     QWebHitTestResult contextMenuResult() const;
 
 protected:
-    void setNewPage();
-    void contextMenuEvent(QContextMenuEvent *e);
+    /**
+     * Reimplemented for internal reasons, the API is not affected.
+     *
+     * @see QWidget::contextMenuEvent
+     * @internal
+     */
+    virtual void contextMenuEvent(QContextMenuEvent *e);
+
     void selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &selectGroupMap);
     void linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &linkGroupMap);
     void partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &partGroupMap);

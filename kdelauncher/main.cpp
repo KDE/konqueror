@@ -29,48 +29,55 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <kwebpage.h>
 #include <kwebview.h>
-#include <kapplication.h>
-#include <kaboutdata.h>
-#include <kcmdlineargs.h>
+#include <knetworkcookiejar.h>
+#include <kwebpluginfactory.h>
 
-#include <qwebframe.h>
-#include <qwebsettings.h>
-#if QT_VERSION >= 0x040600
-#include <qwebelement.h>
-#endif
-
-#include <QDebug>
-#if QT_VERSION >= 0x040400 && !defined(QT_NO_PRINTER)
-#include <QPrintPreviewDialog>
-#endif
+#include <KDE/KApplication>
+#include <KDE/KAboutData>
+#include <KDE/KCmdLineArgs>
+#include <KDE/KDebug>
+#include <KDE/KIO/AccessManager>
 
 #include <QtUiTools/QUiLoader>
+#include <QtWebKit/QWebPage>
+#include <QtWebKit/QWebView>
+#include <QtWebKit/QWebFrame>
+#include <QtWebKit/QWebSettings>
 
-#include <QAction>
-#include <QCompleter>
-#include <QDir>
-#include <QFile>
-#include <QInputDialog>
-#include <QLineEdit>
-#include <QMainWindow>
-#include <QMenu>
-#include <QMenuBar>
-#include <QProgressBar>
-#include <QStatusBar>
-#include <QStringListModel>
-#include <QTextStream>
-#include <QToolBar>
-#include <QToolTip>
-#include <QVector>
+#if QT_VERSION >= 0x040600
+#include <QtWebKit/QWebElement>
+#endif
 
-class WebPage : public KWebPage
+#if QT_VERSION >= 0x040400 && !defined(QT_NO_PRINTER)
+#include <QtGui/QPrintPreviewDialog>
+#endif
+
+#include <QtGui/QAction>
+#include <QtGui/QCompleter>
+#include <QtGui/QInputDialog>
+#include <QtGui/QLineEdit>
+#include <QtGui/QMainWindow>
+#include <QtGui/QMenu>
+#include <QtGui/QMenuBar>
+#include <QtGui/QProgressBar>
+#include <QtGui/QStatusBar>
+#include <QtGui/QStringListModel>
+#include <QtGui/QToolBar>
+#include <QtGui/QToolTip>
+#include <QtCore/QDir>
+#include <QtCore/QFile>
+#include <QtCore/QVector>
+#include <QtCore/QTextStream>
+
+
+
+class WebPage : public QWebPage
 {
 public:
-    WebPage(QWidget *parent) : KWebPage(parent) {}
+    WebPage(QWidget *parent) : QWebPage(parent) {}
 
-    virtual KWebPage *createWindow(QWebPage::WebWindowType);
+    virtual QWebPage *createWindow(QWebPage::WebWindowType);
     virtual QObject* createPlugin(const QString&, const QUrl&, const QStringList&, const QStringList&);
 };
 
@@ -79,10 +86,15 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 public:
     MainWindow(const QString& url = QString()): currentZoom(100) {
-        view = new KWebView(this);
+        view = new QWebView(this);
         setCentralWidget(view);
 
-        view->setPage(new WebPage(view));
+        view->page()->setNetworkAccessManager(new KIO::AccessManager(this));
+        view->page()->setPluginFactory(new KWebPluginFactory(this));
+
+        KNetworkCookieJar *cookiejar = new KNetworkCookieJar;
+        view->page()->networkAccessManager()->setCookieJar(cookiejar);
+        cookiejar->setParent(this);
 
         connect(view, SIGNAL(loadFinished(bool)),
                 this, SLOT(loadFinished()));
@@ -110,11 +122,11 @@ public:
         }
     }
 
-    KWebPage* webPage() const {
+    QWebPage* webPage() const {
         return view->page();
     }
 
-    KWebView* webView() const {
+    QWebView* webView() const {
         return view;
     }
 
@@ -203,7 +215,7 @@ protected slots:
     }
 
     void dumpHtml() {
-        qDebug() << "HTML: " << view->page()->mainFrame()->toHtml();
+        kDebug() << "HTML: " << view->page()->mainFrame()->toHtml();
     }
 
     void selectElements() {
@@ -324,7 +336,7 @@ private:
 
     }
 
-    KWebView *view;
+    QWebView *view;
     QLineEdit *urlEdit;
     QProgressBar *progress;
 
@@ -334,7 +346,7 @@ private:
     QStringListModel urlModel;
 };
 
-KWebPage *WebPage::createWindow(QWebPage::WebWindowType)
+QWebPage *WebPage::createWindow(QWebPage::WebWindowType)
 {
     MainWindow *mw = new MainWindow;
     return mw->webPage();
@@ -353,7 +365,7 @@ class URLLoader : public QObject
 {
     Q_OBJECT
 public:
-    URLLoader(KWebView* view, const QString& inputFileName)
+    URLLoader(QWebView* view, const QString& inputFileName)
         : m_view(view)
         , m_stdOut(stdout)
     {
@@ -389,7 +401,7 @@ private:
                 m_urls.append(line);
             }
         } else {
-            qDebug() << "Can't open list file";
+            kDebug() << "Can't open list file";
             exit(0);
         }
         m_index = 0;
@@ -408,7 +420,7 @@ private:
 private:
     QVector<QString> m_urls;
     int m_index;
-    KWebView* m_view;
+    QWebView* m_view;
     QTextStream m_stdOut;
 };
 
@@ -435,11 +447,11 @@ int main(int argc, char **argv)
         // robotized
         QString listFile = args.at(2);
         if (!(args.count() == 3) && QFile::exists(listFile)) {
-            qDebug() << "Usage: KDELauncher -r listfile";
+            kDebug() << "Usage: KDELauncher -r listfile";
             exit(0);
         }
         MainWindow window;
-        KWebView *view = window.webView();
+        QWebView *view = window.webView();
         URLLoader loader(view, listFile);
         QObject::connect(view, SIGNAL(loadFinished(bool)), &loader, SLOT(loadNext()));
         loader.loadNext();

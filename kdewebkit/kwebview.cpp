@@ -5,6 +5,7 @@
  * Copyright (C) 2008 Urs Wolfer <uwolfer @ kde.org>
  * Copyright (C) 2008 Laurent Montel <montel@kde.org>
  * Copyright (C) 2008 Michael Howell <mhowell123@gmail.com>
+ * Copyright (C) 2009 Dawit Alemayehu <adawit @ kde.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -25,10 +26,9 @@
 
 #include "kwebview.h"
 #include "kwebpage.h"
-#include "searchbar_p.h"
 
-#include <KDE/KUrl>
-#include <KDE/KDebug>
+#include <kurl.h>
+#include <kdebug.h>
 #include <kio/global.h>
 #include <kparts/part.h> // Where's the Qt includes?
 #include <kparts/browserextension.h>
@@ -44,22 +44,17 @@ class KWebView::KWebViewPrivate
 {
 public:
     KWebViewPrivate()
-    : keyboardModifiers(Qt::NoModifier)
-    , pressedButtons(Qt::NoButton)
-    , searchBar(0)
-    , page(0)
-    {}
+    : keyboardModifiers(Qt::NoModifier) , pressedButtons(Qt::NoButton) {}
 
     Qt::KeyboardModifiers keyboardModifiers;
     Qt::MouseButtons pressedButtons;
-    KDEPrivate::SearchBar *searchBar;
-    KWebPage *page;
 };
 
 
 KWebView::KWebView(QWidget *parent)
          :QWebView(parent), d(new KWebView::KWebViewPrivate())
 {
+    setPage(new KWebPage(this));
 }
 
 KWebView::~KWebView()
@@ -67,24 +62,19 @@ KWebView::~KWebView()
     delete d;
 }
 
-KWebPage *KWebView::page() const
+bool KWebView::isExternalContentAllowed() const
 {
-    if (!d->page) {
-        KWebView *that = const_cast<KWebView *>(this);
-        that->setNewPage();
-    }
-    return d->page;
+    KWebPage *webPage = qobject_cast<KWebPage*>(page());
+    if (webPage)
+        return webPage->isExternalContentAllowed();
+    return false;
 }
 
-void KWebView::setNewPage()
+void KWebView::setAllowExternalContent(bool allow)
 {
-    setPage(new KWebPage(this));
-}
-
-void KWebView::setPage(KWebPage *page)
-{
-    d->page = page;
-    QWebView::setPage(page);
+    KWebPage *webPage = qobject_cast<KWebPage*>(page());
+    if (webPage)
+      webPage->setAllowExternalContent(allow);
 }
 
 void KWebView::wheelEvent(QWheelEvent *event)
@@ -143,79 +133,4 @@ void KWebView::mouseReleaseEvent(QMouseEvent *event)
             emit openUrl(url);
         }
     }
-}
-
-QWidget *KWebView::searchBar()
-{
-    if (!d->searchBar) {
-        d->searchBar = new KDEPrivate::SearchBar;
-        kDebug() << "Created new SearchBar" << d->searchBar;
-        d->searchBar->setVisible(false);
-
-        connect(d->searchBar, SIGNAL(findNextClicked()), this, SLOT(slotFindNextClicked()));
-        connect(d->searchBar, SIGNAL(findPreviousClicked()),  this, SLOT(slotFindPreviousClicked()));
-        connect(d->searchBar, SIGNAL(searchChanged(const QString&)), this, SLOT(slotSearchChanged(const QString &)));
-        connect(this, SIGNAL(destroyed()), d->searchBar, SLOT(deleteLater()));
-    }
-    return d->searchBar;
-}
-
-void KWebView::slotFindPreviousClicked()
-{
-    resultSearch(KWebPage::FindBackward);
-}
-
-void KWebView::slotFindNextClicked()
-{
-    KWebPage::FindFlags flags;
-    resultSearch(flags);
-}
-
-void KWebView::slotSearchChanged(const QString & text)
-{
-    Q_UNUSED(text);
-    KWebPage::FindFlags flags;
-    resultSearch(flags);
-}
-
-void KWebView::resultSearch(KWebPage::FindFlags flags)
-{
-    if (d->searchBar->caseSensitive())
-        flags |= KWebPage::FindCaseSensitively;
-    const bool status = page()->findText(d->searchBar->searchText(), flags);
-    d->searchBar->setFoundMatch(status);
-}
-
-void KWebView::loadUrl(const KUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &bargs)
-{
-    if (args.reload()) {
-      pageAction(KWebPage::Reload)->trigger();
-      return;
-    }
-
-    QNetworkRequest req;
-    req.setUrl(url);
-
-    KIO::MetaData metaData (args.metaData());
-    req.setRawHeader("Referer", metaData.value("referrer").toUtf8());
-
-    if (!metaData.isEmpty()) {
-        req.setAttribute(QNetworkRequest::User, metaData.toVariant());
-    }
-
-    if (bargs.postData.isEmpty()) {
-        QWebView::load(req);
-    } else {
-        QWebView::load(req, QNetworkAccessManager::PostOperation, bargs.postData);
-    }
-}
-
-void KWebView::setAllowExternalContent(bool allow)
-{
-    page()->setAllowExternalContent(allow);
-}
-
-bool KWebView::isExternalContentAllowed() const
-{
-    return page()->isExternalContentAllowed();
 }

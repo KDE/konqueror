@@ -12,16 +12,11 @@ add_subdirectory(includes)
 add_subdirectory(cmake)
 
 set(kdewebkit_LIB_SRCS
-    kwebview.cpp
-    kwebpage.cpp
+    knetworkcookiejar.cpp
     kwebpluginfactory.cpp
-    searchbar_p.cpp
-    settings/webkitsettings.cpp
-    settings/khtml_filter.cpp
-)
-
-kde4_add_ui_files(kdewebkit_LIB_SRCS
-    searchbar_p.ui
+    networkaccessmanager_p.cpp
+    kwebpage.cpp
+    kwebview.cpp
 )
 
 kde4_add_library(kdewebkit SHARED ${kdewebkit_LIB_SRCS})
@@ -41,8 +36,9 @@ install(TARGETS kdewebkit ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(FILES
     kdewebkit_export.h
+    kwebpluginfactory.h
+    knetworkcookiejar.h
     kwebpage.h
     kwebview.h
-    kwebpluginfactory.h
     DESTINATION ${INCLUDE_INSTALL_DIR}/kdewebkit/ COMPONENT Devel)
 #     DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel) ### for kdelibs

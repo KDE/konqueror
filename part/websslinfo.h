@@ -30,6 +30,8 @@
 #include <QtNetwork/QHostAddress>
 #include <QtNetwork/QSslCertificate>
 
+namespace KDEPrivate {
+
 class WebSslInfo
 {
 public:
@@ -50,7 +52,8 @@ public:
 
   WebSslInfo& operator = (const WebSslInfo&);
 
-protected:
+  void fromMetaData (const QVariant &);
+
   void reset();
 
   void setUrl (const QUrl &url);
@@ -67,5 +70,5 @@ private:
   class WebSslInfoPrivate;
   WebSslInfoPrivate* d;
 };
-
+}
 #endif // WEBSSLINFO_H

@@ -6,29 +6,17 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>464</width>
-    <height>31</height>
+    <width>582</width>
+    <height>34</height>
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+   <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
-   <property name="leftMargin">
-    <number>6</number>
-   </property>
-   <property name="topMargin">
-    <number>0</number>
-   </property>
-   <property name="rightMargin">
-    <number>6</number>
-   </property>
-   <property name="bottomMargin">
-    <number>0</number>
-   </property>
    <item>
     <widget class="QToolButton" name="closeButton">
      <property name="toolTip">
@@ -39,7 +27,7 @@
    <item>
     <widget class="QLabel" name="searchInfo">
      <property name="text">
-      <string>Text to find:</string>
+      <string>&amp;Find:</string>
      </property>
      <property name="buddy">
       <cstring>searchLineEdit</cstring>
@@ -77,16 +65,15 @@
     </widget>
    </item>
    <item>
-    <widget class="QCheckBox" name="matchCaseCheckBox">
-     <property name="text">
-      <string>Match Case</string>
+    <widget class="QToolButton" name="optionsButton">
+     <property name="toolTip">
+      <string>Find the previous match for the current search phrase</string>
      </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QCheckBox" name="searchAsYouType">
      <property name="text">
-      <string>Search Automatically</string>
+      <string>&amp;Options</string>
+     </property>
+     <property name="popupMode">
+      <enum>QToolButton::InstantPopup</enum>
      </property>
     </widget>
    </item>
@@ -104,6 +91,22 @@
     </spacer>
    </item>
   </layout>
+  <action name="actionMatchCase">
+   <property name="text">
+    <string>&amp;Match Case</string>
+   </property>
+  </action>
+  <action name="actionSearchAutomatically">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Search As You Type</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>

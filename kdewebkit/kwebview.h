@@ -5,6 +5,7 @@
  * Copyright (C) 2008 Urs Wolfer <uwolfer @ kde.org>
  * Copyright (C) 2008 Laurent Montel <montel@kde.org>
  * Copyright (C) 2008 Michael Howell <mhowell123@gmail.com>
+ * Copyright (C) 2009 Dawit Alemayehu <adawit @ kde.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -28,11 +29,12 @@
 #include <kdewebkit_export.h>
 
 #include <QtWebKit/QWebView>
-#include "kwebpage.h"
 
 class KUrl;
+class QWebPage;
 class QMouseEvent;
 class QWheelEvent;
+
 namespace KParts
 {
     class OpenUrlArguments;
@@ -40,12 +42,15 @@ namespace KParts
 }
 
 /**
- * An enhanced QWebView with integration into the KDE environment.
+ * A re-implementation of QWebView to provide KDE integration.
+ *
+ * This is a convenience class that provides an implementation of QWebView with
+ * full integration with KDE technologies for networking (KIO), cookie handling
+ * (KCookieJar) and embeded non-html content (<embed>) handling (KPart apps).
  *
  * @author Urs Wolfer <uwolfer @ kde.org>
  * @since 4.4
  */
-
 class KDEWEBKIT_EXPORT KWebView : public QWebView
 {
     Q_OBJECT
@@ -59,18 +64,11 @@ public:
      * Destroys the KWebView.
      */
     ~KWebView();
+
     /**
-     * This method returns the current KWebPage, if there is none, one will be created.
-     * It calles virtual method setNewPage() to create new (K)WebPage, so
-     * of you reimplements KWebPage ypu should reimplement this setNewPage()
-     * @see setPage()
-     * @see setNewPage()
-     * @short Getter for KWebPage
-     * @return current KWebPage
+     * Returns true if external content is fetched, @see setAllowExternalContent().
      */
-    KWebPage *page() const;
-    void setPage(KWebPage *page);
-    QWidget *searchBar();
+    bool isExternalContentAllowed() const;
 
     /**
      * Set @p allow to false if you don't want to allow showing external content,
@@ -78,59 +76,45 @@ public:
      */
     void setAllowExternalContent(bool allow);
 
-    /**
-     * Returns true if external content is fetched, @see setAllowExternalContent().
-     */
-    bool isExternalContentAllowed() const;
-
-public Q_SLOTS:
-    /**
-     * similar to load(const QNetworkRequest&, QNetworkAccessManager::Operation), but for KParts-style arguments instead.
-     */
-    void loadUrl(const KUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &bargs);
-
 Q_SIGNALS:
     void openUrl(const KUrl &url);
+
+    /**
+     * This signal is emitted when the user clicks on a link with the middle
+     * mouse button.
+     */
     void openUrlInNewTab(const KUrl &url);
+
+    /**
+     * This signal is emitted when the user presses the shift and clicks on a
+     * link with the mouse button.
+     */
     void saveUrl(const KUrl &url);
 
 protected:
     /**
-     * Creates new (K)WebPage. This virtual method is called by page() to create new (K)WebPage if necessary.
-     * Reimplement this method if you reimplement KWebPage, e.g:
-     * @code
-     * void MyWebView::setNewPage()
-     * {
-     *     setPage(new MyWebPage(this));
-     * }
-     * @endcode
-     * @see page()
-     */
-    virtual void setNewPage();
-
-    /**
      * Reimplemented for internal reasons, the API is not affected.
+     *
+     * @see QWidget::wheelEvent.
      * @internal
      */
     void wheelEvent(QWheelEvent *event);
 
     /**
      * Reimplemented for internal reasons, the API is not affected.
+     *
+     * @see QWidget::mousePressEvent.
      * @internal
      */
-    void mousePressEvent(QMouseEvent *event);
+    virtual void mousePressEvent(QMouseEvent *event);
 
     /**
      * Reimplemented for internal reasons, the API is not affected.
+     *
+     * @see QWidget::mouseReleaseEvent.
      * @internal
      */
-    void mouseReleaseEvent(QMouseEvent *event);
-
-protected Q_SLOTS:
-    virtual void slotFindNextClicked();
-    virtual void slotFindPreviousClicked();
-    virtual void slotSearchChanged(const QString &);
-    virtual void resultSearch(KWebPage::FindFlags flags);
+    virtual void mouseReleaseEvent(QMouseEvent *event);
 
 private:
     class KWebViewPrivate;

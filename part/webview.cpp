@@ -24,22 +24,25 @@
  */
 
 #include "webview.h"
-#include "webkitpart.h"
 #include "webpage.h"
+#include "webkitpart.h"
 
-#include <KParts/GenericFactory>
-#include <KAboutData>
-#include <KAction>
-#include <KActionCollection>
-#include <KConfigGroup>
-#include <KMimeType>
-#include <KService>
-#include <KUriFilterData>
-#include <KStandardDirs>
-#include <KActionMenu>
+#include <kio/global.h>
+#include <KDE/KParts/GenericFactory>
+#include <KDE/KAboutData>
+#include <KDE/KAction>
+#include <KDE/KActionCollection>
+#include <KDE/KConfigGroup>
+#include <KDE/KMimeType>
+#include <KDE/KService>
+#include <KDE/KUriFilterData>
+#include <KDE/KStandardDirs>
+#include <KDE/KActionMenu>
 
 #include <QtNetwork/QHttpRequestHeader>
+#include <QtNetwork/QNetworkRequest>
 #include <QtWebKit/QWebFrame>
+
 #include <QtWebKit/QWebHitTestResult>
 
 class WebView::WebViewPrivate
@@ -68,11 +71,19 @@ public:
 
 
 WebView::WebView(WebKitPart *wpart, QWidget *parent)
-        : KWebView(parent), d(new WebViewPrivate(this))
+        :KWebView(parent), d(new WebViewPrivate(this))
 {
     d->part = wpart;
     d->actionCollection = new KActionCollection(this);
     setAcceptDrops(true);
+
+    // Use our own custom re-implementation of KWebPage...
+    WebPage *webpage = new WebPage(wpart, this);
+    setPage(webpage);
+
+    // Connect parent's saveUrl signal...
+    connect(this, SIGNAL(saveUrl(const KUrl &)),
+            webpage, SLOT(saveUrl(const KUrl &)));
 }
 
 WebView::~WebView()
@@ -80,14 +91,33 @@ WebView::~WebView()
     delete d;
 }
 
+void WebView::loadUrl(const KUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &bargs)
+{
+    if (args.reload()) {
+      pageAction(KWebPage::Reload)->trigger();
+      return;
+    }
+
+    QNetworkRequest req;
+    req.setUrl(url);
+
+    KIO::MetaData metaData (args.metaData());
+    req.setRawHeader("Referer", metaData.value("referrer").toUtf8());
+
+    if (!metaData.isEmpty()) {
+        req.setAttribute(QNetworkRequest::User, metaData.toVariant());
+    }
+
+    if (bargs.postData.isEmpty()) {
+        KWebView::load(req);
+    } else {
+        KWebView::load(req, QNetworkAccessManager::PostOperation, bargs.postData);
+    }
+}
+
 QWebHitTestResult WebView::contextMenuResult() const
 {
     return d->result;
-}
-
-void WebView::setNewPage()
-{
-    setPage(new WebPage(d->part, this));
 }
 
 void WebView::contextMenuEvent(QContextMenuEvent *e)

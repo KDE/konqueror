@@ -24,14 +24,15 @@
 #ifndef WEBPAGE_H
 #define WEBPAGE_H
 
-#include <kdewebkit/kwebpage.h>
-
 #include "webkitkde_export.h"
+
+#include <kdewebkit/kwebpage.h>
 
 class KUrl;
 class KSslInfoDialog;
-class QWebFrame;
 class WebKitPart;
+
+class QVariant;
 
 class WEBKITKDE_EXPORT WebPage : public KWebPage
 {
@@ -40,34 +41,89 @@ public:
     WebPage(WebKitPart *wpart, QWidget *parent);
     ~WebPage();
 
+    /**
+     * Returns true if the url in the main frame is set to a site protected by SSL.
+     */
     bool isSecurePage() const;
+
+    /**
+     * Re-implemented for internal reasons. API is unaffected.
+     *
+     * @see KWebPage::authorizedRequest.
+     */
+    bool authorizedRequest(const QUrl &) const;
+
+    /**
+     * Sets the stored ssl information to @p info.
+     */
+    void setSslInfo(const QVariant &info);
+
+    /**
+     * Sets up @p dlg with the stored SSL information, if any.
+     */
     void setupSslDialog(KSslInfoDialog &dlg) const;
 
 Q_SIGNALS:
     void updateHistory();
-    void loadMainPageFinished();
-    void loadStarted(const QUrl& url);    
+
+    /**
+     * This signal is emitted whenever a navigation request by the main frame completes.
+     */
+    void navigationRequestFinished();
+
+    /**
+     * This signal is emitted under the same condition as QWebPage::loadStarted()
+     * except it also sends the url being loaded.
+     */
+    void loadStarted(const QUrl& url);
+
+    /**
+     * This signal is emitted whenever a user cancels/aborts a load resource request.
+     */
     void loadAborted(const QUrl& newUrl);
-    void loadError(int, const QString&);
+
+    /**
+     * This signal is emitted whenever an error is encoutered while loading the requested resource.
+     */
+    void loadError(int, const QString&, const QString& frameName = QString());
 
 public Q_SLOTS:
+    /**
+     * Prompts the user to saves the contents of the specified @p url.
+     */
     void saveUrl(const KUrl &url);
 
+
 protected:
-    virtual bool acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request,
-                                         NavigationType type);
+    /**
+     * Reimplemented for internal reasons, the API is not affected.
+     * @internal
+     */
+    virtual QWebPage* createWindow(WebWindowType type);
 
-    virtual KWebPage *newWindow(WebWindowType type);
+    /**
+     * Reimplemented for internal reasons, the API is not affected.
+     * @internal
+     */
+    virtual bool acceptNavigationRequest(QWebFrame * frame, const QNetworkRequest & request, NavigationType type);
 
-    virtual bool authorizedRequest(const QNetworkRequest &req, NavigationType type) const;
-    virtual bool checkFormData(const QNetworkRequest &req) const;
+    bool checkLinkSecurity(const QNetworkRequest &req, NavigationType type) const;
+    bool checkFormData(const QNetworkRequest &req) const;
+    bool handleMailToUrl (const QUrl& , NavigationType type) const;
 
 protected Q_SLOTS:
+    /**
+     * Reimplemented for internal reasons, the API is not affected.
+     *
+     * @see KWebPage::handleUnsupportedContent
+     * @internal
+     */
+    virtual void handleUnsupportedContent(QNetworkReply *reply);
+
+    void slotRequestFinished(QNetworkReply *reply);
     void slotGeometryChangeRequested(const QRect &rect);
     void slotWindowCloseRequested();
     void slotStatusBarMessage(const QString &message);
-    void slotHandleUnsupportedContent(QNetworkReply *reply);
-    void slotRequestFinished(QNetworkReply *reply);
 
 private:
     class WebPagePrivate;
