@@ -23,9 +23,10 @@
 #ifndef KNETWORKCOOKIEJAR_H
 #define KNETWORKCOOKIEJAR_H
 
-#include "kdewebkit_export.h"
+#include <kdewebkit_export.h>
 
 #include <QtNetwork/QNetworkCookieJar>
+#include <QtGui/qwindowdefs.h>
 
 /**
  * @short A KDE implementation of QNetworkCookieJar.
@@ -75,7 +76,7 @@ public:
    /**
     * Returns the currently set window id. The default value is -1.
     */
-    qlonglong windowId() const;
+    WId winId() const;
 
     /**
      * Sets the window id of the application.
@@ -87,9 +88,9 @@ public:
      * @see QWidget::window()
      * @see QWidget::winId()
      *
-     * @param id  the value of @ref QWidget::winId() from the window that contains your widget.
+     * @param id the value of @ref QWidget::winId() from the window that contains your widget.
      */
-    void setWindowId(qlonglong id);
+    void setWinId(WId id);
 
     /**
      * Reparse the KDE cookiejar configuration file.

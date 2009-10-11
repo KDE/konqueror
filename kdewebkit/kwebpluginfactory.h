@@ -25,11 +25,6 @@
 #include <kdewebkit_export.h>
 
 #include <QtWebKit/QWebPluginFactory>
-#include <QtCore/QList>
-#include <QtGui/QWidget>
-
-class QStringList;
-
 
 /**
  * @short An enhanced QWebPluginFactory with integration into the KDE environment.

@@ -31,9 +31,6 @@
 #include <QtWebKit/QWebView>
 
 class KUrl;
-class QWebPage;
-class QMouseEvent;
-class QWheelEvent;
 
 namespace KParts
 {
@@ -66,13 +63,15 @@ public:
     ~KWebView();
 
     /**
-     * Returns true if external content is fetched, @see setAllowExternalContent().
+     * Returns true if external content is fetched.
+     * @see setAllowExternalContent().
      */
     bool isExternalContentAllowed() const;
 
     /**
      * Set @p allow to false if you don't want to allow showing external content,
      * so no external images for example. By default external content is fetched.
+     * @see isExternalContentAllowed().
      */
     void setAllowExternalContent(bool allow);
 

@@ -29,10 +29,6 @@
 
 #include <QtWebKit/QWebPage>
 
-class QUrl;
-class QWebFrame;
-class QNetworkReply;
-
 /**
  * @short An enhanced QWebPage with integration into the KDE environment.
  *
@@ -152,7 +148,7 @@ protected:
      */
     virtual QObject *createPlugin(const QString &classId, const QUrl &url, const QStringList &paramNames, const QStringList &paramValues);
 
-protected Q_SLOTS:
+protected Q_SLOTS: //TODO: either document or remove, see discussion on kdewebkit ml -uwolfer
     virtual void slotUnsupportedContent(QNetworkReply *reply);
     virtual void slotDownloadRequest(const QNetworkRequest &request);
     virtual void slotDownloadRequest(const QNetworkRequest &request, QNetworkReply *reply);

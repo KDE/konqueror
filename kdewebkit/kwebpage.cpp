@@ -96,11 +96,11 @@ KWebPage::KWebPage(QObject *parent)
     setNetworkAccessManager(new KDEPrivate::NetworkAccessManager(this));
 
     // KDE Cookiejar (KCookieJar) integration...
-    qlonglong windowId = view()->window()->winId();
+    WId winId = view()->window()->winId();
     KNetworkCookieJar *cookiejar = new KNetworkCookieJar;
-    cookiejar->setWindowId(windowId);
-    networkAccessManager()->setCookieJar(cookiejar);    
-    setSessionMetaData(QL1("window-id"), QString::number(windowId));
+    cookiejar->setWinId(winId);
+    networkAccessManager()->setCookieJar(cookiejar);
+    setSessionMetaData(QL1("window-id"), QString::number(winId));
 
     action(Back)->setIcon(KIcon("go-previous"));
     action(Back)->setShortcut(KStandardShortcut::back().primary());

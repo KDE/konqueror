@@ -35,9 +35,9 @@
 class KNetworkCookieJar::KNetworkCookieJarPrivate
 {
 public:
-  KNetworkCookieJarPrivate(): windowId(-1), enabled(true) {}
+  KNetworkCookieJarPrivate(): winId(-1), enabled(true) {}
 
-  qlonglong windowId;
+  WId winId;
   bool enabled;
 };
 
@@ -51,8 +51,8 @@ KNetworkCookieJar::~KNetworkCookieJar() {
     delete d;
 }
 
-qlonglong KNetworkCookieJar::windowId() const {
-    return d->windowId;
+WId KNetworkCookieJar::winId() const {
+    return d->winId;
 }
 
 QList<QNetworkCookie> KNetworkCookieJar::cookiesForUrl(const QUrl &url) const {
@@ -60,7 +60,7 @@ QList<QNetworkCookie> KNetworkCookieJar::cookiesForUrl(const QUrl &url) const {
 
     if (d->enabled) {
         QDBusInterface kcookiejar("org.kde.kded", "/modules/kcookiejar", "org.kde.KCookieServer");
-        QDBusReply<QString> reply = kcookiejar.call("findDOMCookies", url.toString(), d->windowId);
+        QDBusReply<QString> reply = kcookiejar.call("findDOMCookies", url.toString(), (qlonglong) d->winId);
 
         if (reply.isValid()) {
             cookieList << reply.value().toUtf8();
@@ -81,8 +81,8 @@ bool KNetworkCookieJar::setCookiesFromUrl(const QList<QNetworkCookie> &cookieLis
         Q_FOREACH(const QNetworkCookie &cookie, cookieList) {
             cookieHeader = "Set-Cookie: ";
             cookieHeader += cookie.toRawForm();
-            kcookiejar.call("addCookies", url.toString(), cookieHeader, d->windowId);
-            //kDebug() << "[" << d->windowId << "] Got Cookie: " << cookieHeader << " from " << url;
+            kcookiejar.call("addCookies", url.toString(), cookieHeader, (qlonglong) d->winId);
+            //kDebug() << "[" << d->winId << "] Got Cookie: " << cookieHeader << " from " << url;
         }
 
         return !kcookiejar.lastError().isValid();
@@ -91,8 +91,8 @@ bool KNetworkCookieJar::setCookiesFromUrl(const QList<QNetworkCookie> &cookieLis
     return false;
 }
 
-void KNetworkCookieJar::setWindowId(qlonglong id) {
-    d->windowId = id;
+void KNetworkCookieJar::setWinId(WId id) {
+    d->winId = id;
 }
 
 void KNetworkCookieJar::reparseConfiguration() {
