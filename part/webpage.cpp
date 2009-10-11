@@ -410,10 +410,10 @@ bool WebPage::handleMailToUrl (const QUrl& url, NavigationType type) const
             case QWebPage::NavigationTypeFormSubmitted:                
             case QWebPage::NavigationTypeFormResubmitted:
                 if (!files.isEmpty()) {
-                  KMessageBox::information(0, i18n("This site attempted to attach a file from your "
-                                                   "computer in the form submission. The attachment "
-                                                   "was removed for your protection."),
-                                           i18n("KDE"), "InfoTriedAttach");
+                    KMessageBox::information(0, i18n("This site attempted to attach a file from your "
+                                                     "computer in the form submission. The attachment "
+                                                     "was removed for your protection."),
+                                             i18n("KDE"), "InfoTriedAttach");
                 }
                 break;
             default:
@@ -422,8 +422,9 @@ bool WebPage::handleMailToUrl (const QUrl& url, NavigationType type) const
 
         kDebug() << "Emitting openUrlRequest with " << mailtoUrl;
         emit d->part->browserExtension()->openUrlRequest(mailtoUrl);
-        return false;
+        return true;
     }
+
     return false;
 }
 
