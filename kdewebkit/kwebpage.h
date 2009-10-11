@@ -34,7 +34,7 @@ class QWebFrame;
 class QNetworkReply;
 
 /**
- * An enhanced QWebPage with integration into the KDE environment.
+ * @short An enhanced QWebPage with integration into the KDE environment.
  *
  * @author Urs Wolfer <uwolfer @ kde.org>
  * @since 4.4
@@ -55,13 +55,15 @@ public:
     ~KWebPage();
 
     /**
-     * Returns true if external content is fetched, @see setAllowExternalContent().
+     * Returns true if external content is fetched.
+     * @see setAllowExternalContent().
      */
     bool isExternalContentAllowed() const;
 
     /**
      * Set @p allow to false if you don't want to allow showing external content,
      * so no external images for example. By default external content is fetched.
+     * @see isExternalContentAllowed().
      */
     void setAllowExternalContent(bool allow);
 
@@ -73,6 +75,7 @@ public:
      * returns true.
      *
      * @param url the url to be authorized.
+     * @return true in this default implementation.
      */
     virtual bool authorizedRequest(const QUrl&) const;
 
@@ -95,42 +98,56 @@ protected:
 
     /**
      * Reimplemented for internal reasons, the API is not affected.
+     *
+     * @see QWebPage::chooseFile.
      * @internal
      */
     virtual QString chooseFile(QWebFrame *frame, const QString &suggestedFile);
 
     /**
      * Reimplemented for internal reasons, the API is not affected.
+     *
+     * @see QWebPage::javaScriptAlert.
      * @internal
      */
     virtual void javaScriptAlert(QWebFrame *frame, const QString &msg);
 
     /**
      * Reimplemented for internal reasons, the API is not affected.
+     *
+     * @see QWebPage::javaScriptConfirm.
      * @internal
      */
     virtual bool javaScriptConfirm(QWebFrame *frame, const QString &msg);
 
     /**
      * Reimplemented for internal reasons, the API is not affected.
+     *
+     * @see QWebPage::javaScriptPrompt.
      * @internal
      */
     virtual bool javaScriptPrompt(QWebFrame *frame, const QString &msg, const QString &defaultValue, QString *result);
 
     /**
      * Reimplemented for internal reasons, the API is not affected.
+     *
+     * @see QWebPage::userAgentForUrl.
      * @internal
      */
     virtual QString userAgentForUrl(const QUrl& url) const;
 
     /**
      * Reimplemented for internal reasons, the API is not affected.
+     *
+     * @see QWebPage::acceptNavigationRequest.
      * @internal
      */
-    virtual bool acceptNavigationRequest (QWebFrame * frame, const QNetworkRequest & request, NavigationType type);
+    virtual bool acceptNavigationRequest(QWebFrame * frame, const QNetworkRequest & request, NavigationType type);
 
     /**
      * Reimplemented for internal reasons, the API is not affected.
+     *
+     * @see QWebPage::createPlugin.
      * @internal
      */
     virtual QObject *createPlugin(const QString &classId, const QUrl &url, const QStringList &paramNames, const QStringList &paramValues);

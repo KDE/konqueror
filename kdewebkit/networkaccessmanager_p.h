@@ -29,6 +29,8 @@ namespace KDEPrivate {
  /**
   * Reimplementation of KIO::AccessManager to provide content filtering support
   * and a convenience function for storing persistent and temporary KIO meta data.
+  *
+  * @author Dawit Alemayehu <adawit @ kde.org>
   */
 class NetworkAccessManager : public KIO::AccessManager
 {
@@ -64,6 +66,8 @@ public:
 protected:
     /**
      * Reimplemented for internal reasons, the API is not affected.
+     *
+     * @see KIO::AccessManager::createRequest.
      * @internal
      */
     virtual QNetworkReply *createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData = 0);

@@ -42,7 +42,7 @@ namespace KParts
 }
 
 /**
- * A re-implementation of QWebView to provide KDE integration.
+ * @short A re-implementation of QWebView to provide KDE integration.
  *
  * This is a convenience class that provides an implementation of QWebView with
  * full integration with KDE technologies for networking (KIO), cookie handling
@@ -77,6 +77,9 @@ public:
     void setAllowExternalContent(bool allow);
 
 Q_SIGNALS:
+    /**
+     * This signal is emitted when the user wants to navigate to the url @p url.
+     */
     void openUrl(const KUrl &url);
 
     /**

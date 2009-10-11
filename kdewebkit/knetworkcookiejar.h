@@ -35,31 +35,41 @@
  *
  * Here is a simple example that shows how to switch QtWebKit to use KDE's
  * cookiejar:
- *
+ * @code
  *   QWebView *view = new QWebView(this);
- *   KNetworkCookieJar *cookiejar = new KNetworkCookieJar;
- *   cookiejar->setWindowId(view->window()->winId());
- *   view->page()->networkAccessManager()->setCookieJar(cookiejar);
+ *   KNetworkCookieJar *cookieJar = new KNetworkCookieJar;
+ *   cookieJar->setWindowId(view->window()->winId());
+ *   view->page()->networkAccessManager()->setCookieJar(cookieJar);
+ * @endcode
  *
  * To access member functions in the cookiejar class at a later point in your
  * code simply downcast the pointer returned by QNetworkAccessManager::cookieJar
  * as follows:
+ * @code
+ *   KNetworkCookieJar *cookieJar = qobject_cast<KNetworkCookieJar*>(view->page()->accessManager()->cookieJar());
+ * @endcode
  *
- *   KNetworkCookieJar *cookiejar = qobject_cast<KNetworkCookieJar*>(view->page()->accessManager()->cookieJar());
- *
- * NOTE: This class is not a replacement for the standard KDE API. It should
+ * <b>NOTE:</b> This class is not a replacement for the standard KDE API. It should
  * ONLY be used to to provide KDE integration in applications that cannot use
  * the standard KDE API directly.
-
+ *
  * @see QNetworkAccessManager::setCookieJar for details.
  *
+ * @author Dawit Alemayehu <adawit @ kde.org>
  * @since 4.4
  */
 class KDEWEBKIT_EXPORT KNetworkCookieJar : public QNetworkCookieJar
 {
     Q_OBJECT
 public:
-    KNetworkCookieJar(QObject *parent = 0);
+    /**
+     * Constructs a KNetworkCookieJar with parent @p parent.
+     */
+    explicit KNetworkCookieJar(QObject *parent = 0);
+
+    /**
+     * Destroys the KNetworkCookieJar.
+     */
     ~KNetworkCookieJar();
 
    /**
@@ -107,4 +117,4 @@ private:
     KNetworkCookieJarPrivate* const d;
 };
 
-#endif // KIO_COOKIEJAR_H
+#endif // KNETWORKCOOKIEJAR_H

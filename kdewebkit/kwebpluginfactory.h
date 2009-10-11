@@ -32,7 +32,7 @@ class QStringList;
 
 
 /**
- * An enhanced QWebPluginFactory with integration into the KDE environment.
+ * @short An enhanced QWebPluginFactory with integration into the KDE environment.
  *
  * @author Michael Howell <mhowell123@gmail.com>
  * @since 4.4
@@ -54,6 +54,8 @@ public:
 
     /**
      * Reimplemented for internal reasons, the API is not affected.
+     *
+     * @see QWebPluginFactory::create.
      * @internal
      */
     virtual QObject *create(const QString &mimeType,
@@ -63,6 +65,8 @@ public:
 
     /**
      * Reimplemented for internal reasons, the API is not affected.
+     *
+     * @see QWebPluginFactory::plugins.
      * @internal
      */
     virtual QList<Plugin> plugins() const;
