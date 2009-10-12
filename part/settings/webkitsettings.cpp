@@ -655,8 +655,14 @@ void WebKitSettings::init( KConfig * config, bool reset )
   QWebSettings::globalSettings()->setAttribute(QWebSettings::JavascriptEnabled, isJavaScriptEnabled());
   QWebSettings::globalSettings()->setAttribute(QWebSettings::JavaEnabled, isJavaEnabled());
   QWebSettings::globalSettings()->setAttribute(QWebSettings::PluginsEnabled, isPluginsEnabled());
-  QWebSettings::globalSettings()->setAttribute(QWebSettings::JavascriptCanOpenWindows,
-                                               windowOpenPolicy() != WebKitSettings::KJSWindowOpenDeny);
+
+  // By default disable JS window.open when policy is deny or smart.
+  const KJSWindowOpenPolicy policy = windowOpenPolicy();
+  if (policy == WebKitSettings::KJSWindowOpenDeny || policy == WebKitSettings::KJSWindowOpenSmart)
+      QWebSettings::globalSettings()->setAttribute(QWebSettings::JavascriptCanOpenWindows, false);
+  else
+      QWebSettings::globalSettings()->setAttribute(QWebSettings::JavascriptCanOpenWindows, true);
+
 #if QT_VERSION >= 0x040500
   QWebSettings::globalSettings()->setAttribute(QWebSettings::ZoomTextOnly, zoomTextOnly());
 #endif
