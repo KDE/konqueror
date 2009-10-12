@@ -242,22 +242,15 @@ QString KWebPage::userAgentForUrl(const QUrl& _url) const
 bool KWebPage::acceptNavigationRequest(QWebFrame * frame, const QNetworkRequest & request, NavigationType type)
 {
     kDebug() << "url: " << request.url() << ", type: " << type << ", frame: " << frame;   
-    /*
-      QWebPage calls acceptNavigationRequest when:
-        ** a load url operation is requested... (e.g. user types in the url)
-        ** a link on a web page is clicked...
-        ** a "location.href" javascript command is executed...
-        ** a load url operation is requested from a frame within the main frame...
 
-        If the navigation request is from the main frame, set the cross-domain meta-data
-        value to the current url when for proper integration with KCookieJar...
+    /*
+      If the navigation request is from the main frame, set the cross-domain
+      meta-data value to the current url for proper integration with KCookieJar...
     */
-    if (frame && frame == mainFrame()) {
+    if (frame == mainFrame()) {
         const QString scheme = request.url().scheme();
-        const QString about = QString::fromUtf8("about");
-        const QString local = QString::fromUtf8("file");
-        if (QString::compare(scheme, about, Qt::CaseInsensitive) != 0 &&
-            QString::compare(scheme, local, Qt::CaseInsensitive) != 0) {
+        if (QString::compare(QString::fromUtf8("about"), scheme, Qt::CaseInsensitive) != 0 &&
+            QString::compare(QString::fromUtf8("file"), scheme, Qt::CaseInsensitive) != 0) {
             setSessionMetaData(QL1("cross-domain"), request.url().toString());
         }
     }
