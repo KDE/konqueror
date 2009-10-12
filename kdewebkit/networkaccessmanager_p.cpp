@@ -54,8 +54,6 @@ namespace KDEPrivate {
 class NetworkAccessManager::NetworkAccessManagerPrivate
 {
  public:
-    QPointer<KWebPage> page;
-
     KIO::MetaData requestMetaData;
     KIO::MetaData sessionMetaData;
 };
@@ -64,7 +62,6 @@ NetworkAccessManager::NetworkAccessManager(QObject *parent)
                                  :KIO::AccessManager(parent),
                                   d(new KDEPrivate::NetworkAccessManager::NetworkAccessManagerPrivate)
 {
-    d->page = qobject_cast<KWebPage*>(parent);
 }
 
 KIO::MetaData& NetworkAccessManager::requestMetaData()
@@ -79,7 +76,8 @@ KIO::MetaData& NetworkAccessManager::sessionMetaData()
 
 QNetworkReply *NetworkAccessManager::createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData)
 {
-    if (d->page && !d->page->authorizedRequest(req.url())) {
+    KWebPage* page = qobject_cast<KWebPage*>(parent());
+    if (page && !page->authorizedRequest(req.url())) {
         kDebug() << "*** BLOCKED UNAUTHORIZED REQUEST => " << req.url();
         return new NullNetworkReply();
     }
@@ -94,19 +92,19 @@ QNetworkReply *NetworkAccessManager::createRequest(Operation op, const QNetworkR
     if (value.isValid() && value.type() == QVariant::Map)
         metaData += value.toMap();
 
-    // Add the request meta data if any...
+    // Append per request meta data, if any...
     if (!d->requestMetaData.isEmpty())
         metaData += d->requestMetaData;
 
-    // Add the session meta data if any...
+    // Append per session meta data, if any...
     if (!d->sessionMetaData.isEmpty())
         metaData += d->sessionMetaData;
 
-    // Set the meta data to be sent off to
+    // Re-set meta data to be sent, if any...
     if (!metaData.isEmpty())
         request.setAttribute(attr, metaData.toVariant());
 
-    // Clear the per request meta data...
+    // Clear per request meta data...
     d->requestMetaData.clear();
 
     return KIO::AccessManager::createRequest(op, request, outgoingData);
