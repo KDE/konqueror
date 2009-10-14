@@ -66,16 +66,16 @@ QObject* KWebPluginFactory::create(const QString& _mimeType, const QUrl& url, co
     /*
        HACK: This is a big time hack to determine the mime-type from the url
        when no mime-type is provided. Since we do not want to make async calls,
-       here, i.e. use apis like KIO::mimeType, we resort a the hack below
-       to determine the requests mime-type from the filename.
+       (e.g. KIO::mimeType) here, we resort to the hack below to determine the
+       mime-type it from the request's filename.
 
-       NOTE: this hack is not full proof and is not guranteed to always work.
-       See the KMimeType::findByPath docs for details. It is however the best
-       option to properly handle documents, images, and other resources embedded
-       into html content with the <embed> tag without the "type" attribute. Here
-       is an example of such a site:
+       NOTE: This hack is not full proof and might not always work. See the
+       KMimeType::findByPath docs for details. It is however the best option
+       to properly handle documents, images, and other resources embedded
+       into html content with the <embed> tag when they lack the "type"
+       attribute that specifies their mime-type.
 
-       http://blogs.adobe.com/pdfdevjunkie/2007/08/using_the_html_embed_tag_to_di.html
+       See the sample file "embed_tag_test.html" in the tests folder.
     */
     if (mimeType.isEmpty()) {
        KMimeType::Ptr ptr = KMimeType::findByPath(url.path());
@@ -148,9 +148,11 @@ QList<KWebPluginFactory::Plugin> KWebPluginFactory::plugins() const
 
     for (int i = 0; i < services.size(); i++) {
         KService::Ptr s = services.at(i);
-        // The part that handles (nspluginpart) Adobe Flash is skipped because
-        // it does not work in webkitpart. Instead we defer then handling of
-        // flash content to QtWebKit's built-in flash viewer...
+        /*
+          NOTE: We skip over the part that handles Adobe Flash (nspluginpart)
+          here because it has issues when embeded into QtWebKit. Hence we defer
+          the handling of flash content to QtWebKit's own builtin flash viewer.
+        */
         if (s->hasMimeType(KMimeType::mimeType("application/x-shockwave-flash").data()))
           continue;
         Plugin plugin;
