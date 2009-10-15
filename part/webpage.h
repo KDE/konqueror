@@ -115,10 +115,10 @@ protected Q_SLOTS:
     /**
      * Reimplemented for internal reasons, the API is not affected.
      *
-     * @see KWebPage::handleUnsupportedContent
+     * @see KWebPage::slotUnsupportedContent
      * @internal
      */
-    virtual void handleUnsupportedContent(QNetworkReply *reply);
+    virtual void slotUnsupportedContent(QNetworkReply *reply);
 
     void slotRequestFinished(QNetworkReply *reply);
     void slotGeometryChangeRequested(const QRect &rect);

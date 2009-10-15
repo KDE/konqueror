@@ -428,7 +428,7 @@ bool WebPage::handleMailToUrl (const QUrl& url, NavigationType type) const
     return false;
 }
 
-void WebPage::handleUnsupportedContent(QNetworkReply *reply)
+void WebPage::slotUnsupportedContent(QNetworkReply *reply)
 {
     const KUrl url(reply->request().url());
     kDebug() << url;
