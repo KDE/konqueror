@@ -37,6 +37,7 @@
 #include <kdesktopfile.h>
 #include <kiconloader.h>
 #include <kicondialog.h>
+#include <klibloader.h>
 #include <kmessagebox.h>
 #include <kinputdialog.h>
 #include <konq_events.h>

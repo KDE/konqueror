@@ -103,11 +103,11 @@ public:
 	friend class ButtonInfo;
 public:
 	Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par,
-						const QString &currentProfile);
+                       const QString &currentProfile);
 	~Sidebar_Widget();
 	bool openUrl(const class KUrl &url);
 	void stdAction(const char *handlestd);
-	//virtual KParts::ReadOnlyPart *getPart();
+
 	KParts::BrowserExtension *getExtension();
         virtual QSize sizeHint() const;
 

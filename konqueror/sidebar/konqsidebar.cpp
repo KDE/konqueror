@@ -17,6 +17,7 @@
 #include "konqsidebar.h"
 #include <kaboutdata.h>
 
+#include <kparts/factory.h>
 #include <konq_events.h>
 #include <kdebug.h>
 #include <QtGui/QApplication>
@@ -38,19 +39,19 @@ K_EXPORT_COMPONENT_FACTORY(konq_sidebar, KonqSidebarFactory(createAboutData()))
 KonqSidebar::KonqSidebar(QWidget *parentWidget, QObject *parent, const QVariantList&)
     : KParts::ReadOnlyPart(parent)
 {
-	// we need an instance
-	setComponentData(KonqSidebarFactory::componentData());
+    setComponentData(KonqSidebarFactory::componentData());
 
-	// this should be your custom internal widget
-	m_widget = new Sidebar_Widget( parentWidget, this, parentWidget->window()->property("currentProfile").toString() );
-	m_extension = new KonqSidebarBrowserExtension( this, m_widget );
-	connect(m_widget,SIGNAL(started(KIO::Job *)),
-		this, SIGNAL(started(KIO::Job*)));
-	connect(m_widget,SIGNAL(completed()),this,SIGNAL(completed()));
-	connect(m_extension, SIGNAL(addWebSideBar(const KUrl&, const QString&)),
-		m_widget, SLOT(addWebSideBar(const KUrl&, const QString&)));
-        KAcceleratorManager::setNoAccel(m_widget);
-	setWidget(m_widget);
+    m_widget = new Sidebar_Widget(parentWidget, this,
+                                  parentWidget->window()->property("currentProfile").toString());
+    m_extension = new KonqSidebarBrowserExtension(this, m_widget);
+    connect(m_widget, SIGNAL(started(KIO::Job*)),
+            this, SIGNAL(started(KIO::Job*)));
+    connect(m_widget, SIGNAL(completed()),
+            this, SIGNAL(completed()));
+    connect(m_extension, SIGNAL(addWebSideBar(KUrl,QString)),
+            m_widget, SLOT(addWebSideBar(KUrl,QString)));
+    KAcceleratorManager::setNoAccel(m_widget);
+    setWidget(m_widget);
 }
 
 KonqSidebar::~KonqSidebar()
@@ -59,22 +60,30 @@ KonqSidebar::~KonqSidebar()
 
 bool KonqSidebar::openFile()
 {
-	return true;
+    return true;
 }
 
-bool KonqSidebar::openUrl(const KUrl &url) {
+bool KonqSidebar::openUrl(const KUrl &url)
+{
     return m_widget->openUrl(url);
 }
 
 void KonqSidebar::customEvent(QEvent* ev)
 {
-	if (KonqFileSelectionEvent::test(ev) ||
-	    KonqFileMouseOverEvent::test(ev) ||
-	    KonqConfigEvent::test(ev))
-	{
-		// Forward the event to the widget
-		QApplication::sendEvent( widget(), ev );
-	}
+    if (KonqFileSelectionEvent::test(ev) ||
+        KonqFileMouseOverEvent::test(ev) ||
+        KonqConfigEvent::test(ev))
+    {
+        // Forward the event to the widget
+        QApplication::sendEvent( widget(), ev );
+    }
+}
+
+////
+
+KonqSidebarBrowserExtension::KonqSidebarBrowserExtension(KonqSidebar *part, Sidebar_Widget *widget)
+    : KParts::BrowserExtension(part), widget(widget)
+{
 }
 
 #include "konqsidebar.moc"
