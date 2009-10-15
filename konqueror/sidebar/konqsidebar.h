@@ -23,7 +23,6 @@
 #include <kparts/browserextension.h>
 #include <QtCore/QPointer>
 #include "sidebar_widget.h"
-#include "konqsidebariface_p.h"
 
 class QWidget;
 class KUrl;
@@ -66,14 +65,14 @@ class KonqSidebarBrowserExtension : public KParts::BrowserExtension
  * @author Joseph WENNINGER <jowenn@bigfoot.com>
  * @version 0.1
  */
-class KonqSidebar : public KParts::ReadOnlyPart, public KonqSidebarIface
+class KonqSidebar : public KParts::ReadOnlyPart
 {
     Q_OBJECT
 public:
     /**
      * Default constructor
      */
-    KonqSidebar(QWidget *parentWidget, QObject *parent, bool universalMode);
+    KonqSidebar(QWidget *parentWidget, QObject *parent);
 
     /**
      * Destructor
@@ -84,7 +83,7 @@ public:
     KonqSidebarBrowserExtension* extension() const
        { return m_extension; }
     const KComponentData &getInstance();
-    virtual bool universalMode() {return m_universalMode;}
+
 protected:
     /**
      * This must be implemented by each part
@@ -96,7 +95,6 @@ protected:
 
 private:
      class Sidebar_Widget *m_widget;
-     bool m_universalMode;
 };
 
 class KComponentData;

@@ -33,7 +33,7 @@ class KHTMLSideBar : public KHTMLPart
 {
 	Q_OBJECT
 	public:
-		KHTMLSideBar(bool universal) : KHTMLPart() {
+		KHTMLSideBar() : KHTMLPart() {
 			setStatusMessagesEnabled(false);
 			setMetaRefreshEnabled(true);
 			setJavaEnabled(false);
@@ -48,15 +48,11 @@ class KHTMLSideBar : public KHTMLPart
 
 
 			_linkMenu = new KMenu(widget());
-			if (!universal) {
-				_linkMenu->insertItem(i18n("&Open Link"),
-						this, SLOT(loadPage()));
-				_linkMenu->insertItem(i18n("Open in New &Window"),
-						this, SLOT(loadNewWindow()));
-			} else {
-				_linkMenu->insertItem(i18n("Open in New &Window"),
-						this, SLOT(loadPage()));
-			}
+
+                        _linkMenu->insertItem(i18n("&Open Link"),
+                                              this, SLOT(loadPage()));
+                        _linkMenu->insertItem(i18n("Open in New &Window"),
+                                              this, SLOT(loadNewWindow()));
 			_menu = new KMenu(widget());
 			_menu->insertItem(SmallIcon("view-refresh"), i18n("&Reload"),
 					this, SIGNAL(reload()));

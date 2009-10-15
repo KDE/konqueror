@@ -27,7 +27,6 @@
 #include <kmultitabbar.h>
 
 #include "konqsidebarplugin.h"
-#include "konqsidebariface_p.h"
 
 #ifndef KONQSIDEBAR_EXPORT
 # if defined(MAKE_KONQ_SIDEBAR_LIB)
@@ -44,16 +43,16 @@ class QSplitter;
 class QStringList;
 class KMenu;
 
-class ButtonInfo: public QObject, public KonqSidebarIface
+class ButtonInfo: public QObject
 {
 	Q_OBJECT
 public:
-	ButtonInfo(const QString& file_, class KonqSidebarIface *part, QWidget *dock_,
+	ButtonInfo(const QString& file_, /*class KonqSidebarIface *part,*/ QWidget *dock_,
 			const QString &url_,const QString &lib,
 			const QString &dispName_, const QString &iconName_,
 			QObject *parent)
 		: QObject(parent), file(file_), dock(dock_), URL(url_),
-		libName(lib), displayName(dispName_), iconName(iconName_), m_part(part)
+                  libName(lib), displayName(dispName_), iconName(iconName_) //, m_part(part)
 		{
 		copy = cut = paste = trash = del = rename =false;
 		}
@@ -73,8 +72,7 @@ public:
 	bool trash;
 	bool del;
         bool rename;
-        KonqSidebarIface *m_part;
-	virtual bool universalMode() {return m_part->universalMode();}
+    //KonqSidebarIface *m_part;
 };
 
 
@@ -82,7 +80,7 @@ class addBackEnd: public QObject
 {
 	Q_OBJECT
 public:
-	addBackEnd(QWidget *parent,class QMenu *addmenu, bool univeral, const QString &currentProfile, const char *name=0);
+	addBackEnd(QWidget *parent,class QMenu *addmenu, const QString &currentProfile, const char *name=0);
 	~addBackEnd(){;}
 protected Q_SLOTS:
 	void aboutToShowAddMenu();
@@ -94,7 +92,6 @@ Q_SIGNALS:
 	void initialCopyNeeded();
 private:
 	QPointer<class QMenu> menu;
-	bool m_universal;
 	QString m_currentProfile;
 	QWidget *m_parent;
 };
@@ -106,7 +103,6 @@ public:
 	friend class ButtonInfo;
 public:
 	Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par,
-						bool universalMode,
 						const QString &currentProfile);
 	~Sidebar_Widget();
 	bool openUrl(const class KUrl &url);
@@ -169,10 +165,9 @@ public Q_SLOTS:
 	void popupMenu( const QPoint &global, const KUrl &url,
 		const QString &mimeType, mode_t mode = (mode_t)-1 );
 	void enableAction( const char * name, bool enabled );
-    //void userMovedSplitter();
 
 private:
-    //QSplitter *splitter() const;
+
 	bool addButton(const QString &desktoppath,int pos=-1);
 	bool createView(ButtonInfo *data);
 	KonqSidebarPlugin *loadModule(QWidget *par,QString &desktopName,const QString &lib_name,ButtonInfo *bi);
@@ -182,8 +177,7 @@ private:
 	void connectModule(QObject *mod);
 	void collapseExpandSidebar();
 	bool doEnableActions();
-	bool m_universalMode;
-    //bool m_userMovedSplitter;
+
 private:
 	KParts::ReadOnlyPart *m_partParent;
 	QSplitter *m_area;
@@ -211,7 +205,7 @@ private:
 	bool m_somethingVisible;
 	bool m_noUpdate;
 	bool m_initial;
-        
+
         QAction *m_multiViews;
         QAction *m_showConfigButton;
 
