@@ -15,18 +15,32 @@
  *                                                                         *
  ***************************************************************************/
 #include "konqsidebar.h"
+#include <kaboutdata.h>
 
 #include <konq_events.h>
 #include <kdebug.h>
 #include <QtGui/QApplication>
 #include <kacceleratormanager.h>
 
-KonqSidebar::KonqSidebar( QWidget *parentWidget, QObject *parent )
-: KParts::ReadOnlyPart(parent)
+static KAboutData createAboutData()
+{
+    KAboutData aboutData("konqsidebartng", 0, ki18n("Extended Sidebar"), "0.2");
+    aboutData.addAuthor(ki18n("Joseph Wenninger"), KLocalizedString(), "jowenn@bigfoot.com");
+    aboutData.addAuthor(ki18n("David Faure"), KLocalizedString(), "faure@kde.org");
+    return aboutData;
+}
+
+K_PLUGIN_FACTORY(KonqSidebarFactory,
+                 registerPlugin<KonqSidebar>();
+    )
+K_EXPORT_COMPONENT_FACTORY(konq_sidebar, KonqSidebarFactory(createAboutData()))
+
+KonqSidebar::KonqSidebar(QWidget *parentWidget, QObject *parent, const QVariantList&)
+    : KParts::ReadOnlyPart(parent)
 {
 	// we need an instance
 	setComponentData(KonqSidebarFactory::componentData());
-	m_extension = 0;
+
 	// this should be your custom internal widget
 	m_widget = new Sidebar_Widget( parentWidget, this, parentWidget->window()->property("currentProfile").toString() );
 	m_extension = new KonqSidebarBrowserExtension( this, m_widget );
@@ -37,11 +51,6 @@ KonqSidebar::KonqSidebar( QWidget *parentWidget, QObject *parent )
 		m_widget, SLOT(addWebSideBar(const KUrl&, const QString&)));
         KAcceleratorManager::setNoAccel(m_widget);
 	setWidget(m_widget);
-}
-
-const KComponentData &KonqSidebar::getInstance()
-{
-	return KonqSidebarFactory::componentData();
 }
 
 KonqSidebar::~KonqSidebar()
@@ -67,48 +76,5 @@ void KonqSidebar::customEvent(QEvent* ev)
 		QApplication::sendEvent( widget(), ev );
 	}
 }
-
-
-
-// It's usually safe to leave the factory code alone.. with the
-// notable exception of the KAboutData data
-#include <kaboutdata.h>
-#include <klocale.h>
-#include <kcomponentdata.h>
-
-KComponentData *KonqSidebarFactory::s_instance = 0L;
-KAboutData* KonqSidebarFactory::s_about = 0L;
-
-KonqSidebarFactory::KonqSidebarFactory()
-    : KParts::Factory()
-{
-}
-
-KonqSidebarFactory::~KonqSidebarFactory()
-{
-	delete s_instance;
-	s_instance = 0L;
-	delete s_about;
-	s_about = 0L;
-}
-
-KParts::Part* KonqSidebarFactory::createPartObject( QWidget *parentWidget, QObject *parent,
-                                                        const char * /*classname*/, const QStringList &args )
-{
-    return new KonqSidebar( parentWidget, parent );
-}
-
-const KComponentData &KonqSidebarFactory::componentData()
-{
-	if( !s_instance )
-	{
-		s_about = new KAboutData("konqsidebartng", 0, ki18n("Extended Sidebar"), "0.1");
-		s_about->addAuthor(ki18n("Joseph Wenninger"), KLocalizedString(), "jowenn@bigfoot.com");
-		s_instance = new KComponentData(s_about);
-	}
-	return *s_instance;
-}
-
-K_EXPORT_COMPONENT_FACTORY( konq_sidebar, KonqSidebarFactory )
 
 #include "konqsidebar.moc"

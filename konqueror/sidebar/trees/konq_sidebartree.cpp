@@ -168,12 +168,6 @@ KonqSidebarTree::KonqSidebarTree( KonqSidebar_Tree *parent, QWidget *parentWidge
     connect( this, SIGNAL(itemRenamed(Q3ListViewItem*, const QString &, int)),
              this, SLOT(slotItemRenamed(Q3ListViewItem*, const QString &, int)));
 
-/*    assert( m_part->getInterfaces()->getInstance()->dirs );
-    QString dirtreeDir = m_part->getInterfaces()->getInstance()->dirs()->saveLocation( "data", "konqueror/dirtree/" ); */
-
-//    assert( KGlobal::dirs() );
-//    QString dirtreeDir = part->getInterfaces()->getInstance()->dirs()->saveLocation( "data", "konqueror/dirtree/" );
-
     if (virt==VIRT_Folder)
 		{
 		  m_dirtreeDir.dir.setPath(KGlobal::dirs()->saveLocation("data","konqsidebartng/virtual_folders/"+path+'/'));
@@ -654,7 +648,7 @@ void KonqSidebarTree::scanDir( KonqSidebarTreeItem *parent, const QString &path,
             /*
             // debug code
 
-            const QStringList blah = m_part->getInterfaces->getInstance()->dirs()->dirs()->findDirs( "data", "konqueror/dirtree" );
+            const QStringList blah = m_part->getInterfaces->componentData()->dirs()->dirs()->findDirs( "data", "konqueror/dirtree" );
             QStringList::ConstIterator eIt = blah.constBegin();
             QStringList::ConstIterator eEnd = blah.constEnd();
             for (; eIt != eEnd; ++eIt )

@@ -784,7 +784,7 @@ KonqSidebarPlugin *Sidebar_Widget::loadModule(QWidget *par,QString &desktopName,
 			KonqSidebarPlugin* (*func)(const KComponentData &,QObject *, QWidget*, QString&, const char *);
 			func = (KonqSidebarPlugin* (*)(const KComponentData &,QObject *, QWidget *, QString&, const char *)) create;
 			QString fullPath(m_path+desktopName);
-			return  (KonqSidebarPlugin*)func(getInstance(),bi,par,fullPath,0);
+			return  (KonqSidebarPlugin*)func(m_partParent->componentData(),bi,par,fullPath,0);
 		}
 	} else {
 		kWarning() << "Module " << lib_name << " doesn't specify a library!" ;
@@ -917,11 +917,6 @@ QSize Sidebar_Widget::sizeHint() const
         if (m_somethingVisible)
            return QSize(m_savedWidth,200);
         return minimumSizeHint();
-}
-
-const KComponentData &Sidebar_Widget::getInstance()
-{
-	return ((KonqSidebar*)m_partParent)->getInstance();
 }
 
 void Sidebar_Widget::submitFormRequest(const char *action,
