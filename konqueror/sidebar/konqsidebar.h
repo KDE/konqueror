@@ -81,7 +81,7 @@ protected:
     virtual void customEvent(QEvent* ev);
 
 private:
-     class Sidebar_Widget *m_widget;
+    Sidebar_Widget *m_widget;
 };
 
 #endif // KONQSIDEBARPART_H

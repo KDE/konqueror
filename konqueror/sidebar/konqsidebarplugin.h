@@ -41,11 +41,19 @@
 
 class KonqSidebarPluginPrivate;
 
+/**
+ * Base class for plugins.
+ * This class is exported, make sure you keep BINARY COMPATIBILITY!
+ */
 class KONQSIDEBARPLUGIN_EXPORT KonqSidebarPlugin : public QObject
 {
 	Q_OBJECT
 	public:
-		KonqSidebarPlugin(const KComponentData &componentData,QObject *parent,QWidget *widgetParent,QString &desktopName_, const char* name=0);
+		KonqSidebarPlugin(const KComponentData &componentData,
+                                  QObject *parent,
+                                  QWidget *widgetParent,
+                                  QString &desktopName_,
+                                  const char* name=0);
 		~KonqSidebarPlugin();
 		virtual QWidget *getWidget()=0;
 		virtual void *provides(const QString &)=0;

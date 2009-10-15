@@ -1,25 +1,20 @@
-
 include_directories (${CMAKE_CURRENT_SOURCE_DIR})
 
 add_subdirectory( trees ) 
 add_subdirectory( web_module ) 
 
-
-
-########### next target ###############
+########### konqsidebarplugin lib: contains the base class for plugins ###############
 
 set(konqsidebarplugin_LIB_SRCS konqsidebarplugin.cpp )
 
-
 kde4_add_library(konqsidebarplugin SHARED ${konqsidebarplugin_LIB_SRCS})
 
-target_link_libraries(konqsidebarplugin  ${KDE4_KPARTS_LIBS} ${KDE4_KDE3SUPPORT_LIBS} )
+target_link_libraries(konqsidebarplugin  ${KDE4_KPARTS_LIBS} )
 
 set_target_properties(konqsidebarplugin PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION} )
 install(TARGETS konqsidebarplugin  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
-
-########### next target ###############
+########### konq_sidebar plugin: contains the KParts used by konqueror ###############
 
 set(konq_sidebar_PART_SRCS konqsidebar.cpp sidebar_widget.cpp )
 

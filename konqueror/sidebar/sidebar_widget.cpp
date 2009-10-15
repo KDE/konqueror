@@ -39,6 +39,7 @@
 #include <kicondialog.h>
 #include <klibloader.h>
 #include <kmessagebox.h>
+#include <kmultitabbar.h>
 #include <kinputdialog.h>
 #include <konq_events.h>
 #include <kfileitem.h>
@@ -573,7 +574,6 @@ void Sidebar_Widget::stdAction(const char *handlestd)
 		return;
 	kDebug() << "Action slot was found, it will be called now";
 	QMetaObject::invokeMethod( mod->module, handlestd );
-  	return;
 }
 
 
