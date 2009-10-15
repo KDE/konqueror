@@ -72,7 +72,7 @@ public:
     /**
      * Default constructor
      */
-    KonqSidebar(QWidget *parentWidget, QObject *parent);
+    KonqSidebar(QWidget *parentWidget, QObject *parent, const QVariantList&);
 
     /**
      * Destructor
@@ -82,7 +82,6 @@ public:
     virtual bool openUrl(const KUrl &url);
     KonqSidebarBrowserExtension* extension() const
        { return m_extension; }
-    const KComponentData &getInstance();
 
 protected:
     /**
@@ -97,22 +96,4 @@ private:
      class Sidebar_Widget *m_widget;
 };
 
-class KComponentData;
-class KAboutData;
-
-class KonqSidebarFactory : public KParts::Factory
-{
-    Q_OBJECT
-public:
-    KonqSidebarFactory();
-    virtual ~KonqSidebarFactory();
-    virtual KParts::Part* createPartObject( QWidget *parentWidget, QObject *parent,
-                                            const char *classname, const QStringList &args );
-    static const KComponentData &componentData();
-
-private:
-    static KComponentData *s_instance;
-    static KAboutData* s_about;
-};
-
-#endif // KPARTAPPPART_H
+#endif // KONQSIDEBARPART_H

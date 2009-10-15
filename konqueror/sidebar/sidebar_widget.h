@@ -144,13 +144,6 @@ Q_SIGNALS:
 	void fileMouseOver(const KFileItem& item);
 
 public:
-	/* interface KonqSidebar_PluginInterface*/
-	const KComponentData &getInstance();
-//        virtual void showError(QString &);      for later extension
-//        virtual void showMessage(QString &);    for later extension
-	/* end of interface implementation */
-
-
  /* The following public slots are wrappers for browserextension fields */
 public Q_SLOTS:
 	void openUrlRequest( const KUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs );
