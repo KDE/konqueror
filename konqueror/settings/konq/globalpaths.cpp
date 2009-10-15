@@ -249,7 +249,7 @@ void DesktopPathConfig::save()
             const QString userDirsFile(KGlobal::dirs()->localxdgconfdir() + QLatin1String("user-dirs.dirs"));
             KConfig xdgUserConf( userDirsFile, KConfig::SimpleConfig );
             KConfigGroup g( &xdgUserConf, "" );
-            g.writeEntry( "XDG_DESKTOP_DIR", translatePath( urlDesktop ) );
+            g.writeEntry( "XDG_DESKTOP_DIR", "\"" + translatePath( urlDesktop ) + "\"" );
             pathChanged = true;
         }
     }
@@ -308,7 +308,7 @@ bool DesktopPathConfig::xdgSavePath(KUrlRequester* ur, const KUrl& currentUrl, c
             const QString userDirsFile(KGlobal::dirs()->localxdgconfdir() + QLatin1String("user-dirs.dirs"));
             KConfig xdgUserConf(userDirsFile, KConfig::SimpleConfig);
             KConfigGroup g(&xdgUserConf, "");
-            g.writeEntry(xdgKey, translatePath(path));
+            g.writeEntry(xdgKey, "\"" + translatePath(path) + "\"");
             return true;
         }
     }
