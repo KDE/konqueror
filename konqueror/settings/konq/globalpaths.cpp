@@ -171,6 +171,8 @@ static bool cleanHomeDirPath( QString &path, const QString &homeDir )
         return false;
 }
 
+// TODO this functionality is duplicated in libkonq - keep it only there and export
+
 static QString translatePath( QString path ) // krazy:exclude=passbyvalue
 {
     // keep only one single '/' at the beginning - needed for cleanHomeDirPath()
