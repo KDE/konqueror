@@ -18,8 +18,6 @@
 #define KONQSIDEBARPART_H
 
 #include <kparts/part.h>
-#include <kparts/factory.h>
-#include <kparts/event.h>
 #include <kparts/browserextension.h>
 #include <QtCore/QPointer>
 #include "sidebar_widget.h"
@@ -33,28 +31,20 @@ class KonqSidebarFactory;
 
 class KonqSidebarBrowserExtension : public KParts::BrowserExtension
 {
-	Q_OBJECT
-	public:
-	KonqSidebarBrowserExtension(KonqSidebar *part_,Sidebar_Widget *widget_):
-	KParts::BrowserExtension((KParts::ReadOnlyPart*)part_),widget(widget_){ }
-	~KonqSidebarBrowserExtension(){}
+    Q_OBJECT
+public:
+    KonqSidebarBrowserExtension(KonqSidebar *part_, Sidebar_Widget *widget_);
+    ~KonqSidebarBrowserExtension(){}
 
-	protected:
-	QPointer<Sidebar_Widget> widget;
+protected:
+    QPointer<Sidebar_Widget> widget;
 
-
-// The following slots are needed for konqueror's standard actions
-	protected Q_SLOTS:
-	    void copy(){if (widget) widget->stdAction("copy()");}
-	    void cut(){if (widget) widget->stdAction("cut()");}
-	    void paste(){if (widget) widget->stdAction("paste()");}
-	    void pasteTo(const KUrl&){if (widget) widget->stdAction("paste()");}
-	    void trash(){if (widget) widget->stdAction("trash()");}
-	    void del(){if (widget) widget->stdAction("del()");}
-	    void rename(){if (widget) widget->stdAction("rename()");}
-	    //  @li @p print : Print :-) not supported
-	    void reparseConfiguration() {if (widget) widget->stdAction("reparseConfiguration()");}
-	    void refreshMimeTypes () { if (widget) widget->stdAction("refreshMimeTypes()");}
+    // The following slots are needed for konqueror's standard actions
+    // ### Not really, since the sidebar never gets focus, currently.
+protected Q_SLOTS:
+    void copy() { if (widget) widget->stdAction("copy()"); }
+    void cut() { if (widget) widget->stdAction("cut()"); }
+    void paste() { if (widget) widget->stdAction("paste()"); }
 };
 
 /**
@@ -80,8 +70,6 @@ public:
     virtual ~KonqSidebar();
 
     virtual bool openUrl(const KUrl &url);
-    KonqSidebarBrowserExtension* extension() const
-       { return m_extension; }
 
 protected:
     /**
