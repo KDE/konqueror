@@ -22,22 +22,11 @@
 #include <QtCore/QPointer>
 
 #include <kurl.h>
-#include <ktoolbar.h>
 #include <kparts/part.h>
-#include <kmultitabbar.h>
 
 #include "konqsidebarplugin.h"
 
-#ifndef KONQSIDEBAR_EXPORT
-# if defined(MAKE_KONQ_SIDEBAR_LIB)
-    /* We are building this library */
-#  define KONQSIDEBAR_EXPORT KDE_EXPORT
-# else
-   /* We are using this library */
-#  define KONQSIDEBAR_EXPORT KDE_IMPORT
-# endif
-#endif
-
+class KMultiTabBar;
 class QHBoxLayout;
 class QSplitter;
 class QStringList;
@@ -47,12 +36,12 @@ class ButtonInfo: public QObject
 {
 	Q_OBJECT
 public:
-	ButtonInfo(const QString& file_, /*class KonqSidebarIface *part,*/ QWidget *dock_,
-			const QString &url_,const QString &lib,
-			const QString &dispName_, const QString &iconName_,
-			QObject *parent)
+	ButtonInfo(const QString& file_, QWidget *dock_,
+                   const QString &url_,const QString &lib,
+                   const QString &dispName_, const QString &iconName_,
+                   QObject *parent)
 		: QObject(parent), file(file_), dock(dock_), URL(url_),
-                  libName(lib), displayName(dispName_), iconName(iconName_) //, m_part(part)
+                  libName(lib), displayName(dispName_), iconName(iconName_)
 		{
 		copy = cut = paste = trash = del = rename =false;
 		}
@@ -91,12 +80,12 @@ Q_SIGNALS:
 	void updateNeeded();
 	void initialCopyNeeded();
 private:
-	QPointer<class QMenu> menu;
+	QPointer<QMenu> menu;
 	QString m_currentProfile;
 	QWidget *m_parent;
 };
 
-class KONQSIDEBAR_EXPORT Sidebar_Widget: public QWidget
+class Sidebar_Widget: public QWidget
 {
 	Q_OBJECT
 public:
@@ -105,7 +94,7 @@ public:
 	Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par,
                        const QString &currentProfile);
 	~Sidebar_Widget();
-	bool openUrl(const class KUrl &url);
+	bool openUrl(const KUrl &url);
 	void stdAction(const char *handlestd);
 
 	KParts::BrowserExtension *getExtension();
