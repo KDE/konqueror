@@ -68,8 +68,6 @@ class KONQSIDEBARPLUGIN_EXPORT KonqSidebarPlugin : public QObject
 		void setCaption(const QString& caption);
 
 
-	protected:
-		bool universalMode();
 	public Q_SLOTS:
 	  void openUrl(const KUrl& url);
 

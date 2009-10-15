@@ -54,12 +54,11 @@
 
 
 
-addBackEnd::addBackEnd(QWidget *parent,class QMenu *addmenu,bool universal,const QString &currentProfile, const char *name)
+addBackEnd::addBackEnd(QWidget *parent, class QMenu *addmenu, const QString &currentProfile, const char *name)
  : QObject(parent),
    m_parent(parent)
 {
 	setObjectName( name );
-	m_universal=universal;
 	m_currentProfile = currentProfile;
 	menu = addmenu;
 	connect(menu,SIGNAL(aboutToShow()),this,SLOT(aboutToShowAddMenu()));
@@ -85,16 +84,9 @@ void addBackEnd::aboutToShowAddMenu()
 			i--;
 			continue;
 		}
-		if (m_universal) {
-			if (desktopGroup.readEntry("X-KDE-KonqSidebarUniversal").toUpper()!="TRUE") {
-				i--;
-				continue;
-			}
-		} else {
-			if (desktopGroup.readEntry("X-KDE-KonqSidebarBrowser").toUpper()=="FALSE") {
-				i--;
-				continue;
-			}
+		if (desktopGroup.readEntry("X-KDE-KonqSidebarBrowser").toUpper()=="FALSE") {
+			i--;
+			continue;
 		}
 		QString icon = confFile.readIcon();
 		QStringList libs;
@@ -131,20 +123,14 @@ void addBackEnd::doRollBack()
 }
 
 
-static QString findFileName(const QString* tmpl,bool universal, const QString &profile) {
-	QString myFile, filename;
-	KStandardDirs *dirs = KGlobal::dirs();
+static QString findFileName(const QString* tmpl, const QString &profile) {
 	QString tmp = *tmpl;
 
-	if (universal) {
-		dirs->saveLocation("data", "konqsidebartng/kicker_entries/", true);
-		tmp.prepend("/konqsidebartng/kicker_entries/");
-	} else {
-		dirs->saveLocation("data", "konqsidebartng/" + profile + "/entries/", true);
-		tmp.prepend("/konqsidebartng/" + profile + "/entries/");
-	}
-	filename = tmp.arg("");
-	myFile = KStandardDirs::locateLocal("data", filename);
+        KGlobal::dirs()->saveLocation("data", "konqsidebartng/" + profile + "/entries/", true);
+        tmp.prepend("/konqsidebartng/" + profile + "/entries/");
+
+	QString filename = tmp.arg("");
+	QString myFile = KStandardDirs::locateLocal("data", filename);
 
 	if (QFile::exists(myFile)) {
 		for (ulong l = 0; l < ULONG_MAX; l++) {
@@ -192,7 +178,7 @@ void addBackEnd::triggeredAddMenu(QAction* action)
 			QString *tmp = new QString("");
 			if (func(tmp,&libparam,&map))
 			{
-				QString myFile = findFileName(tmp,m_universal,m_currentProfile);
+				QString myFile = findFileName(tmp, m_currentProfile);
 
 				if (!myFile.isEmpty())
 				{
@@ -225,8 +211,8 @@ void addBackEnd::triggeredAddMenu(QAction* action)
 /*                      Sidebar_Widget                        */
 /**************************************************************/
 
-Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, bool universalMode, const QString &currentProfile)
-	:QWidget(parent),m_universalMode(universalMode),m_partParent(par),m_currentProfile(currentProfile)
+Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, const QString &currentProfile)
+	:QWidget(parent), m_partParent(par), m_currentProfile(currentProfile)
 {
 	m_somethingVisible = false;
 	m_initial = true;
@@ -236,28 +222,11 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, bool 
 	m_activeModule = 0;
 	//m_userMovedSplitter = false;
         //kDebug() << "**** Sidebar_Widget:SidebarWidget()";
-	if (universalMode)
-	{
-		m_relPath = "konqsidebartng/kicker_entries/";
-	}
-	else
-	{
-		m_relPath = "konqsidebartng/" + currentProfile + "/entries/";
-	}
+        m_relPath = "konqsidebartng/" + currentProfile + "/entries/";
 	m_path = KGlobal::dirs()->saveLocation("data", m_relPath, true);
 	m_hasStoredUrl = false;
 	m_latestViewed = -1;
 	setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
-
-#if 0 // Konqueror says: leave my splitter alone!
-	QSplitter *splitterWidget = splitter();
-	if (splitterWidget) {
-            // ### this sets a stretch factor on the sidebar's sizepolicy, which makes it huge....
-		splitterWidget->setResizeMode(parent, QSplitter::FollowSizeHint);
-		splitterWidget->setOpaqueResize( false );
-		connect(splitterWidget,SIGNAL(setRubberbandCalled()),SLOT(userMovedSplitter()));
-	}
-#endif
 
 	m_area = new QSplitter(Qt::Vertical, this);
 	m_area->setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
@@ -276,15 +245,14 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, bool 
 	m_showTabLeft = m_menu->addAction(i18n("Show Tabs Left"), this, SLOT(slotShowTabsLeft()));
 	m_showConfigButton = m_menu->addAction(i18n("Show Configuration Button"), this, SLOT(slotShowConfigurationButton()));
         m_showConfigButton->setCheckable(true);
-	if (!m_universalMode) {
-		m_menu->addSeparator();
-		m_menu->addAction(KIcon("window-close"), i18n("Close Navigation Panel"),
-				par, SLOT(deleteLater()));
-	}
+        m_menu->addSeparator();
+        m_menu->addAction(KIcon("window-close"), i18n("Close Navigation Panel"),
+                          par, SLOT(deleteLater()));
+
         connect(m_menu, SIGNAL(aboutToShow()),
 		this, SLOT(aboutToShowConfigMenu()));
 
-	addBackEnd *ab = new addBackEnd(this, addMenu,universalMode,currentProfile,"Sidebar_Widget-addBackEnd");
+	addBackEnd *ab = new addBackEnd(this, addMenu, currentProfile, "Sidebar_Widget-addBackEnd");
 	connect(ab, SIGNAL(updateNeeded()),
 		this, SLOT(updateButtons()));
 	connect(ab, SIGNAL(initialCopyNeeded()),
@@ -292,15 +260,8 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, bool 
 
 	initialCopy();
 
-	if (universalMode)
-	{
-		m_config = new KConfigGroup(KSharedConfig::openConfig("konqsidebartng_kicker.rc"), "");
-	}
-	else
-	{
-	    m_config = new KConfigGroup(KSharedConfig::openConfig("konqsidebartng.rc"),
-					currentProfile);
-	}
+        m_config = new KConfigGroup(KSharedConfig::openConfig("konqsidebartng.rc"),
+                                    currentProfile);
 	m_configTimer.setSingleShot(true);
 	connect(&m_configTimer, SIGNAL(timeout()),
 		this, SLOT(saveConfig()));
@@ -334,7 +295,7 @@ void Sidebar_Widget::addWebSideBar(const KUrl& url, const QString& /*name*/) {
 	}
 
 	QString tmpl = "websidebarplugin%1.desktop";
-	QString myFile = findFileName(&tmpl,m_universalMode,m_currentProfile);
+	QString myFile = findFileName(&tmpl, m_currentProfile);
 
 	if (!myFile.isEmpty()) {
 		KConfig _scf( myFile, KConfig::SimpleConfig );
@@ -405,11 +366,7 @@ void Sidebar_Widget::aboutToShowConfigMenu()
 void Sidebar_Widget::initialCopy()
 {
 	kDebug()<<"Initial copy";
-	QStringList dirtree_dirs;
-	if (m_universalMode)
-		dirtree_dirs = KGlobal::dirs()->findDirs("data","konqsidebartng/kicker_entries/");
-	else
-		dirtree_dirs = KGlobal::dirs()->findDirs("data","konqsidebartng/entries/");
+	QStringList dirtree_dirs = KGlobal::dirs()->findDirs("data","konqsidebartng/entries/");
 	if (dirtree_dirs.last()==m_path)
 		return; //oups;
 
@@ -555,10 +512,10 @@ void Sidebar_Widget::slotMultipleViews( )
 			{
 				if (button->dock && button->dock->isVisibleTo(this))
 					showHidePage(i);
-			} 
+			}
 		}
 		m_latestViewed=tmpViewID;
-	} 
+	}
 	m_configTimer.start(400);
 }
 
@@ -744,8 +701,8 @@ bool Sidebar_Widget::addButton(const QString &desktoppath,int pos)
 	if (pos == -1)
 	{
 	  	m_buttonBar->appendTab(SmallIcon(icon), lastbtn, name);
-		ButtonInfo *bi = new ButtonInfo(desktoppath, ((KonqSidebar*)m_partParent),0, url, lib, name,
-						icon, this);
+		ButtonInfo *bi = new ButtonInfo(desktoppath, 0, url, lib, name,
+						icon , this);
 		/*int id=*/m_buttons.insert(lastbtn, bi);
 		KMultiTabBarTab *tab = m_buttonBar->tab(lastbtn);
 		tab->installEventFilter(this);
@@ -896,7 +853,7 @@ void Sidebar_Widget::showHidePage(int page)
 				SIGNAL(setCaption(const QString&)),
 				m_buttonBar->tab(page),
 				SLOT(setText(const QString&)));
-                        
+
                         m_area->addWidget(info->dock);
 			info->dock->show();
                         m_area->show();
@@ -1128,42 +1085,5 @@ void Sidebar_Widget::customEvent(QEvent* ev)
 		emit fileMouseOver(static_cast<KonqFileMouseOverEvent*>(ev)->item());
 	}
 }
-
-#if 0
-void Sidebar_Widget::resizeEvent(QResizeEvent* ev)
-{
-	if (m_somethingVisible && m_userMovedSplitter)
-	{
-		int newWidth = width();
-                QSplitter *split = splitter();
-		if (split && (m_savedWidth != newWidth))
-		{
-			QList<int> sizes = split->sizes();
-			if ((sizes.count() >= 2) && (sizes[1]))
-			{
-				m_savedWidth = newWidth;
-				updateGeometry();
-				m_configTimer.start(400);
-			}
-		}
-	}
-	m_userMovedSplitter = false;
-	QWidget::resizeEvent(ev);
-}
-
-QSplitter *Sidebar_Widget::splitter() const
-{
-	if (m_universalMode) return 0;
-	QObject *p = parent();
-	if (!p) return 0;
-	p = p->parent();
-	return static_cast<QSplitter*>(p);
-}
-
-void Sidebar_Widget::userMovedSplitter()
-{
-	m_userMovedSplitter = true;
-}
-#endif
 
 #include "sidebar_widget.moc"

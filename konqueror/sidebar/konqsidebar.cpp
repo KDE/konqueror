@@ -15,21 +15,20 @@
  *                                                                         *
  ***************************************************************************/
 #include "konqsidebar.h"
-#include "konqsidebariface_p.h"
 
 #include <konq_events.h>
 #include <kdebug.h>
 #include <QtGui/QApplication>
 #include <kacceleratormanager.h>
 
-KonqSidebar::KonqSidebar( QWidget *parentWidget, QObject *parent, bool universalMode )
-: KParts::ReadOnlyPart(parent),KonqSidebarIface()
+KonqSidebar::KonqSidebar( QWidget *parentWidget, QObject *parent )
+: KParts::ReadOnlyPart(parent)
 {
 	// we need an instance
 	setComponentData(KonqSidebarFactory::componentData());
 	m_extension = 0;
 	// this should be your custom internal widget
-	m_widget = new Sidebar_Widget( parentWidget, this, universalMode, parentWidget->window()->property("currentProfile").toString() );
+	m_widget = new Sidebar_Widget( parentWidget, this, parentWidget->window()->property("currentProfile").toString() );
 	m_extension = new KonqSidebarBrowserExtension( this, m_widget );
 	connect(m_widget,SIGNAL(started(KIO::Job *)),
 		this, SIGNAL(started(KIO::Job*)));
@@ -42,7 +41,6 @@ KonqSidebar::KonqSidebar( QWidget *parentWidget, QObject *parent, bool universal
 
 const KComponentData &KonqSidebar::getInstance()
 {
-	kDebug();
 	return KonqSidebarFactory::componentData();
 }
 
@@ -56,9 +54,7 @@ bool KonqSidebar::openFile()
 }
 
 bool KonqSidebar::openUrl(const KUrl &url) {
-	if (m_widget)
-		return m_widget->openUrl(url);
-	else return false;
+    return m_widget->openUrl(url);
 }
 
 void KonqSidebar::customEvent(QEvent* ev)
@@ -68,7 +64,7 @@ void KonqSidebar::customEvent(QEvent* ev)
 	    KonqConfigEvent::test(ev))
 	{
 		// Forward the event to the widget
-		QApplication::sendEvent( m_widget, ev );
+		QApplication::sendEvent( widget(), ev );
 	}
 }
 
@@ -99,14 +95,7 @@ KonqSidebarFactory::~KonqSidebarFactory()
 KParts::Part* KonqSidebarFactory::createPartObject( QWidget *parentWidget, QObject *parent,
                                                         const char * /*classname*/, const QStringList &args )
 {
-    // Create an instance of our Part
-    KonqSidebar* obj = new KonqSidebar( parentWidget, parent, args.contains("universal") );
-
-    // See if we are to be read-write or not
-//    if (QCString(classname) == "KParts::ReadOnlyPart")
-  //      obj->setReadWrite(false);
-
-    return obj;
+    return new KonqSidebar( parentWidget, parent );
 }
 
 const KComponentData &KonqSidebarFactory::componentData()
