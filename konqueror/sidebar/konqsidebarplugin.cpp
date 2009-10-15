@@ -23,15 +23,15 @@
 
 KonqSidebarPlugin::KonqSidebarPlugin(const KComponentData &componentData,
                                      QObject *parent,
-	                                 QWidget * /*widgetParent*/,
+                                     QWidget * /*widgetParent*/,
                                      QString &desktopName_,
                                      const char* name)
-	: QObject(parent),
+    : QObject(parent),
       desktopName(desktopName_),
       d(0)
 {
-  setObjectName( name );
-  m_parentInstance=componentData;
+    setObjectName( name );
+    m_parentInstance=componentData;
 }
 
 KonqSidebarPlugin::~KonqSidebarPlugin() { }
@@ -42,12 +42,12 @@ void KonqSidebarPlugin::openUrl(const KUrl& url){handleURL(url);}
 
 void KonqSidebarPlugin::openPreview(const KFileItemList& items)
 {
-  handlePreview(items);
+    handlePreview(items);
 }
 
 void KonqSidebarPlugin::openPreviewOnMouseOver(const KFileItem& item)
 {
-  handlePreviewOnMouseOver(item);
+    handlePreviewOnMouseOver(item);
 }
 
 void KonqSidebarPlugin::handlePreview(const KFileItemList& /*items*/) {}
