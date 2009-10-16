@@ -190,7 +190,6 @@ private:
     bool m_showExtraButtons;
     bool m_somethingVisible;
     bool m_noUpdate;
-    bool m_initial;
 
     QAction *m_multiViews;
     QAction *m_showConfigButton;
