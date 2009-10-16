@@ -16,7 +16,7 @@ install(TARGETS konqsidebarplugin  ${INSTALL_TARGETS_DEFAULT_ARGS} )
 
 ########### konq_sidebar plugin: contains the KParts used by konqueror ###############
 
-set(konq_sidebar_PART_SRCS konqsidebar.cpp sidebar_widget.cpp )
+set(konq_sidebar_PART_SRCS sidebar_part.cpp sidebar_widget.cpp )
 
 kde4_add_plugin(konq_sidebar ${konq_sidebar_PART_SRCS})
 
