@@ -118,7 +118,8 @@ protected Q_SLOTS:
      * @see KWebPage::slotUnsupportedContent
      * @internal
      */
-    virtual void slotUnsupportedContent(QNetworkReply *reply);
+    void slotUnsupportedContent(QNetworkReply *reply);
+    void slotDownloadRequest(const QNetworkRequest &request);
 
     void slotRequestFinished(QNetworkReply *reply);
     void slotGeometryChangeRequested(const QRect &rect);

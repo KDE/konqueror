@@ -46,7 +46,6 @@
 #include <kurl.h>
 #include <kdebug.h>
 #include <klocalizedstring.h>
-#include <kparts/browserrun.h>
 #include <kio/accessmanager.h>
 #include <kio/job.h>
 
@@ -63,31 +62,9 @@
 
 #define QL1(x)  QLatin1String(x)
 
-class KWebPage::KWebPagePrivate
-{
-public:
-    KWebPagePrivate() {}
-    static QString getFileNameForDownload(const QNetworkRequest &request, QNetworkReply *reply);
-};
-
-QString KWebPage::KWebPagePrivate::getFileNameForDownload(const QNetworkRequest &request, QNetworkReply *reply)
-{
-    QString fileName = KUrl(request.url()).fileName();
-    if (reply && reply->hasRawHeader("Content-Disposition")) { // based on code from arora, downloadmanger.cpp
-        const QString value = QL1(reply->rawHeader("Content-Disposition"));
-        const int pos = value.indexOf(QL1("filename="));
-        if (pos != -1) {
-            QString name = value.mid(pos + 9);
-            if (name.startsWith(QLatin1Char('"')) && name.endsWith(QLatin1Char('"')))
-                name = name.mid(1, name.size() - 2);
-            fileName = name;
-        }
-    }
-    return fileName;
-}
 
 KWebPage::KWebPage(QObject *parent)
-         :QWebPage(parent), d(new KWebPage::KWebPagePrivate())
+         :QWebPage(parent), d(0)
 {  
     // KDE KParts integration for <embed> tag...
     setPluginFactory(new KWebPluginFactory(this));
@@ -144,18 +121,10 @@ KWebPage::KWebPage(QObject *parent)
     settings()->setWebGraphic(QWebSettings::MissingPluginGraphic, KIcon("preferences-plugin").pixmap(32, 32));
     settings()->setWebGraphic(QWebSettings::MissingImageGraphic, KIcon("image-missing").pixmap(32, 32));
     settings()->setWebGraphic(QWebSettings::DefaultFrameIconGraphic, KIcon("applications-internet").pixmap(32, 32));
-
-    setForwardUnsupportedContent(true);
-
-    connect(this, SIGNAL(downloadRequested(const QNetworkRequest &)),
-            this, SLOT(slotDownloadRequest(const QNetworkRequest &)));
-    connect(this, SIGNAL(unsupportedContent(QNetworkReply *)),
-            this, SLOT(slotUnsupportedContent(QNetworkReply *)));
 }
 
 KWebPage::~KWebPage()
 {
-    delete d;
 }
 
 void KWebPage::setAllowExternalContent(bool allow)
@@ -269,86 +238,25 @@ QObject *KWebPage::createPlugin(const QString &classId, const QUrl &url, const Q
     return loader.createWidget(classId, view());
 }
 
+void KWebPage::downloadRequest(const QNetworkRequest &request) const
+{
+    KUrl url (request.url());
+    const QString destUrl = KFileDialog::getSaveFileName(url.fileName(), QString(), view());
+
+    if (destUrl.isEmpty())
+        return;
+
+    KIO::Job *job = KIO::file_copy(url, KUrl(destUrl), -1, KIO::Overwrite);
+    QVariant attr = request.attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData));
+    if (attr.isValid() && attr.type() == QVariant::Map)
+        job->setMetaData(KIO::MetaData(attr.toMap()));
+
+    job->addMetaData("MaxCacheSize", "0"); // Don't store in http cache.
+    job->addMetaData("cache", "cache"); // Use entry from cache if available.
+    job->uiDelegate()->setAutoErrorHandlingEnabled(true);
+}
+
 bool KWebPage::authorizedRequest(const QUrl &) const
 {
     return true;
-}
-
-void KWebPage::slotUnsupportedContent(QNetworkReply *reply)
-{
-    kDebug() << "url:" << reply->url();
-    kDebug() << "location:" << reply->header(QNetworkRequest::LocationHeader).toString();
-    kDebug() << "error:" << reply->error();
-
-    if (reply->url().isValid()) {
-        KParts::BrowserRun::AskSaveResult res = KParts::BrowserRun::askEmbedOrSave(
-                                                    reply->url(),
-                                                    reply->header(QNetworkRequest::ContentTypeHeader).toString(),
-                                                    d->getFileNameForDownload(reply->request(), reply));
-        switch (res) {
-        case KParts::BrowserRun::Save:
-            slotDownloadRequest(reply->request(), reply);
-            return;
-        case KParts::BrowserRun::Cancel:
-            return;
-        default: // Open
-            break;
-        }
-    }
-}
-
-void KWebPage::slotDownloadRequest(const QNetworkRequest &request)
-{
-    slotDownloadRequest(request, 0);
-}
-
-void KWebPage::slotDownloadRequest(const QNetworkRequest &request, QNetworkReply *reply)
-{
-    const KUrl url(request.url());
-    kDebug() << url;
-
-    const QString fileName = d->getFileNameForDownload(request, reply);
-
-    // parts of following code are based on khtml_ext.cpp
-    // DownloadManager <-> konqueror integration
-    // find if the integration is enabled
-    // the empty key  means no integration
-    // only use download manager for non-local urls!
-    bool downloadViaKIO = true;
-    if (!url.isLocalFile()) {
-        KConfigGroup cfg = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals)->group("HTML Settings");
-        const QString downloadManger = cfg.readPathEntry("DownloadManager", QString());
-        if (!downloadManger.isEmpty()) {
-            // then find the download manager location
-            kDebug() << "Using: " << downloadManger << " as Download Manager";
-            QString cmd = KStandardDirs::findExe(downloadManger);
-            if (cmd.isEmpty()) {
-                QString errMsg = i18n("The Download Manager (%1) could not be found in your $PATH.", downloadManger);
-                QString errMsgEx = i18n("Try to reinstall it. \n\nThe integration with Konqueror will be disabled.");
-                KMessageBox::detailedSorry(view(), errMsg, errMsgEx);
-                cfg.writePathEntry("DownloadManager", QString());
-                cfg.sync();
-            } else {
-                downloadViaKIO = false;
-                cmd += ' ' + KShell::quoteArg(url.url());
-                kDebug() << "Calling command" << cmd;
-                KRun::runCommand(cmd, view());
-            }
-        }
-    }
-
-    if (downloadViaKIO) {
-        const QString destUrl = KFileDialog::getSaveFileName(url.fileName(), QString(), view());
-        if (destUrl.isEmpty()) return;
-        KIO::Job *job = KIO::file_copy(url, KUrl(destUrl), -1, KIO::Overwrite);
-
-        QVariant attr = request.attribute(QNetworkRequest::User);
-        if (attr.isValid() && attr.type() == QVariant::Map) {
-            KIO::MetaData metaData (attr.toMap());
-            job->setMetaData(metaData);
-        }
-        job->addMetaData("MaxCacheSize", "0"); // Don't store in http cache.
-        job->addMetaData("cache", "cache"); // Use entry from cache if available.
-        job->uiDelegate()->setAutoErrorHandlingEnabled(true);
-    }
 }

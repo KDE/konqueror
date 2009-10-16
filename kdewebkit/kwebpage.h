@@ -64,6 +64,21 @@ public:
     void setAllowExternalContent(bool allow);
 
     /**
+     * Downloads the resource requested by @p request.
+     *
+     * This function first prompts the user for the destination
+     * location for the requested resource and then downloads it
+     * using KIO.
+     *
+     * For example, you can call this function when you receive
+     * @ref QWebPage::downloadRequested signal to download the
+     * the request through KIO.
+     *
+     * @param request   the request to download.
+     */
+    void downloadRequest(const QNetworkRequest &request) const;
+
+    /**
      * Returns true if access to the requested @p url is authorized.
      *
      * You should reimplement this function if you want to add features such as
@@ -147,11 +162,6 @@ protected:
      * @internal
      */
     virtual QObject *createPlugin(const QString &classId, const QUrl &url, const QStringList &paramNames, const QStringList &paramValues);
-
-protected Q_SLOTS: //TODO: either document or remove, see discussion on kdewebkit ml -uwolfer
-    virtual void slotUnsupportedContent(QNetworkReply *reply);
-    virtual void slotDownloadRequest(const QNetworkRequest &request);
-    virtual void slotDownloadRequest(const QNetworkRequest &request, QNetworkReply *reply);
 
 private:
     class KWebPagePrivate;

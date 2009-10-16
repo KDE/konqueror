@@ -148,6 +148,24 @@ static bool domainSchemeMatch(const QUrl& u1, const QUrl& u2)
     return (u1List == u2List);
 }
 
+static QString getFileNameForDownload(const QNetworkRequest &request, QNetworkReply *reply)
+{
+    QString fileName = KUrl(request.url()).fileName();
+
+    if (reply && reply->hasRawHeader("Content-Disposition")) { // based on code from arora, downloadmanger.cpp
+        const QString value = QL1(reply->rawHeader("Content-Disposition"));
+        const int pos = value.indexOf(QL1("filename="));
+        if (pos != -1) {
+            QString name = value.mid(pos + 9);
+            if (name.startsWith(QLatin1Char('"')) && name.endsWith(QLatin1Char('"')))
+                name = name.mid(1, name.size() - 2);
+            fileName = name;
+        }
+    }
+
+    return fileName;
+}
+
 class WebPage::WebPagePrivate
 {
 public:
@@ -170,12 +188,18 @@ WebPage::WebPage(WebKitPart *part, QWidget *parent)
     if (view())
         WebKitSettings::self()->computeFontSizes(view()->logicalDpiY());
 
+    setForwardUnsupportedContent(true);
+
     connect(this, SIGNAL(geometryChangeRequested(const QRect &)),
             this, SLOT(slotGeometryChangeRequested(const QRect &)));
     connect(this, SIGNAL(windowCloseRequested()),
             this, SLOT(slotWindowCloseRequested()));
     connect(this, SIGNAL(statusBarMessage(const QString &)),
             this, SLOT(slotStatusBarMessage(const QString &)));
+    connect(this, SIGNAL(downloadRequested(const QNetworkRequest &)),
+            this, SLOT(slotDownloadRequest(const QNetworkRequest &)));
+    connect(this, SIGNAL(unsupportedContent(QNetworkReply *)),
+            this, SLOT(slotUnsupportedContent(QNetworkReply *)));
     connect(networkAccessManager(), SIGNAL(finished(QNetworkReply*)),
             this, SLOT(slotRequestFinished(QNetworkReply*)));
 }
@@ -430,14 +454,47 @@ bool WebPage::handleMailToUrl (const QUrl& url, NavigationType type) const
 
 void WebPage::slotUnsupportedContent(QNetworkReply *reply)
 {
-    const KUrl url(reply->request().url());
-    kDebug() << url;
     KParts::OpenUrlArguments args;
+    const KUrl url(reply->url());
+    kDebug() << url;
+
     Q_FOREACH (const QByteArray &headerName, reply->rawHeaderList()) {
         args.metaData().insert(QString(headerName), QString(reply->rawHeader(headerName)));
     }
 
     emit d->part->browserExtension()->openUrlRequest(url, args, KParts::BrowserArguments());
+}
+
+void WebPage::slotDownloadRequest(const QNetworkRequest &request)
+{
+    const KUrl url(request.url());
+    kDebug() << url;
+
+    // Integration with a download manager...
+    if (!url.isLocalFile()) {
+        KConfigGroup cfg = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals)->group("HTML Settings");
+        const QString downloadManger = cfg.readPathEntry("DownloadManager", QString());
+
+        if (!downloadManger.isEmpty()) {
+            // then find the download manager location
+            kDebug() << "Using: " << downloadManger << " as Download Manager";
+            QString cmd = KStandardDirs::findExe(downloadManger);
+            if (cmd.isEmpty()) {
+                QString errMsg = i18n("The Download Manager (%1) could not be found in your $PATH.", downloadManger);
+                QString errMsgEx = i18n("Try to reinstall it. \n\nThe integration with Konqueror will be disabled.");
+                KMessageBox::detailedSorry(view(), errMsg, errMsgEx);
+                cfg.writePathEntry("DownloadManager", QString());
+                cfg.sync();
+            } else {
+                cmd += ' ' + KShell::quoteArg(url.url());
+                kDebug() << "Calling command" << cmd;
+                KRun::runCommand(cmd, view());
+                return;
+            }
+        }
+    }
+
+    KWebPage::downloadRequest(request);
 }
 
 void WebPage::slotGeometryChangeRequested(const QRect &rect)
