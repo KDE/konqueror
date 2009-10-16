@@ -122,7 +122,7 @@ void AddMenuBackEnd::doRollBack()
 static QString findFileName(const QString* tmpl, const QString &profile) {
     QString tmp = *tmpl;
 
-    KGlobal::dirs()->saveLocation("data", "konqsidebartng/" + profile + "/entries/", true);
+    //KGlobal::dirs()->saveLocation("data", "konqsidebartng/" + profile + "/entries/", true);
     tmp.prepend("/konqsidebartng/" + profile + "/entries/");
 
     QString filename = tmp.arg("");
@@ -274,13 +274,12 @@ void Sidebar_Widget::addWebSideBar(const KUrl& url, const QString& /*name*/) {
 
     // Look for existing ones with this URL
     KStandardDirs *dirs = KGlobal::dirs();
-    dirs->saveLocation("data", m_relPath, true);
-    const QString list = KStandardDirs::locateLocal("data", m_relPath);
+    const QString localDir = KStandardDirs::locateLocal("data", m_relPath);
 
     // Go through list to see which ones exist.  Check them for the URL
-    const QStringList files = QDir(list).entryList(QStringList() << "websidebarplugin*.desktop");
+    const QStringList files = QDir(localDir).entryList(QStringList() << "websidebarplugin*.desktop");
     for (QStringList::const_iterator it = files.constBegin(); it != files.constEnd(); ++it){
-        KConfig _scf( list + *it, KConfig::SimpleConfig );
+        KConfig _scf( localDir + *it, KConfig::SimpleConfig );
         KConfigGroup scf(&_scf, "Desktop Entry");
         if (scf.readPathEntry("URL", QString()) == url.url()) {
             // We already have this one!
@@ -356,67 +355,63 @@ void Sidebar_Widget::aboutToShowConfigMenu()
 }
 
 
+// This is not only the first-time copy of desktop files, but also
+// the updating of the local desktop files if the global ones are more recent
+// (Version number)
 void Sidebar_Widget::initialCopy()
 {
     kDebug()<<"Initial copy";
     QStringList dirtree_dirs = KGlobal::dirs()->findDirs("data","konqsidebartng/entries/");
-    if (dirtree_dirs.last()==m_path)
+    dirtree_dirs.removeAll(m_path); // Remove local path
+    if (dirtree_dirs.isEmpty())
         return; //oups;
 
-    int nVersion=-1;
+    // TODO:
+    // Input data:
+    // Global dir: list of desktop files.
+    // Local dir: list of desktop files, for modules added or modified.
+    // Local KConfig: config file with list of "added" and "removed" desktop files
+    //
+    // Algorithm:
+    // For each local file: if not present globally and not "added" -> remove.
+    // Then we create buttons for desktop files from *both dirs* (the merged view),
+    // skipping those listed as "removed".
+    // When the user modifies something, we make a local copy.
+    
     KConfig lcfg(m_path+".version", KConfig::SimpleConfig);
-    KConfigGroup generalGroup( &lcfg, "General" );
-    int lVersion = generalGroup.readEntry("Version",0);
+    KConfigGroup generalGroup(&lcfg, "General");
+    const int localVersion = generalGroup.readEntry("Version", 0);
+    int newVersion = localVersion;
 
+    // We'll only copy the entries that don't exist yet in the local dir
+    QDir localDir(m_path);
+    const QStringList localEntries = localDir.entryList(QDir::Files );
+    const QStringList localDirEntries = localDir.entryList(QDir::Dirs | QDir::NoSymLinks | QDir::NoDotAndDotDot);
 
-    for (QStringList::const_iterator ddit=dirtree_dirs.constBegin();ddit!=dirtree_dirs.constEnd();++ddit) {
-        QString dirtree_dir=*ddit;
-        if (dirtree_dir == m_path) continue;
+    // For each directory with "global" desktop files
+    // (typically there is just one)
+    Q_FOREACH(const QString& dirtree_dir, dirtree_dirs) {
 
+        KConfig gcfg(dirtree_dir+".version", KConfig::SimpleConfig);
+        KConfigGroup dirGeneralGroup(&gcfg, "General");
+        const int gversion = dirGeneralGroup.readEntry("Version", 1);
+        newVersion = qMax(newVersion, gversion);
+        if (localVersion >= gversion) // 
+            continue;
 
-        kDebug()<<"************************************ retrieving directory info:"<<dirtree_dir;
-
-        if ( !dirtree_dir.isEmpty() && dirtree_dir != m_path )
-        {
-            KConfig gcfg(dirtree_dir+".version", KConfig::SimpleConfig);
-            KConfigGroup dirGeneralGroup( &gcfg, "General" );
-            int gversion = dirGeneralGroup.readEntry("Version", 1);
-            nVersion=(nVersion>gversion)?nVersion:gversion;
-            if (lVersion >= gversion)
-                continue;
-
-            QDir dir(m_path);
-            const QStringList entries = dir.entryList( QDir::Files );
-            QStringList dirEntries = dir.entryList( QDir::Dirs | QDir::NoSymLinks );
-            dirEntries.removeAll( "." );
-            dirEntries.removeAll( ".." );
-
-            QDir globalDir( dirtree_dir );
-            Q_ASSERT( globalDir.isReadable() );
-            // Only copy the entries that don't exist yet in the local dir
-            const QStringList globalDirEntries = globalDir.entryList();
-            QStringList::ConstIterator eIt = globalDirEntries.constBegin();
-            QStringList::ConstIterator eEnd = globalDirEntries.end();
-            for (; eIt != eEnd; ++eIt )
-            {
-                //kDebug(1201) << "KonqSidebarTree::scanDir dirtree_dir contains " << *eIt;
-                if ( *eIt != "." && *eIt != ".." &&
-                     !entries.contains( *eIt ) &&
-                     !dirEntries.contains( *eIt ) )
-                { // we don't have that one yet -> copy it.
-                    QString cp("cp -R -- ");
-                    cp += KShell::quoteArg(dirtree_dir + *eIt);
-                    cp += ' ';
-                    cp += KShell::quoteArg(m_path);
-                    kDebug() << "SidebarWidget::intialCopy executing " << cp;
-                    ::system( QFile::encodeName(cp) );
-                }
+        QDir globalDir(dirtree_dir);
+        const QStringList globalDirEntries = globalDir.entryList(QDir::Files | QDir::NoDotAndDotDot);
+        Q_FOREACH(const QString& globalEntry, globalDirEntries) {
+            kDebug(1201) << "dirtree_dir contains" << globalDirEntries;
+            if (!localEntries.contains(globalEntry) &&
+                !localDirEntries.contains(globalEntry)) {
+                // we don't have that one yet -> copy it.
+                kDebug(1201) << "Copy from" << (dirtree_dir + globalEntry) << "to" << (m_path + globalEntry);
+                QFile::copy(dirtree_dir + globalEntry, m_path + globalEntry);
             }
         }
-
-        generalGroup.writeEntry("Version",(nVersion>lVersion)?nVersion:lVersion);
+        generalGroup.writeEntry("Version", newVersion);
         lcfg.sync();
-
     }
 }
 
@@ -591,11 +586,10 @@ void Sidebar_Widget::createButtons()
     {
         kDebug()<<"m_path: "<<m_path;
         QDir dir(m_path);
-        QStringList list=dir.entryList(QStringList() << "*.desktop");
+        QStringList list = dir.entryList(QStringList() << "*.desktop");
         list.removeAll( "history.desktop" ); // #205521
-        for (QStringList::const_iterator it=list.constBegin(); it!=list.constEnd(); ++it)
-        {
-            addButton(*it);
+        Q_FOREACH(const QString& file, list) {
+            addButton(file);
         }
     }
 
@@ -625,7 +619,7 @@ void Sidebar_Widget::createButtons()
     }
 
     collapseExpandSidebar();
-    m_noUpdate=false;
+    m_noUpdate = false;
 }
 
 bool Sidebar_Widget::openUrl(const class KUrl &url)
