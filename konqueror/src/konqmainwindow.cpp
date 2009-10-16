@@ -652,6 +652,7 @@ void KonqMainWindow::openUrl(KonqView *_view, const KUrl &_url,
             bool open = url.isLocalFile() || protClass==":local";
             if ( !open ) {
                 KParts::BrowserOpenOrSaveQuestion dlg(this, url, mimeType);
+                dlg.setFeatures(KParts::BrowserOpenOrSaveQuestion::ServiceSelection);
                 const KParts::BrowserOpenOrSaveQuestion::Result res = dlg.askOpenOrSave();
                 if (res == KParts::BrowserOpenOrSaveQuestion::Save)
                     KParts::BrowserRun::saveUrl( url, QString(), this, req.args );
@@ -813,7 +814,8 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
             attachment = (run->serverSuggestsSave()) ? KParts::BrowserRun::AttachmentDisposition : KParts::BrowserRun::InlineDisposition;
         }
 
-        KParts::BrowserOpenOrSaveQuestion dlg(this, url, mimeType, suggestedFileName);
+        KParts::BrowserOpenOrSaveQuestion dlg(this, url, mimeType);
+        dlg.setSuggestedFileName(suggestedFileName);
         const KParts::BrowserOpenOrSaveQuestion::Result res = dlg.askEmbedOrSave(attachment);
         if (res == KParts::BrowserOpenOrSaveQuestion::Embed)
             forceAutoEmbed = true;
