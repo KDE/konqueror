@@ -109,9 +109,10 @@ public:
 
   /**
    * Break the current tab off into a new window,
-   * if none is specified, the current one is used
+   * if none is specified, the current one is used.
+   * Returns the newly created window.
    */
-  void breakOffTab( KonqFrameBase* tab, const QSize& windowSize );
+  KonqMainWindow* breakOffTab( KonqFrameBase* tab, const QSize& windowSize );
 
   /**
    * Guess!:-)
