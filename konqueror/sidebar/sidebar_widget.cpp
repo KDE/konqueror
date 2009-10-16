@@ -49,7 +49,6 @@
 #include <kurlrequesterdialog.h>
 #include <kfiledialog.h>
 #include <kdesktopfile.h>
-#include "konqsidebar.h"
 
 // Local
 #include <config-apps.h>

@@ -14,7 +14,7 @@
  *   (at your option) any later version.                                   *
  *                                                                         *
  ***************************************************************************/
-#include "konqsidebar.h"
+#include "sidebar_part.h"
 #include <kaboutdata.h>
 
 #include <kparts/factory.h>
@@ -32,11 +32,11 @@ static KAboutData createAboutData()
 }
 
 K_PLUGIN_FACTORY(KonqSidebarFactory,
-                 registerPlugin<KonqSidebar>();
+                 registerPlugin<KonqSidebarPart>();
     )
 K_EXPORT_COMPONENT_FACTORY(konq_sidebar, KonqSidebarFactory(createAboutData()))
 
-KonqSidebar::KonqSidebar(QWidget *parentWidget, QObject *parent, const QVariantList&)
+KonqSidebarPart::KonqSidebarPart(QWidget *parentWidget, QObject *parent, const QVariantList&)
     : KParts::ReadOnlyPart(parent)
 {
     setComponentData(KonqSidebarFactory::componentData());
@@ -54,21 +54,21 @@ KonqSidebar::KonqSidebar(QWidget *parentWidget, QObject *parent, const QVariantL
     setWidget(m_widget);
 }
 
-KonqSidebar::~KonqSidebar()
+KonqSidebarPart::~KonqSidebarPart()
 {
 }
 
-bool KonqSidebar::openFile()
+bool KonqSidebarPart::openFile()
 {
     return true;
 }
 
-bool KonqSidebar::openUrl(const KUrl &url)
+bool KonqSidebarPart::openUrl(const KUrl &url)
 {
     return m_widget->openUrl(url);
 }
 
-void KonqSidebar::customEvent(QEvent* ev)
+void KonqSidebarPart::customEvent(QEvent* ev)
 {
     if (KonqFileSelectionEvent::test(ev) ||
         KonqFileMouseOverEvent::test(ev) ||
@@ -81,9 +81,9 @@ void KonqSidebar::customEvent(QEvent* ev)
 
 ////
 
-KonqSidebarBrowserExtension::KonqSidebarBrowserExtension(KonqSidebar *part, Sidebar_Widget *widget)
+KonqSidebarBrowserExtension::KonqSidebarBrowserExtension(KonqSidebarPart *part, Sidebar_Widget *widget)
     : KParts::BrowserExtension(part), widget(widget)
 {
 }
 
-#include "konqsidebar.moc"
+#include "sidebar_part.moc"

@@ -1,5 +1,5 @@
 /***************************************************************************
-                               konqsidebar.h
+                               sidebar_part.h
                              -------------------
     begin                : Sat June 2 16:25:27 CEST 2001
     copyright            : (C) 2001 Joseph Wenninger
@@ -26,14 +26,14 @@ class QWidget;
 class KUrl;
 
 
-class KonqSidebar;
+class KonqSidebarPart;
 class KonqSidebarFactory;
 
 class KonqSidebarBrowserExtension : public KParts::BrowserExtension
 {
     Q_OBJECT
 public:
-    KonqSidebarBrowserExtension(KonqSidebar *part_, Sidebar_Widget *widget_);
+    KonqSidebarBrowserExtension(KonqSidebarPart *part_, Sidebar_Widget *widget_);
     ~KonqSidebarBrowserExtension(){}
 
 protected:
@@ -55,19 +55,19 @@ protected Q_SLOTS:
  * @author Joseph WENNINGER <jowenn@bigfoot.com>
  * @version 0.1
  */
-class KonqSidebar : public KParts::ReadOnlyPart
+class KonqSidebarPart : public KParts::ReadOnlyPart
 {
     Q_OBJECT
 public:
     /**
      * Default constructor
      */
-    KonqSidebar(QWidget *parentWidget, QObject *parent, const QVariantList&);
+    KonqSidebarPart(QWidget *parentWidget, QObject *parent, const QVariantList&);
 
     /**
      * Destructor
      */
-    virtual ~KonqSidebar();
+    virtual ~KonqSidebarPart();
 
     virtual bool openUrl(const KUrl &url);
 
