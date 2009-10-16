@@ -50,10 +50,6 @@
 #include <kfiledialog.h>
 #include <kdesktopfile.h>
 
-// Local
-#include <config-apps.h>
-
-
 
 AddMenuBackEnd::AddMenuBackEnd(QWidget *parent, class QMenu *addmenu, const QString &currentProfile)
     : QObject(parent),
@@ -215,7 +211,6 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, const
     :QWidget(parent), m_partParent(par), m_currentProfile(currentProfile)
 {
     m_somethingVisible = false;
-    m_initial = true;
     m_noUpdate = false;
     m_layout = 0;
     m_currentButton = 0;
@@ -266,6 +261,8 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, const
     connect(&m_configTimer, SIGNAL(timeout()),
             this, SLOT(saveConfig()));
     readConfig();
+    m_openViews = m_config->readEntry("OpenViews",QStringList());
+    m_savedWidth = m_config->readEntry("SavedWidth",200);
     m_somethingVisible = !m_openViews.isEmpty();
     doLayout();
     QTimer::singleShot(0,this,SLOT(createButtons()));
@@ -277,9 +274,8 @@ void Sidebar_Widget::addWebSideBar(const KUrl& url, const QString& /*name*/) {
 
     // Look for existing ones with this URL
     KStandardDirs *dirs = KGlobal::dirs();
-    QString list;
     dirs->saveLocation("data", m_relPath, true);
-    list = KStandardDirs::locateLocal("data", m_relPath);
+    const QString list = KStandardDirs::locateLocal("data", m_relPath);
 
     // Go through list to see which ones exist.  Check them for the URL
     const QStringList files = QDir(list).entryList(QStringList() << "websidebarplugin*.desktop");
@@ -333,14 +329,11 @@ void Sidebar_Widget::saveConfig()
 
 void Sidebar_Widget::doLayout()
 {
-    if (m_layout)
-        delete m_layout;
-
+    delete m_layout;
     m_layout = new QHBoxLayout(this);
     m_layout->setMargin( 0 );
     m_layout->setSpacing( 0 );
-    if  (m_showTabsLeft)
-    {
+    if  (m_showTabsLeft) {
         m_layout->addWidget(m_buttonBar);
         m_layout->addWidget(m_area);
         m_buttonBar->setPosition(KMultiTabBar::Left);
@@ -543,34 +536,24 @@ void Sidebar_Widget::slotShowConfigurationButton( )
     }
     m_configTimer.start(400);
 }
+
 void Sidebar_Widget::readConfig()
 {
     m_singleWidgetMode = m_config->readEntry("SingleWidgetMode", true);
     m_showExtraButtons = m_config->readEntry("ShowExtraButtons", false);
     m_showTabsLeft = m_config->readEntry("ShowTabsLeft", true);
     m_hideTabs = m_config->readEntry("HideTabs", false);
-    if (m_initial) {
-        m_openViews = m_config->readEntry("OpenViews",QStringList());
-        m_savedWidth = m_config->readEntry("SavedWidth",200);
-        m_initial=false;
-    }
 }
 
 void Sidebar_Widget::stdAction(const char *handlestd)
 {
     ButtonInfo* mod = m_activeModule;
 
-    if (!mod)
-        return;
-    if (!(mod->module))
+    if (!mod || !mod->module)
         return;
 
     kDebug() << "Try calling >active< module's (" << mod->module->metaObject()->className() << ") slot " << handlestd;
 
-    int id = mod->module->metaObject()->indexOfSlot( handlestd );
-    if ( id == -1 )
-        return;
-    kDebug() << "Action slot was found, it will be called now";
     QMetaObject::invokeMethod( mod->module, handlestd );
 }
 
@@ -580,24 +563,19 @@ void Sidebar_Widget::updateButtons()
     //PARSE ALL DESKTOP FILES
     m_openViews = m_visibleViews;
 
-    if (m_buttons.count() > 0)
-    {
-        for (int i = 0; i < m_buttons.count(); i++)
+    for (int i = 0; i < m_buttons.count(); ++i) {
+        ButtonInfo *button = m_buttons.at(i);
+        if (button->dock)
         {
-            ButtonInfo *button = m_buttons.at(i);
-            if (button->dock)
-            {
-                m_noUpdate = true;
-                if (button->dock->isVisibleTo(this)) {
-                    showHidePage(i);
-                }
-
-                delete button->module;
-                delete button->dock;
+            m_noUpdate = true;
+            if (button->dock->isVisibleTo(this)) {
+                showHidePage(i);
             }
-            m_buttonBar->removeTab(i);
-
+            delete button->module;
+            delete button->dock;
         }
+        m_buttonBar->removeTab(i);
+
     }
     qDeleteAll(m_buttons);
     m_buttons.clear();
