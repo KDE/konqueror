@@ -295,7 +295,7 @@ void KonqViewManager::duplicateTab( KonqFrameBase* currentFrame, bool openAfterC
 #endif
 }
 
-void KonqViewManager::breakOffTab( KonqFrameBase* currentFrame, const QSize& windowSize )
+KonqMainWindow* KonqViewManager::breakOffTab( KonqFrameBase* currentFrame, const QSize& windowSize )
 {
 #ifdef DEBUG_VIEWMGR
   kDebug(1202) << currentFrame;
@@ -316,7 +316,9 @@ void KonqViewManager::breakOffTab( KonqFrameBase* currentFrame, const QSize& win
 
   KonqMainWindow *mainWindow = new KonqMainWindow(KUrl(), m_pMainWindow->xmlFile());
 
-  mainWindow->viewManager()->loadRootItem( profileGroup, mainWindow->viewManager()->tabContainer(), KUrl(), true, KUrl() );
+  KonqFrameTabs* newTabContainer = mainWindow->viewManager()->tabContainer();
+  mainWindow->viewManager()->loadRootItem( profileGroup, newTabContainer, KUrl(), true, KUrl() );
+  mainWindow->viewManager()->setCurrentProfile( currentProfile() );
 
   removeTab( currentFrame, false );
 
@@ -329,6 +331,8 @@ void KonqViewManager::breakOffTab( KonqFrameBase* currentFrame, const QSize& win
   m_pMainWindow->dumpViewList();
   printFullHierarchy();
 #endif
+
+  return mainWindow;
 }
 
 void KonqViewManager::openClosedWindow(const KonqClosedWindowItem& closedWindowItem)
@@ -1186,6 +1190,11 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
 #endif
 
         childView->frame()->show();
+
+        if (parent == m_tabContainer && m_tabContainer->count() == 1) {
+            // First tab, make it the active one
+            parent->setActiveChild(childView->frame());
+        }
 
         if (openUrl) {
             const QString keyHistoryItems = QString::fromLatin1( "NumberOfHistoryItems" ).prepend( prefix );

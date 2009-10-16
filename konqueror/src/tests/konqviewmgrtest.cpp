@@ -234,13 +234,18 @@ void ViewMgrTest::testSplitView()
 
 
     // Split again
+    int widthFrame2 = frame2->width();
     KonqView* view3 = viewManager->splitView( view, Qt::Horizontal );
     QVERIFY( view3 );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(C(FF)F)].") );
+    // Check that the width of the second frame has not changed (bug 160407)
+    QCOMPARE( frame2->width(), widthFrame2 );
 
     // Now test removing the first view
     viewManager->removeView( view );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, one splitter, two frames
+    // Check again that the width of the second frame has not changed (bug 160407 comments 18-20)
+    QCOMPARE( frame2->width(), widthFrame2 );
 
     // Now test removing the last view
     viewManager->removeView( view3 );
@@ -621,6 +626,61 @@ void ViewMgrTest::testBrowserArgumentsNewTab()
 
     // compare the url of the new view... how to?
 //    QCOMPARE(view->url(), KUrl("data:text/html, <p>Second tab test</p>"));
+}
+
+void ViewMgrTest::testBreakOffTab()
+{
+    KonqMainWindow mainWindow;
+    KonqViewManager* viewManager = mainWindow.viewManager();
+    KonqView* view = viewManager->createFirstView( "KonqAboutPage", "konq_aboutpage" );
+
+    KonqFrameBase* tab = view->frame();
+    viewManager->duplicateTab( tab );
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].") ); // mainWindow, tab widget, two tabs
+
+    // Break off a tab
+
+    KonqMainWindow* mainWindow2 = viewManager->breakOffTab( tab, mainWindow.size() );
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, one tab, one frame
+    QCOMPARE( DebugFrameVisitor::inspect(mainWindow2), QString("MT[F].") ); // mainWindow, one tab, one frame
+
+    // Verify that the new tab container has an active child and that duplicating the tab in the new window does not crash (bug 203069)
+
+    QVERIFY( mainWindow2->viewManager()->tabContainer()->activeChild() );
+    mainWindow2->viewManager()->duplicateTab( mainWindow2->activeChildView()->frame() );
+    QCOMPARE( DebugFrameVisitor::inspect(mainWindow2), QString("MT[FF].") ); // mainWindow, tab widget, two tabs
+
+    delete mainWindow2;
+    
+    // Now split the remaining view, duplicate the tab and verify that breaking off a split tab does not crash (bug 174292).
+    // Also check that the tab container of the new main window has an active child.
+
+    view = mainWindow.activeChildView();
+    viewManager->splitView( view, Qt::Vertical );
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, one splitter, two frames
+    KonqFrameContainerBase* container = view->frame()->parentContainer();
+    viewManager->duplicateTab( container );
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)C(FF)].") ); // mainWindow, tab widget, two tabs with split views
+    mainWindow2 = viewManager->breakOffTab( container, mainWindow.size() );
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, one splitter, two frames
+    QCOMPARE( DebugFrameVisitor::inspect(mainWindow2), QString("MT[C(FF)].") ); // mainWindow, tab widget, one splitter, two frames
+    QVERIFY( mainWindow2->viewManager()->tabContainer()->activeChild() );
+
+    delete mainWindow2;
+
+    // Verify that breaking off a tab preserves the view profile (bug 210686)
+    
+    const QString profile = KStandardDirs::locate("data", "konqueror/profiles/webbrowsing");
+    QVERIFY(!profile.isEmpty());
+    const QString path = QDir::homePath();
+    mainWindow.viewManager()->loadViewProfileFromFile(profile, "webbrowsing");
+    view = mainWindow.activeChildView();
+    tab = view->frame();
+    viewManager->duplicateTab( tab );
+    mainWindow2 = viewManager->breakOffTab( tab, mainWindow.size() );
+    QCOMPARE( viewManager->currentProfile(), mainWindow2->viewManager()->currentProfile() );
+
+    delete mainWindow2;
 }
 
 #include "konqviewmgrtest.moc"
