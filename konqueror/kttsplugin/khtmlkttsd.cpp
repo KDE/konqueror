@@ -15,6 +15,9 @@
 // Own
 #include "khtmlkttsd.h"
 
+// Local
+#include "kspeechinterface.h"
+
 // KDE
 #include <dom/dom_string.h>
 #include <dom/html_document.h>
@@ -24,15 +27,6 @@
 #include <kdebug.h>
 #include <khtml_part.h> // this plugin applies to a khtml part
 #include <config-kttsplugin.h>
-#ifdef HAVE_WEBKITKDE
-#include <webkitpart.h>
-#ifdef HAVE_WEBVIEW
-#include <webview.h>
-#else
-#include <webkitview.h>
-#endif
-#include <QWebFrame>
-#endif
 #include <kicon.h>
 #include <klocale.h>
 #include <kmessagebox.h>
@@ -41,8 +35,12 @@
 #include <kspeech.h>
 #include <ktoolinvocation.h>
 
+#ifdef HAVE_WEBKITKDE
+#include <webkitpart.h>
+#include <QWebFrame>
+#include <QWebView>
+#endif
 
-#include "kspeechinterface.h"
 
 KHTMLPluginKTTSD::KHTMLPluginKTTSD( QObject* parent, const QVariantList& )
     : Plugin( parent )
