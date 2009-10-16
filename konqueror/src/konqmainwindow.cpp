@@ -127,6 +127,7 @@
 #include <kprocess.h>
 #include <kio/scheduler.h>
 #include <kio/netaccess.h>
+#include <kparts/browseropenorsavequestion.h>
 #include <kacceleratormanager.h>
 #include <kuser.h>
 #include <kxmlguifactory.h>
@@ -650,13 +651,14 @@ void KonqMainWindow::openUrl(KonqView *_view, const KUrl &_url,
             QString protClass = KProtocolInfo::protocolClass(url.protocol());
             bool open = url.isLocalFile() || protClass==":local";
             if ( !open ) {
-                // Use askSave from filetypesrc
-                KMessageBox::setDontShowAskAgainConfig(KonqFMSettings::settings()->fileTypesConfig().data());
-                KParts::BrowserRun::AskSaveResult res = KonqRun::askSave( url, offer, mimeType );
-                KMessageBox::setDontShowAskAgainConfig(0);
-                if ( res == KParts::BrowserRun::Save )
+                KParts::BrowserOpenOrSaveQuestion dlg(this, url, mimeType);
+                const KParts::BrowserOpenOrSaveQuestion::Result res = dlg.askOpenOrSave();
+                if (res == KParts::BrowserOpenOrSaveQuestion::Save)
                     KParts::BrowserRun::saveUrl( url, QString(), this, req.args );
-                open = ( res == KParts::BrowserRun::Open );
+                open = (res == KParts::BrowserOpenOrSaveQuestion::Open);
+                if (open) {
+                    offer = dlg.selectedService();
+                }
             }
             if ( open )
             {
@@ -803,26 +805,22 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
     // So (if embedding would succeed, hence the checks above) we ask the user
     // Otherwise the user will get asked 'open or save' in openUrl anyway.
     if (!forceAutoEmbed && !KProtocolManager::supportsWriting(url)) {
-        QString suggestedFilename;
+        QString suggestedFileName;
         KonqRun* run = childView ? childView->run() : 0;
         int attachment = 0;
         if (run) {
-            suggestedFilename = run->suggestedFileName();
+            suggestedFileName = run->suggestedFileName();
             attachment = (run->serverSuggestsSave()) ? KParts::BrowserRun::AttachmentDisposition : KParts::BrowserRun::InlineDisposition;
         }
 
-        // Use askEmbedOrSave from filetypesrc
-        KMessageBox::setDontShowAskAgainConfig(KonqFMSettings::settings()->fileTypesConfig().data());
-
-        KParts::BrowserRun::AskSaveResult res = KParts::BrowserRun::askEmbedOrSave(
-            url, mimeType, suggestedFilename, attachment);
-        KMessageBox::setDontShowAskAgainConfig(0);
-        if (res == KParts::BrowserRun::Open)
+        KParts::BrowserOpenOrSaveQuestion dlg(this, url, mimeType, suggestedFileName);
+        const KParts::BrowserOpenOrSaveQuestion::Result res = dlg.askEmbedOrSave(attachment);
+        if (res == KParts::BrowserOpenOrSaveQuestion::Embed)
             forceAutoEmbed = true;
-        else if (res == KParts::BrowserRun::Cancel)
+        else if (res == KParts::BrowserOpenOrSaveQuestion::Cancel)
             return true; // handled, don't do anything else
         else { // Save
-            KParts::BrowserRun::saveUrl(url, suggestedFilename, this, req.args);
+            KParts::BrowserRun::saveUrl(url, suggestedFileName, this, req.args);
             return true; // handled
         }
     }
