@@ -99,11 +99,8 @@ void KonqRun::foundMimeType(const QString & _type)
     }
 
     if (!hasFinished()) {
-        // Use askSave from filetypesrc
-        KMessageBox::setDontShowAskAgainConfig(KonqFMSettings::settings()->fileTypesConfig().data());
         // If we couldn't embed the mimetype, call BrowserRun::handleNonEmbeddable()
         KParts::BrowserRun::NonEmbeddableResult res = handleNonEmbeddable(mimeType);
-        KMessageBox::setDontShowAskAgainConfig(0);
         if (res == KParts::BrowserRun::Delayed)
             return;
         setFinished(res == KParts::BrowserRun::Handled);
