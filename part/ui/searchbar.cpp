@@ -94,12 +94,21 @@ void SearchBar::clear()
 
 void SearchBar::show()
 {
-    if (isVisible())
-        return;
+    if (!isVisible()) {
+        QWidget::show();
+    }
 
-    QWidget::show();
-    d->ui.searchLineEdit->setFocus();
-    d->ui.searchLineEdit->selectAll();
+    if (!d->ui.searchLineEdit->hasFocus()) {
+        d->ui.searchLineEdit->selectAll();
+        d->ui.searchLineEdit->setFocus();
+    }
+}
+
+void SearchBar::hide()
+{
+    clear();
+    setFoundMatch(false);
+    QWidget::hide();
 }
 
 QString SearchBar::searchText() const

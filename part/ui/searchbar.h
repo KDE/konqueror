@@ -48,8 +48,9 @@ public:
     void setSearchText(const QString&);
 
 public Q_SLOTS:
-    void clear();
     void show();
+    void hide();
+    void clear();
     void findNext();
     void findPrevious();
 
