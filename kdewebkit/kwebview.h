@@ -88,7 +88,7 @@ Q_SIGNALS:
     void openUrlInNewTab(const KUrl &url);
 
     /**
-     * This signal is emitted when the user presses the shift and clicks on a
+     * This signal is emitted when the user presses shift and clicks on a
      * link with the mouse button.
      */
     void saveUrl(const KUrl &url);
