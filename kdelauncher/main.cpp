@@ -30,8 +30,6 @@
  */
 
 #include <kwebview.h>
-#include <knetworkcookiejar.h>
-#include <kwebpluginfactory.h>
 
 #include <KDE/KApplication>
 #include <KDE/KAboutData>
@@ -86,15 +84,8 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 public:
     MainWindow(const QString& url = QString()): currentZoom(100) {
-        view = new QWebView(this);
+        view = new KWebView(this);
         setCentralWidget(view);
-
-        view->page()->setNetworkAccessManager(new KIO::AccessManager(this));
-        view->page()->setPluginFactory(new KWebPluginFactory(this));
-
-        KNetworkCookieJar *cookiejar = new KNetworkCookieJar;
-        view->page()->networkAccessManager()->setCookieJar(cookiejar);
-        cookiejar->setParent(this);
 
         connect(view, SIGNAL(loadFinished(bool)),
                 this, SLOT(loadFinished()));
