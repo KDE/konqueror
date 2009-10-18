@@ -37,7 +37,6 @@ install(TARGETS kdewebkit ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES
     kdewebkit_export.h
     kwebpluginfactory.h
-    knetworkcookiejar.h
     kwebpage.h
     kwebview.h
     DESTINATION ${INCLUDE_INSTALL_DIR}/kdewebkit/ COMPONENT Devel)
