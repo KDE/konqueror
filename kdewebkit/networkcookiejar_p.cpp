@@ -20,7 +20,7 @@
  *
  */
 
-#include "knetworkcookiejar.h"
+#include "networkcookiejar_p.h"
 
 #include <kconfiggroup.h>
 #include <ksharedconfig.h>
@@ -32,30 +32,32 @@
 #include <QtDBus/QDBusReply>
 
 
-class KNetworkCookieJar::KNetworkCookieJarPrivate
+namespace KDEPrivate {
+
+class NetworkCookieJar::CookieJarPrivate
 {
 public:
-  KNetworkCookieJarPrivate(): windowId(-1), enabled(true) {}
+  CookieJarPrivate(): windowId(-1), enabled(true) {}
 
   qlonglong windowId;
   bool enabled;
 };
 
 
-KNetworkCookieJar::KNetworkCookieJar(QObject* parent)
-                  :QNetworkCookieJar(parent), d(new KNetworkCookieJar::KNetworkCookieJarPrivate) {
+NetworkCookieJar::NetworkCookieJar(QObject* parent)
+                 :QNetworkCookieJar(parent), d(new NetworkCookieJar::CookieJarPrivate) {
     reparseConfiguration();
 }
 
-KNetworkCookieJar::~KNetworkCookieJar() {
+NetworkCookieJar::~NetworkCookieJar() {
     delete d;
 }
 
-qlonglong KNetworkCookieJar::windowId() const {
+qlonglong NetworkCookieJar::windowId() const {
     return d->windowId;
 }
 
-QList<QNetworkCookie> KNetworkCookieJar::cookiesForUrl(const QUrl &url) const {
+QList<QNetworkCookie> NetworkCookieJar::cookiesForUrl(const QUrl &url) const {
     QList<QNetworkCookie> cookieList;
 
     if (d->enabled) {
@@ -73,7 +75,7 @@ QList<QNetworkCookie> KNetworkCookieJar::cookiesForUrl(const QUrl &url) const {
     return cookieList;
 }
 
-bool KNetworkCookieJar::setCookiesFromUrl(const QList<QNetworkCookie> &cookieList, const QUrl &url) {
+bool NetworkCookieJar::setCookiesFromUrl(const QList<QNetworkCookie> &cookieList, const QUrl &url) {
     if (d->enabled) {
         QDBusInterface kcookiejar("org.kde.kded", "/modules/kcookiejar", "org.kde.KCookieServer");
 
@@ -91,13 +93,15 @@ bool KNetworkCookieJar::setCookiesFromUrl(const QList<QNetworkCookie> &cookieLis
     return false;
 }
 
-void KNetworkCookieJar::setWindowId(qlonglong id) {
+void NetworkCookieJar::setWindowId(qlonglong id) {
     d->windowId = id;
 }
 
-void KNetworkCookieJar::reparseConfiguration() {
+void NetworkCookieJar::reparseConfiguration() {
     KConfigGroup cfg = KSharedConfig::openConfig("kcookiejarrc", KConfig::NoGlobals)->group("Cookie Policy");
     d->enabled = cfg.readEntry("Cookies", true);
 }
 
-#include "knetworkcookiejar.moc"
+}
+
+#include "networkcookiejar_p.moc"

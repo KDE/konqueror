@@ -12,11 +12,11 @@ add_subdirectory(includes)
 add_subdirectory(cmake)
 
 set(kdewebkit_LIB_SRCS
-    knetworkcookiejar.cpp
-    kwebpluginfactory.cpp
-    networkaccessmanager_p.cpp
     kwebpage.cpp
     kwebview.cpp
+    kwebpluginfactory.cpp
+    networkcookiejar_p.cpp
+    networkaccessmanager_p.cpp
 )
 
 kde4_add_library(kdewebkit SHARED ${kdewebkit_LIB_SRCS})

@@ -20,13 +20,13 @@
  *
  */
 
-#ifndef KNETWORKCOOKIEJAR_H
-#define KNETWORKCOOKIEJAR_H
-
-#include <kdewebkit_export.h>
+#ifndef NETWORKCOOKIEJAR_H
+#define NETWORKCOOKIEJAR_H
 
 #include <QtNetwork/QNetworkCookieJar>
 
+
+namespace KDEPrivate {
 /**
  * @short A KDE implementation of QNetworkCookieJar.
  *
@@ -37,7 +37,7 @@
  * cookiejar:
  * @code
  *   QWebView *view = new QWebView(this);
- *   KNetworkCookieJar *cookieJar = new KNetworkCookieJar;
+ *   KDEPrivate::NetworkCookieJar *cookieJar = new KDEPrivate::NetworkCookieJar;
  *   cookieJar->setWindowId(view->window()->winId());
  *   view->page()->networkAccessManager()->setCookieJar(cookieJar);
  * @endcode
@@ -46,7 +46,7 @@
  * code simply downcast the pointer returned by QNetworkAccessManager::cookieJar
  * as follows:
  * @code
- *   KNetworkCookieJar *cookieJar = qobject_cast<KNetworkCookieJar*>(view->page()->accessManager()->cookieJar());
+ *   KDEPrivate::NetworkCookieJar *cookieJar = qobject_cast<KDEPrivate::NetworkCookieJar*>(view->page()->accessManager()->cookieJar());
  * @endcode
  *
  * <b>NOTE:</b> This class is not a replacement for the standard KDE API. It should
@@ -58,19 +58,19 @@
  * @author Dawit Alemayehu <adawit @ kde.org>
  * @since 4.4
  */
-class KDEWEBKIT_EXPORT KNetworkCookieJar : public QNetworkCookieJar
+class NetworkCookieJar : public QNetworkCookieJar
 {
     Q_OBJECT
 public:
     /**
-     * Constructs a KNetworkCookieJar with parent @p parent.
+     * Constructs a NetworkCookieJar with parent @p parent.
      */
-    explicit KNetworkCookieJar(QObject *parent = 0);
+    explicit NetworkCookieJar(QObject *parent = 0);
 
     /**
-     * Destroys the KNetworkCookieJar.
+     * Destroys the NetworkCookieJar.
      */
-    ~KNetworkCookieJar();
+    ~NetworkCookieJar();
 
    /**
     * Returns the currently set window id. The default value is -1.
@@ -113,8 +113,9 @@ public:
     bool setCookiesFromUrl(const QList<QNetworkCookie> &cookieList, const QUrl &url);
 
 private:
-    class KNetworkCookieJarPrivate;
-    KNetworkCookieJarPrivate* const d;
+    class CookieJarPrivate;
+    CookieJarPrivate* const d;
 };
 
-#endif // KNETWORKCOOKIEJAR_H
+}
+#endif // NETWORKCOOKIEJAR_H
