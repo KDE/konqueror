@@ -142,9 +142,8 @@ class KonqSideBarWebModule : public KonqSidebarPlugin
 {
 	Q_OBJECT
 	public:
-		KonqSideBarWebModule(const KComponentData &componentData, QObject *parent,
-			       	QWidget *widgetParent, QString &desktopName,
-			       	const char *name);
+		KonqSideBarWebModule(const KComponentData &componentData, QWidget *parent,
+                                     const QString &desktopName_, const KConfigGroup& configGroup);
 		virtual ~KonqSideBarWebModule();
 
 		virtual QWidget *getWidget();
@@ -171,7 +170,6 @@ class KonqSideBarWebModule : public KonqSidebarPlugin
 		KHTMLSideBar *_htmlPart;
 		KUrl _url;
 		int reloadTimeout;
-		QString _desktopName;
 };
 
 #endif

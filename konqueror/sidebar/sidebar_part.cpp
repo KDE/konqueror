@@ -41,8 +41,12 @@ KonqSidebarPart::KonqSidebarPart(QWidget *parentWidget, QObject *parent, const Q
 {
     setComponentData(KonqSidebarFactory::componentData());
 
-    m_widget = new Sidebar_Widget(parentWidget, this,
-                                  parentWidget->window()->property("currentProfile").toString());
+    QString currentProfile = parentWidget->window()->property("currentProfile").toString();
+    if (currentProfile.isEmpty()) {
+        // Keeping it empty would mix up the "global, no profile" files with the local ones.
+        currentProfile = "default";
+    }
+    m_widget = new Sidebar_Widget(parentWidget, this, currentProfile);
     m_extension = new KonqSidebarBrowserExtension(this, m_widget);
     connect(m_widget, SIGNAL(started(KIO::Job*)),
             this, SIGNAL(started(KIO::Job*)));

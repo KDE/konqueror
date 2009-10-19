@@ -20,6 +20,7 @@
 #ifndef _konqsidebarplugin_h_
 #define _konqsidebarplugin_h_
 
+#include <kconfiggroup.h>
 #include <QtGui/QWidget>
 #include <kurl.h>
 
@@ -51,23 +52,22 @@ class KONQSIDEBARPLUGIN_EXPORT KonqSidebarPlugin : public QObject
 public:
     KonqSidebarPlugin(const KComponentData &componentData,
                       QObject *parent,
-                      QWidget *widgetParent,
-                      QString &desktopName_,
-                      const char* name = 0);
+                      const KConfigGroup& configGroup);
     ~KonqSidebarPlugin();
     virtual QWidget *getWidget() = 0;
     virtual void *provides(const QString &) = 0;
-    
-    const KComponentData &parentInstance(); // TODO: rename to KComponentData componentData() const
-    
+
+    const KComponentData &parentComponentData() const;
+    KConfigGroup configGroup();
+
 protected:
     virtual void handleURL(const KUrl &url)=0;
     virtual void handlePreview(const KFileItemList & items);
     virtual void handlePreviewOnMouseOver(const KFileItem &items); //not used yet
-    QString desktopName;
-    KComponentData m_parentInstance;
+    KComponentData m_parentComponentData;
 
 private:
+    KConfigGroup m_configGroup;
     KonqSidebarPluginPrivate* const d;
 
 Q_SIGNALS:

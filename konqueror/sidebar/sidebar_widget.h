@@ -17,6 +17,7 @@
 #ifndef _SIDEBAR_WIDGET_
 #define _SIDEBAR_WIDGET_
 
+#include <kconfiggroup.h>
 #include <QtCore/QTimer>
 
 #include <QtCore/QPointer>
@@ -25,6 +26,7 @@
 #include <kparts/part.h>
 
 #include "konqsidebarplugin.h"
+#include "module_manager.h"
 
 class QMenu;
 class KMultiTabBar;
@@ -33,15 +35,19 @@ class QSplitter;
 class QStringList;
 class KMenu;
 
-class ButtonInfo: public QObject
+class ButtonInfo
 {
-    Q_OBJECT
 public:
-    ButtonInfo(const QString& file_, QWidget *dock_,
+    ButtonInfo()
+        : module(NULL)
+    {
+    }
+    ButtonInfo(const KSharedConfig::Ptr& configFile_,
+               const QString& file_,
                const QString &url_,const QString &lib,
-               const QString &dispName_, const QString &iconName_,
-               QObject *parent)
-        : QObject(parent), file(file_), dock(dock_), URL(url_),
+               const QString &dispName_, const QString &iconName_)
+        : configFile(configFile_),
+          file(file_), dock(NULL), URL(url_),
           libName(lib), displayName(dispName_), iconName(iconName_)
     {
         copy = cut = paste = trash = del = rename =false;
@@ -49,10 +55,11 @@ public:
 
     ~ButtonInfo() {}
 
+    KSharedConfig::Ptr configFile;
     QString file;
     QPointer<QWidget> dock;
     KonqSidebarPlugin *module;
-    QString URL;
+    QString URL; // TODO remove
     QString libName;
     QString displayName;
     QString iconName;
@@ -63,30 +70,6 @@ public:
     bool del;
     bool rename;
     //KonqSidebarIface *m_part;
-};
-
-/**
- * Backend for the "Add New" menu.
- * I.e. this class has all the slots, 
- */
-class AddMenuBackEnd: public QObject
-{
-    Q_OBJECT
-public:
-    AddMenuBackEnd(QWidget *parent, QMenu *addmenu, const QString &currentProfile);
-    ~AddMenuBackEnd(){}
-protected Q_SLOTS:
-    void aboutToShowAddMenu();
-    void triggeredAddMenu(QAction* action);
-    void doRollBack();
-
-Q_SIGNALS:
-    void updateNeeded();
-    void initialCopyNeeded();
-private:
-    QPointer<QMenu> menu;
-    QString m_currentProfile;
-    QWidget *m_parent;
 };
 
 class Sidebar_Widget: public QWidget
@@ -117,7 +100,7 @@ protected Q_SLOTS:
     void showHidePage(int value);
     void createButtons();
     void updateButtons();
-    void finishRollBack();
+    void slotRollback();
     void aboutToShowConfigMenu();
     void saveConfig();
 
@@ -154,27 +137,32 @@ public:
 
 private:
 
-    bool addButton(const QString &desktoppath,int pos=-1);
-    bool createView(ButtonInfo *data);
-    KonqSidebarPlugin *loadModule(QWidget *par,QString &desktopName,const QString &lib_name,ButtonInfo *bi);
+    bool addButton(const QString &desktopFileName, int pos = -1);
+    bool createView(ButtonInfo &buttonInfo);
+    KonqSidebarPlugin *loadModule(QWidget *par, const QString &desktopName,
+                                  const QString &lib_name, const KSharedConfig::Ptr& config);
     void readConfig();
-    void initialCopy();
     void doLayout();
     void connectModule(QObject *mod);
     void collapseExpandSidebar();
     bool doEnableActions();
+    ButtonInfo& currentButtonInfo() { return m_buttons[m_currentButtonIndex]; }
 
+protected Q_SLOTS:
+    void aboutToShowAddMenu();
+    void triggeredAddMenu(QAction* action);
 private:
     KParts::ReadOnlyPart *m_partParent;
     QSplitter *m_area;
 
     KMultiTabBar *m_buttonBar;
-    QVector<ButtonInfo*> m_buttons;
+    QVector<ButtonInfo> m_buttons;
     QHBoxLayout *m_layout;
     QAction *m_showTabLeft;
     QMenu *m_menu;
-    QPointer<ButtonInfo> m_activeModule;
-    QPointer<ButtonInfo> m_currentButton;
+    QMenu *m_addMenu;
+    //QPointer<ButtonInfo> m_activeModule; // TODO REMOVE?
+    int m_currentButtonIndex; // during RMB popups only
 
     KConfigGroup *m_config;
     QTimer m_configTimer;
@@ -194,11 +182,10 @@ private:
     QAction *m_multiViews;
     QAction *m_showConfigButton;
 
-    QString m_path;
-    QString m_relPath;
-    QString m_currentProfile;
     QStringList m_visibleViews; // The views that are actually open
     QStringList m_openViews; // The views that should be opened
+
+    ModuleManager m_moduleManager;
 
 Q_SIGNALS:
     void panelHasBeenExpanded(bool);

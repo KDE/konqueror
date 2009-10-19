@@ -33,8 +33,8 @@
 #include <khbox.h>
 
 
-KonqSideBarWebModule::KonqSideBarWebModule(const KComponentData &componentData, QObject *parent, QWidget *widgetParent, QString &desktopName, const char* name)
-	: KonqSidebarPlugin(componentData, parent, widgetParent, desktopName, name)
+KonqSideBarWebModule::KonqSideBarWebModule(const KComponentData &componentData, QWidget *parent, const QString &desktopName, const KConfigGroup& configGroup)
+	: KonqSidebarPlugin(componentData, parent, configGroup)
 {
 	_htmlPart = new KHTMLSideBar();
 	connect(_htmlPart, SIGNAL(reload()), this, SLOT(reload()));
@@ -62,12 +62,8 @@ KonqSideBarWebModule::KonqSideBarWebModule(const KComponentData &componentData, 
 		this,
 		SIGNAL(submitFormRequest(const char*,const QString&,const QByteArray&,const QString&,const QString&,const QString&)));
 
-	_desktopName = desktopName;
-
-	KConfig _ksc( _desktopName, KConfig::SimpleConfig );
-	KConfigGroup ksc(&_ksc, "Desktop Entry");
-        reloadTimeout = ksc.readEntry("Reload", 0);
-	_url = ksc.readPathEntry("URL", QString());
+        reloadTimeout = configGroup.readEntry("Reload", 0);
+	_url = configGroup.readPathEntry("URL", QString());
 	_htmlPart->openUrl(_url );
 	// Must load this delayed
 	QTimer::singleShot(0, this, SLOT(loadFavicon()));
@@ -108,9 +104,7 @@ void KonqSideBarWebModule::setAutoReload(){
 	if( dlg.exec() == KDialog::Accepted ) {
 		int msec = ( mins->value() * 60 + secs->value() ) * 1000;
 		reloadTimeout = msec;
-		KConfig _ksc( _desktopName, KConfig::SimpleConfig );
-		KConfigGroup ksc(&_ksc, "Desktop Entry");
-		ksc.writeEntry("Reload", reloadTimeout);
+		configGroup().writeEntry("Reload", reloadTimeout);
 		reload();
 	}
 }
@@ -154,10 +148,8 @@ void KonqSideBarWebModule::loadFavicon() {
 	if (!icon.isEmpty()) {
 		emit setIcon(icon);
 
-		KConfig _ksc( _desktopName, KConfig::SimpleConfig );
-		KConfigGroup ksc(&_ksc, "Desktop Entry");
-		if (icon != ksc.readPathEntry("Icon", QString())) {
-			ksc.writePathEntry("Icon", icon);
+		if (icon != configGroup().readEntry("Icon", QString())) {
+			configGroup().writeEntry("Icon", icon);
 		}
 	}
 }
@@ -169,15 +161,14 @@ void KonqSideBarWebModule::reload() {
 
 
 void KonqSideBarWebModule::setTitle(const QString& title) {
-	if (!title.isEmpty()) {
-		emit setCaption(title);
+    kDebug() << title;
+    if (!title.isEmpty()) {
+        emit setCaption(title);
 
-		KConfig _ksc( _desktopName, KConfig::SimpleConfig );
-		KConfigGroup ksc(&_ksc, "Desktop Entry");
-		if (title != ksc.readPathEntry("Name", QString())) {
-			ksc.writePathEntry("Name", title);
-		}
-	}
+        if (title != configGroup().readEntry("Name", QString())) {
+            configGroup().writeEntry("Name", title);
+        }
+    }
 }
 
 
@@ -189,8 +180,9 @@ void KonqSideBarWebModule::pageLoaded() {
 
 
 extern "C" {
-	KDE_EXPORT KonqSidebarPlugin* create_konqsidebar_web(const KComponentData &componentData, QObject *parent, QWidget *widget, QString &desktopName, const char *name) {
-		return new KonqSideBarWebModule(componentData, parent, widget, desktopName, name);
+	KDE_EXPORT KonqSidebarPlugin* create_konqsidebar_web(const KComponentData &componentData, QWidget *parent, const QString &desktopName, const KConfigGroup& configGroup)
+        {
+		return new KonqSideBarWebModule(componentData, parent, desktopName, configGroup);
 	}
 }
 
@@ -211,13 +203,14 @@ extern "C" {
 
 		if (url.path().isEmpty())
 			return false;
+                // TODO cleanup? Done by addWebSideBar already. Or clean up there..
 		map->insert("Type", "Link");
 		map->insert("URL", url.url());
 		map->insert("Icon", "netscape");
 		map->insert("Name", i18n("Web SideBar Plugin"));
 		map->insert("Open", "true");
 		map->insert("X-KDE-KonqSidebarModule","konqsidebar_web");
-		fn->setLatin1("websidebarplugin%1.desktop");
+		*fn = QString::fromLatin1("websidebarplugin%1.desktop");
 		return true;
 	}
 }
