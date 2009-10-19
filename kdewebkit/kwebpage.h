@@ -74,7 +74,7 @@ public:
      * @ref QWebPage::downloadRequested signal to download the
      * the request through KIO.
      *
-     * @param request   the request to download.
+     * @param request the request to download.
      */
     void downloadRequest(const QNetworkRequest &request) const;
 
@@ -88,7 +88,7 @@ public:
      * @param url the url to be authorized.
      * @return true in this default implementation.
      */
-    virtual bool authorizedRequest(const QUrl&) const;
+    virtual bool authorizedRequest(const QUrl &url) const;
 
 protected:
     /**

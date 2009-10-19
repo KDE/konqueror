@@ -50,7 +50,7 @@ public:
     /**
      * Reimplemented for internal reasons, the API is not affected.
      *
-     * @see QWebPluginFactory::create.
+     * @see QWebPluginFactory::create
      * @internal
      */
     virtual QObject *create(const QString &mimeType,
@@ -61,7 +61,7 @@ public:
     /**
      * Reimplemented for internal reasons, the API is not affected.
      *
-     * @see QWebPluginFactory::plugins.
+     * @see QWebPluginFactory::plugins
      * @internal
      */
     virtual QList<Plugin> plugins() const;

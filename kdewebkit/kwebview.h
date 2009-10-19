@@ -43,7 +43,7 @@ namespace KParts
  *
  * This is a convenience class that provides an implementation of QWebView with
  * full integration with KDE technologies for networking (KIO), cookie handling
- * (KCookieJar) and embeded non-html content (<embed>) handling (KPart apps).
+ * (KCookieJar) and embeded non-html content (&lt;embed&gt;) handling (KPart apps).
  *
  * @author Urs Wolfer <uwolfer @ kde.org>
  * @since 4.4
@@ -64,14 +64,14 @@ public:
 
     /**
      * Returns true if external content is fetched.
-     * @see setAllowExternalContent().
+     * @see setAllowExternalContent()
      */
     bool isExternalContentAllowed() const;
 
     /**
      * Set @p allow to false if you don't want to allow showing external content,
      * so no external images for example. By default external content is fetched.
-     * @see isExternalContentAllowed().
+     * @see isExternalContentAllowed()
      */
     void setAllowExternalContent(bool allow);
 
@@ -97,7 +97,7 @@ protected:
     /**
      * Reimplemented for internal reasons, the API is not affected.
      *
-     * @see QWidget::wheelEvent.
+     * @see QWidget::wheelEvent
      * @internal
      */
     void wheelEvent(QWheelEvent *event);
@@ -105,7 +105,7 @@ protected:
     /**
      * Reimplemented for internal reasons, the API is not affected.
      *
-     * @see QWidget::mousePressEvent.
+     * @see QWidget::mousePressEvent
      * @internal
      */
     virtual void mousePressEvent(QMouseEvent *event);
@@ -113,7 +113,7 @@ protected:
     /**
      * Reimplemented for internal reasons, the API is not affected.
      *
-     * @see QWidget::mouseReleaseEvent.
+     * @see QWidget::mouseReleaseEvent
      * @internal
      */
     virtual void mouseReleaseEvent(QMouseEvent *event);

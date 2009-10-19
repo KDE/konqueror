@@ -256,7 +256,8 @@ void KWebPage::downloadRequest(const QNetworkRequest &request) const
     job->uiDelegate()->setAutoErrorHandlingEnabled(true);
 }
 
-bool KWebPage::authorizedRequest(const QUrl &) const
+bool KWebPage::authorizedRequest(const QUrl &url) const
 {
+    Q_UNUSED(url);
     return true;
 }
