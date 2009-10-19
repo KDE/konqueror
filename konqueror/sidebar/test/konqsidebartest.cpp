@@ -19,8 +19,8 @@
 
 extern "C"
 {
-    KDE_EXPORT void* create_konq_sidebartest(const KComponentData &componentData,QObject *par,QWidget *widp,QString &desktopname,const char *name)
+    KDE_EXPORT void* create_konq_sidebartest(const KComponentData &componentData, QWidget *parent, const QString &desktopname, const KConfigGroup& configGroup)
     {
-        return new SidebarTest(componentData,par,widp,desktopname,name);
+        return new SidebarTest(componentData, parent, desktopname, configGroup);
     }
 };

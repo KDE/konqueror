@@ -142,8 +142,7 @@ void KonqSidebarTreeTopLevelItem::del()
 
 void KonqSidebarTreeTopLevelItem::delOperation( KonqOperations::Operation method )
 {
-    KUrl url;
-    url.setPath( m_path );
+    KUrl url( m_path );
     KUrl::List lst;
     lst.append(url);
 
@@ -176,13 +175,9 @@ void KonqSidebarTreeTopLevelItem::rename()
 
 void KonqSidebarTreeTopLevelItem::rename( const QString & name )
 {
-    KUrl url;
-    url.setPath( m_path );
+    KUrl url(m_path);
 
-    // Well, it's not really the file we want to rename, it's the Name field
-    // of the .directory or desktop file
-    //KonqOperations::rename( tree(), url, name );
-
+    // Adjust the Name field of the .directory or desktop file
     QString desktopFile = m_path;
     if ( isTopLevelGroup() )
         desktopFile += "/.directory";

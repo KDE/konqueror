@@ -21,23 +21,23 @@
 #include <QtGui/QLayout>
 
 class SidebarTest : public KonqSidebarPlugin
-	{
-		Q_OBJECT
-		public:
-		SidebarTest(const KComponentData &componentData,QObject *parent,QWidget *widgetParent, QString &desktopName_, const char* name=0):
-                   KonqSidebarPlugin(componentData,parent,widgetParent,desktopName_,name)
-		{
-			widget=new QLabel("Init Value",widgetParent);			
-		}
-		~SidebarTest(){;}
-                virtual QWidget *getWidget(){return widget;}   
-		virtual void *provides(const QString &) {return 0;}  
-		protected:
-			QLabel *widget;
-			virtual void handleURL(const KUrl &url)
-				{
-					widget->setText(url.url());
-				}
-	};
+{
+    Q_OBJECT
+public:
+    SidebarTest(const KComponentData &componentData, QWidget *parent, const QString &desktopName, const KConfigGroup& configGroup)
+        : KonqSidebarPlugin(componentData, parent, configGroup)
+    {
+        widget = new QLabel("Init Value", parent);
+    }
+    ~SidebarTest(){}
+    virtual QWidget *getWidget(){return widget;}
+    virtual void *provides(const QString &) {return 0;}
+protected:
+    QLabel *widget;
+    virtual void handleURL(const KUrl &url)
+    {
+        widget->setText(url.url());
+    }
+};
 
 #endif

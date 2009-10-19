@@ -42,34 +42,33 @@ class QTimer;
 
 class KonqSidebarTree_Internal;
 
-#define VIRT_Link 0
-#define VIRT_Folder 1 // A directory which is parsed for .desktop files
+enum ModuleType { VIRT_Link = 0,  // a single .desktop file
+                  VIRT_Folder = 1 }; // a directory which is parsed for .desktop files
 
 typedef KonqSidebarTreeModule*(*getModule)(KonqSidebarTree*, const bool);
 
-typedef struct DirTreeConfigData_
-{
-  KUrl dir;
-  int type;
-  QString relDir;
-} DirTreeConfigData;
+struct DirTreeConfigData { // TODO make base class with two subclasses?
+    KUrl dir; // only used for VIRT_Folder
+    ModuleType type;
+    QString relDir; // only used for VIRT_Folder
+};
 
-typedef enum {
+enum DropAcceptType {
     SidebarTreeMode, // used if the drop is accepted by a KonqSidebarTreeItem. otherwise
     K3ListViewMode    // use K3ListView's dnd implementation. accepts mime types set with setDropFormats()
-} DropAcceptType;
+};
 
 /**
- * The multi-purpose tree (listview)
+ * The multi-purpose tree view.
  * It parses its configuration (desktop files), each one corresponding to
  * a toplevel item, and creates the modules that will handle the contents
  * of those items.
  */
-class KonqSidebarTree : public K3ListView
+class KonqSidebarTree : public K3ListView // PORTING NOTE: DO NOT PORT TO QTreeWidget. See http://kde.aliax.net/mockups/konqueror/ first.
 {
     Q_OBJECT
 public:
-    KonqSidebarTree( KonqSidebar_Tree *parent, QWidget *parentWidget, int virt, const QString& path );
+    KonqSidebarTree( KonqSidebar_Tree *parent, QWidget *parentWidget, ModuleType moduleType, const QString& path );
     virtual ~KonqSidebarTree();
 
     void followURL( const KUrl &url );
@@ -149,8 +148,8 @@ private slots:
 private:
     void clearTree();
     void scanDir( KonqSidebarTreeItem *parent, const QString &path, bool isRoot = false );
-    void loadTopLevelGroup( KonqSidebarTreeItem *parent, const QString &path );
-    void loadTopLevelItem( KonqSidebarTreeItem *parent, const QString &filename );
+    void loadTopLevelGroup(KonqSidebarTreeItem *parent, const QString &path);
+    void loadTopLevelItem(KonqSidebarTreeItem *parent, const QString &path);
 
     void loadModuleFactories();
 

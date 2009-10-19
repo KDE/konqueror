@@ -17,26 +17,24 @@
    Boston, MA 02110-1301, USA.
 */
 
+#include "konqsidebarplugin.h"
 #include "konqsidebarplugin.moc"
 #include <kdebug.h>
 
 
 KonqSidebarPlugin::KonqSidebarPlugin(const KComponentData &componentData,
                                      QObject *parent,
-                                     QWidget * /*widgetParent*/,
-                                     QString &desktopName_,
-                                     const char* name)
+                                     const KConfigGroup& configGroup_)
     : QObject(parent),
-      desktopName(desktopName_),
+      m_parentComponentData(componentData),
+      m_configGroup(configGroup_),
       d(0)
 {
-    setObjectName( name );
-    m_parentInstance=componentData;
 }
 
 KonqSidebarPlugin::~KonqSidebarPlugin() { }
 
-const KComponentData &KonqSidebarPlugin::parentInstance(){return m_parentInstance;}
+const KComponentData &KonqSidebarPlugin::parentComponentData() const { return m_parentComponentData; }
 
 void KonqSidebarPlugin::openUrl(const KUrl& url){handleURL(url);}
 
@@ -53,3 +51,8 @@ void KonqSidebarPlugin::openPreviewOnMouseOver(const KFileItem& item)
 void KonqSidebarPlugin::handlePreview(const KFileItemList& /*items*/) {}
 
 void KonqSidebarPlugin::handlePreviewOnMouseOver(const KFileItem& /*items*/) {}
+
+KConfigGroup KonqSidebarPlugin::configGroup()
+{
+    return m_configGroup;
+}
