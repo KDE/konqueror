@@ -153,7 +153,9 @@ public:
 
   bool updateHistory;
 
+  QPoint scrollPos;
   QPointer<WebView> webView;
+  QPointer<WebPage> webPage;
   QPointer<KDEPrivate::SearchBar> searchBar;
   WebKitBrowserExtension *browserExtension;
 };
@@ -214,28 +216,27 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
     connect(d->searchBar, SIGNAL(searchTextChanged(const QString &, bool)),
             this, SLOT(searchForText(const QString &, bool)));
 
-    WebPage* webPage = qobject_cast<WebPage*>(d->webView->page());
-    kDebug() << webPage;
+    d->webPage = qobject_cast<WebPage*>(d->webView->page());
     Q_ASSERT(webPage);
 
-    connect(webPage, SIGNAL(loadStarted()),
+    connect(d->webPage, SIGNAL(loadStarted()),
             this, SLOT(loadStarted()));
-    connect(webPage, SIGNAL(navigationRequestFinished()),
+    connect(d->webPage, SIGNAL(navigationRequestFinished()),
             this, SLOT(navigationRequestFinished()));
-    connect(webPage, SIGNAL(loadAborted(const QUrl &)),
+    connect(d->webPage, SIGNAL(loadAborted(const QUrl &)),
             this, SLOT(loadAborted(const QUrl &)));
-    connect(webPage, SIGNAL(loadError(int, const QString &, const QString &)),
+    connect(d->webPage, SIGNAL(loadError(int, const QString &, const QString &)),
             this, SLOT(loadError(int, const QString &, const QString &)));
-    connect(webPage, SIGNAL(linkHovered(const QString &, const QString &, const QString &)),
+    connect(d->webPage, SIGNAL(linkHovered(const QString &, const QString &, const QString &)),
             this, SLOT(linkHovered(const QString &, const QString&, const QString &)));
 
     d->browserExtension = new WebKitBrowserExtension(this);
-    connect(webPage, SIGNAL(loadProgress(int)),
+    connect(d->webPage, SIGNAL(loadProgress(int)),
             d->browserExtension, SIGNAL(loadingProgress(int)));
-    connect(webPage, SIGNAL(selectionChanged()),
+    connect(d->webPage, SIGNAL(selectionChanged()),
             d->browserExtension, SLOT(updateEditActions()));
     connect(d->browserExtension, SIGNAL(saveUrl(const KUrl&)),
-            webPage, SLOT(saveUrl(const KUrl &)));
+            d->webPage, SLOT(saveUrl(const KUrl &)));
 
     connect(d->webView, SIGNAL(openUrl(const KUrl &)),
             d->browserExtension, SIGNAL(openUrlRequest(const KUrl &)));
@@ -375,8 +376,7 @@ bool WebKitPart::openUrl(const KUrl &url)
         d->updateHistory = false;  // Do not update history when url is typed in since konqueror automatically does this itself!        
         KParts::OpenUrlArguments args (arguments());
         KIO::MetaData metaData (args.metaData());
-        WebPage *page = qobject_cast<WebPage*>(d->webView->page());
-        if (page) page->setSslInfo(metaData.toVariant());
+        d->scrollPos = QPoint(args.xOffset(),args.yOffset());
         d->webView->loadUrl(url, args, browserExtension()->browserArguments());
     }
 
@@ -420,7 +420,11 @@ void WebKitPart::loadFinished(bool ok)
         // a work around here for pages that do not contain it, such as
         // text documents...
         urlChanged(d->webView->url());
-    }
+    }    
+
+    // Restore the page to its proper position...
+    if (!d->scrollPos.isNull())
+        d->webView->page()->mainFrame()->setScrollPosition(d->scrollPos);
 
     /*
       NOTE #1: QtWebKit will not kill a META redirect request even if one
@@ -457,7 +461,7 @@ void  WebKitPart::navigationRequestFinished()
 {
     kDebug();
     updateHistory();
-    if (qobject_cast<WebPage*>(d->webView->page())->isSecurePage())
+    if (d->webPage->sslInfo().isValid())
       d->browserExtension->setPageSecurity(WebKitPart::WebKitPartPrivate::Encrypted);
     else
       d->browserExtension->setPageSecurity(WebKitPart::WebKitPartPrivate::Unencrypted);
@@ -490,10 +494,17 @@ void WebKitPart::urlChanged(const QUrl& _url)
 
 void WebKitPart::showSecurity()
 {
-    WebPage* page = qobject_cast<WebPage*>(d->webView->page());
-    if (page->isSecurePage()) {
-        QPointer<KSslInfoDialog> dlg = new KSslInfoDialog(0);
-        page->setupSslDialog(*dlg);
+    if (d->webPage->sslInfo().isValid()) {
+        KSslInfoDialog *dlg = new KSslInfoDialog;
+        dlg->setSslInfo(d->webPage->sslInfo().certificateChain(),
+                        d->webPage->sslInfo().peerAddress().toString(),
+                        url().host(),
+                        d->webPage->sslInfo().protocol(),
+                        d->webPage->sslInfo().ciphers(),
+                        d->webPage->sslInfo().usedChiperBits(),
+                        d->webPage->sslInfo().supportedChiperBits(),
+                        KSslInfoDialog::errorsFromString(d->webPage->sslInfo().certificateErrors()));
+
         dlg->exec();
     } else {
         KMessageBox::information(0, i18n("The SSL information for this site "
@@ -612,7 +623,6 @@ void WebKitPart::searchForText(const QString &text, bool backward)
     if (d->searchBar->caseSensitive())
         flags |= QWebPage::FindCaseSensitively;
 
-    kDebug() << text;
     d->searchBar->setFoundMatch(d->webView->page()->findText(text, flags));
 }
 

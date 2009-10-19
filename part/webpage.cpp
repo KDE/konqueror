@@ -53,6 +53,7 @@
 #include <QtNetwork/QNetworkReply>
 #include <QtUiTools/QUiLoader>
 #include <QtWebKit/QWebFrame>
+#include <QtWebKit/QWebHistoryItem>
 
 #define QL1(x)  QLatin1String(x)
 
@@ -171,10 +172,9 @@ class WebPage::WebPagePrivate
 public:
     WebPagePrivate() {}
 
-    QUrl requestUrl;
-    QString frameName;
-    KDEPrivate::WebSslInfo sslInfo;
-
+    // Holds list of requests including those from children frames
+    QMap<QUrl, QString> requestMap;
+    WebSslInfo sslInfo;
     QPointer<WebKitPart> part;
 };
 
@@ -209,34 +209,15 @@ WebPage::~WebPage()
     delete d;
 }
 
-bool WebPage::isSecurePage() const
-{
-    return d->sslInfo.isValid();
-}
-
 bool WebPage::authorizedRequest(const QUrl &url) const
 {
     // Check for ad filtering...
     return !(WebKitSettings::self()->isAdFilterEnabled() && WebKitSettings::self()->isAdFiltered(url.toString()));
 }
 
-void WebPage::setSslInfo(const QVariant &info)
+const WebSslInfo& WebPage::sslInfo() const
 {
-    d->sslInfo.fromMetaData(info);
-}
-
-void WebPage::setupSslDialog(KSslInfoDialog &dlg) const
-{
-    if (isSecurePage()) {
-        dlg.setSslInfo(d->sslInfo.certificateChain(),
-                       d->sslInfo.peerAddress().toString(),
-                       mainFrame()->url().host(),
-                       d->sslInfo.protocol(),
-                       d->sslInfo.ciphers(),
-                       d->sslInfo.usedChiperBits(),
-                       d->sslInfo.supportedChiperBits(),
-                       KSslInfoDialog::errorsFromString(d->sslInfo.certificateErrors()));
-    }
+    return d->sslInfo;
 }
 
 void WebPage::saveUrl(const KUrl &url)
@@ -246,59 +227,45 @@ void WebPage::saveUrl(const KUrl &url)
 
 bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request, NavigationType type)
 {
-    // Clear the request destination frame name...
-    d->frameName.clear();
+    //kDebug() << "type: " << type << ", frame: " << frame  << ", url: " << request.url();
+
+    // Handle "mailto:" url here...
+    if (handleMailToUrl(request.url(), type))
+      return false;
 
     if (frame) {
+        d->requestMap.insert (request.url(), frame->frameName());
+
         /*
-          HACK: Since QWebPage::NavigationType does not distinguish between
-          javascript and interactive (user-generated) requests, we resort to
-          replying on the fact that the only time the part and request urls
-          will be the same at this point is when the request orignates from
-          the part's 'openUrl' function.
-        */      
-        if (type == QWebPage::NavigationTypeOther && d->part->url() != request.url()) {
-            d->requestUrl.clear();
-        } else {
-            d->requestUrl = request.url();
-            const QString proto = d->part->url().scheme().toLower();
-            if (proto == "https" || proto == "webdavs")
-                setRequestMetaData("ssl_was_in_use", "TRUE");
+          ISSUE: QtWebKit always sends user clicks on javascript based links
+          as NavigationTypeOther instead of NavigationTypeLink. As result the
+          checks below will fail to do their jobs if the request originated
+          from the following type of link in a web page:
 
-            // Check whether or not the request is authorized...
-            if (!checkLinkSecurity(request, type))
-                return false;
-        }
-
-        // Sanitize and handle "mailto:" url here...
-        if (handleMailToUrl(request.url(), type))
-          return false;
-
-        // Set the main frame request meta data...
-        setRequestMetaData("main_frame_request", (frame->parentFrame() ? "FALSE" : "TRUE"));
-
-        // Set the current frame name...
-        if (frame != mainFrame())
-            d->frameName = frame->frameName();
-
-    } else {
-        kDebug() << "open in new window" << request.url() << ", type: " << type;
-
-        // if frame is NULL, it means a new window is requested so we enforce
-        // the user's preferred choice here from the settings...
-        switch (WebKitSettings::self()->windowOpenPolicy(request.url().host())) {
-            case WebKitSettings::KJSWindowOpenDeny:
-                return false;
-            case WebKitSettings::KJSWindowOpenAsk:
-                // TODO: Implement this without resotring to showing a KMessgaeBox. Perhaps
-                // check how it is handled in other browers (FF3, Chrome) ?
-                break;
-            case WebKitSettings::KJSWindowOpenSmart:
-                if (type != QWebPage::NavigationTypeLinkClicked)
+          <a href="javascript:location.href='http://qt.nokia.com'">javascript link</a>
+         */
+        switch (type) {
+            case QWebPage::NavigationTypeFormResubmitted:
+            case QWebPage::NavigationTypeFormSubmitted:
+                if (!checkFormData(request))
+                    return false; // NOTE: NO break statement on purpose!
+            case QWebPage::NavigationTypeLinkClicked:
+                if (!checkLinkSecurity(request, type))
                     return false;
-            case WebKitSettings::KJSWindowOpenAllow:
+                if (d->sslInfo.isValid())
+                    setRequestMetaData("ssl_was_in_use", "TRUE");
+                break;                
             default:
                 break;
+        }
+
+        if (frame == mainFrame()) {
+            setRequestMetaData("main_frame_request", "TRUE");
+            if (request.url() == d->part->url()) {
+                d->sslInfo.fromMetaData(request.attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData)));
+            }
+        } else {
+            setRequestMetaData("main_frame_request", "FALSE");
         }
     }
 
@@ -311,11 +278,12 @@ QWebPage *WebPage::createWindow(WebWindowType type)
     KParts::ReadOnlyPart *part = 0;
     KParts::OpenUrlArguments args;
     args.metaData()["referrer"] = mainFrame()->url().toString();
-    //if (type == WebModalDialog) //TODO: correct behavior?
-        args.metaData()["forcenewwindow"] = "true";
 
     KParts::BrowserArguments bargs;
     bargs.setLockHistory(true);
+    if (type == WebModalDialog)
+        bargs.setForcesNewWindow(true);
+
     emit d->part->browserExtension()->createNewWindow(KUrl("about:blank"), args, bargs,
                                                       KParts::WindowArgs(), &part);
 
@@ -331,125 +299,6 @@ QWebPage *WebPage::createWindow(WebWindowType type)
     }
 
     return webKitPart->view()->page();
-}
-
-bool WebPage::checkLinkSecurity(const QNetworkRequest &req, NavigationType type) const
-{
-    QString buttonText;
-    QString title (i18n("Security Alert"));
-    QString message (i18n("<qt>Access by untrusted page to<br/><b>%1</b><br/> denied.</qt>",
-                          Qt::escape(KUrl(req.url()).prettyUrl())));
-
-    KUrl linkUrl (req.url());    
-
-    switch (type) {
-        case QWebPage::NavigationTypeLinkClicked:
-            message = i18n("<qt>This untrusted page links to<br/><b>%1</b>."
-                           "<br/>Do you want to follow the link?</qt>", linkUrl.url());
-            title = i18n("Security Warning");
-            buttonText = i18n("Follow");
-            break;
-        case QWebPage::NavigationTypeFormResubmitted:
-        case QWebPage::NavigationTypeFormSubmitted:
-            if (!checkFormData(req))
-                return false;
-            break;
-        default:
-            break;
-    }
-
-    // Check whether the request is authorized or not...
-    if (!KAuthorized::authorizeUrlAction("redirect", mainFrame()->url(), linkUrl)) {
-        int response = KMessageBox::Cancel;
-        if (message.isEmpty()) {
-            KMessageBox::error( 0, message, title);
-        } else {
-            // Dangerous flag makes the Cancel button the default
-            response = KMessageBox::warningContinueCancel(0, message, title,
-                                                          KGuiItem(buttonText),
-                                                          KStandardGuiItem::cancel(),
-                                                          QString(), // no don't ask again info
-                                                          KMessageBox::Notify | KMessageBox::Dangerous);
-        }
-        return (response == KMessageBox::Continue);
-    }
-
-    return true;
-}
-
-bool WebPage::checkFormData(const QNetworkRequest &req) const
-{
-    const QString scheme (req.url().scheme().toLower());
-
-    if (d->sslInfo.isValid() && scheme != "https" && scheme != "mailto" &&
-        (KMessageBox::warningContinueCancel(0,
-                                           i18n("Warning: This is a secure form "
-                                                "but it is attempting to send "
-                                                "your data back unencrypted.\n"
-                                                "A third party may be able to "
-                                                "intercept and view this "
-                                                "information.\nAre you sure you "
-                                                "wish to continue?"),
-                                           i18n("Network Transmission"),
-                                           KGuiItem(i18n("&Send Unencrypted")))  == KMessageBox::Cancel)) {
-
-        return false;
-    }
-
-
-    if ((scheme == QL1("mailto")) &&
-        (KMessageBox::warningContinueCancel(0, i18n("This site is attempting to "
-                                                    "submit form data via email.\n"
-                                                    "Do you want to continue?"),
-                                            i18n("Network Transmission"),
-                                            KGuiItem(i18n("&Send Email")),
-                                            KStandardGuiItem::cancel(),
-                                            "WarnTriedEmailSubmit") == KMessageBox::Cancel)) {
-        return false;
-    }
-
-    return true;
-}
-
-bool WebPage::handleMailToUrl (const QUrl& url, NavigationType type) const
-{
-    if (QString::compare(url.scheme(), QL1("mailto"), Qt::CaseInsensitive) == 0) {
-        QStringList files;
-        QUrl mailtoUrl (sanitizeMailToUrl(url, files));
-
-        switch (type) {
-            case QWebPage::NavigationTypeLinkClicked:
-                if (!files.isEmpty() && KMessageBox::warningContinueCancelList(0,
-                                                                               i18n("<qt>Do you want to allow this site to attach "
-                                                                                    "the following files to the email message ?</qt>"),
-                                                                               files, i18n("Email Attachment Confirmation"),
-                                                                               KGuiItem(i18n("&Allow attachements")),
-                                                                               KGuiItem(i18n("&Ignore attachements")), QL1("WarnEmailAttachment")) == KMessageBox::Continue) {
-
-                    Q_FOREACH(const QString& file, files) {
-                        mailtoUrl.addQueryItem(QL1("attach"), file); // Re-add the attachments...
-                    }
-                }
-                break;
-            case QWebPage::NavigationTypeFormSubmitted:                
-            case QWebPage::NavigationTypeFormResubmitted:
-                if (!files.isEmpty()) {
-                    KMessageBox::information(0, i18n("This site attempted to attach a file from your "
-                                                     "computer in the form submission. The attachment "
-                                                     "was removed for your protection."),
-                                             i18n("KDE"), "InfoTriedAttach");
-                }
-                break;
-            default:
-                 break;
-        }
-
-        kDebug() << "Emitting openUrlRequest with " << mailtoUrl;
-        emit d->part->browserExtension()->openUrlRequest(mailtoUrl);
-        return true;
-    }
-
-    return false;
 }
 
 void WebPage::slotUnsupportedContent(QNetworkReply *reply)
@@ -565,23 +414,26 @@ void WebPage::slotStatusBarMessage(const QString &message)
 
 void WebPage::slotRequestFinished(QNetworkReply *reply)
 {
-    if (reply && d->requestUrl == reply->request().url()) {
+    Q_ASSERT(reply);
+    QUrl url (reply->request().url());
 
-        kDebug() << "Got request finished for" << d->requestUrl;
-        QUrl replyUrl (reply->url());
+    if (d->requestMap.contains(url)) {
 
-        if (d->sslInfo.isValid() && !domainSchemeMatch(replyUrl, d->sslInfo.url())) {
-            kDebug() << "About to reset ssl info...";
-            d->sslInfo.reset();
-        }
-
+        kDebug() << url;
+        const QString frameName = d->requestMap.take(url);
         const int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
 
-        if (statusCode > 300 && statusCode < 304) {
-            kDebug() << "Redirected to " << replyUrl;
-            emit d->part->browserExtension()->setLocationBarUrl(KUrl(replyUrl).prettyUrl());
+        if (statusCode > 300 && statusCode < 304) {            
+            kDebug() << "Redirected to " << reply->url();
         } else {
-            // Handle any error messages...
+            // TODO: Look into supporting mixed mode, part secure/part not, pages at some point....
+            // For now we only deal with SSL info for the main page...
+            if (frameName.isEmpty() && d->sslInfo.isValid() && !domainSchemeMatch(reply->url(), d->sslInfo.url())) {
+                kDebug() << "Reseting cached SSL info...";
+                d->sslInfo.reset();
+            }
+
+            // Handle any error...
             const int code = convertErrorCode(reply);
             switch (code) {
                 case 0:
@@ -594,20 +446,151 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
                 // Handle the user clicking on a link that refers to a directory
                 // Since KIO cannot automatically convert a GET request to a LISTDIR one.
                 case KIO::ERR_IS_DIRECTORY:
-                    emit loadAborted(replyUrl);
+                    emit loadAborted(reply->url());
                     return;
                 default:
-                    emit loadError(code, reply->errorString(), d->frameName);
+                    emit loadError(code, reply->errorString(), frameName);
                     return;
             }
 
-            if (!d->sslInfo.isValid()) {
-                const QNetworkRequest::Attribute attr = static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData);
-                d->sslInfo.fromMetaData(reply->attribute(attr));
-                d->sslInfo.setUrl(reply->url());
+            if (frameName.isEmpty()) {
+                if (!d->sslInfo.isValid()) {
+                    const QNetworkRequest::Attribute attr = static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData);
+                    d->sslInfo.fromMetaData(reply->attribute(attr));
+                    d->sslInfo.setUrl(reply->url());
+                }
+
+                setPageJScriptPolicy(reply->url());
             }
 
             emit navigationRequestFinished();
         }
+
+        kDebug() << "[History] index=" << history()->currentItemIndex()
+                 << ", count=" << history()->count();
     }
+}
+
+bool WebPage::checkLinkSecurity(const QNetworkRequest &req, NavigationType type) const
+{
+    // Check whether the request is authorized or not...
+    if (!KAuthorized::authorizeUrlAction("redirect", mainFrame()->url(), req.url())) {
+        QString buttonText, title, message;
+
+        int response = KMessageBox::Cancel;
+        KUrl linkUrl (req.url());
+
+        if (type == QWebPage::NavigationTypeLinkClicked) {
+            message = i18n("<qt>This untrusted page links to<br/><b>%1</b>."
+                           "<br/>Do you want to follow the link?</qt>", linkUrl.url());
+            title = i18n("Security Warning");
+            buttonText = i18n("Follow");
+        } else {
+            title = i18n("Security Alert");
+            message = i18n("<qt>Access by untrusted page to<br/><b>%1</b><br/> denied.</qt>",
+                           Qt::escape(linkUrl.prettyUrl()));
+        }
+
+        if (buttonText.isEmpty()) {
+            KMessageBox::error( 0, message, title);
+        } else {
+            // Dangerous flag makes the Cancel button the default
+            response = KMessageBox::warningContinueCancel(0, message, title,
+                                                          KGuiItem(buttonText),
+                                                          KStandardGuiItem::cancel(),
+                                                          QString(), // no don't ask again info
+                                                          KMessageBox::Notify | KMessageBox::Dangerous);
+        }
+
+        return (response == KMessageBox::Continue);
+    }
+
+    return true;
+}
+
+bool WebPage::checkFormData(const QNetworkRequest &req) const
+{
+    const QString scheme (req.url().scheme().toLower());
+
+    if (d->sslInfo.isValid() && scheme != "https" && scheme != "mailto" &&
+        (KMessageBox::warningContinueCancel(0,
+                                           i18n("Warning: This is a secure form "
+                                                "but it is attempting to send "
+                                                "your data back unencrypted.\n"
+                                                "A third party may be able to "
+                                                "intercept and view this "
+                                                "information.\nAre you sure you "
+                                                "wish to continue?"),
+                                           i18n("Network Transmission"),
+                                           KGuiItem(i18n("&Send Unencrypted")))  == KMessageBox::Cancel)) {
+
+        return false;
+    }
+
+
+    if ((scheme == QL1("mailto")) &&
+        (KMessageBox::warningContinueCancel(0, i18n("This site is attempting to "
+                                                    "submit form data via email.\n"
+                                                    "Do you want to continue?"),
+                                            i18n("Network Transmission"),
+                                            KGuiItem(i18n("&Send Email")),
+                                            KStandardGuiItem::cancel(),
+                                            "WarnTriedEmailSubmit") == KMessageBox::Cancel)) {
+        return false;
+    }
+
+    return true;
+}
+
+bool WebPage::handleMailToUrl (const QUrl& url, NavigationType type) const
+{
+    if (QString::compare(url.scheme(), QL1("mailto"), Qt::CaseInsensitive) == 0) {
+        QStringList files;
+        QUrl mailtoUrl (sanitizeMailToUrl(url, files));
+
+        switch (type) {
+            case QWebPage::NavigationTypeLinkClicked:
+                if (!files.isEmpty() && KMessageBox::warningContinueCancelList(0,
+                                                                               i18n("<qt>Do you want to allow this site to attach "
+                                                                                    "the following files to the email message ?</qt>"),
+                                                                               files, i18n("Email Attachment Confirmation"),
+                                                                               KGuiItem(i18n("&Allow attachements")),
+                                                                               KGuiItem(i18n("&Ignore attachements")), QL1("WarnEmailAttachment")) == KMessageBox::Continue) {
+
+                    Q_FOREACH(const QString& file, files) {
+                        mailtoUrl.addQueryItem(QL1("attach"), file); // Re-add the attachments...
+                    }
+                }
+                break;
+            case QWebPage::NavigationTypeFormSubmitted:
+            case QWebPage::NavigationTypeFormResubmitted:
+                if (!files.isEmpty()) {
+                    KMessageBox::information(0, i18n("This site attempted to attach a file from your "
+                                                     "computer in the form submission. The attachment "
+                                                     "was removed for your protection."),
+                                             i18n("KDE"), "InfoTriedAttach");
+                }
+                break;
+            default:
+                 break;
+        }
+
+        kDebug() << "Emitting openUrlRequest with " << mailtoUrl;
+        emit d->part->browserExtension()->openUrlRequest(mailtoUrl);
+        return true;
+    }
+
+    return false;
+}
+
+void WebPage::setPageJScriptPolicy(const QUrl &url)
+{
+    const QString hostname (url.host());
+    settings()->setAttribute(QWebSettings::JavascriptEnabled,
+                             WebKitSettings::self()->isJavaScriptEnabled(hostname));
+
+    const WebKitSettings::KJSWindowOpenPolicy policy = WebKitSettings::self()->windowOpenPolicy(hostname);
+    settings()->setAttribute(QWebSettings::JavascriptCanOpenWindows,
+                             (policy != WebKitSettings::KJSWindowOpenDeny &&
+                              policy != WebKitSettings::KJSWindowOpenSmart));
 }

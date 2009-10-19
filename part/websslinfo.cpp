@@ -24,7 +24,6 @@
 
 #include <QtCore/QVariant>
 
-namespace KDEPrivate {
 
 class WebSslInfo::WebSslInfoPrivate
 {
@@ -200,6 +199,4 @@ void WebSslInfo::setSupportedCipherBits(const QString& bits)
 void WebSslInfo::setCertificateErrors(const QString& certErrors)
 {
   d->certErrors = certErrors;
-}
-
 }

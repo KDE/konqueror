@@ -29,9 +29,8 @@
 #include <kdewebkit/kwebpage.h>
 
 class KUrl;
-class KSslInfoDialog;
+class WebSslInfo;
 class WebKitPart;
-
 class QVariant;
 
 class WEBKITKDE_EXPORT WebPage : public KWebPage
@@ -42,11 +41,6 @@ public:
     ~WebPage();
 
     /**
-     * Returns true if the url in the main frame is set to a site protected by SSL.
-     */
-    bool isSecurePage() const;
-
-    /**
      * Re-implemented for internal reasons. API is unaffected.
      *
      * @see KWebPage::authorizedRequest.
@@ -54,14 +48,11 @@ public:
     bool authorizedRequest(const QUrl &) const;
 
     /**
-     * Sets the stored ssl information to @p info.
+     * Returns the SSL information for the current page.
+     *
+     * @see WebSslInfo.
      */
-    void setSslInfo(const QVariant &info);
-
-    /**
-     * Sets up @p dlg with the stored SSL information, if any.
-     */
-    void setupSslDialog(KSslInfoDialog &dlg) const;
+    const WebSslInfo& sslInfo() const;
 
 Q_SIGNALS:
     void updateHistory();
@@ -107,10 +98,6 @@ protected:
      */
     virtual bool acceptNavigationRequest(QWebFrame * frame, const QNetworkRequest & request, NavigationType type);
 
-    bool checkLinkSecurity(const QNetworkRequest &req, NavigationType type) const;
-    bool checkFormData(const QNetworkRequest &req) const;
-    bool handleMailToUrl (const QUrl& , NavigationType type) const;
-
 protected Q_SLOTS:
     /**
      * Reimplemented for internal reasons, the API is not affected.
@@ -125,6 +112,12 @@ protected Q_SLOTS:
     void slotGeometryChangeRequested(const QRect &rect);
     void slotWindowCloseRequested();
     void slotStatusBarMessage(const QString &message);
+
+private:
+    bool checkLinkSecurity(const QNetworkRequest &req, NavigationType type) const;
+    bool checkFormData(const QNetworkRequest &req) const;
+    bool handleMailToUrl (const QUrl& , NavigationType type) const;
+    void setPageJScriptPolicy(const QUrl &url);
 
 private:
     class WebPagePrivate;

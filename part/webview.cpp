@@ -38,6 +38,7 @@
 #include <KDE/KUriFilterData>
 #include <KDE/KStandardDirs>
 #include <KDE/KActionMenu>
+#include <KDE/KIO/AccessManager>
 
 #include <QtNetwork/QHttpRequestHeader>
 #include <QtNetwork/QNetworkRequest>
@@ -103,7 +104,7 @@ void WebView::loadUrl(const KUrl &url, const KParts::OpenUrlArguments &args, con
     req.setRawHeader("Referer", metaData.value("referrer").toUtf8());
 
     if (!metaData.isEmpty()) {
-        req.setAttribute(QNetworkRequest::User, metaData.toVariant());
+        req.setAttribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData), metaData.toVariant());
     }
 
     if (bargs.postData.isEmpty()) {
