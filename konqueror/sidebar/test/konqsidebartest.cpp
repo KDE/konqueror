@@ -23,4 +23,4 @@ extern "C"
     {
         return new SidebarTest(componentData, parent, desktopname, configGroup);
     }
-};
+}
