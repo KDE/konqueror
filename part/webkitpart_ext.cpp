@@ -36,14 +36,41 @@
 #include <KDE/KGlobal>
 #include <KDE/KSharedConfig>
 #include <KDE/KRun>
+#include <KDE/KDebug>
 
 #include <QtCore/QPointer>
 #include <QtGui/QClipboard>
 #include <QtGui/QApplication>
 #include <QtGui/QPrintPreviewDialog>
 #include <QtWebKit/QWebFrame>
+#include <QtWebKit/QWebHistory>
+
+struct WebPageInfo
+{
+  WebPageInfo()
+  : xOffset(0), yOffset(0) {}
+
+  QUrl url;
+  QString frameName;
+  int xOffset;
+  int yOffset;
 
 
+  inline friend QDataStream &operator >> ( QDataStream &stream, WebPageInfo &info) {
+      stream >> info.url >> info.frameName >> info.xOffset >> info.yOffset;
+      return stream;
+  }
+
+  inline friend QDataStream &operator << ( QDataStream &stream, const WebPageInfo &info) {
+      stream << info.url << info.frameName << info.xOffset << info.yOffset;
+      return stream;
+  }
+
+  inline friend kdbgstream &operator << ( kdbgstream &stream, const WebPageInfo &info) {
+      stream << info.url << info.frameName << info.xOffset << info.yOffset;
+      return stream;
+  }
+};
 
 
 class WebKitBrowserExtension::WebKitBrowserExtensionPrivate
@@ -69,6 +96,48 @@ WebKitBrowserExtension::WebKitBrowserExtension(WebKitPart *parent)
 WebKitBrowserExtension::~WebKitBrowserExtension()
 {
     delete d;
+}
+
+int WebKitBrowserExtension::xOffset()
+{
+    if (d->view && d->view->page())
+        return d->view->page()->mainFrame()->scrollPosition().x();
+
+    return KParts::BrowserExtension::xOffset();
+}
+
+int WebKitBrowserExtension::yOffset()
+{
+    if (d->view && d->view->page())
+      return d->view->page()->mainFrame()->scrollPosition().y();
+
+    return KParts::BrowserExtension::yOffset();
+}
+
+void WebKitBrowserExtension::saveState(QDataStream &stream)
+{
+    KParts::BrowserExtension::saveState(stream);
+#if 0
+    if (d->view) {
+        QList<WebPageInfo> pageInfoList;
+        QListIterator<QWebFrame*> it (d->view->page()->mainFrame()->childFrames());
+        while (it.hasNext()) {
+          QWebFrame* frame = it.next();
+          WebPageInfo pageInfo;
+          pageInfo.url = frame->url();
+          pageInfo.frameName = frame->frameName();
+          pageInfo.xOffset = frame->scrollPosition().x();
+          pageInfo.yOffset = frame->scrollPosition().y();
+          pageInfoList << pageInfo;
+        }
+        stream << pageInfoList;
+    }
+#endif
+}
+
+void WebKitBrowserExtension::restoreState(QDataStream &stream)
+{
+    KParts::BrowserExtension::restoreState(stream);
 }
 
 void WebKitBrowserExtension::cut()
