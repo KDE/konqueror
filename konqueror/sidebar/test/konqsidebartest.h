@@ -20,18 +20,18 @@
 #include <QtGui/QLabel>
 #include <QtGui/QLayout>
 
-class SidebarTest : public KonqSidebarPlugin
+class SidebarTest : public KonqSidebarModule
 {
     Q_OBJECT
 public:
     SidebarTest(const KComponentData &componentData, QWidget *parent, const QString &desktopName, const KConfigGroup& configGroup)
-        : KonqSidebarPlugin(componentData, parent, configGroup)
+        : KonqSidebarModule(componentData, parent, configGroup)
     {
+        Q_UNUSED(desktopName);
         widget = new QLabel("Init Value", parent);
     }
     ~SidebarTest(){}
     virtual QWidget *getWidget(){return widget;}
-    virtual void *provides(const QString &) {return 0;}
 protected:
     QLabel *widget;
     virtual void handleURL(const KUrl &url)

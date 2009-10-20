@@ -31,17 +31,8 @@
 KonqSidebarDirTreeModule::KonqSidebarDirTreeModule( KonqSidebarTree * parentTree , bool showHidden)
     : KonqSidebarTreeModule( parentTree, showHidden ), m_dirLister(0L), m_topLevelItem(0L)
 {
-    bool universalMode=false;
-/* Doesn't work reliable :-(
-    KonqSidebarPlugin * plugin = parentTree->part();
-
-    // KonqSidebarPlugin::universalMode() is protected :-|
-    if ( plugin->parent() ) {
-        KonqSidebarIface * ksi = static_cast<KonqSidebarIface*>( plugin->parent()->qt_cast( "KonqSidebarIface" ) );
-        universalMode = ksi ? ksi->universalMode() : false;
-    } */
-
-    KConfig config( universalMode ? "konqsidebartng_kicker.rc" : "konqsidebartng.rc" );
+    // SLOW! Get the KConfigGroup from the plugin.
+    KConfig config("konqsidebartng.rc");
     KConfigGroup generalGroup( &config, "General" );
     m_showArchivesAsFolders = generalGroup.readEntry( "ShowArchivesAsFolders", true );
 }

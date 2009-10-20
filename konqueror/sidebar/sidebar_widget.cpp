@@ -39,7 +39,6 @@
 #include <kdesktopfile.h>
 #include <kiconloader.h>
 #include <kicondialog.h>
-#include <klibloader.h>
 #include <kmessagebox.h>
 #include <kmultitabbar.h>
 #include <kinputdialog.h>
@@ -49,95 +48,76 @@
 #include <kmenu.h>
 #include <kurlrequesterdialog.h>
 #include <kfiledialog.h>
-#include <kdesktopfile.h>
 
 
 void Sidebar_Widget::aboutToShowAddMenu()
 {
-    const QStringList list = KGlobal::dirs()->findAllResources("data", "konqsidebartng/add/*.desktop",
-                                                               KStandardDirs::Recursive |
-                                                               KStandardDirs::NoDuplicates);
     m_addMenu->clear();
+    m_pluginForAction.clear();
 
-    for (QStringList::const_iterator it = list.begin(); it != list.end(); ++it )
-    {
-        KDesktopFile confFile( *it );
-        KConfigGroup desktopGroup = confFile.desktopGroup();
-        if (!confFile.tryExec()) {
-            continue;
-        }
-        if (desktopGroup.readEntry("X-KDE-KonqSidebarBrowser", true) == false) {
-            continue;
-        }
-        const QString icon = confFile.readIcon();
-        QStringList libs;
-        libs << desktopGroup.readEntry("X-KDE-KonqSidebarAddModule")
-             << desktopGroup.readEntry("X-KDE-KonqSidebarAddParam");
-        if (!icon.isEmpty()) {
-            m_addMenu->addAction(QIcon(icon), confFile.readName())->setData(libs);
-        } else {
-            m_addMenu->addAction(confFile.readName())->setData(libs);
-        }
+    QList<KConfigGroup> existingGroups;
+    // Collect the "already shown" modules
+    for (int i = 0; i < m_buttons.count(); ++i) {
+        existingGroups.append(m_buttons[i].configFile->group("Desktop Entry"));
     }
 
+    // We need to instanciate all available plugins
+    // And since the web module isn't in the default entries at all, we can't just collect
+    // the plugins there.
+    const KService::List list = m_moduleManager.availablePlugins();
+    Q_FOREACH(const KService::Ptr& service, list) {
+        if (!service->isValid()) {
+            continue;
+        }
+        KPluginLoader loader(*service, m_partParent->componentData());
+        KPluginFactory* factory = loader.factory();
+        if (!factory) {
+            kWarning() << "Error loading plugin" << service->desktopEntryName() << loader.errorString();
+        } else {
+            KonqSidebarPlugin* plugin = factory->create<KonqSidebarPlugin>(this);
+            if (!plugin) {
+                kWarning() << "Error creating KonqSidebarPlugin from" << service->desktopEntryName();
+            } else {
+                const QList<QAction*> actions = plugin->addNewActions(&m_addMenuActionGroup,
+                                                                      existingGroups,
+                                                                      QVariant());
+                // Remember which plugin the action came from.
+                // We can't use QAction::setData for that, because we let plugins use that already.
+                Q_FOREACH(QAction* action, actions) {
+                    m_pluginForAction.insert(action, plugin);
+                }
+                m_addMenu->addActions(actions);
+            }
+        }
+    }
     m_addMenu->addSeparator();
     m_addMenu->addAction(i18n("Rollback to System Default"), this, SLOT(slotRollback()));
 }
 
 void Sidebar_Widget::triggeredAddMenu(QAction* action)
 {
-    const QStringList libs = action->data().toStringList();
-    if (libs.isEmpty())
+    KonqSidebarPlugin* plugin = m_pluginForAction.value(action);
+    m_pluginForAction.clear(); // save memory
+
+    QString templ = plugin->templateNameForNewModule(action->data(), QVariant());
+    Q_ASSERT(!templ.contains('/'));
+    if (templ.isEmpty())
+        return;
+    const QString myFile = m_moduleManager.addModuleFromTemplate(templ);
+    if (myFile.isEmpty())
         return;
 
-    // TODO port this to a factory that has create and add virtual methods
-
-    KLibLoader *loader = KLibLoader::self();
-
-    // try to load the library
-    QString libname = libs[0];
-    QString libparam = libs[1];
-    KLibrary *lib = loader->library(libname);
-    if (lib)
-    {
-        // get the create_ function
-        QString factory("add_");
-        factory += libname;
-        KLibrary::void_function_ptr add = lib->resolveFunction(QFile::encodeName(factory));
-
-        if (add)
-        {
-            //call the add function
-            bool (*func)(QString*, QString*, QMap<QString,QString> *);
-            QMap<QString,QString> map;
-            func = (bool (*)(QString*, QString*, QMap<QString,QString> *)) add;
-            QString tmp; // gets filled with "dirtree%1.desktop"
-            // the map gets filled with keys for the desktop file
-            // TODO call a virtual method that creates the desktop file, instead
-            // (well but it needs to ask questions first, and store results temporarily...)
-            if (func(&tmp, &libparam, &map))
-            {
-                const QString myFile = m_moduleManager.addModuleFromTemplate(tmp);
-                if (!myFile.isEmpty()) {
-                    kDebug() <<"trying to save to file: "<<myFile;
-                    KConfig _scf( myFile, KConfig::SimpleConfig );
-                    KConfigGroup scf(&_scf, "Desktop Entry");
-                    for (QMap<QString,QString>::ConstIterator it = map.constBegin(); it != map.constEnd(); ++it) {
-                        kDebug() <<"writing:"<<it.key()<<" / "<<it.value();
-                        scf.writePathEntry(it.key(), it.value());
-                    }
-                    scf.sync();
-                    QTimer::singleShot(0, this, SLOT(updateButtons()));
-                } else {
-                    kWarning() << "No unique filename found" ;
-                }
-            } else {
-                kWarning() << "No new entry (error?)" ;
-            }
-        }
+    kDebug() << myFile << "filename=" << templ;
+    KDesktopFile df(myFile);
+    KConfigGroup configGroup = df.desktopGroup();
+    const bool ok = plugin->createNewModule(action->data(), configGroup, this, QVariant());
+    df.sync();
+    if (ok) {
+        m_moduleManager.moduleAdded(templ /*contains the final filename*/);
+        // TODO only add the new button
+        QTimer::singleShot(0, this, SLOT(updateButtons()));
     } else {
-        kWarning() << "libname:" << libname
-                   << " doesn't specify a library!" << endl;
+        QFile::remove(myFile);
     }
 }
 
@@ -145,6 +125,7 @@ void Sidebar_Widget::triggeredAddMenu(QAction* action)
 Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, const QString &currentProfile)
     : QWidget(parent),
       m_partParent(par),
+      m_addMenuActionGroup(this),
       m_config(new KConfigGroup(KSharedConfig::openConfig("konqsidebartng.rc"),
                                 currentProfile)),
       m_moduleManager(m_config)
@@ -172,7 +153,7 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, const
 
     m_addMenu = m_menu->addMenu(i18n("Add New"));
     connect(m_addMenu, SIGNAL(aboutToShow()), this, SLOT(aboutToShowAddMenu()));
-    connect(m_addMenu, SIGNAL(triggered(QAction*)), this, SLOT(triggeredAddMenu(QAction*)));
+    connect(&m_addMenuActionGroup, SIGNAL(triggered(QAction*)), this, SLOT(triggeredAddMenu(QAction*)));
     m_menu->addSeparator();
     m_multiViews = m_menu->addAction(i18n("Multiple Views"), this, SLOT(slotMultipleViews()));
     m_multiViews->setCheckable(true);
@@ -213,17 +194,18 @@ void Sidebar_Widget::addWebSideBar(const KUrl& url, const QString& name) {
         }
     }
 
-    const QString myFile = m_moduleManager.addModuleFromTemplate("websidebarplugin%1.desktop");
+    QString filename = "websidebarplugin%1.desktop";
+    const QString myFile = m_moduleManager.addModuleFromTemplate(filename);
     if (!myFile.isEmpty()) {
-        KConfig _scf( myFile, KConfig::SimpleConfig );
-        KConfigGroup scf(&_scf, "Desktop Entry");
+        KDesktopFile df(myFile);
+        KConfigGroup scf = df.desktopGroup();
         scf.writeEntry("Type", "Link");
         scf.writePathEntry("URL", url.url());
         scf.writeEntry("Icon", "internet-web-browser");
         scf.writeEntry("Name", name);
-        scf.writeEntry("Open", "true");
         scf.writeEntry("X-KDE-KonqSidebarModule", "konqsidebar_web");
         scf.sync();
+        m_moduleManager.moduleAdded(filename);
         QTimer::singleShot(0, this, SLOT(updateButtons()));
     }
 }
@@ -296,6 +278,8 @@ void Sidebar_Widget::slotSetName()
     }
 }
 
+// TODO make this less generic. Bookmarks and history have no URL, only folders and websidebars do.
+// So this should move to the modules that need it.
 void Sidebar_Widget::slotSetURL()
 {
     KUrlRequesterDialog dlg( currentButtonInfo().URL, i18n("Enter a URL:"), this );
@@ -334,16 +318,15 @@ void Sidebar_Widget::slotMultipleViews()
     m_singleWidgetMode = !m_singleWidgetMode;
     if ((m_singleWidgetMode) && (m_visibleViews.count()>1))
     {
-        int tmpViewID=m_latestViewed;
-        for (int i=0; i<m_buttons.count(); i++) {
-            const ButtonInfo &button = m_buttons.at(i);
-            if ((int) i != tmpViewID)
-            {
+        int tmpViewID = m_latestViewed;
+        for (int i=0; i < m_buttons.count(); i++) {
+            if (i != tmpViewID) {
+                const ButtonInfo &button = m_buttons.at(i);
                 if (button.dock && button.dock->isVisibleTo(this))
                     showHidePage(i);
             }
         }
-        m_latestViewed=tmpViewID;
+        m_latestViewed = tmpViewID;
     }
     m_configTimer.start(400);
 }
@@ -501,7 +484,12 @@ bool Sidebar_Widget::addButton(const QString &desktopFileName, int pos)
 
     kDebug() << "addButton:" << desktopFileName;
 
-    KSharedConfig::Ptr config = KSharedConfig::openConfig(m_moduleManager.moduleDataPath(desktopFileName),
+    const QString moduleDataPath = m_moduleManager.moduleDataPath(desktopFileName);
+    // Check the desktop file still exists
+    if (KStandardDirs::locate("data", moduleDataPath).isEmpty())
+        return false;
+
+    KSharedConfig::Ptr config = KSharedConfig::openConfig(moduleDataPath,
                                                           KConfig::NoGlobals,
                                                           "data");
     KConfigGroup configGroup(config, "Desktop Entry");
@@ -511,14 +499,14 @@ bool Sidebar_Widget::addButton(const QString &desktopFileName, int pos)
     const QString url = configGroup.readPathEntry("URL",QString());
     const QString lib = configGroup.readEntry("X-KDE-KonqSidebarModule");
 
-    if (pos == -1)
+    if (pos == -1) // TODO handle insertion
     {
         m_buttonBar->appendTab(SmallIcon(icon), lastbtn, name);
         ButtonInfo buttonInfo(config, desktopFileName, url, lib, name, icon);
         m_buttons.insert(lastbtn, buttonInfo);
         KMultiTabBarTab *tab = m_buttonBar->tab(lastbtn);
         tab->installEventFilter(this);
-        connect(tab,SIGNAL(clicked(int)),this,SLOT(showHidePage(int)));
+        connect(tab, SIGNAL(clicked(int)), this, SLOT(showHidePage(int)));
 
         // Set Whats This help
         // This uses the comments in the .desktop files
@@ -572,32 +560,16 @@ void Sidebar_Widget::mousePressEvent(QMouseEvent *ev)
         m_menu->exec(QCursor::pos());
 }
 
-KonqSidebarPlugin *Sidebar_Widget::loadModule(QWidget *parent, const QString &desktopName,
-                                              const QString &lib_name, const KSharedConfig::Ptr& config)
+KonqSidebarModule *Sidebar_Widget::loadModule(QWidget *parent, const QString &desktopName,
+                                              ButtonInfo& buttonInfo, const KSharedConfig::Ptr& config)
 {
-    KLibLoader *loader = KLibLoader::self();
+    const KConfigGroup configGroup = config->group("Desktop Entry");
+    KonqSidebarPlugin* plugin = buttonInfo.plugin(this);
+    if (!plugin)
+        return 0;
 
-    // try to load the library
-    KLibrary *lib = loader->library(lib_name);
-    if (lib) {
-        // get the create_ function
-        QString factory("create_%1");
-        KLibrary::void_function_ptr create = lib->resolveFunction(QFile::encodeName(factory.arg(lib_name)));
-
-        if (create)
-        {
-            // create the module
-            KConfigGroup configGroup = config->group("Desktop Entry");
-            // TODO factory method
-            typedef KonqSidebarPlugin* (*t_func)(const KComponentData &, QWidget*, const QString&, const KConfigGroup&);
-            t_func func = reinterpret_cast<t_func>(create);
-            QString relPath = m_moduleManager.moduleDataPath(desktopName);
-            return func(m_partParent->componentData(), parent, relPath, configGroup);
-        }
-    } else {
-        kWarning() << "Module " << lib_name << " doesn't specify a library!" ;
-    }
-    return 0;
+    return plugin->createModule(m_partParent->componentData(),
+                                parent, configGroup, desktopName, QVariant());
 }
 
 KParts::BrowserExtension *Sidebar_Widget::getExtension()
@@ -608,7 +580,7 @@ KParts::BrowserExtension *Sidebar_Widget::getExtension()
 bool Sidebar_Widget::createView(ButtonInfo& buttonInfo)
 {
     buttonInfo.dock = 0;
-    buttonInfo.module = loadModule(m_area, buttonInfo.file, buttonInfo.libName, buttonInfo.configFile);
+    buttonInfo.module = loadModule(m_area, buttonInfo.file, buttonInfo, buttonInfo.configFile);
 
     if (buttonInfo.module == 0) {
         return false;
@@ -895,6 +867,25 @@ void Sidebar_Widget::customEvent(QEvent* ev)
     } else if (KonqFileMouseOverEvent::test(ev)) {
         emit fileMouseOver(static_cast<KonqFileMouseOverEvent*>(ev)->item());
     }
+}
+
+KonqSidebarPlugin* ButtonInfo::plugin(QObject* parent)
+{
+    if (!m_plugin) {
+        KPluginLoader loader(libName);
+        KPluginFactory* factory = loader.factory();
+        if (!factory) {
+            kWarning() << "error loading" << libName << loader.errorString();
+            return 0;
+        }
+        KonqSidebarPlugin* plugin = factory->create<KonqSidebarPlugin>(parent);
+        if (!plugin) {
+            kWarning() << "error creating object from" << libName;
+            return 0;
+        }
+        m_plugin = plugin;
+    }
+    return m_plugin;
 }
 
 #include "sidebar_widget.moc"

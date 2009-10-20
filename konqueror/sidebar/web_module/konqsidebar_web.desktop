@@ -1,6 +1,5 @@
 [Desktop Entry]
-Type=Link
-URL=
+Type=Service
 Icon=applications-internet
 Name=Web SideBar Module
 Name[af]=Web kantbalk module
@@ -86,6 +85,4 @@ Name[wa]=Module waibe del bår di costé
 Name[x-test]=xxWeb SideBar Modulexx
 Name[zh_CN]=网页侧栏模块
 Name[zh_TW]=網頁邊列模組
-Open=false
-X-KDE-KonqSidebarAddModule=konqsidebar_web
-X-KDE-KonqSidebarUniversal=true
+X-KDE-Library=konqsidebar_web

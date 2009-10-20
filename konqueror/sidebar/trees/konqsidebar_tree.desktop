@@ -1,6 +1,5 @@
 [Desktop Entry]
-Type=Link
-URL=
+Type=Service
 Icon=folder
 Name=Folder
 Name[af]=Gids
@@ -88,8 +87,4 @@ Name[wa]=Ridant
 Name[x-test]=xxFolderxx
 Name[zh_CN]=文件夹
 Name[zh_TW]=資料夾
-
-Open=false
-X-KDE-KonqSidebarAddParam=
-X-KDE-KonqSidebarAddModule=konqsidebar_tree
-X-KDE-KonqSidebarUniversal=true
+X-KDE-Library=konqsidebar_tree

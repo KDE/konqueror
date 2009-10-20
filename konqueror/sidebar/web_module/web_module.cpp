@@ -28,15 +28,18 @@
 #include <kdialog.h>
 #include <kglobal.h>
 #include <klocale.h>
+#include <kpluginfactory.h>
 #include <kparts/browserextension.h>
+#include <konq_nameandurlinputdialog.h>
 #include <kstandarddirs.h>
 #include <khbox.h>
 
 
-KonqSideBarWebModule::KonqSideBarWebModule(const KComponentData &componentData, QWidget *parent, const QString &desktopName, const KConfigGroup& configGroup)
-	: KonqSidebarPlugin(componentData, parent, configGroup)
+KonqSideBarWebModule::KonqSideBarWebModule(const KComponentData &componentData, QWidget *parent, const KConfigGroup& configGroup)
+	: KonqSidebarModule(componentData, parent, configGroup)
 {
 	_htmlPart = new KHTMLSideBar();
+        _htmlPart->setAutoDeletePart(false);
 	connect(_htmlPart, SIGNAL(reload()), this, SLOT(reload()));
 	connect(_htmlPart, SIGNAL(completed()), this, SLOT(pageLoaded()));
 	connect(_htmlPart,
@@ -109,11 +112,6 @@ void KonqSideBarWebModule::setAutoReload(){
 	}
 }
 
-void *KonqSideBarWebModule::provides(const QString &) {
-	return 0L;
-}
-
-
 void KonqSideBarWebModule::handleURL(const KUrl &) {
 }
 
@@ -178,44 +176,6 @@ void KonqSideBarWebModule::pageLoaded() {
 	}
 }
 
-
-extern "C" {
-	KDE_EXPORT KonqSidebarPlugin* create_konqsidebar_web(const KComponentData &componentData, QWidget *parent, const QString &desktopName, const KConfigGroup& configGroup)
-        {
-		return new KonqSideBarWebModule(componentData, parent, desktopName, configGroup);
-	}
-}
-
-
-extern "C" {
-	KDE_EXPORT bool add_konqsidebar_web(QString* fn, QString* param, QMap<QString,QString> *map) {
-		Q_UNUSED(param);
-		KGlobal::dirs()->addResourceType("websidebardata", "data", "konqsidebartng/websidebar");
-		KUrl url;
-		url.setProtocol("file");
-		const QStringList paths = KGlobal::dirs()->resourceDirs("websidebardata");
-		for (QStringList::const_iterator i = paths.begin(); i != paths.end(); ++i) {
-			if (QFileInfo(*i + "websidebar.html").exists()) {
-				url.setPath(*i + "websidebar.html");
-				break;
-			}
-		}
-
-		if (url.path().isEmpty())
-			return false;
-                // TODO cleanup? Done by addWebSideBar already. Or clean up there..
-		map->insert("Type", "Link");
-		map->insert("URL", url.url());
-		map->insert("Icon", "netscape");
-		map->insert("Name", i18n("Web SideBar Plugin"));
-		map->insert("Open", "true");
-		map->insert("X-KDE-KonqSidebarModule","konqsidebar_web");
-		*fn = QString::fromLatin1("websidebarplugin%1.desktop");
-		return true;
-	}
-}
-
-
 bool KHTMLSideBar::urlSelected( const QString &url, int button,
                                 int state, const QString &_target,
                                 const KParts::OpenUrlArguments& args,
@@ -243,6 +203,67 @@ bool KHTMLSideBar::urlSelected( const QString &url, int button,
     }
     return KHTMLPart::urlSelected(url, button, state, _target, args, browserArgs);
 }
+
+class KonqSidebarWebPlugin : public KonqSidebarPlugin
+{
+public:
+    KonqSidebarWebPlugin(QObject* parent, const QVariantList& args)
+        : KonqSidebarPlugin(parent, args) {}
+    virtual ~KonqSidebarWebPlugin() {}
+
+    virtual KonqSidebarModule* createModule(const KComponentData &componentData, QWidget *parent,
+                                            const KConfigGroup& configGroup,
+                                            const QString &desktopname,
+                                            const QVariant& unused)
+    {
+        Q_UNUSED(unused);
+        Q_UNUSED(desktopname);
+        return new KonqSideBarWebModule(componentData, parent, configGroup);
+    }
+
+    virtual QList<QAction*> addNewActions(QObject* parent,
+                                          const QList<KConfigGroup>& existingModules,
+                                          const QVariant& unused)
+    {
+        Q_UNUSED(unused);
+        Q_UNUSED(existingModules);
+        QAction* action = new QAction(parent);
+        action->setText(i18nc("@action:inmenu Add", "Web Sidebar Module"));
+        action->setIcon(KIcon("internet-web-browser"));
+        return QList<QAction *>() << action;
+    }
+
+    virtual QString templateNameForNewModule(const QVariant& actionData,
+                                             const QVariant& unused) const
+    {
+        Q_UNUSED(actionData);
+        Q_UNUSED(unused);
+        return QString::fromLatin1("websidebarplugin%1.desktop");
+    }
+
+    virtual bool createNewModule(const QVariant& actionData, KConfigGroup& configGroup,
+                                 QWidget* parentWidget,
+                                 const QVariant& unused)
+    {
+        Q_UNUSED(actionData);
+        Q_UNUSED(unused);
+
+        KonqNameAndUrlInputDialog dlg(i18nc("@label", "Name:"), i18nc("@label", "Path or URL:"), KUrl(), parentWidget);
+        dlg.setCaption(i18nc("@title:window", "Add web sidebar module"));
+        if (!dlg.exec())
+            return false;
+
+        configGroup.writeEntry("Type", "Link");
+        configGroup.writeEntry("Icon", "internet-web-browser");
+        configGroup.writeEntry("Name", dlg.name());
+        configGroup.writeEntry("URL", dlg.url().url());
+        configGroup.writeEntry("X-KDE-KonqSidebarModule", "konqsidebar_web");
+        return true;
+    }
+};
+
+K_PLUGIN_FACTORY(KonqSidebarWebPluginFactory, registerPlugin<KonqSidebarWebPlugin>(); )
+K_EXPORT_PLUGIN(KonqSidebarWebPluginFactory())
 
 #include "web_module.moc"
 

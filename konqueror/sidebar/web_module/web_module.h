@@ -138,16 +138,15 @@ class KHTMLSideBar : public KHTMLPart
 
 
 
-class KonqSideBarWebModule : public KonqSidebarPlugin
+class KonqSideBarWebModule : public KonqSidebarModule
 {
 	Q_OBJECT
 	public:
 		KonqSideBarWebModule(const KComponentData &componentData, QWidget *parent,
-                                     const QString &desktopName_, const KConfigGroup& configGroup);
+                                     const KConfigGroup& configGroup);
 		virtual ~KonqSideBarWebModule();
 
 		virtual QWidget *getWidget();
-		virtual void *provides(const QString &);
 
 	Q_SIGNALS:
 		void submitFormRequest(const char*,const QString&,const QByteArray&,const QString&,const QString&,const QString&);

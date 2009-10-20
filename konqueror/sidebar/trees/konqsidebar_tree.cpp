@@ -1,4 +1,5 @@
 #include "konqsidebar_tree.h"
+#include <QAction>
 #include <kdesktopfile.h>
 #include "konqsidebar_tree.moc"
 #include "konq_sidebartree.h"
@@ -8,6 +9,7 @@
 #include <kconfig.h>
 #include <kinputdialog.h>
 #include <kiconloader.h>
+#include <konq_nameandurlinputdialog.h>
 #include <k3listviewsearchline.h>
 
 #include <QtGui/QClipboard>
@@ -16,7 +18,7 @@
 
 KonqSidebar_Tree::KonqSidebar_Tree(const KComponentData &componentData, QWidget *parent,
                                    const QString &desktopName_, const KConfigGroup& configGroup)
-    : KonqSidebarPlugin(componentData, parent, configGroup)
+    : KonqSidebarModule(componentData, parent, configGroup)
 {
 	const ModuleType virt = configGroup.readEntry("X-KDE-TreeModule", QString()) == "Virtual" ? VIRT_Folder : VIRT_Link;
         QString path;
@@ -27,7 +29,7 @@ KonqSidebar_Tree::KonqSidebar_Tree(const KComponentData &componentData, QWidget 
             // and for the toplevel item is broken. When renaming the toplevel item,
             // the module isn't renamed until the next konqueror restart (!).
             // We probably want to get rid of toplevel items when there's only one?
-            path = KStandardDirs::locate("data", desktopName_); // ### this breaks global/local merging!
+            path = KStandardDirs::locate("data", "konqsidebartng/entries/" + desktopName_); // ### this breaks global/local merging!
         }
 
 	widget = new KVBox( parent );
@@ -60,13 +62,9 @@ KonqSidebar_Tree::KonqSidebar_Tree(const KComponentData &componentData, QWidget 
 }
 
 
-KonqSidebar_Tree::~KonqSidebar_Tree(){;}
+KonqSidebar_Tree::~KonqSidebar_Tree(){}
 
-void* KonqSidebar_Tree::provides(const QString &) {return 0;}
-
-//void KonqSidebar_Tree::emitStatusBarText (const QString &) {;}
-
-QWidget *KonqSidebar_Tree::getWidget(){return widget;}
+QWidget *KonqSidebar_Tree::getWidget() { return widget; }
 
 void KonqSidebar_Tree::handleURL(const KUrl &url)
     {
@@ -118,64 +116,96 @@ void KonqSidebar_Tree::rename()
         tree->currentItem()->rename();
 }
 
-class KonqSidebarTreeFactory
+class KonqSidebarTreePlugin : public KonqSidebarPlugin
 {
 public:
-    virtual ~KonqSidebarTreeFactory() {}
+    KonqSidebarTreePlugin(QObject* parent, const QVariantList& args)
+        : KonqSidebarPlugin(parent, args) {}
+    virtual ~KonqSidebarTreePlugin() {}
 
-    KonqSidebarPlugin* createModule(const KComponentData &componentData, QWidget *parent,
-                                    const QString &desktopname, const KConfigGroup& configGroup,
-                                    const QVariant& unused) {
+    virtual KonqSidebarModule* createModule(const KComponentData &componentData, QWidget *parent,
+                                            const KConfigGroup& configGroup,
+                                            const QString &desktopname,
+                                            const QVariant& unused)
+    {
         Q_UNUSED(unused);
         return new KonqSidebar_Tree(componentData, parent, desktopname, configGroup);
     }
 
-
-};
-
-extern "C"
-{
-    KDE_EXPORT void*  create_konqsidebar_tree(const KComponentData &componentData, QWidget *parent,
-                                              const QString &desktopname, const KConfigGroup& configGroup)
+    virtual QList<QAction*> addNewActions(QObject* parent,
+                                          const QList<KConfigGroup>& existingModules,
+                                          const QVariant& unused)
     {
-        return new KonqSidebar_Tree(componentData, parent, desktopname, configGroup);
-    }
-}
+        Q_UNUSED(unused);
 
-extern "C"
-{
-    KDE_EXPORT bool add_konqsidebar_tree(QString* fn, QString*, QMap<QString,QString> *map)
-    {
+        QStringList existingTreeModules;
+        Q_FOREACH(const KConfigGroup& cfg, existingModules)
+            existingTreeModules.append(cfg.readEntry("X-KDE-TreeModule", QString()));
+
+        QList<QAction*> actions;
         const QStringList list = KGlobal::dirs()->findAllResources("data",
                                                                    "konqsidebartng/dirtree/*.desktop",
                                                                    KStandardDirs::NoDuplicates);
-        QStringList names;
-        for (QStringList::ConstIterator it=list.constBegin();it!=list.constEnd();++it)
-        {
-            KConfig _sc( *it, KConfig::SimpleConfig );
-            KConfigGroup sc(&_sc, "Desktop Entry");
-            names << sc.readEntry("Name");
-        }
+        Q_FOREACH(const QString& desktopFile, list) {
+            KDesktopFile df(desktopFile);
+            const KConfigGroup desktopGroup = df.desktopGroup();
+            const bool hasUrl = !(desktopGroup.readEntry("X-KDE-Default-URL", QString()).isEmpty());
+            const QString treeModule = desktopGroup.readEntry("X-KDE-TreeModule", QString());
 
-        // TODO this should also ask for the URL!
-	QString item = KInputDialog::getItem( i18n( "Select Type" ),
-                                              i18n( "Select type:" ), names );
-	if (item.isEmpty())
+            // Assumption: modules without a default URL, don't use URLs at all,
+            // and therefore are "unique" (no point in having two bookmarks modules
+            // or two history modules). Modules with URLs can be added multiple times.
+            if (hasUrl || !existingTreeModules.contains(treeModule)) {
+                const QString name = df.readName();
+
+                QAction* action = new QAction(parent);
+                //action->setText(i18nc("@action:inmenu Add folder sidebar module", "Folder"));
+                action->setText(name);
+                action->setData(desktopFile);
+                action->setIcon(KIcon(df.readIcon()));
+                actions.append(action);
+            }
+        }
+        return actions;
+    }
+
+    virtual QString templateNameForNewModule(const QVariant& actionData,
+                                             const QVariant& unused) const
+    {
+        Q_UNUSED(unused);
+        // Example: /full/path/to/bookmarks_module.desktop -> bookmarks%1.desktop
+        QString str = actionData.toString();
+        str = str.mid(str.lastIndexOf('/')+1);
+        str.replace(".desktop", "%1.desktop");
+        str.remove("_module");
+        return str;
+    }
+
+    virtual bool createNewModule(const QVariant& actionData, KConfigGroup& configGroup,
+                                 QWidget* parentWidget,
+                                 const QVariant& unused)
+    {
+        Q_UNUSED(unused);
+        const KDesktopFile df(actionData.toString());
+        const KConfigGroup desktopGroup = df.desktopGroup();
+        KUrl url = desktopGroup.readEntry("X-KDE-Default-URL");
+        KonqNameAndUrlInputDialog dlg(i18nc("@label", "Name:"), i18nc("@label", "Path or URL:"), KUrl(), parentWidget);
+        dlg.setCaption(i18nc("@title:window", "Add folder sidebar module"));
+        dlg.setSuggestedName(df.readName());
+        if (!dlg.exec())
             return false;
 
-        const int id = names.indexOf(item);
-        if (id == -1) return false;
-        KConfig ksc2(list.at(id), KConfig::SimpleConfig);
-        KConfigGroup desktopGroup(&ksc2, "Desktop Entry");
-        map->insert("Type","Link");
-        map->insert("Icon",desktopGroup.readEntry("Icon"));
-        map->insert("Name",desktopGroup.readEntry("Name"));
-        map->insert("Open","false");
-        map->insert("URL",desktopGroup.readEntry("X-KDE-Default-URL"));
-        map->insert("X-KDE-KonqSidebarModule","konqsidebar_tree");
-        map->insert("X-KDE-TreeModule",desktopGroup.readEntry("X-KDE-TreeModule"));
-        map->insert("X-KDE-TreeModule-ShowHidden",desktopGroup.readEntry("X-KDE-TreeModule-ShowHidden"));
-        *fn = QString::fromLatin1("dirtree%1.desktop");
+        configGroup.writeEntry("Type", "Link");
+        configGroup.writeEntry("Icon", df.readIcon());
+        configGroup.writeEntry("Name", dlg.name());
+        configGroup.writeEntry("Open", false);
+        configGroup.writeEntry("URL", dlg.url().url());
+        configGroup.writeEntry("X-KDE-KonqSidebarModule", "konqsidebar_tree");
+        configGroup.writeEntry("X-KDE-TreeModule", desktopGroup.readEntry("X-KDE-TreeModule"));
+        configGroup.writeEntry("X-KDE-TreeModule-ShowHidden", desktopGroup.readEntry("X-KDE-TreeModule-ShowHidden"));
         return true;
     }
-}
+};
+
+K_PLUGIN_FACTORY(KonqSidebarTreePluginFactory, registerPlugin<KonqSidebarTreePlugin>(); )
+K_EXPORT_PLUGIN(KonqSidebarTreePluginFactory())
