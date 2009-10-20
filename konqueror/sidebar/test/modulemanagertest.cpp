@@ -37,7 +37,9 @@ private Q_SLOTS:
     void testRenameGlobalModule();
     void testRemoveLocalModule();
     void testRemoveGlobalModule();
+    void testReAddGlobalModule();
     void testRollback();
+    void testAvailablePlugins();
 
 private:
     ModuleManager* m_moduleManager;
@@ -85,7 +87,6 @@ void ModuleManagerTest::initTestCase()
     scf.writePathEntry("URL", "http://www.kde.org");
     scf.writeEntry("Icon", "internet-web-browser");
     scf.writeEntry("Name", i18n("SideBar Test Plugin"));
-    scf.writeEntry("Open", "true");
     scf.writeEntry("X-KDE-KonqSidebarModule", "konqsidebar_web");
     scf.sync();
     QVERIFY(QFile::exists(m_globalDir + "testModule.desktop"));
@@ -120,8 +121,10 @@ void ModuleManagerTest::testListModules()
 
 void ModuleManagerTest::testAddLocalModule()
 {
-    const QString fileName = "local.desktop";
-    const QString path = m_moduleManager->addModuleFromTemplate("local%1.desktop");
+    const QString expectedFileName = "local.desktop";
+    QString fileName = "local%1.desktop";
+    const QString path = m_moduleManager->addModuleFromTemplate(fileName);
+    QCOMPARE(fileName, expectedFileName);
     QVERIFY(path.endsWith(fileName));
     KDesktopFile testModule(path);
     KConfigGroup scf = testModule.desktopGroup();
@@ -129,6 +132,7 @@ void ModuleManagerTest::testAddLocalModule()
     scf.writePathEntry("URL", "/tmp");
     scf.writeEntry("Icon", "home");
     scf.sync();
+    m_moduleManager->moduleAdded(fileName);
     QVERIFY(QFile::exists(path));
 
     const QStringList modules = m_moduleManager->modules();
@@ -143,9 +147,10 @@ void ModuleManagerTest::testAddLocalModule()
     QCOMPARE(modules2.count(), m_realModules + 1);
     QVERIFY(modules2.contains("testModule.desktop"));
 
-    const QString secondPath = m_moduleManager->addModuleFromTemplate("local%1.desktop");
+    fileName = "local%1.desktop";
+    const QString secondPath = m_moduleManager->addModuleFromTemplate(fileName);
+    QCOMPARE(fileName, QString("local1.desktop"));
     QVERIFY(secondPath.endsWith("local1.desktop"));
-    m_moduleManager->removeModule("local1.desktop");
 }
 
 void ModuleManagerTest::testRenameGlobalModule()
@@ -180,10 +185,30 @@ void ModuleManagerTest::testRemoveGlobalModule()
     QCOMPARE(m_moduleManager2->modules().count(), m_realModules + 1); // not affected.
 }
 
+void ModuleManagerTest::testReAddGlobalModule()
+{
+    m_moduleManager->moduleAdded("testModule.desktop");
+    // It should re-appear once, not twice [was: 1 because global desktop file and 1 because in AddedModules]
+    QCOMPARE(m_moduleManager->modules().count(), m_realModules + 1);
+    QCOMPARE(m_moduleManager2->modules().count(), m_realModules + 1); // not affected.
+}
+
 void ModuleManagerTest::testRollback()
 {
     m_moduleManager->rollbackToDefault(0);
     testListModules();
+}
+
+void ModuleManagerTest::testAvailablePlugins()
+{
+    KService::List availablePlugins = m_moduleManager->availablePlugins();
+    QVERIFY(availablePlugins.count() >= 2);
+    QStringList libs;
+    Q_FOREACH(KService::Ptr service, availablePlugins)
+        libs.append(service->library());
+    qDebug() << libs;
+    QVERIFY(libs.contains("konqsidebar_tree"));
+    QVERIFY(libs.contains("konqsidebar_web"));
 }
 
 #include "modulemanagertest.moc"

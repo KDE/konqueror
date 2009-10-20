@@ -22,12 +22,7 @@
 #include <QtCore/QPointer>
 #include "sidebar_widget.h"
 
-class QWidget;
-class KUrl;
-
-
 class KonqSidebarPart;
-class KonqSidebarFactory;
 
 class KonqSidebarBrowserExtension : public KParts::BrowserExtension
 {

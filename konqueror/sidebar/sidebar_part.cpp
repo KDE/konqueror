@@ -43,7 +43,6 @@ KonqSidebarPart::KonqSidebarPart(QWidget *parentWidget, QObject *parent, const Q
 
     QString currentProfile = parentWidget->window()->property("currentProfile").toString();
     if (currentProfile.isEmpty()) {
-        // Keeping it empty would mix up the "global, no profile" files with the local ones.
         currentProfile = "default";
     }
     m_widget = new Sidebar_Widget(parentWidget, this, currentProfile);

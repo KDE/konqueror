@@ -19,6 +19,7 @@
 */
 
 #include "module_manager.h"
+#include <kdesktopfile.h>
 #include <kio/netaccess.h>
 #include <kconfig.h>
 #include <kconfiggroup.h>
@@ -72,11 +73,24 @@ QStringList ModuleManager::modules() const
     }
     //kDebug() << "Adding local modules:" << addedModules;
     Q_FOREACH(const QString& module, addedModules) {
-        // Do we need to check that the .desktop file exists?
-        fileNames.append(module);
+        if (!fileNames.contains(module))
+            fileNames.append(module);
     }
 
     return fileNames;
+}
+
+KService::List ModuleManager::availablePlugins() const
+{
+    // For the "add" menu, we need all available plugins.
+    // We could use KServiceTypeTrader for that; not sure 2 files make a big performance difference though.
+    const QStringList files = KGlobal::dirs()->findAllResources("data", "konqsidebartng/plugins/*.desktop");
+    KService::List services;
+    Q_FOREACH(const QString& path, files) {
+        KDesktopFile df(path); // no merging. KService warns, and we don't need it.
+        services.append(KService::Ptr(new KService(&df)));
+    }
+    return services;
 }
 
 QString ModuleManager::moduleDataPath(const QString& fileName) const
@@ -139,7 +153,8 @@ void ModuleManager::removeModule(const QString& fileName)
     // Mark module as deleted (so that we skip global file, if there's one)
     QStringList deletedModules = m_config->readEntry("DeletedModules", QStringList());
     QStringList addedModules = m_config->readEntry("AddedModules", QStringList());
-    deletedModules.append(fileName);
+    if (!deletedModules.contains(fileName))
+        deletedModules.append(fileName);
     addedModules.removeAll(fileName);
     m_config->writeEntry("DeletedModules", deletedModules);
     m_config->writeEntry("AddedModules", addedModules);
@@ -147,16 +162,17 @@ void ModuleManager::removeModule(const QString& fileName)
 
 void ModuleManager::moduleAdded(const QString& fileName)
 {
+    kDebug() << fileName;
     QStringList deletedModules = m_config->readEntry("DeletedModules", QStringList());
     QStringList addedModules = m_config->readEntry("AddedModules", QStringList());
-    Q_ASSERT(!addedModules.contains(fileName));
-    addedModules.append(fileName);
+    if (!addedModules.contains(fileName))
+        addedModules.append(fileName);
     deletedModules.removeAll(fileName);
     m_config->writeEntry("DeletedModules", deletedModules);
     m_config->writeEntry("AddedModules", addedModules);
 }
 
-QString ModuleManager::addModuleFromTemplate(const QString& templ)
+QString ModuleManager::addModuleFromTemplate(QString& templ)
 {
     if (!templ.contains("%1"))
         kWarning() << "Template filename should contain %1";
@@ -176,8 +192,7 @@ QString ModuleManager::addModuleFromTemplate(const QString& templ)
             }
         }
     }
-    if (!filename.isEmpty())
-        moduleAdded(filename);
+    templ = filename;
     return myFile;
 }
 

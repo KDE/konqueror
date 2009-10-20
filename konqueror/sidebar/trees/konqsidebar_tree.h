@@ -15,15 +15,13 @@
 
 class KonqSidebarTree;
 
-class KonqSidebar_Tree: public KonqSidebarPlugin
+class KonqSidebar_Tree: public KonqSidebarModule
         {
                 Q_OBJECT
                 public:
                 KonqSidebar_Tree(const KComponentData &componentData, QWidget *parent,
                                  const QString &desktopName_, const KConfigGroup& configGroup);
                 ~KonqSidebar_Tree();
-                virtual void *provides(const QString &);
-//		void emitStatusBarText (const QString &);
                 virtual QWidget *getWidget();
                 protected:
                         class QWidget *widget;

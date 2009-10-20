@@ -81,7 +81,7 @@ public:
     void startAnimation( KonqSidebarTreeItem * item, const char * iconBaseName = "kde", uint iconCount = 6, const QPixmap * originalPixmap = 0L );
     void stopAnimation( KonqSidebarTreeItem * item );
 
-    KonqSidebarPlugin * part() { return m_part; }
+    KonqSidebarModule * part() { return m_part; }
 
     void lockScrolling( bool lock ) { m_scrollingLocked = lock; }
 
@@ -160,7 +160,7 @@ private:
 
     Q3PtrList<KonqSidebarTreeModule> m_lstModules;
 
-    KonqSidebarPlugin  *m_part;
+    KonqSidebarModule  *m_part;
 
     struct AnimationInfo
     {

@@ -19,6 +19,7 @@
 */
 
 #include <QStringList>
+#include <kservice.h>
 class KConfigGroup;
 class KUrl;
 
@@ -33,8 +34,12 @@ public:
     ModuleManager(KConfigGroup* config);
 
     /// Returns the filenames of the modules that should be shown in the GUI
-    /// Example: "foo.desktop"
+    /// Example: "home.desktop" (default module), "dirtree1.desktop" (added by user)...
     QStringList modules() const;
+
+    /// Returns the names of the available plugin libraries
+    /// Example: konqsidebar_tree, konqsidebar_web
+    KService::List availablePlugins() const;
 
     /// Returns the paths of all modules that match a given filter, like websidebarplugin*.desktop
     QStringList localModulePaths(const QString& filter) const;
@@ -53,9 +58,9 @@ public:
     void setModuleIcon(const QString& fileName, const QString& icon);
 
     /// Find a unique filename for a new module, based on a template name
-    /// like "dirtree%1.desktop", and add that module.
-    /// @return the full path
-    QString addModuleFromTemplate(const QString& templ);
+    /// like "dirtree%1.desktop".
+    /// @return the full path. templ is modified to contain the filename only.
+    QString addModuleFromTemplate(QString& templ);
 
     /// Called when a module was added
     void moduleAdded(const QString& fileName);

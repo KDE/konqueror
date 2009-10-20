@@ -22,7 +22,7 @@
 #include <kdebug.h>
 
 
-KonqSidebarPlugin::KonqSidebarPlugin(const KComponentData &componentData,
+KonqSidebarModule::KonqSidebarModule(const KComponentData &componentData,
                                      QObject *parent,
                                      const KConfigGroup& configGroup_)
     : QObject(parent),
@@ -32,27 +32,27 @@ KonqSidebarPlugin::KonqSidebarPlugin(const KComponentData &componentData,
 {
 }
 
-KonqSidebarPlugin::~KonqSidebarPlugin() { }
+KonqSidebarModule::~KonqSidebarModule() { }
 
-const KComponentData &KonqSidebarPlugin::parentComponentData() const { return m_parentComponentData; }
+const KComponentData &KonqSidebarModule::parentComponentData() const { return m_parentComponentData; }
 
-void KonqSidebarPlugin::openUrl(const KUrl& url){handleURL(url);}
+void KonqSidebarModule::openUrl(const KUrl& url){handleURL(url);}
 
-void KonqSidebarPlugin::openPreview(const KFileItemList& items)
+void KonqSidebarModule::openPreview(const KFileItemList& items)
 {
     handlePreview(items);
 }
 
-void KonqSidebarPlugin::openPreviewOnMouseOver(const KFileItem& item)
+void KonqSidebarModule::openPreviewOnMouseOver(const KFileItem& item)
 {
     handlePreviewOnMouseOver(item);
 }
 
-void KonqSidebarPlugin::handlePreview(const KFileItemList& /*items*/) {}
+void KonqSidebarModule::handlePreview(const KFileItemList& /*items*/) {}
 
-void KonqSidebarPlugin::handlePreviewOnMouseOver(const KFileItem& /*items*/) {}
+void KonqSidebarModule::handlePreviewOnMouseOver(const KFileItem& /*items*/) {}
 
-KConfigGroup KonqSidebarPlugin::configGroup()
+KConfigGroup KonqSidebarModule::configGroup()
 {
     return m_configGroup;
 }

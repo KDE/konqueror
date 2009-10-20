@@ -40,22 +40,26 @@
 # endif
 #endif
 
-class KonqSidebarPluginPrivate;
+class KonqSidebarModulePrivate;
 
 /**
- * Base class for plugins.
+ * Base class for modules, implemented in plugins.
  * This class is exported, make sure you keep BINARY COMPATIBILITY!
+ * (Alternatively, add a Version key to the plugins desktop file...)
+ *
+ * A plugin can instanciate multiple modules, for various configurations.
+ * Example: the dirtree plugin can create a module for "/", a module for $HOME, etc.
  */
-class KONQSIDEBARPLUGIN_EXPORT KonqSidebarPlugin : public QObject
+class KONQSIDEBARPLUGIN_EXPORT KonqSidebarModule : public QObject
 {
     Q_OBJECT
 public:
-    KonqSidebarPlugin(const KComponentData &componentData,
+    KonqSidebarModule(const KComponentData &componentData,
                       QObject *parent,
                       const KConfigGroup& configGroup);
-    ~KonqSidebarPlugin();
+    ~KonqSidebarModule();
+
     virtual QWidget *getWidget() = 0;
-    virtual void *provides(const QString &) = 0;
 
     const KComponentData &parentComponentData() const;
     KConfigGroup configGroup();
@@ -68,7 +72,7 @@ protected:
 
 private:
     KConfigGroup m_configGroup;
-    KonqSidebarPluginPrivate* const d;
+    KonqSidebarModulePrivate* const d;
 
 Q_SIGNALS:
     void started(KIO::Job *);
@@ -103,7 +107,77 @@ public Q_SLOTS:
     void showMessage(QString &);	//for later extension
 
     */
+};
 
+/**
+ * The plugin class is the "factory" for sidebar modules.
+ * It can create a module (based on a given configuration),
+ * it can also provide QActions for letting the user create new modules interactively.
+ */
+class KONQSIDEBARPLUGIN_EXPORT KonqSidebarPlugin : public QObject
+{
+    Q_OBJECT
+public:
+    KonqSidebarPlugin(QObject* parent, const QVariantList& args)
+        : QObject(parent)
+    { Q_UNUSED(args); }
+    virtual ~KonqSidebarPlugin() {}
+
+    /**
+     * Create new module for the sidebar.
+     * @param componentData
+     * @param parent parent widget, for the plugin's widget
+     * @param configGroup desktop group from the plugin's desktop file
+     * @param desktopName filename of the plugin's desktop file - for compatibility only
+     * @param unused for future extensions
+     */
+    virtual KonqSidebarModule* createModule(const KComponentData &componentData, QWidget *parent,
+                                            const KConfigGroup& configGroup,
+                                            const QString &desktopname,
+                                            const QVariant& unused) = 0;
+
+    /**
+     * Creates QActions for the "Add new" menu.
+     * @param parent parent object for the actions
+     * @param existingModules list of existing modules, to avoid creating "unique"
+     * modules multiple times
+     * @param unused for future extensions
+     */
+    virtual QList<QAction*> addNewActions(QObject* parent,
+                                          const QList<KConfigGroup>& existingModules,
+                                          const QVariant& unused) {
+        Q_UNUSED(parent); Q_UNUSED(existingModules); Q_UNUSED(unused);
+        return QList<QAction *>();
+    }
+
+    /**
+     * Returns the template of the filename to used for new modules.
+     * @param actionData data given to the QAction (for modules who provide
+     * multiple "new" actions)
+     * @param unused for future extensions
+     */
+    virtual QString templateNameForNewModule(const QVariant& actionData,
+                                             const QVariant& unused) const {
+        Q_UNUSED(actionData); Q_UNUSED(unused);
+        return QString();
+    }
+
+    /**
+     * Finally create a new module, added by the user.
+     * @param actionData data given to the QAction (for modules who provide
+     * multiple "new" actions)
+     * @param configGroup desktop group of the new desktop file. The desktop file
+     * is deleted if the method returns false (e.g. cancelled by user).
+     * @param parentWidget in case the plugin shows dialogs in this method
+     * @param unused for future extensions
+     */
+    virtual bool createNewModule(const QVariant& actionData, KConfigGroup& configGroup,
+                                 QWidget* parentWidget,
+                                 const QVariant& unused) {
+        Q_UNUSED(actionData); Q_UNUSED(configGroup);
+        Q_UNUSED(parentWidget); Q_UNUSED(unused);
+        return false;
+    }
 };
 
 #endif

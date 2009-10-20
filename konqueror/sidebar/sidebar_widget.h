@@ -17,6 +17,7 @@
 #ifndef _SIDEBAR_WIDGET_
 #define _SIDEBAR_WIDGET_
 
+#include <QActionGroup>
 #include <kconfiggroup.h>
 #include <QtCore/QTimer>
 
@@ -28,6 +29,7 @@
 #include "konqsidebarplugin.h"
 #include "module_manager.h"
 
+class KonqSidebarPlugin;
 class QMenu;
 class KMultiTabBar;
 class QHBoxLayout;
@@ -39,7 +41,7 @@ class ButtonInfo
 {
 public:
     ButtonInfo()
-        : module(NULL)
+        : module(NULL), m_plugin(NULL)
     {
     }
     ButtonInfo(const KSharedConfig::Ptr& configFile_,
@@ -47,18 +49,22 @@ public:
                const QString &url_,const QString &lib,
                const QString &dispName_, const QString &iconName_)
         : configFile(configFile_),
-          file(file_), dock(NULL), URL(url_),
-          libName(lib), displayName(dispName_), iconName(iconName_)
+          file(file_), dock(NULL),
+          module(NULL), m_plugin(NULL),
+          URL(url_), libName(lib), displayName(dispName_), iconName(iconName_)
     {
         copy = cut = paste = trash = del = rename =false;
     }
 
     ~ButtonInfo() {}
 
+    KonqSidebarPlugin* plugin(QObject* parent);
+
     KSharedConfig::Ptr configFile;
     QString file;
     QPointer<QWidget> dock;
-    KonqSidebarPlugin *module;
+    KonqSidebarModule *module;
+    KonqSidebarPlugin* m_plugin;
     QString URL; // TODO remove
     QString libName;
     QString displayName;
@@ -139,8 +145,8 @@ private:
 
     bool addButton(const QString &desktopFileName, int pos = -1);
     bool createView(ButtonInfo &buttonInfo);
-    KonqSidebarPlugin *loadModule(QWidget *par, const QString &desktopName,
-                                  const QString &lib_name, const KSharedConfig::Ptr& config);
+    KonqSidebarModule *loadModule(QWidget *par, const QString &desktopName,
+                                  ButtonInfo& buttonInfo, const KSharedConfig::Ptr& config);
     void readConfig();
     void doLayout();
     void connectModule(QObject *mod);
@@ -160,7 +166,11 @@ private:
     QHBoxLayout *m_layout;
     QAction *m_showTabLeft;
     QMenu *m_menu;
+
     QMenu *m_addMenu;
+    QActionGroup m_addMenuActionGroup;
+    QMap<QAction*, KonqSidebarPlugin*> m_pluginForAction;
+
     //QPointer<ButtonInfo> m_activeModule; // TODO REMOVE?
     int m_currentButtonIndex; // during RMB popups only
 
