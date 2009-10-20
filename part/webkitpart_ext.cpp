@@ -116,8 +116,13 @@ int WebKitBrowserExtension::yOffset()
 
 void WebKitBrowserExtension::saveState(QDataStream &stream)
 {
+    //kDebug() << "xoffset:" << xOffset() << ", yoffset:" << yOffset();
+
     KParts::BrowserExtension::saveState(stream);
 #if 0
+    // TODO: Find a way to restore the state of frames when user navigates histroy
+    // The code below saves the child frame information, but for now there is no
+    // easy way to restore this back in QWebPage/QWebFrame...
     if (d->view) {
         QList<WebPageInfo> pageInfoList;
         QListIterator<QWebFrame*> it (d->view->page()->mainFrame()->childFrames());
