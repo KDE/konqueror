@@ -18,8 +18,8 @@
 */
 
 #include "knewmenu.h"
-#include "knewmenu_p.h"
 #include "konq_operations.h"
+#include "konq_nameandurlinputdialog.h"
 
 #include <QDir>
 #include <QVBoxLayout>
@@ -47,12 +47,6 @@
 #include <kpropertiesdialog.h>
 #include <ktemporaryfile.h>
 #include <utime.h>
-
-// For KUrlDesktopFileDlg
-#include <QLayout>
-#include <klineedit.h>
-#include <kurlrequester.h>
-#include <QLabel>
 
 // Singleton, with data shared by all KNewMenu instances
 class KNewMenuSingleton
@@ -502,12 +496,12 @@ bool KNewMenuPrivate::StrategyInterface::checkSourceExists(const QString& src)
 void KNewMenuPrivate::UrlDesktopFileStrategy::execute(const KNewMenuSingleton::Entry& entry)
 {
     // entry.comment contains i18n("Enter link to location (URL):"). JFYI :)
-    KUrlDesktopFileDlg dlg(i18n("File name:"), entry.comment, m_popupUrls.first(), m_parentWidget);
+    KonqNameAndUrlInputDialog dlg(i18n("File name:"), entry.comment, m_popupUrls.first(), m_parentWidget);
     // TODO dlg.setCaption( i18n( ... ) );
     if (!dlg.exec())
         return;
 
-    m_chosenFileName = dlg.fileName();
+    m_chosenFileName = dlg.name();
     const KUrl linkUrl = dlg.url(); // the url to put in the file
     if ( m_chosenFileName.isEmpty() || linkUrl.isEmpty() )
         return;
@@ -548,11 +542,11 @@ void KNewMenuPrivate::UrlDesktopFileStrategy::execute(const KNewMenuSingleton::E
 
 void KNewMenuPrivate::SymLinkStrategy::execute(const KNewMenuSingleton::Entry& entry)
 {
-    KUrlDesktopFileDlg dlg(i18n("File name:"), entry.comment, m_popupUrls.first(), m_parentWidget);
+    KonqNameAndUrlInputDialog dlg(i18n("File name:"), entry.comment, m_popupUrls.first(), m_parentWidget);
     // TODO dlg.setCaption( i18n( ... ) );
     if (!dlg.exec())
         return;
-    m_chosenFileName = dlg.fileName();
+    m_chosenFileName = dlg.name(); // no path
     KUrl linkUrl = dlg.url(); // the url to put in the file
     if (m_chosenFileName.isEmpty() || linkUrl.isEmpty())
         return;
@@ -737,107 +731,4 @@ void KNewMenu::setPopupFiles(const KUrl::List& files)
     }
 }
 
-//////////
-
-KUrlDesktopFileDlg::KUrlDesktopFileDlg(const QString& textFileName, const QString& textUrl, const KUrl& dirUrl, QWidget *parent)
-    : KDialog( parent )
-{
-    setButtons( Ok | Cancel | User1 );
-    setButtonGuiItem( User1, KStandardGuiItem::clear() );
-    showButtonSeparator( true );
-
-    initDialog(textFileName, QString(), textUrl, QString(), dirUrl);
-}
-
-void KUrlDesktopFileDlg::initDialog(const QString& textFileName, const QString& defaultName, const QString& textUrl, const QString& defaultUrl, const KUrl& dirUrl)
-{
-    QFrame *plainPage = new QFrame( this );
-    setMainWidget( plainPage );
-
-    QVBoxLayout * topLayout = new QVBoxLayout( plainPage );
-    topLayout->setMargin( 0 );
-    topLayout->setSpacing( spacingHint() );
-
-    // First line: filename
-    KHBox * fileNameBox = new KHBox( plainPage );
-    topLayout->addWidget( fileNameBox );
-
-    QLabel * label = new QLabel( textFileName, fileNameBox );
-    m_leFileName = new KLineEdit( fileNameBox );
-    m_leFileName->setMinimumWidth(m_leFileName->sizeHint().width() * 3);
-    label->setBuddy(m_leFileName);  // please "scheck" style
-    m_leFileName->setText( defaultName );
-    m_leFileName->setSelection(0, m_leFileName->text().length()); // autoselect
-    connect( m_leFileName, SIGNAL(textChanged(const QString&)),
-             SLOT(slotNameTextChanged(const QString&)) );
-
-    // Second line: url
-    KHBox * urlBox = new KHBox( plainPage );
-    topLayout->addWidget( urlBox );
-    label = new QLabel( textUrl, urlBox );
-    m_urlRequester = new KUrlRequester( defaultUrl, urlBox);
-    m_urlRequester->setStartDir(dirUrl);
-    m_urlRequester->setMode( KFile::File | KFile::Directory );
-
-    m_urlRequester->setMinimumWidth( m_urlRequester->sizeHint().width() * 3 );
-    connect( m_urlRequester->lineEdit(), SIGNAL(textChanged(const QString&)),
-             SLOT(slotURLTextChanged(const QString&)) );
-    label->setBuddy(m_urlRequester);  // please "scheck" style
-
-    m_urlRequester->setFocus();
-    enableButtonOk( !defaultName.isEmpty() && !defaultUrl.isEmpty() );
-    connect( this, SIGNAL(user1Clicked()), this, SLOT(slotClear()) );
-    m_fileNameEdited = false;
-}
-
-KUrl KUrlDesktopFileDlg::url() const
-{
-    if ( result() == QDialog::Accepted ) {
-        return m_urlRequester->url();
-    }
-    else
-        return KUrl();
-}
-
-QString KUrlDesktopFileDlg::fileName() const
-{
-    if ( result() == QDialog::Accepted )
-        return m_leFileName->text();
-    else
-        return QString();
-}
-
-void KUrlDesktopFileDlg::slotClear()
-{
-    m_leFileName->clear();
-    m_urlRequester->clear();
-    m_fileNameEdited = false;
-}
-
-void KUrlDesktopFileDlg::slotNameTextChanged( const QString& )
-{
-    m_fileNameEdited = true;
-    enableButtonOk( !m_leFileName->text().isEmpty() && !m_urlRequester->url().isEmpty() );
-}
-
-void KUrlDesktopFileDlg::slotURLTextChanged( const QString& )
-{
-    if ( !m_fileNameEdited )
-    {
-        // use URL as default value for the filename
-        // (we copy only its filename if protocol supports listing,
-        // but for HTTP we don't want tons of index.html links)
-        KUrl url( m_urlRequester->url() );
-        kDebug() << url << url.isValid() << url.isLocalFile() << url.fileName();
-        if (KProtocolManager::supportsListing(url) && !url.fileName().isEmpty())
-            m_leFileName->setText( url.fileName() );
-        else
-            m_leFileName->setText( url.url() );
-        m_fileNameEdited = false; // slotNameTextChanged set it to true erroneously
-    }
-    enableButtonOk( !m_leFileName->text().isEmpty() && !m_urlRequester->url().isEmpty() );
-}
-
-
 #include "knewmenu.moc"
-#include "knewmenu_p.moc"
