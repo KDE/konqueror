@@ -71,9 +71,9 @@ public:
     KUrl url() const;
 
 private:
-    Q_PRIVATE_SLOT(d, void _k_slotClear());
-    Q_PRIVATE_SLOT(d, void _k_slotNameTextChanged(const QString&));
-    Q_PRIVATE_SLOT(d, void _k_slotURLTextChanged(const QString&));
+    Q_PRIVATE_SLOT(d, void _k_slotClear())
+    Q_PRIVATE_SLOT(d, void _k_slotNameTextChanged(const QString&))
+    Q_PRIVATE_SLOT(d, void _k_slotURLTextChanged(const QString&))
 
     KonqNameAndUrlInputDialogPrivate* const d;
 };
