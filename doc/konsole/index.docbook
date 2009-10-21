@@ -46,7 +46,7 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2009-09-04</date>
+<date>2009-10-20</date>
 <releaseinfo>2.4.0</releaseinfo>
 
 <abstract><para>&konsole; is &kde;'s terminal emulator.</para></abstract>
@@ -387,9 +387,32 @@ the name of the current tab</action>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Edit</guimenu><guimenuitem>Copy Input To...</guimenuitem></menuchoice></term>
-<listitem><para><action>Allows input from the current session to be sent simultaneously to other sessions</action>
+<term><menuchoice>
+<shortcut><keycombo
+ action="simul">&Ctrl;&Shift;<keycap>,</keycap></keycombo></shortcut>
+<guimenu>Edit</guimenu><guimenuitem>Copy Input To->All Tabs in Current Window</guimenuitem></menuchoice></term>
+<listitem><para><action>Allows input from the current session to be sent simultaneously to all sessions in current window</action>
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut><keycombo
+ action="simul">&Ctrl;&Shift;<keycap>.</keycap></keycombo></shortcut>
+<guimenu>Edit</guimenu><guimenuitem>Copy Input To->Select Tabs...</guimenuitem></menuchoice></term>
+<listitem><para><action>Allows input from the current session to be sent simultaneously to user picked sessions</action>
 (<link linkend="copy-input-dialog">more info</link>)
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut><keycombo
+ action="simul">&Ctrl;&Shift;<keycap>/</keycap></keycombo></shortcut>
+<guimenu>Edit</guimenu><guimenuitem>Copy Input To->None</guimenuitem></menuchoice></term>
+<listitem><para><action>Stop all input to other sessions</action>
 </para>
 </listitem>
 </varlistentry>
@@ -532,7 +555,7 @@ The type of alerts can be changed through
 
 <varlistentry>
 <term><menuchoice><guimenu>View</guimenu>
-<guimenuitem>Set Character Encoding</guimenuitem></menuchoice></term>
+<guimenuitem>Character Encoding</guimenuitem></menuchoice></term>
 <listitem><para><action>Sets the character encoding</action></para></listitem>
 </varlistentry>
 
@@ -591,7 +614,7 @@ Previous</guimenuitem></menuchoice></term>
 <varlistentry>
 <term><menuchoice><guimenu>Scrollback</guimenu><guimenuitem>Save 
 Output...</guimenuitem></menuchoice></term>
-<listitem><para><action>Saves the current scrollback as a text
+<listitem><para><action>Saves the current scrollback as a text or html
  file</action></para></listitem>
 </varlistentry>
 
@@ -622,7 +645,7 @@ and resets the terminal</action></para></listitem>
 
 <varlistentry>
 <term><menuchoice>
-<shortcut><keycombo action="simul">&Ctrl;<keycap>B</keycap></keycombo></shortcut>
+<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>B</keycap></keycombo></shortcut>
 <guimenu>Bookmarks</guimenu><guimenuitem>Add Bookmark</guimenuitem></menuchoice></term>
 <listitem><para><action>Adds the current location</action></para></listitem>
 </varlistentry>
@@ -647,8 +670,14 @@ A dialog will open for the bookmark folder name.
 <term><menuchoice><guimenu>Bookmarks</guimenu><guimenuitem>Edit Bookmarks</guimenuitem></menuchoice></term>
 <listitem><para><action>Opens the bookmark editor</action></para>
 
-<note><para>You can use the bookmark editor to manually add URLs
-like ssh://user@host:port to open remote connections.</para></note>
+<note><para>You can use the bookmark editor to manually add URLs.
+Currently, &konsole; accepts the following:
+<itemizedlist mark='opencircle'>
+<listitem><para>ssh://user@host:port</para></listitem>
+<listitem><para>telnet://user@host:port</para></listitem>
+</itemizedlist>
+</para></note>
+
 </listitem>
 </varlistentry>
 
@@ -963,21 +992,21 @@ will display all services available.
 <listitem><para>
 <prompt>&percnt;</prompt>
 <command>qdbus</command>
-<option>org.kde.konsole-`pidof -s konsole`</option>
+<option>org.kde.konsole</option>
 will display the &DBus; interface for &konsole;.
 </para></listitem>
 
 <listitem><para>
 <prompt>&percnt;</prompt>
 <command>qdbus</command>
-<option>org.kde.konsole-`pidof -s konsole` /Konsole</option>
+<option>org.kde.konsole /Konsole</option>
 will display methods for controlling the main &konsole; window.
 </para></listitem>
 
 <listitem><para>
 <prompt>&percnt;</prompt>
 <command>qdbus</command>
-<option>org.kde.konsole-`pidof -s konsole` /Session/1</option>
+<option>org.kde.konsole /Sessions/1</option>
 will display methods for session 1.
 </para></listitem>
 
@@ -985,10 +1014,9 @@ will display methods for session 1.
 </para>
 
 <para>
-In the above examples, <option>`pidof -s konsole`</option>
-will work if you have only one &konsole; window running.  If you have
-more than one &konsole; running, you'll have to replace the above text
-with that pid of the &konsole; you want to control.
+If you start &konsole; from a terminal you may need to change
+<option>org.kde.konsole</option> to 
+<option>org.kde.konsole-`pidof -s konsole`</option>.
 </para>
 
 <para>
