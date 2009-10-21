@@ -1,0 +1,568 @@
+<chapter id="command-reference">
+<title>Command Reference</title>
+
+<!-- (OPTIONAL, BUT RECOMMENDED) This chapter should list all of the
+application windows and their menubar and toolbar commands for easy reference.
+Also include any keys that have a special function but have no equivalent in the
+menus or toolbars. This may not be necessary for small apps or apps with no tool
+or menu bars. -->
+
+<sect1 id="commands-menubar">
+<title>The menu bar in &dolphin;'s main window</title>
+
+<sect2>
+<title>The File Menu</title>
+<para>
+<variablelist>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>File</guimenu>
+<guisubmenu>Create New</guisubmenu>
+</menuchoice></term>
+<listitem><para><action>Creates a new object (such as a folder or a text file) in the current
+folder.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo>
+</shortcut>
+<guimenu>File</guimenu>
+<guimenuitem>New Window</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Opens a new &dolphin; window.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>T</keycap></keycombo>
+</shortcut>
+<guimenu>File</guimenu>
+<guimenuitem>New Tab</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Opens a new tab.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>W</keycap></keycombo>
+</shortcut>
+<guimenu>File</guimenu>
+<guimenuitem>Close Tab</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Closes the current tab.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul"><keycap>F2</keycap></keycombo>
+</shortcut>
+<guimenu>File</guimenu>
+<guimenuitem>Rename</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Renames the currently selected item(s).</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul"><keycap>Del</keycap></keycombo>
+</shortcut>
+<guimenu>File</guimenu>
+<guimenuitem>Move to Trash</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Moves the currently selected item(s) to the
+trash.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Shift;<keycap>Del</keycap></keycombo>
+</shortcut>
+<guimenu>File</guimenu>
+<guimenuitem>Delete</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Permanently deletes the currently selected item(s). The items are not moved
+to the trash and cannot be restored.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Alt;<keycap>Return</keycap></keycombo>
+</shortcut>
+<guimenu>File</guimenu>
+<guimenuitem>Properties</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Shows the properties dialog for the currently selected
+item(s).</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo>
+</shortcut>
+<guimenu>File</guimenu>
+<guimenuitem>Quit</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Exits &dolphin;.</action></para></listitem>
+</varlistentry>
+</variablelist>
+
+</para>
+</sect2>
+
+<sect2>
+<title>The Edit Menu</title>
+<para>
+
+<variablelist>
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
+</shortcut>
+<guimenu>Edit</guimenu>
+<guimenuitem>Undo</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Undoes the last action performed by &dolphin;.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>X</keycap></keycombo>
+</shortcut>
+<guimenu>Edit</guimenu>
+<guimenuitem>Cut</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Cuts the currently selected item(s).</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>C</keycap></keycombo>
+</shortcut>
+<guimenu>Edit</guimenu>
+<guimenuitem>Copy</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Copies the currently selected item(s).</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>V</keycap></keycombo>
+</shortcut>
+<guimenu>Edit</guimenu>
+<guimenuitem>Paste</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Pastes the currently copied/cut items to the current
+folder. If the clipboard does not contain files or folders, the clipboard
+contents (such as text or image data) will be pasted into a new file.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>A</keycap></keycombo>
+</shortcut>
+<guimenu>Edit</guimenu>
+<guimenuitem>Select All</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Selects all files and folders in the current
+folder.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;&Shift;<keycap>A</keycap></keycombo>
+</shortcut>
+<guimenu>Edit</guimenu>
+<guimenuitem>Invert Selection</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>
+Selects all unselected items and deselects all selected items in the current folder.
+</action></para></listitem>
+</varlistentry>
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title>The View Menu</title>
+<para>
+
+<variablelist>
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>+</keycap></keycombo>
+</shortcut>
+<guimenu>View</guimenu>
+<guimenuitem>Zoom In</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Increases the size of icons in the view.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>-</keycap></keycombo>
+</shortcut>
+<guimenu>View</guimenu>
+<guimenuitem>Zoom Out</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Decreases the size of icons in the view.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>View</guimenu>
+<guisubmenu>View Mode</guisubmenu>
+</menuchoice></term>
+<listitem><para><action>Changes the view mode to <guimenuitem>Icons</guimenuitem>
+(<keycombo action="simul">&Ctrl;<keycap>1</keycap></keycombo>), <guimenuitem>Details</guimenuitem>
+(<keycombo action="simul">&Ctrl;<keycap>2</keycap></keycombo>) or <guimenuitem>Columns</guimenuitem>
+(<keycombo action="simul">&Ctrl;<keycap>3</keycap></keycombo>).</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>View</guimenu>
+<guisubmenu>Sort By</guisubmenu>
+</menuchoice></term>
+<listitem><para><action>Changes whether items are sorted by <guimenuitem>Name</guimenuitem>,
+<guimenuitem>Size</guimenuitem>, <guimenuitem>Date</guimenuitem>,
+<guimenuitem>Permissions</guimenuitem>, <guimenuitem>Owner</guimenuitem>,
+<guimenuitem>Group</guimenuitem> or <guimenuitem>Type</guimenuitem>.
+<guimenuitem>Descending</guimenuitem> reverses the sort order.
+<guimenuitem>Folders First</guimenuitem> sorts folders before files.
+</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>View</guimenu>
+<guisubmenu>Additional Information</guisubmenu>
+</menuchoice></term>
+<listitem><para><action>Displays additional information</action> like
+<guimenuitem>Size</guimenuitem>, <guimenuitem>Date</guimenuitem>,
+<guimenuitem>Permissions</guimenuitem>, <guimenuitem>Owner</guimenuitem>,
+<guimenuitem>Group</guimenuitem> or <guimenuitem>Type</guimenuitem> in the different
+views.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>View</guimenu>
+<guimenuitem>Preview</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Displays a symbolic preview of the file contents </action> in the different
+view modes.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>View</guimenu>
+<guimenuitem>Show in Groups</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Displays</action> the content of the
+current folder grouped by file type (only available in the Icons view mode).</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Alt;<keycap>.</keycap></keycombo>
+</shortcut>
+<guimenu>View</guimenu>
+<guimenuitem>Show Hidden Files</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Shows all the hidden files and sub-folders within the current
+folder.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul"><keycap>F3</keycap></keycombo>
+</shortcut>
+<guimenu>View</guimenu>
+<guimenuitem>Split</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Enables and disables the split view mode.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul"><keycap>F5</keycap></keycombo>
+</shortcut>
+<guimenu>View</guimenu>
+<guimenuitem>Reload</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Reloads the current folder.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>View</guimenu>
+<guimenuitem>Stop</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Stops loading/reading the contents of the current
+folder.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>View</guimenu>
+<guisubmenu>Panels</guisubmenu>
+</menuchoice></term>
+<listitem><para><action>Enables and disables</action> the different <link linkend="panels">panels</link>:
+<guimenuitem>Places</guimenuitem> (<keycap>F9</keycap>), <guimenuitem>Information</guimenuitem>
+(<keycap>F11</keycap>), <guimenuitem>Folders</guimenuitem> (<keycap>F7</keycap>) and
+<guimenuitem>Terminal</guimenuitem> (<keycap>F4</keycap>).</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>L</keycap></keycombo>
+</shortcut>
+<guimenu>View</guimenu>
+<guisubmenu>Navigation Bar</guisubmenu>
+<guimenuitem>Editable Location</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Changes the navigation bar between the two modes; the
+<link linkend="location-bar-bread-crumb">bread crumb mode</link> and the
+<link linkend="location-bar-editable">editable mode</link>.
+</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycap>F6</keycap>
+</shortcut>
+<guimenu>View</guimenu>
+<guisubmenu>Navigation Bar</guisubmenu>
+<guimenuitem>Replace Location</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Switches the navigation bar to <link linkend="location-bar-editable">editable mode</link>,
+if necessary, and selects the location such that it can be replaced quickly.
+</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>View</guimenu>
+<guimenuitem>Adjust View Properties...</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Opens the <link linkend="view-properties-dialog">View Properties
+Dialog</link>.</action></para></listitem>
+</varlistentry>
+</variablelist>
+
+</para>
+</sect2>
+
+<sect2>
+<title>The Go Menu</title>
+<para>
+
+<variablelist>
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Alt;<keycap>Up</keycap></keycombo>
+</shortcut>
+<guimenu>Go</guimenu>
+<guimenuitem>Up</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Changes to the folder above the current folder.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Alt;<keycap>Left</keycap></keycombo>
+</shortcut>
+<guimenu>Go</guimenu>
+<guimenuitem>Back</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Changes to the previously viewed folder.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Alt;<keycap>Right</keycap></keycombo>
+</shortcut>
+<guimenu>Go</guimenu>
+<guimenuitem>Forward</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Undoes</action> a <quote>Go Back</quote> action.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Alt;<keycap>Home</keycap></keycombo>
+</shortcut>
+<guimenu>Go</guimenu>
+<guimenuitem>Home</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Changes to the users home folder, &eg;,
+/home/Peter/.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Alt;<keycap>Home</keycap></keycombo>
+</shortcut>
+<guimenu>Go</guimenu>
+<guisubmenu>Recently Closed Tabs</guisubmenu>
+</menuchoice></term>
+<listitem><para><action>Shows a list of recently closed tabs which can
+be reopened.</action></para></listitem>
+</varlistentry>
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title>The Tools Menu</title>
+<para>
+
+<variablelist>
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>F</keycap></keycombo>
+</shortcut>
+<guimenu>Tools</guimenu>
+<guimenuitem>Find File...</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Opens &kfind; within the current folder.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>I</keycap></keycombo>
+</shortcut>
+<guimenu>Tools</guimenu>
+<guimenuitem>Show Filter Bar</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Enables and disables the <link linkend="filter-files">filter bar</link>.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Shift;<keycap>F4</keycap></keycombo>
+</shortcut>
+<guimenu>Tools</guimenu>
+<guimenuitem>Open Terminal</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Opens &konsole; within the current folder.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Tools</guimenu>
+<guimenuitem>Compare Files</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Compare the currently selected files with
+&kompare;.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Tools</guimenu>
+<guisubmenu>Select Remote Charset</guisubmenu>
+</menuchoice></term>
+<listitem><para><action>Offers to choose the charset used by a remote
+connection manually.</action></para></listitem>
+</varlistentry>
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title>The Settings Menu</title>
+<para>
+
+<variablelist>
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>M</keycap></keycombo>
+</shortcut>
+<guimenu>Settings</guimenu>
+<guimenuitem>Show Menubar</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Hides and shows the menubar.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Show Toolbar</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Hides and shows the toolbar.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Configure Shortcuts...</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Opens the shortcut configuration dialog.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Configure Toolbars...</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Opens the toolbar configuration dialog.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Configure &dolphin;...</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Opens the &dolphin; configuration dialog.</action></para></listitem>
+</varlistentry>
+</variablelist>
+</para>
+</sect2>
+
+<sect2>
+<title>The Help Menu</title>
+
+
+<!-- Assuming you have a standard help menu (help, what's this, about -->
+<!-- &dolphin;, about &kde;) then the documentation is already written. -->
+<!-- The following entity is valid anywhere that a variablelist is -->
+<!-- valid.  -->
+
+&help.menu.documentation;
+
+</sect2>
+
+</sect1>
+</chapter>
