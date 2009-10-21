@@ -164,7 +164,7 @@ sorting of the files in the current folder can also be modified in the
 <link linkend="view-properties-dialog">View Properties dialog</link>. By
 default, these settings are remembered for each folder separately. This
 behavior can be changed in the
-<link linkend="preferences-dialog-general"><quote>General</quote> section of the settings</link>.
+<link linkend="preferences-dialog-general"><quote>General</quote></link> section of the settings.
 </para>
 
 <sect3 id="dolphin-view-modes">
@@ -194,11 +194,11 @@ The details view offers the option <guilabel>Expandable Folders</guilabel>,
 which can be enabled in the <link linkend="preferences-dialog-viewmodes"><quote>View Modes</quote>
 section of the settings</link>. This option permits to view the current directory
 in a tree-like fashion: Each subfolder of the current folder can be
-<quote>expanded</quote> by clicking on the <guibutton>+</guibutton> button next to it.
+<quote>expanded</quote> by clicking on the <guiicon>+</guiicon> button next to it.
 </para></listitem>
 
 <listitem><para>
-In the <guibutton>Columns</guibutton> view, multiple levels of the folder
+In the <guilabel>Columns</guilabel> view, multiple levels of the folder
 structure can be viewed at once. If a subfolder is clicked, a new pane showing
 the contents of that folder is opened at the right edge of the view.
 </para></listitem>
@@ -272,8 +272,8 @@ between the previous current item and the clicked item will be selected.
 <listitem><para>
 If <guilabel>Show selection marker</guilabel> is enabled in the
 <link linkend="preferences-dialog-general-behavior"><quote>Behavior</quote>
-tab of the <quote>General</quote> section of the settings</link>, a small
-<guibutton>+</guibutton> or <guibutton>-</guibutton> button appears in the top
+tab of the <guilabel>General</guilabel> section of the settings</link>, a small
+<guiicon>+</guiicon> or <guiicon>-</guiicon> button appears in the top
 left corner of the item which is currently hovered with the mouse. Clicking
 this sign selects or deselects the item, respectively.
 </para></listitem>

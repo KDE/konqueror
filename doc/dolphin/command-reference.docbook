@@ -8,7 +8,7 @@ menus or toolbars. This may not be necessary for small apps or apps with no tool
 or menu bars. -->
 
 <sect1 id="commands-menubar">
-<title>The menu bar in &dolphin;'s main window</title>
+<title>The Menubar in &dolphin;'s Main Window</title>
 
 <sect2>
 <title>The File Menu</title>
@@ -428,9 +428,6 @@ Dialog</link>.</action></para></listitem>
 
 <varlistentry>
 <term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Alt;<keycap>Home</keycap></keycombo>
-</shortcut>
 <guimenu>Go</guimenu>
 <guisubmenu>Recently Closed Tabs</guisubmenu>
 </menuchoice></term>
@@ -519,9 +516,10 @@ connection manually.</action></para></listitem>
 <varlistentry>
 <term><menuchoice>
 <guimenu>Settings</guimenu>
-<guimenuitem>Show Toolbar</guimenuitem>
+<guisubmenu>Show Toolbar</guisubmenu>
 </menuchoice></term>
-<listitem><para><action>Hides and shows the toolbar.</action></para></listitem>
+<listitem><para><action>Hides and shows the <guimenuitem>Main Toolbar</guimenuitem> 
+and the <guimenuitem>Search Toolbar</guimenuitem>.</action></para></listitem>
 </varlistentry>
 
 <varlistentry>

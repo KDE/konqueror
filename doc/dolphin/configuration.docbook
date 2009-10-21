@@ -160,7 +160,7 @@ of all view modes</link>, the icons view has the following settings:
 
 <listitem><para>
 
-In the <quote>Text</quote> section:
+In the <guilabel>Text</guilabel> section:
 
 <itemizedlist>
 
@@ -182,7 +182,7 @@ the text of a file item.
 
 <listitem><para>
 
-In the <quote>Grid</quote> section:
+In the <guilabel>Grid</guilabel> section:
 
 <itemizedlist>
 
@@ -374,13 +374,13 @@ tab bar on top.
 <itemizedlist>
 
 <listitem><para>
-In the <quote>View Properties</quote> section, it can be configured if the
+In the <guilabel>View Properties</guilabel> section, it can be configured if the
 <link linkend="view-properties"> view properties</link> are stored for each
 folder or if common view properties are to be used for all folders.
 </para></listitem>
 
 <listitem><para>
-In the <quote>Ask for Confirmation When</quote> section, warning dialogs which
+In the <guilabel>Ask for Confirmation When</guilabel> section, warning dialogs which
 are shown before potentially harmful actions can be enabled.
 </para></listitem>
 
@@ -400,7 +400,7 @@ about it is shown next to it if <guilabel>Show tooltips</guilabel> is enabled.
 or <guibutton>-</guibutton> button above an item's icon if the item is hovered
 with the mouse. These can be used to select or deselect the item.
 </para></listitem>
-
+<!-- not in 4.3 -->
 <listitem><para>
 <guilabel>Natural sorting of items</guilabel> controls how items are sorted in
 the view. If this option is enabled, the sort order of three example files
@@ -430,7 +430,7 @@ leads to the sort order
 
 <para>
 In this tab, it can be configured for which file types previews are shown.
-Moreover, the maximum file size for which previews are generated can be chosen,
+Moreover, the maximum filesize for which previews are generated can be chosen,
 and it can be configured if thumbnails embedded in files are used or not.
 </para>
 
@@ -505,7 +505,7 @@ Sorting of folders and files &ndash; are folders shown first or not?
 
 <listitem><para>
 Previews &ndash; are they shown instead of icons (based on the settings made in
-<link linkend="preferences-dialog-general-previews"><quote>Previews</quote>
+<link linkend="preferences-dialog-general-previews"><guilabel>Previews</guilabel>
 tab of &dolphin;'s General settings</link>) or not?
 </para></listitem>
 
@@ -534,22 +534,22 @@ mode) can also be changed using toolbar buttons.
 <para>
 
 <screenshot>
-<screeninfo>Screenshot of the Adjust View Properties dialog</screeninfo>
+<screeninfo>Screenshot of the View Properties dialog</screeninfo>
 <mediaobject>
 <imageobject>
 <imagedata fileref="viewproperties-dialog.png" format="PNG"/>
 </imageobject>
 <textobject>
-<phrase>Adjust View Properties dialog.</phrase>
+<phrase>The View Properties dialog.</phrase>
 </textobject>
 <caption><para>The View Properties Dialog.</para></caption>
 </mediaobject>
 </screenshot>
 
-The <quote>Adjust View Properties</quote> dialog can be used to quickly modify
+The <guilabel>View Properties</guilabel> dialog can be used to quickly modify
 several view properties at once. This is done for the current folder, for the
 current folder including all subfolders, or even for all folders, depending on
-the choice made in the <quote>Apply View Properties To</quote> section.
+the choice made in the <guilabel>Apply View Properties To</guilabel> section.
 </para>
 
 <para>
