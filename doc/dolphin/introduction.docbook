@@ -1,0 +1,28 @@
+<chapter id="introduction">
+<title>Introduction</title>
+
+<!-- The introduction chapter contains a brief introduction for the
+application that explains what it does and where to report
+problems. Basically a long version of the abstract.  Don't include a
+revision history. (see installation appendix comment) -->
+
+<para>
+&dolphin; is &kde;'s default file manager. It aims to improve usability at the
+user interface level. &dolphin; focuses only on being a file manager whereas
+&konqueror;, which was &kde;'s default file manager in &kde; 3 and can still be
+used for file management, is a universal viewer for many file types.
+</para>
+
+<para>
+This development approach allows for concentrating on optimizing the user
+interface for the specific task of file management.
+</para>
+
+<para>
+Please report any problems or feature requests to the &dolphin; author via the
+bug report dialog. This is accessible from the
+<menuchoice><guimenu>Help</guimenu><guimenuitem>Report Bug...</guimenuitem></menuchoice>
+menu of the application.
+</para>
+
+</chapter>
