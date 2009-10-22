@@ -3713,12 +3713,12 @@ void KonqMainWindow::initActions()
 
   m_paMoveTabLeft = actionCollection()->addAction("tab_move_left");
   m_paMoveTabLeft->setText( i18n("Move Tab Left") );
-  m_paMoveTabLeft->setIcon( KIcon("tab-move-left") );
+  m_paMoveTabLeft->setIcon( KIcon("arrow-left") );
   connect(m_paMoveTabLeft, SIGNAL(triggered()), SLOT( slotMoveTabLeft()));
   m_paMoveTabLeft->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_Left);
   m_paMoveTabRight = actionCollection()->addAction("tab_move_right");
   m_paMoveTabRight->setText( i18n("Move Tab Right") );
-  m_paMoveTabRight->setIcon( KIcon("tab-move-right") );
+  m_paMoveTabRight->setIcon( KIcon("arrow-right") );
   connect(m_paMoveTabRight, SIGNAL(triggered()), SLOT( slotMoveTabRight()));
   m_paMoveTabRight->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_Right);
 
