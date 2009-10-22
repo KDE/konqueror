@@ -43,34 +43,6 @@
 #include <QtGui/QApplication>
 #include <QtGui/QPrintPreviewDialog>
 #include <QtWebKit/QWebFrame>
-#include <QtWebKit/QWebHistory>
-
-struct WebPageInfo
-{
-  WebPageInfo()
-  : xOffset(0), yOffset(0) {}
-
-  QUrl url;
-  QString frameName;
-  int xOffset;
-  int yOffset;
-
-
-  inline friend QDataStream &operator >> ( QDataStream &stream, WebPageInfo &info) {
-      stream >> info.url >> info.frameName >> info.xOffset >> info.yOffset;
-      return stream;
-  }
-
-  inline friend QDataStream &operator << ( QDataStream &stream, const WebPageInfo &info) {
-      stream << info.url << info.frameName << info.xOffset << info.yOffset;
-      return stream;
-  }
-
-  inline friend kdbgstream &operator << ( kdbgstream &stream, const WebPageInfo &info) {
-      stream << info.url << info.frameName << info.xOffset << info.yOffset;
-      return stream;
-  }
-};
 
 
 class WebKitBrowserExtension::WebKitBrowserExtensionPrivate
@@ -98,51 +70,24 @@ WebKitBrowserExtension::~WebKitBrowserExtension()
     delete d;
 }
 
-int WebKitBrowserExtension::xOffset()
-{
-    if (d->view && d->view->page())
-        return d->view->page()->mainFrame()->scrollPosition().x();
-
-    return KParts::BrowserExtension::xOffset();
-}
-
-int WebKitBrowserExtension::yOffset()
-{
-    if (d->view && d->view->page())
-      return d->view->page()->mainFrame()->scrollPosition().y();
-
-    return KParts::BrowserExtension::yOffset();
-}
-
 void WebKitBrowserExtension::saveState(QDataStream &stream)
 {
-    //kDebug() << "xoffset:" << xOffset() << ", yoffset:" << yOffset();
-
-    KParts::BrowserExtension::saveState(stream);
-#if 0
-    // TODO: Find a way to restore the state of frames when user navigates histroy
-    // The code below saves the child frame information, but for now there is no
-    // easy way to restore this back in QWebPage/QWebFrame...
-    if (d->view) {
-        QList<WebPageInfo> pageInfoList;
-        QListIterator<QWebFrame*> it (d->view->page()->mainFrame()->childFrames());
-        while (it.hasNext()) {
-          QWebFrame* frame = it.next();
-          WebPageInfo pageInfo;
-          pageInfo.url = frame->url();
-          pageInfo.frameName = frame->frameName();
-          pageInfo.xOffset = frame->scrollPosition().x();
-          pageInfo.yOffset = frame->scrollPosition().y();
-          pageInfoList << pageInfo;
-        }
-        stream << pageInfoList;
-    }
-#endif
+    stream << d->part->url() << (qint32)xOffset() << (qint32)yOffset();
 }
 
 void WebKitBrowserExtension::restoreState(QDataStream &stream)
-{
-    KParts::BrowserExtension::restoreState(stream);
+{  
+    KUrl u;
+    qint32 xOfs, yOfs;
+    stream >> u >> xOfs >> yOfs;
+
+    KParts::OpenUrlArguments args;
+    args.setXOffset(xOfs);
+    args.setYOffset(yOfs);
+    args.metaData().insert("restore-state", QString());
+
+    d->part->setArguments(args);
+    d->part->openUrl(u);
 }
 
 void WebKitBrowserExtension::cut()

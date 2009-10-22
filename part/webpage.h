@@ -54,12 +54,26 @@ public:
      */
     const WebSslInfo& sslInfo() const;
 
+    /**
+     * Sets the cached page SSL information to @p info.
+     *
+     * @see WebSslInfo
+     */
+    void setSslInfo (const WebSslInfo& info);
+
 Q_SIGNALS:
+    /**
+     * This signal is emitted whenever a navigation request is accepted except
+     * for Reload and Back/Forward navigation requests.
+     *
+     * If the navigation request is rejected for whatever reason, this signal will
+     * not be emitted.
+     */
     void updateHistory();
 
-    /**
-     * This signal is emitted whenever a navigation request by the main frame completes.
-     */
+     /**
+      * This signal is emitted whenever a navigation request by the main frame completes.
+      */
     void navigationRequestFinished();
 
     /**

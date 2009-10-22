@@ -99,13 +99,7 @@ void WebView::loadUrl(const KUrl &url, const KParts::OpenUrlArguments &args, con
 
     QNetworkRequest req;
     req.setUrl(url);
-
-    KIO::MetaData metaData (args.metaData());
-    req.setRawHeader("Referer", metaData.value("referrer").toUtf8());
-
-    if (!metaData.isEmpty()) {
-        req.setAttribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData), metaData.toVariant());
-    }
+    req.setRawHeader("Referer", args.metaData().value("referrer").toUtf8());
 
     if (bargs.postData.isEmpty()) {
         KWebView::load(req);

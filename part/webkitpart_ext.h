@@ -37,9 +37,6 @@ public:
     WebKitBrowserExtension(WebKitPart *parent);
     ~WebKitBrowserExtension();
 
-  virtual int xOffset();
-  virtual int yOffset();
-
   virtual void saveState( QDataStream &);
   virtual void restoreState( QDataStream &);
 

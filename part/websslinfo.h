@@ -48,13 +48,12 @@ public:
   int usedChiperBits () const;
   QList<QSslCertificate> certificateChain() const;
 
+  void fromMetaData (const QVariant &);
+  void setUrl (const QUrl &url);
+
   WebSslInfo& operator = (const WebSslInfo&);
 
-  void fromMetaData (const QVariant &);
-
-  void reset();
-
-  void setUrl (const QUrl &url);
+protected:
   void setCiphers(const QString& ciphers);
   void setProtocol(const QString& protocol);
   void setPeerAddress(const QString& address);

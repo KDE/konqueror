@@ -54,26 +54,25 @@ protected:
     void guiActivateEvent(KParts::GUIActivateEvent *);
     virtual bool openFile();
     void initAction();
-    void updateHistory(bool enable = false);
     void showError(const QString &, const QString & frameName = QString());
     void setSslInfo(const QVariant &);
 
 private Q_SLOTS:
     void showSecurity();
+    void updateHistory();
     void showSearchBar();
     void loadStarted();
     void loadFinished(bool);
     void loadAborted(const QUrl &);
     void loadError(int, const QString &, const QString &);
 
-    void navigationRequestFinished();
+    void navigationRequestFinished();    
     void searchForText(const QString &text, bool backward);
     void linkHovered(const QString &, const QString&, const QString &);
 
     void urlChanged(const QUrl &);
-    void setWindowTitle(const QString &);
 
-private:
+  private:
     class WebKitPartPrivate;
     WebKitPartPrivate* d;
 };

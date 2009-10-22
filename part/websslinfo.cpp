@@ -112,31 +112,18 @@ QList<QSslCertificate> WebSslInfo::certificateChain() const
 
 WebSslInfo& WebSslInfo::operator=(const WebSslInfo& other)
 {
-  d->ciphers = other.ciphers();
-  d->protocol = other.protocol();
-  d->certErrors = other.certificateErrors();
-  d->peerAddress = other.peerAddress();
-  d->parentAddress = other.parentAddress();
-  d->certificateChain = other.certificateChain();
+  d->ciphers = other.d->ciphers;
+  d->protocol = other.d->protocol;
+  d->certErrors = other.d->certErrors;
+  d->peerAddress = other.d->peerAddress;
+  d->parentAddress = other.d->parentAddress;
+  d->certificateChain = other.d->certificateChain;
 
-  d->usedCipherBits = other.usedChiperBits();
-  d->supportedCipherBits = other.supportedChiperBits();
+  d->usedCipherBits = other.d->usedCipherBits;
+  d->supportedCipherBits = other.d->supportedCipherBits;
+  d->url = other.d->url;
 
   return *this;
-}
-
-void WebSslInfo::reset()
-{
-  d->url.clear();
-  d->ciphers.clear();
-  d->protocol.clear();
-  d->certErrors.clear();
-  d->peerAddress.clear();
-  d->parentAddress.clear();
-  d->certificateChain.clear();
-
-  d->usedCipherBits = 0;
-  d->supportedCipherBits = 0;
 }
 
 void WebSslInfo::fromMetaData(const QVariant& value)

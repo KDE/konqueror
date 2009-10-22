@@ -220,6 +220,11 @@ const WebSslInfo& WebPage::sslInfo() const
     return d->sslInfo;
 }
 
+void WebPage::setSslInfo (const WebSslInfo& info)
+{
+    d->sslInfo = info;
+}
+
 void WebPage::saveUrl(const KUrl &url)
 {
     slotDownloadRequest(QNetworkRequest(url));
@@ -227,8 +232,6 @@ void WebPage::saveUrl(const KUrl &url)
 
 bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request, NavigationType type)
 {
-    //kDebug() << "type: " << type << ", frame: " << frame  << ", url: " << request.url();
-
     // Handle "mailto:" url here...
     if (handleMailToUrl(request.url(), type))
       return false;
@@ -247,13 +250,20 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
         switch (type) {
             case QWebPage::NavigationTypeFormResubmitted:
             case QWebPage::NavigationTypeFormSubmitted:
-                if (!checkFormData(request))
-                    return false; // NOTE: NO break statement on purpose!
-            case QWebPage::NavigationTypeLinkClicked:
-                if (!checkLinkSecurity(request, type))
+                if (!checkFormData(request)) {
                     return false;
-                if (d->sslInfo.isValid())
+                }
+                // NOTE: Missing break statement is on purpose!
+            case QWebPage::NavigationTypeLinkClicked:
+                if (!checkLinkSecurity(request, type)) {
+                    return false;
+                }
+                if (d->sslInfo.isValid()) {
                     setRequestMetaData("ssl_was_in_use", "TRUE");
+                }
+                // NOTE: Missing break statement is on purpose!
+            case QWebPage::NavigationTypeOther:
+                emit updateHistory(); // Make sure the history gets updated...
                 break;                
             default:
                 break;
@@ -261,9 +271,6 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
 
         if (frame == mainFrame()) {
             setRequestMetaData("main_frame_request", "TRUE");
-            if (request.url() == d->part->url()) {
-                d->sslInfo.fromMetaData(request.attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData)));
-            }
         } else {
             setRequestMetaData("main_frame_request", "FALSE");
         }
@@ -426,11 +433,12 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
         if (statusCode > 300 && statusCode < 304) {            
             kDebug() << "Redirected to " << reply->url();
         } else {
-            // TODO: Look into supporting mixed mode, part secure/part not, pages at some point....
-            // For now we only deal with SSL info for the main page...
+            // TODO: Perhaps look into supporting mixed mode, part secure and
+            // part not, sites at some point. For now we only deal with SSL
+            // information for the main page like most browsers.
             if (frameName.isEmpty() && d->sslInfo.isValid() && !domainSchemeMatch(reply->url(), d->sslInfo.url())) {
                 kDebug() << "Reseting cached SSL info...";
-                d->sslInfo.reset();
+                d->sslInfo = WebSslInfo();
             }
 
             // Handle any error...
@@ -454,9 +462,9 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
             }
 
             if (frameName.isEmpty()) {
+                // Obtain and set the SSL information if any...
                 if (!d->sslInfo.isValid()) {
-                    const QNetworkRequest::Attribute attr = static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData);
-                    d->sslInfo.fromMetaData(reply->attribute(attr));
+                    d->sslInfo.fromMetaData(reply->attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData)));
                     d->sslInfo.setUrl(reply->url());
                 }
 
@@ -465,9 +473,6 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
 
             emit navigationRequestFinished();
         }
-
-        kDebug() << "[History] index=" << history()->currentItemIndex()
-                 << ", count=" << history()->count();
     }
 }
 

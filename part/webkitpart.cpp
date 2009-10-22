@@ -55,6 +55,7 @@
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QPrintPreviewDialog>
 #include <QtWebKit/QWebFrame>
+#include <QWebHistory>
 
 
 #define QL1(x)    QLatin1String(x)
@@ -62,7 +63,7 @@
 
 static QString htmlError (int code, const QString& text, const KUrl& reqUrl)
 {
-  kDebug() << "errorCode" << code << "text" << text;
+  // kDebug() << "errorCode" << code << "text" << text;
 
   QString errorName, techName, description;
   QStringList causes, solutions;
@@ -153,7 +154,6 @@ public:
 
   bool updateHistory;
 
-  QPoint scrollPos;
   QPointer<WebView> webView;
   QPointer<WebPage> webPage;
   QPointer<KDEPrivate::SearchBar> searchBar;
@@ -195,40 +195,36 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
     lay->setMargin(0);
     lay->setSpacing(0);
 
-    d->webView = new WebView (this, mainWidget);
-    d->searchBar = new KDEPrivate::SearchBar;
-
+    // Add the WebView...
+    d->webView = new WebView (this, mainWidget); 
     lay->addWidget(d->webView);
-    lay->addWidget(d->searchBar);
-
-
     connect(d->webView, SIGNAL(titleChanged(const QString &)),
-            this, SLOT(setWindowTitle(const QString &)));
+            this, SIGNAL(setWindowCaption(const QString &)));
     connect(d->webView, SIGNAL(loadFinished(bool)),
             this, SLOT(loadFinished(bool)));
     connect(d->webView, SIGNAL(urlChanged(const QUrl &)),
             this, SLOT(urlChanged(const QUrl &)));
-#if 0
-    connect(d->webView, SIGNAL(statusBarMessage(const QString&)),
-            this, SIGNAL(setStatusBarText(const QString &)));
-#endif
 
+    // Add the search bar...
+    d->searchBar = new KDEPrivate::SearchBar;
+    lay->addWidget(d->searchBar);
     connect(d->searchBar, SIGNAL(searchTextChanged(const QString &, bool)),
             this, SLOT(searchForText(const QString &, bool)));
 
     d->webPage = qobject_cast<WebPage*>(d->webView->page());
-    Q_ASSERT(webPage);
+    Q_ASSERT(d->webPage);
 
     connect(d->webPage, SIGNAL(loadStarted()),
             this, SLOT(loadStarted()));
-    connect(d->webPage, SIGNAL(navigationRequestFinished()),
-            this, SLOT(navigationRequestFinished()));
     connect(d->webPage, SIGNAL(loadAborted(const QUrl &)),
             this, SLOT(loadAborted(const QUrl &)));
     connect(d->webPage, SIGNAL(loadError(int, const QString &, const QString &)),
             this, SLOT(loadError(int, const QString &, const QString &)));
     connect(d->webPage, SIGNAL(linkHovered(const QString &, const QString &, const QString &)),
             this, SLOT(linkHovered(const QString &, const QString&, const QString &)));
+    connect(d->webPage, SIGNAL(updateHistory()), this, SLOT(updateHistory()));
+    connect(d->webPage, SIGNAL(navigationRequestFinished()),
+            this, SLOT(navigationRequestFinished()));
 
     d->browserExtension = new WebKitBrowserExtension(this);
     connect(d->webPage, SIGNAL(loadProgress(int)),
@@ -324,9 +320,13 @@ bool WebKitPart::openUrl(const KUrl &url)
 {
     kDebug() << url;
 
-   // Ignore empty requests...
-   if (url.isEmpty())
-      return false;
+    // Ignore empty requests...
+    if (url.isEmpty())
+        return false;
+
+    // Do not update history when url is typed in since konqueror
+    // automatically does that itself.
+    d->updateHistory = false;
 
     if ( url.protocol() == "error" && url.hasSubUrl() ) {
         closeUrl();
@@ -350,13 +350,12 @@ bool WebKitPart::openUrl(const KUrl &url)
             if (error == KIO::ERR_USER_CANCELED) {
                 setUrl(d->webView->url());
                 emit d->browserExtension->setLocationBarUrl(KUrl(d->webView->url()).prettyUrl());
-                navigationRequestFinished();
             } else {
                 QString errorText = mainURL.queryItem( "errText" );
                 urls.pop_front();
                 KUrl reqUrl = KUrl::join( urls );
 
-                kDebug() << "Setting Url back to => " << reqUrl;
+                //kDebug() << "Setting Url back to => " << reqUrl;
                 emit d->browserExtension->setLocationBarUrl(reqUrl.prettyUrl());
                 setUrl(reqUrl);
 
@@ -370,16 +369,57 @@ bool WebKitPart::openUrl(const KUrl &url)
     }
 
     if (url.url() == "about:blank") {
-        setWindowTitle (url.url());
+        emit setWindowCaption (url.url());
     } else {
-        setUrl(url);
-        d->updateHistory = false;  // Do not update history when url is typed in since konqueror automatically does this itself!        
         KParts::OpenUrlArguments args (arguments());
         KIO::MetaData metaData (args.metaData());
-        d->scrollPos = QPoint(args.xOffset(),args.yOffset());
+
+        // Get any SSL information already present. This is necessary
+        // because Konqueror always does a lookup on a url to determine
+        // mime-type so that it can embed the proper part. If a site was
+        // SSL protected, the SSL information can be lost unless we set
+        // it here...
+        if (metaData.contains("ssl_in_use")) {
+            WebSslInfo sslinfo;
+            sslinfo.fromMetaData(metaData.toVariant());
+            sslinfo.setUrl(url);
+            d->webPage->setSslInfo(sslinfo);
+        }
+
+        // Check if the request originated from history navigation and
+        // attempt to sync between Konqueror's and QtWebKit's history.
+        // If syncing fails for any reason, fallback to opening the
+        // url as if it is a new request...
+        if (metaData.contains("restore-state")) {            
+            QWebHistory *history = d->webPage->history();
+            if (history && history->count()) {
+                QListIterator<QWebHistoryItem> historyIt (history->backItems(history->count()));
+                historyIt.toBack(); // Search backwards (LIFO)...
+                while (historyIt.hasPrevious()) {
+                    QWebHistoryItem item (historyIt.previous());
+                    if (url == item.originalUrl()) {
+                        //kDebug() << "History back => " << url;
+                        history->goToItem(item);
+                        return true;
+                    }
+                }
+
+                // Look in the forward items list next.
+                historyIt = history->forwardItems(history->count());
+                while (historyIt.hasNext()) {
+                    QWebHistoryItem item (historyIt.next());
+                    if (url == item.originalUrl()) {
+                      //kDebug() << "History forward => " << url;
+                      history->goToItem(item);
+                      return true;
+                    }
+                }
+            }
+        }
+
+        setUrl(url);
         d->webView->loadUrl(url, args, browserExtension()->browserArguments());
     }
-
     return true;
 }
 
@@ -402,6 +442,7 @@ bool WebKitPart::openFile()
 
 void WebKitPart::loadStarted()
 {
+    d->updateHistory = false;
     emit started(0);
 }
 
@@ -420,11 +461,7 @@ void WebKitPart::loadFinished(bool ok)
         // a work around here for pages that do not contain it, such as
         // text documents...
         urlChanged(d->webView->url());
-    }    
-
-    // Restore the page to its proper position...
-    if (!d->scrollPos.isNull())
-        d->webView->page()->mainFrame()->setScrollPosition(d->scrollPos);
+    }
 
     /*
       NOTE #1: QtWebKit will not kill a META redirect request even if one
@@ -457,16 +494,6 @@ void WebKitPart::loadFinished(bool ok)
 #endif
 }
 
-void  WebKitPart::navigationRequestFinished()
-{
-    kDebug();
-    updateHistory();
-    if (d->webPage->sslInfo().isValid())
-      d->browserExtension->setPageSecurity(WebKitPart::WebKitPartPrivate::Encrypted);
-    else
-      d->browserExtension->setPageSecurity(WebKitPart::WebKitPartPrivate::Unencrypted);
-}
-
 void WebKitPart::loadAborted(const QUrl & url)
 {  
     closeUrl();
@@ -481,13 +508,16 @@ void WebKitPart::loadError(int errCode, const QString &errStr, const QString &fr
     showError(htmlError(errCode, errStr, url()), frameName);
 }
 
-void WebKitPart::urlChanged(const QUrl& _url)
+void  WebKitPart::navigationRequestFinished()
 {
-    QUrl currentUrl (url());
-    if ((_url.toString(QUrl::RemoveFragment) == currentUrl.toString(QUrl::RemoveFragment)) &&
-        (_url.fragment() != currentUrl.fragment()))
-        updateHistory(true);
+    if (d->webPage->sslInfo().isValid())
+      d->browserExtension->setPageSecurity(WebKitPart::WebKitPartPrivate::Encrypted);
+    else
+      d->browserExtension->setPageSecurity(WebKitPart::WebKitPartPrivate::Unencrypted);
+}
 
+void WebKitPart::urlChanged(const QUrl& _url)
+{  
     setUrl(_url);
     emit d->browserExtension->setLocationBarUrl(KUrl(_url).prettyUrl());
 }
@@ -512,15 +542,11 @@ void WebKitPart::showSecurity()
     }
 }
 
-void WebKitPart::updateHistory(bool enable)
-{
-    // Send a history update request to Konqueror whenever QtWebKit requests
-    // the clearing of the Window title which indicates content change...
-    kDebug() <<  "update history ? "<< d->updateHistory;
-
+void WebKitPart::updateHistory()
+{  
+    kDebug() << d->updateHistory;
     if (d->updateHistory) {
         emit d->browserExtension->openUrlNotify();
-        d->updateHistory = enable;
     }
 }
 
@@ -544,7 +570,7 @@ void WebKitPart::linkHovered(const QString &link, const QString &, const QString
     if (QString::compare(scheme, QL1("mailto"), Qt::CaseInsensitive) == 0) {
         message += i18n("Email: ");
 
-        // Workaround: QUrl's parsing deficiencies "mailto:foo@bar.com".
+        // Workaround: for QUrl's parsing deficiencies of "mailto:foo@bar.com".
         if (!linkUrl.hasQuery())
           linkUrl = QUrl(scheme + '?' + linkUrl.path());
 
@@ -600,17 +626,7 @@ void WebKitPart::showError(const QString &html, const QString &frameName)
 
   Q_ASSERT (frame);
 
-  const bool signalsBlocked = d->webView->blockSignals(true);
   frame->setHtml(html);
-  d->webView->blockSignals(signalsBlocked);
-}
-
-void WebKitPart::setWindowTitle(const QString &title)
-{
-    if (title.isEmpty())
-      updateHistory();
-
-    emit setWindowCaption(title);
 }
 
 void WebKitPart::searchForText(const QString &text, bool backward)
