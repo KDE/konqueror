@@ -250,6 +250,7 @@ const KAboutData *KonqFactory::aboutData()
     s_aboutData->addAuthor( ki18n("Zack Rusin"),  ki18n("Developer (HTML rendering engine)"), "zack@kde.org" );
     s_aboutData->addAuthor( ki18n("Tobias Anton"), ki18n( "Developer (HTML rendering engine)" ), "anton@stud.fbi.fh-darmstadt.de" );
     s_aboutData->addAuthor( ki18n("Lubos Lunak"), ki18n( "Developer (HTML rendering engine)" ), "l.lunak@kde.org" );
+    s_aboutData->addAuthor( ki18n("Maks Orlovich"), ki18n( "Developer (HTML rendering engine, JavaScript)" ), "maksim@kde.org" );
     s_aboutData->addAuthor( ki18n("Allan Sandfeld Jensen"), ki18n( "Developer (HTML rendering engine)" ), "kde@carewolf.com" );
     s_aboutData->addAuthor( ki18n("Apple Safari Developers"), ki18n("Developer (HTML rendering engine, JavaScript)"));
     s_aboutData->addAuthor( ki18n("Harri Porten"), ki18n("Developer (JavaScript)"), "porten@kde.org" );
