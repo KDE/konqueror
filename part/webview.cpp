@@ -175,6 +175,13 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &part
         action = d->actionCollection->action("copyimage");
         action->setEnabled(!d->result.pixmap().isNull());
         partActions.append(action);
+
+        if (!d->actionCollection->action("viewimage")) {
+            action = new KAction(i18n("View Image (%1)").arg(KUrl(d->result.imageUrl()).fileName()), this);
+            d->actionCollection->addAction("viewimage", action);
+            connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotViewImage()));
+        }
+        partActions.append(d->actionCollection->action("viewimage"));
     }
 
     if (d->result.linkUrl().isEmpty()) {

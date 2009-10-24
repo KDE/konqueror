@@ -311,6 +311,15 @@ void WebKitBrowserExtension::slotCopyImage()
     }
 }
 
+void WebKitBrowserExtension::slotViewImage()
+{
+    if (d->view) {
+        KParts::OpenUrlArguments args;
+        args.metaData()["referrer"] = d->view->contextMenuResult().linkText();
+        emit createNewWindow(d->view->contextMenuResult().imageUrl(), args);
+    }
+}
+
 void WebKitBrowserExtension::slotCopyLinkLocation()
 {
     if (d->view) {

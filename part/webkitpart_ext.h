@@ -67,6 +67,7 @@ public Q_SLOTS:
     void slotSaveImageAs();
     void slotSendImage();
     void slotCopyImage();
+    void slotViewImage();
 
     void slotCopyLinkLocation();
     void slotSaveLinkAs();
