@@ -195,7 +195,7 @@ void ModuleManagerTest::testReAddGlobalModule()
 
 void ModuleManagerTest::testRollback()
 {
-    m_moduleManager->rollbackToDefault(0);
+    m_moduleManager->rollbackToDefault();
     testListModules();
 }
 

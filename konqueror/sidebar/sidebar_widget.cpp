@@ -215,7 +215,7 @@ void Sidebar_Widget::slotRollback()
 {
     if (KMessageBox::warningContinueCancel(this, i18n("<qt>This removes all your entries from the sidebar and adds the system default ones.<br /><b>This procedure is irreversible</b><br />Do you want to proceed?</qt>"))==KMessageBox::Continue)
     {
-        m_moduleManager.rollbackToDefault(this);
+        m_moduleManager.rollbackToDefault();
         QTimer::singleShot(0, this, SLOT(updateButtons()));
     }
 }
