@@ -20,7 +20,7 @@
 
 #include "module_manager.h"
 #include <kdesktopfile.h>
-#include <kio/netaccess.h>
+#include <kio/deletejob.h>
 #include <kconfig.h>
 #include <kconfiggroup.h>
 #include <kdebug.h>
@@ -103,7 +103,7 @@ QString ModuleManager::moduleFullPath(const QString& fileName) const
     return KGlobal::dirs()->locate("data", moduleDataPath(fileName));
 }
 
-void ModuleManager::rollbackToDefault(QWidget* parent)
+void ModuleManager::rollbackToDefault()
 {
     const QString loc = KGlobal::dirs()->saveLocation("data", "konqsidebartng/");
     QDir dir(loc);
@@ -111,7 +111,8 @@ void ModuleManager::rollbackToDefault(QWidget* parent)
     Q_FOREACH(const QString& subdir, dirEntries) {
         if (subdir != "add") {
             kDebug() << "Deleting" << (loc+subdir);
-            KIO::NetAccess::del(KUrl(loc+subdir), parent);
+            KIO::Job* job = KIO::del(KUrl(loc+subdir), KIO::HideProgressInfo);
+            job->exec();
         }
     }
     m_config->writeEntry("DeletedModules", QStringList());

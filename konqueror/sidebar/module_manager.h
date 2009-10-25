@@ -51,7 +51,7 @@ public:
     /// Returns the full path for a given module. TEMP HACK, TO BE REMOVED
     QString moduleFullPath(const QString& fileName) const;
 
-    void rollbackToDefault(QWidget* parent);
+    void rollbackToDefault();
 
     void setModuleName(const QString& fileName, const QString& moduleName);
     void setModuleUrl(const QString& fileName, const KUrl& url);
