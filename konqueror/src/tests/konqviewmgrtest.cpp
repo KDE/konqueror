@@ -65,6 +65,7 @@ void ViewMgrTest::sendAllPendingResizeEvents( QWidget* mainWindow )
         allChildWidgets.prepend( mainWindow );
         foreach( QWidget* w, allChildWidgets ) {
             if (w->testAttribute(Qt::WA_PendingResizeEvent)) {
+                w->setAttribute(Qt::WA_WState_Created, true); // hack: avoid assert in Qt-4.6
                 //qDebug() << "Resizing" << w << " to " << w->size() << endl;
                 QResizeEvent e(w->size(), QSize());
                 QApplication::sendEvent(w, &e);
