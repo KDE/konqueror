@@ -59,10 +59,9 @@
 #include <QtDBus/QDBusConnection>
 #include <QtDBus/QDBusReply>
 
-#define QL1(x)  QLatin1String(x)
+#define QL1(x)    QLatin1String(x)
 
-
-KWebPage::KWebPage(QObject *parent)
+KWebPage::KWebPage(QObject *parent, qlonglong windowId)
          :QWebPage(parent), d(0)
 {  
     // KDE KParts integration for <embed> tag...
@@ -72,11 +71,22 @@ KWebPage::KWebPage(QObject *parent)
     setNetworkAccessManager(new KDEPrivate::NetworkAccessManager(this));
 
     // KDE Cookiejar (KCookieJar) integration...
-    qlonglong windowId = view()->window()->winId();
     KDEPrivate::NetworkCookieJar *cookiejar = new KDEPrivate::NetworkCookieJar;
-    cookiejar->setWindowId(windowId);
+
+    // If windowid is 0, the default, make a best effort attempt to try and
+    // determine that value from the parent object.
+    if (!windowId) {
+        QWidget *widget = qobject_cast<QWidget*>(parent);
+        if (widget)
+            windowId = widget->window()->winId();
+    }
+
+    if (windowId) {
+      cookiejar->setWindowId(windowId);
+      setSessionMetaData(QL1("window-id"), QString::number(windowId));
+    }
+
     networkAccessManager()->setCookieJar(cookiejar);
-    setSessionMetaData(QL1("window-id"), QString::number(windowId));
 
     action(Back)->setIcon(KIcon("go-previous"));
     action(Back)->setShortcut(KStandardShortcut::back().primary());
@@ -141,6 +151,28 @@ bool KWebPage::isExternalContentAllowed() const
     return true;
 }
 
+QString KWebPage::sessionMetaData(const QString &key) const
+{
+    QString value;
+
+    KDEPrivate::NetworkAccessManager *manager = qobject_cast<KDEPrivate::NetworkAccessManager*>(networkAccessManager());
+    if (manager)
+        value = manager->sessionMetaData().value(key);
+
+    return value;
+}
+
+QString KWebPage::requestMetaData(const QString &key) const
+{
+    QString value;
+
+    KDEPrivate::NetworkAccessManager *manager = qobject_cast<KDEPrivate::NetworkAccessManager*>(networkAccessManager());
+    if (manager)
+        value = manager->requestMetaData().value(key);
+
+    return value;
+}
+
 void KWebPage::setSessionMetaData(const QString &key, const QString &value)
 {
     KDEPrivate::NetworkAccessManager *manager = qobject_cast<KDEPrivate::NetworkAccessManager*>(networkAccessManager());
@@ -155,56 +187,29 @@ void KWebPage::setRequestMetaData(const QString &key, const QString &value)
         manager->requestMetaData()[key] = value;
 }
 
-QString KWebPage::chooseFile(QWebFrame *frame, const QString &suggestedFile)
-{
-    return KFileDialog::getOpenFileName(suggestedFile, QString(), frame->page()->view());
-}
-
-void KWebPage::javaScriptAlert(QWebFrame *frame, const QString &msg)
-{
-    KMessageBox::error(frame->page()->view(), msg, i18n("JavaScript"));
-}
-
-bool KWebPage::javaScriptConfirm(QWebFrame *frame, const QString &msg)
-{
-    return (KMessageBox::warningYesNo(frame->page()->view(), msg, i18n("JavaScript"),
-                                      KStandardGuiItem::ok(), KStandardGuiItem::cancel())
-            == KMessageBox::Yes);
-}
-
-bool KWebPage::javaScriptPrompt(QWebFrame *frame, const QString &msg, const QString &defaultValue, QString *result)
-{
-    bool ok = false;
-
-    QString text = KInputDialog::getText(i18n("JavaScript"), msg, defaultValue, &ok, frame->page()->view());
-
-    if (result)
-      *result = text;
-
-    return ok;
-}
-
 QString KWebPage::userAgentForUrl(const QUrl& _url) const
 {
     const KUrl url(_url);
     QString userAgent = KProtocolManager::userAgentForHost((url.isLocalFile() ? "localhost" : url.host()));
 
     if (userAgent == KProtocolManager::defaultUserAgent())
-        userAgent = QWebPage::userAgentForUrl(_url);
-    else {
-        const int index = userAgent.indexOf("KHTML/");
-        if (index > -1) {
-          QString webKitUserAgent = QWebPage::userAgentForUrl(_url);
-          userAgent = userAgent.left(index);
-          webKitUserAgent = webKitUserAgent.mid(webKitUserAgent.indexOf("AppleWebKit/"));
-          webKitUserAgent = webKitUserAgent.left(webKitUserAgent.indexOf(')') + 1);
-          userAgent += webKitUserAgent;
-          userAgent.remove("compatible; ");
-        }
-    }
+        return QWebPage::userAgentForUrl(_url);
 
-    //kDebug() << userAgent;
     return userAgent;
+}
+
+void KWebPage::removeSessionMetaData(const QString &key)
+{
+    KDEPrivate::NetworkAccessManager *manager = qobject_cast<KDEPrivate::NetworkAccessManager*>(networkAccessManager());
+    if (manager)
+        manager->sessionMetaData().remove(key);
+}
+
+void KWebPage::removeRequestMetaData(const QString &key)
+{
+    KDEPrivate::NetworkAccessManager *manager = qobject_cast<KDEPrivate::NetworkAccessManager*>(networkAccessManager());
+    if (manager)
+        manager->requestMetaData().remove(key);
 }
 
 bool KWebPage::acceptNavigationRequest(QWebFrame * frame, const QNetworkRequest & request, NavigationType type)
@@ -226,17 +231,6 @@ bool KWebPage::acceptNavigationRequest(QWebFrame * frame, const QNetworkRequest 
     return QWebPage::acceptNavigationRequest(frame, request, type);
 }
 
-QObject *KWebPage::createPlugin(const QString &classId, const QUrl &url, const QStringList &paramNames, const QStringList &paramValues)
-{
-    kDebug() << "create Plugin requested:";
-    kDebug() << "classid:" << classId;
-    kDebug() << "url:" << url;
-    kDebug() << "paramNames:" << paramNames << " paramValues:" << paramValues;
-
-    QUiLoader loader;
-    return loader.createWidget(classId, view());
-}
-
 void KWebPage::downloadRequest(const QNetworkRequest &request) const
 {
     KUrl url (request.url());
@@ -250,8 +244,8 @@ void KWebPage::downloadRequest(const QNetworkRequest &request) const
     if (attr.isValid() && attr.type() == QVariant::Map)
         job->setMetaData(KIO::MetaData(attr.toMap()));
 
-    job->addMetaData("MaxCacheSize", "0"); // Don't store in http cache.
-    job->addMetaData("cache", "cache"); // Use entry from cache if available.
+    job->addMetaData(QL1("MaxCacheSize"), QL1("0")); // Don't store in http cache.
+    job->addMetaData(QL1("cache"), QL1("cache")); // Use entry from cache if available.
     job->uiDelegate()->setAutoErrorHandlingEnabled(true);
 }
 

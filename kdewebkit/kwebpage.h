@@ -42,8 +42,13 @@ class KDEWEBKIT_EXPORT KWebPage : public QWebPage
 public:
     /**
      * Constructs an empty KWebPage with parent @p parent.
+     *
+     * @param parent    the parent object.
+     * @param windowId  the id of the window that contains this object.
+     *
+     * @see KIO::Intergation::CookieJar
      */
-    explicit KWebPage(QObject *parent = 0);
+    explicit KWebPage(QObject *parent = 0, qlonglong windowId = 0);
 
     /**
      * Destroys the KWebPage.
@@ -51,15 +56,24 @@ public:
     ~KWebPage();
 
     /**
-     * Returns true if external content is fetched.
-     * @see setAllowExternalContent().
+     * Returns true if access to remote content is allowed.
+     *
+     * By default access to remote content is allowed.
+     *
+     * @see setAllowExternalContent()
+     * @see KIO::AccessManager::isExternalContentAllowed()
      */
     bool isExternalContentAllowed() const;
 
     /**
-     * Set @p allow to false if you don't want to allow showing external content,
-     * so no external images for example. By default external content is fetched.
-     * @see isExternalContentAllowed().
+     * Set @p allow to false if you want to prevent access to remote content.
+     *
+     * If this function is set to false, only resources on the local system
+     * can be accessed through this class. By default fetching external content
+     * is allowed.
+     *
+     * @see isExternalContentAllowed()
+     * @see KIO::AccessManager::setAllowExternalContent(bool)
      */
     void setAllowExternalContent(bool allow);
 
@@ -92,52 +106,48 @@ public:
 
 protected:
     /**
+     * Returns the value of the permanent (per session) meta data for the given @p key.
+     *
+     * @see KIO::MetaData
+     */
+    QString sessionMetaData(const QString &key) const;
+
+    /**
+     * Returns the value of the temporary (per request) meta data for the given @p key.
+     *
+     * @see KIO::MetaData
+     */
+    QString requestMetaData(const QString &key) const;
+
+    /**
      * Set meta data that will be sent to KIO slave with every request.
      *
      * Note that meta data set using this function will be sent with
-     * every request
+     * every request.
+     *
+     * @see KIO::MetaData
      */
-    void setSessionMetaData(const QString& key, const QString& value);
+    void setSessionMetaData(const QString &key, const QString &value);
 
     /**
      * Set meta data that will be sent to KIO slave with the first request.
      *
      * Note that a meta data set using this function will be deleted after
      * it has been sent the first time.
+     *
+     * @see KIO::MetaData
      */
-    void setRequestMetaData(const QString& key, const QString& value);
+    void setRequestMetaData(const QString &key, const QString &value);
 
     /**
-     * Reimplemented for internal reasons, the API is not affected.
-     *
-     * @see QWebPage::chooseFile.
-     * @internal
+     * Remove session meta data associated with @p key.
      */
-    virtual QString chooseFile(QWebFrame *frame, const QString &suggestedFile);
+    void removeSessionMetaData(const QString &key);
 
     /**
-     * Reimplemented for internal reasons, the API is not affected.
-     *
-     * @see QWebPage::javaScriptAlert.
-     * @internal
+     * Remove request meta data associated with @p key.
      */
-    virtual void javaScriptAlert(QWebFrame *frame, const QString &msg);
-
-    /**
-     * Reimplemented for internal reasons, the API is not affected.
-     *
-     * @see QWebPage::javaScriptConfirm.
-     * @internal
-     */
-    virtual bool javaScriptConfirm(QWebFrame *frame, const QString &msg);
-
-    /**
-     * Reimplemented for internal reasons, the API is not affected.
-     *
-     * @see QWebPage::javaScriptPrompt.
-     * @internal
-     */
-    virtual bool javaScriptPrompt(QWebFrame *frame, const QString &msg, const QString &defaultValue, QString *result);
+    void removeRequestMetaData(const QString &key);
 
     /**
      * Reimplemented for internal reasons, the API is not affected.
@@ -154,14 +164,6 @@ protected:
      * @internal
      */
     virtual bool acceptNavigationRequest(QWebFrame * frame, const QNetworkRequest & request, NavigationType type);
-
-    /**
-     * Reimplemented for internal reasons, the API is not affected.
-     *
-     * @see QWebPage::createPlugin.
-     * @internal
-     */
-    virtual QObject *createPlugin(const QString &classId, const QUrl &url, const QStringList &paramNames, const QStringList &paramValues);
 
 private:
     class KWebPagePrivate;

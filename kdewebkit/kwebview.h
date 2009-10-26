@@ -63,15 +63,24 @@ public:
     ~KWebView();
 
     /**
-     * Returns true if external content is fetched.
+     * Returns true if access to remote content is allowed.
+     *
+     * By default access to remote content is allowed.
+     *
      * @see setAllowExternalContent()
+     * @see KWebPage::isExternalContentAllowed()
      */
     bool isExternalContentAllowed() const;
 
     /**
-     * Set @p allow to false if you don't want to allow showing external content,
-     * so no external images for example. By default external content is fetched.
+     * Set @p allow to false if you want to prevent access to remote content.
+     *
+     * If this function is set to false only resources on the local system
+     * can be accessed through this class. By default fetching external content
+     * is allowed.
+     *
      * @see isExternalContentAllowed()
+     * @see KWebPage::setAllowExternalContent(bool)
      */
     void setAllowExternalContent(bool allow);
 
@@ -83,13 +92,14 @@ Q_SIGNALS:
 
     /**
      * This signal is emitted when the user clicks on a link with the middle
-     * mouse button.
+     * mouse button or clicks on a link with the left mouse button while
+     * pressing Ctrl key.
      */
-    void openUrlInNewTab(const KUrl &url);
+    void openUrlInNewWindow(const KUrl &url);
 
     /**
-     * This signal is emitted when the user presses the shift button and clicks
-     * on a link with the mouse button.
+     * This signal is emitted when the user presses clicks on a link with
+     * the mouse button while pressing the Shift key.
      */
     void saveUrl(const KUrl &url);
 

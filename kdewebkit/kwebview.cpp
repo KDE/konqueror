@@ -105,16 +105,15 @@ void KWebView::mouseReleaseEvent(QMouseEvent *event)
 {
     const QWebHitTestResult result = page()->mainFrame()->hitTestContent(event->pos());
     const QUrl url = result.linkUrl();
+
     if (!url.isEmpty()) {
         if ((d->pressedButtons & Qt::MidButton) ||
             ((d->pressedButtons & Qt::LeftButton) && (d->keyboardModifiers & Qt::ControlModifier))) {
-          kDebug() << "middle clicked or ctrl-clicked url" << url;
-          emit openUrlInNewTab(url);
+          emit openUrlInNewWindow(url);
           return;
         }
 
        if ((d->pressedButtons & Qt::LeftButton) && (d->keyboardModifiers & Qt::ShiftModifier)) {
-          kDebug() << "shift-clicked url" << url;
           emit saveUrl(url);
           return;
         }
@@ -123,7 +122,7 @@ void KWebView::mouseReleaseEvent(QMouseEvent *event)
     QWebView::mouseReleaseEvent(event);
 
     // just leave if the site has not modified by the user (for example pasted text with mouse middle click)
-    if (!isModified() && d->pressedButtons & Qt::MidButton) {
+    if (!isModified() && (d->pressedButtons & Qt::MidButton)) {
         const QString clipboardText(QApplication::clipboard()->text(QClipboard::Selection));
         KUrl url(clipboardText);
         if (!url.isEmpty() && url.isValid() && clipboardText.contains('.')) { // contains '.' -> domain
