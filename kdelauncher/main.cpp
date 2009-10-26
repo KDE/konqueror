@@ -69,16 +69,6 @@
 #include <QtCore/QTextStream>
 
 
-
-class WebPage : public QWebPage
-{
-public:
-    WebPage(QWidget *parent) : QWebPage(parent) {}
-
-    virtual QWebPage *createWindow(QWebPage::WebWindowType);
-    virtual QObject* createPlugin(const QString&, const QUrl&, const QStringList&, const QStringList&);
-};
-
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -337,21 +327,6 @@ private:
     QStringListModel urlModel;
 };
 
-QWebPage *WebPage::createWindow(QWebPage::WebWindowType)
-{
-    MainWindow *mw = new MainWindow;
-    return mw->webPage();
-}
-
-QObject *WebPage::createPlugin(const QString &classId, const QUrl &url, const QStringList &paramNames, const QStringList &paramValues)
-{
-    Q_UNUSED(url);
-    Q_UNUSED(paramNames);
-    Q_UNUSED(paramValues);
-    QUiLoader loader;
-    return loader.createWidget(classId, view());
-}
-
 class URLLoader : public QObject
 {
     Q_OBJECT
@@ -415,7 +390,6 @@ private:
     QTextStream m_stdOut;
 };
 
-#include "main.moc"
 
 int main(int argc, char **argv)
 {
@@ -462,3 +436,5 @@ int main(int argc, char **argv)
         return app.exec();
     }
 }
+
+#include "main.moc"
