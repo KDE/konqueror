@@ -236,7 +236,7 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
 
     connect(d->webView, SIGNAL(openUrl(const KUrl &)),
             d->browserExtension, SIGNAL(openUrlRequest(const KUrl &)));
-    connect(d->webView, SIGNAL(openUrlInNewTab(const KUrl &)),
+    connect(d->webView, SIGNAL(openUrlInNewWindow(const KUrl &)),
             d->browserExtension, SIGNAL(createNewWindow(const KUrl &)));
 
     setXMLFile("webkitpart.rc");
@@ -368,6 +368,9 @@ bool WebKitPart::openUrl(const KUrl &url)
         }
     }
 
+
+    setUrl(url);
+
     if (url.url() == "about:blank") {
         emit setWindowCaption (url.url());
     } else {
@@ -390,7 +393,7 @@ bool WebKitPart::openUrl(const KUrl &url)
         // attempt to sync between Konqueror's and QtWebKit's history.
         // If syncing fails for any reason, fallback to opening the
         // url as if it is a new request...
-        if (metaData.contains("restore-state")) {            
+        if (metaData.contains("restore-state")) {
             QWebHistory *history = d->webPage->history();
             if (history && history->count()) {
                 QListIterator<QWebHistoryItem> historyIt (history->backItems(history->count()));
@@ -417,9 +420,9 @@ bool WebKitPart::openUrl(const KUrl &url)
             }
         }
 
-        setUrl(url);
         d->webView->loadUrl(url, args, browserExtension()->browserArguments());
     }
+
     return true;
 }
 
