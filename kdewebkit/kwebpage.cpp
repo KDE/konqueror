@@ -27,7 +27,6 @@
 #include "kwebpage.h"
 
 // Local
-#include "kwebview.h"
 #include "networkaccessmanager_p.h"
 #include "networkcookiejar_p.h"
 #include "kwebpluginfactory.h"
