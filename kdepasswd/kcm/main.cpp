@@ -225,7 +225,7 @@ void KCMUserAccount::save()
 		}
 
 		ChfnProcess *proc = new ChfnProcess();
-		int ret = proc->exec(dlg.password().toAscii() , _mw->leRealname->text().toAscii() );
+		int ret = proc->exec(dlg.password().toLocal8Bit() , _mw->leRealname->text().toLocal8Bit() );
 		if ( ret )
 			{
 			if ( ret == ChfnProcess::PasswordError )
