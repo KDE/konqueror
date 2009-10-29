@@ -22,6 +22,7 @@
 
 #include <kdialog.h>
 
+class QModelIndex;
 class QTimer;
 class QTreeView;
 class KActionCollection;
@@ -48,6 +49,7 @@ private slots:
     void slotSortChange(QAction *action);
     void slotFilterTextChanged(const QString &text);
     void slotTimerTimeout();
+    void slotOpenWindowForIndex(const QModelIndex& index);
 
 private:
     QTreeView *m_treeView;

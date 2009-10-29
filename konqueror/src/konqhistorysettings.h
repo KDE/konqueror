@@ -24,6 +24,13 @@
 #include <QtCore/QObject>
 #include <QtDBus/QtDBus>
 
+/**
+ * Object containing the settings used by the history views
+ * (both the sidebar module and the history dialog)
+ *
+ * The instances of KonqHistorySettings in all konqueror processes
+ * synchronize themselves using DBus.
+ */
 class KonqHistorySettings : public QObject
 {
     Q_OBJECT
