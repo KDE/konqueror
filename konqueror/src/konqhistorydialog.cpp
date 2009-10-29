@@ -61,6 +61,7 @@ KonqHistoryDialog::KonqHistoryDialog(QWidget *parent)
     m_treeView = new QTreeView(mainWidget());
     m_treeView->setContextMenuPolicy(Qt::CustomContextMenu);
     m_treeView->setHeaderHidden(true);
+    connect(m_treeView, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(slotOpenWindowForIndex(QModelIndex)));
     m_historyProxyModel = new KonqHistoryProxyModel(s_settings, m_treeView);
     connect(m_treeView, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(slotContextMenu(QPoint)));
     m_historyProxyModel->setDynamicSortFilter(true);
@@ -177,7 +178,11 @@ void KonqHistoryDialog::slotContextMenu(const QPoint &pos)
 
 void KonqHistoryDialog::slotNewWindow()
 {
-    const QModelIndex index = m_treeView->currentIndex();
+    slotOpenWindowForIndex( m_treeView->currentIndex() );
+}
+
+void KonqHistoryDialog::slotOpenWindowForIndex(const QModelIndex& index)
+{
     if (!index.isValid() || (index.data(KonqHistory::TypeRole).toInt() != KonqHistory::HistoryType)) {
         return;
     }
