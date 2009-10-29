@@ -29,15 +29,8 @@ target_link_libraries(konq_sidebar ${KDE4_KPARTS_LIBS} konq konqsidebarplugin ${
 
 install(TARGETS konq_sidebar DESTINATION ${PLUGIN_INSTALL_DIR} )
 
-
 ########### install files ###############
 
 install( FILES konq_sidebartng.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
 install( FILES konqsidebartng.rc  DESTINATION  ${CONFIG_INSTALL_DIR} )
-install( FILES .version  DESTINATION  ${DATA_INSTALL_DIR}/konqsidebartng/entries/ )
 install( FILES konqsidebarplugin.h DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel )
-
-if(NOT WIN32)
-  install( FILES konqsidebartng.upd DESTINATION  ${KCONF_UPDATE_INSTALL_DIR} )
-  install( PROGRAMS move_konqsidebartng_entries.sh  DESTINATION  ${KCONF_UPDATE_INSTALL_DIR} )
-endif(NOT WIN32)
