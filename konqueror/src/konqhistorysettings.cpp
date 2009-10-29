@@ -1,3 +1,21 @@
+/* This file is part of the KDE project
+   Copyright (C) 2000 Carsten Pfeiffer <pfeiffer@kde.org>
+
+   This program is free software; you can redistribute it and/or
+   modify it under the terms of the GNU General Public
+   License as published by the Free Software Foundation; either
+   version 2 of the License, or (at your option) any later version.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program; see the file COPYING.  If not, write to
+   the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+   Boston, MA 02110-1301, USA.
+*/
 
 // Own
 #include "konqhistorysettings.h"
@@ -8,7 +26,6 @@
 #include <ksharedconfig.h>
 #include <kglobal.h>
 #include <kconfiggroup.h>
-
 
 KonqHistorySettings::KonqHistorySettings( QObject *parent )
     : QObject( parent )
@@ -23,23 +40,6 @@ KonqHistorySettings::KonqHistorySettings( QObject *parent )
     dbus.connect(QString(), dbusPath, dbusInterface, "notifySettingsChanged", this, SLOT(slotSettingsChanged()));
 }
 
-#if 0 // huh? copying a QObject?
-KonqHistorySettings::KonqHistorySettings( const KonqHistorySettings& s )
-    : QObject()
-{
-    m_valueYoungerThan = s.m_valueYoungerThan;
-    m_valueOlderThan = s.m_valueOlderThan;
-
-    m_metricYoungerThan = s.m_metricYoungerThan;
-    m_metricOlderThan = s.m_metricOlderThan;
-
-    m_detailedTips = s.m_detailedTips;
-
-    m_fontYoungerThan = s.m_fontYoungerThan;
-    m_fontOlderThan = s.m_fontOlderThan;
-}
-#endif
-
 KonqHistorySettings::~KonqHistorySettings()
 {
 }
@@ -53,24 +53,20 @@ void KonqHistorySettings::readSettings(bool global)
     else
       config = KSharedConfig::openConfig("konquerorrc");
 
-    KConfigGroup cg( config, "HistorySettings");
+    const KConfigGroup cg( config, "HistorySettings");
     m_valueYoungerThan = cg.readEntry("Value youngerThan", 1 );
     m_valueOlderThan = cg.readEntry("Value olderThan", 2 );
 
-    QString minutes = QLatin1String("minutes");
-    QString days = QLatin1String("days");
-    QString metric = cg.readEntry("Metric youngerThan", days );
-    m_metricYoungerThan = (metric == days) ? DAYS : MINUTES;
-    metric = cg.readEntry("Metric olderThan", days );
-    m_metricOlderThan = (metric == days) ? DAYS : MINUTES;
+    const QString days = QString::fromLatin1("days");
+    const QString metricY = cg.readEntry("Metric youngerThan", days );
+    m_metricYoungerThan = (metricY == days) ? DAYS : MINUTES;
+    const QString metricO = cg.readEntry("Metric olderThan", days );
+    m_metricOlderThan = (metricO == days) ? DAYS : MINUTES;
+
+    m_fontYoungerThan = cg.readEntry( "Font youngerThan", m_fontYoungerThan );
+    m_fontOlderThan   = cg.readEntry( "Font olderThan", m_fontOlderThan );
 
     m_detailedTips = cg.readEntry("Detailed Tooltips", true);
-
-    m_fontYoungerThan = cg.readEntry( "Font youngerThan",
-					       m_fontYoungerThan );
-    m_fontOlderThan   = cg.readEntry( "Font olderThan",
-					       m_fontOlderThan );
-
     m_sortsByName = cg.readEntry( "SortHistory", "byDate" ) == "byName";
 }
 
@@ -81,18 +77,15 @@ void KonqHistorySettings::applySettings()
     config.writeEntry("Value youngerThan", m_valueYoungerThan );
     config.writeEntry("Value olderThan", m_valueOlderThan );
 
-    QString minutes = QLatin1String("minutes");
-    QString days = QLatin1String("days");
-    config.writeEntry("Metric youngerThan", m_metricYoungerThan == DAYS ?
-			  days : minutes );
-    config.writeEntry("Metric olderThan", m_metricOlderThan == DAYS ?
- 	 	 	   days : minutes );
-
-    config.writeEntry("Detailed Tooltips", m_detailedTips);
+    const QString minutes = QString::fromLatin1("minutes");
+    const QString days = QString::fromLatin1("days");
+    config.writeEntry("Metric youngerThan", m_metricYoungerThan == DAYS ?  days : minutes );
+    config.writeEntry("Metric olderThan", m_metricOlderThan == DAYS ?  days : minutes );
 
     config.writeEntry("Font youngerThan", m_fontYoungerThan );
     config.writeEntry("Font olderThan", m_fontOlderThan );
 
+    config.writeEntry("Detailed Tooltips", m_detailedTips);
     config.writeEntry( "SortHistory", m_sortsByName ? "byName" : "byDate" );
 
     // notify konqueror instances about the new configuration
