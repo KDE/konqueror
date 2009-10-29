@@ -20,7 +20,7 @@
 #include "konqhistorymodel.h"
 
 #include "konqhistory.h"
-#include "konqhistorymanager.h"
+#include "konq_historyprovider.h"
 
 #include <kglobal.h>
 #include <kicon.h>
@@ -237,15 +237,15 @@ static QString groupForUrl(const KUrl &url)
 KonqHistoryModel::KonqHistoryModel(QObject *parent)
     : QAbstractItemModel(parent), m_root(new KHM::RootEntry())
 {
-    KonqHistoryManager *manager = KonqHistoryManager::kself();
+    KonqHistoryProvider *provider = KonqHistoryProvider::self();
 
-    connect(manager, SIGNAL(cleared()), this, SLOT(clear()));
-    connect(manager, SIGNAL(entryAdded(const KonqHistoryEntry &)),
+    connect(provider, SIGNAL(cleared()), this, SLOT(clear()));
+    connect(provider, SIGNAL(entryAdded(const KonqHistoryEntry &)),
             this, SLOT(slotEntryAdded(const KonqHistoryEntry &)));
-    connect(manager, SIGNAL(entryRemoved(const KonqHistoryEntry &)),
+    connect(provider, SIGNAL(entryRemoved(const KonqHistoryEntry &)),
             this, SLOT(slotEntryRemoved(const KonqHistoryEntry &)));
 
-    KonqHistoryList entries(manager->entries());
+    KonqHistoryList entries(provider->entries());
 
     KonqHistoryList::const_iterator it = entries.constBegin();
     const KonqHistoryList::const_iterator end = entries.constEnd();
@@ -349,13 +349,13 @@ void KonqHistoryModel::deleteItem(const QModelIndex &index)
         return;
     }
 
-    KonqHistoryManager *manager = KonqHistoryManager::kself();
+    KonqHistoryProvider *provider = KonqHistoryProvider::self();
     switch (entry->type) {
     case KHM::Entry::History:
-        manager->emitRemoveFromHistory(static_cast<KHM::HistoryEntry *>(entry)->entry.url);
+        provider->emitRemoveFromHistory(static_cast<KHM::HistoryEntry *>(entry)->entry.url);
         break;
     case KHM::Entry::Group:
-        manager->emitRemoveListFromHistory(static_cast<KHM::GroupEntry *>(entry)->urls());
+        provider->emitRemoveListFromHistory(static_cast<KHM::GroupEntry *>(entry)->urls());
         break;
     case KHM::Entry::Root:
         break;

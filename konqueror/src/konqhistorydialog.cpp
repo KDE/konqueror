@@ -20,7 +20,7 @@
 #include "konqhistorydialog.h"
 
 #include "konqhistory.h"
-#include "konqhistorymanager.h"
+#include "konq_historyprovider.h"
 #include "konqhistorymodel.h"
 #include "konqhistoryproxymodel.h"
 #include "konqhistorysettings.h"
@@ -209,7 +209,7 @@ void KonqHistoryDialog::slotClearHistory()
             i18n("Do you really want to clear the entire history?"),
             i18n("Clear History?"), guiitem)
         == KMessageBox::Continue) {
-        KonqHistoryManager::kself()->emitClear();
+        KonqHistoryProvider::self()->emitClear();
     }
 }
 

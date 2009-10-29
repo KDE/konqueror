@@ -43,11 +43,10 @@ public:
     int m_metricYoungerThan;
     int m_metricOlderThan;
 
-    bool m_detailedTips;
-
     QFont m_fontYoungerThan;
     QFont m_fontOlderThan;
 
+    bool m_detailedTips;
     bool m_sortsByName;
 
 Q_SIGNALS:
@@ -57,7 +56,6 @@ private Q_SLOTS:
     void slotSettingsChanged();
 
 protected:
-    //KonqHistorySettings( const KonqHistorySettings& );
     Q_DISABLE_COPY( KonqHistorySettings )
 
 Q_SIGNALS:
