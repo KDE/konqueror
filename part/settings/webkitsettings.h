@@ -42,21 +42,21 @@ public:
      * This enum specifies whether Java/JavaScript execution is allowed.
      */
     enum KJavaScriptAdvice {
-	KJavaScriptDunno=0,
-	KJavaScriptAccept,
-	KJavaScriptReject
+      KJavaScriptDunno=0,
+      KJavaScriptAccept,
+      KJavaScriptReject
     };
 
     enum KAnimationAdvice {
-        KAnimationDisabled=0,
-        KAnimationLoopOnce,
-        KAnimationEnabled
+      KAnimationDisabled=0,
+      KAnimationLoopOnce,
+      KAnimationEnabled
     };
 
     enum KSmoothScrollingMode {
-        KSmoothScrollingDisabled=0,
-        KSmoothScrollingWhenEfficient,
-        KSmoothScrollingEnabled
+      KSmoothScrollingDisabled=0,
+      KSmoothScrollingWhenEfficient,
+      KSmoothScrollingEnabled
     };
 
     /**
