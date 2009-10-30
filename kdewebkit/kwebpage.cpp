@@ -88,33 +88,41 @@ KWebPage::KWebPage(QObject *parent, qlonglong windowId)
 
     networkAccessManager()->setCookieJar(cookiejar);
 
+#if QT_VERSION >= 0x040600
+    action(Back)->setIcon(QIcon::fromTheme("go-previous"));
+    action(Forward)->setIcon(QIcon::fromTheme("go-next"));
+    action(Reload)->setIcon(QIcon::fromTheme("view-refresh"));
+    action(Stop)->setIcon(QIcon::fromTheme("process-stop"));
+    action(Cut)->setIcon(QIcon::fromTheme("edit-cut"));
+    action(Copy)->setIcon(QIcon::fromTheme("edit-copy"));
+    action(Paste)->setIcon(QIcon::fromTheme("edit-paste"));
+    action(Undo)->setIcon(QIcon::fromTheme("edit-undo"));
+    action(Redo)->setIcon(QIcon::fromTheme("edit-redo"));
+    action(InspectElement)->setIcon(QIcon::fromTheme("view-process-all"));
+    action(OpenLinkInNewWindow)->setIcon(QIcon::fromTheme("window-new"));
+    action(OpenFrameInNewWindow)->setIcon(QIcon::fromTheme("window-new"));
+    action(OpenImageInNewWindow)->setIcon(QIcon::fromTheme("window-new"));
+    action(CopyLinkToClipboard)->setIcon(QIcon::fromTheme("edit-copy"));
+    action(CopyImageToClipboard)->setIcon(QIcon::fromTheme("edit-copy"));
+    action(ToggleBold)->setIcon(QIcon::fromTheme("format-text-bold"));
+    action(ToggleItalic)->setIcon(QIcon::fromTheme("format-text-italic"));
+    action(ToggleUnderline)->setIcon(QIcon::fromTheme("format-text-underline"));
+    action(DownloadLinkToDisk)->setIcon(QIcon::fromTheme("document-save"));
+    action(DownloadImageToDisk)->setIcon(QIcon::fromTheme("document-save"));
+
+    settings()->setWebGraphic(QWebSettings::MissingPluginGraphic, QIcon::fromTheme("preferences-plugin").pixmap(32, 32));
+    settings()->setWebGraphic(QWebSettings::MissingImageGraphic, QIcon::fromTheme("image-missing").pixmap(32, 32));
+    settings()->setWebGraphic(QWebSettings::DefaultFrameIconGraphic, QIcon::fromTheme("applications-internet").pixmap(32, 32));
+#else
     action(Back)->setIcon(KIcon("go-previous"));
-    action(Back)->setShortcut(KStandardShortcut::back().primary());
-
     action(Forward)->setIcon(KIcon("go-next"));
-    action(Forward)->setShortcut(KStandardShortcut::forward().primary());
-
     action(Reload)->setIcon(KIcon("view-refresh"));
-    action(Reload)->setShortcut(KStandardShortcut::reload().primary());
-
     action(Stop)->setIcon(KIcon("process-stop"));
-    action(Stop)->setShortcut(Qt::Key_Escape);
-
     action(Cut)->setIcon(KIcon("edit-cut"));
-    action(Cut)->setShortcut(KStandardShortcut::cut().primary());
-
     action(Copy)->setIcon(KIcon("edit-copy"));
-    action(Copy)->setShortcut(KStandardShortcut::copy().primary());
-
     action(Paste)->setIcon(KIcon("edit-paste"));
-    action(Paste)->setShortcut(KStandardShortcut::paste().primary());
-
     action(Undo)->setIcon(KIcon("edit-undo"));
-    action(Undo)->setShortcut(KStandardShortcut::undo().primary());
-
     action(Redo)->setIcon(KIcon("edit-redo"));
-    action(Redo)->setShortcut(KStandardShortcut::redo().primary());
-
     action(InspectElement)->setIcon(KIcon("view-process-all"));
     action(OpenLinkInNewWindow)->setIcon(KIcon("window-new"));
     action(OpenFrameInNewWindow)->setIcon(KIcon("window-new"));
@@ -130,6 +138,17 @@ KWebPage::KWebPage(QObject *parent, qlonglong windowId)
     settings()->setWebGraphic(QWebSettings::MissingPluginGraphic, KIcon("preferences-plugin").pixmap(32, 32));
     settings()->setWebGraphic(QWebSettings::MissingImageGraphic, KIcon("image-missing").pixmap(32, 32));
     settings()->setWebGraphic(QWebSettings::DefaultFrameIconGraphic, KIcon("applications-internet").pixmap(32, 32));
+#endif
+
+    action(Back)->setShortcut(KStandardShortcut::back().primary());
+    action(Forward)->setShortcut(KStandardShortcut::forward().primary());
+    action(Reload)->setShortcut(KStandardShortcut::reload().primary());
+    action(Stop)->setShortcut(Qt::Key_Escape);
+    action(Cut)->setShortcut(KStandardShortcut::cut().primary());
+    action(Copy)->setShortcut(KStandardShortcut::copy().primary());
+    action(Paste)->setShortcut(KStandardShortcut::paste().primary());
+    action(Undo)->setShortcut(KStandardShortcut::undo().primary());
+    action(Redo)->setShortcut(KStandardShortcut::redo().primary());
 }
 
 KWebPage::~KWebPage()
@@ -220,12 +239,8 @@ bool KWebPage::acceptNavigationRequest(QWebFrame * frame, const QNetworkRequest 
       If the navigation request is from the main frame, set the cross-domain
       meta-data value to the current url for proper integration with KCookieJar...
     */
-    if (frame == mainFrame()) {
-        const QString scheme = request.url().scheme();
-        if (QString::compare(QString::fromUtf8("about"), scheme, Qt::CaseInsensitive) != 0 &&
-            QString::compare(QString::fromUtf8("file"), scheme, Qt::CaseInsensitive) != 0) {
-            setSessionMetaData(QL1("cross-domain"), request.url().toString());
-        }
+    if (frame == mainFrame() && type != QWebPage::NavigationTypeReload) {
+        setSessionMetaData(QL1("cross-domain"), request.url().toString());
     }
 
     return QWebPage::acceptNavigationRequest(frame, request, type);
