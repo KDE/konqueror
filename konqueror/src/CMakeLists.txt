@@ -15,11 +15,17 @@ configure_file(config-konqueror.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-konqu
 # For crc32 in konqhistorymanager.cpp
 include_directories( ${ZLIB_INCLUDE_DIR} )
 
-########### libkonquerorprivate, shared with sidebar modules ###############
+########### libkonquerorprivate, shared with unit tests and sidebar modules ###############
 
 set(konquerorprivate_SRCS
-   konqpixmapprovider.cpp
-   konqhistorymanager.cpp
+   konqhistorymanager.cpp # for unit tests
+   konqpixmapprovider.cpp # needed ?!?
+
+   # for the sidebar history module
+   konqhistorymodel.cpp
+   konqhistoryproxymodel.cpp
+   konqhistoryview.cpp
+   konqhistorysettings.cpp
 )
 qt4_add_dbus_interface(konquerorprivate_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../../lib/konq/favicons/org.kde.FavIcon.xml favicon_interface)
 
@@ -65,10 +71,7 @@ set(konqueror_KDEINIT_SRCS
    konqclosedwindowsmanager.cpp
    konqsessionmanager.cpp
    konqcloseditem.cpp
-   konqhistorymodel.cpp
-   konqhistoryproxymodel.cpp
    konqhistorydialog.cpp
-   konqhistorysettings.cpp
 )
 
 kde4_add_kcfg_files(konqueror_KDEINIT_SRCS konqsettingsxt.kcfgc)

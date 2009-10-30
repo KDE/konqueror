@@ -36,7 +36,10 @@ KonqSidebarModule::~KonqSidebarModule() { }
 
 const KComponentData &KonqSidebarModule::parentComponentData() const { return m_parentComponentData; }
 
-void KonqSidebarModule::openUrl(const KUrl& url){handleURL(url);}
+void KonqSidebarModule::openUrl(const KUrl& url)
+{
+    handleURL(url);
+}
 
 void KonqSidebarModule::openPreview(const KFileItemList& items)
 {

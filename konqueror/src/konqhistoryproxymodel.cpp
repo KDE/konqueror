@@ -27,6 +27,7 @@ KonqHistoryProxyModel::KonqHistoryProxyModel(KonqHistorySettings *settings, QObj
     , m_settings(settings)
 {
     setDynamicSortFilter(true);
+    setFilterCaseSensitivity(Qt::CaseInsensitive);
 
     connect(m_settings, SIGNAL(settingsChanged()), this, SLOT(slotSettingsChanged()));
 }

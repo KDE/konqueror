@@ -65,14 +65,13 @@ public:
     KConfigGroup configGroup();
 
 protected:
-    virtual void handleURL(const KUrl &url)=0;
+    /**
+     * Called by the sidebar's openUrl. Reimplement this in order to
+     * follow the navigation happening in konqueror's current view.
+     */
+    virtual void handleURL(const KUrl &url) { Q_UNUSED(url); }
     virtual void handlePreview(const KFileItemList & items);
     virtual void handlePreviewOnMouseOver(const KFileItem &items); //not used yet
-    KComponentData m_parentComponentData;
-
-private:
-    KConfigGroup m_configGroup;
-    KonqSidebarModulePrivate* const d;
 
 Q_SIGNALS:
     void started(KIO::Job *);
@@ -93,20 +92,28 @@ public Q_SLOTS:
 
     */
 
+Q_SIGNALS:
+    void openUrlRequest(const KUrl &url, const KParts::OpenUrlArguments& args = KParts::OpenUrlArguments(),
+                        const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments());
+    void createNewWindow(const KUrl &url, const KParts::OpenUrlArguments& args = KParts::OpenUrlArguments(),
+                         const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments(),
+                         const KParts::WindowArgs& = KParts::WindowArgs());
 
-    /* signals, which could be, but need not to be added
-
-    void openUrlRequest( const KUrl &url, const KParts::URLArgs &args = KParts::URLArgs() );
-    void createNewWindow( const KUrl &url, const KParts::URLArgs &args = KParts::URLArgs() );
-
+    /* signals, which sidebar_widget.cpp connects by name. TODO: define the useful ones here, remove
+     * the others
     void enableAction( const char * name, bool enabled );
-
+    void started(KIO::Job *);
+    void completed();
+    void submitFormRequest(const char*,const QString&,const QByteArray&,const QString&,const QString&,const QString&);
+    void
     void popupMenu( ... );
-
-    void showError(QString &);	//for later extension
-    void showMessage(QString &);	//for later extension
-
     */
+
+private:
+    KComponentData m_parentComponentData;
+    KConfigGroup m_configGroup;
+    KonqSidebarModulePrivate* const d;
+
 };
 
 /**

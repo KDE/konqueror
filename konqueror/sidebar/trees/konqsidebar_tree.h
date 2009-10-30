@@ -35,11 +35,6 @@ class KonqSidebar_Tree: public KonqSidebarModule
 			void del();
 			void rename();
 Q_SIGNALS:
-			void openUrlRequest( const KUrl &url, const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
-                                             const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments());
-  			void createNewWindow( const KUrl &url, const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
-                                             const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments(),
-                                             const KParts::WindowArgs &windowArgs = KParts::WindowArgs(), KParts::ReadOnlyPart **part = 0 );
 			void popupMenu( const QPoint &global, const KUrl &url,
 					const QString &mimeType, mode_t mode = (mode_t)-1 );
 			void popupMenu( const QPoint &global, const KFileItemList &items );

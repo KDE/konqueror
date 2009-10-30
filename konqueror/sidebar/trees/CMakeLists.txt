@@ -11,7 +11,6 @@ endif(WIN32)
 
 add_subdirectory( init )
 add_subdirectory( dirtree_module )
-add_subdirectory( history_module )
 
 ########### next target ###############
 

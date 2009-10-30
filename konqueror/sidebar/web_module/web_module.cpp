@@ -57,9 +57,9 @@ KonqSideBarWebModule::KonqSideBarWebModule(const KComponentData &componentData, 
 	connect(_htmlPart,
 		SIGNAL(setAutoReload()), this, SLOT( setAutoReload() ));
 	connect(_htmlPart,
-		SIGNAL(openUrlNewWindow(const QString&, KParts::OpenUrlArguments, KParts::BrowserArguments)),
+		SIGNAL(openUrlNewWindow(QString,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::WindowArgs)),
 		this,
-		SLOT(urlNewWindow(const QString&, KParts::OpenUrlArguments, KParts::BrowserArguments)));
+		SLOT(urlNewWindow(QString,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::WindowArgs)));
 	connect(_htmlPart,
 		SIGNAL(submitFormRequest(const char*,const QString&,const QByteArray&,const QString&,const QString&,const QString&)),
 		this,
@@ -116,9 +116,9 @@ void KonqSideBarWebModule::handleURL(const KUrl &) {
 }
 
 
-void KonqSideBarWebModule::urlNewWindow(const QString& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs)
+void KonqSideBarWebModule::urlNewWindow(const QString& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs, const KParts::WindowArgs& windowArgs)
 {
-	emit createNewWindow(KUrl(url), args, browserArgs);
+    emit createNewWindow(KUrl(url), args, browserArgs, windowArgs);
 }
 
 

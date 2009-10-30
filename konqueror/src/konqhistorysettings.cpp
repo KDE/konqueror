@@ -27,8 +27,19 @@
 #include <kglobal.h>
 #include <kconfiggroup.h>
 
-KonqHistorySettings::KonqHistorySettings( QObject *parent )
-    : QObject( parent )
+struct KonqHistorySettingsSingleton
+{
+    KonqHistorySettings self;
+};
+
+K_GLOBAL_STATIC(KonqHistorySettingsSingleton, globalHistorySettings);
+KonqHistorySettings* KonqHistorySettings::self()
+{
+    return &globalHistorySettings->self;
+}
+
+KonqHistorySettings::KonqHistorySettings()
+    : QObject( 0 )
 {
     m_fontOlderThan.setItalic( true ); // default
 
@@ -38,20 +49,26 @@ KonqHistorySettings::KonqHistorySettings( QObject *parent )
     QDBusConnection dbus = QDBusConnection::sessionBus();
     dbus.registerObject( dbusPath, this );
     dbus.connect(QString(), dbusPath, dbusInterface, "notifySettingsChanged", this, SLOT(slotSettingsChanged()));
+
+    readSettings(false);
 }
 
 KonqHistorySettings::~KonqHistorySettings()
 {
 }
 
-void KonqHistorySettings::readSettings(bool global)
+void KonqHistorySettings::readSettings(bool reparse)
 {
     KSharedConfigPtr config;
 
-    if (global)
+    if (KGlobal::mainComponent().componentName() == QLatin1String("konqueror"))
       config = KGlobal::config();
     else
       config = KSharedConfig::openConfig("konquerorrc");
+
+    if (reparse) {
+        config->reparseConfiguration();
+    }
 
     const KConfigGroup cg( config, "HistorySettings");
     m_valueYoungerThan = cg.readEntry("Value youngerThan", 1 );
@@ -94,7 +111,7 @@ void KonqHistorySettings::applySettings()
 
 void KonqHistorySettings::slotSettingsChanged()
 {
-    readSettings(false);
+    readSettings(true /*reparse*/);
     emit settingsChanged();
 }
 
