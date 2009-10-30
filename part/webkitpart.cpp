@@ -241,6 +241,7 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
 
     setXMLFile("webkitpart.rc");
     initAction();
+    mainWidget->setFocusProxy(d->webView);
 }
 
 WebKitPart::~WebKitPart()
