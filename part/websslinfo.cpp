@@ -126,21 +126,43 @@ WebSslInfo& WebSslInfo::operator=(const WebSslInfo& other)
   return *this;
 }
 
+QVariant WebSslInfo::toMetaData() const
+{
+  if (isValid()) {
+    QMap<QString, QVariant> data;
+    data.insert("ssl_in_use", true);
+    data.insert("ssl_peer_ip", d->peerAddress.toString());
+    data.insert("ssl_parent_ip", d->parentAddress.toString());
+    data.insert("ssl_protocol_version", d->protocol);
+    data.insert("ssl_cipher", d->ciphers);
+    data.insert("ssl_cert_errors", d->certErrors);
+    data.insert("ssl_cipher_used_bits", d->usedCipherBits);
+    data.insert("ssl_cipher_bits", d->supportedCipherBits);
+    QByteArray certChain;
+    Q_FOREACH(const QSslCertificate& cert, d->certificateChain)
+        certChain += cert.toPem();
+    data.insert("ssl_peer_chain", certChain);
+    return data;
+  }
+
+  return QVariant();
+}
+
 void WebSslInfo::fromMetaData(const QVariant& value)
 {
-    if (value.isValid() && value.type() == QVariant::Map) {
-        QMap<QString,QVariant> metaData = value.toMap();
-        if (metaData.value("ssl_in_use", false).toBool()) {
-            setCertificateChain(metaData.value("ssl_peer_chain").toByteArray());
-            setPeerAddress(metaData.value("ssl_peer_ip").toString());
-            setParentAddress(metaData.value("ssl_parent_ip").toString());
-            setProtocol(metaData.value("ssl_protocol_version").toString());
-            setCiphers(metaData.value("ssl_cipher").toString());
-            setCertificateErrors(metaData.value("ssl_cert_errors").toString());
-            setUsedCipherBits(metaData.value("ssl_cipher_used_bits").toString());
-            setSupportedCipherBits(metaData.value("ssl_cipher_bits").toString());
-        }
+  if (value.isValid() && value.type() == QVariant::Map) {
+    QMap<QString,QVariant> metaData = value.toMap();
+    if (metaData.value("ssl_in_use", false).toBool()) {
+        setCertificateChain(metaData.value("ssl_peer_chain").toByteArray());
+        setPeerAddress(metaData.value("ssl_peer_ip").toString());
+        setParentAddress(metaData.value("ssl_parent_ip").toString());
+        setProtocol(metaData.value("ssl_protocol_version").toString());
+        setCiphers(metaData.value("ssl_cipher").toString());
+        setCertificateErrors(metaData.value("ssl_cert_errors").toString());
+        setUsedCipherBits(metaData.value("ssl_cipher_used_bits").toString());
+        setSupportedCipherBits(metaData.value("ssl_cipher_bits").toString());
     }
+  }
 }
 
 void WebSslInfo::setUrl (const QUrl &url)
