@@ -32,7 +32,7 @@ struct KonqHistorySettingsSingleton
     KonqHistorySettings self;
 };
 
-K_GLOBAL_STATIC(KonqHistorySettingsSingleton, globalHistorySettings);
+K_GLOBAL_STATIC(KonqHistorySettingsSingleton, globalHistorySettings)
 KonqHistorySettings* KonqHistorySettings::self()
 {
     return &globalHistorySettings->self;
