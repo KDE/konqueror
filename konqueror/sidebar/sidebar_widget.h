@@ -125,16 +125,15 @@ Q_SIGNALS:
     void fileSelection(const KFileItemList& iems);
     void fileMouseOver(const KFileItem& item);
 
-public:
-    /* The following public slots are wrappers for browserextension fields */
-        public Q_SLOTS:
+    /* The following public slots are wrappers for browserextension signals */
+public Q_SLOTS:
     void openUrlRequest( const KUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs );
     /* @internal
      * ### KDE4 remove me
      */
     void submitFormRequest(const char*,const QString&,const QByteArray&,const QString&,const QString&,const QString&);
-    void createNewWindow( const KUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs,
-                          const KParts::WindowArgs &windowArgs, KParts::ReadOnlyPart **part );
+    void createNewWindow(const KUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs,
+                         const KParts::WindowArgs &windowArgs);
 
     void popupMenu( const QPoint &global, const KFileItemList &items );
     void popupMenu( const QPoint &global, const KUrl &url,

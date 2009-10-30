@@ -1,8 +1,10 @@
 include_directories (${CMAKE_CURRENT_SOURCE_DIR})
 
-add_subdirectory( test )
 add_subdirectory( trees )
 add_subdirectory( web_module )
+add_subdirectory( history_module )
+add_subdirectory( default_entries )
+add_subdirectory( test )
 
 ########### konqsidebarplugin lib: contains the base class for plugins ###############
 

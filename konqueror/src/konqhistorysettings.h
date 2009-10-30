@@ -38,10 +38,9 @@ class KonqHistorySettings : public QObject
 public:
     enum { MINUTES, DAYS };
 
-    KonqHistorySettings( QObject *parent );
+    static KonqHistorySettings* self();
     virtual ~KonqHistorySettings();
 
-    void readSettings(bool global);
     void applySettings();
 
     uint m_valueYoungerThan;
@@ -68,6 +67,12 @@ protected:
 Q_SIGNALS:
     // DBus signals
     void notifySettingsChanged();
+
+private:
+    void readSettings(bool reparse);
+
+    friend class KonqHistorySettingsSingleton;
+    KonqHistorySettings();
 };
 
 class KonqHistorySettingsAdaptor : public QDBusAbstractAdaptor

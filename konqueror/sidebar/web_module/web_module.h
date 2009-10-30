@@ -73,7 +73,8 @@ class KHTMLSideBar : public KHTMLPart
                                     const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments() );
 		void openUrlNewWindow(const QString& url,
                                       const KParts::OpenUrlArguments& args = KParts::OpenUrlArguments(),
-                                      const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments() );
+                                      const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments(),
+                                      const KParts::WindowArgs& windowArgs = KParts::WindowArgs());
 		void reload();
 		void setAutoReload();
 
@@ -149,16 +150,15 @@ class KonqSideBarWebModule : public KonqSidebarModule
 		virtual QWidget *getWidget();
 
 	Q_SIGNALS:
+                // TODO move to base class
 		void submitFormRequest(const char*,const QString&,const QByteArray&,const QString&,const QString&,const QString&);
-		void openUrlRequest(const KUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs);
-		void createNewWindow(const KUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs);
 	protected:
 		virtual void handleURL(const KUrl &url);
 
 	private Q_SLOTS:
 		void urlClicked(const QString& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs);
     void formClicked(const KUrl& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs);
-		void urlNewWindow(const QString& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs);
+		void urlNewWindow(const QString& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs, const KParts::WindowArgs& windowArgs = KParts::WindowArgs());
 		void pageLoaded();
 		void loadFavicon();
 		void setTitle(const QString&);

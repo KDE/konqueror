@@ -43,7 +43,7 @@
 #include <KPluginFactory>
 #include <KPluginLoader>
 
-#include <konqhistorymanager.h>
+#include <konq_historyprovider.h>
 #include <konqhistorysettings.h>
 
 // Local
@@ -58,8 +58,7 @@ HistorySidebarConfig::HistorySidebarConfig( QWidget *parent, const QVariantList 
 {
     KGlobal::locale()->insertCatalog("konqueror");
 
-    m_settings = new KonqHistorySettings( this );
-    m_settings->readSettings( false );
+    m_settings = KonqHistorySettings::self();
 
     QVBoxLayout *topLayout = new QVBoxLayout(this);
     dialog = new KonqSidebarHistoryDlg(this);
@@ -153,8 +152,8 @@ void HistorySidebarConfig::save()
     quint32 age   = dialog->cbExpire->isChecked() ? dialog->spinExpire->value() : 0;
     quint32 count = dialog->spinEntries->value();
 
-    KonqHistoryManager::kself()->emitSetMaxAge( age );
-    KonqHistoryManager::kself()->emitSetMaxCount( count );
+    KonqHistoryProvider::self()->emitSetMaxAge( age );
+    KonqHistoryProvider::self()->emitSetMaxCount( count );
 
     m_settings->m_valueYoungerThan = dialog->spinNewer->value();
     m_settings->m_valueOlderThan   = dialog->spinOlder->value();
@@ -253,7 +252,7 @@ void HistorySidebarConfig::slotClearHistory()
 					  "the entire history?"),
 				     i18n("Clear History?"), guiitem )
 	 == KMessageBox::Continue ) {
-        KonqHistoryManager::kself()->emitClear();
+        KonqHistoryProvider::self()->emitClear();
     }
 }
 

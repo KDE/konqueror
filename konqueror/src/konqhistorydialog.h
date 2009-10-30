@@ -22,13 +22,8 @@
 
 #include <kdialog.h>
 
+class KonqHistoryView;
 class QModelIndex;
-class QTimer;
-class QTreeView;
-class KActionCollection;
-class KLineEdit;
-class KonqHistoryModel;
-class KonqHistoryProxyModel;
 
 class KonqHistoryDialog : public KDialog
 {
@@ -40,24 +35,12 @@ public:
 
     QSize sizeHint() const;
 
-private slots:
-    void slotContextMenu(const QPoint &pos);
-    void slotNewWindow();
-    void slotRemoveEntry();
-    void slotClearHistory();
-    void slotPreferences();
-    void slotSortChange(QAction *action);
-    void slotFilterTextChanged(const QString &text);
-    void slotTimerTimeout();
+private Q_SLOTS:
+    void slotOpenWindow(const KUrl& url);
     void slotOpenWindowForIndex(const QModelIndex& index);
 
 private:
-    QTreeView *m_treeView;
-    KActionCollection *m_collection;
-    KonqHistoryModel *m_historyModel;
-    KonqHistoryProxyModel *m_historyProxyModel;
-    KLineEdit *m_searchLineEdit;
-    QTimer *m_searchTimer;
+    KonqHistoryView *m_historyView;
 };
 
 #endif // KONQ_HISTORYDIALOG_H
