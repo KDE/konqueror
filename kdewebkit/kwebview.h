@@ -86,22 +86,25 @@ public:
 
 Q_SIGNALS:
     /**
-     * This signal is emitted when the user wants to navigate to the url @p url.
+     * This signal is emitted when the user wants to navigate to @p url.
      */
     void openUrl(const KUrl &url);
 
     /**
-     * This signal is emitted when the user clicks on a link with the middle
-     * mouse button or clicks on a link with the left mouse button while
-     * pressing Ctrl key.
-     */
-    void openUrlInNewWindow(const KUrl &url);
-
-    /**
-     * This signal is emitted when the user presses clicks on a link with
-     * the mouse button while pressing the Shift key.
+     * This signal is emitted when the user wants to save @p url.
+     *
+     * It is activated as a result of a shift-click on a link with the left
+     * mouse button.
      */
     void saveUrl(const KUrl &url);
+
+    /**
+     * This signal is emitted when the user wants to open @p url in a new window.
+     *
+     * It is activated as a result of a click on a link with the middle mouse
+     * button or a ctrl-click with the left mouse button.
+     */
+    void openUrlInNewWindow(const KUrl &url);
 
 protected:
     /**

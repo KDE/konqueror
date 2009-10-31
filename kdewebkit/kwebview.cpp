@@ -33,6 +33,7 @@
 #include <kparts/part.h>
 #include <kparts/browserextension.h>
 #include <kdeversion.h>
+#include <kurifilter.h>
 
 #include <QtGui/QApplication>
 #include <QtGui/QClipboard>
@@ -82,11 +83,7 @@ void KWebView::wheelEvent(QWheelEvent *event)
     if (QApplication::keyboardModifiers() & Qt::ControlModifier) {
         const int numDegrees = event->delta() / 8;
         const int numSteps = numDegrees / 15;
-#if QT_VERSION < 0x040500
-        setTextSizeMultiplier(textSizeMultiplier() + numSteps * 0.1);
-#else
         setZoomFactor(zoomFactor() + numSteps * 0.1);
-#endif
         event->accept();
         return;
     }
@@ -102,11 +99,12 @@ void KWebView::mousePressEvent(QMouseEvent *event)
 }
 
 void KWebView::mouseReleaseEvent(QMouseEvent *event)
-{
+{  
+
     const QWebHitTestResult result = page()->mainFrame()->hitTestContent(event->pos());
     const QUrl url = result.linkUrl();
 
-    if (!url.isEmpty()) {
+    if (url.isValid() && !url.isEmpty() && !url.scheme().isEmpty()) {
         if ((d->pressedButtons & Qt::MidButton) ||
             ((d->pressedButtons & Qt::LeftButton) && (d->keyboardModifiers & Qt::ControlModifier))) {
           emit openUrlInNewWindow(url);
@@ -119,17 +117,20 @@ void KWebView::mouseReleaseEvent(QMouseEvent *event)
         }
     }
 
-    QWebView::mouseReleaseEvent(event);
+    const bool isAccepted = event->isAccepted();
+    page()->event(event);
 
-    // just leave if the site has not modified by the user (for example pasted text with mouse middle click)
-    if (!isModified() && (d->pressedButtons & Qt::MidButton)) {
-        const QString clipboardText(QApplication::clipboard()->text(QClipboard::Selection));
-        KUrl url(clipboardText);
-        if (!url.isEmpty() && url.isValid() && clipboardText.contains('.')) { // contains '.' -> domain
-            if (url.scheme().isEmpty()) {
-                url = "http://" + clipboardText;
+    if (!event->isAccepted()) {
+        // Navigate to url in clipboard on middle mouse button click on the page...
+        if (!isModified() && (d->pressedButtons & Qt::MidButton)) {
+            QString clipboardText(QApplication::clipboard()->text(QClipboard::Selection).trimmed());
+            if (KUriFilter::self()->filterUri(clipboardText, QStringList() << "kshorturifilter")) {
+                kDebug() << "Navigating to" << clipboardText;
+                emit openUrl(KUrl(clipboardText));
             }
-            emit openUrl(url);
         }
     }
+
+    event->setAccepted(isAccepted);
+    QWebView::mouseReleaseEvent(event);
 }
