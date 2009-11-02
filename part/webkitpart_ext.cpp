@@ -47,7 +47,7 @@
 #include <QtWebKit/QWebFrame>
 
 
-static QStringList getChildFrameStateFor(const QWebFrame *frame)
+static QStringList getChildrenFrameState(const QWebFrame *frame)
 {
     QStringList info;
     if (frame) {
@@ -119,7 +119,7 @@ void WebKitBrowserExtension::saveState(QDataStream &stream)
             sslinfo = page->sslInfo().toMetaData();
 
             // Save the state (name, url, scroll position) for all frames...
-            childFrameState = getChildFrameStateFor(page->mainFrame());
+            childFrameState = getChildrenFrameState(page->mainFrame());
         }
     }
 
