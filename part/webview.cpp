@@ -77,12 +77,9 @@ WebView::WebView(WebKitPart *wpart, QWidget *parent)
     setAcceptDrops(true);
 
     // Use our own custom re-implementation of KWebPage...
-    WebPage *webpage = new WebPage(wpart, this);
-    setPage(webpage);
+    setPage(new WebPage(wpart, this));
 
     // Connect parent's saveUrl signal...
-    connect(this, SIGNAL(saveUrl(const KUrl &)),
-            webpage, SLOT(saveUrl(const KUrl &)));
 }
 
 WebView::~WebView()

@@ -48,12 +48,12 @@
 #include <KIO/Job>
 #include <KIO/AccessManager>
 
-#include <QtCore/QTimer>
+#include <QtCore/QListIterator>
 #include <QtGui/QTextDocument>
 #include <QtNetwork/QNetworkReply>
 #include <QtUiTools/QUiLoader>
 #include <QtWebKit/QWebFrame>
-#include <QtWebKit/QWebHistoryItem>
+
 
 #define QL1(x)  QLatin1String(x)
 
@@ -172,9 +172,10 @@ class WebPage::WebPagePrivate
 public:
     WebPagePrivate() {}
 
-    // Holds list of requests including those from children frames
-    QMap<QUrl, QString> requestMap;
     WebSslInfo sslInfo;
+    QMap<QString, WebFrameState> frameStateContainer;
+    // Holds list of requests including those from children frames
+    QMap<QUrl, QWebFrame*> requestQueue;
     QPointer<WebKitPart> part;
 };
 
@@ -200,8 +201,8 @@ WebPage::WebPage(WebKitPart *part, QWidget *parent)
             this, SLOT(slotDownloadRequest(const QNetworkRequest &)));
     connect(this, SIGNAL(unsupportedContent(QNetworkReply *)),
             this, SLOT(slotUnsupportedContent(QNetworkReply *)));
-    connect(networkAccessManager(), SIGNAL(finished(QNetworkReply*)),
-            this, SLOT(slotRequestFinished(QNetworkReply*)));
+    connect(networkAccessManager(), SIGNAL(finished(QNetworkReply *)),
+            this, SLOT(slotRequestFinished(QNetworkReply *)));
 }
 
 WebPage::~WebPage()
@@ -225,6 +226,51 @@ void WebPage::setSslInfo (const WebSslInfo& info)
     d->sslInfo = info;
 }
 
+WebFrameState WebPage::frameState(const QString& frameName) const
+{
+    return d->frameStateContainer.value(frameName);
+}
+
+void WebPage::saveFrameState (const QString &frameName, const WebFrameState &frameState)
+{
+    d->frameStateContainer[frameName] = frameState;
+}
+
+void WebPage::restoreFrameState(const QString &frameName)
+{
+    if (d->frameStateContainer.contains(frameName)) {
+        WebFrameState frameState = d->frameStateContainer.take(frameName);
+        if (mainFrame()->frameName() == frameName) {
+            mainFrame()->setScrollPosition(QPoint(frameState.scrollPosX, frameState.scrollPosY));
+            kDebug() << "Restoring main frame:" << frameName << frameState;
+        } else {
+            QListIterator<QWebFrame *> frameIt (mainFrame()->childFrames());
+            while (frameIt.hasNext()) {
+                QWebFrame *frame = frameIt.next();
+                if (frame->frameName() == frameName) {
+                    frame->setScrollPosition(QPoint(frameState.scrollPosX, frameState.scrollPosY));
+                    kDebug() << "Restoring child frame:" << frameName << frameState;
+                }
+            }
+        }
+    }
+}
+
+void WebPage::restoreAllFrameState()
+{
+    QList<QWebFrame *> frames = mainFrame()->childFrames();
+    frames.prepend(mainFrame());
+
+    QListIterator<QWebFrame *> frameIt (frames);
+    while (frameIt.hasNext()) {
+        QWebFrame* frame = frameIt.next();
+        if (d->frameStateContainer.contains(frame->frameName())) {
+            WebFrameState frameState = d->frameStateContainer.take(frame->frameName());
+            frame->setScrollPosition(QPoint(frameState.scrollPosX, frameState.scrollPosY));
+        }
+    }
+}
+
 void WebPage::saveUrl(const KUrl &url)
 {
     slotDownloadRequest(QNetworkRequest(url));
@@ -237,36 +283,49 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
       return false;
 
     if (frame) {
-        d->requestMap.insert (request.url(), frame->frameName());
-
         /*
-          ISSUE: QtWebKit always sends user clicks on javascript based links
-          as NavigationTypeOther instead of NavigationTypeLink. As result the
-          checks below will fail to do their jobs if the request originated
-          from the following type of link in a web page:
+          NOTE: QtWebKit sends NavigationTypeOther instead of NavigationTypeLink
+          or when users click on javascript links such as
 
           <a href="javascript:location.href='http://qt.nokia.com'">javascript link</a>
-         */
+        */
+
+        // inPage requests are those generarted within the current page
+        // through link clicks, javascript queries, and button clicks
+        // (form submission).
+        bool inPageRequest = true;
+
         switch (type) {
             case QWebPage::NavigationTypeFormResubmitted:
             case QWebPage::NavigationTypeFormSubmitted:
-                if (!checkFormData(request)) {
+                if (!checkFormData(request))
                     return false;
-                }
-                // NOTE: Missing break statement is on purpose!
-            case QWebPage::NavigationTypeLinkClicked:
-                if (!checkLinkSecurity(request, type)) {
-                    return false;
-                }
-                if (d->sslInfo.isValid()) {
-                    setRequestMetaData("ssl_was_in_use", "TRUE");
-                }
-                // NOTE: Missing break statement is on purpose!
+                break;
+            case QWebPage::NavigationTypeReload:
+            case QWebPage::NavigationTypeBackOrForward:
+                inPageRequest = false;
             case QWebPage::NavigationTypeOther:
-                emit updateHistory(); // Make sure the history gets updated...
-                break;                
+                // Set manual request user typed request...
+                inPageRequest = (d->part->url() != request.url());
+                if (frame != mainFrame() && d->frameStateContainer.contains(frame->frameName())) {
+                    WebFrameState frameState = d->frameStateContainer.value(frame->frameName());
+                    if (frameState.url != request.url()) {
+                        frame->setUrl(frameState.url);
+                        kDebug() << "Changing request for" << frame->frameName() << "to" << frameState.url;
+                        return false;
+                    }
+                }
+                break;
             default:
                 break;
+        }
+
+        if (inPageRequest) {
+            if (!checkLinkSecurity(request, type))
+                return false;
+
+            if (d->sslInfo.isValid())
+                setRequestMetaData("ssl_was_in_use", "TRUE");
         }
 
         if (frame == mainFrame()) {
@@ -274,6 +333,9 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
         } else {
             setRequestMetaData("main_frame_request", "FALSE");
         }
+
+        // Insert the request into the queue...
+        d->requestQueue.insert (request.url(), frame);
     }
 
     return KWebPage::acceptNavigationRequest(frame, request, type);
@@ -291,8 +353,8 @@ QWebPage *WebPage::createWindow(WebWindowType type)
     if (type == WebModalDialog)
         bargs.setForcesNewWindow(true);
 
-    emit d->part->browserExtension()->createNewWindow(KUrl("about:blank"), args, bargs,
-                                                      KParts::WindowArgs(), &part);
+    d->part->browserExtension()->createNewWindow(KUrl("about:blank"), args, bargs,
+                                                 KParts::WindowArgs(), &part);
 
     WebKitPart *webKitPart = qobject_cast<WebKitPart*>(part);
 
@@ -415,7 +477,7 @@ void WebPage::slotWindowCloseRequested()
 void WebPage::slotStatusBarMessage(const QString &message)
 {
     if (WebKitSettings::self()->windowStatusPolicy(mainFrame()->url().host()) == WebKitSettings::KJSWindowStatusAllow) {
-        d->part->setStatusBarTextProxy(message);
+        emit jsStatusBarMessage(message);
     }
 }
 
@@ -424,27 +486,39 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
     Q_ASSERT(reply);
     QUrl url (reply->request().url());
 
-    if (d->requestMap.contains(url)) {
+    if (d->requestQueue.contains(url)) {
 
         kDebug() << url;
-        const QString frameName = d->requestMap.take(url);
+        QWebFrame* frame = d->requestQueue.take(url);
         const int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
 
         if (statusCode > 300 && statusCode < 304) {            
             kDebug() << "Redirected to " << reply->url();
         } else {
+            const int errCode = convertErrorCode(reply);
+            const bool isMainFrameRequest = (frame == mainFrame());
+
             // TODO: Perhaps look into supporting mixed mode, part secure and
             // part not, sites at some point. For now we only deal with SSL
             // information for the main page like most browsers.
-            if (frameName.isEmpty() && d->sslInfo.isValid() && !domainSchemeMatch(reply->url(), d->sslInfo.url())) {
+            if (isMainFrameRequest && d->sslInfo.isValid() &&
+                !domainSchemeMatch(reply->url(), d->sslInfo.url())) {
                 kDebug() << "Reseting cached SSL info...";
                 d->sslInfo = WebSslInfo();
             }
 
             // Handle any error...
-            const int code = convertErrorCode(reply);
-            switch (code) {
+            switch (errCode) {
                 case 0:
+                    if (isMainFrameRequest) {
+                        // Obtain and set the SSL information if any...
+                        if (!d->sslInfo.isValid()) {
+                            d->sslInfo.fromMetaData(reply->attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData)));
+                            d->sslInfo.setUrl(reply->url());
+                        }
+
+                        setPageJScriptPolicy(reply->url());
+                    }
                     break;
                 case KIO::ERR_ABORTED:
                 case KIO::ERR_USER_CANCELED: // Do nothing if request is cancelled/aborted
@@ -457,21 +531,20 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
                     emit loadAborted(reply->url());
                     return;
                 default:
-                    emit loadError(code, reply->errorString(), frameName);
-                    return;
+#if QT_VERSION < 0x040600
+                    // WORKAROUND:
+                    // This code is necessary because QWebFrame::setHtml does
+                    // not work properly in Qt < 4.6. Hence, we emit this signal
+                    // here to get the webkitpart to properly save frame states.
+                    if (isMainFrameRequest)
+                        emit saveFrameStateRequested(frame, 0);
+#endif
+                    url = QString ("error:/?error=%1&errText=%2#%3")
+                          .arg(errCode).arg(reply->errorString()).arg(reply->url().toString());
+                    break;
             }
 
-            if (frameName.isEmpty()) {
-                // Obtain and set the SSL information if any...
-                if (!d->sslInfo.isValid()) {
-                    d->sslInfo.fromMetaData(reply->attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData)));
-                    d->sslInfo.setUrl(reply->url());
-                }
-
-                setPageJScriptPolicy(reply->url());
-            }
-
-            emit navigationRequestFinished();
+            emit navigationRequestFinished(url, frame);
         }
     }
 }

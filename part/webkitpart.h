@@ -31,8 +31,12 @@
 namespace KParts {
   class BrowserExtension;
 }
+
+class QDataStream;
 class QNetworkReply;
 class QWebView;
+class QWebFrame;
+class QWebHistoryItem;
 
 class WEBKITKDE_EXPORT WebKitPart : public KParts::ReadOnlyPart
 {
@@ -43,32 +47,27 @@ public:
 
     virtual bool openUrl(const KUrl &);
     virtual bool closeUrl();
-
-    QWebView *view();
-    KParts::BrowserExtension *browserExtension() const;
-
-    /** required because KPart::setStatusBarText(..) is protected **/
-    void setStatusBarTextProxy(const QString &);
+    virtual QWebView *view();
 
 protected:
-    void guiActivateEvent(KParts::GUIActivateEvent *);
+    virtual void guiActivateEvent(KParts::GUIActivateEvent *);
     virtual bool openFile();
+
     void initAction();
-    void showError(const QString &, const QString & frameName = QString());
-    void setSslInfo(const QVariant &);
+    bool handleError(const KUrl &, QWebFrame *frame);
 
 private Q_SLOTS:
     void showSecurity();
-    void updateHistory();
     void showSearchBar();
     void loadStarted();
     void loadFinished(bool);
-    void loadAborted(const QUrl &);
-    void loadError(int, const QString &, const QString &);
+    void loadAborted(const KUrl &);
 
-    void navigationRequestFinished();    
+    void navigationRequestFinished(const KUrl &, QWebFrame *);
     void searchForText(const QString &text, bool backward);
     void linkHovered(const QString &, const QString&, const QString &);
+    void saveFrameState(QWebFrame *frame, QWebHistoryItem *item);
+    void openUrlInNewWindow(const KUrl&);
 
     void urlChanged(const QUrl &);
 

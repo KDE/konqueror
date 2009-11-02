@@ -37,8 +37,10 @@ public:
     WebKitBrowserExtension(WebKitPart *parent);
     ~WebKitBrowserExtension();
 
-  virtual void saveState( QDataStream &);
-  virtual void restoreState( QDataStream &);
+    virtual int xOffset();
+    virtual int yOffset();
+    virtual void saveState(QDataStream &);
+    virtual void restoreState(QDataStream &);
 
 Q_SIGNALS:
     void saveUrl(const KUrl &);

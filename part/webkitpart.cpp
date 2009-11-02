@@ -50,6 +50,7 @@
 #include <QtCore/QUrl>
 #include <QtCore/QFile>
 #include <QtCore/QPair>
+#include <QtCore/QHash>
 #include <QtGui/QApplication>
 #include <QtGui/QPlainTextEdit>
 #include <QtGui/QVBoxLayout>
@@ -63,8 +64,6 @@
 
 static QString htmlError (int code, const QString& text, const KUrl& reqUrl)
 {
-  // kDebug() << "errorCode" << code << "text" << text;
-
   QString errorName, techName, description;
   QStringList causes, solutions;
 
@@ -89,7 +88,7 @@ static QString htmlError (int code, const QString& text, const KUrl& reqUrl)
 
   html.replace( QL1( "TITLE" ), i18n( "Error: %1 - %2", errorName, url ) );
   html.replace( QL1( "DIRECTION" ), QApplication::isRightToLeft() ? "rtl" : "ltr" );
-  html.replace( QL1( "ICON_PATH" ), KIconLoader::global()->iconPath( "dialog-warning", -KIconLoader::SizeHuge ) );
+  html.replace( QL1( "ICON_PATH" ), KUrl(KIconLoader::global()->iconPath( "dialog-warning", -KIconLoader::SizeHuge )).url());
 
   QString doc = QL1( "<h1>" );
   doc += i18n( "The requested operation could not be completed" );
@@ -144,7 +143,6 @@ static QString htmlError (int code, const QString& text, const KUrl& reqUrl)
 
   return html;
 }
-
 
 class WebKitPart::WebKitPartPrivate
 {
@@ -204,6 +202,8 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
             this, SLOT(loadFinished(bool)));
     connect(d->webView, SIGNAL(urlChanged(const QUrl &)),
             this, SLOT(urlChanged(const QUrl &)));
+    connect(d->webView, SIGNAL(openUrlInNewWindow(const KUrl &)),
+            this, SLOT(openUrlInNewWindow(const KUrl &)));
 
     // Add the search bar...
     d->searchBar = new KDEPrivate::SearchBar;
@@ -216,15 +216,18 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
 
     connect(d->webPage, SIGNAL(loadStarted()),
             this, SLOT(loadStarted()));
-    connect(d->webPage, SIGNAL(loadAborted(const QUrl &)),
-            this, SLOT(loadAborted(const QUrl &)));
-    connect(d->webPage, SIGNAL(loadError(int, const QString &, const QString &)),
-            this, SLOT(loadError(int, const QString &, const QString &)));
-    connect(d->webPage, SIGNAL(linkHovered(const QString &, const QString &, const QString &)),
-            this, SLOT(linkHovered(const QString &, const QString&, const QString &)));
-    connect(d->webPage, SIGNAL(updateHistory()), this, SLOT(updateHistory()));
-    connect(d->webPage, SIGNAL(navigationRequestFinished()),
-            this, SLOT(navigationRequestFinished()));
+    connect(d->webPage, SIGNAL(loadAborted(const KUrl&)),
+            this, SLOT(loadAborted(const KUrl&)));
+    connect(d->webPage, SIGNAL(navigationRequestFinished(const KUrl&, QWebFrame*)),
+            this, SLOT(navigationRequestFinished(const KUrl&, QWebFrame*)));
+    connect(d->webPage, SIGNAL(linkHovered(const QString&, const QString&, const QString&)),
+            this, SLOT(linkHovered(const QString&, const QString&, const QString&)));
+    connect(d->webPage, SIGNAL(saveFrameStateRequested(QWebFrame*, QWebHistoryItem*)),
+            this, SLOT(saveFrameState(QWebFrame*, QWebHistoryItem*)));
+    connect(d->webPage, SIGNAL(jsStatusBarMessage(const QString&)),
+            this, SIGNAL(setStatusBarText(const QString&)));
+    connect(d->webView, SIGNAL(saveUrl(const KUrl &)),
+            d->webPage, SLOT(saveUrl(const KUrl &)));
 
     d->browserExtension = new WebKitBrowserExtension(this);
     connect(d->webPage, SIGNAL(loadProgress(int)),
@@ -236,8 +239,6 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
 
     connect(d->webView, SIGNAL(openUrl(const KUrl &)),
             d->browserExtension, SIGNAL(openUrlRequest(const KUrl &)));
-    connect(d->webView, SIGNAL(openUrlInNewWindow(const KUrl &)),
-            d->browserExtension, SIGNAL(createNewWindow(const KUrl &)));
 
     setXMLFile("webkitpart.rc");
     initAction();
@@ -247,6 +248,11 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
 WebKitPart::~WebKitPart()
 {
     delete d;
+}
+
+QWebView * WebKitPart::view()
+{
+    return d->webView;
 }
 
 void WebKitPart::initAction()
@@ -317,111 +323,64 @@ void WebKitPart::guiActivateEvent(KParts::GUIActivateEvent *event)
     // just overwrite, but do nothing for the moment
 }
 
-bool WebKitPart::openUrl(const KUrl &url)
+bool WebKitPart::openUrl(const KUrl &u)
 {
-    kDebug() << url;
+    kDebug() << u;
 
     // Ignore empty requests...
-    if (url.isEmpty())
+    if (u.isEmpty())
         return false;
 
     // Do not update history when url is typed in since konqueror
     // automatically does that itself.
     d->updateHistory = false;
 
-    if ( url.protocol() == "error" && url.hasSubUrl() ) {
+    // Handle error conditions...
+    if (handleError(u, d->webView->page()->mainFrame())) {
         closeUrl();
-
-        /**
-         * The format of the error url is that two variables are passed in the query:
-         * error = int kio error code, errText = QString error text from kio
-         * and the URL where the error happened is passed as a sub URL.
-         */
-        KUrl::List urls = KUrl::split( url );
-        //kDebug() << "Handling error URL. URL count:" << urls.count();
-
-        if ( urls.count() > 1 ) {
-            KUrl mainURL = urls.first();
-            int error = mainURL.queryItem( "error" ).toInt();
-
-            // error=0 isn't a valid error code, so 0 means it's missing from the URL
-            if ( error == 0 )
-                error = KIO::ERR_UNKNOWN;
-
-            if (error == KIO::ERR_USER_CANCELED) {
-                setUrl(d->webView->url());
-                emit d->browserExtension->setLocationBarUrl(KUrl(d->webView->url()).prettyUrl());
-            } else {
-                QString errorText = mainURL.queryItem( "errText" );
-                urls.pop_front();
-                KUrl reqUrl = KUrl::join( urls );
-
-                //kDebug() << "Setting Url back to => " << reqUrl;
-                emit d->browserExtension->setLocationBarUrl(reqUrl.prettyUrl());
-                setUrl(reqUrl);
-
-                emit started(0);
-                showError(htmlError(error, errorText, reqUrl));
-                emit completed();
-            }
-
-            return true;
-        }
+        return true;
     }
 
+    // Set the url...
+    setUrl(u);
 
-    setUrl(url);
-
-    if (url.url() == "about:blank") {
-        emit setWindowCaption (url.url());
+    if (u.url() == "about:blank") {
+        emit setWindowCaption (u.url());
+        d->webView->setUrl(u);
     } else {
+        KParts::BrowserArguments bargs (browserExtension()->browserArguments());
         KParts::OpenUrlArguments args (arguments());
         KIO::MetaData metaData (args.metaData());
 
-        // Get any SSL information already present. This is necessary
-        // because Konqueror always does a lookup on a url to determine
-        // mime-type so that it can embed the proper part. If a site was
-        // SSL protected, the SSL information can be lost unless we set
-        // it here...
+        // Get the SSL information sent, if any...
         if (metaData.contains("ssl_in_use")) {
             WebSslInfo sslinfo;
             sslinfo.fromMetaData(metaData.toVariant());
-            sslinfo.setUrl(url);
+            sslinfo.setUrl(u);
             d->webPage->setSslInfo(sslinfo);
         }
 
-        // Check if the request originated from history navigation and
-        // attempt to sync between Konqueror's and QtWebKit's history.
-        // If syncing fails for any reason, fallback to opening the
-        // url as if it is a new request...
-        if (metaData.contains("restore-state")) {
-            QWebHistory *history = d->webPage->history();
-            if (history && history->count()) {
-                QListIterator<QWebHistoryItem> historyIt (history->backItems(history->count()));
-                historyIt.toBack(); // Search backwards (LIFO)...
-                while (historyIt.hasPrevious()) {
-                    QWebHistoryItem item (historyIt.previous());
-                    if (url == item.originalUrl()) {
-                        //kDebug() << "History back => " << url;
-                        history->goToItem(item);
-                        return true;
-                    }
-                }
+        // Check if this is a restore state request, i.e. a history navigation or
+        // session restore request. If it is, get and store the state information
+        // so the page can be properly restored...
+        if (args.metaData().contains(QL1("webkitpart-restore-state"))) {
+            WebFrameState frameState;
 
-                // Look in the forward items list next.
-                historyIt = history->forwardItems(history->count());
-                while (historyIt.hasNext()) {
-                    QWebHistoryItem item (historyIt.next());
-                    if (url == item.originalUrl()) {
-                      //kDebug() << "History forward => " << url;
-                      history->goToItem(item);
-                      return true;
-                    }
-                }
+            frameState.url = u;
+            frameState.scrollPosX = args.xOffset();
+            frameState.scrollPosY = args.yOffset();
+            d->webPage->saveFrameState(QString(), frameState);
+
+            const int count = bargs.docState.count();
+            for (int i = 0; i < count; i += 4) {
+                frameState.url = bargs.docState.at(i+1);
+                frameState.scrollPosX = bargs.docState.at(i+2).toInt();
+                frameState.scrollPosY = bargs.docState.at(i+3).toInt();
+                d->webPage->saveFrameState(bargs.docState.at(i), frameState);
             }
         }
 
-        d->webView->loadUrl(url, args, browserExtension()->browserArguments());
+        d->webView->loadUrl(u, args, bargs);
     }
 
     return true;
@@ -433,11 +392,6 @@ bool WebKitPart::closeUrl()
     return true;
 }
 
-KParts::BrowserExtension *WebKitPart::browserExtension() const
-{
-    return d->browserExtension;
-}
-
 bool WebKitPart::openFile()
 {
     // never reached
@@ -446,7 +400,6 @@ bool WebKitPart::openFile()
 
 void WebKitPart::loadStarted()
 {
-    d->updateHistory = false;
     emit started(0);
 }
 
@@ -454,17 +407,22 @@ void WebKitPart::loadFinished(bool ok)
 {
     d->updateHistory = true;
 
-    if (ok && d->webView->title().trimmed().isEmpty()) {
-        // If the document title is null, then set it to the current url
-        // squeezed at the center.
-        QString caption (d->webView->url().toString((QUrl::RemoveQuery|QUrl::RemoveFragment)));
-        emit setWindowCaption(KStringHandler::csqueeze(caption));
+    if (ok) {
+        // Restore page state as necessary...
+        d->webPage->restoreAllFrameState();
 
-        // The urlChanged signal is emitted if and only if the main frame
-        // receives the title of the page so we manually invoke the slot as
-        // a work around here for pages that do not contain it, such as
-        // text documents...
-        urlChanged(d->webView->url());
+        if (d->webView->title().trimmed().isEmpty()) {
+            // If the document title is empty, then set it to the current url
+            // squeezed at the center...
+            const QString caption = d->webView->url().toString((QUrl::RemoveQuery|QUrl::RemoveFragment));
+            emit setWindowCaption(KStringHandler::csqueeze(caption));
+
+            // The urlChanged signal is emitted if and only if the main frame
+            // receives the title of the page so we manually invoke the slot as
+            // a work around here for pages that do not contain it, such as
+            // text documents...
+            urlChanged(d->webView->url());
+        }
     }
 
     /*
@@ -498,7 +456,7 @@ void WebKitPart::loadFinished(bool ok)
 #endif
 }
 
-void WebKitPart::loadAborted(const QUrl & url)
+void WebKitPart::loadAborted(const KUrl & url)
 {  
     closeUrl();
     if (url.isValid())
@@ -507,23 +465,28 @@ void WebKitPart::loadAborted(const QUrl & url)
       setUrl(d->webView->url());
 }
 
-void WebKitPart::loadError(int errCode, const QString &errStr, const QString &frameName)
+void  WebKitPart::navigationRequestFinished(const KUrl& url, QWebFrame *frame)
 {
-    showError(htmlError(errCode, errStr, url()), frameName);
-}
+    kDebug() << url << frame;
 
-void  WebKitPart::navigationRequestFinished()
-{
-    if (d->webPage->sslInfo().isValid())
-      d->browserExtension->setPageSecurity(WebKitPart::WebKitPartPrivate::Encrypted);
-    else
-      d->browserExtension->setPageSecurity(WebKitPart::WebKitPartPrivate::Unencrypted);
+    if (handleError(url, frame)) {
+        return;
+    }
+
+    if (!frame->parentFrame()) {
+        if (d->webPage->sslInfo().isValid())
+            d->browserExtension->setPageSecurity(WebKitPart::WebKitPartPrivate::Encrypted);
+        else
+            d->browserExtension->setPageSecurity(WebKitPart::WebKitPartPrivate::Unencrypted);
+    }
 }
 
 void WebKitPart::urlChanged(const QUrl& _url)
 {  
-    setUrl(_url);
-    emit d->browserExtension->setLocationBarUrl(KUrl(_url).prettyUrl());
+    if (_url != QUrl("about:blank")) {
+        setUrl(_url);
+        emit d->browserExtension->setLocationBarUrl(KUrl(_url).prettyUrl());
+    }
 }
 
 void WebKitPart::showSecurity()
@@ -546,23 +509,13 @@ void WebKitPart::showSecurity()
     }
 }
 
-void WebKitPart::updateHistory()
-{  
-    kDebug() << d->updateHistory;
-    if (d->updateHistory) {
+void WebKitPart::saveFrameState(QWebFrame *frame, QWebHistoryItem *item)
+{
+    Q_UNUSED (item);
+    kDebug() << "update history ?" << d->updateHistory << ", main frame ?" << (d->webPage->mainFrame() == frame);
+    if (!frame->parentFrame() && d->updateHistory) {
         emit d->browserExtension->openUrlNotify();
     }
-}
-
-QWebView * WebKitPart::view()
-{
-    return d->webView;
-}
-
-void WebKitPart::setStatusBarTextProxy(const QString &message)
-{
-    //kDebug() << message;
-    emit setStatusBarText(message);
 }
 
 void WebKitPart::linkHovered(const QString &link, const QString &, const QString &)
@@ -610,27 +563,48 @@ void WebKitPart::linkHovered(const QString &link, const QString &, const QString
     emit setStatusBarText(message);
 }
 
-void WebKitPart::showError(const QString &html, const QString &frameName)
+bool WebKitPart::handleError(const KUrl &u, QWebFrame *frame)
 {
-  QWebFrame *frame = 0;
+    if ( u.protocol() == "error" && u.hasSubUrl() ) {
+        /**
+         * The format of the error url is that two variables are passed in the query:
+         * error = int kio error code, errText = QString error text from kio
+         * and the URL where the error happened is passed as a sub URL.
+         */
+        KUrl::List urls = KUrl::split(u);
 
-  if (frameName.isEmpty()) {
-      frame = d->webView->page()->mainFrame();
-  } else {
-      QWebFrame *childFrame;
-      QListIterator<QWebFrame*> it (d->webView->page()->mainFrame()->childFrames());
-      while (it.hasNext()) {
-          childFrame = it.next();
-          if (childFrame->frameName() == frameName) {
-              frame = childFrame;
-              break;
-          }
-      }
-  }
+        if ( urls.count() > 1 ) {
+            KUrl mainURL = urls.first();
+            int error = mainURL.queryItem( "error" ).toInt();
 
-  Q_ASSERT (frame);
+            // error=0 isn't a valid error code, so 0 means it's missing from the URL
+            if ( error == 0 )
+                error = KIO::ERR_UNKNOWN;
 
-  frame->setHtml(html);
+            if (error == KIO::ERR_USER_CANCELED) {
+                setUrl(d->webView->url());
+                emit d->browserExtension->setLocationBarUrl(KUrl(d->webView->url()).prettyUrl());
+            } else {
+                const QString errorText = mainURL.queryItem( "errText" );
+                urls.pop_front();
+                KUrl reqUrl = KUrl::join( urls );
+
+                const QString html = htmlError(error, errorText, reqUrl);
+                kDebug() << "main frame ?" << !frame->parentFrame();
+
+                if (frame->parentFrame()) {
+                    frame->setHtml(html, reqUrl);
+                } else {
+                    emit d->browserExtension->setLocationBarUrl(reqUrl.prettyUrl());
+                    setUrl(reqUrl);
+                    frame->setHtml(html);
+                }
+            }
+            return true;
+        }
+    }
+
+    return false;
 }
 
 void WebKitPart::searchForText(const QString &text, bool backward)
@@ -638,7 +612,7 @@ void WebKitPart::searchForText(const QString &text, bool backward)
     QWebPage::FindFlags flags;
 
     if (backward)
-      flags = QWebPage::FindBackward;
+        flags = QWebPage::FindBackward;
 
     if (d->searchBar->caseSensitive())
         flags |= QWebPage::FindCaseSensitively;
@@ -656,6 +630,18 @@ void WebKitPart::showSearchBar()
         d->searchBar->setSearchText(text.left(150));
 
     d->searchBar->show();
+}
+
+void WebKitPart::openUrlInNewWindow(const KUrl& linkUrl)
+{
+    KParts::OpenUrlArguments args;
+    args.metaData()["referrer"] = url().url();
+
+    KParts::BrowserArguments bargs;
+    bargs.setLockHistory(true);
+    bargs.setNewTab(true);
+
+    emit browserExtension()->createNewWindow(linkUrl, args, bargs);
 }
 
 #include "webkitpart.moc"

@@ -25,7 +25,6 @@
 #ifndef WEBVIEW_H
 #define WEBVIEW_H
 
-#include "webkitkde_export.h"
 
 #include <KDE/KParts/ReadOnlyPart>
 #include <KDE/KParts/BrowserExtension>
@@ -36,7 +35,7 @@ class KUrl;
 class WebKitPart;
 class QWebHitTestResult;
 
-class WEBKITKDE_EXPORT WebView : public KWebView
+class WebView : public KWebView
 {
     Q_OBJECT
 public:
