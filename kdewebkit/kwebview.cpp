@@ -117,6 +117,8 @@ void KWebView::mouseReleaseEvent(QMouseEvent *event)
         }
     }
 
+    // Let the page handle the event first so that middle clicking on scroll
+    // bars does not result in navigation to url from the selection clipboard.
     const bool isAccepted = event->isAccepted();
     page()->event(event);
 
@@ -132,5 +134,4 @@ void KWebView::mouseReleaseEvent(QMouseEvent *event)
     }
 
     event->setAccepted(isAccepted);
-    QWebView::mouseReleaseEvent(event);
 }
