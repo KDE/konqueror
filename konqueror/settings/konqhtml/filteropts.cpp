@@ -26,8 +26,8 @@
 #include <QtGui/QCheckBox>
 #include <QtGui/QLabel>
 #include <QtGui/QLayout>
-#include <QtGui/QPushButton>
 #include <QtGui/QGroupBox>
+#include <QtGui/QWhatsThis>
 
 // KDE
 #include <kaboutdata.h>
@@ -41,13 +41,15 @@
 #include <KListWidget>
 #include <klistwidgetsearchline.h>
 #include <klineedit.h>
+#include <kpushbutton.h>
 
 K_PLUGIN_FACTORY_DECLARATION(KcmKonqHtmlFactory)
 
 KCMFilter::KCMFilter( QWidget *parent, const QVariantList& )
     : KCModule( KcmKonqHtmlFactory::componentData(), parent ),
       mGroupname( "Filter Settings" ),
-      mSelCount(0)
+      mSelCount(0),
+      mOriginalString(QString())
 {
     mConfig = KSharedConfig::openConfig("khtmlrc", KConfig::NoGlobals);
     setButtons(Default|Apply);
@@ -65,16 +67,30 @@ KCMFilter::KCMFilter( QWidget *parent, const QVariantList& )
 
     QVBoxLayout *vbox = new QVBoxLayout;
 
-
     mListBox = new KListWidget;
     mListBox->setSelectionMode(QListWidget::ExtendedSelection);
+
+    // If the filter list were sensitive to ordering, then we would need to
+    // preserve the order of items inserted or arranged by the user (and the
+    // GUI would need "Move Up" and "Move Down" buttons to reorder the filters).
+    // However, now the filters are applied in an unpredictable order because
+    // of the new hashed matching algorithm.  So the list can stay sorted.
     mListBox->setSortingEnabled( true );
 
-    mSearchLine = new KListWidgetSearchLine( this, mListBox );
-    vbox->addWidget( mSearchLine );
+    KHBox *searchBox = new KHBox;
+    searchBox->setSpacing( -1 );
+    new QLabel( i18n("Search:"), searchBox ) ;
+
+    mSearchLine = new KListWidgetSearchLine( searchBox, mListBox );
+
+    vbox->addWidget( searchBox );
 
     vbox->addWidget(mListBox);
-    vbox->addWidget(new QLabel( i18n("Expression (e.g. http://www.example.com/ad/*):")));
+
+    QLabel *exprLabel = new QLabel( i18n("<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href=\"filterhelp\">more information</a>):"), this );
+    connect( exprLabel, SIGNAL(linkActivated(const QString &)), SLOT(slotInfoLinkActivated(const QString &)) );
+    vbox->addWidget(exprLabel);
+
     mString = new KLineEdit;
     vbox->addWidget(mString);
 
@@ -82,17 +98,25 @@ KCMFilter::KCMFilter( QWidget *parent, const QVariantList& )
     vbox->addWidget(buttonBox);
 
     topBox->setLayout(vbox);
-    mInsertButton = new QPushButton( i18n("Insert"), buttonBox );
+    mInsertButton = new KPushButton( KIcon("list-add"), i18n("Insert"), buttonBox );
     connect( mInsertButton, SIGNAL( clicked() ), SLOT( insertFilter() ) );
-    mUpdateButton = new QPushButton( i18n("Update"), buttonBox );
+    mUpdateButton = new KPushButton( KIcon("document-edit"), i18n("Update"), buttonBox );
     connect( mUpdateButton, SIGNAL( clicked() ), SLOT( updateFilter() ) );
-    mRemoveButton = new QPushButton( i18n("Remove"), buttonBox );
+    mRemoveButton = new KPushButton( KIcon("list-remove"), i18n("Remove"), buttonBox );
     connect( mRemoveButton, SIGNAL( clicked() ), SLOT( removeFilter() ) );
 
-    mImportButton = new QPushButton(i18n("Import..."),buttonBox);
+    mImportButton = new KPushButton( KIcon("document-import"), i18n("Import..."),buttonBox);
     connect( mImportButton, SIGNAL( clicked() ), SLOT( importFilters() ) );
-    mExportButton = new QPushButton(i18n("Export..."),buttonBox);
+    mExportButton = new KPushButton( KIcon("document-export"), i18n("Export..."),buttonBox);
     connect( mExportButton, SIGNAL( clicked() ), SLOT( exportFilters() ) );
+
+    KHBox *impexpBox = new KHBox;
+    QLabel *impexpLabel = new QLabel( i18n("<qt>More information on "
+                                               "<a href=\"importhelp\">import format</a>, "
+                                               "<a href=\"exporthelp\">export format</a>"), impexpBox );
+    connect( impexpLabel, SIGNAL(linkActivated(const QString &)), SLOT(slotInfoLinkActivated(const QString &)) );
+
+    vbox->addWidget(impexpBox,0,Qt::AlignRight);
 
     connect( mEnableCheck, SIGNAL( toggled(bool)), this, SLOT( slotEnableChecked()));
     connect( mKillCheck, SIGNAL( clicked()), this, SLOT( slotKillChecked()));
@@ -101,22 +125,43 @@ KCMFilter::KCMFilter( QWidget *parent, const QVariantList& )
 /*
  * Whats this items
  */
-    mEnableCheck->setWhatsThis( i18n("Enable or disable AdBlocK filters. When enabled a set of expressions "
-                                        "to be blocked should be defined in the filter list for blocking to "
-                                        "take effect."));
-    mKillCheck->setWhatsThis( i18n("When enabled blocked images will be removed from the page completely "
-                                      "otherwise a placeholder 'blocked' image will be used."));
-    mListBox->setWhatsThis( i18n("This is the list of URL filters that will be applied to all linked "
-                                    "images and frames. The filters are processed in order so place "
-                                    "more generic filters towards the top of the list."));
-    mString->setWhatsThis( i18n("Enter an expression to filter. Expressions can be defined as either "
-                                   "a filename style wildcard e.g. http://www.example.com/ads* or as a full "
-                                   "regular expression by surrounding the string with '/' e.g. "
-                                   " //(ad|banner)\\./"));
+    mEnableCheck->setWhatsThis( i18n("Enable or disable AdBlocK filters. When enabled, a set of URL expressions "
+                                     "should be defined in the filter list for blocking to take effect."));
+    mKillCheck->setWhatsThis( i18n("When enabled blocked images will be removed from the page completely, "
+                                   "otherwise a placeholder 'blocked' image will be used."));
+
+    // The list is no longer sensitive to order, because of the new hashed
+    // matching.  So this tooltip doesn't imply that.
+    //
+    // FIXME: blocking of frames is not currently implemented by KHTML
+    mListBox->setWhatsThis( i18n("This is the list of URL filters that will be applied to all embedded "
+                                 "images and media objects.") );
+    //                              "images, objects and frames.") );
+
+    mString->setWhatsThis( i18n("<qt><p>Enter an expression to filter. Filters can be defined as either:"
+                                "<ul><li>a shell-style wildcard, e.g. <tt>http://www.example.com/ads*</tt>, the wildcards <tt>*?[]</tt> may be used</li>"
+                                "<li>a full regular expression by surrounding the string with '<tt>/</tt>', e.g. <tt>/\\/(ad|banner)\\./</tt></li></ul>"
+                                "<p>Any filter string can be preceded by '<tt>@@</tt>' to whitelist (allow) any matching URL, "
+                                "which takes priority over any blacklist (blocking) filter."));
 }
 
 KCMFilter::~KCMFilter()
 {
+}
+
+void KCMFilter::slotInfoLinkActivated(const QString &url)
+{
+    if ( url == "filterhelp" )
+        QWhatsThis::showText( QCursor::pos(), mString->whatsThis() );
+    else if ( url == "importhelp" )
+        QWhatsThis::showText( QCursor::pos(), i18n("<qt><p>The filter import format is a plain text file. "
+                                                   "Blank lines, comment lines starting with '<tt>!</tt>' "
+                                                   "and the header line <tt>[AdBlock]</tt> are ignored. "
+                                                   "Any other line is added as a filter expression.") );
+    else if ( url == "exporthelp" )
+        QWhatsThis::showText( QCursor::pos(), i18n("<qt><p>The filter export format is a plain text file. "
+                                                   "The file begins with a header line <tt>[AdBlock]</tt>, then all of "
+                                                   "the filters follow each on a separate line.") );
 }
 
 void KCMFilter::slotKillChecked()
@@ -145,7 +190,9 @@ void KCMFilter::slotItemSelected()
 
     if ( currentId >= 0 )
     {
-        mString->setText(mListBox->item(currentId)->text());
+        mOriginalString = mListBox->item(currentId)->text();
+        mString->setText(mOriginalString);
+        mString->setFocus(Qt::OtherFocusReason);
     }
     updateButton();
 }
@@ -154,15 +201,28 @@ void KCMFilter::updateButton()
 {
     bool state = mEnableCheck->isChecked();
     bool expressionIsNotEmpty = !mString->text().isEmpty();
-    mUpdateButton->setEnabled(state && (mSelCount == 1) && expressionIsNotEmpty );
+    bool filterEdited = expressionIsNotEmpty && mOriginalString!=mString->text();
+
+    mInsertButton->setEnabled(state && expressionIsNotEmpty && filterEdited );
+    mUpdateButton->setEnabled(state && (mSelCount == 1) && expressionIsNotEmpty && filterEdited );
     mRemoveButton->setEnabled(state && (mSelCount > 0));
-    mInsertButton->setEnabled(state && expressionIsNotEmpty);
     mImportButton->setEnabled(state);
     mExportButton->setEnabled(state && mListBox->count()>0);
 
     mListBox->setEnabled(state);
     mString->setEnabled(state);
     mKillCheck->setEnabled(state);
+
+    if (filterEdited)
+    {
+        if (mSelCount==1 && mUpdateButton->isEnabled()) mUpdateButton->setDefault(true);
+        else if (mInsertButton->isEnabled()) mInsertButton->setDefault(true);
+    }
+    else 
+    {
+        mInsertButton->setDefault(false);
+        mUpdateButton->setDefault(false);
+    }
 }
 
 void KCMFilter::importFilters()
@@ -179,7 +239,7 @@ void KCMFilter::importFilters()
             while (!ts.atEnd())
             {
                 line = ts.readLine();
-                if (line.toLower().compare("[adblock]") == 0 || line.isEmpty())
+                if (line.isEmpty() || line.compare("[adblock]", Qt::CaseInsensitive) == 0)
                     continue;
 
                 // Treat leading ! as filter comment, otherwise check expressions
@@ -295,13 +355,26 @@ void KCMFilter::load()
 
 void KCMFilter::insertFilter()
 {
-    if ( !mString->text().isEmpty() && mListBox->findItems (mString->text(),Qt::MatchCaseSensitive|Qt::MatchExactly).isEmpty() )
+    QString newFilter = mString->text();
+
+    if ( !newFilter.isEmpty() && mListBox->findItems( newFilter, Qt::MatchCaseSensitive|Qt::MatchExactly ).isEmpty() )
     {
-        mListBox->addItem( mString->text() );
-        int id=mListBox->count()-1;
         mListBox->clearSelection();
-        mListBox->item(id)->setSelected(true);
-        mListBox->setCurrentRow(id);
+        mListBox->addItem( newFilter );
+
+        // The next line assumed that the new item would be added at the end
+        // of the list, but that may not be the case if sorting is enabled.
+        // So we search again to locate the just-added item.
+        //int id = mListBox->count()-1;
+        QListWidgetItem *newItem = mListBox->findItems( newFilter, Qt::MatchCaseSensitive|Qt::MatchExactly ).first();
+        if (newItem != 0 )
+        {
+            int id = mListBox->row(newItem);
+
+            mListBox->item(id)->setSelected(true);
+            mListBox->setCurrentRow(id);
+        }
+
         updateButton();
         emit changed( true );
     }

@@ -22,7 +22,7 @@
 #include <ksharedconfig.h>
 
 class KListWidget;
-class QPushButton;
+class KPushButton;
 class QLineEdit;
 class QCheckBox;
 class KListWidgetSearchLine;
@@ -48,6 +48,7 @@ protected Q_SLOTS:
     void slotItemSelected();
     void slotEnableChecked();
     void slotKillChecked();
+    void slotInfoLinkActivated(const QString &url);
 
     void exportFilters();
     void importFilters();
@@ -59,15 +60,16 @@ private:
     QLineEdit *mString;
     QCheckBox *mEnableCheck;
     QCheckBox *mKillCheck;
-    QPushButton *mInsertButton;
-    QPushButton *mUpdateButton;
-    QPushButton *mRemoveButton;
-    QPushButton *mImportButton;
-    QPushButton *mExportButton;
+    KPushButton *mInsertButton;
+    KPushButton *mUpdateButton;
+    KPushButton *mRemoveButton;
+    KPushButton *mImportButton;
+    KPushButton *mExportButton;
 
     KSharedConfig::Ptr mConfig;
     QString mGroupname;
     int mSelCount;
+    QString mOriginalString;
 };
 
 #endif
