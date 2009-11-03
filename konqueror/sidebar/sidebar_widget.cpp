@@ -777,7 +777,7 @@ bool  Sidebar_Widget::doEnableActions()
 
 #else // KDAB_TEMPORARILY_REMOVED
     qWarning("Sorry, not implemented: Sidebar_Widget::doEnableActions");
-    return false;
+    return true;
 #endif // KDAB_TEMPORARILY_REMOVED
 }
 
