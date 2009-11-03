@@ -518,8 +518,11 @@ void WebKitPart::saveFrameState(QWebFrame *frame, QWebHistoryItem *item)
     }
 }
 
-void WebKitPart::linkHovered(const QString &link, const QString &, const QString &)
+void WebKitPart::linkHovered(const QString &link, const QString &title, const QString &content)
 {
+    Q_UNUSED(title);
+    Q_UNUSED(content);
+
     QString message;
     QUrl linkUrl (link);
     const QString scheme = linkUrl.scheme();
@@ -590,8 +593,6 @@ bool WebKitPart::handleError(const KUrl &u, QWebFrame *frame)
                 KUrl reqUrl = KUrl::join( urls );
 
                 const QString html = htmlError(error, errorText, reqUrl);
-                kDebug() << "main frame ?" << !frame->parentFrame();
-
                 if (frame->parentFrame()) {
                     frame->setHtml(html, reqUrl);
                 } else {
