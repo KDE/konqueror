@@ -78,7 +78,7 @@ static QString htmlError (int code, const QString& text, const KUrl& reqUrl)
   datetime = KGlobal::locale()->formatDateTime( QDateTime::currentDateTime(),
                                                 KLocale::LongDate );
 
-  QString filename( KStandardDirs::locate( "data", "khtml/error.html" ) );
+  QString filename( KStandardDirs::locate( "data", "webkitpart/error.html" ) );
   QFile file( filename );
   bool isOpened = file.open( QIODevice::ReadOnly );
   if ( !isOpened )

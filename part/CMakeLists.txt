@@ -51,3 +51,5 @@ install(TARGETS webkitkdepart DESTINATION ${PLUGIN_INSTALL_DIR})
 install(FILES webkitpart.desktop DESTINATION ${SERVICES_INSTALL_DIR})
 
 install(FILES webkitpart.rc DESTINATION  ${DATA_INSTALL_DIR}/webkitpart)
+
+install(FILES error.html DESTINATION ${DATA_INSTALL_DIR}/webkitpart)
