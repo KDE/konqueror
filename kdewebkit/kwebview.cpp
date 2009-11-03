@@ -99,8 +99,7 @@ void KWebView::mousePressEvent(QMouseEvent *event)
 }
 
 void KWebView::mouseReleaseEvent(QMouseEvent *event)
-{  
-
+{
     const QWebHitTestResult result = page()->mainFrame()->hitTestContent(event->pos());
     const QUrl url = result.linkUrl();
 
@@ -124,7 +123,7 @@ void KWebView::mouseReleaseEvent(QMouseEvent *event)
 
     if (!event->isAccepted()) {
         // Navigate to url in clipboard on middle mouse button click on the page...
-        if (!isModified() && (d->pressedButtons & Qt::MidButton)) {
+        if (!isModified() && !result.isContentEditable() && (d->pressedButtons & Qt::MidButton)) {
             QString clipboardText(QApplication::clipboard()->text(QClipboard::Selection).trimmed());
             if (KUriFilter::self()->filterUri(clipboardText, QStringList() << "kshorturifilter")) {
                 kDebug() << "Navigating to" << clipboardText;
