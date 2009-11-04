@@ -216,16 +216,16 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
 
     connect(d->webPage, SIGNAL(loadStarted()),
             this, SLOT(loadStarted()));
-    connect(d->webPage, SIGNAL(loadAborted(const KUrl&)),
-            this, SLOT(loadAborted(const KUrl&)));
-    connect(d->webPage, SIGNAL(navigationRequestFinished(const KUrl&, QWebFrame*)),
-            this, SLOT(navigationRequestFinished(const KUrl&, QWebFrame*)));
-    connect(d->webPage, SIGNAL(linkHovered(const QString&, const QString&, const QString&)),
-            this, SLOT(linkHovered(const QString&, const QString&, const QString&)));
-    connect(d->webPage, SIGNAL(saveFrameStateRequested(QWebFrame*, QWebHistoryItem*)),
-            this, SLOT(saveFrameState(QWebFrame*, QWebHistoryItem*)));
-    connect(d->webPage, SIGNAL(jsStatusBarMessage(const QString&)),
-            this, SIGNAL(setStatusBarText(const QString&)));
+    connect(d->webPage, SIGNAL(loadAborted(const KUrl &)),
+            this, SLOT(loadAborted(const KUrl &)));
+    connect(d->webPage, SIGNAL(navigationRequestFinished(const KUrl &, QWebFrame *)),
+            this, SLOT(navigationRequestFinished(const KUrl &, QWebFrame *)));
+    connect(d->webPage, SIGNAL(linkHovered(const QString &, const QString &, const QString &)),
+            this, SLOT(linkHovered(const QString &, const QString &, const QString &)));
+    connect(d->webPage, SIGNAL(saveFrameStateRequested(QWebFrame *, QWebHistoryItem *)),
+            this, SLOT(saveFrameState(QWebFrame *, QWebHistoryItem *)));
+    connect(d->webPage, SIGNAL(jsStatusBarMessage(const QString &)),
+            this, SIGNAL(setStatusBarText(const QString &)));
     connect(d->webView, SIGNAL(saveUrl(const KUrl &)),
             d->webPage, SLOT(saveUrl(const KUrl &)));
 
@@ -353,7 +353,7 @@ bool WebKitPart::openUrl(const KUrl &u)
         KIO::MetaData metaData (args.metaData());
 
         // Get the SSL information sent, if any...
-        if (metaData.contains("ssl_in_use")) {
+        if (metaData.contains(QL1("ssl_in_use"))) {
             WebSslInfo sslinfo;
             sslinfo.fromMetaData(metaData.toVariant());
             sslinfo.setUrl(u);
@@ -363,12 +363,12 @@ bool WebKitPart::openUrl(const KUrl &u)
         // Check if this is a restore state request, i.e. a history navigation or
         // session restore request. If it is, get and store the state information
         // so the page can be properly restored...
-        if (args.metaData().contains(QL1("webkitpart-restore-state"))) {
+        if (metaData.contains(QL1("webkitpart-restore-state"))) {
             WebFrameState frameState;
-
             frameState.url = u;
             frameState.scrollPosX = args.xOffset();
             frameState.scrollPosY = args.yOffset();
+
             d->webPage->saveFrameState(QString(), frameState);
 
             const int count = bargs.docState.count();
@@ -639,7 +639,6 @@ void WebKitPart::openUrlInNewWindow(const KUrl& linkUrl)
     args.metaData()["referrer"] = url().url();
 
     KParts::BrowserArguments bargs;
-    bargs.setLockHistory(true);
     bargs.setNewTab(true);
 
     emit browserExtension()->createNewWindow(linkUrl, args, bargs);
