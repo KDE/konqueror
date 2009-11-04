@@ -65,7 +65,8 @@ public Q_SLOTS:
     void slotFrameInWindow();
     void slotFrameInTab();
     void slotFrameInTop();
-
+    void slotReloadFrame();
+    
     void slotSaveImageAs();
     void slotSendImage();
     void slotCopyImage();
@@ -75,6 +76,7 @@ public Q_SLOTS:
     void slotSaveLinkAs();
 
     void slotViewDocumentSource();
+    void slotViewFrameSource();
 
     void updateEditActions();
 

@@ -148,6 +148,63 @@ void WebView::contextMenuEvent(QContextMenuEvent *e)
 void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &partGroupMap)
 {
     QList<QAction *>partActions;
+    
+    if (d->result.frame()->parentFrame()) {
+        KActionMenu * menu = new KActionMenu(i18nc("@title:menu HTML frame/iframe", "Frame"), this);
+        
+        KAction * action = new KAction(i18n("Open in New &Window"), this);
+        d->actionCollection->addAction("frameinwindow", action);
+        action->setIcon(KIcon("window-new"));
+        connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotFrameInWindow()));
+        menu->addAction(action);
+
+        action = new KAction(i18n("Open in &This Window"), this);
+        d->actionCollection->addAction("frameintop", action);
+        connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotFrameInTop()));
+        menu->addAction(action);
+
+        action = new KAction(i18n("Open in &New Tab"), this);
+        d->actionCollection->addAction("frameintab", action);
+        action->setIcon(KIcon("tab-new"));
+        connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotFrameInTab()));
+        menu->addAction(action);
+
+        action = new KAction(d->actionCollection);
+        action->setSeparator(true);
+        menu->addAction(action);
+        
+        action = new KAction(i18n("Reload Frame"), this);
+        d->actionCollection->addAction("reloadframe", action);
+        connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotReloadFrame()));
+        menu->addAction(action);
+        
+        action = new KAction(i18n("Print Frame..."), this);
+        d->actionCollection->addAction("printFrame", action);
+        action->setIcon(KIcon("document-print-frame"));
+        connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(print()));
+        menu->addAction(action);
+
+        action = new KAction(i18n("Save &Frame As..."), this);
+        d->actionCollection->addAction("saveFrame", action);
+        connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotSaveFrame()));
+        menu->addAction(action);
+
+        action = new KAction(i18n("View Frame Source"), this);
+        d->actionCollection->addAction("viewFrameSource", action);
+        connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotViewFrameSource()));
+        menu->addAction(action);
+///TODO Slot not implemented yet
+//         action = new KAction(i18n("View Frame Information"), this);
+//         d->actionCollection->addAction("viewFrameInfo", action);
+//         connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotViewPageInfo()));
+        
+        action = new KAction(d->actionCollection);
+        action->setSeparator(true);
+        menu->addAction(action);
+    
+        partActions.append(menu);
+    }
+ 
     if (!d->result.imageUrl().isEmpty()) {
         QAction *action;
         if (!d->actionCollection->action("saveimageas")) {

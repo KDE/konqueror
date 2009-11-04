@@ -302,9 +302,9 @@ void WebKitBrowserExtension::slotFrameInWindow()
 {
     if (d->view) {
         KParts::OpenUrlArguments args;// = d->m_khtml->arguments();
-        args.metaData()["referrer"] = d->view->contextMenuResult().linkText();
+        args.metaData()["referrer"] = d->view->url().toString();
         args.metaData()["forcenewwindow"] = "true";
-        emit createNewWindow(d->view->contextMenuResult().linkUrl(), args);
+        emit createNewWindow(d->view->page()->currentFrame()->url(), args);
     }
 }
 
@@ -312,10 +312,10 @@ void WebKitBrowserExtension::slotFrameInTab()
 {
     if (d->view) {
         KParts::OpenUrlArguments args;// = d->m_khtml->arguments();
-        args.metaData()["referrer"] = d->view->contextMenuResult().linkText();
+        args.metaData()["referrer"] = d->view->url().toString();
         KParts::BrowserArguments browserArgs;//( d->m_khtml->browserExtension()->browserArguments() );
         browserArgs.setNewTab(true);
-        emit createNewWindow(d->view->contextMenuResult().linkUrl(), args, browserArgs);
+        emit createNewWindow(d->view->page()->currentFrame()->url(), args, browserArgs);
     }
 }
 
@@ -323,10 +323,17 @@ void WebKitBrowserExtension::slotFrameInTop()
 {
     if (d->view) {
         KParts::OpenUrlArguments args;// = d->m_khtml->arguments();
-        args.metaData()["referrer"] = d->view->contextMenuResult().linkText();
+        args.metaData()["referrer"] = d->view->url().toString();
         KParts::BrowserArguments browserArgs;//( d->m_khtml->browserExtension()->browserArguments() );
         browserArgs.frameName = "_top";
-        emit openUrlRequest(d->view->contextMenuResult().linkUrl(), args, browserArgs);
+        emit openUrlRequest(d->view->page()->currentFrame()->url(), args, browserArgs);
+    }
+}
+
+void WebKitBrowserExtension::slotReloadFrame()
+{
+    if (d->view) {
+        d->view->page()->currentFrame()->load(d->view->page()->currentFrame()->url());
     }
 }
 
@@ -428,6 +435,13 @@ void WebKitBrowserExtension::slotViewDocumentSource()
     #endif
 
         KRun::runUrl(currentUrl, QLatin1String("text/plain"), d->view, isTempFile);
+    }
+}
+
+void WebKitBrowserExtension::slotViewFrameSource()
+{
+    if (d->view) {
+        KRun::runUrl(KUrl(d->view->page()->currentFrame()->url()), QLatin1String("text/plain"), d->view, false);
     }
 }
 
