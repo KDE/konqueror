@@ -3620,6 +3620,9 @@ void KonqMainWindow::initActions()
 
   action = actionCollection()->addAction("go_history");
   action->setIcon(KIcon("view-history"));
+  // Ctrl+Shift+H, shortcut from firefox
+  // TODO: and Ctrl+H should open the sidebar history module
+  action->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_H);
   action->setText(i18nc("@action:inmenu Go", "Show History"));
   connect(action, SIGNAL(triggered()), SLOT(slotGoHistory()));
 
