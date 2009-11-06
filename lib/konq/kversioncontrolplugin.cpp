@@ -18,7 +18,8 @@
 
 #include "kversioncontrolplugin.h"
 
-KVersionControlPlugin::KVersionControlPlugin()
+KVersionControlPlugin::KVersionControlPlugin(QObject* parent) :
+    QObject(parent)
 {
 }
 
