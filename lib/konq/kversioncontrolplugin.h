@@ -21,8 +21,6 @@
 
 #include <libkonq_export.h>
 
-#include <QDateTime>
-#include <QString>
 #include <QObject>
 
 class KFileItem;
@@ -77,7 +75,7 @@ public:
         ConflictingVersion
     };
 
-    KVersionControlPlugin();
+    KVersionControlPlugin(QObject* parent = 0);
     virtual ~KVersionControlPlugin();
 
     /**
