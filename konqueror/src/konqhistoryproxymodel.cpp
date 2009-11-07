@@ -23,7 +23,7 @@
 #include "konqhistorysettings.h"
 
 KonqHistoryProxyModel::KonqHistoryProxyModel(KonqHistorySettings *settings, QObject *parent)
-    : QSortFilterProxyModel(parent)
+    : KSortFilterProxyModel(parent)
     , m_settings(settings)
 {
     setDynamicSortFilter(true);

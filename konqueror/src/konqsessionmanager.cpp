@@ -197,9 +197,8 @@ void KonqSessionManager::saveCurrentSession(KConfig* sessionConfig)
     sessionConfig->sync();
 }
 
-bool KonqSessionManager::takeSessionsOwnership()
+QStringList KonqSessionManager::takeSessionsOwnership()
 {
-    bool found = false;
     // Tell to other konqueror instances that we are the one dealing with
     // these sessions
     QDir dir(dirForMyOwnedSessionFiles());
@@ -211,6 +210,7 @@ bool KonqSessionManager::takeSessionsOwnership()
     QDirIterator it(m_autosaveDir, QDir::Writable|QDir::Files|QDir::Dirs|
         QDir::NoDotAndDotDot);
 
+    QStringList sessionFilePaths;
     QDBusConnectionInterface *idbus = QDBusConnection::sessionBus().interface();
 
     while (it.hasNext())
@@ -227,11 +227,12 @@ bool KonqSessionManager::takeSessionsOwnership()
                 QDirIterator it2(it.filePath(), QDir::Writable|QDir::Files);
                 while (it2.hasNext())
                 {
-                    found = true;
                     it2.next();
                     // take ownership of the abandoned file
-                    QFile::rename(it2.filePath(), dirForMyOwnedSessionFiles() +
-                        '/' + it2.fileName());
+                    const QString newFileName = dirForMyOwnedSessionFiles() +
+                                                '/' + it2.fileName();
+                    QFile::rename(it2.filePath(), newFileName);
+                    sessionFilePaths.append(newFileName);
                 }
                 // Remove the old directory
                 KIO::Job *delJob = KIO::del(KUrl(it.filePath()), KIO::HideProgressInfo);
@@ -241,28 +242,15 @@ bool KonqSessionManager::takeSessionsOwnership()
             if(!idbus->isServiceRegistered(KonqMisc::decodeFilename(it.fileName())))
             {
                 // and it's abandoned: take its ownership
-                QFile::rename(it.filePath(), dirForMyOwnedSessionFiles() + '/' +
-                    it.fileName());
-                found = true;
+                const QString newFileName = dirForMyOwnedSessionFiles() + '/' +
+                                            it.fileName();
+                QFile::rename(it.filePath(), newFileName);
+                sessionFilePaths.append(newFileName);
             }
         }
     }
 
-    return found;
-}
-
-
-void KonqSessionManager::restoreSessions()
-{
-    QStringList ownedSessions;
-    QDirIterator it(dirForMyOwnedSessionFiles(), QDir::Writable|QDir::Files);
-
-    while (it.hasNext())
-    {
-        it.next();
-        ownedSessions.append(it.filePath());
-    }
-    restoreSessions(ownedSessions);
+    return sessionFilePaths;
 }
 
 void KonqSessionManager::restoreSessions(const QStringList &sessionFilePathsList,
@@ -286,22 +274,26 @@ void KonqSessionManager::restoreSessions(const QString &sessionsDir, bool
     }
 }
 
+static const QList<KConfigGroup> windowConfigGroups(const KConfig& config)
+{
+    QList<KConfigGroup> groups;
+    KConfigGroup generalGroup(&config, "General");
+    const int size = generalGroup.readEntry("Number of Windows", 0);
+    for(int i = 0; i < size; i++) {
+        groups << KConfigGroup(&config, "Window" + QString::number(i));
+    }
+    return groups;
+}
+
 void KonqSessionManager::restoreSession(const QString &sessionFilePath, bool
     openTabsInsideCurrentWindow, KonqMainWindow *parent)
 {
-    QString file(sessionFilePath);
-    if(!QFile::exists(file))
+    if (!QFile::exists(sessionFilePath))
         return;
 
-    KConfig config(sessionFilePath, KConfig::SimpleConfig);
-
-    KConfigGroup generalGroup(&config, "General");
-    int size = generalGroup.readEntry("Number of Windows", 0);
-
-    for(int i = 0; i < size; i++)
-    {
-        KConfigGroup configGroup(&config, "Window" + QString::number(i));
-
+    const KConfig config(sessionFilePath, KConfig::SimpleConfig);
+    const QList<KConfigGroup> groups = windowConfigGroups(config);
+    Q_FOREACH(const KConfigGroup& configGroup, groups) {
         if(!openTabsInsideCurrentWindow)
             KonqViewManager::openSavedWindow(configGroup)->show();
         else
@@ -312,13 +304,44 @@ void KonqSessionManager::restoreSession(const QString &sessionFilePath, bool
 
 bool KonqSessionManager::askUserToRestoreAutosavedAbandonedSessions()
 {
-    if(!takeSessionsOwnership())
+    const QStringList sessionFilePaths = takeSessionsOwnership();
+    if(sessionFilePaths.isEmpty())
         return false;
+
+    QStringList detailsList;
+    // Collect info from the sessions to restore
+    Q_FOREACH(const QString& sessionFile, sessionFilePaths) {
+        kDebug() << sessionFile;
+        const KConfig config(sessionFile, KConfig::SimpleConfig);
+        const QList<KConfigGroup> groups = windowConfigGroups(config);
+        Q_FOREACH(const KConfigGroup& group, groups) {
+            // Do avoid recursive search, let's do linear search on Foo_CurrentHistoryItem=1
+            Q_FOREACH(const QString& key, group.keyList()) {
+                if (key.endsWith("_CurrentHistoryItem")) {
+                    const QString viewId = key.left(key.length() - strlen("_CurrentHistoryItem"));
+                    const QString historyIndex = group.readEntry(key, QString());
+                    const QString prefix = "HistoryItem" + viewId + '_' + historyIndex;
+                    // Ignore the sidebar views
+                    if (group.readEntry(prefix + "StrServiceName", QString()).startsWith("konq_sidebar"))
+                        continue;
+                    const QString url = group.readEntry(prefix + "Url", QString());
+                    const QString title = group.readEntry(prefix + "Title", QString());
+                    kDebug() << viewId << url << title;
+                    if (title.trimmed().isEmpty()) {
+                        detailsList << url;
+                    } else {
+                        detailsList << title;
+                    }
+                }
+            }
+        }
+    }
 
     disableAutosave();
 
-    switch(KMessageBox::questionYesNoCancel(0,
+    switch(KMessageBox::warningYesNoCancelList(0, // there is no questionYesNoCancelList
         i18n("Konqueror did not close correctly. Would you like to restore the previous session?"),
+        detailsList,
         i18n("Restore Session?"),
         KGuiItem(i18n("Restore Session"), "window-new"),
         KGuiItem(i18n("Do Not Restore"), "dialog-close"),
@@ -327,7 +350,7 @@ bool KonqSessionManager::askUserToRestoreAutosavedAbandonedSessions()
     ))
     {
         case KMessageBox::Yes:
-            restoreSessions();
+            restoreSessions(sessionFilePaths);
             enableAutosave();
             return true;
         case KMessageBox::No:
