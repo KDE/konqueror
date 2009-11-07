@@ -24,6 +24,13 @@
 
 class KonqHistorySettings;
 
+/**
+ * Proxy model used for sorting and filtering the history model.
+ *
+ * It uses KSortFilterProxyModel instead of QSortFilterProxyModel so that one can
+ * search in the history by typing parts of a page title (KSortFilterProxyModel keeps
+ * parents of filtered items).
+ */
 class KonqHistoryProxyModel : public KSortFilterProxyModel
 {
     Q_OBJECT
