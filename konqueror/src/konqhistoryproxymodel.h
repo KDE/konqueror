@@ -20,11 +20,11 @@
 #ifndef KONQ_HISTORYPROXYMODEL_H
 #define KONQ_HISTORYPROXYMODEL_H
 
-#include <QtGui/QSortFilterProxyModel>
+#include <ksortfilterproxymodel.h>
 
 class KonqHistorySettings;
 
-class KonqHistoryProxyModel : public QSortFilterProxyModel
+class KonqHistoryProxyModel : public KSortFilterProxyModel
 {
     Q_OBJECT
 

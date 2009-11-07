@@ -42,24 +42,24 @@ class KONQ_TESTS_EXPORT KonqSessionManager : public QObject {
     Q_OBJECT
 public:
     friend class KonqSessionManagerPrivate;
-    
+
     static KonqSessionManager *self();
-    
+
     /**
      * Restore saved session(s).
-     * 
+     *
      * @param sessionFilePathsList list of session files to restore.
      * @param openTabsInsideCurrentWindow indicates if you want to open the tabs
      * in current window or not. False by default.
      * @param parent indicates in which window the tabs will be opened if
      * openTabsInsideCurrentWindow is set to true. Otherwise it won't be used.
      */
-    void restoreSessions(const QStringList &sessionFilePathsList, bool 
+    void restoreSessions(const QStringList &sessionFilePathsList, bool
         openTabsInsideCurrentWindow = false, KonqMainWindow *parent = 0L);
-    
+
     /**
      * Restore saved session(s).
-     * 
+     *
      * @param sessionsDir directory containing the session files to
      * restore.
      * @param openTabsInsideCurrentWindow indicates if you want to open the tabs
@@ -69,7 +69,7 @@ public:
      */
     void restoreSessions(const QString &sessionsDir, bool
         openTabsInsideCurrentWindow = false, KonqMainWindow *parent = 0L);
-    
+
     /**
      * Restore saved session.
      * @param sessionFilePath session file to restore.
@@ -80,21 +80,21 @@ public:
      */
     void restoreSession(const QString &sessionFilePath, bool
         openTabsInsideCurrentWindow = false, KonqMainWindow *parent = 0L);
-    
+
     /**
      * Disable the autosave feature. It's called when a konqueror instance is
      * being preloaded
      */
     void disableAutosave();
-    
+
     /**
      * Enable the autosave feature. It's called when a konqueror instance stops
      * being preloaded and starts having a window showed to the user.
      */
     void enableAutosave();
-    
+
     /**
-     * Removes the owned_by directory and all its files inside (which were 
+     * Removes the owned_by directory and all its files inside (which were
      * referencing the owned sessions).
      */
     void deleteOwnedSessions();
@@ -104,24 +104,24 @@ public Q_SLOTS:
      * Ask the user with a KPassivePopup ballon if session should be restored
      */
     bool askUserToRestoreAutosavedAbandonedSessions();
-    
+
     /**
      * Saves current session.
      * This is function is called by the autosave timer, but you can call it too
      * if you want. It won't do anything if m_autosaveEnabled is false.
      */
     void autoSaveSession();
-    
+
     /**
      * Restore owned sessions
      */
-    void restoreSessions();
-    
+    //void restoreSessions();
+
     /**
      * Save current session in a custom KConfig
      */
     void saveCurrentSession(KConfig* sessionConfig);
-    
+
     /**
      * Save current sessions of all konqueror instances (propagated via a
      * dbus signal).
@@ -129,15 +129,16 @@ public Q_SLOTS:
     void saveCurrentSessions(const QString & path);
 private:
     KonqSessionManager();
-    
+
     ~KonqSessionManager();
-    
+
     /**
      * Creates the owned_by directory with files inside referencing the owned
-     * sessions and returns if there was any file to own/restore.
+     * sessions and returns the list of filepaths with sessions to restore.
+     * Returns an empty list if there is nothing to restore.
      */
-    bool takeSessionsOwnership();
-    
+    QStringList takeSessionsOwnership();
+
     QString dirForMyOwnedSessionFiles() const {
         return m_autosaveDir + "/owned_by" + m_baseService;
     }
