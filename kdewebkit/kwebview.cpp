@@ -52,10 +52,11 @@ public:
 };
 
 
-KWebView::KWebView(QWidget *parent)
+KWebView::KWebView(QWidget *parent, bool createCustomPage)
          :QWebView(parent), d(new KWebView::KWebViewPrivate())
 {
-    setPage(new KWebPage(this));
+    if (createCustomPage)
+        setPage(new KWebPage(this));
 }
 
 KWebView::~KWebView()
@@ -106,12 +107,12 @@ void KWebView::mouseReleaseEvent(QMouseEvent *event)
     if (url.isValid() && !url.isEmpty() && !url.scheme().isEmpty()) {
         if ((d->pressedButtons & Qt::MidButton) ||
             ((d->pressedButtons & Qt::LeftButton) && (d->keyboardModifiers & Qt::ControlModifier))) {
-          emit openUrlInNewWindow(url);
+          emit linkMiddleOrCtrlClicked(url);
           return;
         }
 
        if ((d->pressedButtons & Qt::LeftButton) && (d->keyboardModifiers & Qt::ShiftModifier)) {
-          emit saveUrl(url);
+          emit linkShiftClicked(url);
           return;
         }
     }
@@ -127,7 +128,7 @@ void KWebView::mouseReleaseEvent(QMouseEvent *event)
             QString clipboardText(QApplication::clipboard()->text(QClipboard::Selection).trimmed());
             if (KUriFilter::self()->filterUri(clipboardText, QStringList() << "kshorturifilter")) {
                 kDebug() << "Navigating to" << clipboardText;
-                emit openUrl(KUrl(clipboardText));
+                emit selectionClipboardUrlPasted(KUrl(clipboardText));
             }
         }
     }

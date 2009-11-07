@@ -202,8 +202,8 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
             this, SLOT(loadFinished(bool)));
     connect(d->webView, SIGNAL(urlChanged(const QUrl &)),
             this, SLOT(urlChanged(const QUrl &)));
-    connect(d->webView, SIGNAL(openUrlInNewWindow(const KUrl &)),
-            this, SLOT(openUrlInNewWindow(const KUrl &)));
+    connect(d->webView, SIGNAL(linkMiddleOrCtrlClicked(const KUrl &)),
+            this, SLOT(openUrlInNewTab(const KUrl &)));
 
     // Add the search bar...
     d->searchBar = new KDEPrivate::SearchBar;
@@ -226,7 +226,7 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
             this, SLOT(saveFrameState(QWebFrame *, QWebHistoryItem *)));
     connect(d->webPage, SIGNAL(jsStatusBarMessage(const QString &)),
             this, SIGNAL(setStatusBarText(const QString &)));
-    connect(d->webView, SIGNAL(saveUrl(const KUrl &)),
+    connect(d->webView, SIGNAL(linkShiftClicked(const KUrl &)),
             d->webPage, SLOT(saveUrl(const KUrl &)));
 
     d->browserExtension = new WebKitBrowserExtension(this);
@@ -237,7 +237,7 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
     connect(d->browserExtension, SIGNAL(saveUrl(const KUrl&)),
             d->webPage, SLOT(saveUrl(const KUrl &)));
 
-    connect(d->webView, SIGNAL(openUrl(const KUrl &)),
+    connect(d->webView, SIGNAL(selectionClipboardUrlPasted(const KUrl &)),
             d->browserExtension, SIGNAL(openUrlRequest(const KUrl &)));
 
     setXMLFile("webkitpart.rc");
@@ -633,7 +633,7 @@ void WebKitPart::showSearchBar()
     d->searchBar->show();
 }
 
-void WebKitPart::openUrlInNewWindow(const KUrl& linkUrl)
+void WebKitPart::openUrlInNewTab(const KUrl& linkUrl)
 {
     KParts::OpenUrlArguments args;
     args.metaData()["referrer"] = url().url();

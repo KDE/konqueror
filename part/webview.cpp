@@ -70,16 +70,14 @@ public:
 
 
 WebView::WebView(WebKitPart *wpart, QWidget *parent)
-        :KWebView(parent), d(new WebViewPrivate())
+        :KWebView(parent, false), d(new WebViewPrivate())
 {
     d->part = wpart;
     d->actionCollection = new KActionCollection(this);
     setAcceptDrops(true);
 
-    // Use our own custom re-implementation of KWebPage...
+    // Create the custom page...
     setPage(new WebPage(wpart, this));
-
-    // Connect parent's saveUrl signal...
 }
 
 WebView::~WebView()
