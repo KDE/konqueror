@@ -117,8 +117,7 @@ QVariant HistoryEntry::data(int role, int /*column*/) const
     switch (role) {
     case Qt::DisplayRole: {
         QString title = entry.title;
-        if (!title.trimmed().isEmpty() && title != entry.url.url()) {
-        } else {
+        if (title.trimmed().isEmpty() || title == entry.url.url()) {
             QString path(entry.url.path());
             if (path.isEmpty()) {
                 path += '/';
