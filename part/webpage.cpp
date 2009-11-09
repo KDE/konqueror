@@ -632,8 +632,8 @@ bool WebPage::handleMailToUrl (const QUrl& url, NavigationType type) const
                                                                                i18n("<qt>Do you want to allow this site to attach "
                                                                                     "the following files to the email message ?</qt>"),
                                                                                files, i18n("Email Attachment Confirmation"),
-                                                                               KGuiItem(i18n("&Allow attachements")),
-                                                                               KGuiItem(i18n("&Ignore attachements")), QL1("WarnEmailAttachment")) == KMessageBox::Continue) {
+                                                                               KGuiItem(i18n("&Allow attachments")),
+                                                                               KGuiItem(i18n("&Ignore attachments")), QL1("WarnEmailAttachment")) == KMessageBox::Continue) {
 
                     Q_FOREACH(const QString& file, files) {
                         mailtoUrl.addQueryItem(QL1("attach"), file); // Re-add the attachments...
