@@ -88,7 +88,7 @@ static QString htmlError (int code, const QString& text, const KUrl& reqUrl)
 
   html.replace( QL1( "TITLE" ), i18n( "Error: %1 - %2", errorName, url ) );
   html.replace( QL1( "DIRECTION" ), QApplication::isRightToLeft() ? "rtl" : "ltr" );
-  html.replace( QL1( "ICON_PATH" ), KUrl(KIconLoader::global()->iconPath( "dialog-warning", -KIconLoader::SizeHuge )).url());
+  html.replace( QL1( "ICON_PATH" ), KUrl(KIconLoader::global()->iconPath("dialog-warning", -KIconLoader::SizeHuge)).url() );
 
   QString doc = QL1( "<h1>" );
   doc += i18n( "The requested operation could not be completed" );
@@ -469,15 +469,18 @@ void  WebKitPart::navigationRequestFinished(const KUrl& url, QWebFrame *frame)
 {
     kDebug() << url << frame;
 
-    if (handleError(url, frame)) {
-        return;
-    }
+    if (frame) {
 
-    if (!frame->parentFrame()) {
-        if (d->webPage->sslInfo().isValid())
-            d->browserExtension->setPageSecurity(WebKitPart::WebKitPartPrivate::Encrypted);
-        else
-            d->browserExtension->setPageSecurity(WebKitPart::WebKitPartPrivate::Unencrypted);
+        if (handleError(url, frame)) {
+            return;
+        }
+
+        if (!frame->parentFrame()) {
+            if (d->webPage->sslInfo().isValid())
+                d->browserExtension->setPageSecurity(WebKitPart::WebKitPartPrivate::Encrypted);
+            else
+                d->browserExtension->setPageSecurity(WebKitPart::WebKitPartPrivate::Unencrypted);
+        }
     }
 }
 
