@@ -418,24 +418,24 @@ void KonqSidebarBookmarkModule::slotOpenTab()
     else
 	return;
 
-#ifdef __GNUC__
-#warning newTab hack, must be done otherwise
-#endif
-#if 0
-    DCOPRef ref(kapp->dcopClient()->appId(), tree()->topLevelWidget()->name());
-
+    BrowserArguments browserArguments;
+    browserArguments.setNewTab(true);
     if (bookmark.isGroup()) {
         KBookmarkGroup group = bookmark.toGroup();
         bookmark = group.first();
         while (!bookmark.isNull()) {
-            if (!bookmark.isGroup() && !bookmark.isSeparator())
-                ref.call( "newTab(QString)", bookmark.url().url() );
+            if (!bookmark.isGroup() && !bookmark.isSeparator()) {
+                emit tree()->createNewWindow(bookmark.url(),
+                                             KParts::OpenUrlArguments(),
+                                             browserArguments);
+            }
             bookmark = group.next(bookmark);
         }
     } else {
-        ref.call( "newTab(QString)", bookmark.url().url() );
+        emit tree()->createNewWindow(bookmark.url(),
+                                     KParts::OpenUrlArguments(),
+                                     browserArguments);
     }
-#endif
 }
 
 void KonqSidebarBookmarkModule::slotCopyLocation()

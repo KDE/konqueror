@@ -26,7 +26,7 @@
 #include <Qt3Support/Q3Header>
 #include <QtGui/QMenu>
 #include <QtCore/QTimer>
-//Added by qt3to4:
+#include <QApplication>
 #include <QtGui/QPixmap>
 #include <QtGui/QKeyEvent>
 #include <QtCore/QEvent>
@@ -34,7 +34,6 @@
 
 #include <kaction.h>
 #include <kactioncollection.h>
-#include <kapplication.h>
 #include <kdebug.h>
 #include <kdirnotify.h>
 #include <kdesktopfile.h>
@@ -864,30 +863,6 @@ void KonqSidebarTree::enableActions( bool copy, bool cut, bool paste,
     enableAction( "rename", rename );
 }
 
-bool KonqSidebarTree::tabSupport()
-{
-    // TODO re-work this (should be part of the interface, not an inter-process call)
-#ifdef __GNUC__
-#warning newTab call via DCOP, must be reworked
-#endif
-#if 0
-    // see if the newTab() dcop function is available (i.e. the sidebar is embedded into konqueror)
-   DCOPRef ref(kapp->dcopClient()->appId(), topLevelWidget()->name());
-    DCOPReply reply = ref.call("functions()");
-    if (reply.isValid()) {
-        Q3StrList funcs;
-        reply.get(funcs, "QCStringList");
-        for (Q3StrList::ConstIterator it = funcs.begin(); it != funcs.end(); ++it) {
-            if ((*it) == "void newTab(QString url)") {
-                return true;
-                break;
-            }
-        }
-    }
-#endif
-    return false;
-}
-
 void KonqSidebarTree::showToplevelContextMenu()
 {
     KonqSidebarTreeTopLevelItem *item = 0;
@@ -934,8 +909,7 @@ void KonqSidebarTree::showToplevelContextMenu()
             menu->addSeparator();
             menu->addAction( m_collection->action("create_folder") );
         } else {
-            if (tabSupport())
-                menu->addAction( m_collection->action("open_tab") );
+            menu->addAction( m_collection->action("open_tab") );
             menu->addAction( m_collection->action("open_window") );
             menu->addAction( m_collection->action("copy_location") );
             menu->addSeparator();
@@ -1022,29 +996,27 @@ void KonqSidebarTree::slotOpenNewWindow()
 void KonqSidebarTree::slotOpenTab()
 {
     if (!m_currentTopLevelItem) return;
-#ifdef __GNUC__
-#warning newTab call via DCOP, must be reworked
-#endif
-#if 0
-    DCOPRef ref(kapp->dcopClient()->appId(), topLevelWidget()->name());
-    ref.call( "newTab(QString)", m_currentTopLevelItem->externalURL().url() );
-#endif
+    KParts::BrowserArguments browserArgs;
+    browserArgs.setNewTab(true);
+    emit createNewWindow(m_currentTopLevelItem->externalURL(),
+                         KParts::OpenUrlArguments(),
+                         browserArgs);
 }
 
 void KonqSidebarTree::slotCopyLocation()
 {
     if (!m_currentTopLevelItem) return;
     KUrl url = m_currentTopLevelItem->externalURL();
-    kapp->clipboard()->setData( new K3URLDrag(url, 0), QClipboard::Selection );
-    kapp->clipboard()->setData( new K3URLDrag(url, 0), QClipboard::Clipboard );
+    qApp->clipboard()->setData( new K3URLDrag(url, 0), QClipboard::Selection );
+    qApp->clipboard()->setData( new K3URLDrag(url, 0), QClipboard::Clipboard );
 }
 
 ///////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////
+/*
 #ifdef __GNUC__
 #warning KonqSidebarTreeToolTip removed, must implemented in event() function
 #endif
-/*
 void KonqSidebarTreeToolTip::maybeTip( const QPoint &point )
 {
     Q3ListViewItem *item = m_view->itemAt( point );
