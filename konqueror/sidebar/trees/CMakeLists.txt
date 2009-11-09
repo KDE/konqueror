@@ -11,6 +11,7 @@ endif(WIN32)
 
 add_subdirectory( init )
 add_subdirectory( dirtree_module )
+add_subdirectory( bookmark_module )
 
 ########### next target ###############
 

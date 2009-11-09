@@ -127,10 +127,8 @@ bool KonqSidebarBookmarkModule::handleTopLevelContextMenu( KonqSidebarTreeTopLev
 {
     QMenu *menu = new QMenu;
 
-    if (tree()->tabSupport()) {
-	menu->addAction( m_collection->action("folder_open_tabs") );
-	menu->addSeparator();
-    }
+    menu->addAction( m_collection->action("folder_open_tabs") );
+    menu->addSeparator();
     menu->addAction( m_collection->action("create_folder") );
 
     menu->addSeparator();
@@ -148,22 +146,18 @@ void KonqSidebarBookmarkModule::showPopupMenu()
     if (!bi)
         return;
 
-    bool tabSupported = tree()->tabSupport();
     QMenu *menu = new QMenu;
 
     if (bi->bookmark().isGroup()) {
-        if (tabSupported) {
-            menu->addAction( m_collection->action("folder_open_tabs") );
-            menu->addSeparator();
-        }
+        menu->addAction( m_collection->action("folder_open_tabs") );
+        menu->addSeparator();
         menu->addAction( m_collection->action("create_folder") );
         menu->addAction( m_collection->action("item_properties") );
         menu->addSeparator();
         menu->addAction( m_collection->action("delete_folder") );
     } else {
         menu->addAction( m_collection->action("open_window") );
-        if (tabSupported)
-            menu->addAction( m_collection->action("open_tab") );
+        menu->addAction( m_collection->action("open_tab") );
         menu->addAction( m_collection->action("copy_location") );
         menu->addSeparator();
         menu->addAction( m_collection->action("create_folder") );
@@ -418,7 +412,7 @@ void KonqSidebarBookmarkModule::slotOpenTab()
     else
 	return;
 
-    BrowserArguments browserArguments;
+    KParts::BrowserArguments browserArguments;
     browserArguments.setNewTab(true);
     if (bookmark.isGroup()) {
         KBookmarkGroup group = bookmark.toGroup();
