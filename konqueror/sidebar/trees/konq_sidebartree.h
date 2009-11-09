@@ -100,9 +100,6 @@ public:
     // Add an URL
     void addUrl(KonqSidebarTreeTopLevelItem* item, const KUrl&url);
 
-    // If we can use dcop to open tabs
-    bool tabSupport();
-
 public slots:
     // Connected to KDirNotify dbus signals
     void slotFilesAdded( const QString & dir );
