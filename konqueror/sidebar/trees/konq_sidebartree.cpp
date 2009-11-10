@@ -730,6 +730,10 @@ void KonqSidebarTree::scanDir( KonqSidebarTreeItem *parent, const QString &path,
             dirEntries = dir.entryList( QDir::Dirs | QDir::NoSymLinks | QDir::NoDotAndDotDot );
         }
     }
+
+
+    // TODO: currently the filename order is used. Implement SortOrder? #69667
+
     QStringList::ConstIterator eIt = entries.constBegin();
     QStringList::ConstIterator eEnd = entries.constEnd();
     for (; eIt != eEnd; ++eIt ) {
