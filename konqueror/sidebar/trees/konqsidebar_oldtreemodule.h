@@ -1,17 +1,17 @@
-#ifndef KONQSIDEBAR_TREE_H
-#define KONQSIDEBAR_TREE_H
+#ifndef KONQSIDEBAR_OLDTREEMODULE_H
+#define KONQSIDEBAR_OLDTREEMODULE_H
 
 #include <konqsidebarplugin.h>
 
 class KonqSidebarTree;
 
-class KonqSidebar_Tree: public KonqSidebarModule
+class KonqSidebarOldTreeModule : public KonqSidebarModule
 {
     Q_OBJECT
 public:
-    KonqSidebar_Tree(const KComponentData &componentData, QWidget *parent,
+    KonqSidebarOldTreeModule(const KComponentData &componentData, QWidget *parent,
                      const QString &desktopName_, const KConfigGroup& configGroup);
-    ~KonqSidebar_Tree();
+    ~KonqSidebarOldTreeModule();
     virtual QWidget *getWidget();
 protected:
     class QWidget *widget;
@@ -21,8 +21,7 @@ protected Q_SLOTS:
     void copy();
     void cut();
     void paste();
-Q_SIGNALS:
-    void enableAction( const char * name, bool enabled );
+    void pasteToSelection();
 };
 
-#endif // KONQSIDEBAR_TREE_H
+#endif // KONQSIDEBAR_TREEMODULE_H

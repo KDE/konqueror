@@ -21,8 +21,8 @@
 #define KONQ_SIDEBARTREE_H
 
 #include <k3listview.h>
+#include <kparts/browserextension.h>
 #include "konq_sidebartreetoplevelitem.h"
-#include "konqsidebar_tree.h"
 #include <QtCore/QMap>
 #include <QtCore/QPoint>
 #include <Qt3Support/Q3StrList>
@@ -34,7 +34,7 @@
 #include <Qt3Support/Q3PtrList>
 #include <QtCore/QEvent>
 
-class KonqSidebar_Tree;
+class KonqSidebarOldTreeModule;
 class KonqSidebarTreeModule;
 class KonqSidebarTreeItem;
 class KActionCollection;
@@ -69,7 +69,7 @@ class KonqSidebarTree : public K3ListView // PORTING NOTE: DO NOT PORT TO QTreeW
 {
     Q_OBJECT
 public:
-    KonqSidebarTree( KonqSidebar_Tree *parent, QWidget *parentWidget, ModuleType moduleType, const QString& path );
+    KonqSidebarTree( KonqSidebarOldTreeModule *parent, QWidget *parentWidget, ModuleType moduleType, const QString& path );
     virtual ~KonqSidebarTree();
 
     void followURL( const KUrl &url );
@@ -82,7 +82,7 @@ public:
     void startAnimation( KonqSidebarTreeItem * item, const char * iconBaseName = "kde", uint iconCount = 6, const QPixmap * originalPixmap = 0L );
     void stopAnimation( KonqSidebarTreeItem * item );
 
-    KonqSidebarModule * part() { return m_part; } // TODO remove
+    KonqSidebarOldTreeModule * sidebarModule() { return m_sidebarModule; }
 
     KActionCollection *actionCollection() { return m_collection; }
 
@@ -160,7 +160,7 @@ private:
 
     Q3PtrList<KonqSidebarTreeModule> m_lstModules;
 
-    KonqSidebar_Tree *m_part;
+    KonqSidebarOldTreeModule *m_sidebarModule;
 
     struct AnimationInfo
     {
@@ -212,12 +212,6 @@ signals:
                           const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments() );
     void createNewWindow( const KUrl &url, const KParts::OpenUrlArguments& args = KParts::OpenUrlArguments(),
                           const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments() );
-    void popupMenu(const QPoint &global, const KFileItemList &items,
-                   const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
-                   const KParts::BrowserArguments &browserArgs = KParts::BrowserArguments(),
-                   KParts::BrowserExtension::PopupFlags flags = KParts::BrowserExtension::DefaultPopupItems,
-                   const KParts::BrowserExtension::ActionGroupMap& actionGroups = KParts::BrowserExtension::ActionGroupMap());
-    void enableAction( const char * name, bool enabled );
 };
 
 #endif // KONQ_SIDEBARTREE_H

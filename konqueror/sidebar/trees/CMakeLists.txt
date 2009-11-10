@@ -15,7 +15,7 @@ add_subdirectory( bookmark_module )
 
 ########### next target ###############
 
-set(konqsidebar_tree_PART_SRCS konqsidebar_tree.cpp ${libkonq_sidebar_tree_SRCS})
+set(konqsidebar_tree_PART_SRCS konqsidebar_oldtreemodule.cpp ${libkonq_sidebar_tree_SRCS})
 
 kde4_add_plugin(konqsidebar_tree ${konqsidebar_tree_PART_SRCS})
 

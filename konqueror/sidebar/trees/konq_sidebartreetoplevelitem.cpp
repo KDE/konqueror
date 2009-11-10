@@ -24,6 +24,8 @@
 #include <konq_operations.h>
 #include <kprotocolinfo.h>
 #include <k3urldrag.h>
+#include <kconfiggroup.h>
+#include <kfileitem.h>
 #include <kmimetype.h>
 #include <QtGui/QApplication>
 #include <QtGui/QClipboard>
@@ -88,15 +90,12 @@ void KonqSidebarTreeTopLevelItem::drop( QDropEvent * ev )
 
 bool KonqSidebarTreeTopLevelItem::populateMimeData( QMimeData* mimeData, bool move )
 {
-    // 100% duplicated from KonqDirTreeItem::dragObject :(
     KUrl::List lst;
-    KUrl url;
-    url.setPath( path() );
-    lst.append( url );
+    lst.append( KUrl(path()) );
 
     KonqMimeData::populateMimeData( mimeData, KUrl::List(), lst, move );
 
-#if 0 // was this ever used? Seems populateMimeData is only used for copy/cut, not for dragging?
+#if 0
     const QPixmap * pix = pixmap(0);
     if (pix)
     {

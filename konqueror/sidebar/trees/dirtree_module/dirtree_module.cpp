@@ -20,6 +20,8 @@
 
 #include "dirtree_module.h"
 #include "dirtree_item.h"
+
+#include <kconfiggroup.h>
 #include <kdebug.h>
 #include <kprotocolmanager.h>
 #include <kdesktopfile.h>

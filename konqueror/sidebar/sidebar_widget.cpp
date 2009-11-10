@@ -134,7 +134,7 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, const
     m_noUpdate = false;
     m_layout = 0;
     m_currentButtonIndex = -1;
-    //m_activeModule = 0; // TODO REMOVE?
+    m_activeModule = 0;
     //m_userMovedSplitter = false;
     //kDebug() << "**** Sidebar_Widget:SidebarWidget()";
     m_hasStoredUrl = false;
@@ -366,20 +366,11 @@ void Sidebar_Widget::readConfig()
 
 void Sidebar_Widget::stdAction(const char *handlestd)
 {
-// PENDING(kdab) Review
-#ifdef KDAB_TEMPORARILY_REMOVED
-    ButtonInfo* mod = m_activeModule;
-
-    if (!mod || !mod->module)
-        return;
-
-    kDebug() << "Try calling >active< module's (" << mod->module->metaObject()->className() << ") slot " << handlestd;
-
-    QMetaObject::invokeMethod( mod->module, handlestd );
-#else // KDAB_TEMPORARILY_REMOVED
-    qWarning("Sorry, not implemented: Sidebar_Widget::stdAction");
-    return ;
-#endif // KDAB_TEMPORARILY_REMOVED
+    // ### problem: what about multi mode? We could have multiple modules shown,
+    // and if we use Edit/Copy, which one should be used? Need to care about focus...
+    kDebug() << handlestd << "m_activeModule=" << m_activeModule;
+    if (m_activeModule)
+        QMetaObject::invokeMethod(m_activeModule, handlestd);
 }
 
 
@@ -724,77 +715,31 @@ void Sidebar_Widget::createNewWindow(const KUrl &url, const KParts::OpenUrlArgum
     getExtension()->createNewWindow(url, args, browserArgs, windowArgs);
 }
 
-void Sidebar_Widget::enableAction( const char * name, bool enabled )
+void Sidebar_Widget::slotEnableAction(KonqSidebarModule* module, const char * name, bool enabled)
 {
-// PENDING(kdab) Review
-#ifdef KDAB_TEMPORARILY_REMOVED
-    // TODO ###### How could this ever happen?!?
-    if ((qstrcmp("ButtonInfo", sender()->parent()->metaObject()->className()) == 0))
-    {
-        ButtonInfo *btninfo = static_cast<ButtonInfo*>(sender()->parent());
-        if (btninfo)
-        {
-            QString n(name);
-            if (n == "copy")
-                btninfo->copy = enabled;
-            else if (n == "cut")
-                btninfo->cut = enabled;
-            else if (n == "paste")
-                btninfo->paste = enabled;
-            else if (n == "trash")
-                btninfo->trash = enabled;
-            else if (n == "del")
-                btninfo->del = enabled;
-            else if (n == "rename")
-                btninfo->rename = enabled;
-        }
+    if (module->getWidget()->isVisible()) {
+        emit getExtension()->enableAction(name, enabled);
     }
-#else // KDAB_TEMPORARILY_REMOVED
-    qWarning("Sorry, not implemented: Sidebar_Widget::enableAction");
-    return ;
-#endif // KDAB_TEMPORARILY_REMOVED
 }
 
 
-bool  Sidebar_Widget::doEnableActions()
+void Sidebar_Widget::doEnableActions()
 {
-// PENDING(kdab) Review
-#ifdef KDAB_TEMPORARILY_REMOVED
-    if ((qstrcmp("ButtonInfo", sender()->parent()->metaObject()->className()) != 0))
-    {
-        kDebug()<<"Couldn't set active module, aborting";
-        return false;
-    } else {
-        m_activeModule=static_cast<ButtonInfo*>(sender()->parent());
-        getExtension()->enableAction( "copy", m_activeModule->copy );
-        getExtension()->enableAction( "cut", m_activeModule->cut );
-        getExtension()->enableAction( "paste", m_activeModule->paste );
-        getExtension()->enableAction( "trash", m_activeModule->trash );
-        getExtension()->enableAction( "del", m_activeModule->del );
-        getExtension()->enableAction( "rename", m_activeModule->rename );
-        return true;
+    if (m_activeModule) {
+        getExtension()->enableAction( "copy", m_activeModule->isCopyEnabled() );
+        getExtension()->enableAction( "cut", m_activeModule->isCutEnabled() );
+        getExtension()->enableAction( "paste", m_activeModule->isPasteEnabled() );
     }
-
-#else // KDAB_TEMPORARILY_REMOVED
-    qWarning("Sorry, not implemented: Sidebar_Widget::doEnableActions");
-    return true;
-#endif // KDAB_TEMPORARILY_REMOVED
 }
 
 
-void Sidebar_Widget::connectModule(QObject *mod)
+void Sidebar_Widget::connectModule(KonqSidebarModule *mod)
 {
-    // TODO get rid of started/completed, or define them in base class
-    if (mod->metaObject()->indexOfSignal("started(KIO::Job*)") != -1) {
-        connect(mod,SIGNAL(started(KIO::Job *)),this, SIGNAL(started(KIO::Job*)));
-    }
+    connect(mod,SIGNAL(started(KIO::Job *)),this, SIGNAL(started(KIO::Job*)));
+    connect(mod,SIGNAL(completed()),this,SIGNAL(completed()));
 
-    if (mod->metaObject()->indexOfSignal("completed()") != -1) {
-        connect(mod,SIGNAL(completed()),this,SIGNAL(completed()));
-    }
-
-    connect(mod, SIGNAL(popupMenu(QPoint,KFileItemList,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)),
-            getExtension(), SIGNAL(popupMenu(QPoint,KFileItemList,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)));
+    connect(mod, SIGNAL(popupMenu(KonqSidebarModule*,QPoint,KFileItemList,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)),
+            this, SLOT(slotPopupMenu(KonqSidebarModule*,QPoint,KFileItemList,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)));
 
     connect(mod, SIGNAL(openUrlRequest(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)),
             this, SLOT(openUrlRequest(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)));
@@ -809,11 +754,8 @@ void Sidebar_Widget::connectModule(QObject *mod)
                 SLOT(submitFormRequest(const char*,const QString&,const QByteArray&,const QString&,const QString&,const QString&)));
     }
 
-    // TODO remove?
-    if (mod->metaObject()->indexOfSignal("enableAction(const char*,bool)") != -1) {
-        connect(mod,SIGNAL(enableAction( const char *, bool)),
-                this,SLOT(enableAction(const char *, bool)));
-    }
+    connect(mod, SIGNAL(enableAction(KonqSidebarModule*,const char*,bool)),
+            this, SLOT(slotEnableAction(KonqSidebarModule*,const char*,bool)));
 }
 
 Sidebar_Widget::~Sidebar_Widget()
@@ -852,6 +794,18 @@ KonqSidebarPlugin* ButtonInfo::plugin(QObject* parent)
         m_plugin = plugin;
     }
     return m_plugin;
+}
+
+void Sidebar_Widget::slotPopupMenu(KonqSidebarModule* module,
+                                   const QPoint &global, const KFileItemList &items,
+                                   const KParts::OpenUrlArguments &args,
+                                   const KParts::BrowserArguments &browserArgs,
+                                   KParts::BrowserExtension::PopupFlags flags,
+                                   const KParts::BrowserExtension::ActionGroupMap& actionGroups)
+{
+    m_activeModule = module;
+    doEnableActions();
+    emit getExtension()->popupMenu(global, items, args, browserArgs, flags, actionGroups);
 }
 
 #include "sidebar_widget.moc"
