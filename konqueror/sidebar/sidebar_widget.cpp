@@ -149,7 +149,7 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, const
 
     m_menu = new QMenu(this);
     m_menu->setIcon(KIcon("configure"));
-    m_menu->setTitle(i18n("Configure Navigation Panel"));
+    m_menu->setTitle(i18n("Configure Sidebar"));
 
     m_addMenu = m_menu->addMenu(i18n("Add New"));
     connect(m_addMenu, SIGNAL(aboutToShow()), this, SLOT(aboutToShowAddMenu()));
@@ -161,7 +161,7 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, const
     m_showConfigButton = m_menu->addAction(i18n("Show Configuration Button"), this, SLOT(slotShowConfigurationButton()));
     m_showConfigButton->setCheckable(true);
     m_menu->addSeparator();
-    m_menu->addAction(KIcon("window-close"), i18n("Close Navigation Panel"),
+    m_menu->addAction(KIcon("window-close"), i18n("Close Sidebar"),
                       par, SLOT(deleteLater()));
 
     connect(m_menu, SIGNAL(aboutToShow()),
