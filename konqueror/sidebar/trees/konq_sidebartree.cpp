@@ -38,10 +38,12 @@
 #include <kdirnotify.h>
 #include <kdesktopfile.h>
 #include <kglobalsettings.h>
+#include <klibloader.h>
 #include <kicon.h>
 #include <kiconloader.h>
 #include <kinputdialog.h>
 #include <kio/netaccess.h>
+#include <klocale.h>
 #include <kmimetype.h>
 #include <kshell.h>
 #include <kpropertiesdialog.h>
@@ -192,6 +194,44 @@ KonqSidebarTree::KonqSidebarTree( KonqSidebar_Tree *parent, QWidget *parentWidge
     connect(kdirnotify, SIGNAL(FilesAdded(QString)), SLOT(slotFilesAdded(QString)));
     connect(kdirnotify, SIGNAL(FilesChanged(QStringList)), SLOT(slotFilesChanged(QStringList)));
     connect(kdirnotify, SIGNAL(FilesRemoved(QStringList)), SLOT(slotFilesRemoved(QStringList)));
+
+    m_collection = new KActionCollection(this);
+    m_collection->setObjectName("bookmark actions");
+    QAction *action = new KAction(KIcon("folder-new"), i18n("&Create New Folder..."), this);
+    m_collection->addAction("create_folder", action);
+    connect(action, SIGNAL(triggered(bool)), SLOT(slotCreateFolder()));
+
+    action = new KAction(KIcon("edit-delete"), i18n("Delete Folder"), this);
+    m_collection->addAction("delete", action);
+    connect(action, SIGNAL(triggered(bool)), SLOT(slotDelete()));
+
+    action = new KAction(KIcon("user-trash"), i18n("Move to Trash"), this);
+    m_collection->addAction("trash", action);
+    connect(action, SIGNAL(triggered(bool)), SLOT(slotTrash()));
+
+    action = new KAction(i18n("Rename"), this);
+    m_collection->addAction("rename", action);
+    connect(action, SIGNAL(triggered(bool) ), SLOT( slotRename() ));
+
+    action = new KAction(KIcon("edit-delete"), i18n("Delete Link"), this);
+    m_collection->addAction("delete_link", action);
+    connect(action, SIGNAL(triggered(bool)), SLOT(slotDelete()));
+
+    action = new KAction(KIcon("document-properties"), i18n("Properties"), this);
+    m_collection->addAction("item_properties", action);
+    connect(action, SIGNAL(triggered(bool)), SLOT(slotProperties()));
+
+    action = new KAction(KIcon("window-new"), i18n("Open in New Window"), this);
+    m_collection->addAction("open_window", action);
+    connect(action, SIGNAL(triggered(bool)), SLOT(slotOpenNewWindow()));
+
+    action = new KAction(KIcon("tab-new"), i18n("Open in New Tab"), this);
+    m_collection->addAction("open_tab", action);
+    connect(action, SIGNAL(triggered(bool)), SLOT(slotOpenTab()));
+
+    action = new KAction(KIcon("edit-copy"), i18n("Copy Link Address"), this);
+    m_collection->addAction("copy_location", action);
+    connect(action, SIGNAL(triggered(bool)), SLOT(slotCopyLocation()));
 }
 
 KonqSidebarTree::~KonqSidebarTree()
@@ -852,15 +892,12 @@ void KonqSidebarTree::slotItemRenamed(Q3ListViewItem* item, const QString &name,
 }
 
 
-void KonqSidebarTree::enableActions( bool copy, bool cut, bool paste,
-                        bool trash, bool del, bool rename)
+void KonqSidebarTree::enableActions(bool copy, bool cut, bool paste)
 {
+    kDebug() << copy << cut << paste;
     enableAction( "copy", copy );
     enableAction( "cut", cut );
     enableAction( "paste", paste );
-    enableAction( "trash", trash );
-    enableAction( "del", del );
-    enableAction( "rename", rename );
 }
 
 void KonqSidebarTree::showToplevelContextMenu()
@@ -870,42 +907,12 @@ void KonqSidebarTree::showToplevelContextMenu()
     if (treeItem && treeItem->isTopLevelItem())
         item = static_cast<KonqSidebarTreeTopLevelItem *>(treeItem);
 
-    if (!m_collection)
-    {
-        m_collection = new KActionCollection( this);
-        m_collection->setObjectName("bookmark actions");
-        QAction *action = new KAction(KIcon("folder-new"),  i18n("&Create New Folder..."), this);
-        m_collection->addAction("create_folder", action);
-        connect(action, SIGNAL(triggered(bool)), SLOT( slotCreateFolder() ));
-        action = new KAction(KIcon("edit-delete"),  i18n("Delete Folder"), this);
-        m_collection->addAction("delete_folder", action);
-        connect(action, SIGNAL(triggered(bool)), SLOT( slotDelete() ));
-        action = new KAction(i18n("Rename"), this);
-        m_collection->addAction("rename", action);
-        connect(action, SIGNAL(triggered(bool) ), SLOT( slotRename() ));
-        action = new KAction(KIcon("edit-delete"),  i18n("Delete Link"), this);
-        m_collection->addAction("delete_link", action);
-        connect(action, SIGNAL(triggered(bool)), SLOT( slotDelete() ));
-        action = new KAction(KIcon("document-properties"),  i18n("Properties"), this);
-        m_collection->addAction("item_properties", action);
-        connect(action, SIGNAL(triggered(bool)), SLOT( slotProperties() ));
-        action = new KAction(KIcon("window-new"),  i18n("Open in New Window"), this);
-        m_collection->addAction("open_window", action);
-        connect(action, SIGNAL(triggered(bool)), SLOT( slotOpenNewWindow() ));
-        action = new KAction(KIcon("tab-new"),  i18n("Open in New Tab"), this);
-        m_collection->addAction("open_tab", action);
-        connect(action, SIGNAL(triggered(bool)), SLOT( slotOpenTab() ));
-        action = new KAction(KIcon("edit-copy"),  i18n("Copy Link Address"), this);
-        m_collection->addAction("copy_location", action);
-        connect(action, SIGNAL(triggered(bool)), SLOT( slotCopyLocation() ));
-    }
-
     QMenu *menu = new QMenu;
 
     if (item) {
         if (item->isTopLevelGroup()) {
             menu->addAction( m_collection->action("rename") );
-            menu->addAction( m_collection->action("delete_folder") );
+            menu->addAction( m_collection->action("delete") );
             menu->addSeparator();
             menu->addAction( m_collection->action("create_folder") );
         } else {
@@ -965,26 +972,32 @@ void KonqSidebarTree::slotCreateFolder()
 
 void KonqSidebarTree::slotDelete()
 {
-    if (!m_currentTopLevelItem) return;
-    m_currentTopLevelItem->del();
+    if (currentItem())
+        currentItem()->del();
+}
+
+void KonqSidebarTree::slotTrash()
+{
+    if (currentItem())
+        currentItem()->trash();
 }
 
 void KonqSidebarTree::slotRename()
 {
-    if (!m_currentTopLevelItem) return;
-    m_currentTopLevelItem->rename();
+    if (currentItem())
+        currentItem()->rename();
 }
 
 void KonqSidebarTree::slotProperties()
 {
     if (!m_currentTopLevelItem) return;
 
-    KUrl url;
-    url.setPath(m_currentTopLevelItem->path());
+    KUrl url(m_currentTopLevelItem->path());
 
-    KPropertiesDialog *dlg = new KPropertiesDialog( url, this );
+    QPointer<KPropertiesDialog> dlg(new KPropertiesDialog(url, this));
     dlg->setFileNameReadOnly(true);
     dlg->exec();
+    delete dlg;
 }
 
 void KonqSidebarTree::slotOpenNewWindow()

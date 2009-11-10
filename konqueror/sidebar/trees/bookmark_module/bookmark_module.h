@@ -25,6 +25,7 @@
 
 #include <konq_sidebartreemodule.h>
 #include <kdialog.h>
+#include <klocale.h>
 
 class KActionCollection;
 class KLineEdit;

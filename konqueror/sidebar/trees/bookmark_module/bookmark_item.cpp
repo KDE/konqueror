@@ -68,7 +68,7 @@ QString KonqSidebarBookmarkItem::toolTipText() const
 
 void KonqSidebarBookmarkItem::itemSelected()
 {
-    tree()->enableActions( false, false, false, false, false, false );
+    tree()->enableActions( false, false, false );
 }
 
 QString KonqSidebarBookmarkItem::key( int /*column*/, bool /*ascending*/ ) const
