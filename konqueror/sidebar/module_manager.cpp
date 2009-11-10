@@ -86,6 +86,7 @@ KService::List ModuleManager::availablePlugins() const
     // We could use KServiceTypeTrader for that; not sure 2 files make a big performance difference though.
     const QStringList files = KGlobal::dirs()->findAllResources("data", "konqsidebartng/plugins/*.desktop");
     KService::List services;
+    // TODO: what about the sort order? #59838
     Q_FOREACH(const QString& path, files) {
         KDesktopFile df(path); // no merging. KService warns, and we don't need it.
         services.append(KService::Ptr(new KService(&df)));

@@ -521,7 +521,7 @@ void KonqSidebarBookmarkModule::fillGroup( KonqSidebarTreeItem * parentItem, con
                     item->setOpen(false);
             }
             else if ( bk.isSeparator() )
-                item->setVisible( false );
+                item->setVisible( false ); // ### this probably causes bug #78257
             else
                 item->setExpandable( false );
     }
