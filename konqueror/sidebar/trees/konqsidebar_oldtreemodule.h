@@ -13,15 +13,17 @@ public:
                      const QString &desktopName_, const KConfigGroup& configGroup);
     ~KonqSidebarOldTreeModule();
     virtual QWidget *getWidget();
-protected:
-    class QWidget *widget;
-    class KonqSidebarTree *tree;
-    virtual void handleURL(const KUrl &url);
-protected Q_SLOTS:
+
+public Q_SLOTS:
     void copy();
     void cut();
     void paste();
     void pasteToSelection();
+
+protected:
+    QWidget *widget;
+    KonqSidebarTree *tree;
+    virtual void handleURL(const KUrl &url);
 };
 
 #endif // KONQSIDEBAR_TREEMODULE_H

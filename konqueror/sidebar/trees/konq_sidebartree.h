@@ -154,6 +154,7 @@ private:
 
     void loadModuleFactories();
 
+    bool overrideShortcut(const QKeyEvent* e);
 
 private:
     Q3PtrList<KonqSidebarTreeTopLevelItem> m_topLevelItems;
@@ -199,6 +200,11 @@ private:
     KActionCollection *m_collection;
 
     KonqSidebarTree_Internal *d;
+
+Q_SIGNALS:
+    void copy();
+    void cut();
+    void paste();
 
 #ifndef Q_MOC_RUN
 #undef signals

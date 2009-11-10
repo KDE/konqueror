@@ -1048,17 +1048,44 @@ void KonqSidebarTreeToolTip::maybeTip( const QPoint &point )
 }
 */
 
+bool KonqSidebarTree::overrideShortcut(const QKeyEvent* e)
+{
+    const int key = e->key() | e->modifiers();
+    if (key == Qt::Key_F2) {
+        slotRename();
+        return true;
+    } else if (key == Qt::Key_Delete) {
+        kDebug() << "delete key -> trash";
+        slotTrash();
+        return true;
+    } else if (key == (Qt::SHIFT | Qt::Key_Delete)) {
+        kDebug() << "shift+delete -> delete";
+        slotDelete();
+        return true;
+    } else if (KStandardShortcut::copy().contains(key)) {
+        kDebug() << "copy";
+        emit copy();
+        return true;
+    } else if (KStandardShortcut::cut().contains(key)) {
+        kDebug() << "cut";
+        emit cut();
+        return true;
+    } else if (KStandardShortcut::paste().contains(key)) {
+        kDebug() << "paste";
+        emit paste();
+        return true;
+    }
+    return false;
+}
 
-// For F2 to work we can't use a KAction; it would conflict with the KAction from the active dolphinpart.
-// So we have to use ShortcutOverride.
+// For F2 and other shortcuts to work we can't use a KAction; it would conflict with the
+// KAction from the active dolphinpart. So we have to use ShortcutOverride.
+// Many users requested keyboard shortcuts to work in the sidebar, so it's worth the ugliness (#80584)
 bool KonqSidebarTree::eventFilter(QObject* obj, QEvent* ev)
 {
     if (ev->type() == QEvent::ShortcutOverride) {
-        kDebug() << "ShortcutOverride";
         QKeyEvent *e = static_cast<QKeyEvent *>( ev );
-        const int key = e->key() | e->modifiers();
-        if (key == Qt::Key_F2) {
-            slotRename();
+        if (overrideShortcut(e)) {
             e->accept();
             return true;
         }
