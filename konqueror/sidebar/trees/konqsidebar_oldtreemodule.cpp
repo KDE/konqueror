@@ -50,6 +50,13 @@ KonqSidebarOldTreeModule::KonqSidebarOldTreeModule(const KComponentData &compone
 
 	connect(tree,SIGNAL(createNewWindow(const KUrl &, const KParts::OpenUrlArguments &, const KParts::BrowserArguments &)),
 		this,SIGNAL(createNewWindow(const KUrl &, const KParts::OpenUrlArguments &, const KParts::BrowserArguments &)));
+
+        connect(tree, SIGNAL(copy()),
+                this, SLOT(copy()));
+        connect(tree, SIGNAL(cut()),
+                this, SLOT(cut()));
+        connect(tree, SIGNAL(paste()),
+                this, SLOT(pasteToSelection()));
 }
 
 
