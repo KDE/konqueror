@@ -31,6 +31,7 @@
 
 #include <kactioncollection.h>
 #include <kaction.h>
+#include <kdebug.h>
 #include <kicon.h>
 #include <klineedit.h>
 #include <klocale.h>
@@ -53,6 +54,7 @@ KonqHistoryView::KonqHistoryView(QWidget* parent)
     m_historyProxyModel->sort(0);
 
     m_collection = new KActionCollection(this);
+    m_collection->addAssociatedWidget(m_treeView); // make shortcuts work
     QAction *action = m_collection->addAction("open_new");
     action->setIcon(KIcon("window-new"));
     action->setText(i18n("Open in New &Window"));
@@ -60,6 +62,8 @@ KonqHistoryView::KonqHistoryView(QWidget* parent)
     action = m_collection->addAction("remove");
     action->setIcon(KIcon("edit-delete"));
     action->setText(i18n("&Remove Entry"));
+    action->setShortcut(Qt::Key_Delete); // #135966
+    action->setShortcutContext(Qt::WidgetWithChildrenShortcut);
     connect(action, SIGNAL(triggered(bool)), this, SLOT(slotRemoveEntry()));
     action = m_collection->addAction("clear");
     action->setIcon(KIcon("edit-clear-history"));
@@ -138,6 +142,7 @@ void KonqHistoryView::slotRemoveEntry()
         return;
     }
 
+    // TODO undo/redo support
     m_historyModel->deleteItem(m_historyProxyModel->mapToSource(index));
 }
 
