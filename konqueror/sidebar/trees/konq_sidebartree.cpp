@@ -18,6 +18,7 @@
    Boston, MA 02110-1301, USA.
 */
 
+#include "konq_sidebartree.h"
 #include "konq_sidebartreemodule.h"
 #include "konqsidebar_oldtreemodule.h"
 
@@ -133,6 +134,7 @@ KonqSidebarTree::KonqSidebarTree( KonqSidebarOldTreeModule *parent, QWidget *par
 
     setAcceptDrops( true );
     viewport()->setAcceptDrops( true );
+    installEventFilter(this);
     m_lstModules.setAutoDelete( true );
 
     setSelectionMode( Q3ListView::Single );
@@ -214,8 +216,6 @@ KonqSidebarTree::KonqSidebarTree( KonqSidebarOldTreeModule *parent, QWidget *par
     connect(action, SIGNAL(triggered(bool)), SLOT(slotTrash()));
 
     action = new KAction(i18n("Rename"), this);
-    action->setShortcut(Qt::Key_F2); // clash!
-    action->setShortcutContext(Qt::WidgetWithChildrenShortcut);
     action->setIcon(KIcon("edit-rename"));
     m_collection->addAction("rename", action);
     connect(action, SIGNAL(triggered(bool) ), SLOT( slotRename() ));
@@ -1049,5 +1049,21 @@ void KonqSidebarTreeToolTip::maybeTip( const QPoint &point )
 */
 
 
+// For F2 to work we can't use a KAction; it would conflict with the KAction from the active dolphinpart.
+// So we have to use ShortcutOverride.
+bool KonqSidebarTree::eventFilter(QObject* obj, QEvent* ev)
+{
+    if (ev->type() == QEvent::ShortcutOverride) {
+        kDebug() << "ShortcutOverride";
+        QKeyEvent *e = static_cast<QKeyEvent *>( ev );
+        const int key = e->key() | e->modifiers();
+        if (key == Qt::Key_F2) {
+            slotRename();
+            e->accept();
+            return true;
+        }
+    }
+    return K3ListView::eventFilter(obj, ev);
+}
 
 #include "konq_sidebartree.moc"
