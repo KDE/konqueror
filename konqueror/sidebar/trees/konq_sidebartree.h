@@ -117,6 +117,7 @@ protected:
     virtual void contentsDropEvent( QDropEvent *ev );
     virtual bool acceptDrag(QDropEvent* e) const; // used in K3ListView mode
 
+    virtual bool eventFilter(QObject* obj, QEvent* ev);
     virtual void leaveEvent( QEvent * );
 
     virtual Q3DragObject* dragObject();
