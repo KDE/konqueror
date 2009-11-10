@@ -781,25 +781,10 @@ bool  Sidebar_Widget::doEnableActions()
 #endif // KDAB_TEMPORARILY_REMOVED
 }
 
-void Sidebar_Widget::popupMenu( const QPoint &global, const KFileItemList &items )
-{
-    if (doEnableActions())
-        getExtension()->popupMenu(global,items);
-}
-
-void Sidebar_Widget::popupMenu(
-    const QPoint &global, const KUrl &url,
-    const QString &mimeType, mode_t mode )
-{
-    if (doEnableActions()) {
-        KParts::OpenUrlArguments args;
-        args.setMimeType(mimeType);
-        getExtension()->popupMenu(global,url,mode, args);
-    }
-}
 
 void Sidebar_Widget::connectModule(QObject *mod)
 {
+    // TODO get rid of started/completed, or define them in base class
     if (mod->metaObject()->indexOfSignal("started(KIO::Job*)") != -1) {
         connect(mod,SIGNAL(started(KIO::Job *)),this, SIGNAL(started(KIO::Job*)));
     }
@@ -808,29 +793,15 @@ void Sidebar_Widget::connectModule(QObject *mod)
         connect(mod,SIGNAL(completed()),this,SIGNAL(completed()));
     }
 
-    if (mod->metaObject()->indexOfSignal("popupMenu(QPoint,KUrl,QString,mode_t)") != -1) {
-        connect(mod,SIGNAL(popupMenu( const QPoint &, const KUrl &,
-                                      const QString &, mode_t)),this,SLOT(popupMenu( const
-                                                                                     QPoint &, const KUrl&, const QString &, mode_t)));
-    }
+    connect(mod, SIGNAL(popupMenu(QPoint,KFileItemList,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)),
+            getExtension(), SIGNAL(popupMenu(QPoint,KFileItemList,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)));
 
-    if (mod->metaObject()->indexOfSignal("popupMenu(QPoint,KUrl,QString,mode_t)") != -1) {
-        connect(mod,SIGNAL(popupMenu( const QPoint &,
-                                      const KUrl &,const QString &, mode_t)),this,
-                SLOT(popupMenu( const QPoint &,
-                                const KUrl &,const QString &, mode_t)));
-    }
-
-    if (mod->metaObject()->indexOfSignal("popupMenu(QPoint,KFileItemList)") != -1) {
-        connect(mod,SIGNAL(popupMenu( const QPoint &, const KFileItemList & )),
-                this,SLOT(popupMenu( const QPoint &, const KFileItemList & )));
-    }
-
-    connect(mod, SIGNAL(openUrlRequest( const KUrl &, const KParts::OpenUrlArguments&, const KParts::BrowserArguments&)),
-            this, SLOT(openUrlRequest( const KUrl &, const KParts::OpenUrlArguments&, const KParts::BrowserArguments&)));
+    connect(mod, SIGNAL(openUrlRequest(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)),
+            this, SLOT(openUrlRequest(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)));
     connect(mod, SIGNAL(createNewWindow(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::WindowArgs)),
             this, SLOT(createNewWindow(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::WindowArgs)));
 
+    // TODO define in base class
     if (mod->metaObject()->indexOfSignal("submitFormRequest(const char*,QString,QByteArray,QString,QString,QString)") != -1) {
         connect(mod,
                 SIGNAL(submitFormRequest(const char*,const QString&,const QByteArray&,const QString&,const QString&,const QString&)),
@@ -838,6 +809,7 @@ void Sidebar_Widget::connectModule(QObject *mod)
                 SLOT(submitFormRequest(const char*,const QString&,const QByteArray&,const QString&,const QString&,const QString&)));
     }
 
+    // TODO remove?
     if (mod->metaObject()->indexOfSignal("enableAction(const char*,bool)") != -1) {
         connect(mod,SIGNAL(enableAction( const char *, bool)),
                 this,SLOT(enableAction(const char *, bool)));

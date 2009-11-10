@@ -19,8 +19,9 @@
 
 //#include "konq_treepart.h"
 #include "dirtree_item.h"
+#include <kfileitemlistproperties.h>
 #include "dirtree_module.h"
-#include <kapplication.h>
+#include <kactioncollection.h>
 #include <konq_operations.h>
 #include <kdebug.h>
 #include <kglobalsettings.h>
@@ -157,22 +158,13 @@ bool KonqSidebarDirTreeItem::populateMimeData( QMimeData* mimeData, bool move )
 
 void KonqSidebarDirTreeItem::itemSelected()
 {
-    bool bInTrash = false;
-#ifdef __GNUC__
-#warning hardcoded protocol check: replace with better way to determine if a URL is a trash url
-#endif
-    if ( m_fileItem.url().protocol() == "trash" )
-        bInTrash = true;
-
     QMimeSource *data = QApplication::clipboard()->data();
-    bool paste = ( data->encodedData( data->format() ).size() != 0 );
-
-    tree()->enableActions( true, true, paste, !bInTrash, true, true );
+    const bool paste = data->provides("text/uri-list");
+    tree()->enableActions( true, true, paste );
 }
 
 void KonqSidebarDirTreeItem::middleButtonClicked()
 {
-    // Duplicated from KonqDirPart :(
     // Optimization to avoid KRun to call kfmclient that then tells us
     // to open a window :-)
     KService::Ptr offer = KMimeTypeTrader::self()->preferredService(m_fileItem.mimetype(), "Application");
@@ -190,9 +182,64 @@ void KonqSidebarDirTreeItem::middleButtonClicked()
 
 void KonqSidebarDirTreeItem::rightButtonPressed()
 {
-    KFileItemList lstItems;
-    lstItems.append( m_fileItem );
-    emit tree()->popupMenu( QCursor::pos(), lstItems );
+    KParts::BrowserExtension::PopupFlags popupFlags = KParts::BrowserExtension::DefaultPopupItems
+                                                      | KParts::BrowserExtension::ShowProperties
+                                                      | KParts::BrowserExtension::ShowUrlOperations;
+    KParts::BrowserExtension::ActionGroupMap actionGroups;
+    QList<QAction *> editActions;
+    KActionCollection* actionCollection = tree()->actionCollection();
+
+    KFileItemList items;
+    items.append(m_fileItem);
+    KFileItemListProperties capabilities(items);
+
+    // ###### most of this is duplicated from DolphinPart::slotOpenContextMenu :(
+
+    bool supportsDeleting = capabilities.supportsDeleting();
+    bool supportsMoving = capabilities.supportsMoving();
+    if (!supportsDeleting) {
+        popupFlags |= KParts::BrowserExtension::NoDeletion;
+    }
+
+    Q_ASSERT(actionCollection->action("rename"));
+    Q_ASSERT(actionCollection->action("trash"));
+    Q_ASSERT(actionCollection->action("delete"));
+
+    if (supportsMoving) {
+        editActions.append(actionCollection->action("rename"));
+    }
+
+    bool addTrash = capabilities.isLocal() && supportsMoving;
+    bool addDel = false;
+
+    if (supportsDeleting) {
+        if (!m_fileItem.isLocalFile())
+            addDel = true;
+        else if (QApplication::keyboardModifiers() & Qt::ShiftModifier) {
+            addTrash = false;
+            addDel = true;
+        }
+        else {
+            KSharedConfig::Ptr globalConfig = KSharedConfig::openConfig("kdeglobals", KConfig::IncludeGlobals);
+            KConfigGroup configGroup(globalConfig, "KDE");
+            addDel = configGroup.readEntry("ShowDeleteCommand", false);
+        }
+    }
+
+    if (addTrash)
+        editActions.append(actionCollection->action("trash"));
+    if (addDel)
+        editActions.append(actionCollection->action("delete"));
+    // Normally KonqPopupMenu only shows the "Create new" submenu in the current view
+    // since otherwise the created file would not be visible.
+    // But in treeview mode we should allow it.
+    popupFlags |= KParts::BrowserExtension::ShowCreateDirectory;
+
+    actionGroups.insert("editactions", editActions);
+
+    emit tree()->popupMenu(QCursor::pos(), items,
+                           KParts::OpenUrlArguments(), KParts::BrowserArguments(),
+                           popupFlags, actionGroups);
 }
 
 void KonqSidebarDirTreeItem::paste()

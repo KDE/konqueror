@@ -86,18 +86,28 @@ public Q_SLOTS:
     void openPreview(const KFileItemList& items);
 
     void openPreviewOnMouseOver(const KFileItem& item); // not used yet
-    /*
-      if your plugin supports a setup dialog, instead (replaces the url menu entry in the popup) (not supported yet)
-      void setup(QWidget *parent);
-
-    */
 
 Q_SIGNALS:
+    /**
+     * Ask konqueror to open @p url.
+     */
     void openUrlRequest(const KUrl &url, const KParts::OpenUrlArguments& args = KParts::OpenUrlArguments(),
                         const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments());
+    /**
+     * Ask konqueror to create a new window (or tab, see BrowserArguments) for @p url.
+     */
     void createNewWindow(const KUrl &url, const KParts::OpenUrlArguments& args = KParts::OpenUrlArguments(),
                          const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments(),
                          const KParts::WindowArgs& = KParts::WindowArgs());
+
+    /**
+     * Ask konqueror to show the standard popup menu for the given @p items.
+     */
+    void popupMenu(const QPoint &global, const KFileItemList &items,
+                   const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
+                   const KParts::BrowserArguments &browserArgs = KParts::BrowserArguments(),
+                   KParts::BrowserExtension::PopupFlags flags = KParts::BrowserExtension::DefaultPopupItems,
+                   const KParts::BrowserExtension::ActionGroupMap& actionGroups = KParts::BrowserExtension::ActionGroupMap());
 
     /* signals, which sidebar_widget.cpp connects by name. TODO: define the useful ones here, remove
      * the others
@@ -105,8 +115,6 @@ Q_SIGNALS:
     void started(KIO::Job *);
     void completed();
     void submitFormRequest(const char*,const QString&,const QByteArray&,const QString&,const QString&,const QString&);
-    void
-    void popupMenu( ... );
     */
 
 private:

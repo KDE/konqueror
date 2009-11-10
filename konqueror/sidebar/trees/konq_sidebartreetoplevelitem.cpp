@@ -52,8 +52,8 @@ void KonqSidebarTreeTopLevelItem::itemSelected()
 {
     kDebug() << "KonqSidebarTreeTopLevelItem::itemSelected";
     QMimeSource *data = QApplication::clipboard()->data();
-    bool paste = m_bTopLevelGroup && data->provides("text/uri-list");
-    tree()->enableActions( true, true, paste, true, true, true /*rename*/ );
+    const bool paste = m_bTopLevelGroup && data->provides("text/uri-list");
+    tree()->enableActions(true, true, paste);
 }
 
 bool KonqSidebarTreeTopLevelItem::acceptsDrops( const Q3StrList & formats )

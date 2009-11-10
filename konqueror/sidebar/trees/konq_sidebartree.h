@@ -34,6 +34,7 @@
 #include <Qt3Support/Q3PtrList>
 #include <QtCore/QEvent>
 
+class KonqSidebar_Tree;
 class KonqSidebarTreeModule;
 class KonqSidebarTreeItem;
 class KActionCollection;
@@ -81,14 +82,15 @@ public:
     void startAnimation( KonqSidebarTreeItem * item, const char * iconBaseName = "kde", uint iconCount = 6, const QPixmap * originalPixmap = 0L );
     void stopAnimation( KonqSidebarTreeItem * item );
 
-    KonqSidebarModule * part() { return m_part; }
+    KonqSidebarModule * part() { return m_part; } // TODO remove
+
+    KActionCollection *actionCollection() { return m_collection; }
 
     void lockScrolling( bool lock ) { m_scrollingLocked = lock; }
 
     bool isOpeningFirstChild() const { return m_bOpeningFirstChild; }
 
-    void enableActions( bool copy, bool cut, bool paste,
-                        bool trash, bool del, bool rename = false );
+    void enableActions(bool copy, bool cut, bool paste);
 
     void itemDestructed( KonqSidebarTreeItem *item );
 
@@ -136,6 +138,7 @@ private slots:
 
     void slotCreateFolder();
     void slotDelete();
+    void slotTrash();
     void slotRename();
     void slotProperties();
     void slotOpenNewWindow();
@@ -157,7 +160,7 @@ private:
 
     Q3PtrList<KonqSidebarTreeModule> m_lstModules;
 
-    KonqSidebarModule  *m_part;
+    KonqSidebar_Tree *m_part;
 
     struct AnimationInfo
     {
@@ -209,9 +212,11 @@ signals:
                           const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments() );
     void createNewWindow( const KUrl &url, const KParts::OpenUrlArguments& args = KParts::OpenUrlArguments(),
                           const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments() );
-    void popupMenu( const QPoint &global, const KUrl &url,
-         const QString &mimeType, mode_t mode = (mode_t)-1 );
-    void popupMenu( const QPoint &global, const KFileItemList &items );
+    void popupMenu(const QPoint &global, const KFileItemList &items,
+                   const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
+                   const KParts::BrowserArguments &browserArgs = KParts::BrowserArguments(),
+                   KParts::BrowserExtension::PopupFlags flags = KParts::BrowserExtension::DefaultPopupItems,
+                   const KParts::BrowserExtension::ActionGroupMap& actionGroups = KParts::BrowserExtension::ActionGroupMap());
     void enableAction( const char * name, bool enabled );
 };
 

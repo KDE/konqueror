@@ -135,9 +135,6 @@ public Q_SLOTS:
     void createNewWindow(const KUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs,
                          const KParts::WindowArgs &windowArgs);
 
-    void popupMenu( const QPoint &global, const KFileItemList &items );
-    void popupMenu( const QPoint &global, const KUrl &url,
-                    const QString &mimeType, mode_t mode = (mode_t)-1 );
     void enableAction( const char * name, bool enabled );
 
 private:

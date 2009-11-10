@@ -6,9 +6,11 @@
 #include <kvbox.h>
 #include <kdebug.h>
 #include <kstandarddirs.h>
+#include <klocale.h>
 #include <kconfig.h>
 #include <kinputdialog.h>
 #include <kiconloader.h>
+#include <kparts/factory.h>
 #include <konq_nameandurlinputdialog.h>
 #include <k3listviewsearchline.h>
 
@@ -44,17 +46,14 @@ KonqSidebar_Tree::KonqSidebar_Tree(const KComponentData &componentData, QWidget 
 		tree = new KonqSidebarTree(this, widget, virt, path);
 	}
 
-	connect(tree, SIGNAL( openUrlRequest(const KUrl &, const KParts::OpenUrlArguments&, const KParts::BrowserArguments &)),
-		this,SIGNAL( openUrlRequest(const KUrl &, const KParts::OpenUrlArguments&, const KParts::BrowserArguments &)));
+	connect(tree, SIGNAL(openUrlRequest(const KUrl &, const KParts::OpenUrlArguments&, const KParts::BrowserArguments &)),
+		this,SIGNAL(openUrlRequest(const KUrl &, const KParts::OpenUrlArguments&, const KParts::BrowserArguments &)));
 
 	connect(tree,SIGNAL(createNewWindow(const KUrl &, const KParts::OpenUrlArguments &, const KParts::BrowserArguments &)),
 		this,SIGNAL(createNewWindow(const KUrl &, const KParts::OpenUrlArguments &, const KParts::BrowserArguments &)));
 
-	connect(tree,SIGNAL(popupMenu( const QPoint &, const KUrl &, const QString &, mode_t )),
-		this,SIGNAL(popupMenu( const QPoint &, const KUrl &, const QString &, mode_t )));
-
-	connect(tree,SIGNAL(popupMenu( const QPoint &, const KFileItemList & )),
-		this,SIGNAL(popupMenu( const QPoint &, const KFileItemList & )));
+        connect(tree, SIGNAL(popupMenu(QPoint,KFileItemList,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)),
+                this, SIGNAL(popupMenu(QPoint,KFileItemList,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)));
 
 	connect(tree,SIGNAL(enableAction( const char *, bool )),
 		this,SIGNAL(enableAction( const char *, bool)));
@@ -97,24 +96,6 @@ void KonqSidebar_Tree::paste()
         tree->currentItem()->paste();
 }
 
-void KonqSidebar_Tree::trash()
-{
-    if (tree->currentItem())
-        tree->currentItem()->trash();
-}
-
-void KonqSidebar_Tree::del()
-{
-    if (tree->currentItem())
-        tree->currentItem()->del();
-}
-
-void KonqSidebar_Tree::rename()
-{
-    Q_ASSERT( tree->currentItem() );
-    if (tree->currentItem())
-        tree->currentItem()->rename();
-}
 
 class KonqSidebarTreePlugin : public KonqSidebarPlugin
 {
