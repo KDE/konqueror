@@ -1,7 +1,6 @@
-#include "konqsidebar_tree.h"
+#include "konqsidebar_oldtreemodule.h"
 #include <QAction>
 #include <kdesktopfile.h>
-#include "konqsidebar_tree.moc"
 #include "konq_sidebartree.h"
 #include <kvbox.h>
 #include <kdebug.h>
@@ -18,7 +17,7 @@
 #include <QtGui/QToolButton>
 #include <QtGui/QApplication>
 
-KonqSidebar_Tree::KonqSidebar_Tree(const KComponentData &componentData, QWidget *parent,
+KonqSidebarOldTreeModule::KonqSidebarOldTreeModule(const KComponentData &componentData, QWidget *parent,
                                    const QString &desktopName_, const KConfigGroup& configGroup)
     : KonqSidebarModule(componentData, parent, configGroup)
 {
@@ -51,28 +50,21 @@ KonqSidebar_Tree::KonqSidebar_Tree(const KComponentData &componentData, QWidget 
 
 	connect(tree,SIGNAL(createNewWindow(const KUrl &, const KParts::OpenUrlArguments &, const KParts::BrowserArguments &)),
 		this,SIGNAL(createNewWindow(const KUrl &, const KParts::OpenUrlArguments &, const KParts::BrowserArguments &)));
-
-        connect(tree, SIGNAL(popupMenu(QPoint,KFileItemList,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)),
-                this, SIGNAL(popupMenu(QPoint,KFileItemList,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)));
-
-	connect(tree,SIGNAL(enableAction( const char *, bool )),
-		this,SIGNAL(enableAction( const char *, bool)));
-
 }
 
 
-KonqSidebar_Tree::~KonqSidebar_Tree(){}
+KonqSidebarOldTreeModule::~KonqSidebarOldTreeModule(){}
 
-QWidget *KonqSidebar_Tree::getWidget() { return widget; }
+QWidget *KonqSidebarOldTreeModule::getWidget() { return widget; }
 
-void KonqSidebar_Tree::handleURL(const KUrl &url)
+void KonqSidebarOldTreeModule::handleURL(const KUrl &url)
     {
 	emit started( 0 );
         tree->followURL( url );
         emit completed();
     }
 
-void KonqSidebar_Tree::cut()
+void KonqSidebarOldTreeModule::cut()
 {
     QMimeData* mimeData = new QMimeData;
     if ( static_cast<KonqSidebarTreeItem*>(tree->selectedItem())->populateMimeData( mimeData, true ) )
@@ -81,21 +73,28 @@ void KonqSidebar_Tree::cut()
         delete mimeData;
 }
 
-void KonqSidebar_Tree::copy()
+void KonqSidebarOldTreeModule::copy()
 {
+    kDebug();
     QMimeData* mimeData = new QMimeData;
-    if ( static_cast<KonqSidebarTreeItem*>(tree->selectedItem())->populateMimeData( mimeData, false ) )
+    if ( static_cast<KonqSidebarTreeItem*>(tree->selectedItem())->populateMimeData( mimeData, false ) ) {
+        kDebug() << "setting" << mimeData->formats();
         QApplication::clipboard()->setMimeData( mimeData );
-    else
+    } else
         delete mimeData;
 }
 
-void KonqSidebar_Tree::paste()
+void KonqSidebarOldTreeModule::paste()
+{
+    // Not implemented. Would be for pasting into the toplevel.
+    kDebug() << "not implemented. Didn't think it would be called - tell me (David Faure)";
+}
+
+void KonqSidebarOldTreeModule::pasteToSelection()
 {
     if (tree->currentItem())
         tree->currentItem()->paste();
 }
-
 
 class KonqSidebarTreePlugin : public KonqSidebarPlugin
 {
@@ -110,7 +109,7 @@ public:
                                             const QVariant& unused)
     {
         Q_UNUSED(unused);
-        return new KonqSidebar_Tree(componentData, parent, desktopname, configGroup);
+        return new KonqSidebarOldTreeModule(componentData, parent, desktopname, configGroup);
     }
 
     virtual QList<QAction*> addNewActions(QObject* parent,
@@ -190,3 +189,4 @@ public:
 
 K_PLUGIN_FACTORY(KonqSidebarTreePluginFactory, registerPlugin<KonqSidebarTreePlugin>(); )
 K_EXPORT_PLUGIN(KonqSidebarTreePluginFactory())
+#include "konqsidebar_oldtreemodule.moc"

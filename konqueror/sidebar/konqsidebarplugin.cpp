@@ -21,6 +21,15 @@
 #include "konqsidebarplugin.moc"
 #include <kdebug.h>
 
+class KonqSidebarModulePrivate
+{
+public:
+    KonqSidebarModulePrivate()
+        : m_copy(false), m_cut(false), m_paste(false) {}
+    bool m_copy;
+    bool m_cut;
+    bool m_paste;
+};
 
 KonqSidebarModule::KonqSidebarModule(const KComponentData &componentData,
                                      QObject *parent,
@@ -28,11 +37,14 @@ KonqSidebarModule::KonqSidebarModule(const KComponentData &componentData,
     : QObject(parent),
       m_parentComponentData(componentData),
       m_configGroup(configGroup_),
-      d(0)
+      d(new KonqSidebarModulePrivate)
 {
 }
 
-KonqSidebarModule::~KonqSidebarModule() { }
+KonqSidebarModule::~KonqSidebarModule()
+{
+    delete d;
+}
 
 const KComponentData &KonqSidebarModule::parentComponentData() const { return m_parentComponentData; }
 
@@ -58,4 +70,46 @@ void KonqSidebarModule::handlePreviewOnMouseOver(const KFileItem& /*items*/) {}
 KConfigGroup KonqSidebarModule::configGroup()
 {
     return m_configGroup;
+}
+
+void KonqSidebarModule::enableCopy(bool enabled)
+{
+    d->m_copy = enabled;
+    emit enableAction(this, "copy", enabled);
+}
+
+void KonqSidebarModule::enableCut(bool enabled)
+{
+    d->m_cut = enabled;
+    emit enableAction(this, "cut", enabled);
+}
+
+void KonqSidebarModule::enablePaste(bool enabled)
+{
+    d->m_paste = enabled;
+    emit enableAction(this, "paste", enabled);
+}
+
+bool KonqSidebarModule::isCopyEnabled() const
+{
+    return d->m_copy;
+}
+
+bool KonqSidebarModule::isCutEnabled() const
+{
+    return d->m_cut;
+}
+
+bool KonqSidebarModule::isPasteEnabled() const
+{
+    return d->m_paste;
+}
+
+void KonqSidebarModule::showPopupMenu(const QPoint &global, const KFileItemList &items,
+                                      const KParts::OpenUrlArguments &args,
+                                      const KParts::BrowserArguments &browserArgs,
+                                      KParts::BrowserExtension::PopupFlags flags,
+                                      const KParts::BrowserExtension::ActionGroupMap& actionGroups)
+{
+    emit popupMenu(this, global, items, args, browserArgs, flags, actionGroups);
 }

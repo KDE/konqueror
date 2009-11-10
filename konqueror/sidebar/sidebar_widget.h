@@ -53,7 +53,6 @@ public:
           module(NULL), m_plugin(NULL),
           URL(url_), libName(lib), displayName(dispName_), iconName(iconName_)
     {
-        copy = cut = paste = trash = del = rename =false;
     }
 
     ~ButtonInfo() {}
@@ -69,13 +68,6 @@ public:
     QString libName;
     QString displayName;
     QString iconName;
-    bool copy;
-    bool cut;
-    bool paste;
-    bool trash;
-    bool del;
-    bool rename;
-    //KonqSidebarIface *m_part;
 };
 
 class Sidebar_Widget: public QWidget
@@ -135,7 +127,7 @@ public Q_SLOTS:
     void createNewWindow(const KUrl &url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& browserArgs,
                          const KParts::WindowArgs &windowArgs);
 
-    void enableAction( const char * name, bool enabled );
+    void slotEnableAction(KonqSidebarModule* module, const char * name, bool enabled);
 
 private:
 
@@ -145,14 +137,21 @@ private:
                                   ButtonInfo& buttonInfo, const KSharedConfig::Ptr& config);
     void readConfig();
     void doLayout();
-    void connectModule(QObject *mod);
+    void connectModule(KonqSidebarModule *mod);
     void collapseExpandSidebar();
-    bool doEnableActions();
+    void doEnableActions();
     ButtonInfo& currentButtonInfo() { return m_buttons[m_currentButtonIndex]; }
 
 protected Q_SLOTS:
     void aboutToShowAddMenu();
     void triggeredAddMenu(QAction* action);
+
+    void slotPopupMenu(KonqSidebarModule*, const QPoint &global, const KFileItemList &items,
+                       const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
+                       const KParts::BrowserArguments &browserArgs = KParts::BrowserArguments(),
+                       KParts::BrowserExtension::PopupFlags flags = KParts::BrowserExtension::DefaultPopupItems,
+                       const KParts::BrowserExtension::ActionGroupMap& actionGroups = KParts::BrowserExtension::ActionGroupMap());
+
 private:
     KParts::ReadOnlyPart *m_partParent;
     QSplitter *m_area;
@@ -167,8 +166,9 @@ private:
     QActionGroup m_addMenuActionGroup;
     QMap<QAction*, KonqSidebarPlugin*> m_pluginForAction;
 
-    //QPointer<ButtonInfo> m_activeModule; // TODO REMOVE?
-    int m_currentButtonIndex; // during RMB popups only
+    QPointer<KonqSidebarModule> m_activeModule; // during RMB popups inside the module
+
+    int m_currentButtonIndex; // during RMB popups (over tabs) only, see currentButtonInfo
 
     KConfigGroup *m_config;
     QTimer m_configTimer;

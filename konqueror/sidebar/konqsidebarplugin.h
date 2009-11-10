@@ -64,6 +64,23 @@ public:
     const KComponentData &parentComponentData() const;
     KConfigGroup configGroup();
 
+    /**
+     * Enable/disable a standard konqueror action (cut, copy, paste, print)
+     * See KParts::BrowserExtension::enableAction
+     */
+    void enableCopy(bool enabled);
+    void enableCut(bool enabled);
+    void enablePaste(bool enabled);
+    bool isCopyEnabled() const;
+    bool isCutEnabled() const;
+    bool isPasteEnabled() const;
+
+    void showPopupMenu(const QPoint &global, const KFileItemList &items,
+                       const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
+                       const KParts::BrowserArguments &browserArgs = KParts::BrowserArguments(),
+                       KParts::BrowserExtension::PopupFlags flags = KParts::BrowserExtension::DefaultPopupItems,
+                       const KParts::BrowserExtension::ActionGroupMap& actionGroups = KParts::BrowserExtension::ActionGroupMap());
+
 protected:
     /**
      * Called by the sidebar's openUrl. Reimplement this in order to
@@ -73,13 +90,6 @@ protected:
     virtual void handlePreview(const KFileItemList & items);
     virtual void handlePreviewOnMouseOver(const KFileItem &items); //not used yet
 
-Q_SIGNALS:
-    void started(KIO::Job *);
-    void completed();
-    void setIcon(const QString& icon);
-    void setCaption(const QString& caption);
-
-
 public Q_SLOTS:
     void openUrl(const KUrl& url);
 
@@ -88,6 +98,11 @@ public Q_SLOTS:
     void openPreviewOnMouseOver(const KFileItem& item); // not used yet
 
 Q_SIGNALS:
+    void started(KIO::Job *);
+    void completed();
+    void setIcon(const QString& icon);
+    void setCaption(const QString& caption);
+
     /**
      * Ask konqueror to open @p url.
      */
@@ -103,19 +118,17 @@ Q_SIGNALS:
     /**
      * Ask konqueror to show the standard popup menu for the given @p items.
      */
-    void popupMenu(const QPoint &global, const KFileItemList &items,
+    void popupMenu(KonqSidebarModule* module,
+                   const QPoint &global, const KFileItemList &items,
                    const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
                    const KParts::BrowserArguments &browserArgs = KParts::BrowserArguments(),
                    KParts::BrowserExtension::PopupFlags flags = KParts::BrowserExtension::DefaultPopupItems,
                    const KParts::BrowserExtension::ActionGroupMap& actionGroups = KParts::BrowserExtension::ActionGroupMap());
 
-    /* signals, which sidebar_widget.cpp connects by name. TODO: define the useful ones here, remove
-     * the others
-    void enableAction( const char * name, bool enabled );
-    void started(KIO::Job *);
-    void completed();
+    // TODO
     void submitFormRequest(const char*,const QString&,const QByteArray&,const QString&,const QString&,const QString&);
-    */
+
+    void enableAction(KonqSidebarModule* module, const char* name, bool enabled);
 
 private:
     KComponentData m_parentComponentData;

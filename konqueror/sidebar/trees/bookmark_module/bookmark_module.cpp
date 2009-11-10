@@ -42,6 +42,7 @@
 #include <klineedit.h>
 #include <kmessagebox.h>
 #include <kstandardaction.h>
+#include <kparts/part.h>
 
 KBookmarkManager* s_bookmarkManager = 0;
 

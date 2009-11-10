@@ -17,7 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-//#include "konq_treepart.h"
+#include "konqsidebar_oldtreemodule.h"
 #include "dirtree_item.h"
 #include <kfileitemlistproperties.h>
 #include "dirtree_module.h"
@@ -29,6 +29,7 @@
 #include <QtGui/QApplication>
 #include <QtGui/QClipboard>
 #include <kio/paste.h>
+#include <kconfiggroup.h>
 #include <QtCore/QFile>
 #include <QtGui/QPainter>
 #include <kiconloader.h>
@@ -150,17 +151,18 @@ bool KonqSidebarDirTreeItem::populateMimeData( QMimeData* mimeData, bool move )
 {
     KUrl::List lst;
     lst.append( m_fileItem.url() );
+    kDebug() << lst;
 
-    KonqMimeData::populateMimeData( mimeData, KUrl::List(), lst, move );
-
+    KonqMimeData::populateMimeData( mimeData, lst, KUrl::List(), move );
     return true;
 }
 
 void KonqSidebarDirTreeItem::itemSelected()
 {
-    QMimeSource *data = QApplication::clipboard()->data();
-    const bool paste = data->provides("text/uri-list");
-    tree()->enableActions( true, true, paste );
+    const QMimeData *mimeData = QApplication::clipboard()->mimeData();
+    const KUrl::List urls = KUrl::List::fromMimeData(mimeData);
+    const bool paste = !urls.isEmpty();
+    tree()->enableActions(true, true, paste);
 }
 
 void KonqSidebarDirTreeItem::middleButtonClicked()
@@ -237,7 +239,7 @@ void KonqSidebarDirTreeItem::rightButtonPressed()
 
     actionGroups.insert("editactions", editActions);
 
-    emit tree()->popupMenu(QCursor::pos(), items,
+    emit tree()->sidebarModule()->showPopupMenu(QCursor::pos(), items,
                            KParts::OpenUrlArguments(), KParts::BrowserArguments(),
                            popupFlags, actionGroups);
 }

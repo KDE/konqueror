@@ -19,6 +19,7 @@
 */
 
 #include "konq_sidebartreemodule.h"
+#include "konqsidebar_oldtreemodule.h"
 
 #include <QtGui/QClipboard>
 #include <QtGui/QCursor>
@@ -119,7 +120,7 @@ public:
 };
 
 
-KonqSidebarTree::KonqSidebarTree( KonqSidebar_Tree *parent, QWidget *parentWidget, ModuleType moduleType, const QString& path )
+KonqSidebarTree::KonqSidebarTree( KonqSidebarOldTreeModule *parent, QWidget *parentWidget, ModuleType moduleType, const QString& path )
     : K3ListView( parentWidget ),
       m_currentTopLevelItem( 0 ),
       m_scrollingLocked( false ),
@@ -137,7 +138,7 @@ KonqSidebarTree::KonqSidebarTree( KonqSidebar_Tree *parent, QWidget *parentWidge
     setSelectionMode( Q3ListView::Single );
     setDragEnabled(true);
 
-    m_part = parent;
+    m_sidebarModule = parent;
 
     m_animationTimer = new QTimer( this );
     connect( m_animationTimer, SIGNAL( timeout() ),
@@ -165,6 +166,8 @@ KonqSidebarTree::KonqSidebarTree( KonqSidebar_Tree *parent, QWidget *parentWidge
              this, SLOT( slotDoubleClicked( Q3ListViewItem * ) ) );
     connect( this, SIGNAL( selectionChanged() ),
              this, SLOT( slotSelectionChanged() ) );
+    connect(qApp->clipboard(), SIGNAL(dataChanged()),
+            this, SLOT(slotSelectionChanged())); // so that "paste" can be updated
 
     connect( this, SIGNAL(itemRenamed(Q3ListViewItem*, const QString &, int)),
              this, SLOT(slotItemRenamed(Q3ListViewItem*, const QString &, int)));
@@ -196,6 +199,7 @@ KonqSidebarTree::KonqSidebarTree( KonqSidebar_Tree *parent, QWidget *parentWidge
     connect(kdirnotify, SIGNAL(FilesRemoved(QStringList)), SLOT(slotFilesRemoved(QStringList)));
 
     m_collection = new KActionCollection(this);
+    m_collection->addAssociatedWidget(this);
     m_collection->setObjectName("bookmark actions");
     QAction *action = new KAction(KIcon("folder-new"), i18n("&Create New Folder..."), this);
     m_collection->addAction("create_folder", action);
@@ -210,6 +214,9 @@ KonqSidebarTree::KonqSidebarTree( KonqSidebar_Tree *parent, QWidget *parentWidge
     connect(action, SIGNAL(triggered(bool)), SLOT(slotTrash()));
 
     action = new KAction(i18n("Rename"), this);
+    action->setShortcut(Qt::Key_F2); // clash!
+    action->setShortcutContext(Qt::WidgetWithChildrenShortcut);
+    action->setIcon(KIcon("edit-rename"));
     m_collection->addAction("rename", action);
     connect(action, SIGNAL(triggered(bool) ), SLOT( slotRename() ));
 
@@ -471,10 +478,10 @@ Q3DragObject* KonqSidebarTree::dragObject()
     if ( !item )
         return 0;
 
-    QDrag* drag = new QDrag( viewport() );
     QMimeData *mimeData = new QMimeData;
     if ( item->populateMimeData( mimeData, false ) )
     {
+        QDrag* drag = new QDrag( viewport() );
         drag->setMimeData(mimeData);
         const QPixmap *pix = item->pixmap(0);
         if ( pix && drag->pixmap().isNull() )
@@ -482,8 +489,8 @@ Q3DragObject* KonqSidebarTree::dragObject()
     }
     else
     {
-        delete drag;
-        drag = 0;
+        delete mimeData;
+        mimeData = 0;
     }
 
 #ifdef __GNUC__
@@ -682,7 +689,7 @@ void KonqSidebarTree::scanDir( KonqSidebarTreeItem *parent, const QString &path,
             /*
             // debug code
 
-            const QStringList blah = m_part->getInterfaces->componentData()->dirs()->dirs()->findDirs( "data", "konqueror/dirtree" );
+            const QStringList blah = m_sidebarModule->getInterfaces->componentData()->dirs()->dirs()->findDirs( "data", "konqueror/dirtree" );
             QStringList::ConstIterator eIt = blah.constBegin();
             QStringList::ConstIterator eEnd = blah.constEnd();
             for (; eIt != eEnd; ++eIt )
@@ -895,9 +902,9 @@ void KonqSidebarTree::slotItemRenamed(Q3ListViewItem* item, const QString &name,
 void KonqSidebarTree::enableActions(bool copy, bool cut, bool paste)
 {
     kDebug() << copy << cut << paste;
-    enableAction( "copy", copy );
-    enableAction( "cut", cut );
-    enableAction( "paste", paste );
+    m_sidebarModule->enableCopy(copy);
+    m_sidebarModule->enableCut(cut);
+    m_sidebarModule->enablePaste(paste);
 }
 
 void KonqSidebarTree::showToplevelContextMenu()

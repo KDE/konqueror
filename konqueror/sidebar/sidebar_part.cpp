@@ -84,8 +84,8 @@ void KonqSidebarPart::customEvent(QEvent* ev)
 
 ////
 
-KonqSidebarBrowserExtension::KonqSidebarBrowserExtension(KonqSidebarPart *part, Sidebar_Widget *widget)
-    : KParts::BrowserExtension(part), widget(widget)
+KonqSidebarBrowserExtension::KonqSidebarBrowserExtension(KonqSidebarPart *part, Sidebar_Widget *widget_)
+    : KParts::BrowserExtension(part), widget(widget_)
 {
 }
 

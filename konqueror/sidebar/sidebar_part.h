@@ -28,18 +28,19 @@ class KonqSidebarBrowserExtension : public KParts::BrowserExtension
 {
     Q_OBJECT
 public:
-    KonqSidebarBrowserExtension(KonqSidebarPart *part_, Sidebar_Widget *widget_);
+    KonqSidebarBrowserExtension(KonqSidebarPart *part, Sidebar_Widget *widget);
     ~KonqSidebarBrowserExtension(){}
 
 protected:
     QPointer<Sidebar_Widget> widget;
 
     // The following slots are needed for konqueror's standard actions
-    // ### Not really, since the sidebar never gets focus, currently.
+    // They are called from the RMB popup menu
 protected Q_SLOTS:
-    void copy() { if (widget) widget->stdAction("copy()"); }
-    void cut() { if (widget) widget->stdAction("cut()"); }
-    void paste() { if (widget) widget->stdAction("paste()"); }
+    void copy() { if (widget) widget->stdAction("copy"); }
+    void cut() { if (widget) widget->stdAction("cut"); }
+    void paste() { if (widget) widget->stdAction("paste"); }
+    void pasteTo(const KUrl&) { if (widget) widget->stdAction("pasteToSelection"); }
 };
 
 /**
