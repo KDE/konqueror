@@ -1193,9 +1193,11 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
 
         if (!childView->isFollowActive())
             childView->setLinkedView( cfg.readEntry( QString::fromLatin1( "LinkedView" ).prepend( prefix ), false ) );
-        childView->setToggleView( cfg.readEntry( QString::fromLatin1( "ToggleView" ).prepend( prefix ), false ) );
-        if( !cfg.readEntry( QString::fromLatin1( "ShowStatusBar" ).prepend( prefix ), true ) )
-          childView->frame()->statusbar()->hide();
+        const bool isToggleView = cfg.readEntry(QString::fromLatin1("ToggleView").prepend(prefix), false);
+        childView->setToggleView( isToggleView );
+        if (isToggleView /*100373*/ || !cfg.readEntry(QString::fromLatin1("ShowStatusBar").prepend(prefix), true)) {
+            childView->frame()->statusbar()->hide();
+        }
 
 #if 0 // currently unused
         KonqConfigEvent ev( cfg.config(), prefix+'_', false/*load*/);
