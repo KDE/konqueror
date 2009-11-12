@@ -4,7 +4,8 @@ Exec=kfmclient openURL %u inode/directory
 Icon=konqueror
 Terminal=false
 MimeType=inode/directory;
-InitialPreference=5
+# Must be more than gwenview
+InitialPreference=10
 NoDisplay=true
 Name=Konqueror
 Name[af]=Konqueror
