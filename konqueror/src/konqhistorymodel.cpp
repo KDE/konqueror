@@ -135,7 +135,7 @@ QVariant HistoryEntry::data(int role, int /*column*/) const
     case KonqHistory::DetailedToolTipRole:
         return i18n("<qt><center><b>%1</b></center><hr />Last visited: %2<br />"
                     "First visited: %3<br />Number of times visited: %4</qt>",
-                    entry.url.url(),
+                    entry.url.pathOrUrl(),
                     KGlobal::locale()->formatDateTime(entry.lastVisited),
                     KGlobal::locale()->formatDateTime(entry.firstVisited),
                     entry.numberOfTimesVisited);
@@ -228,6 +228,10 @@ KUrl::List GroupEntry::urls() const
 
 static QString groupForUrl(const KUrl &url)
 {
+   if (url.isLocalFile()) {
+       static const QString &local = KGlobal::staticQString(i18n("Local"));
+       return local;
+   }
    static const QString &misc = KGlobal::staticQString(i18n("Miscellaneous"));
    return url.host().isEmpty() ? misc : url.host();
 }
