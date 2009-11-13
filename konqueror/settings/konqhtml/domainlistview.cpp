@@ -44,6 +44,7 @@ DomainListView::DomainListView(KSharedConfig::Ptr config,const QString &title,
 
   domainSpecificLV = new QTreeWidget(this);
   domainSpecificLV->setRootIsDecorated(false);
+  domainSpecificLV->setSortingEnabled(true);
   domainSpecificLV->setHeaderLabels(QStringList() << i18n("Host/Domain") << i18n("Policy"));
   domainSpecificLV->setColumnWidth(0, 100);
   connect(domainSpecificLV,SIGNAL(itemDoubleClicked(QTreeWidgetItem*, int)), SLOT(changePressed()));
