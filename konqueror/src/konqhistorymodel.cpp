@@ -30,6 +30,7 @@
 #include <kprotocolinfo.h>
 
 #include <QtCore/QHash>
+#include <QTextDocument> // Qt::escape
 #include <QtCore/QList>
 
 namespace KHM
@@ -135,7 +136,7 @@ QVariant HistoryEntry::data(int role, int /*column*/) const
     case KonqHistory::DetailedToolTipRole:
         return i18n("<qt><center><b>%1</b></center><hr />Last visited: %2<br />"
                     "First visited: %3<br />Number of times visited: %4</qt>",
-                    entry.url.pathOrUrl(),
+                    Qt::escape(entry.url.pathOrUrl()),
                     KGlobal::locale()->formatDateTime(entry.lastVisited),
                     KGlobal::locale()->formatDateTime(entry.firstVisited),
                     entry.numberOfTimesVisited);
