@@ -20,6 +20,7 @@
 
 #include "konqframevisitor.h"
 #include "konqframe.h"
+#include "konqview.h"
 
 bool KonqViewCollector::visit(KonqFrame* frame)
 {
@@ -30,6 +31,20 @@ bool KonqViewCollector::visit(KonqFrame* frame)
 QList<KonqView *> KonqViewCollector::collect(KonqFrameBase* topLevel)
 {
     KonqViewCollector collector;
+    topLevel->accept(&collector);
+    return collector.m_views;
+}
+
+bool KonqLinkableViewsCollector::visit(KonqFrame* frame)
+{
+    if (!frame->childView()->isFollowActive())
+        m_views.append(frame->childView());
+    return true;
+}
+
+QList<KonqView *> KonqLinkableViewsCollector::collect(KonqFrameBase* topLevel)
+{
+    KonqLinkableViewsCollector collector;
     topLevel->accept(&collector);
     return collector.m_views;
 }

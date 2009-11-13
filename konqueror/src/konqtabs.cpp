@@ -236,10 +236,8 @@ void KonqFrameTabs::insertChildFrame( KonqFrameBase* frame, int index )
     // otherwise insertTab() can call slotCurrentChanged, which we don't expect
     // (the part isn't in the partmanager yet; better let konqviewmanager take care
     // of setting the active part)
-    disconnect(this, SIGNAL(currentChanged(int)),
-            this, SLOT(slotCurrentChanged(int)));
     connect(this, SIGNAL(currentChanged(int)),
-            this, SLOT(slotCurrentChanged(int))); // TODO Qt >= 4.6: Qt::UniqueConnection
+            this, SLOT(slotCurrentChanged(int)), Qt::UniqueConnection);
 
     if (m_rightWidget) {
       m_rightWidget->setEnabled( m_childFrameList.count() > 1 );
@@ -519,10 +517,19 @@ bool KonqFrameTabs::accept( KonqFrameVisitor* visitor )
 {
     if ( !visitor->visit( this ) )
         return false;
-    foreach( KonqFrameBase* frame, m_childFrameList ) {
-        Q_ASSERT( frame );
-        if ( !frame->accept( visitor ) )
+    if (visitor->visitAllTabs()) {
+        foreach(KonqFrameBase* frame, m_childFrameList) {
+        Q_ASSERT(frame);
+        if (!frame->accept(visitor))
             return false;
+        }
+    } else {
+        // visit only current tab
+        if (m_pActiveChild) {
+            if (!m_pActiveChild->accept(visitor)) {
+                return false;
+            }
+        }
     }
     if ( !visitor->endVisit( this ) )
         return false;
@@ -539,6 +546,8 @@ void KonqFrameTabs::slotCurrentChanged( int index )
         m_pActiveChild = currentFrame;
         currentFrame->activateChild();
     }
+
+    m_pViewManager->mainWindow()->linkableViewCountChanged();
 }
 
 /**

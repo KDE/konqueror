@@ -254,8 +254,8 @@ public:
 
   static QList<KonqMainWindow*> *mainWindowList() { return s_lstViews; }
 
-  // public for konq_guiclients
-  void viewCountChanged();
+    void linkableViewCountChanged();
+    void viewCountChanged();
 
     /**
      * For the view manager: we are loading the profile from this config file,

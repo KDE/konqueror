@@ -1634,24 +1634,18 @@ void KonqMainWindow::slotStop()
 
 void KonqMainWindow::slotLinkView()
 {
-  // Can't access this action in passive mode anyway
-  assert(!m_currentView->isPassiveMode());
-  bool mode = !m_currentView->isLinkedView();
+    // Can't access this action in passive mode anyway
+    assert(!m_currentView->isPassiveMode());
+    const bool mode = !m_currentView->isLinkedView();
 
-  if (linkableViewsCount() == 2)
-  {
-    // Exactly two linkable views : link both
-    KonqMainWindow::MapViews::ConstIterator it = viewMap().begin();
-    if( (*it)->isFollowActive() ) // skip sidebar
-        ++it;
-    (*it)->setLinkedView( mode );
-    ++it;
-    if( (*it)->isFollowActive() ) // skip sidebar
-        ++it;
-    (*it)->setLinkedView( mode );
-  }
-  else // Normal case : just this view
-    m_currentView->setLinkedView( mode );
+    const QList<KonqView*> linkableViews = KonqLinkableViewsCollector::collect(this);
+    if (linkableViews.count() == 2) {
+        // Exactly two linkable views : link both
+        linkableViews.at(0)->setLinkedView( mode );
+        linkableViews.at(1)->setLinkedView( mode );
+    } else { // Normal case : just this view
+        m_currentView->setLinkedView( mode );
+    }
 }
 
 void KonqMainWindow::slotReload( KonqView* reloadView, bool softReload )
@@ -2104,8 +2098,6 @@ void KonqMainWindow::insertChildView( KonqView *childView )
     connect(childView, SIGNAL(viewCompleted(KonqView *)),
             this, SLOT(slotViewCompleted(KonqView *)));
 
-    if (!m_pViewManager->isLoadingProfile()) // see KonqViewManager::loadViewProfile
-        viewCountChanged();
     emit viewAdded(childView);
 }
 
@@ -2143,7 +2135,6 @@ void KonqMainWindow::removeChildView( KonqView *childView )
 
   m_mapViews.erase( it );
 
-  viewCountChanged();
   emit viewRemoved( childView );
 
 #ifndef NDEBUG
@@ -2153,34 +2144,31 @@ void KonqMainWindow::removeChildView( KonqView *childView )
   // KonqViewManager takes care of m_currentView
 }
 
+void KonqMainWindow::linkableViewCountChanged()
+{
+    const QList<KonqView*> linkableViews = KonqLinkableViewsCollector::collect(this);
+    const int lvc = linkableViews.count();
+    m_paLinkView->setEnabled( lvc > 1 );
+    // Only one view -> unlink it
+    if (lvc == 1) {
+        linkableViews.at(0)->setLinkedView( false );
+    }
+    m_pViewManager->viewCountChanged();
+}
+
 void KonqMainWindow::viewCountChanged()
 {
-  // This is called when the number of views changes.
-
-  int lvc = linkableViewsCount();
-  m_paLinkView->setEnabled( lvc > 1 );
-
-  // Only one view (or one view + sidebar) -> make it/them unlinked
-  if ( lvc == 1 ) {
-      MapViews::Iterator it = m_mapViews.begin();
-      MapViews::Iterator end = m_mapViews.end();
-      for (; it != end; ++it )
-          it.value()->setLinkedView( false );
-  }
-
-  viewsChanged();
-
-  m_pViewManager->viewCountChanged();
+    // This is called (by the view manager) when the number of views changes.
+    linkableViewCountChanged();
+    viewsChanged();
 }
 
 void KonqMainWindow::viewsChanged()
 {
-  // This is called when the number of views changes OR when
-  // the type of some view changes.
+    // This is called when the number of views changes OR when
+    // the type of some view changes.
 
-  // Nothing here anymore, but don't cleanup, some might come back later.
-
-  updateViewActions(); // undo, lock, link and other view-dependent actions
+    updateViewActions(); // undo, lock, link and other view-dependent actions
 }
 
 KonqView * KonqMainWindow::childView( KParts::ReadOnlyPart *view )
@@ -2276,14 +2264,7 @@ int KonqMainWindow::activeViewsNotLockedCount() const
 
 int KonqMainWindow::linkableViewsCount() const
 {
-  int res = 0;
-  MapViews::ConstIterator it = m_mapViews.constBegin();
-  MapViews::ConstIterator end = m_mapViews.constEnd();
-  for (; it != end; ++it )
-    if ( !it.value()->isFollowActive() )
-      ++res;
-
-  return res;
+    return KonqLinkableViewsCollector::collect(const_cast<KonqMainWindow*>(this)).count();
 }
 
 int KonqMainWindow::mainViewsCount() const

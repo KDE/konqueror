@@ -33,7 +33,8 @@ class KonqMainWindow;
 class KonqFrameVisitor
 {
 public:
-    KonqFrameVisitor() {}
+    enum VisitorBehavior { VisitAllTabs = 1, VisitCurrentTabOnly = 2 };
+    KonqFrameVisitor(VisitorBehavior behavior = VisitAllTabs) : m_behavior(behavior) {}
     virtual ~KonqFrameVisitor() {}
     virtual bool visit(KonqFrame*) { return true; }
     virtual bool visit(KonqFrameContainer*) { return true; }
@@ -43,8 +44,15 @@ public:
     virtual bool endVisit(KonqFrameContainer*) { return true; }
     virtual bool endVisit(KonqFrameTabs*) { return true; }
     virtual bool endVisit(KonqMainWindow*) { return true; }
+
+    bool visitAllTabs() const { return m_behavior & VisitAllTabs; }
+private:
+    VisitorBehavior m_behavior;
 };
 
+/**
+ * Collects all views, recursively.
+ */
 class KonqViewCollector : public KonqFrameVisitor
 {
 public:
@@ -54,6 +62,22 @@ public:
     virtual bool visit(KonqFrameTabs*) { return true; }
     virtual bool visit(KonqMainWindow*) { return true; }
 private:
+    QList<KonqView *> m_views;
+};
+
+/**
+ * Collects all views that can currently be linked; this excludes invisible tabs (#116714).
+ */
+class KonqLinkableViewsCollector : public KonqFrameVisitor
+{
+public:
+    static QList<KonqView *> collect(KonqFrameBase* topLevel);
+    virtual bool visit(KonqFrame* frame);
+    virtual bool visit(KonqFrameContainer*) { return true; }
+    virtual bool visit(KonqFrameTabs*) { return true; }
+    virtual bool visit(KonqMainWindow*) { return true; }
+private:
+    KonqLinkableViewsCollector() : KonqFrameVisitor(VisitCurrentTabOnly) {}
     QList<KonqView *> m_views;
 };
 

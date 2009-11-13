@@ -130,6 +130,7 @@ void ViewMgrTest::testCreateFirstView()
 
     // Use DebugFrameVisitor to find out the structure of the frame hierarchy
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, one tab, one frame
+    QCOMPARE(mainWindow.linkableViewsCount(), 1);
 
     // Check widget parents:  part's widget -> frame -> [tabwidget's stack] -> tabwidget -> mainWindow
     QWidget* partWidget = view->part()->widget();
@@ -184,6 +185,8 @@ void ViewMgrTest::testSplitView()
     KonqView* view2 = viewManager->splitView( view, Qt::Horizontal );
     QVERIFY( view2 );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, one splitter, two frames
+
+    QCOMPARE(mainWindow.linkableViewsCount(), 2);
 
     // Check widget parents
     //mainWindow.dumpObjectTree();
@@ -242,16 +245,19 @@ void ViewMgrTest::testSplitView()
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(C(FF)F)].") );
     // Check that the width of the second frame has not changed (bug 160407)
     QCOMPARE( frame2->width(), widthFrame2 );
+    QCOMPARE(mainWindow.linkableViewsCount(), 3);
 
     // Now test removing the first view
     viewManager->removeView( view );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, one splitter, two frames
     // Check again that the width of the second frame has not changed (bug 160407 comments 18-20)
     QCOMPARE( frame2->width(), widthFrame2 );
+    QCOMPARE(mainWindow.linkableViewsCount(), 2);
 
     // Now test removing the last view
     viewManager->removeView( view3 );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, tab widget, one frame
+    QCOMPARE(mainWindow.linkableViewsCount(), 1);
 }
 
 void ViewMgrTest::testSplitMainContainer()
@@ -320,6 +326,7 @@ void ViewMgrTest::testLinkedViews()
     QVERIFY(QTest::kWaitForSignal(view2, SIGNAL(viewCompleted(KonqView*)), 20000));
     KUrl origUrl = view->url();
     QCOMPARE(view2->url().url(), origUrl.url());
+    QCOMPARE(mainWindow.linkableViewsCount(), 2);
     view->setLinkedView(true);
     view2->setLinkedView(true);
     view->setLockedLocation(true);
@@ -347,6 +354,7 @@ void ViewMgrTest::testPopupNewTab() // RMB, "Open in new tab"
     QTest::qWait(1000);
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].")); // mainWindow, tab widget, two tabs
     QCOMPARE(KMainWindow::memberList().count(), 1);
+    QCOMPARE(mainWindow.linkableViewsCount(), 1);
 }
 
 static void checkSecondWindowHasOneTab() // and delete it.
@@ -437,13 +445,14 @@ void ViewMgrTest::testAddTabs()
 
     KTabWidget* tabWidget = mainWindow.findChild<KTabWidget*>();
     QVERIFY(tabWidget);
-    KonqView* viewTab2, *viewTab3, *viewTab4, *viewTab5;
-    openTabWithTitle(mainWindow, titles[1], viewTab2);
-    openTabWithTitle(mainWindow, titles[2], viewTab3);
-    openTabWithTitle(mainWindow, titles[3], viewTab4);
-    openTabWithTitle(mainWindow, titles[4], viewTab5);
+    KonqView* viewTab1, *viewTab2, *viewTab3, *viewTab4;
+    openTabWithTitle(mainWindow, titles[1], viewTab1);
+    openTabWithTitle(mainWindow, titles[2], viewTab2);
+    openTabWithTitle(mainWindow, titles[3], viewTab3);
+    openTabWithTitle(mainWindow, titles[4], viewTab4);
     for (int i = 0; i < titles.count(); ++i)
         QCOMPARE(tabWidget->tabText(i), QString(titles[i]));
+    QPointer<KonqView> viewTab2Pointer(viewTab2);
 
     // Ensure tabwidget has a nice size
     mainWindow.resize(599, 699);
@@ -454,6 +463,7 @@ void ViewMgrTest::testAddTabs()
     KonqFrameBase* frame = dynamic_cast<KonqFrameBase*>(viewManager->tabContainer()->currentWidget());
     QVERIFY(frame);
     viewManager->removeTab(frame);
+    QVERIFY(viewTab2Pointer.isNull()); // check the view got deleted
     QList<int> expectedTitles; expectedTitles << 0 << 1 << 3 << 4;
     for (int i = 0; i < expectedTitles.count(); ++i)
         QCOMPARE(tabWidget->tabText(i), titles[expectedTitles[i]]);
@@ -492,9 +502,11 @@ void ViewMgrTest::testDuplicateSplittedTab()
 
     viewManager->duplicateTab(container); // TODO shouldn't it return a KonqFrameBase?
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)C(FF)].") ); // mainWindow, tab widget, two tabs
+    QCOMPARE(mainWindow.linkableViewsCount(), 2);
 
     viewManager->removeTab(container);
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, one tab
+    QCOMPARE(mainWindow.linkableViewsCount(), 2);
 }
 
 // Like in http://bugs.kde.org/show_bug.cgi?id=153533,
@@ -607,6 +619,12 @@ void ViewMgrTest::testCloseOtherTabs()
     viewManager->splitView( viewTab2, Qt::Horizontal );
     viewManager->addTab("text/html");
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[FFC(FF)F].") ); // mainWindow, tab widget, first tab = one frame, second tab = one frame, third tab = splitter with two frames, fourth tab = one frame
+    KTabWidget* tabWidget = mainWindow.findChild<KTabWidget*>();
+    tabWidget->setCurrentIndex(2);
+    QCOMPARE(mainWindow.linkableViewsCount(), 2);
+    tabWidget->setCurrentIndex(3);
+    QCOMPARE(mainWindow.linkableViewsCount(), 1);
+
     mainWindow.setWorkingTab(viewTab2->frame()); // This actually sets a frame which is not a tab, but KonqViewManager::removeOtherTabs should be able to deal with these cases
     mainWindow.slotRemoveOtherTabsPopupDelayed();
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, first tab = splitter with two frames
@@ -664,7 +682,7 @@ void ViewMgrTest::testBreakOffTab()
     QCOMPARE( DebugFrameVisitor::inspect(mainWindow2), QString("MT[FF].") ); // mainWindow, tab widget, two tabs
 
     delete mainWindow2;
-    
+
     // Now split the remaining view, duplicate the tab and verify that breaking off a split tab does not crash (bug 174292).
     // Also check that the tab container of the new main window has an active child.
 
@@ -682,7 +700,7 @@ void ViewMgrTest::testBreakOffTab()
     delete mainWindow2;
 
     // Verify that breaking off a tab preserves the view profile (bug 210686)
-    
+
     const QString profile = KStandardDirs::locate("data", "konqueror/profiles/webbrowsing");
     QVERIFY(!profile.isEmpty());
     const QString path = QDir::homePath();
