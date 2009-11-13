@@ -386,7 +386,7 @@ void KonqViewManager::removeTab( KonqFrameBase* currentFrame, bool emitAboutToRe
   printFullHierarchy();
 #endif
 
-  if ( m_tabContainer->count() == 1 )
+  if ( m_tabContainer->count() == 1 ) // TODO: see #214378
     return;
 
   if(emitAboutToRemoveSignal)
@@ -409,6 +409,8 @@ void KonqViewManager::removeTab( KonqFrameBase* currentFrame, bool emitAboutToRe
   delete currentFrame;
 
   m_tabContainer->slotCurrentChanged(m_tabContainer->currentIndex());
+
+  m_pMainWindow->viewCountChanged();
 
 #ifdef DEBUG_VIEWMGR
   m_pMainWindow->dumpViewList();
@@ -581,6 +583,7 @@ void KonqViewManager::removeView( KonqView *view )
 
     grandParentContainer->setActiveChild( otherFrame );
     grandParentContainer->activateChild();
+    m_pMainWindow->viewCountChanged();
   }
   else if (parentContainer->frameType() == KonqFrameBase::Tabs) {
     kDebug() << "parentContainer" << parentContainer << "is a KonqFrameTabs";
@@ -696,6 +699,7 @@ void KonqViewManager::clear()
     delete frame;
     // tab container was deleted by the above
     m_tabContainer = 0;
+    m_pMainWindow->viewCountChanged();
 }
 
 KonqView *KonqViewManager::chooseNextView(KonqView *view)
@@ -833,6 +837,9 @@ KonqView *KonqViewManager::setupView( KonqFrameContainerBase *parentContainer,
     // Passive views aren't registered, but we still want to detect the suicidal ones
     connect( v->part(), SIGNAL( destroyed() ), this, SLOT( slotPassiveModePartDeleted() ) );
   }
+
+  if (!m_bLoadingProfile)
+      m_pMainWindow->viewCountChanged();
 
   //kDebug() << "done";
   return v;

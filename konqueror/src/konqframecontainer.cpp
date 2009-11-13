@@ -195,10 +195,10 @@ bool KonqFrameContainer::accept( KonqFrameVisitor* visitor )
 {
     if ( !visitor->visit( this ) )
         return false;
-    Q_ASSERT( m_pFirstChild );
+    //Q_ASSERT( m_pFirstChild );
     if ( m_pFirstChild && !m_pFirstChild->accept( visitor ) )
         return false;
-    Q_ASSERT( m_pSecondChild );
+    //Q_ASSERT( m_pSecondChild );
     if ( m_pSecondChild && !m_pSecondChild->accept( visitor ) )
         return false;
     if ( !visitor->endVisit( this ) )

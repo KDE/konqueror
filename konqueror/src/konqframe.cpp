@@ -105,7 +105,7 @@ KonqFrame::KonqFrame( QWidget* parent, KonqFrameContainerBase *parentContainer )
 
 KonqFrame::~KonqFrame()
 {
-   //kDebug() << "KonqFrame::~KonqFrame() " << this;
+    //kDebug() << this;
 }
 
 bool KonqFrame::isActivePart()
