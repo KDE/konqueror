@@ -71,6 +71,7 @@ QStringList ModuleManager::modules() const
             fileNames.append(globalEntry);
         }
     }
+    sortGlobalEntries(fileNames);
     //kDebug() << "Adding local modules:" << addedModules;
     Q_FOREACH(const QString& module, addedModules) {
         if (!fileNames.contains(module))
@@ -86,7 +87,6 @@ KService::List ModuleManager::availablePlugins() const
     // We could use KServiceTypeTrader for that; not sure 2 files make a big performance difference though.
     const QStringList files = KGlobal::dirs()->findAllResources("data", "konqsidebartng/plugins/*.desktop");
     KService::List services;
-    // TODO: what about the sort order? #59838
     Q_FOREACH(const QString& path, files) {
         KDesktopFile df(path); // no merging. KService warns, and we don't need it.
         services.append(KService::Ptr(new KService(&df)));
@@ -201,4 +201,25 @@ QString ModuleManager::addModuleFromTemplate(QString& templ)
 QStringList ModuleManager::localModulePaths(const QString& filter) const
 {
     return QDir(m_localPath).entryList(QStringList() << filter);
+}
+
+void ModuleManager::sortGlobalEntries(QStringList& fileNames) const
+{
+    QMap<int, QString> sorter;
+    Q_FOREACH(const QString& fileName, fileNames) {
+        const QString path = moduleDataPath(fileName);
+        if (KStandardDirs::locate("data", path).isEmpty()) {
+            // doesn't exist anymore, skip it
+            kDebug() << "Skipping" << path;
+        } else {
+            KSharedConfig::Ptr config = KSharedConfig::openConfig(path,
+                                                                  KConfig::NoGlobals,
+                                                                  "data");
+            KConfigGroup configGroup(config, "Desktop Entry");
+            const int weight = configGroup.readEntry("X-KDE-Weight", 0);
+            sorter.insert(weight, fileName);
+        }
+    }
+    fileNames = sorter.values();
+    kDebug() << fileNames;
 }

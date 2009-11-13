@@ -69,6 +69,7 @@ public:
     void removeModule(const QString& fileName);
 
 private:
+    void sortGlobalEntries(QStringList& fileNames) const;
 
     KConfigGroup *m_config; // owned by SidebarWidget
     QString m_localPath; // local path
