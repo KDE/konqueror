@@ -208,7 +208,7 @@ protected slots:
             QList<QWebElement> result =  view->page()->mainFrame()->findAllElements(str);
             foreach (QWebElement e, result)
                 e.setStyleProperty("background-color", "yellow");
-            statusBar()->showMessage(i18n("%1 element(s) selected",result.count()), 5000);
+            statusBar()->showMessage(i18np("%1 element selected","%1 elements selected",result.count()), 5000);
 #endif
         }
     }

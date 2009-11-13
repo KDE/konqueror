@@ -466,7 +466,7 @@ void WebPage::slotWindowCloseRequested()
 {
     emit d->part->browserExtension()->requestFocus(d->part);
     if (KMessageBox::questionYesNo(view(),
-                                   i18n("Close window ?"), i18n("Confirmation Required"),
+                                   i18n("Close window?"), i18n("Confirmation Required"),
                                    KStandardGuiItem::close(), KStandardGuiItem::cancel())
         == KMessageBox::Yes) {
         d->part->deleteLater();
