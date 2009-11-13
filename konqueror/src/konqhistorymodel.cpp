@@ -386,13 +386,16 @@ void KonqHistoryModel::slotEntryAdded(const KonqHistoryEntry &entry)
         item = new KHM::HistoryEntry(entry, group);
         endInsertRows();
     } else {
+        // Do not update existing entries, otherwise items jump around when clicking on them (#61450)
+        if (item->entry.lastVisited.isValid())
+            return;
         item->update(entry);
         const QModelIndex index = indexFor(item);
         emit dataChanged(index, index);
-        // update the parent item, so the sorting by date is updated accordingly
-        const QModelIndex groupIndex = indexFor(group);
-        emit dataChanged(groupIndex, groupIndex);
     }
+    // update the parent item, so the sorting by date is updated accordingly
+    const QModelIndex groupIndex = indexFor(group);
+    emit dataChanged(groupIndex, groupIndex);
 }
 
 void KonqHistoryModel::slotEntryRemoved(const KonqHistoryEntry &entry)
