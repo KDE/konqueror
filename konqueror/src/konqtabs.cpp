@@ -80,7 +80,9 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
   if (m_permanentCloseButtons) {
     setTabsClosable( true );
   }
-  setTabCloseActivatePrevious( KonqSettings::tabCloseActivatePrevious() );
+  tabBar()->setSelectionBehaviorOnRemove(
+      KonqSettings::tabCloseActivatePrevious() ? QTabBar::SelectPreviousTab : QTabBar::SelectRightTab );
+
   if (KonqSettings::tabPosition()=="Bottom")
     setTabPosition( QTabWidget::South );
   connect( this, SIGNAL( closeRequest( QWidget * )), SLOT(slotCloseRequest( QWidget * )));
@@ -111,7 +113,7 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
   }
 
   setAutomaticResizeTabs( true );
-  setTabReorderingEnabled( true );
+  setMovable( true );
   connect( this, SIGNAL( movedTab( int, int ) ),
            SLOT( slotMovedTab( int, int ) ) );
   connect( this, SIGNAL( mouseMiddleClick() ),

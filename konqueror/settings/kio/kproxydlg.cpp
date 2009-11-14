@@ -47,6 +47,7 @@ K_PLUGIN_FACTORY_DECLARATION(KioConfigFactory)
 KProxyDialog::KProxyDialog(QWidget *parent, const QVariantList &args)
     : KCModule(KioConfigFactory::componentData(), parent)
 {
+  Q_UNUSED(args);
   mUi.setupUi(this);
   
   // signals and slots connections
