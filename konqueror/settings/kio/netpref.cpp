@@ -46,17 +46,17 @@ KIOPreferences::KIOPreferences(QWidget *parent, const QVariantList &)
     connect(sb_socketRead, SIGNAL(valueChanged(int)), SLOT(configChanged()));
     timeoutLayout->addRow(i18n( "Soc&ket read:" ), sb_socketRead);
 
-    sb_proxyConnect = new KIntNumInput( sb_socketRead, 0, this );
+    sb_proxyConnect = new KIntNumInput( 0, this );
     sb_proxyConnect->setSuffix( i18n( " sec" ) );
     connect(sb_proxyConnect, SIGNAL(valueChanged(int)), SLOT(configChanged()));
     timeoutLayout->addRow(i18n( "Pro&xy connect:" ), sb_proxyConnect);
 
-    sb_serverConnect = new KIntNumInput( sb_proxyConnect, 0, this );
+    sb_serverConnect = new KIntNumInput( 0, this );
     sb_serverConnect->setSuffix( i18n( " sec" ) );
     connect(sb_serverConnect, SIGNAL(valueChanged(int)), SLOT(configChanged()));
     timeoutLayout->addRow(i18n("Server co&nnect:"), sb_serverConnect);
 
-    sb_serverResponse = new KIntNumInput( sb_serverConnect, 0, this );
+    sb_serverResponse = new KIntNumInput( 0, this );
     sb_serverResponse->setSuffix( i18n( " sec" ) );
     connect(sb_serverResponse, SIGNAL(valueChanged(int)), SLOT(configChanged()));
     timeoutLayout->addRow(i18n("&Server response:"), sb_serverResponse);

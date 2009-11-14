@@ -1591,6 +1591,7 @@ void KonqViewManager::createTabContainer(QWidget* parent, KonqFrameContainerBase
     // Delay the opening of the URL for #106641
     bool ok = connect( m_tabContainer, SIGNAL(openUrl(KonqView*, KUrl)), m_pMainWindow, SLOT(openUrl(KonqView*, KUrl)), Qt::QueuedConnection);
     Q_ASSERT(ok);
+    Q_UNUSED(ok);
     applyConfiguration();
 }
 
