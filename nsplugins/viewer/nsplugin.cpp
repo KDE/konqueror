@@ -1186,6 +1186,8 @@ NSPluginViewer::~NSPluginViewer()
 
 
 void NSPluginViewer::appChanged( const QString& id, const QString& oldOwner, const QString& newOwner) {
+   Q_UNUSED(id);
+
    if ( oldOwner.isEmpty() || !newOwner.isEmpty() ) // only care about unregistering apps
         return;
 
