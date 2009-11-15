@@ -25,6 +25,7 @@
 
 // Own
 #include "kwebpage.h"
+#include "kwebwallet.h"
 
 // Local
 #include "networkaccessmanager_p.h"
@@ -49,6 +50,7 @@
 #include <kio/job.h>
 
 // Qt
+#include <QtCore/QPointer>
 #include <QtGui/QTextDocument>
 #include <QtGui/QPaintEngine>
 #include <QtWebKit/QWebFrame>
@@ -61,8 +63,15 @@
 
 #define QL1(x)    QLatin1String(x)
 
+
+class KWebPage::KWebPagePrivate
+{
+public:
+    QPointer<KWebWallet> wallet;
+};
+
 KWebPage::KWebPage(QObject *parent, qlonglong windowId)
-         :QWebPage(parent), d(0)
+         :QWebPage(parent), d(new KWebPage::KWebPagePrivate)
 {  
     // KDE KParts integration for <embed> tag...
     setPluginFactory(new KWebPluginFactory(this));
@@ -87,6 +96,10 @@ KWebPage::KWebPage(QObject *parent, qlonglong windowId)
     }
 
     networkAccessManager()->setCookieJar(cookiejar);
+
+    // Create a wallet...
+    setWallet(new KWebWallet);
+
 
 #if QT_VERSION >= 0x040600
     action(Back)->setIcon(QIcon::fromTheme("go-previous"));
@@ -153,6 +166,7 @@ KWebPage::KWebPage(QObject *parent, qlonglong windowId)
 
 KWebPage::~KWebPage()
 {
+    delete d;
 }
 
 void KWebPage::setAllowExternalContent(bool allow)
@@ -235,6 +249,10 @@ bool KWebPage::acceptNavigationRequest(QWebFrame * frame, const QNetworkRequest 
 {
     kDebug() << "url: " << request.url() << ", type: " << type << ", frame: " << frame;   
 
+    if (d->wallet && (type == QWebPage::NavigationTypeFormSubmitted ||
+        type == QWebPage::NavigationTypeFormResubmitted)) {
+        d->wallet->saveFormData(frame);
+    }
     /*
       If the navigation request is from the main frame, set the cross-domain
       meta-data value to the current url for proper integration with KCookieJar...
@@ -243,12 +261,21 @@ bool KWebPage::acceptNavigationRequest(QWebFrame * frame, const QNetworkRequest 
         setSessionMetaData(QL1("cross-domain"), request.url().toString());
     }
 
+
+
     return QWebPage::acceptNavigationRequest(frame, request, type);
 }
 
-void KWebPage::downloadRequest(const QNetworkRequest &request) const
+bool KWebPage::authorizedRequest(const QUrl &url) const
+{
+    Q_UNUSED(url);
+    return true;
+}
+
+void KWebPage::downloadRequest(const QNetworkRequest &request)
 {
     KUrl url (request.url());
+
     const QString destUrl = KFileDialog::getSaveFileName(url.fileName(), QString(), view());
 
     if (destUrl.isEmpty())
@@ -262,10 +289,37 @@ void KWebPage::downloadRequest(const QNetworkRequest &request) const
     job->addMetaData(QL1("MaxCacheSize"), QL1("0")); // Don't store in http cache.
     job->addMetaData(QL1("cache"), QL1("cache")); // Use entry from cache if available.
     job->uiDelegate()->setAutoErrorHandlingEnabled(true);
+    downloadRequest(request.url());
 }
 
-bool KWebPage::authorizedRequest(const QUrl &url) const
+void KWebPage::downloadRequest(const QUrl &url)
 {
-    Q_UNUSED(url);
-    return true;
+    QNetworkRequest request (url);
+    downloadRequest(request);
 }
+
+KWebWallet *KWebPage::wallet() const
+{
+    return d->wallet;
+}
+
+void KWebPage::setWallet(KWebWallet* wallet)
+{
+    if (d->wallet) {
+      // Only delete if we have ownership of the wallet...
+      if (this == d->wallet->parent())
+          delete d->wallet;
+      else
+          disconnect(this, 0, d->wallet, 0);
+    }
+
+    d->wallet = wallet;
+
+    if (d->wallet) {
+        d->wallet->setParent(this);
+        connect(this, SIGNAL(restoreFrameStateRequested(QWebFrame*)),
+                d->wallet, SLOT(restoreFrameState(QWebFrame*)));
+    }
+}
+
+#include "kwebpage.moc"

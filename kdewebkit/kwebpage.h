@@ -29,6 +29,8 @@
 
 #include <QtWebKit/QWebPage>
 
+class KWebWallet;
+
 /**
  * @short An enhanced QWebPage that provides integration into the KDE environment.
  *
@@ -85,21 +87,6 @@ public:
     void setAllowExternalContent(bool allow);
 
     /**
-     * Downloads the resource requested by @p request.
-     *
-     * This function first prompts the user for the destination
-     * location for the requested resource and then downloads it
-     * using KIO.
-     *
-     * For example, you can call this function when you receive
-     * @ref QWebPage::downloadRequested signal to download the
-     * the request through KIO.
-     *
-     * @param request the request to download.
-     */
-    void downloadRequest(const QNetworkRequest &request) const;
-
-    /**
      * Returns true if access to the requested @p url is authorized.
      *
      * You should reimplement this function if you want to add features such as
@@ -110,6 +97,39 @@ public:
      * @return true in this default implementation.
      */
     virtual bool authorizedRequest(const QUrl &url) const;
+
+    /**
+     * Returns true KWallet used to store form data.
+     */
+    KWebWallet *wallet() const;
+
+    /**
+     * Sets the @ref KWebWallet that is used to store form data.
+     *     
+     * NOTE: KWebPage takes ownership of the KWebWallet object.
+     *
+     * KWebPage will set the parent of the wallet object passed to itself, so
+     * that the wallet is deleted when this object is deleted as well. If you
+     * do not want that to happen, you should set the wallet's parent to 0 after
+     * calling this function.
+     *
+     * To disable wallet intgreation simply call this function with NULL.
+     */
+    void setWallet(KWebWallet* wallet);
+
+public Q_SLOTS:
+    /**
+     * Downloads @p request using KIO.
+     *
+     * This slot first prompts the user where to put/save the requested
+     * resource and then downloads using KIO::file_copy.
+     */
+    void downloadRequest(const QNetworkRequest &request);
+
+    /**
+     * An overload of the @ref downloadRequest slot with a QUrl parameter.
+     */
+    void downloadRequest(const QUrl &url);
 
 protected:
     /**
