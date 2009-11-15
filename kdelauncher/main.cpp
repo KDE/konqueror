@@ -48,7 +48,7 @@
 #include <QtWebKit/QWebElement>
 #endif
 
-#if QT_VERSION >= 0x040400 && !defined(QT_NO_PRINTER)
+#if !defined(QT_NO_PRINTER)
 #include <QtGui/QPrintPreviewDialog>
 #endif
 
@@ -171,7 +171,7 @@ protected slots:
     }
 
     void print() {
-#if QT_VERSION >= 0x040400 && !defined(QT_NO_PRINTER)
+#if !defined(QT_NO_PRINTER)
         QPrintPreviewDialog dlg(this);
         connect(&dlg, SIGNAL(paintRequested(QPrinter *)),
                 view, SLOT(print(QPrinter *)));
@@ -244,9 +244,8 @@ private:
 
         QMenu *fileMenu = menuBar()->addMenu(i18n("&File"));
         QAction *newWindow = fileMenu->addAction(i18n("New Window"), this, SLOT(newWindow()));
-#if QT_VERSION >= 0x040400
+
         fileMenu->addAction(i18n("Print"), this, SLOT(print()));
-#endif
         fileMenu->addAction(i18n("Close"), this, SLOT(close()));
 
         QMenu *editMenu = menuBar()->addMenu(i18n("&Edit"));
