@@ -59,10 +59,10 @@ public:
     /**
      * Constructs a KWebView object with parent @p parent.
      *
-     * The @p createCustomPage flag allows you to prevent the creation of a
-     * custom KWebPage object that is used to provide KDE integration. If you
-     * are going to use your own implementation of KWebPage, you should set
-     * this flag to false to avoid unnecessary creation and deletion of objects.
+     * Set @p createCustomPage to false to prevent the creation of a custom
+     * @ref KWebPage object for KDE integration. Set this flag to false if
+     * you are going to use your own custom implementation of KWebPage to
+     * avoid unnecessary object creation and deletion.
      *
      * @param parent            the parent object.
      * @param createCustomPage  if true, the default, creates a custom KWebPage object.
