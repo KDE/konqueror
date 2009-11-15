@@ -36,6 +36,7 @@
 #include <KDE/KCmdLineArgs>
 #include <KDE/KDebug>
 #include <KDE/KIO/AccessManager>
+#include <kurifilter.h>
 
 #include <QtUiTools/QUiLoader>
 #include <QtWebKit/QWebPage>
@@ -87,11 +88,7 @@ public:
 
         setupUI();
 
-#if QT_VERSION >= 0x040600
-        QUrl qurl = view->guessUrlFromString(url);
-#else
-        QUrl qurl(url);
-#endif
+        QUrl qurl(KUriFilter::self()->filteredUri(url, QStringList() << "kshorturifilter"));
         if (qurl.isValid()) {
             urlEdit->setText(qurl.toEncoded());
             view->load(qurl);
@@ -114,15 +111,7 @@ public:
 protected slots:
 
     void changeLocation() {
-        QString string = urlEdit->text();
-#if QT_VERSION >= 0x040600
-        QUrl url = view->guessUrlFromString(string);
-#else
-        QUrl url(string);
-#endif
-        if (url.isRelative())
-            url = QUrl("http://" + string + "/");
-        urlEdit->setText(url.toEncoded());
+        QUrl url (KUriFilter::self()->filteredUri(urlEdit->text(), QStringList() << "kshorturifilter"));
         view->load(url);
         view->setFocus(Qt::OtherFocusReason);
     }
