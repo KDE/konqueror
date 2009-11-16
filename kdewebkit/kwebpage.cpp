@@ -318,7 +318,7 @@ void KWebPage::setWallet(KWebWallet* wallet)
     if (d->wallet) {
         d->wallet->setParent(this);
         connect(this, SIGNAL(restoreFrameStateRequested(QWebFrame*)),
-                d->wallet, SLOT(restoreFrameState(QWebFrame*)));
+                d->wallet, SLOT(restoreFormData(QWebFrame*)));
     }
 }
 
