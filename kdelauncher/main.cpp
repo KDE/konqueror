@@ -46,6 +46,7 @@
 
 #if QT_VERSION >= 0x040600
 #include <QtWebKit/QWebElement>
+#include <QtWebKit/QWebElementCollection>
 #endif
 
 #if !defined(QT_NO_PRINTER)
@@ -194,7 +195,7 @@ protected slots:
                                             QLineEdit::Normal, "a", &ok);
         if (ok && !str.isEmpty()) {
 #if QT_VERSION >= 0x040600
-            QList<QWebElement> result =  view->page()->mainFrame()->findAllElements(str);
+            QWebElementCollection result =  view->page()->mainFrame()->findAllElements(str);
             foreach (QWebElement e, result)
                 e.setStyleProperty("background-color", "yellow");
             statusBar()->showMessage(i18np("%1 element selected","%1 elements selected",result.count()), 5000);
