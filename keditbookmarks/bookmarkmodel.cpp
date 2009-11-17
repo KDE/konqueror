@@ -156,6 +156,7 @@ bool KBookmarkModel::setData(const QModelIndex &index, const QVariant &value, in
 {
     if(index.isValid() && role == Qt::EditRole)
     {
+        kDebug() << value.toString();
         CmdHistory::self()->addCommand(new EditCommand(bookmarkForIndex(index).address(), index.column(), value.toString()));
         return true;
     }
@@ -248,7 +249,8 @@ QModelIndex KBookmarkModel::indexForBookmark(const KBookmark& bk) const
 void KBookmarkModel::emitDataChanged(const KBookmark& bk)
 {
     QModelIndex idx = indexForBookmark(bk);
-    emit dataChanged(idx, idx.sibling(idx.row(), columnCount(QModelIndex())-1) );
+    kDebug() << idx;
+    emit dataChanged(idx, idx.sibling(idx.row(), columnCount()-1) );
 }
 
 QMimeData * KBookmarkModel::mimeData( const QModelIndexList & indexes ) const
@@ -326,7 +328,7 @@ bool KBookmarkModel::dropMimeData(const QMimeData * data, Qt::DropAction action,
     if(action == Qt::CopyAction)
     {
         KEBMacroCommand * cmd = CmdGen::insertMimeSource("Copy", data, addr);
-        CmdHistory::self()->didCommand(cmd);
+        CmdHistory::self()->addCommand(cmd);
     }
     else if(action == Qt::MoveAction)
     {
@@ -344,13 +346,13 @@ bool KBookmarkModel::dropMimeData(const QMimeData * data, Qt::DropAction action,
             }
 
             KEBMacroCommand * cmd = CmdGen::itemsMoved(bookmarks, addr, false);
-            CmdHistory::self()->didCommand(cmd);
+            CmdHistory::self()->addCommand(cmd);
         }
         else
         {
             kDebug()<<"NO FORMAT";
             KEBMacroCommand * cmd = CmdGen::insertMimeSource("Copy", data, addr);
-            CmdHistory::self()->didCommand(cmd);
+            CmdHistory::self()->addCommand(cmd);
         }
     }
 

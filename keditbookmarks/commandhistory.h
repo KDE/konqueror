@@ -35,7 +35,6 @@ public:
 
     void clearHistory();
     void addCommand(QUndoCommand *);
-    void didCommand(QUndoCommand *);
 
     // Adds command without executing it.
     void addInFlightCommand(QUndoCommand *);

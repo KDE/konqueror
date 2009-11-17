@@ -352,7 +352,7 @@ void ActionsImpl::slotPaste() {
         addr = bk.address();
 
     KEBMacroCommand *mcmd = CmdGen::insertMimeSource( i18n("Paste"), QApplication::clipboard()->mimeData(), addr);
-    CmdHistory::self()->didCommand(mcmd);
+    CmdHistory::self()->addCommand(mcmd);
 }
 
 /* -------------------------------------- */
@@ -493,10 +493,9 @@ void ActionsImpl::slotRecursiveSort() {
     QList<KBookmark> bookmarks = lister.getList(bk.toGroup());
     bookmarks << bk.toGroup();
     for (QList<KBookmark>::ConstIterator it = bookmarks.constBegin(); it != bookmarks.constEnd(); ++it) {
-        SortCommand *cmd = new SortCommand("", (*it).address(), mcmd);
-        cmd->redo();
+        new SortCommand("", (*it).address(), mcmd);
     }
-    CmdHistory::self()->didCommand(mcmd);
+    CmdHistory::self()->addCommand(mcmd);
 }
 
 void ActionsImpl::slotSort() {

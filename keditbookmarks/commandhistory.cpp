@@ -17,6 +17,7 @@
 */
 
 #include "commandhistory.h"
+#include <kdebug.h>
 #include "commands.h"
 #include "toplevel.h"
 #include <kactioncollection.h>
@@ -80,20 +81,11 @@ void CmdHistory::notifyDocSaved()
     m_commandHistory.setClean();
 }
 
-void CmdHistory::didCommand(QUndoCommand *cmd)
-{
-    if (!cmd)
-        return;
-    m_commandHistory.push(cmd);
-    CmdHistory::commandExecuted(cmd);
-}
-
 void CmdHistory::addCommand(QUndoCommand *cmd)
 {
     if (!cmd)
         return;
-    m_commandHistory.push(cmd);
-    cmd->redo();
+    m_commandHistory.push(cmd); // calls cmd->redo()
     CmdHistory::commandExecuted(cmd);
 }
 
@@ -101,7 +93,7 @@ void CmdHistory::addInFlightCommand(QUndoCommand *cmd)
 {
     if(!cmd)
         return;
-    m_commandHistory.push(cmd);
+    m_commandHistory.push(cmd); // TODO: HOW TO NOT CALL REDO?
 }
 
 void CmdHistory::clearHistory()

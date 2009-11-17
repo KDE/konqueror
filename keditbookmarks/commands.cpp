@@ -216,6 +216,7 @@ QString CreateCommand::affectedBookmarks() const
 EditCommand::EditCommand(const QString & address, int col, const QString & newValue, QUndoCommand* parent)
       : QUndoCommand(parent), mAddress(address), mCol(col)
 {
+    kDebug() << address << col << newValue;
     if(mCol == 1)
     {
         const KUrl u(newValue);
@@ -254,6 +255,7 @@ void EditCommand::redo()
     else if(mCol==0)
     {
         mOldValue = bk.fullText();
+        kDebug() << "mOldValue=" << mOldValue;
         bk.setFullText(mNewValue);
     }
     else if(mCol==1)
@@ -273,7 +275,7 @@ void EditCommand::redo()
 
 void EditCommand::undo()
 {
-
+    kDebug() << "Setting old value" << mOldValue << "in bk" << mAddress << "col" << mCol;
     KBookmark bk = CurrentMgr::bookmarkAt(mAddress);
     if(mCol==-2)
     {
@@ -578,8 +580,7 @@ KEBMacroCommand* CmdGen::insertMimeSource(const QString &cmdName, const QMimeDat
 
     for (it = bookmarks.constBegin(); it != end; ++it)
     {
-        CreateCommand *cmd = new CreateCommand(currentAddress, (*it), QString(), mcmd);
-        cmd->redo();
+        new CreateCommand(currentAddress, (*it), QString(), mcmd);
         currentAddress = KBookmark::nextAddress(currentAddress);
     }
     return mcmd;
@@ -605,9 +606,9 @@ KEBMacroCommand* CmdGen::itemsMoved(const QList<KBookmark> & items,
                     .cloneNode(true).toElement()),
                     (*it).text(), mcmd);
 
-            cmd->redo();
+            //cmd->redo();
 
-            bkInsertAddr = cmd->finalAddress();
+            bkInsertAddr = cmd->finalAddress(); // TODO is this correct without the redo()?
 
         } else /* if (move) */ {
             const QString oldAddress = (*it).address();
@@ -616,9 +617,9 @@ KEBMacroCommand* CmdGen::itemsMoved(const QList<KBookmark> & items,
 
             MoveCommand *cmd = new MoveCommand(oldAddress, bkInsertAddr,
                                                (*it).text(), mcmd);
-            cmd->redo();
+            //cmd->redo();
 
-            bkInsertAddr = cmd->finalAddress();
+            bkInsertAddr = cmd->finalAddress(); // TODO is this correct without the redo()?
         }
 
         bkInsertAddr = KBookmark::nextAddress(bkInsertAddr);
