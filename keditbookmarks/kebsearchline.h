@@ -18,26 +18,12 @@
 #ifndef __kebsearchline_h
 #define __kebsearchline_h
 
-#include <k3listviewsearchline.h>
-#include <kglobal.h>
-#include <klocale.h>
-#include <ktoolbar.h>
-#include <kiconloader.h>
-#include <kdebug.h>
-
-#include <QtCore/QTimer>
+#include <klineedit.h>
 #include <QtGui/QAbstractItemView>
-#include <QtGui/QListView>
-#include <QtGui/QTreeView>
-#include <QtGui/QMenu>
-#include <QtGui/QAction>
-#include <QtGui/QToolButton>
-#include <QtGui/QApplication>
-#include <QtGui/QLabel>
 #include <QtCore/QLinkedList>
 
 
-
+class QAction;
 class KViewSearchLinePrivate;
 /**
  * This class makes it easy to add a search line for filtering the items in a

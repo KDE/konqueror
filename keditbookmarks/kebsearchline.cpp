@@ -18,12 +18,19 @@
 */
 
 #include "kebsearchline.h"
+#include <kdebug.h>
+#include <QTimer>
+#include <QTreeView>
+#include <QListView>
+#include <QLabel>
 
 #include <kicon.h>
+#include <klocale.h>
 
 #include <QtGui/QHeaderView>
 #include <QtGui/QBoxLayout>
 #include <QtGui/QKeyEvent>
+#include <QtGui/QMenu>
 
 
 
