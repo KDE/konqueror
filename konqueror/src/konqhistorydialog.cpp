@@ -21,6 +21,7 @@
 #include "konqhistoryview.h"
 
 #include "konqhistory.h"
+#include "konqmainwindow.h"
 #include "konqmisc.h"
 
 #include <QtCore/QTimer>
@@ -37,8 +38,8 @@
 #include <klocale.h>
 #include <ktoggleaction.h>
 
-KonqHistoryDialog::KonqHistoryDialog(QWidget *parent)
-    : KDialog(parent)
+KonqHistoryDialog::KonqHistoryDialog(KonqMainWindow *parent)
+    : KDialog(parent), m_mainWindow(parent)
 {
     setCaption(i18nc("@title:window", "History"));
     setButtons(KDialog::Close);
@@ -49,6 +50,7 @@ KonqHistoryDialog::KonqHistoryDialog(QWidget *parent)
     m_historyView = new KonqHistoryView(mainWidget());
     connect(m_historyView->treeView(), SIGNAL(doubleClicked(QModelIndex)), this, SLOT(slotOpenWindowForIndex(QModelIndex)));
     connect(m_historyView, SIGNAL(openUrlInNewWindow(KUrl)), this, SLOT(slotOpenWindow(KUrl)));
+    connect(m_historyView, SIGNAL(openUrlInNewTab(KUrl)), this, SLOT(slotOpenTab(KUrl)));
 
     KActionCollection* collection = m_historyView->actionCollection();
 
@@ -89,11 +91,18 @@ void KonqHistoryDialog::slotOpenWindow(const KUrl& url)
     KonqMisc::createNewWindow(url);
 }
 
+void KonqHistoryDialog::slotOpenTab(const KUrl& url)
+{
+    m_mainWindow->openMultiURL(KUrl::List() << url);
+}
+
+// Called when double-clicking on a row
 void KonqHistoryDialog::slotOpenWindowForIndex(const QModelIndex& index)
 {
     const KUrl url = m_historyView->urlForIndex(index);
     if (url.isValid()) {
-        slotOpenWindow(url);
+        slotOpenWindow(url); // should we call slotOpenTab instead?
     }
 }
+
 #include "konqhistorydialog.moc"

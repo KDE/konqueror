@@ -22,6 +22,7 @@
 
 #include <kdialog.h>
 
+class KonqMainWindow;
 class KonqHistoryView;
 class QModelIndex;
 
@@ -30,17 +31,19 @@ class KonqHistoryDialog : public KDialog
     Q_OBJECT
 
 public:
-    KonqHistoryDialog(QWidget *parent = 0);
+    KonqHistoryDialog(KonqMainWindow *parent = 0);
     ~KonqHistoryDialog();
 
     QSize sizeHint() const;
 
 private Q_SLOTS:
     void slotOpenWindow(const KUrl& url);
+    void slotOpenTab(const KUrl& url);
     void slotOpenWindowForIndex(const QModelIndex& index);
 
 private:
-    KonqHistoryView *m_historyView;
+    KonqHistoryView* m_historyView;
+    KonqMainWindow* m_mainWindow;
 };
 
 #endif // KONQ_HISTORYDIALOG_H

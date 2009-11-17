@@ -530,7 +530,7 @@ void KonqSidebarDirTreeModule::slotDeleteItem( const KFileItem &fileItem )
 
 void KonqSidebarDirTreeModule::slotRedirection( const KUrl & oldUrl, const KUrl & newUrl )
 {
-    kDebug(1201) << "******************************KonqSidebarDirTreeModule::slotRedirection(" << newUrl.prettyUrl() << ")";
+    kDebug(1201) << newUrl;
 
     QString oldUrlStr = oldUrl.url( KUrl::RemoveTrailingSlash );
     QString newUrlStr = newUrl.url( KUrl::RemoveTrailingSlash );
@@ -561,7 +561,7 @@ void KonqSidebarDirTreeModule::slotRedirection( const KUrl & oldUrl, const KUrl 
 
 void KonqSidebarDirTreeModule::slotListingStopped( const KUrl & url )
 {
-    kDebug(1201) << "KonqSidebarDirTree::slotListingStopped " << url.url( KUrl::RemoveTrailingSlash );
+    //kDebug(1201) << url;
 
     Q3PtrList<KonqSidebarTreeItem> *itemList;
     KonqSidebarTreeItem * item;
@@ -580,7 +580,7 @@ void KonqSidebarDirTreeModule::slotListingStopped( const KUrl & url )
     }
     delete itemList;
 
-    kDebug(1201) << "m_selectAfterOpening " << m_selectAfterOpening.prettyUrl();
+    //kDebug(1201) << "m_selectAfterOpening " << m_selectAfterOpening.prettyUrl();
     if ( !m_selectAfterOpening.isEmpty() && url.isParentOf( m_selectAfterOpening ) )
     {
         KUrl theURL( m_selectAfterOpening );
@@ -628,7 +628,7 @@ void KonqSidebarDirTreeModule::followURL( const KUrl & url )
         } else
         {
             m_selectAfterOpening = url;
-            kDebug() << "KonqSidebarDirTreeModule::followURL: m_selectAfterOpening=" << m_selectAfterOpening.url();
+            //kDebug() << "KonqSidebarDirTreeModule::followURL: m_selectAfterOpening=" << m_selectAfterOpening.url();
         }
     }
 }
