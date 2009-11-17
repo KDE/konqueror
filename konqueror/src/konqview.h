@@ -384,11 +384,6 @@ Q_SIGNALS:
    */
   void viewCompleted( KonqView * view );
 
-  /**
-   * Emitted only if the option backRightClick is activated
-   */
-  void backRightClick();
-
 public Q_SLOTS:
   /**
    * Store location-bar URL in the child view
@@ -433,7 +428,6 @@ private Q_SLOTS:
   void slotRequestFocus(KParts::ReadOnlyPart*);
 
 private:
-  void enableBackRightClick( bool b );
   /**
    * Replace the current view with a new view, created by @p viewFactory.
    */
@@ -519,7 +513,6 @@ private:
   uint m_bPendingRedirection:1;
   uint m_bBuiltinView:1;
   uint m_bURLDropHandling:1;
-  uint m_bBackRightClick:1;
   uint m_bHierarchicalView:1;
   uint m_bDisableScrolling:1;
   KService::List m_partServiceOffers;

@@ -45,6 +45,7 @@ set(konqueror_KDEINIT_SRCS
    konqrun.cpp
    konqview.cpp
    konqviewmanager.cpp
+   konqrmbeventfilter.cpp
    konqmisc.cpp
    konqdraggablelabel.cpp
    konqframe.cpp
