@@ -390,7 +390,7 @@ the name of the current tab</action>
 <term><menuchoice>
 <shortcut><keycombo
  action="simul">&Ctrl;&Shift;<keycap>,</keycap></keycombo></shortcut>
-<guimenu>Edit</guimenu><guimenuitem>Copy Input To->All Tabs in Current Window</guimenuitem></menuchoice></term>
+<guimenu>Edit</guimenu><guisubmenu>Copy Input To</guisubmenu><guimenuitem>All Tabs in Current Window</guimenuitem></menuchoice></term>
 <listitem><para><action>Allows input from the current session to be sent simultaneously to all sessions in current window</action>
 </para>
 </listitem>
@@ -400,7 +400,7 @@ the name of the current tab</action>
 <term><menuchoice>
 <shortcut><keycombo
  action="simul">&Ctrl;&Shift;<keycap>.</keycap></keycombo></shortcut>
-<guimenu>Edit</guimenu><guimenuitem>Copy Input To->Select Tabs...</guimenuitem></menuchoice></term>
+<guimenu>Edit</guimenu><guisubmenu>Copy Input To</guisubmenu><guimenuitem>Select Tabs...</guimenuitem></menuchoice></term>
 <listitem><para><action>Allows input from the current session to be sent simultaneously to user picked sessions</action>
 (<link linkend="copy-input-dialog">more info</link>)
 </para>
@@ -411,12 +411,22 @@ the name of the current tab</action>
 <term><menuchoice>
 <shortcut><keycombo
  action="simul">&Ctrl;&Shift;<keycap>/</keycap></keycombo></shortcut>
-<guimenu>Edit</guimenu><guimenuitem>Copy Input To->None</guimenuitem></menuchoice></term>
+<guimenu>Edit</guimenu><guisubmenu>Copy Input To</guisubmenu><guimenuitem>None</guimenuitem></menuchoice></term>
 <listitem><para><action>Stop all input to other sessions</action>
 </para>
 </listitem>
 </varlistentry>
-
+<!-- Z-Modem Upload...
+<varlistentry>
+<term><menuchoice>
+<shortcut><keycombo
+ action="simul">&Ctrl;&Alt;<keycap>U</keycap></keycombo></shortcut>
+<guimenu>Edit</guimenu><guimenuitem>Z-Modem Upload..</guimenuitem></menuchoice></term>
+<listitem><para><action></action>
+</para>
+</listitem>
+</varlistentry>
+-->
 <varlistentry>
 <term><menuchoice><guimenu>Edit</guimenu><guimenuitem>Clear &amp; Reset</guimenuitem></menuchoice></term>
 <listitem><para><action>Clears all text from the tab and reset the session</action></para>
