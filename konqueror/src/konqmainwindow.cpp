@@ -22,6 +22,7 @@
 */
 
 #include "konqmainwindow.h"
+#include "konqrmbeventfilter.h"
 #include "konqclosedwindowsmanager.h"
 #include "konqsessionmanager.h"
 #include "konqsessiondlg.h"
@@ -195,6 +196,8 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
     s_lstViews = new QList<KonqMainWindow*>;
 
   s_lstViews->append( this );
+
+  KonqRmbEventFilter::self(); // create it
 
   m_pChildFrame = 0;
   m_pActiveChild = 0;
@@ -4554,6 +4557,7 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
   // ## should use the new currentView->isHierarchicalView() instead?
   // Would this be correct for the konqlistview tree view?
   KUrl viewURL = currentView->isToggleView() ? KUrl() : currentView->url();
+  kDebug() << "viewURL=" << viewURL;
 
   bool openedForViewURL = false;
   //bool dirsSelected = false;
@@ -4781,6 +4785,7 @@ void KonqMainWindow::reparseConfiguration()
 
   KonqSettings::self()->readConfig();
   m_pViewManager->applyConfiguration();
+  KonqRmbEventFilter::self()->reparseConfiguration();
 
   m_bHTMLAllowed = KonqSettings::htmlAllowed();
 
