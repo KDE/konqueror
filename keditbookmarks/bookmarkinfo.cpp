@@ -20,7 +20,7 @@
 #include "bookmarklistview.h"
 #include "commands.h"
 #include "commandhistory.h"
-#include "toplevel.h"
+#include "toplevel.h" // for CurrentMgr
 #include "bookmarkmodel.h"
 
 #include <stdlib.h>
@@ -33,18 +33,9 @@
 #include <klocale.h>
 #include <kdebug.h>
 
-#include <kapplication.h>
-#include <kstandardaction.h>
-#include <kaction.h>
-
-#include <kedittoolbar.h>
-#include <kmessagebox.h>
 #include <klineedit.h>
-#include <kfiledialog.h>
 
 #include <kbookmark.h>
-#include <kbookmarkmanager.h>
-#include <QtCore/QEvent>
 
 // SHUFFLE all these functions around, the order is just plain stupid
 void BookmarkInfoWidget::showBookmark(const KBookmark &bk) {

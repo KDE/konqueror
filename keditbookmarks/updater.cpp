@@ -26,7 +26,6 @@
 
 #include <kdebug.h>
 #include <klocale.h>
-#include <kapplication.h>
 
 #include <kio/job.h>
 
@@ -34,7 +33,6 @@
 #include <kparts/part.h>
 #include <kparts/browserextension.h>
 #include <kservicetypetrader.h>
-#include <assert.h>
 
 FavIconUpdater::FavIconUpdater(QObject *parent)
     : QObject(parent),
@@ -102,7 +100,7 @@ void FavIconUpdater::downloadIconActual(const KBookmark &bk) {
                 this, SLOT( slotCompleted() ));
 
         KParts::BrowserExtension *ext = KParts::BrowserExtension::childObject(part);
-        assert(ext);
+        Q_ASSERT(ext);
 
         m_browserIface = new FavIconBrowserInterface(this);
         ext->setBrowserInterface(m_browserIface);
@@ -132,7 +130,7 @@ void FavIconUpdater::notifyChange(bool isHost,
 
     if(iconName.isNull() && !webupdate)
     {
-        // no icon found, try webupdater 
+        // no icon found, try webupdater
         downloadIconActual(m_bk);
     }
     else
@@ -140,7 +138,7 @@ void FavIconUpdater::notifyChange(bool isHost,
         // Either we have an icon or we already tried the webupdater
         m_bk.internalElement().setAttribute("icon", iconName);
         emit done(!iconName.isNull());
-    } 
+    }
 }
 
 /* -------------------------- */

@@ -34,14 +34,12 @@
 
 #include <QtGui/QClipboard>
 #include <QtCore/QMimeData>
-#include <QtGui/QPainter>
+#include <QApplication>
 
 #include <kdebug.h>
-#include <kapplication.h>
 
 #include <kaction.h>
 #include <kactioncollection.h>
-#include <kedittoolbar.h>
 #include <kicon.h>
 #include <kicondialog.h>
 #include <kiconloader.h>
@@ -49,14 +47,8 @@
 #include <klocale.h>
 #include <kstandardaction.h>
 #include <kfiledialog.h>
-#include <kmessagebox.h>
 #include <krun.h>
 #include <kstandarddirs.h>
-#include <ktemporaryfile.h>
-#include <ktoggleaction.h>
-
-#include <kparts/part.h>
-#include <kservicetypetrader.h>
 
 #include <kbookmark.h>
 #include <kbookmarkmanager.h>

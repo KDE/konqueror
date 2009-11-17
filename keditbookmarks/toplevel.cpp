@@ -37,11 +37,11 @@
 #include <QtGui/QSplitter>
 #include <QtGui/QLayout>
 #include <QtGui/QLabel>
+#include <QtGui/QApplication>
 
 #include <kaction.h>
 #include <kactioncollection.h>
 #include <ktoggleaction.h>
-#include <kapplication.h>
 #include <kbookmark.h>
 #include <kbookmarkmanager.h>
 #include <kdebug.h>

@@ -21,13 +21,11 @@
 
 #include <kdebug.h>
 #include <klocale.h>
-#include <kapplication.h>
 
 #include <QtCore/QFile>
-//Added by qt3to4:
 #include <QtCore/QTextStream>
 
-HTMLExporter::HTMLExporter() 
+HTMLExporter::HTMLExporter()
     : m_out(&m_string, QIODevice::WriteOnly) {
 }
 
@@ -82,7 +80,7 @@ void HTMLExporter::visitEnter(const KBookmarkGroup &grp) {
     // kDebug() << "visitEnter(" << grp.text() << ")";
     m_out << "<b>" << grp.fullText() << "</b><br>" << endl;
     m_out << "<div style=\"margin-left: 2em\">"<< endl;
-} 
+}
 
 void HTMLExporter::visitLeave(const KBookmarkGroup &) {
     // kDebug() << "visitLeave()";

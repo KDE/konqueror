@@ -29,11 +29,10 @@
 
 #include <kdebug.h>
 #include <klocale.h>
-#include <kapplication.h>
 
 FavIconsItrHolder *FavIconsItrHolder::s_self = 0;
 
-FavIconsItrHolder::FavIconsItrHolder() 
+FavIconsItrHolder::FavIconsItrHolder()
     : BookmarkIteratorHolder() {
     // do stuff
 }
@@ -93,7 +92,7 @@ void FavIconsItr::doAction() {
     //FIXME ensure that this gets overwritten
     setStatus(i18n("Updating favicon..."));
     if (!m_updater) {
-        m_updater = new FavIconUpdater(kapp);
+        m_updater = new FavIconUpdater(qApp);
         connect(m_updater, SIGNAL( done(bool) ),
                 this,     SLOT( slotDone(bool) ) );
     }
