@@ -292,7 +292,7 @@ void KWebPage::downloadRequest(const QNetworkRequest &request)
     downloadRequest(request.url());
 }
 
-void KWebPage::downloadRequest(const QUrl &url)
+void KWebPage::downloadRequest(const KUrl &url)
 {
     QNetworkRequest request (url);
     downloadRequest(request);

@@ -30,6 +30,7 @@
 #include <QtWebKit/QWebPage>
 
 class KWebWallet;
+class KUrl;
 
 /**
  * @short An enhanced QWebPage that provides integration into the KDE environment.
@@ -129,7 +130,7 @@ public Q_SLOTS:
     /**
      * An overload of the @ref downloadRequest slot with a QUrl parameter.
      */
-    void downloadRequest(const QUrl &url);
+    void downloadRequest(const KUrl &url);
 
 protected:
     /**
