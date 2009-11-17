@@ -1158,13 +1158,14 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
         }
     }
 
-    bool createTab = false;
-    if (args.actionRequestedByUser()) { // MMB or some RMB popupmenu action
-        createTab = KonqSettings::mmbOpensTab() &&
-                    !browserArgs.forcesNewWindow(); // RMB / Frame / Open in New Window
-    } else {
-        createTab = KonqSettings::popupsWithinTabs() &&
-                    !isPopupWindow( windowArgs );
+    bool createTab = browserArgs.newTab();
+    if (!createTab && !browserArgs.forcesNewWindow() /* explicit "Open in New Window" action, e.g. on frame or history item */) {
+        if (args.actionRequestedByUser()) { // MMB or some RMB popupmenu action
+            createTab = KonqSettings::mmbOpensTab();
+        } else { // Javascript popup
+            createTab = KonqSettings::popupsWithinTabs() &&
+                        !isPopupWindow( windowArgs );
+        }
     }
     kDebug() << "createTab=" << createTab << "part=" << part;
 
