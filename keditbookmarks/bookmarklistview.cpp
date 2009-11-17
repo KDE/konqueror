@@ -36,6 +36,7 @@ BookmarkView::BookmarkView( QWidget * parent )
     :QTreeView( parent )
 {
     setAcceptDrops(true);
+    setDefaultDropAction(Qt::MoveAction);
 }
 
 BookmarkView::~BookmarkView()
