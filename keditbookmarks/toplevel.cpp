@@ -114,7 +114,7 @@ void CurrentMgr::slotBookmarksChanged(const QString &, const QString &) {
 
     CmdHistory::self()->clearHistory();
     KEBApp::self()->updateActions();
-    KEBApp::self()->expandAll();
+    //KEBApp::self()->expandAll();
 }
 
 void CurrentMgr::notifyManagers(const KBookmarkGroup& grp)
@@ -188,11 +188,12 @@ KEBApp::KEBApp(
     mBookmarkListView->setModel( CurrentMgr::self()->model() );
     mBookmarkListView->setSelectionMode(QAbstractItemView::ExtendedSelection);
     mBookmarkListView->loadColumnSetting();
+    mBookmarkListView->loadFoldedState();
 
     KViewSearchLineWidget *searchline = new KViewSearchLineWidget(mBookmarkListView);
 
     mBookmarkFolderView = new BookmarkFolderView(mBookmarkListView);
-
+    mBookmarkFolderView->expandAll();
 
     QWidget * rightSide = new QWidget;
     QVBoxLayout *listLayout = new QVBoxLayout(rightSide);
@@ -211,8 +212,6 @@ KEBApp::KEBApp(
     hsplitter->setStretchFactor(1,1);
 
     setCentralWidget(hsplitter);
-
-    mBookmarkListView->expandAll();
 
     slotClipboardDataChanged();
     setAutoSaveSettings();
@@ -250,7 +249,6 @@ void KEBApp::reset(const QString & caption, const QString & bookmarksFileName)
     m_bookmarksFilename = bookmarksFileName;
     CurrentMgr::self()->createManager(m_bookmarksFilename, m_dbusObjectName); //FIXME this is still a memory leak (iff called by slotLoad)
     CurrentMgr::self()->model()->resetModel();
-    mBookmarkListView->expandAll();
     updateActions();
 }
 

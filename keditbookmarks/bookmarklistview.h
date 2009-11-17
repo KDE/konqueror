@@ -32,8 +32,17 @@ class BookmarkView : public QTreeView
     Q_OBJECT
 public:
     BookmarkView( QWidget * parent = 0 );
-    virtual ~BookmarkView();    
+    virtual ~BookmarkView();
     virtual KBookmark bookmarkForIndex(const QModelIndex & idx) const = 0;
+    void loadFoldedState();
+
+private Q_SLOTS:
+    void slotExpanded(const QModelIndex& index);
+    void slotCollapsed(const QModelIndex& index);
+
+private:
+    void loadFoldedState(const QModelIndex& parentIndex);
+    bool m_loadingState;
 };
 
 class BookmarkFolderView : public BookmarkView
@@ -58,7 +67,7 @@ public:
     BookmarkListView( QWidget * parent = 0 );
     virtual ~BookmarkListView();
     void loadColumnSetting();
-    void saveColumnSetting ();
+    void saveColumnSetting();
     virtual void setModel(QAbstractItemModel * model);
     virtual KBookmark bookmarkForIndex(const QModelIndex & idx) const;
     KBookmarkModel * bookmarkModel() const;

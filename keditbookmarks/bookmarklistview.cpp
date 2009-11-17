@@ -33,15 +33,55 @@
 #include <kdebug.h>
 
 BookmarkView::BookmarkView( QWidget * parent )
-    :QTreeView( parent )
+    : QTreeView(parent), m_loadingState(false)
 {
     setAcceptDrops(true);
     setDefaultDropAction(Qt::MoveAction);
+    connect(this, SIGNAL(expanded(QModelIndex)), this, SLOT(slotExpanded(QModelIndex)));
+    connect(this, SIGNAL(collapsed(QModelIndex)), this, SLOT(slotCollapsed(QModelIndex)));
 }
 
 BookmarkView::~BookmarkView()
 {
+}
 
+void BookmarkView::loadFoldedState()
+{
+    m_loadingState = true;
+    loadFoldedState(QModelIndex());
+    m_loadingState = false;
+}
+
+void BookmarkView::loadFoldedState(const QModelIndex& parentIndex)
+{
+    const int count = model()->rowCount(parentIndex);
+    for (int row = 0; row < count; ++row) {
+        const QModelIndex index = model()->index(row, 0, parentIndex);
+        const KBookmark bk = bookmarkForIndex(index);
+        if (bk.isNull()) {
+            expand(index);
+        }
+        else if (bk.isGroup()) {
+            setExpanded(index, bk.toGroup().isOpen());
+            loadFoldedState(index);
+        }
+    }
+}
+
+void BookmarkView::slotExpanded(const QModelIndex& index)
+{
+    if (!m_loadingState) {
+        KBookmark bk = bookmarkForIndex(index);
+        bk.internalElement().setAttribute("folded", "no");
+    }
+}
+
+void BookmarkView::slotCollapsed(const QModelIndex& index)
+{
+    if (!m_loadingState) {
+        KBookmark bk = bookmarkForIndex(index);
+        bk.internalElement().setAttribute("folded", "yes");
+    }
 }
 
 
@@ -56,9 +96,8 @@ BookmarkFolderView::BookmarkFolderView( BookmarkListView * view, QWidget * paren
     header()->setVisible(false);
     setRootIsDecorated(false);
     setDropIndicatorShown(true);
-    expandAll();
     setCurrentIndex( mmodel->index(0,0, QModelIndex()));
-    
+
     connect(mmodel, SIGNAL(modelReset()), this, SLOT(slotReset()));
 }
 
@@ -81,7 +120,7 @@ void BookmarkFolderView::selectionChanged ( const QItemSelection & deselected, c
 void BookmarkFolderView::slotReset()
 {
     setCurrentIndex( mmodel->index(0,0, QModelIndex()));
-    expandAll();
+    loadFoldedState();
 }
 
 KBookmark BookmarkFolderView::bookmarkForIndex(const QModelIndex & idx) const
@@ -144,7 +183,7 @@ void BookmarkListView::contextMenuEvent ( QContextMenuEvent * e )
         popup->popup(e->globalPos());
 }
 
-void BookmarkListView::loadColumnSetting() 
+void BookmarkListView::loadColumnSetting()
 {
     header()->resizeSection(KEBApp::NameColumn, KEBSettings::name());
     header()->resizeSection(KEBApp::UrlColumn, KEBSettings::uRL());
@@ -152,7 +191,7 @@ void BookmarkListView::loadColumnSetting()
     header()->resizeSection(KEBApp::StatusColumn, KEBSettings::status());
 }
 
-void BookmarkListView::saveColumnSetting() 
+void BookmarkListView::saveColumnSetting()
 {
     KEBSettings::setName( header()->sectionSize(KEBApp::NameColumn));
     KEBSettings::setURL( header()->sectionSize(KEBApp::UrlColumn));
