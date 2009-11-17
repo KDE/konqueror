@@ -94,6 +94,7 @@ void CmdHistory::addCommand(QUndoCommand *cmd)
         return;
     m_commandHistory.push(cmd);
     cmd->redo();
+    CmdHistory::commandExecuted(cmd);
 }
 
 void CmdHistory::addInFlightCommand(QUndoCommand *cmd)
