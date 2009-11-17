@@ -27,6 +27,7 @@
 #include "exporters.h"
 #include "settings.h"
 #include "commands.h"
+#include "commandhistory.h"
 #include "kebsearchline.h"
 #include "bookmarklistview.h"
 
@@ -50,67 +51,6 @@
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <kstandardaction.h>
-
-#include <assert.h>
-#include <QtCore/QBool>
-
-
-
-CmdHistory* CmdHistory::s_self = 0;
-
-CmdHistory::CmdHistory(KActionCollection *collection)
-    : m_commandHistory(collection) {
-    connect(&m_commandHistory, SIGNAL( commandExecuted(K3Command *) ),
-            SLOT( slotCommandExecuted(K3Command *) ));
-    assert(!s_self);
-    s_self = this; // this is hacky
-}
-
-CmdHistory* CmdHistory::self() {
-    assert(s_self);
-    return s_self;
-}
-
-void CmdHistory::slotCommandExecuted(K3Command *k) {
-    KEBApp::self()->notifyCommandExecuted();
-
-    IKEBCommand * cmd = dynamic_cast<IKEBCommand *>(k);
-    Q_ASSERT(cmd);
-
-    KBookmark bk = CurrentMgr::bookmarkAt(cmd->affectedBookmarks());
-    Q_ASSERT(bk.isGroup());
-    CurrentMgr::self()->notifyManagers(bk.toGroup());
-}
-
-void CmdHistory::notifyDocSaved() {
-    m_commandHistory.documentSaved();
-}
-
-void CmdHistory::didCommand(K3Command *cmd) {
-    if (!cmd)
-        return;
-    m_commandHistory.addCommand(cmd, false);
-    CmdHistory::slotCommandExecuted(cmd);
-}
-
-void CmdHistory::addCommand(K3Command *cmd) {
-    if (!cmd)
-        return;
-    m_commandHistory.addCommand(cmd);
-}
-
-void CmdHistory::addInFlightCommand(K3Command *cmd)
-{
-    if(!cmd)
-        return;
-    m_commandHistory.addCommand(cmd, false);
-}
-
-void CmdHistory::clearHistory() {
-    m_commandHistory.clear();
-}
-
-/* -------------------------- */
 
 CurrentMgr *CurrentMgr::s_mgr = 0;
 
@@ -152,10 +92,10 @@ void CurrentMgr::createManager(const QString &filename, const QString &dbusObjec
 
     kDebug()<<"DBus Object name: "<<dbusObjectName;
     m_mgr = KBookmarkManager::managerForFile(filename, dbusObjectName);
-   
+
     if ( m_model ) {
         m_model->setRoot(root());
-    } else { 
+    } else {
         m_model = new KBookmarkModel(root());
     }
 
@@ -170,7 +110,7 @@ void CurrentMgr::slotBookmarksChanged(const QString &, const QString &) {
         return;
     }
 
-    m_model->setRoot(m_mgr->root());    
+    m_model->setRoot(m_mgr->root());
 
     CmdHistory::self()->clearHistory();
     KEBApp::self()->updateActions();
@@ -356,7 +296,7 @@ SelcAbilities KEBApp::getSelectionAbilities() const
 
     if ( sel.count() > 0)
     {
-        selctionAbilities.deleteEnabled = true;       
+        selctionAbilities.deleteEnabled = true;
         selctionAbilities.itemSelected   = true;
         selctionAbilities.group          = nbk.isGroup();
         selctionAbilities.separator      = nbk.isSeparator();

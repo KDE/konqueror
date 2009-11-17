@@ -23,6 +23,7 @@
 
 #include "toplevel.h"
 #include "commands.h"
+#include "commandhistory.h"
 #include "importers.h"
 #include "favicons.h"
 #include "testlink.h"
@@ -500,9 +501,8 @@ void ActionsImpl::slotRecursiveSort() {
     QList<KBookmark> bookmarks = lister.getList(bk.toGroup());
     bookmarks << bk.toGroup();
     for (QList<KBookmark>::ConstIterator it = bookmarks.constBegin(); it != bookmarks.constEnd(); ++it) {
-        SortCommand *cmd = new SortCommand("", (*it).address());
-        cmd->execute();
-        mcmd->addCommand(cmd);
+        SortCommand *cmd = new SortCommand("", (*it).address(), mcmd);
+        cmd->redo();
     }
     CmdHistory::self()->didCommand(mcmd);
 }

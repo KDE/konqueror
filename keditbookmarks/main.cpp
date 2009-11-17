@@ -165,7 +165,7 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv) {
             QString path = args->getOption(arg2);
             ImportCommand *importer = ImportCommand::importerFactory(importType);
             importer->import(path, true);
-            importer->execute();
+            importer->redo();
             CurrentMgr::self()->managerSave();
             CurrentMgr::self()->notifyManagers();
         }

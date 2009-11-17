@@ -43,8 +43,16 @@
 #include <kbookmarkdombuilder.h>
 #include <kbookmarkimporter_ns.h>
 
-QString ImportCommand::name() const {
-    return i18n("Import %1 Bookmarks", visibleName());
+
+ImportCommand::ImportCommand()
+    : QUndoCommand(), m_utf8(false), m_folder(false), m_cleanUpCmd(0)
+{
+}
+
+void ImportCommand::setVisibleName(const QString& visibleName)
+{
+    m_visibleName = visibleName;
+    setText(i18n("Import %1 Bookmarks", visibleName));
 }
 
 QString ImportCommand::folder() const {
@@ -98,7 +106,8 @@ void ImportCommand::doCreateHoldingFolder(KBookmarkGroup &bkGroup) {
     m_group = bkGroup.address();
 }
 
-void ImportCommand::execute() {
+void ImportCommand::redo()
+{
     KBookmarkGroup bkGroup;
 
     if (!folder().isNull()) {
@@ -110,10 +119,9 @@ void ImportCommand::execute() {
         delete m_cleanUpCmd;
         m_cleanUpCmd = DeleteCommand::deleteAll(bkGroup);
 
-        K3MacroCommand *mcmd = (K3MacroCommand*) m_cleanUpCmd;
-        mcmd->addCommand(new DeleteCommand(bkGroup.address(),
-                    true /* contentOnly */));
-        m_cleanUpCmd->execute();
+        new DeleteCommand(bkGroup.address(),
+                          true /* contentOnly */, m_cleanUpCmd);
+        m_cleanUpCmd->redo();
 
         // import at the root
         m_group = "";
@@ -122,29 +130,30 @@ void ImportCommand::execute() {
     doExecute(bkGroup);
 
     // notify the model that the data has changed
-    // 
+    //
     // FIXME Resetting the model completely has the unwanted
-    // side-effect of collapsing all items in tree views 
+    // side-effect of collapsing all items in tree views
     // (and possibly other side effects)
     CurrentMgr::self()->model()->resetModel();
 }
 
-void ImportCommand::unexecute() {
+void ImportCommand::undo()
+{
     if ( !folder().isEmpty() ) {
         // we created a group -> just delete it
         DeleteCommand cmd(m_group);
-        cmd.execute();
+        cmd.redo();
 
     } else {
         // we imported at the root -> delete everything
         KBookmarkGroup root = CurrentMgr::self()->root();
-        K3Command *cmd = DeleteCommand::deleteAll(root);
+        QUndoCommand *cmd = DeleteCommand::deleteAll(root);
 
-        cmd->execute();
+        cmd->redo();
         delete cmd;
 
         // and recreate what was there before
-        m_cleanUpCmd->unexecute();
+        m_cleanUpCmd->undo();
     }
 }
 

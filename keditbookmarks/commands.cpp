@@ -27,8 +27,6 @@
 
 #include "toplevel.h"
 
-#include <assert.h>
-
 #include <kdebug.h>
 #include <klocale.h>
 #include <kbookmarkmanager.h>
@@ -83,16 +81,16 @@ private:
 
 QString KEBMacroCommand::affectedBookmarks() const
 {
-    const QList<K3Command *> commandList = commands();
-    QList<K3Command*>::const_iterator it = commandList.constBegin();
-    if ( it == commandList.constEnd() )
+    const int commandCount = childCount();
+    if (commandCount == 0) {
         return QString();
+    }
     // Need to use dynamic_cast here due to going cross-hierarchy, but it should never return 0.
-    QString affectBook = dynamic_cast<IKEBCommand *>(*it)->affectedBookmarks();
-    ++it;
-    for( ; it != commandList.constEnd() ; ++it )
-    {
-        affectBook = KBookmark::commonParent( affectBook, dynamic_cast<IKEBCommand *>(*it)->affectedBookmarks());
+    int i = 0;
+    QString affectBook = dynamic_cast<const IKEBCommand *>(child(i))->affectedBookmarks();
+    ++i;
+    for(; i < commandCount; ++i) {
+        affectBook = KBookmark::commonParent( affectBook, dynamic_cast<const IKEBCommand *>(child(i))->affectedBookmarks());
     }
     return affectBook;
 }
@@ -106,25 +104,47 @@ DeleteManyCommand::DeleteManyCommand(const QString &name, const QList<KBookmark>
     while(begin != it)
     {
         --it;
-        DeleteCommand * dcmd = new DeleteCommand( (*it).address() );
-        addCommand(dcmd);
+        new DeleteCommand((*it).address(), false, this);
     }
 }
 
+////
 
-QString CreateCommand::name() const {
-    if (m_separator) {
-        return i18n("Insert Separator");
-    } else if (m_group) {
-        return i18n("Create Folder");
-    } else if (!m_originalBookmark.isNull()) {
-        return i18n("Copy %1", m_mytext);
-    } else {
-        return i18n("Create Bookmark");
-    }
+CreateCommand::CreateCommand(const QString &address, QUndoCommand* parent)
+    : QUndoCommand(parent), m_to(address),
+      m_group(false), m_separator(true), m_originalBookmark(QDomElement())
+{
+    setText(i18n("Insert Separator"));
 }
 
-void CreateCommand::execute()
+CreateCommand::CreateCommand(const QString &address,
+                             const QString &text, const QString &iconPath,
+                             const KUrl &url, QUndoCommand* parent)
+    : QUndoCommand(parent), m_to(address), m_text(text), m_iconPath(iconPath), m_url(url),
+      m_group(false), m_separator(false), m_originalBookmark(QDomElement())
+{
+    setText(i18n("Create Bookmark"));
+}
+
+CreateCommand::CreateCommand(const QString &address,
+                             const QString &text, const QString &iconPath,
+                             bool open, QUndoCommand* parent)
+    : QUndoCommand(parent), m_to(address), m_text(text), m_iconPath(iconPath),
+      m_group(true), m_separator(false), m_open(open), m_originalBookmark(QDomElement())
+{
+    setText(i18n("Create Folder"));
+}
+
+CreateCommand::CreateCommand(const QString &address,
+                             const KBookmark &original, const QString &name, QUndoCommand* parent)
+    : QUndoCommand(parent), m_to(address), m_group(false), m_separator(false),
+      m_open(false), m_originalBookmark(original),
+      m_originalBookmarkDocRef(m_originalBookmark.internalElement().ownerDocument())
+{
+    setText(i18n("Copy %1", name));
+}
+
+void CreateCommand::redo()
 {
     QString parentAddress = KBookmark::parentAddress(m_to);
     KBookmarkGroup parentGroup =
@@ -132,8 +152,7 @@ void CreateCommand::execute()
 
     QString previousSibling = KBookmark::previousAddress(m_to);
 
-    // kDebug() << "CreateCommand::execute previousSibling="
-    //           << previousSibling << endl;
+    // kDebug() << "previousSibling=" << previousSibling;
     KBookmark prev = (previousSibling.isEmpty())
         ? KBookmark(QDomElement())
         : CurrentMgr::bookmarkAt(previousSibling);
@@ -162,7 +181,7 @@ void CreateCommand::execute()
 
     // move to right position
     parentGroup.moveBookmark(bk, prev);
-    if (!(name().isEmpty()) && !parentAddress.isEmpty() ) {
+    if (!(text().isEmpty()) && !parentAddress.isEmpty() ) {
         // open the parent (useful if it was empty) - only for manual commands
         Q_ASSERT( parentGroup.internalElement().tagName() != "xbel" );
         parentGroup.internalElement().setAttribute("folded", "no");
@@ -171,12 +190,14 @@ void CreateCommand::execute()
     Q_ASSERT(bk.address() == m_to);
 }
 
-QString CreateCommand::finalAddress() const {
+QString CreateCommand::finalAddress() const
+{
     Q_ASSERT( !m_to.isEmpty() );
     return m_to;
 }
 
-void CreateCommand::unexecute() {
+void CreateCommand::undo()
+{
     KBookmark bk = CurrentMgr::bookmarkAt(m_to);
     Q_ASSERT(!bk.isNull() && !bk.parentGroup().isNull());
 
@@ -192,8 +213,8 @@ QString CreateCommand::affectedBookmarks() const
 
 /* -------------------------------------- */
 
-EditCommand::EditCommand(const QString & address, int col, const QString & newValue)
-      : K3Command(), mAddress(address), mCol(col)
+EditCommand::EditCommand(const QString & address, int col, const QString & newValue, QUndoCommand* parent)
+      : QUndoCommand(parent), mAddress(address), mCol(col)
 {
     if(mCol == 1)
     {
@@ -205,23 +226,19 @@ EditCommand::EditCommand(const QString & address, int col, const QString & newVa
     }
     else
         mNewValue = newValue;
+
+    // -2 is "toolbar" attribute change, but that's only used internally.
+    if (mCol == -1)
+        setText(i18n("Icon Change"));
+    else if (mCol == 0)
+        setText(i18n("Title Change"));
+    else if (mCol == 1)
+        setText(i18n("URL Change"));
+    else if (mCol == 2)
+        setText(i18n("Comment Change"));
 }
 
-QString EditCommand::name() const
-{
-    if(mCol==-1)
-        return i18n("%1 Change", i18n("Icon"));
-    else if(mCol==0)
-        return i18n("%1 Change", i18n("Title") );
-    else if(mCol==1)
-        return i18n("%1 Change", i18n("URL"));
-    else if(mCol==2)
-        return i18n("%1 Change", i18n("Comment"));
-    //Never reached
-    return QString("");
-}
-
-void EditCommand::execute()
+void EditCommand::redo()
 {
     KBookmark bk = CurrentMgr::bookmarkAt(mAddress);
     if(mCol==-2)
@@ -254,7 +271,7 @@ void EditCommand::execute()
     CurrentMgr::self()->model()->emitDataChanged(bk);
 }
 
-void EditCommand::unexecute()
+void EditCommand::undo()
 {
 
     KBookmark bk = CurrentMgr::bookmarkAt(mAddress);
@@ -339,7 +356,8 @@ QString EditCommand::setNodeText(const KBookmark& bk, const QStringList &nodehie
 
 /* -------------------------------------- */
 
-void DeleteCommand::execute() {
+void DeleteCommand::redo()
+{
     KBookmark bk = CurrentMgr::bookmarkAt(m_from);
     Q_ASSERT(!bk.isNull());
 
@@ -369,7 +387,7 @@ void DeleteCommand::execute() {
                     m_from, bk.fullText(), bk.icon(),
                     bk.internalElement().attribute("folded") == "no");
             m_subCmd = deleteAll(bk.toGroup());
-            m_subCmd->execute();
+            m_subCmd->redo();
 
         } else {
             m_cmd = (bk.isSeparator())
@@ -378,21 +396,22 @@ void DeleteCommand::execute() {
                         bk.icon(), bk.url());
         }
     }
-    m_cmd->unexecute();
+    m_cmd->undo();
 }
 
-void DeleteCommand::unexecute() {
-    // kDebug() << "DeleteCommand::unexecute " << m_from;
+void DeleteCommand::undo()
+{
+    // kDebug() << "DeleteCommand::undo " << m_from;
 
     if (m_contentOnly) {
         // TODO - recover saved metadata
         return;
     }
 
-    m_cmd->execute();
+    m_cmd->redo();
 
     if (m_subCmd) {
-        m_subCmd->unexecute();
+        m_subCmd->undo();
     }
 }
 
@@ -401,7 +420,8 @@ QString DeleteCommand::affectedBookmarks() const
     return KBookmark::parentAddress(m_from);
 }
 
-KEBMacroCommand* DeleteCommand::deleteAll(const KBookmarkGroup & parentGroup) {
+KEBMacroCommand* DeleteCommand::deleteAll(const KBookmarkGroup & parentGroup)
+{
     KEBMacroCommand *cmd = new KEBMacroCommand(QString());
     QStringList lstToDelete;
     // we need to delete from the end, to avoid index shifting
@@ -409,40 +429,43 @@ KEBMacroCommand* DeleteCommand::deleteAll(const KBookmarkGroup & parentGroup) {
             !bk.isNull(); bk = parentGroup.next(bk))
         lstToDelete.prepend(bk.address());
     for (QStringList::const_iterator it = lstToDelete.constBegin();
-            it != lstToDelete.constEnd(); ++it)
-        cmd->addCommand(new DeleteCommand((*it)));
+            it != lstToDelete.constEnd(); ++it) {
+        new DeleteCommand((*it), false, cmd);
+    }
     return cmd;
 }
 
 /* -------------------------------------- */
 
-QString MoveCommand::name() const {
-    return i18n("Move %1", m_mytext);
+MoveCommand::MoveCommand(const QString &from, const QString &to, const QString &name, QUndoCommand* parent)
+       : QUndoCommand(parent), m_from(from), m_to(to), m_cc(0), m_dc(0)
+{
+    setText(i18n("Move %1", name));
 }
 
-void MoveCommand::execute() {
-    // kDebug() << "MoveCommand::execute moving from=" << m_from
-    //           << " to=" << m_to << endl;
-
+void MoveCommand::redo()
+{
+    // kDebug() << "moving from=" << m_from << "to=" << m_to;
 
     KBookmark fromBk = CurrentMgr::self()->mgr()->findByAddress( m_from );
 
-    m_cc = new CreateCommand(m_to, fromBk, "");
-    m_cc->execute();
+    m_cc = new CreateCommand(m_to, fromBk, QString());
+    m_cc->redo();
 
-    m_dc = new DeleteCommand( fromBk.address() );
-    m_dc->execute();
+    m_dc = new DeleteCommand(fromBk.address());
+    m_dc->redo();
 }
 
-QString MoveCommand::finalAddress() const {
+QString MoveCommand::finalAddress() const
+{
     Q_ASSERT( !m_to.isEmpty() );
     return m_to;
 }
 
-void MoveCommand::unexecute() {
-
-    m_dc->unexecute();
-    m_cc->unexecute();
+void MoveCommand::undo()
+{
+    m_dc->undo();
+    m_cc->undo();
 }
 
 QString MoveCommand::affectedBookmarks() const
@@ -485,8 +508,9 @@ class SortByName {
 
 /* -------------------------------------- */
 
-void SortCommand::execute() {
-    if (commands().isEmpty()) {
+void SortCommand::redo()
+{
+    if (childCount() == 0) {
         KBookmarkGroup grp = CurrentMgr::bookmarkAt(m_groupAddress).toGroup();
         Q_ASSERT(!grp.isNull());
         SortItem firstChild(grp.first());
@@ -496,8 +520,8 @@ void SortCommand::execute() {
             (firstChild, (*this));
 
     } else {
-        // don't execute for second time on addCommand(cmd)
-        KEBMacroCommand::execute();
+        // don't redo for second time on addCommand(cmd)
+        KEBMacroCommand::redo();
     }
 }
 
@@ -511,13 +535,12 @@ void SortCommand::moveAfter(const SortItem &moveMe,
         : KBookmark::nextAddress(afterMe.bookmark().address());
 
     MoveCommand *cmd = new MoveCommand(moveMe.bookmark().address(),
-            destAddress);
-    cmd->execute();
-    this->addCommand(cmd);
+                                       destAddress, QString(), this);
+    cmd->redo();
 }
 
-void SortCommand::unexecute() {
-    KEBMacroCommand::unexecute();
+void SortCommand::undo() {
+    KEBMacroCommand::undo();
 }
 
 QString SortCommand::affectedBookmarks() const
@@ -534,12 +557,12 @@ KEBMacroCommand* CmdGen::setAsToolbar(const KBookmark &bk)
     KBookmarkGroup oldToolbar = CurrentMgr::self()->mgr()->toolbar();
     if (!oldToolbar.isNull())
     {
-        mcmd->addCommand( new EditCommand(oldToolbar.address(), -2, "no")); //toolbar
-        mcmd->addCommand( new EditCommand(oldToolbar.address(), -1, "")); //icon
+        new EditCommand(oldToolbar.address(), -2, "no", mcmd); //toolbar
+        new EditCommand(oldToolbar.address(), -1, "", mcmd); //icon
     }
 
-    mcmd->addCommand( new EditCommand(bk.address(), -2, "yes"));
-    mcmd->addCommand( new EditCommand(bk.address(), -1, "bookmark-toolbar"));
+    new EditCommand(bk.address(), -2, "yes", mcmd);
+    new EditCommand(bk.address(), -1, "bookmark-toolbar", mcmd);
 
     return mcmd;
 }
@@ -555,9 +578,8 @@ KEBMacroCommand* CmdGen::insertMimeSource(const QString &cmdName, const QMimeDat
 
     for (it = bookmarks.constBegin(); it != end; ++it)
     {
-        CreateCommand *cmd = new CreateCommand(currentAddress, (*it));
-        cmd->execute();
-        mcmd->addCommand(cmd);
+        CreateCommand *cmd = new CreateCommand(currentAddress, (*it), QString(), mcmd);
+        cmd->redo();
         currentAddress = KBookmark::nextAddress(currentAddress);
     }
     return mcmd;
@@ -577,27 +599,24 @@ KEBMacroCommand* CmdGen::itemsMoved(const QList<KBookmark> & items,
     QString bkInsertAddr = newAddress;
     for (; it != end; ++it) {
         if (copy) {
-            CreateCommand *cmd;
-            cmd = new CreateCommand(
+            CreateCommand *cmd = new CreateCommand(
                     bkInsertAddr,
                     KBookmark((*it).internalElement()
                     .cloneNode(true).toElement()),
-                    (*it).text());
+                    (*it).text(), mcmd);
 
-            cmd->execute();
-            mcmd->addCommand(cmd);
+            cmd->redo();
 
             bkInsertAddr = cmd->finalAddress();
 
         } else /* if (move) */ {
-            QString oldAddress = (*it).address();
+            const QString oldAddress = (*it).address();
             if (bkInsertAddr.startsWith(oldAddress))
                 continue; // trying to insert a parent into one of its children, ignore :)
 
             MoveCommand *cmd = new MoveCommand(oldAddress, bkInsertAddr,
-                    (*it).text());
-            cmd->execute();
-            mcmd->addCommand(cmd);
+                                               (*it).text(), mcmd);
+            cmd->redo();
 
             bkInsertAddr = cmd->finalAddress();
         }
@@ -607,3 +626,4 @@ KEBMacroCommand* CmdGen::itemsMoved(const QList<KBookmark> & items,
 
     return mcmd;
 }
+

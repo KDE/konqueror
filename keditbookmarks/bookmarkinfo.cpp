@@ -19,6 +19,7 @@
 #include "bookmarkinfo.h"
 #include "bookmarklistview.h"
 #include "commands.h"
+#include "commandhistory.h"
 #include "toplevel.h"
 #include "bookmarkmodel.h"
 
@@ -75,7 +76,7 @@ void BookmarkInfoWidget::showBookmark(const KBookmark &bk) {
     }
 
     // read/write fields
-    m_title_le->setReadOnly( (bk.isSeparator()|| !bk.hasParent() )? true : false);    
+    m_title_le->setReadOnly( (bk.isSeparator()|| !bk.hasParent() )? true : false);
     if (bk.fullText() != m_title_le->text())
         m_title_le->setText(bk.fullText());
 
@@ -88,7 +89,7 @@ void BookmarkInfoWidget::showBookmark(const KBookmark &bk) {
         // of the current bookmark - the old method, "m_url_le->text() != bk.url().pathOrUrl()",
         // created difficulties due to the ambiguity of converting URLs to text. (#172647)
         if (KUrl(m_url_le->text()) != bk.url()) {
-            const int cursorPosition = m_url_le->cursorPosition(); 
+            const int cursorPosition = m_url_le->cursorPosition();
             m_url_le->setText(bk.url().pathOrUrl());
             m_url_le->setCursorPosition(cursorPosition);
         }
@@ -97,9 +98,9 @@ void BookmarkInfoWidget::showBookmark(const KBookmark &bk) {
     m_comment_le->setReadOnly((bk.isSeparator()|| !bk.hasParent()) ? true : false );
     QString commentText = EditCommand::getNodeText(bk, QStringList() << "desc");
     if (m_comment_le->text() != commentText) {
-        const int cursorPosition = m_comment_le->cursorPosition(); 
+        const int cursorPosition = m_comment_le->cursorPosition();
         m_comment_le->setText(commentText);
-        m_comment_le->setCursorPosition(cursorPosition); 
+        m_comment_le->setCursorPosition(cursorPosition);
     }
 
     // readonly fields
@@ -155,12 +156,12 @@ void BookmarkInfoWidget::slotTextChangedTitle(const QString &str)
     if(titlecmd)
     {
         titlecmd->modify(str);
-        titlecmd->execute();
+        titlecmd->redo();
     }
     else
     {
         titlecmd = new EditCommand(m_bk.address(), 0, str);
-        titlecmd->execute();
+        titlecmd->redo();
         CmdHistory::self()->addInFlightCommand(titlecmd);
     }
 }
@@ -183,12 +184,12 @@ void BookmarkInfoWidget::slotTextChangedURL(const QString &str) {
     if(urlcmd)
     {
         urlcmd->modify(str);
-        urlcmd->execute();
+        urlcmd->redo();
     }
     else
     {
         urlcmd = new EditCommand(m_bk.address(), 1, str);
-        urlcmd->execute();
+        urlcmd->redo();
         CmdHistory::self()->addInFlightCommand(urlcmd);
     }
 }
@@ -211,12 +212,12 @@ void BookmarkInfoWidget::slotTextChangedComment(const QString &str) {
     if(commentcmd)
     {
         commentcmd->modify(str);
-        commentcmd->execute();
+        commentcmd->redo();
     }
     else
     {
         commentcmd = new EditCommand(m_bk.address(), 2, str);
-        commentcmd->execute();
+        commentcmd->redo();
         CmdHistory::self()->addInFlightCommand(commentcmd);
     }
 }
@@ -225,7 +226,7 @@ void BookmarkInfoWidget::slotUpdate()
 {
     const QModelIndexList & list = mBookmarkListView->selectionModel()->selectedRows();
     if( list.count() == 1)
-    {        
+    {
         QModelIndex index = *list.constBegin();
         showBookmark( mBookmarkListView->bookmarkModel()->bookmarkForIndex(index) );
     }

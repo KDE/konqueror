@@ -20,12 +20,12 @@
 #define __toplevel_h
 
 #include <kxmlguiwindow.h>
-#include <k3command.h>
 #include <kbookmark.h>
 #include <QtGui/QMenu>
 #include <kxmlguifactory.h>
 #include "bookmarklistview.h"
 
+class CmdHistory;
 class KBookmarkModel;
 class KBookmarkManager;
 class KToggleAction;
@@ -45,35 +45,11 @@ struct SelcAbilities {
     bool deleteEnabled:1;
 };
 
-class CmdHistory : public QObject {
-    Q_OBJECT
-public:
-    CmdHistory(KActionCollection *collection);
-    virtual ~CmdHistory() {}
-
-    void notifyDocSaved();
-
-    void clearHistory();
-    void addCommand(K3Command *);
-    void didCommand(K3Command *);
-
-    //For an explanation see bookmarkInfo::commitChanges()
-    void addInFlightCommand(K3Command *);
-
-    static CmdHistory *self();
-
-protected Q_SLOTS:
-    void slotCommandExecuted(K3Command *k);
-
-private:
-    K3CommandHistory m_commandHistory;
-    static CmdHistory *s_self;
-};
-
 class KBookmark;
 class KBookmarkManager;
 
-class CurrentMgr : public QObject {
+class CurrentMgr : public QObject
+{
     Q_OBJECT
 public:
     typedef enum {HTMLExport, OperaExport, IEExport, MozillaExport, NetscapeExport} ExportType;
@@ -131,7 +107,6 @@ public:
     void setCancelTestsEnabled(bool);
 
     void notifyCommandExecuted();
-    void findURL(QString url);
 
     QMenu* popupMenuFactory(const char *type)
     {

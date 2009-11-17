@@ -21,6 +21,7 @@
 #include "treeitem_p.h"
 #include "toplevel.h"
 #include "commands.h"
+#include "commandhistory.h"
 
 #include <kbookmarkmanager.h>
 #include <KIcon>
