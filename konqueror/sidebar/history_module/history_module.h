@@ -38,6 +38,8 @@ private Q_SLOTS:
     void slotActivated(const QModelIndex& index);
     void slotPressed(const QModelIndex& index);
     void slotClicked(const QModelIndex& index);
+    void slotOpenWindow(const KUrl& url);
+    void slotOpenTab(const KUrl& url);
 
 private:
     KonqHistoryView* m_historyView;

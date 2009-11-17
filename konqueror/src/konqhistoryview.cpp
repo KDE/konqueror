@@ -58,17 +58,25 @@ KonqHistoryView::KonqHistoryView(QWidget* parent)
     QAction *action = m_collection->addAction("open_new");
     action->setIcon(KIcon("window-new"));
     action->setText(i18n("Open in New &Window"));
-    connect(action, SIGNAL(triggered(bool)), this, SLOT(slotNewWindow()));
+    connect(action, SIGNAL(triggered()), this, SLOT(slotNewWindow()));
+
+    action = m_collection->addAction("open_tab");
+    action->setIcon(KIcon("tab-new"));
+    action->setText(i18n("Open in New Tab"));
+    connect(action, SIGNAL(triggered()), this, SLOT(slotNewTab()));
+
     action = m_collection->addAction("remove");
     action->setIcon(KIcon("edit-delete"));
     action->setText(i18n("&Remove Entry"));
     action->setShortcut(Qt::Key_Delete); // #135966
     action->setShortcutContext(Qt::WidgetWithChildrenShortcut);
     connect(action, SIGNAL(triggered(bool)), this, SLOT(slotRemoveEntry()));
+
     action = m_collection->addAction("clear");
     action->setIcon(KIcon("edit-clear-history"));
     action->setText(i18n("C&lear History"));
     connect(action, SIGNAL(triggered(bool)), this, SLOT(slotClearHistory()));
+
     action = m_collection->addAction("preferences");
     action->setIcon(KIcon("configure"));
     action->setText(i18n("&Preferences..."));
@@ -118,6 +126,7 @@ void KonqHistoryView::slotContextMenu(const QPoint &pos)
 
     if (nodeType == KonqHistory::HistoryType) {
         menu->addAction(m_collection->action("open_new"));
+        menu->addAction(m_collection->action("open_tab"));
         menu->addSeparator();
     }
 
@@ -203,6 +212,13 @@ void KonqHistoryView::slotNewWindow()
     const KUrl url = urlForIndex(m_treeView->currentIndex());
     if (url.isValid())
         emit openUrlInNewWindow(url);
+}
+
+void KonqHistoryView::slotNewTab()
+{
+    const KUrl url = urlForIndex(m_treeView->currentIndex());
+    if (url.isValid())
+        emit openUrlInNewTab(url);
 }
 
 KUrl KonqHistoryView::urlForIndex(const QModelIndex& index) const

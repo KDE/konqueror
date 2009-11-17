@@ -397,7 +397,11 @@ void KonqSidebarBookmarkModule::slotOpenNewWindow()
     if (!bi)
         return;
 
-    emit tree()->createNewWindow( bi->bookmark().url() );
+    KParts::OpenUrlArguments args;
+    args.setActionRequestedByUser(true);
+    KParts::BrowserArguments browserArgs;
+    browserArgs.setForcesNewWindow(true);
+    emit tree()->createNewWindow(bi->bookmark().url(), args, browserArgs);
 }
 
 void KonqSidebarBookmarkModule::slotOpenTab()
@@ -413,6 +417,8 @@ void KonqSidebarBookmarkModule::slotOpenTab()
     else
 	return;
 
+    KParts::OpenUrlArguments args;
+    args.setActionRequestedByUser(true);
     KParts::BrowserArguments browserArguments;
     browserArguments.setNewTab(true);
     if (bookmark.isGroup()) {
@@ -421,14 +427,14 @@ void KonqSidebarBookmarkModule::slotOpenTab()
         while (!bookmark.isNull()) {
             if (!bookmark.isGroup() && !bookmark.isSeparator()) {
                 emit tree()->createNewWindow(bookmark.url(),
-                                             KParts::OpenUrlArguments(),
+                                             args,
                                              browserArguments);
             }
             bookmark = group.next(bookmark);
         }
     } else {
         emit tree()->createNewWindow(bookmark.url(),
-                                     KParts::OpenUrlArguments(),
+                                     args,
                                      browserArguments);
     }
 }

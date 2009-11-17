@@ -52,6 +52,7 @@ public:
 
 Q_SIGNALS:
     void openUrlInNewWindow(const KUrl& url);
+    void openUrlInNewTab(const KUrl& url);
 
 private Q_SLOTS:
     void slotContextMenu(const QPoint &pos);
@@ -62,6 +63,7 @@ private Q_SLOTS:
     void slotFilterTextChanged(const QString &text);
     void slotTimerTimeout();
     void slotNewWindow();
+    void slotNewTab();
 
 private:
     QTreeView* m_treeView;

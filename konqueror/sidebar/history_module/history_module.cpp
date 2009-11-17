@@ -39,6 +39,8 @@ KonqSidebarHistoryModule::KonqSidebarHistoryModule(const KComponentData &compone
     connect(m_historyView->treeView(), SIGNAL(activated(QModelIndex)), this, SLOT(slotActivated(QModelIndex)));
     connect(m_historyView->treeView(), SIGNAL(pressed(QModelIndex)), this, SLOT(slotPressed(QModelIndex)));
     connect(m_historyView->treeView(), SIGNAL(clicked(QModelIndex)), this, SLOT(slotClicked(QModelIndex)));
+    connect(m_historyView, SIGNAL(openUrlInNewWindow(KUrl)), this, SLOT(slotOpenWindow(KUrl)));
+    connect(m_historyView, SIGNAL(openUrlInNewTab(KUrl)), this, SLOT(slotOpenTab(KUrl)));
 }
 
 KonqSidebarHistoryModule::~KonqSidebarHistoryModule()
@@ -77,6 +79,24 @@ void KonqSidebarHistoryModule::slotClicked(const QModelIndex& index)
             createNewWindow(url);
         }
     }
+}
+
+void KonqSidebarHistoryModule::slotOpenWindow(const KUrl& url)
+{
+    KParts::OpenUrlArguments args;
+    args.setActionRequestedByUser(true);
+    KParts::BrowserArguments browserArgs;
+    browserArgs.setForcesNewWindow(true);
+    createNewWindow(url, args, browserArgs);
+}
+
+void KonqSidebarHistoryModule::slotOpenTab(const KUrl& url)
+{
+    KParts::OpenUrlArguments args;
+    args.setActionRequestedByUser(true);
+    KParts::BrowserArguments browserArgs;
+    browserArgs.setNewTab(true);
+    createNewWindow(url, args, browserArgs);
 }
 
 class KonqSidebarHistoryPlugin : public KonqSidebarPlugin

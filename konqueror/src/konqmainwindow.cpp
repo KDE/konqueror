@@ -1161,12 +1161,11 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
     bool createTab = false;
     if (args.actionRequestedByUser()) { // MMB or some RMB popupmenu action
         createTab = KonqSettings::mmbOpensTab() &&
-                    !args.metaData().contains("forcenewwindow"); // RMB / Frame / Open in New Window
+                    !browserArgs.forcesNewWindow(); // RMB / Frame / Open in New Window
     } else {
         createTab = KonqSettings::popupsWithinTabs() &&
                     !isPopupWindow( windowArgs );
     }
-
     kDebug() << "createTab=" << createTab << "part=" << part;
 
     if ( createTab ) {
@@ -1732,7 +1731,7 @@ void KonqMainWindow::slotHomePopupActivated(QAction* action)
 void KonqMainWindow::slotGoHistory()
 {
     if (!m_historyDialog) {
-        m_historyDialog = new KonqHistoryDialog();
+        m_historyDialog = new KonqHistoryDialog(this);
         m_historyDialog->setAttribute(Qt::WA_DeleteOnClose);
         m_historyDialog->setModal(false);
     }
