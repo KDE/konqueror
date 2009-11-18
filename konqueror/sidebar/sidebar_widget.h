@@ -29,6 +29,7 @@
 #include "konqsidebarplugin.h"
 #include "module_manager.h"
 
+class KonqMultiTabBar;
 class KonqSidebarPlugin;
 class QMenu;
 class KMultiTabBar;
@@ -111,6 +112,8 @@ protected Q_SLOTS:
     void slotSetIcon();
     void slotRemove();
 
+    void slotUrlsDropped(const KUrl::List& urls);
+
 Q_SIGNALS:
     void started(KIO::Job *);
     void completed();
@@ -142,7 +145,17 @@ private:
     void doEnableActions();
     ButtonInfo& currentButtonInfo() { return m_buttons[m_currentButtonIndex]; }
 
-protected Q_SLOTS:
+    /**
+     * Create a module without the interactive "createNewModule" implemented
+     * in the plugin.
+     */
+    bool createDirectModule(const QString& templ,
+                            const QString& name,
+                            const KUrl& url,
+                            const QString& icon,
+                            const QString& module,
+                            const QString& treeModule = QString());
+private Q_SLOTS:
     void aboutToShowAddMenu();
     void triggeredAddMenu(QAction* action);
 
@@ -152,11 +165,13 @@ protected Q_SLOTS:
                        KParts::BrowserExtension::PopupFlags flags = KParts::BrowserExtension::DefaultPopupItems,
                        const KParts::BrowserExtension::ActionGroupMap& actionGroups = KParts::BrowserExtension::ActionGroupMap());
 
+    void slotAddItem(const KFileItem& item);
+
 private:
     KParts::ReadOnlyPart *m_partParent;
     QSplitter *m_area;
 
-    KMultiTabBar *m_buttonBar;
+    KonqMultiTabBar *m_buttonBar;
     QVector<ButtonInfo> m_buttons;
     QHBoxLayout *m_layout;
     QAction *m_showTabLeft;

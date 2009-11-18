@@ -23,6 +23,7 @@ set(konq_sidebar_PART_SRCS
  sidebar_part.cpp
  sidebar_widget.cpp
  module_manager.cpp
+ konqmultitabbar.cpp
 )
 
 kde4_add_plugin(konq_sidebar ${konq_sidebar_PART_SRCS})
