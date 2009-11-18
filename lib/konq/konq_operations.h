@@ -149,6 +149,18 @@ public:
      * @return the job used to create the directory or 0 if the creation was cancelled by the user
      */
     static KIO::SimpleJob* newDir( QWidget * parent, const KUrl & baseUrl );
+    enum NewDirFlag { ViewShowsHiddenFile = 1 };
+    Q_DECLARE_FLAGS(NewDirFlags, NewDirFlag)
+    /**
+     * Ask for the name of a new directory and create it.
+     * Calls KonqOperations::mkdir.
+     *
+     * @param parent the parent widget
+     * @param baseUrl the directory to create the new directory in
+     * @param flags see NewDirFlags
+     * @return the job used to create the directory or 0 if the creation was cancelled by the user
+     */
+    static KIO::SimpleJob* newDir( QWidget * parent, const KUrl & baseUrl, NewDirFlags flags );
 
     /**
      * Get info about a given URL, and when that's done (it's asynchronous!),

@@ -112,7 +112,8 @@ class KNewMenuPrivate
 {
 public:
     KNewMenuPrivate()
-        : menuItemsVersion(0)
+        : menuItemsVersion(0),
+          viewShowsHiddenFiles(false)
     {}
     KActionCollection * m_actionCollection;
     QWidget *m_parentWidget;
@@ -120,6 +121,7 @@ public:
     QAction* m_newDirAction;
 
     int menuItemsVersion;
+    bool viewShowsHiddenFiles;
 
     /**
      * When the user pressed the right mouse button over an URL a popup menu
@@ -421,7 +423,10 @@ void KNewMenu::createDirectory()
     if (d->popupFiles.isEmpty())
        return;
 
-    KIO::SimpleJob* job = KonqOperations::newDir(d->m_parentWidget, d->popupFiles.first());
+    KonqOperations::NewDirFlags newDirFlags;
+    if (d->viewShowsHiddenFiles)
+        newDirFlags |= KonqOperations::ViewShowsHiddenFile;
+    KIO::SimpleJob* job = KonqOperations::newDir(d->m_parentWidget, d->popupFiles.first(), newDirFlags);
     if (job) {
         // We want the error handling to be done by slotResult so that subclasses can reimplement it
         job->ui()->setAutoErrorHandlingEnabled(false);
@@ -729,6 +734,11 @@ void KNewMenu::setPopupFiles(const KUrl::List& files)
             d->m_newMenuGroup->setEnabled(true);
         }
     }
+}
+
+void KNewMenu::setViewShowsHiddenFiles(bool b)
+{
+    d->viewShowsHiddenFiles = b;
 }
 
 #include "knewmenu.moc"
