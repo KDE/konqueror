@@ -56,6 +56,7 @@ KWebWallet::~KWebWallet()
 
 bool KWebWallet::saveFormData(QWebFrame *frame, SaveType type)
 {
+    return false;
 }
 
 void KWebWallet::restoreFormData(QWebFrame *frame)
