@@ -510,6 +510,10 @@ void KEBApp::updateStatus(const QString &url)
 }
 
 KEBApp::~KEBApp() {
+
+    // Save again, just in case the user expanded/collapsed folders (#131127)
+    CurrentMgr::self()->notifyManagers();
+
     s_topLevel = 0;
     delete m_cmdHistory;
     delete ActionsImpl::self();

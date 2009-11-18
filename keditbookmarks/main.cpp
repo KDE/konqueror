@@ -199,6 +199,7 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv) {
 
     if (askUser((gotFilenameArg ? filename : QString()), readonly)) {
         KEBApp *toplevel = new KEBApp(filename, readonly, address, browser, caption, dbusObjectName);
+        toplevel->setAttribute(Qt::WA_DeleteOnClose);
         toplevel->show();
         return app.exec();
     }
