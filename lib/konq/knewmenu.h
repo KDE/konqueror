@@ -64,6 +64,12 @@ public:
     virtual ~KNewMenu();
 
     /**
+     * Set if the directory view currently shows dot files.
+     * @since 4.4
+     */
+    void setViewShowsHiddenFiles(bool b);
+
+    /**
      * Set the files the popup is shown for
      * Call this before showing up the menu
      */
@@ -73,6 +79,7 @@ public Q_SLOTS:
     /**
      * Checks if updating the list is necessary
      * IMPORTANT : Call this in the slot for aboutToShow.
+     * And while you're there, you probably want to call setViewShowsHiddenFiles ;)
      */
     void slotCheckUpToDate();
 

@@ -807,30 +807,59 @@ void KonqOperations::rename( QWidget * parent, const KUrl & oldurl, const QStrin
     rename( parent, oldurl, newurl );
 }
 
-KIO::SimpleJob* KonqOperations::newDir( QWidget * parent, const KUrl & baseUrl )
+// Duplicated in libkfile's KDirOperator
+static bool confirmCreatingHiddenDir(const QString& name, QWidget* parent)
 {
+    KGuiItem continueGuiItem(KStandardGuiItem::cont());
+    continueGuiItem.setText(i18nc("@action:button", "Create directory"));
+    KGuiItem cancelGuiItem(KStandardGuiItem::cancel());
+    cancelGuiItem.setText(i18nc("@action:button", "Enter a different name"));
+    return KMessageBox::warningContinueCancel(
+        parent,
+        i18n("The name \"%1\" starts with a dot and will therefore the directory will be hidden by default.", name),
+        i18n("Create hidden directory?"),
+        continueGuiItem,
+        cancelGuiItem,
+        "confirm_create_hidden_dir") == KMessageBox::Continue;
+}
+
+KIO::SimpleJob* KonqOperations::newDir(QWidget * parent, const KUrl & baseUrl)
+{
+    return newDir(parent, baseUrl, NewDirFlags());
+}
+
+KIO::SimpleJob* KonqOperations::newDir(QWidget * parent, const KUrl & baseUrl, NewDirFlags flags)
+{
+    // Notice that kfile's KDirOperator::mkdir() is somewhat similar
     bool ok;
     QString name = i18n( "New Folder" );
     if ( baseUrl.isLocalFile() && QFileInfo( baseUrl.toLocalFile( KUrl::AddTrailingSlash ) + name ).exists() )
-        name = KIO::RenameDialog::suggestName( baseUrl, i18n( "New Folder" ) );
+        name = KIO::RenameDialog::suggestName(baseUrl, name);
 
-    name = KInputDialog::getText ( i18n( "New Folder" ),
-        i18n( "Enter folder name:" ), name, &ok, parent );
-    if ( ok && !name.isEmpty() )
-    {
-        KUrl url;
-        if ((name[0] == '/') || (name[0] == '~'))
-        {
-           url.setPath(KShell::tildeExpand(name));
+    bool askAgain;
+    do {
+        askAgain = false;
+        name = KInputDialog::getText ( i18n( "New Folder" ),
+                                       i18n( "Enter folder name:" ), name, &ok, parent );
+        if ( ok && !name.isEmpty() ) {
+            KUrl url;
+            if ((name[0] == '/') || (name[0] == '~')) {
+                url.setPath(KShell::tildeExpand(name));
+            } else {
+                const bool viewShowsHiddenFiles = (flags & ViewShowsHiddenFile);
+                if (!viewShowsHiddenFiles && name.startsWith('.')) {
+                    if (!confirmCreatingHiddenDir(name, parent)) {
+                        askAgain = true;
+                        continue;
+                    }
+                }
+                name = KIO::encodeFileName( name );
+                url = baseUrl;
+                url.addPath( name );
+            }
+            return KonqOperations::mkdir( parent, url );
         }
-        else
-        {
-           name = KIO::encodeFileName( name );
-           url = baseUrl;
-           url.addPath( name );
-        }
-        return KonqOperations::mkdir( parent, url );
-    }
+    } while (askAgain);
     return 0;
 }
 
