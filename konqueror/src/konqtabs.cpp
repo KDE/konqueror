@@ -113,7 +113,7 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
   }
 
   setAutomaticResizeTabs( true );
-  setMovable( true );
+  setTabReorderingEnabled( true );
   connect( this, SIGNAL( movedTab( int, int ) ),
            SLOT( slotMovedTab( int, int ) ) );
   connect( this, SIGNAL( mouseMiddleClick() ),
