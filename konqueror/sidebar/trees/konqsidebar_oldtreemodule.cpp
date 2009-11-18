@@ -186,7 +186,7 @@ public:
         configGroup.writeEntry("Icon", df.readIcon());
         configGroup.writeEntry("Name", dlg.name());
         configGroup.writeEntry("Open", false);
-        configGroup.writeEntry("URL", dlg.url().url());
+        configGroup.writePathEntry("URL", dlg.url().url());
         configGroup.writeEntry("X-KDE-KonqSidebarModule", "konqsidebar_tree");
         configGroup.writeEntry("X-KDE-TreeModule", desktopGroup.readEntry("X-KDE-TreeModule"));
         configGroup.writeEntry("X-KDE-TreeModule-ShowHidden", desktopGroup.readEntry("X-KDE-TreeModule-ShowHidden"));

@@ -18,12 +18,13 @@
 
 // Own
 #include "sidebar_widget.h"
-#include <QDebug>
+#include "konqmultitabbar.h"
 
 // std
 #include <limits.h>
 
 // Qt
+#include <QDebug>
 #include <QtCore/QDir>
 #include <QtGui/QPushButton>
 #include <QtGui/QLayout>
@@ -40,7 +41,6 @@
 #include <kiconloader.h>
 #include <kicondialog.h>
 #include <kmessagebox.h>
-#include <kmultitabbar.h>
 #include <kinputdialog.h>
 #include <konq_events.h>
 #include <kfileitem.h>
@@ -48,7 +48,7 @@
 #include <kmenu.h>
 #include <kurlrequesterdialog.h>
 #include <kfiledialog.h>
-
+#include <konq_operations.h>
 
 void Sidebar_Widget::aboutToShowAddMenu()
 {
@@ -145,7 +145,9 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, const
     m_area->setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
     m_area->setMinimumWidth(0);
 
-    m_buttonBar = new KMultiTabBar(KMultiTabBar::Left,this);
+    m_buttonBar = new KonqMultiTabBar(this);
+    connect(m_buttonBar, SIGNAL(urlsDropped(KUrl::List)),
+            this, SLOT(slotUrlsDropped(KUrl::List)));
 
     m_menu = new QMenu(this);
     m_menu->setIcon(KIcon("configure"));
@@ -178,7 +180,37 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, const
     QTimer::singleShot(0,this,SLOT(createButtons()));
 }
 
-void Sidebar_Widget::addWebSideBar(const KUrl& url, const QString& name) {
+bool Sidebar_Widget::createDirectModule(const QString& templ,
+                                        const QString& name,
+                                        const KUrl& url,
+                                        const QString& icon,
+                                        const QString& module,
+                                        const QString& treeModule)
+{
+    QString filename = templ;
+    const QString myFile = m_moduleManager.addModuleFromTemplate(filename);
+    if (!myFile.isEmpty()) {
+        kDebug() << "Writing" << myFile;
+        KDesktopFile df(myFile);
+        KConfigGroup scf = df.desktopGroup();
+        scf.writeEntry("Type", "Link");
+        scf.writePathEntry("URL", url.url());
+        scf.writeEntry("Icon", icon);
+        scf.writeEntry("Name", name);
+        scf.writeEntry("X-KDE-KonqSidebarModule", module);
+        if (!treeModule.isEmpty()) {
+            scf.writeEntry("X-KDE-TreeModule", treeModule);
+        }
+        scf.sync();
+        m_moduleManager.moduleAdded(filename);
+        QTimer::singleShot(0, this, SLOT(updateButtons()));
+        return true;
+    }
+    return false;
+}
+
+void Sidebar_Widget::addWebSideBar(const KUrl& url, const QString& name)
+{
     //kDebug() << "Web sidebar entry to be added: " << url << name << endl;
 
     // Look for existing ones with this URL
@@ -194,20 +226,7 @@ void Sidebar_Widget::addWebSideBar(const KUrl& url, const QString& name) {
         }
     }
 
-    QString filename = "websidebarplugin%1.desktop";
-    const QString myFile = m_moduleManager.addModuleFromTemplate(filename);
-    if (!myFile.isEmpty()) {
-        KDesktopFile df(myFile);
-        KConfigGroup scf = df.desktopGroup();
-        scf.writeEntry("Type", "Link");
-        scf.writePathEntry("URL", url.url());
-        scf.writeEntry("Icon", "internet-web-browser");
-        scf.writeEntry("Name", name);
-        scf.writeEntry("X-KDE-KonqSidebarModule", "konqsidebar_web");
-        scf.sync();
-        m_moduleManager.moduleAdded(filename);
-        QTimer::singleShot(0, this, SLOT(updateButtons()));
-    }
+    createDirectModule("websidebarplugin%1.desktop", name, url, "internet-web-browser", "konqsidebar_web");
 }
 
 
@@ -546,8 +565,10 @@ bool Sidebar_Widget::eventFilter(QObject *obj, QEvent *ev)
 
 void Sidebar_Widget::mousePressEvent(QMouseEvent *ev)
 {
-    if (ev->type() == QEvent::MouseButtonPress && ((QMouseEvent *)ev)->button() == Qt::RightButton)
+    // TODO move to contextMenuEvent?
+    if (ev->type() == QEvent::MouseButtonPress && ev->button() == Qt::RightButton) {
         m_menu->exec(QCursor::pos());
+    }
 }
 
 KonqSidebarModule *Sidebar_Widget::loadModule(QWidget *parent, const QString &desktopName,
@@ -806,6 +827,28 @@ void Sidebar_Widget::slotPopupMenu(KonqSidebarModule* module,
     m_activeModule = module;
     doEnableActions();
     emit getExtension()->popupMenu(global, items, args, browserArgs, flags, actionGroups);
+}
+
+void Sidebar_Widget::slotUrlsDropped(const KUrl::List& urls)
+{
+    Q_FOREACH(const KUrl& url, urls) {
+        KonqOperations::statUrl(url, this, SLOT(slotAddItem(KFileItem)), this);
+    }
+}
+
+void Sidebar_Widget::slotAddItem(const KFileItem& item)
+{
+    kDebug() << item;
+    const KUrl url = item.url();
+    if (item.isDir())
+        createDirectModule("folder%1.desktop", url.fileName(), url, item.iconName(), "konqsidebar_tree", "Directory");
+    else if (item.mimeTypePtr()->is("text/html") || url.protocol().startsWith("http")) {
+        const QString name = i18n("Web module");
+        createDirectModule("websidebarplugin%1.desktop", name, url, "internet-web-browser", "konqsidebar_web");
+    } else {
+        // What to do about other kinds of files?
+        kWarning() << "The dropped URL" << item.url() << "is" << item.mimetype() << ", which is not a directory nor an HTML page, what should we do with it?";
+    }
 }
 
 #include "sidebar_widget.moc"
