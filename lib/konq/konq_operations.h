@@ -164,7 +164,7 @@ public:
 
     /**
      * Get info about a given URL, and when that's done (it's asynchronous!),
-     * call a given slot with the KFileItem& as argument.
+     * call a given slot with a const KFileItem& as argument.
      * The KFileItem will be deleted by statUrl after calling the slot. Make a copy
      * if you need one !
      */
