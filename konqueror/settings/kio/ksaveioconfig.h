@@ -23,74 +23,63 @@
 #include <kprotocolmanager.h>
 
 class QWidget;
-class KSaveIOConfigPrivate;
-class KConfig;
-class KSaveIOConfig
+
+namespace KSaveIOConfig
 {
-public:
-
   /* Reload config file (kioslaverc) */
-  static void reparseConfiguration();
-
+  void reparseConfiguration();
 
   /** Timeout Settings */
-  static void setReadTimeout( int );
+  void setReadTimeout( int );
 
-  static void setConnectTimeout( int );
+  void setConnectTimeout( int );
 
-  static void setProxyConnectTimeout( int );
+  void setProxyConnectTimeout( int );
 
-  static void setResponseTimeout( int );
+  void setResponseTimeout( int );
 
 
   /** Cache Settings */
-  static void setMaxCacheAge( int );
+  void setMaxCacheAge( int );
 
-  static void setUseCache( bool );
+  void setUseCache( bool );
 
-  static void setMaxCacheSize( int );
+  void setMaxCacheSize( int );
 
-  static void setCacheControl( KIO::CacheControl );
+  void setCacheControl( KIO::CacheControl );
 
 
   /** Proxy Settings */
-  static void setUseReverseProxy( bool );
+  void setUseReverseProxy( bool );
 
-  static void setProxyType( KProtocolManager::ProxyType );
+  void setProxyType( KProtocolManager::ProxyType );
 
-  static void setProxyAuthMode( KProtocolManager::ProxyAuthMode );
+  void setProxyAuthMode( KProtocolManager::ProxyAuthMode );
 
-  static void setProxyConfigScript( const QString&  );
+  void setProxyConfigScript( const QString&  );
 
-  static void setProxyFor( const QString&, const QString&  );
+  void setProxyFor( const QString&, const QString&  );
 
-  static void setNoProxyFor( const QString& );
+  void setNoProxyFor( const QString& );
 
 
   /** Miscellaneous Settings */
-  static void setMarkPartial( bool );
+  void setMarkPartial( bool );
 
-  static void setMinimumKeepSize( int );
+  void setMinimumKeepSize( int );
 
-  static void setAutoResume( bool );
+  void setAutoResume( bool );
 
-  static void setPersistentConnections( bool );
+  void setPersistentConnections( bool );
 
-  static void setPersistentProxyConnection( bool );
+  void setPersistentProxyConnection( bool );
 
 
   /** Update all running io-slaves */
-  static void updateRunningIOSlaves (QWidget * parent = 0L);
+  void updateRunningIOSlaves (QWidget * parent = 0L);
 
   /** Update proxy scout */
-  static void updateProxyScout( QWidget * parent = 0L );
+  void updateProxyScout( QWidget * parent = 0L );
+}
 
-protected:
-  static KConfig* config ();
-  static KConfig* http_config ();
-  KSaveIOConfig ();
-
-private:
-  static KSaveIOConfigPrivate* d;
-};
 #endif
