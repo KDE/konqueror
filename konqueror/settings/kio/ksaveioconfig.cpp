@@ -27,7 +27,6 @@
 #include <kconfig.h>
 #include <klocale.h>
 #include <kmessagebox.h>
-#include <k3staticdeleter.h>
 #include <kio/ioslave_defaults.h>
 #include <kconfiggroup.h>
 
@@ -41,37 +40,28 @@ public:
   KConfig* http_config;
 };
 
-static KSaveIOConfigPrivate *ksiocpref = 0;
-static K3StaticDeleter<KSaveIOConfigPrivate> ksiocp;
+K_GLOBAL_STATIC(KSaveIOConfigPrivate, d);
 
 KSaveIOConfigPrivate::KSaveIOConfigPrivate (): config(0), http_config(0)
 {
-  ksiocp.setObject (ksiocpref, this);
 }
 
 KSaveIOConfigPrivate::~KSaveIOConfigPrivate ()
 {
   delete config;
+  delete http_config;
 }
 
-KSaveIOConfigPrivate* KSaveIOConfig::d = 0;
-
-KConfig* KSaveIOConfig::config()
+static KConfig* config()
 {
-  if (!d)
-     d = new KSaveIOConfigPrivate;
-
   if (!d->config)
      d->config = new KConfig("kioslaverc", KConfig::NoGlobals);
 
   return d->config;
 }
 
-KConfig* KSaveIOConfig::http_config()
+static KConfig* http_config()
 {
-  if (!d)
-     d = new KSaveIOConfigPrivate;
-
   if (!d->http_config)
      d->http_config = new KConfig("kio_httprc", KConfig::NoGlobals);
 
@@ -82,32 +72,34 @@ void KSaveIOConfig::reparseConfiguration ()
 {
   delete d->config;
   d->config = 0;
+  delete d->http_config;
+  d->http_config = 0;
 }
 
 void KSaveIOConfig::setReadTimeout( int _timeout )
 {
-  KConfig* cfg = config ();
+  KConfig* cfg = config();
   cfg->group("").writeEntry("ReadTimeout", qMax(MIN_TIMEOUT_VALUE,_timeout));
   cfg->sync();
 }
 
 void KSaveIOConfig::setConnectTimeout( int _timeout )
 {
-  KConfig* cfg = config ();
+  KConfig* cfg = config();
   cfg->group("").writeEntry("ConnectTimeout", qMax(MIN_TIMEOUT_VALUE,_timeout));
   cfg->sync();
 }
 
 void KSaveIOConfig::setProxyConnectTimeout( int _timeout )
 {
-  KConfig* cfg = config ();
+  KConfig* cfg = config();
   cfg->group("").writeEntry("ProxyConnectTimeout", qMax(MIN_TIMEOUT_VALUE,_timeout));
   cfg->sync();
 }
 
 void KSaveIOConfig::setResponseTimeout( int _timeout )
 {
-  KConfig* cfg = config ();
+  KConfig* cfg = config();
   cfg->group("").writeEntry("ResponseTimeout", qMax(MIN_TIMEOUT_VALUE,_timeout));
   cfg->sync();
 }
@@ -115,42 +107,42 @@ void KSaveIOConfig::setResponseTimeout( int _timeout )
 
 void KSaveIOConfig::setMarkPartial( bool _mode )
 {
-  KConfig* cfg = config ();
+  KConfig* cfg = config();
   cfg->group("").writeEntry( "MarkPartial", _mode );
   cfg->sync();
 }
 
 void KSaveIOConfig::setMinimumKeepSize( int _size )
 {
-  KConfig* cfg = config ();
+  KConfig* cfg = config();
   cfg->group("").writeEntry( "MinimumKeepSize", _size );
   cfg->sync();
 }
 
 void KSaveIOConfig::setAutoResume( bool _mode )
 {
-  KConfig* cfg = config ();
+  KConfig* cfg = config();
   cfg->group("").writeEntry( "AutoResume", _mode );
   cfg->sync();
 }
 
 void KSaveIOConfig::setUseCache( bool _mode )
 {
-  KConfig* cfg = http_config ();
+  KConfig* cfg = http_config();
   cfg->group("").writeEntry( "UseCache", _mode );
   cfg->sync();
 }
 
 void KSaveIOConfig::setMaxCacheSize( int cache_size )
 {
-  KConfig* cfg = http_config ();
+  KConfig* cfg = http_config();
   cfg->group("").writeEntry( "MaxCacheSize", cache_size );
   cfg->sync();
 }
 
 void KSaveIOConfig::setCacheControl(KIO::CacheControl policy)
 {
-  KConfig* cfg = http_config ();
+  KConfig* cfg = http_config();
   QString tmp = KIO::getCacheControlString(policy);
   cfg->group("").writeEntry("cache", tmp);
   cfg->sync();
@@ -158,35 +150,35 @@ void KSaveIOConfig::setCacheControl(KIO::CacheControl policy)
 
 void KSaveIOConfig::setMaxCacheAge( int cache_age )
 {
-  KConfig* cfg = http_config ();
+  KConfig* cfg = http_config();
   cfg->group("").writeEntry( "MaxCacheAge", cache_age );
   cfg->sync();
 }
 
 void KSaveIOConfig::setUseReverseProxy( bool mode )
 {
-  KConfig* cfg = config ();
+  KConfig* cfg = config();
   cfg->group("Proxy Settings").writeEntry("ReversedException", mode);
   cfg->sync();
 }
 
 void KSaveIOConfig::setProxyType(KProtocolManager::ProxyType type)
 {
-  KConfig* cfg = config ();
+  KConfig* cfg = config();
   cfg->group("Proxy Settings").writeEntry( "ProxyType", static_cast<int>(type) );
   cfg->sync();
 }
 
 void KSaveIOConfig::setProxyAuthMode(KProtocolManager::ProxyAuthMode mode)
 {
-  KConfig* cfg = config ();
+  KConfig* cfg = config();
   cfg->group("Proxy Settings").writeEntry( "AuthMode", static_cast<int>(mode) );
   cfg->sync();
 }
 
 void KSaveIOConfig::setNoProxyFor( const QString& _noproxy )
 {
-  KConfig* cfg = config ();
+  KConfig* cfg = config();
   cfg->group("Proxy Settings").writeEntry( "NoProxyFor", _noproxy );
   cfg->sync();
 }
@@ -194,28 +186,28 @@ void KSaveIOConfig::setNoProxyFor( const QString& _noproxy )
 void KSaveIOConfig::setProxyFor( const QString& protocol,
                                  const QString& _proxy )
 {
-  KConfig* cfg = config ();
+  KConfig* cfg = config();
   cfg->group("Proxy Settings").writeEntry( protocol.toLower() + "Proxy", _proxy );
   cfg->sync();
 }
 
 void KSaveIOConfig::setProxyConfigScript( const QString& _url )
 {
-  KConfig* cfg = config ();
+  KConfig* cfg = config();
   cfg->group("Proxy Settings").writeEntry( "Proxy Config Script", _url );
   cfg->sync();
 }
 
 void KSaveIOConfig::setPersistentProxyConnection( bool enable )
 {
-  KConfig* cfg = config ();
+  KConfig* cfg = config();
   cfg->group("").writeEntry( "PersistentProxyConnection", enable );
   cfg->sync();
 }
 
 void KSaveIOConfig::setPersistentConnections( bool enable )
 {
-  KConfig* cfg = config ();
+  KConfig* cfg = config();
   cfg->group("").writeEntry( "PersistentConnections", enable );
   cfg->sync();
 }
