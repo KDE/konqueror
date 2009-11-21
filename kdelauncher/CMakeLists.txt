@@ -10,4 +10,8 @@ add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 #qt4_add_resources( kdelauncher_SRCS kdelauncher.qrc )
 
 kde4_add_executable(kdelauncher main.cpp )
-target_link_libraries( kdelauncher ${KDE4_KDEUI_LIBS} kdewebkit )
+target_link_libraries(kdelauncher
+    ${KDE4_KDEUI_LIBS}
+    ${QT_QTWEBKIT_LIBRARY}
+    kdewebkit
+)
