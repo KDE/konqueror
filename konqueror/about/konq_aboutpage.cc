@@ -159,7 +159,7 @@ QString KonqAboutPageSingleton::intro()
           .arg( i18n( "<em>Tuning Tip:</em> If you want the Konqueror web browser to start faster,"
 			" you can turn off this information screen by clicking <a href=\"%1\">here</a>. You can re-enable it"
 			" by choosing the Help -> Konqueror Introduction menu option, and then pressing "
-			"Settings -> Save View Profile \"Web Browsing\".", QString("config:/disable_overview")) )
+			"Settings -> Save View Profile As... -> \"Web Browsing\".", QString("config:/disable_overview")) )
 	  .arg( "<img width='16' height='16' src=\"%1\">" ).arg( continue_icon_path )
 	  .arg( i18n( "Next: Tips &amp; Tricks" ) )
 	;
