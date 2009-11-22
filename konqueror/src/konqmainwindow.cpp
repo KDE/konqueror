@@ -3613,7 +3613,7 @@ void KonqMainWindow::initActions()
   // Settings menu
 
   m_paSaveViewProfile = actionCollection()->addAction( "saveviewprofile" );
-  m_paSaveViewProfile->setText( i18n( "&Save View Profile..." ) );
+  m_paSaveViewProfile->setText( i18n( "&Save View Profile As..." ) );
   connect(m_paSaveViewProfile, SIGNAL(triggered() ), SLOT( slotSaveViewProfile() ));
 
   // This list is just for the call to authorizeControlModule; see slotConfigure for the real code
@@ -4238,10 +4238,7 @@ void KonqMainWindow::setProfileConfig(const KConfigGroup& cfg)
 
 void KonqMainWindow::currentProfileChanged()
 {
-    const bool enabled = !m_pViewManager->currentProfile().isEmpty();
-    m_paSaveViewProfile->setEnabled(enabled);
-    m_paSaveViewProfile->setText(enabled ? i18n("&Save View Profile \"%1\"...", m_pViewManager->currentProfileText())
-                                         : i18n("&Save View Profile..."));
+    m_paSaveViewProfile->setEnabled(!m_pViewManager->currentProfile().isEmpty());
 }
 
 void KonqMainWindow::enableAllActions( bool enable )
