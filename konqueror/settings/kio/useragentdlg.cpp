@@ -171,7 +171,7 @@ void UserAgentDlg::on_sitePolicyTreeWidget_itemDoubleClicked(QTreeWidgetItem* it
 
 void UserAgentDlg::changeDefaultUAModifiers()
 {
-  m_ua_keys = ":"; // Make sure it's not empty
+  m_ua_keys = ':'; // Make sure it's not empty
 
   if ( ui.osNameCheckBox->isChecked() )
      m_ua_keys += 'o';
