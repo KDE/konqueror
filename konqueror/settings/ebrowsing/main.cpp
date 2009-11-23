@@ -44,10 +44,7 @@ KURIFilterModule::KURIFilterModule(QWidget *parent, const QVariantList &)
     filter = KUriFilter::self();
 
     setQuickHelp( i18n("<h1>Enhanced Browsing</h1> In this module you can configure some enhanced browsing"
-      " features of KDE. <h2>Internet Keywords</h2>Internet Keywords let you"
-      " type in the name of a brand, a project, a celebrity, etc... and go to the"
-      " relevant location. For example you can just type"
-      " \"KDE\" or \"K Desktop Environment\" in Konqueror to go to KDE's homepage."
+      " features of KDE. "
       "<h2>Web Shortcuts</h2>Web Shortcuts are a quick way of using Web search engines. For example, type \"altavista:frobozz\""
       " or \"av:frobozz\" and Konqueror will do a search on AltaVista for \"frobozz\"."
       " Even easier: just press Alt+F2 (if you have not"

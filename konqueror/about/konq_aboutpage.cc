@@ -200,7 +200,7 @@ QString KonqAboutPageSingleton::specs()
 		     "from organizations such as the W3 and OASIS, while also adding "
 		     "extra support for other common usability features that arise as "
 		     "de facto standards across the Internet. Along with this support, "
-		     "for such functions as favicons, Internet Keywords, and <A HREF=\"%1\">XBEL bookmarks</A>, "
+		     "for such functions as favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, "
                      "Konqueror also implements:", QString("http://pyxml.sourceforge.net/topics/xbel/")) )
           .arg( i18n("Web Browsing") )
           .arg( i18n("Supported standards") )
