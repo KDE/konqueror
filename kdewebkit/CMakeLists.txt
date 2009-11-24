@@ -20,7 +20,11 @@ set(kdewebkit_LIB_SRCS
     networkaccessmanager_p.cpp
 )
 
-kde4_add_library(kdewebkit SHARED ${kdewebkit_LIB_SRCS})
+qt4_add_resources(kdewebkit_RC_SRCS
+    kdewebkit.qrc
+)
+
+kde4_add_library(kdewebkit SHARED ${kdewebkit_LIB_SRCS} ${kdewebkit_RC_SRCS})
 
 target_link_libraries(kdewebkit
     ${KDE4_KPARTS_LIBS}

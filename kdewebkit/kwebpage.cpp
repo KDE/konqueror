@@ -169,6 +169,12 @@ KWebPage::~KWebPage()
     delete d;
 }
 
+bool KWebPage::authorizedRequest(const QUrl &url) const
+{
+    Q_UNUSED(url);
+    return true;
+}
+
 void KWebPage::setAllowExternalContent(bool allow)
 {
     KIO::AccessManager *manager = qobject_cast<KIO::AccessManager*>(networkAccessManager());
@@ -249,10 +255,12 @@ bool KWebPage::acceptNavigationRequest(QWebFrame * frame, const QNetworkRequest 
 {
     kDebug() << "url: " << request.url() << ", type: " << type << ", frame: " << frame;   
 
+#if 0
     if (d->wallet && (type == QWebPage::NavigationTypeFormSubmitted ||
         type == QWebPage::NavigationTypeFormResubmitted)) {
         d->wallet->saveFormData(frame);
     }
+#endif
     /*
       If the navigation request is from the main frame, set the cross-domain
       meta-data value to the current url for proper integration with KCookieJar...
@@ -261,15 +269,7 @@ bool KWebPage::acceptNavigationRequest(QWebFrame * frame, const QNetworkRequest 
         setSessionMetaData(QL1("cross-domain"), request.url().toString());
     }
 
-
-
     return QWebPage::acceptNavigationRequest(frame, request, type);
-}
-
-bool KWebPage::authorizedRequest(const QUrl &url) const
-{
-    Q_UNUSED(url);
-    return true;
 }
 
 void KWebPage::downloadRequest(const QNetworkRequest &request)
@@ -289,10 +289,9 @@ void KWebPage::downloadRequest(const QNetworkRequest &request)
     job->addMetaData(QL1("MaxCacheSize"), QL1("0")); // Don't store in http cache.
     job->addMetaData(QL1("cache"), QL1("cache")); // Use entry from cache if available.
     job->uiDelegate()->setAutoErrorHandlingEnabled(true);
-    downloadRequest(request.url());
 }
 
-void KWebPage::downloadRequest(const KUrl &url)
+void KWebPage::downloadUrl(const KUrl &url)
 {
     QNetworkRequest request (url);
     downloadRequest(request);
@@ -305,21 +304,14 @@ KWebWallet *KWebPage::wallet() const
 
 void KWebPage::setWallet(KWebWallet* wallet)
 {
-    if (d->wallet) {
-      // Only delete if we have ownership of the wallet...
-      if (this == d->wallet->parent())
-          delete d->wallet;
-      else
-          disconnect(this, 0, d->wallet, 0);
-    }
+    // Delete the current wallet this class is its parent...
+    if (d->wallet && this == d->wallet->parent())
+        delete d->wallet;
 
     d->wallet = wallet;
 
-    if (d->wallet) {
+    if (d->wallet)
         d->wallet->setParent(this);
-        connect(this, SIGNAL(restoreFrameStateRequested(QWebFrame*)),
-                d->wallet, SLOT(restoreFormData(QWebFrame*)));
-    }
 }
 
 #include "kwebpage.moc"

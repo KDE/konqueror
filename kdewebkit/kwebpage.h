@@ -66,6 +66,18 @@ public:
     ~KWebPage();
 
     /**
+     * Returns true if access to the requested @p url is authorized.
+     *
+     * You should reimplement this function if you want to add features such as
+     * content filtering or ad blocking. The default implementation simply
+     * returns true.
+     *
+     * @param url the url to be authorized.
+     * @return true in this default implementation.
+     */
+    virtual bool authorizedRequest(const QUrl &url) const;
+
+    /**
      * Returns true if access to remote content is allowed.
      *
      * By default access to remote content is allowed.
@@ -86,18 +98,6 @@ public:
      * @see KIO::AccessManager::setAllowExternalContent(bool)
      */
     void setAllowExternalContent(bool allow);
-
-    /**
-     * Returns true if access to the requested @p url is authorized.
-     *
-     * You should reimplement this function if you want to add features such as
-     * content filtering or ad blocking. The default implementation simply
-     * returns true.
-     *
-     * @param url the url to be authorized.
-     * @return true in this default implementation.
-     */
-    virtual bool authorizedRequest(const QUrl &url) const;
 
     /**
      * Returns true KWallet used to store form data.
@@ -125,12 +125,15 @@ public Q_SLOTS:
      * This slot first prompts the user where to put/save the requested
      * resource and then downloads using KIO::file_copy.
      */
-    void downloadRequest(const QNetworkRequest &request);
+    virtual void downloadRequest(const QNetworkRequest &request);
 
     /**
-     * An overload of the @ref downloadRequest slot with a QUrl parameter.
+     * Downloads @p url using KIO.
+     *
+     * This slot first prompts the user where to put/save the requested
+     * resource and then downloads using KIO::file_copy.
      */
-    void downloadRequest(const KUrl &url);
+    virtual void downloadUrl(const KUrl &url);
 
 protected:
     /**
