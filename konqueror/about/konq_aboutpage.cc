@@ -292,7 +292,7 @@ QString KonqAboutPageSingleton::tips()
 	.arg( i18n( "Tips" ) )
 	.arg( i18n( "Specifications" ) )
 	.arg( i18n( "Tips &amp; Tricks" ) )
-	  .arg( i18n( "Use Internet-Keywords and Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
+	  .arg( i18n( "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, "
 		      "using Google, for the search phrase \"KDE\". There are a lot of "
 		      "Web-Shortcuts predefined to make searching for software or looking "
 		      "up certain words in an encyclopedia a breeze. You can even "
