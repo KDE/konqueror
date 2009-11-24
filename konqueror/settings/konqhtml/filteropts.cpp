@@ -52,7 +52,7 @@ KCMFilter::KCMFilter( QWidget *parent, const QVariantList& )
       mOriginalString(QString())
 {
     mConfig = KSharedConfig::openConfig("khtmlrc", KConfig::NoGlobals);
-    setButtons(Default|Apply);
+    setButtons(Default|Apply|Help);
 
     QVBoxLayout *topLayout = new QVBoxLayout(this);
 
