@@ -26,7 +26,7 @@ endif(webkitpart_SOURCE_DIR)
 if( NOT WIN32 )
   find_package(PkgConfig)
 
-  pkg_check_modules(PC_WEBKITPART webkitpart)
+  pkg_check_modules(PC_WEBKITPART kwebkitpart)
 
   set(PCRE_DEFINITIONS ${PC_WEBKITPART_CFLAGS_OTHER})
 endif( NOT WIN32 )
@@ -39,7 +39,7 @@ FIND_PATH(WEBKITPART_INCLUDE_DIR NAMES webkitpart.h
   PATH_SUFFIXES webkitkde
 )
 
-FIND_LIBRARY(WEBKITPART_LIBRARIES NAMES webkitkde
+FIND_LIBRARY(WEBKITPART_LIBRARIES NAMES kwebkit
   PATHS
   ${PC_WEBKITPART_LIBDIR} 
   ${PC_WEBKITPART_LIBRARY_DIRS}

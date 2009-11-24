@@ -104,13 +104,21 @@ public:
      */
     void restoreAllFrameState();
 
+    /**
+     * Reimplemented for internal reasons. The API is not affected.
+     *
+     * @internal
+     * @see KWebPage::downloadRequest.
+     */
+    void downloadRequest(const QNetworkRequest &request);
+
 Q_SIGNALS:
      /**
       * This signal is emitted whenever a navigation request completes...
       *
-      * The @p url is the requested url or in case of an error a special
-      * error url, error:/?err=<code>&errText=<text>#<request-url>. The
-      * @p frame is QWebFrame in the page from which the request originated.
+      * The @p url is the requested url or in case of an error a special error
+      * url of form error:/?err=<code>&errText=<text>#<request-url>. The second
+      * parameter @p frame is the QWebFrame which orignated the request in the.
       */
     void navigationRequestFinished(const KUrl& url, QWebFrame *frame);
 
@@ -125,12 +133,6 @@ Q_SIGNALS:
      * and the user's configuration allows it to be set.
      */
     void jsStatusBarMessage(const QString &);
-
-public Q_SLOTS:
-    /**
-     * Prompts the user to saves the contents of the specified @p url.
-     */
-    void saveUrl(const KUrl &url);
 
 protected:
     /**
@@ -147,8 +149,6 @@ protected:
 
 protected Q_SLOTS:
     void slotUnsupportedContent(QNetworkReply *reply);
-    void slotDownloadRequest(const QNetworkRequest &request);
-
     void slotRequestFinished(QNetworkReply *reply);
     void slotGeometryChangeRequested(const QRect &rect);
     void slotWindowCloseRequested();

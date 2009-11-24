@@ -172,6 +172,7 @@ class WebPage::WebPagePrivate
 public:
     WebPagePrivate() {}
 
+    QUrl redirectUrl;
     WebSslInfo sslInfo;
     QMap<QString, WebFrameState> frameStateContainer;
     // Holds list of requests including those from children frames
@@ -198,7 +199,7 @@ WebPage::WebPage(WebKitPart *part, QWidget *parent)
     connect(this, SIGNAL(statusBarMessage(const QString &)),
             this, SLOT(slotStatusBarMessage(const QString &)));
     connect(this, SIGNAL(downloadRequested(const QNetworkRequest &)),
-            this, SLOT(slotDownloadRequest(const QNetworkRequest &)));
+            this, SLOT(downloadRequest(const QNetworkRequest &)));
     connect(this, SIGNAL(unsupportedContent(QNetworkReply *)),
             this, SLOT(slotUnsupportedContent(QNetworkReply *)));
     connect(networkAccessManager(), SIGNAL(finished(QNetworkReply *)),
@@ -271,11 +272,6 @@ void WebPage::restoreAllFrameState()
     }
 }
 
-void WebPage::saveUrl(const KUrl &url)
-{
-    slotDownloadRequest(QNetworkRequest(url));
-}
-
 bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request, NavigationType type)
 {
     // Handle "mailto:" url here...
@@ -284,15 +280,14 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
 
     if (frame) {
         /*
-          NOTE: QtWebKit sends NavigationTypeOther instead of NavigationTypeLink
-          or when users click on javascript links such as
+          BUG: QtWebKit unfortunately sends a NavigationTypeOther instead of NavigationTypeLink
+          when users click on links that use javascript such as
 
           <a href="javascript:location.href='http://qt.nokia.com'">javascript link</a>
         */
 
-        // inPage requests are those generarted within the current page
-        // through link clicks, javascript queries, and button clicks
-        // (form submission).
+        // inPage requests are those generarted within the current page through
+        // link clicks, javascript queries, and button clicks (form submission).
         bool inPageRequest = true;
 
         switch (type) {
@@ -305,13 +300,15 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
             case QWebPage::NavigationTypeBackOrForward:
                 inPageRequest = false;
             case QWebPage::NavigationTypeOther:
-                // Set manual request user typed request...
-                inPageRequest = (d->part->url() != request.url());
+                // TODO: This needs further investigations!
+                if (d->part->url() == request.url() || d->redirectUrl == request.url())
+                    inPageRequest = false;
+
                 if (frame != mainFrame() && d->frameStateContainer.contains(frame->frameName())) {
                     WebFrameState frameState = d->frameStateContainer.value(frame->frameName());
                     if (frameState.url != request.url()) {
                         frame->setUrl(frameState.url);
-                        kDebug() << "Changing request for" << frame->frameName() << "to" << frameState.url;
+                        kDebug() << "Changing request from" << frame->frameName() << "to" << frameState.url;
                         return false;
                     }
                 }
@@ -338,6 +335,7 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
         d->requestQueue.insert (request.url(), frame);
     }
 
+    d->redirectUrl.clear();
     return KWebPage::acceptNavigationRequest(frame, request, type);
 }
 
@@ -383,7 +381,7 @@ void WebPage::slotUnsupportedContent(QNetworkReply *reply)
     emit d->part->browserExtension()->openUrlRequest(url, args, KParts::BrowserArguments());
 }
 
-void WebPage::slotDownloadRequest(const QNetworkRequest &request)
+void WebPage::downloadRequest(const QNetworkRequest &request)
 {
     const KUrl url(request.url());
     kDebug() << url;
@@ -492,8 +490,9 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
         QWebFrame* frame = d->requestQueue.take(url);
         const int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
 
-        if (statusCode > 300 && statusCode < 304) {            
-            kDebug() << "Redirected to " << reply->url();
+        if (statusCode > 300 && statusCode < 304) {
+            d->redirectUrl = reply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
+            kDebug() << "Redirected to" << d->redirectUrl;
         } else {
             const int errCode = convertErrorCode(reply);
             const bool isMainFrameRequest = (frame == mainFrame());

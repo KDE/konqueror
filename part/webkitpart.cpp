@@ -24,15 +24,14 @@
  */
 
 #include "webkitpart.h"
-#include "webkitpart_ext.h"
 
+#include "webkitpart_ext.h"
 #include "webview.h"
 #include "webpage.h"
 #include "websslinfo.h"
-
 #include "sslinfodialog_p.h"
-
-#include <ui/searchbar.h>
+#include "ui/searchbar.h"
+#include "settings/webkitsettings.h"
 
 #include <KDE/KParts/GenericFactory>
 #include <KDE/KParts/Plugin>
@@ -46,6 +45,7 @@
 #include <KDE/KGlobal>
 #include <KDE/KStringHandler>
 #include <kio/global.h>
+#include <kdewebkit/kwebwallet.h>
 
 #include <QtCore/QUrl>
 #include <QtCore/QFile>
@@ -227,7 +227,7 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
     connect(d->webPage, SIGNAL(jsStatusBarMessage(const QString &)),
             this, SIGNAL(setStatusBarText(const QString &)));
     connect(d->webView, SIGNAL(linkShiftClicked(const KUrl &)),
-            d->webPage, SLOT(saveUrl(const KUrl &)));
+            d->webPage, SLOT(downloadUrl(const KUrl &)));
 
     d->browserExtension = new WebKitBrowserExtension(this);
     connect(d->webPage, SIGNAL(loadProgress(int)),
@@ -235,7 +235,7 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
     connect(d->webPage, SIGNAL(selectionChanged()),
             d->browserExtension, SLOT(updateEditActions()));
     connect(d->browserExtension, SIGNAL(saveUrl(const KUrl&)),
-            d->webPage, SLOT(saveUrl(const KUrl &)));
+            d->webPage, SLOT(downloadUrl(const KUrl &)));
 
     connect(d->webView, SIGNAL(selectionClipboardUrlPasted(const KUrl &)),
             d->browserExtension, SIGNAL(openUrlRequest(const KUrl &)));
@@ -423,6 +423,12 @@ void WebKitPart::loadFinished(bool ok)
             // text documents...
             urlChanged(d->webView->url());
         }
+
+        // TODO: Add check for sites exempt from automatic form filling...
+        kDebug() << WebKitSettings::self()->isFormCompletionEnabled();
+        if (WebKitSettings::self()->isFormCompletionEnabled() && d->webPage->wallet()) {
+            d->webPage->wallet()->fillFormData(d->webPage->mainFrame());
+        }
     }
 
     /*
@@ -467,8 +473,6 @@ void WebKitPart::loadAborted(const KUrl & url)
 
 void  WebKitPart::navigationRequestFinished(const KUrl& url, QWebFrame *frame)
 {
-    kDebug() << url << frame;
-
     if (frame) {
 
         if (handleError(url, frame)) {
@@ -515,7 +519,6 @@ void WebKitPart::showSecurity()
 void WebKitPart::saveFrameState(QWebFrame *frame, QWebHistoryItem *item)
 {
     Q_UNUSED (item);
-    kDebug() << "update history ?" << d->updateHistory << ", main frame ?" << (d->webPage->mainFrame() == frame);
     if (!frame->parentFrame() && d->updateHistory) {
         emit d->browserExtension->openUrlNotify();
     }
