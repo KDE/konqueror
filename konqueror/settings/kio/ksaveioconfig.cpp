@@ -40,7 +40,7 @@ public:
   KConfig* http_config;
 };
 
-K_GLOBAL_STATIC(KSaveIOConfigPrivate, d);
+K_GLOBAL_STATIC(KSaveIOConfigPrivate, d)
 
 KSaveIOConfigPrivate::KSaveIOConfigPrivate (): config(0), http_config(0)
 {
