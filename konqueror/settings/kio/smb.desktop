@@ -7,6 +7,8 @@ Exec=kcmshell4 smb
 
 X-KDE-Library=kcm_kio
 X-KDE-PluginKeyword=smb
+X-KDE-System-Settings-Parent-Category=sharing
+X-KDE-ParentApp=kcontrol
 
 Name=Windows Shares
 Name[af]=Vensters Gedeelde bronne
