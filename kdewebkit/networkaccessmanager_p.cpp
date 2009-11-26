@@ -34,9 +34,11 @@
 class NullNetworkReply : public QNetworkReply
 {
 public:
-    NullNetworkReply() {
-        setHeader(QNetworkRequest::ContentLengthHeader, 0);
-        setHeader(QNetworkRequest::ContentTypeHeader, "text/plain");
+    NullNetworkReply(const QNetworkRequest &req) {
+        setRequest(req);
+        setUrl(req.url());
+        setAttribute(QNetworkRequest::HttpStatusCodeAttribute, 403);
+        setAttribute(QNetworkRequest::ContentTypeHeader, "Forbidden");
         QTimer::singleShot(0, this, SIGNAL(finished()));
     }
     virtual void abort() {}
@@ -44,8 +46,8 @@ public:
         return 0;
     }
 protected:
-    virtual qint64 readData(char* data, qint64) {
-        qMemCopy(data, "\0", 1); return 0;
+    virtual qint64 readData(char*, qint64) {
+        return -1;
     }
 };
 
@@ -76,10 +78,10 @@ KIO::MetaData& NetworkAccessManager::sessionMetaData()
 
 QNetworkReply *NetworkAccessManager::createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData)
 {
-    KWebPage* page = qobject_cast<KWebPage*>(parent());
+    KWebPage* page = qobject_cast<KWebPage*>(parent());    
     if (page && !page->authorizedRequest(req.url())) {
         kDebug() << "*** BLOCKED UNAUTHORIZED REQUEST => " << req.url();
-        return new NullNetworkReply();
+        return new NullNetworkReply(req);
     }
 
     QNetworkRequest request(req);
