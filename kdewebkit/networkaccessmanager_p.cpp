@@ -38,7 +38,7 @@ public:
         setRequest(req);
         setUrl(req.url());
         setAttribute(QNetworkRequest::HttpStatusCodeAttribute, 403);
-        setAttribute(QNetworkRequest::ContentTypeHeader, "Forbidden");
+        setHeader(QNetworkRequest::ContentTypeHeader, "Forbidden");
         QTimer::singleShot(0, this, SIGNAL(finished()));
     }
     virtual void abort() {}
