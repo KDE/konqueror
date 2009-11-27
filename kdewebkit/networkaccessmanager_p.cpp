@@ -37,8 +37,8 @@ public:
     NullNetworkReply(const QNetworkRequest &req) {
         setRequest(req);
         setUrl(req.url());
-        setAttribute(QNetworkRequest::HttpStatusCodeAttribute, 403);
-        setAttribute(QNetworkRequest::HttpReasonPhraseAttribute, "Forbidden");
+        setHeader(QNetworkRequest::ContentLengthHeader, 0);
+        setHeader(QNetworkRequest::ContentTypeHeader, "text/plain");
         QTimer::singleShot(0, this, SIGNAL(finished()));
     }
     virtual void abort() {}
