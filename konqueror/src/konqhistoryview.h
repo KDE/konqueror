@@ -64,6 +64,7 @@ private Q_SLOTS:
     void slotTimerTimeout();
     void slotNewWindow();
     void slotNewTab();
+    void slotCopyLinkLocation();
 
 private:
     QTreeView* m_treeView;

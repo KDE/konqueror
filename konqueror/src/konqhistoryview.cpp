@@ -19,13 +19,15 @@
 */
 
 #include "konqhistoryview.h"
-#include <QMenu>
 #include "konqhistory.h"
 #include "konq_historyprovider.h"
 #include "konqhistorymodel.h"
 #include "konqhistoryproxymodel.h"
 #include "konqhistorysettings.h"
 
+#include <QClipboard>
+#include <QApplication>
+#include <QMenu>
 #include <QTreeView>
 #include <QVBoxLayout>
 
@@ -64,6 +66,10 @@ KonqHistoryView::KonqHistoryView(QWidget* parent)
     action->setIcon(KIcon("tab-new"));
     action->setText(i18n("Open in New Tab"));
     connect(action, SIGNAL(triggered()), this, SLOT(slotNewTab()));
+
+    action = m_collection->addAction("copylinklocation");
+    action->setText(i18n("&Copy Link Address"));
+    connect(action, SIGNAL(triggered()), this, SLOT(slotCopyLinkLocation()));
 
     action = m_collection->addAction("remove");
     action->setIcon(KIcon("edit-delete"));
@@ -127,6 +133,7 @@ void KonqHistoryView::slotContextMenu(const QPoint &pos)
     if (nodeType == KonqHistory::HistoryType) {
         menu->addAction(m_collection->action("open_new"));
         menu->addAction(m_collection->action("open_tab"));
+        menu->addAction(m_collection->action("copylinklocation"));
         menu->addSeparator();
     }
 
@@ -228,6 +235,22 @@ KUrl KonqHistoryView::urlForIndex(const QModelIndex& index) const
     }
 
     return index.data(KonqHistory::UrlRole).value<KUrl>();
+}
+
+// Code taken from KHTMLPopupGUIClient::slotCopyLinkLocation
+void KonqHistoryView::slotCopyLinkLocation()
+{
+    KUrl safeURL = urlForIndex(m_treeView->currentIndex());
+    safeURL.setPass(QString());
+
+    // Set it in both the mouse selection and in the clipboard
+    QMimeData* mimeData = new QMimeData;
+    safeURL.populateMimeData( mimeData );
+    QApplication::clipboard()->setMimeData( mimeData, QClipboard::Clipboard );
+
+    mimeData = new QMimeData;
+    safeURL.populateMimeData( mimeData );
+    QApplication::clipboard()->setMimeData( mimeData, QClipboard::Selection );
 }
 
 #include "konqhistoryview.moc"
