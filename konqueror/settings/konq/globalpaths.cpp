@@ -329,6 +329,12 @@ bool DesktopPathConfig::moveDir( const KUrl & src, const KUrl & dest, const QStr
         return true;
     if (!QFile::exists(src.toLocalFile()))
         return true;
+    // Do not move $HOME! #193057
+    const QString translatedPath = translatePath(src.toLocalFile());
+    if (translatedPath == "$HOME" || translatedPath == "$HOME/") {
+        return true;
+    }
+
     m_ok = true;
     // TODO: check if the src dir is empty? Nothing to move, then...
 
