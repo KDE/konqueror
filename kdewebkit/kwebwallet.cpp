@@ -186,10 +186,11 @@ void KWebWallet::KWebWalletPrivate::_k_openWalletDone(bool ok)
             QMutableHashIterator<KUrl, FormsData> requestIt (pendingFillRequests);
             while (requestIt.hasNext()) {
                requestIt.next();
-               urlList.append(requestIt.key());
-               fillDataFromCache(requestIt.value().forms);
+               KWebWallet::WebFormList list = requestIt.value().forms;
+               fillDataFromCache(list);
+               q->fillForm(requestIt.key(), list);
             }
-            q->fillForms(urlList);
+
             pendingFillRequests.clear();
         }
 
@@ -202,12 +203,20 @@ void KWebWallet::KWebWalletPrivate::_k_openWalletDone(bool ok)
     }
 }
 
-KWebWallet::KWebWallet(QObject *parent)
+KWebWallet::KWebWallet(QObject *parent, qlonglong wid)
            :QObject(parent), d(new KWebWalletPrivate(this))
 {
-    QWebPage *page = qobject_cast<QWebPage*>(parent);
-    if (page && page->view())
-        d->wid = page->view()->window()->winId();
+    if (!wid) {
+        // If wid is 0, make the best effort the discern it from our parent.
+        QWebPage *page = qobject_cast<QWebPage*>(parent);
+        if (page) {
+            QWidget *widget = page->view();
+            if (widget && widget->window())
+                wid = widget->window()->winId();
+        }
+    }
+
+    d->wid = wid;
 }
 
 KWebWallet::~KWebWallet()
@@ -286,45 +295,41 @@ void KWebWallet::rejectSaveFormDataRequest(const QString & key)
     d->pendingSaveRequests.remove(key);
 }
 
-void KWebWallet::fillForms(const KUrl::List &urlList)
+void KWebWallet::fillForm(const KUrl &url, const KWebWallet::WebFormList &forms)
 {
-    QListIterator<KUrl> urlIt (urlList);
-    while (urlIt.hasNext()) {
-        const KUrl url = urlIt.next();
-        QWebFrame *frame = d->pendingFillRequests.value(url).frame;
-        if (frame) {
-            QListIterator<WebForm> formIt (d->pendingFillRequests.value(url).forms);
-            while (formIt.hasNext()) {
-                const WebForm form = formIt.next();
-                QString formName = form.name;
-                if (formName.isEmpty())
-                    formName = form.index;
+    QWebFrame *frame = d->pendingFillRequests.value(url).frame;
+    if (frame) {
+        QListIterator<WebForm> formIt (forms);
+        while (formIt.hasNext()) {
+            const WebForm form = formIt.next();
+            QString formName = form.name;
+            if (formName.isEmpty())
+                formName = form.index;
 
-                kDebug() << "Filling out form:" << formName;
-                QListIterator<WebForm::WebField> fieldIt (form.fields);
-                while (fieldIt.hasNext()) {
-                    const WebForm::WebField field = fieldIt.next();
-                    const QString script = QString (QL1S("if(document.forms[\"%1\"].elements[\"%2\"] && "
-                                                         "!document.forms[\"%1\"].elements[\"%2\"].disabled && "
-                                                         "!document.forms[\"%1\"].elements[\"%2\"].readonly) "
-                                                         "document.forms[\"%1\"].elements[\"%2\"].value=\"%3\";"))
-                                           .arg(formName).arg(field.first).arg(escapeValue(field.second));
-                    frame->evaluateJavaScript(script);
-                    kDebug() << "Executed script:" << script;
-                }
+            kDebug() << "Filling out form:" << formName;
+            QListIterator<WebForm::WebField> fieldIt (form.fields);
+            while (fieldIt.hasNext()) {
+                const WebForm::WebField field = fieldIt.next();
+                const QString script = QString (QL1S("if(document.forms[\"%1\"].elements[\"%2\"] && "
+                                                     "!document.forms[\"%1\"].elements[\"%2\"].disabled && "
+                                                     "!document.forms[\"%1\"].elements[\"%2\"].readonly) "
+                                                     "document.forms[\"%1\"].elements[\"%2\"].value=\"%3\";"))
+                                       .arg(formName).arg(field.first).arg(escapeValue(field.second));
+                frame->evaluateJavaScript(script);
+                kDebug() << "Executed script:" << script;
             }
         }
     }
 }
 
-KWebWallet::WebFormList& KWebWallet::formsToFill(const KUrl &url)
+KWebWallet::WebFormList KWebWallet::formsToFill(const KUrl &url) const
 {
-    return d->pendingFillRequests[url].forms;
+    return d->pendingFillRequests.value(url).forms;
 }
 
-KWebWallet::WebFormList& KWebWallet::formsToSave(const QString &key)
+KWebWallet::WebFormList KWebWallet::formsToSave(const QString &key) const
 {
-    return d->pendingSaveRequests[key];
+    return d->pendingSaveRequests.value(key);
 }
 
 bool KWebWallet::hasCachedFormData(const WebForm &form) const
@@ -359,10 +364,12 @@ void KWebWallet::fillFormData(const KUrl::List &urlList)
 
     QListIterator<KUrl> urlIt (urlList);
     while (urlIt.hasNext()) {
-        d->fillDataFromCache(formsToFill(urlIt.next()));
+        const KUrl url = urlIt.next();
+        WebFormList list = formsToFill(url);
+        d->fillDataFromCache(list);
+        fillForm(url, list);
     }
 
-    fillForms(urlList);
     d->pendingFillRequests.clear();
 }
 
