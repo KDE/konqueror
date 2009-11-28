@@ -323,6 +323,12 @@ bool DesktopPathConfig::moveDir( const KUrl & src, const KUrl & dest, const QStr
         return true;
     if (!QFile::exists(src.toLocalFile()))
         return true;
+    // Do not move $HOME! #193057
+    const QString translatedPath = translatePath(src.toLocalFile());
+    if (translatedPath == "$HOME" || translatedPath == "$HOME/") {
+        return true;
+    }
+
     m_ok = true;
 
     QString question;
@@ -336,7 +342,7 @@ bool DesktopPathConfig::moveDir( const KUrl & src, const KUrl & dest, const QStr
         yesItem = KGuiItem(i18nc("Move files from old to new place", "Move"));
         noItem = KGuiItem(i18nc("Use the new directory but do not move files", "Do not Move"));
     } else {
-        question = i18n("The path for '%1' has been changed.\nDo you want to move '%2' to '%3'?",
+        question = i18n("The path for '%1' has been changed.\nDo you want to move the directory '%2' to '%3'?",
                         type, src.toLocalFile(),
                         dest.toLocalFile());
         yesItem = KGuiItem(i18nc("Move the directory", "Move"));
