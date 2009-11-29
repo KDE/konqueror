@@ -22,6 +22,7 @@
 
 #include "kwebpage.h"
 #include "networkaccessmanager_p.h"
+#include "networkcookiejar_p.h"
 
 #include <kdebug.h>
 #include <kio/accessmanager.h>
@@ -29,27 +30,6 @@
 #include <QtCore/QTimer>
 #include <QtCore/QPointer>
 #include <QtNetwork/QNetworkReply>
-
-/* Null network reply */
-class NullNetworkReply : public QNetworkReply
-{
-public:
-    NullNetworkReply(const QNetworkRequest &req) {
-        setRequest(req);
-        setUrl(req.url());
-        setHeader(QNetworkRequest::ContentLengthHeader, 0);
-        setHeader(QNetworkRequest::ContentTypeHeader, "text/plain");
-        QTimer::singleShot(0, this, SIGNAL(finished()));
-    }
-    virtual void abort() {}
-    virtual qint64 bytesAvailable() const {
-        return 0;
-    }
-protected:
-    virtual qint64 readData(char*, qint64) {
-        return -1;
-    }
-};
 
 namespace KDEPrivate {
 
@@ -61,9 +41,28 @@ class NetworkAccessManager::NetworkAccessManagerPrivate
 };
 
 NetworkAccessManager::NetworkAccessManager(QObject *parent)
-                                 :KIO::AccessManager(parent),
-                                  d(new KDEPrivate::NetworkAccessManager::NetworkAccessManagerPrivate)
+                     :KIO::AccessManager(parent),
+                      d(new KDEPrivate::NetworkAccessManager::NetworkAccessManagerPrivate)
 {
+    setCookieJar(new KDEPrivate::NetworkCookieJar);
+}
+
+void NetworkAccessManager::setCookieJarWindowId(qlonglong id)
+{
+    KDEPrivate::NetworkCookieJar *jar = qobject_cast<KDEPrivate::NetworkCookieJar *> (cookieJar());
+    if (jar) {
+        jar->setWindowId(id);
+        d->sessionMetaData.insert(QLatin1String("window-id"), QString::number(id));
+    }
+}
+
+qlonglong NetworkAccessManager::cookieJarWindowid() const
+{
+    KDEPrivate::NetworkCookieJar *jar = qobject_cast<KDEPrivate::NetworkCookieJar *> (cookieJar());
+    if (jar)
+        return jar->windowId();
+
+    return 0;
 }
 
 KIO::MetaData& NetworkAccessManager::requestMetaData()
@@ -78,12 +77,6 @@ KIO::MetaData& NetworkAccessManager::sessionMetaData()
 
 QNetworkReply *NetworkAccessManager::createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData)
 {
-    KWebPage* page = qobject_cast<KWebPage*>(parent());    
-    if (page && !page->authorizedRequest(req.url())) {
-        kDebug() << "*** BLOCKED UNAUTHORIZED REQUEST => " << req.url();
-        return new NullNetworkReply(req);
-    }
-
     QNetworkRequest request(req);
     KIO::MetaData metaData;
 

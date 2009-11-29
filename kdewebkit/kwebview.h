@@ -60,9 +60,9 @@ public:
      * Constructs a KWebView object with parent @p parent.
      *
      * Set @p createCustomPage to false to prevent the creation of a custom
-     * @ref KWebPage object for KDE integration. Set this flag to false if
-     * you are going to use your own custom implementation of KWebPage to
-     * avoid unnecessary object creation and deletion.
+     * @ref KWebPage object for KDE integration. Doing so allows you to
+     * avoid unnecessary object creation and deletion if you are going to
+     * use your own custom implementation of KWebPage.
      *
      * @param parent            the parent object.
      * @param createCustomPage  if true, the default, creates a custom KWebPage object.
@@ -114,8 +114,8 @@ Q_SIGNALS:
     void linkShiftClicked(const KUrl &url);
 
     /**
-     * This signal is emitted when a link is either clicked with middle mouse
-     * button or ctrl-clicked with the left moust button.
+     * This signal is emitted when a link is either clicked with the middle
+     * mouse button or ctrl-clicked with the left mouse button.
      *
      * @param url   the url of the clicked link.
      */

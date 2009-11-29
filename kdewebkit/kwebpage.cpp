@@ -61,7 +61,7 @@
 #include <QtDBus/QDBusConnection>
 #include <QtDBus/QDBusReply>
 
-#define QL1(x)    QLatin1String(x)
+#define QL1(x)  QLatin1String(x)
 
 
 class KWebPage::KWebPagePrivate
@@ -70,36 +70,27 @@ public:
     QPointer<KWebWallet> wallet;
 };
 
-KWebPage::KWebPage(QObject *parent, qlonglong windowId)
-         :QWebPage(parent), d(new KWebPage::KWebPagePrivate)
-{  
-    // KDE KParts integration for <embed> tag...
-    setPluginFactory(new KWebPluginFactory(this));
 
-    // KDE IO (KIO) integration...
-    setNetworkAccessManager(new KDEPrivate::NetworkAccessManager(this));
+KWebPage::KWebPage(QObject *parent, Integration flags)
+         :QWebPage(parent), d(new KWebPagePrivate)
+{
+  // KDE KParts integration for <embed> tag...
+  if (!flags || (flags & KPartsIntegration))
+      setPluginFactory(new KWebPluginFactory(this));
 
-    // KDE Cookiejar (KCookieJar) integration...
-    KDEPrivate::NetworkCookieJar *cookiejar = new KDEPrivate::NetworkCookieJar;
+  // KDE IO (KIO) integration...
+  if (!flags || (flags & KIOIntegration)) {
+      KDEPrivate::NetworkAccessManager *manager = new KDEPrivate::NetworkAccessManager(this);
 
-    // If windowid is 0, the default, make a best effort attempt to try and
-    // determine that value from the parent object.
-    if (!windowId) {
-        QWidget *widget = qobject_cast<QWidget*>(parent);
-        if (widget)
-            windowId = widget->window()->winId();
-    }
+      QWidget *widget = qobject_cast<QWidget*>(parent);
+      if (widget && widget->window())
+          manager->setCookieJarWindowId(widget->window()->winId());
+      setNetworkAccessManager(manager);
+  }
 
-    if (windowId) {
-      cookiejar->setWindowId(windowId);
-      setSessionMetaData(QL1("window-id"), QString::number(windowId));
-    }
-
-    networkAccessManager()->setCookieJar(cookiejar);
-
-    // Create a wallet...
-    setWallet(new KWebWallet);
-
+  // KWallet integration...
+  if (!flags || (flags & KWalletIntegration))
+      setWallet(new KWebWallet);
 
 #if QT_VERSION >= 0x040600
     action(Back)->setIcon(QIcon::fromTheme("go-previous"));
@@ -169,120 +160,48 @@ KWebPage::~KWebPage()
     delete d;
 }
 
-bool KWebPage::authorizedRequest(const QUrl &url) const
-{
-    Q_UNUSED(url);
-    return true;
-}
-
-void KWebPage::setAllowExternalContent(bool allow)
-{
-    KIO::AccessManager *manager = qobject_cast<KIO::AccessManager*>(networkAccessManager());
-    if (manager)
-        manager->setExternalContentAllowed(allow);
-}
-
 bool KWebPage::isExternalContentAllowed() const
 {
-    KIO::AccessManager *manager = qobject_cast<KIO::AccessManager*>(networkAccessManager());
+    KDEPrivate::NetworkAccessManager *manager = qobject_cast<KDEPrivate::NetworkAccessManager *>(networkAccessManager());
     if (manager)
         return manager->isExternalContentAllowed();
     return true;
 }
 
-QString KWebPage::sessionMetaData(const QString &key) const
+KWebWallet *KWebPage::wallet() const
 {
-    QString value;
+    return d->wallet;
+}
 
-    KDEPrivate::NetworkAccessManager *manager = qobject_cast<KDEPrivate::NetworkAccessManager*>(networkAccessManager());
+void KWebPage::setAllowExternalContent(bool allow)
+{
+    KDEPrivate::NetworkAccessManager *manager = qobject_cast<KDEPrivate::NetworkAccessManager *>(networkAccessManager());
     if (manager)
-        value = manager->sessionMetaData().value(key);
-
-    return value;
+        manager->setExternalContentAllowed(allow);
 }
 
-QString KWebPage::requestMetaData(const QString &key) const
+void KWebPage::setWallet(KWebWallet* wallet)
 {
-    QString value;
+    // Delete the current wallet if this object is its parent...
+    if (d->wallet && this == d->wallet->parent())
+        delete d->wallet;
 
-    KDEPrivate::NetworkAccessManager *manager = qobject_cast<KDEPrivate::NetworkAccessManager*>(networkAccessManager());
-    if (manager)
-        value = manager->requestMetaData().value(key);
+    d->wallet = wallet;
 
-    return value;
-}
-
-void KWebPage::setSessionMetaData(const QString &key, const QString &value)
-{
-    KDEPrivate::NetworkAccessManager *manager = qobject_cast<KDEPrivate::NetworkAccessManager*>(networkAccessManager());
-    if (manager)
-        manager->sessionMetaData()[key] = value;
-}
-
-void KWebPage::setRequestMetaData(const QString &key, const QString &value)
-{
-    KDEPrivate::NetworkAccessManager *manager = qobject_cast<KDEPrivate::NetworkAccessManager*>(networkAccessManager());
-    if (manager)
-        manager->requestMetaData()[key] = value;
-}
-
-QString KWebPage::userAgentForUrl(const QUrl& _url) const
-{
-    const KUrl url(_url);
-    QString userAgent = KProtocolManager::userAgentForHost((url.isLocalFile() ? "localhost" : url.host()));
-
-    if (userAgent == KProtocolManager::defaultUserAgent())
-        return QWebPage::userAgentForUrl(_url);
-
-    return userAgent;
-}
-
-void KWebPage::removeSessionMetaData(const QString &key)
-{
-    KDEPrivate::NetworkAccessManager *manager = qobject_cast<KDEPrivate::NetworkAccessManager*>(networkAccessManager());
-    if (manager)
-        manager->sessionMetaData().remove(key);
-}
-
-void KWebPage::removeRequestMetaData(const QString &key)
-{
-    KDEPrivate::NetworkAccessManager *manager = qobject_cast<KDEPrivate::NetworkAccessManager*>(networkAccessManager());
-    if (manager)
-        manager->requestMetaData().remove(key);
-}
-
-bool KWebPage::acceptNavigationRequest(QWebFrame * frame, const QNetworkRequest & request, NavigationType type)
-{
-    kDebug() << "url: " << request.url() << ", type: " << type << ", frame: " << frame;   
-
-#if 0
-    if (d->wallet && (type == QWebPage::NavigationTypeFormSubmitted ||
-        type == QWebPage::NavigationTypeFormResubmitted)) {
-        d->wallet->saveFormData(frame);
-    }
-#endif
-    /*
-      If the navigation request is from the main frame, set the cross-domain
-      meta-data value to the current url for proper integration with KCookieJar...
-    */
-    if (frame == mainFrame() && type != QWebPage::NavigationTypeReload) {
-        setSessionMetaData(QL1("cross-domain"), request.url().toString());
-    }
-
-    return QWebPage::acceptNavigationRequest(frame, request, type);
+    if (d->wallet)
+        d->wallet->setParent(this);
 }
 
 void KWebPage::downloadRequest(const QNetworkRequest &request)
 {
     KUrl url (request.url());
-
     const QString destUrl = KFileDialog::getSaveFileName(url.fileName(), QString(), view());
 
     if (destUrl.isEmpty())
         return;
 
     KIO::Job *job = KIO::file_copy(url, KUrl(destUrl), -1, KIO::Overwrite);
-    QVariant attr = request.attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData));
+    QVariant attr = request.attribute(static_cast<QNetworkRequest::Attribute>(KDEPrivate::NetworkAccessManager::MetaData));
     if (attr.isValid() && attr.type() == QVariant::Map)
         job->setMetaData(KIO::MetaData(attr.toMap()));
 
@@ -297,21 +216,86 @@ void KWebPage::downloadUrl(const KUrl &url)
     downloadRequest(request);
 }
 
-KWebWallet *KWebPage::wallet() const
+QString KWebPage::sessionMetaData(const QString &key) const
 {
-    return d->wallet;
+    QString value;
+
+    KDEPrivate::NetworkAccessManager *manager = qobject_cast<KDEPrivate::NetworkAccessManager *>(networkAccessManager());
+    if (manager)
+        value = manager->sessionMetaData().value(key);
+
+    return value;
 }
 
-void KWebPage::setWallet(KWebWallet* wallet)
+QString KWebPage::requestMetaData(const QString &key) const
 {
-    // Delete the current wallet this class is its parent...
-    if (d->wallet && this == d->wallet->parent())
-        delete d->wallet;
+    QString value;
 
-    d->wallet = wallet;
+    KDEPrivate::NetworkAccessManager *manager = qobject_cast<KDEPrivate::NetworkAccessManager *>(networkAccessManager());
+    if (manager)
+        value = manager->requestMetaData().value(key);
 
-    if (d->wallet)
-        d->wallet->setParent(this);
+    return value;
+}
+
+void KWebPage::setSessionMetaData(const QString &key, const QString &value)
+{
+    KDEPrivate::NetworkAccessManager *manager = qobject_cast<KDEPrivate::NetworkAccessManager *>(networkAccessManager());
+    if (manager)
+        manager->sessionMetaData()[key] = value;
+}
+
+void KWebPage::setRequestMetaData(const QString &key, const QString &value)
+{
+    KDEPrivate::NetworkAccessManager *manager = qobject_cast<KDEPrivate::NetworkAccessManager *>(networkAccessManager());
+    if (manager)
+        manager->requestMetaData()[key] = value;
+}
+
+void KWebPage::removeSessionMetaData(const QString &key)
+{
+    KDEPrivate::NetworkAccessManager *manager = qobject_cast<KDEPrivate::NetworkAccessManager *>(networkAccessManager());
+    if (manager)
+        manager->sessionMetaData().remove(key);
+}
+
+void KWebPage::removeRequestMetaData(const QString &key)
+{
+    KDEPrivate::NetworkAccessManager *manager = qobject_cast<KDEPrivate::NetworkAccessManager *>(networkAccessManager());
+    if (manager)
+        manager->requestMetaData().remove(key);
+}
+
+QString KWebPage::userAgentForUrl(const QUrl& _url) const
+{
+    const KUrl url(_url);
+    QString userAgent = KProtocolManager::userAgentForHost((url.isLocalFile() ? "localhost" : url.host()));
+
+    if (userAgent == KProtocolManager::defaultUserAgent())
+        return QWebPage::userAgentForUrl(_url);
+
+    return userAgent;
+}
+
+bool KWebPage::acceptNavigationRequest(QWebFrame * frame, const QNetworkRequest & request, NavigationType type)
+{
+    kDebug() << "url: " << request.url() << ", type: " << type << ", frame: " << frame;
+
+#if 0
+    if (d->wallet && (type == QWebPage::NavigationTypeFormSubmitted ||
+                      type == QWebPage::NavigationTypeFormResubmitted)) {
+      d->wallet->saveFormData(frame);
+    }
+#endif
+    /*
+        If the navigation request is from the main frame, set the cross-domain
+        meta-data value to the current url for proper integration with KCookieJar...
+      */
+    if (frame == mainFrame() && type != QWebPage::NavigationTypeReload) {
+        setSessionMetaData(QL1("cross-domain"), request.url().toString());
+    }
+
+    return QWebPage::acceptNavigationRequest(frame, request, type);
 }
 
 #include "kwebpage.moc"

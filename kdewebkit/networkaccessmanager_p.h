@@ -22,6 +22,8 @@
 #ifndef NETWORKACCESSMANAGER_P_H
 #define NETWORKACCESSMANAGER_P_H
 
+#include <kdewebkit_export.h>
+
 #include <kio/accessmanager.h>
 
 namespace KDEPrivate {
@@ -32,13 +34,43 @@ namespace KDEPrivate {
   *
   * @author Dawit Alemayehu <adawit @ kde.org>
   */
-class NetworkAccessManager : public KIO::AccessManager
+class KDEWEBKIT_EXPORT NetworkAccessManager : public KIO::AccessManager
 {
   Q_OBJECT
 
 public:
     NetworkAccessManager(QObject *parent);
     ~NetworkAccessManager() {}
+
+    /**
+     * Sets the cookiejar's window id to @p id.
+     *
+     * This is a convenience function that allows you to set the cookiejar's
+     * window id. Note that this function does nothing unless the cookiejar in
+     * use is of type KIO::Integration::CookieJar.
+     *
+     * By default the cookiejar's window id is set to false. Make sure you call
+     * this function and set the window id to its proper value when create an
+     * instance of this object. Otherwise, the KDE cookiejar will not be able
+     * to properly manage session based cookies.
+     *
+     * @see KIO::Integration::CookieJar::setWindowId.
+     * @since 4.4
+     */
+    void setCookieJarWindowId(qlonglong id);
+
+    /**
+     * Returns the cookiejar's window id.
+     *
+     * This is a convenience function that returns the window id associated
+     * with the cookiejar. Note that this function will return a 0 if the
+     * cookiejar is not of type KIO::Integration::CookieJar or a window id
+     * has not yet been set.
+     *
+     * @see KIO::Integration::CookieJar::windowId.
+     * @since 4.4
+     */
+    qlonglong cookieJarWindowid() const;
 
     /**
      * Returns a reference to the temporary meta data container.
