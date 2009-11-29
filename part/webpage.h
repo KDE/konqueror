@@ -59,13 +59,6 @@ public:
     ~WebPage();
 
     /**
-     * Re-implemented for internal reasons. API is unaffected.
-     *
-     * @see KWebPage::authorizedRequest.
-     */
-    bool authorizedRequest(const QUrl &) const;
-
-    /**
      * Returns the SSL information for the current page.
      *
      * @see WebSslInfo.

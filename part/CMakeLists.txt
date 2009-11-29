@@ -19,6 +19,7 @@ set(kwebkit_LIB_SRCS
     webview.cpp
     webpage.cpp
     websslinfo.cpp
+    networkaccessmanager.cpp
     ui/searchbar.cpp
     settings/webkitsettings.cpp
     settings/khtml_filter.cpp

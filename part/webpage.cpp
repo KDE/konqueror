@@ -28,6 +28,7 @@
 #include "websslinfo.h"
 #include "webview.h"
 #include "sslinfodialog_p.h"
+#include "networkaccessmanager.h"
 #include "settings/webkitsettings.h"
 
 #include <KDE/KParts/GenericFactory>
@@ -172,7 +173,6 @@ class WebPage::WebPagePrivate
 public:
     WebPagePrivate() {}
 
-    QUrl redirectUrl;
     WebSslInfo sslInfo;
     QMap<QString, WebFrameState> frameStateContainer;
     // Holds list of requests including those from children frames
@@ -181,9 +181,17 @@ public:
 };
 
 WebPage::WebPage(WebKitPart *part, QWidget *parent)
-        :KWebPage(parent), d (new WebPagePrivate)
+        :KWebPage(parent, (KWebPage::KPartsIntegration|KWebPage::KWalletIntegration)),
+         d (new WebPagePrivate)
 {
     d->part = part;
+
+    // Set our own internal cookie manager...
+    KDEPrivate::MyNetworkAccessManager *manager = new KDEPrivate::MyNetworkAccessManager(this);
+    if (parent && parent->window())
+        manager->setCookieJarWindowId(parent->window()->winId());
+    setNetworkAccessManager(manager);
+
     setSessionMetaData("ssl_activate_warnings", "TRUE");
 
     // Set font sizes accordingly...
@@ -209,12 +217,6 @@ WebPage::WebPage(WebKitPart *part, QWidget *parent)
 WebPage::~WebPage()
 {
     delete d;
-}
-
-bool WebPage::authorizedRequest(const QUrl &url) const
-{
-    // Check for ad filtering...
-    return !(WebKitSettings::self()->isAdFilterEnabled() && WebKitSettings::self()->isAdFiltered(url.toString()));
 }
 
 const WebSslInfo& WebPage::sslInfo() const
@@ -274,18 +276,13 @@ void WebPage::restoreAllFrameState()
 
 bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request, NavigationType type)
 {
+    kDebug() << "url: " << request.url() << ", type: " << type << ", frame: " << frame;
+
     // Handle "mailto:" url here...
     if (handleMailToUrl(request.url(), type))
       return false;
 
     if (frame) {
-        /*
-          BUG: QtWebKit unfortunately sends a NavigationTypeOther instead of NavigationTypeLink
-          when users click on links that use javascript such as
-
-          <a href="javascript:location.href='http://qt.nokia.com'">javascript link</a>
-        */
-
         // inPage requests are those generarted within the current page through
         // link clicks, javascript queries, and button clicks (form submission).
         bool inPageRequest = true;
@@ -299,11 +296,25 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
             case QWebPage::NavigationTypeReload:
             case QWebPage::NavigationTypeBackOrForward:
                 inPageRequest = false;
+                break;
             case QWebPage::NavigationTypeOther:
-                // TODO: This needs further investigations!
-                if (d->part->url() == request.url() || d->redirectUrl == request.url())
-                    inPageRequest = false;
+                /*
+                  NOTE: Unfortunately QtWebKit sends a NavigationTypeOther
+                  when users click on links that use javascript. For example,
 
+                  <a href="javascript:location.href='http://qt.nokia.com'">javascript link</a>
+
+                  This completely screws up the link security checks we attempt
+                  to do below. There is currently no reliable way to discern link
+                  clicks from other requests that are sent as NavigationTypeOther!
+                  Perhaps a new type, NavigationTypeJavascript, will be added in
+                  the future to QtWebKit ??!?
+                */
+                //if (d->part->url() == request.url())
+                inPageRequest = false;
+
+                // The following code does proper history navigation for
+                // websites that are composed of frames.
                 if (frame != mainFrame() && d->frameStateContainer.contains(frame->frameName())) {
                     WebFrameState frameState = d->frameStateContainer.value(frame->frameName());
                     if (frameState.url != request.url()) {
@@ -335,7 +346,6 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
         d->requestQueue.insert (request.url(), frame);
     }
 
-    d->redirectUrl.clear();
     return KWebPage::acceptNavigationRequest(frame, request, type);
 }
 
@@ -491,8 +501,7 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
         const int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
 
         if (statusCode > 300 && statusCode < 304) {
-            d->redirectUrl = reply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
-            kDebug() << "Redirected to" << d->redirectUrl;
+            kDebug() << "Redirected to" << reply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
         } else {
             const int errCode = convertErrorCode(reply);
             const bool isMainFrameRequest = (frame == mainFrame());
@@ -552,6 +561,8 @@ bool WebPage::checkLinkSecurity(const QNetworkRequest &req, NavigationType type)
 {
     // Check whether the request is authorized or not...
     if (!KAuthorized::authorizeUrlAction("redirect", mainFrame()->url(), req.url())) {
+
+        kDebug() << "*** Failed security check: base-url=" << mainFrame()->url() << ", dest-url=" << req.url();
         QString buttonText, title, message;
 
         int response = KMessageBox::Cancel;
@@ -597,7 +608,7 @@ bool WebPage::checkFormData(const QNetworkRequest &req) const
                                                 "A third party may be able to "
                                                 "intercept and view this "
                                                 "information.\nAre you sure you "
-                                                "wish to continue?"),
+                                                "want to send the data unencrypted ?"),
                                            i18n("Network Transmission"),
                                            KGuiItem(i18n("&Send Unencrypted")))  == KMessageBox::Cancel)) {
 
