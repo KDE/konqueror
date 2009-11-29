@@ -4,6 +4,7 @@
  * Copyright (C) 2008 Laurent Montel <montel@kde.org>
  * Copyright 2008 Benjamin C. Meyer <ben@meyerhome.net>
  * Copyright (C) 2008 Urs Wolfer <uwolfer @ kde.org>
+ * Copyright (C) 2009 Dawit Alemayehu <adawit @ kde.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -24,10 +25,7 @@
 #ifndef SEARCHBAR_P_H
 #define SEARCHBAR_P_H
 
-#include <QWidget>
-
-#include "ui_searchbar.h"
-
+#include <QtGui/QWidget>
 
 namespace KDEPrivate {
 
@@ -62,7 +60,8 @@ private Q_SLOTS:
 
 private:
     class SearchBarPrivate;
-    SearchBarPrivate* d;
+    SearchBarPrivate * const d;
+
 };
 
 }

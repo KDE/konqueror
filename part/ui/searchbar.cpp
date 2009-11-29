@@ -4,6 +4,7 @@
  * Copyright (C) 2008 Laurent Montel <montel@kde.org>
  * Copyright (C) 2008 Benjamin C. Meyer <ben@meyerhome.net>
  * Copyright (C) 2008 Urs Wolfer <uwolfer @ kde.org>
+ * Copyright (C) 2009 Dawit Alemayehu <adawit @ kde.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -61,10 +62,6 @@ public:
         connect(ui.searchLineEdit, SIGNAL(returnPressed()),
                 searchBar, SLOT(findNext()));
 
-        //searchBar->setMinimumWidth(widget->minimumWidth());
-        //searchBar->setMaximumWidth(widget->maximumWidth());
-        //searchBar->setMinimumHeight(widget->minimumHeight());
-
         // Update the state of the searchAsYouType option
         searchBar->searchAsYouTypeChanged (ui.actionSearchAutomatically->isChecked());
     }
@@ -73,9 +70,10 @@ public:
 };
 
 SearchBar::SearchBar(QWidget *parent)
-          :QWidget(parent)
+          :QWidget(parent), d (new SearchBarPrivate)
 {
-    d = new SearchBarPrivate;
+
+    // Initialize the user interface...
     d->init(this);
 
     // Start off hidden by default...
