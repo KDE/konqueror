@@ -608,7 +608,7 @@ bool WebPage::checkFormData(const QNetworkRequest &req) const
                                                 "A third party may be able to "
                                                 "intercept and view this "
                                                 "information.\nAre you sure you "
-                                                "want to send the data unencrypted ?"),
+                                                "want to send the data unencrypted?"),
                                            i18n("Network Transmission"),
                                            KGuiItem(i18n("&Send Unencrypted")))  == KMessageBox::Cancel)) {
 
