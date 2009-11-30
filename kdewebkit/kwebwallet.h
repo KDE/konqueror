@@ -83,6 +83,24 @@ public:
     virtual ~KWebWallet();
 
     /**
+     * Returns a list of forms in @p frame that have cached data in the
+     * peristent storage.
+     *
+     * If @p recursive is set to true, the default, then this function will
+     * will also return the cached form data for all the children frames of
+     * @p frame.
+     *
+     * If the site currently rendered in @p frame does not contain any forms
+     * or there is not cached data for the forms found in @p frame, then this
+     * function will return an empty list.
+     *
+     * Note that this function will only return the information about the forms
+     * in @p frame and not their cached data, i.e. the fields member variable in
+     * the returned @ref WebForm list will always be empty.
+     */
+    WebFormList formsWithCachedData(QWebFrame* frame, bool recursive = true) const;
+
+    /**
      * Attempts to save the form data from @p frame and its children frames.
      *
      * If @p recursive is set to true, the default, then form data from all
@@ -93,8 +111,6 @@ public:
      * @ref rejectSaveFormDataRequest or @ref acceptSaveFormDataRequest signals
      * in order to complete the save request. Otherwise, you request will simply
      * be ignored.
-     *
-     * @see saveFormDataRequested
      */
     void saveFormData(QWebFrame *frame, bool recursive = true, bool ignorePasswordFields = false);
 
@@ -104,10 +120,32 @@ public:
      * If @p recursive is set to true, the default, then this function will
      * attempt to fill out forms in the specified frame and all its children
      * frames.
-     *
-     * @see restoreFormData
      */
     void fillFormData(QWebFrame *frame, bool recursive = true);
+
+    /**
+     * Removes the form data specified by @p forms from the persistent storage.
+     *
+     * This function is provided for convenience and simply calls @ref formsWithCachedData
+     * and @ref removeFormData. Note that this function will remove all cached
+     * data for forms found in @p frame. If @p recursive is set to true, then
+     * all cached data for all of the child frames of @p frame will be removed
+     * from the persistent storage as well.
+     *
+     * @see formsWithCachedData
+     * @see removeFormData
+     */
+    void removeFormData (QWebFrame *frame, bool recursive);
+
+    /**
+     * Removes the form data specified by @p forms from the persistent storage.
+     *
+     * Call @ref formsWithCachedData to obtain a list of forms with data cached
+     * in persistent storage.
+     *
+     * @see formsWithCachedData
+     */
+    void removeFormData(const WebFormList &forms);
 
 public Q_SLOTS:
     /**
@@ -178,39 +216,54 @@ protected:
     WebFormList formsToSave(const QString &key) const;
 
     /**
+     * Returns forms to be removed from persistent storage.
+     */
+    WebFormList formsToDelete() const;
+
+    /**
      * Returns true when there is data associated with @p form in the
-     * persistent cache.
+     * persistent storage.
      */
     virtual bool hasCachedFormData(const WebForm &form) const;
 
     /**
-     * Fills the QWebFrame that is showing @p url with data from @p forms.
+     * Fills the web forms in frame that point to @p url with data from @p forms.
      *
-     * @see fillFormData.
+     * @see fillFormDataFromCache.
      */
-    void fillForm(const KUrl &url, const WebFormList &forms);
+    void fillWebForm(const KUrl &url, const WebFormList &forms);
 
     /**
-     * Fills form data from persistent cache.
+     * Fills form data from persistent storage.
      *
      * If you reimplement this function, call @ref formsToFill to obtain
      * the list of forms pending to be filled. Once you fill the list with
-     * the cached data from the persistent storage, you must call @p fillForm
+     * the cached data from the persistent storage, you must call @p fillWebForm
      * to fill out the actual web forms.
      *
      * @see formsToFill
      */
-    virtual void fillFormData(const KUrl::List &list);
+    virtual void fillFormDataFromCache(const KUrl::List &list);
 
     /**
-     * Stores form data associated with @p key to a persistent cache.
+     * Stores form data associated with @p key to a persistent storage.
      *
      * If you reimplement this function, call @ref formsToSave to obtain the
-     * list of forms data pending to be saved to persistent cache.
+     * list of form data pending to be saved to persistent storage.
      *
      *@see formsToSave
      */
-    virtual void saveFormData(const QString &key);
+    virtual void saveFormDataToCache(const QString &key);
+
+    /**
+     * Removes all cached form data associated with @p forms from persistent storage.
+     *
+     * If you reimplement this function, call @ref formsToDelete to obtain the
+     * list of form data pending to be removed from persistent storage.
+     *
+     *@see formsToDelete
+     */
+    virtual void removeFormDataFromCache(const WebFormList &forms);
 
 private:
     class KWebWalletPrivate;
