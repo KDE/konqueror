@@ -126,7 +126,7 @@ Sidebar_Widget::Sidebar_Widget(QWidget *parent, KParts::ReadOnlyPart *par, const
     : QWidget(parent),
       m_partParent(par),
       m_addMenuActionGroup(this),
-      m_config(new KConfigGroup(KSharedConfig::openConfig("konqsidebartng.rc"),
+      m_config(new KConfigGroup(KSharedConfig::openConfig("konqsidebartngrc"),
                                 currentProfile)),
       m_moduleManager(m_config)
 {

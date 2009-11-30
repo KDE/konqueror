@@ -35,7 +35,7 @@ KonqSidebarDirTreeModule::KonqSidebarDirTreeModule( KonqSidebarTree * parentTree
     : KonqSidebarTreeModule( parentTree, showHidden ), m_dirLister(0L), m_topLevelItem(0L)
 {
     // SLOW! Get the KConfigGroup from the plugin.
-    KConfig config("konqsidebartng.rc");
+    KConfig config("konqsidebartngrc");
     KConfigGroup generalGroup( &config, "General" );
     m_showArchivesAsFolders = generalGroup.readEntry( "ShowArchivesAsFolders", true );
 }
