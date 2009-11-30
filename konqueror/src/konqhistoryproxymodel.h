@@ -20,7 +20,7 @@
 #ifndef KONQ_HISTORYPROXYMODEL_H
 #define KONQ_HISTORYPROXYMODEL_H
 
-#include <ksortfilterproxymodel.h>
+#include "ksortfilterproxymodel.h"
 
 class KonqHistorySettings;
 
