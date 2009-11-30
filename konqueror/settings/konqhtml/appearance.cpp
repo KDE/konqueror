@@ -161,8 +161,8 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList&)
   m_minSize->setRange( 2, 30 );
   connect( m_minSize, SIGNAL( valueChanged( int ) ), this, SLOT( slotMinimumFontSize( int ) ) );
   connect( m_minSize, SIGNAL( valueChanged( int ) ), this, SLOT( changed() ) );
-  m_minSize->setWhatsThis( i18n( "Konqueror will never display text smaller than "
-                                    "this size,<br />overriding any other settings." ) );
+  m_minSize->setWhatsThis( "<qt>" + i18n( "Konqueror will never display text smaller than "
+                                    "this size,<br />overriding any other settings." ) + "</qt>" );
 
   m_MedSize = new KIntNumInput( fSize,m_minSize );
   fl->addRow(i18n( "&Medium font size:"  ),m_MedSize);
