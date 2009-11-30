@@ -57,9 +57,9 @@ QTEST_KDEMAIN( ModuleManagerTest, NoGUI )
 
 void ModuleManagerTest::initTestCase()
 {
-    const QString configFile = KStandardDirs::locateLocal("config", "konqsidebartng.rc");
+    const QString configFile = KStandardDirs::locateLocal("config", "konqsidebartngrc");
     QFile::remove(configFile);
-    KSharedConfig::Ptr config = KSharedConfig::openConfig("konqsidebartng.rc");
+    KSharedConfig::Ptr config = KSharedConfig::openConfig("konqsidebartngrc");
 
     m_profile = "test_profile";
     m_configGroup = new KConfigGroup(config, m_profile);
