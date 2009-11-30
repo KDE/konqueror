@@ -23,6 +23,7 @@ set(konquerorprivate_SRCS
 
    # for the sidebar history module
    konqhistorymodel.cpp
+   ksortfilterproxymodel.cpp
    konqhistoryproxymodel.cpp
    konqhistoryview.cpp
    konqhistorysettings.cpp
