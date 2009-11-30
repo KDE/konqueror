@@ -276,8 +276,6 @@ void WebPage::restoreAllFrameState()
 
 bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request, NavigationType type)
 {
-    kDebug() << "url: " << request.url() << ", type: " << type << ", frame: " << frame;
-
     // Handle "mailto:" url here...
     if (handleMailToUrl(request.url(), type))
       return false;
