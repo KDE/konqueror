@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY nsplugins-kcontrol SYSTEM "nsplugin.docbook">
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % English "INCLUDE" > <!-- change language only here -->
+]>
+
+<article lang="&language;">
+<articleinfo>
+
+<authorgroup>
+<author>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
+<!-- TRANS:ROLES_OF_TRANSLATORS -->
+</authorgroup>
+
+<date>2009-11-24</date>
+<releaseinfo>&kde; 4.4</releaseinfo>
+
+<keywordset>
+<keyword>KDE</keyword>
+<keyword>Systemsettings</keyword>
+<keyword>konqueror</keyword>
+<keyword>browsing</keyword>
+<keyword>filter</keyword>
+</keywordset>
+
+</articleinfo>
+
+<sect1 id="khtml-adblock">
+<title>AdBlocK</title>
+
+<para>&konqueror; AdBlocK can be configured to replace or remove
+images or frames from web pages that match a series of filters.</para>
+
+<para>The setting <guilabel>Enable filters</guilabel> enables or
+disables the use of list of URL filters.</para>
+<para>If <guilabel>Hide filtered images</guilabel> is enabled then
+blocked images are completely removed from the page and the space they
+occupied is reclaimed. If the option is disabled then a placeholder
+image is used in place of filtered images.</para>
+
+<para><guilabel>URL Expressions to Filter</guilabel> is a list of
+URLs that will be compared against image and frame names to decide
+on fitlering actions. The wildcards can be given as filename style
+regular expressions.</para>
+
+<para>Use the <guilabel>Search</guilabel> edit box above the list box 
+to filter matching entries an the fly.</para>
+
+<para>Each filter can either be expressed as a file style wildcard
+string (e.g. http://www.site.com/ads/*) or as a full regular expression
+by enclosing the filter with forward slashes (e.g. //(ads|dclk)\./).</para>
+
+<para>Any filter string can be preceded by <literal>@@</literal> to whitelist 
+(allow) any matching &URL;, which takes priority over any blacklist (blocking) 
+filter.</para>
+
+<para><guilabel>Import</guilabel> and <guilabel>Export</guilabel> will 
+save or read the current filter list to a
+plain text file. Lines prefixed with an exclamation mark (!) are treated
+as comments and can be used to clarify or label a set of filters.</para>
+
+<para>Highlight an entry from the list to change it in the edit box or remove this item.
+Enter a new filter string here and add it to the list using the <guibutton>
+Insert</guibutton> button.</para>
+</sect1>
+
+</article>
