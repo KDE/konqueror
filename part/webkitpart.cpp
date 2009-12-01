@@ -194,7 +194,7 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
     lay->setSpacing(0);
 
     // Add the WebView...
-    d->webView = new WebView (this, mainWidget); 
+    d->webView = new WebView (this, mainWidget);
     lay->addWidget(d->webView);
     connect(d->webView, SIGNAL(titleChanged(const QString &)),
             this, SIGNAL(setWindowCaption(const QString &)));
@@ -203,7 +203,7 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
     connect(d->webView, SIGNAL(urlChanged(const QUrl &)),
             this, SLOT(urlChanged(const QUrl &)));
     connect(d->webView, SIGNAL(linkMiddleOrCtrlClicked(const KUrl &)),
-            this, SLOT(openUrlInNewTab(const KUrl &)));
+            this, SLOT(slotLinkMiddleOrCtrlClicked(const KUrl &)));
 
     // Add the search bar...
     d->searchBar = new KDEPrivate::SearchBar;
@@ -463,7 +463,7 @@ void WebKitPart::loadFinished(bool ok)
 }
 
 void WebKitPart::loadAborted(const KUrl & url)
-{  
+{
     closeUrl();
     if (url.isValid())
       emit d->browserExtension->openUrlRequest(url);
@@ -489,7 +489,7 @@ void  WebKitPart::navigationRequestFinished(const KUrl& url, QWebFrame *frame)
 }
 
 void WebKitPart::urlChanged(const QUrl& _url)
-{  
+{
     if (_url != QUrl("about:blank")) {
         setUrl(_url);
         emit d->browserExtension->setLocationBarUrl(KUrl(_url).prettyUrl());
@@ -630,7 +630,7 @@ void WebKitPart::searchForText(const QString &text, bool backward)
 void WebKitPart::showSearchBar()
 {
     const QString text = d->webView->selectedText();
-    
+
     if (text.isEmpty())
         d->webView->pageAction(QWebPage::Undo);
     else
@@ -639,14 +639,13 @@ void WebKitPart::showSearchBar()
     d->searchBar->show();
 }
 
-void WebKitPart::openUrlInNewTab(const KUrl& linkUrl)
+void WebKitPart::slotLinkMiddleOrCtrlClicked(const KUrl& linkUrl)
 {
     KParts::OpenUrlArguments args;
+    args.setActionRequestedByUser(true);
     args.metaData()["referrer"] = url().url();
 
     KParts::BrowserArguments bargs;
-    bargs.setNewTab(true);
-
     emit browserExtension()->createNewWindow(linkUrl, args, bargs);
 }
 

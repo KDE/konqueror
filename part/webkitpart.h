@@ -67,7 +67,7 @@ private Q_SLOTS:
     void searchForText(const QString &text, bool backward);
     void linkHovered(const QString &, const QString&, const QString &);
     void saveFrameState(QWebFrame *frame, QWebHistoryItem *item);
-    void openUrlInNewTab(const KUrl&);
+    void slotLinkMiddleOrCtrlClicked(const KUrl&);
 
     void urlChanged(const QUrl &);
 
