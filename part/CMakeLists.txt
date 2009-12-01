@@ -9,7 +9,7 @@ if(${KDE_VERSION} VERSION_LESS 4.3.74)
     find_package(KdeWebKit REQUIRED)
 endif(${KDE_VERSION} VERSION_LESS 4.3.74)
 
-include_directories(${KDE4_INCLUDES} ${CMAKE_SOURCE_DIR})
+include_directories(${KDE4_INCLUDES} ${CMAKE_CURRENT_SOURCE_DIR}/..)
 if(${KDE_VERSION} VERSION_LESS 4.3.74)
     include_directories(${KDEWEBKIT_INCLUDE_DIR})
 endif(${KDE_VERSION} VERSION_LESS 4.3.74)
