@@ -30,6 +30,7 @@
 #include <QtCore/QString>
 #include <QtCore/QList>
 #include <QtCore/QPair>
+#include <QtGui/QWidget>
 #include <QtGlobal>
 
 class QWebFrame;
@@ -75,7 +76,7 @@ public:
     /**
      * Constructs a KWebWallet with @p parent as its parent.
      */
-    explicit KWebWallet(QObject* parent = 0, qlonglong wid = 0);
+    explicit KWebWallet(QObject* parent = 0, WId wid = 0);
 
     /**
      * Destructor
