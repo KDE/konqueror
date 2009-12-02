@@ -41,6 +41,7 @@ KSortFilterProxyModel::KSortFilterProxyModel(QObject * parent)
 
 KSortFilterProxyModel::~KSortFilterProxyModel()
 {
+    delete d_ptr;
 }
 
 bool KSortFilterProxyModel::filterAcceptsRow ( int source_row, const QModelIndex & source_parent ) const
