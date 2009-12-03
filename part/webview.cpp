@@ -312,7 +312,7 @@ void WebView::WebViewPrivate::addSearchActions(QList<QAction *>& selectActions, 
     KConfig config("kuriikwsfilterrc");
     KConfigGroup cg = config.group("General");
     const QString defaultEngine = cg.readEntry("DefaultSearchEngine", "google");
-    const char keywordDelimiter = cg.readEntry("KeywordDelimiter", static_cast<int>(':'));
+    const char keywordDelimiter = cg.readEntry("KeywordDelimiter", ":").at(0).toLatin1();
 
     // search text
     QString selectedText = simplifiedSelectedText(view->selectedText());
