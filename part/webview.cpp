@@ -92,6 +92,13 @@ void WebView::loadUrl(const KUrl &url, const KParts::OpenUrlArguments &args, con
       return;
     }
 
+    // Avoid reloading page when navigating back from an anchor or link
+    // that points to some place within the page itself.
+    if (this->url().toString(QUrl::RemoveFragment) == url.url()) {
+        emit loadFinished(true);
+        return;
+    }
+
     QNetworkRequest req;
     req.setUrl(url);
     req.setRawHeader("Referer", args.metaData().value("referrer").toUtf8());
