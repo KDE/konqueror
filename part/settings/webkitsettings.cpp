@@ -29,6 +29,7 @@
 #include <kglobalsettings.h>
 #include <klocale.h>
 #include <kmessagebox.h>
+#include <kstandarddirs.h>
 
 #include <QWebSettings>
 
@@ -70,6 +71,8 @@ typedef QMap<QString,KPerDomainSettings> PolicyMap;
 class WebKitSettingsPrivate
 {
 public:
+    WebKitSettingsPrivate() : nonPasswordStorableSites (0) {}
+
     bool m_bChangeCursor : 1;
     bool m_bOpenMiddleClick : 1;
     bool m_bBackRightClick : 1;
@@ -117,6 +120,8 @@ public:
     khtml::FilterSet adBlackList;
     khtml::FilterSet adWhiteList;
     QList< QPair< QString, QChar > > m_fallbackAccessKeysAssignments;
+
+    KConfig *nonPasswordStorableSites;
 };
 
 
@@ -279,6 +284,7 @@ WebKitSettings::WebKitSettings(const WebKitSettings &other)
 
 WebKitSettings::~WebKitSettings()
 {
+  delete d->nonPasswordStorableSites;
   delete d;
 }
 
@@ -312,6 +318,8 @@ void WebKitSettings::init()
   KConfigGroup cg ( &config, "Cookie Policy");
   d->m_useCookieJar = cg.readEntry("Cookies", false);
 
+  if (d->nonPasswordStorableSites)
+    delete d->nonPasswordStorableSites;
 }
 
 void WebKitSettings::init( KConfig * config, bool reset )
@@ -1118,6 +1126,44 @@ bool WebKitSettings::jsPopupBlockerPassivePopup() const
 bool WebKitSettings::isCookieJarEnabled() const
 {
     return d->m_useCookieJar;
+}
+
+// Password storage...
+bool WebKitSettings::isNonPasswordStorableSite(const QString &host) const
+{
+    if (!d->nonPasswordStorableSites) {
+        d->nonPasswordStorableSites = new KConfig(KStandardDirs::locateLocal("data", "khtml/formcompletions"));
+    }
+
+    KConfigGroup cg( d->nonPasswordStorableSites, "NonPasswordStorableSites");
+    QStringList sites =  cg.readEntry("Sites", QStringList());
+    return sites.contains(host);
+}
+
+void WebKitSettings::addNonPasswordStorableSite(const QString &host)
+{
+    if (!d->nonPasswordStorableSites) {
+        d->nonPasswordStorableSites = new KConfig(KStandardDirs::locateLocal("data", "khtml/formcompletions"));
+    }
+
+    KConfigGroup cg( d->nonPasswordStorableSites, "NonPasswordStorableSites");
+    QStringList sites = cg.readEntry("Sites", QStringList());
+    sites.append(host);
+    cg.writeEntry("Sites", sites);
+    cg.sync();
+}
+
+void WebKitSettings::removeNonPasswordStorableSite(const QString &host)
+{
+    if (!d->nonPasswordStorableSites) {
+        d->nonPasswordStorableSites = new KConfig(KStandardDirs::locateLocal("data", "khtml/formcompletions"));
+    }
+
+    KConfigGroup cg( d->nonPasswordStorableSites, "NonPasswordStorableSites");
+    QStringList sites = cg.readEntry("Sites", QStringList());
+    sites.removeOne(host);
+    cg.writeEntry("Sites", sites);
+    cg.sync();
 }
 
 K_GLOBAL_STATIC(WebKitSettings, s_webKitSettings)

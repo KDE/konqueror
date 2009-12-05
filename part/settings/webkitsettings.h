@@ -225,6 +225,11 @@ public:
     // CookieJar...
     bool isCookieJarEnabled() const;
 
+    // Password storage...
+    bool isNonPasswordStorableSite(const QString &host) const;
+    void addNonPasswordStorableSite(const QString &host);
+    void removeNonPasswordStorableSite(const QString &host);
+
     // Global config object stuff.
     static WebKitSettings* self();
     /**
