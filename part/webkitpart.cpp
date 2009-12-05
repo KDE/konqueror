@@ -75,7 +75,7 @@ static QString htmlError (int code, const QString& text, const KUrl& reqUrl)
   stream >> errorName >> techName >> description >> causes >> solutions;
 
   QString url, protocol, datetime;
-  url = Qt::escape( reqUrl.prettyUrl() );
+  url = reqUrl.url();
   protocol = reqUrl.protocol();
   datetime = KGlobal::locale()->formatDateTime( QDateTime::currentDateTime(),
                                                 KLocale::LongDate );
