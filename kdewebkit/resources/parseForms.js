@@ -21,7 +21,7 @@
                         element.autocomplete = element.autocomplete.value;
                     elements.push(element);
                     if (type == "password")
-                      passwordFieldCount++;
+                        passwordFieldCount++;
                 }
             }
 
