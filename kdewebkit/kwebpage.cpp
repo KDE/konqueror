@@ -35,12 +35,9 @@
 // KDE
 #include <kaction.h>
 #include <kfiledialog.h>
-#include <kinputdialog.h>
-#include <kmessagebox.h>
 #include <kprotocolmanager.h>
 #include <kjobuidelegate.h>
 #include <krun.h>
-#include <kshell.h>
 #include <kstandarddirs.h>
 #include <kstandardshortcut.h>
 #include <kurl.h>
@@ -48,18 +45,13 @@
 #include <klocalizedstring.h>
 #include <kio/accessmanager.h>
 #include <kio/job.h>
+#include <kio/renamedlg.h>
 
 // Qt
 #include <QtCore/QPointer>
-#include <QtGui/QTextDocument>
-#include <QtGui/QPaintEngine>
+#include <QtCore/QFileInfo>
 #include <QtWebKit/QWebFrame>
-#include <QtUiTools/QUiLoader>
-#include <QtNetwork/QNetworkReply>
-#include <QtNetwork/QNetworkCookieJar>
-#include <QtDBus/QDBusInterface>
-#include <QtDBus/QDBusConnection>
-#include <QtDBus/QDBusReply>
+
 
 #define QL1(x)  QLatin1String(x)
 
@@ -194,20 +186,37 @@ void KWebPage::setWallet(KWebWallet* wallet)
 
 void KWebPage::downloadRequest(const QNetworkRequest &request)
 {
-    KUrl url (request.url());
-    const QString destUrl = KFileDialog::getSaveFileName(url.fileName(), QString(), view());
+    KUrl destUrl;
+    KUrl srcUrl (request.url());
+    int result = KIO::R_OVERWRITE;
 
-    if (destUrl.isEmpty())
-        return;
+    do {
+        destUrl = KFileDialog::getSaveFileName(srcUrl.fileName(), QString(), view());
 
-    KIO::Job *job = KIO::file_copy(url, KUrl(destUrl), -1, KIO::Overwrite);
-    QVariant attr = request.attribute(static_cast<QNetworkRequest::Attribute>(KDEPrivate::NetworkAccessManager::MetaData));
-    if (attr.isValid() && attr.type() == QVariant::Map)
-        job->setMetaData(KIO::MetaData(attr.toMap()));
+        if (destUrl.isLocalFile()) {
+            QFileInfo finfo (destUrl.toLocalFile());
+            if (finfo.exists()) {
+                QDateTime now = QDateTime::currentDateTime();
+                KIO::RenameDialog dlg (view(), i18n("Overwrite File?"), srcUrl, destUrl,
+                                       KIO::RenameDialog_Mode(KIO::M_OVERWRITE | KIO::M_SKIP),
+                                       -1, finfo.size(),
+                                       now.toTime_t(), finfo.created().toTime_t(),
+                                       now.toTime_t(), finfo.lastModified().toTime_t());
+                result = dlg.exec();
+            }
+        }
+    } while (result == KIO::R_CANCEL && destUrl.isValid());
 
-    job->addMetaData(QL1("MaxCacheSize"), QL1("0")); // Don't store in http cache.
-    job->addMetaData(QL1("cache"), QL1("cache")); // Use entry from cache if available.
-    job->uiDelegate()->setAutoErrorHandlingEnabled(true);
+    if (result == KIO::R_OVERWRITE) {
+        KIO::Job *job = KIO::file_copy(srcUrl, destUrl, -1, KIO::Overwrite);
+        QVariant attr = request.attribute(static_cast<QNetworkRequest::Attribute>(KDEPrivate::NetworkAccessManager::MetaData));
+        if (attr.isValid() && attr.type() == QVariant::Map)
+            job->setMetaData(KIO::MetaData(attr.toMap()));
+
+        job->addMetaData(QL1("MaxCacheSize"), QL1("0")); // Don't store in http cache.
+        job->addMetaData(QL1("cache"), QL1("cache")); // Use entry from cache if available.
+        job->uiDelegate()->setAutoErrorHandlingEnabled(true);
+    }
 }
 
 void KWebPage::downloadUrl(const KUrl &url)
@@ -282,9 +291,8 @@ bool KWebPage::acceptNavigationRequest(QWebFrame * frame, const QNetworkRequest 
     kDebug() << "url: " << request.url() << ", type: " << type << ", frame: " << frame;
 
 #if 0
-    if (d->wallet && (type == QWebPage::NavigationTypeFormSubmitted ||
-                      type == QWebPage::NavigationTypeFormResubmitted)) {
-      d->wallet->saveFormData(frame);
+    if (d->wallet && type == QWebPage::NavigationTypeFormSubmitted) {
+        d->wallet->saveFormData(frame);
     }
 #endif
     /*
