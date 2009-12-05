@@ -30,7 +30,9 @@
 #include "webpage.h"
 #include "websslinfo.h"
 #include "sslinfodialog_p.h"
+
 #include "ui/searchbar.h"
+#include "ui/passwordbar.h"
 #include "settings/webkitsettings.h"
 
 #include <KDE/KParts/GenericFactory>
@@ -162,7 +164,7 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
            :KParts::ReadOnlyPart(parent), d(new WebKitPart::WebKitPartPrivate())
 {
     KAboutData about = KAboutData("webkitpart", "webkitkde", ki18n("WebKit HTML Component"),
-                                  /*version*/ "0.2", /*ki18n("shortDescription")*/ KLocalizedString(),
+                                  /*version*/ "0.4", /*ki18n("shortDescription")*/ KLocalizedString(),
                                   KAboutData::License_LGPL,
                                   ki18n("(c) 2009 Dawit Alemayehu\n"
                                         "(c) 2008-2009 Urs Wolfer\n"
@@ -189,41 +191,35 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
     mainWidget->setObjectName("webkitpart");
     setWidget(mainWidget);
 
-    QVBoxLayout* lay = new QVBoxLayout(mainWidget);
-    lay->setMargin(0);
-    lay->setSpacing(0);
-
-    // Add the WebView...
+    // Create the WebView...
     d->webView = new WebView (this, mainWidget);
-    lay->addWidget(d->webView);
     connect(d->webView, SIGNAL(titleChanged(const QString &)),
             this, SIGNAL(setWindowCaption(const QString &)));
     connect(d->webView, SIGNAL(loadFinished(bool)),
-            this, SLOT(loadFinished(bool)));
+            this, SLOT(slotLoadFinished(bool)));
     connect(d->webView, SIGNAL(urlChanged(const QUrl &)),
-            this, SLOT(urlChanged(const QUrl &)));
+            this, SLOT(slotUrlChanged(const QUrl &)));
     connect(d->webView, SIGNAL(linkMiddleOrCtrlClicked(const KUrl &)),
             this, SLOT(slotLinkMiddleOrCtrlClicked(const KUrl &)));
 
-    // Add the search bar...
+    // Create the search bar...
     d->searchBar = new KDEPrivate::SearchBar;
-    lay->addWidget(d->searchBar);
     connect(d->searchBar, SIGNAL(searchTextChanged(const QString &, bool)),
-            this, SLOT(searchForText(const QString &, bool)));
+            this, SLOT(slotSearchForText(const QString &, bool)));
 
     d->webPage = qobject_cast<WebPage*>(d->webView->page());
     Q_ASSERT(d->webPage);
 
     connect(d->webPage, SIGNAL(loadStarted()),
-            this, SLOT(loadStarted()));
+            this, SLOT(slotLoadStarted()));
     connect(d->webPage, SIGNAL(loadAborted(const KUrl &)),
-            this, SLOT(loadAborted(const KUrl &)));
+            this, SLOT(slotLoadAborted(const KUrl &)));
     connect(d->webPage, SIGNAL(navigationRequestFinished(const KUrl &, QWebFrame *)),
-            this, SLOT(navigationRequestFinished(const KUrl &, QWebFrame *)));
+            this, SLOT(slotNavigationRequestFinished(const KUrl &, QWebFrame *)));
     connect(d->webPage, SIGNAL(linkHovered(const QString &, const QString &, const QString &)),
-            this, SLOT(linkHovered(const QString &, const QString &, const QString &)));
+            this, SLOT(slotLinkHovered(const QString &, const QString &, const QString &)));
     connect(d->webPage, SIGNAL(saveFrameStateRequested(QWebFrame *, QWebHistoryItem *)),
-            this, SLOT(saveFrameState(QWebFrame *, QWebHistoryItem *)));
+            this, SLOT(slotSaveFrameState(QWebFrame *, QWebHistoryItem *)));
     connect(d->webPage, SIGNAL(jsStatusBarMessage(const QString &)),
             this, SIGNAL(setStatusBarText(const QString &)));
     connect(d->webView, SIGNAL(linkShiftClicked(const KUrl &)),
@@ -240,6 +236,26 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
     connect(d->webView, SIGNAL(selectionClipboardUrlPasted(const KUrl &)),
             d->browserExtension, SIGNAL(openUrlRequest(const KUrl &)));
 
+    KDEPrivate::PasswordBar *passwordBar = new KDEPrivate::PasswordBar(mainWidget);
+
+    // Create the password bar...
+    if (d->webPage->wallet()) {
+        connect (d->webPage->wallet(), SIGNAL(saveFormDataRequested(const QString &, const QUrl &)),
+                 passwordBar, SLOT(onSaveFormData(const QString &, const QUrl &)));
+        connect(passwordBar, SIGNAL(saveFormDataAccepted(const QString &)),
+                d->webPage->wallet(), SLOT(acceptSaveFormDataRequest(const QString &)));
+        connect(passwordBar, SIGNAL(saveFormDataRejected(const QString &)),
+                d->webPage->wallet(), SLOT(rejectSaveFormDataRequest(const QString &)));
+    }
+
+
+    QVBoxLayout* lay = new QVBoxLayout(mainWidget);
+    lay->setMargin(0);
+    lay->setSpacing(0);
+    lay->addWidget(passwordBar);
+    lay->addWidget(d->webView);
+    lay->addWidget(d->searchBar);
+
     setXMLFile("webkitpart.rc");
     initAction();
     mainWidget->setFocusProxy(d->webView);
@@ -250,9 +266,90 @@ WebKitPart::~WebKitPart()
     delete d;
 }
 
+bool WebKitPart::openUrl(const KUrl &u)
+{
+    kDebug() << u;
+
+    // Ignore empty requests...
+    if (u.isEmpty())
+        return false;
+
+    // Do not update history when url is typed in since konqueror
+    // automatically does that itself.
+    d->updateHistory = false;
+
+    // Handle error conditions...
+    if (handleError(u, d->webView->page()->mainFrame())) {
+        closeUrl();
+        return true;
+    }
+
+    // Set the url...
+    setUrl(u);
+
+    if (u.url() == "about:blank") {
+        emit setWindowCaption (u.url());
+        d->webView->setUrl(u);
+    } else {
+        KParts::BrowserArguments bargs (browserExtension()->browserArguments());
+        KParts::OpenUrlArguments args (arguments());
+        KIO::MetaData metaData (args.metaData());
+
+        // Get the SSL information sent, if any...
+        if (metaData.contains(QL1("ssl_in_use"))) {
+            WebSslInfo sslinfo;
+            sslinfo.fromMetaData(metaData.toVariant());
+            sslinfo.setUrl(u);
+            d->webPage->setSslInfo(sslinfo);
+        }
+
+        // Check if this is a restore state request, i.e. a history navigation
+        // or session restore request. If it is, set the state information so
+        // that the page can be properly restored...
+        if (metaData.contains(QL1("webkitpart-restore-state"))) {
+            WebFrameState frameState;
+            frameState.url = u;
+            frameState.scrollPosX = args.xOffset();
+            frameState.scrollPosY = args.yOffset();
+
+            d->webPage->saveFrameState(QString(), frameState);
+
+            const int count = bargs.docState.count();
+            for (int i = 0; i < count; i += 4) {
+                frameState.url = bargs.docState.at(i+1);
+                frameState.scrollPosX = bargs.docState.at(i+2).toInt();
+                frameState.scrollPosY = bargs.docState.at(i+3).toInt();
+                d->webPage->saveFrameState(bargs.docState.at(i), frameState);
+            }
+        }
+
+        d->webView->loadUrl(u, args, bargs);
+    }
+
+    return true;
+}
+
+bool WebKitPart::closeUrl()
+{
+    d->webView->stop();
+    return true;
+}
+
 QWebView * WebKitPart::view()
 {
     return d->webView;
+}
+
+void WebKitPart::guiActivateEvent(KParts::GUIActivateEvent *event)
+{
+    Q_UNUSED(event);
+    // just overwrite, but do nothing for the moment
+}
+
+bool WebKitPart::openFile()
+{
+    // never reached
+    return false;
 }
 
 void WebKitPart::initAction()
@@ -305,9 +402,9 @@ void WebKitPart::initAction()
 
     action = new KAction(i18n("SSL"), this);
     actionCollection()->addAction("security", action);
-    connect(action, SIGNAL(triggered(bool)), this, SLOT(showSecurity()));
+    connect(action, SIGNAL(triggered(bool)), this, SLOT(slotShowSecurity()));
 
-    action = actionCollection()->addAction(KStandardAction::Find, "find", this, SLOT(showSearchBar()));
+    action = actionCollection()->addAction(KStandardAction::Find, "find", this, SLOT(slotShowSearchBar()));
     action->setWhatsThis(i18n("Find text<br /><br />"
                               "Shows a dialog that allows you to find text on the displayed page."));
 
@@ -317,93 +414,56 @@ void WebKitPart::initAction()
                                            d->searchBar, SLOT(findPrevious()));
 }
 
-void WebKitPart::guiActivateEvent(KParts::GUIActivateEvent *event)
+bool WebKitPart::handleError(const KUrl &u, QWebFrame *frame)
 {
-    Q_UNUSED(event);
-    // just overwrite, but do nothing for the moment
-}
+    if ( u.protocol() == "error" && u.hasSubUrl() ) {
+        /**
+         * The format of the error url is that two variables are passed in the query:
+         * error = int kio error code, errText = QString error text from kio
+         * and the URL where the error happened is passed as a sub URL.
+         */
+        KUrl::List urls = KUrl::split(u);
 
-bool WebKitPart::openUrl(const KUrl &u)
-{
-    kDebug() << u;
+        if ( urls.count() > 1 ) {
+            KUrl mainURL = urls.first();
+            int error = mainURL.queryItem( "error" ).toInt();
 
-    // Ignore empty requests...
-    if (u.isEmpty())
-        return false;
+            // error=0 isn't a valid error code, so 0 means it's missing from the URL
+            if ( error == 0 )
+                error = KIO::ERR_UNKNOWN;
 
-    // Do not update history when url is typed in since konqueror
-    // automatically does that itself.
-    d->updateHistory = false;
+            if (error == KIO::ERR_USER_CANCELED) {
+                setUrl(d->webView->url());
+                emit d->browserExtension->setLocationBarUrl(KUrl(d->webView->url()).prettyUrl());
+            } else {
+                const QString errorText = mainURL.queryItem( "errText" );
+                urls.pop_front();
+                KUrl reqUrl = KUrl::join( urls );
 
-    // Handle error conditions...
-    if (handleError(u, d->webView->page()->mainFrame())) {
-        closeUrl();
-        return true;
-    }
-
-    // Set the url...
-    setUrl(u);
-
-    if (u.url() == "about:blank") {
-        emit setWindowCaption (u.url());
-        d->webView->setUrl(u);
-    } else {
-        KParts::BrowserArguments bargs (browserExtension()->browserArguments());
-        KParts::OpenUrlArguments args (arguments());
-        KIO::MetaData metaData (args.metaData());
-
-        // Get the SSL information sent, if any...
-        if (metaData.contains(QL1("ssl_in_use"))) {
-            WebSslInfo sslinfo;
-            sslinfo.fromMetaData(metaData.toVariant());
-            sslinfo.setUrl(u);
-            d->webPage->setSslInfo(sslinfo);
-        }
-
-        // Check if this is a restore state request, i.e. a history navigation or
-        // session restore request. If it is, get and store the state information
-        // so the page can be properly restored...
-        if (metaData.contains(QL1("webkitpart-restore-state"))) {
-            WebFrameState frameState;
-            frameState.url = u;
-            frameState.scrollPosX = args.xOffset();
-            frameState.scrollPosY = args.yOffset();
-
-            d->webPage->saveFrameState(QString(), frameState);
-
-            const int count = bargs.docState.count();
-            for (int i = 0; i < count; i += 4) {
-                frameState.url = bargs.docState.at(i+1);
-                frameState.scrollPosX = bargs.docState.at(i+2).toInt();
-                frameState.scrollPosY = bargs.docState.at(i+3).toInt();
-                d->webPage->saveFrameState(bargs.docState.at(i), frameState);
+                const QString html = htmlError(error, errorText, reqUrl);
+                if (frame->parentFrame()) {
+                    frame->setHtml(html, reqUrl);
+                } else {
+                    emit d->browserExtension->setLocationBarUrl(reqUrl.prettyUrl());
+                    setUrl(reqUrl);
+                    frame->setHtml(html);
+                }
             }
+            return true;
         }
-
-        d->webView->loadUrl(u, args, bargs);
     }
 
-    return true;
-}
-
-bool WebKitPart::closeUrl()
-{
-    d->webView->stop();
-    return true;
-}
-
-bool WebKitPart::openFile()
-{
-    // never reached
     return false;
 }
 
-void WebKitPart::loadStarted()
+/*************** PRIVATE SLOTS ********************************/
+
+void WebKitPart::slotLoadStarted()
 {
     emit started(0);
 }
 
-void WebKitPart::loadFinished(bool ok)
+void WebKitPart::slotLoadFinished(bool ok)
 {
     d->updateHistory = true;
 
@@ -421,7 +481,7 @@ void WebKitPart::loadFinished(bool ok)
             // receives the title of the page so we manually invoke the slot as
             // a work around here for pages that do not contain it, such as
             // text documents...
-            urlChanged(d->webView->url());
+            slotUrlChanged(d->webView->url());
         }
 
         // TODO: Add check for sites exempt from automatic form filling...
@@ -462,7 +522,7 @@ void WebKitPart::loadFinished(bool ok)
 #endif
 }
 
-void WebKitPart::loadAborted(const KUrl & url)
+void WebKitPart::slotLoadAborted(const KUrl & url)
 {
     closeUrl();
     if (url.isValid())
@@ -471,7 +531,7 @@ void WebKitPart::loadAborted(const KUrl & url)
       setUrl(d->webView->url());
 }
 
-void  WebKitPart::navigationRequestFinished(const KUrl& url, QWebFrame *frame)
+void  WebKitPart::slotNavigationRequestFinished(const KUrl& url, QWebFrame *frame)
 {
     if (frame) {
 
@@ -488,15 +548,14 @@ void  WebKitPart::navigationRequestFinished(const KUrl& url, QWebFrame *frame)
     }
 }
 
-void WebKitPart::urlChanged(const QUrl& _url)
+void WebKitPart::slotUrlChanged(const QUrl& _url)
 {
     if (_url != QUrl("about:blank")) {
         setUrl(_url);
         emit d->browserExtension->setLocationBarUrl(KUrl(_url).prettyUrl());
     }
 }
-
-void WebKitPart::showSecurity()
+void WebKitPart::slotShowSecurity()
 {
     if (d->webPage->sslInfo().isValid()) {
         KSslInfoDialog *dlg = new KSslInfoDialog;
@@ -516,7 +575,7 @@ void WebKitPart::showSecurity()
     }
 }
 
-void WebKitPart::saveFrameState(QWebFrame *frame, QWebHistoryItem *item)
+void WebKitPart::slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item)
 {
     Q_UNUSED (item);
     if (!frame->parentFrame() && d->updateHistory) {
@@ -524,7 +583,7 @@ void WebKitPart::saveFrameState(QWebFrame *frame, QWebHistoryItem *item)
     }
 }
 
-void WebKitPart::linkHovered(const QString &link, const QString &title, const QString &content)
+void WebKitPart::slotLinkHovered(const QString &link, const QString &title, const QString &content)
 {
     Q_UNUSED(title);
     Q_UNUSED(content);
@@ -572,49 +631,7 @@ void WebKitPart::linkHovered(const QString &link, const QString &title, const QS
     emit setStatusBarText(message);
 }
 
-bool WebKitPart::handleError(const KUrl &u, QWebFrame *frame)
-{
-    if ( u.protocol() == "error" && u.hasSubUrl() ) {
-        /**
-         * The format of the error url is that two variables are passed in the query:
-         * error = int kio error code, errText = QString error text from kio
-         * and the URL where the error happened is passed as a sub URL.
-         */
-        KUrl::List urls = KUrl::split(u);
-
-        if ( urls.count() > 1 ) {
-            KUrl mainURL = urls.first();
-            int error = mainURL.queryItem( "error" ).toInt();
-
-            // error=0 isn't a valid error code, so 0 means it's missing from the URL
-            if ( error == 0 )
-                error = KIO::ERR_UNKNOWN;
-
-            if (error == KIO::ERR_USER_CANCELED) {
-                setUrl(d->webView->url());
-                emit d->browserExtension->setLocationBarUrl(KUrl(d->webView->url()).prettyUrl());
-            } else {
-                const QString errorText = mainURL.queryItem( "errText" );
-                urls.pop_front();
-                KUrl reqUrl = KUrl::join( urls );
-
-                const QString html = htmlError(error, errorText, reqUrl);
-                if (frame->parentFrame()) {
-                    frame->setHtml(html, reqUrl);
-                } else {
-                    emit d->browserExtension->setLocationBarUrl(reqUrl.prettyUrl());
-                    setUrl(reqUrl);
-                    frame->setHtml(html);
-                }
-            }
-            return true;
-        }
-    }
-
-    return false;
-}
-
-void WebKitPart::searchForText(const QString &text, bool backward)
+void WebKitPart::slotSearchForText(const QString &text, bool backward)
 {
     QWebPage::FindFlags flags;
 
@@ -627,7 +644,7 @@ void WebKitPart::searchForText(const QString &text, bool backward)
     d->searchBar->setFoundMatch(d->webView->page()->findText(text, flags));
 }
 
-void WebKitPart::showSearchBar()
+void WebKitPart::slotShowSearchBar()
 {
     const QString text = d->webView->selectedText();
 
@@ -645,8 +662,7 @@ void WebKitPart::slotLinkMiddleOrCtrlClicked(const KUrl& linkUrl)
     args.setActionRequestedByUser(true);
     args.metaData()["referrer"] = url().url();
 
-    KParts::BrowserArguments bargs;
-    emit browserExtension()->createNewWindow(linkUrl, args, bargs);
+    emit browserExtension()->createNewWindow(linkUrl, args);
 }
 
 #include "webkitpart.moc"

@@ -290,11 +290,10 @@ bool KWebPage::acceptNavigationRequest(QWebFrame * frame, const QNetworkRequest 
 {
     kDebug() << "url: " << request.url() << ", type: " << type << ", frame: " << frame;
 
-#if 0
     if (d->wallet && type == QWebPage::NavigationTypeFormSubmitted) {
         d->wallet->saveFormData(frame);
     }
-#endif
+
     /*
         If the navigation request is from the main frame, set the cross-domain
         meta-data value to the current url for proper integration with KCookieJar...

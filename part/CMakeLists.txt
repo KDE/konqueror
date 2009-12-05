@@ -25,13 +25,15 @@ set(kwebkit_LIB_SRCS
     webpage.cpp
     websslinfo.cpp
     networkaccessmanager.cpp
-    ui/searchbar.cpp
     settings/webkitsettings.cpp
     settings/khtml_filter.cpp
+    ui/searchbar.cpp
+    ui/passwordbar.cpp
 )
 
 kde4_add_ui_files(kwebkit_LIB_SRCS
     ui/searchbar.ui
+    ui/passwordbar.ui
 )
 
 kde4_add_library(kwebkit SHARED ${kwebkit_LIB_SRCS})

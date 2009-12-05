@@ -57,23 +57,23 @@ protected:
     bool handleError(const KUrl &, QWebFrame *frame);
 
 private Q_SLOTS:
-    void showSecurity();
-    void showSearchBar();
-    void loadStarted();
-    void loadFinished(bool);
-    void loadAborted(const KUrl &);
+    void slotShowSecurity();
+    void slotShowSearchBar();
+    void slotLoadStarted();
+    void slotLoadFinished(bool);
+    void slotLoadAborted(const KUrl &);
 
-    void navigationRequestFinished(const KUrl &, QWebFrame *);
-    void searchForText(const QString &text, bool backward);
-    void linkHovered(const QString &, const QString&, const QString &);
-    void saveFrameState(QWebFrame *frame, QWebHistoryItem *item);
+    void slotNavigationRequestFinished(const KUrl &, QWebFrame *);
+    void slotSearchForText(const QString &text, bool backward);
+    void slotLinkHovered(const QString &, const QString&, const QString &);
+    void slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item);
     void slotLinkMiddleOrCtrlClicked(const KUrl&);
 
-    void urlChanged(const QUrl &);
+    void slotUrlChanged(const QUrl &);
 
-  private:
+private:
     class WebKitPartPrivate;
-    WebKitPartPrivate* d;
+    WebKitPartPrivate * const d;
 };
 
 #endif // WEBKITPART_H
