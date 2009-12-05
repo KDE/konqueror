@@ -96,6 +96,7 @@ KWebWallet::WebFormList KWebWallet::KWebWalletPrivate::parseFormData(QWebFrame *
     KWebWallet::WebFormList list;
     const QString fileName = (fillform ? QL1S(":/resources/parseFormNames.js"):QL1S(":/resources/parseForms.js"));
     QFile file(fileName);
+
     if (file.open(QFile::ReadOnly)) {
         const QVariant r = frame->evaluateJavaScript(file.readAll());
         QListIterator<QVariant> formIt (r.toList());
