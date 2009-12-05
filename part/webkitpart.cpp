@@ -61,7 +61,7 @@
 #include <QWebHistory>
 
 
-#define QL1(x)    QLatin1String(x)
+#define QL1S(x)    QLatin1String(x)
 
 
 static QString htmlError (int code, const QString& text, const KUrl& reqUrl)
@@ -86,62 +86,64 @@ static QString htmlError (int code, const QString& text, const KUrl& reqUrl)
   if ( !isOpened )
     kWarning() << "Could not open error html template:" << filename;
 
-  QString html = QString( QL1( file.readAll() ) );
+  QString html = QString( QL1S( file.readAll() ) );
 
-  html.replace( QL1( "TITLE" ), i18n( "Error: %1 - %2", errorName, url ) );
-  html.replace( QL1( "DIRECTION" ), QApplication::isRightToLeft() ? "rtl" : "ltr" );
-  html.replace( QL1( "ICON_PATH" ), KUrl(KIconLoader::global()->iconPath("dialog-warning", -KIconLoader::SizeHuge)).url() );
+  html.replace( QL1S( "TITLE" ), i18n( "Error: %1", errorName ) );
+  html.replace( QL1S( "DIRECTION" ), QApplication::isRightToLeft() ? "rtl" : "ltr" );
+  html.replace( QL1S( "ICON_PATH" ), KUrl(KIconLoader::global()->iconPath("dialog-warning", -KIconLoader::SizeHuge)).url() );
 
-  QString doc = QL1( "<h1>" );
+  QString doc = QL1S( "<h1>" );
   doc += i18n( "The requested operation could not be completed" );
-  doc += QL1( "</h1><h2>" );
+  doc += QL1S( "</h1><h2>" );
   doc += errorName;
-  doc += QL1( "</h2>" );
+  doc += QL1S( "</h2>" );
 
   if ( !techName.isNull() ) {
-    doc += QL1( "<h2>" );
+    doc += QL1S( "<h2>" );
     doc += i18n( "Technical Reason: " );
     doc += techName;
-    doc += QL1( "</h2>" );
+    doc += QL1S( "</h2>" );
   }
 
-  doc += QL1( "<h3>" );
+  doc += QL1S( "<h3>" );
   doc += i18n( "Details of the Request:" );
-  doc += QL1( "</h3><ul><li>" );
+  doc += QL1S( "</h3><ul><li>" );
   doc += i18n( "URL: %1" ,  url );
-  doc += QL1( "</li><li>" );
+  doc += QL1S( "</li><li>" );
 
   if ( !protocol.isNull() ) {
     doc += i18n( "Protocol: %1", protocol );
-    doc += QL1( "</li><li>" );
+    doc += QL1S( "</li><li>" );
   }
 
   doc += i18n( "Date and Time: %1" ,  datetime );
-  doc += QL1( "</li><li>" );
+  doc += QL1S( "</li><li>" );
   doc += i18n( "Additional Information: %1" ,  text );
-  doc += QL1( "</li></ul><h3>" );
+  doc += QL1S( "</li></ul><h3>" );
   doc += i18n( "Description:" );
-  doc += QL1( "</h3><p>" );
+  doc += QL1S( "</h3><p>" );
   doc += description;
-  doc += QL1( "</p>" );
+  doc += QL1S( "</p>" );
 
   if ( causes.count() ) {
-    doc += QL1( "<h3>" );
+    doc += QL1S( "<h3>" );
     doc += i18n( "Possible Causes:" );
-    doc += QL1( "</h3><ul><li>" );
+    doc += QL1S( "</h3><ul><li>" );
     doc += causes.join( "</li><li>" );
-    doc += QL1( "</li></ul>" );
+    doc += QL1S( "</li></ul>" );
   }
 
   if ( solutions.count() ) {
-    doc += QL1( "<h3>" );
+    doc += QL1S( "<h3>" );
     doc += i18n( "Possible Solutions:" );
-    doc += QL1( "</h3><ul><li>" );
+    doc += QL1S( "</h3><ul><li>" );
     doc += solutions.join( "</li><li>" );
-    doc += QL1( "</li></ul>" );
+    doc += QL1S( "</li></ul>" );
   }
 
-  html.replace( QL1("TEXT"), doc );
+  html.replace( QL1S("TEXT"), doc );
+
+  kDebug() << html;
 
   return html;
 }
@@ -296,7 +298,7 @@ bool WebKitPart::openUrl(const KUrl &u)
         KIO::MetaData metaData (args.metaData());
 
         // Get the SSL information sent, if any...
-        if (metaData.contains(QL1("ssl_in_use"))) {
+        if (metaData.contains(QL1S("ssl_in_use"))) {
             WebSslInfo sslinfo;
             sslinfo.fromMetaData(metaData.toVariant());
             sslinfo.setUrl(u);
@@ -306,7 +308,7 @@ bool WebKitPart::openUrl(const KUrl &u)
         // Check if this is a restore state request, i.e. a history navigation
         // or session restore request. If it is, set the state information so
         // that the page can be properly restored...
-        if (metaData.contains(QL1("webkitpart-restore-state"))) {
+        if (metaData.contains(QL1S("webkitpart-restore-state"))) {
             WebFrameState frameState;
             frameState.url = u;
             frameState.scrollPosX = args.xOffset();
@@ -442,11 +444,11 @@ bool WebKitPart::handleError(const KUrl &u, QWebFrame *frame)
 
                 const QString html = htmlError(error, errorText, reqUrl);
                 if (frame->parentFrame()) {
-                    frame->setHtml(html, reqUrl);
+                    frame->setContent(html.toUtf8(), QString(), reqUrl);
                 } else {
                     emit d->browserExtension->setLocationBarUrl(reqUrl.prettyUrl());
                     setUrl(reqUrl);
-                    frame->setHtml(html);
+                    frame->setContent(html.toUtf8());
                 }
             }
             return true;
@@ -592,7 +594,7 @@ void WebKitPart::slotLinkHovered(const QString &link, const QString &title, cons
     QUrl linkUrl (link);
     const QString scheme = linkUrl.scheme();
 
-    if (QString::compare(scheme, QL1("mailto"), Qt::CaseInsensitive) == 0) {
+    if (QString::compare(scheme, QL1S("mailto"), Qt::CaseInsensitive) == 0) {
         message += i18n("Email: ");
 
         // Workaround: for QUrl's parsing deficiencies of "mailto:foo@bar.com".
@@ -606,24 +608,24 @@ void WebKitPart::slotLinkHovered(const QString &link, const QString &title, cons
             //kDebug() << "query: " << queryItem.first << queryItem.second;
             if (queryItem.first.contains(QChar('@')) && queryItem.second.isEmpty())
                 fields["to"] << queryItem.first;
-            if (QString::compare(queryItem.first, QL1("to"), Qt::CaseInsensitive) == 0)
+            if (QString::compare(queryItem.first, QL1S("to"), Qt::CaseInsensitive) == 0)
                 fields["to"] << queryItem.second;
-            if (QString::compare(queryItem.first, QL1("cc"), Qt::CaseInsensitive) == 0)
+            if (QString::compare(queryItem.first, QL1S("cc"), Qt::CaseInsensitive) == 0)
                 fields["cc"] << queryItem.second;
-            if (QString::compare(queryItem.first, QL1("bcc"), Qt::CaseInsensitive) == 0)
+            if (QString::compare(queryItem.first, QL1S("bcc"), Qt::CaseInsensitive) == 0)
                 fields["bcc"] << queryItem.second;
-            if (QString::compare(queryItem.first, QL1("subject"), Qt::CaseInsensitive) == 0)
+            if (QString::compare(queryItem.first, QL1S("subject"), Qt::CaseInsensitive) == 0)
                 fields["subject"] << queryItem.second;
         }
 
-        if (fields.contains(QL1("to")))
-            message += fields.value(QL1("to")).join(QL1(", "));
-        if (fields.contains(QL1("cc")))
-            message += QL1(" - CC: ") + fields.value(QL1("cc")).join(QL1(", "));
-        if (fields.contains(QL1("bcc")))
-            message += QL1(" - BCC: ") + fields.value(QL1("bcc")).join(QL1(", "));
-        if (fields.contains(QL1("subject")))
-            message += QL1(" - Subject: ") + fields.value(QL1("subject")).join(QL1(" "));
+        if (fields.contains(QL1S("to")))
+            message += fields.value(QL1S("to")).join(QL1S(", "));
+        if (fields.contains(QL1S("cc")))
+            message += QL1S(" - CC: ") + fields.value(QL1S("cc")).join(QL1S(", "));
+        if (fields.contains(QL1S("bcc")))
+            message += QL1S(" - BCC: ") + fields.value(QL1S("bcc")).join(QL1S(", "));
+        if (fields.contains(QL1S("subject")))
+            message += QL1S(" - Subject: ") + fields.value(QL1S("subject")).join(QL1S(" "));
     } else {
         message = link;
     }
