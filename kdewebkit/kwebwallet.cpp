@@ -369,7 +369,6 @@ void KWebWallet::fillWebForm(const KUrl &url, const KWebWallet::WebFormList &for
             if (formName.isEmpty())
                 formName = form.index;
 
-            kDebug() << "Filling out form:" << formName;
             QListIterator<WebForm::WebField> fieldIt (form.fields);
             while (fieldIt.hasNext()) {
                 const WebForm::WebField field = fieldIt.next();
@@ -379,7 +378,6 @@ void KWebWallet::fillWebForm(const KUrl &url, const KWebWallet::WebFormList &for
                                                      "document.forms[\"%1\"].elements[\"%2\"].value=\"%3\";"))
                                        .arg(formName).arg(field.first).arg(escapeValue(field.second));
                 frame->evaluateJavaScript(script);
-                kDebug() << "Executed script:" << script;
             }
         }
     }
