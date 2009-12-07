@@ -61,8 +61,8 @@
 #include <QWebHistory>
 
 
-#define QL1S(x)    QLatin1String(x)
-
+#define QL1S(x)  QLatin1String(x)
+#define QL1C(x)  QLatin1Char(x)
 
 static QString htmlError (int code, const QString& text, const KUrl& reqUrl)
 {
@@ -250,7 +250,6 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
                 d->webPage->wallet(), SLOT(rejectSaveFormDataRequest(const QString &)));
     }
 
-
     QVBoxLayout* lay = new QVBoxLayout(mainWidget);
     lay->setMargin(0);
     lay->setSpacing(0);
@@ -313,7 +312,6 @@ bool WebKitPart::openUrl(const KUrl &u)
             frameState.url = u;
             frameState.scrollPosX = args.xOffset();
             frameState.scrollPosY = args.yOffset();
-
             d->webPage->saveFrameState(QString(), frameState);
 
             const int count = bargs.docState.count();
@@ -444,11 +442,11 @@ bool WebKitPart::handleError(const KUrl &u, QWebFrame *frame)
 
                 const QString html = htmlError(error, errorText, reqUrl);
                 if (frame->parentFrame()) {
-                    frame->setContent(html.toUtf8(), QString(), reqUrl);
+                    frame->setHtml(html, reqUrl);
                 } else {
                     emit d->browserExtension->setLocationBarUrl(reqUrl.prettyUrl());
                     setUrl(reqUrl);
-                    frame->setContent(html.toUtf8());
+                    frame->setHtml(html);
                 }
             }
             return true;
@@ -486,8 +484,6 @@ void WebKitPart::slotLoadFinished(bool ok)
             slotUrlChanged(d->webView->url());
         }
 
-        // TODO: Add check for sites exempt from automatic form filling...
-        kDebug() << WebKitSettings::self()->isFormCompletionEnabled();
         if (WebKitSettings::self()->isFormCompletionEnabled() && d->webPage->wallet()) {
             d->webPage->wallet()->fillFormData(d->webPage->mainFrame());
         }
@@ -512,8 +508,7 @@ void WebKitPart::slotLoadFinished(bool ok)
       //kDebug() << "meta-key: " << it.key() << "meta-value: " << it.value();
       // HACK: QtWebKit does not parse the value of http-equiv property and
       // as such uses an empty key with a value when
-      if (it.key().isEmpty() &&
-          it.value().toLower().simplified().contains(QRegExp("[0-9];url"))) {
+      if (it.key().isEmpty() && it.value().contains(QRegExp("[0-9];url"))) {
         refresh = true;
         break;
       }
@@ -541,7 +536,7 @@ void  WebKitPart::slotNavigationRequestFinished(const KUrl& url, QWebFrame *fram
             return;
         }
 
-        if (!frame->parentFrame()) {
+        if (frame == d->webPage->mainFrame()) {
             if (d->webPage->sslInfo().isValid())
                 d->browserExtension->setPageSecurity(WebKitPart::WebKitPartPrivate::Encrypted);
             else
@@ -606,7 +601,7 @@ void WebKitPart::slotLinkHovered(const QString &link, const QString &title, cons
 
         Q_FOREACH (queryItem, linkUrl.queryItems()) {
             //kDebug() << "query: " << queryItem.first << queryItem.second;
-            if (queryItem.first.contains(QChar('@')) && queryItem.second.isEmpty())
+            if (queryItem.first.contains(QL1C('@')) && queryItem.second.isEmpty())
                 fields["to"] << queryItem.first;
             if (QString::compare(queryItem.first, QL1S("to"), Qt::CaseInsensitive) == 0)
                 fields["to"] << queryItem.second;
