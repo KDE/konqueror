@@ -94,7 +94,8 @@ void WebView::loadUrl(const KUrl &url, const KParts::OpenUrlArguments &args, con
 
     // Avoid reloading page when navigating back from an anchor or link
     // that points to some place within the page itself.
-    if (this->url().toString(QUrl::RemoveFragment) == url.url()) {
+    if (args.metaData().contains(QLatin1String("webkitpart-restore-state")) &&
+        this->url().hasFragment() && this->url().toString(QUrl::RemoveFragment) == url.url()) {
         emit loadFinished(true);
         return;
     }
