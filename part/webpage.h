@@ -41,8 +41,9 @@ struct WebFrameState
   QUrl url;
   int scrollPosX;
   int scrollPosY;
+  bool handled;
 
-  WebFrameState() : scrollPosX(0), scrollPosY(0) {}
+  WebFrameState() : scrollPosX(0), scrollPosY(0), handled(false) {}
 
   inline friend QDebug& operator<< (QDebug& stream, const WebFrameState &frameState) {
       stream << frameState.url << frameState.scrollPosX << frameState.scrollPosY;

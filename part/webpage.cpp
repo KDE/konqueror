@@ -55,8 +55,8 @@
 #include <QtUiTools/QUiLoader>
 #include <QtWebKit/QWebFrame>
 
-
-#define QL1(x)  QLatin1String(x)
+#define QL1S(x)  QLatin1String(x)
+#define QL1C(x)  QLatin1Char(x)
 
 typedef QPair<QString, QString> StringPair;
 
@@ -69,17 +69,17 @@ static QUrl sanitizeMailToUrl(const QUrl &url, QStringList& files) {
     if (url.hasQuery())
       sanitizedUrl = url;
     else
-      sanitizedUrl = QUrl(url.scheme() + QL1(":?") + url.path());
+      sanitizedUrl = QUrl(url.scheme() + QL1S(":?") + url.path());
 
     QListIterator<StringPair> it (sanitizedUrl.queryItems());
     sanitizedUrl.setEncodedQuery(QByteArray());    // clear out the query componenet
 
     while (it.hasNext()) {
         StringPair queryItem = it.next();
-        if (queryItem.first.contains(QChar('@')) && queryItem.second.isEmpty()) {
+        if (queryItem.first.contains(QL1C('@')) && queryItem.second.isEmpty()) {
             queryItem.second = queryItem.first;
             queryItem.first = "to";
-        } else if (QString::compare(queryItem.first, QL1("attach"), Qt::CaseInsensitive) == 0) {
+        } else if (QString::compare(queryItem.first, QL1S("attach"), Qt::CaseInsensitive) == 0) {
             files << queryItem.second;
             continue;
         }        
@@ -135,8 +135,8 @@ static bool domainSchemeMatch(const QUrl& u1, const QUrl& u2)
     if (u1.scheme() != u2.scheme())
         return false;
 
-    QStringList u1List = u1.host().split(QChar('.'), QString::SkipEmptyParts);
-    QStringList u2List = u2.host().split(QChar('.'), QString::SkipEmptyParts);
+    QStringList u1List = u1.host().split(QL1C('.'), QString::SkipEmptyParts);
+    QStringList u2List = u2.host().split(QL1C('.'), QString::SkipEmptyParts);
 
     if (qMin(u1List.count(), u2List.count()) < 2)
         return false;  // better safe than sorry...
@@ -155,11 +155,11 @@ static QString getFileNameForDownload(const QNetworkRequest &request, QNetworkRe
     QString fileName = KUrl(request.url()).fileName();
 
     if (reply && reply->hasRawHeader("Content-Disposition")) { // based on code from arora, downloadmanger.cpp
-        const QString value = QL1(reply->rawHeader("Content-Disposition"));
-        const int pos = value.indexOf(QL1("filename="));
+        const QString value = QL1S(reply->rawHeader("Content-Disposition"));
+        const int pos = value.indexOf(QL1S("filename="));
         if (pos != -1) {
             QString name = value.mid(pos + 9);
-            if (name.startsWith(QLatin1Char('"')) && name.endsWith(QLatin1Char('"')))
+            if (name.startsWith(QL1C('"')) && name.endsWith(QL1C('"')))
                 name = name.mid(1, name.size() - 2);
             fileName = name;
         }
@@ -311,13 +311,18 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
                 //if (d->part->url() == request.url())
                 inPageRequest = false;
 
-                // The following code does proper history navigation for
-                // websites that are composed of frames.
+                // The following code does proper history navigation for websites that are
+                // composed of frames.
                 if (frame != mainFrame() && d->frameStateContainer.contains(frame->frameName())) {
-                    WebFrameState frameState = d->frameStateContainer.value(frame->frameName());
-                    if (frameState.url != request.url()) {
+                    WebFrameState &frameState = d->frameStateContainer[frame->frameName()];
+                    if (!frameState.handled && !frameState.url.isEmpty() &&
+                        frameState.url.toString() != request.url().toString()) {
+                        const bool signalsBlocked = frame->blockSignals(true);
                         frame->setUrl(frameState.url);
-                        kDebug() << "Changing request from" << frame->frameName() << "to" << frameState.url;
+                        frame->blockSignals(signalsBlocked);
+                        frameState.handled = true;
+                        kDebug() << "Changing request for" << frame << "from"
+                                 << request.url() << "to" << frameState.url;
                         return false;
                     }
                 }
@@ -596,9 +601,10 @@ bool WebPage::checkLinkSecurity(const QNetworkRequest &req, NavigationType type)
 
 bool WebPage::checkFormData(const QNetworkRequest &req) const
 {
-    const QString scheme (req.url().scheme().toLower());
+    const QString scheme (req.url().scheme());
 
-    if (d->sslInfo.isValid() && scheme != "https" && scheme != "mailto" &&
+    if (d->sslInfo.isValid() &&
+        !scheme.compare(QL1S("https")) && !scheme.compare(QL1S("mailto")) &&
         (KMessageBox::warningContinueCancel(0,
                                            i18n("Warning: This is a secure form "
                                                 "but it is attempting to send "
@@ -614,7 +620,7 @@ bool WebPage::checkFormData(const QNetworkRequest &req) const
     }
 
 
-    if ((scheme == QL1("mailto")) &&
+    if (scheme.compare(QL1S("mailto")) == 0 &&
         (KMessageBox::warningContinueCancel(0, i18n("This site is attempting to "
                                                     "submit form data via email.\n"
                                                     "Do you want to continue?"),
@@ -630,7 +636,7 @@ bool WebPage::checkFormData(const QNetworkRequest &req) const
 
 bool WebPage::handleMailToUrl (const QUrl& url, NavigationType type) const
 {
-    if (QString::compare(url.scheme(), QL1("mailto"), Qt::CaseInsensitive) == 0) {
+    if (QString::compare(url.scheme(), QL1S("mailto"), Qt::CaseInsensitive) == 0) {
         QStringList files;
         QUrl mailtoUrl (sanitizeMailToUrl(url, files));
 
@@ -641,10 +647,12 @@ bool WebPage::handleMailToUrl (const QUrl& url, NavigationType type) const
                                                                                     "the following files to the email message ?</qt>"),
                                                                                files, i18n("Email Attachment Confirmation"),
                                                                                KGuiItem(i18n("&Allow attachments")),
-                                                                               KGuiItem(i18n("&Ignore attachments")), QL1("WarnEmailAttachment")) == KMessageBox::Continue) {
+                                                                               KGuiItem(i18n("&Ignore attachments")), QL1S("WarnEmailAttachment")) == KMessageBox::Continue) {
 
-                    Q_FOREACH(const QString& file, files) {
-                        mailtoUrl.addQueryItem(QL1("attach"), file); // Re-add the attachments...
+                   // Re-add the attachments...
+                    QListIterator<QString> filesIt (files);
+                    while (filesIt.hasNext()) {
+                        mailtoUrl.addQueryItem(QL1S("attach"), filesIt.next());
                     }
                 }
                 break;
