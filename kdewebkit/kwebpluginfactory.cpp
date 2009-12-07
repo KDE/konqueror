@@ -25,18 +25,21 @@
 #include "kwebpluginfactory.h"
 #include "kwebpage.h"
 
-#include <kparts/part.h>
 #include <kmimetypetrader.h>
 #include <kservicetypetrader.h>
 #include <kmimetype.h>
 #include <kdebug.h>
 
-#include <QWebPluginFactory>
-#include <QWebView>
-#include <QWebFrame>
-#include <QStringList>
-#include <QList>
-#include <QListIterator>
+#include <kparts/part.h>
+
+#include <QtCore/QListIterator>
+#include <QtCore/QStringList>
+#include <QtCore/QList>
+#include <QtCore/QTimer>
+
+#include <QtWebKit/QWebPluginFactory>
+#include <QtWebKit/QWebFrame>
+#include <QtWebKit/QWebView>
 
 #define QL1(x)  QLatin1String(x)
 
@@ -65,11 +68,11 @@ QObject* KWebPluginFactory::create(const QString& _mimeType, const QUrl& url, co
 
     /*
        HACK: This is a big time hack to determine the mime-type from the url
-       when no mime-type is provided. Since we do not want to make async calls,
-       (e.g. KIO::mimeType) here, we resort to the hack below to determine the
-       mime-type it from the request's filename.
+       when no mime-type is provided. Since we do not want to make async calls
+       through KIO::mimeType here, we resort to the hack below to determine
+       mime-type from the request's filename.
 
-       NOTE: This hack is not full proof and might not always work. See the
+       This hack is not full proof and might not always work. See the
        KMimeType::findByPath docs for details. It is however the best option
        to properly handle documents, images, and other resources embedded
        into html content with the <embed> tag when they lack the "type"
@@ -80,7 +83,7 @@ QObject* KWebPluginFactory::create(const QString& _mimeType, const QUrl& url, co
     if (mimeType.isEmpty()) {
        KMimeType::Ptr ptr = KMimeType::findByPath(url.path());
        mimeType = ptr->name();
-       kDebug() << "Changed mimetype from " << _mimeType << " to " << mimeType;
+       kDebug() << "Updated mimetype to" << mimeType;
     }
 
     KParts::ReadOnlyPart* part = 0;
@@ -96,12 +99,7 @@ QObject* KWebPluginFactory::create(const QString& _mimeType, const QUrl& url, co
             ++i;
         }
 
-        KWebPage *page = qobject_cast<KWebPage*>(parent());
-        QWidget *view = 0;
-        if (page)
-          view = page->view();
-
-        part = KMimeTypeTrader::createPartInstanceFromQuery<KParts::ReadOnlyPart>(mimeType, view, parent(), QString(), arguments);
+        part = KMimeTypeTrader::createPartInstanceFromQuery<KParts::ReadOnlyPart>(mimeType, 0L, parent(), QString(), arguments);
 
         if (part) {
             QMap<QString, QString> metaData = part->arguments().metaData();
@@ -112,24 +110,27 @@ QObject* KWebPluginFactory::create(const QString& _mimeType, const QUrl& url, co
             metaData.insert("main_frame_request", "TRUE");
             metaData.insert("ssl_activate_warnings", "TRUE");
 
-            const QString scheme = page->mainFrame()->url().scheme();
-            if (page && (QString::compare(scheme, QL1("https"), Qt::CaseInsensitive) == 0 ||
-                         QString::compare(scheme, QL1("webdavs"), Qt::CaseInsensitive) == 0))
-              metaData.insert("ssl_was_in_use", "TRUE");
-            else
-              metaData.insert("ssl_was_in_use", "FALSE");
+            KWebPage *page = qobject_cast<KWebPage *>(parent());
+
+            if (page) {
+                const QString scheme = page->mainFrame()->url().scheme();
+                if (page && (QString::compare(scheme, QL1("https"), Qt::CaseInsensitive) == 0 ||
+                             QString::compare(scheme, QL1("webdavs"), Qt::CaseInsensitive) == 0))
+                  metaData.insert("ssl_was_in_use", "TRUE");
+                else
+                  metaData.insert("ssl_was_in_use", "FALSE");
+            }
 
             KParts::OpenUrlArguments openUrlArgs = part->arguments();
             openUrlArgs.metaData() = metaData;
             openUrlArgs.setMimeType(mimeType);
             part->setArguments(openUrlArgs);
-
-            kDebug() << part->arguments().metaData();
             part->openUrl(url);
         }
     }
 
     kDebug() << "Asked for" << mimeType << "plugin, got" << part;
+
 
     if (part)
       return part->widget();
@@ -149,9 +150,9 @@ QList<KWebPluginFactory::Plugin> KWebPluginFactory::plugins() const
     for (int i = 0; i < services.size(); i++) {
         KService::Ptr s = services.at(i);
         /*
-          NOTE: We skip over the part that handles Adobe Flash (nspluginpart)
+          NOTE: We skip over the kde part that handles Adobe Flash (nspluginpart)
           here because it has issues when embeded into QtWebKit. Hence we defer
-          the handling of flash content to QtWebKit's own builtin flash viewer.
+          handling of flash content to QtWebKit's own built-in flash viewer.
         */
         if (s->hasMimeType(KMimeType::mimeType("application/x-shockwave-flash").data()))
           continue;
