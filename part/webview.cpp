@@ -92,14 +92,6 @@ void WebView::loadUrl(const KUrl &url, const KParts::OpenUrlArguments &args, con
       return;
     }
 
-    // Avoid reloading page when navigating back from an anchor or link
-    // that points to some place within the page itself.
-    if (args.metaData().contains(QLatin1String("webkitpart-restore-state")) &&
-        this->url().hasFragment() && this->url().toString(QUrl::RemoveFragment) == url.url()) {
-        emit loadFinished(true);
-        return;
-    }
-
     QNetworkRequest req;
     req.setUrl(url);
     req.setRawHeader("Referer", args.metaData().value("referrer").toUtf8());
@@ -128,12 +120,35 @@ void WebView::contextMenuEvent(QContextMenuEvent *e)
     flags |= KParts::BrowserExtension::ShowBookmark;
     flags |= KParts::BrowserExtension::ShowReload;
     KParts::BrowserExtension::ActionGroupMap mapAction;
+    QString mimeType (QLatin1String("text/html"));
 
     KUrl emitUrl;
     if (!d->result.linkUrl().isEmpty()) {
         flags |= KParts::BrowserExtension::IsLink;
         emitUrl = d->result.linkUrl();
         linkActionPopupMenu(mapAction);
+        if (emitUrl.isLocalFile()) {
+            mimeType = KMimeType::findByUrl(emitUrl, 0, true, false)->name();
+        } else {
+            const QString fname(emitUrl.fileName(KUrl::ObeyTrailingSlash));
+            if (!fname.isEmpty() && !emitUrl.hasRef() && emitUrl.query().isEmpty())
+            {
+                KMimeType::Ptr pmt = KMimeType::findByPath(fname, 0, true);
+
+                // Further check for mime types guessed from the extension which,
+                // on a web page, are more likely to be a script delivering content
+                // of undecidable type. If the mime type from the extension is one
+                // of these, don't use it.  Retain the original type 'text/html'.
+                if (pmt->name() != KMimeType::defaultMimeType() &&
+                    !pmt->is("application/x-perl") &&
+                    !pmt->is("application/x-perl-module") &&
+                    !pmt->is("application/x-php") &&
+                    !pmt->is("application/x-python-bytecode") &&
+                    !pmt->is("application/x-python") &&
+                    !pmt->is("application/x-shellscript"))
+                    mimeType = pmt->name();
+            }
+        }
     } else {
         flags |= KParts::BrowserExtension::ShowNavigationItems;
         emitUrl = d->part->url();
@@ -145,7 +160,7 @@ void WebView::contextMenuEvent(QContextMenuEvent *e)
 
     partActionPopupMenu(mapAction);
     KParts::OpenUrlArguments args;
-    args.setMimeType("text/html");
+    args.setMimeType(mimeType);
     emit d->part->browserExtension()->popupMenu(/*guiclient */
         e->globalPos(), emitUrl, 0, args, KParts::BrowserArguments(),
         flags, mapAction);
