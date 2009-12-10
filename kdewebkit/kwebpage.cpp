@@ -288,16 +288,17 @@ QString KWebPage::userAgentForUrl(const QUrl& _url) const
 
 bool KWebPage::acceptNavigationRequest(QWebFrame * frame, const QNetworkRequest & request, NavigationType type)
 {
-    kDebug() << "url: " << request.url() << ", type: " << type << ", frame: " << frame;
+    //kDebug() << "url:" << request.url() << ", type:" << type << ", frame:" << frame;
 
     if (frame && d->wallet && type == QWebPage::NavigationTypeFormSubmitted) {
         d->wallet->saveFormData(frame);
     }
 
     /*
-        If the navigation request is from the main frame, set the cross-domain
-        meta-data value to the current url for proper integration with KCookieJar...
-      */
+      If the navigation request is from the main frame, set the cross-domain
+      meta-data value to the current url for proper integration with KDE's
+      cookieJar...
+    */
     if (frame == mainFrame() && type != QWebPage::NavigationTypeReload) {
         setSessionMetaData(QL1("cross-domain"), request.url().toString());
     }
