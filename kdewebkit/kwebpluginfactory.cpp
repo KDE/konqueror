@@ -41,30 +41,36 @@
 #include <QtWebKit/QWebFrame>
 #include <QtWebKit/QWebView>
 
-#define QL1(x)  QLatin1String(x)
+#define QL1S(x)  QLatin1String(x)
 
-
-class KWebPluginFactory::KWebPluginFactoryPrivate
+static bool excludedMimeType(const QString &type)
 {
-public:
-    QStringList supportedMimeTypes;
-    QList<KWebPluginFactory::Plugin> plugins;
-};
+    // Let QtWebKit handle flash and java applets...
+    return (type == QL1S("application/x-shockwave-flash") ||
+            type == QL1S("application/futuresplash") ||
+            type.startsWith(QL1S("application/x-java")));
+}
+
 
 KWebPluginFactory::KWebPluginFactory(QObject *parent)
                   :QWebPluginFactory(parent),
-                   d(new KWebPluginFactory::KWebPluginFactoryPrivate)
+                   d(0)
 {
 }
 
 KWebPluginFactory::~KWebPluginFactory()
 {
-  delete d;
 }
 
 QObject* KWebPluginFactory::create(const QString& _mimeType, const QUrl& url, const QStringList& argumentNames, const QStringList& argumentValues) const
 {
-    QString mimeType (_mimeType.trimmed());
+    // Only attempt to find a KPart for the supported mime types...
+    QVariantList arguments;
+    const int count = argumentNames.count();
+
+    for (int i = 0; i < count; ++i) {
+        arguments << argumentNames.at(i) + "=\"" + argumentValues.at(i) + '\"';
+    }
 
     /*
        HACK: This is a big time hack to determine the mime-type from the url
@@ -80,6 +86,7 @@ QObject* KWebPluginFactory::create(const QString& _mimeType, const QUrl& url, co
 
        See the sample file "embed_tag_test.html" in the tests folder.
     */
+    QString mimeType (_mimeType.trimmed());
     if (mimeType.isEmpty()) {
        KMimeType::Ptr ptr = KMimeType::findByPath(url.path());
        mimeType = ptr->name();
@@ -87,97 +94,49 @@ QObject* KWebPluginFactory::create(const QString& _mimeType, const QUrl& url, co
     }
 
     KParts::ReadOnlyPart* part = 0;
-
-    // Only attempt to find a KPart for the supported mime types...
-    if (d->supportedMimeTypes.contains(mimeType)) {
-
-        QVariantList arguments;
-        const int count = argumentNames.count();
-
-        for(int i = 0; i < count; ++i) {
-            arguments << argumentNames.at(i) + "=\"" + argumentValues.at(i) + '\"';
-            ++i;
-        }
-
-        part = KMimeTypeTrader::createPartInstanceFromQuery<KParts::ReadOnlyPart>(mimeType, 0L, parent(), QString(), arguments);
-
-        if (part) {
-            QMap<QString, QString> metaData = part->arguments().metaData();
-            QString urlStr = url.toString(QUrl::RemovePath | QUrl::RemoveQuery | QUrl::RemoveFragment);
-            metaData.insert("PropagateHttpHeader", "true");
-            metaData.insert("referrer", urlStr);
-            metaData.insert("cross-domain", urlStr);
-            metaData.insert("main_frame_request", "TRUE");
-            metaData.insert("ssl_activate_warnings", "TRUE");
-
-            KWebPage *page = qobject_cast<KWebPage *>(parent());
-
-            if (page) {
-                const QString scheme = page->mainFrame()->url().scheme();
-                if (page && (QString::compare(scheme, QL1("https"), Qt::CaseInsensitive) == 0 ||
-                             QString::compare(scheme, QL1("webdavs"), Qt::CaseInsensitive) == 0))
-                  metaData.insert("ssl_was_in_use", "TRUE");
-                else
-                  metaData.insert("ssl_was_in_use", "FALSE");
-            }
-
-            KParts::OpenUrlArguments openUrlArgs = part->arguments();
-            openUrlArgs.metaData() = metaData;
-            openUrlArgs.setMimeType(mimeType);
-            part->setArguments(openUrlArgs);
-            part->openUrl(url);
-        }
-    }
+    // NOTE: To use the KDE nspluginviewer, comment out the if statement below.
+    // We are still relying on the QtWebKit's version, because url navigation
+    // from flash content does not work. However, the KDE version is out of
+    // process and as such will not take down the browser when it crashes.
+    if (!excludedMimeType(mimeType))
+        part = KMimeTypeTrader::createPartInstanceFromQuery<KParts::ReadOnlyPart>(mimeType, 0, parent(), QString(), arguments);
 
     kDebug() << "Asked for" << mimeType << "plugin, got" << part;
 
+    if (part) {
+        QMap<QString, QString> metaData = part->arguments().metaData();
+        QString urlStr = url.toString(QUrl::RemovePath | QUrl::RemoveQuery | QUrl::RemoveFragment);
+        metaData.insert("PropagateHttpHeader", "true");
+        metaData.insert("referrer", urlStr);
+        metaData.insert("cross-domain", urlStr);
+        metaData.insert("main_frame_request", "TRUE");
+        metaData.insert("ssl_activate_warnings", "TRUE");
 
-    if (part)
-      return part->widget();
+        KWebPage *page = qobject_cast<KWebPage *>(parent());
 
-    return part;
+        if (page) {
+            const QString scheme = page->mainFrame()->url().scheme();
+            if (page && (QString::compare(scheme, QL1S("https"), Qt::CaseInsensitive) == 0 ||
+                         QString::compare(scheme, QL1S("webdavs"), Qt::CaseInsensitive) == 0))
+              metaData.insert("ssl_was_in_use", "TRUE");
+            else
+              metaData.insert("ssl_was_in_use", "FALSE");
+        }
+
+        KParts::OpenUrlArguments openUrlArgs = part->arguments();
+        openUrlArgs.metaData() = metaData;
+        openUrlArgs.setMimeType(mimeType);
+        part->setArguments(openUrlArgs);
+        part->openUrl(url);
+
+        return part->widget();
+    }
+
+    return 0;
 }
 
 QList<KWebPluginFactory::Plugin> KWebPluginFactory::plugins() const
 {
-    if (!d->plugins.isEmpty())
-      return d->plugins;
-
     QList<Plugin> plugins;
-    QStringList supportedMimeTypes;
-    KService::List services = KServiceTypeTrader::self()->query("KParts/ReadOnlyPart");
-
-    for (int i = 0; i < services.size(); i++) {
-        KService::Ptr s = services.at(i);
-        /*
-          NOTE: We skip over the kde part that handles Adobe Flash (nspluginpart)
-          here because it has issues when embeded into QtWebKit. Hence we defer
-          handling of flash content to QtWebKit's own built-in flash viewer.
-        */
-        if (s->hasMimeType(KMimeType::mimeType("application/x-shockwave-flash").data()))
-          continue;
-        Plugin plugin;
-        plugin.name = s->desktopEntryName();
-        plugin.description = s->comment();
-        QList<MimeType> mimes;
-        QStringList servicetypes = s->serviceTypes();
-        for (int z = 0; z < servicetypes.size(); z++) {
-            MimeType mime;
-            mime.name = servicetypes.at(z);
-            KMimeType::Ptr kmime = KMimeType::mimeType(mime.name);
-            if (kmime) {
-                mime.fileExtensions = kmime->patterns().replaceInStrings("*.", "");
-            }
-            mimes.append(mime);
-            supportedMimeTypes << mime.name;
-        }
-        //kDebug() << "Adding plugin: " << s->desktopEntryName() << servicetypes;
-        plugins.append(plugin);
-    }
-
-    d->plugins = plugins;
-    d->supportedMimeTypes = supportedMimeTypes;
-
     return plugins;
 }
-
