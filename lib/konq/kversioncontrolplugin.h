@@ -79,6 +79,8 @@ class QAction;
  * -  Dolphin keeps only one instance of the plugin, which is instantiated shortly after
  *    starting Dolphin. Take care that the constructor does no expensive and time
  *    consuming operations.
+ *
+ * @since 4.4
  */
 class LIBKONQ_EXPORT KVersionControlPlugin : public QObject
 {
