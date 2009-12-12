@@ -31,7 +31,54 @@ class QAction;
  * @brief Base class for version control plugins.
  *
  * Enables the file manager to show the version state
- * of a versioned file.
+ * of a versioned file. To write a custom plugin, the following
+ * steps are required (in the example below it is assumed that a plugin for
+ * Subversion will be written):
+ *
+ * - Create a fileviewsvnplugin.desktop file with the following content:
+ *   <code>
+ *   [Desktop Entry]
+ *   Type=Service
+ *   Name=Subversion
+ *   X-KDE-ServiceTypes=FileViewVersionControlPlugin
+ *   MimeType=text/plain;
+ *   X-KDE-Library=fileviewsvnplugin
+ *   </code>
+ *
+ * - Create a class FileViewSvnPlugin derived from KVersionControlPlugin and
+ *   implement all abstract interfaces (fileviewsvnplugin.h, fileviewsvnplugin.cpp).
+ *
+ * - Take care that the constructor has the following signature:
+ *   <code>
+ *   FileViewSvnPlugin(QObject* parent, const QList<QVariant>& args);
+ *   </code>
+ *
+ * - Add the following lines at the top of fileviewsvnplugin.cpp:
+ *   <code>
+ *   #include <KPluginFactory>
+ *   #include <KPluginLoader>
+ *   K_PLUGIN_FACTORY(FileViewSvnPluginFactory, registerPlugin<FileViewSvnPlugin>();)
+ *   K_EXPORT_PLUGIN(FileViewSvnPluginFactory("fileviewsvnplugin"))
+ *   </code>
+ *
+ * - Add the following lines to your CMakeLists.txt file:
+ *   <code>
+ *   kde4_add_plugin(fileviewsvnplugin fileviewsvnplugin.cpp)
+ *   target_link_libraries(fileviewsvnplugin konq)
+ *   install(FILES fileviewsvnplugin.desktop DESTINATION ${SERVICES_INSTALL_DIR})
+ *   </code>
+ *
+ * General implementation notes:
+ *
+ *  - The implementations of beginRetrieval(), endRetrieval() and versionState()
+ *    can contain blocking operations, as Dolphin will execute
+ *    those methods in a separate thread. It is assured that
+ *    all other methods are invoked in a serialized way, so that it is not necessary for
+ *    the plugin to use any mutex.
+ *
+ * -  Dolphin keeps only one instance of the plugin, which is instantiated shortly after
+ *    starting Dolphin. Take care that the constructor does no expensive and time
+ *    consuming operations.
  */
 class LIBKONQ_EXPORT KVersionControlPlugin : public QObject
 {
