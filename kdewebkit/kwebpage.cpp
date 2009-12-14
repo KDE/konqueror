@@ -207,7 +207,7 @@ void KWebPage::downloadRequest(const QNetworkRequest &request)
         }
     } while (result == KIO::R_CANCEL && destUrl.isValid());
 
-    if (result == KIO::R_OVERWRITE) {
+    if (result == KIO::R_OVERWRITE && destUrl.isValid()) {
         KIO::Job *job = KIO::file_copy(srcUrl, destUrl, -1, KIO::Overwrite);
         QVariant attr = request.attribute(static_cast<QNetworkRequest::Attribute>(KDEPrivate::NetworkAccessManager::MetaData));
         if (attr.isValid() && attr.type() == QVariant::Map)
