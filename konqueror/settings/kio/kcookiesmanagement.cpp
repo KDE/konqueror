@@ -31,7 +31,6 @@
 #include <QtGui/QPushButton>
 #include <QtGui/QLabel>
 #include <QtCore/QTimer>
-#include <QtCore/QDate>
 #include <QtGui/QToolButton>
 #include <QtGui/QBoxLayout>
 #include <QtCore/QList>
@@ -46,6 +45,7 @@
 #include <klineedit.h>
 #include <kmessagebox.h>
 #include <kurl.h>
+#include <kdatetime.h>
 
 // Local
 #include "kcookiesmain.h"
@@ -335,13 +335,13 @@ bool KCookiesManagement::cookieDetails(CookieProp *cookie)
   if (c == fieldVal.end()) // empty list, do not crash
     return false;
   cookie->value = *c++;
-  unsigned tmp = (*c++).toUInt();
+  qint64 tmp = (*c++).toLongLong();
 
   if( tmp == 0 )
     cookie->expireDate = i18n("End of session");
   else
   {
-    QDateTime expDate;
+    KDateTime expDate;
     expDate.setTime_t(tmp);
     cookie->expireDate = KGlobal::locale()->formatDateTime(expDate);
   }
