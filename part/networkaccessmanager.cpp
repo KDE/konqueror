@@ -23,7 +23,7 @@
 #include "networkaccessmanager.h"
 #include "settings/webkitsettings.h"
 
-#include <kdebug.h>
+#include <KDE/KDebug>
 
 #include <QtCore/QTimer>
 #include <QtNetwork/QNetworkReply>
@@ -58,7 +58,9 @@ MyNetworkAccessManager::MyNetworkAccessManager(QObject *parent)
 
 QNetworkReply *MyNetworkAccessManager::createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData)
 {
-      if (WebKitSettings::self()->isAdFilterEnabled() && WebKitSettings::self()->isAdFiltered(req.url().toString())) {
+      if (op == QNetworkAccessManager::GetOperation &&
+          WebKitSettings::self()->isAdFilterEnabled() &&
+          WebKitSettings::self()->isAdFiltered(req.url().toString())) {
           kDebug() << "*** BLOCKED UNAUTHORIZED REQUEST => " << req.url();
           return new NullNetworkReply(req);
       }
