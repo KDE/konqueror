@@ -20,10 +20,11 @@
  *
  */
 
-#include "webkitpartfactory.h"
+#include "kwebkitpartfactory.h"
+
+#include "kwebkitpart.h"
 
 #include <KDE/KParts/GenericFactory>
-#include "webkitpart.h"
 
 WebKitFactory::WebKitFactory()
 {
@@ -39,7 +40,7 @@ KParts::Part *WebKitFactory::createPartObject(QWidget *parentWidget, QObject *pa
 {
     Q_UNUSED(className);
     Q_UNUSED(args);
-    return new WebKitPart(parentWidget, parent, QStringList());
+    return new KWebKitPart(parentWidget, parent, QStringList());
 }
 
 extern "C" KDE_EXPORT void *init_kwebkitpart()
@@ -47,4 +48,4 @@ extern "C" KDE_EXPORT void *init_kwebkitpart()
     return new WebKitFactory;
 }
 
-#include "webkitpartfactory.moc"
+#include "kwebkitpartfactory.moc"

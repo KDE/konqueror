@@ -23,9 +23,9 @@
  *
  */
 
-#include "webkitpart.h"
+#include "kwebkitpart.h"
 
-#include "webkitpart_ext.h"
+#include "kwebkitpart_ext.h"
 #include "webview.h"
 #include "webpage.h"
 #include "websslinfo.h"
@@ -148,11 +148,11 @@ static QString htmlError (int code, const QString& text, const KUrl& reqUrl)
   return html;
 }
 
-class WebKitPart::WebKitPartPrivate
+class KWebKitPart::KWebKitPartPrivate
 {
 public:
   enum PageSecurity { Unencrypted, Encrypted, Mixed };
-  WebKitPartPrivate() : updateHistory(true) {}
+  KWebKitPartPrivate() : updateHistory(true) {}
 
   bool updateHistory;
 
@@ -162,8 +162,8 @@ public:
   WebKitBrowserExtension *browserExtension;
 };
 
-WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList &/*args*/)
-           :KParts::ReadOnlyPart(parent), d(new WebKitPart::WebKitPartPrivate())
+KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent, const QStringList &/*args*/)
+           :KParts::ReadOnlyPart(parent), d(new KWebKitPart::KWebKitPartPrivate())
 {
     KAboutData about = KAboutData("webkitpart", "webkitkde", ki18n("WebKit HTML Component"),
                                   /*version*/ "0.4", /*ki18n("shortDescription")*/ KLocalizedString(),
@@ -262,12 +262,12 @@ WebKitPart::WebKitPart(QWidget *parentWidget, QObject *parent, const QStringList
     mainWidget->setFocusProxy(d->webView);
 }
 
-WebKitPart::~WebKitPart()
+KWebKitPart::~KWebKitPart()
 {
     delete d;
 }
 
-bool WebKitPart::openUrl(const KUrl &u)
+bool KWebKitPart::openUrl(const KUrl &u)
 {
     kDebug() << u;
 
@@ -329,30 +329,30 @@ bool WebKitPart::openUrl(const KUrl &u)
     return true;
 }
 
-bool WebKitPart::closeUrl()
+bool KWebKitPart::closeUrl()
 {
     d->webView->stop();
     return true;
 }
 
-QWebView * WebKitPart::view()
+QWebView * KWebKitPart::view()
 {
     return d->webView;
 }
 
-void WebKitPart::guiActivateEvent(KParts::GUIActivateEvent *event)
+void KWebKitPart::guiActivateEvent(KParts::GUIActivateEvent *event)
 {
     Q_UNUSED(event);
     // just overwrite, but do nothing for the moment
 }
 
-bool WebKitPart::openFile()
+bool KWebKitPart::openFile()
 {
     // never reached
     return false;
 }
 
-void WebKitPart::initAction()
+void KWebKitPart::initAction()
 {
     KAction *action = actionCollection()->addAction(KStandardAction::SaveAs, "saveDocument",
                                                     d->browserExtension, SLOT(slotSaveDocument()));
@@ -414,7 +414,7 @@ void WebKitPart::initAction()
                                            d->searchBar, SLOT(findPrevious()));
 }
 
-bool WebKitPart::handleError(const KUrl &u, QWebFrame *frame)
+bool KWebKitPart::handleError(const KUrl &u, QWebFrame *frame)
 {
     if ( u.protocol() == "error" && u.hasSubUrl() ) {
         /**
@@ -458,12 +458,12 @@ bool WebKitPart::handleError(const KUrl &u, QWebFrame *frame)
 
 /*************** PRIVATE SLOTS ********************************/
 
-void WebKitPart::slotLoadStarted()
+void KWebKitPart::slotLoadStarted()
 {
     emit started(0);
 }
 
-void WebKitPart::slotLoadFinished(bool ok)
+void KWebKitPart::slotLoadFinished(bool ok)
 {
     d->updateHistory = true;
 
@@ -519,7 +519,7 @@ void WebKitPart::slotLoadFinished(bool ok)
 #endif
 }
 
-void WebKitPart::slotLoadAborted(const KUrl & url)
+void KWebKitPart::slotLoadAborted(const KUrl & url)
 {
     closeUrl();
     if (url.isValid())
@@ -528,7 +528,7 @@ void WebKitPart::slotLoadAborted(const KUrl & url)
       setUrl(d->webView->url());
 }
 
-void  WebKitPart::slotNavigationRequestFinished(const KUrl& url, QWebFrame *frame)
+void  KWebKitPart::slotNavigationRequestFinished(const KUrl& url, QWebFrame *frame)
 {
     if (frame) {
 
@@ -538,21 +538,22 @@ void  WebKitPart::slotNavigationRequestFinished(const KUrl& url, QWebFrame *fram
 
         if (frame == d->webPage->mainFrame()) {
             if (d->webPage->sslInfo().isValid())
-                d->browserExtension->setPageSecurity(WebKitPart::WebKitPartPrivate::Encrypted);
+                d->browserExtension->setPageSecurity(KWebKitPart::KWebKitPartPrivate::Encrypted);
             else
-                d->browserExtension->setPageSecurity(WebKitPart::WebKitPartPrivate::Unencrypted);
+                d->browserExtension->setPageSecurity(KWebKitPart::KWebKitPartPrivate::Unencrypted);
         }
     }
 }
 
-void WebKitPart::slotUrlChanged(const QUrl& _url)
+void KWebKitPart::slotUrlChanged(const QUrl& _url)
 {
     if (_url != QUrl("about:blank")) {
         setUrl(_url);
         emit d->browserExtension->setLocationBarUrl(KUrl(_url).prettyUrl());
     }
 }
-void WebKitPart::slotShowSecurity()
+
+void KWebKitPart::slotShowSecurity()
 {
     if (d->webPage->sslInfo().isValid()) {
         KSslInfoDialog *dlg = new KSslInfoDialog;
@@ -572,7 +573,7 @@ void WebKitPart::slotShowSecurity()
     }
 }
 
-void WebKitPart::slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item)
+void KWebKitPart::slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item)
 {
     Q_UNUSED (item);
     if (!frame->parentFrame() && d->updateHistory) {
@@ -580,7 +581,7 @@ void WebKitPart::slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item)
     }
 }
 
-void WebKitPart::slotLinkHovered(const QString &link, const QString &title, const QString &content)
+void KWebKitPart::slotLinkHovered(const QString &link, const QString &title, const QString &content)
 {
     Q_UNUSED(title);
     Q_UNUSED(content);
@@ -628,7 +629,7 @@ void WebKitPart::slotLinkHovered(const QString &link, const QString &title, cons
     emit setStatusBarText(message);
 }
 
-void WebKitPart::slotSearchForText(const QString &text, bool backward)
+void KWebKitPart::slotSearchForText(const QString &text, bool backward)
 {
     QWebPage::FindFlags flags;
 
@@ -641,7 +642,7 @@ void WebKitPart::slotSearchForText(const QString &text, bool backward)
     d->searchBar->setFoundMatch(d->webView->page()->findText(text, flags));
 }
 
-void WebKitPart::slotShowSearchBar()
+void KWebKitPart::slotShowSearchBar()
 {
     const QString text = d->webView->selectedText();
 
@@ -653,7 +654,7 @@ void WebKitPart::slotShowSearchBar()
     d->searchBar->show();
 }
 
-void WebKitPart::slotLinkMiddleOrCtrlClicked(const KUrl& linkUrl)
+void KWebKitPart::slotLinkMiddleOrCtrlClicked(const KUrl& linkUrl)
 {
     KParts::OpenUrlArguments args;
     args.setActionRequestedByUser(true);
@@ -662,4 +663,4 @@ void WebKitPart::slotLinkMiddleOrCtrlClicked(const KUrl& linkUrl)
     emit browserExtension()->createNewWindow(linkUrl, args);
 }
 
-#include "webkitpart.moc"
+#include "kwebkitpart.moc"

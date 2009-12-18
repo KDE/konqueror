@@ -27,14 +27,14 @@
 
 class QWebView;
 class KUrl;
-class WebKitPart;
+class KWebKitPart;
 
 class WebKitBrowserExtension : public KParts::BrowserExtension
 {
     Q_OBJECT
 
 public:
-    WebKitBrowserExtension(WebKitPart *parent);
+    WebKitBrowserExtension(KWebKitPart *parent);
     ~WebKitBrowserExtension();
 
     virtual int xOffset();

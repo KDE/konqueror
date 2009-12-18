@@ -24,7 +24,7 @@
 #ifndef WEBKITPART_H
 #define WEBKITPART_H
 
-#include "webkitkde_export.h"
+#include "kwebkit_export.h"
 
 #include <KDE/KParts/ReadOnlyPart>
 
@@ -38,12 +38,12 @@ class QWebView;
 class QWebFrame;
 class QWebHistoryItem;
 
-class WEBKITKDE_EXPORT WebKitPart : public KParts::ReadOnlyPart
+class KWEBKIT_EXPORT KWebKitPart : public KParts::ReadOnlyPart
 {
     Q_OBJECT
 public:
-    explicit WebKitPart(QWidget *parentWidget = 0, QObject *parent = 0, const QStringList &/*args*/ = QStringList());
-    ~WebKitPart();
+    explicit KWebKitPart(QWidget *parentWidget = 0, QObject *parent = 0, const QStringList &/*args*/ = QStringList());
+    ~KWebKitPart();
 
     virtual bool openUrl(const KUrl &);
     virtual bool closeUrl();
@@ -72,8 +72,8 @@ private Q_SLOTS:
     void slotUrlChanged(const QUrl &);
 
 private:
-    class WebKitPartPrivate;
-    WebKitPartPrivate * const d;
+    class KWebKitPartPrivate;
+    KWebKitPartPrivate * const d;
 };
 
 #endif // WEBKITPART_H

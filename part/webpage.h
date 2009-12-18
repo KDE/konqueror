@@ -32,7 +32,7 @@
 
 class KUrl;
 class WebSslInfo;
-class WebKitPart;
+class KWebKitPart;
 class QVariant;
 class QWebFrame;
 
@@ -56,7 +56,7 @@ class WebPage : public KWebPage
 {
     Q_OBJECT
 public:
-    WebPage(WebKitPart *wpart, QWidget *parent);
+    WebPage(KWebKitPart *wpart, QWidget *parent);
     ~WebPage();
 
     /**

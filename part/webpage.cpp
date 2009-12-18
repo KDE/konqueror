@@ -24,7 +24,7 @@
 
 #include "webpage.h"
 
-#include "webkitpart.h"
+#include "kwebkitpart.h"
 #include "websslinfo.h"
 #include "webview.h"
 #include "sslinfodialog_p.h"
@@ -177,10 +177,10 @@ public:
     QHash<QString, WebFrameState> frameStateContainer;
     // Holds list of requests including those from children frames
     QMultiHash<QUrl, QWebFrame*> requestQueue;
-    QPointer<WebKitPart> part;
+    QPointer<KWebKitPart> part;
 };
 
-WebPage::WebPage(WebKitPart *part, QWidget *parent)
+WebPage::WebPage(KWebKitPart *part, QWidget *parent)
         :KWebPage(parent, (KWebPage::KPartsIntegration|KWebPage::KWalletIntegration)),
          d (new WebPagePrivate)
 {
@@ -394,11 +394,11 @@ QWebPage *WebPage::createWindow(WebWindowType type)
     d->part->browserExtension()->createNewWindow(KUrl("about:blank"), args, bargs,
                                                  KParts::WindowArgs(), &part);
 
-    WebKitPart *webKitPart = qobject_cast<WebKitPart*>(part);
+    KWebKitPart *webKitPart = qobject_cast<KWebKitPart*>(part);
 
     if (!webKitPart) {
         if (part)
-            kDebug() << "Got a non WebKitPart" << part->metaObject()->className();
+            kDebug() << "Got a non KWebKitPart" << part->metaObject()->className();
         else
             kDebug() << "part is null";
 

@@ -32,14 +32,14 @@
 #include <kdewebkit/kwebview.h>
 
 class KUrl;
-class WebKitPart;
+class KWebKitPart;
 class QWebHitTestResult;
 
 class WebView : public KWebView
 {
     Q_OBJECT
 public:
-    WebView(WebKitPart *part, QWidget *parent);
+    WebView(KWebKitPart *part, QWidget *parent);
     ~WebView();   
 
     /**

@@ -20,12 +20,12 @@
  *
  */
 
-#include "webkitpart_ext.h"
+#include "kwebkitpart_ext.h"
 
+#include "kwebkitpart.h"
 #include "webview.h"
 #include "webpage.h"
 #include "websslinfo.h"
-#include "webkitpart.h"
 #include "settings/webkitsettings.h"
 
 #include <KDE/KUriFilterData>
@@ -67,12 +67,12 @@ static QStringList getChildrenFrameState(const QWebFrame *frame)
 class WebKitBrowserExtension::WebKitBrowserExtensionPrivate
 {
  public:
-    QPointer<WebKitPart> part;
+    QPointer<KWebKitPart> part;
     QPointer<WebView> view;
 
 };
 
-WebKitBrowserExtension::WebKitBrowserExtension(WebKitPart *parent)
+WebKitBrowserExtension::WebKitBrowserExtension(KWebKitPart *parent)
                        :KParts::BrowserExtension(parent),
                         d (new WebKitBrowserExtensionPrivate)
 {
@@ -445,4 +445,4 @@ void WebKitBrowserExtension::slotViewFrameSource()
     }
 }
 
-#include "webkitpart_ext.moc"
+#include "kwebkitpart_ext.moc"

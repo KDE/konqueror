@@ -17,24 +17,24 @@
     Boston, MA 02110-1301, USA.
 */
 
-#ifndef WEBKITKDE_EXPORT_H
-#define WEBKITKDE_EXPORT_H
+#ifndef KWEBKIT_EXPORT_H
+#define KWEBKIT_EXPORT_H
 
 /* needed for KDE_EXPORT and KDE_IMPORT macros */
 #include <kdemacros.h>
 
-#ifndef WEBKITKDE_EXPORT
+#ifndef KWEBKIT_EXPORT
 # if defined(MAKE_WEBKITKDE_LIB)
    /* We are building this library */ 
-#  define WEBKITKDE_EXPORT KDE_EXPORT
+#  define KWEBKIT_EXPORT KDE_EXPORT
 # else
    /* We are using this library */ 
-#  define WEBKITKDE_EXPORT KDE_IMPORT
+#  define KWEBKIT_EXPORT KDE_IMPORT
 # endif
 #endif
 
-# ifndef WEBKITKDE_EXPORT_DEPRECATED
-#  define WEBKITKDE_EXPORT_DEPRECATED KDE_DEPRECATED WEBKITKDE_EXPORT
+# ifndef KWEBKIT_EXPORT_DEPRECATED
+#  define KWEBKIT_EXPORT_DEPRECATED KDE_DEPRECATED KWEBKIT_EXPORT
 # endif
 
 #endif

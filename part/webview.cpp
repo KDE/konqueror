@@ -25,7 +25,7 @@
 
 #include "webview.h"
 #include "webpage.h"
-#include "webkitpart.h"
+#include "kwebkitpart.h"
 
 #include <kio/global.h>
 #include <KDE/KParts/GenericFactory>
@@ -65,11 +65,11 @@ public:
 
     KActionCollection* actionCollection;
     QWebHitTestResult result;
-    QPointer<WebKitPart> part;
+    QPointer<KWebKitPart> part;
 };
 
 
-WebView::WebView(WebKitPart *wpart, QWidget *parent)
+WebView::WebView(KWebKitPart *wpart, QWidget *parent)
         :KWebView(parent, false), d(new WebViewPrivate())
 {
     d->part = wpart;
