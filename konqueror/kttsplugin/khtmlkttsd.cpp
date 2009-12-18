@@ -113,7 +113,7 @@ void KHTMLPluginKTTSD::slotReadOut()
 #ifdef HAVE_WEBKITPART
     else
     {
-        WebKitPart *webkitPart = dynamic_cast<WebKitPart *>(part);
+        KWebKitPart *webkitPart = dynamic_cast<KWebKitPart *>(part);
         if ( webkitPart )
         {
             if (supportsXhtml)
