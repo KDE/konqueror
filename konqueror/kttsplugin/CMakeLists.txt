@@ -5,12 +5,12 @@
 
 include(MacroOptionalDependPackage)
 
-MACRO_OPTIONAL_DEPEND_PACKAGE(WebKitPart "webkitpart")
-if(DEPEND_PACKAGE_WebKitPart)
-        macro_optional_find_package(WebKitPart QUIET)
-else(DEPEND_PACKAGE_WebKitPart)
+MACRO_OPTIONAL_DEPEND_PACKAGE(KWebKitPart "kwebkitpart")
+if(DEPEND_PACKAGE_KWebKitPart)
+        macro_optional_find_package(KWebKitPart QUIET)
+else(DEPEND_PACKAGE_KWebKitPart)
         set(WEBKITPART_FOUND FALSE)
-endif(DEPEND_PACKAGE_WebKitPart)
+endif(DEPEND_PACKAGE_KWebKitPart)
 
 if(WEBKITPART_FOUND)
     set(HAVE_WEBKITPART true)
