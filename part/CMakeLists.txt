@@ -48,6 +48,7 @@ set_target_properties(kwebkit PROPERTIES VERSION 1.0.0 SOVERSION 1)
 # The kpart factory library...
 kde4_add_plugin(kwebkitpart kwebkitpartfactory.cpp)
 target_link_libraries(kwebkitpart kwebkit ${KDE4_KPARTS_LIBS} ${QT_QTWEBKIT_LIBRARY})
+set_target_properties(kwebkitpart PROPERTIES VERSION 1.0.0 SOVERSION 1)
 
 install(FILES
         kwebkit_export.h
@@ -60,6 +61,6 @@ install(TARGETS kwebkitpart DESTINATION ${PLUGIN_INSTALL_DIR})
 
 install(FILES kwebkitpart.desktop DESTINATION ${SERVICES_INSTALL_DIR})
 
-install(FILES kwebkitpart.rc DESTINATION  ${DATA_INSTALL_DIR}/kwebkitpart)
+install(FILES kwebkitpart.rc DESTINATION  ${DATA_INSTALL_DIR}/webkitpart)
 
-install(FILES error.html DESTINATION ${DATA_INSTALL_DIR}/kwebkitpart)
+install(FILES error.html DESTINATION ${DATA_INSTALL_DIR}/webkitpart)
