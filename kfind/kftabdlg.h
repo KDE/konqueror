@@ -66,7 +66,8 @@ public:
 
 public Q_SLOTS:
   void setFocus();
-  void slotUpdateDateLabels(int value);
+  void slotUpdateDateLabelsForNumber(int value);
+  void slotUpdateDateLabelsForType(int index);
   void slotUpdateByteComboBox(int value);
 
 private Q_SLOTS:
@@ -101,6 +102,8 @@ private:
 
   QString date2String(const QDate &);
   QDate &string2Date(const QString &, QDate * );
+
+  void updateDateLabels(int type, int value);
 
   QWidget *pages[3];
 

@@ -172,17 +172,14 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     findCreated =  new QCheckBox(i18n("Find all files created or &modified:"), pages[1]);
     bg  = new QButtonGroup();
     rb[0] = new QRadioButton(i18n("&between"), pages[1] );
-    rb[1] = new QRadioButton(i18ncp("&during the previous day(s)", "&during the previous", "&during the previous", 1), pages[1] );
+    rb[1] = new QRadioButton(pages[1]); // text set in updateDateLabels
     andL = new QLabel(i18n("and"), pages[1]);
     andL->setObjectName( "and" );
     betweenType = new KComboBox( pages[1] );
     betweenType->setObjectName( "comboBetweenType" );
-    betweenType->addItem(i18ncp("use date ranges to search files by modified time", "minute", "minutes", 1));
-    betweenType->addItem(i18ncp("use date ranges to search files by modified time", "hour", "hours", 1));
-    betweenType->addItem(i18ncp("use date ranges to search files by modified time", "day", "days", 1));
-    betweenType->addItem(i18ncp("use date ranges to search files by modified time", "month", "months", 1));
-    betweenType->addItem(i18ncp("use date ranges to search files by modified time", "year", "years", 1));
+    betweenType->addItems(QVector<QString>(5).toList()); // texts set in updateDateLabels
     betweenType->setCurrentIndex(1);
+    updateDateLabels(1, 1);
 
     QDate dt = KGlobal::locale()->calendar()->addYears(QDate::currentDate(), -1);
 
@@ -280,7 +277,8 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     connect( findCreated, SIGNAL(toggled(bool)),  SLOT(fixLayout()) );
     connect( bg, SIGNAL(buttonClicked(QAbstractButton*)), this,  SLOT(fixLayout()) );
     connect( sizeBox, SIGNAL(activated(int)), this, SLOT(slotSizeBoxChanged(int)));
-    connect( timeBox, SIGNAL(valueChanged(int)), this, SLOT(slotUpdateDateLabels(int)));
+    connect( timeBox, SIGNAL(valueChanged(int)), this, SLOT(slotUpdateDateLabelsForNumber(int)));
+    connect( betweenType, SIGNAL(currentIndexChanged(int)), this, SLOT(slotUpdateDateLabelsForType(int)));
     connect( sizeEdit, SIGNAL(valueChanged(int)), this, SLOT(slotUpdateByteComboBox(int)));
 
 
@@ -863,9 +861,22 @@ bool KfindTabWidget::isSearchRecursive()
   return subdirsCb->isChecked();
 }
 
-void KfindTabWidget::slotUpdateDateLabels(int value)
+void KfindTabWidget::slotUpdateDateLabelsForNumber(int value)
 {
-  rb[1]->setText(i18ncp("&during the previous day(s)", "&during the previous", "&during the previous", value));
+  updateDateLabels(betweenType->currentIndex(), value);
+}
+
+void KfindTabWidget::slotUpdateDateLabelsForType(int index)
+{
+  updateDateLabels(index, timeBox->value());
+}
+
+void KfindTabWidget::updateDateLabels(int type, int value)
+{
+  QString typeKey(type == 0 ? 'i' : type == 1 ? 'h' : type == 2 ? 'd' : type == 3 ? 'm' : 'y');
+  rb[1]->setText(ki18ncp("during the previous minute(s)/hour(s)/...; "
+                         "dynamic context 'type': 'i' minutes, 'h' hours, 'd' days, 'm' months, 'y' years",
+                         "&during the previous", "&during the previous").subs(value).inContext("type", typeKey).toString());
   betweenType->setItemText(0, i18ncp("use date ranges to search files by modified time", "minute", "minutes", value));
   betweenType->setItemText(1, i18ncp("use date ranges to search files by modified time", "hour", "hours", value));
   betweenType->setItemText(2, i18ncp("use date ranges to search files by modified time", "day", "days", value));
