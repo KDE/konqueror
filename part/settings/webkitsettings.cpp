@@ -32,7 +32,6 @@
 #include <kstandarddirs.h>
 
 #include <QWebSettings>
-
 #include <QtGui/QFontDatabase>
 
 /**
@@ -318,8 +317,10 @@ void WebKitSettings::init()
   KConfigGroup cg ( &config, "Cookie Policy");
   d->m_useCookieJar = cg.readEntry("Cookies", false);
 
-  if (d->nonPasswordStorableSites)
+  if (d->nonPasswordStorableSites) {
     delete d->nonPasswordStorableSites;
+    d->nonPasswordStorableSites = 0;
+  }
 }
 
 void WebKitSettings::init( KConfig * config, bool reset )
