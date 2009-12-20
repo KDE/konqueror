@@ -321,17 +321,19 @@ void KWebWallet::saveFormData(QWebFrame *frame, bool recursive, bool ignorePassw
 
         if (!list.isEmpty()) {
             const QString key = QString::number(qHash(frame->url().toString() + frame->frameName()), 16);
-            d->pendingSaveRequests.insert(key, list);
+            if (!d->pendingSaveRequests.contains(key)) {
+                d->pendingSaveRequests.insert(key, list);
 
-            for (int i =0 ; i < list.count(); ++i) {
-                if (hasCachedFormData(list.at(i)))
-                    list.takeAt(i);
+                for (int i =0 ; i < list.count(); ++i) {
+                    if (hasCachedFormData(list.at(i)))
+                        list.takeAt(i);
+                }
+
+                if (list.isEmpty())
+                    saveFormDataToCache(key);
+                else
+                    emit saveFormDataRequested(key, frame->url());
             }
-
-            if (list.isEmpty())
-                saveFormDataToCache(key);
-            else
-                emit saveFormDataRequested(key, frame->url());
         }
     }
 }
