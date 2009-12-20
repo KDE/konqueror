@@ -143,8 +143,6 @@ static QString htmlError (int code, const QString& text, const KUrl& reqUrl)
 
   html.replace( QL1S("TEXT"), doc );
 
-  kDebug() << html;
-
   return html;
 }
 
@@ -163,10 +161,10 @@ public:
 };
 
 KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent, const QStringList &/*args*/)
-           :KParts::ReadOnlyPart(parent), d(new KWebKitPart::KWebKitPartPrivate())
+            :KParts::ReadOnlyPart(parent), d(new KWebKitPart::KWebKitPartPrivate())
 {
-    KAboutData about = KAboutData("webkitpart", "webkitkde", ki18n("WebKit HTML Component"),
-                                  /*version*/ "0.4", /*ki18n("shortDescription")*/ KLocalizedString(),
+    KAboutData about = KAboutData("kwebkitpart", "webkitkde", ki18n("WebKit HTML Component"),
+                                  /*version*/ "0.9", /*ki18n("shortDescription")*/ KLocalizedString(),
                                   KAboutData::License_LGPL,
                                   ki18n("(c) 2009 Dawit Alemayehu\n"
                                         "(c) 2008-2009 Urs Wolfer\n"
@@ -190,7 +188,7 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent, const QStringLi
                                                 .arg(KDE::versionRelease()));
 
     QWidget *mainWidget = new QWidget (parentWidget);
-    mainWidget->setObjectName("webkitpart");
+    mainWidget->setObjectName("kwebkitpart");
     setWidget(mainWidget);
 
     // Create the WebView...
@@ -257,7 +255,7 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent, const QStringLi
     lay->addWidget(d->webView);
     lay->addWidget(d->searchBar);
 
-    setXMLFile("webkitpart.rc");
+    setXMLFile("kwebkitpart.rc");
     initAction();
     mainWidget->setFocusProxy(d->webView);
 }

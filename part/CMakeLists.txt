@@ -36,19 +36,30 @@ kde4_add_ui_files(kwebkit_LIB_SRCS
                   ui/passwordbar.ui
 )
 
-# The kpart library...
+########################### kwebkit #############################
+
 kde4_add_library(kwebkit SHARED ${kwebkit_LIB_SRCS})
+
 if(${KDE_VERSION} VERSION_LESS 4.3.74)
     target_link_libraries(kwebkit ${KDE4_KPARTS_LIBS} ${KDEWEBKIT_LIBRARIES} ${QT_QTWEBKIT_LIBRARY} ${QT_QTUITOOLS_LIBRARY})
 else(${KDE_VERSION} VERSION_LESS 4.3.74)
     target_link_libraries(kwebkit ${KDE4_KPARTS_LIBS} ${KDE4_KDEWEBKIT_LIBS} ${QT_QTWEBKIT_LIBRARY} ${QT_QTUITOOLS_LIBRARY})
 endif(${KDE_VERSION} VERSION_LESS 4.3.74)
+
 set_target_properties(kwebkit PROPERTIES VERSION 1.0.0 SOVERSION 1)
 
-# The kpart factory library...
+########################### kwebkit #############################
+
+
+########################### kwebkitpart #############################
+
 kde4_add_plugin(kwebkitpart kwebkitpartfactory.cpp)
-target_link_libraries(kwebkitpart kwebkit ${KDE4_KPARTS_LIBS} ${QT_QTWEBKIT_LIBRARY})
+
+target_link_libraries(kwebkitpart ${KDE4_KPARTS_LIBS} ${QT_QTWEBKIT_LIBRARY} kwebkit)
+
 set_target_properties(kwebkitpart PROPERTIES VERSION 1.0.0 SOVERSION 1)
+
+########################### kwebkitpart #############################
 
 install(FILES
         kwebkit_export.h
@@ -61,6 +72,6 @@ install(TARGETS kwebkitpart DESTINATION ${PLUGIN_INSTALL_DIR})
 
 install(FILES kwebkitpart.desktop DESTINATION ${SERVICES_INSTALL_DIR})
 
-install(FILES kwebkitpart.rc DESTINATION  ${DATA_INSTALL_DIR}/webkitpart)
+install(FILES kwebkitpart.rc DESTINATION  ${DATA_INSTALL_DIR}/kwebkitpart)
 
-install(FILES error.html DESTINATION ${DATA_INSTALL_DIR}/webkitpart)
+install(FILES error.html DESTINATION ${DATA_INSTALL_DIR}/kwebkitpart)
