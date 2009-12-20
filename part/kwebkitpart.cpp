@@ -80,7 +80,7 @@ static QString htmlError (int code, const QString& text, const KUrl& reqUrl)
   datetime = KGlobal::locale()->formatDateTime( QDateTime::currentDateTime(),
                                                 KLocale::LongDate );
 
-  QString filename( KStandardDirs::locate( "data", "webkitpart/error.html" ) );
+  QString filename( KStandardDirs::locate( "data", "kwebkitpart/error.html" ) );
   QFile file( filename );
   bool isOpened = file.open( QIODevice::ReadOnly );
   if ( !isOpened )
@@ -278,10 +278,8 @@ bool KWebKitPart::openUrl(const KUrl &u)
     d->updateHistory = false;
 
     // Handle error conditions...
-    if (handleError(u, d->webView->page()->mainFrame())) {
-        closeUrl();
+    if (handleError(u, d->webView->page()->mainFrame()))
         return true;
-    }
 
     // Set the url...
     setUrl(u);
@@ -439,11 +437,10 @@ bool KWebKitPart::handleError(const KUrl &u, QWebFrame *frame)
                 KUrl reqUrl = KUrl::join( urls );
 
                 const QString html = htmlError(error, errorText, reqUrl);
-                if (frame->parentFrame()) {
+                if (frame->parentFrame()) {                    
                     frame->setHtml(html, reqUrl);
                 } else {
-                    emit d->browserExtension->setLocationBarUrl(reqUrl.prettyUrl());
-                    setUrl(reqUrl);
+                    slotUrlChanged(reqUrl);
                     frame->setHtml(html);
                 }
             }
@@ -543,11 +540,11 @@ void  KWebKitPart::slotNavigationRequestFinished(const KUrl& url, QWebFrame *fra
     }
 }
 
-void KWebKitPart::slotUrlChanged(const QUrl& _url)
+void KWebKitPart::slotUrlChanged(const QUrl& url)
 {
-    if (_url != QUrl("about:blank")) {
-        setUrl(_url);
-        emit d->browserExtension->setLocationBarUrl(KUrl(_url).prettyUrl());
+    if ( this->url() != url) {
+        setUrl(url);
+        emit d->browserExtension->setLocationBarUrl(KUrl(url).prettyUrl());
     }
 }
 
