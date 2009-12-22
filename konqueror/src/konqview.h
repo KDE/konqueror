@@ -341,6 +341,8 @@ public:
   void enablePopupMenu( bool b );
   bool isPopupMenuEnabled() const { return m_bPopupMenuEnabled; }
 
+  KFileItemList selectedItems() const { return m_selectedItems; }
+
   void reparseConfiguration();
 
   void disableScrolling();
@@ -471,6 +473,7 @@ private:
   QString m_sLocationBarURL;
   QString m_sTypedURL;
   KonqMainWindow::PageSecurity m_pageSecurity;
+  KFileItemList m_selectedItems;
 
   /**
    * The full history (back + current + forward)
