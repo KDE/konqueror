@@ -338,7 +338,7 @@ void WebView::WebViewPrivate::addSearchActions(QList<QAction *>& selectActions, 
     const char keywordDelimiter = cg.readEntry("KeywordDelimiter", ":").at(0).toLatin1();
 
     // search text
-    QString selectedText = simplifiedSelectedText(view->selectedText());
+    QString selectedText = selectedTextAsOneLine(view->selectedText());
     if (selectedText.isEmpty())
         return;
 
