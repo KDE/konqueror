@@ -218,6 +218,14 @@ void ModuleManager::sortGlobalEntries(QStringList& fileNames) const
             KConfigGroup configGroup(config, "Desktop Entry");
             const int weight = configGroup.readEntry("X-KDE-Weight", 0);
             sorter.insert(weight, fileName);
+
+            // While we have the config file open, fix migration issue between old and new history sidebar
+            if (configGroup.readEntry("X-KDE-TreeModule") == "History") {
+                // Old local file still there; remove it
+                const QString localFile = KStandardDirs::locateLocal("data", path);
+                QFile::rename(localFile, localFile + ".orig");
+                kDebug() << "Migration: moving" << localFile << "out of the way";
+            }
         }
     }
     fileNames = sorter.values();
