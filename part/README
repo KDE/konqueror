@@ -1,0 +1,13 @@
+Qt 4.4 with QtWebkKit support is required for building the WebKit
+KPart.
+
+You can switch between the different rendering engines:
+View -> View Mode -> {KHTML, WebKit} (Website needs to be opened)
+If WebKit does not show up in Konqueror, run 'kbuildsycoca4'.
+
+If you want to set the WebKit part as default, run:
+'keditfiletype text/html'
+and move "WebKit (webkitpart)" in the "Embedding" tab to the top.
+
+For more information about this project please see also:
+http://techbase.kde.org/Projects/WebKit
