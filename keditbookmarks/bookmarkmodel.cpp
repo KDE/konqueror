@@ -94,12 +94,8 @@ QVariant KBookmarkModel::data(const QModelIndex &index, int role) const
                 return QVariant( bk.fullText() );
             case 1:
                 return QVariant( bk.url().pathOrUrl() );
-            case 2: {
-                QDomNode subnode = bk.internalElement().namedItem("desc");
-                return (subnode.firstChild().isNull())
-                    ? QString()
-                    : subnode.firstChild().toText().data();
-            }
+            case 2:
+                return QVariant( bk.description() );
             case 3: { //Status column
                 QString text1; //FIXME favicon state
                 QString text2; //FIXME link state

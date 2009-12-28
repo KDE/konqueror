@@ -87,7 +87,7 @@ void BookmarkInfoWidget::showBookmark(const KBookmark &bk) {
     }
 
     m_comment_le->setReadOnly((bk.isSeparator()|| !bk.hasParent()) ? true : false );
-    QString commentText = EditCommand::getNodeText(bk, QStringList() << "desc");
+    QString commentText = bk.description();
     if (m_comment_le->text() != commentText) {
         const int cursorPosition = m_comment_le->cursorPosition();
         m_comment_le->setText(commentText);

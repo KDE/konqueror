@@ -267,8 +267,8 @@ void EditCommand::redo()
     }
     else if(mCol==2)
     {
-        mOldValue = getNodeText(bk, QStringList()<<"desc");
-        setNodeText(bk, QStringList()<<"desc", mNewValue);
+        mOldValue = bk.description();
+        bk.setDescription(mNewValue);
     }
     CurrentMgr::self()->model()->emitDataChanged(bk);
 }
@@ -295,7 +295,7 @@ void EditCommand::undo()
     }
     else if(mCol==2)
     {
-        setNodeText(bk, QStringList()<<"desc", mOldValue);
+        bk.setDescription(mOldValue);
     }
     CurrentMgr::self()->model()->emitDataChanged(bk);
 }
