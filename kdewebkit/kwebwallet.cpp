@@ -109,7 +109,7 @@ KWebWallet::WebFormList KWebWallet::KWebWalletPrivate::parseFormData(QWebFrame *
             QListIterator<QVariant> elementIt (map.value(QL1S("elements")).toList());
             while (elementIt.hasNext()) {
                 const QVariantMap elementMap = elementIt.next().toMap();
-                if (elementMap[QL1S("autocomplete")].toString() == QL1S("off") ||
+                if ((fillform && elementMap[QL1S("autocomplete")].toString() == QL1S("off")) ||
                     (ignorepasswd && elementMap.value(QL1S("type")).toString() == QL1S("password"))) {
                     continue;
                 } else {
