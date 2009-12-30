@@ -39,10 +39,12 @@
 #include <KDE/KSharedConfig>
 #include <KDE/KRun>
 #include <KDE/KDebug>
+#include <KDE/KPrintPreview>
 
 #include <QtCore/QPointer>
 #include <QtGui/QClipboard>
 #include <QtGui/QApplication>
+#include <QtGui/QPrinter>
 #include <QtGui/QPrintPreviewDialog>
 #include <QtWebKit/QWebFrame>
 
@@ -249,36 +251,23 @@ void WebKitBrowserExtension::reparseConfiguration()
 void WebKitBrowserExtension::zoomIn()
 {  
     if (d->view)
-#if QT_VERSION >= 0x040500
         d->view->setZoomFactor(d->view->zoomFactor() + 0.1);
-#else
-        d->view->setTextSizeMultiplier(d->view->textSizeMultiplier() + 0.1);
-#endif
 }
 
 void WebKitBrowserExtension::zoomOut()
 {
     if (d->view)
-#if QT_VERSION >= 0x040500
         d->view->setZoomFactor(d->view->zoomFactor() - 0.1);
-#else
-        d->view->setTextSizeMultiplier(d->view->textSizeMultiplier() - 0.1);
-#endif
 }
 
 void WebKitBrowserExtension::zoomNormal()
 {
     if (d->view)
-#if QT_VERSION >= 0x040500
         d->view->setZoomFactor(1);
-#else
-        d->view->setTextSizeMultiplier(1);
-#endif
 }
 
 void WebKitBrowserExtension::toogleZoomTextOnly()
 {
-#if QT_VERSION >= 0x040500
     if (d->view) {
         KConfigGroup cgHtml(KGlobal::config(), "HTML Settings");
         bool zoomTextOnly = cgHtml.readEntry( "ZoomTextOnly", false );
@@ -287,15 +276,12 @@ void WebKitBrowserExtension::toogleZoomTextOnly()
 
         d->view->settings()->setAttribute(QWebSettings::ZoomTextOnly, !zoomTextOnly);
     }
-#endif
 }
 
 void WebKitBrowserExtension::slotSelectAll()
 {
-#if QT_VERSION >= 0x040500
     if (d->view)
         d->view->page()->triggerAction(QWebPage::SelectAll);
-#endif
 }
 
 void WebKitBrowserExtension::slotFrameInWindow()

@@ -37,7 +37,13 @@ class QNetworkReply;
 class QWebView;
 class QWebFrame;
 class QWebHistoryItem;
+class KWebKitPartPrivate;
 
+/**
+ *
+ *
+ *
+ */
 class KWEBKIT_EXPORT KWebKitPart : public KParts::ReadOnlyPart
 {
     Q_OBJECT
@@ -46,7 +52,12 @@ public:
     ~KWebKitPart();
 
     virtual bool openUrl(const KUrl &);
+
     virtual bool closeUrl();
+
+    /**
+     * A reference to the widget used to display web pages.
+     */
     virtual QWebView *view();
 
 protected:
@@ -56,24 +67,9 @@ protected:
     void initAction();
     bool handleError(const KUrl &, QWebFrame *frame);
 
-private Q_SLOTS:
-    void slotShowSecurity();
-    void slotShowSearchBar();
-    void slotLoadStarted();
-    void slotLoadFinished(bool);
-    void slotLoadAborted(const KUrl &);
-
-    void slotNavigationRequestFinished(const KUrl &, QWebFrame *);
-    void slotSearchForText(const QString &text, bool backward);
-    void slotLinkHovered(const QString &, const QString&, const QString &);
-    void slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item);
-    void slotLinkMiddleOrCtrlClicked(const KUrl&);
-
-    void slotUrlChanged(const QUrl &);
-
 private:
-    class KWebKitPartPrivate;
-    KWebKitPartPrivate * const d;
+    friend class KWebKitPartPrivate;
+    KWebKitPartPrivate * const d;    
 };
 
 #endif // WEBKITPART_H
