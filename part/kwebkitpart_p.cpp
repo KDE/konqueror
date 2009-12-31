@@ -47,7 +47,7 @@
 #define QL1C(x) QLatin1Char(x)
 
 KWebKitPartPrivate::KWebKitPartPrivate(KWebKitPart *parent)
-                   :QObject(parent),
+                   :QObject(),
                     updateHistory(true),
                     q(parent)
 {

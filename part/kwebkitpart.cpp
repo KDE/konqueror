@@ -174,6 +174,7 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent, const QStringLi
 
 KWebKitPart::~KWebKitPart()
 {
+    delete d;
 }
 
 bool KWebKitPart::openUrl(const KUrl &u)
