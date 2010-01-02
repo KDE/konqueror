@@ -81,7 +81,8 @@ KonqMainWindow * KonqMisc::createSimpleWindow( const KUrl & url, const KParts::O
 
 KonqMainWindow * KonqMisc::createNewWindow( const KUrl &url, const KParts::OpenUrlArguments &args,
                                             const KParts::BrowserArguments& browserArgs,
-                                            bool forbidUseHTML, const QStringList &filesToSelect, bool tempFile, bool openUrl )
+                                            bool forbidUseHTML, const QStringList &filesToSelect,
+                                            bool tempFile, bool openUrl, bool show )
 {
     //kDebug() << "url=" << url;
     // For HTTP or html files, use the web browsing profile, otherwise use filemanager profile
@@ -93,13 +94,14 @@ KonqMainWindow * KonqMisc::createNewWindow( const KUrl &url, const KParts::OpenU
   QString profile = KStandardDirs::locate( "data", QLatin1String("konqueror/profiles/") + profileName );
   return createBrowserWindowFromProfile(profile, profileName,
 					url, args, browserArgs,
-					forbidUseHTML, filesToSelect, tempFile, openUrl );
+					forbidUseHTML, filesToSelect, tempFile, openUrl, show );
 }
 
 KonqMainWindow * KonqMisc::createBrowserWindowFromProfile( const QString& _path, const QString &filename, const KUrl &url,
                                                            const KParts::OpenUrlArguments &args,
                                                            const KParts::BrowserArguments& browserArgs,
-                                                           bool forbidUseHTML, const QStringList& filesToSelect, bool tempFile, bool openUrl )
+                                                           bool forbidUseHTML, const QStringList& filesToSelect,
+                                                           bool tempFile, bool openUrl, bool show )
 {
     QString path(_path);
     kDebug(1202) << "path=" << path << ", filename=" << filename << ", url=" << url;
@@ -153,7 +155,8 @@ KonqMainWindow * KonqMisc::createBrowserWindowFromProfile( const QString& _path,
   if ( forbidUseHTML )
       mainWindow->setShowHTML( false );
   mainWindow->setInitialFrameName( browserArgs.frameName );
-  mainWindow->show();
+  if ( show )
+      mainWindow->show();
   return mainWindow;
 }
 
