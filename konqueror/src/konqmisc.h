@@ -57,7 +57,8 @@ namespace KonqMisc // TODO split into something like KonqWindowFactory or KonqWi
                                       bool forbidUseHTML = false,
                                       const QStringList &filesToSelect = QStringList(),
                                       bool tempFile = false,
-                                      bool openUrl = true);
+                                      bool openUrl = true,
+                                      bool show = true);
 
     /**
      * Create a new window from the profile defined by @p filename and @p path.
@@ -73,7 +74,8 @@ namespace KonqMisc // TODO split into something like KonqWindowFactory or KonqWi
                                                      bool forbidUseHTML = false,
                                                      const QStringList& filesToSelect = QStringList(),
                                                      bool tempFile = false,
-                                                     bool openUrl = true);
+                                                     bool openUrl = true,
+                                                     bool show = true);
 
     /**
      * Creates a new window from the history of a view, copies the history
