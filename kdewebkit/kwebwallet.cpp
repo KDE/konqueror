@@ -128,56 +128,71 @@ KWebWallet::WebFormList KWebWallet::KWebWalletPrivate::parseFormData(QWebFrame *
 
 void KWebWallet::KWebWalletPrivate::fillDataFromCache(KWebWallet::WebFormList &formList)
 {
-    Q_ASSERT(wallet);
-    Q_ASSERT(q);
+    if (wallet) {
+        QMap<QString, QString> cachedValues;
+        QMutableListIterator <WebForm> formIt (formList);
 
-    QMap<QString, QString> cachedValues;
-    QMutableListIterator <WebForm> formIt (formList);
-
-    while (formIt.hasNext()) {
-        KWebWallet::WebForm &form = formIt.next();
-        if (wallet->readMap(walletKey(form), cachedValues) == 0) {
-            QMapIterator<QString, QString> valuesIt (cachedValues);
-            while (valuesIt.hasNext()) {
-                valuesIt.next();
-                form.fields << qMakePair(valuesIt.key(), valuesIt.value());
+        while (formIt.hasNext()) {
+            KWebWallet::WebForm &form = formIt.next();
+            const QString key (walletKey(form));
+            if (wallet->readMap(key, cachedValues) == 0) {
+                QMapIterator<QString, QString> valuesIt (cachedValues);
+                while (valuesIt.hasNext()) {
+                    valuesIt.next();
+                    form.fields << qMakePair(valuesIt.key(), valuesIt.value());
+                }
+            } else {
+                  kWarning() << "Unable to read form data for key:" << key;
             }
         }
+    } else {
+        kWarning() << "Unable to retreive form data from wallet";
     }
 }
 
 void KWebWallet::KWebWalletPrivate::saveDataToCache(const QString &key)
 {
-    Q_ASSERT(wallet);
-
-    int count = 0;
+    bool success = false;
     const QUrl url = pendingSaveRequests.value(key).first().url;
-    const KWebWallet::WebFormList list = pendingSaveRequests.take(key);
-    QListIterator<KWebWallet::WebForm> formIt (list);
 
-    while (formIt.hasNext()) {
-        QMap<QString, QString> values;
-        const KWebWallet::WebForm form = formIt.next();
-        QListIterator<KWebWallet::WebForm::WebField> fieldIt (form.fields);
-        while (fieldIt.hasNext()) {
-            const KWebWallet::WebForm::WebField field = fieldIt.next();
-            values.insert(field.first, field.second);
+    if (wallet) {
+        int count = 0;
+        const KWebWallet::WebFormList list = pendingSaveRequests.take(key);
+        QListIterator<KWebWallet::WebForm> formIt (list);
+
+        while (formIt.hasNext()) {
+            QMap<QString, QString> values;
+            const KWebWallet::WebForm form = formIt.next();
+            QListIterator<KWebWallet::WebForm::WebField> fieldIt (form.fields);
+            while (fieldIt.hasNext()) {
+                const KWebWallet::WebForm::WebField field = fieldIt.next();
+                values.insert(field.first, field.second);
+            }
+
+            if (wallet->writeMap(walletKey(form), values) == 0)
+                count++;
+            else
+                kWarning() << "Unable to write form data to wallet";
         }
 
-        if (wallet->writeMap(walletKey(form), values) == 0)
-            count++;
+        if (list.isEmpty())
+          success = true;
+    } else {
+        kWarning() << "NULL KWallet instance!";
     }
 
-    emit q->saveFormDataCompleted(url, (count == list.count()));
+    emit q->saveFormDataCompleted(url, success);
 }
 
 void KWebWallet::KWebWalletPrivate::removeDataFromCache(const WebFormList &formList)
 {
-    Q_ASSERT(wallet);
-
-    QListIterator<WebForm> formIt (formList);
-    while (formIt.hasNext()) {
-        wallet->removeEntry(walletKey(formIt.next()));
+    if (wallet) {
+        QListIterator<WebForm> formIt (formList);
+        while (formIt.hasNext()) {
+            wallet->removeEntry(walletKey(formIt.next()));
+        }
+    } else {
+        kWarning() << "NULL KWallet instance!";
     }
 }
 
@@ -188,7 +203,7 @@ void KWebWallet::KWebWalletPrivate::_k_openWalletDone(bool ok)
     if (ok &&
         (wallet->hasFolder(KWallet::Wallet::FormDataFolder()) ||
          wallet->createFolder(KWallet::Wallet::FormDataFolder())) &&
-        wallet->setFolder(KWallet::Wallet::FormDataFolder())) {
+         wallet->setFolder(KWallet::Wallet::FormDataFolder())) {
 
         // Do pending fill requests...
         if (!pendingFillRequests.isEmpty()) {
@@ -222,6 +237,7 @@ void KWebWallet::KWebWalletPrivate::_k_openWalletDone(bool ok)
         // Delete the wallet if opening the wallet failed or we were unable
         // to change to the folder we wanted to change to.
         delete wallet;
+        kWarning() << "Deleted KWallet instance because it cannot be set to use its form data folder!";
     }
 }
 
