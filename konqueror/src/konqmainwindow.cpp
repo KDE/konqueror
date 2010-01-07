@@ -2030,7 +2030,7 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
 
   // View-dependent GUI
 
-  KParts::MainWindow::setCaption( m_currentView->caption() );
+  KParts::MainWindow::setCaption( KStringHandler::csqueeze( m_currentView->caption(), 128 ) );
     // This line causes #170470 when removing the current tab, because QTabBar
     // emits currentChanged before calling tabRemoved, so KTabWidget gets confused.
     // I don't see a need for it anyway...
@@ -4331,9 +4331,9 @@ void KonqMainWindow::setCaption( const QString &caption )
     if (!caption.isEmpty() && m_currentView) {
         //kDebug() << caption;
 
-        // Keep an unmodified copy of the caption (before KComponentData::makeStdCaption is applied)
+        // Keep an unmodified copy of the caption (before squeezing and KComponentData::makeStdCaption are applied)
         m_currentView->setCaption(caption);
-        KParts::MainWindow::setCaption(m_currentView->caption());
+        KParts::MainWindow::setCaption(KStringHandler::csqueeze(m_currentView->caption(), 128));
     }
 }
 
