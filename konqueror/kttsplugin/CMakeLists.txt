@@ -12,7 +12,7 @@ else(DEPEND_PACKAGE_KdeWebKit)
         set(KDEWEBKIT_FOUND FALSE)
 endif(DEPEND_PACKAGE_KdeWebKit)
 
-MACRO_OPTIONAL_DEPEND_PACKAGE(WebKitPart "webkitpart")
+MACRO_OPTIONAL_DEPEND_PACKAGE(WebKitPart "kwebkitpart")
 if(DEPEND_PACKAGE_WebKitPart)
         macro_optional_find_package(WebKitPart QUIET)
 else(DEPEND_PACKAGE_WebKitPart)

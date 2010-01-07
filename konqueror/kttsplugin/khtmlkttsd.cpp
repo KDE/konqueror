@@ -36,7 +36,7 @@
 #include <ktoolinvocation.h>
 
 #ifdef HAVE_WEBKITKDE
-#include <webkitpart.h>
+#include <kwebkitpart.h>
 #include <QWebFrame>
 #include <QWebView>
 #endif
@@ -113,7 +113,7 @@ void KHTMLPluginKTTSD::slotReadOut()
 #ifdef HAVE_WEBKITKDE
     else
     {
-        WebKitPart *webkitPart = dynamic_cast<WebKitPart *>(part);
+        KWebKitPart *webkitPart = dynamic_cast<KWebKitPart *>(part);
         if ( webkitPart )
         {
             if (supportsXhtml)
