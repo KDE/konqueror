@@ -30,6 +30,16 @@ class KBookmarkModel : public QAbstractItemModel
 {
     Q_OBJECT
 
+    enum ColumnIds
+    {
+        NameColumnId = 0,
+        UrlColumnId = 1,
+        CommentColumnId = 2,
+        StatusColumnId = 3,
+        LastColumnId = 3,
+        NoOfColumnIds = LastColumnId+1
+    };
+
 public:
     // Those keditbookmarks classes need to access beginInsertRows etc.
     friend class KBookmarkModelInsertSentry;
