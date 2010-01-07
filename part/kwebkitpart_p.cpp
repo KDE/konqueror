@@ -137,9 +137,8 @@ void KWebKitPartPrivate::slotLoadFinished(bool ok)
 
         if (webView->title().trimmed().isEmpty()) {
             // If the document title is empty, then set it to the current url
-            // squeezed at the center...
             const QString caption = webView->url().toString((QUrl::RemoveQuery|QUrl::RemoveFragment));
-            emit q->setWindowCaption(KStringHandler::csqueeze(caption));
+            emit q->setWindowCaption(caption);
 
             // The urlChanged signal is emitted if and only if the main frame
             // receives the title of the page so we manually invoke the slot as
