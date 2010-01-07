@@ -18,6 +18,9 @@
     Boston, MA 02110-1301, USA.
 */
 
+#ifndef MODULE_MANAGER_H
+#define MODULE_MANAGER_H
+
 #include <QStringList>
 #include <kservice.h>
 class KConfigGroup;
@@ -74,3 +77,5 @@ private:
     KConfigGroup *m_config; // owned by SidebarWidget
     QString m_localPath; // local path
 };
+
+#endif
