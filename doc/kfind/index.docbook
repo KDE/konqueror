@@ -26,8 +26,8 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2004-04-11</date>
-<releaseinfo>1.20.01</releaseinfo>
+<date>2009-12-18</date>
+<releaseinfo>&kde; 4.4</releaseinfo>
 
 <abstract>
 <para>
@@ -60,8 +60,11 @@ computer, or for searching for files that match a pattern. An example of
 this could include searching for files of a particular type or with certain
 letters in the filename.
 
-You can load this utility by clicking on <guimenuitem>Find Files</guimenuitem>. This will
-launch &kfind;.
+You can load this utility in &dolphin; and &konqueror; (in file manager mode) 
+by selecting <menuchoice><shortcut><keycombo action="simul">&Ctrl;
+<keycap>F</keycap></keycombo></shortcut><guimenu>Tools</guimenu>
+<guimenuitem>Find File</guimenuitem></menuchoice> from the menu. 
+If you want to use &kfind; as a standalone search tool, launch it by &krunner;.
 </para>
 
 </sect1>
@@ -76,17 +79,27 @@ launch &kfind;.
 <para>
 When starting &kfind;, you will see a quite simple window. Type in the
 name of the file you are searching in the text box labeled
-<guilabel>Named:</guilabel>. Choose a folder where you want to search
+<guilabel>Named:</guilabel>. You can use wildcard matching and 
+a semicolon (<quote>;</quote>) for separating multiple names.</para>
+<para>Choose a folder where you want to search
 by typing it in the field <guilabel>Look in:</guilabel>
 or by clicking <guibutton>Browse...</guibutton> and press
-<keycap>Enter</keycap> or click <guibutton>Find</guibutton>. If
-<guilabel>Include subfolders</guilabel> is checked all
-subfolders starting from your chosen folder will be searched
-too. The results will be displayed in the box below.
-</para>
-
+&Enter; or click the <guibutton>Find</guibutton>. 
+Use the <guibutton>Stop</guibutton> button to cancel a search.
+A search result can be saved in &HTML; format or as plain text with the
+<guibutton>Save As...</guibutton> button.</para>
 <para>
-You can use the following wildcards:
+If <guilabel>Include subfolders</guilabel> is checked all
+subfolders starting from your chosen folder will be searched
+too. If you enable <guilabel>Case sensitive</guilabel>, &kfind; will
+only find files with the exact case matching names.
+Enable the option <guilabel>Show hidden files</guilabel> to include
+them in your search.
+Selecting <guilabel>Use files index</guilabel> lets you use the 
+files' index created by the <quote>locate</quote> package 
+to speed-up the search.</para>
+<para>
+You can use the following wildcards for file or folder names:
 </para>
 
 <variablelist>
@@ -119,10 +132,25 @@ term as you want, it will find exactly that number of characters.
 </listitem>
 </varlistentry>
 
+<varlistentry>
+<term>The Character Set <quote>[...]</quote></term>
+<listitem>
+<para>
+This matches any of the characters between the braces.
+</para>
+</listitem>
+</varlistentry>
+
 </variablelist>
 
 <para>
 Of course you can combine those two wildcard symbols in a search term.
+</para>
+
+<para>
+The results of your search will be displayed in the box below. A click with the
+&RMB; on a selection in this box opens a context menu with a lot of
+action for the selected files or folders.
 </para>
 
 </sect1>
@@ -154,7 +182,7 @@ contain. Note: If you do this in a large folder or checked
 <para>This option will <emphasis>not</emphasis> work for all files listed 
 under <guilabel>File type</guilabel>. Only the following file types
 are supported:
-
+<!--has to be checked !!!-->
 <itemizedlist>
 <listitem><para>Text files, &eg; source code and <filename>README</filename> files</para></listitem>
 <listitem><para>&kword; &gt;= 1.2</para></listitem>
@@ -176,7 +204,7 @@ are supported:
 <listitem>
 <para>
 If you enable this option, &kfind; will
-only find files with the exact case matching, &eg;
+only find text in files with the exact case matching, &eg;
 <userinput>MARC</userinput> will only match
 <quote>MARC</quote>, not <quote>Marc</quote>.
 </para>
@@ -186,12 +214,12 @@ only find files with the exact case matching, &eg;
 <varlistentry>
 <term><guilabel>Regular expression</guilabel></term>
 <listitem><para>If you have installed the &kregexpeditor; tool from
-the kdeutils package, you will have this additional option.  Enabling
+playground/utils on the &kde; svn server, you will have this additional option.  Enabling
 it will allow you to search for a <firstterm>regexp</firstterm> or
 regular expression.  A regexp is a way to specify conditions for your
 search, and they can be very complex, and equally they can be very
 powerful.  If you are unfamiliar with regular expressions, you can
-choose <guilabel>Edit Regular Expression</guilabel> to open
+choose <guibutton>Edit</guibutton> button to open
 &kregexpeditor;.  This tool allows you to construct your set of
 conditions graphically, and then generates the expression for
 you.</para>
@@ -201,9 +229,23 @@ many &kde; applications other than &kfind;.  You can find more
 information from within its own help file.</para>
 </listitem>
 </varlistentry>
+<varlistentry>
+<term><guilabel>Include binary files</guilabel></term>
+<listitem><para>This lets you search in any type of file, even those that 
+usually do not contain text (for example program files and images).</para>
+</listitem>
+</varlistentry>
 
-<!-- TODO: "Search metainfo sections" -->
+<!-- TODO: "Search metainfo sections" 
+Search within files' specific comments/metainfo<br />These are some "
+"examples:<br /><ul><li><b>Audio files (mp3...)</b> Search in id3 tag for a "
+"title, an album</li><li><b>Images (png...)</b> Search images with a special "
+"resolution, comment...</li></ul></qt>"
 
+"<qt>If specified, search only in this field<br /><ul><li><b>Audio files "
+"(mp3...)</b> This can be Title, Album...</li><li><b>Images (png...)</b> "
+"Search only in Resolution, Bitdepth...</li></ul></qt>"
+-->
 </variablelist>
 
 </sect1>
@@ -238,7 +280,7 @@ big as the size you entered in the following box.
 </varlistentry>
 
 <varlistentry>
-<term><guilabel>Files owned by user, Files owned by group</guilabel></term>
+<term><guilabel>Files owned by user</guilabel>, <guilabel>Files owned by group</guilabel></term>
 <listitem>
 <para>Here you can specify user and group names.
 </para>
