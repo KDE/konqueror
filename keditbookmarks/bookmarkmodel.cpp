@@ -82,7 +82,7 @@ QVariant KBookmarkModel::data(const QModelIndex &index, int role) const
         const KBookmark bk = bookmarkForIndex(index);
         if(bk.address().isEmpty())
         {
-            if(index.column() == 0)
+            if(index.column() == NameColumnId)
                 return QVariant( i18n("Bookmarks") );
             else
                 return QVariant();
@@ -90,13 +90,13 @@ QVariant KBookmarkModel::data(const QModelIndex &index, int role) const
 
         switch( index.column() )
         {
-            case 0:
+            case NameColumnId:
                 return QVariant( bk.fullText() );
-            case 1:
+            case UrlColumnId:
                 return QVariant( bk.url().pathOrUrl() );
-            case 2:
+            case CommentColumnId:
                 return QVariant( bk.description() );
-            case 3: { //Status column
+            case StatusColumnId: {
                 QString text1; //FIXME favicon state
                 QString text2; //FIXME link state
                 if(text1.isEmpty() || text2.isEmpty())
@@ -110,7 +110,7 @@ QVariant KBookmarkModel::data(const QModelIndex &index, int role) const
     }
 
     //Icon
-    if(index.isValid() && role == Qt::DecorationRole && index.column() == 0)
+    if(index.isValid() && role == Qt::DecorationRole && index.column() == NameColumnId)
     {
         KBookmark bk = bookmarkForIndex(index);
         if(bk.address().isEmpty())
@@ -126,26 +126,41 @@ QVariant KBookmarkModel::data(const QModelIndex &index, int role) const
 
 Qt::ItemFlags KBookmarkModel::flags(const QModelIndex &index) const
 {
-    if (!index.isValid())
-        return Qt::ItemIsDropEnabled;
+    const Qt::ItemFlags baseFlags = QAbstractItemModel::flags(index);
 
-    KBookmark bk = bookmarkForIndex(index);
-    if( !bk.address().isEmpty() ) // non root
+    if (!index.isValid())
+        return (Qt::ItemIsDropEnabled | baseFlags);
+
+    static const Qt::ItemFlags groupFlags =            Qt::ItemIsDropEnabled;
+    static const Qt::ItemFlags groupDragEditFlags =    groupFlags | Qt::ItemIsDragEnabled | Qt::ItemIsEditable;
+    static const Qt::ItemFlags groupEditFlags =        groupFlags | Qt::ItemIsEditable;
+    static const Qt::ItemFlags rootFlags =             groupFlags;
+    static const Qt::ItemFlags bookmarkFlags =         0;
+    static const Qt::ItemFlags bookmarkDragEditFlags = bookmarkFlags | Qt::ItemIsDragEnabled | Qt::ItemIsEditable;
+    static const Qt::ItemFlags bookmarkEditFlags =     bookmarkFlags | Qt::ItemIsEditable;
+
+    Qt::ItemFlags result = baseFlags;
+
+    const int column = index.column();
+    const KBookmark bookmark = bookmarkForIndex(index);
+    if (bookmark.isGroup())
     {
-        if( bk.isGroup())
-        {
-            if(index.column() == 0 || index.column() == 2)
-                return Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsEditable | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled;
-        }
-        else
-        {
-            if(index.column() < 3)
-                return Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsEditable | Qt::ItemIsDragEnabled;
-        }
+        const bool isRoot = bookmark.address().isEmpty();
+        result |=
+            (isRoot) ?                    rootFlags :
+            (column == NameColumnId) ?    groupDragEditFlags :
+            (column == CommentColumnId) ? groupEditFlags :
+            /*else*/                      groupFlags;
+    }
+    else
+    {
+        result |=
+            (column == NameColumnId) ?   bookmarkDragEditFlags :
+            (column != StatusColumnId) ? bookmarkEditFlags
+            /* else */                 : bookmarkFlags;
     }
 
-    // root
-    return Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDropEnabled;
+    return result;
 }
 
 bool KBookmarkModel::setData(const QModelIndex &index, const QVariant &value, int role)
@@ -165,13 +180,13 @@ QVariant KBookmarkModel::headerData(int section, Qt::Orientation orientation, in
     {
         switch(section)
         {
-            case 0:
+            case NameColumnId:
                 return i18n("Bookmark");
-            case 1:
+            case UrlColumnId:
                 return i18n("URL");
-            case 2:
+            case CommentColumnId:
                 return i18n("Comment");
-            case 3:
+            case StatusColumnId:
                 return i18n("Status");
             default:
                 return QString(); // Can't happpen
@@ -234,7 +249,7 @@ int KBookmarkModel::rowCount(const QModelIndex &parent) const
 
 int KBookmarkModel::columnCount(const QModelIndex &) const
 {
-    return 4; // Name, URL, Comment and Status
+    return NoOfColumnIds;
 }
 
 QModelIndex KBookmarkModel::indexForBookmark(const KBookmark& bk) const
@@ -258,7 +273,7 @@ QMimeData * KBookmarkModel::mimeData( const QModelIndexList & indexes ) const
     QModelIndexList::const_iterator it, end;
     end = indexes.constEnd();
     for( it = indexes.constBegin(); it!= end; ++it)
-        if( it->column() == 0)
+        if( it->column() == NameColumnId)
         {
             bookmarks.push_back( bookmarkForIndex(*it) );
             if(!addresses.isEmpty())
