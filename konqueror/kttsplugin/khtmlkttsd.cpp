@@ -36,7 +36,7 @@
 #include <ktoolinvocation.h>
 
 #ifdef HAVE_WEBKITPART
-#include <webkitpart.h>
+#include <kwebkitpart.h>
 #include <QWebFrame>
 #include <QWebView>
 #endif
