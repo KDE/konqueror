@@ -20,8 +20,8 @@
 </authorgroup>
 
 
-<date>2002-07-03</date>
-<releaseinfo>3.10.00</releaseinfo>
+<date>2010-01-08</date>
+<releaseinfo>&kde; 4.4</releaseinfo>
 
 <abstract>
 <para>This documentation describes &kde;'s information center.</para>
@@ -43,7 +43,7 @@
 <para>
 The &infocenter; (from now on referred to simply as <quote>the
 information center</quote>) provides you with a centralized and convenient
-overview of your &kde; and system settings.
+overview of your system and desktop environment.
 </para>
 
 <para>
@@ -51,11 +51,6 @@ The information center is made up of multiple modules.  Each module is a
 separate application, but the information center organizes all of these
 programs into a convenient location.
 </para>
-
-</chapter>
-
-<chapter id="info-center">
-<title>Using The &infocenter;</title>
 
 <para>
 This next section details the use of the information center itself.  For
@@ -73,9 +68,9 @@ The &infocenter; can be started 3 ways:
 <orderedlist> 
 <listitem>
 <para>
-By selecting <menuchoice><guimenu>K
-Button</guimenu><guisubmenu>System</guisubmenu><guimenuitem>Info
-Center</guimenuitem></menuchoice> from the &kde; Panel.
+By selecting <menuchoice><guimenu>Applications
+</guimenu><guisubmenu>System</guisubmenu><guimenuitem>Info
+Center</guimenuitem></menuchoice> from the application launcher in the panel.
 
 </para>
 </listitem>
@@ -83,12 +78,8 @@ Center</guimenuitem></menuchoice> from the &kde; Panel.
 <para>
 By pressing <keycombo
 action="simul">&Alt;<keycap>F2</keycap></keycombo>.
-</para>
-
-<para>
-This will bring up a dialog box.  Type
-<userinput><command>kinfocenter</command></userinput>, and click
-<guibutton>Run</guibutton> or press &Enter;.
+This will bring up &krunner;.  Type
+<userinput><command>kinfocenter</command></userinput>, and press &Enter;.
 </para>
 </listitem>
 
@@ -112,23 +103,31 @@ All three of these methods are equivalent, and produce the same result.
 When you start the information center, you are presented with a window,
 which can be divided into 3 functional parts.
 </para>
+<screenshot>
+<screeninfo>The &infocenter; Screen.</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="kinfocenter.png" format="PNG"/></imageobject>
+<textobject><phrase>The &infocenter; Screen</phrase></textobject>
+</mediaobject>
+</screenshot>
 
 <para>
 Across the top is a menubar.  The menubar will provide you with quick
-access to most of &infocenter;'s features.  The menus are detailed in
-<link linkend="info-center-menus">The &kde; Info Center
-Menus</link>.
+access to most of &infocenter;'s features like quitting, configuring shortcuts
+and getting help.
 </para>
 
 <para>
-Along the left hand side, is a column.  This is a where you choose which
+Along the left hand side, is a column with a filter field at the top.  
+This is a where you choose which
 module to investigate.  You can learn how to navigate through the modules
 in the section called <link linkend="module-intro">Navigating
 Modules</link>.
 </para>
 
 <para>
-The main panel shows you some system information.
+The main panel shows you the system information about the selected module.
 </para>
 
 <!-- 
@@ -138,81 +137,6 @@ as user <systemitem class="username">adridg</systemitem>, the computer is
 named <systemitem class="systemname">aramis</systemitem>, it is a
 FreeBSD system, Version 4.4-RELEASE, on a Pentium.
 </para> -->
-
-</sect1>
-
-<sect1 id="info-center-menus">
-<title>The &infocenter; Menus</title>
-
-<para>
-This next section gives you a brief description of what each menu item
-does.
-</para>
-
-<sect2 id="info-center-menu-file">
-<title><guimenu>File</guimenu> Menu</title>
-
-<para>
-The <guimenu>File</guimenu> menu has a single entry.
-</para>
-
-<variablelist>
-
-<varlistentry>
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo>
-</shortcut>
-<guimenu>File</guimenu>
-<guimenuitem>Quit</guimenuitem>
-</menuchoice></term>
-<listitem>
-<para>
-<action>Closes the info center.</action>
-</para>
-</listitem>
-</varlistentry>
-</variablelist>
-
-</sect2>
-
-<sect2 id="info-center-menu-help">
-<title><guimenu>Help</guimenu> Menu</title>
-
-&help.menu.documentation;
-
-</sect2>
-
-</sect1>
-
-<sect1 id="info-center-exiting">
-<title>Exiting The &kde; Information Center</title>
-
-<para>
-You can exit the info center one of three ways:
-</para>
-
-<itemizedlist>
-<listitem>
-<para>
-Select <menuchoice><guimenu>File</guimenu>
-<guimenuitem>Quit</guimenuitem></menuchoice> from the menu bar.
-</para>
-</listitem>
-
-<listitem>
-<para>Type <keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo>
-on the keyboard.
-</para>
-</listitem>
-
-<listitem>
-<para>
-Click on the <guiicon>Close</guiicon> button on the frame surrounding
-the info center.
-</para>
-</listitem>
-</itemizedlist>
 
 </sect1>
 
@@ -242,6 +166,9 @@ software.
 <para><ulink url="help:/kinfocenter/dma/index.html">DMA-Channels</ulink></para>
 </listitem>
 <listitem>
+<para><ulink url="help:/kinfocenter/view1394/index.html">IEEE 1394 Devices</ulink></para>
+</listitem>
+<listitem>
 <para><ulink url="help:/kinfocenter/interrupts/index.html">Interrupts</ulink></para>
 </listitem>
 <listitem>
@@ -261,9 +188,6 @@ software.
 </listitem>
 <listitem>
 <para><ulink url="help:/kinfocenter/pci/index.html">PCI</ulink></para>
-</listitem>
-<listitem>
-<para><ulink url="help:/kinfocenter/pcmcia/index.html">PCMCIA</ulink></para>
 </listitem>
 <listitem>
 <para><ulink url="help:/kinfocenter/processor/index.html">Processor</ulink></para>
