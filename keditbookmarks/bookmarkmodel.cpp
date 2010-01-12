@@ -83,7 +83,7 @@ QVariant KBookmarkModel::data(const QModelIndex &index, int role) const
         if(bk.address().isEmpty())
         {
             if(index.column() == NameColumnId)
-                return QVariant( i18n("Bookmarks") );
+                return QVariant( i18nc("name of the container of all browser bookmarks","Bookmarks") );
             else
                 return QVariant();
         }
