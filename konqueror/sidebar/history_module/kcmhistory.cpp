@@ -60,6 +60,9 @@ HistorySidebarConfig::HistorySidebarConfig( QWidget *parent, const QVariantList 
 
     m_settings = KonqHistorySettings::self();
 
+    if (!KParts::HistoryProvider::exists())
+        new KonqHistoryProvider(this);
+
     QVBoxLayout *topLayout = new QVBoxLayout(this);
     dialog = new KonqSidebarHistoryDlg(this);
 
