@@ -201,9 +201,9 @@ void  KWebKitPartPrivate::slotNavigationRequestFinished(const KUrl& url, QWebFra
 
         if (frame == webPage->mainFrame()) {
             if (webPage->sslInfo().isValid())
-                browserExtension->setPageSecurity(KWebKitPartPrivate::KWebKitPartPrivate::Encrypted);
+                browserExtension->setPageSecurity(KWebKitPartPrivate::Encrypted);
             else
-                browserExtension->setPageSecurity(KWebKitPartPrivate::KWebKitPartPrivate::Unencrypted);
+                browserExtension->setPageSecurity(KWebKitPartPrivate::Unencrypted);
         }
     }
 }
