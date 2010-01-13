@@ -129,6 +129,16 @@ public:
      */
     void fillMenu();
 
+    /**
+     * Called when New->* is clicked
+     */
+    void _k_slotActionTriggered(QAction*);
+
+    /**
+     * Fills the templates list.
+     */
+    void _k_slotFillTemplates();
+
     KActionCollection * m_actionCollection;
     QWidget *m_parentWidget;
     KActionMenu *m_menuDev;
@@ -165,7 +175,7 @@ KNewMenu::KNewMenu(KActionCollection *parent, QWidget* parentWidget, const QStri
     // Don't fill the menu yet
     // We'll do that in slotCheckUpToDate (should be connected to aboutToShow)
     d->m_newMenuGroup = new QActionGroup(this);
-    connect(d->m_newMenuGroup, SIGNAL(triggered(QAction*)), this, SLOT(slotActionTriggered(QAction*)));
+    connect(d->m_newMenuGroup, SIGNAL(triggered(QAction*)), this, SLOT(_k_slotActionTriggered(QAction*)));
     d->m_actionCollection = parent;
     d->m_parentWidget = parentWidget;
     d->m_newDirAction = 0;
@@ -177,18 +187,17 @@ KNewMenu::KNewMenu(KActionCollection *parent, QWidget* parentWidget, const QStri
 
 KNewMenu::~KNewMenu()
 {
-    //kDebug(1203) << "KNewMenu::~KNewMenu " << this;
+    //kDebug(1203) << this;
     delete d;
 }
 
 void KNewMenu::slotCheckUpToDate()
 {
     KNewMenuSingleton* s = kNewMenuGlobals;
-    //kDebug(1203) << "KNewMenu::slotCheckUpToDate() " << this
-    //              << " : menuItemsVersion=" << d->menuItemsVersion
-    //              << " s->templatesVersion=" << s->templatesVersion;
+    //kDebug(1203) << this << "menuItemsVersion=" << d->menuItemsVersion
+    //              << "s->templatesVersion=" << s->templatesVersion;
     if (d->menuItemsVersion < s->templatesVersion || s->templatesVersion == 0) {
-        //kDebug(1203) << "KNewMenu::slotCheckUpToDate() : recreating actions";
+        //kDebug(1203) << "recreating actions";
         // We need to clean up the action collection
         // We look for our actions using the group
         foreach (QAction* action, d->m_newMenuGroup->actions())
@@ -196,7 +205,7 @@ void KNewMenu::slotCheckUpToDate()
 
         if (!s->templatesList) { // No templates list up to now
             s->templatesList = new KNewMenuSingleton::EntryList;
-            slotFillTemplates();
+            d->_k_slotFillTemplates();
             s->parseFiles();
         }
 
@@ -214,7 +223,7 @@ void KNewMenu::slotCheckUpToDate()
 
 void KNewMenuSingleton::parseFiles()
 {
-    //kDebug(1203) << "KNewMenu::parseFiles()";
+    //kDebug(1203);
     filesParsed = true;
     KNewMenuSingleton::EntryList::iterator templ = templatesList->begin();
     const KNewMenuSingleton::EntryList::iterator templ_end = templatesList->end();
@@ -306,7 +315,7 @@ void KNewMenuPrivate::fillMenu()
 
             const bool bSkip = seenTexts.contains((*templ).text);
             if (bSkip) {
-                kDebug(1203) << "KNewMenu: skipping" << (*templ).filePath;
+                kDebug(1203) << "skipping" << (*templ).filePath;
             } else {
                 seenTexts.insert((*templ).text);
                 //const KNewMenuSingleton::Entry entry = templatesList->at(i-1);
@@ -373,24 +382,24 @@ void KNewMenuPrivate::fillMenu()
     menu->addAction(m_menuDev);
 }
 
-void KNewMenu::slotFillTemplates()
+void KNewMenuPrivate::_k_slotFillTemplates()
 {
     KNewMenuSingleton* s = kNewMenuGlobals;
-    //kDebug(1203) << "KNewMenu::slotFillTemplates()";
+    //kDebug(1203);
     // Ensure any changes in the templates dir will call this
     if (! s->dirWatch) {
         s->dirWatch = new KDirWatch;
-        const QStringList dirs = d->m_actionCollection->componentData().dirs()->resourceDirs("templates");
+        const QStringList dirs = m_actionCollection->componentData().dirs()->resourceDirs("templates");
         for (QStringList::const_iterator it = dirs.constBegin() ; it != dirs.constEnd() ; ++it) {
             //kDebug(1203) << "Templates resource dir:" << *it;
             s->dirWatch->addDir(*it);
         }
-        connect (s->dirWatch, SIGNAL(dirty(const QString &)),
-                  this, SLOT (slotFillTemplates()));
-        connect (s->dirWatch, SIGNAL(created(const QString &)),
-                  this, SLOT (slotFillTemplates()));
-        connect (s->dirWatch, SIGNAL(deleted(const QString &)),
-                  this, SLOT (slotFillTemplates()));
+        QObject::connect(s->dirWatch, SIGNAL(dirty(const QString &)),
+                         q, SLOT(_k_slotFillTemplates()));
+        QObject::connect(s->dirWatch, SIGNAL(created(const QString &)),
+                         q, SLOT(_k_slotFillTemplates()));
+        QObject::connect(s->dirWatch, SIGNAL(deleted(const QString &)),
+                         q, SLOT(_k_slotFillTemplates()));
         // Ok, this doesn't cope with new dirs in KDEDIRS, but that's another story
     }
     ++s->templatesVersion;
@@ -399,7 +408,7 @@ void KNewMenu::slotFillTemplates()
     s->templatesList->clear();
 
     // Look into "templates" dirs.
-    const QStringList files = d->m_actionCollection->componentData().dirs()->findAllResources("templates");
+    const QStringList files = m_actionCollection->componentData().dirs()->findAllResources("templates");
     QMap<QString, KNewMenuSingleton::Entry> slist; // used for sorting
     Q_FOREACH(const QString& file, files) {
         //kDebug(1203) << file;
@@ -623,12 +632,12 @@ void KNewMenuPrivate::RealFileOrDirStrategy::execute(const KNewMenuSingleton::En
     }
 }
 
-void KNewMenu::slotActionTriggered(QAction* action)
+void KNewMenuPrivate::_k_slotActionTriggered(QAction* action)
 {
-    trigger(); // was for kdesktop's slotNewMenuActivated() in kde3 times. Can't hurt to keep it...
+    q->trigger(); // was for kdesktop's slotNewMenuActivated() in kde3 times. Can't hurt to keep it...
 
-    if (action == d->m_newDirAction) {
-        createDirectory();
+    if (action == m_newDirAction) {
+        q->createDirectory();
         return;
     }
     const int id = action->data().toInt();
@@ -653,10 +662,10 @@ void KNewMenu::slotActionTriggered(QAction* action)
     } else {
         strategy = new KNewMenuPrivate::RealFileOrDirStrategy;
     }
-    strategy->setParentWidget(d->m_parentWidget);
-    strategy->setPopupFiles(d->popupFiles);
+    strategy->setParentWidget(m_parentWidget);
+    strategy->setPopupFiles(popupFiles);
     strategy->execute(entry);
-    d->m_tempFileToDelete = strategy->tempFileToDelete();
+    m_tempFileToDelete = strategy->tempFileToDelete();
     const QString src = strategy->sourceFileToCopy();
     const QString chosenFileName = strategy->chosenFileName();
     delete strategy;
@@ -675,8 +684,8 @@ void KNewMenu::slotActionTriggered(QAction* action)
 
     // The template is not a desktop file [or it's a URL one]
     // Copy it.
-    KUrl::List::const_iterator it = d->popupFiles.constBegin();
-    for (; it != d->popupFiles.constEnd(); ++it)
+    KUrl::List::const_iterator it = popupFiles.constBegin();
+    for (; it != popupFiles.constEnd(); ++it)
     {
         KUrl dest(*it);
         dest.addPath(KIO::encodeFileName(chosenFileName));
@@ -690,15 +699,15 @@ void KNewMenu::slotActionTriggered(QAction* action)
             // which KIO::symlink obviously doesn't emit... Needs code in FileUndoManager.
             //KIO::FileUndoManager::self()->recordJob(KIO::FileUndoManager::Link, lstSrc, dest, kjob);
         } else {
-            //kDebug(1203) << "KNewMenu : KIO::copyAs(" << uSrc.url() << "," << dest.url() << ")";
+            //kDebug(1203) << "KIO::copyAs(" << uSrc.url() << "," << dest.url() << ")";
             KIO::CopyJob * job = KIO::copyAs(uSrc, dest);
             job->setDefaultPermissions(true);
             kjob = job;
             KIO::FileUndoManager::self()->recordJob(KIO::FileUndoManager::Copy, lstSrc, dest, job);
         }
-        kjob->ui()->setWindow(d->m_parentWidget);
-        connect(kjob, SIGNAL(result(KJob*)),
-                SLOT(slotResult(KJob*)));
+        kjob->ui()->setWindow(m_parentWidget);
+        QObject::connect(kjob, SIGNAL(result(KJob*)),
+                         q, SLOT(slotResult(KJob*)));
     }
 }
 

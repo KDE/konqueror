@@ -108,18 +108,9 @@ protected Q_SLOTS:
      */
     virtual void slotResult( KJob* job );
 
-private Q_SLOTS:
-    /**
-     * Called when New->* is clicked
-     */
-    void slotActionTriggered(QAction*);
-
-    /**
-     * Fills the templates list.
-     */
-    void slotFillTemplates();
-
 private:
+    Q_PRIVATE_SLOT(d, void _k_slotActionTriggered(QAction*));
+    Q_PRIVATE_SLOT(d, void _k_slotFillTemplates());
     KNewMenuPrivate* const d;
 };
 
