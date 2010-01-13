@@ -119,8 +119,8 @@ class KNewMenuPrivate
 {
 public:
     KNewMenuPrivate(KNewMenu* qq)
-        : menuItemsVersion(0),
-          viewShowsHiddenFiles(false),
+        : m_menuItemsVersion(0),
+          m_viewShowsHiddenFiles(false),
           q(qq)
     {}
     
@@ -144,15 +144,17 @@ public:
     KActionMenu *m_menuDev;
     QAction* m_newDirAction;
 
-    int menuItemsVersion;
-    bool viewShowsHiddenFiles;
+    int m_menuItemsVersion;
+    bool m_viewShowsHiddenFiles;
 
     /**
      * When the user pressed the right mouse button over an URL a popup menu
      * is displayed. The URL belonging to this popup menu is stored here.
      */
-    KUrl::List popupFiles;
+    KUrl::List m_popupFiles;
 
+    QStringList m_supportedMimeTypes;
+    
     QString m_tempFileToDelete; // set when a tempfile was created for a Type=URL desktop file
 
     /**
@@ -194,9 +196,9 @@ KNewMenu::~KNewMenu()
 void KNewMenu::slotCheckUpToDate()
 {
     KNewMenuSingleton* s = kNewMenuGlobals;
-    //kDebug(1203) << this << "menuItemsVersion=" << d->menuItemsVersion
+    //kDebug(1203) << this << "m_menuItemsVersion=" << d->m_menuItemsVersion
     //              << "s->templatesVersion=" << s->templatesVersion;
-    if (d->menuItemsVersion < s->templatesVersion || s->templatesVersion == 0) {
+    if (d->m_menuItemsVersion < s->templatesVersion || s->templatesVersion == 0) {
         //kDebug(1203) << "recreating actions";
         // We need to clean up the action collection
         // We look for our actions using the group
@@ -217,7 +219,7 @@ void KNewMenu::slotCheckUpToDate()
 
         d->fillMenu();
 
-        d->menuItemsVersion = s->templatesVersion;
+        d->m_menuItemsVersion = s->templatesVersion;
     }
 }
 
@@ -438,13 +440,13 @@ void KNewMenuPrivate::_k_slotFillTemplates()
 
 void KNewMenu::createDirectory()
 {
-    if (d->popupFiles.isEmpty())
+    if (d->m_popupFiles.isEmpty())
        return;
 
     KonqOperations::NewDirFlags newDirFlags;
-    if (d->viewShowsHiddenFiles)
+    if (d->m_viewShowsHiddenFiles)
         newDirFlags |= KonqOperations::ViewShowsHiddenFile;
-    KIO::SimpleJob* job = KonqOperations::newDir(d->m_parentWidget, d->popupFiles.first(), newDirFlags);
+    KIO::SimpleJob* job = KonqOperations::newDir(d->m_parentWidget, d->m_popupFiles.first(), newDirFlags);
     if (job) {
         // We want the error handling to be done by slotResult so that subclasses can reimplement it
         job->ui()->setAutoErrorHandlingEnabled(false);
@@ -663,7 +665,7 @@ void KNewMenuPrivate::_k_slotActionTriggered(QAction* action)
         strategy = new KNewMenuPrivate::RealFileOrDirStrategy;
     }
     strategy->setParentWidget(m_parentWidget);
-    strategy->setPopupFiles(popupFiles);
+    strategy->setPopupFiles(m_popupFiles);
     strategy->execute(entry);
     m_tempFileToDelete = strategy->tempFileToDelete();
     const QString src = strategy->sourceFileToCopy();
@@ -684,8 +686,8 @@ void KNewMenuPrivate::_k_slotActionTriggered(QAction* action)
 
     // The template is not a desktop file [or it's a URL one]
     // Copy it.
-    KUrl::List::const_iterator it = popupFiles.constBegin();
-    for (; it != popupFiles.constEnd(); ++it)
+    KUrl::List::const_iterator it = m_popupFiles.constBegin();
+    for (; it != m_popupFiles.constEnd(); ++it)
     {
         KUrl dest(*it);
         dest.addPath(KIO::encodeFileName(chosenFileName));
@@ -738,7 +740,7 @@ void KNewMenu::slotResult(KJob * job)
 
 void KNewMenu::setPopupFiles(const KUrl::List& files)
 {
-    d->popupFiles = files;
+    d->m_popupFiles = files;
     if (files.isEmpty()) {
         d->m_newMenuGroup->setEnabled(false);
     } else {
@@ -756,7 +758,7 @@ void KNewMenu::setPopupFiles(const KUrl::List& files)
 
 void KNewMenu::setViewShowsHiddenFiles(bool b)
 {
-    d->viewShowsHiddenFiles = b;
+    d->m_viewShowsHiddenFiles = b;
 }
 
 #include "knewmenu.moc"
