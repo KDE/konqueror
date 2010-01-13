@@ -65,6 +65,13 @@ public:
         delete dirWatch;
     }
 
+
+    /**
+     * Opens the desktop files and completes the Entry list
+     * Input: the entry list. Output: the entry list ;-)
+     */
+    void parseFiles();
+
     /**
      * For entryType
      * LINKTOTEMPLATE: a desktop file that points to a file or dir to copy
@@ -111,10 +118,17 @@ K_GLOBAL_STATIC(KNewMenuSingleton, kNewMenuGlobals)
 class KNewMenuPrivate
 {
 public:
-    KNewMenuPrivate()
+    KNewMenuPrivate(KNewMenu* qq)
         : menuItemsVersion(0),
-          viewShowsHiddenFiles(false)
+          viewShowsHiddenFiles(false),
+          q(qq)
     {}
+    
+    /**
+     * Fills the menu from the templates list.
+     */
+    void fillMenu();
+
     KActionCollection * m_actionCollection;
     QWidget *m_parentWidget;
     KActionMenu *m_menuDev;
@@ -135,6 +149,7 @@ public:
      * The action group that our actions belong to
      */
     QActionGroup* m_newMenuGroup;
+    KNewMenu* q;
 
     class StrategyInterface;
     class UrlDesktopFileStrategy;
@@ -143,21 +158,21 @@ public:
     class RealFileOrDirStrategy;
 };
 
-KNewMenu::KNewMenu( KActionCollection *parent, QWidget* parentWidget, const QString& name )
-    : KActionMenu( KIcon("document-new"), i18n( "Create New" ), parentWidget )
+KNewMenu::KNewMenu(KActionCollection *parent, QWidget* parentWidget, const QString& name)
+    : KActionMenu(KIcon("document-new"), i18n("Create New"), parentWidget),
+      d(new KNewMenuPrivate(this))
 {
     // Don't fill the menu yet
     // We'll do that in slotCheckUpToDate (should be connected to aboutToShow)
-    d = new KNewMenuPrivate;
     d->m_newMenuGroup = new QActionGroup(this);
     connect(d->m_newMenuGroup, SIGNAL(triggered(QAction*)), this, SLOT(slotActionTriggered(QAction*)));
     d->m_actionCollection = parent;
     d->m_parentWidget = parentWidget;
     d->m_newDirAction = 0;
 
-    d->m_actionCollection->addAction( name, this );
+    d->m_actionCollection->addAction(name, this);
 
-    makeMenus();
+    d->m_menuDev = new KActionMenu(KIcon("drive-removable-media"), i18n("Link to Device"), this);
 }
 
 KNewMenu::~KNewMenu()
@@ -166,12 +181,7 @@ KNewMenu::~KNewMenu()
     delete d;
 }
 
-void KNewMenu::makeMenus()
-{
-    d->m_menuDev = new KActionMenu( KIcon("drive-removable-media"), i18n( "Link to Device" ), this );
-}
-
-void KNewMenu::slotCheckUpToDate( )
+void KNewMenu::slotCheckUpToDate()
 {
     KNewMenuSingleton* s = kNewMenuGlobals;
     //kDebug(1203) << "KNewMenu::slotCheckUpToDate() " << this
@@ -187,60 +197,60 @@ void KNewMenu::slotCheckUpToDate( )
         if (!s->templatesList) { // No templates list up to now
             s->templatesList = new KNewMenuSingleton::EntryList;
             slotFillTemplates();
-            parseFiles();
+            s->parseFiles();
         }
 
         // This might have been already done for other popupmenus,
         // that's the point in s->filesParsed.
-        if ( !s->filesParsed )
-            parseFiles();
+        if (!s->filesParsed) {
+            s->parseFiles();
+        }
 
-        fillMenu();
+        d->fillMenu();
 
         d->menuItemsVersion = s->templatesVersion;
     }
 }
 
-void KNewMenu::parseFiles()
+void KNewMenuSingleton::parseFiles()
 {
-    KNewMenuSingleton* s = kNewMenuGlobals;
     //kDebug(1203) << "KNewMenu::parseFiles()";
-    s->filesParsed = true;
-    KNewMenuSingleton::EntryList::iterator templ = s->templatesList->begin();
-    const KNewMenuSingleton::EntryList::iterator templ_end = s->templatesList->end();
-    for ( ; templ != templ_end; ++templ )
+    filesParsed = true;
+    KNewMenuSingleton::EntryList::iterator templ = templatesList->begin();
+    const KNewMenuSingleton::EntryList::iterator templ_end = templatesList->end();
+    for (; templ != templ_end; ++templ)
     {
         QString iconname;
         QString filePath = (*templ).filePath;
-        if ( !filePath.isEmpty() )
+        if (!filePath.isEmpty())
         {
             QString text;
             QString templatePath;
             // If a desktop file, then read the name from it.
             // Otherwise (or if no name in it?) use file name
-            if ( KDesktopFile::isDesktopFile( filePath ) ) {
-                KDesktopFile desktopFile(  filePath );
+            if (KDesktopFile::isDesktopFile(filePath)) {
+                KDesktopFile desktopFile( filePath);
                 text = desktopFile.readName();
                 (*templ).icon = desktopFile.readIcon();
                 (*templ).comment = desktopFile.readComment();
                 QString type = desktopFile.readType();
-                if ( type == "Link" )
+                if (type == "Link")
                 {
                     templatePath = desktopFile.desktopGroup().readPathEntry("URL", QString());
-                    if ( templatePath[0] != '/' && !templatePath.startsWith("__"))
+                    if (templatePath[0] != '/' && !templatePath.startsWith("__"))
                     {
-                        if ( templatePath.startsWith("file:/") )
+                        if (templatePath.startsWith("file:/"))
                             templatePath = KUrl(templatePath).toLocalFile();
                         else
                         {
                             // A relative path, then (that's the default in the files we ship)
-                            QString linkDir = filePath.left( filePath.lastIndexOf( '/' ) + 1 /*keep / */ );
+                            QString linkDir = filePath.left(filePath.lastIndexOf('/') + 1 /*keep / */);
                             //kDebug(1203) << "linkDir=" << linkDir;
                             templatePath = linkDir + templatePath;
                         }
                     }
                 }
-                if ( templatePath.isEmpty() )
+                if (templatePath.isEmpty())
                 {
                     // No URL key, this is an old-style template
                     (*templ).entryType = KNewMenuSingleton::Template;
@@ -254,8 +264,8 @@ void KNewMenu::parseFiles()
             if (text.isEmpty())
             {
                 text = KUrl(filePath).fileName();
-                if ( text.endsWith(".desktop") )
-                    text.truncate( text.length() - 8 );
+                if (text.endsWith(".desktop"))
+                    text.truncate(text.length() - 8);
             }
             (*templ).text = text;
             /*kDebug(1203) << "Updating entry with text=" << text
@@ -268,12 +278,12 @@ void KNewMenu::parseFiles()
     }
 }
 
-void KNewMenu::fillMenu()
+void KNewMenuPrivate::fillMenu()
 {
-    //kDebug(1203) << "KNewMenu::fillMenu()";
-    menu()->clear();
-    d->m_menuDev->menu()->clear();
-    d->m_newDirAction = 0;
+    QMenu* menu = q->menu();
+    menu->clear();
+    m_menuDev->menu()->clear();
+    m_newDirAction = 0;
 
     QSet<QString> seenTexts;
     // these shall be put at special positions
@@ -285,7 +295,7 @@ void KNewMenu::fillMenu()
     int i = 1;
     KNewMenuSingleton::EntryList::const_iterator templ = s->templatesList->constBegin();
     const KNewMenuSingleton::EntryList::const_iterator templ_end = s->templatesList->constEnd();
-    for ( ; templ != templ_end; ++templ, ++i)
+    for (; templ != templ_end; ++templ, ++i)
     {
         if ((*templ).entryType != KNewMenuSingleton::Separator) {
             // There might be a .desktop for that one already, if it's a kdelnk
@@ -295,33 +305,33 @@ void KNewMenu::fillMenu()
             // Duplicates in a menu look bad in any case.
 
             const bool bSkip = seenTexts.contains((*templ).text);
-            if ( bSkip ) {
+            if (bSkip) {
                 kDebug(1203) << "KNewMenu: skipping" << (*templ).filePath;
             } else {
                 seenTexts.insert((*templ).text);
-                //const KNewMenuSingleton::Entry entry = s->templatesList->at( i-1 );
+                //const KNewMenuSingleton::Entry entry = templatesList->at(i-1);
 
                 const QString templatePath = (*templ).templatePath;
                 // The best way to identify the "Create Directory", "Link to Location", "Link to Application" was the template
                 if (templatePath.endsWith("emptydir")) {
-                    QAction * act = new QAction( this );
-                    d->m_newDirAction = act;
-                    act->setIcon( KIcon((*templ).icon) );
-                    act->setText( (*templ).text );
-                    act->setActionGroup( d->m_newMenuGroup );
-                    menu()->addAction( act );
+                    QAction * act = new QAction(q);
+                    m_newDirAction = act;
+                    act->setIcon(KIcon((*templ).icon));
+                    act->setText((*templ).text);
+                    act->setActionGroup(m_newMenuGroup);
+                    menu->addAction(act);
 
-                    QAction *sep = new QAction(this);
-                    sep->setSeparator( true );
-                    menu()->addAction( sep );
+                    QAction *sep = new QAction(q);
+                    sep->setSeparator(true);
+                    menu->addAction(sep);
                 }
                 else
                 {
-                    QAction * act = new QAction(this);
-                    act->setData( i );
-                    act->setIcon( KIcon((*templ).icon) );
-                    act->setText( (*templ).text );
-                    act->setActionGroup( d->m_newMenuGroup );
+                    QAction * act = new QAction(q);
+                    act->setData(i);
+                    act->setIcon(KIcon((*templ).icon));
+                    act->setText((*templ).text);
+                    act->setActionGroup(m_newMenuGroup);
 
                     //kDebug() << templatePath << (*templ).filePath;
 
@@ -334,34 +344,33 @@ void KNewMenu::fillMenu()
                     } else if (KDesktopFile::isDesktopFile(templatePath)) {
                         KDesktopFile df(templatePath);
                         if (df.readType() == "FSDevice")
-                            d->m_menuDev->menu()->addAction( act );
+                            m_menuDev->menu()->addAction(act);
                         else
-                            menu()->addAction( act );
+                            menu->addAction(act);
                     }
                     else
                     {
-                        menu()->addAction( act );
+                        menu->addAction(act);
                     }
                 }
             }
         } else { // Separate system from personal templates
-            Q_ASSERT( (*templ).entryType != 0 );
+            Q_ASSERT((*templ).entryType != 0);
 
-            QAction *sep = new QAction( this );
-            sep->setSeparator( true );
-            menu()->addAction( sep );
+            QAction *sep = new QAction(q);
+            sep->setSeparator(true);
+            menu->addAction(sep);
         }
     }
 
-    QAction *sep = new QAction( this );
-    sep->setSeparator( true );
-    menu()->addAction( sep );
-    if ( linkURL ) menu()->addAction( linkURL );
-    if ( linkPath ) menu()->addAction( linkPath );
-    if ( linkApp ) menu()->addAction( linkApp );
-    Q_ASSERT(d->m_menuDev);
-    menu()->addAction( d->m_menuDev );
-
+    QAction *sep = new QAction(q);
+    sep->setSeparator(true);
+    menu->addAction(sep);
+    if (linkURL) menu->addAction(linkURL);
+    if (linkPath) menu->addAction(linkPath);
+    if (linkApp) menu->addAction(linkApp);
+    Q_ASSERT(m_menuDev);
+    menu->addAction(m_menuDev);
 }
 
 void KNewMenu::slotFillTemplates()
@@ -369,19 +378,19 @@ void KNewMenu::slotFillTemplates()
     KNewMenuSingleton* s = kNewMenuGlobals;
     //kDebug(1203) << "KNewMenu::slotFillTemplates()";
     // Ensure any changes in the templates dir will call this
-    if ( ! s->dirWatch ) {
+    if (! s->dirWatch) {
         s->dirWatch = new KDirWatch;
         const QStringList dirs = d->m_actionCollection->componentData().dirs()->resourceDirs("templates");
-        for ( QStringList::const_iterator it = dirs.constBegin() ; it != dirs.constEnd() ; ++it ) {
+        for (QStringList::const_iterator it = dirs.constBegin() ; it != dirs.constEnd() ; ++it) {
             //kDebug(1203) << "Templates resource dir:" << *it;
-            s->dirWatch->addDir( *it );
+            s->dirWatch->addDir(*it);
         }
-        connect ( s->dirWatch, SIGNAL( dirty( const QString & ) ),
-                  this, SLOT ( slotFillTemplates() ) );
-        connect ( s->dirWatch, SIGNAL( created( const QString & ) ),
-                  this, SLOT ( slotFillTemplates() ) );
-        connect ( s->dirWatch, SIGNAL( deleted( const QString & ) ),
-                  this, SLOT ( slotFillTemplates() ) );
+        connect (s->dirWatch, SIGNAL(dirty(const QString &)),
+                  this, SLOT (slotFillTemplates()));
+        connect (s->dirWatch, SIGNAL(created(const QString &)),
+                  this, SLOT (slotFillTemplates()));
+        connect (s->dirWatch, SIGNAL(deleted(const QString &)),
+                  this, SLOT (slotFillTemplates()));
         // Ok, this doesn't cope with new dirs in KDEDIRS, but that's another story
     }
     ++s->templatesVersion;
@@ -430,8 +439,8 @@ void KNewMenu::createDirectory()
     if (job) {
         // We want the error handling to be done by slotResult so that subclasses can reimplement it
         job->ui()->setAutoErrorHandlingEnabled(false);
-        connect( job, SIGNAL( result( KJob * ) ),
-                 SLOT( slotResult( KJob * ) ) );
+        connect(job, SIGNAL(result(KJob *)),
+                 SLOT(slotResult(KJob *)));
     }
 
 }
@@ -502,13 +511,13 @@ void KNewMenuPrivate::UrlDesktopFileStrategy::execute(const KNewMenuSingleton::E
 {
     // entry.comment contains i18n("Enter link to location (URL):"). JFYI :)
     KonqNameAndUrlInputDialog dlg(i18n("File name:"), entry.comment, m_popupUrls.first(), m_parentWidget);
-    // TODO dlg.setCaption( i18n( ... ) );
+    // TODO dlg.setCaption(i18n(...));
     if (!dlg.exec())
         return;
 
     m_chosenFileName = dlg.name();
     const KUrl linkUrl = dlg.url(); // the url to put in the file
-    if ( m_chosenFileName.isEmpty() || linkUrl.isEmpty() )
+    if (m_chosenFileName.isEmpty() || linkUrl.isEmpty())
         return;
 
     // It's a "URL" desktop file; we need to make a temp copy of it, to modify it
@@ -548,7 +557,7 @@ void KNewMenuPrivate::UrlDesktopFileStrategy::execute(const KNewMenuSingleton::E
 void KNewMenuPrivate::SymLinkStrategy::execute(const KNewMenuSingleton::Entry& entry)
 {
     KonqNameAndUrlInputDialog dlg(i18n("File name:"), entry.comment, m_popupUrls.first(), m_parentWidget);
-    // TODO dlg.setCaption( i18n( ... ) );
+    // TODO dlg.setCaption(i18n(...));
     if (!dlg.exec())
         return;
     m_chosenFileName = dlg.name(); // no path
@@ -573,18 +582,18 @@ void KNewMenuPrivate::OtherDesktopFileStrategy::execute(const KNewMenuSingleton:
     }
 
     KUrl::List::const_iterator it = m_popupUrls.constBegin();
-    for ( ; it != m_popupUrls.constEnd(); ++it )
+    for (; it != m_popupUrls.constEnd(); ++it)
     {
         //kDebug(1203) << "first arg=" << entry.templatePath;
         //kDebug(1203) << "second arg=" << (*it).url();
         //kDebug(1203) << "third arg=" << entry.text;
         QString text = entry.text;
-        text.remove( "..." ); // the ... is fine for the menu item but not for the default filename
+        text.remove("..."); // the ... is fine for the menu item but not for the default filename
 
-        KUrl defaultFile( *it );
-        defaultFile.addPath( KIO::encodeFileName( text ) );
-        if ( defaultFile.isLocalFile() && QFile::exists( defaultFile.toLocalFile() ) )
-            text = KIO::RenameDialog::suggestName( *it, text);
+        KUrl defaultFile(*it);
+        defaultFile.addPath(KIO::encodeFileName(text));
+        if (defaultFile.isLocalFile() && QFile::exists(defaultFile.toLocalFile()))
+            text = KIO::RenameDialog::suggestName(*it, text);
 
         const KUrl templateUrl(entry.templatePath);
         KPropertiesDialog dlg(templateUrl, *it, text, m_parentWidget);
@@ -608,7 +617,7 @@ void KNewMenuPrivate::RealFileOrDirStrategy::execute(const KNewMenuSingleton::En
     bool ok;
     const QString name = KInputDialog::getText(QString(), entry.comment,
                                                text, &ok, m_parentWidget);
-    if ( ok ) {
+    if (ok) {
         m_chosenFileName = name;
         m_src = entry.templatePath;
     }
@@ -626,7 +635,7 @@ void KNewMenu::slotActionTriggered(QAction* action)
     Q_ASSERT(id > 0);
 
     KNewMenuSingleton* s = kNewMenuGlobals;
-    const KNewMenuSingleton::Entry entry = s->templatesList->at( id - 1 );
+    const KNewMenuSingleton::Entry entry = s->templatesList->at(id - 1);
     //kDebug(1203) << "sFile=" << sFile;
 
     const bool createSymlink = entry.templatePath == "__CREATE_SYMLINK__";
@@ -669,7 +678,7 @@ void KNewMenu::slotActionTriggered(QAction* action)
     KUrl::List::const_iterator it = d->popupFiles.constBegin();
     for (; it != d->popupFiles.constEnd(); ++it)
     {
-        KUrl dest( *it );
+        KUrl dest(*it);
         dest.addPath(KIO::encodeFileName(chosenFileName));
 
         KUrl::List lstSrc;
@@ -693,10 +702,10 @@ void KNewMenu::slotActionTriggered(QAction* action)
     }
 }
 
-void KNewMenu::slotResult( KJob * job )
+void KNewMenu::slotResult(KJob * job)
 {
     if (job->error()) {
-        static_cast<KIO::Job*>( job )->ui()->showErrorMessage();
+        static_cast<KIO::Job*>(job)->ui()->showErrorMessage();
     } else {
         // Was this a copy or a mkdir?
         KIO::CopyJob* copyJob = ::qobject_cast<KIO::CopyJob*>(job);

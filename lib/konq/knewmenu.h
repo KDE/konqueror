@@ -120,25 +120,7 @@ private Q_SLOTS:
     void slotFillTemplates();
 
 private:
-    void newDir();
-
-    /**
-     * Fills the menu from the templates list.
-     */
-    void fillMenu();
-
-    /**
-     * Opens the desktop files and completes the Entry list
-     * Input: the entry list. Output: the entry list ;-)
-     */
-    void parseFiles();
-
-    /**
-     * Make the main menus on the startup.
-     */
-    void makeMenus();
-
-    KNewMenuPrivate* d;
+    KNewMenuPrivate* const d;
 };
 
 #endif
