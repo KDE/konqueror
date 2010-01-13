@@ -25,7 +25,6 @@
 #include <libkonq_export.h>
 
 class KJob;
-namespace KIO { class Job; }
 
 class KActionCollection;
 class KNewMenuPrivate;
@@ -50,7 +49,6 @@ class LIBKONQ_EXPORT KNewMenu : public KActionMenu
 {
   Q_OBJECT
 public:
-
     /**
      * Constructor
      * @param parent the parent KActionCollection this KAction should be
@@ -60,7 +58,7 @@ public:
      * once the parentWidget itself got destroyed.
      * @param name action name, when adding the action to the collection
      */
-    KNewMenu( KActionCollection * parent, QWidget* parentWidget, const QString& name );
+    KNewMenu(KActionCollection * parent, QWidget* parentWidget, const QString& name);
     virtual ~KNewMenu();
 
     /**
@@ -106,7 +104,7 @@ protected Q_SLOTS:
      * This method is virtual so that error handling can be reimplemented.
      * Make sure to call the base class slotResult when !job->error() though.
      */
-    virtual void slotResult( KJob* job );
+    virtual void slotResult(KJob* job);
 
 private:
     Q_PRIVATE_SLOT(d, void _k_slotActionTriggered(QAction*));
