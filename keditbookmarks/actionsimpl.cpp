@@ -101,7 +101,7 @@ void KEBApp::createActions() {
 
     KAction* actnChangeURL = actionCollection()->addAction("changeurl");
     actnChangeURL->setIcon(KIcon("edit-rename"));
-    actnChangeURL->setText(i18n("C&hange URL"));
+    actnChangeURL->setText(i18n("C&hange Location"));
     actnChangeURL->setShortcut(Qt::Key_F3);
     connect(actnChangeURL, SIGNAL( triggered() ), actn, SLOT( slotChangeURL() ));
 
