@@ -178,19 +178,27 @@ QVariant KBookmarkModel::headerData(int section, Qt::Orientation orientation, in
 {
     if(role == Qt::DisplayRole && orientation == Qt::Horizontal)
     {
+        QString result;
         switch(section)
         {
             case NameColumnId:
-                return i18n("Bookmark");
+                result = i18nc("@title:column name of a bookmark",
+                               "Name");
+                break;
             case UrlColumnId:
-                return i18n("URL");
+                result = i18nc("@title:column name of a bookmark",
+                               "Location");
+                break;
             case CommentColumnId:
-                return i18n("Comment");
+                result = i18nc("@title:column comment for a bookmark", 
+                               "Comment");
+                break;
             case StatusColumnId:
-                return i18n("Status");
-            default:
-                return QString(); // Can't happpen
+                result = i18nc("@title:column status of a bookmark",
+                               "Status");
+                break;
         }
+        return result;
     }
     else
         return QVariant();
