@@ -62,6 +62,13 @@ public:
     virtual ~KNewMenu();
 
     /**
+     * Only show the files in a given set of mimetypes.
+     * This is useful in specialized applications (while file managers, on
+     * the other hand, want to show all mimetypes).
+     */
+    void setSupportedMimeTypes(const QStringList& mime); // TODO remove from the libkonq version after moving to kdelibs, never released in libkonq
+    
+    /**
      * Set if the directory view currently shows dot files.
      * @since 4.4
      */

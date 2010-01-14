@@ -88,6 +88,7 @@ public:
         QString icon;
         EntryType entryType;
         QString comment;
+        QString mimeType;
     };
     // NOTE: only filePath is known before we call parseFiles
 
@@ -304,53 +305,89 @@ void KNewMenuPrivate::fillMenu()
 
     KNewMenuSingleton* s = kNewMenuGlobals;
     int i = 1;
-    KNewMenuSingleton::EntryList::const_iterator templ = s->templatesList->constBegin();
-    const KNewMenuSingleton::EntryList::const_iterator templ_end = s->templatesList->constEnd();
+    KNewMenuSingleton::EntryList::iterator templ = s->templatesList->begin();
+    const KNewMenuSingleton::EntryList::iterator templ_end = s->templatesList->end();
     for (; templ != templ_end; ++templ, ++i)
     {
-        if ((*templ).entryType != KNewMenuSingleton::Separator) {
+        KNewMenuSingleton::Entry& entry = *templ;
+        if (entry.entryType != KNewMenuSingleton::Separator) {
             // There might be a .desktop for that one already, if it's a kdelnk
             // This assumes we read .desktop files before .kdelnk files ...
 
             // In fact, we skip any second item that has the same text as another one.
             // Duplicates in a menu look bad in any case.
 
-            const bool bSkip = seenTexts.contains((*templ).text);
+            const bool bSkip = seenTexts.contains(entry.text);
             if (bSkip) {
-                kDebug(1203) << "skipping" << (*templ).filePath;
+                kDebug(1203) << "skipping" << entry.filePath;
             } else {
-                seenTexts.insert((*templ).text);
+                seenTexts.insert(entry.text);
                 //const KNewMenuSingleton::Entry entry = templatesList->at(i-1);
 
-                const QString templatePath = (*templ).templatePath;
+                const QString templatePath = entry.templatePath;
                 // The best way to identify the "Create Directory", "Link to Location", "Link to Application" was the template
                 if (templatePath.endsWith("emptydir")) {
                     QAction * act = new QAction(q);
                     m_newDirAction = act;
-                    act->setIcon(KIcon((*templ).icon));
-                    act->setText((*templ).text);
+                    act->setIcon(KIcon(entry.icon));
+                    act->setText(entry.text);
                     act->setActionGroup(m_newMenuGroup);
                     menu->addAction(act);
 
                     QAction *sep = new QAction(q);
                     sep->setSeparator(true);
                     menu->addAction(sep);
-                }
-                else
-                {
+                } else {
+                    
+                    if (!m_supportedMimeTypes.isEmpty()) {
+                        bool keep = false;
+                        
+                        // We need to do mimetype filtering, for real files.
+                        const bool createSymlink = entry.templatePath == "__CREATE_SYMLINK__";
+                        if (createSymlink) {
+                            keep = true;
+                        } else if (!KDesktopFile::isDesktopFile(entry.templatePath)) {
+
+                            // Determine mimetype on demand
+                            KMimeType::Ptr mime;
+                            if (entry.mimeType.isEmpty()) {
+                                mime = KMimeType::findByPath(entry.templatePath);
+                                if (mime) {
+                                    //kDebug() << entry.templatePath << "is" << mime->name();
+                                    entry.mimeType = mime->name();
+                                } else {
+                                    entry.mimeType = KMimeType::defaultMimeType();
+                                }
+                            } else {
+                                mime = KMimeType::mimeType(entry.mimeType);
+                            }
+                            Q_FOREACH(const QString& supportedMime, m_supportedMimeTypes) {
+                                if (mime && mime->is(supportedMime)) {
+                                    keep = true;
+                                    break;
+                                }
+                            }
+                        }
+
+                        if (!keep) {
+                            //kDebug() << "Not keeping" << entry.templatePath;
+                            continue;
+                        }
+                    }
+                    
                     QAction * act = new QAction(q);
                     act->setData(i);
-                    act->setIcon(KIcon((*templ).icon));
-                    act->setText((*templ).text);
+                    act->setIcon(KIcon(entry.icon));
+                    act->setText(entry.text);
                     act->setActionGroup(m_newMenuGroup);
 
-                    //kDebug() << templatePath << (*templ).filePath;
+                    //kDebug() << templatePath << entry.filePath;
 
                     if (templatePath.endsWith("/URL.desktop")) {
                         linkURL = act;
                     } else if (templatePath.endsWith("/Program.desktop")) {
                         linkApp = act;
-                    } else if ((*templ).filePath.endsWith("/linkPath.desktop")) {
+                    } else if (entry.filePath.endsWith("/linkPath.desktop")) {
                         linkPath = act;
                     } else if (KDesktopFile::isDesktopFile(templatePath)) {
                         KDesktopFile df(templatePath);
@@ -366,7 +403,7 @@ void KNewMenuPrivate::fillMenu()
                 }
             }
         } else { // Separate system from personal templates
-            Q_ASSERT((*templ).entryType != 0);
+            Q_ASSERT(entry.entryType != 0);
 
             QAction *sep = new QAction(q);
             sep->setSeparator(true);
@@ -374,14 +411,16 @@ void KNewMenuPrivate::fillMenu()
         }
     }
 
-    QAction *sep = new QAction(q);
-    sep->setSeparator(true);
-    menu->addAction(sep);
-    if (linkURL) menu->addAction(linkURL);
-    if (linkPath) menu->addAction(linkPath);
-    if (linkApp) menu->addAction(linkApp);
-    Q_ASSERT(m_menuDev);
-    menu->addAction(m_menuDev);
+    if (m_supportedMimeTypes.isEmpty()) {
+        QAction *sep = new QAction(q);
+        sep->setSeparator(true);
+        menu->addAction(sep);
+        if (linkURL) menu->addAction(linkURL);
+        if (linkPath) menu->addAction(linkPath);
+        if (linkApp) menu->addAction(linkApp);
+        Q_ASSERT(m_menuDev);
+        menu->addAction(m_menuDev);
+    }
 }
 
 void KNewMenuPrivate::_k_slotFillTemplates()
@@ -759,6 +798,11 @@ void KNewMenu::setPopupFiles(const KUrl::List& files)
 void KNewMenu::setViewShowsHiddenFiles(bool b)
 {
     d->m_viewShowsHiddenFiles = b;
+}
+
+void KNewMenu::setSupportedMimeTypes(const QStringList& mime)
+{
+    d->m_supportedMimeTypes = mime;
 }
 
 #include "knewmenu.moc"
