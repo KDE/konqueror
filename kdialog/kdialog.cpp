@@ -628,31 +628,37 @@ static int directCommand(KCmdLineArgs *args)
         if (args->count() >= 1)  {
             contextStr = args->arg(0);
         }
-        KIconLoader::Group group = KIconLoader::NoGroup;
-        if ( groupStr == QLatin1String( "Desktop" ) )
-            group = KIconLoader::Desktop;
-        else if ( groupStr == QLatin1String( "Toolbar" ) )
-            group = KIconLoader::Toolbar;
-        else if ( groupStr == QLatin1String( "MainToolbar" ) )
-            group = KIconLoader::MainToolbar;
-        else if ( groupStr == QLatin1String( "Small" ) )
-            group = KIconLoader::Small;
-        else if ( groupStr == QLatin1String( "Panel" ) )
-            group = KIconLoader::Panel;
-        else if ( groupStr == QLatin1String( "User" ) )
-            group = KIconLoader::User;
-        KIconLoader::Context context = KIconLoader::Any;
-        // From kicontheme.cpp
-        if ( contextStr == QLatin1String( "Devices" ) )
-            context = KIconLoader::Device;
-        else if ( contextStr == QLatin1String( "MimeTypes" ) )
-            context = KIconLoader::MimeType;
-        else if ( contextStr == QLatin1String( "FileSystems" ) )
-            context = KIconLoader::FileSystem;
-        else if ( contextStr == QLatin1String( "Applications" ) )
-            context = KIconLoader::Application;
-        else if ( contextStr == QLatin1String( "Actions" ) )
-            context = KIconLoader::Action;
+        const KIconLoader::Group group =
+            ( groupStr == QLatin1String( "Desktop" ) ) ?     KIconLoader::Desktop :
+            ( groupStr == QLatin1String( "Toolbar" ) ) ?     KIconLoader::Toolbar :
+            ( groupStr == QLatin1String( "MainToolbar" ) ) ? KIconLoader::MainToolbar :
+            ( groupStr == QLatin1String( "Small" ) ) ?       KIconLoader::Small :
+            ( groupStr == QLatin1String( "Panel" ) ) ?       KIconLoader::Panel :
+            ( groupStr == QLatin1String( "Dialog" ) ) ?      KIconLoader::Dialog :
+            ( groupStr == QLatin1String( "User" ) ) ?        KIconLoader::User :
+            /* else */                                       KIconLoader::NoGroup;
+
+        const KIconLoader::Context context =
+            ( contextStr == QLatin1String( "Action" ) ) ?        KIconLoader::Action :
+            ( contextStr == QLatin1String( "Application" ) ) ?   KIconLoader::Application :
+            ( contextStr == QLatin1String( "Device" ) ) ?        KIconLoader::Device :
+            ( contextStr == QLatin1String( "FileSystem" ) ) ?    KIconLoader::FileSystem :
+            ( contextStr == QLatin1String( "MimeType" ) ) ?      KIconLoader::MimeType :
+            ( contextStr == QLatin1String( "Animation" ) ) ?     KIconLoader::Animation :
+            ( contextStr == QLatin1String( "Category" ) ) ?      KIconLoader::Category :
+            ( contextStr == QLatin1String( "Emblem" ) ) ?        KIconLoader::Emblem :
+            ( contextStr == QLatin1String( "Emote" ) ) ?         KIconLoader::Emote :
+            ( contextStr == QLatin1String( "International" ) ) ? KIconLoader::International :
+            ( contextStr == QLatin1String( "Place" ) ) ?         KIconLoader::Place :
+            ( contextStr == QLatin1String( "StatusIcon" ) ) ?    KIconLoader::StatusIcon :
+            // begin: KDE3 compatibility (useful?)
+            ( contextStr == QLatin1String( "Devices" ) ) ?       KIconLoader::Device :
+            ( contextStr == QLatin1String( "MimeTypes" ) ) ?     KIconLoader::MimeType :
+            ( contextStr == QLatin1String( "FileSystems" ) ) ?   KIconLoader::FileSystem :
+            ( contextStr == QLatin1String( "Applications" ) ) ?  KIconLoader::Application :
+            ( contextStr == QLatin1String( "Actions" ) ) ?       KIconLoader::Action :
+            // end: KDE3 compatibility
+            /* else */                                           KIconLoader::Any;
 
 	KIconDialog dlg((QWidget*)0L);
 	kapp->setTopWidget( &dlg );
