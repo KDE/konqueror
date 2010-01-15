@@ -555,7 +555,7 @@ void ActionsImpl::slotSetAsToolbar() {
 void ActionsImpl::slotChangeIcon() {
     KEBApp::self()->bkInfo()->commitChanges();
     KBookmark bk = KEBApp::self()->firstSelected();
-    QString newIcon = KIconDialog::getIcon(KIconLoader::Small, KIconLoader::FileSystem, false, 0, false, KEBApp::self());
+    const QString newIcon = KIconDialog::getIcon(KIconLoader::Small, KIconLoader::Place, false, 0, false, KEBApp::self());
     if (newIcon.isEmpty())
         return;
     EditCommand *cmd = new EditCommand(bk.address(), -1, newIcon);
