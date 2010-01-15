@@ -28,6 +28,8 @@
 #include <QVBoxLayout>
 #include <QLabel>
 
+#include "xtevents.h"
+
 // BEGIN Workaround for QX11EmbedWidget silliness --- it maps widgets by default
 // Most of the code is from Qt 4.3.3, Copyright (C) 1992-2007 Trolltech ASA
 static unsigned int XEMBED_VERSION = 0;
@@ -53,6 +55,7 @@ static void doNotAskForXEmbedMapping(QX11EmbedWidget* widget)
 PluginHostXt::PluginHostXt(NSPluginInstance* plugin):
     _plugin(plugin), _outside(0), _toplevel(0), _form(0)
 {
+    XtEvents::enable();
 }
 
 
