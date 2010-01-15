@@ -1,30 +1,33 @@
 /*
   Copyright (c) 2007 Lubos Lunak <l.lunak@suse.cz>
- 
+
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation; either version 2 of the License, or
   (at your option) any later version.
- 
+
   This program is distributed in the hope that it will be useful,
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   GNU General Public License for more details.
- 
+
   You should have received a copy of the GNU General Public License
   along with this program; if not, write to the Free Software
   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
- 
-*/                                                                            
+
+*/
 
 #include "glibevents.h"
 
 #ifdef HAVE_GLIB2
 
 #include <QApplication>
+#include <QAbstractEventDispatcher>
+#include <kdebug.h>
 
 GlibEvents::GlibEvents()
     {
+    checkedEventLoop = false;
     g_main_context_ref( g_main_context_default());
     connect( &timer, SIGNAL( timeout()), SLOT( process()));
     // TODO Poll for now
@@ -38,6 +41,20 @@ GlibEvents::~GlibEvents()
 
 void GlibEvents::process()
     {
+    if( !checkedEventLoop )
+        {
+        // If Qt is already running a Glib event loop, disable our own's timer
+        if (QLatin1String(QAbstractEventDispatcher::instance()->metaObject()->className())
+            == "QGuiEventDispatcherGlib")
+               {
+               kDebug(1430) << "Qt already providing Glib integration, dropping ours";
+               timer.stop();
+               }
+            else
+               kDebug(1430) << "Qt using pure Xlib event loop; keeping Glib integration active";
+
+            checkedEventLoop = true;
+        }
     if( g_main_depth() > 0 )
         return; // avoid reentrancy when Qt's Glib integration is used
     while( g_main_context_pending( g_main_context_default()))
