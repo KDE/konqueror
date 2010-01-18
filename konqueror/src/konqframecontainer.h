@@ -81,7 +81,6 @@ protected:
 class KonqFrameContainer : public QSplitter, public KonqFrameContainerBase   // TODO rename to KonqFrameContainerSplitter?
 {
   Q_OBJECT
-  friend class KonqFrame; //for emitting ctrlTabPressed() only, aleXXX
 public:
   KonqFrameContainer( Qt::Orientation o,
                       QWidget* parent,
@@ -122,7 +121,6 @@ protected:
     virtual void childEvent( QChildEvent * );
 
 Q_SIGNALS:
-  void ctrlTabPressed();
   void setRubberbandCalled();
 
 protected:

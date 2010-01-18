@@ -167,21 +167,7 @@ void KonqFrame::attachWidget(QWidget* widget)
 
    m_pLayout->activate();
 
-   widget->installEventFilter(this);
-}
-
-bool KonqFrame::eventFilter(QObject* /*obj*/, QEvent *ev)
-{
-   if (ev->type()==QEvent::KeyPress)
-   {
-      QKeyEvent * keyEv = static_cast<QKeyEvent*>(ev);
-      if ((keyEv->key()==Qt::Key_Tab) && (keyEv->modifiers()==Qt::ControlModifier))
-      {
-         emit ((KonqFrameContainer*)parent())->ctrlTabPressed();
-         return true;
-      }
-   }
-   return false;
+   installEventFilter(m_pView->mainWindow()); // for Ctrl+Tab
 }
 
 void KonqFrame::insertTopWidget( QWidget * widget )
@@ -189,7 +175,7 @@ void KonqFrame::insertTopWidget( QWidget * widget )
     assert(m_pLayout);
     assert(widget);
     m_pLayout->insertWidget( 0, widget );
-    widget->installEventFilter(this);
+    installEventFilter(m_pView->mainWindow()); // for Ctrl+Tab
 }
 
 void KonqFrame::setView( KonqView* child )

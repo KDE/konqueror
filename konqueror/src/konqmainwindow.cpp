@@ -3175,7 +3175,7 @@ void KonqMainWindow::slotClearComboHistory()
       m_combo->clearHistory();
 }
 
-bool KonqMainWindow::eventFilter(QObject*obj,QEvent *ev)
+bool KonqMainWindow::eventFilter(QObject*obj, QEvent *ev)
 {
   if ( ( ev->type()==QEvent::FocusIn || ev->type()==QEvent::FocusOut ) &&
        m_combo && m_combo->lineEdit() && m_combo == obj )
@@ -3261,6 +3261,11 @@ bool KonqMainWindow::eventFilter(QObject*obj,QEvent *ev)
           m_paPaste->setEnabled( false );
       }
     }
+  } else if (ev->type()==QEvent::KeyPress) {
+      QKeyEvent * keyEv = static_cast<QKeyEvent*>(ev);
+      if ((keyEv->key() == Qt::Key_Tab) && (keyEv->modifiers() == Qt::ControlModifier)) {
+          slotCtrlTabPressed();
+      }
   }
   return KParts::MainWindow::eventFilter( obj, ev );
 }
