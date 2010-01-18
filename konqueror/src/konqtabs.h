@@ -43,7 +43,6 @@ class NewTabToolButton;
 class KonqFrameTabs : public KTabWidget, public KonqFrameContainerBase
 {
   Q_OBJECT
-  friend class KonqFrame; //for emitting ctrlTabPressed() only, aleXXX
 
 public:
   KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentContainer,
@@ -94,7 +93,6 @@ public Q_SLOTS:
   void setAlwaysTabbedMode( bool );
 
 Q_SIGNALS:
-  void ctrlTabPressed();
   void removeTabPopup();
     void openUrl(KonqView* view, const KUrl& url);
 
