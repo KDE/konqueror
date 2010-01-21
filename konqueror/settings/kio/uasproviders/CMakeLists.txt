@@ -21,6 +21,7 @@ install(FILES
     ns71onwinnt51.desktop
     safari20.desktop
     safari32.desktop
+    safari40.desktop
     safari30oniphone.desktop
     googlebot.desktop
     firefox20oncurrent.desktop
