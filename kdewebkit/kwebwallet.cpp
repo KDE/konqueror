@@ -74,7 +74,8 @@ public:
     void removeDataFromCache(const WebFormList &formList);
 
     // Private Q_SLOT...
-    void _k_openWalletDone(bool);    
+    void _k_openWalletDone(bool);
+    void _k_walletClosed();
 
     WId wid;
     KWebWallet *q;
@@ -239,6 +240,14 @@ void KWebWallet::KWebWalletPrivate::_k_openWalletDone(bool ok)
         delete wallet;
         kWarning() << "Deleted KWallet instance because it cannot be set to use its form data folder!";
     }
+}
+
+void KWebWallet::KWebWalletPrivate::_k_walletClosed()
+{
+    if (wallet)
+      wallet->deleteLater();
+
+    emit q->walletClosed();
 }
 
 KWebWallet::KWebWallet(QObject *parent, WId wid)

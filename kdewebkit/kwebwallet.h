@@ -178,13 +178,11 @@ Q_SIGNALS:
      * This signal is emitted whenever a save form data request is received.
      *
      * Unless you connect to this signal and and call @ref acceptSaveFormDataRequest
-     * or @ref rejectSaveFormDataRequest slots, the save request will never be
-     * acted upon.
+     * or @ref rejectSaveFormDataRequest slots, the save form data requested through
+     * @ref saveFormData will simply be ignored.
      *
      * @p key is a value that uniquely identifies the save request and @p url
      * is the address for which the form data is being saved.
-     *
-     * This signal will not be emitted if the
      *
      * @see acceptSaveFormDataRequest
      * @see rejectSaveFormDataRequest
@@ -200,6 +198,11 @@ Q_SIGNALS:
      * @see saveFormDataRequested
      */
     void saveFormDataCompleted(const QUrl &url, bool ok);
+
+    /**
+     * This signal is emitted whenever the current wallet is closed.
+     */
+    void walletClosed();
 
 protected:
     /**
@@ -275,6 +278,7 @@ private:
     
 
     Q_PRIVATE_SLOT(d, void _k_openWalletDone(bool))
+    Q_PRIVATE_SLOT(d, void _k_walletClosed())
 };
 
 #endif // KWEBWALLET_H
