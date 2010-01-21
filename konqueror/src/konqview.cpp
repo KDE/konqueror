@@ -98,7 +98,6 @@ KonqView::KonqView( KonqViewFactory &viewFactory,
   m_bGotIconURL = false;
   m_bPopupMenuEnabled = true;
   m_browserIface = new KonqBrowserInterface( this );
-  m_bBackRightClick = KonqSettings::backRightClick();
   m_bFollowActive = false;
   m_bBuiltinView = false;
   m_bURLDropHandling = false;
@@ -494,22 +493,6 @@ void KonqView::connectPart()
       m_pPart->widget()->setAcceptDrops(true);
 
   m_pPart->widget()->installEventFilter( this );
-
-  if (m_bBackRightClick) {
-      QAbstractScrollArea* scrollArea = ::qobject_cast<QAbstractScrollArea *>( m_pPart->widget() );
-      if ( scrollArea ) {
-          scrollArea->viewport()->installEventFilter( this );
-      }
-  }
-
-#if 0
-  // KonqDirPart signal
-  if ( ::qobject_cast<KonqDirPart *>(m_pPart) )
-  {
-      connect( m_pPart, SIGNAL( findOpen( KonqDirPart * ) ),
-               m_pMainWindow, SLOT( slotFindOpen( KonqDirPart * ) ) );
-  }
-#endif
 }
 
 void KonqView::slotEnableAction( const char * name, bool enabled )
@@ -1150,36 +1133,11 @@ void KonqView::enablePopupMenu( bool b )
     disconnect( ext, SIGNAL(popupMenu(QPoint,KUrl,mode_t,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)),
              m_pMainWindow, SLOT(slotPopupMenu(QPoint,KUrl,mode_t,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::BrowserExtension::PopupFlags,KParts::BrowserExtension::ActionGroupMap)) );
   }
-  enableBackRightClick( m_bBackRightClick );
-}
-
-// caller should ensure that this is called only when b changed, or for new parts
-void KonqView::enableBackRightClick( bool b )
-{
-    m_bBackRightClick = b;
-    if ( b )
-        connect( this, SIGNAL( backRightClick() ),
-                 m_pMainWindow, SLOT( slotBack() ) );
-    else
-        disconnect( this, SIGNAL( backRightClick() ),
-                    m_pMainWindow, SLOT( slotBack() ) );
 }
 
 void KonqView::reparseConfiguration()
 {
     callExtensionMethod( "reparseConfiguration" );
-    const bool b = KonqSettings::backRightClick();
-    if ( m_bBackRightClick != b ) {
-        QAbstractScrollArea* scrollArea = ::qobject_cast<QAbstractScrollArea *>( m_pPart->widget() );
-        if (scrollArea) {
-            if ( m_bBackRightClick ) {
-                scrollArea->viewport()->installEventFilter( this );
-            } else {
-                scrollArea->viewport()->removeEventFilter( this );
-            }
-        }
-        enableBackRightClick( b );
-    }
 }
 
 void KonqView::disableScrolling()
@@ -1241,49 +1199,6 @@ bool KonqView::eventFilter( QObject *obj, QEvent *e )
         KParts::BrowserExtension *ext = browserExtension();
         if ( !lstDragURLs.isEmpty() && ext && lstDragURLs.first().isValid() )
             emit ext->openUrlRequest( lstDragURLs.first() ); // this will call m_pMainWindow::slotOpenURLRequest delayed
-    }
-
-    if ( m_bBackRightClick )
-    {
-        if ( e->type() == QEvent::ContextMenu )
-        {
-            QContextMenuEvent *ev = static_cast<QContextMenuEvent *>( e );
-            if ( ev->reason() == QContextMenuEvent::Mouse )
-            {
-                return true;
-            }
-        }
-        else if ( e->type() == QEvent::MouseButtonPress )
-        {
-            QMouseEvent *ev = static_cast<QMouseEvent *>( e );
-            if ( ev->button() == Qt::RightButton )
-            {
-                return true;
-            }
-        }
-        else if ( e->type() == QEvent::MouseButtonRelease )
-        {
-            QMouseEvent *ev = static_cast<QMouseEvent *>( e );
-            if ( ev->button() == Qt::RightButton )
-            {
-                emit backRightClick();
-                return true;
-            }
-        }
-        else if ( e->type() == QEvent::MouseMove )
-        {
-            QMouseEvent *ev = static_cast<QMouseEvent *>( e );
-            if ( ev->button() == Qt::RightButton )
-            {
-                obj->removeEventFilter( this );
-                QMouseEvent me( QEvent::MouseButtonPress, ev->pos(), Qt::RightButton, Qt::RightButton, Qt::NoModifier );
-                QApplication::sendEvent( obj, &me );
-                QContextMenuEvent ce( QContextMenuEvent::Mouse, ev->pos(), ev->globalPos() );
-                QApplication::sendEvent( obj, &ce );
-                obj->installEventFilter( this );
-                return true;
-            }
-        }
     }
 
     if ( e->type() == QEvent::FocusIn )
