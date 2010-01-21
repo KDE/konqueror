@@ -128,7 +128,6 @@ KonqView* KonqViewManager::splitView( KonqView* currentView,
   }
 
   KonqFrameContainer* newContainer = parentContainer->splitChildFrame(splitFrame, orientation);
-  connect(newContainer, SIGNAL(ctrlTabPressed()), m_pMainWindow, SLOT(slotCtrlTabPressed()));
 
   //kDebug(1202) << "Create new child";
   KonqView *newView = setupView( newContainer, newViewFactory, service, partServiceOffers, appServiceOffers, serviceType, false );
@@ -188,7 +187,6 @@ KonqView* KonqViewManager::splitMainContainer( KonqView* currentView,
     KonqFrameBase* mainFrame = m_pMainWindow->childFrame();
 
     KonqFrameContainer* newContainer = m_pMainWindow->splitChildFrame(mainFrame, orientation);
-    connect(newContainer, SIGNAL(ctrlTabPressed()), m_pMainWindow, SLOT(slotCtrlTabPressed()));
 
     KonqView* childView = setupView( newContainer, newViewFactory, service, partServiceOffers, appServiceOffers, serviceType, true );
 
@@ -1270,7 +1268,6 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
     else
     {
       KonqFrameContainer *newContainer = new KonqFrameContainer( o, parent->asQWidget(), parent );
-      connect(newContainer,SIGNAL(ctrlTabPressed()),m_pMainWindow,SLOT(slotCtrlTabPressed()));
 
       int tabindex = pos;
       if(openAfterCurrentPage && parent->frameType() == KonqFrameBase::Tabs) // Need to honor it, if possible
@@ -1578,7 +1575,6 @@ void KonqViewManager::createTabContainer(QWidget* parent, KonqFrameContainerBase
     kDebug() << "createTabContainer" << parent << parentContainer;
 #endif
     m_tabContainer = new KonqFrameTabs( parent, parentContainer, this );
-    connect( m_tabContainer, SIGNAL(ctrlTabPressed()), m_pMainWindow, SLOT(slotCtrlTabPressed()) );
     // Delay the opening of the URL for #106641
     bool ok = connect( m_tabContainer, SIGNAL(openUrl(KonqView*, KUrl)), m_pMainWindow, SLOT(openUrl(KonqView*, KUrl)), Qt::QueuedConnection);
     Q_ASSERT(ok);
