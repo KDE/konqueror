@@ -362,6 +362,10 @@ KonqMainWindow *KonqViewManager::openSavedWindow(const KConfigGroup& configGroup
     mainWindow->viewManager()->loadRootItem( configGroup, mainWindow, KUrl(), true, KUrl() );
     mainWindow->applyMainWindowSettings( configGroup, true );
     mainWindow->activateChild();
+
+#ifdef DEBUG_VIEWMGR
+    mainWindow->viewManager()->printFullHierarchy();
+#endif
     return mainWindow;
 }
 
@@ -373,6 +377,9 @@ KonqMainWindow *KonqViewManager::openSavedWindow(const KConfigGroup& configGroup
         return KonqViewManager::openSavedWindow(configGroup);
     } else {
         loadRootItem( configGroup, tabContainer(), KUrl(), true, KUrl() );
+#ifndef NDEBUG
+        printFullHierarchy();
+#endif
         return m_pMainWindow;
     }
 }
@@ -810,7 +817,9 @@ KonqView *KonqViewManager::setupView( KonqFrameContainerBase *parentContainer,
 
   parentContainer->insertChildFrame( newViewFrame, index );
 
-  if (parentContainer->frameType() != KonqFrameBase::Tabs) newViewFrame->show();
+  if (parentContainer->frameType() != KonqFrameBase::Tabs) {
+      newViewFrame->show();
+  }
 
   // Don't register passive views to the part manager
   if ( !v->isPassiveMode() ) // note that KonqView's constructor could set this to true even if passiveMode is false
@@ -1134,7 +1143,9 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
         prefix = name + QLatin1Char( '_' );
     }
 
-    //kDebug(1202) << "begin name=" << name << "openUrl=" << openUrl;
+#ifdef DEBUG_VIEWMGR
+    kDebug() << "begin name=" << name << "openUrl=" << openUrl;
+#endif
 
     if (name.startsWith("View") || name == "empty") {
         // load view config
@@ -1190,8 +1201,6 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
         KonqConfigEvent ev( cfg.config(), prefix+'_', false/*load*/);
         QApplication::sendEvent( childView->part(), &ev );
 #endif
-
-        childView->frame()->show();
 
         if (parent == m_tabContainer && m_tabContainer->count() == 1) {
             // First tab, make it the active one
@@ -1495,7 +1504,7 @@ public:
             className = frame->part()->widget()->metaObject()->className();
         kDebug(1202) << m_spaces << frame
                      << "parent=" << frame->parentContainer()
-                     << (frame->isVisible() ? "visible" : "invisible")
+                     << (frame->isHidden() ? "hidden" : "shown")
                      << "containing view" << frame->childView()
                      << "and part" << frame->part()
                      << "whose widget is a" << className;
@@ -1503,7 +1512,7 @@ public:
     }
     virtual bool visit(KonqFrameContainer* container) {
         kDebug(1202) << m_spaces << container
-                     << (container->isVisible() ? "visible" : "invisible")
+                     << (container->isHidden() ? "hidden" : "shown")
                      << (container->orientation() == Qt::Horizontal ? "horizontal" : "vertical")
                      << "sizes=" << container->sizes()
                      << "parent=" << container->parentContainer()
@@ -1565,7 +1574,9 @@ bool KonqViewManager::isTabBarVisible() const
 
 void KonqViewManager::createTabContainer(QWidget* parent, KonqFrameContainerBase* parentContainer)
 {
-    //kDebug(1202) << "createTabContainer" << parent << parentContainer;
+#ifdef DEBUG_VIEWMGR
+    kDebug() << "createTabContainer" << parent << parentContainer;
+#endif
     m_tabContainer = new KonqFrameTabs( parent, parentContainer, this );
     connect( m_tabContainer, SIGNAL(ctrlTabPressed()), m_pMainWindow, SLOT(slotCtrlTabPressed()) );
     // Delay the opening of the URL for #106641
