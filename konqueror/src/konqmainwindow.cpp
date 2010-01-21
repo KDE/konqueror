@@ -2713,15 +2713,8 @@ KUrl::List KonqMainWindow::currentURLs() const
   KUrl::List urls;
   if ( m_currentView ) {
     urls.append( m_currentView->url() );
-#if 0
-    KonqDirPart* dirPart = ::qobject_cast<KonqDirPart *>(m_currentView->part());
-    if ( dirPart ) {
-      const KFileItemList itemList = dirPart->selectedFileItems();
-      if (!itemList.isEmpty()) { // Return list of selected items only if we have a selection
-        urls = itemList.urlList();
-      }
-    }
-#endif
+    if (!m_currentView->selectedItems().isEmpty()) // Return list of selected items only if we have a selection
+        urls = m_currentView->selectedItems().urlList();
   }
   return urls;
 }

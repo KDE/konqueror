@@ -625,6 +625,7 @@ void KonqView::slotCanceled( const QString & errorMsg )
 
 void KonqView::slotSelectionInfo( const KFileItemList &items )
 {
+  m_selectedItems = items;
   KonqFileSelectionEvent ev( items, m_pPart );
   QApplication::sendEvent( m_pMainWindow, &ev );
 }
