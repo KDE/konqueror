@@ -94,10 +94,10 @@ QObject* KWebPluginFactory::create(const QString& _mimeType, const QUrl& url, co
     }
 
     KParts::ReadOnlyPart* part = 0;
-    // NOTE: To use the KDE nspluginviewer, comment out the if statement below.
-    // We are still relying on the QtWebKit's version, because url navigation
-    // from flash content does not work. However, the KDE version is out of
-    // process and as such will not take down the browser when it crashes.
+
+    // Defer handling of flash content to QtWebKit's builtin viewer.
+    // If you want to use/test KDE's nspluginviewer, comment out the
+    // if statement below.
     if (!excludedMimeType(mimeType))
         part = KMimeTypeTrader::createPartInstanceFromQuery<KParts::ReadOnlyPart>(mimeType, 0, parent(), QString(), arguments);
 
