@@ -9,7 +9,6 @@ include_directories(${KDE4_INCLUDES} ${CMAKE_CURRENT_SOURCE_DIR}/kdewebkit)
 add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 
 add_subdirectory(includes)
-add_subdirectory(cmake)
 
 set(kdewebkit_LIB_SRCS
     kwebpage.cpp
