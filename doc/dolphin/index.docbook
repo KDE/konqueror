@@ -1420,7 +1420,7 @@ item(s).</action></para></listitem>
 <keycombo action="simul">&Ctrl;<keycap>V</keycap></keycombo>
 </shortcut>
 <guimenu>Edit</guimenu>
-<guimenuitem>Paste</guimenuitem>
+<guimenuitem>Paste Clipboard Contents...</guimenuitem>
 </menuchoice></term>
 <listitem><para><action>Pastes the currently copied/cut items to the current
 folder. If the clipboard does not contain files or folders, the clipboard
@@ -1773,7 +1773,7 @@ connection manually.</action></para></listitem>
 <varlistentry>
 <term><menuchoice>
 <guimenu>Settings</guimenu>
-<guisubmenu>Show Toolbar</guisubmenu>
+<guisubmenu>Toolbars Shown</guisubmenu>
 </menuchoice></term>
 <listitem><para><action>Hides and shows the <guimenuitem>Main Toolbar</guimenuitem> 
 and the <guimenuitem>Search Toolbar</guimenuitem>.</action></para></listitem>
