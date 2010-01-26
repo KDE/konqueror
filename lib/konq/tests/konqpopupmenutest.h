@@ -24,7 +24,7 @@
 #include <QObject>
 #include <KFileItem>
 #include <KActionCollection>
-class KNewMenu;
+class KNewFileMenu;
 
 class KonqPopupMenuTest : public QObject
 {
@@ -72,7 +72,7 @@ private:
     QActionGroup* m_fileEditActions;
     QActionGroup* m_linkActions;
     QActionGroup* m_partActions;
-    KNewMenu* m_newMenu;
+    KNewFileMenu* m_newMenu;
     KActionCollection m_actionCollection;
 };
 
