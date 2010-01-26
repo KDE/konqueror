@@ -20,6 +20,6 @@
 
 #include "konq_events.h"
 
-const char *KonqFileSelectionEvent::s_fileItemSelectionEventName = "Konqueror/FileSelection";
-const char *KonqFileMouseOverEvent::s_fileItemMouseOverEventName = "Konqueror/FileMouseOver";
-const char *KonqConfigEvent::s_configEventName = "Konqueror/Config";
+const char * const KonqFileSelectionEvent::s_fileItemSelectionEventName = "Konqueror/FileSelection";
+const char * const KonqFileMouseOverEvent::s_fileItemMouseOverEventName = "Konqueror/FileMouseOver";
+const char * const KonqConfigEvent::s_configEventName = "Konqueror/Config";

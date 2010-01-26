@@ -44,7 +44,7 @@ public:
   static bool test( const QEvent *event ) { return KParts::Event::test( event, s_fileItemSelectionEventName ); }
 
 private:
-  static const char *s_fileItemSelectionEventName;
+  static const char * const s_fileItemSelectionEventName;
 
   KFileItemList m_selection;
   KParts::ReadOnlyPart *m_part;
@@ -61,7 +61,7 @@ public:
   static bool test( const QEvent *event ) { return KParts::Event::test( event, s_fileItemMouseOverEventName ); }
 
 private:
-  static const char *s_fileItemMouseOverEventName;
+  static const char * const s_fileItemMouseOverEventName;
 
   KFileItem m_item;
   KParts::ReadOnlyPart *m_part;
@@ -78,7 +78,7 @@ public:
 
   static bool test( const QEvent *event ) { return KParts::Event::test( event, s_configEventName ); }
 private:
-  static const char *s_configEventName;
+  static const char * const s_configEventName;
 
   KConfigBase *m_config;
   QString m_prefix;

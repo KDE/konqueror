@@ -29,9 +29,9 @@
 
 QTEST_KDEMAIN( FavIconTest, NoGUI )
 
-static const char* s_hostUrl = "http://wiki.kde.org";
-static const char* s_iconUrl = "http://wiki.kde.org/favicon.ico";
-static const char* s_altIconUrl = "http://www.ibm.com/favicon.ico";
+static const char s_hostUrl[] = "http://wiki.kde.org";
+static const char s_iconUrl[] = "http://wiki.kde.org/favicon.ico";
+static const char s_altIconUrl[] = "http://www.ibm.com/favicon.ico";
 
 static int s_downloadTime; // in ms
 
