@@ -150,9 +150,10 @@ static bool domainSchemeMatch(const QUrl& u1, const QUrl& u2)
     return (u1List == u2List);
 }
 
+#if 0
 static QString getFileNameForDownload(const QNetworkRequest &request, QNetworkReply *reply)
 {
-    QString fileName = KUrl(request.url()).fileName();
+    QString fileName = KUrl(request.url()).fileName();    
 
     if (reply && reply->hasRawHeader("Content-Disposition")) { // based on code from arora, downloadmanger.cpp
         const QString value = QL1S(reply->rawHeader("Content-Disposition"));
@@ -167,6 +168,7 @@ static QString getFileNameForDownload(const QNetworkRequest &request, QNetworkRe
 
     return fileName;
 }
+#endif
 
 class WebPage::WebPagePrivate
 {
