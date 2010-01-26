@@ -34,7 +34,8 @@
 
 #include <libkonq_export.h>
 
-class KNewMenu;
+class KNewFileMenu;
+
 class KBookmarkManager;
 class KonqPopupMenuPrivate;
 
@@ -83,7 +84,7 @@ public:
   KonqPopupMenu( const KFileItemList &items,
                  const KUrl& viewURL,
                  KActionCollection & actions,
-                 KNewMenu * newMenu,
+                 KNewFileMenu * newMenu,
                  Flags appFlags,
                  KParts::BrowserExtension::PopupFlags partFlags /*= KParts::BrowserExtension::DefaultPopupItems*/,
                  QWidget * parentWidget,

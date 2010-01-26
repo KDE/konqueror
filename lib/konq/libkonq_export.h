@@ -37,4 +37,8 @@
 # endif
 #endif
 
+# ifndef LIBKONQ_EXPORT_DEPRECATED
+#  define LIBKONQ_EXPORT_DEPRECATED KDE_DEPRECATED LIBKONQ_EXPORT
+# endif
+
 #endif

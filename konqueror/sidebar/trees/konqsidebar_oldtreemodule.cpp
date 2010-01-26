@@ -10,7 +10,7 @@
 #include <kinputdialog.h>
 #include <kiconloader.h>
 #include <kparts/factory.h>
-#include <konq_nameandurlinputdialog.h>
+#include <knameandurlinputdialog.h>
 #include <k3listviewsearchline.h>
 
 #include <QtGui/QClipboard>
@@ -176,7 +176,7 @@ public:
         const KDesktopFile df(actionData.toString());
         const KConfigGroup desktopGroup = df.desktopGroup();
         KUrl url = desktopGroup.readEntry("X-KDE-Default-URL");
-        KonqNameAndUrlInputDialog dlg(i18nc("@label", "Name:"), i18nc("@label", "Path or URL:"), KUrl(), parentWidget);
+        KNameAndUrlInputDialog dlg(i18nc("@label", "Name:"), i18nc("@label", "Path or URL:"), KUrl(), parentWidget);
         dlg.setCaption(i18nc("@title:window", "Add folder sidebar module"));
         dlg.setSuggestedName(df.readName());
         if (!dlg.exec())

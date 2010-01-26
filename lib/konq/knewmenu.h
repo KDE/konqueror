@@ -21,65 +21,26 @@
 #ifndef KNEWMENU_H
 #define KNEWMENU_H
 
-#include <kactionmenu.h>
-#include <kurl.h>
+#include <knewfilemenu.h>
 #include <libkonq_export.h>
 
-class KJob;
-
-class KActionCollection;
-class KNewMenuPrivate;
-
 /**
- * The 'New' submenu, both for the File menu and the RMB popup menu.
- * (The same instance can be used by both).
- * It fills the menu with 'Folder' and one item per installed template.
- *
- * To use this class, you need to connect aboutToShow() of the File menu
- * with slotCheckUpToDate() and to call slotCheckUpToDate() before showing
- * the RMB popupmenu.
- *
- * KNewMenu automatically updates the list of templates shown if installed templates
- * are added/updated/deleted.
- *
- * @author David Faure <faure@kde.org>
- * Ideas and code for the new template handling mechanism ('link' desktop files)
- * from Christoph Pickart <pickart@iam.uni-bonn.de>
+ * @deprecated since 4.5, use KNewFileMenu from kdelibs/kfile instead.
  */
-class LIBKONQ_EXPORT KNewMenu : public KActionMenu
+class LIBKONQ_EXPORT_DEPRECATED KNewMenu : public KNewFileMenu
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
     /**
      * Constructor
-     * @param parent the parent KActionCollection this KAction should be
+     * @param collection the KActionCollection this KAction should be
      * added to.
      * @param parentWidget the parent widget that will be the owner of
      * this KNewMenu and that will take care of destroying this instance
      * once the parentWidget itself got destroyed.
      * @param name action name, when adding the action to the collection
      */
-    KNewMenu(KActionCollection * parent, QWidget* parentWidget, const QString& name);
-    virtual ~KNewMenu();
-
-    /**
-     * Only show the files in a given set of mimetypes.
-     * This is useful in specialized applications (while file managers, on
-     * the other hand, want to show all mimetypes).
-     */
-    void setSupportedMimeTypes(const QStringList& mime); // TODO remove from the libkonq version after moving to kdelibs, never released in libkonq
-    
-    /**
-     * Set if the directory view currently shows dot files.
-     * @since 4.4
-     */
-    void setViewShowsHiddenFiles(bool b);
-
-    /**
-     * Set the files the popup is shown for
-     * Call this before showing up the menu
-     */
-    void setPopupFiles(const KUrl::List& files);
+    KNewMenu(KActionCollection* collection, QWidget* parentWidget, const QString& name);
 
 public Q_SLOTS:
     /**
@@ -87,37 +48,10 @@ public Q_SLOTS:
      * IMPORTANT : Call this in the slot for aboutToShow.
      * And while you're there, you probably want to call setViewShowsHiddenFiles ;)
      */
-    void slotCheckUpToDate();
+    void slotCheckUpToDate() {
+        checkUpToDate();
+    }
 
-    /**
-     * Call this to create a new directory as if the user had done it using
-     * a popupmenu. This is useful to make sure that creating a directory with
-     * a key shortcut (e.g. F10) triggers the exact same code as when using
-     * the New menu.
-     * Requirements: call setPopupFiles first, and keep this KNewMenu instance
-     * alive (the mkdir is async).
-     * @since 4.3
-     */
-    void createDirectory();
-
-Q_SIGNALS:
-    /**
-     * Emitted once @p url has been successfully created
-     */
-    void itemCreated(const KUrl& url);
-
-protected Q_SLOTS:
-    /**
-     * Called when the job that copied the template has finished.
-     * This method is virtual so that error handling can be reimplemented.
-     * Make sure to call the base class slotResult when !job->error() though.
-     */
-    virtual void slotResult(KJob* job);
-
-private:
-    Q_PRIVATE_SLOT(d, void _k_slotActionTriggered(QAction*))
-    Q_PRIVATE_SLOT(d, void _k_slotFillTemplates())
-    KNewMenuPrivate* const d;
 };
 
 #endif

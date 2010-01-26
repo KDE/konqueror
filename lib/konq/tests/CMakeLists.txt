@@ -11,7 +11,7 @@ target_link_libraries(konqmimedatatest konq ${KDE4_KDECORE_LIBRARY} ${QT_QTGUI_L
 
 kde4_add_unit_test(konqpopupmenutest konqpopupmenutest.cpp)
 
-target_link_libraries(konqpopupmenutest konq ${KDE4_KDECORE_LIBRARY} ${KDE4_KIO_LIBRARY} ${KDE4_KDEUI_LIBRARY}
+target_link_libraries(konqpopupmenutest konq ${KDE4_KFILE_LIBS}
                      ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${QT_QTTEST_LIBRARY})
 
 ########### favicontest ###############
