@@ -88,6 +88,10 @@ void KWebKitPartPrivate::init(QWidget *mainWidget)
             q, SIGNAL(setStatusBarText(const QString &)));
     connect(webView, SIGNAL(linkShiftClicked(const KUrl &)),
             webPage, SLOT(downloadUrl(const KUrl &)));
+    connect(webView, SIGNAL(loadStarted()),
+            searchBar, SLOT(hide()));
+    connect(webView, SIGNAL(loadStarted()),
+            searchBar, SLOT(clear()));
 
     browserExtension = new WebKitBrowserExtension(q);
     connect(webPage, SIGNAL(loadProgress(int)),
@@ -159,9 +163,9 @@ void KWebKitPartPrivate::slotLoadFinished(bool ok)
 
       NOTE #2: QWebFrame::metaData only provides access to META tags that
       contain a 'name' attribute and completely ignores those that do not.
-      This of course includes yes the meta redirect tag, i.e. the 'http-equiv'
-      attribute. Hence the convoluted code below just to check if we have a
-      redirect request!
+      This of course includes other META redirect tags such as 'http-equiv'.
+      Hence the convoluted code below is needed to extract the META redirect
+      period from the list of META tags...
     */
 #if 0
     bool refresh = false;
