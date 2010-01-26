@@ -104,9 +104,10 @@ void SearchBar::show()
 
 void SearchBar::hide()
 {
-    clear();
-    setFoundMatch(false);
-    QWidget::hide();
+    if (isVisible()) {
+      d->ui.searchLineEdit->setStyleSheet(QString());
+      QWidget::hide();
+    }
 }
 
 QString SearchBar::searchText() const
