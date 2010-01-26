@@ -58,9 +58,9 @@ static QStringList extractActionNames(const QMenu& menu)
                     ret.append("UNNAMED " + action->text());
                 }
             } else {
-                if (objectName == "menuaction") // a single service-menu action: give same name as a submenu
-                    ret.append("actions_submenu");
-                else if (objectName == "openWith_submenu") {
+                if (objectName == "menuaction" // a single service-menu action, or a service-menu submenu: skip; too variable.
+                    || objectName == "actions_submenu") {
+                } else if (objectName == "openWith_submenu") {
                     ret.append("openwith");
                 } else if (objectName == "openwith_browse" && lastObjectName == "openwith") {
                     // We had "open with foo" followed by openwith_browse, all is well.
@@ -143,7 +143,7 @@ void KonqPopupMenuTest::initTestCase()
     QAction* viewDocumentSource = new QAction(m_partActions);
     m_actionCollection.addAction("viewDocumentSource", viewDocumentSource);
 
-    m_newMenu = new KNewMenu(&m_actionCollection, 0, "newmenu");
+    m_newMenu = new KNewFileMenu(&m_actionCollection, "newmenu", 0);
 
     // Check if extractActionNames works
     QMenu popup;
@@ -179,8 +179,6 @@ void KonqPopupMenuTest::testFile()
                     << "cut" << "copy" << "rename" << "trash" << "separator"
                     << "openwith"
                     << "preview1";
-    if (!KStandardDirs::locate("services", "ServiceMenus/encryptfile.desktop").isEmpty())
-        expectedActions << "actions_submenu";
     if (!KStandardDirs::locate("services", "ServiceMenus/ark_addtoservicemenu.desktop").isEmpty())
         expectedActions << "services_submenu";
     expectedActions << "separator";
@@ -222,8 +220,6 @@ void KonqPopupMenuTest::testFileInReadOnlyDirectory()
                     << "copy" << "separator"
                     << "openwith"
                     << "preview1";
-    if (!KStandardDirs::locate("services", "ServiceMenus/konsolehere.desktop").isEmpty())
-        expectedActions << "actions_submenu";
     expectedActions << "separator";
     expectedActions << "copyTo_submenu" << "separator";
     expectedActions << "properties";
@@ -255,8 +251,6 @@ void KonqPopupMenuTest::testFilePreviewSubMenu()
                     << "cut" << "copy" << "rename" << "trash" << "separator"
                     << "openwith"
                     << "preview_submenu";
-    if (!KStandardDirs::locate("services", "ServiceMenus/encryptfile.desktop").isEmpty())
-        expectedActions << "actions_submenu";
     if (!KStandardDirs::locate("services", "ServiceMenus/ark_addtoservicemenu.desktop").isEmpty())
         expectedActions << "services_submenu";
     expectedActions << "separator";
@@ -288,8 +282,6 @@ void KonqPopupMenuTest::testSubDirectory()
                     << "cut" << "copy" << "pasteto" << "rename" << "trash" << "separator"
                     << "openwith"
                     << "preview_submenu";
-    if (!KStandardDirs::locate("services", "ServiceMenus/konsolehere.desktop").isEmpty())
-        expectedActions << "actions_submenu";
     expectedActions << "separator";
     expectedActions << "copyTo_submenu" << "moveTo_submenu" << "separator";
     expectedActions << "properties";
@@ -324,8 +316,6 @@ void KonqPopupMenuTest::testViewDirectory()
                     << "paste" << "separator"
                     << "openwith"
                     << "preview_submenu";
-    if (!KStandardDirs::locate("services", "ServiceMenus/konsolehere.desktop").isEmpty())
-        expectedActions << "actions_submenu";
     expectedActions << "separator";
     expectedActions << "copyTo_submenu" << "moveTo_submenu" << "separator";
     expectedActions << "properties";
@@ -360,8 +350,6 @@ void KonqPopupMenuTest::testViewReadOnlyDirectory()
                     // << "paste" // no paste since readonly
                     << "openwith"
                     << "preview_submenu";
-    if (!KStandardDirs::locate("services", "ServiceMenus/konsolehere.desktop").isEmpty())
-        expectedActions << "actions_submenu";
     expectedActions << "separator";
     expectedActions << "copyTo_submenu" << "separator"; // no moveTo_submenu, since readonly
     expectedActions << "properties";
@@ -390,10 +378,6 @@ void KonqPopupMenuTest::testHtmlLink()
 
     QStringList actions = extractActionNames(popup);
     kDebug() << actions;
-    const int actionsIndex = actions.indexOf("actions_submenu");
-    if (actionsIndex > -1) {
-        actions.removeAt(actionsIndex);
-    }
     QStringList expectedActions;
     expectedActions << "openInNewWindow" << "openInNewTab" << "separator"
                     << "bookmark_add" << "savelinkas" << "copylinklocation"
@@ -432,10 +416,6 @@ void KonqPopupMenuTest::testHtmlPage()
 
     QStringList actions = extractActionNames(popup);
     kDebug() << actions;
-    const int actionsIndex = actions.indexOf("actions_submenu");
-    if (actionsIndex > -1) {
-        actions.removeAt(actionsIndex);
-    }
     QStringList expectedActions;
     expectedActions << "go_back" << "go_forward" << "reload" << "separator"
                     << "bookmark_add"
