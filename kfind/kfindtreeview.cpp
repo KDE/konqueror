@@ -45,7 +45,7 @@
 #include <knewmenu.h>
 
 // Permission strings
-static const char* perm[4] = {
+static const char* const perm[4] = {
   I18N_NOOP( "Read-write" ),
   I18N_NOOP( "Read-only" ),
   I18N_NOOP( "Write-only" ),
