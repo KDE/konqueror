@@ -32,8 +32,10 @@ class KonqNameAndUrlInputDialogPrivate;
  * Basically a merge of KLineEditDlg and KUrlRequesterDlg ;)
  * @since 4.4
  * @author David Faure <faure@kde.org>
+ *
+ * @deprecated since 4.5, use KNameAndUrlInputDialog from kdelibs/kfile instead.
  */
-class LIBKONQ_EXPORT KonqNameAndUrlInputDialog : public KDialog
+class LIBKONQ_EXPORT_DEPRECATED KonqNameAndUrlInputDialog : public KDialog
 {
     Q_OBJECT
 public:

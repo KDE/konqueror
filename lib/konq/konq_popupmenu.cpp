@@ -23,7 +23,7 @@
 #include "konq_popupmenuplugin.h"
 #include "konq_popupmenuinformation.h"
 #include "konq_copytomenu.h"
-#include "konq_menuactions.h"
+#include "kfileitemactions.h"
 #include "kpropertiesdialog.h"
 #include "knewmenu.h"
 #include "konq_operations.h"
@@ -108,11 +108,11 @@ public:
     QWidget* m_parentWidget;
     QString m_urlTitle;
     KParts::BrowserExtension::PopupFlags m_itemFlags;
-    KNewMenu *m_pMenuNew;
+    KNewFileMenu *m_pMenuNew;
     KUrl m_sViewURL;
     KFileItemListProperties m_popupItemProperties;
     KonqPopupMenuInformation m_popupMenuInfo; // only used by plugins
-    KonqMenuActions m_menuActions;
+    KFileItemActions m_menuActions;
     KonqCopyToMenu m_copyToMenu;
     KBookmarkManager* m_bookmarkManager;
     KActionCollection &m_actions;
@@ -126,7 +126,7 @@ public:
 KonqPopupMenu::KonqPopupMenu(const KFileItemList &items,
                              const KUrl& viewURL,
                              KActionCollection & actions,
-                             KNewMenu * newMenu,
+                             KNewFileMenu * newMenu,
                              Flags kpf,
                              KParts::BrowserExtension::PopupFlags flags,
                              QWidget * parentWidget,
@@ -259,8 +259,8 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
         const bool mkdirRequested = m_itemFlags & KParts::BrowserExtension::ShowCreateDirectory;
         if ( (currentDir || mkdirRequested) && m_pMenuNew ) // Current dir -> add the "new" menu
         {
-            // As requested by KNewMenu :
-            m_pMenuNew->slotCheckUpToDate();
+            // As requested by KNewFileMenu :
+            m_pMenuNew->checkUpToDate();
             m_pMenuNew->setPopupFiles(m_popupItemProperties.urlList());
 
             q->addAction( m_pMenuNew );
@@ -406,7 +406,7 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
     }
 
     // Second block, builtin + user
-    m_menuActions.addActionsTo(q);
+    m_menuActions.addServiceActionsTo(q);
 
     q->addSeparator();
 

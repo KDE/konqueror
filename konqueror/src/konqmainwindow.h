@@ -55,7 +55,7 @@ class KBookmarkGroup;
 class KBookmarkMenu;
 class KBookmarkActionMenu;
 class KCMultiDialog;
-class KNewMenu;
+class KNewFileMenu;
 class KToggleAction;
 class KonqBidiHistoryAction;
 class KBookmarkBar;
@@ -619,7 +619,7 @@ private:
 private: // members
   KonqUndoManager* m_pUndoManager;
 
-  KNewMenu * m_pMenuNew;
+  KNewFileMenu * m_pMenuNew;
 
   KAction *m_paPrint;
 

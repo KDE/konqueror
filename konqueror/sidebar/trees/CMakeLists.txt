@@ -19,7 +19,7 @@ set(konqsidebar_tree_PART_SRCS konqsidebar_oldtreemodule.cpp ${libkonq_sidebar_t
 
 kde4_add_plugin(konqsidebar_tree ${konqsidebar_tree_PART_SRCS})
 
-target_link_libraries(konqsidebar_tree ${KDE4_KDE3SUPPORT_LIBS} ${KDE4_KPARTS_LIBS} konq konqsidebarplugin )
+target_link_libraries(konqsidebar_tree ${KDE4_KDE3SUPPORT_LIBS} ${KDE4_KPARTS_LIBS} ${KDE4_KFILE_LIBS} konq konqsidebarplugin )
 
 install(TARGETS konqsidebar_tree DESTINATION ${PLUGIN_INSTALL_DIR} )
 

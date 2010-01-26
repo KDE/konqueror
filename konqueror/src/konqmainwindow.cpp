@@ -3481,7 +3481,7 @@ void KonqMainWindow::initActions()
   // If any one needs to be initially disabled, put that code in enableAllActions
 
   // For the popup menu only.
-  m_pMenuNew = new KNewMenu(actionCollection(), this, "new_menu");
+  m_pMenuNew = new KNewFileMenu(actionCollection(), "new_menu", this);
 
   // File menu
 

@@ -90,7 +90,8 @@ qt4_add_dbus_interface(konqueror_KDEINIT_SRCS org.kde.Konqueror.SessionManager.x
 
 kde4_add_app_icon(konqueror_KDEINIT_SRCS "${KDE4_ICON_INSTALL_DIR}/oxygen/*/apps/konqueror.png")
 kde4_add_kdeinit_executable(konqueror ${konqueror_KDEINIT_SRCS} konqmain.cpp)
-target_link_libraries(kdeinit_konqueror konquerorprivate konq ${KDE4_KPARTS_LIBS} ${KDE4_KUTILS_LIBS})
+# libkfile is only needed because of KNewFileMenu
+target_link_libraries(kdeinit_konqueror konquerorprivate konq ${KDE4_KPARTS_LIBS} ${KDE4_KUTILS_LIBS} ${KDE4_KFILE_LIBS})
 if (UNIX)
   target_link_libraries(kdeinit_konqueror ${X11_LIBRARIES})
 endif (UNIX)

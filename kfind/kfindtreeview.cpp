@@ -42,7 +42,7 @@
 #include <kio/deletejob.h>
 
 #include <konq_operations.h>
-#include <knewmenu.h>
+#include <knewfilemenu.h>
 
 // Permission strings
 static const char* const perm[4] = {
@@ -591,7 +591,7 @@ void KFindTreeView::contextMenuRequested( const QPoint & p)
         delete m_contextMenu;
         m_contextMenu = 0;
     }
-    m_contextMenu = new KonqPopupMenu( fileList, KUrl(), *m_actionCollection, new KNewMenu( m_actionCollection, this, "new_menu"), 0, flags, this, 0, actionGroups);
+    m_contextMenu = new KonqPopupMenu( fileList, KUrl(), *m_actionCollection, new KNewFileMenu( m_actionCollection, "new_menu", this), 0, flags, this, 0, actionGroups);
 
     m_contextMenu->exec( this->mapToGlobal( p ) );
 }
