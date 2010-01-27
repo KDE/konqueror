@@ -5,14 +5,7 @@ find_package(KDE4 REQUIRED)
 include(KDE4Defaults)
 include(MacroLibrary)
 
-if(${KDE_VERSION} VERSION_LESS 4.3.74)
-    find_package(KdeWebKit REQUIRED)
-endif(${KDE_VERSION} VERSION_LESS 4.3.74)
-
 include_directories(${KDE4_INCLUDES} ${CMAKE_CURRENT_SOURCE_DIR}/..)
-if(${KDE_VERSION} VERSION_LESS 4.3.74)
-    include_directories(${KDEWEBKIT_INCLUDE_DIR})
-endif(${KDE_VERSION} VERSION_LESS 4.3.74)
 add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 
 add_subdirectory(cmake)
@@ -39,28 +32,25 @@ kde4_add_ui_files(kwebkit_LIB_SRCS
 )
 
 ########################### kwebkit #############################
-
 kde4_add_library(kwebkit SHARED ${kwebkit_LIB_SRCS})
 
-if(${KDE_VERSION} VERSION_LESS 4.3.74)
-    target_link_libraries(kwebkit ${KDE4_KPARTS_LIBS} ${KDEWEBKIT_LIBRARIES} ${QT_QTWEBKIT_LIBRARY} ${QT_QTUITOOLS_LIBRARY})
-else(${KDE_VERSION} VERSION_LESS 4.3.74)
+if(${KDE_VERSION} VERSION_LESS 4.3.80)
+    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../kdewebkit)
+    link_directories(${CMAKE_CURRENT_BINARY_DIR}/../kdewebkit)
+    target_link_libraries(kwebkit kdewebkit ${KDE4_KPARTS_LIBS} ${QT_QTWEBKIT_LIBRARY} ${QT_QTUITOOLS_LIBRARY})
+else(${KDE_VERSION} VERSION_LESS 4.3.80)
     target_link_libraries(kwebkit ${KDE4_KPARTS_LIBS} ${KDE4_KDEWEBKIT_LIBS} ${QT_QTWEBKIT_LIBRARY} ${QT_QTUITOOLS_LIBRARY})
-endif(${KDE_VERSION} VERSION_LESS 4.3.74)
+endif(${KDE_VERSION} VERSION_LESS 4.3.80)
 
 set_target_properties(kwebkit PROPERTIES VERSION 1.0.0 SOVERSION 1)
-
 ########################### kwebkit #############################
 
-
 ########################### kwebkitpart #############################
-
 kde4_add_plugin(kwebkitpart kwebkitpartfactory.cpp)
 
 target_link_libraries(kwebkitpart ${KDE4_KPARTS_LIBS} ${QT_QTWEBKIT_LIBRARY} kwebkit)
 
 set_target_properties(kwebkitpart PROPERTIES VERSION 1.0.0 SOVERSION 1)
-
 ########################### kwebkitpart #############################
 
 install(FILES
