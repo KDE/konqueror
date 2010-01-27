@@ -931,11 +931,10 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
           childView->part()->setArguments( req.args );
       if ( childView->browserExtension() )
           childView->browserExtension()->setBrowserArguments( req.browserArgs );
-#if 0
-      KonqDirPart* dirPart = ::qobject_cast<KonqDirPart*>( childView->part() );
-      if ( dirPart )
-          dirPart->setFilesToSelect( req.filesToSelect );
-#endif
+
+      // see dolphinpart
+      childView->part()->setProperty( "filesToSelect", KUrl::List(req.filesToSelect) );
+
       if ( !url.isEmpty() )
           childView->openUrl( url, originalURL, req.nameFilter, req.tempFile );
   }
@@ -1550,25 +1549,16 @@ void KonqMainWindow::slotViewModeTriggered(QAction* action)
         KUrl url = m_currentView->url();
         QString locationBarURL = m_currentView->locationBarURL();
 #if 0
-        QStringList filesToSelect;
-        KonqDirPart* dirPart = ::qobject_cast<KonqDirPart *>(m_currentView->part());
-        if( dirPart ) {
-            const KFileItemList fileItemsToSelect = dirPart->selectedFileItems();
-            KFileItemList::const_iterator it = fileItemsToSelect.begin();
-            const KFileItemList::const_iterator end = fileItemsToSelect.end();
-            for ( ; it != end; ++it ) {
-                filesToSelect += (*it)->name();
-            }
-        }
+        // Problem: dolphinpart doesn't currently implement it. But we don't need it that much
+        // now that it's the main filemanagement part for all standard modes.
+        KUrl::List filesToSelect = childView->part()->property("filesToSelect").value<KUrl::List>();
 #endif
 
         m_currentView->changePart( m_currentView->serviceType(), modeName );
         KUrl locURL( locationBarURL );
         QString nameFilter = detectNameFilter( locURL );
 #if 0
-        KonqDirPart* dirPart = ::qobject_cast<KonqDirPart *>(m_currentView->part());
-        if( dirPart )
-            dirPart->setFilesToSelect( filesToSelect );
+        childView->part()->setProperty( "filesToSelect", KUrl::List(req.filesToSelect) );
 #endif
         m_currentView->openUrl( locURL, locationBarURL, nameFilter );
     }
