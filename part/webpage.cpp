@@ -318,9 +318,11 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
                 /*
                   HACK: It is impossible to marry QtWebKit's history handling
                   with that of konqueror. They simply do not mix like oil and
-                  water! Anyhow, here we workaround some issues that result
-                  from not being able to use QtWebKit's built-in history
-                  navigation.
+                  water! Anyhow, the code below is an attempt to work around
+                  the issues associated with these problems. It is not 100%
+                  perfect, but everything should work correctly 99.9% of the
+                  time and that is true even when this part gets unloaded and
+                  loaded...
                 */
                 if (d->frameStateContainer.contains(frame->frameName())) {
                     if (frame == mainFrame()) {
@@ -571,14 +573,11 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
                     emit loadAborted(reply->url());
                     return;
                 default:
-#if QT_VERSION < 0x040600
-                    // WORKAROUND:
-                    // This code is necessary because QWebFrame::setHtml does
-                    // not work properly in Qt < 4.6. Hence, we emit this signal
-                    // here to get the webkitpart to properly save frame states.
+                    // Make sure the saveFrameStateRequested signal is emitted so
+                    // the page can restored properly.
                     if (isMainFrameRequest)
                         emit saveFrameStateRequested(frame, 0);
-#endif
+
                     url = QString ("error:/?error=%1&errText=%2#%3")
                           .arg(errCode).arg(reply->errorString()).arg(reply->url().toString());
                     break;
