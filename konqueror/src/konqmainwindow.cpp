@@ -2079,6 +2079,9 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
   //              << m_currentView->locationBarURL() << "m_currentView=" << m_currentView;
   m_currentView->setLocationBarURL( m_currentView->locationBarURL() );
 
+    if (m_currentView->url().isEmpty() || m_currentView->url() == "about:blank")
+        focusLocationBar(); // #84867 usability improvement
+
   updateToolBarActions();
 
   m_currentView->setActiveComponent();
@@ -2469,9 +2472,9 @@ void KonqMainWindow::openMultiURL( const KUrl::List& url )
         if (newView == 0) continue;
         openUrl( newView, *it, QString() );
         m_pViewManager->showTab( newView );
-        focusLocationBar();
         m_pWorkingTab = 0;
     }
+    focusLocationBar();
 }
 
 void KonqMainWindow::slotRemoveView()
