@@ -42,7 +42,8 @@ void AboutProtocol::get( const KUrl& )
 
     os << "<html><head><title>about:blank</title></head><body></body></html>";
     os.flush();
-    
+
+    mimeType("text/html");
     data( output );
     finished();
 }
