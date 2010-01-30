@@ -1,0 +1,10 @@
+- Improve/implement integration for Konqueror's (read: KHTML) kpart plugins, e.g. ad-block, download manager
+
+- Implement the KPartStatusBarExtension for showing status bar icons for the above plugins.
+
+- Improve the search bar plugin and perhaps move it as an optional widget into kdewebkit 
+  some time down the line.
+
+- Find a way to show the rendering engine version number in applications that embed this part, 
+  for example konqueror's about dialog. Another option would be to implement something for the
+  "about:" protocol, about:plugin or about:engine ?
