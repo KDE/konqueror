@@ -19,8 +19,8 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#include "ui_passwordbar.h"
 #include "passwordbar.h"
+#include "ui_passwordbar.h"
 
 #include "settings/webkitsettings.h"
 
@@ -85,9 +85,9 @@ void PasswordBar::onSaveFormData(const QString &key, const QUrl &url)
     d->url = url;
     d->requestKey = key;
     d->ui.infoLabel->setText(i18n("<html>Do you want %1 to remember the login "
-                                  "information for <b>%2</b>?</html>")
-                             .arg(QCoreApplication::applicationName())
-                             .arg(url.host()));
+                                  "information for <b>%2</b>?</html>",
+                                  QCoreApplication::applicationName(),
+                                  url.host()));
 
     if (WebKitSettings::self()->isNonPasswordStorableSite(url.host()))
       onNotNowButtonClicked();

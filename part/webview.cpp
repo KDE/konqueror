@@ -252,7 +252,7 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &part
         partActions.append(action);
 
         if (!d->actionCollection->action("viewimage")) {
-            action = new KAction(i18n("View Image (%1)").arg(KUrl(d->result.imageUrl()).fileName()), this);
+            action = new KAction(i18n("View Image (%1)", KUrl(d->result.imageUrl()).fileName()), this);
             d->actionCollection->addAction("viewimage", action);
             connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotViewImage()));
         }

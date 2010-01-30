@@ -23,8 +23,8 @@
  *
  */
 
-#include "ui_searchbar.h"
 #include "searchbar.h"
+#include "ui_searchbar.h"
 
 #include <QResizeEvent>
 #include <QShortcut>

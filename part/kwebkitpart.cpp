@@ -25,8 +25,8 @@
 
 #include "kwebkitpart.h"
 
-#include "kwebkitpart_ext.h"
 #include "kwebkitpart_p.h"
+#include "kwebkitpart_ext.h"
 #include "webview.h"
 #include "webpage.h"
 #include "websslinfo.h"
