@@ -190,6 +190,7 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
 
     // Set our own internal network access manager...
     KDEPrivate::MyNetworkAccessManager *manager = new KDEPrivate::MyNetworkAccessManager(this);
+    manager->setCache(0);
     if (parent && parent->window())
         manager->setCookieJarWindowId(parent->window()->winId());
     setNetworkAccessManager(manager);
