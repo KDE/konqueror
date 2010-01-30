@@ -25,13 +25,7 @@ kde4_add_ui_files(kwebkit_LIB_SRCS
 ########################### kwebkit #############################
 kde4_add_library(kwebkit SHARED ${kwebkit_LIB_SRCS})
 
-if(${KDE_VERSION} VERSION_LESS 4.3.80)
-    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../kdewebkit)
-    link_directories(${CMAKE_CURRENT_BINARY_DIR}/../kdewebkit)
-    target_link_libraries(kwebkit kdewebkit ${KDE4_KPARTS_LIBS} ${QT_QTWEBKIT_LIBRARY} ${QT_QTUITOOLS_LIBRARY})
-else(${KDE_VERSION} VERSION_LESS 4.3.80)
-    target_link_libraries(kwebkit ${KDE4_KPARTS_LIBS} ${KDE4_KDEWEBKIT_LIBS} ${QT_QTWEBKIT_LIBRARY} ${QT_QTUITOOLS_LIBRARY})
-endif(${KDE_VERSION} VERSION_LESS 4.3.80)
+target_link_libraries(kwebkit ${KDE4_KPARTS_LIBS} ${KDE4_KDEWEBKIT_LIBS} ${QT_QTWEBKIT_LIBRARY} ${QT_QTUITOOLS_LIBRARY})
 
 set_target_properties(kwebkit PROPERTIES VERSION 1.0.0 SOVERSION 1)
 ########################### kwebkit #############################
