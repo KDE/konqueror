@@ -29,7 +29,7 @@
 #include <KDE/KParts/ReadOnlyPart>
 #include <KDE/KParts/BrowserExtension>
 
-#include <kdewebkit/kwebview.h>
+#include <kwebview.h>
 
 class KUrl;
 class KWebKitPart;

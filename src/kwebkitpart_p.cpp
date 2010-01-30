@@ -33,7 +33,7 @@
 #include "settings/webkitsettings.h"
 #include "ui/passwordbar.h"
 #include "ui/searchbar.h"
-#include <kdewebkit/kwebwallet.h>
+#include <kwebwallet.h>
 
 #include <KDE/KLocalizedString>
 #include <KDE/KStringHandler>

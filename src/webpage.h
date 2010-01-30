@@ -24,7 +24,7 @@
 #ifndef WEBPAGE_H
 #define WEBPAGE_H
 
-#include <kdewebkit/kwebpage.h>
+#include <kwebpage.h>
 
 #include <QtCore/QUrl>
 #include <QtCore/QDebug>

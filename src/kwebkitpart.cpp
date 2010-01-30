@@ -138,11 +138,11 @@ static QString htmlError (int code, const QString& text, const KUrl& reqUrl)
 KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent, const QStringList &/*args*/)
             :KParts::ReadOnlyPart(parent), d(new KWebKitPartPrivate(this))
 {
-    KAboutData about = KAboutData("kwebkitpart", "webkitkde", ki18n("WebKit HTML Component"),
+    KAboutData about = KAboutData("kwebkitpart", "kwebkitpart", ki18n("WebKit HTML Component"),
                                   /*version*/ "0.9", /*ki18n("shortDescription")*/ KLocalizedString(),
                                   KAboutData::License_LGPL,
-                                  ki18n("(c) 2009 Dawit Alemayehu\n"
-                                        "(c) 2008-2009 Urs Wolfer\n"
+                                  ki18n("(c) 2009-2010 Dawit Alemayehu\n"
+                                        "(c) 2008-2010 Urs Wolfer\n"
                                         "(c) 2007 Trolltech ASA"));
 
     about.addAuthor(ki18n("Laurent Montel"), KLocalizedString(), "montel@kde.org");
