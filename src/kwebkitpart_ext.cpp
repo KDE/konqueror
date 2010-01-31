@@ -149,7 +149,7 @@ void WebKitBrowserExtension::restoreState(QDataStream &stream)
     args.setXOffset(xOfs);
     args.setYOffset(yOfs);
     args.metaData() = metaData;
-    args.metaData().insert(QLatin1String("webkitpart-restore-state"), QString());
+    args.metaData().insert(QLatin1String("kwebkitpart-restore-state"), QString());
 
     d->part->setArguments(args);
     d->part->browserExtension()->setBrowserArguments(bargs);

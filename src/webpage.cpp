@@ -2,7 +2,7 @@
  * This file is part of the KDE project.
  *
  * Copyright (C) 2008 Dirk Mueller <mueller@kde.org>
- * Copyright (C) 2008 Urs Wolfer <uwolfer @ kde.org>
+ * Copyright (C) 2008 - 2010 Urs Wolfer <uwolfer @ kde.org>
  * Copyright (C) 2009 Dawit Alemayehu <adawit@kde.org>
  *
  * This library is free software; you can redistribute it and/or
@@ -63,7 +63,7 @@ typedef QPair<QString, QString> StringPair;
 // Sanitizes the "mailto:" url, e.g. strips out any "attach" parameters.
 static QUrl sanitizeMailToUrl(const QUrl &url, QStringList& files) {
     QUrl sanitizedUrl;    
-    
+
     // NOTE: This is necessary to ensure we can properly use QUrl's query
     // related APIs to process 'mailto:' urls of form 'mailto:foo@bar.com'.
     if (url.hasQuery())
@@ -82,7 +82,7 @@ static QUrl sanitizeMailToUrl(const QUrl &url, QStringList& files) {
         } else if (QString::compare(queryItem.first, QL1S("attach"), Qt::CaseInsensitive) == 0) {
             files << queryItem.second;
             continue;
-        }        
+        }
         sanitizedUrl.addQueryItem(queryItem.first, queryItem.second);
     }
 
@@ -441,8 +441,8 @@ void WebPage::downloadRequest(const QNetworkRequest &request)
             kDebug() << "Using: " << downloadManger << " as Download Manager";
             QString cmd = KStandardDirs::findExe(downloadManger);
             if (cmd.isEmpty()) {
-                QString errMsg = i18n("The Download Manager (%1) could not be found in your $PATH.", downloadManger);
-                QString errMsgEx = i18n("Try to reinstall it. \n\nThe integration with Konqueror will be disabled.");
+                QString errMsg = i18n("The download manager (%1) could not be found in your installation.", downloadManger);
+                QString errMsgEx = i18n("Try to reinstall it and make sure that it is available in $PATH. \n\nThe integration will be disabled.");
                 KMessageBox::detailedSorry(view(), errMsg, errMsgEx);
                 cfg.writePathEntry("DownloadManager", QString());
                 cfg.sync();
@@ -604,7 +604,7 @@ bool WebPage::checkLinkSecurity(const QNetworkRequest &req, NavigationType type)
             message = i18n("<qt>This untrusted page links to<br/><b>%1</b>."
                            "<br/>Do you want to follow the link?</qt>", linkUrl.url());
             title = i18n("Security Warning");
-            buttonText = i18n("Follow");
+            buttonText = i18nc("follow link despite of security warning", "Follow");
         } else {
             title = i18n("Security Alert");
             message = i18n("<qt>Access by untrusted page to<br/><b>%1</b><br/> denied.</qt>",
@@ -691,7 +691,7 @@ bool WebPage::handleMailToUrl (const QUrl& url, NavigationType type) const
                     KMessageBox::information(0, i18n("This site attempted to attach a file from your "
                                                      "computer in the form submission. The attachment "
                                                      "was removed for your protection."),
-                                             i18n("KDE"), "InfoTriedAttach");
+                                             i18n("Attachment Removed"), "InfoTriedAttach");
                 }
                 break;
             default:

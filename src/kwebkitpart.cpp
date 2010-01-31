@@ -2,7 +2,7 @@
  * This file is part of the KDE project.
  *
  * Copyright (C) 2007 Trolltech ASA
- * Copyright (C) 2008 - 2009 Urs Wolfer <uwolfer @ kde.org>
+ * Copyright (C) 2008 - 2010 Urs Wolfer <uwolfer @ kde.org>
  * Copyright (C) 2008 Laurent Montel <montel@kde.org>
  * Copyright (C) 2009 Dawit Alemayehu <adawit@kde.org>
  *
@@ -89,8 +89,7 @@ static QString htmlError (int code, const QString& text, const KUrl& reqUrl)
 
   if ( !techName.isNull() ) {
     doc += QL1S( "<h2>" );
-    doc += i18n( "Technical Reason: " );
-    doc += techName;
+    doc += i18n( "Technical Reason: %1", techName );
     doc += QL1S( "</h2>" );
   }
 
@@ -138,18 +137,19 @@ static QString htmlError (int code, const QString& text, const KUrl& reqUrl)
 KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent, const QStringList &/*args*/)
             :KParts::ReadOnlyPart(parent), d(new KWebKitPartPrivate(this))
 {
-    KAboutData about = KAboutData("kwebkitpart", "kwebkitpart", ki18n("WebKit HTML Component"),
+    KAboutData about = KAboutData("kwebkitpart", 0,
+                                  ki18nc("component about data name", "WebKit Browser Engine Component"),
                                   /*version*/ "0.9", /*ki18n("shortDescription")*/ KLocalizedString(),
                                   KAboutData::License_LGPL,
                                   ki18n("(c) 2009-2010 Dawit Alemayehu\n"
                                         "(c) 2008-2010 Urs Wolfer\n"
                                         "(c) 2007 Trolltech ASA"));
 
-    about.addAuthor(ki18n("Laurent Montel"), KLocalizedString(), "montel@kde.org");
-    about.addAuthor(ki18n("Michael Howell"), KLocalizedString(), "mhowell123@gmail.com");
-    about.addAuthor(ki18n("Urs Wolfer"), KLocalizedString(), "uwolfer@kde.org");
-    about.addAuthor(ki18n("Dirk Mueller"), KLocalizedString(), "mueller@kde.org");
-    about.addAuthor(ki18n("Dawit Alemayehu"), KLocalizedString(), "adawit@kde.org");
+    about.addAuthor(ki18n("Urs Wolfer"), ki18n("Maintainer, Developer"), "uwolfer@kde.org");
+    about.addAuthor(ki18n("Dawit Alemayehu"), ki18n("Developer"), "adawit@kde.org");
+    about.addAuthor(ki18n("Michael Howell"), ki18n("Developer"), "mhowell123@gmail.com");
+    about.addAuthor(ki18n("Laurent Montel"), ki18n("Developer"), "montel@kde.org");
+    about.addAuthor(ki18n("Dirk Mueller"), ki18n("Developer"), "mueller@kde.org");
     KComponentData componentData(&about);
     setComponentData(componentData);
 
@@ -216,7 +216,7 @@ bool KWebKitPart::openUrl(const KUrl &u)
         // Check if this is a restore state request, i.e. a history navigation
         // or session restore request. If it is, set the state information so
         // that the page can be properly restored...
-        if (metaData.contains(QL1S("webkitpart-restore-state"))) {
+        if (metaData.contains(QL1S("kwebkitpart-restore-state"))) {
             WebFrameState frameState;
             frameState.url = u;
             frameState.scrollPosX = args.xOffset();
@@ -274,17 +274,17 @@ void KWebKitPart::initAction()
     actionCollection()->addAction("printFrame", action);
     connect(action, SIGNAL(triggered(bool)), d->browserExtension, SLOT(printFrame()));
 
-    action = new KAction(KIcon("zoom-in"), i18n("Zoom In"), this);
+    action = new KAction(KIcon("zoom-in"), i18nc("zoom in action", "Zoom In"), this);
     actionCollection()->addAction("zoomIn", action);
     action->setShortcut(KShortcut("CTRL++; CTRL+="));
     connect(action, SIGNAL(triggered(bool)), d->browserExtension, SLOT(zoomIn()));
 
-    action = new KAction(KIcon("zoom-out"), i18n("Zoom Out"), this);
+    action = new KAction(KIcon("zoom-out"), i18nc("zoom out action", "Zoom Out"), this);
     actionCollection()->addAction("zoomOut", action);
     action->setShortcut(KShortcut("CTRL+-; CTRL+_"));
     connect(action, SIGNAL(triggered(bool)), d->browserExtension, SLOT(zoomOut()));
 
-    action = new KAction(KIcon("zoom-original"), i18n("Actual Size"), this);
+    action = new KAction(KIcon("zoom-original"), i18nc("reset zoom action", "Actual Size"), this);
     actionCollection()->addAction("zoomNormal", action);
     action->setShortcut(KShortcut("CTRL+0"));
     connect(action, SIGNAL(triggered(bool)), d->browserExtension, SLOT(zoomNormal()));
@@ -307,12 +307,12 @@ void KWebKitPart::initAction()
     action->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_U));
     connect(action, SIGNAL(triggered(bool)), d->browserExtension, SLOT(slotViewDocumentSource()));
 
-    action = new KAction(i18n("SSL"), this);
+    action = new KAction(i18nc("Secure Sockets Layer", "SSL"), this);
     actionCollection()->addAction("security", action);
     connect(action, SIGNAL(triggered(bool)), d, SLOT(slotShowSecurity()));
 
     action = actionCollection()->addAction(KStandardAction::Find, "find", d, SLOT(slotShowSearchBar()));
-    action->setWhatsThis(i18n("Find text<br /><br />"
+    action->setWhatsThis(i18nc("find action \"whats this\" text", "<h3>Find text</h3>"
                               "Shows a dialog that allows you to find text on the displayed page."));
 
     action = actionCollection()->addAction(KStandardAction::FindNext, "findnext",
@@ -354,4 +354,3 @@ bool KWebKitPart::handleError(const KUrl &u, QWebFrame *frame)
 
     return false;
 }
-

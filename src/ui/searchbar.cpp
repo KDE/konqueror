@@ -51,7 +51,7 @@ public:
         ui.previousButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
         ui.nextButton->setIcon(KIcon("go-down-search"));
         ui.nextButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-        ui.searchInfo->setText(i18n("&Find:"));
+        ui.searchInfo->setText(i18nc("label for input line to find text", "&Find:"));
 
         connect(ui.actionSearchAutomatically, SIGNAL(triggered(bool)),
                 searchBar, SLOT(searchAsYouTypeChanged(bool)));

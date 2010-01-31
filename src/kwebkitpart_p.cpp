@@ -237,7 +237,7 @@ void KWebKitPartPrivate::slotShowSecurity()
         dlg->exec();
     } else {
         KMessageBox::information(0, i18n("The SSL information for this site "
-                                         "appears to be corrupt."), i18n("SSL"));
+                                         "appears to be corrupt."), i18nc("Secure Sockets Layer", "SSL"));
     }
 }
 
@@ -259,7 +259,7 @@ void KWebKitPartPrivate::slotLinkHovered(const QString &link, const QString &tit
     const QString scheme = linkUrl.scheme();
 
     if (QString::compare(scheme, QL1S("mailto"), Qt::CaseInsensitive) == 0) {
-        message += i18n("Email: ");
+        message += i18nc("status bar text when hovering email links; looks like \"Email: xy@kde.org - CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\"", "Email: ");
 
         // Workaround: for QUrl's parsing deficiencies of "mailto:foo@bar.com".
         if (!linkUrl.hasQuery())
@@ -285,11 +285,11 @@ void KWebKitPartPrivate::slotLinkHovered(const QString &link, const QString &tit
         if (fields.contains(QL1S("to")))
             message += fields.value(QL1S("to")).join(QL1S(", "));
         if (fields.contains(QL1S("cc")))
-            message += QL1S(" - CC: ") + fields.value(QL1S("cc")).join(QL1S(", "));
+            message += i18nc("status bar text when hovering email links; looks like \"Email: xy@kde.org - CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\"", " - CC: ") + fields.value(QL1S("cc")).join(QL1S(", "));
         if (fields.contains(QL1S("bcc")))
-            message += QL1S(" - BCC: ") + fields.value(QL1S("bcc")).join(QL1S(", "));
+            message += i18nc("status bar text when hovering email links; looks like \"Email: xy@kde.org - CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\"", " - BCC: ") + fields.value(QL1S("bcc")).join(QL1S(", "));
         if (fields.contains(QL1S("subject")))
-            message += QL1S(" - Subject: ") + fields.value(QL1S("subject")).join(QL1S(" "));
+            message += i18nc("status bar text when hovering email links; looks like \"Email: xy@kde.org - CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\"", " - Subject: ") + fields.value(QL1S("subject")).join(QL1S(" "));
     } else {
         message = link;
     }

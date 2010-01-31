@@ -24,20 +24,14 @@
 
 #include <kdeversion.h>
 
-#if KDE_IS_VERSION(4,3,73)
 #include <kio/accessmanager.h>
-typedef KIO::AccessManager AccessManagerBase;
-#else
-#include "kdewebkit/networkaccessmanager_p.h"
-typedef KDEPrivate::NetworkAccessManager AccessManagerBase;
-#endif
 
 namespace KDEPrivate {
 
  /**
   * Re-implemented for internal reasons. API remains unaffected.
   */
-class MyNetworkAccessManager : public AccessManagerBase
+class MyNetworkAccessManager : public KIO::AccessManager
 {
 public:
     MyNetworkAccessManager(QObject *parent = 0);

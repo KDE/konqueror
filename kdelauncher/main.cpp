@@ -43,11 +43,8 @@
 #include <QtWebKit/QWebView>
 #include <QtWebKit/QWebFrame>
 #include <QtWebKit/QWebSettings>
-
-#if QT_VERSION >= 0x040600
 #include <QtWebKit/QWebElement>
 #include <QtWebKit/QWebElementCollection>
-#endif
 
 #if !defined(QT_NO_PRINTER)
 #include <QtGui/QPrintPreviewDialog>
@@ -191,15 +188,15 @@ protected slots:
 
     void selectElements() {
         bool ok;
-        QString str = QInputDialog::getText(this, i18n("Select elements"), i18n("Choose elements"),
+        QString str = QInputDialog::getText(this,
+                                            i18nc("input dialog window title for selecting html elements", "Select elements"),
+                                            i18nc("input dialog text for selecting html elements", "Choose elements"),
                                             QLineEdit::Normal, "a", &ok);
         if (ok && !str.isEmpty()) {
-#if QT_VERSION >= 0x040600
             QWebElementCollection result =  view->page()->mainFrame()->findAllElements(str);
             foreach (QWebElement e, result)
                 e.setStyleProperty("background-color", "yellow");
-            statusBar()->showMessage(i18np("%1 element selected","%1 elements selected",result.count()), 5000);
-#endif
+            statusBar()->showMessage(i18np("%1 element selected", "%1 elements selected", result.count()), 5000);
         }
     }
 

@@ -2,7 +2,7 @@
  * This file is part of the KDE project.
  *
  * Copyright (C) 2007 Trolltech ASA
- * Copyright (C) 2008 Urs Wolfer <uwolfer @ kde.org>
+ * Copyright (C) 2008 - 2010 Urs Wolfer <uwolfer @ kde.org>
  * Copyright (C) 2008 Laurent Montel <montel@kde.org>
  * Copyright (C) 2009 Dawit Alemayehu <adawit@kde.org>
  *
@@ -293,7 +293,7 @@ void WebView::selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &se
             selectedTextURL.truncate(15);
             selectedTextURL += "...";
         }
-        KAction *action = new KAction(i18n("Open '%1'", selectedTextURL), this);
+        KAction *action = new KAction(i18nc("open selected url", "Open '%1'", selectedTextURL), this);
         d->actionCollection->addAction("openSelection", action);
         action->setIcon(KIcon("window-new"));
         connect(action, SIGNAL(triggered(bool)), this, SLOT(openSelection()));
@@ -371,7 +371,8 @@ void WebView::WebViewPrivate::addSearchActions(QList<QAction *>& selectActions, 
         name = "Google";
     }
 
-    KAction *action = new KAction(i18n("Search for '%1' with %2", selectedText, name), view);
+    KAction *action = new KAction(i18nc("Search for \"text\" with \"search provider\"", "Search for '%1' with %2",
+                                        selectedText, name), view);
     actionCollection->addAction("searchProvider", action);
     selectActions.append(action);
     action->setIcon(icon);
@@ -383,7 +384,7 @@ void WebView::WebViewPrivate::addSearchActions(QList<QAction *>& selectActions, 
     favoriteEngines = cg.readEntry("FavoriteSearchEngines", favoriteEngines);
 
     if (!favoriteEngines.isEmpty()) {
-        KActionMenu* providerList = new KActionMenu(i18n("Search for '%1' with",  selectedText), view);
+        KActionMenu* providerList = new KActionMenu(i18nc("Search for \"text\" with", "Search for '%1' with",  selectedText), view);
         actionCollection->addAction("searchProviderList", providerList);
         selectActions.append(providerList);
 

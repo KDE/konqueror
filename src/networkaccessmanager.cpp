@@ -52,7 +52,7 @@ protected:
 namespace KDEPrivate {
 
 MyNetworkAccessManager::MyNetworkAccessManager(QObject *parent)
-                       :AccessManagerBase(parent)
+                       : KIO::AccessManager(parent)
 {
 }
 
@@ -65,6 +65,6 @@ QNetworkReply *MyNetworkAccessManager::createRequest(Operation op, const QNetwor
           return new NullNetworkReply(req);
       }
 
-      return AccessManagerBase::createRequest(op, req, outgoingData);
+      return KIO::AccessManager::createRequest(op, req, outgoingData);
 }
 }
