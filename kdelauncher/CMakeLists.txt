@@ -5,5 +5,5 @@ add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 
 kde4_add_executable(kdelauncher main.cpp )
 target_link_libraries(kdelauncher
-    kdewebkit
+    ${KDE4_KDEWEBKIT_LIBS}
 )
