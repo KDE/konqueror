@@ -92,14 +92,10 @@ void WebView::loadUrl(const KUrl &url, const KParts::OpenUrlArguments &args, con
       return;
     }
 
-    QNetworkRequest req;
-    req.setUrl(url);
-    req.setRawHeader("Referer", args.metaData().value("referrer").toUtf8());
-
     if (bargs.postData.isEmpty()) {
-        KWebView::load(req);
+        KWebView::load(QNetworkRequest(url));
     } else {
-        KWebView::load(req, QNetworkAccessManager::PostOperation, bargs.postData);
+        KWebView::load(QNetworkRequest(url), QNetworkAccessManager::PostOperation, bargs.postData);
     }
 }
 
