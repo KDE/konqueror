@@ -1,1 +1,1 @@
-#cmakedefine HAVE_WEBKITPART 1
+#cmakedefine HAVE_KWEBKITPART 1

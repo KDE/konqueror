@@ -5,17 +5,17 @@
 
 include(MacroOptionalDependPackage)
 
-MACRO_OPTIONAL_DEPEND_PACKAGE(WebKitPart "kwebkitpart")
-if(DEPEND_PACKAGE_WebKitPart)
-        macro_optional_find_package(WebKitPart QUIET)
-else(DEPEND_PACKAGE_WebKitPart)
-        set(WEBKITPART_FOUND FALSE)
-endif(DEPEND_PACKAGE_WebKitPart)
+MACRO_OPTIONAL_DEPEND_PACKAGE(KWebKitPart "kwebkitpart")
+if(DEPEND_PACKAGE_KWebKitPart)
+        macro_optional_find_package(KWebKitPart QUIET)
+else(DEPEND_PACKAGE_KWebKitPart)
+        set(KWEBKITPART_FOUND FALSE)
+endif(DEPEND_PACKAGE_KWebKitPart)
 
-if(WEBKITPART_FOUND)
-    set(HAVE_WEBKITPART true)
-    include_directories(${WEBKITPART_INCLUDE_DIR})
-endif(WEBKITPART_FOUND)
+if(KWEBKITPART_FOUND)
+    set(HAVE_KWEBKITPART true)
+    include_directories(${KWEBKITPART_INCLUDE_DIR})
+endif(KWEBKITPART_FOUND)
 
 
 configure_file(config-kttsplugin.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-kttsplugin.h )
@@ -29,9 +29,9 @@ kde4_add_plugin(khtmlkttsdplugin ${khtmlkttsdplugin_PART_SRCS})
 
 target_link_libraries(khtmlkttsdplugin  ${KDE4_KHTML_LIBS} )
 
-if(WEBKITPART_FOUND)
-    target_link_libraries(khtmlkttsdplugin ${WEBKITPART_LIBRARIES} ${KDE4_KDEWEBKIT_LIBS} ${QT_QTWEBKIT_LIBRARY} )
-endif(WEBKITPART_FOUND)
+if(KWEBKITPART_FOUND)
+    target_link_libraries(khtmlkttsdplugin ${KWEBKITPART_LIBRARIES} ${KDE4_KDEWEBKIT_LIBS} ${QT_QTWEBKIT_LIBRARY} )
+endif(KWEBKITPART_FOUND)
 
 
 install(TARGETS khtmlkttsdplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
@@ -40,6 +40,6 @@ install(TARGETS khtmlkttsdplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
 ########### install files ###############
 
 install( FILES khtmlkttsd.rc khtmlkttsd.desktop  DESTINATION  ${DATA_INSTALL_DIR}/khtml/kpartplugins )
-if(WEBKITPART_FOUND)
+if(KWEBKITPART_FOUND)
    install( FILES khtmlkttsd.rc khtmlkttsd.desktop  DESTINATION  ${DATA_INSTALL_DIR}/kwebkitpart/kpartplugins )
-endif(WEBKITPART_FOUND)
+endif(KWEBKITPART_FOUND)
