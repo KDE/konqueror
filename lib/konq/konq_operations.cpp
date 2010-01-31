@@ -832,15 +832,15 @@ KIO::SimpleJob* KonqOperations::newDir(QWidget * parent, const KUrl & baseUrl, N
 {
     // Notice that kfile's KDirOperator::mkdir() is somewhat similar
     bool ok;
-    QString name = i18n( "New Folder" );
+    QString name = i18nc( "@label Default name when creating a folder", "New Folder" );
     if ( baseUrl.isLocalFile() && QFileInfo( baseUrl.toLocalFile( KUrl::AddTrailingSlash ) + name ).exists() )
         name = KIO::RenameDialog::suggestName(baseUrl, name);
 
     bool askAgain;
     do {
         askAgain = false;
-        name = KInputDialog::getText ( i18n( "New Folder" ),
-                                       i18n( "Enter folder name:" ), name, &ok, parent );
+        name = KInputDialog::getText ( i18nc( "@title:window", "New Folder" ),
+                                       i18nc( "@label:textbox", "Enter folder name:" ), name, &ok, parent );
         if ( ok && !name.isEmpty() ) {
             KUrl url;
             if ((name[0] == '/') || (name[0] == '~')) {
