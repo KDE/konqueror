@@ -35,7 +35,7 @@
 #include <kspeech.h>
 #include <ktoolinvocation.h>
 
-#ifdef HAVE_WEBKITPART
+#ifdef HAVE_KWEBKITPART
 #include <kwebkitpart.h>
 #include <QWebFrame>
 #include <QWebView>
@@ -110,7 +110,7 @@ void KHTMLPluginKTTSD::slotReadOut()
                 query = compPart->htmlDocument().body().innerText().string();
         }
     }
-#ifdef HAVE_WEBKITPART
+#ifdef HAVE_KWEBKITPART
     else
     {
         KWebKitPart *webkitPart = dynamic_cast<KWebKitPart *>(part);
