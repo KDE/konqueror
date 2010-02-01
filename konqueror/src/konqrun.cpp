@@ -100,17 +100,27 @@ void KonqRun::foundMimeType(const QString & _type)
 
     if (!hasFinished()) {
         // If we couldn't embed the mimetype, call BrowserRun::handleNonEmbeddable()
-        KParts::BrowserRun::NonEmbeddableResult res = handleNonEmbeddable(mimeType);
+        KService::Ptr selectedService;
+        KParts::BrowserRun::NonEmbeddableResult res = handleNonEmbeddable(mimeType, &selectedService);
         if (res == KParts::BrowserRun::Delayed)
             return;
         setFinished(res == KParts::BrowserRun::Handled);
         if (hasFinished()) {
             // save or cancel -> nothing else will happen in m_pView, so clear statusbar (#163628)
             m_pView->frame()->statusbar()->slotClear();
-        } else if (!tryEmbed) {
-            // "Open" selected for a serverSuggestsSave() file - let's open. #171869
-            if (tryOpenView(mimeType, associatedAppIsKonqueror))
-                return;
+        } else {
+            if (!tryEmbed) {
+                // "Open" selected for a serverSuggestsSave() file - let's open. #171869
+                if (tryOpenView(mimeType, associatedAppIsKonqueror))
+                    return;
+            }
+            // "Open" selected, possible with a specific application
+            if (selectedService)
+                KRun::setPreferredService(selectedService->desktopEntryName());
+            else {
+                KRun::displayOpenWithDialog(url(), m_pMainWindow, false /*tempfile*/, suggestedFileName());
+                setFinished(true);
+            }
         }
     }
 
