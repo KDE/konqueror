@@ -1,11 +1,23 @@
 [Desktop Entry]
 Type=Service
 Comment=Embeddable HTML component
+Comment[es]=Componente HTML empotrable
+Comment[fr]=Composant HTML embarquable
+Comment[nn]=Innebyggbar HTML-komponent
+Comment[pt]=Componente de HTML incorporada
+Comment[pt_BR]=Componente HTML que pode ser embutido
 Comment[uk]=Вмонтований HTML-компонент
+Comment[x-test]=xxEmbeddable HTML componentxx
 Icon=webkit
 MimeType=text/html;application/xml;application/xhtml+xml;
 Name=WebKit
+Name[es]=WebKit
+Name[fr]=WebKit
+Name[nn]=WebKit
+Name[pt]=WebKit
+Name[pt_BR]=WebKit
 Name[uk]=WebKit
+Name[x-test]=xxWebKitxx
 X-KDE-ServiceTypes=KParts/ReadOnlyPart,Browser/View
 X-KDE-Library=kwebkitpart
 InitialPreference=9
