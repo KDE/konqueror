@@ -684,17 +684,19 @@ void WebKitSettings::init( KConfig * config, bool reset )
   QWebSettings::globalSettings()->setFontFamily(QWebSettings::FantasyFont, fantasyFontName());
 
   // These numbers should be calculated from real "logical" DPI/72, using a default dpi of 96 for now
-  QWebSettings::globalSettings()->setFontSize(QWebSettings::MinimumFontSize, minFontSize() * 96.0/72.0);
-  QWebSettings::globalSettings()->setFontSize(QWebSettings::DefaultFontSize, mediumFontSize() * 96.0/72.0);
+  computeFontSizes(96);
 }
 
 
 void WebKitSettings::computeFontSizes( int logicalDpi )
 {
   float toPix = logicalDpi/72.0;
-  if (toPix < 96.0/72.0) toPix = 96.0/72.0;
-  QWebSettings::globalSettings()->setFontSize(QWebSettings::MinimumFontSize, minFontSize() * toPix);
-  QWebSettings::globalSettings()->setFontSize(QWebSettings::DefaultFontSize, mediumFontSize() * toPix);
+
+  if (toPix < 96.0/72.0)
+      toPix = 96.0/72.0;
+
+  QWebSettings::globalSettings()->setFontSize(QWebSettings::MinimumFontSize, qRound(minFontSize() * toPix));
+  QWebSettings::globalSettings()->setFontSize(QWebSettings::DefaultFontSize, qRound(mediumFontSize() * toPix));
 }
 
 /** Local helper for retrieving per-domain settings.
