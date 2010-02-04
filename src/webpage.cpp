@@ -393,24 +393,22 @@ QWebPage *WebPage::createWindow(WebWindowType type)
 
     KParts::BrowserArguments bargs;
     bargs.setLockHistory(true);
-    //if (type == WebModalDialog)
+    if (type == WebModalDialog)
         bargs.setForcesNewWindow(true);
 
     d->part->browserExtension()->createNewWindow(KUrl("about:blank"), args, bargs,
                                                  KParts::WindowArgs(), &part);
 
     KWebKitPart *webKitPart = qobject_cast<KWebKitPart*>(part);
+    if (webKitPart)
+        return webKitPart->view()->page();
 
-    if (!webKitPart) {
-        if (part)
-            kDebug() << "Got a non KWebKitPart" << part->metaObject()->className();
-        else
-            kDebug() << "part is null";
+    if (part)
+        kDebug() << "Got a non KWebKitPart" << part->metaObject()->className();
+    else
+        kDebug() << "part is NULL";
 
-        return 0;
-    }
-
-    return webKitPart->view()->page();
+    return 0;
 }
 
 void WebPage::slotUnsupportedContent(QNetworkReply *reply)
