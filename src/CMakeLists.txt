@@ -38,7 +38,7 @@ target_link_libraries(kwebkitpart ${KDE4_KPARTS_LIBS} ${QT_QTWEBKIT_LIBRARY} kwe
 set_target_properties(kwebkitpart PROPERTIES VERSION 1.0.0 SOVERSION 1)
 ########################### kwebkitpart #############################
 
-install(FILES kwebkitpart.h DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel)
+install(FILES kwebkitpart.h kwebkit_export.h DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel)
 
 install(TARGETS kwebkit ${INSTALL_TARGETS_DEFAULT_ARGS})
 
