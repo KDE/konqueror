@@ -54,6 +54,7 @@
 #include <QtNetwork/QNetworkReply>
 #include <QtUiTools/QUiLoader>
 #include <QtWebKit/QWebFrame>
+#include <QtWebKit/QWebSecurityOrigin>
 
 #define QL1S(x)  QLatin1String(x)
 #define QL1C(x)  QLatin1Char(x)
@@ -202,6 +203,9 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
         WebKitSettings::self()->computeFontSizes(view()->logicalDpiY());
 
     setForwardUnsupportedContent(true);
+
+    // Tell QtWebKit to treat man:/ protocol as a local resource...
+    QWebSecurityOrigin::addLocalScheme(QL1S("man"));
 
     connect(this, SIGNAL(geometryChangeRequested(const QRect &)),
             this, SLOT(slotGeometryChangeRequested(const QRect &)));
