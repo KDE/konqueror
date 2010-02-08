@@ -51,7 +51,7 @@ Browser</guimenuitem></menuchoice> to start it as a browser, or
 <listitem><para><keycombo action="simul">&Alt;<keycap>F2</keycap></keycombo>
 will open a <guilabel>Run Command</guilabel> dialog box, type
 <userinput><command>konqueror</command></userinput> (lower case) and press
-<keycap>Enter</keycap> or the <guibutton>Run</guibutton> button to start in
+&Enter; or the <guibutton>Run</guibutton> button to start in
 file
 manager mode, or just enter a &URL; such as
  <userinput>http://www.konqueror.org</userinput> to start &konqueror; as a
@@ -171,11 +171,10 @@ this entire document if you take advantage of <guilabel>Tooltips</guilabel> and
  the 
 <guimenuitem>What's This?</guimenuitem> feature.</para>
 
-<para>If <guilabel>Tooltips</guilabel> have been enabled in &kde; (K menu
- <menuchoice><guimenu>Control Center</guimenu><guisubmenu>Appearance &amp;
- Themes</guisubmenu><guisubmenu>Style</guisubmenu></menuchoice>,
- <guilabel>Style</guilabel> dialog) then when you hover the mouse pointer
- over a Toolbar or Navigation Panel 
+<para>If <guilabel>Tooltips</guilabel> have been enabled in &kde; (
+in &systemsettings; <menuchoice><guimenu>Appearance</guimenu>
+<guisubmenu>Windows</guisubmenu></menuchoice>, <guilabel>Buttons</guilabel> tab) 
+then when you hover the mouse pointer over a Toolbar or Navigation Panel 
 button it should bring up a terse description of what that button does.</para>
 
 <para><guimenuitem>What's This?</guimenuitem> is invoked by the Menubar
