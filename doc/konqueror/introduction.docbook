@@ -5,15 +5,15 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2003-10-20</date>
-<releaseinfo>3.2</releaseinfo>
+<date>2010-02-08</date>
+<releaseinfo>4.4</releaseinfo>
 </chapterinfo>
 
 <title>Overview</title>
 
 <para><emphasis>&konqueror;</emphasis> is an advanced  
 <link linkend="filemanager">file manager</link> for the 
-K Desktop Environment, providing file management functions ranging from simple 
+&kde; Software compilation, providing file management functions ranging from simple 
 cut/copy and paste operations to advanced local and remote network file 
 browsing. Folder contents can be displayed in a variety of text and icon 
 <link linkend="viewmode">view modes</link>, which can include thumbnail 
@@ -21,11 +21,16 @@ preview images of file contents. File and folder properties can easily be
 examined and changed and applications launched with a simple click of the 
 &LMB;.</para>
 
+<para>In &kde; SC 4 &dolphin; is the default file manger. To change the
+default component for browsing folders, open <guimenu>Default Applications</guimenu>
+in the &systemsettings; and select &konqueror; as file manager.</para>
+
 <para><emphasis>&konqueror;</emphasis> is an <acronym>HTML</acronym> 4.01
 compliant <link linkend="browser">web browser</link> with built in support for
 JavaScript (ECMA-262), <acronym>CSS</acronym> (Cascading Style Sheets) and
 bidirectional scripts (such as Arabic and Hebrew). It provides support for the secure
-running of &Java; applets, &Netscape; plugins for viewing &Flash;, &RealAudio; and &RealVideo; and <acronym>SSL</acronym> for secure
+running of &Java; applets, &Netscape; plugins for viewing &Flash;, &RealAudio; 
+and &RealVideo; and <acronym>SSL</acronym> for secure
 communications. Advanced features include automatic &URL; and form completion,
 the ability to import bookmarks from other browsers and tabbed browsing.
 </para>
@@ -36,8 +41,8 @@ the ability to import bookmarks from other browsers and tabbed browsing.
 <para><emphasis>&konqueror;</emphasis> is a universal viewing application, 
 capable of displaying images and documents without having to launch another 
 application. It does this by embedding components (&kde; Parts) provided by 
-other applications; from &kview; for image viewing, &kdvi; for 
-<acronym>DVI</acronym> viewing, &kghostview; for &PostScript; documents and 
+other applications; from <application>Gwenview</application>; for image viewing, 
+&okular; for <acronym>PDF</acronym> and &PostScript; documents and 
 from the various &koffice; applications for their document types.
 </para>
 
