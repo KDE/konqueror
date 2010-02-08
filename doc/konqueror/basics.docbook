@@ -6,8 +6,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2003-10-20</date>
-<releaseinfo>3.2</releaseinfo>
+<date>2010-02-08</date>
+<releaseinfo>4.4.0</releaseinfo>
 </chapterinfo>
 
 <title>&konqueror; Basics</title>
@@ -34,6 +34,7 @@ switch between the two modes as needed when it is running, but it is convenient
 to be able to choose which mode is to be used when you start it up.</para>
 
 <itemizedlist>
+<!--
 <listitem><para>If you have a <guiicon>house</guiicon> shaped icon on the panel 
 or desktop, then <mousebutton>left</mousebutton> click on it to open 
 &konqueror; as a file manager.</para></listitem>
@@ -41,25 +42,25 @@ or desktop, then <mousebutton>left</mousebutton> click on it to open
 <listitem><para>Or <mousebutton>left</mousebutton> click on <guiicon>world
 </guiicon> shaped icon on the panel or desktop to open &konqueror; in browser 
 mode.</para></listitem>
-
-<listitem><para>From the <guimenu>K</guimenu> menu, select
-<menuchoice><guisubmenu>Internet</guisubmenu><guimenuitem>Konqueror Web
-Browser</guimenuitem></menuchoice> to start it as a browser, or
-<guimenuitem>Home</guimenuitem> to launch &konqueror; in file manager mode.
+-->
+<listitem><para>From the application launcher menu, select
+<menuchoice><guisubmenu>Internet</guisubmenu><guimenuitem>Konqueror (Web
+Browser)</guimenuitem></menuchoice> to start it as a browser.
 </para></listitem>
 
 <listitem><para><keycombo action="simul">&Alt;<keycap>F2</keycap></keycombo>
-will open a <guilabel>Run Command</guilabel> dialog box, type
-<userinput><command>konqueror</command></userinput> (lower case) and press
-&Enter; or the <guibutton>Run</guibutton> button to start in
-file
-manager mode, or just enter a &URL; such as
+will open &krunner;, enter a path to a folder and press
+&Enter; to start in file manager mode, or just enter a &URL; such as
  <userinput>http://www.konqueror.org</userinput> to start &konqueror; as a
 browser.</para></listitem>
 
 </itemizedlist>
 
-<para>&konqueror; is also started automatically when you 
+<note><para>Click on the black arrow right to the <guiicon>Home Page</guiicon> icon
+to switch to your <guiicon>Home Folder</guiicon> in the file manager mode and vice versa.
+</para></note>
+
+<para>If &konqueror; is the default file manager it also starts automatically when you 
 <mousebutton>left</mousebutton> click on a desktop icon that represents a 
 folder, such as a hard disk drive or the <guiicon>Trash</guiicon> icon.
 </para>
@@ -95,14 +96,13 @@ linkend="menubar">Menubar</link> section of this document.</para>
 
 <para>The <interface>Toolbar</interface> contains icons for commonly used
 operations. <mousebutton>Left</mousebutton> clicking on an icon will activate
-it. If you have enabled tooltips in the Control Center <menuchoice><guimenu>
-Appearance &amp;
-Themes</guimenu><guisubmenu>Style</guisubmenu></menuchoice>
-dialog a brief description of what that icon does will appear when you hover
+it. If you have enabled tooltips in the &systemsettings; <menuchoice><guimenu>Appearance</guimenu>
+<guisubmenu>Windows</guisubmenu></menuchoice>, <guilabel>Buttons</guilabel> tab
+a brief description of what that icon does will appear when you hover
 the pointer over it.</para>
 
 <para>Some icons, for example the Up and Back icons in the previous screenshot,
-have a small black triangle at their bottom right corner. If you hold the &LMB;
+have a small black arrow at the right. If you hold the &LMB;
 pressed while the cursor is over this type of icon a small dropdown menu will
 appear.</para> <para><mousebutton>Right</mousebutton> clicking on the
 <interface>Toolbar </interface> will bring up the <link
@@ -113,7 +113,7 @@ to change the <interface>Toolbar</interface>'s appearance and position.</para>
 directory, &URL; or file being viewed. You can type a path or &URL; here and
 press &Enter; or <mousebutton>left</mousebutton> click on the
 <guiicon>Go</guiicon> icon at the right hand end of the <interface>Location
-Toolbar</interface> to go to it. The black icon at the left hand end of the
+Toolbar</interface> to go to it. The black icon at the right hand end of the
 <interface>Location Toolbar</interface> clears the text entry box.</para>
 
 <para>The <interface>Bookmark Toolbar</interface> is the area under the 
@@ -149,9 +149,9 @@ screenshot; it is highly configurable. In particular:</para>
 linkend="menu-settings"><guimenu>Settings</guimenu></link> menu  to choose 
 whether to show or hide the Menubar, Main Toolbar, Location Toolbar and
 Bookmark Toolbar, or even to add an Extra Toolbar.</para></listitem>
-<listitem><para>You can also <quote>flatten</quote> the toolbars by 
-<mousebutton>left</mousebutton> clicking on the vertical lines at the left hand end
-of the bars, or move them around by holding the &LMB; down while you
+<listitem><para>You can also drag the toolbars by 
+<mousebutton>left</mousebutton> clicking on the handle at the left hand end
+of the bars and move them around by holding the &LMB; down while you
 drag these bars around. </para></listitem>
 <listitem><para>This screenshot does not show the optional <link linkend="sidebar">
 Navigation Panel</link>.</para></listitem>
@@ -240,9 +240,8 @@ the <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure Konqueror...
 same as <mousebutton>left</mousebutton> clicking except that it usually does it
 in a new &konqueror; window, unless the <guilabel>Open links in new tab instead
 of in new window</guilabel> box has been checked in the
-<guimenuitem>Behavior</guimenuitem> page of the
+<guimenuitem>General</guimenuitem> page of the
 <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure
-
 Konqueror...</guimenuitem></menuchoice> dialog. &konqueror; can open
 links on pages and <menuchoice><guimenu>Bookmarks</guimenu></menuchoice>,
 as well as the
@@ -252,10 +251,12 @@ entries in a new tab or window.</para>
 
 <para>Holding the &Shift; key down while pressing the &MMB; will open the link 
 in the background.</para>
+<!-- not in 4.4.0
 <important><para>If you click the &MMB; when the mouse cursor is over a blank 
 part of the main view (not over a link or file name or icon) &konqueror; will 
 copy the contents of the clipboard into the Location Toolbar and try to use 
 that as a &URL;.</para></important>
+-->
 </sect1>
 
 <sect1 id="rmb-menus">
@@ -302,14 +303,6 @@ features.</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term>On the Bookmark Toolbar</term>
-<listitem><para> If you have the Bookmark Toolbar showing, then
-<mousebutton>right</mousebutton> click on any free part of it to bring up the
-Bookmark Toolbar Menu which lets you change its position and whether items are
-shown as text, icons, or both. </para></listitem> 
-</varlistentry>
-
-<varlistentry>
 <term>Within a View</term>
 <listitem><para>If you <mousebutton>right</mousebutton> click on any free area
 of a view then you will get a menu that contains, among other options, the
@@ -325,8 +318,7 @@ of a view then you will get a menu that contains, among other options, the
 clicking on the name or icon of any file or folder not only
 <quote>selects</quote> that item but also brings up a menu allowing you to
 <guiicon>Cut</guiicon>, Move, <guiicon>Copy</guiicon> or Remove the item in
-various
-ways, add it to your <guimenu>Bookmarks</guimenu>, open it with the program of
+various ways, open it with the program of
 your choice or preview it, rename it, or edit the file type or 
 properties.</para></listitem> </varlistentry>
 
