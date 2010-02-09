@@ -5,6 +5,7 @@
   <!ENTITY % English "INCLUDE">
 ]>
 <article lang="&language;">
+<title>User Information</title>
 <articleinfo>
 <authorgroup>
 <author>
@@ -22,8 +23,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2008-05-29</date>
-<releaseinfo>1.0</releaseinfo>
+<date>2010-01-06</date>
+<releaseinfo>&kde; 4.4</releaseinfo>
 
 <keywordset>
 <keyword>KDE</keyword>
@@ -58,20 +59,36 @@ the password and icon. This information and these settings will be used by vario
 applications (mail programs and word processors for example) if they are filled. You can:</para>
 
 <itemizedlist>
-<listitem><para>fill in personal information</para></listitem>
+<listitem><para>change your user icon</para></listitem>
 <listitem><para>change your user login password</para></listitem>
+<listitem><para>fill in personal information</para></listitem>
 <listitem><para>set up the password prompt</para></listitem>
 </itemizedlist>
 
 </sect2>
 
 <sect2 id="themes">
-<title>User Icon</title>
+<title>User Icon and Password</title>
 
+<variablelist>
+<varlistentry><term>User Icon</term>
+<listitem>
 <para>
 This icon is used when the user logs in using a login manager. Clicking on it will allow you to change the image, either by using a provided icon or by setting one of yours. Click <guibutton>Apply</guibutton> to validate your change.
 </para>
+</listitem>
+</varlistentry>
+
+<varlistentry><term><guibutton>Change password...</guibutton></term>
+<listitem>
+<para>
+Clicking this button will display a dialog to change your user password. Your user password is the one you log in your system with. You will be asked for your current password then twice for your new password.
+</para>
+</listitem>
+</varlistentry>
+</variablelist>
 </sect2>
+
 <sect2 id="user-info">
 <title>User Information</title>
 <variablelist>
@@ -111,13 +128,6 @@ This is an information only, it gives you your User ID. This number is defined i
 </para>
 </listitem>
 </varlistentry>
-<varlistentry><term><guibutton>Change password...</guibutton></term>
-<listitem>
-<para>
-Clicking this button will display a dialog to change your user password. Your user password is the one you log in your system with. You will be asked for your current password then twice for your new password.
-</para>
-</listitem>
-</varlistentry>
 </variablelist>
 
 </sect2>
@@ -126,7 +136,7 @@ Clicking this button will display a dialog to change your user password. Your us
 <title>At Password Prompt</title>
 
 <para>
-This section allows you to choose how you want to input your password when you are asked for it. Default is to have one star for each letter you type. You can change that to have three stars for each letter you type (making it more difficult to guess the number of letters if someone is looking). You can also choose to have nothing displayed while you type your password, making this operation even more secure.
+This section allows you to choose how you want to input your password when you are asked for it. Default is to have one bullet for each letter you type. You can change that to have three bullets for each letter you type (making it more difficult to guess the number of letters if someone is looking). You can also choose to have nothing displayed while you type your password, making this operation even more secure.
 </para>
 
 </sect2>
