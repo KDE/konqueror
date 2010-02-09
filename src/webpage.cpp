@@ -207,6 +207,11 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
     // Tell QtWebKit to treat man:/ protocol as a local resource...
     QWebSecurityOrigin::addLocalScheme(QL1S("man"));
 
+    // Override the 'Accept' header sent by QtWebKit which favors XML over HTML!
+    // Setting the accept meta-data to null will force kio_http to use its own
+    // default settings for this header.
+    setSessionMetaData(QL1S("accept"), QString());
+
     connect(this, SIGNAL(geometryChangeRequested(const QRect &)),
             this, SLOT(slotGeometryChangeRequested(const QRect &)));
     connect(this, SIGNAL(windowCloseRequested()),
