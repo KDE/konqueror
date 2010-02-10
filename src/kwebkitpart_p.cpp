@@ -42,6 +42,7 @@
 
 #include <QtGui/QVBoxLayout>
 #include <QtWebKit/QWebFrame>
+#include <QtWebKit/QWebElement>
 
 #define QL1S(x) QLatin1String(x)
 #define QL1C(x) QLatin1Char(x)
@@ -136,6 +137,32 @@ void KWebKitPartPrivate::slotLoadFinished(bool ok)
     updateHistory = true;
 
     if (ok) {
+        if (WebKitSettings::self()->isFormCompletionEnabled() && webPage->wallet()) {
+            webPage->wallet()->fillFormData(webPage->mainFrame());
+        }
+
+        QString linkStyle;
+
+        QColor linkColor = WebKitSettings::self()->vLinkColor();
+        if (linkColor.isValid())
+            linkStyle += QString::fromLatin1("a:visited {color: rgb(%1,%2,%3);}\n")
+                         .arg(linkColor.red()).arg(linkColor.green()).arg(linkColor.blue());
+
+        linkColor = WebKitSettings::self()->linkColor();
+        if (linkColor.isValid())
+            linkStyle += QString::fromLatin1("a:active {color: rgb(%1,%2,%3);}\n")
+                         .arg(linkColor.red()).arg(linkColor.green()).arg(linkColor.blue());
+
+        if (WebKitSettings::self()->underlineLink()) {
+            linkStyle += QL1S("a:link {text-decoration:underline;}\n");
+        } else if (WebKitSettings::self()->hoverLink()) {
+            linkStyle += QL1S("a:hover {text-decoration:underline;}\n");
+        }
+
+        if (!linkStyle.isEmpty()) {
+            webPage->mainFrame()->documentElement().setAttribute(QL1S("style"), linkStyle);
+        }
+
         // Restore page state as necessary...
         webPage->restoreAllFrameState();
 
@@ -149,10 +176,6 @@ void KWebKitPartPrivate::slotLoadFinished(bool ok)
             // a work around here for pages that do not contain it, such as
             // text documents...
             slotUrlChanged(webView->url());
-        }
-
-        if (WebKitSettings::self()->isFormCompletionEnabled() && webPage->wallet()) {
-            webPage->wallet()->fillFormData(webPage->mainFrame());
         }
     }
 
@@ -180,7 +203,7 @@ void KWebKitPartPrivate::slotLoadFinished(bool ok)
         break;
       }
     }
-    emit completed(refresh);
+    emit q->completed(refresh);
 #else
     emit q->completed();
 #endif
