@@ -672,9 +672,7 @@ void WebKitSettings::init( KConfig * config, bool reset )
   else
       QWebSettings::globalSettings()->setAttribute(QWebSettings::JavascriptCanOpenWindows, true);
 
-#if QT_VERSION >= 0x040500
   QWebSettings::globalSettings()->setAttribute(QWebSettings::ZoomTextOnly, zoomTextOnly());
-#endif
   QWebSettings::globalSettings()->setAttribute(QWebSettings::DeveloperExtrasEnabled, isJavaScriptDebugEnabled());
   QWebSettings::globalSettings()->setFontFamily(QWebSettings::StandardFont, stdFontName());
   QWebSettings::globalSettings()->setFontFamily(QWebSettings::FixedFont, fixedFontName());
