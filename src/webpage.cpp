@@ -288,7 +288,7 @@ void WebPage::restoreAllFrameState()
 
 bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request, NavigationType type)
 {
-    const QUrl reqUrl (request.url());
+    QUrl reqUrl (request.url());
 
     // Handle "mailto:" url here...
     if (handleMailToUrl(reqUrl, type))
@@ -387,7 +387,8 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
         }
 
         // Insert the request into the queue...
-        d->requestQueue.insert (request.url(), frame);
+        reqUrl.setUserInfo(QString());
+        d->requestQueue.insert (reqUrl, frame);
     }
 
     return KWebPage::acceptNavigationRequest(frame, request, type);
@@ -398,7 +399,7 @@ QWebPage *WebPage::createWindow(WebWindowType type)
     kDebug() << type;
     KParts::ReadOnlyPart *part = 0;
     KParts::OpenUrlArguments args;
-    args.metaData()["referrer"] = mainFrame()->url().toString();
+    //args.metaData()["referrer"] = mainFrame()->url().toString();
 
     KParts::BrowserArguments bargs;
     bargs.setLockHistory(true);
