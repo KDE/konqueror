@@ -92,14 +92,13 @@ void PasswordBar::onSaveFormData(const QString &key, const QUrl &url)
     if (WebKitSettings::self()->isNonPasswordStorableSite(url.host()))
       onNotNowButtonClicked();
     else
-       show();
+      show();
 }
 
 void PasswordBar::onNotNowButtonClicked()
 {
     hide();
     emit saveFormDataRejected (d->requestKey);
-
 }
 
 void PasswordBar::onNeverButtonClicked()
