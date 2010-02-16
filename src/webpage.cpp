@@ -151,25 +151,6 @@ static bool domainSchemeMatch(const QUrl& u1, const QUrl& u2)
     return (u1List == u2List);
 }
 
-#if 0
-static QString getFileNameForDownload(const QNetworkRequest &request, QNetworkReply *reply)
-{
-    QString fileName = KUrl(request.url()).fileName();    
-
-    if (reply && reply->hasRawHeader("Content-Disposition")) { // based on code from arora, downloadmanger.cpp
-        const QString value = QL1S(reply->rawHeader("Content-Disposition"));
-        const int pos = value.indexOf(QL1S("filename="));
-        if (pos != -1) {
-            QString name = value.mid(pos + 9);
-            if (name.startsWith(QL1C('"')) && name.endsWith(QL1C('"')))
-                name = name.mid(1, name.size() - 2);
-            fileName = name;
-        }
-    }
-
-    return fileName;
-}
-#endif
 
 class WebPage::WebPagePrivate
 {
@@ -179,7 +160,7 @@ public:
     WebSslInfo sslInfo;
     QHash<QString, WebFrameState> frameStateContainer;
     // Holds list of requests including those from children frames
-    QMultiHash<QUrl, QWebFrame*> requestQueue;
+    QList<QUrl> requestQueue;
     QPointer<KWebKitPart> part;
 };
 
@@ -388,7 +369,7 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
 
         // Insert the request into the queue...
         reqUrl.setUserInfo(QString());
-        d->requestQueue.insert (reqUrl, frame);
+        d->requestQueue << reqUrl;
     }
 
     return KWebPage::acceptNavigationRequest(frame, request, type);
@@ -426,6 +407,11 @@ void WebPage::slotUnsupportedContent(QNetworkReply *reply)
     KParts::OpenUrlArguments args;
     const KUrl url(reply->url());
     kDebug() << url;
+
+    // FIXME: Until we implement a way to resume/continue a network
+    // request. We must abort the reply to prevent a zombie process
+    // from continuing to download the unsupported content!
+    reply->abort();
 
     Q_FOREACH (const QByteArray &headerName, reply->rawHeaderList()) {
         args.metaData().insert(QString(headerName), QString(reply->rawHeader(headerName)));
@@ -536,11 +522,10 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
 {
     Q_ASSERT(reply);
     QUrl url (reply->request().url());
+    QWebFrame* frame = qobject_cast<QWebFrame *>(reply->request().originatingObject());
 
-    if (d->requestQueue.contains(url)) {
-
+    if (frame && d->requestQueue.removeOne(url)) {
         kDebug() << url;
-        QWebFrame* frame = d->requestQueue.take(url);
         const int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
 
         if (statusCode > 300 && statusCode < 304) {
