@@ -281,6 +281,7 @@ void KWebKitPartPrivate::slotLinkHovered(const QString &link, const QString &tit
     QString message;
 
     if (link.isEmpty()) {
+        message = QL1S("");
         emit browserExtension->mouseOverInfo(KFileItem());
     } else {
         QUrl linkUrl (link);
