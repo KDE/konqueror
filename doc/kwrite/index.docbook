@@ -40,8 +40,8 @@
 </copyright>
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2009-02-05</date>
-<releaseinfo>4.2.00</releaseinfo>
+<date>2010-02-17</date>
+<releaseinfo>4.4</releaseinfo>
 
 <abstract>
 <para>&kwrite; is a text editor for &kde; allowing you to edit one file at the time per window.</para>
@@ -222,7 +222,11 @@ programs, and allows you to pipe command output into &kwrite;.</para></listitem>
 </sect2>
 </sect1>
 
-<sect1 id="keybindings"> <!--has to be checked lueck-->
+<sect1 id="keybindings"> <!--60 shortcuts here and 4.4.63 has 89 lueck
+missing ctrl+6,7,8,9,T,Home,End 
+ctrl+shift+O,Home,End,PgUp,Left,Right,PgDown
+Shift+Home
+-->
 <title>Shortcuts</title>
 
 <para>Many of the shortcuts are configurable by way of the <link
@@ -233,7 +237,7 @@ following shortcuts:</para>
 <tbody>
 
 <row><entry><para><keycombo
-action="simul"><keycap>Insert</keycap></keycombo></para></entry>
+action="simul"><keycap>Ins</keycap></keycombo></para></entry>
 <entry><para> Toggle between Insert and Overwrite mode. When in insert mode the
 editor will add any typed characters to the text while pushing along any data to
 the right of the text cursor. Overwrite mode causes the entry of each character
@@ -268,7 +272,7 @@ Up</keycap></keycombo></para></entry>
 <row>
 <entry><para><keycombo action="simul">&Alt;<keycap>Page
 Up</keycap></keycombo></para></entry>
-<entry><para>Previous Bookmark  </para></entry>
+<entry><para>Previous Bookmark</para></entry>
 </row>
 <row>
 <entry><para><keycombo action="simul"><keycap>Page
@@ -282,7 +286,7 @@ Down</keycap></keycombo></para></entry>
 </row>
 <row>
 <entry><para><keycombo
-action="simul"><keycap>Backspace</keycap></keycombo></para></entry>
+action="simul">&Backspace;</keycombo></para></entry>
 <entry><para> Delete the character to the left of the cursor </para></entry>
 </row>
 <row>
@@ -302,7 +306,7 @@ action="simul"><keycap>Delete</keycap></keycombo></para></entry>
 text)</para></entry>
 </row>
 <row>
-<entry><para><keycombo action="simul">&Shift;<keycap>Enter</keycap></keycombo></para></entry>
+<entry><para><keycombo action="simul">&Shift;&Enter;</keycombo></para></entry>
 <entry><para>Insert newline including leading characters of the current line which are not letters or numbers.
 It is useful &eg; to write comments in the code: At the end of the line <quote>// some text</quote> press 
 this shortcut and the next line starts already with <quote>// </quote>. So you do not have to enter the comment 
@@ -555,7 +559,7 @@ Enable power user mode (&kde; 3 mode)</link>
 on the <guilabel>Appearance</guilabel> page in &kappname;s settings.</para>
 <!-- This is also valid for kates menu file, kate has additional Save All Ctrl+L, Reload All, Close Other, Close All-->
 <sect1 id="file"> 
-<title>The <guimenu>File</guimenu> Menu</title>
+<title>The File Menu</title>
 
 <variablelist>
 
@@ -586,47 +590,6 @@ This starts a new document in a new and independent editor window.
 </term>
 
 <listitem>
-<!--
-This is description of a standard dialog and so should go in the UG,
-with a pointer to it. In fact, I'll probably nick this very stuff for
-the UG
-- Phil
-<para>
-This command opens a file.  It does this by means of a dialog box which
-allows the user to navigate the file system.  The dialog operates like a
-small file manager. Clicking on folders displayed in the central
-window directs the dialog to enter that folder - displaying its
-contents.  There is an entry/dropdown box which can be used to type in
-directly the location and name of the file or by clicking the arrow at
-the side choose from a drop down box of recently used locations. Below
-this is a filter which similarly may have data entered directly or
-chosen from a drop down box of recent filter types.  The filter facility
-lets only files that meet its specifications be displayed in the central
-window. If the filter contained text such as <literal
-role="extension">*.txt</literal> then only files with the <literal
-role="extension">txt</literal> extension would be visible in the
-selection window. Below the filter is a status bar giving information
-about the number of files and subfolders within the current
-folder.
-</para>
-
-<para>
-The toolbar, which is located at the top of the dialog, has left and
-right arrow buttons that let the user move back and forth through
-previously selected folders as well as an up arrow button for moving
-up the folder tree. The button with the little house takes the user
-to his or her home folder and the one with the two arrows curved in
-on each other updates the view of the current folder. The flag button
-lets the user set a new bookmark at the current folder or go to one
-that was previously set.
-</para>
-
-<para>
-The last button on the toolbar allows you to create a new folder, and
-even change some basic settings for the dialog box, and finally there is
-dropdown box with a list of some commonly frequented folders.
-</para>
--->
 <para>Displays a standard &kde; <guilabel>Open File</guilabel>
 dialog. Use the file view to select the file you want to open, and
 click on <guibutton>Open</guibutton> to open it. You can find more
@@ -725,7 +688,7 @@ and how to print.
 </para>
 </listitem>
 </varlistentry>
-<varlistentry> <!-- only in power user mode -->
+<varlistentry> <!-- from plugin Exporter -->
 <term id="export-as-html">
 <menuchoice>
 <guimenu>File</guimenu>
@@ -735,6 +698,7 @@ and how to print.
 <listitem>
 <para>
 Export your file in &HTML; format so your document can be viewed as a web page.
+This item is only displayed when the plugin <guilabel>Exporter</guilabel> is loaded.
 </para>
 </listitem>
 </varlistentry>
@@ -781,7 +745,7 @@ not be closed.
 </sect1>
 
 <sect1 id="edit"> <!-- This is also valid for kates menu edit-->
-<title>The <guimenu>Edit</guimenu> Menu</title>
+<title>The Edit Menu</title>
 
 <variablelist>
 <varlistentry>
@@ -793,11 +757,6 @@ action="simul">&Ctrl;<keycap>Z</keycap></keycombo></shortcut>
 <listitem>
 <para>This is used to eliminate or reverse the most recent user action
 or operation.
-<!--
-Just what constitutes such an action may be better
-understood by referring to the <link linkend="group-undos">Group
-Undos</link> portion of this help file.
--->
 </para>
 </listitem>
 </varlistentry>
@@ -836,14 +795,6 @@ be pasted elsewhere.  The clipboard is a feature of &kde; that works invisibly
 to provide a way to transfer data between applications.</para>
 </listitem>
 </varlistentry>
-<varlistentry><!-- only in power user mode -->
-<term><anchor id="copy-as-html"/><menuchoice>
-<guimenu>Edit</guimenu><guimenuitem>Copy as
-HTML...</guimenuitem></menuchoice></term>
-<listitem>
-<para>This copies the currently selected text to the clipboard as &HTML;.</para>
- </listitem>
-</varlistentry>
 <varlistentry>
 <term><anchor id="paste"/><menuchoice>
 <shortcut><keycombo
@@ -854,6 +805,16 @@ action="simul">&Ctrl;<keycap>V</keycap></keycombo></shortcut>
 The clipboard is feature of &kde; that works invisibly to provide a way to
 transfer data between applications.</para>
 </listitem>
+</varlistentry>
+<varlistentry><!-- from plugin Exporter -->
+<term><anchor id="copy-as-html"/><menuchoice>
+<guimenu>Edit</guimenu><guimenuitem>Copy as
+HTML</guimenuitem></menuchoice></term>
+<listitem>
+<para>This copies the currently selected text to the clipboard as &HTML;.
+This item is only displayed when the plugin <guilabel>Exporter</guilabel> is loaded.
+</para>
+ </listitem>
 </varlistentry>
 
 <varlistentry>
@@ -949,21 +910,7 @@ from the current position of the cursor within the document rather than from
 the beginning.</para>
 <para>Click on the green arrow icon at the right side of the incremental search bar to 
 switch to the power search and replace bar.
- 
-<!--This opens the find dialog which is used to specify the <guilabel>Text to
-Find</guilabel> in the document. There is small text box for entering the search
-pattern which also doubles as a dropdown box. Clicking on the dropdown arrow at
-the side of the box makes available other recent search patterns. Other
-parameters are included to make the search more efficient. Selecting
-<guilabel>Case Sensitive</guilabel> will limit finds to entries that match the
-case (upper or lower) of each of the characters in the search  pattern.
-<guilabel>Find Backwards</guilabel> directs the search to proceed in an upwardly
-direction. The <guilabel>Selected Text</guilabel> option keeps the  search
-within currently selected text. Checking <guilabel>Whole Words Only</guilabel>
-prevents the search from stopping on words that contain the searched for
-pattern. The <guilabel>Search from Cursor</guilabel> option begins the search
-from the current position of the cursor within the document rather  than from
-the beginning.-->
+<!--changed in 4.5 ???-->
 </para>
 </listitem>
 </varlistentry>
@@ -1007,11 +954,9 @@ action="simul">&Ctrl;<keycap>R</keycap></keycombo></shortcut>
 <para>This command opens the power search and replace bar.
 On the upper left side of the bar is an icon to close the bar, followed by a small text 
 box for entering the search pattern.</para>
-<para>You can control the search mode by selecting <guilabel>Plain text</guilabel>
-<keycombo action="simul">&Alt;<keycap>1</keycap></keycombo>,
-<guilabel>Whole words</guilabel><keycombo action="simul">&Alt;<keycap>2</keycap></keycombo>, 
-<guilabel>Escape sequences</guilabel><keycombo action="simul">&Alt;<keycap>3</keycap></keycombo>
-or <guilabel>Regular expression</guilabel><keycombo action="simul">&Alt;<keycap>4</keycap></keycombo>. 
+<para>You can control the search mode by selecting <guilabel>Plain text</guilabel>, 
+<guilabel>Whole words</guilabel>, <guilabel>Escape sequences</guilabel> or 
+<guilabel>Regular expression</guilabel>. 
 </para>
 <para>If <guilabel>Escape sequences</guilabel> or <guilabel>Regular expression</guilabel> are
 selected, the <guibutton>Add...</guibutton> menuitem at the bottom of the context menu of the text boxes will be enabled
@@ -1034,13 +979,7 @@ the beginning.
 <guilabel>Selection only</guilabel> will search and replace within the current selection only.</para>
 <para>Click on the green arrow icon at the right side of the power search and replace bar to 
 switch to the incremental search bar.
-<!--This command opens the replace dialog box. The replace dialog is
-almost identical to the above-mentioned find dialog. In addition to the features
-in the find dialog it contains a <guilabel>Replace With:</guilabel> text
-entry/dropdown box.  Using this dialog the user can specify both the text to be
-found and text with which to replace it. The additional <guilabel>Prompt
-On Replace</guilabel> option allows the user to have &kwrite; ask for
-confirmation before each replacement.-->
+<!--changed in 4.5 ???-->
 </para>
 </listitem>
 </varlistentry>
@@ -1091,7 +1030,7 @@ arrow decrease it. Close the bar with a click on the icon on the left side of th
 </sect1>
 <sect1 id="view-menu">
 <!-- This is also valid for kates menu view, but kate does not have the New Window item -->
-<title>The <guimenu>View</guimenu> menu</title>
+<title>The View menu</title>
 
 <para>The <guimenu>View</guimenu> menu allows you to manage settings
 specific to the active editor, and to manage frames.</para>
@@ -1305,7 +1244,7 @@ hidden.</para>
 
 </sect1>
 <sect1 id="go"><!-- This is also valid for kates menu bookmarks-->
-<title>The <guimenu>Bookmarks</guimenu> Menu</title>
+<title>The Bookmarks Menu</title>
 <para>This menu is only displayed, if you check the option <link linkend="appearance">
 Enable Power User Mode (&kde; 3 mode)</link> 
 on the <guilabel>Appearance</guilabel> page in &kappname;s settings.</para>
@@ -1377,7 +1316,7 @@ available for this window.
 <!-- This is also valid for kates menu tools, kate has additional items:
 Pipe to Terminal, Syncronizise Terminal with Current Document, Focus Terminal at top-->
 <sect1 id="tools">
-<title>The <guimenu>Tools</guimenu> Menu</title>
+<title>The Tools Menu</title>
 
 <variablelist>
 <varlistentry>
@@ -1457,6 +1396,16 @@ Editor...</guimenuitem></menuchoice> for your current document only.</para>
  </listitem>
 </varlistentry>
 
+<!-- only in power mode-->
+<!-- <varlistentry>
+<term><anchor id="tools-add-byte-mark-order"/><menuchoice>
+<guimenu>Tools</guimenu>
+<guisubmenu>Add Byte Mark Order</guisubmenu></menuchoice></term>
+ <listitem>
+<para>???</para>
+ </listitem>
+</varlistentry>
+-->
 <varlistentry>
 <term><menuchoice>
 <shortcut>
@@ -1469,6 +1418,33 @@ Editor...</guimenuitem></menuchoice> for your current document only.</para>
 <para>Manually invoke command completion, usually by using a shortcut bound to this action.</para>
 </listitem>
 </varlistentry>
+
+<!--
+<varlistentry>
+<term><menuchoice>
+<guimenu>Tools</guimenu>
+<guimenuitem>Word Completion</guimenuitem>
+</menuchoice></term>
+<listitem>
+<para>Reuse Word Below,  Reuse Word Above, Shell Completition ???</para>
+</listitem>
+</varlistentry>
+-->
+
+<!-- 
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;&Shift;<keycap>O</keycap></keycombo>
+</shortcut>
+<guimenu>Tools</guimenu>
+<guimenuitem>Automatic Spelling</guimenuitem>
+</menuchoice></term>
+<listitem>
+<para>???</para>
+</listitem>
+</varlistentry>
+-->
 
 <varlistentry>
 <term><anchor id="Spelling..."/><menuchoice>
@@ -1550,17 +1526,6 @@ word.</para></note></listitem>
 </varlistentry>
 </variablelist>
 
-<!--<para>Located horizontally along the bottom of the spellcheck dialog is a
-progress bar.  As the checking process proceeds the bar will fill from left to
-right providing a graphical representation of how far along in the document the
-process has reached.  In addition, the progress is displayed numerically in
-the center of the progress bar.</para>//-->
-
-<!--<note><para>A numerical display of the spellcheck
-process is simultaneously displayed in the status bar of the editor.  The <link
-linkend="show-statusbar">status bar</link> is the horizontal strip at the bottom
-of the editor just outside of the text entry area.</para></note>//-->
-
 <para>Three more buttons are located horizontally along the bottom of the
 spellcheck dialog.  They are:</para>
 
@@ -1606,6 +1571,17 @@ is instead of at the beginning of the document.</para>
 <para>Spellchecks the current selection.</para>
  </listitem>
 </varlistentry>
+
+<!-- 
+<varlistentry>
+<term><anchor id="tools-change-dictionary"/><menuchoice>
+<guimenu>Tools</guimenu>
+<guimenuitem>Change Dictionary</guimenuitem></menuchoice></term>
+ <listitem>
+<para>???</para>
+ </listitem>
+</varlistentry>
+-->
 
 <varlistentry>
 <term><anchor id="indent"/><menuchoice>
@@ -1744,21 +1720,15 @@ Editor...</guimenuitem></menuchoice></para></listitem>
 </varlistentry>
 
 </variablelist>
-<para>Menu items for the selected <link linkend="pref-plugins">plugins</link> 
-are displayed at the end of this menu
+<para>If the <link linkend="pref-plugins">plugin</link> Insert File is enabled, you will 
+find here an additional menu item <guimenuitem>Insert File...</guimenuitem>.
 </para>
-<!--
-plugins
-<guimenu>Tools</guimenu><guimenuitem>Insert File...</guimenuitem>
-<guimenu>Tools</guimenu><guimenuitem>Word Completion</guimenuitem>
--->
-
 </sect1>
 
 <sect1 id="settings"> 
 <!-- This is also valid for kates menu settings, 
 only the items Show Toolbar and Show Statusbar are swapped and Configure kate is the last item-->
-<title>The <guimenu>Settings</guimenu> Menu</title>
+<title>The Settings Menu</title>
 
 <variablelist>
 <varlistentry>
@@ -1809,26 +1779,7 @@ linkend="pref-dialog">settings</link> may be adjusted.
 </para>
 </listitem>
 </varlistentry>
-<!-- can't see it in 4.1 0r 4.2, lueck
-<varlistentry>
-<term><anchor id="choose-editor"/><menuchoice>
-<guimenu>Settings</guimenu>
-<guimenuitem>Choose Editor...</guimenuitem>
-</menuchoice>
-</term>
-<listitem>
-<para>
-Choose the default text editing component that you wish to use in &kwrite;. You
-can choose <guilabel>System Default</guilabel>, <guilabel>Embedded
-Advanced Text Editor</guilabel> or <guilabel>&Qt; Designer Based
-Text Editor</guilabel> (note that the &Qt; Designer Based Text Editor is
-only available if you have KDevelop installed on your system). If you choose
-<guilabel>System Default</guilabel>, &kwrite; will honor your changes in
-&kcontrolcenter;.  All other choices will override that setting.
-</para>
-</listitem>
-</varlistentry>
--->
+
 <varlistentry>
 <term><anchor id="configure-keybindings"/><menuchoice>
 <guimenu>Settings</guimenu><guimenuitem>Configure
@@ -1878,14 +1829,20 @@ in the toolbar.</para> </listitem>
 </sect1>
 
 <sect1 id="help">
-<title>The <guimenu>Help</guimenu> Menu</title>
+<title>The Help Menu</title>
 
-<!-- additional "About Editor Component" + "Tip of the Day"-->
+<!-- additional "About Editor Component" , but no "Tip of the Day"-->
 
 &help.menu.documentation;
 
 </sect1>
 </chapter>
+
+<!-- https://bugs.kde.org/show_bug.cgi?id=202203
+http://kate-editor.org/article/.kateconfig
+Where is the proper place for this missing information?
+The chapter 8 mentioned in apaku's comment for BR 202203 does not exist
+-->
 
 <chapter id="pref-dialog">
 <title>Configure &kappname;</title>
@@ -2121,6 +2078,11 @@ wrap marker.</para></listitem>
 <listitem><para>This color is used to draw white space indicators when enabled.
 </para></listitem>
 </varlistentry>
+<varlistentry>
+<term><guilabel>Spelling mistake line</guilabel></term>
+<listitem><para>sets the color of the line that is used to indicate spelling mistakes.
+</para></listitem>
+</varlistentry>
 </variablelist>
 </listitem>
 </varlistentry>
@@ -2270,6 +2232,16 @@ at the ends of lines of text.</para></listitem> </varlistentry>
 <term><guilabel>Auto brackets</guilabel></term> <listitem><para>When
 the user types a left bracket ([, (, or {) &kappname; automatically enters the
 right bracket (}, ), or ]) to the right of the cursor.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Copy/Cut the current line if no selection</guilabel></term> <listitem>
+<para></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guilabel>Allow scrolling past the end of the document</guilabel></term> <listitem>
+<para></para></listitem>
 </varlistentry>
 </variablelist>
 </listitem>
@@ -2485,6 +2457,12 @@ and insert that number of spaces instead of a &Tab; character.</para>
 </variablelist>
 </listitem>
 </varlistentry>
+<!--
+<varlistentry>
+<term><guilabel>Minimal word length to complete</guilabel></term>
+<listitem><para>???</para></listitem>
+</varlistentry>
+-->
 </variablelist>
 
 </sect2>
@@ -2524,14 +2502,32 @@ messages/errors produced by Vi commands.</para>
 </variablelist>
 </listitem>
 </varlistentry>
+<varlistentry>
+<term><guilabel>Key Mapping</guilabel></term>
+<listitem><para>
+Key mapping is used to change the meaning of typed keys. This allows you to 
+move commands to other keys or make special keypresses for doing a series of 
+commands.</para>
+<para>Example:</para>
+<para><keycap>F2</keycap> -> <keycap>I--</keycap> &Esc;</para>
+<para>This will prepend <keycap>I--</keycap> to a line when pressing <keycap>F2</keycap>.
+</para>
+</listitem>
+</varlistentry>
 </variablelist>
 
+</sect2>
+
+<sect2 id="pref-edit-spellcheck">
+<title>Spellcheck</title>
+<para>These configuration options are described in the documentation for the 
+&systemsettings; module <ulink url="help:kcontrol/spellchecking">Spell Checker</ulink>.</para>
 </sect2>
 
 </sect1>
 
 <sect1 id="pref-open-save">
-<title>Open &amp; Save</title>
+<title>Open/Save</title>
 
 <sect2 id="pref-open-save-general">
 <title>General</title>
@@ -2569,6 +2565,12 @@ document. You have the choice between &UNIX;, DOS/&Windows; or Macintosh.</para>
 <listitem>
 <para>Check this if you want the editor to autodetect the end of line
 type. The first found end of line type will be used for the whole file.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term><guilabel>Enable byte order marker (if not overridden by other settings)</guilabel></term>
+<listitem>
+<para>???</para>
 </listitem>
 </varlistentry>
 </variablelist>
@@ -2682,7 +2684,7 @@ box and press the Delete button.</para></listitem>
 </listitem> </varlistentry>
 
 <varlistentry>
-<term><guilabel>Properties of current filetype</guilabel></term>
+<term><guilabel>Properties of <replaceable>current filetype</replaceable></guilabel></term>
 <listitem><para>The filetype with the highest priority is the one displayed in
 the first drop down box. If more filetypes were found, they are also
 listed.</para>
@@ -2713,6 +2715,10 @@ manual.</para></listitem>
 <term><guilabel>Highlighting:</guilabel></term>
 <listitem><para>If you create a new file type, this drop down box allows you to
 select a filetype for highlighting.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><guilabel>Indentation Mode:</guilabel></term>
+<listitem><para>drop down box ???</para></listitem>
 </varlistentry>
 <varlistentry>
 <term><guilabel>File extensions:</guilabel></term>
@@ -2751,16 +2757,43 @@ from the &kate; website.
 
 <sect1 id="pref-plugins">
 <title>Extensions</title>
-<para>This <guilabel>Plugins</guilabel> tab lists all available plugins and you can check those you
+<para>The <guilabel>Plugins</guilabel> tab lists all available plugins and you can check those you
 want to use. Click on the <guibutton>Information</guibutton> button to open the
-<guilabel>About</guilabel> dialog of this plugin.
+<guilabel>About</guilabel> dialog of this plugin.</para>
+<!-- no longer in > 4.4
 Once a plugin is checked, the
 <guibutton>Configure</guibutton> button is enabled and you can click it
 in order to configure the highlighted plugin.</para>
+-->
+<variablelist>
+<title>Editor Component Plugins</title>
+<varlistentry>
+<term><guilabel>AutoBrace</guilabel></term>
+<listitem><para>http://jakob.petsovits.at/topic/kate</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><guilabel>DataTools</guilabel></term>
+<listitem><para>??? no idea how to launch that
+in kde3 there was an additional item at the end of the context menu on a selection</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><guilabel>Exporter</guilabel></term>
+<listitem><para>File->Export as HTML ok, Edit->Copy as HTML only highlighted text 
+in klipper/selection</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><guilabel>Insert File</guilabel></term>
+<listitem><para>Tools->Insert File ok works</para></listitem>
+</varlistentry>
+</variablelist>
+<!--
+kdelibs/kate/plugins/ has additional plugins
+autobookmark not build?
+pythonencoding always enabled plugin (saving a python file without "# -*- coding: utf-8 -*-" - Warning dialog)
+timedate not build?
+-->
 
-<para>The selected plugins are available in the <guimenu>Tools</guimenu> menu.</para>
-
-<!-- Scripts tab ??-->
+<!-- Scripts tab ???-->
 </sect1>
 </chapter>
 
