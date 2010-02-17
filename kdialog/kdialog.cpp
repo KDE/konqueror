@@ -309,12 +309,16 @@ static int directCommand(KCmdLineArgs *args)
 
     // --passivepopup
     if (args->isSet("passivepopup"))
-      {
+    {
         int duration = 0;
-        if (args->count() > 0)
+        if (args->count() > 0) {
             duration = 1000 * args->arg(0).toInt();
-        if (duration == 0)
-            duration = 10000;
+        }
+
+        if (duration < 0) {
+            duration = -1;
+        }
+
 
         // try to use more stylish notifications
         if (sendVisualNotification(args->getOption("passivepopup"), title, duration))
