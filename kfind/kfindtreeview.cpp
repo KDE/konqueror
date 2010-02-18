@@ -619,7 +619,10 @@ KUrl::List KFindTreeView::selectedUrls()
 void KFindTreeView::deleteSelectedFiles()
 {
     KUrl::List uris = selectedUrls();
-    
+    if ( uris.isEmpty() ) {
+        return;
+    }
+
     bool done = KonqOperations::askDeleteConfirmation( uris, KonqOperations::DEL, KonqOperations::FORCE_CONFIRMATION, this );
     if ( done )
     {
@@ -631,7 +634,10 @@ void KFindTreeView::deleteSelectedFiles()
 void KFindTreeView::moveToTrashSelectedFiles()
 {
     KUrl::List uris = selectedUrls();
-    
+    if ( uris.isEmpty() ) {
+        return;
+    }
+
     bool done = KonqOperations::askDeleteConfirmation( uris, KonqOperations::TRASH, KonqOperations::FORCE_CONFIRMATION, this );
     if ( done )
     {
