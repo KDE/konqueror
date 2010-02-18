@@ -1400,16 +1400,18 @@ Editor...</guimenuitem></menuchoice> for your current document only.</para>
 </varlistentry>
 
 <!-- only in power mode-->
-<!-- <varlistentry>
+<varlistentry>
 <term><anchor id="tools-add-byte-mark-order"/><menuchoice>
 <guimenu>Tools</guimenu>
 <guisubmenu>Add Byte Mark Order</guisubmenu></menuchoice></term>
  <listitem>
 <para>Checking this action you can explicitely add a byte order mark for unicode
-encoded documents.</para>
- </listitem>
+encoded documents. The byte order mark (BOM) is a Unicode character used to signal 
+the endianness (byte order) of a text file or stream, for more information see
+<ulink url="http://en.wikipedia.org/wiki/Byte_Order_Mark">Byte Order Mark</ulink>.</para>
+</listitem>
 </varlistentry>
--->
+
 <varlistentry>
 <term><menuchoice>
 <shortcut>
@@ -1423,7 +1425,6 @@ encoded documents.</para>
 </listitem>
 </varlistentry>
 
-<!--
 <varlistentry>
 <term><menuchoice>
 <guimenu>Tools</guimenu>
@@ -1436,9 +1437,7 @@ words backward or forward from the current cursor position. <guimenuitem>Shell
 Completition</guimenuitem> pops up a completion box with matching entries.</para>
 </listitem>
 </varlistentry>
--->
 
-<!--
 <varlistentry>
 <term><menuchoice>
 <shortcut>
@@ -1452,7 +1451,6 @@ Completition</guimenuitem> pops up a completion box with matching entries.</para
 is underlined in the document on-the-fly.</para>
 </listitem>
 </varlistentry>
--->
 
 <varlistentry>
 <term><anchor id="Spelling..."/><menuchoice>
@@ -1580,16 +1578,16 @@ is instead of at the beginning of the document.</para>
  </listitem>
 </varlistentry>
 
-<!--
 <varlistentry>
 <term><anchor id="tools-change-dictionary"/><menuchoice>
 <guimenu>Tools</guimenu>
 <guimenuitem>Change Dictionary</guimenuitem></menuchoice></term>
  <listitem>
-<para>Configure which dictionary should be used for spellchecking.</para>
+<para>Displays a drop down box with all available dictionaries for spellchecking
+at the bottom of the editor window. This allows easy switching of the spellcheck 
+dictionary &eg; for automatic spellcheck of text in different languages.</para>
  </listitem>
 </varlistentry>
--->
 
 <varlistentry>
 <term><anchor id="indent"/><menuchoice>
@@ -2465,7 +2463,7 @@ and insert that number of spaces instead of a &Tab; character.</para>
 </variablelist>
 </listitem>
 </varlistentry>
-<!--
+
 <varlistentry>
 <term><guilabel>Minimal word length to complete</guilabel></term>
 <listitem><para>While typing text, the word completion searches for words in the
@@ -2473,7 +2471,7 @@ document starting with the already typed text. This option configures the minima
 amount of characters that are needed to make the word completion active and pop
 up a completion box.</para></listitem>
 </varlistentry>
--->
+
 </variablelist>
 
 </sect2>
@@ -2578,16 +2576,17 @@ document. You have the choice between &UNIX;, DOS/&Windows; or Macintosh.</para>
 type. The first found end of line type will be used for the whole file.</para>
 </listitem>
 </varlistentry>
-<!--
+
 <varlistentry>
 <term><guilabel>Enable byte order marker</guilabel></term>
 <listitem>
 <para>The byte order mark is a special sequence at the beginning of unicode
 encoded documents. It helps editors to open text documents with the correct
-unicode encoding. </para>
+unicode encoding. For more information see <ulink 
+url="http://en.wikipedia.org/wiki/Byte_Order_Mark">Byte Order Mark</ulink>.</para>
 </listitem>
 </varlistentry>
--->
+
 </variablelist>
 </listitem>
 </varlistentry>
@@ -2731,13 +2730,13 @@ manual.</para></listitem>
 <listitem><para>If you create a new file type, this drop down box allows you to
 select a filetype for highlighting.</para></listitem>
 </varlistentry>
-<!--
+
 <varlistentry>
 <term><guilabel>Indentation Mode:</guilabel></term>
 <listitem><para>The drop down box specifies the indentation mode for new
 documents.</para></listitem>
 </varlistentry>
--->
+
 <varlistentry>
 <term><guilabel>File extensions:</guilabel></term>
 <listitem><para>The wildcards mask allows you to select files by filename. A
