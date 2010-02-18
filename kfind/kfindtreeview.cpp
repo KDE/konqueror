@@ -42,6 +42,7 @@
 #include <kio/netaccess.h>
 #include <kio/copyjob.h>
 #include <kio/deletejob.h>
+#include <kjobuidelegate.h>
 
 #include <konq_operations.h>
 #include <knewfilemenu.h>
@@ -627,7 +628,7 @@ void KFindTreeView::deleteSelectedFiles()
     if ( done )
     {
         KJob * deleteJob = KIO::del( uris );
-        connect(deleteJob, SIGNAL(result(KJob*)), this, SLOT(deleteJobResult(KJob*)));
+        deleteJob->uiDelegate()->setAutoErrorHandlingEnabled(true);
     }
 }
 
@@ -642,7 +643,7 @@ void KFindTreeView::moveToTrashSelectedFiles()
     if ( done )
     {
         KJob * trashJob = KIO::trash( uris );
-        connect(trashJob, SIGNAL(result(KJob*)), this, SLOT(trashJobResult(KJob*)));
+        trashJob->uiDelegate()->setAutoErrorHandlingEnabled(true);
     }
 }
 
@@ -662,23 +663,6 @@ void KFindTreeView::reconfigureMouseSettings()
 void KFindTreeView::updateMouseButtons()
 {
     m_mouseButtons = QApplication::mouseButtons();
-}
-
-
-void KFindTreeView::deleteJobResult(KJob *job)
-{
-    if (job->error()) {
-        KMessageBox::sorry(this, job->errorString() + "\n" + i18n("The operation was cancelled."),
-                                 i18nc("messagebox title", "Error when deleting files"));
-    }
-}
-
-void KFindTreeView::trashJobResult(KJob *job)
-{
-    if (job->error()) {
-        KMessageBox::sorry(this, job->errorString() + "\n" + i18n("The operation was cancelled."),
-                                 i18nc("messagebox title", "Error when moving files to trash"));
-    }
 }
 
 //END KFindTreeView
