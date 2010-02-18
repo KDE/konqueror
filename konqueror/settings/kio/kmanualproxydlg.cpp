@@ -436,10 +436,10 @@ void KManualProxyDlg::showErrorMsg( const QString& caption,
   QString cap( caption );
   QString msg( message );
 
-  if ( cap.isNull() )
+  if ( cap.isEmpty() )
     cap = i18n("Invalid Entry");
 
-  if ( msg.isNull() )
+  if ( msg.isEmpty() )
     msg = i18n("The address you have entered is not valid.");
 
   QString details = i18n("<qt>Make sure none of the addresses or URLs you "
