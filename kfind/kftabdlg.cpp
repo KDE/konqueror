@@ -619,7 +619,7 @@ bool KfindTabWidget::isDateValid()
   else if ( QDate::currentDate() < hi1 )
     str = i18n("Unable to search dates in the future.");
 
-  if (!str.isNull()) {
+  if (!str.isEmpty()) {
     KMessageBox::sorry(0, str);
     return false;
   }

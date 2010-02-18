@@ -418,7 +418,7 @@ void KQuery::processQuery( const KFileItem &file)
       QString str = stream->readLine();
       matchingLineNumber++;
 
-      if (str.isNull()) break;
+      if (str.isEmpty()) break;
       if(isZippedOfficeDocument)
         str.remove(xmlTags);
 
