@@ -494,7 +494,7 @@ static int directCommand(KCmdLineArgs *args)
 	}
 	Widgets::handleXGeometry(&dlg);
 	kapp->setTopWidget( &dlg );
-	dlg.setCaption(title.isNull() ? i18n("Open") : title);
+	dlg.setCaption(title.isEmpty() ? i18n("Open") : title);
 	dlg.exec();
 
         if (args->isSet("multiple")) {
@@ -535,7 +535,7 @@ static int directCommand(KCmdLineArgs *args)
 	dlg.setOperationMode( KFileDialog::Saving );
 	Widgets::handleXGeometry(&dlg);
 	kapp->setTopWidget( &dlg );
-	dlg.setCaption(title.isNull() ? i18n("Save As") : title);
+	dlg.setCaption(title.isEmpty() ? i18n("Save As") : title);
 	dlg.exec();
 
 	if ( args->isSet("getsaveurl") ) {
@@ -572,7 +572,7 @@ static int directCommand(KCmdLineArgs *args)
 	kapp->setTopWidget( &myDialog );
 
 	Widgets::handleXGeometry(&myDialog);
-	if ( !title.isNull() )
+	if ( !title.isEmpty() )
 	    myDialog.setCaption( title );
 
 	if ( myDialog.exec() == QDialog::Accepted )
@@ -606,7 +606,7 @@ static int directCommand(KCmdLineArgs *args)
 	}
 	Widgets::handleXGeometry(&dlg);
 	kapp->setTopWidget( &dlg );
-	dlg.setCaption(title.isNull() ? i18n("Open") : title);
+	dlg.setCaption(title.isEmpty() ? i18n("Open") : title);
 	dlg.exec();
 
         if (args->isSet("multiple")) {
@@ -667,7 +667,7 @@ static int directCommand(KCmdLineArgs *args)
 	KIconDialog dlg((QWidget*)0L);
 	kapp->setTopWidget( &dlg );
 	dlg.setup( group, context);
-	if (!title.isNull())
+	if (!title.isEmpty())
 	    dlg.setCaption(title);
 	Widgets::handleXGeometry(&dlg);
 
@@ -707,7 +707,7 @@ static int directCommand(KCmdLineArgs *args)
         }
         Widgets::handleXGeometry(&dlg);
         kapp->setTopWidget(&dlg);
-        dlg.setCaption(title.isNull() ? i18n("Choose Color") : title);
+        dlg.setCaption(title.isEmpty() ? i18n("Choose Color") : title);
 
         if (dlg.exec() == KColorDialog::Accepted) {
             QString result;
