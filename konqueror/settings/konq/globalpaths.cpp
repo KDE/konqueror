@@ -63,7 +63,7 @@
 #include <kstandarddirs.h>
 #include <kurlrequester.h>
 
-#include "konqkcmfactory.h"
+#include "kcmdesktoppaths.h"
 
 // Local
 #include <config-apps.h>
@@ -71,7 +71,7 @@
 //-----------------------------------------------------------------------------
 
 DesktopPathConfig::DesktopPathConfig(QWidget *parent, const QVariantList &)
-    : KCModule( KonqKcmFactory::componentData(), parent )
+    : KCModule( KcmDesktopPaths::componentData(), parent )
 {
   QFormLayout *lay = new QFormLayout(this);
   lay->setMargin(0);
