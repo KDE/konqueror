@@ -40,6 +40,7 @@
 #include <kio/netaccess.h>
 #include <kio/copyjob.h>
 #include <kio/deletejob.h>
+#include <kjobuidelegate.h>
 
 #include <konq_operations.h>
 #include <knewmenu.h>
@@ -625,7 +626,8 @@ void KFindTreeView::deleteSelectedFiles()
     bool done = KonqOperations::askDeleteConfirmation( uris, KonqOperations::DEL, KonqOperations::FORCE_CONFIRMATION, this );
     if ( done )
     {
-        KIO::del( uris );
+        KJob * deleteJob = KIO::del( uris );
+        deleteJob->uiDelegate()->setAutoErrorHandlingEnabled(true);
     }
 }
 
@@ -639,7 +641,8 @@ void KFindTreeView::moveToTrashSelectedFiles()
     bool done = KonqOperations::askDeleteConfirmation( uris, KonqOperations::TRASH, KonqOperations::FORCE_CONFIRMATION, this );
     if ( done )
     {
-        KIO::trash( uris );
+        KJob * trashJob = KIO::trash( uris );
+        trashJob->uiDelegate()->setAutoErrorHandlingEnabled(true);
     }
 }
 
