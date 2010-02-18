@@ -910,7 +910,8 @@ from the current position of the cursor within the document rather than from
 the beginning.</para>
 <para>Click on the green arrow icon at the right side of the incremental search bar to 
 switch to the power search and replace bar.
-<!--changed in 4.5 ???-->
+<!--changed in 4.5 ???
+options "Highlight all" + "From cursor" removed only "Match case" left-->
 </para>
 </listitem>
 </varlistentry>
@@ -956,7 +957,7 @@ On the upper left side of the bar is an icon to close the bar, followed by a sma
 box for entering the search pattern.</para>
 <para>You can control the search mode by selecting <guilabel>Plain text</guilabel>, 
 <guilabel>Whole words</guilabel>, <guilabel>Escape sequences</guilabel> or 
-<guilabel>Regular expression</guilabel>. 
+<guilabel>Regular expression</guilabel> from the drop down box. 
 </para>
 <para>If <guilabel>Escape sequences</guilabel> or <guilabel>Regular expression</guilabel> are
 selected, the <guibutton>Add...</guibutton> menuitem at the bottom of the context menu of the text boxes will be enabled
@@ -970,16 +971,18 @@ the <guibutton>Replace All</guibutton> button to replace the search text in the 
 </para>
 <para>You can modify the search and replace behavior by selecting different 
 options on the right side of the bar.
-The <guilabel>Highlight all</guilabel> option highlights all matches in the document.
 Selecting <guilabel>Match case</guilabel> will limit finds to entries that match the
 case (upper or lower) of each of the characters in the search  pattern.
+The <guilabel>Highlight all</guilabel> option highlights all matches in the document.
 The <guilabel>From cursor</guilabel> option begins the search
 from the current position of the cursor within the document rather than from
 the beginning.
 <guilabel>Selection only</guilabel> will search and replace within the current selection only.</para>
 <para>Click on the green arrow icon at the right side of the power search and replace bar to 
 switch to the incremental search bar.
-<!--changed in 4.5 ???-->
+<!--changed in 4.5 ???
+options "Highlight all" + "From cursor" removed only "Match case" left
+-->
 </para>
 </listitem>
 </varlistentry>
