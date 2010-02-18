@@ -19,7 +19,6 @@
 
 #include "konqkcmfactory.h"
 #include "behaviour.h"
-#include "globalpaths.h"
 
 #include <KPluginFactory>
 #include <KPluginLoader>
@@ -29,6 +28,5 @@ K_PLUGIN_FACTORY_DEFINITION(KonqKcmFactory,
         //registerPlugin<DesktopBehaviorModule>("dbehavior");
         //registerPlugin<KonqFontOptions>("appearance");
         //registerPlugin<KonqFontOptionsDesktop>("dappearance");
-        registerPlugin<DesktopPathConfig>("dpath");
         )
 K_EXPORT_PLUGIN(KonqKcmFactory("kcmkonq"))

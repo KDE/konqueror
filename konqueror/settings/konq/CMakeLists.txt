@@ -1,6 +1,5 @@
 set(kcm_konq_PART_SRCS
    behaviour.cpp
-   globalpaths.cpp
    konqkcmfactory.cpp
 #    kcustommenueditor.cpp
 )
@@ -11,6 +10,19 @@ kde4_add_plugin(kcm_konq ${kcm_konq_PART_SRCS})
 target_link_libraries(kcm_konq ${KDE4_KUTILS_LIBS} ${KDE4_KIO_LIBS})
 
 install(TARGETS kcm_konq  DESTINATION ${PLUGIN_INSTALL_DIR} )
+
+
+set(kcm_desktoppaths_PART_SRCS
+   globalpaths.cpp
+   kcmdesktoppaths.cpp
+)
+
+kde4_add_plugin(kcm_desktoppaths ${kcm_desktoppaths_PART_SRCS})
+
+
+target_link_libraries(kcm_desktoppaths ${KDE4_KUTILS_LIBS} ${KDE4_KIO_LIBS})
+
+install(TARGETS kcm_desktoppaths  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
 
 ########### install files ###############
