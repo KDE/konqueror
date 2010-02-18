@@ -338,6 +338,7 @@ KFindTreeView::KFindTreeView( QWidget *parent )
                 
     //Generate popup menu actions
     m_actionCollection = new KActionCollection( this );
+    m_actionCollection->addAssociatedWidget(this);
 
     KAction * open = KStandardAction::open(this, SLOT( slotExecuteSelected() ), this);
     m_actionCollection->addAction( "file_open", open );
