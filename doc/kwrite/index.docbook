@@ -1405,7 +1405,7 @@ Editor...</guimenuitem></menuchoice> for your current document only.</para>
 <guimenu>Tools</guimenu>
 <guisubmenu>Add Byte Mark Order</guisubmenu></menuchoice></term>
  <listitem>
-<para>Checking this action you can explicitely add a byte order mark for unicode
+<para>Checking this action you can explicitly add a byte order mark for unicode
 encoded documents. The byte order mark (BOM) is a Unicode character used to signal 
 the endianness (byte order) of a text file or stream, for more information see
 <ulink url="http://en.wikipedia.org/wiki/Byte_Order_Mark">Byte Order Mark</ulink>.</para>
@@ -1434,7 +1434,7 @@ the endianness (byte order) of a text file or stream, for more information see
 <para><guimenuitem>Reuse Word Below</guimenuitem> and <guimenuitem>Reuse Word
 Above</guimenuitem> complete the currently typed text by searching for similar
 words backward or forward from the current cursor position. <guimenuitem>Shell
-Completition</guimenuitem> pops up a completion box with matching entries.</para>
+Completion</guimenuitem> pops up a completion box with matching entries.</para>
 </listitem>
 </varlistentry>
 
@@ -2822,7 +2822,7 @@ If enabled, the <guimenu>Tools</guimenu> menu has an additional menu item
 <varlistentry>
 <term>Python Encoding check</term>
 <listitem><para>This plugin is always enabled.
-If you are trying to save a python file as non ASCII, without specifiying a
+If you are trying to save a python file as non ASCII, without specifying a
 correct source encoding line like &eg; <quote># -*- coding: utf-8 -*-</quote>,
 a warning dialog pops up and allows you to add a proper source encoding line for the
 current encoding to the file.
