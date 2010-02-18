@@ -64,10 +64,10 @@ KfindDlg::KfindDlg(const KUrl & url, QWidget *parent)
   tabWidget->setURL( url );
 
   // prepare window for find results
-  win = new KFindTreeView(frame );
+  win = new KFindTreeView(frame, this);
 
   mStatusBar = new KStatusBar(frame);
-  mStatusBar->insertFixedItem("AMiddleLengthText...", 0);
+  mStatusBar->insertItem("AMiddleLengthText...", 0);
   setStatusMsg( i18nc("the application is currently idle, there is no active search", "Idle.") );
   mStatusBar->setItemAlignment(0, Qt::AlignLeft | Qt::AlignVCenter);
   mStatusBar->insertPermanentItem(QString(), 1, 1);

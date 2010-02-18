@@ -19,6 +19,8 @@
 
 #include "kfindtreeview.h"
 
+#include "kfinddlg.h"
+
 #include <QtCore/QTextStream>
 #include <QtCore/QTextCodec>
 #include <QtCore/QFileInfo>
@@ -309,9 +311,10 @@ bool KFindSortFilterProxyModel::lessThan(const QModelIndex &left, const QModelIn
 
 //BEGIN KFindTreeView
 
-KFindTreeView::KFindTreeView( QWidget *parent )
+KFindTreeView::KFindTreeView( QWidget *parent,  KfindDlg * findDialog )
     : QTreeView( parent ) ,
-    m_contextMenu(0)
+    m_contextMenu(0),
+    m_kfindDialog(findDialog)
 {
     //Configure model and proxy model
     m_model = new KFindItemModel( this );
@@ -495,9 +498,7 @@ void KFindTreeView::saveResults()
         }
 
         file.close();
-        KMessageBox::information(parentWidget(),
-                    i18n("Results were saved to file\n")+
-                    filename);
+        m_kfindDialog->setStatusMsg(i18nc("%1=filename", "Results were saved to: %1", filename));
     }
 }
 

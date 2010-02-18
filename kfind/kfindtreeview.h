@@ -33,6 +33,7 @@
 
 class KFindTreeView;
 class KActionCollection;
+class KfindDlg;
 
 class KFindItem
 {
@@ -100,7 +101,7 @@ class KFindTreeView: public QTreeView
 {
   Q_OBJECT
     public:
-        KFindTreeView( QWidget * parent = 0 );
+        KFindTreeView( QWidget * parent, KfindDlg * findDialog);
         ~KFindTreeView();
 
         void beginSearch(const KUrl& baseUrl);
@@ -151,6 +152,8 @@ class KFindTreeView: public QTreeView
         KonqPopupMenu *             m_contextMenu;
         
         Qt::MouseButtons            m_mouseButtons;
+
+        KfindDlg *                  m_kfindDialog;
 };
 
 #endif
