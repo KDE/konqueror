@@ -124,7 +124,10 @@ class KFindTreeView: public QTreeView
         KUrl::List selectedUrls();
         
         void deleteSelectedFiles();
+        void deleteJobResult(KJob *job);
+        
         void moveToTrashSelectedFiles();
+        void trashJobResult(KJob *job);
         
         void slotExecute( const QModelIndex & index );
         void slotExecuteSelected();

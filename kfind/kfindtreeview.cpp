@@ -623,7 +623,8 @@ void KFindTreeView::deleteSelectedFiles()
     bool done = KonqOperations::askDeleteConfirmation( uris, KonqOperations::DEL, KonqOperations::FORCE_CONFIRMATION, this );
     if ( done )
     {
-        KIO::del( uris );
+        KJob * deleteJob = KIO::del( uris );
+        connect(deleteJob, SIGNAL(result(KJob*)), this, SLOT(deleteJobResult(KJob*)));
     }
 }
 
@@ -634,7 +635,8 @@ void KFindTreeView::moveToTrashSelectedFiles()
     bool done = KonqOperations::askDeleteConfirmation( uris, KonqOperations::TRASH, KonqOperations::FORCE_CONFIRMATION, this );
     if ( done )
     {
-        KIO::trash( uris );
+        KJob * trashJob = KIO::trash( uris );
+        connect(trashJob, SIGNAL(result(KJob*)), this, SLOT(trashJobResult(KJob*)));
     }
 }
 
@@ -654,6 +656,23 @@ void KFindTreeView::reconfigureMouseSettings()
 void KFindTreeView::updateMouseButtons()
 {
     m_mouseButtons = QApplication::mouseButtons();
+}
+
+
+void KFindTreeView::deleteJobResult(KJob *job)
+{
+    if (job->error()) {
+        KMessageBox::sorry(this, job->errorString() + "\n" + i18n("The operation was cancelled."),
+                                 i18nc("messagebox title", "Error when deleting files"));
+    }
+}
+
+void KFindTreeView::trashJobResult(KJob *job)
+{
+    if (job->error()) {
+        KMessageBox::sorry(this, job->errorString() + "\n" + i18n("The operation was cancelled."),
+                                 i18nc("messagebox title", "Error when moving files to trash"));
+    }
 }
 
 //END KFindTreeView
