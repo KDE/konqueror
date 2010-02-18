@@ -42,6 +42,7 @@ public:
 
     QString searchText() const;
     bool caseSensitive() const;
+    bool highlightMatches() const;
     void setFoundMatch(bool match);
     void setSearchText(const QString&);
 
@@ -51,6 +52,7 @@ public Q_SLOTS:
     void clear();
     void findNext();
     void findPrevious();
+    void textChanged(const QString&);
 
 Q_SIGNALS:
     void searchTextChanged(const QString& text, bool backward = false);

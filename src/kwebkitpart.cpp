@@ -35,104 +35,16 @@
 #include "settings/webkitsettings.h"
 
 #include <KDE/KAboutData>
-#include <KDE/KConfigGroup>
-#include <KDE/KAction>
-#include <KDE/KActionCollection>
-#include <KDE/KStandardDirs>
-#include <KDE/KIconLoader>
-#include <KDE/KGlobal>
+#include <KDE/KComponentData>
 #include <KDE/KDebug>
 #include <kdeversion.h>
 #include <kio/global.h>
 
-#include <QtCore/QFile>
 #include <QtGui/QApplication>
-
 #include <QtWebKit/QWebFrame>
 
 #define QL1S(x)  QLatin1String(x)
 #define QL1C(x)  QLatin1Char(x)
-
-static QString htmlError (int code, const QString& text, const KUrl& reqUrl)
-{
-  QString errorName, techName, description;
-  QStringList causes, solutions;
-
-  QByteArray raw = KIO::rawErrorDetail( code, text, &reqUrl );
-  QDataStream stream(raw);
-
-  stream >> errorName >> techName >> description >> causes >> solutions;
-
-  QString url, protocol, datetime;
-  url = reqUrl.url();
-  protocol = reqUrl.protocol();
-  datetime = KGlobal::locale()->formatDateTime( QDateTime::currentDateTime(),
-                                                KLocale::LongDate );
-
-  QString filename( KStandardDirs::locate( "data", "kwebkitpart/error.html" ) );
-  QFile file( filename );
-  bool isOpened = file.open( QIODevice::ReadOnly );
-  if ( !isOpened )
-    kWarning() << "Could not open error html template:" << filename;
-
-  QString html = QString( QL1S( file.readAll() ) );
-
-  html.replace( QL1S( "TITLE" ), i18n( "Error: %1", errorName ) );
-  html.replace( QL1S( "DIRECTION" ), QApplication::isRightToLeft() ? "rtl" : "ltr" );
-  html.replace( QL1S( "ICON_PATH" ), KUrl(KIconLoader::global()->iconPath("dialog-warning", -KIconLoader::SizeHuge)).url() );
-
-  QString doc = QL1S( "<h1>" );
-  doc += i18n( "The requested operation could not be completed" );
-  doc += QL1S( "</h1><h2>" );
-  doc += errorName;
-  doc += QL1S( "</h2>" );
-
-  if ( !techName.isNull() ) {
-    doc += QL1S( "<h2>" );
-    doc += i18n( "Technical Reason: %1", techName );
-    doc += QL1S( "</h2>" );
-  }
-
-  doc += QL1S( "<h3>" );
-  doc += i18n( "Details of the Request:" );
-  doc += QL1S( "</h3><ul><li>" );
-  doc += i18n( "URL: %1" ,  url );
-  doc += QL1S( "</li><li>" );
-
-  if ( !protocol.isNull() ) {
-    doc += i18n( "Protocol: %1", protocol );
-    doc += QL1S( "</li><li>" );
-  }
-
-  doc += i18n( "Date and Time: %1" ,  datetime );
-  doc += QL1S( "</li><li>" );
-  doc += i18n( "Additional Information: %1" ,  text );
-  doc += QL1S( "</li></ul><h3>" );
-  doc += i18n( "Description:" );
-  doc += QL1S( "</h3><p>" );
-  doc += description;
-  doc += QL1S( "</p>" );
-
-  if ( causes.count() ) {
-    doc += QL1S( "<h3>" );
-    doc += i18n( "Possible Causes:" );
-    doc += QL1S( "</h3><ul><li>" );
-    doc += causes.join( "</li><li>" );
-    doc += QL1S( "</li></ul>" );
-  }
-
-  if ( solutions.count() ) {
-    doc += QL1S( "<h3>" );
-    doc += i18n( "Possible Solutions:" );
-    doc += QL1S( "</h3><ul><li>" );
-    doc += solutions.join( "</li><li>" );
-    doc += QL1S( "</li></ul>" );
-  }
-
-  html.replace( QL1S("TEXT"), doc );
-
-  return html;
-}
 
 KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent, const QStringList &/*args*/)
             :KParts::ReadOnlyPart(parent), d(new KWebKitPartPrivate(this))
@@ -167,9 +79,8 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent, const QStringLi
     setWidget(mainWidget);
 
     d->init(mainWidget);
-
     setXMLFile("kwebkitpart.rc");
-    initAction();
+    d->initActions();
 }
 
 KWebKitPart::~KWebKitPart()
@@ -190,7 +101,7 @@ bool KWebKitPart::openUrl(const KUrl &u)
     d->updateHistory = false;
 
     // Handle error conditions...
-    if (handleError(u, d->webView->page()->mainFrame())) {
+    if (d->handleError(u, d->webView->page()->mainFrame(), false)) {
         return true;
     }
 
@@ -258,99 +169,5 @@ void KWebKitPart::guiActivateEvent(KParts::GUIActivateEvent *event)
 bool KWebKitPart::openFile()
 {
     // never reached
-    return false;
-}
-
-void KWebKitPart::initAction()
-{
-    KAction *action = actionCollection()->addAction(KStandardAction::SaveAs, "saveDocument",
-                                                    d->browserExtension, SLOT(slotSaveDocument()));
-
-    action = new KAction(i18n("Save &Frame As..."), this);
-    actionCollection()->addAction("saveFrame", action);
-    connect(action, SIGNAL(triggered(bool)), d->browserExtension, SLOT(slotSaveFrame()));
-
-    action = new KAction(KIcon("document-print-frame"), i18n("Print Frame..."), this);
-    actionCollection()->addAction("printFrame", action);
-    connect(action, SIGNAL(triggered(bool)), d->browserExtension, SLOT(printFrame()));
-
-    action = new KAction(KIcon("zoom-in"), i18nc("zoom in action", "Zoom In"), this);
-    actionCollection()->addAction("zoomIn", action);
-    action->setShortcut(KShortcut("CTRL++; CTRL+="));
-    connect(action, SIGNAL(triggered(bool)), d->browserExtension, SLOT(zoomIn()));
-
-    action = new KAction(KIcon("zoom-out"), i18nc("zoom out action", "Zoom Out"), this);
-    actionCollection()->addAction("zoomOut", action);
-    action->setShortcut(KShortcut("CTRL+-; CTRL+_"));
-    connect(action, SIGNAL(triggered(bool)), d->browserExtension, SLOT(zoomOut()));
-
-    action = new KAction(KIcon("zoom-original"), i18nc("reset zoom action", "Actual Size"), this);
-    actionCollection()->addAction("zoomNormal", action);
-    action->setShortcut(KShortcut("CTRL+0"));
-    connect(action, SIGNAL(triggered(bool)), d->browserExtension, SLOT(zoomNormal()));
-
-    action = new KAction(i18n("Zoom Text Only"), this);
-    action->setCheckable(true);
-    KConfigGroup cgHtml(KGlobal::config(), "HTML Settings");
-    bool zoomTextOnly = cgHtml.readEntry("ZoomTextOnly", false);
-    action->setChecked(zoomTextOnly);
-    actionCollection()->addAction("zoomTextOnly", action);
-    connect(action, SIGNAL(triggered(bool)), d->browserExtension, SLOT(toogleZoomTextOnly()));
-
-    action = actionCollection()->addAction(KStandardAction::SelectAll, "selectAll",
-                                           d->browserExtension, SLOT(slotSelectAll()));
-    action->setShortcutContext(Qt::WidgetShortcut);
-    d->webView->addAction(action);
-
-    action = new KAction(i18n("View Do&cument Source"), this);
-    actionCollection()->addAction("viewDocumentSource", action);
-    action->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_U));
-    connect(action, SIGNAL(triggered(bool)), d->browserExtension, SLOT(slotViewDocumentSource()));
-
-    action = new KAction(i18nc("Secure Sockets Layer", "SSL"), this);
-    actionCollection()->addAction("security", action);
-    connect(action, SIGNAL(triggered(bool)), d, SLOT(slotShowSecurity()));
-
-    action = actionCollection()->addAction(KStandardAction::Find, "find", d, SLOT(slotShowSearchBar()));
-    action->setWhatsThis(i18nc("find action \"whats this\" text", "<h3>Find text</h3>"
-                              "Shows a dialog that allows you to find text on the displayed page."));
-
-    action = actionCollection()->addAction(KStandardAction::FindNext, "findnext",
-                                           d->searchBar, SLOT(findNext()));
-    action = actionCollection()->addAction(KStandardAction::FindPrev, "findprev",
-                                           d->searchBar, SLOT(findPrevious()));
-}
-
-bool KWebKitPart::handleError(const KUrl &u, QWebFrame *frame)
-{
-    if ( u.protocol() == "error" && u.hasSubUrl() ) {
-        /**
-         * The format of the error url is that two variables are passed in the query:
-         * error = int kio error code, errText = QString error text from kio
-         * and the URL where the error happened is passed as a sub URL.
-         */
-        KUrl::List urls = KUrl::split(u);
-
-        if ( urls.count() > 1 ) {
-            KUrl mainURL = urls.first();
-            int error = mainURL.queryItem( "error" ).toInt();
-
-            // error=0 isn't a valid error code, so 0 means it's missing from the URL
-            if ( error == 0 )
-                error = KIO::ERR_UNKNOWN;
-
-            if (error == KIO::ERR_USER_CANCELED) {
-                setUrl(d->webView->url());
-                emit d->browserExtension->setLocationBarUrl(KUrl(d->webView->url()).prettyUrl());
-            } else {
-                const QString errorText = mainURL.queryItem( "errText" );
-                urls.pop_front();
-                KUrl reqUrl = KUrl::join( urls );
-                frame->setHtml(htmlError(error, errorText, reqUrl), reqUrl);
-            }
-            return true;
-        }
-    }
-
     return false;
 }

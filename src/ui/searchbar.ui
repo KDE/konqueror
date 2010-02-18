@@ -98,6 +98,12 @@
    </item>
   </layout>
   <action name="actionMatchCase">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>&amp;Match Case</string>
    </property>
@@ -111,6 +117,17 @@
    </property>
    <property name="text">
     <string>&amp;Search As You Type</string>
+   </property>
+  </action>
+  <action name="actionHighlightMatch">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Highlight All Matches</string>
+   </property>
+   <property name="toolTip">
+    <string>Highlight Matches</string>
    </property>
   </action>
  </widget>

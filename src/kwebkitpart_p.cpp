@@ -40,13 +40,105 @@
 #include <KDE/KMessageBox>
 #include <KDE/KDebug>
 #include <KDE/KFileItem>
+#include <KDE/KStandardDirs>
+#include <KDE/KIconLoader>
+#include <KDE/KConfigGroup>
+#include <KDE/KAction>
+#include <KDE/KActionCollection>
+#include <KDE/KGlobal>
+#include <KDE/KLocale>
 
+#include <QtCore/QFile>
+#include <QtGui/QApplication>
 #include <QtGui/QVBoxLayout>
 #include <QtWebKit/QWebFrame>
 #include <QtWebKit/QWebElement>
 
 #define QL1S(x) QLatin1String(x)
 #define QL1C(x) QLatin1Char(x)
+
+
+static QString htmlError (int code, const QString& text, const KUrl& reqUrl)
+{
+  QString errorName, techName, description;
+  QStringList causes, solutions;
+
+  QByteArray raw = KIO::rawErrorDetail( code, text, &reqUrl );
+  QDataStream stream(raw);
+
+  stream >> errorName >> techName >> description >> causes >> solutions;
+
+  QString url, protocol, datetime;
+  url = reqUrl.url();
+  protocol = reqUrl.protocol();
+  datetime = KGlobal::locale()->formatDateTime( QDateTime::currentDateTime(),
+                                                KLocale::LongDate );
+
+  QString filename( KStandardDirs::locate( "data", "kwebkitpart/error.html" ) );
+  QFile file( filename );
+  bool isOpened = file.open( QIODevice::ReadOnly );
+  if ( !isOpened )
+    kWarning() << "Could not open error html template:" << filename;
+
+  QString html = QString( QL1S( file.readAll() ) );
+
+  html.replace( QL1S( "TITLE" ), i18n( "Error: %1", errorName ) );
+  html.replace( QL1S( "DIRECTION" ), QApplication::isRightToLeft() ? "rtl" : "ltr" );
+  html.replace( QL1S( "ICON_PATH" ), KUrl(KIconLoader::global()->iconPath("dialog-warning", -KIconLoader::SizeHuge)).url() );
+
+  QString doc = QL1S( "<h1>" );
+  doc += i18n( "The requested operation could not be completed" );
+  doc += QL1S( "</h1><h2>" );
+  doc += errorName;
+  doc += QL1S( "</h2>" );
+
+  if ( !techName.isNull() ) {
+    doc += QL1S( "<h2>" );
+    doc += i18n( "Technical Reason: %1", techName );
+    doc += QL1S( "</h2>" );
+  }
+
+  doc += QL1S( "<h3>" );
+  doc += i18n( "Details of the Request:" );
+  doc += QL1S( "</h3><ul><li>" );
+  doc += i18n( "URL: %1" ,  url );
+  doc += QL1S( "</li><li>" );
+
+  if ( !protocol.isNull() ) {
+    doc += i18n( "Protocol: %1", protocol );
+    doc += QL1S( "</li><li>" );
+  }
+
+  doc += i18n( "Date and Time: %1" ,  datetime );
+  doc += QL1S( "</li><li>" );
+  doc += i18n( "Additional Information: %1" ,  text );
+  doc += QL1S( "</li></ul><h3>" );
+  doc += i18n( "Description:" );
+  doc += QL1S( "</h3><p>" );
+  doc += description;
+  doc += QL1S( "</p>" );
+
+  if ( causes.count() ) {
+    doc += QL1S( "<h3>" );
+    doc += i18n( "Possible Causes:" );
+    doc += QL1S( "</h3><ul><li>" );
+    doc += causes.join( "</li><li>" );
+    doc += QL1S( "</li></ul>" );
+  }
+
+  if ( solutions.count() ) {
+    doc += QL1S( "<h3>" );
+    doc += i18n( "Possible Solutions:" );
+    doc += QL1S( "</h3><ul><li>" );
+    doc += solutions.join( "</li><li>" );
+    doc += QL1S( "</li></ul>" );
+  }
+
+  html.replace( QL1S("TEXT"), doc );
+
+  return html;
+}
+
 
 KWebKitPartPrivate::KWebKitPartPrivate(KWebKitPart *parent)
                    :QObject(),
@@ -127,6 +219,103 @@ void KWebKitPartPrivate::init(QWidget *mainWidget)
 
     mainWidget->setFocusProxy(webView);
 }
+
+void KWebKitPartPrivate::initActions()
+{
+    KAction *action = q->actionCollection()->addAction(KStandardAction::SaveAs, "saveDocument",
+                                                    browserExtension, SLOT(slotSaveDocument()));
+
+    action = new KAction(i18n("Save &Frame As..."), this);
+    q->actionCollection()->addAction("saveFrame", action);
+    connect(action, SIGNAL(triggered(bool)), browserExtension, SLOT(slotSaveFrame()));
+
+    action = new KAction(KIcon("document-print-frame"), i18n("Print Frame..."), this);
+    q->actionCollection()->addAction("printFrame", action);
+    connect(action, SIGNAL(triggered(bool)), browserExtension, SLOT(printFrame()));
+
+    action = new KAction(KIcon("zoom-in"), i18nc("zoom in action", "Zoom In"), this);
+    q->actionCollection()->addAction("zoomIn", action);
+    action->setShortcut(KShortcut("CTRL++; CTRL+="));
+    connect(action, SIGNAL(triggered(bool)), browserExtension, SLOT(zoomIn()));
+
+    action = new KAction(KIcon("zoom-out"), i18nc("zoom out action", "Zoom Out"), this);
+    q->actionCollection()->addAction("zoomOut", action);
+    action->setShortcut(KShortcut("CTRL+-; CTRL+_"));
+    connect(action, SIGNAL(triggered(bool)), browserExtension, SLOT(zoomOut()));
+
+    action = new KAction(KIcon("zoom-original"), i18nc("reset zoom action", "Actual Size"), this);
+    q->actionCollection()->addAction("zoomNormal", action);
+    action->setShortcut(KShortcut("CTRL+0"));
+    connect(action, SIGNAL(triggered(bool)), browserExtension, SLOT(zoomNormal()));
+
+    action = new KAction(i18n("Zoom Text Only"), this);
+    action->setCheckable(true);
+    KConfigGroup cgHtml(KGlobal::config(), "HTML Settings");
+    bool zoomTextOnly = cgHtml.readEntry("ZoomTextOnly", false);
+    action->setChecked(zoomTextOnly);
+    q->actionCollection()->addAction("zoomTextOnly", action);
+    connect(action, SIGNAL(triggered(bool)), browserExtension, SLOT(toogleZoomTextOnly()));
+
+    action = q->actionCollection()->addAction(KStandardAction::SelectAll, "selectAll",
+                                           browserExtension, SLOT(slotSelectAll()));
+    action->setShortcutContext(Qt::WidgetShortcut);
+    webView->addAction(action);
+
+    action = new KAction(i18n("View Do&cument Source"), this);
+    q->actionCollection()->addAction("viewDocumentSource", action);
+    action->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_U));
+    connect(action, SIGNAL(triggered(bool)), browserExtension, SLOT(slotViewDocumentSource()));
+
+    action = new KAction(i18nc("Secure Sockets Layer", "SSL"), this);
+    q->actionCollection()->addAction("security", action);
+    connect(action, SIGNAL(triggered(bool)), SLOT(slotShowSecurity()));
+
+    action = q->actionCollection()->addAction(KStandardAction::Find, "find", this, SLOT(slotShowSearchBar()));
+    action->setWhatsThis(i18nc("find action \"whats this\" text", "<h3>Find text</h3>"
+                              "Shows a dialog that allows you to find text on the displayed page."));
+
+    action = q->actionCollection()->addAction(KStandardAction::FindNext, "findnext",
+                                              searchBar, SLOT(findNext()));
+    action = q->actionCollection()->addAction(KStandardAction::FindPrev, "findprev",
+                                              searchBar, SLOT(findPrevious()));
+}
+
+
+bool KWebKitPartPrivate::handleError(const KUrl &u, QWebFrame *frame, bool handleUserAbort)
+{
+    if ( u.protocol() == "error" && u.hasSubUrl() ) {
+        /**
+         * The format of the error url is that two variables are passed in the query:
+         * error = int kio error code, errText = QString error text from kio
+         * and the URL where the error happened is passed as a sub URL.
+         */
+        KUrl::List urls = KUrl::split(u);
+
+        if ( urls.count() > 1 ) {
+            KUrl mainURL = urls.first();
+            int error = mainURL.queryItem( "error" ).toInt();
+
+            // error=0 isn't a valid error code, so 0 means it's missing from the URL
+            if ( error == 0 )
+                error = KIO::ERR_UNKNOWN;
+
+            if (handleUserAbort && error == KIO::ERR_USER_CANCELED) {
+                webView->setUrl(webView->url());
+                emit browserExtension->setLocationBarUrl(KUrl(webView->url()).prettyUrl());
+            } else {
+                const QString errorText = mainURL.queryItem( "errText" );
+                urls.pop_front();
+                KUrl reqUrl = KUrl::join( urls );
+                emit browserExtension->setLocationBarUrl(reqUrl.prettyUrl());                
+                frame->setHtml(htmlError(error, errorText, reqUrl));
+            }
+            return true;
+        }
+    }
+
+    return false;
+}
+
 
 void KWebKitPartPrivate::slotLoadStarted()
 {
@@ -223,7 +412,7 @@ void  KWebKitPartPrivate::slotNavigationRequestFinished(const KUrl& url, QWebFra
 {
     if (frame) {
 
-        if (q->handleError(url, frame)) {
+        if (handleError(url, frame)) {
             return;
         }
 
@@ -238,8 +427,7 @@ void  KWebKitPartPrivate::slotNavigationRequestFinished(const KUrl& url, QWebFra
 
 void KWebKitPartPrivate::slotUrlChanged(const QUrl& url)
 {
-    kDebug() << url << q->url();
-    if (url.toString() != QL1S("about:blank")) {
+    if (url.scheme() != QL1S("error") && url.toString() != QL1S("about:blank")) {
         q->setUrl(url);
         emit browserExtension->setLocationBarUrl(KUrl(url).prettyUrl());
     }
@@ -351,16 +539,28 @@ void KWebKitPartPrivate::slotLinkHovered(const QString &link, const QString &tit
 }
 
 void KWebKitPartPrivate::slotSearchForText(const QString &text, bool backward)
-{
-    QWebPage::FindFlags flags;
+{   
+    QString matchText;
+    QWebPage::FindFlags flags = 0;
 
-    if (backward)
-        flags = QWebPage::FindBackward;
+    if (text.isEmpty()) {
+       matchText = QL1S("");
+    } else {
+        matchText = text;
+        flags = QWebPage::FindWrapsAroundDocument;
 
-    if (searchBar->caseSensitive())
-        flags |= QWebPage::FindCaseSensitively;
+        if (backward)
+            flags |= QWebPage::FindBackward;
 
-    searchBar->setFoundMatch(webView->page()->findText(text, flags));
+        if (searchBar->caseSensitive())
+            flags |= QWebPage::FindCaseSensitively;
+
+        if (searchBar->highlightMatches())
+            flags |= QWebPage::HighlightAllOccurrences;
+    }
+
+    kDebug() << "matched text:" << matchText << ", backward ?" << backward;
+    searchBar->setFoundMatch(webView->page()->findText(matchText, flags));
 }
 
 void KWebKitPartPrivate::slotShowSearchBar()

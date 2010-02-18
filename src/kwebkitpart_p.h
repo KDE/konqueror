@@ -48,6 +48,8 @@ public:
 
     KWebKitPartPrivate(KWebKitPart *parent);
     void init (QWidget *widget);
+    void initActions();
+    bool handleError(const KUrl &, QWebFrame *frame, bool handleUserAbort = true);
 
     bool updateHistory;
     QPointer<WebView> webView;

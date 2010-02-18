@@ -21,8 +21,8 @@
  * Boston, MA 02110-1301, USA.
  *
  */
-#ifndef WEBKITPART_H
-#define WEBKITPART_H
+#ifndef KWEBKITPART_H
+#define KWEBKITPART_H
 
 #include "kwebkit_export.h"
 
@@ -32,16 +32,17 @@ namespace KParts {
   class BrowserExtension;
 }
 
-class QDataStream;
-class QNetworkReply;
 class QWebView;
-class QWebFrame;
-class QWebHistoryItem;
 class KWebKitPartPrivate;
 
 /**
+ * A KPart wrapper for the QtWebKit's browser rendering engine.
  *
+ * This class attempts to provide the same type of integration into KPart
+ * plugin applications, such as Konqueror, in much the same way as KHTML.
  *
+ * Unlink the KHTML part however, access into the internals of the rendering
+ * engine are provided through existing QtWebKit class ; @see QWebView.
  *
  */
 class KWEBKIT_EXPORT KWebKitPart : public KParts::ReadOnlyPart
@@ -51,21 +52,41 @@ public:
     explicit KWebKitPart(QWidget *parentWidget = 0, QObject *parent = 0, const QStringList &/*args*/ = QStringList());
     ~KWebKitPart();
 
+    /**
+     * Re-implemented for internal reasons. API remains unaffected.
+     *
+     * @see KParts::ReadOnlyPart::openUrl
+     */
     virtual bool openUrl(const KUrl &);
 
+    /**
+     * Re-implemented for internal reasons. API remains unaffected.
+     *
+     * @see KParts::ReadOnlyPart::closeUrl
+     */
     virtual bool closeUrl();
 
     /**
-     * A reference to the widget used to display web pages.
+     * Returns a pointer to the render widget used to display a web page.
+     *
+     * @see QWebView.
      */
     virtual QWebView *view();
 
 protected:
+    /**
+     * Re-implemented for internal reasons. API remains unaffected.
+     *
+     * @see KParts::ReadOnlyPart::guiActivateEvent
+     */
     virtual void guiActivateEvent(KParts::GUIActivateEvent *);
-    virtual bool openFile();
 
-    void initAction();
-    bool handleError(const KUrl &, QWebFrame *frame);
+    /**
+     * Re-implemented for internal reasons. API remains unaffected.
+     *
+     * @see KParts::ReadOnlyPart::openFile
+     */
+    virtual bool openFile();
 
 private:
     friend class KWebKitPartPrivate;
