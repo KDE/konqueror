@@ -623,10 +623,6 @@ void KFindTreeView::deleteSelectedFiles()
     if ( done )
     {
         KIO::del( uris );
-        
-        //This should be done by KDirWatch integration in the main dialog, but it could fail?
-        Q_FOREACH( const KUrl & url, uris )
-            m_model->removeItem( url );
     }
 }
 
@@ -638,10 +634,6 @@ void KFindTreeView::moveToTrashSelectedFiles()
     if ( done )
     {
         KIO::trash( uris );
-
-        //This should be done by KDirWatch integration in the main dialog, but it could fail?
-        Q_FOREACH( const KUrl & url, uris )
-            m_model->removeItem( url );
     }
 }
 
