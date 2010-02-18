@@ -2567,12 +2567,14 @@ document. You have the choice between &UNIX;, DOS/&Windows; or Macintosh.</para>
 type. The first found end of line type will be used for the whole file.</para>
 </listitem>
 </varlistentry>
+<!--
 <varlistentry>
 <term><guilabel>Enable byte order marker (if not overridden by other settings)</guilabel></term>
 <listitem>
 <para>???</para>
 </listitem>
 </varlistentry>
+-->
 </variablelist>
 </listitem>
 </varlistentry>
@@ -2716,10 +2718,12 @@ manual.</para></listitem>
 <listitem><para>If you create a new file type, this drop down box allows you to
 select a filetype for highlighting.</para></listitem>
 </varlistentry>
+<!--
 <varlistentry>
 <term><guilabel>Indentation Mode:</guilabel></term>
 <listitem><para>drop down box ???</para></listitem>
 </varlistentry>
+-->
 <varlistentry>
 <term><guilabel>File extensions:</guilabel></term>
 <listitem><para>The wildcards mask allows you to select files by filename. A
@@ -2760,40 +2764,65 @@ from the &kate; website.
 <para>The <guilabel>Plugins</guilabel> tab lists all available plugins and you can check those you
 want to use. Click on the <guibutton>Information</guibutton> button to open the
 <guilabel>About</guilabel> dialog of this plugin.</para>
-<!-- no longer in > 4.4
-Once a plugin is checked, the
+<para>Once a configurable plugin is checked, the
 <guibutton>Configure</guibutton> button is enabled and you can click it
 in order to configure the highlighted plugin.</para>
--->
 <variablelist>
 <title>Editor Component Plugins</title>
 <varlistentry>
 <term><guilabel>AutoBrace</guilabel></term>
-<listitem><para>http://jakob.petsovits.at/topic/kate</para></listitem>
+<listitem><para>The autobrace plugin supersedes the &kate; internal 
+<quote>Auto Brackets</quote> feature. 
+It automatically inserts a closing brace <keycap>}</keycap> at the beginning 
+of the next line after ending a line with an opening one <keycap>{</keycap>
+and pressing the &Enter; key.</para></listitem>
 </varlistentry>
+<!--http://jakob.petsovits.at/topic/kate-->
+<!--Right, it's the automatic insertion of a closing brace ("}") after you ended a line with an opening one ("{"). Kate's standard insertion of parentheses, brackets and braces is simply too obtrusive for me, so even if I tried it several times I always had to disable it again because I can't stand it. So here's how AutoBrace works.
+You, the developer, are writing a line of code, and want to open a new block delimited by braces. Looks like this:
+If you press Enter and AutoBrace is enabled, it will insert your favorite new brace where it belongs. Looks like this:
+-->
 <varlistentry>
 <term><guilabel>DataTools</guilabel></term>
-<listitem><para>??? no idea how to launch that
-in kde3 there was an additional item at the end of the context menu on a selection</para></listitem>
+<listitem><para>Enables data tools like thesaurus and spell check (if installed). 
+Data tools are only available when text is selected, or when the right mouse 
+button is clicked over a word. If no data tools are offered even when text 
+is selected, you need to install them. Some data tools are part of the 
+&koffice; package.
+If this plugin is enabled and data tools are installed, additional items 
+appear at the end of the context menu.</para></listitem>
 </varlistentry>
 <varlistentry>
 <term><guilabel>Exporter</guilabel></term>
-<listitem><para>File->Export as HTML ok, Edit->Copy as HTML only highlighted text 
-in klipper/selection</para></listitem>
+<listitem><para>This command allows you to export the current document with all highlighting 
+information into a HTML document using <menuchoice><guimenu>File</guimenu><guimenuitem>Export 
+as HTML</guimenuitem></menuchoice>. Additionally you can use <menuchoice><guimenu>Edit</guimenu>
+<guimenuitem>Copy as HTML</guimenuitem></menuchoice> to copy the currently selected text 
+as HTML to the system clipboard.</para></listitem>
 </varlistentry>
 <varlistentry>
 <term><guilabel>Insert File</guilabel></term>
-<listitem><para>Tools->Insert File ok works</para></listitem>
+<listitem><para>This plugin allows you to insert any readable file at the cursor position. 
+If enabled, the <guimenu>Tools</guimenu> menu has an additional menu item 
+<guimenuitem>Insert File</guimenuitem>.</para></listitem>
+</varlistentry>
+<varlistentry>
+<term>Python Encoding check</term>
+<listitem><para>This plugin is always enabled.  
+If you are trying to save a python file as non ASCII, without specifiying a 
+correct source encoding line like &eg; <quote># -*- coding: utf-8 -*-</quote>, 
+a warning dialog pops up and allows you to add a proper source encoding line for the
+current encoding to the file.
+</para></listitem>
 </varlistentry>
 </variablelist>
 <!--
 kdelibs/kate/plugins/ has additional plugins
-autobookmark not build?
-pythonencoding always enabled plugin (saving a python file without "# -*- coding: utf-8 -*-" - Warning dialog)
-timedate not build?
+autobookmark not build, its broken!
+timedate not build? plugin is for howto-write-a-plugin purposes!
 -->
 
-<!-- Scripts tab ???-->
+<!-- Scripts tab ??? empty-->
 </sect1>
 </chapter>
 
