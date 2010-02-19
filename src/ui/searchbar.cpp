@@ -64,7 +64,7 @@ public:
         connect(ui.searchLineEdit, SIGNAL(returnPressed()),
                 searchBar, SLOT(findNext()));
         connect(ui.searchLineEdit, SIGNAL(textChanged(const QString&)),
-                searchBar, SLOT(on_searchLineEdit_textChanged(const QString&)));
+                searchBar, SLOT(textChanged(const QString&)));
 
         // Update the state of the searchAsYouType option
         searchBar->searchAsYouTypeChanged (ui.actionSearchAutomatically->isChecked());
