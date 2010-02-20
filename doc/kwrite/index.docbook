@@ -73,7 +73,7 @@ Bash, Modula 2, &HTML;, and Ada.
 allowing you to edit one file at the time per window.
 </para>
 <para>
-&kappname; features two different modes, a simple mode with a straightforward interface
+&kwrite; features two different modes, a simple mode with a straightforward interface
 and an advanced mode with more features and more extensive menu items.
 The advanced mode is enabled by checking the option <link linkend="appearance">
 Enable power user mode (&kde; 3 mode)</link>
@@ -592,9 +592,7 @@ This starts a new document in a new and independent editor window.
 <listitem>
 <para>Displays a standard &kde; <guilabel>Open File</guilabel>
 dialog. Use the file view to select the file you want to open, and
-click on <guibutton>Open</guibutton> to open it. You can find more
-information about the &kde; <guilabel>Open File</guilabel> dialog in
-the &kde; User Guide.</para>
+click on <guibutton>Open</guibutton> to open it.</para>
 
 </listitem>
 </varlistentry>
@@ -2242,12 +2240,12 @@ right bracket (}, ), or ]) to the right of the cursor.</para></listitem>
 
 <varlistentry>
 <term><guilabel>Copy/Cut the current line if no selection</guilabel></term> <listitem>
-<para></para></listitem>
+<para><!--???--></para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><guilabel>Allow scrolling past the end of the document</guilabel></term> <listitem>
-<para></para></listitem>
+<para><!--???--></para></listitem>
 </varlistentry>
 </variablelist>
 </listitem>
@@ -2390,7 +2388,7 @@ Triggering the <guimenuitem>Undo</guimenuitem> action removes the indentation.</
 <varlistentry>
 <term><guilabel>Backspace key in leading blank space unindents</guilabel></term>
 <listitem>
-<para>If this option is selected, the <keysym>Backspace</keysym> key decreases the indentation level
+<para>If this option is selected, the &Backspace; key decreases the indentation level
 if the cursor is located in the leading blank space of a line.</para>
 </listitem>
 </varlistentry>
