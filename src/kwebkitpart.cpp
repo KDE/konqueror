@@ -46,6 +46,18 @@
 #define QL1S(x)  QLatin1String(x)
 #define QL1C(x)  QLatin1Char(x)
 
+static void setFormData(WebFrameState &frameState, const QString &data)
+{
+    const QStringList formDataList = data.split(QL1C(';'));
+    Q_FOREACH(const QString &formData, formDataList) {
+        QStringList items = formData.split(QL1C(','));
+        if (items.count() > 1) {
+            kDebug() << "formData:" << items;
+            frameState.formData.insert(items.at(0), items.at(1));
+        }
+    }
+}
+
 KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent, const QStringList &/*args*/)
             :KParts::ReadOnlyPart(parent), d(new KWebKitPartPrivate(this))
 {
@@ -132,17 +144,11 @@ bool KWebKitPart::openUrl(const KUrl &u)
             frameState.url = u;
             frameState.scrollPosX = args.xOffset();
             frameState.scrollPosY = args.yOffset();
-
-            QStringList savedFormDataList = metaData.value(QL1S("kwebkitpart-saved-form-data")).split(QL1C(';'));
-            Q_FOREACH(const QString &savedFormData, savedFormDataList) {
-                QStringList data = savedFormData.split(QL1C(','));
-                kDebug() << "formData:" << data.at(0) << data.at(1);
-                frameState.formData.insert(data.at(0), data.at(1));
-            }
-
+            setFormData(frameState, metaData.value(QL1S("kwebkitpart-saved-form-data")));
             d->webPage->saveFrameState(QString(), frameState);
 
-            /* docState contains information about child frame documents in
+            /*
+               'docState' contains information about child frame documents in
                the following order:
                0 => Frame name
                1 => Frame url
@@ -150,14 +156,13 @@ bool KWebKitPart::openUrl(const KUrl &u)
                3 => Frame scroll position Y
                4 => Frame form data information in: name=value;[...;nameN=valueN] format, where
                     name is the form name
-
             */
-
             const int count = bargs.docState.count();
             for (int i = 0; i < count; i += 5) {
                 frameState.url = bargs.docState.at(i+1);
                 frameState.scrollPosX = bargs.docState.at(i+2).toInt();
                 frameState.scrollPosY = bargs.docState.at(i+3).toInt();
+                setFormData(frameState, bargs.docState.at(i+4));
                 d->webPage->saveFrameState(bargs.docState.at(i), frameState);
             }
         }

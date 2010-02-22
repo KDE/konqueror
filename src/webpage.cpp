@@ -162,10 +162,11 @@ static void restoreStateFor(QWebFrame *frame, const WebFrameState &frameState)
     while (it.hasNext()) {
         it.next();
         QWebElement element = frame->documentElement().findFirst(it.key());
-        if (!element.isNull())
-            element.evaluateJavaScript(QString::fromLatin1("this.value=\"%1\"").arg(it.value()));
-        else
+        if (element.isNull())
             kWarning() << "Found no element that matches:" << it.key();
+        else
+            element.evaluateJavaScript(QString::fromLatin1("if(this.value.length == 0) this.value=\"%1\";")
+                                       .arg(it.value()));           
     }
 }
 
