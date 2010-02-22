@@ -1,18 +1,17 @@
 Features:
 =========
 * Add proper support for KWebKitPart in the following Konqueror kpart plugins:
-      ** searchbar    support for 'opensearch' only works with KHTML.
-      ** kget         download selection and other advanced features only work
+      - searchbar    support for 'opensearch' only works with KHTML.
+      - kget         download selection and other advanced features only work
                       with KHTML and the features that work still use KHTML
                       classes resulting in two rendering engines being used.
 
 * Add support for KPartStatusBarExtension for showing status icons for:
-      ** RSS feed plugin.
-      ** Ad-block integration...
-      ** KWallet integration...
+      - RSS feed plugin.
+      - Ad-block integration...
+      - KWallet integration...
 
 * Implement a means of showing the following information:
-      ** Show kwebkitpart's version number
-      ** Show qtwebkit's version number
-      ** Show KDE's version number
-
+      - Show kwebkitpart's version number
+      - Show qtwebkit's version number
+      - Show KDE's version number
