@@ -511,6 +511,11 @@ void KWebKitPartPrivate::slotLinkHovered(const QString &link, const QString &tit
         } else {
             message = link;
             QWebElementCollection collection = webPage->mainFrame()->documentElement().findAll(QL1S("a[href]"));
+            QListIterator<QWebFrame *> framesIt (webPage->mainFrame()->childFrames());
+            while (framesIt.hasNext()) {
+                collection += framesIt.next()->documentElement().findAll(QL1S("a[href]"));
+            }
+
             Q_FOREACH(const QWebElement &element, collection) {
                 //kDebug() << "link:" << link << "href" << element.attribute(QL1S("href"));
                 if (element.hasAttribute(QL1S("target")) &&
