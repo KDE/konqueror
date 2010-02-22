@@ -424,7 +424,7 @@ void  KWebKitPartPrivate::slotNavigationRequestFinished(const KUrl& url, QWebFra
 
 void KWebKitPartPrivate::slotUrlChanged(const QUrl& url)
 {
-    if (url.scheme() != QL1S("error") && url.toString() != QL1S("about:blank")) {
+    if (!url.isEmpty() && url.scheme() != QL1S("error") && url.toString() != QL1S("about:blank")) {
         q->setUrl(url);
         emit browserExtension->setLocationBarUrl(KUrl(url).prettyUrl());
     }
