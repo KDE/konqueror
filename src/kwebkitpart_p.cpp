@@ -547,6 +547,7 @@ void KWebKitPartPrivate::slotSearchForText(const QString &text, bool backward)
 
     if (text.isEmpty()) {
        matchText = QL1S("");
+       flags = QWebPage::HighlightAllOccurrences;
     } else {
         matchText = text;
         flags = QWebPage::FindWrapsAroundDocument;
