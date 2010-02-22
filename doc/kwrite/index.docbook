@@ -842,7 +842,7 @@ copying the entire file to another application.</para>
 <keycombo action="simul">&Ctrl;&Shift;<keycap>B</keycap></keycombo>
 </shortcut>
 <guimenu>Edit</guimenu><guimenuitem>Block
-Selection Mode</guimenuitem></menuchoice></term>
+Selection Mode</guimenuitem></menuchoice> (Power user mode)</term>
 <listitem>
 <para>Toggles Selection Mode. When the Selection Mode is <guilabel>BLOCK</guilabel>,
 you can make vertical selections, &eg; select column 5 to 10 in lines 9 to 15.
@@ -856,7 +856,7 @@ The status bar shows the current state of the Selection Mode, either <guilabel>B
 <keycombo action="simul"><keysym>Meta</keysym>&Ctrl;<keycap>V</keycap></keycombo>
 </shortcut>
 <guimenu>Edit</guimenu><guimenuitem>VI input
-Mode</guimenuitem></menuchoice></term>
+Mode</guimenuitem></menuchoice> (Power user mode)</term>
 <listitem>
 <para>Switch to a vi-like, modal editing mode. This mode supports the most used commands
 and motions from vim's normal and visual mode and has an optional vi mode statusbar.
@@ -1060,7 +1060,7 @@ document in one window are reflected in the other window and vice versa.</para>
 action="simul"><keycap>F7</keycap></keycombo></shortcut>
 <guimenu>View</guimenu>
 <guimenuitem>Switch to Command Line</guimenuitem>
-</menuchoice>
+</menuchoice> (Power user mode)
 </term>
 <listitem>
 <para>Displays the Katepart command line at the bottom of the window.
@@ -1075,7 +1075,7 @@ to get a list of commands.</para>
 <menuchoice>
 <guimenu>View</guimenu>
 <guisubmenu>Schema</guisubmenu>
-</menuchoice>
+</menuchoice> (Power user mode)
 </term>
 <listitem>
 <para>Select a font schema.</para>
@@ -1103,7 +1103,7 @@ border on the screen.</para>
 <menuchoice>
 <guimenu>View</guimenu>
 <guisubmenu>Dynamic Word Wrap Indicators</guisubmenu>
-</menuchoice>
+</menuchoice> (Power user mode)
 </term>
 <listitem>
  <para>Choose when and how the dynamic word wrap indicators should be
@@ -1118,7 +1118,7 @@ Wrap</guilabel> option is checked.</para>
 <menuchoice>
 <guimenu>View</guimenu>
 <guimenuitem>Show Static Word Wrap Marker</guimenuitem>
-</menuchoice>
+</menuchoice> (Power user mode)
 </term>
 <listitem>
 <para>If this option is checked, a vertical line will be drawn at the
@@ -1137,7 +1137,7 @@ use a fixed pitch font.</para>
 <shortcut><keycombo action="simul"><keycap>F6</keycap></keycombo></shortcut>
 <guimenu>View</guimenu>
 <guimenuitem>Show Icon Border</guimenuitem>
-</menuchoice>
+</menuchoice> (Power user mode)
 </term>
 <listitem>
 <para>This is a toggle item. Setting it on checked will make the Icon Border
@@ -1167,7 +1167,7 @@ editor, and vice versa.</para>
 <menuchoice>
 <guimenu>View</guimenu>
 <guisubmenu>Show Scrollbar Marks</guisubmenu>
-</menuchoice>
+</menuchoice> (Power user mode)
 </term>
 <listitem>
 <para>If this option is checked, the view will show marks on the vertical
@@ -1181,7 +1181,7 @@ scrollbar.</para>
 <menuchoice>
 <shortcut><keycombo action="simul"><keycap>F9</keycap></keycombo></shortcut>
 <guimenuitem>Show Folding Markers</guimenuitem>
-</menuchoice>
+</menuchoice> (Power user mode)
 </term>
 <listitem>
 <para>If this option is checked, the marks for code folding will be
@@ -1194,7 +1194,7 @@ hidden.</para>
 <anchor id="view-code-folding"/>
 <menuchoice>
 <guisubmenu>Code Folding</guisubmenu>
-</menuchoice>
+</menuchoice> (Power user mode)
 </term>
 <listitem>
 <variablelist>
@@ -1333,7 +1333,7 @@ addition and any changes in the document formatting.</para>
 <varlistentry><!-- only in power mode-->
 <term><anchor id="tools-filetype"/><menuchoice>
 <guimenu>Tools</guimenu>
-<guisubmenu>Mode</guisubmenu></menuchoice></term>
+<guisubmenu>Mode</guisubmenu></menuchoice> (Power user mode)</term>
  <listitem>
 <para>Choose the filetype scheme you prefer for the active document. This
 overwrites the global filetype mode set in <menuchoice>
@@ -1347,7 +1347,7 @@ document only.</para>
 <varlistentry><!-- only in power mode-->
 <term><anchor id="tools-highlighting"/><menuchoice>
 <guimenu>Tools</guimenu>
-<guisubmenu>Highlighting</guisubmenu></menuchoice></term>
+<guisubmenu>Highlighting</guisubmenu></menuchoice> (Power user mode)</term>
  <listitem>
 <para>Choose the Highlighting scheme you prefer for the active document. This
 overwrites the global highlighting mode set in <menuchoice>
@@ -1360,7 +1360,7 @@ Editor...</guimenuitem></menuchoice> for your current document only.</para>
 <varlistentry><!-- only in power mode-->
 <term><anchor id="tools-indentation"/><menuchoice>
 <guimenu>Tools</guimenu>
-<guisubmenu>Indentation</guisubmenu></menuchoice></term>
+<guisubmenu>Indentation</guisubmenu></menuchoice> (Power user mode)</term>
  <listitem>
 <para>Choose the style of indentation you want for your active document.
 This overwrites the global indentation mode set in <menuchoice>
@@ -1370,7 +1370,7 @@ Editor...</guimenuitem></menuchoice> for your current document only.</para>
  </listitem>
 </varlistentry>
 
-<varlistentry><!-- only in power mode-->
+<varlistentry>
 <term><anchor id="tools-encoding"/><menuchoice>
 <guimenu>Tools</guimenu>
 <guisubmenu>Encoding</guisubmenu></menuchoice></term>
@@ -1387,7 +1387,7 @@ set here will be only valid for your current document.</para>
 <varlistentry><!-- only in power mode-->
 <term><anchor id="tools-end-of-line"/><menuchoice>
 <guimenu>Tools</guimenu>
-<guisubmenu>End of Line</guisubmenu></menuchoice></term>
+<guisubmenu>End of Line</guisubmenu></menuchoice> (Power user mode)</term>
  <listitem>
 <para>Choose your preferred end of line mode for your active
 document. This overwrites the global end of line mode set in <menuchoice>
@@ -1397,7 +1397,6 @@ Editor...</guimenuitem></menuchoice> for your current document only.</para>
  </listitem>
 </varlistentry>
 
-<!-- only in power mode-->
 <varlistentry>
 <term><anchor id="tools-add-byte-mark-order"/><menuchoice>
 <guimenu>Tools</guimenu>
@@ -1417,7 +1416,7 @@ the endianness (byte order) of a text file or stream, for more information see
 </shortcut>
 <guimenu>Tools</guimenu>
 <guimenuitem>Invoke Code Completion</guimenuitem>
-</menuchoice></term>
+</menuchoice> (Power user mode)</term>
 <listitem>
 <para>Manually invoke command completion, usually by using a shortcut bound to this action.</para>
 </listitem>
@@ -1427,7 +1426,7 @@ the endianness (byte order) of a text file or stream, for more information see
 <term><menuchoice>
 <guimenu>Tools</guimenu>
 <guimenuitem>Word Completion</guimenuitem>
-</menuchoice></term>
+</menuchoice> (Power user mode)</term>
 <listitem>
 <para><guimenuitem>Reuse Word Below</guimenuitem> and <guimenuitem>Reuse Word
 Above</guimenuitem> complete the currently typed text by searching for similar
@@ -1641,7 +1640,7 @@ indentation mode and indentation settings in the document.</para>
 </shortcut>
 <guimenu>Tools</guimenu>
 <guimenuitem>Comment</guimenuitem>
-</menuchoice></term>
+</menuchoice> (Power user mode)</term>
 <listitem><para>This adds one space to the beginning of the line
 where the text cursor is located or to the beginning of any
 selected lines.</para>
@@ -1655,7 +1654,7 @@ selected lines.</para>
 </shortcut>
 <guimenu>Tools</guimenu>
 <guimenuitem>Uncomment</guimenuitem>
-</menuchoice></term>
+</menuchoice> (Power user mode)</term>
 <listitem><para>This removes one space (if any exist) from the beginning of the
 line where the text cursor is located or from the beginning of any
 selected lines.</para></listitem>
@@ -2240,12 +2239,13 @@ right bracket (}, ), or ]) to the right of the cursor.</para></listitem>
 
 <varlistentry>
 <term><guilabel>Copy/Cut the current line if no selection</guilabel></term> <listitem>
-<para><!--???--></para></listitem>
+<para>If this option is enabled and the text selection is empty, copy and cut 
+action are performed for the line of text at the actual cursor position.</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><guilabel>Allow scrolling past the end of the document</guilabel></term> <listitem>
-<para><!--???--></para></listitem>
+<para>This option lets you scroll past the end of the document. This can be used to vertically centre the bottom of the document, or put it on top of the current view.</para></listitem>
 </varlistentry>
 </variablelist>
 </listitem>
