@@ -1,10 +1,18 @@
-- Improve/implement integration for Konqueror's (read: KHTML) kpart plugins, e.g. ad-block, download manager
+Features:
+=========
+* Add proper support for KWebKitPart in the following Konqueror kpart plugins:
+      ** searchbar    support for 'opensearch' only works with KHTML.
+      ** kget         download selection and other advanced features only work
+                      with KHTML and the features that work still use KHTML
+                      classes resulting in two rendering engines being used.
 
-- Implement the KPartStatusBarExtension for showing status bar icons for the above plugins.
+* Add support for KPartStatusBarExtension for showing status icons for:
+      ** RSS feed plugin.
+      ** Ad-block integration...
+      ** KWallet integration...
 
-- Improve the search bar plugin and perhaps move it as an optional widget into kdewebkit 
-  some time down the line.
+* Implement a means of showing the following information:
+      ** Show kwebkitpart's version number
+      ** Show qtwebkit's version number
+      ** Show KDE's version number
 
-- Find a way to show the rendering engine version number in applications that embed this part, 
-  for example konqueror's about dialog. Another option would be to implement something for the
-  "about:" protocol, about:plugin or about:engine ?
