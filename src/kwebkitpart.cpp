@@ -132,10 +132,29 @@ bool KWebKitPart::openUrl(const KUrl &u)
             frameState.url = u;
             frameState.scrollPosX = args.xOffset();
             frameState.scrollPosY = args.yOffset();
+
+            QStringList savedFormDataList = metaData.value(QL1S("kwebkitpart-saved-form-data")).split(QL1C(';'));
+            Q_FOREACH(const QString &savedFormData, savedFormDataList) {
+                QStringList data = savedFormData.split(QL1C(','));
+                kDebug() << "formData:" << data.at(0) << data.at(1);
+                frameState.formData.insert(data.at(0), data.at(1));
+            }
+
             d->webPage->saveFrameState(QString(), frameState);
 
+            /* docState contains information about child frame documents in
+               the following order:
+               0 => Frame name
+               1 => Frame url
+               2 => Frame scroll position X
+               3 => Frame scroll position Y
+               4 => Frame form data information in: name=value;[...;nameN=valueN] format, where
+                    name is the form name
+
+            */
+
             const int count = bargs.docState.count();
-            for (int i = 0; i < count; i += 4) {
+            for (int i = 0; i < count; i += 5) {
                 frameState.url = bargs.docState.at(i+1);
                 frameState.scrollPosX = bargs.docState.at(i+2).toInt();
                 frameState.scrollPosY = bargs.docState.at(i+3).toInt();

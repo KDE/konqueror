@@ -53,7 +53,9 @@
 #include <QtGui/QTextDocument>
 #include <QtNetwork/QNetworkReply>
 #include <QtUiTools/QUiLoader>
+
 #include <QtWebKit/QWebFrame>
+#include <QtWebKit/QWebElement>
 #include <QtWebKit/QWebSecurityOrigin>
 
 #define QL1S(x)  QLatin1String(x)
@@ -151,12 +153,29 @@ static bool domainSchemeMatch(const QUrl& u1, const QUrl& u2)
     return (u1List == u2List);
 }
 
+static void restoreStateFor(QWebFrame *frame, const WebFrameState &frameState)
+{
+    Q_ASSERT(frame);
+
+    frame->setScrollPosition(QPoint(frameState.scrollPosX, frameState.scrollPosY));
+    QHashIterator<QString, QString> it (frameState.formData);
+    while (it.hasNext()) {
+        it.next();
+        QWebElement element = frame->documentElement().findFirst(it.key());
+        if (!element.isNull())
+            element.evaluateJavaScript(QString::fromLatin1("this.value=\"%1\"").arg(it.value()));
+        else
+            kWarning() << "Found no element that matches:" << it.key();
+    }
+}
+
 
 class WebPage::WebPagePrivate
 {
 public:
-    WebPagePrivate() {}
+    WebPagePrivate() : statDownloadRequest(false) {}
 
+    bool statDownloadRequest;
     WebSslInfo sslInfo;
     QHash<QString, WebFrameState> frameStateContainer;
     // Holds list of requests including those from children frames
@@ -232,27 +251,7 @@ void WebPage::saveFrameState (const QString &frameName, const WebFrameState &fra
     d->frameStateContainer[frameName] = frameState;
 }
 
-void WebPage::restoreFrameState(const QString &frameName)
-{
-    if (d->frameStateContainer.contains(frameName)) {
-        WebFrameState frameState = d->frameStateContainer.take(frameName);
-        if (mainFrame()->frameName() == frameName) {
-            mainFrame()->setScrollPosition(QPoint(frameState.scrollPosX, frameState.scrollPosY));
-            kDebug() << "Restoring main frame:" << frameName << frameState;
-        } else {
-            QListIterator<QWebFrame *> frameIt (mainFrame()->childFrames());
-            while (frameIt.hasNext()) {
-                QWebFrame *frame = frameIt.next();
-                if (frame->frameName() == frameName) {
-                    frame->setScrollPosition(QPoint(frameState.scrollPosX, frameState.scrollPosY));
-                    kDebug() << "Restoring child frame:" << frameName << frameState;
-                }
-            }
-        }
-    }
-}
-
-void WebPage::restoreAllFrameState()
+void WebPage::restoreFrameStates()
 {
     QList<QWebFrame *> frames = mainFrame()->childFrames();
     frames.prepend(mainFrame());
@@ -261,8 +260,7 @@ void WebPage::restoreAllFrameState()
     while (frameIt.hasNext()) {
         QWebFrame* frame = frameIt.next();
         if (d->frameStateContainer.contains(frame->frameName())) {
-            WebFrameState frameState = d->frameStateContainer.take(frame->frameName());
-            frame->setScrollPosition(QPoint(frameState.scrollPosX, frameState.scrollPosY));
+            restoreStateFor(frame, d->frameStateContainer.take(frame->frameName()));
         }
     }
 }
@@ -328,7 +326,7 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
                         if ((frmUrlHasFragment && frameUrl.toString(QUrl::RemoveFragment) == reqUrl.toString()) ||
                             (reqUrlHasFragment && reqUrl.toString(QUrl::RemoveFragment) == frameUrl.toString()) ||
                             (frmUrlHasFragment && reqUrlHasFragment && reqUrl == frameUrl)) {
-                            kDebug() << "Avoiding page reload!" << endl;
+                            //kDebug() << "Avoiding page reload!" << endl;
                             emit loadFinished(true);
                             return false;
                         }
@@ -342,8 +340,7 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
                             frame->setUrl(frameState.url);
                             frame->blockSignals(signalsBlocked);
                             frameState.handled = true;
-                            kDebug() << "Changing request for" << frame << "from"
-                                     << reqUrl << "to" << frameState.url;
+                            //kDebug() << "Changing request for" << frame << "from" << reqUrl << "to" << frameState.url;
                             return false;
                         }
                     }
@@ -377,7 +374,6 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
 
 QWebPage *WebPage::createWindow(WebWindowType type)
 {
-    kDebug() << type;
     KParts::ReadOnlyPart *part = 0;
     KParts::OpenUrlArguments args;
     //args.metaData()["referrer"] = mainFrame()->url().toString();
@@ -395,9 +391,9 @@ QWebPage *WebPage::createWindow(WebWindowType type)
         return webKitPart->view()->page();
 
     if (part)
-        kDebug() << "Got a non KWebKitPart" << part->metaObject()->className();
+        kWarning() << "Got a non KWebKitPart" << part->metaObject()->className();
     else
-        kDebug() << "part is NULL";
+        kWarning() << "part is NULL";
 
     return 0;
 }
@@ -406,7 +402,6 @@ void WebPage::slotUnsupportedContent(QNetworkReply *reply)
 {
     KParts::OpenUrlArguments args;
     const KUrl url(reply->url());
-    kDebug() << url;
 
     // FIXME: Until we implement a way to resume/continue a network
     // request. We must abort the reply to prevent a zombie process
@@ -423,7 +418,6 @@ void WebPage::slotUnsupportedContent(QNetworkReply *reply)
 void WebPage::downloadRequest(const QNetworkRequest &request)
 {
     const KUrl url(request.url());
-    kDebug() << url;
 
     // Integration with a download manager...
     if (!url.isLocalFile()) {
@@ -432,7 +426,7 @@ void WebPage::downloadRequest(const QNetworkRequest &request)
 
         if (!downloadManger.isEmpty()) {
             // then find the download manager location
-            kDebug() << "Using: " << downloadManger << " as Download Manager";
+            //kDebug() << "Using: " << downloadManger << " as Download Manager";
             QString cmd = KStandardDirs::findExe(downloadManger);
             if (cmd.isEmpty()) {
                 QString errMsg = i18n("The download manager (%1) could not be found in your installation.", downloadManger);
@@ -442,14 +436,22 @@ void WebPage::downloadRequest(const QNetworkRequest &request)
                 cfg.sync();
             } else {
                 cmd += ' ' + KShell::quoteArg(url.url());
-                kDebug() << "Calling command" << cmd;
+                //kDebug() << "Calling command" << cmd;
                 KRun::runCommand(cmd, view());
                 return;
             }
         }
     }
 
-    KWebPage::downloadRequest(request);
+    // For http requests, attempt to retreive "Content-Dispostion" if possible...
+    if (url.scheme().startsWith(QL1S("http"), Qt::CaseInsensitive)) {
+#if 0
+        d->statDownloadRequest = true;
+        networkAccessManager()->get(request);
+#endif
+    } else {
+        KWebPage::downloadRequest(request);
+    }
 }
 
 void WebPage::slotGeometryChangeRequested(const QRect &rect)
@@ -466,19 +468,19 @@ void WebPage::slotGeometryChangeRequested(const QRect &rect)
     // parts of following code are based on kjs_window.cpp
     // Security check: within desktop limits and bigger than 100x100 (per spec)
     if (width < 100 || height < 100) {
-        kDebug() << "Window resize refused, window would be too small (" << width << "," << height << ")";
+        //kDebug() << "Window resize refused, window would be too small (" << width << "," << height << ")";
         return;
     }
 
     QRect sg = KGlobalSettings::desktopGeometry(view());
 
     if (width > sg.width() || height > sg.height()) {
-        kDebug() << "Window resize refused, window would be too big (" << width << "," << height << ")";
+        //kDebug() << "Window resize refused, window would be too big (" << width << "," << height << ")";
         return;
     }
 
     if (WebKitSettings::self()->windowResizePolicy(host) == WebKitSettings::KJSWindowResizeAllow) {
-        kDebug() << "resizing to " << width << "x" << height;
+        //kDebug() << "resizing to " << width << "x" << height;
         emit d->part->browserExtension()->resizeTopLevelWidget(width, height);
     }
 
@@ -525,11 +527,11 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
     QWebFrame* frame = qobject_cast<QWebFrame *>(reply->request().originatingObject());
 
     if (frame && d->requestQueue.removeOne(url)) {
-        kDebug() << url;
+        //kDebug() << url;
         const int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
 
         if (statusCode > 300 && statusCode < 304) {
-            kDebug() << "Redirected to" << reply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
+            //kDebug() << "Redirected to" << reply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
         } else {
             const int errCode = convertErrorCode(reply);
             const bool isMainFrameRequest = (frame == mainFrame());
@@ -539,7 +541,7 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
             // information for the main page like most browsers.
             if (isMainFrameRequest && d->sslInfo.isValid() &&
                 !domainSchemeMatch(reply->url(), d->sslInfo.url())) {
-                kDebug() << "Reseting cached SSL info...";
+                //kDebug() << "Reseting cached SSL info...";
                 d->sslInfo = WebSslInfo();
             }
 
@@ -558,7 +560,7 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
                     break;
                 case KIO::ERR_ABORTED:
                 case KIO::ERR_USER_CANCELED: // Do nothing if request is cancelled/aborted
-                    kDebug() << "User aborted request!";
+                    //kDebug() << "User aborted request!";
                     emit loadAborted(QUrl());
                     return;
                 // Handle the user clicking on a link that refers to a directory
@@ -579,6 +581,11 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
 
             emit navigationRequestFinished(url, frame);
         }
+    } else if (d->statDownloadRequest) {
+#if 0
+        d->statDownloadRequest = false;
+        downloadReply(reply);
+#endif
     }
 }
 
@@ -587,7 +594,7 @@ bool WebPage::checkLinkSecurity(const QNetworkRequest &req, NavigationType type)
     // Check whether the request is authorized or not...
     if (!KAuthorized::authorizeUrlAction("redirect", mainFrame()->url(), req.url())) {
 
-        kDebug() << "*** Failed security check: base-url=" << mainFrame()->url() << ", dest-url=" << req.url();
+        //kDebug() << "*** Failed security check: base-url=" << mainFrame()->url() << ", dest-url=" << req.url();
         QString buttonText, title, message;
 
         int response = KMessageBox::Cancel;
@@ -691,7 +698,7 @@ bool WebPage::handleMailToUrl (const QUrl& url, NavigationType type) const
                  break;
         }
 
-        kDebug() << "Emitting openUrlRequest with " << mailtoUrl;
+        //kDebug() << "Emitting openUrlRequest with " << mailtoUrl;
         emit d->part->browserExtension()->openUrlRequest(mailtoUrl);
         return true;
     }

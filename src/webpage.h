@@ -28,7 +28,7 @@
 
 #include <QtCore/QUrl>
 #include <QtCore/QDebug>
-
+#include <QtCore/QHash>
 
 class KUrl;
 class WebSslInfo;
@@ -42,6 +42,7 @@ struct WebFrameState
   int scrollPosX;
   int scrollPosY;
   bool handled;
+  QHash<QString, QString> formData;
 
   WebFrameState() : scrollPosX(0), scrollPosY(0), handled(false) {}
 
@@ -87,16 +88,9 @@ public:
     void saveFrameState (const QString &frameName, const WebFrameState &frameState);
 
     /**
-     * Restore the frame state from the saved
-     *
-     * @param frameName     the frame name.
-     */
-    void restoreFrameState(const QString &frameName);
-
-    /**
      * Restores the states of all the frames in the page.
      */
-    void restoreAllFrameState();
+    void restoreFrameStates();
 
     /**
      * Reimplemented for internal reasons. The API is not affected.

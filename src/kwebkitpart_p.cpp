@@ -159,6 +159,8 @@ void KWebKitPartPrivate::init(QWidget *mainWidget)
             this, SLOT(slotUrlChanged(const QUrl &)));
     connect(webView, SIGNAL(linkMiddleOrCtrlClicked(const KUrl &)),
             this, SLOT(slotLinkMiddleOrCtrlClicked(const KUrl &)));
+    connect(webView, SIGNAL(selectionClipboardUrlPasted(const KUrl &)),
+            this, SIGNAL(slotSelectionClipboardUrlPasted(const KUrl &)));
 
     // Create the search bar...
     searchBar = new KDEPrivate::SearchBar;
@@ -192,11 +194,6 @@ void KWebKitPartPrivate::init(QWidget *mainWidget)
             browserExtension, SIGNAL(loadingProgress(int)));
     connect(webPage, SIGNAL(selectionChanged()),
             browserExtension, SLOT(updateEditActions()));
-    connect(browserExtension, SIGNAL(saveUrl(const KUrl&)),
-            webPage, SLOT(downloadUrl(const KUrl &)));
-
-    connect(webView, SIGNAL(selectionClipboardUrlPasted(const KUrl &)),
-            browserExtension, SIGNAL(openUrlRequest(const KUrl &)));
 
     KDEPrivate::PasswordBar *passwordBar = new KDEPrivate::PasswordBar(mainWidget);
 
@@ -354,7 +351,7 @@ void KWebKitPartPrivate::slotLoadFinished(bool ok)
         }
 
         // Restore page state as necessary...
-        webPage->restoreAllFrameState();
+        webPage->restoreFrameStates();
 
         if (webView->title().trimmed().isEmpty()) {
             // If the document title is empty, then set it to the current url
@@ -559,7 +556,7 @@ void KWebKitPartPrivate::slotSearchForText(const QString &text, bool backward)
             flags |= QWebPage::HighlightAllOccurrences;
     }
 
-    kDebug() << "matched text:" << matchText << ", backward ?" << backward;
+    //kDebug() << "matched text:" << matchText << ", backward ?" << backward;
     searchBar->setFoundMatch(webView->page()->findText(matchText, flags));
 }
 
@@ -579,9 +576,13 @@ void KWebKitPartPrivate::slotLinkMiddleOrCtrlClicked(const KUrl& linkUrl)
 {
     KParts::OpenUrlArguments args;
     args.setActionRequestedByUser(true);
-    args.metaData()["referrer"] = q->url().url();
-
     emit browserExtension->createNewWindow(linkUrl, args);
+}
+
+void KWebKitPartPrivate::slotSelectionClipboardUrlPasted(const KUrl& selectedUrl)
+{
+    if (WebKitSettings::self()->isOpenMiddleClickEnabled())
+        emit browserExtension->openUrlRequest(selectedUrl);
 }
 
 #include "kwebkitpart_p.moc"

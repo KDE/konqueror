@@ -69,6 +69,7 @@ private Q_SLOTS:
     void slotLinkHovered(const QString &, const QString&, const QString &);
     void slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item);
     void slotLinkMiddleOrCtrlClicked(const KUrl&);
+    void slotSelectionClipboardUrlPasted(const KUrl&);
 
     void slotUrlChanged(const QUrl &);
 

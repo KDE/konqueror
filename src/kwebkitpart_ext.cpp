@@ -47,6 +47,49 @@
 #include <QtGui/QPrinter>
 #include <QtGui/QPrintPreviewDialog>
 #include <QtWebKit/QWebFrame>
+#include <QtWebKit/QWebElement>
+#include <QtWebKit/QWebElementCollection>
+
+#define QL1S(x)     QLatin1String(x)
+#define QL1C(x)     QLatin1Char(x)
+
+static QString getFormData(const QWebFrame *frame)
+{
+    QStringList formData;
+
+    if (frame) {
+        QString key, temp;
+        QWebElement element = frame->documentElement();
+        QWebElementCollection collection =  element.findAll(QL1S("input[type=text]"));
+        collection += element.findAll(QL1S("input:not([type])"));
+        collection += element.findAll(QL1S("textarea"));
+        const int numElements = collection.count();
+
+        for (int i = 0; i < numElements; ++i) {
+            element = collection.at(i);
+            const QString value = element.evaluateJavaScript("this.value").toString().trimmed();
+            if (!value.isEmpty() && value != element.attribute("value")) {
+                if (element.parent().isNull())
+                    key = element.tagName();
+                else
+                    key = element.parent().tagName() + QL1S(" > ") + element.tagName();
+                temp = element.attribute(QL1S("name"));
+                if (!temp.isEmpty())
+                    key += QString::fromLatin1("[name=\"%1\"]").arg(temp);
+                temp = element.attribute(QL1S("class"));
+                if (!temp.isEmpty())
+                   key += QString::fromLatin1("[class=\"%1\"]").arg(temp);
+                temp = element.attribute(QL1S("id"));
+                if (!temp.isEmpty())
+                   key += QString::fromLatin1("[id=\"%1\"]").arg(temp);
+
+                formData << (key + QL1C(',') + value);
+            }
+        }
+    }
+
+    return formData.join(QL1S(";"));
+}
 
 
 static QStringList getChildrenFrameState(const QWebFrame *frame)
@@ -60,6 +103,7 @@ static QStringList getChildrenFrameState(const QWebFrame *frame)
             info << childFrame->url().toString();
             info << QString::number(childFrame->scrollPosition().x());
             info << QString::number(childFrame->scrollPosition().y());
+            info << getFormData(frame);
         }
     }
 
@@ -110,7 +154,8 @@ int WebKitBrowserExtension::yOffset()
 
 void WebKitBrowserExtension::saveState(QDataStream &stream)
 {
-    QVariant sslinfo, historyData;
+    QVariant sslinfo;
+    QString formData;
     QStringList childFrameState;
 
     if (d->view) {
@@ -122,12 +167,17 @@ void WebKitBrowserExtension::saveState(QDataStream &stream)
 
             // Save the state (name, url, scroll position) for all frames...
             childFrameState = getChildrenFrameState(page->mainFrame());
+
+            // Save any information type into forms...
+            formData = getFormData(page->mainFrame());
+            //kDebug() << "Saving form data:" << formData;
         }
     }
 
     stream << d->part->url()
            << static_cast<qint32>(xOffset())
            << static_cast<qint32>(yOffset())
+           << formData
            << sslinfo
            << childFrameState;
 }
@@ -137,11 +187,12 @@ void WebKitBrowserExtension::restoreState(QDataStream &stream)
     KUrl u;
     qint32 xOfs, yOfs;
     QVariant sslinfo;
+    QString formData;
     KIO::MetaData metaData;
     KParts::OpenUrlArguments args;
     KParts::BrowserArguments bargs;
 
-    stream >> u >> xOfs >> yOfs >> sslinfo >> bargs.docState;
+    stream >> u >> xOfs >> yOfs >> formData >> sslinfo >> bargs.docState;
 
     if (sslinfo.isValid() && sslinfo.type() == QVariant::Map)
         metaData += sslinfo.toMap();
@@ -149,7 +200,8 @@ void WebKitBrowserExtension::restoreState(QDataStream &stream)
     args.setXOffset(xOfs);
     args.setYOffset(yOfs);
     args.metaData() = metaData;
-    args.metaData().insert(QLatin1String("kwebkitpart-restore-state"), QString());
+    args.metaData().insert(QL1S("kwebkitpart-restore-state"), QString());
+    args.metaData().insert(QL1S("kwebkitpart-saved-form-data"), formData);
 
     d->part->setArguments(args);
     d->part->browserExtension()->setBrowserArguments(bargs);
@@ -288,7 +340,6 @@ void WebKitBrowserExtension::slotFrameInWindow()
 {
     if (d->view) {
         KParts::OpenUrlArguments args;// = d->m_khtml->arguments();
-        args.metaData()["referrer"] = d->view->url().toString();
         args.metaData()["forcenewwindow"] = "true";
         emit createNewWindow(d->view->page()->currentFrame()->url(), args);
     }
@@ -297,22 +348,18 @@ void WebKitBrowserExtension::slotFrameInWindow()
 void WebKitBrowserExtension::slotFrameInTab()
 {
     if (d->view) {
-        KParts::OpenUrlArguments args;// = d->m_khtml->arguments();
-        args.metaData()["referrer"] = d->view->url().toString();
         KParts::BrowserArguments browserArgs;//( d->m_khtml->browserExtension()->browserArguments() );
         browserArgs.setNewTab(true);
-        emit createNewWindow(d->view->page()->currentFrame()->url(), args, browserArgs);
+        emit createNewWindow(d->view->page()->currentFrame()->url(), KParts::OpenUrlArguments(), browserArgs);
     }
 }
 
 void WebKitBrowserExtension::slotFrameInTop()
 {
     if (d->view) {
-        KParts::OpenUrlArguments args;// = d->m_khtml->arguments();
-        args.metaData()["referrer"] = d->view->url().toString();
         KParts::BrowserArguments browserArgs;//( d->m_khtml->browserExtension()->browserArguments() );
         browserArgs.frameName = "_top";
-        emit openUrlRequest(d->view->page()->currentFrame()->url(), args, browserArgs);
+        emit openUrlRequest(d->view->page()->currentFrame()->url(), KParts::OpenUrlArguments(), browserArgs);
     }
 }
 
@@ -326,6 +373,7 @@ void WebKitBrowserExtension::slotReloadFrame()
 void WebKitBrowserExtension::slotSaveImageAs()
 {
     if (d->view) {
+/*
         QList<KUrl> urls;
         urls.append(d->view->contextMenuResult().imageUrl());
         const int nbUrls = urls.count();
@@ -333,6 +381,8 @@ void WebKitBrowserExtension::slotSaveImageAs()
             QString file = KFileDialog::getSaveFileName(KUrl(), QString(), d->part->widget());
             KIO::NetAccess::file_copy(urls.at(i), file, d->part->widget());
         }
+*/
+        d->view->triggerPageAction(QWebPage::DownloadImageToDisk);
     }
 }
 
@@ -371,9 +421,7 @@ void WebKitBrowserExtension::slotCopyImage()
 void WebKitBrowserExtension::slotViewImage()
 {
     if (d->view) {
-        KParts::OpenUrlArguments args;
-        args.metaData()["referrer"] = d->view->contextMenuResult().linkText();
-        emit createNewWindow(d->view->contextMenuResult().imageUrl(), args);
+        emit createNewWindow(d->view->contextMenuResult().imageUrl());
     }
 }
 
@@ -396,7 +444,8 @@ void WebKitBrowserExtension::slotCopyLinkLocation()
 void WebKitBrowserExtension::slotSaveLinkAs()
 {
     if (d->view)
-        emit saveUrl(d->view->contextMenuResult().linkUrl());
+        //emit saveUrl(d->view->contextMenuResult().linkUrl());
+        d->view->triggerPageAction(QWebPage::DownloadLinkToDisk);
 }
 
 void WebKitBrowserExtension::slotViewDocumentSource()
@@ -420,14 +469,14 @@ void WebKitBrowserExtension::slotViewDocumentSource()
         }
     #endif
 
-        KRun::runUrl(currentUrl, QLatin1String("text/plain"), d->view, isTempFile);
+        KRun::runUrl(currentUrl, QL1S("text/plain"), d->view, isTempFile);
     }
 }
 
 void WebKitBrowserExtension::slotViewFrameSource()
 {
     if (d->view) {
-        KRun::runUrl(KUrl(d->view->page()->currentFrame()->url()), QLatin1String("text/plain"), d->view, false);
+        KRun::runUrl(KUrl(d->view->page()->currentFrame()->url()), QL1S("text/plain"), d->view, false);
     }
 }
 
