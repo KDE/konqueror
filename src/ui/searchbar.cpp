@@ -132,6 +132,7 @@ bool SearchBar::highlightMatches() const
 
 void SearchBar::setSearchText(const QString& text)
 {
+    show();
     d->ui.searchLineEdit->setText(text);
 }
 

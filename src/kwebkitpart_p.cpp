@@ -542,40 +542,25 @@ void KWebKitPartPrivate::slotLinkHovered(const QString &link, const QString &tit
 
 void KWebKitPartPrivate::slotSearchForText(const QString &text, bool backward)
 {   
-    QString matchText;
-    QWebPage::FindFlags flags = 0;
+    QWebPage::FindFlags flags = QWebPage::FindWrapsAroundDocument;
 
-    if (text.isEmpty()) {
-       matchText = QL1S("");
-       flags = QWebPage::HighlightAllOccurrences;
-    } else {
-        matchText = text;
-        flags = QWebPage::FindWrapsAroundDocument;
+    if (backward)
+        flags |= QWebPage::FindBackward;
 
-        if (backward)
-            flags |= QWebPage::FindBackward;
+    if (searchBar->caseSensitive())
+        flags |= QWebPage::FindCaseSensitively;
 
-        if (searchBar->caseSensitive())
-            flags |= QWebPage::FindCaseSensitively;
+    if (searchBar->highlightMatches())
+        flags |= QWebPage::HighlightAllOccurrences;
 
-        if (searchBar->highlightMatches())
-            flags |= QWebPage::HighlightAllOccurrences;
-    }
-
-    //kDebug() << "matched text:" << matchText << ", backward ?" << backward;
-    searchBar->setFoundMatch(webView->page()->findText(matchText, flags));
+    kDebug() << "search for text:" << text << ", backward ?" << backward;
+    searchBar->setFoundMatch(webView->page()->findText(text, flags));
 }
 
 void KWebKitPartPrivate::slotShowSearchBar()
 {
     const QString text = webView->selectedText();
-
-    if (text.isEmpty())
-        webView->pageAction(QWebPage::Undo);
-    else
-        searchBar->setSearchText(text.left(150));
-
-    searchBar->show();
+    searchBar->setSearchText(text.left(150));
 }
 
 void KWebKitPartPrivate::slotLinkMiddleOrCtrlClicked(const KUrl& linkUrl)
