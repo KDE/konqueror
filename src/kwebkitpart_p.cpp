@@ -194,6 +194,8 @@ void KWebKitPartPrivate::init(QWidget *mainWidget)
             browserExtension, SIGNAL(loadingProgress(int)));
     connect(webPage, SIGNAL(selectionChanged()),
             browserExtension, SLOT(updateEditActions()));
+    connect(browserExtension, SIGNAL(saveUrl(const KUrl&)),
+            webPage, SLOT(downloadUrl(const KUrl &)));
 
     KDEPrivate::PasswordBar *passwordBar = new KDEPrivate::PasswordBar(mainWidget);
 
