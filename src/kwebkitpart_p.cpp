@@ -222,7 +222,7 @@ void KWebKitPartPrivate::init(QWidget *mainWidget)
 void KWebKitPartPrivate::initActions()
 {
     KAction *action = q->actionCollection()->addAction(KStandardAction::SaveAs, "saveDocument",
-                                                    browserExtension, SLOT(slotSaveDocument()));
+                                                       browserExtension, SLOT(slotSaveDocument()));
 
     action = new KAction(i18n("Save &Frame As..."), this);
     q->actionCollection()->addAction("saveFrame", action);
