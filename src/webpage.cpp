@@ -444,15 +444,18 @@ void WebPage::downloadRequest(const QNetworkRequest &request)
         }
     }
 
+#if 0
     // For http requests, attempt to retreive "Content-Dispostion" if possible...
     if (url.scheme().startsWith(QL1S("http"), Qt::CaseInsensitive)) {
-#if 0
+
         d->statDownloadRequest = true;
         networkAccessManager()->get(request);
-#endif
     } else {
         KWebPage::downloadRequest(request);
     }
+#else
+    KWebPage::downloadRequest(request);
+#endif
 }
 
 void WebPage::slotGeometryChangeRequested(const QRect &rect)
@@ -664,7 +667,7 @@ bool WebPage::checkFormData(const QNetworkRequest &req) const
     return true;
 }
 
-bool WebPage::handleMailToUrl (const QUrl& url, NavigationType type) const
+bool WebPage::handleMailToUrl (const QUrl &url, NavigationType type) const
 {
     if (QString::compare(url.scheme(), QL1S("mailto"), Qt::CaseInsensitive) == 0) {
         QStringList files;
