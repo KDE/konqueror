@@ -149,6 +149,21 @@ private Q_SLOTS:
         deleteAllMainWindows();
     }
 
+    void testJSError()
+    {
+        // JS errors appear in a statusbar label, and deleting the frame first
+        // would lead to double deletion (#228255)
+        KonqMainWindow mainWindow;
+        // we specify the mimetype so that we don't have to wait for a KonqRun
+        mainWindow.openUrl(0, KUrl("data:text/html, <script>window.foo=bar</script><p>Hello World</p>"), "text/html");
+        KonqView* view = mainWindow.currentView();
+        QVERIFY(view);
+        QVERIFY(view->part());
+        QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 20000));
+        QCOMPARE(view->serviceType(), QString("text/html"));
+        delete view->part();
+    }
+
 private:
     // Return the main widget for the given KonqView; used for clicking onto it
     static QWidget* partWidget(KonqView* view)
