@@ -1,4 +1,4 @@
-Features:
+FEATURES:
 =========
 * Add proper support for KWebKitPart in the following Konqueror kpart plugins:
       - searchbar    support for 'opensearch' only works with KHTML.
@@ -15,3 +15,10 @@ Features:
       - Show kwebkitpart's version number
       - Show qtwebkit's version number
       - Show KDE's version number
+
+
+IMPROVEMENTS:
+=============
+* Support for applying visited links color needs to be improved. It currently
+  is not as good as it should be (read: no where near what khtml does).
+
