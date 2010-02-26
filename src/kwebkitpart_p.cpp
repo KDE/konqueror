@@ -160,7 +160,7 @@ void KWebKitPartPrivate::init(QWidget *mainWidget)
     connect(webView, SIGNAL(linkMiddleOrCtrlClicked(const KUrl &)),
             this, SLOT(slotLinkMiddleOrCtrlClicked(const KUrl &)));
     connect(webView, SIGNAL(selectionClipboardUrlPasted(const KUrl &)),
-            this, SIGNAL(slotSelectionClipboardUrlPasted(const KUrl &)));
+            this, SLOT(slotSelectionClipboardUrlPasted(const KUrl &)));
 
     // Create the search bar...
     searchBar = new KDEPrivate::SearchBar;
@@ -350,6 +350,10 @@ void KWebKitPartPrivate::slotLoadFinished(bool ok)
 
         if (!linkStyle.isEmpty()) {
             webPage->mainFrame()->documentElement().setAttribute(QL1S("style"), linkStyle);
+            QListIterator<QWebFrame *> it (webPage->mainFrame()->childFrames());
+            while (it.hasNext()) {
+                it.next()->documentElement().setAttribute(QL1S("style"), linkStyle);
+            }
         }
 
         // Restore page state as necessary...
@@ -435,7 +439,7 @@ void KWebKitPartPrivate::slotUrlChanged(const QUrl& url)
 void KWebKitPartPrivate::slotShowSecurity()
 {
     if (webPage->sslInfo().isValid()) {
-        KSslInfoDialog *dlg = new KSslInfoDialog;
+        KSslInfoDialog *dlg = new KSslInfoDialog (q->widget());
         dlg->setSslInfo(webPage->sslInfo().certificateChain(),
                         webPage->sslInfo().peerAddress().toString(),
                         q->url().host(),
@@ -445,7 +449,7 @@ void KWebKitPartPrivate::slotShowSecurity()
                         webPage->sslInfo().supportedChiperBits(),
                         KSslInfoDialog::errorsFromString(webPage->sslInfo().certificateErrors()));
 
-        dlg->exec();
+        dlg->open();
     } else {
         KMessageBox::information(0, i18n("The SSL information for this site "
                                          "appears to be corrupt."), i18nc("Secure Sockets Layer", "SSL"));
