@@ -50,3 +50,4 @@ install(TARGETS keditbookmarks          ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 install( FILES keditbookmarks.kcfg  DESTINATION  ${KCFG_INSTALL_DIR} )
 install( FILES keditbookmarksui.rc  keditbookmarks-genui.rc  DESTINATION  ${DATA_INSTALL_DIR}/keditbookmarks )
+install( FILES keditbookmarks.desktop DESTINATION ${XDG_APPS_INSTALL_DIR} )
