@@ -1,24 +1,36 @@
-FEATURES:
-=========
 * Add proper support for KWebKitPart in the following Konqueror kpart plugins:
-      - searchbar    support for 'opensearch' only works with KHTML.
-      - kget         download selection and other advanced features only work
-                      with KHTML and the features that work still use KHTML
-                      classes resulting in two rendering engines being used.
+    - searchbar    support for 'opensearch' only works with KHTML.
+    - kget         download selection and other advanced features only work
+                   with KHTML and the features that work still use KHTML
+                   classes resulting in two rendering engines being active
+                   at one time.
+    - adblock      again tight integration as available in khtml is completely
+                   missing. Bonus: this functionality without modifying any code
+                   inside of the kwebkitpart or the kdewebkit components.
 
-* Add support for KPartStatusBarExtension for showing status icons for:
-      - RSS feed plugin.
-      - Ad-block integration...
-      - KWallet integration...
+* Add support for KPartStatusBarExtension and hence the following features:
+      - RSS feed integration.
+      - Full ad-block integration (rudimentary blocking already there).
+      - Popup blocker integration (completely absent now, might require upstream changes).
+      - KWallet integration (only the status icon/user-control portions).
 
-* Implement a means of showing the following information:
+* Implement a means of showing the following information (Perhaps do "about:engine"?):
       - Show kwebkitpart's version number
       - Show qtwebkit's version number
       - Show KDE's version number
 
+* Look through all the Konqueror web configuration options and make sure we honor
+  all those that we possibly can. Please note that some of these features will need
+  to be implemented upstream in the rendering engine. Here is a list of khtml features
+  currently known not to work:
+      - Change cursor over links (TODO).
+      - Smooth scrolling support (TODO).
+      - Underline links support (Partial, does not seem to work).
+      - Right click goes back in history (TODO).
+      - Allow automatic delayed reloading/redirecting (QtWebKit Bug #29899).
+      - Enable access key navigation with Ctrl key (TODO, QtWebKit??).
+      - Animations (???).
+      - Draw frames around not completely loaded images (???).
 
-IMPROVEMENTS:
-=============
-* Support for applying visited links color needs to be improved. It currently
-  is not as good as it should be (read: no where near what khtml does).
+
 
