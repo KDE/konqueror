@@ -369,7 +369,7 @@ void Sidebar_Widget::slotShowConfigurationButton( )
         m_buttonBar->button(-1)->hide();
 
         KMessageBox::information(this,
-                                 i18n("You have hidden the navigation panel configuration button. To make it visible again, click the right mouse button on any of the navigation panel buttons and select \"Show Configuration Button\"."));
+                                 i18n("You have hidden the sidebar configuration button. To make it visible again, click the right mouse button on any of the sidebar buttons and select \"Show Configuration Button\"."));
 
     }
     m_configTimer.start(400);
