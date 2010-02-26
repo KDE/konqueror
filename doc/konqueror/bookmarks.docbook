@@ -5,8 +5,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2003-11-05</date>
-<releaseinfo>3.2</releaseinfo>
+<date>2010-02-26</date>
+<releaseinfo>&kde; 4.4</releaseinfo>
 </chapterinfo>
 
 <title>Using Bookmarks</title>
@@ -38,7 +38,7 @@ select the folder from within the <guimenu>Bookmarks</guimenu> list and use
 the <guimenuitem>Add Bookmark</guimenuitem> item in that folder.</para>
 
 <para>You can also access your bookmarks from the <link linkend="sidebar">
-<guilabel>Navigation Panel</guilabel></link>.</para>
+<guilabel>Sidebar</guilabel></link>.</para>
 
 <sect1 id="orgbmark">
 <title>The Bookmark Editor</title>
@@ -64,13 +64,13 @@ Left arrow</keysym> to collapse it.</para>
 normal Drag and Drop or <guimenuitem>Cut</guimenuitem> and <guimenuitem>
 Paste</guimenuitem> methods. The order in which the items appear in 
 the <guilabel>Bookmark Editor</guilabel> is the order they will appear in the 
-<guimenu>Bookmarks</guimenu> drop down list. The <menuchoice><guimenu>Insert
+<guimenu>Bookmarks</guimenu> drop down list. The <menuchoice><guimenu>Folder
 </guimenu><guimenuitem>Insert Separator</guimenuitem></menuchoice> option can 
 be used to insert separating lines into the list wherever you wish.</para>
 
 <para>A new subfolder can be created at the selected point in the list by 
-using the <guimenuitem>Create New Folder...</guimenuitem> option in the 
-<guimenu>Insert</guimenu> menu or from the drop down menu you get when you 
+using the <guimenuitem>New Folder...</guimenuitem> option in the 
+<guimenu>Folder</guimenu> menu or from the drop down menu you get when you 
 <mousebutton>right</mousebutton> click on an item in the main part of the 
 window, or with <keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo>
 </para>
@@ -90,13 +90,6 @@ a range of other browsers into &konqueror;'s bookmark list, putting them into
 </menuchoice> option can be used to export &konqueror;'s bookmarks to a 
 &Netscape; or Mozilla browser.</para>
 
-<para>If you often use the &Netscape; browser as well as &konqueror;, then 
-rather than importing your &Netscape; bookmarks into &konqueror; it is 
-better to select the <guimenuitem>Show Netscape Bookmarks in Konqueror 
-Windows</guimenuitem> item in the <guimenu>Settings</guimenu> menu. If you 
-do this any updates to &Netscape;'s bookmarks are automatically seen by 
-&konqueror;.</para>
-
 <para>To select which bookmark subfolder is used to hold the Bookmark 
 Toolbar items select the subfolder then choose <guimenuitem>Set as Toolbar 
 Folder</guimenuitem> from the <guimenu>Edit</guimenu> menu.</para>
@@ -108,9 +101,7 @@ on the item and selecting <guimenuitem>Open in Konqueror</guimenuitem> from
 the pop up menu. If you just want to check that the &URL; is still valid 
 select <guimenuitem>Check Status</guimenuitem> instead.</para>
 
-<important><para>Don't forget to save your changes with <menuchoice>
-<guimenu>File</guimenu><guimenuitem>Save</guimenuitem></menuchoice> or 
-<keycombo action="simul">&Ctrl;<keycap>S</keycap></keycombo> before you leave 
+<important><para>All your changes are automatically saved if you close  
 the <guilabel>Bookmark Editor</guilabel>.
 </para></important>
 </sect1> 
