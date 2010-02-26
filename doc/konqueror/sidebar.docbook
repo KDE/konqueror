@@ -6,21 +6,21 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2002-09-22</date>
-<releaseinfo>3.1</releaseinfo>
+<date>2010-02-26</date>
+<releaseinfo>&kde; 4.4</releaseinfo>
 </chapterinfo>
 
-<title>The Navigation Panel</title>
+<title>The Sidebar</title>
 
-<para>The Navigation Panel appears as a separate view at the left of 
+<para>The Sidebar appears as a separate view at the left of 
 &konqueror;'s window. It can be invoked with <menuchoice><guimenu>Window
-</guimenu><guimenuitem>Show Navigation Panel</guimenuitem></menuchoice> or 
+</guimenu><guimenuitem>Show Sidebar</guimenuitem></menuchoice> or 
 toggled on and off with the <keycap>F9</keycap> key.</para>
 
 <mediaobject>
 <imageobject><imagedata format="PNG" fileref="dirtree.png"/></imageobject>
 <textobject>
-<phrase>With the Navigation Panel</phrase>  
+<phrase>With the Sidebar</phrase>  
 </textobject>
 </mediaobject>
 
@@ -42,11 +42,11 @@ Left</mousebutton> click on an item to open it in the main view.</para>
 <listitem><para>This page shows a tree view of your browsing History. 
 <mousebutton>Left</mousebutton> clicking on an item will open it in the main 
 view, or you can open it in a new &konqueror; window by <mousebutton>right
-</mousebutton> clicking and selecting <guimenuitem>New Window</guimenuitem> 
+</mousebutton> clicking and selecting <guimenuitem>Open in New Window</guimenuitem> 
 from the pop up menu.</para>
 <para>You can remove an item from the history by <mousebutton>right
 </mousebutton> clicking on it and selecting <guimenuitem>Remove Entry
-</guimenuitem>. Selecting <guimenuitem>Clear History...</guimenuitem> will 
+</guimenuitem>. Selecting <guimenuitem>Clear History</guimenuitem> will 
 clear out the entire history.</para>
 <para>The pop up menu you get when you <mousebutton>right</mousebutton> click 
 on any entry in the History page also gives you the option of choosing 
@@ -63,7 +63,7 @@ history page.</para></listitem>
 
 <varlistentry>
 <term><guilabel>Home Folder</guilabel></term>
-<listitem><para>This page shows a tree view of the subfolders your home 
+<listitem><para>This page shows a tree view of the subfolders of your home 
 folder. Note that <quote>hidden</quote> folders (those with names 
 beginning with a dot) are not shown.
 <mousebutton>Left</mousebutton> click on an item to open it in the 
@@ -86,13 +86,14 @@ the folder <filename class="directory">
 new ones just as you would make any other subfolder. The items within 
 these folders are held as <literal role="extension">.desktop</literal> files 
 and can be created with &konqueror;'s <menuchoice><guisubmenu>Create New</guisubmenu>
-<guimenuitem>Link to Location (URL)...</guimenuitem></menuchoice> option.</para>
+<guimenuitem>Link to Location (URL)...</guimenuitem></menuchoice> option in the 
+<guimenu>Edit</guimenu> menu.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
 <term><guilabel>Root Folder</guilabel></term>
-<listitem><para>The Root Folder tree has the path <filename
+<listitem><para>The <guilabel>Root Folder</guilabel> tree has the path <filename
 class="directory">/</filename>, and is the base folder of your system's
 local files. If you expand the <quote>Root</quote> folder you will find 
 another folder called <filename class="directory">root</filename>. This 
@@ -107,7 +108,9 @@ find your own <quote>Home</quote> folder again.</para>
 <term><guilabel>Services</guilabel></term>
 <listitem><para>This page provides quick access to the following services:
 </para>
-<para>The <guilabel>Audio CD Browser</guilabel>.</para>
+<para><guilabel>Applications</guilabel><guilabel>Audio CD Browser</guilabel> 
+and <guilabel>Fonts</guilabel>.</para>
+<!-- not in 4.4
 <para><guilabel>Devices</guilabel>. This shows your hard disc 
 partitions, floppy and &CD-ROM;. <mousebutton>Left</mousebutton> click on 
 a device or partition name to mount it and display its contents in the main 
@@ -119,25 +122,24 @@ view.  A mounted device or partition can be unmounted by <mousebutton>right
 machines connected to your Local Area Network.</para>
 <para>The <guilabel>Print System Browser</guilabel> tree gives you quick 
 access to &kde;'s print manager <application>Kprinter</application>.</para>
+-->
 </listitem>
 </varlistentry>
 </variablelist>
 
-<para>The Navigation Panel configuration can be changed by <mousebutton>right
+<para>The sidebar configuration can be changed by <mousebutton>right
 </mousebutton> clicking on the empty area below the bottom tab icon or by 
 <mousebutton>left</mousebutton> clicking on the <guilabel>Configuration 
-Button</guilabel> icon (the top icon in the previous screenshot, it may not 
-be present in your setup). Doing this brings up a menu with the following 
-options:</para>
+Button</guilabel> icon, this is enabled in the contextmenu. Doing this 
+brings up a menu with the following options:</para>
 <variablelist>
 
 <varlistentry>
 <term><guisubmenu>Add New</guisubmenu></term>
-<listitem><para>This option lets you add a new tab page to the Navigation 
-Panel. The new page can contain the <guimenuitem>Sidebar Media Player
-</guimenuitem> (a <link linkend="konq-plugin">&konqueror; Plugin</link> 
-feature) or a new 
-<guimenuitem>Folder</guimenuitem> tree view.</para>
+<listitem><para>This option lets you add a new tab page to the Sidebar. 
+The new page can contain different sidebar modules or a new 
+<guimenuitem>Folder</guimenuitem> tree view. The last option in this
+submenu allows you to rollback to system default.</para>
 </listitem>
 </varlistentry>
 
@@ -149,9 +151,9 @@ two tab pages can be seen at once.</para>
 </varlistentry>
 
 <varlistentry>
-<term><guimenuitem>Show Tabs Left</guimenuitem></term>
+<term><guimenuitem>Show Tabs Left</guimenuitem>, <guimenuitem>Show Tabs Right</guimenuitem></term>
 <listitem><para>This option lets you choose whether the tab icons are shown at 
-the left or right of the Navigation Panel.</para>
+the left or right of the sidebar.</para>
 </listitem>
 </varlistentry>
 
@@ -169,8 +171,14 @@ menu with the following options:</para>
 
 <variablelist>
 <varlistentry>
+<term><guimenuitem>Set Name</guimenuitem></term>
+<listitem><para>This option lets you 
+change the Name of that page.</para></listitem>
+</varlistentry>
+
+<varlistentry>
 <term><guimenuitem>Set URL</guimenuitem></term>
-<listitem><para>Only available for folder pages, this option lets you 
+<listitem><para>This option lets you 
 change the &URL; (path) of the folder viewed in that page.</para></listitem>
 </varlistentry>
 
@@ -181,7 +189,14 @@ change the &URL; (path) of the folder viewed in that page.</para></listitem>
 
 <varlistentry>
 <term><guimenuitem>Remove</guimenuitem></term>
-<listitem><para>To remove the tab page from the Navigation Panel.</para>
+<listitem><para>To remove the tab page from the sidebar.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guimenuitem>Configure Sidebar</guimenuitem></term>
+<listitem><para>The last item offers a submenu for configurating the 
+sidebar as described above.</para>
 </listitem>
 </varlistentry>
 
