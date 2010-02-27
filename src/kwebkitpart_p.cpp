@@ -47,6 +47,7 @@
 #include <KDE/KActionCollection>
 #include <KDE/KGlobal>
 #include <KDE/KLocale>
+#include <KParts/StatusBarExtension>
 
 #include <QtCore/QFile>
 #include <QtGui/QApplication>
@@ -196,6 +197,9 @@ void KWebKitPartPrivate::init(QWidget *mainWidget)
             browserExtension, SLOT(updateEditActions()));
     connect(browserExtension, SIGNAL(saveUrl(const KUrl&)),
             webPage, SLOT(downloadUrl(const KUrl &)));
+
+    // Add status bar extension...
+    (void) new KParts::StatusBarExtension(q);
 
     KDEPrivate::PasswordBar *passwordBar = new KDEPrivate::PasswordBar(mainWidget);
 
@@ -420,10 +424,25 @@ void  KWebKitPartPrivate::slotNavigationRequestFinished(const KUrl& url, QWebFra
         }
 
         if (frame == webPage->mainFrame()) {
-            if (webPage->sslInfo().isValid())
-                browserExtension->setPageSecurity(KWebKitPartPrivate::Encrypted);
-            else
+            if (webPage->sslInfo().isValid()) {
+                bool isPartiallyEncrypted = false;
+                QListIterator<QWebFrame *> it (webPage->mainFrame()->childFrames());
+                while (it.hasNext()) {
+                    const QString scheme = it.next()->url().scheme();
+                    if (scheme.compare(QL1S("https"), Qt::CaseInsensitive) != 0 &&
+                        scheme.compare(QL1S("webdavs"), Qt::CaseInsensitive) != 0 &&
+                        scheme.compare(QL1S("ftps"), Qt::CaseInsensitive) != 0) {
+                        isPartiallyEncrypted = true;
+                        break;
+                    }
+                }
+                if (isPartiallyEncrypted)
+                    browserExtension->setPageSecurity(KWebKitPartPrivate::Mixed);
+                else
+                    browserExtension->setPageSecurity(KWebKitPartPrivate::Encrypted);
+            } else {
                 browserExtension->setPageSecurity(KWebKitPartPrivate::Unencrypted);
+            }
         }
     }
 }
