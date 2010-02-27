@@ -1,5 +1,4 @@
 * Add proper support for KWebKitPart in the following Konqueror kpart plugins:
-    - searchbar    support for 'opensearch' only works with KHTML.
     - kget         download selection and other advanced features only work
                    with KHTML and the features that work still use KHTML
                    classes resulting in two rendering engines being active
@@ -9,28 +8,22 @@
                    inside of the kwebkitpart or the kdewebkit components.
 
 * Add support for KPartStatusBarExtension and hence the following features:
-      - RSS feed integration.
       - Full ad-block integration (rudimentary blocking already there).
       - Popup blocker integration (completely absent now, might require upstream changes).
-      - KWallet integration (only the status icon/user-control portions).
 
 * Implement a means of showing the following information (Perhaps do "about:engine"?):
       - Show kwebkitpart's version number
       - Show qtwebkit's version number
       - Show KDE's version number
 
-* Look through all the Konqueror web configuration options and make sure we honor
-  all those that we possibly can. Please note that some of these features will need
-  to be implemented upstream in the rendering engine. Here is a list of khtml features
-  currently known not to work:
-      - Change cursor over links (TODO).
+* Look through all of Konqueror's web configuration options and make sure we
+  honor all those that we possibly can... Here is a list of options that
+  currently do not work:
+      - Change cursor over links (TODO, QtWebKit support required ???).
       - Smooth scrolling support (TODO).
       - Underline links support (Partial, does not seem to work).
       - Right click goes back in history (TODO).
       - Allow automatic delayed reloading/redirecting (QtWebKit Bug #29899).
-      - Enable access key navigation with Ctrl key (TODO, QtWebKit??).
-      - Animations (???).
-      - Draw frames around not completely loaded images (???).
-
-
-
+      - Enable access key navigation with Ctrl key (TODO, QtWebKit support required??).
+      - Animations (TODO, QtWebKit support required???).
+      - Draw frames around not completely loaded images (TODO, QtWebKit support required???).
