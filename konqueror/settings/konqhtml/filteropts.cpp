@@ -26,7 +26,8 @@
 #include <QtGui/QCheckBox>
 #include <QtGui/QLabel>
 #include <QtGui/QLayout>
-#include <QtGui/QGroupBox>
+#include <QtGui/QTreeView>
+#include <QtGui/QSpinBox>
 #include <QtGui/QWhatsThis>
 
 // KDE
@@ -42,6 +43,7 @@
 #include <klistwidgetsearchline.h>
 #include <klineedit.h>
 #include <kpushbutton.h>
+#include <KTabWidget>
 
 K_PLUGIN_FACTORY_DECLARATION(KcmKonqHtmlFactory)
 
@@ -62,8 +64,11 @@ KCMFilter::KCMFilter( QWidget *parent, const QVariantList& )
     mKillCheck = new QCheckBox(i18n("Hide filtered images"), this);
     topLayout->addWidget( mKillCheck );
 
-    QGroupBox *topBox = new QGroupBox( i18n("URL Expressions to Filter") );
-    topLayout->addWidget( topBox );
+    mFilterWidget = new KTabWidget( this );
+    topLayout->addWidget( mFilterWidget );
+ 
+    QWidget *container = new QWidget( mFilterWidget );
+    mFilterWidget->addTab( container, i18n("Manual Filter") );
 
     QVBoxLayout *vbox = new QVBoxLayout;
 
@@ -97,7 +102,30 @@ KCMFilter::KCMFilter( QWidget *parent, const QVariantList& )
     KHBox *buttonBox = new KHBox;
     vbox->addWidget(buttonBox);
 
-    topBox->setLayout(vbox);
+    container->setLayout(vbox);
+
+    /** tab for automatic filter lists */
+    container = new QWidget( mFilterWidget );
+    mFilterWidget->addTab( container, i18n("Automatic Filter") );
+    QGridLayout *grid = new QGridLayout;
+    grid->setColumnStretch( 2, 1 );
+    container->setLayout(grid);
+
+    mAutomaticFilterList = new QTreeView( container );
+    mAutomaticFilterList->setModel( &mAutomaticFilterModel );
+    grid->addWidget( mAutomaticFilterList, 0, 0, 1, 3 );
+
+    QLabel *label = new QLabel( i18n( "Automatic update interval:" ), container );
+    grid->addWidget( label, 1, 0 );
+    mRefreshFreqSpinBox = new QSpinBox( container );
+    grid->addWidget( mRefreshFreqSpinBox, 1, 1 );
+    mRefreshFreqSpinBox->setRange( 1, 365 );
+    mRefreshFreqSpinBox->setSuffix(i18n(" days"));
+
+    /** connect signals and slots */
+    connect( &mAutomaticFilterModel, SIGNAL( changed( bool ) ), this, SIGNAL( changed( bool ) ) );
+    connect( mRefreshFreqSpinBox, SIGNAL( valueChanged( int ) ), this, SLOT( spinBoxChanged( int ) ) );
+
     mInsertButton = new KPushButton( KIcon("list-add"), i18n("Insert"), buttonBox );
     connect( mInsertButton, SIGNAL( clicked() ), SLOT( insertFilter() ) );
     mUpdateButton = new KPushButton( KIcon("document-edit"), i18n("Update"), buttonBox );
@@ -223,6 +251,9 @@ void KCMFilter::updateButton()
         mInsertButton->setDefault(false);
         mUpdateButton->setDefault(false);
     }
+
+    mAutomaticFilterList->setEnabled(state);
+    mRefreshFreqSpinBox->setEnabled(state);
 }
 
 void KCMFilter::importFilters()
@@ -299,6 +330,8 @@ void KCMFilter::exportFilters()
 
 void KCMFilter::defaults()
 {
+    mAutomaticFilterModel.defaults();
+
     mListBox->clear();
     mEnableCheck->setChecked(false);
     mKillCheck->setChecked(false);
@@ -323,6 +356,9 @@ void KCMFilter::save()
     }
     cg.writeEntry("Count",mListBox->count());
 
+    mAutomaticFilterModel.save(cg);
+    cg.writeEntry( "HTMLFilterListMaxAgeDays", mRefreshFreqSpinBox->value() );
+
     cg.sync();
 
     QDBusMessage message =
@@ -335,6 +371,11 @@ void KCMFilter::load()
     QStringList paths;
 
     KConfigGroup cg(mConfig, mGroupname);
+    mAutomaticFilterModel.load(cg);
+    mAutomaticFilterList->resizeColumnToContents( 0 );
+    int refreshFreq = cg.readEntry( "HTMLFilterListMaxAgeDays", 7 );
+    mRefreshFreqSpinBox->setValue( refreshFreq < 1 ? 1 : refreshFreq );
+
     mEnableCheck->setChecked( cg.readEntry("Enabled", false));
     mKillCheck->setChecked( cg.readEntry("Shrink", false));
 
@@ -413,6 +454,134 @@ QString KCMFilter::quickHelp() const
                 " replaced with a placeholder image. ");
 }
 
+void KCMFilter::spinBoxChanged( int )
+{
+    emit changed( true );
+}
+
+AutomaticFilterModel::AutomaticFilterModel(QObject * parent)
+    : QAbstractItemModel(parent),
+      mGroupname( "Filter Settings" )
+{
+    //mConfig = KSharedConfig::openConfig("khtmlrc", KConfig::NoGlobals);
+    mConfig = KSharedConfig::openConfig("khtmlrc", KConfig::IncludeGlobals);
+}
+
+void AutomaticFilterModel::load(KConfigGroup &cg)
+{
+    mFilters.clear();
+    const int maxNumFilters = 1024;
+    const bool defaultHTMLFilterListEnabled = false;
+
+    for ( int numFilters = 1; numFilters < maxNumFilters; ++numFilters )
+    {
+        struct FilterConfig filterConfig;
+        filterConfig.filterName = cg.readEntry( QString( "HTMLFilterListName-" ) + QString::number( numFilters ), "" );
+        if ( filterConfig.filterName == "" )
+            break;
+
+        filterConfig.enableFilter = cg.readEntry( QString( "HTMLFilterListEnabled-" ) + QString::number( numFilters ), defaultHTMLFilterListEnabled );
+        filterConfig.filterURL = cg.readEntry( QString( "HTMLFilterListURL-" ) + QString::number( numFilters ), "" );
+        filterConfig.filterLocalFilename = cg.readEntry( QString( "HTMLFilterListLocalFilename-" ) + QString::number( numFilters ), "" );
+
+        mFilters << filterConfig;
+    }
+}
+
+void AutomaticFilterModel::save(KConfigGroup &cg)
+{
+    for ( int i = mFilters.count() - 1; i >= 0; --i )
+    {
+        cg.writeEntry( QString( "HTMLFilterListLocalFilename-" ) + QString::number( i + 1 ), mFilters[i].filterLocalFilename );
+        cg.writeEntry( QString( "HTMLFilterListURL-" ) + QString::number( i + 1 ), mFilters[i].filterURL );
+        cg.writeEntry( QString( "HTMLFilterListName-" ) + QString::number( i + 1 ), mFilters[i].filterName );
+        cg.writeEntry( QString( "HTMLFilterListEnabled-" ) + QString::number( i + 1 ), mFilters[i].enableFilter );
+    }
+}
+
+void AutomaticFilterModel::defaults()
+{
+    mConfig = KSharedConfig::openConfig( "khtmlrc", KConfig::IncludeGlobals );
+    KConfigGroup cg( mConfig, mGroupname );
+    load( cg );
+}
+
+QModelIndex AutomaticFilterModel::index(int row, int column, const QModelIndex & /*parent*/) const
+{
+    return createIndex(row, column, (void*)NULL);
+}
+
+QModelIndex AutomaticFilterModel::parent(const QModelIndex & /*index*/) const
+{
+    return QModelIndex();
+}
+
+bool AutomaticFilterModel::hasChildren(const QModelIndex & parent) const
+{
+    return parent == QModelIndex();
+}
+
+int AutomaticFilterModel::rowCount(const QModelIndex & /*parent*/) const
+{
+    return mFilters.count();
+}
+
+int AutomaticFilterModel::columnCount(const QModelIndex & /*parent*/) const
+{
+    return 2;
+}
+
+QVariant AutomaticFilterModel::data(const QModelIndex &index, int role) const
+{
+    if (!index.isValid())
+        return QVariant();
+
+    if (role == Qt::DisplayRole && index.row()<mFilters.count())
+        switch ( index.column() ) {
+        case 0: return QVariant( mFilters[index.row()].filterName );
+        case 1: return QVariant( mFilters[index.row()].filterURL );
+        default: return QVariant( "?" );
+        }
+    else if ( role == Qt::CheckStateRole && index.column() == 0 && index.row()<mFilters.count() )
+        return mFilters[index.row()].enableFilter ? Qt::Checked : Qt::Unchecked;
+    else
+        return QVariant();
+
+}
+
+bool AutomaticFilterModel::setData( const QModelIndex & index, const QVariant & value, int role )
+{
+    if (role == Qt::CheckStateRole && index.column() == 0 && index.row() < mFilters.count())
+    {
+        mFilters[index.row()].enableFilter = static_cast<Qt::CheckState>(value.toInt()) == Qt::Checked;
+        emit dataChanged(index, index);
+        emit changed( true );
+        return true;
+    }
+
+    return false;
+}
+
+QVariant AutomaticFilterModel::headerData(int section, Qt::Orientation orientation, int role) const
+{
+    if (role != Qt::DisplayRole || orientation != Qt::Horizontal)
+        return QVariant();
+
+
+    switch ( section ) {
+    case 0: return QVariant( i18n( "Name" ) );
+    case 1: return QVariant( i18n( "URL" ) );
+    default: return QVariant( "?" );
+    }
+}
+
+Qt::ItemFlags AutomaticFilterModel::flags( const QModelIndex & index ) const
+{
+        Qt::ItemFlags rc = Qt::ItemIsSelectable | Qt::ItemIsEnabled;
+        if (index.column() == 0)
+            rc |= Qt::ItemIsUserCheckable;
+        return rc;
+}
 
 #include "filteropts.moc"
 
