@@ -8,7 +8,7 @@
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
-
+include(MacroOptionalDependPackage)
 if ( KWEBKITPART_INCLUDE_DIR AND KWEBKITPART_LIBRARIES )
    # in cache already
    SET(KWebKitPart_FIND_QUIETLY TRUE)
@@ -16,7 +16,7 @@ endif ( KWEBKITPART_INCLUDE_DIR AND KWEBKITPART_LIBRARIES )
 
 # Little trick I found in FindKDE4Interal... If we're building KWebKitPart, set the variables to point to the build directory.
 if(kwebkitpart_SOURCE_DIR)
-    set(KWEBKITPART_LIBRARIES kwebkitpart)
+    set(KWEBKITPART_LIBRARIES kwebkit)
     set(KWEBKITPART_INCLUDE_DIR ${CMAKE_SOURCE_DIR})
 endif(kwebkitpart_SOURCE_DIR)
 
@@ -24,7 +24,7 @@ endif(kwebkitpart_SOURCE_DIR)
 # in the FIND_PATH() and FIND_LIBRARY() calls
 if( NOT WIN32 )
   find_package(PkgConfig)
-  pkg_check_modules(PC_KWEBKITPART kwebkitpart)
+  pkg_check_modules(PC_KWEBKITPART kwebkit)
   set(PCRE_DEFINITIONS ${PC_KWEBKITPART_CFLAGS_OTHER})
 endif( NOT WIN32 )
 
