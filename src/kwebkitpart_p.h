@@ -29,14 +29,20 @@ namespace KDEPrivate {
   class SearchBar;
 }
 
+namespace KParts {
+  class StatusBarExtension;
+}
+
 class KUrl;
 class WebView;
 class WebPage;
+class KUrlLabel;
 class KWebKitPart;
 class WebKitBrowserExtension;
 
 class QUrl;
 class QWidget;
+class QAction;
 class QWebFrame;
 class QWebHistoryItem;
 
@@ -56,6 +62,7 @@ public:
     QPointer<WebPage> webPage;
     QPointer<KDEPrivate::SearchBar> searchBar;
     WebKitBrowserExtension *browserExtension;
+    KParts::StatusBarExtension *statusBarExtension;
 
 private Q_SLOTS:
     void slotShowSecurity();
@@ -72,9 +79,16 @@ private Q_SLOTS:
     void slotSelectionClipboardUrlPasted(const KUrl&);
 
     void slotUrlChanged(const QUrl &);
+    void slotWalletClosed();
+    void slotShowWalletMenu();
+    void slotLaunchWalletManager();
+    void slotDeleteNonPasswordStorableSite();
+    void slotRemoveCachedPasswords();
 
 private:
     KWebKitPart *q;
+    KUrlLabel *statusBarWalletLabel;
+    bool hasCachedFormData;
 };
 
 #endif // KWEBKITPART_P_H

@@ -377,7 +377,6 @@ QWebPage *WebPage::createWindow(WebWindowType type)
 {
     KParts::ReadOnlyPart *part = 0;
     KParts::OpenUrlArguments args;
-    //args.metaData()["referrer"] = mainFrame()->url().toString();
 
     KParts::BrowserArguments bargs;
     bargs.setLockHistory(true);

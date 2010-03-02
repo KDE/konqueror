@@ -47,11 +47,17 @@
 #include <KDE/KActionCollection>
 #include <KDE/KGlobal>
 #include <KDE/KLocale>
+#include <KDE/KUrlLabel>
+#include <KDE/KStatusBar>
+#include <KDE/KToolInvocation>
+#include <KDE/KMenu>
+#include <KDE/KAcceleratorManager>
 #include <KParts/StatusBarExtension>
 
 #include <QtCore/QFile>
 #include <QtGui/QApplication>
 #include <QtGui/QVBoxLayout>
+#include <QtDBus/QDBusInterface>
 #include <QtWebKit/QWebFrame>
 #include <QtWebKit/QWebElement>
 
@@ -144,7 +150,9 @@ static QString htmlError (int code, const QString& text, const KUrl& reqUrl)
 KWebKitPartPrivate::KWebKitPartPrivate(KWebKitPart *parent)
                    :QObject(),
                     updateHistory(true),
-                    q(parent)
+                    q(parent),
+                    statusBarWalletLabel(0),
+                    hasCachedFormData(false)
 {
 }
 
@@ -199,18 +207,20 @@ void KWebKitPartPrivate::init(QWidget *mainWidget)
             webPage, SLOT(downloadUrl(const KUrl &)));
 
     // Add status bar extension...
-    (void) new KParts::StatusBarExtension(q);
+    statusBarExtension = new KParts::StatusBarExtension(q);
 
-    KDEPrivate::PasswordBar *passwordBar = new KDEPrivate::PasswordBar(mainWidget);
+    // Create and setup the password bar...
+    KDEPrivate::PasswordBar *passwordBar = new KDEPrivate::PasswordBar(mainWidget);    
+    KWebWallet *webWallet = webPage->wallet();
 
-    // Create the password bar...
-    if (webPage->wallet()) {
-        connect (webPage->wallet(), SIGNAL(saveFormDataRequested(const QString &, const QUrl &)),
+    if (webWallet) {
+        connect (webWallet, SIGNAL(saveFormDataRequested(const QString &, const QUrl &)),
                  passwordBar, SLOT(onSaveFormData(const QString &, const QUrl &)));
         connect(passwordBar, SIGNAL(saveFormDataAccepted(const QString &)),
-                webPage->wallet(), SLOT(acceptSaveFormDataRequest(const QString &)));
+                webWallet, SLOT(acceptSaveFormDataRequest(const QString &)));
         connect(passwordBar, SIGNAL(saveFormDataRejected(const QString &)),
-                webPage->wallet(), SLOT(rejectSaveFormDataRequest(const QString &)));
+                webWallet, SLOT(rejectSaveFormDataRequest(const QString &)));
+        connect(webWallet, SIGNAL(walletClosed()), this, SLOT(slotWalletClosed()));
     }
 
     QVBoxLayout* lay = new QVBoxLayout(mainWidget);
@@ -323,15 +333,31 @@ bool KWebKitPartPrivate::handleError(const KUrl &u, QWebFrame *frame, bool handl
 void KWebKitPartPrivate::slotLoadStarted()
 {
     emit q->started(0);
+    slotWalletClosed();
 }
 
 void KWebKitPartPrivate::slotLoadFinished(bool ok)
 {
     updateHistory = true;
 
-    if (ok) {
-        if (WebKitSettings::self()->isFormCompletionEnabled() && webPage->wallet()) {
-            webPage->wallet()->fillFormData(webPage->mainFrame());
+    if (ok) {      
+        KWebWallet *webWallet = webPage->wallet();
+        if (webWallet) {
+            webWallet->fillFormData(webPage->mainFrame());
+            KWebWallet::WebFormList list = webWallet->formsWithCachedData(webPage->mainFrame());
+            if (!list.isEmpty()) {
+                if (!statusBarWalletLabel) {
+                    statusBarWalletLabel = new KUrlLabel(statusBarExtension->statusBar());
+                    statusBarWalletLabel->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Minimum));
+                    statusBarWalletLabel->setUseCursor(false);
+                    statusBarWalletLabel->setPixmap(SmallIcon("wallet-open"));
+                    connect(statusBarWalletLabel, SIGNAL(leftClickedUrl()), SLOT(slotLaunchWalletManager()));
+                    connect(statusBarWalletLabel, SIGNAL(rightClickedUrl()), SLOT(slotShowWalletMenu()));
+                }
+
+                statusBarExtension->addStatusBarItem(statusBarWalletLabel, 0, false);
+                hasCachedFormData = true;
+            }
         }
 
         QString linkStyle;
@@ -354,13 +380,9 @@ void KWebKitPartPrivate::slotLoadFinished(bool ok)
 
         if (!linkStyle.isEmpty()) {
             webPage->mainFrame()->documentElement().setAttribute(QL1S("style"), linkStyle);
-            QListIterator<QWebFrame *> it (webPage->mainFrame()->childFrames());
-            while (it.hasNext()) {
-                it.next()->documentElement().setAttribute(QL1S("style"), linkStyle);
-            }
         }
 
-        // Restore page state as necessary...
+        // Restore page state...
         webPage->restoreFrameStates();
 
         if (webView->title().trimmed().isEmpty()) {
@@ -425,21 +447,7 @@ void  KWebKitPartPrivate::slotNavigationRequestFinished(const KUrl& url, QWebFra
 
         if (frame == webPage->mainFrame()) {
             if (webPage->sslInfo().isValid()) {
-                bool isPartiallyEncrypted = false;
-                QListIterator<QWebFrame *> it (webPage->mainFrame()->childFrames());
-                while (it.hasNext()) {
-                    const QString scheme = it.next()->url().scheme();
-                    if (scheme.compare(QL1S("https"), Qt::CaseInsensitive) != 0 &&
-                        scheme.compare(QL1S("webdavs"), Qt::CaseInsensitive) != 0 &&
-                        scheme.compare(QL1S("ftps"), Qt::CaseInsensitive) != 0) {
-                        isPartiallyEncrypted = true;
-                        break;
-                    }
-                }
-                if (isPartiallyEncrypted)
-                    browserExtension->setPageSecurity(KWebKitPartPrivate::Mixed);
-                else
-                    browserExtension->setPageSecurity(KWebKitPartPrivate::Encrypted);
+                browserExtension->setPageSecurity(KWebKitPartPrivate::Encrypted);
             } else {
                 browserExtension->setPageSecurity(KWebKitPartPrivate::Unencrypted);
             }
@@ -599,6 +607,60 @@ void KWebKitPartPrivate::slotSelectionClipboardUrlPasted(const KUrl& selectedUrl
 {
     if (WebKitSettings::self()->isOpenMiddleClickEnabled())
         emit browserExtension->openUrlRequest(selectedUrl);
+}
+
+void KWebKitPartPrivate::slotWalletClosed()
+{
+    if (statusBarWalletLabel) {
+        statusBarExtension->removeStatusBarItem(statusBarWalletLabel);
+        delete statusBarWalletLabel;
+        statusBarWalletLabel = 0;
+        hasCachedFormData = false;
+    }
+}
+
+void KWebKitPartPrivate::slotShowWalletMenu()
+{
+    KMenu *menu = new KMenu(0);
+
+    if (webView && WebKitSettings::self()->isNonPasswordStorableSite(webView->url().host())) {
+      menu->addAction(i18n("&Allow password caching for this site"), this, SLOT(slotDeleteNonPasswordStorableSite()));
+    }
+
+    if (webPage && hasCachedFormData) {
+      menu->addAction(i18n("Remove all cached passwords for this site"), this, SLOT(slotRemoveCachedPasswords()));
+    }
+
+    menu->addSeparator();
+    menu->addAction(i18n("&Close Wallet"), this, SLOT(slotWalletClosed()));
+
+    KAcceleratorManager::manage(menu);
+    menu->popup(QCursor::pos());
+}
+
+void KWebKitPartPrivate::slotLaunchWalletManager()
+{
+    QDBusInterface r("org.kde.kwalletmanager", "/kwalletmanager/MainWindow_1", "org.kde.KMainWindow");
+    if (r.isValid()) {
+        r.call(QDBus::NoBlock, "show");
+        r.call(QDBus::NoBlock, "raise");
+    } else {
+        KToolInvocation::startServiceByDesktopName("kwalletmanager_show");
+    }
+}
+
+void KWebKitPartPrivate::slotDeleteNonPasswordStorableSite()
+{
+    if (webView)
+        WebKitSettings::self()->removeNonPasswordStorableSite(webView->url().host());
+}
+
+void KWebKitPartPrivate::slotRemoveCachedPasswords()
+{
+    if (webPage && webPage->wallet()) {
+        webPage->wallet()->removeFormData(webPage->mainFrame(), true);
+        hasCachedFormData = false;
+    }
 }
 
 #include "kwebkitpart_p.moc"
