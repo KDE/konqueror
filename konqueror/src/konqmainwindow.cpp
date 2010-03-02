@@ -4036,7 +4036,6 @@ void KonqMainWindow::updateViewActions()
     {
         m_paAddTab->setEnabled( false );
         m_paDuplicateTab->setEnabled( false );
-        m_paRemoveTab->setEnabled( false );
         m_paRemoveOtherTabs->setEnabled( false );
         m_paBreakOffTab->setEnabled( false );
         m_paActivateNextTab->setEnabled( false );
@@ -4048,7 +4047,6 @@ void KonqMainWindow::updateViewActions()
         m_paDuplicateTab->setEnabled( true );
         KonqFrameTabs* tabContainer = m_pViewManager->tabContainer();
         bool state = (tabContainer->count()>1);
-        m_paRemoveTab->setEnabled( state );
         m_paRemoveOtherTabs->setEnabled( state );
         m_paBreakOffTab->setEnabled( state );
         m_paActivateNextTab->setEnabled( state );
