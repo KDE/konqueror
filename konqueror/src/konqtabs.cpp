@@ -241,10 +241,6 @@ void KonqFrameTabs::insertChildFrame( KonqFrameBase* frame, int index )
     connect(this, SIGNAL(currentChanged(int)),
             this, SLOT(slotCurrentChanged(int)), Qt::UniqueConnection);
 
-    if (m_rightWidget) {
-      m_rightWidget->setEnabled( m_childFrameList.count() > 1 );
-    }
-
     if (KonqView* activeChildView = frame->activeChildView()) {
       activeChildView->setCaption( activeChildView->caption() );
       activeChildView->setTabIcon( activeChildView->url() );
@@ -260,8 +256,6 @@ void KonqFrameTabs::childFrameRemoved( KonqFrameBase * frame )
   if (frame) {
     removeTab(indexOf(frame->asQWidget()));
     m_childFrameList.removeAll(frame);
-    if (m_rightWidget)
-      m_rightWidget->setEnabled( m_childFrameList.count()>1 );
     if (count() == 1)
       updateTabBarVisibility();
   }
@@ -318,7 +312,7 @@ void KonqFrameTabs::slotContextMenu( QWidget *w, const QPoint &p )
   m_popupActions["reload"]->setEnabled( true );
   m_popupActions["duplicatecurrenttab"]->setEnabled( true );
   m_popupActions["breakoffcurrenttab"]->setEnabled( tabCount > 1 );
-  m_popupActions["removecurrenttab"]->setEnabled( tabCount > 1 );
+  m_popupActions["removecurrenttab"]->setEnabled( true );
   m_popupActions["othertabs"]->setEnabled( true );
   m_popupActions["closeothertabs"]->setEnabled( true );
 
@@ -366,11 +360,9 @@ void KonqFrameTabs::refreshSubPopupMenuTab()
 
 void KonqFrameTabs::slotCloseRequest( QWidget *w )
 {
-  if ( m_childFrameList.count() > 1 ) {
     // Yes, I know this is an unchecked dynamic_cast - I'm casting sideways in a class hierarchy and it could crash one day, but I haven't checked setWorkingTab so I don't know if it can handle nulls.
     m_pViewManager->mainWindow()->setWorkingTab( dynamic_cast<KonqFrameBase*>(w) );
     emit removeTabPopup();
-  }
 }
 
 void KonqFrameTabs::slotSubPopupMenuTabActivated( QAction *action )
@@ -393,11 +385,7 @@ void KonqFrameTabs::slotMouseMiddleClick()
 void KonqFrameTabs::slotMouseMiddleClick( QWidget *w )
 {
   if ( m_MouseMiddleClickClosesTab ) {
-    if ( m_childFrameList.count() > 1 ) {
-      // Yes, I know this is an unchecked dynamic_cast - I'm casting sideways in a class hierarchy and it could crash one day, but I haven't checked setWorkingTab so I don't know if it can handle nulls.
-      m_pViewManager->mainWindow()->setWorkingTab( dynamic_cast<KonqFrameBase*>(w) );
-      emit removeTabPopup();
-    }
+      slotCloseRequest(w);
   }
   else {
   KUrl filteredURL ( KonqMisc::konqFilteredURL( this, QApplication::clipboard()->text(QClipboard::Selection ) ) );

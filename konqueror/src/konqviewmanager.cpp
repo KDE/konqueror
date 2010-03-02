@@ -391,8 +391,8 @@ void KonqViewManager::removeTab( KonqFrameBase* currentFrame, bool emitAboutToRe
   printFullHierarchy();
 #endif
 
-  if ( m_tabContainer->count() == 1 ) // TODO: see #214378
-    return;
+  if ( m_tabContainer->count() == 1 )
+    m_pMainWindow->slotAddTab(); // #214378
 
   if(emitAboutToRemoveSignal)
     emit aboutToRemoveTab(currentFrame);
