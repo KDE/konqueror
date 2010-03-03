@@ -31,40 +31,10 @@
 // A wrapper for KHTMLPart to make it behave the way we want it to.
 class KHTMLSideBar : public KHTMLPart
 {
-	Q_OBJECT
-	public:
-		KHTMLSideBar() : KHTMLPart() {
-			setStatusMessagesEnabled(false);
-			setMetaRefreshEnabled(true);
-			setJavaEnabled(false);
-			setPluginsEnabled(false);
-
-			setFormNotification(KHTMLPart::Only);
-			connect(this,
-				SIGNAL(formSubmitNotification(const char*,const QString&,const QByteArray&,const QString&,const QString&,const QString&)),
-				this,
-				SLOT(formProxy(const char*,const QString&,const QByteArray&,const QString&,const QString&,const QString&))
-				);
-
-
-			_linkMenu = new KMenu(widget());
-
-                        _linkMenu->insertItem(i18n("&Open Link"),
-                                              this, SLOT(loadPage()));
-                        _linkMenu->insertItem(i18n("Open in New &Window"),
-                                              this, SLOT(loadNewWindow()));
-			_menu = new KMenu(widget());
-			_menu->insertItem(SmallIcon("view-refresh"), i18n("&Reload"),
-					this, SIGNAL(reload()));
-			_menu->insertItem(SmallIcon("view-refresh"), i18n("Set &Automatic Reload"),                                                  this, SIGNAL(setAutoReload()));
-
-			connect(this,
-				SIGNAL(popupMenu(const QString&,const QPoint&)),
-				this,
-				SLOT(showMenu(const QString&, const QPoint&)));
-
-		}
-		virtual ~KHTMLSideBar() {}
+    Q_OBJECT
+public:
+    KHTMLSideBar();
+    virtual ~KHTMLSideBar() {}
 
 	Q_SIGNALS:
 		void submitFormRequest(const char*,const QString&,const QByteArray&,const QString&,const QString&,const QString&);
