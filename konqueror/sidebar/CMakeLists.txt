@@ -1,6 +1,10 @@
 include_directories (${CMAKE_CURRENT_SOURCE_DIR})
 
+# TODO: rewrite to KDirModel
+if (${QT_QT3SUPPORT_FOUND})
 add_subdirectory( trees )
+endif()
+
 add_subdirectory( web_module )
 add_subdirectory( history_module )
 add_subdirectory( default_entries )
