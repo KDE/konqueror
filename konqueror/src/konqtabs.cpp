@@ -316,11 +316,7 @@ void KonqFrameTabs::slotContextMenu( QWidget *w, const QPoint &p )
   m_popupActions["othertabs"]->setEnabled( true );
   m_popupActions["closeothertabs"]->setEnabled( true );
 
-  // Yes, I know this is an unchecked dynamic_cast - I'm casting sideways in a
-  // class hierarchy and it could crash one day, but I haven't checked
-  // setWorkingTab so I don't know if it can handle nulls.
-
-  m_pViewManager->mainWindow()->setWorkingTab( dynamic_cast<KonqFrameBase*>(w) );
+  m_pViewManager->mainWindow()->setWorkingTab( indexOf(w) );
   m_pPopupMenu->exec( p );
 }
 
@@ -360,8 +356,7 @@ void KonqFrameTabs::refreshSubPopupMenuTab()
 
 void KonqFrameTabs::slotCloseRequest( QWidget *w )
 {
-    // Yes, I know this is an unchecked dynamic_cast - I'm casting sideways in a class hierarchy and it could crash one day, but I haven't checked setWorkingTab so I don't know if it can handle nulls.
-    m_pViewManager->mainWindow()->setWorkingTab( dynamic_cast<KonqFrameBase*>(w) );
+    m_pViewManager->mainWindow()->setWorkingTab( indexOf(w) );
     emit removeTabPopup();
 }
 
@@ -531,7 +526,7 @@ void KonqFrameTabs::slotCurrentChanged( int index )
     const KColorScheme colorScheme(QPalette::Active, KColorScheme::Window);
     setTabTextColor(index, colorScheme.foreground(KColorScheme::NormalText).color());
 
-    KonqFrameBase* currentFrame = dynamic_cast<KonqFrameBase*>(widget( index ));
+    KonqFrameBase* currentFrame = tabAt(index);
     if (currentFrame && !m_pViewManager->isLoadingProfile()) {
         m_pActiveChild = currentFrame;
         currentFrame->activateChild();
@@ -596,6 +591,11 @@ void KonqFrameTabs::replaceChildFrame(KonqFrameBase* oldFrame, KonqFrameBase* ne
     childFrameRemoved(oldFrame);
     insertChildFrame(newFrame, index);
     setCurrentIndex(index);
+}
+
+KonqFrameBase* KonqFrameTabs::tabAt(int index) const
+{
+    return dynamic_cast<KonqFrameBase*>(widget(index));
 }
 
 #include "konqtabs.moc"

@@ -201,7 +201,7 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
 
   m_pChildFrame = 0;
   m_pActiveChild = 0;
-  m_pWorkingTab = 0;
+  m_workingTab = 0;
   (void) new KonqMainWindowAdaptor( this );
   m_paBookmarkBar = 0;
 
@@ -1679,8 +1679,10 @@ void KonqMainWindow::slotForceReload()
 
 void KonqMainWindow::slotReloadPopup()
 {
-  if (m_pWorkingTab)
-    slotReload( m_pWorkingTab->activeChildView() );
+    KonqFrameBase* tab = m_pViewManager->tabContainer()->tabAt(m_workingTab);
+    if (tab) {
+        slotReload(tab->activeChildView());
+    }
 }
 
 void KonqMainWindow::slotHome(Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers)
@@ -2348,7 +2350,7 @@ void KonqMainWindow::slotAddTab()
     if (widget)
         widget->setFocusProxy(origFocusProxy);
 
-    m_pWorkingTab = 0;
+    m_workingTab = 0;
 }
 
 void KonqMainWindow::slotDuplicateTab()
@@ -2362,7 +2364,10 @@ void KonqMainWindow::slotDuplicateTab()
 
 void KonqMainWindow::slotDuplicateTabPopup()
 {
-  m_pViewManager->duplicateTab( m_pWorkingTab, KonqSettings::openAfterCurrentPage() );
+    KonqFrameBase* tab = m_pViewManager->tabContainer()->tabAt(m_workingTab);
+    if (tab) {
+        m_pViewManager->duplicateTab(tab, KonqSettings::openAfterCurrentPage());
+    }
 }
 
 void KonqMainWindow::slotBreakOffTab()
@@ -2389,7 +2394,10 @@ void KonqMainWindow::slotBreakOffTab()
 void KonqMainWindow::slotBreakOffTabPopup()
 {
   KonqView* originalView = m_currentView;
-  KonqView *view = m_pWorkingTab->activeChildView();
+  KonqFrameBase* tab = m_pViewManager->tabContainer()->tabAt(m_workingTab);
+  if (!tab)
+      return;
+  KonqView *view = tab->activeChildView();
   if (view && view->part() && (view->part()->metaObject()->indexOfProperty("modified") != -1) ) {
     QVariant prop = view->part()->property("modified");
     if (prop.isValid() && prop.toBool()) {
@@ -2412,7 +2420,10 @@ void KonqMainWindow::slotBreakOffTabPopup()
 
 void KonqMainWindow::slotBreakOffTabPopupDelayed()
 {
-  m_pViewManager->breakOffTab( m_pWorkingTab, size() );
+  KonqFrameBase* tab = m_pViewManager->tabContainer()->tabAt(m_workingTab);
+  if (!tab)
+      return;
+  m_pViewManager->breakOffTab(tab, size());
   updateViewActions();
 }
 
@@ -2472,7 +2483,6 @@ void KonqMainWindow::openMultiURL( const KUrl::List& url )
         if (newView == 0) continue;
         openUrl( newView, *it, QString() );
         m_pViewManager->showTab( newView );
-        m_pWorkingTab = 0;
     }
     focusLocationBar();
 }
@@ -2516,7 +2526,10 @@ void KonqMainWindow::slotRemoveTab()
 void KonqMainWindow::slotRemoveTabPopup()
 {
   KonqView *originalView = m_currentView;
-  KonqView *view = m_pWorkingTab->activeChildView();
+  KonqFrameBase* tab = m_pViewManager->tabContainer()->tabAt(m_workingTab);
+  if (!tab)
+      return;
+  KonqView *view = tab->activeChildView();
   if (view && view->part() && (view->part()->metaObject()->indexOfProperty("modified") != -1) ) {
     QVariant prop = view->part()->property("modified");
     if (prop.isValid() && prop.toBool()) {
@@ -2538,14 +2551,17 @@ void KonqMainWindow::slotRemoveTabPopup()
 
 void KonqMainWindow::slotRemoveTabPopupDelayed()
 {
-  m_pViewManager->removeTab( m_pWorkingTab );
+  KonqFrameBase* tab = m_pViewManager->tabContainer()->tabAt(m_workingTab);
+  if (!tab)
+      return;
+    m_pViewManager->removeTab(tab);
 }
 
 void KonqMainWindow::slotRemoveOtherTabs()
 {
     // This action is triggered by the shortcut that removes other tabs, so
     // we need to set the working tab to the current tab
-    m_pWorkingTab = m_pViewManager->tabContainer()->tabContaining(m_currentView->frame());
+    m_workingTab = m_pViewManager->tabContainer()->currentIndex();
     slotRemoveOtherTabsPopup();
 }
 
@@ -2557,6 +2573,7 @@ void KonqMainWindow::slotRemoveOtherTabsPopup()
        KStandardGuiItem::cancel(), "CloseOtherTabConfirm") != KMessageBox::Continue )
     return;
 
+  KonqFrameBase* currentTab = m_pViewManager->tabContainer()->tabAt(m_workingTab);
   KonqView *originalView = m_currentView;
   MapViews::ConstIterator it = m_mapViews.constBegin();
   MapViews::ConstIterator end = m_mapViews.constEnd();
@@ -2564,7 +2581,7 @@ void KonqMainWindow::slotRemoveOtherTabsPopup()
     KonqView *view = it.value();
     // m_currentView might be a view contained inside a splitted view so what we'll
     // do here is just compare if the views are inside the same tab.
-    if ( view != originalView && view && m_pViewManager->tabContainer()->tabContaining(view->frame()) != m_pWorkingTab &&
+    if ( view != originalView && view && m_pViewManager->tabContainer()->tabContaining(view->frame()) != currentTab &&
         view->part() && (view->part()->metaObject()->indexOfProperty("modified") != -1) ) {
       QVariant prop = view->part()->property("modified");
       if (prop.isValid() && prop.toBool()) {
@@ -2587,8 +2604,8 @@ void KonqMainWindow::slotRemoveOtherTabsPopup()
 
 void KonqMainWindow::slotRemoveOtherTabsPopupDelayed()
 {
-  m_pViewManager->removeOtherTabs( m_pWorkingTab );
-  updateViewActions();
+    m_pViewManager->removeOtherTabs(m_workingTab);
+    updateViewActions();
 }
 
 void KonqMainWindow::slotReloadAllTabs()
@@ -5499,6 +5516,11 @@ KonqFrameBase::FrameType KonqMainWindow::frameType() const { return KonqFrameBas
 KonqFrameBase* KonqMainWindow::childFrame()const { return m_pChildFrame; }
 
 void KonqMainWindow::setActiveChild( KonqFrameBase* /*activeChild*/ ) { return; }
+
+void KonqMainWindow::setWorkingTab(int index)
+{
+    m_workingTab = index;
+}
 
 bool KonqMainWindow::isMimeTypeAssociatedWithSelf( const QString &mimeType )
 {

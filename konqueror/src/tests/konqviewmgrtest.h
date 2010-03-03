@@ -32,6 +32,7 @@ private Q_SLOTS:
     void initTestCase();
 
     void testCloseOtherTabs();
+    void testCloseTabsFast();
     void testCreateFirstView();
     void testRemoveFirstView();
     void testSplitView();

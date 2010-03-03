@@ -77,11 +77,18 @@ public:
 
     virtual void replaceChildFrame(KonqFrameBase* oldFrame, KonqFrameBase* newFrame);
 
+    /**
+     * Returns the tab at a given index
+     * (same as widget(index), but casted to a KonqFrameBase)
+     */
+    KonqFrameBase* tabAt(int index) const;
+
+
   void moveTabBackward(int index);
   void moveTabForward(int index);
 
   void setLoading(KonqFrameBase* frame, bool loading);
-  
+
   /**
    * Returns the tab that contains (directly or indirectly) the frame @p frame,
    * or 0 if the frame is not in the tab widget.
