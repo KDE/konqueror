@@ -600,6 +600,47 @@
 #define PR_BYTES_PER_WORD_LOG2   2
 #define PR_BYTES_PER_DWORD_LOG2  3
 
+#elif defined(__sh__)
+
+#ifdef __LITTLE_ENDIAN__
+#define IS_LITTLE_ENDIAN 1
+#undef  IS_BIG_ENDIAN
+#else
+#define IS_BIG_ENDIAN 1
+#undef  IS_LITTLE_ENDIAN
+#endif
+
+#define PR_BYTES_PER_BYTE	1
+#define PR_BYTES_PER_SHORT	2
+#define PR_BYTES_PER_INT	4
+#define PR_BYTES_PER_INT64	8
+#define PR_BYTES_PER_LONG	4
+#define PR_BYTES_PER_FLOAT	4
+#define PR_BYTES_PER_DOUBLE	8
+#define PR_BYTES_PER_WORD	4
+#define PR_BYTES_PER_DWORD	8
+
+#define PR_BITS_PER_BYTE	8
+#define PR_BITS_PER_SHORT	16
+#define PR_BITS_PER_INT		32
+#define PR_BITS_PER_INT64	64
+#define PR_BITS_PER_LONG	32
+#define PR_BITS_PER_FLOAT	32
+#define PR_BITS_PER_DOUBLE	64
+#define PR_BITS_PER_WORD	32
+
+#define PR_ALIGN_OF_SHORT	2
+#define PR_ALIGN_OF_INT		4
+#define PR_ALIGN_OF_LONG	4
+#define PR_ALIGN_OF_INT64	8
+#define PR_ALIGN_OF_FLOAT	4
+#define PR_ALIGN_OF_DOUBLE	8
+#define PR_ALIGN_OF_POINTER	4
+#define PR_ALIGN_OF_WORD	4
+
+#define PR_BYTES_PER_WORD_LOG2	2
+#define PR_BYTES_PER_DWORD_LOG2	3
+
 #else
 
 #error "Unknown CPU architecture"
