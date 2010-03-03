@@ -17,6 +17,7 @@
 */
 
 #include "web_module.h"
+#include <kaction.h>
 #include "favicon_interface.h"
 
 #include <QtCore/QFileInfo>
@@ -35,6 +36,52 @@
 #include <khbox.h>
 
 
+KHTMLSideBar::KHTMLSideBar()
+    : KHTMLPart()
+{
+    setStatusMessagesEnabled(false);
+    setMetaRefreshEnabled(true);
+    setJavaEnabled(false);
+    setPluginsEnabled(false);
+
+    setFormNotification(KHTMLPart::Only);
+    connect(this,
+            SIGNAL(formSubmitNotification(const char*,QString,QByteArray,QString,QString,QString)),
+            this,
+            SLOT(formProxy(const char*,QString,QByteArray,QString,QString,QString))
+        );
+
+
+    _linkMenu = new KMenu(widget());
+
+    KAction* openLinkAction = new KAction(i18n("&Open Link"), this);
+    _linkMenu->addAction(openLinkAction);
+    connect(openLinkAction, SIGNAL(triggered()), this, SLOT(loadPage()));
+
+    KAction* openWindowAction = new KAction(i18n("Open in New &Window"), this);
+    _linkMenu->addAction(openWindowAction);
+    connect(openWindowAction, SIGNAL(triggered()), this, SLOT(loadNewWindow()));
+
+
+    _menu = new KMenu(widget());
+
+    KAction* reloadAction = new KAction(i18n("&Reload"), this);
+    reloadAction->setIcon(KIcon("view-refresh"));
+    _menu->addAction(reloadAction);
+    connect(reloadAction, SIGNAL(triggered()), this, SIGNAL(reload()));
+
+    KAction* autoReloadAction = new KAction(i18n("Set &Automatic Reload"), this);
+    autoReloadAction->setIcon(KIcon("view-refresh"));
+    _menu->addAction(autoReloadAction);
+    connect(autoReloadAction, SIGNAL(triggered()), this, SIGNAL(setAutoReload()));
+
+    connect(this, SIGNAL(popupMenu(QString,QPoint)),
+            this, SLOT(showMenu(QString,QPoint)));
+
+}
+
+////
+
 KonqSideBarWebModule::KonqSideBarWebModule(const KComponentData &componentData, QWidget *parent, const KConfigGroup& configGroup)
 	: KonqSidebarModule(componentData, parent, configGroup)
 {
@@ -43,9 +90,9 @@ KonqSideBarWebModule::KonqSideBarWebModule(const KComponentData &componentData, 
 	connect(_htmlPart, SIGNAL(reload()), this, SLOT(reload()));
 	connect(_htmlPart, SIGNAL(completed()), this, SLOT(pageLoaded()));
 	connect(_htmlPart,
-		SIGNAL(setWindowCaption(const QString&)),
+		SIGNAL(setWindowCaption(QString)),
 		this,
-		SLOT(setTitle(const QString&)));
+		SLOT(setTitle(QString)));
 	connect(_htmlPart,
 		SIGNAL(openUrlRequest(QString, KParts::OpenUrlArguments, KParts::BrowserArguments)),
 		this,
@@ -61,9 +108,9 @@ KonqSideBarWebModule::KonqSideBarWebModule(const KComponentData &componentData, 
 		this,
 		SLOT(urlNewWindow(QString,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::WindowArgs)));
 	connect(_htmlPart,
-		SIGNAL(submitFormRequest(const char*,const QString&,const QByteArray&,const QString&,const QString&,const QString&)),
+		SIGNAL(submitFormRequest(const char*,QString,const QByteArray&,QString,QString,QString)),
 		this,
-		SIGNAL(submitFormRequest(const char*,const QString&,const QByteArray&,const QString&,const QString&,const QString&)));
+		SIGNAL(submitFormRequest(const char*,QString,const QByteArray&,QString,QString,QString)));
 
         reloadTimeout = configGroup.readEntry("Reload", 0);
 	_url = configGroup.readPathEntry("URL", QString());
@@ -83,7 +130,8 @@ QWidget *KonqSideBarWebModule::getWidget() {
 	return _htmlPart->widget();
 }
 
-void KonqSideBarWebModule::setAutoReload(){
+void KonqSideBarWebModule::setAutoReload()
+{
 	KDialog dlg( 0 );
   dlg.setModal( true );
   dlg.setCaption( i18n("Set Refresh Timeout (0 disables)" ) );
@@ -92,10 +140,11 @@ void KonqSideBarWebModule::setAutoReload(){
 	KHBox *hbox = new KHBox( &dlg );
   dlg.setMainWidget( hbox );
 
-	QSpinBox *mins = new QSpinBox( hbox );
+	QSpinBox *mins = new QSpinBox(hbox);
 	mins->setRange(0, 120);
 	mins->setSuffix( i18n(" min") );
-	QSpinBox *secs = new QSpinBox( 0, 59, 1, hbox );
+	QSpinBox *secs = new QSpinBox(hbox);
+        secs->setRange(0, 59);
 	secs->setSuffix( i18n(" sec") );
 
 	if( reloadTimeout > 0 )	{

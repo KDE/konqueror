@@ -9,6 +9,8 @@ if(WIN32)
 kde4_add_library(sidebar_tree STATIC ${libkonq_sidebar_tree_SRCS})
 endif(WIN32)
 
+add_definitions (-DQT3_SUPPORT -DQT3_SUPPORT_WARNINGS)
+
 add_subdirectory( init )
 add_subdirectory( dirtree_module )
 add_subdirectory( bookmark_module )
