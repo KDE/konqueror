@@ -668,7 +668,7 @@ void KonqView::setIconURL( const KUrl & iconURL )
 
 void KonqView::setPageSecurity( int pageSecurity )
 {
-  m_pageSecurity = (KonqMainWindow::PageSecurity)pageSecurity;
+  m_pageSecurity = static_cast<KonqMainWindow::PageSecurity>(pageSecurity);
 
   if ( m_pMainWindow->currentView() == this )
     m_pMainWindow->setPageSecurity( m_pageSecurity );
@@ -1286,7 +1286,7 @@ void HistoryEntry::saveConfig( KConfigGroup& config, const QString &prefix, cons
         config.writeEntry( QString::fromLatin1( "PostContentType" ).prepend( prefix ), postContentType );
         config.writeEntry( QString::fromLatin1( "DoPost" ).prepend( prefix ), doPost );
         config.writeEntry( QString::fromLatin1( "PageReferrer" ).prepend( prefix ), pageReferrer );
-        config.writeEntry( QString::fromLatin1( "PageSecurity" ).prepend( prefix ), (int)pageSecurity );
+        config.writeEntry( QString::fromLatin1( "PageSecurity" ).prepend( prefix ), static_cast<int>(pageSecurity) );
     }
 }
 
@@ -1311,7 +1311,8 @@ void HistoryEntry::loadItem( const KConfigGroup& config, const QString &prefix, 
         postContentType = config.readEntry( QString::fromLatin1( "PostContentType" ).prepend( prefix ), "" );
         doPost = config.readEntry( QString::fromLatin1( "DoPost" ).prepend( prefix ), false );
         pageReferrer = config.readEntry( QString::fromLatin1( "PageReferrer" ).prepend( prefix ), "" );
-        pageSecurity = (KonqMainWindow::PageSecurity)config.readEntry( QString::fromLatin1( "PageSecurity" ).prepend( prefix ), 0 );
+        pageSecurity = static_cast<KonqMainWindow::PageSecurity>(config.readEntry(
+                    QString::fromLatin1( "PageSecurity" ).prepend( prefix ), 0 ));
         reload = false;
     }
 }

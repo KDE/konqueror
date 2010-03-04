@@ -60,18 +60,18 @@ QVariant KonqHistoryProxyModel::data(const QModelIndex &index, int role) const
 
             QDateTime dt;
             if (m_settings->m_metricYoungerThan == KonqHistorySettings::DAYS) {
-                dt = current.addDays(-(int)m_settings->m_valueYoungerThan);
+                dt = current.addDays(-int(m_settings->m_valueYoungerThan));
             } else {
-                dt = current.addSecs(-((int)m_settings->m_valueYoungerThan * 60));
+                dt = current.addSecs(-(int(m_settings->m_valueYoungerThan) * 60));
             }
 
             if (entryDate > dt) {
                 res = qVariantFromValue(m_settings->m_fontYoungerThan);
             } else {
                 if (m_settings->m_metricOlderThan == KonqHistorySettings::DAYS) {
-                    dt = current.addDays(-(int)m_settings->m_valueOlderThan);
+                    dt = current.addDays(-int(m_settings->m_valueOlderThan));
                 } else {
-                    dt = current.addSecs(-((int)m_settings->m_valueOlderThan * 60));
+                    dt = current.addSecs(-(int(m_settings->m_valueOlderThan) * 60));
                 }
                 if (entryDate < dt) {
                     res = qVariantFromValue(m_settings->m_fontOlderThan);

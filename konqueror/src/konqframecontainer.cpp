@@ -64,7 +64,7 @@ KonqFrameContainer::~KonqFrameContainer()
 
 void KonqFrameContainer::saveConfig( KConfigGroup& config, const QString &prefix, const KonqFrameBase::Options &options, KonqFrameBase* docContainer, int id, int depth )
 {
-  int idSecond = id + (int)pow( 2.0, depth );
+  int idSecond = id + int(pow( 2.0, depth ));
 
   //write children sizes
   config.writeEntry( QString::fromLatin1( "SplitterSizes" ).prepend( prefix ), sizes() );

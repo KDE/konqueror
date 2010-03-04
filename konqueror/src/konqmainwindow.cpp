@@ -239,7 +239,7 @@ KonqMainWindow::KonqMainWindow( const KUrl &initialURL, const QString& xmluiFile
     // setup the completion object before createGUI(), so that the combo
     // picks up the correct mode from the HistoryManager (in slotComboPlugged)
     int mode = KonqSettings::settingsCompletionMode();
-    s_pCompletion->setCompletionMode( (KGlobalSettings::Completion) mode );
+    s_pCompletion->setCompletionMode( static_cast<KGlobalSettings::Completion>(mode) );
   }
   connect(KParts::HistoryProvider::self(), SIGNAL(cleared()), SLOT(slotClearComboHistory()));
 
@@ -443,7 +443,7 @@ QString KonqMainWindow::detectNameFilter( KUrl & url )
     int lastSlash = path.lastIndexOf( '/' );
     if ( lastSlash > -1 )
     {
-        if ( !url.query().isEmpty() && lastSlash == (int)path.length()-1 ) {  //  In /tmp/?foo, foo isn't a query
+        if ( !url.query().isEmpty() && lastSlash == path.length()-1 ) {  //  In /tmp/?foo, foo isn't a query
             path += url.query(); // includes the '?'
             url.setQuery( QString() );
         }
@@ -2880,7 +2880,7 @@ void KonqMainWindow::slotClosedItemsListAboutToShow()
     popup->clear();
     QAction* clearAction = popup->addAction( i18nc("This menu entry empties the closed items history", "Empty Closed Items History") );
     connect(clearAction, SIGNAL(triggered()), m_pUndoManager, SLOT(clearClosedItemsList()));
-    popup->insertSeparator((QAction*)0);
+    popup->insertSeparator(static_cast<QAction*>(0));
 
     QList<KonqClosedItem *>::ConstIterator it =
         m_pUndoManager->closedItemsList().constBegin();
@@ -2907,7 +2907,7 @@ void KonqMainWindow::slotSessionsListAboutToShow()
     connect(saveSessionAction, SIGNAL(triggered()), this, SLOT(saveCurrentSession()));
     QAction* manageSessionsAction = popup->addAction( KIcon("view-choose"), i18n("Manage...") );
     connect(manageSessionsAction, SIGNAL(triggered()), this, SLOT(manageSessions()));
-    popup->insertSeparator((QAction*)0);
+    popup->insertSeparator(static_cast<QAction*>(0));
 
     QString dir= KStandardDirs::locateLocal("appdata", "sessions/");
     QDirIterator it(dir, QDir::Readable|QDir::NoDotAndDotDot|QDir::Dirs);
@@ -3058,7 +3058,7 @@ void KonqMainWindow::slotCompletionModeChanged( KGlobalSettings::Completion m )
 {
   s_pCompletion->setCompletionMode( m );
 
-  KonqSettings::setSettingsCompletionMode( (int)m_combo->completionMode() );
+  KonqSettings::setSettingsCompletionMode( int(m_combo->completionMode()) );
   KonqSettings::self()->writeConfig();
 
   // tell the other windows too (only this instance currently)
@@ -4519,7 +4519,7 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
   // This action collection is used to pass actions to KonqPopupMenu.
   // It has to be a KActionCollection instead of a KActionPtrList because we need
   // the actionStatusText signal...
-  KActionCollection popupMenuCollection( (QWidget*)0 );
+  KActionCollection popupMenuCollection( static_cast<QWidget*>(0) );
 
   // m_paBack is a submenu, for the toolbar & edit menu "back",
   // but in the RMB we want a simple one-click back instead.
@@ -5585,7 +5585,7 @@ void KonqMainWindow::resetWindow()
     // empty append to get current X timestamp
     QWidget tmp_widget;
     XChangeProperty( QX11Info::display(), tmp_widget.winId(), XA_WM_CLASS, XA_STRING, 8,
-		    PropModeAppend, (unsigned char*) &data, 0 );
+		    PropModeAppend, reinterpret_cast<unsigned char*>(&data), 0 );
     XEvent ev;
     XWindowEvent( QX11Info::display(), tmp_widget.winId(), PropertyChangeMask, &ev );
     long x_time = ev.xproperty.time;
@@ -5594,7 +5594,7 @@ void KonqMainWindow::resetWindow()
     // (shows mainly with 'konqueror --preload')
     static Atom atom = XInternAtom( QX11Info::display(), "_KDE_NET_WM_USER_CREATION_TIME", False );
     XChangeProperty( QX11Info::display(), winId(), atom, XA_CARDINAL, 32,
-		     PropModeReplace, (unsigned char *) &x_time, 1);
+		     PropModeReplace, reinterpret_cast<unsigned char *>(&x_time), 1);
     // reset also user time, so that this window won't have _NET_WM_USER_TIME set
     QX11Info::setAppUserTime(CurrentTime);
 

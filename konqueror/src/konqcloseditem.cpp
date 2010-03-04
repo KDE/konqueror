@@ -60,7 +60,7 @@ KonqClosedItem::~KonqClosedItem()
 }
 
 KonqClosedTabItem::KonqClosedTabItem(const QString& url, const QString& title, int pos, quint64 serialNumber)
-      :  KonqClosedItem(title, "Closed_Tab" + QString::number((qint64)this), serialNumber),  m_url(url), m_pos(pos)
+      :  KonqClosedItem(title, "Closed_Tab" + QString::number(reinterpret_cast<qint64>(this)), serialNumber),  m_url(url), m_pos(pos)
 {
     kDebug() << m_configGroup.name();
 }
@@ -76,7 +76,7 @@ QPixmap KonqClosedTabItem::icon() const {
 }
 
 KonqClosedWindowItem::KonqClosedWindowItem(const QString& title, quint64 serialNumber, int numTabs)
-      :  KonqClosedItem(title, "Closed_Window" + QString::number((qint64)this), serialNumber), m_numTabs(numTabs)
+      :  KonqClosedItem(title, "Closed_Window" + QString::number(reinterpret_cast<qint64>(this)), serialNumber), m_numTabs(numTabs)
 {
     kDebug() << m_configGroup.name();
 }
