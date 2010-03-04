@@ -132,7 +132,7 @@ QVariant HistoryEntry::data(int role, int /*column*/) const
     case Qt::ToolTipRole:
         return entry.url.url();
     case KonqHistory::TypeRole:
-        return (int)KonqHistory::HistoryType;
+        return int(KonqHistory::HistoryType);
     case KonqHistory::DetailedToolTipRole:
         return i18n("<qt><center><b>%1</b></center><hr />Last visited: %2<br />"
                     "First visited: %3<br />Number of times visited: %4</qt>",
@@ -181,7 +181,7 @@ QVariant GroupEntry::data(int role, int /*column*/) const
     case Qt::DecorationRole:
         return icon;
     case KonqHistory::TypeRole:
-        return (int)KonqHistory::GroupType;
+        return int(KonqHistory::GroupType);
     case KonqHistory::LastVisitedRole: {
         if (entries.isEmpty()) {
             return QDateTime();

@@ -487,7 +487,7 @@ void KonqCombo::selectWord(QKeyEvent *e)
             count++;
                   if( allow_space_break && text[pos].isSpace() )
                       break;
-        } while( pos < (int) text.length() && chars.indexOf(text[pos]) == -1 );
+        } while( pos < text.length() && chars.indexOf(text[pos]) == -1 );
 
         if( e->modifiers() & Qt::ShiftModifier ) {
             edit->cursorForward(true, count+1);
@@ -925,7 +925,7 @@ void KonqComboCompletionBox::setItems( const QStringList& items )
 
         for ( ; it != itEnd; ++it) {
             if ( rowIndex < count() ) {
-                const bool changed = ((KonqListWidgetItem*)item(rowIndex))->reuse( *it );
+                const bool changed = (static_cast<KonqListWidgetItem*>(item(rowIndex)))->reuse( *it );
                 dirty = dirty || changed;
             }
             else {

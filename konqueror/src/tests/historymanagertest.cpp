@@ -91,7 +91,7 @@ void HistoryManagerTest::testAddHistoryEntry()
     QCOMPARE( entry.url.url(), url.url() );
     QCOMPARE( entry.typedUrl, typedUrl );
     QCOMPARE( entry.title, QString() ); // not set yet, still pending
-    QCOMPARE( (int)entry.numberOfTimesVisited, 1 );
+    QCOMPARE( int(entry.numberOfTimesVisited), 1 );
 
     // Now confirm it
     mgr.confirmPending( url, typedUrl, title );
@@ -107,7 +107,7 @@ void HistoryManagerTest::testAddHistoryEntry()
     QCOMPARE( entry.url.url(), url.url() );
     QCOMPARE( entry.typedUrl, typedUrl );
     QCOMPARE( entry.title, title ); // now it's there
-    QCOMPARE( (int)entry.numberOfTimesVisited, 1 );
+    QCOMPARE( int(entry.numberOfTimesVisited), 1 );
 
     // Now clean it up
 
@@ -123,5 +123,5 @@ void HistoryManagerTest::testAddHistoryEntry()
     QCOMPARE( entry.url.url(), url.url() );
     QCOMPARE( entry.typedUrl, typedUrl );
     QCOMPARE( entry.title, title );
-    QCOMPARE( (int)entry.numberOfTimesVisited, 1 );
+    QCOMPARE( int(entry.numberOfTimesVisited), 1 );
 }
