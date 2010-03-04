@@ -898,14 +898,10 @@ string in the text, this is indicated by a light red background color of the ent
 and <guilabel>Not found</guilabel> is displayed at the right side of the bar.</para>
 <para>Use the <guilabel>Next</guilabel> or <guilabel>Previous</guilabel> button
 to jump to the next or previous match in the document.</para>
-<para>You can modify the search behavior by selecting different
-<guilabel>Options</guilabel>:
-The <guilabel>Highlight all</guilabel> option highlights all matches in the document.
-Selecting <guilabel>Match case</guilabel> will limit finds to entries that match the
+<para>You can choose whether the search should be case sensitive.
+Selecting <guilabel>Match Case</guilabel> will limit finds to entries that match the
 case (upper or lower) of each of the characters in the search  pattern.
-The <guilabel>From cursor</guilabel> option begins the search
-from the current position of the cursor within the document rather than from
-the beginning.</para>
+</para>
 <para>Click on the green arrow icon at the right side of the incremental search bar to
 switch to the power search and replace bar.
 <!--changed in 4.5 ???
@@ -968,14 +964,13 @@ and click the <guibutton>Replace</guibutton> button to replace only the highligh
 the <guibutton>Replace All</guibutton> button to replace the search text in the whole document.
 </para>
 <para>You can modify the search and replace behavior by selecting different
-options on the right side of the bar.
-Selecting <guilabel>Match case</guilabel> will limit finds to entries that match the
+options at the bottom of the bar.
+Selecting <guilabel>Match Case</guilabel> will limit finds to entries that match the
 case (upper or lower) of each of the characters in the search  pattern.
-The <guilabel>Highlight all</guilabel> option highlights all matches in the document.
-The <guilabel>From cursor</guilabel> option begins the search
-from the current position of the cursor within the document rather than from
-the beginning.
-<guilabel>Selection only</guilabel> will search and replace within the current selection only.</para>
+<guilabel>Selection Only</guilabel> will search and replace within the current selection only.
+The <guilabel>Find All</guilabel> button highlights all matches in the document and shows the
+number of found matches in a small popup.
+</para>
 <para>Click on the green arrow icon at the right side of the power search and replace bar to
 switch to the incremental search bar.
 <!--changed in 4.5 ???
