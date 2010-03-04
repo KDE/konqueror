@@ -98,6 +98,7 @@
 #include <konqbookmarkmenu.h>
 #include <kcmultidialog.h>
 #include <kdebug.h>
+#include <kdesktopfile.h>
 #include <kedittoolbar.h>
 #include <klocalizedstring.h>
 #include <kmenubar.h>
@@ -620,6 +621,15 @@ void KonqMainWindow::openUrl(KonqView *_view, const KUrl &_url,
                     mimeType = "inode/directory";
                 } else
                     mimeType.clear();
+            }
+        }
+
+        // Redirect to the url in Type=Link desktop files
+        if (mimeType == "application/x-desktop") {
+            KDesktopFile df(url.toLocalFile());
+            if (df.hasLinkType()) {
+                url = df.readUrl();
+                mimeType.clear(); // to be determined again
             }
         }
     }
