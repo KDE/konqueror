@@ -418,6 +418,8 @@ void KQuery::processQuery( const KFileItem &file)
       QString str = stream->readLine();
       matchingLineNumber++;
 
+      //If the stream ended (readLine().isNull() is true) the file was read completely
+      //Do *not* use isEmpty() because that will exit if there is an empty line in the file
       if (str.isNull()) break;
       if(isZippedOfficeDocument)
         str.remove(xmlTags);
