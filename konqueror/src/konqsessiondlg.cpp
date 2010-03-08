@@ -64,7 +64,6 @@ public:
 };
 
 #define BTN_OPEN KDialog::User1
-#define BTN_CLOSE KDialog::User2
 
 KonqSessionDlg::KonqSessionDlg( KonqViewManager *manager, QWidget *parent )
     : KDialog( parent )
@@ -77,7 +76,7 @@ KonqSessionDlg::KonqSessionDlg( KonqViewManager *manager, QWidget *parent )
     setModal( true );
     setCaption( i18n( "Manage Sessions" ) );
     setButtons( BTN_OPEN | Close );
-    setDefaultButton( BTN_CLOSE );
+    setDefaultButton( Close );
     showButtonSeparator( true );
     
     setButtonGuiItem( BTN_OPEN, KGuiItem( i18n( "&Open" ), "document-open" ) );
@@ -202,7 +201,6 @@ void KonqSessionDlg::slotSelectionChanged()
 }
 
 #undef BTN_OPEN
-#undef BTN_CLOSE
 
 class KonqNewSessionDlg::KonqNewSessionDlgPrivate : public QWidget,
     public Ui::KonqNewSessionDlgBase
