@@ -30,7 +30,7 @@ class QCheckBox;
 class KTabWidget;
 class KListWidgetSearchLine;
 class QTreeView;
-class QSpinBox;
+class KIntSpinBox;
 
 class AutomaticFilterModel : public QAbstractItemModel
 {
@@ -110,7 +110,7 @@ private:
     KPushButton *mExportButton;
     KTabWidget *mFilterWidget;
     QTreeView *mAutomaticFilterList;
-    QSpinBox *mRefreshFreqSpinBox;
+    KIntSpinBox *mRefreshFreqSpinBox;
 
     KSharedConfig::Ptr mConfig;
     QString mGroupname;
