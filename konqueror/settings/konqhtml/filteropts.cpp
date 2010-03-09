@@ -27,7 +27,6 @@
 #include <QtGui/QLabel>
 #include <QtGui/QLayout>
 #include <QtGui/QTreeView>
-#include <QtGui/QSpinBox>
 #include <QtGui/QWhatsThis>
 
 // KDE
@@ -43,6 +42,7 @@
 #include <klistwidgetsearchline.h>
 #include <klineedit.h>
 #include <kpushbutton.h>
+#include <knuminput.h>
 #include <KTabWidget>
 
 K_PLUGIN_FACTORY_DECLARATION(KcmKonqHtmlFactory)
@@ -117,10 +117,10 @@ KCMFilter::KCMFilter( QWidget *parent, const QVariantList& )
 
     QLabel *label = new QLabel( i18n( "Automatic update interval:" ), container );
     grid->addWidget( label, 1, 0 );
-    mRefreshFreqSpinBox = new QSpinBox( container );
+    mRefreshFreqSpinBox = new KIntSpinBox( container );
     grid->addWidget( mRefreshFreqSpinBox, 1, 1 );
     mRefreshFreqSpinBox->setRange( 1, 365 );
-    mRefreshFreqSpinBox->setSuffix(i18n(" days"));
+    mRefreshFreqSpinBox->setSuffix(ki18np("day", "days"));
 
     /** connect signals and slots */
     connect( &mAutomaticFilterModel, SIGNAL( changed( bool ) ), this, SIGNAL( changed( bool ) ) );
