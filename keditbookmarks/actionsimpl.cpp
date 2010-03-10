@@ -20,8 +20,9 @@
 */
 
 #include "actionsimpl.h"
+#include "globalbookmarkmanager.h"
 
-#include "toplevel.h"
+#include "toplevel.h" // for KEBApp
 #include "commands.h"
 #include "commandhistory.h"
 #include "importers.h"
@@ -262,10 +263,10 @@ void ActionsImpl::slotSaveAs() {
     QString saveFilename
         = KFileDialog::getSaveFileName(QString(), "*.xml", KEBApp::self());
     if (!saveFilename.isEmpty())
-        CurrentMgr::self()->saveAs(saveFilename);
+        GlobalBookmarkManager::self()->saveAs(saveFilename);
 }
 
-void CurrentMgr::doExport(ExportType type, const QString & _path) {
+void GlobalBookmarkManager::doExport(ExportType type, const QString & _path) {
     //it can be null when we use command line to export => there is not interface
     if ( KEBApp::self() && KEBApp::self()->bkInfo() )
         KEBApp::self()->bkInfo()->commitChanges();
@@ -405,19 +406,19 @@ void ActionsImpl::slotImport() {
 
 void ActionsImpl::slotExportOpera() {
     KEBApp::self()->bkInfo()->commitChanges();
-    CurrentMgr::self()->doExport(CurrentMgr::OperaExport); }
+    GlobalBookmarkManager::self()->doExport(GlobalBookmarkManager::OperaExport); }
 void ActionsImpl::slotExportHTML() {
     KEBApp::self()->bkInfo()->commitChanges();
-    CurrentMgr::self()->doExport(CurrentMgr::HTMLExport); }
+    GlobalBookmarkManager::self()->doExport(GlobalBookmarkManager::HTMLExport); }
 void ActionsImpl::slotExportIE() {
     KEBApp::self()->bkInfo()->commitChanges();
-    CurrentMgr::self()->doExport(CurrentMgr::IEExport); }
+    GlobalBookmarkManager::self()->doExport(GlobalBookmarkManager::IEExport); }
 void ActionsImpl::slotExportNS() {
     KEBApp::self()->bkInfo()->commitChanges();
-    CurrentMgr::self()->doExport(CurrentMgr::NetscapeExport); }
+    GlobalBookmarkManager::self()->doExport(GlobalBookmarkManager::NetscapeExport); }
 void ActionsImpl::slotExportMoz() {
     KEBApp::self()->bkInfo()->commitChanges();
-    CurrentMgr::self()->doExport(CurrentMgr::MozillaExport); }
+    GlobalBookmarkManager::self()->doExport(GlobalBookmarkManager::MozillaExport); }
 
 /* -------------------------------------- */
 
@@ -489,7 +490,7 @@ void ActionsImpl::slotRecursiveSort() {
     KBookmark bk = KEBApp::self()->firstSelected();
     Q_ASSERT(bk.isGroup());
     KEBMacroCommand *mcmd = new KEBMacroCommand(i18n("Recursive Sort"));
-    KBookmarkGroupList lister(CurrentMgr::self()->mgr());
+    KBookmarkGroupList lister(GlobalBookmarkManager::self()->mgr());
     QList<KBookmark> bookmarks = lister.getList(bk.toGroup());
     bookmarks << bk.toGroup();
     for (QList<KBookmark>::ConstIterator it = bookmarks.constBegin(); it != bookmarks.constEnd(); ++it) {

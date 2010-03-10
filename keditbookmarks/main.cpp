@@ -20,6 +20,7 @@
    Boston, MA 02110-1301, USA.
 */
 
+#include "globalbookmarkmanager.h"
 #include "toplevel.h"
 #include "importers.h"
 
@@ -139,15 +140,15 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv) {
         : KStandardDirs::locateLocal("data", QLatin1String("konqueror/bookmarks.xml"));
 
     if (!isGui) {
-        CurrentMgr::self()->createManager(filename, QString());
-        CurrentMgr::ExportType exportType = CurrentMgr::MozillaExport; // uumm.. can i just set it to -1 ?
+        GlobalBookmarkManager::self()->createManager(filename, QString());
+        GlobalBookmarkManager::ExportType exportType = GlobalBookmarkManager::MozillaExport; // uumm.. can i just set it to -1 ?
         int got = 0;
         const char *arg, *arg2 = 0, *importType = 0;
-        if (arg = "exportmoz",  args->isSet(arg)) { exportType = CurrentMgr::MozillaExport;  arg2 = arg; got++; }
-        if (arg = "exportns",   args->isSet(arg)) { exportType = CurrentMgr::NetscapeExport; arg2 = arg; got++; }
-        if (arg = "exporthtml", args->isSet(arg)) { exportType = CurrentMgr::HTMLExport;     arg2 = arg; got++; }
-        if (arg = "exportie",   args->isSet(arg)) { exportType = CurrentMgr::IEExport;       arg2 = arg; got++; }
-        if (arg = "exportopera", args->isSet(arg)) { exportType = CurrentMgr::OperaExport;    arg2 = arg; got++; }
+        if (arg = "exportmoz",  args->isSet(arg)) { exportType = GlobalBookmarkManager::MozillaExport;  arg2 = arg; got++; }
+        if (arg = "exportns",   args->isSet(arg)) { exportType = GlobalBookmarkManager::NetscapeExport; arg2 = arg; got++; }
+        if (arg = "exporthtml", args->isSet(arg)) { exportType = GlobalBookmarkManager::HTMLExport;     arg2 = arg; got++; }
+        if (arg = "exportie",   args->isSet(arg)) { exportType = GlobalBookmarkManager::IEExport;       arg2 = arg; got++; }
+        if (arg = "exportopera", args->isSet(arg)) { exportType = GlobalBookmarkManager::OperaExport;    arg2 = arg; got++; }
         if (arg = "importmoz",  args->isSet(arg)) { importType = "Moz";   arg2 = arg; got++; }
         if (arg = "importns",   args->isSet(arg)) { importType = "NS";    arg2 = arg; got++; }
         if (arg = "importie",   args->isSet(arg)) { importType = "IE";    arg2 = arg; got++; }
@@ -158,7 +159,7 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv) {
             if (got > 1) // got == 0 isn't possible as !isGui is dependant on "export.*"
                 KCmdLineArgs::usage(I18N_NOOP("You may only specify a single --export option."));
             QString path = args->getOption(arg2);
-            CurrentMgr::self()->doExport(exportType, path);
+            GlobalBookmarkManager::self()->doExport(exportType, path);
         } else if (importType) {
             if (got > 1) // got == 0 isn't possible as !isGui is dependant on "import.*"
                 KCmdLineArgs::usage(I18N_NOOP("You may only specify a single --import option."));
@@ -166,8 +167,8 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv) {
             ImportCommand *importer = ImportCommand::importerFactory(importType);
             importer->import(path, true);
             importer->redo();
-            CurrentMgr::self()->managerSave();
-            CurrentMgr::self()->notifyManagers();
+            GlobalBookmarkManager::self()->managerSave();
+            GlobalBookmarkManager::self()->notifyManagers();
         }
         return 0; // error flag on exit?, 1?
     }

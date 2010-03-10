@@ -20,9 +20,10 @@
 */
 
 #include "favicons.h"
+#include "globalbookmarkmanager.h"
 
 #include "bookmarkiterator.h"
-#include "toplevel.h"
+#include "toplevel.h" // for KEBApp
 #include "updater.h"
 #include "commands.h"
 #include "bookmarkmodel.h"
@@ -43,7 +44,7 @@ void FavIconsItrHolder::doItrListChanged() {
     if(count() == 0)
     {
         kDebug()<<"Notifing managers "<<m_affectedBookmark;
-        CurrentMgr::self()->notifyManagers(CurrentMgr::bookmarkAt(m_affectedBookmark).toGroup());
+        GlobalBookmarkManager::self()->notifyManagers(GlobalBookmarkManager::bookmarkAt(m_affectedBookmark).toGroup());
         m_affectedBookmark.clear();
     }
 }
@@ -73,7 +74,7 @@ FavIconsItr::~FavIconsItr() {
 void FavIconsItr::setStatus(const QString & status)
 {
     EditCommand::setNodeText(curBk(), QStringList()<< "info" << "metadata" << "favstate", status);
-    CurrentMgr::self()->model()->emitDataChanged(curBk());
+    GlobalBookmarkManager::self()->model()->emitDataChanged(curBk());
 }
 
 void FavIconsItr::slotDone(bool succeeded) {

@@ -45,48 +45,6 @@ struct SelcAbilities {
     bool deleteEnabled:1;
 };
 
-class KBookmark;
-class KBookmarkManager;
-
-class CurrentMgr : public QObject
-{
-    Q_OBJECT
-public:
-    typedef enum {HTMLExport, OperaExport, IEExport, MozillaExport, NetscapeExport} ExportType;
-
-    static CurrentMgr* self() { if (!s_mgr) { s_mgr = new CurrentMgr(); } return s_mgr; }
-    ~CurrentMgr();
-    KBookmarkGroup root();
-    static KBookmark bookmarkAt(const QString & a);
-
-    KBookmarkModel* model() const { return m_model; }
-    KBookmarkManager* mgr() const { return m_mgr; }
-    QString path() const;
-
-    void createManager(const QString &filename, const QString &dbusObjectName);
-    void notifyManagers(const KBookmarkGroup& grp);
-    void notifyManagers();
-    bool managerSave();
-    void saveAs(const QString &fileName);
-    void doExport(ExportType type, const QString & path = QString());
-    void setUpdate(bool update);
-
-    void reloadConfig();
-
-    static QString makeTimeStr(const QString &);
-    static QString makeTimeStr(int);
-
-protected Q_SLOTS:
-    void slotBookmarksChanged(const QString &, const QString &);
-
-private:
-    CurrentMgr();
-    KBookmarkManager *m_mgr;
-    KBookmarkModel *m_model;
-    static CurrentMgr *s_mgr;
-    uint ignorenext;
-};
-
 class KEBApp : public KXmlGuiWindow {
     Q_OBJECT
     Q_CLASSINFO("D-Bus Interface", "org.kde.keditbookmarks")

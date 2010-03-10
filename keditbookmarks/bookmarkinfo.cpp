@@ -20,7 +20,7 @@
 #include "bookmarklistview.h"
 #include "commands.h"
 #include "commandhistory.h"
-#include "toplevel.h" // for CurrentMgr
+#include "globalbookmarkmanager.h"
 #include "bookmarkmodel.h"
 
 #include <stdlib.h>
@@ -103,13 +103,13 @@ void BookmarkInfoWidget::updateStatus()
 {
    //FIXME we don't want every metadata element, but only that with owner "http://www.kde.org"
    QString visitDate =
-        CurrentMgr::makeTimeStr( EditCommand::getNodeText(m_bk, QStringList() << "info" << "metadata"
+        GlobalBookmarkManager::makeTimeStr( EditCommand::getNodeText(m_bk, QStringList() << "info" << "metadata"
                                                              << "time_visited" ));
     m_visitdate_le->setReadOnly(true);
     m_visitdate_le->setText(visitDate);
 
     QString creationDate =
-        CurrentMgr::makeTimeStr( EditCommand::getNodeText(m_bk, QStringList() << "info" << "metadata"
+        GlobalBookmarkManager::makeTimeStr( EditCommand::getNodeText(m_bk, QStringList() << "info" << "metadata"
                                                              << "time_added" ));
     m_credate_le->setReadOnly(true);
     m_credate_le->setText(creationDate);
@@ -132,7 +132,7 @@ void BookmarkInfoWidget::commitTitle()
 {
     if(titlecmd)
     {
-        CurrentMgr::self()->notifyManagers(CurrentMgr::bookmarkAt(titlecmd->affectedBookmarks()).toGroup());
+        GlobalBookmarkManager::self()->notifyManagers(GlobalBookmarkManager::bookmarkAt(titlecmd->affectedBookmarks()).toGroup());
         titlecmd = 0;
     }
 }
@@ -161,7 +161,7 @@ void BookmarkInfoWidget::commitURL()
 {
     if(urlcmd)
     {
-        CurrentMgr::self()->notifyManagers(CurrentMgr::bookmarkAt(urlcmd->affectedBookmarks()).toGroup());
+        GlobalBookmarkManager::self()->notifyManagers(GlobalBookmarkManager::bookmarkAt(urlcmd->affectedBookmarks()).toGroup());
         urlcmd = 0;
     }
 }
@@ -189,7 +189,7 @@ void BookmarkInfoWidget::commitComment()
 {
     if(commentcmd)
     {
-        CurrentMgr::self()->notifyManagers( CurrentMgr::bookmarkAt( commentcmd->affectedBookmarks() ).toGroup());
+        GlobalBookmarkManager::self()->notifyManagers( GlobalBookmarkManager::bookmarkAt( commentcmd->affectedBookmarks() ).toGroup());
         commentcmd = 0;
     }
 }

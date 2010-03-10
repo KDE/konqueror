@@ -21,9 +21,10 @@
 */
 
 #include "importers.h"
+#include "globalbookmarkmanager.h"
 
 #include "commands.h"
-#include "toplevel.h"
+#include "toplevel.h" // for KEBApp
 #include "bookmarkmodel.h"
 
 #include <QtCore/QRegExp>
@@ -100,7 +101,7 @@ ImportCommand* ImportCommand::performImport(const QString &type, QWidget *top) {
 }
 
 void ImportCommand::doCreateHoldingFolder(KBookmarkGroup &bkGroup) {
-    bkGroup = CurrentMgr::self()->mgr()
+    bkGroup = GlobalBookmarkManager::self()->mgr()
         ->root().createNewFolder(folder());
     bkGroup.internalElement().setAttribute("icon", m_icon);
     m_group = bkGroup.address();
@@ -115,7 +116,7 @@ void ImportCommand::redo()
 
     } else {
         // import into the root, after cleaning it up
-        bkGroup = CurrentMgr::self()->root();
+        bkGroup = GlobalBookmarkManager::self()->root();
         delete m_cleanUpCmd;
         m_cleanUpCmd = DeleteCommand::deleteAll(bkGroup);
 
@@ -134,7 +135,7 @@ void ImportCommand::redo()
     // FIXME Resetting the model completely has the unwanted
     // side-effect of collapsing all items in tree views
     // (and possibly other side effects)
-    CurrentMgr::self()->model()->resetModel();
+    GlobalBookmarkManager::self()->model()->resetModel();
 }
 
 void ImportCommand::undo()
@@ -146,7 +147,7 @@ void ImportCommand::undo()
 
     } else {
         // we imported at the root -> delete everything
-        KBookmarkGroup root = CurrentMgr::self()->root();
+        KBookmarkGroup root = GlobalBookmarkManager::self()->root();
         QUndoCommand *cmd = DeleteCommand::deleteAll(root);
 
         cmd->redo();
@@ -159,7 +160,7 @@ void ImportCommand::undo()
 
 QString ImportCommand::affectedBookmarks() const
 {
-    QString rootAdr = CurrentMgr::self()->root().address();
+    QString rootAdr = GlobalBookmarkManager::self()->root().address();
     if(m_group == rootAdr)
         return m_group;
     else
@@ -214,7 +215,7 @@ QString KDE2ImportCommand::requestFilename() const {
 /* -------------------------------------- */
 
 static void parseInto(const KBookmarkGroup &bkGroup, KBookmarkImporterBase *importer) {
-    KBookmarkDomBuilder builder(bkGroup, CurrentMgr::self()->mgr());
+    KBookmarkDomBuilder builder(bkGroup, GlobalBookmarkManager::self()->mgr());
     builder.connectImporter(importer);
     importer->parse();
 }
@@ -256,7 +257,7 @@ void XBELImportCommand::doExecute(const KBookmarkGroup &/*bkGroup*/) {
     // check if already open first???
     KBookmarkManager *pManager = KBookmarkManager::managerForFile(m_fileName, QString());
 
-    QDomDocument doc = CurrentMgr::self()->mgr()->internalDocument();
+    QDomDocument doc = GlobalBookmarkManager::self()->mgr()->internalDocument();
 
     // get the xbel
     QDomNode subDoc = pManager->internalDocument().namedItem("xbel").cloneNode();
@@ -290,11 +291,11 @@ void XBELImportCommand::doExecute(const KBookmarkGroup &/*bkGroup*/) {
     QDomNode node = doc.importNode(subDoc, true);
 
     if (!folder().isEmpty()) {
-        CurrentMgr::self()->root().internalElement().appendChild(node);
+        GlobalBookmarkManager::self()->root().internalElement().appendChild(node);
         m_group = KBookmarkGroup(node.toElement()).address();
 
     } else {
-        QDomElement root = CurrentMgr::self()->root().internalElement();
+        QDomElement root = GlobalBookmarkManager::self()->root().internalElement();
 
         QList<QDomElement> childList;
 

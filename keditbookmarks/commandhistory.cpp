@@ -19,7 +19,8 @@
 #include "commandhistory.h"
 #include <kdebug.h>
 #include "commands.h"
-#include "toplevel.h"
+#include "globalbookmarkmanager.h"
+#include "toplevel.h" // for KEBApp
 #include <kactioncollection.h>
 #include <QUndoCommand>
 
@@ -71,9 +72,9 @@ void CmdHistory::commandExecuted(const QUndoCommand *k)
     const IKEBCommand * cmd = dynamic_cast<const IKEBCommand *>(k);
     Q_ASSERT(cmd);
 
-    KBookmark bk = CurrentMgr::bookmarkAt(cmd->affectedBookmarks());
+    KBookmark bk = GlobalBookmarkManager::bookmarkAt(cmd->affectedBookmarks());
     Q_ASSERT(bk.isGroup());
-    CurrentMgr::self()->notifyManagers(bk.toGroup());
+    GlobalBookmarkManager::self()->notifyManagers(bk.toGroup());
 }
 
 void CmdHistory::notifyDocSaved()

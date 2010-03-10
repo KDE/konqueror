@@ -21,11 +21,10 @@
 */
 
 #include "commands.h"
+#include "globalbookmarkmanager.h"
 #include "bookmarkmodel.h"
 
 #include "kinsertionsort.h"
-
-#include "toplevel.h"
 
 #include <kdebug.h>
 #include <klocale.h>
@@ -39,8 +38,8 @@ class KBookmarkModelInsertSentry
 public:
     KBookmarkModelInsertSentry(const KBookmark& parent, int first, int last)
     {
-        QModelIndex mParent = CurrentMgr::self()->model()->indexForBookmark(parent);
-        CurrentMgr::self()->model()->beginInsertRows( mParent, first, last);
+        QModelIndex mParent = GlobalBookmarkManager::self()->model()->indexForBookmark(parent);
+        GlobalBookmarkManager::self()->model()->beginInsertRows( mParent, first, last);
 
         // TODO REMOVEME use of internal class TreeItem!
         mt = static_cast<TreeItem *>(mParent.internalPointer());
@@ -50,7 +49,7 @@ public:
     ~KBookmarkModelInsertSentry()
     {
         mt->insertChildren(mf, ml);
-        CurrentMgr::self()->model()->endInsertRows();
+        GlobalBookmarkManager::self()->model()->endInsertRows();
     }
 private:
     TreeItem * mt;
@@ -61,9 +60,9 @@ class KBookmarkModelRemoveSentry
 public:
     KBookmarkModelRemoveSentry(const KBookmark& parent, int first, int last)
     {
-        QModelIndex mParent = CurrentMgr::self()->model()->indexForBookmark(parent);
+        QModelIndex mParent = GlobalBookmarkManager::self()->model()->indexForBookmark(parent);
 
-        CurrentMgr::self()->model()->beginRemoveRows( mParent, first, last);
+        GlobalBookmarkManager::self()->model()->beginRemoveRows( mParent, first, last);
 
         mt = static_cast<TreeItem *>(mParent.internalPointer());
         mf = first;
@@ -72,7 +71,7 @@ public:
     ~KBookmarkModelRemoveSentry()
     {
         mt->deleteChildren(mf, ml);
-        CurrentMgr::self()->model()->endRemoveRows();
+        GlobalBookmarkManager::self()->model()->endRemoveRows();
     }
 private:
     TreeItem * mt;
@@ -148,14 +147,14 @@ void CreateCommand::redo()
 {
     QString parentAddress = KBookmark::parentAddress(m_to);
     KBookmarkGroup parentGroup =
-        CurrentMgr::bookmarkAt(parentAddress).toGroup();
+        GlobalBookmarkManager::bookmarkAt(parentAddress).toGroup();
 
     QString previousSibling = KBookmark::previousAddress(m_to);
 
     // kDebug() << "previousSibling=" << previousSibling;
     KBookmark prev = (previousSibling.isEmpty())
         ? KBookmark(QDomElement())
-        : CurrentMgr::bookmarkAt(previousSibling);
+        : GlobalBookmarkManager::bookmarkAt(previousSibling);
 
     KBookmark bk = KBookmark(QDomElement());
     // TODO use m_to.positionInParent()
@@ -198,7 +197,7 @@ QString CreateCommand::finalAddress() const
 
 void CreateCommand::undo()
 {
-    KBookmark bk = CurrentMgr::bookmarkAt(m_to);
+    KBookmark bk = GlobalBookmarkManager::bookmarkAt(m_to);
     Q_ASSERT(!bk.isNull() && !bk.parentGroup().isNull());
 
     // TODO use bk.positionInParent()
@@ -241,7 +240,7 @@ EditCommand::EditCommand(const QString & address, int col, const QString & newVa
 
 void EditCommand::redo()
 {
-    KBookmark bk = CurrentMgr::bookmarkAt(mAddress);
+    KBookmark bk = GlobalBookmarkManager::bookmarkAt(mAddress);
     if(mCol==-2)
     {
         mOldValue = bk.internalElement().attribute("toolbar");
@@ -270,13 +269,13 @@ void EditCommand::redo()
         mOldValue = bk.description();
         bk.setDescription(mNewValue);
     }
-    CurrentMgr::self()->model()->emitDataChanged(bk);
+    GlobalBookmarkManager::self()->model()->emitDataChanged(bk);
 }
 
 void EditCommand::undo()
 {
     kDebug() << "Setting old value" << mOldValue << "in bk" << mAddress << "col" << mCol;
-    KBookmark bk = CurrentMgr::bookmarkAt(mAddress);
+    KBookmark bk = GlobalBookmarkManager::bookmarkAt(mAddress);
     if(mCol==-2)
     {
         bk.internalElement().setAttribute("toolbar", mOldValue);
@@ -297,7 +296,7 @@ void EditCommand::undo()
     {
         bk.setDescription(mOldValue);
     }
-    CurrentMgr::self()->model()->emitDataChanged(bk);
+    GlobalBookmarkManager::self()->model()->emitDataChanged(bk);
 }
 
 void EditCommand::modify(const QString &newValue)
@@ -360,7 +359,7 @@ QString EditCommand::setNodeText(const KBookmark& bk, const QStringList &nodehie
 
 void DeleteCommand::redo()
 {
-    KBookmark bk = CurrentMgr::bookmarkAt(m_from);
+    KBookmark bk = GlobalBookmarkManager::bookmarkAt(m_from);
     Q_ASSERT(!bk.isNull());
 
     if (m_contentOnly) {
@@ -449,7 +448,7 @@ void MoveCommand::redo()
 {
     // kDebug() << "moving from=" << m_from << "to=" << m_to;
 
-    KBookmark fromBk = CurrentMgr::self()->mgr()->findByAddress( m_from );
+    KBookmark fromBk = GlobalBookmarkManager::self()->mgr()->findByAddress( m_from );
 
     m_cc = new CreateCommand(m_to, fromBk, QString());
     m_cc->redo();
@@ -513,7 +512,7 @@ class SortByName {
 void SortCommand::redo()
 {
     if (childCount() == 0) {
-        KBookmarkGroup grp = CurrentMgr::bookmarkAt(m_groupAddress).toGroup();
+        KBookmarkGroup grp = GlobalBookmarkManager::bookmarkAt(m_groupAddress).toGroup();
         Q_ASSERT(!grp.isNull());
         SortItem firstChild(grp.first());
         // this will call moveAfter, which will add
@@ -556,7 +555,7 @@ KEBMacroCommand* CmdGen::setAsToolbar(const KBookmark &bk)
 {
     KEBMacroCommand *mcmd = new KEBMacroCommand(i18n("Set as Bookmark Toolbar"));
 
-    KBookmarkGroup oldToolbar = CurrentMgr::self()->mgr()->toolbar();
+    KBookmarkGroup oldToolbar = GlobalBookmarkManager::self()->mgr()->toolbar();
     if (!oldToolbar.isNull())
     {
         new EditCommand(oldToolbar.address(), -2, "no", mcmd); //toolbar

@@ -13,12 +13,13 @@ install(TARGETS kbookmarkmerger ${INSTALL_TARGETS_DEFAULT_ARGS})
 ########### next target ###############
 
 set(keditbookmarks_KDEINIT_SRCS 
-   main.cpp 
-   toplevel.cpp 
+   main.cpp
+   toplevel.cpp
+   globalbookmarkmanager.cpp
    commandhistory.cpp
-   actionsimpl.cpp 
-   commands.cpp 
-   importers.cpp 
+   actionsimpl.cpp
+   commands.cpp
+   importers.cpp
    bookmarkiterator.cpp 
    testlink.cpp 
    favicons.cpp 

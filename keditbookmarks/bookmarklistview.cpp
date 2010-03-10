@@ -18,8 +18,9 @@
 */
 
 #include "bookmarklistview.h"
+#include "globalbookmarkmanager.h"
 #include "bookmarkmodel.h"
-#include "toplevel.h"
+#include "toplevel.h" // for KEBApp
 #include "settings.h"
 #include "commands.h"
 #include "treeitem_p.h"
@@ -170,7 +171,7 @@ void BookmarkListView::contextMenuEvent ( QContextMenuEvent * e )
 
     QMenu* popup;
     if( !index.isValid()
-       || (bk.address() == CurrentMgr::self()->root().address())
+       || (bk.address() == GlobalBookmarkManager::self()->root().address())
        || (bk.isGroup())) //FIXME add empty folder padder
     {
         popup = KEBApp::self()->popupMenuFactory("popup_folder");

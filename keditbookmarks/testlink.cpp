@@ -36,7 +36,8 @@
 #include <klocale.h>
 
 // Local
-#include "toplevel.h"
+#include "globalbookmarkmanager.h"
+#include "toplevel.h" // for KEBApp
 #include "commands.h"
 #include "bookmarkiterator.h"
 #include "bookmarkmodel.h"
@@ -53,7 +54,7 @@ void TestLinkItrHolder::doItrListChanged() {
     if(count() == 0)
     {
         kDebug()<<"Notifing managers "<<m_affectedBookmark;
-        CurrentMgr::self()->notifyManagers(CurrentMgr::bookmarkAt(m_affectedBookmark).toGroup());
+        GlobalBookmarkManager::self()->notifyManagers(GlobalBookmarkManager::bookmarkAt(m_affectedBookmark).toGroup());
         m_affectedBookmark.clear();
     }
 }
@@ -87,7 +88,7 @@ TestLinkItr::~TestLinkItr() {
 void TestLinkItr::setStatus(const QString & text)
 {
     EditCommand::setNodeText(curBk(), QStringList()<< "info" << "metadata" << "linkstate", text);
-    CurrentMgr::self()->model()->emitDataChanged(curBk());
+    GlobalBookmarkManager::self()->model()->emitDataChanged(curBk());
 }
 
 bool TestLinkItr::isApplicable(const KBookmark &bk) const {

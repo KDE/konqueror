@@ -19,6 +19,8 @@
 */
 
 #include "toplevel.h"
+#include <QVBoxLayout>
+#include "globalbookmarkmanager.h"
 
 #include "bookmarkmodel.h"
 
@@ -35,8 +37,6 @@
 
 #include <QtGui/QClipboard>
 #include <QtGui/QSplitter>
-#include <QtGui/QLayout>
-#include <QtGui/QLabel>
 #include <QtGui/QApplication>
 
 #include <kaction.h>
@@ -52,105 +52,7 @@
 #include <kmessagebox.h>
 #include <kstandardaction.h>
 
-CurrentMgr *CurrentMgr::s_mgr = 0;
 
-CurrentMgr::CurrentMgr()
-    : QObject(0),
-      m_mgr(0), m_model(0), ignorenext(0)
-{
-}
-
-CurrentMgr::~CurrentMgr()
-{
-    delete m_model;
-
-    //TESTING
-    m_model=0;
-}
-
-KBookmarkGroup CurrentMgr::root()
-{
-    return mgr()->root();
-}
-
-KBookmark CurrentMgr::bookmarkAt(const QString &a)
-{
-    return self()->mgr()->findByAddress(a);
-}
-
-bool CurrentMgr::managerSave() { return mgr()->save(); }
-void CurrentMgr::saveAs(const QString &fileName) { mgr()->saveAs(fileName); }
-void CurrentMgr::setUpdate(bool update) { mgr()->setUpdate(update); }
-QString CurrentMgr::path() const { return mgr()->path(); }
-
-void CurrentMgr::createManager(const QString &filename, const QString &dbusObjectName) {
-    if (m_mgr) {
-        kDebug()<<"ERROR calling createManager twice";
-        disconnect(m_mgr, 0, 0, 0);
-        // still todo - delete old m_mgr
-    }
-
-    kDebug()<<"DBus Object name: "<<dbusObjectName;
-    m_mgr = KBookmarkManager::managerForFile(filename, dbusObjectName);
-
-    if ( m_model ) {
-        m_model->setRoot(root());
-    } else {
-        m_model = new KBookmarkModel(root());
-    }
-
-    connect(m_mgr, SIGNAL( changed(const QString &, const QString &) ),
-            SLOT( slotBookmarksChanged(const QString &, const QString &) ));
-}
-
-void CurrentMgr::slotBookmarksChanged(const QString &, const QString &) {
-    if(ignorenext > 0) //We ignore the first changed signal after every change we did
-    {
-        --ignorenext;
-        return;
-    }
-
-    m_model->setRoot(m_mgr->root());
-
-    CmdHistory::self()->clearHistory();
-    KEBApp::self()->updateActions();
-    //KEBApp::self()->expandAll();
-}
-
-void CurrentMgr::notifyManagers(const KBookmarkGroup& grp)
-{
-    ++ignorenext;
-    mgr()->emitChanged(grp);
-}
-
-void CurrentMgr::notifyManagers() {
-    notifyManagers( root() );
-}
-
-void CurrentMgr::reloadConfig() {
-    mgr()->emitConfigChanged();
-}
-
-QString CurrentMgr::makeTimeStr(const QString & in)
-{
-    int secs;
-    bool ok;
-    secs = in.toInt(&ok);
-    if (!ok)
-        return QString();
-    return makeTimeStr(secs);
-}
-
-QString CurrentMgr::makeTimeStr(int b)
-{
-    QDateTime dt;
-    dt.setTime_t(b);
-    return (dt.daysTo(QDateTime::currentDateTime()) > 31)
-        ? KGlobal::locale()->formatDate(dt.date(), KLocale::LongDate)
-        : KGlobal::locale()->formatDateTime(dt, KLocale::LongDate);
-}
-
-/* -------------------------- */
 #include <QtDBus/QDBusConnection>
 KEBApp *KEBApp::s_topLevel = 0;
 
@@ -182,10 +84,10 @@ KEBApp::KEBApp(
 
     m_canPaste = false;
 
-    CurrentMgr::self()->createManager(m_bookmarksFilename, m_dbusObjectName);
+    GlobalBookmarkManager::self()->createManager(m_bookmarksFilename, m_dbusObjectName);
 
     mBookmarkListView = new BookmarkListView();
-    mBookmarkListView->setModel( CurrentMgr::self()->model() );
+    mBookmarkListView->setModel( GlobalBookmarkManager::self()->model() );
     mBookmarkListView->setSelectionMode(QAbstractItemView::ExtendedSelection);
     mBookmarkListView->loadColumnSetting();
     mBookmarkListView->loadFoldedState();
@@ -247,8 +149,8 @@ void KEBApp::reset(const QString & caption, const QString & bookmarksFileName)
     //FIXME check this code, probably should be model()->setRoot instead of resetModel()
     m_caption = caption;
     m_bookmarksFilename = bookmarksFileName;
-    CurrentMgr::self()->createManager(m_bookmarksFilename, m_dbusObjectName); //FIXME this is still a memory leak (iff called by slotLoad)
-    CurrentMgr::self()->model()->resetModel();
+    GlobalBookmarkManager::self()->createManager(m_bookmarksFilename, m_dbusObjectName); //FIXME this is still a memory leak (iff called by slotLoad)
+    GlobalBookmarkManager::self()->model()->resetModel();
     updateActions();
 }
 
@@ -299,12 +201,12 @@ SelcAbilities KEBApp::getSelectionAbilities() const
         selctionAbilities.group          = nbk.isGroup();
         selctionAbilities.separator      = nbk.isSeparator();
         selctionAbilities.urlIsEmpty     = nbk.url().isEmpty();
-        selctionAbilities.root           = nbk.address() == CurrentMgr::self()->root().address();
+        selctionAbilities.root           = nbk.address() == GlobalBookmarkManager::self()->root().address();
         selctionAbilities.multiSelect    = (sel.count() > columnCount);
         selctionAbilities.singleSelect   = (!selctionAbilities.multiSelect && selctionAbilities.itemSelected);
     }
     //FIXME check next line, if it actually works
-    selctionAbilities.notEmpty = CurrentMgr::self()->root().first().hasParent();
+    selctionAbilities.notEmpty = GlobalBookmarkManager::self()->root().first().hasParent();
 
 /*    kDebug()
         <<"\nsa.itemSelected "<<selctionAbilities.itemSelected
@@ -444,7 +346,7 @@ bool lessBookmark(const KBookmark & first, const KBookmark & second) //FIXME Usi
 KBookmark::List KEBApp::allBookmarks() const
 {
     KBookmark::List bookmarks;
-    selectedBookmarksExpandedHelper(CurrentMgr::self()->root(), bookmarks);
+    selectedBookmarksExpandedHelper(GlobalBookmarkManager::self()->root(), bookmarks);
     return bookmarks;
 }
 
@@ -459,7 +361,7 @@ KBookmark::List KEBApp::selectedBookmarks() const
 	  if((*it).column() != 0)
 	      continue;
 	  KBookmark bk = mBookmarkListView->bookmarkModel()->bookmarkForIndex(*it);;
-	  if(bk.address() != CurrentMgr::self()->root().address())
+	  if(bk.address() != GlobalBookmarkManager::self()->root().address())
               bookmarks.push_back( bk );
       }
       qSort(bookmarks.begin(), bookmarks.end(), lessBookmark);
@@ -512,13 +414,13 @@ void KEBApp::updateStatus(const QString &url)
 KEBApp::~KEBApp() {
 
     // Save again, just in case the user expanded/collapsed folders (#131127)
-    CurrentMgr::self()->notifyManagers();
+    GlobalBookmarkManager::self()->notifyManagers();
 
     s_topLevel = 0;
     delete m_cmdHistory;
     delete ActionsImpl::self();
     delete mBookmarkListView;
-    delete CurrentMgr::self();
+    delete GlobalBookmarkManager::self();
 }
 
 KToggleAction* KEBApp::getToggleAction(const char *action) const {

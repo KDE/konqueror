@@ -18,8 +18,8 @@
 */
 
 #include "bookmarkmodel.h"
+#include "globalbookmarkmanager.h"
 #include "treeitem_p.h"
-#include "toplevel.h"
 #include "commands.h"
 #include "commandhistory.h"
 
@@ -190,7 +190,7 @@ QVariant KBookmarkModel::headerData(int section, Qt::Orientation orientation, in
                                "Location");
                 break;
             case CommentColumnId:
-                result = i18nc("@title:column comment for a bookmark", 
+                result = i18nc("@title:column comment for a bookmark",
                                "Comment");
                 break;
             case StatusColumnId:
@@ -359,7 +359,7 @@ bool KBookmarkModel::dropMimeData(const QMimeData * data, Qt::DropAction action,
             end = addresses.constEnd();
             for(it = addresses.constBegin(); it != end; ++it)
             {
-                KBookmark bk = CurrentMgr::self()->mgr()->findByAddress(QString::fromLatin1(*it));
+                KBookmark bk = GlobalBookmarkManager::self()->mgr()->findByAddress(QString::fromLatin1(*it));
                 kDebug()<<"Extracted bookmark xxx to list: "<<bk.address();
                 bookmarks.push_back(bk);
             }
