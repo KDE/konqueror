@@ -5,4 +5,5 @@ install( FILES
    services.desktop
    remote.desktop
    history.desktop
+   places.desktop
 DESTINATION ${DATA_INSTALL_DIR}/konqsidebartng/entries )
