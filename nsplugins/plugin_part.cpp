@@ -355,9 +355,6 @@ void PluginPart::statusMessage(const QString &msg)
 
 void PluginPart::pluginResized(int w, int h)
 {
-    if (_nspWidget)
-        _nspWidget->pluginResized(w, h);
-
     if (_widget) {
         _widget->resize(w, h);
     }
