@@ -131,13 +131,6 @@ void NSPluginInstance::windowChanged(WId w)
     }
 }
 
-void NSPluginInstance::pluginResized(int w, int h)
-{
-    kDebug() << w << h;
-    haveSize = true;
-    embedIfNeeded(w, h);
-}
-
 void NSPluginInstance::embedIfNeeded(int w, int h)
 {
     if (isVisible()) {
@@ -152,6 +145,7 @@ void NSPluginInstance::resizeEvent(QResizeEvent *event)
 {
     kDebug() << width() << height() << isVisible() << haveSize << inited;
     EMBEDCLASS::resizeEvent(event);
+    haveSize = true;
 
     embedIfNeeded(width(), height());
 }

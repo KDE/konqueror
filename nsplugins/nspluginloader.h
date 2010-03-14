@@ -54,8 +54,6 @@ public:
 
     void javascriptResult(int id, const QString &result);
 
-    void pluginResized(int w, int h);
-
 private Q_SLOTS:
     void loadPlugin();
 
