@@ -146,11 +146,6 @@ void KonquerorAdaptor::updateProfileList()
         window->viewManager()->profileListDirty( false );
 }
 
-QString KonquerorAdaptor::crashLogFile()
-{
-    return KonqMainWindow::s_crashlog_file->objectName();
-}
-
 QList<QDBusObjectPath> KonquerorAdaptor::getWindows()
 {
     QList<QDBusObjectPath> lst;

@@ -109,18 +109,6 @@ KonqView::~KonqView()
 {
   //kDebug() << "part=" << m_pPart;
 
-  if (KonqMainWindow::s_crashlog_file) {
-     QString part_url;
-     if (m_pPart)
-        part_url = m_pPart->url().url();
-     if (part_url.isNull())
-        part_url = "";
-     QByteArray line;
-     line = ( QString("close(%1):%2\n").arg(m_randID,0,16).arg(part_url) ).toUtf8();
-     KonqMainWindow::s_crashlog_file->write(line, line.length());
-     KonqMainWindow::s_crashlog_file->flush();
-  }
-
   // We did so ourselves for passive views
   if (m_pPart != 0L)
   {
@@ -146,26 +134,6 @@ void KonqView::openUrl( const KUrl &url, const QString & locationBarURL,
 {
     kDebug() << "url=" << url << "locationBarURL=" << locationBarURL;
   setPartMimeType();
-
-  if (KonqMainWindow::s_crashlog_file) {
-     QString part_url;
-     if (m_pPart)
-        part_url = m_pPart->url().url();
-     if (part_url.isNull())
-        part_url = "";
-
-     QString url_url = url.url();
-     if (url_url.isNull())
-        url_url = QString("");
-
-     QByteArray line;
-
-     line = ( QString("closed(%1):%2\n").arg(m_randID,0,16).arg(part_url) ).toUtf8();
-     KonqMainWindow::s_crashlog_file->write(line,line.length());
-     line = ( QString("opened(%3):%4\n").arg(m_randID,0,16).arg(url_url)  ).toUtf8();
-     KonqMainWindow::s_crashlog_file->write(line,line.length());
-     KonqMainWindow::s_crashlog_file->flush();
-  }
 
   KParts::OpenUrlArguments args;
   if ( m_pPart )

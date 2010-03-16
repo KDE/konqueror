@@ -752,10 +752,6 @@ private: // members
     // TODO: move to a KonqPreloadHandler class
   static bool s_preloaded;
   static KonqMainWindow* s_preloadedWindow;
-
-public:
-
-  static QFile *s_crashlog_file;
 };
 
 #endif // KONQMAINWINDOW_H
