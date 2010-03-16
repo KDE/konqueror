@@ -128,6 +128,9 @@ KonqView::~KonqView()
     if ( isPassiveMode() )
       disconnect( m_pPart, SIGNAL( destroyed() ), m_pMainWindow->viewManager(), SLOT( slotObjectDestroyed() ) );
 
+    if (m_pPart->manager())
+      m_pPart->manager()->removePart(m_pPart); // ~Part does this, but we have to do it before (#213876, #207173)
+
     delete m_pPart;
   }
 
