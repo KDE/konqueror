@@ -68,6 +68,7 @@ KEBApp::KEBApp(
     Q_UNUSED(address);//FIXME sets the current item
 
     m_cmdHistory = new CommandHistory(actionCollection());
+    connect(m_cmdHistory, SIGNAL(notifyCommandExecuted()), this, SLOT(notifyCommandExecuted()));
 
     s_topLevel = this;
 
@@ -264,7 +265,7 @@ void KEBApp::setActionsEnabled(SelcAbilities sa) {
             it != toEnable.constEnd(); ++it )
     {
         //kDebug() <<" enabling action "<<(*it);
-        coll->action((*it).toAscii().data())->setEnabled(true);
+        coll->action(*it)->setEnabled(true);
     }
 }
 

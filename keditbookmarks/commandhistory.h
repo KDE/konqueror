@@ -38,6 +38,9 @@ public:
 
     static CommandHistory *self();
 
+Q_SIGNALS:
+    void notifyCommandExecuted();
+
 public Q_SLOTS:
     void undo();
     void redo();

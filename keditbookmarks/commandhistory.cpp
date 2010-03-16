@@ -20,8 +20,8 @@
 #include <kdebug.h>
 #include "commands.h"
 #include "globalbookmarkmanager.h"
-#include "toplevel.h" // for KEBApp
 #include <kactioncollection.h>
+#include <QAction>
 #include <QUndoCommand>
 
 CommandHistory* CommandHistory::s_self = 0;
@@ -67,7 +67,7 @@ void CommandHistory::redo()
 
 void CommandHistory::commandExecuted(const QUndoCommand *k)
 {
-    KEBApp::self()->notifyCommandExecuted();
+    emit notifyCommandExecuted();
 
     const IKEBCommand * cmd = dynamic_cast<const IKEBCommand *>(k);
     Q_ASSERT(cmd);
