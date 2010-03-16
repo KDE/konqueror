@@ -153,7 +153,7 @@ void BookmarkInfoWidget::slotTextChangedTitle(const QString &str)
     {
         titlecmd = new EditCommand(m_bk.address(), 0, str);
         titlecmd->redo();
-        CmdHistory::self()->addInFlightCommand(titlecmd);
+        CommandHistory::self()->addInFlightCommand(titlecmd);
     }
 }
 
@@ -181,7 +181,7 @@ void BookmarkInfoWidget::slotTextChangedURL(const QString &str) {
     {
         urlcmd = new EditCommand(m_bk.address(), 1, str);
         urlcmd->redo();
-        CmdHistory::self()->addInFlightCommand(urlcmd);
+        CommandHistory::self()->addInFlightCommand(urlcmd);
     }
 }
 
@@ -209,7 +209,7 @@ void BookmarkInfoWidget::slotTextChangedComment(const QString &str) {
     {
         commentcmd = new EditCommand(m_bk.address(), 2, str);
         commentcmd->redo();
-        CmdHistory::self()->addInFlightCommand(commentcmd);
+        CommandHistory::self()->addInFlightCommand(commentcmd);
     }
 }
 

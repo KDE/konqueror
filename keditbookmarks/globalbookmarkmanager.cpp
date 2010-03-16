@@ -86,7 +86,7 @@ void GlobalBookmarkManager::slotBookmarksChanged(const QString &, const QString 
 
     m_model->setRoot(m_mgr->root());
 
-    CmdHistory::self()->clearHistory();
+    CommandHistory::self()->clearHistory();
     KEBApp::self()->updateActions();
     //KEBApp::self()->expandAll();
 }

@@ -24,9 +24,9 @@
 #include <kactioncollection.h>
 #include <QUndoCommand>
 
-CmdHistory* CmdHistory::s_self = 0;
+CommandHistory* CommandHistory::s_self = 0;
 
-CmdHistory::CmdHistory(KActionCollection *actionCollection)
+CommandHistory::CommandHistory(KActionCollection *actionCollection)
     : m_commandHistory()
 {
     Q_ASSERT(!s_self);
@@ -39,13 +39,13 @@ CmdHistory::CmdHistory(KActionCollection *actionCollection)
     connect(redoAction, SIGNAL(triggered()), this, SLOT(redo()));
 }
 
-CmdHistory* CmdHistory::self()
+CommandHistory* CommandHistory::self()
 {
     Q_ASSERT(s_self);
     return s_self;
 }
 
-void CmdHistory::undo()
+void CommandHistory::undo()
 {
     const int idx = m_commandHistory.index();
     const QUndoCommand* cmd = m_commandHistory.command(idx-1);
@@ -55,7 +55,7 @@ void CmdHistory::undo()
     }
 }
 
-void CmdHistory::redo()
+void CommandHistory::redo()
 {
     const int idx = m_commandHistory.index();
     const QUndoCommand* cmd = m_commandHistory.command(idx);
@@ -65,7 +65,7 @@ void CmdHistory::redo()
     }
 }
 
-void CmdHistory::commandExecuted(const QUndoCommand *k)
+void CommandHistory::commandExecuted(const QUndoCommand *k)
 {
     KEBApp::self()->notifyCommandExecuted();
 
@@ -77,27 +77,27 @@ void CmdHistory::commandExecuted(const QUndoCommand *k)
     GlobalBookmarkManager::self()->notifyManagers(bk.toGroup());
 }
 
-void CmdHistory::notifyDocSaved()
+void CommandHistory::notifyDocSaved()
 {
     m_commandHistory.setClean();
 }
 
-void CmdHistory::addCommand(QUndoCommand *cmd)
+void CommandHistory::addCommand(QUndoCommand *cmd)
 {
     if (!cmd)
         return;
     m_commandHistory.push(cmd); // calls cmd->redo()
-    CmdHistory::commandExecuted(cmd);
+    CommandHistory::commandExecuted(cmd);
 }
 
-void CmdHistory::addInFlightCommand(QUndoCommand *cmd)
+void CommandHistory::addInFlightCommand(QUndoCommand *cmd)
 {
     if(!cmd)
         return;
     m_commandHistory.push(cmd); // TODO: HOW TO NOT CALL REDO?
 }
 
-void CmdHistory::clearHistory()
+void CommandHistory::clearHistory()
 {
     m_commandHistory.clear();
 }

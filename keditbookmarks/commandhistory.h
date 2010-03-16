@@ -24,12 +24,12 @@
 class QUndoCommand;
 class KActionCollection;
 
-class CmdHistory : public QObject
+class CommandHistory : public QObject
 {
     Q_OBJECT
 public:
-    CmdHistory(KActionCollection *collection);
-    virtual ~CmdHistory() {}
+    CommandHistory(KActionCollection *collection);
+    virtual ~CommandHistory() {}
 
     void notifyDocSaved();
 
@@ -39,7 +39,7 @@ public:
     // Adds command without executing it.
     void addInFlightCommand(QUndoCommand *);
 
-    static CmdHistory *self();
+    static CommandHistory *self();
 
 public Q_SLOTS:
     void undo();
@@ -51,7 +51,7 @@ private:
 private:
     // Ported from K3Command/K3CommandHistory to QUndoCommand/KUndoStack for KDE-4.4.0
     KUndoStack m_commandHistory;
-    static CmdHistory *s_self;
+    static CommandHistory *s_self;
 };
 
 #endif /* COMMANDHISTORY_H */

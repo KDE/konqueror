@@ -25,7 +25,7 @@
 #include <kxmlguifactory.h>
 #include "bookmarklistview.h"
 
-class CmdHistory;
+class CommandHistory;
 class KBookmarkModel;
 class KBookmarkManager;
 class KToggleAction;
@@ -119,7 +119,7 @@ private:
 
     static KEBApp *s_topLevel;
 
-    CmdHistory *m_cmdHistory;
+    CommandHistory *m_cmdHistory;
     QString m_bookmarksFilename;
     QString m_caption;
     QString m_dbusObjectName;

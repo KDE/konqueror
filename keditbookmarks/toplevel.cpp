@@ -67,7 +67,7 @@ KEBApp::KEBApp(
     QDBusConnection::sessionBus().registerObject("/keditbookmarks", this, QDBusConnection::ExportScriptableSlots);
     Q_UNUSED(address);//FIXME sets the current item
 
-    m_cmdHistory = new CmdHistory(actionCollection());
+    m_cmdHistory = new CommandHistory(actionCollection());
 
     s_topLevel = this;
 

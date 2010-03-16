@@ -328,7 +328,7 @@ void ActionsImpl::slotCut() {
     KEBApp::self()->bkInfo()->commitChanges();
     slotCopy();
     DeleteManyCommand *mcmd = new DeleteManyCommand( i18n("Cut Items"), KEBApp::self()->selectedBookmarks() );
-    CmdHistory::self()->addCommand(mcmd);
+    CommandHistory::self()->addCommand(mcmd);
 
 }
 
@@ -353,7 +353,7 @@ void ActionsImpl::slotPaste() {
         addr = bk.address();
 
     KEBMacroCommand *mcmd = CmdGen::insertMimeSource( i18n("Paste"), QApplication::clipboard()->mimeData(), addr);
-    CmdHistory::self()->addCommand(mcmd);
+    CommandHistory::self()->addCommand(mcmd);
 }
 
 /* -------------------------------------- */
@@ -370,7 +370,7 @@ void ActionsImpl::slotNewFolder()
     CreateCommand *cmd = new CreateCommand(
                                 KEBApp::self()->insertAddress(),
                                 str, "bookmark_folder", /*open*/ true);
-    CmdHistory::self()->addCommand(cmd);
+    CommandHistory::self()->addCommand(cmd);
 }
 
 void ActionsImpl::slotNewBookmark()
@@ -380,14 +380,14 @@ void ActionsImpl::slotNewBookmark()
     CreateCommand * cmd = new CreateCommand(
                                 KEBApp::self()->insertAddress(),
                                 QString(), "www", KUrl("http://"));
-    CmdHistory::self()->addCommand(cmd);
+    CommandHistory::self()->addCommand(cmd);
 }
 
 void ActionsImpl::slotInsertSeparator()
 {
     KEBApp::self()->bkInfo()->commitChanges();
     CreateCommand * cmd = new CreateCommand(KEBApp::self()->insertAddress());
-    CmdHistory::self()->addCommand(cmd);
+    CommandHistory::self()->addCommand(cmd);
 }
 
 void ActionsImpl::slotImport() {
@@ -398,7 +398,7 @@ void ActionsImpl::slotImport() {
         = ImportCommand::performImport(sender()->objectName(), KEBApp::self());
     if (!import)
         return;
-    CmdHistory::self()->addCommand(import);
+    CommandHistory::self()->addCommand(import);
     //FIXME select import->groupAddress
 }
 
@@ -496,7 +496,7 @@ void ActionsImpl::slotRecursiveSort() {
     for (QList<KBookmark>::ConstIterator it = bookmarks.constBegin(); it != bookmarks.constEnd(); ++it) {
         new SortCommand("", (*it).address(), mcmd);
     }
-    CmdHistory::self()->addCommand(mcmd);
+    CommandHistory::self()->addCommand(mcmd);
 }
 
 void ActionsImpl::slotSort() {
@@ -504,7 +504,7 @@ void ActionsImpl::slotSort() {
     KBookmark bk = KEBApp::self()->firstSelected();
     Q_ASSERT(bk.isGroup());
     SortCommand *cmd = new SortCommand(i18n("Sort Alphabetically"), bk.address());
-    CmdHistory::self()->addCommand(cmd);
+    CommandHistory::self()->addCommand(cmd);
 }
 
 /* -------------------------------------- */
@@ -512,7 +512,7 @@ void ActionsImpl::slotSort() {
 void ActionsImpl::slotDelete() {
     KEBApp::self()->bkInfo()->commitChanges();
     DeleteManyCommand *mcmd = new DeleteManyCommand(i18n("Delete Items"), KEBApp::self()->selectedBookmarks());
-    CmdHistory::self()->addCommand(mcmd);
+    CommandHistory::self()->addCommand(mcmd);
 }
 
 void ActionsImpl::slotOpenLink()
@@ -550,7 +550,7 @@ void ActionsImpl::slotSetAsToolbar() {
     KBookmark bk = KEBApp::self()->firstSelected();
     Q_ASSERT(bk.isGroup());
     KEBMacroCommand *mcmd = CmdGen::setAsToolbar(bk);
-    CmdHistory::self()->addCommand(mcmd);
+    CommandHistory::self()->addCommand(mcmd);
 }
 
 void ActionsImpl::slotChangeIcon() {
@@ -561,7 +561,7 @@ void ActionsImpl::slotChangeIcon() {
         return;
     EditCommand *cmd = new EditCommand(bk.address(), -1, newIcon);
 
-    CmdHistory::self()->addCommand(cmd);
+    CommandHistory::self()->addCommand(cmd);
 }
 
 void ActionsImpl::slotExpandAll()
