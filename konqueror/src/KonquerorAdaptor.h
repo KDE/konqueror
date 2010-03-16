@@ -105,11 +105,6 @@ public slots:
                                                                 const QByteArray& startup_id );
 
   /**
-   * @return the name of the instance's crash log file
-   */
-  QString crashLogFile();
-
-  /**
    * @return a list of references to all the windows
    */
   QList<QDBusObjectPath> getWindows();

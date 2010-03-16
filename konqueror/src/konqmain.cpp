@@ -121,12 +121,6 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv)
 
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
-    KTemporaryFile crashlog_file;
-    crashlog_file.setPrefix("konqueror-crash-");
-    crashlog_file.setSuffix(".log");
-    crashlog_file.open();
-    KonqMainWindow::s_crashlog_file = &crashlog_file;
-
     if (app.isSessionRestored()) {
         KonqSessionManager::self()->askUserToRestoreAutosavedAbandonedSessions();
 

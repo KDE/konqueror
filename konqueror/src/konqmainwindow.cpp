@@ -157,7 +157,6 @@ KBookmarkManager* s_bookmarkManager = 0;
 QList<KonqMainWindow*> *KonqMainWindow::s_lstViews = 0;
 KConfig * KonqMainWindow::s_comboConfig = 0;
 KCompletion * KonqMainWindow::s_pCompletion = 0;
-QFile * KonqMainWindow::s_crashlog_file = 0;
 
 bool KonqMainWindow::s_preloaded = false;
 KonqMainWindow* KonqMainWindow::s_preloadedWindow = 0;
