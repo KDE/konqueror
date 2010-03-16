@@ -36,9 +36,6 @@ public:
     void clearHistory();
     void addCommand(QUndoCommand *);
 
-    // Adds command without executing it.
-    void addInFlightCommand(QUndoCommand *);
-
     static CommandHistory *self();
 
 public Q_SLOTS:

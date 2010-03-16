@@ -90,13 +90,6 @@ void CommandHistory::addCommand(QUndoCommand *cmd)
     CommandHistory::commandExecuted(cmd);
 }
 
-void CommandHistory::addInFlightCommand(QUndoCommand *cmd)
-{
-    if(!cmd)
-        return;
-    m_commandHistory.push(cmd); // TODO: HOW TO NOT CALL REDO?
-}
-
 void CommandHistory::clearHistory()
 {
     m_commandHistory.clear();
