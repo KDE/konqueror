@@ -60,8 +60,7 @@ void GlobalBookmarkManager::createManager(const QString &filename, const QString
     if (m_mgr) {
         kDebug()<<"createManager called twice";
         disconnect(m_mgr, 0, 0, 0);
-        // TODO: Re-enable this, and fix crashes. Testcase: keditbookmarks ; Ctrl+O ; open another xml file
-        //delete m_mgr;
+        delete m_mgr;
     }
 
     kDebug()<<"DBus Object name: "<<dbusObjectName;
