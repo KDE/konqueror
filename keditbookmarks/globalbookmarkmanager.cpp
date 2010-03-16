@@ -25,7 +25,6 @@
 #include <kdebug.h>
 #include "kbookmarkmanager.h"
 #include "bookmarkmodel.h"
-#include "toplevel.h" // for KEBApp
 #include "commandhistory.h"
 
 GlobalBookmarkManager *GlobalBookmarkManager::s_mgr = 0;
@@ -59,9 +58,10 @@ QString GlobalBookmarkManager::path() const { return mgr()->path(); }
 
 void GlobalBookmarkManager::createManager(const QString &filename, const QString &dbusObjectName) {
     if (m_mgr) {
-        kDebug()<<"ERROR calling createManager twice";
+        kDebug()<<"createManager called twice";
         disconnect(m_mgr, 0, 0, 0);
-        // still todo - delete old m_mgr
+        // TODO: Re-enable this, and fix crashes. Testcase: keditbookmarks ; Ctrl+O ; open another xml file
+        //delete m_mgr;
     }
 
     kDebug()<<"DBus Object name: "<<dbusObjectName;
@@ -87,8 +87,6 @@ void GlobalBookmarkManager::slotBookmarksChanged(const QString &, const QString 
     m_model->setRoot(m_mgr->root());
 
     CommandHistory::self()->clearHistory();
-    KEBApp::self()->updateActions();
-    //KEBApp::self()->expandAll();
 }
 
 void GlobalBookmarkManager::notifyManagers(const KBookmarkGroup& grp)

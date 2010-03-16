@@ -93,6 +93,7 @@ void CommandHistory::addCommand(QUndoCommand *cmd)
 void CommandHistory::clearHistory()
 {
     m_commandHistory.clear();
+    emit notifyCommandExecuted(); // not really, but we still want to update the GUI
 }
 
 #include "commandhistory.moc"
