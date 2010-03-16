@@ -20,15 +20,15 @@ set(keditbookmarks_KDEINIT_SRCS
    actionsimpl.cpp
    commands.cpp
    importers.cpp
-   bookmarkiterator.cpp 
-   testlink.cpp 
-   favicons.cpp 
-   updater.cpp 
-   exporters.cpp 
-   bookmarkinfo.cpp 
-   kebsearchline.cpp 
-   bookmarkmodel.cpp 
-   bookmarklistview.cpp 
+   bookmarkiterator.cpp
+   testlink.cpp
+   favicons.cpp
+   updater.cpp
+   exporters.cpp
+   bookmarkinfowidget.cpp
+   kebsearchline.cpp
+   bookmarkmodel.cpp
+   bookmarklistview.cpp
    treeitem.cpp )
 
 set(toplevel_xml ${CMAKE_CURRENT_BINARY_DIR}/org.kde.keditbookmarks.xml)

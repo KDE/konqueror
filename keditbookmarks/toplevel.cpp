@@ -24,7 +24,7 @@
 
 #include "bookmarkmodel.h"
 
-#include "bookmarkinfo.h"
+#include "bookmarkinfowidget.h"
 #include "actionsimpl.h"
 #include "exporters.h"
 #include "settings.h"

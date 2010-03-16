@@ -16,7 +16,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "bookmarkinfo.h"
+#include "bookmarkinfowidget.h"
 #include "bookmarklistview.h"
 #include "commands.h"
 #include "commandhistory.h"
@@ -285,5 +285,5 @@ BookmarkInfoWidget::BookmarkInfoWidget(BookmarkListView * lv, QWidget *parent)
     showBookmark(KBookmark());
 }
 
-#include "bookmarkinfo.moc"
+#include "bookmarkinfowidget.moc"
 

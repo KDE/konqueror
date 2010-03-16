@@ -29,7 +29,7 @@
 #include "favicons.h"
 #include "testlink.h"
 #include "exporters.h"
-#include "bookmarkinfo.h"
+#include "bookmarkinfowidget.h"
 
 #include <stdlib.h>
 

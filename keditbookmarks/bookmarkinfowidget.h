@@ -17,8 +17,8 @@
    along with this program.  If not, see <http://www.gnu.org/licenses/>
 */
 
-#ifndef __bookmarkinfo_h
-#define __bookmarkinfo_h
+#ifndef BOOKMARKINFOWIDGET_H
+#define BOOKMARKINFOWIDGET_H
 
 #include <kbookmark.h>
 #include <QtGui/QWidget>
