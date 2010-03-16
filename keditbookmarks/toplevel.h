@@ -64,8 +64,6 @@ public:
     void setCancelFavIconUpdatesEnabled(bool);
     void setCancelTestsEnabled(bool);
 
-    void notifyCommandExecuted();
-
     QMenu* popupMenuFactory(const char *type)
     {
         QWidget * menu = factory()->container(type, this);
@@ -97,6 +95,8 @@ public:
     KBookmark::List selectedBookmarksExpanded() const;
     KBookmark::List allBookmarks() const;
 public Q_SLOTS:
+    void notifyCommandExecuted();
+
     Q_SCRIPTABLE QString bookmarkFilename();
 
 public Q_SLOTS:
