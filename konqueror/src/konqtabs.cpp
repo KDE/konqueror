@@ -598,4 +598,9 @@ KonqFrameBase* KonqFrameTabs::tabAt(int index) const
     return dynamic_cast<KonqFrameBase*>(widget(index));
 }
 
+KonqFrameBase* KonqFrameTabs::currentTab() const
+{
+    return tabAt(currentIndex());
+}
+
 #include "konqtabs.moc"

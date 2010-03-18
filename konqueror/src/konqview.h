@@ -223,6 +223,11 @@ public:
      */
     QString nameFilter() const;
 
+    /**
+     * Returns true if the part was modified by the user (unsaved data).
+     */
+    bool isModified() const;
+
   /**
    * Return the security state of page in view
    */

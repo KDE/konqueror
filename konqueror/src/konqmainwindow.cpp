@@ -1659,14 +1659,12 @@ void KonqMainWindow::slotReload( KonqView* reloadView, bool softReload )
   if ( !reloadView || reloadView->url().isEmpty() )
     return;
 
-  if ( reloadView->part() && (reloadView->part()->metaObject()->indexOfProperty("modified") != -1)  ) {
-    QVariant prop = reloadView->part()->property("modified");
-    if (prop.isValid() && prop.toBool())
-      if ( KMessageBox::warningContinueCancel( this,
+    if (reloadView->isModified()) {
+        if (KMessageBox::warningContinueCancel( this,
            i18n("This page contains changes that have not been submitted.\nReloading the page will discard these changes."),
            i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"view-refresh"), KStandardGuiItem::cancel(), "discardchangesreload") != KMessageBox::Continue )
-        return;
-  }
+            return;
+    }
 
   KonqOpenURLRequest req( reloadView->typedUrl() );
   req.userRequestedReload = true;
@@ -2181,11 +2179,7 @@ void KonqMainWindow::viewsChanged()
 
 KonqView * KonqMainWindow::childView( KParts::ReadOnlyPart *view )
 {
-  MapViews::ConstIterator it = m_mapViews.constFind( view );
-  if ( it != m_mapViews.constEnd() )
-    return it.value();
-  else
-    return 0;
+    return m_mapViews.value(view);
 }
 
 KonqView * KonqMainWindow::childView( KParts::ReadOnlyPart *callingPart, const QString &name, KParts::BrowserHostExtension *&hostExtension, KParts::ReadOnlyPart **part )
@@ -2245,17 +2239,6 @@ KonqView * KonqMainWindow::childView( KParts::ReadOnlyPart *callingPart, const Q
   }
 
   return 0;
-}
-
-int KonqMainWindow::activeViewsCount() const
-{
-  int res = 0;
-  MapViews::ConstIterator end = m_mapViews.constEnd();
-  for (MapViews::ConstIterator it = m_mapViews.constBegin(); it != end; ++it )
-    if ( !it.value()->isPassiveMode() )
-      ++res;
-
-  return res;
 }
 
 int KonqMainWindow::activeViewsNotLockedCount() const
@@ -2364,76 +2347,45 @@ void KonqMainWindow::slotAddTab()
 
 void KonqMainWindow::slotDuplicateTab()
 {
-    if ( !m_currentView )
-        return;
-    // TODO does this work with splitted views? sounds like I'll get only the current view
-    // in the new tab, not the whole contents of the current tab...
-    m_pViewManager->duplicateTab( m_currentView->frame(), KonqSettings::openAfterCurrentPage() );
+    m_pViewManager->duplicateTab(m_pViewManager->tabContainer()->currentIndex(), KonqSettings::openAfterCurrentPage());
 }
 
 void KonqMainWindow::slotDuplicateTabPopup()
 {
-    KonqFrameBase* tab = m_pViewManager->tabContainer()->tabAt(m_workingTab);
-    if (tab) {
-        m_pViewManager->duplicateTab(tab, KonqSettings::openAfterCurrentPage());
-    }
+    m_pViewManager->duplicateTab(m_workingTab, KonqSettings::openAfterCurrentPage());
 }
 
 void KonqMainWindow::slotBreakOffTab()
 {
-    if ( !m_currentView )
-        return;
-  if (m_currentView->part() &&
-      (m_currentView->part()->metaObject()->indexOfProperty("modified") != -1) ) {
-    QVariant prop = m_currentView->part()->property("modified");
-    if (prop.isValid() && prop.toBool())
-      if ( KMessageBox::warningContinueCancel( this,
-           i18n("This tab contains changes that have not been submitted.\nDetaching the tab will discard these changes."),
-           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-detach"), KStandardGuiItem::cancel(), "discardchangesdetach") != KMessageBox::Continue )
-        return;
-  }
-
-  KonqFrameBase* frame = dynamic_cast<KonqFrameBase*>(m_pViewManager->tabContainer()->currentWidget());
-  if( frame )
-      m_pViewManager->breakOffTab( frame, size() );
-
-  updateViewActions();
+    breakOffTab(m_pViewManager->tabContainer()->currentIndex());
 }
 
 void KonqMainWindow::slotBreakOffTabPopup()
 {
-  KonqView* originalView = m_currentView;
-  KonqFrameBase* tab = m_pViewManager->tabContainer()->tabAt(m_workingTab);
-  if (!tab)
-      return;
-  KonqView *view = tab->activeChildView();
-  if (view && view->part() && (view->part()->metaObject()->indexOfProperty("modified") != -1) ) {
-    QVariant prop = view->part()->property("modified");
-    if (prop.isValid() && prop.toBool()) {
-      m_pViewManager->showTab( view );
-      if ( KMessageBox::warningContinueCancel( this,
-           i18n("This tab contains changes that have not been submitted.\nDetaching the tab will discard these changes."),
-           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-detach"), KStandardGuiItem::cancel(), "discardchangesdetach") != KMessageBox::Continue )
-      {
-        m_pViewManager->showTab( originalView );
-        return;
-      }
-    }
-  }
-  m_pViewManager->showTab( originalView );
-
-  //Can't do this safely here as the tabbar may disappear and we're
-  //hanging off here.
-  QTimer::singleShot(0, this, SLOT( slotBreakOffTabPopupDelayed() ) );
+    // Delay the call since it might delete the tabbar
+    QMetaObject::invokeMethod(this, "breakOffTab", Qt::QueuedConnection, Q_ARG(int, m_workingTab));
 }
 
-void KonqMainWindow::slotBreakOffTabPopupDelayed()
+void KonqMainWindow::breakOffTab(int tabIndex)
 {
-  KonqFrameBase* tab = m_pViewManager->tabContainer()->tabAt(m_workingTab);
-  if (!tab)
-      return;
-  m_pViewManager->breakOffTab(tab, size());
-  updateViewActions();
+    KonqFrameBase* tab = m_pViewManager->tabContainer()->tabAt(tabIndex);
+    if (!tab)
+        return;
+    const int originalTabIndex = m_pViewManager->tabContainer()->currentIndex();
+    // TODO: Why do we warn about breaking off a modified tab, since it seems to show the unsubmitted form data just fine?
+    if (!KonqModifiedViewsCollector::collect(tab).isEmpty()) {
+        m_pViewManager->showTab(tabIndex);
+        if (KMessageBox::warningContinueCancel(
+                this,
+                i18n("This tab contains changes that have not been submitted.\nDetaching the tab will discard these changes."),
+                i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-detach"), KStandardGuiItem::cancel(), "discardchangesdetach") != KMessageBox::Continue) {
+            m_pViewManager->showTab(originalTabIndex);
+            return;
+        }
+    }
+    m_pViewManager->showTab(originalTabIndex);
+    m_pViewManager->breakOffTab(tabIndex, size());
+    updateViewActions();
 }
 
 void KonqMainWindow::slotPopupNewWindow()
@@ -2498,150 +2450,114 @@ void KonqMainWindow::openMultiURL( const KUrl::List& url )
 
 void KonqMainWindow::slotRemoveView()
 {
-  if (m_currentView && m_currentView->part() &&
-      (m_currentView->part()->metaObject()->indexOfProperty("modified") != -1) ) {
-    QVariant prop = m_currentView->part()->property("modified");
-    if (prop.isValid() && prop.toBool())
+    if (m_currentView->isModified()) {
       if ( KMessageBox::warningContinueCancel( this,
            i18n("This view contains changes that have not been submitted.\nClosing the view will discard these changes."),
            i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"view-close"), KStandardGuiItem::cancel(), "discardchangesclose") != KMessageBox::Continue )
         return;
-  }
+    }
 
-  // takes care of choosing the new active view
-  m_pViewManager->removeView( m_currentView );
+    // takes care of choosing the new active view
+    m_pViewManager->removeView(m_currentView);
 }
 
 void KonqMainWindow::slotRemoveTab()
 {
-  if ( !m_currentView )
-    return;
-  if ( m_currentView->part() &&
-      (m_currentView->part()->metaObject()->indexOfProperty("modified") != -1) ) {
-    QVariant prop = m_currentView->part()->property("modified");
-    if (prop.isValid() && prop.toBool())
-      if ( KMessageBox::warningContinueCancel( this,
-           i18n("This tab contains changes that have not been submitted.\nClosing the tab will discard these changes."),
-           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-close"), KStandardGuiItem::cancel(), "discardchangesclose") != KMessageBox::Continue )
-        return;
-  }
-
-  KonqFrameBase* frame = dynamic_cast<KonqFrameBase*>(m_pViewManager->tabContainer()->currentWidget());
-
-  if(frame)
-      m_pViewManager->removeTab( frame );
+    removeTab(m_pViewManager->tabContainer()->currentIndex());
 }
 
 void KonqMainWindow::slotRemoveTabPopup()
 {
-  KonqView *originalView = m_currentView;
-  KonqFrameBase* tab = m_pViewManager->tabContainer()->tabAt(m_workingTab);
-  if (!tab)
-      return;
-  KonqView *view = tab->activeChildView();
-  if (view && view->part() && (view->part()->metaObject()->indexOfProperty("modified") != -1) ) {
-    QVariant prop = view->part()->property("modified");
-    if (prop.isValid() && prop.toBool()) {
-      m_pViewManager->showTab( view );
-      if ( KMessageBox::warningContinueCancel( this,
-           i18n("This tab contains changes that have not been submitted.\nClosing the tab will discard these changes."),
-           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-close"), KStandardGuiItem::cancel(), "discardchangesclose") != KMessageBox::Continue )
-      {
-        m_pViewManager->showTab( originalView );
-        return;
-      }
-    }
-    m_pViewManager->showTab( originalView );
-  }
-
-  //Can't do immediately - may kill the tabbar, and we're in an event path down from it
-  QTimer::singleShot( 0, this, SLOT( slotRemoveTabPopupDelayed() ) );
+    // Can't do immediately - may kill the tabbar, and we're in an event path down from it
+    QMetaObject::invokeMethod(this, "removeTab", Qt::QueuedConnection, Q_ARG(int, m_workingTab));
 }
 
-void KonqMainWindow::slotRemoveTabPopupDelayed()
+void KonqMainWindow::removeTab(int tabIndex)
 {
-  KonqFrameBase* tab = m_pViewManager->tabContainer()->tabAt(m_workingTab);
-  if (!tab)
-      return;
+    KonqFrameBase* tab = m_pViewManager->tabContainer()->tabAt(tabIndex);
+    if (!tab)
+        return;
+    const int originalTabIndex = m_pViewManager->tabContainer()->currentIndex();
+    if (!KonqModifiedViewsCollector::collect(tab).isEmpty()) {
+        m_pViewManager->showTab(tabIndex);
+        if ( KMessageBox::warningContinueCancel(
+                 this,
+                 i18n("This tab contains changes that have not been submitted.\nClosing the tab will discard these changes."),
+                 i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-close"), KStandardGuiItem::cancel(), "discardchangesclose") != KMessageBox::Continue) {
+            m_pViewManager->showTab(originalTabIndex);
+            return;
+        }
+    }
+    m_pViewManager->showTab(originalTabIndex);
     m_pViewManager->removeTab(tab);
+    updateViewActions();
 }
 
 void KonqMainWindow::slotRemoveOtherTabs()
 {
-    // This action is triggered by the shortcut that removes other tabs, so
-    // we need to set the working tab to the current tab
-    m_workingTab = m_pViewManager->tabContainer()->currentIndex();
-    slotRemoveOtherTabsPopup();
+    removeOtherTabs(m_pViewManager->tabContainer()->currentIndex());
 }
 
 void KonqMainWindow::slotRemoveOtherTabsPopup()
 {
-  if ( KMessageBox::warningContinueCancel( this,
-       i18n("Do you really want to close all other tabs?"),
-       i18n("Close Other Tabs Confirmation"), KGuiItem(i18n("Close &Other Tabs"),"tab-close-other"),
-       KStandardGuiItem::cancel(), "CloseOtherTabConfirm") != KMessageBox::Continue )
-    return;
-
-  KonqFrameBase* currentTab = m_pViewManager->tabContainer()->tabAt(m_workingTab);
-  KonqView *originalView = m_currentView;
-  MapViews::ConstIterator it = m_mapViews.constBegin();
-  MapViews::ConstIterator end = m_mapViews.constEnd();
-  for (; it != end; ++it ) {
-    KonqView *view = it.value();
-    // m_currentView might be a view contained inside a splitted view so what we'll
-    // do here is just compare if the views are inside the same tab.
-    if ( view != originalView && view && m_pViewManager->tabContainer()->tabContaining(view->frame()) != currentTab &&
-        view->part() && (view->part()->metaObject()->indexOfProperty("modified") != -1) ) {
-      QVariant prop = view->part()->property("modified");
-      if (prop.isValid() && prop.toBool()) {
-        m_pViewManager->showTab( view );
-        if ( KMessageBox::warningContinueCancel( this,
-           i18n("This tab contains changes that have not been submitted.\nClosing other tabs will discard these changes."),
-           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-close"), KStandardGuiItem::cancel(), "discardchangescloseother") != KMessageBox::Continue )
-        {
-           m_pViewManager->showTab( originalView );
-           return;
-        }
-      }
-    }
-  }
-  m_pViewManager->showTab( originalView );
-
-  //Can't do immediately - kills the tabbar, and we're in an event path down from it
-  QTimer::singleShot( 0, this, SLOT( slotRemoveOtherTabsPopupDelayed() ) );
+    // Can't do immediately - kills the tabbar, and we're in an event path down from it
+    QMetaObject::invokeMethod(this, "removeOtherTabs", Qt::QueuedConnection, Q_ARG(int, m_workingTab));
 }
 
-void KonqMainWindow::slotRemoveOtherTabsPopupDelayed()
+void KonqMainWindow::removeOtherTabs(int tabToKeep)
 {
-    m_pViewManager->removeOtherTabs(m_workingTab);
+    if (KMessageBox::warningContinueCancel(
+            this,
+            i18n("Do you really want to close all other tabs?"),
+            i18n("Close Other Tabs Confirmation"), KGuiItem(i18n("Close &Other Tabs"),"tab-close-other"),
+            KStandardGuiItem::cancel(), "CloseOtherTabConfirm") != KMessageBox::Continue)
+        return;
+
+    KonqFrameTabs* tabContainer = m_pViewManager->tabContainer();
+    const int originalTabIndex = tabContainer->currentIndex();
+    for (int tabIndex = 0; tabIndex < tabContainer->count(); ++tabIndex) {
+        if (tabIndex == tabToKeep) {
+            continue;
+        }
+        KonqFrameBase* tab = tabContainer->tabAt(tabIndex);
+        if (!KonqModifiedViewsCollector::collect(tab).isEmpty()) {
+            m_pViewManager->showTab(tabIndex);
+            if (KMessageBox::warningContinueCancel(
+                    this,
+                    i18n("This tab contains changes that have not been submitted.\nClosing other tabs will discard these changes."),
+                    i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-close"),
+                    KStandardGuiItem::cancel(), "discardchangescloseother") != KMessageBox::Continue) {
+                m_pViewManager->showTab(originalTabIndex);
+                return;
+            }
+        }
+    }
+    m_pViewManager->showTab(originalTabIndex);
+    m_pViewManager->removeOtherTabs(tabToKeep);
     updateViewActions();
 }
 
 void KonqMainWindow::slotReloadAllTabs()
 {
-  KonqView *originalView = m_currentView;
-  MapViews::ConstIterator it = m_mapViews.constBegin();
-  MapViews::ConstIterator end = m_mapViews.constEnd();
-  for (; it != end; ++it ) {
-    KonqView *view = it.value();
-    if (view && view->part() && (view->part()->metaObject()->indexOfProperty("modified") != -1) ) {
-      QVariant prop = view->part()->property("modified");
-      if (prop.isValid() && prop.toBool()) {
-        m_pViewManager->showTab( view );
-        if ( KMessageBox::warningContinueCancel( this,
-           i18n("This tab contains changes that have not been submitted.\nReloading all tabs will discard these changes."),
-           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"view-refresh"), KStandardGuiItem::cancel(), "discardchangesreload") != KMessageBox::Continue )
-        {
-            m_pViewManager->showTab( originalView );
-            return;
+    KonqFrameTabs* tabContainer = m_pViewManager->tabContainer();
+    const int originalTabIndex = tabContainer->currentIndex();
+    for (int tabIndex = 0; tabIndex < tabContainer->count(); ++tabIndex) {
+        KonqFrameBase* tab = tabContainer->tabAt(tabIndex);
+        if (!KonqModifiedViewsCollector::collect(tab).isEmpty()) {
+            m_pViewManager->showTab(tabIndex);
+            if (KMessageBox::warningContinueCancel(this,
+                   i18n("This tab contains changes that have not been submitted.\nReloading all tabs will discard these changes."),
+                    i18n("Discard Changes?"),
+                    KGuiItem(i18n("&Discard Changes"), "view-refresh"),
+                    KStandardGuiItem::cancel(), "discardchangesreload") != KMessageBox::Continue ) {
+                m_pViewManager->showTab(originalTabIndex);
+                return;
+            }
         }
-      }
     }
-  }
-  m_pViewManager->showTab( originalView );
-
-  m_pViewManager->reloadAllTabs();
-  updateViewActions();
+    m_pViewManager->showTab(originalTabIndex);
+    m_pViewManager->reloadAllTabs();
+    updateViewActions();
 }
 
 
@@ -5061,27 +4977,23 @@ void KonqMainWindow::closeEvent( QCloseEvent *e )
         }
       }
 
-      KonqView *originalView = m_currentView;
-      MapViews::ConstIterator it = m_mapViews.constBegin();
-      MapViews::ConstIterator end = m_mapViews.constEnd();
-      for (; it != end; ++it ) {
-        KonqView *view = it.value();
-        if (view && view->part() && (view->part()->metaObject()->indexOfProperty("modified") != -1) ) {
-          QVariant prop = view->part()->property("modified");
-          if (prop.isValid() && prop.toBool()) {
-            m_pViewManager->showTab( view );
-            const QString question = m_pViewManager->isTabBarVisible()
+      const int originalTabIndex = tabContainer->currentIndex();
+      for (int tabIndex = 0; tabIndex < tabContainer->count(); ++tabIndex) {
+          KonqFrameBase* tab = tabContainer->tabAt(tabIndex);
+          if (!KonqModifiedViewsCollector::collect(tab).isEmpty()) {
+              m_pViewManager->showTab(tabIndex);
+              const QString question = m_pViewManager->isTabBarVisible()
                                      ? i18n("This tab contains changes that have not been submitted.\nClosing the window will discard these changes.")
                                      : i18n("This page contains changes that have not been submitted.\nClosing the window will discard these changes.");
-            if ( KMessageBox::warningContinueCancel( this, question,
-              i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"application-exit"), KStandardGuiItem::cancel(), "discardchangesclose") != KMessageBox::Continue )
-            {
-              e->ignore();
-              m_pViewManager->showTab( originalView );
-              return;
-            }
+              if ( KMessageBox::warningContinueCancel(
+                       this, question,
+                       i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"application-exit"),
+                       KStandardGuiItem::cancel(), "discardchangesclose") != KMessageBox::Continue ) {
+                  e->ignore();
+                  m_pViewManager->showTab(originalTabIndex);
+                  return;
+              }
           }
-        }
       }
 
       if (settingsDirty() && autoSaveSettings())

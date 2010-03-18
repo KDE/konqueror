@@ -481,7 +481,7 @@ void ViewMgrTest::testDuplicateTab()
     KonqMainWindow mainWindow;
     KonqViewManager* viewManager = mainWindow.viewManager();
     KonqView* view = viewManager->createFirstView( "KonqAboutPage", "konq_aboutpage" );
-    viewManager->duplicateTab(view->frame()); // should return a KonqFrameBase?
+    viewManager->duplicateTab(0); // should return a KonqFrameBase?
 
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].") ); // mainWindow, tab widget, two tabs
     // TODO check serviceType and serviceName of the new view
@@ -500,7 +500,7 @@ void ViewMgrTest::testDuplicateSplittedTab()
     QVERIFY( container );
     QVERIFY(container->parentContainer()->frameType() == KonqFrameBase::Tabs);
 
-    viewManager->duplicateTab(container); // TODO shouldn't it return a KonqFrameBase?
+    viewManager->duplicateTab(0); // TODO shouldn't it return a KonqFrameBase?
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)C(FF)].") ); // mainWindow, tab widget, two tabs
     QCOMPARE(mainWindow.linkableViewsCount(), 2);
 
@@ -625,8 +625,8 @@ void ViewMgrTest::testCloseOtherTabs()
     tabWidget->setCurrentIndex(3);
     QCOMPARE(mainWindow.linkableViewsCount(), 1);
 
-    mainWindow.setWorkingTab(2); // This actually sets a frame which is not a tab, but KonqViewManager::removeOtherTabs should be able to deal with these cases
-    mainWindow.slotRemoveOtherTabsPopupDelayed();
+    // Check that removeOtherTabs deals with splitted views correctly
+    mainWindow.viewManager()->removeOtherTabs(2);
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, first tab = splitter with two frames
 }
 
@@ -684,19 +684,19 @@ void ViewMgrTest::testBreakOffTab()
     KonqView* view = viewManager->createFirstView( "KonqAboutPage", "konq_aboutpage" );
 
     KonqFrameBase* tab = view->frame();
-    viewManager->duplicateTab( tab );
+    viewManager->duplicateTab(0);
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].") ); // mainWindow, tab widget, two tabs
 
     // Break off a tab
 
-    KonqMainWindow* mainWindow2 = viewManager->breakOffTab( tab, mainWindow.size() );
+    KonqMainWindow* mainWindow2 = viewManager->breakOffTab( 0, mainWindow.size() );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, one tab, one frame
     QCOMPARE( DebugFrameVisitor::inspect(mainWindow2), QString("MT[F].") ); // mainWindow, one tab, one frame
 
     // Verify that the new tab container has an active child and that duplicating the tab in the new window does not crash (bug 203069)
 
     QVERIFY( mainWindow2->viewManager()->tabContainer()->activeChild() );
-    mainWindow2->viewManager()->duplicateTab( mainWindow2->activeChildView()->frame() );
+    mainWindow2->viewManager()->duplicateTab(0);
     QCOMPARE( DebugFrameVisitor::inspect(mainWindow2), QString("MT[FF].") ); // mainWindow, tab widget, two tabs
 
     delete mainWindow2;
@@ -708,9 +708,9 @@ void ViewMgrTest::testBreakOffTab()
     viewManager->splitView( view, Qt::Vertical );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, one splitter, two frames
     KonqFrameContainerBase* container = view->frame()->parentContainer();
-    viewManager->duplicateTab( container );
+    viewManager->duplicateTab(0);
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)C(FF)].") ); // mainWindow, tab widget, two tabs with split views
-    mainWindow2 = viewManager->breakOffTab( container, mainWindow.size() );
+    mainWindow2 = viewManager->breakOffTab( 0, mainWindow.size() );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, one splitter, two frames
     QCOMPARE( DebugFrameVisitor::inspect(mainWindow2), QString("MT[C(FF)].") ); // mainWindow, tab widget, one splitter, two frames
     QVERIFY( mainWindow2->viewManager()->tabContainer()->activeChild() );
@@ -723,10 +723,8 @@ void ViewMgrTest::testBreakOffTab()
     QVERIFY(!profile.isEmpty());
     const QString path = QDir::homePath();
     mainWindow.viewManager()->loadViewProfileFromFile(profile, "webbrowsing");
-    view = mainWindow.activeChildView();
-    tab = view->frame();
-    viewManager->duplicateTab( tab );
-    mainWindow2 = viewManager->breakOffTab( tab, mainWindow.size() );
+    viewManager->duplicateTab(0);
+    mainWindow2 = viewManager->breakOffTab(0, mainWindow.size());
     QCOMPARE( viewManager->currentProfile(), mainWindow2->viewManager()->currentProfile() );
 
     delete mainWindow2;

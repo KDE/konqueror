@@ -261,10 +261,10 @@ KonqView* KonqViewManager::addTabFromHistory( KonqView* currentView, int steps, 
 }
 
 
-void KonqViewManager::duplicateTab( KonqFrameBase* currentFrame, bool openAfterCurrentPage )
+void KonqViewManager::duplicateTab(int tabIndex, bool openAfterCurrentPage)
 {
 #ifdef DEBUG_VIEWMGR
-  kDebug() << currentFrame;
+  kDebug() << tabIndex;
   m_pMainWindow->dumpViewList();
   printFullHierarchy();
 #endif
@@ -274,11 +274,12 @@ void KonqViewManager::duplicateTab( KonqFrameBase* currentFrame, bool openAfterC
   KConfig config( tempFile.fileName() );
   KConfigGroup profileGroup( &config, "Profile" );
 
-  QString prefix = KonqFrameBase::frameTypeToString(currentFrame->frameType()) + QString::number(0);
+  KonqFrameBase* tab = tabContainer()->tabAt(tabIndex);
+  QString prefix = KonqFrameBase::frameTypeToString(tab->frameType()) + QString::number(0); // always T0
   profileGroup.writeEntry( "RootItem", prefix );
   prefix.append( QLatin1Char( '_' ) );
   KonqFrameBase::Options flags = KonqFrameBase::saveHistoryItems;
-  currentFrame->saveConfig( profileGroup, prefix, flags, 0L, 0, 1);
+  tab->saveConfig( profileGroup, prefix, flags, 0L, 0, 1);
 
   loadRootItem( profileGroup, tabContainer(), KUrl(), true, KUrl(), openAfterCurrentPage );
 
@@ -293,12 +294,10 @@ void KonqViewManager::duplicateTab( KonqFrameBase* currentFrame, bool openAfterC
 #endif
 }
 
-KonqMainWindow* KonqViewManager::breakOffTab( KonqFrameBase* currentFrame, const QSize& windowSize )
+KonqMainWindow* KonqViewManager::breakOffTab(int tab, const QSize& windowSize)
 {
-    Q_ASSERT(currentFrame);
-
 #ifdef DEBUG_VIEWMGR
-  kDebug() << currentFrame;
+    kDebug() << "tab=" << tab;
   m_pMainWindow->dumpViewList();
   printFullHierarchy();
 #endif
@@ -308,11 +307,12 @@ KonqMainWindow* KonqViewManager::breakOffTab( KonqFrameBase* currentFrame, const
   KSharedConfigPtr config = KSharedConfig::openConfig( tempFile.fileName() );
   KConfigGroup profileGroup( config, "Profile" );
 
-  QString prefix = KonqFrameBase::frameTypeToString(currentFrame->frameType()) + QString::number(0);
+  KonqFrameBase* tabFrame = tabContainer()->tabAt(tab);
+  QString prefix = KonqFrameBase::frameTypeToString(tabFrame->frameType()) + QString::number(0); // always T0
   profileGroup.writeEntry( "RootItem", prefix );
   prefix.append( QLatin1Char( '_' ) );
   KonqFrameBase::Options flags = KonqFrameBase::saveHistoryItems;
-  currentFrame->saveConfig( profileGroup, prefix, flags, 0L, 0, 1);
+  tabFrame->saveConfig( profileGroup, prefix, flags, 0L, 0, 1);
 
   KonqMainWindow *mainWindow = new KonqMainWindow(KUrl(), m_pMainWindow->xmlFile());
 
@@ -320,7 +320,7 @@ KonqMainWindow* KonqViewManager::breakOffTab( KonqFrameBase* currentFrame, const
   mainWindow->viewManager()->loadRootItem( profileGroup, newTabContainer, KUrl(), true, KUrl() );
   mainWindow->viewManager()->setCurrentProfile( currentProfile() );
 
-  removeTab( currentFrame, false );
+  removeTab( tabFrame, false );
 
   mainWindow->enableAllActions( true );
   mainWindow->resize( windowSize );
@@ -506,6 +506,14 @@ void KonqViewManager::showTab( KonqView *view )
     m_tabContainer->setCurrentIndex( m_tabContainer->indexOf( view->frame() ) );
     emitActivePartChanged();
   }
+}
+
+void KonqViewManager::showTab(int tabIndex)
+{
+    if (m_tabContainer->currentIndex() != tabIndex) {
+        m_tabContainer->setCurrentIndex(tabIndex);
+        emitActivePartChanged();
+    }
 }
 
 void KonqViewManager::updatePixmaps()
@@ -1394,30 +1402,23 @@ void KonqViewManager::slotProfileActivated(QAction* action)
                                                  "LoadProfileTabsConfirm" ) == KMessageBox::Cancel )
             return;
     }
-    KonqView *originalView = m_pMainWindow->currentView();
-    bool showTabCalled = false;
+    const int originalTabIndex = m_tabContainer->currentIndex();
     foreach ( KonqFrameBase* frame, m_tabContainer->childFrameList() )
     {
         KonqView *view = frame->activeChildView();
-        if (view && view->part() && (view->part()->metaObject()->indexOfProperty("modified") != -1)) {
-            QVariant prop = view->part()->property("modified");
-            if (prop.isValid() && prop.toBool()) {
+        if (view && view->isModified()) {
                 showTab( view );
-                showTabCalled = true;
                 if ( KMessageBox::warningContinueCancel( 0,
                                                          i18n("This tab contains changes that have not been submitted.\nLoading a profile will discard these changes."),
                                                          i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes")), KStandardGuiItem::cancel(), "discardchangesloadprofile") != KMessageBox::Continue )
                     /* WE: maybe KStandardGuiItem(Discard) here? */
                 {
-                    showTab( originalView );
+                    showTab(originalTabIndex);
                     return;
                 }
-            }
         }
     }
-    if ( showTabCalled && originalView )
-        showTab( originalView );
-
+    showTab(originalTabIndex);
 
     const QString profilePath = action->data().toString();
     const QString fileName = KUrl(profilePath).fileName();

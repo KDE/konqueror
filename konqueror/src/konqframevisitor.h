@@ -81,5 +81,21 @@ private:
     QList<KonqView *> m_views;
 };
 
+/**
+ * Returns the list of views that have modified data in them,
+ * for the warning-before-closing-a-tab.
+ */
+class KonqModifiedViewsCollector : public KonqFrameVisitor
+{
+public:
+    static QList<KonqView *> collect(KonqFrameBase* topLevel);
+    virtual bool visit(KonqFrame* frame);
+    virtual bool visit(KonqFrameContainer*) { return true; }
+    virtual bool visit(KonqFrameTabs*) { return true; }
+    virtual bool visit(KonqMainWindow*) { return true; }
+private:
+    QList<KonqView *> m_views;
+};
+
 #endif /* KONQ_FRAMEVISITOR_H */
 
