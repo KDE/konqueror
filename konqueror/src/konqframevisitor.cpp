@@ -48,3 +48,20 @@ QList<KonqView *> KonqLinkableViewsCollector::collect(KonqFrameBase* topLevel)
     topLevel->accept(&collector);
     return collector.m_views;
 }
+
+bool KonqModifiedViewsCollector::visit(KonqFrame* frame)
+{
+    KonqView* view = frame->childView();
+    if (view && view->isModified()) {
+        m_views.append(view);
+    }
+    return true;
+}
+
+QList<KonqView *> KonqModifiedViewsCollector::collect(KonqFrameBase* topLevel)
+{
+    KonqModifiedViewsCollector collector;
+    topLevel->accept(&collector);
+    return collector.m_views;
+}
+

@@ -83,6 +83,11 @@ public:
      */
     KonqFrameBase* tabAt(int index) const;
 
+    /**
+     * Returns the current tab
+     * (same as currentWidget(), but casted to a KonqFrameBase)
+     */
+    KonqFrameBase* currentTab() const;
 
   void moveTabBackward(int index);
   void moveTabForward(int index);

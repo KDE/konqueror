@@ -97,9 +97,9 @@ public:
                    bool passiveMode = false, bool openAfterCurrentPage = false, int pos = -1 );
 
   /**
-   * Duplicates the specified tab, or else the current one if none is specified
+   * Duplicates the specified tab
    */
-  void duplicateTab( KonqFrameBase* tab, bool openAfterCurrentPage = false );
+  void duplicateTab(int tabIndex, bool openAfterCurrentPage = false);
 
   /**
    * creates a new tab from a history entry
@@ -108,11 +108,9 @@ public:
   KonqView* addTabFromHistory( KonqView* currentView, int steps, bool openAfterCurrentPage );
 
   /**
-   * Break the current tab off into a new window,
-   * if none is specified, the current one is used.
-   * Returns the newly created window.
+   * Break the specified tab off into a new window
    */
-  KonqMainWindow* breakOffTab( KonqFrameBase* tab, const QSize& windowSize );
+  KonqMainWindow* breakOffTab(int tab, const QSize& windowSize);
 
   /**
    * Guess!:-)
@@ -169,9 +167,15 @@ public:
     // Apply configuration that applies to us, like alwaysTabbedMode.
     void applyConfiguration();
 
+    /**
+     * Brings the tab specified by @p tabIndex to the front of the stack
+     */
+    void showTab(int tabIndex);
+
   /**
    * Brings the tab specified by @p view to the front of the stack
-   *
+   * Deprecated, used the other one; this one breaks too easily with splitted views
+   * (if passing the current view to @p view)
    */
   void showTab( KonqView *view );
 

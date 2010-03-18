@@ -90,7 +90,6 @@ class KONQ_TESTS_EXPORT KonqMainWindow : public KParts::MainWindow, public KonqF
 {
   Q_OBJECT
   Q_PROPERTY( int viewCount READ viewCount )
-  Q_PROPERTY( int activeViewsCount READ activeViewsCount )
   Q_PROPERTY( int linkableViewsCount READ linkableViewsCount )
   Q_PROPERTY( QString locationBarURL READ locationBarURL )
   Q_PROPERTY( bool fullScreenMode READ fullScreenMode )
@@ -170,9 +169,6 @@ public:
 
   // Total number of views
   int viewCount() const { return m_mapViews.count(); }
-
-    // Number of views not in "passive" mode
-    int activeViewsCount() const;
 
     // Number of views not in "passive" mode and not locked
     int activeViewsNotLockedCount() const;
@@ -418,7 +414,6 @@ public Q_SLOTS:
   void slotSplitViewHorizontal();
   void slotSplitViewVertical();
   void slotRemoveOtherTabs();
-  void slotRemoveOtherTabsPopupDelayed();
   void slotRemoveTabPopup();
 
 private Q_SLOTS:
@@ -433,7 +428,7 @@ private Q_SLOTS:
 
   void slotBreakOffTab();
   void slotBreakOffTabPopup();
-  void slotBreakOffTabPopupDelayed();
+  void breakOffTab(int);
 
   void slotPopupNewWindow();
   void slotPopupThisWindow();
@@ -446,7 +441,8 @@ private Q_SLOTS:
   void slotReloadPopup();
   void slotReloadAllTabs();
   void slotRemoveTab();
-  void slotRemoveTabPopupDelayed();
+  void removeTab(int tabIndex);
+  void removeOtherTabs(int tabIndex);
 
   void slotActivateNextTab();
   void slotActivatePrevTab();

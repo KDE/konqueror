@@ -1386,4 +1386,13 @@ bool KonqView::showsDirectory() const
     return supportsMimeType(QString::fromLatin1("inode/directory"));
 }
 
+bool KonqView::isModified() const
+{
+    if (m_pPart && (m_pPart->metaObject()->indexOfProperty("modified") != -1)) {
+        const QVariant prop = m_pPart->property("modified");
+        return prop.isValid() && prop.toBool();
+    }
+    return false;
+}
+
 #include "konqview.moc"
