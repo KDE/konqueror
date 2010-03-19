@@ -20,6 +20,7 @@
 
 #include <QtCore/QAbstractItemModel>
 
+class KBookmarkManager;
 class KBookmark;
 
 class KBookmarkModelRemoveSentry;
@@ -45,7 +46,7 @@ public:
     friend class KBookmarkModelInsertSentry;
     friend class KBookmarkModelRemoveSentry;
 
-    KBookmarkModel(const KBookmark& root);
+    KBookmarkModel(const KBookmark& root, KBookmarkManager* manager, QObject* parent = 0);
     void setRoot(const KBookmark& root);
 
     virtual ~KBookmarkModel();

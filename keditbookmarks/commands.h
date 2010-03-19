@@ -20,7 +20,7 @@
 #ifndef __commands_h
 #define __commands_h
 
-#include <QUndoCommand>
+#include <QtGui/QUndoCommand>
 #include <kbookmark.h>
 #include <QtCore/QMap>
 

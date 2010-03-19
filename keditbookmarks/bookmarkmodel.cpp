@@ -18,7 +18,6 @@
 */
 
 #include "bookmarkmodel.h"
-#include "globalbookmarkmanager.h"
 #include "treeitem_p.h"
 #include "commands.h"
 #include "commandhistory.h"
@@ -36,24 +35,23 @@
 class KBookmarkModel::Private
 {
 public:
-    Private(const KBookmark& root)
-        : mRoot(root)
+    Private(const KBookmark& root, KBookmarkManager* manager)
+        : mRoot(root), mManager(manager)
     {
         mRootItem = new TreeItem(root, 0);
     }
     ~Private()
     {
         delete mRootItem;
-
-        //TESTING
         mRootItem = 0;
     }
     TreeItem * mRootItem;
     KBookmark mRoot;
+    KBookmarkManager* mManager;
 };
 
-KBookmarkModel::KBookmarkModel(const KBookmark& root)
-    : QAbstractItemModel(), d(new Private(root))
+KBookmarkModel::KBookmarkModel(const KBookmark& root, KBookmarkManager* manager, QObject* parent)
+    : QAbstractItemModel(parent), d(new Private(root, manager))
 {
 }
 
@@ -62,6 +60,7 @@ void KBookmarkModel::setRoot(const KBookmark& root)
     d->mRoot = root;
     resetModel();
 }
+
 KBookmarkModel::~KBookmarkModel()
 {
     delete d;
@@ -359,7 +358,7 @@ bool KBookmarkModel::dropMimeData(const QMimeData * data, Qt::DropAction action,
             end = addresses.constEnd();
             for(it = addresses.constBegin(); it != end; ++it)
             {
-                KBookmark bk = GlobalBookmarkManager::self()->mgr()->findByAddress(QString::fromLatin1(*it));
+                KBookmark bk = d->mManager->findByAddress(QString::fromLatin1(*it));
                 kDebug()<<"Extracted bookmark xxx to list: "<<bk.address();
                 bookmarks.push_back(bk);
             }

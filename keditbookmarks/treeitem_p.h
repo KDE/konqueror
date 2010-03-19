@@ -37,9 +37,10 @@ public:
     TreeItem * treeItemForBookmark(const KBookmark& bk);
 private:
     void initChildren();
-    bool init;
+
     QList<TreeItem *> children;
-    TreeItem * mparent;
-    KBookmark mbk;
+    TreeItem * mParent;
+    KBookmark mBookmark;
+    bool mInitDone;
 };
 #endif

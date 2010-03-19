@@ -20,9 +20,8 @@
 #include <QtCore/QVector>
 
 TreeItem::TreeItem(const KBookmark& bk, TreeItem * parent)
-    : mparent(parent), mbk(bk)
+    : mParent(parent), mBookmark(bk), mInitDone(false)
 {
-    init = false;
 }
 
 TreeItem::~TreeItem()
@@ -33,7 +32,7 @@ TreeItem::~TreeItem()
 
 TreeItem * TreeItem::child(int row)
 {
-    if(!init)
+    if(!mInitDone)
         initChildren();
     if(row < 0 || row >= children.count())
       return parent();
@@ -42,14 +41,14 @@ TreeItem * TreeItem::child(int row)
 
 int TreeItem::childCount()
 {
-    if(!init)
+    if(!mInitDone)
         initChildren();
     return children.count();
 }
 
 TreeItem * TreeItem::parent() const
 {
-    return mparent;
+    return mParent;
 }
 
 void TreeItem::insertChildren(int first, int last)
@@ -85,15 +84,15 @@ void TreeItem::deleteChildren(int first, int last)
 
 KBookmark TreeItem::bookmark() const
 {
-    return mbk;
+    return mBookmark;
 }
 
 void TreeItem::initChildren()
 {
-    init = true;
-    if(mbk.isGroup())
+    mInitDone = true;
+    if(mBookmark.isGroup())
     {
-        KBookmarkGroup parent = mbk.toGroup();
+        KBookmarkGroup parent = mBookmark.toGroup();
         for(KBookmark child = parent.first(); child.hasParent(); child = parent.next(child) )
         {
             TreeItem * item = new TreeItem(child, this);
@@ -104,10 +103,10 @@ void TreeItem::initChildren()
 
 TreeItem * TreeItem::treeItemForBookmark(const KBookmark& bk)
 {
-    if(bk.address() == mbk.address())
+    if(bk.address() == mBookmark.address())
         return this;
-    QString commonParent = KBookmark::commonParent(bk.address(), mbk.address());
-    if(commonParent == mbk.address()) //mbk is a parent of bk
+    QString commonParent = KBookmark::commonParent(bk.address(), mBookmark.address());
+    if(commonParent == mBookmark.address()) //mBookmark is a parent of bk
     {
         QList<TreeItem *>::const_iterator it, end;
         end = children.constEnd();

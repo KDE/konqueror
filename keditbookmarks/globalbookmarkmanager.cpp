@@ -37,8 +37,6 @@ GlobalBookmarkManager::GlobalBookmarkManager()
 
 GlobalBookmarkManager::~GlobalBookmarkManager()
 {
-    delete m_model;
-    m_model=0;
 }
 
 KBookmarkGroup GlobalBookmarkManager::root()
@@ -69,7 +67,7 @@ void GlobalBookmarkManager::createManager(const QString &filename, const QString
     if ( m_model ) {
         m_model->setRoot(root());
     } else {
-        m_model = new KBookmarkModel(root());
+        m_model = new KBookmarkModel(root(), m_mgr, this);
     }
 
     connect(m_mgr, SIGNAL( changed(const QString &, const QString &) ),
