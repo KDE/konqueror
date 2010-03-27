@@ -1,6 +1,7 @@
 install(FILES
     android10.desktop
     chrome10onwinnt51.desktop
+    chrome50oncurrent.desktop
     ie401onwinnt4.desktop
     ie50onppc.desktop
     ie55onwinnt5.desktop
@@ -26,4 +27,5 @@ install(FILES
     googlebot.desktop
     firefox20oncurrent.desktop
     firefox30oncurrent.desktop
+    firefox36oncurrent.desktop
 DESTINATION ${SERVICES_INSTALL_DIR}/useragentstrings)
