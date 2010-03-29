@@ -25,7 +25,6 @@ add_subdirectory( kdialog )
 add_subdirectory( keditbookmarks )
 add_subdirectory( konqueror )
 add_subdirectory( kfind )
-add_subdirectory( kappfinder )
 add_subdirectory( plasma )
 
 if ( Q_WS_MAC )
