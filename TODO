@@ -1,20 +1,20 @@
 * Add proper support for KWebKitPart in the following Konqueror kpart plugins:
-    - kget         download selection and other advanced features only work
-                   with KHTML and the features that work still use KHTML
-                   classes resulting in two rendering engines being active
-                   at one time.
-    - adblock      again tight integration as available in khtml is completely
-                   missing. Bonus: this functionality without modifying any code
-                   inside of the kwebkitpart or the kdewebkit components.
+    - kget         need to fix selected link downloads.
+    - adblock      none of this plugins advanced features work in kwebkitpart.
+                   Though rudimentary ad blocking support is already there, the
+                   advanced functions are currently khtml specific and need to
+                   be amended to support kwebkitpart.
 
-* Add support for KPartStatusBarExtension and hence the following features:
-      - Full ad-block integration (rudimentary blocking already there).
-      - Popup blocker integration (completely absent now, might require upstream changes).
+                   NOTE: unlike KHTML, the advanced features support can be
+                   completely implemented outside of the kwebkitpart source tree.
 
-* Implement a means of showing the following information (Perhaps do "about:engine"?):
-      - Show kwebkitpart's version number
-      - Show qtwebkit's version number
-      - Show KDE's version number
+* Add KPartStatusBarExtension support for the following plugins/features:
+      - Ad-block (plugin)
+      - Popup blocker (non-plugin)
+
+* Implement a means of showing the following information (Perhaps "about:engine"?):
+      - Show KWebKitPart's version #
+      - Show QtWebKit's version #
 
 * Look through all of Konqueror's web configuration options and make sure we
   honor all those that we possibly can... Here is a list of options that
