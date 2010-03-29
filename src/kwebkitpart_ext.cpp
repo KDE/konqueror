@@ -59,27 +59,23 @@ static QString getFormData(const QWebFrame *frame)
 
     if (frame) {
         QString key, temp;
-        QWebElement element = frame->documentElement();
-        QWebElementCollection collection =  element.findAll(QL1S("input[type=text]"));
-        collection += element.findAll(QL1S("input:not([type])"));
-        collection += element.findAll(QL1S("textarea"));
-        const int numElements = collection.count();
-
-        for (int i = 0; i < numElements; ++i) {
-            element = collection.at(i);
-            const QString value = element.evaluateJavaScript("this.value").toString().trimmed();
-            if (!value.isEmpty() && value != element.attribute("value")) {
-                if (element.parent().isNull())
-                    key = element.tagName();
+        QWebElementCollection collection =  frame->findAllElements(QL1S("input[type=text], input:not([type]), textarea"));
+        QWebElementCollection::iterator it = collection.begin();
+        const QWebElementCollection::iterator itEnd = collection.end();
+        for (; it != itEnd; ++it) {
+            const QString value = (*it).evaluateJavaScript("this.value").toString().trimmed();
+            if (!value.isEmpty() && value != (*it).attribute("value")) {
+                if ((*it).parent().isNull())
+                    key = (*it).tagName();
                 else
-                    key = element.parent().tagName() + QL1S(" > ") + element.tagName();
-                temp = element.attribute(QL1S("name"));
+                    key = (*it).parent().tagName() + QL1S(" > ") + (*it).tagName();
+                temp = (*it).attribute(QL1S("name"));
                 if (!temp.isEmpty())
                     key += QString::fromLatin1("[name=\"%1\"]").arg(temp);
-                temp = element.attribute(QL1S("class"));
+                temp = (*it).attribute(QL1S("class"));
                 if (!temp.isEmpty())
                    key += QString::fromLatin1("[class=\"%1\"]").arg(temp);
-                temp = element.attribute(QL1S("id"));
+                temp = (*it).attribute(QL1S("id"));
                 if (!temp.isEmpty())
                    key += QString::fromLatin1("[id=\"%1\"]").arg(temp);
 
