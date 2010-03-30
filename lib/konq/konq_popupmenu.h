@@ -107,6 +107,7 @@ private:
   Q_PRIVATE_SLOT(d, void slotPopupNewDir())
   Q_PRIVATE_SLOT(d, void slotPopupNewView())
   Q_PRIVATE_SLOT(d, void slotPopupEmptyTrashBin())
+  Q_PRIVATE_SLOT(d, void slotConfigTrashBin())
   Q_PRIVATE_SLOT(d, void slotPopupRestoreTrashedItems())
   Q_PRIVATE_SLOT(d, void slotPopupAddToBookmark())
   Q_PRIVATE_SLOT(d, void slotPopupMimeType())

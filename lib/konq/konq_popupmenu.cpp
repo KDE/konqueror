@@ -97,6 +97,7 @@ public:
     void slotPopupNewDir();
     void slotPopupNewView();
     void slotPopupEmptyTrashBin();
+    void slotConfigTrashBin();
     void slotPopupRestoreTrashedItems();
     void slotPopupAddToBookmark();
     void slotPopupMimeType();
@@ -340,6 +341,15 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
         QObject::connect(act, SIGNAL(triggered()), q, SLOT(slotPopupEmptyTrashBin()));
         q->addAction(act);
     }
+    if ( isCurrentTrash )
+    {
+	act = new KAction(m_parentWidget);
+	m_ownActions.append(act);
+	act->setIcon( KIcon("trash-empty") );
+	act->setText( i18n( "&Configure Trash Bin" ) );
+	QObject::connect(act, SIGNAL(triggered()), q, SLOT(slotConfigTrashBin()));
+	q->addAction(act);
+    }
 
     // This is used by KHTML, see khtml_popupmenu.rc (copy, selectAll, searchProvider etc.)
     // and by DolphinPart (rename, trash, delete)
@@ -492,6 +502,11 @@ void KonqPopupMenuPrivate::slotPopupNewDir()
 void KonqPopupMenuPrivate::slotPopupEmptyTrashBin()
 {
   KonqOperations::emptyTrash(m_parentWidget);
+}
+
+void KonqPopupMenuPrivate::slotConfigTrashBin()
+{
+  KRun::run("kcmshell4 kcmtrash", KUrl::List(), m_parentWidget);
 }
 
 void KonqPopupMenuPrivate::slotPopupRestoreTrashedItems()
