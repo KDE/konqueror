@@ -113,7 +113,7 @@ void KonqOperations::del( QWidget * parent, Operation method, const KUrl::List &
 void KonqOperations::emptyTrash( QWidget* parent )
 {
     KonqOperations *op = new KonqOperations( parent );
-    op->_del( EMPTYTRASH, KUrl("trash:/"), SKIP_CONFIRMATION );
+    op->_del( EMPTYTRASH, KUrl("trash:/"), DEFAULT_CONFIRMATION );
 }
 
 void KonqOperations::restoreTrashedItems( const KUrl::List& urls, QWidget* parent )
@@ -239,7 +239,19 @@ void KonqOperations::_restoreTrashedItems( const KUrl::List& urls )
 
 bool KonqOperations::askDeleteConfirmation( const KUrl::List & selectedUrls, int method, ConfirmationType confirmation, QWidget* widget )
 {
-    KIO::JobUiDelegate::DeletionType deletionType = method == DEL ? KIO::JobUiDelegate::Delete : KIO::JobUiDelegate::Trash;
+     KIO::JobUiDelegate::DeletionType deletionType;
+     switch (method) {
+     case EMPTYTRASH:
+         deletionType = KIO::JobUiDelegate::EmptyTrash;
+         break;
+     case DEL:
+         deletionType = KIO::JobUiDelegate::Delete;
+         break;
+     default:
+         deletionType = KIO::JobUiDelegate::Trash;
+         break;
+     }
+
     KIO::JobUiDelegate::ConfirmationType confirmationType = confirmation == FORCE_CONFIRMATION ? KIO::JobUiDelegate::ForceConfirmation : KIO::JobUiDelegate::DefaultConfirmation;
     KIO::JobUiDelegate uiDelegate;
     uiDelegate.setWindow(widget);
