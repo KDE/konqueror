@@ -42,6 +42,7 @@ private Q_SLOTS:
     void testPopupNewTab();
     void testPopupNewWindow();
     void testCtrlClickOnLink();
+    void sameTestsWithNewTabsInFront();
     void sameTestsWithMmbOpenTabsFalse();
 
     void testAddTabs();

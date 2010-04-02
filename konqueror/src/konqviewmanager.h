@@ -287,7 +287,7 @@ public:
    */
   virtual void setActivePart( KParts::Part *part, QWidget *widget = 0 );
 
-  void doSetActivePart( KParts::Part *part );
+  void doSetActivePart( KParts::ReadOnlyPart *part );
 
   void showProfileDlg( const QString & preselectProfile );
 

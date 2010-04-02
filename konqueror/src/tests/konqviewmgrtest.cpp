@@ -15,6 +15,7 @@
    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include <qtestkeyboard.h>
 #include <qtest_kde.h>
 #include "konqviewmgrtest.h"
 #include "../konqsettingsxt.h"
@@ -304,7 +305,8 @@ void ViewMgrTest::testSplitMainContainer()
 static void openHtmlWithLink(KonqMainWindow& mainWindow)
 {
     // Much like KonqHtmlTest::loadSimpleHtml.
-    mainWindow.openUrl(0, KUrl("data:text/html, <a href=\"data:text/html, Link target\">Click me</a>"), "text/html");
+    // We use text/plain as the linked file, in order to test #67956 (switching parts in new tab)
+    mainWindow.openUrl(0, KUrl("data:text/html, <a href=\"data:text/plain, Link target\">Click me</a>"), "text/html");
     KonqView* view = mainWindow.currentView();
     QVERIFY(view);
     QVERIFY(QTest::kWaitForSignal(view, SIGNAL(viewCompleted(KonqView*)), 20000));
@@ -341,13 +343,15 @@ void ViewMgrTest::testLinkedViews()
     qApp->processEvents(); // openUrlRequestDelayed
     // Check that the link opened in the 2nd view, not the first one
     QCOMPARE(view->url().url(), origUrl.url());
-    QCOMPARE(view2->url().url(), KUrl("data:text/html, Link target").url());
+    QCOMPARE(view2->url().url(), KUrl("data:text/plain, Link target").url());
 }
 
 void ViewMgrTest::testPopupNewTab() // RMB, "Open in new tab"
 {
     KonqMainWindow mainWindow;
     openHtmlWithLink(mainWindow);
+    KonqFrameTabs* tabs = mainWindow.viewManager()->tabContainer();
+    QCOMPARE(tabs->currentIndex(), 0);
     KFileItem item(KUrl("data:text/html, hello"), "text/html", S_IFREG);
     mainWindow.prepareForPopupMenu(KFileItemList() << item, KParts::OpenUrlArguments(), KParts::BrowserArguments());
     QMetaObject::invokeMethod(&mainWindow, "slotPopupNewTab");
@@ -355,6 +359,9 @@ void ViewMgrTest::testPopupNewTab() // RMB, "Open in new tab"
     QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].")); // mainWindow, tab widget, two tabs
     QCOMPARE(KMainWindow::memberList().count(), 1);
     QCOMPARE(mainWindow.linkableViewsCount(), 1);
+
+    if (KonqSettings::newTabsInFront())
+        QCOMPARE(tabs->currentIndex(), 1);
 }
 
 static void checkSecondWindowHasOneTab() // and delete it.
@@ -383,6 +390,7 @@ void ViewMgrTest::testCtrlClickOnLink()
 {
     KonqMainWindow mainWindow;
     openHtmlWithLink(mainWindow);
+    KonqFrameTabs* tabs = mainWindow.viewManager()->tabContainer();
     KonqView* view = mainWindow.currentView();
     KHTMLPart* part = qobject_cast<KHTMLPart *>(view->part());
     qDebug() << "CLICKING NOW";
@@ -394,10 +402,30 @@ void ViewMgrTest::testCtrlClickOnLink()
     if (KonqSettings::mmbOpensTab()) {
         QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].")); // mainWindow, tab widget, two tabs
         QCOMPARE(KMainWindow::memberList().count(), 1);
+        if (KonqSettings::newTabsInFront()) { // when called by sameTestsWithNewTabsInFront
+            QCOMPARE(tabs->currentIndex(), 1);
+            QVERIFY(mainWindow.currentView() != view);
+            QVERIFY(mainWindow.viewManager()->activePart() != view->part());
+        } else {                              // the default case
+            QCOMPARE(tabs->currentIndex(), 0);
+            QCOMPARE(mainWindow.currentView(), view);
+            QCOMPARE(mainWindow.viewManager()->activePart(), view->part());
+        }
     } else {
         QCOMPARE(DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].")); // mainWindow, tab widget, one tab
         checkSecondWindowHasOneTab();
     }
+}
+
+void ViewMgrTest::sameTestsWithNewTabsInFront()
+{
+    // Redo testCtrlClickOnLink,
+    // but with the option "NewTabsInFront" set to true.
+    QVERIFY(!KonqSettings::newTabsInFront()); // default setting = false
+    KonqSettings::setNewTabsInFront(true);
+    testPopupNewTab();
+    testCtrlClickOnLink();
+    KonqSettings::setNewTabsInFront(false);
 }
 
 void ViewMgrTest::sameTestsWithMmbOpenTabsFalse()
@@ -480,7 +508,7 @@ void ViewMgrTest::testDuplicateTab()
 {
     KonqMainWindow mainWindow;
     KonqViewManager* viewManager = mainWindow.viewManager();
-    KonqView* view = viewManager->createFirstView( "KonqAboutPage", "konq_aboutpage" );
+    /*KonqView* view =*/ viewManager->createFirstView( "KonqAboutPage", "konq_aboutpage" );
     viewManager->duplicateTab(0); // should return a KonqFrameBase?
 
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].") ); // mainWindow, tab widget, two tabs
@@ -503,6 +531,38 @@ void ViewMgrTest::testDuplicateSplittedTab()
     viewManager->duplicateTab(0); // TODO shouldn't it return a KonqFrameBase?
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)C(FF)].") ); // mainWindow, tab widget, two tabs
     QCOMPARE(mainWindow.linkableViewsCount(), 2);
+
+    // While we're here, let's test Ctrl+Tab navigation
+    view->setProperty("num", 0);
+    view2->setProperty("num", 1);
+    KonqFrameTabs* tabs = viewManager->tabContainer();
+    KonqFrameBase* tab2base = tabs->tabAt(1);
+    QVERIFY(tab2base->isContainer());
+    KonqFrameContainer* tab2 = dynamic_cast<KonqFrameContainer *>(tab2base);
+    QVERIFY(tab2);
+    KonqView* view3 = tab2->firstChild()->activeChildView();
+    QVERIFY(view3);
+    KonqView* view4 = tab2->secondChild()->activeChildView();
+    QVERIFY(view4);
+    QVERIFY(view3 != view);
+    QVERIFY(view4 != view2);
+    view3->setProperty("num", 2);
+    view4->setProperty("num", 3);
+    QCOMPARE(mainWindow.currentView()->property("num").toInt(), 3);
+    QCOMPARE(tabs->currentIndex(), 1);
+    QVERIFY(mainWindow.focusWidget());
+    QTest::keyClick(mainWindow.focusWidget(), Qt::Key_Tab, Qt::ControlModifier);
+    QCOMPARE(mainWindow.currentView()->property("num").toInt(), 0);
+    QCOMPARE(tabs->currentIndex(), 0);
+    QTest::keyClick(mainWindow.focusWidget(), Qt::Key_Tab, Qt::ControlModifier);
+    QCOMPARE(mainWindow.currentView()->property("num").toInt(), 1);
+    QCOMPARE(tabs->currentIndex(), 0);
+    QTest::keyClick(mainWindow.focusWidget(), Qt::Key_Tab, Qt::ControlModifier);
+    QCOMPARE(mainWindow.currentView()->property("num").toInt(), 2);
+    QCOMPARE(tabs->currentIndex(), 1);
+    QTest::keyClick(mainWindow.focusWidget(), Qt::Key_Tab, Qt::ControlModifier);
+    QCOMPARE(mainWindow.currentView()->property("num").toInt(), 3);
+    QCOMPARE(tabs->currentIndex(), 1);
 
     viewManager->removeTab(container);
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, one tab
@@ -681,9 +741,9 @@ void ViewMgrTest::testBreakOffTab()
 {
     KonqMainWindow mainWindow;
     KonqViewManager* viewManager = mainWindow.viewManager();
-    KonqView* view = viewManager->createFirstView( "KonqAboutPage", "konq_aboutpage" );
+    /*KonqView* firstView =*/ viewManager->createFirstView( "KonqAboutPage", "konq_aboutpage" );
 
-    KonqFrameBase* tab = view->frame();
+    //KonqFrameBase* tab = firstView->frame();
     viewManager->duplicateTab(0);
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[FF].") ); // mainWindow, tab widget, two tabs
 
@@ -704,10 +764,10 @@ void ViewMgrTest::testBreakOffTab()
     // Now split the remaining view, duplicate the tab and verify that breaking off a split tab does not crash (bug 174292).
     // Also check that the tab container of the new main window has an active child.
 
-    view = mainWindow.activeChildView();
+    KonqView* view = mainWindow.activeChildView();
     viewManager->splitView( view, Qt::Vertical );
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, one splitter, two frames
-    KonqFrameContainerBase* container = view->frame()->parentContainer();
+    // KonqFrameContainerBase* container = view->frame()->parentContainer();
     viewManager->duplicateTab(0);
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)C(FF)].") ); // mainWindow, tab widget, two tabs with split views
     mainWindow2 = viewManager->breakOffTab( 0, mainWindow.size() );
