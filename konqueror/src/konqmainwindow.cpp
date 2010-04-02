@@ -1862,11 +1862,15 @@ void KonqMainWindow::slotPartChanged( KonqView *childView, KParts::ReadOnlyPart 
   m_mapViews.insert( newPart, childView );
 
   // Remove the old part, and add the new part to the manager
-  // Note: this makes the new part active... so it calls slotPartActivated
+  const bool wasActive = m_pViewManager->activePart() == oldPart;
 
   m_pViewManager->replacePart( oldPart, newPart, false );
-  // Set active immediately
-  m_pViewManager->setActivePart(newPart);
+
+  // Set active immediately - but only if the old part was the active one (#67956)
+  if (wasActive) {
+      // Note: this makes the new part active... so it calls slotPartActivated
+      m_pViewManager->setActivePart(newPart);
+  }
 
   viewsChanged();
 }
@@ -3095,8 +3099,12 @@ void KonqMainWindow::slotMatch( const QString &match )
 void KonqMainWindow::slotCtrlTabPressed()
 {
    KonqView * view = m_pViewManager->chooseNextView( m_currentView );
-   if ( view )
+   //kDebug() << m_currentView->url() << "->" << view->url();
+   if ( view ) {
       m_pViewManager->setActivePart( view->part() );
+      KonqFrameTabs* tabs = m_pViewManager->tabContainer();
+      m_pViewManager->showTab(tabs->tabIndexContaining(view->frame()));
+   }
 }
 
 void KonqMainWindow::slotClearHistory()
@@ -3200,6 +3208,7 @@ bool KonqMainWindow::eventFilter(QObject*obj, QEvent *ev)
       QKeyEvent * keyEv = static_cast<QKeyEvent*>(ev);
       if ((keyEv->key() == Qt::Key_Tab) && (keyEv->modifiers() == Qt::ControlModifier)) {
           slotCtrlTabPressed();
+          return true; // don't let QTabWidget see the event
       }
   }
   return KParts::MainWindow::eventFilter( obj, ev );

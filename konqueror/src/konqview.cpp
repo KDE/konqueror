@@ -347,16 +347,6 @@ bool KonqView::changePart(const QString &mimeType,
     switchView( viewFactory );
   }
 
-  if ( m_pMainWindow->viewManager()->activePart() != m_pPart )
-  {
-    // Make the new part active. Note that we don't do it each time we
-    // open a URL (becomes awful in view-follows-view mode), but we do
-    // each time we change the view mode.
-    // We don't do it in switchView either because it's called from the constructor too,
-    // where the location bar url isn't set yet.
-    //kDebug() << "Giving focus to new part" << m_pPart;
-    m_pMainWindow->viewManager()->setActivePart( m_pPart );
-  }
   return true;
 }
 

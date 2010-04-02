@@ -40,7 +40,7 @@ class KConfig;
 
 class NewTabToolButton;
 
-class KonqFrameTabs : public KTabWidget, public KonqFrameContainerBase
+class KONQ_TESTS_EXPORT KonqFrameTabs : public KTabWidget, public KonqFrameContainerBase
 {
   Q_OBJECT
 
@@ -95,10 +95,10 @@ public:
   void setLoading(KonqFrameBase* frame, bool loading);
 
   /**
-   * Returns the tab that contains (directly or indirectly) the frame @p frame,
-   * or 0 if the frame is not in the tab widget.
+   * Returns the tab index that contains (directly or indirectly) the frame @p frame,
+   * or -1 if the frame is not in the tab widget.
    */
-  KonqFrameBase* tabContaining(KonqFrameBase* frame) const;
+  int tabIndexContaining(KonqFrameBase* frame) const;
 
 public Q_SLOTS:
   void slotCurrentChanged( int index );

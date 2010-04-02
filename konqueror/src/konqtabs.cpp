@@ -535,19 +535,15 @@ void KonqFrameTabs::slotCurrentChanged( int index )
     m_pViewManager->mainWindow()->linkableViewCountChanged();
 }
 
-/**
- * Returns the index position of the tab that contains (directly or indirectly) the frame @p frame,
- * or -1 if the frame is not in the tab widget.
- */
-KonqFrameBase* KonqFrameTabs::tabContaining(KonqFrameBase* frame) const
+int KonqFrameTabs::tabIndexContaining(KonqFrameBase* frame) const
 {
     KonqFrameBase* frameBase = frame;
     while (frameBase && frameBase->parentContainer() != this)
         frameBase = frameBase->parentContainer();
     if (frameBase)
-        return frameBase;
+        return indexOf(frameBase->asQWidget());
     else
-        return 0;
+        return -1;
 }
 
 int KonqFrameTabs::tabWhereActive(KonqFrameBase* frame) const

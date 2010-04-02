@@ -716,44 +716,44 @@ void KonqViewManager::clear()
 KonqView *KonqViewManager::chooseNextView(KonqView *view)
 {
     //kDebug() << view;
-    const KonqMainWindow::MapViews& mapViews = m_pMainWindow->viewMap();
 
-    KonqMainWindow::MapViews::const_iterator it = mapViews.begin();
-    const KonqMainWindow::MapViews::const_iterator end = mapViews.end();
-    if (view) { // find it in the map - can't use the key since view->part() might be 0L
-        while (it != end && it.value() != view)
-            ++it;
+    int it = 0;
+    const QList<KonqView*> viewList = KonqViewCollector::collect(m_pMainWindow);
+    if (viewList.isEmpty()) {
+        return 0; // We have no view at all - this used to happen with totally-empty-profiles
+    }
+
+    if (view) { // find it in the list
+        it = viewList.indexOf(view);
     }
 
     // the view should always be in the list
-    if (it == end) {
-        if (view)
-            kWarning() << "View" << view << "is not in list!" ;
-        it = mapViews.begin();
-        if (it == end)
-            return 0; // We have no view at all - this used to happen with totally-empty-profiles
+    if (it == -1) {
+        kWarning() << "View" << view << "is not in list!" ;
+        it = 0;
     }
 
     bool rewinded = false;
-    KonqMainWindow::MapViews::const_iterator startIt = it;
+    const int startIndex = it;
+    const int end = viewList.count();
 
-    //kDebug() << "count=" << mapViews.count();
+    //kDebug() << "count=" << end;
     while (true) {
-        //kDebug() << "*KonqViewManager::chooseNextView going next";
+        //kDebug() << "going next";
         if (++it == end) { // move to next
             // end reached: restart from begin (but only once)
             if (!rewinded) {
-                it = mapViews.begin();
+                it = 0;
                 rewinded = true;
             } else {
                 break; // nothing found, probably buggy profile
             }
         }
 
-        if (it == startIt && view)
+        if (it == startIndex && view)
             break; // no next view found
 
-        KonqView *nextView = it.value();
+        KonqView *nextView = viewList.at(it);;
         if (nextView && !nextView->isPassiveMode())
             return nextView;
         //kDebug() << "nextView=" << nextView << "passive=" << nextView->isPassiveMode();
@@ -1026,35 +1026,20 @@ void KonqViewManager::loadViewProfileFromGroup( const KConfigGroup &profileGroup
 
 void KonqViewManager::setActivePart(KParts::Part *part, QWidget *)
 {
-    doSetActivePart( part );
+    doSetActivePart( static_cast<KParts::ReadOnlyPart*>(part) );
 }
 
-void KonqViewManager::doSetActivePart( KParts::Part *part )
+void KonqViewManager::doSetActivePart( KParts::ReadOnlyPart *part )
 {
-    //kDebug() << part;
-    //if ( part )
-    //    kDebug() << part->metaObject()->className() << part->name();
+    if (part)
+        kDebug() << part << part->url();
 
     KParts::Part* mainWindowActivePart = m_pMainWindow->currentView()
                                          ? m_pMainWindow->currentView()->part() : 0;
     if (part == activePart() && mainWindowActivePart == part)
     {
-      //if (part)
-      //    kDebug() << "Part is already active!";
+      //kDebug() << "Part is already active!";
       return;
-    }
-
-    // Don't activate when part changed in non-active tab
-    KonqView* partView = m_pMainWindow->childView(static_cast<KParts::ReadOnlyPart*>(part));
-    if (partView)
-    {
-      KonqFrameContainerBase* parentContainer = partView->frame()->parentContainer();
-      if (parentContainer->frameType() == KonqFrameBase::Tabs)
-      {
-        KonqFrameTabs* parentFrameTabs = static_cast<KonqFrameTabs*>(parentContainer);
-        if (partView->frame() != parentFrameTabs->currentWidget())
-           return;
-      }
     }
 
     if (m_pMainWindow && m_pMainWindow->currentView())

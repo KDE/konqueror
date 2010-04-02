@@ -78,7 +78,7 @@ protected:
  * That means that they always have two children. Which are either again
  * KonqFrameContainers or, as leaves, KonqFrames.
  */
-class KonqFrameContainer : public QSplitter, public KonqFrameContainerBase   // TODO rename to KonqFrameContainerSplitter?
+class KONQ_TESTS_EXPORT KonqFrameContainer : public QSplitter, public KonqFrameContainerBase   // TODO rename to KonqFrameContainerSplitter?
 {
   Q_OBJECT
 public:
