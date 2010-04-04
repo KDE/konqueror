@@ -444,7 +444,7 @@ void WebPage::downloadRequest(const QNetworkRequest &request)
     }
 
 #if 0
-    // For http requests, attempt to retreive "Content-Dispostion" if possible...
+    // For http requests, attempt to retrieve "Content-Dispostion" if possible...
     if (url.scheme().startsWith(QL1S("http"), Qt::CaseInsensitive)) {
 
         d->statDownloadRequest = true;

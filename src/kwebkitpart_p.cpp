@@ -538,7 +538,7 @@ void KWebKitPartPrivate::slotLinkHovered(const QString &link, const QString &tit
             if (fields.contains(QL1S("subject")))
                 message += i18nc("status bar text when hovering email links; looks like \"Email: xy@kde.org - CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\"", " - Subject: ") + fields.value(QL1S("subject")).join(QL1S(" "));
         } else if (linkUrl.scheme() == QL1S("javascript") &&
-                   link.startsWith("javascript:window.open")) {
+                   link.startsWith(QL1S("javascript:window.open"))) {
             message = KStringHandler::rsqueeze(link, 80);
             message += i18n(" (In new window)");
         } else {
