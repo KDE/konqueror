@@ -54,41 +54,6 @@ STUFF FROM BEINERI:
    it should not only create a folder but bookmark the current page within
    the folder unconditional if it's a tab or not. :-)
 
-CHECKS
-------
-
-valgrind report:
-
-on startup:
-   ==31246== Conditional jump or move depends on uninitialised value(s)
-   ==31246==    at 0x4026A4DF: KEBListViewItem::paintCell(QPainter*, QColorGroup const&, int, int, int) (listview.cpp:786)
-   ==31246==    by 0x40FD9CA7: QListView::drawContentsOffset(QPainter*, int, int, int, int, int, int) (qlistview.cpp:2905)
-   ==31246==    by 0x41013A5D: QScrollView::viewportPaintEvent(QPaintEvent*) (qscrollview.cpp:1702)
-   ==31246==    by 0x407E7051: KListView::viewportPaintEvent(QPaintEvent*) (klistview.cpp:1872)
-   ==31246==
-   ==31246== Conditional jump or move depends on uninitialised value(s)
-   ==31246==    at 0x4026A4E4: KEBListViewItem::paintCell(QPainter*, QColorGroup const&, int, int, int) (listview.cpp:786)
-   ==31246==    by 0x40FD9CA7: QListView::drawContentsOffset(QPainter*, int, int, int, int, int, int) (qlistview.cpp:2905)
-   ==31246==    by 0x41013A5D: QScrollView::viewportPaintEvent(QPaintEvent*) (qscrollview.cpp:1702)
-   ==31246==    by 0x407E7051: KListView::viewportPaintEvent(QPaintEvent*) (klistview.cpp:1872)
-   ==31246==
-   ==31246== Conditional jump or move depends on uninitialised value(s)
-   ==31246==    at 0x4026A4E8: KEBListViewItem::paintCell(QPainter*, QColorGroup const&, int, int, int) (listview.cpp:786)
-   ==31246==    by 0x40FD9CA7: QListView::drawContentsOffset(QPainter*, int, int, int, int, int, int) (qlistview.cpp:2905)
-   ==31246==    by 0x41013A5D: QScrollView::viewportPaintEvent(QPaintEvent*) (qscrollview.cpp:1702)
-   ==31246==    by 0x407E7051: KListView::viewportPaintEvent(QPaintEvent*) (klistview.cpp:1872)
-   ==31246==
-
-lots of crap when using file->open
-
-with memcheck
-   ==20415== 420 bytes in 14 blocks are definitely lost in loss record 107 of 146
-   ==20415==    at 0x40029B01: __builtin_new (in /usr/lib/valgrind/vgskin_memcheck.so)
-   ==20415==    by 0x40029B6C: operator new(unsigned) (in /usr/lib/valgrind/vgskin_memcheck.so)
-   ==20415==    by 0x402669AA: KEBListView::itemList() (listview.cpp:682)
-   ==20415==    by 0x402634EA: ListView::selectedItems() const (qptrlist.h:157)
-
-   
 DONE TESTING:
 ------------
 
