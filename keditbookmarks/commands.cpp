@@ -31,51 +31,6 @@
 #include <kbookmarkmanager.h>
 #include <kdesktopfile.h>
 
-#include "treeitem_p.h" // TODO REMOVEME
-
-class KBookmarkModelInsertSentry
-{
-public:
-    KBookmarkModelInsertSentry(KBookmarkModel* model, const KBookmark& parent, int first, int last)
-        : mModel(model), mFirst(first), mLast(last)
-    {
-        const QModelIndex mParent = model->indexForBookmark(parent);
-        model->beginInsertRows(mParent, first, last);
-
-        // TODO REMOVEME use of internal class TreeItem!
-        mt = static_cast<TreeItem *>(mParent.internalPointer());
-    }
-    ~KBookmarkModelInsertSentry()
-    {
-        mt->insertChildren(mFirst, mLast);
-        mModel->endInsertRows();
-    }
-private:
-    KBookmarkModel* mModel;
-    TreeItem * mt;
-    int mFirst, mLast;
-};
-class KBookmarkModelRemoveSentry
-{
-public:
-    KBookmarkModelRemoveSentry(KBookmarkModel* model, const KBookmark& parent, int first, int last)
-        : mModel(model), mFirst(first), mLast(last)
-    {
-        const QModelIndex mParent = model->indexForBookmark(parent);
-        model->beginRemoveRows(mParent, first, last);
-        mt = static_cast<TreeItem *>(mParent.internalPointer());
-    }
-    ~KBookmarkModelRemoveSentry()
-    {
-        mt->deleteChildren(mFirst, mLast);
-        mModel->endRemoveRows();
-    }
-private:
-    KBookmarkModel* mModel;
-    TreeItem * mt;
-    int mFirst, mLast;
-};
-
 QString KEBMacroCommand::affectedBookmarks() const
 {
     const int commandCount = childCount();
@@ -156,7 +111,7 @@ void CreateCommand::redo()
 
     KBookmark bk = KBookmark(QDomElement());
     const int pos = KBookmark::positionInParent(m_to);
-    KBookmarkModelInsertSentry guard(GlobalBookmarkManager::self()->model(), parentGroup, pos, pos);
+    GlobalBookmarkManager::self()->model()->beginInsert(parentGroup, pos, pos);
 
     if (m_separator) {
         bk = parentGroup.createNewSeparator();
@@ -185,6 +140,7 @@ void CreateCommand::redo()
     }
 
     Q_ASSERT(bk.address() == m_to);
+    GlobalBookmarkManager::self()->model()->endInsert();
 }
 
 QString CreateCommand::finalAddress() const
@@ -198,9 +154,7 @@ void CreateCommand::undo()
     KBookmark bk = GlobalBookmarkManager::bookmarkAt(m_to);
     Q_ASSERT(!bk.isNull() && !bk.parentGroup().isNull());
 
-    const int pos = bk.positionInParent();
-    KBookmarkModelRemoveSentry(GlobalBookmarkManager::self()->model(), bk.parentGroup(), pos, pos);
-    bk.parentGroup().deleteBookmark(bk);
+    GlobalBookmarkManager::self()->model()->removeBookmark(bk);
 }
 
 QString CreateCommand::affectedBookmarks() const

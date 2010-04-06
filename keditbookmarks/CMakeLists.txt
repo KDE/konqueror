@@ -1,7 +1,8 @@
+add_subdirectory(tests)
+
 ########### next target ###############
 
 set(kbookmarkmerger_SRCS kbookmarkmerger.cpp )
-
 
 kde4_add_executable(kbookmarkmerger ${kbookmarkmerger_SRCS})
 

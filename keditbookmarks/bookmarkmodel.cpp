@@ -1,5 +1,6 @@
 /* This file is part of the KDE project
    Copyright (C) 2005 Daniel Teske <teske@squorn.de>
+   Copyright (C) 2010 David Faure <faure@kde.org>
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -36,7 +37,7 @@ class KBookmarkModel::Private
 {
 public:
     Private(const KBookmark& root, KBookmarkManager* manager)
-        : mRoot(root), mManager(manager)
+        : mRoot(root), mManager(manager), mInsertionData(0)
     {
         mRootItem = new TreeItem(root, 0);
     }
@@ -48,6 +49,23 @@ public:
     TreeItem * mRootItem;
     KBookmark mRoot;
     KBookmarkManager* mManager;
+
+    class InsertionData {
+    public:
+        InsertionData(const QModelIndex& parent, int first, int last)
+            : mFirst(first), mLast(last)
+        {
+            mParentItem = static_cast<TreeItem *>(parent.internalPointer());
+        }
+        void insertChildren()
+        {
+            mParentItem->insertChildren(mFirst, mLast);
+        }
+        TreeItem* mParentItem;
+        int mFirst;
+        int mLast;
+    };
+    InsertionData* mInsertionData;
 };
 
 KBookmarkModel::KBookmarkModel(const KBookmark& root, KBookmarkManager* manager, QObject* parent)
@@ -76,29 +94,26 @@ void KBookmarkModel::resetModel()
 QVariant KBookmarkModel::data(const QModelIndex &index, int role) const
 {
     //Text
-    if(index.isValid() && (role == Qt::DisplayRole || role == Qt::EditRole))
-    {
+    if (index.isValid() && (role == Qt::DisplayRole || role == Qt::EditRole)) {
         const KBookmark bk = bookmarkForIndex(index);
-        if(bk.address().isEmpty())
-        {
+        if(bk.address().isEmpty()) {
             if(index.column() == NameColumnId)
-                return QVariant( i18nc("name of the container of all browser bookmarks","Bookmarks") );
+                return QVariant(i18nc("name of the container of all browser bookmarks", "Bookmarks"));
             else
                 return QVariant();
         }
 
-        switch( index.column() )
-        {
+        switch(index.column()) {
             case NameColumnId:
-                return QVariant( bk.fullText() );
+                return bk.fullText();
             case UrlColumnId:
-                return QVariant( bk.url().pathOrUrl() );
+                return bk.url().pathOrUrl();
             case CommentColumnId:
-                return QVariant( bk.description() );
+                return bk.description();
             case StatusColumnId: {
-                QString text1; //FIXME favicon state
-                QString text2; //FIXME link state
-                if(text1.isEmpty() || text2.isEmpty())
+                QString text1; // TODO! FIXME favicon state
+                QString text2; // TODO! FIXME link state
+                if (text1.isEmpty() || text2.isEmpty())
                     return QVariant( text1 + text2 );
                 else
                     return QVariant( text1 + "  --  " + text2 );
@@ -284,7 +299,7 @@ QMimeData * KBookmarkModel::mimeData( const QModelIndexList & indexes ) const
         {
             bookmarks.push_back( bookmarkForIndex(*it) );
             if(!addresses.isEmpty())
-                addresses.append(";");
+                addresses.append(';');
             addresses.append( bookmarkForIndex(*it).address().toLatin1() );
             kDebug()<<"appended"<<bookmarkForIndex(*it).address().toLatin1();
         }
@@ -294,13 +309,12 @@ QMimeData * KBookmarkModel::mimeData( const QModelIndexList & indexes ) const
     return mimeData;
 }
 
-Qt::DropActions KBookmarkModel::supportedDropActions () const
+Qt::DropActions KBookmarkModel::supportedDropActions() const
 {
-    //FIXME check if that actually works
     return Qt::CopyAction | Qt::MoveAction;
 }
 
-QStringList KBookmarkModel::mimeTypes () const
+QStringList KBookmarkModel::mimeTypes() const
 {
     return KBookmark::List::mimeDataTypes();
 }
@@ -374,18 +388,70 @@ bool KBookmarkModel::dropMimeData(const QMimeData * data, Qt::DropAction action,
         }
     }
 
-    //FIXME drag and drop implementation
-
     return true;
 }
 
 KBookmark KBookmarkModel::bookmarkForIndex(const QModelIndex& index) const
 {
-    if (!index.isValid())
-    {
+    if (!index.isValid()) {
       return KBookmark();
     }
     return static_cast<TreeItem *>(index.internalPointer())->bookmark();
+}
+
+void KBookmarkModel::beginInsert(const KBookmarkGroup& group, int first, int last)
+{
+    Q_ASSERT(!d->mInsertionData);
+    const QModelIndex parent = indexForBookmark(group);
+    d->mInsertionData = new Private::InsertionData(parent, first, last);
+    beginInsertRows(parent, first, last);
+}
+
+void KBookmarkModel::endInsert()
+{
+    Q_ASSERT(d->mInsertionData);
+    d->mInsertionData->insertChildren();
+    delete d->mInsertionData;
+    d->mInsertionData = 0;
+    endInsertRows();
+}
+
+#if 0 // Probably correct, but not needed at the moment
+void KBookmarkModel::removeBookmarks(KBookmarkGroup parent, int first, int last)
+{
+    const QModelIndex parentIndex = indexForBookmark(parent);
+    beginRemoveRows(parentIndex, first, last);
+    TreeItem* parentItem = static_cast<TreeItem *>(parentIndex.internalPointer());
+
+    // Go to the last bookmark to remove
+    KBookmark bk = parent.first();
+    for (int i = 1; i < last; ++i)
+        bk = parent.next(bk);
+    // Then remove bookmarks, iterating backwards until 'first'
+    // (so that numbering still works)
+    for (int i = last; i >= first; --i) {
+        KBookmark prev = parent.previous(bk);
+        parent.deleteBookmark(bk);
+        bk = prev;
+    }
+
+    parentItem->deleteChildren(first, last);
+    endRemoveRows();
+}
+#endif
+
+void KBookmarkModel::removeBookmark(KBookmark bookmark)
+{
+    KBookmarkGroup parentGroup = bookmark.parentGroup();
+    const QModelIndex parentIndex = indexForBookmark(parentGroup);
+    const int pos = bookmark.positionInParent();
+    beginRemoveRows(parentIndex, pos, pos);
+    TreeItem* parentItem = static_cast<TreeItem *>(parentIndex.internalPointer());
+
+    parentGroup.deleteBookmark(bookmark);
+
+    parentItem->deleteChildren(pos, pos);
+    endRemoveRows();
 }
 
 #include "bookmarkmodel.moc"

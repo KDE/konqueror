@@ -20,6 +20,7 @@
 
 #include <QtCore/QAbstractItemModel>
 
+class KBookmarkGroup;
 class KBookmarkManager;
 class KBookmark;
 
@@ -42,10 +43,6 @@ class KBookmarkModel : public QAbstractItemModel
     };
 
 public:
-    // Those keditbookmarks classes need to access beginInsertRows etc.
-    friend class KBookmarkModelInsertSentry;
-    friend class KBookmarkModelRemoveSentry;
-
     KBookmarkModel(const KBookmark& root, KBookmarkManager* manager, QObject* parent = 0);
     void setRoot(const KBookmark& root);
 
@@ -66,11 +63,19 @@ public:
     KBookmark bookmarkForIndex(const QModelIndex& index) const;
     void emitDataChanged(const KBookmark& bk);
 
+    /// Call this before inserting items into the bookmark group
+    void beginInsert(const KBookmarkGroup& group, int first, int last);
+    /// Call this after item insertion is done
+    void endInsert();
+
+    /// Remove the bookmark
+    void removeBookmark(KBookmark bookmark);
+
     //drag and drop
-    virtual bool dropMimeData ( const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent );
+    virtual bool dropMimeData(const QMimeData * data, Qt::DropAction action, int row, int column, const QModelIndex & parent);
     virtual QStringList mimeTypes() const;
-    virtual QMimeData * mimeData( const QModelIndexList & indexes ) const;
-    virtual Qt::DropActions supportedDropActions () const;
+    virtual QMimeData * mimeData(const QModelIndexList & indexes) const;
+    virtual Qt::DropActions supportedDropActions() const;
 
 private:
     class Private;
