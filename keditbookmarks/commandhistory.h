@@ -24,19 +24,20 @@
 class QUndoCommand;
 class KActionCollection;
 
+// TODO namespacing
 class CommandHistory : public QObject
 {
     Q_OBJECT
 public:
-    CommandHistory(KActionCollection *collection);
+    CommandHistory(QObject* parent = 0);
+    void createActions(KActionCollection *collection);
+
     virtual ~CommandHistory() {}
 
     void notifyDocSaved();
 
     void clearHistory();
     void addCommand(QUndoCommand *);
-
-    static CommandHistory *self();
 
 Q_SIGNALS:
     void notifyCommandExecuted();
@@ -51,7 +52,6 @@ private:
 private:
     // Ported from K3Command/K3CommandHistory to QUndoCommand/KUndoStack for KDE-4.4.0
     KUndoStack m_commandHistory;
-    static CommandHistory *s_self;
 };
 
 #endif /* COMMANDHISTORY_H */

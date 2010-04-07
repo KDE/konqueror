@@ -274,7 +274,7 @@ public:
 
     /**
      * Creates the search line.  This can be useful to reimplement in cases where
-     * a K3ListViewSearchLine subclass is used.
+     * a KViewSearchLine subclass is used.
      */
     virtual KViewSearchLine *createSearchLine(QAbstractItemView *view);
 

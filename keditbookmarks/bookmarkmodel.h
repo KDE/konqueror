@@ -20,6 +20,7 @@
 
 #include <QtCore/QAbstractItemModel>
 
+class CommandHistory;
 class KBookmarkGroup;
 class KBookmarkManager;
 class KBookmark;
@@ -43,10 +44,12 @@ class KBookmarkModel : public QAbstractItemModel
     };
 
 public:
-    KBookmarkModel(const KBookmark& root, KBookmarkManager* manager, QObject* parent = 0);
+    KBookmarkModel(const KBookmark& root, CommandHistory* commandHistory, KBookmarkManager* manager, QObject* parent = 0);
     void setRoot(const KBookmark& root);
 
     virtual ~KBookmarkModel();
+
+    CommandHistory* commandHistory();
 
     //reimplemented functions
     virtual QVariant data(const QModelIndex &index, int role) const;

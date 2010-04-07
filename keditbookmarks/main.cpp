@@ -140,7 +140,7 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv) {
         : KStandardDirs::locateLocal("data", QLatin1String("konqueror/bookmarks.xml"));
 
     if (!isGui) {
-        GlobalBookmarkManager::self()->createManager(filename, QString());
+        GlobalBookmarkManager::self()->createManager(filename, QString(), 0 /*no command history*/);
         GlobalBookmarkManager::ExportType exportType = GlobalBookmarkManager::MozillaExport; // uumm.. can i just set it to -1 ?
         int got = 0;
         const char *arg, *arg2 = 0, *importType = 0;

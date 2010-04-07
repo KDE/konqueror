@@ -67,7 +67,8 @@ KEBApp::KEBApp(
     QDBusConnection::sessionBus().registerObject("/keditbookmarks", this, QDBusConnection::ExportScriptableSlots);
     Q_UNUSED(address);//FIXME sets the current item
 
-    m_cmdHistory = new CommandHistory(actionCollection());
+    m_cmdHistory = new CommandHistory(this);
+    m_cmdHistory->createActions(actionCollection());
     connect(m_cmdHistory, SIGNAL(notifyCommandExecuted()), this, SLOT(notifyCommandExecuted()));
 
     s_topLevel = this;
@@ -85,7 +86,7 @@ KEBApp::KEBApp(
 
     m_canPaste = false;
 
-    GlobalBookmarkManager::self()->createManager(m_bookmarksFilename, m_dbusObjectName);
+    GlobalBookmarkManager::self()->createManager(m_bookmarksFilename, m_dbusObjectName, m_cmdHistory);
 
     mBookmarkListView = new BookmarkListView();
     mBookmarkListView->setModel( GlobalBookmarkManager::self()->model() );
@@ -104,7 +105,7 @@ KEBApp::KEBApp(
     listLayout->addWidget(searchline);
     listLayout->addWidget(mBookmarkListView);
 
-    m_bkinfo = new BookmarkInfoWidget(mBookmarkListView);
+    m_bkinfo = new BookmarkInfoWidget(mBookmarkListView, GlobalBookmarkManager::self()->model());
 
     listLayout->addWidget(m_bkinfo);
 
@@ -150,7 +151,7 @@ void KEBApp::reset(const QString & caption, const QString & bookmarksFileName)
     //FIXME check this code, probably should be model()->setRoot instead of resetModel()
     m_caption = caption;
     m_bookmarksFilename = bookmarksFileName;
-    GlobalBookmarkManager::self()->createManager(m_bookmarksFilename, m_dbusObjectName); //FIXME this is still a memory leak (iff called by slotLoad)
+    GlobalBookmarkManager::self()->createManager(m_bookmarksFilename, m_dbusObjectName, m_cmdHistory); //FIXME this is still a memory leak (iff called by slotLoad)
     GlobalBookmarkManager::self()->model()->resetModel();
     updateActions();
 }
@@ -419,7 +420,7 @@ KEBApp::~KEBApp() {
 
     s_topLevel = 0;
     delete m_cmdHistory;
-    delete ActionsImpl::self();
+    delete m_actionsImpl;
     delete mBookmarkListView;
     delete GlobalBookmarkManager::self();
 }

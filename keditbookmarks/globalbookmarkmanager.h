@@ -22,6 +22,7 @@
 #include <kbookmark.h>
 #include <QObject>
 
+class CommandHistory;
 class KBookmarkModel;
 class KBookmark;
 class KBookmarkManager;
@@ -42,7 +43,7 @@ public:
     KBookmarkManager* mgr() const { return m_mgr; }
     QString path() const;
 
-    void createManager(const QString &filename, const QString &dbusObjectName);
+    void createManager(const QString &filename, const QString &dbusObjectName, CommandHistory* commandHistory);
     void notifyManagers(const KBookmarkGroup& grp);
     void notifyManagers();
     bool managerSave();

@@ -25,6 +25,7 @@
 #include <kxmlguifactory.h>
 #include "bookmarklistview.h"
 
+class ActionsImpl;
 class CommandHistory;
 class KBookmarkModel;
 class KBookmarkManager;
@@ -94,6 +95,7 @@ public:
     KBookmark::List selectedBookmarks() const;
     KBookmark::List selectedBookmarksExpanded() const;
     KBookmark::List allBookmarks() const;
+
 public Q_SLOTS:
     void notifyCommandExecuted();
 
@@ -119,6 +121,7 @@ private:
 
     static KEBApp *s_topLevel;
 
+    ActionsImpl* m_actionsImpl;
     CommandHistory *m_cmdHistory;
     QString m_bookmarksFilename;
     QString m_caption;

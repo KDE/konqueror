@@ -22,12 +22,16 @@
 #define __actionsimpl_h
 
 #include <QtCore/QObject>
+class CommandHistory;
+class KBookmarkModel;
 
 class ActionsImpl : public QObject
 {
    Q_OBJECT
 
 public:
+   ActionsImpl(QObject* parent, KBookmarkModel* model) : QObject(parent), m_model(model) { }
+   ~ActionsImpl();
    bool save();
 
 public Q_SLOTS:
@@ -62,15 +66,9 @@ public Q_SLOTS:
    void slotExportIE();
    void slotExportNS();
    void slotExportMoz();
-
-   static ActionsImpl* self() { if (!s_self) { s_self = new ActionsImpl(); }; return s_self; }
-
-public:
-   ~ActionsImpl();
-
 private:
-   ActionsImpl() { }
-   static ActionsImpl *s_self;
+    CommandHistory* commandHistory();
+    KBookmarkModel* m_model;
 };
 
 #endif

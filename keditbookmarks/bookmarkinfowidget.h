@@ -23,6 +23,7 @@
 #include <kbookmark.h>
 #include <QtGui/QWidget>
 
+class KBookmarkModel;
 class BookmarkListView;
 class EditCommand;
 
@@ -33,8 +34,8 @@ class QTimer;
 class BookmarkInfoWidget : public QWidget {
     Q_OBJECT
 public:
-    explicit BookmarkInfoWidget(BookmarkListView * lv, QWidget * = 0);
-    
+    explicit BookmarkInfoWidget(BookmarkListView * lv, KBookmarkModel* model, QWidget * = 0);
+
     KBookmark bookmark() { return m_bk; }
     void updateStatus(); //FIXME where was this called?
 
@@ -59,6 +60,7 @@ private:
     KLineEdit  *m_visitdate_le, *m_credate_le,
               *m_visitcount_le;
     KBookmark m_bk;
+    KBookmarkModel* m_model;
     BookmarkListView * mBookmarkListView;
 };
 

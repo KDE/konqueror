@@ -152,7 +152,7 @@ void BookmarkInfoWidget::slotTextChangedTitle(const QString &str)
     else
     {
         titlecmd = new EditCommand(m_bk.address(), 0, str);
-        CommandHistory::self()->addCommand(titlecmd);
+        m_model->commandHistory()->addCommand(titlecmd);
     }
 }
 
@@ -179,7 +179,7 @@ void BookmarkInfoWidget::slotTextChangedURL(const QString &str) {
     else
     {
         urlcmd = new EditCommand(m_bk.address(), 1, str);
-        CommandHistory::self()->addCommand(urlcmd);
+        m_model->commandHistory()->addCommand(urlcmd);
     }
 }
 
@@ -206,7 +206,7 @@ void BookmarkInfoWidget::slotTextChangedComment(const QString &str) {
     else
     {
         commentcmd = new EditCommand(m_bk.address(), 2, str);
-        CommandHistory::self()->addCommand(commentcmd);
+        m_model->commandHistory()->addCommand(commentcmd);
     }
 }
 
@@ -222,8 +222,8 @@ void BookmarkInfoWidget::slotUpdate()
         showBookmark( KBookmark() );
 }
 
-BookmarkInfoWidget::BookmarkInfoWidget(BookmarkListView * lv, QWidget *parent)
-    : QWidget(parent), mBookmarkListView(lv) {
+BookmarkInfoWidget::BookmarkInfoWidget(BookmarkListView * lv, KBookmarkModel* model, QWidget *parent)
+    : QWidget(parent), m_model(model), mBookmarkListView(lv) {
 
     connect(mBookmarkListView->selectionModel(), SIGNAL(selectionChanged(const QItemSelection &, const QItemSelection &)),
             SLOT( slotUpdate()));
@@ -233,8 +233,7 @@ BookmarkInfoWidget::BookmarkInfoWidget(BookmarkListView * lv, QWidget *parent)
 
     timer = new QTimer(this);
     timer->setSingleShot(true);
-    connect(timer, SIGNAL( timeout() ), SLOT( commitChanges()));
-
+    connect(timer, SIGNAL(timeout()), SLOT(commitChanges()));
 
     titlecmd = 0;
     urlcmd = 0;

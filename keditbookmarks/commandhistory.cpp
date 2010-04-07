@@ -24,25 +24,18 @@
 #include <QAction>
 #include <QUndoCommand>
 
-CommandHistory* CommandHistory::s_self = 0;
-
-CommandHistory::CommandHistory(KActionCollection *actionCollection)
-    : m_commandHistory()
+CommandHistory::CommandHistory(QObject* parent)
+    : QObject(parent), m_commandHistory()
 {
-    Q_ASSERT(!s_self);
-    s_self = this; // this is hacky
+}
 
+void CommandHistory::createActions(KActionCollection *actionCollection)
+{
     // TODO use QUndoView?
     QAction* undoAction = m_commandHistory.createUndoAction(actionCollection);
     connect(undoAction, SIGNAL(triggered()), this, SLOT(undo()));
     QAction* redoAction = m_commandHistory.createRedoAction(actionCollection);
     connect(redoAction, SIGNAL(triggered()), this, SLOT(redo()));
-}
-
-CommandHistory* CommandHistory::self()
-{
-    Q_ASSERT(s_self);
-    return s_self;
 }
 
 void CommandHistory::undo()
