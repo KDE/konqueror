@@ -21,6 +21,8 @@
 
 #include <kundostack.h>
 #include <QObject>
+class KBookmarkGroup;
+class KBookmarkManager;
 class QUndoCommand;
 class KActionCollection;
 
@@ -30,6 +32,11 @@ class CommandHistory : public QObject
     Q_OBJECT
 public:
     CommandHistory(QObject* parent = 0);
+
+    // Call this before putting any commands into the history!
+    void setBookmarkManager(KBookmarkManager* manager);
+    KBookmarkManager* bookmarkManager();
+
     void createActions(KActionCollection *collection);
 
     virtual ~CommandHistory() {}
@@ -40,7 +47,7 @@ public:
     void addCommand(QUndoCommand *);
 
 Q_SIGNALS:
-    void notifyCommandExecuted();
+    void notifyCommandExecuted(const KBookmarkGroup&);
 
 public Q_SLOTS:
     void undo();
@@ -50,6 +57,7 @@ private:
     void commandExecuted(const QUndoCommand *k);
 
 private:
+    KBookmarkManager* m_manager;
     // Ported from K3Command/K3CommandHistory to QUndoCommand/KUndoStack for KDE-4.4.0
     KUndoStack m_commandHistory;
 };

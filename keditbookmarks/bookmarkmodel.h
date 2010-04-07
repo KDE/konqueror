@@ -44,11 +44,12 @@ class KBookmarkModel : public QAbstractItemModel
     };
 
 public:
-    KBookmarkModel(const KBookmark& root, CommandHistory* commandHistory, KBookmarkManager* manager, QObject* parent = 0);
+    KBookmarkModel(const KBookmark& root, CommandHistory* commandHistory, QObject* parent = 0);
     void setRoot(const KBookmark& root);
 
     virtual ~KBookmarkModel();
 
+    KBookmarkManager* bookmarkManager();
     CommandHistory* commandHistory();
 
     //reimplemented functions
@@ -80,9 +81,13 @@ public:
     virtual QMimeData * mimeData(const QModelIndexList & indexes) const;
     virtual Qt::DropActions supportedDropActions() const;
 
+public Q_SLOTS:
+    void notifyManagers(const KBookmarkGroup& grp);
+
 private:
     class Private;
     Private * const d;
+    Q_PRIVATE_SLOT(d, void _kd_slotBookmarksChanged(const QString&, const QString&))
 };
 
 #endif

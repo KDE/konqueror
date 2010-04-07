@@ -21,7 +21,6 @@
 */
 
 #include "commands.h"
-#include "globalbookmarkmanager.h"
 #include "bookmarkmodel.h"
 
 #include "kinsertionsort.h"
@@ -47,7 +46,7 @@ QString KEBMacroCommand::affectedBookmarks() const
     return affectBook;
 }
 
-DeleteManyCommand::DeleteManyCommand(const QString &name, const QList<KBookmark> & bookmarks)
+DeleteManyCommand::DeleteManyCommand(KBookmarkModel* model, const QString &name, const QList<KBookmark> & bookmarks)
     : KEBMacroCommand(name)
 {
     QList<KBookmark>::const_iterator it, begin;
@@ -56,40 +55,40 @@ DeleteManyCommand::DeleteManyCommand(const QString &name, const QList<KBookmark>
     while(begin != it)
     {
         --it;
-        new DeleteCommand((*it).address(), false, this);
+        new DeleteCommand(model, (*it).address(), false, this);
     }
 }
 
 ////
 
-CreateCommand::CreateCommand(const QString &address, QUndoCommand* parent)
-    : QUndoCommand(parent), m_to(address),
+CreateCommand::CreateCommand(KBookmarkModel* model, const QString &address, QUndoCommand* parent)
+    : QUndoCommand(parent), m_model(model), m_to(address),
       m_group(false), m_separator(true), m_originalBookmark(QDomElement())
 {
     setText(i18n("Insert Separator"));
 }
 
-CreateCommand::CreateCommand(const QString &address,
+CreateCommand::CreateCommand(KBookmarkModel* model, const QString &address,
                              const QString &text, const QString &iconPath,
                              const KUrl &url, QUndoCommand* parent)
-    : QUndoCommand(parent), m_to(address), m_text(text), m_iconPath(iconPath), m_url(url),
+    : QUndoCommand(parent), m_model(model), m_to(address), m_text(text), m_iconPath(iconPath), m_url(url),
       m_group(false), m_separator(false), m_originalBookmark(QDomElement())
 {
     setText(i18n("Create Bookmark"));
 }
 
-CreateCommand::CreateCommand(const QString &address,
+CreateCommand::CreateCommand(KBookmarkModel* model, const QString &address,
                              const QString &text, const QString &iconPath,
                              bool open, QUndoCommand* parent)
-    : QUndoCommand(parent), m_to(address), m_text(text), m_iconPath(iconPath),
+    : QUndoCommand(parent), m_model(model), m_to(address), m_text(text), m_iconPath(iconPath),
       m_group(true), m_separator(false), m_open(open), m_originalBookmark(QDomElement())
 {
     setText(i18n("Create Folder"));
 }
 
-CreateCommand::CreateCommand(const QString &address,
+CreateCommand::CreateCommand(KBookmarkModel* model, const QString &address,
                              const KBookmark &original, const QString &name, QUndoCommand* parent)
-    : QUndoCommand(parent), m_to(address), m_group(false), m_separator(false),
+    : QUndoCommand(parent), m_model(model), m_to(address), m_group(false), m_separator(false),
       m_open(false), m_originalBookmark(original),
       m_originalBookmarkDocRef(m_originalBookmark.internalElement().ownerDocument())
 {
@@ -100,18 +99,18 @@ void CreateCommand::redo()
 {
     QString parentAddress = KBookmark::parentAddress(m_to);
     KBookmarkGroup parentGroup =
-        GlobalBookmarkManager::bookmarkAt(parentAddress).toGroup();
+        m_model->bookmarkManager()->findByAddress(parentAddress).toGroup();
 
     QString previousSibling = KBookmark::previousAddress(m_to);
 
     // kDebug() << "previousSibling=" << previousSibling;
     KBookmark prev = (previousSibling.isEmpty())
         ? KBookmark(QDomElement())
-        : GlobalBookmarkManager::bookmarkAt(previousSibling);
+        : m_model->bookmarkManager()->findByAddress(previousSibling);
 
     KBookmark bk = KBookmark(QDomElement());
     const int pos = KBookmark::positionInParent(m_to);
-    GlobalBookmarkManager::self()->model()->beginInsert(parentGroup, pos, pos);
+    m_model->beginInsert(parentGroup, pos, pos);
 
     if (m_separator) {
         bk = parentGroup.createNewSeparator();
@@ -140,7 +139,7 @@ void CreateCommand::redo()
     }
 
     Q_ASSERT(bk.address() == m_to);
-    GlobalBookmarkManager::self()->model()->endInsert();
+    m_model->endInsert();
 }
 
 QString CreateCommand::finalAddress() const
@@ -151,10 +150,10 @@ QString CreateCommand::finalAddress() const
 
 void CreateCommand::undo()
 {
-    KBookmark bk = GlobalBookmarkManager::bookmarkAt(m_to);
+    KBookmark bk = m_model->bookmarkManager()->findByAddress(m_to);
     Q_ASSERT(!bk.isNull() && !bk.parentGroup().isNull());
 
-    GlobalBookmarkManager::self()->model()->removeBookmark(bk);
+    m_model->removeBookmark(bk);
 }
 
 QString CreateCommand::affectedBookmarks() const
@@ -164,8 +163,8 @@ QString CreateCommand::affectedBookmarks() const
 
 /* -------------------------------------- */
 
-EditCommand::EditCommand(const QString & address, int col, const QString & newValue, QUndoCommand* parent)
-      : QUndoCommand(parent), mAddress(address), mCol(col)
+EditCommand::EditCommand(KBookmarkModel* model, const QString & address, int col, const QString & newValue, QUndoCommand* parent)
+      : QUndoCommand(parent), m_model(model), mAddress(address), mCol(col)
 {
     kDebug() << address << col << newValue;
     if(mCol == 1)
@@ -192,7 +191,7 @@ EditCommand::EditCommand(const QString & address, int col, const QString & newVa
 
 void EditCommand::redo()
 {
-    KBookmark bk = GlobalBookmarkManager::bookmarkAt(mAddress);
+    KBookmark bk = m_model->bookmarkManager()->findByAddress(mAddress);
     if(mCol==-2)
     {
         mOldValue = bk.internalElement().attribute("toolbar");
@@ -221,13 +220,13 @@ void EditCommand::redo()
         mOldValue = bk.description();
         bk.setDescription(mNewValue);
     }
-    GlobalBookmarkManager::self()->model()->emitDataChanged(bk);
+    m_model->emitDataChanged(bk);
 }
 
 void EditCommand::undo()
 {
     kDebug() << "Setting old value" << mOldValue << "in bk" << mAddress << "col" << mCol;
-    KBookmark bk = GlobalBookmarkManager::bookmarkAt(mAddress);
+    KBookmark bk = m_model->bookmarkManager()->findByAddress(mAddress);
     if(mCol==-2)
     {
         bk.internalElement().setAttribute("toolbar", mOldValue);
@@ -248,7 +247,7 @@ void EditCommand::undo()
     {
         bk.setDescription(mOldValue);
     }
-    GlobalBookmarkManager::self()->model()->emitDataChanged(bk);
+    m_model->emitDataChanged(bk);
 }
 
 void EditCommand::modify(const QString &newValue)
@@ -309,9 +308,15 @@ QString EditCommand::setNodeText(const KBookmark& bk, const QStringList &nodehie
 
 /* -------------------------------------- */
 
+DeleteCommand::DeleteCommand(KBookmarkModel* model, const QString &from, bool contentOnly, QUndoCommand* parent)
+    : QUndoCommand(parent), m_model(model), m_from(from), m_cmd(0), m_subCmd(0), m_contentOnly(contentOnly)
+{
+    // NOTE - DeleteCommand needs no text, it is always embedded in a macrocommand
+}
+
 void DeleteCommand::redo()
 {
-    KBookmark bk = GlobalBookmarkManager::bookmarkAt(m_from);
+    KBookmark bk = m_model->bookmarkManager()->findByAddress(m_from);
     Q_ASSERT(!bk.isNull());
 
     if (m_contentOnly) {
@@ -336,16 +341,16 @@ void DeleteCommand::redo()
 //FIXME this removes the comments, that's bad!
     if (!m_cmd) {
         if (bk.isGroup()) {
-            m_cmd = new CreateCommand(
+            m_cmd = new CreateCommand(m_model,
                     m_from, bk.fullText(), bk.icon(),
                     bk.internalElement().attribute("folded") == "no");
-            m_subCmd = deleteAll(bk.toGroup());
+            m_subCmd = deleteAll(m_model, bk.toGroup());
             m_subCmd->redo();
 
         } else {
             m_cmd = (bk.isSeparator())
-                ? new CreateCommand(m_from)
-                : new CreateCommand(m_from, bk.fullText(),
+                ? new CreateCommand(m_model, m_from)
+                : new CreateCommand(m_model, m_from, bk.fullText(),
                         bk.icon(), bk.url());
         }
     }
@@ -373,7 +378,7 @@ QString DeleteCommand::affectedBookmarks() const
     return KBookmark::parentAddress(m_from);
 }
 
-KEBMacroCommand* DeleteCommand::deleteAll(const KBookmarkGroup & parentGroup)
+KEBMacroCommand* DeleteCommand::deleteAll(KBookmarkModel* model, const KBookmarkGroup & parentGroup)
 {
     KEBMacroCommand *cmd = new KEBMacroCommand(QString());
     QStringList lstToDelete;
@@ -383,15 +388,15 @@ KEBMacroCommand* DeleteCommand::deleteAll(const KBookmarkGroup & parentGroup)
         lstToDelete.prepend(bk.address());
     for (QStringList::const_iterator it = lstToDelete.constBegin();
             it != lstToDelete.constEnd(); ++it) {
-        new DeleteCommand((*it), false, cmd);
+        new DeleteCommand(model, (*it), false, cmd);
     }
     return cmd;
 }
 
 /* -------------------------------------- */
 
-MoveCommand::MoveCommand(const QString &from, const QString &to, const QString &name, QUndoCommand* parent)
-       : QUndoCommand(parent), m_from(from), m_to(to), m_cc(0), m_dc(0)
+MoveCommand::MoveCommand(KBookmarkModel* model, const QString &from, const QString &to, const QString &name, QUndoCommand* parent)
+       : QUndoCommand(parent), m_model(model), m_from(from), m_to(to), m_cc(0), m_dc(0)
 {
     setText(i18n("Move %1", name));
 }
@@ -400,12 +405,12 @@ void MoveCommand::redo()
 {
     // kDebug() << "moving from=" << m_from << "to=" << m_to;
 
-    KBookmark fromBk = GlobalBookmarkManager::self()->mgr()->findByAddress( m_from );
+    KBookmark fromBk = m_model->bookmarkManager()->findByAddress( m_from );
 
-    m_cc = new CreateCommand(m_to, fromBk, QString());
+    m_cc = new CreateCommand(m_model, m_to, fromBk, QString());
     m_cc->redo();
 
-    m_dc = new DeleteCommand(fromBk.address());
+    m_dc = new DeleteCommand(m_model, fromBk.address());
     m_dc->redo();
 }
 
@@ -461,10 +466,15 @@ class SortByName {
 
 /* -------------------------------------- */
 
+SortCommand::SortCommand(KBookmarkModel* model, const QString &name, const QString &groupAddress, QUndoCommand* parent)
+    : KEBMacroCommand(name, parent), m_model(model), m_groupAddress(groupAddress)
+{
+}
+
 void SortCommand::redo()
 {
     if (childCount() == 0) {
-        KBookmarkGroup grp = GlobalBookmarkManager::bookmarkAt(m_groupAddress).toGroup();
+        KBookmarkGroup grp = m_model->bookmarkManager()->findByAddress(m_groupAddress).toGroup();
         Q_ASSERT(!grp.isNull());
         SortItem firstChild(grp.first());
         // this will call moveAfter, which will add
@@ -487,7 +497,7 @@ void SortCommand::moveAfter(const SortItem &moveMe,
         // move after "afterMe"
         : KBookmark::nextAddress(afterMe.bookmark().address());
 
-    MoveCommand *cmd = new MoveCommand(moveMe.bookmark().address(),
+    MoveCommand *cmd = new MoveCommand(m_model, moveMe.bookmark().address(),
                                        destAddress, QString(), this);
     cmd->redo();
 }
@@ -503,24 +513,24 @@ QString SortCommand::affectedBookmarks() const
 
 /* -------------------------------------- */
 
-KEBMacroCommand* CmdGen::setAsToolbar(const KBookmark &bk)
+KEBMacroCommand* CmdGen::setAsToolbar(KBookmarkModel* model, const KBookmark &bk)
 {
     KEBMacroCommand *mcmd = new KEBMacroCommand(i18n("Set as Bookmark Toolbar"));
 
-    KBookmarkGroup oldToolbar = GlobalBookmarkManager::self()->mgr()->toolbar();
+    KBookmarkGroup oldToolbar = model->bookmarkManager()->toolbar();
     if (!oldToolbar.isNull())
     {
-        new EditCommand(oldToolbar.address(), -2, "no", mcmd); //toolbar
-        new EditCommand(oldToolbar.address(), -1, "", mcmd); //icon
+        new EditCommand(model, oldToolbar.address(), -2, "no", mcmd); //toolbar
+        new EditCommand(model, oldToolbar.address(), -1, "", mcmd); //icon
     }
 
-    new EditCommand(bk.address(), -2, "yes", mcmd);
-    new EditCommand(bk.address(), -1, "bookmark-toolbar", mcmd);
+    new EditCommand(model, bk.address(), -2, "yes", mcmd);
+    new EditCommand(model, bk.address(), -1, "bookmark-toolbar", mcmd);
 
     return mcmd;
 }
 
-KEBMacroCommand* CmdGen::insertMimeSource(const QString &cmdName, const QMimeData *data, const QString &addr)
+KEBMacroCommand* CmdGen::insertMimeSource(KBookmarkModel* model, const QString &cmdName, const QMimeData *data, const QString &addr)
 {
     KEBMacroCommand *mcmd = new KEBMacroCommand(cmdName);
     QString currentAddress = addr;
@@ -531,7 +541,7 @@ KEBMacroCommand* CmdGen::insertMimeSource(const QString &cmdName, const QMimeDat
 
     for (it = bookmarks.constBegin(); it != end; ++it)
     {
-        new CreateCommand(currentAddress, (*it), QString(), mcmd);
+        new CreateCommand(model, currentAddress, (*it), QString(), mcmd);
         currentAddress = KBookmark::nextAddress(currentAddress);
     }
     return mcmd;
@@ -539,7 +549,7 @@ KEBMacroCommand* CmdGen::insertMimeSource(const QString &cmdName, const QMimeDat
 
 
 //FIXME copy=true needed? what is the difference with insertMimeSource
-KEBMacroCommand* CmdGen::itemsMoved(const QList<KBookmark> & items,
+KEBMacroCommand* CmdGen::itemsMoved(KBookmarkModel* model, const QList<KBookmark> & items,
         const QString &newAddress, bool copy) {
     KEBMacroCommand *mcmd = new KEBMacroCommand(copy ? i18n("Copy Items")
             : i18n("Move Items"));
@@ -551,7 +561,7 @@ KEBMacroCommand* CmdGen::itemsMoved(const QList<KBookmark> & items,
     QString bkInsertAddr = newAddress;
     for (; it != end; ++it) {
         if (copy) {
-            CreateCommand *cmd = new CreateCommand(
+            CreateCommand *cmd = new CreateCommand(model,
                     bkInsertAddr,
                     KBookmark((*it).internalElement()
                     .cloneNode(true).toElement()),
@@ -566,7 +576,7 @@ KEBMacroCommand* CmdGen::itemsMoved(const QList<KBookmark> & items,
             if (bkInsertAddr.startsWith(oldAddress))
                 continue; // trying to insert a parent into one of its children, ignore :)
 
-            MoveCommand *cmd = new MoveCommand(oldAddress, bkInsertAddr,
+            MoveCommand *cmd = new MoveCommand(model, oldAddress, bkInsertAddr,
                                                (*it).text(), mcmd);
             //cmd->redo();
 
@@ -578,4 +588,3 @@ KEBMacroCommand* CmdGen::itemsMoved(const QList<KBookmark> & items,
 
     return mcmd;
 }
-

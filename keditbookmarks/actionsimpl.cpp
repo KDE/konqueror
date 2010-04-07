@@ -326,7 +326,7 @@ void KEBApp::setCancelTestsEnabled(bool enabled) {
 void ActionsImpl::slotCut() {
     KEBApp::self()->bkInfo()->commitChanges();
     slotCopy();
-    DeleteManyCommand *mcmd = new DeleteManyCommand( i18n("Cut Items"), KEBApp::self()->selectedBookmarks() );
+    DeleteManyCommand *mcmd = new DeleteManyCommand(m_model, i18n("Cut Items"), KEBApp::self()->selectedBookmarks() );
     commandHistory()->addCommand(mcmd);
 
 }
@@ -351,7 +351,7 @@ void ActionsImpl::slotPaste() {
     else
         addr = bk.address();
 
-    KEBMacroCommand *mcmd = CmdGen::insertMimeSource( i18n("Paste"), QApplication::clipboard()->mimeData(), addr);
+    KEBMacroCommand *mcmd = CmdGen::insertMimeSource( m_model, i18n("Paste"), QApplication::clipboard()->mimeData(), addr);
     commandHistory()->addCommand(mcmd);
 }
 
@@ -366,7 +366,7 @@ void ActionsImpl::slotNewFolder()
     if (!ok)
         return;
 
-    CreateCommand *cmd = new CreateCommand(
+    CreateCommand *cmd = new CreateCommand(m_model,
                                 KEBApp::self()->insertAddress(),
                                 str, "bookmark_folder", /*open*/ true);
     commandHistory()->addCommand(cmd);
@@ -376,7 +376,7 @@ void ActionsImpl::slotNewBookmark()
 {
     KEBApp::self()->bkInfo()->commitChanges();
     // TODO - make a setCurrentItem(Command *) which uses finaladdress interface
-    CreateCommand * cmd = new CreateCommand(
+    CreateCommand * cmd = new CreateCommand(m_model,
                                 KEBApp::self()->insertAddress(),
                                 QString(), "www", KUrl("http://"));
     commandHistory()->addCommand(cmd);
@@ -385,7 +385,7 @@ void ActionsImpl::slotNewBookmark()
 void ActionsImpl::slotInsertSeparator()
 {
     KEBApp::self()->bkInfo()->commitChanges();
-    CreateCommand * cmd = new CreateCommand(KEBApp::self()->insertAddress());
+    CreateCommand * cmd = new CreateCommand(m_model, KEBApp::self()->insertAddress());
     commandHistory()->addCommand(cmd);
 }
 
@@ -394,7 +394,7 @@ void ActionsImpl::slotImport() {
     qDebug() << "ActionsImpl::slotImport() where sender()->name() == "
                << sender()->objectName() << endl;
     ImportCommand* import
-        = ImportCommand::performImport(sender()->objectName(), KEBApp::self());
+        = ImportCommand::performImport(m_model, sender()->objectName(), KEBApp::self());
     if (!import)
         return;
     commandHistory()->addCommand(import);
@@ -493,7 +493,7 @@ void ActionsImpl::slotRecursiveSort() {
     QList<KBookmark> bookmarks = lister.getList(bk.toGroup());
     bookmarks << bk.toGroup();
     for (QList<KBookmark>::ConstIterator it = bookmarks.constBegin(); it != bookmarks.constEnd(); ++it) {
-        new SortCommand("", (*it).address(), mcmd);
+        new SortCommand(m_model, "", (*it).address(), mcmd);
     }
     commandHistory()->addCommand(mcmd);
 }
@@ -502,7 +502,7 @@ void ActionsImpl::slotSort() {
     KEBApp::self()->bkInfo()->commitChanges();
     KBookmark bk = KEBApp::self()->firstSelected();
     Q_ASSERT(bk.isGroup());
-    SortCommand *cmd = new SortCommand(i18n("Sort Alphabetically"), bk.address());
+    SortCommand *cmd = new SortCommand(m_model, i18n("Sort Alphabetically"), bk.address());
     commandHistory()->addCommand(cmd);
 }
 
@@ -510,7 +510,7 @@ void ActionsImpl::slotSort() {
 
 void ActionsImpl::slotDelete() {
     KEBApp::self()->bkInfo()->commitChanges();
-    DeleteManyCommand *mcmd = new DeleteManyCommand(i18n("Delete Items"), KEBApp::self()->selectedBookmarks());
+    DeleteManyCommand *mcmd = new DeleteManyCommand(m_model, i18n("Delete Items"), KEBApp::self()->selectedBookmarks());
     commandHistory()->addCommand(mcmd);
 }
 
@@ -548,7 +548,7 @@ void ActionsImpl::slotSetAsToolbar() {
     KEBApp::self()->bkInfo()->commitChanges();
     KBookmark bk = KEBApp::self()->firstSelected();
     Q_ASSERT(bk.isGroup());
-    KEBMacroCommand *mcmd = CmdGen::setAsToolbar(bk);
+    KEBMacroCommand *mcmd = CmdGen::setAsToolbar(m_model, bk);
     commandHistory()->addCommand(mcmd);
 }
 
@@ -558,7 +558,7 @@ void ActionsImpl::slotChangeIcon() {
     const QString newIcon = KIconDialog::getIcon(KIconLoader::Small, KIconLoader::Place, false, 0, false, KEBApp::self());
     if (newIcon.isEmpty())
         return;
-    EditCommand *cmd = new EditCommand(bk.address(), -1, newIcon);
+    EditCommand *cmd = new EditCommand(m_model, bk.address(), -1, newIcon);
 
     commandHistory()->addCommand(cmd);
 }

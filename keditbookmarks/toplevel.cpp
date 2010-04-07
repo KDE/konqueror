@@ -69,7 +69,7 @@ KEBApp::KEBApp(
 
     m_cmdHistory = new CommandHistory(this);
     m_cmdHistory->createActions(actionCollection());
-    connect(m_cmdHistory, SIGNAL(notifyCommandExecuted()), this, SLOT(notifyCommandExecuted()));
+    connect(m_cmdHistory, SIGNAL(notifyCommandExecuted(KBookmarkGroup)), this, SLOT(notifyCommandExecuted()));
 
     s_topLevel = this;
 

@@ -31,7 +31,7 @@ GlobalBookmarkManager *GlobalBookmarkManager::s_mgr = 0;
 
 GlobalBookmarkManager::GlobalBookmarkManager()
     : QObject(0),
-      m_mgr(0), m_model(0), ignorenext(0)
+      m_mgr(0), m_model(0)
 {
 }
 
@@ -64,10 +64,12 @@ void GlobalBookmarkManager::createManager(const QString &filename, const QString
     kDebug()<<"DBus Object name: "<<dbusObjectName;
     m_mgr = KBookmarkManager::managerForFile(filename, dbusObjectName);
 
+    commandHistory->setBookmarkManager(m_mgr);
+
     if ( m_model ) {
         m_model->setRoot(root());
     } else {
-        m_model = new KBookmarkModel(root(), commandHistory, m_mgr, this);
+        m_model = new KBookmarkModel(root(), commandHistory, this);
     }
 
     connect(m_mgr, SIGNAL( changed(const QString &, const QString &) ),
@@ -75,21 +77,11 @@ void GlobalBookmarkManager::createManager(const QString &filename, const QString
 }
 
 void GlobalBookmarkManager::slotBookmarksChanged(const QString &, const QString &) {
-    if(ignorenext > 0) //We ignore the first changed signal after every change we did
-    {
-        --ignorenext;
-        return;
-    }
-
-    m_model->setRoot(m_mgr->root());
-
-    m_model->commandHistory()->clearHistory();
 }
 
 void GlobalBookmarkManager::notifyManagers(const KBookmarkGroup& grp)
 {
-    ++ignorenext;
-    mgr()->emitChanged(grp);
+    m_model->notifyManagers(grp);
 }
 
 void GlobalBookmarkManager::notifyManagers() {

@@ -19,14 +19,20 @@
 #include "commandhistory.h"
 #include <kdebug.h>
 #include "commands.h"
-#include "globalbookmarkmanager.h"
 #include <kactioncollection.h>
+#include <kbookmarkmanager.h>
 #include <QAction>
 #include <QUndoCommand>
 
 CommandHistory::CommandHistory(QObject* parent)
-    : QObject(parent), m_commandHistory()
+    : QObject(parent), m_manager(0), m_commandHistory()
 {
+}
+
+void CommandHistory::setBookmarkManager(KBookmarkManager* manager)
+{
+    clearHistory(); // we can't keep old commands pointing to the wrong model/manager...
+    m_manager = manager;
 }
 
 void CommandHistory::createActions(KActionCollection *actionCollection)
@@ -60,14 +66,13 @@ void CommandHistory::redo()
 
 void CommandHistory::commandExecuted(const QUndoCommand *k)
 {
-    emit notifyCommandExecuted();
-
     const IKEBCommand * cmd = dynamic_cast<const IKEBCommand *>(k);
     Q_ASSERT(cmd);
 
-    KBookmark bk = GlobalBookmarkManager::bookmarkAt(cmd->affectedBookmarks());
+    KBookmark bk = m_manager->findByAddress(cmd->affectedBookmarks());
     Q_ASSERT(bk.isGroup());
-    GlobalBookmarkManager::self()->notifyManagers(bk.toGroup());
+
+    emit notifyCommandExecuted(bk.toGroup());
 }
 
 void CommandHistory::notifyDocSaved()
@@ -85,8 +90,15 @@ void CommandHistory::addCommand(QUndoCommand *cmd)
 
 void CommandHistory::clearHistory()
 {
-    m_commandHistory.clear();
-    emit notifyCommandExecuted(); // not really, but we still want to update the GUI
+    if (m_commandHistory.count() > 0) {
+        m_commandHistory.clear();
+        emit notifyCommandExecuted(m_manager->root()); // not really, but we still want to update the GUI
+    }
+}
+
+KBookmarkManager* CommandHistory::bookmarkManager()
+{
+    return m_manager;
 }
 
 #include "commandhistory.moc"

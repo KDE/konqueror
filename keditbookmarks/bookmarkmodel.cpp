@@ -36,8 +36,8 @@
 class KBookmarkModel::Private
 {
 public:
-    Private(const KBookmark& root, CommandHistory* commandHistory, KBookmarkManager* manager)
-        : mRoot(root), mCommandHistory(commandHistory), mManager(manager), mInsertionData(0)
+    Private(KBookmarkModel* qq, const KBookmark& root, CommandHistory* commandHistory)
+        : q(qq), mRoot(root), mCommandHistory(commandHistory), mInsertionData(0), mIgnoreNext(0)
     {
         mRootItem = new TreeItem(root, 0);
     }
@@ -46,10 +46,13 @@ public:
         delete mRootItem;
         mRootItem = 0;
     }
+
+    void _kd_slotBookmarksChanged(const QString&, const QString&);
+
+    KBookmarkModel* q;
     TreeItem * mRootItem;
     KBookmark mRoot;
     CommandHistory* mCommandHistory;
-    KBookmarkManager* mManager;
 
     class InsertionData {
     public:
@@ -67,11 +70,13 @@ public:
         int mLast;
     };
     InsertionData* mInsertionData;
+    int mIgnoreNext;
 };
 
-KBookmarkModel::KBookmarkModel(const KBookmark& root, CommandHistory* commandHistory, KBookmarkManager* manager, QObject* parent)
-    : QAbstractItemModel(parent), d(new Private(root, commandHistory, manager))
+KBookmarkModel::KBookmarkModel(const KBookmark& root, CommandHistory* commandHistory, QObject* parent)
+    : QAbstractItemModel(parent), d(new Private(this, root, commandHistory))
 {
+    connect(commandHistory, SIGNAL(notifyCommandExecuted(KBookmarkGroup)), this, SLOT(notifyManagers(KBookmarkGroup)));
 }
 
 void KBookmarkModel::setRoot(const KBookmark& root)
@@ -183,7 +188,7 @@ bool KBookmarkModel::setData(const QModelIndex &index, const QVariant &value, in
     if (index.isValid() && role == Qt::EditRole)
     {
         kDebug() << value.toString();
-        d->mCommandHistory->addCommand(new EditCommand(bookmarkForIndex(index).address(), index.column(), value.toString()));
+        d->mCommandHistory->addCommand(new EditCommand(this, bookmarkForIndex(index).address(), index.column(), value.toString()));
         return true;
     }
     return false;
@@ -345,23 +350,23 @@ bool KBookmarkModel::dropMimeData(const QMimeData * data, Qt::DropAction action,
     }
 
     if (action == Qt::CopyAction) {
-        KEBMacroCommand * cmd = CmdGen::insertMimeSource("Copy", data, addr);
+        KEBMacroCommand * cmd = CmdGen::insertMimeSource(this, "Copy", data, addr);
         d->mCommandHistory->addCommand(cmd);
     } else if (action == Qt::MoveAction) {
         if (data->hasFormat(s_mime_bookmark_addresses)) {
             KBookmark::List bookmarks;
             QList<QByteArray> addresses = data->data(s_mime_bookmark_addresses).split(';');
             Q_FOREACH(const QByteArray& address, addresses) {
-                KBookmark bk = d->mManager->findByAddress(QString::fromLatin1(address));
+                KBookmark bk = bookmarkManager()->findByAddress(QString::fromLatin1(address));
                 kDebug() << "Extracted bookmark:" << bk.address();
                 bookmarks.push_back(bk);
             }
 
-            KEBMacroCommand * cmd = CmdGen::itemsMoved(bookmarks, addr, false);
+            KEBMacroCommand * cmd = CmdGen::itemsMoved(this, bookmarks, addr, false);
             d->mCommandHistory->addCommand(cmd);
         } else {
             kDebug()<<"NO FORMAT";
-            KEBMacroCommand * cmd = CmdGen::insertMimeSource("Copy", data, addr);
+            KEBMacroCommand * cmd = CmdGen::insertMimeSource(this, "Copy", data, addr);
             d->mCommandHistory->addCommand(cmd);
         }
     }
@@ -435,6 +440,29 @@ void KBookmarkModel::removeBookmark(KBookmark bookmark)
 CommandHistory* KBookmarkModel::commandHistory()
 {
     return d->mCommandHistory;
+}
+
+KBookmarkManager* KBookmarkModel::bookmarkManager()
+{
+    return d->mCommandHistory->bookmarkManager();
+}
+
+void KBookmarkModel::Private::_kd_slotBookmarksChanged(const QString&, const QString&)
+{
+    if (mIgnoreNext > 0) { // We ignore the first changed signal after every change we did
+        --mIgnoreNext;
+        return;
+    }
+
+    q->setRoot(q->bookmarkManager()->root());
+
+    mCommandHistory->clearHistory();
+}
+
+void KBookmarkModel::notifyManagers(const KBookmarkGroup& grp)
+{
+    ++d->mIgnoreNext;
+    bookmarkManager()->emitChanged(grp);
 }
 
 #include "bookmarkmodel.moc"

@@ -8,7 +8,6 @@ set(kbookmarkmodeltest_SRCS kbookmarkmodeltest.cpp
  ../commands.cpp
  ../treeitem.cpp
  ../commandhistory.cpp
- ../globalbookmarkmanager.cpp # TODO remove
 )
 
 kde4_add_unit_test(kbookmarkmodeltest ${kbookmarkmodeltest_SRCS})

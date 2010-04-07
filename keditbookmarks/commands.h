@@ -24,6 +24,7 @@
 #include <kbookmark.h>
 #include <QtCore/QMap>
 
+class KBookmarkModel;
 
 // Interface adds the affectedBookmarks method
 // Any class should on call add those bookmarks which are
@@ -51,7 +52,7 @@ public:
 class DeleteManyCommand : public KEBMacroCommand
 {
 public:
-   DeleteManyCommand(const QString &name, const QList<KBookmark> & bookmarks);
+   DeleteManyCommand(KBookmarkModel* model, const QString &name, const QList<KBookmark> & bookmarks);
    virtual ~DeleteManyCommand() {}
 };
 
@@ -59,20 +60,20 @@ class CreateCommand : public QUndoCommand, public IKEBCommand
 {
 public:
    // separator
-   CreateCommand(const QString &address, QUndoCommand* parent = 0);
+   CreateCommand(KBookmarkModel* model, const QString &address, QUndoCommand* parent = 0);
 
    // bookmark
-   CreateCommand(const QString &address,
+   CreateCommand(KBookmarkModel* model, const QString &address,
                  const QString &text, const QString &iconPath,
                  const KUrl &url, QUndoCommand* parent = 0);
 
    // folder
-   CreateCommand(const QString &address,
+   CreateCommand(KBookmarkModel* model, const QString &address,
                  const QString &text, const QString &iconPath,
                  bool open, QUndoCommand* parent = 0);
 
    // clone existing bookmark
-   CreateCommand(const QString &address,
+   CreateCommand(KBookmarkModel* model, const QString &address,
                  const KBookmark &original, const QString &name = QString(), QUndoCommand* parent = 0);
 
    QString finalAddress() const;
@@ -81,7 +82,9 @@ public:
    virtual void redo();
    virtual void undo();
    virtual QString affectedBookmarks() const;
-private:
+
+private: // TODO move it all to a d pointer
+   KBookmarkModel* m_model;
    QString m_to;
    QString m_text;
    QString m_iconPath;
@@ -96,7 +99,7 @@ private:
 class EditCommand : public QUndoCommand, public IKEBCommand
 {
 public:
-   EditCommand(const QString & address, int col, const QString & newValue, QUndoCommand* parent = 0);
+   EditCommand(KBookmarkModel* model, const QString & address, int col, const QString & newValue, QUndoCommand* parent = 0);
    virtual ~EditCommand() {}
    virtual void redo();
    virtual void undo();
@@ -106,6 +109,7 @@ public:
                                      const QString& newValue);
    void modify(const QString &newValue);
 private:
+   KBookmarkModel* m_model;
    QString mAddress;
    int mCol;
    QString mNewValue;
@@ -115,17 +119,15 @@ private:
 class DeleteCommand : public QUndoCommand, public IKEBCommand
 {
 public:
-    explicit DeleteCommand(const QString &from, bool contentOnly = false, QUndoCommand* parent = 0)
-      : QUndoCommand(parent), m_from(from), m_cmd(0), m_subCmd(0), m_contentOnly(contentOnly)
-   {
-      // NOTE - DeleteCommand needs no text, it is always embedded in a macrocommand
-   }
+   explicit DeleteCommand(KBookmarkModel* model, const QString &from, bool contentOnly = false, QUndoCommand* parent = 0);
    virtual ~DeleteCommand() { delete m_cmd; delete m_subCmd; }
    virtual void redo();
    virtual void undo();
    virtual QString affectedBookmarks() const;
-   static KEBMacroCommand* deleteAll(const KBookmarkGroup &parentGroup);
-private:
+   static KEBMacroCommand* deleteAll(KBookmarkModel* model, const KBookmarkGroup &parentGroup);
+
+private: // TODO d pointer
+   KBookmarkModel* m_model;
    QString m_from;
    QUndoCommand *m_cmd;
    KEBMacroCommand *m_subCmd;
@@ -135,13 +137,14 @@ private:
 class MoveCommand : public QUndoCommand, public IKEBCommand
 {
 public:
-   MoveCommand(const QString &from, const QString &to, const QString &name = QString(), QUndoCommand* parent = 0);
+   MoveCommand(KBookmarkModel* model, const QString &from, const QString &to, const QString &name = QString(), QUndoCommand* parent = 0);
    QString finalAddress() const;
    virtual ~MoveCommand() {}
    virtual void redo();
    virtual void undo();
    virtual QString affectedBookmarks() const;
 private:
+   KBookmarkModel* m_model;
    QString m_from;
    QString m_to;
    CreateCommand * m_cc;
@@ -153,9 +156,7 @@ class SortItem;
 class SortCommand : public KEBMacroCommand
 {
 public:
-   SortCommand(const QString &name, const QString &groupAddress, QUndoCommand* parent = 0)
-      : KEBMacroCommand(name, parent), m_groupAddress(groupAddress)
-   {}
+   SortCommand(KBookmarkModel* model, const QString &name, const QString &groupAddress, QUndoCommand* parent = 0);
    virtual ~SortCommand()
    {}
    virtual void redo();
@@ -164,16 +165,15 @@ public:
    // internal
    void moveAfter(const SortItem &moveMe, const SortItem &afterMe);
 private:
+   KBookmarkModel* m_model;
    QString m_groupAddress;
 };
 
-class KEBListViewItem;
-
 class CmdGen {
 public:
-   static KEBMacroCommand* setAsToolbar(const KBookmark &bk);
-   static KEBMacroCommand* insertMimeSource(const QString &cmdName, const QMimeData *data, const QString &addr);
-   static KEBMacroCommand* itemsMoved(const QList<KBookmark> & items, const QString &newAddress, bool copy);
+   static KEBMacroCommand* setAsToolbar(KBookmarkModel* model, const KBookmark &bk);
+   static KEBMacroCommand* insertMimeSource(KBookmarkModel* model, const QString &cmdName, const QMimeData *data, const QString &addr);
+   static KEBMacroCommand* itemsMoved(KBookmarkModel* model, const QList<KBookmark> & items, const QString &newAddress, bool copy);
 private:
    CmdGen() {}
 };

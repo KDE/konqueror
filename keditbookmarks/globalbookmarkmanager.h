@@ -65,7 +65,6 @@ private:
     KBookmarkManager *m_mgr;
     KBookmarkModel *m_model;
     static GlobalBookmarkManager *s_mgr;
-    uint ignorenext;
 };
 
 #endif /* GLOBALBOOKMARKMANAGER_H */

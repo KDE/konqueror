@@ -164,7 +164,8 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv) {
             if (got > 1) // got == 0 isn't possible as !isGui is dependant on "import.*"
                 KCmdLineArgs::usage(I18N_NOOP("You may only specify a single --import option."));
             QString path = args->getOption(arg2);
-            ImportCommand *importer = ImportCommand::importerFactory(importType);
+            KBookmarkModel* model = GlobalBookmarkManager::self()->model();
+            ImportCommand *importer = ImportCommand::importerFactory(model, importType);
             importer->import(path, true);
             importer->redo();
             GlobalBookmarkManager::self()->managerSave();

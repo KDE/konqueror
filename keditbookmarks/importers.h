@@ -32,7 +32,7 @@ class ImportCommand : public QObject, public QUndoCommand, public IKEBCommand
 {
    Q_OBJECT
 public:
-   ImportCommand();
+   ImportCommand(KBookmarkModel* model);
 
    virtual void import(const QString &fileName, bool folder) = 0;
 
@@ -40,8 +40,8 @@ public:
    QString visibleName() const { return m_visibleName; }
    virtual QString requestFilename() const = 0;
 
-   static ImportCommand* performImport(const QString &, QWidget *);
-   static ImportCommand* importerFactory(const QString &);
+   static ImportCommand* performImport(KBookmarkModel* model, const QString &, QWidget *);
+   static ImportCommand* importerFactory(KBookmarkModel* model, const QString &);
 
    virtual ~ImportCommand()
    {}
@@ -72,6 +72,7 @@ protected:
    virtual void doExecute(const KBookmarkGroup &) = 0;
 
 protected:
+   KBookmarkModel* m_model;
    QString m_visibleName;
    QString m_fileName;
    QString m_icon;
@@ -87,7 +88,7 @@ private:
 class XBELImportCommand : public ImportCommand
 {
 public:
-   XBELImportCommand() : ImportCommand() {}
+   XBELImportCommand(KBookmarkModel* model) : ImportCommand(model) {}
    virtual void import(const QString &fileName, bool folder) = 0;
    virtual QString requestFilename() const = 0;
 private:
@@ -98,7 +99,7 @@ private:
 class GaleonImportCommand : public XBELImportCommand
 {
 public:
-   GaleonImportCommand() : XBELImportCommand() { setVisibleName(i18n("Galeon")); }
+   GaleonImportCommand(KBookmarkModel* model) : XBELImportCommand(model) { setVisibleName(i18n("Galeon")); }
    virtual void import(const QString &fileName, bool folder) {
       init(fileName, folder, "", false);
    }
@@ -108,7 +109,7 @@ public:
 class KDE2ImportCommand : public XBELImportCommand
 {
 public:
-   KDE2ImportCommand() : XBELImportCommand() { setVisibleName(i18n("KDE")); }
+   KDE2ImportCommand(KBookmarkModel* model) : XBELImportCommand(model) { setVisibleName(i18n("KDE")); }
    virtual void import(const QString &fileName, bool folder) {
       init(fileName, folder, "", false);
    }
@@ -119,7 +120,7 @@ public:
 class HTMLImportCommand : public ImportCommand
 {
 public:
-   HTMLImportCommand() : ImportCommand() {}
+   HTMLImportCommand(KBookmarkModel* model) : ImportCommand(model) {}
    virtual void import(const QString &fileName, bool folder) = 0;
    virtual QString requestFilename() const = 0;
 private:
@@ -129,7 +130,7 @@ private:
 class NSImportCommand : public HTMLImportCommand
 {
 public:
-   NSImportCommand() : HTMLImportCommand() { setVisibleName(i18n("Netscape")); }
+   NSImportCommand(KBookmarkModel* model) : HTMLImportCommand(model) { setVisibleName(i18n("Netscape")); }
    virtual void import(const QString &fileName, bool folder) {
       init(fileName, folder, "netscape", false);
    }
@@ -139,7 +140,7 @@ public:
 class MozImportCommand : public HTMLImportCommand
 {
 public:
-   MozImportCommand() : HTMLImportCommand() { setVisibleName(i18n("Mozilla")); }
+   MozImportCommand(KBookmarkModel* model) : HTMLImportCommand(model) { setVisibleName(i18n("Mozilla")); }
    virtual void import(const QString &fileName, bool folder) {
       init(fileName, folder, "mozilla", true);
    }
@@ -149,7 +150,7 @@ public:
 class IEImportCommand : public ImportCommand
 {
 public:
-   IEImportCommand() : ImportCommand() { setVisibleName(i18n("IE")); }
+   IEImportCommand(KBookmarkModel* model) : ImportCommand(model) { setVisibleName(i18n("IE")); }
    virtual void import(const QString &fileName, bool folder) {
       init(fileName, folder, "", false);
    }
@@ -161,21 +162,9 @@ private:
 class OperaImportCommand : public ImportCommand
 {
 public:
-   OperaImportCommand() : ImportCommand() { setVisibleName(i18n("Opera")); }
+   OperaImportCommand(KBookmarkModel* model) : ImportCommand(model) { setVisibleName(i18n("Opera")); }
    virtual void import(const QString &fileName, bool folder) {
       init(fileName, folder, "opera", false);
-   }
-   virtual QString requestFilename() const;
-private:
-   virtual void doExecute(const KBookmarkGroup &);
-};
-
-class CrashesImportCommand : public ImportCommand
-{
-public:
-   CrashesImportCommand() : ImportCommand() { setVisibleName(i18n("Crashes")); }
-   virtual void import(const QString &fileName, bool folder) {
-      init(fileName, folder, "core", false);
    }
    virtual QString requestFilename() const;
 private:

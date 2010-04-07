@@ -132,7 +132,7 @@ void BookmarkInfoWidget::commitTitle()
 {
     if(titlecmd)
     {
-        GlobalBookmarkManager::self()->notifyManagers(GlobalBookmarkManager::bookmarkAt(titlecmd->affectedBookmarks()).toGroup());
+        m_model->notifyManagers(GlobalBookmarkManager::bookmarkAt(titlecmd->affectedBookmarks()).toGroup());
         titlecmd = 0;
     }
 }
@@ -151,7 +151,7 @@ void BookmarkInfoWidget::slotTextChangedTitle(const QString &str)
     }
     else
     {
-        titlecmd = new EditCommand(m_bk.address(), 0, str);
+        titlecmd = new EditCommand(m_model, m_bk.address(), 0, str);
         m_model->commandHistory()->addCommand(titlecmd);
     }
 }
@@ -160,7 +160,7 @@ void BookmarkInfoWidget::commitURL()
 {
     if(urlcmd)
     {
-        GlobalBookmarkManager::self()->notifyManagers(GlobalBookmarkManager::bookmarkAt(urlcmd->affectedBookmarks()).toGroup());
+        m_model->notifyManagers(GlobalBookmarkManager::bookmarkAt(urlcmd->affectedBookmarks()).toGroup());
         urlcmd = 0;
     }
 }
@@ -178,7 +178,7 @@ void BookmarkInfoWidget::slotTextChangedURL(const QString &str) {
     }
     else
     {
-        urlcmd = new EditCommand(m_bk.address(), 1, str);
+        urlcmd = new EditCommand(m_model, m_bk.address(), 1, str);
         m_model->commandHistory()->addCommand(urlcmd);
     }
 }
@@ -187,7 +187,7 @@ void BookmarkInfoWidget::commitComment()
 {
     if(commentcmd)
     {
-        GlobalBookmarkManager::self()->notifyManagers( GlobalBookmarkManager::bookmarkAt( commentcmd->affectedBookmarks() ).toGroup());
+        m_model->notifyManagers( GlobalBookmarkManager::bookmarkAt( commentcmd->affectedBookmarks() ).toGroup());
         commentcmd = 0;
     }
 }
@@ -205,7 +205,7 @@ void BookmarkInfoWidget::slotTextChangedComment(const QString &str) {
     }
     else
     {
-        commentcmd = new EditCommand(m_bk.address(), 2, str);
+        commentcmd = new EditCommand(m_model, m_bk.address(), 2, str);
         m_model->commandHistory()->addCommand(commentcmd);
     }
 }

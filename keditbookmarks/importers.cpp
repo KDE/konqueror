@@ -40,13 +40,13 @@
 #include <kbookmarkimporter.h>
 #include <kbookmarkimporter_ie.h>
 #include <kbookmarkimporter_opera.h>
-#include <kbookmarkimporter_crash.h>
+//#include <kbookmarkimporter_crash.h>
 #include <kbookmarkdombuilder.h>
 #include <kbookmarkimporter_ns.h>
 
 
-ImportCommand::ImportCommand()
-    : QUndoCommand(), m_utf8(false), m_folder(false), m_cleanUpCmd(0)
+ImportCommand::ImportCommand(KBookmarkModel* model)
+    : QUndoCommand(), m_model(model), m_utf8(false), m_folder(false), m_cleanUpCmd(0)
 {
 }
 
@@ -60,22 +60,24 @@ QString ImportCommand::folder() const {
     return m_folder ? i18n("%1 Bookmarks", visibleName()) : QString();
 }
 
-ImportCommand* ImportCommand::importerFactory(const QString &type) {
-    if (type == "Galeon") return new GaleonImportCommand();
-    else if (type == "IE") return new IEImportCommand();
-    else if (type == "KDE2") return new KDE2ImportCommand();
-    else if (type == "Opera") return new OperaImportCommand();
-    else if (type == "Crashes") return new CrashesImportCommand();
-    else if (type == "Moz") return new MozImportCommand();
-    else if (type == "NS") return new NSImportCommand();
+ImportCommand* ImportCommand::importerFactory(KBookmarkModel* model, const QString &type)
+{
+    if (type == "Galeon") return new GaleonImportCommand(model);
+    else if (type == "IE") return new IEImportCommand(model);
+    else if (type == "KDE2") return new KDE2ImportCommand(model);
+    else if (type == "Opera") return new OperaImportCommand(model);
+    //else if (type == "Crashes") return new CrashesImportCommand();
+    else if (type == "Moz") return new MozImportCommand(model);
+    else if (type == "NS") return new NSImportCommand(model);
     else {
         kError() << "ImportCommand::importerFactory() - invalid type (" << type << ")!" << endl;
         return 0;
     }
 }
 
-ImportCommand* ImportCommand::performImport(const QString &type, QWidget *top) {
-    ImportCommand *importer = ImportCommand::importerFactory(type);
+ImportCommand* ImportCommand::performImport(KBookmarkModel* model, const QString &type, QWidget *top)
+{
+    ImportCommand *importer = ImportCommand::importerFactory(model, type);
 
     Q_ASSERT(importer);
 
@@ -118,9 +120,9 @@ void ImportCommand::redo()
         // import into the root, after cleaning it up
         bkGroup = GlobalBookmarkManager::self()->root();
         delete m_cleanUpCmd;
-        m_cleanUpCmd = DeleteCommand::deleteAll(bkGroup);
+        m_cleanUpCmd = DeleteCommand::deleteAll(m_model, bkGroup);
 
-        new DeleteCommand(bkGroup.address(),
+        new DeleteCommand(m_model, bkGroup.address(),
                           true /* contentOnly */, m_cleanUpCmd);
         m_cleanUpCmd->redo();
 
@@ -135,20 +137,20 @@ void ImportCommand::redo()
     // FIXME Resetting the model completely has the unwanted
     // side-effect of collapsing all items in tree views
     // (and possibly other side effects)
-    GlobalBookmarkManager::self()->model()->resetModel();
+    m_model->resetModel();
 }
 
 void ImportCommand::undo()
 {
     if ( !folder().isEmpty() ) {
         // we created a group -> just delete it
-        DeleteCommand cmd(m_group);
+        DeleteCommand cmd(m_model, m_group);
         cmd.redo();
 
     } else {
         // we imported at the root -> delete everything
         KBookmarkGroup root = GlobalBookmarkManager::self()->root();
-        QUndoCommand *cmd = DeleteCommand::deleteAll(root);
+        QUndoCommand *cmd = DeleteCommand::deleteAll(m_model, root);
 
         cmd->redo();
         delete cmd;
@@ -181,11 +183,6 @@ QString NSImportCommand::requestFilename() const {
 
 QString OperaImportCommand::requestFilename() const {
     static KOperaBookmarkImporterImpl importer;
-    return importer.findDefaultLocation();
-}
-
-QString CrashesImportCommand::requestFilename() const {
-    static KCrashBookmarkImporterImpl importer;
     return importer.findDefaultLocation();
 }
 
@@ -222,13 +219,6 @@ static void parseInto(const KBookmarkGroup &bkGroup, KBookmarkImporterBase *impo
 
 void OperaImportCommand::doExecute(const KBookmarkGroup &bkGroup) {
     KOperaBookmarkImporterImpl importer;
-    importer.setFilename(m_fileName);
-    parseInto(bkGroup, &importer);
-}
-
-void CrashesImportCommand::doExecute(const KBookmarkGroup &bkGroup) {
-    KCrashBookmarkImporterImpl importer;
-    importer.setShouldDelete(true);
     importer.setFilename(m_fileName);
     parseInto(bkGroup, &importer);
 }

@@ -23,7 +23,6 @@
 #include <qtest_kde.h>
 #include <kbookmarkmanager.h>
 
-#include "globalbookmarkmanager.h"
 #include "commandhistory.h"
 #include "bookmarkmodel.h"
 #include "commands.h"
@@ -66,14 +65,13 @@ private:
 private Q_SLOTS:
     void initTestCase()
     {
-        // TODO port away from that GlobalBookmarkManager singleton
         const QString filename = KStandardDirs::locateLocal("data", QLatin1String("konqueror/bookmarks.xml"));
         QFile::remove(filename);
-        m_cmdHistory = new CommandHistory;
-        GlobalBookmarkManager::self()->createManager(filename, QString(), m_cmdHistory);
-        m_bookmarkManager = GlobalBookmarkManager::self()->mgr();
+        m_bookmarkManager = KBookmarkManager::managerForFile(filename, QString());
+        m_cmdHistory = new CommandHistory(this);
+        m_cmdHistory->setBookmarkManager(m_bookmarkManager);
         QCOMPARE(BookmarkLister::addressList(m_bookmarkManager), QStringList());
-        m_model = GlobalBookmarkManager::self()->model();
+        m_model = new KBookmarkModel(m_bookmarkManager->root(), m_cmdHistory, this);
         QCOMPARE(m_model->rowCount(), 1); // the toplevel "Bookmarks" toplevel item
         m_rootIndex = m_model->index(0, 0);
         QVERIFY(m_rootIndex.isValid());
@@ -83,7 +81,7 @@ private Q_SLOTS:
     // The commands modify the model, so the test code uses the commands
     void testAddBookmark()
     {
-        CreateCommand* cmd = new CreateCommand("/0", "test_bk", "www", KUrl("http://www.kde.org"));
+        CreateCommand* cmd = new CreateCommand(m_model, "/0", "test_bk", "www", KUrl("http://www.kde.org"));
         cmd->redo();
         QCOMPARE(BookmarkLister::addressList(m_bookmarkManager), QStringList() << "/0");
         QCOMPARE(BookmarkLister::urlList(m_bookmarkManager), QStringList() << "http://www.kde.org");
@@ -96,10 +94,10 @@ private Q_SLOTS:
 
     void testDeleteBookmark()
     {
-        CreateCommand* cmd = new CreateCommand("/0", "test_bk", "www", KUrl("http://www.kde.org"));
+        CreateCommand* cmd = new CreateCommand(m_model, "/0", "test_bk", "www", KUrl("http://www.kde.org"));
         cmd->redo();
         QCOMPARE(BookmarkLister::addressList(m_bookmarkManager), QStringList() << "/0");
-        DeleteCommand* deleteCmd = new DeleteCommand("/0");
+        DeleteCommand* deleteCmd = new DeleteCommand(m_model, "/0");
         deleteCmd->redo();
         QCOMPARE(BookmarkLister::addressList(m_bookmarkManager), QStringList());
         deleteCmd->undo();
@@ -113,19 +111,19 @@ private Q_SLOTS:
 
     void testCreateFolder()
     {
-        CreateCommand folderCmd("/0", "folder", "folder", true /*open*/);
+        CreateCommand folderCmd(m_model, "/0", "folder", "folder", true /*open*/);
         folderCmd.redo();
         QCOMPARE(BookmarkLister::addressList(m_bookmarkManager), QStringList() << "/0/");
         QCOMPARE(m_model->rowCount(m_rootIndex), 1);
 
         const QString kde = "http://www.kde.org";
-        CreateCommand cmd("/0/0", "test_bk", "www", KUrl(kde));
+        CreateCommand cmd(m_model, "/0/0", "test_bk", "www", KUrl(kde));
         cmd.redo();
         QCOMPARE(BookmarkLister::addressList(m_bookmarkManager), QStringList() << "/0/" << "/0/0");
 
         // Insert before this bookmark
         const QString first = "http://first.example.com";
-        CreateCommand cmdFirstBk("/0/0", "first_bk", "www", KUrl(first));
+        CreateCommand cmdFirstBk(m_model, "/0/0", "first_bk", "www", KUrl(first));
         cmdFirstBk.redo();
         QCOMPARE(BookmarkLister::addressList(m_bookmarkManager), QStringList() << "/0/" << "/0/0" << "/0/1");
         QCOMPARE(BookmarkLister::urlList(m_bookmarkManager), QStringList() << first << kde);
