@@ -36,7 +36,7 @@
 #include <klocale.h>
 
 // Local
-#include "globalbookmarkmanager.h"
+#include "globalbookmarkmanager.h" // TODO remove
 #include "toplevel.h" // for KEBApp
 #include "commands.h"
 #include "bookmarkiterator.h"
@@ -71,16 +71,17 @@ void TestLinkItrHolder::addAffectedBookmark( const QString & address )
 
 /* -------------------------- */
 
-TestLinkItr::TestLinkItr(QList<KBookmark> bks)
-    : BookmarkIterator(bks) {
-    m_job = 0;
+TestLinkItr::TestLinkItr(KBookmarkModel* model, const QList<KBookmark>& bks)
+    : BookmarkIterator(bks), m_model(model), m_job(0)
+{
+    Q_ASSERT(m_model);
 }
 
 TestLinkItr::~TestLinkItr() {
     //FIXME setStatus(m_oldStatus); if we didn't finish
     if (m_job) {
         // kDebug() << "JOB kill\n";
-        m_job->disconnect();
+        m_job->disconnect(this);
         m_job->kill();
     }
 }
@@ -88,7 +89,7 @@ TestLinkItr::~TestLinkItr() {
 void TestLinkItr::setStatus(const QString & text)
 {
     EditCommand::setNodeText(curBk(), QStringList()<< "info" << "metadata" << "linkstate", text);
-    GlobalBookmarkManager::self()->model()->emitDataChanged(curBk());
+    m_model->emitDataChanged(curBk());
 }
 
 bool TestLinkItr::isApplicable(const KBookmark &bk) const {

@@ -117,8 +117,8 @@ QVariant KBookmarkModel::data(const QModelIndex &index, int role) const
             case CommentColumnId:
                 return bk.description();
             case StatusColumnId: {
-                QString text1; // TODO! FIXME favicon state
-                QString text2; // TODO! FIXME link state
+                QString text1 = bk.metaDataItem("favstate"); // favicon state
+                QString text2 = bk.metaDataItem("linkstate");
                 if (text1.isEmpty() || text2.isEmpty())
                     return QVariant( text1 + text2 );
                 else

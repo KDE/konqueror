@@ -34,7 +34,8 @@
 FavIconsItrHolder *FavIconsItrHolder::s_self = 0;
 
 FavIconsItrHolder::FavIconsItrHolder()
-    : BookmarkIteratorHolder() {
+    : BookmarkIteratorHolder()
+{
     // do stuff
 }
 
@@ -61,34 +62,39 @@ void FavIconsItrHolder::addAffectedBookmark( const QString & address )
 
 /* -------------------------- */
 
-FavIconsItr::FavIconsItr(QList<KBookmark> bks)
-    : BookmarkIterator(bks) {
-    m_updater = 0;
+FavIconsItr::FavIconsItr(KBookmarkModel* model, const QList<KBookmark>& bks)
+    : BookmarkIterator(bks), m_model(model), m_updater(0)
+{
+    Q_ASSERT(m_model);
 }
 
-FavIconsItr::~FavIconsItr() {
+FavIconsItr::~FavIconsItr()
+{
     setStatus(m_oldStatus);
     delete m_updater;
 }
 
 void FavIconsItr::setStatus(const QString & status)
 {
-    EditCommand::setNodeText(curBk(), QStringList()<< "info" << "metadata" << "favstate", status);
-    GlobalBookmarkManager::self()->model()->emitDataChanged(curBk());
+    EditCommand::setNodeText(curBk(), QStringList() << "info" << "metadata" << "favstate", status);
+    m_model->emitDataChanged(curBk());
 }
 
-void FavIconsItr::slotDone(bool succeeded) {
+void FavIconsItr::slotDone(bool succeeded)
+{
     // kDebug() << "FavIconsItr::slotDone()";
     setStatus(succeeded ? i18n("OK") : i18n("No favicon found"));
     holder()->addAffectedBookmark(KBookmark::parentAddress(curBk().address()));
     delayedEmitNextOne();
 }
 
-bool FavIconsItr::isApplicable(const KBookmark &bk) const {
+bool FavIconsItr::isApplicable(const KBookmark &bk) const
+{
     return (!bk.isGroup() && !bk.isSeparator());
 }
 
-void FavIconsItr::doAction() {
+void FavIconsItr::doAction()
+{
     // kDebug() << "FavIconsItr::doAction()";
     //FIXME ensure that this gets overwritten
     setStatus(i18n("Updating favicon..."));

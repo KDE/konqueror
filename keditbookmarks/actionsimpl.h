@@ -30,7 +30,7 @@ class ActionsImpl : public QObject
    Q_OBJECT
 
 public:
-   ActionsImpl(QObject* parent, KBookmarkModel* model) : QObject(parent), m_model(model) { }
+   ActionsImpl(QObject* parent, KBookmarkModel* model);
    ~ActionsImpl();
    bool save();
 

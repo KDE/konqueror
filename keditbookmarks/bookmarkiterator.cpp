@@ -28,33 +28,32 @@
 #include <QtCore/QTimer>
 #include <assert.h>
 
-BookmarkIterator::BookmarkIterator(QList<KBookmark> bks) : m_bklist(bks) {
-    connect(this, SIGNAL( deleteSelf(BookmarkIterator *) ), 
-            SLOT( slotCancelTest(BookmarkIterator *) ));
+BookmarkIterator::BookmarkIterator(const QList<KBookmark>& bks)
+    : m_bklist(bks)
+{
     delayedEmitNextOne();
 }
 
-BookmarkIterator::~BookmarkIterator() {
-    ;
+BookmarkIterator::~BookmarkIterator()
+{
 }
 
-void BookmarkIterator::delayedEmitNextOne() {
-    QTimer::singleShot(1, this, SLOT( nextOne() ));
+void BookmarkIterator::delayedEmitNextOne()
+{
+    QTimer::singleShot(1, this, SLOT(nextOne()));
 }
 
-void BookmarkIterator::slotCancelTest(BookmarkIterator *test) {
-    holder()->removeItr(test);
-}
-
-const KBookmark BookmarkIterator::curBk() const {
+const KBookmark BookmarkIterator::curBk() const
+{
     return m_bk;
 }
 
-void BookmarkIterator::nextOne() {
+void BookmarkIterator::nextOne()
+{
     // kDebug() << "BookmarkIterator::nextOne";
 
     if (m_bklist.isEmpty()) {
-        emit deleteSelf(this);
+        holder()->removeItr(this); // deletes "this"
         return;
     }
 
@@ -76,22 +75,24 @@ void BookmarkIterator::nextOne() {
 
 /* --------------------------- */
 
-BookmarkIteratorHolder::BookmarkIteratorHolder() 
+BookmarkIteratorHolder::BookmarkIteratorHolder()
 {
 }
 
-void BookmarkIteratorHolder::insertItr(BookmarkIterator *itr) {
+void BookmarkIteratorHolder::insertItr(BookmarkIterator *itr)
+{
     m_itrs.prepend(itr);
     doItrListChanged();
 }
 
-void BookmarkIteratorHolder::removeItr(BookmarkIterator *itr) {
+void BookmarkIteratorHolder::removeItr(BookmarkIterator *itr)
+{
     m_itrs.removeAll(itr);
-    delete itr;
+    itr->deleteLater();
     doItrListChanged();
 }
 
-void BookmarkIteratorHolder::cancelAllItrs() 
+void BookmarkIteratorHolder::cancelAllItrs()
 {
     qDeleteAll(m_itrs);
     m_itrs.clear();

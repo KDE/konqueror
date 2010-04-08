@@ -30,17 +30,13 @@ class BookmarkIterator : public QObject
    Q_OBJECT
 
 public:
-   BookmarkIterator(QList<KBookmark> bks);
+   BookmarkIterator(const QList<KBookmark>& bks);
    virtual ~BookmarkIterator();
    virtual BookmarkIteratorHolder* holder() const = 0;
 
 public Q_SLOTS:
    void nextOne();
    void delayedEmitNextOne();
-   void slotCancelTest(BookmarkIterator *t);
-
-Q_SIGNALS:
-   void deleteSelf(BookmarkIterator *);
 
 protected:
    virtual void doAction() = 0;

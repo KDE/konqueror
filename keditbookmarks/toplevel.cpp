@@ -71,6 +71,8 @@ KEBApp::KEBApp(
     m_cmdHistory->createActions(actionCollection());
     connect(m_cmdHistory, SIGNAL(notifyCommandExecuted(KBookmarkGroup)), this, SLOT(notifyCommandExecuted()));
 
+    GlobalBookmarkManager::self()->createManager(m_bookmarksFilename, m_dbusObjectName, m_cmdHistory);
+
     s_topLevel = this;
 
     createActions();
@@ -85,8 +87,6 @@ KEBApp::KEBApp(
     KGlobal::locale()->insertCatalog("libkonq");
 
     m_canPaste = false;
-
-    GlobalBookmarkManager::self()->createManager(m_bookmarksFilename, m_dbusObjectName, m_cmdHistory);
 
     mBookmarkListView = new BookmarkListView();
     mBookmarkListView->setModel( GlobalBookmarkManager::self()->model() );

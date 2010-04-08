@@ -25,6 +25,7 @@
 #include <kbookmark.h>
 
 #include "bookmarkiterator.h"
+class KBookmarkModel;
 
 class TestLinkItrHolder : public BookmarkIteratorHolder {
 public:
@@ -45,7 +46,7 @@ class TestLinkItr : public BookmarkIterator
    Q_OBJECT
 
 public:
-   TestLinkItr(QList<KBookmark> bks);
+   TestLinkItr(KBookmarkModel* model, const QList<KBookmark>& bks);
    ~TestLinkItr();
    virtual TestLinkItrHolder* holder() const { return TestLinkItrHolder::self(); }
 
@@ -57,6 +58,7 @@ private:
    virtual void doAction();
    virtual bool isApplicable(const KBookmark &bk) const;
 
+    KBookmarkModel* m_model;
    KIO::TransferJob *m_job;
    QString m_oldStatus;
 };
