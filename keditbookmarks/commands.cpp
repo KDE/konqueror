@@ -264,48 +264,6 @@ void EditCommand::modify(const QString &newValue)
         mNewValue = newValue;
 }
 
-QString EditCommand::getNodeText(const KBookmark& bk, const QStringList &nodehier)
-{
-    QDomNode subnode = bk.internalElement();
-    for (QStringList::ConstIterator it = nodehier.begin();
-            it != nodehier.end(); ++it)
-    {
-        subnode = subnode.namedItem((*it));
-        if (subnode.isNull())
-            return QString();
-    }
-    return (subnode.firstChild().isNull())
-         ? QString()
-         : subnode.firstChild().toText().data();
-}
-
-QString EditCommand::setNodeText(const KBookmark& bk, const QStringList &nodehier,
-                                     const QString& newValue)
-{
-    QDomNode subnode = bk.internalElement();
-    for (QStringList::ConstIterator it = nodehier.begin();
-            it != nodehier.end(); ++it)
-    {
-        QDomNode parent = subnode;
-        subnode = subnode.namedItem((*it));
-        if (subnode.isNull()) {
-            subnode = bk.internalElement().ownerDocument().createElement((*it));
-            parent.appendChild(subnode);
-        }
-    }
-
-    if (subnode.firstChild().isNull()) {
-        QDomText domtext = subnode.ownerDocument().createTextNode("");
-        subnode.appendChild(domtext);
-    }
-
-    QDomText domtext = subnode.firstChild().toText();
-
-    QString oldText = domtext.data();
-    domtext.setData(newValue);
-    return oldText;
-}
-
 /* -------------------------------------- */
 
 DeleteCommand::DeleteCommand(KBookmarkModel* model, const QString &from, bool contentOnly, QUndoCommand* parent)

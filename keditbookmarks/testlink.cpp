@@ -88,7 +88,7 @@ TestLinkItr::~TestLinkItr() {
 
 void TestLinkItr::setStatus(const QString & text)
 {
-    EditCommand::setNodeText(curBk(), QStringList()<< "info" << "metadata" << "linkstate", text);
+    curBk().setMetaDataItem("linkstate", text);
     m_model->emitDataChanged(curBk());
 }
 
@@ -105,7 +105,7 @@ void TestLinkItr::doAction() {
     connect(m_job, SIGNAL( result( KJob *)),
             this, SLOT( slotJobResult(KJob *)));
 
-    m_oldStatus = EditCommand::getNodeText(curBk(), QStringList()<< "info" << "metadata" << "linkstate");
+    m_oldStatus = curBk().metaDataItem("linkstate");
     setStatus(i18n("Checking..."));
 }
 

@@ -103,22 +103,18 @@ void BookmarkInfoWidget::updateStatus()
 {
    //FIXME we don't want every metadata element, but only that with owner "http://www.kde.org"
    QString visitDate =
-        GlobalBookmarkManager::makeTimeStr( EditCommand::getNodeText(m_bk, QStringList() << "info" << "metadata"
-                                                             << "time_visited" ));
+        GlobalBookmarkManager::makeTimeStr(m_bk.metaDataItem("time_visited"));
     m_visitdate_le->setReadOnly(true);
     m_visitdate_le->setText(visitDate);
 
     QString creationDate =
-        GlobalBookmarkManager::makeTimeStr( EditCommand::getNodeText(m_bk, QStringList() << "info" << "metadata"
-                                                             << "time_added" ));
+        GlobalBookmarkManager::makeTimeStr(m_bk.metaDataItem("time_added"));
     m_credate_le->setReadOnly(true);
     m_credate_le->setText(creationDate);
 
     // TODO - get the actual field name from the spec if it exists, else copy galeon
     m_visitcount_le->setReadOnly(true);
-    m_visitcount_le->setText(
-            EditCommand::getNodeText(m_bk, QStringList() << "info" << "metadata"
-                                                           << "visit_count" ));
+    m_visitcount_le->setText(m_bk.metaDataItem("visit_count"));
 }
 
 void BookmarkInfoWidget::commitChanges()

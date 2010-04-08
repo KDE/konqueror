@@ -43,7 +43,7 @@ void BookmarkIterator::delayedEmitNextOne()
     QTimer::singleShot(1, this, SLOT(nextOne()));
 }
 
-const KBookmark BookmarkIterator::curBk() const
+KBookmark BookmarkIterator::curBk()
 {
     return m_bk;
 }
