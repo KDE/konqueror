@@ -1,29 +1,30 @@
-* Add proper support for KWebKitPart in the following Konqueror kpart plugins:
-    - kget         need to fix selected link downloads.
-    - adblock      none of this plugins advanced features work in kwebkitpart.
-                   Though rudimentary ad blocking support is already there, the
-                   advanced functions are currently khtml specific and need to
-                   be amended to support kwebkitpart.
-
+* Proper support for KWebKitPart in the following Konqueror plugins:
+    - kget         Currently only downloading selected links does not work.
+    - adblock      Though rudimentary ad blocking support is already there,
+                   none of this plugin's advanced features work in kwebkitpart.
+                   The advanced features are currently KHTML specific and need
+                   to be modified to support kwebkitpart.
                    NOTE: unlike KHTML, the advanced features support can be
                    completely implemented outside of the kwebkitpart source tree.
+    - webarchive   This plugin is hoplessly KHTML specific and will require
+                   significant effort to add support for KWebKitPart.
 
 * Add KPartStatusBarExtension support for the following plugins/features:
-      - Ad-block (plugin)
       - Popup blocker (non-plugin)
 
-* Implement a means of showing the following information (Perhaps "about:engine"?):
-      - Show KWebKitPart's version #
-      - Show QtWebKit's version #
+* Implement some means of showing the following information (Perhaps "about:engine"?):
+      - KWebKitPart's version #
+      - QtWebKit's version #
+      - UserAgent string ???
 
 * Look through all of Konqueror's web configuration options and make sure we
-  honor all those that we possibly can... Here is a list of options that
-  currently do not work:
-      - Change cursor over links (TODO, QtWebKit support required ???).
-      - Smooth scrolling support (TODO).
-      - Underline links support (Partial, does not seem to work).
+  honor all those we possibly can... Here is a non-complete list of options
+  that currently do not work:
+      - Change cursor over links (TODO, QtWebKit ???).
+      - Smooth scrolling support (TODO, QtWebKit ???).
+      - Underline links support (Partial, does not work correctly).
       - Right click goes back in history (TODO).
       - Allow automatic delayed reloading/redirecting (QtWebKit Bug #29899).
-      - Enable access key navigation with Ctrl key (TODO, QtWebKit support required??).
-      - Animations (TODO, QtWebKit support required???).
-      - Draw frames around not completely loaded images (TODO, QtWebKit support required???).
+      - Enable access key navigation with Ctrl key (TODO, QtWebKit ???).
+      - Animations (TODO, QtWebKit ???).
+      - Draw frames around not completely loaded images (TODO, QtWebKit ???).
