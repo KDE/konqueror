@@ -45,7 +45,7 @@ Q_SIGNALS:
 protected:
    virtual void doAction() = 0;
    virtual bool isApplicable(const KBookmark &bk) const = 0;
-   const KBookmark curBk() const;
+   KBookmark curBk();
 
 private:
    KBookmark m_bk;

@@ -72,7 +72,7 @@ FavIconsItr::~FavIconsItr() {
 
 void FavIconsItr::setStatus(const QString & status)
 {
-    EditCommand::setNodeText(curBk(), QStringList()<< "info" << "metadata" << "favstate", status);
+    curBk().setMetaDataItem("favstate", status);
     CurrentMgr::self()->model()->emitDataChanged(curBk());
 }
 

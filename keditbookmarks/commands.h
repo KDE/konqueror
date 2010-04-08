@@ -101,9 +101,6 @@ public:
    virtual void redo();
    virtual void undo();
    virtual QString affectedBookmarks() const { return KBookmark::parentAddress(mAddress); }
-   static QString getNodeText(const KBookmark& bk, const QStringList &nodehier);
-   static QString setNodeText(const KBookmark& bk, const QStringList &nodehier,
-                                     const QString& newValue);
    void modify(const QString &newValue);
 private:
    QString mAddress;

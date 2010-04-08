@@ -46,7 +46,8 @@ void BookmarkIterator::slotCancelTest(BookmarkIterator *test) {
     holder()->removeItr(test);
 }
 
-const KBookmark BookmarkIterator::curBk() const {
+KBookmark BookmarkIterator::curBk()
+{
     return m_bk;
 }
 
