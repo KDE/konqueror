@@ -429,8 +429,6 @@ void Sidebar_Widget::createButtons()
     if (!m_buttonBar->button(-1)) {
         m_buttonBar->appendButton(SmallIcon("configure"), -1, m_menu,
                                   i18n("Configure Sidebar"));
-        // set same width as height to be sure the button is not to width
-        m_buttonBar->button(-1)->setFixedWidth(m_buttonBar->button(-1)->height());
     }
 
     if (m_showExtraButtons) {
