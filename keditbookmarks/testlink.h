@@ -29,15 +29,11 @@ class KBookmarkModel;
 
 class TestLinkItrHolder : public BookmarkIteratorHolder {
 public:
-   static TestLinkItrHolder* self() {
-      if (!s_self) { s_self = new TestLinkItrHolder(); }; return s_self;
-   }
+   TestLinkItrHolder();
    void addAffectedBookmark( const QString & address );
 protected:
    virtual void doItrListChanged();
 private:
-   TestLinkItrHolder();
-   static TestLinkItrHolder *s_self;
    QString m_affectedBookmark;
 };
 
@@ -46,9 +42,8 @@ class TestLinkItr : public BookmarkIterator
    Q_OBJECT
 
 public:
-   TestLinkItr(KBookmarkModel* model, const QList<KBookmark>& bks);
+   TestLinkItr(KBookmarkModel* model, BookmarkIteratorHolder* holder, const QList<KBookmark>& bks);
    ~TestLinkItr();
-   virtual TestLinkItrHolder* holder() const { return TestLinkItrHolder::self(); }
 
 public Q_SLOTS:
    void slotJobResult(KJob *job);
@@ -58,7 +53,7 @@ private:
    virtual void doAction();
    virtual bool isApplicable(const KBookmark &bk) const;
 
-    KBookmarkModel* m_model;
+   KBookmarkModel* m_model;
    KIO::TransferJob *m_job;
    QString m_oldStatus;
 };

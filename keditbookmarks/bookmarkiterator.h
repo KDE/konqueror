@@ -30,9 +30,9 @@ class BookmarkIterator : public QObject
    Q_OBJECT
 
 public:
-   BookmarkIterator(const QList<KBookmark>& bks);
+   BookmarkIterator(BookmarkIteratorHolder* holder, const QList<KBookmark>& bks);
    virtual ~BookmarkIterator();
-   virtual BookmarkIteratorHolder* holder() const = 0;
+   BookmarkIteratorHolder* holder() const { return m_holder; }
 
 public Q_SLOTS:
    void nextOne();
@@ -46,6 +46,7 @@ protected:
 private:
    KBookmark m_bk;
    QList<KBookmark> m_bklist;
+   BookmarkIteratorHolder* m_holder;
 };
 
 class BookmarkIteratorHolder
@@ -54,6 +55,7 @@ public:
    void cancelAllItrs();
    void removeItr(BookmarkIterator*);
    void insertItr(BookmarkIterator*);
+   virtual void addAffectedBookmark(const QString & address) = 0;
 protected:
    BookmarkIteratorHolder();
    virtual ~BookmarkIteratorHolder() {}

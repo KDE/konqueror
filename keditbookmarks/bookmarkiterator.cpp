@@ -28,8 +28,8 @@
 #include <QtCore/QTimer>
 #include <assert.h>
 
-BookmarkIterator::BookmarkIterator(const QList<KBookmark>& bks)
-    : m_bklist(bks)
+BookmarkIterator::BookmarkIterator(BookmarkIteratorHolder* holder, const QList<KBookmark>& bks)
+    : m_bklist(bks), m_holder(holder)
 {
     delayedEmitNextOne();
 }

@@ -22,6 +22,8 @@
 #define __actionsimpl_h
 
 #include <QtCore/QObject>
+class FavIconsItrHolder;
+class TestLinkItrHolder;
 class CommandHistory;
 class KBookmarkModel;
 
@@ -69,6 +71,8 @@ public Q_SLOTS:
 private:
     CommandHistory* commandHistory();
     KBookmarkModel* m_model;
+    TestLinkItrHolder* m_testLinkHolder;
+    FavIconsItrHolder* m_favIconHolder;
 };
 
 #endif

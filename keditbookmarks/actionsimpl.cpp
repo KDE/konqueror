@@ -249,7 +249,9 @@ void KEBApp::createActions() {
 }
 
 ActionsImpl::ActionsImpl(QObject* parent, KBookmarkModel* model)
-    : QObject(parent), m_model(model)
+    : QObject(parent), m_model(model),
+      m_testLinkHolder(new TestLinkItrHolder),
+      m_favIconHolder(new FavIconsItrHolder)
 {
     Q_ASSERT(m_model);
 }
@@ -428,38 +430,38 @@ void ActionsImpl::slotExportMoz() {
 /* -------------------------------------- */
 
 void ActionsImpl::slotCancelFavIconUpdates() {
-    FavIconsItrHolder::self()->cancelAllItrs();
+    m_favIconHolder->cancelAllItrs();
 }
 
 void ActionsImpl::slotCancelAllTests() {
-    TestLinkItrHolder::self()->cancelAllItrs();
+    m_testLinkHolder->cancelAllItrs();
 }
 
 void ActionsImpl::slotTestAll() {
-    TestLinkItrHolder::self()->insertItr(
-            new TestLinkItr(m_model, KEBApp::self()->allBookmarks()));
+    m_testLinkHolder->insertItr(
+            new TestLinkItr(m_model, m_testLinkHolder, KEBApp::self()->allBookmarks()));
 }
 
 void ActionsImpl::slotUpdateAllFavIcons() {
-    FavIconsItrHolder::self()->insertItr(
-            new FavIconsItr(m_model, KEBApp::self()->allBookmarks()));
+    m_favIconHolder->insertItr(
+            new FavIconsItr(m_model, m_favIconHolder, KEBApp::self()->allBookmarks()));
 }
 
 ActionsImpl::~ActionsImpl() {
-    delete FavIconsItrHolder::self();
-    delete TestLinkItrHolder::self();
+    delete m_favIconHolder;
+    delete m_testLinkHolder;
 }
 
 /* -------------------------------------- */
 
 void ActionsImpl::slotTestSelection() {
     KEBApp::self()->bkInfo()->commitChanges();
-    TestLinkItrHolder::self()->insertItr(new TestLinkItr(m_model, KEBApp::self()->selectedBookmarksExpanded()));
+    m_testLinkHolder->insertItr(new TestLinkItr(m_model, m_testLinkHolder, KEBApp::self()->selectedBookmarksExpanded()));
 }
 
 void ActionsImpl::slotUpdateFavIcon() {
     KEBApp::self()->bkInfo()->commitChanges();
-    FavIconsItrHolder::self()->insertItr(new FavIconsItr(m_model, KEBApp::self()->selectedBookmarksExpanded()));
+    m_favIconHolder->insertItr(new FavIconsItr(m_model, m_favIconHolder, KEBApp::self()->selectedBookmarksExpanded()));
 }
 
 /* -------------------------------------- */

@@ -42,8 +42,6 @@
 #include "bookmarkiterator.h"
 #include "bookmarkmodel.h"
 
-TestLinkItrHolder *TestLinkItrHolder::s_self = 0;
-
 TestLinkItrHolder::TestLinkItrHolder()
     : BookmarkIteratorHolder() {
     // do stuff
@@ -71,8 +69,8 @@ void TestLinkItrHolder::addAffectedBookmark( const QString & address )
 
 /* -------------------------- */
 
-TestLinkItr::TestLinkItr(KBookmarkModel* model, const QList<KBookmark>& bks)
-    : BookmarkIterator(bks), m_model(model), m_job(0)
+TestLinkItr::TestLinkItr(KBookmarkModel* model, BookmarkIteratorHolder* holder, const QList<KBookmark>& bks)
+    : BookmarkIterator(holder, bks), m_model(model), m_job(0)
 {
     Q_ASSERT(m_model);
 }

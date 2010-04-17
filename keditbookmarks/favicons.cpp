@@ -31,8 +31,6 @@
 #include <kdebug.h>
 #include <klocale.h>
 
-FavIconsItrHolder *FavIconsItrHolder::s_self = 0;
-
 FavIconsItrHolder::FavIconsItrHolder()
     : BookmarkIteratorHolder()
 {
@@ -62,8 +60,8 @@ void FavIconsItrHolder::addAffectedBookmark( const QString & address )
 
 /* -------------------------- */
 
-FavIconsItr::FavIconsItr(KBookmarkModel* model, const QList<KBookmark>& bks)
-    : BookmarkIterator(bks), m_model(model), m_updater(0)
+FavIconsItr::FavIconsItr(KBookmarkModel* model, BookmarkIteratorHolder* holder, const QList<KBookmark>& bks)
+    : BookmarkIterator(holder, bks), m_model(model), m_updater(0)
 {
     Q_ASSERT(m_model);
 }
