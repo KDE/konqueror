@@ -250,8 +250,8 @@ void KEBApp::createActions() {
 
 ActionsImpl::ActionsImpl(QObject* parent, KBookmarkModel* model)
     : QObject(parent), m_model(model),
-      m_testLinkHolder(new TestLinkItrHolder),
-      m_favIconHolder(new FavIconsItrHolder)
+      m_testLinkHolder(new TestLinkItrHolder(model)),
+      m_favIconHolder(new FavIconsItrHolder(model))
 {
     Q_ASSERT(m_model);
 }
@@ -439,12 +439,12 @@ void ActionsImpl::slotCancelAllTests() {
 
 void ActionsImpl::slotTestAll() {
     m_testLinkHolder->insertItr(
-            new TestLinkItr(m_model, m_testLinkHolder, KEBApp::self()->allBookmarks()));
+            new TestLinkItr(m_testLinkHolder, KEBApp::self()->allBookmarks()));
 }
 
 void ActionsImpl::slotUpdateAllFavIcons() {
     m_favIconHolder->insertItr(
-            new FavIconsItr(m_model, m_favIconHolder, KEBApp::self()->allBookmarks()));
+            new FavIconsItr(m_favIconHolder, KEBApp::self()->allBookmarks()));
 }
 
 ActionsImpl::~ActionsImpl() {
@@ -456,12 +456,12 @@ ActionsImpl::~ActionsImpl() {
 
 void ActionsImpl::slotTestSelection() {
     KEBApp::self()->bkInfo()->commitChanges();
-    m_testLinkHolder->insertItr(new TestLinkItr(m_model, m_testLinkHolder, KEBApp::self()->selectedBookmarksExpanded()));
+    m_testLinkHolder->insertItr(new TestLinkItr(m_testLinkHolder, KEBApp::self()->selectedBookmarksExpanded()));
 }
 
 void ActionsImpl::slotUpdateFavIcon() {
     KEBApp::self()->bkInfo()->commitChanges();
-    m_favIconHolder->insertItr(new FavIconsItr(m_model, m_favIconHolder, KEBApp::self()->selectedBookmarksExpanded()));
+    m_favIconHolder->insertItr(new FavIconsItr(m_favIconHolder, KEBApp::self()->selectedBookmarksExpanded()));
 }
 
 /* -------------------------------------- */

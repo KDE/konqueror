@@ -36,14 +36,13 @@
 #include <klocale.h>
 
 // Local
-#include "globalbookmarkmanager.h" // TODO remove
 #include "toplevel.h" // for KEBApp
 #include "commands.h"
 #include "bookmarkiterator.h"
 #include "bookmarkmodel.h"
 
-TestLinkItrHolder::TestLinkItrHolder()
-    : BookmarkIteratorHolder() {
+TestLinkItrHolder::TestLinkItrHolder(KBookmarkModel* model)
+    : BookmarkIteratorHolder(model) {
     // do stuff
 }
 
@@ -52,27 +51,27 @@ void TestLinkItrHolder::doItrListChanged() {
     if(count() == 0)
     {
         kDebug()<<"Notifing managers "<<m_affectedBookmark;
-        GlobalBookmarkManager::self()->notifyManagers(GlobalBookmarkManager::bookmarkAt(m_affectedBookmark).toGroup());
+        KBookmarkManager* mgr = m_model->bookmarkManager();
+        m_model->notifyManagers(mgr->findByAddress(m_affectedBookmark).toGroup());
         m_affectedBookmark.clear();
     }
 }
 
-void TestLinkItrHolder::addAffectedBookmark( const QString & address )
+void TestLinkItrHolder::addAffectedBookmark(const QString & address)
 {
-    kDebug()<<"addAffectedBookmark "<<address;
+    kDebug() << address;
     if(m_affectedBookmark.isNull())
         m_affectedBookmark = address;
     else
         m_affectedBookmark = KBookmark::commonParent(m_affectedBookmark, address);
-    kDebug()<<" m_affectedBookmark is now "<<m_affectedBookmark;
+    kDebug() << "m_affectedBookmark is now" << m_affectedBookmark;
 }
 
 /* -------------------------- */
 
-TestLinkItr::TestLinkItr(KBookmarkModel* model, BookmarkIteratorHolder* holder, const QList<KBookmark>& bks)
-    : BookmarkIterator(holder, bks), m_model(model), m_job(0)
+TestLinkItr::TestLinkItr(BookmarkIteratorHolder* holder, const QList<KBookmark>& bks)
+    : BookmarkIterator(holder, bks), m_job(0)
 {
-    Q_ASSERT(m_model);
 }
 
 TestLinkItr::~TestLinkItr() {
@@ -87,7 +86,7 @@ TestLinkItr::~TestLinkItr() {
 void TestLinkItr::setStatus(const QString & text)
 {
     curBk().setMetaDataItem("linkstate", text);
-    m_model->emitDataChanged(curBk());
+    model()->emitDataChanged(curBk());
 }
 
 bool TestLinkItr::isApplicable(const KBookmark &bk) const {
@@ -95,7 +94,7 @@ bool TestLinkItr::isApplicable(const KBookmark &bk) const {
 }
 
 void TestLinkItr::doAction() {
-    kDebug()<<"TestLinkItr::doAction() "<<endl;
+    kDebug();
     m_job = KIO::get(curBk().url(), KIO::Reload, KIO::HideProgressInfo);
     m_job->addMetaData( QString("cookies"), QString("none") );
     m_job->addMetaData( QString("errorPage"), QString("false") );
@@ -108,7 +107,7 @@ void TestLinkItr::doAction() {
 }
 
 void TestLinkItr::slotJobResult(KJob *job) {
-    kDebug()<<"TestLinkItr::slotJobResult()"<<endl;
+    kDebug();
     m_job = 0;
 
     KIO::TransferJob *transfer = (KIO::TransferJob *)job;

@@ -75,8 +75,10 @@ void BookmarkIterator::nextOne()
 
 /* --------------------------- */
 
-BookmarkIteratorHolder::BookmarkIteratorHolder()
+BookmarkIteratorHolder::BookmarkIteratorHolder(KBookmarkModel* model)
+    : m_model(model)
 {
+    Q_ASSERT(m_model);
 }
 
 void BookmarkIteratorHolder::insertItr(BookmarkIterator *itr)
@@ -97,6 +99,11 @@ void BookmarkIteratorHolder::cancelAllItrs()
     qDeleteAll(m_itrs);
     m_itrs.clear();
     doItrListChanged();
+}
+
+KBookmarkModel* BookmarkIterator::model()
+{
+    return m_holder->model();
 }
 
 #include "bookmarkiterator.moc"

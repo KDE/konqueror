@@ -26,7 +26,7 @@
 
 class FavIconsItrHolder : public BookmarkIteratorHolder {
 public:
-   FavIconsItrHolder();
+   FavIconsItrHolder(KBookmarkModel* model);
    void addAffectedBookmark( const QString & address );
 protected:
    virtual void doItrListChanged();
@@ -42,7 +42,7 @@ class FavIconsItr : public BookmarkIterator
    Q_OBJECT
 
 public:
-   FavIconsItr(KBookmarkModel* model, BookmarkIteratorHolder* holder, const QList<KBookmark>& bks);
+   FavIconsItr(BookmarkIteratorHolder* holder, const QList<KBookmark>& bks);
    ~FavIconsItr();
 
 public Q_SLOTS:
@@ -54,7 +54,6 @@ protected:
 
 private:
    void setStatus(const QString & status);
-   KBookmarkModel* m_model;
    FavIconUpdater *m_updater;
    QString m_oldStatus;
 };

@@ -29,8 +29,8 @@ class KBookmarkModel;
 
 class TestLinkItrHolder : public BookmarkIteratorHolder {
 public:
-   TestLinkItrHolder();
-   void addAffectedBookmark( const QString & address );
+   TestLinkItrHolder(KBookmarkModel* model);
+   void addAffectedBookmark(const QString & address);
 protected:
    virtual void doItrListChanged();
 private:
@@ -42,7 +42,7 @@ class TestLinkItr : public BookmarkIterator
    Q_OBJECT
 
 public:
-   TestLinkItr(KBookmarkModel* model, BookmarkIteratorHolder* holder, const QList<KBookmark>& bks);
+   TestLinkItr(BookmarkIteratorHolder* holder, const QList<KBookmark>& bks);
    ~TestLinkItr();
 
 public Q_SLOTS:
@@ -53,7 +53,6 @@ private:
    virtual void doAction();
    virtual bool isApplicable(const KBookmark &bk) const;
 
-   KBookmarkModel* m_model;
    KIO::TransferJob *m_job;
    QString m_oldStatus;
 };

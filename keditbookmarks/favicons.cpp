@@ -20,7 +20,6 @@
 */
 
 #include "favicons.h"
-#include "globalbookmarkmanager.h"
 
 #include "bookmarkiterator.h"
 #include "toplevel.h" // for KEBApp
@@ -28,11 +27,12 @@
 #include "commands.h"
 #include "bookmarkmodel.h"
 
+#include <kbookmarkmanager.h>
 #include <kdebug.h>
 #include <klocale.h>
 
-FavIconsItrHolder::FavIconsItrHolder()
-    : BookmarkIteratorHolder()
+FavIconsItrHolder::FavIconsItrHolder(KBookmarkModel* model)
+    : BookmarkIteratorHolder(model)
 {
     // do stuff
 }
@@ -43,7 +43,8 @@ void FavIconsItrHolder::doItrListChanged() {
     if(count() == 0)
     {
         kDebug()<<"Notifing managers "<<m_affectedBookmark;
-        GlobalBookmarkManager::self()->notifyManagers(GlobalBookmarkManager::bookmarkAt(m_affectedBookmark).toGroup());
+        KBookmarkManager* mgr = m_model->bookmarkManager();
+        model()->notifyManagers(mgr->findByAddress(m_affectedBookmark).toGroup());
         m_affectedBookmark.clear();
     }
 }
@@ -60,10 +61,9 @@ void FavIconsItrHolder::addAffectedBookmark( const QString & address )
 
 /* -------------------------- */
 
-FavIconsItr::FavIconsItr(KBookmarkModel* model, BookmarkIteratorHolder* holder, const QList<KBookmark>& bks)
-    : BookmarkIterator(holder, bks), m_model(model), m_updater(0)
+FavIconsItr::FavIconsItr(BookmarkIteratorHolder* holder, const QList<KBookmark>& bks)
+    : BookmarkIterator(holder, bks), m_updater(0)
 {
-    Q_ASSERT(m_model);
 }
 
 FavIconsItr::~FavIconsItr()
@@ -75,7 +75,7 @@ FavIconsItr::~FavIconsItr()
 void FavIconsItr::setStatus(const QString & status)
 {
     curBk().setMetaDataItem("favstate", status);
-    m_model->emitDataChanged(curBk());
+    model()->emitDataChanged(curBk());
 }
 
 void FavIconsItr::slotDone(bool succeeded)

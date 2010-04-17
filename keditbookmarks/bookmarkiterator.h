@@ -23,6 +23,7 @@
 #include <QtCore/QList>
 #include <kbookmark.h>
 
+class KBookmarkModel;
 class BookmarkIteratorHolder;
 
 class BookmarkIterator : public QObject
@@ -30,9 +31,10 @@ class BookmarkIterator : public QObject
    Q_OBJECT
 
 public:
-   BookmarkIterator(BookmarkIteratorHolder* holder, const QList<KBookmark>& bks);
-   virtual ~BookmarkIterator();
-   BookmarkIteratorHolder* holder() const { return m_holder; }
+    BookmarkIterator(BookmarkIteratorHolder* holder, const QList<KBookmark>& bks);
+    virtual ~BookmarkIterator();
+    BookmarkIteratorHolder* holder() const { return m_holder; }
+    KBookmarkModel* model();
 
 public Q_SLOTS:
    void nextOne();
@@ -56,11 +58,13 @@ public:
    void removeItr(BookmarkIterator*);
    void insertItr(BookmarkIterator*);
    virtual void addAffectedBookmark(const QString & address) = 0;
+   KBookmarkModel* model() { return m_model; }
 protected:
-   BookmarkIteratorHolder();
+   BookmarkIteratorHolder(KBookmarkModel* model);
    virtual ~BookmarkIteratorHolder() {}
    virtual void doItrListChanged() = 0;
    int count() const { return m_itrs.count(); }
+   KBookmarkModel* m_model;
 private:
    QList<BookmarkIterator *> m_itrs;
 };
