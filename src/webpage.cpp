@@ -31,6 +31,7 @@
 #include "networkaccessmanager.h"
 #include "settings/webkitsettings.h"
 
+#include <kparts/browseropenorsavequestion.h>
 #include <KDE/KParts/GenericFactory>
 #include <KDE/KParts/BrowserRun>
 #include <KDE/KAboutData>
@@ -40,6 +41,8 @@
 #include <KDE/KMessageBox>
 #include <KDE/KProtocolManager>
 #include <KDE/KGlobalSettings>
+#include <KDE/KGlobal>
+#include <KDE/KLocale>
 #include <KDE/KJobUiDelegate>
 #include <KDE/KRun>
 #include <KDE/KShell>
@@ -48,9 +51,11 @@
 #include <KDE/KAuthorized>
 #include <KIO/Job>
 #include <KIO/AccessManager>
+#include <KDE/KTemporaryFile>
 
 #include <QtCore/QListIterator>
 #include <QtGui/QTextDocument>
+#include <QtGui/QApplication>
 #include <QtNetwork/QNetworkReply>
 #include <QtUiTools/QUiLoader>
 
@@ -92,11 +97,10 @@ static QUrl sanitizeMailToUrl(const QUrl &url, QStringList& files) {
     return sanitizedUrl;
 }
 
-// Converts QNetworkReply::NetworkError codes to the KIO equivalent ones...
-static int convertErrorCode(QNetworkReply* reply)
+static int errorCodeFromReply(QNetworkReply* reply)
 {
     // First check if there is a KIO error code sent back and use that,
-    // if not attempt to convert the QNetworkReply::
+    // if not attempt to convert QNetworkReply's NetworkError to KIO::Error.
     QVariant attr = reply->attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::KioError));
     if (attr.isValid() && attr.type() == QVariant::Int)
         return attr.toInt();
@@ -128,8 +132,10 @@ static int convertErrorCode(QNetworkReply* reply)
             return KIO::ERR_UNKNOWN;
         case QNetworkReply::NoError:
         default:
-            return 0;
+            break;
     }
+
+    return 0;
 }
 
 // Returns true if the scheme and domain of the two urls match...
@@ -174,14 +180,17 @@ static void restoreStateFor(QWebFrame *frame, const WebFrameState &frameState)
 class WebPage::WebPagePrivate
 {
 public:
-    WebPagePrivate() : statDownloadRequest(false) {}
+    WebPagePrivate() : ignoreError(false), kioErrorCode(0) {}
 
-    bool statDownloadRequest;
+    enum WebPageSecurity { PageUnencrypted, PageEncrypted, PageMixed };
+
     WebSslInfo sslInfo;
     QHash<QString, WebFrameState> frameStateContainer;
     // Holds list of requests including those from children frames
     QList<QUrl> requestQueue;
     QPointer<KWebKitPart> part;
+    bool ignoreError;
+    int kioErrorCode;
 };
 
 WebPage::WebPage(KWebKitPart *part, QWidget *parent)
@@ -306,13 +315,20 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
                 inPageRequest = false;
 
                 /*
-                  HACK: It is impossible to marry QtWebKit's history handling
-                  with that of konqueror. They simply do not mix like oil and
+                  NOTE: It is impossible to marry QtWebKit's history handling
+                  with that of Konqueror's. They simply do not mix like oil and
                   water! Anyhow, the code below is an attempt to work around
-                  the issues associated with these problems. It is not 100%
-                  perfect, but everything should work correctly 99.9% of the
-                  time and that is true even when this part gets unloaded and
-                  loaded...
+                  the issues associated with these problems.
+
+                  It is not 100% perfect because this kpart will not and cannot share
+                  its history with other browser components like khtml. That is not
+                  the fault of these componenets, but rather how history management is
+                  handled by KPart itself. Anyhow, almost everything else should work
+                  as expected including the history being properly restored even if this part gets unloaded and loaded again...
+                  **** Warning to future maintainers of this code... think 100x
+                  before attempting to mess with this code. It took a full two
+                  months to work out all the scenarios and come up with this solution.
+
                 */
                 if (d->frameStateContainer.contains(frame->frameName())) {
                     if (frame == mainFrame()) {
@@ -393,14 +409,14 @@ QWebPage *WebPage::createWindow(WebWindowType type)
 
 void WebPage::slotUnsupportedContent(QNetworkReply *reply)
 {
-    KParts::OpenUrlArguments args;
-    const KUrl url(reply->url());
-
+    Q_ASSERT (reply);
     // FIXME: Until we implement a way to resume/continue a network
     // request. We must abort the reply to prevent a zombie process
     // from continuing to download the unsupported content!
     reply->abort();
 
+    KParts::OpenUrlArguments args;
+    const KUrl url(reply->url());
     Q_FOREACH (const QByteArray &headerName, reply->rawHeaderList()) {
         args.metaData().insert(QString(headerName), QString(reply->rawHeader(headerName)));
     }
@@ -436,18 +452,7 @@ void WebPage::downloadRequest(const QNetworkRequest &request)
         }
     }
 
-#if 0
-    // For http requests, attempt to retrieve "Content-Dispostion" if possible...
-    if (url.scheme().startsWith(QL1S("http"), Qt::CaseInsensitive)) {
-
-        d->statDownloadRequest = true;
-        networkAccessManager()->get(request);
-    } else {
-        KWebPage::downloadRequest(request);
-    }
-#else
     KWebPage::downloadRequest(request);
-#endif
 }
 
 void WebPage::slotGeometryChangeRequested(const QRect &rect)
@@ -529,12 +534,12 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
         if (statusCode > 300 && statusCode < 304) {
             //kDebug() << "Redirected to" << reply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
         } else {
-            const int errCode = convertErrorCode(reply);
+            const int errCode = errorCodeFromReply(reply);
             const bool isMainFrameRequest = (frame == mainFrame());
 
-            // TODO: Perhaps look into supporting mixed mode, part secure and
-            // part not, sites at some point. For now we only deal with SSL
-            // information for the main page like most browsers.
+            // TODO: Perhaps look into supporting mixed mode, part secure part
+            // not, sites at some point. For now we only deal with SSL information
+            // for the main frame just like KHTML.
             if (isMainFrameRequest && d->sslInfo.isValid() &&
                 !domainSchemeMatch(reply->url(), d->sslInfo.url())) {
                 //kDebug() << "Reseting cached SSL info...";
@@ -557,11 +562,13 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
                 case KIO::ERR_ABORTED:
                 case KIO::ERR_USER_CANCELED: // Do nothing if request is cancelled/aborted
                     //kDebug() << "User aborted request!";
+                    d->ignoreError = true;
                     emit loadAborted(QUrl());
                     return;
                 // Handle the user clicking on a link that refers to a directory
                 // Since KIO cannot automatically convert a GET request to a LISTDIR one.
                 case KIO::ERR_IS_DIRECTORY:
+                    d->ignoreError = true;
                     emit loadAborted(reply->url());
                     return;
                 default:
@@ -570,18 +577,21 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
                     if (isMainFrameRequest)
                         emit saveFrameStateRequested(frame, 0);
 
-                    url = QString ("error:/?error=%1&errText=%2#%3")
-                          .arg(errCode).arg(reply->errorString()).arg(reply->url().toString());
+                    d->ignoreError = false;
+                    d->kioErrorCode = errCode;
                     break;
             }
 
-            emit navigationRequestFinished(url, frame);
+            if (isMainFrameRequest) {
+                WebPagePrivate::WebPageSecurity security;
+                if (d->sslInfo.isValid())
+                    security = WebPagePrivate::PageEncrypted;
+                else
+                    security = WebPagePrivate::PageUnencrypted;
+
+                emit d->part->browserExtension()->setPageSecurity(security);
+            }
         }
-    } else if (d->statDownloadRequest) {
-#if 0
-        d->statDownloadRequest = false;
-        downloadReply(reply);
-#endif
     }
 }
 
@@ -712,4 +722,115 @@ void WebPage::setPageJScriptPolicy(const QUrl &url)
     settings()->setAttribute(QWebSettings::JavascriptCanOpenWindows,
                              (policy != WebKitSettings::KJSWindowOpenDeny &&
                               policy != WebKitSettings::KJSWindowOpenSmart));
+}
+
+bool WebPage::extension(Extension extension, const ExtensionOption *option, ExtensionReturn *output)
+{
+    if (extension == QWebPage::ErrorPageExtension && !d->ignoreError)
+    {
+        const QWebPage::ErrorPageExtensionOption *extOption = static_cast<const QWebPage::ErrorPageExtensionOption*>(option);
+        kDebug() << extOption->domain << extOption->error << extOption->errorString;
+        if (extOption->domain == QWebPage::QtNetwork) {
+            QWebPage::ErrorPageExtensionReturn *extOutput = static_cast<QWebPage::ErrorPageExtensionReturn*>(output);
+            extOutput->content = errorPage(d->kioErrorCode, extOption->errorString, extOption->url).toUtf8();
+            if (extOption->frame->parentFrame())
+              extOutput->baseUrl = this->mainFrame()->url();
+            else
+              extOutput->baseUrl = extOption->frame->url();
+
+            return true;
+        }
+    }
+
+    return KWebPage::extension(extension, option, output);
+}
+
+bool WebPage::supportsExtension(Extension extension) const
+{
+    kDebug() << extension;
+    if (extension == QWebPage::ErrorPageExtension)
+        return true;
+
+    return KWebPage::supportsExtension(extension);
+}
+
+QString WebPage::errorPage(int code, const QString& text, const KUrl& reqUrl) const
+{
+  QString errorName, techName, description;
+  QStringList causes, solutions;
+
+  QByteArray raw = KIO::rawErrorDetail( code, text, &reqUrl );
+  QDataStream stream(raw);
+
+  stream >> errorName >> techName >> description >> causes >> solutions;
+
+  QString url, protocol, datetime;
+  url = reqUrl.url();
+  protocol = reqUrl.protocol();
+  datetime = KGlobal::locale()->formatDateTime( QDateTime::currentDateTime(), KLocale::LongDate );
+
+  QString filename( KStandardDirs::locate( "data", "kwebkitpart/error.html" ) );
+  QFile file( filename );
+  if ( !file.open( QIODevice::ReadOnly ) )
+    return i18n("<html><body><h3>Unable to display error message!</h3>"
+                "<p>The error template file <em>error.html</em> could not be "
+                "found!</p></body></html>");
+
+  QString html = QString( QL1S( file.readAll() ) );
+
+  html.replace( QL1S( "TITLE" ), i18n( "Error: %1", errorName ) );
+  html.replace( QL1S( "DIRECTION" ), QApplication::isRightToLeft() ? "rtl" : "ltr" );
+  html.replace( QL1S( "ICON_PATH" ), KUrl(KIconLoader::global()->iconPath("dialog-warning", -KIconLoader::SizeHuge)).url() );
+
+  QString doc = QL1S( "<h1>" );
+  doc += i18n( "The requested operation could not be completed" );
+  doc += QL1S( "</h1><h2>" );
+  doc += errorName;
+  doc += QL1S( "</h2>" );
+
+  if ( !techName.isNull() ) {
+    doc += QL1S( "<h2>" );
+    doc += i18n( "Technical Reason: %1", techName );
+    doc += QL1S( "</h2>" );
+  }
+
+  doc += QL1S( "<h3>" );
+  doc += i18n( "Details of the Request:" );
+  doc += QL1S( "</h3><ul><li>" );
+  doc += i18n( "URL: %1" ,  url );
+  doc += QL1S( "</li><li>" );
+
+  if ( !protocol.isNull() ) {
+    doc += i18n( "Protocol: %1", protocol );
+    doc += QL1S( "</li><li>" );
+  }
+
+  doc += i18n( "Date and Time: %1" ,  datetime );
+  doc += QL1S( "</li><li>" );
+  doc += i18n( "Additional Information: %1" ,  text );
+  doc += QL1S( "</li></ul><h3>" );
+  doc += i18n( "Description:" );
+  doc += QL1S( "</h3><p>" );
+  doc += description;
+  doc += QL1S( "</p>" );
+
+  if ( causes.count() ) {
+    doc += QL1S( "<h3>" );
+    doc += i18n( "Possible Causes:" );
+    doc += QL1S( "</h3><ul><li>" );
+    doc += causes.join( "</li><li>" );
+    doc += QL1S( "</li></ul>" );
+  }
+
+  if ( solutions.count() ) {
+    doc += QL1S( "<h3>" );
+    doc += i18n( "Possible Solutions:" );
+    doc += QL1S( "</h3><ul><li>" );
+    doc += solutions.join( "</li><li>" );
+    doc += QL1S( "</li></ul>" );
+  }
+
+  html.replace( QL1S("TEXT"), doc );
+
+  return html;
 }

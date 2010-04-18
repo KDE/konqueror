@@ -24,7 +24,7 @@
 #ifndef WEBPAGE_H
 #define WEBPAGE_H
 
-#include <kwebpage.h>
+#include <KDE/KWebPage>
 
 #include <QtCore/QUrl>
 #include <QtCore/QDebug>
@@ -100,16 +100,31 @@ public:
      */
     void downloadRequest(const QNetworkRequest &request);
 
-Q_SIGNALS:
-     /**
-      * This signal is emitted whenever a navigation request completes...
-      *
-      * The @p url is the requested url or in case of an error a special error
-      * url of form error:/?err=<code>&errText=<text>#<request-url>. The second
-      * parameter @p frame is the QWebFrame which orignated the request in the.
-      */
-    void navigationRequestFinished(const KUrl& url, QWebFrame *frame);
+    /**
+     * Returns the error page associated with the KIO error @p code.
+     *
+     * @param text the error message.
+     * @param url the url where the error was encountered.
+     *
+     * @return html error page.
+     */
+    QString errorPage(int code, const QString& text, const KUrl& url) const;
 
+    /**
+     * Re-implemented to handle ErrorPageExtension.
+     *
+     * @see QWebPage::extension()
+     */
+    bool extension(Extension extension, const ExtensionOption *option, ExtensionReturn *output);
+
+    /**
+     * Re-implemented to handle ErrorPageExtension.
+     *
+     * @see QWebPage::supportsExtension()
+     */
+    bool supportsExtension(Extension extension) const;
+
+Q_SIGNALS:
     /**
      * This signal is emitted whenever a user cancels/aborts a load resource
      * request.

@@ -50,12 +50,9 @@ class KWebKitPartPrivate : public QObject
 {
    Q_OBJECT
 public:
-    enum PageSecurity { Unencrypted, Encrypted, Mixed };
-
     KWebKitPartPrivate(KWebKitPart *parent);
     void init (QWidget *widget);
     void initActions();
-    bool handleError(const KUrl &, QWebFrame *frame, bool handleUserAbort = true);
 
     bool updateHistory;
     QPointer<WebView> webView;
@@ -71,7 +68,6 @@ private Q_SLOTS:
     void slotLoadFinished(bool);
     void slotLoadAborted(const KUrl &);
 
-    void slotNavigationRequestFinished(const KUrl &, QWebFrame *);
     void slotSearchForText(const QString &text, bool backward);
     void slotLinkHovered(const QString &, const QString&, const QString &);
     void slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item);

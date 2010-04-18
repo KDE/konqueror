@@ -62,12 +62,13 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent, const QStringLi
             :KParts::ReadOnlyPart(parent), d(new KWebKitPartPrivate(this))
 {
     KAboutData about = KAboutData("kwebkitpart", 0,
-                                  ki18nc("component about data name", "WebKit Browser Engine Component"),
-                                  /*version*/ "0.9", /*ki18n("shortDescription")*/ KLocalizedString(),
+                                  ki18nc("Program Name", "KWebKitPart"),
+                                  /*version*/ "0.9",
+                                  ki18nc("Short Description", "QtWebKit Browser Engine Component"),
                                   KAboutData::License_LGPL,
-                                  ki18n("(c) 2009-2010 Dawit Alemayehu\n"
-                                        "(c) 2008-2010 Urs Wolfer\n"
-                                        "(c) 2007 Trolltech ASA"));
+                                  ki18n("(C) 2009-2010 Dawit Alemayehu\n"
+                                        "(C) 2008-2010 Urs Wolfer\n"
+                                        "(C) 2007 Trolltech ASA"));
 
     about.addAuthor(ki18n("Urs Wolfer"), ki18n("Maintainer, Developer"), "uwolfer@kde.org");
     about.addAuthor(ki18n("Dawit Alemayehu"), ki18n("Developer"), "adawit@kde.org");
@@ -113,16 +114,41 @@ bool KWebKitPart::openUrl(const KUrl &u)
     d->updateHistory = false;
 
     // Handle error conditions...
-    if (d->handleError(u, d->webView->page()->mainFrame(), false)) {
-        return true;
+    if (u.protocol().compare(QL1S("error"), Qt::CaseInsensitive) == 0 && u.hasSubUrl()) {
+        /**
+         * The format of the error url is that two variables are passed in the query:
+         * error = int kio error code, errText = QString error text from kio
+         * and the URL where the error happened is passed as a sub URL.
+         */
+        KUrl::List urls = KUrl::split(u);
+
+        if ( urls.count() > 1 ) {
+            KUrl mainURL = urls.first();
+            int error = mainURL.queryItem( "error" ).toInt();
+
+            // error=0 isn't a valid error code, so 0 means it's missing from the URL
+            if ( error == 0 )
+                error = KIO::ERR_UNKNOWN;
+
+            const QString errorText = mainURL.queryItem( "errText" );
+            urls.pop_front();
+            KUrl reqUrl = KUrl::join( urls );
+            emit d->browserExtension->setLocationBarUrl(reqUrl.prettyUrl());
+            d->webView->setHtml(d->webPage->errorPage(error, errorText, reqUrl));
+            return true;
+        }
+
+        return false;
     }
 
     // Set the url...
     setUrl(u);
 
+    // Ignore about:blank urls...
     if (u.url() == "about:blank") {
         emit setWindowCaption (u.url());
-        d->webView->setUrl(u);
+        emit completed();
+        return true;
     } else {
         KParts::BrowserArguments bargs (browserExtension()->browserArguments());
         KParts::OpenUrlArguments args (arguments());
@@ -154,8 +180,10 @@ bool KWebKitPart::openUrl(const KUrl &u)
                1 => Frame url
                2 => Frame scroll position X
                3 => Frame scroll position Y
-               4 => Frame form data information in: name=value;[...;nameN=valueN] format, where
-                    name is the form name
+               4 => Frame form data information in a name/value pair format:
+                      name=value;[...;nameN=valueN]
+                    where name identifies the input widget (input, textarea) in
+                    CSS selector language format.
             */
             const int count = bargs.docState.count();
             for (int i = 0; i < count; i += 5) {

@@ -22,31 +22,26 @@
 
 
 #include "kwebkitpart_p.h"
-
+#include "kwebkitpart_ext.h"
+#include "kwebkitpart.h"
 #include "webview.h"
 #include "webpage.h"
 #include "websslinfo.h"
 #include "sslinfodialog_p.h"
-#include "kwebkitpart.h"
-#include "kwebkitpart_ext.h"
-
 #include "settings/webkitsettings.h"
 #include "ui/passwordbar.h"
 #include "ui/searchbar.h"
-#include <kwebwallet.h>
 
+#include <kwebwallet.h>
+#include <kdeversion.h>
 #include <KDE/KLocalizedString>
 #include <KDE/KStringHandler>
 #include <KDE/KMessageBox>
 #include <KDE/KDebug>
 #include <KDE/KFileItem>
-#include <KDE/KStandardDirs>
-#include <KDE/KIconLoader>
 #include <KDE/KConfigGroup>
 #include <KDE/KAction>
 #include <KDE/KActionCollection>
-#include <KDE/KGlobal>
-#include <KDE/KLocale>
 #include <KDE/KUrlLabel>
 #include <KDE/KStatusBar>
 #include <KDE/KToolInvocation>
@@ -55,7 +50,6 @@
 #include <KParts/StatusBarExtension>
 
 #include <QtCore/QFile>
-#include <QtGui/QApplication>
 #include <QtGui/QVBoxLayout>
 #include <QtDBus/QDBusInterface>
 #include <QtWebKit/QWebFrame>
@@ -63,88 +57,6 @@
 
 #define QL1S(x) QLatin1String(x)
 #define QL1C(x) QLatin1Char(x)
-
-
-static QString htmlError (int code, const QString& text, const KUrl& reqUrl)
-{
-  QString errorName, techName, description;
-  QStringList causes, solutions;
-
-  QByteArray raw = KIO::rawErrorDetail( code, text, &reqUrl );
-  QDataStream stream(raw);
-
-  stream >> errorName >> techName >> description >> causes >> solutions;
-
-  QString url, protocol, datetime;
-  url = reqUrl.url();
-  protocol = reqUrl.protocol();
-  datetime = KGlobal::locale()->formatDateTime( QDateTime::currentDateTime(),
-                                                KLocale::LongDate );
-
-  QString filename( KStandardDirs::locate( "data", "kwebkitpart/error.html" ) );
-  QFile file( filename );
-  bool isOpened = file.open( QIODevice::ReadOnly );
-  if ( !isOpened )
-    kWarning() << "Could not open error html template:" << filename;
-
-  QString html = QString( QL1S( file.readAll() ) );
-
-  html.replace( QL1S( "TITLE" ), i18n( "Error: %1", errorName ) );
-  html.replace( QL1S( "DIRECTION" ), QApplication::isRightToLeft() ? "rtl" : "ltr" );
-  html.replace( QL1S( "ICON_PATH" ), KUrl(KIconLoader::global()->iconPath("dialog-warning", -KIconLoader::SizeHuge)).url() );
-
-  QString doc = QL1S( "<h1>" );
-  doc += i18n( "The requested operation could not be completed" );
-  doc += QL1S( "</h1><h2>" );
-  doc += errorName;
-  doc += QL1S( "</h2>" );
-
-  if ( !techName.isNull() ) {
-    doc += QL1S( "<h2>" );
-    doc += i18n( "Technical Reason: %1", techName );
-    doc += QL1S( "</h2>" );
-  }
-
-  doc += QL1S( "<h3>" );
-  doc += i18n( "Details of the Request:" );
-  doc += QL1S( "</h3><ul><li>" );
-  doc += i18n( "URL: %1" ,  url );
-  doc += QL1S( "</li><li>" );
-
-  if ( !protocol.isNull() ) {
-    doc += i18n( "Protocol: %1", protocol );
-    doc += QL1S( "</li><li>" );
-  }
-
-  doc += i18n( "Date and Time: %1" ,  datetime );
-  doc += QL1S( "</li><li>" );
-  doc += i18n( "Additional Information: %1" ,  text );
-  doc += QL1S( "</li></ul><h3>" );
-  doc += i18n( "Description:" );
-  doc += QL1S( "</h3><p>" );
-  doc += description;
-  doc += QL1S( "</p>" );
-
-  if ( causes.count() ) {
-    doc += QL1S( "<h3>" );
-    doc += i18n( "Possible Causes:" );
-    doc += QL1S( "</h3><ul><li>" );
-    doc += causes.join( "</li><li>" );
-    doc += QL1S( "</li></ul>" );
-  }
-
-  if ( solutions.count() ) {
-    doc += QL1S( "<h3>" );
-    doc += i18n( "Possible Solutions:" );
-    doc += QL1S( "</h3><ul><li>" );
-    doc += solutions.join( "</li><li>" );
-    doc += QL1S( "</li></ul>" );
-  }
-
-  html.replace( QL1S("TEXT"), doc );
-
-  return html;
-}
 
 
 KWebKitPartPrivate::KWebKitPartPrivate(KWebKitPart *parent)
@@ -183,8 +95,6 @@ void KWebKitPartPrivate::init(QWidget *mainWidget)
             this, SLOT(slotLoadStarted()));
     connect(webPage, SIGNAL(loadAborted(const KUrl &)),
             this, SLOT(slotLoadAborted(const KUrl &)));
-    connect(webPage, SIGNAL(navigationRequestFinished(const KUrl &, QWebFrame *)),
-            this, SLOT(slotNavigationRequestFinished(const KUrl &, QWebFrame *)));
     connect(webPage, SIGNAL(linkHovered(const QString &, const QString &, const QString &)),
             this, SLOT(slotLinkHovered(const QString &, const QString &, const QString &)));
     connect(webPage, SIGNAL(saveFrameStateRequested(QWebFrame *, QWebHistoryItem *)),
@@ -293,43 +203,6 @@ void KWebKitPartPrivate::initActions()
                                               searchBar, SLOT(findPrevious()));
 }
 
-
-bool KWebKitPartPrivate::handleError(const KUrl &u, QWebFrame *frame, bool handleUserAbort)
-{
-    if ( u.protocol() == "error" && u.hasSubUrl() ) {
-        /**
-         * The format of the error url is that two variables are passed in the query:
-         * error = int kio error code, errText = QString error text from kio
-         * and the URL where the error happened is passed as a sub URL.
-         */
-        KUrl::List urls = KUrl::split(u);
-
-        if ( urls.count() > 1 ) {
-            KUrl mainURL = urls.first();
-            int error = mainURL.queryItem( "error" ).toInt();
-
-            // error=0 isn't a valid error code, so 0 means it's missing from the URL
-            if ( error == 0 )
-                error = KIO::ERR_UNKNOWN;
-
-            if (handleUserAbort && error == KIO::ERR_USER_CANCELED) {
-                webView->setUrl(webView->url());
-                emit browserExtension->setLocationBarUrl(KUrl(webView->url()).prettyUrl());
-            } else {
-                const QString errorText = mainURL.queryItem( "errText" );
-                urls.pop_front();
-                KUrl reqUrl = KUrl::join( urls );
-                emit browserExtension->setLocationBarUrl(reqUrl.prettyUrl());                
-                frame->setHtml(htmlError(error, errorText, reqUrl));
-            }
-            return true;
-        }
-    }
-
-    return false;
-}
-
-
 void KWebKitPartPrivate::slotLoadStarted()
 {
     emit q->started(0);
@@ -399,33 +272,13 @@ void KWebKitPartPrivate::slotLoadFinished(bool ok)
     }
 
     /*
-      NOTE #1: QtWebKit will not kill a META redirect request even if one
-      triggers the WebPage::Stop action!! As such the code below is useless
-      and disabled for now.
-
-      NOTE #2: QWebFrame::metaData only provides access to META tags that
-      contain a 'name' attribute and completely ignores those that do not.
-      This of course includes other META redirect tags such as 'http-equiv'.
-      Hence the convoluted code below is needed to extract the META redirect
-      period from the list of META tags...
+      NOTE: For now there is no way to allow the end user to stop scheduled
+      redirects or page refresh requests that originate through the <meta>
+      tag. As such we simply emit the completed signal. Will revisit issue
+      once the patch proposed upstream is accepted or implemented in another
+      manner. See  https://bugs.webkit.org/show_bug.cgi?id=29899.
     */
-#if 0
-    bool refresh = false;
-    QMapIterator<QString,QString> it (webView->page()->mainFrame()->metaData());
-    while (it.hasNext()) {
-      it.next();
-      //kDebug() << "meta-key: " << it.key() << "meta-value: " << it.value();
-      // HACK: QtWebKit does not parse the value of http-equiv property and
-      // as such uses an empty key with a value when
-      if (it.key().isEmpty() && it.value().contains(QRegExp("[0-9];url"))) {
-        refresh = true;
-        break;
-      }
-    }
-    emit q->completed(refresh);
-#else
     emit q->completed();
-#endif
 }
 
 void KWebKitPartPrivate::slotLoadAborted(const KUrl & url)
@@ -435,24 +288,6 @@ void KWebKitPartPrivate::slotLoadAborted(const KUrl & url)
       emit browserExtension->openUrlRequest(url);
     else
       q->setUrl(webView->url());
-}
-
-void  KWebKitPartPrivate::slotNavigationRequestFinished(const KUrl& url, QWebFrame *frame)
-{
-    if (frame) {
-
-        if (handleError(url, frame)) {
-            return;
-        }
-
-        if (frame == webPage->mainFrame()) {
-            if (webPage->sslInfo().isValid()) {
-                browserExtension->setPageSecurity(KWebKitPartPrivate::Encrypted);
-            } else {
-                browserExtension->setPageSecurity(KWebKitPartPrivate::Unencrypted);
-            }
-        }
-    }
 }
 
 void KWebKitPartPrivate::slotUrlChanged(const QUrl& url)
@@ -479,7 +314,8 @@ void KWebKitPartPrivate::slotShowSecurity()
         dlg->open();
     } else {
         KMessageBox::information(0, i18n("The SSL information for this site "
-                                         "appears to be corrupt."), i18nc("Secure Sockets Layer", "SSL"));
+                                         "appears to be corrupt."),
+                                 i18nc("Secure Sockets Layer", "SSL"));
     }
 }
 
