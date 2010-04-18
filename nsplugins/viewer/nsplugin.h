@@ -59,6 +59,13 @@ class OrgKdeNspluginsCallBackInterface;
 class KLibrary;
 class QTimer;
 
+// We need the following inside the scripting code
+namespace kdeNsPluginViewer {
+  void* g_NPN_MemAlloc(uint32 size);
+  void  g_NPN_MemFree(void* ptr);
+}
+
+using namespace kdeNsPluginViewer;
 
 class NSPluginStreamBase : public QObject
 {

@@ -122,6 +122,8 @@ static NSPluginInstance* pluginViewForInstance(NPP instance)
 // server side functions -----------------------------------------------------
 
 // allocate memory
+
+namespace kdeNsPluginViewer  {
 void *g_NPN_MemAlloc(uint32 size)
 {
    void *mem = ::malloc(size);
@@ -138,6 +140,8 @@ void g_NPN_MemFree(void *ptr)
    //kDebug(1431) << "g_NPN_MemFree() at " << ptr;
    if (ptr)
      ::free(ptr);
+}
+
 }
 
 uint32 g_NPN_MemFlush(uint32 size)
