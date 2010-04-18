@@ -31,7 +31,7 @@ namespace KIO { class Job; }
  * URLs and hosts with shortcut icons and the icons' downloads in a central
  * place.
  *
- * After a successful download, the DBUS signal iconChanged() is emitted.
+ * After a successful download, the D-Bus signal iconChanged() is emitted.
  * It has the signature void iconChanged(bool, QString, QString);
  * The first parameter is true if the icon is a "host" icon, that is it is
  * the default icon for all URLs on the given host. In this case, the
@@ -67,7 +67,7 @@ public Q_SLOTS: // dbus methods, called by the adaptor
     /**
      * Associates an icon with the given URL. If the icon was not
      * downloaded before or the downloaded was too long ago, a
-     * download attempt will be started and the iconChanged() DBUS
+     * download attempt will be started and the iconChanged() D-Bus
      * signal is emitted after the download finished successfully.
      *
      * @param url the URL which will be associated with the icon
@@ -77,21 +77,39 @@ public Q_SLOTS: // dbus methods, called by the adaptor
     /**
      * Downloads the icon for a given host if it was not downloaded before
      * or the download was too long ago. If the download finishes
-     * successfully, the iconChanged() DBUS signal is emitted.
+     * successfully, the iconChanged() D-Bus signal is emitted.
      *
      * @param url any URL on the host for which the icon is to be downloaded
      */
     void downloadHostIcon(const KUrl &url);
 
-signals: // DBUS signals
     /**
-     * Emitting once a new icon is available, for a host or url
+     * Downloads the icon for a given host, even if we tried very recently.
+     * Not recommended in the general case; only useful for explicit "update favicon"
+     * actions from the user.
+     *
+     * If the download finishes successfully, the iconChanged() D-Bus signal is emitted.
+     *
+     * @param url any URL on the host for which the icon is to be downloaded
+     */
+    void forceDownloadHostIcon(const KUrl &url);
+
+signals: // D-Bus signals
+    /**
+     * Emitted once a new icon is available, for a host or url
      */
     void iconChanged(bool isHost, QString hostOrURL, QString iconName);
     /**
      * Progress info while downloading an icon
      */
     void infoMessage(QString iconURL, QString msg);
+    /**
+     * Emitted if an error occured while downloading the icon for the given host or url.
+     * You can usually ignore this (e.g. web browsers don't need to do anything if
+     * no favicon was found), but this signal can be useful in some cases, e.g.
+     * to let keditbookmarks know that it should move on to the next bookmark.
+     */
+    void error(bool isHost, QString hostOrURL, QString errorString);
 
 private:
     void startDownload(const QString &, bool, const KUrl &);

@@ -10,6 +10,11 @@
       <arg name="iconUrl" type="s" direction="out"/>
       <arg name="msg" type="s" direction="out"/>
     </signal>
+    <signal name="error">
+      <arg name="isHost" type="b" direction="out"/>
+      <arg name="hostOrUrl" type="s" direction="out"/>
+      <arg name="iconName" type="s" direction="out"/>
+    </signal>
     <method name="iconForUrl">
       <arg type="s" direction="out"/>
       <arg name="url" type="s" direction="in"/>
@@ -19,6 +24,9 @@
       <arg name="iconUrl" type="s" direction="in"/>
     </method>
     <method name="downloadHostIcon">
+      <arg name="url" type="s" direction="in"/>
+    </method>
+    <method name="forceDownloadHostIcon">
       <arg name="url" type="s" direction="in"/>
     </method>
   </interface>
