@@ -63,7 +63,7 @@ static QHash<int32,   NSPluginIdentifier*> intIdents;
 static NPIdentifier g_NPN_GetQStringIdentifier(const QString& str)
 {
     QHash<QString, NSPluginIdentifier*>::const_iterator i = stringIdents.constFind(str);
-    if (i != stringIdents.end())
+    if (i != stringIdents.constEnd())
         return i.value();
 
     NSPluginIdentifier* ident = new NSPluginIdentifier();
@@ -89,7 +89,7 @@ static void g_NPN_GetStringIdentifiers(const NPUTF8 **names, qint32 nameCount,
 static NPIdentifier g_NPN_GetIntIdentifier(qint32 intid)
 {
     QHash<qint32, NSPluginIdentifier*>::const_iterator i = intIdents.constFind(intid);
-    if (i != intIdents.end())
+    if (i != intIdents.constEnd())
         return i.value();
 
     NSPluginIdentifier *ident = new NSPluginIdentifier();
