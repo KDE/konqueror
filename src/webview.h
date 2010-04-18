@@ -25,11 +25,8 @@
 #ifndef WEBVIEW_H
 #define WEBVIEW_H
 
-
-#include <KDE/KParts/ReadOnlyPart>
 #include <KDE/KParts/BrowserExtension>
-
-#include <kwebview.h>
+#include <KDE/KWebView>
 
 class KUrl;
 class KWebKitPart;
