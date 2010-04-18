@@ -422,7 +422,7 @@ void KWebKitPartPrivate::slotSearchForText(const QString &text, bool backward)
     if (searchBar->highlightMatches())
         flags |= QWebPage::HighlightAllOccurrences;
 
-    kDebug() << "search for text:" << text << ", backward ?" << backward;
+    //kDebug() << "search for text:" << text << ", backward ?" << backward;
     searchBar->setFoundMatch(webView->page()->findText(text, flags));
 }
 
