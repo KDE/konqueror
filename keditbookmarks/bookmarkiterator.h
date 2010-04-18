@@ -1,5 +1,5 @@
-// vim: set ts=4 sts=4 sw=4 et:
 /* This file is part of the KDE project
+   Copyright (C) 2010 David Faure <faure@kde.org>
    Copyright (C) 2002-2003 Alexander Kellett <lypanov@kde.org>
 
    This program is free software; you can redistribute it and/or
@@ -26,47 +26,65 @@
 class KBookmarkModel;
 class BookmarkIteratorHolder;
 
+/**
+ * A bookmark iterator goes through every bookmark and performs an asynchronous
+ * action (e.g. downloading the favicon or testing whether the url exists).
+ */
 class BookmarkIterator : public QObject
 {
-   Q_OBJECT
+    Q_OBJECT
 
 public:
     BookmarkIterator(BookmarkIteratorHolder* holder, const QList<KBookmark>& bks);
     virtual ~BookmarkIterator();
     BookmarkIteratorHolder* holder() const { return m_holder; }
     KBookmarkModel* model();
+    void delayedEmitNextOne();
+    virtual void cancel() = 0;
 
 public Q_SLOTS:
-   void nextOne();
-   void delayedEmitNextOne();
+    void nextOne();
 
 protected:
-   virtual void doAction() = 0;
-   virtual bool isApplicable(const KBookmark &bk) const = 0;
-   KBookmark curBk();
+    virtual void doAction() = 0;
+    virtual bool isApplicable(const KBookmark &bk) const = 0;
+    KBookmark currentBookmark();
 
 private:
-   KBookmark m_bk;
-   QList<KBookmark> m_bklist;
-   BookmarkIteratorHolder* m_holder;
+    KBookmark m_bk;
+    QList<KBookmark> m_bookmarkList;
+    BookmarkIteratorHolder* m_holder;
 };
 
-class BookmarkIteratorHolder
+/**
+ * The "bookmark iterator holder" handles all concurrent iterators for a given
+ * functionality: e.g. all favicon iterators.
+ *
+ * BookmarkIteratorHolder is the base class for the favicon and testlink holders.
+ */
+class BookmarkIteratorHolder : public QObject
 {
+    Q_OBJECT
 public:
-   void cancelAllItrs();
-   void removeItr(BookmarkIterator*);
-   void insertItr(BookmarkIterator*);
-   virtual void addAffectedBookmark(const QString & address) = 0;
-   KBookmarkModel* model() { return m_model; }
+    void cancelAllItrs();
+    void removeIterator(BookmarkIterator*);
+    void insertIterator(BookmarkIterator*);
+    void addAffectedBookmark(const QString & address);
+    KBookmarkModel* model() { return m_model; }
+
+Q_SIGNALS:
+    void setCancelEnabled(bool canCancel);
+
 protected:
-   BookmarkIteratorHolder(KBookmarkModel* model);
-   virtual ~BookmarkIteratorHolder() {}
-   virtual void doItrListChanged() = 0;
-   int count() const { return m_itrs.count(); }
-   KBookmarkModel* m_model;
+    BookmarkIteratorHolder(KBookmarkModel* model);
+    virtual ~BookmarkIteratorHolder() {}
+    void doIteratorListChanged();
+    int count() const { return m_iterators.count(); }
+    KBookmarkModel* m_model;
+
 private:
-   QList<BookmarkIterator *> m_itrs;
+    QString m_affectedBookmark;
+    QList<BookmarkIterator *> m_iterators;
 };
 
 #endif

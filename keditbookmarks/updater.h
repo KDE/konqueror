@@ -1,5 +1,3 @@
-// -*- c-basic-offset: 4; indent-tabs-mode:nil -*-
-// vim: set ts=4 sts=4 sw=4 et:
 /* This file is part of the KDE project
    Copyright (C) 2003 Alexander Kellett <lypanov@kde.org>
 
@@ -33,9 +31,14 @@ public:
     FavIconWebGrabber(KParts::ReadOnlyPart *part, const KUrl &url);
     ~FavIconWebGrabber() {}
 
-protected Q_SLOTS:
+Q_SIGNALS:
+    void done(bool succeeded, const QString& errorString);
+
+private Q_SLOTS:
     void slotMimetype(KIO::Job *job, const QString &_type);
     void slotFinished(KJob *job);
+    void slotCanceled(const QString& errorString);
+    void slotCompleted();
 
 private:
     KParts::ReadOnlyPart *m_part;
@@ -52,15 +55,18 @@ public:
     FavIconUpdater(QObject *parent);
     ~FavIconUpdater();
     void downloadIcon(const KBookmark &bk);
-    void downloadIconActual(const KBookmark &bk);
+    void downloadIconUsingWebBrowser(const KBookmark &bk, const QString& currentError);
 
 private Q_SLOTS:
-    void setIconURL(const KUrl &iconURL);
-    void slotCompleted();
+    void setIconUrl(const KUrl &iconURL);
     void notifyChange(bool isHost, const QString& hostOrURL, const QString& iconName);
+    void slotFavIconError(bool isHost, const QString& hostOrURL, const QString& errorString);
 
 Q_SIGNALS:
-    void done(bool succeeded);
+    void done(bool succeeded, const QString& error);
+
+private:
+    bool isFavIconSignalRelevant(bool isHost, const QString& hostOrURL) const;
 
 private:
     KParts::ReadOnlyPart *m_part;

@@ -30,11 +30,6 @@ class KBookmarkModel;
 class TestLinkItrHolder : public BookmarkIteratorHolder {
 public:
    TestLinkItrHolder(KBookmarkModel* model);
-   void addAffectedBookmark(const QString & address);
-protected:
-   virtual void doItrListChanged();
-private:
-   QString m_affectedBookmark;
 };
 
 class TestLinkItr : public BookmarkIterator
@@ -44,6 +39,8 @@ class TestLinkItr : public BookmarkIterator
 public:
    TestLinkItr(BookmarkIteratorHolder* holder, const QList<KBookmark>& bks);
    ~TestLinkItr();
+
+   virtual void cancel();
 
 public Q_SLOTS:
    void slotJobResult(KJob *job);

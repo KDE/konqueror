@@ -1,7 +1,5 @@
-// -*- indent-tabs-mode:nil -*-
-// vim: set ts=4 sts=4 sw=4 et:
 /* This file is part of the KDE project
-   Copyright (C) 2000 David Faure <faure@kde.org>
+   Copyright (C) 2000, 2010 David Faure <faure@kde.org>
    Copyright (C) 2002-2003 Alexander Kellett <lypanov@kde.org>
 
    This program is free software; you can redistribute it and/or
@@ -21,15 +19,14 @@
 */
 
 #include "bookmarkiterator.h"
-
-#include "toplevel.h"
+#include "bookmarkmodel.h"
+#include <kbookmarkmanager.h>
 
 #include <kdebug.h>
 #include <QtCore/QTimer>
-#include <assert.h>
 
 BookmarkIterator::BookmarkIterator(BookmarkIteratorHolder* holder, const QList<KBookmark>& bks)
-    : m_bklist(bks), m_holder(holder)
+    : m_bookmarkList(bks), m_holder(holder)
 {
     delayedEmitNextOne();
 }
@@ -43,7 +40,7 @@ void BookmarkIterator::delayedEmitNextOne()
     QTimer::singleShot(1, this, SLOT(nextOne()));
 }
 
-KBookmark BookmarkIterator::curBk()
+KBookmark BookmarkIterator::currentBookmark()
 {
     return m_bk;
 }
@@ -52,25 +49,25 @@ void BookmarkIterator::nextOne()
 {
     // kDebug() << "BookmarkIterator::nextOne";
 
-    if (m_bklist.isEmpty()) {
-        holder()->removeItr(this); // deletes "this"
+    // Look for an interesting bookmark
+    while (!m_bookmarkList.isEmpty()) {
+        KBookmark bk = m_bookmarkList.takeFirst();
+        if (bk.hasParent() && isApplicable(bk)) {
+            m_bk = bk;
+            doAction();
+            // Async action started, we'll have to come back later
+            return;
+        }
+    }
+    if (m_bookmarkList.isEmpty()) {
+        holder()->removeIterator(this); // deletes "this"
         return;
     }
+}
 
-    QList<KBookmark>::iterator head = m_bklist.begin();
-    KBookmark bk = (*head);
-
-    bool viable = bk.hasParent() && isApplicable(bk);
-
-    if (viable) {
-        m_bk = bk;
-        doAction();
-    }
-
-    m_bklist.erase(head);
-
-    if (!viable)
-        delayedEmitNextOne();
+KBookmarkModel* BookmarkIterator::model()
+{
+    return m_holder->model();
 }
 
 /* --------------------------- */
@@ -81,29 +78,49 @@ BookmarkIteratorHolder::BookmarkIteratorHolder(KBookmarkModel* model)
     Q_ASSERT(m_model);
 }
 
-void BookmarkIteratorHolder::insertItr(BookmarkIterator *itr)
+void BookmarkIteratorHolder::insertIterator(BookmarkIterator *itr)
 {
-    m_itrs.prepend(itr);
-    doItrListChanged();
+    m_iterators.prepend(itr);
+    doIteratorListChanged();
 }
 
-void BookmarkIteratorHolder::removeItr(BookmarkIterator *itr)
+void BookmarkIteratorHolder::removeIterator(BookmarkIterator *itr)
 {
-    m_itrs.removeAll(itr);
+    m_iterators.removeAll(itr);
     itr->deleteLater();
-    doItrListChanged();
+    doIteratorListChanged();
 }
 
 void BookmarkIteratorHolder::cancelAllItrs()
 {
-    qDeleteAll(m_itrs);
-    m_itrs.clear();
-    doItrListChanged();
+    Q_FOREACH(BookmarkIterator* iterator, m_iterators) {
+        iterator->cancel();
+    }
+    qDeleteAll(m_iterators);
+    m_iterators.clear();
+    doIteratorListChanged();
 }
 
-KBookmarkModel* BookmarkIterator::model()
+void BookmarkIteratorHolder::addAffectedBookmark(const QString & address)
 {
-    return m_holder->model();
+    kDebug() << address;
+    if(m_affectedBookmark.isNull())
+        m_affectedBookmark = address;
+    else
+        m_affectedBookmark = KBookmark::commonParent(m_affectedBookmark, address);
+    kDebug() << "m_affectedBookmark is now" << m_affectedBookmark;
+}
+
+void BookmarkIteratorHolder::doIteratorListChanged()
+{
+    kDebug() << count() << "iterators";
+    emit setCancelEnabled(count() > 0);
+    if(count() == 0) {
+        kDebug() << "Notifing managers" << m_affectedBookmark;
+        KBookmarkManager* mgr = m_model->bookmarkManager();
+        model()->notifyManagers(mgr->findByAddress(m_affectedBookmark).toGroup());
+        m_affectedBookmark.clear();
+    }
 }
 
 #include "bookmarkiterator.moc"

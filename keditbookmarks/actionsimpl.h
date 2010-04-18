@@ -36,6 +36,9 @@ public:
    ~ActionsImpl();
    bool save();
 
+   TestLinkItrHolder* testLinkHolder() { return m_testLinkHolder; }
+   FavIconsItrHolder* favIconHolder() { return m_favIconHolder; }
+
 public Q_SLOTS:
    void slotLoad();
    void slotSaveAs();

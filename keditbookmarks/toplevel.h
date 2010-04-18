@@ -62,9 +62,6 @@ public:
     SelcAbilities getSelectionAbilities() const;
     void setActionsEnabled(SelcAbilities);
 
-    void setCancelFavIconUpdatesEnabled(bool);
-    void setCancelTestsEnabled(bool);
-
     QMenu* popupMenuFactory(const char *type)
     {
         QWidget * menu = factory()->container(type, this);
@@ -104,10 +101,12 @@ public Q_SLOTS:
 public Q_SLOTS:
     void slotConfigureToolbars();
 
-protected Q_SLOTS:
+private Q_SLOTS:
     void slotClipboardDataChanged();
     void slotNewToolbarConfig();
     void selectionChanged();
+    void setCancelFavIconUpdatesEnabled(bool);
+    void setCancelTestsEnabled(bool);
 
 private:
     void selectedBookmarksExpandedHelper(const KBookmark& bk,

@@ -18,6 +18,7 @@
 */
 
 #include "favicons.h"
+#include <klocale.h>
 #include "favicons_adaptor.h"
 
 #include <time.h>
@@ -93,7 +94,7 @@ struct FavIconsModulePrivate
     }
 
     QMap<KJob *, DownloadInfo> downloads;
-    QStringList failedDownloads;
+    KUrl::List failedDownloads;
     KConfig *config;
     QList<KIO::Job*> killJobs;
     KIO::MetaData metaData;
@@ -141,6 +142,8 @@ QString FavIconsModule::iconForUrl(const KUrl &url)
     if (url.host().isEmpty())
         return QString();
 
+    //kDebug() << url;
+
     QString icon;
     QString simplifiedURL = simplifyURL(url);
 
@@ -166,14 +169,18 @@ QString FavIconsModule::iconForUrl(const KUrl &url)
 bool FavIconsModule::isIconOld(const QString &icon)
 {
     struct stat st;
-    if (stat(QFile::encodeName(icon), &st) != 0)
+    if (stat(QFile::encodeName(icon), &st) != 0) {
+        //kDebug() << "isIconOld" << icon << "yes, no such file";
         return true; // Trigger a new download on error
+    }
 
+    //kDebug() << "isIconOld" << icon << "?";
     return (time(0) - st.st_mtime) > 604800; // arbitrary value (one week)
 }
 
 void FavIconsModule::setIconForUrl(const KUrl &url, const KUrl &iconURL)
 {
+    //kDebug() << url << iconURL;
     const QString simplifiedURL = simplifyURL(url);
 
     d->faviconsCache.insert(removeSlash(simplifiedURL), new QString(iconURL.url()) );
@@ -182,6 +189,7 @@ void FavIconsModule::setIconForUrl(const KUrl &url, const KUrl &iconURL)
     const QString iconFile = d->faviconsDir + iconName + ".png";
 
     if (!isIconOld(iconFile)) {
+        //kDebug() << "emit iconChanged" << false << url << iconName;
         emit iconChanged(false, url.url(), iconName);
         return;
     }
@@ -191,19 +199,32 @@ void FavIconsModule::setIconForUrl(const KUrl &url, const KUrl &iconURL)
 
 void FavIconsModule::downloadHostIcon(const KUrl &url)
 {
+    //kDebug() << url;
     const QString iconFile = d->faviconsDir + "favicons/" + url.host() + ".png";
-    if (!isIconOld(iconFile))
+    if (!isIconOld(iconFile)) {
+        //kDebug() << "not old -> doing nothing";
         return;
-
+    }
     startDownload(url.host(), true, KUrl(url, "/favicon.ico"));
+}
+
+void FavIconsModule::forceDownloadHostIcon(const KUrl &url)
+{
+    //kDebug() << url;
+    KUrl iconURL = KUrl(url, "/favicon.ico");
+    d->failedDownloads.removeAll(iconURL); // force a download to happen
+    startDownload(url.host(), true, iconURL);
 }
 
 void FavIconsModule::startDownload(const QString &hostOrURL, bool isHost, const KUrl &iconURL)
 {
-    if (d->failedDownloads.contains(iconURL.url())) {
+    if (d->failedDownloads.contains(iconURL)) {
+        //kDebug() << iconURL << "already in failedDownloads, emitting error";
+        emit error(isHost, hostOrURL, i18n("No favicon found"));
         return;
     }
 
+    //kDebug() << iconURL;
     KIO::Job *job = KIO::get(iconURL, KIO::NoReload, KIO::HideProgressInfo);
     job->addMetaData(d->metaData);
     job->addMetaData("errorPage", "false");
@@ -228,7 +249,7 @@ void FavIconsModule::slotData(KIO::Job *job, const QByteArray &data)
         d->killJobs.append(job);
         QTimer::singleShot(0, this, SLOT(slotKill()));
         const KUrl iconURL = tjob->url();
-        d->failedDownloads.append(iconURL.url());
+        d->failedDownloads.append(iconURL);
     }
     download.iconData.resize(oldSize + data.size());
     memcpy(download.iconData.data() + oldSize, data.data(), data.size());
@@ -242,6 +263,7 @@ void FavIconsModule::slotResult(KJob *job)
     d->downloads.remove(job);
     const KUrl iconURL = tjob->url();
     QString iconName;
+    QString errorMessage;
     if (!job->error())
     {
         QBuffer buffer(&download.iconData);
@@ -257,20 +279,28 @@ void FavIconsModule::slotResult(KJob *job)
                 }
             }
             ir.setScaledSize( desired );
-            QImage img = ir.read();
+            const QImage img = ir.read();
             if( !img.isNull() ) {
                 iconName = d->makeIconName(download, iconURL);
-                if( !img.save( d->faviconsDir + iconName + ".png", "PNG" ) )
+                const QString localPath = d->faviconsDir + iconName + ".png";
+                if( !img.save(localPath, "PNG") ) {
                     iconName.clear();
-                else if (!download.isHost)
+                    errorMessage = i18n("Error saving image to %1", localPath);
+                } else if (!download.isHost)
                     d->config->group(QString()).writeEntry( removeSlash(download.hostOrURL), iconURL.url());
             }
         }
+    } else {
+        errorMessage = job->errorString();
     }
-    if (iconName.isEmpty())
-        d->failedDownloads.append(iconURL.url());
-
-    emit iconChanged(download.isHost, download.hostOrURL, iconName);
+    if (iconName.isEmpty()) {
+        //kDebug() << "adding" << iconURL << "to failed downloads";
+        d->failedDownloads.append(iconURL);
+        emit error(download.isHost, download.hostOrURL, errorMessage);
+    } else {
+        //kDebug() << "emit iconChanged" << download.isHost << download.hostOrURL << iconName;
+        emit iconChanged(download.isHost, download.hostOrURL, iconName);
+    }
 }
 
 void FavIconsModule::slotInfoMessage(KJob *job, const QString &msg)
@@ -280,11 +310,10 @@ void FavIconsModule::slotInfoMessage(KJob *job, const QString &msg)
 
 void FavIconsModule::slotKill()
 {
+    //kDebug();
     Q_FOREACH(KIO::Job* job, d->killJobs)
         job->kill();
     d->killJobs.clear();
 }
 
 #include "favicons.moc"
-
-// vim: ts=4 sw=4 et

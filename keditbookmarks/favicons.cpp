@@ -1,5 +1,3 @@
-// -*- indent-tabs-mode:nil -*-
-// vim: set ts=4 sts=4 sw=4 et:
 /* This file is part of the KDE project
    Copyright (C) 2002-2003 Alexander Kellett <lypanov@kde.org>
 
@@ -22,12 +20,10 @@
 #include "favicons.h"
 
 #include "bookmarkiterator.h"
-#include "toplevel.h" // for KEBApp
 #include "updater.h"
 #include "commands.h"
 #include "bookmarkmodel.h"
 
-#include <kbookmarkmanager.h>
 #include <kdebug.h>
 #include <klocale.h>
 
@@ -35,28 +31,6 @@ FavIconsItrHolder::FavIconsItrHolder(KBookmarkModel* model)
     : BookmarkIteratorHolder(model)
 {
     // do stuff
-}
-
-void FavIconsItrHolder::doItrListChanged() {
-    kDebug()<<"FavIconsItrHolder::doItrListChanged() "<<count()<<" iterators";
-    KEBApp::self()->setCancelFavIconUpdatesEnabled(count() > 0);
-    if(count() == 0)
-    {
-        kDebug()<<"Notifing managers "<<m_affectedBookmark;
-        KBookmarkManager* mgr = m_model->bookmarkManager();
-        model()->notifyManagers(mgr->findByAddress(m_affectedBookmark).toGroup());
-        m_affectedBookmark.clear();
-    }
-}
-
-void FavIconsItrHolder::addAffectedBookmark( const QString & address )
-{
-    kDebug()<<"addAffectedBookmark "<<address;
-    if(m_affectedBookmark.isNull())
-        m_affectedBookmark = address;
-    else
-        m_affectedBookmark = KBookmark::commonParent(m_affectedBookmark, address);
-    kDebug()<<" m_affectedBookmark is now "<<m_affectedBookmark;
 }
 
 /* -------------------------- */
@@ -68,45 +42,46 @@ FavIconsItr::FavIconsItr(BookmarkIteratorHolder* holder, const QList<KBookmark>&
 
 FavIconsItr::~FavIconsItr()
 {
-    setStatus(m_oldStatus);
     delete m_updater;
 }
 
 void FavIconsItr::setStatus(const QString & status)
 {
-    curBk().setMetaDataItem("favstate", status);
-    model()->emitDataChanged(curBk());
+    currentBookmark().setMetaDataItem("favstate", status);
+    model()->emitDataChanged(currentBookmark());
 }
 
-void FavIconsItr::slotDone(bool succeeded)
+void FavIconsItr::slotDone(bool succeeded, const QString& errorString)
 {
     // kDebug() << "FavIconsItr::slotDone()";
-    setStatus(succeeded ? i18n("OK") : i18n("No favicon found"));
-    holder()->addAffectedBookmark(KBookmark::parentAddress(curBk().address()));
+    setStatus(succeeded ? i18n("OK") : errorString);
+    holder()->addAffectedBookmark(KBookmark::parentAddress(currentBookmark().address()));
     delayedEmitNextOne();
 }
 
 bool FavIconsItr::isApplicable(const KBookmark &bk) const
 {
-    return (!bk.isGroup() && !bk.isSeparator());
+    if (bk.isGroup() || bk.isSeparator())
+        return false;
+    return bk.url().protocol().startsWith("http");
 }
 
 void FavIconsItr::doAction()
 {
     // kDebug() << "FavIconsItr::doAction()";
-    //FIXME ensure that this gets overwritten
+    m_oldStatus = currentBookmark().metaDataItem("favstate");
     setStatus(i18n("Updating favicon..."));
     if (!m_updater) {
-        m_updater = new FavIconUpdater(qApp);
-        connect(m_updater, SIGNAL( done(bool) ),
-                this,     SLOT( slotDone(bool) ) );
+        m_updater = new FavIconUpdater(this);
+        connect(m_updater, SIGNAL(done(bool,QString)),
+                this,      SLOT(slotDone(bool,QString)) );
     }
-    if (curBk().url().protocol().startsWith("http")) {
-        m_updater->downloadIcon(curBk());
-    } else {
-        setStatus(i18n("Local file"));
-        delayedEmitNextOne();
-    }
+    m_updater->downloadIcon(currentBookmark());
+}
+
+void FavIconsItr::cancel()
+{
+    setStatus(m_oldStatus);
 }
 
 #include "favicons.moc"

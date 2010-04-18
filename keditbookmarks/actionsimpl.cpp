@@ -68,6 +68,11 @@ void KEBApp::createActions() {
 
     m_actionsImpl = new ActionsImpl(this, GlobalBookmarkManager::self()->model());
 
+    connect(m_actionsImpl->testLinkHolder(), SIGNAL(setCancelEnabled(bool)),
+            this, SLOT(setCancelTestsEnabled(bool)));
+    connect(m_actionsImpl->favIconHolder(), SIGNAL(setCancelEnabled(bool)),
+            this, SLOT(setCancelFavIconUpdatesEnabled(bool)));
+
     // save and quit should probably not be in the toplevel???
     (void) KStandardAction::quit(
         this, SLOT( close() ), actionCollection());
@@ -438,12 +443,12 @@ void ActionsImpl::slotCancelAllTests() {
 }
 
 void ActionsImpl::slotTestAll() {
-    m_testLinkHolder->insertItr(
+    m_testLinkHolder->insertIterator(
             new TestLinkItr(m_testLinkHolder, KEBApp::self()->allBookmarks()));
 }
 
 void ActionsImpl::slotUpdateAllFavIcons() {
-    m_favIconHolder->insertItr(
+    m_favIconHolder->insertIterator(
             new FavIconsItr(m_favIconHolder, KEBApp::self()->allBookmarks()));
 }
 
@@ -456,12 +461,12 @@ ActionsImpl::~ActionsImpl() {
 
 void ActionsImpl::slotTestSelection() {
     KEBApp::self()->bkInfo()->commitChanges();
-    m_testLinkHolder->insertItr(new TestLinkItr(m_testLinkHolder, KEBApp::self()->selectedBookmarksExpanded()));
+    m_testLinkHolder->insertIterator(new TestLinkItr(m_testLinkHolder, KEBApp::self()->selectedBookmarksExpanded()));
 }
 
 void ActionsImpl::slotUpdateFavIcon() {
     KEBApp::self()->bkInfo()->commitChanges();
-    m_favIconHolder->insertItr(new FavIconsItr(m_favIconHolder, KEBApp::self()->selectedBookmarksExpanded()));
+    m_favIconHolder->insertIterator(new FavIconsItr(m_favIconHolder, KEBApp::self()->selectedBookmarksExpanded()));
 }
 
 /* -------------------------------------- */
