@@ -59,7 +59,7 @@ static QString getFormData(const QWebFrame *frame)
 
     if (frame) {
         QString key, temp;
-        QWebElementCollection collection =  frame->findAllElements(QL1S("input[type=text], input:not([type]), textarea"));
+        QWebElementCollection collection = frame->findAllElements(QL1S("input[type=text], input:not([type]), textarea"));
         QWebElementCollection::iterator it = collection.begin();
         const QWebElementCollection::iterator itEnd = collection.end();
         for (; it != itEnd; ++it) {
