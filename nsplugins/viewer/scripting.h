@@ -28,6 +28,8 @@
 
 namespace kdeNsPluginViewer {
 
+typedef QPair<NPObject*, QString> FuncRef;
+
 class ScriptExportEngine
 {
 public:
@@ -53,31 +55,28 @@ private:
   void setupReturn(const NPVariant& result, KParts::LiveConnectExtension::Type& type,
                    unsigned long& retobjid, QString& value);
 
-  QHash<unsigned long, NPObject*> _objectsForId;
+  QHash<unsigned long, NPObject*> _objectForId;
   QHash<NPObject*, unsigned long> _objectIds;
 
   // Returns the object corresponding to ID, or null... 0 is the root object..
   NPObject* getScriptObject(unsigned long objid);
 
-#if 0
-  struct FunctionInfo {
-    NPObject* baseObject; //Object we're a function of.. we retain it..
-    QString   name;       //The function we are..
+  // Returns the function ref corresponding to ID, or null
+  FuncRef* getScriptFunction(unsigned long objid);
 
-    unsigned long id; //Our ID
-    unsigned long rc; //Our refcount..
-  };
+  // Register the object if needed, and retains in the mapping table
+  unsigned long registerIfNeeded(NPObject* obj);
 
-  QMap<unsigned long,             FunctionInfo*> _functionForId;
-  QMap<QPair<NPObject*, QString>, FunctionInfo*> _functionForBaseAndName;
+  // Registers a function reference -- that also retain the base object
+  unsigned long registerFuncIfNeeded(FuncRef);
 
-  //Returns the function corresponding to ID, or null..
-  FunctionInfo* getFunctionInfo(const unsigned long objid);
-#endif  
+  QHash<unsigned long, FuncRef> _functionForId;
+  QHash<FuncRef, unsigned long> _functionIds;
 
   unsigned long _nextId;
   unsigned long allocObjId (NPObject* object); 
-  unsigned long allocFuncId(NPObject* object, QString field);
+  unsigned long allocFuncId(FuncRef f);
+  unsigned long findFreeId();
 
   NSPluginInstance* _pluginInstance;
   NPObject*         _liveConnectRoot;

@@ -63,14 +63,18 @@ static QHash<int32,   NSPluginIdentifier*> intIdents;
 //Internal -- not part of standard API..
 static NPIdentifier g_NPN_GetQStringIdentifier(const QString& str)
 {
+    kDebug(1431) << "$$$$ intern:" << str;
     QHash<QString, NSPluginIdentifier*>::const_iterator i = stringIdents.constFind(str);
-    if (i != stringIdents.constEnd())
+    if (i != stringIdents.constEnd()) {
+        kDebug(1431) << "  reuse:" << (NPIdentifier)i.value();
         return i.value();
+    }
 
     NSPluginIdentifier* ident = new NSPluginIdentifier();
     ident->isString = true;
     ident->str      = str;
     stringIdents[str] = ident;
+    kDebug(1431) << "  fresh:" << (NPIdentifier)ident;
     return ident;
 }
 
@@ -107,6 +111,7 @@ static bool g_NPN_IdentifierIsString(NPIdentifier identifier)
 
 static NPUTF8* g_NPN_UTF8FromIdentifier(NPIdentifier identifier)
 {
+    kDebug(1431) << "$$$$" << identifier;
     NSPluginIdentifier* ident = reinterpret_cast<NSPluginIdentifier*>(identifier);
     if (!ident->isString)
         return 0;
@@ -114,6 +119,7 @@ static NPUTF8* g_NPN_UTF8FromIdentifier(NPIdentifier identifier)
     // This deep copies as the API docs state the caller is responsible for freeing the string
     // we also include the trailing null in memory, but not length, like
     // QByteArray does.
+    kDebug(1431) << " --> " << ident->str;
 
     QByteArray utf8 = ident->str.toUtf8();
     int fullLength = utf8.size() + 1; //Includes 0...
@@ -128,6 +134,20 @@ static int32_t g_NPN_IntFromIdentifier(NPIdentifier identifier)
     if (ident->isString)
         return 0;
     return ident->num;
+}
+
+// Internal -- not part of public API
+static void g_NPN_SetVariantFromQString(NPVariant* v, const QString& s)
+{
+    // note: we also include a trailing null with utf8 data, just in case
+    v->type = NPVariantType_String;
+    v->value.stringValue.UTF8Length     = s.length();
+    v->value.stringValue.UTF8Characters =
+                static_cast<NPUTF8*>(g_NPN_MemAlloc(s.length() + 1));
+     
+    QByteArray utf8 = s.toUtf8();
+    std::memcpy(const_cast<NPUTF8*>(v->value.stringValue.UTF8Characters),
+                utf8.constData(), s.length() + 1);
 }
 
 // npruntime API --- objects
@@ -171,8 +191,10 @@ static void g_NPN_ReleaseObject(NPObject* npobj)
 static bool g_NPN_Invoke(NPP, NPObject* npobj, NPIdentifier name,
                 const NPVariant* args, quint32 argCount, NPVariant* result)
 {
-    if (npobj && npobj->_class && npobj->_class->invoke)
+    if (npobj && npobj->_class && npobj->_class->invoke) {
+        kDebug(1431) << "calling appropriate method:";
         return npobj->_class->invoke(npobj, name, args, argCount, result);
+    }
     return false;
 }
 
@@ -311,50 +333,237 @@ ScriptExportEngine::~ScriptExportEngine()
 
 NPObject* ScriptExportEngine::getScriptObject(unsigned long objid)
 {
-    QHash<unsigned long, NPObject*>::const_iterator i = _objectsForId.constFind(objid);
-    if (i == _objectsForId.constEnd())
+    QHash<unsigned long, NPObject*>::const_iterator i = _objectForId.constFind(objid);
+    if (i == _objectForId.constEnd())
         return 0;
     else
         return i.value();
 }
 
-unsigned long ScriptExportEngine::allocObjId(NPObject* object)
+FuncRef* ScriptExportEngine::getScriptFunction(unsigned long objid)
+{
+    if (_functionForId.contains(objid))
+        return &_functionForId[objid];
+    else
+        return 0;
+}
+
+unsigned long ScriptExportEngine::findFreeId()
 {
     while(true) {
-        if (!_objectsForId.contains(_nextId)) { // && !_functionForId.contains(_nextId)) {
+        if (!_objectForId.contains(_nextId) && !_functionForId.contains(_nextId)) {
             unsigned long freeID = _nextId;
             ++_nextId;
-
-            _objectsForId[freeID] = object;
-            _objectIds[object]    = freeID;
-
             return freeID;
         }
-        ++_nextId;
+        ++_nextId;        
     }
 }
+
+unsigned long ScriptExportEngine::allocObjId(NPObject* object)
+{
+    unsigned long freeID = findFreeId();
+    _objectForId[freeID] = object;
+    _objectIds[object]   = freeID;
+    return freeID;
+}
+
+unsigned long ScriptExportEngine::allocFuncId(FuncRef f)
+{
+    unsigned long freeID = findFreeId();
+    _functionForId[freeID] = f;
+    _functionIds  [f]      = freeID;
+    return freeID;
+}
+
+unsigned long ScriptExportEngine::registerIfNeeded(NPObject* obj)
+{
+    QHash<NPObject*, unsigned long>::const_iterator i = _objectIds.constFind(obj);
+    if (i != _objectIds.constEnd()) {
+        return i.value();
+    } else {
+        g_NPN_RetainObject(obj);
+        return allocObjId(obj);
+    }
+}
+
+unsigned long ScriptExportEngine::registerFuncIfNeeded(FuncRef f)
+{
+    QHash<FuncRef, unsigned long>::const_iterator i = _functionIds.constFind(f);
+    if (i != _functionIds.constEnd()) {
+        return i.value();
+    } else {
+        g_NPN_RetainObject(f.first);
+        return allocFuncId(f);
+    }
+}
+
+void ScriptExportEngine::setupReturn(const NPVariant& result, KParts::LiveConnectExtension::Type& type,
+                                     unsigned long& retobjid, QString& value)
+{
+    switch (result.type) {
+        case NPVariantType_Void:
+        case NPVariantType_Null: //### not quite accurate..
+            type = KParts::LiveConnectExtension::TypeVoid;
+            return;
+        case NPVariantType_Bool:
+            type = KParts::LiveConnectExtension::TypeBool;
+            value = result.value.boolValue ? "true" : "false";
+            return;
+        case NPVariantType_Int32:
+            type  = KParts::LiveConnectExtension::TypeNumber;
+            value = QString::number(result.value.intValue);
+            return;
+        case NPVariantType_Double:
+            type  = KParts::LiveConnectExtension::TypeNumber;
+            value = QString::number(result.value.doubleValue);
+            return;
+        case NPVariantType_String:
+            type  = KParts::LiveConnectExtension::TypeString;
+            value = QString::fromUtf8(result.value.stringValue.UTF8Characters,
+                                      result.value.stringValue.UTF8Length);
+            return;
+        case NPVariantType_Object:
+            type = KParts::LiveConnectExtension::TypeObject;
+            retobjid = registerIfNeeded(result.value.objectValue);
+     }
+}
+
 
 bool ScriptExportEngine::get(const unsigned long objid, const QString& field,
                              KParts::LiveConnectExtension::Type& typeOut,
                              unsigned long& retobjid, QString& value)
 {
-    return false;
+    kDebug(1431) << objid << field;
+
+    NPObject* obj = getScriptObject(objid);
+    if (!obj) {
+        kDebug(1431) << "huh? base object not found";
+        return false;
+    }
+
+    NPIdentifier fieldIdent = g_NPN_GetQStringIdentifier(field);
+
+
+    //First, see if this has a method...
+    if (g_NPN_HasMethod(_pluginInstance->_npp, obj, fieldIdent)) {
+        kDebug(1431) << " --> found function";
+
+        //Return a wrapper object representing the function reference
+        typeOut = KParts::LiveConnectExtension::TypeFunction;
+
+        FuncRef f = qMakePair(obj, field);
+        retobjid = registerFuncIfNeeded(f);
+        kDebug(1431) << " --> returning with id:" << retobjid;
+        return true;
+    }
+
+    //Now see if it is a field..
+    if (g_NPN_HasProperty(_pluginInstance->_npp, obj, fieldIdent)) {
+        kDebug(1431) << "--> found field";
+        NPVariant result;
+        if (g_NPN_GetProperty(_pluginInstance->_npp, obj, fieldIdent, &result)) {
+            kDebug(1431) << "--> get OK";
+            //Set our return value from the variant..
+            setupReturn(result, typeOut, retobjid, value);
+            g_NPN_ReleaseVariantValue(&result);
+            return true;
+        }
+    }
+
+    //Nothing seems to be there..
+    return false;    
 }
 
 bool ScriptExportEngine::put(const unsigned long objid, const QString& field,
                              const QString& value)
 {
-    return false;
+    kDebug(1431) << objid << field << value;
+    
+    //Ugh. This is pretty bad, since the extension doesn't support types on put...
+    //just hope the string works..
+    NPObject* obj = getScriptObject(objid);
+    if (!obj) {
+        kDebug(1431) << "huh? no object?";
+        return false;
+    }
+
+    NPIdentifier fieldIdent = g_NPN_GetQStringIdentifier(field);
+
+    NPVariant    npValue;
+    g_NPN_SetVariantFromQString(&npValue, value);
+    bool result =  g_NPN_SetProperty(_pluginInstance->_npp, obj, fieldIdent, &npValue);
+    g_NPN_ReleaseVariantValue(&npValue);
+
+    kDebug(1431) << " --> result:" << result;
+
+    return result;
 }
 
 bool ScriptExportEngine::call(const unsigned long objid, const QString& func, const QStringList& args,
                     KParts::LiveConnectExtension::Type& retType, unsigned long& retobjid, QString& value)
 {
-    return false;
+    kDebug(1431) << objid << func << args;
+
+    // As above, we pass everything as strings --- pretty bad.
+    // Also, no InvokeDefault support for now, and we assume we
+    // are passed a FuncRef.
+    FuncRef* fi = getScriptFunction(objid);
+    if (!fi) {
+        kDebug(1431) << "huh? not a funcref";
+        return false;
+    }
+
+    NPIdentifier methodIdent = g_NPN_GetQStringIdentifier(func);
+
+    //Convert arguments..
+    NPVariant* npArgs = new NPVariant[args.size()];
+    for (int c = 0; c < args.size(); ++c) {
+        g_NPN_SetVariantFromQString(&npArgs[c], args[c]);
+        kDebug(1431) << QString::fromUtf8(npArgs[c].value.stringValue.UTF8Characters,
+                                      npArgs[c].value.stringValue.UTF8Length);
+    }
+
+    //Call...
+    NPVariant result;
+    result.type = NPVariantType_Void;
+    bool ok = g_NPN_Invoke(_pluginInstance->_npp, fi->first, methodIdent, npArgs, args.size(), &result);
+    kDebug(1431) << " --> invoke result:" << ok;
+    kDebug(1431) << " --> res type:" << result.type;
+    if (ok) {
+        setupReturn(result, retType, retobjid, value);
+        g_NPN_ReleaseVariantValue(&result);
+    }
+    
+    // Cleanup..
+    for (int c = 0; c < args.size(); ++c)
+        g_NPN_ReleaseVariantValue(&npArgs[c]);
+    delete[] npArgs;
+
+    return ok;
 }
 
 void ScriptExportEngine::unregister(const unsigned long objid)
 {
+    //See if this is an object identifier..
+    QHash<unsigned long, NPObject*>::const_iterator i = _objectForId.constFind(objid);
+    if (i != _objectForId.end()) {
+        NPObject* obj = i.value();
+        _objectForId.remove(objid);
+        _objectIds.remove(obj);
+        g_NPN_ReleaseObject(obj);
+        return;
+    }
+
+    // Or perhaps a function one?
+    QHash<unsigned long, FuncRef>::const_iterator fi = _functionForId.constFind(objid);
+    if (fi != _functionForId.end()) {
+        FuncRef f = fi.value();
+        _functionForId.remove(objid);
+        _functionIds.remove(f);
+        g_NPN_ReleaseObject(f.first);
+        return;
+    }
 }
 
 } // namespace kdeNsPluginViewer
