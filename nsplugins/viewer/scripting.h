@@ -43,6 +43,10 @@ public:
 
   ~ScriptExportEngine();
 
+  // For answering variable requests.
+  NPObject* acquireWindow();
+  NPObject* acquirePluginElement();
+
   /* LiveConnectExtension API... */
   bool get(const unsigned long objid, const QString& field, KParts::LiveConnectExtension::Type&  type, unsigned long& retobjid, QString& value);
   bool put(const unsigned long objid, const QString& field, const QString& value);
@@ -81,7 +85,10 @@ private:
   NSPluginInstance* _pluginInstance;
   NPObject*         _liveConnectRoot;
 
-  //Nocopyable...
+  // Our exports
+  NPObject*         _window;
+  NPObject*         _pluginElement;
+
   Q_DISABLE_COPY(ScriptExportEngine);
 };
 

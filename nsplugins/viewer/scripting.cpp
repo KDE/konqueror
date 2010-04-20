@@ -78,6 +78,16 @@ static NPIdentifier g_NPN_GetQStringIdentifier(const QString& str)
     return ident;
 }
 
+// As above -- this one is in the other direction
+static QString g_NPN_GetIdentifierQString(NPIdentifier n)
+{
+    NSPluginIdentifier* ident = reinterpret_cast<NSPluginIdentifier*>(n);
+    if (!ident->isString)
+        return QString::number(ident->num);
+    else
+        return ident->str;
+}
+
 static NPIdentifier g_NPN_GetStringIdentifier(const NPUTF8* name)
 {
     QString str = QString::fromUtf8(name);
@@ -148,6 +158,31 @@ static void g_NPN_SetVariantFromQString(NPVariant* v, const QString& s)
     QByteArray utf8 = s.toUtf8();
     std::memcpy(const_cast<NPUTF8*>(v->value.stringValue.UTF8Characters),
                 utf8.constData(), s.length() + 1);
+}
+
+// Internal, for debug purposes
+static QString dumpVariant(const NPVariant& v)
+{
+    switch (v.type) {
+        case NPVariantType_Void:
+            return QLatin1String("void");
+        case NPVariantType_Null:
+            return QLatin1String("null");
+        case NPVariantType_Bool:
+            return QLatin1String(v.value.boolValue ? "true" : "false");
+        case NPVariantType_Int32:
+            return QLatin1String("i:") + QString::number(v.value.intValue);
+        case NPVariantType_Double:
+            return QLatin1String("d:") + QString::number(v.value.doubleValue);
+        case NPVariantType_String:
+            return QLatin1String("s:") +
+                QString::fromUtf8(v.value.stringValue.UTF8Characters,
+                                  v.value.stringValue.UTF8Length);
+        case NPVariantType_Object:
+            return QLatin1String("o");
+        default:
+            return QLatin1String("Unknown type");
+     }
 }
 
 // npruntime API --- objects
@@ -278,8 +313,213 @@ static bool g_NPN_Evaluate(NPP /*npp*/, NPObject* /*npobj*/, NPString* /*script*
 // ### invalidate, NPN_evaluate, setException -- what should they do?
 
 
-// now, a little adapter for representing native objects as NPRuntime ones. 
+// now, a little adapter for bridging from NPRuntime type system
+// into proper C++ subclasses.
 //-----------------------------------------------------------------------------
+class ScriptableObjectBase
+{
+public:
+    virtual bool hasMethod(QString m) {
+        kDebug(1431) << "[unimplemented]" << m;
+        return false;
+    }
+
+    virtual bool hasProperty(QString p) {
+        kDebug(1431) << "[unimplemented]" << p;
+        return false;
+    }
+
+    virtual bool invoke(QString method, QStringList args, QString* /*out*/) {
+        kDebug(1431) << "[unimplemented]" << method << args;
+        return false;
+    }
+
+    virtual bool invokeDefault(QStringList args, QString* /*out*/) {
+        kDebug(1431) << "[unimplemented]" << args;
+        return false;
+    }
+
+    virtual bool construct(QStringList args, QString* /*out*/) {
+        kDebug(1431) << "[unimplemented]" << args;
+        return false;
+    }
+
+    virtual bool get(QString prop, QString* /*out*/) {
+        kDebug(1431) << "[unimplemented]" << prop;
+        return false;
+    }
+
+    virtual bool removeProperty(QString prop) {
+        kDebug(1431) << "[unimplemented]" << prop;
+        return false;
+    }
+
+    virtual bool setProperty(QString prop, QString val) {
+        kDebug(1431) << "[unimplemented]" << prop << val;
+        return false;
+    }
+
+    virtual QStringList enumeration() {
+        kDebug(1431) << "[unimplemented]";
+        return QStringList();
+    }
+
+    virtual ~ScriptableObjectBase() {}
+};
+
+struct NPObjectWrapper: public NPObject
+{
+    ScriptableObjectBase* impl;
+};
+
+template<typename ImplType>
+NPObject* wrapAlloc(NPP /*npp*/, NPClass* /*aClass*/)
+{
+    ImplType*        imp  = new ImplType;
+    NPObjectWrapper* wrap = new NPObjectWrapper;
+    wrap->impl = imp;
+    wrap->referenceCount = 1;
+    return wrap;
+}
+
+template<typename ImplType>
+void wrapDealloc(NPObject *npobj)
+{
+    NPObjectWrapper* wrap = static_cast<NPObjectWrapper*>(npobj);
+    delete wrap->impl;
+    delete wrap;
+}
+
+static void wrapInvalidate(NPObject* npobj)
+{
+    NPObjectWrapper* wrap = static_cast<NPObjectWrapper*>(npobj);
+    delete wrap->impl;
+    wrap->impl = 0;
+}
+
+static bool wrapHasMethod(NPObject* npobj, NPIdentifier name)
+{
+    NPObjectWrapper* wrap = static_cast<NPObjectWrapper*>(npobj);
+    return wrap->impl->hasMethod(g_NPN_GetIdentifierQString(name));
+}
+
+static bool wrapInvoke(NPObject *npobj, NPIdentifier name,
+                       const NPVariant *args, quint32 argCount,
+                       NPVariant *result)
+{
+    NPObjectWrapper* wrap = static_cast<NPObjectWrapper*>(npobj);
+
+    QStringList qa;
+    for (unsigned i = 0; i < argCount; ++i)
+        qa << dumpVariant(args[i]);
+
+    QString ourRes;
+    if (wrap->impl->invoke(g_NPN_GetIdentifierQString(name), qa, &ourRes)) {
+        g_NPN_SetVariantFromQString(result, ourRes);
+        return true;
+    }
+
+    return false;
+}
+
+static bool wrapInvokeDefault(NPObject *npobj, 
+                       const NPVariant *args, quint32 argCount,
+                       NPVariant *result)
+{
+    NPObjectWrapper* wrap = static_cast<NPObjectWrapper*>(npobj);
+
+    QStringList qa;
+    for (unsigned i = 0; i < argCount; ++i)
+        qa << dumpVariant(args[i]);
+
+    QString ourRes;
+    if (wrap->impl->invokeDefault(qa, &ourRes)) {
+        g_NPN_SetVariantFromQString(result, ourRes);
+        return true;
+    }
+
+    return false;
+}
+
+static bool wrapConstruct(NPObject *npobj,
+                       const NPVariant *args, quint32 argCount,
+                       NPVariant *result)
+{
+    NPObjectWrapper* wrap = static_cast<NPObjectWrapper*>(npobj);
+
+    QStringList qa;
+    for (unsigned i = 0; i < argCount; ++i)
+        qa << dumpVariant(args[i]);
+
+    QString ourRes;
+    if (wrap->impl->construct(qa, &ourRes)) {
+        g_NPN_SetVariantFromQString(result, ourRes);
+        return true;
+    }
+
+    return false;
+}
+
+static bool wrapHasProperty(NPObject* npobj, NPIdentifier name)
+{
+    return static_cast<NPObjectWrapper*>(npobj)->impl->hasProperty(g_NPN_GetIdentifierQString(name));
+}
+
+static bool wrapGetProperty(NPObject* npobj, NPIdentifier name, NPVariant* result)
+{
+    QString ourRes;
+    if (static_cast<NPObjectWrapper*>(npobj)->impl->get(g_NPN_GetIdentifierQString(name), &ourRes)) {
+        g_NPN_SetVariantFromQString(result, ourRes);
+        return true;
+    }
+    return false;
+}
+
+static bool wrapSetProperty(NPObject* npobj, NPIdentifier name, const NPVariant* value)
+{
+    return static_cast<NPObjectWrapper*>(npobj)->impl->setProperty(
+                g_NPN_GetIdentifierQString(name), dumpVariant(*value));
+}
+
+static bool wrapRemoveProperty(NPObject* npobj, NPIdentifier name)
+{
+    return static_cast<NPObjectWrapper*>(npobj)->impl->removeProperty(g_NPN_GetIdentifierQString(name));
+}
+
+static bool wrapEnumeration(NPObject* npobj, NPIdentifier** value, quint32* count)
+{
+    QStringList props = static_cast<NPObjectWrapper*>(npobj)->impl->enumeration();
+
+    NPIdentifier* array = reinterpret_cast<NPIdentifier*>(g_NPN_MemAlloc(sizeof(NPIdentifier) * props.size()));
+    for (int i = 0; i < props.size(); ++i)
+        array[i] = g_NPN_GetQStringIdentifier(props[i]);
+
+    *count = props.size();
+    *value = array;
+    return true;
+}
+
+template<typename ImplClass>
+struct NPWrapperClass: public NPClass
+{
+    NPWrapperClass() {
+        structVersion  = NP_CLASS_STRUCT_VERSION;
+        allocate       = wrapAlloc<ImplClass>;
+        deallocate     = wrapDealloc<ImplClass>;
+        invalidate     = wrapInvalidate;
+        hasMethod      = wrapHasMethod;
+        invoke         = wrapInvoke;
+        invokeDefault  = wrapInvokeDefault;
+        hasProperty    = wrapHasProperty;
+        getProperty    = wrapGetProperty;
+        setProperty    = wrapSetProperty;
+        removeProperty = wrapRemoveProperty;
+        enumerate      = wrapEnumeration;
+        construct      = wrapConstruct;
+    }
+};
+
+static NPWrapperClass<ScriptableObjectBase> stubClass;
 
 // ScriptExportEngine
 //-----------------------------------------------------------------------------
@@ -323,6 +563,14 @@ ScriptExportEngine::ScriptExportEngine(NSPluginInstance* inst, NPObject* root):
 {
     kDebug(1431) << _liveConnectRoot->referenceCount;
     allocObjId(root); //Setup root as 0..
+
+    // ### stub, for now.
+    NPP dummy;
+    _window = g_NPN_CreateObject(dummy, &stubClass);
+    g_NPN_RetainObject(_window);
+
+    _pluginElement = g_NPN_CreateObject(dummy, &stubClass);
+    g_NPN_RetainObject(_pluginElement);
 }
 
 ScriptExportEngine::~ScriptExportEngine()
@@ -565,6 +813,19 @@ void ScriptExportEngine::unregister(const unsigned long objid)
         return;
     }
 }
+
+NPObject* ScriptExportEngine::acquireWindow()
+{
+    g_NPN_RetainObject(_window);
+    return _window;
+}
+
+NPObject* ScriptExportEngine::acquirePluginElement()
+{
+    g_NPN_RetainObject(_pluginElement);
+    return _pluginElement;
+}
+
 
 } // namespace kdeNsPluginViewer
 // kate: indent-width 4; replace-tabs on; tab-width 4; space-indent on;

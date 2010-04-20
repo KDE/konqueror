@@ -182,9 +182,10 @@ void g_NPN_InvalidateRegion(NPP /*instance*/, NPRegion /*invalidRegion*/)
 
 
 // get value
-NPError g_NPN_GetValue(NPP /*instance*/, NPNVariable variable, void *value)
+NPError g_NPN_GetValue(NPP instance, NPNVariable variable, void *value)
 {
    kDebug(1431) << "g_NPN_GetValue(), variable=" << static_cast<int>(variable);
+   NSPluginInstance* inst = pluginViewForInstance(instance);
 
    switch (variable)
    {
@@ -219,6 +220,25 @@ NPError g_NPN_GetValue(NPP /*instance*/, NPNVariable variable, void *value)
       case NPPVpluginKeepLibraryInMemory:
          *(bool*)value = true;
          return NPERR_NO_ERROR;
+#if 0         
+      case NPNVWindowNPObject:
+         if (inst && inst->scripting()) {
+            *(NPObject**)value = inst->scripting()->acquireWindow();
+            return NPERR_NO_ERROR;
+         } else {
+            kDebug(1431) << "script object queried, but no scripting active";
+            return NPERR_INVALID_PARAM;
+         }
+      
+      case NPNVPluginElementNPObject:
+         if (inst && inst->scripting()) {
+            *(NPObject**)value = inst->scripting()->acquirePluginElement();
+            return NPERR_NO_ERROR;
+         } else {
+            kDebug(1431) << "script object queried, but no scripting active";
+            return NPERR_INVALID_PARAM;
+         }
+#endif
       default:
          kDebug(1431) << "g_NPN_GetValue(), [unimplemented] variable=" << variable;
          return NPERR_INVALID_PARAM;
@@ -666,6 +686,10 @@ NSPluginInstance::NSPluginInstance(NPP privateData, NPPluginFuncs *pluginFuncs,
    kDebug(1431) << "NSPluginInstance::NSPluginInstance";
    kDebug(1431) << "pdata = " << _npp->pdata;
    kDebug(1431) << "ndata = " << _npp->ndata;
+
+
+   // init scripting, if possible
+   setupLiveConnect();
 
    // Create the appropriate host for the plugin type.
    _pluginHost = 0;
@@ -1537,9 +1561,6 @@ QDBusObjectPath NSPluginClass::newInstance( const QString &url, const QString &m
    // create source stream
    if ( !src.isEmpty() )
       inst->requestURL( src, mimeType, QString(), 0, false, reload );
-
-   // init scripting, if possible
-   inst->setupLiveConnect();
 
    _instances.append( inst );
    return QDBusObjectPath(inst->objectName());
