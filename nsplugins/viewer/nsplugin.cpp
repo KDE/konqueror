@@ -4,7 +4,7 @@
   Copyright (c) 2000 Matthias Hoelzer-Kluepfel <hoelzer@kde.org>
                      Stefan Schimanski <1Stein@gmx.de>
                 2003-2005 George Staikos <staikos@kde.org>
-                2007, 2008 Maksim Orlovich     <maksim@kde.org>
+                2007, 2008, 2010 Maksim Orlovich <maksim@kde.org>
                 2006, 2007, 2008 Apple Inc.
                 2008 Collabora, Ltd.
                 2008 Sebastian Sauer <mail@dipe.org>
@@ -31,6 +31,7 @@
 #include "classadaptor.h"
 #include "instanceadaptor.h"
 #include "vieweradaptor.h"
+#include "scripting.h"
 
 #include "nsplugins_callback_interface.h"
 
@@ -636,6 +637,8 @@ NSPluginInstance::NSPluginInstance(NPP privateData, NPPluginFuncs *pluginFuncs,
                                    QObject *parent )
    : QObject( parent )
 {
+	kdeNsPluginViewer::initDBusTypes();
+
     // The object name is the dbus object path
    (void) new InstanceAdaptor( this );
    setObjectName( QString( "/Instance_" ) + QString::number( ++s_instanceCounter ) );
@@ -649,6 +652,7 @@ NSPluginInstance::NSPluginInstance(NPP privateData, NPPluginFuncs *pluginFuncs,
    _handle = handle;
    _callback = new org::kde::nsplugins::CallBack( appId, callbackId, QDBusConnection::sessionBus() );
    _numJSRequests = 0;
+   _scripting = 0;
 
    KUrl base(src);
    base.setFileName( QString() );
@@ -687,6 +691,56 @@ NSPluginInstance::~NSPluginInstance()
    kDebug(1431) << "<- ~NSPluginInstance";
 }
 
+void NSPluginInstance::setupLiveConnect()
+{
+  _scripting = ScriptExportEngine::create(this);
+}
+
+// Note: here we again narrow the types to the same ulong as LiveConnectExtension uses,
+// so we don't end up with extra precision floating around
+NSLiveConnectResult NSPluginInstance::lcGet(qulonglong objid, const QString& field)
+{
+    NSLiveConnectResult result;
+    if (_scripting) {
+        KParts::LiveConnectExtension::Type type;
+        unsigned long outId;
+        result.success = _scripting->get(static_cast<unsigned long>(objid), field,
+                                         type, outId, result.value);
+        result.type  = type;
+        result.objid = outId;
+    }
+    return result;
+}
+
+bool NSPluginInstance::lcPut(qulonglong objid, const QString& field, const QString& value)
+{
+    if (_scripting)
+        return _scripting->put(static_cast<unsigned long>(objid), field, value);
+
+    return false;
+}
+
+NSLiveConnectResult NSPluginInstance::lcCall(qulonglong objid, const QString& func,
+                                             const QStringList& args)
+{
+    NSLiveConnectResult result;
+    if (_scripting) {
+        KParts::LiveConnectExtension::Type type;
+        unsigned long outId;
+        result.success = _scripting->call(static_cast<unsigned long>(objid), func, args,
+                                          type, outId, result.value);
+        result.type = type;
+        result.objid = outId;
+    }
+    return result;
+}
+
+void NSPluginInstance::lcUnregister(qulonglong objid)
+{
+    if (_scripting)
+        _scripting->unregister(static_cast<unsigned long>(objid));
+}
+
 void NSPluginInstance::destroy()
 {
     if ( !_destroyed ) {
@@ -706,6 +760,10 @@ void NSPluginInstance::destroy()
         kDebug(1431) << "delete callbacks";
         delete _callback;
         _callback = 0;
+
+        kDebug(1431) << "delete scripting";
+        delete _scripting;
+        _scripting = 0;
 
         kDebug(1431) << "destroy plugin";
         NPSavedData *saved = 0;
@@ -1381,6 +1439,8 @@ int NSPluginClass::initialize()
    _nsFuncs.invalidaterect = g_NPN_InvalidateRect;
    _nsFuncs.invalidateregion = g_NPN_InvalidateRegion;
    _nsFuncs.forceredraw = g_NPN_ForceRedraw;
+
+   ScriptExportEngine::fillInScriptingFunctions(&_nsFuncs);
    
    _nsFuncs.pushpopupsenabledstate = g_NPN_PushPopupsEnabledState;
    _nsFuncs.poppopupsenabledstate =  g_NPN_PopPopupsEnabledState;
@@ -1477,6 +1537,9 @@ QDBusObjectPath NSPluginClass::newInstance( const QString &url, const QString &m
    // create source stream
    if ( !src.isEmpty() )
       inst->requestURL( src, mimeType, QString(), 0, false, reload );
+
+   // init scripting, if possible
+   inst->setupLiveConnect();
 
    _instances.append( inst );
    return QDBusObjectPath(inst->objectName());
@@ -1928,3 +1991,4 @@ void NSPluginStream::result(KJob *job)
 
 #include "nsplugin.moc"
 // vim: ts=4 sw=4 et
+// kate: indent-width 4; replace-tabs on; tab-width 4; space-indent on;

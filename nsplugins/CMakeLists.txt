@@ -13,7 +13,7 @@ if (X11_Xt_LIB)
 
   ########### next target ###############
 
-  set(nsplugins_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/plugin_part.cpp ${CMAKE_CURRENT_SOURCE_DIR}/nspluginloader.cpp )
+  set(nsplugins_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/plugin_part.cpp ${CMAKE_CURRENT_SOURCE_DIR}/nspluginloader.cpp ${CMAKE_CURRENT_SOURCE_DIR}/comm/dbustypes.cpp)
 
   set(nsplugins_PART_SRCS
        ${nsplugins_SRCS}
@@ -25,6 +25,7 @@ if (X11_Xt_LIB)
   QT4_ADD_DBUS_INTERFACE( nsplugins_PART_SRCS ${nsplugins_class_xml} nsplugins_class_interface )
 
   set(nsplugins_instance_xml  ${CMAKE_CURRENT_SOURCE_DIR}/viewer/org.kde.nsplugins.instance.xml)
+  set_source_files_properties(${nsplugins_instance_xml} PROPERTIES INCLUDE "comm/dbustypes.h")
   QT4_ADD_DBUS_INTERFACE( nsplugins_PART_SRCS ${nsplugins_instance_xml} nsplugins_instance_interface )
 
   set(nsplugins_viewer_xml  ${CMAKE_CURRENT_SOURCE_DIR}/viewer/org.kde.nsplugins.viewer.xml)

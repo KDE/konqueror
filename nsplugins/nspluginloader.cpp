@@ -57,6 +57,7 @@
 #include <X11/Xlib.h>
 #include <unistd.h>
 
+
 NSPluginLoader *NSPluginLoader::s_instance = 0;
 int NSPluginLoader::s_refCount = 0;
 
@@ -378,6 +379,9 @@ bool NSPluginLoader::loadViewer()
 
    // get viewer dcop interface
    _viewer = new org::kde::nsplugins::Viewer( _viewerDBusId, "/Viewer", QDBusConnection::sessionBus() );
+
+   // make sure we have the types setup
+   kdeNsPluginViewer::initDBusTypes();
 
    return _viewer!=0;
 }

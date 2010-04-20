@@ -46,6 +46,8 @@
 #define MOZ_X11
 #include "sdk/npupp.h"
 
+#include "comm/dbustypes.h"
+
 typedef char* NP_GetMIMEDescriptionUPP(void);
 typedef NPError NP_InitializeUPP(NPNetscapeFuncs*, NPPluginFuncs*);
 typedef NPError NP_ShutdownUPP(void);
@@ -63,6 +65,7 @@ class QTimer;
 namespace kdeNsPluginViewer {
   void* g_NPN_MemAlloc(uint32 size);
   void  g_NPN_MemFree(void* ptr);
+  class ScriptExportEngine;
 }
 
 using namespace kdeNsPluginViewer;
@@ -184,6 +187,16 @@ public:
   void gotFocusIn();
   void gotFocusOut();
 
+  // d-bus export scripting interface
+  NSLiveConnectResult lcCall(qulonglong obj, const QString& f, const QStringList& args);
+  NSLiveConnectResult lcGet (qulonglong obj, const QString& f);
+  bool lcPut(qulonglong obj, const QString& f, const QString& v);
+  void lcUnregister(qulonglong obj);
+
+  // Initialize root JS object export if possible.
+  void setupLiveConnect(); 
+  
+
   // last via NSPluginClass::newInstance() produced NSPluginInstance instance.
   static NSPluginInstance* lastPluginInstance();
   static void setLastPluginInstance(NSPluginInstance*);
@@ -227,6 +240,7 @@ public Q_SLOTS:
 
 private:
   friend class NSPluginStreamBase;
+  friend class kdeNsPluginViewer::ScriptExportEngine;
 
   void destroy();
 
@@ -282,6 +296,8 @@ private:
   QQueue<Request *> _waitingRequests;
   QMap<int, Request*> _jsrequests;
   int _numJSRequests; // entered in earlier than _jsrequests.
+
+  ScriptExportEngine *_scripting; //0 if plugin doesn't support it.  
   
   static NSPluginInstance* s_lastPluginInstance;
 };

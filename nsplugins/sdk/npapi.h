@@ -126,7 +126,8 @@
 /*----------------------------------------------------------------------*/
 
 #define NP_VERSION_MAJOR 0
-#define NP_VERSION_MINOR 13
+#define NP_VERSION_MINOR 14
+/* See note near NPVERS_HAS_NPRUNTIME_SCRIPTING */
 
 
 /* The OS/2 version of Netscape uses RC_DATA to define the
@@ -397,7 +398,26 @@ typedef enum {
   /* 12 and over are available on Mozilla builds starting with 0.9.9 */
   NPPVjavascriptPushCallerBool = 12,
   NPPVpluginKeepLibraryInMemory = 13,   /* available in Mozilla 1.0 */
-  NPPVpluginNeedsXEmbed         = 14
+  NPPVpluginNeedsXEmbed         = 14,
+
+  /* Get the NPObject for scripting the plugin. Introduced in Firefox
+   * 1.0 (NPAPI minor version 14).
+   */
+  NPPVpluginScriptableNPObject  = 15,
+
+  /* Get the plugin value (as \0-terminated UTF-8 string data) for
+   * form submission if the plugin is part of a form. Use
+   * NPN_MemAlloc() to allocate memory for the string data. Introduced
+   * in Mozilla 1.8b2 (NPAPI minor version 15).
+   */
+  NPPVformValue = 16,
+
+  NPPVpluginUrlRequestsDisplayedBool = 17,
+
+  /* Checks if the plugin is interested in receiving the http body of
+   * all http requests (including failed ones, http status != 200).
+   */
+  NPPVpluginWantsAllNetworkStreams = 18
 } NPPVariable;
 
 /*
@@ -416,8 +436,22 @@ typedef enum {
   NPNVDOMElement     = (11 | NP_ABI_MASK),   /* available in Mozilla 1.2 */
   NPNVDOMWindow      = (12 | NP_ABI_MASK),
   NPNVToolkit        = (13 | NP_ABI_MASK),
-  NPNVSupportsXEmbedBool = 14
+  NPNVSupportsXEmbedBool = 14,
+
+  /* Get the NPObject wrapper for the browser window. */
+  NPNVWindowNPObject = 15,
+
+  /* Get the NPObject wrapper for the plugins DOM element. */
+  NPNVPluginElementNPObject = 16,
+
+  NPNVSupportsWindowless = 17  
 } NPNVariable;
+
+
+typedef enum {
+  NPNURLVCookie = 501,
+  NPNURLVProxy
+} NPNURLVariable;
 
 /*
  * The type of Tookkit the widgets use
@@ -611,6 +645,15 @@ enum NPEventType {
 #define NPVERS_68K_HAS_LIVECONNECT   11
 #define NPVERS_HAS_WINDOWLESS        11
 #define NPVERS_HAS_XPCONNECT_SCRIPTING 13
+#define NPVERS_HAS_NPRUNTIME_SCRIPTING    14
+#define NPVERS_HAS_FORM_VALUES            15 
+#define NPVERS_HAS_POPUPS_ENABLED_STATE   16 
+#define NPVERS_HAS_RESPONSE_HEADERS       17
+#define NPVERS_HAS_NPOBJECT_ENUM          18
+// KDE note: we claim 14 right now, though we do want to do enum.
+#define NPVERS_HAS_PLUGIN_THREAD_ASYNC_CALL 19
+#define NPVERS_HAS_ALL_NETWORK_STREAMS      20
+#define NPVERS_HAS_URL_AND_AUTH_INFO        21
 
 /*----------------------------------------------------------------------*/
 /*                        Function Prototypes                           */

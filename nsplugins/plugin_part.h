@@ -92,6 +92,7 @@ public:
 
   void changeSrc(const QString& url);
 
+  NSPluginInstance *instance();
 protected:
   virtual bool openUrl(const KUrl &url);
   virtual bool closeUrl();
@@ -123,6 +124,7 @@ public:
     virtual bool put(const unsigned long, const QString &field, const QString &value);
     virtual bool get(const unsigned long, const QString&, Type&, unsigned long&, QString&);
     virtual bool call(const unsigned long, const QString&, const QStringList&, Type&, unsigned long&, QString&);
+    virtual void unregister( const unsigned long objid );
 
     QString evalJavaScript( const QString & script );
 

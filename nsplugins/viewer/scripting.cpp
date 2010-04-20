@@ -28,8 +28,9 @@
 
 #include <cstring>
 
-namespace kdeNsPluginViewer {
+#include "scripting.h"
 
+namespace kdeNsPluginViewer {
 
 // npruntime API --- variants & identifiers
 //-----------------------------------------------------------------------------
@@ -240,12 +241,121 @@ static bool g_NPN_Construct(NPP, NPObject* npobj, const NPVariant* args,
     return false;
 }
 
-// ### invalidate, NPN_evaluate, setException?
+static void g_NPN_SetException(NPObject* /*npobj*/, const NPUTF8* /*message*/)
+{
+    kDebug(1431) << "[unimplemented]";
+}
+
+static bool g_NPN_Evaluate(NPP /*npp*/, NPObject* /*npobj*/, NPString* /*script*/,
+                  NPVariant* /*result*/)
+{
+    kDebug(1431) << "[unimplemented]";
+    return false;
+}
+
+// ### invalidate, NPN_evaluate, setException -- what should they do?
+
 
 // now, a little adapter for representing native objects as NPRuntime ones. 
 //-----------------------------------------------------------------------------
 
+// ScriptExportEngine
+//-----------------------------------------------------------------------------
+void ScriptExportEngine::fillInScriptingFunctions(NPNetscapeFuncs* nsFuncs)
+{
+   nsFuncs->getstringidentifier  = g_NPN_GetStringIdentifier;
+   nsFuncs->getstringidentifiers = g_NPN_GetStringIdentifiers;
+   nsFuncs->getintidentifier     = g_NPN_GetIntIdentifier;
+   nsFuncs->identifierisstring   = g_NPN_IdentifierIsString;
+   nsFuncs->utf8fromidentifier   = g_NPN_UTF8FromIdentifier;
+   nsFuncs->intfromidentifier    = g_NPN_IntFromIdentifier;
+   nsFuncs->createobject         = g_NPN_CreateObject;
+   nsFuncs->retainobject         = g_NPN_RetainObject;
+   nsFuncs->releaseobject        = g_NPN_ReleaseObject;
+   nsFuncs->invoke               = g_NPN_Invoke;
+   nsFuncs->invokeDefault        = g_NPN_InvokeDefault;
+   nsFuncs->evaluate             = g_NPN_Evaluate;
+   nsFuncs->getproperty          = g_NPN_GetProperty;
+   nsFuncs->setproperty          = g_NPN_SetProperty;
+   nsFuncs->removeproperty       = g_NPN_RemoveProperty;
+   nsFuncs->hasproperty          = g_NPN_HasProperty;
+   nsFuncs->hasmethod            = g_NPN_HasMethod;
+   nsFuncs->releasevariantvalue  = g_NPN_ReleaseVariantValue;
+   nsFuncs->setexception         = g_NPN_SetException;
+   nsFuncs->enumerate            = g_NPN_Enumerate;
+   nsFuncs->construct            = g_NPN_Construct;
+}
 
+ScriptExportEngine* ScriptExportEngine::create(NSPluginInstance* inst) {
+    NPObject* rootObj = 0;
+    if (inst->NPGetValue(NPPVpluginScriptableNPObject, (void*)&rootObj) == NPERR_NO_ERROR) {
+        kDebug(1431) << "Detected support for scripting, root = " <<rootObj << endl;
+        if (rootObj)
+            return new ScriptExportEngine(inst, rootObj);
+    }
+    return 0;
+}
+
+ScriptExportEngine::ScriptExportEngine(NSPluginInstance* inst, NPObject* root):
+         _nextId(0), _pluginInstance(inst), _liveConnectRoot(root)
+{
+    kDebug(1431) << _liveConnectRoot->referenceCount;
+    allocObjId(root); //Setup root as 0..
+}
+
+ScriptExportEngine::~ScriptExportEngine()
+{
+    kDebug(1431) << _liveConnectRoot->referenceCount;
+    g_NPN_ReleaseObject(_liveConnectRoot);
+}
+
+NPObject* ScriptExportEngine::getScriptObject(unsigned long objid)
+{
+    QHash<unsigned long, NPObject*>::const_iterator i = _objectsForId.constFind(objid);
+    if (i == _objectsForId.constEnd())
+        return 0;
+    else
+        return i.value();
+}
+
+unsigned long ScriptExportEngine::allocObjId(NPObject* object)
+{
+    while(true) {
+        if (!_objectsForId.contains(_nextId)) { // && !_functionForId.contains(_nextId)) {
+            unsigned long freeID = _nextId;
+            ++_nextId;
+
+            _objectsForId[freeID] = object;
+            _objectIds[object]    = freeID;
+
+            return freeID;
+        }
+        ++_nextId;
+    }
+}
+
+bool ScriptExportEngine::get(const unsigned long objid, const QString& field,
+                             KParts::LiveConnectExtension::Type& typeOut,
+                             unsigned long& retobjid, QString& value)
+{
+    return false;
+}
+
+bool ScriptExportEngine::put(const unsigned long objid, const QString& field,
+                             const QString& value)
+{
+    return false;
+}
+
+bool ScriptExportEngine::call(const unsigned long objid, const QString& func, const QStringList& args,
+                    KParts::LiveConnectExtension::Type& retType, unsigned long& retobjid, QString& value)
+{
+    return false;
+}
+
+void ScriptExportEngine::unregister(const unsigned long objid)
+{
+}
 
 } // namespace kdeNsPluginViewer
 // kate: indent-width 4; replace-tabs on; tab-width 4; space-indent on;
