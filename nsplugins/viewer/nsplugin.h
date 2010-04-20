@@ -194,7 +194,9 @@ public:
   void lcUnregister(qulonglong obj);
 
   // Initialize root JS object export if possible.
-  void setupLiveConnect(); 
+  void setupLiveConnect();
+
+  ScriptExportEngine* scripting() { return _scripting; }
   
 
   // last via NSPluginClass::newInstance() produced NSPluginInstance instance.
@@ -297,7 +299,7 @@ private:
   QMap<int, Request*> _jsrequests;
   int _numJSRequests; // entered in earlier than _jsrequests.
 
-  ScriptExportEngine *_scripting; //0 if plugin doesn't support it.  
+  ScriptExportEngine* _scripting; //0 if plugin doesn't support it.
   
   static NSPluginInstance* s_lastPluginInstance;
 };
