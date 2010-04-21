@@ -173,11 +173,14 @@ class NSPluginInstance : public QObject
 public:
 
   // constructor, destructor
-  NSPluginInstance( NPP privateData, NPPluginFuncs *pluginFuncs, KLibrary *handle,
-		    const QString &src, const QString &mime,
+  NSPluginInstance( NPPluginFuncs *pluginFuncs, KLibrary *handle,
+                    const QString &src, const QString &mime,
+                    const QStringList &argn, const QStringList &argv,
                     const QString &appId, const QString &callbackId, bool embed,
 		    QObject *parent );
   ~NSPluginInstance();
+
+  bool wasInitializedOK() { return _initializedOK; }
 
   // DBus-exported functions
   void shutdown();
@@ -192,9 +195,6 @@ public:
   NSLiveConnectResult lcGet (qulonglong obj, const QString& f);
   bool lcPut(qulonglong obj, const QString& f, const QString& v);
   void lcUnregister(qulonglong obj);
-
-  // Initialize root JS object export if possible.
-  void setupLiveConnect();
 
   ScriptExportEngine* scripting() { return _scripting; }
   
@@ -300,6 +300,8 @@ private:
   int _numJSRequests; // entered in earlier than _jsrequests.
 
   ScriptExportEngine* _scripting; //0 if plugin doesn't support it.
+
+  bool _initializedOK; // ok/fail from ctor
   
   static NSPluginInstance* s_lastPluginInstance;
 };
