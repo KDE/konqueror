@@ -63,10 +63,8 @@ static QHash<int32,   NSPluginIdentifier*> intIdents;
 //Internal -- not part of standard API..
 static NPIdentifier g_NPN_GetQStringIdentifier(const QString& str)
 {
-    kDebug(1431) << "$$$$ intern:" << str;
     QHash<QString, NSPluginIdentifier*>::const_iterator i = stringIdents.constFind(str);
     if (i != stringIdents.constEnd()) {
-        kDebug(1431) << "  reuse:" << (NPIdentifier)i.value();
         return i.value();
     }
 
@@ -74,7 +72,6 @@ static NPIdentifier g_NPN_GetQStringIdentifier(const QString& str)
     ident->isString = true;
     ident->str      = str;
     stringIdents[str] = ident;
-    kDebug(1431) << "  fresh:" << (NPIdentifier)ident;
     return ident;
 }
 
@@ -121,7 +118,6 @@ static bool g_NPN_IdentifierIsString(NPIdentifier identifier)
 
 static NPUTF8* g_NPN_UTF8FromIdentifier(NPIdentifier identifier)
 {
-    kDebug(1431) << "$$$$" << identifier;
     NSPluginIdentifier* ident = reinterpret_cast<NSPluginIdentifier*>(identifier);
     if (!ident->isString)
         return 0;
@@ -129,8 +125,6 @@ static NPUTF8* g_NPN_UTF8FromIdentifier(NPIdentifier identifier)
     // This deep copies as the API docs state the caller is responsible for freeing the string
     // we also include the trailing null in memory, but not length, like
     // QByteArray does.
-    kDebug(1431) << " --> " << ident->str;
-
     QByteArray utf8 = ident->str.toUtf8();
     int fullLength = utf8.size() + 1; //Includes 0...
     NPUTF8* buf = static_cast<NPUTF8*>(g_NPN_MemAlloc(fullLength));
@@ -227,7 +221,6 @@ static bool g_NPN_Invoke(NPP, NPObject* npobj, NPIdentifier name,
                 const NPVariant* args, quint32 argCount, NPVariant* result)
 {
     if (npobj && npobj->_class && npobj->_class->invoke) {
-        kDebug(1431) << "calling appropriate method:";
         return npobj->_class->invoke(npobj, name, args, argCount, result);
     }
     return false;
@@ -344,14 +337,8 @@ public:
         return false;
     }
 
-    virtual bool get(QString prop, QString* out) {
+    virtual bool get(QString prop, QString* /*out*/) {
         kDebug(1431) << "[unimplemented]" << prop;
-#if 0
-        if (prop == QLatin1String("location")) {
-            *out = QString::fromLatin1("file:///tmp/yt-flash-version.html");
-            return true;
-        }
-#endif
         return false;
     }
 
@@ -554,6 +541,35 @@ void ScriptExportEngine::fillInScriptingFunctions(NPNetscapeFuncs* nsFuncs)
    nsFuncs->construct            = g_NPN_Construct;
 }
 
+// This emulates as little we can get away with to get Flash sorta-scriptable
+class FakeWindowObject: public ScriptableObjectBase
+{
+public:
+    FakeWindowObject(): _plugin(0)
+    {}
+
+    FakeWindowObject(NSPluginInstance* plugin): _plugin(plugin)
+    {}
+
+    virtual bool get(QString prop, QString* out) {
+        kDebug(1431) << prop;
+        assert(_plugin);
+
+        if (prop == QLatin1String("location") && !_plugin->pageURL().isEmpty()) {
+            kDebug(1431) << " -> reporting page URL:" << _plugin->pageURL();
+            *out = _plugin->pageURL();
+            return true;
+        }
+
+        return false;
+    }
+    
+private:
+    NSPluginInstance* _plugin;
+};
+
+static NPWrapperClass<FakeWindowObject> windowClass;
+
 void ScriptExportEngine::connectToPlugin() {
     NPObject* rootObj = 0;
     if (_pluginInstance->NPGetValue(NPPVpluginScriptableNPObject, (void*)&rootObj) == NPERR_NO_ERROR) {
@@ -568,17 +584,25 @@ void ScriptExportEngine::connectToPlugin() {
     }
 }
 
+
+static NPP dummy;
+
 ScriptExportEngine::ScriptExportEngine(NSPluginInstance* inst):
          _nextId(1), _pluginInstance(inst), _liveConnectRoot(0)
 {
     // Reserve a spot for root, even if we don't have it now.
     _objectForId[0] = 0;
 
-    // ### stub, for now.
-    NPP dummy;
-    _window = g_NPN_CreateObject(dummy, &stubClass);
+    // Create our fake window object
+    NPObjectWrapper* win = new NPObjectWrapper;
+    win->_class = &windowClass;
+    win->impl   = new FakeWindowObject(inst);
+    win->referenceCount = 1;
+
+    _window = win;    
     g_NPN_RetainObject(_window);
 
+    // Stub for now
     _pluginElement = g_NPN_CreateObject(dummy, &stubClass);
     g_NPN_RetainObject(_pluginElement);
 }
