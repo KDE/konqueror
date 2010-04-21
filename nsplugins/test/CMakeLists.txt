@@ -12,6 +12,7 @@ set(nsplugins_class_xml  ${CMAKE_CURRENT_SOURCE_DIR}/../viewer/org.kde.nsplugins
 QT4_ADD_DBUS_INTERFACE( testnsplugin_SRCS ${nsplugins_class_xml} nsplugins_class_interface )
 
 set(nsplugins_instance_xml  ${CMAKE_CURRENT_SOURCE_DIR}/../viewer/org.kde.nsplugins.instance.xml)
+set_source_files_properties(${nsplugins_instance_xml} PROPERTIES INCLUDE "comm/dbustypes.h")
 QT4_ADD_DBUS_INTERFACE( testnsplugin_SRCS ${nsplugins_instance_xml} nsplugins_instance_interface )
 
 set(nsplugins_viewer_xml  ${CMAKE_CURRENT_SOURCE_DIR}/../viewer/org.kde.nsplugins.viewer.xml)
