@@ -19,7 +19,6 @@
   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 */
-
 #include "nsplugin.h"
 #include "sdk/npruntime.h"
 
@@ -29,6 +28,7 @@
 #include <cstring>
 
 #include "scripting.h"
+
 
 namespace kdeNsPluginViewer {
 
@@ -344,8 +344,14 @@ public:
         return false;
     }
 
-    virtual bool get(QString prop, QString* /*out*/) {
+    virtual bool get(QString prop, QString* out) {
         kDebug(1431) << "[unimplemented]" << prop;
+#if 0
+        if (prop == QLatin1String("location")) {
+            *out = QString::fromLatin1("file:///tmp/yt-flash-version.html");
+            return true;
+        }
+#endif
         return false;
     }
 
@@ -548,21 +554,25 @@ void ScriptExportEngine::fillInScriptingFunctions(NPNetscapeFuncs* nsFuncs)
    nsFuncs->construct            = g_NPN_Construct;
 }
 
-ScriptExportEngine* ScriptExportEngine::create(NSPluginInstance* inst) {
+void ScriptExportEngine::connectToPlugin() {
     NPObject* rootObj = 0;
-    if (inst->NPGetValue(NPPVpluginScriptableNPObject, (void*)&rootObj) == NPERR_NO_ERROR) {
-        kDebug(1431) << "Detected support for scripting, root = " <<rootObj << endl;
-        if (rootObj)
-            return new ScriptExportEngine(inst, rootObj);
+    if (_pluginInstance->NPGetValue(NPPVpluginScriptableNPObject, (void*)&rootObj) == NPERR_NO_ERROR) {
+        kDebug(1431) << "Detected support for scripting, root = " << rootObj << endl;
+
+        _liveConnectRoot = rootObj;
+
+        // Add it to it mappings as id = 0. We don't need to manual retain,
+        // flash does.
+        _objectForId[0] = rootObj;
+        _objectIds[rootObj] = 0;
     }
-    return 0;
 }
 
-ScriptExportEngine::ScriptExportEngine(NSPluginInstance* inst, NPObject* root):
-         _nextId(0), _pluginInstance(inst), _liveConnectRoot(root)
+ScriptExportEngine::ScriptExportEngine(NSPluginInstance* inst):
+         _nextId(1), _pluginInstance(inst), _liveConnectRoot(0)
 {
-    kDebug(1431) << _liveConnectRoot->referenceCount;
-    allocObjId(root); //Setup root as 0..
+    // Reserve a spot for root, even if we don't have it now.
+    _objectForId[0] = 0;
 
     // ### stub, for now.
     NPP dummy;
@@ -575,8 +585,20 @@ ScriptExportEngine::ScriptExportEngine(NSPluginInstance* inst, NPObject* root):
 
 ScriptExportEngine::~ScriptExportEngine()
 {
-    kDebug(1431) << _liveConnectRoot->referenceCount;
-    g_NPN_ReleaseObject(_liveConnectRoot);
+    // ### when should invalidation happen?
+
+    // Release every object...    
+    QHash<unsigned long, NPObject*>::iterator i = _objectForId.begin();
+    while (i != _objectForId.end()) {
+        g_NPN_ReleaseObject(i.value());
+        ++i;
+    }
+
+    QHash<unsigned long, FuncRef>::iterator fi = _functionForId.begin();
+    while (fi != _functionForId.end()) {
+        g_NPN_ReleaseObject(fi.value().first);
+        ++fi;
+    }
 }
 
 NPObject* ScriptExportEngine::getScriptObject(unsigned long objid)

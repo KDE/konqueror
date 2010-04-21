@@ -33,10 +33,10 @@ typedef QPair<NPObject*, QString> FuncRef;
 class ScriptExportEngine
 {
 public:
-  /* Tries to create a scripting manager if the plugin supports it.
-      If not, returns 0
-  */
-  static ScriptExportEngine* create(NSPluginInstance* instance);
+  ScriptExportEngine(NSPluginInstance* inst);
+
+  /* Tries to connect to plugin exports */
+  void connectToPlugin();
 
   /* Fills in the functions table with plugins API support */
   static void fillInScriptingFunctions(NPNetscapeFuncs* nsFuncs);
@@ -54,7 +54,6 @@ public:
                     KParts::LiveConnectExtension::Type& retType, unsigned long& retobjid, QString& value);
   void unregister(const unsigned long objid);
 private:
-  ScriptExportEngine(NSPluginInstance* inst, NPObject* root);
 
   void setupReturn(const NPVariant& result, KParts::LiveConnectExtension::Type& type,
                    unsigned long& retobjid, QString& value);
