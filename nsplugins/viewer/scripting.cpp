@@ -795,7 +795,7 @@ void ScriptExportEngine::unregister(const unsigned long objid)
 {
     //See if this is an object identifier..
     QHash<unsigned long, NPObject*>::const_iterator i = _objectForId.constFind(objid);
-    if (i != _objectForId.end()) {
+    if (i != _objectForId.constEnd()) {
         NPObject* obj = i.value();
         _objectForId.remove(objid);
         _objectIds.remove(obj);
@@ -805,7 +805,7 @@ void ScriptExportEngine::unregister(const unsigned long objid)
 
     // Or perhaps a function one?
     QHash<unsigned long, FuncRef>::const_iterator fi = _functionForId.constFind(objid);
-    if (fi != _functionForId.end()) {
+    if (fi != _functionForId.constEnd()) {
         FuncRef f = fi.value();
         _functionForId.remove(objid);
         _functionIds.remove(f);
