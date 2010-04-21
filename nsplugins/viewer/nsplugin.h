@@ -235,6 +235,8 @@ public:
   
   bool hasPendingJSRequests() const;
 
+  QString pageURL() const { return _pageURL; }
+
 public Q_SLOTS:
   void streamFinished( NSPluginStreamBase *strm );
 
@@ -262,6 +264,7 @@ private:
   int _width, _height;          // last size we used;
 
   QString _baseURL;
+  QString _pageURL;
 
   struct Request
   {

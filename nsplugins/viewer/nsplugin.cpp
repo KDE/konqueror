@@ -220,7 +220,7 @@ NPError g_NPN_GetValue(NPP instance, NPNVariable variable, void *value)
       case NPPVpluginKeepLibraryInMemory:
          *(bool*)value = true;
          return NPERR_NO_ERROR;
-#if 0
+         
       case NPNVWindowNPObject:
          if (inst && inst->scripting()) {
             *(NPObject**)value = inst->scripting()->acquireWindow();
@@ -229,7 +229,7 @@ NPError g_NPN_GetValue(NPP instance, NPNVariable variable, void *value)
             kDebug(1431) << "script object queried, but no scripting active";
             return NPERR_INVALID_PARAM;
          }
-      
+#if 0
       case NPNVPluginElementNPObject:
          if (inst && inst->scripting()) {
             *(NPObject**)value = inst->scripting()->acquirePluginElement();
@@ -695,7 +695,10 @@ NSPluginInstance::NSPluginInstance(NPPluginFuncs *pluginFuncs,
       _argn[i] = strdup(encN.constData());
       _argv[i] = strdup(encV.constData());
 
-      if (!strcasecmp(_argn[i], "__KHTML__PLUGINBASEURL")) baseURL = _argv[i];
+      if (argn[i] == QLatin1String("__KHTML__PLUGINBASEURL"))
+         baseURL = argv[i];
+      if (argn[i] == QLatin1String("__KHTML__PLUGINPAGEURL"))
+         _pageURL = argv[i];
       kDebug(1431) << "argn=" << _argn[i] << " argv=" << _argv[i];
    }
 
