@@ -42,7 +42,7 @@ public:
 class KBOOKMARKMODEL_EXPORT KEBMacroCommand : public QUndoCommand, public IKEBCommand
 {
 public:
-   KEBMacroCommand(const QString &name, QUndoCommand* parent = 0)
+   explicit KEBMacroCommand(const QString &name, QUndoCommand* parent = 0)
       : QUndoCommand(name, parent) {}
    virtual ~KEBMacroCommand() {}
    virtual QString affectedBookmarks() const;

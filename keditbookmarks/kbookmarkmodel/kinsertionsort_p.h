@@ -17,8 +17,8 @@
    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef __kinsertionsort_h
-#define __kinsertionsort_h
+#ifndef KINSERTIONSORT_H
+#define KINSERTIONSORT_H
 
 /**
  * A template-based insertion sort algorithm, but not really 100%

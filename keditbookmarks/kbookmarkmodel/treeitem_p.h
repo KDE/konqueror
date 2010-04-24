@@ -15,8 +15,8 @@
    along with this program.  If not, see <http://www.gnu.org/licenses/>
 */
 
-#ifndef __treeitem_h
-#define __treeitem_h
+#ifndef TREEITEM_P_H
+#define TREEITEM_P_H
 
 #include <QtCore/QList>
 #include <kbookmark.h>
