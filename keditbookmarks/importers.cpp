@@ -23,9 +23,9 @@
 #include "importers.h"
 #include "globalbookmarkmanager.h"
 
-#include "commands.h"
+#include "kbookmarkmodel/commands.h"
 #include "toplevel.h" // for KEBApp
-#include "bookmarkmodel.h"
+#include "kbookmarkmodel/model.h"
 
 #include <QtCore/QRegExp>
 #include <kdebug.h>

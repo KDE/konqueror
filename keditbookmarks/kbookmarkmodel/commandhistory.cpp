@@ -17,49 +17,65 @@
 */
 
 #include "commandhistory.h"
-#include <kdebug.h>
 #include "commands.h"
+
 #include <kactioncollection.h>
 #include <kbookmarkmanager.h>
+#include <kdebug.h>
+#include <kundostack.h>
+
 #include <QAction>
 #include <QUndoCommand>
 
-CommandHistory::CommandHistory(QObject* parent)
-    : QObject(parent), m_manager(0), m_commandHistory()
+class CommandHistory::Private
 {
+public:
+    Private() : m_manager(0), m_commandHistory() {}
+    KBookmarkManager* m_manager;
+    KUndoStack m_commandHistory;
+};
+
+CommandHistory::CommandHistory(QObject* parent)
+    : QObject(parent), d(new CommandHistory::Private)
+{
+}
+
+CommandHistory::~CommandHistory()
+{
+    delete d;
 }
 
 void CommandHistory::setBookmarkManager(KBookmarkManager* manager)
 {
     clearHistory(); // we can't keep old commands pointing to the wrong model/manager...
-    m_manager = manager;
+    d->m_manager = manager;
 }
 
 void CommandHistory::createActions(KActionCollection *actionCollection)
 {
     // TODO use QUndoView?
-    QAction* undoAction = m_commandHistory.createUndoAction(actionCollection);
+    QAction* undoAction = d->m_commandHistory.createUndoAction(actionCollection);
     connect(undoAction, SIGNAL(triggered()), this, SLOT(undo()));
-    QAction* redoAction = m_commandHistory.createRedoAction(actionCollection);
+    QAction* redoAction = d->m_commandHistory.createRedoAction(actionCollection);
     connect(redoAction, SIGNAL(triggered()), this, SLOT(redo()));
 }
 
 void CommandHistory::undo()
 {
-    const int idx = m_commandHistory.index();
-    const QUndoCommand* cmd = m_commandHistory.command(idx-1);
+    const int idx = d->m_commandHistory.index();
+    const QUndoCommand* cmd = d->m_commandHistory.command(idx-1);
     if (cmd) {
-        m_commandHistory.undo();
+        d->m_commandHistory.undo();
         commandExecuted(cmd);
     }
 }
 
 void CommandHistory::redo()
 {
-    const int idx = m_commandHistory.index();
-    const QUndoCommand* cmd = m_commandHistory.command(idx);
+    const int idx = d->m_commandHistory.index();
+    const QUndoCommand* cmd = d->m_commandHistory.command(idx);
     if (cmd) {
-        m_commandHistory.redo();
+        d->m_commandHistory.redo();
         commandExecuted(cmd);
     }
 }
@@ -69,7 +85,7 @@ void CommandHistory::commandExecuted(const QUndoCommand *k)
     const IKEBCommand * cmd = dynamic_cast<const IKEBCommand *>(k);
     Q_ASSERT(cmd);
 
-    KBookmark bk = m_manager->findByAddress(cmd->affectedBookmarks());
+    KBookmark bk = d->m_manager->findByAddress(cmd->affectedBookmarks());
     Q_ASSERT(bk.isGroup());
 
     emit notifyCommandExecuted(bk.toGroup());
@@ -77,28 +93,28 @@ void CommandHistory::commandExecuted(const QUndoCommand *k)
 
 void CommandHistory::notifyDocSaved()
 {
-    m_commandHistory.setClean();
+    d->m_commandHistory.setClean();
 }
 
 void CommandHistory::addCommand(QUndoCommand *cmd)
 {
     if (!cmd)
         return;
-    m_commandHistory.push(cmd); // calls cmd->redo()
+    d->m_commandHistory.push(cmd); // calls cmd->redo()
     CommandHistory::commandExecuted(cmd);
 }
 
 void CommandHistory::clearHistory()
 {
-    if (m_commandHistory.count() > 0) {
-        m_commandHistory.clear();
-        emit notifyCommandExecuted(m_manager->root()); // not really, but we still want to update the GUI
+    if (d->m_commandHistory.count() > 0) {
+        d->m_commandHistory.clear();
+        emit notifyCommandExecuted(d->m_manager->root()); // not really, but we still want to update the GUI
     }
 }
 
 KBookmarkManager* CommandHistory::bookmarkManager()
 {
-    return m_manager;
+    return d->m_manager;
 }
 
 #include "commandhistory.moc"

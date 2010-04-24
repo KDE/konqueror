@@ -19,11 +19,11 @@
 
 #include "bookmarklistview.h"
 #include "globalbookmarkmanager.h"
-#include "bookmarkmodel.h"
+#include "kbookmarkmodel/model.h"
 #include "toplevel.h" // for KEBApp
 #include "settings.h"
-#include "commands.h"
-#include "treeitem_p.h"
+#include "kbookmarkmodel/commands.h"
+
 #include <QtGui/QHeaderView>
 #include <QtGui/QItemSelection>
 #include <QtGui/QMenu>
@@ -255,10 +255,13 @@ bool BookmarkFolderViewFilterModel::filterAcceptsColumn ( int source_column, con
     return (source_column == 0);
 }
 
+Q_DECLARE_METATYPE(KBookmark)
+
 bool BookmarkFolderViewFilterModel::filterAcceptsRow ( int source_row, const QModelIndex & source_parent ) const
 {
     QModelIndex index = sourceModel()->index(source_row, 0, source_parent);
-    return static_cast<TreeItem *>(index.internalPointer())->bookmark().isGroup();
+    const KBookmark bk = index.data(KBookmarkModel::KBookmarkRole).value<KBookmark>();
+    return bk.isGroup();
 }
 
 #include "bookmarklistview.moc"

@@ -1,4 +1,4 @@
-add_subdirectory(tests)
+add_subdirectory(kbookmarkmodel)
 
 ########### next target ###############
 
@@ -17,9 +17,7 @@ set(keditbookmarks_KDEINIT_SRCS
    main.cpp
    toplevel.cpp
    globalbookmarkmanager.cpp
-   commandhistory.cpp
    actionsimpl.cpp
-   commands.cpp
    importers.cpp
    bookmarkiterator.cpp
    testlink.cpp
@@ -28,9 +26,8 @@ set(keditbookmarks_KDEINIT_SRCS
    exporters.cpp
    bookmarkinfowidget.cpp
    kebsearchline.cpp
-   bookmarkmodel.cpp
    bookmarklistview.cpp
-   treeitem.cpp )
+)
 
 set(toplevel_xml ${CMAKE_CURRENT_BINARY_DIR}/org.kde.keditbookmarks.xml)
 qt4_generate_dbus_interface( ${CMAKE_CURRENT_SOURCE_DIR}/toplevel.h org.kde.keditbookmarks.xml )
@@ -43,7 +40,7 @@ kde4_add_kcfg_files(keditbookmarks_KDEINIT_SRCS settings.kcfgc )
 
 kde4_add_kdeinit_executable( keditbookmarks ${keditbookmarks_KDEINIT_SRCS})
 
-target_link_libraries(kdeinit_keditbookmarks konq ${KDE4_KPARTS_LIBS})
+target_link_libraries(kdeinit_keditbookmarks kbookmarkmodel_private konq ${KDE4_KPARTS_LIBS})
 
 install(TARGETS kdeinit_keditbookmarks  ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(TARGETS keditbookmarks          ${INSTALL_TARGETS_DEFAULT_ARGS})

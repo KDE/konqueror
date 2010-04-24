@@ -23,9 +23,9 @@
 #include "globalbookmarkmanager.h"
 
 #include "toplevel.h" // for KEBApp
-#include "bookmarkmodel.h"
-#include "commands.h"
-#include "commandhistory.h"
+#include "kbookmarkmodel/model.h"
+#include "kbookmarkmodel/commands.h"
+#include "kbookmarkmodel/commandhistory.h"
 #include "importers.h"
 #include "favicons.h"
 #include "testlink.h"
@@ -364,7 +364,7 @@ void ActionsImpl::slotPaste() {
     else
         addr = bk.address();
 
-    KEBMacroCommand *mcmd = CmdGen::insertMimeSource( m_model, i18n("Paste"), QApplication::clipboard()->mimeData(), addr);
+    QUndoCommand *mcmd = CmdGen::insertMimeSource( m_model, i18n("Paste"), QApplication::clipboard()->mimeData(), addr);
     commandHistory()->addCommand(mcmd);
 }
 
@@ -561,7 +561,7 @@ void ActionsImpl::slotSetAsToolbar() {
     KEBApp::self()->bkInfo()->commitChanges();
     KBookmark bk = KEBApp::self()->firstSelected();
     Q_ASSERT(bk.isGroup());
-    KEBMacroCommand *mcmd = CmdGen::setAsToolbar(m_model, bk);
+    QUndoCommand *mcmd = CmdGen::setAsToolbar(m_model, bk);
     commandHistory()->addCommand(mcmd);
 }
 

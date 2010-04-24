@@ -1,5 +1,6 @@
 /* This file is part of the KDE project
    Copyright (C) 2005 Daniel Teske <teske@squorn.de>
+   Copyright (C) 2010 David Faure <faure@kde.org>
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public License as
@@ -15,21 +16,18 @@
    along with this program.  If not, see <http://www.gnu.org/licenses/>
 */
 
-#ifndef __bookmarkmodel_h
-#define __bookmarkmodel_h
+#ifndef BOOKMARKMODEL_MODEL_H
+#define BOOKMARKMODEL_MODEL_H
 
 #include <QtCore/QAbstractItemModel>
+#include "kbookmarkmodel_export.h"
 
 class CommandHistory;
 class KBookmarkGroup;
 class KBookmarkManager;
 class KBookmark;
 
-class KBookmarkModelRemoveSentry;
-class KBookmarkModelMoveSentry;
-class KBookmarkModelInsertSentry;
-
-class KBookmarkModel : public QAbstractItemModel
+class KBOOKMARKMODEL_EXPORT KBookmarkModel : public QAbstractItemModel
 {
     Q_OBJECT
 
@@ -51,6 +49,12 @@ public:
 
     KBookmarkManager* bookmarkManager();
     CommandHistory* commandHistory();
+
+    enum AdditionalRoles {
+        // Note: use   printf "0x%08X\n" $(($RANDOM*$RANDOM))
+        // to define additional roles.
+        KBookmarkRole = 0x161BEC30
+    };
 
     //reimplemented functions
     virtual QVariant data(const QModelIndex &index, int role) const;

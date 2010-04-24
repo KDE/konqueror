@@ -18,10 +18,10 @@
 
 #include "bookmarkinfowidget.h"
 #include "bookmarklistview.h"
-#include "commands.h"
-#include "commandhistory.h"
+#include "kbookmarkmodel/commands.h"
+#include "kbookmarkmodel/commandhistory.h"
 #include "globalbookmarkmanager.h"
-#include "bookmarkmodel.h"
+#include "kbookmarkmodel/model.h"
 
 #include <stdlib.h>
 

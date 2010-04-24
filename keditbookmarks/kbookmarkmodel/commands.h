@@ -1,4 +1,3 @@
-// kate: space-indent on; indent-width 3; replace-tabs on;
 /* This file is part of the KDE project
    Copyright (C) 2000 David Faure <faure@kde.org>
    Copyright (C) 2002-2003 Alexander Kellett <lypanov@kde.org>
@@ -17,17 +16,17 @@
    along with this program.  If not, see <http://www.gnu.org/licenses/>
 */
 
-#ifndef __commands_h
-#define __commands_h
+#ifndef kbookmarkmodel__commands_h
+#define kbookmarkmodel__commands_h
 
 #include <QtGui/QUndoCommand>
+#include "kbookmarkmodel_export.h"
 #include <kbookmark.h>
-#include <QtCore/QMap>
 
 class KBookmarkModel;
 
 // Interface adds the affectedBookmarks method
-// Any class should on call add those bookmarks which are
+// Any command class should on call add those bookmarks which are
 // affected by executing or unexecuting the command
 // Or a common parent of the affected bookmarks
 // see KBookmarkManager::notifyChange(KBookmarkGroup)
@@ -40,7 +39,7 @@ public:
    // If only QUndoCommand had setData(QVariant), we would save a lot of casting...
 };
 
-class KEBMacroCommand : public QUndoCommand, public IKEBCommand
+class KBOOKMARKMODEL_EXPORT KEBMacroCommand : public QUndoCommand, public IKEBCommand
 {
 public:
    KEBMacroCommand(const QString &name, QUndoCommand* parent = 0)
@@ -49,14 +48,14 @@ public:
    virtual QString affectedBookmarks() const;
 };
 
-class DeleteManyCommand : public KEBMacroCommand
+class KBOOKMARKMODEL_EXPORT DeleteManyCommand : public KEBMacroCommand
 {
 public:
    DeleteManyCommand(KBookmarkModel* model, const QString &name, const QList<KBookmark> & bookmarks);
    virtual ~DeleteManyCommand() {}
 };
 
-class CreateCommand : public QUndoCommand, public IKEBCommand
+class KBOOKMARKMODEL_EXPORT CreateCommand : public QUndoCommand, public IKEBCommand
 {
 public:
    // separator
@@ -96,7 +95,7 @@ private: // TODO move it all to a d pointer
    QDomDocument m_originalBookmarkDocRef; // so that it lives at least as long as m_originalBookmark
 };
 
-class EditCommand : public QUndoCommand, public IKEBCommand
+class KBOOKMARKMODEL_EXPORT EditCommand : public QUndoCommand, public IKEBCommand
 {
 public:
    EditCommand(KBookmarkModel* model, const QString & address, int col, const QString & newValue, QUndoCommand* parent = 0);
@@ -113,7 +112,7 @@ private:
    QString mOldValue;
 };
 
-class DeleteCommand : public QUndoCommand, public IKEBCommand
+class KBOOKMARKMODEL_EXPORT DeleteCommand : public QUndoCommand, public IKEBCommand
 {
 public:
    explicit DeleteCommand(KBookmarkModel* model, const QString &from, bool contentOnly = false, QUndoCommand* parent = 0);
@@ -131,26 +130,9 @@ private: // TODO d pointer
    bool m_contentOnly;
 };
 
-class MoveCommand : public QUndoCommand, public IKEBCommand
-{
-public:
-   MoveCommand(KBookmarkModel* model, const QString &from, const QString &to, const QString &name = QString(), QUndoCommand* parent = 0);
-   QString finalAddress() const;
-   virtual ~MoveCommand() {}
-   virtual void redo();
-   virtual void undo();
-   virtual QString affectedBookmarks() const;
-private:
-   KBookmarkModel* m_model;
-   QString m_from;
-   QString m_to;
-   CreateCommand * m_cc;
-   DeleteCommand * m_dc;
-};
-
 class SortItem;
 
-class SortCommand : public KEBMacroCommand
+class KBOOKMARKMODEL_EXPORT SortCommand : public KEBMacroCommand
 {
 public:
    SortCommand(KBookmarkModel* model, const QString &name, const QString &groupAddress, QUndoCommand* parent = 0);
@@ -166,7 +148,8 @@ private:
    QString m_groupAddress;
 };
 
-class CmdGen {
+// TODO RENAME -- or maybe move these to KBookmarkModel?
+class KBOOKMARKMODEL_EXPORT CmdGen {
 public:
    static KEBMacroCommand* setAsToolbar(KBookmarkModel* model, const KBookmark &bk);
    static KEBMacroCommand* insertMimeSource(KBookmarkModel* model, const QString &cmdName, const QMimeData *data, const QString &addr);

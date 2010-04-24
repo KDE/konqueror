@@ -21,8 +21,8 @@
 
 #include "bookmarkiterator.h"
 #include "updater.h"
-#include "commands.h"
-#include "bookmarkmodel.h"
+#include "kbookmarkmodel/commands.h"
+#include "kbookmarkmodel/model.h"
 
 #include <kdebug.h>
 #include <klocale.h>

@@ -18,7 +18,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "bookmarkmodel.h"
+#include "model.h"
 #include "treeitem_p.h"
 #include "commands.h"
 #include "commandhistory.h"
@@ -32,6 +32,8 @@
 #include <QtGui/QPixmap>
 #include <QtCore/QStringList>
 #include <QtCore/QMimeData>
+
+Q_DECLARE_METATYPE(KBookmark)
 
 class KBookmarkModel::Private
 {
@@ -99,8 +101,11 @@ void KBookmarkModel::resetModel()
 
 QVariant KBookmarkModel::data(const QModelIndex &index, int role) const
 {
+    if (!index.isValid())
+        return QVariant();
+
     //Text
-    if (index.isValid() && (role == Qt::DisplayRole || role == Qt::EditRole)) {
+    if (role == Qt::DisplayRole || role == Qt::EditRole) {
         const KBookmark bk = bookmarkForIndex(index);
         if (bk.address().isEmpty()) {
             if (index.column() == NameColumnId)
@@ -130,12 +135,17 @@ QVariant KBookmarkModel::data(const QModelIndex &index, int role) const
     }
 
     //Icon
-    if (index.isValid() && role == Qt::DecorationRole && index.column() == NameColumnId)
-    {
+    if (role == Qt::DecorationRole && index.column() == NameColumnId) {
         KBookmark bk = bookmarkForIndex(index);
         if (bk.address().isEmpty())
             return KIcon("bookmarks");
         return KIcon(bk.icon());
+    }
+
+    //Special roles
+    if (role == KBookmarkRole) {
+        KBookmark bk = bookmarkForIndex(index);
+        return QVariant::fromValue(bk);
     }
     return QVariant();
 }
@@ -465,4 +475,4 @@ void KBookmarkModel::notifyManagers(const KBookmarkGroup& grp)
     bookmarkManager()->emitChanged(grp);
 }
 
-#include "bookmarkmodel.moc"
+#include "model.moc"

@@ -19,7 +19,7 @@
 #ifndef COMMANDHISTORY_H
 #define COMMANDHISTORY_H
 
-#include <kundostack.h>
+#include "kbookmarkmodel_export.h"
 #include <QObject>
 class KBookmarkGroup;
 class KBookmarkManager;
@@ -27,19 +27,18 @@ class QUndoCommand;
 class KActionCollection;
 
 // TODO namespacing
-class CommandHistory : public QObject
+class KBOOKMARKMODEL_EXPORT CommandHistory : public QObject
 {
     Q_OBJECT
 public:
     CommandHistory(QObject* parent = 0);
+    virtual ~CommandHistory();
 
     // Call this before putting any commands into the history!
     void setBookmarkManager(KBookmarkManager* manager);
     KBookmarkManager* bookmarkManager();
 
     void createActions(KActionCollection *collection);
-
-    virtual ~CommandHistory() {}
 
     void notifyDocSaved();
 
@@ -57,9 +56,8 @@ private:
     void commandExecuted(const QUndoCommand *k);
 
 private:
-    KBookmarkManager* m_manager;
-    // Ported from K3Command/K3CommandHistory to QUndoCommand/KUndoStack for KDE-4.4.0
-    KUndoStack m_commandHistory;
+    class Private;
+    Private * const d;
 };
 
 #endif /* COMMANDHISTORY_H */

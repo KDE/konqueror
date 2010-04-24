@@ -22,14 +22,14 @@
 #include <QVBoxLayout>
 #include "globalbookmarkmanager.h"
 
-#include "bookmarkmodel.h"
+#include "kbookmarkmodel/model.h"
 
 #include "bookmarkinfowidget.h"
 #include "actionsimpl.h"
 #include "exporters.h"
 #include "settings.h"
-#include "commands.h"
-#include "commandhistory.h"
+#include "kbookmarkmodel/commands.h"
+#include "kbookmarkmodel/commandhistory.h"
 #include "kebsearchline.h"
 #include "bookmarklistview.h"
 

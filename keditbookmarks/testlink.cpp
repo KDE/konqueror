@@ -26,9 +26,9 @@
 #include <klocale.h>
 
 // Local
-#include "commands.h"
+#include "kbookmarkmodel/commands.h"
 #include "bookmarkiterator.h"
-#include "bookmarkmodel.h"
+#include "kbookmarkmodel/model.h"
 
 TestLinkItrHolder::TestLinkItrHolder(KBookmarkModel* model)
     : BookmarkIteratorHolder(model)

@@ -19,7 +19,7 @@
 */
 
 #include "bookmarkiterator.h"
-#include "bookmarkmodel.h"
+#include "kbookmarkmodel/model.h"
 #include <kbookmarkmanager.h>
 
 #include <kdebug.h>

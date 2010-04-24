@@ -24,8 +24,8 @@
 #include <QDateTime>
 #include <kdebug.h>
 #include "kbookmarkmanager.h"
-#include "bookmarkmodel.h"
-#include "commandhistory.h"
+#include "kbookmarkmodel/model.h"
+#include "kbookmarkmodel/commandhistory.h"
 
 GlobalBookmarkManager *GlobalBookmarkManager::s_mgr = 0;
 

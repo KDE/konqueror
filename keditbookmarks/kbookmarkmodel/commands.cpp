@@ -21,9 +21,9 @@
 */
 
 #include "commands.h"
-#include "bookmarkmodel.h"
-
-#include "kinsertionsort.h"
+#include "commands_p.h"
+#include "model.h"
+#include "kinsertionsort_p.h"
 
 #include <kdebug.h>
 #include <klocale.h>

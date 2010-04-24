@@ -23,9 +23,9 @@
 #include <qtest_kde.h>
 #include <kbookmarkmanager.h>
 
-#include "commandhistory.h"
-#include "bookmarkmodel.h"
-#include "commands.h"
+#include "kbookmarkmodel/commandhistory.h"
+#include "kbookmarkmodel/model.h"
+#include "kbookmarkmodel/commands.h" // TODO provide public API in the model instead?
 
 // Return a list of all bookmark addresses or urls in a KBookmarkManager.
 class BookmarkLister : public KBookmarkGroupTraverser

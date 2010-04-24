@@ -20,14 +20,14 @@
 #ifndef __importers_h
 #define __importers_h
 
-#include "commands.h"
+#include "kbookmarkmodel/commands.h"
 #include <klocale.h>
 
 #include <QtCore/QObject>
 
 class KBookmark;
 
-// part pure
+// TODO: remove QObject base class? doesn't seem to be used.
 class ImportCommand : public QObject, public QUndoCommand, public IKEBCommand
 {
    Q_OBJECT
