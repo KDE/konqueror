@@ -7,10 +7,10 @@ endif (GLIB2_FOUND)
 ########### next target ###############
 
 set(nspluginviewer_SRCS nsplugin.cpp viewer.cpp xtevents.cpp glibevents.cpp
-    pluginhost_xembed.cpp pluginhost_xt.cpp pluginhost.cpp)
+    pluginhost_xembed.cpp pluginhost_xt.cpp pluginhost.cpp scripting.cpp ${CMAKE_CURRENT_SOURCE_DIR}/../comm/dbustypes.cpp)
 
 qt4_add_dbus_adaptor( nspluginviewer_SRCS org.kde.nsplugins.class.xml nsplugin.h NSPluginClass )
-qt4_add_dbus_adaptor( nspluginviewer_SRCS org.kde.nsplugins.instance.xml nsplugin.h NSPluginInstance )
+qt4_add_dbus_adaptor( nspluginviewer_SRCS org.kde.nsplugins.instance.xml nsplugin.h  NSPluginInstance )
 qt4_add_dbus_adaptor( nspluginviewer_SRCS org.kde.nsplugins.viewer.xml nsplugin.h NSPluginViewer )
 
 set(nsplugins_callback_xml  ${CMAKE_CURRENT_SOURCE_DIR}/../org.kde.nsplugins.CallBack.xml)

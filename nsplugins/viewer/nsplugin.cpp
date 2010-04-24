@@ -4,7 +4,7 @@
   Copyright (c) 2000 Matthias Hoelzer-Kluepfel <hoelzer@kde.org>
                      Stefan Schimanski <1Stein@gmx.de>
                 2003-2005 George Staikos <staikos@kde.org>
-                2007, 2008 Maksim Orlovich     <maksim@kde.org>
+                2007, 2008, 2010 Maksim Orlovich <maksim@kde.org>
                 2006, 2007, 2008 Apple Inc.
                 2008 Collabora, Ltd.
                 2008 Sebastian Sauer <mail@dipe.org>
@@ -31,6 +31,7 @@
 #include "classadaptor.h"
 #include "instanceadaptor.h"
 #include "vieweradaptor.h"
+#include "scripting.h"
 
 #include "nsplugins_callback_interface.h"
 
@@ -122,6 +123,8 @@ static NSPluginInstance* pluginViewForInstance(NPP instance)
 // server side functions -----------------------------------------------------
 
 // allocate memory
+
+namespace kdeNsPluginViewer  {
 void *g_NPN_MemAlloc(uint32 size)
 {
    void *mem = ::malloc(size);
@@ -138,6 +141,8 @@ void g_NPN_MemFree(void *ptr)
    //kDebug(1431) << "g_NPN_MemFree() at " << ptr;
    if (ptr)
      ::free(ptr);
+}
+
 }
 
 uint32 g_NPN_MemFlush(uint32 size)
@@ -177,9 +182,10 @@ void g_NPN_InvalidateRegion(NPP /*instance*/, NPRegion /*invalidRegion*/)
 
 
 // get value
-NPError g_NPN_GetValue(NPP /*instance*/, NPNVariable variable, void *value)
+NPError g_NPN_GetValue(NPP instance, NPNVariable variable, void *value)
 {
    kDebug(1431) << "g_NPN_GetValue(), variable=" << static_cast<int>(variable);
+   NSPluginInstance* inst = pluginViewForInstance(instance);
 
    switch (variable)
    {
@@ -214,6 +220,25 @@ NPError g_NPN_GetValue(NPP /*instance*/, NPNVariable variable, void *value)
       case NPPVpluginKeepLibraryInMemory:
          *(bool*)value = true;
          return NPERR_NO_ERROR;
+         
+      case NPNVWindowNPObject:
+         if (inst && inst->scripting()) {
+            *(NPObject**)value = inst->scripting()->acquireWindow();
+            return NPERR_NO_ERROR;
+         } else {
+            kDebug(1431) << "script object queried, but no scripting active";
+            return NPERR_INVALID_PARAM;
+         }
+#if 0
+      case NPNVPluginElementNPObject:
+         if (inst && inst->scripting()) {
+            *(NPObject**)value = inst->scripting()->acquirePluginElement();
+            return NPERR_NO_ERROR;
+         } else {
+            kDebug(1431) << "script object queried, but no scripting active";
+            return NPERR_INVALID_PARAM;
+         }
+#endif
       default:
          kDebug(1431) << "g_NPN_GetValue(), [unimplemented] variable=" << variable;
          return NPERR_INVALID_PARAM;
@@ -522,9 +547,9 @@ static QByteArray uaEmpty("Gecko");
 const char *g_NPN_UserAgent(NPP instance)
 {
     if (!instance)
-	return uaEmpty.data();
+        return uaEmpty.data();
 
-    if (uaStore.isEmpty()) {
+   if (uaStore.isEmpty()) {
         KProtocolManager kpm;
         QString agent = kpm.userAgentForHost("nspluginviewer");
         uaStore = agent.toLatin1();
@@ -533,7 +558,6 @@ const char *g_NPN_UserAgent(NPP instance)
     kDebug(1431) << "g_NPN_UserAgent() = " << uaStore;
     return uaStore.data();
 }
-
 
 // inquire version information
 void g_NPN_Version(int *plugin_major, int *plugin_minor, int *browser_major, int *browser_minor)
@@ -624,33 +648,94 @@ static void g_NPN_PopPopupsEnabledState(NPP /*instance*/)
 
 static int s_instanceCounter = 0;
 
-NSPluginInstance::NSPluginInstance(NPP privateData, NPPluginFuncs *pluginFuncs,
+NSPluginInstance::NSPluginInstance(NPPluginFuncs *pluginFuncs,
                                    KLibrary *handle,
-                                   const QString &src, const QString &/*mime*/,
+                                   const QString &url, const QString &mimeType,
+                                   const QStringList &argn, const QStringList &argv,
                                    const QString &appId, const QString &callbackId,
                                    bool embed,
                                    QObject *parent )
    : QObject( parent )
 {
+    // Setup d-bus infrastructure early, will need it for script stuff
+    kdeNsPluginViewer::initDBusTypes();
+
     // The object name is the dbus object path
    (void) new InstanceAdaptor( this );
    setObjectName( QString( "/Instance_" ) + QString::number( ++s_instanceCounter ) );
    QDBusConnection::sessionBus().registerObject( objectName(), this );
+   _callback = new org::kde::nsplugins::CallBack( appId, callbackId, QDBusConnection::sessionBus() );
 
-    Q_UNUSED(embed);
+
    _embedded = false;
-   _npp = privateData;
-   _npp->ndata = this;
    _destroyed = false;
    _handle = handle;
-   _callback = new org::kde::nsplugins::CallBack( appId, callbackId, QDBusConnection::sessionBus() );
    _numJSRequests = 0;
+   _scripting = 0;
 
-   KUrl base(src);
-   base.setFileName( QString() );
-   _baseURL = base.url();
+   // set the current plugin instance
+   NSPluginInstance::setLastPluginInstance(this);
 
    memcpy(&_pluginFuncs, pluginFuncs, sizeof(_pluginFuncs));
+
+   // See want the scripting stuff very early, since newp can use it.
+   _scripting = new ScriptExportEngine(this);
+   
+   // copy parameters over, and extract out base url if specified
+   int argc = argn.count();
+   char **_argn = new char*[argc];
+   char **_argv = new char*[argc];
+   
+   QString baseURL = url;
+   for (int i=0; i<argc; i++)
+   {
+      QByteArray encN = argn[i].toUtf8();
+      QByteArray encV = argv[i].toUtf8();
+
+      _argn[i] = strdup(encN.constData());
+      _argv[i] = strdup(encV.constData());
+
+      if (argn[i] == QLatin1String("__KHTML__PLUGINBASEURL"))
+         baseURL = argv[i];
+      if (argn[i] == QLatin1String("__KHTML__PLUGINPAGEURL"))
+         _pageURL = argv[i];
+      kDebug(1431) << "argn=" << _argn[i] << " argv=" << _argv[i];
+   }
+
+   // create plugin instance
+   char* mime = strdup(mimeType.toAscii().constData());
+   _npp = (NPP)malloc(sizeof(NPP_t));   // I think we should be using
+                                        // malloc here, just to be safe,
+                                        // since the nsplugin plays with
+                                        // this thing
+   memset(_npp, 0, sizeof(NPP_t));
+   _npp->ndata = this;
+
+   // create actual plugin's instance
+   NPError error = _pluginFuncs.newp(mime, _npp, embed ? NP_EMBED : NP_FULL,
+                                     argc, _argn, _argv, 0);
+
+   kDebug(1431) << "NPP_New = " << (int)error;
+
+   // free arrays with arguments
+   delete [] _argn;
+   delete [] _argv;
+
+   // check for error
+   if ( error!=NPERR_NO_ERROR )
+   {
+      ::free(_npp);
+      ::free(mime);
+      kDebug(1431) << "<- newp failed";
+      _initializedOK = false;
+      return;
+   }
+
+   _initializedOK = true;
+
+   KUrl base(baseURL);
+   base.setFileName( QString() );
+   _baseURL = base.url();
 
    _timer = new QTimer( this );
    connect( _timer, SIGNAL(timeout()), SLOT(timer()) );
@@ -658,6 +743,9 @@ NSPluginInstance::NSPluginInstance(NPP privateData, NPPluginFuncs *pluginFuncs,
    kDebug(1431) << "NSPluginInstance::NSPluginInstance";
    kDebug(1431) << "pdata = " << _npp->pdata;
    kDebug(1431) << "ndata = " << _npp->ndata;
+
+   // now let's see if the plugin offers any scriptable stuff, too.
+   _scripting->connectToPlugin();
 
    // Create the appropriate host for the plugin type.
    _pluginHost = 0;
@@ -683,6 +771,51 @@ NSPluginInstance::~NSPluginInstance()
    kDebug(1431) << "<- ~NSPluginInstance";
 }
 
+// Note: here we again narrow the types to the same ulong as LiveConnectExtension uses,
+// so we don't end up with extra precision floating around
+NSLiveConnectResult NSPluginInstance::lcGet(qulonglong objid, const QString& field)
+{
+    NSLiveConnectResult result;
+    if (_scripting) {
+        KParts::LiveConnectExtension::Type type;
+        unsigned long outId;
+        result.success = _scripting->get(static_cast<unsigned long>(objid), field,
+                                         type, outId, result.value);
+        result.type  = type;
+        result.objid = outId;
+    }
+    return result;
+}
+
+bool NSPluginInstance::lcPut(qulonglong objid, const QString& field, const QString& value)
+{
+    if (_scripting)
+        return _scripting->put(static_cast<unsigned long>(objid), field, value);
+
+    return false;
+}
+
+NSLiveConnectResult NSPluginInstance::lcCall(qulonglong objid, const QString& func,
+                                             const QStringList& args)
+{
+    NSLiveConnectResult result;
+    if (_scripting) {
+        KParts::LiveConnectExtension::Type type;
+        unsigned long outId;
+        result.success = _scripting->call(static_cast<unsigned long>(objid), func, args,
+                                          type, outId, result.value);
+        result.type = type;
+        result.objid = outId;
+    }
+    return result;
+}
+
+void NSPluginInstance::lcUnregister(qulonglong objid)
+{
+    if (_scripting)
+        _scripting->unregister(static_cast<unsigned long>(objid));
+}
+
 void NSPluginInstance::destroy()
 {
     if ( !_destroyed ) {
@@ -690,10 +823,10 @@ void NSPluginInstance::destroy()
         kDebug(1431) << "delete streams";
         qDeleteAll( _waitingRequests );
 
-	while ( !_streams.isEmpty() ) {
-	    NSPluginStreamBase *s = _streams.takeFirst();
-            s->stop();
-	    delete s;
+        while ( !_streams.isEmpty() ) {
+            NSPluginStreamBase *s = _streams.takeFirst();
+                s->stop();
+            delete s;
         }
 
         kDebug(1431) << "delete tempfiles";
@@ -702,6 +835,15 @@ void NSPluginInstance::destroy()
         kDebug(1431) << "delete callbacks";
         delete _callback;
         _callback = 0;
+
+        kDebug(1431) << "delete scripting";
+        delete _scripting;
+        _scripting = 0;
+
+        if (!_initializedOK) {
+            _destroyed = true;
+            return;
+        }
 
         kDebug(1431) << "destroy plugin";
         NPSavedData *saved = 0;
@@ -1377,6 +1519,8 @@ int NSPluginClass::initialize()
    _nsFuncs.invalidaterect = g_NPN_InvalidateRect;
    _nsFuncs.invalidateregion = g_NPN_InvalidateRegion;
    _nsFuncs.forceredraw = g_NPN_ForceRedraw;
+
+   ScriptExportEngine::fillInScriptingFunctions(&_nsFuncs);
    
    _nsFuncs.pushpopupsenabledstate = g_NPN_PushPopupsEnabledState;
    _nsFuncs.poppopupsenabledstate =  g_NPN_PopPopupsEnabledState;
@@ -1406,76 +1550,26 @@ QDBusObjectPath NSPluginClass::newInstance( const QString &url, const QString &m
                                     const QStringList &argn, const QStringList &argv,
                                     const QString &appId, const QString &callbackId, bool reload )
 {
-   kDebug(1431) << "-> NSPluginClass::NewInstance";
+    kDebug(1431) << url << mimeType;
 
-   if ( !_constructed )
-       return QDBusObjectPath("/null");
+    if ( !_constructed )
+        return QDBusObjectPath("/null");
 
-   // copy parameters over
-   unsigned int argc = argn.count();
-   char **_argn = new char*[argc];
-   char **_argv = new char*[argc];
-   QString src = url;
-   QString baseURL = url;
+    // Create plugin instance object
+    NSPluginInstance *inst = new NSPluginInstance( &_pluginFuncs, _handle,
+                                                    url, mimeType, argn, argv,
+                                                    appId, callbackId, embed, this );
+    if ( !inst->wasInitializedOK() ) {
+        delete inst;
+        return QDBusObjectPath("/null");
+    }
 
-   for (unsigned int i=0; i<argc; i++)
-   {
-      QByteArray encN = argn[i].toUtf8();
-      QByteArray encV = argv[i].toUtf8();
+    // create source stream
+    if ( !url.isEmpty() )
+        inst->requestURL( url, mimeType, QString(), 0, false, reload );
 
-      const char *n = encN;
-      const char *v = encV;
-
-      _argn[i] = strdup(n);
-      _argv[i] = strdup(v);
-
-      if (!strcasecmp(_argn[i], "__KHTML__PLUGINBASEURL")) baseURL = _argv[i];
-      kDebug(1431) << "argn=" << _argn[i] << " argv=" << _argv[i];
-   }
-
-   // create plugin instance
-   char mime[256];
-   strncpy(mime, mimeType.toAscii(), 255);
-   mime[255] = 0;
-   NPP npp = (NPP)malloc(sizeof(NPP_t));   // I think we should be using
-                                           // malloc here, just to be safe,
-                                           // since the nsplugin plays with
-                                           // this thing
-   memset(npp, 0, sizeof(NPP_t));
-   npp->ndata = NULL;
-
-   // create plugin instance
-   NPError error = _pluginFuncs.newp(mime, npp, embed ? NP_EMBED : NP_FULL,
-                                     argc, _argn, _argv, 0);
-
-   kDebug(1431) << "NPP_New = " << (int)error;
-
-   // free arrays with arguments
-   delete [] _argn;
-   delete [] _argv;
-
-   // check for error
-   if ( error!=NPERR_NO_ERROR)
-   {
-      ::free(npp);
-      kDebug(1431) << "<- PluginClass::NewInstance = 0";
-      return QDBusObjectPath("/null");
-   }
-
-   // Create plugin instance object
-   NSPluginInstance *inst = new NSPluginInstance( npp, &_pluginFuncs, _handle,
-                                                  baseURL, mimeType, appId,
-                                                  callbackId, embed, this );
-
-   // set the current plugin instance
-   NSPluginInstance::setLastPluginInstance(inst);
-
-   // create source stream
-   if ( !src.isEmpty() )
-      inst->requestURL( src, mimeType, QString(), 0, false, reload );
-
-   _instances.append( inst );
-   return QDBusObjectPath(inst->objectName());
+    _instances.append( inst );
+    return QDBusObjectPath(inst->objectName());
 }
 
 
@@ -1924,3 +2018,4 @@ void NSPluginStream::result(KJob *job)
 
 #include "nsplugin.moc"
 // vim: ts=4 sw=4 et
+// kate: indent-width 4; replace-tabs on; tab-width 4; space-indent on;

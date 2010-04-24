@@ -35,6 +35,7 @@
 #include <KUrl>
 #include <kdemacros.h>
 #include <kprocess.h>
+#include "comm/dbustypes.h"
 
 #define EMBEDCLASS QX11EmbedContainer
 
@@ -54,7 +55,7 @@ public:
 
     void javascriptResult(int id, const QString &result);
 
-    void pluginResized(int w, int h);
+    OrgKdeNspluginsInstanceInterface* peer() { return _instanceInterface; }
 
 private Q_SLOTS:
     void loadPlugin();

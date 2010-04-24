@@ -35,6 +35,8 @@
 #include <kparts/browserinterface.h>
 #include <kparts/browserextension.h>
 
+#include "nsplugins_instance_interface.h"
+
 #include <QLabel>
 
 
@@ -56,34 +58,71 @@ PluginLiveConnectExtension::PluginLiveConnectExtension(PluginPart* part)
 
 PluginLiveConnectExtension::~PluginLiveConnectExtension() {
 }
-
-bool PluginLiveConnectExtension::get(const unsigned long, const QString &field, Type &type, unsigned long &retobj, QString &value) {
-Q_UNUSED(type);
-Q_UNUSED(retobj);
-Q_UNUSED(value);
-    kDebug(1432) << "PLUGIN:LiveConnect::get " << field;
-    return false;
-}
-
-bool PluginLiveConnectExtension::call(const unsigned long, const QString &func, const QStringList &args, Type &type, unsigned long &retobjid, QString &value) {
-Q_UNUSED(type);
-Q_UNUSED(retobjid);
-Q_UNUSED(value);
-    kDebug(1432) << "PLUGIN:LiveConnect::call " << func << " args: " << args;
-    return false;
-}
-
-bool PluginLiveConnectExtension::put( const unsigned long, const QString &field, const QString &value) {
-    kDebug(1432) << "PLUGIN:LiveConnect::put " << field << " " << value;
-    if (_retval && field == "__nsplugin") {
-        *_retval = value;
-        return true;
-    } else if (field.toLower() == "src") {
-        _part->changeSrc(value);
+static bool demarshalReturn(const NSLiveConnectResult& result, KParts::LiveConnectExtension::Type &type,
+                            unsigned long& retobj, QString& value)
+{
+    if (result.success) {
+        type   = (KParts::LiveConnectExtension::Type)result.type;
+        retobj = result.objid;
+        value  = result.value;
         return true;
     }
     return false;
 }
+
+
+bool PluginLiveConnectExtension::get(const unsigned long obj, const QString& f,
+                                     Type& typeOut, unsigned long& objOut, QString& valOut) {
+    kDebug(1432) << "PLUGIN:LiveConnect::get " << obj << f;
+
+    NSPluginInstance* instance = _part->instance();
+    if (instance) {
+        NSLiveConnectResult result;
+        result = instance->peer()->lcGet(obj, f);
+        return demarshalReturn(result, typeOut, objOut, valOut);
+    }
+    return false;
+}
+
+bool PluginLiveConnectExtension::call(const unsigned long obj, const QString& f, const QStringList &args,
+                                     Type& typeOut, unsigned long& objOut, QString& valOut) {
+    kDebug(1432) << "PLUGIN:LiveConnect::call " << obj << f << args;
+
+    NSPluginInstance* instance = _part->instance();
+    if (instance) {
+        NSLiveConnectResult result;
+        result = instance->peer()->lcCall(obj, f, args);
+        return demarshalReturn(result, typeOut, objOut, valOut);
+    }
+
+    return false;
+}
+
+bool PluginLiveConnectExtension::put( const unsigned long objId, const QString &field, const QString &value) {
+    kDebug(1432) << "PLUGIN:LiveConnect::put " << objId << field << value;
+    if (objId == 0) {
+        if (_retval && field == "__nsplugin") {
+            *_retval = value;
+            return true;
+        } else if (field.toLower() == "src") {
+            _part->changeSrc(value);
+            return true;
+        }
+    }
+
+    NSPluginInstance *instance = _part->instance();
+    if (instance)
+        return instance->peer()->lcPut(objId, field, value);
+    
+    return false;
+}
+
+void PluginLiveConnectExtension::unregister( const unsigned long objid ) {
+    NSPluginInstance *instance = _part->instance();
+    if (instance)
+        instance->peer()->lcUnregister(objid);
+}
+
 
 QString PluginLiveConnectExtension::evalJavaScript( const QString & script )
 {
@@ -328,19 +367,25 @@ void PluginPart::requestURL(const QString& url, const QString& target)
     emit _extension->openUrlRequest(new_url, arguments, browserArguments);
 }
 
+NSPluginInstance* PluginPart::instance()
+{
+    if (!_widget) return 0;
+    return dynamic_cast<NSPluginInstance*>(_widget.operator->());
+}
+
 void PluginPart::evalJavaScript(int id, const QString & script)
 {
     kDebug(1432) <<"evalJavascript: before widget check";
     if (_widget) {
         bool destructed = false;
         _destructed = &destructed;
-	kDebug(1432) <<"evalJavascript: there is a widget:";
+		kDebug(1432) <<"evalJavascript: there is a widget:";
         QString rc = _liveconnect->evalJavaScript(script);
         if (destructed)
             return;
         _destructed = 0L;
         kDebug(1432) << "Liveconnect: script [" << script << "] evaluated to [" << rc << "]";
-        NSPluginInstance *ni = dynamic_cast<NSPluginInstance*>(_widget.operator->());
+        NSPluginInstance *ni = instance();
         if (ni)
             ni->javascriptResult(id, rc);
     }
@@ -355,9 +400,6 @@ void PluginPart::statusMessage(const QString &msg)
 
 void PluginPart::pluginResized(int w, int h)
 {
-    if (_nspWidget)
-        _nspWidget->pluginResized(w, h);
-
     if (_widget) {
         _widget->resize(w, h);
     }
@@ -384,3 +426,4 @@ void PluginCanvasWidget::resizeEvent(QResizeEvent *ev)
 
 
 #include "plugin_part.moc"
+// kate: indent-width 4; replace-tabs on; tab-width 4; space-indent on;

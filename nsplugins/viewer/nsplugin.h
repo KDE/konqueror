@@ -46,6 +46,8 @@
 #define MOZ_X11
 #include "sdk/npupp.h"
 
+#include "comm/dbustypes.h"
+
 typedef char* NP_GetMIMEDescriptionUPP(void);
 typedef NPError NP_InitializeUPP(NPNetscapeFuncs*, NPPluginFuncs*);
 typedef NPError NP_ShutdownUPP(void);
@@ -59,6 +61,14 @@ class OrgKdeNspluginsCallBackInterface;
 class KLibrary;
 class QTimer;
 
+// We need the following inside the scripting code
+namespace kdeNsPluginViewer {
+  void* g_NPN_MemAlloc(uint32 size);
+  void  g_NPN_MemFree(void* ptr);
+  class ScriptExportEngine;
+}
+
+using namespace kdeNsPluginViewer;
 
 class NSPluginStreamBase : public QObject
 {
@@ -163,11 +173,14 @@ class NSPluginInstance : public QObject
 public:
 
   // constructor, destructor
-  NSPluginInstance( NPP privateData, NPPluginFuncs *pluginFuncs, KLibrary *handle,
-		    const QString &src, const QString &mime,
+  NSPluginInstance( NPPluginFuncs *pluginFuncs, KLibrary *handle,
+                    const QString &src, const QString &mime,
+                    const QStringList &argn, const QStringList &argv,
                     const QString &appId, const QString &callbackId, bool embed,
 		    QObject *parent );
   ~NSPluginInstance();
+
+  bool wasInitializedOK() { return _initializedOK; }
 
   // DBus-exported functions
   void shutdown();
@@ -176,6 +189,15 @@ public:
   void javascriptResult(int id, const QString &result);
   void gotFocusIn();
   void gotFocusOut();
+
+  // d-bus export scripting interface
+  NSLiveConnectResult lcCall(qulonglong obj, const QString& f, const QStringList& args);
+  NSLiveConnectResult lcGet (qulonglong obj, const QString& f);
+  bool lcPut(qulonglong obj, const QString& f, const QString& v);
+  void lcUnregister(qulonglong obj);
+
+  ScriptExportEngine* scripting() { return _scripting; }
+  
 
   // last via NSPluginClass::newInstance() produced NSPluginInstance instance.
   static NSPluginInstance* lastPluginInstance();
@@ -213,6 +235,8 @@ public:
   
   bool hasPendingJSRequests() const;
 
+  QString pageURL() const { return _pageURL; }
+
 public Q_SLOTS:
   void streamFinished( NSPluginStreamBase *strm );
 
@@ -220,6 +244,7 @@ public Q_SLOTS:
 
 private:
   friend class NSPluginStreamBase;
+  friend class kdeNsPluginViewer::ScriptExportEngine;
 
   void destroy();
 
@@ -239,6 +264,7 @@ private:
   int _width, _height;          // last size we used;
 
   QString _baseURL;
+  QString _pageURL;
 
   struct Request
   {
@@ -275,6 +301,10 @@ private:
   QQueue<Request *> _waitingRequests;
   QMap<int, Request*> _jsrequests;
   int _numJSRequests; // entered in earlier than _jsrequests.
+
+  ScriptExportEngine* _scripting; //0 if plugin doesn't support it.
+
+  bool _initializedOK; // ok/fail from ctor
   
   static NSPluginInstance* s_lastPluginInstance;
 };

@@ -57,6 +57,7 @@
 #include <X11/Xlib.h>
 #include <unistd.h>
 
+
 NSPluginLoader *NSPluginLoader::s_instance = 0;
 int NSPluginLoader::s_refCount = 0;
 
@@ -131,13 +132,6 @@ void NSPluginInstance::windowChanged(WId w)
     }
 }
 
-void NSPluginInstance::pluginResized(int w, int h)
-{
-    kDebug() << w << h;
-    haveSize = true;
-    embedIfNeeded(w, h);
-}
-
 void NSPluginInstance::embedIfNeeded(int w, int h)
 {
     if (isVisible()) {
@@ -152,6 +146,7 @@ void NSPluginInstance::resizeEvent(QResizeEvent *event)
 {
     kDebug() << width() << height() << isVisible() << haveSize << inited;
     EMBEDCLASS::resizeEvent(event);
+    haveSize = true;
 
     embedIfNeeded(width(), height());
 }
@@ -384,6 +379,9 @@ bool NSPluginLoader::loadViewer()
 
    // get viewer dcop interface
    _viewer = new org::kde::nsplugins::Viewer( _viewerDBusId, "/Viewer", QDBusConnection::sessionBus() );
+
+   // make sure we have the types setup
+   kdeNsPluginViewer::initDBusTypes();
 
    return _viewer!=0;
 }
