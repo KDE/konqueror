@@ -29,7 +29,7 @@ class KBookmarkModel;
 
 class TestLinkItrHolder : public BookmarkIteratorHolder {
 public:
-   TestLinkItrHolder(KBookmarkModel* model);
+   TestLinkItrHolder(QObject* parent, KBookmarkModel* model);
 };
 
 class TestLinkItr : public BookmarkIterator

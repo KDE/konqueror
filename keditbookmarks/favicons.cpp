@@ -27,10 +27,9 @@
 #include <kdebug.h>
 #include <klocale.h>
 
-FavIconsItrHolder::FavIconsItrHolder(KBookmarkModel* model)
-    : BookmarkIteratorHolder(model)
+FavIconsItrHolder::FavIconsItrHolder(QObject* parent, KBookmarkModel* model)
+    : BookmarkIteratorHolder(parent, model)
 {
-    // do stuff
 }
 
 /* -------------------------- */

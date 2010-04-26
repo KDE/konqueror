@@ -255,8 +255,8 @@ void KEBApp::createActions() {
 
 ActionsImpl::ActionsImpl(QObject* parent, KBookmarkModel* model)
     : QObject(parent), m_model(model),
-      m_testLinkHolder(new TestLinkItrHolder(model)),
-      m_favIconHolder(new FavIconsItrHolder(model))
+      m_testLinkHolder(new TestLinkItrHolder(this, model)),
+      m_favIconHolder(new FavIconsItrHolder(this, model))
 {
     Q_ASSERT(m_model);
 }

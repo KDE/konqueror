@@ -26,7 +26,7 @@
 #include <QtCore/QTimer>
 
 BookmarkIterator::BookmarkIterator(BookmarkIteratorHolder* holder, const QList<KBookmark>& bks)
-    : m_bookmarkList(bks), m_holder(holder)
+    : QObject(holder), m_bookmarkList(bks), m_holder(holder)
 {
     delayedEmitNextOne();
 }
@@ -72,8 +72,8 @@ KBookmarkModel* BookmarkIterator::model()
 
 /* --------------------------- */
 
-BookmarkIteratorHolder::BookmarkIteratorHolder(KBookmarkModel* model)
-    : m_model(model)
+BookmarkIteratorHolder::BookmarkIteratorHolder(QObject* parent, KBookmarkModel* model)
+    : QObject(parent), m_model(model)
 {
     Q_ASSERT(m_model);
 }

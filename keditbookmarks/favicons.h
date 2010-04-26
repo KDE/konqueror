@@ -26,7 +26,7 @@
 
 class FavIconsItrHolder : public BookmarkIteratorHolder {
 public:
-   FavIconsItrHolder(KBookmarkModel* model);
+   FavIconsItrHolder(QObject* parent, KBookmarkModel* model);
 };
 
 class KBookmarkModel;

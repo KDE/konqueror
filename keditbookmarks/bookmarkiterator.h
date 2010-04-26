@@ -76,7 +76,7 @@ Q_SIGNALS:
     void setCancelEnabled(bool canCancel);
 
 protected:
-    BookmarkIteratorHolder(KBookmarkModel* model);
+    BookmarkIteratorHolder(QObject* parent, KBookmarkModel* model);
     virtual ~BookmarkIteratorHolder() {}
     void doIteratorListChanged();
     int count() const { return m_iterators.count(); }

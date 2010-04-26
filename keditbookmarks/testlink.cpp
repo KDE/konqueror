@@ -30,8 +30,8 @@
 #include "bookmarkiterator.h"
 #include "kbookmarkmodel/model.h"
 
-TestLinkItrHolder::TestLinkItrHolder(KBookmarkModel* model)
-    : BookmarkIteratorHolder(model)
+TestLinkItrHolder::TestLinkItrHolder(QObject* parent, KBookmarkModel* model)
+    : BookmarkIteratorHolder(parent, model)
 {
 }
 
