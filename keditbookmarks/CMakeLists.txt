@@ -22,7 +22,7 @@ set(keditbookmarks_KDEINIT_SRCS
    bookmarkiterator.cpp
    testlink.cpp
    favicons.cpp
-   updater.cpp
+   faviconupdater.cpp
    exporters.cpp
    bookmarkinfowidget.cpp
    kebsearchline.cpp

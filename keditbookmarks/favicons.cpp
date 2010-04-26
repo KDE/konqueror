@@ -20,7 +20,7 @@
 #include "favicons.h"
 
 #include "bookmarkiterator.h"
-#include "updater.h"
+#include "faviconupdater.h"
 #include "kbookmarkmodel/commands.h"
 #include "kbookmarkmodel/model.h"
 

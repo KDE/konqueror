@@ -15,11 +15,11 @@
    along with this program.  If not, see <http://www.gnu.org/licenses/>
 */
 
-#ifndef __updater_h
-#define __updater_h
+#ifndef FAVICONUPDATER_H
+#define FAVICONUPDATER_H
 
 #include <kbookmark.h>
-#include "favicon_interface.h"
+#include "favicon_interface.h" // org::kde::FavIcon
 
 #include <kparts/part.h>
 #include <kparts/browserinterface.h>

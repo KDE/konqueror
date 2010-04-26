@@ -19,7 +19,7 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "updater.h"
+#include "faviconupdater.h"
 
 #include "bookmarkiterator.h"
 #include "toplevel.h"
@@ -169,7 +169,7 @@ FavIconWebGrabber::FavIconWebGrabber(KParts::ReadOnlyPart *part, const KUrl &url
 //          this, SLOT( slotCompleted()));
     connect(part, SIGNAL(canceled(QString)),
             this, SLOT(slotCanceled(QString)));
-    connect(part, SIGNAL(completed()),
+    connect(part, SIGNAL(completed(bool)),
             this, SLOT(slotCompleted()));
 
     // the use of KIO rather than directly using KHTML is to allow silently abort on error
@@ -217,4 +217,4 @@ void FavIconWebGrabber::slotCanceled(const QString& errorString)
     emit done(false, errorString);
 }
 
-#include "updater.moc"
+#include "faviconupdater.moc"
