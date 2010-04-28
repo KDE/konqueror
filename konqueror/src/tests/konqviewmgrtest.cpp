@@ -625,9 +625,27 @@ void ViewMgrTest::testCloseOtherTabs()
     tabWidget->setCurrentIndex(3);
     QCOMPARE(mainWindow.linkableViewsCount(), 1);
 
-    mainWindow.setWorkingTab(viewTab2->frame()); // This actually sets a frame which is not a tab, but KonqViewManager::removeOtherTabs should be able to deal with these cases
+    mainWindow.setWorkingTab(2); // This actually sets a frame which is not a tab, but KonqViewManager::removeOtherTabs should be able to deal with these cases
     mainWindow.slotRemoveOtherTabsPopupDelayed();
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[C(FF)].") ); // mainWindow, tab widget, first tab = splitter with two frames
+}
+
+void ViewMgrTest::testCloseTabsFast() // #210551/#150162
+{
+    KonqMainWindow mainWindow;
+    mainWindow.openUrl(0, KUrl("data:text/html, <p>Hello World</p>"), "text/html");
+    KonqViewManager* viewManager = mainWindow.viewManager();
+    viewManager->addTab("text/html");
+    viewManager->addTab("text/html");
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[FFF].") ); // mainWindow, tab widget, 3 simple tabs
+    KTabWidget* tabWidget = mainWindow.findChild<KTabWidget*>();
+    tabWidget->setCurrentIndex(2);
+
+    mainWindow.setWorkingTab(1);
+    mainWindow.slotRemoveTabPopup();
+    mainWindow.slotRemoveTabPopup();
+    QTest::qWait(100); // process the delayed invocations
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[F].") ); // mainWindow, tab widget, 1 tab left
 }
 
 void ViewMgrTest::testDuplicateWindowWithSidebar()

@@ -295,6 +295,8 @@ void KonqViewManager::duplicateTab( KonqFrameBase* currentFrame, bool openAfterC
 
 KonqMainWindow* KonqViewManager::breakOffTab( KonqFrameBase* currentFrame, const QSize& windowSize )
 {
+    Q_ASSERT(currentFrame);
+
 #ifdef DEBUG_VIEWMGR
   kDebug() << currentFrame;
   m_pMainWindow->dumpViewList();
@@ -385,6 +387,7 @@ KonqMainWindow *KonqViewManager::openSavedWindow(const KConfigGroup& configGroup
 
 void KonqViewManager::removeTab( KonqFrameBase* currentFrame, bool emitAboutToRemoveSignal )
 {
+    Q_ASSERT(currentFrame);
 #ifdef DEBUG_VIEWMGR
   kDebug() << currentFrame;
   m_pMainWindow->dumpViewList();
@@ -435,19 +438,14 @@ void KonqViewManager::reloadAllTabs( )
   }
 }
 
-void KonqViewManager::removeOtherTabs( KonqFrameBase* currentFrame )
+void KonqViewManager::removeOtherTabs(int tabIndex)
 {
-  Q_ASSERT(currentFrame);
-
-  // currentFrame might be a frame contained inside a splitted frame so what we'll
-  // do here is just compare if the frames are inside the same tab.
-  currentFrame = m_tabContainer->tabContaining(currentFrame);
-  foreach ( KonqFrameBase* frame, m_tabContainer->childFrameList() )
-  {
-    if ( frame && m_tabContainer->tabContaining(frame) != currentFrame )
-      removeTab(frame);
-  }
-
+    QList<KonqFrameBase*> tabs = m_tabContainer->childFrameList();
+    for (int i = 0; i < tabs.count(); ++i) {
+        if (i != tabIndex) {
+            removeTab(tabs.at(i));
+        }
+    }
 }
 
 void KonqViewManager::moveTabBackward()

@@ -129,9 +129,9 @@ public:
   /**
    * Removes all, but the specified tab.
    * Also takes care of setting the specified tab as active if the active view was not in this tab
-   * @param tab must exist
+   * @param tabIndex the index of the tab
    */
-  void removeOtherTabs( KonqFrameBase* tab );
+  void removeOtherTabs(int tabIndex);
 
   /**
    * Locates and activates the next tab

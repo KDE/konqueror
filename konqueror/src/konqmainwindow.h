@@ -303,8 +303,10 @@ public:
 
   // KonqFrameContainerBase implementation END
 
-  KonqFrameBase* workingTab()const { return m_pWorkingTab; }
-  void setWorkingTab( KonqFrameBase* tab ) { m_pWorkingTab = tab; }
+    /**
+     * When using RMB on a tab, remember the tab we are showing a popup for.
+     */
+    void setWorkingTab(int index);
 
   static bool isMimeTypeAssociatedWithSelf( const QString &mimeType );
   static bool isMimeTypeAssociatedWithSelf( const QString &mimeType, const KService::Ptr &offer );
@@ -417,6 +419,7 @@ public Q_SLOTS:
   void slotSplitViewVertical();
   void slotRemoveOtherTabs();
   void slotRemoveOtherTabsPopupDelayed();
+  void slotRemoveTabPopup();
 
 private Q_SLOTS:
   void slotViewCompleted( KonqView * view );
@@ -443,7 +446,6 @@ private Q_SLOTS:
   void slotReloadPopup();
   void slotReloadAllTabs();
   void slotRemoveTab();
-  void slotRemoveTabPopup();
   void slotRemoveTabPopupDelayed();
 
   void slotActivateNextTab();
@@ -709,7 +711,8 @@ private: // members
   KonqViewManager *m_pViewManager;
   KonqFrameBase* m_pChildFrame;
 
-  KonqFrameBase* m_pWorkingTab;
+    // RMB on a tab: we need to store the tab number until the slots are called
+    int m_workingTab;
 
     // Store a number of things when opening a popup, they are needed
     // in the slots connected to the popup's actions.
