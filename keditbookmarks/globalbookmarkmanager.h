@@ -57,9 +57,6 @@ public:
     static QString makeTimeStr(const QString &);
     static QString makeTimeStr(int);
 
-protected Q_SLOTS:
-    void slotBookmarksChanged(const QString &, const QString &);
-
 private:
     GlobalBookmarkManager();
     KBookmarkManager *m_mgr;

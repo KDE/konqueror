@@ -57,7 +57,6 @@ QString GlobalBookmarkManager::path() const { return mgr()->path(); }
 void GlobalBookmarkManager::createManager(const QString &filename, const QString &dbusObjectName, CommandHistory* commandHistory) {
     if (m_mgr) {
         kDebug()<<"createManager called twice";
-        disconnect(m_mgr, 0, 0, 0);
         delete m_mgr;
     }
 
@@ -71,12 +70,6 @@ void GlobalBookmarkManager::createManager(const QString &filename, const QString
     } else {
         m_model = new KBookmarkModel(root(), commandHistory, this);
     }
-
-    connect(m_mgr, SIGNAL( changed(const QString &, const QString &) ),
-            SLOT( slotBookmarksChanged(const QString &, const QString &) ));
-}
-
-void GlobalBookmarkManager::slotBookmarksChanged(const QString &, const QString &) {
 }
 
 void GlobalBookmarkManager::notifyManagers(const KBookmarkGroup& grp)
