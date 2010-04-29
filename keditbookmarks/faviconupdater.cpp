@@ -54,7 +54,7 @@ void FavIconUpdater::downloadIcon(const KBookmark &bk)
     const QString favicon = KMimeType::favIconForUrl(url);
     if (!favicon.isEmpty()) {
         kDebug() << "got favicon" << favicon;
-        bk.internalElement().setAttribute("icon", favicon);
+        m_bk.setIcon(favicon);
         KEBApp::self()->notifyCommandExecuted();
         // kDebug() << "emit done(true)";
         emit done(true, QString());
@@ -139,7 +139,7 @@ void FavIconUpdater::notifyChange(bool isHost,
         if (iconName.isEmpty()) { // old version of the kded module could emit with an empty iconName on error
             slotFavIconError(isHost, hostOrURL, QString());
         } else {
-            m_bk.internalElement().setAttribute("icon", iconName);
+            m_bk.setIcon(iconName);
             emit done(true, QString());
         }
     }

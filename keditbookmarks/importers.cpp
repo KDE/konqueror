@@ -105,7 +105,7 @@ ImportCommand* ImportCommand::performImport(KBookmarkModel* model, const QString
 void ImportCommand::doCreateHoldingFolder(KBookmarkGroup &bkGroup) {
     bkGroup = GlobalBookmarkManager::self()->mgr()
         ->root().createNewFolder(folder());
-    bkGroup.internalElement().setAttribute("icon", m_icon);
+    bkGroup.setIcon(m_icon);
     m_group = bkGroup.address();
 }
 
