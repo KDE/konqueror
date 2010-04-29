@@ -33,63 +33,8 @@
 
 #include <kdebug.h>
 
-BookmarkView::BookmarkView( QWidget * parent )
-    : QTreeView(parent), m_loadingState(false)
-{
-    setAcceptDrops(true);
-    setDefaultDropAction(Qt::MoveAction);
-    connect(this, SIGNAL(expanded(QModelIndex)), this, SLOT(slotExpanded(QModelIndex)));
-    connect(this, SIGNAL(collapsed(QModelIndex)), this, SLOT(slotCollapsed(QModelIndex)));
-}
-
-BookmarkView::~BookmarkView()
-{
-}
-
-void BookmarkView::loadFoldedState()
-{
-    m_loadingState = true;
-    loadFoldedState(QModelIndex());
-    m_loadingState = false;
-}
-
-void BookmarkView::loadFoldedState(const QModelIndex& parentIndex)
-{
-    const int count = model()->rowCount(parentIndex);
-    for (int row = 0; row < count; ++row) {
-        const QModelIndex index = model()->index(row, 0, parentIndex);
-        const KBookmark bk = bookmarkForIndex(index);
-        if (bk.isNull()) {
-            expand(index);
-        }
-        else if (bk.isGroup()) {
-            setExpanded(index, bk.toGroup().isOpen());
-            loadFoldedState(index);
-        }
-    }
-}
-
-void BookmarkView::slotExpanded(const QModelIndex& index)
-{
-    if (!m_loadingState) {
-        KBookmark bk = bookmarkForIndex(index);
-        bk.internalElement().setAttribute("folded", "no");
-    }
-}
-
-void BookmarkView::slotCollapsed(const QModelIndex& index)
-{
-    if (!m_loadingState) {
-        KBookmark bk = bookmarkForIndex(index);
-        bk.internalElement().setAttribute("folded", "yes");
-    }
-}
-
-
-/* ----------- */
-
 BookmarkFolderView::BookmarkFolderView( BookmarkListView * view, QWidget * parent )
-    :BookmarkView( parent ), mview(view)
+    : KBookmarkView(parent), mview(view)
 {
     mmodel = new BookmarkFolderViewFilterModel(parent);
     mmodel->setSourceModel(view->model());
@@ -115,7 +60,7 @@ void BookmarkFolderView::selectionChanged ( const QItemSelection & deselected, c
         mview->setRootIndex( mmodel->mapToSource(list.at(0)) );
     else
         mview->setRootIndex( QModelIndex());
-    BookmarkView::selectionChanged( deselected, selected);
+    KBookmarkView::selectionChanged(deselected, selected);
 }
 
 void BookmarkFolderView::slotReset()
@@ -135,7 +80,7 @@ KBookmark BookmarkFolderView::bookmarkForIndex(const QModelIndex & idx) const
 
 
 BookmarkListView::BookmarkListView( QWidget * parent )
-    :BookmarkView( parent )
+    : KBookmarkView(parent)
 {
     setDragEnabled(true);
 }
@@ -143,7 +88,7 @@ BookmarkListView::BookmarkListView( QWidget * parent )
 
 void BookmarkListView::setModel(QAbstractItemModel * model)
 {
-    BookmarkView::setModel(model);
+    KBookmarkView::setModel(model);
 }
 
 KBookmarkModel* BookmarkListView::bookmarkModel() const

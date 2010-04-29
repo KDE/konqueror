@@ -22,30 +22,13 @@
 #include <QtGui/QTreeView>
 #include <QSortFilterProxyModel>
 
+#include "kbookmarkmodel/view.h"
+
 class KBookmarkModel;
-class KBookmark;
 class BookmarkListView;
 class BookmarkFolderViewFilterModel;
 
-class BookmarkView : public QTreeView
-{
-    Q_OBJECT
-public:
-    BookmarkView( QWidget * parent = 0 );
-    virtual ~BookmarkView();
-    virtual KBookmark bookmarkForIndex(const QModelIndex & idx) const = 0;
-    void loadFoldedState();
-
-private Q_SLOTS:
-    void slotExpanded(const QModelIndex& index);
-    void slotCollapsed(const QModelIndex& index);
-
-private:
-    void loadFoldedState(const QModelIndex& parentIndex);
-    bool m_loadingState;
-};
-
-class BookmarkFolderView : public BookmarkView
+class BookmarkFolderView : public KBookmarkView
 {
     Q_OBJECT
 public:
@@ -60,7 +43,7 @@ private:
     BookmarkFolderViewFilterModel * mmodel;
 };
 
-class BookmarkListView : public BookmarkView
+class BookmarkListView : public KBookmarkView
 {
     Q_OBJECT
 public:
