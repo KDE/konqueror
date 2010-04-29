@@ -21,7 +21,7 @@
 
 #include <kbookmark.h>
 
-BookmarkView::BookmarkView( QWidget * parent )
+KBookmarkView::KBookmarkView(QWidget *parent)
     : QTreeView(parent), m_loadingState(false)
 {
     setAcceptDrops(true);
@@ -30,18 +30,18 @@ BookmarkView::BookmarkView( QWidget * parent )
     connect(this, SIGNAL(collapsed(QModelIndex)), this, SLOT(slotCollapsed(QModelIndex)));
 }
 
-BookmarkView::~BookmarkView()
+KBookmarkView::~KBookmarkView()
 {
 }
 
-void BookmarkView::loadFoldedState()
+void KBookmarkView::loadFoldedState()
 {
     m_loadingState = true;
     loadFoldedState(QModelIndex());
     m_loadingState = false;
 }
 
-void BookmarkView::loadFoldedState(const QModelIndex& parentIndex)
+void KBookmarkView::loadFoldedState(const QModelIndex& parentIndex)
 {
     const int count = model()->rowCount(parentIndex);
     for (int row = 0; row < count; ++row) {
@@ -57,7 +57,7 @@ void BookmarkView::loadFoldedState(const QModelIndex& parentIndex)
     }
 }
 
-void BookmarkView::slotExpanded(const QModelIndex& index)
+void KBookmarkView::slotExpanded(const QModelIndex& index)
 {
     if (!m_loadingState) {
         KBookmark bk = bookmarkForIndex(index);
@@ -65,7 +65,7 @@ void BookmarkView::slotExpanded(const QModelIndex& index)
     }
 }
 
-void BookmarkView::slotCollapsed(const QModelIndex& index)
+void KBookmarkView::slotCollapsed(const QModelIndex& index)
 {
     if (!m_loadingState) {
         KBookmark bk = bookmarkForIndex(index);

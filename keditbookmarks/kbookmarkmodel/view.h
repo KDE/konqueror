@@ -21,14 +21,16 @@
 
 #include <QtGui/QTreeView>
 
+#include "kbookmarkmodel_export.h"
+
 class KBookmark;
 
-class BookmarkView : public QTreeView
+class KBOOKMARKMODEL_EXPORT KBookmarkView : public QTreeView
 {
     Q_OBJECT
 public:
-    BookmarkView( QWidget * parent = 0 );
-    virtual ~BookmarkView();
+    explicit KBookmarkView(QWidget *parent = 0);
+    virtual ~KBookmarkView();
     virtual KBookmark bookmarkForIndex(const QModelIndex & idx) const = 0;
     void loadFoldedState();
 
