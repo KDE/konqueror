@@ -5,6 +5,7 @@ set(kbookmarkmodel_SRCS
   commands.cpp
   model.cpp
   treeitem.cpp
+  view.cpp
 )
 
 kde4_add_library(kbookmarkmodel_private SHARED ${kbookmarkmodel_SRCS})
