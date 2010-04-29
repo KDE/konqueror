@@ -94,9 +94,10 @@ KBookmarkModel::~KBookmarkModel()
 
 void KBookmarkModel::resetModel()
 {
+    beginResetModel();
     delete d->mRootItem;
     d->mRootItem = new TreeItem(d->mRoot, 0);
-    reset();
+    endResetModel();
 }
 
 QVariant KBookmarkModel::data(const QModelIndex &index, int role) const
