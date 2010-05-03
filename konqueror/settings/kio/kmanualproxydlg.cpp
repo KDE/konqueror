@@ -362,15 +362,15 @@ void KManualProxyDlg::changePressed()
   QString result;
   if( getException( result, i18n("Change Exception"),
                     mDlg->lbExceptions->currentItem()->text() ) &&
-      !handleDuplicate( result ) ) 
-      mDlg->lbExceptions->currentItem()->setText(result); 
+      !handleDuplicate( result ) )
+      mDlg->lbExceptions->currentItem()->setText(result);
 }
 
 void KManualProxyDlg::deletePressed()
 {
     delete mDlg->lbExceptions->takeItem( mDlg->lbExceptions->currentRow() );
     if(mDlg->lbExceptions->currentItem())
-       mDlg->lbExceptions->currentItem()->setSelected(true); 
+       mDlg->lbExceptions->currentItem()->setSelected(true);
     updateButtons();
 }
 
@@ -393,7 +393,7 @@ void KManualProxyDlg::updateButtons()
 QString KManualProxyDlg::urlFromInput(const KLineEdit* edit,
                                       const KIntSpinBox* spin) const
 {
-  if (!edit)
+  if (!edit || edit->text().isEmpty())
     return QString();
 
   KUrl u( edit->text() );
@@ -486,7 +486,7 @@ bool KManualProxyDlg::getException ( QString& result,
 
     // If the typed URL is malformed, and the filters cannot filter it
     // then it must be an invalid entry,
-    if( isValidURL(result) || (result.length() >= 3 && result.startsWith('.')))	
+    if( isValidURL(result) || (result.length() >= 3 && result.startsWith('.')))
       return true;
 
     showErrorMsg();
