@@ -32,7 +32,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include <kgenericfactory.h>
 #include <klocale.h>
 #include <knuminput.h>
-#include <kpixmapcache.h>
+#include <kimagecache.h>
 
 K_PLUGIN_FACTORY_DECLARATION(KioConfigFactory)
 
@@ -48,9 +48,7 @@ BookmarksConfigModule::~BookmarksConfigModule()
 
 void BookmarksConfigModule::clearCache()
 {
-  KPixmapCache* cache = new KPixmapCache("kio_bookmarks");
-  cache->discard();
-  delete cache;
+  KImageCache::deleteCache("kio_bookmarks");
 }
 
 void BookmarksConfigModule::load()
