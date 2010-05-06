@@ -37,10 +37,19 @@
 
 namespace KDEPrivate {
 
+
+static KColorScheme::BackgroundRole bgColorRoleForState(bool state)
+{
+    if (state)
+        return KColorScheme::PositiveBackground;
+
+    return KColorScheme::NegativeBackground;
+}
+
 class SearchBar::SearchBarPrivate
 {
 public:
-    SearchBarPrivate() {}
+  SearchBarPrivate() : lastBgColorRole(KColorScheme::NormalBackground) {}
 
     void init (SearchBar* searchBar)
     {
@@ -71,6 +80,7 @@ public:
     }
 
     Ui::SearchBar ui;
+    KColorScheme::BackgroundRole lastBgColorRole;
 };
 
 SearchBar::SearchBar(QWidget *parent)
@@ -110,6 +120,7 @@ void SearchBar::hide()
 {
     if (isVisible()) {        
       d->ui.searchLineEdit->setStyleSheet(QString());
+      d->lastBgColorRole = KColorScheme::NormalBackground;
       emit searchTextChanged(QString());
       QWidget::hide();
     }
@@ -138,23 +149,28 @@ void SearchBar::setSearchText(const QString& text)
 
 void SearchBar::setFoundMatch(bool match)
 {
-    QString styleSheet;
+    kDebug() << match;
 
-    if (!d->ui.searchLineEdit->text().isEmpty()) {
-        KColorScheme::BackgroundRole bgColorScheme;
+    const bool isEmptySearchText = d->ui.searchLineEdit->text().isEmpty();
+    KColorScheme::BackgroundRole bgColorRole = bgColorRoleForState(match);
 
-        if (match)
-          bgColorScheme = KColorScheme::PositiveBackground;
-        else
-          bgColorScheme = KColorScheme::NegativeBackground;
+    if (bgColorRole != d->lastBgColorRole ||
+        (isEmptySearchText && d->lastBgColorRole != KColorScheme::NormalBackground)) {
 
-        KStatefulBrush bgBrush(KColorScheme::View, bgColorScheme);
+        QString styleSheet;
 
-        styleSheet = QString("QLineEdit{ background-color:%1 }")
-                     .arg(bgBrush.brush(d->ui.searchLineEdit).color().name());
+        if (isEmptySearchText) {
+            bgColorRole = KColorScheme::NormalBackground;
+        } else {
+            KStatefulBrush bgBrush(KColorScheme::View, bgColorRole);
+            styleSheet = QString("QLineEdit{ background-color:%1 }")
+                         .arg(bgBrush.brush(d->ui.searchLineEdit).color().name());
+        }
+
+        kDebug() << "stylesheet:" << styleSheet;
+        d->ui.searchLineEdit->setStyleSheet(styleSheet);
+        d->lastBgColorRole = bgColorRole;
     }
-
-    d->ui.searchLineEdit->setStyleSheet(styleSheet);
 }
 
 void SearchBar::searchAsYouTypeChanged(bool checked)
