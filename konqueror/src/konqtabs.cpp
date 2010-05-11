@@ -377,20 +377,19 @@ void KonqFrameTabs::slotMouseMiddleClick()
   }
 }
 
-void KonqFrameTabs::slotMouseMiddleClick( QWidget *w )
+void KonqFrameTabs::slotMouseMiddleClick(QWidget *w)
 {
-  if ( m_MouseMiddleClickClosesTab ) {
-      slotCloseRequest(w);
-  }
-  else {
-  KUrl filteredURL ( KonqMisc::konqFilteredURL( this, QApplication::clipboard()->text(QClipboard::Selection ) ) );
-  if ( !filteredURL.isEmpty() ) {
-    KonqFrameBase* frame = dynamic_cast<KonqFrameBase*>(w);
-    if (frame) {
-      m_pViewManager->mainWindow()->openUrl( frame->activeChildView(), filteredURL );
+    if (m_MouseMiddleClickClosesTab) {
+        slotCloseRequest(w);
+    } else {
+        KUrl filteredURL(KonqMisc::konqFilteredURL(this, QApplication::clipboard()->text(QClipboard::Selection)));
+        if (!filteredURL.isEmpty()) {
+            KonqFrameBase* frame = dynamic_cast<KonqFrameBase*>(w);
+            if (frame) {
+                m_pViewManager->mainWindow()->openUrl(frame->activeChildView(), filteredURL);
+            }
+        }
     }
-  }
-  }
 }
 
 void KonqFrameTabs::slotTestCanDecode(const QDragMoveEvent *e, bool &accept /* result */)
