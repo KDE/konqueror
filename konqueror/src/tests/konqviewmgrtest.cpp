@@ -163,6 +163,9 @@ void ViewMgrTest::testCreateFirstView()
     //qDebug() << "tabWidget geom: " << tabWidget->geometry();
     QVERIFY( tabWidget->width() > 680 );
     QVERIFY( tabWidget->height() >= frame->height() ); // equal, unless there's a border in the frame
+
+    // Part widget should have focus, not location bar
+    QCOMPARE(mainWindow.focusWidget()->metaObject()->className(), partWidget->focusWidget()->metaObject()->className());
 }
 
 void ViewMgrTest::testRemoveFirstView()
@@ -336,7 +339,7 @@ void ViewMgrTest::testLinkedViews()
     qDebug() << "ACTIVATING LINK";
     KHTMLPart* part = qobject_cast<KHTMLPart *>(view->part());
     DOM::HTMLAnchorElement anchor = part->htmlDocument().getElementsByTagName(DOM::DOMString("a")).item(0);
-    Q_ASSERT(!anchor.isNull());
+    QVERIFY(!anchor.isNull());
     anchor.focus();
     QKeyEvent ev( QKeyEvent::KeyPress, Qt::Key_Return, 0, "\n" );
     QApplication::sendEvent( part->view(), &ev );
@@ -635,6 +638,11 @@ void ViewMgrTest::testLoadProfile()
     const QList<int> sizes = container->sizes();
     QCOMPARE(sizes.count(), 2);
     QVERIFY(sizes[0] < sizes[1]);
+
+    QTest::qWait(100);
+
+    // Part widget should have focus, not location bar
+    QCOMPARE(mainWindow.focusWidget()->metaObject()->className(), tabFrame->focusWidget()->metaObject()->className());
 }
 
 void ViewMgrTest::testLoadOldProfile()
@@ -653,7 +661,6 @@ void ViewMgrTest::testLoadOldProfile()
     QCOMPARE(mainWindow.currentView()->locationBarURL(), path);
     QFile::remove(profile);
 }
-
 
 void ViewMgrTest::testDuplicateWindow()
 {
@@ -674,16 +681,22 @@ void ViewMgrTest::testCloseOtherTabs()
     KonqMainWindow mainWindow;
     mainWindow.openUrl(0, KUrl("data:text/html, <p>Hello World</p>"), "text/html");
     KonqViewManager* viewManager = mainWindow.viewManager();
+    KTabWidget* tabWidget = mainWindow.findChild<KTabWidget*>();
+    QVERIFY(tabWidget);
+    QVERIFY(tabWidget->focusWidget());
+    QCOMPARE(mainWindow.focusWidget()->metaObject()->className(), tabWidget->focusWidget()->metaObject()->className());
     viewManager->addTab("text/html");
     KonqView* viewTab2 = viewManager->addTab("text/html");
     viewManager->splitView( viewTab2, Qt::Horizontal );
     viewManager->addTab("text/html");
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[FFC(FF)F].") ); // mainWindow, tab widget, first tab = one frame, second tab = one frame, third tab = splitter with two frames, fourth tab = one frame
-    KTabWidget* tabWidget = mainWindow.findChild<KTabWidget*>();
+    QCOMPARE(tabWidget->count(), 4);
     tabWidget->setCurrentIndex(2);
     QCOMPARE(mainWindow.linkableViewsCount(), 2);
     tabWidget->setCurrentIndex(3);
     QCOMPARE(mainWindow.linkableViewsCount(), 1);
+    // Switching to an empty tab -> focus goes to location bar (#84867)
+    QCOMPARE(mainWindow.focusWidget()->metaObject()->className(), "KonqCombo");
 
     // Check that removeOtherTabs deals with splitted views correctly
     mainWindow.viewManager()->removeOtherTabs(2);
@@ -796,7 +809,9 @@ void ViewMgrTest::moveTabLeft()
     mainWindow.openUrl(0, KUrl("data:text/html, <p>Hello World</p>"), "text/html");
     KonqViewManager* viewManager = mainWindow.viewManager();
     KonqView* view1 = viewManager->addTab("text/html");
+    view1->openUrl(KUrl("data:text/html, <p>view1</p>"), "1");
     KonqView* view2 = viewManager->addTab("text/html");
+    view2->openUrl(KUrl("data:text/html, <p>view2</p>"), "2");
     QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[FFF].") ); // mainWindow, tab widget, 3 simple tabs
     KTabWidget* tabWidget = mainWindow.findChild<KTabWidget*>();
     tabWidget->setCurrentIndex(2);
@@ -811,7 +826,8 @@ void ViewMgrTest::moveTabLeft()
     QCOMPARE(tabWidget->currentIndex(), 1);
     QCOMPARE(mainWindow.currentView(), view2);
     qDebug() << mainWindow.focusWidget() << view2->part()->widget()->focusWidget();
-    // the focus should stay with that view
+    // the focus should stay with that view (#208821)
+    QCOMPARE(mainWindow.focusWidget()->metaObject()->className(), view2->part()->widget()->focusWidget()->metaObject()->className());
     QCOMPARE(mainWindow.focusWidget(), view2->part()->widget()->focusWidget());
 }
 
