@@ -247,7 +247,7 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
                  } else
                      urlList += urlToOpen;
              }
-             if ( mainwin )
+             if (mainwin && !urlList.isEmpty())
                  mainwin->openMultiURL( urlList );
          }
      }

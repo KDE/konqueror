@@ -2491,7 +2491,6 @@ void KonqMainWindow::openMultiURL( const KUrl::List& url )
         openUrl( newView, *it, QString() );
         m_pViewManager->showTab( newView );
     }
-    focusLocationBar();
 }
 
 void KonqMainWindow::slotRemoveView()
