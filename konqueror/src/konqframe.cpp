@@ -231,8 +231,13 @@ void KonqFrame::slotRemoveView()
 
 void KonqFrame::activateChild()
 {
-  if (m_pView && !m_pView->isPassiveMode() )
-    m_pView->mainWindow()->viewManager()->setActivePart( part() );
+    if (m_pView && !m_pView->isPassiveMode() ) {
+        m_pView->mainWindow()->viewManager()->setActivePart( part() );
+
+        if (m_pView->url().isEmpty() || m_pView->url() == "about:blank") {
+            m_pView->mainWindow()->focusLocationBar(); // #84867 usability improvement
+        }
+    }
 }
 
 KonqView* KonqFrame::childView() const

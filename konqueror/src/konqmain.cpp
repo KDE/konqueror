@@ -217,8 +217,10 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv)
                 const bool tempFile = KCmdLineArgs::isTempFileSet();
                 mainwin = KonqMisc::createNewWindow(firstUrl, urlargs, KParts::BrowserArguments(), false, filesToSelect, tempFile);
             }
-            // Open the other urls as tabs in that window
-            mainwin->openMultiURL(urlList);
+            if (!urlList.isEmpty()) {
+                // Open the other urls as tabs in that window
+                mainwin->openMultiURL(urlList);
+            }
         }
     }
     args->clear();
