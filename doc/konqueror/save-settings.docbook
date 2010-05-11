@@ -64,10 +64,10 @@ up with an empty window enter <userinput>about:blank</userinput> into the
 location bar before saving the profile.</para>
 
 <note><para>You can create a desktop icon to start &konqueror; with your new
-profile. First create a desktop icon by dragging the &konqueror; icon from the
-application launcher menu onto the desktop. Then <mousebutton>right</mousebutton> 
-click on the new icon, select
-<guimenuitem>Icon Settings</guimenuitem> and change <guilabel>
+profile. First create a desktop icon by clicking with the &RMB; onto the &konqueror; 
+entry in the application launcher menu. Then select <guimenuitem>Add to Desktop</guimenuitem>
+in the context menu. Open the settings dialog of the new icon on your desktop by 
+clicking an the <guiicon>Tools</guiicon>. Change <guilabel>
 Command</guilabel> in the <guilabel>Application</guilabel> tab page to
 <userinput><command>kfmclient</command> <option>openProfile
 <replaceable>MyNewProfile</replaceable></option></userinput>,
