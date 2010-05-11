@@ -790,4 +790,29 @@ void ViewMgrTest::testBreakOffTab()
     delete mainWindow2;
 }
 
+void ViewMgrTest::moveTabLeft()
+{
+    KonqMainWindow mainWindow;
+    mainWindow.openUrl(0, KUrl("data:text/html, <p>Hello World</p>"), "text/html");
+    KonqViewManager* viewManager = mainWindow.viewManager();
+    KonqView* view1 = viewManager->addTab("text/html");
+    KonqView* view2 = viewManager->addTab("text/html");
+    QCOMPARE( DebugFrameVisitor::inspect(&mainWindow), QString("MT[FFF].") ); // mainWindow, tab widget, 3 simple tabs
+    KTabWidget* tabWidget = mainWindow.findChild<KTabWidget*>();
+    tabWidget->setCurrentIndex(2);
+    view2->part()->widget()->setFocus();
+    //qDebug() << mainWindow.focusWidget() << view2->part()->widget()->focusWidget();
+    QCOMPARE(mainWindow.focusWidget(), view2->part()->widget()->focusWidget());
+    viewManager->moveTabBackward();
+    // Now we should have the views (tabs) in the order 0, 2, 1
+    QList<KonqView *> views = KonqViewCollector::collect(&mainWindow);
+    QCOMPARE(views[1], view2);
+    QCOMPARE(views[2], view1);
+    QCOMPARE(tabWidget->currentIndex(), 1);
+    QCOMPARE(mainWindow.currentView(), view2);
+    qDebug() << mainWindow.focusWidget() << view2->part()->widget()->focusWidget();
+    // the focus should stay with that view
+    QCOMPARE(mainWindow.focusWidget(), view2->part()->widget()->focusWidget());
+}
+
 #include "konqviewmgrtest.moc"

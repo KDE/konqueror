@@ -58,6 +58,7 @@ private Q_SLOTS:
     void testBrowserArgumentsNewTab();
 
     void testBreakOffTab();
+    void moveTabLeft();
 
     static void sendAllPendingResizeEvents(QWidget*);
 

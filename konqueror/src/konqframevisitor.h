@@ -22,6 +22,7 @@
 #define KONQ_FRAMEVISITOR_H
 
 #include <QList>
+#include "konqprivate_export.h"
 
 class KonqFrameBase;
 class KonqView;
@@ -53,7 +54,7 @@ private:
 /**
  * Collects all views, recursively.
  */
-class KonqViewCollector : public KonqFrameVisitor
+class KONQ_TESTS_EXPORT KonqViewCollector : public KonqFrameVisitor
 {
 public:
     static QList<KonqView *> collect(KonqFrameBase* topLevel);
