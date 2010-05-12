@@ -141,6 +141,7 @@ private Q_SLOTS:
         QCOMPARE(tab->count(), 1);
         KonqFrame* frame = qobject_cast<KonqFrame *>(tab->widget(0));
         QVERIFY(frame);
+        QVERIFY(!frame->childView()->isLoading());
         KHTMLPart* part = qobject_cast<KHTMLPart *>(frame->part());
         QVERIFY(part);
         part->selectAll();
