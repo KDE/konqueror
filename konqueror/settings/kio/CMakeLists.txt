@@ -27,7 +27,7 @@ kde4_add_ui_files(kcm_kio_PART_SRCS bookmarks.ui cache.ui manualproxy.ui envvarp
 
 kde4_add_plugin(kcm_kio ${kcm_kio_PART_SRCS})
 
-target_link_libraries(kcm_kio ${KDE4_KUTILS_LIBS} ${KDE4_KIO_LIBS})
+target_link_libraries(kcm_kio ${KDE4_KCMUTILS_LIBS} ${KDE4_KIO_LIBS})
 
 install(TARGETS kcm_kio  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
