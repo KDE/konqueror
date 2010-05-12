@@ -18,6 +18,7 @@
 #include <qtestkeyboard.h>
 #include <qtest_kde.h>
 #include "konqviewmgrtest.h"
+#include <konqmisc.h>
 #include "../konqsettingsxt.h"
 #include <QToolBar>
 #include <qtestmouse.h>
@@ -166,6 +167,14 @@ void ViewMgrTest::testCreateFirstView()
 
     // Part widget should have focus, not location bar
     QCOMPARE(mainWindow.focusWidget()->metaObject()->className(), partWidget->focusWidget()->metaObject()->className());
+}
+
+void ViewMgrTest::testEmptyWindow()
+{
+    KonqMainWindow* emptyWindow = KonqMisc::createNewWindow(KUrl());
+    QCOMPARE(emptyWindow->currentView()->url().url(), QString("about:konqueror"));
+    QCOMPARE(emptyWindow->focusWidget()->metaObject()->className(), "KonqCombo");
+    delete emptyWindow;
 }
 
 void ViewMgrTest::testRemoveFirstView()
@@ -373,6 +382,10 @@ static void checkSecondWindowHasOneTab() // and delete it.
     KonqMainWindow* newWindow = qobject_cast<KonqMainWindow*>(KMainWindow::memberList().last());
     QVERIFY(newWindow);
     QCOMPARE(DebugFrameVisitor::inspect(newWindow), QString("MT[F].")); // mainWindow, tab widget, one tab
+    KTabWidget* tabWidget = newWindow->findChild<KTabWidget*>();
+    QVERIFY(tabWidget);
+    // The location bar shouldn't get focus (#208821)
+    QCOMPARE(newWindow->focusWidget()->metaObject()->className(), tabWidget->focusWidget()->metaObject()->className());
     delete newWindow;
 }
 

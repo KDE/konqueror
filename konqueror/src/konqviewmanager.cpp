@@ -1004,6 +1004,11 @@ void KonqViewManager::loadViewProfileFromGroup( const KConfigGroup &profileGroup
 
       // TODO choose a linked view if any (instead of just the first one),
       // then open the same URL in any non-linked one
+    } else {
+        if (forcedUrl.isEmpty() && m_pMainWindow->locationBarURL().isEmpty()) {
+            // No URL -> the user will want to type one
+            m_pMainWindow->focusLocationBar();
+        }
     }
 
     // Window size

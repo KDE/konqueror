@@ -51,7 +51,7 @@ namespace KonqMisc // TODO split into something like KonqWindowFactory or KonqWi
      * @param openUrl If it is false, no url is opened in the new window (and the aboutpage is not shown).
      * The url is used to guess the profile.
      */
-    KonqMainWindow * createNewWindow( const KUrl &url,
+    KONQ_TESTS_EXPORT KonqMainWindow * createNewWindow( const KUrl &url,
                                       const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
                                       const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments(),
                                       bool forbidUseHTML = false,
