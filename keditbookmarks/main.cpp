@@ -23,6 +23,7 @@
 #include "globalbookmarkmanager.h"
 #include "toplevel.h"
 #include "importers.h"
+#include "kbookmarkmodel/commandhistory.h"
 
 #include <klocale.h>
 #include <kdebug.h>
@@ -108,6 +109,8 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv) {
     options.add("importns <filename>", ki18n("Import bookmarks from a file in Netscape (4.x and earlier) format"));
     options.add("importie <filename>", ki18n("Import bookmarks from a file in Internet Explorer's Favorites format"));
     options.add("importopera <filename>", ki18n("Import bookmarks from a file in Opera format"));
+    options.add("importkde3 <filename>", ki18n("Import bookmarks from a file in KDE2 format"));
+    options.add("importgaleon <filename>", ki18n("Import bookmarks from a file in Galeon format"));
     options.add("exportmoz <filename>", ki18n("Export bookmarks to a file in Mozilla format"));
     options.add("exportns <filename>", ki18n("Export bookmarks to a file in Netscape (4.x and earlier) format"));
     options.add("exporthtml <filename>", ki18n("Export bookmarks to a file in a printable HTML format"));
@@ -126,7 +129,8 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv) {
     bool isGui = !(args->isSet("exportmoz") || args->isSet("exportns") || args->isSet("exporthtml")
                 || args->isSet("exportie") || args->isSet("exportopera")
                 || args->isSet("importmoz") || args->isSet("importns")
-                || args->isSet("importie") || args->isSet("importopera"));
+                || args->isSet("importie") || args->isSet("importopera")
+                || args->isSet("importkde3") || args->isSet("importgaleon"));
 
     bool browser = args->isSet("browser");
 
@@ -140,7 +144,7 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv) {
         : KStandardDirs::locateLocal("data", QLatin1String("konqueror/bookmarks.xml"));
 
     if (!isGui) {
-        GlobalBookmarkManager::self()->createManager(filename, QString(), 0 /*no command history*/);
+        GlobalBookmarkManager::self()->createManager(filename, QString(), new CommandHistory());
         GlobalBookmarkManager::ExportType exportType = GlobalBookmarkManager::MozillaExport; // uumm.. can i just set it to -1 ?
         int got = 0;
         const char *arg, *arg2 = 0, *importType = 0;
@@ -153,6 +157,8 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv) {
         if (arg = "importns",   args->isSet(arg)) { importType = "NS";    arg2 = arg; got++; }
         if (arg = "importie",   args->isSet(arg)) { importType = "IE";    arg2 = arg; got++; }
         if (arg = "importopera", args->isSet(arg)) { importType = "Opera"; arg2 = arg; got++; }
+        if (arg = "importgaleon", args->isSet(arg)) { importType = "Galeon"; arg2 = arg; got++; }
+        if (arg = "importkde3", args->isSet(arg)) { importType = "KDE2"; arg2 = arg; got++; }
         if (!importType && arg2) {
             Q_ASSERT(arg2);
             // TODO - maybe an xbel export???
