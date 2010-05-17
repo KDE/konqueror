@@ -415,13 +415,15 @@ void WebPage::slotUnsupportedContent(QNetworkReply *reply)
     // from continuing to download the unsupported content!
     reply->abort();
 
-    KParts::OpenUrlArguments args;
-    const KUrl url(reply->url());
-    Q_FOREACH (const QByteArray &headerName, reply->rawHeaderList()) {
-        args.metaData().insert(QString(headerName), QString(reply->rawHeader(headerName)));
-    }
+    if (reply->request().originatingObject() == this->mainFrame()) {
+        KParts::OpenUrlArguments args;
+        const KUrl url(reply->url());
+        Q_FOREACH (const QByteArray &headerName, reply->rawHeaderList()) {
+            args.metaData().insert(QString(headerName), QString(reply->rawHeader(headerName)));
+        }
 
-    emit d->part->browserExtension()->openUrlRequest(url, args, KParts::BrowserArguments());
+        emit d->part->browserExtension()->openUrlRequest(url, args, KParts::BrowserArguments());
+   }
 }
 
 void WebPage::downloadRequest(const QNetworkRequest &request)
