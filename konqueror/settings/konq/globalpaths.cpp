@@ -3,6 +3,7 @@
  *  Copyright (c) Bernd Wuebben 1998
  *  Copyright (c) Christian Tibirna 1998
  *  Copyright 1998-2007 David Faure <faure@kde.org>
+ *  Copyright (c) 2010 Matthias Fuchs <mat69@gmx.net
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -292,7 +293,11 @@ void DesktopPathConfig::save()
 
 bool DesktopPathConfig::xdgSavePath(KUrlRequester* ur, const KUrl& currentUrl, const char* xdgKey, const QString& type)
 {
-    const KUrl newUrl = ur->url();
+    KUrl newUrl = ur->url();
+    //url might be empty, use QDir::homePath (the default for xdg) then
+    if (!newUrl.isValid()) {
+        newUrl = KUrl(QDir::homePath());
+    }
     if (!newUrl.equals(currentUrl, KUrl::CompareWithoutTrailingSlash)) {
         const QString path = newUrl.toLocalFile();
         if (!QDir(path).exists()) {
