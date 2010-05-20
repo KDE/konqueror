@@ -410,20 +410,37 @@ QWebPage *WebPage::createWindow(WebWindowType type)
 void WebPage::slotUnsupportedContent(QNetworkReply *reply)
 {
     Q_ASSERT (reply);
-    // FIXME: Until we implement a way to resume/continue a network
-    // request. We must abort the reply to prevent a zombie process
-    // from continuing to download the unsupported content!
-    reply->abort();
+
+    const KIO::MetaData metaData = reply->attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData)).toMap();
+    bool hasContentDisposition;
+    if (metaData.isEmpty())
+        hasContentDisposition = reply->hasRawHeader("Content-Disposition");
+    else
+        hasContentDisposition = metaData.contains("content-disposition-filename");
+
+    if (hasContentDisposition) {
+    // Workaround for no support for Content-Disposition in
+    // QtWebkit < 2.0 (Qt 4.7).
+#if KDE_IS_VERSION(4,4,75)
+        downloadResponse(reply);
+#else
+        reply->abort();
+        downloadRequest(reply->request());
+#endif
+        return;
+    }
 
     if (reply->request().originatingObject() == this->mainFrame()) {
+        reply->abort();
         KParts::OpenUrlArguments args;
-        const KUrl url(reply->url());
-        Q_FOREACH (const QByteArray &headerName, reply->rawHeaderList()) {
-            args.metaData().insert(QString(headerName), QString(reply->rawHeader(headerName)));
+        QString contentType = reply->header(QNetworkRequest::ContentTypeHeader).toString();
+        if (!contentType.isEmpty()) {
+            if (contentType.contains(QL1C(';')))
+                contentType.truncate(contentType.indexOf(QL1C(';')));
+            args.setMimeType(contentType);
         }
-
-        emit d->part->browserExtension()->openUrlRequest(url, args, KParts::BrowserArguments());
-   }
+        emit d->part->browserExtension()->openUrlRequest(reply->url(), args, KParts::BrowserArguments());
+    }
 }
 
 void WebPage::downloadRequest(const QNetworkRequest &request)
