@@ -831,6 +831,8 @@ void KonqComboLineEdit::mouseDoubleClickEvent( QMouseEvent *e )
     KLineEdit::mouseDoubleClickEvent( e );
 }
 
+// KDE5 TODO: get rid of this duplicated code, and just reimplement completionBox()
+
 void KonqComboLineEdit::setCompletedItems( const QStringList& items, bool )
 {
     QString txt;
@@ -851,31 +853,22 @@ void KonqComboLineEdit::setCompletedItems( const QStringList& items, bool )
 
         if ( completionbox->isVisible() ) {
 
+            // This code is copied from KLineEdit::setCompletedItems
             QListWidgetItem* currentItem = completionbox->currentItem();
-            bool wasSelected = false;
-            QString currentSelection;
 
+            QString currentSelection;
             if ( currentItem != 0 ) {
-                wasSelected = currentItem->isSelected();
                 currentSelection = currentItem->text();
             }
 
             completionbox->setItems( items );
-            QList<QListWidgetItem*> matchedItems = completionbox->findItems
-                                ( currentSelection, Qt::MatchExactly );
+            const QList<QListWidgetItem*> matchedItems = completionbox->findItems(currentSelection, Qt::MatchExactly);
+            QListWidgetItem* matchedItem = matchedItems.isEmpty() ? 0 : matchedItems.first();
 
-            QListWidgetItem* item = matchedItems.isEmpty() ? 0 : matchedItems.first();
-
-            if( !item || !wasSelected )
-            {
-                wasSelected = false;
-                item = completionbox->item( 0 );
-            }
-            if ( item ) {
-                completionbox->blockSignals( true );
-                completionbox->setCurrentItem( item );
-                item->setSelected(wasSelected);
-                completionbox->blockSignals( false );
+            if (matchedItem) {
+                const bool blocked = completionbox->blockSignals(true);
+                completionbox->setCurrentItem(matchedItem);
+                completionbox->blockSignals(blocked);
             }
         }
         else { // completion box not visible yet -> show it
