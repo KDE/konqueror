@@ -58,6 +58,17 @@ static void setFormData(WebFrameState &frameState, const QString &data)
     }
 }
 
+static inline int convertStr2Int(const QString& value)
+{
+   bool ok;
+   const int tempValue = value.toInt(&ok);
+
+   if (ok)
+     return tempValue;
+
+   return 0;
+}
+
 KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent, const QStringList &/*args*/)
             :KParts::ReadOnlyPart(parent), d(new KWebKitPartPrivate(this))
 {
@@ -124,7 +135,7 @@ bool KWebKitPart::openUrl(const KUrl &u)
 
         if ( urls.count() > 1 ) {
             KUrl mainURL = urls.first();
-            int error = mainURL.queryItem( "error" ).toInt();
+            int error = convertStr2Int(mainURL.queryItem("error"));
 
             // error=0 isn't a valid error code, so 0 means it's missing from the URL
             if ( error == 0 )
@@ -188,8 +199,8 @@ bool KWebKitPart::openUrl(const KUrl &u)
             const int count = bargs.docState.count();
             for (int i = 0; i < count; i += 5) {
                 frameState.url = bargs.docState.at(i+1);
-                frameState.scrollPosX = bargs.docState.at(i+2).toInt();
-                frameState.scrollPosY = bargs.docState.at(i+3).toInt();
+                frameState.scrollPosX = convertStr2Int(bargs.docState.at(i+2));
+                frameState.scrollPosY = convertStr2Int(bargs.docState.at(i+3));
                 setFormData(frameState, bargs.docState.at(i+4));
                 d->webPage->saveFrameState(bargs.docState.at(i), frameState);
             }
