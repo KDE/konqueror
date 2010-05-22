@@ -302,16 +302,16 @@ CSSCustomDialog::CSSCustomDialog( QWidget *parent )
   setupUi( this );
   connect(this,SIGNAL(changed()),SLOT(slotPreview()));
 
-  connect(basefontsize, SIGNAL(highlighted(int)), SIGNAL(changed()));
-  connect(basefontsize, SIGNAL(textChanged(const QString&)),SIGNAL(changed()));
+  connect(basefontsize, SIGNAL(activated(int)), SIGNAL(changed()));
+  connect(basefontsize, SIGNAL(editTextChanged(QString)),SIGNAL(changed()));
   connect(dontScale,      SIGNAL(clicked()),      SIGNAL(changed()));
   connect(blackOnWhite,   SIGNAL(clicked()),      SIGNAL(changed()));
   connect(whiteOnBlack,   SIGNAL(clicked()),      SIGNAL(changed()));
   connect(customColor,    SIGNAL(clicked()),      SIGNAL(changed()));
   connect(foregroundColorButton, SIGNAL(changed(const QColor &)),SIGNAL(changed()));
   connect(backgroundColorButton, SIGNAL(changed(const QColor &)),SIGNAL(changed()));
-  connect(fontFamily, SIGNAL(highlighted(int)),   SIGNAL(changed()));
-  connect(fontFamily, SIGNAL(textChanged(const QString&)),SIGNAL(changed()));
+  connect(fontFamily, SIGNAL(activated(int)),   SIGNAL(changed()));
+  connect(fontFamily, SIGNAL(editTextChanged(QString)),SIGNAL(changed()));
   connect(sameFamily,     SIGNAL(clicked()),      SIGNAL(changed()));
   connect(sameColor,      SIGNAL(clicked()),      SIGNAL(changed()));
   connect(hideImages,     SIGNAL(clicked()),      SIGNAL(changed()));
