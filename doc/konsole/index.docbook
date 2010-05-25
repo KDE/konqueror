@@ -243,12 +243,13 @@ is pressed:
 
 <guimenuitem>Copy</guimenuitem>,
 <guimenuitem>Paste</guimenuitem>,
-<guimenuitem>Clear Scrollback &amp; Reset</guimenuitem>,
 <guimenuitem>Open File Manager</guimenuitem>,
-<guimenuitem>Change Profile</guimenuitem>,
-<guimenuitem>Edit Current Profile...</guimenuitem>,
+<guimenuitem>Set Encoding</guimenuitem>
+<guimenuitem>Clear Scrollback</guimenuitem>,
+<guimenuitem>Configure Scrollback...</guimenuitem>,
 <guimenuitem>Show MenuBar</guimenuitem>,
-<guimenuitem>Character Encoding</guimenuitem>
+<guimenuitem>Change Profile</guimenuitem>,
+<guimenuitem>Configure Current Profile...</guimenuitem>,
 and <guimenuitem>Close Tab</guimenuitem>
 </para>
 
@@ -820,6 +821,16 @@ can be specified to modify its behavior.</para>
 <term><option>--new-tab</option></term>
 <listitem><para><action>Create a new tab</action> in an existing window rather than creating a new window.
 </para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><option>--tabs-from-file </option><parameter>file</parameter></term>
+<listitem><para><action>Create tabs</action> as specified in the given tabs configuration file.
+</para>
+<note><para>The file has one tab per line in the following format:</para><para>
+title: This is the title;; command: run me
+</para></note>
+</listitem>
 </varlistentry>
 
 <varlistentry>
