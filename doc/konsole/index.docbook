@@ -104,13 +104,6 @@ scroll through the history with
 <keycap>Down Arrow</keycap>.
 </para>
 
-<para>&konsole; provides a number of actions located in the 
-<link linkend="scrollback-menu">
-<menuchoice><guimenu>
-Scrollback
-</guimenu></menuchoice>
-</link>menu.
-</para>
 
 </sect1>
 
@@ -541,20 +534,6 @@ affect the newly created window.
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>View</guimenu><guimenuitem>Show
-Menu Bar</guimenuitem></menuchoice></term>
-<listitem><para><action>Toggles the menubar being visible</action></para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<shortcut><keycombo
- action="simul">&Ctrl;&Shift;<keycap>F11</keycap></keycombo></shortcut>
-<guimenu>View</guimenu><guimenuitem>Full Screen Mode</guimenuitem></menuchoice></term>
-<listitem><para><action>Toggles &konsole; filling the entire screen</action></para></listitem>
-</varlistentry>
-
-<varlistentry>
 <term><menuchoice>
 <shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>I</keycap></keycombo></shortcut>
 <guimenu>View</guimenu><guimenuitem>Monitor for 
@@ -585,16 +564,14 @@ The type of alerts can be changed through
 
 <varlistentry>
 <term><menuchoice>
-<shortcut><keycombo
- action="simul">&Ctrl;<keycap>+</keycap></keycombo></shortcut>
+<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>+</keycap></keycombo></shortcut>
 <guimenu>View</guimenu><guimenuitem>Enlarge Font</guimenuitem></menuchoice></term>
 <listitem><para><action>Increases the text font size</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
-<shortcut><keycombo
- action="simul">&Ctrl;<keycap>-</keycap></keycombo></shortcut>
+<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>-</keycap></keycombo></shortcut>
 <guimenu>View</guimenu><guimenuitem>Shrink Font</guimenuitem></menuchoice></term>
 <listitem><para><action>Decreases the text font size</action></para></listitem>
 </varlistentry>
@@ -607,7 +584,7 @@ The type of alerts can be changed through
 
 <varlistentry>
 <term><menuchoice><guimenu>View</guimenu><guimenuitem>Clear Scrollback</guimenuitem></menuchoice></term>
-<listitem><para><action>Clears all text in the scrollback</action></para>
+<listitem><para><action>Clears the text in the scrollback</action></para>
 </listitem>
 </varlistentry>
 
@@ -616,30 +593,8 @@ The type of alerts can be changed through
 <shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>X</keycap></keycombo></shortcut>
 <guimenu>Scrollback</guimenu><guimenuitem>Clear 
 Scrollback &amp; Reset</guimenuitem></menuchoice></term>
-<listitem><para><action>Clears all text in the current tab and scrollback 
+<listitem><para><action>Clears the text in the current tab and scrollback 
 and resets the terminal</action></para></listitem>
-</varlistentry>
-
-</variablelist>
-</sect2>
-
-<sect2 id="scrollback-menu">
-<title><guimenu>Scrollback</guimenu> Menu</title>
-<variablelist>
-
-<varlistentry>
-<term><menuchoice><guimenu>Scrollback</guimenu><guimenuitem>Save 
-Output...</guimenuitem></menuchoice></term>
-<listitem><para><action>Saves the current scrollback as a text or html
- file</action></para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice><guimenu>Scrollback</guimenu><guimenuitem>Scrollback 
-Options...</guimenuitem></menuchoice></term>
-<listitem><para><action>Opens a dialog to configure number of lines to save</action>
-(<link linkend="scrollback-options-dialog">more info</link>)
-</para></listitem>
 </varlistentry>
 
 </variablelist>
@@ -696,21 +651,7 @@ Currently, &konsole; accepts the following:
 <variablelist>
 
 <varlistentry>
-<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Change 
-Profile</guimenuitem></menuchoice></term>
-<listitem><para><action>Changes the profile for the current tab</action></para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Edit 
-Current Profile...</guimenuitem></menuchoice></term>
-<listitem><para><action>Opens the profile editor for the current tab</action></para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Manage 
+<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure
 Profiles...</guimenuitem></menuchoice></term>
 <listitem><para><action>Opens a editor for managing profiles</action> 
 </para>
@@ -718,7 +659,22 @@ Profiles...</guimenuitem></menuchoice></term>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure 
+<term><menuchoice>
+<shortcut><keycombo
+ action="simul">&Ctrl;&Shift;<keycap>M</keycap></keycombo></shortcut>
+<guimenu>Settings</guimenu><guimenuitem>Show
+Menu Bar</guimenuitem></menuchoice></term>
+<listitem><para><action>Toggles the menubar being visible</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu><guimenuitem>Full Screen Mode</guimenuitem></menuchoice></term>
+<listitem><para><action>Toggles &konsole; filling the entire screen</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure
 Shortcuts...</guimenuitem></menuchoice></term>
 <listitem><para><action>Opens the keyboard shortcut editor</action></para>
 </listitem>
