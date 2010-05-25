@@ -292,28 +292,38 @@ is listed after each menu item.
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>N</keycap></keycombo></shortcut>
-<guimenu>File</guimenu><guimenuitem>New Tab</guimenuitem>
+<guimenu>File</guimenu><guimenuitem>New Window</guimenuitem>
 </menuchoice>
-</term>
-<listitem><para><action>Opens a new tab with the default profile</action>
-</para></listitem></varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>M</keycap></keycombo></shortcut>
-<guimenu>File</guimenu><guimenuitem>New Window</guimenuitem></menuchoice>
 </term>
 <listitem><para><action>Opens a new separate &konsole; window with the default profile</action>
 </para></listitem></varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>File</guimenu><guimenuitem>Shell</guimenuitem></menuchoice></term>
-<listitem><para><action>Opens a new tab with the Shell profile</action></para>
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>T</keycap></keycombo></shortcut>
+<guimenu>File</guimenu><guimenuitem>New Tab</guimenuitem></menuchoice>
+</term>
+<listitem><para><action>Opens a new tab with the default profile</action>
 <note><para>&konsole; ships with the Shell profile as the default.
-Any new profiles added by the user will have its own menu item
-below <menuchoice><guimenu>File</guimenu><guimenuitem>Shell</guimenuitem></menuchoice>.
+Any new profiles added by the user will be listed in the sub-menu.
 </para></note>
-</listitem>
+</para></listitem></varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>W</keycap></keycombo></shortcut>
+<guimenu>File</guimenu>
+<guimenuitem>Close Tab</guimenuitem></menuchoice>
+</term>
+<listitem><para><action>Closes the current tab</action>
+</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice><guimenu>File</guimenu>
+<guimenuitem>Save Output As...</guimenuitem></menuchoice></term>
+<listitem><para><action>Saves the current scrollback as a text or html
+ file</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -323,16 +333,6 @@ below <menuchoice><guimenu>File</guimenu><guimenuitem>Shell</guimenuitem></menuc
 <listitem><para><action>Opens &kde;'s file manager
 at the current directory</action>.  By default, that is 
 <ulink url="help:/dolphin/index.html">&dolphin;</ulink>.
-</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>W</keycap></keycombo></shortcut>
-<guimenu>File</guimenu>
-<guimenuitem>Close Tab</guimenuitem></menuchoice>
-</term>
-<listitem><para><action>Closes the current tab</action>
 </para></listitem>
 </varlistentry>
 
@@ -378,17 +378,6 @@ location</action></para></listitem>
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycombo
- action="simul">&Ctrl;&Alt;<keycap>S</keycap></keycombo></shortcut>
-<guimenu>Edit</guimenu><guimenuitem>Rename Tab...</guimenuitem></menuchoice></term>
-<listitem><para><action>Opens a dialog box allowing you to change
-the name of the current tab</action>
-(<link linkend="rename-tab-dialog">more info</link>)
-</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<shortcut><keycombo
  action="simul">&Ctrl;&Shift;<keycap>,</keycap></keycombo></shortcut>
 <guimenu>Edit</guimenu><guisubmenu>Copy Input To</guisubmenu><guimenuitem>All Tabs in Current Window</guimenuitem></menuchoice></term>
 <listitem><para><action>Allows input from the current session to be sent simultaneously to all sessions in current window</action>
@@ -401,8 +390,7 @@ the name of the current tab</action>
 <shortcut><keycombo
  action="simul">&Ctrl;&Shift;<keycap>.</keycap></keycombo></shortcut>
 <guimenu>Edit</guimenu><guisubmenu>Copy Input To</guisubmenu><guimenuitem>Select Tabs...</guimenuitem></menuchoice></term>
-<listitem><para><action>Allows input from the current session to be sent simultaneously to user picked sessions</action>
-(<link linkend="copy-input-dialog">more info</link>)
+<listitem><para><action>Allows input from the current session to be sent simultaneously to sessions picked by user</action>
 </para>
 </listitem>
 </varlistentry>
@@ -416,25 +404,57 @@ the name of the current tab</action>
 </para>
 </listitem>
 </varlistentry>
-<!-- Z-Modem Upload...
+
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycombo
- action="simul">&Ctrl;&Alt;<keycap>U</keycap></keycombo></shortcut>
-<guimenu>Edit</guimenu><guimenuitem>Z-Modem Upload..</guimenuitem></menuchoice></term>
-<listitem><para><action></action>
-</para>
-</listitem>
+ action="simul">&Ctrl;&Alt;<keycap>S</keycap></keycombo></shortcut>
+<guimenu>Edit</guimenu><guimenuitem>Rename Tab...</guimenuitem></menuchoice></term>
+<listitem><para><action>Opens a dialog box allowing you to change
+the name of the current tab</action>
+(<link linkend="rename-tab-dialog">more info</link>)
+</para></listitem>
 </varlistentry>
--->
+
 <varlistentry>
-<term><menuchoice><guimenu>Edit</guimenu><guimenuitem>Clear &amp; Reset</guimenuitem></menuchoice></term>
-<listitem><para><action>Clears all text from the tab and reset the session</action></para>
-<para>All the text cleared will be stored in the 
-<link linkend="scrollback">Scrollback</link>.
+<term><menuchoice>
+<shortcut><keycombo
+ action="simul">&Ctrl;&Alt;<keycap>F</keycap></keycombo></shortcut>
+<guimenu>Edit</guimenu><guimenuitem>Z-Modem Upload...</guimenuitem></menuchoice></term>
+<listitem><para><action>Opens up a dialog to select a file to be uploaded if the required software is installed</action>
 </para>
 </listitem>
 </varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>F</keycap></keycombo></shortcut>
+<guimenu>Scrollback</guimenu><guimenuitem>Search 
+Output...</guimenuitem></menuchoice></term>
+<listitem><para><action>Opens a search bar at the bottom of &konsole;'s window
+</action></para>
+<para>This allows for case sensitive, forward or backwards, and regular expressions searches.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut><keycombo><keycap>F3</keycap></keycombo></shortcut>
+<guimenu>Scrollback</guimenu><guimenuitem>Find 
+Next</guimenuitem></menuchoice></term>
+<listitem><para><action>Moves to the next search instance
+</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Shift;<keycap>F3</keycap></keycombo></shortcut>
+<guimenu>Scrollback</guimenu><guimenuitem>Find 
+Previous</guimenuitem></menuchoice></term>
+<listitem><para><action>Moves to the previous search instance
+</action></para></listitem>
+</varlistentry>
+
 
 </variablelist>
 </sect2>
@@ -445,7 +465,7 @@ the name of the current tab</action>
 
 <varlistentry>
 <term><menuchoice>
-<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>L</keycap></keycombo></shortcut>
+<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>(</keycap></keycombo></shortcut>
 <guimenu>View</guimenu><guisubmenu>Split View</guisubmenu><guimenuitem>Split 
 View Left/Right</guimenuitem></menuchoice>
 </term>
@@ -457,7 +477,7 @@ Any output on one view is duplicated in the other view.
 
 <varlistentry>
 <term><menuchoice>
-<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>T</keycap></keycombo></shortcut>
+<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>)</keycap></keycombo></shortcut>
 <guimenu>View</guimenu><guisubmenu>Split View</guisubmenu><guimenuitem>Split 
 View Top/Bottom</guimenuitem></menuchoice>
 </term>
@@ -564,16 +584,10 @@ The type of alerts can be changed through
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>View</guimenu>
-<guimenuitem>Character Encoding</guimenuitem></menuchoice></term>
-<listitem><para><action>Sets the character encoding</action></para></listitem>
-</varlistentry>
-
-<varlistentry>
 <term><menuchoice>
 <shortcut><keycombo
  action="simul">&Ctrl;<keycap>+</keycap></keycombo></shortcut>
-<guimenu>View</guimenu><guimenuitem>Increase Text Size</guimenuitem></menuchoice></term>
+<guimenu>View</guimenu><guimenuitem>Enlarge Font</guimenuitem></menuchoice></term>
 <listitem><para><action>Increases the text font size</action></para></listitem>
 </varlistentry>
 
@@ -581,8 +595,29 @@ The type of alerts can be changed through
 <term><menuchoice>
 <shortcut><keycombo
  action="simul">&Ctrl;<keycap>-</keycap></keycombo></shortcut>
-<guimenu>View</guimenu><guimenuitem>Decrease Text Size</guimenuitem></menuchoice></term>
+<guimenu>View</guimenu><guimenuitem>Shrink Font</guimenuitem></menuchoice></term>
 <listitem><para><action>Decreases the text font size</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice><guimenu>View</guimenu>
+<guimenuitem>Set Encoding</guimenuitem></menuchoice></term>
+<listitem><para><action>Sets the character encoding</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice><guimenu>View</guimenu><guimenuitem>Clear Scrollback</guimenuitem></menuchoice></term>
+<listitem><para><action>Clears all text in the scrollback</action></para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>X</keycap></keycombo></shortcut>
+<guimenu>Scrollback</guimenu><guimenuitem>Clear 
+Scrollback &amp; Reset</guimenuitem></menuchoice></term>
+<listitem><para><action>Clears all text in the current tab and scrollback 
+and resets the terminal</action></para></listitem>
 </varlistentry>
 
 </variablelist>
@@ -591,35 +626,6 @@ The type of alerts can be changed through
 <sect2 id="scrollback-menu">
 <title><guimenu>Scrollback</guimenu> Menu</title>
 <variablelist>
-
-<varlistentry>
-<term><menuchoice>
-<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>F</keycap></keycombo></shortcut>
-<guimenu>Scrollback</guimenu><guimenuitem>Search 
-Output...</guimenuitem></menuchoice></term>
-<listitem><para><action>Opens a search bar at the bottom of &konsole;'s window
-</action></para>
-<para>This allows for case sensitive, forward or backwards, and regular expressions searches.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<shortcut><keycombo><keycap>F3</keycap></keycombo></shortcut>
-<guimenu>Scrollback</guimenu><guimenuitem>Find 
-Next</guimenuitem></menuchoice></term>
-<listitem><para><action>Moves to the next search instance
-</action></para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<shortcut><keycombo action="simul">&Shift;<keycap>F3</keycap></keycombo></shortcut>
-<guimenu>Scrollback</guimenu><guimenuitem>Find 
-Previous</guimenuitem></menuchoice></term>
-<listitem><para><action>Moves to the previous search instance
-</action></para></listitem>
-</varlistentry>
 
 <varlistentry>
 <term><menuchoice><guimenu>Scrollback</guimenu><guimenuitem>Save 
@@ -634,15 +640,6 @@ Options...</guimenuitem></menuchoice></term>
 <listitem><para><action>Opens a dialog to configure number of lines to save</action>
 (<link linkend="scrollback-options-dialog">more info</link>)
 </para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>X</keycap></keycombo></shortcut>
-<guimenu>Scrollback</guimenu><guimenuitem>Clear 
-Scrollback &amp; Reset</guimenuitem></menuchoice></term>
-<listitem><para><action>Clears all text saved in current tab  
-and resets the terminal</action></para></listitem>
 </varlistentry>
 
 </variablelist>
