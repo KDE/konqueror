@@ -91,7 +91,6 @@ UserAgentSelectorDlg::UserAgentSelectorDlg( const QString& caption, UserAgentInf
   setModal( true );
   setWindowTitle ( caption );
   setButtons( Ok|Cancel );
-  showButtonSeparator( true );
 
   if (!m_userAgentInfo)
   {

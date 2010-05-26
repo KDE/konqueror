@@ -77,7 +77,6 @@ KonqSessionDlg::KonqSessionDlg( KonqViewManager *manager, QWidget *parent )
     setCaption( i18n( "Manage Sessions" ) );
     setButtons( BTN_OPEN | Close );
     setDefaultButton( Close );
-    showButtonSeparator( true );
     
     setButtonGuiItem( BTN_OPEN, KGuiItem( i18n( "&Open" ), "document-open" ) );
     d->m_pSaveCurrentButton->setIcon(KIcon("document-save"));
@@ -227,7 +226,6 @@ KonqNewSessionDlg::KonqNewSessionDlg( QWidget *parent, QString sessionName )
     setButtons( Ok | Cancel );
     setDefaultButton( Ok );
     enableButton( Ok, false );
-    showButtonSeparator( true );
     
     if(!sessionName.isEmpty())
         d->m_pSessionName->setText(sessionName);
