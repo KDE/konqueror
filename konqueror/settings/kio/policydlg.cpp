@@ -66,7 +66,6 @@ PolicyDlg::PolicyDlg (const QString& caption, QWidget *parent,
   setModal( true );
   setCaption( caption );
   setButtons( Ok|Cancel );
-  showButtonSeparator( true );
 
   m_dlgUI = new PolicyDlgUI (this);
   setMainWidget(m_dlgUI);

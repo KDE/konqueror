@@ -55,7 +55,6 @@ KonqExtensionManager::KonqExtensionManager(QWidget *parent, KonqMainWindow *main
     setButtons( Default | Cancel | Apply | Ok | User1 );
     setButtonGuiItem( User1, KStandardGuiItem::reset() );
     setObjectName( "extensionmanager" );
-    showButtonSeparator( true );
 
     d = new KonqExtensionManagerPrivate;
     showButton(User1, false);

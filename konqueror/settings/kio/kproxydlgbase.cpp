@@ -64,7 +64,6 @@ KProxyDialogBase::KProxyDialogBase( QWidget* parent, const char* name,
   setModal( modal );
   setCaption( caption );
   setButtons( Ok|Cancel );
-  showButtonSeparator( true );
 
   m_bHasValidData = false;
 }
