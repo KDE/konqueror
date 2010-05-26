@@ -55,7 +55,6 @@ KonqNameAndUrlInputDialog::KonqNameAndUrlInputDialog(const QString& nameLabel, c
 {
     setButtons( Ok | Cancel | User1 );
     setButtonGuiItem( User1, KStandardGuiItem::clear() );
-    showButtonSeparator( true );
 
     QFrame *plainPage = new QFrame( this );
     setMainWidget( plainPage );
