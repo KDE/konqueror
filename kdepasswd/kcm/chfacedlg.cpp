@@ -54,9 +54,10 @@ ChFaceDlg::ChFaceDlg(const QString& picsdir, QWidget *parent)
   : KDialog( parent )
 {
   setCaption( i18n("Change your Face") );
-  setButtons( Ok|Cancel );
+  setButtons( Ok|Cancel|User1 );
   setDefaultButton( Ok );
-  showButtonSeparator( true );
+
+  setButtonText( User1, "Custom image" );
 
   QWidget *faceDlg = new QWidget;
   ui.setupUi(faceDlg);
@@ -68,7 +69,7 @@ ChFaceDlg::ChFaceDlg(const QString& picsdir, QWidget *parent)
   connect( ui.m_FacesWidget, SIGNAL( doubleClicked( const QModelIndex & ) ), SLOT(accept()) );
   connect( this, SIGNAL(okClicked()), this, SLOT(accept()));
 
-  connect( ui.browseBtn, SIGNAL( clicked() ), SLOT( slotGetCustomImage() ) );
+  connect( this, SIGNAL(user1Clicked()), this, SLOT(slotGetCustomImage()) );
 
 #if 0
   QPushButton *acquireBtn = new QPushButton( i18n("&Acquire Image..."), page );
