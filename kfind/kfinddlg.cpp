@@ -62,6 +62,7 @@ KfindDlg::KfindDlg(const KUrl & url, QWidget *parent)
   // create tabwidget
   tabWidget = new KfindTabWidget( frame );
   tabWidget->setURL( url );
+  tabWidget->setFocus();
 
   // prepare window for find results
   win = new KFindTreeView(frame, this);
