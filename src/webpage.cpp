@@ -791,9 +791,9 @@ QString WebPage::errorPage(int code, const QString& text, const KUrl& reqUrl) co
   QString filename( KStandardDirs::locate( "data", "kwebkitpart/error.html" ) );
   QFile file( filename );
   if ( !file.open( QIODevice::ReadOnly ) )
-    return i18n("<html><body><h3>Unable to display error message!</h3>"
+    return i18n("<html><body><h3>Unable to display error message</h3>"
                 "<p>The error template file <em>error.html</em> could not be "
-                "found!</p></body></html>");
+                "found.</p></body></html>");
 
   QString html = QString( QL1S( file.readAll() ) );
 
