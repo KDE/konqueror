@@ -52,7 +52,7 @@
 #include "nsplugins_instance_interface.h"
 #include "nsplugins_viewer_interface.h"
 
-#include <config-apps.h>
+#include <kdefakes.h>
 
 #include <X11/Xlib.h>
 #include <unistd.h>
@@ -331,6 +331,9 @@ bool NSPluginLoader::loadViewer()
    connect( &_process, SIGNAL(finished(int, QProcess::ExitStatus)),
             this, SLOT(processTerminated()) );
 
+    QTime t;
+    t.start();
+
    // find the external viewer process
    QString viewer = KGlobal::dirs()->findExe("nspluginviewer");
    if (viewer.isEmpty())
@@ -352,18 +355,10 @@ bool NSPluginLoader::loadViewer()
    int cnt = 0;
    while (!QDBusConnection::sessionBus().interface()->isServiceRegistered(_viewerDBusId))
    {
-       //kapp->processEvents(); // would lead to recursive calls in khtml
-#ifdef HAVE_USLEEP
-       usleep( 50*1000 );
-#else
-      sleep(1); kDebug() << "sleep";
-#endif
+      //kapp->processEvents(); // would lead to recursive calls in khtml
+      usleep( 50*1000 );
       cnt++;
-#ifdef HAVE_USLEEP
       if (cnt >= 100)
-#else
-      if (cnt >= 10)
-#endif
       {
          kDebug() << "timeout";
          _process.kill();
@@ -382,6 +377,8 @@ bool NSPluginLoader::loadViewer()
 
    // make sure we have the types setup
    kdeNsPluginViewer::initDBusTypes();
+
+   kDebug() << "nspluginviewer startup took:" << t.elapsed() << "ms";
 
    return _viewer!=0;
 }
