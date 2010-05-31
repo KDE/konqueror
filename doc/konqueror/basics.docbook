@@ -96,8 +96,9 @@ linkend="menubar">Menubar</link> section of this document.</para>
 
 <para>The <interface>Toolbar</interface> contains icons for commonly used
 operations. <mousebutton>Left</mousebutton> clicking on an icon will activate
-it. If you have enabled tooltips in the &systemsettings; <menuchoice><guimenu>Appearance</guimenu>
-<guisubmenu>Windows</guisubmenu></menuchoice>, <guilabel>Buttons</guilabel> tab
+it. If you have enabled tooltips in the &systemsettings; using <guilabel>Configure Buttons</guilabel> in
+<menuchoice><guimenu>Workspace Appearance</guimenu>
+<guisubmenu>Window Decorations</guisubmenu></menuchoice>, 
 a brief description of what that icon does will appear when you hover
 the pointer over it.</para>
 
@@ -106,7 +107,7 @@ have a small black arrow at the right. If you click with the &LMB;
 at this arrow a small dropdown menu will
 appear.</para> <para><mousebutton>Right</mousebutton> clicking on the
 <interface>Toolbar </interface> will bring up the <link
-linkend="rmb-menus"><guilabel>Toolbar Menu</guilabel></link> which you can use
+linkend="rmb-menus"><guilabel>Toolbar Settings</guilabel> menu</link> which you can use
 to change the <interface>Toolbar</interface>'s appearance and position.</para>
 
 <para>The <interface>Location Toolbar</interface> shows the path to the
@@ -172,8 +173,9 @@ this entire document if you take advantage of <guilabel>Tooltips</guilabel> and
 <guimenuitem>What's This?</guimenuitem> feature.</para>
 
 <para>If <guilabel>Tooltips</guilabel> have been enabled in &kde; (
-in &systemsettings; <menuchoice><guimenu>Appearance</guimenu>
-<guisubmenu>Windows</guisubmenu></menuchoice>, <guilabel>Buttons</guilabel> tab) 
+in &systemsettings; using <guilabel>Configure Buttons</guilabel> in
+<menuchoice><guimenu>Desktop Appearance</guimenu>
+<guisubmenu>Window Decoration</guisubmenu></menuchoice>) 
 then when you hover the mouse pointer over a Toolbar or Sidebar tab 
 button it should bring up a terse description of what that button does.</para>
 
