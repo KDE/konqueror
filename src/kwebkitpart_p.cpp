@@ -214,25 +214,6 @@ void KWebKitPartPrivate::slotLoadFinished(bool ok)
     updateHistory = true;
 
     if (ok) {      
-        KWebWallet *webWallet = webPage->wallet();
-        if (webWallet) {
-            webWallet->fillFormData(webPage->mainFrame());
-            KWebWallet::WebFormList list = webWallet->formsWithCachedData(webPage->mainFrame());
-            if (!list.isEmpty()) {
-                if (!statusBarWalletLabel) {
-                    statusBarWalletLabel = new KUrlLabel(statusBarExtension->statusBar());
-                    statusBarWalletLabel->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Minimum));
-                    statusBarWalletLabel->setUseCursor(false);
-                    statusBarWalletLabel->setPixmap(SmallIcon("wallet-open"));
-                    connect(statusBarWalletLabel, SIGNAL(leftClickedUrl()), SLOT(slotLaunchWalletManager()));
-                    connect(statusBarWalletLabel, SIGNAL(rightClickedUrl()), SLOT(slotShowWalletMenu()));
-                }
-
-                statusBarExtension->addStatusBarItem(statusBarWalletLabel, 0, false);
-                hasCachedFormData = true;
-            }
-        }
-
         QString linkStyle;
 
         QColor linkColor = WebKitSettings::self()->vLinkColor();
@@ -269,16 +250,38 @@ void KWebKitPartPrivate::slotLoadFinished(bool ok)
             // text documents...
             slotUrlChanged(webView->url());
         }
+
+        // Fill form data from wallet...
+        KWebWallet *webWallet = webPage->wallet();
+        if (webWallet) {
+            webWallet->fillFormData(webPage->mainFrame());
+            KWebWallet::WebFormList list = webWallet->formsWithCachedData(webPage->mainFrame());
+            if (!list.isEmpty()) {
+                if (!statusBarWalletLabel) {
+                    statusBarWalletLabel = new KUrlLabel(statusBarExtension->statusBar());
+                    statusBarWalletLabel->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Minimum));
+                    statusBarWalletLabel->setUseCursor(false);
+                    statusBarWalletLabel->setPixmap(SmallIcon("wallet-open"));
+                    connect(statusBarWalletLabel, SIGNAL(leftClickedUrl()), SLOT(slotLaunchWalletManager()));
+                    connect(statusBarWalletLabel, SIGNAL(rightClickedUrl()), SLOT(slotShowWalletMenu()));
+                }
+
+                statusBarExtension->addStatusBarItem(statusBarWalletLabel, 0, false);
+                hasCachedFormData = true;
+            }
+        }
     }
 
     /*
-      NOTE: For now there is no way to allow the end user to stop scheduled
-      redirects or page refresh requests that originate through the <meta>
-      tag. As such we simply emit the completed signal. Will revisit issue
-      once the patch proposed upstream is accepted or implemented in another
-      manner. See  https://bugs.webkit.org/show_bug.cgi?id=29899.
+      NOTE: Support for stopping meta data redirects is implemented in QtWebKit
+      2.0 (Qt 4.7) or greater. See https://bugs.webkit.org/show_bug.cgi?id=29899.
     */
-    emit q->completed();
+#if QT_VERSION >= 0x040700
+    if (webPage->mainFrame()->findAllElements(QL1S("head>meta[http-equiv=refresh]")).count())
+        emit q->completed(true);
+    else
+#endif
+        emit q->completed();
 }
 
 void KWebKitPartPrivate::slotLoadAborted(const KUrl & url)

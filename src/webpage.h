@@ -28,7 +28,7 @@
 
 #include <QtCore/QUrl>
 #include <QtCore/QDebug>
-#include <QtCore/QHash>
+#include <QtCore/QMultiHash>
 
 class KUrl;
 class WebSslInfo;
@@ -42,7 +42,7 @@ struct WebFrameState
   int scrollPosX;
   int scrollPosY;
   bool handled;
-  QHash<QString, QString> formData;
+  QMultiHash<QString, QString> formData;
 
   WebFrameState() : scrollPosX(0), scrollPosY(0), handled(false) {}
 

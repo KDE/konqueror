@@ -51,10 +51,8 @@ static void setFormData(WebFrameState &frameState, const QString &data)
     const QStringList formDataList = data.split(QL1C(';'));
     Q_FOREACH(const QString &formData, formDataList) {
         QStringList items = formData.split(QL1C(','));
-        if (items.count() > 1) {
-            kDebug() << "formData:" << items;
+        if (items.count() > 1)
             frameState.formData.insert(items.at(0), items.at(1));
-        }
     }
 }
 
@@ -214,6 +212,9 @@ bool KWebKitPart::openUrl(const KUrl &u)
 
 bool KWebKitPart::closeUrl()
 {
+#if QT_VERSION >= 0x040700
+    d->webView->triggerPageAction(QWebPage::StopScheduledPageRefresh);
+#endif
     d->webView->stop();
     return true;
 }

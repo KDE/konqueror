@@ -162,7 +162,6 @@ static bool domainSchemeMatch(const QUrl& u1, const QUrl& u2)
 static void restoreStateFor(QWebFrame *frame, const WebFrameState &frameState)
 {
     Q_ASSERT(frame);
-
     frame->setScrollPosition(QPoint(frameState.scrollPosX, frameState.scrollPosY));
     QHashIterator<QString, QString> it (frameState.formData);
     while (it.hasNext()) {
@@ -171,8 +170,7 @@ static void restoreStateFor(QWebFrame *frame, const WebFrameState &frameState)
         if (element.isNull())
             kWarning() << "Found no element that matches:" << it.key();
         else
-            element.evaluateJavaScript(QString::fromLatin1("if(this.value.length == 0) this.value=\"%1\";")
-                                       .arg(it.value()));           
+            element.evaluateJavaScript(it.value());
     }
 }
 

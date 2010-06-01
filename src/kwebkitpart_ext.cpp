@@ -53,35 +53,103 @@
 #define QL1S(x)     QLatin1String(x)
 #define QL1C(x)     QLatin1Char(x)
 
-static QString getFormData(const QWebFrame *frame)
+static void createSelector(QString& selector, const QWebElement& element, bool useValueAttr = false)
 {
-    QStringList formData;
+    QString temp;
+    if (element.parent().isNull())
+        selector = element.tagName();
+    else
+        selector = element.parent().tagName() + QL1S(" > ") + element.tagName();
+    temp = element.attribute(QL1S("name"));
+    if (!temp.isEmpty())
+        selector += QString::fromLatin1("[name=\"%1\"]").arg(temp);
+    temp = element.attribute(QL1S("class"));
+    if (!temp.isEmpty())
+       selector += QString::fromLatin1("[class=\"%1\"]").arg(temp);
+    temp = element.attribute(QL1S("id"));
+    if (!temp.isEmpty())
+       selector += QString::fromLatin1("[id=\"%1\"]").arg(temp);
+    if (useValueAttr) {
+        temp = element.attribute(QL1S("value"));
+        if (!temp.isEmpty())
+            selector += QString::fromLatin1("[value=\"%1\"]").arg(temp);
+    }
+}
 
-    if (frame) {
-        QString key, temp;
-        QWebElementCollection collection = frame->findAllElements(QL1S("input[type=text], input:not([type]), textarea"));
-        QWebElementCollection::iterator it = collection.begin();
-        const QWebElementCollection::iterator itEnd = collection.end();
-        for (; it != itEnd; ++it) {
-            const QString value = (*it).evaluateJavaScript("this.value").toString().trimmed();
-            if (!value.isEmpty() && value != (*it).attribute("value")) {
-                if ((*it).parent().isNull())
-                    key = (*it).tagName();
+static void addElementData(QStringList &formData, const QWebElementCollection &collection,
+                           const QString& valueAttr, bool escapeValue = true,
+                           const QString& query = QString(), const QString& queryValue = QString())
+{   
+    QString selector;
+    const int count = collection.count();
+    const bool useValueAttr = !valueAttr.contains("this.value");
+
+    if (!query.isEmpty() && !queryValue.isEmpty()) {
+        QString temp;
+        for(int i=0; i < count; ++i) {
+            createSelector(selector, collection.at(i), useValueAttr);
+            QWebElementCollection queryCollection = collection.at(i).findAll(query);
+            for(int j=0; j < queryCollection.count(); ++j) {
+                const QString attribute = queryCollection.at(j).evaluateJavaScript(queryValue).toString().trimmed();
+                temp = selector;
+                temp += QL1C(',');
+                if (escapeValue)
+                    temp += valueAttr.arg(j).arg(QString::fromLatin1("=unescape(\"%1\")").arg(attribute));
                 else
-                    key = (*it).parent().tagName() + QL1S(" > ") + (*it).tagName();
-                temp = (*it).attribute(QL1S("name"));
-                if (!temp.isEmpty())
-                    key += QString::fromLatin1("[name=\"%1\"]").arg(temp);
-                temp = (*it).attribute(QL1S("class"));
-                if (!temp.isEmpty())
-                   key += QString::fromLatin1("[class=\"%1\"]").arg(temp);
-                temp = (*it).attribute(QL1S("id"));
-                if (!temp.isEmpty())
-                   key += QString::fromLatin1("[id=\"%1\"]").arg(temp);
-
-                formData << (key + QL1C(',') + value);
+                    temp += valueAttr.arg(j).arg(attribute);
+                //kDebug() << "Saving form data:" << temp;
+                formData << temp;
             }
         }
+    } else {
+        for(int i=0; i < count; ++i) {
+            const QString attribute = collection.at(i).evaluateJavaScript(valueAttr).toString().trimmed();
+            if (!attribute.isEmpty()) {
+                createSelector(selector, collection.at(i), useValueAttr);
+                selector += QL1C(',');
+                selector += valueAttr;
+                if (escapeValue) {
+                    selector += QL1S("=unescape(\"");
+                    selector += QUrl::toPercentEncoding(attribute.toUtf8(), " ");
+                    selector += QL1S("\")");
+                } else {
+                    selector += QL1C('=');
+                    selector += attribute;
+                }
+                //kDebug() << "Saving form data:" << selector;
+                formData << selector;
+            }
+        }
+    }
+}
+
+static QString getFormDataFor(const QWebFrame *frame)
+{
+    QStringList formData;
+    if (frame) {
+        // Selector for <input type="text">, <input type=file> and <textarea>
+        QString selector = QL1S("input[type=text]:not([readonly]):not([disabled]),"
+                                "input[type=file]:not([readonly]):not([disabled]),"
+                                "input:not([type]):not([disabled]),"
+                                "textarea:not([readonly]):not([disabled])");
+        addElementData(formData, frame->findAllElements(selector),
+                       QL1S("this.value"));
+
+        // Selector for <input type=checkbox>
+        selector = QL1S("input[type=checkbox]:not([readonly]):not([disabled]),"
+                        "input[type=radio]:not([readonly]):not([disabled])");
+        addElementData(formData, frame->findAllElements(selector),
+                       QL1S("this.checked"), false);
+
+        // Selector for <select><option> (a combobox)
+        selector = QL1S("select:not([multiple])");
+        addElementData(formData, frame->findAllElements(selector),
+                       QL1S("this.selectedIndex"), false);
+
+        selector = QL1S("select[multiple]");
+        addElementData(formData, frame->findAllElements(selector),
+                       QL1S("this.options[%1].selected=%2"), false,
+                       QL1S("option"), QL1S("this.selected"));
     }
 
     return formData.join(QL1S(";"));
@@ -99,7 +167,7 @@ static QStringList getChildrenFrameState(const QWebFrame *frame)
             info << childFrame->url().toString();
             info << QString::number(childFrame->scrollPosition().x());
             info << QString::number(childFrame->scrollPosition().y());
-            info << getFormData(frame);
+            info << getFormDataFor(frame);
         }
     }
 
@@ -111,7 +179,6 @@ class WebKitBrowserExtension::WebKitBrowserExtensionPrivate
  public:
     QPointer<KWebKitPart> part;
     QPointer<WebView> view;
-
 };
 
 WebKitBrowserExtension::WebKitBrowserExtension(KWebKitPart *parent)
@@ -165,7 +232,7 @@ void WebKitBrowserExtension::saveState(QDataStream &stream)
             childFrameState = getChildrenFrameState(page->mainFrame());
 
             // Save the data typed into forms...
-            formData = getFormData(page->mainFrame());
+            formData = getFormDataFor(page->mainFrame());
             //kDebug() << "Saving form data:" << formData;
         }
     }
