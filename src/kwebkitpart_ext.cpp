@@ -201,7 +201,7 @@ WebKitBrowserExtension::~WebKitBrowserExtension()
 
 int WebKitBrowserExtension::xOffset()
 {
-    if (d->view->page())
+    if (d->view)
         return d->view->page()->mainFrame()->scrollPosition().x();
 
     return KParts::BrowserExtension::xOffset();
@@ -209,7 +209,7 @@ int WebKitBrowserExtension::xOffset()
 
 int WebKitBrowserExtension::yOffset()
 {
-    if (d->view->page())
+    if (d->view)
         return d->view->page()->mainFrame()->scrollPosition().y();
 
     return KParts::BrowserExtension::yOffset();
@@ -274,19 +274,19 @@ void WebKitBrowserExtension::restoreState(QDataStream &stream)
 void WebKitBrowserExtension::cut()
 {
     if (d->view)
-        d->view->page()->triggerAction(QWebPage::Cut);
+        d->view->triggerPageAction(QWebPage::Cut);
 }
 
 void WebKitBrowserExtension::copy()
 {
     if (d->view)
-        d->view->page()->triggerAction(QWebPage::Copy);
+        d->view->triggerPageAction(QWebPage::Copy);
 }
 
 void WebKitBrowserExtension::paste()
 {
     if (d->view)
-        d->view->page()->triggerAction(QWebPage::Paste);
+        d->view->triggerPageAction(QWebPage::Paste);
 }
 
 void WebKitBrowserExtension::slotSaveDocument()
@@ -324,10 +324,9 @@ void WebKitBrowserExtension::printFrame()
 void WebKitBrowserExtension::updateEditActions()
 {
     if (d->view) {
-        QWebPage *page = d->view->page();
-        enableAction("cut", page->action(QWebPage::Cut));
-        enableAction("copy", page->action(QWebPage::Copy));
-        enableAction("paste", page->action(QWebPage::Paste));
+        enableAction("cut", d->view->pageAction(QWebPage::Cut));
+        enableAction("copy", d->view->pageAction(QWebPage::Copy));
+        enableAction("paste", d->view->pageAction(QWebPage::Paste));
     }
 }
 
@@ -337,7 +336,7 @@ void WebKitBrowserExtension::searchProvider()
         // action name is of form "previewProvider[<searchproviderprefix>:]"
         const QString searchProviderPrefix = QString(sender()->objectName()).mid(14);
 
-        const QString text = d->view->page()->selectedText();
+        const QString text = d->view->selectedText();
         KUriFilterData data;
         QStringList list;
         data.setData(searchProviderPrefix + text);
@@ -396,7 +395,7 @@ void WebKitBrowserExtension::toogleZoomTextOnly()
 void WebKitBrowserExtension::slotSelectAll()
 {
     if (d->view)
-        d->view->page()->triggerAction(QWebPage::SelectAll);
+        d->view->triggerPageAction(QWebPage::SelectAll);
 }
 
 void WebKitBrowserExtension::slotFrameInWindow()
