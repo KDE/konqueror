@@ -276,12 +276,16 @@ void KWebKitPartPrivate::slotLoadFinished(bool ok)
       NOTE: Support for stopping meta data redirects is implemented in QtWebKit
       2.0 (Qt 4.7) or greater. See https://bugs.webkit.org/show_bug.cgi?id=29899.
     */
+    bool pending = false;
 #if QT_VERSION >= 0x040700
-    if (webPage->mainFrame()->findAllElements(QL1S("head>meta[http-equiv=refresh]")).count())
-        emit q->completed(true);
-    else
+    if (webPage->mainFrame()->findAllElements(QL1S("head>meta[http-equiv=refresh]")).count()) {
+        if (WebKitSettings::self()->autoPageRefresh())
+            pending = true;
+        else
+            webPage->triggerAction(QWebPage::StopScheduledPageRefresh);
+    }
 #endif
-        emit q->completed();
+    emit q->completed(pending);
 }
 
 void KWebKitPartPrivate::slotLoadAborted(const KUrl & url)
@@ -479,10 +483,9 @@ void KWebKitPartPrivate::slotShowWalletMenu()
 
 void KWebKitPartPrivate::slotLaunchWalletManager()
 {
-    QDBusInterface r("org.kde.kwalletmanager", "/kwalletmanager/MainWindow_1", "org.kde.KMainWindow");
+    QDBusInterface r("org.kde.kwalletmanager", "/kwalletmanager/MainWindow_1");
     if (r.isValid()) {
         r.call(QDBus::NoBlock, "show");
-        r.call(QDBus::NoBlock, "raise");
     } else {
         KToolInvocation::startServiceByDesktopName("kwalletmanager_show");
     }
