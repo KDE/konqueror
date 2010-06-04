@@ -158,6 +158,9 @@ public:
     const QColor& linkColor() const;
     const QColor& vLinkColor() const;
 
+    // Automatic page reload/refresh...
+    bool autoPageRefresh() const;
+
     // Autoload images
     bool autoLoadImages() const;
     bool unfinishedImageFrame() const;

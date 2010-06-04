@@ -94,6 +94,7 @@ public:
     bool m_accessKeysEnabled : 1;
     bool m_zoomTextOnly : 1;
     bool m_useCookieJar : 1;
+    bool m_bAutoRefreshPage: 1;
 
     // the virtual global "domain"
     KPerDomainSettings global;
@@ -419,6 +420,9 @@ void WebKitSettings::init( KConfig * config, bool reset )
     if ( reset || cgHtml.hasKey( "AutoLoadImages" ) )
       d->m_bAutoLoadImages = cgHtml.readEntry( "AutoLoadImages", true );
 
+    if ( reset || cgHtml.hasKey( "AutoDelayedActions" ) )
+        d->m_bAutoRefreshPage = cgHtml.readEntry( "AutoDelayedActions", true );
+
     if ( reset || cgHtml.hasKey( "UnfinishedImageFrame" ) )
       d->m_bUnfinishedImageFrame = cgHtml.readEntry( "UnfinishedImageFrame", true );
 
@@ -461,7 +465,7 @@ void WebKitSettings::init( KConfig * config, bool reset )
     d->m_fallbackAccessKeysAssignments.clear();
     for( QStringList::ConstIterator it = accesskeys.begin(); it != accesskeys.end(); ++it )
         if( (*it).length() > 2 && (*it)[ 1 ] == ':' )
-            d->m_fallbackAccessKeysAssignments.append( qMakePair( (*it).mid( 2 ), (*it)[ 0 ] ));
+            d->m_fallbackAccessKeysAssignments.append( qMakePair( (*it).mid( 2 ), (*it)[ 0 ] ));    
   }
 
   // Colors
@@ -1049,6 +1053,11 @@ const QColor& WebKitSettings::linkColor() const
 const QColor& WebKitSettings::vLinkColor() const
 {
   return d->m_vLinkColor;
+}
+
+bool WebKitSettings::autoPageRefresh() const
+{
+  return d->m_bAutoRefreshPage;
 }
 
 bool WebKitSettings::autoLoadImages() const
