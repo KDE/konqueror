@@ -36,6 +36,7 @@
 #include <QtGui/QCheckBox>
 
 #include <kpushbutton.h>
+#include <kcombobox.h>
 #include <kvbox.h>
 #include <kdialog.h>
 #include <kdebug.h>

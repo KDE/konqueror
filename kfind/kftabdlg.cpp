@@ -42,7 +42,9 @@
 #include <kparts/componentfactory.h>
 #include <kstandarddirs.h>
 
+#include "kdatecombo.h"
 #include "kquery.h"
+
 // Static utility functions
 static void save_pattern(KComboBox *, const QString &, const QString &);
 
