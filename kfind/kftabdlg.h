@@ -25,8 +25,6 @@
 #include <ktabwidget.h>
 #include <kmimetype.h>
 
-#include "kdatecombo.h"
-
 class QButtonGroup;
 class QPushButton;
 class QRadioButton;
@@ -41,6 +39,7 @@ class KIntSpinBox;
 class QLabel;
 
 class KfDirDialog;
+class KDateCombo;
 
 class KfindTabWidget: public KTabWidget
 {
