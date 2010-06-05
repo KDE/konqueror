@@ -25,6 +25,7 @@
 #include <ktabwidget.h>
 #include <kmimetype.h>
 
+class KUrlComboBox;
 class QButtonGroup;
 class QPushButton;
 class QRadioButton;
@@ -81,7 +82,7 @@ Q_SIGNALS:
 protected:
 public:
   KComboBox   *nameBox;
-  KComboBox   *dirBox;
+  KUrlComboBox   *dirBox;
   // for first page
   QCheckBox   *subdirsCb;
   QCheckBox *useLocateCb;

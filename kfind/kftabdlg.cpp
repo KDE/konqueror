@@ -32,6 +32,8 @@
 #include <kcalendarsystem.h>
 #include <kglobal.h>
 #include <kcombobox.h>
+#include <kurlcombobox.h>
+#include <kurlcompletion.h>
 #include <klineedit.h>
 #include <klocale.h>
 #include <kmessagebox.h>
@@ -75,8 +77,10 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     namedL->setBuddy( nameBox );
     namedL->setObjectName( "named" );
     namedL->setToolTip( i18n("You can use wildcard matching and \";\" for separating multiple names") );
-    dirBox  = new KComboBox(pages[0]);
+    dirBox  = new KUrlComboBox(KUrlComboBox::Directories, pages[0]);
     dirBox->setEditable( true );
+    dirBox->setCompletionObject(new KUrlCompletion(KUrlCompletion::DirCompletion));
+    dirBox->setAutoDeleteCompletionObject(true);
     dirBox->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);  // allow smaller than widest entry
     QLabel * lookinL = new QLabel(i18n("Look &in:"), pages[0]);
     lookinL->setBuddy( dirBox );
