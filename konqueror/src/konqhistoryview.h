@@ -48,6 +48,7 @@ public:
 
     KActionCollection *actionCollection() { return m_collection; }
     QTreeView* treeView() const;
+    KLineEdit* lineEdit() const;
     KUrl urlForIndex(const QModelIndex& index) const;
 
 Q_SIGNALS:

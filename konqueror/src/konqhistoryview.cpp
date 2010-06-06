@@ -214,6 +214,11 @@ QTreeView* KonqHistoryView::treeView() const
     return m_treeView;
 }
 
+KLineEdit* KonqHistoryView::lineEdit() const
+{
+    return m_searchLineEdit;
+}
+
 void KonqHistoryView::slotNewWindow()
 {
     const KUrl url = urlForIndex(m_treeView->currentIndex());
