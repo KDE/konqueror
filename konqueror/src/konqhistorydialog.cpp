@@ -36,6 +36,7 @@
 #include <kactioncollection.h>
 #include <kguiitem.h>
 #include <klocale.h>
+#include <klineedit.h>
 #include <ktoggleaction.h>
 
 KonqHistoryDialog::KonqHistoryDialog(KonqMainWindow *parent)
@@ -73,6 +74,9 @@ KonqHistoryDialog::KonqHistoryDialog(KonqMainWindow *parent)
     mainLayout->addWidget(m_historyView);
 
     restoreDialogSize(KGlobal::config()->group("History Dialog"));
+
+    // give focus to the search line edit when opening the dialog (#240513)
+    m_historyView->lineEdit()->setFocus();
 }
 
 KonqHistoryDialog::~KonqHistoryDialog()
