@@ -42,19 +42,10 @@
 
 #include <QtGui/QApplication>
 #include <QtWebKit/QWebFrame>
+#include <QtWebKit/QWebHistory>
 
 #define QL1S(x)  QLatin1String(x)
 #define QL1C(x)  QLatin1Char(x)
-
-static void setFormData(WebFrameState &frameState, const QString &data)
-{
-    const QStringList formDataList = data.split(QL1C(';'));
-    Q_FOREACH(const QString &formData, formDataList) {
-        QStringList items = formData.split(QL1C(','));
-        if (items.count() > 1)
-            frameState.formData.insert(items.at(0), items.at(1));
-    }
-}
 
 static inline int convertStr2Int(const QString& value)
 {
@@ -120,7 +111,7 @@ bool KWebKitPart::openUrl(const KUrl &u)
 
     // Do not update history when url is typed in since konqueror
     // automatically does that itself.
-    d->updateHistory = false;
+    d->emitOpenUrlNotify = false;
 
     // Handle error conditions...
     if (u.protocol().compare(QL1S("error"), Qt::CaseInsensitive) == 0 && u.hasSubUrl()) {
@@ -150,18 +141,42 @@ bool KWebKitPart::openUrl(const KUrl &u)
         return false;
     }
 
-    // Set the url...
-    setUrl(u);
-
     // Ignore about:blank urls...
     if (u.url() == "about:blank") {
         emit setWindowCaption (u.url());
         emit completed();
-        return true;
     } else {
         KParts::BrowserArguments bargs (browserExtension()->browserArguments());
         KParts::OpenUrlArguments args (arguments());
         KIO::MetaData metaData (args.metaData());
+
+        // Check if this is a restore state request, i.e. a history navigation
+        // or a session restore. If it is, we fulfill the request using QWebHistory.
+        if (metaData.contains(QL1S("kwebkitpart-restore-state"))) {
+            const int historyIndex = metaData.value(QL1S("kwebkitpart-restore-state")).toInt();
+            if (historyIndex > -1) {
+                if (d->webPage->history()->count()) {
+                    QWebHistoryItem historyItem = d->webPage->history()->itemAt(historyIndex);
+                    if (historyItem.isValid()) {
+                        setUrl(historyItem.url());
+                        // Set any cached ssl information...
+                        if (historyItem.userData().isValid()) {
+                            WebSslInfo sslinfo;
+                            sslinfo.fromMetaData(historyItem.userData());
+                            d->webPage->setSslInfo(sslinfo);
+                        }
+                        d->webPage->history()->goToItem(historyItem);
+
+                    }
+                } else {
+                    // NOTE: Restoring QWebHistory through its stream operator
+                    // will cause navigation to the last active item in the
+                    // list. Hence no need to do anything else here...
+                    d->browserExtension->restoreHistory();
+                }
+                return true;
+            }
+        }
 
         // Get the SSL information sent, if any...
         if (metaData.contains(QL1S("ssl_in_use"))) {
@@ -171,42 +186,11 @@ bool KWebKitPart::openUrl(const KUrl &u)
             d->webPage->setSslInfo(sslinfo);
         }
 
-        // Check if this is a restore state request, i.e. a history navigation
-        // or session restore request. If it is, set the state information so
-        // that the page can be properly restored...
-        if (metaData.contains(QL1S("kwebkitpart-restore-state"))) {
-            WebFrameState frameState;
-            frameState.url = u;
-            frameState.scrollPosX = args.xOffset();
-            frameState.scrollPosY = args.yOffset();
-            setFormData(frameState, metaData.value(QL1S("kwebkitpart-saved-form-data")));
-            d->webPage->saveFrameState(QString(), frameState);
-
-            /*
-               'docState' contains information about child frame documents in
-               the following order:
-               0 => Frame name
-               1 => Frame url
-               2 => Frame scroll position X
-               3 => Frame scroll position Y
-               4 => Frame form data information in a name/value pair format:
-                      name=value;[...;nameN=valueN]
-                    where name identifies the input widget (input, textarea) in
-                    CSS selector language format.
-            */
-            const int count = bargs.docState.count();
-            for (int i = 0; i < count; i += 5) {
-                frameState.url = bargs.docState.at(i+1);
-                frameState.scrollPosX = convertStr2Int(bargs.docState.at(i+2));
-                frameState.scrollPosY = convertStr2Int(bargs.docState.at(i+3));
-                setFormData(frameState, bargs.docState.at(i+4));
-                d->webPage->saveFrameState(bargs.docState.at(i), frameState);
-            }
-        }
-
         d->webView->loadUrl(u, args, bargs);
     }
 
+    // Set the url...
+    setUrl(u);
     return true;
 }
 

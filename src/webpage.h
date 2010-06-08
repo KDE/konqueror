@@ -36,22 +36,6 @@ class KWebKitPart;
 class QVariant;
 class QWebFrame;
 
-struct WebFrameState
-{
-  QUrl url;
-  int scrollPosX;
-  int scrollPosY;
-  bool handled;
-  QMultiHash<QString, QString> formData;
-
-  WebFrameState() : scrollPosX(0), scrollPosY(0), handled(false) {}
-
-  inline friend QDebug& operator<< (QDebug& stream, const WebFrameState &frameState) {
-      stream << frameState.url << frameState.scrollPosX << frameState.scrollPosY;
-      return stream;
-  }
-};
-
 
 class WebPage : public KWebPage
 {
@@ -68,29 +52,11 @@ public:
     const WebSslInfo& sslInfo() const;
 
     /**
-     * Returns the frames state for @p frameName.
-     */
-    WebFrameState frameState(const QString& frameName) const;
-
-    /**
      * Sets the cached page SSL information to @p info.
      *
      * @see WebSslInfo
      */
     void setSslInfo (const WebSslInfo &info);
-
-    /**
-     * Saves the frame state information for @p frameName.
-     *
-     * @param frameName     the frame name.
-     * @param frameState    the frame state information.
-     */
-    void saveFrameState (const QString &frameName, const WebFrameState &frameState);
-
-    /**
-     * Restores the states of all the frames in the page.
-     */
-    void restoreFrameStates();
 
     /**
      * Reimplemented for internal reasons. The API is not affected.

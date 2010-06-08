@@ -20,7 +20,6 @@
  *
  */
 
-
 #include "kwebkitpart_p.h"
 #include "kwebkitpart_ext.h"
 #include "kwebkitpart.h"
@@ -46,6 +45,8 @@
 #include <KDE/KStatusBar>
 #include <KDE/KToolInvocation>
 #include <KDE/KMenu>
+#include <KDE/KStandardDirs>
+#include <KDE/KConfig>
 #include <KDE/KAcceleratorManager>
 #include <KParts/StatusBarExtension>
 
@@ -54,6 +55,7 @@
 #include <QtDBus/QDBusInterface>
 #include <QtWebKit/QWebFrame>
 #include <QtWebKit/QWebElement>
+#include <QtWebKit/QWebHistoryItem>
 
 #define QL1S(x) QLatin1String(x)
 #define QL1C(x) QLatin1Char(x)
@@ -61,7 +63,7 @@
 
 KWebKitPartPrivate::KWebKitPartPrivate(KWebKitPart *parent)
                    :QObject(),
-                    updateHistory(true),
+                    emitOpenUrlNotify(true),
                     contentModified(false),
                     q(parent),
                     statusBarWalletLabel(0),
@@ -100,6 +102,8 @@ void KWebKitPartPrivate::init(QWidget *mainWidget)
             this, SLOT(slotLinkHovered(const QString &, const QString &, const QString &)));
     connect(webPage, SIGNAL(saveFrameStateRequested(QWebFrame *, QWebHistoryItem *)),
             this, SLOT(slotSaveFrameState(QWebFrame *, QWebHistoryItem *)));
+    connect(webPage, SIGNAL(restoreFrameStateRequested(QWebFrame *)),
+            this, SLOT(slotRestoreFrameState(QWebFrame *)));
     connect(webPage, SIGNAL(contentsChanged()), this, SLOT(slotContentsChanged()));
     connect(webPage, SIGNAL(jsStatusBarMessage(const QString &)),
             q, SIGNAL(setStatusBarText(const QString &)));
@@ -219,7 +223,7 @@ void KWebKitPartPrivate::slotContentsChanged()
 
 void KWebKitPartPrivate::slotLoadFinished(bool ok)
 {
-    updateHistory = true;
+    emitOpenUrlNotify = true;
 
     if (ok) {      
         QString linkStyle;
@@ -243,9 +247,6 @@ void KWebKitPartPrivate::slotLoadFinished(bool ok)
         if (!linkStyle.isEmpty()) {
             webPage->mainFrame()->documentElement().setAttribute(QL1S("style"), linkStyle);
         }
-
-        // Restore page state...
-        webPage->restoreFrameStates();
 
         if (webView->title().trimmed().isEmpty()) {
             // If the document title is empty, then set it to the current url
@@ -337,9 +338,21 @@ void KWebKitPartPrivate::slotShowSecurity()
 void KWebKitPartPrivate::slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item)
 {
     Q_UNUSED (item);
-    if (!frame->parentFrame() && updateHistory) {
-        emit browserExtension->openUrlNotify();
+    if (!frame->parentFrame()) {
+        kDebug() << "Update history ?" << emitOpenUrlNotify;
+        if (emitOpenUrlNotify)
+            emit browserExtension->openUrlNotify();
+
+        // Save the SSL info as the history item meta-data...
+        if (item && webPage->sslInfo().isValid())
+            item->setUserData(webPage->sslInfo().toMetaData());
     }
+}
+
+void KWebKitPartPrivate::slotRestoreFrameState(QWebFrame *frame)
+{
+    if (!frame->parentFrame())
+        emitOpenUrlNotify = true;
 }
 
 void KWebKitPartPrivate::slotLinkHovered(const QString &link, const QString &title, const QString &content)

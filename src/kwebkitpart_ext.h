@@ -40,7 +40,8 @@ public:
     virtual int xOffset();
     virtual int yOffset();
     virtual void saveState(QDataStream &);
-    virtual void restoreState(QDataStream &);
+    virtual void restoreState(QDataStream &);    
+    void restoreHistory();
 
 Q_SIGNALS:
     void saveUrl(const KUrl &);
