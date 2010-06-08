@@ -27,8 +27,8 @@
 #include <KDE/KDialog>
 #include <ktcpsocket.h>
 
-// NOTE: We need a copy of this header file is needed here because it
-// is never installed by default by KIO.
+// NOTE: We need a copy of this header file here because it is never
+// installed by default!
 
 /**
  * KDE SSL Information Dialog
