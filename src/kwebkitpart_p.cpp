@@ -62,6 +62,7 @@
 KWebKitPartPrivate::KWebKitPartPrivate(KWebKitPart *parent)
                    :QObject(),
                     updateHistory(true),
+                    contentModified(false),
                     q(parent),
                     statusBarWalletLabel(0),
                     hasCachedFormData(false)
@@ -99,6 +100,7 @@ void KWebKitPartPrivate::init(QWidget *mainWidget)
             this, SLOT(slotLinkHovered(const QString &, const QString &, const QString &)));
     connect(webPage, SIGNAL(saveFrameStateRequested(QWebFrame *, QWebHistoryItem *)),
             this, SLOT(slotSaveFrameState(QWebFrame *, QWebHistoryItem *)));
+    connect(webPage, SIGNAL(contentsChanged()), this, SLOT(slotContentsChanged()));
     connect(webPage, SIGNAL(jsStatusBarMessage(const QString &)),
             q, SIGNAL(setStatusBarText(const QString &)));
     connect(webView, SIGNAL(linkShiftClicked(const KUrl &)),
@@ -207,6 +209,12 @@ void KWebKitPartPrivate::slotLoadStarted()
 {
     emit q->started(0);
     slotWalletClosed();
+    contentModified = false;
+}
+
+void KWebKitPartPrivate::slotContentsChanged()
+{
+    contentModified = true;
 }
 
 void KWebKitPartPrivate::slotLoadFinished(bool ok)

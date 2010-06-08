@@ -224,6 +224,11 @@ QWebView * KWebKitPart::view()
     return d->webView;
 }
 
+bool KWebKitPart::isModified() const
+{
+    return d->contentModified;
+}
+
 void KWebKitPart::guiActivateEvent(KParts::GUIActivateEvent *event)
 {
     Q_UNUSED(event);

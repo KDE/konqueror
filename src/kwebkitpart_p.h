@@ -55,6 +55,7 @@ public:
     void initActions();
 
     bool updateHistory;
+    bool contentModified;
     QPointer<WebView> webView;
     QPointer<WebPage> webPage;
     QPointer<KDEPrivate::SearchBar> searchBar;
@@ -65,6 +66,7 @@ private Q_SLOTS:
     void slotShowSecurity();
     void slotShowSearchBar();
     void slotLoadStarted();
+    void slotContentsChanged();
     void slotLoadFinished(bool);
     void slotLoadAborted(const KUrl &);
 

@@ -48,6 +48,7 @@ class KWebKitPartPrivate;
 class KWEBKIT_EXPORT KWebKitPart : public KParts::ReadOnlyPart
 {
     Q_OBJECT
+    Q_PROPERTY( bool modified READ isModified )
 public:
     explicit KWebKitPart(QWidget *parentWidget = 0, QObject *parent = 0, const QStringList &/*args*/ = QStringList());
     ~KWebKitPart();
@@ -72,6 +73,13 @@ public:
      * @see QWebView.
      */
     virtual QWebView *view();
+
+    /**
+     * Checks whether the page contains unsubmitted form changes.
+     *
+     * @return @p true if form changes exist.
+     */
+    bool isModified() const;
 
 protected:
     /**
