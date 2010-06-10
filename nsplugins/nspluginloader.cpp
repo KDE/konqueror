@@ -342,6 +342,16 @@ bool NSPluginLoader::loadViewer()
       return false;
    }
 
+   bool runInValgrind = !qgetenv("VALGRIND_NSPLUGINVIEWER").isEmpty();
+
+   if (runInValgrind) {
+      _process << "konsole";
+      _process << "--noclose";      
+      _process << "-e";
+      _process << "valgrind";
+      _process << "--num-callers=50";
+   }
+
    _process << viewer;
 
    _process << "-dbusservice";
@@ -358,7 +368,7 @@ bool NSPluginLoader::loadViewer()
       //kapp->processEvents(); // would lead to recursive calls in khtml
       usleep( 50*1000 );
       cnt++;
-      if (cnt >= 100)
+      if ( cnt >= 100 && !runInValgrind )
       {
          kDebug() << "timeout";
          _process.kill();
