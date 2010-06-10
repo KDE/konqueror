@@ -71,7 +71,7 @@ typedef QPair<QString, QString> StringPair;
 
 // Sanitizes the "mailto:" url, e.g. strips out any "attach" parameters.
 static QUrl sanitizeMailToUrl(const QUrl &url, QStringList& files) {
-    QUrl sanitizedUrl;    
+    QUrl sanitizedUrl;
 
     // NOTE: This is necessary to ensure we can properly use QUrl's query
     // related APIs to process 'mailto:' urls of form 'mailto:foo@bar.com'.
@@ -280,6 +280,8 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
 
         if (frame == mainFrame()) {
             setRequestMetaData("main_frame_request", "TRUE");
+            if (d->sslInfo.isValid() && !domainSchemeMatch(request.url(), d->sslInfo.url()))
+                d->sslInfo = WebSslInfo();
         } else {
             setRequestMetaData("main_frame_request", "FALSE");
         }
@@ -445,70 +447,61 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
 {
     Q_ASSERT(reply);
     QUrl url (reply->request().url());
-    QWebFrame* frame = qobject_cast<QWebFrame *>(reply->request().originatingObject());
 
-    if (frame && d->requestQueue.removeOne(url)) {
-        //kDebug() << url;
-        const int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
-
-        if (statusCode > 300 && statusCode < 304) {
-            //kDebug() << "Redirected to" << reply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
-        } else {
-            const int errCode = errorCodeFromReply(reply);
+    if (d->requestQueue.removeOne(url)) {
+        QWebFrame* frame = qobject_cast<QWebFrame *>(reply->request().originatingObject());
+        if (frame) {
+            //kDebug() << url;
+            const int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
             const bool isMainFrameRequest = (frame == mainFrame());
 
-            // TODO: Perhaps look into supporting mixed mode, part secure part
-            // not, sites at some point. For now we only deal with SSL information
-            // for the main frame just like KHTML.
-            if (isMainFrameRequest && d->sslInfo.isValid() &&
-                !domainSchemeMatch(reply->url(), d->sslInfo.url())) {
-                //kDebug() << "Reseting cached SSL info...";
-                d->sslInfo = WebSslInfo();
-            }
-
-            // Handle any error...
-            switch (errCode) {
-                case 0:
-                    if (isMainFrameRequest) {
-                        // Obtain and set the SSL information if any...
-                        if (!d->sslInfo.isValid()) {
-                            d->sslInfo.fromMetaData(reply->attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData)));
-                            d->sslInfo.setUrl(reply->url());
+            // Only deal with non-redirect responses...
+            if (statusCode > 299 && statusCode < 400) {
+                d->sslInfo.fromMetaData(reply->attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData)),
+                                        reply->url());
+            } else {
+                const int errCode = errorCodeFromReply(reply);
+                // Handle any error...
+                switch (errCode) {
+                    case 0:
+                        if (isMainFrameRequest) {
+                            d->sslInfo.fromMetaData(reply->attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData)),
+                                                    reply->url());
+                            setPageJScriptPolicy(reply->url());
                         }
-                        setPageJScriptPolicy(reply->url());
-                    }
-                    break;
-                case KIO::ERR_ABORTED:
-                case KIO::ERR_USER_CANCELED: // Do nothing if request is cancelled/aborted
-                    //kDebug() << "User aborted request!";
-                    d->ignoreError = true;
-                    emit loadAborted(QUrl());
-                    return;
-                // Handle the user clicking on a link that refers to a directory
-                // Since KIO cannot automatically convert a GET request to a LISTDIR one.
-                case KIO::ERR_IS_DIRECTORY:
-                    d->ignoreError = true;
-                    emit loadAborted(reply->url());
-                    return;
-                default:
-                    // Make sure the saveFrameStateRequested signal is emitted so
-                    // the page can restored properly.
-                    if (isMainFrameRequest)
-                        emit saveFrameStateRequested(frame, 0);
+                        break;
+                    case KIO::ERR_ABORTED:
+                    case KIO::ERR_USER_CANCELED: // Do nothing if request is cancelled/aborted
+                        //kDebug() << "User aborted request!";
+                        d->ignoreError = true;
+                        emit loadAborted(QUrl());
+                        return;
+                    // Handle the user clicking on a link that refers to a directory
+                    // Since KIO cannot automatically convert a GET request to a LISTDIR one.
+                    case KIO::ERR_IS_DIRECTORY:
+                        d->ignoreError = true;
+                        emit loadAborted(reply->url());
+                        return;
+                    default:
+                        // Make sure the saveFrameStateRequested signal is emitted so
+                        // the page can restored properly.
+                        if (isMainFrameRequest)
+                            emit saveFrameStateRequested(frame, 0);
 
-                    d->ignoreError = false;
-                    d->kioErrorCode = errCode;
-                    break;
-            }
+                        d->ignoreError = false;
+                        d->kioErrorCode = errCode;
+                        break;
+                }
 
-            if (isMainFrameRequest) {
-                WebPagePrivate::WebPageSecurity security;
-                if (d->sslInfo.isValid())
-                    security = WebPagePrivate::PageEncrypted;
-                else
-                    security = WebPagePrivate::PageUnencrypted;
+                if (isMainFrameRequest) {
+                    WebPagePrivate::WebPageSecurity security;
+                    if (d->sslInfo.isValid())
+                        security = WebPagePrivate::PageEncrypted;
+                    else
+                        security = WebPagePrivate::PageUnencrypted;
 
-                emit d->part->browserExtension()->setPageSecurity(security);
+                    emit d->part->browserExtension()->setPageSecurity(security);
+                }
             }
         }
     }

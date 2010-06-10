@@ -49,7 +49,7 @@ public:
   QList<QSslCertificate> certificateChain() const;
 
   QVariant toMetaData() const;
-  void fromMetaData (const QVariant &);
+  void fromMetaData (const QVariant &, const QUrl& = QUrl());
 
   void setUrl (const QUrl &url);
   WebSslInfo& operator = (const WebSslInfo&);

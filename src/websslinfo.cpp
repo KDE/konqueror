@@ -148,7 +148,7 @@ QVariant WebSslInfo::toMetaData() const
   return QVariant();
 }
 
-void WebSslInfo::fromMetaData(const QVariant& value)
+void WebSslInfo::fromMetaData(const QVariant& value, const QUrl& url)
 {
   if (value.isValid() && value.type() == QVariant::Map) {
     QMap<QString,QVariant> metaData = value.toMap();
@@ -161,6 +161,7 @@ void WebSslInfo::fromMetaData(const QVariant& value)
         setCertificateErrors(metaData.value("ssl_cert_errors").toString());
         setUsedCipherBits(metaData.value("ssl_cipher_used_bits").toString());
         setSupportedCipherBits(metaData.value("ssl_cipher_bits").toString());
+        setUrl(url);
     }
   }
 }
