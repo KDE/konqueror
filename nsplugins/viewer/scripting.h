@@ -88,7 +88,7 @@ private:
   NPObject*         _window;
   NPObject*         _pluginElement;
 
-  Q_DISABLE_COPY(ScriptExportEngine);
+  Q_DISABLE_COPY(ScriptExportEngine)
 };
 
 } // namespace kdeNsPluginViewer
