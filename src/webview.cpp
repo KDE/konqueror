@@ -39,6 +39,7 @@
 #include <KDE/KStandardDirs>
 #include <KDE/KActionMenu>
 #include <KDE/KIO/AccessManager>
+#include <KDE/KStringHandler>
 
 #include <QtNetwork/QHttpRequestHeader>
 #include <QtNetwork/QNetworkRequest>
@@ -46,22 +47,13 @@
 
 #include <QtWebKit/QWebHitTestResult>
 
+#define QL1S(x)   QLatin1String(x)
+
 class WebView::WebViewPrivate
 {
 public:
     WebViewPrivate() {}
-
     void addSearchActions(QList<QAction *>& selectActions, QWebView*);
-    QString selectedTextAsOneLine(const QString &) const;
-
-    /**
-    * Returns selectedText without any leading or trailing whitespace,
-    * and with non-breaking-spaces turned into normal spaces.
-    *
-    * Note that hasSelection can return true and yet simplifiedSelectedText can be empty,
-    * e.g. when selecting a single space.
-    */
-    QString simplifiedSelectedText(const QString&) const;
 
     KActionCollection* actionCollection;
     QWebHitTestResult result;
@@ -116,7 +108,7 @@ void WebView::contextMenuEvent(QContextMenuEvent *e)
     flags |= KParts::BrowserExtension::ShowBookmark;
     flags |= KParts::BrowserExtension::ShowReload;
     KParts::BrowserExtension::ActionGroupMap mapAction;
-    QString mimeType (QLatin1String("text/html"));
+    QString mimeType (QL1S("text/html"));
 
     KUrl emitUrl;
     if (!d->result.linkUrl().isEmpty()) {
@@ -165,10 +157,10 @@ void WebView::contextMenuEvent(QContextMenuEvent *e)
 void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &partGroupMap)
 {
     QList<QAction *>partActions;
-    
+
     if (d->result.frame()->parentFrame()) {
         KActionMenu * menu = new KActionMenu(i18nc("@title:menu HTML frame/iframe", "Frame"), this);
-        
+
         KAction * action = new KAction(i18n("Open in New &Window"), this);
         d->actionCollection->addAction("frameinwindow", action);
         action->setIcon(KIcon("window-new"));
@@ -189,12 +181,12 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &part
         action = new KAction(d->actionCollection);
         action->setSeparator(true);
         menu->addAction(action);
-        
+
         action = new KAction(i18n("Reload Frame"), this);
         d->actionCollection->addAction("reloadframe", action);
         connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotReloadFrame()));
         menu->addAction(action);
-        
+
         action = new KAction(i18n("Print Frame..."), this);
         d->actionCollection->addAction("printFrame", action);
         action->setIcon(KIcon("document-print-frame"));
@@ -214,14 +206,14 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &part
 //         action = new KAction(i18n("View Frame Information"), this);
 //         d->actionCollection->addAction("viewFrameInfo", action);
 //         connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotViewPageInfo()));
-        
+
         action = new KAction(d->actionCollection);
         action->setSeparator(true);
         menu->addAction(action);
-    
+
         partActions.append(menu);
     }
- 
+
     if (!d->result.imageUrl().isEmpty()) {
         QAction *action;
         if (!d->actionCollection->action("saveimageas")) {
@@ -283,13 +275,10 @@ void WebView::selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &se
 
     d->addSearchActions(selectActions, this);
 
-    QString selectedTextURL = d->selectedTextAsOneLine(selectedText());
+    const QString selectedTextURL = selectedText().simplified();
     if (selectedTextURL.contains("://") && KUrl(selectedTextURL).isValid()) {
-        if (selectedTextURL.length() > 18) {
-            selectedTextURL.truncate(15);
-            selectedTextURL += "...";
-        }
-        KAction *action = new KAction(i18nc("open selected url", "Open '%1'", selectedTextURL), this);
+        KAction *action = new KAction(i18nc("open selected url", "Open '%1'",
+                                            KStringHandler::rsqueeze(selectedTextURL, 18)), this);
         d->actionCollection->addAction("openSelection", action);
         action->setIcon(KIcon("window-new"));
         connect(action, SIGNAL(triggered(bool)), this, SLOT(openSelection()));
@@ -327,22 +316,57 @@ void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &link
 
 void WebView::WebViewPrivate::addSearchActions(QList<QAction *>& selectActions, QWebView *view)
 {
+   // search text
+    const QString selectedText = view->selectedText().simplified();
+    if (selectedText.isEmpty())
+        return;
+
+#if KDE_IS_VERSION(4,4,86)
+    KUriFilterData data;
+    data.setData(selectedText);
+    data.setAlternateDefaultSearchProvider(QL1S("google"));
+    data.setAlternateSearchProviders(QStringList()
+                                     << QL1S("google") << QL1S("wikipedia")
+                                     << QL1S("webster") << QL1S("dmoz"));
+
+    if (KUriFilter::self()->filterUri(data, QStringList() << QL1S("kuriikwsfilter"))) {
+        const QString squeezedText = KStringHandler::rsqueeze(selectedText, 20);
+        KAction *action = new KAction(i18nc("Search \"search provider\" for \"text\"", "Search %1 for '%2'",
+                                            data.searchProvider(), squeezedText), view);
+        action->setData(QUrl(data.uri()));
+        action->setIcon(KIcon(data.iconName()));
+        connect(action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT(searchProvider()));
+        actionCollection->addAction(QL1S("defaultSearchProvider"), action);
+        selectActions.append(action);
+
+
+        const QStringList preferredSearchProviders = data.preferredSearchProviders();
+        if (!preferredSearchProviders.isEmpty()) {
+            KActionMenu* providerList = new KActionMenu(i18nc("Search for \"text\" with",
+                                                              "Search for '%1' with", squeezedText), view);
+            Q_FOREACH(const QString &searchProvider, preferredSearchProviders) {
+                if (searchProvider == data.searchProvider())
+                    continue;
+
+                KAction *action = new KAction(searchProvider, view);
+                action->setData(data.queryForPreferredSearchProvider(searchProvider));
+                actionCollection->addAction(searchProvider, action);
+                action->setIcon(KIcon(data.iconNameForPreferredSearchProvider(searchProvider)));
+                connect(action, SIGNAL(triggered(bool)), part->browserExtension(), SLOT(searchProvider()));
+
+                providerList->addAction(action);
+            }
+            actionCollection->addAction("searchProviderList", providerList);
+            selectActions.append(providerList);
+        }
+    }
+#else
+    // TODO: Remove the code below after the release of 4.6.
     // Fill search provider entries
     KConfig config("kuriikwsfilterrc");
     KConfigGroup cg = config.group("General");
     const QString defaultEngine = cg.readEntry("DefaultSearchEngine", "google");
     const char keywordDelimiter = cg.readEntry("KeywordDelimiter", ":").at(0).toLatin1();
-
-    // search text
-    QString selectedText = selectedTextAsOneLine(view->selectedText());
-    if (selectedText.isEmpty())
-        return;
-
-    selectedText.replace('&', "&&");
-    if (selectedText.length() > 18) {
-        selectedText.truncate(15);
-        selectedText += "...";
-    }
 
     // default search provider
     KService::Ptr service = KService::serviceByDesktopPath(QString("searchproviders/%1.desktop").arg(defaultEngine));
@@ -411,34 +435,12 @@ void WebView::WebViewPrivate::addSearchActions(QList<QAction *>& selectActions, 
             }
         }
     }
-}
-
-QString WebView::WebViewPrivate::simplifiedSelectedText(const QString &_text) const
-{
-    QString text (_text);
-    text.replace(QChar(0xa0), ' ');
-    // remove leading and trailing whitespace
-    while (!text.isEmpty() && text[0].isSpace())
-        text = text.mid(1);
-    while (!text.isEmpty() && text[text.length()-1].isSpace())
-        text.truncate(text.length() - 1);
-    return text;
-}
-
-QString WebView::WebViewPrivate::selectedTextAsOneLine(const QString &_text) const
-{
-    QString text = this->simplifiedSelectedText(_text);
-    // in addition to what simplifiedSelectedText does,
-    // remove linefeeds and any whitespace surrounding it (#113177),
-    // to get it all in a single line.
-    text.remove(QRegExp("[\\s]*\\n+[\\s]*"));
-    return text;
+#endif
 }
 
 void WebView::openSelection()
 {
     KParts::BrowserArguments browserArgs;
     browserArgs.frameName = "_blank";
-
-    emit d->part->browserExtension()->openUrlRequest(d->selectedTextAsOneLine(selectedText()), KParts::OpenUrlArguments(), browserArgs);
+    emit d->part->browserExtension()->openUrlRequest(selectedText().simplified(), KParts::OpenUrlArguments(), browserArgs);
 }

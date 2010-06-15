@@ -28,6 +28,7 @@
 #include "websslinfo.h"
 #include "settings/webkitsettings.h"
 
+#include <KDE/KAction>
 #include <KDE/KUriFilterData>
 #include <KDE/KDesktopFile>
 #include <KDE/KConfigGroup>
@@ -40,6 +41,7 @@
 #include <KDE/KDebug>
 #include <KDE/KPrintPreview>
 #include <KDE/KStandardDirs>
+#include <kdeversion.h>
 
 #include <QtCore/QPointer>
 #include <QtGui/QClipboard>
@@ -205,6 +207,19 @@ void WebKitBrowserExtension::updateEditActions()
 void WebKitBrowserExtension::searchProvider()
 {
     if (d->view) {
+        KUrl url;
+#if KDE_IS_VERSION(4,4,86)
+        KAction *action = qobject_cast<KAction*>(sender());
+        if (action) {
+            url = action->data().toUrl();
+            if (url.host().isEmpty()) {
+                KUriFilterData data;
+                data.setData(action->data().toString());
+                if (KUriFilter::self()->filterUri(data, QStringList() << QL1S("kurisearchfilter")))
+                    url = data.uri();
+            }
+        }
+#else
         // action name is of form "previewProvider[<searchproviderprefix>:]"
         const QString searchProviderPrefix = QString(sender()->objectName()).mid(14);
 
@@ -221,10 +236,11 @@ void WebKitBrowserExtension::searchProvider()
             data.setData(cg.readEntry("Query").replace("\\{@}", encodedSearchTerm));
         }
 
+        url = data.uri();
+#endif
         KParts::BrowserArguments browserArgs;
         browserArgs.frameName = "_blank";
-
-        emit openUrlRequest(data.uri(), KParts::OpenUrlArguments(), browserArgs);
+        emit openUrlRequest(url, KParts::OpenUrlArguments(), browserArgs);
     }
 }
 
@@ -235,7 +251,7 @@ void WebKitBrowserExtension::reparseConfiguration()
 }
 
 void WebKitBrowserExtension::zoomIn()
-{  
+{
     if (d->view)
         d->view->setZoomFactor(d->view->zoomFactor() + 0.1);
 }
