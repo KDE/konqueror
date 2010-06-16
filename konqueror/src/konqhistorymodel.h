@@ -58,8 +58,9 @@ private Q_SLOTS:
     void slotEntryRemoved(const KonqHistoryEntry &);
 
 private:
+    enum SignalEmission { EmitSignals, DontEmitSignals };
     KHM::Entry* entryFromIndex(const QModelIndex &index, bool returnRootIfNull = false) const;
-    KHM::GroupEntry* getGroupItem(const KUrl &url);
+    KHM::GroupEntry* getGroupItem(const KUrl &url, SignalEmission se);
     QModelIndex indexFor(KHM::HistoryEntry *entry) const;
     QModelIndex indexFor(KHM::GroupEntry *entry) const;
 
