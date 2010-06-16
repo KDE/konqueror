@@ -254,7 +254,7 @@ KonqHistoryModel::KonqHistoryModel(QObject *parent)
     KonqHistoryList::const_iterator it = entries.constBegin();
     const KonqHistoryList::const_iterator end = entries.constEnd();
     for ( ; it != end ; ++it) {
-        KHM::GroupEntry *group = getGroupItem((*it).url);
+        KHM::GroupEntry *group = getGroupItem((*it).url, DontEmitSignals);
         KHM::HistoryEntry *item = new KHM::HistoryEntry((*it), group);
         Q_UNUSED(item);
     }
@@ -379,7 +379,7 @@ void KonqHistoryModel::clear()
 
 void KonqHistoryModel::slotEntryAdded(const KonqHistoryEntry &entry)
 {
-    KHM::GroupEntry *group = getGroupItem(entry.url);
+    KHM::GroupEntry *group = getGroupItem(entry.url, EmitSignals);
     KHM::HistoryEntry *item = group->findChild(entry);
     if (!item) {
         beginInsertRows(indexFor(group), group->entries.count(), group->entries.count());
@@ -439,16 +439,20 @@ KHM::Entry* KonqHistoryModel::entryFromIndex(const QModelIndex &index, bool retu
     return returnRootIfNull ? m_root : 0;
 }
 
-KHM::GroupEntry* KonqHistoryModel::getGroupItem(const KUrl &url)
+KHM::GroupEntry* KonqHistoryModel::getGroupItem(const KUrl &url, SignalEmission se)
 {
     const QString &groupKey = groupForUrl(url);
     KHM::GroupEntry *group = m_root->groupsByName.value(groupKey);
     if (!group) {
-        beginInsertRows(QModelIndex(), m_root->groups.count(), m_root->groups.count());
+        if (se == EmitSignals) {
+            beginInsertRows(QModelIndex(), m_root->groups.count(), m_root->groups.count());
+        }
         group = new KHM::GroupEntry(url, groupKey);
         m_root->groups.append(group);
         m_root->groupsByName.insert(groupKey, group);
-        endInsertRows();
+        if (se == EmitSignals) {
+            endInsertRows();
+        }
     }
 
     return group;
