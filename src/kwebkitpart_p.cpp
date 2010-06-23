@@ -33,6 +33,7 @@
 
 #include <kwebwallet.h>
 #include <kdeversion.h>
+#include <kcodecaction.h>
 #include <KDE/KLocalizedString>
 #include <KDE/KStringHandler>
 #include <KDE/KMessageBox>
@@ -51,6 +52,7 @@
 #include <KParts/StatusBarExtension>
 
 #include <QtCore/QFile>
+#include <QtCore/QTextCodec>
 #include <QtGui/QVBoxLayout>
 #include <QtDBus/QDBusInterface>
 #include <QtWebKit/QWebFrame>
@@ -126,7 +128,7 @@ void KWebKitPartPrivate::init(QWidget *mainWidget)
     statusBarExtension = new KParts::StatusBarExtension(q);
 
     // Create and setup the password bar...
-    KDEPrivate::PasswordBar *passwordBar = new KDEPrivate::PasswordBar(mainWidget);    
+    KDEPrivate::PasswordBar *passwordBar = new KDEPrivate::PasswordBar(mainWidget);
     KWebWallet *webWallet = webPage->wallet();
 
     if (webWallet) {
@@ -190,6 +192,10 @@ void KWebKitPartPrivate::initActions()
     action->setShortcutContext(Qt::WidgetShortcut);
     webView->addAction(action);
 
+    KCodecAction *codecAction = new KCodecAction( KIcon("character-set"), i18n( "Set &Encoding" ), this, true );
+    q->actionCollection()->addAction( "setEncoding", codecAction );
+    connect(codecAction, SIGNAL(triggered(QTextCodec*)), SLOT(slotSetTextEncoding(QTextCodec*)));
+
     action = new KAction(i18n("View Do&cument Source"), this);
     q->actionCollection()->addAction("viewDocumentSource", action);
     action->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_U));
@@ -225,7 +231,7 @@ void KWebKitPartPrivate::slotLoadFinished(bool ok)
 {
     emitOpenUrlNotify = true;
 
-    if (ok) {      
+    if (ok) {
         QString linkStyle;
 
         QColor linkColor = WebKitSettings::self()->vLinkColor();
@@ -438,7 +444,7 @@ void KWebKitPartPrivate::slotLinkHovered(const QString &link, const QString &tit
 }
 
 void KWebKitPartPrivate::slotSearchForText(const QString &text, bool backward)
-{   
+{
     QWebPage::FindFlags flags = QWebPage::FindWrapsAroundDocument;
 
     if (backward)
@@ -523,6 +529,18 @@ void KWebKitPartPrivate::slotRemoveCachedPasswords()
     if (webPage && webPage->wallet()) {
         webPage->wallet()->removeFormData(webPage->mainFrame(), true);
         hasCachedFormData = false;
+    }
+}
+
+void KWebKitPartPrivate::slotSetTextEncoding(QTextCodec * codec)
+{
+    if (webPage) {
+        QWebSettings *localSettings = webPage->settings();
+        if (localSettings) {
+            kDebug() << codec->name();
+            localSettings->setDefaultTextEncoding(codec->name());
+            webPage->triggerAction(QWebPage::Reload);
+        }
     }
 }
 

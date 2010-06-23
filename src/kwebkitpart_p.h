@@ -44,6 +44,7 @@ class QUrl;
 class QWidget;
 class QAction;
 class QWebFrame;
+class QTextCodec;
 class QWebHistoryItem;
 
 class KWebKitPartPrivate : public QObject
@@ -83,11 +84,12 @@ private Q_SLOTS:
     void slotLaunchWalletManager();
     void slotDeleteNonPasswordStorableSite();
     void slotRemoveCachedPasswords();
+    void slotSetTextEncoding(QTextCodec*);
 
 private:
     KWebKitPart *q;
     KUrlLabel *statusBarWalletLabel;
-    bool hasCachedFormData;    
+    bool hasCachedFormData;
 };
 
 #endif // KWEBKITPART_P_H
