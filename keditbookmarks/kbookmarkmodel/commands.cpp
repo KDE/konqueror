@@ -447,8 +447,8 @@ void SortCommand::redo()
 }
 
 void SortCommand::moveAfter(const SortItem &moveMe,
-        const SortItem &afterMe) {
-    QString destAddress =
+                            const SortItem &afterMe) {
+    const QString destAddress =
         afterMe.isNull()
         // move as first child
         ? KBookmark::parentAddress(moveMe.bookmark().address()) + "/0"

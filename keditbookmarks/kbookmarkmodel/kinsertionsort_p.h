@@ -1,5 +1,3 @@
-// -*- c-basic-offset: 4; indent-tabs-mode:nil -*-
-// vim: set ts=4 sts=4 sw=4 et:
 /* This file is part of the KDE project
    Copyright (C) 2000 David Faure <faure@kde.org>
 
@@ -19,6 +17,8 @@
 
 #ifndef KINSERTIONSORT_H
 #define KINSERTIONSORT_H
+
+#include <kdebug.h>
 
 /**
  * A template-based insertion sort algorithm, but not really 100%
@@ -41,17 +41,22 @@ inline void kInsertionSort( Item& firstChild, SortHelper& sortHelper )
     while ( !j.isNull() )
     {
         Key key = Criteria::key(j);
+        //kDebug() << "Looking at j=" << key;
         // Insert A[j] into the sorted sequence A[1..j-1]
         Item i = j.previousSibling();
+        Item next = j.nextSibling();
         bool moved = false;
         while ( !i.isNull() && Criteria::key(i) > key )
         {
             i = i.previousSibling();
             moved = true;
         }
-        if ( moved )
+        if ( moved ) {
+            //kDebug() << "moveAfter(" << Criteria::key(j) << "," << (i.isNull() ? "null" : Criteria::key(i)) << ")";
             sortHelper.moveAfter( j, i ); // move j right after i. If i is null, move to first position.
-        j = j.nextSibling();
+        }
+        j = next;
+        //kDebug() << "Now j is" << Criteria::key(next);
     }
 }
 

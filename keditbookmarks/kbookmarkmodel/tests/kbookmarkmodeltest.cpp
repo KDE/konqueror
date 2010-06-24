@@ -18,6 +18,8 @@
  *  Boston, MA 02110-1301, USA.
  */
 
+#include <QAction>
+#include <kactioncollection.h>
 #include <kstandarddirs.h>
 #include <kdebug.h>
 #include <qtest_kde.h>
@@ -42,24 +44,31 @@ public:
         BookmarkLister lister(mgr->root());
         return lister.m_urlList;
     }
+    static QStringList titleList(KBookmarkManager* mgr) {
+        BookmarkLister lister(mgr->root());
+        return lister.m_titleList;
+    }
     virtual void visit(const KBookmark& bk) {
         m_addressList.append(bk.address());
         m_urlList.append(bk.url().url());
+        m_titleList.append(bk.text());
     }
     virtual void visitEnter(const KBookmarkGroup& group) {
         m_addressList.append(group.address() + '/');
+        m_titleList.append(group.text());
     }
 
 private:
     QStringList m_addressList;
     QStringList m_urlList;
+    QStringList m_titleList;
 };
 
 class KBookmarkModelTest : public QObject
 {
     Q_OBJECT
 public:
-    KBookmarkModelTest() {}
+    KBookmarkModelTest() : m_collection(this) {}
 private:
 
 private Q_SLOTS:
@@ -76,6 +85,7 @@ private Q_SLOTS:
         m_rootIndex = m_model->index(0, 0);
         QVERIFY(m_rootIndex.isValid());
         QCOMPARE(m_model->rowCount(m_rootIndex), 0);
+        m_cmdHistory->createActions(&m_collection);
     }
 
     // The commands modify the model, so the test code uses the commands
@@ -111,20 +121,19 @@ private Q_SLOTS:
 
     void testCreateFolder()
     {
-        CreateCommand folderCmd(m_model, "/0", "folder", "folder", true /*open*/);
-        folderCmd.redo();
+        CreateCommand* folderCmd = new CreateCommand(m_model, "/0", "folder", "folder", true /*open*/);
+        m_cmdHistory->addCommand(folderCmd); // calls redo
         QCOMPARE(BookmarkLister::addressList(m_bookmarkManager), QStringList() << "/0/");
         QCOMPARE(m_model->rowCount(m_rootIndex), 1);
 
         const QString kde = "http://www.kde.org";
-        CreateCommand cmd(m_model, "/0/0", "test_bk", "www", KUrl(kde));
-        cmd.redo();
+        CreateCommand* cmd = new CreateCommand(m_model, "/0/0", "test_bk", "www", KUrl(kde));
+        m_cmdHistory->addCommand(cmd); // calls redo
         QCOMPARE(BookmarkLister::addressList(m_bookmarkManager), QStringList() << "/0/" << "/0/0");
 
         // Insert before this bookmark
         const QString first = "http://first.example.com";
-        CreateCommand cmdFirstBk(m_model, "/0/0", "first_bk", "www", KUrl(first));
-        cmdFirstBk.redo();
+        m_cmdHistory->addCommand(new CreateCommand(m_model, "/0/0", "first_bk", "www", KUrl(first)));
         QCOMPARE(BookmarkLister::addressList(m_bookmarkManager), QStringList() << "/0/" << "/0/0" << "/0/1");
         QCOMPARE(BookmarkLister::urlList(m_bookmarkManager), QStringList() << first << kde);
 
@@ -151,15 +160,57 @@ private Q_SLOTS:
         QVERIFY(ok);
         QCOMPARE(BookmarkLister::urlList(m_bookmarkManager), QStringList() << first << kde);
         delete mimeData;
+        undoAll();
+    }
+
+    void testSort()
+    {
+        QCOMPARE(BookmarkLister::addressList(m_bookmarkManager), QStringList());
+        CreateCommand* folderCmd = new CreateCommand(m_model, "/0", "folder", "folder", true /*open*/);
+        m_cmdHistory->addCommand(folderCmd); // calls redo
+        const QString kde = "http://www.kde.org";
+        QStringList bookmarks;
+        bookmarks << "Faure" << "Web" << "Kde" << "Avatar" << "David";
+        for (int i = 0; i < bookmarks.count(); ++i) {
+            m_cmdHistory->addCommand(new CreateCommand(m_model, "/0/" + QString::number(i), bookmarks[i], "www", KUrl(kde)));
+        }
+        const QStringList addresses = BookmarkLister::addressList(m_bookmarkManager);
+        //kDebug() << addresses;
+        const QStringList origTitleList = BookmarkLister::titleList(m_bookmarkManager);
+        QCOMPARE(addresses.count(), bookmarks.count() + 1 /* parent folder */);
+        SortCommand* sortCmd = new SortCommand(m_model, "Sort", "/0");
+        m_cmdHistory->addCommand(sortCmd);
+        QStringList expectedTitleList = bookmarks;
+        expectedTitleList.sort();
+        expectedTitleList.prepend("folder");
+        const QStringList sortedTitles = BookmarkLister::titleList(m_bookmarkManager);
+        //kDebug() << sortedTitles;
+        QCOMPARE(sortedTitles, expectedTitleList);
+
+        sortCmd->undo();
+        QCOMPARE(BookmarkLister::titleList(m_bookmarkManager), origTitleList);
+        sortCmd->redo();
+        undoAll();
     }
 
 private:
+    void undoAll()
+    {
+        QAction* undoAction = m_collection.action(KStandardAction::name(KStandardAction::Undo));
+        QVERIFY(undoAction);
+        while (undoAction->isEnabled()) {
+            undoAction->trigger();
+        }
+        QCOMPARE(BookmarkLister::addressList(m_bookmarkManager), QStringList());
+    }
+
     KBookmarkManager* m_bookmarkManager;
     KBookmarkModel* m_model;
     CommandHistory* m_cmdHistory;
+    KActionCollection m_collection;
     QModelIndex m_rootIndex; // the index of the "Bookmarks" root
 };
 
-QTEST_KDEMAIN( KBookmarkModelTest, NoGUI )
+QTEST_KDEMAIN( KBookmarkModelTest, GUI /*needed by the kactions*/ )
 
 #include "kbookmarkmodeltest.moc"
