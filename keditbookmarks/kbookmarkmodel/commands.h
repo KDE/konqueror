@@ -30,7 +30,7 @@ class KBookmarkModel;
 // affected by executing or unexecuting the command
 // Or a common parent of the affected bookmarks
 // see KBookmarkManager::notifyChange(KBookmarkGroup)
-class IKEBCommand
+class KBOOKMARKMODEL_EXPORT IKEBCommand
 {
 public:
    IKEBCommand() {}
