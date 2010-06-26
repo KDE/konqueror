@@ -217,6 +217,7 @@ void KWebKitPartPrivate::initActions()
 
 void KWebKitPartPrivate::slotLoadStarted()
 {
+    kDebug();
     emit q->started(0);
     slotWalletClosed();
     contentModified = false;
@@ -233,8 +234,8 @@ void KWebKitPartPrivate::slotLoadFinished(bool ok)
 
     if (ok) {
         QString linkStyle;
-
         QColor linkColor = WebKitSettings::self()->vLinkColor();
+
         if (linkColor.isValid())
             linkStyle += QString::fromLatin1("a:visited {color: rgb(%1,%2,%3);}\n")
                          .arg(linkColor.red()).arg(linkColor.green()).arg(linkColor.blue());
@@ -244,15 +245,13 @@ void KWebKitPartPrivate::slotLoadFinished(bool ok)
             linkStyle += QString::fromLatin1("a:active {color: rgb(%1,%2,%3);}\n")
                          .arg(linkColor.red()).arg(linkColor.green()).arg(linkColor.blue());
 
-        if (WebKitSettings::self()->underlineLink()) {
+        if (WebKitSettings::self()->underlineLink())
             linkStyle += QL1S("a:link {text-decoration:underline;}\n");
-        } else if (WebKitSettings::self()->hoverLink()) {
+        else if (WebKitSettings::self()->hoverLink())
             linkStyle += QL1S("a:hover {text-decoration:underline;}\n");
-        }
 
-        if (!linkStyle.isEmpty()) {
+        if (!linkStyle.isEmpty())
             webPage->mainFrame()->documentElement().setAttribute(QL1S("style"), linkStyle);
-        }
 
         if (webView->title().trimmed().isEmpty()) {
             // If the document title is empty, then set it to the current url
@@ -285,6 +284,14 @@ void KWebKitPartPrivate::slotLoadFinished(bool ok)
                 hasCachedFormData = true;
             }
         }
+
+        // Set the favicon specified through the <link> tag...
+        const QWebElement element = webPage->mainFrame()->findFirstElement(QL1S("head>link[rel=icon]"));
+        const QString href = element.attribute("href");
+        if (!element.isNull()) {
+            kDebug() << "Setting favicon to" << href;
+            browserExtension->setIconUrl(KUrl(href));
+        }
     }
 
     /*
@@ -300,7 +307,7 @@ void KWebKitPartPrivate::slotLoadFinished(bool ok)
             webPage->triggerAction(QWebPage::StopScheduledPageRefresh);
     }
 #endif
-    emit q->completed(pending);
+    emit q->completed((ok && pending));
 }
 
 void KWebKitPartPrivate::slotLoadAborted(const KUrl & url)
@@ -539,7 +546,8 @@ void KWebKitPartPrivate::slotSetTextEncoding(QTextCodec * codec)
         if (localSettings) {
             kDebug() << codec->name();
             localSettings->setDefaultTextEncoding(codec->name());
-            webPage->triggerAction(QWebPage::Reload);
+            q->openUrl(q->url());
+            //webPage->triggerAction(QWebPage::Reload);
         }
     }
 }
