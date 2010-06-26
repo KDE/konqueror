@@ -343,13 +343,21 @@ bool NSPluginLoader::loadViewer()
    }
 
    bool runInValgrind = !qgetenv("VALGRIND_NSPLUGINVIEWER").isEmpty();
+   bool runInGdb      = !qgetenv("GDB_NSPLUGINVIEWER").isEmpty();
 
-   if (runInValgrind) {
+   if (runInValgrind || runInGdb) {
       _process << "konsole";
-      _process << "--noclose";      
+      _process << "--nofork";
+      _process << "--noclose";   
       _process << "-e";
-      _process << "valgrind";
-      _process << "--num-callers=50";
+
+      if (runInValgrind) {
+         _process << "valgrind";
+         _process << "--num-callers=50";
+      } else {
+         _process << "gdb";
+         _process << "--args";
+      }
    }
 
    _process << viewer;
@@ -368,7 +376,7 @@ bool NSPluginLoader::loadViewer()
       //kapp->processEvents(); // would lead to recursive calls in khtml
       usleep( 50*1000 );
       cnt++;
-      if ( cnt >= 100 && !runInValgrind )
+      if ( cnt >= 100 && !runInValgrind && !runInGdb )
       {
          kDebug() << "timeout";
          _process.kill();
