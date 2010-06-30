@@ -34,8 +34,6 @@ set_target_properties(kwebkit PROPERTIES VERSION 0.9.5 SOVERSION 0.9.5)
 kde4_add_plugin(kwebkitpart kwebkitpartfactory.cpp)
 
 target_link_libraries(kwebkitpart ${KDE4_KPARTS_LIBS} ${QT_QTWEBKIT_LIBRARY} kwebkit)
-
-set_target_properties(kwebkitpart PROPERTIES VERSION 0.9.5 SOVERSION 0.9.5)
 ########################### kwebkitpart #############################
 
 install(FILES kwebkitpart.h kwebkit_export.h DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel)
