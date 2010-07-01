@@ -192,8 +192,6 @@ KonqSidebarTree::KonqSidebarTree( KonqSidebarOldTreeModule *parent, QWidget *par
         m_bOpeningFirstChild = false;
     }
 
-    setFrameStyle( QFrame::ToolBarPanel | QFrame::Raised );
-
     OrgKdeKDirNotifyInterface *kdirnotify = new OrgKdeKDirNotifyInterface(QString(), QString(), QDBusConnection::sessionBus());
     kdirnotify->setParent(this);
     connect(kdirnotify, SIGNAL(FilesAdded(QString)), SLOT(slotFilesAdded(QString)));
