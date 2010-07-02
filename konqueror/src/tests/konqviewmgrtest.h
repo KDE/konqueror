@@ -52,6 +52,7 @@ private Q_SLOTS:
     void testDeletePartInTab();
     void testLoadProfile();
     void testLoadOldProfile();
+    void testSaveProfile();
 
     void testDuplicateWindow();
     void testDuplicateWindowWithSidebar();

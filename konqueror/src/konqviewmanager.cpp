@@ -863,7 +863,7 @@ KonqView *KonqViewManager::setupView( KonqFrameContainerBase *parentContainer,
 void KonqViewManager::saveViewProfileToFile(const QString & fileName, const QString & profileName, KonqFrameBase::Options options)
 {
     const QString path = KStandardDirs::locateLocal("data", QString::fromLatin1("konqueror/profiles/") +
-                                                    fileName, KGlobal::mainComponent());
+                                                    fileName);
     QFile::remove(path); // in case it exists already
 
     KConfig _cfg(path, KConfig::SimpleConfig);
