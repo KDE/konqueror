@@ -297,12 +297,14 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
 QWebPage *WebPage::createWindow(WebWindowType type)
 {
     KParts::ReadOnlyPart *part = 0;
+    KParts::OpenUrlArguments args;
     KParts::BrowserArguments bargs;
+    args.setActionRequestedByUser(false);
+
     if (type == WebModalDialog)
         bargs.setForcesNewWindow(true);
 
-    d->part->browserExtension()->createNewWindow(KUrl("about:blank"), KParts::OpenUrlArguments(),
-                                                 bargs, KParts::WindowArgs(), &part);
+    d->part->browserExtension()->createNewWindow(KUrl("about:blank"), args, bargs, KParts::WindowArgs(), &part);
 
     KWebKitPart *webKitPart = qobject_cast<KWebKitPart*>(part);
     if (webKitPart)
