@@ -100,9 +100,9 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv)
     options.add("profile <profile>", ki18n("Profile to open"));
 
     options.add("profiles", ki18n("List available profiles"));
-  
+
     options.add("sessions", ki18n("List available sessions"));
-  
+
     options.add("open-session <session>", ki18n("Session to open"));
 
     options.add("mimetype <mimetype>", ki18n("Mimetype to use for this URL (e.g. text/html or inode/directory)"));
@@ -151,19 +151,19 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv)
             if (!session.startsWith('/')) {
                 sessionPath = KStandardDirs::locateLocal("appdata", "sessions/" + session);
             }
-       
+
             QDirIterator it(sessionPath, QDir::Readable|QDir::Files);
             if (!it.hasNext()) {
                 kError() << "session" << session << "not found or empty";
                 return -1;
             }
-       
+
             KonqSessionManager::self()->restoreSessions(sessionPath);
         } else if (args->count() == 0) {
             // No args. If --silent, do nothing, otherwise create a default window.
             if (!args->isSet("silent")) {
-                const QString profile = KonqMisc::defaultProfileName();
-                KonqMisc::createBrowserWindowFromProfile(KonqMisc::defaultProfilePath(), profile);
+                const QString profile = args->getOption("profile");
+                KonqMisc::createBrowserWindowFromProfile(QString(), profile);
             }
         } else {
             // Now is a good time to parse each argument as a URL.
@@ -178,7 +178,7 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv)
             }
 
             QStringList filesToSelect;
-     
+
             if (args->isSet("select")) {
                 // Get all distinct directories from 'files' and open a tab
                 // for each directory.
@@ -194,25 +194,16 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv)
             }
 
             KUrl firstUrl = urlList.takeFirst();
-            
+
             KParts::OpenUrlArguments urlargs;
             if (args->isSet("mimetype"))
                 urlargs.setMimeType(args->getOption("mimetype"));
 
-            KonqMainWindow * mainwin = 0;            
+            KonqMainWindow * mainwin = 0;
             if (args->isSet("profile")) {
-                QString profile = args->getOption("profile");
-                QString profilePath = profile;
-                if (!profile.startsWith('/')) {
-                    profilePath = KStandardDirs::locate("data", QLatin1String("konqueror/profiles/")+profile);
-                    if (profilePath.isEmpty()) {
-                        profile = KonqMisc::defaultProfileName();
-                        profilePath = KonqMisc::defaultProfilePath();
-                    }
-                }
-
-                kDebug() << "main() -> createBrowserWindowFromProfile mimeType=" << urlargs.mimeType();
-                mainwin = KonqMisc::createBrowserWindowFromProfile(profilePath, profile, firstUrl, urlargs, KParts::BrowserArguments(), false /*forbidUseHTML*/, filesToSelect);
+                const QString profile = args->getOption("profile");
+                //kDebug() << "main() -> createBrowserWindowFromProfile mimeType=" << urlargs.mimeType();
+                mainwin = KonqMisc::createBrowserWindowFromProfile(QString(), profile, firstUrl, urlargs, KParts::BrowserArguments(), false /*forbidUseHTML*/, filesToSelect);
             } else {
                 const bool tempFile = KCmdLineArgs::isTempFileSet();
                 mainwin = KonqMisc::createNewWindow(firstUrl, urlargs, KParts::BrowserArguments(), false, filesToSelect, tempFile);
