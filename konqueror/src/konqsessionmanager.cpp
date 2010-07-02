@@ -81,9 +81,8 @@ KonqSessionManager::KonqSessionManager()
     dbus.connect(QString(), dbusPath, dbusInterface, "saveCurrentSession", this, SLOT(slotSaveCurrentSession(QString)));
 
     // Initialize the timer
-    int interval = KonqSettings::autoSaveInterval();
-    if(interval > 0)
-    {
+    const int interval = KonqSettings::autoSaveInterval();
+    if (interval > 0) {
         m_autoSaveTimer.setInterval(interval*1000);
         connect( &m_autoSaveTimer, SIGNAL( timeout() ), this,
             SLOT( autoSaveSession() ) );
@@ -103,10 +102,7 @@ void KonqSessionManager::disableAutosave()
 
     m_autosaveEnabled = false;
     m_autoSaveTimer.stop();
-    QString file = KStandardDirs::locateLocal("appdata",
-        m_autoSavedSessionConfig->name());
-    QFile::remove(file);
-    delete m_autoSavedSessionConfig;
+    QFile::remove(m_autoSavedSessionConfig);
 }
 
 void KonqSessionManager::enableAutosave()
@@ -116,11 +112,9 @@ void KonqSessionManager::enableAutosave()
 
     // Create the config file for autosaving current session
     QString filename = "autosave/" + m_baseService;
-    QString file = KStandardDirs::locateLocal("appdata", filename);
-    QFile::remove(file);
+    m_autoSavedSessionConfig = KStandardDirs::locateLocal("appdata", filename);
+    QFile::remove(m_autoSavedSessionConfig);
 
-    m_autoSavedSessionConfig = new KConfig(filename, KConfig::SimpleConfig,
-        "appdata");
     m_autosaveEnabled = true;
     m_autoSaveTimer.start();
 }
@@ -150,11 +144,11 @@ void KonqSessionManager::autoSaveSession()
     if(!m_autosaveEnabled)
         return;
 
-    bool isActive = m_autoSaveTimer.isActive();
+    const bool isActive = m_autoSaveTimer.isActive();
     if(isActive)
         m_autoSaveTimer.stop();
 
-    saveCurrentSession(m_autoSavedSessionConfig);
+    saveCurrentSessionToFile(m_autoSavedSessionConfig);
 
     // Now that we have saved current session it's safe to remove our owned_by
     // directory
@@ -171,14 +165,15 @@ void KonqSessionManager::saveCurrentSessions(const QString & path)
 
 void KonqSessionManager::slotSaveCurrentSession(const QString & path)
 {
-    QString filename = path + '/' + m_baseService;
-
-    KConfig sessionConfig(filename, KConfig::SimpleConfig, "appdata");
-    saveCurrentSession(&sessionConfig);
+    const QString filename = path + '/' + m_baseService;
+    saveCurrentSessionToFile(filename);
 }
 
-void KonqSessionManager::saveCurrentSession(KConfig* sessionConfig)
+void KonqSessionManager::saveCurrentSessionToFile(const QString& sessionConfigPath)
 {
+    QFile::remove(sessionConfigPath);
+    KConfig sessionConfig(sessionConfigPath, KConfig::SimpleConfig, "appdata");
+
     QList<KonqMainWindow*> *mainWindows = KonqMainWindow::mainWindowList();
     unsigned int counter = 0;
 
@@ -187,14 +182,13 @@ void KonqSessionManager::saveCurrentSession(KConfig* sessionConfig)
 
     foreach ( KonqMainWindow* window, *mainWindows )
     {
-        KConfigGroup configGroup(sessionConfig, "Window" +
+        KConfigGroup configGroup(&sessionConfig, "Window" +
             QString::number(counter));
         window->saveProperties(configGroup);
         counter++;
     }
-    KConfigGroup configGroup(sessionConfig, "General");
+    KConfigGroup configGroup(&sessionConfig, "General");
     configGroup.writeEntry("Number of Windows", counter);
-    sessionConfig->sync();
 }
 
 QStringList KonqSessionManager::takeSessionsOwnership()
@@ -315,7 +309,7 @@ bool KonqSessionManager::askUserToRestoreAutosavedAbandonedSessions()
         const KConfig config(sessionFile, KConfig::SimpleConfig);
         const QList<KConfigGroup> groups = windowConfigGroups(config);
         Q_FOREACH(const KConfigGroup& group, groups) {
-            // Do avoid recursive search, let's do linear search on Foo_CurrentHistoryItem=1
+            // To avoid a recursive search, let's do linear search on Foo_CurrentHistoryItem=1
             Q_FOREACH(const QString& key, group.keyList()) {
                 if (key.endsWith("_CurrentHistoryItem")) {
                     const QString viewId = key.left(key.length() - strlen("_CurrentHistoryItem"));

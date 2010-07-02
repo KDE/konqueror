@@ -497,6 +497,7 @@ void ViewMgrTest::testAddTabs()
     for (int i = 0; i < titles.count(); ++i)
         QCOMPARE(tabWidget->tabText(i), QString(titles[i]));
     QPointer<KonqView> viewTab2Pointer(viewTab2);
+    QPointer<KParts::ReadOnlyPart> tab2PartPointer(viewTab2->part());
 
     // Ensure tabwidget has a nice size
     mainWindow.resize(599, 699);
@@ -508,6 +509,7 @@ void ViewMgrTest::testAddTabs()
     QVERIFY(frame);
     viewManager->removeTab(frame);
     QVERIFY(viewTab2Pointer.isNull()); // check the view got deleted
+    QVERIFY(tab2PartPointer.isNull()); // check the part got deleted too, since pino is a non-believer :)
     QList<int> expectedTitles; expectedTitles << 0 << 1 << 3 << 4;
     for (int i = 0; i < expectedTitles.count(); ++i)
         QCOMPARE(tabWidget->tabText(i), titles[expectedTitles[i]]);
@@ -673,6 +675,48 @@ void ViewMgrTest::testLoadOldProfile()
     QCOMPARE(mainWindow.locationBarURL(), path);
     QCOMPARE(mainWindow.currentView()->locationBarURL(), path);
     QFile::remove(profile);
+}
+
+void ViewMgrTest::testSaveProfile()
+{
+    KonqMainWindow mainWindow;
+    const KUrl url("data:text/html, <p>Hello World</p>");
+    mainWindow.openUrl(0, url, "text/html");
+    KonqViewManager* viewManager = mainWindow.viewManager();
+    KonqView* view2 = viewManager->addTab("text/html");
+    const KUrl url2("data:text/html, <p>view2</p>");
+    view2->openUrl(url2, "2");
+    KTabWidget* tabWidget = mainWindow.findChild<KTabWidget*>();
+    QVERIFY(tabWidget);
+
+    // Save a profile with two tabs (via KonqSessionManager)
+    KonqSessionManager* sessionMgr = KonqSessionManager::self();
+    const QString filePath = QDir::currentPath() + "unittest_profile";
+    sessionMgr->saveCurrentSessionToFile(filePath);
+    QVERIFY(QFile::exists(filePath));
+
+    {
+        KConfig cfg(filePath, KConfig::SimpleConfig);
+        KConfigGroup profileGroup(&cfg, "Window0");
+        QCOMPARE(profileGroup.readEntry("RootItem"), QString("Tabs0"));
+        QCOMPARE(profileGroup.readEntry("Tabs0_Children"), QString("ViewT0,ViewT1"));
+        QCOMPARE(profileGroup.readEntry("HistoryItemViewT0_0Url"), url.url());
+        QCOMPARE(profileGroup.readEntry("HistoryItemViewT1_0Url"), url2.url());
+    }
+
+    // Now close a tab and save again - to check that the stuff from the old
+    // tab isn't lying around.
+    viewManager->removeTab(view2->frame());
+    sessionMgr->saveCurrentSessionToFile(filePath);
+    {
+        KConfig cfg(filePath, KConfig::SimpleConfig);
+        KConfigGroup profileGroup(&cfg, "Window0");
+        QCOMPARE(profileGroup.readEntry("RootItem"), QString("Tabs0"));
+        QCOMPARE(profileGroup.readEntry("Tabs0_Children"), QString("ViewT0"));
+        QCOMPARE(profileGroup.readEntry("HistoryItemViewT0_0Url"), url.url());
+        QVERIFY(!profileGroup.hasKey("HistoryItemViewT1_0Url"));
+    }
+    QFile::remove(filePath);
 }
 
 void ViewMgrTest::testDuplicateWindow()

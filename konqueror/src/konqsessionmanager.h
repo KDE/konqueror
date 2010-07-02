@@ -99,6 +99,11 @@ public:
      */
     void deleteOwnedSessions();
 
+    /**
+     * Save current session in a given path (absolute path to a file)
+     */
+    void saveCurrentSessionToFile(const QString& sessionConfig);
+
 public Q_SLOTS:
     /**
      * Ask the user with a KPassivePopup ballon if session should be restored
@@ -116,11 +121,6 @@ public Q_SLOTS:
      * Restore owned sessions
      */
     //void restoreSessions();
-
-    /**
-     * Save current session in a custom KConfig
-     */
-    void saveCurrentSession(KConfig* sessionConfig);
 
     /**
      * Save current sessions of all konqueror instances (propagated via a
@@ -146,7 +146,7 @@ private:
     QTimer m_autoSaveTimer;
     QString m_autosaveDir;
     QString m_baseService;
-    KConfig *m_autoSavedSessionConfig;
+    QString m_autoSavedSessionConfig; // full path
     bool m_autosaveEnabled;
 Q_SIGNALS: // DBUS signals
     /**
