@@ -17,6 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 #include "konqmisc.h"
+#include <QDir>
 #include "konqsessionmanager.h"
 #include "konqsettingsxt.h"
 #include "konqmainwindow.h"
@@ -97,18 +98,28 @@ KonqMainWindow * KonqMisc::createNewWindow( const KUrl &url, const KParts::OpenU
 					forbidUseHTML, filesToSelect, tempFile, openUrl, show );
 }
 
-KonqMainWindow * KonqMisc::createBrowserWindowFromProfile( const QString& _path, const QString &filename, const KUrl &url,
+KonqMainWindow * KonqMisc::createBrowserWindowFromProfile( const QString& _path, const QString &_filename, const KUrl &url,
                                                            const KParts::OpenUrlArguments &args,
                                                            const KParts::BrowserArguments& browserArgs,
                                                            bool forbidUseHTML, const QStringList& filesToSelect,
                                                            bool tempFile, bool openUrl, bool show )
 {
     QString path(_path);
-    kDebug() << "path=" << path << ", filename=" << filename << ", url=" << url;
-    Q_ASSERT(!path.isEmpty());
-    // Well the path can be empty when misusing DBUS calls....
-    if (path.isEmpty())
-        path = defaultProfilePath();
+    QString filename(_filename);
+    if (path.isEmpty()) { // no path given, determine it from the filename
+        if (filename.isEmpty()) {
+            filename = defaultProfileName();
+        }
+        if (QDir::isRelativePath(filename)) {
+            path = KStandardDirs::locate("data", QLatin1String("konqueror/profiles/")+filename);
+            if (path.isEmpty()) { // not found
+                filename = defaultProfileName();
+                path = defaultProfilePath();
+            }
+        } else {
+            path = filename; // absolute path
+        }
+    }
 
   abortFullScreenMode();
 
