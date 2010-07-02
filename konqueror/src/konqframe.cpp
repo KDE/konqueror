@@ -215,15 +215,6 @@ void KonqFrame::slotLinkedViewClicked( bool mode )
     m_pView->setLinkedView( mode );
 }
 
-void
-KonqFrame::paintEvent( QPaintEvent* )
-{
-#ifdef __GNUC__
-    #warning "m_pStatusBar->repaint() leads to endless recursion; does anyone know why it's needed?"
-#endif
-//   m_pStatusBar->repaint();
-}
-
 void KonqFrame::slotRemoveView()
 {
    m_pView->mainWindow()->viewManager()->removeView( m_pView );

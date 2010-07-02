@@ -60,12 +60,12 @@ typedef QList<KonqView*> ChildViewList;
 class KONQ_TESTS_EXPORT KonqFrameBase
 {
  public:
-  enum Option {
-     None = 0x0,
-     saveURLs = 0x1,
-     saveHistoryItems = 0x02
-  };
-  Q_DECLARE_FLAGS(Options, Option)
+    enum Option {
+        None = 0x0,
+        saveURLs = 0x01, // TODO rename to SaveUrls
+        saveHistoryItems = 0x02 // TODO rename to SaveHistoryItems
+    };
+    Q_DECLARE_FLAGS(Options, Option)
 
   enum FrameType { View, Tabs, ContainerBase, Container, MainWindow };
 
@@ -186,9 +186,6 @@ public Q_SLOTS:
    * Is called when 'Remove View' is called from the popup menu
    */
   void slotRemoveView();
-
-protected:
-  virtual void paintEvent( QPaintEvent* );
 
 private:
   QVBoxLayout *m_pLayout;
