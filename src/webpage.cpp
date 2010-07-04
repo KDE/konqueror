@@ -163,7 +163,8 @@ static bool domainSchemeMatch(const QUrl& u1, const QUrl& u2)
 class WebPage::WebPagePrivate
 {
 public:
-    WebPagePrivate() : ignoreError(false), kioErrorCode(0) {}
+    WebPagePrivate()
+      : userRequestedCreateWindow(false), ignoreError(false), kioErrorCode(0) {}
 
     enum WebPageSecurity { PageUnencrypted, PageEncrypted, PageMixed };
 
@@ -171,6 +172,7 @@ public:
     QList<QUrl> requestQueue;
     QPointer<KWebKitPart> part;
 
+    bool userRequestedCreateWindow;
     bool ignoreError;
     int kioErrorCode;
 };
@@ -289,7 +291,10 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
         // Insert the request into the queue...
         reqUrl.setUserInfo(QString());
         d->requestQueue << reqUrl;
-    }
+        d->userRequestedCreateWindow = false;
+      } else {
+        d->userRequestedCreateWindow = true;
+      }
 
     return KWebPage::acceptNavigationRequest(frame, request, type);
 }
@@ -299,7 +304,7 @@ QWebPage *WebPage::createWindow(WebWindowType type)
     KParts::ReadOnlyPart *part = 0;
     KParts::OpenUrlArguments args;
     KParts::BrowserArguments bargs;
-    args.setActionRequestedByUser(false);
+    args.setActionRequestedByUser(d->userRequestedCreateWindow);
 
     if (type == WebModalDialog)
         bargs.setForcesNewWindow(true);
