@@ -52,11 +52,11 @@ public:
     const WebSslInfo& sslInfo() const;
 
     /**
-     * Sets the cached page SSL information to @p info.
+     * Sets the page's SSL information to @p other.
      *
      * @see WebSslInfo
      */
-    void setSslInfo (const WebSslInfo &info);
+    void setSslInfo (const WebSslInfo &other);
 
     /**
      * Reimplemented for internal reasons. The API is not affected.
