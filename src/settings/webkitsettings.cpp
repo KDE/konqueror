@@ -95,6 +95,7 @@ public:
     bool m_zoomTextOnly : 1;
     bool m_useCookieJar : 1;
     bool m_bAutoRefreshPage: 1;
+    bool m_bEnableFavicon:1;
 
     // the virtual global "domain"
     KPerDomainSettings global;
@@ -466,6 +467,8 @@ void WebKitSettings::init( KConfig * config, bool reset )
     for( QStringList::ConstIterator it = accesskeys.begin(); it != accesskeys.end(); ++it )
         if( (*it).length() > 2 && (*it)[ 1 ] == ':' )
             d->m_fallbackAccessKeysAssignments.append( qMakePair( (*it).mid( 2 ), (*it)[ 0 ] ));
+
+    d->m_bEnableFavicon = cgHtml.readEntry("EnableFavicon", true);
   }
 
   // Colors
@@ -775,6 +778,11 @@ bool WebKitSettings::isBackRightClickEnabled()
 bool WebKitSettings::accessKeysEnabled() const
 {
     return d->m_accessKeysEnabled;
+}
+
+bool WebKitSettings::favIconsEnabled() const
+{
+    return d->m_bEnableFavicon;
 }
 
 bool WebKitSettings::isAdFilterEnabled() const

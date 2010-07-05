@@ -111,10 +111,6 @@ void KWebKitPartPrivate::init(QWidget *mainWidget)
             q, SIGNAL(setStatusBarText(const QString &)));
     connect(webView, SIGNAL(linkShiftClicked(const KUrl &)),
             webPage, SLOT(downloadUrl(const KUrl &)));
-    connect(webView, SIGNAL(loadStarted()),
-            searchBar, SLOT(hide()));
-    connect(webView, SIGNAL(loadStarted()),
-            searchBar, SLOT(clear()));
 
     browserExtension = new WebKitBrowserExtension(q);
     connect(webPage, SIGNAL(loadProgress(int)),
@@ -217,10 +213,13 @@ void KWebKitPartPrivate::initActions()
 
 void KWebKitPartPrivate::slotLoadStarted()
 {
-    kDebug();
     emit q->started(0);
     slotWalletClosed();
     contentModified = false;
+    if (searchBar && searchBar->isVisible()) {
+        searchBar->hide();
+        searchBar->clear();
+    }
 }
 
 void KWebKitPartPrivate::slotContentsChanged()
@@ -233,6 +232,9 @@ void KWebKitPartPrivate::slotLoadFinished(bool ok)
     emitOpenUrlNotify = true;
 
     if (ok) {
+        // FIXME: Link highlighting, underlining and marking as visited do not
+        // seem to work consistently using the hack below. Find a better way to
+        // resolve this issue...
         QString linkStyle;
         QColor linkColor = WebKitSettings::self()->vLinkColor();
 
@@ -286,11 +288,14 @@ void KWebKitPartPrivate::slotLoadFinished(bool ok)
         }
 
         // Set the favicon specified through the <link> tag...
-        const QWebElement element = webPage->mainFrame()->findFirstElement(QL1S("head>link[rel=icon]"));
-        const QString href = element.attribute("href");
-        if (!element.isNull()) {
-            kDebug() << "Setting favicon to" << href;
-            browserExtension->setIconUrl(KUrl(href));
+        if (WebKitSettings::self()->favIconsEnabled()) {
+            const QWebElement element = webPage->mainFrame()->findFirstElement(QL1S("head>link[rel=icon]"));
+            const QString href = element.attribute("href");
+            if (!element.isNull()) {
+                const KUrl iconUrl (webPage->mainFrame()->baseUrl(), href);
+                kDebug() << "setting favicon to" << iconUrl;
+                browserExtension->setIconUrl(iconUrl);
+            }
         }
     }
 
@@ -329,16 +334,17 @@ void KWebKitPartPrivate::slotUrlChanged(const QUrl& url)
 
 void KWebKitPartPrivate::slotShowSecurity()
 {
-    if (webPage->sslInfo().isValid()) {
+    const WebSslInfo& sslInfo = webPage->sslInfo();
+    if (sslInfo.isValid()) {
         KSslInfoDialog *dlg = new KSslInfoDialog (q->widget());
-        dlg->setSslInfo(webPage->sslInfo().certificateChain(),
-                        webPage->sslInfo().peerAddress().toString(),
+        dlg->setSslInfo(sslInfo.certificateChain(),
+                        sslInfo.peerAddress().toString(),
                         q->url().host(),
-                        webPage->sslInfo().protocol(),
-                        webPage->sslInfo().ciphers(),
-                        webPage->sslInfo().usedChiperBits(),
-                        webPage->sslInfo().supportedChiperBits(),
-                        KSslInfoDialog::errorsFromString(webPage->sslInfo().certificateErrors()));
+                        sslInfo.protocol(),
+                        sslInfo.ciphers(),
+                        sslInfo.usedChiperBits(),
+                        sslInfo.supportedChiperBits(),
+                        KSslInfoDialog::errorsFromString(sslInfo.certificateErrors()));
 
         dlg->open();
     } else {

@@ -184,6 +184,9 @@ public:
     // Access Keys
     bool accessKeysEnabled() const;
 
+    // Favicons
+    bool favIconsEnabled() const;
+
     KJSWindowOpenPolicy windowOpenPolicy( const QString& hostname = QString() ) const;
     KJSWindowMovePolicy windowMovePolicy( const QString& hostname = QString() ) const;
     KJSWindowResizePolicy windowResizePolicy( const QString& hostname = QString() ) const;
