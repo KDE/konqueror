@@ -41,10 +41,10 @@
 #include <KDE/KDebug>
 #include <KDE/KPrintPreview>
 #include <KDE/KStandardDirs>
+#include <KDE/KTemporaryFile>
 #include <kdeversion.h>
 
 #include <QtCore/QPointer>
-#include <QtCore/QTemporaryFile>
 #include <QtGui/QClipboard>
 #include <QtGui/QApplication>
 #include <QtGui/QPrinter>
@@ -399,8 +399,8 @@ void WebKitBrowserExtension::slotViewDocumentSource()
         //returned content is royally screwed up! *sigh*
         KRun::runUrl(d->view->page()->mainFrame()->url(), QL1S("text/plain"), d->view, false);
 #else
-        QTemporaryFile tempFile (QString::fromLatin1("%1XXXXXX.html")
-                                 .arg(QCoreApplication::applicationName()));
+        KTemporaryFile tempFile;
+        tempFile.setSuffix(QL1S(".html"));
         tempFile.setAutoRemove(false);
         if (tempFile.open()) {
             tempFile.write(d->view->page()->mainFrame()->toHtml().toUtf8());
@@ -419,8 +419,8 @@ void WebKitBrowserExtension::slotViewFrameSource()
       //returned content is royally screwed up! *sigh*
       KRun::runUrl(d->view->page()->mainFrame()->url(), QL1S("text/plain"), d->view, false);
 #else
-      QTemporaryFile tempFile (QString::fromLatin1("%1XXXXXX.html")
-                               .arg(QCoreApplication::applicationName()));
+      KTemporaryFile tempFile;
+      tempFile.setSuffix(QL1S(".html"));
       tempFile.setAutoRemove(false);
       if (tempFile.open()) {
           tempFile.write(d->view->page()->currentFrame()->toHtml().toUtf8());
