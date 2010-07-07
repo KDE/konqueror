@@ -661,7 +661,7 @@ void KonqMainWindow::openUrl(KonqView *_view, const KUrl &_url,
                 mimeType = "text/plain"; // view, don't execute
             // Remote URL: save or open ?
             QString protClass = KProtocolInfo::protocolClass(url.protocol());
-            bool open = url.isLocalFile() || protClass==":local";
+            bool open = url.isLocalFile() || protClass==":local" || KProtocolInfo::isHelperProtocol(url);
             if ( !open ) {
                 KParts::BrowserOpenOrSaveQuestion dlg(this, url, mimeType);
                 dlg.setFeatures(KParts::BrowserOpenOrSaveQuestion::ServiceSelection);
