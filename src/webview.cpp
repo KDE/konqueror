@@ -275,12 +275,15 @@ void WebView::selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &se
 
     d->addSearchActions(selectActions, this);
 
-    const QString selectedTextURL = selectedText().simplified();
-    if (selectedTextURL.contains("://") && KUrl(selectedTextURL).isValid()) {
+    KUriFilterData data (selectedText().simplified().left(256));
+    data.setCheckForExecutables(false);
+    if (KUriFilter::self()->filterUri(data, QStringList() << "kshorturifilter") &&
+        data.uri().isValid() && data.uriType() == KUriFilterData::NetProtocol) {
         KAction *action = new KAction(i18nc("open selected url", "Open '%1'",
-                                            KStringHandler::rsqueeze(selectedTextURL, 18)), this);
+                                            KStringHandler::rsqueeze(data.uri().url(), 18)), this);
         d->actionCollection->addAction("openSelection", action);
         action->setIcon(KIcon("window-new"));
+        action->setData(QUrl(data.uri()));
         connect(action, SIGNAL(triggered(bool)), this, SLOT(openSelection()));
         selectActions.append(action);
     }
@@ -440,7 +443,10 @@ void WebView::WebViewPrivate::addSearchActions(QList<QAction *>& selectActions, 
 
 void WebView::openSelection()
 {
-    KParts::BrowserArguments browserArgs;
-    browserArgs.frameName = "_blank";
-    emit d->part->browserExtension()->openUrlRequest(selectedText().simplified(), KParts::OpenUrlArguments(), browserArgs);
+    QAction *action = qobject_cast<KAction*>(sender());
+    if (action) {
+        KParts::BrowserArguments browserArgs;
+        browserArgs.frameName = "_blank";
+        emit d->part->browserExtension()->openUrlRequest(action->data().toUrl(), KParts::OpenUrlArguments(), browserArgs);
+    }
 }
