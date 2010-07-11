@@ -35,7 +35,7 @@
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <kurl.h>
-#include <kio/netaccess.h>
+#include <ktempdir.h>
 
 #include <QPushButton>
 #include <QtCore/QFileInfo>
@@ -122,13 +122,7 @@ void KonqSessionManager::enableAutosave()
 void KonqSessionManager::deleteOwnedSessions()
 {
     // Not dealing with the sessions about to remove anymore
-    QDir dir(dirForMyOwnedSessionFiles());
-
-    if(dir.exists())
-    {
-        KIO::Job *delJob = KIO::del(KUrl(dir.path()), KIO::HideProgressInfo);
-        KIO::NetAccess::synchronousRun(delJob, NULL);
-    }
+    KTempDir::removeDir(dirForMyOwnedSessionFiles());
 }
 
 KonqSessionManager* KonqSessionManager::self()
@@ -229,8 +223,7 @@ QStringList KonqSessionManager::takeSessionsOwnership()
                     sessionFilePaths.append(newFileName);
                 }
                 // Remove the old directory
-                KIO::Job *delJob = KIO::del(KUrl(it.filePath()), KIO::HideProgressInfo);
-                KIO::NetAccess::synchronousRun(delJob, NULL);
+                KTempDir::removeDir(it.filePath());
             }
         } else { // it's a file
             if(!idbus->isServiceRegistered(KonqMisc::decodeFilename(it.fileName())))
@@ -363,8 +356,7 @@ bool KonqSessionManager::askUserToRestoreAutosavedAbandonedSessions()
                 QFile::rename(it.filePath(), m_autosaveDir + '/' + it.fileName());
             }
             // Remove the owned_by directory
-            KIO::Job *delJob = KIO::del(KUrl(dirForMyOwnedSessionFiles()), KIO::HideProgressInfo);
-            KIO::NetAccess::synchronousRun(delJob, NULL);
+            KTempDir::removeDir(dirForMyOwnedSessionFiles());
             enableAutosave();
             return false;
     }
