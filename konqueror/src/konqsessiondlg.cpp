@@ -33,7 +33,7 @@
 #include <kdebug.h>
 #include <kurl.h>
 #include <kio/copyjob.h>
-#include <kio/netaccess.h>
+#include <ktempdir.h>
 #include <kio/renamedialog.h>
 #include <kfileitemdelegate.h>
 #include <kdirlister.h>
@@ -155,12 +155,10 @@ void KonqSessionDlg::slotDelete()
 {
     if(!d->m_pListView->currentIndex().isValid())
         return;
-    
-    QDir dir(d->m_pModel->itemForIndex(d->m_pListView->currentIndex()).url().path());
-    if(dir.exists())
-    {
-        KIO::NetAccess::del(d->m_pModel->itemForIndex(
-            d->m_pListView->currentIndex()).url(), d->m_pParent);
+
+    const QString dir = d->m_pModel->itemForIndex(d->m_pListView->currentIndex()).url().toLocalFile();
+    if (!KTempDir::removeDir(dir)) {
+        // TODO show error msg box
     }
 }
 
@@ -249,7 +247,7 @@ void KonqNewSessionDlg::slotAddSession()
             i18n("A session with the name '%1' already exists, do you want to overwrite it?", d->m_pSessionName->text()),
             i18n("Session exists. Overwrite?")) == KMessageBox::Yes)
         {
-            KIO::NetAccess::del(KUrl(dirpath), d->m_pParent);
+            KTempDir::removeDir(dirpath);
         } else {
             KonqNewSessionDlg newDialog(d->m_pParent,
                 d->m_pSessionName->text());
