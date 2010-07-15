@@ -120,7 +120,7 @@ KCMFilter::KCMFilter( QWidget *parent, const QVariantList& )
     mRefreshFreqSpinBox = new KIntSpinBox( container );
     grid->addWidget( mRefreshFreqSpinBox, 1, 1 );
     mRefreshFreqSpinBox->setRange( 1, 365 );
-    mRefreshFreqSpinBox->setSuffix(ki18np("day", "days"));
+    mRefreshFreqSpinBox->setSuffix(ki18np(" day", " days"));
 
     /** connect signals and slots */
     connect( &mAutomaticFilterModel, SIGNAL( changed( bool ) ), this, SIGNAL( changed( bool ) ) );
