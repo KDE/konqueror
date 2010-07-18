@@ -421,8 +421,7 @@ the name of the current tab</action>
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>F</keycap></keycombo></shortcut>
-<guimenu>Scrollback</guimenu><guimenuitem>Search 
-Output...</guimenuitem></menuchoice></term>
+<guimenu>Edit</guimenu><guimenuitem>Find...</guimenuitem></menuchoice></term>
 <listitem><para><action>Opens a search bar at the bottom of &konsole;'s window
 </action></para>
 <para>This allows for case sensitive, forward or backwards, and regular expressions searches.</para>
@@ -432,7 +431,7 @@ Output...</guimenuitem></menuchoice></term>
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycombo><keycap>F3</keycap></keycombo></shortcut>
-<guimenu>Scrollback</guimenu><guimenuitem>Find 
+<guimenu>Edit</guimenu><guimenuitem>Find 
 Next</guimenuitem></menuchoice></term>
 <listitem><para><action>Moves to the next search instance
 </action></para></listitem>
@@ -441,7 +440,7 @@ Next</guimenuitem></menuchoice></term>
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycombo action="simul">&Shift;<keycap>F3</keycap></keycombo></shortcut>
-<guimenu>Scrollback</guimenu><guimenuitem>Find 
+<guimenu>Edit</guimenu><guimenuitem>Find 
 Previous</guimenuitem></menuchoice></term>
 <listitem><para><action>Moves to the previous search instance
 </action></para></listitem>
