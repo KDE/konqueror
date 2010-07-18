@@ -123,7 +123,7 @@ of common commands.  Examples could include:
 <para>
 Procedure to create a new profile:
 <orderedlist>
-<listitem><para>Click on the menu entry <menuchoice><guimenu>Settings</guimenu><guimenuitem>Manage Profiles...</guimenuitem>
+<listitem><para>Click on the menu entry <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure Profiles...</guimenuitem>
 </menuchoice></para></listitem>
 
 <listitem><para>Click on the button <guibutton>New Profile...</guibutton>.</para></listitem>
@@ -150,7 +150,7 @@ is now available in the <guilabel>Manage Profiles...</guilabel> dialog.
 
 <para>
 After creating profiles, they are listed by their name in the 
-<menuchoice><guimenu>File</guimenu></menuchoice> menu
+<menuchoice><guimenu>File</guimenu><guisubmenu>New Tab</guisubmenu></menuchoice> menu
 underneath the default <guimenuitem>Shell</guimenuitem> item.
 </para>
 
@@ -371,8 +371,6 @@ location</action></para></listitem>
 
 <varlistentry>
 <term><menuchoice>
-<shortcut><keycombo
- action="simul">&Ctrl;&Shift;<keycap>,</keycap></keycombo></shortcut>
 <guimenu>Edit</guimenu><guisubmenu>Copy Input To</guisubmenu><guimenuitem>All Tabs in Current Window</guimenuitem></menuchoice></term>
 <listitem><para><action>Allows input from the current session to be sent simultaneously to all sessions in current window</action>
 </para>
@@ -413,7 +411,7 @@ the name of the current tab</action>
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycombo
- action="simul">&Ctrl;&Alt;<keycap>F</keycap></keycombo></shortcut>
+ action="simul">&Ctrl;&Alt;<keycap>U</keycap></keycombo></shortcut>
 <guimenu>Edit</guimenu><guimenuitem>ZModem Upload...</guimenuitem></menuchoice></term>
 <listitem><para><action>Opens up a dialog to select a file to be uploaded if the required software is installed</action>
 </para>
@@ -513,7 +511,7 @@ Close Others</guimenuitem></menuchoice>
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>[</keycap></keycombo></shortcut>
-<guimenu>View</guimenu><guisubmenu>Split View</guisubmenu><guimenuitem>Shrink View</guimenuitem></menuchoice>
+<guimenu>View</guimenu><guisubmenu>Shrink View</guisubmenu><guimenuitem>Shrink View</guimenuitem></menuchoice>
 </term>
 <listitem><para><action>Makes the current view smaller</action>
 </para></listitem>
@@ -523,8 +521,7 @@ Close Others</guimenuitem></menuchoice>
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>H</keycap></keycombo></shortcut>
-<guimenu>View</guimenu><guimenuitem>Detach 
-View</guimenuitem></menuchoice>
+<guimenu>View</guimenu><guimenuitem>Detach Current Tab</guimenuitem></menuchoice>
 </term>
 <listitem><para><action>Opens the current tab in a 
 separate window</action>
@@ -593,7 +590,7 @@ The type of alerts can be changed through
 <term><menuchoice>
 <shortcut><keycombo action="simul">&Ctrl;&Shift;<keycap>X</keycap></keycombo></shortcut>
 <guimenu>Scrollback</guimenu><guimenuitem>Clear 
-Scrollback &amp; Reset</guimenuitem></menuchoice></term>
+Scrollback and Reset</guimenuitem></menuchoice></term>
 <listitem><para><action>Clears the text in the current tab and scrollback 
 and resets the terminal</action></para></listitem>
 </varlistentry>
