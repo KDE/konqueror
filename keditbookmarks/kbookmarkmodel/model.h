@@ -91,7 +91,7 @@ public Q_SLOTS:
 private:
     class Private;
     Private * const d;
-    Q_PRIVATE_SLOT(d, void _kd_slotBookmarksChanged(const QString&, const QString&))
+    Q_PRIVATE_SLOT(d, void _kd_slotBookmarksChanged(const QString &groupAddress, const QString &caller = QString()))
 };
 
 #endif

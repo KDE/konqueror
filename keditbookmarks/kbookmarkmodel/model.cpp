@@ -49,7 +49,7 @@ public:
         mRootItem = 0;
     }
 
-    void _kd_slotBookmarksChanged(const QString&, const QString&);
+    void _kd_slotBookmarksChanged(const QString &groupAddress, const QString &caller = QString());
 
     KBookmarkModel* q;
     TreeItem * mRootItem;
@@ -79,6 +79,13 @@ KBookmarkModel::KBookmarkModel(const KBookmark& root, CommandHistory* commandHis
     : QAbstractItemModel(parent), d(new Private(this, root, commandHistory))
 {
     connect(commandHistory, SIGNAL(notifyCommandExecuted(KBookmarkGroup)), this, SLOT(notifyManagers(KBookmarkGroup)));
+    Q_ASSERT(bookmarkManager());
+    // update when the model updates after a D-Bus signal of another instance of it
+    connect(bookmarkManager(), SIGNAL(changed(QString,QString)),
+            this, SLOT(_kd_slotBookmarksChanged(QString,QString)));
+    // update when the model itself changes
+    connect(bookmarkManager(), SIGNAL(bookmarksChanged(QString)),
+            this, SLOT(_kd_slotBookmarksChanged(QString)));
 }
 
 void KBookmarkModel::setRoot(const KBookmark& root)
