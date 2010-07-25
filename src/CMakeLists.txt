@@ -27,7 +27,7 @@ kde4_add_library(kwebkit SHARED ${kwebkit_LIB_SRCS})
 
 target_link_libraries(kwebkit ${KDE4_KPARTS_LIBS} ${KDE4_KDEWEBKIT_LIBS} ${QT_QTWEBKIT_LIBRARY} ${QT_QTUITOOLS_LIBRARY})
 
-set_target_properties(kwebkit PROPERTIES VERSION 0.9.5 SOVERSION 0.9.5 SOVERSION 1)
+set_target_properties(kwebkit PROPERTIES VERSION 0.9.6 SOVERSION 0.9.6 SOVERSION 1)
 ########################### kwebkit #############################
 
 ########################### kwebkitpart #############################

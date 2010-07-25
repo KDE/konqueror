@@ -63,7 +63,7 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent, const QStringLi
 {
     KAboutData about = KAboutData("kwebkitpart", 0,
                                   ki18nc("Program Name", "KWebKitPart"),
-                                  /*version*/ "0.9",
+                                  /*version*/ "0.9.6",
                                   ki18nc("Short Description", "QtWebKit Browser Engine Component"),
                                   KAboutData::License_LGPL,
                                   ki18n("(C) 2009-2010 Dawit Alemayehu\n"
