@@ -73,8 +73,8 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2009-10-21</date>
-<releaseinfo>1.4.0</releaseinfo>
+<date>2010-07-25</date>
+<releaseinfo>1.5</releaseinfo>
 
 <abstract>
 <para>
@@ -596,15 +596,39 @@ current folder, right click in the work space and click
 
 <sect2 id="finding-file">
 <title>Finding Files</title>
-
 <para>
 &dolphin; is capable of searching for files. If <keycombo action="simul">&Ctrl;<keycap>F</keycap></keycombo>
 is pressed or using <menuchoice> <guimenu>Tools</guimenu> <guimenuitem>Find File...</guimenuitem> </menuchoice>,
-&kfind; will open already set up to search within the current folder and any sub-folders.
+<ulink url="help:/kfind/index.html">&kfind;</ulink> will open already set up to search within the current folder and any sub-folders.
 </para>
-
 </sect2>
 
+<!-- will probably change in 4.6 adapt it then-->
+<sect2 id="searching-in-file">
+<title>Searching in Files</title>
+
+<para>
+Click into the search box, which has to be enabled with <guimenuitem>Search Toolbar</guimenuitem> in <menuchoice><guimenu>Settings</guimenu>
+<guisubmenu>Toolbars Shown</guisubmenu></menuchoice> to use Nepomuk for searching.
+Then an additional bar with search options is displayed below the toolbar.
+By clicking on the green (+)-button, it is possible to specify the searching in a very detailed manner:
+<screenshot>
+<screeninfo>Search using Nepomuk</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="nepomuk-search.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase>Search using Nepomuk</phrase>
+</textobject>
+<caption><para>&dolphin; searching using Nepomuk.</para></caption>
+</mediaobject>
+</screenshot>
+</para>
+<note><para>This feature requires running Nepomuk and Strigi services, you can check your system setup in the  
+<guilabel>Desktop Search</guilabel> module in the &systemsettings; category <guilabel>Workspace Appearance and Behavior</guilabel>
+</para></note>
+</sect2>
 <sect2 id="mounting-storage-media">
 <title>Mounting Storage Media</title>
 
@@ -1097,7 +1121,7 @@ about it is shown next to it if <guilabel>Show tooltips</guilabel> is enabled.
 or <guibutton>-</guibutton> button above an item's icon if the item is hovered
 with the mouse. These can be used to select or deselect the item.
 </para></listitem>
-<!-- not in 4.3 -->
+
 <listitem><para>
 <guilabel>Natural sorting of items</guilabel> controls how items are sorted in
 the view. If this option is enabled, the sort order of three example files
