@@ -266,13 +266,23 @@ void KWebKitPartPrivate::slotLoadFinished(bool ok)
 
         // Set the favicon specified through the <link> tag...
         if (WebKitSettings::self()->favIconsEnabled()) {
-            const QWebElement element = webPage->mainFrame()->findFirstElement(QL1S("head>link[rel=icon]"));
-            const QString href = element.attribute("href");
-            if (!element.isNull()) {
-                const KUrl iconUrl (webPage->mainFrame()->baseUrl(), href);
-                kDebug() << "setting favicon to" << iconUrl;
-                browserExtension->setIconUrl(iconUrl);
+            const QWebElement element = webPage->mainFrame()->findFirstElement(QL1S("head>link[rel=icon], "
+                                                                                    "head>link[rel=\"shortcut icon\"]"));
+            KUrl shortcutIconUrl;
+            if (element.isNull()) {
+                shortcutIconUrl = webPage->mainFrame()->baseUrl();
+                QString urlPath = shortcutIconUrl.path();
+                const int index = urlPath.indexOf(QL1C('/'));
+                if (index > -1)
+                  urlPath.truncate(index);
+                urlPath += QL1S("/favicon.ico");
+                shortcutIconUrl.setPath(urlPath);
+            } else {
+                shortcutIconUrl = KUrl (webPage->mainFrame()->baseUrl(), element.attribute("href"));
             }
+
+            kDebug() << "setting favicon to" << shortcutIconUrl;
+            browserExtension->setIconUrl(shortcutIconUrl);
         }
     }
 
@@ -334,7 +344,7 @@ void KWebKitPartPrivate::slotShowSecurity()
 void KWebKitPartPrivate::slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item)
 {
     Q_UNUSED (item);
-    if (!frame->parentFrame()) {
+    if (frame == webPage->mainFrame()) {
         kDebug() << "Update history ?" << emitOpenUrlNotify;
         if (emitOpenUrlNotify)
             emit browserExtension->openUrlNotify();
@@ -347,7 +357,7 @@ void KWebKitPartPrivate::slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *i
 
 void KWebKitPartPrivate::slotRestoreFrameState(QWebFrame *frame)
 {
-    if (!frame->parentFrame())
+    if (frame == webPage->mainFrame())
         emitOpenUrlNotify = true;
 }
 
