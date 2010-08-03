@@ -315,9 +315,14 @@ void WebKitSettings::init()
 
   init( local.data(), false );
 
-  KConfig config ( "kcookiejarrc", KConfig::NoGlobals );
-  KConfigGroup cg ( &config, "Cookie Policy");
-  d->m_useCookieJar = cg.readEntry("Cookies", false);
+  KConfig cookieConfig ( "kcookiejarrc", KConfig::NoGlobals );
+  KConfigGroup cookieCg ( &cookieConfig, "Cookie Policy");
+  d->m_useCookieJar = cookieCg.readEntry("Cookies", false);
+
+  KConfig cssConfig ( "kcmcssrc", KConfig::NoGlobals );
+  KConfigGroup cssCg( &cssConfig, "Stylesheet");
+  if (cssCg.exists() && cssCg.readEntry("Use", QString()) == QLatin1String("user"))
+    QWebSettings::globalSettings()->setUserStyleSheetUrl(QUrl(cssCg.readEntry("SheetName", QString())));
 
   if (d->nonPasswordStorableSites) {
     delete d->nonPasswordStorableSites;
