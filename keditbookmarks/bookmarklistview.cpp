@@ -200,8 +200,6 @@ bool BookmarkFolderViewFilterModel::filterAcceptsColumn ( int source_column, con
     return (source_column == 0);
 }
 
-Q_DECLARE_METATYPE(KBookmark)
-
 bool BookmarkFolderViewFilterModel::filterAcceptsRow ( int source_row, const QModelIndex & source_parent ) const
 {
     QModelIndex index = sourceModel()->index(source_row, 0, source_parent);
