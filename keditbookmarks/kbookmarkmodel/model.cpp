@@ -33,8 +33,6 @@
 #include <QtCore/QStringList>
 #include <QtCore/QMimeData>
 
-Q_DECLARE_METATYPE(KBookmark)
-
 class KBookmarkModel::Private
 {
 public:
