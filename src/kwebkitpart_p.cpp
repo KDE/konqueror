@@ -49,6 +49,7 @@
 #include <KDE/KStandardDirs>
 #include <KDE/KConfig>
 #include <KDE/KAcceleratorManager>
+#include <KDE/KUriFilter>
 #include <KParts/StatusBarExtension>
 
 #include <QtCore/QFile>
@@ -85,8 +86,13 @@ void KWebKitPartPrivate::init(QWidget *mainWidget)
             this, SLOT(slotUrlChanged(const QUrl &)));
     connect(webView, SIGNAL(linkMiddleOrCtrlClicked(const KUrl &)),
             this, SLOT(slotLinkMiddleOrCtrlClicked(const KUrl &)));
+#if KDE_IS_VERSION(4, 5, 64)
+    connect(webView, SIGNAL(selectionClipboardUrlPasted(const KUrl &, const QString &)),
+            this, SLOT(slotSelectionClipboardUrlPasted(const KUrl &, const QString &)));
+#else
     connect(webView, SIGNAL(selectionClipboardUrlPasted(const KUrl &)),
             this, SLOT(slotSelectionClipboardUrlPasted(const KUrl &)));
+#endif
 
     // Create the search bar...
     searchBar = new KDEPrivate::SearchBar;
@@ -244,45 +250,49 @@ void KWebKitPartPrivate::slotLoadFinished(bool ok)
             slotUrlChanged(webView->url());
         }
 
-        // Fill form data from wallet...
-        KWebWallet *webWallet = webPage->wallet();
-        if (webWallet) {
-            webWallet->fillFormData(webPage->mainFrame());
-            KWebWallet::WebFormList list = webWallet->formsWithCachedData(webPage->mainFrame());
-            if (!list.isEmpty()) {
-                if (!statusBarWalletLabel) {
-                    statusBarWalletLabel = new KUrlLabel(statusBarExtension->statusBar());
-                    statusBarWalletLabel->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Minimum));
-                    statusBarWalletLabel->setUseCursor(false);
-                    statusBarWalletLabel->setPixmap(SmallIcon("wallet-open"));
-                    connect(statusBarWalletLabel, SIGNAL(leftClickedUrl()), SLOT(slotLaunchWalletManager()));
-                    connect(statusBarWalletLabel, SIGNAL(rightClickedUrl()), SLOT(slotShowWalletMenu()));
+        const QUrl mainUrl = webView->url();
+        if (mainUrl.scheme().compare(QL1S("about"), Qt::CaseInsensitive) != 0) {
+            // Fill form data from wallet...
+            KWebWallet *webWallet = webPage->wallet();
+            if (webWallet) {
+                webWallet->fillFormData(webPage->mainFrame());
+                KWebWallet::WebFormList list = webWallet->formsWithCachedData(webPage->mainFrame());
+                if (!list.isEmpty()) {
+                    if (!statusBarWalletLabel) {
+                        statusBarWalletLabel = new KUrlLabel(statusBarExtension->statusBar());
+                        statusBarWalletLabel->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Minimum));
+                        statusBarWalletLabel->setUseCursor(false);
+                        statusBarWalletLabel->setPixmap(SmallIcon("wallet-open"));
+                        connect(statusBarWalletLabel, SIGNAL(leftClickedUrl()), SLOT(slotLaunchWalletManager()));
+                        connect(statusBarWalletLabel, SIGNAL(rightClickedUrl()), SLOT(slotShowWalletMenu()));
+                    }
+
+                    statusBarExtension->addStatusBarItem(statusBarWalletLabel, 0, false);
+                    hasCachedFormData = true;
+                }
+            }
+
+            // Set the favicon specified through the <link> tag...
+            if (WebKitSettings::self()->favIconsEnabled() &&
+                mainUrl.scheme().startsWith(QL1S("http"), Qt::CaseInsensitive)) {
+                const QWebElement element = webPage->mainFrame()->findFirstElement(QL1S("head>link[rel=icon], "
+                                                                                        "head>link[rel=\"shortcut icon\"]"));
+                KUrl shortcutIconUrl;
+                if (element.isNull()) {
+                    shortcutIconUrl = webPage->mainFrame()->baseUrl();
+                    QString urlPath = shortcutIconUrl.path();
+                    const int index = urlPath.indexOf(QL1C('/'));
+                    if (index > -1)
+                      urlPath.truncate(index);
+                    urlPath += QL1S("/favicon.ico");
+                    shortcutIconUrl.setPath(urlPath);
+                } else {
+                    shortcutIconUrl = KUrl (webPage->mainFrame()->baseUrl(), element.attribute("href"));
                 }
 
-                statusBarExtension->addStatusBarItem(statusBarWalletLabel, 0, false);
-                hasCachedFormData = true;
+                kDebug() << "setting favicon to" << shortcutIconUrl;
+                browserExtension->setIconUrl(shortcutIconUrl);
             }
-        }
-
-        // Set the favicon specified through the <link> tag...
-        if (WebKitSettings::self()->favIconsEnabled()) {
-            const QWebElement element = webPage->mainFrame()->findFirstElement(QL1S("head>link[rel=icon], "
-                                                                                    "head>link[rel=\"shortcut icon\"]"));
-            KUrl shortcutIconUrl;
-            if (element.isNull()) {
-                shortcutIconUrl = webPage->mainFrame()->baseUrl();
-                QString urlPath = shortcutIconUrl.path();
-                const int index = urlPath.indexOf(QL1C('/'));
-                if (index > -1)
-                  urlPath.truncate(index);
-                urlPath += QL1S("/favicon.ico");
-                shortcutIconUrl.setPath(urlPath);
-            } else {
-                shortcutIconUrl = KUrl (webPage->mainFrame()->baseUrl(), element.attribute("href"));
-            }
-
-            kDebug() << "setting favicon to" << shortcutIconUrl;
-            browserExtension->setIconUrl(shortcutIconUrl);
         }
     }
 
@@ -475,7 +485,34 @@ void KWebKitPartPrivate::slotLinkMiddleOrCtrlClicked(const KUrl& linkUrl)
 
 void KWebKitPartPrivate::slotSelectionClipboardUrlPasted(const KUrl& selectedUrl)
 {
-    if (WebKitSettings::self()->isOpenMiddleClickEnabled())
+    // NOTE: The code below is required to work around the deficiency of the
+    // selectionClipboardUrlPasted signal in KWebView from KDE < 4.6.
+    if (WebKitSettings::self()->isOpenMiddleClickEnabled()) {
+        QString searchText;
+        KUriFilterData data;
+        data.setData(QL1S("kwebkitpart_dummy"));
+        data.setCheckForExecutables(false);
+        if (KUriFilter::self()->filterUri(data, QStringList(QL1S("kuriikwsfilter")))) {
+            const QString pastedUrl = QUrl::fromPercentEncoding(selectedUrl.url().toUtf8());
+            const QString dummyUrl = QUrl::fromPercentEncoding(data.uri().url().toUtf8());
+            kDebug() << dummyUrl;
+            const int pos = dummyUrl.indexOf(data.typedString());
+            if (pastedUrl.left(pos) == dummyUrl.left(pos)) {
+                const int len = pastedUrl.indexOf(dummyUrl.mid(pos+17)) - pos;
+                searchText = pastedUrl.mid(pos, len).replace(QL1C('+'),QL1C(' '));
+            }
+        }
+        slotSelectionClipboardUrlPasted(selectedUrl, searchText);
+    }
+}
+
+void KWebKitPartPrivate::slotSelectionClipboardUrlPasted(const KUrl& selectedUrl, const QString& searchText)
+{
+    if (WebKitSettings::self()->isOpenMiddleClickEnabled() &&
+        (searchText.isEmpty() || KMessageBox::questionYesNo(webView,
+                                 i18n("<qt>Do you want to search the Internet for <b>%1</b>?</qt>", searchText),
+                                 i18n("Internet Search"), KGuiItem(i18n("&Search"), "edit-find"),
+                                 KStandardGuiItem::cancel(), "MiddleClickSearch") == KMessageBox::Yes))
         emit browserExtension->openUrlRequest(selectedUrl);
 }
 
