@@ -869,6 +869,8 @@ void KonqComboLineEdit::setCompletedItems( const QStringList& items, bool )
                 const bool blocked = completionbox->blockSignals(true);
                 completionbox->setCurrentItem(matchedItem);
                 completionbox->blockSignals(blocked);
+            } else {
+                completionbox->setCurrentRow(-1);
             }
         }
         else { // completion box not visible yet -> show it
