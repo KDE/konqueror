@@ -20,25 +20,13 @@ if(kwebkitpart_SOURCE_DIR)
     set(KWEBKITPART_INCLUDE_DIR ${CMAKE_SOURCE_DIR})
 endif(kwebkitpart_SOURCE_DIR)
 
-# use pkg-config to get the directories and then use these values
-# in the FIND_PATH() and FIND_LIBRARY() calls
-if( NOT WIN32 )
-  find_package(PkgConfig)
-  pkg_check_modules(PC_KWEBKITPART kwebkit)
-  set(PCRE_DEFINITIONS ${PC_KWEBKITPART_CFLAGS_OTHER})
-endif( NOT WIN32 )
-
 FIND_PATH(KWEBKITPART_INCLUDE_DIR NAMES kwebkitpart.h
   PATHS
-  ${PC_KWEBKITPART_INCLUDEDIR} 
-  ${PC_KWEBKITPART_INCLUDE_DIRS}
   ${KDE4_INCLUDE_INSTALL_DIR}
 )
 
 FIND_LIBRARY(KWEBKITPART_LIBRARIES NAMES kwebkit
   PATHS
-  ${PC_KWEBKITPART_LIBDIR} 
-  ${PC_KWEBKITPART_LIBRARY_DIRS}
   ${KDE4_LIB_INSTALL_DIR}
 )
 
