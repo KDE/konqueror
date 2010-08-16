@@ -869,6 +869,8 @@ void KonqComboLineEdit::setCompletedItems( const QStringList& items, bool )
                 const bool blocked = completionbox->blockSignals(true);
                 completionbox->setCurrentItem(matchedItem);
                 completionbox->blockSignals(blocked);
+            } else {
+                completionbox->setCurrentRow(-1);
             }
         }
         else { // completion box not visible yet -> show it
@@ -946,10 +948,6 @@ void KonqComboCompletionBox::setItems( const QStringList& items )
         sizeAndPosition();
 
     blockSignals( block );
-
-    // Trigger d->down_workaround = true within KCompletionBox
-    QStringList dummy;
-    KCompletionBox::insertItems( dummy, 1 );
 }
 
 void KonqComboCompletionBox::insertStringList( const QStringList & list, int index )
