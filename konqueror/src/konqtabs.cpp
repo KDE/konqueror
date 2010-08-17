@@ -74,8 +74,6 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
   m_pActiveChild = 0L;
   m_pViewManager = viewManager;
 
-  m_MouseMiddleClickClosesTab = KonqSettings::mouseMiddleClickClosesTab();
-
   m_permanentCloseButtons = KonqSettings::permanentCloseButton();
   if (m_permanentCloseButtons) {
     setTabsClosable( true );
@@ -379,7 +377,7 @@ void KonqFrameTabs::slotMouseMiddleClick()
 
 void KonqFrameTabs::slotMouseMiddleClick(QWidget *w)
 {
-    if (m_MouseMiddleClickClosesTab) {
+    if (KonqSettings::mouseMiddleClickClosesTab()) {
         slotCloseRequest(w);
     } else {
         KUrl filteredURL(KonqMisc::konqFilteredURL(this, QApplication::clipboard()->text(QClipboard::Selection)));
