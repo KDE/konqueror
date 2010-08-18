@@ -90,9 +90,23 @@ void CookieListViewItem::init( CookieProp* cookie, const QString &domain,
     mCookiesLoaded = cookieLoaded;
 
     if (mCookie)
-        setText(1, tolerantFromAce(mCookie->host.toLatin1()));
+    {
+        kDebug() << "Host:" << mCookie->host << "Domain:" << domain;
+        if (mDomain.isEmpty())
+            setText(0, tolerantFromAce(mCookie->host.toLatin1()));
+        else
+            setText(0, tolerantFromAce(mDomain.toLatin1()));
+        setText(1, mCookie->name);
+    }
     else
-        setText(0, tolerantFromAce(mDomain.toLatin1()));
+    {
+        QString siteName;
+        if (mDomain.startsWith(QLatin1Char('.')))
+            siteName = mDomain.mid(1);
+        else
+            siteName = mDomain;
+        setText(0, tolerantFromAce(siteName.toLatin1()));
+    }
 }
 
 CookieProp* CookieListViewItem::leaveCookie()
@@ -244,8 +258,9 @@ QString KCookiesManagement::quickHelp() const
 
 void KCookiesManagement::getDomains()
 {
-    QDBusInterface kded("org.kde.kded", "/modules/kcookiejar", "org.kde.KCookieServer", QDBusConnection::sessionBus());
-    QDBusReply<QStringList> reply = kded.call( "findDomains" );
+  QDBusInterface kded("org.kde.kded", "/modules/kcookiejar", "org.kde.KCookieServer", QDBusConnection::sessionBus());
+  QDBusReply<QStringList> reply = kded.call( "findDomains" );
+
   if( !reply.isValid() )
   {
     QString caption = i18n ("Information Lookup Failure");
@@ -255,8 +270,6 @@ void KCookiesManagement::getDomains()
     return;
   }
 
-  const QStringList domains = reply;
-
   if ( dlg->lvCookies->topLevelItemCount() > 0 )
   {
     reset();
@@ -264,53 +277,73 @@ void KCookiesManagement::getDomains()
   }
 
   CookieListViewItem *dom;
-  for(QStringList::const_iterator dIt = domains.begin(); dIt != domains.end(); dIt++)
+  QListIterator<QString> it (reply.value());
+  while (it.hasNext())
   {
-    dom = new CookieListViewItem(dlg->lvCookies, *dIt);
-    dom->setChildIndicatorPolicy(QTreeWidgetItem::ShowIndicator);
+    const QString domain = it.next();
+    if (dlg->lvCookies->findItems(domain, Qt::MatchFixedString).isEmpty()) {
+        dom = new CookieListViewItem(dlg->lvCookies, domain);
+        dom->setChildIndicatorPolicy(QTreeWidgetItem::ShowIndicator);
+    }
   }
 
   // are there any cookies?
   dlg->pbDeleteAll->setEnabled(dlg->lvCookies->topLevelItemCount() > 0);
-
   dlg->lvCookies->sortItems(0, Qt::AscendingOrder);
 }
 
 Q_DECLARE_METATYPE( QList<int> )
 
-void KCookiesManagement::getCookies(QTreeWidgetItem *cookieDom)
+void KCookiesManagement::getCookies(QTreeWidgetItem *item)
 {
-  CookieListViewItem* ckd = static_cast<CookieListViewItem*>(cookieDom);
-  if ( ckd && ckd->cookiesLoaded() )
+  CookieListViewItem* cookieDom = static_cast<CookieListViewItem*>(item);
+  if ( !cookieDom || cookieDom->cookiesLoaded() )
     return;
 
+  QStringList cookies;
   QList<int> fields;
   fields << 0 << 1 << 2 << 3;
+  const QString domain = cookieDom->domain();
+  kDebug() << "Retreiving cookie for" << domain;
+
   QDBusInterface kded("org.kde.kded", "/modules/kcookiejar", "org.kde.KCookieServer", QDBusConnection::sessionBus());
   QDBusReply<QStringList> reply = kded.call( "findCookies",
                                              QVariant::fromValue( fields ),
-                                             ckd->domain(),
-                                          QString(),
-                                          QString(),
-                                          QString() );
+                                             domain,
+                                             QString(),
+                                             QString(),
+                                             QString() );
 
-  if(reply.isValid())
+  if (reply.isValid())
+      cookies.append(reply.value());
+
+  if (domain.startsWith(QLatin1Char('.')))
   {
-    const QStringList fieldVal = reply;
-    QStringList::const_iterator fIt = fieldVal.begin();
+    reply =  kded.call( "findCookies",
+                        QVariant::fromValue( fields ),
+                        domain.mid(1),
+                        QString(),
+                        QString(),
+                        QString() );
+    if (reply.isValid())
+        cookies.append(reply.value());
+  }
 
-    while(fIt != fieldVal.end())
-    {
-      CookieProp *details = new CookieProp;
-      details->domain = *fIt++;
-      details->path = *fIt++;
-      details->name = *fIt++;
-      details->host = *fIt++;
-      details->allLoaded = false;
-      new CookieListViewItem(cookieDom, details);
-    }
+  QStringListIterator it(cookies);
+  while(it.hasNext())
+  {
+    CookieProp *details = new CookieProp;
+    details->domain = it.next();
+    details->path = it.next();
+    details->name = it.next();
+    details->host = it.next();
+    details->allLoaded = false;
+    new CookieListViewItem(item, details);
+  }
 
-    static_cast<CookieListViewItem*>(cookieDom)->setCookiesLoaded();
+  if (!cookies.isEmpty())
+  {
+    static_cast<CookieListViewItem*>(item)->setCookiesLoaded();
     dlg->kListViewSearchLine->updateSearch();
   }
 }
@@ -322,19 +355,20 @@ bool KCookiesManagement::cookieDetails(CookieProp *cookie)
 
   QDBusInterface kded("org.kde.kded", "/modules/kcookiejar", "org.kde.KCookieServer", QDBusConnection::sessionBus());
   QDBusReply<QStringList> reply = kded.call( "findCookies",
-					     QVariant::fromValue( fields ),
-                                          cookie->domain,
-                                          cookie->host,
-                                          cookie->path,
-                                          cookie->name);
+                                             QVariant::fromValue( fields ),
+                                             cookie->domain,
+                                             cookie->host,
+                                             cookie->path,
+                                             cookie->name);
   if( !reply.isValid() )
     return false;
 
-  const QStringList fieldVal = reply;
+  const QStringList fieldVal = reply.value();
 
   QStringList::const_iterator c = fieldVal.begin();
   if (c == fieldVal.end()) // empty list, do not crash
     return false;
+
   cookie->value = *c++;
   qint64 tmp = (*c++).toLongLong();
 
@@ -355,9 +389,11 @@ bool KCookiesManagement::cookieDetails(CookieProp *cookie)
 
 void KCookiesManagement::showCookieDetails(QTreeWidgetItem* item)
 {
-  kDebug () << "::showCookieDetails... ";
+  kDebug ();
+
   if (!item)
     return;
+
   CookieProp *cookie = static_cast<CookieListViewItem*>(item)->cookie();
   if( cookie )
   {
