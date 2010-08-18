@@ -191,9 +191,9 @@ void KCookiesPolicies::addNewPolicy(const QString& domain)
     if ( !handleDuplicate(domain, advice) )
     {
       const char* strAdvice = KCookieAdvice::adviceToStr(advice);
-      QTreeWidgetItem* index = new QTreeWidgetItem (dlg->lvDomainPolicy,
-                                                QStringList()<< domain << i18n(strAdvice));
-      m_pDomainPolicy.insert (index, strAdvice);
+      QTreeWidgetItem* item = new QTreeWidgetItem (dlg->lvDomainPolicy,
+                                                   QStringList()<< domain << i18n(strAdvice));
+      m_pDomainPolicy.insert (item, strAdvice);
       configChanged();
     }
   }
@@ -395,12 +395,14 @@ void KCookiesPolicies::save()
   group.writeEntry("CookieGlobalAdvice", advice);
 
   QStringList domainConfig;
-  QTreeWidgetItem *at = dlg->lvDomainPolicy->topLevelItem(0);
-
-  while( at )
-  {
-    domainConfig.append(QString::fromLatin1("%1:%2").arg(QString(tolerantToAce(at->text(0)))).arg(m_pDomainPolicy[at]));
-    at = dlg->lvDomainPolicy->itemBelow(at);
+  QMapIterator<QTreeWidgetItem*, const char*> it (m_pDomainPolicy);
+  while (it.hasNext()) {
+      it.next();
+      QTreeWidgetItem *item = it.key();
+      QString policy = tolerantToAce(item->text(0));
+      policy += QLatin1Char(':');
+      policy += QLatin1String(it.value());
+      domainConfig << policy;
   }
 
   group.writeEntry("CookieDomainAdvice", domainConfig);
