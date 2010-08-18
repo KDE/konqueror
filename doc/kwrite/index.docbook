@@ -2448,9 +2448,9 @@ page is enabled, spaces are inserted; otherwise, a single tabulator is inserted.
 <varlistentry>
 <term><guilabel>Auto Completion enabled</guilabel></term>
 <listitem>
-<para>If this is enabled, the editor will calculate the number
-of spaces up to the next tab position as defined by the tab width,
-and insert that number of spaces instead of a &Tab; character.</para>
+<para>If enabled, a word completion box automatically pops up during typing
+showing a list of text entries to complete the current text under the
+cursor.</para>
 </listitem>
 </varlistentry>
 </variablelist>
