@@ -42,6 +42,8 @@ namespace KParts
   class StatusBarExtension;
 }
 
+// TODO: make the history-handling code reuseable (e.g. in kparts) for people who want to use a
+// khtml-based browser in some apps. Back/forward support is all in here currently.
 struct HistoryEntry
 {
   void loadItem( const KConfigGroup& config, const QString &prefix, const KonqFrameBase::Options &options);
