@@ -267,7 +267,7 @@ void WebView::selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &se
 {
     QList<QAction *>selectActions;
     if (!d->actionCollection->action("copy")) {
-        QAction* copyAction = d->actionCollection->addAction(KStandardAction::Copy, "copy",  d->part->browserExtension(), SLOT(copy()));
+        KAction* copyAction = d->actionCollection->addAction(KStandardAction::Copy, "copy",  d->part->browserExtension(), SLOT(copy()));
         copyAction->setText(i18n("&Copy Text"));
         copyAction->setEnabled(d->part->browserExtension()->isActionEnabled("copy"));
     }
@@ -298,21 +298,36 @@ void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &link
     const KUrl url(d->result.linkUrl());
 
     QList<QAction *>linkActions;
-    if (url.protocol() == "mailto") {
-        KAction *action = new KAction(i18n("&Copy Email Address"), this);
-        d->actionCollection->addAction("copylinklocation", action);
-        connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotCopyLinkLocation()));
-        linkActions.append(action);
-    } else {
-        KAction *action = new KAction(i18n("&Save Link As..."), this);
-        d->actionCollection->addAction("savelinkas", action);
-        connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotSaveLinkAs()));
-        linkActions.append(action);
 
-        action = new KAction(i18n("&Copy Link Address"), this);
-        d->actionCollection->addAction("copylinklocation", action);
-        connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotCopyLinkLocation()));
-        linkActions.append(action);
+    KAction *action;
+    if (!d->actionCollection->action("copy")) {
+        action = d->actionCollection->addAction(KStandardAction::Copy, "copy",  d->part->browserExtension(), SLOT(copy()));
+        action->setText(i18n("&Copy Text"));
+        action->setEnabled(d->part->browserExtension()->isActionEnabled("copy"));
+    }
+    linkActions.append(d->actionCollection->action("copy"));
+
+    if (url.protocol() == "mailto") {
+        if (!d->actionCollection->action("copylinklocation")) {
+            action = new KAction(i18n("&Copy Email Address"), this);
+            d->actionCollection->addAction("copylinklocation", action);
+            connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotCopyLinkLocation()));
+        }
+        linkActions.append(d->actionCollection->action("copylinklocation"));
+    } else {
+        if (!d->actionCollection->action("copylinklocation")) {
+            action = new KAction(i18n("&Copy Link Address"), this);
+            d->actionCollection->addAction("copylinklocation", action);
+            connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotCopyLinkLocation()));
+        }
+        linkActions.append(d->actionCollection->action("copylinklocation"));
+
+        if (!d->actionCollection->action("savelinkas")) {
+            action = new KAction(i18n("&Save Link As..."), this);
+            d->actionCollection->addAction("savelinkas", action);
+            connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotSaveLinkAs()));
+        }
+        linkActions.append(d->actionCollection->action("savelinkas"));
     }
     linkGroupMap.insert("linkactions", linkActions);
 }
@@ -364,7 +379,6 @@ void WebView::WebViewPrivate::addSearchActions(QList<QAction *>& selectActions, 
         }
     }
 #else
-    // TODO: Remove the code below after the release of 4.6.
     // Fill search provider entries
     KConfig config("kuriikwsfilterrc");
     KConfigGroup cg = config.group("General");
