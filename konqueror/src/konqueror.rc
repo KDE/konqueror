@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE gui SYSTEM "kpartgui.dtd">
-<gui name="Konqueror" version="68">
+<gui name="Konqueror" version="69">
 <MenuBar>
  <Menu name="file" noMerge="1"><text>&amp;File</text>
   <Action name="new_window"/>
@@ -109,6 +109,7 @@
 <ToolBar fullWidth="true" iconText="icononly" name="locationToolBar" newline="false"><text>Location Toolbar</text>
   <Action name="toolbar_url_combo" />
   <Action name="go_url" />
+  <Action name="konq_logo" />
 </ToolBar>
 <ToolBar noEdit="true" iconText="icontextright" fullWidth="true" name="bookmarkToolBar" iconSize="16" newline="true"><text>Bookmark Toolbar</text>
 </ToolBar>
