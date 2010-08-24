@@ -3716,9 +3716,14 @@ void KonqMainWindow::initActions()
   connect(m_paStop, SIGNAL(triggered()), SLOT( slotStop() ));
   m_paStop->setShortcut(Qt::Key_Escape);
 
-  m_paAnimatedLogo = new KonqAnimatedLogo( menuBar() );
-  menuBar()->setCornerWidget(m_paAnimatedLogo);
+  m_paAnimatedLogo = new KonqAnimatedLogo;
   m_paAnimatedLogo->setIcons("process-working-kde");
+  KAction *logoAction = new KAction( this );
+  actionCollection()->addAction( "konq_logo", logoAction );
+  logoAction->setDefaultWidget( m_paAnimatedLogo );
+  // Set icon and text so that it's easier to figure out what the action is in the toolbar editor
+  logoAction->setText( i18n("Throbber") );
+  logoAction->setIcon( KIcon("kde") );
 
   // Location bar
   m_locationLabel = new KonqDraggableLabel( this, i18n("L&ocation: ") );

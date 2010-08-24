@@ -24,30 +24,26 @@
 
 #include <KDE/KAnimatedButton>
 
+class QToolBar;
+
 class KonqAnimatedLogo : public KAnimatedButton
 {
     Q_OBJECT
 
 public:
     /**
-     * Create an animated logo button suitable sized for @p menuBar
-     *
-     * The button is not added to the menu bar.
+     * Creates an animated logo button which follows the toolbar icon size
      */
     KonqAnimatedLogo(QWidget *parent = 0);
-    ~KonqAnimatedLogo();
-
-    QSize sizeHint() const;
 
 protected:
-    bool eventFilter(QObject *watched, QEvent *event);
     void changeEvent(QEvent *event);
 
-private:
-    int maxThrobberHeight();
-    void setAnimatedLogoSize(int buttonHeight);
+private Q_SLOTS:
+    void setAnimatedLogoSize(const QSize &);
 
-    QSize m_size;
+private:
+    void connectToToolBar(QToolBar *);
 };
 
 #endif // KONQANIMATEDLOGO_P_H

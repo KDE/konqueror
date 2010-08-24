@@ -24,9 +24,7 @@
 #include <KDE/KIconLoader>
 
 #include <QtCore/QEvent>
-#include <QtGui/QMenuBar>
-#include <QtGui/QStyle>
-#include <QtGui/QStyleOptionMenuItem>
+#include <QtGui/QToolBar>
 
 KonqAnimatedLogo::KonqAnimatedLogo(QWidget *parent)
     : KAnimatedButton(parent)
@@ -34,99 +32,37 @@ KonqAnimatedLogo::KonqAnimatedLogo(QWidget *parent)
     setAutoRaise(true);
     setFocusPolicy(Qt::NoFocus);
     setToolButtonStyle(Qt::ToolButtonIconOnly);
-    setAnimatedLogoSize(maxThrobberHeight());
-    if (qobject_cast<QMenuBar *>(parent))
-        parent->installEventFilter(this);
-}
-
-KonqAnimatedLogo::~KonqAnimatedLogo()
-{
-    if (parentWidget())
-        parentWidget()->removeEventFilter(this);
-}
-
-QSize KonqAnimatedLogo::sizeHint() const
-{
-    return m_size;
+    QToolBar * bar = qobject_cast<QToolBar *>(parent);
+    if (bar) {
+        connectToToolBar(bar);
+    }
 }
 
 void KonqAnimatedLogo::changeEvent(QEvent *event)
 {
     KAnimatedButton::changeEvent(event);
     if (event->type() == QEvent::ParentAboutToChange) {
-        if (parentWidget())
-            parentWidget()->removeEventFilter(this);
+        if (parentWidget()) {
+            disconnect(parentWidget(), SIGNAL(iconSizeChanged(QSize)), this, SLOT(setAnimatedLogoSize()));
+        }
     } else if (event->type() == QEvent::ParentChange) {
-        if (qobject_cast<QMenuBar *>(parentWidget()))
-            parentWidget()->installEventFilter(this);
-    }
-}
-
-bool KonqAnimatedLogo::eventFilter(QObject *watched, QEvent *event)
-{
-    if (qobject_cast<QWidget *>(watched) == parentWidget()) {
-        if (event->type() == QEvent::StyleChange || event->type() == QEvent::FontChange
-            || event->type() == QEvent::ApplicationFontChange) {
-            // make sure the logo is resized before the menu bar gets the
-            // font change event
-            setAnimatedLogoSize(maxThrobberHeight());
+        QToolBar *bar = qobject_cast<QToolBar *>(parentWidget());
+        if (bar) {
+            connectToToolBar(bar);
         }
     }
-    return KAnimatedButton::eventFilter(watched, event);
 }
 
-int KonqAnimatedLogo::maxThrobberHeight()
+void KonqAnimatedLogo::connectToToolBar(QToolBar *bar)
 {
-    QMenuBar *menuBar = qobject_cast<QMenuBar *>(parentWidget());
-    if (!menuBar)
-        return 22;
-
-    // This comes from QMenuBar::sizeHint and QMenuBarPrivate::calcActionRects
-    const QFontMetrics fm = menuBar->fontMetrics();
-    QSize sz(100, fm.height());
-    //let the style modify the above size..
-    QStyleOptionMenuItem opt;
-    opt.fontMetrics = fm;
-    opt.state = QStyle::State_Enabled;
-    opt.menuRect = menuBar->rect();
-    opt.text = "dummy";
-    sz = menuBar->style()->sizeFromContents(QStyle::CT_MenuBarItem, &opt, sz, menuBar);
-    //kDebug() << "maxThrobberHeight=" << sz.height();
-    return sz.height();
+    setAnimatedLogoSize(bar->iconSize());
+    connect(bar, SIGNAL(iconSizeChanged(QSize)), SLOT(setAnimatedLogoSize(QSize)));
 }
 
-void KonqAnimatedLogo::setAnimatedLogoSize(int buttonHeight)
+void KonqAnimatedLogo::setAnimatedLogoSize(const QSize &size)
 {
-    // This gives the best results: we force a bigger icon size onto the style, and it'll just have to eat up its margin.
-    // So we don't need to ask sizeFromContents at all.
-    int iconSize = buttonHeight - 4;
-#if 0
-    QStyleOptionToolButton opt;
-    opt.initFrom(m_paAnimatedLogo);
-    const QSize finalSize = style()->sizeFromContents(QStyle::CT_ToolButton, &opt, opt.iconSize, m_paAnimatedLogo);
-    //kDebug() << "throbberIconSize=" << buttonHeight << "-" << finalSize.height() - opt.iconSize.height();
-    int iconSize = buttonHeight - (finalSize.height() - opt.iconSize.height());
-#endif
-
-    m_size = QSize(buttonHeight, buttonHeight);
-    setFixedSize(m_size);
-
-    //kDebug() << "buttonHeight=" << buttonHeight << "max iconSize=" << iconSize;
-    if ( iconSize < KIconLoader::SizeSmallMedium )
-        iconSize = KIconLoader::SizeSmall;
-    else if ( iconSize < KIconLoader::SizeMedium  )
-        iconSize = KIconLoader::SizeSmallMedium;
-    else if ( iconSize < KIconLoader::SizeLarge )
-        iconSize = KIconLoader::SizeMedium ;
-    else
-        iconSize = KIconLoader::SizeLarge;
-    //kDebug() << "final iconSize=" << iconSize;
-    if (iconDimensions() != iconSize) {
-        setIconSize(QSize(iconSize, iconSize));
-        if (!icons().isEmpty()) {
-            updateIcons();
-        }
-    }
+    setIconSize(size);
+    updateIcons();
 }
 
 #include "konqanimatedlogo_p.moc"
