@@ -52,16 +52,18 @@ class KWebKitPartPrivate : public QObject
    Q_OBJECT
 public:
     KWebKitPartPrivate(KWebKitPart *parent);
-    void init (QWidget *widget);
+    void init (QWidget *widget, const QString& sessionFileName);
     void initActions();
 
     bool emitOpenUrlNotify;
     bool contentModified;
+    bool pageRestored;
     QPointer<WebView> webView;
     QPointer<WebPage> webPage;
     QPointer<KDEPrivate::SearchBar> searchBar;
     WebKitBrowserExtension *browserExtension;
     KParts::StatusBarExtension *statusBarExtension;
+
 
 private Q_SLOTS:
     void slotShowSecurity();

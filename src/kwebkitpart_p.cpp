@@ -68,13 +68,14 @@ KWebKitPartPrivate::KWebKitPartPrivate(KWebKitPart *parent)
                    :QObject(),
                     emitOpenUrlNotify(true),
                     contentModified(false),
+                    pageRestored(false),
                     q(parent),
                     statusBarWalletLabel(0),
                     hasCachedFormData(false)
 {
 }
 
-void KWebKitPartPrivate::init(QWidget *mainWidget)
+void KWebKitPartPrivate::init(QWidget *mainWidget, const QString& sessionFileName)
 {
     // Create the WebView...
     webView = new WebView (q, mainWidget);
@@ -118,7 +119,7 @@ void KWebKitPartPrivate::init(QWidget *mainWidget)
     connect(webView, SIGNAL(linkShiftClicked(const KUrl &)),
             webPage, SLOT(downloadUrl(const KUrl &)));
 
-    browserExtension = new WebKitBrowserExtension(q);
+    browserExtension = new WebKitBrowserExtension(q, sessionFileName);
     connect(webPage, SIGNAL(loadProgress(int)),
             browserExtension, SIGNAL(loadingProgress(int)));
     connect(webPage, SIGNAL(selectionChanged()),
@@ -296,6 +297,20 @@ void KWebKitPartPrivate::slotLoadFinished(bool ok)
         }
     }
 
+    // Set page restored to false, if the page was restored...
+    if (pageRestored) {
+        pageRestored = false;
+        // Restore the scroll postions if present...
+        KParts::OpenUrlArguments args = q->arguments();
+        if (args.metaData().contains(QL1S("kwebkitpart-restore-scrollx"))) {
+            const int scrollPosX = args.metaData().take(QL1S("kwebkitpart-restore-scrollx")).toInt();
+            const int scrollPosY = args.metaData().take(QL1S("kwebkitpart-restore-scrolly")).toInt();
+            webPage->mainFrame()->setScrollPosition(QPoint(scrollPosX, scrollPosY));
+            q->setArguments(args);
+        }
+    }
+
+
     /*
       NOTE: Support for stopping meta data redirects is implemented in QtWebKit
       2.0 (Qt 4.7) or greater. See https://bugs.webkit.org/show_bug.cgi?id=29899.
@@ -360,15 +375,33 @@ void KWebKitPartPrivate::slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *i
             emit browserExtension->openUrlNotify();
 
         // Save the SSL info as the history item meta-data...
-        if (item && webPage->sslInfo().isValid())
-            item->setUserData(webPage->sslInfo().toMetaData());
+        if (item) {
+            QMap<QString, QVariant> data;
+            const QVariant v = item->userData();
+            if (v.isValid() && v.type() == QVariant::Map)
+                data = v.toMap();
+            if (webPage->sslInfo().saveTo(data))
+                item->setUserData(data);
+        }
     }
 }
 
 void KWebKitPartPrivate::slotRestoreFrameState(QWebFrame *frame)
 {
-    if (frame == webPage->mainFrame())
+    //kDebug() << "Restore state for" << frame;
+    if (frame == webPage->mainFrame()) {
         emitOpenUrlNotify = true;
+        if (pageRestored) {
+            const QWebHistoryItem item = frame->page()->history()->currentItem();
+            QVariant v = item.userData();
+            if (v.isValid() && v.type() == QVariant::Map) {
+                QMap<QString, QVariant> data = v.toMap();
+                if (data.contains(QL1S("scrollx")) && data.contains(QL1S("scrolly")))
+                    frame->setScrollPosition(QPoint(data.value(QL1S("scrollx")).toInt(),
+                                                    data.value(QL1S("scrolly")).toInt()));
+            }
+        }
+    }
 }
 
 void KWebKitPartPrivate::slotLinkHovered(const QString &link, const QString &title, const QString &content)

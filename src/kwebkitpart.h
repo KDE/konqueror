@@ -50,7 +50,9 @@ class KWEBKIT_EXPORT KWebKitPart : public KParts::ReadOnlyPart
     Q_OBJECT
     Q_PROPERTY( bool modified READ isModified )
 public:
-    explicit KWebKitPart(QWidget *parentWidget = 0, QObject *parent = 0, const QStringList &/*args*/ = QStringList());
+    explicit KWebKitPart(QObject *parent = 0, QWidget *parentWidget = 0,
+                         const QString& historyFile = QString(),
+                         const QStringList &/*args*/ = QStringList());
     ~KWebKitPart();
 
     /**
@@ -98,7 +100,7 @@ protected:
 
 private:
     friend class KWebKitPartPrivate;
-    KWebKitPartPrivate * const d;    
+    KWebKitPartPrivate * const d;
 };
 
 #endif // WEBKITPART_H

@@ -48,8 +48,8 @@ public:
   int usedChiperBits () const;
   QList<QSslCertificate> certificateChain() const;
 
-  QVariant toMetaData() const;
-  void fromMetaData (const QVariant &, const QUrl& = QUrl());
+  bool saveTo(QMap<QString, QVariant>&) const;
+  void restoreFrom(const QVariant &, const QUrl& = QUrl());
 
   void setUrl (const QUrl &url);
   WebSslInfo& operator = (const WebSslInfo&);

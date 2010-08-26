@@ -25,14 +25,23 @@
 
 #include <kparts/factory.h>
 
+#include <QtCore/QHash>
+
 class KWebKitFactory : public KParts::Factory
 {
     Q_OBJECT
 public:
     KWebKitFactory();
     virtual ~KWebKitFactory();
-
     virtual KParts::Part *createPartObject(QWidget *parentWidget, QObject *parent, const char *className, const QStringList &args);
+
+private Q_SLOTS:
+    void slotDestroyed(QObject * obj);
+    void slotSaveYourself();
+
+private:
+    bool m_discardSessionFiles;
+    QHash<QObject*, QString> m_sessionFileLookup;
 };
 
 #endif // WEBKITPARTFACTORY

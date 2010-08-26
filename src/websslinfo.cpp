@@ -126,10 +126,10 @@ WebSslInfo& WebSslInfo::operator=(const WebSslInfo& other)
   return *this;
 }
 
-QVariant WebSslInfo::toMetaData() const
+bool WebSslInfo::saveTo(QMap<QString, QVariant>& data) const
 {
-  if (isValid()) {
-    QMap<QString, QVariant> data;
+  const bool ok = isValid();
+  if (ok) {
     data.insert("ssl_in_use", true);
     data.insert("ssl_peer_ip", d->peerAddress.toString());
     data.insert("ssl_parent_ip", d->parentAddress.toString());
@@ -142,13 +142,12 @@ QVariant WebSslInfo::toMetaData() const
     Q_FOREACH(const QSslCertificate& cert, d->certificateChain)
         certChain += cert.toPem();
     data.insert("ssl_peer_chain", certChain);
-    return data;
   }
 
-  return QVariant();
+  return ok;
 }
 
-void WebSslInfo::fromMetaData(const QVariant& value, const QUrl& url)
+void WebSslInfo::restoreFrom(const QVariant& value, const QUrl& url)
 {
   if (value.isValid() && value.type() == QVariant::Map) {
     QMap<QString,QVariant> metaData = value.toMap();

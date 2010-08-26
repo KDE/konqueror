@@ -40,8 +40,8 @@
 #include <KDE/KRun>
 #include <KDE/KDebug>
 #include <KDE/KPrintPreview>
-#include <KDE/KStandardDirs>
-#include <KDE/KTemporaryFile>
+#include <KDE/KSaveFile>
+#include <KDE/KComponentData>
 #include <kdeversion.h>
 
 #include <QtCore/QPointer>
@@ -64,16 +64,17 @@ class WebKitBrowserExtension::WebKitBrowserExtensionPrivate
 
     QPointer<KWebKitPart> part;
     QPointer<WebView> view;
-    QFile* historyFile;
+    QString historyFileName;
 };
 
-WebKitBrowserExtension::WebKitBrowserExtension(KWebKitPart *parent)
+
+WebKitBrowserExtension::WebKitBrowserExtension(KWebKitPart *parent, const QString &historyFileName)
                        :KParts::BrowserExtension(parent),
                         d (new WebKitBrowserExtensionPrivate)
 {
     d->part = parent;
     d->view = qobject_cast<WebView*>(parent->view());
-    d->historyFile = new QFile(KStandardDirs::locateLocal("data", "kwebkitpart/autosave/history"));
+    d->historyFileName = historyFileName;
 
     enableAction("cut", false);
     enableAction("copy", false);
@@ -83,11 +84,21 @@ WebKitBrowserExtension::WebKitBrowserExtension(KWebKitPart *parent)
 
 WebKitBrowserExtension::~WebKitBrowserExtension()
 {
-    // If the history file is empty, remove it.
-    if (d->historyFile->size() == 0)
-        d->historyFile->remove();
-    delete d->historyFile;
     delete d;
+}
+
+void WebKitBrowserExtension::saveHistoryState()
+{
+    if (d->view->page()->history()->count()) {
+        KSaveFile saveFile (d->historyFileName, d->part->componentData());
+        if (saveFile.open()) {
+            //kDebug() << "Saving history data to"  << saveFile.fileName();
+            QDataStream stream (&saveFile);
+            stream << *(d->view->page()->history());
+            if (!saveFile.finalize())
+                kWarning() << "Failed to save session history to" << saveFile.fileName();
+        }
+    }
 }
 
 int WebKitBrowserExtension::xOffset()
@@ -111,39 +122,40 @@ void WebKitBrowserExtension::saveState(QDataStream &stream)
     stream << d->part->url()
            << static_cast<qint32>(xOffset())
            << static_cast<qint32>(yOffset())
-           << static_cast<qint32>(d->view->page()->history()->currentItemIndex());
-
-    // Save the QtWebKit history into its own file...
-    if (d->historyFile->isWritable() || d->historyFile->open(QIODevice::WriteOnly)) {
-        d->historyFile->seek(0);  // do not append, but rewrite...
-        QDataStream output (d->historyFile);
-        output << *(d->view->page()->history());
-    } else {
-        kDebug() << "Unable to open history file:" <<  d->historyFile->fileName();
-    }
+           << static_cast<qint32>(d->view->page()->history()->currentItemIndex())
+           << d->historyFileName;
 }
 
 void WebKitBrowserExtension::restoreState(QDataStream &stream)
 {
-    KUrl u;
-    qint32 xOfs, yOfs,historyItemIndex;
-    KParts::OpenUrlArguments args;
+    Q_ASSERT(d);
 
-    stream >> u >> xOfs >> yOfs >> historyItemIndex;
+    KUrl u;
+    KParts::OpenUrlArguments args;
+    qint32 xOfs, yOfs, historyItemIndex;
+
+    if (d->view->page()->history()->count() > 0) {
+        stream >> u >> xOfs >> yOfs >> historyItemIndex;
+    } else {
+        QString historyFileName;
+        stream >> u >> xOfs >> yOfs >> historyItemIndex >> historyFileName;
+        //kDebug() << "Attempting to restore history from" << historyFileName;
+        QFile file (historyFileName);
+        if (file.open(QIODevice::ReadOnly)) {
+            QDataStream stream (&file);
+            stream >> *(d->view->page()->history());
+        }
+
+        if (file.exists())
+            file.remove();
+    }
+
+    // kDebug() << "Restoring item #" << historyItemIndex << "of" << d->view->page()->history()->count() << "at offset (" << xOfs << yOfs << ")";
     args.metaData().insert(QL1S("kwebkitpart-restore-state"), QString::number(historyItemIndex));
+    args.metaData().insert(QL1S("kwebkitpart-restore-scrollx"), QString::number(xOfs));
+    args.metaData().insert(QL1S("kwebkitpart-restore-scrolly"), QString::number(yOfs));
     d->part->setArguments(args);
     d->part->openUrl(u);
-}
-
-void WebKitBrowserExtension::restoreHistory()
-{
-    // If the history file is open, we are already saving history data ; so we
-    // ignore any restore history requests.
-    if (!d->historyFile->isOpen() && d->historyFile->open(QIODevice::ReadOnly)) {
-        QDataStream stream (d->historyFile);
-        stream >> *(d->view->page()->history());
-        d->historyFile->close();
-    }
 }
 
 void WebKitBrowserExtension::cut()

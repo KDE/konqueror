@@ -58,9 +58,11 @@ static inline int convertStr2Int(const QString& value)
    return 0;
 }
 
-KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent, const QStringList &/*args*/)
+KWebKitPart::KWebKitPart(QObject *parent, QWidget *parentWidget,
+                         const QString& historyFile, const QStringList& args)
             :KParts::ReadOnlyPart(parent), d(new KWebKitPartPrivate(this))
 {
+    Q_UNUSED(args);
     KAboutData about = KAboutData("kwebkitpart", 0,
                                   ki18nc("Program Name", "KWebKitPart"),
                                   /*version*/ "0.9.6",
@@ -92,13 +94,14 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent, const QStringLi
     mainWidget->setObjectName("kwebkitpart");
     setWidget(mainWidget);
 
-    d->init(mainWidget);
+    d->init(mainWidget, historyFile);
     setXMLFile("kwebkitpart.rc");
     d->initActions();
 }
 
 KWebKitPart::~KWebKitPart()
 {
+    d->browserExtension->saveHistoryState();
     delete d;
 }
 
@@ -149,44 +152,50 @@ bool KWebKitPart::openUrl(const KUrl &u)
     } else {
         KParts::BrowserArguments bargs (browserExtension()->browserArguments());
         KParts::OpenUrlArguments args (arguments());
-        KIO::MetaData metaData (args.metaData());
-
         // Check if this is a restore state request, i.e. a history navigation
-        // or a session restore. If it is, we fulfill the request using QWebHistory.
-        if (metaData.contains(QL1S("kwebkitpart-restore-state"))) {
-            const int historyIndex = metaData.value(QL1S("kwebkitpart-restore-state")).toInt();
-            if (historyIndex > -1) {
-                if (d->webPage->history()->count()) {
-                    QWebHistoryItem historyItem = d->webPage->history()->itemAt(historyIndex);
-                    if (historyItem.isValid()) {
-                        setUrl(historyItem.url());
-                        // Set any cached ssl information...
-                        if (historyItem.userData().isValid()) {
-                            WebSslInfo sslinfo;
-                            sslinfo.fromMetaData(historyItem.userData());
-                            d->webPage->setSslInfo(sslinfo);
-                        }
-                        d->webPage->history()->goToItem(historyItem);
-
-                    }
-                } else {
-                    // NOTE: Restoring QWebHistory through its stream operator
-                    // will cause navigation to the last active item in the
-                    // list. Hence no need to do anything else here...
-                    d->browserExtension->restoreHistory();
+        // or a session restore. If it is, fulfill the request using QWebHistory.
+        if (args.metaData().contains(QL1S("kwebkitpart-restore-state"))) {
+            d->pageRestored = true;
+            const int historyCount = d->webPage->history()->count();
+            const int historyIndex = args.metaData().take(QL1S("kwebkitpart-restore-state")).toInt();
+            if (historyCount > 0 && historyIndex > -1 && historyIndex < historyCount ) {
+                QWebHistoryItem historyItem = d->webPage->history()->itemAt(historyIndex);
+                const bool restoreScrollPos = args.metaData().contains(QL1S("kwebkitpart-restore-scrollx"));
+                if (restoreScrollPos) {
+                    QMap<QString, QVariant> data;
+                    data.insert(QL1S("scrollx"), args.metaData().take(QL1S("kwebkitpart-restore-scrollx")).toInt());
+                    data.insert(QL1S("scrolly"), args.metaData().take(QL1S("kwebkitpart-restore-scrolly")).toInt());
+                    historyItem.setUserData(data);
                 }
-                return true;
+
+                if (historyItem.isValid()) {
+                    setUrl(historyItem.url());
+                    // Set any cached ssl information...
+                    if (historyItem.userData().isValid()) {
+                        WebSslInfo sslInfo;
+                        sslInfo.restoreFrom(historyItem.userData());
+                        d->webPage->setSslInfo(sslInfo);
+                    }
+                    d->webPage->history()->goToItem(historyItem);
+                    // Update the part's OpenUrlArguments after removing all of the
+                    // 'kwebkitpart-restore-x' metadata entries...
+                    setArguments(args);
+                    return true;
+                }
             }
         }
 
         // Get the SSL information sent, if any...
-        if (metaData.contains(QL1S("ssl_in_use"))) {
-            WebSslInfo sslinfo;
-            sslinfo.fromMetaData(metaData.toVariant());
-            sslinfo.setUrl(u);
-            d->webPage->setSslInfo(sslinfo);
+        if (args.metaData().contains(QL1S("ssl_in_use"))) {
+            WebSslInfo sslInfo;
+            sslInfo.restoreFrom(KIO::MetaData(args.metaData()).toVariant());
+            sslInfo.setUrl(u);
+            d->webPage->setSslInfo(sslInfo);
         }
 
+        // Update the part's OpenUrlArguments after removing all of the
+        // 'kwebkitpart-restore-x' metadata entries...
+        setArguments(args);
         d->webView->loadUrl(u, args, bargs);
     }
 

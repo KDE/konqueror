@@ -53,7 +53,7 @@
 #include <KIO/AccessManager>
 #include <KDE/KTemporaryFile>
 
-#include <QtCore/QListIterator>
+#include <QtCore/QVectorIterator>
 #include <QtGui/QTextDocument>
 #include <QtGui/QApplication>
 #include <QtNetwork/QNetworkReply>
@@ -62,6 +62,7 @@
 #include <QtWebKit/QWebFrame>
 #include <QtWebKit/QWebElement>
 #include <QtWebKit/QWebHistory>
+#include <QtWebKit/QWebHistoryItem>
 #include <QtWebKit/QWebSecurityOrigin>
 
 #define QL1S(x)  QLatin1String(x)
@@ -164,16 +165,20 @@ class WebPage::WebPagePrivate
 {
 public:
     WebPagePrivate()
-      : userRequestedCreateWindow(false), ignoreError(false), kioErrorCode(0) {}
+      :userRequestedCreateWindow(false),
+       ignoreError(false),
+       ignoreHistoryNavigationRequest(true),
+       kioErrorCode(0) {}
 
     enum WebPageSecurity { PageUnencrypted, PageEncrypted, PageMixed };
 
     WebSslInfo sslInfo;
-    QList<QUrl> requestQueue;
+    QVector<QUrl> requestQueue;
     QPointer<KWebKitPart> part;
 
     bool userRequestedCreateWindow;
     bool ignoreError;
+    bool ignoreHistoryNavigationRequest;
     int kioErrorCode;
 };
 
@@ -183,7 +188,8 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
 {
     d->part = part;
 
-    // Set our own internal network access manager...
+    // FIXME: Need a better way to handle request filtering than to inherit
+    // KIO::Integration::AccessManager...
     KDEPrivate::MyNetworkAccessManager *manager = new KDEPrivate::MyNetworkAccessManager(this);
     if (parent && parent->window())
         manager->setCookieJarWindowId(parent->window()->winId());
@@ -199,11 +205,6 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
 
     // Tell QtWebKit to treat man:/ protocol as a local resource...
     QWebSecurityOrigin::addLocalScheme(QL1S("man"));
-
-    // Override the 'Accept' header sent by QtWebKit which favors XML over HTML!
-    // Setting the accept meta-data to null will force kio_http to use its own
-    // default settings for this header.
-    setSessionMetaData(QL1S("accept"), QString());
 
     connect(this, SIGNAL(geometryChangeRequested(const QRect &)),
             this, SLOT(slotGeometryChangeRequested(const QRect &)));
@@ -248,28 +249,39 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
         bool inPageRequest = true;
 
         switch (type) {
-            case QWebPage::NavigationTypeFormSubmitted:
-            case QWebPage::NavigationTypeFormResubmitted:
-                if (!checkFormData(request))
-                    return false;
-                break;
-            case QWebPage::NavigationTypeBackOrForward:
-                kDebug() << "Navigating to history item #" << history()->currentItemIndex()
-                         << " of " << history()->count();
-            case QWebPage::NavigationTypeReload:
-                inPageRequest = false;
-                break;
-            case QWebPage::NavigationTypeOther:
-                /*
-                  NOTE: This navigation type is used for both user entered urls
-                  as well as javascript based link clicks. However, since there
-                  is no easy way to distinguish b/n
-                */
-                //if (d->part->url() == reqUrl)
-                inPageRequest = false;
-                break;
-            default:
-                break;
+        case QWebPage::NavigationTypeFormSubmitted:
+        case QWebPage::NavigationTypeFormResubmitted:
+            if (!checkFormData(request))
+                return false;
+            break;
+        case QWebPage::NavigationTypeBackOrForward:
+            // NOTE: This is necessary because restoring QtWebKit's history causes
+            // it to navigate to the last item. Unfortunately that causes
+            if (d->ignoreHistoryNavigationRequest) {
+                d->ignoreHistoryNavigationRequest = false;
+                kDebug() << "Rejected history navigation to" << history()->currentItem().url();
+                return false;
+            }
+            kDebug() << "Navigating to item (" << history()->currentItemIndex()
+                << "of" << history()->count() << "):" << history()->currentItem().url();
+            inPageRequest = false;
+            break;
+        case QWebPage::NavigationTypeReload:
+            inPageRequest = false;
+            break;
+        case QWebPage::NavigationTypeOther:
+            /*
+              NOTE: This navigation type is used for both user entered urls
+              as well as javascript based link clicks. However, since there
+              is no easy way to distinguish b/n
+            */
+            //if (d->part->url() == reqUrl)
+            inPageRequest = false;
+            if (d->ignoreHistoryNavigationRequest)
+                d->ignoreHistoryNavigationRequest = false;
+            break;
+        default:
+            break;
         }
 
         if (inPageRequest) {
@@ -454,8 +466,10 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
 {
     Q_ASSERT(reply);
     QUrl url (reply->request().url());
+    const int index = d->requestQueue.indexOf(reply->request().url());
 
-    if (d->requestQueue.removeOne(url)) {
+    if (index > -1) {
+        d->requestQueue.remove(index);
         QWebFrame* frame = qobject_cast<QWebFrame *>(reply->request().originatingObject());
         if (frame) {
             //kDebug() << url;
@@ -464,7 +478,7 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
 
             // Only deal with non-redirect responses...
             if (statusCode > 299 && statusCode < 400) {
-                d->sslInfo.fromMetaData(reply->attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData)),
+                d->sslInfo.restoreFrom(reply->attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData)),
                                         reply->url());
             } else {
                 const int errCode = errorCodeFromReply(reply);
@@ -472,7 +486,7 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
                 switch (errCode) {
                     case 0:
                         if (isMainFrameRequest) {
-                            d->sslInfo.fromMetaData(reply->attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData)),
+                            d->sslInfo.restoreFrom(reply->attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData)),
                                                     reply->url());
                             setPageJScriptPolicy(reply->url());
                         }
@@ -604,7 +618,7 @@ bool WebPage::handleMailToUrl (const QUrl &url, NavigationType type) const
                                                                                KGuiItem(i18n("&Ignore attachments")), QL1S("WarnEmailAttachment")) == KMessageBox::Continue) {
 
                    // Re-add the attachments...
-                    QListIterator<QString> filesIt (files);
+                    QStringListIterator filesIt (files);
                     while (filesIt.hasNext()) {
                         mailtoUrl.addQueryItem(QL1S("attach"), filesIt.next());
                     }

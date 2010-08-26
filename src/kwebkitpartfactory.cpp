@@ -21,14 +21,25 @@
  */
 
 #include "kwebkitpartfactory.h"
-
 #include "kwebkitpart.h"
 
+#include <KDE/KApplication>
+#include <KDE/KStandardDirs>
+#include <KDE/KTemporaryFile>
 #include <KDE/KParts/GenericFactory>
 
+#include <QtGui/QWidget>
+
 KWebKitFactory::KWebKitFactory()
+               :m_discardSessionFiles(true)
+
 {
     kDebug() << this;
+    KApplication *app = qobject_cast<KApplication*>(qApp);
+    if (app)
+        connect(app, SIGNAL(saveYourself()), SLOT(slotSaveYourself()));
+    else
+        kWarning() << "Invoked from a non-KDE application... Session management will NOT work properly!";
 }
 
 KWebKitFactory::~KWebKitFactory()
@@ -40,7 +51,42 @@ KParts::Part *KWebKitFactory::createPartObject(QWidget *parentWidget, QObject *p
 {
     Q_UNUSED(className);
     Q_UNUSED(args);
-    return new KWebKitPart(parentWidget, parent, QStringList());
+
+    // NOTE: The code below is what makes proper integration of QtWebKit's history
+    // management with that of any KParts based application possible!!!
+    QString tempFileName;
+    KTemporaryFile tempFile;
+    tempFile.setFileTemplate(KStandardDirs::locateLocal("data", QLatin1String("kwebkitpart/autosave/XXXXXX")));
+    tempFile.setSuffix(QLatin1String(""));
+    if (tempFile.open())
+        tempFileName = tempFile.fileName();
+
+    if (parentWidget) {
+        m_sessionFileLookup.insert(parentWidget, tempFileName);
+        connect (parentWidget, SIGNAL(destroyed(QObject*)), SLOT(slotDestroyed(QObject *)));
+    } else {
+        kWarning() << "No parent widget specified... Session management will FAIL to work properly!";
+    }
+
+    return new KWebKitPart(parent, parentWidget, tempFileName);
+}
+
+
+void KWebKitFactory::slotSaveYourself()
+{
+    m_discardSessionFiles = false;
+}
+
+void KWebKitFactory::slotDestroyed(QObject * obj)
+{
+    //kDebug() << "Discard the session history file of" << obj << "?" << m_discardSessionFiles;
+    if (m_discardSessionFiles) {
+        const QString sessionFile =  m_sessionFileLookup.take(obj);
+        disconnect (obj, SIGNAL(destroyed(QObject*)), this, SLOT(slotDestroyed(QObject *)));
+        //kDebug() << "Discarding session history File" << sessionFile;
+        if (!QFile::remove(sessionFile))
+            kWarning() << "Failed to discard the session history file";
+    }
 }
 
 extern "C" KDE_EXPORT void *init_kwebkitpart()
