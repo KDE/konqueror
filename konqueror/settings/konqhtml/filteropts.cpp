@@ -486,6 +486,7 @@ void AutomaticFilterModel::load(KConfigGroup &cg)
 
         mFilters << filterConfig;
     }
+    reset();
 }
 
 void AutomaticFilterModel::save(KConfigGroup &cg)
