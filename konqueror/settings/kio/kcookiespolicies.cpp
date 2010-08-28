@@ -270,6 +270,7 @@ void KCookiesPolicies::deletePressed()
     if (!nextItem)
       nextItem = dlg->lvDomainPolicy->itemAbove(item);
 
+    m_pDomainPolicy.remove(item);
     delete item;
   }
 
