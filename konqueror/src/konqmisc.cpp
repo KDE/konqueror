@@ -1,5 +1,5 @@
 /* This file is part of the KDE project
-   Copyright (C) 1998, 1999 David Faure <faure@kde.org>
+   Copyright (C) 1998, 1999, 2010 David Faure <faure@kde.org>
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
@@ -17,6 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 #include "konqmisc.h"
+#include <kparts/browserrun.h>
 #include <QDir>
 #include "konqsessionmanager.h"
 #include "konqsettingsxt.h"
@@ -26,7 +27,6 @@
 
 #include <kapplication.h>
 #include <kdebug.h>
-#include <kmessagebox.h>
 #include <kurifilter.h>
 #include <klocale.h>
 #include <kstandarddirs.h>
@@ -196,9 +196,10 @@ KonqMainWindow * KonqMisc::newWindowFromHistory( KonqView* view, int steps )
   return mainwindow;
 }
 
-QString KonqMisc::konqFilteredURL( QWidget* parent, const QString& _url, const QString& _path )
+KUrl KonqMisc::konqFilteredURL(KonqMainWindow* parent, const QString& _url, const QString& _path)
 {
-  if ( !_url.startsWith( "about:" ) ) // Don't filter "about:" URLs
+  Q_UNUSED(parent); // Useful if we want to change the error handling again
+  if (!_url.startsWith( "about:" )) // Don't filter "about:" URLs
   {
     KUriFilterData data(_url);
 
@@ -211,19 +212,23 @@ QString KonqMisc::konqFilteredURL( QWidget* parent, const QString& _url, const Q
 
     if( KUriFilter::self()->filterUri( data ) )
     {
-      if( data.uriType() == KUriFilterData::Error && !data.errorMsg().isEmpty() )
-      {
-        KMessageBox::sorry( parent, i18n( data.errorMsg().toUtf8() ) );
-        return QString();
+      if( data.uriType() == KUriFilterData::Error && !data.errorMsg().isEmpty() ) {
+        return KParts::BrowserRun::makeErrorUrl(KIO::ERR_SLAVE_DEFINED, data.errorMsg(), _url);
+      } else {
+        return data.uri();
       }
-      else
-        return data.uri().url();
     }
   }
   else if (_url != "about:blank" && _url != "about:plugins" && !_url.startsWith("about:konqueror")) {
-    return "about:";
+    return KUrl("about:");
   }
-  return _url;  // return the original url if it cannot be filtered.
+
+  // return the original url if it cannot be filtered. But only if it gives a valid KUrl.
+  KUrl url(_url);
+  if (!url.isValid()) {
+      return KParts::BrowserRun::makeErrorUrl(KIO::ERR_MALFORMED_URL, _url, _url);
+  }
+  return url;
 }
 
 QString KonqMisc::defaultProfileName()

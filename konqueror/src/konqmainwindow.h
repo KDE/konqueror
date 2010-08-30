@@ -498,12 +498,6 @@ private Q_SLOTS:
 
   void slotOpenURL( const KUrl& );
 
-#if 0
-  void slotToolFind();
-  void slotFindOpen( KonqDirPart * dirPart );
-  void slotFindClosed( KonqDirPart * dirPart );
-#endif
-
   void slotIconsChanged();
 
   virtual bool event( QEvent* );

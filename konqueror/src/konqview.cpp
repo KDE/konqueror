@@ -101,6 +101,7 @@ KonqView::KonqView( KonqViewFactory &viewFactory,
   m_bFollowActive = false;
   m_bBuiltinView = false;
   m_bURLDropHandling = false;
+  m_bErrorURL = false;
 
   switchView( viewFactory );
 }
@@ -133,6 +134,7 @@ void KonqView::openUrl( const KUrl &url, const QString & locationBarURL,
                         const QString & nameFilter, bool tempFile )
 {
     kDebug() << "url=" << url << "locationBarURL=" << locationBarURL;
+
   setPartMimeType();
 
   KParts::OpenUrlArguments args;
@@ -172,7 +174,11 @@ void KonqView::openUrl( const KUrl &url, const QString & locationBarURL,
   if ( m_bDisableScrolling )
     callExtensionMethod( "disableScrolling" );
 
-  setLocationBarURL( locationBarURL );
+  // Set location-bar URL, except for error urls, where we know the browser component
+  // will set back the url with the error anyway.
+  if (url.protocol() != "error")
+      setLocationBarURL(locationBarURL);
+
   setPageSecurity(KonqMainWindow::NotCrypted);
 
   if ( !args.reload() )
@@ -576,10 +582,10 @@ void KonqView::slotCompleted( bool hasPending )
 void KonqView::slotCanceled( const QString & errorMsg )
 {
     //kDebug();
-  // The errorMsg comes from the ReadOnlyPart's job.
+  // The errorMsg comes from the ReadOnlyPart (usually from its kio job, but not necessarily).
   // It should probably be used in a KMessageBox
   // Let's use the statusbar for now
-  m_pKonqFrame->statusbar()->message( errorMsg );
+  m_pKonqFrame->statusbar()->setMessage(errorMsg, KonqStatusBarMessageLabel::Error);
   m_bAborted = true;
   slotCompleted();
 }
@@ -963,6 +969,8 @@ void KonqView::setLockedLocation( bool b )
 
 void KonqView::aboutToOpenURL( const KUrl &url, const KParts::OpenUrlArguments &args )
 {
+    m_bErrorURL = url.protocol() == "error";
+
   KParts::OpenUrlEvent ev( m_pPart, url, args );
   QApplication::sendEvent( m_pMainWindow, &ev );
 
@@ -1383,6 +1391,17 @@ bool KonqView::isModified() const
         return prop.isValid() && prop.toBool();
     }
     return false;
+}
+
+void KonqView::setFocus()
+{
+    if (m_pPart && m_pPart->widget() && !isErrorUrl())
+        m_pPart->widget()->setFocus();
+}
+
+bool KonqView::isErrorUrl() const
+{
+    return m_bErrorURL;
 }
 
 #include "konqview.moc"

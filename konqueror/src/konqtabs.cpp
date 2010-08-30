@@ -365,13 +365,14 @@ void KonqFrameTabs::slotSubPopupMenuTabActivated( QAction *action )
 
 void KonqFrameTabs::slotMouseMiddleClick()
 {
-  KUrl filteredURL ( KonqMisc::konqFilteredURL( this, QApplication::clipboard()->text(QClipboard::Selection) ) );
+    KonqMainWindow* mainWindow = m_pViewManager->mainWindow();
+  KUrl filteredURL ( KonqMisc::konqFilteredURL( mainWindow, QApplication::clipboard()->text(QClipboard::Selection) ) );
   if ( !filteredURL.isEmpty() ) {
     KonqView* newView = m_pViewManager->addTab("text/html", QString(), false, false);
     if (newView == 0L) return;
-    m_pViewManager->mainWindow()->openUrl( newView, filteredURL, QString() );
+    mainWindow->openUrl( newView, filteredURL, QString() );
     m_pViewManager->showTab( newView );
-    m_pViewManager->mainWindow()->focusLocationBar();
+    mainWindow->focusLocationBar();
   }
 }
 
@@ -380,7 +381,7 @@ void KonqFrameTabs::slotMouseMiddleClick(QWidget *w)
     if (KonqSettings::mouseMiddleClickClosesTab()) {
         slotCloseRequest(w);
     } else {
-        KUrl filteredURL(KonqMisc::konqFilteredURL(this, QApplication::clipboard()->text(QClipboard::Selection)));
+        KUrl filteredURL(KonqMisc::konqFilteredURL(m_pViewManager->mainWindow(), QApplication::clipboard()->text(QClipboard::Selection)));
         if (!filteredURL.isEmpty()) {
             KonqFrameBase* frame = dynamic_cast<KonqFrameBase*>(w);
             if (frame) {
