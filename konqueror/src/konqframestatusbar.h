@@ -1,6 +1,6 @@
 /*  This file is part of the KDE project
     Copyright (C) 1998, 1999 Michael Reiher <michael.reiher@gmx.de>
-    Copyright 2007 David Faure <faure@kde.org>
+    Copyright 2007, 2010 David Faure <faure@kde.org>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -21,11 +21,11 @@
 #define KONQ_FRAMESTATUSBAR_H
 
 #include <KStatusBar>
+#include "konq_statusbarmessagelabel.h"
 class QLabel;
 class QProgressBar;
 class QCheckBox;
 class KonqView;
-class KSqueezedTextLabel;
 class KonqFrame;
 namespace KParts { class ReadOnlyPart; }
 
@@ -41,6 +41,8 @@ class KonqFrameStatusBar : public KStatusBar
 public:
     explicit KonqFrameStatusBar( KonqFrame *_parent = 0 );
     virtual ~KonqFrameStatusBar();
+
+    void setMessage(const QString& msg, KonqStatusBarMessageLabel::Type type);
 
     /**
      * Checks/unchecks the linked-view checkbox
@@ -87,16 +89,11 @@ protected:
      */
     virtual void splitFrameMenu();
 
-    /**
-     * Takes care of the statusbars size
-     **/
-    virtual void fontChange(const QFont &oldFont);
-
 private:
     KonqFrame* m_pParentKonqFrame;
     QCheckBox *m_pLinkedViewCheckBox;
     QProgressBar *m_progressBar;
-    KSqueezedTextLabel *m_pStatusLabel;
+    KonqStatusBarMessageLabel *m_pStatusLabel;
     QLabel* m_led;
     QString m_savedMessage;
 };

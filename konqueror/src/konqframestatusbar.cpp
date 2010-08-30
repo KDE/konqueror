@@ -88,15 +88,17 @@ KonqFrameStatusBar::KonqFrameStatusBar( KonqFrame *_parent )
 {
     setSizeGripEnabled( false );
 
+    // TODO remove active view indicator and use a different bg color like dolphin does?
+    // Works nicely for file management, but not so much with other parts...
     m_led = new QLabel( this );
     m_led->setAlignment( Qt::AlignCenter );
     m_led->setSizePolicy(QSizePolicy( QSizePolicy::Fixed, QSizePolicy::Fixed ));
     addWidget( m_led, 0 ); // led (active view indicator)
     m_led->hide();
 
-    m_pStatusLabel = new KSqueezedTextLabel( this );
-    m_pStatusLabel->setMinimumSize( 0, 0 );
-    m_pStatusLabel->setSizePolicy(QSizePolicy( QSizePolicy::Ignored, QSizePolicy::Fixed ));
+    // TODO re-enable squeezing
+    //m_pStatusLabel = new KSqueezedTextLabel( this );
+    m_pStatusLabel = new KonqStatusBarMessageLabel( this );
     m_pStatusLabel->installEventFilter(this);
     addWidget( m_pStatusLabel, 1 /*stretch*/ ); // status label
 
@@ -122,23 +124,11 @@ KonqFrameStatusBar::KonqFrameStatusBar( KonqFrame *_parent )
     m_progressBar->hide();
     addPermanentWidget( m_progressBar, 0 );
 
-    fontChange(QFont());
     installEventFilter( this );
 }
 
 KonqFrameStatusBar::~KonqFrameStatusBar()
 {
-}
-
-void KonqFrameStatusBar::fontChange(const QFont & /* oldFont */)
-{
-    int h = fontMetrics().height();
-    if ( h < DEFAULT_HEADER_HEIGHT ) h = DEFAULT_HEADER_HEIGHT;
-    m_led->setFixedHeight( h + 2 );
-    m_progressBar->setFixedHeight( h + 2 );
-    // This one is important. Otherwise richtext messages make it grow in height.
-    m_pStatusLabel->setFixedHeight( h + 2 );
-
 }
 
 // I don't think this code _ever_ gets called!
@@ -217,7 +207,7 @@ void KonqFrameStatusBar::message( const QString &msg )
 void KonqFrameStatusBar::slotDisplayStatusText(const QString& text)
 {
     //kDebug() << text;
-    m_pStatusLabel->setText(text);
+    m_pStatusLabel->setMessage(text, KonqStatusBarMessageLabel::Default);
     m_savedMessage = text;
 }
 
@@ -295,6 +285,11 @@ void KonqFrameStatusBar::updateActiveStatus()
     static QPixmap indicator_viewactive( UserIcon( "indicator_viewactive" ) );
     static QPixmap indicator_empty( UserIcon( "indicator_empty" ) );
     m_led->setPixmap( hasFocus ? indicator_viewactive : indicator_empty );
+}
+
+void KonqFrameStatusBar::setMessage(const QString& msg, KonqStatusBarMessageLabel::Type type)
+{
+    m_pStatusLabel->setMessage(msg, type);
 }
 
 #include "konqframestatusbar.moc"
