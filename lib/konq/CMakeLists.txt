@@ -12,16 +12,17 @@ set(konq_LIB_SRCS
    konq_popupmenu.cpp       # used by konqueror, kfind, folderview, kickoff
    konq_popupmenuplugin.cpp # for KonqPopupMenu and its plugins
    konq_dndpopupmenuplugin.cpp # for KonqDndPopupMenu and its plugins
-   konq_copytomenu.cpp      # used by dolphin, KonqPopupMenu
-   konq_operations.cpp      # used by dolphin and konqueror
+   konq_copytomenu.cpp         # used by dolphin, KonqPopupMenu
+   konq_operations.cpp         # used by dolphin and konqueror
+   konq_statusbarmessagelabel.cpp  # used by dolphin and konqueror
    konq_events.cpp
    konqmimedata.cpp         # used by dolphin, KonqOperations, some filemanagement konqueror modules.
    konq_historyentry.cpp
    konq_historyloader.cpp
    konq_historyprovider.cpp
    kversioncontrolplugin.cpp # used by dolphin and its version control plugins
-   konq_nameandurlinputdialog.cpp # used by KNewMenu internally, and by the sidebar externally
    
+   konq_nameandurlinputdialog.cpp # deprecated (functionality has moved to kdelibs)
    knewmenu.cpp # deprecated (functionality has moved to kdelibs)
    konq_popupmenuinformation.cpp # deprecated (functionality has moved to kdelibs)
    konq_menuactions.cpp     # deprecated (functionality has moved to kdelibs)
@@ -30,7 +31,7 @@ set(konq_LIB_SRCS
 
 kde4_add_library(konq SHARED ${konq_LIB_SRCS})
 
-target_link_libraries(konq ${KDE4_KPARTS_LIBS} ${KDE4_KFILE_LIBS} ${ZLIB_LIBRARY})
+target_link_libraries(konq ${KDE4_KPARTS_LIBS} ${KDE4_KFILE_LIBS} ${ZLIB_LIBRARY} ${X11_X11_LIB})
 target_link_libraries(konq LINK_INTERFACE_LIBRARIES ${KDE4_KPARTS_LIBS})
 
 set_target_properties(konq PROPERTIES

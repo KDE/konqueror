@@ -18,40 +18,46 @@
  *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA          *
  ***************************************************************************/
 
-#ifndef STATUSBARMESSAGELABEL_H
-#define STATUSBARMESSAGELABEL_H
+#ifndef KONQ_STATUSBARMESSAGELABEL_H
+#define KONQ_STATUSBARMESSAGELABEL_H
 
-#include <statusbar/dolphinstatusbar.h>
-
-#include <QtCore/QList>
-#include <QtGui/QPixmap>
-
+#include "libkonq_export.h"
 #include <QtGui/QWidget>
 
 class QPaintEvent;
 class QResizeEvent;
-class QToolButton;
-class QTimer;
 
 /**
  * @brief Represents a message text label as part of the status bar.
  *
  * Dependent from the given type automatically a corresponding icon
  * is shown in front of the text. For message texts having the type
- * DolphinStatusBar::Error a dynamic color blending is done to get the
+ * KonqStatusBarMessageLabel::Error a dynamic color blending is done to get the
  * attention from the user.
  */
-class StatusBarMessageLabel : public QWidget
+class LIBKONQ_EXPORT KonqStatusBarMessageLabel : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit StatusBarMessageLabel(QWidget* parent);
-    virtual ~StatusBarMessageLabel();
+    explicit KonqStatusBarMessageLabel(QWidget* parent);
+    virtual ~KonqStatusBarMessageLabel();
 
-    void setMessage(const QString& text, DolphinStatusBar::Type type);
+    /**
+     * Describes the type of the message text. Dependent
+     * from the type a corresponding icon and color is
+     * used for the message text.
+     */
+    enum Type {
+        Default,
+        OperationCompleted,
+        Information,
+        Error
+    };
 
-    DolphinStatusBar::Type type() const;
+    void setMessage(const QString& text, Type type);
+
+    Type type() const;
 
     QString text() const;
 
@@ -62,12 +68,10 @@ public:
     void setMinimumTextHeight(int min);
     int minimumTextHeight() const;
 
-    /**
-     * Returns the gap of the width of the current set text to the
-     * width of the message label. A gap <= 0 means that the text
-     * fits into the available width.
-     */
-    int widthGap() const;
+    /** @see QWidget::sizeHint */
+    virtual QSize sizeHint() const;
+    /** @see QWidget::minimumSizeHint */
+    virtual QSize minimumSizeHint() const;
 
 protected:
     /** @see QWidget::paintEvent() */
@@ -111,7 +115,7 @@ private:
 
     /**
      * Resets the message label properties. This is useful when the
-     * result of invoking StatusBarMessageLabel::setMessage() should
+     * result of invoking KonqStatusBarMessageLabel::setMessage() should
      * not rely on previous states.
      */
     void reset();
@@ -119,25 +123,14 @@ private:
 private:
     enum State
     {
-        Default,
+        DefaultState,
         Illuminate,
         Illuminated,
         Desaturate
     };
 
-    enum { GeometryTimeout = 100 };
-    enum { BorderGap = 2 };
-
-    DolphinStatusBar::Type m_type;
-    State m_state;
-    int m_illumination;
-    int m_minTextHeight;
-    QTimer* m_timer;
-    QString m_text;
-    QString m_defaultText;
-    QList<QString> m_pendingMessages;
-    QPixmap m_pixmap;
-    QToolButton* m_closeButton;
+    class Private;
+    Private* const d;
 };
 
 #endif
