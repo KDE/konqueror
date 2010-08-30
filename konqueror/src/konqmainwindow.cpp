@@ -482,11 +482,9 @@ void KonqMainWindow::openFilteredUrl(const QString & url, const KonqOpenURLReque
 
     // #4070: Give focus to view after URL was entered manually
     // Note: we do it here if the view mode (i.e. part) wasn't changed
-    // If it is changed, then it's done in KonqView::changePart
-    if ( m_currentView && m_currentView->part() ) {
-        m_currentView->part()->widget()->setFocus();
-    }
-
+    // If it is changed, then it's done in KonqViewManager::doSetActivePart
+    if (m_currentView)
+        m_currentView->setFocus();
 }
 
 void KonqMainWindow::openFilteredUrl(const QString & _url, bool inNewTab, bool tempFile)
@@ -513,20 +511,18 @@ void KonqMainWindow::openUrl(KonqView *_view, const KUrl &_url,
     QString mimeType(_mimeType);
     KonqOpenURLRequest req(_req);
 
-  if ( url.url() == "about:blank" )
-  {
-    mimeType = "text/html";
-  }
-  else if ( !url.isValid() )
-  {
-      KMessageBox::error(0, i18n("Malformed URL\n%1", url.url()));
-      return;
-  }
-  else if ( !KProtocolInfo::isKnownProtocol( url ) && url.protocol() != "about" )
-  {
-      KMessageBox::error(0, i18n("Protocol not supported\n%1", url.protocol()));
-      return;
-  }
+    if (!url.isValid()) {
+        // I think we can't really get here anymore; I tried and didn't succeed.
+        // URL filtering catches this case before hand, and in cases without filtering
+        // (e.g. HTML link), the url is empty here, not invalid.
+        // But just to be safe, let's keep this code path, even if it can't show the typed string.
+        url = KParts::BrowserRun::makeErrorUrl(KIO::ERR_MALFORMED_URL, url.url(), url.url());
+    } else if (!KProtocolInfo::isKnownProtocol(url)) {
+        url = KParts::BrowserRun::makeErrorUrl(KIO::ERR_UNSUPPORTED_PROTOCOL, url.protocol(), url.url());
+    }
+    if (url.url() == "about:blank" || url.protocol() == "error") {
+        mimeType = "text/html";
+    }
 
   QString nameFilter = detectNameFilter( url );
   if ( !nameFilter.isEmpty() )
@@ -1450,74 +1446,6 @@ void KonqMainWindow::slotOpenFile()
       openFilteredUrl( url.url().trimmed() );
 }
 
-#if 0
-void KonqMainWindow::slotToolFind()
-{
-  if ( m_currentView && ::qobject_cast<KonqDirPart*>( m_currentView->part() ) )
-  {
-    KonqDirPart* dirPart = static_cast<KonqDirPart *>(m_currentView->part());
-
-    if (!m_paFindFiles->isChecked())
-    {
-        dirPart->slotFindClosed();
-        return;
-    }
-
-    KonqFactory konqFactory;
-    KonqViewFactory factory = konqFactory.createView( "Konqueror/FindPart" );
-    if ( factory.isNull() )
-    {
-        KMessageBox::error( this, i18n("Cannot create the find part, check your installation.") );
-        m_paFindFiles->setChecked(false);
-        return;
-    }
-
-    KParts::ReadOnlyPart* findPart = factory.create( m_currentView->frame(), dirPart );
-    dirPart->setFindPart( findPart );
-
-    m_currentView->frame()->insertTopWidget( findPart->widget() );
-    findPart->widget()->show();
-    findPart->widget()->setFocus();
-
-    connect( dirPart, SIGNAL( findClosed(KonqDirPart *) ),
-             this, SLOT( slotFindClosed(KonqDirPart *) ) );
-  }
-  else if ( ::qobject_cast<KAction*>(sender()) ) // don't go there if called by the singleShot below
-  {
-      KUrl url;
-      if ( m_currentView && m_currentView->url().isLocalFile() )
-          url =  m_currentView->locationBarURL();
-      else
-          url.setPath( QDir::homePath() );
-      KonqMainWindow * mw = KonqMisc::createBrowserWindowFromProfile(
-          KStandardDirs::locate( "data", QLatin1String("konqueror/profiles/filemanagement") ),
-          "filemanagement", url, KParts::URLArgs(), true /* forbid "use html"*/ );
-      mw->m_paFindFiles->setChecked(true);
-      // Delay it after the openUrl call (hacky!)
-      QTimer::singleShot( 1, mw, SLOT(slotToolFind()));
-      m_paFindFiles->setChecked(false);
-  }
-}
-#endif
-
-#if 0
-void KonqMainWindow::slotFindOpen( KonqDirPart * dirPart )
-{
-    Q_ASSERT( m_currentView );
-    Q_ASSERT( m_currentView->part() == dirPart );
-    slotToolFind(); // lazy me
-}
-
-void KonqMainWindow::slotFindClosed( KonqDirPart * dirPart )
-{
-    KonqView * dirView = m_mapViews.value( dirPart );
-    Q_ASSERT(dirView);
-    if ( dirView && dirView == m_currentView )
-        m_paFindFiles->setEnabled( true );
-    m_paFindFiles->setChecked(false);
-}
-#endif
-
 void KonqMainWindow::slotIconsChanged()
 {
     kDebug();
@@ -1968,8 +1896,8 @@ void KonqMainWindow::slotViewCompleted( KonqView * view )
 
 void KonqMainWindow::slotPartActivated(KParts::Part *part)
 {
-    //kDebug() << part
-    //           << (part && part->componentData().isValid() && part->componentData().aboutData() ? part->componentData().aboutData()->appName() : "");
+    kDebug() << part
+               << (part && part->componentData().isValid() && part->componentData().aboutData() ? part->componentData().aboutData()->appName() : "");
 
   KonqView *newView = 0;
   KonqView *oldView = m_currentView;
@@ -1995,7 +1923,7 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
     }
   }
 
-    //kDebug() << "New current view" << newView;
+    kDebug() << "New current view" << newView;
   m_currentView = newView;
     if (!part) {
       //kDebug() << "No part activated - returning";
@@ -2332,6 +2260,7 @@ void KonqMainWindow::slotAddTab()
     //HACK!! QTabBar likes to steal focus when changing widgets.  This can result
     //in a flicker since we don't want it to get focus we want the combo to get
     //or keep focus...
+    // TODO: retest, and replace with the smaller hack from KTabWidget::moveTab
     QWidget *widget = newView->frame() && newView->frame()->part() ?
                       newView->frame()->part()->widget() : 0;
     QWidget* origFocusProxy = widget ? widget->focusProxy() : 0;

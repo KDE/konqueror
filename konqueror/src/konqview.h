@@ -371,6 +371,18 @@ public:
   // overload for the QString version
   void setLocationBarURL( const KUrl& locationBarURL );
 
+    /**
+     * Gives focus to the part's widget, after we just opened a URL in this part.
+     * Does nothing on error:/ urls, so that the user can fix the wrong URL more easily.
+     */
+    void setFocus();
+
+    /**
+     * Returns true if this page is showing an error page, from an error: URL.
+     * url() will still return the original URL, so it can't be used for this purpose.
+     */
+    bool isErrorUrl() const;
+
   /**
    * Saves config in a KConfigGroup
    */
@@ -525,6 +537,7 @@ private:
   uint m_bURLDropHandling:1;
   uint m_bHierarchicalView:1;
   uint m_bDisableScrolling:1;
+  uint m_bErrorURL:1;
   KService::List m_partServiceOffers;
   KService::List m_appServiceOffers;
   KService::Ptr m_service;

@@ -85,13 +85,13 @@ namespace KonqMisc // TODO split into something like KonqWindowFactory or KonqWi
     KonqMainWindow * newWindowFromHistory( KonqView* view, int steps );
 
     /**
-     * Applies the URI filters to @p url.
+     * Applies the URI filters to @p url, and convert it to a KUrl.
      *
      * @p parent is used in case of a message box.
-     * @p _url to be filtered.
-     * @p _path the absolute path to append to the url before filtering it.
+     * @p url to be filtered.
+     * @p path the absolute path to use, in case the url is relative.
      */
-    QString konqFilteredURL( QWidget* /*parent*/, const QString& /*_url*/, const QString& _path = QString() );
+    KUrl konqFilteredURL(KonqMainWindow* parent, const QString& url, const QString& path = QString());
 
     /**
      * Name of the default profile

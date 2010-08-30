@@ -1044,15 +1044,24 @@ void KonqViewManager::doSetActivePart( KParts::ReadOnlyPart *part )
       return;
     }
 
-    if (m_pMainWindow && m_pMainWindow->currentView())
+    // ## is this the right currentView() already?
+    if (m_pMainWindow->currentView())
       m_pMainWindow->currentView()->setLocationBarURL(m_pMainWindow->locationBarURL());
 
     KParts::PartManager::setActivePart( part );
 
-    if (part && part->widget())
+    // Giving focus to the part widget will trigger PartManager which will call KonqViewManager::setActivePart
+    if (part && part->widget()) {
         part->widget()->setFocus();
 
-    emitActivePartChanged();
+        // However in case of an error URL we want to make it possible for the user to fix it
+        KonqView* view = m_pMainWindow->viewMap().value(part);
+        if (view && view->isErrorUrl()) {
+            m_pMainWindow->focusLocationBar();
+        }
+    }
+
+    emitActivePartChanged(); // This is what triggers KonqMainWindow::slotPartActivated
 }
 
 void KonqViewManager::slotActivePartChanged ( KParts::Part *newPart )
