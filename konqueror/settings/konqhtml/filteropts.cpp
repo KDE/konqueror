@@ -469,6 +469,7 @@ AutomaticFilterModel::AutomaticFilterModel(QObject * parent)
 
 void AutomaticFilterModel::load(KConfigGroup &cg)
 {
+    beginResetModel();
     mFilters.clear();
     const int maxNumFilters = 1024;
     const bool defaultHTMLFilterListEnabled = false;
@@ -486,7 +487,7 @@ void AutomaticFilterModel::load(KConfigGroup &cg)
 
         mFilters << filterConfig;
     }
-    reset();
+    endResetModel();
 }
 
 void AutomaticFilterModel::save(KConfigGroup &cg)
