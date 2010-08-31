@@ -516,7 +516,7 @@ void KonqMainWindow::openUrl(KonqView *_view, const KUrl &_url,
         // URL filtering catches this case before hand, and in cases without filtering
         // (e.g. HTML link), the url is empty here, not invalid.
         // But just to be safe, let's keep this code path, even if it can't show the typed string.
-        url = KParts::BrowserRun::makeErrorUrl(KIO::ERR_MALFORMED_URL, url.url(), url.url());
+        url = KParts::BrowserRun::makeErrorUrl(KIO::ERR_MALFORMED_URL, url.url() /*empty*/, url.url() /*empty*/);
     } else if (!KProtocolInfo::isKnownProtocol(url)) {
         url = KParts::BrowserRun::makeErrorUrl(KIO::ERR_UNSUPPORTED_PROTOCOL, url.protocol(), url.url());
     }
@@ -1602,7 +1602,10 @@ void KonqMainWindow::slotReload( KonqView* reloadView, bool softReload )
       // Reuse current servicetype for local files, but not for remote files (it could have changed, e.g. over HTTP)
       QString serviceType = reloadView->url().isLocalFile() ? reloadView->serviceType() : QString();
       // By using locationBarURL instead of url, we preserve name filters (#54687)
-      openUrl( reloadView, reloadView->locationBarURL(), serviceType, req );
+      KUrl reloadUrl = reloadView->locationBarURL();
+      if (reloadUrl.isEmpty()) // e.g. initial screen
+          reloadUrl = reloadView->url();
+      openUrl(reloadView, reloadUrl, serviceType, req);
   }
 }
 
