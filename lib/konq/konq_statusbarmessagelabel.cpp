@@ -19,11 +19,14 @@
  ***************************************************************************/
 
 #include "konq_statusbarmessagelabel.h"
+#include <QStyle>
+#include <QTextDocument>
 
 #include <kcolorscheme.h>
 #include <kiconloader.h>
 #include <kicon.h>
 #include <klocale.h>
+#include <kdebug.h>
 
 #include <QFontMetrics>
 #include <QPainter>
@@ -47,6 +50,8 @@ public:
         m_closeButton(0)
     {}
 
+    bool isRichText() const { return m_text.startsWith("<html>") || m_text.startsWith("<qt>"); }
+
     KonqStatusBarMessageLabel::Type m_type;
     KonqStatusBarMessageLabel::State m_state;
     int m_illumination;
@@ -54,6 +59,7 @@ public:
     QTimer* m_timer;
     QString m_text;
     QString m_defaultText;
+    QTextDocument m_textDocument;
     QList<QString> m_pendingMessages;
     QPixmap m_pixmap;
     QToolButton* m_closeButton;
@@ -101,6 +107,16 @@ void KonqStatusBarMessageLabel::setMessage(const QString& text,
 
     d->m_text = text;
     d->m_type = type;
+
+    if (d->isRichText()) {
+        d->m_textDocument.setTextWidth(-1);
+        d->m_textDocument.setDefaultFont(font());
+        QString html = "<html><font color=\"";
+        html += palette().windowText().color().name();
+        html += "\">";
+        html += d->m_text;
+        d->m_textDocument.setHtml(html);
+    }
 
     d->m_timer->stop();
     d->m_illumination = 0;
@@ -201,12 +217,29 @@ void KonqStatusBarMessageLabel::paintEvent(QPaintEvent* /* event */)
     }
 
     // draw text
-    painter.setPen(palette().windowText().color());
-    int flags = Qt::AlignVCenter;
-    if (height() > d->m_minTextHeight) {
-        flags = flags | Qt::TextWordWrap;
+
+    const QRect availTextRect(x, 0, availableTextWidth(), height());
+
+    if (d->isRichText()) {
+        const QSize sz = d->m_textDocument.size().toSize();
+
+        // Vertical centering
+        const QRect textRect = QStyle::alignedRect(Qt::LeftToRight, Qt::AlignLeft | Qt::AlignVCenter, sz, availTextRect);
+        //kDebug() << d->m_text << " sz=" << sz << textRect;
+
+        // What about wordwrap here?
+
+        painter.translate(textRect.left(), textRect.top());
+        d->m_textDocument.drawContents(&painter);
+    } else {
+        // plain text
+        painter.setPen(palette().windowText().color());
+        int flags = Qt::AlignVCenter;
+        if (height() > d->m_minTextHeight) {
+            flags = flags | Qt::TextWordWrap;
+        }
+        painter.drawText(availTextRect, flags, d->m_text);
     }
-    painter.drawText(QRect(x, 0, availableTextWidth(), height()), flags, d->m_text);
     painter.end();
 }
 
