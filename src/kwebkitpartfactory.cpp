@@ -68,7 +68,8 @@ KParts::Part *KWebKitFactory::createPartObject(QWidget *parentWidget, QObject *p
         kWarning() << "No parent widget specified... Session management will FAIL to work properly!";
     }
 
-    return new KWebKitPart(parent, parentWidget, tempFileName);
+
+    return new KWebKitPart(parentWidget, parent, QStringList() << tempFileName);
 }
 
 

@@ -58,11 +58,10 @@ static inline int convertStr2Int(const QString& value)
    return 0;
 }
 
-KWebKitPart::KWebKitPart(QObject *parent, QWidget *parentWidget,
-                         const QString& historyFile, const QStringList& args)
+KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
+                         const QStringList& args)
             :KParts::ReadOnlyPart(parent), d(new KWebKitPartPrivate(this))
 {
-    Q_UNUSED(args);
     KAboutData about = KAboutData("kwebkitpart", 0,
                                   ki18nc("Program Name", "KWebKitPart"),
                                   /*version*/ "0.9.6",
@@ -94,7 +93,8 @@ KWebKitPart::KWebKitPart(QObject *parent, QWidget *parentWidget,
     mainWidget->setObjectName("kwebkitpart");
     setWidget(mainWidget);
 
-    d->init(mainWidget, historyFile);
+    // The first item of 'args' is used to pass the session history filename.
+    d->init(mainWidget, args.at(0));
     setXMLFile("kwebkitpart.rc");
     d->initActions();
 }
