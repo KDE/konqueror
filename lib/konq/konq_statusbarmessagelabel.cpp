@@ -142,11 +142,13 @@ void KonqStatusBarMessageLabel::setMessage(const QString& text,
 
         updateCloseButtonPosition();
         d->m_closeButton->show();
+        updateGeometry();
         break;
 
     case Default:
     default:
         d->m_closeButton->hide();
+        updateGeometry();
         break;
     }
 
@@ -385,8 +387,12 @@ QSize KonqStatusBarMessageLabel::sizeHint() const
 QSize KonqStatusBarMessageLabel::minimumSizeHint() const
 {
     const int fontHeight = fontMetrics().height();
-    const QSize toolButtonSize = d->m_closeButton->sizeHint();
-    return toolButtonSize.expandedTo(QSize(100, fontHeight));
+    QSize sz(100, fontHeight);
+    if (d->m_closeButton->isVisible()) {
+        const QSize toolButtonSize = d->m_closeButton->sizeHint();
+        sz = toolButtonSize.expandedTo(sz);
+    }
+    return sz;
 }
 
 #include "konq_statusbarmessagelabel.moc"
