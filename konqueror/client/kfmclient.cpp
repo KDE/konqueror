@@ -66,7 +66,7 @@ static void needInstance();
 
 extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
 {
-  KCmdLineArgs::init(argc, argv, appName, 0, ki18n(programName), version, ki18n(description), false);
+  KCmdLineArgs::init(argc, argv, appName, 0, ki18n(programName), version, ki18n(description));
 
 
   KCmdLineOptions options;
