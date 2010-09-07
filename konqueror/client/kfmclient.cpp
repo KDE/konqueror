@@ -122,10 +122,9 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
         version = 3;
     else
         version = atoi( getenv( "KDE_SESSION_VERSION" ));
-    if( version != 0 && version != KDE_VERSION_MAJOR && getenv( "KFMCLIENT_LOOP" ) == NULL )
+    if( version != 0 && version != KDE_VERSION_MAJOR )
     {
         kDebug() << "Forwarding to kfmclient from KDE version " << version;
-        setenv( "KFMCLIENT_LOOP", "1", true ); // loop protection, just in case
         char wrapper[ 10 ];
         sprintf( wrapper, "kde%d", version );
         char** newargv = new char*[ argc + 2 ];
