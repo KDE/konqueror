@@ -333,7 +333,8 @@ bool ClientApp::createNewWindow(const KUrl & url, bool newTab, bool tempFile, co
         KConfig config(QLatin1String("kfmclientrc"));
         KConfigGroup generalGroup(&config, "General");
         const QString browserApp = generalGroup.readEntry("BrowserApplication");
-        if (!browserApp.isEmpty() && !browserApp.startsWith("!kfmclient"))
+        if (!browserApp.isEmpty() && !browserApp.startsWith("!kfmclient")
+            && (browserApp.startsWith('!') || KService::serviceByStorageId(browserApp)))
         {
             kDebug() << "Using external browser" << browserApp;
             Q_ASSERT( qApp );
