@@ -40,7 +40,7 @@
 </copyright>
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2010-03-04</date>
+<date>2010-09-16</date>
 <releaseinfo>4.5</releaseinfo>
 
 <abstract>
@@ -1373,7 +1373,7 @@ Editor...</guimenuitem></menuchoice> for your current document only.</para>
 <para>You can overwrite the default encoding set in <menuchoice>
 <guimenu>Settings</guimenu>
 <guimenuitem>Configure
-Editor...</guimenuitem></menuchoice> in the <guilabel>Open/Save</guilabel> tab
+Editor...</guimenuitem></menuchoice> in the <guilabel>Open/Save</guilabel> page
 to set a different encoding for your current document. The encoding you
 set here will be only valid for your current document.</para>
  </listitem>
@@ -1395,7 +1395,7 @@ Editor...</guimenuitem></menuchoice> for your current document only.</para>
 <varlistentry>
 <term><anchor id="tools-add-byte-mark-order"/><menuchoice>
 <guimenu>Tools</guimenu>
-<guisubmenu>Add Byte Mark Order</guisubmenu></menuchoice></term>
+<guisubmenu>Add Byte Mark Order (BOM)</guisubmenu></menuchoice></term>
  <listitem>
 <para>Checking this action you can explicitly add a byte order mark for unicode
 encoded documents. The byte order mark (BOM) is a Unicode character used to signal 
@@ -1423,8 +1423,10 @@ the endianness (byte order) of a text file or stream, for more information see
 <guimenuitem>Word Completion</guimenuitem>
 </menuchoice> (Power user mode)</term>
 <listitem>
-<para><guimenuitem>Reuse Word Below</guimenuitem> and <guimenuitem>Reuse Word
-Above</guimenuitem> complete the currently typed text by searching for similar
+<para><guimenuitem>Reuse Word Below</guimenuitem> (<keycombo action="simul">&Ctrl;
+<keycap>9</keycap></keycombo>) and <guimenuitem>Reuse Word Above</guimenuitem> 
+(<keycombo action="simul">&Ctrl; <keycap>8</keycap></keycombo>) complete the 
+currently typed text by searching for similar
 words backward or forward from the current cursor position. <guimenuitem>Shell
 Completion</guimenuitem> pops up a completion box with matching entries.</para>
 </listitem>
@@ -1436,10 +1438,10 @@ Completion</guimenuitem> pops up a completion box with matching entries.</para>
 <keycombo action="simul">&Ctrl;&Shift;<keycap>O</keycap></keycombo>
 </shortcut>
 <guimenu>Tools</guimenu>
-<guimenuitem>Automatic Spelling</guimenuitem>
+<guimenuitem>Automatic Spell Checking</guimenuitem>
 </menuchoice></term>
 <listitem>
-<para>When <guimenuitem>Automatic Spelling</guimenuitem> is enabled, wrong text
+<para>When <guimenuitem>Automatic Spell Checking</guimenuitem> is enabled, wrong text
 is underlined in the document on-the-fly.</para>
 </listitem>
 </varlistentry>
@@ -1581,6 +1583,7 @@ dictionary &eg; for automatic spellcheck of text in different languages.</para>
  </listitem>
 </varlistentry>
 
+<!-- Indent/Inindent no longer in the menu ???, but shortcuts work-->
 <varlistentry>
 <term><anchor id="indent"/><menuchoice>
 <shortcut>
@@ -1603,10 +1606,9 @@ settings</link>.</para>
 <listitem>
 <para>This reduces the paragraph's indentation by one step. The size of the step
 depends on the <link linkend="pref-edit-indent"> indentation settings</link>.</para>
-
 </listitem>
 </varlistentry>
-
+<!-- -->
 <varlistentry>
 <term><anchor id="cleanindent"/><menuchoice>
 <guimenu>Tools</guimenu><guimenuitem>Clean
@@ -1682,7 +1684,7 @@ lowercase.</para></listitem>
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Alt;&Ctrl;<keycap>U</keycap></keycombo>
+<keycombo action="simul">&Ctrl;&Alt;<keycap>U</keycap></keycombo>
 </shortcut>
 <guimenu>Tools</guimenu>
 <guimenuitem>Capitalize</guimenuitem>
@@ -1707,7 +1709,7 @@ joined lines is removed in the affected ends.</para></listitem>
 <varlistentry>
 <term><menuchoice>
 <guimenu>Tools</guimenu>
-<guimenuitem>Word Wrap Document</guimenuitem>
+<guimenuitem>Apply Word Wrap</guimenuitem>
 </menuchoice></term>
 <listitem><para>Apply static word wrapping on all the document. That means that
 a new line of text will automatically start when the current
@@ -1721,6 +1723,7 @@ Editor...</guimenuitem></menuchoice></para></listitem>
 <para>If the <link linkend="pref-plugins">plugin</link> Insert File is enabled, you will
 find here an additional menu item <guimenuitem>Insert File...</guimenuitem>.
 </para>
+<!-- Data Tools and Insane HTML (LE) Expansion Ctrl+. when plugins are enabled-->
 </sect1>
 
 <sect1 id="settings">
@@ -2240,7 +2243,7 @@ action are performed for the line of text at the actual cursor position.</para><
 
 <varlistentry>
 <term><guilabel>Allow scrolling past the end of the document</guilabel></term> <listitem>
-<para>This option lets you scroll past the end of the document. This can be used to vertically centre the bottom of the document, or put it on top of the current view.</para></listitem>
+<para>This option lets you scroll past the end of the document. This can be used to vertically center the bottom of the document, or put it on top of the current view.</para></listitem>
 </varlistentry>
 </variablelist>
 </listitem>
@@ -2540,21 +2543,41 @@ commands.</para>
 <term><guilabel>File Format</guilabel></term>
 <listitem>
 <variablelist>
+
 <varlistentry>
 <term><guilabel>Encoding:</guilabel></term>
 <listitem>
-<para>This sets the default character encoding for your files.</para>
+<para>This defines the standard encoding to use to open/save files, if not changed 
+in the open/save dialog or by using a command line option.</para>
 </listitem>
 </varlistentry>
+
 <varlistentry>
-<term><guilabel>Encoding autodetection</guilabel></term>
+<term><guilabel>Encoding Detection</guilabel></term>
 <listitem>
 <para>Select an item from the drop down box, either to disable autodetection or
 use <guilabel>Universal</guilabel> to enable autodetection for all encodings. But as
 this may probably only detect utf-8/utf-16, selecting a region will use custom heuristics
-for better results.</para>
+for better results.
+If neither the encoding chosen as standard above, nor the encoding specified 
+in the open/save dialog, nor the encoding specified on command line match 
+the content of the file, this detection will be run.</para>
 </listitem>
 </varlistentry>
+
+<varlistentry>
+<term><guilabel>Fallback Encoding</guilabel></term>
+<listitem>
+<para>This defines the fallback encoding to try for opening files if neither the 
+encoding chosen as standard above, nor the encoding specified in the open/
+save dialog, nor the encoding specified on command line match the content of 
+the file.  Before this is used, an attempt will be made to determine the 
+encoding to use by looking for a byte order marker at start of file: if one 
+is found, the right unicode encoding will be chosen; otherwise encoding 
+detection will run, if both fail fallback encoding will be tried.</para>
+</listitem>
+</varlistentry>
+
 <varlistentry>
 <term><guilabel>End of line:</guilabel></term>
 <listitem>
@@ -2562,6 +2585,7 @@ for better results.</para>
 document. You have the choice between &UNIX;, DOS/&Windows; or Macintosh.</para>
 </listitem>
 </varlistentry>
+
 <varlistentry>
 <term><guilabel>Automatic end of line detection</guilabel></term>
 <listitem>
@@ -2791,7 +2815,7 @@ You, the developer, are writing a line of code, and want to open a new block del
 If you press Enter and AutoBrace is enabled, it will insert your favorite new brace where it belongs. Looks like this:
 -->
 <varlistentry>
-<term><guilabel>DataTools</guilabel></term>
+<term><guilabel>Data Tools</guilabel></term>
 <listitem><para>Enables data tools like thesaurus and spell check (if installed).
 Data tools are only available when text is selected, or when the right mouse
 button is clicked over a word. If no data tools are offered even when text
@@ -2809,11 +2833,28 @@ as HTML</guimenuitem></menuchoice>. Additionally you can use <menuchoice><guimen
 as HTML to the system clipboard.</para></listitem>
 </varlistentry>
 <varlistentry>
+<term><guilabel>IconInserter</guilabel></term>
+<listitem><para>The icon inserter plugin is only of use for &kde; developers: It adds an item 
+<guimenuitem>Insert KIcon-Code</guimenuitem> into the context menu of the editor. 
+If activated, the &kde;'s icon chooser opens (showing application icons, action icons &etc;..). 
+If you click on it, the file name without file extension will be inserted as 
+text. Useful only for setting icons via &kde;'s framework through the KIcon() class.
+</para></listitem>
+</varlistentry>
+<varlistentry>
+<term><guilabel>Insane (not ZEN) HTML coding (light edition)</guilabel></term>
+<listitem><para>A plugin, which does zen-coding like selector completion.
+For more information see <ulink url="http://en.wikipedia.org/wiki/Zen_Coding">
+Zen Coding</ulink>.</para></listitem>
+</varlistentry>
+
+<varlistentry>
 <term><guilabel>Insert File</guilabel></term>
 <listitem><para>This plugin allows you to insert any readable file at the cursor position.
 If enabled, the <guimenu>Tools</guimenu> menu has an additional menu item
 <guimenuitem>Insert File</guimenuitem>.</para></listitem>
 </varlistentry>
+<!-- not build any longer in kde 4.5
 <varlistentry>
 <term>Python Encoding check</term>
 <listitem><para>This plugin is always enabled.
@@ -2823,6 +2864,7 @@ a warning dialog pops up and allows you to add a proper source encoding line for
 current encoding to the file.
 </para></listitem>
 </varlistentry>
+-->
 </variablelist>
 <!--
 kdelibs/kate/plugins/ has additional plugins
