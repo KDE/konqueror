@@ -10,106 +10,94 @@
     <height>443</height>
    </rect>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_3">
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_2">
-       <item>
-        <widget class="KTreeWidgetSearchLine" name="kListViewSearchLine">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="clickMessage">
-          <string>Search</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QTreeWidget" name="lvCookies">
-         <property name="toolTip">
-          <string>Search interactively for domains and hosts</string>
-         </property>
-         <property name="sortingEnabled">
-          <bool>true</bool>
-         </property>
-         <property name="allColumnsShowFocus">
-          <bool>true</bool>
-         </property>
-         <attribute name="headerDefaultSectionSize">
-          <number>200</number>
-         </attribute>
-         <attribute name="headerMinimumSectionSize">
-          <number>100</number>
-         </attribute>
-         <attribute name="headerDefaultSectionSize">
-          <number>200</number>
-         </attribute>
-         <attribute name="headerMinimumSectionSize">
-          <number>100</number>
-         </attribute>
-         <column>
-          <property name="text">
-           <string>Site</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Cookie Name</string>
-          </property>
-         </column>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QPushButton" name="pbDelete">
-         <property name="text">
-          <string>D&amp;elete</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pbDeleteAll">
-         <property name="text">
-          <string>Delete A&amp;ll</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pbPolicy">
-         <property name="text">
-          <string>Change &amp;Policy...</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pbReload">
-         <property name="text">
-          <string>&amp;Reload List</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="verticalSpacer">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </item>
-    </layout>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="KTreeWidgetSearchLine" name="kListViewSearchLine">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="clickMessage">
+      <string>Search</string>
+     </property>
+    </widget>
    </item>
-   <item>
+   <item row="1" column="0" rowspan="5">
+    <widget class="QTreeWidget" name="lvCookies">
+     <property name="toolTip">
+      <string>Search interactively for domains and hosts</string>
+     </property>
+     <property name="sortingEnabled">
+      <bool>true</bool>
+     </property>
+     <property name="allColumnsShowFocus">
+      <bool>true</bool>
+     </property>
+     <attribute name="headerDefaultSectionSize">
+      <number>200</number>
+     </attribute>
+     <attribute name="headerMinimumSectionSize">
+      <number>100</number>
+     </attribute>
+     <attribute name="headerDefaultSectionSize">
+      <number>200</number>
+     </attribute>
+     <attribute name="headerMinimumSectionSize">
+      <number>100</number>
+     </attribute>
+     <column>
+      <property name="text">
+       <string>Site</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Cookie Name</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QPushButton" name="pbDelete">
+     <property name="text">
+      <string>D&amp;elete</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QPushButton" name="pbDeleteAll">
+     <property name="text">
+      <string>Delete A&amp;ll</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QPushButton" name="pbPolicy">
+     <property name="text">
+      <string>Change &amp;Policy...</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QPushButton" name="pbReload">
+     <property name="text">
+      <string>&amp;Reload List</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>18</width>
+       <height>114</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="6" column="0" colspan="2">
     <widget class="QGroupBox" name="gbDetails">
      <property name="title">
       <string>Details</string>
