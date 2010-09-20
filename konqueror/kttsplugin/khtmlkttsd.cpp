@@ -66,7 +66,7 @@ void KHTMLPluginKTTSD::slotReadOut()
     {
         QString error;
         if (KToolInvocation::startServiceByDesktopName("kttsd", QStringList(), &error)) {
-            KMessageBox::error(part->widget(), error, i18n("Starting KTTSD Failed") );
+            KMessageBox::error(part->widget(), error, i18n("Starting Jovie Text-to-Speech Service Failed") );
 	    return;
         }
     }
