@@ -10,12 +10,13 @@
 
 // Own
 #include "generalopts.h"
+#include <kbuildsycocaprogressdialog.h>
 
 // Qt
 #include <QtDBus/QDBusConnection>
 #include <QtDBus/QDBusMessage>
 #include <QtGui/QGroupBox>
-#include <QtGui/QLayout>
+#include <QtGui/QFormLayout>
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QLabel>
 
@@ -24,6 +25,8 @@
 #include <kconfig.h>
 #include <kdebug.h>
 #include <kmimetype.h>
+#include <kmimetypetrader.h>
+#include <kservice.h>
 #include <kstandarddirs.h>
 #include <kurlrequester.h>
 
@@ -73,11 +76,10 @@ KKonqGeneralOptions::KKonqGeneralOptions(QWidget *parent, const QVariantList&)
 
 void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout* lay)
 {
-    QHBoxLayout *startLayout = new QHBoxLayout;
-    lay->addLayout(startLayout);
+    QFormLayout *formLayout = new QFormLayout;
+    lay->addLayout(formLayout);
 
     QLabel* startLabel = new QLabel(i18nc("@label:listbox", "When &Konqueror starts:"), this);
-    startLayout->addWidget(startLabel);
 
     m_startCombo = new KComboBox(this);
     m_startCombo->setEditable(false);
@@ -85,25 +87,20 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout* lay)
     m_startCombo->addItem(i18nc("@item:inlistbox", "Show My Home Page"), ShowHomePage);
     m_startCombo->addItem(i18nc("@item:inlistbox", "Show Blank Page"), ShowBlankPage);
     m_startCombo->addItem(i18nc("@item:inlistbox", "Show My Bookmarks"), ShowBookmarksPage);
-    startLayout->addWidget(m_startCombo);
-    connect(m_startCombo, SIGNAL(currentIndexChanged(int)), SLOT(slotChanged()));
-
+    formLayout->addRow(startLabel, m_startCombo);
     startLabel->setBuddy(m_startCombo);
+    connect(m_startCombo, SIGNAL(currentIndexChanged(int)), SLOT(slotChanged()));
 
     ////
 
-    QHBoxLayout *homeLayout = new QHBoxLayout;
     QLabel *label = new QLabel(i18n("Home page:"), this);
-    homeLayout->addWidget(label);
 
     homeURL = new KUrlRequester(this);
     homeURL->setMode(KFile::Directory);
     homeURL->setWindowTitle(i18n("Select Home Page"));
-    homeLayout->addWidget(homeURL);
+    formLayout->addRow(label, homeURL);
     connect(homeURL, SIGNAL(textChanged(QString)), SLOT(slotChanged()));
     label->setBuddy(homeURL);
-
-    lay->addLayout(homeLayout);
 
     QString homestr = i18n("This is the URL of the web page where "
                            "Konqueror (as web browser) will jump to when "
@@ -112,6 +109,16 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout* lay)
                            "to your local home folder instead.");
     label->setWhatsThis(homestr);
     homeURL->setWhatsThis(homestr);
+
+    ////
+
+    QLabel* webLabel = new QLabel(i18n("Default web browser engine:"), this);
+
+    m_webEngineCombo = new KComboBox(this);
+    m_webEngineCombo->setEditable(false);
+    formLayout->addRow(webLabel, m_webEngineCombo);
+    webLabel->setBuddy(m_webEngineCombo);
+    connect(m_webEngineCombo, SIGNAL(currentIndexChanged(int)), SLOT(slotChanged()));
 }
 
 KKonqGeneralOptions::~KKonqGeneralOptions()
@@ -161,6 +168,19 @@ void KKonqGeneralOptions::load()
     Q_ASSERT(startComboIndex != -1);
     m_startCombo->setCurrentIndex(startComboIndex);
 
+    m_webEngineCombo->clear();
+    // ## Well, the problem with using the trader to find the available parts, is that if a user
+    // removed a part in keditfiletype text/html, it won't be in the list anymore. Oh well.
+    const KService::List partOfferList = KMimeTypeTrader::self()->query("text/html", "KParts/ReadOnlyPart");
+    // Sorted list, so the first one is the preferred one, no need for a setCurrentIndex.
+    Q_FOREACH(const KService::Ptr partService, partOfferList) {
+        // We want only the HTML-capable parts, not any text/plain part (via inheritance)
+        // This is a small "private inheritance" hack, pending a more general solution
+        if (!partService->hasMimeType("text/plain")) {
+            m_webEngineCombo->addItem(partService->name(), QVariant(partService->storageId()));
+        }
+    }
+
     KConfigGroup cg(m_pConfig, "FMSettings"); // ### what a wrong group name for these settings...
 
     tabOptions->m_pShowMMBInTabs->setChecked( cg.readEntry( "MMBOpensTab", true ) );
@@ -189,7 +209,13 @@ void KKonqGeneralOptions::defaults()
     m_pConfig->setReadDefaults(old);
 }
 
-static void updateWebbrowsingProfile(const QString& homeUrl, StartPage startPage)
+// create local webbrowsing profile,
+// look for View0_ServiceName=konq_aboutpage or ViewT0_ServiceName=khtml
+// and replace with
+// ViewT0_ServiceName=khtml (if http)
+// ViewT0_ServiceType=text/html (if http)
+// ViewT0_URL[$e]=http://www.kde.org/
+static void updateWebbrowsingProfile(const QString& homeUrl, StartPage startPage, const QString& preferredWebEngine)
 {
     QString url;
     QString serviceType;
@@ -205,7 +231,7 @@ static void updateWebbrowsingProfile(const QString& homeUrl, StartPage startPage
             serviceType = mime->name();
         } else {
             serviceType = "text/html";
-            serviceName = "khtml";
+            serviceName = preferredWebEngine;
         }
     }
     break;
@@ -217,12 +243,12 @@ static void updateWebbrowsingProfile(const QString& homeUrl, StartPage startPage
     case ShowBlankPage:
         url = "about:blank";
         serviceType = "text/html";
-        serviceName = "khtml";
+        serviceName = preferredWebEngine;
         break;
     case ShowBookmarksPage:
         url = "bookmarks:";
         serviceType = "text/html";
-        serviceName = "khtml";
+        serviceName = preferredWebEngine;
         break;
     }
 
@@ -267,14 +293,38 @@ void KKonqGeneralOptions::save()
     userSettings.writeEntry("HomeURL", homeURL->url().url());
     const int startComboIndex = m_startCombo->currentIndex();
     const int choice = m_startCombo->itemData(startComboIndex).toInt();
-    updateWebbrowsingProfile(homeURL->url().url(), static_cast<StartPage>(choice));
 
-    // TODO create local webbrowsing profile,
-    // look for View0_ServiceName=konq_aboutpage or ViewT0_ServiceName=khtml
-    // and replace with
-    // ViewT0_ServiceName=khtml (if http)
-    // ViewT0_ServiceType=text/html (if http)
-    // ViewT0_URL[$e]=http://www.kde.org/
+    const QString preferredWebEngine = m_webEngineCombo->itemData(m_webEngineCombo->currentIndex()).toString();
+    QString engineEntryName = preferredWebEngine;
+    if (engineEntryName.endsWith(".desktop")) // turn the storageId into a desktopEntryName: remove .desktop
+        engineEntryName.truncate(engineEntryName.length() - 8);
+    kDebug() << "preferredWebEngine=" << preferredWebEngine << "engineEntryName=" << engineEntryName;
+
+    updateWebbrowsingProfile(homeURL->url().url(), static_cast<StartPage>(choice), engineEntryName);
+
+    if (m_webEngineCombo->currentIndex() > 0) {
+        // The user changed the preferred web engine, save into mimeapps.list.
+        KSharedConfig::Ptr profile = KSharedConfig::openConfig("mimeapps.list", KConfig::NoGlobals, "xdgdata-apps");
+        KConfigGroup addedServices(profile, "Added KDE Service Associations");
+        KConfigGroup removedServices(profile, "Added KDE Service Associations");
+        Q_FOREACH(const QString& mimeType, QStringList() << "text/html" << "application/xhtml+xml" << "application/xml") {
+            QStringList services = addedServices.readXdgListEntry(mimeType);
+            services.removeAll(preferredWebEngine);
+            services.prepend(preferredWebEngine); // make it the preferred one
+            addedServices.writeXdgListEntry(mimeType, services);
+
+            // Not needed since the part wouldn't be in the available choices if it was removed-by-the-user, anyway.
+            //QStringList unwantedServices = removedServices.readXdgListEntry(mimeType);
+            //if (unwantedServices.removeAll(preferredWebEngine)) {
+            //    removedServices.writeXdgListEntry(mimeType, unwantedServices);
+            //}
+        }
+        profile->sync();
+
+        // kbuildsycoca is the one reading mimeapps.list, so we need to run it now
+        KBuildSycocaProgressDialog::rebuildKSycoca(this);
+    }
+
 
     KConfigGroup cg(m_pConfig, "FMSettings");
     cg.writeEntry( "MMBOpensTab", tabOptions->m_pShowMMBInTabs->isChecked() );

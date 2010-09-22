@@ -39,8 +39,9 @@ private:
 
     KSharedConfig::Ptr m_pConfig;
 
-    KUrlRequester *homeURL;
     KComboBox* m_startCombo;
+    KUrlRequester *homeURL;
+    KComboBox* m_webEngineCombo;
     Ui_advancedTabOptions* tabOptions;
 };
 
