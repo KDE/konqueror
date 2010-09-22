@@ -189,41 +189,41 @@ void KEBApp::createActions() {
     connect(m_actionsImplCancelFavIconUpdates, SIGNAL( triggered() ), m_actionsImpl, SLOT( slotCancelFavIconUpdates() ));
 
     KAction* m_actionsImplImportNS = actionCollection()->addAction("importNS");
-    m_actionsImplImportNS->setObjectName("NS");
+    m_actionsImplImportNS->setObjectName( QLatin1String("NS" ));
     m_actionsImplImportNS->setIcon(KIcon("netscape"));
     m_actionsImplImportNS->setText(i18n("Import &Netscape Bookmarks..."));
     connect(m_actionsImplImportNS, SIGNAL( triggered() ), m_actionsImpl, SLOT( slotImport() ));
 
     KAction* m_actionsImplImportOpera = actionCollection()->addAction("importOpera");
-    m_actionsImplImportOpera->setObjectName("Opera");
+    m_actionsImplImportOpera->setObjectName( QLatin1String("Opera" ));
     m_actionsImplImportOpera->setIcon(KIcon("opera"));
     m_actionsImplImportOpera->setText(i18n("Import &Opera Bookmarks..."));
     connect(m_actionsImplImportOpera, SIGNAL( triggered() ), m_actionsImpl, SLOT( slotImport() ));
 
     KAction* m_actionsImplImportCrashes = actionCollection()->addAction("importCrashes");
-    m_actionsImplImportCrashes->setObjectName("Crashes");
+    m_actionsImplImportCrashes->setObjectName( QLatin1String("Crashes" ));
     m_actionsImplImportCrashes->setText(i18n("Import All &Crash Sessions as Bookmarks..."));
     connect(m_actionsImplImportCrashes, SIGNAL( triggered() ), m_actionsImpl, SLOT( slotImport() ));
 
     KAction* m_actionsImplImportGaleon = actionCollection()->addAction("importGaleon");
-    m_actionsImplImportGaleon->setObjectName("Galeon");
+    m_actionsImplImportGaleon->setObjectName( QLatin1String("Galeon" ));
     m_actionsImplImportGaleon->setText(i18n("Import &Galeon Bookmarks..."));
     connect(m_actionsImplImportGaleon, SIGNAL( triggered() ), m_actionsImpl, SLOT( slotImport() ));
 
     KAction* m_actionsImplImportKDE2 = actionCollection()->addAction("importKDE2");
-    m_actionsImplImportKDE2->setObjectName("KDE2");
+    m_actionsImplImportKDE2->setObjectName( QLatin1String("KDE2" ));
     m_actionsImplImportKDE2->setIcon(KIcon("kde"));
     m_actionsImplImportKDE2->setText(i18n("Import &KDE 2 or KDE 3 Bookmarks..."));
 
     connect(m_actionsImplImportKDE2, SIGNAL( triggered() ), m_actionsImpl, SLOT( slotImport() ));
 
     KAction* m_actionsImplImportIE = actionCollection()->addAction("importIE");
-    m_actionsImplImportIE->setObjectName("IE");
+    m_actionsImplImportIE->setObjectName( QLatin1String("IE" ));
     m_actionsImplImportIE->setText(i18n("Import &Internet Explorer Bookmarks..."));
     connect(m_actionsImplImportIE, SIGNAL( triggered() ), m_actionsImpl, SLOT( slotImport() ));
 
     KAction* m_actionsImplImportMoz = actionCollection()->addAction("importMoz");
-    m_actionsImplImportMoz->setObjectName("Moz");
+    m_actionsImplImportMoz->setObjectName( QLatin1String("Moz" ));
     m_actionsImplImportMoz->setIcon(KIcon("mozilla"));
     m_actionsImplImportMoz->setText(i18n("Import &Mozilla Bookmarks..."));
     connect(m_actionsImplImportMoz, SIGNAL( triggered() ), m_actionsImpl, SLOT( slotImport() ));

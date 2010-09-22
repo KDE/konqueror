@@ -58,7 +58,7 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
     m_rightWidget(0), m_leftWidget(0), m_alwaysTabBar(false)
 {
   // Set an object name so the widget style can identify this widget.
-  setObjectName("kde_konq_tabwidget");
+  setObjectName( QLatin1String("kde_konq_tabwidget" ));
   setDocumentMode(true);
 
   KAcceleratorManager::setNoAccel(this);

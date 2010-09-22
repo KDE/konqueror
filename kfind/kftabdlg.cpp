@@ -68,14 +68,14 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     // ************ Page One ************
 
     pages[0] = new QWidget;
-    pages[0]->setObjectName( "page1" );
+    pages[0]->setObjectName( QLatin1String( "page1" ) );
 
     nameBox = new KComboBox(pages[0]);
     nameBox->setEditable( true );
     nameBox->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);  // allow smaller than widest entry
     QLabel * namedL = new QLabel(i18nc("this is the label for the name textfield","&Named:"), pages[0]);
     namedL->setBuddy( nameBox );
-    namedL->setObjectName( "named" );
+    namedL->setObjectName( QLatin1String( "named" ) );
     namedL->setToolTip( i18n("You can use wildcard matching and \";\" for separating multiple names") );
     dirBox  = new KUrlComboBox(KUrlComboBox::Directories, pages[0]);
     dirBox->setEditable( true );
@@ -84,7 +84,7 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     dirBox->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);  // allow smaller than widest entry
     QLabel * lookinL = new QLabel(i18n("Look &in:"), pages[0]);
     lookinL->setBuddy( dirBox );
-    lookinL->setObjectName( "lookin" );
+    lookinL->setObjectName( QLatin1String( "lookin" ) );
     subdirsCb  = new QCheckBox(i18n("Include &subfolders"), pages[0]);
     caseSensCb  = new QCheckBox(i18n("Case s&ensitive search"), pages[0]);
     browseB    = new QPushButton(i18n("&Browse..."), pages[0]);
@@ -172,16 +172,16 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     // ************ Page Two
 
     pages[1] = new QWidget;
-    pages[1]->setObjectName( "page2" );
+    pages[1]->setObjectName( QLatin1String( "page2" ) );
 
     findCreated =  new QCheckBox(i18n("Find all files created or &modified:"), pages[1]);
     bg  = new QButtonGroup();
     rb[0] = new QRadioButton(i18n("&between"), pages[1] );
     rb[1] = new QRadioButton(pages[1]); // text set in updateDateLabels
     andL = new QLabel(i18n("and"), pages[1]);
-    andL->setObjectName( "and" );
+    andL->setObjectName( QLatin1String( "and" ) );
     betweenType = new KComboBox( pages[1] );
-    betweenType->setObjectName( "comboBetweenType" );
+    betweenType->setObjectName( QLatin1String( "comboBetweenType" ) );
     betweenType->addItems(QVector<QString>(5).toList()); // texts set in updateDateLabels
     betweenType->setCurrentIndex(1);
     updateDateLabels(1, 1);
@@ -189,34 +189,34 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     QDate dt = KGlobal::locale()->calendar()->addYears(QDate::currentDate(), -1);
 
     fromDate = new KDateCombo(dt, pages[1] );
-    fromDate->setObjectName( "fromDate" );
+    fromDate->setObjectName( QLatin1String( "fromDate" ) );
     toDate = new KDateCombo(pages[1] );
-    toDate->setObjectName( "toDate" );
+    toDate->setObjectName( QLatin1String( "toDate" ) );
     timeBox = new KIntSpinBox( pages[1] );
     timeBox->setRange( 1, 60 );
     timeBox->setSingleStep( 1 );
-    timeBox->setObjectName( "timeBox" );
+    timeBox->setObjectName( QLatin1String( "timeBox" ) );
 
     sizeBox =new KComboBox( pages[1] );
-    sizeBox->setObjectName( "sizeBox" );
+    sizeBox->setObjectName( QLatin1String( "sizeBox" ) );
     QLabel * sizeL   =new QLabel(i18n("File &size is:"), pages[1]);
     sizeL->setBuddy( sizeBox );
     sizeEdit=new KIntSpinBox(pages[1] );
     sizeEdit->setRange( 0, INT_MAX );
     sizeEdit->setSingleStep( 1 );
-    sizeEdit->setObjectName( "sizeEdit" );
+    sizeEdit->setObjectName( QLatin1String( "sizeEdit" ) );
     sizeEdit->setValue(1);
     sizeUnitBox =new KComboBox( pages[1] );
-    sizeUnitBox->setObjectName( "sizeUnitBox" );
+    sizeUnitBox->setObjectName( QLatin1String( "sizeUnitBox" ) );
 
     m_usernameBox = new KComboBox( pages[1] );
     m_usernameBox->setEditable( true );
-    m_usernameBox->setObjectName( "m_combo1");
+    m_usernameBox->setObjectName( QLatin1String( "m_combo1" ));
     QLabel *usernameLabel= new QLabel(i18n("Files owned by &user:"),pages[1]);
     usernameLabel->setBuddy( m_usernameBox );
     m_groupBox = new KComboBox( pages[1] );
     m_groupBox->setEditable( true );
-    m_groupBox->setObjectName( "m_combo2" );
+    m_groupBox->setObjectName( QLatin1String( "m_combo2" ) );
     QLabel *groupLabel= new QLabel(i18n("Owned by &group:"),pages[1]);
     groupLabel->setBuddy( m_groupBox );
 
@@ -290,16 +290,16 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     // ************ Page Three
 
     pages[2] = new QWidget;
-    pages[2]->setObjectName( "page3" );
+    pages[2]->setObjectName( QLatin1String( "page3" ) );
 
     typeBox =new KComboBox( pages[2] );
-    typeBox->setObjectName( "typeBox" );
+    typeBox->setObjectName( QLatin1String( "typeBox" ) );
     typeBox->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);  // allow smaller than widest entry
     QLabel * typeL   =new QLabel( i18nc("label for the file type combobox","File &type:"), pages[2] );
     typeL->setBuddy( typeBox );
     textEdit=new KLineEdit(pages[2]);
     textEdit->setClearButtonShown(true);
-    textEdit->setObjectName( "textEdit" );
+    textEdit->setObjectName( QLatin1String( "textEdit" ) );
     QLabel * textL   =new QLabel(i18n("C&ontaining text:"), pages[2]);
     textL->setBuddy( textEdit );
 
@@ -328,7 +328,7 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     if ( !KServiceTypeTrader::self()->query("KRegExpEditor/KRegExpEditor").isEmpty() ) {
         // The editor is available, so lets use it.
         editRegExp = new QPushButton(i18n("&Edit..."), pages[2]);
-        editRegExp->setObjectName( "editRegExp" );
+        editRegExp->setObjectName( QLatin1String( "editRegExp" ) );
     }
 
     metainfokeyEdit=new KLineEdit(pages[2]);

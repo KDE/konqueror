@@ -80,13 +80,13 @@ void KonqCopyToMenu::addActionsTo(QMenu* menu)
 {
     KMenu* mainCopyMenu = new KonqCopyToMainMenu(menu, d, Copy);
     mainCopyMenu->setTitle(i18nc("@title:menu", "Copy To"));
-    mainCopyMenu->menuAction()->setObjectName("copyTo_submenu"); // for the unittest
+    mainCopyMenu->menuAction()->setObjectName( QLatin1String("copyTo_submenu" )); // for the unittest
     menu->addMenu(mainCopyMenu);
 
     if (!d->m_readOnly) {
         KMenu* mainMoveMenu = new KonqCopyToMainMenu(menu, d, Move);
         mainMoveMenu->setTitle(i18nc("@title:menu", "Move To"));
-        mainMoveMenu->menuAction()->setObjectName("moveTo_submenu"); // for the unittest
+        mainMoveMenu->menuAction()->setObjectName( QLatin1String("moveTo_submenu" )); // for the unittest
         menu->addMenu(mainMoveMenu);
     }
 }

@@ -45,7 +45,7 @@ CSSConfig::CSSConfig(QWidget *parent, const QVariantList &)
   , customDialogBase(new KDialog(this))
   , customDialog(new CSSCustomDialog(customDialogBase))
 {
-  customDialogBase->setObjectName( "customCSSDialog" );
+  customDialogBase->setObjectName( QLatin1String( "customCSSDialog" ) );
   customDialogBase->setModal( true );
   customDialogBase->setButtons( KDialog::Close );
   customDialogBase->setDefaultButton( KDialog::Close );

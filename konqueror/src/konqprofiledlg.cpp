@@ -106,7 +106,7 @@ KonqProfileDlg::KonqProfileDlg( KonqViewManager *manager, const QString & presel
   d->layout()->setMargin( 0 );
   setMainWidget( d );
 
-  setObjectName( "konq_profile_dialog" );
+  setObjectName( QLatin1String( "konq_profile_dialog" ) );
   setModal( true );
   setCaption( i18n( "Profile Management" ) );
   setButtons( Close | BTN_RENAME | BTN_DELETE | BTN_SAVE );
