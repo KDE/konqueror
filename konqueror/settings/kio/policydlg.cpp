@@ -37,7 +37,7 @@ public:
   DomainLineValidator(QObject *parent)
   :QValidator(parent)
   {
-    setObjectName("domainValidator");
+    setObjectName( QLatin1String("domainValidator" ));
   }
 
   State validate(QString &input, int &) const

@@ -383,7 +383,7 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
 
         act = new KAction(m_parentWidget);
         m_ownActions.append(act);
-        act->setObjectName("bookmark_add"); // for unittest
+        act->setObjectName( QLatin1String("bookmark_add" )); // for unittest
         act->setIcon( KIcon("bookmark-new") );
         act->setText( caption );
         QObject::connect(act, SIGNAL(triggered()), q, SLOT(slotPopupAddToBookmark()));
@@ -408,7 +408,7 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
                 q->addAction(previewActions.first());
             } else {
                 QMenu* subMenu = new QMenu(i18n("Preview In"), q);
-                subMenu->menuAction()->setObjectName("preview_submenu"); // for the unittest
+                subMenu->menuAction()->setObjectName( QLatin1String("preview_submenu" )); // for the unittest
                 q->addMenu(subMenu);
                 subMenu->addActions(previewActions);
             }
@@ -441,7 +441,7 @@ void KonqPopupMenuPrivate::init(KonqPopupMenu::Flags kpf, KParts::BrowserExtensi
     if ( (m_itemFlags & KParts::BrowserExtension::ShowProperties) && KPropertiesDialog::canDisplay( lstItems ) ) {
         act = new KAction(m_parentWidget);
         m_ownActions.append(act);
-        act->setObjectName("properties"); // for unittest
+        act->setObjectName( QLatin1String("properties" )); // for unittest
         act->setText( i18n( "&Properties" ) );
         QObject::connect(act, SIGNAL(triggered()), q, SLOT(slotPopupProperties()));
         q->addAction(act);

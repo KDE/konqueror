@@ -78,7 +78,7 @@ KonqOperations::KonqOperations( QWidget *parent )
     : QObject( parent ),
       m_method( UNKNOWN ), m_info(0), m_pasteInfo(0)
 {
-    setObjectName( "KonqOperations" );
+    setObjectName( QLatin1String( "KonqOperations" ) );
 }
 
 KonqOperations::~KonqOperations()

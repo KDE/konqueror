@@ -56,7 +56,7 @@ public:
   UserAgentSiteNameValidator(QObject *parent)
   :QValidator(parent)
   {
-    setObjectName("UserAgentSiteNameValidator");
+    setObjectName( QLatin1String("UserAgentSiteNameValidator" ));
   }
 
   State validate(QString &input, int &) const

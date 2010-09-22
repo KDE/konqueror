@@ -662,7 +662,7 @@ NSPluginInstance::NSPluginInstance(NPPluginFuncs *pluginFuncs,
 
     // The object name is the dbus object path
    (void) new InstanceAdaptor( this );
-   setObjectName( QString( "/Instance_" ) + QString::number( ++s_instanceCounter ) );
+   setObjectName( QLatin1String( "/Instance_" ) + QString::number( ++s_instanceCounter ) );
    QDBusConnection::sessionBus().registerObject( objectName(), this );
    _callback = new org::kde::nsplugins::CallBack( appId, callbackId, QDBusConnection::sessionBus() );
 
@@ -1393,7 +1393,7 @@ NSPluginClass::NSPluginClass( const QString &library,
 {
     (void) new ClassAdaptor( this );
     // The object name is used to store the dbus object path
-    setObjectName( QString( "/Class_" ) + QString::number( ++s_classCounter ) );
+    setObjectName( QLatin1String( "/Class_" ) + QString::number( ++s_classCounter ) );
     QDBusConnection::sessionBus().registerObject( objectName(), this );
 
     // initialize members

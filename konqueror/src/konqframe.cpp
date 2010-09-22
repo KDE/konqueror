@@ -157,7 +157,7 @@ void KonqFrame::attachWidget(QWidget* widget)
    delete m_pLayout;
 
    m_pLayout = new QVBoxLayout( this );
-   m_pLayout->setObjectName( "KonqFrame's QVBoxLayout" );
+   m_pLayout->setObjectName( QLatin1String( "KonqFrame's QVBoxLayout" ) );
    m_pLayout->setMargin( 0 );
    m_pLayout->setSpacing( 0 );
 

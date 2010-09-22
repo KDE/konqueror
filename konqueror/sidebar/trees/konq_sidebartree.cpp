@@ -200,7 +200,7 @@ KonqSidebarTree::KonqSidebarTree( KonqSidebarOldTreeModule *parent, QWidget *par
 
     m_collection = new KActionCollection(this);
     m_collection->addAssociatedWidget(this);
-    m_collection->setObjectName("bookmark actions");
+    m_collection->setObjectName( QLatin1String("bookmark actions" ));
     QAction *action = new KAction(KIcon("folder-new"), i18n("&Create New Folder..."), this);
     m_collection->addAction("create_folder", action);
     connect(action, SIGNAL(triggered(bool)), SLOT(slotCreateFolder()));

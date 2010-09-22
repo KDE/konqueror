@@ -103,7 +103,7 @@ KonqFrameStatusBar::KonqFrameStatusBar( KonqFrame *_parent )
     addWidget( m_pStatusLabel, 1 /*stretch*/ ); // status label
 
     m_pLinkedViewCheckBox = new KonqCheckBox( this );
-    m_pLinkedViewCheckBox->setObjectName( "m_pLinkedViewCheckBox" );
+    m_pLinkedViewCheckBox->setObjectName( QLatin1String( "m_pLinkedViewCheckBox" ) );
     m_pLinkedViewCheckBox->setFocusPolicy(Qt::NoFocus);
     m_pLinkedViewCheckBox->setSizePolicy(QSizePolicy( QSizePolicy::Fixed, QSizePolicy::Minimum ));
     m_pLinkedViewCheckBox->setWhatsThis( i18n("Checking this box on at least two views sets those views as 'linked'. "
@@ -154,7 +154,7 @@ void KonqFrameStatusBar::splitFrameMenu()
    // We have to ship the remove view action ourselves,
    // since this may not be the active view (passive view)
    KAction actRemoveView(KIcon("view-close"), i18n("Close View"), 0);
-   actRemoveView.setObjectName("removethisview");
+   actRemoveView.setObjectName( QLatin1String("removethisview" ));
    connect(&actRemoveView, SIGNAL(triggered(bool)), m_pParentKonqFrame, SLOT(slotRemoveView()));
    actRemoveView.setEnabled( mw->mainViewsCount() > 1 || m_pParentKonqFrame->childView()->isToggleView() || m_pParentKonqFrame->childView()->isPassiveMode() );
 

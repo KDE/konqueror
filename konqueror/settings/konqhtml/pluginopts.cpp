@@ -123,7 +123,7 @@ KPluginOptions::KPluginOptions( QWidget *parent, const QVariantList& )
     domainSpecificDlg->setCaption( i18n("Domain-Specific Policies") );
     domainSpecificDlg->setButtons( KDialog::Close );
     domainSpecificDlg->setDefaultButton( KDialog::Close );
-    domainSpecificDlg->setObjectName( "domainSpecificDlg" );
+    domainSpecificDlg->setObjectName( QLatin1String( "domainSpecificDlg" ) );
     domainSpecificDlg->setModal( true );
 
     domainSpecific = new PluginDomainListView(m_pConfig,m_groupname,this,domainSpecificDlg);
@@ -171,7 +171,7 @@ KPluginOptions::KPluginOptions( QWidget *parent, const QVariantList& )
 
     // create Designer made widget
     m_widget.setupUi( pluginsSettingsContainer );
-    pluginsSettingsContainer->setObjectName( "configwidget" );
+    pluginsSettingsContainer->setObjectName( QLatin1String( "configwidget" ) );
     m_widget.dirEdit->setMode(KFile::ExistingOnly | KFile::LocalOnly | KFile::Directory);
 
     // setup widgets
@@ -627,7 +627,7 @@ void KPluginOptions::pluginSave( KSharedConfig::Ptr /*config*/ )
 PluginDomainDialog::PluginDomainDialog(QWidget *parent) :
 	QWidget(parent)
 {
-  setObjectName("PluginDomainDialog");
+  setObjectName( QLatin1String("PluginDomainDialog" ));
   setWindowTitle(i18n("Domain-Specific Policies"));
 
   thisLayout = new QVBoxLayout(this);

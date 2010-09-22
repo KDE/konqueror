@@ -72,7 +72,7 @@ KonqSessionDlg::KonqSessionDlg( KonqViewManager *manager, QWidget *parent )
     d->layout()->setMargin( 0 );
     setMainWidget( d );
     
-    setObjectName( "konq_session_dialog" );
+    setObjectName( QLatin1String( "konq_session_dialog" ) );
     setModal( true );
     setCaption( i18n( "Manage Sessions" ) );
     setButtons( BTN_OPEN | Close );
@@ -218,7 +218,7 @@ KonqNewSessionDlg::KonqNewSessionDlg( QWidget *parent, QString sessionName )
     d->layout()->setMargin( 0 );
     setMainWidget( d );
     
-    setObjectName( "konq_new_session_dialog" );
+    setObjectName( QLatin1String( "konq_new_session_dialog" ) );
     setModal( true );
     setCaption( i18n( "Save Session" ) );
     setButtons( Ok | Cancel );

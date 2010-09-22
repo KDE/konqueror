@@ -1681,7 +1681,7 @@ void KonqMainWindow::slotConfigure()
     if( !m_configureDialog )
     {
         m_configureDialog = new KCMultiDialog( this );
-        m_configureDialog->setObjectName( "configureDialog" );
+        m_configureDialog->setObjectName( QLatin1String( "configureDialog" ) );
         connect(m_configureDialog, SIGNAL(finished()), this, SLOT(slotConfigureDone()));
 
         //BEGIN SYNC with initActions()
