@@ -8,7 +8,7 @@
 <article lang="&language;">
 <articleinfo>
 
-<title>Bookmarks home page</title>
+<title>Bookmarks</title>
 <authorgroup>
 <author>
 <personname><firstname>Xavier</firstname><surname>Vello</surname></personname>
@@ -17,8 +17,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2008-08-31</date>
-<releaseinfo>0.2</releaseinfo>
+<date>2010-09-24</date>
+<releaseinfo>0.2 (&kde; 4.5)</releaseinfo>
 
 <keywordset>
 <keyword>KDE</keyword>
@@ -28,7 +28,12 @@
 </keywordset>
 </articleinfo>
 <sect1 id="conf">
-<title>Configuration options</title>
+<title>Bookmarks home page</title>
+<para>This module lets you configure the bookmarks home page.</para>
+<para>To view the bookmarks home page enter <userinput>bookmarks:/</userinput> in 
+the location bar.</para>
+<para>The settings in this module are also accessible by entering 
+<userinput>bookmarks:/config</userinput> in the location bar.</para>
 <sect2 id="conf-general">
 <title>General settings</title>
 <variablelist>
