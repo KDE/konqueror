@@ -5,8 +5,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2010-02-26</date>
-<releaseinfo>&kde; 4.4</releaseinfo>
+<date>2010-09-24</date>
+<releaseinfo>&kde; 4.5</releaseinfo>
 </chapterinfo>
 
 <title>Using Bookmarks</title>
@@ -15,10 +15,9 @@
 your own files and folders, they are most useful when you are surfing the
 Web, letting you build up a list of useful sites.</para>
 
-<para>To open the <guimenu>Bookmarks</guimenu> menu you may either
+<para>To open the <guimenu>Bookmarks</guimenu> menu you may 
 <mousebutton>left</mousebutton> click on the
-<guimenu>Bookmarks</guimenu> menu or use the <keycombo
-action="simul">&Alt;<keycap>B</keycap></keycombo> shortcut. Once
+<guimenu>Bookmarks</guimenu> menu. Once
 the list is visible, you can navigate through it with the arrow keys or with
 your mouse, then press &Enter; or
 <mousebutton>left</mousebutton> click to visit the selected location.</para>
@@ -27,7 +26,7 @@ your mouse, then press &Enter; or
 </guimenu><guimenuitem>Add Bookmark</guimenuitem></menuchoice> or 
 <keycombo action="simul">&Ctrl;<keycap>B</keycap></keycombo> or
 <mousebutton>right</mousebutton> click on a clear space in the web page or 
-folder view and select <guimenuitem>Bookmark this Location</guimenuitem> from 
+folder view and select <guimenuitem>Bookmark this Page</guimenuitem> from 
 the pop up menu.</para>
 
 <para>The <guimenu>Bookmarks</guimenu> list can contain subfolders containing 
@@ -38,7 +37,10 @@ select the folder from within the <guimenu>Bookmarks</guimenu> list and use
 the <guimenuitem>Add Bookmark</guimenuitem> item in that folder.</para>
 
 <para>You can also access your bookmarks from the <link linkend="sidebar">
-<guilabel>Sidebar</guilabel></link>.</para>
+<guilabel>Sidebar</guilabel></link> or from the <guilabel>Bookmark Toolbar</guilabel>.</para>
+
+<para>If you enter <userinput>bookmarks:/</userinput> in the location bar the 
+bookmarks home page with an overview of all bookmarks and folders is shown.</para> 
 
 <sect1 id="orgbmark">
 <title>The Bookmark Editor</title>
@@ -80,7 +82,7 @@ window, or with <keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo>
 the <guimenu>Edit</guimenu> menu or the pop up menu that appears when you 
 <mousebutton>right</mousebutton> click on the item. Similarly, you can edit 
 the &URL; by pressing <keycap>F3</keycap> or choosing the <guimenuitem>
-Change URL</guimenuitem> menu item.</para>
+Change Location</guimenuitem> menu item.</para>
 
 <para>The <guilabel>Bookmark Editor</guilabel> lets you import bookmarks from 
 a range of other browsers into &konqueror;'s bookmark list, putting them into 
@@ -92,7 +94,7 @@ a range of other browsers into &konqueror;'s bookmark list, putting them into
 
 <para>To select which bookmark subfolder is used to hold the Bookmark 
 Toolbar items select the subfolder then choose <guimenuitem>Set as Toolbar 
-Folder</guimenuitem> from the <guimenu>Edit</guimenu> menu.</para>
+Folder</guimenuitem> from the <guimenu>Folder</guimenu> menu.</para>
 
 <para>If you are tidying up your bookmarks and have forgotten what a 
 particular web page is, you can easily open it from within the <guilabel>
