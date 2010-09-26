@@ -42,22 +42,22 @@ KIOPreferences::KIOPreferences(QWidget *parent, const QVariantList &)
 
     QFormLayout* timeoutLayout = new QFormLayout(gb_Timeout);
     sb_socketRead = new KIntNumInput( this );
-    sb_socketRead->setSuffix( i18n( " sec" ) );
+    sb_socketRead->setSuffix( ki18np( " second", " seconds" ) );
     connect(sb_socketRead, SIGNAL(valueChanged(int)), SLOT(configChanged()));
     timeoutLayout->addRow(i18n( "Soc&ket read:" ), sb_socketRead);
 
     sb_proxyConnect = new KIntNumInput( 0, this );
-    sb_proxyConnect->setSuffix( i18n( " sec" ) );
+    sb_proxyConnect->setSuffix( ki18np( " second", " seconds" ) );
     connect(sb_proxyConnect, SIGNAL(valueChanged(int)), SLOT(configChanged()));
     timeoutLayout->addRow(i18n( "Pro&xy connect:" ), sb_proxyConnect);
 
     sb_serverConnect = new KIntNumInput( 0, this );
-    sb_serverConnect->setSuffix( i18n( " sec" ) );
+    sb_serverConnect->setSuffix( ki18np( " second", " seconds" ) );
     connect(sb_serverConnect, SIGNAL(valueChanged(int)), SLOT(configChanged()));
     timeoutLayout->addRow(i18n("Server co&nnect:"), sb_serverConnect);
 
     sb_serverResponse = new KIntNumInput( 0, this );
-    sb_serverResponse->setSuffix( i18n( " sec" ) );
+    sb_serverResponse->setSuffix( ki18np( " second", " seconds" ) );
     connect(sb_serverResponse, SIGNAL(valueChanged(int)), SLOT(configChanged()));
     timeoutLayout->addRow(i18n("&Server response:"), sb_serverResponse);
 
