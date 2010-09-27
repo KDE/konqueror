@@ -19,33 +19,24 @@
 #include "kspeechinterface.h"
 
 // KDE
-#include <dom/dom_string.h>
-#include <dom/html_document.h>
-#include <dom/html_element.h>
 #include <kaction.h>
 #include <kactioncollection.h>
 #include <kdebug.h>
-#include <khtml_part.h> // this plugin applies to a khtml part
-#include <config-kttsplugin.h>
 #include <kicon.h>
 #include <klocale.h>
 #include <kmessagebox.h>
+#include <kparts/part.h>
+#include <kparts/textextension.h>
 #include <kpluginfactory.h>
 #include <kservicetypetrader.h>
 #include <kspeech.h>
 #include <ktoolinvocation.h>
 
-#ifdef HAVE_KWEBKITPART
-#include <kwebkitpart.h>
-#include <QWebFrame>
-#include <QWebView>
-#endif
-
-
 KHTMLPluginKTTSD::KHTMLPluginKTTSD( QObject* parent, const QVariantList& )
     : Plugin( parent )
 {
-    if (qobject_cast<KHTMLPart*>(parent)) { // should always be true, but let's make sure
+    KParts::TextExtension* textExt = KParts::TextExtension::childObject(parent);
+    if (textExt && qobject_cast<KParts::ReadOnlyPart *>(parent)) {
         QAction *action = actionCollection()->addAction( "tools_kttsd" );
         action->setIcon( KIcon("text-speak") );
         action->setText( i18n("&Speak Text") );
@@ -59,7 +50,7 @@ KHTMLPluginKTTSD::~KHTMLPluginKTTSD()
 
 void KHTMLPluginKTTSD::slotReadOut()
 {
-    // The parent is assumed to be a KHTMLPart (checked in constructor)
+    // The parent is a KParts::ReadOnlyPart (checked in constructor)
     KParts::ReadOnlyPart* part = static_cast<KParts::ReadOnlyPart *>(parent());
 
     if (!QDBusConnection::sessionBus().interface()->isServiceRegistered("org.kde.kttsd"))
@@ -67,7 +58,7 @@ void KHTMLPluginKTTSD::slotReadOut()
         QString error;
         if (KToolInvocation::startServiceByDesktopName("kttsd", QStringList(), &error)) {
             KMessageBox::error(part->widget(), error, i18n("Starting Jovie Text-to-Speech Service Failed") );
-	    return;
+            return;
         }
     }
     // Find out if KTTSD supports xhtml (rich speak).
@@ -80,70 +71,19 @@ void KHTMLPluginKTTSD::slotReadOut()
     else
     {
         supportsXhtml = reply.value() & KSpeech::tcCanParseHtml;
-    }
-
-    QString query;
-    bool hasSelection = false;
-    KHTMLPart *compPart = dynamic_cast<KHTMLPart *>(part);
-    if ( compPart )
-    {
         if (supportsXhtml)
-        {
             kDebug() << "KTTS claims to support rich speak (XHTML to SSML).";
-            if (hasSelection)
-                query = compPart->selectedTextAsHTML();
-            else
-            {
-                // TODO: Fooling around with the selection probably has unwanted
-                // side effects, but until a method is supplied to get valid xhtml
-                // from entire document..
-                // query = part->document().toString().string();
-                compPart->selectAll();
-                query = compPart->selectedTextAsHTML();
-                // Restore no selection.
-                compPart->setSelection(compPart->document().createRange());
-            }
-        } else {
-            if (hasSelection)
-                query = compPart->selectedText();
-            else
-                query = compPart->htmlDocument().body().innerText().string();
-        }
     }
-#ifdef HAVE_KWEBKITPART
-    else
-    {
-        KWebKitPart *webkitPart = dynamic_cast<KWebKitPart *>(part);
-        if ( webkitPart )
-        {
-            if (supportsXhtml)
-            {
-                kDebug() << "KTTS claims to support rich speak (XHTML to SSML).";
-                if (hasSelection)
-                    query = webkitPart->view()->page()->currentFrame()->toHtml();
-                else
-                {
-                    // TODO: Fooling around with the selection probably has unwanted
-                    // side effects, but until a method is supplied to get valid xhtml
-                    // from entire document..
-                    // query = part->document().toString().string();
-#if 0
-                    webkitPart->selectAll();
-                    query = webkitPart->view()->page()->currentFrame()->toHtml();
-                    // Restore no selection.
-                    webkitPart->setSelection(webkitPart->document().createRange());
-#endif
-                }
-            } else {
-                if (hasSelection)
-                    query = webkitPart->view()->selectedText();
-                else
-                    query = webkitPart->view()->page()->currentFrame()->toHtml();
-            }
-        }
 
+    KParts::TextExtension* textExt = KParts::TextExtension::childObject(parent());
+    QString query;
+    const KParts::TextExtension::Format format = supportsXhtml ? KParts::TextExtension::HTML : KParts::TextExtension::PlainText;
+    if (textExt->hasSelection()) {
+        query = textExt->selectedText(format);
+    } else {
+        query = textExt->completeText(format);
     }
-#endif
+
     // kDebug() << "query =" << query;
 
     reply = kttsd.say(query, KSpeech::soNone);
