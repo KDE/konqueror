@@ -147,6 +147,7 @@ bool KWebKitPart::openUrl(const KUrl &u)
 
     // Ignore about:blank urls...
     if (u.url() == "about:blank") {
+        setUrl(u);
         emit setWindowCaption (u.url());
         emit completed();
     } else {
@@ -196,11 +197,11 @@ bool KWebKitPart::openUrl(const KUrl &u)
         // Update the part's OpenUrlArguments after removing all of the
         // 'kwebkitpart-restore-x' metadata entries...
         setArguments(args);
+        // Set URL in KParts before emitting started; konq plugins rely on that.
+        setUrl(u);
         d->webView->loadUrl(u, args, bargs);
     }
 
-    // Set the url...
-    setUrl(u);
     return true;
 }
 
