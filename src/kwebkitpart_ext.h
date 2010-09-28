@@ -24,6 +24,7 @@
 #define WEBKITPART_EXT_H
 
 #include <KDE/KParts/BrowserExtension>
+#include <KDE/KParts/TextExtension>
 
 class QWebView;
 class KUrl;
@@ -85,6 +86,23 @@ public Q_SLOTS:
 private:
     class WebKitBrowserExtensionPrivate;
     WebKitBrowserExtensionPrivate* const d;
+};
+
+/**
+ * @internal
+ * Implements the TextExtension interface
+ */
+class KWebKitTextExtension : public KParts::TextExtension
+{
+    Q_OBJECT
+public:
+    KWebKitTextExtension(KWebKitPart* part);
+
+    virtual bool hasSelection() const;
+    virtual QString selectedText(Format format) const;
+    virtual QString completeText(Format format) const;
+
+    KWebKitPart* part() const;
 };
 
 #endif // WEBKITPART_EXT_H

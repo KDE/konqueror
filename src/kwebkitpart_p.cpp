@@ -130,6 +130,9 @@ void KWebKitPartPrivate::init(QWidget *mainWidget, const QString& sessionFileNam
     // Add status bar extension...
     statusBarExtension = new KParts::StatusBarExtension(q);
 
+    // Add text extension....
+    new KWebKitTextExtension(q);
+
     // Create and setup the password bar...
     KDEPrivate::PasswordBar *passwordBar = new KDEPrivate::PasswordBar(mainWidget);
     KWebWallet *webWallet = webPage->wallet();

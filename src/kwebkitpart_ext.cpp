@@ -442,4 +442,47 @@ void WebKitBrowserExtension::slotViewFrameSource()
   }
 }
 
+////
+
+KWebKitTextExtension::KWebKitTextExtension(KWebKitPart* part)
+    : KParts::TextExtension(part)
+{
+    connect(part->view(), SIGNAL(selectionChanged()), this, SIGNAL(selectionChanged()));
+}
+
+KWebKitPart* KWebKitTextExtension::part() const
+{
+    return static_cast<KWebKitPart*>(parent());
+}
+
+bool KWebKitTextExtension::hasSelection() const
+{
+    // looks a bit slow
+    return !part()->view()->selectedText().isEmpty();
+}
+
+QString KWebKitTextExtension::selectedText(Format format) const
+{
+    switch(format) {
+    case PlainText:
+        return part()->view()->selectedText();
+    case HTML:
+        // selectedTextAsHTML is missing in QWebKit:
+        // https://bugs.webkit.org/show_bug.cgi?id=35028
+        return part()->view()->page()->currentFrame()->toHtml();
+    }
+    return QString();
+}
+
+QString KWebKitTextExtension::completeText(Format format) const
+{
+    switch(format) {
+    case PlainText:
+        return part()->view()->page()->currentFrame()->toPlainText();
+    case HTML:
+        return part()->view()->page()->currentFrame()->toHtml();
+    }
+    return QString();
+}
+
 #include "kwebkitpart_ext.moc"
