@@ -442,6 +442,7 @@ void WebKitBrowserExtension::slotViewFrameSource()
   }
 }
 
+#if KDE_IS_VERSION(4, 5, 70)
 ////
 
 KWebKitTextExtension::KWebKitTextExtension(KWebKitPart* part)
@@ -484,5 +485,7 @@ QString KWebKitTextExtension::completeText(Format format) const
     }
     return QString();
 }
+
+#endif
 
 #include "kwebkitpart_ext.moc"
