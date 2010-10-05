@@ -1024,6 +1024,23 @@ This group offers a selection of services that can be shown in the
 <guisubmenu>Actions</guisubmenu> submenu of &dolphin;'s context menu which
 appears when clicking a file or folder with the &RMB;.
 </para>
+<para>
+Using the <guibutton>Download New Services</guibutton> you can fetch additional 
+service menu.
+</para>
+
+<para>
+If you have installed &dolphin;'s plugins for <guilabel>Git</guilabel> or 
+<guilabel>Subversion</guilabel> from the kdesdk module an additional group
+<guilabel>Version Control Systems</guilabel> is displayed.
+If these plugins are enabled and you enter a folder which is under version control, 
+the version state (locally changed, up to date &etc;) is indicated by icons 
+and in <guilabel>Subversion</guilabel> folders you have additional entries in the 
+context menu like commit, update &etc;
+</para>
+<para>
+&dolphin; has to be restarted to activate changes of these settings.
+</para>
 
 </sect2>
 
