@@ -130,10 +130,8 @@ void KWebKitPartPrivate::init(QWidget *mainWidget, const QString& sessionFileNam
     // Add status bar extension...
     statusBarExtension = new KParts::StatusBarExtension(q);
 
-#if KDE_IS_VERSION(4, 5, 70)
     // Add text extension....
     new KWebKitTextExtension(q);
-#endif
 
     // Create and setup the password bar...
     KDEPrivate::PasswordBar *passwordBar = new KDEPrivate::PasswordBar(mainWidget);

@@ -24,13 +24,7 @@
 #define WEBKITPART_EXT_H
 
 #include <KDE/KParts/BrowserExtension>
-
-#include <kdeversion.h>
-
-#if KDE_IS_VERSION(4, 5, 70)
 #include <KDE/KParts/TextExtension>
-#endif
-
 
 class QWebView;
 class KUrl;
@@ -94,9 +88,6 @@ private:
     WebKitBrowserExtensionPrivate* const d;
 };
 
-
-#if KDE_IS_VERSION(4, 5, 70)
-
 /**
  * @internal
  * Implements the TextExtension interface
@@ -113,7 +104,5 @@ public:
 
     KWebKitPart* part() const;
 };
-
-#endif
 
 #endif // WEBKITPART_EXT_H
