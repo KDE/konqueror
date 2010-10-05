@@ -31,33 +31,22 @@
 #include "networkaccessmanager.h"
 #include "settings/webkitsettings.h"
 
-#include <kparts/browseropenorsavequestion.h>
-#include <KDE/KParts/GenericFactory>
-#include <KDE/KParts/BrowserRun>
-#include <KDE/KAboutData>
-#include <KDE/KAction>
-#include <KDE/KFileDialog>
-#include <KDE/KInputDialog>
 #include <KDE/KMessageBox>
-#include <KDE/KProtocolManager>
 #include <KDE/KGlobalSettings>
 #include <KDE/KGlobal>
 #include <KDE/KLocale>
-#include <KDE/KJobUiDelegate>
 #include <KDE/KRun>
 #include <KDE/KShell>
 #include <KDE/KStandardDirs>
-#include <KDE/KStandardShortcut>
 #include <KDE/KAuthorized>
+#include <KDE/KDebug>
 #include <KIO/Job>
 #include <KIO/AccessManager>
-#include <KDE/KTemporaryFile>
 
-#include <QtCore/QVectorIterator>
-#include <QtGui/QTextDocument>
+#include <QtCore/QFile>
 #include <QtGui/QApplication>
+#include <QtGui/QTextDocument> // Qt::escape
 #include <QtNetwork/QNetworkReply>
-#include <QtUiTools/QUiLoader>
 
 #include <QtWebKit/QWebFrame>
 #include <QtWebKit/QWebElement>

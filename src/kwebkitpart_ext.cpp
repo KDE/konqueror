@@ -33,8 +33,6 @@
 #include <KDE/KDesktopFile>
 #include <KDE/KConfigGroup>
 #include <KDE/KToolInvocation>
-#include <KDE/KFileDialog>
-#include <KDE/KIO/NetAccess>
 #include <KDE/KGlobal>
 #include <KDE/KSharedConfig>
 #include <KDE/KRun>
