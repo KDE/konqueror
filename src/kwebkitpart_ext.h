@@ -25,6 +25,7 @@
 
 #include <KDE/KParts/BrowserExtension>
 #include <KDE/KParts/TextExtension>
+#include <KDE/KParts/HtmlExtension>
 
 class QWebView;
 class KUrl;
@@ -101,6 +102,28 @@ public:
     virtual bool hasSelection() const;
     virtual QString selectedText(Format format) const;
     virtual QString completeText(Format format) const;
+
+    KWebKitPart* part() const;
+};
+
+/**
+ * @internal
+ * Implements the HtmlExtension interface
+ */
+class KWebKitHtmlExtension : public KParts::HtmlExtension,
+                             public KParts::SelectorInterface
+{
+    Q_OBJECT
+    Q_INTERFACES(KParts::SelectorInterface)
+
+public:
+    KWebKitHtmlExtension(KWebKitPart* part);
+
+    virtual KUrl baseUrl() const;
+
+    // SelectorInterface
+    virtual Element querySelector(const QString& query) const;
+    virtual QList<Element> querySelectorAll(const QString& query) const;
 
     KWebKitPart* part() const;
 };

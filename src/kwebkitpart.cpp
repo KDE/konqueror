@@ -78,7 +78,7 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
     about.addAuthor(ki18n("Dirk Mueller"), ki18n("Developer"), "mueller@kde.org");
     about.setProductName("kwebkitpart/general");
     KComponentData componentData(&about);
-    setComponentData(componentData);
+    setComponentData(componentData, false /*don't load plugins yet*/);
 
     // NOTE: If the application does not set its version number, we automatically
     // set it to KDE's version number so that the default user-agent string contains
@@ -97,6 +97,9 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
     d->init(mainWidget, args.at(0));
     setXMLFile("kwebkitpart.rc");
     d->initActions();
+
+    // Load plugins once we are fully ready
+    loadPlugins();
 }
 
 KWebKitPart::~KWebKitPart()

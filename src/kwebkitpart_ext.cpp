@@ -483,4 +483,50 @@ QString KWebKitTextExtension::completeText(Format format) const
     return QString();
 }
 
+////
+
+KWebKitHtmlExtension::KWebKitHtmlExtension(KWebKitPart* part)
+    : KParts::HtmlExtension(part)
+{
+}
+
+KUrl KWebKitHtmlExtension::baseUrl() const
+{
+    return part()->view()->page()->mainFrame()->baseUrl();
+}
+
+static KParts::SelectorInterface::Element convertWebElement(const QWebElement& webElem)
+{
+    KParts::SelectorInterface::Element elem;
+    elem.setTagName(webElem.tagName());
+    Q_FOREACH(const QString &attr, webElem.attributeNames()) {
+        elem.setAttribute(attr, webElem.attribute(attr));
+    }
+    return elem;
+}
+
+KParts::SelectorInterface::Element KWebKitHtmlExtension::querySelector(const QString& query) const
+{
+    QWebFrame* webFrame = part()->view()->page()->mainFrame();
+    QWebElement webElem = webFrame->findFirstElement(query);
+    return convertWebElement(webElem);
+}
+
+QList<KParts::SelectorInterface::Element> KWebKitHtmlExtension::querySelectorAll(const QString& query) const
+{
+    QList<Element> result;
+    QWebFrame* webFrame = part()->view()->page()->mainFrame();
+    const QWebElementCollection elements = webFrame->findAllElements(query);
+    result.reserve(elements.count());
+    Q_FOREACH(const QWebElement& webElem, elements) {
+        result.append(convertWebElement(webElem));
+    }
+    return result;
+}
+
+KWebKitPart* KWebKitHtmlExtension::part() const
+{
+    return static_cast<KWebKitPart*>(parent());
+}
+
 #include "kwebkitpart_ext.moc"
