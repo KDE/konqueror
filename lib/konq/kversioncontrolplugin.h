@@ -156,6 +156,7 @@ public:
      * invoked before and that the file is part of the directory specified
      * in beginInfoRetrieval().
      */
+    // TODO: make const-correct for future versions where binary compatibility may get broken
     virtual VersionState versionState(const KFileItem& item) = 0;
     
     /**
@@ -164,6 +165,7 @@ public:
      * If an action triggers a change of the versions, the signal
      * KVersionControlPlugin::versionStatesChanged() must be emitted.
      */
+    // TODO: make const-correct for future versions where binary compatibility may get broken
     virtual QList<QAction*> contextMenuActions(const KFileItemList& items) = 0;
 
     /**
@@ -171,6 +173,7 @@ public:
      * for the directory \p directory. If an action triggers a change of the versions,
      * the signal KVersionControlPlugin::versionStatesChanged() must be emitted.
      */
+    // TODO: make const-correct for future versions where binary compatibility may get broken
     virtual QList<QAction*> contextMenuActions(const QString& directory) = 0;
 
 signals:
