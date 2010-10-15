@@ -5227,10 +5227,10 @@ void KonqMainWindow::bookmarksIntoCompletion( const KBookmarkGroup& group )
 //
 
 // prepend http://www. or http:// if there's no protocol in 's'
-// used only when there are no completion matches
+// This is used only when there are no completion matches
 static QString hp_tryPrepend( const QString& s )
 {
-    if( s.isEmpty() || s[ 0 ] == '/' )
+    if (s.isEmpty() || s[0] == QLatin1Char('/') || s[0] == QLatin1Char('~'))
         return QString();
     for( int pos = 0;
          pos < s.length() - 2; // 4 = ://x
