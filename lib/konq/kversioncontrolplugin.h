@@ -103,7 +103,8 @@ public:
         UpdateRequiredVersion,
         /**
          * The file is under version control and has been
-         * modified locally.
+         * modified locally. All modifications will be part
+         * of the next commit.
          */
         LocallyModifiedVersion,
         /**
@@ -121,7 +122,14 @@ public:
          * modified. A modification has also been done on the main
          * branch.
          */
-        ConflictingVersion
+        ConflictingVersion,
+        /**
+         * The file is under version control and has local
+         * modifications, which will not be part of the next
+         * commit (or are "unstaged" in git jargon).
+         * @since 4.6
+         */
+        LocallyModifiedUnstagedVersion
     };
 
     KVersionControlPlugin(QObject* parent = 0);
