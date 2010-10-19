@@ -3696,9 +3696,16 @@ void KonqMainWindow::initActions()
 
   m_pBookmarkMenu = new KonqBookmarkMenu( s_bookmarkManager, m_pBookmarksOwner, m_pamBookmarks, m_bookmarksActionCollection );
 
-  QAction *addBookmark = actionCollection()->action("add_bookmark");
-  if (addBookmark)
-     addBookmark->setText(i18n("Bookmark This Location"));
+  QAction *addBookmark = m_bookmarksActionCollection->action("add_bookmark");
+  if (addBookmark) {
+     // Keep the "Add bookmark" action visible though (#153835)
+     // -> We should think of a way to mark actions as "not configurable in toolbars" and
+     // "should not appear in shortcut dialog (!= isShortcutConfigurable)" instead, and use
+     // a single actionCollection.
+     actionCollection()->addAction("add_bookmark", m_bookmarksActionCollection->takeAction(addBookmark));
+  } else {
+     kDebug() << "Action add_bookmark not found!";
+  }
 
   m_paShowMenuBar = KStandardAction::showMenubar( this, SLOT( slotShowMenuBar() ), this );
   actionCollection()->addAction( KStandardAction::name(KStandardAction::ShowMenubar), m_paShowMenuBar );
