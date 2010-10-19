@@ -199,12 +199,12 @@ void KEBApp::createActions() {
     m_actionsImplImportOpera->setIcon(KIcon("opera"));
     m_actionsImplImportOpera->setText(i18n("Import &Opera Bookmarks..."));
     connect(m_actionsImplImportOpera, SIGNAL( triggered() ), m_actionsImpl, SLOT( slotImport() ));
-
+/*
     KAction* m_actionsImplImportCrashes = actionCollection()->addAction("importCrashes");
     m_actionsImplImportCrashes->setObjectName( QLatin1String("Crashes" ));
     m_actionsImplImportCrashes->setText(i18n("Import All &Crash Sessions as Bookmarks..."));
     connect(m_actionsImplImportCrashes, SIGNAL( triggered() ), m_actionsImpl, SLOT( slotImport() ));
-
+*/
     KAction* m_actionsImplImportGaleon = actionCollection()->addAction("importGaleon");
     m_actionsImplImportGaleon->setObjectName( QLatin1String("Galeon" ));
     m_actionsImplImportGaleon->setText(i18n("Import &Galeon Bookmarks..."));
