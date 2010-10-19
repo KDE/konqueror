@@ -17,7 +17,7 @@ if(UNIX)
 endif(UNIX)
 
 ########### install files ###############
-install( FILES
+install( PROGRAMS
    kfmclient.desktop kfmclient_dir.desktop kfmclient_html.desktop kfmclient_war.desktop
    konqbrowser.desktop konquerorsu.desktop Home.desktop
    DESTINATION  ${XDG_APPS_INSTALL_DIR} )
