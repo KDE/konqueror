@@ -257,7 +257,7 @@ void WebKitBrowserExtension::searchProvider()
 
 void WebKitBrowserExtension::reparseConfiguration()
 {
-    // Force the configuration stuff to repase...
+    // Force the configuration stuff to reparse...
     WebKitSettings::self()->init();
 }
 
