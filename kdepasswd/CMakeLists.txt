@@ -10,4 +10,4 @@ kde4_add_executable(kdepasswd ${kdepasswd_SRCS})
 target_link_libraries(kdepasswd ${KDE4_KIO_LIBS} ${KDE4_KDESU_LIBS})
 
 install(TARGETS kdepasswd ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(FILES kdepasswd.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+install(PROGRAMS kdepasswd.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
