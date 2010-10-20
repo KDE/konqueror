@@ -164,6 +164,7 @@ public:
     WebSslInfo sslInfo;
     QVector<QUrl> requestQueue;
     QPointer<KWebKitPart> part;
+    QUrl newWindowUrl;
 
     bool userRequestedCreateWindow;
     bool ignoreError;
@@ -295,6 +296,7 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
         d->userRequestedCreateWindow = false;
       } else {
         d->userRequestedCreateWindow = true;
+        d->newWindowUrl = reqUrl;
       }
 
     return KWebPage::acceptNavigationRequest(frame, request, type);
@@ -315,8 +317,14 @@ QWebPage *WebPage::createWindow(WebWindowType type)
     KWebKitPart *webKitPart = qobject_cast<KWebKitPart*>(part);
     if (webKitPart)
         return webKitPart->view()->page();
-
-    kWarning() << "Got a null or non kwebkitpart" << part;
+    
+    if (part) {
+        part->openUrl(d->newWindowUrl);
+        d->newWindowUrl.clear();
+    }
+    else 
+        kWarning() << "Got a NULL part when attempting to create new window!";
+    
     return 0;
 }
 
