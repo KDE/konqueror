@@ -3614,7 +3614,7 @@ void KonqMainWindow::initActions()
   m_paRemoveView->setIcon( KIcon("view-close") );
   m_paRemoveView->setText( i18n( "&Close Active View" ) );
   connect(m_paRemoveView, SIGNAL(triggered()), SLOT( slotRemoveView() ));
-  m_paRemoveView->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_R);
+  m_paRemoveView->setShortcut(Qt::CTRL+Qt::SHIFT+Qt::Key_W);
   m_paRemoveTab = actionCollection()->addAction("removecurrenttab");
   m_paRemoveTab->setIcon( KIcon("tab-close") );
   m_paRemoveTab->setText( i18n( "Close Current Tab" ) );
