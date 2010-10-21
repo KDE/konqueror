@@ -2,7 +2,7 @@
  * kcookiesmanagement.cpp - Cookies manager
  *
  * Copyright 2000-2001 Marco Pinelli <pinmc@orion.it>
- * Copyright (c) 2000-2001 Dawit Alemayehu <adawit@kde.org>
+ * Copyright 2000-2001 Dawit Alemayehu <adawit@kde.org>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -22,19 +22,15 @@
 // Own
 #include "kcookiesmanagement.h"
 
-// std
-#include <assert.h>
-
 // Qt
-#include <QtGui/QApplication>
-#include <QtGui/QLayout>
-#include <QtGui/QPushButton>
-#include <QtGui/QLabel>
 #include <QtCore/QTimer>
 #include <QtGui/QToolButton>
 #include <QtGui/QBoxLayout>
 #include <QtCore/QList>
-
+#include <QtGui/QApplication>
+#include <QtGui/QLayout>
+#include <QtGui/QPushButton>
+#include <QtGui/QLabel>
 #include <QtDBus/QtDBus>
 
 // KDE
@@ -91,7 +87,6 @@ void CookieListViewItem::init( CookieProp* cookie, const QString &domain,
 
     if (mCookie)
     {
-        kDebug() << "Host:" << mCookie->host << "Domain:" << domain;
         if (mDomain.isEmpty())
             setText(0, tolerantFromAce(mCookie->host.toLatin1()));
         else
@@ -117,31 +112,14 @@ CookieProp* CookieListViewItem::leaveCookie()
 }
 
 KCookiesManagement::KCookiesManagement(const KComponentData &componentData, QWidget *parent)
-                   : KCModule(componentData, parent)
+                   : KCModule(componentData, parent),
+                     mDeleteAllFlag(false),
+                     mMainWidget(parent)
 {
-  // Toplevel layout
-  QVBoxLayout* mainLayout = new QVBoxLayout(this);
-  mainLayout->setMargin(0);
-
-  dlg = new KCookiesManagementDlgUI (this);
-
-  dlg->kListViewSearchLine->setTreeWidget(dlg->lvCookies);
-
-  dlg->lvCookies->setColumnWidth(0, 150);
-
-  mainLayout->addWidget(dlg);
-
-  connect(dlg->lvCookies, SIGNAL(itemExpanded(QTreeWidgetItem*)), SLOT(getCookies(QTreeWidgetItem*)) );
-  connect(dlg->lvCookies, SIGNAL(currentItemChanged(QTreeWidgetItem*, QTreeWidgetItem*)), SLOT(showCookieDetails(QTreeWidgetItem*)) );
-
-  connect(dlg->pbDelete, SIGNAL(clicked()), SLOT(deleteCookie()));
-  connect(dlg->pbDeleteAll, SIGNAL(clicked()), SLOT(deleteAllCookies()));
-  connect(dlg->pbReload, SIGNAL(clicked()), SLOT(getDomains()));
-  connect(dlg->pbPolicy, SIGNAL(clicked()), SLOT(doPolicy()));
-
-  connect(dlg->lvCookies, SIGNAL(itemDoubleClicked(QTreeWidgetItem *, int)), SLOT(doPolicy()));
-  m_bDeleteAll = false;
-  mainWidget = parent;
+  mUi.setupUi(this);
+  mUi.searchLineEdit->setTreeWidget(mUi.cookiesTreeWidget);
+  mUi.cookiesTreeWidget->setColumnWidth(0, 150);
+  connect(mUi.cookiesTreeWidget, SIGNAL(itemDoubleClicked(QTreeWidgetItem *, int)), SLOT(on_changePolicyButton_clicked()));
 }
 
 KCookiesManagement::~KCookiesManagement()
@@ -150,17 +128,16 @@ KCookiesManagement::~KCookiesManagement()
 
 void KCookiesManagement::load()
 {
-  reset();
-  getDomains();
+  defaults();
 }
 
 void KCookiesManagement::save()
 {
   // If delete all cookies was requested!
-  if(m_bDeleteAll)
+  if(mDeleteAllFlag)
   {
-      QDBusInterface kded("org.kde.kded", "/modules/kcookiejar", "org.kde.KCookieServer", QDBusConnection::sessionBus());
-      QDBusReply<void> reply = kded.call( "deleteAllCookies" );
+    QDBusInterface kded("org.kde.kded", "/modules/kcookiejar", "org.kde.KCookieServer", QDBusConnection::sessionBus());
+    QDBusReply<void> reply = kded.call( "deleteAllCookies" );
     if (!reply.isValid())
     {
       QString caption = i18n ("D-Bus Communication Error");
@@ -168,41 +145,39 @@ void KCookiesManagement::save()
       KMessageBox::sorry (this, message, caption);
       return;
     }
-
-    m_bDeleteAll = false; // deleted[Cookies|Domains] have been cleared yet
+    mDeleteAllFlag = false; // deleted[Cookies|Domains] have been cleared yet
   }
 
   // Certain groups of cookies were deleted...
-  QStringList::Iterator dIt = deletedDomains.begin();
-  while( dIt != deletedDomains.end() )
-  {
+  QMutableStringListIterator it (mDeletedDomains);
+  while (it.hasNext())
+  {    
     QDBusInterface kded("org.kde.kded", "/modules/kcookiejar", "org.kde.KCookieServer", QDBusConnection::sessionBus());
-    QDBusReply<void> reply = kded.call( "deleteCookiesFromDomain",( *dIt ) );
-    if( !reply.isValid() )
+    QDBusReply<void> reply = kded.call( "deleteCookiesFromDomain",( it.next() ) );
+    if (!reply.isValid())
     {
       QString caption = i18n ("D-Bus Communication Error");
       QString message = i18n ("Unable to delete cookies as requested.");
       KMessageBox::sorry (this, message, caption);
       return;
     }
-
-    dIt = deletedDomains.erase(dIt);
+    it.remove();
   }
 
   // Individual cookies were deleted...
   bool success = true; // Maybe we can go on...
-  QHashIterator<QString, CookiePropList> cookiesDom(deletedCookies);
+  QMutableHashIterator<QString, CookiePropList> cookiesDom(mDeletedCookies);
   while(cookiesDom.hasNext())
   {
     cookiesDom.next();
     CookiePropList list = cookiesDom.value();
     foreach(CookieProp *cookie, list)
     {
-        QDBusInterface kded("org.kde.kded", "/modules/kcookiejar", "org.kde.KCookieServer", QDBusConnection::sessionBus());
-        QDBusReply<void> reply = kded.call( "deleteCookie", cookie->domain,
-                                            cookie->host, cookie->path,
-                                            cookie->name );
-        if( !reply.isValid() )
+      QDBusInterface kded("org.kde.kded", "/modules/kcookiejar", "org.kde.KCookieServer", QDBusConnection::sessionBus());
+      QDBusReply<void> reply = kded.call( "deleteCookie", cookie->domain,
+                                          cookie->host, cookie->path,
+                                          cookie->name );
+      if (!reply.isValid())
       {
         success = false;
         break;
@@ -211,10 +186,10 @@ void KCookiesManagement::save()
       list.removeOne(cookie);
     }
 
-    if(!success)
+    if (!success)
       break;
 
-    deletedCookies.remove(cookiesDom.key());
+    mDeletedCookies.remove(cookiesDom.key());
   }
 
   emit changed( false );
@@ -223,32 +198,32 @@ void KCookiesManagement::save()
 void KCookiesManagement::defaults()
 {
   reset();
-  getDomains();
-  emit changed (false);
+  on_reloadButton_clicked();
 }
 
 void KCookiesManagement::reset(bool deleteAll)
 {
   if ( !deleteAll )
-    m_bDeleteAll = false;
+    mDeleteAllFlag = false;
 
   clearCookieDetails();
-  dlg->lvCookies->clear();
-  deletedDomains.clear();
-  deletedCookies.clear();
-  dlg->pbDelete->setEnabled(false);
-  dlg->pbDeleteAll->setEnabled(false);
-  dlg->pbPolicy->setEnabled(false);
+  mDeletedDomains.clear();
+  mDeletedCookies.clear();
+  
+  mUi.cookiesTreeWidget->clear();
+  mUi.deleteButton->setEnabled(false);
+  mUi.deleteAllButton->setEnabled(false);
+  mUi.changePolicyButton->setEnabled(false);
 }
 
 void KCookiesManagement::clearCookieDetails()
 {
-  dlg->leName->clear();
-  dlg->leValue->clear();
-  dlg->leDomain->clear();
-  dlg->lePath->clear();
-  dlg->leExpires->clear();
-  dlg->leSecure->clear();
+  mUi.nameLineEdit->clear();
+  mUi.valueLineEdit->clear();
+  mUi.domainLineEdit->clear();
+  mUi.pathLineEdit->clear();
+  mUi.expiresLineEdit->clear();
+  mUi.secureLineEdit->clear();
 }
 
 QString KCookiesManagement::quickHelp() const
@@ -256,12 +231,12 @@ QString KCookiesManagement::quickHelp() const
   return i18n("<h1>Cookie Management Quick Help</h1>" );
 }
 
-void KCookiesManagement::getDomains()
+void KCookiesManagement::on_reloadButton_clicked()
 {
   QDBusInterface kded("org.kde.kded", "/modules/kcookiejar", "org.kde.KCookieServer", QDBusConnection::sessionBus());
   QDBusReply<QStringList> reply = kded.call( "findDomains" );
 
-  if( !reply.isValid() )
+  if (!reply.isValid())
   {
     QString caption = i18n ("Information Lookup Failure");
     QString message = i18n ("Unable to retrieve information about the "
@@ -270,67 +245,48 @@ void KCookiesManagement::getDomains()
     return;
   }
 
-  if ( dlg->lvCookies->topLevelItemCount() > 0 )
-  {
-    reset();
-    dlg->lvCookies->setCurrentItem( 0L );
-  }
+  if (mUi.cookiesTreeWidget->topLevelItemCount() > 0)
+      reset();
 
   CookieListViewItem *dom;
   QListIterator<QString> it (reply.value());
   while (it.hasNext())
   {
     const QString domain = it.next();
-    if (dlg->lvCookies->findItems(domain, Qt::MatchFixedString).isEmpty()) {
-        dom = new CookieListViewItem(dlg->lvCookies, domain);
+    const QString siteName = (domain.startsWith(QLatin1Char('.')) ? domain.mid(1) : domain);
+    if (mUi.cookiesTreeWidget->findItems(siteName, Qt::MatchFixedString).isEmpty()) {
+        dom = new CookieListViewItem(mUi.cookiesTreeWidget, domain);
         dom->setChildIndicatorPolicy(QTreeWidgetItem::ShowIndicator);
     }
   }
 
   // are there any cookies?
-  dlg->pbDeleteAll->setEnabled(dlg->lvCookies->topLevelItemCount() > 0);
-  dlg->lvCookies->sortItems(0, Qt::AscendingOrder);
+  mUi.deleteAllButton->setEnabled(mUi.cookiesTreeWidget->topLevelItemCount() > 0);
+  mUi.cookiesTreeWidget->sortItems(0, Qt::AscendingOrder);
+  emit changed(false);
 }
 
 Q_DECLARE_METATYPE( QList<int> )
 
-void KCookiesManagement::getCookies(QTreeWidgetItem *item)
+void KCookiesManagement::on_cookiesTreeWidget_itemExpanded(QTreeWidgetItem *item)
 {
   CookieListViewItem* cookieDom = static_cast<CookieListViewItem*>(item);
-  if ( !cookieDom || cookieDom->cookiesLoaded() )
+  if (!cookieDom || cookieDom->cookiesLoaded())
     return;
 
   QStringList cookies;
   QList<int> fields;
-  fields << 0 << 1 << 2 << 3;
-  const QString domain = cookieDom->domain();
-  kDebug() << "Retreiving cookie for" << domain;
-
-  QDBusInterface kded("org.kde.kded", "/modules/kcookiejar", "org.kde.KCookieServer", QDBusConnection::sessionBus());
-  QDBusReply<QStringList> reply = kded.call( "findCookies",
-                                             QVariant::fromValue( fields ),
-                                             domain,
-                                             QString(),
-                                             QString(),
-                                             QString() );
-
+  fields << 0 << 1 << 2 << 3;  
+  // Always check for cookies in both "foo.bar" and ".foo.bar" domains...
+  const QString domain = cookieDom->domain() % QLatin1String(" .") % cookieDom->domain();
+  QDBusInterface kded("org.kde.kded", "/modules/kcookiejar", "org.kde.KCookieServer", QDBusConnection::sessionBus());  
+  QDBusReply<QStringList> reply = kded.call("findCookies", QVariant::fromValue(fields),
+                                            domain, QString(), QString(), QString());
   if (reply.isValid())
       cookies.append(reply.value());
 
-  if (domain.startsWith(QLatin1Char('.')))
-  {
-    reply =  kded.call( "findCookies",
-                        QVariant::fromValue( fields ),
-                        domain.mid(1),
-                        QString(),
-                        QString(),
-                        QString() );
-    if (reply.isValid())
-        cookies.append(reply.value());
-  }
-
   QStringListIterator it(cookies);
-  while(it.hasNext())
+  while (it.hasNext())
   {
     CookieProp *details = new CookieProp;
     details->domain = it.next();
@@ -344,7 +300,7 @@ void KCookiesManagement::getCookies(QTreeWidgetItem *item)
   if (!cookies.isEmpty())
   {
     static_cast<CookieListViewItem*>(item)->setCookiesLoaded();
-    dlg->kListViewSearchLine->updateSearch();
+    mUi.searchLineEdit->updateSearch();
   }
 }
 
@@ -360,7 +316,7 @@ bool KCookiesManagement::cookieDetails(CookieProp *cookie)
                                              cookie->host,
                                              cookie->path,
                                              cookie->name);
-  if( !reply.isValid() )
+  if (!reply.isValid())
     return false;
 
   const QStringList fieldVal = reply.value();
@@ -372,7 +328,7 @@ bool KCookiesManagement::cookieDetails(CookieProp *cookie)
   cookie->value = *c++;
   qint64 tmp = (*c++).toLongLong();
 
-  if( tmp == 0 )
+  if (tmp == 0)
     cookie->expireDate = i18n("End of session");
   else
   {
@@ -387,110 +343,106 @@ bool KCookiesManagement::cookieDetails(CookieProp *cookie)
   return true;
 }
 
-void KCookiesManagement::showCookieDetails(QTreeWidgetItem* item)
+void KCookiesManagement::on_cookiesTreeWidget_currentItemChanged(QTreeWidgetItem* item)
 {
-  kDebug ();
-
   if (!item)
     return;
 
   CookieProp *cookie = static_cast<CookieListViewItem*>(item)->cookie();
-  if( cookie )
+  if (cookie)
   {
-    if( cookie->allLoaded || cookieDetails(cookie) )
+    if (cookie->allLoaded || cookieDetails(cookie))
     {
-      dlg->leName->setText(cookie->name);
-      dlg->leValue->setText(cookie->value);
-      dlg->leDomain->setText(cookie->domain);
-      dlg->lePath->setText(cookie->path);
-      dlg->leExpires->setText(cookie->expireDate);
-      dlg->leSecure->setText(cookie->secure);
+      mUi.nameLineEdit->setText(cookie->name);
+      mUi.valueLineEdit->setText(cookie->value);
+      mUi.domainLineEdit->setText(cookie->domain);
+      mUi.pathLineEdit->setText(cookie->path);
+      mUi.expiresLineEdit->setText(cookie->expireDate);
+      mUi.secureLineEdit->setText(cookie->secure);
     }
 
-    dlg->pbPolicy->setEnabled (true);
+    mUi.changePolicyButton->setEnabled (true);
   }
   else
   {
     clearCookieDetails();
-    dlg->pbPolicy->setEnabled(false);
+    mUi.changePolicyButton->setEnabled(false);
   }
 
-  dlg->pbDelete->setEnabled(true);
+  mUi.deleteButton->setEnabled(true);
 }
 
-void KCookiesManagement::doPolicy()
+void KCookiesManagement::on_changePolicyButton_clicked()
 {
   // Get current item
-  CookieListViewItem *item = static_cast<CookieListViewItem*>( dlg->lvCookies->currentItem() );
+  CookieListViewItem *item = static_cast<CookieListViewItem*>(mUi.cookiesTreeWidget->currentItem());
 
-  if( item && item->cookie())
+  if (item && item->cookie())
   {
     CookieProp *cookie = item->cookie();
 
     QString domain = cookie->domain;
 
-    if( domain.isEmpty() )
+    if (domain.isEmpty())
     {
-      CookieListViewItem *parent = static_cast<CookieListViewItem*>( item->parent() );
-
-      if ( parent )
+      CookieListViewItem *parent = static_cast<CookieListViewItem*>(item->parent());
+      if (parent)
         domain = parent->domain ();
     }
 
-    KCookiesMain* mainDlg =static_cast<KCookiesMain*>( mainWidget );
+    KCookiesMain* mainDlg = static_cast<KCookiesMain*>(mMainWidget);
     // must be present or something is really wrong.
-    assert (mainDlg);
+    Q_ASSERT(mainDlg);
 
     KCookiesPolicies* policyDlg = mainDlg->policyDlg();
     // must be present unless someone rewrote the widget in which case
     // this needs to be re-written as well.
-    assert (policyDlg);
+    Q_ASSERT(policyDlg);
     policyDlg->addNewPolicy(domain);
   }
 }
 
-void KCookiesManagement::deleteCookie()
+void KCookiesManagement::on_deleteButton_clicked()
 {
-  QTreeWidgetItem* currentItem = dlg->lvCookies->currentItem();
+  QTreeWidgetItem* currentItem = mUi.cookiesTreeWidget->currentItem();
   CookieListViewItem *item = static_cast<CookieListViewItem*>( currentItem );
-  if( item->cookie() )
+  if (item->cookie())
   {
     CookieListViewItem *parent = static_cast<CookieListViewItem*>(item->parent());
-    CookiePropList list = deletedCookies.value(parent->domain());
+    CookiePropList list = mDeletedCookies.value(parent->domain());
     list.append(item->leaveCookie());
-    deletedCookies.insert(parent->domain(), list);
+    mDeletedCookies.insert(parent->domain(), list);
     delete item;
-    if(parent->childCount() == 0)
+    if (parent->childCount() == 0)
       delete parent;
   }
   else
   {
-    deletedDomains.append(item->domain());
+    mDeletedDomains.append(item->domain());
     delete item;
   }
 
-  currentItem = dlg->lvCookies->currentItem();
-  if ( currentItem )
+  currentItem = mUi.cookiesTreeWidget->currentItem();
+  if (currentItem)
   {
-    dlg->lvCookies->setCurrentItem( currentItem );
-    showCookieDetails( currentItem );
+    mUi.cookiesTreeWidget->setCurrentItem( currentItem );
+    //on_cookiesTreeWidget_currentItemChanged( currentItem );
   }
   else
     clearCookieDetails();
 
-  dlg->pbDelete->setEnabled(dlg->lvCookies->currentItem());
-  dlg->pbDeleteAll->setEnabled(dlg->lvCookies->topLevelItemCount() > 0);
-  dlg->pbPolicy->setEnabled(dlg->lvCookies->currentItem());
+  mUi.deleteButton->setEnabled(mUi.cookiesTreeWidget->currentItem());
+  mUi.deleteAllButton->setEnabled(mUi.cookiesTreeWidget->topLevelItemCount() > 0);
+  mUi.changePolicyButton->setEnabled(mUi.cookiesTreeWidget->currentItem());
 
   emit changed( true );
 }
 
-void KCookiesManagement::deleteAllCookies()
+void KCookiesManagement::on_deleteAllButton_clicked()
 {
-  m_bDeleteAll = true;
+  mDeleteAllFlag = true;
   reset(true);
-
-  emit changed( true );
+  emit changed(true);
 }
 
 #include "kcookiesmanagement.moc"
