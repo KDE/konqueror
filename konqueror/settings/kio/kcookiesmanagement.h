@@ -2,9 +2,7 @@
  * kcookiesmanagement.h - Cookies manager
  *
  * Copyright 2000-2001 Marco Pinelli <pinmc@orion.it>
- *
- * Contributors:
- * Copyright (c) 2000-2001 Dawit Alemayehu <adawit@kde.org>
+ * Copyright 2000-2001 Dawit Alemayehu <adawit@kde.org>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -32,17 +30,7 @@
 #include <kcmodule.h>
 #include "ui_kcookiesmanagementdlg.h"
 
-
 struct CookieProp;
-
-class KCookiesManagementDlgUI : public QWidget, public Ui::KCookiesManagementDlgUI
-{
-public:
-  KCookiesManagementDlgUI( QWidget *parent ) : QWidget( parent ) {
-    setupUi( this );
-  }
-};
-
 
 class CookieListViewItem : public QTreeWidgetItem
 {
@@ -80,26 +68,26 @@ public:
     virtual QString quickHelp() const;
 
 private Q_SLOTS:
-    void deleteCookie();
-    void deleteAllCookies();
-    void getDomains();
-    void getCookies(QTreeWidgetItem*);
-    void showCookieDetails(QTreeWidgetItem*);
-    void doPolicy();
+    void on_deleteButton_clicked();
+    void on_deleteAllButton_clicked();
+    void on_reloadButton_clicked();
+    void on_cookiesTreeWidget_itemExpanded(QTreeWidgetItem*);
+    void on_cookiesTreeWidget_currentItemChanged(QTreeWidgetItem*);
+    void on_changePolicyButton_clicked();
 
 private:
     void reset (bool deleteAll = false);
     bool cookieDetails(CookieProp *cookie);
     void clearCookieDetails();
     bool policyenabled();
-    bool m_bDeleteAll;
+    
+    bool mDeleteAllFlag;
+    QWidget* mMainWidget;
+    Ui::KCookiesManagementDlgUI mUi;
 
-    QWidget* mainWidget;
-    KCookiesManagementDlgUI* dlg;
-
-    QStringList deletedDomains;
+    QStringList mDeletedDomains;
     typedef QList<CookieProp *> CookiePropList;
-    QHash<QString, CookiePropList> deletedCookies;
+    QHash<QString, CookiePropList> mDeletedCookies;
 };
 
 #endif // KCOOKIESMANAGEMENT_H

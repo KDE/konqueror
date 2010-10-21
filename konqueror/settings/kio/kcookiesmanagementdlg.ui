@@ -12,7 +12,7 @@
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
-    <widget class="KTreeWidgetSearchLine" name="kListViewSearchLine">
+    <widget class="KTreeWidgetSearchLine" name="searchLineEdit">
      <property name="enabled">
       <bool>true</bool>
      </property>
@@ -22,7 +22,7 @@
     </widget>
    </item>
    <item row="1" column="0" rowspan="5">
-    <widget class="QTreeWidget" name="lvCookies">
+    <widget class="QTreeWidget" name="cookiesTreeWidget">
      <property name="toolTip">
       <string>Search interactively for domains and hosts</string>
      </property>
@@ -32,12 +32,6 @@
      <property name="allColumnsShowFocus">
       <bool>true</bool>
      </property>
-     <attribute name="headerDefaultSectionSize">
-      <number>200</number>
-     </attribute>
-     <attribute name="headerMinimumSectionSize">
-      <number>100</number>
-     </attribute>
      <attribute name="headerDefaultSectionSize">
       <number>200</number>
      </attribute>
@@ -57,28 +51,28 @@
     </widget>
    </item>
    <item row="1" column="1">
-    <widget class="QPushButton" name="pbDelete">
+    <widget class="QPushButton" name="deleteButton">
      <property name="text">
       <string>D&amp;elete</string>
      </property>
     </widget>
    </item>
    <item row="2" column="1">
-    <widget class="QPushButton" name="pbDeleteAll">
+    <widget class="QPushButton" name="deleteAllButton">
      <property name="text">
       <string>Delete A&amp;ll</string>
      </property>
     </widget>
    </item>
    <item row="3" column="1">
-    <widget class="QPushButton" name="pbPolicy">
+    <widget class="QPushButton" name="changePolicyButton">
      <property name="text">
       <string>Change &amp;Policy...</string>
      </property>
     </widget>
    </item>
    <item row="4" column="1">
-    <widget class="QPushButton" name="pbReload">
+    <widget class="QPushButton" name="reloadButton">
      <property name="text">
       <string>&amp;Reload List</string>
      </property>
@@ -98,7 +92,7 @@
     </spacer>
    </item>
    <item row="6" column="0" colspan="2">
-    <widget class="QGroupBox" name="gbDetails">
+    <widget class="QGroupBox" name="detailsGroupBox">
      <property name="title">
       <string>Details</string>
      </property>
@@ -107,7 +101,7 @@
        <number>0</number>
       </property>
       <item row="0" column="0">
-       <widget class="QLabel" name="lbName">
+       <widget class="QLabel" name="nameLabel">
         <property name="text">
          <string>Name:</string>
         </property>
@@ -118,19 +112,19 @@
          <bool>false</bool>
         </property>
         <property name="buddy">
-         <cstring>leName</cstring>
+         <cstring>nameLineEdit</cstring>
         </property>
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="KLineEdit" name="leName">
+       <widget class="KLineEdit" name="nameLineEdit">
         <property name="readOnly">
          <bool>true</bool>
         </property>
        </widget>
       </item>
       <item row="1" column="0">
-       <widget class="QLabel" name="lbValue">
+       <widget class="QLabel" name="valueLabel">
         <property name="text">
          <string>Value:</string>
         </property>
@@ -141,19 +135,19 @@
          <bool>false</bool>
         </property>
         <property name="buddy">
-         <cstring>leValue</cstring>
+         <cstring>valueLineEdit</cstring>
         </property>
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="KLineEdit" name="leValue">
+       <widget class="KLineEdit" name="valueLineEdit">
         <property name="readOnly">
          <bool>true</bool>
         </property>
        </widget>
       </item>
       <item row="2" column="0">
-       <widget class="QLabel" name="lbDomain">
+       <widget class="QLabel" name="domainLabel">
         <property name="text">
          <string>Domain:</string>
         </property>
@@ -164,19 +158,19 @@
          <bool>false</bool>
         </property>
         <property name="buddy">
-         <cstring>leDomain</cstring>
+         <cstring>domainLineEdit</cstring>
         </property>
        </widget>
       </item>
       <item row="2" column="1">
-       <widget class="KLineEdit" name="leDomain">
+       <widget class="KLineEdit" name="domainLineEdit">
         <property name="readOnly">
          <bool>true</bool>
         </property>
        </widget>
       </item>
       <item row="3" column="0">
-       <widget class="QLabel" name="lbPath">
+       <widget class="QLabel" name="patchLabel">
         <property name="text">
          <string>Path:</string>
         </property>
@@ -187,19 +181,19 @@
          <bool>false</bool>
         </property>
         <property name="buddy">
-         <cstring>lePath</cstring>
+         <cstring>pathLineEdit</cstring>
         </property>
        </widget>
       </item>
       <item row="3" column="1">
-       <widget class="KLineEdit" name="lePath">
+       <widget class="KLineEdit" name="pathLineEdit">
         <property name="readOnly">
          <bool>true</bool>
         </property>
        </widget>
       </item>
       <item row="4" column="0">
-       <widget class="QLabel" name="lbExpires">
+       <widget class="QLabel" name="expiresLabel">
         <property name="text">
          <string>Expires:</string>
         </property>
@@ -210,19 +204,19 @@
          <bool>false</bool>
         </property>
         <property name="buddy">
-         <cstring>leExpires</cstring>
+         <cstring>expiresLineEdit</cstring>
         </property>
        </widget>
       </item>
       <item row="4" column="1">
-       <widget class="KLineEdit" name="leExpires">
+       <widget class="KLineEdit" name="expiresLineEdit">
         <property name="readOnly">
          <bool>true</bool>
         </property>
        </widget>
       </item>
       <item row="5" column="0">
-       <widget class="QLabel" name="lbSecure">
+       <widget class="QLabel" name="secureLabel">
         <property name="text">
          <string>Secure:</string>
         </property>
@@ -233,12 +227,12 @@
          <bool>false</bool>
         </property>
         <property name="buddy">
-         <cstring>leSecure</cstring>
+         <cstring>secureLineEdit</cstring>
         </property>
        </widget>
       </item>
       <item row="5" column="1">
-       <widget class="KLineEdit" name="leSecure">
+       <widget class="KLineEdit" name="secureLineEdit">
         <property name="readOnly">
          <bool>true</bool>
         </property>
@@ -251,14 +245,14 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>KTreeWidgetSearchLine</class>
-   <extends>KLineEdit</extends>
-   <header>ktreewidgetsearchline.h</header>
-  </customwidget>
-  <customwidget>
    <class>KLineEdit</class>
    <extends>QLineEdit</extends>
    <header>klineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KTreeWidgetSearchLine</class>
+   <extends>KLineEdit</extends>
+   <header>ktreewidgetsearchline.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
