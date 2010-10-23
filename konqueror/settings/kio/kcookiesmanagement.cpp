@@ -203,7 +203,7 @@ void KCookiesManagement::defaults()
 
 void KCookiesManagement::reset(bool deleteAll)
 {
-  if ( !deleteAll )
+  if (!deleteAll)
     mDeleteAllFlag = false;
 
   clearCookieDetails();
@@ -325,10 +325,11 @@ bool KCookiesManagement::cookieDetails(CookieProp *cookie)
   if (c == fieldVal.end()) // empty list, do not crash
     return false;
 
+  bool ok;  
   cookie->value = *c++;
-  qint64 tmp = (*c++).toLongLong();
+  qint64 tmp = (*c++).toLongLong(&ok);
 
-  if (tmp == 0)
+  if (!ok || tmp == 0)
     cookie->expireDate = i18n("End of session");
   else
   {
@@ -337,8 +338,8 @@ bool KCookiesManagement::cookieDetails(CookieProp *cookie)
     cookie->expireDate = KGlobal::locale()->formatDateTime(expDate);
   }
 
-  tmp = (*c).toUInt();
-  cookie->secure = i18n(tmp ? "Yes" : "No");
+  tmp = (*c).toUInt(&ok);
+  cookie->secure = i18n((ok && tmp) ? "Yes" : "No");
   cookie->allLoaded = true;
   return true;
 }
