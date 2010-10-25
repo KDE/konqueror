@@ -24,6 +24,7 @@
 #include "konq_popupmenuinformation.h"
 #include "konq_copytomenu.h"
 #include "kfileitemactions.h"
+#include "kfileitemactionplugin.h"
 #include "kpropertiesdialog.h"
 #include "knewmenu.h"
 #include "konq_operations.h"
@@ -551,20 +552,44 @@ void KonqPopupMenuPrivate::addGroup(const QString& name)
 
 void KonqPopupMenuPrivate::addPlugins()
 {
-    const QString commonMimeType = m_popupItemProperties.mimeType();
-    const KService::List plugin_offers = KMimeTypeTrader::self()->query(commonMimeType.isEmpty() ? QLatin1String("application/octet-stream") : commonMimeType, "KonqPopupMenu/Plugin", "exist Library");
+    QString commonMimeType = m_popupItemProperties.mimeType();
+    if (commonMimeType.isEmpty()) {
+        commonMimeType = QLatin1String("application/octet-stream");
+    }
+    const KService::List konqPlugins = KMimeTypeTrader::self()->query(commonMimeType, "KonqPopupMenu/Plugin", "exist Library");
 
-    if (!plugin_offers.isEmpty()) {
+    if (!konqPlugins.isEmpty()) {
         m_popupMenuInfo.setItemListProperties(m_popupItemProperties);
         m_popupMenuInfo.setParentWidget(m_parentWidget);
-        KService::List::ConstIterator iterator = plugin_offers.begin();
-        const KService::List::ConstIterator end = plugin_offers.end();
+        KService::List::ConstIterator iterator = konqPlugins.begin();
+        const KService::List::ConstIterator end = konqPlugins.end();
         for(; iterator != end; ++iterator) {
             //kDebug() << (*iterator)->name() << (*iterator)->library();
             KonqPopupMenuPlugin *plugin = (*iterator)->createInstance<KonqPopupMenuPlugin>(q);
             if (!plugin)
                 continue;
+            plugin->setParent(q);
             plugin->setup(&m_ownActionCollection, m_popupMenuInfo, q);
+        }
+    }
+
+    const KService::List fileItemPlugins = KMimeTypeTrader::self()->query(commonMimeType, "KFileItemAction/Plugin", "exist Library");
+    if (!fileItemPlugins.isEmpty()) {
+        const KConfig config("kservicemenurc", KConfig::NoGlobals);
+        const KConfigGroup showGroup = config.group("Show");
+
+        foreach (const KSharedPtr<KService>& service, fileItemPlugins) {
+            if (!showGroup.readEntry(service->desktopEntryName(), true)) {
+                // The plugin has been disabled
+                continue;
+            }
+
+            KFileItemActionPlugin* plugin = service->createInstance<KFileItemActionPlugin>();
+            if (!plugin) {
+                continue;
+            }
+            plugin->setParent(q);
+            q->addActions(plugin->actions(m_popupItemProperties, m_parentWidget));
         }
     }
 }
