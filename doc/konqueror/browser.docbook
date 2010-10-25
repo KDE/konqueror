@@ -6,8 +6,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2003-11-05</date>
-<releaseinfo>3.2</releaseinfo>
+<date>2010-10-25</date>
+<releaseinfo>&kde; 4.5</releaseinfo>
 </chapterinfo>
 
 
@@ -35,7 +35,8 @@ a &URL; into the <guilabel>Location</guilabel> Toolbar window, press
 <listitem><para>If your machine is connected to a local area network
 (<acronym>LAN</acronym>) that gives you a proxy connection to the Internet 
 then you will have to set &konqueror; up for the proxy connection. This can be 
-done with the <guilabel>Proxy</guilabel> page of the <menuchoice><guimenu>
+done with the <menuchoice><guimenu>Web Browsing</guimenu>
+<guimenuitem>Proxy</guimenuitem></menuchoice> page of the <menuchoice><guimenu>
 Settings</guimenu><guimenuitem>Configure Konqueror...</guimenuitem>
 </menuchoice> dialog.</para></listitem>
 
@@ -79,30 +80,31 @@ Web Shortcuts</link> feature can make this easier.</para>
  go there.</para>
 
 <para>To open a link in a new instance of &konqueror;, leaving the
-old page still visible, &MMB; click on the link or <mousebutton> right 
-</mousebutton> click on it and select the
-<guimenuitem>Open in New Window</guimenuitem> option. Alternatively, you might want to <guimenuitem>Open in New Tab</guimenuitem>. <link linkend="tabbrowse">Tabbed Browsing</link> will let 
+old page still visible, &RMB; click on the link on it and select the
+<guimenuitem>Open in New Window</guimenuitem> option. Alternatively, 
+you might want to <guimenuitem>Open in New Tab</guimenuitem>. 
+<link linkend="tabbrowse">Tabbed Browsing</link> will let 
 you hold a number of pages in one &konqueror; window and quickly switch 
 between them with a single mouse click.</para>
 
-<para>You could also select the multiple view mode with <keycombo
-action="simul">&Ctrl;&Shift;<keycap>L</keycap>
-</keycombo>
-or the Menubar <menuchoice><guimenu>Window</guimenu> <guimenuitem>Split View
-Left/Right</guimenuitem></menuchoice> option which will let you see different
+<para>You could also select multiple view modes with  
+<menuchoice><guimenu>Window</guimenu> <guimenuitem>Split View
+Left/Right</guimenuitem></menuchoice> (<keycombo action="simul">&Ctrl;
+&Shift;<keycap>L</keycap></keycombo>) / <menuchoice><guimenu>Window</guimenu> 
+<guimenuitem>Split View Top/Bottom</guimenuitem></menuchoice> (<keycombo action="simul">&Ctrl;
+&Shift;<keycap>T</keycap></keycombo>) option which will let you see different
 pages at the same time. This can be useful if you are looking through a
-complicated set of <acronym>HTML</acronym> pages, but make sure the little link
+complicated set of <acronym>HTML</acronym> pages<!--, but make sure the little link
 box at the bottom right hand corner is empty when you are doing
-this.</para>
+  this-->.</para>
 <para>To go back to the previous page use the <keycombo
-action="simul">&Alt;<keysym>Left Arrow</keysym></keycombo>
-shortcut, the <guibutton>Back</guibutton> button on the Toolbar, or the Menubar
+action="simul">&Alt;<keysym>Left</keysym></keycombo>
+shortcut, the <guibutton>Back</guibutton> button on the Toolbar, or the menubar
 <menuchoice><guimenu>Go</guimenu> <guimenuitem>Back</guimenuitem></menuchoice>
 option.</para>
 <para>Similarly, once you have gone back you can go forward by using
-<keycombo action="simul">&Alt;<keysym>Right
-Arrow</keysym></keycombo>, the <guibutton>Forward</guibutton> button, or the
-Menubar
+<keycombo action="simul">&Alt;<keysym>Right</keysym></keycombo>, the 
+<guibutton>Forward</guibutton> button, or the menubar
 <menuchoice><guimenu>Go</guimenu>
 <guimenuitem>Forward</guimenuitem></menuchoice> option.</para>
 
@@ -111,9 +113,12 @@ Menubar
 Menubar <menuchoice><guimenu>View</guimenu>
 <guimenuitem>Stop</guimenuitem></menuchoice> item.</para>
 
-<para>When you are viewing a web page you should see two new icons in the
-Toolbar, looking like magnifying glasses with small <keycap>+</keycap> and
-<keycap>-</keycap> symbols. Use these to adjust the size of the text in the
+<para>When you are viewing a web page with the <guilabel>HTML Toolbar</guilabel> 
+enabled you should see two new icons in the toolbar <guiicon><inlinemediaobject><imageobject>
+<imagedata fileref="format-font-size-less.png" format="PNG"/>
+</imageobject></inlinemediaobject></guiicon> and <guiicon><inlinemediaobject><imageobject>
+<imagedata fileref="format-font-size-more.png" format="PNG"/>
+</imageobject></inlinemediaobject></guiicon>. Use these to adjust the size of the text in the
 page if you find it difficult to read. How well this works will
 depend on how the web page has been constructed.</para>
 </sect1>
@@ -126,11 +131,11 @@ preload a page <quote>in the background</quote> while you carry on reading anoth
 
 <para>To use tabbed browsing, <mousebutton>right</mousebutton> click on a 
 link and choose <guimenuitem>Open in New Tab</guimenuitem> from the drop down 
-menu. The page will be downloaded and displayed as normal, but with tabs 
-across the top of the view, one tab for each page. <mousebutton>Left
-</mousebutton> click on a tab to view that page, or you can use the shortcuts 
-<keycombo action="simul">&Ctrl;<keycap>[</keycap></keycombo> and 
-<keycombo action="simul">&Ctrl;<keycap>]</keycap></keycombo> to cycle through 
+menu or &MMB; click. The page will be downloaded and displayed as normal, but with tabs 
+across the top of the view, one tab for each page. &LMB; click on a 
+tab to view that page, or you can use the shortcuts 
+<keycombo action="simul">&Ctrl;<keycap>,</keycap></keycombo> and 
+<keycombo action="simul">&Ctrl;<keycap>.</keycap></keycombo> to cycle through 
 the tab pages. Alternatively, you can scroll through the tabs using
 the mouse <mousebutton>wheel</mousebutton> while the mouse pointer is
 over the tab bar (presuming that your mouse has one). Also,
@@ -142,8 +147,8 @@ tab.</para>
 page will not be displayed until you <mousebutton>left</mousebutton> click 
 on the tab.</para>
 
-<para>If you check the <guilabel>Open links in new tab instead of in new window
-</guilabel> box in the <guimenuitem>Web Behavior</guimenuitem> page of the 
+<para>If you check the <guilabel>Open links in new tab instead of in new 
+window</guilabel> box in the <guimenuitem>General</guimenuitem> page of the 
 <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure Konqueror...
 </guimenuitem></menuchoice> dialog, &MMB; clicking on a link will open it 
 in a new tab page and if you hold the &Shift; key down while clicking the 
@@ -154,7 +159,7 @@ menu with the following options:</para>
 <variablelist>
 
 <varlistentry>
-<term><guimenuitem>New Tab</guimenuitem></term>
+<term><guimenuitem>New Tab</guimenuitem> (<keycombo action="simul">&Ctrl;<keycap>T</keycap></keycombo>)</term>
 <listitem><para>This opens a new, blank, tabbed page view. 
 You can then download a web page into it by typing the &URL; into the 
 Location Bar or by making a selection from the Bookmark Toolbar or the 
@@ -162,24 +167,12 @@ Location Bar or by making a selection from the Bookmark Toolbar or the
 </listitem>
 </varlistentry>
 <varlistentry>
-<term><guimenuitem>Duplicate Tab</guimenuitem></term>
+<term><guimenuitem>Duplicate Tab</guimenuitem> (<keycombo action="simul">&Ctrl;<keycap>D</keycap></keycombo>)</term>
 <listitem><para>To create a duplicate tabbed page.</para>
 </listitem>
 </varlistentry>
 <varlistentry>
-<term><guimenuitem>Detach Tab</guimenuitem></term>
-<listitem><para>This option removes the selected tabbed 
-page from the current &konqueror; window and opens it in a new instance of 
-&konqueror;.</para>
-</listitem>
-</varlistentry>
-<varlistentry>
-<term><guimenuitem>Close Tab</guimenuitem></term>
-<listitem><para>To close the selected tab page.</para>
-</listitem>
-</varlistentry>
-<varlistentry>
-<term><guimenuitem>Reload</guimenuitem></term>
+<term><guimenuitem>Reload Tab</guimenuitem> (<keycap>F5</keycap>)</term>
 <listitem><para>Reloads the content of the current tab.</para>
 </listitem>
 </varlistentry>
@@ -190,13 +183,26 @@ this list makes it the active tab.</para>
 </listitem>
 </varlistentry>
 <varlistentry>
-<term><menuchoice><guisubmenu>Other Tabs</guisubmenu><guimenuitem>Reload all Tabs</guimenuitem></menuchoice></term>
+<term><menuchoice><guisubmenu>Other Tabs</guisubmenu><guimenuitem>Reload All Tabs</guimenuitem></menuchoice>
+ (<keycombo action="simul">&Shift;<keycap>F5</keycap></keycombo>)</term>
 <listitem><para>Reloads the content of every tab.</para>
 </listitem>
 </varlistentry>
 <varlistentry>
 <term><menuchoice><guisubmenu>Other Tabs</guisubmenu><guimenuitem>Close Other Tabs</guimenuitem></menuchoice></term>
 <listitem><para>To close all but the selected tab page.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term><guimenuitem>Detach Tab</guimenuitem> (<keycombo action="simul">&Ctrl;&Shift;<keycap>B</keycap></keycombo>)</term>
+<listitem><para>This option removes the selected tabbed 
+page from the current &konqueror; window and opens it in a new instance of 
+&konqueror;.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term><guimenuitem>Close Tab</guimenuitem> (<keycombo action="simul">&Ctrl;<keycap>W</keycap></keycombo>)</term>
+<listitem><para>To close the selected tab page.</para>
 </listitem>
 </varlistentry>
 </variablelist>
@@ -212,9 +218,8 @@ without having to visit the site first.</para> <para>For example, entering
 will ask <trademark>Google</trademark> to search for items related to
 &konqueror;.</para> <para>To see what Web Shortcuts are available, and perhaps
 add your own, use <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure
-Konqueror...</guimenuitem></menuchoice> to open the <guilabel>Settings
-</guilabel> dialog box and click on the <guiicon>Web Shortcuts</guiicon>
-icon.</para>
+Konqueror...</guimenuitem></menuchoice> and open the <guilabel>Web Shortcuts</guilabel>
+page.</para>
 
 <para>Once there, to make a new Web Shortcut select
 <guibutton>New...</guibutton> and you will now have a new dialog
@@ -280,7 +285,9 @@ the keyboard keys for functions which would perhaps normally be done
 with the mouse, such as following links. The benefit of this is, quite
 simply, that users can interact with a page with devices other than a
 pointing device.</para>
-
+<para>This feature has to be enabled by checking the <guilabel>Enable Access 
+Key activation with &Ctrl; key</guilabel> option on the <guilabel>Web 
+Browsing</guilabel> settings page.</para>
 <para>To activate the access keys in &konqueror;, press and release
 &Ctrl;. Once this is pressed, if a particular link on the website has
 the <sgmltag class="attribute">accesskey</sgmltag> attribute in the given link, then the
@@ -311,14 +318,18 @@ unless you are using a browser that the site recognizes as a
 work satisfactorily with the vast majority of web pages.</para>
 <para>To overcome this problem you can change the browser identification 
 information that &konqueror; sends for specific sites or domains by 
-selecting <menuchoice><guimenu>Settings</guimenu><guimenuitem>
-Configure Konqueror...</guimenuitem></menuchoice> to bring up the <guilabel>
-Settings</guilabel> dialog box and clicking the <guiicon>Browser Identification</guiicon> 
-icon.</para>
+selecting <menuchoice><guimenu>Web Browsing</guimenu><guimenuitem>
+Browser Identification</guimenuitem></menuchoice> page of the settings dialog.</para>
 <note><para>Problems with getting a web page to work properly may also be due 
 to its use of &Java; or JavaScript. If you suspect that this may be the case 
-check that they have been enabled in the <guiicon>Java &amp; JavaScript
-</guiicon> section of the <guilabel>Settings</guilabel> dialog box.</para></note>
+check that they have been enabled in the <guilabel>Java &amp; JavaScript
+</guilabel> section of the settings dialog.</para></note>
+<note><para>Install the <guilabel>UserAgent Changer</guilabel> extension from the 
+extragear base module and enable it in <menuchoice><guimenu>Settings</guimenu><guimenuitem>
+Configure Extensions</guimenuitem></menuchoice>. This extension adds a 
+<guimenuitem>Change Browser Identification</guimenuitem> item to the <guimenu>Tools</guimenu> 
+menu. Using this item lets you quickly switch between different <quote>User Agent</quote> 
+strings.</para></note>
 
 </sect1>
 
@@ -327,15 +338,15 @@ check that they have been enabled in the <guiicon>Java &amp; JavaScript
 
 <para>When you are viewing a web page you can save it (or at least the basic
 &HTML; or similar source text) to your local disk with 
-<menuchoice><guimenu>Location</guimenu><guimenuitem>Save
+<menuchoice><guimenu>File</guimenu><guimenuitem>Save
 As...</guimenuitem></menuchoice>. If the page
 you are viewing uses frames, then you will also be given the
-<menuchoice><guimenu>Location</guimenu><guimenuitem>Save Frame
+<menuchoice><guimenu>File</guimenu><guimenuitem>Save Frame
 As...</guimenuitem></menuchoice> option. <mousebutton>Left</mousebutton> click
  in the frame you want to save first.</para>
 
 <para>If the page uses a background image, you can get and save that with the
-<menuchoice><guimenu>Location</guimenu><guimenuitem>Save Background
+<menuchoice><guimenu>File</guimenu><guimenuitem>Save Background
 Image As...</guimenuitem></menuchoice> option.</para>
 
 <para>But if what you really want is that glorious picture of the latest
@@ -351,12 +362,12 @@ up menu the basic &HTML; or similar source text will be
 downloaded and saved on your local disk.</para>
 
 <para><mousebutton>Right</mousebutton> clicking on a link (which may be a 
-picture) and choosing <guimenuitem>Copy Link Location</guimenuitem> will copy 
+picture) and choosing <guimenuitem>Copy Link Address</guimenuitem> will copy 
 the &URL; of the link to the clipboard so you can then paste it into, say, an
 e-mail to a friend telling her about this wonderful new site.</para>
 
 <para><mousebutton>Right</mousebutton> clicking on a picture and choosing 
-<guimenuitem>Copy Image Location</guimenuitem> copies the &URL; of the picture 
+<guimenuitem>Copy Image</guimenuitem> copies the &URL; of the picture 
 to the clipboard.</para>
 
 <para>To save a complete web page, including images, select <guimenuitem>
@@ -368,7 +379,7 @@ extension and can be opened by <mousebutton>left</mousebutton> clicking
 on the filename in &konqueror; running in File Manager mode.</para>
 
 <para>Printing a copy of the page you are viewing is easily done with the
-Menubar <menuchoice><guimenu>Location</guimenu>
+Menubar <menuchoice><guimenu>File</guimenu>
 <guimenuitem>Print...</guimenuitem></menuchoice> or <guimenuitem>Print
 Frame</guimenuitem> option or with the Toolbar <guiicon>Print</guiicon>
 button.</para>
