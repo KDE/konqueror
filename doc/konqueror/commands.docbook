@@ -200,6 +200,13 @@ page.</para></listitem>
 browser 2 items + submenu with apps
 filemanager dophin/gwenview + submenu with apps
 is this hardcoded? detected at runtime?
+
+DF: The list of applications is entirely dynamic, it is the list of
+   apps associated with the mimetype (of the current URL).
+ Compare with "Edit File Associations"  (kcmshell filetypes), you'll see that
+  it's the same list of apps, so it entirely depends on which apps are installed
+  on the system.
+
 -->
 <varlistentry>
 <term><menuchoice>
@@ -471,6 +478,9 @@ in the text or &HTML; page.</para></listitem>
 <listitem><para>???</para></listitem> 
 </varlistentry>
 
+DF: No the initial shortcut is "/"  (forward slash). This matches VI, for instance.
+F3 is "find again", after 
+
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycap>'</keycap></shortcut>
@@ -478,8 +488,20 @@ in the text or &HTML; page.</para></listitem>
 <guimenuitem>Find Links as You Type</guimenuitem></menuchoice> (Browser mode)</term>
 <listitem><para>???</para></listitem> 
 </varlistentry>
-both disabled in menu, but shortcut works then typing -> to the first match, then stops
-how to find next match? why does it stop?
+> BL: both disabled in menu
+
+DF: bug in khtml. enableFindAheadActions(false) called by focusOutEvent.
+   How about we just get rid of this shortcut, and let people use Ctrl+F instead?
+
+DF: We still have to do something about "find text in links", ideally integrating that functionality
+ into the find bar; as a short term fix we could just give it a better (Ctrl+something) shortcut
+ and get rid of the "focusin/focusout enables/disables the action" logic.
+
+> BL: but shortcut works then typing -> to the first match, then stops
+> BL: how to find next match? why does it stop?
+
+DF: Not sure what you mean, '/' + search string + F3 F3 F3 works here.
+
 -->
 <!-- not in kde4
 varlistentry>
