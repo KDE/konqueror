@@ -6,8 +6,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2003-11-06</date>
-<releaseinfo>3.2</releaseinfo>
+<date>2010-10-25</date>
+<releaseinfo>&kde; 4.5</releaseinfo>
 </chapterinfo>
 
 <title>Command Reference</title>
@@ -29,14 +29,14 @@ default ones. They can of course be <link linkend="configshort">changed</link>.
 </varlistentry>
 
 <varlistentry>
-<term><keycombo action="simul">&Ctrl;<keycap>]</keycap></keycombo></term>
+<term><keycombo action="simul">&Ctrl;<keycap>.</keycap></keycombo></term>
 <listitem>
 <para>Activate the next tab page.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
-<term><keycombo action="simul">&Ctrl;<keycap>[</keycap></keycombo></term>
+<term><keycombo action="simul">&Ctrl;<keycap>,</keycap></keycombo></term>
 <listitem>
 <para>Activate the previous tab page.</para>
 </listitem>
@@ -54,8 +54,19 @@ example, the
 <menuchoice><guimenu>Edit</guimenu><guimenuitem>Find...</guimenuitem>
 </menuchoice>
 item will not appear when you are viewing the contents of a directory.</para>
+
+<para>&konqueror; has different menu items in file manager and browser mode. Only 
+the items for these two modes are described in this chapter.
+</para>
+
+<para>If <emphasis>&konqueror;</emphasis> is using embedded components (&kde; Parts) 
+like <application>Gwenview</application>; for image viewing, &okular; for 
+<acronym>PDF</acronym> and &PostScript; documents &etc; the menu items from these
+applications are merged into &konqueror;'s menu. Help for these additional menu items
+you find in the handbook of the embedded application.</para>
+
 <sect2 id="menu-location">
-<title>The <guimenu>Location</guimenu> Menu</title>
+<title>The <guimenu>File</guimenu> Menu</title>
 
 <variablelist>
 <varlistentry>
@@ -63,7 +74,7 @@ item will not appear when you are viewing the contents of a directory.</para>
 <shortcut>
 <keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo>
 </shortcut>
-<guimenu>Location</guimenu>
+<guimenu>File</guimenu>
 <guimenuitem>New Window</guimenuitem>
 </menuchoice></term>
 <listitem><para>Open another &konqueror;
@@ -73,9 +84,9 @@ window.</para></listitem>
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Ctrl;&Shift;<keycap>N</keycap></keycombo>
+<keycombo action="simul">&Ctrl;<keycap>T</keycap></keycombo>
 </shortcut>
-<guimenu>Location</guimenu> <guimenuitem>New Tab</guimenuitem>
+<guimenu>File</guimenu> <guimenuitem>New Tab</guimenuitem>
 </menuchoice></term> 
 <listitem><para>Open another &konqueror; tab, containing a
 blank page.</para></listitem>
@@ -84,14 +95,12 @@ blank page.</para></listitem>
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Ctrl;<keycap>D</keycap></keycombo>
+<keycombo action="simul">&Alt;<keycap>O</keycap></keycombo>
 </shortcut>
-<guimenu>Location</guimenu>
-<guimenuitem>Duplicate Window</guimenuitem>
+<guimenu>File</guimenu>
+<guimenuitem>Open Location...</guimenuitem>
 </menuchoice></term>
-<listitem><para>Open another &konqueror; window, duplicating the
-current
-one.</para></listitem>
+<listitem><para>Sets the focus to the text entry box in the Location Toolbar.</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -99,19 +108,25 @@ one.</para></listitem>
 <shortcut>
 <keycombo action="simul">&Ctrl;<keycap>O</keycap></keycombo>
 </shortcut>
-<guimenu>Location</guimenu>
-<guimenuitem>Open Location...</guimenuitem>
+<guimenu>File</guimenu>
+<guimenuitem>Open File...</guimenuitem>
 </menuchoice></term>
-<listitem><para>Open a folder or file by entering its path
- (for example <filename class="directory">/home/pam</filename> or
-<filename>/home/pam/fred.txt</filename>) in a simple dialog
-box.</para></listitem>
+<listitem><para>Open a file using the &kde; file dialog.</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Location</guimenu>
-<guimenuitem>Send Link</guimenuitem>
+<guimenu>File</guimenu>
+<guimenuitem>Sessions</guimenuitem>
+</menuchoice></term>
+<listitem><para>Open a submenu to save the current session (open tabs and windows)
+for easy retrieval, manage sessions and switch to previously saved sessions.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>File</guimenu>
+<guimenuitem>Send Link Address...</guimenuitem>
 </menuchoice></term>
 <listitem><para>Send an email containing a link to the current
 location.</para></listitem>
@@ -119,8 +134,8 @@ location.</para></listitem>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Location</guimenu>
-<guimenuitem>Send File</guimenuitem>
+<guimenu>File</guimenu>
+<guimenuitem>Send File...</guimenuitem>
 </menuchoice></term>
 <listitem><para>Send an email containing the selected file as an
 attachment.</para></listitem>
@@ -129,35 +144,29 @@ attachment.</para></listitem>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Location</guimenu>
-<guimenuitem>Save Background Image As...</guimenuitem>
-</menuchoice></term>
+<guimenu>File</guimenu>
+<guimenuitem>Save Background Image As...</guimenuitem></menuchoice> (Browser mode)</term>
 <listitem>
 <para>Only applies if you are viewing a web page with a background image. Opens
-the <guilabel>Save As dialog</guilabel> box  to let you save the background
+the <guilabel>Save As</guilabel> dialog box to let you save the background
 image file to your own computer.</para>
 </listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;<keycap>S</keycap></keycombo>
-</shortcut>
-<guimenu>Location</guimenu>
+<guimenu>File</guimenu>
 <guimenuitem>Save As...</guimenuitem>
 </menuchoice></term>
 <listitem><para>Only applies if you are viewing a document or web page, uses
-the
-<guilabel>Save As...</guilabel> dialog box to let you save a copy to your own
+the <guilabel>Save As...</guilabel> dialog box to let you save a copy to your own
 computer.</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Location</guimenu>
-<guimenuitem>Save Frame As...</guimenuitem>
-</menuchoice></term>
+<guimenu>File</guimenu>
+<guimenuitem>Save Frame As...</guimenuitem></menuchoice> (Browser mode)</term>
 <listitem><para>Similar to <guimenuitem>Save As...</guimenuitem> but for
 use with a web site that uses frames.</para></listitem>
 </varlistentry>
@@ -167,7 +176,7 @@ use with a web site that uses frames.</para></listitem>
 <shortcut>
 <keycombo action="simul">&Ctrl;<keycap>P</keycap></keycombo>
 </shortcut>
-<guimenu>Location</guimenu>
+<guimenu>File</guimenu>
 <guimenuitem>Print...</guimenuitem>
 </menuchoice></term>
 <listitem><para>Print.</para></listitem>
@@ -175,28 +184,29 @@ use with a web site that uses frames.</para></listitem>
 
 <varlistentry>
 <term><menuchoice>
-<guimenu>Location</guimenu>
-<guimenuitem>Print Frame</guimenuitem>
-</menuchoice></term>
+<guimenu>File</guimenu>
+<guimenuitem>Print Frame</guimenuitem></menuchoice> (Browser mode)</term>
 <listitem><para>Print selected frame of a Web
 page.</para></listitem>
 </varlistentry>
-
+<!--
 <varlistentry>
 <term><menuchoice>
-<guimenu>Location</guimenu>
-<guimenuitem>Open With Netscape/Mozilla</guimenuitem>
+<guimenu>File</guimenu>
+<guimenuitem>Open With</guimenuitem>
 </menuchoice></term>
-<listitem><para>Open the web page you are 
-viewing in &konqueror; with &Netscape;/<application>Mozilla</application> as well.</para></listitem> 
+<listitem><para>???</para></listitem> 
 </varlistentry>
-
+browser 2 items + submenu with apps
+filemanager dophin/gwenview + submenu with apps
+is this hardcoded? detected at runtime?
+-->
 <varlistentry>
 <term><menuchoice>
 <shortcut>
 <keycombo action="simul">&Ctrl;<keycap>Q</keycap></keycombo>
 </shortcut>
-<guimenu>Location</guimenu>
+<guimenu>File</guimenu>
 <guimenuitem>Quit</guimenuitem>
 </menuchoice></term>
 <listitem><para>Close down this instance of
@@ -210,8 +220,9 @@ viewing in &konqueror; with &Netscape;/<application>Mozilla</application> as wel
 <sect2 id="menu-edit">
 <title>The <guimenu>Edit</guimenu> Menu</title>
 
-<note><para>Most items in the Menubar <guimenu>Edit</guimenu> menu can also be
-found by &RMB; clicking on a free area of a view.</para></note>
+<!-- not in kde4
+note><para>Most items in the Menubar <guimenu>Edit</guimenu> menu can also be
+found by &RMB; clicking on a free area of a view.</para></note-->
 
 <variablelist>
 
@@ -221,7 +232,7 @@ found by &RMB; clicking on a free area of a view.</para></note>
 <keycombo action="simul">&Ctrl;<keycap>Z</keycap></keycombo>
 </shortcut>
 <guimenu>Edit</guimenu>
-<guimenuitem>Undo</guimenuitem>
+<guimenuitem>Undo: <replaceable>Action</replaceable></guimenuitem>
 </menuchoice></term>
 <listitem><para>Sometimes lets you reverse a mistaken
 action.</para></listitem>
@@ -236,7 +247,7 @@ action.</para></listitem>
 <guimenuitem>Cut</guimenuitem>
 </menuchoice></term>
 <listitem><para>Puts selected item(s) into the clipboard.  If
-you then <guimenuitem>Paste</guimenuitem> the items they will be moved
+you then paste the items they will be moved
 from the original location to the new one.</para></listitem>
 </varlistentry>
 
@@ -258,31 +269,57 @@ clipboard.</para></listitem>
 <keycombo action="simul">&Ctrl;<keycap>V</keycap></keycombo>
 </shortcut>
 <guimenu>Edit</guimenu>
-<guimenuitem>Paste</guimenuitem>
-</menuchoice></term>
-<listitem><para>Paste item(s) from clipboard to the currently viewed
-folder.</para></listitem>
+<guimenuitem>Paste</guimenuitem></menuchoice> (Browser mode)</term>
+<listitem><para>Paste the clipboard content into the Location Bar.</para></listitem>
 </varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>V</keycap></keycombo>
+</shortcut>
+<guimenu>Edit</guimenu>
+<guimenuitem>Paste Clipboard Contents...</guimenuitem></menuchoice> (File Manager mode)</term>
+<listitem><para>Pastes the currently copied/cut items to the current folder. If the 
+clipboard does not contain files or folders, the clipboard contents (such as text 
+or image data) will be pasted into a new file.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>A</keycap></keycombo>
+</shortcut><guimenu>Edit</guimenu>
+<guimenuitem>Select All</guimenuitem></menuchoice> (Browser mode)</term>
+<listitem><para>Selects all text in an &HTML; 
+page or in a text page being previewed, you can then 
+<guimenuitem>Copy</guimenuitem> it and <guimenuitem>Paste</guimenuitem> it into 
+a text editor.</para></listitem> </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycap>F2</keycap>
 </shortcut><guimenu>Edit</guimenu>
-<guimenuitem>Rename</guimenuitem>
-</menuchoice></term>
-<listitem><para>Lets you rename a file or folder without
- having to
-open the <guimenuitem>Properties...</guimenuitem> dialog box.
+<guimenuitem>Rename</guimenuitem></menuchoice> (File Manager mode)</term>
+<listitem><para>Lets you rename a file or folder without 
+having to open the <guimenuitem>Properties...</guimenuitem> dialog box.
 </para></listitem>
 </varlistentry>
 
+<varlistentry>
+<term><menuchoice>
+<guimenu>Edit</guimenu>
+<guisubmenu>Create New</guisubmenu></menuchoice> (File Manager mode)</term>
+<listitem><para>Creates a new object (such as a folder or a text file) in 
+the current folder. See the <link linkend="making">Create
+New...</link> section for more details.</para></listitem>
+</varlistentry>
 
 <varlistentry>
 <term><menuchoice>
-<shortcut><keycap>Delete</keycap></shortcut>
+<shortcut><keycap>Del</keycap></shortcut>
 <guimenu>Edit</guimenu>
-<guimenuitem>Move to Trash</guimenuitem>
-</menuchoice></term>
+<guimenuitem>Move to Trash</guimenuitem></menuchoice> (File Manager mode)</term>
 <listitem><para>Move selected item(s) to the Trash
 folder.</para></listitem>
 </varlistentry>
@@ -290,15 +327,15 @@ folder.</para></listitem>
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Shift;<keycap>Delete</keycap></keycombo>
+<keycombo action="simul">&Shift;<keycap>Del</keycap></keycombo>
 </shortcut>
 <guimenu>Edit</guimenu>
-<guimenuitem>Delete</guimenuitem>
-</menuchoice></term>
+<guimenuitem>Delete</guimenuitem></menuchoice> (File Manager mode)</term>
 <listitem><para>Delete the selected item(s).</para></listitem>
 </varlistentry>
 
-<varlistentry>
+<!-- not in kde4
+varlistentry>
 <term><menuchoice>
 <shortcut><keycap>F7</keycap></shortcut>
 <guimenu>Edit</guimenu>
@@ -315,58 +352,39 @@ folder.</para></listitem>
 </menuchoice></term>
 <listitem><para>Move the selected item(s) to another
 folder.</para></listitem>
-</varlistentry>
+</varlistentry-->
 
 <varlistentry>
 <term><menuchoice>
 <guimenu>Edit</guimenu>
-<guimenuitem>Create New</guimenuitem>
-</menuchoice></term>
-<listitem><para>Create a link to an application,
-<acronym>URL</acronym>, Floppy or &CD-ROM; device, or create a new Folder or
-text or &HTML; file. See the <link linkend="making">Create
-New...</link>section for more details.</para></listitem> 
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Edit</guimenu>
-<guimenuitem>Edit File Type...</guimenuitem>
-</menuchoice></term>
+<guimenuitem>Edit File Type...</guimenuitem></menuchoice> (File Manager mode)</term>
 <listitem><para>Open the <guilabel>Edit File Type</guilabel>
 dialog box</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Alt;<keycap>Return</keycap></keycombo>
+</shortcut>
 <guimenu>Edit</guimenu>
-<guimenuitem>Properties..</guimenuitem>
-</menuchoice></term>
+<guimenuitem>Properties..</guimenuitem></menuchoice> (File Manager mode)</term>
 <listitem><para>Open the <guilabel>Edit Properties</guilabel>
 dialog box</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><menuchoice><guimenu>Edit</guimenu><guisubmenu>Selection</guisubmenu>
-</menuchoice></term>
-<listitem><para>Contains a number of options for changing the items selected in
-the &konqueror; window:
-<!-- DANGER: Nested variablelist! Be careful... -->
-<variablelist>
-<varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Ctrl;<keycap>+</keycap></keycombo>
+<keycombo action="simul">&Ctrl;<keycap>S</keycap></keycombo>
 </shortcut>
 <guimenu>Edit</guimenu>
 <guisubmenu>Selection</guisubmenu>
-<guimenuitem>Select...</guimenuitem>
-</menuchoice></term>
-<listitem><para>Together with the <guimenuitem>Unselect...</guimenuitem>,
-<guimenuitem>Unselect All</guimenuitem> and <guimenuitem>Invert</guimenuitem>
-Selection commands, this provides an easy and powerful way of selecting
-multiple
-files.</para>
+<guimenuitem>Select Items Matching...</guimenuitem></menuchoice> (File Manager mode)</term>
+<listitem><para>Together with the <guimenuitem>Unselect Items Matching...</guimenuitem>,
+<guimenuitem>Unselect All</guimenuitem> and <guimenuitem>Invert Selection</guimenuitem> 
+commands, this provides an easy and powerful way of selecting
+multiple files.</para>
 <para>It brings up a simple dialog box where you can enter a file
 name using the wild card characters * and ?, for example entering
 <literal role="extension">*.html</literal> will select all files ending with
@@ -377,39 +395,11 @@ filename.</para></listitem>
 
 <varlistentry>
 <term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;<keycap>-</keycap></keycombo>
-</shortcut>
 <guimenu>Edit</guimenu>
 <guisubmenu>Selection</guisubmenu>
-<guimenuitem>Unselect...</guimenuitem>
-</menuchoice></term>
+<guimenuitem>Unselect Items Matching...</guimenuitem></menuchoice> (File Manager mode)</term>
 <listitem><para>Unselect files or folders via a dialog similar to the one used
 by <guimenuitem>Select...</guimenuitem>.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;<keycap>U</keycap></keycombo>
-</shortcut>
-<guimenu>Edit</guimenu>
-<guisubmenu>Selection</guisubmenu>
-<guimenuitem>Unselect All</guimenuitem>
-</menuchoice></term>
-<listitem><para>Unselect all selected files or
-folders.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;<keycap>*</keycap></keycombo>
-</shortcut><guimenu>Edit</guimenu>
-<guisubmenu>Selection</guisubmenu>
-<guimenuitem>Invert Selection</guimenuitem>
-</menuchoice></term>
-<listitem><para>Invert current selection.</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -418,15 +408,30 @@ folders.</para></listitem>
 <keycombo action="simul">&Ctrl;<keycap>A</keycap></keycombo>
 </shortcut><guimenu>Edit</guimenu>
 <guisubmenu>Selection</guisubmenu>
-<guimenuitem>Select All</guimenuitem>
-</menuchoice></term>
+<guimenuitem>Select All</guimenuitem></menuchoice> (File Manager mode)</term>
 <listitem><para>Selects all text in an &HTML; 
 page or in a text page being previewed, you can then 
 <guimenuitem>Copy</guimenuitem> it and <guimenuitem>Paste</guimenuitem> it into 
-a text editor.</para></listitem> </varlistentry>
-</variablelist>
-</para>
-</listitem>
+a text editor.</para></listitem> 
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Edit</guimenu>
+<guisubmenu>Selection</guisubmenu>
+<guimenuitem>Unselect All</guimenuitem></menuchoice> (File Manager mode)</term>
+<listitem><para>Unselect all selected files or
+folders.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;&Shift;<keycap>A</keycap></keycombo>
+</shortcut><guimenu>Edit</guimenu>
+<guisubmenu>Selection</guisubmenu>
+<guimenuitem>Invert Selection</guimenuitem></menuchoice> (File Manager mode)</term>
+<listitem><para>Invert current selection.</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -434,10 +439,9 @@ a text editor.</para></listitem> </varlistentry>
 <shortcut>
 <keycombo action="simul">&Ctrl;<keycap>F</keycap></keycombo>
 </shortcut><guimenu>Edit</guimenu>
-<guimenuitem>Find...</guimenuitem>
-</menuchoice></term>
-<listitem><para>Find a text string in a text
-page you are previewing or in an &HTML;
+<guimenuitem>Find...</guimenuitem></menuchoice> (Browser mode)</term>
+<listitem><para>Displays the search bar a the bottom of the current window.
+Start typing to find a text string in a text page you are previewing or in an &HTML;
 page.</para></listitem>
 </varlistentry>
 
@@ -445,20 +449,47 @@ page.</para></listitem>
 <term><menuchoice>
 <shortcut><keycap>F3</keycap></shortcut>
 <guimenu>Edit</guimenu>
-<guimenuitem>Find Next</guimenuitem>
-</menuchoice></term>
+<guimenuitem>Find Next</guimenuitem></menuchoice> (Browser mode)</term>
 <listitem><para>Find the next occurrence of the text string 
 in the text or &HTML; page.</para></listitem> 
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
+<shortcut><keycap>F3</keycap></shortcut>
+<guimenu>Edit</guimenu>
+<guimenuitem>Find Previous</guimenuitem></menuchoice> (Browser mode)</term>
+<listitem><para>Find the previous occurrence of the text string 
+in the text or &HTML; page.</para></listitem> 
+</varlistentry>
+<!--
+<varlistentry>
+<term><menuchoice>
+<shortcut><keycombo action="simul">&Shift;<keycap>F3</keycap></keycombo></shortcut>
+<guimenu>Edit</guimenu>
+<guimenuitem>Find Text as You Type</guimenuitem></menuchoice> (Browser mode)</term>
+<listitem><para>???</para></listitem> 
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut><keycap>'</keycap></shortcut>
+<guimenu>Edit</guimenu>
+<guimenuitem>Find Links as You Type</guimenuitem></menuchoice> (Browser mode)</term>
+<listitem><para>???</para></listitem> 
+</varlistentry>
+both disabled in menu, but shortcut works then typing -> to the first match, then stops
+how to find next match? why does it stop?
+-->
+<!-- not in kde4
+varlistentry>
+<term><menuchoice>
 <guimenu>Edit</guimenu>
 <guimenuitem>Go to Line...</guimenuitem>
 </menuchoice></term>
 <listitem><para>Go to a particular line number in a text
 page you are previewing.</para></listitem>
-</varlistentry>
+</varlistentry-->
 
 </variablelist>
 
@@ -472,12 +503,14 @@ page you are previewing.</para></listitem>
 <varlistentry>
 <term><menuchoice>
 <guimenu>View</guimenu>
-<guisubmenu>View Mode...</guisubmenu>
+<guisubmenu>View Mode</guisubmenu>
 </menuchoice></term>
-<listitem><para>Selects <guimenuitem>Icon</guimenuitem>,
-<guimenuitem>MultiColumn</guimenuitem>, <guimenuitem>Tree</guimenuitem>,
-<guimenuitem>Detailed List</guimenuitem> 
-or <guimenuitem>Text</guimenuitem> view mode.</para></listitem>
+<listitem><para>In browser mode this submenu holds items to select embedded
+views like <guimenuitem>KHTML</guimenuitem>, <guimenuitem>Embedded Advanced 
+Text Editor</guimenuitem> and more embedded views.</para>
+<para>In file manager mode this submenu holds items to select <guimenuitem>Icon</guimenuitem>,
+<guimenuitem>Details</guimenuitem>, <guimenuitem>Columns</guimenuitem>,
+<guimenuitem>Terminal Emulator</guimenuitem> and more view modes.</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -494,20 +527,22 @@ files.</para></listitem>
 <varlistentry>
 <term><menuchoice>
 <guimenu>View</guimenu>
-<guimenuitem>Lock to current location</guimenuitem>
+<guimenuitem>Lock to Current Location</guimenuitem>
 </menuchoice></term>
-<listitem><para>Lock to current location.
-</para></listitem>
+<listitem><para>A locked view cannot change folders. Use in combination 
+with <guimenuitem>Link View</guimenuitem> to explore many files from 
+one folder.</para></listitem>
 </varlistentry>
-	  
-<varlistentry>
+  
+<!-- not in kde4
+varlistentry>
 <term><menuchoice>
 <guimenu>View</guimenu>
 <guimenuitem>Unlock all views</guimenuitem>
 </menuchoice></term>
 <listitem><para>Unlock all views.
 </para></listitem>
-</varlistentry>
+</varlistentry-->
 
 <varlistentry>
 <term><menuchoice>
@@ -515,7 +550,9 @@ files.</para></listitem>
 <guimenuitem>Link View</guimenuitem>
 </menuchoice></term>
 <listitem><para>Link current view to others in a multiple view
-window.</para></listitem>
+window. A linked view follows folder changes made in other linked views.
+This is especially useful with different types of views, such as a folder tree 
+with an icon view or detailed view, and possibly a terminal emulator window.</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -539,6 +576,21 @@ browsing).</para></listitem>
 
 <varlistentry>
 <term><menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;<keycap>+</keycap></keycombo></shortcut>
+<guimenu>View</guimenu>
+<guimenuitem>Enlarge Font</guimenuitem></menuchoice> / 
+<menuchoice>
+<shortcut><keycombo action="simul">&Ctrl;<keycap>-</keycap></keycombo></shortcut>
+<guimenu>View</guimenu>
+<guimenuitem>Shrink Font</guimenuitem></menuchoice> (Browser mode)</term>
+<listitem><para>Use these to adjust the size of the text in the
+page if you find it difficult to read. How well this works will
+depend on how the web page has been constructed.</para></listitem> 
+</varlistentry>
+
+<!--  not in kde4
+<varlistentry>
+<term><menuchoice>
 <guimenu>View</guimenu>
 <guimenuitem>Icon Size</guimenuitem>
 </menuchoice></term>
@@ -554,7 +606,7 @@ viewing a folder in Icon Mode.</para></listitem>
 <listitem><para>Choose order in which items are presented in the
 window when in Icon or MultiColumn View mode.</para></listitem>
 </varlistentry>
-	  
+  
 <varlistentry>
 <term><menuchoice>
 <guimenu>View</guimenu>
@@ -563,15 +615,14 @@ window when in Icon or MultiColumn View mode.</para></listitem>
 <listitem><para>Choose whether the sort order in Tree, Detailed List
 or Text View modes is case sensitive.</para></listitem>
 </varlistentry>
-
+-->
 <varlistentry>
 <term><menuchoice>
 <shortcut><keycombo action="simul">&Ctrl;<keycap>U</keycap>
 </keycombo>
 </shortcut>
 <guimenu>View</guimenu>
-<guimenuitem>View Document Source</guimenuitem>
-</menuchoice></term>
+<guimenuitem>View Document Source</guimenuitem></menuchoice> (Browser mode)</term>
 <listitem><para>View document source text.</para>
 <para>Only available if you are viewing a document or &HTML;
 page.</para>
@@ -581,8 +632,7 @@ page.</para>
 <varlistentry>
 <term><menuchoice>
 <guimenu>View</guimenu>
-<guimenuitem>View Frame Source</guimenuitem>
-</menuchoice></term>
+<guimenuitem>View Frame Source</guimenuitem></menuchoice> (Browser mode)</term>
 <listitem><para>View frame source text</para>
 <para>Only applies if you are viewing a web site that uses frames. Similar to 
 <guimenuitem>View Document Source</guimenuitem>. </para>
@@ -595,15 +645,14 @@ page.</para>
 </keycombo>
 </shortcut>
 <guimenu>View</guimenu>
-<guimenuitem>View Document Information</guimenuitem>
-</menuchoice></term>
+<guimenuitem>View Document Information</guimenuitem></menuchoice> (Browser mode)</term>
 <listitem><para>View document information, such as title, &URL;, and &HTTP;
 headers used in retrieving the document.</para>
 <para>Only available if you are viewing an &HTML;
 page.</para>
 </listitem>
 </varlistentry>
-
+<!-- not in kde4
 <varlistentry>
 <term><menuchoice>
 <guimenu>View</guimenu>
@@ -614,66 +663,83 @@ secured with <acronym>SSL</acronym> and lets you bring up the
 <guilabel>Cryptography Configuration...</guilabel> dialog
 box. <mousebutton>Left</mousebutton> clicking on the Menubar padlock icon does
 the same thing.</para></listitem> </varlistentry>
-
+-->
 <varlistentry>
 <term><menuchoice>
 <guimenu>View</guimenu>
-<guimenuitem>Set Encoding</guimenuitem>
-</menuchoice></term>
-<listitem><para>Set encoding</para>
-<para>Allows you to choose the character encoding used to display
-&HTML; pages. <guimenuitem>Auto</guimenuitem> is usually the
- best
+<guimenuitem>Set Encoding</guimenuitem></menuchoice> (Browser mode)</term>
+<listitem><para>Allows you to choose the character encoding used to display
+&HTML; pages. <guimenuitem>Default</guimenuitem> is usually the best
 choice.</para></listitem>
 </varlistentry>
-
+<!-- what is this?
 <varlistentry>
 <term><menuchoice>
 <guimenu>View</guimenu>
-<guisubmenu>Preview</guisubmenu>
-</menuchoice></term>
-<listitem><para>Lets you choose to show thumbnails of images, text
-files
-or &HTML; pages instead of the normal icons in Icon or
-MultiColumn View modes.</para></listitem>
+<guimenuitem>Use Stylesheet</guimenuitem></menuchoice> (Browser mode)</term>
+<listitem><para>???Automatic Detection Basic Page Style KDE Stylesheet</para></listitem>
+</varlistentry>
+http://websvn.kde.org/?view=revision&revision=269436
+-->
+<varlistentry>
+<term><menuchoice>
+<guimenu>View</guimenu>
+<guisubmenu>Sort By</guisubmenu></menuchoice> (File Manager mode)</term>
+<listitem><para><action>Changes whether items are sorted by <guimenuitem>Name</guimenuitem>,
+<guimenuitem>Size</guimenuitem>, <guimenuitem>Date</guimenuitem>,
+<guimenuitem>Permissions</guimenuitem>, <guimenuitem>Owner</guimenuitem>,
+<guimenuitem>Group</guimenuitem> or <guimenuitem>Type</guimenuitem>.
+<guimenuitem>Descending</guimenuitem> reverses the sort order.
+<guimenuitem>Folders First</guimenuitem> sorts folders before files.
+</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
 <guimenu>View</guimenu>
-<guimenuitem>Show Hidden Files</guimenuitem>
-</menuchoice></term>
-<listitem><para>Show hidden (dot) files.</para></listitem>
+<guisubmenu>Additional Information</guisubmenu></menuchoice> (File Manager mode)</term>
+<listitem><para><action>Displays additional information</action> like
+<guimenuitem>Size</guimenuitem>, <guimenuitem>Date</guimenuitem>,
+<guimenuitem>Permissions</guimenuitem>, <guimenuitem>Owner</guimenuitem>,
+<guimenuitem>Group</guimenuitem> or <guimenuitem>Type</guimenuitem> in the different
+views.</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
 <guimenu>View</guimenu>
-<guimenuitem>Show details...</guimenuitem>
-</menuchoice></term>
-<listitem><para>Lets you choose which file and folder details are
-shown in Tree, Detailed List and Text views.</para></listitem>
-</varlistentry>
-
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>View</guimenu>
-<guimenuitem>Background Color...</guimenuitem>
-</menuchoice></term>
-<listitem><para>Select background color for the File Manager mode.
-</para></listitem>
+<guimenuitem>Preview</guimenuitem></menuchoice> (File Manager mode)</term>
+<listitem><para><action>Displays a symbolic preview of the file contents </action> in the different
+view modes.</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
 <guimenu>View</guimenu>
-<guimenuitem>Background Image...</guimenuitem>
-</menuchoice></term>
-<listitem><para>Select background image for the File Manager mode.
-</para></listitem>
+<guimenuitem>Show in Groups</guimenuitem></menuchoice> (File Manager mode)</term>
+<listitem><para><action>Displays</action> the content of the
+current folder grouped by the option selected in <guimenuitem>Sort By</guimenuitem> 
+(only available in the Icons view mode).</para></listitem>
 </varlistentry>
 
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Alt;<keycap>.</keycap></keycombo>
+</shortcut>
+<guimenu>View</guimenu>
+<guimenuitem>Show Hidden Files</guimenuitem></menuchoice> (File Manager mode)</term>
+<listitem><para><action>Shows all the hidden files and sub-folders within the current
+folder.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>View</guimenu>
+<guimenuitem>Adjust View Properties...</guimenuitem></menuchoice> (File Manager mode)</term>
+<listitem><para><action>Opens the <!--???link linkend="view-properties-dialog"-->View Properties
+Dialog<!--/link-->.</action></para></listitem>
+</varlistentry>
 </variablelist>
 
 </sect2>
@@ -686,7 +752,7 @@ shown in Tree, Detailed List and Text views.</para></listitem>
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Alt;<keysym>Up Arrow</keysym></keycombo>
+<keycombo action="simul">&Alt;<keysym>Up</keysym></keycombo>
 </shortcut><guimenu>Go</guimenu>
 <guimenuitem>Up</guimenuitem>
 </menuchoice></term>
@@ -697,7 +763,7 @@ hierarchy.</para></listitem>
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Alt;<keysym>Left Arrow</keysym></keycombo>
+<keycombo action="simul">&Alt;<keysym>Left</keysym></keycombo>
 </shortcut><guimenu>Go</guimenu>
 <guimenuitem>Back</guimenuitem>
 </menuchoice></term>
@@ -708,7 +774,7 @@ view.</para></listitem>
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Alt;<keysym>Right Arrow</keysym></keycombo>
+<keycombo action="simul">&Alt;<keysym>Right</keysym></keycombo>
 </shortcut><guimenu>Go</guimenu>
 <guimenuitem>Forward</guimenuitem>
 </menuchoice></term>
@@ -719,18 +785,27 @@ back.</para></listitem>
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Ctrl;<keycap>Home</keycap></keycombo>
+<keycombo action="simul">&Alt;<keycap>Home</keycap></keycombo>
 </shortcut><guimenu>Go</guimenu>
-<guimenuitem>Home URL</guimenuitem>
-</menuchoice></term>
-<listitem><para>Go to your home folder.</para></listitem>
+<guimenuitem>Home Page</guimenuitem></menuchoice> (Browser mode)</term>
+<listitem><para>Go to your home page as defined on the <guilabel>General</guilabel> 
+page of the settings dialog.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Alt;<keycap>Home</keycap></keycombo>
+</shortcut><guimenu>Go</guimenu>
+<guimenuitem>Home Folder</guimenuitem></menuchoice> (File Manager mode)</term>
+<listitem><para><action>Changes</action> to the users home folder, &eg;,
+/home/Peter/.</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
 <guimenu>Go</guimenu>
-<guimenuitem>Applications</guimenuitem>
-</menuchoice></term>
+<guimenuitem>Applications</guimenuitem></menuchoice> (File Manager mode)</term>
 <listitem><para>Open the folder holding your
 applications.</para></listitem>
 </varlistentry>
@@ -738,31 +813,44 @@ applications.</para></listitem>
 <varlistentry>
 <term><menuchoice>
 <guimenu>Go</guimenu>
-<guimenuitem>Trash</guimenuitem>
-</menuchoice></term>
-<listitem><para>Open your <filename
- class="directory">Trash</filename>
-folder in a separate window.</para></listitem>
+<guimenuitem>Network Folder</guimenuitem></menuchoice> (File Manager mode)</term>
+<listitem><para>Network folders show up in a special location of &konqueror; and 
+&dolphin; called a virtual folder. More information how to use this folder you find
+in the <ulink url="help:/knetattach/index.html">KNetAttach Handbook</ulink>.</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
 <guimenu>Go</guimenu>
-<guimenuitem>Templates</guimenuitem>
-</menuchoice></term>
-<listitem><para>Open the <filename
-class="directory">Templates</filename> folder  in a separate
-window.</para></listitem>
+<guimenuitem>Settings</guimenuitem></menuchoice> (File Manager mode)</term>
+<listitem><para>Open a virtual folder with all &systemsettings; module.</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
 <guimenu>Go</guimenu>
-<guimenuitem>Autostart</guimenuitem>
+<guimenuitem>Trash</guimenuitem></menuchoice> (File Manager mode)</term>
+<listitem><para>Open your <filename class="directory">Trash</filename>
+folder.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Go</guimenu>
+<guimenuitem>Autostart</guimenuitem></menuchoice> (File Manager mode)</term>
+<listitem><para>Open your <filename class="directory">Autostart</filename> 
+folder.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;&Shift;<keycap>H</keycap></keycombo>
+</shortcut><guimenu>Go</guimenu>
+<guimenuitem>Show History</guimenuitem>
 </menuchoice></term>
-<listitem><para>Open your <filename
-class="directory">Autostart</filename> folder in a separate
-window.</para></listitem>
+<listitem><para>shows a tree view of your browsing history in a separate window. 
+See <link linkend="sidebar">Sidebar</link>.</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -773,6 +861,29 @@ window.</para></listitem>
 <listitem>
 <para>Displays a submenu showing the &URL;s you visit most often. Selecting one
 of these will make &konqueror; open that &URL;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Go</guimenu>
+<guisubmenu>Recently Visited</guisubmenu>
+</menuchoice></term>
+<listitem>
+<para>Displays a submenu showing the &URL;s you recently visited. Selecting one
+of these will make &konqueror; open that &URL;.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Go</guimenu>
+<guisubmenu>Closed Items</guisubmenu>
+</menuchoice></term>
+<listitem>
+<para>Displays a submenu showing the closed &URL;s you visit. Selecting one
+of these will make &konqueror; open that &URL;. Use <guimenuitem>Empty Closed Items 
+History</guimenuitem> to clear the submenu.</para>
 </listitem>
 </varlistentry>
 
@@ -814,19 +925,19 @@ open in &konqueror; tabs. </para>
 <varlistentry>
 <term><menuchoice>
 <guimenu>Bookmarks</guimenu>
-<guimenuitem>Edit Bookmarks...</guimenuitem>
+<guimenuitem>New Bookmark Folder...</guimenuitem>
 </menuchoice></term>
-<listitem><para>Open the <link linkend="bookmarks">Bookmark Editor</link>.
-</para></listitem>
+<listitem><para>Create a new folder in your Bookmarks
+folder.</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
 <guimenu>Bookmarks</guimenu>
-<guimenuitem>New Bookmark Folder...</guimenuitem>
+<guimenuitem>Edit Bookmarks...</guimenuitem>
 </menuchoice></term>
-<listitem><para>Create a new folder in your Bookmarks
-folder.</para></listitem>
+<listitem><para>Open the <link linkend="bookmarks">Bookmark Editor</link>.
+</para></listitem>
 </varlistentry>
 </variablelist>
 
@@ -839,33 +950,40 @@ folder.</para></listitem>
 
 <varlistentry>
 <term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Alt;<keycap>F2</keycap></keycombo></shortcut>
+<shortcut><keycap>F4</keycap></shortcut>
 <guimenu>Tools</guimenu>
-<guimenuitem>Run Command...</guimenuitem>
-</menuchoice></term>
-<listitem><para>Run a program by entering its name in a 
-simple dialog box.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul">&Ctrl;<keycap>T</keycap></keycombo></shortcut>
-<guimenu>Tools</guimenu>
-<guimenuitem>Open Terminal</guimenuitem>
-</menuchoice></term>
+<guimenuitem>Open Terminal</guimenuitem></menuchoice> (File Manager mode)</term>
 <listitem><para>Open a &konsole; terminal
  window.</para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>F</keycap></keycombo></shortcut>
 <guimenu>Tools</guimenu>
-<guimenuitem>Find File...</guimenuitem>
-</menuchoice></term>
+<guimenuitem>Find File...</guimenuitem></menuchoice> (File Manager mode)</term>
 <listitem><para>Open the &kfind; application.</para></listitem>
 </varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Tools</guimenu>
+<guisubmenu>Select Remote Charset</guisubmenu></menuchoice> (File Manager mode)</term>
+<listitem><para><action>Offers to choose the charset used by a remote
+connection manually.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>E</keycap></keycombo></shortcut>
+<guimenu>Tools</guimenu>
+<guimenuitem>Execute Shell Command...</guimenuitem></menuchoice> (File Manager mode)</term>
+<listitem><para>Run a program in the current folder by entering its name in a 
+simple dialog box. The output of the command is displayed in a window.</para></listitem>
+</varlistentry>
+
 </variablelist>
 
 <para>If you have &konqueror; plugins installed there will be additional
@@ -884,6 +1002,15 @@ and Profiles</link>.</para></note>
 
 <varlistentry>
 <term><menuchoice>
+<guimenu>Settings</guimenu>
+<guisubmenu>Toolbars Shown</guisubmenu>
+</menuchoice></term>
+<listitem><para>Opens a sub menu where you can choose to show or hide 
+the various Toolbars.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
 <shortcut>
 <keycombo action="simul">&Ctrl;<keycap>M</keycap></keycombo></shortcut>
 <guimenu>Settings</guimenu>
@@ -895,10 +1022,21 @@ and Profiles</link>.</para></note>
 <varlistentry>
 <term><menuchoice>
 <guimenu>Settings</guimenu>
-<guisubmenu>Toolbars</guisubmenu>
+<guimenuitem>Show Terminal Emulator</guimenuitem>
 </menuchoice></term>
-<listitem><para>Opens a sub menu where you can choose to show or hide 
-the various Toolbars.</para></listitem>
+<listitem><para>Open a small text terminal view at the bottom of the
+main window.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul"><keycap>F9</keycap></keycombo></shortcut>
+<guimenu>Settings</guimenu>
+<guimenuitem>Show Sidebar</guimenuitem>
+</menuchoice></term>
+<listitem><para>Toggles the display of the &konqueror; sidebar. See
+<xref linkend="sidebar"/>.</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -918,8 +1056,7 @@ icon on the toolbar, or press <keycombo action="simul">&Ctrl;&Shift;
 <keycap>F</keycap></keycombo>.</para>
 </listitem>
 </varlistentry>
-
-
+<!-- not in kde4
 <varlistentry>
 <term><menuchoice>
 <guimenu>Settings</guimenu>
@@ -939,7 +1076,7 @@ directory. These settings are then loaded when you open the directory in &konque
 <listitem><para>Remove settings stored in folder by <guimenuitem>View
 Properties Saved in Folder</guimenuitem>.</para></listitem>
 </varlistentry>
-
+-->
 <varlistentry>
 <term><menuchoice>
 <guimenu>Settings</guimenu>
@@ -951,7 +1088,7 @@ Properties Saved in Folder</guimenuitem>.</para></listitem>
 <varlistentry>
 <term><menuchoice>
 <guimenu>Settings</guimenu>
-<guimenuitem>Save View Profile "<replaceable>ProfileName</replaceable>"...</guimenuitem>
+<guimenuitem>Save View Profile As...</guimenuitem>
 </menuchoice></term>
 <listitem><para>Save the current settings to the current view profile.</para></listitem>
 </varlistentry>
@@ -963,6 +1100,25 @@ Properties Saved in Folder</guimenuitem>.</para></listitem>
 </menuchoice></term>
 <listitem><para>Lets you change an existing view profile or create a
 new one.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<guimenu>Settings</guimenu>
+<guimenuitem>Configure Extensions...</guimenuitem>
+</menuchoice></term>
+<listitem><para>Opens a dialog with all installed plugins &eg; from the KDE module extragear 
+and allows to select the ones you need. All plugins are accessible in the 
+<guimenu>Tools</guimenu> menu.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice> <guimenu>Settings</guimenu>
+<guimenuitem>Configure Spell Checking...</guimenuitem> </menuchoice></term>
+<listitem>
+<para>Displays the spell checking configuration dialog box, in which you can
+change settings associated with spell checking in &konqueror;.</para>
+</listitem>
 </varlistentry>
 
 <varlistentry>
@@ -987,20 +1143,10 @@ section <link linkend="configure-bars">Changing Bars</link>.
 <varlistentry>
 <term><menuchoice> <guimenu>Settings</guimenu>
 <guimenuitem>Configure &konqueror;...</guimenuitem> </menuchoice></term>
-<listitem><para>Lets you configure the File manager, File Associations,
-Browser, Internet Keywords, Cookies, Proxies, Cryptography, User Agent, or
-Toolbars by bringing up the appropriate dialog box.</para></listitem>
+<listitem><para>Lets you configure &konqueror;' behavior in file manager and 
+browser mode.
+</para></listitem>
 </varlistentry>
-
-<varlistentry>
-<term><menuchoice> <guimenu>Settings</guimenu>
-<guimenuitem>Configure Spell Checking...</guimenuitem> </menuchoice></term>
-<listitem>
-<para>Displays the spell checking configuration dialog box, in which you can
-change settings associated with spell checking in &konqueror;.</para>
-</listitem>
-</varlistentry>
-
 
 </variablelist>
 
@@ -1038,7 +1184,7 @@ action="simul">&Ctrl;&Shift;<keycap>T</keycap></keycombo></shortcut>
 <keycombo
 action="simul">&Ctrl;&Shift;<keycap>R</keycap></keycombo></shortcut>
 <guimenu>Window</guimenu>
-<guimenuitem>Remove Active View</guimenuitem>
+<guimenuitem>Close Active View</guimenuitem>
 </menuchoice></term>
 <listitem><para>Remove Active View.</para></listitem>
 </varlistentry>
@@ -1046,7 +1192,28 @@ action="simul">&Ctrl;&Shift;<keycap>R</keycap></keycombo></shortcut>
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Ctrl;&Shift;<keycap>N</keycap></keycombo></shortcut>
+<keycombo action="simul">&Ctrl;<keycap>N</keycap></keycombo></shortcut>
+<guimenu>Window</guimenu>
+<guimenuitem>New Window</guimenuitem>
+</menuchoice></term>
+<listitem><para>Open another &konqueror; window.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;&Shift;<keycap>D</keycap></keycombo></shortcut>
+<guimenu>Window</guimenu>
+<guimenuitem>Duplicate Window</guimenuitem>
+</menuchoice></term>
+<listitem><para>Open another &konqueror; window, duplicating the
+current one.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
+<keycombo action="simul">&Ctrl;<keycap>T</keycap></keycombo></shortcut>
 <guimenu>Window</guimenu>
 <guimenuitem>New Tab</guimenuitem>
 </menuchoice></term>
@@ -1056,7 +1223,7 @@ action="simul">&Ctrl;&Shift;<keycap>R</keycap></keycombo></shortcut>
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Ctrl;&Shift;<keycap>D</keycap></keycombo></shortcut>
+<keycombo action="simul">&Ctrl;<keycap>D</keycap></keycombo></shortcut>
 <guimenu>Window</guimenu>
 <guimenuitem>Duplicate Current Tab</guimenuitem>
 </menuchoice></term>
@@ -1104,94 +1271,18 @@ action="simul">&Ctrl;&Shift;<keycap>R</keycap></keycombo></shortcut>
 <listitem><para>Move the current tab one place right in the list of tabs.</para></listitem>
 </varlistentry>
 
-<varlistentry>
-<term><menuchoice>
-<guimenu>Window</guimenu>
-<guimenuitem>Show Terminal Emulator</guimenuitem>
-</menuchoice></term>
-<listitem><para>Open a small text terminal view at the bottom of the
- main 
-window.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<shortcut>
-<keycombo action="simul"><keycap>F9</keycap></keycombo></shortcut>
-<guimenu>Window</guimenu>
-<guimenuitem>Show Sidebar</guimenuitem>
-</menuchoice></term>
-<listitem><para>Toggles the display of the &konqueror; sidebar. See
-<xref linkend="sidebar"/>.</para></listitem>
-</varlistentry>
-
 </variablelist>
 
 </sect2>
 
 <sect2 id="menu-help">
 <title>The <guimenu>Help</guimenu> Menu</title>
+<para>Apart from standard &kde; <guimenu>Help</guimenu> menu items
+described below you will have the menu entry <guimenuitem>&konqueror; Introduction</guimenuitem>
+to revisit the introductory pages that you got when
+&konqueror; was first started.</para>
 
-<variablelist>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Help</guimenu>
-<guimenuitem>&konqueror; Handbook</guimenuitem>
-</menuchoice></term>
-<listitem><para>View this document.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<shortcut>
-<keycombo
- action="simul">&Shift;<keycap>F1</keycap></keycombo></shortcut>
-<guimenu>Help</guimenu>
-<guimenuitem>What's This?</guimenuitem>
-</menuchoice></term>
-<listitem><para>Draws a question mark (?) beside the mouse
-pointer, clicking on a window item such as the
-<guiicon>Stop</guiicon> button will then display a brief explanation. See
-<link linkend="bubble">Tooltips and What's This?</link> .</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Help</guimenu>
-<guimenuitem>&konqueror; Introduction</guimenuitem>
-</menuchoice></term>
-<listitem><para>Revisit the introductory pages that you got when
-&konqueror; was first started.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Help</guimenu>
-<guimenuitem>Report Bug...</guimenuitem>
-</menuchoice></term>
-<listitem><para>Report bug.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Help</guimenu>
-<guimenuitem>About &konqueror;...</guimenuitem>
-</menuchoice></term>
-<listitem><para>Display some brief information about
-&konqueror;'s version number, authors and license agreement.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<guimenu>Help</guimenu>
-<guimenuitem>About KDE...</guimenuitem>
-</menuchoice></term>
-<listitem><para>Show some information about the version of &kde; that
-you are running.</para></listitem>
-</varlistentry>
-
-</variablelist>
+&help.menu.documentation;
 
 </sect2>
 </sect1>
