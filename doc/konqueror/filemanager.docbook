@@ -5,12 +5,12 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup> 
 
-<date>2006-03-08</date>
-<releaseinfo>3.5</releaseinfo>
+<date>2010-10-26</date>
+<releaseinfo>&kde; 4.5</releaseinfo>
 </chapterinfo>
 
 <title>&konqueror; the File Manager</title>
-
+<!-- 4.5 -->
 <sect1 id="dirfolders">
 <title>Folders and Paths</title>
 <para>In &UNIX; and &Linux; all folders are arranged in a simple 
@@ -46,7 +46,7 @@ folder, so that <filename>~/letter.txt</filename> refers to the file
 <para>Note that the term <quote>directory</quote> is often used instead of 
 <quote>folder</quote>.</para>
 </sect1>
-
+<!-- 4.5 -->
 <sect1 id="viewmode">
 <title>View Modes</title>
 <para>In File Manager mode, &konqueror; lists which files and subfolders are
@@ -59,134 +59,152 @@ Mode</guisubmenu></menuchoice > sub menu. The view modes &konqueror; provides
 are outlined below.
 </para>
 
-<variablelist>
+<note><para>In File Manager mode, &konqueror; uses an embedded a &dolphin;  
+component.</para></note>
 
-<varlistentry>
-<term><guimenuitem>Icon View</guimenuitem></term>
-<listitem><para>Displays an icon and a name for each file or subfolder in
-the current folder.</para>
-<para>Files of certain types may display a preview of their contents instead of
-the default icon. The file types selected for preview are controlled by the
-<menuchoice><guimenu>View</guimenu><guisubmenu>Preview</guisubmenu></menuchoice>
-sub menu settings. See the section <link linkend="previews">
-File Previews</link> of this handbook for more details.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><guimenuitem>MultiColumn View</guimenuitem></term>
-<listitem><para>Is similar to <guimenuitem>Icon View</guimenuitem> except that
-the current folder contents are organized into columns instead of rows.
-Files may be previewed in <guimenuitem>MultiColumn View</guimenuitem> as
-they are in <guimenuitem>Icon View</guimenuitem>.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><guimenuitem>Tree View</guimenuitem></term>
-<listitem><para>Can be used to <link linkend="navigation">navigate</link> the
-folder tree starting at the current folder. Each file and subfolder is
-shown on its own line. Folders can be expanded to reveal their contents by
-<mousebutton>left</mousebutton> clicking on the preceding <keycap>+</keycap>
-sign. Similarly, an expanded folder's contents can be hidden by
-<mousebutton>left</mousebutton> clicking on the <keycap>-</keycap> sign.</para>
-<para>In addition to the file name, some file detail information is shown on
-each line. The details are controlled by the <menuchoice>
-<guimenu>View</guimenu><guisubmenu>Show Details</guisubmenu></menuchoice>
-sub menu settings.</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><guimenuitem>Info List View</guimenuitem></term>
-<listitem><para>Displays each file on a separate line similar to the
-<guimenuitem>
-Detailed List View</guimenuitem> except that the detail information is 
-specific to the file type. This feature is controlled by the
-<menuchoice><guimenu>View</guimenu><guisubmenu>View As</guisubmenu></menuchoice>
-sub menu.</para>
-<para>For example: If the file type is <quote>Folder,</quote> then the contents
-information is shown. Viewing as <quote>JPEG Images</quote> shows the pixel
-dimensions and EXIF data if available, and viewing as <quote>Plain Text</quote>
-shows the lines, words, characters, and format.
+<itemizedlist>
+<!-- begin copy from dolphin docbook --> 
+<listitem><para>
+In the <guibutton>Icons</guibutton> view, which is the default, files will be
+represented by an icon that visualizes the file type, and a folder icon will be
+shown for subfolders.
 </para></listitem>
-</varlistentry>
 
-<varlistentry>
-<term><guimenuitem>Detailed List View</guimenuitem></term>
-<listitem><para>Displays each file or folder on a separate line, as an icon
-followed by the file or folder name followed by information about the 
-item. The amount of information shown is controlled by the <menuchoice>
-<guimenu>View</guimenu><guisubmenu>Show Details</guisubmenu></menuchoice> 
-sub menu settings.
+<listitem><para>
+In the <guibutton>Details</guibutton> view, the folder contents are displayed
+as a detailed list which contains the name, size and last modification time of
+each item. Additional columns can be added by clicking a column header with the
+&RMB;.
+</para>
+
+<para>
+The details view offers the option <guilabel>Expandable Folders</guilabel>,
+which can be enabled in the <menuchoice><guimenu>File Management</guimenu>
+<guimenuitem>View Modes</guimenuitem></menuchoice> 
+section of the settings. This option permits to view the current directory
+in a tree-like fashion: Each subfolder of the current folder can be
+<quote>expanded</quote> by clicking on the <guiicon>+</guiicon> button next to it.
 </para></listitem>
-</varlistentry>
 
-<varlistentry>
-<term><guimenuitem>Text View</guimenuitem></term>
-<listitem><para>Is similar to the <guimenuitem>Detailed List View</guimenuitem> 
-except that icons are not shown and the first character in each line will be 
-<quote>/</quote> if the item is a folder.
+<listitem><para>
+In the <guilabel>Columns</guilabel> view, multiple levels of the folder
+structure can be viewed at once. If a subfolder is clicked, a new pane showing
+the contents of that folder is opened at the right edge of the view.
 </para></listitem>
-</varlistentry>
 
-<varlistentry>
-<term><guimenuitem>Photobook</guimenuitem></term>
-<listitem><para>Transforms &konqueror; into a simple viewing
-application for the current folder. Most of the main window renders a selected
-image, and thumbnails of the image files in the current directory are previewed
-along the side.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><guimenuitem>File Size View</guimenuitem></term>
-<listitem><para>Creates a visual representation of the folder tree that reflects
-the file sizes of the folder contents. The window area represents all of the
-disk space used by the contents of the current folder. Subfolders and their
-contents are represented as rectangular blocks. The area of each block is
-proportional to the size of its contents. Various modifications to this
-visualization are controlled via the sub menus of the
-<menuchoice><guimenu>View</guimenu></menuchoice> menu.
-</para></listitem>
-</varlistentry>
-</variablelist>
-
-
+</itemizedlist>
+<!-- end copy from dolphin docbook --> 
 <sect2 id="filetipinfo">
 <title>File Tip Info</title>
-<para>Checking the <guilabel>Show file tips</guilabel> box in the <guilabel>
-Behavior</guilabel> page of the &konqueror; Configuration dialog causes a 
+<para>Checking the <guilabel>Show tooltips</guilabel> box in the <menuchoice>
+<guimenu>File Management</guimenu><guimenuitem>General</guimenuitem></menuchoice> 
+page of the &konqueror; Configuration dialog causes a 
 small pop up information window to appear when the mouse pointer is hovered over
 a file or folder name or icon. 
-</para>
-<para>If the <guilabel>Show previews in file tips</guilabel> checkbox is 
-checked the pop up window will also show a small image of the file contents.
 </para>
 </sect2>
 
 <sect2 id="previews">
 <title>File Previews</title>
-<para>Selecting <menuchoice><guimenu>View</guimenu><guisubmenu>Preview
-</guisubmenu></menuchoice> from the Menubar will bring up a sub menu 
-that lets you enable file previews for certain types of file.</para>
+<para>The <guilabel>Previews
+</guilabel> tab of the <menuchoice><guimenu>File Management</guimenu>
+<guimenuitem>General</guimenuitem></menuchoice> settings page 
+lets you enable file previews for certain types of file.</para>
 <para>Generally this means that the file's icon will be replaced by a small 
 image showing the file contents.</para>
-<para>If file preview is enabled for <guimenuitem>Sound Files</guimenuitem> 
-the file will be played whenever the mouse cursor is hovering over the file 
-name or icon.</para>
-<para>Note that file previews are only available in <guimenuitem>Icon View
-</guimenuitem> and <guimenuitem>MultiColumn View</guimenuitem> modes.</para>
 <para>Because &konqueror; has to read much more data than just the file name 
-details to generate a preview, file previews may not be appropriate 
-when viewing files on a floppy or from a remote system. The <guilabel>Previews
-</guilabel> page of the File Manager Configuration 
-dialog allows you to disable file previews for protocols such as 
-<link linkend="ftp">ftp</link> where reading the extra data would take too 
-long.</para>
+to generate a preview, file previews may not be appropriate when viewing 
+files from a remote system. To disable previews for remote files where reading 
+the extra data would take too long set a file size limit at the bottom of the 
+<guilabel>Previews</guilabel> tab.</para>
+</sect2>
+</sect1>
+
+<!-- begin copy from dolphin docbook --> 
+<sect1 id="view-properties">
+<title>Folder View Properties</title>
+
+<para>
+The following settings control how the contents of a folder are displayed in the
+&konqueror; view, and are stored on a per-folder basis by default:
+
+<itemizedlist>
+
+<listitem><para>
+The view mode (Icons, Details, Columns)
+</para></listitem>
+
+<listitem><para>
+The sorting of items, which is determined by the sort order (ascending,
+descending) and the attribute (such as name, size,...) that the items are
+sorted by
+</para></listitem>
+
+<listitem><para>
+Sorting of folders and files &ndash; are folders shown first or not?
+</para></listitem>
+
+<listitem><para>
+Previews &ndash; are they shown instead of icons (based on the settings made in
+<guilabel>Previews</guilabel> tab of &konqueror;'s <menuchoice><guimenu>File Management</guimenu>
+<guimenuitem>General</guimenuitem></menuchoice> settings) or not?
+</para></listitem>
+
+<listitem><para>
+Are items shown in groups in the Icons view?
+</para></listitem>
+
+<listitem><para>
+Are hidden files shown?
+</para></listitem>
+
+<listitem><para>
+What additional information (besides the name) is shown in the Icons or Details view?
+</para></listitem>
+
+</itemizedlist>
+
+The view properties can be configured in the
+<menuchoice><guimenu>View</guimenu></menuchoice> menu, some (such as the view
+mode) can also be changed using toolbar buttons.
+</para>
+
+<sect2 id="view-properties-dialog">
+<title>The View Properties Dialog</title>
+
+<para>
+
+<screenshot>
+<screeninfo>Screenshot of the View Properties dialog</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="viewproperties-dialog.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase>The View Properties dialog.</phrase>
+</textobject>
+<caption><para>The View Properties Dialog.</para></caption>
+</mediaobject>
+</screenshot>
+
+The <guilabel>View Properties</guilabel> dialog can be used to quickly modify
+several view properties at once. This is done for the current folder, for the
+current folder including all subfolders, or even for all folders, depending on
+the choice made in the <guilabel>Apply View Properties To</guilabel> section.
+</para>
+
+<para>
+If <guilabel>Use these view properties as default</guilabel> is enabled, the chosen view
+properties will also be used for all folders which do not have customized view
+properties yet.
+</para>
+
 </sect2>
 
 </sect1>
+<!-- end copy from dolphin docbook -->
 
+<!-- 4.5 -->
 <sect1 id="navigation">
 <title>Navigation</title>
 <para>To get to a file with &konqueror; you first need to navigate 
@@ -202,7 +220,7 @@ tree:</para>
 icon -- or if you have already <quote>selected</quote> it (see below) -- then just press
 &Enter;.</para></listitem> 
 <listitem><para>To go up the folder tree you can click on the <guiicon>Up
-</guiicon> button in the Toolbar, use<keycombo action="simul">&Alt;<keysym>Up Arrow</keysym></keycombo>, or use the Menubar
+</guiicon> button in the Toolbar, use<keycombo action="simul">&Alt;<keysym>Up</keysym></keycombo>, or use the Menubar
 <menuchoice><guimenu>Go</guimenu><guimenuitem>Up</guimenuitem></menuchoice>
 option.</para></listitem>
 </itemizedlist>
@@ -214,7 +232,8 @@ The selected item will be highlighted and some information about it
 will be displayed in the Status Bar.</para>
 
 <para>Setting the <link linkend="viewmode">View Mode</link> to <guimenuitem>
-Tree View</guimenuitem> can help you locate folders in the tree below the 
+Details</guimenuitem> with the option <guilabel>Expandable Folders</guilabel> 
+can help you locate folders in the tree below the 
 current folder; in this mode each folder is shown with a small box at 
 the left. If the box contains a <keycap>+</keycap> sign, <mousebutton>left
 </mousebutton> clicking on the box (not on the folder name or icon) will 
@@ -229,8 +248,8 @@ find your way around the file system.</para>
 
 <para>You can go directly to any folder by typing its path into the
 Location Toolbar window or into the dialog box invoked by the Menubar
-<menuchoice><guimenu>Location</guimenu><guimenuitem>Open Location</guimenuitem>
-</menuchoice> item or by <keycombo action="simul">&Ctrl;<keycap>
+<menuchoice><guimenu>File</guimenu><guimenuitem>Open Location</guimenuitem>
+</menuchoice> item or by <keycombo action="simul">&Alt;<keycap>
 O</keycap></keycombo>. &konqueror;'s <link linkend="path-complete">
 Text Completion</link> feature may be useful when you do this. Don't forget
 that in &Linux; / &UNIX; file and folder names are case sensitive.</para>
@@ -239,23 +258,21 @@ that in &Linux; / &UNIX; file and folder names are case sensitive.</para>
 previous choice by using the Toolbar <guiicon>Back</guiicon> button, the
 Menubar
 <menuchoice><guimenu>Go</guimenu> <guimenuitem>Back</guimenuitem></menuchoice>
-item, or <keycombo action="simul">&Alt;<keysym>Left
-Arrow</keysym></keycombo>. Once you have gone back you can go forward. Use the Toolbar
+item, or <keycombo action="simul">&Alt;<keysym>Left</keysym></keycombo>. 
+Once you have gone back you can go forward. Use the Toolbar
 <guiicon>Forward</guiicon> button, the Menubar
 <menuchoice><guimenu>Go</guimenu>
 <guimenuitem>Forward</guimenuitem></menuchoice> item or <keycombo
-action="simul">&Alt;<keysym>Right
-Arrow</keysym></keycombo>.</para>
+action="simul">&Alt;<keysym>Right</keysym></keycombo>.</para>
 
 <para>Alternatively, you can also choose to enter the parent folder by clicking on the Toolbar <guiicon>Up</guiicon>, the <menuchoice><guimenu>Go</guimenu> <guimenuitem>Up</guimenuitem></menuchoice> item, or with <keycombo
-action="simul">&Alt;<keysym>Up
-Arrow</keysym></keycombo>.</para>
+action="simul">&Alt;<keysym>Up</keysym></keycombo>.</para>
 
-<tip><para>Holding the &LMB; pressed while the mouse pointer is
-over the Toolbar <guiicon>Up</guiicon>, <guiicon>Back</guiicon> or
-<guiicon>Forward</guiicon> buttons brings up a menu of recently visited
-locations.</para></tip>
-
+<tip><para>Click the checkmark at the right of the toolbar <guiicon>Up</guiicon>, 
+<guiicon>Back</guiicon> or <guiicon>Forward</guiicon> buttons or selecting these 
+items in the <guimenu>Go</guimenu> menu brings up a submenu of recently visited locations.</para>
+</tip>
+<!-- 4.5 -->
 <sect2 id="file-find">
 <title>Finding Files and Folders</title>
 
@@ -353,7 +370,7 @@ Command</guimenuitem></menuchoice>
 </sect2>
 
 </sect1>
-
+<!-- 4.5-->
 <sect1 id="deleting">
 <title>Deleting Files and Folders</title>
 
@@ -368,7 +385,10 @@ mistake.</para></listitem>
 <listitem><para>You can just plain Delete it, which
 removes the entry from the folder and adds the disk area occupied by the
 file(s) to the system's list of free disk areas, in the same way as the
-<command>rm</command> command.</para></listitem>
+<command>rm</command> command.</para>
+<para>If you want to use this feature check the option <guilabel>Show 'Delete' 
+menu entries which bypass the trashcan</guilabel> on the <guilabel>File 
+Management</guilabel> settings page.</para></listitem>
 </itemizedlist>
 
 <para>The simplest way to remove a file or folder is to position
@@ -388,11 +408,11 @@ will really, truly and irrevocably delete the selected item or
 items.</para>
 
 <note><para>You won't be able to remove a file or folder if you don't have
-the necessary permissions; see the section on <link linkend="super-user">Super
-User Mode</link> for further details.</para></note>
+the necessary permissions<!--; see the section on <link linkend="super-user">Super
+  User Mode</link> for further details-->.</para></note>
 
 </sect1>
-
+<!-- 4.5-->
 <sect1 id="moving">
 <title>Moving and Copying</title>
 
@@ -409,7 +429,8 @@ the &RMB;, which will bring up a menu containing the
 <guimenuitem>Copy</guimenuitem></menuchoice>
 item, or the <keycombo
 action="simul">&Ctrl;<keycap>C</keycap></keycombo> 
-shortcut key combination. You can also select <link linkend="multiple">multiple</link> files or folders to copy/move as well.</para></listitem>
+shortcut key combination. You can also select <link linkend="selection">multiple</link> 
+files or folders to copy/move as well.</para></listitem>
 
 <listitem><para>Navigate to the folder you want to copy the item into then
 Paste the item into the new folder by using the Toolbar
@@ -431,20 +452,19 @@ instead of <guimenuitem>Copy</guimenuitem>. The item that you have
 <guimenuitem>Cut</guimenuitem> will be removed from the original folder when
 you do the <guimenuitem>Paste</guimenuitem> into the new folder.</para>
 
-<para>You can also copy or move selected item(s) to another folder by using 
-<menuchoice><guimenu>Edit</guimenu>
-<guimenuitem>Copy Files</guimenuitem></menuchoice> (<keycap>F7</keycap>) or
-<menuchoice><guimenu>Edit</guimenu><guimenuitem>Move Files</guimenuitem>
-</menuchoice> (<keycap>F8</keycap>), or by selecting
+<para>You can also copy or move selected item(s) to another folder by selecting
 <guimenuitem>Copy To</guimenuitem> or <guimenuitem>Move To</guimenuitem> from
-the drop down menu you get when you <mousebutton>right</mousebutton> click on
+the context menu you get when you <mousebutton>right</mousebutton> click on
 an file or folder name in the File Manager window.</para>
-
+<para>To enable this feature select <guilabel>Show 'Copy To' and 'Move To' 
+commands</guilabel> on the <guilabel>Context Menu</guilabel> tab of the
+<menuchoice><guimenu>File Management</guimenu>
+<guimenuitem>General</guimenuitem></menuchoice> section of the settings.</para>
 <note><para>You may not be able to copy or move a file or folder if
-you don't have the necessary permissions. See the section on <link
+you don't have the necessary permissions. <!--See the section on <link
 linkend="super-user">Super User Mode</link> for further
-details.</para></note>
-
+  details.--></para></note>
+<!-- 4.5-->
 <sect2 id="dnd">
 <title>Using Drag 'n Drop</title>
 
@@ -455,14 +475,12 @@ folders.</para>
 folder you want to copy from, the other showing the target folder. 
 Position the mouse pointer over the item you wish to copy or move, then, 
 holding the &LMB; pressed, <quote>drag</quote> it to a clear space in the
-target
- 
-folder. Release the button and you will be
-presented with a menu choice of <guimenuitem>Copy</guimenuitem> or
-<guimenuitem>Move</guimenuitem>. Take care to <quote>drop</quote> the item into
- an empty area of the target
-folder view - dropping it on top of another file name or icon can cause
-problems.</para>
+target folder. Release the button and you will be
+presented with a menu choice of <guimenuitem>Copy Here</guimenuitem>, 
+<guimenuitem>Move Here</guimenuitem> or <guimenuitem>Link Here</guimenuitem>. 
+Take care to <quote>drop</quote> the item into an empty area of the target
+folder view - dropping it on top of a subfolder will copy or move the item
+into that folder.</para>
 
 <para>You can also set up &konqueror; to show more than one folder within
 its window and drag &amp; drop between them.</para>
@@ -477,9 +495,7 @@ its window and drag &amp; drop between them.</para>
 <para>This screenshot illustrates the use of the Menubar
 <menuchoice><guimenu>Window</guimenu> <guimenuitem>Split View
 Left/Right</guimenuitem></menuchoice> option, also available with the shortcut 
-<keycombo
-action="simul">&Ctrl;&Shift;<keycap>L</keycap>
-</keycombo>,
+<keycombo action="simul">&Ctrl;&Shift;<keycap>L</keycap></keycombo>,
 to split the main &konqueror; window into two views, each showing the contents
 of a different folder.</para>
 
@@ -494,11 +510,10 @@ active, <mousebutton>left</mousebutton> click on an empty area of the view or
 on its Status Bar.</para>
 
 <para>To remove an active view from &konqueror;'s window use the <keycombo
-action="simul">&Ctrl;&Shift;<keycap>R</keycap>
-</keycombo> shortcut, or the Menubar <menuchoice><guimenu>Window</guimenu>
-<guimenuitem>Remove
+action="simul">&Ctrl;&Shift;<keycap>R</keycap></keycombo> shortcut, 
+or the Menubar <menuchoice><guimenu>Window</guimenu><guimenuitem>Close
 Active View</guimenuitem></menuchoice> option, or &RMB; click on the Status Bar
-and choose the <guimenuitem>Remove Active View</guimenuitem> option from the
+and choose the <guimenuitem>Close View</guimenuitem> option from the
 resulting menu.</para>
 
 <para>If you use &konqueror; tabs, you can drag and drop between tabs
@@ -507,30 +522,123 @@ destination tab will pop to the front, allowing you to continue
 dragging and then drop the file.</para>
 
 </sect2>
-
+<!-- 4.5-->
 <sect2 id="dups">
-<title>Duplicate File Names</title>
-<para>If you try to paste a file into a folder that already 
-contains a file with the same name, &konqueror; will pop up a dialog box warning 
-you that the file already exists. You can then choose to:
+<title>Duplicate File or Folder Names</title>
+<para>If you try to paste a file or folder into a folder that already 
+contains an item with the same name, &konqueror; will pop up a dialog box warning 
+you that the item already exists. You can then choose to:
 </para>
 <itemizedlist>
-<listitem><para>
-<guilabel>Overwrite</guilabel> the old file with the newly copied one. 
-The <guibutton>Overwrite All</guibutton> button can be used if you have copied 
-multiple items.</para></listitem>
-<listitem><para>Cancel the paste operation by pressing the <guibutton>Skip
-</guibutton> or <guibutton>Skip All</guibutton> button.</para></listitem>
-<listitem><para>Give the file that is being copied a different name. You can 
+<listitem><para>Cancel the paste operation by pressing the <guibutton>Cancel
+</guibutton> button.</para></listitem>
+<listitem><para>Give the item that is being copied a different name. You can 
 do this by typing a new name into the text entry box or get &konqueror; to 
-<guibutton>Propose</guibutton> one. When you have done this press the 
-<guibutton>Rename</guibutton> button.</para></listitem>
+<guibutton>Suggest New Name</guibutton>. When you have done this press the 
+<guibutton>Continue</guibutton> button.</para></listitem>
+<listitem><para>
+If you have copied multiple items, <guibutton>Skip</guibutton> the current item. 
+</para></listitem>
 </itemizedlist>
+<para>The <guibutton>Apply to All</guibutton> button can be used if you have copied 
+multiple items.</para>
 </sect2>
 </sect1>
+<!-- begin copy from dolphin docbook-->
+<!-- 4.5 -->
+<sect1 id="selection">
+<title>Selecting Items in the View</title>
 
-<sect1 id="multiple">
-<title>Selecting Multiple Files</title>
+<para>
+There are several ways to select items in the view. Once a group of items
+is selected, all actions, such as
+<menuchoice><guimenuitem>Cut</guimenuitem></menuchoice>,
+<menuchoice><guimenuitem>Copy</guimenuitem></menuchoice>,
+<menuchoice><guimenuitem>Move to Trash</guimenuitem></menuchoice>,
+and drag and drop operations, affect all selected items.
+</para>
+
+<sect2 id="selection-mouse">
+<title>Selecting Items Using the Mouse</title>
+
+<itemizedlist>
+
+<listitem><para>
+You can press the &LMB; somewhere in the view and draw a rectangle around
+a group of items before releasing the button. This will select all items in the
+rectangle and clear the previous selection. If the &Shift; key is pressed during
+the selection process, the previous selection is kept.
+</para></listitem>
+
+<listitem><para>
+If the &Ctrl; key is pressed while an item is clicked with the &LMB;, the
+selection state of this item is toggled. If the &Ctrl; key is pressed while a
+rectangle is drawn around a group of items as described above, the selection
+state of all items in the rectangle will be toggled.
+</para></listitem>
+
+<listitem><para>
+If the &Shift; key is pressed while an item is clicked with the &LMB;, all items
+between the previous current item and the clicked item will be selected.
+</para></listitem>
+
+<listitem><para>
+If <guilabel>Show selection marker</guilabel> is enabled in the
+<guilabel>Behavior</guilabel> tab of the <menuchoice><guimenu>File Management</guimenu>
+<guimenuitem>General</guimenuitem></menuchoice> section of the settings, a small
+<guiicon>+</guiicon> or <guiicon>-</guiicon> button appears in the top
+left corner of the item which is currently hovered with the mouse. Clicking
+this sign selects or deselects the item, respectively.
+</para></listitem>
+
+</itemizedlist>
+
+</sect2>
+
+<sect2 id="selection-keyboard">
+<title>Selecting Items Using the Keyboard</title>
+
+<itemizedlist>
+
+<listitem><para>
+If an arrow key, <keycap>Page Up</keycap>, <keycap>Page Down</keycap>,
+<keycap>Home</keycap>, or <keycap>End</keycap> is pressed, the new current item
+is selected, and the previous selection is cleared.
+</para></listitem>
+
+<listitem><para>
+If the &Ctrl; key is held while one of the above keys is pressed, the selection
+remains unchanged.
+</para></listitem>
+
+<listitem><para>
+If the &Shift; key is held while one of the above keys is pressed, all items
+between the previous current item and the new current item will be selected.
+</para></listitem>
+
+<listitem><para>
+If <keycombo action="simul">&Ctrl;<keysym>Space</keysym></keycombo> is pressed,
+the selection state of the current item is toggled.
+</para></listitem>
+
+<listitem><para>
+<keycombo action="simul">&Ctrl;<keycap>A</keycap></keycombo> selects all items
+in the view.
+</para></listitem>
+
+<listitem><para>
+<keycombo action="simul">&Ctrl;&Shift;<keycap>A</keycap></keycombo> toggles the
+selection state of all items in the view.
+</para></listitem>
+
+</itemizedlist>
+
+</sect2>
+<!-- end copy from dolphin docbook-->
+
+<!-- selection-menu applies to dolphin as well copy over?-->
+<sect2 id="selection-menu">
+<title>Selecting Items Using the Menu</title>
 
 <para>You sometimes want to delete, copy or move a number of files that are 
 similar in some way. For example you may wish to move all of the .png graphics 
@@ -539,8 +647,8 @@ select multiple files based on similarities in their file names.</para>
 
 <para>Use the Menubar
 <menuchoice><guimenu>Edit</guimenu><guisubmenu>Selection</guisubmenu>
-<guimenuitem>Select...</guimenuitem></menuchoice> item or the shortcut
-<keycombo action="simul">&Ctrl;<keycap>+</keycap></keycombo>. This
+<guimenuitem>Select Matching Items...</guimenuitem></menuchoice> option or the shortcut
+<keycombo action="simul">&Ctrl;<keycap>S</keycap></keycombo>. This
 brings up a little dialog box in which you enter a filename containing
 the wildcard characters <keycap>*</keycap>, which matches any number
 of characters, and <keycap>?</keycap> which matches a single
@@ -558,88 +666,25 @@ not <filename>memo99.txt</filename>.</para></listitem>
 
 <para>When you have selected a range of files, you can narrow down the
 selection
-by using the Menubar <menuchoice><guimenu>Edit</guimenu>
-<guimenuitem>Unselect...</guimenuitem></menuchoice> option or <keycombo
-action="simul">&Ctrl;<keycap>-</keycap></keycombo> to specify
+by using the Menubar <menuchoice><guimenu>Edit</guimenu><guisubmenu>Selection</guisubmenu>
+<guimenuitem>Unselect Matching Items...</guimenuitem></menuchoice> option to specify
 which of the selected files should be removed from the selection.</para>
 
-<para>Use <keycombo action="simul">&Ctrl;<keycap>U</keycap></keycombo>
-or the Menubar <menuchoice><guimenu>Edit</guimenu>
+<para>Use the Menubar <menuchoice><guimenu>Edit</guimenu><guisubmenu>Selection</guisubmenu>
 <guimenuitem>Unselect All</guimenuitem></menuchoice> option or just
 &LMB; click on a clear area of the view to cancel the
 selection.</para>
 
 <para>You can even invert the selection: that is, deselect all selected
 files and select those that were previously unselected. Use the
-Menubar <menuchoice><guimenu>Edit</guimenu><guimenuitem>Invert
+Menubar <menuchoice><guimenu>Edit</guimenu><guisubmenu>Selection</guisubmenu><guimenuitem>Invert
 Selection</guimenuitem></menuchoice> option or <keycombo
-action="simul">&Ctrl;<keycap>*</keycap></keycombo> to do this.</para>
-
-<para>You can also select multiple files and folders by holding the <keycap>&Ctrl;</keycap> button while you click on each individual file or folder. This enables you to then move or copy multiple files and folders to a different location at one time by using the same method above.</para>
-
-<para>A number of useful shortcut keys can be used in list, tree and text 
-view modes:</para>
-<variablelist>
-
-<varlistentry>
-<term><keycap>Space</keycap></term>
-<listitem>
-<para>Toggle the current selection.
-</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><keycap>Insert</keycap></term>
-<listitem>
-<para>Toggle the current selection and move down to the next item.
-</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><keycombo action="simul">&Ctrl;<keysym>Up Arrow</keysym></keycombo>, 
-<keycombo action="simul">&Ctrl;<keysym>Down Arrow</keysym></keycombo>, 
-<keycombo action="simul">&Ctrl;<keycap>Home</keycap></keycombo>, 
-<keycombo action="simul">&Ctrl;<keycap>End</keycap></keycombo>, 
-<keycombo action="simul">&Ctrl;<keycap>Page Up</keycap></keycombo>, 
-<keycombo action="simul">&Ctrl;<keycap>Page Down</keycap></keycombo>
-</term>
-<listitem>
-<para>Move the selection, toggling the selection of everything on the way.
-</para>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><keycombo action="simul">&Shift;<keysym>Up Arrow</keysym></keycombo>, 
-<keycombo action="simul">&Shift;<keysym>Down Arrow</keysym></keycombo>, 
-<keycombo action="simul">&Shift;<keycap>Home</keycap></keycombo>, 
-<keycombo action="simul">&Shift;<keycap>End</keycap></keycombo>, 
-<keycombo action="simul">&Shift;<keycap>Page Up</keycap></keycombo>, 
-<keycombo action="simul">&Shift;<keycap>Page Down</keycap></keycombo>
-</term>
-<listitem>
-<para>Deselect everything, then move the selection, selecting everything on 
-the way.
-</para>
-</listitem>
-</varlistentry>
-</variablelist>
-
-<para>Once you have selected the right files then the normal delete, copy or
-move commands will act on all of the selected files at once. </para>
-
-<note><para>Depending on your keyboard type and locale, you may find
-that the <keycombo
-action="simul">&Ctrl;<keycap>+</keycap></keycombo>, <keycombo
-action="simul">&Ctrl;<keycap>-</keycap></keycombo> and <keycombo
-action="simul">&Ctrl;<keycap>*</keycap></keycombo> shortcuts 
-only work with the Numeric keypad <keycap>+</keycap>, <keycap>-</keycap> and
-<keycap>*</keycap> keys.</para></note>
+action="simul">&Ctrl;&Shift;<keycap>A</keycap></keycombo> to do this.</para>
+</sect2>
 
 </sect1>
 
+<!-- 4.5 -->
 <sect1 id="making">
 <title>Create New</title>
 
@@ -650,87 +695,6 @@ area in a folder view gives you a submenu letting you create any
 of the following in the current folder:</para>
 
 <variablelist>
-
-<varlistentry>
-<term><menuchoice><guisubmenu>File</guisubmenu><guimenuitem>Link To Application...
-</guimenuitem></menuchoice></term>
-<listitem><para>This option is most useful if you want to create an icon that
-will open a particular application. It opens a dialog box with three tabbed
-pages. The first, <guilabel>General</guilabel>, is where you choose an icon and
-the text that will appear with it. The second page,
-<guilabel>Permissions</guilabel>, lets you select who can use or modify the
-icon. In the <guilabel>Application</guilabel> page you must enter the <guilabel>Command</guilabel> that
-will run the application, for example, <userinput>kedit</userinput> to start up
-the &kedit; text editor. <userinput>kedit /home/pam/todo.txt</userinput> would
-open the file <filename>/home/pam/todo.txt</filename> in &kedit;. Advanced
-options such as the file types which the application can open are also
-available from this page.</para>
-
-<para>To make the application icon appear on your desktop, create the link in
-your <filename class="directory">~/Desktop</filename> folder (this may be 
-called something slightly different depending on how &kde; was installed on 
-your system) or get to the
-<guisubmenu>Create New...</guisubmenu> sub menu by
-<mousebutton>right</mousebutton> clicking on a free area of the desktop 
-instead of within &konqueror;'s window.</para>
-
-<para>If you have a lot of specialized application links and don't want to
-clutter up the desktop, then why not create them in your Applications
-folder. You can get there in &konqueror; by choosing
-<menuchoice><guimenu>Go</guimenu>
-<guimenuitem>Applications</guimenuitem></menuchoice>. Then create a single icon
-on your desktop to open your Applications folder, which is usually in
-<filename class="directory">~/.kde/share/applnk</filename>.</para>
-
-<para>To put an application link icon into the panel, first create it in the
-Applications folder then drag the icon onto a clear area of the
-panel.</para>
-
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice><guisubmenu>File</guisubmenu><guimenuitem>Link To Location (URL)...</guimenuitem></menuchoice></term>
-<listitem><para>This lets you create an icon to open &konqueror; at a
-particular
-folder or web page. As with <guimenuitem>Link To
-Application...</guimenuitem>
-you can make the application icon appear on your desktop by creating the link
-in
-your <filename>~/Desktop</filename> folder or going to the
-<guisubmenu>Create
-New...</guisubmenu> sub menu by right clicking on a free area of the
-desktop. When you first create it the text shown with the icon will be the full
-path or &URL;. You can change it by right clicking on the icon, selecting
-<guimenuitem>Properties...</guimenuitem> and entering the preferred text in
-the
-<guilabel>General</guilabel> tab page.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice><guisubmenu>Device</guisubmenu><guimenuitem>Floppy Device...</guimenuitem></menuchoice></term>
-<listitem><para>Use this option to create an icon that will mount a floppy disk
-and open an instance of &konqueror; showing the disk's contents. To unmount the
-disk when you have finished with it <mousebutton>right</mousebutton> click on
-the icon and select <guimenuitem>Unmount</guimenuitem>. In practice it doesn't
-have to be a floppy disk but can be any hard disk or partition on your system
-that is not normally mounted.  However, in most cases you will want to create the icon
-on
-your desktop.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice><guisubmenu>Device</guisubmenu><guimenuitem>Hard Disk...</guimenuitem></menuchoice></term>
-<listitem><para>This option is similar to <guimenuitem>Floppy Device...</guimenuitem> 
-but for a hard disk drive or partition.</para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><guimenuitem>CD/DVD-ROM Device...</guimenuitem></term>
-<listitem><para>This option is similar to <guimenuitem>Floppy
-Device...</guimenuitem> but for a <acronym>CD</acronym> or <acronym>DVD</acronym> 
-drive.</para></listitem>
-</varlistentry>
 
 <varlistentry>
 <term><guimenuitem>Folder...</guimenuitem></term>
@@ -747,44 +711,98 @@ file.</para></listitem>
 <varlistentry>
 <term><guimenuitem>HTML File...</guimenuitem></term>
 <listitem><para>Creates a skeleton <acronym>HTML</acronym> source file. When
-you
-type the new file's name into the dialog box it is probably best to give
+you type the new file's name into the dialog box it is probably best to give
 it a <literal role="extension">.html </literal> extension to avoid
 confusion.</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><guimenuitem>Presentation Document...</guimenuitem></term>
-<listitem><para>Creates a skeleton &koffice; 
-&kpresenter; document. Give its name a <literal role="extension">.kpr</literal>
-extension.</para></listitem>
+<term><guimenuitem>Illustration Document...</guimenuitem></term>
+<listitem><para>Creates a new OpenDocument Drawing.</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><guimenuitem>Text Document...</guimenuitem></term>
-<listitem><para>Creates a skeleton <application>KOffice</application> &kword;
-document using the standard &kword; style template. Give its name a <literal
-role="extension">.kwd</literal> extension.</para></listitem>
+<term><guimenuitem>Presentation Document...</guimenuitem></term>
+<listitem><para>Creates a skeleton OpenDocument Presentation document.
+  </para></listitem>
 </varlistentry>
 
 <varlistentry>
 <term><guimenuitem>Spread Sheet Document...</guimenuitem></term>
-<listitem><para>Use this to create a new <application>KOffice</application>
-&kspread; spreadsheet file, and name it with a <literal
-role="extension">.ksp</literal> extension.</para></listitem>
+<listitem><para>Use this to create a new OpenDocument Spread Sheet file.
+</para></listitem>
 </varlistentry>
 
 <varlistentry>
-<term><guimenuitem>Illustration Document...</guimenuitem></term>
-<listitem><para>Creates a new <application>KOffice</application> &kontour;
-document. Name it with the extension <literal
-role="extension">.kil</literal>.</para></listitem>
+<term><guimenuitem>Text Document...</guimenuitem></term>
+<listitem><para>Creates a skeleton OpenDocument Text file.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guimenuitem>Link To Location (URL)...</guimenuitem></term>
+<listitem><para>This lets you create an icon to open &konqueror; at a
+particular folder or web page. As with <guimenuitem>Link To Application...</guimenuitem>
+you can make the application icon appear on your desktop by creating the link
+in your <filename>~/Desktop</filename> folder or going to the <guisubmenu>Create
+New...</guisubmenu> sub menu by right clicking on a free area of the
+desktop.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guimenuitem>Basic link file or directory...</guimenuitem></term>
+<listitem><para>Create a symbolic link symlink for local files or folder.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guimenuitem>Link To Application...</guimenuitem></term>
+<listitem><para>This option is most useful if you want to create an icon that
+will open a particular application. It opens a dialog box with several tabbed
+pages. The first, <guilabel>General</guilabel>, is where you choose an icon and
+the text that will appear with it. The second page,
+<guilabel>Permissions</guilabel>, lets you select who can use or modify the
+icon. In the <guilabel>Application</guilabel> page you must enter the <guilabel>Command</guilabel> that
+will run the application, for example, <userinput>kwrite</userinput> to start up
+the &kwrite; text editor. <userinput>kwrite /home/pam/todo.txt</userinput> would
+open the file <filename>/home/pam/todo.txt</filename> in &kwrite;. Advanced
+options such as the file types which the application can open are also
+available from this page.</para>
+
+<para>To make the application icon appear on your desktop, create the link in
+your <filename class="directory">~/Desktop</filename> folder (this may be 
+called something slightly different depending on how &kde; was installed on 
+your system) or get to the <guisubmenu>Create New...</guisubmenu> sub menu by
+<mousebutton>right</mousebutton> clicking on a free area of the desktop 
+instead of within &konqueror;'s window.</para>
+
+<para>If you have a lot of specialized application links and don't want to
+clutter up the desktop, then why not create them in your Applications
+folder. You can get there in &konqueror; by choosing <menuchoice><guimenu>Go</guimenu>
+<guimenuitem>Applications</guimenuitem></menuchoice>. Then create a single icon
+on your desktop to open your Applications folder, which is usually in
+<filename class="directory">~/.kde/share/applnk</filename>.</para>
+<!-- what is the new path to Applications folder?
+folder is not writable per default-->
+<para>To put an application link icon into the panel, first create it in the
+Applications folder then drag the icon onto a clear area of the
+panel.</para>
+
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guisubmenu>Device</guisubmenu></term>
+<listitem><para>Use the options in this submenu to create an icon that will mount a device
+and open an instance of &konqueror; showing it's contents. To unmount the
+device when you have finished with it <mousebutton>right</mousebutton> click on
+the icon and select <guimenuitem>Unmount</guimenuitem>. 
+However, in most cases you will want to create the icon on your desktop.
+</para></listitem>
 </varlistentry>
 
 </variablelist>
 
 </sect1>
-
+<!-- 4.5 -->
 <sect1 id="newname">
 <title>Changing Names and Permissions</title>
 
@@ -794,12 +812,12 @@ role="extension">.kil</literal>.</para></listitem>
 
 <para>To change the name or permissions of a file or folder 
 <mousebutton>right</mousebutton> click on its name or icon and select the 
-<guimenuitem>Properties...</guimenuitem> item, or if you have 
+<guimenuitem>Properties</guimenuitem> item, or if you have 
 <quote>selected</quote> the file or folder, then you can use the Menubar 
-<menuchoice><guimenu>Edit</guimenu> 
-<guimenuitem>Properties</guimenuitem></menuchoice> option.</para>
+<menuchoice><guimenu>Edit</guimenu><guimenuitem>Properties</guimenuitem>
+</menuchoice> (<keycombo action="simul">&Alt;<keycap>Return</keycap></keycombo>) option.</para>
 
-<para>This will bring up the Properties dialog box with two tabbed 
+<para>This will bring up the Properties dialog box with several tabbed 
 pages:</para>
 
 <itemizedlist>
@@ -810,7 +828,7 @@ the associated icon.</para></listitem>
 ownership and access permissions and lets you change the permissions.
 </para></listitem>
 </itemizedlist>
-
+<!-- 4.5 -->
 <sect2 id="copyrename">
 <title>Copy and Rename</title>
 <para>If you want to make a copy of an existing file with a different name -- 
@@ -818,11 +836,11 @@ perhaps as a backup -- in the same folder as the original file, do a normal
 <guimenuitem>Copy</guimenuitem> then when you <guimenuitem>Paste</guimenuitem> 
 it a dialog box will pop up  complaining that the file already exists. 
 Just type the new name into the dialog's text box and press the 
-<guibutton>Rename</guibutton> button (or if you are feeling lazy pressing the 
-<guibutton>Propose</guibutton> button will generate a new name for you).</para>
+<guibutton>Continue</guibutton> button (or if you are feeling lazy pressing the 
+<guibutton>Suggest New Name</guibutton> button will generate a new name for you).</para>
 </sect2>
 
-<sect2 id="super-user">
+<!--sect2 id="super-user"> this is obsolete!
 <title>Super User Mode</title>
 
 <para>If you are running as a normal user and try to access files outside of
@@ -846,9 +864,9 @@ your system, and a wrong command can easily do irrevocable damage.</para>
 <para>Also, connecting to the internet as <systemitem class="username">root</systemitem> is an extremely bad idea, as it
 seriously increases your vulnerability to malicious hacking.</para></warning>
 
-</sect2>
+</sect2-->
 </sect1>
-
+<!-- 4.5 -->
 <sect1 id="file-associations">
 <title>Configuring File Associations</title>
 
@@ -866,7 +884,7 @@ and click on <guibutton>Help</guibutton>.</para>
 
 </sect1>
 
-
+<!-- 4.5 -->
 <sect1 id="commandline">
 <title>At the Command Line</title>
 
@@ -878,10 +896,10 @@ command line level.</para>
 <para>You can, of course, open an instance of &konsole;, perhaps with
 &konqueror;'s Menubar <menuchoice><guimenu>Tools</guimenu><guimenuitem>Open
 Terminal</guimenuitem></menuchoice> option or with <keycombo
-action="simul">&Ctrl;<keycap>T</keycap></keycombo>.</para>
+action="simul">&Ctrl;<keycap>F4</keycap></keycombo>.</para>
 <para>If you only want to launch a program or view a &URL;, the <menuchoice>
-<guimenu>Tools</guimenu><guimenuitem>Run Command</guimenuitem></menuchoice> 
-(<keycombo action="simul">&Alt;<keycap>F2</keycap></keycombo>) option may be 
+<guimenu>Tools</guimenu><guimenuitem>Execute Shell Command...</guimenuitem></menuchoice> 
+(<keycombo action="simul">&Ctrl;<keycap>E</keycap></keycombo>) option may be 
 easier.</para>
 
 <para><menuchoice><guimenu>Tools</guimenu><guimenuitem>Execute Shell Command...
