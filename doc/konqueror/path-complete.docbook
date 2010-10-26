@@ -6,8 +6,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup> 
 
-<date>2003-11-05</date>
-<releaseinfo>3.2</releaseinfo>
+<date>2010-10-26</date>
+<releaseinfo>&kde; 4.5</releaseinfo>
 </chapterinfo>
 
 
@@ -29,8 +29,9 @@ choose between the following options:</para>
 
 <varlistentry>
 <term><guimenuitem>Manual</guimenuitem></term>
+<!-- in 4.5 I see no diff to None -->
 <listitem><para>When you have typed part of a path or &URL;, pressing 
-<keycombo action="simul">&Ctrl;<keycap>E</keycap></keycombo> will complete the entry if it is 
+<keycombo action="simul">&Ctrl;<keycap>E</keycap></keycombo> or &Tab; will complete the entry if it is 
 possible to do so unambiguously.</para></listitem> 
 </varlistentry>
 
@@ -46,9 +47,10 @@ you wanted or press &Enter; to accept it.</para></listitem>
 <term><guimenuitem>Dropdown List</guimenuitem></term>
 <listitem><para>A drop-down window will appear as you type, showing the
 possible matches to what you have typed so far. When the path or &URL; that 
-you want appears in the window double click on it with the &LMB;. 
+you want appears in the window click on it with the &LMB;. 
 You can also use the 
-<keysym>Down Arrow</keysym> and <keysym>Up Arrow</keysym>
+<keysym>Down Arrow</keysym> or &Tab; and <keysym>Up Arrow</keysym> or
+<keycombo action="simul">&Shift;&Tab;</keycombo>
 keys to select it then press &Enter;.</para></listitem>
 </varlistentry>
 
@@ -56,18 +58,28 @@ keys to select it then press &Enter;.</para></listitem>
 <term><guimenuitem>Short Automatic</guimenuitem></term>
 <listitem><para>This is like Automatic mode except that it only extends 
 what you have typed as far as the next <keycap>/</keycap> symbol in the path 
-or &URL;. Press <keycombo action="simul">&Ctrl;<keycap>E</keycap></keycombo> to accept the 
+or &URL;. Press <keycombo action="simul">&Ctrl;<keycap>E</keycap></keycombo> or &Tab; to accept the 
 suggestion, &Enter; when the complete path or &URL; is 
 shown.</para></listitem>
 </varlistentry>
 
+<varlistentry>
+<term><guimenuitem>Dropdown List &amp; Automatic</guimenuitem></term>
+<listitem><para>This is a combination of both options described above.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guimenuitem>Default</guimenuitem></term>
+<listitem><para>This item appears at the bottom of the submenu and enables you
+to switch to the default behaviour <guimenuitem>Dropdown List</guimenuitem>.</para></listitem>
+</varlistentry>
+<!-- Entf + substring completion F7 ???-->
 </variablelist>
 <para>You should try out these different modes and pick the one that suits you
  best.</para>
 <para>The history of recently visited &URL;s that &konqueror; uses for the 
 Text Completion function can be viewed and edited in the <guilabel>History
-</guilabel> page of the <link linkend="sidebar">Navigation Panel</link>.</para>
-
+</guilabel> page of the <link linkend="sidebar">Sidebar</link>.</para>
 
 </chapter>
 <!--
