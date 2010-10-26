@@ -78,7 +78,7 @@ KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
 
     mainLayout->addWidget(miscGb);
 
-    cbShowDeleteCommand = new QCheckBox(i18n("Show 'Delete' context me&nu entries which bypass the trashcan"), this);
+    cbShowDeleteCommand = new QCheckBox(i18n("Show 'Delete' me&nu entries which bypass the trashcan"), this);
     mainLayout->addWidget(cbShowDeleteCommand);
     connect(cbShowDeleteCommand, SIGNAL(toggled(bool)), this, SLOT(changed()));
 
