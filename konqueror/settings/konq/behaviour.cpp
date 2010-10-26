@@ -83,7 +83,7 @@ KBehaviourOptions::KBehaviourOptions(QWidget *parent, const QVariantList &)
     connect(cbShowDeleteCommand, SIGNAL(toggled(bool)), this, SLOT(changed()));
 
     cbShowDeleteCommand->setWhatsThis(i18n("Check this if you want 'Delete' menu commands to be displayed "
-                                           "on the desktop and in the file manager's context menus. "
+                                           "on the desktop and in the file manager's menus and context menus. "
                                            "You can always delete files by holding the Shift key "
                                            "while calling 'Move to Trash'."));
 
