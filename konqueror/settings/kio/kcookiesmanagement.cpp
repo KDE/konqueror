@@ -78,20 +78,6 @@ CookieListViewItem::~CookieListViewItem()
     delete mCookie;
 }
 
-static QString reversePortAndHost(const QString& portHost)
-{
-    QString host(portHost);
-    const int pos = host.indexOf(':');
-    if (pos > 0) {
-      QString portNum = host.left(pos);
-      host.remove(0, pos+1);
-      Q_ASSERT(!host[0].isDigit()); // if we had host:port as input, something's really wrong
-      host += ':';
-      host += portNum;
-   }
-   return host;
-}
-
 void CookieListViewItem::init( CookieProp* cookie, const QString &domain,
                                bool cookieLoaded )
 {
@@ -102,7 +88,7 @@ void CookieListViewItem::init( CookieProp* cookie, const QString &domain,
     if (mCookie)
     {
         if (mDomain.isEmpty())
-            setText(0, tolerantFromAce(reversePortAndHost(mCookie->host).toLatin1()));
+            setText(0, tolerantFromAce(mCookie->host.toLatin1()));
         else
             setText(0, tolerantFromAce(mDomain.toLatin1()));
         setText(1, mCookie->name);
