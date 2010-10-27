@@ -24,6 +24,7 @@
 // Qt
 #include <QtDBus/QtDBus>
 #include <QtGui/QCheckBox>
+#include <QtGui/QGroupBox>
 #include <QtGui/QLayout>
 #include <QtGui/QLabel>
 
