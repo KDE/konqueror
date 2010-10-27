@@ -55,6 +55,8 @@
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
 #include <klocale.h>
+#include <kprocess.h>
+#include <ksycoca.h>
 
 #include "sdk/npupp.h"
 
@@ -669,9 +671,16 @@ int main( int argc, char **argv )
       printf("90\n"); fflush(stdout);
     }
 
-    // Tell kded to update sycoca database.
-    QDBusInterface kbuildsycoca("org.kde.kded", "/kbuildsycoca",
-                                "org.kde.kded");
-    if (kbuildsycoca.isValid())
+    if (QDBusConnection::sessionBus().interface()->isServiceRegistered("org.kde.kded")) {
+        // Tell kded to update sycoca database.
+        QDBusInterface kbuildsycoca("org.kde.kded", "/kbuildsycoca",
+                                    "org.kde.kded");
         kbuildsycoca.call("recreate");
+    } else {
+        // kded not running? fallback to calling kbuildsycoca directly:
+        KProcess proc;
+        proc << KStandardDirs::findExe(KBUILDSYCOCA_EXENAME);
+        proc.setOutputChannelMode(KProcess::MergedChannels); // silence kbuildsycoca output
+        proc.execute();
+    }
 }
