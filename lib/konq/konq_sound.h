@@ -19,7 +19,7 @@
 #ifndef __konq_sound_h__
 #define __konq_sound_h__
 
-#include <klibloader.h>
+#include <qobject.h>
 
 class KUrl;
 

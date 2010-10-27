@@ -23,6 +23,7 @@
 
 #include "konq_sound.h"
 #include <kurl.h>
+#include <kpluginfactory.h>
 
 using namespace std;
 
@@ -89,32 +90,28 @@ bool KonqSoundPlayerImpl::isPlaying()
 	return false;
 }
 
-class KonqSoundFactory : public KLibFactory
+class KonqSoundFactory : public KPluginFactory
 {
 public:
 	KonqSoundFactory(QObject *parent = 0)
-		: KLibFactory(parent) {}
+		: KPluginFactory(0, 0, parent) {}
 	virtual ~KonqSoundFactory() {}
 
 protected:
-	virtual QObject *createObject(QObject * = 0,
-		const char *className = "QObject", const QStringList &args = QStringList());
+	virtual QObject *create(const char *iface,
+							QWidget *parentWidget,
+							QObject *parent,
+							const QVariantList &args,
+							const QString &keyword);
 };
 
-QObject *KonqSoundFactory::createObject(QObject *,
-	const char *className, const QStringList &)
+QObject *KonqSoundFactory::create(const char *iface, QWidget *, QObject *, const QVariantList &, const QString &)
 {
-	if (qstrcmp(className, "KonqSoundPlayer") == 0)
+	if (qstrcmp(iface, "KonqSoundPlayer") == 0)
 		return new KonqSoundPlayerImpl();
 	return 0;
 }
 
-extern "C"
-{
-	KDE_EXPORT KLibFactory *init_konq_sound()
-	{
-		return new KonqSoundFactory();
-	}
-}
+K_EXPORT_PLUGIN(KonqSoundFactory)
 
 // vim: ts=4 sw=4 noet
