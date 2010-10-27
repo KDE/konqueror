@@ -32,7 +32,7 @@
 #include <QtGui/QTabWidget>
 
 // KDE
-#include <kgenericfactory.h>
+#include <kpluginfactory.h>
 #include <klineedit.h>
 #include <klocale.h>
 #include <kmessagebox.h>
@@ -49,30 +49,30 @@ KProxyDialog::KProxyDialog(QWidget *parent, const QVariantList &args)
 {
   Q_UNUSED(args);
   mUi.setupUi(this);
-  
+
   // signals and slots connections
   connect( mUi.rbNoProxy, SIGNAL( toggled(bool) ),
             SLOT( slotUseProxyChanged() ) );
-  
+
   connect( mUi.rbAutoDiscover, SIGNAL( toggled(bool) ),
             SLOT( slotChanged() ) );
   connect( mUi.rbAutoScript, SIGNAL( toggled(bool) ),
             SLOT( slotChanged() ) );
-  
+
   connect( mUi.rbPrompt, SIGNAL( toggled(bool) ),
             SLOT( slotChanged() ) );
   connect( mUi.rbPresetLogin, SIGNAL( toggled(bool) ),
             SLOT( slotChanged() ) );
-  
+
   connect( mUi.cbPersConn, SIGNAL( toggled(bool) ),
             SLOT( slotChanged() ) );
-  
+
   connect( mUi.location, SIGNAL( textChanged(const QString&) ),
             SLOT( slotChanged() ) );
-  
+
   connect( mUi.pbEnvSetup, SIGNAL( clicked() ), SLOT( setupEnvProxy() ) );
   connect( mUi.pbManSetup, SIGNAL( clicked() ), SLOT( setupManProxy() ) );
-  
+
 }
 
 KProxyDialog::~KProxyDialog()

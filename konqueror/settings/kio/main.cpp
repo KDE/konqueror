@@ -30,7 +30,7 @@
 #include <kcmoduleloader.h>
 #include <klocale.h>
 #include <kcomponentdata.h>
-#include <kgenericfactory.h>
+#include <kpluginfactory.h>
 
 // Local
 #include "kcookiesmain.h"

@@ -33,7 +33,7 @@
 // KDE
 #include <kprocess.h>
 #include <kdebug.h>
-#include <kgenericfactory.h>
+#include <kpluginfactory.h>
 #include <kio/http_slave_defaults.h>
 #include <klocale.h>
 #include <knuminput.h>
@@ -77,7 +77,7 @@ void CacheConfigModule::load()
   connect ( ui.rbCacheIfPossible, SIGNAL(toggled(bool)), SLOT(configChanged()) );
   connect ( ui.sbMaxCacheSize, SIGNAL(valueChanged(int)), SLOT(configChanged()) );
   emit changed( false );
-} 
+}
 
 void CacheConfigModule::save()
 {

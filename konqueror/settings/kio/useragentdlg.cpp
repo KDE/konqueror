@@ -44,7 +44,7 @@
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <kio/http_slave_defaults.h>
-#include <kgenericfactory.h>
+#include <kpluginfactory.h>
 
 
 K_PLUGIN_FACTORY_DECLARATION(KioConfigFactory)
@@ -334,7 +334,7 @@ void UserAgentDlg::save()
   QTreeWidgetItem* item;
   int itemCount = ui.sitePolicyTreeWidget->topLevelItemCount();
 
-  // Save and remove from the delete list all the groups that were 
+  // Save and remove from the delete list all the groups that were
   // not deleted by the end user.
   for(int i = 0; i < itemCount; i++)
   {
