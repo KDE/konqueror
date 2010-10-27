@@ -31,6 +31,7 @@
 #include <kio/paste.h>
 #include <kconfiggroup.h>
 #include <QtCore/QFile>
+#include <QtCore/QFileInfo>
 #include <QtGui/QPainter>
 #include <kiconloader.h>
 #include <QtGui/QCursor>
@@ -137,8 +138,25 @@ QString KonqSidebarDirTreeItem::externalMimeType() const
 
 bool KonqSidebarDirTreeItem::acceptsDrops( const Q3StrList & formats )
 {
-    if ( formats.contains("text/uri-list") )
-        return m_fileItem.acceptsDrops();
+    if ( formats.contains("text/uri-list") ) {
+        // A directory ?
+        if ( S_ISDIR( m_fileItem.mode() ) ) {
+            return m_fileItem.isWritable();
+        }
+
+        // But only local .desktop files and executables
+        if ( !m_fileItem.isLocalFile() )
+            return false;
+
+        if ( m_fileItem.mimetype() == "application/x-desktop")
+            return true;
+
+        // Executable, shell script ... ?
+        if ( QFileInfo(m_fileItem.url().toLocalFile()).isExecutable() )
+            return true;
+
+        return false;
+    }
     return false;
 }
 
