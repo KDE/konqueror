@@ -213,7 +213,7 @@ void KonqSidebarBookmarkModule::slotMoved(Q3ListViewItem *i, Q3ListViewItem*, Q3
     oldParentGroup.deleteBookmark( bookmark );
 
     // insert the new item.
-    parentGroup.moveItem(bookmark, afterBookmark);
+    parentGroup.moveBookmark(bookmark, afterBookmark);
 
     // inform others about the changed groups. quite expensive, so do
     // our best to update them in only one emitChanged call.
@@ -283,13 +283,14 @@ void KonqSidebarBookmarkModule::slotDropped(K3ListView *, QDropEvent *e, Q3ListV
         parentGroup = s_bookmarkManager->root();
     }
 
-    const KBookmark::List bookmarks = KBookmark::List::fromMimeData(e->mimeData());
+    QDomDocument parentDocument;
+    const KBookmark::List bookmarks = KBookmark::List::fromMimeData(e->mimeData(), parentDocument);
 
     // copy
     KBookmark::List::const_iterator it = bookmarks.constBegin();
     for (;it != bookmarks.constEnd(); ++it) {
         // insert new item.
-        parentGroup.moveItem(*it, afterBookmark);
+        parentGroup.moveBookmark(*it, afterBookmark);
     }
 
     s_bookmarkManager->emitChanged( parentGroup );
@@ -315,7 +316,7 @@ void KonqSidebarBookmarkModule::slotCreateFolder()
 
     KBookmark bookmark = parentGroup.createNewFolder("");//TODO use Dialog
     if(bi && !(bi->bookmark().isGroup()))
-	parentGroup.moveItem(bookmark, bi->bookmark());
+	parentGroup.moveBookmark(bookmark, bi->bookmark());
 
     s_bookmarkManager->emitChanged( parentGroup );
 }
