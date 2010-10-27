@@ -122,8 +122,8 @@ public:
     virtual KUrl baseUrl() const;
 
     // SelectorInterface
-    virtual Element querySelector(const QString& query) const;
-    virtual QList<Element> querySelectorAll(const QString& query) const;
+    virtual Element querySelector(const QString& query, KParts::SelectorInterface::QueryMethod method) const;
+    virtual QList<Element> querySelectorAll(const QString& query, KParts::SelectorInterface::QueryMethod method) const;
 
     KWebKitPart* part() const;
 };

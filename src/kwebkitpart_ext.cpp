@@ -505,22 +505,42 @@ static KParts::SelectorInterface::Element convertWebElement(const QWebElement& w
     return elem;
 }
 
-KParts::SelectorInterface::Element KWebKitHtmlExtension::querySelector(const QString& query) const
+KParts::SelectorInterface::Element KWebKitHtmlExtension::querySelector(const QString& query, KParts::SelectorInterface::QueryMethod method) const
 {
-    QWebFrame* webFrame = part()->view()->page()->mainFrame();
-    QWebElement webElem = webFrame->findFirstElement(query);
-    return convertWebElement(webElem);
+    switch (method) {
+    case KParts::SelectorInterface::EntireContent: {
+        QWebFrame* webFrame = part()->view()->page()->mainFrame();
+        QWebElement webElem = webFrame->findFirstElement(query);
+        return convertWebElement(webElem);
+    }
+    case KParts::SelectorInterface::SelectedContent:
+        // TODO: Implement support for querying only selected content...
+    default:
+        break;
+    }
+      
+    return KParts::SelectorInterface::Element();
 }
 
-QList<KParts::SelectorInterface::Element> KWebKitHtmlExtension::querySelectorAll(const QString& query) const
+QList<KParts::SelectorInterface::Element> KWebKitHtmlExtension::querySelectorAll(const QString& query, KParts::SelectorInterface::QueryMethod method) const
 {
-    QList<Element> result;
-    QWebFrame* webFrame = part()->view()->page()->mainFrame();
-    const QWebElementCollection elements = webFrame->findAllElements(query);
-    result.reserve(elements.count());
-    Q_FOREACH(const QWebElement& webElem, elements) {
-        result.append(convertWebElement(webElem));
+    QList<KParts::SelectorInterface::Element> result;
+    
+    switch (method) {
+    case KParts::SelectorInterface::EntireContent: {    
+        QWebFrame* webFrame = part()->view()->page()->mainFrame();
+        const QWebElementCollection elements = webFrame->findAllElements(query);
+        result.reserve(elements.count());
+        Q_FOREACH(const QWebElement& webElem, elements) {
+            result.append(convertWebElement(webElem));
+        }
     }
+    case KParts::SelectorInterface::SelectedContent:
+        // TODO: Implement support for querying only selected content...
+    default:
+        break;
+    }
+        
     return result;
 }
 
