@@ -40,7 +40,7 @@
 #include <kdirnotify.h>
 #include <kdesktopfile.h>
 #include <kglobalsettings.h>
-#include <klibloader.h>
+#include <klibrary.h>
 #include <kicon.h>
 #include <kiconloader.h>
 #include <kinputdialog.h>
@@ -64,14 +64,13 @@ getModule KonqSidebarTree::getPluginFactory(const QString &name)
 {
   if (!pluginFactories.contains(name))
   {
-    KLibLoader *loader = KLibLoader::self();
     QString libName    = pluginInfo[name];
-    KLibrary *lib      = loader->library(libName);
-    if (lib)
+    KLibrary lib(libName);
+    if (lib.load())
     {
       // get the create_ function
       QString factory = "create_" + libName;
-      KLibrary::void_function_ptr create    = lib->resolveFunction(QFile::encodeName(factory));
+      KLibrary::void_function_ptr create    = lib.resolveFunction(QFile::encodeName(factory));
       if (create)
       {
         getModule func = (getModule)create;
