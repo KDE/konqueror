@@ -93,6 +93,7 @@
 #include <QtGui/QPixmap>
 #include <QtGui/QLineEdit>
 
+#include <kdualaction.h>
 #include <kaboutdata.h>
 #include <ktoolbar.h>
 #include <konqbookmarkmenu.h>
@@ -3707,7 +3708,7 @@ void KonqMainWindow::initActions()
      kDebug() << "Action add_bookmark not found!";
   }
 
-  m_paShowMenuBar = KStandardAction::showMenubar( this, SLOT( slotShowMenuBar() ), this );
+  m_paShowMenuBar = KStandardAction::showHideMenubar( this, SLOT( slotShowMenuBar() ), this );
   actionCollection()->addAction( KStandardAction::name(KStandardAction::ShowMenubar), m_paShowMenuBar );
 
   action = actionCollection()->addAction( "konqintro" );
