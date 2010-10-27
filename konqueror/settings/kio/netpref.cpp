@@ -15,7 +15,7 @@
 #include <klocale.h>
 #include <kdialog.h>
 #include <kconfig.h>
-#include <kgenericfactory.h>
+#include <kpluginfactory.h>
 
 // Local
 #include "ksaveioconfig.h"

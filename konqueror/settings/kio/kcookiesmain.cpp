@@ -20,7 +20,7 @@
 #include <kapplication.h>
 #include <kmessagebox.h>
 #include <kdebug.h>
-#include <kgenericfactory.h>
+#include <kpluginfactory.h>
 
 // Local
 #include "kcookiespolicies.h"
