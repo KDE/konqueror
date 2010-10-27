@@ -22,14 +22,15 @@
 #include <kicon.h>
 #include <kactioncollection.h>
 #include <kinputdialog.h>
+#include <klocale.h>
 #include <kmessagebox.h>
 #include <kshell.h>
 #include <kapplication.h>
-#include <kgenericfactory.h>
+#include <kpluginfactory.h>
 #include <kauthorized.h>
 #include <kio/netaccess.h>
 
-KShellCmdPlugin::KShellCmdPlugin( QObject* parent, const QStringList & )
+KShellCmdPlugin::KShellCmdPlugin( QObject* parent, const QVariantList & )
     : KParts::Plugin( parent )
 {
     if (!KAuthorized::authorizeKAction("shell_access"))
@@ -90,8 +91,8 @@ void KShellCmdPlugin::slotExecuteShellCommand()
    }
 }
 
-typedef KGenericFactory<KShellCmdPlugin> KonqShellCmdPluginFactory;
-K_EXPORT_COMPONENT_FACTORY( konq_shellcmdplugin, KonqShellCmdPluginFactory( "kshellcmdplugin" ) )
+K_PLUGIN_FACTORY(KonqShellCmdPluginFactory, registerPlugin<KShellCmdPlugin>();)
+K_EXPORT_PLUGIN(KonqShellCmdPluginFactory("kshellcmdplugin"))
 
 #include "kshellcmdplugin.moc"
 
