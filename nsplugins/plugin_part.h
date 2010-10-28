@@ -65,7 +65,7 @@ class PluginCanvasWidget : public QWidget
 public:
 
   PluginCanvasWidget(QWidget *parent=0)
-    : QWidget(parent) {}
+    : QWidget(parent) { setAttribute(Qt::WA_NativeWindow); }
 
 protected:
   void resizeEvent(QResizeEvent *e);
