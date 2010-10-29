@@ -40,6 +40,7 @@
 #include <KDE/KPrintPreview>
 #include <KDE/KSaveFile>
 #include <KDE/KComponentData>
+#include <KDE/KProtocolInfo>
 #include <kdeversion.h>
 
 #include <QtCore/QPointer>
@@ -490,50 +491,85 @@ KWebKitHtmlExtension::KWebKitHtmlExtension(KWebKitPart* part)
 {
 }
 
+
 KUrl KWebKitHtmlExtension::baseUrl() const
 {
     return part()->view()->page()->mainFrame()->baseUrl();
 }
 
+bool KWebKitHtmlExtension::hasSelection() const
+{   // Hmm... QWebPage needs something faster than this to check
+    // whether there is selected content...
+    return !part()->view()->selectedText().isEmpty();
+}
+
+KParts::SelectorInterface::QueryMethods KWebKitHtmlExtension::supportedQueryMethods() const
+{
+    // TODO: Add support for selected content...
+    return KParts::SelectorInterface::EntireContent;
+}
+
 static KParts::SelectorInterface::Element convertWebElement(const QWebElement& webElem)
 {
-    KParts::SelectorInterface::Element elem;
-    elem.setTagName(webElem.tagName());
+    KParts::SelectorInterface::Element element;
+    element.setTagName(webElem.tagName());
     Q_FOREACH(const QString &attr, webElem.attributeNames()) {
-        elem.setAttribute(attr, webElem.attribute(attr));
+        element.setAttribute(attr, webElem.attribute(attr));
     }
-    return elem;
+    return element;
 }
 
 KParts::SelectorInterface::Element KWebKitHtmlExtension::querySelector(const QString& query, KParts::SelectorInterface::QueryMethod method) const
 {
+    KParts::SelectorInterface::Element element;
+
+    // If the specified method is None, return an empty list...
+    if (method == KParts::SelectorInterface::None)
+        return element;
+
+    // If the specified method is not supported, return an empty list...
+    if (!(supportedQueryMethods() & method))
+        return element;
+
     switch (method) {
     case KParts::SelectorInterface::EntireContent: {
-        QWebFrame* webFrame = part()->view()->page()->mainFrame();
-        QWebElement webElem = webFrame->findFirstElement(query);
-        return convertWebElement(webElem);
+        const QWebFrame* webFrame = part()->view()->page()->mainFrame();
+        element = convertWebElement(webFrame->findFirstElement(query));
+        break;
     }
     case KParts::SelectorInterface::SelectedContent:
         // TODO: Implement support for querying only selected content...
     default:
         break;
     }
-      
-    return KParts::SelectorInterface::Element();
+
+    return element;
 }
 
 QList<KParts::SelectorInterface::Element> KWebKitHtmlExtension::querySelectorAll(const QString& query, KParts::SelectorInterface::QueryMethod method) const
 {
-    QList<KParts::SelectorInterface::Element> result;
+    QList<KParts::SelectorInterface::Element> elements;
+
+    // If the specified method is None, return an empty list...
+    if (method == KParts::SelectorInterface::None)
+        return elements;
     
+    // If the specified method is None, return an empty list...
+    if (method == KParts::SelectorInterface::None)
+        return elements;
+
+    // If the specified method is not supported, return an empty list...
+    if (!(supportedQueryMethods() & method))
+        return elements;
+
     switch (method) {
-    case KParts::SelectorInterface::EntireContent: {    
-        QWebFrame* webFrame = part()->view()->page()->mainFrame();
-        const QWebElementCollection elements = webFrame->findAllElements(query);
-        result.reserve(elements.count());
-        Q_FOREACH(const QWebElement& webElem, elements) {
-            result.append(convertWebElement(webElem));
-        }
+    case KParts::SelectorInterface::EntireContent: {
+        const QWebFrame* webFrame = part()->view()->page()->mainFrame();
+        const QWebElementCollection collection = webFrame->findAllElements(query);
+        elements.reserve(collection.count());
+        Q_FOREACH(const QWebElement& element, collection)
+            elements.append(convertWebElement(element));
+        break;
     }
     case KParts::SelectorInterface::SelectedContent:
         // TODO: Implement support for querying only selected content...
@@ -541,7 +577,7 @@ QList<KParts::SelectorInterface::Element> KWebKitHtmlExtension::querySelectorAll
         break;
     }
         
-    return result;
+    return elements;
 }
 
 KWebKitPart* KWebKitHtmlExtension::part() const

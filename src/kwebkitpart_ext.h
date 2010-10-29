@@ -119,9 +119,12 @@ class KWebKitHtmlExtension : public KParts::HtmlExtension,
 public:
     KWebKitHtmlExtension(KWebKitPart* part);
 
+    // HtmlExtension
     virtual KUrl baseUrl() const;
+    virtual bool hasSelection() const;
 
     // SelectorInterface
+    virtual QueryMethods supportedQueryMethods() const;
     virtual Element querySelector(const QString& query, KParts::SelectorInterface::QueryMethod method) const;
     virtual QList<Element> querySelectorAll(const QString& query, KParts::SelectorInterface::QueryMethod method) const;
 
