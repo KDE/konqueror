@@ -162,6 +162,27 @@ static void outputStringList(const QStringList &list, bool separateOutput)
     }
 }
 
+
+KGuiItem configuredYes(const QString &text)
+{
+  return KGuiItem( text, "dialog-ok" );
+}
+
+KGuiItem configuredNo(const QString &text)
+{
+  return KGuiItem( text, "process-stop" );
+}
+
+KGuiItem configuredCancel(const QString &text)
+{
+  return KGuiItem( text, "dialog-cancel" );
+}
+
+KGuiItem configuredContinue(const QString &text)
+{
+  return KGuiItem( text, "arrow-right" );
+}
+
 static int directCommand(KCmdLineArgs *args)
 {
     QString title;
@@ -203,6 +224,27 @@ static int directCommand(KCmdLineArgs *args)
     if (printWId || attach)
     {
       (void)new WinIdEmbedder(printWId, winid);
+    }
+
+    // button labels
+    // Initialize with default labels
+    KGuiItem yesButton = KStandardGuiItem::yes();
+    KGuiItem noButton = KStandardGuiItem::no();
+    KGuiItem cancelButton = KStandardGuiItem::cancel();
+    KGuiItem continueButton = KStandardGuiItem::cont();
+
+    // Customize the asked labels
+    if (args->isSet("yes-label")) {
+          yesButton = configuredYes( args->getOption("yes-label") );
+    }
+    if (args->isSet("no-label")) {
+        noButton = configuredNo( args->getOption("no-label") );
+    }
+    if (args->isSet("cancel-label")) {
+        cancelButton = configuredCancel( args->getOption("cancel-label") );
+    }
+    if (args->isSet("continue-label")) {
+        continueButton = configuredContinue( args->getOption("continue-label") );
     }
 
     // --yesno and other message boxes
@@ -269,12 +311,11 @@ static int directCommand(KCmdLineArgs *args)
         }
 
         if ( type == KMessageBox::WarningContinueCancel ) {
-            /* TODO configurable button texts*/
-            ret = KMessageBox::messageBox( 0, type, text, title, KStandardGuiItem::cont(),
-                KStandardGuiItem::no(), KStandardGuiItem::cancel(), dontagain );
+            ret = KMessageBox::messageBox( 0, type, text, title, continueButton,
+                noButton, cancelButton, dontagain );
         } else {
-            ret = KMessageBox::messageBox( 0, type, text, title /*, TODO configurable button texts*/,
-                KStandardGuiItem::yes(), KStandardGuiItem::no(), KStandardGuiItem::cancel(), dontagain );
+            ret = KMessageBox::messageBox( 0, type, text, title,
+                yesButton, noButton, cancelButton, dontagain );
         }
         delete dontagaincfg;
         // ret is 1 for Ok, 2 for Cancel, 3 for Yes, 4 for No and 5 for Continue.
@@ -780,6 +821,10 @@ int main(int argc, char *argv[])
   options.add("warningyesno <text>", ki18n("Warning message box with yes/no buttons"));
   options.add("warningcontinuecancel <text>", ki18n("Warning message box with continue/cancel buttons"));
   options.add("warningyesnocancel <text>", ki18n("Warning message box with yes/no/cancel buttons"));
+  options.add("yes-label <text>", ki18n("Use text as Yes button label"));
+  options.add("no-label <text>", ki18n("Use text as No button label"));
+  options.add("cancel-label <text>", ki18n("Use text as Cancel button label"));
+  options.add("continue-label <text>", ki18n("Use text as Continue button label"));
   options.add("sorry <text>", ki18n("'Sorry' message box"));
   options.add("error <text>", ki18n("'Error' message box"));
   options.add("msgbox <text>", ki18n("Message Box dialog"));
