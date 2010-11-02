@@ -34,7 +34,9 @@ class QAction;
  * here menu appearing in dolphin/konqueror. In the setup-method you may check
  * the properties of the dropped files, and if applicable, append your own
  * QAction that the user may trigger in the menu.
- * */
+ *
+ * @author Harald Hvaal <metellius@gmail.com>
+ */
 class LIBKONQ_EXPORT KonqDndPopupMenuPlugin : public QObject
 {
     Q_OBJECT
@@ -54,12 +56,11 @@ public:
      * (which file items, their common mimetype, etc.)
      * @param destination the URL to where the file(s) were dropped
      * @param pluginActions a QList with the QActions that will be plugged into
-     * the menu. 
+     * the menu.
      */
     virtual void setup(const KFileItemListProperties& popupMenuInfo,
             KUrl destination,
             QList<QAction*>& pluginActions) = 0;
 };
-
 
 #endif /* _KONQ_DNDPOPUPMENUPLUGIN_H_ */
