@@ -86,7 +86,7 @@ void ModuleManagerTest::initTestCase()
     scf.writeEntry("Type", "Link");
     scf.writePathEntry("URL", "http://www.kde.org");
     scf.writeEntry("Icon", "internet-web-browser");
-    scf.writeEntry("Name", i18n("SideBar Test Plugin"));
+    scf.writeEntry("Name", QString::fromLatin1("SideBar Test Plugin"));
     scf.writeEntry("X-KDE-KonqSidebarModule", "konqsidebar_web");
     scf.sync();
     QVERIFY(QFile::exists(m_globalDir + "testModule.desktop"));
@@ -112,7 +112,7 @@ void ModuleManagerTest::testListModules()
     QVERIFY(modules.contains("testModule.desktop"));
     QVERIFY(m_moduleManager->moduleDataPath("testModule.desktop").endsWith("/testModule.desktop"));
     const KDesktopFile df("data", m_moduleManager->moduleDataPath("testModule.desktop"));
-    QCOMPARE(df.readName(), i18n("SideBar Test Plugin"));
+    QCOMPARE(df.readName(), QString::fromLatin1("SideBar Test Plugin"));
 
     const QStringList modules2 = m_moduleManager2->modules();
     QCOMPARE(modules2.count(), m_realModules + 1);
