@@ -34,7 +34,7 @@ static KAboutData createAboutData()
 K_PLUGIN_FACTORY(KonqSidebarFactory,
                  registerPlugin<KonqSidebarPart>();
     )
-K_EXPORT_COMPONENT_FACTORY(konq_sidebar, KonqSidebarFactory(createAboutData()))
+K_EXPORT_PLUGIN(KonqSidebarFactory(createAboutData()))
 
 KonqSidebarPart::KonqSidebarPart(QWidget *parentWidget, QObject *parent, const QVariantList&)
     : KParts::ReadOnlyPart(parent)
