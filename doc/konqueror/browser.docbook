@@ -80,7 +80,7 @@ Web Shortcuts</link> feature can make this easier.</para>
  go there.</para>
 
 <para>To open a link in a new instance of &konqueror;, leaving the
-old page still visible, &RMB; click on the link on it and select the
+old page still visible, &RMB; click on the link and select the
 <guimenuitem>Open in New Window</guimenuitem> option. Alternatively, 
 you might want to <guimenuitem>Open in New Tab</guimenuitem>. 
 <link linkend="tabbrowse">Tabbed Browsing</link> will let 
@@ -94,9 +94,9 @@ Left/Right</guimenuitem></menuchoice> (<keycombo action="simul">&Ctrl;
 <guimenuitem>Split View Top/Bottom</guimenuitem></menuchoice> (<keycombo action="simul">&Ctrl;
 &Shift;<keycap>T</keycap></keycombo>) option which will let you see different
 pages at the same time. This can be useful if you are looking through a
-complicated set of <acronym>HTML</acronym> pages<!--, but make sure the little link
+complicated set of <acronym>HTML</acronym> pages, but make sure the little link
 box at the bottom right hand corner is empty when you are doing
-  this-->.</para>
+this.</para>
 <para>To go back to the previous page use the <keycombo
 action="simul">&Alt;<keysym>Left</keysym></keycombo>
 shortcut, the <guibutton>Back</guibutton> button on the Toolbar, or the menubar
@@ -142,8 +142,9 @@ over the tab bar (presuming that your mouse has one). Also,
 double-clicking over the empty tab bar space will open a new
 tab.</para>
 
-<para>The <guimenuitem>Open in Background Tab</guimenuitem> option in the 
-&RMB; menu also downloads the page and shows a new tab for it, but the new 
+<para>Using the <guilabel>Open new tabs in the background</guilabel> option in the 
+<guilabel>General</guilabel> page of the <guimenu>Settings</guimenu> 
+dialog clicking an a link downloads the page and shows a new tab for it, but the new 
 page will not be displayed until you <mousebutton>left</mousebutton> click 
 on the tab.</para>
 
