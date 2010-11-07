@@ -28,8 +28,8 @@ int ChfnProcess::exec(const char *pass, const char *name)
   putenv((char*)"LC_ALL=C");
 
   QList<QByteArray> args;
-      args += "-f";
-      args += name;
+  args += "-f";
+  args += name;
   int ret = KDESu::PtyProcess::exec("chfn", args);
   if (ret < 0)
       return ChfnNotFound;
