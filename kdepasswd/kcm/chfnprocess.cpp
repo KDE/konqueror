@@ -25,7 +25,7 @@ int ChfnProcess::exec(const char *pass, const char *name)
 {
   // Try to set the default locale to make the parsing of the output
   // of `chfn' easier.
-  putenv((char*)"LC_ALL=C");
+  qputenv("LC_ALL", "C");
 
   QList<QByteArray> args;
   args += "-f";
