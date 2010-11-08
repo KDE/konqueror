@@ -227,7 +227,7 @@ void KCMUserAccount::save()
 		ChfnProcess *proc = new ChfnProcess();
 		int ret = proc->exec(dlg.password().toLocal8Bit() , _mw->leRealname->text().toLocal8Bit() );
 		if ( ret )
-			{
+		{
 			if ( ret == ChfnProcess::PasswordError )
 				KMessageBox::sorry( this, i18n("You must enter a correct password."));
 
