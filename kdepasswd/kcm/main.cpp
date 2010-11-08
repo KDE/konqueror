@@ -233,7 +233,7 @@ void KCMUserAccount::save()
 
 			else
 			{
-				KMessageBox::sorry( this, i18n("An error occurred and your password has "
+				KMessageBox::sorry( this, i18n("An error occurred and your name has "
 							"probably not been changed. The error "
 							"message was:\n%1", QString::fromLocal8Bit(proc->error())));
 				kDebug() << "ChfnProcess->exec() failed. Error code: " << ret
