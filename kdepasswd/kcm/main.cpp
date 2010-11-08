@@ -206,12 +206,6 @@ void KCMUserAccount::save()
 {
 	KCModule::save(); /* KConfigXT */
 
-	/* Save KDE's homebrewn settings */
-	_kes->setSetting( KEMailSettings::RealName, _mw->leRealname->text() );
-	_kes->setSetting( KEMailSettings::EmailAddress, _mw->leEmail->text() );
-	_kes->setSetting( KEMailSettings::Organization, _mw->leOrganization->text() );
-	_kes->setSetting( KEMailSettings::OutServer, _mw->leSMTP->text() );
-
 	/* Save realname to /etc/passwd */
 	if ( _mw->leRealname->isModified() )
 	{
@@ -239,18 +233,30 @@ void KCMUserAccount::save()
 				kDebug() << "ChfnProcess->exec() failed. Error code: " << ret
 					<< "\nOutput:" << proc->error() << endl;
 			}
+
+			delete proc;
+			return;
 		}
 
 		delete proc;
 	}
 
 	/* Save the image */
-	if( !_facePixmap.isNull() ) {
+	if( !_facePixmap.isNull() )
+	{
 		if( !_facePixmap.save( KCFGUserAccount::faceFile(), "PNG" ))
+		{
 			KMessageBox::error( this, i18n("There was an error saving the image: %1" ,
 				KCFGUserAccount::faceFile()) );
+			return;
+		}
 	}
 
+	/* Save KDE's homebrewn settings */
+	_kes->setSetting( KEMailSettings::RealName, _mw->leRealname->text() );
+	_kes->setSetting( KEMailSettings::EmailAddress, _mw->leEmail->text() );
+	_kes->setSetting( KEMailSettings::Organization, _mw->leOrganization->text() );
+	_kes->setSetting( KEMailSettings::OutServer, _mw->leSMTP->text() );
 }
 
 void KCMUserAccount::changeFace(const QPixmap &pix)
