@@ -56,7 +56,6 @@ class KBookmarkMenu;
 class KBookmarkActionMenu;
 class KCMultiDialog;
 class KNewFileMenu;
-class KDualAction;
 class KToggleAction;
 class KonqBidiHistoryAction;
 class KBookmarkBar;
@@ -672,7 +671,7 @@ private: // members
 #endif
   KToggleAction *m_ptaUseHTML;
 
-  KDualAction *m_paShowMenuBar;
+  KToggleAction *m_paShowMenuBar;
 
   KToggleFullScreenAction *m_ptaFullScreen;
 
