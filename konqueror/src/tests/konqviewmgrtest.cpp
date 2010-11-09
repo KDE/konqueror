@@ -353,6 +353,7 @@ void ViewMgrTest::testLinkedViews()
     QKeyEvent ev( QKeyEvent::KeyPress, Qt::Key_Return, 0, "\n" );
     QApplication::sendEvent( part->view(), &ev );
     qApp->processEvents(); // openUrlRequestDelayed
+    QTest::qWait(0);
     // Check that the link opened in the 2nd view, not the first one
     QCOMPARE(view->url().url(), origUrl.url());
     QCOMPARE(view2->url().url(), KUrl("data:text/plain, Link target").url());
