@@ -27,7 +27,6 @@
 #include <kparts/browserextension.h>
 #include <kparts/factory.h>
 #include <kparts/part.h>
-#include <klibloader.h>
 #include <QWidget>
 #include <QPointer>
 #include "nspluginloader.h"
