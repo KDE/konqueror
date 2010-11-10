@@ -1,5 +1,4 @@
 #include "konqsidebar_oldtreemodule.h"
-#include <QAction>
 #include <kdesktopfile.h>
 #include "konq_sidebartree.h"
 #include <kvbox.h>
@@ -7,12 +6,13 @@
 #include <kstandarddirs.h>
 #include <klocale.h>
 #include <kconfig.h>
+#include <kpluginfactory.h>
 #include <kinputdialog.h>
 #include <kiconloader.h>
-#include <kparts/factory.h>
 #include <knameandurlinputdialog.h>
 #include <k3listviewsearchline.h>
 
+#include <QAction>
 #include <QtGui/QClipboard>
 #include <QtGui/QToolButton>
 #include <QtGui/QApplication>
