@@ -17,7 +17,7 @@
 #include "sidebar_part.h"
 #include <kaboutdata.h>
 
-#include <kparts/factory.h>
+#include <kparts/part.h>
 #include <konq_events.h>
 #include <kdebug.h>
 #include <QtGui/QApplication>
