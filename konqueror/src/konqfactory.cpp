@@ -36,7 +36,6 @@
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <kmimetypetrader.h>
-#include <kparts/factory.h>
 #include <kparts/part.h>
 #include <kservicetypetrader.h>
 #include <kdeversion.h>
