@@ -226,7 +226,7 @@ static void segv_handler(int)
 
 static int tryCheck(int write_fd, const QString &absFile)
 {
-    KLibrary _handle( QFile::encodeName(absFile) );
+    KLibrary _handle(absFile);
     if (!_handle.load()) {
         kDebug(1433) << " - open failed with message " <<
 		         _handle.errorString() << ", skipping " << endl;
