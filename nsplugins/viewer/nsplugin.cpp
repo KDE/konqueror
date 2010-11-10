@@ -53,7 +53,7 @@
 #include <kglobal.h>
 #include <kio/netaccess.h>
 #include <kprotocolmanager.h>
-#include <klibloader.h>
+#include <klibrary.h>
 #include <klocale.h>
 #include <kstandarddirs.h>
 #include <ktemporaryfile.h>
@@ -1397,7 +1397,7 @@ NSPluginClass::NSPluginClass( const QString &library,
     QDBusConnection::sessionBus().registerObject( objectName(), this );
 
     // initialize members
-    _handle = KLibLoader::self()->library(QFile::encodeName(library));
+    _handle = new KLibrary(QFile::encodeName(library), KGlobal::mainComponent(), this);
     _libname = library;
     _constructed = false;
     _error = true;
@@ -1409,7 +1409,7 @@ NSPluginClass::NSPluginClass( const QString &library,
     connect( _timer, SIGNAL(timeout()), SLOT(timer()) );
 
     // check lib handle
-    if (!_handle) {
+    if (!_handle->load()) {
         kDebug(1431) << "Could not dlopen " << library;
         return;
     }

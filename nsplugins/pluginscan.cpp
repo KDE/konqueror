@@ -45,7 +45,7 @@
 #include <kdebug.h>
 #include <kglobal.h>
 #include <kstandarddirs.h>
-#include <klibloader.h>
+#include <klibrary.h>
 #include <kconfig.h>
 #include <kconfiggroup.h>
 #include <kcrash.h>
@@ -226,10 +226,10 @@ static void segv_handler(int)
 
 static int tryCheck(int write_fd, const QString &absFile)
 {
-    KLibrary *_handle = KLibLoader::self()->library( QFile::encodeName(absFile) );
-    if (!_handle) {
+    KLibrary _handle( QFile::encodeName(absFile) );
+    if (!_handle.load()) {
         kDebug(1433) << " - open failed with message " <<
-		         KLibLoader::self()->lastErrorMessage() << ", skipping " << endl;
+		         _handle.errorString() << ", skipping " << endl;
         return 1;
     }
 
@@ -239,7 +239,7 @@ static int tryCheck(int write_fd, const QString &absFile)
 
     NPError (*func_GetValue)(void *, NPPVariable, void *) =
         (NPError(*)(void *, NPPVariable, void *))
-        _handle->resolveFunction("NP_GetValue");
+        _handle.resolveFunction("NP_GetValue");
     if ( func_GetValue ) {
 
         // get name
@@ -262,10 +262,10 @@ static int tryCheck(int write_fd, const QString &absFile)
 
     // get mime description function pointer
     char* (*func_GetMIMEDescription)() =
-        (char *(*)())_handle->resolveFunction("NP_GetMIMEDescription");
+        (char *(*)())_handle.resolveFunction("NP_GetMIMEDescription");
     if ( !func_GetMIMEDescription ) {
         kDebug(1433) << " - no GetMIMEDescription, skipping";
-        KLibLoader::self()->unloadLibrary( QFile::encodeName(absFile) );
+        _handle.unload();
         return 1;
     }
 
@@ -273,7 +273,7 @@ static int tryCheck(int write_fd, const QString &absFile)
     QString mimeInfo = func_GetMIMEDescription();
     if ( mimeInfo.isEmpty() ) {
         kDebug(1433) << " - no mime info returned, skipping";
-        KLibLoader::self()->unloadLibrary( QFile::encodeName(absFile) );
+        _handle.unload();
         return 1;
     }
 
@@ -286,7 +286,7 @@ static int tryCheck(int write_fd, const QString &absFile)
 
     // unload plugin lib
     kDebug(1433) << " - unloading plugin";
-    KLibLoader::self()->unloadLibrary( QFile::encodeName(absFile) );
+    _handle.unload();
 
     // create a QDataStream for our IPC pipe (to send plugin info back to the parent)
     QFile stream_file;
