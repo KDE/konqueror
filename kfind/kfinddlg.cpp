@@ -81,8 +81,8 @@ KfindDlg::KfindDlg(const KUrl & url, QWidget *parent)
 
   connect(tabWidget, SIGNAL(startSearch()),
           this, SLOT(startSearch()));
-  //connect(this, SIGNAL(user3Clicked()),
-  //        this, SLOT(startSearch()));
+  connect(this, SIGNAL(user3Clicked()),
+          this, SLOT(startSearch()));
   connect(this, SIGNAL(user2Clicked()),
 	  this, SLOT(stopSearch()));
   connect(this, SIGNAL(user1Clicked()),
