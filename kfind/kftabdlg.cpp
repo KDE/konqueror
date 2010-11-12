@@ -166,9 +166,12 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
     connect( browseB, SIGNAL(clicked()),
              this, SLOT(getDirectory()) );
 
-    connect( nameBox, SIGNAL(activated(int)),
+    connect( nameBox, SIGNAL(returnPressed()),
              this, SIGNAL(startSearch()));
 
+    connect( dirBox, SIGNAL(returnPressed()),
+             this, SIGNAL(startSearch()));
+    
     // ************ Page Two
 
     pages[1] = new QWidget;

@@ -79,8 +79,10 @@ KfindDlg::KfindDlg(const KUrl & url, QWidget *parent)
   vBox->addWidget(win, 1);
   vBox->addWidget(mStatusBar, 0);
 
-  connect(this, SIGNAL(user3Clicked()),
-	  this, SLOT(startSearch()));
+  connect(tabWidget, SIGNAL(startSearch()),
+          this, SLOT(startSearch()));
+  //connect(this, SIGNAL(user3Clicked()),
+  //        this, SLOT(startSearch()));
   connect(this, SIGNAL(user2Clicked()),
 	  this, SLOT(stopSearch()));
   connect(this, SIGNAL(user1Clicked()),
