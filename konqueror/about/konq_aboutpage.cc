@@ -155,7 +155,7 @@ QString KonqAboutPageSingleton::intro()
           .arg( i18n( "To quickly go to your Home folder press the "
                       " home button <img width='16' height='16' src=\"%1\"></img>." , gohome_icon_path) )
           .arg( i18n( "For more detailed documentation on Konqueror click <a href=\"%1\">here</a>." ,
-                      QString("exec:/khelpcenter")) )
+                      QString("exec:/khelpcenter help:/konqueror")) )
           .arg( i18n( "<em>Tuning Tip:</em> If you want the Konqueror web browser to start faster,"
 			" you can turn off this information screen by clicking <a href=\"%1\">here</a>. You can re-enable it"
 			" by choosing the Help -> Konqueror Introduction menu option, and then pressing "
@@ -210,12 +210,13 @@ QString KonqAboutPageSingleton::specs()
           .arg( i18n("built-in") )
           .arg( i18n("<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)", QString("http://www.w3.org/Style/CSS/")) )
           .arg( i18n("built-in") )
-          .arg( i18n("<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)", QString("http://www.ecma.ch/ecma1/STAND/ECMA-262.HTM")) )
+          .arg( i18n("<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)", 
+		     QString("http://www.ecma-international.org/publications/standards/ECMA-262.HTM")) )
           .arg( i18n("JavaScript disabled (globally). Enable JavaScript <A HREF=\"%1\">here</A>.", QString("exec:/kcmshell4 khtml_java_js")) )
           .arg( i18n("JavaScript enabled (globally). Configure JavaScript <A HREF=\\\"%1\\\">here</A>.", QString("exec:/kcmshell4 khtml_java_js")) ) // leave the double backslashes here, they are necessary for javascript !
-          .arg( i18n("Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support", QString("http://java.sun.com")) )
-          .arg( i18n("JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">Blackdown</A>, <A HREF=\"%2\">IBM</A> or <A HREF=\"%3\">Sun</A>)",
-                       QString("http://www.blackdown.org"), QString("http://www.ibm.com"), QString("http://java.sun.com")) )
+          .arg( i18n("Secure <A HREF=\"%1\">Java</A><SUP>&reg;</SUP> support", QString("http://www.oracle.com/technetwork/java/index.html")) )
+          .arg( i18n("JDK 1.2.0 (Java 2) compatible VM (<A HREF=\"%1\">IBM</A> or <A HREF=\"%2\">Sun/Oracle</A>)",
+                       QString("http://www.ibm.com"), QString("http://www.oracle.com/technetwork/java/index.html")) )
           .arg( i18n("Enable Java (globally) <A HREF=\"%1\">here</A>.", QString("exec:/kcmshell4 khtml_java_js")) ) // TODO Maybe test if Java is enabled ?
           .arg( i18n("Netscape Communicator<SUP>&reg;</SUP> <A HREF=\"%4\">plugins</A> (for viewing <A HREF=\"%1\">Flash<SUP>&reg;</SUP></A>, <A HREF=\"%2\">Real<SUP>&reg;</SUP></A>Audio, <A HREF=\"%3\">Real<SUP>&reg;</SUP></A>Video, etc.)",
                        QString("http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"),
@@ -237,7 +238,7 @@ QString KonqAboutPageSingleton::specs()
           .arg( i18n("Transfer protocols") )
           .arg( i18n("HTTP 1.1 (including gzip/bzip2 compression)") )
           .arg( i18n("FTP") )
-          .arg( i18n("and <A HREF=\"%1\">many more...</A>", QString("exec:/kcmshell4 ioslaveinfo")) )
+          .arg( i18n("and <A HREF=\"%1\">many more (see Kioslaves in KHelpcenter)...</A>", QString("exec:/khelpcenter")) ) 
           .arg( i18nc("A feature of Konqueror", "URL-Completion") )
           .arg( i18n("Manual"))
 	  .arg( i18n("Popup"))
@@ -262,15 +263,15 @@ QString KonqAboutPageSingleton::tips()
 
     KIconLoader *iconloader = KIconLoader::global();
     QString viewmag_icon_path =
-	    iconloader->iconPath("zoom-in", KIconLoader::Small );
+	    iconloader->iconPath("format-font-size-more", KIconLoader::Small );
     QString history_icon_path =
 	    iconloader->iconPath("view-history", KIconLoader::Small );
     QString openterm_icon_path =
 	    iconloader->iconPath("utilities-terminal", KIconLoader::Small );
     QString locationbar_erase_rtl_icon_path =
-	    iconloader->iconPath("edit-clear-locationbar-rtl", KIconLoader::Small );
-    QString locationbar_erase_icon_path =
 	    iconloader->iconPath("edit-clear-locationbar-ltr", KIconLoader::Small );
+    QString locationbar_erase_icon_path =
+	    iconloader->iconPath("edit-clear-locationbar-rtl", KIconLoader::Small );
     QString window_fullscreen_icon_path =
 	    iconloader->iconPath("view-fullscreen", KIconLoader::Small );
     QString view_left_right_icon_path =
@@ -297,15 +298,15 @@ QString KonqAboutPageSingleton::tips()
 		      "Web-Shortcuts predefined to make searching for software or looking "
 		      "up certain words in an encyclopedia a breeze. You can even "
                       "<a href=\"%1\">create your own</a> Web-Shortcuts." , QString("exec:/kcmshell4 ebrowsing")) )
-	  .arg( i18n( "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in the"
+	  .arg( i18n( "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in the HTML"
 		      " toolbar to increase the font size on your web page.", viewmag_icon_path) )
 	  .arg( i18n( "When you want to paste a new address into the Location toolbar you might want to "
 		      "clear the current entry by pressing the black arrow with the white cross "
 		      "<img width='16' height='16' src=\"%1\"></img> in the toolbar.",
                QApplication::isRightToLeft() ? locationbar_erase_rtl_icon_path : locationbar_erase_icon_path))
 	  .arg( i18n( "To create a link on your desktop pointing to the current page, "
-		      "simply drag the \"Location\" label that is to the left of the Location toolbar, drop it on to "
-		      "the desktop, and choose \"Link\"." ) )
+		      "simply drag the icon (favicon) that is to the left of the Location toolbar, drop it on to "
+		      "the desktop, and choose \"Icon\"." ) ) 
 	  .arg( i18n( "You can also find <img width='16' height='16' src=\"%1\" /> \"Full-Screen Mode\" "
 		      "in the Settings menu. This feature is very useful for \"Talk\" "
 		      "sessions.", window_fullscreen_icon_path) )
@@ -317,7 +318,7 @@ QString KonqAboutPageSingleton::tips()
 	  .arg( i18n( "Use the <a href=\"%1\">user-agent</a> feature if the website you are visiting "
                       "asks you to use a different browser "
 		      "(and do not forget to send a complaint to the webmaster!)" , QString("exec:/kcmshell4 useragent")) )
-	  .arg( i18n( "The <img width='16' height='16' src=\"%1\"></img> History in your SideBar ensures "
+	  .arg( i18n( "The <img width='16' height='16' src=\"%1\"></img> History in your Sidebar ensures "
 		      "that you can keep track of the pages you have visited recently.", history_icon_path) )
 	  .arg( i18n( "Use a caching <a href=\"%1\">proxy</a> to speed up your"
 		      " Internet connection.", QString("exec:/kcmshell4 proxy")) )
