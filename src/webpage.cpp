@@ -659,7 +659,7 @@ bool WebPage::extension(Extension extension, const ExtensionOption *option, Exte
     if (extension == QWebPage::ErrorPageExtension && !d->ignoreError)
     {
         const QWebPage::ErrorPageExtensionOption *extOption = static_cast<const QWebPage::ErrorPageExtensionOption*>(option);
-        kDebug() << extOption->domain << extOption->error << extOption->errorString;
+        //kDebug() << extOption->domain << extOption->error << extOption->errorString;
         if (extOption->domain == QWebPage::QtNetwork) {
             QWebPage::ErrorPageExtensionReturn *extOutput = static_cast<QWebPage::ErrorPageExtensionReturn*>(output);
             extOutput->content = errorPage(d->kioErrorCode, extOption->errorString, extOption->url).toUtf8();
@@ -673,7 +673,7 @@ bool WebPage::extension(Extension extension, const ExtensionOption *option, Exte
 
 bool WebPage::supportsExtension(Extension extension) const
 {
-    kDebug() << extension;
+    //kDebug() << extension;
     if (extension == QWebPage::ErrorPageExtension)
         return true;
 

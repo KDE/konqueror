@@ -218,42 +218,28 @@ void WebKitBrowserExtension::updateEditActions()
 
 void WebKitBrowserExtension::searchProvider()
 {
-    if (d->view) {
-        KUrl url;
-#if KDE_IS_VERSION(4,4,86)
-        KAction *action = qobject_cast<KAction*>(sender());
-        if (action) {
-            url = action->data().toUrl();
-            if (url.host().isEmpty()) {
-                KUriFilterData data;
-                data.setData(action->data().toString());
-                if (KUriFilter::self()->filterUri(data, QStringList() << QL1S("kurisearchfilter")))
-                    url = data.uri();
-            }
-        }
-#else
-        // action name is of form "previewProvider[<searchproviderprefix>:]"
-        const QString searchProviderPrefix = QString(sender()->objectName()).mid(14);
-
-        const QString text = d->view->selectedText();
+    if (!d->view)
+        return;
+    
+    KAction *action = qobject_cast<KAction*>(sender());
+    if (!action)
+        return;
+    
+    KUrl url = action->data().toUrl();
+    
+    if (url.host().isEmpty()) {
         KUriFilterData data;
-        QStringList list;
-        data.setData(searchProviderPrefix + text);
-        list << "kurisearchfilter" << "kuriikwsfilter";
-
-        if (!KUriFilter::self()->filterUri(data, list)) {
-            KDesktopFile file("services", "searchproviders/google.desktop");
-            const QString encodedSearchTerm = QUrl::toPercentEncoding(text);
-            KConfigGroup cg(file.desktopGroup());
-            data.setData(cg.readEntry("Query").replace("\\{@}", encodedSearchTerm));
-        }
-
-        url = data.uri();
-#endif
-        KParts::BrowserArguments browserArgs;
-        browserArgs.frameName = "_blank";
-        emit openUrlRequest(url, KParts::OpenUrlArguments(), browserArgs);
+        data.setData(action->data().toString());
+        if (KUriFilter::self()->filterSearchUri(data, KUriFilter::WebShortcutFilter))
+            url = data.uri();
     }
+
+    if (!url.isValid())
+      return;
+    
+    KParts::BrowserArguments browserArgs;
+    browserArgs.frameName = "_blank";
+    emit openUrlRequest(url, KParts::OpenUrlArguments(), browserArgs);
 }
 
 void WebKitBrowserExtension::reparseConfiguration()
