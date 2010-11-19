@@ -4,8 +4,8 @@ project(KDEBASE_APPS)
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules )
 
 #search packages used by KDE
-set(KDE_MIN_VERSION "4.5.60")
-find_package(KDE4 4.5.60 REQUIRED)
+set(KDE_MIN_VERSION "4.5.80")
+find_package(KDE4 4.5.80 REQUIRED)
 find_package(Strigi REQUIRED)
 find_package(ZLIB REQUIRED)
 include (KDE4Defaults)
