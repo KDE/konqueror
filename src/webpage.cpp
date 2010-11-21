@@ -609,7 +609,7 @@ bool WebPage::handleMailToUrl (const QUrl &url, NavigationType type) const
             case QWebPage::NavigationTypeLinkClicked:
                 if (!files.isEmpty() && KMessageBox::warningContinueCancelList(0,
                                                                                i18n("<qt>Do you want to allow this site to attach "
-                                                                                    "the following files to the email message ?</qt>"),
+                                                                                    "the following files to the email message?</qt>"),
                                                                                files, i18n("Email Attachment Confirmation"),
                                                                                KGuiItem(i18n("&Allow attachments")),
                                                                                KGuiItem(i18n("&Ignore attachments")), QL1S("WarnEmailAttachment")) == KMessageBox::Continue) {
