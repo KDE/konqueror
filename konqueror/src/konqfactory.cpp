@@ -83,6 +83,7 @@ KParts::ReadOnlyPart *KonqViewFactory::create( QWidget *parentWidget, QObject * 
 static KonqViewFactory tryLoadingService(KService::Ptr service)
 {
     KPluginLoader pluginLoader(*service);
+    pluginLoader.setLoadHints(QLibrary::ExportExternalSymbolsHint); // #110947
     KPluginFactory* factory = pluginLoader.factory();
     if (!factory) {
         KMessageBox::error(0,
