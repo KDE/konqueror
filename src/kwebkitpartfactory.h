@@ -23,17 +23,17 @@
 #ifndef WEBKITPARTFACTORY
 #define WEBKITPARTFACTORY
 
-#include <kparts/factory.h>
+#include <kpluginfactory.h>
 
 #include <QtCore/QHash>
 
-class KWebKitFactory : public KParts::Factory
+class KWebKitFactory : public KPluginFactory
 {
     Q_OBJECT
 public:
     KWebKitFactory();
     virtual ~KWebKitFactory();
-    virtual KParts::Part *createPartObject(QWidget *parentWidget, QObject *parent, const char *className, const QStringList &args);
+    virtual QObject *create(const char* iface, QWidget *parentWidget, QObject *parent, const QVariantList& args, const QString &keyword);
 
 private Q_SLOTS:
     void slotDestroyed(QObject * obj);
