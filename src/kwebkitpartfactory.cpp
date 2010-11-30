@@ -53,8 +53,8 @@ QObject *KWebKitFactory::create(const char* iface, QWidget *parentWidget, QObjec
     Q_UNUSED(keyword);
     Q_UNUSED(args);
 
-    // NOTE: The code below is what makes proper integration of QtWebKit's history
-    // management with that of any KParts based application possible!!!
+    // NOTE: The code below is what makes it possible to properly integrate QtWebKit's
+    // history management with any KParts based application.
     QString tempFileName;
     KTemporaryFile tempFile;
     tempFile.setFileTemplate(KStandardDirs::locateLocal("data", QLatin1String("kwebkitpart/autosave/XXXXXX")));
