@@ -80,6 +80,8 @@ WebView::~WebView()
 
 void WebView::loadUrl(const KUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &bargs)
 {
+    page()->setProperty("NavigationTypeUrlEntered", true);
+    
     if (args.reload()) {
       pageAction(KWebPage::Reload)->trigger();
       return;
