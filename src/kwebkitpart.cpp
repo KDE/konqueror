@@ -71,8 +71,8 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
                                         "(C) 2008-2010 Urs Wolfer\n"
                                         "(C) 2007 Trolltech ASA"));
 
+    about.addAuthor(ki18n("Dawit Alemayehu"), ki18n("Maintainer, Developer"), "adawit@kde.org");
     about.addAuthor(ki18n("Urs Wolfer"), ki18n("Maintainer, Developer"), "uwolfer@kde.org");
-    about.addAuthor(ki18n("Dawit Alemayehu"), ki18n("Developer"), "adawit@kde.org");
     about.addAuthor(ki18n("Michael Howell"), ki18n("Developer"), "mhowell123@gmail.com");
     about.addAuthor(ki18n("Laurent Montel"), ki18n("Developer"), "montel@kde.org");
     about.addAuthor(ki18n("Dirk Mueller"), ki18n("Developer"), "mueller@kde.org");
