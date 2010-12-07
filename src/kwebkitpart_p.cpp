@@ -31,9 +31,9 @@
 #include "ui/passwordbar.h"
 #include "ui/searchbar.h"
 
-#include <kwebwallet.h>
 #include <kdeversion.h>
 #include <kcodecaction.h>
+#include <KDE/KGlobalSettings>
 #include <KDE/KLocalizedString>
 #include <KDE/KStringHandler>
 #include <KDE/KMessageBox>
@@ -50,8 +50,10 @@
 #include <KDE/KConfig>
 #include <KDE/KAcceleratorManager>
 #include <KDE/KUriFilter>
+#include <KDE/KWebWallet>
 #include <KParts/StatusBarExtension>
 
+#include <QtCore/QRect>
 #include <QtCore/QFile>
 #include <QtCore/QTextCodec>
 #include <QtGui/QVBoxLayout>
@@ -114,8 +116,12 @@ void KWebKitPartPrivate::init(QWidget *mainWidget, const QString& sessionFileNam
     connect(webPage, SIGNAL(restoreFrameStateRequested(QWebFrame *)),
             this, SLOT(slotRestoreFrameState(QWebFrame *)));
     connect(webPage, SIGNAL(contentsChanged()), this, SLOT(slotContentsChanged()));
-    connect(webPage, SIGNAL(jsStatusBarMessage(const QString &)),
-            q, SIGNAL(setStatusBarText(const QString &)));
+    connect(webPage, SIGNAL(statusBarMessage(const QString&)),
+            this, SIGNAL(slotSetStatusBarText(const QString &)));
+    connect(webPage, SIGNAL(windowCloseRequested()),
+            this, SLOT(slotWindowCloseRequested()));
+    connect(this, SIGNAL(geometryChangeRequested(const QRect &)),
+            this, SLOT(slotGeometryChangeRequested(const QRect &)));
     connect(webView, SIGNAL(linkShiftClicked(const KUrl &)),
             webPage, SLOT(downloadUrl(const KUrl &)));
 
@@ -618,5 +624,78 @@ void KWebKitPartPrivate::slotSetTextEncoding(QTextCodec * codec)
         }
     }
 }
+
+void KWebKitPartPrivate::slotSetStatusBarText(const QString& text)
+{
+    const QString host = webPage ? webPage->mainFrame()->url().host() : QString();
+    if (WebKitSettings::self()->windowStatusPolicy(host) == WebKitSettings::KJSWindowStatusAllow)
+        emit q->setStatusBarText(text);
+}
+
+void KWebKitPartPrivate::slotWindowCloseRequested()
+{
+    emit browserExtension->requestFocus(q);
+    if (KMessageBox::questionYesNo(webView,
+                                   i18n("Close window?"), i18n("Confirmation Required"),
+                                   KStandardGuiItem::close(), KStandardGuiItem::cancel())
+        == KMessageBox::Yes) {
+        q->deleteLater();
+        q = 0;
+    }
+}
+
+void KWebKitPartPrivate::slotGeometryChangeRequested(const QRect & rect)
+{
+    if (!webView || !webPage)
+       return;
+
+    const QString host = webPage->mainFrame()->url().host();
+
+    const int x = webView->x();
+    const int y = webView->y();
+
+    // FIXME: Figure out why this doesn't seem to work...
+    if (WebKitSettings::self()->windowMovePolicy(host) == WebKitSettings::KJSWindowMoveAllow &&
+        (x != rect.x() || y != rect.y()))
+        emit browserExtension->moveTopLevelWidget(rect.x(), rect.y());
+
+    const int height = rect.height();
+    const int width = rect.width();
+
+    // parts of following code are based on kjs_window.cpp
+    // Security check: within desktop limits and bigger than 100x100 (per spec)
+    if (width < 100 || height < 100) {
+        //kDebug() << "Window resize refused, window would be too small (" << width << "," << height << ")";
+        return;
+    }
+
+    QRect sg = KGlobalSettings::desktopGeometry(webView);
+
+    if (width > sg.width() || height > sg.height()) {
+        //kDebug() << "Window resize refused, window would be too big (" << width << "," << height << ")";
+        return;
+    }
+
+    if (WebKitSettings::self()->windowResizePolicy(host) == WebKitSettings::KJSWindowResizeAllow) {
+        //kDebug() << "resizing to " << width << "x" << height;
+        emit browserExtension->resizeTopLevelWidget(width, height);
+    }
+
+    // If the window is out of the desktop, move it up/left
+    // (maybe we should use workarea instead of sg, otherwise the window ends up below kicker)
+    const int right = x + webView->frameGeometry().width();
+    const int bottom = y + webView->frameGeometry().height();
+    int moveByX = 0;
+    int moveByY = 0;
+    if (right > sg.right())
+        moveByX = - right + sg.right(); // always <0
+    if (bottom > sg.bottom())
+        moveByY = - bottom + sg.bottom(); // always <0
+    if ((moveByX || moveByY) &&
+        WebKitSettings::self()->windowMovePolicy(host) == WebKitSettings::KJSWindowMoveAllow) {
+        emit browserExtension->moveTopLevelWidget(x + moveByX, y + moveByY);
+    }
+}
+
 
 #include "kwebkitpart_p.moc"

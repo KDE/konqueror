@@ -41,6 +41,7 @@ class KWebKitPart;
 class WebKitBrowserExtension;
 
 class QUrl;
+class QRect;
 class QWidget;
 class QAction;
 class QWebFrame;
@@ -88,6 +89,9 @@ private Q_SLOTS:
     void slotDeleteNonPasswordStorableSite();
     void slotRemoveCachedPasswords();
     void slotSetTextEncoding(QTextCodec*);
+    void slotSetStatusBarText(const QString& text);
+    void slotWindowCloseRequested();
+    void slotGeometryChangeRequested(const QRect &);
 
 private:
     KWebKitPart *q;

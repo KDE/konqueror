@@ -97,12 +97,6 @@ Q_SIGNALS:
      */
     void loadAborted(const KUrl &url);
 
-    /**
-     * This signal is emitted whenever status message is received from javascript
-     * and the user's configuration allows it to be set.
-     */
-    void jsStatusBarMessage(const QString &);
-
 protected:
     /**
      * Reimplemented for internal reasons, the API is not affected.
@@ -119,9 +113,6 @@ protected:
 protected Q_SLOTS:
     void slotUnsupportedContent(QNetworkReply *reply);
     void slotRequestFinished(QNetworkReply *reply);
-    void slotGeometryChangeRequested(const QRect &rect);
-    void slotWindowCloseRequested();
-    void slotStatusBarMessage(const QString &message);
 
 private:
     bool checkLinkSecurity(const QNetworkRequest &req, NavigationType type) const;
