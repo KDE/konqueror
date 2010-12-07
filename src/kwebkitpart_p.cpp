@@ -117,10 +117,10 @@ void KWebKitPartPrivate::init(QWidget *mainWidget, const QString& sessionFileNam
             this, SLOT(slotRestoreFrameState(QWebFrame *)));
     connect(webPage, SIGNAL(contentsChanged()), this, SLOT(slotContentsChanged()));
     connect(webPage, SIGNAL(statusBarMessage(const QString&)),
-            this, SIGNAL(slotSetStatusBarText(const QString &)));
+            this, SLOT(slotSetStatusBarText(const QString &)));
     connect(webPage, SIGNAL(windowCloseRequested()),
             this, SLOT(slotWindowCloseRequested()));
-    connect(this, SIGNAL(geometryChangeRequested(const QRect &)),
+    connect(webPage, SIGNAL(geometryChangeRequested(const QRect &)),
             this, SLOT(slotGeometryChangeRequested(const QRect &)));
     connect(webView, SIGNAL(linkShiftClicked(const KUrl &)),
             webPage, SLOT(downloadUrl(const KUrl &)));
