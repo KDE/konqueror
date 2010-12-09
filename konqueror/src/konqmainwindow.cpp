@@ -544,18 +544,13 @@ void KonqMainWindow::openUrl(KonqView *_view, const KUrl &_url,
         view = m_currentView; /* Note, this can be 0, e.g. on startup */
     else if (!view && req.browserArgs.newTab()) {
 
-        QString serviceName;
-         // Use same html part as the current view (e.g. webkit).
-        if (m_currentView && m_currentView->supportsMimeType("text/html"))
-            serviceName = m_currentView->service()->desktopEntryName();
-
         // The URL should be opened in a new tab. Let's create the tab right away,
         // it gives faster user feedback (#163628). For a short while (kde-4.1-beta1)
         // I removed this entire block so that we wouldn't end up with a useless tab when
         // launching an external application for this mimetype. But user feedback
         // in all cases is more important than empty tabs in some cases.
         view = m_pViewManager->addTab("text/html",
-                                      serviceName,
+                                      QString(),
                                       false,
                                       req.openAfterCurrentPage);
         if (view) {
