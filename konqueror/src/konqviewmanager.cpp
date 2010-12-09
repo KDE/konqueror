@@ -222,7 +222,18 @@ KonqView* KonqViewManager::addTab(const QString &serviceType, const QString &ser
 
   Q_ASSERT( !serviceType.isEmpty() );
 
-  KonqViewFactory newViewFactory = createView( serviceType, serviceName, service, partServiceOffers, appServiceOffers, true /*forceAutoEmbed*/ );
+  QString actualServiceName = serviceName;
+  if (serviceType == "text/html" && actualServiceName.isEmpty()) {
+      // Use same html part as the current view (e.g. webkit).
+      // This is down here in this central method because it should work for
+      // MMB-opens-tab, window.open (createNewWindow), and more.
+      KonqView* currentView = m_pMainWindow->currentView();
+      if (currentView && currentView->supportsMimeType("text/html")) {
+          actualServiceName = currentView->service()->desktopEntryName();
+      }
+  }
+
+  KonqViewFactory newViewFactory = createView( serviceType, actualServiceName, service, partServiceOffers, appServiceOffers, true /*forceAutoEmbed*/ );
 
   if( newViewFactory.isNull() )
     return 0L; //do not split at all if we can't create the new view
