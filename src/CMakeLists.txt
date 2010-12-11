@@ -11,6 +11,7 @@ set(kwebkit_LIB_SRCS
     webpage.cpp
     websslinfo.cpp
     networkaccessmanager.cpp
+    fakepage.cpp
     settings/webkitsettings.cpp
     settings/khtml_filter.cpp
     ui/searchbar.cpp

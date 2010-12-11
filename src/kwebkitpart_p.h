@@ -92,6 +92,10 @@ private Q_SLOTS:
     void slotSetStatusBarText(const QString& text);
     void slotWindowCloseRequested();
     void slotGeometryChangeRequested(const QRect &);
+    void slotToolBarVisibilityChangeRequested(bool);
+    void slotMenuBarVisibilityChangeRequested(bool);
+    void slotStatusBarVisibilityChangeRequested(bool);
+    void slotPrintRequested(QWebFrame*);
 
 private:
     KWebKitPart *q;

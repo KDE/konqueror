@@ -51,12 +51,16 @@
 #include <KDE/KAcceleratorManager>
 #include <KDE/KUriFilter>
 #include <KDE/KWebWallet>
+#include <KDE/KMainWindow>
+#include <KDE/KMenuBar>
+#include <KDE/KToolBar>
 #include <KParts/StatusBarExtension>
 
 #include <QtCore/QRect>
 #include <QtCore/QFile>
 #include <QtCore/QTextCodec>
 #include <QtGui/QVBoxLayout>
+#include <QtGui/QPrintPreviewDialog>
 #include <QtDBus/QDBusInterface>
 #include <QtWebKit/QWebFrame>
 #include <QtWebKit/QWebElement>
@@ -122,6 +126,14 @@ void KWebKitPartPrivate::init(QWidget *mainWidget, const QString& sessionFileNam
             this, SLOT(slotWindowCloseRequested()));
     connect(webPage, SIGNAL(geometryChangeRequested(const QRect &)),
             this, SLOT(slotGeometryChangeRequested(const QRect &)));
+    connect(webPage, SIGNAL(menuBarVisibilityChangeRequested(bool)),
+            this, SLOT(slotMenuBarVisibilityChangeRequested(bool)));
+    connect(webPage, SIGNAL(toolBarVisibilityChangeRequested(bool)),
+            this, SLOT(slotToolBarVisibilityChangeRequested(bool)));
+    connect(webPage, SIGNAL(statusBarVisibilityChangeRequested(bool)),
+            this, SLOT(slotStatusBarVisibilityChangeRequested(bool)));
+    connect(webPage, SIGNAL(printRequested(QWebFrame*)),
+            this, SLOT(slotPrintRequested(QWebFrame*)));
     connect(webView, SIGNAL(linkShiftClicked(const KUrl &)),
             webPage, SLOT(downloadUrl(const KUrl &)));
 
@@ -319,7 +331,6 @@ void KWebKitPartPrivate::slotLoadFinished(bool ok)
             q->setArguments(args);
         }
     }
-
 
     /*
       NOTE: Support for stopping meta data redirects is implemented in QtWebKit
@@ -635,13 +646,15 @@ void KWebKitPartPrivate::slotSetStatusBarText(const QString& text)
 void KWebKitPartPrivate::slotWindowCloseRequested()
 {
     emit browserExtension->requestFocus(q);
+#if 0    
     if (KMessageBox::questionYesNo(webView,
                                    i18n("Close window?"), i18n("Confirmation Required"),
                                    KStandardGuiItem::close(), KStandardGuiItem::cancel())
-        == KMessageBox::Yes) {
-        q->deleteLater();
-        q = 0;
-    }
+        != KMessageBox::Yes)
+        return;
+#endif    
+    q->deleteLater();
+    q = 0;    
 }
 
 void KWebKitPartPrivate::slotGeometryChangeRequested(const QRect & rect)
@@ -651,12 +664,13 @@ void KWebKitPartPrivate::slotGeometryChangeRequested(const QRect & rect)
 
     const QString host = webPage->mainFrame()->url().host();
 
-    const int x = webView->x();
-    const int y = webView->y();
-
-    // FIXME: Figure out why this doesn't seem to work...
+    // NOTE: If a new window was created from another window which is in
+    // maximized mode and its width and/or height were not specified at the
+    // time of its creation, which is always the case in QWebPage::createWindow,
+    // then any move operation will seem not to work. That is because the new
+    // window will be in maximized mode where moving it will not be possible...
     if (WebKitSettings::self()->windowMovePolicy(host) == WebKitSettings::KJSWindowMoveAllow &&
-        (x != rect.x() || y != rect.y()))
+        (webView->x() != rect.x() || webView->y() != rect.y()))
         emit browserExtension->moveTopLevelWidget(rect.x(), rect.y());
 
     const int height = rect.height();
@@ -683,8 +697,8 @@ void KWebKitPartPrivate::slotGeometryChangeRequested(const QRect & rect)
 
     // If the window is out of the desktop, move it up/left
     // (maybe we should use workarea instead of sg, otherwise the window ends up below kicker)
-    const int right = x + webView->frameGeometry().width();
-    const int bottom = y + webView->frameGeometry().height();
+    const int right = webView->x() + webView->frameGeometry().width();
+    const int bottom = webView->y() + webView->frameGeometry().height();
     int moveByX = 0;
     int moveByY = 0;
     if (right > sg.right())
@@ -693,8 +707,65 @@ void KWebKitPartPrivate::slotGeometryChangeRequested(const QRect & rect)
         moveByY = - bottom + sg.bottom(); // always <0
     if ((moveByX || moveByY) &&
         WebKitSettings::self()->windowMovePolicy(host) == WebKitSettings::KJSWindowMoveAllow) {
-        emit browserExtension->moveTopLevelWidget(x + moveByX, y + moveByY);
+        emit browserExtension->moveTopLevelWidget(webView->x() + moveByX, webView->y() + moveByY);
     }
+}
+
+static KMainWindow* topLevelWindowForPart(KParts::ReadOnlyPart* part)
+{
+    if (!part)
+        return 0;
+    
+    // Allow modification of visibility statuses only when a new window is
+    // forcefully created which means WebPage::createWindow received either
+    // the WebDialog or WebModalDialog WebWindowType parameters.
+    const KParts::BrowserExtension* extension = part->browserExtension();
+    //kDebug() << "force new window ?" << extension->browserArguments().forcesNewWindow();
+    if (extension && !extension->browserArguments().forcesNewWindow())
+        return 0;
+  
+    const QWidget* mainWidget = part->widget();
+    if (!mainWidget)
+       return 0;
+
+    return qobject_cast<KMainWindow*>(mainWidget->window());
+}
+
+void KWebKitPartPrivate::slotMenuBarVisibilityChangeRequested(bool visible)
+{    
+    KMainWindow* window = topLevelWindowForPart(q);
+    if (window)
+        window->menuBar()->setVisible(visible);
+}
+
+void KWebKitPartPrivate::slotStatusBarVisibilityChangeRequested(bool visible)
+{
+    KMainWindow* window = topLevelWindowForPart(q);
+    if (window)
+        window->statusBar()->setVisible(visible);
+    
+}
+
+void KWebKitPartPrivate::slotToolBarVisibilityChangeRequested(bool visible)
+{
+    KMainWindow* window = topLevelWindowForPart(q);
+    if (!window)
+        return;
+    
+    QList<KToolBar*> toolBars = window->toolBars();
+    Q_FOREACH(KToolBar* bar, toolBars)
+        bar->setVisible(visible);
+}
+
+void KWebKitPartPrivate::slotPrintRequested(QWebFrame* frame)
+{
+    if (!frame)
+        return;
+    
+    QPrintPreviewDialog dlg(webView);
+    connect(&dlg, SIGNAL(paintRequested(QPrinter *)),
+            frame, SLOT(print(QPrinter *)));
+    dlg.exec();
 }
 
 
