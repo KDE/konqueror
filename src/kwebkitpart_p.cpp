@@ -93,13 +93,8 @@ void KWebKitPartPrivate::init(QWidget *mainWidget, const QString& sessionFileNam
             this, SLOT(slotUrlChanged(const QUrl &)));
     connect(webView, SIGNAL(linkMiddleOrCtrlClicked(const KUrl &)),
             this, SLOT(slotLinkMiddleOrCtrlClicked(const KUrl &)));
-#if KDE_IS_VERSION(4, 5, 64)
     connect(webView, SIGNAL(selectionClipboardUrlPasted(const KUrl &, const QString &)),
             this, SLOT(slotSelectionClipboardUrlPasted(const KUrl &, const QString &)));
-#else
-    connect(webView, SIGNAL(selectionClipboardUrlPasted(const KUrl &)),
-            this, SLOT(slotSelectionClipboardUrlPasted(const KUrl &)));
-#endif
 
     // Create the search bar...
     searchBar = new KDEPrivate::SearchBar;
@@ -535,29 +530,6 @@ void KWebKitPartPrivate::slotLinkMiddleOrCtrlClicked(const KUrl& linkUrl)
     KParts::OpenUrlArguments args;
     args.setActionRequestedByUser(true);
     emit browserExtension->createNewWindow(linkUrl, args);
-}
-
-void KWebKitPartPrivate::slotSelectionClipboardUrlPasted(const KUrl& selectedUrl)
-{
-    // NOTE: The code below is required to work around the deficiency of the
-    // selectionClipboardUrlPasted signal in KWebView from KDE < 4.6.
-    if (WebKitSettings::self()->isOpenMiddleClickEnabled()) {
-        QString searchText;
-        KUriFilterData data;
-        data.setData(QL1S("kwebkitpart_dummy"));
-        data.setCheckForExecutables(false);
-        if (KUriFilter::self()->filterUri(data, QStringList(QL1S("kuriikwsfilter")))) {
-            const QString pastedUrl = QUrl::fromPercentEncoding(selectedUrl.url().toUtf8());
-            const QString dummyUrl = QUrl::fromPercentEncoding(data.uri().url().toUtf8());
-            kDebug() << dummyUrl;
-            const int pos = dummyUrl.indexOf(data.typedString());
-            if (pastedUrl.left(pos) == dummyUrl.left(pos)) {
-                const int len = pastedUrl.indexOf(dummyUrl.mid(pos+17)) - pos;
-                searchText = pastedUrl.mid(pos, len).replace(QL1C('+'),QL1C(' '));
-            }
-        }
-        slotSelectionClipboardUrlPasted(selectedUrl, searchText);
-    }
 }
 
 void KWebKitPartPrivate::slotSelectionClipboardUrlPasted(const KUrl& selectedUrl, const QString& searchText)

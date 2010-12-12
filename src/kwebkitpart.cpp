@@ -151,7 +151,6 @@ bool KWebKitPart::openUrl(const KUrl &u)
     // Ignore about:blank urls...
     if (u.url() == "about:blank") {
         setUrl(u);
-        emit d->browserExtension->setLocationBarUrl(u.prettyUrl());
         emit setWindowCaption (u.url());
         emit completed();
     } else {
