@@ -123,7 +123,9 @@ bool NewWindowAdapterPage::acceptNavigationRequest(QWebFrame *frame, const QNetw
 
 void NewWindowAdapterPage::slotGeometryChangeRequested(const QRect & rect)
 {
-    //kDebug() << rect;
+    if (!rect.isValid())
+        return;
+    
     m_windowArgs.setX(rect.x());
     m_windowArgs.setY(rect.y());
     m_windowArgs.setWidth(qMin(rect.width(), 100));
