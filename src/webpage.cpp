@@ -79,17 +79,17 @@ NewWindowAdapterPage::NewWindowAdapterPage(KParts::ReadOnlyPart* part, WebWindow
 
 NewWindowAdapterPage::~NewWindowAdapterPage()
 {
-    kDebug();
+    //kDebug();
 }
 
 bool NewWindowAdapterPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request, NavigationType type)
 {
-    kDebug() << "url:" << request.url() << ",type:" << type << ",frame:" << frame;
+    //kDebug() << "url:" << request.url() << ",type:" << type << ",frame:" << frame;
 
     if (!m_part && frame != mainFrame() && type != QWebPage::NavigationTypeOther)
         return false;
 
-    kDebug() << "Creating new window of type" << m_type;
+    //kDebug() << "Creating new window of type" << m_type;
     
     // Browser args...
     KParts::BrowserArguments bargs;
@@ -103,7 +103,6 @@ bool NewWindowAdapterPage::acceptNavigationRequest(QWebFrame *frame, const QNetw
 
     // Window args...
     KParts::WindowArgs wargs (m_windowArgs);
-    kDebug() << "x=" << wargs.x() << "y=" << wargs.y() << "w=" << wargs.width() << "h=" << wargs.height();
 
     Q_ASSERT(m_part);
     KParts::ReadOnlyPart* part =0;    
@@ -127,8 +126,8 @@ void NewWindowAdapterPage::slotGeometryChangeRequested(const QRect & rect)
     //kDebug() << rect;
     m_windowArgs.setX(rect.x());
     m_windowArgs.setY(rect.y());
-    m_windowArgs.setWidth(rect.width());
-    m_windowArgs.setHeight(rect.height());
+    m_windowArgs.setWidth(qMin(rect.width(), 100));
+    m_windowArgs.setHeight(qMin(rect.height(), 100));
 }
 
 void NewWindowAdapterPage::slotMenuBarVisibilityChangeRequested(bool visible)
