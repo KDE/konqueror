@@ -7,6 +7,7 @@ set(kwebkit_LIB_SRCS
     kwebkitpart.cpp
     kwebkitpart_p.cpp
     kwebkitpart_ext.cpp
+    kwebkitpartfactory.cpp
     webview.cpp
     webpage.cpp
     websslinfo.cpp
@@ -22,23 +23,13 @@ kde4_add_ui_files(kwebkit_LIB_SRCS
                   ui/passwordbar.ui
 )
 
-########################### kwebkit #############################
-kde4_add_library(kwebkit SHARED ${kwebkit_LIB_SRCS})
-
-target_link_libraries(kwebkit ${KDE4_KPARTS_LIBS} ${KDE4_KDEWEBKIT_LIBS} ${QT_QTWEBKIT_LIBRARY} ${QT_QTUITOOLS_LIBRARY})
-
-set_target_properties(kwebkit PROPERTIES VERSION 1.1.0 SOVERSION 1.1.0 SOVERSION 1)
-########################### kwebkit #############################
-
 ########################### kwebkitpart #############################
-kde4_add_plugin(kwebkitpart kwebkitpartfactory.cpp)
+kde4_add_plugin(kwebkitpart ${kwebkit_LIB_SRCS})
 
-target_link_libraries(kwebkitpart ${KDE4_KPARTS_LIBS} ${QT_QTWEBKIT_LIBRARY} kwebkit)
+target_link_libraries(kwebkitpart ${KDE4_KPARTS_LIBS} ${KDE4_KDEWEBKIT_LIBS} ${QT_QTWEBKIT_LIBRARY} ${QT_QTUITOOLS_LIBRARY})
 ########################### kwebkitpart #############################
 
 install(FILES kwebkitpart.h kwebkit_export.h DESTINATION ${INCLUDE_INSTALL_DIR} COMPONENT Devel)
-
-install(TARGETS kwebkit ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 install(TARGETS kwebkitpart DESTINATION ${PLUGIN_INSTALL_DIR})
 
