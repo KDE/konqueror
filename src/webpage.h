@@ -25,6 +25,7 @@
 #define WEBPAGE_H
 
 #include <KDE/KWebPage>
+#include <KDE/KParts/BrowserExtension>
 
 #include <QtCore/QUrl>
 #include <QtCore/QDebug>
@@ -35,6 +36,41 @@ class WebSslInfo;
 class KWebKitPart;
 class QVariant;
 class QWebFrame;
+
+
+/**
+ * This is a fake implementation of QWebPage used to adapt QWebPage's API for
+ * creating new window with that of KPart's.
+ *
+ * The KPart API for creating window requires all the information about the new
+ * window be present before hand. Unfortunately the QWebPage::createWindow function
+ * does not provide any information except for the window type. As such, this class
+ * is designed and used to collect all of the necessary information such as window
+ * name, size and position before invoking the specified KPart's create new window
+ * properly.
+ */
+class NewWindowAdapterPage : public QWebPage
+{
+    Q_OBJECT
+public:
+    NewWindowAdapterPage(KParts::ReadOnlyPart* part, WebWindowType type, QObject* parent = 0);
+    virtual ~NewWindowAdapterPage();
+
+protected:
+    virtual bool acceptNavigationRequest(QWebFrame* frame, const QNetworkRequest& request, NavigationType type);
+
+private Q_SLOTS:
+    void slotGeometryChangeRequested(const QRect& rect);
+    void slotMenuBarVisibilityChangeRequested(bool visible);
+    void slotStatusBarVisibilityChangeRequested(bool visible);
+    void slotToolBarVisibilityChangeRequested(bool visible);
+
+private:
+    KUrl m_requestUrl;
+    KParts::WindowArgs m_windowArgs;
+    WebWindowType m_type;
+    QPointer<KParts::ReadOnlyPart> m_part;
+};
 
 
 class WebPage : public KWebPage

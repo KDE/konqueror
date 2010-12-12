@@ -24,7 +24,6 @@
 
 #include "webpage.h"
 
-#include "fakepage.h"
 #include "kwebkitpart.h"
 #include "websslinfo.h"
 #include "webview.h"
@@ -58,99 +57,99 @@
 #define QL1S(x)  QLatin1String(x)
 #define QL1C(x)  QLatin1Char(x)
 
-typedef QPair<QString, QString> StringPair;
 
+/************************************* Begin NewWindowAdapterPage ******************************************/
 
-// Sanitizes the "mailto:" url, e.g. strips out any "attach" parameters.
-static QUrl sanitizeMailToUrl(const QUrl &url, QStringList& files) {
-    QUrl sanitizedUrl;
+NewWindowAdapterPage::NewWindowAdapterPage(KParts::ReadOnlyPart* part, WebWindowType type, QObject* parent)
+         :QWebPage(parent),
+          m_type(type),
+          m_part(part)
+{
+    Q_ASSERT_X (part, "NewWindowAdapterPage", "Must specify a valid KPart");
 
-    // NOTE: This is necessary to ensure we can properly use QUrl's query
-    // related APIs to process 'mailto:' urls of form 'mailto:foo@bar.com'.
-    if (url.hasQuery())
-      sanitizedUrl = url;
-    else
-      sanitizedUrl = QUrl(url.scheme() + QL1S(":?") + url.path());
-
-    QListIterator<StringPair> it (sanitizedUrl.queryItems());
-    sanitizedUrl.setEncodedQuery(QByteArray());    // clear out the query componenet
-
-    while (it.hasNext()) {
-        StringPair queryItem = it.next();
-        if (queryItem.first.contains(QL1C('@')) && queryItem.second.isEmpty()) {
-            queryItem.second = queryItem.first;
-            queryItem.first = "to";
-        } else if (QString::compare(queryItem.first, QL1S("attach"), Qt::CaseInsensitive) == 0) {
-            files << queryItem.second;
-            continue;
-        }
-        sanitizedUrl.addQueryItem(queryItem.first, queryItem.second);
-    }
-
-    return sanitizedUrl;
+    connect(this, SIGNAL(geometryChangeRequested(const QRect&)),
+            this, SLOT(slotGeometryChangeRequested(const QRect&)));
+    connect(this, SIGNAL(menuBarVisibilityChangeRequested(bool)),
+            this, SLOT(slotMenuBarVisibilityChangeRequested(bool)));
+    connect(this, SIGNAL(toolBarVisibilityChangeRequested(bool)),
+            this, SLOT(slotToolBarVisibilityChangeRequested(bool)));
+    connect(this, SIGNAL(statusBarVisibilityChangeRequested(bool)),
+            this, SLOT(slotStatusBarVisibilityChangeRequested(bool)));
 }
 
-static int errorCodeFromReply(QNetworkReply* reply)
+NewWindowAdapterPage::~NewWindowAdapterPage()
 {
-    // First check if there is a KIO error code sent back and use that,
-    // if not attempt to convert QNetworkReply's NetworkError to KIO::Error.
-    QVariant attr = reply->attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::KioError));
-    if (attr.isValid() && attr.type() == QVariant::Int)
-        return attr.toInt();
-
-    switch (reply->error()) {
-        case QNetworkReply::ConnectionRefusedError:
-            return KIO::ERR_COULD_NOT_CONNECT;
-        case QNetworkReply::HostNotFoundError:
-            return KIO::ERR_UNKNOWN_HOST;
-        case QNetworkReply::TimeoutError:
-            return KIO::ERR_SERVER_TIMEOUT;
-        case QNetworkReply::OperationCanceledError:
-            return KIO::ERR_USER_CANCELED;
-        case QNetworkReply::ProxyNotFoundError:
-            return KIO::ERR_UNKNOWN_PROXY_HOST;
-        case QNetworkReply::ContentAccessDenied:
-            return KIO::ERR_ACCESS_DENIED;
-        case QNetworkReply::ContentOperationNotPermittedError:
-            return KIO::ERR_WRITE_ACCESS_DENIED;
-        case QNetworkReply::ContentNotFoundError:
-            return KIO::ERR_NO_CONTENT;
-        case QNetworkReply::AuthenticationRequiredError:
-            return KIO::ERR_COULD_NOT_AUTHENTICATE;
-        case QNetworkReply::ProtocolUnknownError:
-            return KIO::ERR_UNSUPPORTED_PROTOCOL;
-        case QNetworkReply::ProtocolInvalidOperationError:
-            return KIO::ERR_UNSUPPORTED_ACTION;
-        case QNetworkReply::UnknownNetworkError:
-            return KIO::ERR_UNKNOWN;
-        case QNetworkReply::NoError:
-        default:
-            break;
-    }
-
-    return 0;
+    kDebug();
 }
 
-// Returns true if the scheme and domain of the two urls match...
-static bool domainSchemeMatch(const QUrl& u1, const QUrl& u2)
+bool NewWindowAdapterPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request, NavigationType type)
 {
-    if (u1.scheme() != u2.scheme())
+    kDebug() << "url:" << request.url() << ",type:" << type << ",frame:" << frame;
+
+    if (!m_part && frame != mainFrame() && type != QWebPage::NavigationTypeOther)
         return false;
 
-    QStringList u1List = u1.host().split(QL1C('.'), QString::SkipEmptyParts);
-    QStringList u2List = u2.host().split(QL1C('.'), QString::SkipEmptyParts);
+    kDebug() << "Creating new window of type" << m_type;
+    
+    // Browser args...
+    KParts::BrowserArguments bargs;
+    bargs.frameName = mainFrame()->frameName();
+    if (m_type == WebModalDialog)
+        bargs.setForcesNewWindow(true);
 
-    if (qMin(u1List.count(), u2List.count()) < 2)
-        return false;  // better safe than sorry...
+    // OpenUrl args...
+    KParts::OpenUrlArguments uargs;
+    uargs.setActionRequestedByUser(false);
 
-    while (u1List.count() > 2)
-        u1List.removeFirst();
+    // Window args...
+    KParts::WindowArgs wargs (m_windowArgs);
+    kDebug() << "x=" << wargs.x() << "y=" << wargs.y() << "w=" << wargs.width() << "h=" << wargs.height();
 
-    while (u2List.count() > 2)
-        u2List.removeFirst();
+    Q_ASSERT(m_part);
+    KParts::ReadOnlyPart* part =0;    
+    m_part->browserExtension()->createNewWindow(request.url(), uargs, bargs, wargs, &part);
 
-    return (u1List == u2List);
+    // TODO: Investigate whether we really want to allow modal dialogs!!
+    // See the "modal" section @ https://developer.mozilla.org/en/DOM/window.open
+    if (part && m_type == WebModalDialog) {
+        QWidget* mainWidget = part->widget() ? part->widget()->window() : 0;
+        if (mainWidget)
+            mainWidget->setWindowModality(Qt::ApplicationModal);
+    }
+
+    // My work here is done! Activating self destruct! Bye amigos...
+    this->deleteLater();
+    return false;
 }
+
+void NewWindowAdapterPage::slotGeometryChangeRequested(const QRect & rect)
+{
+    //kDebug() << rect;
+    m_windowArgs.setX(rect.x());
+    m_windowArgs.setY(rect.y());
+    m_windowArgs.setWidth(rect.width());
+    m_windowArgs.setHeight(rect.height());
+}
+
+void NewWindowAdapterPage::slotMenuBarVisibilityChangeRequested(bool visible)
+{
+    //kDebug() << visible;
+    m_windowArgs.setMenuBarVisible(visible);
+}
+
+void NewWindowAdapterPage::slotStatusBarVisibilityChangeRequested(bool visible)
+{
+    //kDebug() << visible;
+    m_windowArgs.setStatusBarVisible(visible);
+}
+
+void NewWindowAdapterPage::slotToolBarVisibilityChangeRequested(bool visible)
+{
+    //kDebug() << visible;
+    m_windowArgs.setToolBarsVisible(visible);
+}
+
+/****************************** End NewWindowAdapterPage *************************************************/
 
 class WebPage::WebPagePrivate
 {
@@ -219,6 +218,27 @@ const WebSslInfo& WebPage::sslInfo() const
 void WebPage::setSslInfo (const WebSslInfo& info)
 {
     d->sslInfo = info;
+}
+
+// Returns true if the scheme and domain of the two urls match...
+static bool domainSchemeMatch(const QUrl& u1, const QUrl& u2)
+{
+    if (u1.scheme() != u2.scheme())
+        return false;
+
+    QStringList u1List = u1.host().split(QL1C('.'), QString::SkipEmptyParts);
+    QStringList u2List = u2.host().split(QL1C('.'), QString::SkipEmptyParts);
+
+    if (qMin(u1List.count(), u2List.count()) < 2)
+        return false;  // better safe than sorry...
+
+    while (u1List.count() > 2)
+        u1List.removeFirst();
+
+    while (u2List.count() > 2)
+        u2List.removeFirst();
+
+    return (u1List == u2List);
 }
 
 bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request, NavigationType type)
@@ -302,57 +322,10 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
 
 QWebPage *WebPage::createWindow(WebWindowType type)
 {
-    KParts::OpenUrlArguments uargs;
-    KParts::BrowserArguments bargs;
-    KParts::WindowArgs wargs;
-
-    // Mark this action as one generated by javascript...
-    uargs.setActionRequestedByUser(false);
-
-    switch (type) {
-#if QTWEBKIT_VERSION >= QTWEBKIT_VERSION_CHECK(2, 2, 0)
-    case WebDialog:
-#endif      
-    case WebModalDialog:
-        bargs.setForcesNewWindow(true);
-        break;
-    case WebBrowserWindow:
-    default:
-        bargs.setForcesNewWindow(false);      
-        break;
-    }
-    
-    KParts::ReadOnlyPart *part = 0;
-    d->part->browserExtension()->createNewWindow(KUrl(), uargs, bargs, KParts::WindowArgs(), &part);
-    
-    KWebKitPart* webkitpart = qobject_cast<KWebKitPart*>(part);
-    if (webkitpart) {
-        // If type is a dialog, make sure the scroll bars are also off by default...
-        switch (type) {
-        case WebModalDialog: {
-            // TODO: Investigate whether we really want to allow modal dialogs!!
-            // See the "modal" section @ https://developer.mozilla.org/en/DOM/window.open
-            QWidget* mainWidget = part->widget() ? part->widget()->window() : 0;
-            if (mainWidget)
-                mainWidget->setWindowModality(Qt::ApplicationModal);
-        }
-        case WebBrowserWindow:
-        default:
-            break;
-        }        
-        return webkitpart->view()->page();
-    }
-
-    /*
-     The workaround below is intended to address the situation where the returned
-     KPart is NOT a KWebKitPart. Since we cannot return an instance of QWebPage in
-     those instances, we simply create a fake QWebPage to intercept the request url
-     and call the new part's openUrl function. See BR# 253708 and BR# 258367.
-    */
-    if (part)
-       return new FakePage(part, type, this);
-    
-    return 0;
+    // Crete an instance of NewWindowAdapterPage class to capture all the
+    // information we need to create a new window. See documentation of
+    // the class for more information...
+    return new NewWindowAdapterPage(d->part, type, this);
 }
 
 void WebPage::slotUnsupportedContent(QNetworkReply *reply)
@@ -413,6 +386,48 @@ void WebPage::downloadRequest(const QNetworkRequest &request)
     }
 
     KWebPage::downloadRequest(request);
+}
+
+
+static int errorCodeFromReply(QNetworkReply* reply)
+{
+    // First check if there is a KIO error code sent back and use that,
+    // if not attempt to convert QNetworkReply's NetworkError to KIO::Error.
+    QVariant attr = reply->attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::KioError));
+    if (attr.isValid() && attr.type() == QVariant::Int)
+        return attr.toInt();
+
+    switch (reply->error()) {
+        case QNetworkReply::ConnectionRefusedError:
+            return KIO::ERR_COULD_NOT_CONNECT;
+        case QNetworkReply::HostNotFoundError:
+            return KIO::ERR_UNKNOWN_HOST;
+        case QNetworkReply::TimeoutError:
+            return KIO::ERR_SERVER_TIMEOUT;
+        case QNetworkReply::OperationCanceledError:
+            return KIO::ERR_USER_CANCELED;
+        case QNetworkReply::ProxyNotFoundError:
+            return KIO::ERR_UNKNOWN_PROXY_HOST;
+        case QNetworkReply::ContentAccessDenied:
+            return KIO::ERR_ACCESS_DENIED;
+        case QNetworkReply::ContentOperationNotPermittedError:
+            return KIO::ERR_WRITE_ACCESS_DENIED;
+        case QNetworkReply::ContentNotFoundError:
+            return KIO::ERR_NO_CONTENT;
+        case QNetworkReply::AuthenticationRequiredError:
+            return KIO::ERR_COULD_NOT_AUTHENTICATE;
+        case QNetworkReply::ProtocolUnknownError:
+            return KIO::ERR_UNSUPPORTED_PROTOCOL;
+        case QNetworkReply::ProtocolInvalidOperationError:
+            return KIO::ERR_UNSUPPORTED_ACTION;
+        case QNetworkReply::UnknownNetworkError:
+            return KIO::ERR_UNKNOWN;
+        case QNetworkReply::NoError:
+        default:
+            break;
+    }
+
+    return 0;
 }
 
 void WebPage::slotRequestFinished(QNetworkReply *reply)
@@ -554,6 +569,35 @@ bool WebPage::checkFormData(const QNetworkRequest &req) const
     }
 
     return true;
+}
+
+// Sanitizes the "mailto:" url, e.g. strips out any "attach" parameters.
+static QUrl sanitizeMailToUrl(const QUrl &url, QStringList& files) {
+    QUrl sanitizedUrl;
+
+    // NOTE: This is necessary to ensure we can properly use QUrl's query
+    // related APIs to process 'mailto:' urls of form 'mailto:foo@bar.com'.
+    if (url.hasQuery())
+      sanitizedUrl = url;
+    else
+      sanitizedUrl = QUrl(url.scheme() + QL1S(":?") + url.path());
+
+    QListIterator<QPair<QString, QString> > it (sanitizedUrl.queryItems());
+    sanitizedUrl.setEncodedQuery(QByteArray());    // clear out the query componenet
+
+    while (it.hasNext()) {
+        QPair<QString, QString> queryItem = it.next();
+        if (queryItem.first.contains(QL1C('@')) && queryItem.second.isEmpty()) {
+            queryItem.second = queryItem.first;
+            queryItem.first = "to";
+        } else if (QString::compare(queryItem.first, QL1S("attach"), Qt::CaseInsensitive) == 0) {
+            files << queryItem.second;
+            continue;
+        }
+        sanitizedUrl.addQueryItem(queryItem.first, queryItem.second);
+    }
+
+    return sanitizedUrl;
 }
 
 bool WebPage::handleMailToUrl (const QUrl &url, NavigationType type) const
