@@ -631,6 +631,7 @@ void KWebKitPartPrivate::slotWindowCloseRequested()
 
 void KWebKitPartPrivate::slotGeometryChangeRequested(const QRect & rect)
 {
+    kDebug() << rect;
     if (!webView || !webPage)
        return;
 
@@ -681,52 +682,6 @@ void KWebKitPartPrivate::slotGeometryChangeRequested(const QRect & rect)
         WebKitSettings::self()->windowMovePolicy(host) == WebKitSettings::KJSWindowMoveAllow) {
         emit browserExtension->moveTopLevelWidget(webView->x() + moveByX, webView->y() + moveByY);
     }
-}
-
-static KMainWindow* topLevelWindowForPart(KParts::ReadOnlyPart* part)
-{
-    if (!part)
-        return 0;
-    
-    // Allow modification of visibility statuses only when a new window is
-    // forcefully created which means WebPage::createWindow received either
-    // the WebDialog or WebModalDialog WebWindowType parameters.
-    const KParts::BrowserExtension* extension = part->browserExtension();
-    //kDebug() << "force new window ?" << extension->browserArguments().forcesNewWindow();
-    if (extension && !extension->browserArguments().forcesNewWindow())
-        return 0;
-  
-    const QWidget* mainWidget = part->widget();
-    if (!mainWidget)
-       return 0;
-
-    return qobject_cast<KMainWindow*>(mainWidget->window());
-}
-
-void KWebKitPartPrivate::slotMenuBarVisibilityChangeRequested(bool visible)
-{    
-    KMainWindow* window = topLevelWindowForPart(q);
-    if (window)
-        window->menuBar()->setVisible(visible);
-}
-
-void KWebKitPartPrivate::slotStatusBarVisibilityChangeRequested(bool visible)
-{
-    KMainWindow* window = topLevelWindowForPart(q);
-    if (window)
-        window->statusBar()->setVisible(visible);
-    
-}
-
-void KWebKitPartPrivate::slotToolBarVisibilityChangeRequested(bool visible)
-{
-    KMainWindow* window = topLevelWindowForPart(q);
-    if (!window)
-        return;
-    
-    QList<KToolBar*> toolBars = window->toolBars();
-    Q_FOREACH(KToolBar* bar, toolBars)
-        bar->setVisible(visible);
 }
 
 void KWebKitPartPrivate::slotPrintRequested(QWebFrame* frame)
