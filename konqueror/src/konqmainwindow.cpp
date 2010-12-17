@@ -1579,8 +1579,8 @@ void KonqMainWindow::slotReload( KonqView* reloadView, bool softReload )
   if ( !reloadView )
     reloadView = m_currentView;
 
-  if ( !reloadView || reloadView->url().isEmpty() )
-    return;
+    if (!reloadView || (reloadView->url().isEmpty() && reloadView->locationBarURL().isEmpty()))
+        return;
 
     if (reloadView->isModified()) {
         if (KMessageBox::warningContinueCancel( this,
