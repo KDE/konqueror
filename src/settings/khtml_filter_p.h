@@ -38,7 +38,7 @@ public:
     void addString(const QString& pattern);
 
     // check if string match at least one string from matching set
-    bool isMatched(const QString& str) const;
+    bool isMatched(const QString& str, QString *by = 0) const;
 
     // add filter to matching set with wildcards (*,?) in it
     void addWildedString(const QString& prefix, const QRegExp& rx);
@@ -64,6 +64,7 @@ public:
     void addFilter(const QString& filter);
     
     bool isUrlMatched(const QString& url);
+    QString urlMatchedBy(const QString& url);
     
     void clear();
 

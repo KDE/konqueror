@@ -133,6 +133,26 @@ bool FilterSet::isUrlMatched(const QString& url)
     return false;
 }
 
+QString FilterSet::urlMatchedBy(const QString& url)
+{
+    QString by;
+
+    if (stringFiltersMatcher.isMatched(url, &by))
+        return by;
+
+    for (int c = 0; c < reFilters.size(); ++c)
+    {
+        if (url.contains(reFilters[c]))
+        {
+            by = reFilters[c].pattern();
+            break;
+        }
+    }
+
+    return by;
+}
+
+
 void FilterSet::clear()
 {
     reFilters.clear();
@@ -196,12 +216,14 @@ void StringsMatcher::addWildedString(const QString& prefix, const QRegExp& rx)
     }
 }
 
-bool StringsMatcher::isMatched(const QString& str) const
+bool StringsMatcher::isMatched(const QString& str, QString* by) const
 {
     // check short strings first
     for (int i = 0; i < shortStringFilters.size(); ++i) {
-        if (str.contains(shortStringFilters[i]))
+        if (str.contains(shortStringFilters[i])) {
+            if (by) *by = shortStringFilters[i];
             return true;
+        }
     }
 
     int len = str.length();

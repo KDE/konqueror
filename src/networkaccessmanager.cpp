@@ -24,9 +24,15 @@
 #include "settings/webkitsettings.h"
 
 #include <KDE/KDebug>
+#include <KDE/KLocalizedString>
 
 #include <QtCore/QTimer>
 #include <QtNetwork/QNetworkReply>
+#include <QtWebKit/QWebFrame>
+#include <QtWebKit/QWebElementCollection>
+
+
+#define QL1S(x) QLatin1String(x)
 
 /* Null network reply */
 class NullNetworkReply : public QNetworkReply
@@ -37,6 +43,8 @@ public:
         setUrl(req.url());
         setHeader(QNetworkRequest::ContentLengthHeader, 0);
         setHeader(QNetworkRequest::ContentTypeHeader, "text/plain");
+        setError(QNetworkReply::ContentAccessDenied, i18n("Blocked by ad filter"));
+        setAttribute(QNetworkRequest::User, QNetworkReply::ContentAccessDenied);
         QTimer::singleShot(0, this, SIGNAL(finished()));
     }
     virtual void abort() {}
@@ -54,6 +62,7 @@ namespace KDEPrivate {
 MyNetworkAccessManager::MyNetworkAccessManager(QObject *parent)
                        : KIO::AccessManager(parent)
 {
+    connect (this, SIGNAL(finished(QNetworkReply*)), this, SLOT(slotFinished(QNetworkReply*)));
 }
 
 QNetworkReply *MyNetworkAccessManager::createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData)
@@ -62,9 +71,44 @@ QNetworkReply *MyNetworkAccessManager::createRequest(Operation op, const QNetwor
           WebKitSettings::self()->isAdFilterEnabled() &&
           WebKitSettings::self()->isAdFiltered(req.url().toString())) {
           kDebug() << "*** BLOCKED UNAUTHORIZED REQUEST => " << req.url();
+          m_blockedUrls.append(req.url());
           return new NullNetworkReply(req);
       }
 
       return KIO::AccessManager::createRequest(op, req, outgoingData);
 }
+
+static void hideBlockableElements(const QUrl& url, QWebElementCollection& collection)
+{
+    QWebElementCollection::iterator itEnd = collection.end();
+    for (QWebElementCollection::iterator it = collection.begin(); it != itEnd; ++it) {
+        const QUrl resolvedUrl((*it).webFrame()->baseUrl().resolved((*it).attribute(QL1S("src"))));
+        if (url == resolvedUrl) {
+            kDebug() << "Hiding element: " << (*it).tagName() << (*it).attribute(QL1S("src"));
+            (*it).removeFromDocument();
+        }
+    }
 }
+
+void MyNetworkAccessManager::slotFinished(QNetworkReply* reply)
+{
+    if (!reply)
+        return;
+
+    if(!WebKitSettings::self()->isHideAdsEnabled())
+        return;
+
+    if (!m_blockedUrls.contains(reply->url()))
+        return;
+
+    QWebFrame* frame = qobject_cast<QWebFrame*>(reply->request().originatingObject());
+    if (!frame)
+        return;
+
+    QWebElementCollection collection = frame->findAllElements(QL1S("img[src],embed[src],object[src]"));
+    hideBlockableElements(reply->url(), collection);
+}
+
+}
+
+#include "networkaccessmanager.moc"

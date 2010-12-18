@@ -180,6 +180,8 @@ public:
     bool isAdFilterEnabled() const;
     bool isHideAdsEnabled() const;
     void addAdFilter( const QString &url );
+    QString adFilteredBy( const QString &url, bool *isWhiteListed = 0 ) const;
+    
 
     // Access Keys
     bool accessKeysEnabled() const;
@@ -238,13 +240,13 @@ public:
 
     // Global config object stuff.
     static WebKitSettings* self();
+
+private:
     /**
      * @internal Constructor
      */
     WebKitSettings();
-    WebKitSettings(const WebKitSettings &other);
-
-private:
+  
     QString lookupFont(int i) const;
 
     WebKitSettingsPrivate* const d;

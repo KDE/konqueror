@@ -24,7 +24,11 @@
 
 #include <kdeversion.h>
 
-#include <kio/accessmanager.h>
+#include <KDE/KIO/AccessManager>
+#include <QtCore/QList>
+
+class QUrl;
+
 
 namespace KDEPrivate {
 
@@ -33,17 +37,18 @@ namespace KDEPrivate {
   */
 class MyNetworkAccessManager : public KIO::AccessManager
 {
+    Q_OBJECT
+    
 public:
     MyNetworkAccessManager(QObject *parent = 0);
 
 protected:
-    /**
-     * Reimplemented for internal reasons, the API is not affected.
-     *
-     * @see KIO::AccessManager::createRequest.
-     * @internal
-     */
     virtual QNetworkReply *createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData = 0);
+    
+private Q_SLOTS:
+    void slotFinished(QNetworkReply*);
+private:
+    QList<QUrl> m_blockedUrls;
 };
 
 }
