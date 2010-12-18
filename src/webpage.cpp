@@ -40,8 +40,10 @@
 #include <KDE/KStandardDirs>
 #include <KDE/KAuthorized>
 #include <KDE/KDebug>
+#include <KDE/KFileDialog>
 #include <KIO/Job>
 #include <KIO/AccessManager>
+
 
 #include <QtCore/QFile>
 #include <QtGui/QApplication>
@@ -158,7 +160,6 @@ public:
     WebPagePrivate()
       :kioErrorCode(0),
        ignoreError(false),      
-       userRequestedCreateWindow(false),
        ignoreHistoryNavigationRequest(true) {}
 
     enum WebPageSecurity { PageUnencrypted, PageEncrypted, PageMixed };
@@ -169,7 +170,6 @@ public:
 
     int kioErrorCode;    
     bool ignoreError;
-    bool userRequestedCreateWindow;
     bool ignoreHistoryNavigationRequest;
 };
 
@@ -197,13 +197,14 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
     // Tell QWebSecurityOrigin that man:/ and info:/ are local resources...
     QWebSecurityOrigin::addLocalScheme(QL1S("man"));
     QWebSecurityOrigin::addLocalScheme(QL1S("info"));
+    QWebSecurityOrigin::addLocalScheme(QL1S("error"));
 
     connect(this, SIGNAL(downloadRequested(const QNetworkRequest &)),
             this, SLOT(downloadRequest(const QNetworkRequest &)));
     connect(this, SIGNAL(unsupportedContent(QNetworkReply *)),
             this, SLOT(slotUnsupportedContent(QNetworkReply *)));
     connect(networkAccessManager(), SIGNAL(finished(QNetworkReply *)),
-            this, SLOT(slotRequestFinished(QNetworkReply *)));
+            this, SLOT(slotRequestFinished(QNetworkReply *)));    
 }
 
 WebPage::~WebPage()
@@ -219,6 +220,161 @@ const WebSslInfo& WebPage::sslInfo() const
 void WebPage::setSslInfo (const WebSslInfo& info)
 {
     d->sslInfo = info;
+}
+
+void WebPage::downloadRequest(const QNetworkRequest &request)
+{
+    const KUrl url(request.url());
+
+    // Integration with a download manager...
+    if (!url.isLocalFile()) {
+        KConfigGroup cfg = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals)->group("HTML Settings");
+        const QString downloadManger = cfg.readPathEntry("DownloadManager", QString());
+
+        if (!downloadManger.isEmpty()) {
+            // then find the download manager location
+            //kDebug() << "Using: " << downloadManger << " as Download Manager";
+            QString cmd = KStandardDirs::findExe(downloadManger);
+            if (cmd.isEmpty()) {
+                QString errMsg = i18n("The download manager (%1) could not be found in your installation.", downloadManger);
+                QString errMsgEx = i18n("Try to reinstall it and make sure that it is available in $PATH. \n\nThe integration will be disabled.");
+                KMessageBox::detailedSorry(view(), errMsg, errMsgEx);
+                cfg.writePathEntry("DownloadManager", QString());
+                cfg.sync();
+            } else {
+                cmd += ' ' + KShell::quoteArg(url.url());
+                //kDebug() << "Calling command" << cmd;
+                KRun::runCommand(cmd, view());
+                return;
+            }
+        }
+    }
+
+    KWebPage::downloadRequest(request);
+}
+
+QString WebPage::errorPage(int code, const QString& text, const KUrl& reqUrl) const
+{
+    QString errorName, techName, description;
+    QStringList causes, solutions;
+
+    QByteArray raw = KIO::rawErrorDetail( code, text, &reqUrl );
+    QDataStream stream(raw);
+
+    stream >> errorName >> techName >> description >> causes >> solutions;
+
+    QString url, protocol, datetime;
+    url = reqUrl.url();
+    protocol = reqUrl.protocol();
+    datetime = KGlobal::locale()->formatDateTime( QDateTime::currentDateTime(), KLocale::LongDate );
+
+    QString filename (KStandardDirs::locate ("data", QL1S("kwebkitpart/error.html")));
+    QFile file( filename );
+    if ( !file.open( QIODevice::ReadOnly ) )
+        return i18n("<html><body><h3>Unable to display error message</h3>"
+                    "<p>The error template file <em>error.html</em> could not be "
+                    "found.</p></body></html>");
+
+    QString html = QString( QL1S( file.readAll() ) );
+
+    html.replace( QL1S( "TITLE" ), i18n( "Error: %1", errorName ) );
+    html.replace( QL1S( "DIRECTION" ), QApplication::isRightToLeft() ? "rtl" : "ltr" );
+    html.replace( QL1S( "ICON_PATH" ), KUrl(KIconLoader::global()->iconPath("dialog-warning", -KIconLoader::SizeHuge)).url() );
+
+    QString doc = QL1S( "<h1>" );
+    doc += i18n( "The requested operation could not be completed" );
+    doc += QL1S( "</h1><h2>" );
+    doc += errorName;
+    doc += QL1S( "</h2>" );
+
+    if ( !techName.isNull() ) {
+        doc += QL1S( "<h2>" );
+        doc += i18n( "Technical Reason: %1", techName );
+        doc += QL1S( "</h2>" );
+    }
+
+    doc += QL1S( "<h3>" );
+    doc += i18n( "Details of the Request:" );
+    doc += QL1S( "</h3><ul><li>" );
+    doc += i18n( "URL: %1" ,  url );
+    doc += QL1S( "</li><li>" );
+
+    if ( !protocol.isNull() ) {
+        doc += i18n( "Protocol: %1", protocol );
+        doc += QL1S( "</li><li>" );
+    }
+
+    doc += i18n( "Date and Time: %1" ,  datetime );
+    doc += QL1S( "</li><li>" );
+    doc += i18n( "Additional Information: %1" ,  text );
+    doc += QL1S( "</li></ul><h3>" );
+    doc += i18n( "Description:" );
+    doc += QL1S( "</h3><p>" );
+    doc += description;
+    doc += QL1S( "</p>" );
+
+    if ( causes.count() ) {
+        doc += QL1S( "<h3>" );
+        doc += i18n( "Possible Causes:" );
+        doc += QL1S( "</h3><ul><li>" );
+        doc += causes.join( "</li><li>" );
+        doc += QL1S( "</li></ul>" );
+    }
+
+    if ( solutions.count() ) {
+        doc += QL1S( "<h3>" );
+        doc += i18n( "Possible Solutions:" );
+        doc += QL1S( "</h3><ul><li>" );
+        doc += solutions.join( "</li><li>" );
+        doc += QL1S( "</li></ul>" );
+    }
+
+    html.replace( QL1S("TEXT"), doc );
+
+    return html;
+}
+
+bool WebPage::extension(Extension extension, const ExtensionOption *option, ExtensionReturn *output)
+{
+    if (extension == QWebPage::ErrorPageExtension && !d->ignoreError) {
+        const QWebPage::ErrorPageExtensionOption *extOption = static_cast<const QWebPage::ErrorPageExtensionOption*>(option);
+        //kDebug() << extOption->domain << extOption->error << extOption->errorString;
+        if (extOption->domain == QWebPage::QtNetwork) {
+            QWebPage::ErrorPageExtensionReturn *extOutput = static_cast<QWebPage::ErrorPageExtensionReturn*>(output);
+            extOutput->content = errorPage(d->kioErrorCode, extOption->errorString, extOption->url).toUtf8();
+            extOutput->baseUrl = extOption->url;
+            return true;
+        }
+    }
+
+    if (extension == QWebPage::ChooseMultipleFilesExtension) {
+        const QWebPage::ChooseMultipleFilesExtensionOption* extOption = static_cast<const QWebPage::ChooseMultipleFilesExtensionOption*> (option);
+        QWebPage::ChooseMultipleFilesExtensionReturn *extOutput = static_cast<QWebPage::ChooseMultipleFilesExtensionReturn*>(output);
+        if (currentFrame() == extOption->parentFrame)
+            extOutput->fileNames = KFileDialog::getOpenFileNames(KUrl(extOption->suggestedFileNames.first()),
+                                                                 QString(), view(), i18n("Choose files to upload"));
+        return true;
+    }
+
+    return KWebPage::extension(extension, option, output);
+}
+
+bool WebPage::supportsExtension(Extension extension) const
+{
+    //kDebug() << extension;
+    if (extension == QWebPage::ErrorPageExtension ||
+        extension == QWebPage::ChooseMultipleFilesExtension)
+        return true;
+
+    return KWebPage::supportsExtension(extension);
+}
+
+QWebPage *WebPage::createWindow(WebWindowType type)
+{
+    // Crete an instance of NewWindowAdapterPage class to capture all the
+    // information we need to create a new window. See documentation of
+    // the class for more information...
+    return new NewWindowAdapterPage(d->part, type, this);
 }
 
 // Returns true if the scheme and domain of the two urls match...
@@ -321,14 +477,6 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
     return KWebPage::acceptNavigationRequest(frame, request, type);
 }
 
-QWebPage *WebPage::createWindow(WebWindowType type)
-{
-    // Crete an instance of NewWindowAdapterPage class to capture all the
-    // information we need to create a new window. See documentation of
-    // the class for more information...
-    return new NewWindowAdapterPage(d->part, type, this);
-}
-
 void WebPage::slotUnsupportedContent(QNetworkReply *reply)
 {
     Q_ASSERT (reply);
@@ -357,38 +505,6 @@ void WebPage::slotUnsupportedContent(QNetworkReply *reply)
         emit d->part->browserExtension()->openUrlRequest(reply->url(), args, KParts::BrowserArguments());
     }
 }
-
-void WebPage::downloadRequest(const QNetworkRequest &request)
-{
-    const KUrl url(request.url());
-
-    // Integration with a download manager...
-    if (!url.isLocalFile()) {
-        KConfigGroup cfg = KSharedConfig::openConfig("konquerorrc", KConfig::NoGlobals)->group("HTML Settings");
-        const QString downloadManger = cfg.readPathEntry("DownloadManager", QString());
-
-        if (!downloadManger.isEmpty()) {
-            // then find the download manager location
-            //kDebug() << "Using: " << downloadManger << " as Download Manager";
-            QString cmd = KStandardDirs::findExe(downloadManger);
-            if (cmd.isEmpty()) {
-                QString errMsg = i18n("The download manager (%1) could not be found in your installation.", downloadManger);
-                QString errMsgEx = i18n("Try to reinstall it and make sure that it is available in $PATH. \n\nThe integration will be disabled.");
-                KMessageBox::detailedSorry(view(), errMsg, errMsgEx);
-                cfg.writePathEntry("DownloadManager", QString());
-                cfg.sync();
-            } else {
-                cmd += ' ' + KShell::quoteArg(url.url());
-                //kDebug() << "Calling command" << cmd;
-                KRun::runCommand(cmd, view());
-                return;
-            }
-        }
-    }
-
-    KWebPage::downloadRequest(request);
-}
-
 
 static int errorCodeFromReply(QNetworkReply* reply)
 {
@@ -434,17 +550,18 @@ static int errorCodeFromReply(QNetworkReply* reply)
 void WebPage::slotRequestFinished(QNetworkReply *reply)
 {
     Q_ASSERT(reply);
-    
-    QUrl url (reply->request().url());
-    const int index = d->requestQueue.indexOf(url);
+
+    const QUrl requestUrl (reply->request().url());   
+    const int index = d->requestQueue.indexOf(requestUrl);
     if (index == -1)
         return;
 
     d->requestQueue.remove(index);
+
     QWebFrame* frame = qobject_cast<QWebFrame *>(reply->request().originatingObject());
     if (!frame)
         return;
-    
+
     const int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();    
     // Only deal with non-redirect responses...
     if (statusCode > 299 && statusCode < 400) {
@@ -654,111 +771,4 @@ void WebPage::setPageJScriptPolicy(const QUrl &url)
     settings()->setAttribute(QWebSettings::JavascriptCanOpenWindows,
                              (policy != WebKitSettings::KJSWindowOpenDeny &&
                               policy != WebKitSettings::KJSWindowOpenSmart));
-}
-
-bool WebPage::extension(Extension extension, const ExtensionOption *option, ExtensionReturn *output)
-{
-    if (extension == QWebPage::ErrorPageExtension && !d->ignoreError)
-    {
-        const QWebPage::ErrorPageExtensionOption *extOption = static_cast<const QWebPage::ErrorPageExtensionOption*>(option);
-        //kDebug() << extOption->domain << extOption->error << extOption->errorString;
-        if (extOption->domain == QWebPage::QtNetwork) {
-            QWebPage::ErrorPageExtensionReturn *extOutput = static_cast<QWebPage::ErrorPageExtensionReturn*>(output);
-            extOutput->content = errorPage(d->kioErrorCode, extOption->errorString, extOption->url).toUtf8();
-            extOutput->baseUrl = extOption->url;
-            return true;
-        }
-    }
-
-    return KWebPage::extension(extension, option, output);
-}
-
-bool WebPage::supportsExtension(Extension extension) const
-{
-    //kDebug() << extension;
-    if (extension == QWebPage::ErrorPageExtension)
-        return true;
-
-    return KWebPage::supportsExtension(extension);
-}
-
-QString WebPage::errorPage(int code, const QString& text, const KUrl& reqUrl) const
-{
-  QString errorName, techName, description;
-  QStringList causes, solutions;
-
-  QByteArray raw = KIO::rawErrorDetail( code, text, &reqUrl );
-  QDataStream stream(raw);
-
-  stream >> errorName >> techName >> description >> causes >> solutions;
-
-  QString url, protocol, datetime;
-  url = reqUrl.url();
-  protocol = reqUrl.protocol();
-  datetime = KGlobal::locale()->formatDateTime( QDateTime::currentDateTime(), KLocale::LongDate );
-
-  QString filename (KStandardDirs::locate ("data", QL1S("kwebkitpart/error.html")));
-  QFile file( filename );
-  if ( !file.open( QIODevice::ReadOnly ) )
-    return i18n("<html><body><h3>Unable to display error message</h3>"
-                "<p>The error template file <em>error.html</em> could not be "
-                "found.</p></body></html>");
-
-  QString html = QString( QL1S( file.readAll() ) );
-
-  html.replace( QL1S( "TITLE" ), i18n( "Error: %1", errorName ) );
-  html.replace( QL1S( "DIRECTION" ), QApplication::isRightToLeft() ? "rtl" : "ltr" );
-  html.replace( QL1S( "ICON_PATH" ), KUrl(KIconLoader::global()->iconPath("dialog-warning", -KIconLoader::SizeHuge)).url() );
-
-  QString doc = QL1S( "<h1>" );
-  doc += i18n( "The requested operation could not be completed" );
-  doc += QL1S( "</h1><h2>" );
-  doc += errorName;
-  doc += QL1S( "</h2>" );
-
-  if ( !techName.isNull() ) {
-    doc += QL1S( "<h2>" );
-    doc += i18n( "Technical Reason: %1", techName );
-    doc += QL1S( "</h2>" );
-  }
-
-  doc += QL1S( "<h3>" );
-  doc += i18n( "Details of the Request:" );
-  doc += QL1S( "</h3><ul><li>" );
-  doc += i18n( "URL: %1" ,  url );
-  doc += QL1S( "</li><li>" );
-
-  if ( !protocol.isNull() ) {
-    doc += i18n( "Protocol: %1", protocol );
-    doc += QL1S( "</li><li>" );
-  }
-
-  doc += i18n( "Date and Time: %1" ,  datetime );
-  doc += QL1S( "</li><li>" );
-  doc += i18n( "Additional Information: %1" ,  text );
-  doc += QL1S( "</li></ul><h3>" );
-  doc += i18n( "Description:" );
-  doc += QL1S( "</h3><p>" );
-  doc += description;
-  doc += QL1S( "</p>" );
-
-  if ( causes.count() ) {
-    doc += QL1S( "<h3>" );
-    doc += i18n( "Possible Causes:" );
-    doc += QL1S( "</h3><ul><li>" );
-    doc += causes.join( "</li><li>" );
-    doc += QL1S( "</li></ul>" );
-  }
-
-  if ( solutions.count() ) {
-    doc += QL1S( "<h3>" );
-    doc += i18n( "Possible Solutions:" );
-    doc += QL1S( "</h3><ul><li>" );
-    doc += solutions.join( "</li><li>" );
-    doc += QL1S( "</li></ul>" );
-  }
-
-  html.replace( QL1S("TEXT"), doc );
-
-  return html;
 }
