@@ -70,7 +70,7 @@ QNetworkReply *MyNetworkAccessManager::createRequest(Operation op, const QNetwor
       if (op == QNetworkAccessManager::GetOperation &&
           WebKitSettings::self()->isAdFilterEnabled() &&
           WebKitSettings::self()->isAdFiltered(req.url().toString())) {
-          kDebug() << "*** BLOCKED UNAUTHORIZED REQUEST => " << req.url();
+          //kDebug() << "*** BLOCKED UNAUTHORIZED REQUEST => " << req.url();
           m_blockedUrls.append(req.url());
           return new NullNetworkReply(req);
       }
@@ -84,7 +84,7 @@ static void hideBlockableElements(const QUrl& url, QWebElementCollection& collec
     for (QWebElementCollection::iterator it = collection.begin(); it != itEnd; ++it) {
         const QUrl resolvedUrl((*it).webFrame()->baseUrl().resolved((*it).attribute(QL1S("src"))));
         if (url == resolvedUrl) {
-            kDebug() << "Hiding element: " << (*it).tagName() << (*it).attribute(QL1S("src"));
+            //kDebug() << "*** HIDING ELEMENT: " << (*it).tagName() << (*it).attribute(QL1S("src"));
             (*it).removeFromDocument();
         }
     }
@@ -105,7 +105,12 @@ void MyNetworkAccessManager::slotFinished(QNetworkReply* reply)
     if (!frame)
         return;
 
-    QWebElementCollection collection = frame->findAllElements(QL1S("img[src],embed[src],object[src]"));
+    // Always use the parent frame to check for blockable elements because
+    // the originating object itself might be a blocked iframe!
+    while (frame->parentFrame())
+        frame = frame->parentFrame();
+    
+    QWebElementCollection collection = frame->findAllElements(QL1S("img[src],embed[src],object[src],iframe[src]"));
     hideBlockableElements(reply->url(), collection);
 }
 
