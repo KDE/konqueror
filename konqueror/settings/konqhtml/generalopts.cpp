@@ -171,7 +171,7 @@ void KKonqGeneralOptions::load()
     m_webEngineCombo->clear();
     // ## Well, the problem with using the trader to find the available parts, is that if a user
     // removed a part in keditfiletype text/html, it won't be in the list anymore. Oh well.
-    const KService::List partOfferList = KMimeTypeTrader::self()->query("text/html", "KParts/ReadOnlyPart");
+    const KService::List partOfferList = KMimeTypeTrader::self()->query("text/html", "KParts/ReadOnlyPart", "not ('KParts/ReadWritePart' in ServiceTypes)");
     // Sorted list, so the first one is the preferred one, no need for a setCurrentIndex.
     Q_FOREACH(const KService::Ptr partService, partOfferList) {
         // We want only the HTML-capable parts, not any text/plain part (via inheritance)
