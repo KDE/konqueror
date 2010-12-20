@@ -121,12 +121,6 @@ void KWebKitPartPrivate::init(QWidget *mainWidget, const QString& sessionFileNam
             this, SLOT(slotWindowCloseRequested()));
     connect(webPage, SIGNAL(geometryChangeRequested(const QRect &)),
             this, SLOT(slotGeometryChangeRequested(const QRect &)));
-    connect(webPage, SIGNAL(menuBarVisibilityChangeRequested(bool)),
-            this, SLOT(slotMenuBarVisibilityChangeRequested(bool)));
-    connect(webPage, SIGNAL(toolBarVisibilityChangeRequested(bool)),
-            this, SLOT(slotToolBarVisibilityChangeRequested(bool)));
-    connect(webPage, SIGNAL(statusBarVisibilityChangeRequested(bool)),
-            this, SLOT(slotStatusBarVisibilityChangeRequested(bool)));
     connect(webPage, SIGNAL(printRequested(QWebFrame*)),
             this, SLOT(slotPrintRequested(QWebFrame*)));
     connect(webView, SIGNAL(linkShiftClicked(const KUrl &)),
