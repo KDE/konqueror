@@ -116,6 +116,7 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout* lay)
 
     m_webEngineCombo = new KComboBox(this);
     m_webEngineCombo->setEditable(false);
+    m_webEngineCombo->setSizeAdjustPolicy(QComboBox::AdjustToContents);
     formLayout->addRow(webLabel, m_webEngineCombo);
     webLabel->setBuddy(m_webEngineCombo);
     connect(m_webEngineCombo, SIGNAL(currentIndexChanged(int)), SLOT(slotChanged()));
