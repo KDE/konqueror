@@ -26,6 +26,7 @@
 #include "webview.h"
 #include "webpage.h"
 #include "kwebkitpart.h"
+#include "settings/webkitsettings.h"
 
 #include <kio/global.h>
 #include <KDE/KParts/GenericFactory>
@@ -101,7 +102,7 @@ QWebHitTestResult WebView::contextMenuResult() const
 
 void WebView::contextMenuEvent(QContextMenuEvent *e)
 {
-    d->result = page()->mainFrame()->hitTestContent(e->pos());
+    d->result = page()->currentFrame()->hitTestContent(e->pos());
     if (d->result.isContentEditable()) {
         KWebView::contextMenuEvent(e); // TODO: better KDE integration if possible
         return;
@@ -248,6 +249,22 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &part
             connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotViewImage()));
         }
         partActions.append(d->actionCollection->action("viewimage"));
+
+        if (WebKitSettings::self()->isAdFilterEnabled()) {
+            action = new KAction( i18n( "Block Image..." ), this );
+            d->actionCollection->addAction( "blockimage", action );
+            connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotBlockImage()));
+            partActions.append(action);
+
+            if (!d->result.imageUrl().host().isEmpty() &&
+                !d->result.imageUrl().scheme().isEmpty())
+            {
+                action = new KAction( i18n( "Block Images From %1" , d->result.imageUrl().host()), this );
+                d->actionCollection->addAction( "blockhost", action );
+                connect(action, SIGNAL(triggered(bool)), d->part->browserExtension(), SLOT(slotBlockHost()));
+                partActions.append(action);
+            }
+        }
     }
 
     if (d->result.linkUrl().isEmpty()) {

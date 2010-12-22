@@ -41,6 +41,8 @@
 #include <KDE/KSaveFile>
 #include <KDE/KComponentData>
 #include <KDE/KProtocolInfo>
+#include <KDE/KInputDialog>
+#include <KDE/KLocalizedString>
 #include <kdeversion.h>
 
 #include <QtCore/QPointer>
@@ -359,9 +361,32 @@ void WebKitBrowserExtension::slotCopyImage()
 
 void WebKitBrowserExtension::slotViewImage()
 {
-    if (d->view) {
+    if (d->view)
         emit createNewWindow(d->view->contextMenuResult().imageUrl());
-    }
+}
+
+void WebKitBrowserExtension::slotBlockImage()
+{
+    if (!d->view)
+        return;
+    
+    bool ok = false;
+    const QString url = KInputDialog::getText(i18n("Add URL to Filter"),
+                                              i18n("Enter the URL:"),
+                                              d->view->contextMenuResult().imageUrl().toString(),
+                                              &ok);
+    if (ok)
+        WebKitSettings::self()->addAdFilter(url);
+}
+
+void WebKitBrowserExtension::slotBlockHost()
+{
+    if (!d->view)
+        return;
+    
+    QUrl url (d->view->contextMenuResult().imageUrl());
+    url.setPath(QL1S("/*"));
+    WebKitSettings::self()->addAdFilter(url.toString(QUrl::RemoveAuthority));
 }
 
 void WebKitBrowserExtension::slotCopyLinkLocation()
