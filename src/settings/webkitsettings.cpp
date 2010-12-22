@@ -547,7 +547,7 @@ void WebKitSettings::init( KConfig * config, bool reset )
          d->m_smoothScrolling = KSmoothScrollingWhenEfficient;
       else
          d->m_smoothScrolling = KSmoothScrollingEnabled;
-    }
+    } 
 
     if ( reset || cgHtml.hasKey( "ZoomTextOnly" ) ) {
         d->m_zoomTextOnly = cgHtml.readEntry( "ZoomTextOnly", false );
@@ -762,6 +762,17 @@ void WebKitSettings::init( KConfig * config, bool reset )
 #endif
     }
   }
+
+  // DNS Prefect support...
+  if ( reset || cgHtml.hasKey( "DNSPrefetch" ) )
+  {
+    // Enabled, Disabled, OnlyWWWAndSLD
+    QString value = cgHtml.readEntry( "DNSPrefetch", "Enabled" ).toLower();
+    if (value == "enabled")
+        QWebSettings::globalSettings()->setAttribute(QWebSettings::DnsPrefetchEnabled, true);
+    else
+        QWebSettings::globalSettings()->setAttribute(QWebSettings::DnsPrefetchEnabled, false);
+  }  
 
   // Sync with QWebSettings.
   if (!d->m_encoding.isEmpty())
