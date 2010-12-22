@@ -41,6 +41,7 @@
 #include <KDE/KAuthorized>
 #include <KDE/KDebug>
 #include <KDE/KFileDialog>
+#include <KDE/KProtocolInfo>
 #include <KIO/Job>
 #include <KIO/AccessManager>
 
@@ -194,15 +195,17 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
 
     setForwardUnsupportedContent(true);
 
-    // Tell QWebSecurityOrigin that man:/ and info:/ are local resources...
-    QWebSecurityOrigin::addLocalScheme(QL1S("man"));
-    QWebSecurityOrigin::addLocalScheme(QL1S("info"));
+    // Add all KDE's local protocols + the error protocol to QWebSecurityOrigin
     QWebSecurityOrigin::addLocalScheme(QL1S("error"));
+    Q_FOREACH (const QString& protocol, KProtocolInfo::protocols()) {
+        if (KProtocolInfo::protocolClass(protocol) == QL1S(":local"))
+            QWebSecurityOrigin::addLocalScheme(protocol);
+    }
 
     connect(this, SIGNAL(downloadRequested(const QNetworkRequest &)),
             this, SLOT(downloadRequest(const QNetworkRequest &)));
     connect(this, SIGNAL(unsupportedContent(QNetworkReply *)),
-            this, SLOT(slotUnsupportedContent(QNetworkReply *)));
+            this, SLOT(downloadResponse(QNetworkReply*)));
     connect(networkAccessManager(), SIGNAL(finished(QNetworkReply *)),
             this, SLOT(slotRequestFinished(QNetworkReply *)));    
 }
