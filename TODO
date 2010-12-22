@@ -1,26 +1,23 @@
 * Proper support for KWebKitPart in the following Konqueror plugins:
-    - kget         Currently "downloading selected links only" does not work.
-    - adblock      Though rudimentary ad blocking support is already there,
-                   none of this plugin's advanced features work in kwebkitpart.
-                   The advanced features are currently KHTML specific and need
-                   to be modified to support kwebkitpart.
-                   NOTE: unlike KHTML, the advanced features support can be
-                   completely implemented outside of the kwebkitpart source tree.
-    - webarchive   This plugin is hoplessly KHTML specific and will require
-                   significant effort to add support for KWebKitPart.
+      - kget       Only the "download selected links only" feature is not supported
+                   due to deficiencies of QtWebKit. See http://webkit.org/b/48013.
+
+      - adblock    This plugin needs to be changed to use the KPart plugin
+                   extensions so that it is not KHTML specific. Otherwise,
+                   kwebkitpart supports all of the ad filtering functionality
+                   supported by khtml.
 
 * Add KPartStatusBarExtension support for the following plugins/features:
       - Popup blocker (non-plugin)
-      - adblock
 
-* Implement some means of showing the following information (Perhaps "about:engine"?):
+* Implement some means of showing information about the webkit rendering engine:
       - KWebKitPart's version #
       - QtWebKit's version #
       - UserAgent string ???
 
 * Look through all of Konqueror's web configuration options and make sure we
-  honor all those we possibly can... Here is a non-complete list of options
-  that currently do not work:
+  honor all those we possibly can. Here is a non-complete list of features
+  that are either partially implemented or not implemented at all:
       - Change cursor over links (TODO, QtWebKit ???).
       - Smooth scrolling support (TODO, QtWebKit ???).
       - Underline links support (Partial, does not work as intended).
