@@ -198,8 +198,15 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
     // Add all KDE's local protocols + the error protocol to QWebSecurityOrigin
     QWebSecurityOrigin::addLocalScheme(QL1S("error"));
     Q_FOREACH (const QString& protocol, KProtocolInfo::protocols()) {
-        if (KProtocolInfo::protocolClass(protocol) == QL1S(":local"))
-            QWebSecurityOrigin::addLocalScheme(protocol);
+        // file is already a known local scheme and about must not be added
+        // to this list since there is about:blank.
+        if (protocol == QL1S("about") || protocol == QL1S("file"))
+            continue;
+        
+        if (KProtocolInfo::protocolClass(protocol) != QL1S(":local"))
+            continue;
+        
+        QWebSecurityOrigin::addLocalScheme(protocol);
     }
 
     connect(this, SIGNAL(downloadRequested(const QNetworkRequest &)),
