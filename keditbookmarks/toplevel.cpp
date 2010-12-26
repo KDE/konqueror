@@ -45,6 +45,7 @@
 #include <kbookmark.h>
 #include <kbookmarkmanager.h>
 #include <kdebug.h>
+#include <kdialog.h>
 #include <kedittoolbar.h>
 #include <kfiledialog.h>
 #include <klineedit.h>
@@ -101,11 +102,13 @@ KEBApp::KEBApp(
 
     QWidget * rightSide = new QWidget;
     QVBoxLayout *listLayout = new QVBoxLayout(rightSide);
+    listLayout->setMargin(0);
     rightSide->setLayout(listLayout);
     listLayout->addWidget(searchline);
     listLayout->addWidget(mBookmarkListView);
 
     m_bkinfo = new BookmarkInfoWidget(mBookmarkListView, GlobalBookmarkManager::self()->model());
+    m_bkinfo->layout()->setContentsMargins(0, 0, KDialog::spacingHint(), KDialog::spacingHint());
 
     listLayout->addWidget(m_bkinfo);
 
