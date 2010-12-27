@@ -62,66 +62,68 @@ WebSslInfo::~WebSslInfo()
 
 bool WebSslInfo::isValid() const
 {
-  return !d->peerAddress.isNull();
+  return (d ? !d->peerAddress.isNull() : false);
 }
 
 QUrl WebSslInfo::url() const
 {
-  return d->url;
+  return (d ? d->url : QUrl());
 }
 
 QHostAddress WebSslInfo::parentAddress() const
 {
-  return d->parentAddress;
+  return (d ? d->parentAddress : QHostAddress());
 }
 
 QHostAddress WebSslInfo::peerAddress() const
 {
-  return d->peerAddress;
+  return (d ? d->peerAddress : QHostAddress());
 }
 
 QString WebSslInfo::protocol() const
 {
-  return d->protocol;
+  return (d ? d->protocol : QString());
 }
 
 QString WebSslInfo::ciphers() const
 {
-  return d->ciphers;
+  return (d ?  d->ciphers : QString());
 }
 
 QString WebSslInfo::certificateErrors() const
 {
-  return d->certErrors;
+  return (d ?  d->certErrors : QString());
 }
 
 int WebSslInfo::supportedChiperBits () const
 {
-  return d->supportedCipherBits;
+  return (d ? d->supportedCipherBits : 0);
 }
 
 int WebSslInfo::usedChiperBits () const
 {
-  return d->usedCipherBits;
+  return (d ?  d->usedCipherBits : 0);
 }
 
 QList<QSslCertificate> WebSslInfo::certificateChain() const
 {
-  return d->certificateChain;
+  return (d ? d->certificateChain : QList<QSslCertificate>());
 }
 
 WebSslInfo& WebSslInfo::operator=(const WebSslInfo& other)
 {
-  d->ciphers = other.d->ciphers;
-  d->protocol = other.d->protocol;
-  d->certErrors = other.d->certErrors;
-  d->peerAddress = other.d->peerAddress;
-  d->parentAddress = other.d->parentAddress;
-  d->certificateChain = other.d->certificateChain;
+  if (d) {
+    d->ciphers = other.d->ciphers;
+    d->protocol = other.d->protocol;
+    d->certErrors = other.d->certErrors;
+    d->peerAddress = other.d->peerAddress;
+    d->parentAddress = other.d->parentAddress;
+    d->certificateChain = other.d->certificateChain;
 
-  d->usedCipherBits = other.d->usedCipherBits;
-  d->supportedCipherBits = other.d->supportedCipherBits;
-  d->url = other.d->url;
+    d->usedCipherBits = other.d->usedCipherBits;
+    d->supportedCipherBits = other.d->supportedCipherBits;
+    d->url = other.d->url;
+  }
 
   return *this;
 }
@@ -167,45 +169,54 @@ void WebSslInfo::restoreFrom(const QVariant& value, const QUrl& url)
 
 void WebSslInfo::setUrl (const QUrl &url)
 {
-  d->url = url;
+  if (d)  
+    d->url = url;
 }
 
 void WebSslInfo::setPeerAddress(const QString& address)
 {
-  d->peerAddress = address;
+  if (d)
+    d->peerAddress = address;
 }
 
 void WebSslInfo::setParentAddress(const QString& address)
 {
-  d->parentAddress = address;
+  if (d)  
+    d->parentAddress = address;
 }
 
 void WebSslInfo::setProtocol(const QString& protocol)
 {
-  d->protocol = protocol;
+  if (d)
+    d->protocol = protocol;
 }
 
 void WebSslInfo::setCertificateChain(const QByteArray& chain)
 {
-  d->certificateChain = QSslCertificate::fromData(chain);
+  if (d)
+    d->certificateChain = QSslCertificate::fromData(chain);
 }
 
 void WebSslInfo::setCiphers(const QString& ciphers)
 {
-  d->ciphers = ciphers;
+  if (d)
+    d->ciphers = ciphers;
 }
 
 void WebSslInfo::setUsedCipherBits(const QString& bits)
 {
-  d->usedCipherBits = bits.toInt();
+  if (d)
+    d->usedCipherBits = bits.toInt();
 }
 
 void WebSslInfo::setSupportedCipherBits(const QString& bits)
 {
-  d->supportedCipherBits = bits.toInt();
+  if (d)  
+    d->supportedCipherBits = bits.toInt();
 }
 
 void WebSslInfo::setCertificateErrors(const QString& certErrors)
 {
-  d->certErrors = certErrors;
+  if (d)  
+    d->certErrors = certErrors;
 }
