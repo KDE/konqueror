@@ -564,10 +564,6 @@ QList<KParts::SelectorInterface::Element> KWebKitHtmlExtension::querySelectorAll
     // If the specified method is None, return an empty list...
     if (method == KParts::SelectorInterface::None)
         return elements;
-    
-    // If the specified method is None, return an empty list...
-    if (method == KParts::SelectorInterface::None)
-        return elements;
 
     // If the specified method is not supported, return an empty list...
     if (!(supportedQueryMethods() & method))
