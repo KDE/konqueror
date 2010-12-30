@@ -102,9 +102,7 @@ QWebHitTestResult WebView::contextMenuResult() const
 
 void WebView::contextMenuEvent(QContextMenuEvent *e)
 {
-    kDebug() << e->pos() << mapTo(this, e->pos());
     d->result = page()->mainFrame()->hitTestContent(e->pos());
-    kDebug() << d->result.imageUrl();
     if (d->result.isContentEditable()) {
         KWebView::contextMenuEvent(e); // TODO: better KDE integration if possible
         return;
