@@ -102,11 +102,16 @@ QWebHitTestResult WebView::contextMenuResult() const
 
 void WebView::contextMenuEvent(QContextMenuEvent *e)
 {
-    d->result = page()->currentFrame()->hitTestContent(e->pos());
+    kDebug() << e->pos() << mapTo(this, e->pos());
+    d->result = page()->mainFrame()->hitTestContent(e->pos());
+    kDebug() << d->result.imageUrl();
     if (d->result.isContentEditable()) {
         KWebView::contextMenuEvent(e); // TODO: better KDE integration if possible
         return;
     }
+
+    // Clear the previous collection entries first...
+    d->actionCollection->clear();    
 
     KParts::BrowserExtension::PopupFlags flags = KParts::BrowserExtension::DefaultPopupItems;
     flags |= KParts::BrowserExtension::ShowBookmark;
@@ -115,7 +120,15 @@ void WebView::contextMenuEvent(QContextMenuEvent *e)
     QString mimeType (QL1S("text/html"));
 
     KUrl emitUrl;
-    if (!d->result.linkUrl().isEmpty()) {
+    if (d->result.linkUrl().isEmpty()) {
+        emitUrl = d->part->url();
+        if (d->result.isContentSelected()) {
+            flags |= KParts::BrowserExtension::ShowTextSelectionItems;
+            selectActionPopupMenu(mapAction);
+        } else {
+            flags |= KParts::BrowserExtension::ShowNavigationItems;          
+        }      
+    } else {
         flags |= KParts::BrowserExtension::IsLink;
         emitUrl = d->result.linkUrl();
         linkActionPopupMenu(mapAction);
@@ -141,21 +154,13 @@ void WebView::contextMenuEvent(QContextMenuEvent *e)
                     mimeType = pmt->name();
             }
         }
-    } else {
-        flags |= KParts::BrowserExtension::ShowNavigationItems;
-        emitUrl = d->part->url();
-        if (d->result.isContentSelected()) {
-            flags |= KParts::BrowserExtension::ShowTextSelectionItems;
-            selectActionPopupMenu(mapAction);
-        }
     }
 
     partActionPopupMenu(mapAction);
     KParts::OpenUrlArguments args;
+    KParts::BrowserArguments bargs;
     args.setMimeType(mimeType);
-    emit d->part->browserExtension()->popupMenu(/*guiclient */
-        e->globalPos(), emitUrl, 0, args, KParts::BrowserArguments(),
-        flags, mapAction);
+    emit d->part->browserExtension()->popupMenu(e->globalPos(), emitUrl, 0, args, bargs, flags, mapAction);
 }
 
 void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &partGroupMap)
@@ -218,7 +223,7 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &part
         partActions.append(menu);
     }
 
-    if (!d->result.imageUrl().isEmpty()) {
+    if (d->result.imageUrl().isValid()) {
         QAction *action;
         if (!d->actionCollection->action("saveimageas")) {
             action = new KAction(i18n("Save Image As..."), this);
@@ -267,18 +272,22 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &part
         }
     }
 
-    if (d->result.linkUrl().isEmpty()) {
+    const bool showDocSourceAction = (d->result.linkUrl().isEmpty() && !d->result.isContentSelected());
+    const bool showInspectorAction = settings()->testAttribute(QWebSettings::DeveloperExtrasEnabled);
+    
+    if (showDocSourceAction || showInspectorAction) {
         QAction *separatorAction = new QAction(this);
         separatorAction->setSeparator(true);
         partActions.append(separatorAction);
+    }
 
+    if (showDocSourceAction) {
         QAction* action = d->part->actionCollection()->action("viewDocumentSource");
         partActions.append(action);
     }
 
-    if (settings()->testAttribute(QWebSettings::DeveloperExtrasEnabled)) {
+    if (showInspectorAction)
         partActions.append(pageAction(QWebPage::InspectElement));
-    }
 
     partGroupMap.insert("partactions", partActions);
 }
