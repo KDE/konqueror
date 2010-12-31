@@ -64,7 +64,7 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
 {
     KAboutData about = KAboutData("kwebkitpart", 0,
                                   ki18nc("Program Name", "KWebKitPart"),
-                                  /*version*/ "0.9.6",
+                                  /*version*/ "1.1.0",
                                   ki18nc("Short Description", "QtWebKit Browser Engine Component"),
                                   KAboutData::License_LGPL,
                                   ki18n("(C) 2009-2010 Dawit Alemayehu\n"
@@ -148,14 +148,10 @@ bool KWebKitPart::openUrl(const KUrl &u)
         return false;
     }
 
-    // Ignore about:blank urls...
-    if (u.url() == "about:blank") {
-        setUrl(u);
-        emit setWindowCaption (u.url());
-        emit completed();
-    } else {
-        KParts::BrowserArguments bargs (browserExtension()->browserArguments());
-        KParts::OpenUrlArguments args (arguments());
+    KParts::BrowserArguments bargs (browserExtension()->browserArguments());
+    KParts::OpenUrlArguments args (arguments());
+
+    if (u.url() != QL1S("about:blank")) {
         // Check if this is a restore state request, i.e. a history navigation
         // or a session restore. If it is, fulfill the request using QWebHistory.
         if (args.metaData().contains(QL1S("kwebkitpart-restore-state"))) {
@@ -200,11 +196,11 @@ bool KWebKitPart::openUrl(const KUrl &u)
         // Update the part's OpenUrlArguments after removing all of the
         // 'kwebkitpart-restore-x' metadata entries...
         setArguments(args);
-        // Set URL in KParts before emitting started; konq plugins rely on that.
-        setUrl(u);
-        d->webView->loadUrl(u, args, bargs);
     }
 
+    // Set URL in KParts before emitting started; konq plugins rely on that.
+    setUrl(u);
+    d->webView->loadUrl(u, args, bargs);
     return true;
 }
 
