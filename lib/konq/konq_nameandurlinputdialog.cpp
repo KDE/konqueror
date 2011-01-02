@@ -29,7 +29,7 @@
 class KonqNameAndUrlInputDialogPrivate
 {
 public:
-    KonqNameAndUrlInputDialogPrivate(KonqNameAndUrlInputDialog* qq) : m_fileNameEdited(false), q(qq) {}
+    KonqNameAndUrlInputDialogPrivate(KonqNameAndUrlInputDialog* qq) : m_leName(0), m_urlRequester(0), m_fileNameEdited(false), q(qq) {}
 
     void _k_slotClear();
     void _k_slotNameTextChanged( const QString&);
