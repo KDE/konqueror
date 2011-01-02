@@ -79,7 +79,9 @@ public:
         : q(qq),
           m_parentWidget(parentWidget),
           m_itemFlags(KParts::BrowserExtension::DefaultPopupItems),
+	  m_pMenuNew(0),
           m_copyToMenu(parentWidget),
+	  m_bookmarkManager(0),
           m_actions(actions),
           m_ownActionCollection(static_cast<QWidget *>(0))
     {
