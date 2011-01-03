@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % English "INCLUDE" > <!-- change language only here -->
+]>
+
+<article lang="&language;">
+
+<sect1 id="sidebar-mediaplayer">
+<sect1info>
+
+<authorgroup>
+<author>
+<firstname>Gardner</firstname>
+<surname>Bell</surname>
+<affiliation><address><email>gbell72@rogers.com</email></address></affiliation>
+</author>
+
+<!-- TRANS:ROLES_OF_TRANSLATORS --> 
+</authorgroup>
+
+<date>2004-09-09</date>
+<releaseinfo>3.10.00</releaseinfo>
+
+<abstract>
+<para>The sidebar-mediaplayer allows you to play your music files directly in &konqueror;.</para>
+</abstract>
+
+<keywordset>
+<keyword>KDE</keyword>
+<keyword>kdeaddons</keyword>
+<keyword>konqueror</keyword>
+<keyword>plugins</keyword>
+<keyword>sidebar-mediaplayer</keyword>
+</keywordset>
+
+</sect1info>
+
+<title>The Sidebar Media Player</title>
+
+<sect2>
+<title>Using the Sidebar Media Player</title>
+
+<para>The Sidebar Media Player can be accessed in the &konqueror; menubar under<menuchoice><guimenu>Window</guimenu><guimenuitem>Show Navigation Panel</guimenuitem></menuchoice> or by using the <keycap>F9</keycap> shortcut.</para>
+
+<para>To use, click the <inlinemediaobject><imageobject><imagedata fileref="cr22-app-konqsidebar_mediaplayer.png" format="PNG" width="22"/></imageobject></inlinemediaobject> on the navigation panel in &konqueror;, and drag-and-drop any music files you wish to listen to into the mediaplayer.</para> 
+
+</sect2>
+
+<sect2>
+<title>Credits</title>
+
+<para>The Sidebar Media Player is copyright &copy;
+2001 Joseph Wenninger <email>jowenn@kde.org</email>.</para>
+</sect2>
+
+</sect1>
+</article>

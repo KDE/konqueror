@@ -1,6 +1,7 @@
 add_subdirectory(dolphin)
 add_subdirectory(kfind)
 add_subdirectory(konqueror)
+add_subdirectory(konq-plugins)
 add_subdirectory(kdepasswd)
 if(NOT WIN32)
   add_subdirectory(konsole)
