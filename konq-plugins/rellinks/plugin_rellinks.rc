@@ -1,0 +1,38 @@
+<!DOCTYPE kpartgui>
+<gui name="rellinks" library="rellinksplugin" version="3">
+<MenuBar>
+ <Menu name="tools"><text>&amp;Tools</text>
+  <Menu name="rellinksMenu"><text>Document Relations</text>
+    <Action name="rellinks_top"/>
+    <Action name="rellinks_up"/>
+    <Action name="rellinks_first"/>
+    <Action name="rellinks_previous"/>
+    <Action name="rellinks_next"/>
+    <Action name="rellinks_last"/>
+    <Action name="rellinks_search"/>
+    <Action name="rellinks_document"/>
+    <Action name="rellinks_more"/>
+    <Action name="rellinks_links"/>
+  </Menu>
+ </Menu>
+</MenuBar>
+
+
+<ToolBar name="rellinksToolBar" hidden="true"><text>Document Relations</text>
+	<Action name="rellinks_top"/>
+	<Action name="rellinks_up"/>
+	<Action name="rellinks_first"/>
+	<Action name="rellinks_previous"/>
+	<Action name="rellinks_next"/>
+	<Action name="rellinks_last"/>
+	<Action name="rellinks_search"/>
+	<Separator  />
+	<Action name="rellinks_document"/>
+	<Separator  />
+	<Action name="rellinks_more"/>
+	<Separator  />
+    <Action name="rellinks_links"/>
+</ToolBar>
+
+
+</gui>

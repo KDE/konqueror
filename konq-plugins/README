@@ -1,0 +1,59 @@
+Konqueror Plugins
+=====================================================================
+This module contains plugins that interact with Konqueror.
+
+babelfish
+-------------------
+This works on KHTMLPart/KWebKitPart.  It uses BabelFish and other similar sites to
+translate the current page to whatever language you want (within
+reason).
+
+dirfilter
+-------------------
+This works on dolphin part.  This allows you to filter the current
+directory in a variety of ways.
+
+domtreeviewer
+-------------------
+Displays the document object model (DOM) in a dialog box.
+
+validators
+-------------------
+This works on KHTMLPart/KWebKitPart.  It uses the w3c HTML validator to validate
+the current page or stylesheet.  This is very handy when creating web pages.
+
+khtmlsettingsplugin
+-------------------
+This works on KHTMLPart.  This allows you to enable or disable a bunch
+of HTML settings without going through the settings dialog.
+
+kimgalleryplugin
+-------------------
+This works on a directory part.  It creates an HTML page with thumbnails of
+all the images in the current directory.
+
+uachanger
+-------------------
+This works on KHTMLPart/KWebKitPart.  It allows you to change the user agent
+without going through the settings dialog.
+
+autorefresh
+-------------------
+This works on any readonly part (though currently it only plugs into
+khtmlpart/kwebkitpart). It lets you tell konqueror to refresh a page automatically
+after a specific period. This is useful for things like news pages,
+and should be very nice for people using kiosk mode.
+
+fsview
+-------------------
+Graphical Disk Usage as konqueror plugin for inode/directory, for local files.
+
+akregator
+-------------------
+This works on KHTMLPart/KWebKitPart and allows you to add feeds to Akregator directly from Konqueror.
+
+minitools
+-------------------
+This plugin adds implementation for so-called bookmarklets. Bookmarklets are little
+Javascript programs which can be saved and used like normal web page bookmarks. Therefore,
+they are simple "one-click" tools that can add substantial functionality to the browser.

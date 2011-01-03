@@ -1,0 +1,31 @@
+Mon Jan 21 00:31:29 CET 2002 - Anders Lund <anders@alweb.dk>
+	o Initial Creation (of the rellinks plugin)
+Sat May 17 14:46:33 CET 2003 - Franck Quélain <shift@free.fr>
+	o Rename it konqSiteNavBar for better understanding
+	o The plugin is now a full toolbar
+	o Add navigation buttons (home, up, prev, next,...)
+	o "Document" and "More" menus à la Mozilla site navigation bar
+	o Toolip and contextuel help on most of the items
+	o Menu for Unclassified links
+Mon Jun 9 23:10:00 CET 2003 - Franck Quélain <shift@free.fr>
+	o Configuration Menu
+	o "When necessary" mode : show / hide toolbar only when necessary
+	o Configuration stored in .kde/share/config/konq_rellinksrc
+Wed Jun 18 22:05:00 CET 2003 - Franck Quélain <shift@free.fr>
+	o The name has changed to konq-rellinks after an interesting
+	discussion with Anders Lund.
+Fri Jan 30 16:23 CET 2004 - Kevin Krammer <kevin.krammer@gmx.at>
+	o Bugfix: enabling "more" menu instead of "document" when links
+	are "help", "made" or "copyright"
+	o Made "search" a top level action
+	o Polling for links while the page is loading. This presents
+	clickable actions as soon as possible, nice on slow connections or
+	in large documents.
+Sun Mar 21 16:23 CET 2004 - Franck Quélain <shift@free.fr>
+	o Support for "target" attribute
+	o Distinction between "rel" and "rev" relations
+Tue Jun 22 23:05 CET 2004 - Kevin Krammer <kevin.krammer@gmx.at>
+	o Move toolbar creation from XML GUI to code as a workaround
+          because KHTML loads the plugins before it initializes its
+          d pointer and so there is no way to get to either the view or
+          the toolbar in the plugin's contructor.

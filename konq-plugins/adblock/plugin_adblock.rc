@@ -1,0 +1,11 @@
+<!DOCTYPE kpartgui>
+<gui name="adblock" library="adblock" version="3">
+<MenuBar>
+ <Menu name="tools"><text>&amp;Tools</text>
+  <Action name="action adblock"/>
+ </Menu>
+</MenuBar>
+<ToolBar name="extraToolBar"><text>Extra Toolbar</text>
+  <Action name="action adblock"/>
+</ToolBar>
+</gui>

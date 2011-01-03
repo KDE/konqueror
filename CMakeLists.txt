@@ -27,6 +27,7 @@ add_subdirectory( keditbookmarks )
 add_subdirectory( konqueror )
 add_subdirectory( kfind )
 add_subdirectory( plasma )
+add_subdirectory( konq-plugins )
 
 if ( Q_WS_MAC )
   add_subdirectory( konsole )

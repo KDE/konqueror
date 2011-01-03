@@ -1,0 +1,6 @@
+<!DOCTYPE kpartgui>
+<gui name="searchbar" library="searchbarplugin" version="4">
+<ToolBar fullWidth="true" name="locationToolBar" newline="true"><text>Search Toolbar</text>
+  <Action name="toolbar_search_bar" />
+</ToolBar>
+</gui>
