@@ -525,8 +525,6 @@ void KonqMainWindow::openUrl(KonqView *_view, const KUrl &_url,
     if (mimeType.isEmpty())
         mimeType = req.args.mimeType();
 
-    kDebug() << "mimetype=" << mimeType;
-
     if (!url.isValid()) {
         // I think we can't really get here anymore; I tried and didn't succeed.
         // URL filtering catches this case before hand, and in cases without filtering
