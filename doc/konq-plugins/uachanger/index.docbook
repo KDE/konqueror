@@ -1,0 +1,102 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % English "INCLUDE" > <!-- change language only here -->
+]>
+
+<article lang="&language;">
+
+<sect1 id="uachanger">
+<sect1info>
+
+<authorgroup>
+<author>
+<firstname>Gardner</firstname>
+<surname>Bell</surname>
+<affiliation><address><email>gbell72@rogers.com</email></address></affiliation>
+</author>
+
+<!-- TRANS:ROLES_OF_TRANSLATORS --> 
+</authorgroup>
+
+<date>2004-07-13</date>
+<releaseinfo>3.10.00</releaseinfo>
+
+<abstract>
+<para>The uachanger adds a menu to &konqueror; that allows you to
+change the Browser and Operating System identification on a
+domain-by-domain basis. This is useful when browsing websites that
+limit access to those using a particular web browser.</para>
+</abstract>
+
+<keywordset>
+<keyword>KDE</keyword>
+<keyword>kdeaddons</keyword>
+<keyword>konqueror</keyword>
+<keyword>plugins</keyword>
+<keyword>uachanger</keyword>
+</keywordset>
+
+</sect1info>
+
+<title>The User Agent Changer</title>
+
+<sect2>
+<title>Using the User Agent Changer</title>
+
+<para>The &konqueror; uachanger plugin can be accessed in the menubar under <menuchoice><guimenu>Tools</guimenu><guimenuitem>Change Browser Identification</guimenuitem></menuchoice></para>
+<!-- ************************************ -->
+<!-- We probably need an entity for Mozilla, and I should check about -->
+<!-- trademark stuff for the MS browsers (Phil)-->
+<!-- ************************************ -->
+<variablelist>
+<varlistentry>
+<term><guimenuitem>Default Identification</guimenuitem></term>
+<listitem><para>The default User Agent header for &konqueror; is Mozilla/5.0(compatible;Konqueror/3.2)(KHTML, like Gecko).  If you come across a site that refuses this browser access, change your User Agent to one of the options below.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guimenuitem>Internet Explorer</guimenuitem></term>
+<listitem><para>Allows you to change your User Agent header to MSIE for sites that refuse <application>Mozilla</application>-based browsers entry.  You will most likely need to use one of the MSIE User Agents if you wish to use &konqueror; to access Hotmail.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guimenuitem>Mozilla</guimenuitem></term>
+<listitem><para>Allows you to change the User Agent header in &konqueror; to appear as <application>Mozilla</application> version 1.2.1 through 1.6</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guimenuitem>Netscape Navigator</guimenuitem></term>
+<listitem><para>Pages that don't comply with W3C recommendations, or were written using proprietary &HTML; elements and attributes will render correctly if you choose to send the User Agent of these old browsers.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guimenuitem>Other</guimenuitem></term>
+<listitem><para>This section contains miscellaneous browsers that you can use to change your User Agent.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guimenuitem>Apply To Entire Site</guimenuitem></term>
+<listitem><para>This option allows you to specify that the defined User Agent applies across every page on the site you are visiting.</para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><guimenuitem>Configure</guimenuitem></term>
+<listitem><para>Selecting <guimenuitem>Configure</guimenuitem> allows you to fine tune the amount of information you wish to reveal about the browser and operating system being used.</para></listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2>
+<title>Credits</title>
+
+<para>The User Agent Changer plugin is Copyright &copy;
+2001 Dawit Alemayehu. 
+
+<email>adawit@kde.org</email></para>
+</sect2>
+
+</sect1>
+</article>

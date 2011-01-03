@@ -1,0 +1,95 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % English "INCLUDE" > <!-- change language only here -->
+]>
+
+<article lang="&language;">
+
+<sect1 id="babel">
+<sect1info>
+
+<authorgroup>
+<author>
+<firstname>Lauri</firstname>
+<surname>Watts</surname>
+<affiliation><address>&Lauri.Watts.mail;</address></affiliation>
+</author>
+
+<!-- TRANS:ROLES_OF_TRANSLATORS --> 
+</authorgroup>
+
+<date>2006-02-26</date>
+<releaseinfo>3.5.1</releaseinfo> <!-- Used KDE version -->
+
+<abstract>
+<para>The Babel &konqueror; plugin gives you quick access to the
+Babelfish translation service.</para>
+</abstract>
+
+<keywordset>
+<keyword>KDE</keyword>
+<keyword>kdeaddons</keyword>
+<keyword>konqueror</keyword>
+<keyword>plugins</keyword>
+<keyword>babelfish</keyword>
+<keyword>translate</keyword>
+</keywordset>
+</sect1info>
+
+<title>The Babel &konqueror; plugin</title>
+
+<sect2>
+<title>Using the Babelfish plugin</title>
+
+<para>Babelfish is a machine translation service provided by <ulink
+url="http://babel.altavista.com/">AltaVista</ulink>.</para>
+
+<para>The plugin allows you to automatically translate web pages
+between several languages.</para>
+
+<para>The Babelfish plugin can be accessed in the &konqueror; menubar 
+under <menuchoice><guimenu>Tools</guimenu>
+<guimenuitem>Translate Web Page</guimenuitem></menuchoice>.
+Select from the list that drops down the language to translate from 
+and the language to translate to.</para>
+
+<para>If you have a portion of the text on the page selected, that
+will be translated instead of the entire &URL;.</para>
+
+<para>Not all languages are available from the Babelfish service.</para>
+
+<important>
+<para>Machine translation is not a perfect science!  Babelfish will at
+best give you a rough translation, and at worst will give you a very
+funny read.  Don't base important decisions on things you have read
+from a Babelfish translated page, without confirming that the
+translation is indeed accurate.</para>
+</important>
+
+<note> 
+<para>You may only translate web pages that are accessible on the
+world wide web.  To translate any other text, you should go directly
+to the Babelfish site itself, where you are able to paste in text for
+translation.</para>
+</note>
+
+</sect2>
+
+<sect2>
+<title>Credits</title>
+
+<para>The Babelfish plugin is copyright (C) 
+2001 &Kurt.Granroth;
+
+&Kurt.Granroth.mail;</para>
+
+<para>Documentation Copyright 2002 &Lauri.Watts;
+&Lauri.Watts.mail;</para>
+
+<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
+
+</sect2>
+</sect1>
+</article>

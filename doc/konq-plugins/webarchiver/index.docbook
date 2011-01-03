@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
+"dtd/kdex.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % English "INCLUDE" > <!-- change language only here -->
+]>
+
+<article lang="&language;">
+
+<sect1 id="webarchiver">
+<sect1info>
+
+<authorgroup>
+<author>
+<firstname>Gardner</firstname>
+<surname>Bell</surname>
+<affiliation><address><email>gbell72@rogers.com</email></address></affiliation>
+</author>
+
+<!-- TRANS:ROLES_OF_TRANSLATORS --> 
+</authorgroup>
+
+<date>2004-07-14</date>
+<releaseinfo>3.10.00</releaseinfo>
+
+<abstract>
+<para>The webarchiver plugin for &konqueror; allows for archiving of
+web pages, documents and images in <literal role="extension">.war</literal> format.</para>
+</abstract>
+
+<keywordset>
+<keyword>KDE</keyword>
+<keyword>kdeaddons</keyword>
+<keyword>konqueror</keyword>
+<keyword>plugins</keyword>
+<keyword>webarchiver</keyword>
+</keywordset>
+
+</sect1info>
+
+<title>Web Archiver</title>
+
+<sect2>
+<title>Using the Web Archiver</title>
+
+<para>To access the webarchiver point your mouse to <menuchoice><guimenu>Tools</guimenu><guimenuitem>Archive Web Page...</guimenuitem></menuchoice>.  A dialog will appear allowing you to save the current website being viewed.</para>
+
+</sect2>
+
+<sect2>
+<title>Credits</title>
+
+<para>The webarchiver plugin is Copyright &copy;
+2001-2003 Andreas Schlapbach, Antonio Larossa and Malte Starostik
+
+<email>schlpbch@iam.unibe.ch</email>
+<email>larossa@kde.org</email>
+<email>malte@kde.org</email></para>
+</sect2>
+
+</sect1>
+</article>
