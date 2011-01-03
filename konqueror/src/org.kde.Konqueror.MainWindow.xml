@@ -15,6 +15,12 @@
       <arg name="startup_id" type="ay" direction="in"/>
       <arg name="tempFile" type="b" direction="in"/>
     </method>
+    <method name="newTabASNWithMimeType">
+      <arg name="url" type="s" direction="in"/>
+      <arg name="mimetype" type="s" direction="in"/>
+      <arg name="startup_id" type="ay" direction="in"/>
+      <arg name="tempFile" type="b" direction="in"/>
+    </method>    
     <method name="reload">
     </method>
     <method name="currentView">

@@ -384,7 +384,7 @@ bool ClientApp::createNewWindow(const KUrl & url, bool newTab, bool tempFile, co
 
         if ( !foundApp.isEmpty() ) {
             org::kde::Konqueror::MainWindow konqWindow( foundApp, foundObj.path(), dbus );
-            QDBusReply<void> newTabReply = konqWindow.newTabASN( url.url(), startup_id_str, tempFile );
+            QDBusReply<void> newTabReply = konqWindow.newTabASNWithMimeType( url.url(), mimetype, startup_id_str, tempFile );
             if ( newTabReply.isValid() ) {
                 sendASNChange();
                 return true;

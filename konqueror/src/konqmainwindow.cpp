@@ -497,6 +497,17 @@ void KonqMainWindow::openFilteredUrl(const QString & _url, bool inNewTab, bool t
     openFilteredUrl( _url, req );
 }
 
+void KonqMainWindow::openFilteredUrl(const QString & _url,  const QString& _mimeType, bool inNewTab, bool tempFile)
+{
+    KonqOpenURLRequest req( _url );
+    req.browserArgs.setNewTab(inNewTab);
+    req.newTabInFront = true;
+    req.tempFile = tempFile;
+    req.args.setMimeType(_mimeType);
+
+    openFilteredUrl( _url, req );    
+}
+
 void KonqMainWindow::openUrl(KonqView *_view, const KUrl &_url,
                              const QString &_mimeType, const KonqOpenURLRequest& _req,
                              bool trustedSource)
@@ -510,6 +521,11 @@ void KonqMainWindow::openUrl(KonqView *_view, const KUrl &_url,
     KUrl url(_url);
     QString mimeType(_mimeType);
     KonqOpenURLRequest req(_req);
+
+    if (mimeType.isEmpty())
+        mimeType = req.args.mimeType();
+
+    kDebug() << "mimetype=" << mimeType;
 
     if (!url.isValid()) {
         // I think we can't really get here anymore; I tried and didn't succeed.
