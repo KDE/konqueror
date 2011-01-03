@@ -1,0 +1,11 @@
+<!DOCTYPE gui>
+<gui name="UserAgentChanger" library="uachangerplugin">
+<MenuBar>
+ <Menu name="tools"><Text>&amp;Tools</Text>
+  <Action name="changeuseragent"/>
+ </Menu>
+</MenuBar>
+<ToolBar name="extraToolBar"><text>Extra Toolbar</text>
+  <Action name="changeuseragent"/>
+</ToolBar>
+</gui>

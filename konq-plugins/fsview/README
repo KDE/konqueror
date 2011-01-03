@@ -1,0 +1,29 @@
+What's this?
+============
+
+Josef Weidendorfer
+Josef.Weidendorfer@gmx.de
+
+FSView is a tool for showing disc utilization in a graphical form, much
+like the UNIX command 'du'. The visualisation type choosen is a treemap.
+Treemaps allow for showing metrics of objects in nested structures, like
+sizes of files and directories on your hard disc, where the the size of
+directories is defined to be the sum of the size of its children.
+Each object is represented by a rectangle which area is proportional to
+its metric. The metric must have the property that the sum of the
+children's metric of some object is equal or smaller than the objects
+metric. This holds true for the file/directory sizes in the use case of
+FSView.
+
+It's provided both as a Konqueror KPart plugin for the mime type
+inode/directory, and a standalone executable.
+
+This was meant as a small test application and usage tutorial for
+the TreeMap widget developed within KCachegrind. As it's quite cool
+and small, it is now provided as a Konqueror addon in KDE.
+
+For a full featured graphical 'du', see KDirStat. It's quite similar
+to FSView, but allows for lot of cleanup actions.
+
+Happy space hunting,
+Josef

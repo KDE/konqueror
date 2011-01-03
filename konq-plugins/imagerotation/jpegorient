@@ -1,0 +1,85 @@
+#!/bin/sh
+
+if test "$#" -lt 2; then
+  echo "Usage: $0 '##|v|h' jpegs"
+  exit 2
+fi
+
+die() {
+  echo "$@"; exit 1
+}
+
+notify() {
+  case "$1" in
+  /*) url=file:"$1" ;;
+  *) url=file:"$PWD"/"$1" ;;
+  esac
+
+  konq=`dcop konqueror-\*`
+  for k in $konq; do
+    notify=`dcop $k KDirNotify-\*`
+    for n in $notify; do
+      dcop $k $n FilesChanged [ "$url" ]  # $1 must be a url
+    done
+  done
+}
+
+
+
+
+action=$1
+
+case $action in
+[1-8]|+[1-8]) o=$action ;;
+90|[+-]90) o=+6 ;;  # Use + for all these
+270|[+-]270) o=+8 ;;
+180|[+-]180) o=+3 ;;
+v|-v) o=+4 ;;
+h|-h) o=+2 ;;
+*) die cannot understand transformation "$action" ;;
+esac
+
+shift
+
+for file in "$@"; do
+
+if orient.py $o "$file" | grep 'orientation changed' >/dev/null 2>&1; then
+  notify "$file"
+  continue
+fi
+
+### try jpegtran instead
+if which jpegtran-mmx >/dev/null 2>&1; then
+  JPEGTRAN=jpegtran-mmx
+else
+  if which jpegtran >/dev/null 2>&1; then
+    JPEGTRAN=jpegtran
+  else
+    die could not change orientation
+  fi
+fi
+
+case $action in
+v|-v) c='-flip vertical' ;;
+h|-h) c='-flip horizontal' ;;
+*90) c='-rotate 90' ;;
+*180) c='-rotate 180' ;;
+*270) c='-rotate 270' ;;
++5) c='-transpose' ;;
++7) c='-transverse' ;;
+*) die cannot understand transformation "$action" using jpegtran ;;
+esac # others could be emulated, but ...
+
+tmp="$file.a.$$"
+
+cleandie() {
+  mv -i "$tmp" $"2" </dev/null 2>/dev/null; die "$@"
+}
+
+mv -i "$file" "$tmp" </dev/null 2>/dev/null || die unable to move temp files
+$JPEGTRAN -copy all -outfile "$file" $c "$tmp" || cleandie error using jpegtran
+rm "$tmp"
+notify "$file"
+
+done
+

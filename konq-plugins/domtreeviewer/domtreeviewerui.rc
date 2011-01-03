@@ -1,0 +1,49 @@
+<!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
+<kpartgui name="domtreeviewer" version="1">
+<MenuBar>
+ <Menu name="file"><text>&amp;File</text>
+ </Menu>
+ <Menu name="edit"><text>&amp;Edit</text>
+ </Menu>
+ <Menu name="view"><text>&amp;View</text>
+  <WeakSeparator />
+  <Action name="tree_inc_level" />
+  <Action name="tree_dec_level" />
+  <Separator />
+  <Action name="show_dom_pure" />
+  <Action name="show_dom_attributes" />
+  <Action name="show_highlight_html" />
+  <Separator />
+  <Action name="show_msg_dlg" />
+ </Menu>
+ <Menu name="go"><text>&amp;Go</text>
+  <Action name="tree_up" />
+ </Menu>
+</MenuBar>
+<ToolBar name="mainToolBar"><text>Main Toolbar</text>
+</ToolBar>
+<ToolBar name="treeToolBar"><text>Tree Toolbar</text>
+  <Action name="tree_up" />
+  <Action name="view_redisplay" />
+  <Separator />
+  <Action name="tree_dec_level" />
+  <Action name="tree_inc_level" />
+</ToolBar>
+<Menu name="infopanelattr_context">
+  <Action name="edit_cut" />
+  <Action name="edit_copy" />
+  <Action name="edit_paste" />
+  <Separator />
+  <Action name="attr_delete" />
+</Menu>
+<Menu name="domtree_context">
+  <Action name="tree_add_element" />
+  <Action name="tree_add_text" />
+  <Separator />
+  <Action name="edit_cut" />
+  <Action name="edit_copy" />
+  <Action name="edit_paste" />
+  <Separator />
+  <Action name="tree_delete" />
+</Menu>
+</kpartgui>
