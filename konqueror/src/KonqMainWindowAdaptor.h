@@ -59,6 +59,8 @@ public slots:
 
     void newTabASN( const QString& url, const QByteArray& startup_id, bool tempFile );
 
+    void newTabASNWithMimeType(const QString& url, const QString& mimetype, const QByteArray& startup_id, bool tempFile);
+
     void splitViewHorizontally();
     void splitViewVertically();
 

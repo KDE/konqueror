@@ -118,6 +118,11 @@ public:
      */
     void openFilteredUrl(const QString& url, bool inNewTab = false, bool tempFile = false);
 
+    /**
+     * Convenience overload for openFilteredUrl(url, req)
+     */    
+    void openFilteredUrl(const QString & _url, const QString& _mimeType, bool inNewTab, bool tempFile);
+
 public Q_SLOTS:
   /**
    * The main openUrl method.

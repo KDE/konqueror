@@ -54,6 +54,14 @@ void KonqMainWindowAdaptor::newTabASN( const QString& url, const QByteArray& sta
   m_pMainWindow->openFilteredUrl( url, true, tempFile );
 }
 
+void KonqMainWindowAdaptor::newTabASNWithMimeType(const QString& url, const QString& mimetype, const QByteArray& startup_id, bool tempFile)
+{
+#ifdef Q_WS_X11
+  KStartupInfo::setNewStartupId( m_pMainWindow, startup_id );
+#endif
+    m_pMainWindow->openFilteredUrl( url, mimetype, true, tempFile );
+}
+
 void KonqMainWindowAdaptor::reload()
 {
   m_pMainWindow->slotReload();
