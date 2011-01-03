@@ -1,0 +1,11 @@
+<!DOCTYPE gui>
+<gui name="Minitools" library="minitoolsplugin">
+<MenuBar>
+ <Menu name="tools"><Text>&amp;Tools</Text>
+  <Action name="minitools"/>
+ </Menu>
+</MenuBar>
+<ToolBar name="extraToolBar"><text>Extra Toolbar</text>
+  <Action name="minitools"/>
+</ToolBar>
+</gui>

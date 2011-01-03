@@ -1,0 +1,11 @@
+<!DOCTYPE kpartgui>
+<gui name="khtmlsettingsplugin" library="khtmlsettingsplugin" version="3">
+<MenuBar>
+ <Menu name="tools"><text>&amp;Tools</text>
+  <Action name="action menu"/>
+ </Menu>
+</MenuBar>
+<ToolBar name="extraToolBar"><text>Extra Toolbar</text>
+  <Action name="action menu"/>
+</ToolBar>
+</gui>

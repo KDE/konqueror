@@ -1,0 +1,11 @@
+<!DOCTYPE kpartgui>
+<gui name="babelfish" library="babelfishplugin" version="1">
+<MenuBar>
+ <Menu name="tools"><text>&amp;Tools</text>
+  <Action name="translatewebpage"/>
+ </Menu>
+</MenuBar>
+<ToolBar name="extraToolBar"><text>Extra Toolbar</text>
+  <Action name="translatewebpage"/>
+</ToolBar>
+</gui>

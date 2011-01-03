@@ -1,0 +1,13 @@
+<!DOCTYPE gui>
+<gui name="DirFilter" library="dirfilterplugin" version="4">
+<MenuBar>
+ <Menu name="tools"><Text>&amp;Tools</Text>
+  <Action name="filterdir"/>
+ </Menu>
+</MenuBar>
+<ToolBar name="extraToolBar"><text>Extra Toolbar</text>
+  <Action name="filterdir"/>
+</ToolBar>
+<ToolBar fullWidth="true" name="locationToolBar" newline="true"><text>Filter Toolbar</text>
+</ToolBar>
+</gui>

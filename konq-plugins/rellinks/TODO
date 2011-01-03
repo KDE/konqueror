@@ -1,0 +1,20 @@
+Rellinks : 
+=========
+
+* Support multiple same relations for all relations in a beautiful way 
+  (as FireFox Link Toolbar Extension do) : 
+  by transfoming buttons (KAction) in menus (KActionMenu) if more than one item is found for a relation ?
+* Possibility to configure keyboard shortcuts
+* Manage "rel" and "rev" differently
+* Manage "media"
+* Respect the specifications : A LinkTypes value refers to a space-separated list of link types. White space characters are not permitted within link types.
+* Send the referer when going to a link
+* Support target attribut ? (Cf. Mozilla link toolbar bug : http://mozdev.org/bugs/show_bug.cgi?id=5259)
+
+
+Rellinks website (http://shift.freezope.org/konq_rellinks) :
+============================================================
+
+* Add more testcasess
+* Add more documentation
+* Compare implementation with other browsers

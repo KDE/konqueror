@@ -1,0 +1,44 @@
+<ui version="4.0" >
+ <class>MessageDialog</class>
+ <widget class="QWidget" name="MessageDialog" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>511</width>
+    <height>282</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" >
+   <property name="margin" >
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="KTextEdit" name="messagePane" >
+     <property name="undoRedoEnabled" >
+      <bool>false</bool>
+     </property>
+     <property name="readOnly" >
+      <bool>true</bool>
+     </property>
+     <property name="acceptRichText" >
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11" />
+  <customwidgets>
+  <customwidget>
+   <class>KTextEdit</class>
+   <extends>QTextEdit</extends>
+   <header>ktextedit.h</header>
+  </customwidget>
+ </customwidgets>
+ <includes>
+  <include location="local" >ktextedit.h</include>
+ </includes>
+ <resources/>
+ <connections/>
+</ui>
