@@ -489,8 +489,8 @@ static void filterFrameMappings(KHTMLPart *part, Id2Part &result) {
     }
 }
 
-template static void filterFrameMappings< ArchiveDialog::Name2Part, GetName >(KHTMLPart *, ArchiveDialog::Name2Part &);
-template static void filterFrameMappings< ArchiveDialog::URL2Part, GetURL >(KHTMLPart *, ArchiveDialog::URL2Part &);
+template void filterFrameMappings< ArchiveDialog::Name2Part, GetName >(KHTMLPart *, ArchiveDialog::Name2Part &);
+template void filterFrameMappings< ArchiveDialog::URL2Part, GetURL >(KHTMLPart *, ArchiveDialog::URL2Part &);
 
 
 
