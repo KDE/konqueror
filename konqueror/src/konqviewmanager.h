@@ -365,15 +365,17 @@ private:
    * @param defaultURL the URL to use if the profile doesn't contain urls
    * @param openUrl whether to open urls at all (from the profile or using @p defaultURL).
    *  (this is set to false when we have a forcedUrl to open)
+   * @param forcedUrl open this URL instead of the one from the profile
+   * @param forcedService use this service (part) instead of the one from the profile
    */
   void loadItem( const KConfigGroup &cfg, KonqFrameContainerBase *parent,
                  const QString &name, const KUrl & defaultURL, bool openUrl,
-                 const KUrl& forcedUrl,
+                 const KUrl& forcedUrl, const QString& forcedService,
                  bool openAfterCurrentPage = false, int pos = -1 );
 
     void loadRootItem( const KConfigGroup &cfg, KonqFrameContainerBase *parent,
                        const KUrl & defaultURL, bool openUrl,
-                       const KUrl& forcedUrl,
+                       const KUrl& forcedUrl, const QString& forcedService = QString(),
                        bool openAfterCurrentPage = false,
                        int pos = -1 );
 

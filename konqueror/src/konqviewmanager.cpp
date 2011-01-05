@@ -292,7 +292,7 @@ void KonqViewManager::duplicateTab(int tabIndex, bool openAfterCurrentPage)
   KonqFrameBase::Options flags = KonqFrameBase::saveHistoryItems;
   tab->saveConfig( profileGroup, prefix, flags, 0L, 0, 1);
 
-  loadRootItem( profileGroup, tabContainer(), KUrl(), true, KUrl(), openAfterCurrentPage );
+  loadRootItem( profileGroup, tabContainer(), KUrl(), true, KUrl(), QString(), openAfterCurrentPage );
 
   if (openAfterCurrentPage)
     m_tabContainer->setCurrentIndex( m_tabContainer->currentIndex () + 1 );
@@ -537,7 +537,7 @@ void KonqViewManager::updatePixmaps()
 void KonqViewManager::openClosedTab(const KonqClosedTabItem& closedTab)
 {
     kDebug();
-    loadRootItem( closedTab.configGroup(), m_tabContainer, KUrl(), true, KUrl(), false, closedTab.pos() );
+    loadRootItem( closedTab.configGroup(), m_tabContainer, KUrl(), true, KUrl(), QString(), false, closedTab.pos() );
 
     int pos = ( closedTab.pos() < m_tabContainer->count() ) ? closedTab.pos() : m_tabContainer->count()-1;
     kDebug() << "pos, m_tabContainer->count():" << pos << m_tabContainer->count()-1;
@@ -984,7 +984,7 @@ void KonqViewManager::loadViewProfileFromGroup( const KConfigGroup &profileGroup
     clear();
 
     if (forcedUrl.url() != "about:blank") {
-        loadRootItem( profileGroup, m_pMainWindow, defaultURL, openUrl && forcedUrl.isEmpty(), forcedUrl );
+        loadRootItem( profileGroup, m_pMainWindow, defaultURL, openUrl && forcedUrl.isEmpty(), forcedUrl, req.serviceName );
     } else {
         // ## in this case we won't resize the window, so bool resetWindow could be useful after all?
         m_pMainWindow->disableActionsNoView();
@@ -1142,7 +1142,8 @@ QSize KonqViewManager::readDefaultSize(const KConfigGroup &cfg, QWidget *widget)
 
 void KonqViewManager::loadRootItem( const KConfigGroup &cfg, KonqFrameContainerBase *parent,
                                     const KUrl & defaultURL, bool openUrl,
-                                    const KUrl& forcedUrl, bool openAfterCurrentPage,
+                                    const KUrl& forcedUrl, const QString& forcedService,
+                                    bool openAfterCurrentPage,
                                     int pos )
 {
     const QString rootItem = cfg.readEntry("RootItem", "empty");
@@ -1151,7 +1152,7 @@ void KonqViewManager::loadRootItem( const KConfigGroup &cfg, KonqFrameContainerB
     // from profile loading (e.g. in switchView)
     m_bLoadingProfile = true;
 
-    loadItem( cfg, parent, rootItem, defaultURL, openUrl, forcedUrl, openAfterCurrentPage, pos );
+    loadItem( cfg, parent, rootItem, defaultURL, openUrl, forcedUrl, forcedService, openAfterCurrentPage, pos );
 
     m_bLoadingProfile = false;
 
@@ -1167,6 +1168,7 @@ void KonqViewManager::loadRootItem( const KConfigGroup &cfg, KonqFrameContainerB
 void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase *parent,
                                 const QString &name, const KUrl & defaultURL, bool openUrl,
                                 const KUrl& forcedUrl,
+                                const QString& forcedService,
                                 bool openAfterCurrentPage, int pos )
 {
     QString prefix;
@@ -1187,7 +1189,7 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
             // An empty profile is an empty KHTML part. Makes all KHTML actions available, avoids crashes,
             // makes it easy to DND a URL onto it, and makes it fast to load a website from there.
             serviceType = "text/html";
-            serviceName = "html";
+            serviceName = forcedService; // coming e.g. from the cmdline, otherwise empty
         } else {
             serviceType = cfg.readEntry( QString::fromLatin1( "ServiceType" ).prepend( prefix ), QString("inode/directory"));
             serviceName = cfg.readEntry( QString::fromLatin1( "ServiceName" ).prepend( prefix ), QString() );
@@ -1197,7 +1199,7 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
                 {
                     // No point in loading the about page if we're going to replace it with a KHTML part right away
                     serviceType = "text/html";
-                    serviceName = "html";
+                    serviceName = forcedService; // coming e.g. from the cmdline, otherwise empty
                 }
             }
         }
@@ -1296,7 +1298,7 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
     {
       kWarning() << "Profile Loading Error: Less than two children in" << name ;
       // fallback to defaults
-      loadItem( cfg, parent, "InitialView", defaultURL, openUrl, forcedUrl );
+      loadItem( cfg, parent, "InitialView", defaultURL, openUrl, forcedUrl, forcedService );
     }
     else
     {
@@ -1307,8 +1309,8 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
 	tabindex = static_cast<KonqFrameTabs*>(parent)->currentIndex() + 1;
       parent->insertChildFrame( newContainer, tabindex );
 
-      loadItem( cfg, newContainer, childList.at(0), defaultURL, openUrl, forcedUrl );
-      loadItem( cfg, newContainer, childList.at(1), defaultURL, openUrl, forcedUrl );
+      loadItem( cfg, newContainer, childList.at(0), defaultURL, openUrl, forcedUrl, forcedService );
+      loadItem( cfg, newContainer, childList.at(1), defaultURL, openUrl, forcedUrl, forcedService );
 
       //kDebug() << "setSizes" << sizes;
       newContainer->setSizes( sizes );
@@ -1334,7 +1336,7 @@ void KonqViewManager::loadItem( const KConfigGroup &cfg, KonqFrameContainerBase 
     const QStringList childList = cfg.readEntry( QString::fromLatin1( "Children" ).prepend( prefix ),QStringList() );
     for ( QStringList::const_iterator it = childList.begin(); it != childList.end(); ++it )
     {
-        loadItem( cfg, tabContainer(), *it, defaultURL, openUrl, forcedUrl );
+        loadItem( cfg, tabContainer(), *it, defaultURL, openUrl, forcedUrl, forcedService );
         QWidget* currentPage = m_tabContainer->currentWidget();
         if (currentPage != 0L) {
           KonqView* activeChildView = dynamic_cast<KonqFrameBase*>(currentPage)->activeChildView();
@@ -1440,7 +1442,9 @@ void KonqViewManager::slotProfileActivated(QAction* action)
     //not very nice.
     if (xmluiFile != m_pMainWindow->xmlFile()) {
         m_pMainWindow->deleteLater();
-        KonqMisc::createBrowserWindowFromProfile(profilePath, fileName, m_pMainWindow->currentView()->url());
+        KonqMainWindow* mw = KonqMisc::createBrowserWindowFromProfile(profilePath, fileName, m_pMainWindow->currentView()->url());
+        if (mw)
+            mw->show();
     } else {
         loadViewProfileFromFile(profilePath, fileName);
     }

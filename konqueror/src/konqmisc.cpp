@@ -80,10 +80,7 @@ KonqMainWindow * KonqMisc::createSimpleWindow( const KUrl & url, const KParts::O
   return win;
 }
 
-KonqMainWindow * KonqMisc::createNewWindow( const KUrl &url, const KParts::OpenUrlArguments &args,
-                                            const KParts::BrowserArguments& browserArgs,
-                                            bool forbidUseHTML, const QStringList &filesToSelect,
-                                            bool tempFile, bool openUrl, bool show )
+KonqMainWindow * KonqMisc::createNewWindow(const KUrl &url, const KonqOpenURLRequest& req, bool openUrl)
 {
     //kDebug() << "url=" << url;
     // For HTTP or html files, use the web browsing profile, otherwise use filemanager profile
@@ -92,17 +89,13 @@ KonqMainWindow * KonqMisc::createNewWindow( const KUrl &url, const KParts::OpenU
                                  KMimeType::findByUrl(url)->name() == "text/html")
                                 ? "webbrowsing" : "filemanagement";
 
-  QString profile = KStandardDirs::locate( "data", QLatin1String("konqueror/profiles/") + profileName );
-  return createBrowserWindowFromProfile(profile, profileName,
-					url, args, browserArgs,
-					forbidUseHTML, filesToSelect, tempFile, openUrl, show );
+  const QString profilePath = KStandardDirs::locate( "data", QLatin1String("konqueror/profiles/") + profileName );
+  return createBrowserWindowFromProfile(profilePath, profileName,
+                                        url, req, openUrl);
 }
 
-KonqMainWindow * KonqMisc::createBrowserWindowFromProfile( const QString& _path, const QString &_filename, const KUrl &url,
-                                                           const KParts::OpenUrlArguments &args,
-                                                           const KParts::BrowserArguments& browserArgs,
-                                                           bool forbidUseHTML, const QStringList& filesToSelect,
-                                                           bool tempFile, bool openUrl, bool show )
+KonqMainWindow * KonqMisc::createBrowserWindowFromProfile(const QString& _path, const QString &_filename, const KUrl &url,
+                                                          const KonqOpenURLRequest& req, bool openUrl)
 {
     QString path(_path);
     QString filename(_filename);
@@ -122,13 +115,6 @@ KonqMainWindow * KonqMisc::createBrowserWindowFromProfile( const QString& _path,
     }
 
   abortFullScreenMode();
-
-  KonqOpenURLRequest req;
-  req.args = args;
-  req.browserArgs = browserArgs;
-  req.filesToSelect = filesToSelect;
-  req.tempFile = tempFile;
-
   KonqMainWindow * mainWindow;
   // Ask the user to recover session if appliable
   if(KonqSessionManager::self()->askUserToRestoreAutosavedAbandonedSessions())
@@ -163,11 +149,7 @@ KonqMainWindow * KonqMisc::createBrowserWindowFromProfile( const QString& _path,
       mainWindow = new KonqMainWindow(KUrl(), xmluiFile);
       mainWindow->viewManager()->loadViewProfileFromConfig(cfg, path, filename, url, req, false, openUrl);
   }
-  if ( forbidUseHTML )
-      mainWindow->setShowHTML( false );
-  mainWindow->setInitialFrameName( browserArgs.frameName );
-  if ( show )
-      mainWindow->show();
+  mainWindow->setInitialFrameName( req.browserArgs.frameName );
   return mainWindow;
 }
 
@@ -180,9 +162,8 @@ KonqMainWindow * KonqMisc::newWindowFromHistory( KonqView* view, int steps )
   if(!he)
       return 0L;
 
-  KonqMainWindow* mainwindow = createNewWindow(he->url, KParts::OpenUrlArguments(),
-                                               KParts::BrowserArguments(),
-					       false, QStringList(), false, /*openUrl*/false);
+  KonqMainWindow* mainwindow = createNewWindow(he->url, KonqOpenURLRequest(),
+                                               /*openUrl*/false);
   if(!mainwindow)
       return 0L;
   KonqView* newView = mainwindow->currentView();
@@ -193,6 +174,7 @@ KonqMainWindow * KonqMisc::newWindowFromHistory( KonqView* view, int steps )
   newView->copyHistory(view);
   newView->setHistoryIndex(newPos);
   newView->restoreHistory();
+  mainwindow->show();
   return mainwindow;
 }
 

@@ -106,6 +106,7 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv)
     options.add("open-session <session>", ki18n("Session to open"));
 
     options.add("mimetype <mimetype>", ki18n("Mimetype to use for this URL (e.g. text/html or inode/directory)"));
+    options.add("part <service>", ki18n("Part to use (e.g. khtml or kwebkitpart)"));
 
     options.add("select", ki18n("For URLs that point to files, opens the directory and selects the file, instead of opening the actual file"));
 
@@ -163,7 +164,8 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv)
             // No args. If --silent, do nothing, otherwise create a default window.
             if (!args->isSet("silent")) {
                 const QString profile = args->getOption("profile");
-                KonqMisc::createBrowserWindowFromProfile(QString(), profile);
+                KonqMainWindow* mainWin = KonqMisc::createBrowserWindowFromProfile(QString(), profile);
+                mainWin->show();
             }
         } else {
             // Now is a good time to parse each argument as a URL.
@@ -199,15 +201,21 @@ extern "C" KDE_EXPORT int kdemain(int argc, char **argv)
             if (args->isSet("mimetype"))
                 urlargs.setMimeType(args->getOption("mimetype"));
 
+            KonqOpenURLRequest req;
+            req.args = urlargs;
+            req.filesToSelect = filesToSelect;
+            req.tempFile = KCmdLineArgs::isTempFileSet();
+            req.serviceName = args->getOption("part");
+
             KonqMainWindow * mainwin = 0;
             if (args->isSet("profile")) {
                 const QString profile = args->getOption("profile");
                 //kDebug() << "main() -> createBrowserWindowFromProfile mimeType=" << urlargs.mimeType();
-                mainwin = KonqMisc::createBrowserWindowFromProfile(QString(), profile, firstUrl, urlargs, KParts::BrowserArguments(), false /*forbidUseHTML*/, filesToSelect);
+                mainwin = KonqMisc::createBrowserWindowFromProfile(QString(), profile, firstUrl, req);
             } else {
-                const bool tempFile = KCmdLineArgs::isTempFileSet();
-                mainwin = KonqMisc::createNewWindow(firstUrl, urlargs, KParts::BrowserArguments(), false, filesToSelect, tempFile);
+                mainwin = KonqMisc::createNewWindow(firstUrl, req);
             }
+            mainwin->show();
             if (!urlList.isEmpty()) {
                 // Open the other urls as tabs in that window
                 mainwin->openMultiURL(urlList);

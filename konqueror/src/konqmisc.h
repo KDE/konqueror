@@ -24,6 +24,7 @@
 
 #include <krun.h>
 #include <kparts/browserextension.h>
+#include "konqopenurlrequest.h"
 class KonqMainWindow;
 class KonqView;
 class KStandardDirs;
@@ -47,35 +48,29 @@ namespace KonqMisc // TODO split into something like KonqWindowFactory or KonqWi
 
     /**
      * Create a new window for @p url using @p args and the appropriate profile for this URL.
-     * @param forbidUseHTML internal. True when called by "Find Files"
+     * @param req Additional arguments, see KonqOpenURLRequest.
      * @param openUrl If it is false, no url is opened in the new window (and the aboutpage is not shown).
      * The url is used to guess the profile.
      */
-    KONQ_TESTS_EXPORT KonqMainWindow * createNewWindow( const KUrl &url,
-                                      const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
-                                      const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments(),
-                                      bool forbidUseHTML = false,
-                                      const QStringList &filesToSelect = QStringList(),
-                                      bool tempFile = false,
-                                      bool openUrl = true,
-                                      bool show = true);
+    KONQ_TESTS_EXPORT KonqMainWindow * createNewWindow(const KUrl &url,
+                                                       const KonqOpenURLRequest& req = KonqOpenURLRequest(),
+                                                       bool openUrl = true);
 
     /**
-     * Create a new window from the profile defined by @p filename and @p path.
-     * @param url an optional URL to open in this profile.
-     * @param forbidUseHTML internal. True when called by "Find Files"
+     * Create a new window from the profile defined by @p profilePath and @p profileFilename.
+     * @param profilePath full path to the profile definition, or leave it empty if from the usual profile directory
+     * @param profileFilename the filename of the profile definition
+     * @param url an optional URL to open in this profile
+     * @param req Additional arguments, see KonqOpenURLRequest
      * @param openUrl If false no url is opened
+     *
+     * Note: the caller must call show()
      */
-    KonqMainWindow * createBrowserWindowFromProfile( const QString &path,
-                                                     const QString &filename,
-                                                     const KUrl &url = KUrl(),
-                                                     const KParts::OpenUrlArguments &args = KParts::OpenUrlArguments(),
-                                                     const KParts::BrowserArguments& browserArgs = KParts::BrowserArguments(),
-                                                     bool forbidUseHTML = false,
-                                                     const QStringList& filesToSelect = QStringList(),
-                                                     bool tempFile = false,
-                                                     bool openUrl = true,
-                                                     bool show = true);
+    KonqMainWindow * createBrowserWindowFromProfile(const QString& profilePath,
+                                                    const QString& profileFilename,
+                                                    const KUrl &url = KUrl(),
+                                                    const KonqOpenURLRequest& req = KonqOpenURLRequest(),
+                                                    bool openUrl = true);
 
     /**
      * Creates a new window from the history of a view, copies the history

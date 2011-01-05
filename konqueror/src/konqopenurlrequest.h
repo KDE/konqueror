@@ -49,6 +49,8 @@ struct KONQ_TESTS_EXPORT KonqOpenURLRequest {
           s << "nameFilter=" + nameFilter;
       if ( !typedUrl.isEmpty() )
           s << "typedUrl=" + typedUrl;
+      if ( !serviceName.isEmpty() )
+          s << "serviceName=" + serviceName;
       if ( followMode )
           s << "followMode";
       if ( newTabInFront )
@@ -69,6 +71,7 @@ struct KONQ_TESTS_EXPORT KonqOpenURLRequest {
 
   QString typedUrl; // empty if URL wasn't typed manually
   QString nameFilter; // like *.cpp, extracted from the URL
+  QString serviceName; // to force the use of a given part (e.g. khtml or kwebkitpart)
   bool followMode; // true if following another view - avoids loops
   bool newTabInFront; // new tab in front or back (when browserArgs.newTab() == true)
   bool openAfterCurrentPage;
