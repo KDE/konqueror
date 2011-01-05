@@ -729,6 +729,16 @@ void KonqMainWindow::openUrl(KonqView *_view, const KUrl &_url,
   }
 }
 
+// When opening a new view, for @p mimeType, prefer the part used in @p currentView, if possible.
+// Testcase: window.open after manually switching to another web engine, and with "open popups in tabs" off.
+static QString preferredService(KonqView* currentView, const QString& mimeType)
+{
+    if (currentView && !mimeType.isEmpty() && currentView->supportsMimeType(mimeType)) {
+        return currentView->service()->desktopEntryName();
+    }
+    return QString();
+}
+
 bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *childView, const KonqOpenURLRequest& req )
 {
   // Second argument is referring URL
@@ -787,7 +797,7 @@ bool KonqMainWindow::openView( QString mimeType, const KUrl &_url, KonqView *chi
         originalURL += req.nameFilter;
     }
 
-    QString serviceName; // default: none provided
+    QString serviceName = req.serviceName; // default: none provided
     const QString urlStr = url.url();
     if ( urlStr == "about:" || urlStr.startsWith("about:konqueror") || urlStr == "about:plugins" ) {
         mimeType = "KonqAboutPage"; // not KParts/ReadOnlyPart, it fills the Location menu ! :)
@@ -1214,28 +1224,30 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
         return;
     }
 
-    // Pass the URL to createNewWindow so that it can select the right profile for it
-    // Note that it's always empty in case of window.open, though.
-    mainWindow = KonqMisc::createNewWindow(url, args, browserArgs, false, QStringList(),
-        false, false /*do not open URL*/, false /*don't show*/);
-    mainWindow->resetAutoSaveSettings(); // Don't autosave
-
     KonqOpenURLRequest req;
     req.args = args;
     req.browserArgs = browserArgs;
     req.browserArgs.setNewTab(false); // we got a new window, no need for a new tab in that window
     req.forceAutoEmbed = true;
+    req.serviceName = preferredService(m_currentView, args.mimeType());
+
+    // Pass the URL to createNewWindow so that it can select the right profile for it
+    // Note that it's always empty in case of window.open, though.
+    mainWindow = KonqMisc::createNewWindow(url, req, false /*do not open URL*/);
+    mainWindow->resetAutoSaveSettings(); // Don't autosave
 
     // Do we know the mimetype? If not, go to generic openUrl which will use a KonqRun.
     if ( args.mimeType().isEmpty() ) {
       mainWindow->openUrl( 0, url, QString(), req );
-    } else if (!mainWindow->openView(args.mimeType(), url, m_currentView, req)) {
-      // we have problems. abort.
-      delete mainWindow;
+    } else {
+        if (!mainWindow->openView(args.mimeType(), url, m_currentView, req)) {
+            // we have problems. abort.
+            delete mainWindow;
 
-      if ( part )
-        *part = 0;
-      return;
+            if (part)
+              *part = 0;
+            return;
+        }
     }
 
     KonqView * view = 0;
@@ -1359,9 +1371,9 @@ void KonqMainWindow::slotNewWindow()
     else
        profile = QLatin1String("filemanagement");
   }
-  KonqMisc::createBrowserWindowFromProfile(
-    KStandardDirs::locate( "data", QLatin1String("konqueror/profiles/")+profile ),
-    profile );
+  KonqMainWindow* mainWin = KonqMisc::createBrowserWindowFromProfile(QString(), profile);
+  if (mainWin)
+      mainWin->show();
 }
 
 void KonqMainWindow::slotDuplicateWindow()
@@ -1651,8 +1663,9 @@ void KonqMainWindow::slotHome(Qt::MouseButtons buttons, Qt::KeyboardModifiers mo
 	    openFilteredUrl( homeURL, req);
 	else
 	{
-	    KUrl finalURL = KonqMisc::konqFilteredURL( this, homeURL );
-	    KonqMisc::createNewWindow( finalURL.url() );
+	    const KUrl finalURL = KonqMisc::konqFilteredURL(this, homeURL);
+	    KonqMainWindow* mw = KonqMisc::createNewWindow(finalURL);
+            mw->show();
 	}
     }
     else
@@ -2334,8 +2347,12 @@ void KonqMainWindow::slotPopupNewWindow()
 {
     KFileItemList::const_iterator it = m_popupItems.constBegin();
     const KFileItemList::const_iterator end = m_popupItems.constEnd();
+    KonqOpenURLRequest req;
+    req.args = m_popupUrlArgs;
+    req.browserArgs = m_popupUrlBrowserArgs;
     for ( ; it != end; ++it ) {
-      KonqMisc::createNewWindow((*it).targetUrl(), m_popupUrlArgs, m_popupUrlBrowserArgs);
+      KonqMainWindow* mw = KonqMisc::createNewWindow((*it).targetUrl(), req);
+      mw->show();
     }
 }
 
@@ -2654,12 +2671,14 @@ void KonqMainWindow::slotUpDelayed()
     else if(m_goMouseState & Qt::MidButton)
     {
         if(KonqSettings::mmbOpensTab())
-	    openFilteredUrl( url, req);
-	else
-	    KonqMisc::createNewWindow( url );
+	    openFilteredUrl(url, req);
+        else {
+            KonqMainWindow* mw = KonqMisc::createNewWindow( url );
+            mw->show();
+        }
     }
     else
-	openFilteredUrl( url, false );
+        openFilteredUrl( url, false );
     m_goMouseState = Qt::LeftButton;
 }
 
@@ -3827,8 +3846,9 @@ void KonqExtendedBookmarkOwner::openBookmark(const KBookmark & bm, Qt::MouseButt
         if(KonqSettings::mmbOpensTab()) {
             m_pKonqMainWindow->openFilteredUrl( url, req);
         } else {
-            KUrl finalURL = KonqMisc::konqFilteredURL( m_pKonqMainWindow, url );
-            KonqMisc::createNewWindow( finalURL );
+            const KUrl finalURL = KonqMisc::konqFilteredURL(m_pKonqMainWindow, url);
+            KonqMainWindow* mw = KonqMisc::createNewWindow(finalURL);
+            mw->show();
         }
     }
     else {
@@ -4357,7 +4377,8 @@ void KonqExtendedBookmarkOwner::openFolderinTabs(const KBookmarkGroup &grp)
 
 void KonqExtendedBookmarkOwner::openInNewWindow(const KBookmark &bm)
 {
-  KonqMisc::createNewWindow( bm.url(), KParts::OpenUrlArguments() );
+    KonqMainWindow* mw = KonqMisc::createNewWindow(bm.url());
+    mw->show();
 }
 
 QString KonqMainWindow::currentTitle() const

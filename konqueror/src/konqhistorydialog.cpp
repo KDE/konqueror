@@ -92,7 +92,8 @@ QSize KonqHistoryDialog::sizeHint() const
 
 void KonqHistoryDialog::slotOpenWindow(const KUrl& url)
 {
-    KonqMisc::createNewWindow(url);
+    KonqMainWindow* mw = KonqMisc::createNewWindow(url);
+    mw->show();
 }
 
 void KonqHistoryDialog::slotOpenTab(const KUrl& url)

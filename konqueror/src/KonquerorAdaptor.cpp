@@ -78,9 +78,13 @@ QDBusObjectPath KonquerorAdaptor::createNewWindow( const QString& url, const QSt
     args.setMimeType( mimetype );
     // Filter the URL, so that "kfmclient openURL gg:foo" works also when konq is already running
     KUrl finalURL = KonqMisc::konqFilteredURL( 0, url );
-    KonqMainWindow *res = KonqMisc::createNewWindow( finalURL, args, KParts::BrowserArguments(), false, QStringList(), tempFile );
+    KonqOpenURLRequest req;
+    req.args = args;
+    req.tempFile = tempFile;
+    KonqMainWindow *res = KonqMisc::createNewWindow(finalURL, req);
     if ( !res )
         return QDBusObjectPath("/");
+    res->show();
     return QDBusObjectPath( res->dbusName() );
 }
 
@@ -90,9 +94,12 @@ QDBusObjectPath KonquerorAdaptor::createNewWindowWithSelection( const QString& u
 #ifdef Q_WS_X11
     QX11Info::setAppUserTime( 0 );
 #endif
-    KonqMainWindow *res = KonqMisc::createNewWindow( KUrl(url), KParts::OpenUrlArguments(), KParts::BrowserArguments(), false, filesToSelect );
+    KonqOpenURLRequest req;
+    req.filesToSelect = filesToSelect;
+    KonqMainWindow *res = KonqMisc::createNewWindow(KUrl(url), req);
     if ( !res )
         return QDBusObjectPath("/");
+    res->show();
     return QDBusObjectPath( res->dbusName() );
 }
 
@@ -102,11 +109,11 @@ QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfile( const QString&
 #ifdef Q_WS_X11
     QX11Info::setAppUserTime( 0 );
 #endif
-    kDebug() << "void KonquerorAdaptor::createBrowserWindowFromProfile( path, filename ) ";
     kDebug() << path << "," << filename;
-    KonqMainWindow *res = KonqMisc::createBrowserWindowFromProfile( path, filename );
+    KonqMainWindow *res = KonqMisc::createBrowserWindowFromProfile(path, filename);
     if ( !res )
         return QDBusObjectPath("/");
+    res->show();
     return QDBusObjectPath( res->dbusName() );
 }
 
@@ -119,6 +126,7 @@ QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfileAndUrl( const QS
     KonqMainWindow *res = KonqMisc::createBrowserWindowFromProfile( path, filename, KUrl(url) );
     if ( !res )
         return QDBusObjectPath("/");
+    res->show();
     return QDBusObjectPath( res->dbusName() );
 }
 
@@ -130,9 +138,12 @@ QDBusObjectPath KonquerorAdaptor::createBrowserWindowFromProfileUrlAndMimeType( 
 #endif
     KParts::OpenUrlArguments args;
     args.setMimeType( mimetype );
-    KonqMainWindow *res = KonqMisc::createBrowserWindowFromProfile( path, filename, KUrl(url), args );
+    KonqOpenURLRequest req;
+    req.args = args;
+    KonqMainWindow *res = KonqMisc::createBrowserWindowFromProfile(path, filename, KUrl(url), req);
     if ( !res )
         return QDBusObjectPath("/");
+    res->show();
     return QDBusObjectPath( res->dbusName() );
 }
 
