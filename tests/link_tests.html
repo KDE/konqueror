@@ -3,6 +3,8 @@
  <title>Link Tests</title>
 </head>
 <body>
+  <a href="javascript:window.close">close window</a>
+  <br/>
   <a href="mailto:joe@xyz.com&amp;CC=bob@xyz.com&amp;BCC=bob@xyz.com&amp;attach=%2Fetc%2Fpasswd&amp;subject=hello&amp;body=hello">Send Email Test #1</a>
   <br/>
   <a href="mailto:joe@xyz.com">Send Email Test #2</a>
@@ -13,13 +15,15 @@
   <br/>
   <a href="http://www.kde.org" target="_blank">Open link in new window test</a>
   <br/>
-  <a href="javascript:window.location='http://www.kde.org'">FTP link test #3</a>
+  <a href="javascript:window.open('http://www.kde.org','dialog=yes')">Open link in new window javascript</a>
   <br/>
   <a href="http://ev.kde.org/reports/ev-quarterly-2009Q1.pdf">PDF link</a>
   <br/>
   <a href="http://blip.tv/file/get/Sebasje-WindowManagingFeaturesInKDEPlasma44222.ogg">Movie link</a>
   <br/>
   <a href="http://www.ietf.org/rfc/rfc2344.txt">Text Document Link</a>
+  <br/>
+  <a href="applications:/Internet/">Text Document Link</a>
   <br/>
   <form action="mailto:someone@example.com?CC='bob@example.com&amp;attach=%2fetc%2fpasswd&amp;body=" method="post" enctype="application/x-www-form-urlencoded">
     Choose file to upload:<br />
