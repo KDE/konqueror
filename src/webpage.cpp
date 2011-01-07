@@ -487,35 +487,6 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
     return KWebPage::acceptNavigationRequest(frame, request, type);
 }
 
-void WebPage::slotUnsupportedContent(QNetworkReply *reply)
-{
-    Q_ASSERT (reply);
-
-    const KIO::MetaData metaData = reply->attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData)).toMap();
-    bool hasContentDisposition;
-    if (metaData.isEmpty())
-        hasContentDisposition = reply->hasRawHeader("Content-Disposition");
-    else
-        hasContentDisposition = metaData.contains(QL1S("content-disposition-filename"));
-
-    if (hasContentDisposition) {
-        downloadResponse(reply);
-        return;
-    }
-
-    if (reply->request().originatingObject() == this->mainFrame()) {
-        reply->abort();
-        KParts::OpenUrlArguments args;
-        QString contentType = reply->header(QNetworkRequest::ContentTypeHeader).toString();
-        if (!contentType.isEmpty()) {
-            if (contentType.contains(QL1C(';')))
-                contentType.truncate(contentType.indexOf(QL1C(';')));
-            args.setMimeType(contentType);
-        }
-        emit d->part->browserExtension()->openUrlRequest(reply->url(), args, KParts::BrowserArguments());
-    }
-}
-
 static int errorCodeFromReply(QNetworkReply* reply)
 {
     // First check if there is a KIO error code sent back and use that,

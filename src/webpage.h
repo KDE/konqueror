@@ -147,7 +147,6 @@ protected:
     virtual bool acceptNavigationRequest(QWebFrame * frame, const QNetworkRequest & request, NavigationType type);
 
 protected Q_SLOTS:
-    void slotUnsupportedContent(QNetworkReply *reply);
     void slotRequestFinished(QNetworkReply *reply);
 
 private:
