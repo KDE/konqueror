@@ -165,7 +165,7 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &part
 {
     QList<QAction *>partActions;
 
-    if (d->result.frame()->parentFrame()) {
+    if (d->result.frame()->parentFrame() && !d->result.isContentSelected()) {
         KActionMenu * menu = new KActionMenu(i18nc("@title:menu HTML frame/iframe", "Frame"), this);
 
         KAction * action = new KAction(i18n("Open in New &Window"), this);
