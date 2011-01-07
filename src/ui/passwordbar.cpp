@@ -43,17 +43,15 @@ public:
     void init (PasswordBar* passwordBar)
     {
         ui.setupUi(passwordBar);
-        ui.closeButton->setIcon(KIcon("dialog-close"));
-
+        ui.notNowButton->setIcon(KIcon("dialog-close"));
+        
         QPalette pal = passwordBar->palette();
         KColorScheme::adjustBackground(pal, KColorScheme::ActiveBackground);
         passwordBar->setPalette(pal);
         passwordBar->setBackgroundRole(QPalette::Base);
         passwordBar->setAutoFillBackground(true);
-
+        
         connect(ui.notNowButton, SIGNAL(clicked()),
-                passwordBar, SLOT(onNotNowButtonClicked()));
-        connect(ui.closeButton, SIGNAL (clicked()),
                 passwordBar, SLOT(onNotNowButtonClicked()));
         connect(ui.neverButton, SIGNAL(clicked()),
                 passwordBar, SLOT(onNeverButtonClicked()));
