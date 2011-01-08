@@ -28,6 +28,8 @@
 #include <KDE/KParts/BrowserExtension>
 #include <KDE/KWebView>
 
+#include <QtWebKit/QWebHitTestResult>
+
 class KUrl;
 class KWebKitPart;
 class QWebHitTestResult;
@@ -66,11 +68,14 @@ protected:
     void partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &partGroupMap);
 
 private Q_SLOTS:
-    void openSelection();
+    void slotOpenSelection();
 
 private:
-    class WebViewPrivate;
-    WebViewPrivate* const d;
+    void addSearchActions(QList<QAction *>& selectActions, QWebView*);
+
+    KActionCollection* m_actionCollection;
+    QWebHitTestResult m_result;
+    QPointer<KWebKitPart> m_part;
 };
 
 #endif // WEBVIEW_H

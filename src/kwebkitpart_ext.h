@@ -30,6 +30,7 @@
 class QWebView;
 class KUrl;
 class KWebKitPart;
+class WebView;
 
 class WebKitBrowserExtension : public KParts::BrowserExtension
 {
@@ -87,8 +88,9 @@ public Q_SLOTS:
     void updateEditActions();
 
 private:
-    class WebKitBrowserExtensionPrivate;
-    WebKitBrowserExtensionPrivate* const d;
+    QPointer<KWebKitPart> m_part;
+    QPointer<WebView> m_view;
+    QString m_historyFileName;
 };
 
 /**

@@ -24,6 +24,8 @@
 #ifndef WEBPAGE_H
 #define WEBPAGE_H
 
+#include "websslinfo.h"
+
 #include <KDE/KWebPage>
 #include <KDE/KParts/BrowserExtension>
 
@@ -156,8 +158,15 @@ private:
     void setPageJScriptPolicy(const QUrl &url);
 
 private:
-    class WebPagePrivate;
-    WebPagePrivate* const d;
+    enum WebPageSecurity { PageUnencrypted, PageEncrypted, PageMixed };
+
+    int m_kioErrorCode;
+    bool m_ignoreError;
+    bool m_ignoreHistoryNavigationRequest;
+
+    WebSslInfo m_sslInfo;
+    QVector<QUrl> m_requestQueue;
+    QPointer<KWebKitPart> m_part;
 };
 
 #endif // WEBPAGE_H

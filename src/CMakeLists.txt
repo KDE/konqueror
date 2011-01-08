@@ -3,7 +3,6 @@ add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 
 set(kwebkit_LIB_SRCS
     kwebkitpart.cpp
-    kwebkitpart_p.cpp
     kwebkitpart_ext.cpp
     kwebkitpartfactory.cpp
     webview.cpp

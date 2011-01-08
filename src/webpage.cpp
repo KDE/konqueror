@@ -155,31 +155,13 @@ void NewWindowAdapterPage::slotToolBarVisibilityChangeRequested(bool visible)
 
 /****************************** End NewWindowAdapterPage *************************************************/
 
-class WebPage::WebPagePrivate
-{
-public:
-    WebPagePrivate()
-      :kioErrorCode(0),
-       ignoreError(false),      
-       ignoreHistoryNavigationRequest(true) {}
-
-    enum WebPageSecurity { PageUnencrypted, PageEncrypted, PageMixed };
-
-    WebSslInfo sslInfo;
-    QVector<QUrl> requestQueue;
-    QPointer<KWebKitPart> part;
-
-    int kioErrorCode;    
-    bool ignoreError;
-    bool ignoreHistoryNavigationRequest;
-};
-
 WebPage::WebPage(KWebKitPart *part, QWidget *parent)
         :KWebPage(parent, (KWebPage::KPartsIntegration|KWebPage::KWalletIntegration)),
-         d (new WebPagePrivate)
+         m_kioErrorCode(0),
+         m_ignoreError(false),
+         m_ignoreHistoryNavigationRequest(true),
+         m_part(part)
 {
-    d->part = part;
-
     // FIXME: Need a better way to handle request filtering than to inherit
     // KIO::Integration::AccessManager...
     KDEPrivate::MyNetworkAccessManager *manager = new KDEPrivate::MyNetworkAccessManager(this);
@@ -219,17 +201,16 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
 
 WebPage::~WebPage()
 {
-    delete d;
 }
 
 const WebSslInfo& WebPage::sslInfo() const
 {
-    return d->sslInfo;
+    return m_sslInfo;
 }
 
 void WebPage::setSslInfo (const WebSslInfo& info)
 {
-    d->sslInfo = info;
+    m_sslInfo = info;
 }
 
 void WebPage::downloadRequest(const QNetworkRequest &request)
@@ -346,12 +327,12 @@ QString WebPage::errorPage(int code, const QString& text, const KUrl& reqUrl) co
 
 bool WebPage::extension(Extension extension, const ExtensionOption *option, ExtensionReturn *output)
 {
-    if (extension == QWebPage::ErrorPageExtension && !d->ignoreError) {
+    if (extension == QWebPage::ErrorPageExtension && !m_ignoreError) {
         const QWebPage::ErrorPageExtensionOption *extOption = static_cast<const QWebPage::ErrorPageExtensionOption*>(option);
         //kDebug() << extOption->domain << extOption->error << extOption->errorString;
         if (extOption->domain == QWebPage::QtNetwork) {
             QWebPage::ErrorPageExtensionReturn *extOutput = static_cast<QWebPage::ErrorPageExtensionReturn*>(output);
-            extOutput->content = errorPage(d->kioErrorCode, extOption->errorString, extOption->url).toUtf8();
+            extOutput->content = errorPage(m_kioErrorCode, extOption->errorString, extOption->url).toUtf8();
             extOutput->baseUrl = extOption->url;
             return true;
         }
@@ -384,7 +365,7 @@ QWebPage *WebPage::createWindow(WebWindowType type)
     // Crete an instance of NewWindowAdapterPage class to capture all the
     // information we need to create a new window. See documentation of
     // the class for more information...
-    return new NewWindowAdapterPage(d->part, type, this);
+    return new NewWindowAdapterPage(m_part, type, this);
 }
 
 // Returns true if the scheme and domain of the two urls match...
@@ -440,8 +421,8 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
         case QWebPage::NavigationTypeBackOrForward:
             // NOTE: This is necessary because restoring QtWebKit's history causes
             // it to navigate to the last item. Unfortunately that causes
-            if (d->ignoreHistoryNavigationRequest) {
-                d->ignoreHistoryNavigationRequest = false;
+            if (m_ignoreHistoryNavigationRequest) {
+                m_ignoreHistoryNavigationRequest = false;
                 //kDebug() << "Rejected history navigation to" << history()->currentItem().url();
                 return false;
             }
@@ -456,8 +437,8 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
             break;
         case QWebPage::NavigationTypeOther:
             inPageRequest = !isTypedUrl;
-            if (d->ignoreHistoryNavigationRequest)
-                d->ignoreHistoryNavigationRequest = false;
+            if (m_ignoreHistoryNavigationRequest)
+                m_ignoreHistoryNavigationRequest = false;
             break;
         default:
             break;
@@ -467,21 +448,21 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
             if (!checkLinkSecurity(request, type))
                 return false;
 
-            if (d->sslInfo.isValid())
+            if (m_sslInfo.isValid())
                 setRequestMetaData(QL1S("ssl_was_in_use"), QL1S("TRUE"));
         }
 
         if (isMainFrameRequest) {
             setRequestMetaData(QL1S("main_frame_request"), QL1S("TRUE"));
-            if (d->sslInfo.isValid() && !domainSchemeMatch(request.url(), d->sslInfo.url()))
-                d->sslInfo = WebSslInfo();
+            if (m_sslInfo.isValid() && !domainSchemeMatch(request.url(), m_sslInfo.url()))
+                m_sslInfo = WebSslInfo();
         } else {
             setRequestMetaData(QL1S("main_frame_request"), QL1S("FALSE"));
         }
 
         // Insert the request into the queue...
         reqUrl.setUserInfo(QString());
-        d->requestQueue << reqUrl;
+        m_requestQueue << reqUrl;
     }
 
     return KWebPage::acceptNavigationRequest(frame, request, type);
@@ -533,11 +514,11 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
     Q_ASSERT(reply);
 
     const QUrl requestUrl (reply->request().url());   
-    const int index = d->requestQueue.indexOf(requestUrl);
+    const int index = m_requestQueue.indexOf(requestUrl);
     if (index == -1)
         return;
 
-    d->requestQueue.remove(index);
+    m_requestQueue.remove(index);
 
     QWebFrame* frame = qobject_cast<QWebFrame *>(reply->request().originatingObject());
     if (!frame)
@@ -546,7 +527,7 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
     const int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();    
     // Only deal with non-redirect responses...
     if (statusCode > 299 && statusCode < 400) {
-        d->sslInfo.restoreFrom(reply->attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData)),
+        m_sslInfo.restoreFrom(reply->attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData)),
                                reply->url());
         return;
     }
@@ -557,7 +538,7 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
     switch (errCode) {
         case 0:
             if (isMainFrameRequest) {
-                d->sslInfo.restoreFrom(reply->attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData)),
+                m_sslInfo.restoreFrom(reply->attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData)),
                                         reply->url());
                 setPageJScriptPolicy(reply->url());
             }
@@ -565,13 +546,13 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
         case KIO::ERR_ABORTED:
         case KIO::ERR_USER_CANCELED: // Do nothing if request is cancelled/aborted
             //kDebug() << "User aborted request!";
-            d->ignoreError = true;
+            m_ignoreError = true;
             emit loadAborted(QUrl());
             return;
         // Handle the user clicking on a link that refers to a directory
         // Since KIO cannot automatically convert a GET request to a LISTDIR one.
         case KIO::ERR_IS_DIRECTORY:
-            d->ignoreError = true;
+            m_ignoreError = true;
             emit loadAborted(reply->url());
             return;
         default:
@@ -580,19 +561,14 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
             if (isMainFrameRequest)
                 emit saveFrameStateRequested(frame, 0);
 
-            d->ignoreError = false;
-            d->kioErrorCode = errCode;
+            m_ignoreError = false;
+            m_kioErrorCode = errCode;
             break;
     }
 
     if (isMainFrameRequest) {
-        WebPagePrivate::WebPageSecurity security;
-        if (d->sslInfo.isValid())
-            security = WebPagePrivate::PageEncrypted;
-        else
-            security = WebPagePrivate::PageUnencrypted;
-
-        emit d->part->browserExtension()->setPageSecurity(security);
+        const WebPageSecurity security = (m_sslInfo.isValid() ? PageEncrypted : PageUnencrypted);
+        emit m_part->browserExtension()->setPageSecurity(security);
     }
 }
 
@@ -639,7 +615,7 @@ bool WebPage::checkFormData(const QNetworkRequest &req) const
 {
     const QString scheme (req.url().scheme());
 
-    if (d->sslInfo.isValid() &&
+    if (m_sslInfo.isValid() &&
         !scheme.compare(QL1S("https")) && !scheme.compare(QL1S("mailto")) &&
         (KMessageBox::warningContinueCancel(0,
                                            i18n("Warning: This is a secure form "
@@ -735,7 +711,7 @@ bool WebPage::handleMailToUrl (const QUrl &url, NavigationType type) const
         }
 
         //kDebug() << "Emitting openUrlRequest with " << mailtoUrl;
-        emit d->part->browserExtension()->openUrlRequest(mailtoUrl);
+        emit m_part->browserExtension()->openUrlRequest(mailtoUrl);
         return true;
     }
 
