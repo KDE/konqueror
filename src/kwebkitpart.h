@@ -24,8 +24,6 @@
 #ifndef KWEBKITPART_H
 #define KWEBKITPART_H
 
-#include "kwebkit_export.h"
-
 #include <KDE/KParts/ReadOnlyPart>
 
 namespace KParts {
@@ -45,7 +43,7 @@ class KWebKitPartPrivate;
  * engine are provided through existing QtWebKit class ; @see QWebView.
  *
  */
-class KWEBKIT_EXPORT KWebKitPart : public KParts::ReadOnlyPart
+class KWebKitPart : public KParts::ReadOnlyPart
 {
     Q_OBJECT
     Q_PROPERTY( bool modified READ isModified )
