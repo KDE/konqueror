@@ -116,8 +116,6 @@ void WebKitBrowserExtension::saveState(QDataStream &stream)
 
 void WebKitBrowserExtension::restoreState(QDataStream &stream)
 {
-    Q_ASSERT(d);
-
     KUrl u;
     KParts::OpenUrlArguments args;
     qint32 xOfs, yOfs, historyItemIndex;
