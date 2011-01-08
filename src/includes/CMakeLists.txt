@@ -1,3 +1,0 @@
-install(FILES
-        KWebKitPart
-        DESTINATION ${INCLUDE_INSTALL_DIR}/KDE COMPONENT Devel)
