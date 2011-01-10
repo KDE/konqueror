@@ -53,15 +53,15 @@
 
 
 
-WebView::WebView(KWebKitPart *wpart, QWidget *parent)
+WebView::WebView(KWebKitPart *part, QWidget *parent)
         :KWebView(parent, false),
          m_actionCollection(new KActionCollection(this)),
-         m_part(wpart)
+         m_part(QWeakPointer<KWebKitPart>(part))
 {
     setAcceptDrops(true);
 
     // Create the custom page...
-    setPage(new WebPage(wpart, this));
+    setPage(new WebPage(part, this));
 }
 
 WebView::~WebView()
@@ -108,7 +108,7 @@ void WebView::contextMenuEvent(QContextMenuEvent *e)
 
     KUrl emitUrl;
     if (m_result.linkUrl().isEmpty()) {
-        emitUrl = m_part->url();
+        emitUrl = m_part.data()->url();
         if (m_result.isContentSelected()) {
             flags |= KParts::BrowserExtension::ShowTextSelectionItems;
             selectActionPopupMenu(mapAction);
@@ -147,7 +147,7 @@ void WebView::contextMenuEvent(QContextMenuEvent *e)
     KParts::OpenUrlArguments args;
     KParts::BrowserArguments bargs;
     args.setMimeType(mimeType);
-    emit m_part->browserExtension()->popupMenu(e->globalPos(), emitUrl, 0, args, bargs, flags, mapAction);
+    emit m_part.data()->browserExtension()->popupMenu(e->globalPos(), emitUrl, 0, args, bargs, flags, mapAction);
 }
 
 void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &partGroupMap)
@@ -160,18 +160,18 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &part
         KAction * action = new KAction(i18n("Open in New &Window"), this);
         m_actionCollection->addAction("frameinwindow", action);
         action->setIcon(KIcon("window-new"));
-        connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotFrameInWindow()));
+        connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotFrameInWindow()));
         menu->addAction(action);
 
         action = new KAction(i18n("Open in &This Window"), this);
         m_actionCollection->addAction("frameintop", action);
-        connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotFrameInTop()));
+        connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotFrameInTop()));
         menu->addAction(action);
 
         action = new KAction(i18n("Open in &New Tab"), this);
         m_actionCollection->addAction("frameintab", action);
         action->setIcon(KIcon("tab-new"));
-        connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotFrameInTab()));
+        connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotFrameInTab()));
         menu->addAction(action);
 
         action = new KAction(m_actionCollection);
@@ -180,28 +180,28 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &part
 
         action = new KAction(i18n("Reload Frame"), this);
         m_actionCollection->addAction("reloadframe", action);
-        connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotReloadFrame()));
+        connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotReloadFrame()));
         menu->addAction(action);
 
         action = new KAction(i18n("Print Frame..."), this);
         m_actionCollection->addAction("printFrame", action);
         action->setIcon(KIcon("document-print-frame"));
-        connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(print()));
+        connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(print()));
         menu->addAction(action);
 
         action = new KAction(i18n("Save &Frame As..."), this);
         m_actionCollection->addAction("saveFrame", action);
-        connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotSaveFrame()));
+        connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotSaveFrame()));
         menu->addAction(action);
 
         action = new KAction(i18n("View Frame Source"), this);
         m_actionCollection->addAction("viewFrameSource", action);
-        connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotViewFrameSource()));
+        connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotViewFrameSource()));
         menu->addAction(action);
 ///TODO Slot not implemented yet
 //         action = new KAction(i18n("View Frame Information"), this);
 //         m_actionCollection->addAction("viewFrameInfo", action);
-//         connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotViewPageInfo()));
+//         connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotViewPageInfo()));
 
         action = new KAction(m_actionCollection);
         action->setSeparator(true);
@@ -215,21 +215,21 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &part
         if (!m_actionCollection->action("saveimageas")) {
             action = new KAction(i18n("Save Image As..."), this);
             m_actionCollection->addAction("saveimageas", action);
-            connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotSaveImageAs()));
+            connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotSaveImageAs()));
         }
         partActions.append(m_actionCollection->action("saveimageas"));
 
         if (!m_actionCollection->action("sendimage")) {
             action = new KAction(i18n("Send Image..."), this);
             m_actionCollection->addAction("sendimage", action);
-            connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotSendImage()));
+            connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotSendImage()));
         }
         partActions.append(m_actionCollection->action("sendimage"));
 
         if (!m_actionCollection->action("copyimage")) {
             action = new KAction(i18n("Copy Image"), this);
             m_actionCollection->addAction("copyimage", action);
-            connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotCopyImage()));
+            connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotCopyImage()));
         }
         action = m_actionCollection->action("copyimage");
         action->setEnabled(!m_result.pixmap().isNull());
@@ -238,14 +238,14 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &part
         if (!m_actionCollection->action("viewimage")) {
             action = new KAction(i18n("View Image (%1)", KUrl(m_result.imageUrl()).fileName()), this);
             m_actionCollection->addAction("viewimage", action);
-            connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotViewImage()));
+            connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotViewImage()));
         }
         partActions.append(m_actionCollection->action("viewimage"));
 
         if (WebKitSettings::self()->isAdFilterEnabled()) {
             action = new KAction( i18n( "Block Image..." ), this );
             m_actionCollection->addAction( "blockimage", action );
-            connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotBlockImage()));
+            connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotBlockImage()));
             partActions.append(action);
 
             if (!m_result.imageUrl().host().isEmpty() &&
@@ -253,7 +253,7 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &part
             {
                 action = new KAction( i18n( "Block Images From %1" , m_result.imageUrl().host()), this );
                 m_actionCollection->addAction( "blockhost", action );
-                connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotBlockHost()));
+                connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotBlockHost()));
                 partActions.append(action);
             }
         }
@@ -269,7 +269,7 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &part
     }
 
     if (showDocSourceAction) {
-        QAction* action = m_part->actionCollection()->action("viewDocumentSource");
+        QAction* action = m_part.data()->actionCollection()->action("viewDocumentSource");
         partActions.append(action);
     }
 
@@ -283,9 +283,9 @@ void WebView::selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &se
 {
     QList<QAction *>selectActions;
     if (!m_actionCollection->action("copy")) {
-        KAction* copyAction = m_actionCollection->addAction(KStandardAction::Copy, "copy",  m_part->browserExtension(), SLOT(copy()));
+        KAction* copyAction = m_actionCollection->addAction(KStandardAction::Copy, "copy",  m_part.data()->browserExtension(), SLOT(copy()));
         copyAction->setText(i18n("&Copy Text"));
-        copyAction->setEnabled(m_part->browserExtension()->isActionEnabled("copy"));
+        copyAction->setEnabled(m_part.data()->browserExtension()->isActionEnabled("copy"));
     }
     selectActions.append(m_actionCollection->action("copy"));
 
@@ -317,9 +317,9 @@ void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &link
 
     KAction *action;
     if (!m_actionCollection->action("copy")) {
-        action = m_actionCollection->addAction(KStandardAction::Copy, "copy",  m_part->browserExtension(), SLOT(copy()));
+        action = m_actionCollection->addAction(KStandardAction::Copy, "copy",  m_part.data()->browserExtension(), SLOT(copy()));
         action->setText(i18n("&Copy Text"));
-        action->setEnabled(m_part->browserExtension()->isActionEnabled("copy"));
+        action->setEnabled(m_part.data()->browserExtension()->isActionEnabled("copy"));
     }
     linkActions.append(m_actionCollection->action("copy"));
 
@@ -327,21 +327,21 @@ void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &link
         if (!m_actionCollection->action("copylinklocation")) {
             action = new KAction(i18n("&Copy Email Address"), this);
             m_actionCollection->addAction("copylinklocation", action);
-            connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotCopyLinkLocation()));
+            connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotCopyLinkLocation()));
         }
         linkActions.append(m_actionCollection->action("copylinklocation"));
     } else {
         if (!m_actionCollection->action("copylinklocation")) {
             action = new KAction(i18n("&Copy Link Address"), this);
             m_actionCollection->addAction("copylinklocation", action);
-            connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotCopyLinkLocation()));
+            connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotCopyLinkLocation()));
         }
         linkActions.append(m_actionCollection->action("copylinklocation"));
 
         if (!m_actionCollection->action("savelinkas")) {
             action = new KAction(i18n("&Save Link As..."), this);
             m_actionCollection->addAction("savelinkas", action);
-            connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(slotSaveLinkAs()));
+            connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotSaveLinkAs()));
         }
         linkActions.append(m_actionCollection->action("savelinkas"));
     }
@@ -354,7 +354,7 @@ void WebView::slotOpenSelection()
     if (action) {
         KParts::BrowserArguments browserArgs;
         browserArgs.frameName = "_blank";
-        emit m_part->browserExtension()->openUrlRequest(action->data().toUrl(), KParts::OpenUrlArguments(), browserArgs);
+        emit m_part.data()->browserExtension()->openUrlRequest(action->data().toUrl(), KParts::OpenUrlArguments(), browserArgs);
     }
 }
 
@@ -376,7 +376,7 @@ void WebView::addSearchActions(QList<QAction *>& selectActions, QWebView *view)
                                             data.searchProvider(), squeezedText), view);
         action->setData(QUrl(data.uri()));
         action->setIcon(KIcon(data.iconName()));
-        connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(searchProvider()));
+        connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(searchProvider()));
         m_actionCollection->addAction(QL1S("defaultSearchProvider"), action);
         selectActions.append(action);
 
@@ -393,7 +393,7 @@ void WebView::addSearchActions(QList<QAction *>& selectActions, QWebView *view)
                 action->setData(data.queryForPreferredSearchProvider(searchProvider));
                 m_actionCollection->addAction(searchProvider, action);
                 action->setIcon(KIcon(data.iconNameForPreferredSearchProvider(searchProvider)));
-                connect(action, SIGNAL(triggered(bool)), m_part->browserExtension(), SLOT(searchProvider()));
+                connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(searchProvider()));
 
                 providerList->addAction(action);
             }

@@ -88,8 +88,9 @@ public Q_SLOTS:
     void updateEditActions();
 
 private:
-    QPointer<KWebKitPart> m_part;
-    QPointer<WebView> m_view;
+    WebView* view();
+    QWeakPointer<KWebKitPart> m_part;
+    QWeakPointer<WebView> m_view;
     QString m_historyFileName;
 };
 

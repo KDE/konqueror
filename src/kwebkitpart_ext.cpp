@@ -45,7 +45,6 @@
 #include <KDE/KLocalizedString>
 #include <kdeversion.h>
 
-#include <QtCore/QPointer>
 #include <QtGui/QClipboard>
 #include <QtGui/QApplication>
 #include <QtGui/QPrinter>
@@ -60,11 +59,10 @@
 
 
 WebKitBrowserExtension::WebKitBrowserExtension(KWebKitPart *parent, const QString &historyFileName)
-                       :KParts::BrowserExtension(parent), m_part(parent), m_historyFileName(historyFileName)
+                       :KParts::BrowserExtension(parent),
+                        m_part(QWeakPointer<KWebKitPart>(parent)),
+                        m_historyFileName(historyFileName)
 {
-    if (parent)
-      m_view = qobject_cast<WebView*>(parent->view());
-
     enableAction("cut", false);
     enableAction("copy", false);
     enableAction("paste", false);
@@ -75,42 +73,60 @@ WebKitBrowserExtension::~WebKitBrowserExtension()
 {
 }
 
+WebView* WebKitBrowserExtension::view()
+{
+    if (!m_part)
+        return 0;
+
+    if (!m_view)
+        m_view = QWeakPointer<WebView>(qobject_cast<WebView*>(m_part.data()->view()));
+
+    return m_view.data();
+}
+
+
 void WebKitBrowserExtension::saveHistoryState()
 {
-    if (m_view->page()->history()->count()) {
-        KSaveFile saveFile (m_historyFileName, m_part->componentData());
-        if (saveFile.open()) {
-            //kDebug() << "Saving history data to"  << saveFile.fileName();
-            QDataStream stream (&saveFile);
-            stream << *(m_view->page()->history());
-            if (!saveFile.finalize())
-                kWarning() << "Failed to save session history to" << saveFile.fileName();
-        }
-    }
+    if (!view())
+        return;
+
+    if (!view()->page()->history()->count())
+        return;
+    
+    KSaveFile saveFile (m_historyFileName, m_part.data()->componentData());
+    if (!saveFile.open())
+      return;
+    
+    //kDebug() << "Saving history data to"  << saveFile.fileName();
+    QDataStream stream (&saveFile);
+    stream << *(view()->page()->history());
+    if (!saveFile.finalize())
+        kWarning() << "Failed to save session history to" << saveFile.fileName();
+
 }
 
 int WebKitBrowserExtension::xOffset()
 {
-    if (m_view)
-        return m_view->page()->mainFrame()->scrollPosition().x();
+    if (view())
+        return view()->page()->mainFrame()->scrollPosition().x();
 
     return KParts::BrowserExtension::xOffset();
 }
 
 int WebKitBrowserExtension::yOffset()
 {
-    if (m_view)
-        return m_view->page()->mainFrame()->scrollPosition().y();
+    if (view())
+        return view()->page()->mainFrame()->scrollPosition().y();
 
     return KParts::BrowserExtension::yOffset();
 }
 
 void WebKitBrowserExtension::saveState(QDataStream &stream)
 {
-    stream << m_part->url()
+    stream << m_part.data()->url()
            << static_cast<qint32>(xOffset())
            << static_cast<qint32>(yOffset())
-           << static_cast<qint32>(m_view->page()->history()->currentItemIndex())
+           << static_cast<qint32>(view()->page()->history()->currentItemIndex())
            << m_historyFileName;
 }
 
@@ -120,7 +136,7 @@ void WebKitBrowserExtension::restoreState(QDataStream &stream)
     KParts::OpenUrlArguments args;
     qint32 xOfs, yOfs, historyItemIndex;
 
-    if (m_view->page()->history()->count() > 0) {
+    if (view() && view()->page()->history()->count() > 0) {
         stream >> u >> xOfs >> yOfs >> historyItemIndex;
     } else {
         QString historyFileName;
@@ -129,83 +145,86 @@ void WebKitBrowserExtension::restoreState(QDataStream &stream)
         QFile file (historyFileName);
         if (file.open(QIODevice::ReadOnly)) {
             QDataStream stream (&file);
-            stream >> *(m_view->page()->history());
+            stream >> *(view()->page()->history());
         }
 
         if (file.exists())
             file.remove();
     }
 
-    // kDebug() << "Restoring item #" << historyItemIndex << "of" << m_view->page()->history()->count() << "at offset (" << xOfs << yOfs << ")";
+    // kDebug() << "Restoring item #" << historyItemIndex << "of" << view()->page()->history()->count() << "at offset (" << xOfs << yOfs << ")";
     args.metaData().insert(QL1S("kwebkitpart-restore-state"), QString::number(historyItemIndex));
     args.metaData().insert(QL1S("kwebkitpart-restore-scrollx"), QString::number(xOfs));
     args.metaData().insert(QL1S("kwebkitpart-restore-scrolly"), QString::number(yOfs));
-    m_part->setArguments(args);
-    m_part->openUrl(u);
+    m_part.data()->setArguments(args);
+    m_part.data()->openUrl(u);
 }
 
 void WebKitBrowserExtension::cut()
 {
-    if (m_view)
-        m_view->triggerPageAction(QWebPage::Cut);
+    if (view())
+        view()->triggerPageAction(QWebPage::Cut);
 }
 
 void WebKitBrowserExtension::copy()
 {
-    if (m_view)
-        m_view->triggerPageAction(QWebPage::Copy);
+    if (view())
+        view()->triggerPageAction(QWebPage::Copy);
 }
 
 void WebKitBrowserExtension::paste()
 {
-    if (m_view)
-        m_view->triggerPageAction(QWebPage::Paste);
+    if (view())
+        view()->triggerPageAction(QWebPage::Paste);
 }
 
 void WebKitBrowserExtension::slotSaveDocument()
 {
-    if (m_view)
-        emit saveUrl(m_view->url());
+    if (view())
+        emit saveUrl(view()->url());
 }
 
 void WebKitBrowserExtension::slotSaveFrame()
 {
-    if (m_view)
-        emit saveUrl(m_view->page()->currentFrame()->url());
+    if (view())
+        emit saveUrl(view()->page()->currentFrame()->url());
 }
 
 void WebKitBrowserExtension::print()
 {
-    if (m_view) {
-        QPrintPreviewDialog dlg(m_view);
-        connect(&dlg, SIGNAL(paintRequested(QPrinter *)),
-                m_view, SLOT(print(QPrinter *)));
-        dlg.exec();
-    }
+    if (!view())
+        return;
+      
+    QPrintPreviewDialog dlg(view());
+    connect(&dlg, SIGNAL(paintRequested(QPrinter *)),
+            view(), SLOT(print(QPrinter *)));
+    dlg.exec();
 }
 
 void WebKitBrowserExtension::printFrame()
 {
-    if (m_view) {
-        QPrintPreviewDialog dlg(m_view);
-        connect(&dlg, SIGNAL(paintRequested(QPrinter *)),
-                m_view->page()->currentFrame(), SLOT(print(QPrinter *)));
-        dlg.exec();
-    }
+    if (!view())
+        return;
+    
+    QPrintPreviewDialog dlg(view());
+    connect(&dlg, SIGNAL(paintRequested(QPrinter *)),
+            view()->page()->currentFrame(), SLOT(print(QPrinter *)));
+    dlg.exec();
 }
 
 void WebKitBrowserExtension::updateEditActions()
 {
-    if (m_view) {
-        enableAction("cut", m_view->pageAction(QWebPage::Cut));
-        enableAction("copy", m_view->pageAction(QWebPage::Copy));
-        enableAction("paste", m_view->pageAction(QWebPage::Paste));
-    }
+    if (!view())
+        return;
+    
+    enableAction("cut", view()->pageAction(QWebPage::Cut));
+    enableAction("copy", view()->pageAction(QWebPage::Copy));
+    enableAction("paste", view()->pageAction(QWebPage::Paste));
 }
 
 void WebKitBrowserExtension::searchProvider()
 {
-    if (!m_view)
+    if (!view())
         return;
     
     KAction *action = qobject_cast<KAction*>(sender());
@@ -224,9 +243,9 @@ void WebKitBrowserExtension::searchProvider()
     if (!url.isValid())
       return;
     
-    KParts::BrowserArguments browserArgs;
-    browserArgs.frameName = "_blank";
-    emit openUrlRequest(url, KParts::OpenUrlArguments(), browserArgs);
+    KParts::BrowserArguments bargs;
+    bargs.frameName = QL1S("_blank");
+    emit openUrlRequest(url, KParts::OpenUrlArguments(), bargs);
 }
 
 void WebKitBrowserExtension::reparseConfiguration()
@@ -237,128 +256,133 @@ void WebKitBrowserExtension::reparseConfiguration()
 
 void WebKitBrowserExtension::zoomIn()
 {
-    if (m_view)
-        m_view->setZoomFactor(m_view->zoomFactor() + 0.1);
+    if (view())
+        view()->setZoomFactor(view()->zoomFactor() + 0.1);
 }
 
 void WebKitBrowserExtension::zoomOut()
 {
-    if (m_view)
-        m_view->setZoomFactor(m_view->zoomFactor() - 0.1);
+    if (view())
+        view()->setZoomFactor(view()->zoomFactor() - 0.1);
 }
 
 void WebKitBrowserExtension::zoomNormal()
 {
-    if (m_view)
-        m_view->setZoomFactor(1);
+    if (view())
+        view()->setZoomFactor(1);
 }
 
 void WebKitBrowserExtension::toogleZoomTextOnly()
 {
-    if (m_view) {
-        KConfigGroup cgHtml(KGlobal::config(), "HTML Settings");
-        bool zoomTextOnly = cgHtml.readEntry( "ZoomTextOnly", false );
-        cgHtml.writeEntry("ZoomTextOnly", !zoomTextOnly);
-        KGlobal::config()->reparseConfiguration();
+    if (!view())
+        return;
+    
+    KConfigGroup cgHtml(KGlobal::config(), "HTML Settings");
+    bool zoomTextOnly = cgHtml.readEntry( "ZoomTextOnly", false );
+    cgHtml.writeEntry("ZoomTextOnly", !zoomTextOnly);
+    KGlobal::config()->reparseConfiguration();
 
-        m_view->settings()->setAttribute(QWebSettings::ZoomTextOnly, !zoomTextOnly);
-    }
+    view()->settings()->setAttribute(QWebSettings::ZoomTextOnly, !zoomTextOnly);
 }
 
 void WebKitBrowserExtension::slotSelectAll()
 {
-    if (m_view)
-        m_view->triggerPageAction(QWebPage::SelectAll);
+    if (view())
+        view()->triggerPageAction(QWebPage::SelectAll);
 }
 
 void WebKitBrowserExtension::slotFrameInWindow()
 {
-    if (m_view) {
-        KParts::OpenUrlArguments args;// = m_m_khtml->arguments();
-        args.metaData()["forcenewwindow"] = "true";
-        emit createNewWindow(m_view->page()->currentFrame()->url(), args);
-    }
+    if (!view())
+        return;
+    
+    KParts::BrowserArguments bargs;
+    bargs.setForcesNewWindow(true);
+    emit createNewWindow(view()->page()->currentFrame()->url(), KParts::OpenUrlArguments(), bargs);
 }
 
 void WebKitBrowserExtension::slotFrameInTab()
 {
-    if (m_view) {
-        KParts::BrowserArguments browserArgs;//( m_m_khtml->browserExtension()->browserArguments() );
-        browserArgs.setNewTab(true);
-        emit createNewWindow(m_view->page()->currentFrame()->url(), KParts::OpenUrlArguments(), browserArgs);
-    }
+    if (!view())
+        return;
+    
+    KParts::BrowserArguments bargs;//( m_m_khtml->browserExtension()->browserArguments() );
+    bargs.setNewTab(true);
+    emit createNewWindow(view()->page()->currentFrame()->url(), KParts::OpenUrlArguments(), bargs);
+
 }
 
 void WebKitBrowserExtension::slotFrameInTop()
 {
-    if (m_view) {
-        KParts::BrowserArguments browserArgs;//( m_m_khtml->browserExtension()->browserArguments() );
-        browserArgs.frameName = "_top";
-        emit openUrlRequest(m_view->page()->currentFrame()->url(), KParts::OpenUrlArguments(), browserArgs);
-    }
+    if (!view())
+        return;
+    
+    KParts::BrowserArguments bargs;//( m_m_khtml->browserExtension()->browserArguments() );
+    bargs.frameName = QL1S("_top");
+    emit openUrlRequest(view()->page()->currentFrame()->url(), KParts::OpenUrlArguments(), bargs);
 }
 
 void WebKitBrowserExtension::slotReloadFrame()
 {
-    if (m_view) {
-        m_view->page()->currentFrame()->load(m_view->page()->currentFrame()->url());
-    }
+    if (view())
+        view()->page()->currentFrame()->load(view()->page()->currentFrame()->url());
 }
 
 void WebKitBrowserExtension::slotSaveImageAs()
 {
-    if (m_view) {
-        m_view->triggerPageAction(QWebPage::DownloadImageToDisk);
-    }
+    if (view())
+        view()->triggerPageAction(QWebPage::DownloadImageToDisk);
 }
 
 void WebKitBrowserExtension::slotSendImage()
 {
-    if (m_view) {
-        QStringList urls;
-        urls.append(m_view->contextMenuResult().imageUrl().path());
-        const QString subject = m_view->contextMenuResult().imageUrl().path();
-        KToolInvocation::invokeMailer(QString(), QString(), QString(), subject,
-                                      QString(), //body
-                                      QString(),
-                                      urls); // attachments
-    }
+    if (!view())
+        return;
+    
+    QStringList urls;
+    urls.append(view()->contextMenuResult().imageUrl().path());
+    const QString subject = view()->contextMenuResult().imageUrl().path();
+    KToolInvocation::invokeMailer(QString(), QString(), QString(), subject,
+                                  QString(), //body
+                                  QString(),
+                                  urls); // attachments
 }
 
 void WebKitBrowserExtension::slotCopyImage()
 {
-    if (m_view) {
-        KUrl safeURL(m_view->contextMenuResult().imageUrl());
-        safeURL.setPass(QString());
+    if (!view())
+        return;
+    
+    KUrl safeURL(view()->contextMenuResult().imageUrl());
+    safeURL.setPass(QString());
 
-        // Set it in both the mouse selection and in the clipboard
-        QMimeData* mimeData = new QMimeData;
-        mimeData->setImageData(m_view->contextMenuResult().pixmap());
-        safeURL.populateMimeData(mimeData);
-        QApplication::clipboard()->setMimeData(mimeData, QClipboard::Clipboard);
+    // Set it in both the mouse selection and in the clipboard
+    QMimeData* mimeData = new QMimeData;
+    mimeData->setImageData(view()->contextMenuResult().pixmap());
+    safeURL.populateMimeData(mimeData);
+    QApplication::clipboard()->setMimeData(mimeData, QClipboard::Clipboard);
 
-        mimeData = new QMimeData;
-        mimeData->setImageData(m_view->contextMenuResult().pixmap());
-        safeURL.populateMimeData(mimeData);
-        QApplication::clipboard()->setMimeData(mimeData, QClipboard::Selection);
-    }
+    mimeData = new QMimeData;
+    mimeData->setImageData(view()->contextMenuResult().pixmap());
+    safeURL.populateMimeData(mimeData);
+    QApplication::clipboard()->setMimeData(mimeData, QClipboard::Selection);
 }
 
 void WebKitBrowserExtension::slotViewImage()
 {
-    if (m_view)
-        emit createNewWindow(m_view->contextMenuResult().imageUrl());
+    if (view())
+        emit createNewWindow(view()->contextMenuResult().imageUrl());
 }
 
 void WebKitBrowserExtension::slotBlockImage()
 {
-    if (!m_view)
+    if (!view())
         return;
     
     bool ok = false;
     const QString url = KInputDialog::getText(i18n("Add URL to Filter"),
                                               i18n("Enter the URL:"),
-                                              m_view->contextMenuResult().imageUrl().toString(),
+                                              view()->contextMenuResult().imageUrl().toString(),
                                               &ok);
     if (ok)
         WebKitSettings::self()->addAdFilter(url);
@@ -366,75 +390,75 @@ void WebKitBrowserExtension::slotBlockImage()
 
 void WebKitBrowserExtension::slotBlockHost()
 {
-    if (!m_view)
+    if (!view())
         return;
     
-    QUrl url (m_view->contextMenuResult().imageUrl());
+    QUrl url (view()->contextMenuResult().imageUrl());
     url.setPath(QL1S("/*"));
     WebKitSettings::self()->addAdFilter(url.toString(QUrl::RemoveAuthority));
 }
 
 void WebKitBrowserExtension::slotCopyLinkLocation()
 {
-    if (m_view) {
-        KUrl safeURL(m_view->contextMenuResult().linkUrl());
-        safeURL.setPass(QString());
-        // Set it in both the mouse selection and in the clipboard
-        QMimeData* mimeData = new QMimeData;
-        safeURL.populateMimeData(mimeData);
-        QApplication::clipboard()->setMimeData(mimeData, QClipboard::Clipboard);
+    if (!view())
+        return;
+    
+    KUrl safeURL(view()->contextMenuResult().linkUrl());
+    safeURL.setPass(QString());
+    // Set it in both the mouse selection and in the clipboard
+    QMimeData* mimeData = new QMimeData;
+    safeURL.populateMimeData(mimeData);
+    QApplication::clipboard()->setMimeData(mimeData, QClipboard::Clipboard);
 
-        mimeData = new QMimeData;
-        safeURL.populateMimeData(mimeData);
-        QApplication::clipboard()->setMimeData(mimeData, QClipboard::Selection);
-    }
+    mimeData = new QMimeData;
+    safeURL.populateMimeData(mimeData);
+    QApplication::clipboard()->setMimeData(mimeData, QClipboard::Selection);
 }
 
 void WebKitBrowserExtension::slotSaveLinkAs()
 {
-    if (m_view)
-        //emit saveUrl(m_view->contextMenuResult().linkUrl());
-        m_view->triggerPageAction(QWebPage::DownloadLinkToDisk);
+    if (view())
+        view()->triggerPageAction(QWebPage::DownloadLinkToDisk);
 }
 
 void WebKitBrowserExtension::slotViewDocumentSource()
 {
-    if (m_view) {
+    if (!view())
+        return;
 #if 1
-        //FIXME: This workaround is necessary because freakin' QtWebKit does not provide
-        //a means to obtain the original content of the frame. Actually it does, but the
-        //returned content is royally screwed up! *sigh*
-        KRun::runUrl(m_view->page()->mainFrame()->url(), QL1S("text/plain"), m_view, false);
+    //FIXME: This workaround is necessary because freakin' QtWebKit does not provide
+    //a means to obtain the original content of the frame. Actually it does, but the
+    //returned content is royally screwed up! *sigh*
+    KRun::runUrl(view()->page()->mainFrame()->url(), QL1S("text/plain"), view(), false);
 #else
-        KTemporaryFile tempFile;
-        tempFile.setSuffix(QL1S(".html"));
-        tempFile.setAutoRemove(false);
-        if (tempFile.open()) {
-            tempFile.write(m_view->page()->mainFrame()->toHtml().toUtf8());
-            KRun::runUrl(tempFile.fileName(), QL1S("text/plain"), m_view, true, false);
-        }
-#endif
+    KTemporaryFile tempFile;
+    tempFile.setSuffix(QL1S(".html"));
+    tempFile.setAutoRemove(false);
+    if (tempFile.open()) {
+        tempFile.write(view()->page()->mainFrame()->toHtml().toUtf8());
+        KRun::runUrl(tempFile.fileName(), QL1S("text/plain"), view(), true, false);
     }
+#endif
 }
 
 void WebKitBrowserExtension::slotViewFrameSource()
 {
-  if (m_view) {
+    if (!view())
+        return;
 #if 1
-      //FIXME: This workaround is necessary because freakin' QtWebKit does not provide
-      //a means to obtain the original content of the frame. Actually it does, but the
-      //returned content is royally screwed up! *sigh*
-      KRun::runUrl(m_view->page()->mainFrame()->url(), QL1S("text/plain"), m_view, false);
+    //FIXME: This workaround is necessary because freakin' QtWebKit does not provide
+    //a means to obtain the original content of the frame. Actually it does, but the
+    //returned content is royally screwed up! *sigh*
+    KRun::runUrl(view()->page()->mainFrame()->url(), QL1S("text/plain"), view(), false);
 #else
-      KTemporaryFile tempFile;
-      tempFile.setSuffix(QL1S(".html"));
-      tempFile.setAutoRemove(false);
-      if (tempFile.open()) {
-          tempFile.write(m_view->page()->currentFrame()->toHtml().toUtf8());
-          KRun::runUrl(tempFile.fileName(), QL1S("text/plain"), m_view, true, false);
-      }
+    KTemporaryFile tempFile;
+    tempFile.setSuffix(QL1S(".html"));
+    tempFile.setAutoRemove(false);
+    if (tempFile.open()) {
+        tempFile.write(view()->page()->currentFrame()->toHtml().toUtf8());
+        KRun::runUrl(tempFile.fileName(), QL1S("text/plain"), view(), true, false);
+    }
 #endif
-  }
 }
 
 ////

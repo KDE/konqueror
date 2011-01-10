@@ -66,7 +66,7 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
          m_kioErrorCode(0),
          m_ignoreError(false),
          m_ignoreHistoryNavigationRequest(true),
-         m_part(part)
+         m_part(QWeakPointer<KWebKitPart>(part))
 {
     // FIXME: Need a better way to handle request filtering than to inherit
     // KIO::Integration::AccessManager...
@@ -274,7 +274,7 @@ QWebPage *WebPage::createWindow(WebWindowType type)
     // Crete an instance of NewWindowPage class to capture all the
     // information we need to create a new window. See documentation of
     // the class for more information...
-    return new NewWindowPage(type, m_part.data(), 0);
+    return new NewWindowPage(type, part(), 0);
 }
 
 // Returns true if the scheme and domain of the two urls match...
@@ -420,12 +420,12 @@ static int errorCodeFromReply(QNetworkReply* reply)
 
 KWebKitPart* WebPage::part() const
 {
-    return m_part;
+    return m_part.data();
 }
 
 void WebPage::setPart(KWebKitPart* part)
 {
-    m_part = part;
+    m_part = QWeakPointer<KWebKitPart>(part);
 }
 
 void WebPage::slotRequestFinished(QNetworkReply *reply)
@@ -487,7 +487,7 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
 
     if (isMainFrameRequest) {
         const WebPageSecurity security = (m_sslInfo.isValid() ? PageEncrypted : PageUnencrypted);
-        emit m_part->browserExtension()->setPageSecurity(security);
+        emit part()->browserExtension()->setPageSecurity(security);
     }
 }
 
@@ -502,7 +502,7 @@ void WebPage::slotGeometryChangeRequested(const QRect & rect)
     // window will be in maximized mode where moving it will not be possible...
     if (WebKitSettings::self()->windowMovePolicy(host) == WebKitSettings::KJSWindowMoveAllow &&
         (view()->x() != rect.x() || view()->y() != rect.y()))
-        emit m_part->browserExtension()->moveTopLevelWidget(rect.x(), rect.y());
+        emit part()->browserExtension()->moveTopLevelWidget(rect.x(), rect.y());
 
     const int height = rect.height();
     const int width = rect.width();
@@ -523,7 +523,7 @@ void WebPage::slotGeometryChangeRequested(const QRect & rect)
 
     if (WebKitSettings::self()->windowResizePolicy(host) == WebKitSettings::KJSWindowResizeAllow) {
         //kDebug() << "resizing to " << width << "x" << height;
-        emit m_part->browserExtension()->resizeTopLevelWidget(width, height);
+        emit part()->browserExtension()->resizeTopLevelWidget(width, height);
     }
 
     // If the window is out of the desktop, move it up/left
@@ -537,7 +537,7 @@ void WebPage::slotGeometryChangeRequested(const QRect & rect)
         moveByY = - bottom + sg.bottom(); // always <0
 
     if ((moveByX || moveByY) && WebKitSettings::self()->windowMovePolicy(host) == WebKitSettings::KJSWindowMoveAllow)
-        emit m_part->browserExtension()->moveTopLevelWidget(view()->x() + moveByX, view()->y() + moveByY);
+        emit part()->browserExtension()->moveTopLevelWidget(view()->x() + moveByX, view()->y() + moveByY);
 }
 
 bool WebPage::checkLinkSecurity(const QNetworkRequest &req, NavigationType type) const
@@ -679,7 +679,7 @@ bool WebPage::handleMailToUrl (const QUrl &url, NavigationType type) const
         }
 
         //kDebug() << "Emitting openUrlRequest with " << mailtoUrl;
-        emit m_part->browserExtension()->openUrlRequest(mailtoUrl);
+        emit part()->browserExtension()->openUrlRequest(mailtoUrl);
         return true;
     }
 

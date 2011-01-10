@@ -121,7 +121,7 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
     setWidget(mainWidget);
 
     // Create the WebView...
-    m_webView = new WebView (this, mainWidget);
+    m_webView = QWeakPointer<WebView>(new WebView (this, mainWidget));
 
     // Create the browser extension. The first item of 'args' is used to pass
     // the session history filename.
@@ -143,15 +143,15 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
             this, SLOT(slotSearchForText(const QString &, bool)));
 
     // Connect the signals/slots from the webview...
-    connect(m_webView, SIGNAL(titleChanged(const QString &)),
+    connect(m_webView.data(), SIGNAL(titleChanged(const QString &)),
             this, SIGNAL(setWindowCaption(const QString &)));
-    connect(m_webView, SIGNAL(loadFinished(bool)),
+    connect(m_webView.data(), SIGNAL(loadFinished(bool)),
             this, SLOT(slotLoadFinished(bool)));
-    connect(m_webView, SIGNAL(urlChanged(const QUrl &)),
+    connect(m_webView.data(), SIGNAL(urlChanged(const QUrl &)),
             this, SLOT(slotUrlChanged(const QUrl &)));
-    connect(m_webView, SIGNAL(linkMiddleOrCtrlClicked(const KUrl &)),
+    connect(m_webView.data(), SIGNAL(linkMiddleOrCtrlClicked(const KUrl &)),
             this, SLOT(slotLinkMiddleOrCtrlClicked(const KUrl &)));
-    connect(m_webView, SIGNAL(selectionClipboardUrlPasted(const KUrl &, const QString &)),
+    connect(m_webView.data(), SIGNAL(selectionClipboardUrlPasted(const KUrl &, const QString &)),
             this, SLOT(slotSelectionClipboardUrlPasted(const KUrl &, const QString &)));
 
     // Connect the signals from the page...
@@ -162,11 +162,11 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
     lay->setMargin(0);
     lay->setSpacing(0);
     lay->addWidget(m_passwordBar);
-    lay->addWidget(m_webView);
+    lay->addWidget(m_webView.data());
     lay->addWidget(m_searchBar);
 
     // Set the web view as the the focus object...
-    mainWidget->setFocusProxy(m_webView);
+    mainWidget->setFocusProxy(m_webView.data());
 
     setXMLFile("kwebkitpart.rc");
 
@@ -179,8 +179,8 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
 
 WebPage* KWebKitPart::page()
 {
-    if (m_webView)
-        return qobject_cast<WebPage*>(m_webView->page());
+    if (m_webView.data())
+        return qobject_cast<WebPage*>(m_webView.data()->page());
     return 0;
 }
 
@@ -223,7 +223,7 @@ void KWebKitPart::initActions()
     action = actionCollection()->addAction(KStandardAction::SelectAll, "selectAll",
                                            m_browserExtension, SLOT(slotSelectAll()));
     action->setShortcutContext(Qt::WidgetShortcut);
-    m_webView->addAction(action);
+    m_webView.data()->addAction(action);
 
     KCodecAction *codecAction = new KCodecAction( KIcon("character-set"), i18n( "Set &Encoding" ), this, true );
     actionCollection()->addAction( "setEncoding", codecAction );
@@ -270,7 +270,7 @@ void KWebKitPart::connectWebPageSignals(WebPage* page)
     connect(page, SIGNAL(printRequested(QWebFrame*)),
             this, SLOT(slotPrintRequested(QWebFrame*)));
 
-    connect(m_webView, SIGNAL(linkShiftClicked(const KUrl &)),
+    connect(m_webView.data(), SIGNAL(linkShiftClicked(const KUrl &)),
             page, SLOT(downloadUrl(const KUrl &)));
 
     connect(page, SIGNAL(loadProgress(int)),
@@ -331,7 +331,7 @@ bool KWebKitPart::openUrl(const KUrl &u)
             KUrl reqUrl = KUrl::join( urls );
             emit m_browserExtension->setLocationBarUrl(reqUrl.prettyUrl());
             if (page()) {
-                m_webView->setHtml(page()->errorPage(error, errorText, reqUrl));
+                m_webView.data()->setHtml(page()->errorPage(error, errorText, reqUrl));
                 return true;
             }
         }
@@ -391,27 +391,27 @@ bool KWebKitPart::openUrl(const KUrl &u)
 
     // Set URL in KParts before emitting started; konq plugins rely on that.
     setUrl(u);
-    m_webView->loadUrl(u, args, bargs);
+    m_webView.data()->loadUrl(u, args, bargs);
     return true;
 }
 
 bool KWebKitPart::closeUrl()
 {
 #if QT_VERSION >= 0x040700
-    m_webView->triggerPageAction(QWebPage::StopScheduledPageRefresh);
+    m_webView.data()->triggerPageAction(QWebPage::StopScheduledPageRefresh);
 #endif
-    m_webView->stop();
+    m_webView.data()->stop();
     return true;
 }
 
 QWebView * KWebKitPart::view()
 {
-    return m_webView;
+    return m_webView.data();
 }
 
 bool KWebKitPart::isModified() const
 {
-    return m_webView->isModified();
+    return m_webView.data()->isModified();
 }
 
 void KWebKitPart::guiActivateEvent(KParts::GUIActivateEvent *event)
@@ -444,19 +444,19 @@ void KWebKitPart::slotLoadFinished(bool ok)
     m_emitOpenUrlNotify = true;
 
     if (ok) {
-        if (m_webView->title().trimmed().isEmpty()) {
+        if (m_webView.data()->title().trimmed().isEmpty()) {
             // If the document title is empty, then set it to the current url
-            const QString caption = m_webView->url().toString((QUrl::RemoveQuery|QUrl::RemoveFragment));
+            const QString caption = m_webView.data()->url().toString((QUrl::RemoveQuery|QUrl::RemoveFragment));
             emit setWindowCaption(caption);
 
             // The urlChanged signal is emitted if and only if the main frame
             // receives the title of the page so we manually invoke the slot as
             // a work around here for pages that do not contain it, such as
             // text documents...
-            slotUrlChanged(m_webView->url());
+            slotUrlChanged(m_webView.data()->url());
         }
 
-        const QUrl mainUrl = m_webView->url();
+        const QUrl mainUrl = m_webView.data()->url();
         if (mainUrl != sAboutBlankUrl && page()) {
             // Fill form data from wallet...
             KWebWallet *webWallet = page()->wallet();
@@ -539,7 +539,7 @@ void KWebKitPart::slotLoadAborted(const KUrl & url)
     if (url.isValid())
       emit m_browserExtension->openUrlRequest(url);
     else
-      setUrl(m_webView->url());
+      setUrl(m_webView.data()->url());
 }
 
 void KWebKitPart::slotUrlChanged(const QUrl& url)
@@ -715,7 +715,7 @@ void KWebKitPart::slotSearchForText(const QString &text, bool backward)
 
 void KWebKitPart::slotShowSearchBar()
 {
-    const QString text = m_webView->selectedText();
+    const QString text = m_webView.data()->selectedText();
     m_searchBar->setSearchText(text.left(150));
 }
 
@@ -729,7 +729,7 @@ void KWebKitPart::slotLinkMiddleOrCtrlClicked(const KUrl& linkUrl)
 void KWebKitPart::slotSelectionClipboardUrlPasted(const KUrl& selectedUrl, const QString& searchText)
 {
     if (WebKitSettings::self()->isOpenMiddleClickEnabled() &&
-        (searchText.isEmpty() || KMessageBox::questionYesNo(m_webView,
+        (searchText.isEmpty() || KMessageBox::questionYesNo(m_webView.data(),
                                  i18n("<qt>Do you want to search the Internet for <b>%1</b>?</qt>", searchText),
                                  i18n("Internet Search"), KGuiItem(i18n("&Search"), "edit-find"),
                                  KStandardGuiItem::cancel(), "MiddleClickSearch") == KMessageBox::Yes))
@@ -750,7 +750,7 @@ void KWebKitPart::slotShowWalletMenu()
 {
     KMenu *menu = new KMenu(0);
 
-    if (m_webView && WebKitSettings::self()->isNonPasswordStorableSite(m_webView->url().host())) {
+    if (m_webView.data() && WebKitSettings::self()->isNonPasswordStorableSite(m_webView.data()->url().host())) {
       menu->addAction(i18n("&Allow password caching for this site"), this, SLOT(slotDeleteNonPasswordStorableSite()));
     }
 
@@ -777,8 +777,8 @@ void KWebKitPart::slotLaunchWalletManager()
 
 void KWebKitPart::slotDeleteNonPasswordStorableSite()
 {
-    if (m_webView)
-        WebKitSettings::self()->removeNonPasswordStorableSite(m_webView->url().host());
+    if (m_webView.data())
+        WebKitSettings::self()->removeNonPasswordStorableSite(m_webView.data()->url().host());
 }
 
 void KWebKitPart::slotRemoveCachedPasswords()
@@ -813,7 +813,7 @@ void KWebKitPart::slotWindowCloseRequested()
 {
     emit m_browserExtension->requestFocus(this);
 #if 0
-    if (KMessageBox::questionYesNo(m_webView,
+    if (KMessageBox::questionYesNo(m_webView.data(),
                                    i18n("Close window?"), i18n("Confirmation Required"),
                                    KStandardGuiItem::close(), KStandardGuiItem::cancel())
         != KMessageBox::Yes)
@@ -827,7 +827,7 @@ void KWebKitPart::slotPrintRequested(QWebFrame* frame)
     if (!frame)
         return;
 
-    QPrintPreviewDialog dlg(m_webView);
+    QPrintPreviewDialog dlg(m_webView.data());
     connect(&dlg, SIGNAL(paintRequested(QPrinter *)),
             frame, SLOT(print(QPrinter *)));
     dlg.exec();

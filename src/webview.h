@@ -75,7 +75,7 @@ private:
 
     KActionCollection* m_actionCollection;
     QWebHitTestResult m_result;
-    QPointer<KWebKitPart> m_part;
+    QWeakPointer<KWebKitPart> m_part;
 };
 
 #endif // WEBVIEW_H

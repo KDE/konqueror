@@ -24,6 +24,8 @@
 #ifndef KWEBKITPART_H
 #define KWEBKITPART_H
 
+#include <QtCore/QWeakPointer>
+
 #include <KDE/KParts/ReadOnlyPart>
 
 namespace KParts {
@@ -149,7 +151,7 @@ private:
     KDEPrivate::PasswordBar* m_passwordBar;
     WebKitBrowserExtension* m_browserExtension;
     KParts::StatusBarExtension* m_statusBarExtension;
-    QPointer<WebView> m_webView;
+    QWeakPointer<WebView> m_webView;
 };
 
 #endif // WEBKITPART_H

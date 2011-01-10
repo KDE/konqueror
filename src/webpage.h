@@ -144,7 +144,7 @@ private:
 
     WebSslInfo m_sslInfo;
     QVector<QUrl> m_requestQueue;
-    QPointer<KWebKitPart> m_part;
+    QWeakPointer<KWebKitPart> m_part;
 };
 
 
