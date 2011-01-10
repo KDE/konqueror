@@ -40,46 +40,11 @@ class QVariant;
 class QWebFrame;
 
 
-/**
- * This is a fake implementation of QWebPage used to adapt QWebPage's API for
- * creating new window with that of KPart's.
- *
- * The KPart API for creating window requires all the information about the new
- * window be present before hand. Unfortunately the QWebPage::createWindow function
- * does not provide any information except for the window type. As such, this class
- * is designed and used to collect all of the necessary information such as window
- * name, size and position before invoking the specified KPart's create new window
- * properly.
- */
-class NewWindowAdapterPage : public QWebPage
-{
-    Q_OBJECT
-public:
-    NewWindowAdapterPage(KParts::ReadOnlyPart* part, WebWindowType type, QObject* parent = 0);
-    virtual ~NewWindowAdapterPage();
-
-protected:
-    virtual bool acceptNavigationRequest(QWebFrame* frame, const QNetworkRequest& request, NavigationType type);
-
-private Q_SLOTS:
-    void slotGeometryChangeRequested(const QRect& rect);
-    void slotMenuBarVisibilityChangeRequested(bool visible);
-    void slotStatusBarVisibilityChangeRequested(bool visible);
-    void slotToolBarVisibilityChangeRequested(bool visible);
-
-private:
-    KUrl m_requestUrl;
-    KParts::WindowArgs m_windowArgs;
-    WebWindowType m_type;
-    QPointer<KParts::ReadOnlyPart> m_part;
-};
-
-
 class WebPage : public KWebPage
 {
     Q_OBJECT
 public:
-    WebPage(KWebKitPart *wpart, QWidget *parent);
+    WebPage(KWebKitPart *wpart, QWidget *parent = 0);
     ~WebPage();
 
     /**
@@ -137,6 +102,18 @@ Q_SIGNALS:
 
 protected:
     /**
+     * Returns the webkit part in use by this object.
+     * @internal
+     */
+    KWebKitPart* part() const;
+
+    /**
+     * Sets the webkit part to be used by this object.
+     * @internal
+     */
+    void setPart(KWebKitPart*);
+
+    /**
      * Reimplemented for internal reasons, the API is not affected.
      * @internal
      */
@@ -146,16 +123,17 @@ protected:
      * Reimplemented for internal reasons, the API is not affected.
      * @internal
      */
-    virtual bool acceptNavigationRequest(QWebFrame * frame, const QNetworkRequest & request, NavigationType type);
+    virtual bool acceptNavigationRequest(QWebFrame* frame, const QNetworkRequest& request, NavigationType type);
 
 protected Q_SLOTS:
-    void slotRequestFinished(QNetworkReply *reply);
+    void slotRequestFinished(QNetworkReply* reply);
+    virtual void slotGeometryChangeRequested(const QRect& rect);
 
 private:
-    bool checkLinkSecurity(const QNetworkRequest &req, NavigationType type) const;
-    bool checkFormData(const QNetworkRequest &req) const;
+    bool checkLinkSecurity(const QNetworkRequest& req, NavigationType type) const;
+    bool checkFormData(const QNetworkRequest& req) const;
     bool handleMailToUrl (const QUrl& , NavigationType type) const;
-    void setPageJScriptPolicy(const QUrl &url);
+    void setPageJScriptPolicy(const QUrl& url);
 
 private:
     enum WebPageSecurity { PageUnencrypted, PageEncrypted, PageMixed };
@@ -167,6 +145,41 @@ private:
     WebSslInfo m_sslInfo;
     QVector<QUrl> m_requestQueue;
     QPointer<KWebKitPart> m_part;
+};
+
+
+/**
+ * This is a fake implementation of WebPage to workaround the ugly API used
+ * to request for the creation of a new window from javascript in QtWebKit.
+ *
+ * The KPart API for creating new windows requires all the information about the
+ * new window up front. Unfortunately QWebPage::createWindow function does not
+ * provide any of these necessary information except for the window type. All
+ * the other necessary information is emitted as signals instead! Hence, the
+ * need for this class to collect all of the necessary information, such as
+ * window name, size and position, before calling KPart's createNewWindow
+ * function.
+ */
+class NewWindowPage : public WebPage
+{
+    Q_OBJECT
+public:
+    NewWindowPage(WebWindowType type, KWebKitPart* part, QWidget* parent = 0);
+    virtual ~NewWindowPage();
+
+protected:
+    virtual bool acceptNavigationRequest(QWebFrame* frame, const QNetworkRequest& request, NavigationType type);
+
+protected Q_SLOTS:
+    void slotGeometryChangeRequested(const QRect& rect);
+    void slotMenuBarVisibilityChangeRequested(bool visible);
+    void slotStatusBarVisibilityChangeRequested(bool visible);
+    void slotToolBarVisibilityChangeRequested(bool visible);
+
+private:
+    KParts::WindowArgs m_windowArgs;
+    WebWindowType m_type;
+    bool m_createNewWindow;
 };
 
 #endif // WEBPAGE_H

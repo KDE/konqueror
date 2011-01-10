@@ -91,6 +91,12 @@ public:
      */
     bool isModified() const;
 
+    /**
+     * Connects the appropriate signals from the given page to the slots
+     * in this class.
+     */
+    void connectWebPageSignals(WebPage* page);
+
 protected:
     /**
      * Re-implemented for internal reasons. API remains unaffected.
@@ -129,13 +135,11 @@ private Q_SLOTS:
     void slotSetTextEncoding(QTextCodec*);
     void slotSetStatusBarText(const QString& text);
     void slotWindowCloseRequested();
-    void slotGeometryChangeRequested(const QRect &);
     void slotPrintRequested(QWebFrame*);
 
 private:
     WebPage* page();
     void initActions();
-    void connectWebPageSignals(WebPage* page);
 
     bool m_emitOpenUrlNotify;
     bool m_pageRestored;
@@ -146,8 +150,6 @@ private:
     WebKitBrowserExtension* m_browserExtension;
     KParts::StatusBarExtension* m_statusBarExtension;
     QPointer<WebView> m_webView;
-
-    friend class WebPage;
 };
 
 #endif // WEBKITPART_H

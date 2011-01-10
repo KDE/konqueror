@@ -50,7 +50,6 @@
 #include <KDE/KWebWallet>
 #include <KDE/KToolInvocation>
 #include <KDE/KAcceleratorManager>
-#include <KDE/KGlobalSettings>
 #include <KDE/KStatusBar>
 #include <KDE/KFileItem>
 #include <KParts/StatusBarExtension>
@@ -68,6 +67,8 @@
 
 #define QL1S(x)  QLatin1String(x)
 #define QL1C(x)  QLatin1Char(x)
+
+static const QUrl sAboutBlankUrl (QL1S("about:blank"));
 
 static inline int convertStr2Int(const QString& value)
 {
@@ -266,8 +267,6 @@ void KWebKitPart::connectWebPageSignals(WebPage* page)
             this, SLOT(slotSetStatusBarText(const QString &)));
     connect(page, SIGNAL(windowCloseRequested()),
             this, SLOT(slotWindowCloseRequested()));
-    connect(page, SIGNAL(geometryChangeRequested(const QRect &)),
-            this, SLOT(slotGeometryChangeRequested(const QRect &)));
     connect(page, SIGNAL(printRequested(QWebFrame*)),
             this, SLOT(slotPrintRequested(QWebFrame*)));
 
@@ -331,9 +330,10 @@ bool KWebKitPart::openUrl(const KUrl &u)
             urls.pop_front();
             KUrl reqUrl = KUrl::join( urls );
             emit m_browserExtension->setLocationBarUrl(reqUrl.prettyUrl());
-            const WebPage* page = qobject_cast<const WebPage*>(m_webView->page());
-            m_webView->setHtml(page->errorPage(error, errorText, reqUrl));
-            return true;
+            if (page()) {
+                m_webView->setHtml(page()->errorPage(error, errorText, reqUrl));
+                return true;
+            }
         }
 
         return false;
@@ -342,7 +342,7 @@ bool KWebKitPart::openUrl(const KUrl &u)
     KParts::BrowserArguments bargs (m_browserExtension->browserArguments());
     KParts::OpenUrlArguments args (arguments());
 
-    if (u.url() != QL1S("about:blank")) {
+    if (sAboutBlankUrl != u && page()) {
         // Check if this is a restore state request, i.e. a history navigation
         // or a session restore. If it is, fulfill the request using QWebHistory.
         if (args.metaData().contains(QL1S("kwebkitpart-restore-state"))) {
@@ -457,7 +457,7 @@ void KWebKitPart::slotLoadFinished(bool ok)
         }
 
         const QUrl mainUrl = m_webView->url();
-        if (mainUrl.scheme().compare(QL1S("about"), Qt::CaseInsensitive) != 0) {
+        if (mainUrl != sAboutBlankUrl && page()) {
             // Fill form data from wallet...
             KWebWallet *webWallet = page()->wallet();
             if (webWallet) {
@@ -510,8 +510,10 @@ void KWebKitPart::slotLoadFinished(bool ok)
         if (args.metaData().contains(QL1S("kwebkitpart-restore-scrollx"))) {
             const int scrollPosX = args.metaData().take(QL1S("kwebkitpart-restore-scrollx")).toInt();
             const int scrollPosY = args.metaData().take(QL1S("kwebkitpart-restore-scrolly")).toInt();
-            page()->mainFrame()->setScrollPosition(QPoint(scrollPosX, scrollPosY));
-            setArguments(args);
+            if (page()) {
+                page()->mainFrame()->setScrollPosition(QPoint(scrollPosX, scrollPosY));
+                setArguments(args);
+            }
         }
     }
 
@@ -550,7 +552,8 @@ void KWebKitPart::slotUrlChanged(const QUrl& url)
 
 void KWebKitPart::slotShowSecurity()
 {
-    Q_ASSERT(page());
+    if (!page())
+        return;
 
     const WebSslInfo& sslInfo = page()->sslInfo();
     if (sslInfo.isValid()) {
@@ -575,7 +578,7 @@ void KWebKitPart::slotShowSecurity()
 void KWebKitPart::slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item)
 {
     Q_UNUSED (item);
-    if (frame == page()->mainFrame()) {
+    if (page() && frame == page()->mainFrame()) {
         kDebug() << "Update history ?" << m_emitOpenUrlNotify;
         if (m_emitOpenUrlNotify)
             emit m_browserExtension->openUrlNotify();
@@ -586,7 +589,7 @@ void KWebKitPart::slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item)
             const QVariant v = item->userData();
             if (v.isValid() && v.type() == QVariant::Map)
                 data = v.toMap();
-            if (page() && page()->sslInfo().saveTo(data))
+            if (page()->sslInfo().saveTo(data))
                 item->setUserData(data);
         }
     }
@@ -595,7 +598,7 @@ void KWebKitPart::slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item)
 void KWebKitPart::slotRestoreFrameState(QWebFrame *frame)
 {
     //kDebug() << "Restore state for" << frame;
-    if (frame == page()->mainFrame()) {
+    if (page() && frame == page()->mainFrame()) {
         m_emitOpenUrlNotify = true;
         if (m_pageRestored) {
             const QWebHistoryItem item = frame->page()->history()->currentItem();
@@ -662,12 +665,13 @@ void KWebKitPart::slotLinkHovered(const QString &link, const QString &title, con
             message += i18n(" (In new window)");
         } else {
             message = link;
-            QWebElementCollection collection = page()->mainFrame()->documentElement().findAll(QL1S("a[href]"));
-            QListIterator<QWebFrame *> framesIt (page()->mainFrame()->childFrames());
-            while (framesIt.hasNext()) {
-                collection += framesIt.next()->documentElement().findAll(QL1S("a[href]"));
+            QWebElementCollection collection;
+            if (page()) {
+                collection = page()->mainFrame()->documentElement().findAll(QL1S("a[href]"));
+                QListIterator<QWebFrame *> framesIt (page()->mainFrame()->childFrames());
+                while (framesIt.hasNext())
+                    collection += framesIt.next()->documentElement().findAll(QL1S("a[href]"));
             }
-
             Q_FOREACH(const QWebElement &element, collection) {
                 //kDebug() << "link:" << link << "href" << element.attribute(QL1S("href"));
                 if (element.hasAttribute(QL1S("target")) &&
@@ -816,61 +820,6 @@ void KWebKitPart::slotWindowCloseRequested()
         return;
 #endif
     this->deleteLater();
-}
-
-void KWebKitPart::slotGeometryChangeRequested(const QRect & rect)
-{
-    kDebug() << rect;
-    if (!page())
-       return;
-
-    const QString host = page()->mainFrame()->url().host();
-
-    // NOTE: If a new window was created from another window which is in
-    // maximized mode and its width and/or height were not specified at the
-    // time of its creation, which is always the case in QWebPage::createWindow,
-    // then any move operation will seem not to work. That is because the new
-    // window will be in maximized mode where moving it will not be possible...
-    if (WebKitSettings::self()->windowMovePolicy(host) == WebKitSettings::KJSWindowMoveAllow &&
-        (m_webView->x() != rect.x() || m_webView->y() != rect.y()))
-        emit m_browserExtension->moveTopLevelWidget(rect.x(), rect.y());
-
-    const int height = rect.height();
-    const int width = rect.width();
-
-    // parts of following code are based on kjs_window.cpp
-    // Security check: within desktop limits and bigger than 100x100 (per spec)
-    if (width < 100 || height < 100) {
-        //kDebug() << "Window resize refused, window would be too small (" << width << "," << height << ")";
-        return;
-    }
-
-    QRect sg = KGlobalSettings::desktopGeometry(m_webView);
-
-    if (width > sg.width() || height > sg.height()) {
-        //kDebug() << "Window resize refused, window would be too big (" << width << "," << height << ")";
-        return;
-    }
-
-    if (WebKitSettings::self()->windowResizePolicy(host) == WebKitSettings::KJSWindowResizeAllow) {
-        //kDebug() << "resizing to " << width << "x" << height;
-        emit m_browserExtension->resizeTopLevelWidget(width, height);
-    }
-
-    // If the window is out of the desktop, move it up/left
-    // (maybe we should use workarea instead of sg, otherwise the window ends up below kicker)
-    const int right = m_webView->x() + m_webView->frameGeometry().width();
-    const int bottom = m_webView->y() + m_webView->frameGeometry().height();
-    int moveByX = 0;
-    int moveByY = 0;
-    if (right > sg.right())
-        moveByX = - right + sg.right(); // always <0
-    if (bottom > sg.bottom())
-        moveByY = - bottom + sg.bottom(); // always <0
-    if ((moveByX || moveByY) &&
-        WebKitSettings::self()->windowMovePolicy(host) == WebKitSettings::KJSWindowMoveAllow) {
-        emit m_browserExtension->moveTopLevelWidget(m_webView->x() + moveByX, m_webView->y() + moveByY);
-    }
 }
 
 void KWebKitPart::slotPrintRequested(QWebFrame* frame)

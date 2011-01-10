@@ -42,9 +42,9 @@
 #include <KDE/KDebug>
 #include <KDE/KFileDialog>
 #include <KDE/KProtocolInfo>
+#include <KDE/KGlobalSettings>
 #include <KIO/Job>
 #include <KIO/AccessManager>
-
 
 #include <QtCore/QFile>
 #include <QtGui/QApplication>
@@ -60,100 +60,6 @@
 #define QL1S(x)  QLatin1String(x)
 #define QL1C(x)  QLatin1Char(x)
 
-
-/************************************* Begin NewWindowAdapterPage ******************************************/
-
-NewWindowAdapterPage::NewWindowAdapterPage(KParts::ReadOnlyPart* part, WebWindowType type, QObject* parent)
-         :QWebPage(parent),
-          m_type(type),
-          m_part(part)
-{
-    Q_ASSERT_X (part, "NewWindowAdapterPage", "Must specify a valid KPart");
-
-    connect(this, SIGNAL(geometryChangeRequested(const QRect&)),
-            this, SLOT(slotGeometryChangeRequested(const QRect&)));
-    connect(this, SIGNAL(menuBarVisibilityChangeRequested(bool)),
-            this, SLOT(slotMenuBarVisibilityChangeRequested(bool)));
-    connect(this, SIGNAL(toolBarVisibilityChangeRequested(bool)),
-            this, SLOT(slotToolBarVisibilityChangeRequested(bool)));
-    connect(this, SIGNAL(statusBarVisibilityChangeRequested(bool)),
-            this, SLOT(slotStatusBarVisibilityChangeRequested(bool)));
-}
-
-NewWindowAdapterPage::~NewWindowAdapterPage()
-{
-    //kDebug();
-}
-
-bool NewWindowAdapterPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request, NavigationType type)
-{
-    //kDebug() << "url:" << request.url() << ",type:" << type << ",frame:" << frame;
-
-    if (!m_part && frame != mainFrame() && type != QWebPage::NavigationTypeOther)
-        return false;
-
-    //kDebug() << "Creating new window of type" << m_type;
-    
-    // Browser args...
-    KParts::BrowserArguments bargs;
-    bargs.frameName = mainFrame()->frameName();
-    if (m_type == WebModalDialog)
-        bargs.setForcesNewWindow(true);
-
-    // OpenUrl args...
-    KParts::OpenUrlArguments uargs;
-    uargs.setActionRequestedByUser(false);
-
-    // Window args...
-    KParts::WindowArgs wargs (m_windowArgs);
-
-    Q_ASSERT(m_part);
-    KParts::ReadOnlyPart* part =0;    
-    m_part->browserExtension()->createNewWindow(request.url(), uargs, bargs, wargs, &part);
-
-    // TODO: Investigate whether we really want to allow modal dialogs!!
-    // See the "modal" section @ https://developer.mozilla.org/en/DOM/window.open
-    if (part && m_type == WebModalDialog) {
-        QWidget* mainWidget = part->widget() ? part->widget()->window() : 0;
-        if (mainWidget)
-            mainWidget->setWindowModality(Qt::ApplicationModal);
-    }
-
-    // My work here is done! Activating self destruct! Bye amigos...
-    this->deleteLater();
-    return false;
-}
-
-void NewWindowAdapterPage::slotGeometryChangeRequested(const QRect & rect)
-{
-    if (!rect.isValid())
-        return;
-    
-    m_windowArgs.setX(rect.x());
-    m_windowArgs.setY(rect.y());
-    m_windowArgs.setWidth(qMin(rect.width(), 100));
-    m_windowArgs.setHeight(qMin(rect.height(), 100));
-}
-
-void NewWindowAdapterPage::slotMenuBarVisibilityChangeRequested(bool visible)
-{
-    //kDebug() << visible;
-    m_windowArgs.setMenuBarVisible(visible);
-}
-
-void NewWindowAdapterPage::slotStatusBarVisibilityChangeRequested(bool visible)
-{
-    //kDebug() << visible;
-    m_windowArgs.setStatusBarVisible(visible);
-}
-
-void NewWindowAdapterPage::slotToolBarVisibilityChangeRequested(bool visible)
-{
-    //kDebug() << visible;
-    m_windowArgs.setToolBarsVisible(visible);
-}
-
-/****************************** End NewWindowAdapterPage *************************************************/
 
 WebPage::WebPage(KWebKitPart *part, QWidget *parent)
         :KWebPage(parent, (KWebPage::KPartsIntegration|KWebPage::KWalletIntegration)),
@@ -191,6 +97,8 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
         QWebSecurityOrigin::addLocalScheme(protocol);
     }
 
+    connect(this, SIGNAL(geometryChangeRequested(const QRect &)),
+            this, SLOT(slotGeometryChangeRequested(const QRect &)));
     connect(this, SIGNAL(downloadRequested(const QNetworkRequest &)),
             this, SLOT(downloadRequest(const QNetworkRequest &)));
     connect(this, SIGNAL(unsupportedContent(QNetworkReply *)),
@@ -201,6 +109,7 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
 
 WebPage::~WebPage()
 {
+    //kDebug() << this;
 }
 
 const WebSslInfo& WebPage::sslInfo() const
@@ -362,10 +271,10 @@ bool WebPage::supportsExtension(Extension extension) const
 
 QWebPage *WebPage::createWindow(WebWindowType type)
 {
-    // Crete an instance of NewWindowAdapterPage class to capture all the
+    // Crete an instance of NewWindowPage class to capture all the
     // information we need to create a new window. See documentation of
     // the class for more information...
-    return new NewWindowAdapterPage(m_part, type, this);
+    return new NewWindowPage(type, m_part.data(), 0);
 }
 
 // Returns true if the scheme and domain of the two urls match...
@@ -509,6 +418,16 @@ static int errorCodeFromReply(QNetworkReply* reply)
     return 0;
 }
 
+KWebKitPart* WebPage::part() const
+{
+    return m_part;
+}
+
+void WebPage::setPart(KWebKitPart* part)
+{
+    m_part = part;
+}
+
 void WebPage::slotRequestFinished(QNetworkReply *reply)
 {
     Q_ASSERT(reply);
@@ -570,6 +489,55 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
         const WebPageSecurity security = (m_sslInfo.isValid() ? PageEncrypted : PageUnencrypted);
         emit m_part->browserExtension()->setPageSecurity(security);
     }
+}
+
+void WebPage::slotGeometryChangeRequested(const QRect & rect)
+{
+    const QString host = mainFrame()->url().host();
+
+    // NOTE: If a new window was created from another window which is in
+    // maximized mode and its width and/or height were not specified at the
+    // time of its creation, which is always the case in QWebPage::createWindow,
+    // then any move operation will seem not to work. That is because the new
+    // window will be in maximized mode where moving it will not be possible...
+    if (WebKitSettings::self()->windowMovePolicy(host) == WebKitSettings::KJSWindowMoveAllow &&
+        (view()->x() != rect.x() || view()->y() != rect.y()))
+        emit m_part->browserExtension()->moveTopLevelWidget(rect.x(), rect.y());
+
+    const int height = rect.height();
+    const int width = rect.width();
+
+    // parts of following code are based on kjs_window.cpp
+    // Security check: within desktop limits and bigger than 100x100 (per spec)
+    if (width < 100 || height < 100) {
+        kWarning() << "Window resize refused, window would be too small (" << width << "," << height << ")";
+        return;
+    }
+
+    QRect sg = KGlobalSettings::desktopGeometry(view());
+
+    if (width > sg.width() || height > sg.height()) {
+        kWarning() << "Window resize refused, window would be too big (" << width << "," << height << ")";
+        return;
+    }
+
+    if (WebKitSettings::self()->windowResizePolicy(host) == WebKitSettings::KJSWindowResizeAllow) {
+        //kDebug() << "resizing to " << width << "x" << height;
+        emit m_part->browserExtension()->resizeTopLevelWidget(width, height);
+    }
+
+    // If the window is out of the desktop, move it up/left
+    // (maybe we should use workarea instead of sg, otherwise the window ends up below kicker)
+    const int right = view()->x() + view()->frameGeometry().width();
+    const int bottom = view()->y() + view()->frameGeometry().height();
+    int moveByX = 0, moveByY = 0;
+    if (right > sg.right())
+        moveByX = - right + sg.right(); // always <0
+    if (bottom > sg.bottom())
+        moveByY = - bottom + sg.bottom(); // always <0
+
+    if ((moveByX || moveByY) && WebKitSettings::self()->windowMovePolicy(host) == WebKitSettings::KJSWindowMoveAllow)
+        emit m_part->browserExtension()->moveTopLevelWidget(view()->x() + moveByX, view()->y() + moveByY);
 }
 
 bool WebPage::checkLinkSecurity(const QNetworkRequest &req, NavigationType type) const
@@ -729,3 +697,125 @@ void WebPage::setPageJScriptPolicy(const QUrl &url)
                              (policy != WebKitSettings::KJSWindowOpenDeny &&
                               policy != WebKitSettings::KJSWindowOpenSmart));
 }
+
+
+
+
+
+/************************************* Begin NewWindowPage ******************************************/
+
+NewWindowPage::NewWindowPage(WebWindowType type, KWebKitPart* part, QWidget* parent)
+              :WebPage(part, parent),
+               m_type(type), m_createNewWindow(true)
+{
+    Q_ASSERT_X (part, "NewWindowPage", "Must specify a valid KPart");
+
+    connect(this, SIGNAL(menuBarVisibilityChangeRequested(bool)),
+            this, SLOT(slotMenuBarVisibilityChangeRequested(bool)));
+    connect(this, SIGNAL(toolBarVisibilityChangeRequested(bool)),
+            this, SLOT(slotToolBarVisibilityChangeRequested(bool)));
+    connect(this, SIGNAL(statusBarVisibilityChangeRequested(bool)),
+            this, SLOT(slotStatusBarVisibilityChangeRequested(bool)));
+}
+
+NewWindowPage::~NewWindowPage()
+{
+    //kDebug() << this;
+}
+
+bool NewWindowPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &request, NavigationType type)
+{
+    if (!m_createNewWindow)
+        return WebPage::acceptNavigationRequest(frame, request, type);
+
+    //kDebug() << "url:" << request.url() << ",type:" << type << ",frame:" << frame;
+
+    if (!part() && frame != mainFrame() && type != QWebPage::NavigationTypeOther)
+        return false;
+
+    // Browser args...
+    KParts::BrowserArguments bargs;
+    bargs.frameName = mainFrame()->frameName();
+    if (m_type == WebModalDialog)
+        bargs.setForcesNewWindow(true);
+
+    // OpenUrl args...
+    KParts::OpenUrlArguments uargs;
+    uargs.setActionRequestedByUser(false);
+
+    // Window args...
+    KParts::WindowArgs wargs (m_windowArgs);
+
+    KParts::ReadOnlyPart* newWindowPart =0;
+    part()->browserExtension()->createNewWindow(KUrl(QL1S("about:blank")), uargs, bargs, wargs, &newWindowPart);
+    kDebug() << "Created new window" << newWindowPart;
+
+    if (newWindowPart) {
+        QWidget* mainWidget = newWindowPart->widget() ? newWindowPart->widget()->window() : 0;
+        // TODO: Investigate whether we really want to allow modal dialogs!!
+        // See the "modal" section @ https://developer.mozilla.org/en/DOM/window.open
+        if (mainWidget && m_type == WebModalDialog)
+            mainWidget->setWindowModality(Qt::ApplicationModal);
+
+        KWebKitPart* webkitPart = qobject_cast<KWebKitPart*>(newWindowPart);
+        WebView* webView = webkitPart ? qobject_cast<WebView*>(webkitPart->view()) : 0;
+        if (webView) {
+            // Stop the page loading...
+            webView->triggerPageAction(QWebPage::Stop, true);
+            // Switch the page this one. NOTE: this will delete the previous
+            // page if its parent is the webView...
+            webView->setPage(this);
+            // Ask the part from the new window to connect to the signals from the new
+            // page we just set above
+            webkitPart->connectWebPageSignals(this);
+            // Change the part the new page (this one) will use to fulfill all
+            // requests going forward...
+            setPart(webkitPart);
+            // Reparent the page to the view associated with the new part so
+            // that we won't leak memory when setPage is called again.
+            setParent(webView);
+        }
+        m_createNewWindow = false;
+        newWindowPart->openUrl(KUrl(request.url()));
+    }
+
+    return false;
+}
+
+void NewWindowPage::slotGeometryChangeRequested(const QRect & rect)
+{
+    //kDebug() << rect << "Creating new window ?" << m_createNewWindow;
+
+    if (!rect.isValid())
+            return;
+
+    if (!m_createNewWindow) {
+        WebPage::slotGeometryChangeRequested(rect);
+        return;
+    }
+
+    m_windowArgs.setX(rect.x());
+    m_windowArgs.setY(rect.y());
+    m_windowArgs.setWidth(qMax(rect.width(), 100));
+    m_windowArgs.setHeight(qMax(rect.height(), 100));
+}
+
+void NewWindowPage::slotMenuBarVisibilityChangeRequested(bool visible)
+{
+    //kDebug() << visible;
+    m_windowArgs.setMenuBarVisible(visible);
+}
+
+void NewWindowPage::slotStatusBarVisibilityChangeRequested(bool visible)
+{
+    //kDebug() << visible;
+    m_windowArgs.setStatusBarVisible(visible);
+}
+
+void NewWindowPage::slotToolBarVisibilityChangeRequested(bool visible)
+{
+    //kDebug() << visible;
+    m_windowArgs.setToolBarsVisible(visible);
+}
+
+/****************************** End NewWindowPage *************************************************/
