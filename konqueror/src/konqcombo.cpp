@@ -790,7 +790,12 @@ void KonqComboItemDelegate::paint( QPainter *painter, const QStyleOptionViewItem
     if ( !pixmap.isNull() )
         painter->drawPixmap( pixmapRect.topLeft(), pixmap );
 
-    const QSize titleSize( ( bounding.width() / 3 ) - 1, textRect.height() );
+    QSize titleSize( ( bounding.width() / 3 ) - 1, textRect.height() );
+    if (title.isEmpty()) {
+        // Don't truncate the urls when there is no title to show (e.g. local files)
+        // Ideally we would do this globally for all items - reserve space for a title for all, or for none
+        titleSize = QSize();
+    }
     const QSize urlSize( textRect.width() - titleSize.width() - 2, textRect.height() );
     const QRect titleRect = QStyle::alignedRect( option.direction, Qt::AlignRight, titleSize, textRect );
     const QRect urlRect   = QStyle::alignedRect( option.direction, Qt::AlignLeft, urlSize, textRect );
