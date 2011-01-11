@@ -65,28 +65,35 @@ MyNetworkAccessManager::MyNetworkAccessManager(QObject *parent)
     connect (this, SIGNAL(finished(QNetworkReply*)), this, SLOT(slotFinished(QNetworkReply*)));
 }
 
+static bool blockRequest(QNetworkAccessManager::Operation op, const QUrl& requestUrl)
+{
+   if (op != QNetworkAccessManager::GetOperation)
+       return false;
+   if (!WebKitSettings::self()->isAdFilterEnabled())
+       return false;
+   if (!WebKitSettings::self()->isAdFiltered(requestUrl.toString()))
+       return false;
+   return true;
+}
+
 QNetworkReply *MyNetworkAccessManager::createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData)
 {
-      if (op == QNetworkAccessManager::GetOperation &&
-          WebKitSettings::self()->isAdFilterEnabled() &&
-          WebKitSettings::self()->isAdFiltered(req.url().toString())) {
-          //kDebug() << "*** BLOCKED UNAUTHORIZED REQUEST => " << req.url();
-          m_blockedUrls.append(req.url());
-          return new NullNetworkReply(req);
-      }
+    if (!blockRequest(op, req.url()))
+        return KIO::AccessManager::createRequest(op, req, outgoingData);
 
-      return KIO::AccessManager::createRequest(op, req, outgoingData);
+    //kDebug() << "*** BLOCKED UNAUTHORIZED REQUEST => " << req.url();
+    m_blockedUrls.append(req.url());
+    return new NullNetworkReply(req);
 }
 
 static void hideBlockableElements(const QUrl& url, QWebElementCollection& collection)
 {
-    QWebElementCollection::iterator itEnd = collection.end();
-    for (QWebElementCollection::iterator it = collection.begin(); it != itEnd; ++it) {
+    for (QWebElementCollection::iterator it = collection.begin(); it != collection.end(); ++it) {
         const QUrl resolvedUrl((*it).webFrame()->baseUrl().resolved((*it).attribute(QL1S("src"))));
-        if (url == resolvedUrl) {
-            //kDebug() << "*** HIDING ELEMENT: " << (*it).tagName() << (*it).attribute(QL1S("src"));
-            (*it).removeFromDocument();
-        }
+        if (url != resolvedUrl)
+	   continue;
+        //kDebug() << "*** HIDING ELEMENT: " << (*it).tagName() << (*it).attribute(QL1S("src"));
+        (*it).removeFromDocument();
     }
 }
 
