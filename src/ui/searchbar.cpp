@@ -96,6 +96,9 @@ SearchBar::SearchBar(QWidget *parent)
 
 SearchBar::~SearchBar()
 {
+    // NOTE: For some reason, if we do not clear the focus from the line edit
+    // widget before we delete this object, it seems to cause a crash!!
+    d->ui.searchLineEdit->clearFocus();
     delete d;
 }
 
@@ -106,9 +109,8 @@ void SearchBar::clear()
 
 void SearchBar::show()
 {
-    if (!isVisible()) {
+    if (!isVisible())
         QWidget::show();
-    }
 
     if (!d->ui.searchLineEdit->hasFocus()) {
         d->ui.searchLineEdit->selectAll();
@@ -118,12 +120,13 @@ void SearchBar::show()
 
 void SearchBar::hide()
 {
-    if (isVisible()) {        
-      d->ui.searchLineEdit->setStyleSheet(QString());
-      d->lastBgColorRole = KColorScheme::NormalBackground;
-      emit searchTextChanged(QString());
-      QWidget::hide();
-    }
+    if (!isVisible())
+        return;
+
+    d->ui.searchLineEdit->setStyleSheet(QString());
+    d->lastBgColorRole = KColorScheme::NormalBackground;
+    emit searchTextChanged(QString());
+    QWidget::hide();
 }
 
 QString SearchBar::searchText() const
@@ -149,28 +152,29 @@ void SearchBar::setSearchText(const QString& text)
 
 void SearchBar::setFoundMatch(bool match)
 {
-    kDebug() << match;
-
+    //kDebug() << match;
     const bool isEmptySearchText = d->ui.searchLineEdit->text().isEmpty();
     KColorScheme::BackgroundRole bgColorRole = bgColorRoleForState(match);
 
-    if (bgColorRole != d->lastBgColorRole ||
-        (isEmptySearchText && d->lastBgColorRole != KColorScheme::NormalBackground)) {
+    if (bgColorRole == d->lastBgColorRole)
+        return;
+    
+    if (isEmptySearchText && d->lastBgColorRole == KColorScheme::NormalBackground)
+        return;
 
-        QString styleSheet;
+    QString styleSheet;
 
-        if (isEmptySearchText) {
-            bgColorRole = KColorScheme::NormalBackground;
-        } else {
-            KStatefulBrush bgBrush(KColorScheme::View, bgColorRole);
-            styleSheet = QString("QLineEdit{ background-color:%1 }")
-                         .arg(bgBrush.brush(d->ui.searchLineEdit).color().name());
-        }
-
-        kDebug() << "stylesheet:" << styleSheet;
-        d->ui.searchLineEdit->setStyleSheet(styleSheet);
-        d->lastBgColorRole = bgColorRole;
+    if (isEmptySearchText) {
+        bgColorRole = KColorScheme::NormalBackground;
+    } else {
+        KStatefulBrush bgBrush(KColorScheme::View, bgColorRole);
+        styleSheet = QString("QLineEdit{ background-color:%1 }")
+                      .arg(bgBrush.brush(d->ui.searchLineEdit).color().name());
     }
+
+    //kDebug() << "stylesheet:" << styleSheet;
+    d->ui.searchLineEdit->setStyleSheet(styleSheet);
+    d->lastBgColorRole = bgColorRole;
 }
 
 void SearchBar::searchAsYouTypeChanged(bool checked)
@@ -202,9 +206,10 @@ void SearchBar::findPrevious()
 
 void SearchBar::textChanged(const QString &text)
 {
-    if (text.isEmpty()) {
-        d->ui.searchLineEdit->setStyleSheet(QString());
-    }
+    if (!text.isEmpty())
+        return;
+
+    d->ui.searchLineEdit->setStyleSheet(QString());
 }
 
 }
