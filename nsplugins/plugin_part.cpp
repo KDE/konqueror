@@ -139,19 +139,15 @@ QString PluginLiveConnectExtension::evalJavaScript( const QString & script )
     return nsplugin;
 }
 
-K_EXPORT_PLUGIN(PluginFactory)
-
-/**
- * We need one static instance of the factory for our C 'main'
- * function
- */
-KComponentData *PluginFactory::s_instance = 0L;
-
+KComponentData *PluginFactory::s_instance = 0;
 
 PluginFactory::PluginFactory()
+  : KPluginFactory("plugin", "nsplugin")
 {
     kDebug(1432) << "PluginFactory::PluginFactory";
-    s_instance = 0;
+    setComponentData(componentData());
+
+    registerPlugin<PluginPart>();
 
     // preload plugin loader
     _loader = NSPluginLoader::instance();
@@ -164,40 +160,36 @@ PluginFactory::~PluginFactory()
 
    _loader->release();
 
-   if (s_instance) {
-       delete s_instance;
-       s_instance = 0;
-   }
+   delete s_instance;
+   s_instance = 0;
 }
-
-KParts::Part * PluginFactory::createPartObject(QWidget *parentWidget, QObject *parent,
-                                         const char *classname, const QStringList &args)
-{
-    Q_UNUSED(classname)
-    kDebug(1432) << "PluginFactory::create";
-    KParts::Part *obj = new PluginPart(parentWidget, parent, args);
-    return obj;
-}
-
 
 const KComponentData &PluginFactory::componentData()
 {
-    kDebug(1432) << "PluginFactory::instance";
-
     if (!s_instance) {
-        KAboutData about("plugin", 0, ki18n("plugin"), "1.99");
+        KAboutData about("nsplugin", 0, ki18n("Netscape Plugin"), KDE_VERSION_STRING);
         s_instance = new KComponentData(about);
     }
     return *s_instance;
 }
 
+K_EXPORT_PLUGIN(PluginFactory)
 
 /**************************************************************************/
 
 static int s_callBackObjectCounter;
 
-PluginPart::PluginPart(QWidget *parentWidget, QObject *parent, const QStringList &args)
-    : KParts::ReadOnlyPart(parent), _widget(0), _args(args),
+// KDE5: use static public KPluginFactory::variantListToStringList instead.
+static QStringList variantListToStringList(const QVariantList &list)
+{
+    QStringList stringlist;
+    Q_FOREACH(const QVariant& var, list)
+        stringlist << var.toString();
+    return stringlist;
+}
+
+PluginPart::PluginPart(QWidget *parentWidget, QObject *parent, const QVariantList &args)
+    : KParts::ReadOnlyPart(parent), _widget(0), _args(variantListToStringList(args)),
       _destructed(0L)
 {
     callbackPath = QString::fromLatin1("/Callback") + QString::number(s_callBackObjectCounter);
