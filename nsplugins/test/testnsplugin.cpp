@@ -52,7 +52,7 @@ TestNSPlugin::TestNSPlugin()
    actionCollection()->addAction(KStandardAction::Close, this, SLOT(closeView()));
    actionCollection()->addAction(KStandardAction::Quit,kapp,SLOT(quit()));
 
-   createGUI( "testnspluginui.rc" );
+   createGUI( KDESRCDIR "testnsplugin.rc" );
 }
 
 
@@ -68,16 +68,18 @@ void TestNSPlugin::newView()
 {
    QStringList _argn, _argv;
 
+   // TODO: take URL on command line
    //QString src = "file:/home/sschimanski/kimble_themovie.swf";
    //QString src = "file:/home/sschimanski/in_ani.swf";
    //QString src = "http://homepages.tig.com.au/~dkl/swf/promo.swf";
-   //QString mime = "application/x-shockwave-flash";
+   QString src = "http://www.adobe.com/products/flashplayer/marquee/assets/global/swf/thumbclip_3.swf";
+   QString mime = "application/x-shockwave-flash";
 
    _argn << "name" << "controls" << "console";
    _argv << "audio" << "ControlPanel" << "Clip1";
-   QString src = "http://welt.is-kunden.de:554/ramgen/welt/avmedia/realaudio/0701lw177135.rm";
+//   QString src = "http://welt.is-kunden.de:554/ramgen/welt/avmedia/realaudio/0701lw177135.rm";
 //   QString src = "nothing";
-   QString mime = "audio/x-pn-realaudio-plugin";
+//   QString mime = "audio/x-pn-realaudio-plugin";
 
    _argn << "SRC" << "TYPE" << "WIDTH" << "HEIGHT";
    _argv << src << mime << "400" << "100";
