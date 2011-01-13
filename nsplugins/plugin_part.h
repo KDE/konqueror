@@ -25,7 +25,7 @@
 #define __plugin_part_h__
 
 #include <kparts/browserextension.h>
-#include <kparts/factory.h>
+#include <kpluginfactory.h>
 #include <kparts/part.h>
 #include <QWidget>
 #include <QPointer>
@@ -37,7 +37,7 @@ class PluginBrowserExtension;
 class PluginLiveConnectExtension;
 class PluginPart;
 
-class PluginFactory : public KParts::Factory
+class PluginFactory : public KPluginFactory
 {
   Q_OBJECT
 
@@ -45,14 +45,9 @@ public:
   PluginFactory();
   virtual ~PluginFactory();
 
-  virtual KParts::Part * createPartObject(QWidget *parentWidget = 0, QObject *parent = 0,
-  			            const char *classname = "KParts::Part",
-   			            const QStringList &args = QStringList());
-
   static const KComponentData &componentData();
 
 private:
-
   static KComponentData *s_instance;
   class NSPluginLoader *_loader;
 };
@@ -79,7 +74,7 @@ class PluginPart: public KParts::ReadOnlyPart
   Q_OBJECT
 public:
   PluginPart(QWidget *parentWidget, QObject *parent,
-             const QStringList &args = QStringList());
+             const QVariantList &args = QVariantList());
   virtual ~PluginPart();
 
   // CallBack interface (DBus-exported)
