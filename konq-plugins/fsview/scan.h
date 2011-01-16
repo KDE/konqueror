@@ -23,8 +23,6 @@
 #ifndef KONQ_PLUGIN_SCAN_H
 #define KONQ_PLUGIN_SCAN_H
 
-#include <q3ptrlist.h>
-#include <q3valuevector.h>
 #include <qfile.h>
 
 /* Use KDE_lstat and KIO::fileoffset_t for 64-bit sizes */
@@ -44,7 +42,7 @@ class ScanItem
   ScanDir* dir;
 };
 
-typedef Q3PtrList<ScanItem> ScanItemList;
+typedef QList<ScanItem*> ScanItemList;
 
 
 /**
@@ -148,8 +146,8 @@ class ScanFile
   ScanListener* _listener;
 };
 
-typedef Q3ValueVector<ScanFile> ScanFileVector;
-typedef Q3ValueVector<ScanDir> ScanDirVector;
+typedef QVector<ScanFile> ScanFileVector;
+typedef QVector<ScanDir> ScanDirVector;
 
 /**
  * A directory to scan.

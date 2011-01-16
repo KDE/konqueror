@@ -22,9 +22,7 @@
 
 
 #include <qdir.h>
-#include <q3popupmenu.h>
 #include <qtimer.h>
-//Added by qt3to4:
 
 #include <kapplication.h>
 #include <kconfig.h>
