@@ -38,7 +38,7 @@ class WebView : public KWebView
 {
     Q_OBJECT
 public:
-    WebView(KWebKitPart *part, QWidget *parent);
+    WebView(KWebKitPart* part, QWidget* parent);
     ~WebView();   
 
     /**
@@ -50,7 +50,7 @@ public:
      * @param args    reference to a OpenUrlArguments object.
      * @param bargs   reference to a BrowserArguments object.
      */
-    void loadUrl(const KUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &bargs);
+    void loadUrl(const KUrl& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& bargs);
 
     QWebHitTestResult contextMenuResult() const;
 
@@ -61,17 +61,18 @@ protected:
      * @see QWidget::contextMenuEvent
      * @internal
      */
-    virtual void contextMenuEvent(QContextMenuEvent *e);
+    virtual void contextMenuEvent(QContextMenuEvent*);
 
-    void selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &selectGroupMap);
-    void linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &linkGroupMap);
-    void partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &partGroupMap);
+    void selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap&);
+    void linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap&);
+    void partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &);
+    void multimediaActionPopupMenu(KParts::BrowserExtension::ActionGroupMap&);
 
 private Q_SLOTS:
     void slotOpenSelection();
 
 private:
-    void addSearchActions(QList<QAction *>& selectActions, QWebView*);
+    void addSearchActions(QList<QAction*>& selectActions, QWebView*);
 
     KActionCollection* m_actionCollection;
     QWebHitTestResult m_result;

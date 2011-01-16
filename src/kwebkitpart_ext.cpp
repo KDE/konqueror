@@ -348,6 +348,24 @@ void WebKitBrowserExtension::slotSendImage()
                                   urls); // attachments
 }
 
+void WebKitBrowserExtension::slotCopyImageURL()
+{
+    if (!view())
+        return;
+
+    KUrl safeURL(view()->contextMenuResult().imageUrl());
+    safeURL.setPass(QString());
+    // Set it in both the mouse selection and in the clipboard
+    QMimeData* mimeData = new QMimeData;
+    safeURL.populateMimeData(mimeData);
+    QApplication::clipboard()->setMimeData(mimeData, QClipboard::Clipboard);
+
+    mimeData = new QMimeData;
+    safeURL.populateMimeData(mimeData);
+    QApplication::clipboard()->setMimeData(mimeData, QClipboard::Selection);
+}
+
+
 void WebKitBrowserExtension::slotCopyImage()
 {
     if (!view())
@@ -398,7 +416,7 @@ void WebKitBrowserExtension::slotBlockHost()
     WebKitSettings::self()->addAdFilter(url.toString(QUrl::RemoveAuthority));
 }
 
-void WebKitBrowserExtension::slotCopyLinkLocation()
+void WebKitBrowserExtension::slotCopyLinkURL()
 {
     if (!view())
         return;
@@ -460,6 +478,115 @@ void WebKitBrowserExtension::slotViewFrameSource()
     }
 #endif
 }
+
+static bool isMultimediaElement(const QWebElement& element)
+{
+    if (element.tagName().compare(QL1S("video"), Qt::CaseInsensitive) == 0)
+        return true;
+
+    if (element.tagName().compare(QL1S("audio"), Qt::CaseInsensitive) == 0)
+        return true;
+
+    return false;
+}
+
+void WebKitBrowserExtension::slotLoopMedia()
+{
+    if (!view())
+        return;
+
+    QWebElement element (view()->contextMenuResult().element());
+    if (!isMultimediaElement(element))
+        return;
+
+    element.evaluateJavaScript(QL1S("this.loop = !this.loop;"));
+}
+
+void WebKitBrowserExtension::slotMuteMedia()
+{
+    if (!view())
+        return;
+
+    QWebElement element (view()->contextMenuResult().element());
+    if (!isMultimediaElement(element))
+        return;
+
+    element.evaluateJavaScript(QL1S("this.muted = !this.muted;"));
+}
+
+void WebKitBrowserExtension::slotPlayMedia()
+{
+    if (!view())
+        return;
+
+    QWebElement element (view()->contextMenuResult().element());
+    if (!isMultimediaElement(element))
+        return;
+
+    element.evaluateJavaScript(QL1S("this.paused ? this.play() : this.pause();"));
+}
+
+void WebKitBrowserExtension::slotShowMediaControls()
+{
+    if (!view())
+        return;
+
+    QWebElement element (view()->contextMenuResult().element());
+    if (!isMultimediaElement(element))
+        return;
+
+    element.evaluateJavaScript(QL1S("this.controls = !this.controls;"));
+}
+
+static KUrl mediaUrlFrom(QWebElement& element)
+{
+    QWebFrame* frame = element.webFrame();
+    QString src = frame ? element.attribute(QL1S("src")) : QString();
+    if (src.isEmpty())
+        src = frame ? element.evaluateJavaScript(QL1S("this.src")).toString() : QString();
+
+    if (src.isEmpty())
+        return KUrl();
+
+    return KUrl(frame->baseUrl().resolved(QUrl::fromEncoded(src.toAscii(), QUrl::StrictMode)));
+}
+
+void WebKitBrowserExtension::slotSaveMedia()
+{
+    if (!view())
+        return;
+
+    QWebElement element (view()->contextMenuResult().element());
+    if (!isMultimediaElement(element))
+        return;
+
+    emit saveUrl(mediaUrlFrom(element));
+}
+
+void WebKitBrowserExtension::slotCopyMedia()
+{
+    if (!view())
+        return;
+
+    QWebElement element (view()->contextMenuResult().element());
+    if (!isMultimediaElement(element))
+        return;
+
+    KUrl safeURL(mediaUrlFrom(element));
+    if (!safeURL.isValid())
+        return;
+
+    safeURL.setPass(QString());
+    // Set it in both the mouse selection and in the clipboard
+    QMimeData* mimeData = new QMimeData;
+    safeURL.populateMimeData(mimeData);
+    QApplication::clipboard()->setMimeData(mimeData, QClipboard::Clipboard);
+
+    mimeData = new QMimeData;
+    safeURL.populateMimeData(mimeData);
+    QApplication::clipboard()->setMimeData(mimeData, QClipboard::Selection);
+}
+
 
 ////
 

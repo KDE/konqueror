@@ -74,18 +74,25 @@ public Q_SLOTS:
 
     void slotSaveImageAs();
     void slotSendImage();
+    void slotCopyImageURL();
     void slotCopyImage();
     void slotViewImage();
     void slotBlockImage();
     void slotBlockHost();
 
-    void slotCopyLinkLocation();
+    void slotCopyLinkURL();
     void slotSaveLinkAs();
 
     void slotViewDocumentSource();
     void slotViewFrameSource();
 
     void updateEditActions();
+    void slotPlayMedia();
+    void slotMuteMedia();
+    void slotLoopMedia();
+    void slotShowMediaControls();
+    void slotSaveMedia();
+    void slotCopyMedia();
 
 private:
     WebView* view();

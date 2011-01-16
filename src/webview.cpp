@@ -45,6 +45,7 @@
 #include <QtNetwork/QHttpRequestHeader>
 #include <QtNetwork/QNetworkRequest>
 #include <QtWebKit/QWebFrame>
+#include <QtWebKit/QWebElement>
 #include <QtWebKit/QWebHitTestResult>
 
 #define QL1S(x)   QLatin1String(x)
@@ -53,7 +54,7 @@
 
 
 
-WebView::WebView(KWebKitPart *part, QWidget *parent)
+WebView::WebView(KWebKitPart* part, QWidget* parent)
         :KWebView(parent, false),
          m_actionCollection(new KActionCollection(this)),
          m_part(QWeakPointer<KWebKitPart>(part))
@@ -68,7 +69,7 @@ WebView::~WebView()
 {
 }
 
-void WebView::loadUrl(const KUrl &url, const KParts::OpenUrlArguments &args, const KParts::BrowserArguments &bargs)
+void WebView::loadUrl(const KUrl& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& bargs)
 {
     page()->setProperty("NavigationTypeUrlEntered", true);
     
@@ -89,8 +90,45 @@ QWebHitTestResult WebView::contextMenuResult() const
     return m_result;
 }
 
-void WebView::contextMenuEvent(QContextMenuEvent *e)
+static bool isMultimediaElement(const QWebElement& element)
 {
+    if (element.tagName().compare(QL1S("video"), Qt::CaseInsensitive) == 0)
+        return true;
+
+    if (element.tagName().compare(QL1S("audio"), Qt::CaseInsensitive) == 0)
+        return true;
+
+    return false;
+}
+
+static void extractMimeTypeFor(const KUrl& url, QString& mimeType)
+{
+    const QString fname(url.fileName(KUrl::ObeyTrailingSlash));
+ 
+    if (fname.isEmpty() || url.hasRef() || url.hasQuery())
+        return;
+ 
+    KMimeType::Ptr pmt = KMimeType::findByPath(fname, 0, true);
+
+    // Further check for mime types guessed from the extension which,
+    // on a web page, are more likely to be a script delivering content
+    // of undecidable type. If the mime type from the extension is one
+    // of these, don't use it.  Retain the original type 'text/html'.
+    if (pmt->name() == KMimeType::defaultMimeType() ||
+        pmt->is("application/x-perl") ||
+        pmt->is("application/x-perl-module") ||
+        pmt->is("application/x-php") ||
+        pmt->is("application/x-python-bytecode") ||
+        pmt->is("application/x-python") ||
+        pmt->is("application/x-shellscript"))
+        return;
+
+    mimeType = pmt->name();
+}
+
+void WebView::contextMenuEvent(QContextMenuEvent* e)
+{
+    kDebug();
     m_result = page()->mainFrame()->hitTestContent(e->pos());
     if (m_result.isContentEditable()) {
         KWebView::contextMenuEvent(e); // TODO: better KDE integration if possible
@@ -101,63 +139,101 @@ void WebView::contextMenuEvent(QContextMenuEvent *e)
     m_actionCollection->clear();
 
     KParts::BrowserExtension::PopupFlags flags = KParts::BrowserExtension::DefaultPopupItems;
-    flags |= KParts::BrowserExtension::ShowBookmark;
-    flags |= KParts::BrowserExtension::ShowReload;
     KParts::BrowserExtension::ActionGroupMap mapAction;
     QString mimeType (QL1S("text/html"));
 
     KUrl emitUrl;
-    if (m_result.linkUrl().isEmpty()) {
-        emitUrl = m_part.data()->url();
-        if (m_result.isContentSelected()) {
-            flags |= KParts::BrowserExtension::ShowTextSelectionItems;
-            selectActionPopupMenu(mapAction);
+    if (isMultimediaElement(m_result.element())) {
+        multimediaActionPopupMenu(mapAction);
+    } else if (!m_result.linkUrl().isValid()) {
+        if (m_result.imageUrl().isValid()) {
+            emitUrl = m_result.imageUrl();
+            extractMimeTypeFor(emitUrl, mimeType);
         } else {
-            flags |= KParts::BrowserExtension::ShowNavigationItems;          
-        }      
+            flags |= KParts::BrowserExtension::ShowBookmark;
+            flags |= KParts::BrowserExtension::ShowReload;
+            emitUrl = m_part.data()->url();
+
+            if (m_result.isContentSelected()) {
+                flags |= KParts::BrowserExtension::ShowTextSelectionItems;
+                selectActionPopupMenu(mapAction);
+            } else {
+                flags |= KParts::BrowserExtension::ShowNavigationItems;
+            }
+        }
+        partActionPopupMenu(mapAction);
     } else {
+        flags |= KParts::BrowserExtension::ShowBookmark;
+        flags |= KParts::BrowserExtension::ShowReload;
         flags |= KParts::BrowserExtension::IsLink;
         emitUrl = m_result.linkUrl();
         linkActionPopupMenu(mapAction);
-        if (emitUrl.isLocalFile()) {
+        if (emitUrl.isLocalFile())
             mimeType = KMimeType::findByUrl(emitUrl, 0, true, false)->name();
-        } else {
-            const QString fname(emitUrl.fileName(KUrl::ObeyTrailingSlash));
-            if (!fname.isEmpty() && !emitUrl.hasRef() && emitUrl.query().isEmpty())
-            {
-                KMimeType::Ptr pmt = KMimeType::findByPath(fname, 0, true);
-
-                // Further check for mime types guessed from the extension which,
-                // on a web page, are more likely to be a script delivering content
-                // of undecidable type. If the mime type from the extension is one
-                // of these, don't use it.  Retain the original type 'text/html'.
-                if (pmt->name() != KMimeType::defaultMimeType() &&
-                    !pmt->is("application/x-perl") &&
-                    !pmt->is("application/x-perl-module") &&
-                    !pmt->is("application/x-php") &&
-                    !pmt->is("application/x-python-bytecode") &&
-                    !pmt->is("application/x-python") &&
-                    !pmt->is("application/x-shellscript"))
-                    mimeType = pmt->name();
-            }
-        }
+        else
+            extractMimeTypeFor(emitUrl, mimeType);
+        partActionPopupMenu(mapAction);
     }
 
-    partActionPopupMenu(mapAction);
+
     KParts::OpenUrlArguments args;
     KParts::BrowserArguments bargs;
     args.setMimeType(mimeType);
     emit m_part.data()->browserExtension()->popupMenu(e->globalPos(), emitUrl, 0, args, bargs, flags, mapAction);
 }
 
-void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &partGroupMap)
+void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& partGroupMap)
 {
-    QList<QAction *>partActions;
+    kDebug();
+    QList<QAction*> partActions;
 
-    if (m_result.frame()->parentFrame() && !m_result.isContentSelected()) {
+    if (m_result.imageUrl().isValid()) {
+        KAction *action;
+        action = new KAction(i18n("Save Image As..."), this);
+        m_actionCollection->addAction("saveimageas", action);
+        connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotSaveImageAs()));
+        partActions.append(action);
+
+        action = new KAction(i18n("Send Image..."), this);
+        m_actionCollection->addAction("sendimage", action);
+        connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotSendImage()));
+        partActions.append(action);
+
+        action = new KAction(i18n("Copy Image URL"), this);
+        m_actionCollection->addAction("copyimageurl", action);
+        connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotCopyImageURL()));
+        partActions.append(action);
+
+        action = new KAction(i18n("Copy Image"), this);
+        m_actionCollection->addAction("copyimage", action);
+        connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotCopyImage()));
+        action->setEnabled(!m_result.pixmap().isNull());
+        partActions.append(action);
+
+        action = new KAction(i18n("View Image (%1)", KUrl(m_result.imageUrl()).fileName()), this);
+        m_actionCollection->addAction("viewimage", action);
+        connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotViewImage()));
+        partActions.append(action);
+
+        if (WebKitSettings::self()->isAdFilterEnabled()) {
+            action = new KAction( i18n( "Block Image..." ), this );
+            m_actionCollection->addAction( "blockimage", action );
+            connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotBlockImage()));
+            partActions.append(action);
+
+            if (!m_result.imageUrl().host().isEmpty() &&
+                !m_result.imageUrl().scheme().isEmpty())
+            {
+                action = new KAction( i18n( "Block Images From %1" , m_result.imageUrl().host()), this );
+                m_actionCollection->addAction( "blockhost", action );
+                connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotBlockHost()));
+                partActions.append(action);
+            }
+        }
+    } else if (m_result.frame()->parentFrame() && !m_result.isContentSelected()) {
         KActionMenu * menu = new KActionMenu(i18nc("@title:menu HTML frame/iframe", "Frame"), this);
 
-        KAction * action = new KAction(i18n("Open in New &Window"), this);
+        KAction* action = new KAction(i18n("Open in New &Window"), this);
         m_actionCollection->addAction("frameinwindow", action);
         action->setIcon(KIcon("window-new"));
         connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotFrameInWindow()));
@@ -210,68 +286,19 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &part
         partActions.append(menu);
     }
 
-    if (m_result.imageUrl().isValid()) {
-        QAction *action;
-        if (!m_actionCollection->action("saveimageas")) {
-            action = new KAction(i18n("Save Image As..."), this);
-            m_actionCollection->addAction("saveimageas", action);
-            connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotSaveImageAs()));
-        }
-        partActions.append(m_actionCollection->action("saveimageas"));
-
-        if (!m_actionCollection->action("sendimage")) {
-            action = new KAction(i18n("Send Image..."), this);
-            m_actionCollection->addAction("sendimage", action);
-            connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotSendImage()));
-        }
-        partActions.append(m_actionCollection->action("sendimage"));
-
-        if (!m_actionCollection->action("copyimage")) {
-            action = new KAction(i18n("Copy Image"), this);
-            m_actionCollection->addAction("copyimage", action);
-            connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotCopyImage()));
-        }
-        action = m_actionCollection->action("copyimage");
-        action->setEnabled(!m_result.pixmap().isNull());
-        partActions.append(action);
-
-        if (!m_actionCollection->action("viewimage")) {
-            action = new KAction(i18n("View Image (%1)", KUrl(m_result.imageUrl()).fileName()), this);
-            m_actionCollection->addAction("viewimage", action);
-            connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotViewImage()));
-        }
-        partActions.append(m_actionCollection->action("viewimage"));
-
-        if (WebKitSettings::self()->isAdFilterEnabled()) {
-            action = new KAction( i18n( "Block Image..." ), this );
-            m_actionCollection->addAction( "blockimage", action );
-            connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotBlockImage()));
-            partActions.append(action);
-
-            if (!m_result.imageUrl().host().isEmpty() &&
-                !m_result.imageUrl().scheme().isEmpty())
-            {
-                action = new KAction( i18n( "Block Images From %1" , m_result.imageUrl().host()), this );
-                m_actionCollection->addAction( "blockhost", action );
-                connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotBlockHost()));
-                partActions.append(action);
-            }
-        }
-    }
-
-    const bool showDocSourceAction = (m_result.linkUrl().isEmpty() && !m_result.isContentSelected());
+    const bool showDocSourceAction = (!m_result.linkUrl().isValid() &&
+                                      !m_result.imageUrl().isValid() &&
+                                      !m_result.isContentSelected());
     const bool showInspectorAction = settings()->testAttribute(QWebSettings::DeveloperExtrasEnabled);
     
     if (showDocSourceAction || showInspectorAction) {
-        QAction *separatorAction = new QAction(this);
+        KAction *separatorAction = new KAction(this);
         separatorAction->setSeparator(true);
         partActions.append(separatorAction);
     }
 
-    if (showDocSourceAction) {
-        QAction* action = m_part.data()->actionCollection()->action("viewDocumentSource");
-        partActions.append(action);
-    }
+    if (showDocSourceAction)
+        partActions.append(m_part.data()->actionCollection()->action("viewDocumentSource"));
 
     if (showInspectorAction)
         partActions.append(pageAction(QWebPage::InspectElement));
@@ -279,15 +306,14 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &part
     partGroupMap.insert("partactions", partActions);
 }
 
-void WebView::selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &selectGroupMap)
+void WebView::selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& selectGroupMap)
 {
-    QList<QAction *>selectActions;
-    if (!m_actionCollection->action("copy")) {
-        KAction* copyAction = m_actionCollection->addAction(KStandardAction::Copy, "copy",  m_part.data()->browserExtension(), SLOT(copy()));
-        copyAction->setText(i18n("&Copy Text"));
-        copyAction->setEnabled(m_part.data()->browserExtension()->isActionEnabled("copy"));
-    }
-    selectActions.append(m_actionCollection->action("copy"));
+    QList<QAction*> selectActions;
+
+    KAction* copyAction = m_actionCollection->addAction(KStandardAction::Copy, "copy",  m_part.data()->browserExtension(), SLOT(copy()));
+    copyAction->setText(i18n("&Copy Text"));
+    copyAction->setEnabled(m_part.data()->browserExtension()->isActionEnabled("copy"));
+    selectActions.append(copyAction);
 
     addSearchActions(selectActions, this);
 
@@ -307,45 +333,105 @@ void WebView::selectActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &se
     selectGroupMap.insert("editactions", selectActions);
 }
 
-void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap &linkGroupMap)
+void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& linkGroupMap)
 {
     Q_ASSERT(!m_result.linkUrl().isEmpty());
 
     const KUrl url(m_result.linkUrl());
 
-    QList<QAction *>linkActions;
+    QList<QAction*> linkActions;
 
-    KAction *action;
-    if (!m_actionCollection->action("copy")) {
+    KAction* action;
+
+    if (m_result.isContentSelected()) {
         action = m_actionCollection->addAction(KStandardAction::Copy, "copy",  m_part.data()->browserExtension(), SLOT(copy()));
         action->setText(i18n("&Copy Text"));
         action->setEnabled(m_part.data()->browserExtension()->isActionEnabled("copy"));
+        linkActions.append(action);
     }
-    linkActions.append(m_actionCollection->action("copy"));
 
     if (url.protocol() == "mailto") {
-        if (!m_actionCollection->action("copylinklocation")) {
-            action = new KAction(i18n("&Copy Email Address"), this);
-            m_actionCollection->addAction("copylinklocation", action);
-            connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotCopyLinkLocation()));
-        }
-        linkActions.append(m_actionCollection->action("copylinklocation"));
+        action = new KAction(i18n("&Copy Email Address"), this);
+        m_actionCollection->addAction("copylinklocation", action);
+        connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotCopyLinkLocation()));
+        linkActions.append(action);
     } else {
-        if (!m_actionCollection->action("copylinklocation")) {
-            action = new KAction(i18n("&Copy Link Address"), this);
-            m_actionCollection->addAction("copylinklocation", action);
-            connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotCopyLinkLocation()));
-        }
-        linkActions.append(m_actionCollection->action("copylinklocation"));
+        action = new KAction(i18n("&Copy Link URL"), this);
+        m_actionCollection->addAction("copylinkurl", action);
+        connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotCopyLinkLocation()));
+        linkActions.append(action);
 
-        if (!m_actionCollection->action("savelinkas")) {
-            action = new KAction(i18n("&Save Link As..."), this);
-            m_actionCollection->addAction("savelinkas", action);
-            connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotSaveLinkAs()));
-        }
-        linkActions.append(m_actionCollection->action("savelinkas"));
+        action = new KAction(i18n("&Save Link As..."), this);
+        m_actionCollection->addAction("savelinkas", action);
+        connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotSaveLinkAs()));
+        linkActions.append(action);
     }
     linkGroupMap.insert("linkactions", linkActions);
+}
+
+void WebView::multimediaActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& mmGroupMap)
+{
+    QList<QAction*> multimediaActions;
+
+    QWebElement element (m_result.element());
+    const bool isPaused = element.evaluateJavaScript(QL1S("this.paused")).toBool();
+    const bool isMuted = element.evaluateJavaScript(QL1S("this.muted")).toBool();
+    const bool isLoopOn = element.evaluateJavaScript(QL1S("this.loop")).toBool();
+    const bool areControlsOn = element.evaluateJavaScript(QL1S("this.controls")).toBool();
+    const bool isVideoElement = (element.tagName().compare(QL1S("video"), Qt::CaseInsensitive) == 0);
+    const bool isAudioElement = (element.tagName().compare(QL1S("audio"), Qt::CaseInsensitive) == 0);
+
+    KAction* action = new KAction((isPaused ? i18n("&Play") : i18n("&Pause")), this);
+    m_actionCollection->addAction("playmultimedia", action);
+    connect(action, SIGNAL(triggered()), m_part.data()->browserExtension(), SLOT(slotPlayMedia()));
+    multimediaActions.append(action);
+
+    action = new KAction((isMuted ? i18n("Un&mute") : i18n("&Mute")), this);
+    m_actionCollection->addAction("mutemultimedia", action);
+    connect(action, SIGNAL(triggered()), m_part.data()->browserExtension(), SLOT(slotMuteMedia()));
+    multimediaActions.append(action);
+
+    action = new KAction(i18n("&Loop"), this);
+    action->setCheckable(true);
+    action->setChecked(isLoopOn);
+    m_actionCollection->addAction("loopmultimedia", action);
+    connect(action, SIGNAL(triggered()), m_part.data()->browserExtension(), SLOT(slotLoopMedia()));
+    multimediaActions.append(action);
+
+    action = new KAction(i18n("Show &Controls"), this);
+    action->setCheckable(true);
+    action->setChecked(areControlsOn);
+    m_actionCollection->addAction("showmultimediacontrols", action);
+    connect(action, SIGNAL(triggered()), m_part.data()->browserExtension(), SLOT(slotShowMediaControls()));
+    multimediaActions.append(action);
+
+    action = new KAction(m_actionCollection);
+    action->setSeparator(true);
+    multimediaActions.append(action);
+
+    QString saveMediaText, copyMediaText;
+    if (isVideoElement) {
+        saveMediaText = i18n("Sa&ve Video As...");
+        copyMediaText = i18n("C&opy Video URL");
+    } else if (isAudioElement) {
+        saveMediaText = i18n("Sa&ve Audio As...");
+        copyMediaText = i18n("C&opy Audio URL");
+    } else {
+        saveMediaText = i18n("Sa&ve Media As...");
+        copyMediaText = i18n("C&opy Media URL");
+    }
+
+    action = new KAction(saveMediaText, this);
+    m_actionCollection->addAction("savemultimedia", action);
+    connect(action, SIGNAL(triggered()), m_part.data()->browserExtension(), SLOT(slotSaveMedia()));
+    multimediaActions.append(action);
+
+    action = new KAction(copyMediaText, this);
+    m_actionCollection->addAction("copymultimediaurl", action);
+    connect(action, SIGNAL(triggered()), m_part.data()->browserExtension(), SLOT(slotCopyMedia()));
+    multimediaActions.append(action);
+
+    mmGroupMap.insert("partactions", multimediaActions);
 }
 
 void WebView::slotOpenSelection()
@@ -358,7 +444,7 @@ void WebView::slotOpenSelection()
     }
 }
 
-void WebView::addSearchActions(QList<QAction *>& selectActions, QWebView *view)
+void WebView::addSearchActions(QList<QAction*>& selectActions, QWebView* view)
 {
    // search text
     const QString selectedText = view->selectedText().simplified();
