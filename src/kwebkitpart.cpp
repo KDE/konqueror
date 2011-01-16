@@ -138,7 +138,7 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
     m_passwordBar = new KDEPrivate::PasswordBar(mainWidget);
 
     // Create the search bar...
-    m_searchBar = new KDEPrivate::SearchBar;
+    m_searchBar = new KDEPrivate::SearchBar(mainWidget);
     connect(m_searchBar, SIGNAL(searchTextChanged(const QString &, bool)),
             this, SLOT(slotSearchForText(const QString &, bool)));
 
@@ -176,6 +176,12 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
     // Load plugins once we are fully ready
     loadPlugins();
 }
+
+KWebKitPart::~KWebKitPart()
+{
+    m_browserExtension->saveHistoryState();
+}
+
 
 WebPage* KWebKitPart::page()
 {
@@ -270,6 +276,9 @@ void KWebKitPart::connectWebPageSignals(WebPage* page)
     connect(page, SIGNAL(printRequested(QWebFrame*)),
             this, SLOT(slotPrintRequested(QWebFrame*)));
 
+    connect(page, SIGNAL(loadStarted()), m_searchBar, SLOT(clear()));
+    connect(page, SIGNAL(loadStarted()), m_searchBar, SLOT(hide()));
+
     connect(m_webView.data(), SIGNAL(linkShiftClicked(const KUrl &)),
             page, SLOT(downloadUrl(const KUrl &)));
 
@@ -290,11 +299,6 @@ void KWebKitPart::connectWebPageSignals(WebPage* page)
                 wallet, SLOT(rejectSaveFormDataRequest(const QString &)));
         connect(wallet, SIGNAL(walletClosed()), this, SLOT(slotWalletClosed()));
     }
-}
-
-KWebKitPart::~KWebKitPart()
-{
-    m_browserExtension->saveHistoryState();
 }
 
 bool KWebKitPart::openUrl(const KUrl &u)
@@ -433,10 +437,6 @@ void KWebKitPart::slotLoadStarted()
 {
     emit started(0);
     slotWalletClosed();
-    if (m_searchBar && m_searchBar->isVisible()) {
-        m_searchBar->hide();
-        m_searchBar->clear();
-    }
 }
 
 void KWebKitPart::slotLoadFinished(bool ok)
