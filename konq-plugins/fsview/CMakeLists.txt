@@ -19,7 +19,7 @@ set(fsview_SRCS main.cpp ${libfsview_SRCS} )
 
 kde4_add_executable(fsview ${fsview_SRCS})
 
-target_link_libraries(fsview  ${KDE4_KIO_LIBS} ${QT_QT3SUPPORT_LIBRARY})
+target_link_libraries(fsview  ${KDE4_KIO_LIBS})
 
 install(TARGETS fsview ${INSTALL_TARGETS_DEFAULT_ARGS})
 
@@ -30,7 +30,7 @@ set(fsviewpart_PART_SRCS fsview_part.cpp ${libfsview_SRCS})
 
 kde4_add_plugin(fsviewpart  ${fsviewpart_PART_SRCS})
 
-target_link_libraries(fsviewpart  ${KDE4_KPARTS_LIBS}  konq ${QT_QT3SUPPORT_LIBRARY} )
+target_link_libraries(fsviewpart  ${KDE4_KPARTS_LIBS}  konq )
 
 install(TARGETS fsviewpart  DESTINATION ${PLUGIN_INSTALL_DIR} )
 

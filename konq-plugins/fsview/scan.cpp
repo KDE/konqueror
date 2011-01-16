@@ -93,8 +93,8 @@ void ScanManager::stopScan()
   if (0) kDebug(90100) << "ScanManager::stopScan, scanLength "
 		   << _list.count() << endl;
 
-  ScanItem* si;
-  while( (si=_list.take(0))!=0 ) {
+  while( !_list.isEmpty() ) {
+    ScanItem* si = _list.takeFirst();
     si->dir->finish();
     delete si;
   }
@@ -102,8 +102,8 @@ void ScanManager::stopScan()
 
 int ScanManager::scan(int data)
 {
-  ScanItem* si = _list.take(0);
-  if (!si) return false;
+  if (_list.isEmpty()) return false;
+  ScanItem* si = _list.takeFirst();
 
   int newCount = si->dir->scan(si, _list, data);
   delete si;
@@ -242,21 +242,20 @@ int ScanDir::scan(ScanItem* si, ScanItemList& list, int data)
 
     QStringList::Iterator it;
     for (it = fileList.begin(); it != fileList.end(); ++it ) {
-      KDE_lstat( QFile::encodeName(si->absPath + '/' + (*it)), &buff );
+      KDE::stat( si->absPath + QLatin1Char('/') + (*it), &buff );
       _files.append( ScanFile(*it, buff.st_size) );
       _fileSize += buff.st_size;
     }
   }
 
   QStringList dirList = d.entryList( QDir::Dirs | 
-				     QDir::Hidden | QDir::NoSymLinks );
+				     QDir::Hidden | QDir::NoSymLinks | QDir::NoDotAndDotDot );
 
   if (dirList.count()>2) {
     _dirs.reserve(dirList.count()-2);
 
     QStringList::Iterator it;
     for (it = dirList.begin(); it != dirList.end(); ++it ) {      
-      if ( ((*it) == "..") || ((*it) == ".") ) continue;
       _dirs.append( ScanDir(*it, _manager, this, data) );
       list.append( new ScanItem( si->absPath + '/' + (*it), 
 				 &(_dirs.last()) ));

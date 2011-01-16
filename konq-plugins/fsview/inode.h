@@ -24,10 +24,8 @@
 #define INODE_H
 
 #include <qmap.h>
-#include <q3ptrlist.h>
 #include <qfileinfo.h>
 #include <qstring.h>
-//Added by qt3to4:
 #include <QPixmap>
 
 #include <kmimetype.h>

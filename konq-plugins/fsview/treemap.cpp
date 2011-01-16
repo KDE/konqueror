@@ -45,9 +45,6 @@
 #include <kdebug.h>
 #include <kconfiggroup.h>
 
-#include <Qt3Support/Q3PopupMenu>
-
-
 // set this to 1 to enable debug output
 #define DEBUG_DRAWING 0
 #define MAX_FIELD 12
@@ -1851,8 +1848,8 @@ void TreeMapWidget::mousePressEvent( QMouseEvent* e )
 
   _pressed = i;
 
-  _inShiftDrag = e->state() & Qt::ShiftModifier;
-  _inControlDrag = e->state() & Qt::ControlModifier;
+  _inShiftDrag = e->modifiers().testFlag (Qt::ShiftModifier);
+  _inControlDrag = e->modifiers().testFlag (Qt::ControlModifier);
   _lastOver = _pressed;
 
   TreeMapItem* changed = 0;
@@ -2059,7 +2056,8 @@ void TreeMapWidget::keyPressEvent( QKeyEvent* e )
       setSelected(_current, !isSelected(_current));
       break;
     case Extended:
-      if ((e->state() & Qt::ControlModifier) || (e->state() & Qt::ShiftModifier))
+      if (e->modifiers().testFlag(Qt::ControlModifier) ||
+          e->modifiers().testFlag(Qt::ShiftModifier))
         setSelected(_current, !isSelected(_current));
       else {
         _selectionMode = Single;
@@ -2123,8 +2121,8 @@ void TreeMapWidget::keyPressEvent( QKeyEvent* e )
   }
 
   if (old == _current) return;
-  if (! (e->state() & Qt::ControlModifier)) return;
-  if (! (e->state() & Qt::ShiftModifier)) return;
+  if (!e->modifiers().testFlag(Qt::ControlModifier)) return;
+  if (!e->modifiers().testFlag(Qt::ShiftModifier)) return;
 
   switch(_selectionMode) {
   case NoSelection:
@@ -2136,7 +2134,7 @@ void TreeMapWidget::keyPressEvent( QKeyEvent* e )
     setSelected(_current, !isSelected(_current));
     break;
   case Extended:
-    if (e->state() & Qt::ControlModifier)
+    if (e->modifiers().testFlag(Qt::ControlModifier))
       setSelected(_current, !isSelected(_current));
     else
       setSelected(_current, isSelected(old));
