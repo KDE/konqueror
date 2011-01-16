@@ -4,10 +4,6 @@ set(libkonq_sidebar_tree_SRCS
 	${CMAKE_CURRENT_SOURCE_DIR}/konq_sidebartreeitem.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/konq_sidebartreetoplevelitem.cpp
 )
-if(WIN32)
-# please remove for 4.1 if cmake > 2.6 is available
-kde4_add_library(sidebar_tree STATIC ${libkonq_sidebar_tree_SRCS})
-endif(WIN32)
 
 add_definitions (-DQT3_SUPPORT -DQT3_SUPPORT_WARNINGS)
 

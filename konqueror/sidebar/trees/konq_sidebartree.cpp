@@ -321,7 +321,7 @@ void KonqSidebarTree::contentsDragMoveEvent( QDragMoveEvent *e )
     if ( !item && m_lstDropFormats.contains("text/uri-list") )
     {
         m_dropItem = 0;
-        e->acceptAction();
+        e->acceptProposedAction();
         if (selectedItem())
         setSelected( selectedItem(), false ); // no item selected
         return;
@@ -338,7 +338,7 @@ void KonqSidebarTree::contentsDragMoveEvent( QDragMoveEvent *e )
             return;
         }
 
-        e->acceptAction();
+        e->acceptProposedAction();
 
         setSelected( item, true );
 
