@@ -353,12 +353,12 @@ void WebView::linkActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& link
     if (url.protocol() == "mailto") {
         action = new KAction(i18n("&Copy Email Address"), this);
         m_actionCollection->addAction("copylinklocation", action);
-        connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotCopyLinkLocation()));
+        connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotCopyLinkURL()));
         linkActions.append(action);
     } else {
         action = new KAction(i18n("&Copy Link URL"), this);
         m_actionCollection->addAction("copylinkurl", action);
-        connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotCopyLinkLocation()));
+        connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotCopyLinkURL()));
         linkActions.append(action);
 
         action = new KAction(i18n("&Save Link As..."), this);
