@@ -87,7 +87,7 @@ KBookmarkBar::KBookmarkBar( KBookmarkManager* mgr,
 
     KBookmarkGroup toolbar = getToolbar();
     fillBookmarkBar( toolbar );
-    m_toolBarSeparator = new QAction(this);
+    m_toolBarSeparator = new KAction(this);
 }
 
 QString KBookmarkBar::parentAddress()

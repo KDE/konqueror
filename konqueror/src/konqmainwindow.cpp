@@ -2626,7 +2626,7 @@ void KonqMainWindow::slotUpAboutToShow()
     KUrl u(m_currentView->locationBarURL());
     u = u.upUrl();
     while (u.hasPath()) {
-        QAction* action = new QAction(KIcon(KonqPixmapProvider::self()->iconNameFor(u)),
+        KAction* action = new KAction(KIcon(KonqPixmapProvider::self()->iconNameFor(u)),
                                       u.pathOrUrl(),
                                       popup);
         action->setData(u);
@@ -4529,21 +4529,21 @@ void KonqMainWindow::slotPopupMenu( const QPoint &global, const KFileItemList &i
             connect(act, SIGNAL(triggered() ), SLOT( slotPopupThisWindow() ));
             tabHandlingActions.append(act);
         }
-        QAction* actNewWindow = konqyMenuClient->actionCollection()->addAction( "newview" );
+        KAction* actNewWindow = konqyMenuClient->actionCollection()->addAction( "newview" );
         actNewWindow->setIcon( KIcon("window-new") );
         actNewWindow->setText( i18n( "Open in New &Window" ) );
         actNewWindow->setStatusTip( i18n( "Open the document in a new window" ) );
         connect(actNewWindow, SIGNAL(triggered()), SLOT( slotPopupNewWindow() ));
         tabHandlingActions.append(actNewWindow);
 
-        QAction* actNewTab = konqyMenuClient->actionCollection()->addAction( "openintab" );
+        KAction* actNewTab = konqyMenuClient->actionCollection()->addAction( "openintab" );
         actNewTab->setIcon( KIcon("tab-new") );
         actNewTab->setText( i18n( "Open in &New Tab" ) );
         connect(actNewTab, SIGNAL(triggered()), SLOT( slotPopupNewTab() ));
         actNewTab->setStatusTip( i18n( "Open the document in a new tab" ) );
         tabHandlingActions.append(actNewTab);
 
-        QAction* separator = new QAction(konqyMenuClient->actionCollection());
+        KAction* separator = new KAction(konqyMenuClient->actionCollection());
         separator->setSeparator(true);
         tabHandlingActions.append(separator);
     }
@@ -4761,12 +4761,12 @@ void KonqMainWindow::updateOpenWithActions()
   int idxService = 0;
   for (; it != end; ++it, ++idxService)
   {
-    QAction *action;
+    KAction *action;
 
     if (idxService < baseOpenWithItems)
-       action = new QAction(i18n("Open with %1", (*it)->name()), this);
+       action = new KAction(i18n("Open with %1", (*it)->name()), this);
     else
-       action = new QAction((*it)->name(), this);
+       action = new KAction((*it)->name(), this);
     action->setIcon( KIcon( (*it)->icon() ) );
 
     connect( action, SIGNAL( triggered() ),
@@ -4787,7 +4787,7 @@ void KonqMainWindow::updateOpenWithActions()
       {
           openWithActionsMenu.append(m_openWithMenu);
       }
-      QAction *sep = new QAction( this );
+      KAction *sep = new KAction( this );
       sep->setSeparator( true );
       openWithActionsMenu.append(sep);
       plugActionList("openwith", openWithActionsMenu);
