@@ -1469,7 +1469,7 @@ void KonqViewManager::slotProfileListAboutToShow()
   // Store menu items
   const QStringList profilePaths = m_mapProfileNames.values();
   for (int i = 0; i < accel_strings.count(); ++i) {
-      QAction* action = new QAction(accel_strings.at(i), popup);
+      KAction* action = new KAction(accel_strings.at(i), popup);
       action->setData(profilePaths.at(i));
       popup->addAction(action);
   }

@@ -65,7 +65,7 @@ void KonqActions::fillHistoryPopup(const QList<HistoryEntry*> &history, int hist
         text = fm.elidedText(text, Qt::ElideMiddle, fm.maxWidth() * 30);
         text.replace( '&', "&&" );
         const QString iconName = KonqPixmapProvider::self()->iconNameFor(history[index]->url);
-        QAction* action = new QAction(KIcon(iconName), text, popup);
+        KAction* action = new KAction(KIcon(iconName), text, popup);
         action->setData(index - historyIndex);
         //kDebug() << text << index - historyIndex;
         popup->addAction(action);
@@ -182,7 +182,7 @@ static void createHistoryAction(const KonqHistoryEntry& entry, QMenu* menu)
                                                   entry.url.prettyUrl() :
                                                   entry.typedUrl) :
                          entry.title;
-    QAction* action = new QAction(
+    KAction* action = new KAction(
         KIcon(KonqPixmapProvider::self()->iconNameFor(entry.url)),
         text, menu);
     action->setData(entry.url);

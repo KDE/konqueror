@@ -47,14 +47,14 @@ PopupMenuGUIClient::PopupMenuGUIClient( const KService::List &embeddingServices,
     QList<QAction *> topActions;
     if (showMenuBar) {
         topActions.append(showMenuBar);
-        QAction* separator = new QAction(&m_actionCollection);
+        KAction* separator = new KAction(&m_actionCollection);
         separator->setSeparator(true);
         topActions.append(separator);
     }
 
     if (stopFullScreen) {
         topActions.append(stopFullScreen);
-        QAction* separator = new QAction(&m_actionCollection);
+        KAction* separator = new KAction(&m_actionCollection);
         separator->setSeparator(true);
         topActions.append(separator);
     }
@@ -85,7 +85,7 @@ PopupMenuGUIClient::~PopupMenuGUIClient()
 
 QAction* PopupMenuGUIClient::addEmbeddingService( int idx, const QString &name, const KService::Ptr &service )
 {
-    QAction *act = m_actionCollection.addAction( QByteArray::number( idx ) );
+    KAction *act = m_actionCollection.addAction( QByteArray::number( idx ) );
     act->setText( name );
     act->setIcon( KIcon(service->icon()) );
     QObject::connect(act, SIGNAL(triggered(bool)), this, SLOT( slotOpenEmbedded() ));
