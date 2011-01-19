@@ -544,12 +544,11 @@ void DOMTreeView::slotSearch()
   const QString searchText = m_findDialog->pattern();
   Qt::CaseSensitivity caseSensitivity = (m_findDialog->options() & KFind::CaseSensitive) ? Qt::CaseSensitive : Qt::CaseInsensitive;
 
-  kDebug() << "ITEMCOUNT:" << m_listView->topLevelItemCount();
-
-  assert(m_listView->topLevelItemCount() == 1);
-  QTreeWidgetItem *topLevelItem = m_listView->topLevelItem(0);
-  searchRecursive(static_cast<DOMListViewItem*>(topLevelItem),
-		  searchText, caseSensitivity);
+  for (int i = 0; i < m_listView->topLevelItemCount(); ++i) {
+    QTreeWidgetItem *topLevelItem = m_listView->topLevelItem(i);
+    searchRecursive(static_cast<DOMListViewItem*>(topLevelItem),
+                    searchText, caseSensitivity);
+  }
 
   m_findDialog->hide();
 }
@@ -740,9 +739,10 @@ void DOMTreeView::adjustDepth()
   if (!cur_node_item)
     cur_node_item = static_cast<DOMListViewItem *>(m_listView->currentItem());
 
-  assert(m_listView->topLevelItemCount() == 1);
-  QTreeWidgetItem *topLevelItem = m_listView->topLevelItem(0);
-  adjustDepthRecursively(topLevelItem, 0);
+  for (int i = 0; i < m_listView->topLevelItemCount(); ++i) {
+    QTreeWidgetItem *topLevelItem = m_listView->topLevelItem(i);
+    adjustDepthRecursively(topLevelItem, 0);
+  }
 
   // make current item visible again if possible
   if (cur_node_item)
