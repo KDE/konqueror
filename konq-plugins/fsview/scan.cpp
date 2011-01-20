@@ -242,7 +242,7 @@ int ScanDir::scan(ScanItem* si, ScanItemList& list, int data)
 
     QStringList::Iterator it;
     for (it = fileList.begin(); it != fileList.end(); ++it ) {
-      KDE::stat( si->absPath + QLatin1Char('/') + (*it), &buff );
+      KDE::lstat( si->absPath + QLatin1Char('/') + (*it), &buff );
       _files.append( ScanFile(*it, buff.st_size) );
       _fileSize += buff.st_size;
     }
