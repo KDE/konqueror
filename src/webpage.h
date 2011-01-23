@@ -143,7 +143,7 @@ private:
     bool m_ignoreHistoryNavigationRequest;
 
     WebSslInfo m_sslInfo;
-    QVector<QUrl> m_requestQueue;
+    QList<QUrl> m_requestQueue;
     QWeakPointer<KWebKitPart> m_part;
 };
 

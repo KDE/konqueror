@@ -433,11 +433,10 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
     Q_ASSERT(reply);
 
     const QUrl requestUrl (reply->request().url());   
-    const int index = m_requestQueue.indexOf(requestUrl);
-    if (index == -1)
-        return;
 
-    m_requestQueue.remove(index);
+    // Disregards requests that are not in the request queue...
+    if (!m_requestQueue.removeOne(requestUrl))
+        return;
 
     QWebFrame* frame = qobject_cast<QWebFrame *>(reply->request().originatingObject());
     if (!frame)
