@@ -36,7 +36,6 @@
 class KUrl;
 class WebSslInfo;
 class KWebKitPart;
-class QVariant;
 class QWebFrame;
 
 

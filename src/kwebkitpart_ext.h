@@ -27,7 +27,6 @@
 #include <KDE/KParts/TextExtension>
 #include <KDE/KParts/HtmlExtension>
 
-class QWebView;
 class KUrl;
 class KWebKitPart;
 class WebView;
