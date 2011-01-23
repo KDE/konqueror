@@ -443,9 +443,9 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
     if (!frame)
         return;
 
-    const int statusCode = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();    
-    // Only deal with non-redirect responses...
-    if (statusCode > 299 && statusCode < 400) {
+    // Only deal with non-redirect responses...    
+    const QVariant redirectVar = reply->attribute(QNetworkRequest::RedirectionTargetAttribute);
+    if (redirectVar.isValid()) {
         m_sslInfo.restoreFrom(reply->attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData)),
                                reply->url());
         return;
@@ -761,7 +761,7 @@ bool NewWindowPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequ
         WebView* webView = webkitPart ? qobject_cast<WebView*>(webkitPart->view()) : 0;
         if (webView) {
             // Stop the page loading...
-            webView->triggerPageAction(QWebPage::Stop, true);
+            //webView->triggerPageAction(QWebPage::Stop, true);
             // Switch the page this one. NOTE: this will delete the previous
             // page if its parent is the webView...
             webView->setPage(this);
