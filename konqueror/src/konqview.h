@@ -25,6 +25,7 @@
 #include "konqframe.h"
 
 #include <kservice.h>
+#include <kmimetype.h>
 
 #include <QtCore/QList>
 
@@ -268,10 +269,20 @@ public:
   QString serviceType() const { return m_serviceType; }
 
   /**
+   * The mimetype this view is currently displaying.
+   * Can be null, if serviceType() is not a mimetype.
+   */
+  KMimeType::Ptr mimeType() const;
+
+  /**
    * @return the servicetypes this view is capable to display
    */
   QStringList serviceTypes() const { return m_service->serviceTypes(); }
 
+  /**
+   * Returns true if the part used in this view would be able to display
+   * @p mimeType too. WARNING: this often leads to showing HTML in katepart...
+   */
   bool supportsMimeType( const QString &mimeType ) const;
 
     // True if showing a directory
