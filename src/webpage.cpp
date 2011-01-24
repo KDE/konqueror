@@ -97,6 +97,14 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
         QWebSecurityOrigin::addLocalScheme(protocol);
     }
 
+    // Set the per page user style sheet as specified in WebKitSettings...
+    // TODO: Determine how a per page style sheets settings interacts with a
+    // global one. Is it an intersection of the two or a complete override ?
+    if (!QWebSettings::globalSettings()->userStyleSheetUrl().isValid()) {
+        settings()->setUserStyleSheetUrl((QL1S("data:text/css;charset=utf-8;base64,") +
+                                          WebKitSettings::self()->settingsToCSS().toUtf8().toBase64()));
+    }
+
     connect(this, SIGNAL(geometryChangeRequested(const QRect &)),
             this, SLOT(slotGeometryChangeRequested(const QRect &)));
     connect(this, SIGNAL(downloadRequested(const QNetworkRequest &)),
@@ -760,19 +768,19 @@ bool NewWindowPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequ
         WebView* webView = webkitPart ? qobject_cast<WebView*>(webkitPart->view()) : 0;
         if (webView) {
             // Stop the page loading...
-            //webView->triggerPageAction(QWebPage::Stop, true);
+            webView->triggerPageAction(QWebPage::Stop, true);
+            // Reparent the page to the view associated with the new part so
+            // that we won't leak memory when setPage is called again.
+            setParent(webView);
+            // Change the part the new page (this one) will use to fulfill all
+            // requests going forward...
+            setPart(webkitPart);
             // Switch the page this one. NOTE: this will delete the previous
             // page if its parent is the webView...
             webView->setPage(this);
             // Ask the part from the new window to connect to the signals from the new
             // page we just set above
             webkitPart->connectWebPageSignals(this);
-            // Change the part the new page (this one) will use to fulfill all
-            // requests going forward...
-            setPart(webkitPart);
-            // Reparent the page to the view associated with the new part so
-            // that we won't leak memory when setPage is called again.
-            setParent(webView);
         }
         m_createNewWindow = false;
         newWindowPart->openUrl(KUrl(request.url()));

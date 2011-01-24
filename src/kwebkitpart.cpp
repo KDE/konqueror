@@ -30,6 +30,7 @@
 #include "webview.h"
 #include "webpage.h"
 #include "websslinfo.h"
+#include "webhistoryinterface.h"
 
 #include "ui/searchbar.h"
 #include "ui/passwordbar.h"
@@ -129,6 +130,10 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
 
     // Add status bar extension...
     m_statusBarExtension = new KParts::StatusBarExtension(this);
+
+    // Add a web history interface for storing visited links.
+    if (!QWebHistoryInterface::defaultInterface())
+        QWebHistoryInterface::setDefaultInterface(new WebHistoryInterface(this));
 
     // Add text and html extensions...
     new KWebKitTextExtension(this);
