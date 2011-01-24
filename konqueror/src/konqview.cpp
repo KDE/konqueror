@@ -1223,6 +1223,11 @@ KParts::StatusBarExtension * KonqView::statusBarExtension() const
     return KParts::StatusBarExtension::childObject( m_pPart );
 }
 
+KMimeType::Ptr KonqView::mimeType() const
+{
+    return KMimeType::mimeType(serviceType()); // can be null
+}
+
 bool KonqView::supportsMimeType( const QString &mimeType ) const
 {
     KMimeType::Ptr mime = KMimeType::mimeType(mimeType, KMimeType::ResolveAliases);

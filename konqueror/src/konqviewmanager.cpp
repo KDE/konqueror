@@ -223,13 +223,18 @@ KonqView* KonqViewManager::addTab(const QString &serviceType, const QString &ser
   Q_ASSERT( !serviceType.isEmpty() );
 
   QString actualServiceName = serviceName;
-  if (serviceType == "text/html" && actualServiceName.isEmpty()) {
-      // Use same html part as the current view (e.g. webkit).
+  if (actualServiceName.isEmpty()) {
+      // Use same part as the current view (e.g. khtml/webkit).
       // This is down here in this central method because it should work for
       // MMB-opens-tab, window.open (createNewWindow), and more.
       KonqView* currentView = m_pMainWindow->currentView();
-      if (currentView && currentView->supportsMimeType("text/html")) {
-          actualServiceName = currentView->service()->desktopEntryName();
+      // Don't use supportsMimeType("text/html"), it's true for katepart too.
+      // (Testcase: view text file, ctrl+shift+n, was showing about page in katepart)
+      if (currentView) {
+          KMimeType::Ptr mime = currentView->mimeType();
+          if (mime && mime->is(serviceType)) {
+              actualServiceName = currentView->service()->desktopEntryName();
+          }
       }
   }
 
