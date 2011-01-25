@@ -84,7 +84,7 @@ namespace domtreeviewer {
 // collection of nodes for which to emit the nodeChanged signal
 inline static bool operator <(const DOM::Node &n1, const DOM::Node &n2)
 {
-  return (long)n1.handle() - (long)n2.handle() < 0;
+  return (qptrdiff)n1.handle() - (qptrdiff)n2.handle() < 0;
 }
 
 class ChangedNodeSet : public QMap<DOM::Node, bool>
