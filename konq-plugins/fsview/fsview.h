@@ -102,7 +102,7 @@ public slots:
   void quit();
   void doUpdate();
   void doRedraw();
-  void colorActivated(int);
+  void colorActivated(QAction*);
 
  signals:
   void started();
