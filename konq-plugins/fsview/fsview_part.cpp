@@ -457,7 +457,7 @@ void FSViewBrowserExtension::trash(Qt::MouseButtons, Qt::KeyboardModifiers modif
   else
   {
     KonqOperations::del(_view, KonqOperations::TRASH, _view->selectedUrls());
-    KonqOperations* o = (KonqOperations*) _view->child("KonqOperations");
+    KonqOperations* o = _view->findChild<KonqOperations*>("KonqOperations");
     if (o) connect(o, SIGNAL(destroyed()), SLOT(refresh()));
     return;
   }
