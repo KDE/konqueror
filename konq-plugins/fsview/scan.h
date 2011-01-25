@@ -92,7 +92,7 @@ class ScanManager
   ScanDir* top() { return _topDir; }
 
   bool scanRunning();
-  unsigned int scanLength() { return _list.count(); }
+  int scanLength() const { return _list.count(); }
   
   /**
    * Starts the scan. Stop previous scan if running.
@@ -193,7 +193,7 @@ class ScanDir
   unsigned int dirCount() { update(); return _dirCount; }
   ScanDir* parent() { return _parent; }
   bool scanStarted() { return (_dirsFinished >= 0); }
-  bool scanFinished() { return (_dirsFinished == (int)_dirs.count()); }
+  bool scanFinished() { return (_dirsFinished == _dirs.count()); }
   bool scanRunning() { return scanStarted() && !scanFinished(); }
   
   /* set listener to get a callbacks from this ScanDir */
