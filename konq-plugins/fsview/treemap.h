@@ -655,12 +655,12 @@ public:
   void deletingItem(TreeMapItem*);
 
 protected slots:
-  void splitActivated(int);
+  void splitActivated(QAction*);
   void selectionActivated(QAction*);
   void fieldStopActivated(QAction*);
   void areaStopActivated(QAction*);
   void depthStopActivated(QAction*);
-  void visualizationActivated(int);
+  void visualizationActivated(QAction *a);
 
 signals:
   void selectionChanged();
@@ -691,7 +691,8 @@ protected:
   // For "Esc deselects all" functionality implemented in FSView.  
   TreeMapItem *_pressed;
   // add a checkable popup item
-  void addPopupItem(KMenu* popup, const QString &text, bool bChecked, int id);
+  void addPopupItem(KMenu* popup, const QString &text,
+                    bool bChecked, int id, bool bEnabled = true);
 private:
   TreeMapItemList diff(TreeMapItemList&, TreeMapItemList&);
   // returns true if selection changed
