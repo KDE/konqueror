@@ -286,7 +286,7 @@ void ScanDir::subScanFinished()
 
 
 
-  if (_dirsFinished < (int)_dirs.count()) return;
+  if (_dirsFinished < _dirs.count()) return;
   
   /* all subdirs read */
   callScanFinished();
@@ -298,7 +298,7 @@ void ScanDir::subScanFinished()
 void ScanDir::finish()
 {
   if (scanRunning()) {
-    _dirsFinished = (int)_dirs.count();  
+    _dirsFinished = _dirs.count();
     callScanFinished();
   }
 
@@ -316,7 +316,7 @@ void ScanDir::setupChildRescan()
     if ((*it).scanFinished()) _dirsFinished++;
 
   if (_parent && 
-      (_dirsFinished < (int)_dirs.count()) )
+      (_dirsFinished < _dirs.count()) )
     _parent->setupChildRescan();
 
   callScanStarted();

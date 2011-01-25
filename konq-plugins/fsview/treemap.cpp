@@ -82,7 +82,7 @@ StoredDrawParams::StoredDrawParams(const QColor& c,
 
 QString StoredDrawParams::text(int f) const
 {
-  if ((f<0) || (f >= (int)_field.size()))
+  if ((f<0) || (f >= _field.size()))
     return QString();
 
   return _field[f].text;
@@ -90,7 +90,7 @@ QString StoredDrawParams::text(int f) const
 
 QPixmap StoredDrawParams::pixmap(int f) const
 {
-  if ((f<0) || (f >= (int)_field.size()))
+  if ((f<0) || (f >= _field.size()))
     return QPixmap();
 
   return _field[f].pix;
@@ -98,7 +98,7 @@ QPixmap StoredDrawParams::pixmap(int f) const
 
 DrawParams::Position StoredDrawParams::position(int f) const
 {
-  if ((f<0) || (f >= (int)_field.size()))
+  if ((f<0) || (f >= _field.size()))
     return Default;
 
   return _field[f].pos;
@@ -106,7 +106,7 @@ DrawParams::Position StoredDrawParams::position(int f) const
 
 int StoredDrawParams::maxLines(int f) const
 {
-  if ((f<0) || (f >= (int)_field.size()))
+  if ((f<0) || (f >= _field.size()))
     return 0;
 
   return _field[f].maxLines;
@@ -124,7 +124,7 @@ void StoredDrawParams::ensureField(int f)
 {
   if (f<0 || f>=MAX_FIELD) return;
 
-  if ((int)_field.size() < f+1) {
+  if (_field.size() < f+1) {
     int oldSize = _field.size();
     _field.resize(f+1);
     while(oldSize < f+1) {
@@ -1356,7 +1356,7 @@ bool TreeMapWidget::resizeAttr(int size)
 {
   if (size<0 || size>=MAX_FIELD) return false;
 
-  if (size>(int)_attr.size()) {
+  if (size>_attr.size()) {
     int oldSize = _attr.size();
     _attr.resize(size);
     while (oldSize<size) {
@@ -1373,7 +1373,7 @@ bool TreeMapWidget::resizeAttr(int size)
 
 void TreeMapWidget::setFieldType(int f, const QString& type)
 {
-  if (((int)_attr.size() < f+1) &&
+  if ((_attr.size() < f+1) &&
       (type == defaultFieldType(f))) return;
   if (resizeAttr(f+1)) _attr[f].type = type;
 
@@ -1382,13 +1382,13 @@ void TreeMapWidget::setFieldType(int f, const QString& type)
 
 QString TreeMapWidget::fieldType(int f) const
 {
-  if (f<0 || (int)_attr.size()<f+1) return defaultFieldType(f);
+  if (f<0 || _attr.size()<f+1) return defaultFieldType(f);
   return _attr[f].type;
 }
 
 void TreeMapWidget::setFieldStop(int f, const QString& stop)
 {
-  if (((int)_attr.size() < f+1) &&
+  if ((_attr.size() < f+1) &&
       (stop == defaultFieldStop(f))) return;
   if (resizeAttr(f+1)) {
     _attr[f].stop = stop;
@@ -1398,13 +1398,13 @@ void TreeMapWidget::setFieldStop(int f, const QString& stop)
 
 QString TreeMapWidget::fieldStop(int f) const
 {
-  if (f<0 || (int)_attr.size()<f+1) return defaultFieldStop(f);
+  if (f<0 || _attr.size()<f+1) return defaultFieldStop(f);
   return _attr[f].stop;
 }
 
 void TreeMapWidget::setFieldVisible(int f, bool enable)
 {
-  if (((int)_attr.size() < f+1) &&
+  if ((_attr.size() < f+1) &&
       (enable == defaultFieldVisible(f))) return;
 
   if (resizeAttr(f+1)) {
@@ -1415,7 +1415,7 @@ void TreeMapWidget::setFieldVisible(int f, bool enable)
 
 bool TreeMapWidget::fieldVisible(int f) const
 {
-  if (f<0 || (int)_attr.size()<f+1)
+  if (f<0 || _attr.size()<f+1)
     return defaultFieldVisible(f);
 
   return _attr[f].visible;
@@ -1423,7 +1423,7 @@ bool TreeMapWidget::fieldVisible(int f) const
 
 void TreeMapWidget::setFieldForced(int f, bool enable)
 {
-  if (((int)_attr.size() < f+1) &&
+  if ((_attr.size() < f+1) &&
       (enable == defaultFieldForced(f))) return;
 
   if (resizeAttr(f+1)) {
@@ -1434,7 +1434,7 @@ void TreeMapWidget::setFieldForced(int f, bool enable)
 
 bool TreeMapWidget::fieldForced(int f) const
 {
-  if (f<0 || (int)_attr.size()<f+1)
+  if (f<0 || _attr.size()<f+1)
     return defaultFieldForced(f);
 
   return _attr[f].forced;
@@ -1442,7 +1442,7 @@ bool TreeMapWidget::fieldForced(int f) const
 
 void TreeMapWidget::setFieldPosition(int f, TreeMapItem::Position pos)
 {
-  if (((int)_attr.size() < f+1) &&
+  if ((_attr.size() < f+1) &&
       (pos == defaultFieldPosition(f))) return;
 
   if (resizeAttr(f+1)) {
@@ -1453,7 +1453,7 @@ void TreeMapWidget::setFieldPosition(int f, TreeMapItem::Position pos)
 
 DrawParams::Position TreeMapWidget::fieldPosition(int f) const
 {
-  if (f<0 || (int)_attr.size()<f+1)
+  if (f<0 || _attr.size()<f+1)
     return defaultFieldPosition(f);
 
   return _attr[f].pos;
@@ -1996,7 +1996,7 @@ int nextVisible(TreeMapItem* i)
   int idx = p->children()->indexOf(i);
   if (idx<0) return -1;
 
-  while (idx < (int)p->children()->count()-1) {
+  while (idx < p->children()->count()-1) {
     idx++;
     QRect r = p->children()->at(idx)->itemRect();
     if (r.width()>1 && r.height()>1)
@@ -2113,7 +2113,7 @@ void TreeMapWidget::keyPressEvent( QKeyEvent* e )
       int newIdx = _current->index();
       if (newIdx<0)
         newIdx = goBack ? (_current->children()->count()-1) : 0;
-      if (newIdx>=(int)_current->children()->count())
+      if (newIdx>=_current->children()->count())
         newIdx = _current->children()->count()-1;
       newItem = visibleItem(_current->children()->at(newIdx));
       setCurrent(newItem, true);
@@ -2193,7 +2193,7 @@ void TreeMapWidget::drawTreeMap()
     if (_needsRefresh == _base) {
       // redraw whole widget
       _pixmap = QPixmap(size());
-      _pixmap.fill(backgroundColor());
+      _pixmap.fill(palette().color(backgroundRole()));
     }
     QPainter p(&_pixmap);
     if (_needsRefresh == _base) {
@@ -2214,11 +2214,10 @@ void TreeMapWidget::drawTreeMap()
     _needsRefresh = 0;
   }
 
-  bitBlt( this, 0, 0, &_pixmap, 0, 0,
-	  QWidget::width(), QWidget::height());
+  QStylePainter p(this);
+  p.drawPixmap(0, 0, width(), height(), _pixmap);
 
   if (hasFocus()) {
-    QStylePainter p(this);
     QStyleOptionFocusRect opt;
     opt.rect = rect();
     opt.palette = palette();
@@ -2339,7 +2338,7 @@ void TreeMapWidget::drawItems(QPainter* p,
 
   // stop drawing if stopAtText is reached
   if (!stopDrawing)
-    for (int no=0;no<(int)_attr.size();no++) {
+    for (int no=0;no<_attr.size();no++) {
       QString stopAt = fieldStop(no);
       if (!stopAt.isEmpty() && (item->text(no) == stopAt)) {
         stopDrawing = true;
@@ -2369,7 +2368,7 @@ void TreeMapWidget::drawItems(QPainter* p,
 
     RectDrawing d(r);
     item->setRotated(_allowRotation && (r.height() > r.width()));
-    for (int no=0;no<(int)_attr.size();no++) {
+    for (int no=0;no<_attr.size();no++) {
       if (!fieldVisible(no)) continue;
       d.drawField(p, no, item);
     }
@@ -2401,7 +2400,7 @@ void TreeMapWidget::drawItems(QPainter* p,
 
     RectDrawing d(r);
     item->setRotated(_allowRotation && (r.height() > r.width()));
-    for (int no=0;no<(int)_attr.size();no++) {
+    for (int no=0;no<_attr.size();no++) {
       if (!fieldVisible(no)) continue;
       if (!fieldForced(no)) continue;
       d.drawField(p, no, item);
@@ -2485,7 +2484,7 @@ void TreeMapWidget::drawItems(QPainter* p,
 
       RectDrawing d(sr);
       item->setRotated(_allowRotation && (r.height() > r.width()));
-      for (int no=0;no<(int)_attr.size();no++) {
+      for (int no=0;no<_attr.size();no++) {
 	if (!fieldVisible(no)) continue;
 	if (fieldForced(no)) continue;
 	d.drawField(p, no, item);
@@ -2833,8 +2832,9 @@ bool TreeMapWidget::drawItemArray(QPainter* p, TreeMapItem* item,
  * Popup menus for option setting
  */
 
-void TreeMapWidget::splitActivated(int id)
+void TreeMapWidget::splitActivated(QAction *a)
 {
+  int id = a->data().toInt();
   if      (id == _splitID)   setSplitMode(TreeMapItem::Bisection);
   else if (id == _splitID+1) setSplitMode(TreeMapItem::Columns);
   else if (id == _splitID+2) setSplitMode(TreeMapItem::Rows);
@@ -2850,37 +2850,33 @@ void TreeMapWidget::splitActivated(int id)
 void TreeMapWidget::addSplitDirectionItems(KMenu* popup, int id)
 {
   _splitID = id;
-  popup->setCheckable(true);
 
-  connect(popup, SIGNAL(activated(int)),
-          this, SLOT(splitActivated(int)));
+  connect(popup, SIGNAL(triggered(QAction*)),
+          this, SLOT(splitActivated(QAction*)));
 
-  popup->insertItem(i18n("Recursive Bisection"), id);
-  popup->insertItem(i18n("Columns"),         id+1);
-  popup->insertItem(i18n("Rows"),            id+2);
-  popup->insertItem(i18n("Always Best"),     id+3);
-  popup->insertItem(i18n("Best"),            id+4);
-  popup->insertItem(i18n("Alternate (V)"),   id+5);
-  popup->insertItem(i18n("Alternate (H)"),   id+6);
-  popup->insertItem(i18n("Horizontal"),      id+7);
-  popup->insertItem(i18n("Vertical"),        id+8);
-
-  switch(splitMode()) {
-    case TreeMapItem::Bisection:  popup->setItemChecked(id,true); break;
-    case TreeMapItem::Columns:    popup->setItemChecked(id+1,true); break;
-    case TreeMapItem::Rows:       popup->setItemChecked(id+2,true); break;
-    case TreeMapItem::AlwaysBest: popup->setItemChecked(id+3,true); break;
-    case TreeMapItem::Best:       popup->setItemChecked(id+4,true); break;
-    case TreeMapItem::VAlternate: popup->setItemChecked(id+5,true); break;
-    case TreeMapItem::HAlternate: popup->setItemChecked(id+6,true); break;
-    case TreeMapItem::Horizontal: popup->setItemChecked(id+7,true); break;
-    case TreeMapItem::Vertical:   popup->setItemChecked(id+8,true); break;
-    default: break;
-  }
+  addPopupItem(popup, i18n("Recursive Bisection"),
+               splitMode() == TreeMapItem::Bisection, id++);
+  addPopupItem(popup, i18n("Columns"),
+               splitMode() == TreeMapItem::Columns, id++);
+  addPopupItem(popup, i18n("Rows"),
+               splitMode() == TreeMapItem::Rows, id++);
+  addPopupItem(popup, i18n("Always Best"),
+               splitMode() == TreeMapItem::AlwaysBest, id++);
+  addPopupItem(popup, i18n("Best"),
+               splitMode() == TreeMapItem::Best, id++);
+  addPopupItem(popup, i18n("Alternate (V)"),
+               splitMode() == TreeMapItem::VAlternate, id++);
+  addPopupItem(popup, i18n("Alternate (H)"),
+               splitMode() == TreeMapItem::HAlternate, id++);
+  addPopupItem(popup, i18n("Horizontal"),
+               splitMode() == TreeMapItem::Horizontal, id++);
+  addPopupItem(popup, i18n("Vertical"),
+               splitMode() == TreeMapItem::Vertical, id++);
 }
 
-void TreeMapWidget::visualizationActivated(int id)
+void TreeMapWidget::visualizationActivated(QAction *a)
 {
+  int id = a->data().toInt();
   if (id == _visID+2) setSkipIncorrectBorder(!skipIncorrectBorder());
   else if (id == _visID+3) setBorderWidth(0);
   else if (id == _visID+4) setBorderWidth(1);
@@ -2906,76 +2902,54 @@ void TreeMapWidget::addVisualizationItems(KMenu* popup, int id)
 {
   _visID = id;
 
-  popup->setCheckable(true);
+  connect(popup, SIGNAL(triggered(QAction*)),
+          this, SLOT(visualizationActivated(QAction*)));
 
-  KMenu* bpopup = new KMenu();
-  bpopup->setCheckable(true);
-
-  connect(popup, SIGNAL(activated(int)),
-          this, SLOT(visualizationActivated(int)));
-  connect(bpopup, SIGNAL(activated(int)),
-          this, SLOT(visualizationActivated(int)));
-
-  KMenu* spopup = new KMenu();
+  KMenu* spopup = new KMenu(i18n("Nesting"));
   addSplitDirectionItems(spopup, id+100);
-  popup->insertItem(i18n("Nesting"), spopup, id);
+  popup->addMenu(spopup);
 
-  popup->insertItem(i18n("Border"), bpopup, id+1);
-  bpopup->insertItem(i18n("Correct Borders Only"), id+2);
+  KMenu* bpopup = new KMenu(i18n("Border"));
+  popup->addMenu(bpopup);
+
+  addPopupItem(bpopup, i18n("Correct Borders Only"), skipIncorrectBorder(), id+2);
   bpopup->addSeparator();
-  bpopup->insertItem(i18n("Width %1", 0), id+3);
-  bpopup->insertItem(i18n("Width %1", 1), id+4);
-  bpopup->insertItem(i18n("Width %1", 2), id+5);
-  bpopup->insertItem(i18n("Width %1", 3), id+6);
-  bpopup->setItemChecked(id+2, skipIncorrectBorder());
-  bpopup->setItemChecked(id+3, borderWidth()==0);
-  bpopup->setItemChecked(id+4, borderWidth()==1);
-  bpopup->setItemChecked(id+5, borderWidth()==2);
-  bpopup->setItemChecked(id+6, borderWidth()==3);
+  for(int i = 0; i < 4; ++i)
+    addPopupItem(bpopup, i18n("Width %1", i), borderWidth()==i, id+i+3);
 
-  popup->insertItem(i18n("Allow Rotation"), id+10);
-  popup->setItemChecked(id+10,allowRotation());
-  popup->insertItem(i18n("Shading"), id+11);
-  popup->setItemChecked(id+11,isShadingEnabled());
+  addPopupItem(popup, i18n("Allow Rotation"), allowRotation(), id+10);
+  addPopupItem(popup, i18n("Shading"), isShadingEnabled(), id+11);
 
   if (_attr.size() ==0) return;
 
   popup->addSeparator();
-  int f;
-  KMenu* tpopup;
   id += 20;
-  for (f=0;f<(int)_attr.size();f++, id+=10) {
-    tpopup = new KMenu();
-    tpopup->setCheckable(true);
-    popup->insertItem(_attr[f].type, tpopup, id);
-    tpopup->insertItem(i18n("Visible"), id+1);
-    tpopup->insertItem(i18n("Take Space From Children"), id+2);
+  for (int f=0;f<_attr.size();f++, id+=10) {
+    KMenu *tpopup = new KMenu(_attr[f].type);
+    popup->addMenu(tpopup);
+    addPopupItem(tpopup, i18n("Visible"), _attr[f].visible, id+1);
+    addPopupItem(tpopup, i18n("Take Space From Children"),
+                 _attr[f].forced,
+                 id+2, _attr[f].visible);
     tpopup->addSeparator();
-    tpopup->insertItem(i18n("Top Left"), id+3);
-    tpopup->insertItem(i18n("Top Center"), id+4);
-    tpopup->insertItem(i18n("Top Right"), id+5);
-    tpopup->insertItem(i18n("Bottom Left"), id+6);
-    tpopup->insertItem(i18n("Bottom Center"), id+7);
-    tpopup->insertItem(i18n("Bottom Right"), id+8);
-
-    tpopup->setItemChecked(id+1,_attr[f].visible);
-    tpopup->setItemEnabled(id+2,_attr[f].visible);
-    tpopup->setItemEnabled(id+3,_attr[f].visible);
-    tpopup->setItemEnabled(id+4,_attr[f].visible);
-    tpopup->setItemEnabled(id+5,_attr[f].visible);
-    tpopup->setItemEnabled(id+6,_attr[f].visible);
-    tpopup->setItemEnabled(id+7,_attr[f].visible);
-    tpopup->setItemEnabled(id+8,_attr[f].visible);
-    tpopup->setItemChecked(id+2,_attr[f].forced);
-    tpopup->setItemChecked(id+3,_attr[f].pos == DrawParams::TopLeft);
-    tpopup->setItemChecked(id+4,_attr[f].pos == DrawParams::TopCenter);
-    tpopup->setItemChecked(id+5,_attr[f].pos == DrawParams::TopRight);
-    tpopup->setItemChecked(id+6,_attr[f].pos == DrawParams::BottomLeft);
-    tpopup->setItemChecked(id+7,_attr[f].pos == DrawParams::BottomCenter);
-    tpopup->setItemChecked(id+8,_attr[f].pos == DrawParams::BottomRight);
-
-    connect(tpopup, SIGNAL(activated(int)),
-            this, SLOT(visualizationActivated(int)));
+    addPopupItem(tpopup, i18n("Top Left"),
+                 _attr[f].pos == DrawParams::TopLeft,
+                 id+3, _attr[f].visible);
+    addPopupItem(tpopup, i18n("Top Center"),
+                 _attr[f].pos == DrawParams::TopCenter,
+                 id+4, _attr[f].visible);
+    addPopupItem(tpopup, i18n("Top Right"),
+                 _attr[f].pos == DrawParams::TopRight,
+                 id+5, _attr[f].visible);
+    addPopupItem(tpopup, i18n("Bottom Left"),
+                 _attr[f].pos == DrawParams::BottomLeft,
+                 id+6, _attr[f].visible);
+    addPopupItem(tpopup, i18n("Bottom Center"),
+                 _attr[f].pos == DrawParams::BottomCenter,
+                 id+7, _attr[f].visible);
+    addPopupItem(tpopup, i18n("Bottom Right"),
+                 _attr[f].pos == DrawParams::BottomRight,
+                 id+8, _attr[f].visible);
   }
 }
 
@@ -2984,7 +2958,7 @@ void TreeMapWidget::selectionActivated(QAction *a)
   int id = a->data().toInt();
   TreeMapItem* i = _menuItem;
   id -= _selectionID;
-  while (id>=0 && i) {
+  while (id>0 && i) {
     i=i->parent();
     id--;
   }
@@ -3284,13 +3258,14 @@ void TreeMapWidget::restoreOptions(KConfigGroup* config, const QString &prefix)
 }
 
 void TreeMapWidget::addPopupItem(KMenu* popup, const QString &text,
-                          bool bChecked, int id)
+                                 bool bChecked, int id, bool bEnabled)
 {
   QAction *a;
   a = popup->addAction(text);
   a->setCheckable(true);
   a->setChecked(bChecked);
   a->setData(id);
+  a->setEnabled(bEnabled);
 }
 
 
