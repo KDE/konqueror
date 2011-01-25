@@ -148,13 +148,13 @@ FSViewPart::FSViewPart(QWidget *parentWidget,
 			      "FSView documentation"));
     connect(action, SIGNAL(triggered()), this, SLOT(showHelp()));
 
-    QObject::connect (_visMenu->popupMenu(), SIGNAL (aboutToShow()),
+    QObject::connect (_visMenu->menu(), SIGNAL (aboutToShow()),
 		      SLOT (slotShowVisMenu()));
-    QObject::connect (_areaMenu->popupMenu(), SIGNAL (aboutToShow()),
+    QObject::connect (_areaMenu->menu(), SIGNAL (aboutToShow()),
 		      SLOT (slotShowAreaMenu()));
-    QObject::connect (_depthMenu->popupMenu(), SIGNAL (aboutToShow()),
+    QObject::connect (_depthMenu->menu(), SIGNAL (aboutToShow()),
 		      SLOT (slotShowDepthMenu()));
-    QObject::connect (_colorMenu->popupMenu(), SIGNAL (aboutToShow()),
+    QObject::connect (_colorMenu->menu(), SIGNAL (aboutToShow()),
 		      SLOT (slotShowColorMenu()));
 
     slotSettingsChanged(KGlobalSettings::SETTINGS_MOUSE);
@@ -279,26 +279,26 @@ void FSViewPart::completedSlot(int dirs)
 
 void FSViewPart::slotShowVisMenu()
 {
-  _visMenu->popupMenu()->clear();
-  _view->addVisualizationItems(_visMenu->popupMenu(), 1301);
+  _visMenu->menu()->clear();
+  _view->addVisualizationItems(_visMenu->menu(), 1301);
 }
 
 void FSViewPart::slotShowAreaMenu()
 {
-  _areaMenu->popupMenu()->clear();
-  _view->addAreaStopItems(_areaMenu->popupMenu(), 1001, 0);
+  _areaMenu->menu()->clear();
+  _view->addAreaStopItems(_areaMenu->menu(), 1001, 0);
 }
 
 void FSViewPart::slotShowDepthMenu()
 {
-  _depthMenu->popupMenu()->clear();
-  _view->addDepthStopItems(_depthMenu->popupMenu(), 1501, 0);
+  _depthMenu->menu()->clear();
+  _view->addDepthStopItems(_depthMenu->menu(), 1501, 0);
 }
 
 void FSViewPart::slotShowColorMenu()
 {
-  _colorMenu->popupMenu()->clear();
-  _view->addColorItems(_colorMenu->popupMenu(), 1401);
+  _colorMenu->menu()->clear();
+  _view->addColorItems(_colorMenu->menu(), 1401);
 }
 
 bool FSViewPart::openFile() // never called since openUrl is reimplemented
