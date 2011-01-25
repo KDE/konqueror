@@ -172,7 +172,7 @@ QString ScanDir::path()
 {
   if (_parent) {
     QString p = _parent->path();
-    if (!p.endsWith("/")) p += '/';
+    if (!p.endsWith(QLatin1Char('/'))) p += QLatin1Char('/');
     return p + _name;
   }
 
@@ -232,7 +232,7 @@ int ScanDir::scan(ScanItem* si, ScanItemList& list, int data)
   }
 
   QDir d(si->absPath);
-  QStringList fileList = d.entryList( QDir::Files |
+  const QStringList fileList = d.entryList( QDir::Files |
 				      QDir::Hidden | QDir::NoSymLinks );
 
   if (fileList.count()>0) {
@@ -240,22 +240,22 @@ int ScanDir::scan(ScanItem* si, ScanItemList& list, int data)
 
     _files.reserve(fileList.count());
 
-    QStringList::Iterator it;
-    for (it = fileList.begin(); it != fileList.end(); ++it ) {
+    QStringList::ConstIterator it;
+    for (it = fileList.constBegin(); it != fileList.constEnd(); ++it ) {
       KDE::lstat( si->absPath + QLatin1Char('/') + (*it), &buff );
       _files.append( ScanFile(*it, buff.st_size) );
       _fileSize += buff.st_size;
     }
   }
 
-  QStringList dirList = d.entryList( QDir::Dirs | 
+  const QStringList dirList = d.entryList( QDir::Dirs | 
 				     QDir::Hidden | QDir::NoSymLinks | QDir::NoDotAndDotDot );
 
-  if (dirList.count()>2) {
-    _dirs.reserve(dirList.count()-2);
+  if (dirList.count()>0) {
+    _dirs.reserve(dirList.count());
 
-    QStringList::Iterator it;
-    for (it = dirList.begin(); it != dirList.end(); ++it ) {      
+    QStringList::ConstIterator it;
+    for (it = dirList.constBegin(); it != dirList.constEnd(); ++it ) {      
       _dirs.append( ScanDir(*it, _manager, this, data) );
       list.append( new ScanItem( si->absPath + '/' + (*it), 
 				 &(_dirs.last()) ));
