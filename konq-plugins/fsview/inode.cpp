@@ -37,7 +37,7 @@ Inode::Inode()
 {
   _dirPeer = 0;
   _filePeer = 0;
-  init("");
+  init(QString());
 }
 
 Inode::Inode(ScanDir* d, Inode* parent)
@@ -46,7 +46,7 @@ Inode::Inode(ScanDir* d, Inode* parent)
   QString absPath;
   if (parent) {
     absPath = parent->path();
-    if (!absPath.endsWith("/")) absPath += '/';
+    if (!absPath.endsWith(QLatin1Char('/'))) absPath += QLatin1Char('/');
   }
   absPath += d->name();
 
@@ -61,7 +61,7 @@ Inode::Inode(ScanFile* f, Inode* parent)
 {
   QString absPath;
   if (parent)
-    absPath = parent->path() + '/';
+    absPath = parent->path() + QLatin1Char('/');
   absPath += f->name();
 
   _dirPeer = 0;
@@ -283,9 +283,10 @@ QColor Inode::backColor() const
   if (id>0) n = QString::number(id);
 
   if (n.isEmpty())
-    return widget()->colorGroup().button();
+    return widget()->palette().button().color();
   
-  const char* str = qPrintable(n);
+  QByteArray tmpBuf = n.toLocal8Bit();
+  const char* str = tmpBuf.data();
   int h = 0, s = 100;
   while (*str) {
     h = (h * 37 + s* (unsigned)*str) % 256;
@@ -313,7 +314,7 @@ QString Inode::text(int i) const
     QString name;
     if (_dirPeer) {
       name = _dirPeer->name();
-      if (!name.endsWith("/")) name += '/';
+      if (!name.endsWith(QLatin1Char('/'))) name += QLatin1Char('/');
     }
     else if (_filePeer) name = _filePeer->name();
 
