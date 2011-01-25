@@ -2979,11 +2979,12 @@ void TreeMapWidget::addVisualizationItems(KMenu* popup, int id)
   }
 }
 
-void TreeMapWidget::selectionActivated(int id)
+void TreeMapWidget::selectionActivated(QAction *a)
 {
+  int id = a->data().toInt();
   TreeMapItem* i = _menuItem;
   id -= _selectionID;
-  while (id>0 && i) {
+  while (id>=0 && i) {
     i=i->parent();
     id--;
   }
@@ -2999,19 +3000,20 @@ void TreeMapWidget::addSelectionItems(KMenu* popup,
   _selectionID = id;
   _menuItem = i;
 
-  connect(popup, SIGNAL(activated(int)),
-          this, SLOT(selectionActivated(int)));
+  connect(popup, SIGNAL(triggered(QAction*)),
+          this, SLOT(selectionActivated(QAction*)));
 
   while (i) {
     QString name = i->text(0);
     if (name.isEmpty()) break;
-    popup->insertItem(i->text(0), id++);
+    addPopupItem(popup, i->text(0), false, id++);
     i = i->parent();
   }
 }
 
-void TreeMapWidget::fieldStopActivated(int id)
+void TreeMapWidget::fieldStopActivated(QAction *a)
 {
+  int id = a->data().toInt();
   if (id == _fieldStopID) setFieldStop(0, QString());
   else {
     TreeMapItem* i = _menuItem;
@@ -3030,11 +3032,11 @@ void TreeMapWidget::addFieldStopItems(KMenu* popup,
 {
   _fieldStopID = id;
 
-  connect(popup, SIGNAL(activated(int)),
-          this, SLOT(fieldStopActivated(int)));
+  connect(popup, SIGNAL(triggered(QAction*)),
+          this, SLOT(fieldStopActivated(QAction*)));
 
-  popup->insertItem(i18n("No %1 Limit", fieldType(0)), id);
-  popup->setItemChecked(id, fieldStop(0).isEmpty());
+  addPopupItem(popup, i18n("No %1 Limit", fieldType(0)),fieldStop(0).isEmpty(), id);
+
   _menuItem = i;
   bool foundFieldStop = false;
   if (i) {
@@ -3044,9 +3046,9 @@ void TreeMapWidget::addFieldStopItems(KMenu* popup,
       id++;
       QString name = i->text(0);
       if (name.isEmpty()) break;
-      popup->insertItem(i->text(0), id);
-      if (fieldStop(0) == i->text(0)) {
-        popup->setItemChecked(id, true);
+      bool bChecked = fieldStop(0) == i->text(0);
+      addPopupItem(popup, i->text(0), bChecked, id);
+      if (bChecked) {
         foundFieldStop = true;
       }
       i = i->parent();
@@ -3055,13 +3057,13 @@ void TreeMapWidget::addFieldStopItems(KMenu* popup,
 
   if (!foundFieldStop && !fieldStop(0).isEmpty()) {
     popup->addSeparator();
-    popup->insertItem(fieldStop(0), id+1);
-    popup->setItemChecked(id+1, true);
+    addPopupItem(popup, fieldStop(0), true, id + 1);
   }
 }
 
-void TreeMapWidget::areaStopActivated(int id)
+void TreeMapWidget::areaStopActivated(QAction *a)
 {
+  const int id = a->data().toInt();
   if (id == _areaStopID) setMinimalArea(-1);
   else if (id == _areaStopID+1) {
     int area = _menuItem ? (_menuItem->width() * _menuItem->height()) : -1;
@@ -3080,21 +3082,21 @@ void TreeMapWidget::addAreaStopItems(KMenu* popup,
   _areaStopID = id;
   _menuItem = i;
 
-  connect(popup, SIGNAL(activated(int)),
-          this, SLOT(areaStopActivated(int)));
+  connect(popup, SIGNAL(triggered(QAction*)),
+          this, SLOT(areaStopActivated(QAction*)));
 
   bool foundArea = false;
 
-  popup->insertItem(i18n("No Area Limit"), id);
-  popup->setItemChecked(id, minimalArea() == -1);
+  addPopupItem(popup, i18n("No Area Limit"), minimalArea() == -1, id);
 
   if (i) {
     int area = i->width() * i->height();
     popup->addSeparator();
-    popup->insertItem(i18n("Area of '%1' (%2)",
-                        i->text(0), area), id+1);
+    addPopupItem(popup,
+                 i18n("Area of '%1' (%2)", i->text(0), area),
+                 area == minimalArea(),
+                 id + 1);
     if (area == minimalArea()) {
-      popup->setItemChecked(id+1, true);
       foundArea = true;
     }
   }
@@ -3102,9 +3104,11 @@ void TreeMapWidget::addAreaStopItems(KMenu* popup,
   popup->addSeparator();
   int area = 100, count;
   for (count=0;count<3;count++) {
-    popup->insertItem(i18np("1 Pixel", "%1 Pixels", area), id+2+count);
+    addPopupItem(popup,
+                 i18np("1 Pixel", "%1 Pixels", area),
+                 area == minimalArea(),
+                 id+2+count);
     if (area == minimalArea()) {
-      popup->setItemChecked(id+2+count, true);
       foundArea = true;
     }
     area = (area==100) ? 400 : (area==400) ? 1000 : 4000;
@@ -3113,20 +3117,22 @@ void TreeMapWidget::addAreaStopItems(KMenu* popup,
   if (minimalArea()>0) {
     popup->addSeparator();
     if (!foundArea) {
-      popup->insertItem(i18np("1 Pixel", "%1 Pixels", minimalArea()), id+10);
-      popup->setItemChecked(id+10, true);
+      addPopupItem(popup,
+                   i18np("1 Pixel", "%1 Pixels", minimalArea()),
+                   true,
+                   id+10);
     }
-
-    popup->insertItem(i18n("Double Area Limit (to %1)",
-                        minimalArea()*2), id+5);
-    popup->insertItem(i18n("Halve Area Limit (to %1)",
-                        minimalArea()/2), id+6);
+    addPopupItem(popup, i18n("Double Area Limit (to %1)", minimalArea()*2),
+                 false, id + 5);
+    addPopupItem(popup, i18n("Halve Area Limit (to %1)", minimalArea()/2),
+                 false, id + 6);
   }
 }
 
 
-void TreeMapWidget::depthStopActivated(int id)
+void TreeMapWidget::depthStopActivated(QAction *a)
 {
+  const int id = a->data().toInt();
   if (id == _depthStopID) setMaxDrawingDepth(-1);
   else if (id == _depthStopID+1) {
     int d = _menuItem ? _menuItem->depth() : -1;
@@ -3145,21 +3151,21 @@ void TreeMapWidget::addDepthStopItems(KMenu* popup,
   _depthStopID = id;
   _menuItem = i;
 
-  connect(popup, SIGNAL(activated(int)),
-          this, SLOT(depthStopActivated(int)));
+  connect(popup, SIGNAL(triggered(QAction*)),
+          this, SLOT(depthStopActivated(QAction*)));
 
   bool foundDepth = false;
 
-  popup->insertItem(i18n("No Depth Limit"), id);
-  popup->setItemChecked(id, maxDrawingDepth() == -1);
+  addPopupItem(popup, i18n("No Depth Limit"), maxDrawingDepth() == -1, id);
 
   if (i) {
     int d = i->depth();
     popup->addSeparator();
-    popup->insertItem(i18n("Depth of '%1' (%2)",
-                        i->text(0), d), id+1);
+    addPopupItem(popup,
+                 i18n("Depth of '%1' (%2)", i->text(0), d),
+                 d == maxDrawingDepth(),
+                 id + 1);
     if (d == maxDrawingDepth()) {
-      popup->setItemChecked(id+1, true);
       foundDepth = true;
     }
   }
@@ -3167,9 +3173,11 @@ void TreeMapWidget::addDepthStopItems(KMenu* popup,
   popup->addSeparator();
   int depth = 2, count;
   for (count=0;count<3;count++) {
-    popup->insertItem(i18n("Depth %1", depth), id+4+count);
+    addPopupItem(popup,
+                 i18n("Depth %1", depth),
+                 depth == maxDrawingDepth(),
+                 id+4+count);
     if (depth == maxDrawingDepth()) {
-      popup->setItemChecked(id+4+count, true);
       foundDepth = true;
     }
     depth = (depth==2) ? 4 : 6;
@@ -3178,14 +3186,15 @@ void TreeMapWidget::addDepthStopItems(KMenu* popup,
   if (maxDrawingDepth()>1) {
     popup->addSeparator();
     if (!foundDepth) {
-      popup->insertItem(i18n("Depth %1", maxDrawingDepth()), id+10);
-      popup->setItemChecked(id+10, true);
+      addPopupItem(popup,
+                   i18n("Depth %1", maxDrawingDepth()),
+                   true,
+                   id+10);
     }
-
-    popup->insertItem(i18n("Decrement (to %1)",
-                        maxDrawingDepth()-1), id+2);
-    popup->insertItem(i18n("Increment (to %1)",
-                        maxDrawingDepth()+1), id+3);
+    addPopupItem(popup, i18n("Decrement (to %1)", maxDrawingDepth()-1),
+                 false, id + 2);
+    addPopupItem(popup, i18n("Increment (to %1)", maxDrawingDepth()+1),
+                 false, id + 3);
   }
 }
 
@@ -3273,5 +3282,16 @@ void TreeMapWidget::restoreOptions(KConfigGroup* config, const QString &prefix)
     if (!str.isEmpty()) setFieldPosition(f, str);
   }
 }
+
+void TreeMapWidget::addPopupItem(KMenu* popup, const QString &text,
+                          bool bChecked, int id)
+{
+  QAction *a;
+  a = popup->addAction(text);
+  a->setCheckable(true);
+  a->setChecked(bChecked);
+  a->setData(id);
+}
+
 
 #include "treemap.moc"

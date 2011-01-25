@@ -17,6 +17,6 @@ set(scantest_SRCS scantest.cpp ${libfsview_SRCS})
 
 kde4_add_executable(scantest TEST ${scantest_SRCS})
 
-target_link_libraries(scantest  ${KDE4_KIO_LIBS} ${QT_QT3SUPPORT_LIBRARY} )
+target_link_libraries(scantest  ${KDE4_KIO_LIBS})
 
 

@@ -132,8 +132,9 @@ void FSView::setPath(const QString &p)
   QFileInfo fi(p);
   _path = fi.absoluteFilePath();
   if (!fi.isDir()) {
-    _path = fi.dirPath(true);
+    _path = fi.absolutePath();
   }
+  _path = QDir::cleanPath(_path);
   _pathDepth = _path.count('/');
 
   KUrl u;
@@ -148,7 +149,7 @@ void FSView::setPath(const QString &p)
 
   b->setPeer(d);
 
-  setCaption(QString("%1 - FSView").arg(_path));
+  setWindowTitle(QString("%1 - FSView").arg(_path));
   requestUpdate(b);
 }
 
@@ -269,57 +270,57 @@ void FSView::contextMenu(TreeMapItem* i, const QPoint& p)
 {
   KMenu popup;
 
-  KMenu* spopup = new KMenu();
-  KMenu* dpopup = new KMenu();
-  KMenu* apopup = new KMenu();
-  KMenu* fpopup = new KMenu();
+  KMenu* spopup = new KMenu(i18n("Go To"));
+  KMenu* dpopup = new KMenu(i18n("Stop at Depth"));
+  KMenu* apopup = new KMenu(i18n("Stop at Area"));
+  KMenu* fpopup = new KMenu(i18n("Stop at Name"));
 
   // choosing from the selection menu will give a selectionChanged() signal
   addSelectionItems(spopup, 901, i);
-  popup.insertItem(i18n("Go To"), spopup, 900);
+  popup.addMenu(spopup);
 
-  popup.insertItem(i18n("Go Up"), 2);
-  popup.insertSeparator();
-  popup.insertItem(i18n("Stop Refresh"), 3);
-  popup.setItemEnabled(3, _sm.scanRunning());
-  popup.insertItem(i18n("Refresh"), 5);
-  popup.setItemEnabled(5, !_sm.scanRunning());
+  QAction *actionGoUp = popup.addAction(i18n("Go Up"));
+  popup.addSeparator();
+  QAction *actionStopRefresh = popup.addAction(i18n("Stop Refresh"));
+  actionStopRefresh->setEnabled(_sm.scanRunning());
+  QAction *actionRefresh = popup.addAction(i18n("Refresh"));
+  actionRefresh->setEnabled(!_sm.scanRunning());
 
-  if (i) popup.insertItem(i18n("Refresh '%1'", i->text(0)), 4);
-  popup.insertSeparator();
+  QAction *actionRefreshSelected = 0;
+  if (i) actionRefreshSelected = popup.addAction(i18n("Refresh '%1'", i->text(0)));
+  popup.addSeparator();
   addDepthStopItems(dpopup, 1001, i);
-  popup.insertItem(i18n("Stop at Depth"), dpopup, 1000);
+  popup.addMenu(dpopup);
   addAreaStopItems(apopup, 1101, i);
-  popup.insertItem(i18n("Stop at Area"), apopup, 1100);
+  popup.addMenu(apopup);
   addFieldStopItems(fpopup, 1201, i);
-  popup.insertItem(i18n("Stop at Name"), fpopup, 1200);
+  popup.addMenu(fpopup);
 
-  popup.insertSeparator();
+  popup.addSeparator();
 
-  KMenu* cpopup = new KMenu();
+  KMenu* cpopup = new KMenu(i18n("Color Mode"));
   addColorItems(cpopup, 1401);
-  popup.insertItem(i18n("Color Mode"), cpopup, 1400);
-  KMenu* vpopup = new KMenu();
+  popup.addMenu(cpopup);
+  KMenu* vpopup = new KMenu(i18n("Visualization"));
   addVisualizationItems(vpopup, 1301);
-  popup.insertItem(i18n("Visualization"), vpopup, 1300);
+  popup.addMenu(vpopup);
 
   _allowRefresh = false;
-  int r = popup.actions().indexOf(popup.exec(mapToGlobal(p)));
+  QAction *action = popup.exec(mapToGlobal(p));
   _allowRefresh = true;
+  if (!action) return;
 
-  if (r==1)
-    selected(i);
-  else if (r==2) {
+  if (action==actionGoUp) {
     Inode* i = (Inode*) base();
-    if (i) setPath(i->path()+"/..");
+    if (i) setPath(i->path()+ QLatin1String("/.."));
   }
-  else if (r==3)
+  else if (action==actionStopRefresh)
     stop();
-  else if (r==4) {
+  else if (action==actionRefreshSelected) {
     //((Inode*)i)->refresh();
     requestUpdate( (Inode*)i );
   }
-  else if (r==5) {
+  else if (action==actionRefresh) {
     Inode* i = (Inode*) base();
     if (i) requestUpdate(i);
   }
@@ -378,31 +379,21 @@ QString FSView::colorModeString() const
 void FSView::addColorItems(KMenu* popup, int id)
 {
   _colorID = id;
-  popup->setCheckable(true);
 
-  connect(popup, SIGNAL(activated(int)),
-          this, SLOT(colorActivated(int)));
+  connect(popup, SIGNAL(triggered(QAction*)),
+          this, SLOT(colorActivated(QAction*)));
 
-  popup->insertItem(i18n("None"),      id);
-  popup->insertItem(i18n("Depth"),     id+1);
-  popup->insertItem(i18n("Name"),      id+2);
-  popup->insertItem(i18n("Owner"),     id+3);
-  popup->insertItem(i18n("Group"),     id+4);
-  popup->insertItem(i18n("Mime Type"), id+5);
-
-  switch(colorMode()) {
-    case None:  popup->setItemChecked(id,true); break;
-    case Depth: popup->setItemChecked(id+1,true); break;
-    case Name:  popup->setItemChecked(id+2,true); break;
-    case Owner: popup->setItemChecked(id+3,true); break;
-    case Group: popup->setItemChecked(id+4,true); break;
-    case Mime:  popup->setItemChecked(id+5,true); break;
-    default: break;
-  }
+  addPopupItem(popup, i18n("None"),      colorMode() == None,  id++);
+  addPopupItem(popup, i18n("Depth"),     colorMode() == Depth, id++);
+  addPopupItem(popup, i18n("Name"),      colorMode() == Name,  id++);
+  addPopupItem(popup, i18n("Owner"),     colorMode() == Owner, id++);
+  addPopupItem(popup, i18n("Group"),     colorMode() == Group, id++);
+  addPopupItem(popup, i18n("Mime Type"), colorMode() == Mime,  id++);
 }
 
-void FSView::colorActivated(int id)
+void FSView::colorActivated(QAction *a)
 {
+  const int id = a->data().toInt();
   if (id == _colorID)        setColorMode(None);
   else if (id == _colorID+1) setColorMode(Depth);
   else if (id == _colorID+2) setColorMode(Name);
