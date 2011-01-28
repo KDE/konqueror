@@ -42,6 +42,8 @@
 #include <KDE/KIO/AccessManager>
 #include <KDE/KStringHandler>
 
+#include <QtCore/QMimeData>
+#include <QtGui/QDropEvent>
 #include <QtNetwork/QHttpRequestHeader>
 #include <QtNetwork/QNetworkRequest>
 #include <QtWebKit/QWebFrame>
@@ -72,7 +74,7 @@ WebView::~WebView()
 void WebView::loadUrl(const KUrl& url, const KParts::OpenUrlArguments& args, const KParts::BrowserArguments& bargs)
 {
     page()->setProperty("NavigationTypeUrlEntered", true);
-    
+
     if (args.reload()) {
       pageAction(KWebPage::Reload)->trigger();
       return;
@@ -124,6 +126,21 @@ static void extractMimeTypeFor(const KUrl& url, QString& mimeType)
         return;
 
     mimeType = pmt->name();
+}
+
+void WebView::dropEvent(QDropEvent* ev)
+{
+    // TODO: This is to workaround that should be removed one the bug in
+    // QtWebKit is fixed. See https://bugs.webkit.org/show_bug.cgi?id=53320.
+    const QMimeData* mimeData = ev ? ev->mimeData() : 0;
+    if (mimeData && mimeData->hasUrls()) {
+        KUrl url (mimeData->urls().first());
+        emit m_part.data()->browserExtension()->openUrlRequest(url);
+        ev->accept();
+        return;
+    }
+
+    QWebView::dropEvent(ev);
 }
 
 void WebView::contextMenuEvent(QContextMenuEvent* e)

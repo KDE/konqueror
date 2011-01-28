@@ -58,6 +58,14 @@ protected:
     /**
      * Reimplemented for internal reasons, the API is not affected.
      *
+     * @see QWebView::dropEvent
+     * @internal
+     */
+    virtual void dropEvent(QDropEvent*);
+
+    /**
+     * Reimplemented for internal reasons, the API is not affected.
+     *
      * @see QWidget::contextMenuEvent
      * @internal
      */
