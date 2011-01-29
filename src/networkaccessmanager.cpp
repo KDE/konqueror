@@ -76,7 +76,7 @@ static bool blockRequest(QNetworkAccessManager::Operation op, const QUrl& reques
    if (!WebKitSettings::self()->isAdFiltered(requestUrl.toString()))
        return false;
 
-   kDebug() << "*** REQUEST BLOCKED BY FILTER:" << WebKitSettings::self()->adFilteredBy(requestUrl.toString());
+   //kDebug() << "*** REQUEST BLOCKED BY FILTER:" << WebKitSettings::self()->adFilteredBy(requestUrl.toString());
    return true;
 }
 
@@ -92,7 +92,7 @@ QNetworkReply *MyNetworkAccessManager::createRequest(Operation op, const QNetwor
         m_blockedRequests.insert(frame, req.url());
     }
 
-    kDebug() << "*** BLOCKED UNAUTHORIZED REQUEST => " << req.url() << frame;
+    //kDebug() << "*** BLOCKED UNAUTHORIZED REQUEST => " << req.url() << frame;
     return new NullNetworkReply(req, this);
 }
 
@@ -107,7 +107,7 @@ static void hideBlockedElements(const QUrl& url, QWebElementCollection& collecti
             continue;
         const QUrl resolvedUrl (baseUrl.resolved(src));
         if (url == resolvedUrl) {
-            kDebug() << "*** HIDING ELEMENT: " << (*it).tagName() << resolvedUrl;
+            //kDebug() << "*** HIDING ELEMENT: " << (*it).tagName() << resolvedUrl;
             (*it).removeFromDocument();
         }
     }
