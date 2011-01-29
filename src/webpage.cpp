@@ -351,6 +351,7 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
             break;
         case QWebPage::NavigationTypeReload:
             inPageRequest = false;
+            setRequestMetaData(QL1S("cache"), QL1S("reload"));
             break;
         case QWebPage::NavigationTypeOther:
             inPageRequest = !isTypedUrl;
