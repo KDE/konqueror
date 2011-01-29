@@ -22,13 +22,11 @@
 #ifndef NETWORKACCESSMANAGER_H
 #define NETWORKACCESSMANAGER_H
 
-#include <kdeversion.h>
-
 #include <KDE/KIO/AccessManager>
-#include <QtCore/QList>
 
-class QUrl;
+#include <QtCore/QMultiHash>
 
+class QWebFrame;
 
 namespace KDEPrivate {
 
@@ -38,17 +36,18 @@ namespace KDEPrivate {
 class MyNetworkAccessManager : public KIO::AccessManager
 {
     Q_OBJECT
-    
+
 public:
     MyNetworkAccessManager(QObject *parent = 0);
 
 protected:
     virtual QNetworkReply *createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData = 0);
-    
+
 private Q_SLOTS:
-    void slotFinished(QNetworkReply*);
+    void slotFinished(bool);
+
 private:
-    QList<QUrl> m_blockedUrls;
+    QMultiHash<QWebFrame*, QUrl> m_blockedRequests;
 };
 
 }
