@@ -62,10 +62,10 @@ public:
     // Parses and registers a filter. This will also strip @@ for exclusion rules, skip comments, etc.
     // The user does have to split black and white lists into separate sets, however
     void addFilter(const QString& filter);
-    
+
     bool isUrlMatched(const QString& url);
     QString urlMatchedBy(const QString& url);
-    
+
     void clear();
 
 private:

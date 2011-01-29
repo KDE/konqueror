@@ -21,7 +21,7 @@
 */
 
 #include "khtml_filter_p.h"
-#include <QDebug>
+#include <KDE/KDebug>
 
 // rolling hash parameters
 #define HASH_P (1997)
@@ -31,11 +31,39 @@
 
 namespace khtml {
 
+// We only want a subset of features of wildcards -- just the 
+// star, so we escape the rest before passing to QRegExp. 
+// The \ is escaped due to a QRegExp bug.
+// ### we really should rather parse it ourselves, in order to 
+// handle adblock-special things like | and ^ properly.
+static QRegExp fromAdBlockWildcard(const QString& wcStr) {
+    QRegExp rx;
+    rx.setPatternSyntax(QRegExp::Wildcard);
+
+    QString out;
+    for (int p = 0; p < wcStr.length(); ++p) {
+        QChar c = wcStr[p];
+        if (c == QLatin1Char('?'))
+            out += QLatin1String("[?]");
+        else if (c == QLatin1Char('['))
+            out += QLatin1String("[[]");
+        else if (c == QLatin1Char('\\'))
+            out += QLatin1String("[\\]");
+        else
+            out += c;
+    }
+
+    rx.setPattern(out);
+    return rx;
+}
+
 void FilterSet::addFilter(const QString& filterStr)
 {
     QString filter = filterStr;
-    
-    if (filter.startsWith(QLatin1Char('!')))
+
+    /** ignore special lines starting with "[", "!", "&", or "#" or contain "#" (comments or features are not supported by KHTML's AdBlock */
+    QChar firstChar = filter.at(0);
+    if (firstChar == QLatin1Char('[') || firstChar == QLatin1Char('!') || firstChar == QLatin1Char('&') || firstChar == QLatin1Char('#') || filter.contains(QLatin1Char('#')))
         return;
 
     // Strip leading @@
@@ -43,18 +71,22 @@ void FilterSet::addFilter(const QString& filterStr)
     int last  = filter.length() - 1;
     if (filter.startsWith(QLatin1String("@@")))
         first = 2;
-        
+
     // Strip options, we ignore them for now.
     int dollar = filter.lastIndexOf(QLatin1Char('$'));
-    if (dollar != -1)
+    if (dollar != -1) {
         last = dollar - 1;
-    
+        // If only "*" is left after ignoring the options, disregard the rule.
+        if (first == last && firstChar == QLatin1Char('*'))
+            return;
+    }
+
     // Perhaps nothing left?
     if (first > last)
         return;
-        
+
     filter = filter.mid(first, last - first + 1);
-    
+
     // Is it a regexp filter?
     if (filter.length()>2 && filter.startsWith(QLatin1Char('/')) && filter.endsWith(QLatin1Char('/')))
     {
@@ -67,47 +99,38 @@ void FilterSet::addFilter(const QString& filterStr)
     {
         // Nope, a wildcard one.
         // Note: For these, we also need to handle |.
-        
+
         // Strip wildcards at the ends
         first = 0;
         last  = filter.length() - 1;
-        
+
         while (first < filter.length() && filter[first] == QLatin1Char('*'))
             ++first;
-            
+
+        // NOTE: Correctly catch the advanced filtering rules listed at
+        // https://adblockplus.org/en/filters#advanced
         while (last >= 0 && filter[last] == QLatin1Char('*'))
             --last;
-            
-        if (first > last)
+
+        if (first > last) {
+            kWarning() << "*** About to add '*' as a filter!! filterStr was" << filterStr << filter << first << last;
             filter = QLatin1String("*"); // erm... Well, they asked for it.
-        else
+        } else
             filter = filter.mid(first, last - first + 1);
-            
+
         // Now, do we still have any wildcard stuff left?
-        if (filter.contains("*") || filter.contains("?")) 
+        if (filter.contains("*"))
         {
-//             qDebug() << "W:" << filter;
             // check if we can use RK first (and then check full RE for the rest) for better performance
             int aPos = filter.indexOf('*');
             if (aPos < 0)
                 aPos = filter.length();
-            int qPos = filter.indexOf('?');
-            if (qPos < 0)
-                qPos = filter.length();
-            int pos = qMin(aPos, qPos);
-            if (pos > 7) {
-                QRegExp rx;
-
-                rx.setPatternSyntax(QRegExp::Wildcard);
-                rx.setPattern(filter.mid(pos));
-
-                stringFiltersMatcher.addWildedString(filter.mid(0, pos), rx);
-
+            if (aPos > 7) {
+                QRegExp rx = fromAdBlockWildcard(filter.mid(aPos) + QLatin1Char('*'));
+                // We pad the final r.e. with * so we can check for an exact match
+                stringFiltersMatcher.addWildedString(filter.mid(0, aPos), rx);
             } else {
-                QRegExp rx;
-
-                rx.setPatternSyntax(QRegExp::Wildcard);
-                rx.setPattern(filter);
+                QRegExp rx = fromAdBlockWildcard(filter);
                 reFilters.append(rx);
             }
         }
@@ -152,7 +175,6 @@ QString FilterSet::urlMatchedBy(const QString& url)
     return by;
 }
 
-
 void FilterSet::clear()
 {
     reFilters.clear();
@@ -189,7 +211,7 @@ void StringsMatcher::addString(const QString& pattern)
             stringFiltersHash.insert(current + 1, list);
             fastLookUp.setBit(current);
         } else {
-            it.value().append(ind);
+            it->append(ind);
         }
     }
 }
@@ -212,16 +234,17 @@ void StringsMatcher::addWildedString(const QString& prefix, const QRegExp& rx)
         stringFiltersHash.insert(current + 1, list);
         fastLookUp.setBit(current);
     } else {
-        it.value().append(index);
+        it->append(index);
     }
 }
 
-bool StringsMatcher::isMatched(const QString& str, QString* by) const
+bool StringsMatcher::isMatched(const QString& str, QString *by) const
 {
     // check short strings first
     for (int i = 0; i < shortStringFilters.size(); ++i) {
-        if (str.contains(shortStringFilters[i])) {
-            if (by) *by = shortStringFilters[i];
+        if (str.contains(shortStringFilters[i]))
+        {
+            if (by != 0) *by = shortStringFilters[i];
             return true;
         }
     }
@@ -251,19 +274,29 @@ bool StringsMatcher::isMatched(const QString& str, QString* by) const
 
         // check possible strings
         if (it != hashEnd) {
-            for (int j = 0; j < it.value().size(); ++j) {
-                int index = it.value()[j];
+            for (int j = 0; j < it->size(); ++j) {
+                int index = it->value(j);
                 // check if we got simple string or REs prefix
                 if (index >= 0) {
                     int flen = stringFilters[index].length();
                     if (k - flen + 1 >= 0 && stringFilters[index] == str.midRef(k - flen + 1 , flen))
+                    {
+                        if (by != 0) *by = stringFilters[index];
                         return true;
+                    }
                 } else {
                     index = -index - 1;
                     int flen = rePrefixes[index].length();
-                    if (k - 8 + flen < len && rePrefixes[index] == str.midRef(k - 7, flen) &&
-                            str.indexOf(reFilters[index], k - 7 + flen) == k - 7 + flen)
-                        return true;
+                    if (k - 8 + flen < len && rePrefixes[index] == str.midRef(k - 7, flen))
+                    {
+                        int remStart = k - 7 + flen;
+                        QString remainder = QString::fromRawData(str.unicode() + remStart,
+                                                                 str.length() - remStart);
+                        if (reFilters[index].exactMatch(remainder)) {
+                            if (by != 0) *by = rePrefixes[index]+reFilters[index].pattern();
+                            return true;
+                        }
+                    }
                 }
             }
         }
