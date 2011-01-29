@@ -90,20 +90,19 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
         // to this list since there is about:blank.
         if (protocol == QL1S("about") || protocol == QL1S("file"))
             continue;
-        
+
         if (KProtocolInfo::protocolClass(protocol) != QL1S(":local"))
             continue;
-        
+
         QWebSecurityOrigin::addLocalScheme(protocol);
     }
 
     // Set the per page user style sheet as specified in WebKitSettings...
     // TODO: Determine how a per page style sheets settings interacts with a
     // global one. Is it an intersection of the two or a complete override ?
-    if (!QWebSettings::globalSettings()->userStyleSheetUrl().isValid()) {
+    if (!QWebSettings::globalSettings()->userStyleSheetUrl().isValid())
         settings()->setUserStyleSheetUrl((QL1S("data:text/css;charset=utf-8;base64,") +
                                           WebKitSettings::self()->settingsToCSS().toUtf8().toBase64()));
-    }
 
     connect(this, SIGNAL(geometryChangeRequested(const QRect &)),
             this, SLOT(slotGeometryChangeRequested(const QRect &)));

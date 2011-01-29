@@ -92,11 +92,11 @@ void WebKitBrowserExtension::saveHistoryState()
 
     if (!view()->page()->history()->count())
         return;
-    
+
     KSaveFile saveFile (m_historyFileName, m_part.data()->componentData());
     if (!saveFile.open())
       return;
-    
+
     //kDebug() << "Saving history data to"  << saveFile.fileName();
     QDataStream stream (&saveFile);
     stream << *(view()->page()->history());
