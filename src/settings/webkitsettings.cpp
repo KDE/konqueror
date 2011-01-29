@@ -130,19 +130,17 @@ public:
 
 class WebKitSettingsPrivate : public QObject, public WebKitSettingsData
 {
-    Q_OBJECT    
+    Q_OBJECT
 public:
     void adblockFilterLoadList(const QString& filename)
     {
-#ifdef DEBUG_SETTINGS      
-        kDebug() << "Loading filter list from" << filename;
-#endif        
         /** load list file and process each line */
         QFile file(filename);
         if (file.open(QIODevice::ReadOnly)) {
             QTextStream ts(&file);
             QString line = ts.readLine();
             while (!line.isEmpty()) {
+                //kDebug() << "Adding filter:" << line;
                 /** white list lines start with "@@" */
                 if (line.startsWith(QLatin1String("@@")))
                     adWhiteList.addFilter(line);
@@ -151,10 +149,6 @@ public:
                 line = ts.readLine();
             }
             file.close();
-
-#ifdef DEBUG_SETTINGS
-            kDebug() << "Filter list loaded" << whiteCounter << "white list entries and" << blackCounter << "black list entries";
-#endif
         }
     }
 
@@ -167,7 +161,7 @@ public Q_SLOTS:
         if ( job->error() == KJob::NoError )
         {
             const QByteArray byteArray = tJob->data();
-            const QString localFileName = tJob->property( "khtmlsettings_adBlock_filename" ).toString();
+            const QString localFileName = tJob->property( "webkitsettings_adBlock_filename" ).toString();
 
             QFile file(localFileName);
             if ( file.open(QFile::WriteOnly) )
@@ -177,7 +171,7 @@ public Q_SLOTS:
                     adblockFilterLoadList(localFileName);
                 else
                     kWarning() << "Could not write" << byteArray.size() << "to file" << localFileName;
-                file.close();                
+                file.close();
             }
             else
                 kDebug() << "Cannot open file" << localFileName << "for filter list";
@@ -191,12 +185,11 @@ public Q_SLOTS:
 /** Returns a writeable per-domains settings instance for the given domain
   * or a deep copy of the global settings if not existent.
   */
-static KPerDomainSettings &setup_per_domain_policy(
-				WebKitSettingsPrivate* const d,
-				const QString &domain) {
-  if (domain.isEmpty()) {
+static KPerDomainSettings &setup_per_domain_policy(WebKitSettingsPrivate* const d, const QString &domain)
+{
+  if (domain.isEmpty())
     kWarning() << "setup_per_domain_policy: domain is empty";
-  }
+
   const QString ldomain = domain.toLower();
   PolicyMap::iterator it = d->domainPolicy.find(ldomain);
   if (it == d->domainPolicy.end()) {
@@ -416,13 +409,13 @@ void WebKitSettings::init( KConfig * config, bool reset )
       /** read maximum age for filter list files, minimum is one day */
       int htmlFilterListMaxAgeDays = cgFilter.readEntry(QString("HTMLFilterListMaxAgeDays")).toInt();
       if (htmlFilterListMaxAgeDays < 1)
-          htmlFilterListMaxAgeDays = 1;      
+          htmlFilterListMaxAgeDays = 1;
 
       QMapIterator<QString,QString> it (cgFilter.entryMap());
       while (it.hasNext())
       {
           it.next();
-          int id = -1;        
+          int id = -1;
           const QString name = it.key();
           const QString url = it.value();
 
@@ -462,7 +455,7 @@ void WebKitSettings::init( KConfig * config, bool reset )
                       KIO::StoredTransferJob *job = KIO::storedGet( url, KIO::Reload, KIO::HideProgressInfo );
                       QObject::connect( job, SIGNAL( result(KJob *) ), d, SLOT( adblockFilterResult(KJob *) ) );
                       /** for later reference, store name of cache file */
-                      job->setProperty("khtmlsettings_adBlock_filename", localFile);
+                      job->setProperty("webkitsettings_adBlock_filename", localFile);
                   }
               }
           }
@@ -908,36 +901,32 @@ bool WebKitSettings::isHideAdsEnabled() const
 
 bool WebKitSettings::isAdFiltered( const QString &url ) const
 {
-    if (d->m_adFilterEnabled)
-    {
-        if (!url.startsWith(QLatin1String("data:")))
-        {
-            // Check the blacklist, and only if that matches, the whitelist
-            return d->adBlackList.isUrlMatched(url) && !d->adWhiteList.isUrlMatched(url);
-        }
-    }
-    return false;
+    if (!d->m_adFilterEnabled)
+        return false;
+
+    if (url.startsWith(QLatin1String("data:")))
+        return false;
+
+    return d->adBlackList.isUrlMatched(url) && !d->adWhiteList.isUrlMatched(url);
 }
 
 QString WebKitSettings::adFilteredBy( const QString &url, bool *isWhiteListed ) const
 {
     QString m = d->adWhiteList.urlMatchedBy(url);
-    if (!m.isEmpty())
-    {
+
+    if (!m.isEmpty()) {
         if (isWhiteListed != 0)
             *isWhiteListed = true;
         return m;
     }
 
     m = d->adBlackList.urlMatchedBy(url);
-    if (!m.isEmpty())
-    {
-        if (isWhiteListed != 0)
-            *isWhiteListed = false;
-        return m;
-    }
+    if (m.isEmpty())
+        return QString();
 
-    return QString();
+    if (isWhiteListed != 0)
+        *isWhiteListed = false;
+    return m;
 }
 
 void WebKitSettings::addAdFilter( const QString &url )
