@@ -107,15 +107,12 @@ void FilterSet::addFilter(const QString& filterStr)
         while (first < filter.length() && filter[first] == QLatin1Char('*'))
             ++first;
 
-        // NOTE: Correctly catch the advanced filtering rules listed at
-        // https://adblockplus.org/en/filters#advanced
         while (last >= 0 && filter[last] == QLatin1Char('*'))
             --last;
 
-        if (first > last) {
-            kWarning() << "*** About to add '*' as a filter!! filterStr was" << filterStr << filter << first << last;
+        if (first > last)
             filter = QLatin1String("*"); // erm... Well, they asked for it.
-        } else
+        else
             filter = filter.mid(first, last - first + 1);
 
         // Now, do we still have any wildcard stuff left?
