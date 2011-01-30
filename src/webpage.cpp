@@ -243,24 +243,32 @@ QString WebPage::errorPage(int code, const QString& text, const KUrl& reqUrl) co
 
 bool WebPage::extension(Extension extension, const ExtensionOption *option, ExtensionReturn *output)
 {
-    if (extension == QWebPage::ErrorPageExtension && !m_ignoreError) {
-        const QWebPage::ErrorPageExtensionOption *extOption = static_cast<const QWebPage::ErrorPageExtensionOption*>(option);
-        //kDebug() << extOption->domain << extOption->error << extOption->errorString;
-        if (extOption->domain == QWebPage::QtNetwork) {
-            QWebPage::ErrorPageExtensionReturn *extOutput = static_cast<QWebPage::ErrorPageExtensionReturn*>(output);
-            extOutput->content = errorPage(m_kioErrorCode, extOption->errorString, extOption->url).toUtf8();
-            extOutput->baseUrl = extOption->url;
-            return true;
+    switch (extension) {
+    case QWebPage::ErrorPageExtension: {
+        if (!m_ignoreError) {
+            const QWebPage::ErrorPageExtensionOption *extOption = static_cast<const QWebPage::ErrorPageExtensionOption*>(option);
+            //kDebug() << extOption->domain << extOption->error << extOption->errorString;
+            if (extOption->domain == QWebPage::QtNetwork) {
+                QWebPage::ErrorPageExtensionReturn *extOutput = static_cast<QWebPage::ErrorPageExtensionReturn*>(output);
+                extOutput->content = errorPage(m_kioErrorCode, extOption->errorString, extOption->url).toUtf8();
+                extOutput->baseUrl = extOption->url;
+                return true;
+            }
         }
+        break;
     }
-
-    if (extension == QWebPage::ChooseMultipleFilesExtension) {
+    case QWebPage::ChooseMultipleFilesExtension: {
         const QWebPage::ChooseMultipleFilesExtensionOption* extOption = static_cast<const QWebPage::ChooseMultipleFilesExtensionOption*> (option);
         QWebPage::ChooseMultipleFilesExtensionReturn *extOutput = static_cast<QWebPage::ChooseMultipleFilesExtensionReturn*>(output);
-        if (currentFrame() == extOption->parentFrame)
+        if (currentFrame() == extOption->parentFrame) {
             extOutput->fileNames = KFileDialog::getOpenFileNames(KUrl(extOption->suggestedFileNames.first()),
                                                                  QString(), view(), i18n("Choose files to upload"));
-        return true;
+            return true;
+        }
+        break;
+    }
+    default:
+        break;
     }
 
     return KWebPage::extension(extension, option, output);
@@ -268,10 +276,16 @@ bool WebPage::extension(Extension extension, const ExtensionOption *option, Exte
 
 bool WebPage::supportsExtension(Extension extension) const
 {
-    //kDebug() << extension;
-    if (extension == QWebPage::ErrorPageExtension ||
-        extension == QWebPage::ChooseMultipleFilesExtension)
+    kDebug() << extension;
+
+    switch (extension) {
+    case QWebPage::ErrorPageExtension:
+        return m_ignoreError;
+    case QWebPage::ChooseMultipleFilesExtension:
         return true;
+    default:
+        break;
+    }
 
     return KWebPage::supportsExtension(extension);
 }
@@ -487,7 +501,7 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
             if (isMainFrameRequest)
                 emit saveFrameStateRequested(frame, 0);
 
-            m_ignoreError = false;
+            m_ignoreError = (reply->attribute(QNetworkRequest::User).toInt() == QNetworkReply::ContentAccessDenied);
             m_kioErrorCode = errCode;
             break;
     }
