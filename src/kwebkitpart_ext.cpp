@@ -84,7 +84,6 @@ WebView* WebKitBrowserExtension::view()
     return m_view.data();
 }
 
-
 void WebKitBrowserExtension::saveHistoryState()
 {
     if (!view())
@@ -194,7 +193,7 @@ void WebKitBrowserExtension::print()
 {
     if (!view())
         return;
-      
+
     QPrintPreviewDialog dlg(view());
     connect(&dlg, SIGNAL(paintRequested(QPrinter *)),
             view(), SLOT(print(QPrinter *)));
@@ -205,7 +204,7 @@ void WebKitBrowserExtension::printFrame()
 {
     if (!view())
         return;
-    
+
     QPrintPreviewDialog dlg(view());
     connect(&dlg, SIGNAL(paintRequested(QPrinter *)),
             view()->page()->currentFrame(), SLOT(print(QPrinter *)));
@@ -216,7 +215,7 @@ void WebKitBrowserExtension::updateEditActions()
 {
     if (!view())
         return;
-    
+
     enableAction("cut", view()->pageAction(QWebPage::Cut));
     enableAction("copy", view()->pageAction(QWebPage::Copy));
     enableAction("paste", view()->pageAction(QWebPage::Paste));
@@ -226,13 +225,13 @@ void WebKitBrowserExtension::searchProvider()
 {
     if (!view())
         return;
-    
+
     KAction *action = qobject_cast<KAction*>(sender());
     if (!action)
         return;
-    
+
     KUrl url = action->data().toUrl();
-    
+
     if (url.host().isEmpty()) {
         KUriFilterData data;
         data.setData(action->data().toString());
@@ -242,7 +241,7 @@ void WebKitBrowserExtension::searchProvider()
 
     if (!url.isValid())
       return;
-    
+
     KParts::BrowserArguments bargs;
     bargs.frameName = QL1S("_blank");
     emit openUrlRequest(url, KParts::OpenUrlArguments(), bargs);
@@ -276,7 +275,7 @@ void WebKitBrowserExtension::toogleZoomTextOnly()
 {
     if (!view())
         return;
-    
+
     KConfigGroup cgHtml(KGlobal::config(), "HTML Settings");
     bool zoomTextOnly = cgHtml.readEntry( "ZoomTextOnly", false );
     cgHtml.writeEntry("ZoomTextOnly", !zoomTextOnly);
@@ -295,7 +294,7 @@ void WebKitBrowserExtension::slotFrameInWindow()
 {
     if (!view())
         return;
-    
+
     KParts::BrowserArguments bargs;
     bargs.setForcesNewWindow(true);
     emit createNewWindow(view()->page()->currentFrame()->url(), KParts::OpenUrlArguments(), bargs);
@@ -305,7 +304,7 @@ void WebKitBrowserExtension::slotFrameInTab()
 {
     if (!view())
         return;
-    
+
     KParts::BrowserArguments bargs;//( m_m_khtml->browserExtension()->browserArguments() );
     bargs.setNewTab(true);
     emit createNewWindow(view()->page()->currentFrame()->url(), KParts::OpenUrlArguments(), bargs);
@@ -316,7 +315,7 @@ void WebKitBrowserExtension::slotFrameInTop()
 {
     if (!view())
         return;
-    
+
     KParts::BrowserArguments bargs;//( m_m_khtml->browserExtension()->browserArguments() );
     bargs.frameName = QL1S("_top");
     emit openUrlRequest(view()->page()->currentFrame()->url(), KParts::OpenUrlArguments(), bargs);
@@ -326,6 +325,22 @@ void WebKitBrowserExtension::slotReloadFrame()
 {
     if (view())
         view()->page()->currentFrame()->load(view()->page()->currentFrame()->url());
+}
+
+void WebKitBrowserExtension::slotBlockIFrame()
+{
+    if (!view())
+        return;
+
+    bool ok = false;
+    const QString url = KInputDialog::getText(i18n("Add URL to Filter"),
+                                              i18n("Enter the URL:"),
+                                              view()->contextMenuResult().frame()->url().toString(),
+                                              &ok);
+    if (ok) {
+        WebKitSettings::self()->addAdFilter(url);
+        reparseConfiguration();
+    }
 }
 
 void WebKitBrowserExtension::slotSaveImageAs()
@@ -370,7 +385,7 @@ void WebKitBrowserExtension::slotCopyImage()
 {
     if (!view())
         return;
-    
+
     KUrl safeURL(view()->contextMenuResult().imageUrl());
     safeURL.setPass(QString());
 
@@ -396,31 +411,34 @@ void WebKitBrowserExtension::slotBlockImage()
 {
     if (!view())
         return;
-    
+
     bool ok = false;
     const QString url = KInputDialog::getText(i18n("Add URL to Filter"),
                                               i18n("Enter the URL:"),
                                               view()->contextMenuResult().imageUrl().toString(),
                                               &ok);
-    if (ok)
+    if (ok) {
         WebKitSettings::self()->addAdFilter(url);
+        reparseConfiguration();
+    }
 }
 
 void WebKitBrowserExtension::slotBlockHost()
 {
     if (!view())
         return;
-    
+
     QUrl url (view()->contextMenuResult().imageUrl());
     url.setPath(QL1S("/*"));
     WebKitSettings::self()->addAdFilter(url.toString(QUrl::RemoveAuthority));
+    reparseConfiguration();
 }
 
 void WebKitBrowserExtension::slotCopyLinkURL()
 {
     if (!view())
         return;
-    
+
     KUrl safeURL(view()->contextMenuResult().linkUrl());
     safeURL.setPass(QString());
     // Set it in both the mouse selection and in the clipboard

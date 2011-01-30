@@ -70,6 +70,7 @@ public Q_SLOTS:
     void slotFrameInTab();
     void slotFrameInTop();
     void slotReloadFrame();
+    void slotBlockIFrame();
 
     void slotSaveImageAs();
     void slotSendImage();

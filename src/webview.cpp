@@ -300,6 +300,13 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& part
         action->setSeparator(true);
         menu->addAction(action);
 
+        if (WebKitSettings::self()->isAdFilterEnabled()) {
+            action = new KAction( i18n( "Block IFrame..." ), this );
+            m_actionCollection->addAction( "blockiframe", action );
+            connect(action, SIGNAL(triggered(bool)), m_part.data()->browserExtension(), SLOT(slotBlockIFrame()));
+            menu->addAction(action);
+        }
+
         partActions.append(menu);
     }
 
