@@ -22,7 +22,6 @@ include_directories (${CMAKE_CURRENT_SOURCE_DIR}/lib/konq ${CMAKE_BINARY_DIR} ${
 
 add_subdirectory( lib )
 add_subdirectory( dolphin )
-add_subdirectory( kwrite )
 add_subdirectory( kdialog )
 add_subdirectory( keditbookmarks )
 add_subdirectory( konqueror )
