@@ -1484,7 +1484,7 @@ void KonqViewManager::slotProfileListAboutToShow()
 
 void KonqViewManager::setLoading( KonqView *view, bool loading )
 {
-    m_tabContainer->setLoading(view->frame(), loading);
+    tabContainer()->setLoading(view->frame(), loading);
 }
 
 void KonqViewManager::showHTML(bool b)
