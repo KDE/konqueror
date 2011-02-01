@@ -333,10 +333,13 @@ void WebKitBrowserExtension::slotBlockIFrame()
         return;
 
     bool ok = false;
+
+    const QWebFrame* frame = view()->contextMenuResult().frame();
+    const QString urlStr = frame ? frame->url().toString() : QString();
+
     const QString url = KInputDialog::getText(i18n("Add URL to Filter"),
                                               i18n("Enter the URL:"),
-                                              view()->contextMenuResult().frame()->url().toString(),
-                                              &ok);
+                                              urlStr, &ok);
     if (ok) {
         WebKitSettings::self()->addAdFilter(url);
         reparseConfiguration();
@@ -353,7 +356,7 @@ void WebKitBrowserExtension::slotSendImage()
 {
     if (!view())
         return;
-    
+
     QStringList urls;
     urls.append(view()->contextMenuResult().imageUrl().path());
     const QString subject = view()->contextMenuResult().imageUrl().path();
