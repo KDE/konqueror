@@ -145,7 +145,6 @@ void WebView::dropEvent(QDropEvent* ev)
 
 void WebView::contextMenuEvent(QContextMenuEvent* e)
 {
-    kDebug();
     m_result = page()->mainFrame()->hitTestContent(e->pos());
     if (m_result.isContentEditable()) {
         KWebView::contextMenuEvent(e); // TODO: better KDE integration if possible
@@ -201,7 +200,6 @@ void WebView::contextMenuEvent(QContextMenuEvent* e)
 
 void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& partGroupMap)
 {
-    kDebug();
     QList<QAction*> partActions;
 
     if (m_result.imageUrl().isValid()) {
