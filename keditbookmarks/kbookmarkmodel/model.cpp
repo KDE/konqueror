@@ -78,12 +78,10 @@ KBookmarkModel::KBookmarkModel(const KBookmark& root, CommandHistory* commandHis
 {
     connect(commandHistory, SIGNAL(notifyCommandExecuted(KBookmarkGroup)), this, SLOT(notifyManagers(KBookmarkGroup)));
     Q_ASSERT(bookmarkManager());
-    // update when the model updates after a D-Bus signal of another instance of it
+    // update when the model updates after a D-Bus signal, coming from this
+    // process or from another one
     connect(bookmarkManager(), SIGNAL(changed(QString,QString)),
             this, SLOT(_kd_slotBookmarksChanged(QString,QString)));
-    // update when the model itself changes
-    connect(bookmarkManager(), SIGNAL(bookmarksChanged(QString)),
-            this, SLOT(_kd_slotBookmarksChanged(QString)));
 }
 
 void KBookmarkModel::setRoot(const KBookmark& root)
@@ -463,13 +461,17 @@ KBookmarkManager* KBookmarkModel::bookmarkManager()
     return d->mCommandHistory->bookmarkManager();
 }
 
-void KBookmarkModel::Private::_kd_slotBookmarksChanged(const QString&, const QString&)
+void KBookmarkModel::Private::_kd_slotBookmarksChanged(const QString& groupAddress, const QString& caller)
 {
+    Q_UNUSED(groupAddress);
+    Q_UNUSED(caller);
+    //kDebug() << "_kd_slotBookmarksChanged" << groupAddress << "caller=" << caller << "mIgnoreNext=" << mIgnoreNext;
     if (mIgnoreNext > 0) { // We ignore the first changed signal after every change we did
         --mIgnoreNext;
         return;
     }
 
+    //kDebug() << " setRoot!";
     q->setRoot(q->bookmarkManager()->root());
 
     mCommandHistory->clearHistory();
@@ -478,6 +480,7 @@ void KBookmarkModel::Private::_kd_slotBookmarksChanged(const QString&, const QSt
 void KBookmarkModel::notifyManagers(const KBookmarkGroup& grp)
 {
     ++d->mIgnoreNext;
+    //kDebug() << "notifyManagers -> mIgnoreNext=" << d->mIgnoreNext;
     bookmarkManager()->emitChanged(grp);
 }
 
