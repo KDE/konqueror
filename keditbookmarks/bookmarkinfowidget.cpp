@@ -38,7 +38,12 @@
 #include <kbookmark.h>
 
 // SHUFFLE all these functions around, the order is just plain stupid
-void BookmarkInfoWidget::showBookmark(const KBookmark &bk) {
+void BookmarkInfoWidget::showBookmark(const KBookmark &bk)
+{
+    // Fast exit if already shown, otherwise editing a title leads to a command after each keypress
+    if (m_bk == bk)
+        return;
+
     commitChanges();
     m_bk = bk;
 
@@ -126,11 +131,8 @@ void BookmarkInfoWidget::commitChanges()
 
 void BookmarkInfoWidget::commitTitle()
 {
-    if(titlecmd)
-    {
-        m_model->notifyManagers(GlobalBookmarkManager::bookmarkAt(titlecmd->affectedBookmarks()).toGroup());
-        titlecmd = 0;
-    }
+    // no more change compression
+    titlecmd = 0;
 }
 
 void BookmarkInfoWidget::slotTextChangedTitle(const QString &str)
@@ -154,11 +156,7 @@ void BookmarkInfoWidget::slotTextChangedTitle(const QString &str)
 
 void BookmarkInfoWidget::commitURL()
 {
-    if(urlcmd)
-    {
-        m_model->notifyManagers(GlobalBookmarkManager::bookmarkAt(urlcmd->affectedBookmarks()).toGroup());
-        urlcmd = 0;
-    }
+    urlcmd = 0;
 }
 
 void BookmarkInfoWidget::slotTextChangedURL(const QString &str) {
@@ -181,11 +179,7 @@ void BookmarkInfoWidget::slotTextChangedURL(const QString &str) {
 
 void BookmarkInfoWidget::commitComment()
 {
-    if(commentcmd)
-    {
-        m_model->notifyManagers( GlobalBookmarkManager::bookmarkAt( commentcmd->affectedBookmarks() ).toGroup());
-        commentcmd = 0;
-    }
+    commentcmd = 0;
 }
 
 void BookmarkInfoWidget::slotTextChangedComment(const QString &str) {
