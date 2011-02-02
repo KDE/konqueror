@@ -32,7 +32,7 @@ class CommandHistory::Private
 public:
     Private() : m_manager(0), m_commandHistory() {}
     KBookmarkManager* m_manager;
-    KUndoStack m_commandHistory;
+    KUndoStack m_commandHistory; // TODO rename to m_undoStack
 };
 
 CommandHistory::CommandHistory(QObject* parent)
@@ -54,9 +54,13 @@ void CommandHistory::setBookmarkManager(KBookmarkManager* manager)
 void CommandHistory::createActions(KActionCollection *actionCollection)
 {
     // TODO use QUndoView?
+
     QAction* undoAction = d->m_commandHistory.createUndoAction(actionCollection);
+    disconnect(undoAction, SIGNAL(triggered()), &d->m_commandHistory, 0);
     connect(undoAction, SIGNAL(triggered()), this, SLOT(undo()));
+
     QAction* redoAction = d->m_commandHistory.createRedoAction(actionCollection);
+    disconnect(redoAction, SIGNAL(triggered()), &d->m_commandHistory, 0);
     connect(redoAction, SIGNAL(triggered()), this, SLOT(redo()));
 }
 
