@@ -30,9 +30,9 @@
 class CommandHistory::Private
 {
 public:
-    Private() : m_manager(0), m_commandHistory() {}
+    Private() : m_manager(0), m_undoStack() {}
     KBookmarkManager* m_manager;
-    KUndoStack m_commandHistory; // TODO rename to m_undoStack
+    KUndoStack m_undoStack;
 };
 
 CommandHistory::CommandHistory(QObject* parent)
@@ -55,31 +55,31 @@ void CommandHistory::createActions(KActionCollection *actionCollection)
 {
     // TODO use QUndoView?
 
-    QAction* undoAction = d->m_commandHistory.createUndoAction(actionCollection);
-    disconnect(undoAction, SIGNAL(triggered()), &d->m_commandHistory, 0);
+    QAction* undoAction = d->m_undoStack.createUndoAction(actionCollection);
+    disconnect(undoAction, SIGNAL(triggered()), &d->m_undoStack, 0);
     connect(undoAction, SIGNAL(triggered()), this, SLOT(undo()));
 
-    QAction* redoAction = d->m_commandHistory.createRedoAction(actionCollection);
-    disconnect(redoAction, SIGNAL(triggered()), &d->m_commandHistory, 0);
+    QAction* redoAction = d->m_undoStack.createRedoAction(actionCollection);
+    disconnect(redoAction, SIGNAL(triggered()), &d->m_undoStack, 0);
     connect(redoAction, SIGNAL(triggered()), this, SLOT(redo()));
 }
 
 void CommandHistory::undo()
 {
-    const int idx = d->m_commandHistory.index();
-    const QUndoCommand* cmd = d->m_commandHistory.command(idx-1);
+    const int idx = d->m_undoStack.index();
+    const QUndoCommand* cmd = d->m_undoStack.command(idx-1);
     if (cmd) {
-        d->m_commandHistory.undo();
+        d->m_undoStack.undo();
         commandExecuted(cmd);
     }
 }
 
 void CommandHistory::redo()
 {
-    const int idx = d->m_commandHistory.index();
-    const QUndoCommand* cmd = d->m_commandHistory.command(idx);
+    const int idx = d->m_undoStack.index();
+    const QUndoCommand* cmd = d->m_undoStack.command(idx);
     if (cmd) {
-        d->m_commandHistory.redo();
+        d->m_undoStack.redo();
         commandExecuted(cmd);
     }
 }
@@ -97,21 +97,21 @@ void CommandHistory::commandExecuted(const QUndoCommand *k)
 
 void CommandHistory::notifyDocSaved()
 {
-    d->m_commandHistory.setClean();
+    d->m_undoStack.setClean();
 }
 
 void CommandHistory::addCommand(QUndoCommand *cmd)
 {
     if (!cmd)
         return;
-    d->m_commandHistory.push(cmd); // calls cmd->redo()
+    d->m_undoStack.push(cmd); // calls cmd->redo()
     CommandHistory::commandExecuted(cmd);
 }
 
 void CommandHistory::clearHistory()
 {
-    if (d->m_commandHistory.count() > 0) {
-        d->m_commandHistory.clear();
+    if (d->m_undoStack.count() > 0) {
+        d->m_undoStack.clear();
         emit notifyCommandExecuted(d->m_manager->root()); // not really, but we still want to update the GUI
     }
 }
