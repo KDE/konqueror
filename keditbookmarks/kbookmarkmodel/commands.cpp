@@ -194,30 +194,35 @@ void EditCommand::redo()
     KBookmark bk = m_model->bookmarkManager()->findByAddress(mAddress);
     if(mCol==-2)
     {
-        mOldValue = bk.internalElement().attribute("toolbar");
+        if (mOldValue.isEmpty())
+            mOldValue = bk.internalElement().attribute("toolbar");
         bk.internalElement().setAttribute("toolbar", mNewValue);
     }
     else if(mCol==-1)
     {
-        mOldValue = bk.icon();
+        if (mOldValue.isEmpty())
+            mOldValue = bk.icon();
         bk.setIcon(mNewValue);
     }
     else if(mCol==0)
     {
-        mOldValue = bk.fullText();
+        if (mOldValue.isEmpty()) // only the first time, not when compressing changes in modify()
+            mOldValue = bk.fullText();
         kDebug() << "mOldValue=" << mOldValue;
         bk.setFullText(mNewValue);
     }
     else if(mCol==1)
     {
-        mOldValue = bk.url().prettyUrl();
+        if (mOldValue.isEmpty())
+            mOldValue = bk.url().prettyUrl();
         const KUrl newUrl(mNewValue);
         if (!(newUrl.isEmpty() && !mNewValue.isEmpty())) // prevent emptied line if the currently entered url is invalid
             bk.setUrl(newUrl);
     }
     else if(mCol==2)
     {
-        mOldValue = bk.description();
+        if (mOldValue.isEmpty())
+            mOldValue = bk.description();
         bk.setDescription(mNewValue);
     }
     m_model->emitDataChanged(bk);
