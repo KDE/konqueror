@@ -1,7 +1,7 @@
 /* This file is part of FSView.
    Copyright (C) 2002, 2003 Josef Weidendorfer <Josef.Weidendorfer@gmx.de>
    Some file management code taken from the Dolphin file manager (C) 2006-2009,
-   by Peter Penz <peter.penz@gmx.at>
+   by Peter Penz <peter.penz19@mail.com>
 
    KCachegrind is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public
