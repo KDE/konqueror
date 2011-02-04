@@ -245,24 +245,26 @@ bool WebPage::extension(Extension extension, const ExtensionOption *option, Exte
 {
     switch (extension) {
     case QWebPage::ErrorPageExtension: {
-        if (!m_ignoreError) {
-            const QWebPage::ErrorPageExtensionOption *extOption = static_cast<const QWebPage::ErrorPageExtensionOption*>(option);
-            //kDebug() << extOption->domain << extOption->error << extOption->errorString;
-            if (extOption->domain == QWebPage::QtNetwork) {
-                QWebPage::ErrorPageExtensionReturn *extOutput = static_cast<QWebPage::ErrorPageExtensionReturn*>(output);
-                extOutput->content = errorPage(m_kioErrorCode, extOption->errorString, extOption->url).toUtf8();
-                extOutput->baseUrl = extOption->url;
-                return true;
-            }
-        }
-        break;
+        if (m_ignoreError)
+            break;
+        const QWebPage::ErrorPageExtensionOption *extOption = static_cast<const QWebPage::ErrorPageExtensionOption*>(option);
+        if (extOption->domain != QWebPage::QtNetwork)
+            break;
+        QWebPage::ErrorPageExtensionReturn *extOutput = static_cast<QWebPage::ErrorPageExtensionReturn*>(output);
+        extOutput->content = errorPage(m_kioErrorCode, extOption->errorString, extOption->url).toUtf8();
+        extOutput->baseUrl = extOption->url;
+        return true;
     }
     case QWebPage::ChooseMultipleFilesExtension: {
         const QWebPage::ChooseMultipleFilesExtensionOption* extOption = static_cast<const QWebPage::ChooseMultipleFilesExtensionOption*> (option);
         QWebPage::ChooseMultipleFilesExtensionReturn *extOutput = static_cast<QWebPage::ChooseMultipleFilesExtensionReturn*>(output);
         if (currentFrame() == extOption->parentFrame) {
-            extOutput->fileNames = KFileDialog::getOpenFileNames(KUrl(extOption->suggestedFileNames.first()),
-                                                                 QString(), view(), i18n("Choose files to upload"));
+            if (extOption->suggestedFileNames.isEmpty())
+                extOutput->fileNames = KFileDialog::getOpenFileNames(KUrl(), QString(), view(),
+                                                                     i18n("Choose files to upload"));
+            else
+                extOutput->fileNames = KFileDialog::getOpenFileNames(KUrl(extOption->suggestedFileNames.first()),
+                                                                     QString(), view(), i18n("Choose files to upload"));
             return true;
         }
         break;
