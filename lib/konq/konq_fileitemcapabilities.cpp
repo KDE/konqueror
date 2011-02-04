@@ -1,5 +1,5 @@
 /* This file is part of the KDE project
-   Copyright (C) 2008 by Peter Penz <peter.penz@gmx.at>
+   Copyright (C) 2008 by Peter Penz <peter.penz19@gmail.com>
    Copyright (C) 2008 by George Goldberg <grundleborg@googlemail.com>
    Copyright     2009 David Faure <faure@kde.org>
 
