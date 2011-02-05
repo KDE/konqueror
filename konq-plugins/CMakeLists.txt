@@ -11,6 +11,13 @@ add_subdirectory( validators )
 add_subdirectory( domtreeviewer )
 add_subdirectory( webarchiver )
 
+#add_subdirectory( quickprint )
+add_subdirectory( kttsplugin )
+
+if(UNIX)
+      add_subdirectory( shellcmdplugin )
+endif(UNIX)
+
 add_subdirectory( imagerotation )
 add_subdirectory( minitools )
 #add_subdirectory( microformat )
@@ -19,7 +26,7 @@ add_subdirectory( fsview )
 add_subdirectory( searchbar )
 add_subdirectory( rellinks )
 
-add_subdirectory(adblock)
+add_subdirectory( adblock )
 
 add_subdirectory( akregator )
 

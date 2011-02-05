@@ -8,13 +8,7 @@ add_subdirectory( about )
 add_subdirectory( pics )
 add_subdirectory( sidebar )
 add_subdirectory( preloader )
-#add_subdirectory( quickprint )
 add_subdirectory( settings )
-add_subdirectory( kttsplugin )
-
-if(UNIX)
-   add_subdirectory( shellcmdplugin )
-endif(UNIX)
 
 ########### install files ###############
 install( PROGRAMS
