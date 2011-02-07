@@ -25,6 +25,7 @@
 #include "konq_copytomenu.h"
 #include "kfileitemactions.h"
 #include "kfileitemactionplugin.h"
+#include "kabstractfileitemactionplugin.h"
 #include "kpropertiesdialog.h"
 #include "knewmenu.h"
 #include "konq_operations.h"
@@ -584,12 +585,18 @@ void KonqPopupMenuPrivate::addPlugins()
                 continue;
             }
 
+            // Old API (kdelibs-4.6.0 only)
             KFileItemActionPlugin* plugin = service->createInstance<KFileItemActionPlugin>();
-            if (!plugin) {
-                continue;
+            if (plugin) {
+                plugin->setParent(q);
+                q->addActions(plugin->actions(m_popupItemProperties, m_parentWidget));
             }
-            plugin->setParent(q);
-            q->addActions(plugin->actions(m_popupItemProperties, m_parentWidget));
+            // New API (kdelibs >= 4.6.1)
+            KAbstractFileItemActionPlugin* abstractPlugin = service->createInstance<KAbstractFileItemActionPlugin>();
+            if (abstractPlugin) {
+                abstractPlugin->setParent(q);
+                q->addActions(abstractPlugin->actions(m_popupItemProperties, m_parentWidget));
+            }
         }
     }
 }
