@@ -183,7 +183,7 @@ private:
      * It uses the URL of the document or the URL given in the &lt;base ...&gt;
      * element, depending on if and where a &ltbase ...&gt; appears on the document.
      *
-     * Always use this method to get full URLs from href's or similiar.
+     * Always use this method to get full URLs from href's or similar.
      *
      * Suppose the URL of the webpage is http://host.nowhere/. The head looks like this
      * <pre>
@@ -218,7 +218,7 @@ private:
     /**
      * Taken from khtml/misc/loader.cpp DOCLOAD_SECCHECK
      *
-     * Would be better on the public interface of KHTMLPart (or similiar)
+     * Would be better on the public interface of KHTMLPart (or similar)
      *
      * Checks if an embedded link like &lt;img src=&quot;...&quot; should be loaded
      */

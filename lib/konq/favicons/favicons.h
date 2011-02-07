@@ -104,7 +104,7 @@ signals: // D-Bus signals
      */
     void infoMessage(QString iconURL, QString msg);
     /**
-     * Emitted if an error occured while downloading the icon for the given host or url.
+     * Emitted if an error occurred while downloading the icon for the given host or url.
      * You can usually ignore this (e.g. web browsers don't need to do anything if
      * no favicon was found), but this signal can be useful in some cases, e.g.
      * to let keditbookmarks know that it should move on to the next bookmark.

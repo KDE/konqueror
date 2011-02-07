@@ -55,7 +55,7 @@ public:
 	 * The user data is loaded from  chfn(/etc/password) and then 
 	 * written back as well as to KDE's own(KEmailSettings).
 	 * The user won't notice this(assuming they change the KDE settings via 
-	 * this KCM) and will make KDE play nice with enviroments which uses 
+	 * this KCM) and will make KDE play nice with environments which use 
 	 * /etc/password.
 	 */
 	void load();

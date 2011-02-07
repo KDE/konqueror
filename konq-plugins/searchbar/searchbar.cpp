@@ -126,7 +126,7 @@ bool SearchBarPlugin::eventFilter(QObject *o, QEvent *e)
     if (qobject_cast<KMainWindow*>(o) && KParts::PartActivateEvent::test(e)) {
         KParts::PartActivateEvent* partEvent = static_cast<KParts::PartActivateEvent *>(e);
         KParts::ReadOnlyPart *part = qobject_cast<KParts::ReadOnlyPart *>(partEvent->part());
-        //kDebug() << "Embeded part changed to " << part;
+        //kDebug() << "Embedded part changed to " << part;
         if (part && (part != m_part)) {
             m_part = part;
 
@@ -415,7 +415,7 @@ void SearchBarPlugin::reloadConfiguration()
 
 void SearchBarPlugin::updateComboVisibility()
 {
-    // NOTE: We hide the search combobox if the embeded kpart is ReadWrite
+    // NOTE: We hide the search combobox if the embedded kpart is ReadWrite
     // because web browsers by their very nature are ReadOnly kparts...
     m_searchComboAction->setVisible((!qobject_cast<KParts::ReadWritePart *>(m_part) &&
                                      !m_searchComboAction->associatedWidgets().isEmpty()));

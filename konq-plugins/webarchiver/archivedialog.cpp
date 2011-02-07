@@ -218,7 +218,7 @@ void ArchiveDialog::archive() {
 //             info.tarName = uniqTarName( url.fileName(), 0 );
 
             // To able to append mimetype hinting suffixes to tarnames, for instance adding '.gif' to a
-            // webbug '87626734' adding the name to the url-to-tarname map is defered.
+            // webbug '87626734' adding the name to the url-to-tarname map is deferred.
             // This cannot be done with CSS because CSS may reference each other so when URLS
             // of the first CSS are changed all tarnames need to be there.
             //
@@ -708,7 +708,7 @@ void ArchiveDialog::obtainPartURLsLower(const DOM::Node &pNode, int level, Recur
         }
 
         // StyleSheet-URLs are compared against the internal stylesheets data structures
-        // Treatment is similiar to frames
+        // Treatment is similar to frames
     }
 
     if (! pNode.isNull()) {
@@ -770,7 +770,7 @@ void ArchiveDialog::parseStyleDeclaration(const KUrl &baseURL, DOM::CSSStyleDecl
 
 //             kDebug(90110) << "URL in CSS " << item << ":" << val << ";";
 
-            // TODO Would like to use khtml::parseURL to remove \r, \n and similiar
+            // TODO Would like to use khtml::parseURL to remove \r, \n and similar
             QString parsedURL = parseURL(href);
 
 //             kDebug(90110) << "found URL='" << val << "' extracted='" << parsedURL << "'";

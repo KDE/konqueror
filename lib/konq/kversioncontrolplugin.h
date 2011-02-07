@@ -137,7 +137,7 @@ public:
 
     /**
      * Returns the name of the file which stores
-     * the version control informations.
+     * the version controls information.
      * (e. g. .svn, .cvs, .git).
      */
     virtual QString fileName() const = 0;

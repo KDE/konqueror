@@ -107,7 +107,7 @@ extern "C" KDE_EXPORT int kdemain( int argc, char **argv )
                 "            #   'url' is an optional URL to open.\n\n").toLocal8Bit());
 
     puts(i18n("  kfmclient exec is deprecated and kept for compatibility with KDE 3. \n"
-                "            # See kioclient exec for more infos.\n").toLocal8Bit());
+                "            # See kioclient exec for more information.\n").toLocal8Bit());
 
 
     return 0;
