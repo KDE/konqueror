@@ -204,11 +204,15 @@ void SearchBarPlugin::previousSearchEntry()
     setIcon();
 }
 
+// Called when activating the combobox (Key_Return, or item in popup or in completionbox)
 void SearchBarPlugin::startSearch(const QString &search)
 {
-    if (m_urlEnterLock || search.isEmpty() || !m_part)
+    if (m_urlEnterLock || search.isEmpty() || !m_part) {
         return;
-    
+    }
+    m_timer->stop();
+    m_lastSearch = search;
+
     if (m_searchMode == FindInThisPage) {
         KParts::TextExtension* textExt = KParts::TextExtension::childObject(m_part);
         if (textExt)
@@ -429,21 +433,27 @@ void SearchBarPlugin::focusSearchbar()
 
 void SearchBarPlugin::searchTextChanged(const QString &text)
 {
-    m_searchCombo->clearSuggestions();
-
-    if (m_suggestionEnabled && m_searchMode != FindInThisPage &&
-            m_openSearchManager->isSuggestionAvailable() && !text.isEmpty()) {
-        if (m_timer->isActive()) {
-            m_timer->stop();
-        }
-
-        // 400 ms delay before requesting for suggestions, so we don't flood the provider with suggestion request
-        m_timer->start(400);
+    // Don't do anything if the user just activated the search for this text
+    // Popping up suggestions again would just lead to an annoying popup (#231213)
+    if (m_lastSearch == text) {
+        return;
     }
+
+    // Don't do anything if the user is still pressing on the mouse button
+    if (qApp->mouseButtons()) {
+        return;
+    }
+
+    // 400 ms delay before requesting for suggestions, so we don't flood the provider with suggestion request
+    m_timer->start(400);
 }
 
 void SearchBarPlugin::requestSuggestion() {
-    if (!m_searchCombo->lineEdit()->text().isEmpty()) {
+    m_searchCombo->clearSuggestions();
+
+    if (m_suggestionEnabled && m_searchMode != FindInThisPage &&
+        m_openSearchManager->isSuggestionAvailable() &&
+        !m_searchCombo->lineEdit()->text().isEmpty()) {
         m_openSearchManager->requestSuggestion(m_searchCombo->lineEdit()->text());
     }
 }
@@ -638,6 +648,10 @@ void SearchBarCombo::setSuggestionItems(const QStringList &suggestions)
 
 void SearchBarCombo::clearSuggestions()
 {
+    // Removing items can change the current item in completion box,
+    // which makes the lineEdit emit textEdited, and we would then
+    // re-enter this method, so block lineEdit signals.
+    const bool oldBlock = lineEdit()->blockSignals(true);
     int size = completionBox()->count();
     if (!m_suggestions.isEmpty() && size >= m_suggestions.count()) {
         for (int i = size - 1; i >= size - m_suggestions.size(); i--) {
@@ -645,6 +659,7 @@ void SearchBarCombo::clearSuggestions()
         }
     }
     m_suggestions.clear();
+    lineEdit()->blockSignals(oldBlock);
 }
 
 
