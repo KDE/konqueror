@@ -209,6 +209,7 @@ private:
     SearchModes m_searchMode;
     QString m_providerName;
     bool m_urlEnterLock;
+    QString m_lastSearch;
     QString m_currentEngine;
     QStringList m_searchEngines;
     QMap<QString, KUriFilterSearchProvider> m_searchProviders;
