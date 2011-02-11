@@ -278,11 +278,10 @@ bool WebPage::extension(Extension extension, const ExtensionOption *option, Exte
 
 bool WebPage::supportsExtension(Extension extension) const
 {
-    kDebug() << extension;
-
+    //kDebug() << extension << m_ignoreError;
     switch (extension) {
     case QWebPage::ErrorPageExtension:
-        return m_ignoreError;
+        return (!m_ignoreError);
     case QWebPage::ChooseMultipleFilesExtension:
         return true;
     default:
