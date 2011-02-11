@@ -206,6 +206,11 @@ void KCMUserAccount::save()
 {
 	KCModule::save(); /* KConfigXT */
 
+/*
+ * FIXME: there is apparently no way to set full name
+ * non-interactively as a normal user on FreeBSD.
+ */
+#ifndef Q_OS_FREEBSD
 	/* Save realname to /etc/passwd */
 	if ( _mw->leRealname->isModified() )
 	{
@@ -240,6 +245,7 @@ void KCMUserAccount::save()
 
 		delete proc;
 	}
+#endif
 
 	/* Save the image */
 	if( !_facePixmap.isNull() )
