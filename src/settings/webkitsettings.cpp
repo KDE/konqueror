@@ -794,6 +794,7 @@ void WebKitSettings::init( KConfig * config, bool reset )
   QWebSettings::globalSettings()->setFontFamily(QWebSettings::SansSerifFont, sansSerifFontName());
   QWebSettings::globalSettings()->setFontFamily(QWebSettings::CursiveFont, cursiveFontName());
   QWebSettings::globalSettings()->setFontFamily(QWebSettings::FantasyFont, fantasyFontName());
+  QWebSettings::globalSettings()->setAttribute(QWebSettings::WebGLEnabled, true);
 
   // These numbers should be calculated from real "logical" DPI/72, using a default dpi of 96 for now
   computeFontSizes(96);
