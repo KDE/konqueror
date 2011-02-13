@@ -6,50 +6,91 @@ Type=Service
 Actions=convToJPEG;convToPNG;convToGIF;convToTIF;
 X-KDE-Submenu=Convert To
 X-KDE-Submenu[be]=Канвертаваць у
+X-KDE-Submenu[ca]=Converteix a
+X-KDE-Submenu[cs]=Převést do
 X-KDE-Submenu[de]=Umwandeln in
 X-KDE-Submenu[fa]=تبدیل به
 X-KDE-Submenu[ga]=Tiontaigh Go
+X-KDE-Submenu[ia]=Converte a
 X-KDE-Submenu[kn]=ಇದಕ್ಕೆ ಪರಿವರ್ತಿಸು
 X-KDE-Submenu[lt]=Konvertuoti į
+X-KDE-Submenu[nl]=Converteren naar
+X-KDE-Submenu[pt]=Converter Para
+X-KDE-Submenu[sv]=Konvertera till
+X-KDE-Submenu[uk]=Перетворити на
 X-KDE-Submenu[vi]=Chuyển đổi sang
+X-KDE-Submenu[x-test]=xxConvert Toxx
 TryExec=convert
 
 [Desktop Action convToJPEG]
 Name=JPEG
 Name[be]=JPEG
+Name[ca]=JPEG
+Name[cs]=JPEG
 Name[de]=JPEG
 Name[ga]=JPEG
+Name[ia]=JPEG
 Name[kn]=JPEG
 Name[lt]=JPEG
+Name[nl]=JPEG
+Name[pt]=JPEG
+Name[sv]=JPEG
+Name[uk]=JPEG
 Name[vi]=JPEG
+Name[x-test]=xxJPEGxx
 Icon=image-jpeg
 Exec=convert %f "`echo %f | perl -pe 's/\\.[^.]+$//'`.jpg"
 
 [Desktop Action convToPNG]
 Name=PNG
 Name[be]=PNG
+Name[ca]=PNG
+Name[cs]=PNG
 Name[de]=PNG
 Name[ga]=PNG
+Name[ia]=PNG
 Name[kn]=PNG
 Name[lt]=PNG
+Name[nl]=PNG
+Name[pt]=PNG
+Name[sv]=PNG
+Name[uk]=PNG
 Name[vi]=PNG
+Name[x-test]=xxPNGxx
 Icon=image-png
 Exec=convert %f "`echo %f | perl -pe 's/\\.[^.]+$//'`.png"
 
 [Desktop Action convToTIF]
 Name=TIFF
+Name[ca]=TIFF
+Name[cs]=TIF
+Name[de]=TIFF
+Name[ia]=TIFF
 Name[lt]=TIFF
+Name[nl]=TIFF
+Name[pt]=TIFF
+Name[sv]=TIFF
+Name[uk]=TIFF
+Name[x-test]=xxTIFFxx
 Icon=image-tiff
 Exec=convert %f "`echo %f | perl -pe 's/\\.[^.]+$//'`.tif"
 
 [Desktop Action convToGIF]
 Name=GIF
 Name[be]=GIF
+Name[ca]=GIF
+Name[cs]=GIF
 Name[de]=GIF
 Name[ga]=GIF
+Name[ia]=GIF
 Name[kn]=GIF
 Name[lt]=GIF
+Name[nl]=GIF
+Name[pt]=GIF
+Name[sv]=GIF
+Name[uk]=GIF
 Name[vi]=GIF
+Name[x-test]=xxGIFxx
 Icon=image-gif
 Exec=convert %f "`echo %f | perl -pe 's/\\.[^.]+$//'`.gif"
 
