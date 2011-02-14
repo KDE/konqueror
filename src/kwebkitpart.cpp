@@ -584,7 +584,7 @@ void KWebKitPart::slotSaveFrameState(QWebFrame *frame, QWebHistoryItem *item)
 {
     Q_UNUSED (item);
     if (page() && frame == page()->mainFrame()) {
-        kDebug() << "Update history ?" << m_emitOpenUrlNotify;
+        //kDebug() << "Update history ?" << m_emitOpenUrlNotify;
         if (m_emitOpenUrlNotify)
             emit m_browserExtension->openUrlNotify();
 
