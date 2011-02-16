@@ -65,24 +65,24 @@ MyNetworkAccessManager::MyNetworkAccessManager(QObject *parent)
 {
 }
 
-static bool blockRequest(QNetworkAccessManager::Operation op, const QUrl& requestUrl)
+static bool allowRequest(QNetworkAccessManager::Operation op, const QUrl& requestUrl)
 {
-   if (op != QNetworkAccessManager::GetOperation)
-       return false;
+   if (op == QNetworkAccessManager::GetOperation)
+       return true;
 
    if (!WebKitSettings::self()->isAdFilterEnabled())
-       return false;
+       return true;
 
    if (!WebKitSettings::self()->isAdFiltered(requestUrl.toString()))
-       return false;
+       return true;
 
    //kDebug() << "*** REQUEST BLOCKED BY FILTER:" << WebKitSettings::self()->adFilteredBy(requestUrl.toString());
-   return true;
+   return false;
 }
 
 QNetworkReply *MyNetworkAccessManager::createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData)
 {
-    if (!blockRequest(op, req.url()))
+    if (allowRequest(op, req.url()))
         return KIO::AccessManager::createRequest(op, req, outgoingData);
 
     QWebFrame* frame = qobject_cast<QWebFrame*>(req.originatingObject());
@@ -116,6 +116,9 @@ static void hideBlockedElements(const QUrl& url, QWebElementCollection& collecti
 void MyNetworkAccessManager::slotFinished(bool ok)
 {
     if (!ok)
+        return;
+
+    if(!WebKitSettings::self()->isAdFilterEnabled())
         return;
 
     if(!WebKitSettings::self()->isHideAdsEnabled())
