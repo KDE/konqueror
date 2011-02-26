@@ -65,24 +65,24 @@ MyNetworkAccessManager::MyNetworkAccessManager(QObject *parent)
 {
 }
 
-static bool allowRequest(QNetworkAccessManager::Operation op, const QUrl& requestUrl)
+static bool blockRequest(QNetworkAccessManager::Operation op, const QUrl& requestUrl)
 {
-   if (op == QNetworkAccessManager::GetOperation)
-       return true;
+   if (op != QNetworkAccessManager::GetOperation)
+       return false;
 
    if (!WebKitSettings::self()->isAdFilterEnabled())
-       return true;
+       return false;
 
    if (!WebKitSettings::self()->isAdFiltered(requestUrl.toString()))
-       return true;
+       return false;
 
-   //kDebug() << "*** REQUEST BLOCKED BY FILTER:" << WebKitSettings::self()->adFilteredBy(requestUrl.toString());
-   return false;
+   kDebug() << "*** REQUEST BLOCKED: URL" << requestUrl << "RULE" << WebKitSettings::self()->adFilteredBy(requestUrl.toString());
+   return true;
 }
 
 QNetworkReply *MyNetworkAccessManager::createRequest(Operation op, const QNetworkRequest &req, QIODevice *outgoingData)
 {
-    if (allowRequest(op, req.url()))
+    if (!blockRequest(op, req.url()))
         return KIO::AccessManager::createRequest(op, req, outgoingData);
 
     QWebFrame* frame = qobject_cast<QWebFrame*>(req.originatingObject());
@@ -92,7 +92,6 @@ QNetworkReply *MyNetworkAccessManager::createRequest(Operation op, const QNetwor
         m_blockedRequests.insert(frame, req.url());
     }
 
-    //kDebug() << "*** BLOCKED UNAUTHORIZED REQUEST => " << req.url() << frame;
     return new NullNetworkReply(req, this);
 }
 
