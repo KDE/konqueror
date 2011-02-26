@@ -25,7 +25,6 @@
 #include "kwebkitpart.h"
 #include "webview.h"
 #include "webpage.h"
-#include "websslinfo.h"
 #include "settings/webkitsettings.h"
 
 #include <KDE/KAction>
