@@ -772,12 +772,6 @@ bool NewWindowPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequ
         if (!newWindowPart)
             return false;
 
-        QWidget* mainWidget = newWindowPart->widget() ? newWindowPart->widget()->window() : 0;
-        // TODO: Investigate whether we really want to allow modal dialogs!!
-        // See the "modal" section @ https://developer.mozilla.org/en/DOM/window.open
-        if (mainWidget && m_type == WebModalDialog)
-            mainWidget->setWindowModality(Qt::ApplicationModal);
-
         // Get the webview...
         KWebKitPart* webkitPart = qobject_cast<KWebKitPart*>(newWindowPart);
         WebView* webView = webkitPart ? qobject_cast<WebView*>(webkitPart->view()) : 0;
@@ -788,15 +782,12 @@ bool NewWindowPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequ
             this->deleteLater();
             return false;
         }
-
-        // Stop the page loading...
-        webView->triggerPageAction(QWebPage::Stop, true);
         // Reparent this page to the new webview to prevent memory leaks.
         setParent(webView);
-        // Set the new part as the one this page will use going forward.
-        setPart(webkitPart);
         // Replace the webpage of the new webview with this one. Nice trick...
         webView->setPage(this);
+        // Set the new part as the one this page will use going forward.
+        setPart(webkitPart);
         // Connect all the signals from this page to the slots in the new part.
         webkitPart->connectWebPageSignals(this);
         //Set the create new window flag to false...
