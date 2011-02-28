@@ -31,13 +31,11 @@ add_subdirectory( plasma )
 add_subdirectory( konq-plugins )
 
 if ( Q_WS_MAC )
-  add_subdirectory( konsole )
   add_subdirectory( kdepasswd )
 endif ( Q_WS_MAC )
 
 if ( Q_WS_X11 )
   add_subdirectory( nsplugins )
-  add_subdirectory( konsole )
   add_subdirectory( kdepasswd )
 endif ( Q_WS_X11 )
 macro_optional_add_subdirectory( doc )
