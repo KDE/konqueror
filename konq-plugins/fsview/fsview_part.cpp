@@ -28,7 +28,7 @@
 #include <kcomponentdata.h>
 #include <kfiledialog.h>
 #include <kfileitem.h>
-#include <kparts/genericfactory.h>
+#include <kpluginfactory.h>
 #include <kaboutdata.h>
 #include <klocale.h>
 #include <kaction.h>
@@ -46,16 +46,22 @@
 #include <konqmimedata.h>
 #include <ktoolinvocation.h>
 #include <kconfiggroup.h>
+#include <KDebug>
 
 #include <QApplication>
 
 #include "fsview_part.h"
 
 
-
-
-typedef KParts::GenericFactory<FSViewPart> FSViewPartFactory;
-K_EXPORT_PLUGIN( FSViewPartFactory )
+K_PLUGIN_FACTORY( FSViewPartFactory, registerPlugin<FSViewPart>(); )
+K_EXPORT_PLUGIN( FSViewPartFactory(KAboutData(
+               "fsview",
+               0,
+               ki18n("FSView"),
+               "0.1.1",
+               ki18n("Filesystem Utilization Viewer"),
+               KAboutData::License_GPL,
+               ki18n("(c) 2003-2005, Josef Weidendorfer"))) )
 
 
 // FSJob, for progress
@@ -90,19 +96,9 @@ void FSJob::progressSlot(int percent, int dirs, const QString& cDir)
 
 // FSViewPart
 
-KAboutData* FSViewPart::createAboutData()
-{
-  KAboutData* aboutData;
-  aboutData = new KAboutData("fsview", 0, ki18n("FSView"), "0.1.1",
-                             ki18n("Filesystem Utilization Viewer"),
-                             KAboutData::License_GPL,
-                             ki18n("(c) 2003-2005, Josef Weidendorfer"));
-  return aboutData;
-}
-
 FSViewPart::FSViewPart(QWidget *parentWidget,
                        QObject *parent,
-                       const QStringList& /* args */)
+                       const QList<QVariant>& /* args */)
     : KParts::ReadOnlyPart(parent)
 {
     // we need an instance
