@@ -24,7 +24,7 @@
 #include "konqmficon.h"
 
 #include <kdebug.h>
-#include <kgenericfactory.h>
+#include <kpluginfactory.h>
 #include <kiconloader.h>
 #include <kparts/statusbarextension.h>
 #include <kstandarddirs.h>

@@ -35,7 +35,7 @@ Boston, MA 02110-1301, USA.
 #include <kurl.h>
 #include <kimageio.h>
 #include <kdebug.h>
-#include <kgenericfactory.h>
+#include <kpluginfactory.h>
 #include <kio/netaccess.h>
 #include <kpushbutton.h>
 #include <ktoolinvocation.h>

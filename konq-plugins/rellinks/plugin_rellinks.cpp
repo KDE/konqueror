@@ -34,7 +34,7 @@
 #include <dom/html_document.h>
 #include <kaction.h>
 #include <kdebug.h>
-#include <kgenericfactory.h>
+#include <kpluginfactory.h>
 #include <khtml_part.h>
 #include <khtmlview.h>
 #include <kiconloader.h>

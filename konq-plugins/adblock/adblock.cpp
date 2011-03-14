@@ -24,7 +24,7 @@
 #include "adblockdialog.h"
 
 /* Kde related */
-#include <kgenericfactory.h>
+#include <kpluginfactory.h>
 #include <kdebug.h>
 #include <kiconloader.h>
 #include <klibloader.h>
