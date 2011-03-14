@@ -31,7 +31,7 @@ class PluginWebArchiver : public KParts::Plugin
 
  public:
   PluginWebArchiver( QObject* parent,
-                     const QStringList & );
+                     const QVariantList & );
   virtual ~PluginWebArchiver();
 
  public slots:

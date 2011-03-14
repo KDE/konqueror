@@ -42,16 +42,16 @@
 #include <khtmlview.h>
 #include <khtml_part.h>
 #include <kdebug.h>
-#include <kgenericfactory.h>
+#include <kpluginfactory.h>
 #include <kactioncollection.h>
 #include "plugin_webarchiver.h"
 #include "archivedialog.h"
 
-typedef KGenericFactory<PluginWebArchiver> PluginWebArchiverFactory;
+K_PLUGIN_FACTORY(PluginWebArchiverFactory, registerPlugin<PluginWebArchiver>();)
 K_EXPORT_PLUGIN( PluginWebArchiverFactory( "webarchiver" ) )
 
 PluginWebArchiver::PluginWebArchiver( QObject* parent,
-                                      const QStringList & )
+                                      const QVariantList & )
   : Plugin( parent )
 {
   QAction *a = actionCollection()->addAction( "archivepage");
