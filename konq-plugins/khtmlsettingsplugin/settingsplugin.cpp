@@ -27,7 +27,7 @@
 #include <kmessagebox.h>
 #include <kmenu.h>
 #include <kprotocolmanager.h>
-#include <kgenericfactory.h>
+#include <kpluginfactory.h>
 #include <kaboutdata.h>
 #include <ktoggleaction.h>
 #include <kactioncollection.h>

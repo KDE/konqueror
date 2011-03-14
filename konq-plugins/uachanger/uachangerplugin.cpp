@@ -39,7 +39,7 @@
 #include <kmenu.h>
 #include <KConfigGroup>
 #include <kparts/part.h>
-#include <kgenericfactory.h>
+#include <kpluginfactory.h>
 #include <kprotocolmanager.h>
 #include <kaboutdata.h>
 #include <kactioncollection.h>

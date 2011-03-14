@@ -27,7 +27,8 @@
 #include "pluginbase.h"
 
 #include <kdebug.h>
-#include <kgenericfactory.h>
+#include <kpluginfactory.h>
+#include <klocale.h>
 #include <kiconloader.h>
 #include <kparts/part.h>
 #include <kparts/statusbarextension.h>

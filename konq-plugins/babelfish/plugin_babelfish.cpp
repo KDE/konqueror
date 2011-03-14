@@ -45,10 +45,11 @@
 #include <kmessagebox.h>
 #include <klocale.h>
 #include <kconfig.h>
-#include <kgenericfactory.h>
+#include <kpluginfactory.h>
 #include <kaboutdata.h>
 #include <kicon.h>
 #include <KConfigGroup>
+#include <KDebug>
 
 static const KAboutData aboutdata("babelfish", 0, ki18n("Translate Web Page") , "1.0" );
 K_PLUGIN_FACTORY(BabelFishFactory, registerPlugin<PluginBabelFish>();)

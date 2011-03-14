@@ -7,7 +7,7 @@
 
 #include <kdebug.h>
 #include <klocale.h>
-#include <kgenericfactory.h>
+#include <kpluginfactory.h>
 #include <kactioncollection.h>
 #include <khtml_part.h>
 
