@@ -151,7 +151,7 @@ void MinitoolsPlugin::slotItemSelected() {
   if (m_minitoolsList.count() == 0)
      return;
   QString tmp = m_minitoolsList[id-1].second;
-  QString script = KUrl::decode_string(tmp.right(tmp.length() - 11)); // sizeof("javascript:")
+  QString script = QUrl::fromPercentEncoding(tmp.right(tmp.length() - 11).toLatin1()); // sizeof("javascript:")
   connect(this, SIGNAL( executeScript(const QString &) ),
           m_part, SLOT( executeScript(const QString &) ));
   emit executeScript(script);
