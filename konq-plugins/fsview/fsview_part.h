@@ -81,13 +81,12 @@ class FSViewPart : public KParts::ReadOnlyPart
   Q_PROPERTY( bool supportsUndo READ supportsUndo )
 public:
   FSViewPart(QWidget *parentWidget,
-             QObject *parent, const QStringList &args);
+             QObject *parent, const QList<QVariant> &args);
 
   virtual ~FSViewPart();
 
   bool supportsUndo() const { return false; }
 
-  static KAboutData* createAboutData();
   FSView* view() const { return _view; }
 
 public slots:
