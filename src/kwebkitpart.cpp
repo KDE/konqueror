@@ -558,16 +558,14 @@ void KWebKitPart::slotUrlChanged(const QUrl& url)
     if (url.scheme().compare(QL1S("error"), Qt::CaseInsensitive) == 0)
         return;
 
-    // Ignore if about:blank
+    const KUrl u (url);
+    setUrl(u);
+
+    // Do not update the location bar with about:blank
     if (url == sAboutBlankUrl)
         return;
 
-    // Ignore if request originated from this part and there was no redirection...
-    const KUrl u (url);
-    if (!m_emitOpenUrlNotify && u == this->url())
-        return;
-
-    setUrl(url);
+    kDebug() << "Setting location bar to" << u.prettyUrl();
     emit m_browserExtension->setLocationBarUrl(u.prettyUrl());
 }
 
