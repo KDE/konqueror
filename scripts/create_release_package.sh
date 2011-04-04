@@ -5,7 +5,7 @@ GITREPO=${2}
 OUTPUTDIR=${3}
 
 if [ -z ${VERSION} ] || [ -z {GITREPO} ]; then
-  echo "Usage: `basename ${0}` <VERSION> <GITREPO>"
+  echo "Usage: `basename ${0}` <VERSION> <GITREPO> [<OUTPUTDIR>]"
   exit 1
 fi
 
