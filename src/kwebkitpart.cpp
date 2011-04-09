@@ -350,9 +350,9 @@ bool KWebKitPart::openUrl(const KUrl &u)
 
     KParts::BrowserArguments bargs (m_browserExtension->browserArguments());
     KParts::OpenUrlArguments args (arguments());
+    const bool isAboutBlank = (sAboutBlankUrl == u);
 
-    if (sAboutBlankUrl != u && page()) {
-        kDebug() << "kwebkitpart-restore-state:" << args.metaData().contains(QL1S("kwebkitpart-restore-state"));
+    if (!isAboutBlank && page()) {
         // Check if this is a restore state request, i.e. a history navigation
         // or a session restore. If it is, fulfill the request using QWebHistory.
         if (args.metaData().contains(QL1S("kwebkitpart-restore-state"))) {
@@ -401,7 +401,9 @@ bool KWebKitPart::openUrl(const KUrl &u)
 
     // Set URL in KParts before emitting started; konq plugins rely on that.
     setUrl(u);
-    m_webView->loadUrl(u, args, bargs);
+    if (!isAboutBlank) {
+        m_webView.data()->loadUrl(u, args, bargs);
+    }
     return true;
 }
 
