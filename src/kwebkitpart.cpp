@@ -402,7 +402,7 @@ bool KWebKitPart::openUrl(const KUrl &u)
     // Set URL in KParts before emitting started; konq plugins rely on that.
     setUrl(u);
     if (!isAboutBlank) {
-        m_webView.data()->loadUrl(u, args, bargs);
+        m_webView->loadUrl(u, args, bargs);
     }
     return true;
 }

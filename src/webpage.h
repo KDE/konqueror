@@ -126,6 +126,7 @@ protected:
 
 protected Q_SLOTS:
     void slotRequestFinished(QNetworkReply* reply);
+    void slotUnsupportedContent(QNetworkReply* reply);
     virtual void slotGeometryChangeRequested(const QRect& rect);
 
 private:
