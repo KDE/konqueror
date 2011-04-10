@@ -175,6 +175,7 @@ protected Q_SLOTS:
     void slotMenuBarVisibilityChangeRequested(bool visible);
     void slotStatusBarVisibilityChangeRequested(bool visible);
     void slotToolBarVisibilityChangeRequested(bool visible);
+    void slotLoadFinished(bool);
 
 private:
     KParts::WindowArgs m_windowArgs;

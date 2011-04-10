@@ -772,6 +772,7 @@ NewWindowPage::NewWindowPage(WebWindowType type, KWebKitPart* part, QWidget* par
             this, SLOT(slotToolBarVisibilityChangeRequested(bool)));
     connect(this, SIGNAL(statusBarVisibilityChangeRequested(bool)),
             this, SLOT(slotStatusBarVisibilityChangeRequested(bool)));
+    connect(this, SIGNAL(loadFinished(bool)), this, SLOT(slotLoadFinished(bool)));
 }
 
 NewWindowPage::~NewWindowPage()
@@ -833,7 +834,7 @@ bool NewWindowPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequ
 
 void NewWindowPage::slotGeometryChangeRequested(const QRect & rect)
 {
-    //kDebug() << rect << "Creating new window ?" << m_createNewWindow;
+    //kDebug() << rect;
     if (!rect.isValid())
         return;
 
@@ -864,6 +865,50 @@ void NewWindowPage::slotToolBarVisibilityChangeRequested(bool visible)
 {
     //kDebug() << visible;
     m_windowArgs.setToolBarsVisible(visible);
+}
+
+void NewWindowPage::slotLoadFinished(bool ok)
+{
+    Q_UNUSED(ok)
+    //kDebug() << ok;
+    if (!m_createNewWindow)
+        return;
+
+    // Browser args...
+    KParts::BrowserArguments bargs;
+    bargs.frameName = mainFrame()->frameName();
+    if (m_type == WebModalDialog)
+        bargs.setForcesNewWindow(true);
+
+    // OpenUrl args...
+    KParts::OpenUrlArguments uargs;
+    uargs.setActionRequestedByUser(false);
+
+    // Window args...
+    KParts::WindowArgs wargs (m_windowArgs);
+
+    KParts::ReadOnlyPart* newWindowPart =0;
+    part()->browserExtension()->createNewWindow(KUrl(), uargs, bargs, wargs, &newWindowPart);
+
+    kDebug() << "Created new window" << newWindowPart;
+
+    // Get the webview...
+    KWebKitPart* webkitPart = newWindowPart ? qobject_cast<KWebKitPart*>(newWindowPart) : 0;
+    WebView* webView = webkitPart ? qobject_cast<WebView*>(webkitPart->view()) : 0;
+
+    if (webView) {
+        // Reparent this page to the new webview to prevent memory leaks.
+        setParent(webView);
+        // Replace the webpage of the new webview with this one. Nice trick...
+        webView->setPage(this);
+        // Set the new part as the one this page will use going forward.
+        setPart(webkitPart);
+        // Connect all the signals from this page to the slots in the new part.
+        webkitPart->connectWebPageSignals(this);
+    }
+
+    //Set the create new window flag to false...
+    m_createNewWindow = false;
 }
 
 /****************************** End NewWindowPage *************************************************/
