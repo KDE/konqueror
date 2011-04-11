@@ -33,6 +33,7 @@
 class KUrl;
 class KWebKitPart;
 class QWebHitTestResult;
+class QWebInspector;
 
 class WebView : public KWebView
 {
@@ -85,6 +86,7 @@ private:
     KActionCollection* m_actionCollection;
     QWebHitTestResult m_result;
     QWeakPointer<KWebKitPart> m_part;
+    QWebInspector* m_webInspector;
 };
 
 #endif // WEBVIEW_H
