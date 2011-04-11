@@ -327,7 +327,7 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& part
     if (showInspectorAction) {
         partActions.append(pageAction(QWebPage::InspectElement));
         if (!m_webInspector) {
-            m_webInspector = new WebInspector;
+            m_webInspector = new QWebInspector;
             m_webInspector->setPage(page());
             connect(page(), SIGNAL(destroyed()), m_webInspector, SLOT(deleteLater()));
         }
