@@ -13,6 +13,7 @@
 // Qt
 #include <QtGui/QGroupBox>
 #include <QtGui/QFormLayout>
+#include <QtGui/QVBoxLayout>
 #include <QtGui/QLabel>
 #include <QtGui/QPushButton>
 #include <QtDBus/QDBusMessage>
@@ -27,9 +28,9 @@
 #include <kapplication.h>
 
 // Local
-#include "khtml_settings.h"
 #include <KPluginFactory>
 #include <KPluginLoader>
+
 
 K_PLUGIN_FACTORY_DECLARATION(KcmKonqHtmlFactory)
 
@@ -122,11 +123,9 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
 
     m_pAutoRedirectCheckBox = new QCheckBox( i18n( "Allow automatic delayed &reloading/redirecting"), this );
     m_pAutoRedirectCheckBox->setWhatsThis( i18n( "Some web pages request an automatic reload or redirection after"
-			    " a certain period of time. By unchecking this box Konqueror will ignore these requests." ) );
+                            " a certain period of time. By unchecking this box Konqueror will ignore these requests." ) );
     connect(m_pAutoRedirectCheckBox, SIGNAL(toggled(bool)), SLOT(changed()));
     fl->addRow( m_pAutoRedirectCheckBox );
-
-    lay->addWidget( bgMisc);
 
     // Checkbox to enable/disable Access Key activation through the Ctrl key.
     m_pAccessKeys = new QCheckBox( i18n( "Enable Access Ke&y activation with Ctrl key"), this );
@@ -134,6 +133,12 @@ KMiscHTMLOptions::KMiscHTMLOptions(QWidget *parent, const QVariantList&)
     connect(m_pAccessKeys, SIGNAL(toggled(bool)), SLOT(changed()));
     fl->addRow( m_pAccessKeys);
 
+    m_pDoNotTrack = new QCheckBox (i18n("Send the DNT header to tell web sites you do not want to be tracked"), this );
+    m_pDoNotTrack->setWhatsThis(i18n("Check this box if you want to inform a web site that you do not want your web browsing habits tracked."));
+    connect(m_pDoNotTrack, SIGNAL(toggled(bool)), SLOT(changed()));
+    fl->addRow(m_pDoNotTrack);
+
+    lay->addWidget( bgMisc);
     lay->addStretch(5);
 
     emit changed(false);
@@ -145,38 +150,31 @@ KMiscHTMLOptions::~KMiscHTMLOptions()
 
 void KMiscHTMLOptions::load()
 {
-    KConfigGroup khtmlrc(KSharedConfig::openConfig("khtmlrc", KConfig::NoGlobals), "");
-    KConfigGroup cg(m_pConfig, "");
-#define SET_GROUP(x) cg = KConfigGroup(m_pConfig, x); khtmlrc = KConfigGroup(KSharedConfig::openConfig("khtmlrc", KConfig::NoGlobals),x)
-#define READ_BOOL(x,y) cg.readEntry(x, khtmlrc.readEntry(x, y))
-#define READ_ENTRY(x) cg.readEntry(x, khtmlrc.readEntry(x))
+    KSharedConfigPtr khtmlrcConfig = KSharedConfig::openConfig("khtmlrc", KConfig::NoGlobals);
 
+    // Read the configuration from konquerorrc with khtmlrc as fall back.
+    KConfigGroup cg(m_pConfig, "MainView Settings");
+    KConfigGroup cg2(khtmlrcConfig , "MainView Settings");
+    m_pOpenMiddleClick->setChecked(cg.readEntry("OpenMiddleClick", cg2.readEntry("OpenMiddleClick", true)));
+    m_pBackRightClick->setChecked(cg.readEntry("BackRightClick", cg2.readEntry("BackRightClick", false)));
 
-    // *** load ***
-    SET_GROUP( "MainView Settings" );
-    bool bOpenMiddleClick = READ_BOOL( "OpenMiddleClick", true );
-    bool bBackRightClick = READ_BOOL( "BackRightClick", false );
-    SET_GROUP( "HTML Settings" );
-    bool changeCursor = READ_BOOL("ChangeCursor", KDE_DEFAULT_CHANGECURSOR);
-    bool bAutoRedirect = cg.readEntry( "AutoDelayedActions", true );
-
-    // *** apply to GUI ***
-    m_cbCursor->setChecked( changeCursor );
-    m_pAutoRedirectCheckBox->setChecked( bAutoRedirect );
-    m_pOpenMiddleClick->setChecked( bOpenMiddleClick );
-    m_pBackRightClick->setChecked( bBackRightClick );
-
+    cg = KConfigGroup(m_pConfig, "HTML Settings");
+    cg2 = KConfigGroup(khtmlrcConfig, "HTML Settings");
+    m_cbCursor->setChecked(cg.readEntry("ChangeCursor", cg2.readEntry("ChangeCursor", KDE_DEFAULT_CHANGECURSOR)));
+    m_pAutoRedirectCheckBox->setChecked(cg.readEntry("AutoDelayedActions", true));
     m_pFormCompletionCheckBox->setChecked( cg.readEntry( "FormCompletion", true ) );
     m_pMaxFormCompletionItems->setValue( cg.readEntry( "MaxFormCompletionItems", 10 ) );
     m_pMaxFormCompletionItems->setEnabled( m_pFormCompletionCheckBox->isChecked() );
 
-    // Reads in the value of m_accessKeysEnabled by calling accessKeysEnabled() in khtml_settings.cpp
-    KHTMLSettings settings;
-    m_pAccessKeys->setChecked( settings.accessKeysEnabled() );
+    cg2 = KConfigGroup(khtmlrcConfig, "Access Keys");
+    m_pAccessKeys->setChecked(cg2.readEntry("Enabled", true));
 
-    KConfigGroup config(KSharedConfig::openConfig("kbookmarkrc", KConfig::NoGlobals), "Bookmarks");
-    m_pAdvancedAddBookmarkCheckBox->setChecked( config.readEntry("AdvancedAddBookmarkDialog", false) );
-    m_pOnlyMarkedBookmarksCheckBox->setChecked( config.readEntry("FilteredToolbar", false) );
+    cg = KConfigGroup(KSharedConfig::openConfig("kbookmarkrc", KConfig::NoGlobals), "Bookmarks");
+    m_pAdvancedAddBookmarkCheckBox->setChecked( cg.readEntry("AdvancedAddBookmarkDialog", false) );
+    m_pOnlyMarkedBookmarksCheckBox->setChecked( cg.readEntry("FilteredToolbar", false) );
+
+    cg = KConfigGroup(KSharedConfig::openConfig("kioslaverc", KConfig::NoGlobals), QString());
+    m_pDoNotTrack->setChecked(cg.readEntry("DoNotTrack", false));
 }
 
 void KMiscHTMLOptions::defaults()
@@ -187,6 +185,7 @@ void KMiscHTMLOptions::defaults()
     m_pConfig->setReadDefaults(old);
     m_pAdvancedAddBookmarkCheckBox->setChecked(false);
     m_pOnlyMarkedBookmarksCheckBox->setChecked(false);
+    m_pDoNotTrack->setChecked(false);
 }
 
 void KMiscHTMLOptions::save()
@@ -203,22 +202,24 @@ void KMiscHTMLOptions::save()
     cg.sync();
 
     // Writes the value of m_pAccessKeys into khtmlrc to affect all applications using KHTML
-    KConfig _khtmlconfig("khtmlrc", KConfig::NoGlobals);
-    KConfigGroup khtmlconfig(&_khtmlconfig, "Access Keys");
-    khtmlconfig.writeEntry( "Enabled", m_pAccessKeys->isChecked() );
-    khtmlconfig.sync();
+    cg = KConfigGroup(KSharedConfig::openConfig("khtmlrc", KConfig::NoGlobals), "Access Keys");
+    cg.writeEntry( "Enabled", m_pAccessKeys->isChecked() );
+    cg.sync();
 
-    KConfigGroup config(KSharedConfig::openConfig("kbookmarkrc", KConfig::NoGlobals), "Bookmarks");
-    config.writeEntry("AdvancedAddBookmarkDialog", m_pAdvancedAddBookmarkCheckBox->isChecked());
-    config.writeEntry("FilteredToolbar", m_pOnlyMarkedBookmarksCheckBox->isChecked());
-    config.sync();
+    cg = KConfigGroup(KSharedConfig::openConfig("kbookmarkrc", KConfig::NoGlobals), "Bookmarks");
+    cg.writeEntry("AdvancedAddBookmarkDialog", m_pAdvancedAddBookmarkCheckBox->isChecked());
+    cg.writeEntry("FilteredToolbar", m_pOnlyMarkedBookmarksCheckBox->isChecked());
+    cg.sync();
+
+    cg = KConfigGroup(KSharedConfig::openConfig("kioslaverc", KConfig::NoGlobals), QString());
+    cg.writeEntry("DoNotTrack", m_pDoNotTrack->isChecked());
+    cg.sync();
+
     // Send signal to all konqueror instances
-    QDBusMessage message =
-        QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "reparseConfiguration");
-    QDBusConnection::sessionBus().send(message);
-
-    message = QDBusMessage::createSignal("/KBookmarkManager/konqueror", "org.kde.KIO.KBookmarkManager", "bookmarkConfigChanged" );
-    QDBusConnection::sessionBus().send(message);
+    QDBusConnection sessionBus (QDBusConnection::sessionBus());
+    sessionBus.send(QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "reparseConfiguration"));
+    sessionBus.send(QDBusMessage::createSignal("/KBookmarkManager/konqueror", "org.kde.KIO.KBookmarkManager", "bookmarkConfigChanged"));
+    sessionBus.send(QDBusMessage::createSignal("/KIO/Scheduler", "org.kde.KIO.Scheduler", "reparseSlaveConfiguration"));
 
     emit changed(false);
 }

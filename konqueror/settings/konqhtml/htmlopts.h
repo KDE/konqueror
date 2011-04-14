@@ -50,6 +50,7 @@ private:
     QCheckBox* m_pAdvancedAddBookmarkCheckBox;
     QCheckBox* m_pOnlyMarkedBookmarksCheckBox;
     QCheckBox* m_pAccessKeys;
+    QCheckBox* m_pDoNotTrack;
     KIntNumInput* m_pMaxFormCompletionItems;
 };
 
