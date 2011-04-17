@@ -55,6 +55,7 @@
 #include <KDE/KFileItem>
 #include <KParts/StatusBarExtension>
 
+#include <QtCore/QUrl>
 #include <QtCore/QRect>
 #include <QtCore/QFile>
 #include <QtCore/QTextCodec>
@@ -694,29 +695,21 @@ void KWebKitPart::slotLinkHovered(const QString &link, const QString &title, con
                 message += i18n(" (In new window)");
         } else {
             message = link;
-            QWebElementCollection collection;
             if (page()) {
-                collection = page()->mainFrame()->documentElement().findAll(QL1S("a[href]"));
-                QListIterator<QWebFrame *> framesIt (page()->mainFrame()->childFrames());
-                while (framesIt.hasNext())
-                    collection += framesIt.next()->documentElement().findAll(QL1S("a[href]"));
-            }
-            Q_FOREACH(const QWebElement &element, collection) {
-                //kDebug() << "link:" << link << "href" << element.attribute(QL1S("href"));
-                if (element.hasAttribute(QL1S("target")) &&
-                    link.contains(element.attribute(QL1S("href")), Qt::CaseInsensitive)) {
-                    const QString target = element.attribute(QL1S("target")).toLower().simplified();
-                    if (target == QL1S("top") || target == QL1S("_blank")) {
+                QWebFrame* frame = page()->currentFrame();
+                if (frame) {
+                    const QString query = QL1S("a[href*=\"") + link + QL1S("\"]");
+                    const QWebElement element = frame->findFirstElement(query);
+                    const QString target = element.attribute(QL1S("target"));
+                    if (target.compare(QL1S("_blank"), Qt::CaseInsensitive) == 0 ||
+                        target.compare(QL1S("top"), Qt::CaseInsensitive) == 0) {
                         message += i18n(" (In new window)");
-                        break;
-                    }
-                    else if (target == QL1S("_parent")) {
+                    } else if (target.compare(QL1S("_parent"), Qt::CaseInsensitive) == 0) {
                         message += i18n(" (In parent frame)");
-                        break;
                     }
                 }
             }
-
+            kDebug() << "link:" << link << "title:" << title << "content:" << content;
             KFileItem item (linkUrl, QString(), KFileItem::Unknown);
             emit m_browserExtension->mouseOverInfo(item);
         }
