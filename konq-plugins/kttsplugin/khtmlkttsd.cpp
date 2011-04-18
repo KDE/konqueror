@@ -94,9 +94,9 @@ void KHTMLPluginKTTSD::slotReadOut()
 }
 
 K_PLUGIN_FACTORY(KHTMLPluginKTTSDFactory,
-                 const KService::List offers = KServiceTypeTrader::self()->query("DBUS/Text-to-Speech", "Name == 'KTTSD'");
+                 const KService::Ptr kttsd = KService::serviceByDesktopName("kttsd");
                  // If KTTSD is not installed, don't create the plugin at all.
-                 if (!offers.isEmpty()) {
+                 if (kttsd) {
                      registerPlugin<KHTMLPluginKTTSD>();
                  }
     )
