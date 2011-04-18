@@ -526,7 +526,7 @@ void WebPage::slotUnsupportedContent(QNetworkReply* reply)
 
 #if KDE_IS_VERSION(4,6,41)
     KIO::AccessManager::putReplyOnHold(reply);
-    if (KWebPage::handleReply(reply, true, &mimeType, &metaData)) {
+    if (KWebPage::handleReply(reply, &mimeType, &metaData)) {
         return;
     }
 #else
