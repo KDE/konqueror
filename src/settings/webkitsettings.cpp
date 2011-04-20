@@ -373,10 +373,8 @@ void WebKitSettings::init()
   if (cssCg.exists() && cssCg.readEntry("Use", QString()) == QLatin1String("user"))
     QWebSettings::globalSettings()->setUserStyleSheetUrl(QUrl(cssCg.readEntry("SheetName", QString())));
 
-  if (d->nonPasswordStorableSites) {
-    delete d->nonPasswordStorableSites;
-    d->nonPasswordStorableSites = 0;
-  }
+  delete d->nonPasswordStorableSites;
+  d->nonPasswordStorableSites = 0;
 }
 
 void WebKitSettings::init( KConfig * config, bool reset )
