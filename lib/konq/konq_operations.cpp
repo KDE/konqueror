@@ -140,12 +140,17 @@ void KonqOperations::doPaste( QWidget * parent, const KUrl & destUrl, const QPoi
     KIO::Job *job = KIO::pasteClipboard( destUrl, parent, move );
     if (job) {
         KonqOperations * op = new KonqOperations( parent );
-        KIO::CopyJob * copyJob = static_cast<KIO::CopyJob *>(job);
         KIOPasteInfo * pi = new KIOPasteInfo;
         pi->mousePos = pos;
         op->setPasteInfo( pi );
-        op->setOperation( job, move ? MOVE : COPY, copyJob->destUrl() );
-        KIO::FileUndoManager::self()->recordJob( move ? KIO::FileUndoManager::Move : KIO::FileUndoManager::Copy, KUrl::List(), destUrl, job );
+        KIO::CopyJob * copyJob = qobject_cast<KIO::CopyJob *>(job);
+        if (copyJob) {
+            op->setOperation( job, move ? MOVE : COPY, copyJob->destUrl() );
+            KIO::FileUndoManager::self()->recordJob( move ? KIO::FileUndoManager::Move : KIO::FileUndoManager::Copy, KUrl::List(), destUrl, job );
+        } else if (KIO::SimpleJob* simpleJob = qobject_cast<KIO::SimpleJob *>(job)) {
+            op->setOperation(job, PUT, simpleJob->url());
+            KIO::FileUndoManager::self()->recordJob(KIO::FileUndoManager::Put, KUrl::List(), simpleJob->url(), job);
+        }
     }
 }
 
@@ -328,13 +333,12 @@ KonqOperations *KonqOperations::doDrop( const KFileItem & destItem, const KUrl &
     {
         //kDebug(1203) << "Pasting to " << dest.url();
         KonqOperations * op = new KonqOperations(parent);
-        KIO::Job* job = KIO::pasteMimeData( ev->mimeData(), dest,
-                                                  i18n( "File name for dropped contents:" ),
-                                                  parent );
-        if ( job ) // 0 if canceled by user
-        {
-            op->setOperation( job, COPY, dest );
-            KIO::FileUndoManager::self()->recordJob( KIO::FileUndoManager::Copy, KUrl::List(), dest, job );
+        KIO::Job* job = KIO::pasteMimeData(ev->mimeData(), dest,
+                                           i18n( "File name for dropped contents:" ),
+                                           parent);
+        if (KIO::SimpleJob* simpleJob = qobject_cast<KIO::SimpleJob *>(job)) {
+            op->setOperation(job, PUT, simpleJob->url());
+            KIO::FileUndoManager::self()->recordJob(KIO::FileUndoManager::Put, KUrl::List(), simpleJob->url(), simpleJob);
         }
         ev->acceptProposedAction();
         return op;

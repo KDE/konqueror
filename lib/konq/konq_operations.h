@@ -37,7 +37,7 @@ class KFileItemListProperties;
 
 /**
  * Implements file operations (move,del,trash,paste,copy,move,link...)
- * for konqueror and kdesktop whatever the view mode is (icon, tree, ...)
+ * for file managers
  */
 class LIBKONQ_EXPORT KonqOperations : public QObject
 {
@@ -53,7 +53,7 @@ public:
      */
     static void editMimeType( const QString & mimeType, QWidget* parent );
 
-    enum Operation { TRASH, DEL, COPY, MOVE, LINK, EMPTYTRASH, STAT, MKDIR, RESTORE, UNKNOWN };
+    enum Operation { TRASH, DEL, COPY, MOVE, LINK, EMPTYTRASH, STAT, MKDIR, RESTORE, UNKNOWN, PUT };
     /**
      * Delete the @p selectedUrls if possible.
      *
