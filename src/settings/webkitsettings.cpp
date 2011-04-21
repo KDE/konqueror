@@ -396,9 +396,8 @@ void WebKitSettings::init( KConfig * config, bool reset )
 
   KConfigGroup cgFilter( config, "Filter Settings" );
 
-  if (reset || cgFilter.exists() )
+  if ((reset || cgFilter.exists()) && (d->m_adFilterEnabled = cgFilter.readEntry("Enabled", false)))
   {
-      d->m_adFilterEnabled = cgFilter.readEntry("Enabled", false);
       d->m_hideAdsEnabled = cgFilter.readEntry("Shrink", false);
 
       d->adBlackList.clear();
