@@ -73,12 +73,16 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
     // FIXME: Need a better way to handle request filtering than to inherit
     // KIO::Integration::AccessManager...
     KDEPrivate::MyNetworkAccessManager *manager = new KDEPrivate::MyNetworkAccessManager(this);
-    if (parent && parent->window())
+    QWidget* window = parent ? parent->window() : 0;
+    if (window) {
 #if KDE_IS_VERSION(4,6,41)
-        manager->setWindow(parent->window());
+        manager->setWindow(window);
 #else
-        manager->setCookieJarWindowId(parent->window()->winId());
+        manager->setCookieJarWindowId(window->winId());
 #endif
+    }
+
+    manager->setCache(0);
     setNetworkAccessManager(manager);
 
     setSessionMetaData(QL1S("ssl_activate_warnings"), QL1S("TRUE"));
@@ -359,7 +363,7 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
             break;
         case QWebPage::NavigationTypeBackOrForward:
             // NOTE: This is necessary because restoring QtWebKit's history causes
-            // it to navigate to the last item. Unfortunately that causes
+            // it to automatically navigate to the last item.
             if (m_ignoreHistoryNavigationRequest) {
                 m_ignoreHistoryNavigationRequest = false;
                 //kDebug() << "Rejected history navigation to" << history()->currentItem().url();
