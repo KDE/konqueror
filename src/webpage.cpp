@@ -74,7 +74,11 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
     // KIO::Integration::AccessManager...
     KDEPrivate::MyNetworkAccessManager *manager = new KDEPrivate::MyNetworkAccessManager(this);
     if (parent && parent->window())
+#if KDE_IS_VERSION(4,6,41)
+        manager->setWindow(parent->window());
+#else
         manager->setCookieJarWindowId(parent->window()->winId());
+#endif
     setNetworkAccessManager(manager);
 
     setSessionMetaData(QL1S("ssl_activate_warnings"), QL1S("TRUE"));
@@ -543,8 +547,6 @@ void WebPage::slotUnsupportedContent(QNetworkReply* reply)
         emit part()->browserExtension()->openUrlRequest(reply->url(), args, KParts::BrowserArguments());
         return;
     }
-
-    KIO::Scheduler::removeSlaveOnHold();
 }
 
 void WebPage::slotGeometryChangeRequested(const QRect & rect)
