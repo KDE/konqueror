@@ -33,9 +33,7 @@ OpenSearchEngine::OpenSearchEngine(QObject *)
 
 OpenSearchEngine::~OpenSearchEngine()
 {
-    if (m_scriptEngine) {
-        delete m_scriptEngine;
-    }
+    delete m_scriptEngine;
 }
 
 QString OpenSearchEngine::parseTemplate(const QString &searchTerm, const QString &searchTemplate)
