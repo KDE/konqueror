@@ -104,8 +104,7 @@ KfindDlg::~KfindDlg()
 {
   stopSearch();
    
-  if (dirwatch)
-    delete dirwatch;
+  delete dirwatch;
 }
 
 void KfindDlg::finishAndClose()
@@ -142,8 +141,7 @@ void KfindDlg::startSearch()
   enableButton(User2, true); // Enable "Stop"
   enableButton(User1, false); // Disable "Save As..."
 
-  if(dirwatch!=NULL)
-    delete dirwatch;
+  delete dirwatch;
   dirwatch=new KDirWatch();
   connect(dirwatch, SIGNAL(created(const QString&)), this, SLOT(slotNewItems(const QString&)));
   connect(dirwatch, SIGNAL(deleted(const QString&)), this, SLOT(slotDeleteItem(const QString&)));
