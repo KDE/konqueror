@@ -174,7 +174,7 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
     // Set the web view as the the focus object...
     mainWidget->setFocusProxy(m_webView);
 
-    setXMLFile("kwebkitpart.rc");
+    setXMLFile(QL1S("kwebkitpart.rc"));
 
     // Init the QAction we are going to use...
     initActions();
@@ -351,9 +351,8 @@ bool KWebKitPart::openUrl(const KUrl &u)
 
     KParts::BrowserArguments bargs (m_browserExtension->browserArguments());
     KParts::OpenUrlArguments args (arguments());
-    const bool isAboutBlank = (sAboutBlankUrl == u);
 
-    if (!isAboutBlank && page()) {
+    if ((sAboutBlankUrl != u) && page()) {
         // Check if this is a restore state request, i.e. a history navigation
         // or a session restore. If it is, fulfill the request using QWebHistory.
         if (args.metaData().contains(QL1S("kwebkitpart-restore-state"))) {
@@ -402,9 +401,7 @@ bool KWebKitPart::openUrl(const KUrl &u)
 
     // Set URL in KParts before emitting started; konq plugins rely on that.
     setUrl(u);
-    if (!isAboutBlank) {
-        m_webView->loadUrl(u, args, bargs);
-    }
+    m_webView->loadUrl(u, args, bargs);
     return true;
 }
 
@@ -709,7 +706,6 @@ void KWebKitPart::slotLinkHovered(const QString &link, const QString &title, con
                     }
                 }
             }
-            kDebug() << "link:" << link << "title:" << title << "content:" << content;
             KFileItem item (linkUrl, QString(), KFileItem::Unknown);
             emit m_browserExtension->mouseOverInfo(item);
         }
