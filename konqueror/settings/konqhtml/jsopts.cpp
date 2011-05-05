@@ -211,10 +211,10 @@ void JSDomainListView::setupPolicyDlg(PushButton trigger,PolicyDialog &pDlg,
   QString caption;
   switch (trigger) {
     case AddButton:
-      caption = i18n( "New JavaScript Policy" );
+      caption = i18nc( "@title:window", "New JavaScript Policy" );
       jspol->setFeatureEnabled(!options->enableJavaScriptGloballyCB->isChecked());
       break;
-    case ChangeButton: caption = i18n( "Change JavaScript Policy" ); break;
+    case ChangeButton: caption = i18nc( "@title:window", "Change JavaScript Policy" ); break;
     default: ; // inhibit gcc warning
   }/*end switch*/
   pDlg.setCaption(caption);

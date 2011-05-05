@@ -57,7 +57,7 @@ void KHTMLPluginKTTSD::slotReadOut()
     {
         QString error;
         if (KToolInvocation::startServiceByDesktopName("kttsd", QStringList(), &error)) {
-            KMessageBox::error(part->widget(), error, i18n("Starting Jovie Text-to-Speech Service Failed") );
+            KMessageBox::error(part->widget(), error, i18nc("@title:window", "Starting Jovie Text-to-Speech Service Failed") );
             return;
         }
     }
@@ -89,7 +89,7 @@ void KHTMLPluginKTTSD::slotReadOut()
     reply = kttsd.say(query, KSpeech::soNone);
     if ( !reply.isValid()) {
         KMessageBox::sorry(part->widget(), i18n("The D-Bus call say() failed."),
-                            i18n("D-Bus Call Failed"));
+                            i18nc("@title:window", "D-Bus Call Failed"));
     }
 }
 

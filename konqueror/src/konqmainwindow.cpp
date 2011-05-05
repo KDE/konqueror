@@ -1611,7 +1611,7 @@ void KonqMainWindow::slotReload( KonqView* reloadView, bool softReload )
     if (reloadView->isModified()) {
         if (KMessageBox::warningContinueCancel( this,
            i18n("This page contains changes that have not been submitted.\nReloading the page will discard these changes."),
-           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"view-refresh"), KStandardGuiItem::cancel(), "discardchangesreload") != KMessageBox::Continue )
+           i18nc("@title:window", "Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"view-refresh"), KStandardGuiItem::cancel(), "discardchangesreload") != KMessageBox::Continue )
             return;
     }
 
@@ -2333,7 +2333,7 @@ void KonqMainWindow::breakOffTab(int tabIndex)
         if (KMessageBox::warningContinueCancel(
                 this,
                 i18n("This tab contains changes that have not been submitted.\nDetaching the tab will discard these changes."),
-                i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-detach"), KStandardGuiItem::cancel(), "discardchangesdetach") != KMessageBox::Continue) {
+                i18nc("@title:window", "Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-detach"), KStandardGuiItem::cancel(), "discardchangesdetach") != KMessageBox::Continue) {
             m_pViewManager->showTab(originalTabIndex);
             return;
         }
@@ -2411,7 +2411,7 @@ void KonqMainWindow::slotRemoveView()
     if (m_currentView->isModified()) {
       if ( KMessageBox::warningContinueCancel( this,
            i18n("This view contains changes that have not been submitted.\nClosing the view will discard these changes."),
-           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"view-close"), KStandardGuiItem::cancel(), "discardchangesclose") != KMessageBox::Continue )
+           i18nc("@title:window", "Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"view-close"), KStandardGuiItem::cancel(), "discardchangesclose") != KMessageBox::Continue )
         return;
     }
 
@@ -2441,7 +2441,7 @@ void KonqMainWindow::removeTab(int tabIndex)
         if ( KMessageBox::warningContinueCancel(
                  this,
                  i18n("This tab contains changes that have not been submitted.\nClosing the tab will discard these changes."),
-                 i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-close"), KStandardGuiItem::cancel(), "discardchangesclose") != KMessageBox::Continue) {
+                 i18nc("@title:window", "Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-close"), KStandardGuiItem::cancel(), "discardchangesclose") != KMessageBox::Continue) {
             m_pViewManager->showTab(originalTabIndex);
             return;
         }
@@ -2467,7 +2467,7 @@ void KonqMainWindow::removeOtherTabs(int tabToKeep)
     if (KMessageBox::warningContinueCancel(
             this,
             i18n("Do you really want to close all other tabs?"),
-            i18n("Close Other Tabs Confirmation"), KGuiItem(i18n("Close &Other Tabs"),"tab-close-other"),
+            i18nc("@title:window", "Close Other Tabs Confirmation"), KGuiItem(i18n("Close &Other Tabs"),"tab-close-other"),
             KStandardGuiItem::cancel(), "CloseOtherTabConfirm") != KMessageBox::Continue)
         return;
 
@@ -2483,7 +2483,7 @@ void KonqMainWindow::removeOtherTabs(int tabToKeep)
             if (KMessageBox::warningContinueCancel(
                     this,
                     i18n("This tab contains changes that have not been submitted.\nClosing other tabs will discard these changes."),
-                    i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-close"),
+                    i18nc("@title:window", "Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-close"),
                     KStandardGuiItem::cancel(), "discardchangescloseother") != KMessageBox::Continue) {
                 m_pViewManager->showTab(originalTabIndex);
                 return;
@@ -2505,7 +2505,7 @@ void KonqMainWindow::slotReloadAllTabs()
             m_pViewManager->showTab(tabIndex);
             if (KMessageBox::warningContinueCancel(this,
                    i18n("This tab contains changes that have not been submitted.\nReloading all tabs will discard these changes."),
-                    i18n("Discard Changes?"),
+                    i18nc("@title:window", "Discard Changes?"),
                     KGuiItem(i18n("&Discard Changes"), "view-refresh"),
                     KStandardGuiItem::cancel(), "discardchangesreload") != KMessageBox::Continue ) {
                 m_pViewManager->showTab(originalTabIndex);
@@ -2547,7 +2547,7 @@ bool KonqMainWindow::askForTarget(const KLocalizedString& text, KUrl& url)
    const KUrl initialUrl = (viewCount()==2) ? otherView(m_currentView)->url() : m_currentView->url();
    QString label = text.subs( m_currentView->url().pathOrUrl() ).toString();
    KUrlRequesterDialog dlg(initialUrl.pathOrUrl(), label, this);
-   dlg.setCaption(i18n("Enter Target"));
+   dlg.setCaption(i18nc("@title:window", "Enter Target"));
    dlg.urlRequester()->setMode( KFile::File | KFile::ExistingOnly | KFile::Directory );
    if (dlg.exec())
    {
@@ -4357,7 +4357,7 @@ void KonqExtendedBookmarkOwner::openFolderinTabs(const KBookmarkGroup &grp)
     if(KMessageBox::questionYesNo(m_pKonqMainWindow,
 				  i18n("You have requested to open more than 20 bookmarks in tabs. "
                                        "This might take a while. Continue?"),
-				  i18n("Open bookmarks folder in new tabs")) != KMessageBox::Yes)
+				  i18nc("@title:window", "Open bookmarks folder in new tabs")) != KMessageBox::Yes)
       return;
   }
 
@@ -4931,7 +4931,7 @@ void KonqMainWindow::closeEvent( QCloseEvent *e )
                   this,
                   i18n("You have multiple tabs open in this window, "
                         "are you sure you want to quit?"),
-                  i18n("Confirmation"),
+                  i18nc("@title:window", "Confirmation"),
                   KStandardGuiItem::closeWindow(),
                   KGuiItem(i18n( "C&lose Current Tab" ), "tab-close"),
                   KStandardGuiItem::cancel(),
@@ -4966,7 +4966,7 @@ void KonqMainWindow::closeEvent( QCloseEvent *e )
                                      : i18n("This page contains changes that have not been submitted.\nClosing the window will discard these changes.");
               if ( KMessageBox::warningContinueCancel(
                        this, question,
-                       i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"application-exit"),
+                       i18nc("@title:window", "Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"application-exit"),
                        KStandardGuiItem::cancel(), "discardchangesclose") != KMessageBox::Continue ) {
                   e->ignore();
                   m_pViewManager->showTab(originalTabIndex);
@@ -5131,14 +5131,14 @@ void KonqMainWindow::slotAddWebSideBar(const KUrl& url, const QString& name)
 
     QAction *a = m_toggleViewGUIClient->action("konq_sidebartng");
     if (!a) {
-        KMessageBox::sorry(0, i18n("Your sidebar is not functional or unavailable. A new entry cannot be added."), i18n("Web Sidebar"));
+        KMessageBox::sorry(0, i18n("Your sidebar is not functional or unavailable. A new entry cannot be added."), i18nc("@title:window", "Web Sidebar"));
         return;
     }
 
     int rc = KMessageBox::questionYesNo(0,
               i18n("Add new web extension \"%1\" to your sidebar?",
                                  name.isEmpty() ? name : url.prettyUrl()),
-              i18n("Web Sidebar"),KGuiItem(i18n("Add")),KGuiItem(i18n("Do Not Add")));
+              i18nc("@title:window", "Web Sidebar"),KGuiItem(i18n("Add")),KGuiItem(i18n("Do Not Add")));
 
     if (rc == KMessageBox::Yes) {
         // Show the sidebar

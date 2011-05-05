@@ -51,7 +51,7 @@ public:
 KonqExtensionManager::KonqExtensionManager(QWidget *parent, KonqMainWindow *mainWindow, KParts::ReadOnlyPart* activePart)
     : KDialog( parent )
 {
-    setCaption( i18n("Configure") );
+    setCaption( i18nc("@title:window", "Configure") );
     setButtons( Default | Cancel | Apply | Ok | User1 );
     setButtonGuiItem( User1, KStandardGuiItem::reset() );
     setObjectName( QLatin1String( "extensionmanager" ) );

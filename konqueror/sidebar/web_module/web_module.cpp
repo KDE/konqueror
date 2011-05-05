@@ -134,7 +134,7 @@ void KonqSideBarWebModule::setAutoReload()
 {
 	KDialog dlg( 0 );
   dlg.setModal( true );
-  dlg.setCaption( i18n("Set Refresh Timeout (0 disables)" ) );
+  dlg.setCaption( i18nc("@title:window", "Set Refresh Timeout (0 disables)" ) );
   dlg.setButtons( KDialog::Ok | KDialog::Cancel );
 
 	KHBox *hbox = new KHBox( &dlg );

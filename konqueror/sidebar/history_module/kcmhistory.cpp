@@ -253,7 +253,7 @@ void HistorySidebarConfig::slotClearHistory()
     if ( KMessageBox::warningContinueCancel( this,
 				     i18n("Do you really want to clear "
 					  "the entire history?"),
-				     i18n("Clear History?"), guiitem )
+				     i18nc("@title:window", "Clear History?"), guiitem )
 	 == KMessageBox::Continue ) {
         KonqHistoryProvider::self()->emitClear();
     }

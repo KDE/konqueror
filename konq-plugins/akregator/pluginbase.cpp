@@ -53,7 +53,7 @@ void PluginBase::addFeedsViaDBUS(const QStringList& urls)
     QDBusReply<void> reply  = akregator.call("addFeedsToGroup", urls, i18n("Imported Feeds") );
     if(!reply.isValid()) {
         KMessageBox::error( 0, i18n( "Akregator feed icon - DBus Call failed" ),
-        i18n( "The DBus call addFeedToGroup failed" ));
+        i18nc( "@title:window", "The DBus call addFeedToGroup failed" ));
     }
 }
 

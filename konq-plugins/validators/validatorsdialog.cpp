@@ -32,7 +32,7 @@ ValidatorsDialog::ValidatorsDialog(QWidget *parent )
   setDefaultButton(Ok);
   setModal(false);
   showButtonSeparator(true);
-  setCaption(i18n("Configure Validator Plugin"));
+  setCaption(i18nc("@title:window", "Configure Validator Plugin"));
   setMinimumWidth(400);
 
 #ifdef HAVE_TIDY

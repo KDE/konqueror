@@ -952,7 +952,7 @@ void KonqSidebarTree::slotCreateFolder()
 
     while(true)
     {
-        name = KInputDialog::getText(i18n("Create New Folder"),
+        name = KInputDialog::getText(i18nc("@title:window", "Create New Folder"),
                                      i18n("Enter folder name:"), name);
         if (name.isEmpty())
             return;

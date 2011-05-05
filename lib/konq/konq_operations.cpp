@@ -829,7 +829,7 @@ static bool confirmCreatingHiddenDir(const QString& name, QWidget* parent)
     return KMessageBox::warningContinueCancel(
         parent,
         i18n("The name \"%1\" starts with a dot, so the directory will be hidden by default.", name),
-        i18n("Create hidden directory?"),
+        i18nc("@title:window", "Create hidden directory?"),
         continueGuiItem,
         cancelGuiItem,
         "confirm_create_hidden_dir") == KMessageBox::Continue;

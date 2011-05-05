@@ -90,7 +90,7 @@ AdBlockDlg::AdBlockDlg(QWidget *parent, const AdElementList *elements, KHTMLPart
     KDialog( parent ), m_part( part )
 {
     setModal( true );
-    setCaption( i18n("Blockable items on this page") );
+    setCaption( i18nc("@title:window", "Blockable items on this page") );
     setButtons( KDialog::User1 | KDialog::User2 | KDialog::Close );
     setDefaultButton( KDialog::User2 );
     setButtonText( KDialog::User1, i18n("Configure Filters...") );

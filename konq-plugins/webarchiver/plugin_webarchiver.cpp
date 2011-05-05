@@ -97,7 +97,7 @@ void PluginWebArchiver::slotSaveToArchive()
   if (url.isEmpty()) { return; }
 
   if (!(url.isValid())) {
-    const QString title = i18n( "Invalid URL" );
+    const QString title = i18nc( "@title:window", "Invalid URL" );
     const QString text = i18n( "The URL\n%1\nis not valid." , url.prettyUrl());
     KMessageBox::sorry(part->widget(), text, title );
     return;
@@ -112,7 +112,7 @@ void PluginWebArchiver::slotSaveToArchive()
 
   const QFile file(url.path());
   if (file.exists()) {
-    const QString title = i18n( "File Exists" );
+    const QString title = i18nc( "@title:window", "File Exists" );
     const QString text = i18n( "Do you really want to overwrite:\n%1?" , url.prettyUrl());
     if (KMessageBox::Continue != KMessageBox::warningContinueCancel( part->widget(), text, title, KGuiItem(i18n("Overwrite")) ) ) {
       return;

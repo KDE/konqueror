@@ -1410,7 +1410,7 @@ void KonqViewManager::slotProfileActivated(QAction* action)
         if ( KMessageBox::warningContinueCancel( m_pMainWindow,
                                                  i18n("You have multiple tabs open in this window.\n"
                                                       "Loading a view profile will close them."),
-                                                 i18n("Confirmation"),
+                                                 i18nc("@title:window", "Confirmation"),
                                                  KGuiItem(i18n("Load View Profile")),
                                                  KStandardGuiItem::cancel(),
                                                  "LoadProfileTabsConfirm" ) == KMessageBox::Cancel )
@@ -1424,7 +1424,7 @@ void KonqViewManager::slotProfileActivated(QAction* action)
                 showTab( view );
                 if ( KMessageBox::warningContinueCancel( 0,
                                                          i18n("This tab contains changes that have not been submitted.\nLoading a profile will discard these changes."),
-                                                         i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes")), KStandardGuiItem::cancel(), "discardchangesloadprofile") != KMessageBox::Continue )
+                                                         i18nc("@title:window", "Discard Changes?"), KGuiItem(i18n("&Discard Changes")), KStandardGuiItem::cancel(), "discardchangesloadprofile") != KMessageBox::Continue )
                     /* WE: maybe KStandardGuiItem(Discard) here? */
                 {
                     showTab(originalTabIndex);

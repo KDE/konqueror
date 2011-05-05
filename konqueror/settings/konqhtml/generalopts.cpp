@@ -97,7 +97,7 @@ void KKonqGeneralOptions::addHomeUrlWidgets(QVBoxLayout* lay)
 
     homeURL = new KUrlRequester(this);
     homeURL->setMode(KFile::Directory);
-    homeURL->setWindowTitle(i18n("Select Home Page"));
+    homeURL->setWindowTitle(i18nc("@title:window", "Select Home Page"));
     formLayout->addRow(label, homeURL);
     connect(homeURL, SIGNAL(textChanged(QString)), SLOT(slotChanged()));
     label->setBuddy(homeURL);

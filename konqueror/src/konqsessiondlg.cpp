@@ -74,7 +74,7 @@ KonqSessionDlg::KonqSessionDlg( KonqViewManager *manager, QWidget *parent )
     
     setObjectName( QLatin1String( "konq_session_dialog" ) );
     setModal( true );
-    setCaption( i18n( "Manage Sessions" ) );
+    setCaption( i18nc( "@title:window", "Manage Sessions" ) );
     setButtons( BTN_OPEN | Close );
     setDefaultButton( Close );
     
@@ -172,7 +172,7 @@ void KonqSessionDlg::slotRename(KUrl dirpathTo)
     
     dirpathTo = (dirpathTo == KUrl()) ? dirpathFrom : dirpathTo;
     
-    KIO::RenameDialog dlg(this, i18n("Rename Session"), dirpathFrom,
+    KIO::RenameDialog dlg(this, i18nc("@title:window", "Rename Session"), dirpathFrom,
         dirpathTo, KIO::RenameDialog_Mode(0));
         
     if(dlg.exec() == KIO::R_RENAME)
@@ -220,7 +220,7 @@ KonqNewSessionDlg::KonqNewSessionDlg( QWidget *parent, QString sessionName )
     
     setObjectName( QLatin1String( "konq_new_session_dialog" ) );
     setModal( true );
-    setCaption( i18n( "Save Session" ) );
+    setCaption( i18nc( "@title:window", "Save Session" ) );
     setButtons( Ok | Cancel );
     setDefaultButton( Ok );
     enableButton( Ok, false );
@@ -245,7 +245,7 @@ void KonqNewSessionDlg::slotAddSession()
     {
         if(KMessageBox::questionYesNo(this,
             i18n("A session with the name '%1' already exists, do you want to overwrite it?", d->m_pSessionName->text()),
-            i18n("Session exists. Overwrite?")) == KMessageBox::Yes)
+            i18nc("@title:window", "Session exists. Overwrite?")) == KMessageBox::Yes)
         {
             KTempDir::removeDir(dirpath);
         } else {
