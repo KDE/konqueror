@@ -551,7 +551,7 @@ void KQuery::setShowHiddenFiles(bool showHidden)
 
 void KQuery::slotreadyReadStandardError()
 {
-  KMessageBox::error(NULL, QString::fromLocal8Bit(processLocate->readAllStandardOutput()), i18n("Error while using locate"));
+  KMessageBox::error(NULL, QString::fromLocal8Bit(processLocate->readAllStandardOutput()), i18nc("@title:window", "Error while using locate"));
 }
 
 void KQuery::slotreadyReadStandardOutput()

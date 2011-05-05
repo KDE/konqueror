@@ -50,7 +50,7 @@ Boston, MA 02110-1301, USA.
 KIGPDialog::KIGPDialog(QWidget *parent, const QString& path )
     : KPageDialog( parent)
 {
-    setCaption(i18n("Configure"));
+    setCaption(i18nc("@title:window", "Configure"));
     setButtons(Default|Ok|Cancel);
     setDefaultButton(Ok);
     setModal(true);
@@ -58,7 +58,7 @@ KIGPDialog::KIGPDialog(QWidget *parent, const QString& path )
     setFaceType(List);
 
     m_path = path;
-    setCaption(i18n("Create Image Gallery"));
+    setCaption(i18nc("@title:window", "Create Image Gallery"));
     setButtonGuiItem( KDialog::Ok, KGuiItem(i18n("Create"),"imagegallery") );
     m_config = new KConfig("kimgallerypluginrc", KConfig::NoGlobals);
     setupLookPage(path);

@@ -329,7 +329,7 @@ bool KonqSessionManager::askUserToRestoreAutosavedAbandonedSessions()
     switch(KMessageBox::warningYesNoCancelList(0, // there is no questionYesNoCancelList
         i18n("Konqueror did not close correctly. Would you like to restore the previous session?"),
         detailsList,
-        i18n("Restore Session?"),
+        i18nc("@title:window", "Restore Session?"),
         KGuiItem(i18n("Restore Session"), "window-new"),
         KGuiItem(i18n("Do Not Restore"), "dialog-close"),
         KGuiItem(i18n("Ask Me Later"), "chronometer"),

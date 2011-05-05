@@ -170,7 +170,7 @@ void AdBlock::slotConfigure()
     {
 	KMessageBox::error(0,
                            i18n("Please enable Konqueror's Adblock"),
-                           i18n("Adblock disabled"));
+                           i18nc("@title:window", "Adblock disabled"));
 
 	return;
     }

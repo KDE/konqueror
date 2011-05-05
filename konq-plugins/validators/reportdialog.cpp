@@ -60,7 +60,7 @@ ReportDialog::ReportDialog(const QList<ValidationResult *> &results, QWidget* pa
   : KDialog(parent)
 {
   setButtons(KDialog::Close);
-  setCaption(i18n("Validation Report"));
+  setCaption(i18nc("@title:window", "Validation Report"));
 
   m_ui.setupUi(mainWidget());
   mainWidget()->layout()->setMargin(0);

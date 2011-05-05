@@ -90,7 +90,7 @@ ImportCommand* ImportCommand::performImport(KBookmarkModel* model, const QString
     int answer =
         KMessageBox::questionYesNoCancel(
                 top, i18n("Import as a new subfolder or replace all the current bookmarks?"),
-                i18n("%1 Import", importer->visibleName()),
+                i18nc("@title:window", "%1 Import", importer->visibleName()),
                 KGuiItem(i18n("As New Folder")), KGuiItem(i18n("Replace")));
 
     if (answer == KMessageBox::Cancel) {

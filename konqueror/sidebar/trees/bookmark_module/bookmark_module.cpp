@@ -334,8 +334,8 @@ void KonqSidebarBookmarkModule::slotDelete()
             tree(),
             folder ? i18n("Are you sure you wish to remove the bookmark folder\n\"%1\"?", bookmark.text())
                     : i18n("Are you sure you wish to remove the bookmark\n\"%1\"?", bookmark.text()),
-            folder ? i18n("Bookmark Folder Deletion")
-                    : i18n("Bookmark Deletion"),
+            folder ? i18nc("@title:window", "Bookmark Folder Deletion")
+                    : i18nc("@title:window", "Bookmark Deletion"),
             KStandardGuiItem::del(), KStandardGuiItem::cancel())
             != KMessageBox::Yes
         )
@@ -377,7 +377,7 @@ void KonqSidebarBookmarkModule::slotProperties(KonqSidebarBookmarkItem *bi)
 
     QString folder = bookmark.isGroup() ? QString() : bookmark.url().pathOrUrl();
     BookmarkEditDialog dlg( bookmark.fullText(), folder, 0, 0,
-                            i18n("Bookmark Properties") );
+                            i18nc("@title:window", "Bookmark Properties") );
     if ( dlg.exec() != KDialog::Accepted )
         return;
 

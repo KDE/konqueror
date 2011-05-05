@@ -53,7 +53,7 @@
 ChFaceDlg::ChFaceDlg(const QString& picsdir, QWidget *parent)
   : KDialog( parent )
 {
-  setCaption( i18n("Change your Face") );
+  setCaption( i18nc("@title:window", "Change your Face") );
   setButtons( Ok|Cancel|User1 );
   setDefaultButton( Ok );
 
@@ -146,7 +146,7 @@ void ChFaceDlg::slotGetCustomImage(  )
                   this, checkWidget);
 
   dlg.setOperationMode( KFileDialog::Opening );
-  dlg.setCaption( i18n("Choose Image") );
+  dlg.setCaption( i18nc("@title:window", "Choose Image") );
   dlg.setMode( KFile::File | KFile::LocalOnly );
 
   KImageFilePreview *ip = new KImageFilePreview( &dlg );

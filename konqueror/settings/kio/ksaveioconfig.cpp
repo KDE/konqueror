@@ -221,7 +221,7 @@ void KSaveIOConfig::updateRunningIOSlaves (QWidget *parent)
   message << QString();
   if (!QDBusConnection::sessionBus().send(message))
   {
-    QString caption = i18n("Update Failed");
+    QString caption = i18nc("@title:window", "Update Failed");
     QString message = i18n("You have to restart the running applications "
                            "for these changes to take effect.");
     KMessageBox::information (parent, message, caption);
@@ -237,7 +237,7 @@ void KSaveIOConfig::updateProxyScout( QWidget * parent )
     QDBusReply<void> reply = kded.call( "reset" );
   if (!reply.isValid())
   {
-    QString caption = i18n("Update Failed");
+    QString caption = i18nc("@title:window", "Update Failed");
     QString message = i18n("You have to restart KDE "
                            "for these changes to take effect.");
     KMessageBox::information (parent, message, caption);

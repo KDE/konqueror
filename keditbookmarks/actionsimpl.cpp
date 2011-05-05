@@ -374,7 +374,7 @@ void ActionsImpl::slotNewFolder()
 {
     KEBApp::self()->bkInfo()->commitChanges();
     bool ok;
-    QString str = KInputDialog::getText( i18n( "Create New Bookmark Folder" ),
+    QString str = KInputDialog::getText( i18nc( "@title:window", "Create New Bookmark Folder" ),
             i18n( "New folder:" ), QString(), &ok, KEBApp::self() );
     if (!ok)
         return;

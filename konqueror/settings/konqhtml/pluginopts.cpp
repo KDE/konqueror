@@ -120,7 +120,7 @@ KPluginOptions::KPluginOptions( QWidget *parent, const QVariantList& )
     vbox->addItem(new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::MinimumExpanding));
 
     domainSpecificDlg = new KDialog( this );
-    domainSpecificDlg->setCaption( i18n("Domain-Specific Policies") );
+    domainSpecificDlg->setCaption( i18nc("@title:window", "Domain-Specific Policies") );
     domainSpecificDlg->setButtons( KDialog::Close );
     domainSpecificDlg->setDefaultButton( KDialog::Close );
     domainSpecificDlg->setObjectName( QLatin1String( "domainSpecificDlg" ) );
@@ -384,7 +384,7 @@ void KPluginOptions::scanDone()
 
 void KPluginOptions::dirInit()
 {
-    m_widget.dirEdit->setWindowTitle(i18n("Select Plugin Scan Folder"));
+    m_widget.dirEdit->setWindowTitle(i18nc("@title:window", "Select Plugin Scan Folder"));
     connect( m_widget.dirNew, SIGNAL(clicked()), SLOT(dirNew()));
     connect( m_widget.dirRemove, SIGNAL(clicked()), SLOT(dirRemove()));
     connect( m_widget.dirUp, SIGNAL(clicked()), SLOT(dirUp()));
@@ -628,7 +628,7 @@ PluginDomainDialog::PluginDomainDialog(QWidget *parent) :
 	QWidget(parent)
 {
   setObjectName( QLatin1String("PluginDomainDialog" ));
-  setWindowTitle(i18n("Domain-Specific Policies"));
+  setWindowTitle(i18nc("@title:window", "Domain-Specific Policies"));
 
   thisLayout = new QVBoxLayout(this);
   thisLayout->addSpacing(6);
@@ -674,10 +674,10 @@ void PluginDomainListView::setupPolicyDlg(PushButton trigger,PolicyDialog &pDlg,
   QString caption;
   switch (trigger) {
     case AddButton:
-      caption = i18n( "New Plugin Policy" );
+      caption = i18nc( "@title:window", "New Plugin Policy" );
       pol->setFeatureEnabled(!options->enablePluginsGloballyCB->isChecked());
       break;
-    case ChangeButton: caption = i18n( "Change Plugin Policy" ); break;
+    case ChangeButton: caption = i18nc( "@title:window", "Change Plugin Policy" ); break;
     default: ; // inhibit gcc warning
   }/*end switch*/
   pDlg.setWindowTitle(caption);

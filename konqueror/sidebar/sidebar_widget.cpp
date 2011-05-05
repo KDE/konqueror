@@ -284,7 +284,7 @@ void Sidebar_Widget::slotSetName()
     bool ok;
 
     // Pop up the dialog asking the user for name.
-    const QString name = KInputDialog::getText(i18n("Set Name"), i18n("Enter the name:"),
+    const QString name = KInputDialog::getText(i18nc("@title:window", "Set Name"), i18n("Enter the name:"),
                                                currentButtonInfo().displayName, &ok, this);
 
     if(ok) {

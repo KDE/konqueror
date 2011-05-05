@@ -158,7 +158,7 @@ static KHTMLPart *isArchivablePart(KParts::ReadOnlyPart *part)
 ArchiveDialog::ArchiveDialog(QWidget *parent, const QString &filename, KHTMLPart *part)
   : KDialog(parent), m_top(part), m_job(NULL), m_uniqId(2), m_tarBall(NULL), m_filename(filename), m_widget(NULL)
 {
-    setCaption(i18n("Web Archiver"));
+    setCaption(i18nc("@title:window", "Web Archiver"));
     setButtons(KDialog::Ok | KDialog::Cancel);
     setButtonGuiItem(KDialog::Ok, KStandardGuiItem::close());
     setModal(false);
@@ -237,7 +237,7 @@ void ArchiveDialog::archive() {
         downloadObjects();
 
     } else {
-        const QString title = i18n( "Unable to Open Web-Archive" );
+        const QString title = i18nc( "@title:window", "Unable to Open Web-Archive" );
         const QString text = i18n( "Unable to open \n %1 \n for writing." ).arg(m_tarBall->fileName());
         KMessageBox::sorry(NULL, text, title);
     }
