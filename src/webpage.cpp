@@ -490,6 +490,7 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
     // Handle any error...
     switch (errCode) {
         case 0:
+        case KIO::ERR_NO_CONTENT:
             if (isMainFrameRequest) {
                 m_sslInfo.restoreFrom(reply->attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData)),
                                         reply->url());
