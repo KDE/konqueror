@@ -134,7 +134,10 @@ void WebKitBrowserExtension::restoreState(QDataStream &stream)
     KParts::OpenUrlArguments args;
     qint32 xOfs, yOfs, historyItemIndex;
 
-    if (view() && view()->page()->history()->count() > 0) {
+    QWebHistory* history = view() ? view()->page()->history() : 0;
+    //kDebug() << "# of items in history:" << (history ? history->count() : 0);
+
+    if (history && history->count() > 0) {
         stream >> u >> xOfs >> yOfs >> historyItemIndex;
     } else {
         QString historyFileName;
@@ -143,7 +146,7 @@ void WebKitBrowserExtension::restoreState(QDataStream &stream)
         QFile file (historyFileName);
         if (file.open(QIODevice::ReadOnly)) {
             QDataStream stream (&file);
-            stream >> *(view()->page()->history());
+            stream >> *history;
         }
 
         if (file.exists())
