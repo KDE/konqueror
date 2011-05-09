@@ -325,11 +325,16 @@ void WebView::partActionPopupMenu(KParts::BrowserExtension::ActionGroupMap& part
         partActions.append(m_part.data()->actionCollection()->action("viewDocumentSource"));
 
     if (showInspectorAction) {
-        partActions.append(pageAction(QWebPage::InspectElement));
         if (!m_webInspector) {
             m_webInspector = new QWebInspector;
             m_webInspector->setPage(page());
             connect(page(), SIGNAL(destroyed()), m_webInspector, SLOT(deleteLater()));
+        }
+        partActions.append(pageAction(QWebPage::InspectElement));
+    } else {
+        if (m_webInspector) {
+            delete m_webInspector;
+            m_webInspector = 0;
         }
     }
 

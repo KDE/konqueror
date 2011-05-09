@@ -63,6 +63,7 @@
 #define QL1C(x)  QLatin1Char(x)
 
 
+
 WebPage::WebPage(KWebKitPart *part, QWidget *parent)
         :KWebPage(parent, (KWebPage::KPartsIntegration|KWebPage::KWalletIntegration)),
          m_kioErrorCode(0),
@@ -74,6 +75,7 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
     // KIO::Integration::AccessManager...
     KDEPrivate::MyNetworkAccessManager *manager = new KDEPrivate::MyNetworkAccessManager(this);
     QWidget* window = parent ? parent->window() : 0;
+
     if (window) {
 #if KDE_IS_VERSION(4,6,41)
         manager->setWindow(window);
@@ -82,9 +84,12 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
 #endif
     }
 
+#if KDE_IS_VERSION(4,6,41)
+    manager->setEmitReadyReadOnMetaDataChanged(true);
+#endif
+
     manager->setCache(0);
     setNetworkAccessManager(manager);
-
     setSessionMetaData(QL1S("ssl_activate_warnings"), QL1S("TRUE"));
 
     // Set font sizes accordingly...
@@ -481,7 +486,7 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
     const QVariant redirectVar = reply->attribute(QNetworkRequest::RedirectionTargetAttribute);
     if (redirectVar.isValid()) {
         m_sslInfo.restoreFrom(reply->attribute(static_cast<QNetworkRequest::Attribute>(KIO::AccessManager::MetaData)),
-                               reply->url());
+                              reply->url());
         return;
     }
 
