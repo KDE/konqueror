@@ -3,6 +3,7 @@
 //  Copyright (C) 2002 David Faure <faure@kde.org>
 //  Copyright (C) 2005 Brad Hards <bradh@frogmouth.net>
 //  Copyright (C) 2008 by Dmitry Suzdalev <dimsuz@gmail.com>
+//  Copyright (C) 2011 Kai Uwe Broulik <kde@privat.broulik.de>
 //
 //  This program is free software; you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -34,6 +35,7 @@
 #include <kdirselectdialog.h>
 #include <kcolordialog.h>
 #include <kwindowsystem.h>
+#include <kiconloader.h>
 
 #include <QtCore/QTimer>
 #include <QtGui/QDesktopWidget>
@@ -96,7 +98,7 @@ bool WinIdEmbedder::eventFilter(QObject *o, QEvent *e)
  * Display a passive notification popup using the D-Bus interface, if possible.
  * @return true if the notification was successfully sent, false otherwise.
  */
-bool sendVisualNotification(QString text, QString title, int timeout)
+bool sendVisualNotification(const QString &text, const QString &title, const QString &icon, int timeout)
 {
 #ifdef QT_QTDBUS_FOUND
   const QString dbusServiceName = "org.freedesktop.Notifications";
@@ -119,7 +121,7 @@ bool sendVisualNotification(QString text, QString title, int timeout)
 
   args.append("kdialog"); // app_name
   args.append(0U); // replaces_id
-  args.append("dialog-information"); // app_icon
+  args.append(icon); // app_icon
   args.append(title); // summary
   args.append(text); // body
   args.append(QStringList()); // actions - unused for plain passive popups
@@ -351,33 +353,56 @@ static int directCommand(KCmdLineArgs *args)
     // --passivepopup
     if (args->isSet("passivepopup"))
     {
-        int duration = 0;
+        int timeout = 0;
         if (args->count() > 0) {
-            duration = 1000 * args->arg(0).toInt();
+            timeout = 1000 * args->arg(0).toInt();
         }
 
-        if (duration < 0) {
-            duration = -1;
+        if (timeout < 0) {
+            timeout = -1;
         }
 
+	// since --icon is a kde option, we need to parse the kde options here as well
+	KCmdLineArgs *kdeargs = KCmdLineArgs::parsedArgs("kde");
+
+	// Use --icon parameter for passivepopup as well
+	QString icon;
+	if (kdeargs->isSet("icon")) {
+	  icon = kdeargs->getOption("icon");
+	} else {
+	  icon = "dialog-information";	// Use generic (i)-icon if none specified
+	}
 
         // try to use more stylish notifications
-        if (sendVisualNotification(args->getOption("passivepopup"), title, duration))
+        if (sendVisualNotification(args->getOption("passivepopup"), title, icon, timeout))
           return 0;
 
         // ...did not work, use KPassivePopup as fallback
-    KPassivePopup *popup = KPassivePopup::message( KPassivePopup::Boxed, // style
-                                                   title,
-                                                   args->getOption("passivepopup"),
-                                                   QPixmap() /* do not crash 0*/, // icon
-                                                   (QWidget*)0UL, // parent
-                                                   duration );
-    KDialog::centerOnScreen( popup );
-    QTimer *timer = new QTimer();
-    QObject::connect( timer, SIGNAL( timeout() ), qApp, SLOT( quit() ) );
-    QObject::connect( popup, SIGNAL( clicked() ), qApp, SLOT( quit() ) );
-    timer->setSingleShot( true );
-    timer->start( duration );
+
+        // parse timeout time again, so it does not auto-close the fallback (timer cannot handle -1 time)
+        if (args->count() > 0) {
+            timeout = 1000 * args->arg(0).toInt();
+        }
+        if (timeout <= 0) {
+            timeout = 10*1000;    // 10 seconds should be a decent time for auto-closing (you can override this using a parameter)
+        }
+
+        QPixmap passiveicon;
+        if (kdeargs->isSet("icon")) {  // Only show icon if explicitly requested
+            passiveicon = KIconLoader::global()->loadIcon(icon, KIconLoader::Dialog);
+        }
+        KPassivePopup *popup = KPassivePopup::message( KPassivePopup::Boxed, // style
+                                                       title,
+                                                       args->getOption("passivepopup"),
+                                                       passiveicon,
+                                                       (QWidget*)0UL, // parent
+                                                       timeout );
+        KDialog::centerOnScreen( popup );
+        QTimer *timer = new QTimer();
+        QObject::connect( timer, SIGNAL( timeout() ), qApp, SLOT( quit() ) );
+        QObject::connect( popup, SIGNAL( clicked() ), qApp, SLOT( quit() ) );
+        timer->setSingleShot( true );
+        timer->start( timeout );
 
 #ifdef Q_WS_X11
 	QString geometry;
@@ -810,6 +835,7 @@ int main(int argc, char *argv[])
   aboutData.addAuthor(ki18n("David Gümbel"),KLocalizedString(),"david.guembel@gmx.net");
   aboutData.addAuthor(ki18n("Richard Moore"),KLocalizedString(),"rich@kde.org");
   aboutData.addAuthor(ki18n("Dawit Alemayehu"),KLocalizedString(),"adawit@kde.org");
+  aboutData.addAuthor(ki18n("Kai Uwe Broulik"),KLocalizedString(),"kde@privat.broulik.de");
   aboutData.setProgramIconName("system-run");
 
 
