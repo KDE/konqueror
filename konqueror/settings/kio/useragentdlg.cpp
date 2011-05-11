@@ -129,11 +129,6 @@ void UserAgentDlg::on_osVersionCheckBox_clicked()
   changeDefaultUAModifiers();
 }
 
-void UserAgentDlg::on_platformCheckBox_clicked()
-{
-  changeDefaultUAModifiers();
-}
-
 void UserAgentDlg::on_processorTypeCheckBox_clicked()
 {
   changeDefaultUAModifiers();
@@ -178,9 +173,6 @@ void UserAgentDlg::changeDefaultUAModifiers()
 
   if ( ui.osVersionCheckBox->isChecked() )
      m_ua_keys += 'v';
-
-  if ( ui.platformCheckBox->isChecked() )
-     m_ua_keys += 'p';
 
   if ( ui.processorTypeCheckBox->isChecked() )
      m_ua_keys += 'm';
@@ -287,7 +279,6 @@ void UserAgentDlg::load()
   ui.defaultIdLineEdit->setText( KProtocolManager::defaultUserAgent( m_ua_keys ) );
   ui.osNameCheckBox->setChecked( m_ua_keys.contains('o') );
   ui.osVersionCheckBox->setChecked( m_ua_keys.contains('v') );
-  ui.platformCheckBox->setChecked( m_ua_keys.contains('p') );
   ui.processorTypeCheckBox->setChecked( m_ua_keys.contains('m') );
   ui.languageCheckBox->setChecked( m_ua_keys.contains('l') );
 
@@ -302,7 +293,6 @@ void UserAgentDlg::defaults()
   ui.defaultIdLineEdit->setText( KProtocolManager::defaultUserAgent(m_ua_keys) );
   ui.osNameCheckBox->setChecked( m_ua_keys.contains('o') );
   ui.osVersionCheckBox->setChecked( m_ua_keys.contains('v') );
-  ui.platformCheckBox->setChecked( m_ua_keys.contains('p') );
   ui.processorTypeCheckBox->setChecked( m_ua_keys.contains('m') );
   ui.languageCheckBox->setChecked( m_ua_keys.contains('l') );
   ui.sendUACheckBox->setChecked( true );
