@@ -21,7 +21,6 @@
 #include "favicon_interface.h"
 
 #include <QtCore/QFileInfo>
-#include <QtGui/QSpinBox>
 #include <QtCore/QTimer>
 
 #include <dom/html_inline.h>
@@ -34,6 +33,7 @@
 #include <konq_nameandurlinputdialog.h>
 #include <kstandarddirs.h>
 #include <khbox.h>
+#include <knuminput.h>
 
 
 KHTMLSideBar::KHTMLSideBar()
@@ -140,12 +140,12 @@ void KonqSideBarWebModule::setAutoReload()
 	KHBox *hbox = new KHBox( &dlg );
   dlg.setMainWidget( hbox );
 
-	QSpinBox *mins = new QSpinBox(hbox);
+	KIntNumInput *mins = new KIntNumInput(hbox);
 	mins->setRange(0, 120);
-	mins->setSuffix( i18n(" min") );
-	QSpinBox *secs = new QSpinBox(hbox);
+	mins->setSuffix( ki18np(" minute", " minutes") );
+	KIntNumInput *secs = new KIntNumInput(hbox);
         secs->setRange(0, 59);
-	secs->setSuffix( i18n(" sec") );
+	secs->setSuffix( ki18np(" second", " seconds") );
 
 	if( reloadTimeout > 0 )	{
 		int seconds = reloadTimeout / 1000;

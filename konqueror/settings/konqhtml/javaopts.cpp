@@ -110,7 +110,7 @@ KJavaOptions::KJavaOptions( KSharedConfig::Ptr config, const QString &group,
     laygroup1->addWidget( secondsHB );
     serverTimeoutSB = new KIntNumInput( secondsHB );
     serverTimeoutSB->setRange( 0, 1000, 5 );
-    serverTimeoutSB->setSuffix(i18n(" sec"));
+    serverTimeoutSB->setSuffix(ki18np(" second", " seconds"));
     connect(serverTimeoutSB, SIGNAL(valueChanged(int)),this,SLOT(slotChanged()));
     laygroup1->addRow( enableShutdownCB, serverTimeoutSB);
 
