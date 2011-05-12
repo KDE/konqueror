@@ -417,6 +417,23 @@ bool WebPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequest &r
     return KWebPage::acceptNavigationRequest(frame, request, type);
 }
 
+QString WebPage::userAgentForUrl(const QUrl& url) const
+{
+    QString userAgent = KWebPage::userAgentForUrl(url);
+
+    // Remove the "Safari" entry from the user agent string.
+    int index = userAgent.lastIndexOf(QL1S("Safari"), -1, Qt::CaseInsensitive);
+    if (index > -1)
+        userAgent.truncate(index);
+    
+    // Remove the useless "U" if it is present.
+    index = userAgent.indexOf(QL1S(" U;"), -1, Qt::CaseInsensitive);
+    if (index > -1)
+        userAgent.remove(index, 3);
+    
+    return userAgent.trimmed();
+}
+
 static int errorCodeFromReply(QNetworkReply* reply)
 {
     // First check if there is a KIO error code sent back and use that,

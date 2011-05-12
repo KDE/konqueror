@@ -124,6 +124,12 @@ protected:
      */
     virtual bool acceptNavigationRequest(QWebFrame* frame, const QNetworkRequest& request, NavigationType type);
 
+    /**
+     * Reimplemented for internal reasons, the API is not affected.
+     * @internal
+     */
+    virtual QString userAgentForUrl(const QUrl& url) const;
+
 protected Q_SLOTS:
     void slotRequestFinished(QNetworkReply* reply);
     void slotUnsupportedContent(QNetworkReply* reply);
