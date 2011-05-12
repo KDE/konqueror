@@ -85,7 +85,7 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
     }
 
 #if KDE_IS_VERSION(4,6,41)
-    manager->setEmitReadyReadOnMetaDataChanged(true);
+    manager->setEmitReadyReadOnMetaDataChange(true);
 #endif
 
     manager->setCache(0);
