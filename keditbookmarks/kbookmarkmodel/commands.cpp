@@ -65,7 +65,7 @@ CreateCommand::CreateCommand(KBookmarkModel* model, const QString &address, QUnd
     : QUndoCommand(parent), m_model(model), m_to(address),
       m_group(false), m_separator(true), m_originalBookmark(QDomElement())
 {
-    setText(i18n("Insert Separator"));
+    setText(i18nc("@action:undo", "Insert Separator"));
 }
 
 CreateCommand::CreateCommand(KBookmarkModel* model, const QString &address,
@@ -74,7 +74,7 @@ CreateCommand::CreateCommand(KBookmarkModel* model, const QString &address,
     : QUndoCommand(parent), m_model(model), m_to(address), m_text(text), m_iconPath(iconPath), m_url(url),
       m_group(false), m_separator(false), m_originalBookmark(QDomElement())
 {
-    setText(i18n("Create Bookmark"));
+    setText(i18nc("@action:undo", "Create Bookmark"));
 }
 
 CreateCommand::CreateCommand(KBookmarkModel* model, const QString &address,
@@ -83,7 +83,7 @@ CreateCommand::CreateCommand(KBookmarkModel* model, const QString &address,
     : QUndoCommand(parent), m_model(model), m_to(address), m_text(text), m_iconPath(iconPath),
       m_group(true), m_separator(false), m_open(open), m_originalBookmark(QDomElement())
 {
-    setText(i18n("Create Folder"));
+    setText(i18nc("@action:undo", "Create Folder"));
 }
 
 CreateCommand::CreateCommand(KBookmarkModel* model, const QString &address,
@@ -92,7 +92,7 @@ CreateCommand::CreateCommand(KBookmarkModel* model, const QString &address,
       m_open(false), m_originalBookmark(original),
       m_originalBookmarkDocRef(m_originalBookmark.internalElement().ownerDocument())
 {
-    setText(i18n("Copy %1", name));
+    setText(i18nc("@action:undo", "Copy %1", name));
 }
 
 void CreateCommand::redo()
@@ -180,13 +180,13 @@ EditCommand::EditCommand(KBookmarkModel* model, const QString & address, int col
 
     // -2 is "toolbar" attribute change, but that's only used internally.
     if (mCol == -1)
-        setText(i18n("Icon Change"));
+        setText(i18nc("@action:undo", "Icon Change"));
     else if (mCol == 0)
-        setText(i18n("Title Change"));
+        setText(i18nc("@action:undo", "Title Change"));
     else if (mCol == 1)
-        setText(i18n("URL Change"));
+        setText(i18nc("@action:undo", "URL Change"));
     else if (mCol == 2)
-        setText(i18n("Comment Change"));
+        setText(i18nc("@action:undo", "Comment Change"));
 }
 
 void EditCommand::redo()
@@ -361,7 +361,7 @@ KEBMacroCommand* DeleteCommand::deleteAll(KBookmarkModel* model, const KBookmark
 MoveCommand::MoveCommand(KBookmarkModel* model, const QString &from, const QString &to, const QString &name, QUndoCommand* parent)
        : QUndoCommand(parent), m_model(model), m_from(from), m_to(to), m_cc(0), m_dc(0)
 {
-    setText(i18n("Move %1", name));
+    setText(i18nc("@action:undo", "Move %1", name));
 }
 
 void MoveCommand::redo()
@@ -478,7 +478,7 @@ QString SortCommand::affectedBookmarks() const
 
 KEBMacroCommand* CmdGen::setAsToolbar(KBookmarkModel* model, const KBookmark &bk)
 {
-    KEBMacroCommand *mcmd = new KEBMacroCommand(i18n("Set as Bookmark Toolbar"));
+    KEBMacroCommand *mcmd = new KEBMacroCommand(i18nc("@action:undo", "Set as Bookmark Toolbar"));
 
     KBookmarkGroup oldToolbar = model->bookmarkManager()->toolbar();
     if (!oldToolbar.isNull())
@@ -514,8 +514,8 @@ KEBMacroCommand* CmdGen::insertMimeSource(KBookmarkModel* model, const QString &
 //FIXME copy=true needed? what is the difference with insertMimeSource
 KEBMacroCommand* CmdGen::itemsMoved(KBookmarkModel* model, const QList<KBookmark> & items,
         const QString &newAddress, bool copy) {
-    KEBMacroCommand *mcmd = new KEBMacroCommand(copy ? i18n("Copy Items")
-            : i18n("Move Items"));
+    KEBMacroCommand *mcmd = new KEBMacroCommand(copy ? i18nc("@action:undo", "Copy Items")
+            : i18nc("@action:undo", "Move Items"));
 
     QList<KBookmark>::const_iterator it, end;
     it = items.constBegin();
