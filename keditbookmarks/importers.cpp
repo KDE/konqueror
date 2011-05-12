@@ -53,7 +53,7 @@ ImportCommand::ImportCommand(KBookmarkModel* model)
 void ImportCommand::setVisibleName(const QString& visibleName)
 {
     m_visibleName = visibleName;
-    setText(i18nc("@action:undo", "Import %1 Bookmarks", visibleName));
+    setText(i18nc("(qtundo-format)", "Import %1 Bookmarks", visibleName));
 }
 
 QString ImportCommand::folder() const {
