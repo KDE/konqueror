@@ -44,7 +44,7 @@
 
 #define XP_UNIX
 #define MOZ_X11
-#include "sdk/npupp.h"
+#include "sdk/npfunctions.h"
 
 #include "comm/dbustypes.h"
 
@@ -63,7 +63,7 @@ class QTimer;
 
 // We need the following inside the scripting code
 namespace kdeNsPluginViewer {
-  void* g_NPN_MemAlloc(uint32 size);
+  void* g_NPN_MemAlloc(uint32_t size);
   void  g_NPN_MemFree(void* ptr);
   class ScriptExportEngine;
 }
@@ -96,7 +96,7 @@ protected:
   void updateURL( const KUrl& newUrl );
 
   class NSPluginInstance *_instance;
-  uint16 _streamType;
+  uint16_t _streamType;
   NPStream *_stream;
   void *_notifyData;
   KUrl _url;
@@ -212,16 +212,16 @@ public:
 
   // stream functions
   NPError NPDestroyStream(NPStream *stream, NPReason reason);
-  NPError NPNewStream(NPMIMEType type, NPStream *stream, NPBool seekable, uint16 *stype);
+  NPError NPNewStream(NPMIMEType type, NPStream *stream, NPBool seekable, uint16_t *stype);
   void NPStreamAsFile(NPStream *stream, const char *fname);
-  int32 NPWrite(NPStream *stream, int32 offset, int32 len, void *buf);
-  int32 NPWriteReady(NPStream *stream);
+  int32_t NPWrite(NPStream *stream, int32_t offset, int32_t len, void *buf);
+  int32_t NPWriteReady(NPStream *stream);
 
   // URL functions
   void NPURLNotify(const QString &url, NPReason reason, void *notifyData);
 
   // Event handling
-  uint16 HandleEvent(void *event);
+  uint16_t HandleEvent(void *event);
 
   // signal emitters
   void emitStatus( const QString &message);
