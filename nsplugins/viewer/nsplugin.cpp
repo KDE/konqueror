@@ -35,6 +35,7 @@
 
 #include "nsplugins_callback_interface.h"
 
+#include <assert.h>
 #include <stdlib.h>
 #include <unistd.h>
 
@@ -125,7 +126,7 @@ static NSPluginInstance* pluginViewForInstance(NPP instance)
 // allocate memory
 
 namespace kdeNsPluginViewer  {
-void *g_NPN_MemAlloc(uint32 size)
+void *g_NPN_MemAlloc(uint32_t size)
 {
    void *mem = ::malloc(size);
 
@@ -145,7 +146,7 @@ void g_NPN_MemFree(void *ptr)
 
 }
 
-uint32 g_NPN_MemFlush(uint32 size)
+uint32_t g_NPN_MemFlush(uint32_t size)
 {
    Q_UNUSED(size);
    //kDebug(1431) << "g_NPN_MemFlush()";
@@ -217,10 +218,6 @@ NPError g_NPN_GetValue(NPP instance, NPNVariable variable, void *value)
          // the community members far easier.
          *(NPNToolkitType*)value = (NPNToolkitType)0xFEEDABEE;
          return NPERR_NO_ERROR;
-      case NPPVpluginKeepLibraryInMemory:
-         *(bool*)value = true;
-         return NPERR_NO_ERROR;
-         
       case NPNVWindowNPObject:
          if (inst && inst->scripting()) {
             *(NPObject**)value = inst->scripting()->acquireWindow();
@@ -289,7 +286,7 @@ NPError g_NPN_NewStream(NPP /*instance*/, NPMIMEType /*type*/,
    return NPERR_GENERIC_ERROR;
 }
 
-int32 g_NPN_Write(NPP /*instance*/, NPStream* /*stream*/, int32 /*len*/, void* /*buf*/)
+int32_t g_NPN_Write(NPP /*instance*/, NPStream* /*stream*/, int32_t /*len*/, void* /*buf*/)
 {
    // http://devedge.netscape.com/library/manuals/2002/plugin/1.0/npn_api21.html#999859
    kDebug(1431) << "g_NPN_Write() [unimplemented]";
@@ -330,7 +327,7 @@ NPError g_NPN_GetURLNotify(NPP instance, const char *url, const char *target,
 
 
 NPError g_NPN_PostURLNotify(NPP instance, const char* url, const char* target,
-                     uint32 len, const char* buf, NPBool file, void* notifyData)
+                     uint32_t len, const char* buf, NPBool file, void* notifyData)
 {
 // http://devedge.netscape.com/library/manuals/2002/plugin/1.0/npn_api14.html
    kDebug(1431) << "g_NPN_PostURLNotify() [incomplete]";
@@ -355,7 +352,7 @@ NPError g_NPN_PostURLNotify(NPP instance, const char* url, const char* target,
    } else {    // buf is raw data
       // First strip out the header
       const char *previousStart = buf;
-      uint32 l;
+      uint32_t l;
       bool previousCR = true;
 
       for (l = 1;; ++l) {
@@ -428,7 +425,7 @@ NPError g_NPN_PostURLNotify(NPP instance, const char* url, const char* target,
 
 
 NPError g_NPN_PostURL(NPP instance, const char* url, const char* target,
-                    uint32 len, const char* buf, NPBool file)
+                      uint32_t len, const char* buf, NPBool file)
 {
 // http://devedge.netscape.com/library/manuals/2002/plugin/1.0/npn_api13.html
    kDebug(1431) << "g_NPN_PostURL()";
@@ -453,7 +450,7 @@ NPError g_NPN_PostURL(NPP instance, const char* url, const char* target,
    } else {    // buf is raw data
       // First strip out the header
       const char *previousStart = buf;
-      uint32 l;
+      uint32_t l;
       bool previousCR = true;
 
       for (l = 1;; ++l) {
@@ -595,7 +592,7 @@ void g_NPN_ReloadPlugins(NPBool reloadPages)
 
 
 // JAVA functions
-JRIEnv *g_NPN_GetJavaEnv()
+void *g_NPN_GetJavaEnv()
 {
    kDebug(1431) << "g_NPN_GetJavaEnv() [unimplemented]";
    // FIXME - what do these do?  I can't find docs, and even Mozilla doesn't
@@ -604,7 +601,7 @@ JRIEnv *g_NPN_GetJavaEnv()
 }
 
 
-jref g_NPN_GetJavaPeer(NPP /*instance*/)
+void* g_NPN_GetJavaPeer(NPP /*instance*/)
 {
    kDebug(1431) << "g_NPN_GetJavaPeer() [unimplemented]";
    // FIXME - what do these do?  I can't find docs, and even Mozilla doesn't
@@ -749,8 +746,7 @@ NSPluginInstance::NSPluginInstance(NPPluginFuncs *pluginFuncs,
 
    // Create the appropriate host for the plugin type.
    _pluginHost = 0;
-   int result = PR_FALSE;
-
+   int result = 0; /* false */
    //### iceweasel does something odd here --- it enabled XEmbed for swfdec,
    // even though that doesn't provide GetValue at all(!)
    if (NPGetValue(NPPVpluginNeedsXEmbed, &result) == NPERR_NO_ERROR && result) {
@@ -1192,7 +1188,7 @@ NPError NSPluginInstance::NPDestroyStream(NPStream *stream, NPReason reason)
 }
 
 
-NPError NSPluginInstance::NPNewStream(NPMIMEType type, NPStream *stream, NPBool seekable, uint16 *stype)
+NPError NSPluginInstance::NPNewStream(NPMIMEType type, NPStream *stream, NPBool seekable, uint16_t *stype)
 {
     if( stream==0 ) {
         kDebug() << "FIXME: stream==0 in NSPluginInstance::NPNewStream";
@@ -1232,7 +1228,7 @@ void NSPluginInstance::NPStreamAsFile(NPStream *stream, const char *fname)
 }
 
 
-int32 NSPluginInstance::NPWrite(NPStream *stream, int32 offset, int32 len, void *buf)
+int32_t NSPluginInstance::NPWrite(NPStream *stream, int32_t offset, int32_t len, void *buf)
 {
     if( stream==0 ) {
         kDebug() << "FIXME: stream==0 in NSPluginInstance::NPWrite";
@@ -1251,7 +1247,7 @@ int32 NSPluginInstance::NPWrite(NPStream *stream, int32 offset, int32 len, void 
 }
 
 
-int32 NSPluginInstance::NPWriteReady(NPStream *stream)
+int32_t NSPluginInstance::NPWriteReady(NPStream *stream)
 {
     if( stream==0 ) {
         kDebug() << "FIXME: stream==0 in NSPluginInstance::NPWriteReady";
@@ -1696,7 +1692,7 @@ void NSPluginStreamBase::updateURL( const KUrl& newURL )
 
 int NSPluginStreamBase::process( const QByteArray &data, int start )
 {
-   int32 max, sent, to_sent, len;
+   int32_t max, sent, to_sent, len;
 #ifdef __GNUC__
 #warning added a const_cast
 #endif
