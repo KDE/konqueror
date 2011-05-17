@@ -102,6 +102,7 @@ protected:
   KUrl _url;
   QString _fileURL;
   QString _mimeType;
+  QByteArray _headers;
   QByteArray _data;
   class KTemporaryFile *_tempFile;
 
