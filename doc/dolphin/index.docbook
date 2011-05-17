@@ -1538,11 +1538,12 @@ Selects all unselected items and deselects all selected items in the current fol
 <term><menuchoice>
 <guimenu>View</guimenu>
 <guisubmenu>Sort By</guisubmenu>
-</menuchoice></term>
+</menuchoice> (only available in the Icons view mode)</term>
 <listitem><para><action>Changes whether items are sorted by <guimenuitem>Name</guimenuitem>,
 <guimenuitem>Size</guimenuitem>, <guimenuitem>Date</guimenuitem>,
 <guimenuitem>Permissions</guimenuitem>, <guimenuitem>Owner</guimenuitem>,
-<guimenuitem>Group</guimenuitem> or <guimenuitem>Type</guimenuitem>.
+<guimenuitem>Group</guimenuitem>, <guimenuitem>Type</guimenuitem>, 
+<guimenuitem>Link Destination</guimenuitem> or <guimenuitem>Path</guimenuitem>.
 <guimenuitem>Descending</guimenuitem> reverses the sort order.
 <guimenuitem>Folders First</guimenuitem> sorts folders before files.
 </action></para></listitem>
@@ -1556,8 +1557,9 @@ Selects all unselected items and deselects all selected items in the current fol
 <listitem><para><action>Displays additional information</action> like
 <guimenuitem>Size</guimenuitem>, <guimenuitem>Date</guimenuitem>,
 <guimenuitem>Permissions</guimenuitem>, <guimenuitem>Owner</guimenuitem>,
-<guimenuitem>Group</guimenuitem> or <guimenuitem>Type</guimenuitem> in the different
-views.</para></listitem>
+<guimenuitem>Group</guimenuitem>, <guimenuitem>Type</guimenuitem>, 
+<guimenuitem>Link Destination</guimenuitem> or <guimenuitem>Path</guimenuitem> 
+in the different views.</para></listitem>
 </varlistentry>
 
 <varlistentry>
