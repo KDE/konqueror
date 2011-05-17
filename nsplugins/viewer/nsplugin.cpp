@@ -1677,6 +1677,7 @@ bool NSPluginStreamBase::create( const QString& url, const QString& mimeType, vo
     _stream->pdata = 0;
     _stream->lastmodified = 0;
     _stream->notifyData = _notifyData;
+    _stream->headers = 0;
 
     _mimeType = mimeType;
 
@@ -1910,6 +1911,7 @@ bool NSPluginStream::get( const QString& url, const QString& mimeType,
         _job = KIO::get(KUrl( url ), KIO::NoReload, KIO::HideProgressInfo);
         _job->addMetaData("errorPage", "false");
         _job->addMetaData("AllowCompressedPage", "false");
+        _job->addMetaData("PropagateHttpHeader", "true");
         if (reload) {
             _job->addMetaData("cache", "reload");
         }
@@ -1939,6 +1941,7 @@ bool NSPluginStream::post( const QString& url, const QByteArray& data,
         _job = KIO::http_post(KUrl( url ), data, KIO::HideProgressInfo);
         _job->addMetaData("content-type", browserArgs.contentType());
         _job->addMetaData("errorPage", "false");
+        _job->addMetaData("PropagateHttpHeader", "true");
         _job->addMetaData("AllowCompressedPage", "false");
         connect(_job, SIGNAL(data(KIO::Job *, const QByteArray &)),
                 SLOT(data(KIO::Job *, const QByteArray &)));
@@ -1981,10 +1984,9 @@ void NSPluginStream::mimetype(KIO::Job * job, const QString &mimeType)
 {
     kDebug(1431) << "NSPluginStream::QByteArray - job=" << (void*)job << " mimeType=" << mimeType;
     _mimeType = mimeType;
+    _headers = job->metaData()["HTTP-Headers"].toLatin1();
+    _stream->headers = _headers.data();
 }
-
-
-
 
 void NSPluginStream::resume()
 {
