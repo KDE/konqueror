@@ -294,7 +294,7 @@ QStringList KfindDlg::getAllSubdirs(QDir d)
     if((*it==".")||(*it==".."))
       continue;
     subdirs.append(d.path()+'/'+*it);
-    subdirs+=getAllSubdirs(d.path()+'/'+*it);
+    subdirs+=getAllSubdirs(QString(d.path()+QLatin1Char('/')+*it));
   }
   return subdirs;
 }

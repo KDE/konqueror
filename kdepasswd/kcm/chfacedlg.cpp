@@ -91,7 +91,7 @@ ChFaceDlg::ChFaceDlg(const QString& picsdir, QWidget *parent)
     const QStringList picslist = facesDir.entryList( QDir::Files );
     for ( QStringList::const_iterator it = picslist.constBegin(); it != picslist.constEnd(); ++it )
       new QListWidgetItem( QIcon( KCFGUserAccount::userFaceDir() + *it ),
-                           '/'+(*it) == KCFGUserAccount::customFaceFile() ? 
+                           QString('/'+(*it)) == KCFGUserAccount::customFaceFile() ? 
                            i18n("(Custom)") : (*it).section('.',0,0),
                            ui.m_FacesWidget );
   }
