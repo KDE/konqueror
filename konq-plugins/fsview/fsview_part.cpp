@@ -249,7 +249,7 @@ void FSViewPart::showInfo()
 void FSViewPart::showHelp()
 {
     KToolInvocation::startServiceByDesktopName("khelpcenter",
-					    QString("help:/konq-plugins/fsview/index.html"));
+					    QString("help:/konqueror/index.html#fsview"));
 }
 
 void FSViewPart::startedSlot()
