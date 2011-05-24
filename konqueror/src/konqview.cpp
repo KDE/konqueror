@@ -657,7 +657,11 @@ void KonqView::setCaption( const QString & caption )
      // Is the caption a URL?  If so, is it local?  If so, only display the filename!
      KUrl url(caption);
      if (url.isValid() && url.isLocalFile() && url.fileName() == this->url().fileName())
-        adjustedCaption = url.fileName();
+       {
+         adjustedCaption = url.fileName();
+         if (adjustedCaption.isEmpty())
+           adjustedCaption = QLatin1Char('/');
+       }
   }
 
   m_caption = adjustedCaption;
