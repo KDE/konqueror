@@ -39,7 +39,7 @@ OpenSearchManager::OpenSearchManager(QObject *parent)
 }
 
 OpenSearchManager::~OpenSearchManager() {
-    qDeleteAll(m_enginesMap.values());
+    qDeleteAll(m_enginesMap);
     m_enginesMap.clear();
 }
 
