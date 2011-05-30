@@ -4268,7 +4268,8 @@ void KonqMainWindow::showEvent(QShowEvent *event)
 
 QString KonqExtendedBookmarkOwner::currentUrl() const
 {
-   return m_pKonqMainWindow->currentView()->url().url();
+   const KonqView* view = m_pKonqMainWindow->currentView();
+   return view ? view->url().url() : QString();
 }
 
 QString KonqMainWindow::currentProfile() const
