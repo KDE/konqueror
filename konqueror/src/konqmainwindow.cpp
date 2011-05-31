@@ -1272,26 +1272,20 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
        mainWindow->viewManager()->setActivePart(*part);
     }
 
-    if ( windowArgs.x() != -1 )
-        mainWindow->move( windowArgs.x(), mainWindow->y() );
-    if ( windowArgs.y() != -1 )
-        mainWindow->move( mainWindow->x(), windowArgs.y() );
-
-    int width;
-    if ( windowArgs.width() != -1 )
-        width = windowArgs.width();
-    else
-        width = mainWindow->width();
-
-    int height;
-    if ( windowArgs.height() != -1 )
-        height = windowArgs.height();
-    else
-        height = mainWindow->height();
-
-    mainWindow->resize( width, height );
+#ifdef Q_WS_X11
+    // WORKAROUND: Clear the window state information set by KMainWindow::restoreWindowSize
+    // so that the size and location settings we set below always take effect.
+    KWindowSystem::clearState(mainWindow->winId(), NET::Max);
+#endif
 
     // process the window args
+    const int xPos = ((windowArgs.x() == -1) ?  mainWindow->x() : windowArgs.x());
+    const int yPos = ((windowArgs.y() == -1) ?  mainWindow->y() : windowArgs.y());
+    const int width = ((windowArgs.width() == -1) ?  mainWindow->width() : windowArgs.width());
+    const int height = ((windowArgs.height() == -1) ?  mainWindow->height() : windowArgs.height());
+
+    mainWindow->move ( xPos, yPos );
+    mainWindow->resize( width, height );
 
     if ( !windowArgs.isMenuBarVisible() )
     {
