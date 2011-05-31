@@ -146,7 +146,6 @@ bool SearchBarPlugin::eventFilter(QObject *o, QEvent *e)
               nextSearchEntry();
 
             connect(m_part, SIGNAL(completed()), this, SLOT(HTMLDocLoaded()));
-            connect(m_part, SIGNAL(completed(bool)), this, SLOT(HTMLDocLoaded()));
             connect(m_part, SIGNAL(started(KIO::Job *)), this, SLOT(HTMLLoadingStarted()));
         }
         // Delay since when destroying tabs part 0 gets activated for a bit, before the proper part
@@ -165,7 +164,7 @@ bool SearchBarPlugin::eventFilter(QObject *o, QEvent *e)
             }
         }
     }
-    return false;
+    return KParts::Plugin::eventFilter(o, e);
 }
 
 void SearchBarPlugin::nextSearchEntry()
@@ -227,8 +226,6 @@ void SearchBarPlugin::startSearch(const QString &search)
             kWarning() << "Failed to filter using web shortcut:" << provider.defaultKey();
             return;
         }
-
-        
         
         KParts::BrowserExtension * ext = KParts::BrowserExtension::childObject(m_part);
         if (QApplication::keyboardModifiers() & Qt::ControlModifier) {
@@ -276,8 +273,12 @@ void SearchBarPlugin::setIcon()
     m_searchCombo->style()->drawPrimitive(QStyle::PE_IndicatorArrowDown, &opt, &p, m_searchCombo);
     p.end();
     m_searchIcon = arrowmap;
-
     m_searchCombo->setIcon(m_searchIcon);
+
+    // Set the placeholder text to be the search engine name...
+    if (m_searchProviders.contains(m_currentEngine)) {
+        m_searchCombo->lineEdit()->setPlaceholderText(m_searchProviders.value(m_currentEngine).name());
+    }
 }
 
 void SearchBarPlugin::showSelectionMenu()
@@ -349,6 +350,7 @@ void SearchBarPlugin::menuActionTriggered(QAction *action)
         return;
     }
 
+    m_searchCombo->lineEdit()->setPlaceholderText(QString());
     const QString openSearchTitle = action->data().toString();
     if (!openSearchTitle.isEmpty()) {
         const QString openSearchHref = m_openSearchDescs.value(openSearchTitle);
@@ -401,10 +403,10 @@ void SearchBarPlugin::configurationChanged()
     m_searchMode = (SearchModes) config.readEntry("Mode", (int) UseSearchProvider);
     m_currentEngine = config.readEntry("CurrentEngine", m_searchEngines.first());
     m_suggestionEnabled = config.readEntry("SuggestionEnabled", true);
-    
+
     m_searchCombo->setSuggestionEnabled(m_suggestionEnabled);
     m_openSearchManager->setSearchProvider(m_currentEngine);
-    
+
     m_reloadConfiguration = false;
     setIcon();
 }
@@ -549,16 +551,19 @@ void SearchBarPlugin::addSearchSuggestion(const QStringList &suggestions)
     m_searchCombo->setSuggestionItems(suggestions);
 }
 
-SearchBarCombo::SearchBarCombo(QWidget *parent) :
-    KHistoryComboBox(true, parent)
+SearchBarCombo::SearchBarCombo(QWidget *parent)
+    :KHistoryComboBox(true, parent)
 {
     setDuplicatesEnabled(false);
-    setFixedWidth(180);
+    setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+    setMaximumWidth(300);
     connect(this, SIGNAL(cleared()), SLOT(historyCleared()));
 
     Q_ASSERT(useCompletion());
 
     KConfigGroup config(KGlobal::config(), "SearchBar");
+    const int defaultMode = KGlobalSettings::completionMode();
+    setCompletionMode (static_cast<KGlobalSettings::Completion>(config.readEntry("CompletionMode", defaultMode)));
     const QStringList list = config.readEntry( "History list", QStringList() );
     setHistoryItems(list, true);
     Q_ASSERT(currentText().isEmpty()); // KHistoryComboBox calls clearEditText
@@ -570,7 +575,18 @@ SearchBarCombo::SearchBarCombo(QWidget *parent) :
     connect(this, SIGNAL(aboutToShowContextMenu(QMenu*)), SLOT(addEnableMenuItem(QMenu*)));
 
     // use our own item delegate to display our fancy stuff :D
-    completionBox()->setItemDelegate(new SearchBarItemDelegate(this));
+    KCompletionBox* box = completionBox();
+    box->setItemDelegate(new SearchBarItemDelegate(this));
+    connect(lineEdit(), SIGNAL(textEdited(QString)), box, SLOT(setCancelledText(QString)));
+}
+
+SearchBarCombo::~SearchBarCombo()
+{
+    KConfigGroup config(KGlobal::config(), "SearchBar");
+    config.writeEntry( "History list", historyItems() );
+    const int mode = completionMode();
+    config.writeEntry( "CompletionMode", mode);
+    delete m_enableAction;
 }
 
 const QPixmap &SearchBarCombo::icon() const
@@ -668,14 +684,6 @@ void SearchBarCombo::addEnableMenuItem(QMenu *menu)
     if (menu) {
         menu->addAction(m_enableAction);
     }
-}
-
-SearchBarCombo::~SearchBarCombo()
-{
-    KConfigGroup config(KGlobal::config(), "SearchBar");
-    config.writeEntry( "History list", historyItems() );
-
-    delete m_enableAction;
 }
 
 SearchBarItemDelegate::SearchBarItemDelegate(QObject *parent)
