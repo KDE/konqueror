@@ -516,7 +516,7 @@ void SearchBarPlugin::openSearchEngineAdded(const QString &name, const QString &
                 this, SLOT(webShortcutSet(const QString &, const QString &, const QString &)));
     }
 
-    QPoint pos = m_searchCombo->mapToGlobal(QPoint(0, m_searchCombo->height() + 1));
+    QPoint pos = m_searchCombo->mapToGlobal(QPoint(m_searchCombo->width()-m_addWSWidget->width(), m_searchCombo->height() + 1));
     m_addWSWidget->setGeometry(QRect(pos, m_addWSWidget->size()));
     m_addWSWidget->show(name, fileName);
 }
