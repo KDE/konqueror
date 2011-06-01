@@ -819,6 +819,7 @@ bool NewWindowPage::acceptNavigationRequest(QWebFrame *frame, const QNetworkRequ
 
         // OpenUrl args...
         KParts::OpenUrlArguments uargs;
+        uargs.setMimeType(QL1S("text/html"));
         uargs.setActionRequestedByUser(false);
 
         // Window args...
