@@ -25,7 +25,7 @@ function statusMessage()
 
 function openWindow()
 {
-    window.open("http://kde.org/", "NewWindowTest1");
+    window.open("about:blank", "NewWindowTest1", "width=300, height=400");
 }
 
 function openWindowFrameTest()
@@ -41,11 +41,12 @@ function openWindowFrameTest()
 document.writeln("navigator.appName: " + navigator.appName + "<br />");
 document.writeln("navigator.appVersion: " + navigator.appVersion + "<br />");
 </script>
+<h1>Javascript Link Tests</h1>
 <a href="javascript:resize()">resizeTo</a><br />
 <a href="javascript:move()">moveTo</a><br />
 <a href="javascript:promptAndAlertMessage()">promptAndAlertMessage</a><br />
 <a href="javascript:statusMessage()">status</a><br />
-<a href="javascript:openWindow()">JS open new window</a><br />
+<a href="javascript:window.open('about:blank', 'NewWindowTest1', 'width=300, height=400')">JS open new window</a><br />
 <a href="javascript:openWindowFrameTest()">JS open new frameset</a><br />
 </body>
 </html>
