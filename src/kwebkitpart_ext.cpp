@@ -255,6 +255,19 @@ void WebKitBrowserExtension::reparseConfiguration()
     WebKitSettings::self()->init();
 }
 
+void WebKitBrowserExtension::disableScrolling()
+{
+    QWebView* currentView = view();
+    QWebPage* page = currentView ? currentView->page() : 0;
+    QWebFrame* frame = page ? page->mainFrame() : 0;
+
+    if (!frame)
+        return;
+
+    frame->setScrollBarPolicy(Qt::Horizontal, Qt::ScrollBarAlwaysOff);
+    frame->setScrollBarPolicy(Qt::Vertical, Qt::ScrollBarAlwaysOff);
+}
+
 void WebKitBrowserExtension::zoomIn()
 {
     if (view())

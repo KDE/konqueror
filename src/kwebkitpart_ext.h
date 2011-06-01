@@ -59,6 +59,7 @@ public Q_SLOTS:
     void printFrame();
     void searchProvider();
     void reparseConfiguration();
+    void disableScrolling();
 
     void zoomIn();
     void zoomOut();
