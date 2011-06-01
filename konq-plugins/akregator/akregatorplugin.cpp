@@ -78,7 +78,7 @@ AkregatorMenu::AkregatorMenu( KonqPopupMenu * popupmenu, const QStringList& /* l
     // See if any are RSS feeds.
     
     KFileItemList list = popupmenu->fileItemList();
-    foreach ( const KFileItem it, list )
+    foreach ( const KFileItem &it, list )
     {
 	if (isFeedUrl(it))
         {
