@@ -116,7 +116,7 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
     // TODO: Determine how a per page style sheets settings interacts with a
     // global one. Is it an intersection of the two or a complete override ?
     if (!QWebSettings::globalSettings()->userStyleSheetUrl().isValid())
-        settings()->setUserStyleSheetUrl((QL1S("data:text/css;charset=utf-8;base64,") +
+        settings()->setUserStyleSheetUrl(QString(QL1S("data:text/css;charset=utf-8;base64,") +
                                           WebKitSettings::self()->settingsToCSS().toUtf8().toBase64()));
 
     connect(this, SIGNAL(geometryChangeRequested(const QRect &)),
