@@ -5201,15 +5201,26 @@ static QString hp_tryPrepend( const QString& s )
 {
     if (s.isEmpty() || s[0] == QLatin1Char('/') || s[0] == QLatin1Char('~'))
         return QString();
+
+    bool containsSpace = false;
+
     for( int pos = 0;
          pos < s.length() - 2; // 4 = ://x
-         ++pos )
-        {
+         ++pos ) {
         if( s[ pos ] == ':' && s[ pos + 1 ] == '/' && s[ pos + 2 ] == '/' )
             return QString();
         if( !s[ pos ].isLetter() )
             break;
+        if( s[pos].isSpace() ) {
+            containsSpace = true;
+            break;
         }
+    }
+
+    if (containsSpace || s.at(s.length()-1).isSpace()) {
+        return QString();
+    }
+
     return ( s.startsWith( "www." ) ? "http://" : "http://www." ) + s;
 }
 
