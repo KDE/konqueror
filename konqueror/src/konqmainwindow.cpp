@@ -2017,6 +2017,11 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
 
   //kDebug() << "setting location bar url to"
   //         << m_currentView->locationBarURL() << "m_currentView=" << m_currentView;
+
+  // Make sure the location bar gets updated when the view(tab) is changed.
+  if (oldView != newView) {
+    m_combo->lineEdit()->setModified(false);
+  }
   m_currentView->setLocationBarURL( m_currentView->locationBarURL() );
 
   updateToolBarActions();
