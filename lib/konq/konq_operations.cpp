@@ -328,12 +328,12 @@ KonqOperations *KonqOperations::doDrop( const KFileItem & destItem, const KUrl &
     {
         //kDebug(1203) << "Pasting to " << dest.url();
         KonqOperations * op = new KonqOperations(parent);
-        KIO::CopyJob* job = KIO::pasteMimeSource( ev->mimeData(), dest,
+        KIO::Job* job = KIO::pasteMimeData( ev->mimeData(), dest,
                                                   i18n( "File name for dropped contents:" ),
                                                   parent );
         if ( job ) // 0 if canceled by user
         {
-            op->setOperation( job, COPY, job->destUrl() );
+            op->setOperation( job, COPY, dest );
             KIO::FileUndoManager::self()->recordJob( KIO::FileUndoManager::Copy, KUrl::List(), dest, job );
         }
         ev->acceptProposedAction();
