@@ -44,10 +44,18 @@ K_PLUGIN_FACTORY(FavIconsFactory,
     )
 K_EXPORT_PLUGIN(FavIconsFactory("favicons"))
 
+static QString portForUrl(const KUrl& url)
+{
+    if (url.port() > 0) {
+        return (QString(QLatin1Char('_')) + QString::number(url.port()));
+    }
+    return QString();
+}
+
 static QString simplifyURL(const KUrl &url)
 {
     // splat any = in the URL so it can be safely used as a config key
-    QString result = url.host() + url.path();
+    QString result = url.host() + portForUrl(url) + url.path();
     for (int i = 0; i < result.length(); ++i)
         if (result[i] == '=')
             result[i] = '_';
@@ -57,7 +65,7 @@ static QString simplifyURL(const KUrl &url)
 static QString iconNameFromURL(const KUrl &iconURL)
 {
     if (iconURL.path() == "/favicon.ico")
-       return iconURL.host();
+       return iconURL.host() + portForUrl(iconURL);
 
     QString result = simplifyURL(iconURL);
     // splat / so it can be safely used as a file name
