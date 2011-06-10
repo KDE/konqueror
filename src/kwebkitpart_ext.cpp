@@ -454,19 +454,8 @@ void WebKitBrowserExtension::slotBlockHost()
 
 void WebKitBrowserExtension::slotCopyLinkURL()
 {
-    if (!view())
-        return;
-
-    KUrl safeURL(view()->contextMenuResult().linkUrl());
-    safeURL.setPass(QString());
-    // Set it in both the mouse selection and in the clipboard
-    QMimeData* mimeData = new QMimeData;
-    safeURL.populateMimeData(mimeData);
-    QApplication::clipboard()->setMimeData(mimeData, QClipboard::Clipboard);
-
-    mimeData = new QMimeData;
-    safeURL.populateMimeData(mimeData);
-    QApplication::clipboard()->setMimeData(mimeData, QClipboard::Selection);
+    if (view())
+        view()->triggerPageAction(QWebPage::CopyLinkToClipboard);
 }
 
 void WebKitBrowserExtension::slotSaveLinkAs()
@@ -584,7 +573,7 @@ static KUrl mediaUrlFrom(QWebElement& element)
     if (src.isEmpty())
         return KUrl();
 
-    return KUrl(frame->baseUrl().resolved(QUrl::fromEncoded(src.toAscii(), QUrl::StrictMode)));
+    return KUrl(frame->baseUrl().resolved(QUrl::fromEncoded(QUrl::toPercentEncoding(src), QUrl::StrictMode)));
 }
 
 void WebKitBrowserExtension::slotSaveMedia()
