@@ -525,15 +525,18 @@ void KonqMainWindow::openUrl(KonqView *_view, const KUrl &_url,
     if (mimeType.isEmpty())
         mimeType = req.args.mimeType();
 
-    if (!url.isValid()) {
-        // I think we can't really get here anymore; I tried and didn't succeed.
-        // URL filtering catches this case before hand, and in cases without filtering
-        // (e.g. HTML link), the url is empty here, not invalid.
-        // But just to be safe, let's keep this code path, even if it can't show the typed string.
-        url = KParts::BrowserRun::makeErrorUrl(KIO::ERR_MALFORMED_URL, url.url() /*empty*/, url.url() /*empty*/);
-    } else if (!KProtocolInfo::isKnownProtocol(url)) {
-        url = KParts::BrowserRun::makeErrorUrl(KIO::ERR_UNSUPPORTED_PROTOCOL, url.protocol(), url.url());
+    if (url.protocol() != QLatin1String("error")) {
+        if (!url.isValid()) {
+            // I think we can't really get here anymore; I tried and didn't succeed.
+            // URL filtering catches this case before hand, and in cases without filtering
+            // (e.g. HTML link), the url is empty here, not invalid.
+            // But just to be safe, let's keep this code path, even if it can't show the typed string.
+            url = KParts::BrowserRun::makeErrorUrl(KIO::ERR_MALFORMED_URL, url.url() /*empty*/, url.url() /*empty*/);
+        } else if (!KProtocolInfo::isKnownProtocol(url)) {
+            url = KParts::BrowserRun::makeErrorUrl(KIO::ERR_UNSUPPORTED_PROTOCOL, url.protocol(), url.url());
+        }
     }
+
     if (url.url() == "about:blank" || url.protocol() == "error") {
         mimeType = "text/html";
     }
