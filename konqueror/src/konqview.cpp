@@ -643,7 +643,7 @@ void KonqView::setPageSecurity( int pageSecurity )
 
 void KonqView::setTabIcon( const KUrl &url )
 {
-  if (!m_bPassiveMode) frame()->setTabIcon( url, 0L );
+  if (!m_bPassiveMode && url.isValid()) frame()->setTabIcon( url, 0L );
 }
 
 void KonqView::setCaption( const QString & caption )
