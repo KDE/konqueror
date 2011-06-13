@@ -3089,10 +3089,6 @@ bool KonqMainWindow::eventFilter(QObject*obj, QEvent *ev)
     if ( m_currentView )
         ext = m_currentView->browserExtension();
 
-    const QMetaObject* slotMetaObject = 0;
-    if (ext)
-      slotMetaObject = ext->metaObject();
-
     if (ev->type()==QEvent::FocusIn)
     {
       //kDebug() << "ComboBox got the focus...";
