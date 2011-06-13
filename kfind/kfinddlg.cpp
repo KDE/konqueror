@@ -30,6 +30,8 @@
 #include <kdebug.h>
 #include <kaboutapplicationdialog.h>
 #include <kstandarddirs.h>
+#include <khelpmenu.h>
+#include <kmenu.h>
 
 #include "kftabdlg.h"
 #include "kquery.h"
@@ -39,7 +41,6 @@ KfindDlg::KfindDlg(const KUrl & url, QWidget *parent)
   : KDialog( parent )
 {
   setButtons( User1 | User2 | User3 | Close | Help );
-  setHelp( QString(), "kfind" );
   setDefaultButton( User3 );
   setModal( true );
 
@@ -97,6 +98,8 @@ KfindDlg::KfindDlg(const KUrl & url, QWidget *parent)
     connect(query, SIGNAL(result(int)), SLOT(slotResult(int)));
     connect(query, SIGNAL(foundFileList(QList< QPair<KFileItem,QString> >)), SLOT(addFiles(QList< QPair<KFileItem,QString> >)));
 
+  KHelpMenu *helpMenu = new KHelpMenu(this, KGlobal::mainComponent().aboutData(), true);
+  setButtonMenu( Help, helpMenu->menu() );
   dirwatch=NULL;
 }
 
