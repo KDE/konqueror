@@ -26,7 +26,7 @@
 #include <KDE/KApplication>
 #include <KDE/KStandardDirs>
 #include <KDE/KTemporaryFile>
-#include <KDE/KParts/GenericFactory>
+#include <KDE/KDebug>
 
 #include <QtGui/QWidget>
 

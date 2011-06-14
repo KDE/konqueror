@@ -29,7 +29,6 @@
 #include "settings/webkitsettings.h"
 
 #include <kio/global.h>
-#include <KDE/KParts/GenericFactory>
 #include <KDE/KAboutData>
 #include <KDE/KAction>
 #include <KDE/KActionCollection>
