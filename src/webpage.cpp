@@ -484,7 +484,8 @@ void WebPage::slotRequestFinished(QNetworkReply *reply)
 {
     Q_ASSERT(reply);
 
-    const QUrl requestUrl (reply->request().url());   
+    QUrl requestUrl (reply->request().url());
+    requestUrl.setUserInfo(QString());
 
     // Disregards requests that are not in the request queue...
     if (!m_requestQueue.removeOne(requestUrl))
