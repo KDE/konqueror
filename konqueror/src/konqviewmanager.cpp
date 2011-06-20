@@ -19,8 +19,17 @@
 */
 
 #include "konqviewmanager.h"
+
 #include "konqcloseditem.h"
 #include "konqundomanager.h"
+#include "konqmisc.h"
+#include "konqview.h"
+#include "konqframestatusbar.h"
+#include "konqtabs.h"
+#include "konqprofiledlg.h"
+#include "konqsettingsxt.h"
+#include "konqframevisitor.h"
+#include <konq_events.h>
 
 #include <QtCore/QFileInfo>
 #include <QtDBus/QDBusMessage>
@@ -37,20 +46,7 @@
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <ktoolbarpopupaction.h>
-
 #include <kmenu.h>
-
-#include <assert.h>
-
-#include "konqmisc.h"
-
-#include "konqview.h"
-#include "konqframestatusbar.h"
-#include "konqtabs.h"
-#include "konqprofiledlg.h"
-#include <konq_events.h>
-#include "konqsettingsxt.h"
-#include "konqframevisitor.h"
 
 //#define DEBUG_VIEWMGR
 
@@ -114,7 +110,7 @@ KonqView* KonqViewManager::splitView( KonqView* currentView,
   if( newViewFactory.isNull() )
     return 0; //do not split at all if we can't create the new view
 
-  assert( splitFrame );
+  Q_ASSERT( splitFrame );
 
   KonqFrameContainerBase* parentContainer = splitFrame->parentContainer();
 
@@ -152,8 +148,8 @@ KonqView* KonqViewManager::splitView( KonqView* currentView,
     parentKonqFrameContainer->setSizes( parentSplitterSizes );
   }
 
-  assert( newView->frame() );
-  assert( newView->part() );
+  Q_ASSERT( newView->frame() );
+  Q_ASSERT( newView->part() );
   newContainer->setActiveChild( newView->frame() );
   setActivePart( newView->part() );
 

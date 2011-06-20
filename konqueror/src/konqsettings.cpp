@@ -25,7 +25,6 @@
 #include <kmimetype.h>
 #include <kdesktopfile.h>
 #include <kdebug.h>
-#include <assert.h>
 #include <kconfiggroup.h>
 
 class KonqEmbedSettingsSingleton
