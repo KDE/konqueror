@@ -373,7 +373,7 @@ QWidget * KonqMainWindow::createContainer( QWidget *parent, int index, const QDo
   static QString tagToolBar = QLatin1String( "ToolBar" );
   if ( res && (element.tagName() == tagToolBar) && (element.attribute( "name" ) == nameBookmarkBar) )
   {
-    assert( ::qobject_cast<KToolBar*>( res ) );
+    Q_ASSERT( ::qobject_cast<KToolBar*>( res ) );
     if (!KAuthorized::authorizeKAction("bookmarks")) {
         delete res;
         return 0;
@@ -420,7 +420,7 @@ void KonqMainWindow::removeContainer( QWidget *container, QWidget *parent, QDomE
 
   if ( element.tagName() == tagToolBar && element.attribute( "name" ) == nameBookmarkBar )
   {
-    assert( ::qobject_cast<KToolBar*>( container ) );
+    Q_ASSERT( ::qobject_cast<KToolBar*>( container ) );
     if (m_paBookmarkBar)
       m_paBookmarkBar->clear();
   }
@@ -1598,7 +1598,7 @@ void KonqMainWindow::slotLinkView()
     if (!m_currentView) return;
 
     // Can't access this action in passive mode anyway
-    assert(!m_currentView->isPassiveMode());
+    Q_ASSERT(!m_currentView->isPassiveMode());
     const bool mode = !m_currentView->isLinkedView();
 
     const QList<KonqView*> linkableViews = KonqLinkableViewsCollector::collect(this);
@@ -1915,7 +1915,7 @@ void KonqMainWindow::slotSetStatusBarText( const QString & )
 
 void KonqMainWindow::slotViewCompleted( KonqView * view )
 {
-  assert( view );
+  Q_ASSERT( view );
 
   // Need to update the current working directory
   // of the completion object every time the user
@@ -2618,7 +2618,7 @@ KUrl::List KonqMainWindow::currentURLs() const
 // Only valid if there are one or two views
 KonqView * KonqMainWindow::otherView( KonqView * view ) const
 {
-  assert( viewCount() <= 2 );
+  Q_ASSERT( viewCount() <= 2 );
   MapViews::ConstIterator it = m_mapViews.constBegin();
   if ( (*it) == view )
     ++it;

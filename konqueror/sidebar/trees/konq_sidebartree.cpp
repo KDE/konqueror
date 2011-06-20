@@ -894,7 +894,7 @@ void KonqSidebarTree::slotItemRenamed(Q3ListViewItem* item, const QString &name,
 {
     Q_ASSERT(col==0);
     if (col != 0) return;
-    assert(item);
+    Q_ASSERT(item);
     KonqSidebarTreeItem * treeItem = static_cast<KonqSidebarTreeItem *>(item);
     treeItem->rename( name );
 }

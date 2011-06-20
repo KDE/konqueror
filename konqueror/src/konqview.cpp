@@ -20,6 +20,7 @@
 
 
 #include "konqview.h"
+
 #include "KonqViewAdaptor.h"
 #include "konqsettingsxt.h"
 #include "konqframestatusbar.h"
@@ -28,21 +29,20 @@
 #include "konqviewmanager.h"
 #include "konqtabs.h"
 #include "konqbrowseriface.h"
-#include <kparts/statusbarextension.h>
-#include <kparts/browserextension.h>
-
 #include "konqhistorymanager.h"
 #include "konqpixmapprovider.h"
 
-#include <assert.h>
+#include <kparts/statusbarextension.h>
+#include <kparts/browserextension.h>
+#include <kio/job.h>
+#include <kio/jobuidelegate.h>
 #include <kdebug.h>
 #include <kcursor.h>
 #include <kmessagebox.h>
 #include <klocale.h>
 #include <krandom.h>
-#include <kio/job.h>
-#include <kio/jobuidelegate.h>
 #include <ktoggleaction.h>
+#include <kjobuidelegate.h>
 
 #include <QtGui/QApplication>
 #include <QtCore/QArgument>
@@ -52,7 +52,7 @@
 #include <QtGui/QKeyEvent>
 #include <QtCore/QFile>
 #include <QtGui/QScrollArea>
-#include <kjobuidelegate.h>
+
 
 //#define DEBUG_HISTORY
 
@@ -305,7 +305,7 @@ bool KonqView::changePart(const QString &mimeType,
                           bool forceAutoEmbed)
 {
     // Caller should call stop first.
-    assert( !m_bLoading );
+    Q_ASSERT( !m_bLoading );
 
     //kDebug() << "mimeType=" << mimeType
     //             << "requested serviceName=" << serviceName
@@ -858,7 +858,7 @@ void KonqView::copyHistory( KonqView *other )
 
 KUrl KonqView::url() const
 {
-  assert( m_pPart );
+  Q_ASSERT( m_pPart );
   return m_pPart->url();
 }
 
