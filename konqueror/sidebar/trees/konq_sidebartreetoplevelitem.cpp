@@ -53,8 +53,8 @@ void KonqSidebarTreeTopLevelItem::setOpen( bool open )
 void KonqSidebarTreeTopLevelItem::itemSelected()
 {
     kDebug() << "KonqSidebarTreeTopLevelItem::itemSelected";
-    QMimeSource *data = QApplication::clipboard()->data();
-    const bool paste = m_bTopLevelGroup && data->provides("text/uri-list");
+    const QMimeData *data = QApplication::clipboard()->mimeData();
+    const bool paste = m_bTopLevelGroup && data->hasUrls();
     tree()->enableActions(true, true, paste);
 }
 

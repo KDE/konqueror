@@ -1024,12 +1024,21 @@ void KonqSidebarTree::slotOpenTab()
                          browserArgs);
 }
 
+static QMimeData* mimeDataFor(const KUrl& url)
+{
+  QMimeData* data = new QMimeData();
+  QList<QUrl> urlList;
+  urlList.append(QUrl(url));
+  data->setUrls(urlList);
+  return data;
+}
+
 void KonqSidebarTree::slotCopyLocation()
 {
     if (!m_currentTopLevelItem) return;
     KUrl url = m_currentTopLevelItem->externalURL();
-    qApp->clipboard()->setData( new K3URLDrag(url, 0), QClipboard::Selection );
-    qApp->clipboard()->setData( new K3URLDrag(url, 0), QClipboard::Clipboard );
+    qApp->clipboard()->setMimeData( mimeDataFor(url), QClipboard::Selection );
+    qApp->clipboard()->setMimeData( mimeDataFor(url), QClipboard::Clipboard );
 }
 
 ///////////////////////////////////////////////////////////////////
