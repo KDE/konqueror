@@ -1478,6 +1478,8 @@ void KonqMainWindow::slotIconsChanged()
 
 void KonqMainWindow::slotOpenWith()
 {
+    if (!m_currentView) return;
+
     KUrl::List lst;
     lst.append(m_currentView->url());
 
@@ -1496,6 +1498,8 @@ void KonqMainWindow::slotOpenWith()
 
 void KonqMainWindow::slotViewModeTriggered(QAction* action)
 {
+    if (!m_currentView) return;
+
     // Gather data from the action, since the action will be deleted by changePart
     const QString modeName = action->objectName();
     const QString internalViewMode = action->data().toString();
@@ -1554,6 +1558,8 @@ void KonqMainWindow::showHTML( KonqView * _view, bool b, bool _activateView )
 
 void KonqMainWindow::slotShowHTML()
 {
+  if (!m_currentView) return;
+
   bool b = !m_currentView->allowHTML();
 
   m_currentView->stop();
@@ -1573,6 +1579,8 @@ void KonqMainWindow::setShowHTML( bool b )
 
 void KonqMainWindow::slotLockView()
 {
+  if (!m_currentView) return;
+
   m_currentView->setLockedLocation( m_paLockView->isChecked() );
 }
 
@@ -1587,6 +1595,8 @@ void KonqMainWindow::slotStop()
 
 void KonqMainWindow::slotLinkView()
 {
+    if (!m_currentView) return;
+
     // Can't access this action in passive mode anyway
     assert(!m_currentView->isPassiveMode());
     const bool mode = !m_currentView->isLinkedView();
@@ -2414,6 +2424,8 @@ void KonqMainWindow::openMultiURL( const KUrl::List& url )
 
 void KonqMainWindow::slotRemoveView()
 {
+    if (!m_currentView) return;
+
     if (m_currentView->isModified()) {
       if ( KMessageBox::warningContinueCancel( this,
            i18n("This view contains changes that have not been submitted.\nClosing the view will discard these changes."),
@@ -2622,6 +2634,8 @@ void KonqMainWindow::slotSaveViewProfile()
 
 void KonqMainWindow::slotUpAboutToShow()
 {
+    if (!m_currentView) return;
+
     QMenu *popup = m_paUp->menu();
     popup->clear();
 
@@ -2661,6 +2675,8 @@ void KonqMainWindow::slotUp()
 
 void KonqMainWindow::slotUpDelayed()
 {
+    if (!m_currentView) return;
+
     KonqOpenURLRequest req;
     req.browserArgs.setNewTab(true);
     req.forceAutoEmbed = true;
@@ -3000,6 +3016,8 @@ void KonqMainWindow::slotMakeCompletion( const QString& text )
 
 void KonqMainWindow::slotSubstringcompletion( const QString& text )
 {
+    if (!m_currentView) return;
+
     QString currentURL = m_currentView->url().prettyUrl();
     bool filesFirst = currentURL.startsWith( '/' ) ||
                       currentURL.startsWith( "file:/" );
@@ -3889,6 +3907,8 @@ void KonqMainWindow::updateHistoryActions()
 
 void KonqMainWindow::updateToolBarActions( bool pendingAction /*=false*/)
 {
+  if (!m_currentView) return;
+
   // Enables/disables actions that depend on the current view & url (mostly toolbar)
   // Up, back, forward, the edit extension, stop button, wheel
   setUpEnabled( m_currentView->url() );
@@ -4670,6 +4690,8 @@ void KonqMainWindow::slotItemsRemoved(const KFileItemList &items)
 Q_DECLARE_METATYPE(KService::Ptr)
 void KonqMainWindow::slotOpenEmbedded(KService::Ptr service)
 {
+    if (!m_currentView) return;
+
     m_currentView->stop();
     m_currentView->setLocationBarURL(m_popupUrl);
     m_currentView->setTypedURL(QString());
