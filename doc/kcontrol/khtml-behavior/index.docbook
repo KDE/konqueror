@@ -8,7 +8,7 @@
 
 <article lang="&language;">
 <articleinfo>
-<title>Web Behavior</title>
+<title>Web Browsing</title>
 <authorgroup>
 <author>&Krishna.Tateneni; &Krishna.Tateneni.mail;</author>
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
@@ -26,7 +26,7 @@
 
 </articleinfo>
 <sect1 id="konq-browsing">
-<title>Web Behavior</title>
+<title>Web Browsing</title>
 
 <para>The &konqueror; Browser module of &systemsettings; allows you to select
 various options for the behavior of &konqueror;, the
@@ -82,6 +82,11 @@ when misused, and so you may wish to disable it.</para>
 Pressing the &Ctrl; key when viewing web pages activates Access Keys. 
 Unchecking this box will disable this accessibility feature. &konqueror; 
 needs to be restarted for this change to take effect.</para>
+
+<!--para><guilabel>Send the DNT header to tell web sites you do not want
+to be tracked</guilabel>.
+http://en.wikipedia.org/wiki/X-Do-Not-Track
+</para-->
 
 </sect1>
 
