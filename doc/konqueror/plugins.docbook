@@ -38,8 +38,8 @@ Browser Plugins</ulink> help page.</para>
 <para>&kde; releases several useful plugins that interact with
 &konqueror; in various ways. These are explained briefly below.</para>
 
-<para>Use <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure Extensions
-...</guimenuitem></menuchoice> to open a dialog with all installed plugins and select
+<para>Use <menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure 
+Extensions...</guimenuitem></menuchoice> to open a dialog with all installed plugins and select
 the ones you need. All plugins are accessible in the <guimenu>Tools</guimenu> menu.</para>
 
 <para>Only plugins appropriate for the current mode (file manager or browser) 
@@ -367,7 +367,17 @@ This dialog is also used to configure what folders are used.</term>
 
 <varlistentry>
 <term><guimenuitem>Use comment file</guimenuitem></term>
-<listitem><para>The use comment file check box enables a file selector to choose a comments file to use with your gallery.</para></listitem>
+<listitem><para>The use comment file check box enables a file selector to choose a comments file to use with your gallery.
+The comment file contains the subtitles for the images.</para>
+<para>The format of this file is:</para>
+<programlisting># this is a comment, lines starting with '#' are ignored
+FILENAME1:
+Description
+
+FILENAME2:
+Description
+</programlisting>
+</listitem>
 </varlistentry>
 
 </variablelist>
