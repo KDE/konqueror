@@ -57,7 +57,7 @@ ChFaceDlg::ChFaceDlg(const QString& picsdir, QWidget *parent)
   setButtons( Ok|Cancel|User1 );
   setDefaultButton( Ok );
 
-  setButtonText( User1, "Custom image" );
+  setButtonText( User1, i18n("Custom image") );
 
   QWidget *faceDlg = new QWidget;
   ui.setupUi(faceDlg);
