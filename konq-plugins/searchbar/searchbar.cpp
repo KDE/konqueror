@@ -316,7 +316,7 @@ void SearchBarPlugin::showSelectionMenu()
 
     QList<QAction *> actions = m_popupMenu->actions();
     QAction *before = 0;
-    if (!actions.isEmpty()) {
+    if (actions.size() > 1) {
         before = actions[actions.size() - 2];
     }
 
