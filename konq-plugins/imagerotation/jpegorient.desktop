@@ -6,6 +6,7 @@ ServiceTypes=KonqPopupMenu/Plugin,image/jpeg
 Actions=jpegRot90;jpegRot270;jpegFlipV;jpegFlipH;
 X-KDE-Submenu=Transform Image
 X-KDE-Submenu[ar]=انقل الصورة إلىر
+X-KDE-Submenu[as]=ছবি পৰিৱৰ্তন কৰক
 X-KDE-Submenu[be]=Змяніць відарыс
 X-KDE-Submenu[bg]=Преобразуване на изображение
 X-KDE-Submenu[bs]=Preoblikuj sliku
@@ -72,6 +73,7 @@ X-KDE-Require=Write
 [Desktop Action jpegRot90]
 Name=Rotate Clockwise
 Name[ar]=أدر باتجاه عقارب الساعة
+Name[as]=দক্ষিণাৱৰ্তী ঘুৰাওক
 Name[be]=Павярнуць па гадзіннай стрэлцы
 Name[bg]=Завъртане по посока на часовниковата стрелка
 Name[bs]=Rotiraj u smjeru kazaljke
@@ -138,6 +140,7 @@ Exec=jpegorient +90 %F
 [Desktop Action jpegRot270]
 Name=Rotate Counter-Clockwise
 Name[ar]=أدر بعكس اتجاه عقارب الساعة
+Name[as]=উত্তৰৱৰ্তী ঘুৰাওক
 Name[be]=Павярнуць супаць гадзіннай стрэлкі
 Name[bg]=Завъртане обратно на посоката на часовниковата стрелка
 Name[bs]=Rotiraj suprotno smjeru kazaljke
@@ -209,6 +212,7 @@ Exec=jpegorient +270 %F
 [Desktop Action jpegFlipV]
 Name=Flip Vertically
 Name[ar]=اقلب رأسيا
+Name[as]=উলম্বভাৱে উলোটা কৰক
 Name[be]=Адбіць па вертыкалі
 Name[bg]=Вертикално обръщане
 Name[bs]=Prevrni uspravno
@@ -278,6 +282,7 @@ Exec=jpegorient v %F
 [Desktop Action jpegFlipH]
 Name=Flip Horizontally
 Name[ar]=اقلب أفقيا
+Name[as]=আনুভুমিকভাৱে উলোটা কৰক
 Name[be]=Адбіць па гарызанталі
 Name[bg]=Хоризонтално обръщане
 Name[bs]=Prevrni vodoravno

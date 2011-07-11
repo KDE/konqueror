@@ -6,6 +6,7 @@ Type=Service
 Actions=convToJPEG;convToPNG;convToGIF;convToTIF;
 X-KDE-Submenu=Convert To
 X-KDE-Submenu[ar]=حول إلى
+X-KDE-Submenu[as]=লে পৰিৱৰ্তন কৰক
 X-KDE-Submenu[be]=Канвертаваць у
 X-KDE-Submenu[bg]=Конвертиране към
 X-KDE-Submenu[bs]=Pretvori u
@@ -71,6 +72,7 @@ TryExec=convert
 [Desktop Action convToJPEG]
 Name=JPEG
 Name[ar]=JPEG
+Name[as]=JPEG
 Name[be]=JPEG
 Name[bg]=JPEG
 Name[bs]=JPEG
@@ -140,6 +142,7 @@ Exec=convert %f "`echo %f | perl -pe 's/\\.[^.]+$//'`.jpg"
 [Desktop Action convToPNG]
 Name=PNG
 Name[ar]=PNG
+Name[as]=PNG
 Name[be]=PNG
 Name[bg]=PNG
 Name[bs]=PNG
@@ -208,6 +211,7 @@ Exec=convert %f "`echo %f | perl -pe 's/\\.[^.]+$//'`.png"
 
 [Desktop Action convToTIF]
 Name=TIFF
+Name[as]=TIFF
 Name[bg]=TIFF
 Name[bs]=TIFF
 Name[ca]=TIFF
@@ -269,6 +273,7 @@ Exec=convert %f "`echo %f | perl -pe 's/\\.[^.]+$//'`.tif"
 [Desktop Action convToGIF]
 Name=GIF
 Name[ar]=GIF
+Name[as]=GIF
 Name[be]=GIF
 Name[bg]=GIF
 Name[bs]=GIF
