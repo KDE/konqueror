@@ -336,7 +336,7 @@ KfindTabWidget::KfindTabWidget(QWidget *parent)
 
     metainfokeyEdit=new KLineEdit(pages[2]);
     metainfoEdit=new KLineEdit(pages[2]);
-    QLabel * textMetaInfo = new QLabel(i18n("fo&r:"), pages[2]);
+    QLabel * textMetaInfo = new QLabel(i18nc("as in search for", "fo&r:"), pages[2]);
     textMetaInfo->setBuddy( metainfoEdit );
     QLabel * textMetaKey = new QLabel(i18n("Search &metainfo sections:"), pages[2]);
     textMetaKey->setBuddy( metainfokeyEdit );
