@@ -640,19 +640,20 @@ void KWebKitPart::slotRestoreFrameState(QWebFrame *frame)
                                         data.value(QL1S("scrolly")).toInt()));
 }
 
-void KWebKitPart::slotLinkHovered(const QString &link, const QString &title, const QString &content)
+void KWebKitPart::slotLinkHovered(const QString& _link, const QString& /*title*/, const QString& /*content*/)
 {
-    Q_UNUSED(title);
-    Q_UNUSED(content);
-
     QString message;
 
-    if (link.isEmpty()) {
+    if (_link.isEmpty()) {
         message = QL1S("");
         emit m_browserExtension->mouseOverInfo(KFileItem());
     } else {
-        QUrl linkUrl (link);
+        QUrl linkUrl (_link);
         const QString scheme = linkUrl.scheme();
+
+        // Protect the user against URL spoofing!
+        linkUrl.setUserName(QString());
+        const QString link (linkUrl.toString());
 
         if (QString::compare(scheme, QL1S("mailto"), Qt::CaseInsensitive) == 0) {
             message += i18nc("status bar text when hovering email links; looks like \"Email: xy@kde.org - CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\"", "Email: ");
@@ -686,7 +687,7 @@ void KWebKitPart::slotLinkHovered(const QString &link, const QString &title, con
                 message += i18nc("status bar text when hovering email links; looks like \"Email: xy@kde.org - CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\"", " - BCC: ") + fields.value(QL1S("bcc")).join(QL1S(", "));
             if (fields.contains(QL1S("subject")))
                 message += i18nc("status bar text when hovering email links; looks like \"Email: xy@kde.org - CC: z@kde.org -BCC: x@kde.org - Subject: Hi translator\"", " - Subject: ") + fields.value(QL1S("subject")).join(QL1S(" "));
-        } else if (linkUrl.scheme() == QL1S("javascript")) {
+        } else if (scheme == QL1S("javascript")) {
             message = KStringHandler::rsqueeze(link, 80);
             if (link.startsWith(QL1S("javascript:window.open")))
                 message += i18n(" (In new window)");
