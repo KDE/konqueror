@@ -234,7 +234,7 @@ void KImGalleryPlugin::createBody(QTextStream& stream, const QString& sourceDirN
 
             if (m_configDlg->printImageSize()) {
                 imginfo.setFile( imageDir, imgName );
-                stream << "<div>(" << (imginfo.size() / 1024) << " " <<  i18n("KB") << ")" << "</div>" << endl;
+                stream << "<div>(" << (imginfo.size() / 1024) << " " <<  i18n("KiB") << ")" << "</div>" << endl;
             }
 
             if (m_useCommentFile) {
