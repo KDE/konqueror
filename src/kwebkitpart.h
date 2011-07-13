@@ -136,6 +136,8 @@ private Q_SLOTS:
     void slotSetStatusBarText(const QString& text);
     void slotWindowCloseRequested();
     void slotPrintRequested(QWebFrame*);
+    void slotSaveFormDataRequested(const QString &, const QUrl &);
+    void slotSaveFormDataDone();
 
 private:
     WebPage* page();

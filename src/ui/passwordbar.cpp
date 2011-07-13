@@ -20,7 +20,6 @@
  */
 
 #include "passwordbar.h"
-#include "ui_passwordbar.h"
 
 #include "settings/webkitsettings.h"
 
@@ -29,87 +28,83 @@
 #include <KDE/KColorScheme>
 #include <KDE/KLocalizedString>
 
-#include <QtCore/QUrl>
 #include <QtCore/QCoreApplication>
+#include <QtGui/QAction>
 #include <QtGui/QPalette>
 
 namespace KDEPrivate {
 
-class PasswordBar::PasswordBarPrivate
-{
-public:
-    PasswordBarPrivate() {}
-
-    void init (PasswordBar* passwordBar)
-    {
-        ui.setupUi(passwordBar);
-        ui.notNowButton->setIcon(KIcon("dialog-close"));
-        
-        QPalette pal = passwordBar->palette();
-        KColorScheme::adjustBackground(pal, KColorScheme::ActiveBackground);
-        passwordBar->setPalette(pal);
-        passwordBar->setBackgroundRole(QPalette::Base);
-        passwordBar->setAutoFillBackground(true);
-        
-        connect(ui.notNowButton, SIGNAL(clicked()),
-                passwordBar, SLOT(onNotNowButtonClicked()));
-        connect(ui.neverButton, SIGNAL(clicked()),
-                passwordBar, SLOT(onNeverButtonClicked()));
-        connect(ui.rememberButton, SIGNAL(clicked()),
-                passwordBar, SLOT(onRememberButtonClicked()));
-    }
-
-    Ui::PasswordBar ui;
-    QString requestKey;
-    QUrl url;
-};
-
 PasswordBar::PasswordBar(QWidget *parent)
-            :QWidget(parent), d(new PasswordBarPrivate)
+            :KMessageWidget(parent)
 {
-    d->init(this);
+    setCloseButtonVisible(false);
+    setMessageType(KMessageWidget::Information);
 
-    // Hide the widget by default
-    setVisible(false);
+    QAction* action = new QAction(i18nc("@action:remember password", "&Remember"), this);
+    connect(action, SIGNAL(triggered()), this, SLOT(onRememberButtonClicked()));
+    addAction(action);
+
+    action = new QAction(i18nc("@action:never for this site", "Ne&ver for this site"), this);
+    connect(action, SIGNAL(triggered()), this, SLOT(onNeverButtonClicked()));
+    addAction(action);
+
+    action = new QAction(i18nc("@action:not now", "N&ot now"), this);
+    connect(action, SIGNAL(triggered()), this, SLOT(onNotNowButtonClicked()));
+    addAction(action);
 }
 
 PasswordBar::~PasswordBar()
 {
-    delete d;
 }
 
-void PasswordBar::onSaveFormData(const QString &key, const QUrl &url)
+QUrl PasswordBar::url() const
 {
-    d->url = url;
-    d->requestKey = key;
-    d->ui.infoLabel->setText(i18n("<html>Do you want %1 to remember the login "
-                                  "information for <b>%2</b>?</html>",
-                                  QCoreApplication::applicationName(),
-                                  url.host()));
+    return m_url;
+}
 
-    if (WebKitSettings::self()->isNonPasswordStorableSite(url.host()))
-      onNotNowButtonClicked();
-    else
-      show();
+QString PasswordBar::requestKey() const
+{
+    return m_requestKey;
+}
+
+void PasswordBar::setUrl (const QUrl& url)
+{
+    m_url = url;
+}
+
+void PasswordBar::setRequestKey (const QString& key)
+{
+    m_requestKey = key;
 }
 
 void PasswordBar::onNotNowButtonClicked()
 {
-    hide();
-    emit saveFormDataRejected (d->requestKey);
+    animatedHide();
+    emit saveFormDataRejected (m_requestKey);
+    emit done();
+    clear();
 }
 
 void PasswordBar::onNeverButtonClicked()
 {
-    WebKitSettings::self()->addNonPasswordStorableSite(d->url.host());
+    WebKitSettings::self()->addNonPasswordStorableSite(m_url.host());
     onNotNowButtonClicked();
 }
 
 void PasswordBar::onRememberButtonClicked()
 {
-    hide();
-    emit saveFormDataAccepted(d->requestKey);
+    animatedHide();
+    emit saveFormDataAccepted(m_requestKey);
+    emit done();
+    clear();
 }
+
+void PasswordBar::clear()
+{
+    m_requestKey.clear();
+    m_url.clear();
+}
+
 
 }
 

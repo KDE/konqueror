@@ -53,6 +53,7 @@
 #include <KDE/KAcceleratorManager>
 #include <KDE/KStatusBar>
 #include <KDE/KFileItem>
+#include <KDE/KMessageWidget>
 #include <KParts/StatusBarExtension>
 
 #include <QtCore/QUrl>
@@ -89,7 +90,8 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
              m_emitOpenUrlNotify(true),
              m_pageRestored(false),
              m_hasCachedFormData(false),
-             m_statusBarWalletLabel(0)
+             m_statusBarWalletLabel(0),
+             m_passwordBar(0)
 {
     KAboutData about = KAboutData("kwebkitpart", 0,
                                   ki18nc("Program Name", "KWebKitPart"),
@@ -140,9 +142,6 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
     new KWebKitTextExtension(this);
     new KWebKitHtmlExtension(this);
 
-    // Create and setup the password bar...
-    m_passwordBar = new KDEPrivate::PasswordBar(mainWidget);
-
     // Create the search bar...
     m_searchBar = new KDEPrivate::SearchBar(mainWidget);
     connect(m_searchBar, SIGNAL(searchTextChanged(const QString &, bool)),
@@ -167,7 +166,6 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
     QVBoxLayout* lay = new QVBoxLayout(mainWidget);
     lay->setMargin(0);
     lay->setSpacing(0);
-    lay->addWidget(m_passwordBar);
     lay->addWidget(m_webView);
     lay->addWidget(m_searchBar);
 
@@ -297,12 +295,8 @@ void KWebKitPart::connectWebPageSignals(WebPage* page)
 
     KWebWallet *wallet = page->wallet();
     if (wallet) {
-        connect(wallet, SIGNAL(saveFormDataRequested(const QString &, const QUrl &)),
-                m_passwordBar, SLOT(onSaveFormData(const QString &, const QUrl &)));
-        connect(m_passwordBar, SIGNAL(saveFormDataAccepted(const QString &)),
-                wallet, SLOT(acceptSaveFormDataRequest(const QString &)));
-        connect(m_passwordBar, SIGNAL(saveFormDataRejected(const QString &)),
-                wallet, SLOT(rejectSaveFormDataRequest(const QString &)));
+        connect(wallet, SIGNAL(saveFormDataRequested(QString,QUrl)),
+                this, SLOT(slotSaveFormDataRequested(QString,QUrl)));
         connect(wallet, SIGNAL(walletClosed()), this, SLOT(slotWalletClosed()));
     }
 }
@@ -857,4 +851,53 @@ void KWebKitPart::slotPrintRequested(QWebFrame* frame)
     connect(&dlg, SIGNAL(paintRequested(QPrinter *)),
             frame, SLOT(print(QPrinter *)));
     dlg.exec();
+}
+
+void KWebKitPart::slotSaveFormDataRequested (const QString& key, const QUrl& url)
+{
+    if (WebKitSettings::self()->isNonPasswordStorableSite(url.host()))
+        return;
+
+    if (m_passwordBar && m_passwordBar->isVisible())
+        return;
+
+    if (!m_passwordBar) {
+        m_passwordBar = new KDEPrivate::PasswordBar(widget());
+        KWebWallet* wallet = page()->wallet();
+        if (!wallet) {
+            kWarning() << "No wallet instance found! This should never happen!";
+            return;
+        }
+        connect(m_passwordBar, SIGNAL(saveFormDataAccepted(QString)),
+                wallet, SLOT(acceptSaveFormDataRequest(QString)));
+        connect(m_passwordBar, SIGNAL(saveFormDataRejected(QString)),
+                wallet, SLOT(rejectSaveFormDataRequest(QString)));
+        connect(m_passwordBar, SIGNAL(done()),
+                wallet, SLOT(slotSaveFormDataDone()));
+    }
+
+    Q_ASSERT(m_passwordBar);
+
+    m_passwordBar->setUrl(url);
+    m_passwordBar->setRequestKey(key);
+    m_passwordBar->setText(i18n("<html>Do you want %1 to remember the login "
+                                "information for <b>%2</b>?</html>",
+                                QCoreApplication::applicationName(),
+                                url.host()));
+
+    QVBoxLayout* lay = qobject_cast<QVBoxLayout*>(widget()->layout());
+    if (lay)
+        lay->insertWidget(0, m_passwordBar);
+
+    m_passwordBar->animatedShow();
+}
+
+void KWebKitPart::slotSaveFormDataDone()
+{
+    if (!m_passwordBar)
+        return;
+
+    QVBoxLayout* lay = qobject_cast<QVBoxLayout*>(widget()->layout());
+    if (lay)
+        lay->removeWidget(m_passwordBar);
 }

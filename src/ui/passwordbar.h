@@ -22,26 +22,29 @@
 #ifndef PASSWORDBAR_H
 #define PASSWORDBAR_H
 
-#include <QtGui/QWidget>
+#include <KDE/KMessageWidget>
 
-class QUrl;
+#include <QtCore/QUrl>
 
 namespace KDEPrivate {
 
-class PasswordBar : public QWidget
+class PasswordBar : public KMessageWidget
 {
     Q_OBJECT
-
 public:
-    PasswordBar(QWidget *parent = 0);
+    explicit PasswordBar(QWidget *parent = 0);
     ~PasswordBar();
+
+    QUrl url() const;
+    QString requestKey() const;
+
+    void setUrl(const QUrl&);
+    void setRequestKey(const QString&);
 
 Q_SIGNALS:
     void saveFormDataRejected(const QString &key);
     void saveFormDataAccepted(const QString &key);
-
-public Q_SLOTS:
-    void onSaveFormData(const QString &key, const QUrl &url);
+    void done();
 
 private Q_SLOTS:
     void onNotNowButtonClicked();
@@ -49,8 +52,10 @@ private Q_SLOTS:
     void onRememberButtonClicked();
 
 private:
-    class PasswordBarPrivate;
-    PasswordBarPrivate * const d;
+    void clear();
+
+    QUrl m_url;
+    QString m_requestKey;
 };
 
 }
