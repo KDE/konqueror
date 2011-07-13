@@ -18,7 +18,6 @@ set(kwebkit_LIB_SRCS
 
 kde4_add_ui_files(kwebkit_LIB_SRCS
                   ui/searchbar.ui
-                  ui/passwordbar.ui
 )
 
 ########################### kwebkitpart #############################

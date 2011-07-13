@@ -105,7 +105,6 @@ void PasswordBar::clear()
     m_url.clear();
 }
 
-
 }
 
 #include "passwordbar.moc"
