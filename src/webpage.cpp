@@ -554,10 +554,12 @@ void WebPage::slotUnsupportedContent(QNetworkReply* reply)
 #if KDE_IS_VERSION(4,6,41)
     KIO::AccessManager::putReplyOnHold(reply);
     if (KWebPage::handleReply(reply, &mimeType, &metaData)) {
+        reply->deleteLater();
         return;
     }
 #else
     downloadResponse(reply);
+    reply->deleteLater();
     return;
 #endif
 
@@ -570,6 +572,7 @@ void WebPage::slotUnsupportedContent(QNetworkReply* reply)
         emit part()->browserExtension()->openUrlRequest(reply->url(), args, KParts::BrowserArguments());
         return;
     }
+    reply->deleteLater();
 }
 
 void WebPage::slotGeometryChangeRequested(const QRect & rect)
