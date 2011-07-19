@@ -3185,6 +3185,11 @@ bool KonqMainWindow::eventFilter(QObject*obj, QEvent *ev)
       if ((keyEv->key() == Qt::Key_Tab) && (keyEv->modifiers() == Qt::ControlModifier)) {
           slotCtrlTabPressed();
           return true; // don't let QTabWidget see the event
+      } else if (obj == m_combo && m_currentView && keyEv->key() == Qt::Key_Escape) {
+          // reset url to current view's actual url on ESC
+          m_combo->setURL(m_currentView->url().pathOrUrl());
+          m_combo->lineEdit()->setModified(false);
+          return true;
       }
   }
   return KParts::MainWindow::eventFilter( obj, ev );
