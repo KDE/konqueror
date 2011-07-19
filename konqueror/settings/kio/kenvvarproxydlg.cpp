@@ -46,7 +46,7 @@
 
 KEnvVarProxyDlg::KEnvVarProxyDlg( QWidget* parent, const char* name )
                 :KProxyDialogBase( parent, name, true,
-                                   i18n( "Variable Proxy Configuration" ) )
+                                   i18nc( "@title:window", "Variable Proxy Configuration" ) )
 {
   mDlg = new EnvVarProxyDlgUI( this );
   setMainWidget( mDlg );
@@ -138,12 +138,12 @@ void KEnvVarProxyDlg::verifyPressed()
                            "actual value http://localhost:3128.</qt>");
 
     KMessageBox::detailedSorry( this, msg, details,
-                                i18n("Invalid Proxy Setup") );
+                                i18nc("@title:window", "Invalid Proxy Setup") );
   }
   else
   {
     KMessageBox::information( this, i18n("Successfully verified."),
-                                    i18n("Proxy Setup") );
+                                    i18nc("@title:window", "Proxy Setup") );
   }
 }
 
@@ -231,7 +231,7 @@ void KEnvVarProxyDlg::autoDetectPressed()
                            "\"<b>Auto Detect</b>\" button.</qt>");
 
     KMessageBox::detailedSorry( this, msg, details,
-                                i18n("Automatic Proxy Variable Detection") );
+                                i18nc("@title:window", "Automatic Proxy Variable Detection") );
   }
 }
 
@@ -300,7 +300,7 @@ void KEnvVarProxyDlg::accept()
                            "actual value http://localhost:3128.</qt>");
 
     KMessageBox::detailedError( this, msg, details,
-                                 i18n("Invalid Proxy Setup") );
+                                 i18nc("@title:window", "Invalid Proxy Setup") );
     return;
   }
 

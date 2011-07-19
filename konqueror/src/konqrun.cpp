@@ -20,9 +20,6 @@
 // Own
 #include "konqrun.h"
 
-// std
-#include <assert.h>
-
 // KDE
 #include <kdebug.h>
 #include <kmessagebox.h>
@@ -48,7 +45,7 @@ KonqRun::KonqRun(KonqMainWindow* mainWindow, KonqView *_childView,
       m_pMainWindow(mainWindow), m_pView(_childView), m_bFoundMimeType(false), m_req(req)
 {
     //kDebug() << "KonqRun::KonqRun() " << this;
-    assert(!m_pMainWindow.isNull());
+    Q_ASSERT(!m_pMainWindow.isNull());
     if (m_pView)
         m_pView->setLoading(true);
 }

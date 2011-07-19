@@ -824,6 +824,7 @@ void DolphinMainWindow::find()
 
 void DolphinMainWindow::slotSearchLocationChanged()
 {
+#ifdef HAVE_NEPOMUK
     QDockWidget* searchDock = findChild<QDockWidget*>("searchDock");
     if (!searchDock) {
         return;
@@ -835,6 +836,7 @@ void DolphinMainWindow::slotSearchLocationChanged()
                                        ? SearchPanel::FromCurrentDir
                                        : SearchPanel::Everywhere);
     }
+#endif
 }
 
 void DolphinMainWindow::updatePasteAction()
@@ -1477,6 +1479,8 @@ void DolphinMainWindow::updateToolBarMenu()
     connect(menu, SIGNAL(aboutToHide()), helpMenu, SLOT(deleteLater()));
     helpMenu->addAction(ac->action(KStandardAction::name(KStandardAction::HelpContents)));
     helpMenu->addAction(ac->action(KStandardAction::name(KStandardAction::WhatsThis)));
+    helpMenu->addAction(ac->action(KStandardAction::name(KStandardAction::ReportBug)));
+    helpMenu->addAction(ac->action(KStandardAction::name(KStandardAction::SwitchApplicationLanguage)));
     helpMenu->addAction(ac->action(KStandardAction::name(KStandardAction::AboutApp)));
     helpMenu->addAction(ac->action(KStandardAction::name(KStandardAction::AboutKDE)));
     menu->addMenu(helpMenu);
@@ -1798,6 +1802,8 @@ void DolphinMainWindow::setupDockWidgets()
     terminalDock->setWidget(terminalPanel);
 
     connect(terminalPanel, SIGNAL(hideTerminalPanel()), terminalDock, SLOT(hide()));
+    connect(terminalDock, SIGNAL(visibilityChanged(bool)),
+            terminalPanel, SLOT(dockVisibilityChanged()));
 
     QAction* terminalAction = terminalDock->toggleViewAction();
     terminalAction->setShortcut(Qt::Key_F4);
@@ -2263,15 +2269,15 @@ void ToolBarMenu::showEvent(QShowEvent* event)
     // Assure that the menu is not shown outside the screen boundaries and
     // that it does not overlap with the parent button.
     const QRect screen = QApplication::desktop()->screenGeometry(QCursor::pos());
-    if (pos.x() < 0) {
-        pos.rx() = 0;
-    } else if (pos.x() + width() >= screen.width()) {
-        pos.rx() = screen.width() - width();
+    if (pos.x() < screen.x()) {
+        pos.rx() = screen.x();
+    } else if (pos.x() + width() > screen.x() + screen.width()) {
+        pos.rx() = screen.x() + screen.width() - width();
     }
 
-    if (pos.y() < 0) {
-        pos.ry() = 0;
-    } else if (pos.y() + height() >= screen.height()) {
+    if (pos.y() < screen.y()) {
+        pos.ry() = screen.y();
+    } else if (pos.y() + height() > screen.y() + screen.height()) {
         pos.ry() = button->mapToGlobal(QPoint(0, 0)).y() - height();
     }
 

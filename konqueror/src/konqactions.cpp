@@ -19,23 +19,15 @@
 
 #include "konqactions.h"
 
-#include <assert.h>
-
-#include <ktoolbar.h>
-#include <kdebug.h>
-
-#include <konqpixmapprovider.h>
-#include <kicon.h>
-#include <kiconloader.h>
-#include <kmenu.h>
-#include <kapplication.h>
-
 #include "konqview.h"
 #include "konqsettingsxt.h"
-#include <kauthorized.h>
+#include "konqpixmapprovider.h"
+
+#include <kdebug.h>
+#include <kicon.h>
+#include <kmenu.h>
 
 #include <algorithm>
-#include <QtGui/QBoxLayout>
 
 template class QList<KonqHistoryEntry*>;
 
@@ -47,7 +39,7 @@ void KonqActions::fillHistoryPopup(const QList<HistoryEntry*> &history, int hist
                                    bool onlyBack,
                                    bool onlyForward)
 {
-  assert ( popup ); // kill me if this 0... :/
+  Q_ASSERT( popup ); // kill me if this 0... :/
 
   //kDebug() << "fillHistoryPopup position: " << history.at();
   int index = 0;

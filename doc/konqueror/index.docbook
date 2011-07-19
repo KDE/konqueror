@@ -3,6 +3,7 @@
  "dtd/kdex.dtd" [
   <!ENTITY kappname "&konqueror;">
   <!ENTITY package "kdebase">
+  <!ENTITY fsview "<application>FSView</application>">
   <!ENTITY konqueror-introduction SYSTEM "introduction.docbook">
   <!ENTITY konqueror-basics SYSTEM "basics.docbook">
   <!ENTITY konqueror-filemanager SYSTEM "filemanager.docbook">
@@ -12,6 +13,7 @@
   <!ENTITY konqueror-sidebar SYSTEM "sidebar.docbook">
   <!ENTITY konqueror-save-settings SYSTEM "save-settings.docbook">
   <!ENTITY konqueror-plugins SYSTEM "plugins.docbook">
+  <!ENTITY konqueror-view-extensions SYSTEM "view-extensions.docbook">
   <!ENTITY konqueror-config SYSTEM "config.docbook">
   <!ENTITY konqueror-commands SYSTEM "commands.docbook">
   <!ENTITY konqueror-faq SYSTEM "faq.docbook">
@@ -72,6 +74,7 @@
 &konqueror-sidebar; <!-- 4.4-->
 &konqueror-save-settings; <!-- 4.4-->
 &konqueror-plugins; <!-- 4.5-->
+&konqueror-view-extensions;
 &konqueror-config; <!-- 4.4-->
 &konqueror-commands; <!-- 4.5-->
 &konqueror-faq; <!-- 4.5-->

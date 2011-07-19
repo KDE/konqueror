@@ -30,6 +30,8 @@
 #include <kdebug.h>
 #include <kaboutapplicationdialog.h>
 #include <kstandarddirs.h>
+#include <khelpmenu.h>
+#include <kmenu.h>
 
 #include "kftabdlg.h"
 #include "kquery.h"
@@ -39,7 +41,6 @@ KfindDlg::KfindDlg(const KUrl & url, QWidget *parent)
   : KDialog( parent )
 {
   setButtons( User1 | User2 | User3 | Close | Help );
-  setHelp( QString(), "kfind" );
   setDefaultButton( User3 );
   setModal( true );
 
@@ -47,7 +48,7 @@ KfindDlg::KfindDlg(const KUrl & url, QWidget *parent)
   setButtonGuiItem( User2, KStandardGuiItem::stop() );
   setButtonGuiItem( User1, KStandardGuiItem::saveAs() );
 
-  QWidget::setWindowTitle( i18n("Find Files/Folders" ) );
+  QWidget::setWindowTitle( i18nc("@title:window", "Find Files/Folders" ) );
   setButtonsOrientation(Qt::Vertical);
 
   enableButton(User3, true); // Enable "Find"
@@ -97,6 +98,8 @@ KfindDlg::KfindDlg(const KUrl & url, QWidget *parent)
     connect(query, SIGNAL(result(int)), SLOT(slotResult(int)));
     connect(query, SIGNAL(foundFileList(QList< QPair<KFileItem,QString> >)), SLOT(addFiles(QList< QPair<KFileItem,QString> >)));
 
+  KHelpMenu *helpMenu = new KHelpMenu(this, KGlobal::mainComponent().aboutData(), true);
+  setButtonMenu( Help, helpMenu->menu() );
   dirwatch=NULL;
 }
 
@@ -104,8 +107,7 @@ KfindDlg::~KfindDlg()
 {
   stopSearch();
    
-  if (dirwatch)
-    delete dirwatch;
+  delete dirwatch;
 }
 
 void KfindDlg::finishAndClose()
@@ -142,8 +144,7 @@ void KfindDlg::startSearch()
   enableButton(User2, true); // Enable "Stop"
   enableButton(User1, false); // Disable "Save As..."
 
-  if(dirwatch!=NULL)
-    delete dirwatch;
+  delete dirwatch;
   dirwatch=new KDirWatch();
   connect(dirwatch, SIGNAL(created(const QString&)), this, SLOT(slotNewItems(const QString&)));
   connect(dirwatch, SIGNAL(deleted(const QString&)), this, SLOT(slotDeleteItem(const QString&)));
@@ -296,7 +297,7 @@ QStringList KfindDlg::getAllSubdirs(QDir d)
     if((*it==".")||(*it==".."))
       continue;
     subdirs.append(d.path()+'/'+*it);
-    subdirs+=getAllSubdirs(d.path()+'/'+*it);
+    subdirs+=getAllSubdirs(QString(d.path()+QLatin1Char('/')+*it));
   }
   return subdirs;
 }

@@ -73,8 +73,8 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2010-07-25</date>
-<releaseinfo>1.5</releaseinfo>
+<date>2011-06-13</date>
+<releaseinfo>1.6.9 (&kde; 4.7.0)</releaseinfo>
 
 <abstract>
 <para>
@@ -109,9 +109,10 @@ interface for the specific task of file management.
 
 <para>
 Please report any problems or feature requests to the &dolphin; author via the
-bug report dialog. This is accessible from the
-<menuchoice><guimenu>Help</guimenu><guimenuitem>Report Bug...</guimenuitem></menuchoice>
-menu of the application.
+bug report dialog. This is accessible either from the <guibutton>Configure and control 
+&dolphin;</guibutton> button at the right of the toolbar in the default mode without
+menu bar; or from <menuchoice><guimenu>Help</guimenu><guimenuitem>Report Bug...</guimenuitem></menuchoice>
+menu of the application, if the menubar is shown.
 </para>
 
 </chapter>
@@ -145,19 +146,35 @@ The elements of the default user interface are:
 <itemizedlist>
 
 <listitem><para>
-The menu bar, which provides access to all commands and configuration options.
-See the <link linkend="commands-menubar">Command Reference</link> for a list of
-all menu commands.
-</para></listitem>
-
-<listitem><para>
 The toolbar, which can be used for quick access to frequently used actions. The
 toolbar can be customized by clicking it with the &RMB; and choosing
 <menuchoice><guimenuitem>Configure Toolbars...</guimenuitem></menuchoice>
-from the context menu or via
-<menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure Toolbars...</guimenuitem></menuchoice>
+from the context menu, with <guimenuitem>Configure Toolbars...</guimenuitem>
+from the <guibutton>Configure and control &dolphin;</guibutton> button at the 
+right of the toolbar or via <menuchoice><guimenu>Settings</guimenu>
+<guimenuitem>Configure Toolbars...</guimenuitem></menuchoice>
 from the main menu.
-</para></listitem>
+</para>
+<screenshot>
+<screeninfo>Screenshot of &dolphin;'s toolbar</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="toolbar.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase>The default toolbar.</phrase>
+</textobject>
+<caption>
+<para>
+Toolbar items where the icon is sufficient for knowing the command do not have a text
+alongside the icons. This can be changed by a &RMB; click and selecting the item text 
+below <guilabel>Show Text</guilabel>. The <guibutton>Configure and control &dolphin;</guibutton> 
+button at the right side of the toolbar is only displayed if the menubar is hidden.
+</para>
+</caption>
+</mediaobject>
+</screenshot>
+</listitem>
 
 <listitem><para>
 The location bar, which always displays the path to the current folder. It can
@@ -173,12 +190,7 @@ and folders in the current folder.
 <listitem><para>
 The <link linkend="places-panel"><guilabel>Places</guilabel> panel</link>, which
 provides quick access to bookmarked locations and disks or other media.
-</para></listitem>
-
-<listitem><para>
-The <link linkend="information-panel"><guilabel>Information</guilabel> panel</link>,
-which shows a preview of the current folder or the file which is currently hovered
-with the mouse and can be used for rating the file and adding tags or comments to it.
+A &RMB; click opens the context menu to edit, add, hide or remove entries.
 </para></listitem>
 
 <listitem><para>
@@ -186,6 +198,21 @@ The status bar. It displays the name, size and type of the file which is
 currently hovered with the mouse, or the number and size of the files which are
 selected. At the right, there is a zoom slider that permits to adjust the size
 of the icons in the view.
+</para></listitem>
+
+<listitem><para>
+The menu bar (hidden by default), which provides access to all commands and configuration options.
+See the <link linkend="commands-menubar">Command Reference</link> for a list of
+all menu commands. The menu bar can be toggled with 
+<guimenuitem>Show Menubar</guimenuitem> from the <guimenu>Settings</guimenu>
+menu or the <guibutton>Configure and control &dolphin;</guibutton> button 
+(<keycombo action="simul">&Ctrl;<keycap>M</keycap></keycombo>).
+</para></listitem>
+
+<listitem><para>
+The additional <guilabel>Information</guilabel>, <guilabel>Folders</guilabel>,
+<guilabel>Terminal</guilabel> and <guilabel>Search</guilabel> panels are hidden
+by default, for more information see <link linkend="panels"><guilabel>Panels</guilabel>.</link>
 </para></listitem>
 
 </itemizedlist>
@@ -517,7 +544,8 @@ crumb mode, click the check mark at the right of the location bar with the &LMB;
 <para>
 &dolphin; allows a number of panels to be placed next to the view. These can
 be enabled in <menuchoice><guimenu>View</guimenu><guisubmenu>Panels</guisubmenu></menuchoice>.
-By clicking and dragging a panel title, the panel can be moved to a different position.
+By unlocking the panels and clicking and dragging a panel title, the panel can be moved 
+to a different position, even outside the window.
 </para>
 
 <sect2 id="places-panel">
@@ -543,7 +571,8 @@ from the context menu.
 
 <para>
 The <guilabel>Information</guilabel> panel shows extended information about the
-selected items(s), including size, type, and date of last modification. It also
+selected items(s) or about of the current folder or the file which is currently hovered
+with the mouse, including size, type, and date of last modification. It also
 features a large preview of the selected item and permits to assign a rating,
 tags, and comments to it.
 </para>
@@ -557,6 +586,7 @@ tags, and comments to it.
 The <guilabel>Folders</guilabel> panel shows a tree view structure of the file
 system. It only shows folders. Clicking a folder with the &LMB; opens this folder
 in the &dolphin; view.
+
 </para>
 
 </sect2>
@@ -571,6 +601,31 @@ view will update the working folder of the terminal. The terminal only
 works with local media. Note: Changing folder in the terminal will not
 affect the &dolphin; view.
 </para>
+
+</sect2>
+
+<sect2 id="search-panel">
+<title>Search</title>
+
+<para>
+The <guilabel>Search</guilabel> panel provides a very comfortable way for 
+the user to shrink the number of search results in combination with the 
+<guilabel>Find</guilabel> bar.</para>
+<para>But you can use it also stand-alone to find &eg; all pictures changed 
+the last week, with any rating and tagged with holidays.</para>
+<para>To start a search select one or more file types (<guilabel>Documents</guilabel>, 
+<guilabel>Audio</guilabel>, <guilabel>Video</guilabel>, <guilabel>Images</guilabel>),
+a time period, rating and tag, if you have defined any.</para>
+<!-- Documents, Audio, Video, Images 
+(how definded? via mimetyp? *.txt is apparently no Document, but xsl,doc,odt
+Time (last change date?)
+Rating
+Tags if defined
+-->
+<note><para>This feature requires running Nepomuk and Strigi services, 
+you can check your system setup in the <guilabel>Desktop Search</guilabel> module 
+in the &systemsettings; category <guilabel>Workspace Appearance and Behavior</guilabel>.
+</para></note>
 
 </sect2>
 
@@ -594,41 +649,40 @@ current folder, right click in the work space and click
 
 </sect2>
 
-<sect2 id="finding-file">
-<title>Finding Files</title>
+<sect2 id="finding-searching-in-file">
+<title>Finding Files and Searching in Files</title>
 <para>
-&dolphin; is capable of searching for files. If <keycombo action="simul">&Ctrl;<keycap>F</keycap></keycombo>
-is pressed or using <menuchoice> <guimenu>Tools</guimenu> <guimenuitem>Find File...</guimenuitem> </menuchoice>,
-<ulink url="help:/kfind/index.html">&kfind;</ulink> will open already set up to search within the current folder and any sub-folders.
-</para>
-</sect2>
-
-<!-- will probably change in 4.6 adapt it then-->
-<sect2 id="searching-in-file">
-<title>Searching in Files</title>
-
-<para>
-Click into the search box, which has to be enabled with <guimenuitem>Search Toolbar</guimenuitem> in <menuchoice><guimenu>Settings</guimenu>
-<guisubmenu>Toolbars Shown</guisubmenu></menuchoice> to use Nepomuk for searching.
-Then an additional bar with search options is displayed below the toolbar.
-By clicking on the green (+)-button, it is possible to specify the searching in a very detailed manner:
+&dolphin; is capable of searching for files and for content in files. If <keycombo action="simul">
+&Ctrl;<keycap>F</keycap></keycombo> is pressed or <menuchoice> <guimenu>Edit</guimenu> 
+<guimenuitem>Find...</guimenuitem> </menuchoice> is used, the <guilabel>Find</guilabel> 
+bar will open already set up to search for files within the current folder and any sub-folders.
+Start to type into the find input box and the search starts immediately.
 <screenshot>
-<screeninfo>Search using Nepomuk</screeninfo>
+<screeninfo>Search files and for content in files</screeninfo>
 <mediaobject>
 <imageobject>
 <imagedata fileref="nepomuk-search.png" format="PNG"/>
 </imageobject>
 <textobject>
-<phrase>Search using Nepomuk</phrase>
+<phrase>Search files and for content in files</phrase>
 </textobject>
-<caption><para>&dolphin; searching using Nepomuk.</para></caption>
+<caption><para>&dolphin; searching files and for content in files.</para></caption>
 </mediaobject>
 </screenshot>
 </para>
-<note><para>This feature requires running Nepomuk and Strigi services, you can check your system setup in the  
-<guilabel>Desktop Search</guilabel> module in the &systemsettings; category <guilabel>Workspace Appearance and Behavior</guilabel>
-</para></note>
+<para>The search is case insensitive, and does not require surrounding wildcards 
+(<userinput>*foo*</userinput> and <userinput>foo</userinput> are equivalent), 
+but you can use wildcards inside the search term. <userinput>*</userinput> will match 
+one or more characters, <userinput>?</userinput> only one single character.</para>
+<para>This feature can be used with running nepomuk/strigi services, without these services 
+a KIOSlave is launched to provide the search results.</para>
+<para>The option from <guilabel>Everywhere</guilabel> with activated Nepomuk/Strigi 
+services searches in all indexed folders, without Nepomuk/Strigi this option  
+starts the search from the user's <replaceable>Home</replaceable> folder.</para>
+<para>Alternatively you can use the <link linkend="search-panel">search panel</link>
+to find files using Nepomuk or limit the search to selected files.</para>
 </sect2>
+
 <sect2 id="mounting-storage-media">
 <title>Mounting Storage Media</title>
 
@@ -939,8 +993,8 @@ of all view modes</link>, the details view has only one setting:
 <listitem><para>
 If <guilabel>Expandable Folders</guilabel> is enabled, the details view can show
 the contents of all subfolders of the current folder as a tree. A branch of the
-tree can be expanded or collapsed by clicking the <guibutton>+</guibutton> or
-<guibutton>-</guibutton> button next to each subfolder.
+tree can be expanded or collapsed by clicking the <guibutton>&lt;</guibutton> or
+<guibutton>v</guibutton> button next to each subfolder.
 </para></listitem>
 
 </itemizedlist>
@@ -1035,8 +1089,8 @@ If you have installed &dolphin;'s plugins for <guilabel>Git</guilabel> or
 <guilabel>Version Control Systems</guilabel> is displayed.
 If these plugins are enabled and you enter a folder which is under version control, 
 the version state (locally changed, up to date &etc;) is indicated by icons 
-and in <guilabel>Subversion</guilabel> folders you have additional entries in the 
-context menu like commit, update &etc;
+and you have additional entries in the 
+context menu like commit, update, add, remove &etc;
 </para>
 <para>
 &dolphin; has to be restarted to activate changes of these settings.
@@ -1304,6 +1358,9 @@ properties yet.
 
 <chapter id="command-reference">
 <title>Command Reference</title>
+<para>By default the menubar is not shown. All actions described here either can 
+be accessed with toolbar buttons or with items in the menu of the <guibutton>Configure 
+and control &dolphin;</guibutton> toolbar button.</para>
 
 <sect1 id="commands-menubar">
 <title>The Menubar in &dolphin;'s Main Window</title>
@@ -1471,6 +1528,18 @@ contents (such as text or image data) will be pasted into a new file.</action></
 <varlistentry>
 <term><menuchoice>
 <shortcut>
+<keycombo action="simul">&Ctrl;<keycap>F</keycap></keycombo>
+</shortcut>
+<guimenu>Edit</guimenu>
+<guimenuitem>Find...</guimenuitem>
+</menuchoice></term>
+<listitem><para><action>Opens the find bar. Enter a search term into the edit box and select to search for filename
+or in contents of files starting from the current folder or from everywhere.</action></para></listitem>
+</varlistentry>
+
+<varlistentry>
+<term><menuchoice>
+<shortcut>
 <keycombo action="simul">&Ctrl;<keycap>A</keycap></keycombo>
 </shortcut>
 <guimenu>Edit</guimenu>
@@ -1538,11 +1607,12 @@ Selects all unselected items and deselects all selected items in the current fol
 <term><menuchoice>
 <guimenu>View</guimenu>
 <guisubmenu>Sort By</guisubmenu>
-</menuchoice></term>
+</menuchoice> (only available in the Icons view mode)</term>
 <listitem><para><action>Changes whether items are sorted by <guimenuitem>Name</guimenuitem>,
 <guimenuitem>Size</guimenuitem>, <guimenuitem>Date</guimenuitem>,
 <guimenuitem>Permissions</guimenuitem>, <guimenuitem>Owner</guimenuitem>,
-<guimenuitem>Group</guimenuitem> or <guimenuitem>Type</guimenuitem>.
+<guimenuitem>Group</guimenuitem>, <guimenuitem>Type</guimenuitem>, 
+<guimenuitem>Link Destination</guimenuitem> or <guimenuitem>Path</guimenuitem>.
 <guimenuitem>Descending</guimenuitem> reverses the sort order.
 <guimenuitem>Folders First</guimenuitem> sorts folders before files.
 </action></para></listitem>
@@ -1556,8 +1626,9 @@ Selects all unselected items and deselects all selected items in the current fol
 <listitem><para><action>Displays additional information</action> like
 <guimenuitem>Size</guimenuitem>, <guimenuitem>Date</guimenuitem>,
 <guimenuitem>Permissions</guimenuitem>, <guimenuitem>Owner</guimenuitem>,
-<guimenuitem>Group</guimenuitem> or <guimenuitem>Type</guimenuitem> in the different
-views.</para></listitem>
+<guimenuitem>Group</guimenuitem>, <guimenuitem>Type</guimenuitem>, 
+<guimenuitem>Link Destination</guimenuitem> or <guimenuitem>Path</guimenuitem> 
+in the different views.</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -1629,8 +1700,14 @@ folder.</action></para></listitem>
 </menuchoice></term>
 <listitem><para><action>Enables and disables</action> the different <link linkend="panels">panels</link>:
 <guimenuitem>Places</guimenuitem> (<keycap>F9</keycap>), <guimenuitem>Information</guimenuitem>
-(<keycap>F11</keycap>), <guimenuitem>Folders</guimenuitem> (<keycap>F7</keycap>) and
-<guimenuitem>Terminal</guimenuitem> (<keycap>F4</keycap>).</para></listitem>
+(<keycap>F11</keycap>), <guimenuitem>Folders</guimenuitem> (<keycap>F7</keycap>), 
+<guimenuitem>Terminal</guimenuitem> (<keycap>F4</keycap>) and
+<guimenuitem>Search</guimenuitem> (<keycap>F12</keycap>).
+With <guimenuitem>Lock Panels</guimenuitem> the panel header with caption and two buttons is  
+hidden to save space and the panels are immutable, with <guimenuitem>Unlock Panels</guimenuitem>
+the header is visible and the panel can be moved to the right or left  or even
+outside the main window.
+</para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -1745,17 +1822,6 @@ be reopened.</action></para></listitem>
 <varlistentry>
 <term><menuchoice>
 <shortcut>
-<keycombo action="simul">&Ctrl;<keycap>F</keycap></keycombo>
-</shortcut>
-<guimenu>Tools</guimenu>
-<guimenuitem>Find File...</guimenuitem>
-</menuchoice></term>
-<listitem><para><action>Opens &kfind; within the current folder.</action></para></listitem>
-</varlistentry>
-
-<varlistentry>
-<term><menuchoice>
-<shortcut>
 <keycombo action="simul">&Ctrl;<keycap>I</keycap></keycombo>
 </shortcut>
 <guimenu>Tools</guimenu>
@@ -1815,10 +1881,9 @@ connection manually.</action></para></listitem>
 <varlistentry>
 <term><menuchoice>
 <guimenu>Settings</guimenu>
-<guisubmenu>Toolbars Shown</guisubmenu>
+<guisubmenu>Show Toolbar</guisubmenu>
 </menuchoice></term>
-<listitem><para><action>Hides and shows the <guimenuitem>Main Toolbar</guimenuitem> 
-and the <guimenuitem>Search Toolbar</guimenuitem>.</action></para></listitem>
+<listitem><para><action>Hides and shows the toolbar.</action></para></listitem>
 </varlistentry>
 
 <varlistentry>
@@ -1931,7 +1996,7 @@ tracking system. The &kde; bug tracker can be found at
 &dolphin;
 </para>
 <para>
-Program copyright 2005&ndash;2009 Peter Penz <email>peter.penz@gmx.at</email>
+Program copyright 2006&ndash;2011 Peter Penz <email>peter.penz@gmx.at</email>
 </para>
 <para>
 Contributors:
@@ -1966,7 +2031,7 @@ Documentation copyright 2009 Frank Reininghaus <email>frank78ac@googlemail.com</
 <appendix id="installation">
 <title>How to get &dolphin;</title>
 
-<para>&dolphin; is part of the kdebase package which an essential part of
+<para>&dolphin; is part of the kdebase package which is an essential part of
 &kde;.</para>
 
 <para>For instructions on acquiring &kde; please see <ulink

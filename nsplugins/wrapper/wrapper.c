@@ -33,7 +33,7 @@
 #endif
 
 #define XP_UNIX 1
-#include "sdk/npupp.h"
+#include "sdk/npfunctions.h"
 
 
 NPNetscapeFuncs gNetscapeFuncs;	/* Netscape Function table */

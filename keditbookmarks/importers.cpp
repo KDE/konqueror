@@ -53,7 +53,7 @@ ImportCommand::ImportCommand(KBookmarkModel* model)
 void ImportCommand::setVisibleName(const QString& visibleName)
 {
     m_visibleName = visibleName;
-    setText(i18n("Import %1 Bookmarks", visibleName));
+    setText(i18nc("(qtundo-format)", "Import %1 Bookmarks", visibleName));
 }
 
 QString ImportCommand::folder() const {
@@ -90,7 +90,7 @@ ImportCommand* ImportCommand::performImport(KBookmarkModel* model, const QString
     int answer =
         KMessageBox::questionYesNoCancel(
                 top, i18n("Import as a new subfolder or replace all the current bookmarks?"),
-                i18n("%1 Import", importer->visibleName()),
+                i18nc("@title:window", "%1 Import", importer->visibleName()),
                 KGuiItem(i18n("As New Folder")), KGuiItem(i18n("Replace")));
 
     if (answer == KMessageBox::Cancel) {
@@ -195,7 +195,7 @@ QString IEImportCommand::requestFilename() const {
 
 QString GaleonImportCommand::requestFilename() const {
     return KFileDialog::getOpenFileName(
-            QDir::homePath() + "/.galeon",
+            QString(QDir::homePath() + "/.galeon"),
             i18n("*.xbel|Galeon Bookmark Files (*.xbel)"),
             KEBApp::self());
 }

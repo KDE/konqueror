@@ -442,7 +442,7 @@ void KFindTreeView::saveResults()
 {
     KFileDialog *dlg = new KFileDialog(QString(), QString(), this);
     dlg->setOperationMode (KFileDialog::Saving);
-    dlg->setCaption( i18n("Save Results As") );
+    dlg->setCaption( i18nc("@title:window", "Save Results As") );
     dlg->setFilter( QString("*.html|%1\n*.txt|%2").arg( i18n("HTML page"), i18n("Text file") ) );
     dlg->setConfirmOverwrite(true);    
     

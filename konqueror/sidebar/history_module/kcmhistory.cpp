@@ -234,14 +234,14 @@ void HistorySidebarConfig::slotOlderChanged( int value )
 
 void HistorySidebarConfig::slotGetFontNewer()
 {
-    int result = KFontDialog::getFont( m_fontNewer, false, this );
+    int result = KFontDialog::getFont( m_fontNewer, KFontChooser::NoDisplayFlags, this );
     if ( result == KFontDialog::Accepted )
         configChanged();
 }
 
 void HistorySidebarConfig::slotGetFontOlder()
 {
-    int result = KFontDialog::getFont( m_fontOlder, false, this );
+    int result = KFontDialog::getFont( m_fontOlder, KFontChooser::NoDisplayFlags, this );
     if ( result == KFontDialog::Accepted )
         configChanged();
 }
@@ -253,7 +253,7 @@ void HistorySidebarConfig::slotClearHistory()
     if ( KMessageBox::warningContinueCancel( this,
 				     i18n("Do you really want to clear "
 					  "the entire history?"),
-				     i18n("Clear History?"), guiitem )
+				     i18nc("@title:window", "Clear History?"), guiitem )
 	 == KMessageBox::Continue ) {
         KonqHistoryProvider::self()->emitClear();
     }

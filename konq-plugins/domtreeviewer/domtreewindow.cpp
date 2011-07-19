@@ -59,7 +59,7 @@ public:
     {
         setupUi(mainWidget());
 
-        setWindowTitle(i18n("Message Log"));
+        setWindowTitle(i18nc("@title:window", "Message Log"));
         setButtons(Close | User1);
         setButtonGuiItem(User1, KStandardGuiItem::clear());
 

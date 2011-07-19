@@ -110,7 +110,7 @@ void AutoRefresh::slotRefresh()
 {
     KParts::ReadOnlyPart *part = qobject_cast< KParts::ReadOnlyPart * >( parent() );
     if ( !part ) {
-        QString title = i18n( "Cannot Refresh Source" );
+        QString title = i18nc( "@title:window", "Cannot Refresh Source" );
         QString text = i18n( "<qt>This plugin cannot auto-refresh the current part.</qt>" );
 
         KMessageBox::error( 0, text, title );

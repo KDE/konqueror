@@ -288,7 +288,7 @@ void PluginBabelFish::translateURL(QAction* action)
     // Check syntax
     if ( !url.isValid() )
     {
-      QString title = i18n( "Malformed URL" );
+      QString title = i18nc( "@title:window", "Malformed URL" );
       QString text = i18n( "The URL you entered is not valid, please "
                            "correct it and try again." );
       KMessageBox::sorry( 0L, text, title );

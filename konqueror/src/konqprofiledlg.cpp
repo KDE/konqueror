@@ -108,7 +108,7 @@ KonqProfileDlg::KonqProfileDlg( KonqViewManager *manager, const QString & presel
 
   setObjectName( QLatin1String( "konq_profile_dialog" ) );
   setModal( true );
-  setCaption( i18n( "Profile Management" ) );
+  setCaption( i18nc( "@title:window", "Profile Management" ) );
   setButtons( Close | BTN_RENAME | BTN_DELETE | BTN_SAVE );
   setDefaultButton( BTN_SAVE );
   setButtonGuiItem( BTN_RENAME, KGuiItem( i18n( "&Rename Profile" ) ) );

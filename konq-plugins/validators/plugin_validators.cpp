@@ -531,7 +531,7 @@ bool PluginValidators::doExternalValidationChecks()
 {
   if (!parent()->inherits("KHTMLPart") && !parent()->inherits("KWebKitPart"))
   {
-    const QString title = i18n("Cannot Validate Source");
+    const QString title = i18nc("@title:window", "Cannot Validate Source");
     const QString text = i18n("You cannot validate anything except web pages with "
                               "this plugin.");
 
@@ -543,7 +543,7 @@ bool PluginValidators::doExternalValidationChecks()
   KUrl partUrl = m_part->url();
   if (!partUrl.isValid()) // Just in case ;)
   {
-    const QString title = i18n("Malformed URL");
+    const QString title = i18nc("@title:window", "Malformed URL");
     const QString text = i18n("The URL you entered is not valid, please "
                               "correct it and try again.");
     KMessageBox::sorry(0, text, title);

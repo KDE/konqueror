@@ -21,6 +21,9 @@
 
 #include "OpenSearchEngine.h"
 
+#include <KDE/KGlobal>
+#include <KDE/KLocale>
+
 #include <QtCore/QRegExp>
 #include <QtCore/QStringList>
 #include <QtScript/QScriptEngine>
@@ -33,9 +36,7 @@ OpenSearchEngine::OpenSearchEngine(QObject *)
 
 OpenSearchEngine::~OpenSearchEngine()
 {
-    if (m_scriptEngine) {
-        delete m_scriptEngine;
-    }
+    delete m_scriptEngine;
 }
 
 QString OpenSearchEngine::parseTemplate(const QString &searchTerm, const QString &searchTemplate)
@@ -44,12 +45,10 @@ QString OpenSearchEngine::parseTemplate(const QString &searchTerm, const QString
     result.replace(QLatin1String("{count}"), QLatin1String("20"));
     result.replace(QLatin1String("{startIndex}"), QLatin1String("0"));
     result.replace(QLatin1String("{startPage}"), QLatin1String("0"));
-    // TODO - get setting from KDE
-    result.replace(QLatin1String("{language}"), QLatin1String("en-US"));
+    result.replace(QLatin1String("{language}"), KGlobal::locale()->language());
     result.replace(QLatin1String("{inputEncoding}"), QLatin1String("UTF-8"));
     result.replace(QLatin1String("{outputEncoding}"), QLatin1String("UTF-8"));
     result.replace(QLatin1String("{searchTerms}"), searchTerm);
-
     return result;
 }
 
@@ -195,8 +194,7 @@ bool OpenSearchEngine::operator<(const OpenSearchEngine &other) const
 
 QStringList OpenSearchEngine::parseSuggestion(const QByteArray &resp)
 {
-    QString response(resp);
-    response = response.trimmed();
+    const QString response = QString::fromUtf8(resp.constData(), resp.size()).trimmed();
 
     if (response.isEmpty()) {
         return QStringList();

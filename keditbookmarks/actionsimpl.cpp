@@ -339,7 +339,7 @@ void KEBApp::setCancelTestsEnabled(bool enabled) {
 void ActionsImpl::slotCut() {
     KEBApp::self()->bkInfo()->commitChanges();
     slotCopy();
-    DeleteManyCommand *mcmd = new DeleteManyCommand(m_model, i18n("Cut Items"), KEBApp::self()->selectedBookmarks() );
+    DeleteManyCommand *mcmd = new DeleteManyCommand(m_model, i18nc("(qtundo-format)", "Cut Items"), KEBApp::self()->selectedBookmarks() );
     commandHistory()->addCommand(mcmd);
 
 }
@@ -364,7 +364,7 @@ void ActionsImpl::slotPaste() {
     else
         addr = bk.address();
 
-    QUndoCommand *mcmd = CmdGen::insertMimeSource( m_model, i18n("Paste"), QApplication::clipboard()->mimeData(), addr);
+    QUndoCommand *mcmd = CmdGen::insertMimeSource( m_model, i18nc("(qtundo-format)", "Paste"), QApplication::clipboard()->mimeData(), addr);
     commandHistory()->addCommand(mcmd);
 }
 
@@ -374,7 +374,7 @@ void ActionsImpl::slotNewFolder()
 {
     KEBApp::self()->bkInfo()->commitChanges();
     bool ok;
-    QString str = KInputDialog::getText( i18n( "Create New Bookmark Folder" ),
+    QString str = KInputDialog::getText( i18nc( "@title:window", "Create New Bookmark Folder" ),
             i18n( "New folder:" ), QString(), &ok, KEBApp::self() );
     if (!ok)
         return;
@@ -501,7 +501,7 @@ void ActionsImpl::slotRecursiveSort() {
     KEBApp::self()->bkInfo()->commitChanges();
     KBookmark bk = KEBApp::self()->firstSelected();
     Q_ASSERT(bk.isGroup());
-    KEBMacroCommand *mcmd = new KEBMacroCommand(i18n("Recursive Sort"));
+    KEBMacroCommand *mcmd = new KEBMacroCommand(i18nc("(qtundo-format)", "Recursive Sort"));
     KBookmarkGroupList lister(GlobalBookmarkManager::self()->mgr());
     QList<KBookmark> bookmarks = lister.getList(bk.toGroup());
     bookmarks << bk.toGroup();
@@ -515,7 +515,7 @@ void ActionsImpl::slotSort() {
     KEBApp::self()->bkInfo()->commitChanges();
     KBookmark bk = KEBApp::self()->firstSelected();
     Q_ASSERT(bk.isGroup());
-    SortCommand *cmd = new SortCommand(m_model, i18n("Sort Alphabetically"), bk.address());
+    SortCommand *cmd = new SortCommand(m_model, i18nc("(qtundo-format)", "Sort Alphabetically"), bk.address());
     commandHistory()->addCommand(cmd);
 }
 
@@ -523,7 +523,7 @@ void ActionsImpl::slotSort() {
 
 void ActionsImpl::slotDelete() {
     KEBApp::self()->bkInfo()->commitChanges();
-    DeleteManyCommand *mcmd = new DeleteManyCommand(m_model, i18n("Delete Items"), KEBApp::self()->selectedBookmarks());
+    DeleteManyCommand *mcmd = new DeleteManyCommand(m_model, i18nc("(qtundo-format)", "Delete Items"), KEBApp::self()->selectedBookmarks());
     commandHistory()->addCommand(mcmd);
 }
 

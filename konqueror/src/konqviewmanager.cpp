@@ -19,8 +19,17 @@
 */
 
 #include "konqviewmanager.h"
+
 #include "konqcloseditem.h"
 #include "konqundomanager.h"
+#include "konqmisc.h"
+#include "konqview.h"
+#include "konqframestatusbar.h"
+#include "konqtabs.h"
+#include "konqprofiledlg.h"
+#include "konqsettingsxt.h"
+#include "konqframevisitor.h"
+#include <konq_events.h>
 
 #include <QtCore/QFileInfo>
 #include <QtDBus/QDBusMessage>
@@ -37,20 +46,7 @@
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <ktoolbarpopupaction.h>
-
 #include <kmenu.h>
-
-#include <assert.h>
-
-#include "konqmisc.h"
-
-#include "konqview.h"
-#include "konqframestatusbar.h"
-#include "konqtabs.h"
-#include "konqprofiledlg.h"
-#include <konq_events.h>
-#include "konqsettingsxt.h"
-#include "konqframevisitor.h"
 
 //#define DEBUG_VIEWMGR
 
@@ -114,7 +110,7 @@ KonqView* KonqViewManager::splitView( KonqView* currentView,
   if( newViewFactory.isNull() )
     return 0; //do not split at all if we can't create the new view
 
-  assert( splitFrame );
+  Q_ASSERT( splitFrame );
 
   KonqFrameContainerBase* parentContainer = splitFrame->parentContainer();
 
@@ -152,8 +148,8 @@ KonqView* KonqViewManager::splitView( KonqView* currentView,
     parentKonqFrameContainer->setSizes( parentSplitterSizes );
   }
 
-  assert( newView->frame() );
-  assert( newView->part() );
+  Q_ASSERT( newView->frame() );
+  Q_ASSERT( newView->part() );
   newContainer->setActiveChild( newView->frame() );
   setActivePart( newView->part() );
 
@@ -1410,7 +1406,7 @@ void KonqViewManager::slotProfileActivated(QAction* action)
         if ( KMessageBox::warningContinueCancel( m_pMainWindow,
                                                  i18n("You have multiple tabs open in this window.\n"
                                                       "Loading a view profile will close them."),
-                                                 i18n("Confirmation"),
+                                                 i18nc("@title:window", "Confirmation"),
                                                  KGuiItem(i18n("Load View Profile")),
                                                  KStandardGuiItem::cancel(),
                                                  "LoadProfileTabsConfirm" ) == KMessageBox::Cancel )
@@ -1424,7 +1420,7 @@ void KonqViewManager::slotProfileActivated(QAction* action)
                 showTab( view );
                 if ( KMessageBox::warningContinueCancel( 0,
                                                          i18n("This tab contains changes that have not been submitted.\nLoading a profile will discard these changes."),
-                                                         i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes")), KStandardGuiItem::cancel(), "discardchangesloadprofile") != KMessageBox::Continue )
+                                                         i18nc("@title:window", "Discard Changes?"), KGuiItem(i18n("&Discard Changes")), KStandardGuiItem::cancel(), "discardchangesloadprofile") != KMessageBox::Continue )
                     /* WE: maybe KStandardGuiItem(Discard) here? */
                 {
                     showTab(originalTabIndex);

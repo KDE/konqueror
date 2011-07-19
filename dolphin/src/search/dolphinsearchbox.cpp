@@ -34,7 +34,7 @@
 #include <QHBoxLayout>
 #include <QKeyEvent>
 #include <QLabel>
-#include <QPushButton>
+#include <QToolButton>
 #include <QScrollArea>
 #include <QTimer>
 #include <QToolButton>
@@ -229,10 +229,10 @@ void DolphinSearchBox::slotReturnPressed(const QString& text)
     emit returnPressed(text);
 }
 
-void DolphinSearchBox::initButton(QPushButton* button)
+void DolphinSearchBox::initButton(QToolButton* button)
 {
     button->setAutoExclusive(true);
-    button->setFlat(true);
+    button->setAutoRaise(true);
     button->setCheckable(true);
     connect(button, SIGNAL(clicked(bool)), this, SLOT(slotConfigurationChanged()));
 }
@@ -289,11 +289,11 @@ void DolphinSearchBox::init()
     searchInputLayout->addWidget(m_searchInput);
 
     // Create "Filename" and "Content" button
-    m_fileNameButton = new QPushButton(this);
+    m_fileNameButton = new QToolButton(this);
     m_fileNameButton->setText(i18nc("action:button", "Filename"));
     initButton(m_fileNameButton);
 
-    m_contentButton = new QPushButton();
+    m_contentButton = new QToolButton();
     m_contentButton->setText(i18nc("action:button", "Content"));
     initButton(m_contentButton);;
 
@@ -306,11 +306,11 @@ void DolphinSearchBox::init()
     m_separator = new KSeparator(Qt::Vertical, this);
 
     // Create "From Here" and "Everywhere"button
-    m_fromHereButton = new QPushButton(this);
+    m_fromHereButton = new QToolButton(this);
     m_fromHereButton->setText(i18nc("action:button", "From Here"));
     initButton(m_fromHereButton);
 
-    m_everywhereButton = new QPushButton(this);
+    m_everywhereButton = new QToolButton(this);
     m_everywhereButton->setText(i18nc("action:button", "Everywhere"));
     initButton(m_everywhereButton);
 
@@ -364,31 +364,29 @@ void DolphinSearchBox::init()
 KUrl DolphinSearchBox::nepomukUrlForSearching() const
 {
 #ifdef HAVE_NEPOMUK
-    Nepomuk::Query::OrTerm orTerm;
+    Nepomuk::Query::Term term;
 
     const QString text = m_searchInput->text();
 
-    // Search the text in the filename in any case
-    QString regex = QRegExp::escape(text);
-    regex.replace("\\*", QLatin1String(".*"));
-    regex.replace("\\?", QLatin1String("."));
-    regex.replace("\\", "\\\\");
-    orTerm.addSubTerm(Nepomuk::Query::ComparisonTerm(
-                            Nepomuk::Vocabulary::NFO::fileName(),
-                            Nepomuk::Query::LiteralTerm(regex),
-                            Nepomuk::Query::ComparisonTerm::Regexp));
-
     if (m_contentButton->isChecked()) {
-        // Search the text also in the content of the files
-        const Nepomuk::Query::Query customQuery = Nepomuk::Query::QueryParser::parseQuery(text, Nepomuk::Query::QueryParser::DetectFilenamePattern);
-        if (customQuery.isValid()) {
-            orTerm.addSubTerm(customQuery.term());
-        }
+        // Let Nepomuk parse the query
+        term = Nepomuk::Query::QueryParser::parseQuery(text, Nepomuk::Query::QueryParser::DetectFilenamePattern).term();
+    }
+    else {
+        // Search the text in the filename only
+        QString regex = QRegExp::escape(text);
+        regex.replace("\\*", QLatin1String(".*"));
+        regex.replace("\\?", QLatin1String("."));
+        regex.replace("\\", "\\\\");
+        term = Nepomuk::Query::ComparisonTerm(
+                    Nepomuk::Vocabulary::NFO::fileName(),
+                    Nepomuk::Query::LiteralTerm(regex),
+                    Nepomuk::Query::ComparisonTerm::Regexp);
     }
 
     Nepomuk::Query::FileQuery fileQuery;
     fileQuery.setFileMode(Nepomuk::Query::FileQuery::QueryFilesAndFolders);
-    fileQuery.setTerm(orTerm);
+    fileQuery.setTerm(term);
     if (m_fromHereButton->isChecked()) {
         const bool recursive = true;
         fileQuery.addIncludeFolder(m_searchPath, recursive);
@@ -404,9 +402,13 @@ KUrl DolphinSearchBox::nepomukUrlForSearching() const
 
 void DolphinSearchBox::applyReadOnlyState()
 {
+#ifdef HAVE_NEPOMUK
     if (m_readOnly) {
         m_searchLabel->setText(Nepomuk::Query::Query::titleFromQueryUrl(m_readOnlyQuery));
     } else {
+#else
+    {
+#endif
         m_searchLabel->setText(i18nc("@label:textbox", "Find:"));
     }
 

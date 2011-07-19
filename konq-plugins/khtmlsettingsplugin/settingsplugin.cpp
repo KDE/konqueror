@@ -186,7 +186,7 @@ void SettingsPlugin::toggleCookies( bool checked )
             KMessageBox::sorry( part->widget(),
                                 i18n("Cookies could not be enabled, because the "
                                      "cookie daemon could not be started."),
-                                i18n("Cookies Disabled"));
+                                i18nc("@title:window", "Cookies Disabled"));
     }
 }
 

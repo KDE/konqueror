@@ -609,6 +609,10 @@ void DolphinView::renameSelectedItems()
         dialog->raise();
         dialog->activateWindow();
     }
+
+    // assure that the current index remains visible when KDirLister
+    // will notify the view about changed items
+    m_assureVisibleCurrentIndex = true;
 }
 
 void DolphinView::trashSelectedItems()
@@ -683,6 +687,8 @@ void DolphinView::setShowHiddenFiles(bool show)
     if (m_viewAccessor.dirLister()->showingDotFiles() == show) {
         return;
     }
+
+    m_selectedItems = selectedItems();
 
     const KUrl viewPropsUrl = rootUrl();
     ViewProperties props(viewPropsUrl);
@@ -1477,6 +1483,11 @@ void DolphinView::ViewAccessor::createView(QWidget* parent,
 
     default:
         Q_ASSERT(false);
+    }
+
+    KDirLister* lister = dirLister();
+    if (lister) {
+        lister->setMainWindow(parent->window());
     }
 }
 

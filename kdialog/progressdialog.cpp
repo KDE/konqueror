@@ -23,7 +23,7 @@
 #include "progressdialogadaptor.h" 
 
 ProgressDialog::ProgressDialog(QWidget* parent, const QString& caption, const QString& text, int totalSteps)
-    : KProgressDialog(parent, caption, text, false)
+    : KProgressDialog(parent, caption, text, 0)
 {
     (void)new ProgressDialogAdaptor( this );
     QDBusConnection::sessionBus().registerObject( QLatin1String("/ProgressDialog"), this );

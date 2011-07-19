@@ -25,6 +25,7 @@
 #include <QtCore/QtGlobal>
 #include <QtCore/QHash>
 
+#include <cassert>
 #include <cstring>
 
 #include "scripting.h"
@@ -55,7 +56,7 @@ struct NSPluginIdentifier
 };
 
 static QHash<QString, NSPluginIdentifier*> stringIdents;
-static QHash<int32,   NSPluginIdentifier*> intIdents;
+static QHash<int32_t, NSPluginIdentifier*> intIdents;
  /* unfortunately, since this not per-session we can't clean up int idents.
     ### on 64-bit, can use small-value optimization-like encoding for them
   */

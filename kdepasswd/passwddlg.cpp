@@ -31,7 +31,7 @@
 KDEpasswd1Dialog::KDEpasswd1Dialog()
     : KPasswordDialog()
 {
-    setCaption(i18n("Change Password"));
+    setCaption(i18nc("@title:window", "Change Password"));
     setPrompt(i18n("Please enter your current password:"));
 }
 
@@ -98,7 +98,7 @@ KDEpasswd2Dialog::KDEpasswd2Dialog(const char *oldpass, const QByteArray &user)
     m_Pass = oldpass;
     m_User = user;
 
-    setCaption(i18n("Change Password"));
+    setCaption(i18nc("@title:window", "Change Password"));
     if (m_User.isEmpty())
         setPrompt(i18n("Please enter your new password:"));
     else

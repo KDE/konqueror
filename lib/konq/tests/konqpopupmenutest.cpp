@@ -83,9 +83,9 @@ void KonqPopupMenuTest::initTestCase()
     KConfigGroup(dolphin, "General").writeEntry("ShowCopyMoveMenu", true);
 
     m_thisDirectoryItem = KFileItem(QDir::currentPath(), "inode/directory", S_IFDIR + 0777);
-    m_fileItem = KFileItem(QDir::currentPath() + "/Makefile", "text/x-makefile", S_IFREG + 0660);
+    m_fileItem = KFileItem(KUrl(QDir::currentPath() + "/Makefile"), "text/x-makefile", S_IFREG + 0660);
     m_linkItem = KFileItem(KUrl("http://www.kde.org/foo"), "text/html", S_IFREG + 0660);
-    m_subDirItem = KFileItem(QDir::currentPath() + "/CMakeFiles", "inode/directory", S_IFDIR + 0755);
+    m_subDirItem = KFileItem(KUrl(QDir::currentPath() + "/CMakeFiles"), "inode/directory", S_IFDIR + 0755);
     m_cut = KStandardAction::cut(0, 0, this);
     m_actionCollection.addAction("cut", m_cut);
     m_copy = KStandardAction::copy(0, 0, this);

@@ -58,7 +58,7 @@
 #include <kprocess.h>
 #include <ksycoca.h>
 
-#include "sdk/npupp.h"
+#include "sdk/npfunctions.h"
 
 #include "plugin_paths.h"
 

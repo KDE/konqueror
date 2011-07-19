@@ -140,12 +140,17 @@ void KonqOperations::doPaste( QWidget * parent, const KUrl & destUrl, const QPoi
     KIO::Job *job = KIO::pasteClipboard( destUrl, parent, move );
     if (job) {
         KonqOperations * op = new KonqOperations( parent );
-        KIO::CopyJob * copyJob = static_cast<KIO::CopyJob *>(job);
         KIOPasteInfo * pi = new KIOPasteInfo;
         pi->mousePos = pos;
         op->setPasteInfo( pi );
-        op->setOperation( job, move ? MOVE : COPY, copyJob->destUrl() );
-        KIO::FileUndoManager::self()->recordJob( move ? KIO::FileUndoManager::Move : KIO::FileUndoManager::Copy, KUrl::List(), destUrl, job );
+        KIO::CopyJob * copyJob = qobject_cast<KIO::CopyJob *>(job);
+        if (copyJob) {
+            op->setOperation( job, move ? MOVE : COPY, copyJob->destUrl() );
+            KIO::FileUndoManager::self()->recordJob( move ? KIO::FileUndoManager::Move : KIO::FileUndoManager::Copy, KUrl::List(), destUrl, job );
+        } else if (KIO::SimpleJob* simpleJob = qobject_cast<KIO::SimpleJob *>(job)) {
+            op->setOperation(job, PUT, simpleJob->url());
+            KIO::FileUndoManager::self()->recordJob(KIO::FileUndoManager::Put, KUrl::List(), simpleJob->url(), job);
+        }
     }
 }
 
@@ -328,13 +333,12 @@ KonqOperations *KonqOperations::doDrop( const KFileItem & destItem, const KUrl &
     {
         //kDebug(1203) << "Pasting to " << dest.url();
         KonqOperations * op = new KonqOperations(parent);
-        KIO::CopyJob* job = KIO::pasteMimeSource( ev->mimeData(), dest,
-                                                  i18n( "File name for dropped contents:" ),
-                                                  parent );
-        if ( job ) // 0 if canceled by user
-        {
-            op->setOperation( job, COPY, job->destUrl() );
-            KIO::FileUndoManager::self()->recordJob( KIO::FileUndoManager::Copy, KUrl::List(), dest, job );
+        KIO::Job* job = KIO::pasteMimeData(ev->mimeData(), dest,
+                                           i18n( "File name for dropped contents:" ),
+                                           parent);
+        if (KIO::SimpleJob* simpleJob = qobject_cast<KIO::SimpleJob *>(job)) {
+            op->setOperation(job, PUT, simpleJob->url());
+            KIO::FileUndoManager::self()->recordJob(KIO::FileUndoManager::Put, KUrl::List(), simpleJob->url(), simpleJob);
         }
         ev->acceptProposedAction();
         return op;
@@ -729,7 +733,7 @@ void KonqOperations::rename( QWidget * parent, const KUrl & oldurl, const KUrl& 
         const QString userDirsFile(KGlobal::dirs()->localxdgconfdir() + QLatin1String("user-dirs.dirs"));
         KConfig xdgUserConf( userDirsFile, KConfig::SimpleConfig );
         KConfigGroup g( &xdgUserConf, "" );
-        g.writeEntry( "XDG_DESKTOP_DIR", "\"" + translatePath( newurl.path() ) + "\"" );
+        g.writeEntry( "XDG_DESKTOP_DIR", QString("\"" + translatePath( newurl.path() ) + "\"") );
         KGlobalSettings::self()->emitChange(KGlobalSettings::SettingsChanged, KGlobalSettings::SETTINGS_PATHS);
     }
 }
@@ -829,7 +833,7 @@ static bool confirmCreatingHiddenDir(const QString& name, QWidget* parent)
     return KMessageBox::warningContinueCancel(
         parent,
         i18n("The name \"%1\" starts with a dot, so the directory will be hidden by default.", name),
-        i18n("Create hidden directory?"),
+        i18nc("@title:window", "Create hidden directory?"),
         continueGuiItem,
         cancelGuiItem,
         "confirm_create_hidden_dir") == KMessageBox::Continue;

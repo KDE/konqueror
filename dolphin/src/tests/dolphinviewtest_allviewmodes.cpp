@@ -143,7 +143,12 @@ void DolphinViewTest_AllViewModes::testViewPropertySettings()
     view.setShowPreview(false);
     QVERIFY(!view.showPreview());
 
-    view.setShowHiddenFiles(false);
+    if (view.showHiddenFiles()) {
+        // Changing the "hidden files" setting triggers the dir lister
+        // -> we have to wait until loading the hidden files is finished
+        view.setShowHiddenFiles(false);
+        waitForFinishedPathLoading(&view);
+    }
     QVERIFY(!view.showHiddenFiles());
 
     /** Check that the sort order is correct for different kinds of settings */
@@ -200,7 +205,12 @@ void DolphinViewTest_AllViewModes::testViewPropertySettings()
     view.setShowHiddenFiles(true);
     waitForFinishedPathLoading(&view);
     QVERIFY(view.showHiddenFiles());
-    QCOMPARE(viewItems(&view), QStringList() << ".f" << "a" << "b" << "c" << "d" << "e");
+
+    // Depending on the settings, a .directory file might have been created.
+    // Remove it from the list to get consistent results.
+    QStringList result = viewItems(&view);
+    result.removeAll(".directory");
+    QCOMPARE(result, QStringList() << ".f" << "a" << "b" << "c" << "d" << "e");
 
     // Previews
     view.setShowPreview(true);
@@ -331,7 +341,7 @@ void DolphinViewTest_AllViewModes::testSaveAndRestoreState()
     view.saveState(saveStream);
 
     // Change the URL
-    view.setUrl(dir.name() + "51");
+    view.setUrl(KUrl(dir.name() + "51"));
     waitForFinishedPathLoading(&view);
     qApp->sendPostedEvents();
 
@@ -350,7 +360,7 @@ void DolphinViewTest_AllViewModes::testSaveAndRestoreState()
     }
 
     // Change the URL again
-    view.setUrl(dir.name() + "51");
+    view.setUrl(KUrl(dir.name() + "51"));
     waitForFinishedPathLoading(&view);
     qApp->sendPostedEvents();
 
@@ -514,7 +524,7 @@ void DolphinViewTest_AllViewModes::testCutCopyPaste()
     QCOMPARE(selectedItems(&view1), QStringList() << "b");
     view1.copySelectedItems();
     // Now we use view1 to display the subfolder, which is still empty.
-    view1.setUrl(dir2.name() + "subfolder");
+    view1.setUrl(KUrl(dir2.name() + "subfolder"));
     waitForFinishedPathLoading(&view1);
     QCOMPARE(viewItems(&view1), QStringList());
     // Select the subfolder.in view2
@@ -569,7 +579,7 @@ QAbstractItemView* DolphinViewTest_AllViewModes::initView(DolphinView* view) con
 void DolphinViewTest_AllViewModes::verifySelectedItemsCount(DolphinView* view, int itemsCount) const
 {
     QSignalSpy spySelectionChanged(view, SIGNAL(selectionChanged(const KFileItemList&)));
-    QVERIFY(QTest::kWaitForSignal(view, SIGNAL(selectionChanged(const KFileItemList&)), 500));
+    QVERIFY(QTest::kWaitForSignal(view, SIGNAL(selectionChanged(const KFileItemList&)), 2000));
 
     QCOMPARE(view->selectedItems().count(), itemsCount);
     QCOMPARE(view->selectedItemsCount(), itemsCount);

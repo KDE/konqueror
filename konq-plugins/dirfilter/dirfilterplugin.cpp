@@ -163,8 +163,6 @@ DirFilterPlugin::DirFilterPlugin (QObject* parent,
   filterAction->setText(i18n("Filter Field"));
   filterAction->setDefaultWidget( filterEdit );
   filterAction->setShortcutConfigurable(false);
-
-
 }
 
 DirFilterPlugin::~DirFilterPlugin()

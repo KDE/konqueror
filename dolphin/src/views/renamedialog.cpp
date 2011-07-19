@@ -65,9 +65,12 @@ RenameDialog::RenameDialog(QWidget *parent, const KFileItemList& items) :
 
     QLabel* editLabel = 0;
     if (m_renameOneItem) {
-        m_newName = items.first().name();
-        editLabel = new QLabel(i18nc("@label:textbox", "Rename the item <filename>%1</filename> to:", m_newName),
-                               page);
+        m_newName =  items.first().name();
+        editLabel = new QLabel(i18nc("@label:textbox", "Rename the item <filename>%1</filename> to:",
+                                     KStringHandler::csqueeze(m_newName)), page);
+        if (m_newName.size() > 40) {
+            editLabel->setToolTip(m_newName); // Set the filename as a the tool tip...
+        }
     } else {
         m_newName = i18nc("@info:status", "New name #");
         editLabel = new QLabel(i18ncp("@label:textbox",
@@ -136,7 +139,7 @@ void RenameDialog::slotButtonClicked(int button)
             Q_ASSERT(m_items.count() == 1);
             const KUrl oldUrl = m_items.first().url();
             KUrl newUrl = oldUrl;
-            newUrl.setFileName(m_newName);
+            newUrl.setFileName(KIO::encodeFileName(m_newName));
             KonqOperations::rename(this, oldUrl, newUrl);
         } else {
             renameItems();
@@ -148,7 +151,7 @@ void RenameDialog::slotButtonClicked(int button)
 
 void RenameDialog::slotTextChanged(const QString& newName)
 {
-    bool enable = !newName.isEmpty();
+    bool enable = !newName.isEmpty() && (newName != QLatin1String("..")) && (newName != QLatin1String("."));
     if (enable) {
         if (m_renameOneItem) {
             enable = enable && (newName != m_newName);
@@ -185,7 +188,7 @@ void RenameDialog::renameItems()
         const KUrl oldUrl = item.url();
         if (oldUrl.fileName() != newName) {
             KUrl newUrl = oldUrl;
-            newUrl.setFileName(newName);
+            newUrl.setFileName(KIO::encodeFileName(newName));
             KonqOperations::rename(this, oldUrl, newUrl);
         }
     }

@@ -308,7 +308,7 @@ void KProxyDialog::showInvalidMessage( const QString& _msg )
                 "button and correct the problem before proceeding; "
                 "otherwise your changes will be ignored.</qt>" );
 
-  KMessageBox::error( this, msg, i18n("Invalid Proxy Setup") );
+  KMessageBox::error( this, msg, i18nc("@title:window", "Invalid Proxy Setup") );
 }
 
 #include "kproxydlg.moc"

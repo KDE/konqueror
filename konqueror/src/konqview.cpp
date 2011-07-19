@@ -20,6 +20,7 @@
 
 
 #include "konqview.h"
+
 #include "KonqViewAdaptor.h"
 #include "konqsettingsxt.h"
 #include "konqframestatusbar.h"
@@ -28,21 +29,20 @@
 #include "konqviewmanager.h"
 #include "konqtabs.h"
 #include "konqbrowseriface.h"
-#include <kparts/statusbarextension.h>
-#include <kparts/browserextension.h>
-
 #include "konqhistorymanager.h"
 #include "konqpixmapprovider.h"
 
-#include <assert.h>
+#include <kparts/statusbarextension.h>
+#include <kparts/browserextension.h>
+#include <kio/job.h>
+#include <kio/jobuidelegate.h>
 #include <kdebug.h>
 #include <kcursor.h>
 #include <kmessagebox.h>
 #include <klocale.h>
 #include <krandom.h>
-#include <kio/job.h>
-#include <kio/jobuidelegate.h>
 #include <ktoggleaction.h>
+#include <kjobuidelegate.h>
 
 #include <QtGui/QApplication>
 #include <QtCore/QArgument>
@@ -52,7 +52,7 @@
 #include <QtGui/QKeyEvent>
 #include <QtCore/QFile>
 #include <QtGui/QScrollArea>
-#include <kjobuidelegate.h>
+
 
 //#define DEBUG_HISTORY
 
@@ -305,7 +305,7 @@ bool KonqView::changePart(const QString &mimeType,
                           bool forceAutoEmbed)
 {
     // Caller should call stop first.
-    assert( !m_bLoading );
+    Q_ASSERT( !m_bLoading );
 
     //kDebug() << "mimeType=" << mimeType
     //             << "requested serviceName=" << serviceName
@@ -643,7 +643,7 @@ void KonqView::setPageSecurity( int pageSecurity )
 
 void KonqView::setTabIcon( const KUrl &url )
 {
-  if (!m_bPassiveMode) frame()->setTabIcon( url, 0L );
+  if (!m_bPassiveMode && url.isValid()) frame()->setTabIcon( url, 0L );
 }
 
 void KonqView::setCaption( const QString & caption )
@@ -657,7 +657,11 @@ void KonqView::setCaption( const QString & caption )
      // Is the caption a URL?  If so, is it local?  If so, only display the filename!
      KUrl url(caption);
      if (url.isValid() && url.isLocalFile() && url.fileName() == this->url().fileName())
-        adjustedCaption = url.fileName();
+       {
+         adjustedCaption = url.fileName();
+         if (adjustedCaption.isEmpty())
+           adjustedCaption = QLatin1Char('/');
+       }
   }
 
   m_caption = adjustedCaption;
@@ -854,7 +858,7 @@ void KonqView::copyHistory( KonqView *other )
 
 KUrl KonqView::url() const
 {
-  assert( m_pPart );
+  Q_ASSERT( m_pPart );
   return m_pPart->url();
 }
 
@@ -1198,7 +1202,7 @@ bool KonqView::prepareReload( KParts::OpenUrlArguments& args, KParts::BrowserArg
         if ( KMessageBox::warningContinueCancel( 0, i18n(
             "The page you are trying to view is the result of posted form data. "
             "If you resend the data, any action the form carried out (such as search or online purchase) will be repeated. "),
-            i18n( "Warning" ), KGuiItem(i18n( "Resend" )) ) == KMessageBox::Continue )
+            i18nc( "@title:window", "Warning" ), KGuiItem(i18n( "Resend" )) ) == KMessageBox::Continue )
         {
             browserArgs.setDoPost( true );
             browserArgs.setContentType( m_postContentType );

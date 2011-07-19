@@ -45,7 +45,7 @@
 
 KManualProxyDlg::KManualProxyDlg( QWidget* parent, const char* name )
                 :KProxyDialogBase( parent, name, true,
-                                   i18n("Manual Proxy Configuration") )
+                                   i18nc("@title:window", "Manual Proxy Configuration") )
 {
     mDlg = new ManualProxyDlgUI (this);
     setMainWidget(mDlg);
@@ -270,7 +270,7 @@ bool KManualProxyDlg::validate()
 
     if ( count == 0 )
     {
-        showErrorMsg( i18n("Invalid Proxy Setting"),
+        showErrorMsg( i18nc("@title:window", "Invalid Proxy Setting"),
                       i18n("One or more of the specified proxy settings are "
                            "invalid. The incorrect entries are highlighted.") );
     }
@@ -343,7 +343,7 @@ bool KManualProxyDlg::handleDuplicate( const QString& site )
                                "Please try again.");
             QString details = i18n("<qt><center><b>%1</b></center> "
                                    "is already in the list.</qt>", site);
-            KMessageBox::detailedError( this, msg, details, i18n("Duplicate Entry") );
+            KMessageBox::detailedError( this, msg, details, i18nc("@title:window", "Duplicate Entry") );
             return true;
         }
     }
@@ -353,14 +353,14 @@ bool KManualProxyDlg::handleDuplicate( const QString& site )
 void KManualProxyDlg::newPressed()
 {
   QString result;
-  if( getException(result, i18n("New Exception")) && !handleDuplicate(result) )
+  if( getException(result, i18nc("@title:window", "New Exception")) && !handleDuplicate(result) )
     mDlg->lbExceptions->addItem( result );
 }
 
 void KManualProxyDlg::changePressed()
 {
   QString result;
-  if( getException( result, i18n("Change Exception"),
+  if( getException( result, i18nc("@title:window", "Change Exception"),
                     mDlg->lbExceptions->currentItem()->text() ) &&
       !handleDuplicate( result ) )
       mDlg->lbExceptions->currentItem()->setText(result);
@@ -437,7 +437,7 @@ void KManualProxyDlg::showErrorMsg( const QString& caption,
   QString msg( message );
 
   if ( cap.isEmpty() )
-    cap = i18n("Invalid Entry");
+    cap = i18nc("@title:window", "Invalid Entry");
 
   if ( msg.isEmpty() )
     msg = i18n("The address you have entered is not valid.");
