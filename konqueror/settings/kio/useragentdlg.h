@@ -56,7 +56,6 @@ private Q_SLOTS:
   void on_sendUACheckBox_clicked();
   void on_osNameCheckBox_clicked();
   void on_osVersionCheckBox_clicked();
-  void on_platformCheckBox_clicked();
   void on_processorTypeCheckBox_clicked();
   void on_languageCheckBox_clicked();
   void on_sitePolicyTreeWidget_itemSelectionChanged();

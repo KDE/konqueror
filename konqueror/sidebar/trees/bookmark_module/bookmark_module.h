@@ -85,7 +85,7 @@ class BookmarkEditDialog : public KDialog
 public:
     BookmarkEditDialog( const QString& title, const QString& url,
                         QWidget * = 0, const char * = 0,
-                        const QString& caption = i18n( "Add Bookmark" ) );
+                        const QString& caption = i18nc( "@title:window", "Add Bookmark" ) );
 
     QString finalUrl() const;
     QString finalTitle() const;

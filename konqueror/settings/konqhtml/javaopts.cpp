@@ -110,7 +110,7 @@ KJavaOptions::KJavaOptions( KSharedConfig::Ptr config, const QString &group,
     laygroup1->addWidget( secondsHB );
     serverTimeoutSB = new KIntNumInput( secondsHB );
     serverTimeoutSB->setRange( 0, 1000, 5 );
-    serverTimeoutSB->setSuffix(i18n(" sec"));
+    serverTimeoutSB->setSuffix(ki18np(" second", " seconds"));
     connect(serverTimeoutSB, SIGNAL(valueChanged(int)),this,SLOT(slotChanged()));
     laygroup1->addRow( enableShutdownCB, serverTimeoutSB);
 
@@ -318,10 +318,10 @@ void JavaDomainListView::setupPolicyDlg(PushButton trigger,PolicyDialog &pDlg,
 		Policies *pol) {
   QString caption;
   switch (trigger) {
-    case AddButton: caption = i18n( "New Java Policy" );
+    case AddButton: caption = i18nc( "@title:window", "New Java Policy" );
       pol->setFeatureEnabled(!options->enableJavaGloballyCB->isChecked());
       break;
-    case ChangeButton: caption = i18n( "Change Java Policy" ); break;
+    case ChangeButton: caption = i18nc( "@title:window", "Change Java Policy" ); break;
     default: ; // inhibit gcc warning
   }/*end switch*/
   pDlg.setCaption(caption);

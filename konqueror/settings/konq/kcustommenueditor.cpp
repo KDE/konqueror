@@ -93,7 +93,7 @@ KCustomMenuEditor::KCustomMenuEditor(QWidget *parent)
   : KDialog(parent),
     m_listView(0),d(new KCustomMenuEditorPrivate)
 {
-   setCaption( i18n("Menu Editor") );
+   setCaption( i18nc("@title:window", "Menu Editor") );
    setButtons( Ok | Cancel );
    setDefaultButton(Ok);
    KHBox *page = new KHBox(this);

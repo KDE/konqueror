@@ -77,7 +77,7 @@ void UserAgentDlg::on_sendUACheckBox_clicked()
 
 void UserAgentDlg::on_newButton_clicked()
 {
-  const QPointer<UserAgentSelectorDlg> pdlg( new UserAgentSelectorDlg( i18n("Add Identification"), m_userAgentInfo, this ) );
+  const QPointer<UserAgentSelectorDlg> pdlg( new UserAgentSelectorDlg( i18nc("@title:window", "Add Identification"), m_userAgentInfo, this ) );
 
   if ( pdlg->exec() == QDialog::Accepted && pdlg )
   {
@@ -129,11 +129,6 @@ void UserAgentDlg::on_osVersionCheckBox_clicked()
   changeDefaultUAModifiers();
 }
 
-void UserAgentDlg::on_platformCheckBox_clicked()
-{
-  changeDefaultUAModifiers();
-}
-
 void UserAgentDlg::on_processorTypeCheckBox_clicked()
 {
   changeDefaultUAModifiers();
@@ -151,7 +146,7 @@ void UserAgentDlg::on_sitePolicyTreeWidget_itemDoubleClicked(QTreeWidgetItem* it
     // Store the current site name...
     const QString currentSiteName = item->text(0);
 
-    UserAgentSelectorDlg pdlg ( i18n("Modify Identification"), m_userAgentInfo, this );
+    UserAgentSelectorDlg pdlg ( i18nc("@title:window", "Modify Identification"), m_userAgentInfo, this );
     pdlg.setSiteName( currentSiteName );
     pdlg.setIdentity( item->text(1) );
 
@@ -178,9 +173,6 @@ void UserAgentDlg::changeDefaultUAModifiers()
 
   if ( ui.osVersionCheckBox->isChecked() )
      m_ua_keys += 'v';
-
-  if ( ui.platformCheckBox->isChecked() )
-     m_ua_keys += 'p';
 
   if ( ui.processorTypeCheckBox->isChecked() )
      m_ua_keys += 'm';
@@ -211,7 +203,7 @@ bool UserAgentDlg::handleDuplicate( const QString& site,
                         "Do you want to replace it?</center>"
                         "</qt>", site);
     int res = KMessageBox::warningContinueCancel(this, msg,
-                                        i18n("Duplicate Identification"),
+                                        i18nc("@title:window", "Duplicate Identification"),
                                         KGuiItem(i18n("Replace")));
     if ( res == KMessageBox::Continue )
     {
@@ -287,7 +279,6 @@ void UserAgentDlg::load()
   ui.defaultIdLineEdit->setText( KProtocolManager::defaultUserAgent( m_ua_keys ) );
   ui.osNameCheckBox->setChecked( m_ua_keys.contains('o') );
   ui.osVersionCheckBox->setChecked( m_ua_keys.contains('v') );
-  ui.platformCheckBox->setChecked( m_ua_keys.contains('p') );
   ui.processorTypeCheckBox->setChecked( m_ua_keys.contains('m') );
   ui.languageCheckBox->setChecked( m_ua_keys.contains('l') );
 
@@ -302,7 +293,6 @@ void UserAgentDlg::defaults()
   ui.defaultIdLineEdit->setText( KProtocolManager::defaultUserAgent(m_ua_keys) );
   ui.osNameCheckBox->setChecked( m_ua_keys.contains('o') );
   ui.osVersionCheckBox->setChecked( m_ua_keys.contains('v') );
-  ui.platformCheckBox->setChecked( m_ua_keys.contains('p') );
   ui.processorTypeCheckBox->setChecked( m_ua_keys.contains('m') );
   ui.languageCheckBox->setChecked( m_ua_keys.contains('l') );
   ui.sendUACheckBox->setChecked( true );

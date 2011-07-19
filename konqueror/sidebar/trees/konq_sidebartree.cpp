@@ -894,7 +894,7 @@ void KonqSidebarTree::slotItemRenamed(Q3ListViewItem* item, const QString &name,
 {
     Q_ASSERT(col==0);
     if (col != 0) return;
-    assert(item);
+    Q_ASSERT(item);
     KonqSidebarTreeItem * treeItem = static_cast<KonqSidebarTreeItem *>(item);
     treeItem->rename( name );
 }
@@ -952,7 +952,7 @@ void KonqSidebarTree::slotCreateFolder()
 
     while(true)
     {
-        name = KInputDialog::getText(i18n("Create New Folder"),
+        name = KInputDialog::getText(i18nc("@title:window", "Create New Folder"),
                                      i18n("Enter folder name:"), name);
         if (name.isEmpty())
             return;
@@ -1024,12 +1024,21 @@ void KonqSidebarTree::slotOpenTab()
                          browserArgs);
 }
 
+static QMimeData* mimeDataFor(const KUrl& url)
+{
+  QMimeData* data = new QMimeData();
+  QList<QUrl> urlList;
+  urlList.append(QUrl(url));
+  data->setUrls(urlList);
+  return data;
+}
+
 void KonqSidebarTree::slotCopyLocation()
 {
     if (!m_currentTopLevelItem) return;
     KUrl url = m_currentTopLevelItem->externalURL();
-    qApp->clipboard()->setData( new K3URLDrag(url, 0), QClipboard::Selection );
-    qApp->clipboard()->setData( new K3URLDrag(url, 0), QClipboard::Clipboard );
+    qApp->clipboard()->setMimeData( mimeDataFor(url), QClipboard::Selection );
+    qApp->clipboard()->setMimeData( mimeDataFor(url), QClipboard::Clipboard );
 }
 
 ///////////////////////////////////////////////////////////////////

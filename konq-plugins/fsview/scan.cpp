@@ -44,7 +44,7 @@ ScanManager::ScanManager(const QString& path)
 ScanManager::~ScanManager()
 {
   stopScan();
-  if (_topDir) delete _topDir;
+  delete _topDir;
 }
 
 void ScanManager::setListener(ScanListener* l)

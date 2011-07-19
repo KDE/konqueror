@@ -1,16 +1,23 @@
-<?xml version="1.0" ?>
-<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
-"dtd/kdex.dtd" [
-<!ENTITY fsview "<application>FSView</application>">
-<!ENTITY % addindex "IGNORE">
-<!ENTITY % English "INCLUDE" > <!-- change language only here -->
-]>
+<chapter id="view-extensions">
 
-<article lang="&language;">
+<title>View Mode Extensions</title>
+
+<!--filemanager mode:
+default Icons/Details/Columns (Dolphin), File Size View (konq-plugins)
+additional Terminal Emulator (Konsole), File Replace View (kdewebdev), Cervisia (kdesdk), Radial Map (Filelight-kdeutils) and more
+browser mode:
+default KHTML, WebKit, Embedded Advanced Text Editor
+additional KImageMapEditor+KLinkStatusPart (kdewebdev) and more
+  -->
+<para>&konqueror; provides additional views in <menuchoice><guimenu>View</guimenu>
+<guisubmenu>View Mode</guisubmenu></menuchoice> in file manager and browser mode, if 
+the corresponding applications and plugins are installed.</para>
+<para>The file manager mode has the additional views <guimenuitem>Radial Map</guimenuitem> 
+from the application <application>Filelight</application> and the &konqueror; plugin 
+<guimenuitem>File Size View</guimenuitem>.</para>
 
 <sect1 id="fsview">
 <sect1info>
-
 <authorgroup>
 <author>
 <personname><firstname>Josef</firstname>
@@ -18,31 +25,12 @@
 <address><email>Josef.Weidendorfer@gmx.de</email></address>
 </author>
 
-<!-- TRANS:ROLES_OF_TRANSLATORS --> 
 </authorgroup>
-
-<date>2006-02-24</date>
-<releaseinfo>3.5.1</releaseinfo>
-
-<abstract>
-<para>The &fsview; Plugin for &konqueror; is another view mode for
-objects of mimetype <literal>inode/directory</literal> for local
-files. It can be viewed as an alternative to the various iconviews and
-listviews for browsing the content of your local file system.</para>
-</abstract>
-
-<keywordset>
-<keyword>KDE</keyword>
-<keyword>kdeaddons</keyword>
-<keyword>konqueror</keyword>
-<keyword>plugins</keyword>
-<keyword></keyword>
-</keywordset>
-
+<date>2011-05-16</date>
+<releaseinfo>&kde; 4.7</releaseinfo>
 </sect1info>
 
 <title>&fsview; - the File System View</title>
-
 <sect2>
 <title>Introduction</title>
 
@@ -149,7 +137,7 @@ iconview and listview. This allows for actions to be done
 simultaneously to a set of files. A simple mouse click always selects
 a single item below the mouse pointer. Use a mouse click in
 combination with pressing the &Shift; key for range selection or the
-&Ctrl; Key for selection toggle. Note that by selecting an item, subitems can no
+&Ctrl; key for selection toggle. Note that by selecting an item, subitems can no
 longer be selected. Selecting an item will also clear the selection of all its
 parent items before.</para>
 
@@ -166,17 +154,11 @@ hold down simultaneously, toggles selection of the current item. Press
 
 <sect2>
 <title>Credits and License</title>
-
 <para>Originally, &fsview; was meant as a small test application and
 usage tutorial for the TreeMap widget developed within
 <application>KCachegrind</application>.</para>
-
 <para>Copyright by Josef Weidendorfer, licensed using GPL V2.</para>
-
-&underGPL;
-&underFDL;
-
 </sect2>
 
 </sect1>
-</article>
+</chapter>

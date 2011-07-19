@@ -175,7 +175,7 @@ void KCookiesPolicies::autoAcceptSessionCookies ( bool enable )
 
 void KCookiesPolicies::addNewPolicy(const QString& domain)
 {
-  PolicyDlg pdlg (i18n("New Cookie Policy"), this);
+  PolicyDlg pdlg (i18nc("@title:window", "New Cookie Policy"), this);
   pdlg.setEnableHostEdit (true, domain);
 
   if (dlg->rbPolicyAccept->isChecked())
@@ -214,7 +214,7 @@ void KCookiesPolicies::changePressed()
 
   QString oldDomain = index->text(0);
 
-  PolicyDlg pdlg (i18n("Change Cookie Policy"), this);
+  PolicyDlg pdlg (i18nc("@title:window", "Change Cookie Policy"), this);
   pdlg.setPolicy (KCookieAdvice::strToAdvice(m_pDomainPolicy[index]));
   pdlg.setEnableHostEdit (true, oldDomain);
 
@@ -243,7 +243,7 @@ bool KCookiesPolicies::handleDuplicate( const QString& domain, int advice )
                          "<center><b>%1</b></center>"
                          "Do you want to replace it?</qt>", domain);
       int res = KMessageBox::warningContinueCancel(this, msg,
-                                          i18n("Duplicate Policy"),
+                                          i18nc("@title:window", "Duplicate Policy"),
                                           KGuiItem(i18n("Replace")));
       if ( res == KMessageBox::Continue )
       {

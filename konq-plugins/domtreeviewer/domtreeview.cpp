@@ -67,7 +67,7 @@ public:
     {
         setupUi(mainWidget());
 
-        setWindowTitle(i18n("Edit Element"));
+        setWindowTitle(i18nc("@title:window", "Edit Element"));
         setButtons(User1 | User2 | Cancel);
         setButtonText(User1, i18n("&Append as Child"));
         setButtonText(User2, i18n("Insert &Before Current"));
@@ -87,7 +87,7 @@ public:
     {
         setupUi(mainWidget());
 
-        setWindowTitle(i18n("Edit Text"));
+        setWindowTitle(i18nc("@title:window", "Edit Text"));
         setButtons(User1 | User2 | Cancel);
         setButtonText(User1, i18n("&Append as Child"));
         setButtonText(User2, i18n("Insert &Before Current"));
@@ -107,7 +107,7 @@ public:
     {
         setupUi(mainWidget());
 
-        setWindowTitle(i18n("Edit Attribute"));
+        setWindowTitle(i18nc("@title:window", "Edit Attribute"));
         setButtons(Ok | Cancel);
 
         connect(this, SIGNAL(okClicked()), this, SLOT(accept()));
@@ -169,7 +169,7 @@ void DOMTreeView::setHtmlPart(KHTMLPart *_part)
     // nothing here yet
   }
 
-  parentWidget()->setWindowTitle( part ? i18n( "DOM Tree for %1" , part->url().prettyUrl()) : i18n("DOM Tree") );
+  parentWidget()->setWindowTitle( part ? i18nc( "@title:window", "DOM Tree for %1" , part->url().prettyUrl()) : i18nc("@title:window", "DOM Tree") );
 
   QTimer::singleShot(0, this, SLOT(slotSetHtmlPartDelayed()));
 }
@@ -581,7 +581,7 @@ void DOMTreeView::slotSaveClicked()
     QFile file(url.path());
 
     if (file.exists()) {
-      const QString title = i18n( "File Exists" );
+      const QString title = i18nc( "@title:window", "File Exists" );
       const QString text = i18n( "Do you really want to overwrite: \n%1?" , url.url());
       if (KMessageBox::Continue != KMessageBox::warningContinueCancel(this, text, title, i18n("Overwrite") ) ) {
 	return;
@@ -596,12 +596,12 @@ void DOMTreeView::slotSaveClicked()
       kDebug(90180) << "File closed ";
       delete m_textStream;
     } else {
-      const QString title = i18n( "Unable to Open File" );
+      const QString title = i18nc( "@title:window", "Unable to Open File" );
       const QString text = i18n( "Unable to open \n %1 \n for writing" , url.path());
       KMessageBox::sorry( this, text, title );
     }
   } else {
-    const QString title = i18n( "Invalid URL" );
+    const QString title = i18nc( "@title:window", "Invalid URL" );
     const QString text = i18n( "This URL \n %1 \n is not valid." , url.url());
     KMessageBox::sorry( this, text, title );
   }

@@ -194,8 +194,12 @@ KUrl KonqMisc::konqFilteredURL(KonqMainWindow* parent, const QString& _url, cons
 
     if( KUriFilter::self()->filterUri( data ) )
     {
-      if( data.uriType() == KUriFilterData::Error && !data.errorMsg().isEmpty() ) {
-        return KParts::BrowserRun::makeErrorUrl(KIO::ERR_SLAVE_DEFINED, data.errorMsg(), _url);
+      if( data.uriType() == KUriFilterData::Error ) {
+        if (data.errorMsg().isEmpty()) {
+          return KParts::BrowserRun::makeErrorUrl(KIO::ERR_MALFORMED_URL, _url, _url);
+        } else {
+          return KParts::BrowserRun::makeErrorUrl(KIO::ERR_SLAVE_DEFINED, data.errorMsg(), _url);
+        }
       } else {
         return data.uri();
       }

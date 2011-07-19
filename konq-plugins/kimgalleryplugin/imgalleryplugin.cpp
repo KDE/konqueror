@@ -234,11 +234,11 @@ void KImGalleryPlugin::createBody(QTextStream& stream, const QString& sourceDirN
 
             if (m_configDlg->printImageSize()) {
                 imginfo.setFile( imageDir, imgName );
-                stream << "<div>(" << (imginfo.size() / 1024) << " " <<  i18n("KB") << ")" << "</div>" << endl;
+                stream << "<div>(" << (imginfo.size() / 1024) << " " <<  i18n("KiB") << ")" << "</div>" << endl;
             }
 
             if (m_useCommentFile) {
-                QString imgComment = (*m_commentMap)[imgName].toLocal8Bit();
+                QString imgComment = (*m_commentMap)[imgName];
                 stream << "<div>" << Qt::escape(imgComment) << "</div>" << endl;
             }
             stream << "</td>" << endl;
@@ -419,7 +419,7 @@ void KImGalleryPlugin::loadCommentFile()
         }
         CommentMap::ConstIterator it;
         for( it = m_commentMap->constBegin(); it != m_commentMap->constEnd(); ++it ) {
-            kDebug(90170) << "picName: " << it.key().toLocal8Bit() << ", picComment: " << it.value().toLocal8Bit();
+            kDebug(90170) << "picName: " << it.key() << ", picComment: " << it.value();
         }
         file.close();
         kDebug(90170) << "File closed.";

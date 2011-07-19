@@ -27,9 +27,6 @@
 #include "konqframevisitor.h"
 #include "konqframestatusbar.h"
 
-// std
-#include <assert.h>
-
 // Qt
 #include <QtGui/QKeyEvent>
 #include <QtGui/QApplication>
@@ -128,7 +125,7 @@ void KonqFrame::saveConfig( KConfigGroup& config, const QString &prefix, const K
 
 void KonqFrame::copyHistory( KonqFrameBase *other )
 {
-    assert(other->frameType() == KonqFrameBase::View);
+    Q_ASSERT(other->frameType() == KonqFrameBase::View);
     childView()->copyHistory( static_cast<KonqFrame *>( other )->childView() );
 }
 
@@ -142,7 +139,7 @@ void KonqFrame::copyHistory( KonqFrameBase *other )
 
    m_pPart = factory.create( this, 0 );
 
-   assert( m_pPart->widget() );
+   Q_ASSERT( m_pPart->widget() );
 
    attachWidget(m_pPart->widget());
 
@@ -172,8 +169,8 @@ void KonqFrame::attachWidget(QWidget* widget)
 
 void KonqFrame::insertTopWidget( QWidget * widget )
 {
-    assert(m_pLayout);
-    assert(widget);
+    Q_ASSERT(m_pLayout);
+    Q_ASSERT(widget);
     m_pLayout->insertWidget( 0, widget );
     installEventFilter(m_pView->mainWindow()); // for Ctrl+Tab
 }

@@ -462,7 +462,7 @@ in the text or &HTML; page.</para></listitem>
 
 <varlistentry>
 <term><menuchoice>
-<shortcut><keycap>F3</keycap></shortcut>
+<shortcut><keycombo action="simul">&Shift;<keycap>F3</keycap></keycombo></shortcut>
 <guimenu>Edit</guimenu>
 <guimenuitem>Find Previous</guimenuitem></menuchoice> (Browser mode)</term>
 <listitem><para>Find the previous occurrence of the text string 
@@ -705,11 +705,12 @@ http://websvn.kde.org/?view=revision&revision=269436
 <varlistentry>
 <term><menuchoice>
 <guimenu>View</guimenu>
-<guisubmenu>Sort By</guisubmenu></menuchoice> (File Manager mode)</term>
+<guisubmenu>Sort By</guisubmenu></menuchoice> (File Manager mode, only in Icons view)</term>
 <listitem><para><action>Changes whether items are sorted by <guimenuitem>Name</guimenuitem>,
 <guimenuitem>Size</guimenuitem>, <guimenuitem>Date</guimenuitem>,
 <guimenuitem>Permissions</guimenuitem>, <guimenuitem>Owner</guimenuitem>,
-<guimenuitem>Group</guimenuitem> or <guimenuitem>Type</guimenuitem>.
+<guimenuitem>Group</guimenuitem>, <guimenuitem>Type</guimenuitem>, 
+<guimenuitem>Link Destination</guimenuitem> or <guimenuitem>Path</guimenuitem>.
 <guimenuitem>Descending</guimenuitem> reverses the sort order.
 <guimenuitem>Folders First</guimenuitem> sorts folders before files.
 </action></para></listitem>
@@ -722,8 +723,9 @@ http://websvn.kde.org/?view=revision&revision=269436
 <listitem><para><action>Displays additional information</action> like
 <guimenuitem>Size</guimenuitem>, <guimenuitem>Date</guimenuitem>,
 <guimenuitem>Permissions</guimenuitem>, <guimenuitem>Owner</guimenuitem>,
-<guimenuitem>Group</guimenuitem> or <guimenuitem>Type</guimenuitem> in the different
-views.</para></listitem>
+<guimenuitem>Group</guimenuitem>, <guimenuitem>Type</guimenuitem>, 
+<guimenuitem>Link Destination</guimenuitem> or <guimenuitem>Path</guimenuitem> 
+in the different views.</para></listitem>
 </varlistentry>
 
 <varlistentry>

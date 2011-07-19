@@ -34,6 +34,7 @@
 #include <krun.h>
 #include <kcomponentdata.h>
 #include <KStartupInfoId>
+#include <kurifilter.h>
 
 #include <konq_mainwindow_interface.h>
 #include <konq_main_interface.h>
@@ -303,6 +304,21 @@ static QString konqyToReuse( const QString& url, const QString& mimetype, const 
     return QString();
 }
 
+static KUrl filteredUrl(KCmdLineArgs* args)
+{
+    if (args) {
+        KUriFilterData data;
+        data.setData(args->arg(1));
+        data.setAbsolutePath(args->cwd());
+        data.setCheckForExecutables(false);
+
+        if (KUriFilter::self()->filterUri(data) && data.uriType() != KUriFilterData::Error) {
+            return data.uri();
+        }
+    }
+    return KUrl();
+}
+
 void ClientApp::sendASNChange()
 {
 #ifdef Q_WS_X11
@@ -514,7 +530,6 @@ bool ClientApp::doIt()
   char** fake_argv = 0;
   ClientApp app( fake_argc, fake_argv );
 
-
   if ( command == "openURL" || command == "newTab" )
   {
     checkArgumentCount(argc, 1, 3);
@@ -527,11 +542,11 @@ bool ClientApp::doIt()
     }
     if ( argc == 2 )
     {
-      return createNewWindow( args->url(1), command == "newTab", tempFile );
+      return createNewWindow( filteredUrl(args), command == "newTab", tempFile );
     }
     if ( argc == 3 )
     {
-      return createNewWindow( args->url(1), command == "newTab", tempFile, args->arg(2) );
+      return createNewWindow( filteredUrl(args), command == "newTab", tempFile, args->arg(2) );
     }
   }
   else if ( command == "openProfile" )

@@ -26,8 +26,8 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2009-12-18</date>
-<releaseinfo>&kde; 4.4</releaseinfo>
+<date>2011-05-25</date>
+<releaseinfo>&kde; 4.7</releaseinfo>
 
 <abstract>
 <para>
@@ -60,7 +60,7 @@ computer, or for searching for files that match a pattern. An example of
 this could include searching for files of a particular type or with certain
 letters in the filename.
 
-You can load this utility in &dolphin; and &konqueror; (in file manager mode) 
+You can load this utility in &konqueror; (in file manager mode) 
 by selecting <menuchoice><shortcut><keycombo action="simul">&Ctrl;
 <keycap>F</keycap></keycombo></shortcut><guimenu>Tools</guimenu>
 <guimenuitem>Find File</guimenuitem></menuchoice> from the menu. 
@@ -83,15 +83,17 @@ name of the file you are searching in the text box labeled
 a semicolon (<quote>;</quote>) for separating multiple names.</para>
 <para>Choose a folder where you want to search
 by typing it in the field <guilabel>Look in:</guilabel>
-or by clicking <guibutton>Browse...</guibutton> and press
-&Enter; or click the <guibutton>Find</guibutton>. 
+or by clicking <guibutton>Browse...</guibutton> (you can toggle the 
+display of the hidden files and folder in the dialog using the shortcuts 
+<keycombo action="simul">&Alt;<keycap>.</keycap></keycombo> or <keycap>F8</keycap>) 
+and press &Enter; or click the <guibutton>Find</guibutton> button. 
 Use the <guibutton>Stop</guibutton> button to cancel a search.
 A search result can be saved in &HTML; format or as plain text with the
 <guibutton>Save As...</guibutton> button.</para>
 <para>
 If <guilabel>Include subfolders</guilabel> is checked all
 subfolders starting from your chosen folder will be searched
-too. If you enable <guilabel>Case sensitive</guilabel>, &kfind; will
+too. If you enable <guilabel>Case sensitive search</guilabel>, &kfind; will
 only find files with the exact case matching names.
 Enable the option <guilabel>Show hidden files</guilabel> to include
 them in your search.

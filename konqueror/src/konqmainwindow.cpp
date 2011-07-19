@@ -373,7 +373,7 @@ QWidget * KonqMainWindow::createContainer( QWidget *parent, int index, const QDo
   static QString tagToolBar = QLatin1String( "ToolBar" );
   if ( res && (element.tagName() == tagToolBar) && (element.attribute( "name" ) == nameBookmarkBar) )
   {
-    assert( ::qobject_cast<KToolBar*>( res ) );
+    Q_ASSERT( ::qobject_cast<KToolBar*>( res ) );
     if (!KAuthorized::authorizeKAction("bookmarks")) {
         delete res;
         return 0;
@@ -420,7 +420,7 @@ void KonqMainWindow::removeContainer( QWidget *container, QWidget *parent, QDomE
 
   if ( element.tagName() == tagToolBar && element.attribute( "name" ) == nameBookmarkBar )
   {
-    assert( ::qobject_cast<KToolBar*>( container ) );
+    Q_ASSERT( ::qobject_cast<KToolBar*>( container ) );
     if (m_paBookmarkBar)
       m_paBookmarkBar->clear();
   }
@@ -525,15 +525,18 @@ void KonqMainWindow::openUrl(KonqView *_view, const KUrl &_url,
     if (mimeType.isEmpty())
         mimeType = req.args.mimeType();
 
-    if (!url.isValid()) {
-        // I think we can't really get here anymore; I tried and didn't succeed.
-        // URL filtering catches this case before hand, and in cases without filtering
-        // (e.g. HTML link), the url is empty here, not invalid.
-        // But just to be safe, let's keep this code path, even if it can't show the typed string.
-        url = KParts::BrowserRun::makeErrorUrl(KIO::ERR_MALFORMED_URL, url.url() /*empty*/, url.url() /*empty*/);
-    } else if (!KProtocolInfo::isKnownProtocol(url)) {
-        url = KParts::BrowserRun::makeErrorUrl(KIO::ERR_UNSUPPORTED_PROTOCOL, url.protocol(), url.url());
+    if (url.protocol() != QLatin1String("error")) {
+        if (!url.isValid()) {
+            // I think we can't really get here anymore; I tried and didn't succeed.
+            // URL filtering catches this case before hand, and in cases without filtering
+            // (e.g. HTML link), the url is empty here, not invalid.
+            // But just to be safe, let's keep this code path, even if it can't show the typed string.
+            url = KParts::BrowserRun::makeErrorUrl(KIO::ERR_MALFORMED_URL, url.url() /*empty*/, url.url() /*empty*/);
+        } else if (!KProtocolInfo::isKnownProtocol(url)) {
+            url = KParts::BrowserRun::makeErrorUrl(KIO::ERR_UNSUPPORTED_PROTOCOL, url.protocol(), url.url());
+        }
     }
+
     if (url.url() == "about:blank" || url.protocol() == "error") {
         mimeType = "text/html";
     }
@@ -686,11 +689,15 @@ void KonqMainWindow::openUrl(KonqView *_view, const KUrl &_url,
                 lst.append(url);
                 //kDebug() << "Got offer" << (offer ? offer->name() : QString("0"));
                 const bool allowExecution = trustedSource || KParts::BrowserRun::allowExecution( mimeType, url );
-                if ( allowExecution &&
-                     ( KonqRun::isExecutable( mimeType ) || !offer || !KRun::run( *offer, lst, this ) ) )
+                if ( allowExecution )
                 {
-                    setLocationBarURL( oldLocationBarURL ); // Revert to previous locationbar URL
-                    (void)new KRun( url, this );
+                    // Open with no offer means the user clicked on "Open With..." button.
+                    if (!offer) {
+                        (void) KRun::displayOpenWithDialog(lst, this);
+                    } else if (KonqRun::isExecutable( mimeType ) || !KRun::run( *offer, lst, this ) ) {
+                        setLocationBarURL( oldLocationBarURL ); // Revert to previous locationbar URL
+                        (void)new KRun( url, this );
+                    }
                 }
             }
         }
@@ -1268,26 +1275,20 @@ void KonqMainWindow::slotCreateNewWindow( const KUrl &url,
        mainWindow->viewManager()->setActivePart(*part);
     }
 
-    if ( windowArgs.x() != -1 )
-        mainWindow->move( windowArgs.x(), mainWindow->y() );
-    if ( windowArgs.y() != -1 )
-        mainWindow->move( mainWindow->x(), windowArgs.y() );
-
-    int width;
-    if ( windowArgs.width() != -1 )
-        width = windowArgs.width();
-    else
-        width = mainWindow->width();
-
-    int height;
-    if ( windowArgs.height() != -1 )
-        height = windowArgs.height();
-    else
-        height = mainWindow->height();
-
-    mainWindow->resize( width, height );
+#ifdef Q_WS_X11
+    // WORKAROUND: Clear the window state information set by KMainWindow::restoreWindowSize
+    // so that the size and location settings we set below always take effect.
+    KWindowSystem::clearState(mainWindow->winId(), NET::Max);
+#endif
 
     // process the window args
+    const int xPos = ((windowArgs.x() == -1) ?  mainWindow->x() : windowArgs.x());
+    const int yPos = ((windowArgs.y() == -1) ?  mainWindow->y() : windowArgs.y());
+    const int width = ((windowArgs.width() == -1) ?  mainWindow->width() : windowArgs.width());
+    const int height = ((windowArgs.height() == -1) ?  mainWindow->height() : windowArgs.height());
+
+    mainWindow->move ( xPos, yPos );
+    mainWindow->resize( width, height );
 
     if ( !windowArgs.isMenuBarVisible() )
     {
@@ -1477,6 +1478,8 @@ void KonqMainWindow::slotIconsChanged()
 
 void KonqMainWindow::slotOpenWith()
 {
+    if (!m_currentView) return;
+
     KUrl::List lst;
     lst.append(m_currentView->url());
 
@@ -1495,6 +1498,8 @@ void KonqMainWindow::slotOpenWith()
 
 void KonqMainWindow::slotViewModeTriggered(QAction* action)
 {
+    if (!m_currentView) return;
+
     // Gather data from the action, since the action will be deleted by changePart
     const QString modeName = action->objectName();
     const QString internalViewMode = action->data().toString();
@@ -1553,6 +1558,8 @@ void KonqMainWindow::showHTML( KonqView * _view, bool b, bool _activateView )
 
 void KonqMainWindow::slotShowHTML()
 {
+  if (!m_currentView) return;
+
   bool b = !m_currentView->allowHTML();
 
   m_currentView->stop();
@@ -1572,6 +1579,8 @@ void KonqMainWindow::setShowHTML( bool b )
 
 void KonqMainWindow::slotLockView()
 {
+  if (!m_currentView) return;
+
   m_currentView->setLockedLocation( m_paLockView->isChecked() );
 }
 
@@ -1586,8 +1595,10 @@ void KonqMainWindow::slotStop()
 
 void KonqMainWindow::slotLinkView()
 {
+    if (!m_currentView) return;
+
     // Can't access this action in passive mode anyway
-    assert(!m_currentView->isPassiveMode());
+    Q_ASSERT(!m_currentView->isPassiveMode());
     const bool mode = !m_currentView->isLinkedView();
 
     const QList<KonqView*> linkableViews = KonqLinkableViewsCollector::collect(this);
@@ -1611,7 +1622,7 @@ void KonqMainWindow::slotReload( KonqView* reloadView, bool softReload )
     if (reloadView->isModified()) {
         if (KMessageBox::warningContinueCancel( this,
            i18n("This page contains changes that have not been submitted.\nReloading the page will discard these changes."),
-           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"view-refresh"), KStandardGuiItem::cancel(), "discardchangesreload") != KMessageBox::Continue )
+           i18nc("@title:window", "Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"view-refresh"), KStandardGuiItem::cancel(), "discardchangesreload") != KMessageBox::Continue )
             return;
     }
 
@@ -1904,7 +1915,7 @@ void KonqMainWindow::slotSetStatusBarText( const QString & )
 
 void KonqMainWindow::slotViewCompleted( KonqView * view )
 {
-  assert( view );
+  Q_ASSERT( view );
 
   // Need to update the current working directory
   // of the completion object every time the user
@@ -2043,6 +2054,11 @@ void KonqMainWindow::slotPartActivated(KParts::Part *part)
 
   //kDebug() << "setting location bar url to"
   //         << m_currentView->locationBarURL() << "m_currentView=" << m_currentView;
+
+  // Make sure the location bar gets updated when the view(tab) is changed.
+  if (oldView != newView) {
+    m_combo->lineEdit()->setModified(false);
+  }
   m_currentView->setLocationBarURL( m_currentView->locationBarURL() );
 
   updateToolBarActions();
@@ -2333,7 +2349,7 @@ void KonqMainWindow::breakOffTab(int tabIndex)
         if (KMessageBox::warningContinueCancel(
                 this,
                 i18n("This tab contains changes that have not been submitted.\nDetaching the tab will discard these changes."),
-                i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-detach"), KStandardGuiItem::cancel(), "discardchangesdetach") != KMessageBox::Continue) {
+                i18nc("@title:window", "Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-detach"), KStandardGuiItem::cancel(), "discardchangesdetach") != KMessageBox::Continue) {
             m_pViewManager->showTab(originalTabIndex);
             return;
         }
@@ -2408,10 +2424,12 @@ void KonqMainWindow::openMultiURL( const KUrl::List& url )
 
 void KonqMainWindow::slotRemoveView()
 {
+    if (!m_currentView) return;
+
     if (m_currentView->isModified()) {
       if ( KMessageBox::warningContinueCancel( this,
            i18n("This view contains changes that have not been submitted.\nClosing the view will discard these changes."),
-           i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"view-close"), KStandardGuiItem::cancel(), "discardchangesclose") != KMessageBox::Continue )
+           i18nc("@title:window", "Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"view-close"), KStandardGuiItem::cancel(), "discardchangesclose") != KMessageBox::Continue )
         return;
     }
 
@@ -2441,7 +2459,7 @@ void KonqMainWindow::removeTab(int tabIndex)
         if ( KMessageBox::warningContinueCancel(
                  this,
                  i18n("This tab contains changes that have not been submitted.\nClosing the tab will discard these changes."),
-                 i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-close"), KStandardGuiItem::cancel(), "discardchangesclose") != KMessageBox::Continue) {
+                 i18nc("@title:window", "Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-close"), KStandardGuiItem::cancel(), "discardchangesclose") != KMessageBox::Continue) {
             m_pViewManager->showTab(originalTabIndex);
             return;
         }
@@ -2467,7 +2485,7 @@ void KonqMainWindow::removeOtherTabs(int tabToKeep)
     if (KMessageBox::warningContinueCancel(
             this,
             i18n("Do you really want to close all other tabs?"),
-            i18n("Close Other Tabs Confirmation"), KGuiItem(i18n("Close &Other Tabs"),"tab-close-other"),
+            i18nc("@title:window", "Close Other Tabs Confirmation"), KGuiItem(i18n("Close &Other Tabs"),"tab-close-other"),
             KStandardGuiItem::cancel(), "CloseOtherTabConfirm") != KMessageBox::Continue)
         return;
 
@@ -2483,7 +2501,7 @@ void KonqMainWindow::removeOtherTabs(int tabToKeep)
             if (KMessageBox::warningContinueCancel(
                     this,
                     i18n("This tab contains changes that have not been submitted.\nClosing other tabs will discard these changes."),
-                    i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-close"),
+                    i18nc("@title:window", "Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"tab-close"),
                     KStandardGuiItem::cancel(), "discardchangescloseother") != KMessageBox::Continue) {
                 m_pViewManager->showTab(originalTabIndex);
                 return;
@@ -2505,7 +2523,7 @@ void KonqMainWindow::slotReloadAllTabs()
             m_pViewManager->showTab(tabIndex);
             if (KMessageBox::warningContinueCancel(this,
                    i18n("This tab contains changes that have not been submitted.\nReloading all tabs will discard these changes."),
-                    i18n("Discard Changes?"),
+                    i18nc("@title:window", "Discard Changes?"),
                     KGuiItem(i18n("&Discard Changes"), "view-refresh"),
                     KStandardGuiItem::cancel(), "discardchangesreload") != KMessageBox::Continue ) {
                 m_pViewManager->showTab(originalTabIndex);
@@ -2547,7 +2565,7 @@ bool KonqMainWindow::askForTarget(const KLocalizedString& text, KUrl& url)
    const KUrl initialUrl = (viewCount()==2) ? otherView(m_currentView)->url() : m_currentView->url();
    QString label = text.subs( m_currentView->url().pathOrUrl() ).toString();
    KUrlRequesterDialog dlg(initialUrl.pathOrUrl(), label, this);
-   dlg.setCaption(i18n("Enter Target"));
+   dlg.setCaption(i18nc("@title:window", "Enter Target"));
    dlg.urlRequester()->setMode( KFile::File | KFile::ExistingOnly | KFile::Directory );
    if (dlg.exec())
    {
@@ -2600,7 +2618,7 @@ KUrl::List KonqMainWindow::currentURLs() const
 // Only valid if there are one or two views
 KonqView * KonqMainWindow::otherView( KonqView * view ) const
 {
-  assert( viewCount() <= 2 );
+  Q_ASSERT( viewCount() <= 2 );
   MapViews::ConstIterator it = m_mapViews.constBegin();
   if ( (*it) == view )
     ++it;
@@ -2616,6 +2634,8 @@ void KonqMainWindow::slotSaveViewProfile()
 
 void KonqMainWindow::slotUpAboutToShow()
 {
+    if (!m_currentView) return;
+
     QMenu *popup = m_paUp->menu();
     popup->clear();
 
@@ -2655,6 +2675,8 @@ void KonqMainWindow::slotUp()
 
 void KonqMainWindow::slotUpDelayed()
 {
+    if (!m_currentView) return;
+
     KonqOpenURLRequest req;
     req.browserArgs.setNewTab(true);
     req.forceAutoEmbed = true;
@@ -2994,6 +3016,8 @@ void KonqMainWindow::slotMakeCompletion( const QString& text )
 
 void KonqMainWindow::slotSubstringcompletion( const QString& text )
 {
+    if (!m_currentView) return;
+
     QString currentURL = m_currentView->url().prettyUrl();
     bool filesFirst = currentURL.startsWith( '/' ) ||
                       currentURL.startsWith( "file:/" );
@@ -3090,10 +3114,6 @@ bool KonqMainWindow::eventFilter(QObject*obj, QEvent *ev)
     KParts::BrowserExtension * ext = 0;
     if ( m_currentView )
         ext = m_currentView->browserExtension();
-
-    const QMetaObject* slotMetaObject = 0;
-    if (ext)
-      slotMetaObject = ext->metaObject();
 
     if (ev->type()==QEvent::FocusIn)
     {
@@ -3887,6 +3907,8 @@ void KonqMainWindow::updateHistoryActions()
 
 void KonqMainWindow::updateToolBarActions( bool pendingAction /*=false*/)
 {
+  if (!m_currentView) return;
+
   // Enables/disables actions that depend on the current view & url (mostly toolbar)
   // Up, back, forward, the edit extension, stop button, wheel
   setUpEnabled( m_currentView->url() );
@@ -4268,7 +4290,8 @@ void KonqMainWindow::showEvent(QShowEvent *event)
 
 QString KonqExtendedBookmarkOwner::currentUrl() const
 {
-   return m_pKonqMainWindow->currentView()->url().url();
+   const KonqView* view = m_pKonqMainWindow->currentView();
+   return view ? view->url().url() : QString();
 }
 
 QString KonqMainWindow::currentProfile() const
@@ -4357,7 +4380,7 @@ void KonqExtendedBookmarkOwner::openFolderinTabs(const KBookmarkGroup &grp)
     if(KMessageBox::questionYesNo(m_pKonqMainWindow,
 				  i18n("You have requested to open more than 20 bookmarks in tabs. "
                                        "This might take a while. Continue?"),
-				  i18n("Open bookmarks folder in new tabs")) != KMessageBox::Yes)
+				  i18nc("@title:window", "Open bookmarks folder in new tabs")) != KMessageBox::Yes)
       return;
   }
 
@@ -4667,6 +4690,8 @@ void KonqMainWindow::slotItemsRemoved(const KFileItemList &items)
 Q_DECLARE_METATYPE(KService::Ptr)
 void KonqMainWindow::slotOpenEmbedded(KService::Ptr service)
 {
+    if (!m_currentView) return;
+
     m_currentView->stop();
     m_currentView->setLocationBarURL(m_popupUrl);
     m_currentView->setTypedURL(QString());
@@ -4931,7 +4956,7 @@ void KonqMainWindow::closeEvent( QCloseEvent *e )
                   this,
                   i18n("You have multiple tabs open in this window, "
                         "are you sure you want to quit?"),
-                  i18n("Confirmation"),
+                  i18nc("@title:window", "Confirmation"),
                   KStandardGuiItem::closeWindow(),
                   KGuiItem(i18n( "C&lose Current Tab" ), "tab-close"),
                   KStandardGuiItem::cancel(),
@@ -4966,7 +4991,7 @@ void KonqMainWindow::closeEvent( QCloseEvent *e )
                                      : i18n("This page contains changes that have not been submitted.\nClosing the window will discard these changes.");
               if ( KMessageBox::warningContinueCancel(
                        this, question,
-                       i18n("Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"application-exit"),
+                       i18nc("@title:window", "Discard Changes?"), KGuiItem(i18n("&Discard Changes"),"application-exit"),
                        KStandardGuiItem::cancel(), "discardchangesclose") != KMessageBox::Continue ) {
                   e->ignore();
                   m_pViewManager->showTab(originalTabIndex);
@@ -5131,14 +5156,14 @@ void KonqMainWindow::slotAddWebSideBar(const KUrl& url, const QString& name)
 
     QAction *a = m_toggleViewGUIClient->action("konq_sidebartng");
     if (!a) {
-        KMessageBox::sorry(0, i18n("Your sidebar is not functional or unavailable. A new entry cannot be added."), i18n("Web Sidebar"));
+        KMessageBox::sorry(0, i18n("Your sidebar is not functional or unavailable. A new entry cannot be added."), i18nc("@title:window", "Web Sidebar"));
         return;
     }
 
     int rc = KMessageBox::questionYesNo(0,
               i18n("Add new web extension \"%1\" to your sidebar?",
                                  name.isEmpty() ? name : url.prettyUrl()),
-              i18n("Web Sidebar"),KGuiItem(i18n("Add")),KGuiItem(i18n("Do Not Add")));
+              i18nc("@title:window", "Web Sidebar"),KGuiItem(i18n("Add")),KGuiItem(i18n("Do Not Add")));
 
     if (rc == KMessageBox::Yes) {
         // Show the sidebar
@@ -5203,15 +5228,26 @@ static QString hp_tryPrepend( const QString& s )
 {
     if (s.isEmpty() || s[0] == QLatin1Char('/') || s[0] == QLatin1Char('~'))
         return QString();
+
+    bool containsSpace = false;
+
     for( int pos = 0;
          pos < s.length() - 2; // 4 = ://x
-         ++pos )
-        {
+         ++pos ) {
         if( s[ pos ] == ':' && s[ pos + 1 ] == '/' && s[ pos + 2 ] == '/' )
             return QString();
         if( !s[ pos ].isLetter() )
             break;
+        if( s[pos].isSpace() ) {
+            containsSpace = true;
+            break;
         }
+    }
+
+    if (containsSpace || s.at(s.length()-1).isSpace()) {
+        return QString();
+    }
+
     return ( s.startsWith( "www." ) ? "http://" : "http://www." ) + s;
 }
 
