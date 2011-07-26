@@ -78,10 +78,10 @@ public:
 
         connect(view, SIGNAL(loadFinished(bool)),
                 this, SLOT(loadFinished()));
-        connect(view, SIGNAL(titleChanged(const QString&)),
-                this, SLOT(setWindowTitle(const QString&)));
-        connect(view->page(), SIGNAL(linkHovered(const QString&, const QString&, const QString &)),
-                this, SLOT(showLinkHover(const QString&, const QString&)));
+        connect(view, SIGNAL(titleChanged(QString)),
+                this, SLOT(setWindowTitle(QString)));
+        connect(view->page(), SIGNAL(linkHovered(QString, QString, QString)),
+                this, SLOT(showLinkHover(QString, QString)));
         connect(view->page(), SIGNAL(windowCloseRequested()), this, SLOT(deleteLater()));
 
         setupUI();

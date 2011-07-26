@@ -72,8 +72,8 @@ public:
                 searchBar, SLOT(findPrevious()));
         connect(ui.searchLineEdit, SIGNAL(returnPressed()),
                 searchBar, SLOT(findNext()));
-        connect(ui.searchLineEdit, SIGNAL(textChanged(const QString&)),
-                searchBar, SLOT(textChanged(const QString&)));
+        connect(ui.searchLineEdit, SIGNAL(textChanged(QString)),
+                searchBar, SLOT(textChanged(QString)));
 
         // Update the state of the searchAsYouType option
         searchBar->searchAsYouTypeChanged (ui.actionSearchAutomatically->isChecked());
@@ -180,11 +180,11 @@ void SearchBar::setFoundMatch(bool match)
 void SearchBar::searchAsYouTypeChanged(bool checked)
 {
     if (checked) {
-        connect(d->ui.searchLineEdit, SIGNAL(textEdited(const QString&)),
-                this, SIGNAL(searchTextChanged(const QString&)));
+        connect(d->ui.searchLineEdit, SIGNAL(textEdited(QString)),
+                this, SIGNAL(searchTextChanged(QString)));
     } else {
-        disconnect(d->ui.searchLineEdit, SIGNAL(textEdited(const QString&)),
-                   this, SIGNAL(searchTextChanged(const QString&)));
+        disconnect(d->ui.searchLineEdit, SIGNAL(textEdited(QString)),
+                   this, SIGNAL(searchTextChanged(QString)));
     }
 }
 

@@ -144,20 +144,20 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
 
     // Create the search bar...
     m_searchBar = new KDEPrivate::SearchBar(mainWidget);
-    connect(m_searchBar, SIGNAL(searchTextChanged(const QString &, bool)),
-            this, SLOT(slotSearchForText(const QString &, bool)));
+    connect(m_searchBar, SIGNAL(searchTextChanged(QString, bool)),
+            this, SLOT(slotSearchForText(QString, bool)));
 
     // Connect the signals/slots from the webview...
-    connect(m_webView, SIGNAL(titleChanged(const QString &)),
-            this, SIGNAL(setWindowCaption(const QString &)));
+    connect(m_webView, SIGNAL(titleChanged(QString)),
+            this, SIGNAL(setWindowCaption(QString)));
     connect(m_webView, SIGNAL(loadFinished(bool)),
             this, SLOT(slotLoadFinished(bool)));
-    connect(m_webView, SIGNAL(urlChanged(const QUrl &)),
-            this, SLOT(slotUrlChanged(const QUrl &)));
-    connect(m_webView, SIGNAL(linkMiddleOrCtrlClicked(const KUrl &)),
-            this, SLOT(slotLinkMiddleOrCtrlClicked(const KUrl &)));
-    connect(m_webView, SIGNAL(selectionClipboardUrlPasted(const KUrl &, const QString &)),
-            this, SLOT(slotSelectionClipboardUrlPasted(const KUrl &, const QString &)));
+    connect(m_webView, SIGNAL(urlChanged(QUrl)),
+            this, SLOT(slotUrlChanged(QUrl)));
+    connect(m_webView, SIGNAL(linkMiddleOrCtrlClicked(KUrl)),
+            this, SLOT(slotLinkMiddleOrCtrlClicked(KUrl)));
+    connect(m_webView, SIGNAL(selectionClipboardUrlPasted(KUrl, QString)),
+            this, SLOT(slotSelectionClipboardUrlPasted(KUrl, QString)));
 
     // Connect the signals from the page...
     connectWebPageSignals(page());
@@ -265,16 +265,16 @@ void KWebKitPart::connectWebPageSignals(WebPage* page)
 
     connect(page, SIGNAL(loadStarted()),
             this, SLOT(slotLoadStarted()));
-    connect(page, SIGNAL(loadAborted(const KUrl &)),
-            this, SLOT(slotLoadAborted(const KUrl &)));
-    connect(page, SIGNAL(linkHovered(const QString &, const QString &, const QString &)),
-            this, SLOT(slotLinkHovered(const QString &, const QString &, const QString &)));
+    connect(page, SIGNAL(loadAborted(KUrl)),
+            this, SLOT(slotLoadAborted(KUrl)));
+    connect(page, SIGNAL(linkHovered(QString, QString, QString)),
+            this, SLOT(slotLinkHovered(QString, QString, QString)));
     connect(page, SIGNAL(saveFrameStateRequested(QWebFrame *, QWebHistoryItem *)),
             this, SLOT(slotSaveFrameState(QWebFrame *, QWebHistoryItem *)));
     connect(page, SIGNAL(restoreFrameStateRequested(QWebFrame *)),
             this, SLOT(slotRestoreFrameState(QWebFrame *)));
-    connect(page, SIGNAL(statusBarMessage(const QString&)),
-            this, SLOT(slotSetStatusBarText(const QString &)));
+    connect(page, SIGNAL(statusBarMessage(QString)),
+            this, SLOT(slotSetStatusBarText(QString)));
     connect(page, SIGNAL(windowCloseRequested()),
             this, SLOT(slotWindowCloseRequested()));
     connect(page, SIGNAL(printRequested(QWebFrame*)),
@@ -283,15 +283,15 @@ void KWebKitPart::connectWebPageSignals(WebPage* page)
     connect(page, SIGNAL(loadStarted()), m_searchBar, SLOT(clear()));
     connect(page, SIGNAL(loadStarted()), m_searchBar, SLOT(hide()));
 
-    connect(m_webView, SIGNAL(linkShiftClicked(const KUrl &)),
-            page, SLOT(downloadUrl(const KUrl &)));
+    connect(m_webView, SIGNAL(linkShiftClicked(KUrl)),
+            page, SLOT(downloadUrl(KUrl)));
 
     connect(page, SIGNAL(loadProgress(int)),
             m_browserExtension, SIGNAL(loadingProgress(int)));
     connect(page, SIGNAL(selectionChanged()),
             m_browserExtension, SLOT(updateEditActions()));
-    connect(m_browserExtension, SIGNAL(saveUrl(const KUrl&)),
-            page, SLOT(downloadUrl(const KUrl &)));
+    connect(m_browserExtension, SIGNAL(saveUrl(KUrl)),
+            page, SLOT(downloadUrl(KUrl)));
 
     KWebWallet *wallet = page->wallet();
     if (wallet) {

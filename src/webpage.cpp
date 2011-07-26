@@ -119,10 +119,10 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
         settings()->setUserStyleSheetUrl(QString(QL1S("data:text/css;charset=utf-8;base64,") +
                                           WebKitSettings::self()->settingsToCSS().toUtf8().toBase64()));
 
-    connect(this, SIGNAL(geometryChangeRequested(const QRect &)),
-            this, SLOT(slotGeometryChangeRequested(const QRect &)));
-    connect(this, SIGNAL(downloadRequested(const QNetworkRequest &)),
-            this, SLOT(downloadRequest(const QNetworkRequest &)));
+    connect(this, SIGNAL(geometryChangeRequested(QRect)),
+            this, SLOT(slotGeometryChangeRequested(QRect)));
+    connect(this, SIGNAL(downloadRequested(QNetworkRequest)),
+            this, SLOT(downloadRequest(QNetworkRequest)));
     connect(this, SIGNAL(unsupportedContent(QNetworkReply *)),
             this, SLOT(slotUnsupportedContent(QNetworkReply*)));
     connect(networkAccessManager(), SIGNAL(finished(QNetworkReply *)),
