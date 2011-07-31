@@ -229,8 +229,8 @@ KonqNewSessionDlg::KonqNewSessionDlg( QWidget *parent, QString sessionName )
         d->m_pSessionName->setText(sessionName);
     
     connect(this, SIGNAL(okClicked()), SLOT(slotAddSession()));
-    connect(d->m_pSessionName, SIGNAL(textChanged(const QString&)), this,
-        SLOT(slotTextChanged(const QString&)));
+    connect(d->m_pSessionName, SIGNAL(textChanged(QString)), this,
+        SLOT(slotTextChanged(QString)));
     
     resize( sizeHint() );
 }

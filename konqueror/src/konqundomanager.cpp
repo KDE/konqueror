@@ -41,11 +41,11 @@ KonqUndoManager::KonqUndoManager(QWidget* parent)
              this, SLOT(slotFileUndoTextChanged(QString)) );
 
     connect(KonqClosedWindowsManager::self(),
-        SIGNAL(addWindowInOtherInstances(KonqUndoManager *, KonqClosedWindowItem *)), this,
-        SLOT( slotAddClosedWindowItem(KonqUndoManager *, KonqClosedWindowItem *) ));
+        SIGNAL(addWindowInOtherInstances(KonqUndoManager*,KonqClosedWindowItem*)), this,
+        SLOT(slotAddClosedWindowItem(KonqUndoManager*,KonqClosedWindowItem*)));
     connect(KonqClosedWindowsManager::self(),
-        SIGNAL(removeWindowInOtherInstances(KonqUndoManager *, const KonqClosedWindowItem *)), this,
-        SLOT( slotRemoveClosedWindowItem(KonqUndoManager *, const KonqClosedWindowItem *) ));
+        SIGNAL(removeWindowInOtherInstances(KonqUndoManager*,const KonqClosedWindowItem*)), this,
+        SLOT(slotRemoveClosedWindowItem(KonqUndoManager*,const KonqClosedWindowItem*)));
     m_populated = false;
 }
 
@@ -57,11 +57,11 @@ KonqUndoManager::~KonqUndoManager()
              this, SLOT(slotFileUndoTextChanged(QString)) );
 
     disconnect(KonqClosedWindowsManager::self(),
-        SIGNAL(addWindowInOtherInstances(KonqUndoManager *, KonqClosedWindowItem *)), this,
-        SLOT( slotAddClosedWindowItem(KonqUndoManager *, KonqClosedWindowItem *) ));
+        SIGNAL(addWindowInOtherInstances(KonqUndoManager*,KonqClosedWindowItem*)), this,
+        SLOT(slotAddClosedWindowItem(KonqUndoManager*,KonqClosedWindowItem*)));
     disconnect(KonqClosedWindowsManager::self(),
-        SIGNAL(removeWindowInOtherInstances(KonqUndoManager *, const KonqClosedWindowItem *)), this,
-        SLOT( slotRemoveClosedWindowItem(KonqUndoManager *, const KonqClosedWindowItem *) ));
+        SIGNAL(removeWindowInOtherInstances(KonqUndoManager*,const KonqClosedWindowItem*)), this,
+        SLOT(slotRemoveClosedWindowItem(KonqUndoManager*,const KonqClosedWindowItem*)));
 
     // Clear the closed item lists but only remove closed windows items
     // in this window

@@ -225,8 +225,8 @@ void KonqOperations::_del( Operation method, const KUrl::List & _selectedUrls, C
             return;
         }
         job->ui()->setWindow(parentWidget());
-        connect( job, SIGNAL( result( KJob * ) ),
-                 SLOT( slotResult( KJob * ) ) );
+        connect( job, SIGNAL(result(KJob*)),
+                 SLOT(slotResult(KJob*)) );
     } else {
         delete this; // this one is ok, _del is always called directly
     }
@@ -238,8 +238,8 @@ void KonqOperations::_restoreTrashedItems( const KUrl::List& urls )
     KonqMultiRestoreJob* job = new KonqMultiRestoreJob( urls );
     job->ui()->setWindow(parentWidget());
     KIO::getJobTracker()->registerJob(job);
-    connect( job, SIGNAL( result( KJob * ) ),
-             SLOT( slotResult( KJob * ) ) );
+    connect( job, SIGNAL(result(KJob*)),
+             SLOT(slotResult(KJob*)) );
 }
 
 bool KonqOperations::askDeleteConfirmation( const KUrl::List & selectedUrls, int method, ConfirmationType confirmation, QWidget* widget )
@@ -322,7 +322,7 @@ KonqOperations *KonqOperations::doDrop( const KFileItem & destItem, const KUrl &
         else
         {
             // we need to stat to get it.
-            op->_statUrl( dest, op, SLOT( asyncDrop( const KFileItem & ) ) );
+            op->_statUrl( dest, op, SLOT(asyncDrop(KFileItem)) );
         }
         // In both cases asyncDrop will delete op when done
 
@@ -397,7 +397,7 @@ void KonqOperations::asyncDrop( const KFileItem & destItem )
                     const bool ro = desktopGroup.readEntry( "ReadOnly", false );
                     const QByteArray fstype = desktopGroup.readEntry( "FSType" ).toLatin1();
                     KAutoMount* am = new KAutoMount( ro, fstype, dev, point, m_destUrl.path(), false );
-                    connect( am, SIGNAL( finished() ), this, SLOT( doDropFileCopy() ) );
+                    connect( am, SIGNAL(finished()), this, SLOT(doDropFileCopy()) );
                 }
 #endif
                 return;
@@ -745,18 +745,18 @@ void KonqOperations::setOperation( KIO::Job * job, Operation method, const KUrl 
     if ( job )
     {
         job->ui()->setWindow(parentWidget());
-        connect( job, SIGNAL( result( KJob * ) ),
-                 SLOT( slotResult( KJob * ) ) );
+        connect( job, SIGNAL(result(KJob*)),
+                 SLOT(slotResult(KJob*)) );
 #if 0
         KIO::CopyJob *copyJob = dynamic_cast<KIO::CopyJob*>(job);
         KonqIconViewWidget *iconView = dynamic_cast<KonqIconViewWidget*>(parent());
         if (copyJob && iconView)
         {
-            connect(copyJob, SIGNAL(aboutToCreate(KIO::Job *,const QList<KIO::CopyInfo> &)),
-                 this, SLOT(slotAboutToCreate(KIO::Job *,const QList<KIO::CopyInfo> &)));
+            connect(copyJob, SIGNAL(aboutToCreate(KIO::Job*,QList<KIO::CopyInfo>)),
+                 this, SLOT(slotAboutToCreate(KIO::Job*,QList<KIO::CopyInfo>)));
             // TODO move this connect into the iconview!
-            connect(this, SIGNAL(aboutToCreate(const QPoint &, const QList<KIO::CopyInfo> &)),
-                 iconView, SLOT(slotAboutToCreate(const QPoint &, const QList<KIO::CopyInfo> &)));
+            connect(this, SIGNAL(aboutToCreate(QPoint,QList<KIO::CopyInfo>)),
+                 iconView, SLOT(slotAboutToCreate(QPoint,QList<KIO::CopyInfo>)));
         }
 #endif
     }
@@ -778,11 +778,11 @@ void KonqOperations::statUrl( const KUrl & url, const QObject *receiver, const c
 
 void KonqOperations::_statUrl( const KUrl & url, const QObject *receiver, const char *member )
 {
-    connect( this, SIGNAL( statFinished( const KFileItem & ) ), receiver, member );
+    connect( this, SIGNAL(statFinished(KFileItem)), receiver, member );
     KIO::StatJob * job = KIO::stat( url /*, KIO::HideProgressInfo?*/ );
     job->ui()->setWindow(parentWidget());
-    connect( job, SIGNAL( result( KJob * ) ),
-             SLOT( slotStatResult( KJob * ) ) );
+    connect( job, SIGNAL(result(KJob*)),
+             SLOT(slotStatResult(KJob*)) );
 }
 
 void KonqOperations::slotStatResult( KJob * job )

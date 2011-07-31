@@ -27,7 +27,7 @@ KHTTPOptions::KHTTPOptions(KSharedConfig::Ptr config, const QString &group, cons
 
   le_languages = new QLineEdit(this);
   lay->addWidget( le_languages );
-  connect(le_languages, SIGNAL(textChanged(const QString&)),
+  connect(le_languages, SIGNAL(textChanged(QString)),
 	  this, SLOT(slotChanged()));
 
   lay->addSpacing(10);
@@ -35,7 +35,7 @@ KHTTPOptions::KHTTPOptions(KSharedConfig::Ptr config, const QString &group, cons
 
   le_charsets = new QLineEdit(this);
   lay->addWidget( le_charsets );
-  connect(le_charsets, SIGNAL(textChanged(const QString&)),
+  connect(le_charsets, SIGNAL(textChanged(QString)),
 	  this, SLOT(slotChanged()));
 
   lay->addStretch(10);

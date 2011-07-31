@@ -90,9 +90,9 @@ void OpenSearchManager::addOpenSearchEngine(const KUrl &url, const QString &titl
 
     m_state = REQ_DESCRIPTION;
     KIO::TransferJob *job = KIO::get(url, KIO::NoReload, KIO::HideProgressInfo);
-    connect(job, SIGNAL(data(KIO::Job *, const QByteArray &)),
-            this, SLOT(dataReceived(KIO::Job *, const QByteArray &)));
-    connect(job, SIGNAL(result(KJob *)), SLOT(jobFinished(KJob *)));
+    connect(job, SIGNAL(data(KIO::Job*,QByteArray)),
+            this, SLOT(dataReceived(KIO::Job*,QByteArray)));
+    connect(job, SIGNAL(result(KJob*)), SLOT(jobFinished(KJob*)));
 }
 
 void OpenSearchManager::requestSuggestion(const QString &searchText)
@@ -110,9 +110,9 @@ void OpenSearchManager::requestSuggestion(const QString &searchText)
     kDebug(1202) << "Requesting for suggestions: " << url.url();
     m_jobData.clear();
     KIO::TransferJob *job = KIO::get(url, KIO::NoReload, KIO::HideProgressInfo);
-    connect(job, SIGNAL(data(KIO::Job *, const QByteArray &)),
-            this, SLOT(dataReceived(KIO::Job *, const QByteArray &)));
-    connect(job, SIGNAL(result(KJob *)), SLOT(jobFinished(KJob *)));
+    connect(job, SIGNAL(data(KIO::Job*,QByteArray)),
+            this, SLOT(dataReceived(KIO::Job*,QByteArray)));
+    connect(job, SIGNAL(result(KJob*)), SLOT(jobFinished(KJob*)));
 }
 
 void OpenSearchManager::dataReceived(KIO::Job *job, const QByteArray &data)

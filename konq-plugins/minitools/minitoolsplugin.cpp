@@ -53,8 +53,8 @@ MinitoolsPlugin::MinitoolsPlugin(QObject* parent, const QVariantList &)
   m_pMinitoolsMenu->setDelayed(false);
   m_pMinitoolsMenu->setEnabled(true);
 
-  connect(m_pMinitoolsMenu->menu(), SIGNAL( aboutToShow() ),
-                                   this, SLOT( slotAboutToShow() ));
+  connect(m_pMinitoolsMenu->menu(), SIGNAL(aboutToShow()),
+                                   this, SLOT(slotAboutToShow()));
 }
 
 MinitoolsPlugin::~MinitoolsPlugin() {
@@ -65,10 +65,10 @@ void MinitoolsPlugin::slotAboutToShow() {
 
   m_minitoolsList.clear();
   KXBELBookmarkImporterImpl importer;
-  connect(&importer, SIGNAL( newBookmark( const QString &, const QString &, const QString &) ),
-                     SLOT( newBookmarkCallback( const QString &, const QString &, const QString & ) ));
-  connect(&importer, SIGNAL( endFolder() ), 
-                     SLOT( endFolderCallback() ));
+  connect(&importer, SIGNAL(newBookmark(QString,QString,QString)),
+                     SLOT(newBookmarkCallback(QString,QString,QString)));
+  connect(&importer, SIGNAL(endFolder()), 
+                     SLOT(endFolderCallback()));
   QString filename = minitoolsFilename(true);
   if (!filename.isEmpty() && QFile::exists(filename)) {
      importer.setFilename(filename);
@@ -152,10 +152,10 @@ void MinitoolsPlugin::slotItemSelected() {
      return;
   QString tmp = m_minitoolsList[id-1].second;
   QString script = QUrl::fromPercentEncoding(tmp.right(tmp.length() - 11).toLatin1()); // sizeof("javascript:")
-  connect(this, SIGNAL( executeScript(const QString &) ),
-          m_part, SLOT( executeScript(const QString &) ));
+  connect(this, SIGNAL(executeScript(QString)),
+          m_part, SLOT(executeScript(QString)));
   emit executeScript(script);
-  disconnect(this, SIGNAL( executeScript(const QString &) ), 0, 0);
+  disconnect(this, SIGNAL(executeScript(QString)), 0, 0);
 }
 
 #include "minitoolsplugin.moc"

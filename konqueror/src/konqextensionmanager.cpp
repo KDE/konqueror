@@ -65,8 +65,8 @@ KonqExtensionManager::KonqExtensionManager(QWidget *parent, KonqMainWindow *main
     d->pluginSelector = new KPluginSelector(this);
     setMainWidget(d->pluginSelector);
     connect(d->pluginSelector, SIGNAL(changed(bool)), this, SLOT(setChanged(bool)));
-    connect(d->pluginSelector, SIGNAL(configCommitted(const QByteArray &)),
-            this, SLOT(reparseConfiguration(const QByteArray &)));
+    connect(d->pluginSelector, SIGNAL(configCommitted(QByteArray)),
+            this, SLOT(reparseConfiguration(QByteArray)));
 
     d->mainWindow = mainWindow;
     d->activePart = activePart;
@@ -78,10 +78,10 @@ KonqExtensionManager::KonqExtensionManager(QWidget *parent, KonqMainWindow *main
         d->pluginSelector->addPlugins(componentData.componentName(), i18n("Extensions"), "Statusbar", componentData.config());
     }
 
-    connect( this, SIGNAL( okClicked() ), SLOT( slotOk() ) );
-    connect( this, SIGNAL( applyClicked() ), SLOT( slotApply() ) );
-    connect( this, SIGNAL( defaultClicked() ), SLOT( slotDefault() ) );
-    connect( this, SIGNAL( user1Clicked() ), SLOT( slotUser1() ) );
+    connect( this, SIGNAL(okClicked()), SLOT(slotOk()) );
+    connect( this, SIGNAL(applyClicked()), SLOT(slotApply()) );
+    connect( this, SIGNAL(defaultClicked()), SLOT(slotDefault()) );
+    connect( this, SIGNAL(user1Clicked()), SLOT(slotUser1()) );
 }
 
 KonqExtensionManager::~KonqExtensionManager()

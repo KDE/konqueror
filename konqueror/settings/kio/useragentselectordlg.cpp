@@ -107,11 +107,11 @@ UserAgentSelectorDlg::UserAgentSelectorDlg( const QString& caption, UserAgentInf
   m_widget->siteLineEdit->setValidator(validator);
   m_widget->siteLineEdit->setFocus();
 
-  connect(m_widget->siteLineEdit, SIGNAL(textChanged(const QString&)),
-          SLOT(onHostNameChanged(const QString&)));
+  connect(m_widget->siteLineEdit, SIGNAL(textChanged(QString)),
+          SLOT(onHostNameChanged(QString)));
 
-  connect(m_widget->aliasComboBox, SIGNAL(activated(const QString&)),
-          SLOT(onAliasChanged(const QString&)));
+  connect(m_widget->aliasComboBox, SIGNAL(activated(QString)),
+          SLOT(onAliasChanged(QString)));
 
   enableButtonOk(false);
 }

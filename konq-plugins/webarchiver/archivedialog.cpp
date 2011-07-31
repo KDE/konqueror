@@ -259,7 +259,7 @@ void ArchiveDialog::downloadObjects() {
 
         Q_ASSERT(m_job == NULL);
         m_job = startDownload( url, info.part );
-        connect(m_job, SIGNAL( result(KJob *) ), SLOT( slotObjectFinished(KJob *) ) );
+        connect(m_job, SIGNAL(result(KJob*)), SLOT(slotObjectFinished(KJob*)) );
     }
 }
 
@@ -313,7 +313,7 @@ void ArchiveDialog::downloadStyleSheets() {
 
         Q_ASSERT(m_job == NULL);
         m_job = startDownload( url, info.part );
-        connect(m_job, SIGNAL( result( KJob* ) ), SLOT( slotStyleSheetFinished( KJob * ) ) );
+        connect(m_job, SIGNAL(result(KJob*)), SLOT(slotStyleSheetFinished(KJob*)) );
     }
 }
 

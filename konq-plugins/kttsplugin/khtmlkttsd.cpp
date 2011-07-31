@@ -40,7 +40,7 @@ KHTMLPluginKTTSD::KHTMLPluginKTTSD( QObject* parent, const QVariantList& )
         QAction *action = actionCollection()->addAction( "tools_kttsd" );
         action->setIcon( KIcon("text-speak") );
         action->setText( i18n("&Speak Text") );
-        connect(action, SIGNAL(triggered(bool) ), SLOT(slotReadOut()));
+        connect(action, SIGNAL(triggered(bool)), SLOT(slotReadOut()));
     }
 }
 

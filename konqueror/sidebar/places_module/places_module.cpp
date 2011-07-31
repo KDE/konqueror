@@ -68,8 +68,8 @@ KonqSideBarPlacesModule::KonqSideBarPlacesModule(const KComponentData &component
     m_placesView->setShowAll(true);
     m_placesView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-    connect(m_placesView, SIGNAL(urlChanged(KUrl, Qt::MouseButtons, Qt::KeyboardModifiers)),
-            this, SLOT(slotPlaceUrlChanged(KUrl, Qt::MouseButtons, Qt::KeyboardModifiers)));
+    connect(m_placesView, SIGNAL(urlChanged(KUrl,Qt::MouseButtons,Qt::KeyboardModifiers)),
+            this, SLOT(slotPlaceUrlChanged(KUrl,Qt::MouseButtons,Qt::KeyboardModifiers)));
 }
 
 KonqSideBarPlacesModule::~KonqSideBarPlacesModule()

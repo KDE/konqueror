@@ -144,7 +144,7 @@ RelLinksPlugin::RelLinksPlugin(QObject *parent, const QVariantList &)
     actionCollection()->addAction( "rellinks_chapters", kactionmenu_map["chapter" ] );
 
     m_document->addAction(kactionmenu_map["chapter"]);
-    connect( kactionmenu_map["chapter"]->menu(), SIGNAL( activated( int ) ), this, SLOT(goChapter(int)));
+    connect( kactionmenu_map["chapter"]->menu(), SIGNAL(activated(int)), this, SLOT(goChapter(int)));
     kactionmenu_map["chapter"]->setWhatsThis( i18n("<p>This menu references the chapters of the document.</p>") );
     kactionmenu_map["chapter"]->setDelayed(false);
 
@@ -153,7 +153,7 @@ RelLinksPlugin::RelLinksPlugin(QObject *parent, const QVariantList &)
 
     m_document->addAction(kactionmenu_map["section"]);
 
-    connect( kactionmenu_map["section"]->menu(), SIGNAL( activated( int ) ), this, SLOT( goSection( int ) ) );
+    connect( kactionmenu_map["section"]->menu(), SIGNAL(activated(int)), this, SLOT(goSection(int)) );
     kactionmenu_map["section"]->setWhatsThis( i18n("<p>This menu references the sections of the document.</p>") );
     kactionmenu_map["section"]->setDelayed(false);
 
@@ -161,7 +161,7 @@ RelLinksPlugin::RelLinksPlugin(QObject *parent, const QVariantList &)
     m_document->addAction(kactionmenu_map["subsection"]);
     actionCollection()->addAction( "rellinks_subsections", kactionmenu_map["subsection"] );
 
-    connect( kactionmenu_map["subsection"]->menu(), SIGNAL( activated( int ) ), this, SLOT( goSubsection( int ) ) );
+    connect( kactionmenu_map["subsection"]->menu(), SIGNAL(activated(int)), this, SLOT(goSubsection(int)) );
     kactionmenu_map["subsection"]->setWhatsThis( i18n("<p>This menu references the subsections of the document.</p>") );
     kactionmenu_map["subsection"]->setDelayed(false);
 
@@ -169,7 +169,7 @@ RelLinksPlugin::RelLinksPlugin(QObject *parent, const QVariantList &)
     actionCollection()->addAction( "rellinks_appendix", kactionmenu_map["appendix"] );
 
     m_document->addAction(kactionmenu_map["appendix"]);
-    connect( kactionmenu_map["appendix"]->menu(), SIGNAL( activated( int ) ), this, SLOT( goAppendix( int ) ) );
+    connect( kactionmenu_map["appendix"]->menu(), SIGNAL(activated(int)), this, SLOT(goAppendix(int)) );
     kactionmenu_map["appendix"]->setWhatsThis( i18n("<p>This link references the appendix.</p>") );
     kactionmenu_map["appendix"]->setDelayed(false);
 
@@ -226,14 +226,14 @@ RelLinksPlugin::RelLinksPlugin(QObject *parent, const QVariantList &)
     actionCollection()->addAction( "rellinks_bookmarks", kactionmenu_map["bookmark"] );
     m_more->addAction(kactionmenu_map["bookmark"]);
     kactionmenu_map["bookmark"]->setWhatsThis( i18n("<p>This menu references the bookmarks.</p>") );
-    connect( kactionmenu_map["bookmark"]->menu(), SIGNAL( activated( int ) ), this, SLOT( goBookmark( int ) ) );
+    connect( kactionmenu_map["bookmark"]->menu(), SIGNAL(activated(int)), this, SLOT(goBookmark(int)) );
     kactionmenu_map["bookmark"]->setDelayed(false);
 
     kactionmenu_map["alternate"] = new KActionMenu( i18n("Other Versions"), actionCollection() );
     actionCollection()->addAction( "rellinks_other_versions", kactionmenu_map["alternate"] );
     m_more->addAction(kactionmenu_map["alternate"]);
     kactionmenu_map["alternate"]->setWhatsThis( i18n("<p>This link references the alternate versions of this document.</p>") );
-    connect( kactionmenu_map["alternate"]->menu(), SIGNAL( activated( int ) ), this, SLOT( goAlternate( int ) ) );
+    connect( kactionmenu_map["alternate"]->menu(), SIGNAL(activated(int)), this, SLOT(goAlternate(int)) );
     kactionmenu_map["alternate"]->setDelayed(false);
 
     // Unclassified menu
@@ -241,7 +241,7 @@ RelLinksPlugin::RelLinksPlugin(QObject *parent, const QVariantList &)
     actionCollection()->addAction( "rellinks_links", m_links );
     kactionmenu_map["unclassified"] = m_links;
     kactionmenu_map["unclassified"]->setWhatsThis( i18n("<p>Miscellaneous links.</p>") );
-    connect( kactionmenu_map["unclassified"]->menu(), SIGNAL( activated( int ) ), this, SLOT( goAllElements( int ) ) );
+    connect( kactionmenu_map["unclassified"]->menu(), SIGNAL(activated(int)), this, SLOT(goAllElements(int)) );
     kactionmenu_map["unclassified"]->setDelayed(false);
 
     // We unactivate all the possible actions
@@ -252,13 +252,13 @@ RelLinksPlugin::RelLinksPlugin(QObject *parent, const QVariantList &)
     if (!m_part)
         return;
 
-    connect( m_part, SIGNAL( docCreated() ), this, SLOT( newDocument() ) );
-    connect( m_part, SIGNAL( completed() ), this, SLOT( loadingFinished() ) );
+    connect( m_part, SIGNAL(docCreated()), this, SLOT(newDocument()) );
+    connect( m_part, SIGNAL(completed()), this, SLOT(loadingFinished()) );
 
     // create polling timer and connect it
     m_pollTimer = new QTimer(this);
     m_pollTimer->setObjectName( "polling timer");
-    connect( m_pollTimer, SIGNAL( timeout() ), this, SLOT( updateToolbar() ) );
+    connect( m_pollTimer, SIGNAL(timeout()), this, SLOT(updateToolbar()) );
 
     // delay access to our part's members until it has finished its initialisation
     QTimer::singleShot(0, this, SLOT(delayedSetup()));

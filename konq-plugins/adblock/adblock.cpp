@@ -179,8 +179,8 @@ void AdBlock::slotConfigure()
     fillBlockableElements();
 
     AdBlockDlg *dlg = new AdBlockDlg(m_part->widget(), m_elements, m_part);
-    connect(dlg, SIGNAL( notEmptyFilter(const QString&) ), this, SLOT( addAdFilter(const QString&) ));
-    connect(dlg, SIGNAL( configureFilters() ), this, SLOT( showKCModule() ));
+    connect(dlg, SIGNAL(notEmptyFilter(QString)), this, SLOT(addAdFilter(QString)));
+    connect(dlg, SIGNAL(configureFilters()), this, SLOT(showKCModule()));
     dlg->exec();
     delete dlg;
 }
@@ -189,8 +189,8 @@ void AdBlock::showKCModule()
 {
     KCMultiDialog* dialogue = new KCMultiDialog(m_part->widget());
     dialogue->addModule("khtml_filter");
-    connect(dialogue, SIGNAL( cancelClicked() ), dialogue, SLOT( delayedDestruct() ));
-    connect(dialogue, SIGNAL( closeClicked() ), dialogue, SLOT( delayedDestruct() ));
+    connect(dialogue, SIGNAL(cancelClicked()), dialogue, SLOT(delayedDestruct()));
+    connect(dialogue, SIGNAL(closeClicked()), dialogue, SLOT(delayedDestruct()));
     dialogue->show();
 }
 

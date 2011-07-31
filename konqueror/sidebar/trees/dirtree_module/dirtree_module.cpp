@@ -45,8 +45,8 @@ KonqSidebarDirTreeModule::~KonqSidebarDirTreeModule()
     // KDirLister may still emit canceled while being deleted.
     if (m_dirLister)
     {
-       disconnect( m_dirLister, SIGNAL( canceled( const KUrl & ) ),
-                   this, SLOT( slotListingStopped( const KUrl & ) ) );
+       disconnect( m_dirLister, SIGNAL(canceled(KUrl)),
+                   this, SLOT(slotListingStopped(KUrl)) );
        delete m_dirLister;
     }
 }
@@ -300,18 +300,18 @@ void KonqSidebarDirTreeModule::openSubFolder( KonqSidebarTreeItem *item )
 //	mimetypes<<QString("inode/directory");
 //	m_dirLister->setMimeFilter(mimetypes);
 
-        connect( m_dirLister, SIGNAL( newItems( const KFileItemList & ) ),
-                 this, SLOT( slotNewItems( const KFileItemList & ) ) );
-        connect( m_dirLister, SIGNAL( refreshItems( const QList<QPair<KFileItem, KFileItem> > & ) ),
-                 this, SLOT( slotRefreshItems( const QList<QPair<KFileItem, KFileItem> > & ) ) );
-        connect( m_dirLister, SIGNAL( deleteItem( const KFileItem & ) ),
-                 this, SLOT( slotDeleteItem( const KFileItem & ) ) );
-        connect( m_dirLister, SIGNAL( completed( const KUrl & ) ),
-                 this, SLOT( slotListingStopped( const KUrl & ) ) );
-        connect( m_dirLister, SIGNAL( canceled( const KUrl & ) ),
-                 this, SLOT( slotListingStopped( const KUrl & ) ) );
-        connect( m_dirLister, SIGNAL( redirection( const KUrl &, const KUrl & ) ),
-                 this, SLOT( slotRedirection( const KUrl &, const KUrl & ) ) );
+        connect( m_dirLister, SIGNAL(newItems(KFileItemList)),
+                 this, SLOT(slotNewItems(KFileItemList)) );
+        connect( m_dirLister, SIGNAL(refreshItems(QList<QPair<KFileItem,KFileItem> >)),
+                 this, SLOT(slotRefreshItems(QList<QPair<KFileItem,KFileItem> >)) );
+        connect( m_dirLister, SIGNAL(deleteItem(KFileItem)),
+                 this, SLOT(slotDeleteItem(KFileItem)) );
+        connect( m_dirLister, SIGNAL(completed(KUrl)),
+                 this, SLOT(slotListingStopped(KUrl)) );
+        connect( m_dirLister, SIGNAL(canceled(KUrl)),
+                 this, SLOT(slotListingStopped(KUrl)) );
+        connect( m_dirLister, SIGNAL(redirection(KUrl,KUrl)),
+                 this, SLOT(slotRedirection(KUrl,KUrl)) );
     }
 
 

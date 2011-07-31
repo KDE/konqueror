@@ -47,7 +47,7 @@ SystemWidget::SystemWidget( QWidget* parent_P )
               " (un)installing applications.</p>" );
     cb_disable_kbuildsycoca->setWhatsThis( tmp );
     label_kbuildsycoca->setWhatsThis( tmp );
-    connect( cb_disable_kbuildsycoca, SIGNAL( clicked()), SIGNAL( changed()));
+    connect( cb_disable_kbuildsycoca, SIGNAL(clicked()), SIGNAL(changed()));
     defaults();
     }
 

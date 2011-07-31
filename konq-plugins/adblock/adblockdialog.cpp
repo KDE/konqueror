@@ -152,19 +152,19 @@ AdBlockDlg::AdBlockDlg(QWidget *parent, const AdElementList *elements, KHTMLPart
 
     m_filter = new QLineEdit( page);
     layout->addWidget(m_filter);
-    connect(m_filter,SIGNAL(textChanged(const QString &)),SLOT(filterTextChanged(const QString &)));
+    connect(m_filter,SIGNAL(textChanged(QString)),SLOT(filterTextChanged(QString)));
     l->setBuddy(m_filter);
     filterTextChanged(QString::null);
 
-    connect(this, SIGNAL( user1Clicked() ), this, SLOT( slotConfigureFilters() ));
-    connect(this, SIGNAL( user2Clicked() ), this, SLOT( slotAddFilter() ));
+    connect(this, SIGNAL(user1Clicked()), this, SLOT(slotConfigureFilters()));
+    connect(this, SIGNAL(user2Clicked()), this, SLOT(slotAddFilter()));
 
     // Use itemActivated() signal instead of itemDoubleClicked() to honour
     // the KDE single/double click setting, and allow keyboard navigation.
     // Activating a item just copies its URL to the "new filter" box and
     // sets focus to there, it doesn't add the filter immediately.
-    //connect(m_list, SIGNAL( itemDoubleClicked(QTreeWidgetItem *, int )), this, SLOT(updateFilter(QTreeWidgetItem *)) );
-    connect(m_list, SIGNAL( itemActivated(QTreeWidgetItem *, int )), this, SLOT(updateFilter(QTreeWidgetItem *)) );
+    //connect(m_list, SIGNAL(itemDoubleClicked(QTreeWidgetItem*,int)), this, SLOT(updateFilter(QTreeWidgetItem*)) );
+    connect(m_list, SIGNAL(itemActivated(QTreeWidgetItem*,int)), this, SLOT(updateFilter(QTreeWidgetItem*)) );
 
     m_menu = new KMenu(this);
     m_menu->addAction(i18n("Filter this item"), this, SLOT(filterItem()));
@@ -172,15 +172,15 @@ AdBlockDlg::AdBlockDlg(QWidget *parent, const AdElementList *elements, KHTMLPart
     m_menu->addAction(i18n("Filter all items from same host"), this, SLOT(filterHost()));
     m_menu->addAction(i18n("Filter all items from same domain"), this, SLOT(filterDomain()));
     m_menu->addSeparator();
-    m_menu->addAction( i18n( "Add this item to white list" ), this, SLOT( addWhiteList() ) );
+    m_menu->addAction( i18n( "Add this item to white list" ), this, SLOT(addWhiteList()) );
     m_menu->addSeparator();
-    m_menu->addAction( i18n( "Copy Link Address" ),  this,  SLOT( copyLinkAddress() ) );
+    m_menu->addAction( i18n( "Copy Link Address" ),  this,  SLOT(copyLinkAddress()) );
     //comment for the moment
-    //m_menu->addAction( i18n( "Highlight Element" ), this, SLOT( highLightElement() ) );
-    m_menu->addAction( i18n( "View item" ), this, SLOT( showElement() ) );
+    //m_menu->addAction( i18n( "Highlight Element" ), this, SLOT(highLightElement()) );
+    m_menu->addAction( i18n( "View item" ), this, SLOT(showElement()) );
     m_list->setContextMenuPolicy( Qt::CustomContextMenu );
-    connect( m_list, SIGNAL( customContextMenuRequested( const QPoint & ) ),
-           this, SLOT( showContextMenu(const QPoint & ) ) );
+    connect( m_list, SIGNAL(customContextMenuRequested(QPoint)),
+           this, SLOT(showContextMenu(QPoint)) );
 
     resize( 800, 400 );
 }

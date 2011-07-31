@@ -54,8 +54,8 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList&)
   tab->addTab(fontsTab,i18nc("@title:tab","Fonts"));
   tab->addTab(cssConfig,i18nc("@title:tab","Stylesheets"));
   
-  connect( cssConfig, SIGNAL( changed() ), this, SLOT(changed()) );
-  connect( cssConfig, SIGNAL( changed(bool) ), this, SIGNAL(changed(bool)) );
+  connect( cssConfig, SIGNAL(changed()), this, SLOT(changed()) );
+  connect( cssConfig, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)) );
   
   
   l=new QVBoxLayout(mainTab);
@@ -159,16 +159,16 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList&)
   m_minSize = new KIntNumInput( fMinSize);
   fl->addRow(i18n( "M&inimum font size:" ),m_minSize);  
   m_minSize->setRange( 2, 30 );
-  connect( m_minSize, SIGNAL( valueChanged( int ) ), this, SLOT( slotMinimumFontSize( int ) ) );
-  connect( m_minSize, SIGNAL( valueChanged( int ) ), this, SLOT( changed() ) );
+  connect( m_minSize, SIGNAL(valueChanged(int)), this, SLOT(slotMinimumFontSize(int)) );
+  connect( m_minSize, SIGNAL(valueChanged(int)), this, SLOT(changed()) );
   m_minSize->setWhatsThis( "<qt>" + i18n( "Konqueror will never display text smaller than "
                                     "this size,<br />overriding any other settings." ) + "</qt>" );
 
   m_MedSize = new KIntNumInput( fSize,m_minSize );
   fl->addRow(i18n( "&Medium font size:"  ),m_MedSize);
   m_MedSize->setRange( 2, 30 );
-  connect( m_MedSize, SIGNAL( valueChanged( int ) ), this, SLOT( slotFontSize( int ) ) );
-  connect( m_MedSize, SIGNAL( valueChanged( int ) ), this, SLOT( changed() ) );
+  connect( m_MedSize, SIGNAL(valueChanged(int)), this, SLOT(slotFontSize(int)) );
+  connect( m_MedSize, SIGNAL(valueChanged(int)), this, SLOT(changed()) );
   m_MedSize->setWhatsThis(
                    i18n("This is the relative font size Konqueror uses "
                         "to display web sites.") );
@@ -182,43 +182,43 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList&)
   m_pFonts[0] = new KFontComboBox( fontsTab );
   fl->addRow(i18n("S&tandard font:"), m_pFonts[0]);
   m_pFonts[0]->setWhatsThis( i18n("This is the font used to display normal text in a web page.") );
-  connect( m_pFonts[0], SIGNAL( currentFontChanged(const QFont&) ),
-	   SLOT( slotStandardFont(const QFont&) ) );
+  connect( m_pFonts[0], SIGNAL(currentFontChanged(QFont)),
+	   SLOT(slotStandardFont(QFont)) );
 
   m_pFonts[1] = new KFontComboBox( fontsTab );
   fl->addRow( i18n( "&Fixed font:"),m_pFonts[1]);
   m_pFonts[1]->setWhatsThis( i18n("This is the font used to display fixed-width (i.e. non-proportional) text."));
-  connect( m_pFonts[1], SIGNAL( currentFontChanged(const QFont&) ),
-          SLOT(slotFixedFont(const QFont&) ) );
+  connect( m_pFonts[1], SIGNAL(currentFontChanged(QFont)),
+          SLOT(slotFixedFont(QFont)) );
 
   m_pFonts[2] = new KFontComboBox( this );
   fl->addRow(i18n( "S&erif font:" ),  m_pFonts[2]);
   m_pFonts[2]->setWhatsThis( i18n( "This is the font used to display text that is marked up as serif." ) );
 
-  connect( m_pFonts[2], SIGNAL( currentFontChanged(const QFont&) ),
-          SLOT(slotSerifFont(const QFont&) ) );
+  connect( m_pFonts[2], SIGNAL(currentFontChanged(QFont)),
+          SLOT(slotSerifFont(QFont)) );
 
   m_pFonts[3] = new KFontComboBox( this );
   fl->addRow(i18n( "Sa&ns serif font:" ),  m_pFonts[3]);
   m_pFonts[3]->setWhatsThis( i18n( "This is the font used to display text that is marked up as sans-serif." ) );
-  connect( m_pFonts[3], SIGNAL( currentFontChanged(const QFont&) ),
-          SLOT(slotSansSerifFont(const QFont&) ) );
+  connect( m_pFonts[3], SIGNAL(currentFontChanged(QFont)),
+          SLOT(slotSansSerifFont(QFont)) );
 
   m_pFonts[4] = new KFontComboBox( this );
   fl->addRow(i18n( "C&ursive font:" ),  m_pFonts[4]);
   m_pFonts[4]->setWhatsThis( i18n( "This is the font used to display text that is marked up as italic." ) );
-  connect( m_pFonts[4], SIGNAL( currentFontChanged(const QFont&) ),
-          SLOT(slotCursiveFont(const QFont&) ) );
+  connect( m_pFonts[4], SIGNAL(currentFontChanged(QFont)),
+          SLOT(slotCursiveFont(QFont)) );
 
   m_pFonts[5] = new KFontComboBox( this );
   fl->addRow(i18n( "Fantas&y font:" ), m_pFonts[5]);
   m_pFonts[5]->setWhatsThis( i18n( "This is the font used to display text that is marked up as a fantasy font." ) );
-  connect( m_pFonts[5], SIGNAL( currentFontChanged(const QFont&) ),
-          SLOT(slotFantasyFont(const QFont&) ) );
+  connect( m_pFonts[5], SIGNAL(currentFontChanged(QFont)),
+          SLOT(slotFantasyFont(QFont)) );
 
   for(int i = 0; i < 6; ++i)
-      connect( m_pFonts[i], SIGNAL( currentFontChanged(const QFont&) ),
-              SLOT(changed() ) );
+      connect( m_pFonts[i], SIGNAL(currentFontChanged(QFont)),
+              SLOT(changed()) );
 
 
 
@@ -228,10 +228,10 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList&)
   m_pFontSizeAdjust->setSingleStep( 1 );
   fl->addRow(i18n( "Font &size adjustment for this encoding:" ), m_pFontSizeAdjust);
 
-  connect( m_pFontSizeAdjust, SIGNAL( valueChanged( int ) ),
-	   SLOT( slotFontSizeAdjust( int ) ) );
-  connect( m_pFontSizeAdjust, SIGNAL( valueChanged( int ) ),
-	   SLOT( changed() ) );
+  connect( m_pFontSizeAdjust, SIGNAL(valueChanged(int)),
+	   SLOT(slotFontSizeAdjust(int)) );
+  connect( m_pFontSizeAdjust, SIGNAL(valueChanged(int)),
+	   SLOT(changed()) );
 
 
   m_pEncoding = new QComboBox( this );
@@ -244,10 +244,10 @@ KAppearanceOptions::KAppearanceOptions(QWidget *parent, const QVariantList&)
   m_pEncoding->setWhatsThis( i18n( "Select the default encoding to be used; normally, you will be fine with 'Use language encoding' "
                "and should not have to change this.") );
 
-  connect( m_pEncoding, SIGNAL( activated(const QString& ) ),
-	   SLOT( slotEncoding(const QString&) ) );
-  connect( m_pEncoding, SIGNAL( activated(const QString& ) ),
-	   SLOT( changed() ) );
+  connect( m_pEncoding, SIGNAL(activated(QString)),
+	   SLOT(slotEncoding(QString)) );
+  connect( m_pEncoding, SIGNAL(activated(QString)),
+	   SLOT(changed()) );
 
   lay->addStretch(5);
 }

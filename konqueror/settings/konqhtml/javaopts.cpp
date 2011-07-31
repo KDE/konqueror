@@ -76,8 +76,8 @@ KJavaOptions::KJavaOptions( KSharedConfig::Ptr config, const QString &group,
      ********************* Global Settings *************************************
      **************************************************************************/
     enableJavaGloballyCB = new QCheckBox( i18n( "Enable Ja&va globally" ), this );
-    connect( enableJavaGloballyCB, SIGNAL( clicked() ), this, SLOT( slotChanged() ) );
-    connect( enableJavaGloballyCB, SIGNAL( clicked() ), this, SLOT( toggleJavaControls() ) );
+    connect( enableJavaGloballyCB, SIGNAL(clicked()), this, SLOT(slotChanged()) );
+    connect( enableJavaGloballyCB, SIGNAL(clicked()), this, SLOT(toggleJavaControls()) );
     toplevel->addWidget(enableJavaGloballyCB);
 
 
@@ -97,14 +97,14 @@ KJavaOptions::KJavaOptions( KSharedConfig::Ptr config, const QString &group,
 
     javaSecurityManagerCB = new QCheckBox( i18n("&Use security manager" ), this);
     laygroup1->addRow( javaSecurityManagerCB );
-    connect( javaSecurityManagerCB, SIGNAL(toggled( bool )), this, SLOT(slotChanged()) );
+    connect( javaSecurityManagerCB, SIGNAL(toggled(bool)), this, SLOT(slotChanged()) );
 
     useKioCB = new QCheckBox( i18n("Use &KIO"), this );
     laygroup1->addRow( useKioCB);
-    connect( useKioCB, SIGNAL(toggled( bool )), this, SLOT(slotChanged()) );
+    connect( useKioCB, SIGNAL(toggled(bool)), this, SLOT(slotChanged()) );
 
     enableShutdownCB = new QCheckBox( i18n("Shu&tdown applet server when inactive for more than"), this);
-    connect( enableShutdownCB, SIGNAL(toggled( bool )), this, SLOT(slotChanged()) );
+    connect( enableShutdownCB, SIGNAL(toggled(bool)), this, SLOT(slotChanged()) );
     connect( enableShutdownCB, SIGNAL(clicked()), this, SLOT(toggleJavaControls()) );
     KHBox* secondsHB = new KHBox( javartGB );
     laygroup1->addWidget( secondsHB );
@@ -115,11 +115,11 @@ KJavaOptions::KJavaOptions( KSharedConfig::Ptr config, const QString &group,
     laygroup1->addRow( enableShutdownCB, serverTimeoutSB);
 
     pathED = new  KUrlRequester(this);
-    connect( pathED, SIGNAL(textChanged( const QString& )), this, SLOT(slotChanged()) );
+    connect( pathED, SIGNAL(textChanged(QString)), this, SLOT(slotChanged()) );
     laygroup1->addRow(i18n( "&Path to Java executable, or 'java':" ), pathED);
 
     addArgED = new QLineEdit( this );
-    connect( addArgED, SIGNAL(textChanged( const QString& )), this, SLOT(slotChanged()) );
+    connect( addArgED, SIGNAL(textChanged(QString)), this, SLOT(slotChanged()) );
     laygroup1->addRow(i18n( "Additional Java a&rguments:" ),addArgED);
 
     /***************************************************************************

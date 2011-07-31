@@ -117,19 +117,19 @@ KonqProfileDlg::KonqProfileDlg( KonqViewManager *manager, const QString & presel
 
   d->m_pProfileNameLineEdit->setFocus();
 
-  connect( d->m_pListView, SIGNAL( itemChanged( QListWidgetItem * ) ),
-            SLOT( slotItemRenamed( QListWidgetItem * ) ) );
+  connect( d->m_pListView, SIGNAL(itemChanged(QListWidgetItem*)),
+            SLOT(slotItemRenamed(QListWidgetItem*)) );
 
   loadAllProfiles( preselectProfile );
   d->m_pListView->setMinimumSize( d->m_pListView->sizeHint() );
 
   d->m_cbSaveURLs->setChecked( KonqSettings::saveURLInProfile() );
 
-  connect( d->m_pListView, SIGNAL( itemSelectionChanged() ),
-           this, SLOT( slotSelectionChanged() ) );
+  connect( d->m_pListView, SIGNAL(itemSelectionChanged()),
+           this, SLOT(slotSelectionChanged()) );
 
-  connect( d->m_pProfileNameLineEdit, SIGNAL( textChanged( const QString & ) ),
-           this, SLOT( slotTextChanged( const QString & ) ) );
+  connect( d->m_pProfileNameLineEdit, SIGNAL(textChanged(QString)),
+           this, SLOT(slotTextChanged(QString)) );
 
   enableButton( BTN_RENAME, d->m_pListView->currentItem() != 0 );
   enableButton( BTN_DELETE, d->m_pListView->currentItem() != 0 );

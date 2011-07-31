@@ -142,8 +142,8 @@ KonqSidebarTree::KonqSidebarTree( KonqSidebarOldTreeModule *parent, QWidget *par
     m_sidebarModule = parent;
 
     m_animationTimer = new QTimer( this );
-    connect( m_animationTimer, SIGNAL( timeout() ),
-             this, SLOT( slotAnimation() ) );
+    connect( m_animationTimer, SIGNAL(timeout()),
+             this, SLOT(slotAnimation()) );
 
     m_currentBeforeDropItem = 0;
     m_dropItem = 0;
@@ -154,24 +154,24 @@ KonqSidebarTree::KonqSidebarTree( KonqSidebarOldTreeModule *parent, QWidget *par
     setTreeStepSize(15);
 
     m_autoOpenTimer = new QTimer( this );
-    connect( m_autoOpenTimer, SIGNAL( timeout() ),
-             this, SLOT( slotAutoOpenFolder() ) );
+    connect( m_autoOpenTimer, SIGNAL(timeout()),
+             this, SLOT(slotAutoOpenFolder()) );
 
-    connect( this, SIGNAL( doubleClicked( Q3ListViewItem * ) ),
-             this, SLOT( slotDoubleClicked( Q3ListViewItem * ) ) );
-    connect( this, SIGNAL( mouseButtonPressed(int, Q3ListViewItem*, const QPoint&, int)),
-             this, SLOT( slotMouseButtonPressed(int, Q3ListViewItem*, const QPoint&, int)) );
-    connect( this, SIGNAL( mouseButtonClicked( int, Q3ListViewItem*, const QPoint&, int ) ),
-             this, SLOT( slotMouseButtonClicked( int, Q3ListViewItem*, const QPoint&, int ) ) );
-    connect( this, SIGNAL( returnPressed( Q3ListViewItem * ) ),
-             this, SLOT( slotDoubleClicked( Q3ListViewItem * ) ) );
-    connect( this, SIGNAL( selectionChanged() ),
-             this, SLOT( slotSelectionChanged() ) );
+    connect( this, SIGNAL(doubleClicked(Q3ListViewItem*)),
+             this, SLOT(slotDoubleClicked(Q3ListViewItem*)) );
+    connect( this, SIGNAL(mouseButtonPressed(int,Q3ListViewItem*,QPoint,int)),
+             this, SLOT(slotMouseButtonPressed(int,Q3ListViewItem*,QPoint,int)) );
+    connect( this, SIGNAL(mouseButtonClicked(int,Q3ListViewItem*,QPoint,int)),
+             this, SLOT(slotMouseButtonClicked(int,Q3ListViewItem*,QPoint,int)) );
+    connect( this, SIGNAL(returnPressed(Q3ListViewItem*)),
+             this, SLOT(slotDoubleClicked(Q3ListViewItem*)) );
+    connect( this, SIGNAL(selectionChanged()),
+             this, SLOT(slotSelectionChanged()) );
     connect(qApp->clipboard(), SIGNAL(dataChanged()),
             this, SLOT(slotSelectionChanged())); // so that "paste" can be updated
 
-    connect( this, SIGNAL(itemRenamed(Q3ListViewItem*, const QString &, int)),
-             this, SLOT(slotItemRenamed(Q3ListViewItem*, const QString &, int)));
+    connect( this, SIGNAL(itemRenamed(Q3ListViewItem*,QString,int)),
+             this, SLOT(slotItemRenamed(Q3ListViewItem*,QString,int)));
 
     if (moduleType == VIRT_Folder) {
         m_dirtreeDir.dir.setPath(KGlobal::dirs()->saveLocation("data","konqsidebartng/virtual_folders/"+path+'/'));
@@ -215,7 +215,7 @@ KonqSidebarTree::KonqSidebarTree( KonqSidebarOldTreeModule *parent, QWidget *par
     action = new KAction(i18n("Rename"), this);
     action->setIcon(KIcon("edit-rename"));
     m_collection->addAction("rename", action);
-    connect(action, SIGNAL(triggered(bool) ), SLOT( slotRename() ));
+    connect(action, SIGNAL(triggered(bool)), SLOT(slotRename()));
 
     action = new KAction(KIcon("edit-delete"), i18n("Delete Link"), this);
     m_collection->addAction("delete_link", action);
@@ -613,7 +613,7 @@ void KonqSidebarTree::slotFilesAdded( const QString & dir )
     kDebug(1201) << "KonqSidebarTree::slotFilesAdded " << dir;
     if ( m_dirtreeDir.dir.isParentOf( urlDir ) )
         // We use a timer in case of DBus re-entrance..
-        QTimer::singleShot( 0, this, SLOT( rescanConfiguration() ) );
+        QTimer::singleShot( 0, this, SLOT(rescanConfiguration()) );
 }
 
 void KonqSidebarTree::slotFilesRemoved( const QStringList & urls )
@@ -625,7 +625,7 @@ void KonqSidebarTree::slotFilesRemoved( const QStringList & urls )
         //kDebug(1201) <<  "KonqSidebarTree::slotFilesRemoved " << u;
         if ( m_dirtreeDir.dir.isParentOf( u ) )
         {
-            QTimer::singleShot( 0, this, SLOT( rescanConfiguration() ) );
+            QTimer::singleShot( 0, this, SLOT(rescanConfiguration()) );
             kDebug(1201) << "KonqSidebarTree::slotFilesRemoved done";
             return;
         }

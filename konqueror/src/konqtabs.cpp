@@ -83,18 +83,18 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
 
   if (KonqSettings::tabPosition()=="Bottom")
     setTabPosition( QTabWidget::South );
-  connect( this, SIGNAL( closeRequest( QWidget * )), SLOT(slotCloseRequest( QWidget * )));
-  connect( this, SIGNAL( removeTabPopup() ),
-           m_pViewManager->mainWindow(), SLOT( slotRemoveTabPopup() ) );
+  connect( this, SIGNAL(closeRequest(QWidget*)), SLOT(slotCloseRequest(QWidget*)));
+  connect( this, SIGNAL(removeTabPopup()),
+           m_pViewManager->mainWindow(), SLOT(slotRemoveTabPopup()) );
 
   if ( KonqSettings::addTabButton() ) {
     m_leftWidget = new NewTabToolButton( this );
-    connect( m_leftWidget, SIGNAL( clicked() ),
-             m_pViewManager->mainWindow(), SLOT( slotAddTab() ) );
-    connect( m_leftWidget, SIGNAL( testCanDecode(const QDragMoveEvent *, bool & )),
-             SLOT( slotTestCanDecode(const QDragMoveEvent *, bool & ) ) );
-    connect( m_leftWidget, SIGNAL( receivedDropEvent( QDropEvent * )),
-             SLOT( slotReceivedDropEvent( QDropEvent * ) ) );
+    connect( m_leftWidget, SIGNAL(clicked()),
+             m_pViewManager->mainWindow(), SLOT(slotAddTab()) );
+    connect( m_leftWidget, SIGNAL(testCanDecode(const QDragMoveEvent*,bool&)),
+             SLOT(slotTestCanDecode(const QDragMoveEvent*,bool&)) );
+    connect( m_leftWidget, SIGNAL(receivedDropEvent(QDropEvent*)),
+             SLOT(slotReceivedDropEvent(QDropEvent*)) );
     m_leftWidget->setIcon( KIcon( "tab-new" ) );
     m_leftWidget->adjustSize();
     m_leftWidget->setToolTip( i18n("Open a new tab"));
@@ -102,8 +102,8 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
   }
   if ( KonqSettings::closeTabButton() ) {
     m_rightWidget = new QToolButton( this );
-    connect( m_rightWidget, SIGNAL( clicked() ),
-             m_pViewManager->mainWindow(), SLOT( slotRemoveTab() ) );
+    connect( m_rightWidget, SIGNAL(clicked()),
+             m_pViewManager->mainWindow(), SLOT(slotRemoveTab()) );
     m_rightWidget->setIcon( KIcon( "tab-close" ) );
     m_rightWidget->adjustSize();
     m_rightWidget->setToolTip( i18n("Close the current tab"));
@@ -112,23 +112,23 @@ KonqFrameTabs::KonqFrameTabs(QWidget* parent, KonqFrameContainerBase* parentCont
 
   setAutomaticResizeTabs( true );
   setMovable( true );
-  connect( this, SIGNAL( movedTab( int, int ) ),
-           SLOT( slotMovedTab( int, int ) ) );
-  connect( this, SIGNAL( mouseMiddleClick() ),
-           SLOT( slotMouseMiddleClick() ) );
-  connect( this, SIGNAL( mouseMiddleClick( QWidget * ) ),
-           SLOT( slotMouseMiddleClick( QWidget * ) ) );
-  connect( this, SIGNAL( mouseDoubleClick() ),
-           m_pViewManager->mainWindow(), SLOT( slotAddTab() ) );
+  connect( this, SIGNAL(movedTab(int,int)),
+           SLOT(slotMovedTab(int,int)) );
+  connect( this, SIGNAL(mouseMiddleClick()),
+           SLOT(slotMouseMiddleClick()) );
+  connect( this, SIGNAL(mouseMiddleClick(QWidget*)),
+           SLOT(slotMouseMiddleClick(QWidget*)) );
+  connect( this, SIGNAL(mouseDoubleClick()),
+           m_pViewManager->mainWindow(), SLOT(slotAddTab()) );
 
-  connect( this, SIGNAL( testCanDecode(const QDragMoveEvent *, bool & )),
-           SLOT( slotTestCanDecode(const QDragMoveEvent *, bool & ) ) );
-  connect( this, SIGNAL( receivedDropEvent( QDropEvent * )),
-           SLOT( slotReceivedDropEvent( QDropEvent * ) ) );
-  connect( this, SIGNAL( receivedDropEvent( QWidget *, QDropEvent * )),
-           SLOT( slotReceivedDropEvent( QWidget *, QDropEvent * ) ) );
-  connect( this, SIGNAL( initiateDrag( QWidget * )),
-           SLOT( slotInitiateDrag( QWidget * ) ) );
+  connect( this, SIGNAL(testCanDecode(const QDragMoveEvent*,bool&)),
+           SLOT(slotTestCanDecode(const QDragMoveEvent*,bool&)) );
+  connect( this, SIGNAL(receivedDropEvent(QDropEvent*)),
+           SLOT(slotReceivedDropEvent(QDropEvent*)) );
+  connect( this, SIGNAL(receivedDropEvent(QWidget*,QDropEvent*)),
+           SLOT(slotReceivedDropEvent(QWidget*,QDropEvent*)) );
+  connect( this, SIGNAL(initiateDrag(QWidget*)),
+           SLOT(slotInitiateDrag(QWidget*)) );
 
 
   initPopupMenu();
@@ -325,7 +325,7 @@ void KonqFrameTabs::refreshSubPopupMenuTab()
     m_pSubPopupMenuTab->addAction( KIcon( "view-refresh" ),
                                     i18n( "&Reload All Tabs" ),
                                     m_pViewManager->mainWindow(),
-                                    SLOT( slotReloadAllTabs() ),
+                                    SLOT(slotReloadAllTabs()),
                                     m_pViewManager->mainWindow()->action("reload_all_tabs")->shortcut() );
     m_pSubPopupMenuTab->addSeparator();
     foreach (KonqFrameBase* frameBase, m_childFrameList)
@@ -348,7 +348,7 @@ void KonqFrameTabs::refreshSubPopupMenuTab()
       m_pSubPopupMenuTab->addAction( KIcon( "tab-close-other" ),
 				      i18n( "Close &Other Tabs" ),
 				      m_pViewManager->mainWindow(),
-				      SLOT( slotRemoveOtherTabsPopup() ),
+				      SLOT(slotRemoveOtherTabsPopup()),
 				      m_pViewManager->mainWindow()->action("removeothertabs")->shortcut() );
 }
 
@@ -459,40 +459,40 @@ void KonqFrameTabs::initPopupMenu()
   m_popupActions["newtab"] = m_pPopupMenu->addAction( KIcon( "tab-new" ),
                             i18n("&New Tab"),
                             m_pViewManager->mainWindow(),
-                            SLOT( slotAddTab() ),
+                            SLOT(slotAddTab()),
                             m_pViewManager->mainWindow()->action("newtab")->shortcut() );
   m_popupActions["duplicatecurrenttab"] = m_pPopupMenu->addAction( KIcon( "tab-duplicate" ),
                             i18n("&Duplicate Tab"),
                             m_pViewManager->mainWindow(),
-                            SLOT( slotDuplicateTabPopup() ),
+                            SLOT(slotDuplicateTabPopup()),
                             m_pViewManager->mainWindow()->action("duplicatecurrenttab")->shortcut() );
   m_popupActions["reload"] = m_pPopupMenu->addAction( KIcon( "view-refresh" ),
                             i18n( "&Reload Tab" ),
                             m_pViewManager->mainWindow(),
-                            SLOT( slotReloadPopup() ),
+                            SLOT(slotReloadPopup()),
                             m_pViewManager->mainWindow()->action("reload")->shortcut() );
   m_pPopupMenu->addSeparator();
   m_pSubPopupMenuTab = new QMenu( this );
   m_popupActions["othertabs"] = m_pPopupMenu->addMenu( m_pSubPopupMenuTab );
   m_popupActions["othertabs"]->setText( i18n("Other Tabs") );
-  connect( m_pSubPopupMenuTab, SIGNAL( triggered ( QAction * ) ),
-           this, SLOT( slotSubPopupMenuTabActivated( QAction * ) ) );
+  connect( m_pSubPopupMenuTab, SIGNAL(triggered(QAction*)),
+           this, SLOT(slotSubPopupMenuTabActivated(QAction*)) );
   m_pPopupMenu->addSeparator();
   m_popupActions["breakoffcurrenttab"] = m_pPopupMenu->addAction( KIcon( "tab-detach" ),
                             i18n("D&etach Tab"),
                             m_pViewManager->mainWindow(),
-                            SLOT( slotBreakOffTabPopup() ),
+                            SLOT(slotBreakOffTabPopup()),
                             m_pViewManager->mainWindow()->action("breakoffcurrenttab")->shortcut() );
   m_pPopupMenu->addSeparator();
   m_popupActions["removecurrenttab"] = m_pPopupMenu->addAction( KIcon( "tab-close" ),
                             i18n("&Close Tab"),
                             m_pViewManager->mainWindow(),
-                            SLOT( slotRemoveTabPopup() ),
+                            SLOT(slotRemoveTabPopup()),
                             m_pViewManager->mainWindow()->action("removecurrenttab")->shortcut() );
-  connect( this, SIGNAL( contextMenu( QWidget *, const QPoint & ) ),
-           SLOT(slotContextMenu( QWidget *, const QPoint & ) ) );
-  connect( this, SIGNAL( contextMenu( const QPoint & ) ),
-           SLOT(slotContextMenu( const QPoint & ) ) );
+  connect( this, SIGNAL(contextMenu(QWidget*,QPoint)),
+           SLOT(slotContextMenu(QWidget*,QPoint)) );
+  connect( this, SIGNAL(contextMenu(QPoint)),
+           SLOT(slotContextMenu(QPoint)) );
 
 }
 

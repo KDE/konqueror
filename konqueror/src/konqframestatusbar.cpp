@@ -243,7 +243,7 @@ void KonqFrameStatusBar::slotSpeedProgress( int bytesPerSecond )
 void KonqFrameStatusBar::slotConnectToNewView(KonqView *, KParts::ReadOnlyPart *,KParts::ReadOnlyPart *newOne)
 {
    if (newOne)
-      connect(newOne,SIGNAL(setStatusBarText(const QString &)),this,SLOT(slotDisplayStatusText(const QString&)));
+      connect(newOne,SIGNAL(setStatusBarText(QString)),this,SLOT(slotDisplayStatusText(QString)));
    slotDisplayStatusText( QString() );
 }
 

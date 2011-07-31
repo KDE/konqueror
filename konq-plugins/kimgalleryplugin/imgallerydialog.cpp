@@ -215,8 +215,8 @@ void KIGPDialog::setupDirectoryPage(const QString& path) {
     m_imageNameReq = new KUrlRequester(QString(path + "images.html"), page);
     label->setBuddy( m_imageNameReq );
     dvlay->addWidget(m_imageNameReq);
-    connect( m_imageNameReq, SIGNAL(textChanged(const QString&)),
-             this, SLOT(imageUrlChanged(const QString&)) );
+    connect( m_imageNameReq, SIGNAL(textChanged(QString)),
+             this, SLOT(imageUrlChanged(QString)) );
     m_imageNameReq->setWhatsThis( whatsThis );
 
     const bool recurseSubDir = group.readEntry("RecurseSubDirectories", false);
@@ -240,8 +240,8 @@ void KIGPDialog::setupDirectoryPage(const QString& path) {
     m_recursionLevel->setWhatsThis( whatsThis );
 
 
-    connect(m_recurseSubDir, SIGNAL( toggled(bool) ),
-            m_recursionLevel, SLOT( setEnabled(bool) ) );
+    connect(m_recurseSubDir, SIGNAL(toggled(bool)),
+            m_recursionLevel, SLOT(setEnabled(bool)) );
 
     dvlay->addWidget(m_recurseSubDir);
     dvlay->addWidget(m_recursionLevel);
@@ -351,8 +351,8 @@ void KIGPDialog::setupThumbnailPage(const QString& path) {
     m_colorDepth->setEnabled(colorDepthSet);
     hlay4->addWidget( m_colorDepth );
 
-    connect(m_colorDepthSet, SIGNAL( toggled(bool) ),
-            m_colorDepth, SLOT( setEnabled(bool) ) );
+    connect(m_colorDepthSet, SIGNAL(toggled(bool)),
+            m_colorDepth, SLOT(setEnabled(bool)) );
 
     vlay->addStretch(1);
 

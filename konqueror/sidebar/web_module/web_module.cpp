@@ -94,23 +94,23 @@ KonqSideBarWebModule::KonqSideBarWebModule(const KComponentData &componentData, 
 		this,
 		SLOT(setTitle(QString)));
 	connect(_htmlPart,
-		SIGNAL(openUrlRequest(QString, KParts::OpenUrlArguments, KParts::BrowserArguments)),
+		SIGNAL(openUrlRequest(QString,KParts::OpenUrlArguments,KParts::BrowserArguments)),
 		this,
-		SLOT(urlClicked(QString, KParts::OpenUrlArguments, KParts::BrowserArguments)));
+		SLOT(urlClicked(QString,KParts::OpenUrlArguments,KParts::BrowserArguments)));
 	connect(_htmlPart->browserExtension(),
-		SIGNAL(openUrlRequest(const KUrl &, const KParts::OpenUrlArguments&, const KParts::BrowserArguments &)),
+		SIGNAL(openUrlRequest(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)),
 		this,
-		SLOT(formClicked(const KUrl &, const KParts::OpenUrlArguments&, const KParts::BrowserArguments &)) );
+		SLOT(formClicked(KUrl,KParts::OpenUrlArguments,KParts::BrowserArguments)) );
 	connect(_htmlPart,
-		SIGNAL(setAutoReload()), this, SLOT( setAutoReload() ));
+		SIGNAL(setAutoReload()), this, SLOT(setAutoReload()));
 	connect(_htmlPart,
 		SIGNAL(openUrlNewWindow(QString,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::WindowArgs)),
 		this,
 		SLOT(urlNewWindow(QString,KParts::OpenUrlArguments,KParts::BrowserArguments,KParts::WindowArgs)));
 	connect(_htmlPart,
-		SIGNAL(submitFormRequest(const char*,QString,const QByteArray&,QString,QString,QString)),
+		SIGNAL(submitFormRequest(const char*,QString,QByteArray,QString,QString,QString)),
 		this,
-		SIGNAL(submitFormRequest(const char*,QString,const QByteArray&,QString,QString,QString)));
+		SIGNAL(submitFormRequest(const char*,QString,QByteArray,QString,QString,QString)));
 
         reloadTimeout = configGroup.readEntry("Reload", 0);
 	_url = configGroup.readPathEntry("URL", QString());
@@ -221,7 +221,7 @@ void KonqSideBarWebModule::setTitle(const QString& title) {
 
 void KonqSideBarWebModule::pageLoaded() {
 	if( reloadTimeout > 0 ) {
-		QTimer::singleShot( reloadTimeout, this, SLOT( reload() ) );
+		QTimer::singleShot( reloadTimeout, this, SLOT(reload()) );
 	}
 }
 

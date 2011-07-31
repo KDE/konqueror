@@ -36,7 +36,7 @@ AutoRefresh::AutoRefresh( QObject* parent, const QVariantList & /*args*/ )
     : Plugin( parent )
 {
     timer = new QTimer( this );
-   connect( timer, SIGNAL( timeout() ), this, SLOT( slotRefresh() ) );
+   connect( timer, SIGNAL(timeout()), this, SLOT(slotRefresh()) );
 
     refresher = actionCollection()->add<KSelectAction>("autorefresh");
     refresher->setText(i18n("&Auto Refresh"));

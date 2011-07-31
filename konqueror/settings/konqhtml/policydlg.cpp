@@ -46,8 +46,8 @@ PolicyDialog::PolicyDialog( Policies *policies, QWidget *parent, const char *nam
   le_domain = new QLineEdit(main);
   l->setBuddy( le_domain );
   grid->addWidget(le_domain, 0, 1);
-  connect( le_domain,SIGNAL(textChanged( const QString & )),
-      SLOT(slotTextChanged( const QString &)));
+  connect( le_domain,SIGNAL(textChanged(QString)),
+      SLOT(slotTextChanged(QString)));
 
   le_domain->setWhatsThis( i18n("Enter the name of a host (like www.kde.org) "
                                   "or a domain, starting with a dot (like .kde.org or .org)") );

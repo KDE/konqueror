@@ -70,8 +70,8 @@ FSJob::FSJob(FSView* v)
   : KIO::Job()
 {
   _view = v;
-  QObject::connect(v, SIGNAL(progress(int,int,const QString&)),
-                   this, SLOT(progressSlot(int,int,const QString&)));
+  QObject::connect(v, SIGNAL(progress(int,int,QString)),
+                   this, SLOT(progressSlot(int,int,QString)));
 }
 
 void FSJob::kill(bool /*quietly*/)
@@ -154,17 +154,17 @@ FSViewPart::FSViewPart(QWidget *parentWidget,
 		      SLOT (slotShowColorMenu()));
 
     slotSettingsChanged(KGlobalSettings::SETTINGS_MOUSE);
-    connect( KGlobalSettings::self(), SIGNAL( settingsChanged(int) ),
-             SLOT( slotSettingsChanged(int) ) );
+    connect( KGlobalSettings::self(), SIGNAL(settingsChanged(int)),
+             SLOT(slotSettingsChanged(int)) );
 
     QObject::connect(_view,SIGNAL(returnPressed(TreeMapItem*)),
                      _ext,SLOT(selected(TreeMapItem*)));
     QObject::connect(_view,SIGNAL(selectionChanged()),
 		     this,SLOT(updateActions()));
     QObject::connect(_view,
-                     SIGNAL(contextMenuRequested(TreeMapItem*,const QPoint&)),
+                     SIGNAL(contextMenuRequested(TreeMapItem*,QPoint)),
 		     this,
-                     SLOT(contextMenu(TreeMapItem*, const QPoint&)));
+                     SLOT(contextMenu(TreeMapItem*,QPoint)));
 
     QObject::connect(_view, SIGNAL(started()), this, SLOT(startedSlot()));
     QObject::connect(_view, SIGNAL(completed(int)),
@@ -183,8 +183,8 @@ FSViewPart::FSViewPart(QWidget *parentWidget,
     moveToTrashAction->setText(i18nc("@action:inmenu File", "Move to Trash"));
     moveToTrashAction->setIcon(KIcon("user-trash"));
     moveToTrashAction->setShortcut(QKeySequence::Delete);
-    connect(moveToTrashAction, SIGNAL(triggered(Qt::MouseButtons, Qt::KeyboardModifiers)),
-            _ext, SLOT(trash(Qt::MouseButtons, Qt::KeyboardModifiers)));
+    connect(moveToTrashAction, SIGNAL(triggered(Qt::MouseButtons,Qt::KeyboardModifiers)),
+            _ext, SLOT(trash(Qt::MouseButtons,Qt::KeyboardModifiers)));
 
     KAction* deleteAction = actionCollection()->addAction("delete");
     deleteAction->setIcon(KIcon("edit-delete"));

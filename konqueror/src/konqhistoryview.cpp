@@ -105,7 +105,7 @@ KonqHistoryView::KonqHistoryView(QWidget* parent)
 
     KonqHistorySettings* settings = KonqHistorySettings::self();
     sortGroup->actions().at(settings->m_sortsByName ? 0 : 1)->setChecked(true);
-    connect(sortGroup, SIGNAL(triggered(QAction *)), this, SLOT(slotSortChange(QAction *)));
+    connect(sortGroup, SIGNAL(triggered(QAction*)), this, SLOT(slotSortChange(QAction*)));
 
     m_searchLineEdit = new KLineEdit(this);
     m_searchLineEdit->setClickMessage(i18n("Search in history"));

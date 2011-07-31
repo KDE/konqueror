@@ -142,22 +142,22 @@ DirFilterPlugin::DirFilterPlugin (QObject* parent,
 
   connect (m_pFilterMenu->menu(), SIGNAL (aboutToShow()),
            SLOT (slotShowPopup()));
-  connect(  m_pFilterMenu->menu(), SIGNAL( triggered ( QAction * ) ),
-           SLOT( slotItemSelected( QAction* ) ) );
+  connect(  m_pFilterMenu->menu(), SIGNAL(triggered(QAction*)),
+           SLOT(slotItemSelected(QAction*)) );
 
-  connect (m_dirModel, SIGNAL (deleteItem(const KFileItem&)),
-           SLOT( slotItemRemoved (const KFileItem&)));
-  connect (m_dirModel, SIGNAL (newItems(const KFileItemList&)),
-           SLOT (slotItemsAdded(const KFileItemList&)));
-  connect (m_dirModel, SIGNAL (itemsFilteredByMime(const KFileItemList&)),
-           SLOT (slotItemsAdded(const KFileItemList&)));
+  connect (m_dirModel, SIGNAL (deleteItem(KFileItem)),
+           SLOT(slotItemRemoved(KFileItem)));
+  connect (m_dirModel, SIGNAL (newItems(KFileItemList)),
+           SLOT (slotItemsAdded(KFileItemList)));
+  connect (m_dirModel, SIGNAL (itemsFilteredByMime(KFileItemList)),
+           SLOT (slotItemsAdded(KFileItemList)));
   connect (m_part, SIGNAL(aboutToOpenURL()), SLOT(slotOpenURL()));
 
   // Create, add and connect the widget for editing the current filter string.
   KLineEdit *filterEdit = new KLineEdit();
   filterEdit->setMaximumWidth(150);
   filterEdit->setClearButtonShown (true);
-  connect (filterEdit, SIGNAL(textEdited(const QString&)), this, SLOT(slotFilterTextEdited(const QString&)));
+  connect (filterEdit, SIGNAL(textEdited(QString)), this, SLOT(slotFilterTextEdited(QString)));
 
   KAction *filterAction = actionCollection()->addAction("toolbar_filter_field");
   filterAction->setText(i18n("Filter Field"));

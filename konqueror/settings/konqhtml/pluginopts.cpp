@@ -93,12 +93,12 @@ KPluginOptions::KPluginOptions( QWidget *parent, const QVariantList& )
     vbox->addWidget(priorityLabel);
     vbox->addWidget(priority);
 
-    connect( enablePluginsGloballyCB, SIGNAL( clicked() ), this, SLOT( slotChanged() ) );
-    connect( enablePluginsGloballyCB, SIGNAL( clicked() ), this, SLOT( slotTogglePluginsEnabled() ) );
-    connect( enableHTTPOnly, SIGNAL( clicked() ), this, SLOT( slotChanged() ) );
-    connect( enableUserDemand, SIGNAL( clicked() ), this, SLOT( slotChanged() ) );
-    connect( priority, SIGNAL( valueChanged(int) ), this, SLOT( slotChanged() ) );
-    connect( priority, SIGNAL( valueChanged(int) ), this, SLOT( updatePLabel(int) ) );
+    connect( enablePluginsGloballyCB, SIGNAL(clicked()), this, SLOT(slotChanged()) );
+    connect( enablePluginsGloballyCB, SIGNAL(clicked()), this, SLOT(slotTogglePluginsEnabled()) );
+    connect( enableHTTPOnly, SIGNAL(clicked()), this, SLOT(slotChanged()) );
+    connect( enableUserDemand, SIGNAL(clicked()), this, SLOT(slotChanged()) );
+    connect( priority, SIGNAL(valueChanged(int)), this, SLOT(slotChanged()) );
+    connect( priority, SIGNAL(valueChanged(int)), this, SLOT(updatePLabel(int)) );
 
     QFrame *hrule = new QFrame(globalGB);
     hrule->setFrameStyle(QFrame::HLine | QFrame::Sunken);
@@ -347,7 +347,7 @@ void KPluginOptions::scan()
     kDebug() << "Running nspluginscan";
     connect(nspluginscan, SIGNAL(readyReadStandardOutput()),
             this, SLOT(progress()));
-    connect(nspluginscan, SIGNAL(finished(int, QProcess::ExitStatus)),
+    connect(nspluginscan, SIGNAL(finished(int,QProcess::ExitStatus)),
             this, SLOT(scanDone()));
     connect(m_progress, SIGNAL(cancelClicked()), this, SLOT(scanDone()));
 
@@ -390,8 +390,8 @@ void KPluginOptions::dirInit()
     connect( m_widget.dirUp, SIGNAL(clicked()), SLOT(dirUp()));
     connect( m_widget.dirDown, SIGNAL(clicked()), SLOT(dirDown()) );
     connect( m_widget.dirEdit,
-             SIGNAL(textChanged(const QString&)),
-             SLOT(dirEdited(const QString &)) );
+             SIGNAL(textChanged(QString)),
+             SLOT(dirEdited(QString)) );
 
     connect( m_widget.dirList,
              SIGNAL(executed(QListWidgetItem*)),

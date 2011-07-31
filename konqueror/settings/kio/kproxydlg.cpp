@@ -51,27 +51,27 @@ KProxyDialog::KProxyDialog(QWidget *parent, const QVariantList &args)
   mUi.setupUi(this);
 
   // signals and slots connections
-  connect( mUi.rbNoProxy, SIGNAL( toggled(bool) ),
-            SLOT( slotUseProxyChanged() ) );
+  connect( mUi.rbNoProxy, SIGNAL(toggled(bool)),
+            SLOT(slotUseProxyChanged()) );
 
-  connect( mUi.rbAutoDiscover, SIGNAL( toggled(bool) ),
-            SLOT( slotChanged() ) );
-  connect( mUi.rbAutoScript, SIGNAL( toggled(bool) ),
-            SLOT( slotChanged() ) );
+  connect( mUi.rbAutoDiscover, SIGNAL(toggled(bool)),
+            SLOT(slotChanged()) );
+  connect( mUi.rbAutoScript, SIGNAL(toggled(bool)),
+            SLOT(slotChanged()) );
 
-  connect( mUi.rbPrompt, SIGNAL( toggled(bool) ),
-            SLOT( slotChanged() ) );
-  connect( mUi.rbPresetLogin, SIGNAL( toggled(bool) ),
-            SLOT( slotChanged() ) );
+  connect( mUi.rbPrompt, SIGNAL(toggled(bool)),
+            SLOT(slotChanged()) );
+  connect( mUi.rbPresetLogin, SIGNAL(toggled(bool)),
+            SLOT(slotChanged()) );
 
-  connect( mUi.cbPersConn, SIGNAL( toggled(bool) ),
-            SLOT( slotChanged() ) );
+  connect( mUi.cbPersConn, SIGNAL(toggled(bool)),
+            SLOT(slotChanged()) );
 
-  connect( mUi.location, SIGNAL( textChanged(const QString&) ),
-            SLOT( slotChanged() ) );
+  connect( mUi.location, SIGNAL(textChanged(QString)),
+            SLOT(slotChanged()) );
 
-  connect( mUi.pbEnvSetup, SIGNAL( clicked() ), SLOT( setupEnvProxy() ) );
-  connect( mUi.pbManSetup, SIGNAL( clicked() ), SLOT( setupManProxy() ) );
+  connect( mUi.pbEnvSetup, SIGNAL(clicked()), SLOT(setupEnvProxy()) );
+  connect( mUi.pbManSetup, SIGNAL(clicked()), SLOT(setupManProxy()) );
 
 }
 

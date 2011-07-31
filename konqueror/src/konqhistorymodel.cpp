@@ -244,10 +244,10 @@ KonqHistoryModel::KonqHistoryModel(QObject *parent)
     KonqHistoryProvider *provider = KonqHistoryProvider::self();
 
     connect(provider, SIGNAL(cleared()), this, SLOT(clear()));
-    connect(provider, SIGNAL(entryAdded(const KonqHistoryEntry &)),
-            this, SLOT(slotEntryAdded(const KonqHistoryEntry &)));
-    connect(provider, SIGNAL(entryRemoved(const KonqHistoryEntry &)),
-            this, SLOT(slotEntryRemoved(const KonqHistoryEntry &)));
+    connect(provider, SIGNAL(entryAdded(KonqHistoryEntry)),
+            this, SLOT(slotEntryAdded(KonqHistoryEntry)));
+    connect(provider, SIGNAL(entryRemoved(KonqHistoryEntry)),
+            this, SLOT(slotEntryRemoved(KonqHistoryEntry)));
 
     KonqHistoryList entries(provider->entries());
 

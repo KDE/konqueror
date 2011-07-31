@@ -51,10 +51,10 @@ Config::Config( QWidget* parent_P, const QVariantList & )
     QVBoxLayout *topLayout = new QVBoxLayout( this );
     QTabWidget* tabs = new QTabWidget( this );
     konqueror_widget = new Konqueror;
-    connect( konqueror_widget, SIGNAL( changed()), SLOT( changed()));
+    connect( konqueror_widget, SIGNAL(changed()), SLOT(changed()));
     tabs->addTab( konqueror_widget, i18n( "Konqueror" ));
     system_widget = new SystemWidget;
-    connect( system_widget, SIGNAL( changed()), SLOT( changed()));
+    connect( system_widget, SIGNAL(changed()), SLOT(changed()));
     tabs->addTab( system_widget, i18n( "System" ));
     topLayout->addWidget( tabs );
     }
@@ -88,7 +88,7 @@ KonquerorConfig::KonquerorConfig( QWidget* parent_P, const QVariantList & )
     QVBoxLayout *topLayout = new QVBoxLayout( this );
     topLayout->setMargin( 0 );
     widget = new Konqueror( this );
-    connect( widget, SIGNAL( changed()), SLOT( changed()));
+    connect( widget, SIGNAL(changed()), SLOT(changed()));
     topLayout->addWidget( widget );
     }
 

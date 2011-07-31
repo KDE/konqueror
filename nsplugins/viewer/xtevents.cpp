@@ -33,7 +33,7 @@ XtEvents::XtEvents()
     int argc = qApp->argc();
     XtDisplayInitialize( context, QX11Info::display(), qAppName().toLatin1(), QX11Info::appClass(),
         NULL, 0, &argc, qApp->argv());
-    connect( &timer, SIGNAL( timeout()), SLOT( idleProcess()));
+    connect( &timer, SIGNAL(timeout()), SLOT(idleProcess()));
     kapp->installX11EventFilter( this );
     // No way to find out when to process Xt events, so poll :(
     // ... but only after enable() has been called

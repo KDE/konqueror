@@ -82,10 +82,10 @@ SMBRoOptions::SMBRoOptions(QWidget *parent, const QVariantList &, const KCompone
    layout->addWidget(new QWidget(this),4,0);
 
 //   connect(m_showHiddenShares, SIGNAL(toggled(bool)), this, SLOT(changed()));
-   connect(m_userLe, SIGNAL(textChanged(const QString&)), this, SLOT(changed()));
-   connect(m_passwordLe, SIGNAL(textChanged(const QString&)), this, SLOT(changed()));
-//   connect(m_workgroupLe, SIGNAL(textChanged(const QString&)), this, SLOT(changed()));
-//   connect( m_encodingList, SIGNAL( activated( const QString & ) ), this , SLOT( changed() ) );
+   connect(m_userLe, SIGNAL(textChanged(QString)), this, SLOT(changed()));
+   connect(m_passwordLe, SIGNAL(textChanged(QString)), this, SLOT(changed()));
+//   connect(m_workgroupLe, SIGNAL(textChanged(QString)), this, SLOT(changed()));
+//   connect( m_encodingList, SIGNAL(activated(QString)), this , SLOT(changed()) );
 
    layout->setRowStretch(4, 1);
 

@@ -108,7 +108,7 @@ KCustomMenuEditor::KCustomMenuEditor(QWidget *parent)
    d->pbMoveUp=buttonBox->addButton(i18n("Move Up"),QDialogButtonBox::ActionRole, this, SLOT(slotMoveUp()));
    d->pbMoveDown=buttonBox->addButton(i18n("Move Down"),QDialogButtonBox::ActionRole, this, SLOT(slotMoveDown()));
    buttonBox->layout();
-   connect( m_listView, SIGNAL( selectionChanged () ), this, SLOT( refreshButton() ) );
+   connect( m_listView, SIGNAL(selectionChanged()), this, SLOT(refreshButton()) );
    refreshButton();
 }
 
