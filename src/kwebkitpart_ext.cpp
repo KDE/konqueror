@@ -197,8 +197,8 @@ void WebKitBrowserExtension::print()
         return;
 
     QPrintPreviewDialog dlg(view());
-    connect(&dlg, SIGNAL(paintRequested(QPrinter *)),
-            view(), SLOT(print(QPrinter *)));
+    connect(&dlg, SIGNAL(paintRequested(QPrinter*)),
+            view(), SLOT(print(QPrinter*)));
     dlg.exec();
 }
 
@@ -208,8 +208,8 @@ void WebKitBrowserExtension::printFrame()
         return;
 
     QPrintPreviewDialog dlg(view());
-    connect(&dlg, SIGNAL(paintRequested(QPrinter *)),
-            view()->page()->currentFrame(), SLOT(print(QPrinter *)));
+    connect(&dlg, SIGNAL(paintRequested(QPrinter*)),
+            view()->page()->currentFrame(), SLOT(print(QPrinter*)));
     dlg.exec();
 }
 

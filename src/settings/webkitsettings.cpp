@@ -450,7 +450,7 @@ void WebKitSettings::init( KConfig * config, bool reset )
                       kDebug(6000) << "Asynchronously fetching filter list from" << url << "to" << localFile;
 
                       KIO::StoredTransferJob *job = KIO::storedGet( url, KIO::Reload, KIO::HideProgressInfo );
-                      QObject::connect( job, SIGNAL( result(KJob *) ), d, SLOT( adblockFilterResult(KJob *) ) );
+                      QObject::connect( job, SIGNAL(result(KJob*)), d, SLOT(adblockFilterResult(KJob*)) );
                       /** for later reference, store name of cache file */
                       job->setProperty("webkitsettings_adBlock_filename", localFile);
                   }

@@ -80,8 +80,8 @@ public:
                 this, SLOT(loadFinished()));
         connect(view, SIGNAL(titleChanged(QString)),
                 this, SLOT(setWindowTitle(QString)));
-        connect(view->page(), SIGNAL(linkHovered(QString, QString, QString)),
-                this, SLOT(showLinkHover(QString, QString)));
+        connect(view->page(), SIGNAL(linkHovered(QString,QString,QString)),
+                this, SLOT(showLinkHover(QString,QString)));
         connect(view->page(), SIGNAL(windowCloseRequested()), this, SLOT(deleteLater()));
 
         setupUI();
@@ -171,8 +171,8 @@ protected slots:
     void print() {
 #if !defined(QT_NO_PRINTER)
         QPrintPreviewDialog dlg(this);
-        connect(&dlg, SIGNAL(paintRequested(QPrinter *)),
-                view, SLOT(print(QPrinter *)));
+        connect(&dlg, SIGNAL(paintRequested(QPrinter*)),
+                view, SLOT(print(QPrinter*)));
         dlg.exec();
 #endif
     }

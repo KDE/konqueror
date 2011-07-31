@@ -144,8 +144,8 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
 
     // Create the search bar...
     m_searchBar = new KDEPrivate::SearchBar(mainWidget);
-    connect(m_searchBar, SIGNAL(searchTextChanged(QString, bool)),
-            this, SLOT(slotSearchForText(QString, bool)));
+    connect(m_searchBar, SIGNAL(searchTextChanged(QString,bool)),
+            this, SLOT(slotSearchForText(QString,bool)));
 
     // Connect the signals/slots from the webview...
     connect(m_webView, SIGNAL(titleChanged(QString)),
@@ -156,8 +156,8 @@ KWebKitPart::KWebKitPart(QWidget *parentWidget, QObject *parent,
             this, SLOT(slotUrlChanged(QUrl)));
     connect(m_webView, SIGNAL(linkMiddleOrCtrlClicked(KUrl)),
             this, SLOT(slotLinkMiddleOrCtrlClicked(KUrl)));
-    connect(m_webView, SIGNAL(selectionClipboardUrlPasted(KUrl, QString)),
-            this, SLOT(slotSelectionClipboardUrlPasted(KUrl, QString)));
+    connect(m_webView, SIGNAL(selectionClipboardUrlPasted(KUrl,QString)),
+            this, SLOT(slotSelectionClipboardUrlPasted(KUrl,QString)));
 
     // Connect the signals from the page...
     connectWebPageSignals(page());
@@ -267,12 +267,12 @@ void KWebKitPart::connectWebPageSignals(WebPage* page)
             this, SLOT(slotLoadStarted()));
     connect(page, SIGNAL(loadAborted(KUrl)),
             this, SLOT(slotLoadAborted(KUrl)));
-    connect(page, SIGNAL(linkHovered(QString, QString, QString)),
-            this, SLOT(slotLinkHovered(QString, QString, QString)));
-    connect(page, SIGNAL(saveFrameStateRequested(QWebFrame *, QWebHistoryItem *)),
-            this, SLOT(slotSaveFrameState(QWebFrame *, QWebHistoryItem *)));
-    connect(page, SIGNAL(restoreFrameStateRequested(QWebFrame *)),
-            this, SLOT(slotRestoreFrameState(QWebFrame *)));
+    connect(page, SIGNAL(linkHovered(QString,QString,QString)),
+            this, SLOT(slotLinkHovered(QString,QString,QString)));
+    connect(page, SIGNAL(saveFrameStateRequested(QWebFrame*,QWebHistoryItem*)),
+            this, SLOT(slotSaveFrameState(QWebFrame*,QWebHistoryItem*)));
+    connect(page, SIGNAL(restoreFrameStateRequested(QWebFrame*)),
+            this, SLOT(slotRestoreFrameState(QWebFrame*)));
     connect(page, SIGNAL(statusBarMessage(QString)),
             this, SLOT(slotSetStatusBarText(QString)));
     connect(page, SIGNAL(windowCloseRequested()),
@@ -848,8 +848,8 @@ void KWebKitPart::slotPrintRequested(QWebFrame* frame)
         return;
 
     QPrintPreviewDialog dlg(m_webView);
-    connect(&dlg, SIGNAL(paintRequested(QPrinter *)),
-            frame, SLOT(print(QPrinter *)));
+    connect(&dlg, SIGNAL(paintRequested(QPrinter*)),
+            frame, SLOT(print(QPrinter*)));
     dlg.exec();
 }
 

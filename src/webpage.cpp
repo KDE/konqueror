@@ -123,10 +123,10 @@ WebPage::WebPage(KWebKitPart *part, QWidget *parent)
             this, SLOT(slotGeometryChangeRequested(QRect)));
     connect(this, SIGNAL(downloadRequested(QNetworkRequest)),
             this, SLOT(downloadRequest(QNetworkRequest)));
-    connect(this, SIGNAL(unsupportedContent(QNetworkReply *)),
+    connect(this, SIGNAL(unsupportedContent(QNetworkReply*)),
             this, SLOT(slotUnsupportedContent(QNetworkReply*)));
-    connect(networkAccessManager(), SIGNAL(finished(QNetworkReply *)),
-            this, SLOT(slotRequestFinished(QNetworkReply *)));    
+    connect(networkAccessManager(), SIGNAL(finished(QNetworkReply*)),
+            this, SLOT(slotRequestFinished(QNetworkReply*)));    
 }
 
 WebPage::~WebPage()

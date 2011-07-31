@@ -64,7 +64,7 @@ QObject *KWebKitFactory::create(const char* iface, QWidget *parentWidget, QObjec
 
     if (parentWidget) {
         m_sessionFileLookup.insert(parentWidget, tempFileName);
-        connect (parentWidget, SIGNAL(destroyed(QObject*)), SLOT(slotDestroyed(QObject *)));
+        connect (parentWidget, SIGNAL(destroyed(QObject*)), SLOT(slotDestroyed(QObject*)));
     } else {
         kWarning() << "No parent widget specified... Session management will FAIL to work properly!";
     }
@@ -84,7 +84,7 @@ void KWebKitFactory::slotDestroyed(QObject * obj)
     //kDebug() << "Discard the session history file of" << obj << "?" << m_discardSessionFiles;
     if (m_discardSessionFiles) {
         const QString sessionFile =  m_sessionFileLookup.take(obj);
-        disconnect (obj, SIGNAL(destroyed(QObject*)), this, SLOT(slotDestroyed(QObject *)));
+        disconnect (obj, SIGNAL(destroyed(QObject*)), this, SLOT(slotDestroyed(QObject*)));
         //kDebug() << "Discarding session history File" << sessionFile;
         if (!QFile::remove(sessionFile))
             kWarning() << "Failed to discard the session history file";
